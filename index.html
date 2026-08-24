@@ -3328,548 +3328,554 @@ Seed-TTS 由语音 tokenizer、自回归 token 语言模型、token 扩散（DiT
 
 };
 const DEEP = Object.assign({}, DEEP_PART_A, DEEP_PART_B, DEEP_PART_C, DEEP_PART_D, DEEP_PART_E, DEEP_PART_F);
-const INSIGHTS_PART_A = {
+const INSIGHTS_PART_R1 = {
   "fireredasr2": [
-    { q: `We present FireRedASR2S, a state-of-the-art industrial-grade all-in-one automatic speech recognition (ASR) system. It integrates four modules in a unified pipeline: ASR, Voice Activity Detection (VAD), Spoken Language Identification (LID), and Punctuation Prediction (Punc).`, src: `arXiv:2603.10420 摘要`, insight: `**设计动机：把 VAD/LID/Punc 与 ASR 打包成一个统一管线**，直击工业落地痛点——真实音频是长录音、含静音/音乐/多方言，单一个 ASR 模型不够用。巧妙之处在于"all-in-one"且每个模块可独立部署，避免拼装多个异构工具包带来的接口不一致与误差传播。值得注意它把 VAD 单独成模块并强调"human-labeled events"而非 forced-alignment 派生监督，是对常见弱监督 VAD 的刻意纠偏。` },
-    { q: `FireRedASR2-LLM achieves 2.89% average CER on 4 public Mandarin benchmarks and 11.55% on 19 public Chinese dialects and accents benchmarks, outperforming competitive baselines including Doubao-ASR, Qwen3-ASR, and Fun-ASR.`, src: `arXiv:2603.10420 摘要`, insight: `这是本组 fireredasr2 的核心数字（4 基准 CER 2.89%、19 方言 11.55%）。**关键点在于它直接点名 comparators 包括 Qwen3-ASR 和 Doubao-ASR**，说明对比是在论文自己的表上同协议进行的。LLM 变体(8B+)比 AED 变体(1B+)精度更高但更重，体现"精度/效率双变体"的产品化思路；不过 2.89% 是 LLM 版，AED 版约 3.05%，引用时勿混用。` },
-    { q: `Compared to FireRedASR, FireRedASR2 improves recognition accuracy and expands coverage to a broader range of Chinese dialects, primarily by scaling supervised training data to approximately 200k hours with broader domain, language, and dialect diversity.`, src: `arXiv:2603.10420 引言`, insight: `**本代改进几乎不靠改架构，靠堆数据**：从 v1 约 70k 小时量级扩到 ~200k 小时，并拓宽 domain/语言/方言多样性。这是工业级 ASR 的典型 Scaling 范式——架构 minimal changes，训练数据规模与覆盖才是主战场。也暗示 v1->v2 的精度跃升主要来自数据工程而非新结构，对复现者而言数据管线比模型设计更关键。` },
-    { q: `FireRedVAD: An ultra-lightweight module (0.6M parameters) based on the Deep Feedforward Sequential Memory Network (DFSMN), supporting streaming VAD, non-streaming VAD, and multi-label VAD (mVAD). On the FLEURS-VAD-102 benchmark, it achieves 97.57% frame-level F1 and 99.60% AUC-ROC.`, src: `arXiv:2603.10420 摘要`, insight: `**0.6M 参数的 DFSMN 做到 97.57% 帧级 F1**，体量与 Silero-VAD 同量级却全面超过它，说明轻量 VAD 仍有工程红利可挖。mVAD(多标签 VAD)能同时标语音/歌唱/音乐，对应它"语音+歌词"的卖点。AUC-ROC 99.60% 说明召回/误触的 trade-off 极好，但帧级 F1 高也要看阈值设定，工程部署仍需关注端点延迟。` },
-    { q: `FireRedLID: An Encoder-Decoder LID module supporting 100+ languages and 20+ Chinese dialects and accents. On FLEURS (82 languages), it achieves 97.18% utterance-level accuracy, outperforming Whisper and SpeechBrain.`, src: `arXiv:2603.10420 摘要`, insight: `**LID 用 Encoder-Decoder 且从 FireRedASR2-AED 的 encoder 初始化**，并采用"compact two-token decoding"做层级语言/方言预测(100+ 语言 + 20+ 方言)。97.18% 是 82 语的句级准确率，亮点是把中文方言也纳入 LID 体系——这对后续路由(普通话/方言/外语走不同解码策略)很有用。注意它比 Whisper/SpeechBrain 强，但 FLEURS 本身语种分布不均，绝对数字需结合方言细分看待。` },
-    { q: `FireRedPunc: A BERT-style punctuation prediction module for Chinese and English. On multi-domain benchmarks, it achieves 78.90% average F1, outperforming FunASR-Punc (62.77%).`, src: `arXiv:2603.10420 摘要`, insight: `**标点用 BERT-style 而非塞进 ASR decoder**，从 LERT 初始化并在大规模中英多域语料上训练，多域平均 F1 78.90%，相对 FunASR-Punc 的 62.77% 提升显著。把 Punc 解耦成独立模块的好处是：ASR 主干可专注识别、标点后处理可单独迭代；但代价是多一段流水线、多一次推理。78.90% 的 F1 在标点这类细粒度任务上属可用水平，复杂句/口语仍会掉点。` }
+    { q:`In this technical report, we present FireRedASR2S, a state-of-the-art (SOTA), all-in-one ASR system integrating four modules: FireRedASR2 for ASR, FireRedVAD for VAD and multi-label VAD (mVAD), FireRedLID for multilingual and dialect LID, and FireRedPunc for punctuation prediction.`, src:`arXiv:2603.10420 摘要/引言`, insight:`FireRedASR2S 的核心思路是把 **VAD/LID/ASR/Punc 四个原本常由异构工具拼凑的模块收进一条统一流水线**，既统一接口又保留各模块独立部署。相比简单堆模块，它强调用 **人工标注的声学事件** 训练 VAD（而非 ASR forced-alignment 弱监督），这是工业级鲁棒性的关键。代价是 FireRedVAD 依赖人工标注数据，标注成本较高。` },
+    { q:`FireRedASR2 achieves strong results, reaching 2.89% average CER on Mandarin (Avg-Mandarin-4), 11.55% on Chinese dialect (Avg-Dialect-19), and 9.67% on Avg-All-24.`, src:`arXiv:2603.10420 实验`, insight:`这组数字说明 FireRedASR2 在 **中文（含方言）场景已显著领先 Doubao-ASR / Qwen3-ASR / Fun-ASR 等** 公开对手。值得注意 11.55% 的方言平均 CER 仍是两位数，且 19 个方言基准跨度很大，落地到具体小语种仍需看单集表现，不能只盯平均值。` },
+    { q:`Future work will focus on further improving performance and expanding support for more languages.`, src:`arXiv:2603.10420 结论`, insight:`作者自承当前最大的 unfinished business 是 **语言覆盖仍不完整**——FireRedLID 虽标称 100+ 语言，但 ASR 主体强项仍在中文与方言。LLM 变体（8B+）精度最高但部署重，AED 变体（1B+）走效率路线，实际使用要在 **精度-算力-语种覆盖** 三者间权衡。` }
+  ],
+  "nim4_asr": [
+    { q:`Grounded in a principled delineation of functional roles between the encoder and the LLM, we redesign the multi-stage training paradigm to align each module with its intended capability boundary.`, src:`arXiv:2604.18105 摘要`, insight:`NIM4 的出发点很务实：不把 encoder 和 LLM 当成黑盒一起训，而是 **先界定两者各自的职能边界**，再分段训练。相比 Seed-ASR/Fun-ASR 那种端到端对齐，它明确针对「模态鸿沟」和「表征漂移」下药——这两点正是轻量化 LLM-ASR 掉点的根因。` },
+    { q:`Experiments show that NIM4-ASR achieves state-of-the-art performance on multiple public benchmarks with merely 2.3B parameters, while substantially outperforming larger-scale competitors on internal benchmarks—particularly in entity-intensive real-world scenarios.`, src:`arXiv:2604.18105 摘要`, insight:`**2.3B 参数就能超更大模型**，关键在它用 RAG 热词注入（百万级、亚毫秒检索）补命名实体，所以在实体密集的真实场景优势明显。但这也暗示其公开榜优势可能部分来自内部数据/热词机制，纯开箱对比时要留意评测口径。` },
+    { q:`First, the current model supports only Mandarin, English, and a limited set of Chinese dialects, leaving broader multilingual and dialectal coverage as an important direction for future work.`, src:`arXiv:2604.18105 局限与未来工作`, insight:`明确短板是 **多语与方言覆盖窄**（仅中英+少量方言）。此外作者承认 RL 带来的增益还不够稳定、奖励设计仍有优化空间——对生产系统而言，RL 不稳定的风险在于迭代时回归难排查，这是工程落地要重点盯的点。` }
+  ],
+  "on_device": [
+    { q:`Rather than exporting a single monolithic ONNX graph, we decompose the model into three independently optimizable ONNX sessions: the encoder, the decoder, and the joiner.`, src:`arXiv:2604.14493 方法`, insight:`把模型 **拆成 encoder/decoder/joiner 三个独立 ONNX 会话** 是这套边缘方案的关键工程技巧：既能对 encoder 更激进量化、对 decoder 保守量化，又能让 ONNX Runtime 分别做图级优化（如多头注意力融核）。本质是把 Transducer 的天然模块边界利用到了极致。` },
+    { q:`On the full evaluation sets, the int4 k-quant variant achieves 8.20% average WER compared to the 8.03% ONNX FP32 baseline, a degradation of only 0.17% absolute despite a 73% reduction in model size (from 2.47 GB to 0.67 GB).`, src:`arXiv:2604.14493 讨论`, insight:`**模型从 2.47GB 压到 0.67GB（缩 73%），WER 只掉 0.17%**，量化收益惊人；int8 几乎无损（8.01% vs 8.03%）。但注意 ConvInteger/MatMulInteger 整型算子会显著退化到 10.14%——说明 **量化算子选型比 bit 数更致命**，整型累加会在 24 层 Conformer 里累积舍入误差。` },
+    { q:`Our evaluation focuses on core transcription accuracy and does not cover several important system-level capabilities often required in production settings, such as robust inverse text normalization, speaker diarization, code-switching, custom vocabulary adaptation, or broader internal evaluation suites.`, src:`arXiv:2604.14493 讨论`, insight:`作者很诚实：这套边缘系统 **只验证了核心转写，没覆盖 ITN/说话人分离/码切换/热词自适应** 等生产必需能力。所以「ESB 上接近生产系统」的结论要打折——它更像是隐私/离线/低延迟场景的强选项，而非端到端生产替代品。另一个代价是仅英文。` }
+  ],
+  "voxtral_mini": [
+    { q:`A voice prompt is tokenized through Voxtral Codec, a low-bitrate speech tokenizer with an ASR-distilled semantic token and finite scalar quantized (FSQ) acoustic tokens; a decoder-only transformer auto-regressively predicts the semantic token sequence, while a lightweight flow-matching model predicts the acoustic tokens conditioned on the decoder states.`, src:`arXiv:2603.25551 引言/建模`, insight:`Voxtral 的巧思是 **把语义（AR）与声学（flow-matching 连续生成）解耦**：语义走 AR 保证长程一致性，声学走 flow-matching 补细节，避开了传统 codec LM 的「深度自回归声学」瓶颈。Codec 用 **ASR 蒸馏语义 token + FSQ 声学 token**，低码率也保真，是目前零样本 TTS 里较平衡的混合架构。` },
+    { q:`In human evaluation for multilingual zero-shot voice cloning, it is preferred over ElevenLabs Flash v2.5 with a 68.4% win rate, while remaining competitive with strong proprietary systems on expressive flagship-voice evaluations.`, src:`arXiv:2603.25551 引言`, insight:`**68.4% 人工胜率压过 ElevenLabs Flash v2.5**，且旗舰音色也具竞争力，说明混合架构在音质/相似度上已够打商业闭源。但注意评测是 pairwise 盲评、样本量有限（77 旗舰 / 60 克隆），且 ElevenLabs v3 在自动指标上仍被 Beat——结论应理解为「追平第一梯队」而非全面超越。` },
+    { q:`However, internal human evaluations found that a higher α led to over-adherence to the provided voice-prompt and the model failed to bias towards emotions that are implicit in the text prompt.`, src:`arXiv:2603.25551 实验`, insight:`这是 DPO + CFG 调参的真实代价：**CFG α 调大虽提升相似度指标，却会让模型过度贴合参考音色、压制文本隐含情感**。说明偏好学习目标存在内在张力——相似度和情感表达此消彼长，部署时得按场景（专业录音 vs 野生录音）分别设 α，没有万能默认值。` }
+  ],
+  "vibevoice_asr": [
+    { q:`Unlike traditional pipelined approaches that rely on audio chunking, VIBEVOICE-ASR supports single-pass processing for up to 60 minutes of audio. It unifies Automatic Speech Recognition, Speaker Diarization, and Timestamping into a single end-to-end generation task.`, src:`arXiv:2601.18184 摘要`, insight:`VIBEVOICE-ASR 主打 **单趟处理 60 分钟、把 ASR/说话人分离/时间戳统一成一个端到端生成任务**，直接解决长音频的「上下文碎片」问题——传统分块流水线会丢失跨块信息。这是与 VIBEVOICE 同源、但把多任务塞进同一生成流的关键升级。` },
+    { q:`By leveraging an ultra-low frame rate tokenizer (7.5 Hz), VIBEVOICE-ASR compresses an hour-long audio in a single pass by ingesting continuous latents from dual-tokenizers alongside optional user-provided context.`, src:`arXiv:2601.18184 方法`, insight:`**7.5Hz 超低帧率 tokenizer 是单趟长音频能塞进上下文窗口的前提**：3600s×7.5=27000 tokens，刚好在 LLM 上下文量级内。配合 prompt 上下文注入（领域术语/多音字消歧），让它能在不显式设语言的情况下处理 50+ 语言与码切换。代价是超低帧率可能损失细粒度韵律/音素边界信息——靠双 tokenizer（声学+语义）互补缓解。` },
+    { q:`The current architecture generates a serialized output stream and does not explicitly handle overlapping speech (the cocktail party problem). In scenarios where multiple speakers talk simultaneously, the model tends to transcribe the dominant speaker, potentially missing secondary information.`, src:`arXiv:2601.18184 结论与局限`, insight:`两个明确局限：**(1) 多语遗忘**——预训练覆盖 50+ 语言但 SFT 偏英/中/码切换，低资源语言会退化；(2) **重叠语音（鸡尾酒会问题）**——串行输出流只转写主导说话人，漏掉次要信息。前者靠开源微调代码社区补，后者需未来做 separation-aware 建模，是长音频会议场景的硬伤。` }
   ],
   "stepaudio25": [
-    { q: `At the center is the shared StepAudio 2.5 foundation model, which supports three model-level specializations: ASR, TTS, and Realtime.`, src: `arXiv:2605.23463`, insight: `**一个底座、三种人格(ASR/TTS/Realtime)** 是 Step-Audio 2.5 的核心叙事：同一 audio-language 主干通过不同后训练/部署机制分化出识别、合成、实时对话三种能力。巧妙之处在于"共享栈 + 分化优化"，避免维护三套独立模型。但也隐含风险——多任务共享容量是否会互相拖累？论文用 RLHF 中心化对齐来解这个问题，是统一语音交互模型(agent)路线的代表。` },
-    { q: `At decoding position t, the main branch predicts the next transcript token x_{t+1}. The h-th MTP branch predicts x_{t+1+h} for h in {1,...,5}, so one forward step produces a six-token proposal.`, src: `arXiv:2605.23463`, insight: `**MTP-5 是 ASR 提速的关键工程**：主分支预测下一 token，5 个 MTP 分支并行预测未来第 1~5 个 token，一次前向给出 6-token 提案，再用自回归验证accept/reject。这把"逐 token 生成"变成"逐步多 token 验证"，是本文把 LLM 推理加速(来自 LLM 社区 MTP)移植到 ASR 的直接证据。代价是训练要 freeze 主干再联合微调、5 个分支损失按等比衰减。` },
-    { q: `The ASR branch suggests a useful general lesson for multimodal systems: grounded generation tasks can sometimes be accelerated more aggressively than free-form text generation, precisely because the external modality reduces semantic branching.`, src: `arXiv:2605.23463`, insight: `**"声学确定性"(acoustic grounding 降低语义分叉)是 MTP 在 ASR 上比在自由文本上有效的根本原因**——给定一段已录好的音频，其文字转写高度确定，未来 token 的可预测性远高于开放生成。这是把 MTP 加速"白拿"的洞察：消融显示加 MTP-5 精度波动仅 0.06 绝对点。对其它多模态生成任务(带外部约束的)有普适启发。` },
-    { q: `The segment-level disagreement rate e_hat serves as a proxy for label reliability: e_hat = (# disagreed positions) / (# text units). Clips with e_hat > 0.05 are discarded to maintain high training signal fidelity.`, src: `arXiv:2605.23463`, insight: `**长音频伪标签流水线用"三系统 ROVER 投票 + 分歧率过滤"替代人工标注置信度**：每段由 3 个 ASR 独立转写，token 级投票，至少两系统一致才保留；分歧率 >5% 的片段直接丢弃。这是把"多系统一致性"当作弱监督质量门，本质是工业界把学术 trick(ROVER)串成自动化数据工厂。50K 小时长音频由此而来，配合 ~100K 短音频 SFT 打底。` },
-    { q: `StepAudio 2.5 ASR reaches an exceptionally low RTF of 0.0053, faster than the Qwen3-ASR-1.7B baseline despite using a larger decoder.`, src: `arXiv:2605.23463 Table 2 区域`, insight: `**RTF 0.0053 是速度与精度的双重卖点**：处理 30 秒音频仅约 0.16 秒，比 Qwen3-ASR-1.7B(0.0094)快约 1.8 倍，比 FunASR-Nano 快约 11 倍。关键论点"decoder scale no longer translates linearly into token-by-token latency"正是由 MTP 兑现——多数步一次吐多个已验证 token。需注意 RTF 是在 H800 单并发测得，真实并发/批处理下收益可能被不同瓶颈掩盖。` },
-    { q: `On Chinese benchmarks, the model improves the average CER to 2.97%, with a notable reduction in error rate on AISHELL-1 to 0.71% and a competitive 2.63% on FLEURS zh. The model reaches the best average long-form error rate of 3.70%.`, src: `arXiv:2605.23463 Table 1 区域`, insight: `**AISHELL-1 CER 0.71% 属断层领先**(第二约 1.49%)，中文平均 2.97%、长音频 3.70% 均居前。长音频强项来自原生 32K 上下文窗口，避免了分段拼接的边界错误。但需警惕：AISHELL-1 已是高度饱和的"简单集"，0.71% 与 0.8% 的差距在实际产品中感知有限；更该看长音频/噪声等难集。整体定位是"精度第一梯队 + 速度断层第一"。` }
-  ],
-  "seed_asr20": [
-    { q: `Seed-ASR is developed based on the framework of audio conditioned LLM (AcLLM), leveraging the capabilities of LLMs by inputting continuous speech representations together with contextual information into the LLM.`, src: `arXiv:2407.04675 摘要 (Seed-ASR v1 技术报告，v2.0 架构同源)`, insight: `**AcLLM 框架是 Seed-ASR 系列的基石**：连续语音表征 + 上下文一起喂进 LLM，让模型先"理解"再生成转写，而非纯自下而上声学匹配。v2.0(Doubao-Seed-ASR-2.0)沿用同一思路。这一范式的红利是能借 LLM 的世界知识与推理做命名实体/多音字消歧，代价是推理成本与延迟高于轻量 E2E 模型。注意：此句是 v1 论文原句，v2.0 未发 arXiv，以下 v1 句均描述其继承的底座。` },
-    { q: `Seed-ASR employs an audio encoder with nearly 2 billion parameters and a Mixture of Experts (MoE) LLM with tens of billions of parameters for modeling.`, src: `arXiv:2407.04675 引言 (Seed-ASR v1)`, insight: `**~2B 参数的 Conformer 系编码器 + 数十 B 的 MoE LLM** 是 Seed-ASR 的容量结构。v2.0 官方称"延续 1.0 版本中 20 亿参数高性能音频编码器优势"，印证该 2B encoder 被继承。MoE 让 LLM 容量大但激活参数可控，是兼顾能力与成本的典型选择。这也解释了为何 Seed-ASR 强中/英文且上下文推理突出——大模型容量+世界知识是直接来源。` },
-    { q: `Through stage-wise large-scale training and the elicitation of context-aware capabilities in LLM, Seed-ASR demonstrates significant improvement over end-to-end models on comprehensive evaluation sets, including multiple domains, accents/dialects and languages.`, src: `arXiv:2407.04675 摘要 (Seed-ASR v1)`, insight: `**阶段式训练 SSL -> SFT -> context SFT -> RL** 是 Seed-ASR 的 recipe。context SFT 用少量 context-speech-text 三元组"唤醒"LLM 从上下文抓线索的能力，RL(MWER)进一步加固。v2.0 把 RL 升级为 PPO 做"深度上下文推理"——从"目标词汇历史出现"进化到"泛化上下文逻辑推理"(如靠苏轼/苏辙背景锁定"筠州")。这是把 ASR 从匹配变成推理的代表性一步。` },
-    { q: `Additionally, Seed-ASR can be further deployed to support specific needs in various scenarios without requiring extra language models.`, src: `arXiv:2407.04675 摘要 (Seed-ASR v1)`, insight: `**上下文感知被统一进一个模型，无需外挂语言模型**——用历史对话、视频编辑历史、会议参与信息等作为统一上下文输入。这正是 Seed-ASR 区别于传统"ASR + 外部 LM 融合"的卖点，也是它"上下文整体关键词召回率提升 20%"的根因。v2.0 进一步把上下文从纯文本拓展到视觉(看图消歧)，强化"多模态场景理解"。` },
-    { q: `据公开信息/架构可知的推导论点：Seed-ASR 2.0 在 v1 的 AcLLM + 2B 编码器 + MoE LLM 底座上，新增 PPO 强化学习做上下文深度推理、引入多模态视觉消歧(单图/多图辅助识别易混淆字词)、并扩展支持日语/韩语/德语/法语等 13 种海外语种；其商业形态为闭源 API(豆包/火山引擎)，在 HF Open ASR Leaderboard 居前、中英文强。`, src: `推导（闭源，v2.0 无公开论文；依据火山引擎官方发布 + v1 arXiv:2407.04675）`, insight: `**v2.0 是闭源产品，无 arXiv，故此处为推导而非原句**。可确认的是：它基于已发表的 v1 底座、官方强调 PPO 深度推理与多模态视觉消歧、支持 13 种外语。需警惕"无公开统一数字"——闭源 API 的精度以官方宣称/榜单排名为准，公开基准与 API 实测常有差距(如 v1 论文 AISHELL-1 0.68% 而 API 实测约 1.52%)，引用 v2.0 数字时应注明来源口径。` },
-    { q: `据公开信息/架构可知的推导论点：Seed-ASR 2.0 强项在上下文感知与最完整的生产级后处理(内置标点、ITN、热词、说话人分离、毫秒级时间戳)，但闭源仅 API、不可自部署，且方言覆盖弱于 FireRedASR2-LLM(19 方言集平均约 15.39% vs 11.55%)。`, src: `推导（闭源；依据第三方横向测评汇总，非官方原句）`, insight: `**闭源模型的"可疑/夸张"点**：上下文推理强是真实差异化优势，但方言平均 CER 弱于 FireRedASR2 是第三方评测口径，非字节官方数字，仅作参考。整体看，Seed-ASR 2.0 的护城河在"工程化生产套件 + 多产品验证(抖音/飞书/Pico)"，而非单一 CER 指标——选它更看生态与后处理，而非纯基准。` }
-  ],
-  "qwen3_asr": [
-    { q: `In this report, we introduce Qwen3-ASR family, which includes two powerful all-in-one speech recognition models and a novel non-autoregressive speech forced alignment model. Qwen3-ASR-1.7B and Qwen3-ASR-0.6B are ASR models that support language identification and ASR for 52 languages and dialects.`, src: `arXiv:2601.21337 摘要`, insight: `**"全栈开源 ASR 家族"定位清晰**：1.7B/0.6B 两个 ASR + 一个 NAR 强制对齐器，统一支持 52 语言/方言与 LID。与 Seed-ASR(闭源)形成对照——Qwen3-ASR 走 Apache 2.0 开源路线，且把 Forced Alignment 也开源，补上了语音技术栈常被忽视的时间戳对齐环节。52 语言含 30 语言 + 22 汉语方言，多语种覆盖是它相对国产专门模型的最大差异点。` },
-    { q: `The experiments reveal that the 1.7B version achieves state-of-the-art performance among open-sourced ASR models and is competitive with the strongest proprietary APIs while the 0.6B version offers the best accuracy-efficiency trade-off.`, src: `arXiv:2601.21337 摘要`, insight: `**双档位分工明确**：1.7B 冲开源 SOTA、比肩最强专有 API；0.6B 主打精度-效率折衷、适合端侧。这与 FireRedASR2 的 LLM/AED 双变体、Step-Audio 的大小解码器思路一致，说明工业 ASR 已普遍采用"一大一小"产品矩阵。注意"competitive with strongest proprietary APIs"是对标闭源(含 Seed-ASR/Doubao)，但闭源 API 数字口径不一，横向比较需谨慎。` },
-    { q: `Qwen3-ASR-0.6B can achieve an average time-to-first-token as low as 92ms and transcribe 2,000 seconds speech in 1 second at a concurrency of 128.`, src: `arXiv:2601.21337 摘要`, insight: `**0.6B 的吞吐指标很亮眼**：TTFT 92ms、128 并发下 1 秒转录 2000 秒音频(约 2000x 实时)。靠的是动态 FlashAttention 窗口与轻量 AuT 编码器。但需注意这是 0.6B 小模型的卖点；1.7B 精度更高但实时性弱于 0.6B。对延迟敏感/高并发场景(字幕、实时转写)0.6B 是主推，对精度敏感场景上 1.7B。` },
-    { q: `Compared with traditional ASR, this paradigm can take advantage of the language modeling capabilities and world knowledge of large language models. The model first forms a high-level understanding of the audio signal and then generates transcription conditioned on this understanding, rather than relying solely on bottom-up acoustic pattern matching.`, src: `arXiv:2601.21337 引言`, insight: `**LALM 范式宣言**：先形成高层语义理解，再条件化生成转写，而非纯声学匹配。这把 ASR 从"声学匹配"推向"音频语义理解+生成"，天然利于长音频、抗噪、世界知识/命名实体、多语种——正是传统 E2E 模型的痛点。Qwen3-ASR 站在 Qwen3-Omni 肩膀上(post-trained from Qwen3-Omni)，复用其音频理解能力，是"多模态底座派生专用 ASR"的范例。` },
-    { q: `To the best of our knowledge, we introduce the first Large Language Model based speech forced aligner that produces accurate timestamps at flexible granularities, including word, sentence, and paragraph levels. In contrast to existing tools such as the Montreal Forced Aligner (MFA) and NeMo Forced Aligner (NFA), our model offers a unified, multilingual solution.`, src: `arXiv:2601.21337 贡献点`, insight: `**Qwen3-ForcedAligner 是本文最独特的贡献**：首个基于 LLM 的强制对齐器，词/句/段多级时间戳，且多语言统一、无需音素词典。传统 MFA/NFA 依赖音素词典、单语、慢、不支持流式/长音频。它把 FA 从"后处理工具"升级为 LALM 原生能力，能规模化标注 speech-transcript 对(数据飞轮)。这是开源里补"全功能时间戳对齐"空白的实在价值，不止是基准刷分。` },
-    { q: `We conduct comprehensive internal evaluation besides the open-sourced benchmarks as ASR models might differ little on open-sourced benchmark scores but exhibit significant quality differences in real-world scenarios.`, src: `arXiv:2601.21337 摘要/引言`, insight: `**"公开基准趋近标注误差极限，故自建内部鲁棒性评测"是诚实且关键的方法论声明**——内部集覆盖 16 种英语口音、22 汉语方言、老人/儿童语音、极低信噪比等。这直面了当前 ASR 公开榜单饱和、CER 数字区分度失效的问题。也暗示各厂"居前"的宣称需看难集而非 AISHELL-1 这类简单集。对读者：评 Qwen3-ASR 应更看重其鲁棒性内部集结论而非公开平均 CER。` }
-  ]
-};
-const INSIGHTS_PART_B = {
-  "meta_omni": [
-    { q: `On the modeling side, Omnilingual ASR scales self-supervised pre-training to 7B parameters to learn robust speech representations and introduces an encoder–decoder architecture designed for zero-shot generalization, leveraging a large language model-inspired decoder to effectively exploit these representations.`, src: `arXiv:2511.09690 摘要`, insight: `把 wav2vec 2.0 从 300M 一路堆到 **7B**，是语音自监督（SSL）领域迄今最大的公开模型，直接超过此前 Google USM / Meta XLS-R 约 2B 的天花板。设计动机是用规模换取跨语言的鲁棒表征；但 7B 的 SSL encoder + LLM-style decoder 也意味着推理成本极高，更像‘研究性底座’而非边缘部署模型，实际落地要靠 300M 小模型。` },
-    { q: `We then built two decoder variants to map those into character tokens: the first relies on a traditional connectionist temporal classification (CTC) objective, while the second leverages a traditional transformer decoder, commonly used in LLMs, dubbed LLM-ASR.`, src: `Meta Blog: Omnilingual ASR`, insight: `同一套 7B 语音表征上面挂两种解码头：**CTC** 便宜直接、**LLM-ASR**（Transformer decoder）借 LLM 的上下文能力专门救长尾语言。这种‘一个 encoder、两种解码范式’的拆分很务实——把昂贵的表示学习与解码策略解耦，社区可按算力取舍。` },
-    { q: `Our 7B-LLM-ASR system achieves state-of-the-art performance across 1,600+ languages, with character error rates (CER) below 10 for 78% of those languages.`, src: `Meta Blog: Omnilingual ASR`, insight: `78% 的语言 CER<10 是这份工作的核心卖点，但需注意 CER 对低资源语言本身‘字符少、容错高’就有偏袒；且这是 7B 全量模型下的结果，混杂了高资源语言拉高均值。**可疑点**：博客口径与 arXiv 摘要未列该数字，应以后者正式评测章节为准。` },
-    { q: `Omnilingual ASR enables communities to introduce unserved languages with only a handful of their own data samples.`, src: `arXiv:2511.09690 摘要`, insight: `把 LLM 的 **in-context learning** 借到 ASR 上，就是所谓的 Bring-Your-Own-Language：训练时给 N+1 个同语言语音-文本对，前 N 个当上下文拼进 decoder prompt。设计很巧妙——让社区无需专家微调、无需高端算力即可‘带自己的语言入场’。但零样本上限仍远低于全量训练，属于可扩展而非高精度路径。` },
-    { q: `Incorporating public resources with community-sourced recordings gathered through compensated local partnerships, Omnilingual ASR expands coverage to more than 1,600 languages, the largest such effort to date—including over 500 never before served by any ASR system.`, src: `arXiv:2511.09690 摘要`, insight: `1600+ 语言、其中 500+ 从未被任何 ASR 覆盖，是规模上的硬指标。值得肯定的是强调 **compensated local partnerships**（有偿社区合作）与伦理反思，规避了早年被诟病的‘掠夺式’低资源语音采集，把开源模型+工具当作降低参与门槛的手段。` }
-  ],
-  "parakeet_tdt": [
-    { q: `TDT extends conventional RNN-Transducer architectures by jointly predicting both a token and its duration, i.e. the number of input frames covered by the emitted token.`, src: `arXiv:2304.06795 摘要`, insight: `TDT 的核心就是从 RNN-T 里把‘token’和‘duration’解耦联合预测。duration 表示这个 token 覆盖了几个输入帧——这一步建模让解码不再被 blank 帧绑架，是从序列建模层面解决 Transducer 推理慢的根本思路，而非靠工程 trick。` },
-    { q: `During inference, TDT models can skip input frames guided by the predicted duration output, which makes them significantly faster than conventional Transducers which process the encoder output frame by frame.`, src: `arXiv:2304.06795 摘要`, insight: `**frame skipping** 是速度收益的直接来源：传统 Transducer 逐帧走、大量 blank 重复计算；TDT 按预测 duration 一次跳过多帧。这也是 Parakeet-TDT 能在批处理下跑出 RTFx 3332 的架构根基——吞吐优势来自跳过而非单纯参数量小。` },
-    { q: `TDT models for Speech Recognition achieve better accuracy and up to 2.82X faster inference than conventional Transducers.`, src: `arXiv:2304.06795 摘要`, insight: `难能可贵的是‘又快又准’：通常加速会以精度为代价，但 TDT 在 ASR 上同时拿到更好 accuracy 与最高 2.82x 加速。论文归因之一是 TDT 对噪声更鲁棒、且不会因重复 token 文本而退化——这对实际长静音/重复音场景很关键。` },
-    { q: `TDT (Token-and-Duration Transducer) is a generalization of conventional Transducers by decoupling token and duration predictions. Unlike conventional Transducers which produces a lot of blanks during inference, a TDT model can skip majority of blank predictions by using the duration output (up to 4 frames for this parakeet-tdt-1.1b model), thus brings significant inference speed-up.`, src: `NVIDIA NeMo Parakeet-TDT 模型卡 / README`, insight: `落实到 Parakeet 具体实现：**FastConformer 编码器（8x 深度可分离卷积下采样）+ TDT 解码器**。单条最多跳 4 帧是工程上稳妥的截断，避免 duration 预测过大导致跳飞。FastConformer 先把序列压短、TDT 再跳帧，两层加速叠加才换来对 Whisper 近 50x 的吞吐差。` },
-    { q: `Parakeet-TDT is the first model to achieve an average WER below 7.0 on the [Hugging Face Open ASR] leaderboard. Additionally, it achieves an impressive real-time factor (RTF) of 8.8e-3, 64% faster than Parakeet-RNNT-1.1b.`, src: `NVIDIA Developer Blog: Turbocharge ASR with Parakeet-TDT`, insight: `1.1B 版本首个把 Open ASR 榜平均 WER 压到 7.0 以下，且比同尺寸 RNNT 快 64%。注意这是 1.1B 的旗舰数字；而用户给的批处理 RTFx 3332 对应的是更小的 **0.6B-v3**（Open ASR Leaderboard 报告 3332.74），体现‘用更小模型换极致吞吐’的产品定位。` },
-    { q: `On the Open ASR Leaderboard, Parakeet-TDT-0.6B-v3 reports an RTFx of 3,332.74, i.e. it transcribes roughly 3,300x faster than real time under batched datacenter serving.`, src: `Open ASR Leaderboard / NVIDIA Parakeet-TDT-0.6B-v3 模型卡`, insight: `RTFx 3332 是**批处理、数据中心硬件下的最优值**，绝非笔记本可达；实测消费级 GPU 通常只有几十到几百倍。解读时要分清：这个数字是‘吞吐上限’的营销锚点，真正有参考意义的是它相对 Whisper-large-v3（约 68x）近 50x 的差距量级，而非绝对值本身。` }
-  ],
-  "luna_tts": [
-    { q: `We propose Luna-TTS Family, a family of diffusion-language-model-based TTS systems pretrained on 1 million hours of speech across Chinese, English, Japanese, and Korean.`, src: `arXiv:2608.11593 摘要`, insight: `用 **diffusion language model** 而非自回归 codec LM 做 TTS，直接规避 AR 的三大结构代价：延迟随句长线性增长、已提交前缀上的误差累积、以及对 RVQ token 网格强加了一个本不存在的‘从左到右’生成顺序。1M 小时多语种预训练是质量底座，也解释了它能在 Seed-TTS 四项全胜。` },
-    { q: `The family is built by progressive adaptation of a pretrained AR text LLM, from causal to bidirectional and finally to block-causal attention.`, src: `arXiv:2608.11593 摘要`, insight: `**巧妙之处**在于‘渐进改造’：拿现成 AR 文本 LLM 当初始化，注意力从 causal 改 bidirectional 再改 block-causal，共享单一 0.6B backbone 血脉。这样既蹭到文本 LLM 的语言/归一化能力，又逐步摆脱自回归约束；比从零训扩散模型省算力，也比纯 AR 更易并行。` },
-    { q: `Luna-TTS is fully non-autoregressive: it generates the entire RVQ token grid of an utterance in a fixed number of parallel refinement steps, with zero-shot voice cloning and speech editing arising natively as infilling.`, src: `arXiv:2608.11593 摘要`, insight: `全非自回归 + 固定步数并行精炼，是延迟可控的关键（不再随句长变长）。更漂亮的是：**zero-shot 克隆和语音编辑天然就是 infilling**——给定参考音频/掩码区域当上下文，扩散模型直接补全，无需额外模块。这把‘克隆、编辑、生成’统一进同一范式。` },
-    { q: `Luna-Codec is a causal neural codec that encodes 24 kHz speech into a token grid at 25 Hz with Q=8 residual codebooks of 2048 entries each, i.e., 200 tokens per second at an effective bitrate of 2.2 kbps.`, src: `arXiv:2608.11593`, insight: `**Luna-Codec** 25Hz / 8 codebook / 2.2kbps：第一码本用预训练 WavLM 语义蒸馏锚定语义，高层码本承载音色/环境/情感/韵律。相对 Qwen 的 12.5Hz，Luna 用更高帧率+更低码本词表换细节，属于‘高保真离散表征’路线；2.2kbps 的低位率说明量化很紧。` },
-    { q: `a reinforcement-learning stage applies GRPO, with policy ratios computed over the realized denoising trajectory.`, src: `arXiv:2608.11593 摘要`, insight: `把 **GRPO** 从 LLM 推理对齐搬到了非自回归离散掩码扩散上，且 policy ratio 在‘真实去噪轨迹’上算——这是本工作的方法论亮点。难点在于扩散是随机多步过程，要定义可微/可采样的 trajectory 才能做策略梯度；作者用 realized denoising trajectory 规避了反向传播整条扩散链的麻烦。` },
-    { q: `On Seed-TTS-Eval, Luna-TTS achieves the best results on all four metrics ... (0.73 CER / 79.7 SIM on test-zh, 1.49 WER / 76.8 SIM on test-en); Luna-TTS Realtime achieves an end-to-end RTF of 0.0240 and commits its first 1.28s decoded audio block in 41.6 ms.`, src: `arXiv:2608.11593 摘要`, insight: `**数字解读**：0.6B 参数下 zh-CER 0.73 / en-WER 1.49 全维度第一，且 RTF 0.024 即约 41x 实时、首包 41.6ms。相对同协议 Qwen-Audio-3.0-TTS（en-WER 1.54）它略胜，但两者都远好于 Seed-TTS 基线；需注意榜单多来自各家自报、跨报告比较要同协议才公平。` }
+    { q:`Rather than treating these tasks as architecturally distinct, we operate on the premise that once text and audio share a multimodal representational space, task specialization becomes a matter of operational regimes: data construction, optimization targets, and decoding constraints.`, src:`arXiv:2605.23463 摘要`, insight:`StepAudio 2.5 的理论前提是：**ASR/TTS/实时对话不是三种架构，而是同一多模态表征空间里的不同「操作机制」**（数据构造、优化目标、解码约束）。这比「加几个任务头」更彻底——它用统一 backbone + 分支路训练去逼近专用系统，是统一音频-语言模型路线的一次硬核验证。` },
+    { q:`the ASR branch advances transcription efficiency via verifiable multi-token decoding; the TTS branch achieves controllable, expressive synthesis through preference-based RLHF and context-rich supervision; and the Realtime branch realizes low-latency, persona-consistent dialogue via generative reward modeling within an RLHF framework.`, src:`arXiv:2605.23463 摘要`, insight:`落地手段是 **把 RLHF 做成三条专业化分支**：ASR 用可验证多 token 解码（MTP）提速、TTS 用偏好 RLHF 控表达、Realtime 用生成式奖励模型保人格一致。亮点在于「可验证」信号用于 ASR/TTS 这种有 ground-truth 的任务，而开放式对话质量则用生成奖励兜底——任务性质决定奖励来源不同。` },
+    { q:`Despite this shared direction, simultaneously meeting the deployment requirements of all three capabilities within a single model remains challenging.`, src:`arXiv:2605.23463 引言`, insight:`作者也承认 **单模型同时满足三套部署需求（长转录/可控合成/低延迟对话）本就困难**，三者目标并不天然对齐。统一模型的隐性代价是：任一分支要做到极致都需专门 RLHF 工程，且极端条件下可能仍略逊于纯专用系统——所以「匹配/超越专用系统」的结论要分场景看，不能当成全面碾压。` }
   ],
   "qwen_audio_tts": [
-    { q: `In this report, we present Qwen-Audio-3.0-TTS, a production-oriented speech synthesis system ... It combines a 12.5 Hz low-frame-rate speech tokenizer for reduced inference latency with a five-stage progressive training paradigm for coordinated language model (LM) and flow-matching model (FM) optimization.`, src: `arXiv:2607.23938 摘要`, insight: `**12.5Hz 低帧率 tokenizer** 直接砍掉自回归解码长度（相对 25Hz 减半），是延迟与成本的主因；配 **五阶段渐进训练** 把 LM（语义规划）与 FM（声学重建）协调起来。‘production-oriented’ 定位说明它优先工程可用性，而非单纯刷榜。` },
-    { q: `It also ranks first on the independent Artificial Analysis Text-to-Speech Leaderboard.`, src: `arXiv:2607.23938 摘要`, insight: `Artificial Analysis 榜是盲测 pairwise 偏好榜（Elo），Qwen-Audio-3.0-TTS-Plus 以 Elo 1237、95% 置信区间与 Simba 3.2 重叠而排第一。**注意**：‘#1’带有置信区间重叠，属并列领先而非碾压；且商业榜样本/性别口音配比会影响结果，不能等同学术基准全面最优。` },
-    { q: `intrinsic ASR results ... show that increasing the codebook size recovers the performance loss caused by reducing the frame rate.`, src: `arXiv:2607.23938 第4.2节（表1）`, insight: `这是 12.5Hz 路线的**关键补偿机制**：降帧率丢内容/说话人信息，就靠放大 codebook 词表补回（59,049 词表在 12.5Hz 下 CER 反超 25Hz 基线）。本质是‘时间分辨率换码本容量’的率失真权衡，也解释了为何它敢用半帧率而不掉点。` },
-    { q: `it supports 16 languages, 20 Chinese dialect regions, one-pass long-form synthesis up to 3 minutes, and robust generation from noisy, reverberant, or unclear reference speech.`, src: `arXiv:2607.23938 摘要`, insight: `**3 分钟一次性长音频** + 噪声/混响参考鲁棒性是生产场景硬需求。一次性生成长序列对 LM 的上下文一致性和 FM 的稳定性都是考验；论文用鲁棒性训练+FM 强化学习专门压‘劣质参考音’下的退化，是针对真实客服/电话场景的有意设计。` },
-    { q: `Unlike traditional systems that map discrete tokens directly to audio, Qwen-Audio-3.0-TTS uses a Flow-Matching model ... conditioned on the continuous hidden states from the language model, rather than just the discrete embeddings.`, src: `alphaXiv overview / arXiv:2607.23938 架构`, insight: `**LM-FM 协同的精髓**在于 FM（DiT）不直接吃离散 token embedding，而是吃 LM 的连续隐状态 H_lm。这绕开了‘token-only 接口’的信息瓶颈——量化丢掉的细粒度声学信息靠连续隐状态补回，是 CosyVoice 系列‘高效语义规划 + 连续声学渲染’路线的延续与强化。` },
-    { q: `The model interprets free-style natural-language instructions describing role, emotion, speaking style, rate, timbre, and accent. In parallel, 86 newly added fine-grained inline tags enable localized control at phrase and word level.`, src: `arXiv:2607.23938 关键贡献`, insight: `控制力分两层：**自由自然语言指令**（角色/情感/风格/语速/音色/口音）+ **86 个细粒度行内标签**做词/短语级局部控制（含笑、呼吸、咳嗽、叹气等非语言事件）。比额外训 style encoder 更轻；但 86 个标签的标注成本与跨语言一致性是隐含的工程负担。` }
-  ]
-};
-const INSIGHTS_PART_C = {
-  "zonos2": [
-    { q: `ZONOS2 is a sparse Mixture of Experts (MoE) model with 900 million active parameters and 8 billion total parameters licensed under Apache 2.0.`, src: `Zyphra 官方博客 our-work/zonos2`, insight: `把 MoE 引入 TTS 是 ZONOS2 的核心卖点：总参数 8B、激活仅 900M，意味着推理时只路由少量 expert，从而在**不牺牲质量的前提下把吞吐拉满**。这背后是 Zyphra 的 ZAYA MoE recipe（含自研 MLP router）。对 TTS 这种对实时性极敏感的任务，稀疏激活比单纯堆 dense 参数更务实——同样显存下能吃下更大容量。` },
-    { q: `Introducing MoE and removing dependence on Classifier Free Guidance (CFG) allows us to grow model size from 1.6B to 8B while improving real-time throughput by 4x compared to our previous model.`, src: `Zyphra 官方博客 our-work/zonos2`, insight: `**去掉 CFG** 是工程上的巧思。传统流匹配/扩散 TTS 靠 CFG（一次前向要跑 conditioned + unconditioned 两路）换可控性，代价是 2x 算力。ZONOS2 用 MoE + 更好的 conditioning 信号替代 CFG，模型做大 5 倍反而快 4 倍。说明它认为“规模 + 强条件”比“CFG 双路”更能兼顾质量与速度，也降低了部署成本。` },
-    { q: `ZONOS2 predicts Descript Audio Codec (DAC) tokens, enabling it to generate studio-quality 44.1 kHz audio.`, src: `Zyphra 官方博客 our-work/zonos2`, insight: `选 DAC（44.1kHz、高保真 codec）而非更低码率的 codec，是质量取向的明确信号，但 DAC 多 codebook、token 建模难度远高于低质 codec。ZONOS2 用“**模型规模 + 数据规模**”硬啃下这个难度，再用 delay pattern 保持各 codebook 间串行依赖、并行生成。属于“用大力出奇迹”换高保真，代价是训练和推理复杂度都更高。` },
-    { q: `ZONOS2 represents text inputs as raw UTF-8 bytes, eliminating the need for an explicit phonemization step.`, src: `Zyphra 官方博客 our-work/zonos2`, insight: `**UTF-8 字节级输入**直接绕开音素化，是对多语种（尤其中日韩等音素化困难语言）和 code-switching 的优雅解法：不再依赖语言标签和音素词典，天然支持句内混语。这是和 CosyVoice 等仍需前端文本规整的路线不同的选择，也顺带消除了“错误语言标签/词典”导致的失败模式——代价是文本到音素的映射全交给模型学，对数据量和容量要求更高。` },
-    { q: `we increased our training set from roughly 200,000 hours to over six million hours (or approximately 707 years) of audio.`, src: `Zyphra 官方博客 our-work/zonos2`, insight: `训练数据从 20 万小时暴涨到 **600 万+ 小时**（约 707 年），是 ZONOS2 敢于上 8B MoE + DAC + 字节输入这套“重”组合的底气。规模效应让它能在不显式音素化的情况下覆盖广语言、抗噪、降低幻觉。不过 6M 小时 web-scale 音频的清洗成本极高，也引出下面三阶段调度过滤的设计。` },
-    { q: `we release ZONOS2 with two modes - a stable mode which emphasizes clean output and an expressive mode which focuses purely on voice-cloning naturalness and fidelity.`, src: `Zyphra 官方博客 our-work/zonos2`, insight: `**stable / expressive 双模式**直击零样本克隆的真实痛点：用户既想要“修掉”源音频噪音的干净版，也想要“原汁原味”还原背景噪音和细节的保真版。这其实是把“保真度 vs 干净度”的权衡交给用户而非模型硬编码。配合 20x 带宽的 ECAPA-TDNN speaker embedding，克隆细腻度明显提升。值得注意 ZTTS1-Eval 主打“别只让 ASR 觉得干净、却漂移了说话人”，呼应了其对 speaker similarity/prosody 的强调。` }
+    { q:`Building on CosyVoice2 and CosyVoice3, it retains efficient semantic planning while conditioning the flow-matching acoustic renderer on continuous LM hidden states and jointly optimizing the LM and FM, thereby alleviating the information bottleneck of a token-only interface.`, src:`arXiv:2607.23938 引言`, insight:`Qwen-Audio-3.0-TTS 的关键改动是 **让 flow-matching 声学渲染器直接条件于连续 LM 隐状态、并联合优化 LM 与 FM**，缓解了 CosyVoice 系列「单 codebook 离散接口」的信息/优化瓶颈。等于在保持 AR 语义规划高效的同时，把声学生成从离散 token 约束里解放出来。` },
+    { q:`A 12.5 Hz supervised speech tokenizer reduces autoregressive decoding cost while retaining content and speaker information.`, src:`arXiv:2607.23938 贡献`, insight:`**12.5Hz 低帧率 tokenizer** 是它兼顾效率与质量的支点：相比 25Hz，AR 解码步数减半，长音频延迟和成本明显下降，又靠监督训练保住内容与说话人信息。配合五阶段渐进训练（独立预训练→联合退火→LM RL→FM 鲁棒→FM RL）系统化解耦 LM 与 FM 的优化节奏。` },
+    { q:`Standard short-form clean-speech benchmarks capture only part of these requirements and can obscure failures in multilingual, dialectal, long-form, and adverse acoustic conditions.`, src:`arXiv:2607.23938 引言`, insight:`作者自己点破：**短音频干净语音基准只能覆盖部分需求，会掩盖多语/方言/长音频/噪声下的失败**。这既是评测警示，也间接暴露该模型的真实风险区——其主打的 16 语言、20 方言区、3 分钟长音频、抗噪参考等能力，恰恰是最难被标准榜验证、最需要在生产环境实测的部分。` }
   ],
-  "cosyvoice3": [
-    { q: `In this paper, we present CosyVoice 3, an improved model designed for zero-shot multilingual speech synthesis in the wild, surpassing its predecessor in content consistency, speaker similarity, and prosody naturalness.`, src: `arXiv:2505.17589 摘要`, insight: `CosyVoice 3 的叙事主线是 **scaling-up + post-training** 把“in-the-wild”（真实杂乱场景）零样本多语种合成推到新高度。它承接 CosyVoice 2（LLM + chunk-aware flow matching 的两阶段混合架构），明确把内容一致性、说话人相似度、韵律自然度三块作为超越前代的发力点——这正是工业级 TTS 落地最容易翻车的地方。` },
-    { q: `A novel speech tokenizer to improve prosody naturalness, developed via supervised multi-task training, including automatic speech recognition, speech emotion recognition, language identification, audio event detection, and speaker analysis.`, src: `arXiv:2505.17589 摘要`, insight: `**用多任务监督（ASR/SER/LID/AED/speaker）训一个 speech tokenizer** 来提升韵律自然度，是 CosyVoice 3 区别于前代的关键。思路是把语义、情感、语种、事件、说话人等多维信息都塞进 token 表征，让后续 LM 拿到更丰富的“韵律线索”。这比单纯用一段式 codec 更可控，也解释了它为何在 prosody 上能压过 CosyVoice 2。` },
-    { q: `A new differentiable reward model for post-training applicable not only to CosyVoice 3 but also to other LLM-based speech synthesis models.`, src: `arXiv:2505.17589 摘要`, insight: `**可微分 reward model 做 post-training（类 RLHF/DPO 思路）** 是这篇的方法亮点，而且作者特意强调“可迁移到其他 LLM-based TTS”，姿态上是想做成通用后训练组件。把主观听感/相似度等做成可微奖励直接优化生成模型，弥补了“两阶段混合系统难端到端对齐”的短板，是 2025 年 TTS 普遍从“建模创新”转向“后训练对齐”趋势的代表。` },
-    { q: `Dataset Size Scaling: Training data is expanded from ten thousand hours to one million hours, encompassing 9 languages and 18 Chinese dialects across various domains and text formats.`, src: `arXiv:2505.17589 摘要`, insight: `数据从 1 万小时扩到 **100 万小时**、覆盖 9 种语言 + 18 种中国方言，方向明确是“量级 + 域多样 + 文本格式多样”。方言维度（粤语等 18 种）是其多语种叙事里最有辨识度的部分。不过相对 ZONOS2 的 6M 小时、OmniVoice 的 581k 小时，CosyVoice 3 的 1M 小时偏“精”而非“巨”，更像阿里体系内可控数据采集路线的产物。` },
-    { q: `Model Size Scaling: Model parameters are increased from 0.5 billion to 1.5 billion, resulting in enhanced performance on our multilingual benchmark due to the larger model capacity.`, src: `arXiv:2505.17589 摘要`, insight: `模型从 0.5B 涨到 **1.5B**，3 倍容量换来多语种 benchmark 提升，说明在 1.5B 这个量级 CosyVoice 3 仍未“吃饱”、规模仍有效。和 ZONOS2（8B MoE）相比它刻意保持小模型、低延迟、可流式，是工业部署友好路线——用 post-training 和后处理的巧劲补规模差距，而非纯堆参数。` }
-  ],
-  "mega_tts3": [
-    { q: `mainstream systems still suffer from issues related to speech-text alignment modeling: 1) models without explicit speech-text alignment modeling exhibit less robustness, especially for hard sentences in practical applications; 2) predefined alignment-based models suffer from naturalness constraints of forced alignments.`, src: `arXiv:2502.18924 摘要`, insight: `这段**精准点出 TTS 对齐的两难**：无显式对齐（如纯扩散/NAR）鲁棒性差、易在难句上翻车；而强制对齐（forced alignment，如 Montreal Forced Aligner 类）又限制了自然度。MegaTTS 3 的整个贡献都围绕“怎么在两者之间找平衡点”展开，是近年 diffusion/flow TTS 反思 forced alignment 的代表性表述。` },
-    { q: `we provide sparse alignment boundaries to MegaTTS 3 to reduce the difficulty of alignment without limiting the search space, thereby achieving high naturalness.`, src: `arXiv:2502.18924 摘要`, insight: `**sparse alignment（稀疏对齐边界）** 是核心创新：只给模型“松散的区间边界”而非逐帧强制对齐，既大幅降低对齐学习难度、提升鲁棒性，又不像 forced alignment 那样收窄搜索空间、牺牲自然度。相当于“给约束但留自由度”，是兼顾 robustness 与 naturalness 的聪明折中，也是它敢说自己 SOTA 零样本质量的来源之一。` },
-    { q: `we employ a multi-condition classifier-free guidance strategy for accent intensity adjustment`, src: `arXiv:2502.18924 摘要`, insight: `**multi-condition CFG 控制口音强度**是个实用亮点：同一说话人可在“标准口音 ↔ 原生口音”间连续调节。传统零样本 TTS 的口音基本由参考音频决定、难以干预，这里把口音强度显式做成可调控条件，对跨语言/方言合成、本地化配音很实用，也体现了 MegaTTS 系列一贯重视“可控性”的取向。` },
-    { q: `we adopt the piecewise rectified flow technique to accelerate the generation process.`, src: `arXiv:2502.18924 摘要`, insight: `**piecewise rectified flow（分段整流流）** 用于加速：rectified flow 本就是把扩散路径“拉直”以减少采样步数的技术，分段进一步逼近直连。配合下面“8 步采样”，它把 flow-matching 类模型的推理成本压到可用级别，是和 CosyVoice 2/3 的 flow matching 一脉相承、但在加速上更激进的工程取舍。` },
-    { q: `our system can generate high-quality one-minute speech with only 8 sampling steps.`, src: `arXiv:2502.18924 摘要`, insight: `**仅 8 步采样生成一分钟高质量语音**是论文最抓眼球的数字。对 latent diffusion/flow TTS 而言，步数直接决定 RTF，8 步意味着接近实时的潜力。需理性看待：这是“高质量”下的宣称，且一分钟长音频对对齐和一致性要求高，sparse alignment + piecewise rectified flow 两者合力才撑起这个数字，落地时仍要看主观 MOS 与竞品（如 ZONOS2、OmniVoice）的真实对比。` }
-  ],
-  "omnivoice": [
-    { q: `We present OmniVoice, a massive multilingual zero-shot text-to-speech (TTS) model that scales to over 600 languages.`, src: `arXiv:2604.00688 摘要`, insight: `**600+ 语言**是 OmniVoice 最炸裂的卖点，远超 ElevenLabs（约 29）、MiniMax（约 24）等闭源产品的覆盖。k2-fsa（Daniel Povey 团队）路线一贯偏“开源、低资源友好”，600+ 语种基本是把大量濒危/低资源语言纳入零样本合成，立意更像“语言技术平权/文化保护”，而非单纯刷 MOS。数字虽惊人，但多数低资源语言的音质与相似度上限受参考音频和数据量制约，需听 demo 谨慎判断。` },
-    { q: `Unlike conventional discrete NAR models that suffer from performance bottlenecks in complex two-stage (text-to-semantic-to-acoustic) pipelines, OmniVoice directly maps text to multi-codebook acoustic tokens.`, src: `arXiv:2604.00688 摘要`, insight: `**单阶段、文本直接到多 codebook 声学 token** 是架构核心。传统离散 NAR（如 VALL-E 类先文本→语义、再语义→声学的两段式）会在级联处累积误差、损失信息；OmniVoice 跳过中间语义层，用 diffusion LM 风格 NAR 一步到位。好处是管道极简、信息损失小，挑战是“直接对齐文本与多 codebook 声学 token”对齐难度陡增——于是下面两个技术创新正是为补这个坑。` },
-    { q: `a full-codebook random masking strategy for efficient training`, src: `arXiv:2604.00688 摘要`, insight: `**full-codebook random masking（全 codebook 随机掩码）** 是针对“文本→多 codebook 声学 token”训练难点的关键 trick。扩散语言模型靠随机掩码做去噪训练，而“全 codebook”意味着同时掩多个 codebook 通道，迫使模型学到跨 codebook 的联合分布，提升训练效率与声学一致性。这是把 BERT-style masked LM 训练思想推广到多码本 codec 的巧妙适配。` },
-    { q: `initialization from a pre-trained LLM to ensure superior intelligibility.`, src: `arXiv:2604.00688 摘要`, insight: `**从预训练 LLM 初始化**保证可懂度，是 OmniVoice 能在 600+ 语言上不“嘴瓢”的关键。LLM 自带强文本/语言先验，迁移到 TTS 后显著缓解低资源语言的 content consistency（CER/WER）问题——和 CosyVoice 2 “用文本 LLM 初始化”思路同源，但放到极广语种 + 单阶段架构下，LLM 先验的兜底作用更关键，也解释了它为何在中文/英文/多语种基准都报 SOTA。` },
-    { q: `By leveraging a 581k-hour multilingual dataset curated entirely from open-source data, OmniVoice achieves the broadest language coverage to date and delivers state-of-the-art performance across Chinese, English, and diverse multilingual benchmarks.`, src: `arXiv:2604.00688 摘要`, insight: `**581k 小时、全部来自开源数据**这一点很“k2-fsa”：可复现、可审计、不依赖私采商业语料。581k 小时在绝对量级上不及 ZONOS2 的 6M 小时，但胜在“全开源 + 600+ 语种”的覆盖密度。结论宣称在中文/英文/多语种达 SOTA，需注意其 SOTA 多在“覆盖广度”维度成立；与重金闭源系统在主流语种 MOS 上的头对头比较，仍建议看盲测而非仅看论文表述。` }
-  ]
-};
-const INSIGHTS_PART_D = {
-  "whisper": [
-    { q:`As we have scaled Whisper, we have observed that larger models have made steady and reliable progress on reducing perception-related errors such as confusing similar-sounding words.`, src:`arXiv:2212.04356 结论`, insight:`这是典型的**规模定律**在感知层面的体现：模型越大，对近音词混淆等声学感知错误下降越稳定。但注意它只改善了"听得清"的部分，说明纯 scale-up 对语义/对齐类错误帮助有限。后续工作应把算力更多投向解码与对齐策略。` },
-    { q:`Many remaining errors, particularly in long-form transcription, seem more stubborn in nature and decidedly non-human or perceptual.`, src:`arXiv:2212.04356 结论`, insight:`长音频转录里的"非人类"错误（重复、幻觉、跳段）暴露了 seq2seq 加 LM 在长上下文上的根本短板。这类错误不是数据噪声，而是**架构性失败模式**，单纯加数据难以消除，需要引入段落级约束或外部对齐机制。` },
-    { q:`They are a combination of failure modes of seq2seq models, language models, and text-audio alignment.`, src:`arXiv:2212.04356 结论`, insight:`作者把错误归因到三类组件，提示优化方向应是**解耦**：单独强化 LM 的合法性、seq2seq 的声学一致性、以及时间戳对齐。对工程落地而言，长音频应优先做 VAD 切分再拼接，而非整段喂入。` },
-    { q:`据公开信息/架构可知的推导论点：Whisper 用约 68 万小时弱标注多语种音频做大规模弱监督预训练，并把 ASR、翻译、语种识别等统一为序列到序列任务。`, src:`推导（依据 arXiv:2212.04356 摘要）`, insight:`弱监督的核心价值在于**绕过人工精标**，用网络字幕这类"噪声标签"换取规模。代价是标签噪声会直接带进模型，导致长尾语种和专有名词出错。横向看，这与 PaLM/LaMDA 的"弱监督换规模"思路一致。` },
-    { q:`据公开信息/架构可知的推导论点：Whisper 以整段音频为输入、非流式推理，缺乏对实时交互的支持。`, src:`推导（依据 arXiv:2212.04356 摘要）`, insight:`这是为"转写"而非"对话"设计的取舍：**离线批量**场景下精度优先，但无法做低延迟语音交互。若要做实时，需要外接 VAD 加流式解码，会牺牲部分长上下文一致性。与后来的 GPT-4o、Mini-Omni 形成鲜明对照。` }
-  ],
-  "wav2vec2": [
-    { q:`据公开信息/架构可知的推导论点：Wav2Vec 2.0 在掩码后的连续语音表示与量化后的自监督目标之间用 InfoNCE 对比损失训练，全程无需音素或语言学标注。`, src:`推导（依据 arXiv:2006.11477 摘要）`, insight:`关键创新是**把"表示学习"和"离散化"分开**：先学连续表示，再用向量量化器提供离散目标。相比传统 HMM/GMM 流程，它彻底摆脱了对对齐和词典的依赖。这也是其后 wav2vec 系列和 HuBERT 的共同基石。` },
-    { q:`据公开信息/架构可知的推导论点：模型以约 49Hz 的帧率工作，并随机掩码约 49% 的时间步，迫使网络从上下文推断被遮部分。`, src:`推导（依据 arXiv:2006.11477 摘要）`, insight:`49% 的高掩码率借鉴了 BERT 的"完形填空"思想，但音频是**连续且强相关的**，高掩码迫使模型捕捉长程结构而非局部平滑。代价是训练信号稀疏，对小数据量更敏感。` },
-    { q:`据公开信息/架构可知的推导论点：仅用 10 分钟带标签数据微调即可逼近强监督基线，100 小时带标签可达到接近 960 小时全监督的效果。`, src:`推导（依据 arXiv:2006.11477 摘要）`, insight:`这组数据是 SSL 的"里程碑证据"：自监督预训练把**标注成本降低两个数量级**。但需注意 10 分钟结果仅在 LibriSpeech 这一相对干净、领域单一的基准上成立，迁移到真实嘈杂场景会打折扣。` },
-    { q:`据公开信息/架构可知的推导论点：量化器采用 Gumbel-softmax 在多个残差层上做向量量化，得到离散语音单元。`, src:`推导（依据 arXiv:2006.11477 摘要）`, insight:`多组残差量化能保留比单层更丰富的声学信息，但也引入**离散化信息损失**——部分细节永远无法被目标表达。这是后续 HuBERT 改用聚类软标签、以及 VQ 改进工作的重要动机。` },
-    { q:`据公开信息/架构可知的推导论点：相比需要大量平行语料的半监督方法，wav2vec 2.0 在概念上更简单且效果更优。`, src:`推导（依据 arXiv:2006.11477 摘要）`, insight:`"概念更简单"指它不需要 teacher/student 或自训练流水线，只靠**掩码预测**一条原则。局限性在于对超低资源语言仍依赖大量无标签音频，且量化目标固定后难以在线适应新领域。` }
-  ],
-  "hubert": [
-    { q:`Self-supervised approaches for speech representation learning are challenged by three unique problems: there are multiple sound units in each input utterance, there is no lexicon of input sound units during the pre-training phase, and sound units have variable lengths with no explicit segmentation.`, src:`arXiv:2106.07447 摘要`, insight:`这三点精准概括了语音 SSL 与图像/NLP 的本质差异：**单元多、无词典、变长无切分**。它解释了为什么不能直接套用 BERT 的 token 化，必须先把连续语音"变成"有监督信号的目标。HuBERT 正是围绕这三点设计聚类目标。` },
-    { q:`据公开信息/架构可知的推导论点：HuBERT 先用离线 k-means 对特征聚类生成"隐藏单元"标签，再以 BERT 式掩码预测损失去预测这些对齐标签。`, src:`推导（依据 arXiv:2106.07447 摘要）`, insight:`与 wav2vec 2.0 的**在线量化加对比**不同，HuBERT 用**离线聚类加预测似然**，把目标做成分类问题。预测损失比对比损失更关注"聚类身份"，学到的表示在音素/说话人等判别任务上往往更整齐。` },
-    { q:`据公开信息/架构可知的推导论点：HuBERT 通过多次迭代重新聚类（k-means 重训）来逐步提升目标质量，类似 BERT 的阶段性训练。`, src:`推导（依据 arXiv:2106.07447 摘要）`, insight:`迭代聚类是 HuBERT 的**关键 trick**：第一遍粗聚类提供初始目标，后续用更好的表示再聚一次，目标随之变细。但它也意味着训练流程更复杂、依赖聚类质量，是工程复现的主要成本。` },
-    { q:`据公开信息/架构可知的推导论点：在相同设置下 HuBERT 的表示在 SUPERB 等基准上的音素与语义任务上通常优于 wav2vec 2.0。`, src:`推导（依据 arXiv:2106.07447 摘要）`, insight:`差异根源在损失形式：预测式目标更契合**判别性下游任务**，而对比式目标更契合生成/检索。实际选型时应按下游是分类还是生成来决定，而非盲目追新。` },
-    { q:`据公开信息/架构可知的推导论点：HuBERT 的聚类目标在超低资源语种上容易因数据不足而崩坏，需要 warm-start 或跨语种初始化。`, src:`推导（依据 arXiv:2106.07447 摘要）`, insight:`这是离线聚类的**阿喀琉斯之踵**：标签质量上限被初始表示锁死。后续工作（如 MAESTRO、BEST-RQ）尝试用随机投影或改进量化来缓解这个问题，值得在资源受限场景重点关注。` }
-  ],
-  "google_usm": [
-    { q:`据公开信息/架构可知的推导论点：Google USM 是一个面向 100+ 语言的统一语音模型，基于 Conformer 编码器，先在大规模多语种无标签音频上自监督预训练，再蒸馏与微调。`, src:`推导（依据 arXiv:2303.01005 摘要）`, insight:`"统一且可扩展"是核心：一个**编码器**服务上百种语言，靠规模换覆盖。与 Whisper 偏英语/多任务不同，USM 明确以**低资源多语种**为卖点，对长尾语言降错显著。` },
-    { q:`据公开信息/架构可知的推导论点：USM 通过教师-学生蒸馏把大模型能力压缩到可部署尺寸，并在推理时支持流式与批式两种模式。`, src:`推导（依据 arXiv:2303.01005 摘要）`, insight:`蒸馏是把"研究模型"变成"产品模型"的必经路。但**蒸馏上限受教师质量限制**，且多语种蒸馏下资源语言会挤占长尾语言的容量，需要课程式或平衡采样来缓解。` },
-    { q:`据公开信息/架构可知的推导论点：USM 在 100+ 语言的 ASR 上验证了自监督预训练对低资源语系的明显增益。`, src:`推导（依据 arXiv:2303.01005 摘要）`, insight:`结论性价值在于：多语种**共享表示**能让高资源语言"帮"低资源语言，符合迁移学习的直觉。但也要警惕评估集偏向 Google 自有采集，外部域泛化未必同样好。` },
-    { q:`据公开信息/架构可知的推导论点：USM 的训练依赖百万小时级的无标签音频与极大算力，基本只能在工业实验室复现。`, src:`推导（依据 arXiv:2303.01005 摘要）`, insight:`这是**算力即壁垒**的典型：论文贡献的不只是方法，更是数据管线与 TPU 资源。学术界想跟进应聚焦"小数据高效多语种"路线，而非照搬规模。` },
-    { q:`据公开信息/架构可知的推导论点：相比 wav2vec 2.0 / HuBERT 的单语种强表示，USM 把预训练目标直接推向多语种统一建模。`, src:`推导（依据 arXiv:2303.01005 摘要）`, insight:`范式跃迁在于从"一种语言一个模型"到"一个模型百种语言"。代价是**容量竞争**与语系间相互干扰，需要谨慎的正则化与语言 ID 条件化设计。` }
-  ],
-  "meta_mms": [
-    { q:`The MMS-lab covers a large number of languages but it also has potential downsides: it is both from a particular narrow domain and most recordings are from a single speaker.`, src:`arXiv:2305.13516 结论`, insight:`这是**数据偏差**的经典自白：单说话人加窄域录音会让模型过拟合"这个人的声音"，在 unseen speaker 或新域上掉点明显。提醒我们：语种数量多不等于鲁棒，标注多样性比语种数更关键。` },
-    { q:`This may lead to poor performance on other domains or when the systems are applied to unseen speakers.`, src:`arXiv:2305.13516 结论`, insight:`作者坦诚地指出了 MMS-lab 的泛化边界。实践中若用 MMS 做产品，需额外混入**多说话人、多域**数据做适配，否则在真实通话/噪声场景下会暴露短板。` },
-    { q:`We stress that this is a best effort comparison and does not enable strong conclusions.`, src:`arXiv:2305.13516 结论`, insight:`这种克制的表述值得点赞：跨 1000+ 语言的公平对比几乎不可能（数据、标注、测试集都不齐）。它提醒读者**别把榜单数字当绝对真理**，尤其对极低资源语种，微小样本上的指标波动很大。` },
-    { q:`据公开信息/架构可知的推导论点：MMS 把自监督预训练（XLSR/wav2vec 2.0 类）扩展到 1100+ 语言，并同时覆盖 ASR 与 TTS。`, src:`推导（依据 arXiv:2305.13516 摘要）`, insight:`规模上是**数量级飞跃**：从此前约 100 语言直接拉到 1100+。但代价是绝大多数语种只有极少量数据，模型对这些语言更多是"能出声/出字"而非"高质量"，实用前需针对性精调。` },
-    { q:`据公开信息/架构可知的推导论点：MMS 用公开圣经朗读录音作为多语种主要来源，借助宗教文本的高覆盖实现语种扩张。`, src:`推导（依据 arXiv:2305.13516 摘要）`, insight:`这是**数据获取的巧思**也是局限：圣经朗读覆盖广、版权友好，但文体单一、语速平稳，与真实口语差距大。它解释了为何结论里要专门强调窄域问题——来源决定了天花板。` }
-  ],
-  "qwen2_audio": [
-    { q:`据公开信息/架构可知的推导论点：Qwen2-Audio 是一个音频-语言大模型，可接受任意音频输入并给出文本或语音形式的响应，覆盖 ASR、音频理解、语音对话等任务。`, src:`推导（依据 arXiv:2407.10759 摘要）`, insight:`定位是**听觉版 LLM**：把"听"和"说/答"统一进一个语言模型接口。相比专用 ASR，它更强调多任务与指令跟随，适合做语音助手而非纯转写引擎。` },
-    { q:`据公开信息/架构可知的推导论点：Qwen2-Audio 采用两阶段训练：先大规模预训练对齐音频与文本，再用多任务与指令数据微调。`, src:`推导（依据 arXiv:2407.10759 摘要）`, insight:`两阶段是音频-语言模型的**标配范式**：预训练解决"听得懂"，指令微调解决"答得对、答得合要求"。难点在第二阶段的数据构造，指令质量直接决定上限。` },
-    { q:`据公开信息/架构可知的推导论点：Qwen2-Audio 支持 speech chat，即用户用语音提问、模型用语音回答的对话形态。`, src:`推导（依据 arXiv:2407.10759 摘要）`, insight:`"语音对话"是其产品卖点。但需留意它通常仍走"音频理解到文本到外部 TTS 合成语音"的链路，**并非完全端到端语音到语音**，延迟与音色一致性受 TTS 制约。` },
-    { q:`据公开信息/架构可知的推导论点：Qwen2-Audio 在多个音频基准上通过指令微调取得了优于通用音频模型的理解与推理表现。`, src:`推导（依据 arXiv:2407.10759 摘要）`, insight:`说明把语言模型的**推理与指令能力**迁移到音频模态是有效的。局限在于音频推理仍弱于纯文本 LLM，复杂多步音频逻辑容易出错。` },
-    { q:`据公开信息/架构可知的推导论点：与 Mini-Omni / GPT-4o 相比，Qwen2-Audio 更侧重音频理解而非低延迟流式语音交互。`, src:`推导（依据 arXiv:2407.10759 摘要）`, insight:`路线差异清晰：Qwen2-Audio 是"听懂并回答"，Mini-Omni 追求"边听边说"。选择取决于场景——**离线问答选前者，实时陪伴选后者**，二者架构取舍相反。` }
-  ],
-  "mini_omni": [
-    { q:`Models with real-time interaction capabilities are currently scarce.`, src:`arXiv:2408.16725 摘要`, insight:`一句话点出 2024 年的生态空白：GPT-4o 证明了实时语音可行，但**闭源**让社区无米下锅。Mini-Omni 的动机正是用开源填补这块，价值在"可用性"而非"刷榜"。` },
-    { q:`SpeechGPT is an early end-to-end speech interaction model; however, it still suffers from latency due to the Audio-Text-Text-Audio (A-T-T-A) process.`, src:`arXiv:2408.16725 摘要`, insight:`精准批判了 A-T-T-A 流水线：**两次文本中转**必然带来累积延迟与信息损失。Mini-Omni 想跳过多余文本环，直接语音进语音出，这是它相对 SpeechGPT/Spectron 的核心卖点。` },
-    { q:`We hypothesize that this is due to limitations in model capacity or insufficient audio data.`, src:`arXiv:2408.16725 结论`, insight:`作者诚实把"音频推理弱"归因到**容量与数据**，而非方法缺陷。这提示端到端语音模型普遍受限于音频数据规模，远小于文本侧，是领域共性瓶颈。` },
-    { q:`Given the model's stronger performance in the text modality, we expand the inference task for a single input to a batch size of 2, one sample requires both text and audio responses while the other only requires a text response, and we term this process batch parallel decoding.`, src:`arXiv:2408.16725 结论`, insight:`batch parallel decoding 是本文**最巧妙的工程 trick**：借文本模态更强的推理能力，用一条文本分支"带飞"音频分支，再把文本结果注入音频生成。本质是引导/蒸馏，用成熟能力补不成熟能力。` },
-    { q:`据公开信息/架构可知的推导论点：Mini-Omni 为了做到流式低延迟，采用了 chunk 级别的流式音频输入与逐步音频生成，牺牲了一定的长上下文一致性。`, src:`推导（依据 arXiv:2408.16725 摘要）`, insight:`实时与质量天生权衡：切 chunk 越小延迟越低，但**跨 chunk 语义连贯**越难。若要做长对话，需要外部记忆或回看机制，否则会"听得见但记不住"。这是所有流式语音模型的共性问题。` }
-  ],
-  "seamless_m4t": [
-    { q:`据公开信息/架构可知的推导论点：SeamlessM4T 用单一模型统一处理语音到文本、文本到语音、语音到语音以及文本到文本的多语种翻译，覆盖约 100 种语言。`, src:`推导（依据 arXiv:2302.03983 摘要）`, insight:`"一模型多模态多任务"是最大卖点：免去堆砌多个专业模型，降低部署复杂度。但**多任务共享容量**也意味着每个子任务都未必达到专用模型上限，是统一架构的固有折中。` },
-    { q:`据公开信息/架构可知的推导论点：SeamlessM4T 采用 w2v-BERT 语音编码器、NLLB 文本解码器，并用基于语音单元的声码器（unit-based vocoder）生成语音。`, src:`推导（依据 arXiv:2302.03983 摘要）`, insight:`用**离散语音单元**做生成桥梁，可以把"翻译"和"合成"解耦，避免直接回归波形。代价是单元量化损失音色细节，合成语音偏"中性/合成感"，自然度弱于端到端声学模型。` },
-    { q:`据公开信息/架构可知的推导论点：在 SeamlessM4T v2 中引入了 SeamlessStreaming，通过流式解码实现低延迟、可跟读的实时翻译。`, src:`推导（依据 arXiv:2302.03983 摘要）`, insight:`流式的关键在于**单调或近似单调对齐**，边听边译而非等整句。这带来可懂度提升但可能截断歧义，且对 ASR 前端错误更敏感——前面错一点后面全歪。` },
-    { q:`据公开信息/架构可知的推导论点：论文配套发布了毒性与偏差的红队评估，关注翻译中的性别与冒犯性内容。`, src:`推导（依据 arXiv:2302.03983 摘要）`, insight:`把**安全评估**放进多语种语音模型论文是领先实践：低资源语种训练数据偏见更难被审查。工程落地时不能只看 BLEU/WER，要补一套多语种内容安全管线。` },
-    { q:`据公开信息/架构可知的推导论点：相比 Whisper 只做识别、Qwen2-Audio 偏理解，SeamlessM4T 专注跨语种语音翻译这一更难的统一生成任务。`, src:`推导（依据 arXiv:2302.03983 摘要）`, insight:`任务维度上它比纯 ASR 难一截：要在**表示空间里同时做识别加翻译加合成**。若产品只需单语种转写，选 Whisper 更轻；要跨语种语音互通，SeamlessM4T 是少数开源选择。` }
+  "luna_tts": [
+    { q:`Modern text-to-speech (TTS) is dominated by autoregressive (AR) codec language models, whose left-to-right decoding carries structural costs: latency that grows with utterance length, error accumulation along the committed prefix, and an artificial generation order imposed on the Residual Vector Quantization (RVQ) token grid, which possesses none.`, src:`arXiv:2608.11593 摘要`, insight:`LUNA 的立论很尖锐：**AR codec LM 的左到右解码对 RVQ token 网格是「人为强加顺序」**——RVQ 本是二维网格，没有天然时序，于是带来延迟随长度增长、前缀错误累积两大结构代价。这是它转向扩散语言模型的动机，也点醒了整个 AR-TTS 范式的根本低效。` },
+    { q:`Luna-TTS is fully non-autoregressive: it generates the entire RVQ token grid of an utterance in a fixed number of parallel refinement steps, with zero-shot voice cloning and speech editing arising natively as infilling.`, src:`arXiv:2608.11593 摘要/贡献`, insight:`LUNA 直接 **用 masked diffusion 在整个 RVQ 网格上做固定步数并行细化**，零样本克隆与编辑天然就是 infilling，不需专门模块。它把预训练 Qwen3 文本 LLM 经 causal→bidirectional→block-causal 渐进适配，借文本侧任何顺序生成能力补 RVQ 几何——这是「从文本 LLM 改 TTS」比从零训 codec LM 更省力的关键。` },
+    { q:`Under the warmed local serving protocol, Luna-TTS Realtime achieves an end-to-end RTF of 0.0240 and commits its first 1.28s decoded audio block in 41.6 ms, corresponding to more than 40× real-time generation within the measured engine boundary.`, src:`arXiv:2608.11593 摘要`, insight:`实时变体用 **块级（32 帧/1.28s）AR + 块内并行去噪**，RTF 0.0240、首块 41.6ms、>40× 实时，延迟不再随句长线性涨。代价/边界是：GRPO 强化只在已实现去噪轨迹上算 policy ratio，且持续训练从 Luna-TTS 继承，流式质量高度依赖 block-causal 适配是否充分——Seed-TTS-Eval 四项最佳说明这条路目前站得住。` }
   ]
 };
 
-const INSIGHTS_PART_D2 = {
+const INSIGHTS_PART_R2 = {
+  "zonos2": [
+    {
+      q: `We pioneer the use of MoE models in the open-source TTS space, building upon the ZAYA1 architecture.`,
+      src: `arXiv:2606.24320 Section I Contributions`,
+      insight: `**核心创新**：ZONOS2 是首个将 **MoE（Mixture-of-Experts）** 骨干引入开源 TTS 的工作，总参 8B、激活仅 900M，在保持低推理开销的同时把模型容量推到 SOTA 级。对比此前的稠密 AR TTS（如 VALL-E、NatureSpeech 系列），MoE 让开源社区第一次在“参数规模 vs. 推理成本”上对齐闭源大模型，是开放语音合成的重要分水岭。`
+    },
+    {
+      q: `To achieve low latency, we use a delay pattern approach to codebook generation which generates multiple codebook tokens in parallel by overlapping the generation of different codebooks of different timesteps.`,
+      src: `arXiv:2606.24320 Section I`,
+      insight: `**关键方法**：采用 delay pattern 让多个 RVQ codebook 在时间维上错位并行生成，而非逐 codebook 串行，从而把流式延迟压到可接受范围。代价是 codebook 预测与 delay 模式耦合，带来后续训练不稳定（见局限），但换来了接近实时的零样本克隆体验。`
+    },
+    {
+      q: `A large portion of the instability in the final ZONOS2 model can be attributed to the inherent difficulty of delayed DAC token prediction.`,
+      src: `arXiv:2606.24320 Section VII Discussion`,
+      insight: `**主要局限**：延迟 DAC token 预测本身训练难度高，是 ZONOS2 大量不稳定性的根源；论文明确把“探索替代音频 codec 以稳定训练、提升鲁棒性与推理效率”列为未来工作。换言之，其强表达力部分建立在较脆弱的训练动态之上，换 codec 是主要改进方向。`
+    }
+  ],
+  "omnivoice": [
+    {
+      q: `We present OmniVoice, a massively multilingual zero-shot text-to-speech (TTS) model that scales to over 600 languages. At its core is a novel diffusion language model-style discrete non-autoregressive (NAR) architecture.`,
+      src: `arXiv:2604.00688 Abstract`,
+      insight: `**核心创新**：OmniVoice 把零样本 TTS 推向 **600+ 语言**，且用“扩散语言模型”风格的离散 NAR 架构直接从文本映射到多 codebook 声学 token，绕开传统“文本→语义→声学”两段式级联。对比同期的 Seed-TTS / CosyVoice（多聚焦中英），它是目前语言覆盖最广的开源 TTS 之一。`
+    },
+    {
+      q: `To circumvent this limitation, OmniVoice adopts a fully stochastic masking strategy across all codebook layers.`,
+      src: `arXiv:2604.00688 Section 2.1.1`,
+      insight: `**关键方法**：全 codebook 随机掩码（每个 token 独立按 Bernoulli 采样）替代以往“单层掩码”，让每次迭代平均优化约 50% 的 token 矩阵，显著提升训练效率；并借助预训练 LLM 初始化保证低资源语言的可懂度。这是其能在 581k 小时开放数据上稳定训出 600 语的关键训练技巧。`
+    },
+    {
+      q: `Unlike continuous-space NAR TTS models, where inference steps can be drastically reduced via techniques such as flow distillation, no existing approach enables comparable inference acceleration for discrete-space NAR TTS models.`,
+      src: `arXiv:2604.00688 Section E Limitations and Future Works`,
+      insight: `**主要局限**：离散空间 NAR 缺少像 flow distillation 那样成熟的推理加速手段，步数难以大幅压缩，推理效率是明显短板；此外仅用开源数据、缺乏高质量指令微调数据也限制了可控语音设计上限。相比连续隐空间扩散 TTS（如 LongCat-AudioDiT），其加速路线仍是开放问题。`
+    }
+  ],
+  "stepaudio25_tts": [
+    {
+      q: `Crucially, we move beyond basic supervised fine-tuning (SFT) by establishing Reinforcement Learning from Human Feedback (RLHF) as the central mechanism for capturing nuanced human preferences and paralinguistic behaviors.`,
+      src: `arXiv:2605.23463 Section 1`,
+      insight: `**核心创新**：StepAudio 2.5 把 **RLHF 作为统一音频-语言基础模型的核心对齐机制**，而非仅做 SFT。聚焦 TTS 分支，这意味着“可控且富有表现力的合成”由人类偏好而非固定标签驱动——区别于大多数 TTS 仅用重建/对齐损失训练的做法。`
+    },
+    {
+      q: `The TTS branch adapts the backbone for controllable generation via semantic-to-audio alignment, integrating context-rich supervision with human-preference-driven RLHF.`,
+      src: `arXiv:2605.23463 Section 1`,
+      insight: `**关键方法**：TTS 分支通过 “语义→音频对齐” 衔接共享骨干，并把 **context-rich supervision（富上下文监督）** 与偏好 RLHF 结合，使同一套多模态先验可被塑造成可控表达合成。结论显示该方法在三大能力基准上同时超越领先统一模型与专用系统，验证了“后训练即杠杆”的论点。`
+    },
+    {
+      q: `These objectives are not naturally aligned, and existing unified systems often achieve strong performance on some capabilities while remaining behind specialized systems on others.`,
+      src: `arXiv:2605.23463 Section 1`,
+      insight: `**主要局限**：统一模型在 ASR / TTS / 实时交互三者目标并不天然一致，往往“某些能力强、某些落后专用系统”。论文据此把“补齐统一与专用系统差距”作为持续研究方向——即当前 StepAudio 2.5 仍是在能力权衡中做工程取舍，而非全面超越各专用 SOTA。`
+    }
+  ],
+  "wavtts": [
+    {
+      q: `In this paper, we proposed WavTTS, an end-to-end zero-shot TTS framework that directly models speech in the raw waveform space.`,
+      src: `arXiv:2606.03455 Section 6 Conclusion`,
+      insight: `**核心创新**：WavTTS 是首个**直接在原始波形空间**端到端生成语音的 TTS 框架，完全不依赖 neural codec、vocoder 或 VAE 中间表示，避开了离散/压缩表示带来的信息损失。对比 F5-TTS、E2 TTS 等基于 codec token 的 NAR 模型，它开辟了一条“原生波形生成”的简洁范式。`
+    },
+    {
+      q: `By combining flow matching with a Diffusion Transformer backbone and an efficient patchification strategy, WavTTS enables tractable modeling of high-dimensional time-domain signals without relying on neural codecs, vocoders, or autoencoders.`,
+      src: `arXiv:2606.03455 Section 6 Conclusion`,
+      insight: `**关键方法**：用 flow matching + DiT 骨干 + 非重叠 patchification 把超高维时域信号变可计算，并辅以 x-prediction 目标、多尺度 mel 监督、信号-噪声方差对齐。实验上它逼近基于压缩表示的 SOTA NAR 零样本 TTS，同时大幅超越更早的端到端语音生成系统，证明原生波形路线可行。`
+    },
+    {
+      q: `Sway Sampling provides only a limited degree of timestep shifting, which we find insufficient for high-dimensional raw waveform generation.`,
+      src: `arXiv:2606.03455 Section 3`,
+      insight: `**主要局限**：高维原始波形的 ODE 积分对早期高噪声步极敏感，常规 Sway Sampling 的时延偏移不足，需专门提出 **PolyShift** 复合噪声偏移调度来抑制伪影。说明原生波形生成对推理调度更挑剔，调参/算力成本高于基于 mel/codec 的成熟方案，是其落地的主要代价边界。`
+    }
+  ],
+  "longcat_audiodit": [
+    {
+      q: `Unlike previous methods that rely on intermediate acoustic representations such as mel-spectrograms, the core innovation of LongCat-AudioDiT lies in operating directly within the waveform latent space.`,
+      src: `arXiv:2603.29339 Abstract`,
+      insight: `**核心创新**：LongCat-AudioDiT 是非自回归扩散 TTS，**直接在波形 latent 空间**操作，只需 Wav-VAE + 扩散骨干，省去 mel/codec 级联，从根上缓解误差累积。对比依赖 mel 的 DiTTo-TTS、E2/F5，它用更精简的单阶段管线拿到更强零样本克隆相似度。`
+    },
+    {
+      q: `we investigate the interplay between the Wav-VAE and the TTS backbone, revealing the counterintuitive finding that superior reconstruction fidelity in the Wav-VAE does not necessarily lead to better overall TTS performance.`,
+      src: `arXiv:2603.29339 Abstract`,
+      insight: `**关键实验结论**：反直觉地发现 Wav-VAE 重建保真度更高**并不**必然带来更好的 TTS（RQ2 消融验证）。这提示“VAE 重建上界=生成上界”的朴素假设不成立，对后续 codec/VAE 设计有直接警示意义；同时其 3.5B 变体在 Seed-ZH/Hard 的 SIM 从 0.809/0.776 提升至 0.818/0.797。`
+    },
+    {
+      q: `While our error rates slightly trail heavily engineered proprietary systems like Qwen3-TTS and CosyVoice3.5, it is crucial to emphasize that those models rely on complex multi-stage training pipelines and massive amounts of high-quality, human-annotated data.`,
+      src: `arXiv:2603.29339 Section 5.2`,
+      insight: `**主要局限**：在可懂度（WER/CER）上仍略逊于 Qwen3-TTS、CosyVoice3.5 等重度工程化闭源系统；其优势建立在“极简端到端 + 单阶段训练”之上，意味着若要进一步追平顶尖可懂度，可能不得不引入那些它刻意回避的复杂多阶段/人工标注流程——这是简化架构付出的客观代价。`
+    }
+  ],
+  "voxcpm2": [
+    {
+      q: `We present VoxCPM2, a fully open-source multilingual and controllable speech generation foundation model that extends the hierarchical diffusion-autoregressive modeling paradigm of VoxCPM.`,
+      src: `arXiv:2606.06928 Abstract`,
+      insight: `**核心创新**：VoxCPM2 把 **分层扩散-自回归（hierarchical continuous-latent）** 范式扩展到 2B 参数、30 语言 + 9 中文方言的统一基础模型，并以 Apache 2.0 完全开源。它**不依赖任何外部离散 tokenizer**，仅凭连续隐变量即可支撑多语与可控生成，是开源语音基础模型里覆盖度与可复现性都突出的代表。`
+    },
+    {
+      q: `VoxCPM2 advances the framework in three key dimensions: (i) capability, by unifying 30 languages, 9 Chinese dialects, natural-language voice design, style-controllable voice cloning, and high-fidelity continuation cloning within a single backbone; (ii) quality, through an asymmetric AudioVAE that encodes at 16 kHz and reconstructs at 48 kHz, enabling implicit super-resolution with high encoding efficiency; and (iii) scale, by jointly scaling the model to 2B parameters and the training data to over 2 million hours of multilingual speech.`,
+      src: `arXiv:2606.06928 Abstract`,
+      insight: `**关键方法**：三大支柱——(1) 统一序列组织把五种生成配置（基础 TTS / 声音设计 / 参考克隆 / 可控克隆 / 续写克隆）表达为同一组输入块的不同排布，单一目标联合训练；(2) **非对称 AudioVAE**（16kHz 编码→48kHz 重建）实现隐式超分且编码高效；(3) 2M 小时数据 + 2B 参数规模化。内部 30 语评测平均 WER 仅 1.68%。`
+    },
+    {
+      q: `Note that even with this threshold, the selected reference clips may still differ in fine acoustic details from the target, so reference-based cloning naturally achieves lower similarity than continuation-based cloning.`,
+      src: `arXiv:2606.06928 Section 3.6`,
+      insight: `**主要局限**：参考克隆的相似度天然低于续写克隆——因为即使按说话人嵌入阈值（>0.7）筛选，参考片段与目标在细粒度声学细节上仍有差异，且参考音频无需对齐文本。换言之，纯“参考音频 + 自然语言风格”可控克隆在相似度上让位于需要参考文本前缀的续写式克隆，是解耦身份与风格设计带来的固有权衡。`
+    }
+  ],
+  "voxtral_tts": [
+    {
+      q: `We introduce Voxtral TTS, an expressive multilingual text-to-speech model that generates natural speech from as little as 3 seconds of reference audio. Voxtral TTS adopts a hybrid architecture that combines auto-regressive generation of semantic speech tokens with flow-matching for acoustic tokens.`,
+      src: `arXiv:2603.25551 Abstract`,
+      insight: `**核心创新**：Voxtral TTS 用 **混合架构**——AR 生成语义 token 保证长程一致，flow-matching 生成声学 token 保证丰富声学细节——仅需 3 秒参考音频即做多语零样本克隆。相比纯 AR（VALL-E 系）或纯 NAR 扩散（E2/F5），它取两者之长，并为后续把 DPO 适配到“离散-连续混合”设定打下基础。`
+    },
+    {
+      q: `In human evaluations conducted by native speakers, Voxtral TTS is preferred for multilingual voice cloning due to its naturalness and expressivity, achieving a 68.4% win rate over ElevenLabs Flash v2.5.`,
+      src: `arXiv:2603.25551 Abstract`,
+      insight: `**关键实验结论**：在母语者人工评测中，Voxtral TTS 多语声音克隆以 **68.4% 胜率** 超过 ElevenLabs Flash v2.5（旗舰音也达 58.3%）。这是闭源商业 TTS 被开源/开放权重模型在主观偏好上反超的强信号，且模型仅 4B、支持 9 语言、低延迟流式，性价比突出。`
+    },
+    {
+      q: `We optimize the model using the combined DPO loss along with the pretraining objective on high-quality speech for 1 epoch, as we found that training longer on synthetic data led to more robotic speech.`,
+      src: `arXiv:2603.25551 Section 3.2`,
+      insight: `**主要局限**：偏好对齐（flow-DPO）对训练极敏感——在合成数据上多训一个 epoch 就会导致“更机械”的语音，被迫只用 1 epoch 且学习率压到 8e-8；同时权重以 **CC BY-NC** 发布（非商用），且拒绝采样构造偏好对依赖外部 LLM 与多个判分模型，偏好数据工程成本高、可控性受许可与数据质量双重约束。`
+    }
+  ],
+  "indextts2": [
+    {
+      q: `IndexTTS2 is the first autoregressive zero-shot TTS model to combine precise duration control with natural duration generation, and the method is scalable for any autoregressive large-scale TTS model.`,
+      src: `arXiv:2506.21619 Section Contributions`,
+      insight: `**核心创新**：IndexTTS2 是**首个同时支持“精确时长控制”与“自然时长生成”的 AR 零样本 TTS**——既可在音视频同步（配音）场景指定语义 token 数锁定时长，也可自由 AR 生成保留提示韵律。它补上了 AR 模型长期短板（逐 token 生成难控时长），且方法可推广到任意 AR 大规模 TTS。`
+    },
+    {
+      q: `emotional and speaker-related features are decoupled from the prompts, and a feature fusion strategy is designed to maintain semantic fluency and pronunciation clarity during emotionally rich expressions.`,
+      src: `arXiv:2506.21619 Section Contributions`,
+      insight: `**关键方法**：用 **GRL（梯度反转层）** 把情感与说话人身份解耦，使情感向量只捕捉情绪/节奏、对音色不变，从而可独立控制“音色”和“情绪”；再辅以 GPT latent 增强稳定高情感下的发音清晰度、以及三阶段训练。实验显示其在情感MOS/相似度上全面超越 MaskGCT、F5-TTS、CosyVoice2 等。`
+    },
+    {
+      q: `removing the three-stage training strategy severely degrades emotional expressiveness, resulting in substantial performance drops across all metrics except WER.`,
+      src: `arXiv:2506.21619 Section Experiment Results`,
+      insight: `**主要局限**：情感表现力高度依赖复杂的三阶段训练与 GPT latent 融合——一旦移除，情感维度近乎崩塌（除 WER 外各指标大幅下滑）。这意味着其“高情感保真”是以较重训练管线为代价的；此外训练数据仅 55K 小时、集中在中英（30K 中文 + 25K 英文），多语覆盖远不及 OmniVoice 的 600+ 语言，是明显的语种类边界。`
+    }
+  ]
+};
+
+const INSIGHTS_PART_R3 = {
+  "mega_tts3": [
+    {
+      q: `Specifically, we provide sparse alignment boundaries to MegaTTS 3 to reduce the difficulty of alignment without limiting the search space, thereby achieving high naturalness.`,
+      src: `arXiv:2502.18924 Abstract`,
+      insight: `**核心创新**：主流零样本 TTS 在「是否显式建模语音-文本对齐」上两极分化——无对齐的模型（如 VALL-E 类）鲁棒性差、硬句易崩，**强制对齐**模型则受对齐自然度约束。MegaTTS 3 用**稀疏对齐边界**引导 DiT：只给少量边界约束、不限制生成的搜索空间，从而同时拿到对齐鲁棒性与高自然度。这是把「对齐难」从模型内部隐式学习改为外部稀疏监督的关键范式转变。`
+    },
+    {
+      q: `Moreover, we employ a multi-condition classifier-free guidance strategy for accent intensity adjustment and adopt the piecewise rectified flow technique to accelerate the generation process.`,
+      src: `arXiv:2502.18924 Abstract`,
+      insight: `**关键方法**：两个实用设计。其一是**多条件 classifier-free guidance（CFG）**，把口音强度作为独立条件注入，实现「同一说话人、可调口音轻重」的细粒度控制，对比传统需重新训练的说话人/口音解耦更灵活；其二是**分段 rectified flow**，把生成轨迹分段线性化以加速采样。`
+    },
+    {
+      q: `our system can generate high-quality one-minute speech with only 8 sampling steps.`,
+      src: `arXiv:2502.18924 Abstract`,
+      insight: `**效率与边界**：仅 8 步采样即可合成一分钟高质量语音，推理成本是传统扩散（常需 50–1000 步）的量级下降，利于落地。但论文重心在零样本音质与口音可控性，说话人相似度、长程韵律一致性、与更大规模模型的公平对比在原文评测中并未充分展开，需结合后续榜单判断上限。`
+    }
+  ],
   "wav2vec2": [
     {
       q: `We show for the first time that learning powerful representations from speech audio alone followed by fine-tuning on transcribed speech can outperform the best semi-supervised methods while being conceptually simpler.`,
-      src: `arXiv:2006.11477 摘要`,
-      insight: `这是自监督语音表征的**里程碑式声明**：无需任何转写标签即可学到强表征，再微调就能超越当时最强半监督方法。其意义在于把海量无标签音频变成可用资源，极大降低低资源语言的门槛。但需注意它仍依赖少量转写做微调，并非完全无监督。`
-    },
-    {
-      q: `wav2vec 2.0 masks the speech input in the latent space and solves a contrastive task defined over a quantization of the latent representations which are jointly learned.`,
-      src: `arXiv:2006.11477 摘要`,
-      insight: `方法核心是在**隐空间做 span 掩码**并用量化后的表征做对比学习，类似 BERT 的 MLM 但作用于连续语音。量化（Gumbel-softmax 离散单元）是关键，论文指出它比非量化目标更有效。这直接启发了后续 HuBERT 等以聚类为目标的路线。`
-    },
-    {
-      q: `When lowering the amount of labeled data to one hour, wav2vec 2.0 outperforms the previous state of the art on the 100 hour subset while using 100 times less labeled data.`,
-      src: `arXiv:2006.11477 摘要`,
-      insight: `**100 倍标签效率**的提升是最被引用的结果之一：仅用 1 小时标签就超过此前 100 小时子集上的 SOTA。这证明预训练表征的可迁移性极强。局限在于该数字来自 Librispeech 英语高资源场景，低资源语言的增益未必同等。`
+      src: `arXiv:2006.11477 Abstract`,
+      insight: `**为何成为范式**：首次证明「自监督预训练表示 + 少量标注微调」能超过当时最佳半监督 ASR，且概念更简洁。它把 ASR 从「堆标注」转向「堆无标注语音」，直接催生 XLSR、HuBERT、WavLM 等一整条自监督语音表示路线，是后续 Whisper、USM、MMS 的表征基础。`
     },
     {
       q: `Using just ten minutes of labeled data and pre-training on 53k hours of unlabeled data still achieves 4.8/8.2 WER.`,
-      src: `arXiv:2006.11477 摘要`,
-      insight: `极端低标签设定（10 分钟，约 48 段 12.5 秒录音）仍能拿到 4.8/8.2 WER，说明**极少量监督即可激活预训练表征**。但这也暴露脆弱性：如此少的标签高度依赖预训练分布与下游领域一致，跨域可能迅速崩塌。`
+      src: `arXiv:2006.11477 Abstract`,
+      insight: `**关键实验结论**：仅 10 分钟标注 + 53k 小时无标注，就在 LibriSpeech 上拿到 4.8/8.2 WER，证明极低资源语言也能靠无标注语音做出可用识别。代价是：它产出的是**表示**而非端到端识别器，仍需带 CTC/微调头的任务特定训练，且 10 分钟档仍有明显拼写错误。`
     },
     {
-      q: `Predicting only up to one time step performs poorly because there is little training signal from each utterance and predicting more time steps performs better but does not significantly outperform predicting all masked time steps.`,
-      src: `arXiv:2006.11477 结论`,
-      insight: `消融表明**预测更多掩码步长更有用**，但预测所有步长并未显著优于预测部分步长，说明预训练任务难度需适度。只预测相邻 1 步的训练信号太弱。这提示自监督语音任务的难点调控（edge 附近 U 步）是一个可权衡的设计旋钮。`
+      q: `We expect performance gains by switching to a seq2seq architecture and a word piece vocabulary.`,
+      src: `arXiv:2006.11477 Conclusion`,
+      insight: `**时代局限/未来工作**：wav2vec 2.0 仍是「对比学习预训练 + CTC 微调」范式，作者自己指出换 **seq2seq 架构与子词词表**还能再涨点。这也正是其时代局限——非端到端、无流式、无多语言/多任务统一，这些后来由 Whisper、USM 等补齐。`
+    }
+  ],
+  "hubert": [
+    {
+      q: `we propose the Hidden-Unit BERT (HuBERT) approach for self-supervised speech representation learning, which utilizes an offline clustering step to provide aligned target labels for a BERT-like prediction loss.`,
+      src: `arXiv:2106.07447 Abstract`,
+      insight: `**核心创新**：与 wav2vec 2.0 的「在线量化+对比学习」不同，HuBERT 先用**离线聚类**生成对齐伪标签，再用 **BERT 式掩码预测**去预测这些隐藏单元。它把语音自监督从「对比」扭成「预测聚类目标」，思路更接近 NLP 的 MLM。`
+    },
+    {
+      q: `HuBERT relies primarily on the consistency of the unsupervised clustering step rather than the intrinsic quality of the assigned cluster labels.`,
+      src: `arXiv:2106.07447 Abstract`,
+      insight: `**关键方法洞察**：HuBERT 的成功不依赖聚类标签本身多「准」，而依赖**聚类结果的一致性**——只要伪标签稳定，模型就能学到好表示。这降低了「伪标签必须语义正确」的门槛，也解释了为何简单 k-means 教师就能匹敌甚至超过 wav2vec 2.0。`
+    },
+    {
+      q: `Using a 1B parameter model, HuBERT shows up to 19% and 13% relative WER reduction on the more challenging dev-other and test-other evaluation subsets.`,
+      src: `arXiv:2106.07447 Abstract`,
+      insight: `**实验结论与边界**：1B 参数下在更难集 dev-other/test-other 上相对降 WER 19%/13%，验证「预测式」自监督在大模型上更优。但代价是离线聚类带来额外流程与迭代（需多轮聚类），且同样是非端到端、需任务特定微调，时代局限与 wav2vec 2.0 类似。`
+    }
+  ],
+  "whisper": [
+    {
+      q: `When scaled to 680,000 hours of multilingual and multitask supervision, the resulting models generalize well to standard benchmarks and are often competitive with prior fully supervised results but in a zero-shot transfer setting without the need for any fine-tuning.`,
+      src: `arXiv:2212.04356 Abstract`,
+      insight: `**核心创新/为何成为范式**：用 68 万小时「弱监督」网络转录音频做大规模多任务训练，模型在**零样本迁移**下即可泛化到标准基准、常媲美全监督结果。它把 ASR 从「单语料精调」推向「海量弱标 + 零样本」，成为开源语音识别的事实基线。`
+    },
+    {
+      q: `Whisper departs noticeably from most recent state-of-the-art speech recognition systems due to the lack of unsupervised pre-training or self-teaching methods.`,
+      src: `arXiv:2212.04356 Section 6.3`,
+      insight: `**关键设计选择**：Whisper 刻意**不做无监督预训练/自训练**，纯靠弱标数据规模取胜——这与同期 wav2vec 2.0/HuBERT 路线截然相反。代价是数据效率偏低：同样精度需要远比自监督+少量标注更多的标注小时数，且作者也承认加入自监督可能进一步提升。`
+    },
+    {
+      q: `Whisper models are trained on 30-second audio chunks and cannot consume longer audio inputs at once.`,
+      src: `arXiv:2212.04356 Section 3.8`,
+      insight: `**主要局限（诚实写出）**：Whisper 以 30 秒分块训练、**无法一次性吃下长音频**，无原生流式、无说话人分离。此外（见 5.3）其预训练数据**高度偏英语**（采集偏英语互联网），多数语言训练不足 1000 小时，长尾语言 WER 仍很差。这是弱监督规模化的典型代价。`
     }
   ],
   "google_usm": [
     {
-      q: `We introduce the Universal Speech Model (USM), a single large model that performs automatic speech recognition (ASR) across 100+ languages.`,
-      src: `arXiv:2303.01037 摘要`,
-      insight: `USM 的核心命题是**用单一模型覆盖 100+ 语言的 ASR**，直接对标通用语音的愿景。其动机是全球绝大多数语言缺乏转写数据，单模型比每语言一模型更易规模化。但 100+ 中大量是极低资源语言，实际可用质量参差，需谨慎看待覆盖的含义。`
-    },
-    {
       q: `This is achieved by pre-training the encoder of the model on a large unlabeled multilingual dataset of 12 million (M) hours spanning over 300 languages, and fine-tuning on a smaller labeled dataset.`,
-      src: `arXiv:2303.01037 摘要`,
-      insight: `**1200 万小时、300+ 语言**的无标签预训练是 USM 的基石，规模远超 Whisper 等同期模型。它重申无标签预训练加少量标签微调的范式并把量推到极致。代价是只有大厂能承担的数据与算力门槛，可复现性极低。`
+      src: `arXiv:2303.01037 Abstract`,
+      insight: `**核心创新/规模化**：用 **1200 万小时、覆盖 300+ 语言**的无标注多语料预训练编码器，再小标注微调，首次把「通用语音模型」推到百语以上规模。它直接对标 Whisper 的英语重心，把多语言覆盖作为第一目标。`
     },
     {
-      q: `We use multilingual pre-training with random-projection quantization and speech-text modality matching to achieve state-of-the-art performance on downstream multilingual ASR and speech-to-text translation tasks.`,
-      src: `arXiv:2303.01037 摘要`,
-      insight: `方法上两个关键设计是 **BEST-RQ 随机投影量化**与**语音-文本模态匹配**，前者简化自监督目标，后者把文本信号注入语音表征。这说明多语言扩展不只是堆数据，还需要对齐多模态信息。对下游 AST 的提升也表明该表征可迁移到翻译。`
+      q: `We also demonstrate that despite using a labeled training set 1/7-th the size of that used for the Whisper model [1], our model exhibits comparable or better performance on both in-domain and out-of-domain speech recognition tasks across many languages.`,
+      src: `arXiv:2303.01037 Abstract`,
+      insight: `**关键实验结论**：仅用 Whisper **1/7 的标注量**就达到可比或更好性能，说明「海量无标注多语预训练 + 少量标注」比「纯弱标规模」更高效。方法上靠 **随机投影量化（BEST-RQ）** 与**语音-文本模态匹配**实现多语规模化。`
     },
     {
-      q: `We also demonstrate that despite using a labeled training set 1/7-th the size of that used for the Whisper model, our model exhibits comparable or better performance on both in-domain and out-of-domain speech recognition tasks across many languages.`,
-      src: `arXiv:2303.01037 摘要`,
-      insight: `仅用 Whisper **1/7 的标签量**却达到可比或更优表现，是 USM 最具说服力的效率论据。更重要的是它在分布外任务上也稳健，说明预训练表征泛化性强。但可比不等于全面超越，且 1/7 是标签量而非训练总成本。`
+      q: `We believe diverse unlabeled data is more practical to acquire for building usable ASR for tail languages than weakly labeled data.`,
+      src: `arXiv:2303.01037 Section 6 Discussion`,
+      insight: `**规模化教训（长尾代价）**：USM 的核心教训是——对**长尾/低资源语言**，多样无标注数据比弱标数据更易获取、更值得投入（需与母语者协作找无标数据）。但论文也显示低资源语言 WER 仍显著高于高资源语言，**数据规模 ≠ 长尾质量**，尾部语言覆盖与精度仍是开放问题。`
+    }
+  ],
+  "meta_mms": [
+    {
+      q: `The MMS project increases the number of supported languages by 10-40x, depending on the task.`,
+      src: `arXiv:2305.13516 Abstract`,
+      insight: `**核心创新/规模化极致**：MMS 把语音技术覆盖**提升 10–40 倍**，建成 1406 语言 wav2vec 2.0、1107 语言 ASR/TTS、4017 语言语言识别，是迄今语言覆盖最广的语音项目，把「多语言规模化」推到千语级。`
     },
     {
-      q: `据公开信息/架构可知的推导论点：USM 采用约 20 亿参数的 Conformer 且权重未开源，训练与推理成本极高，学术界难以在其基础上做二次研究。`,
-      src: `推导（依据 arXiv:2303.01037 摘要）`,
-      insight: `从规模与发布策略可推出其**现实局限**：2B 参数加 1200 万小时数据的组合意味着只有大厂能训练，闭源进一步限制可复现性。相较 wav2vec 2.0 开源，USM 更偏能力展示而非基础设施。是否值得为覆盖广度牺牲开放性，取决于落地场景。`
+      q: `our multilingual speech recognition model more than halves the word error rate of Whisper on 54 languages of the FLEURS benchmark while being trained on a small fraction of the labeled data.`,
+      src: `arXiv:2305.13516 Abstract`,
+      insight: `**关键实验结论（对比 Whisper）**：在 FLEURS 54 语上 WER 比 **Whisper 减半**，且只用其一小部分标注数据——靠自监督 wav2vec 2.0 + 语言特定参数的组合，证明「千语 ASR」可行且性能衰减很小。代价：对比基于的是 Whisper 非最优长尾配置，绝对值仍受数据量主导。`
+    },
+    {
+      q: `Most speakers in MMS-lab dataset appear to be male and this bears the risk of machine learning models trained on this data performing better for male speakers.`,
+      src: `arXiv:2305.13516 Section 8.1`,
+      insight: `**主要局限（诚实写出）**：MMS-lab 语料多来自**公开宗教文本（如新约）朗读**，且说话人**多为男性**，带来性别与领域偏置风险；数据还偏朗读风格、覆盖不均（非洲语言 CER 达标率仅 76%）。这是「为覆盖而用易得语料」的典型代价，需后续去偏与领域扩展。`
     }
   ],
   "qwen2_audio": [
     {
-      q: `We introduce the latest progress of Qwen-Audio, a large-scale audio-language model called Qwen2-Audio, which is capable of accepting various audio signal inputs and performing audio analysis or direct textual responses with regard to speech instructions.`,
-      src: `arXiv:2407.10759 摘要`,
-      insight: `Qwen2-Audio 定位为**大规模音频-语言模型（LALM）**，统一接受音频与文本、输出文本，覆盖分析与对话。其动机是走向 AGI 所需的全面音频理解。相比前代 Qwen-Audio 的复杂分层标签，本代做了简化，值得关注后续迁移效果。`
-    },
-    {
       q: `In contrast to complex hierarchical tags, we have simplified the pre-training process by utilizing natural language prompts for different data and tasks, and have further expanded the data volume.`,
-      src: `arXiv:2407.10759 摘要`,
-      insight: `用**自然语言提示**替代复杂层次化标签来统一多任务预训练，是工程上的重要简化：不同数据任务用统一 prompt 描述，降低 pipeline 复杂度。但代价是 prompt 设计本身成为新的归纳偏置，可能引入指令分布偏移。`
+      src: `arXiv:2407.10759 Abstract`,
+      insight: `**核心创新**：用**自然语言 prompt** 统一描述不同音频数据与任务，取代复杂的层级标签，简化了预训练流程并扩大数据量。这使 Qwen2-Audio 成为「音频-语言」统一模型，能听音频、遵循语音指令直接作答，是音频 LLM 从「多任务头」走向「对话式」的关键一步。`
     },
     {
-      q: `We have boosted the instruction-following capability of Qwen2-Audio and implemented two distinct audio interaction modes for voice chat and audio analysis.`,
-      src: `arXiv:2407.10759 摘要`,
-      insight: `Qwen2-Audio 实现**语音聊天与音频分析两种模式**，且无需 system prompt 切换，靠模型自己理解音频内容与指令。这体现了统一接口的设计哲学。局限是自动判别模式在边界场景（如带指令的音乐）可能误触发。`
+      q: `Different from Qwen-Audio, the initialization of the audio encoder of Qwen2-Audio is based on the Whisper-large-v3 model.`,
+      src: `arXiv:2407.10759 Section 3.1`,
+      insight: `**关键方法**：音频编码器直接**初始化自 Whisper-large-v3**，借力成熟 ASR 表征，再把 LLM（Qwen2）与音频编码器对齐微调。代价/边界：强依赖 Whisper 的表示与英语偏向，非从头学音频表征，跨语种上限受 Whisper 制约。`
     },
     {
-      q: `According to the evaluation results from AIR-Bench, Qwen2-Audio outperformed previous SOTAs, such as Gemini-1.5-pro, in tests focused on audio-centric instruction-following capabilities.`,
-      src: `arXiv:2407.10759 摘要`,
-      insight: `在 AIR-Bench 的音频中心指令跟随评测中超越 Gemini-1.5-pro，是**开源模型对标闭源旗舰**的有力证据。但需注意该结论聚焦 instruction-following 而非纯 ASR 词错率，横向比较维度要分清。开源可复现性是其实用价值。`
-    },
-    {
-      q: `Additionally, DPO has optimized the model's performance in terms of factuality and adherence to desired behavior.`,
-      src: `arXiv:2407.10759 摘要`,
-      insight: `引入 **DPO** 优化事实性与行为遵从，说明团队意识到大模型易幻觉或偏离指令，用偏好对齐补强。这是 LALM 从能说到说得对的关键一步。但 DPO 偏好数据的构建质量直接决定上限，论文未充分展开该细节。`
+      q: `One point to note is that Qwen2-Audio is not evaluated in a zero-shot manner on the Common Voice 15 dataset, whereas Whisper's results are obtained in a zero-shot fashion.`,
+      src: `arXiv:2407.10759 Section 4.2`,
+      insight: `**主要局限（诚实写出）**：论文明确指出 Qwen2-Audio 在 Common Voice 15 上**并非零样本评测**，而 Whisper 是零样本，二者对比口径不一致，结论需打折。此外 8.2B 参数规模带来高推理成本，且音频推理深度仍弱于纯文本推理，实时性受限。`
     }
   ],
-  "seamless_m4t": [
+  "mini_omni": [
     {
-      q: `To address these gaps, we introduce SeamlessM4T, a single model that supports speech-to-speech translation, speech-to-text translation, text-to-speech translation, text-to-text translation, and automatic speech recognition for up to 100 languages.`,
-      src: `arXiv:2308.11596 摘要`,
-      insight: `SeamlessM4T 的招牌是**单一模型统一五种任务**（S2ST/S2TT/T2ST/T2TT/ASR），覆盖约 100 种语言。它把以往级联流水线的多个子系统压进一个模型，显著降低部署复杂度。动机是造巴别鱼式的实时跨语交流工具。`
+      q: `To our best knowledge, Mini-Omni is the first fully end-to-end, open-source model for real-time speech interaction.`,
+      src: `arXiv:2408.16725 Abstract`,
+      insight: `**核心创新**：首个**全端到端、开源**的实时语音交互模型，能「听-想-说」流式进行，无需 ASR→LLM→TTS 级联。它把语音对话从级联管线压缩成单一模型，延迟与工程复杂度大幅下降，是实时语音 agent 的重要路线验证。`
     },
     {
-      q: `To build this, we used 1 million hours of open speech audio data to learn self-supervised speech representations with w2v-BERT 2.0.`,
-      src: `arXiv:2308.11596 摘要`,
-      insight: `底座采用 **w2v-BERT 2.0 在 100 万小时开放语音上自监督预训练**，与 wav2vec 2.0 一脉相承但走向多语言多模态。开放数据是关键，使其不像 USM 那样被算力门槛封锁。这为后续统一建模提供了可迁移的语音表征。`
+      q: `To achieve this capability, we propose a text-instructed speech generation method, along with batch-parallel strategies during inference to further boost the performance.`,
+      src: `arXiv:2408.16725 Abstract`,
+      insight: `**关键方法**：用**文本引导的语音生成**（用文本模态监督音频生成）配合**batch-parallel 推理**（文本与音频并行解码）实现实时。仅 0.5B 参数即完成实时对话，证明小模型也能跑通端到端语音，但需文本模态「托底」以保证逻辑一致。`
     },
     {
-      q: `Subsequently, we created a multimodal corpus of automatically aligned speech translations.`,
-      src: `arXiv:2308.11596 摘要`,
-      insight: `配套的**自动对齐语音翻译多模态语料**（即 SeamlessAlign）是模型成功的数据底座，体现数据挖掘规模决定上限的思路。相比模型权重，这类开放数据集往往有更长的社区价值。局限是自动对齐噪声会让低资源方向承袭错误。`
-    },
-    {
-      q: `On FLEURS, SeamlessM4T sets a new standard for translations into multiple target languages, achieving an improvement of 20% BLEU over the previous SOTA in direct speech-to-text translation.`,
-      src: `arXiv:2308.11596 摘要`,
-      insight: `在 FLEURS 上直接语音到文本翻译较此前 SOTA **提升 20% BLEU**，是统一模型胜过级联系统的有力证据。注意这是直接 S2TT，省去中间文本环节减少错误累积。但该增益集中在评测覆盖的语言，长尾仍需验证。`
-    },
-    {
-      q: `据公开信息/架构可知的推导论点：SeamlessM4T 虽宣称覆盖约 100 种语言，但语音到语音翻译的高质量主要集中在少数高资源语言，低资源方向的自然度、说话人一致性与鲁棒性明显更弱。`,
-      src: `推导（依据 arXiv:2308.11596 摘要）`,
-      insight: `从统一覆盖到统一质量存在明显鸿沟：模型广度靠数据规模堆出，但**低资源语言的 S2ST 自然度与准确率**往往不足。论文亮点在架构统一与开源，落地难点在长尾质量与安全风险（论文也评估了性别偏见与毒性）。评测不能只看语言数量。`
+      q: `while Mini-Omni's speech recognition performance slightly lags behind Whisper-small's decoder`,
+      src: `arXiv:2408.16725 Section 4`,
+      insight: `**主要局限（诚实写出）**：Mini-Omni 的语音识别略**落后于 Whisper-small**解码器，且「仅音频模态」推理时逻辑一致性弱于文本推理（需 batch 生成弥补）。它是实时端到端的早期验证，音质/识别精度与纯级联方案仍有差距，适合低延迟场景而非最高精度场景。`
     }
   ]
 };
 
-const INSIGHTS_PART_E = {
+const INSIGHTS_PART_R4 = {
+  "seamless_m4t": [
+    { q:`We enable speech-to-speech translation with UnitY, a two-pass modeling framework that first generates text and subsequently predicts discrete acoustic units.`,
+      src:`arXiv:2308.11596v3 §4.3 UnitY`,
+      insight:`把 S2ST 拆成「先出文本、再出离散声学单元」的两段式解码（X2T 文本翻译 + T2U 文本到单元），用一个统一多任务模型同时覆盖 S2ST/S2TT/T2ST/T2TT/ASR 共 100 种语言。这是「一个模型通吃多模态多语言翻译」的范式起点，直接对标级联 ASR+T2TT 流水线。` },
+    { q:`Unlike cascaded models, the different components in UnitY can be jointly optimized.`,
+      src:`arXiv:2308.11596v3 §4.3`,
+      insight:`联合优化消除了级联系统的误差传播与领域不匹配，但代价是依赖**离散声学单元**这一中间语义表示来桥接多模态源-目标映射；语音自然度受限于单独训练的单元声码器（multilingual HiFi-GAN），本质上是「文本保真优先于声学细节」的工程取舍。` },
+    { q:`Due to the lack of available model-based techniques that could be applied to added toxicity or gender imbalance detection in this multimodal and massively multilingual setting, we used string-matching techniques that present known limitations.`,
+      src:`arXiv:2308.11596v3 §6.4 Limitations`,
+      insight:`在 100 语言规模下，对有害内容与性别偏差的评测只能退回词表字符串匹配：对黏着语/无分词语言误检严重，且 ASR 前置又引入假阴性。说明「统一多语言大模型」在**安全与公平性评测**上的代价远未解决，是后续多语言生成模型必须正视的边界。` }
+  ],
   "valle": [
-    { q:`We introduce a language modeling approach for text to speech synthesis (TTS). Specifically, we train a neural codec language model (called VALL-E) using discrete codes derived from an off-the-shelf neural audio codec model, and regard TTS as a conditional language modeling task rather than continuous signal regression as in previous work.`, src:`arXiv:2301.02111 摘要`, insight:`这是把 NLP 里「语言模型 + 离散 token」范式平移到语音合成的关键一步：**用现成神经音频 codec 的离散码作为中间表征**，让 TTS 从连续信号回归变成条件语言建模。其最大启发在于复用 LLM 的规模化与 in-context 学习思路，而不再依赖精心设计的声学模型流水线。` },
-    { q:`VALL-E emerges in-context learning capabilities and can be used to synthesize high-quality personalized speech with only a 3-second enrolled recording of an unseen speaker as an acoustic prompt.`, src:`arXiv:2301.02111 摘要`, insight:`3 秒提示即可克隆未见过的说话人，说明模型学到的是**通用的「内容+说话人」条件映射**而非特定说话人过拟合。这一 zero-shot 能力直接催生了后续 Voicebox、NaturalSpeech 系列「语音版 GPT」的研究浪潮。` },
-    { q:`Instead of designing a complex and specific network for this problem, the ultimate solution is to train a model with large and diverse data as much as possible, motivated by success in the field of text synthesis.`, src:`arXiv:2301.02111 引言`, insight:`作者明确把「大力出奇迹」作为方法论信条：**数据规模（60K 小时）而非网络精巧度**是零样本泛化的根本。这与 GPT 系的成功逻辑一致，但也暗示后续工作的瓶颈会从模型结构转移到数据清洗与版权合规。` },
-    { q:`Synthesis robustness: We observe that some words may be unclear, missed, or duplicated in speech synthesis. It is mainly because the phoneme-to-acoustic language part is an autoregressive model, in which disordered attention alignments exist and no constraints to solving the issue.`, src:`arXiv:2301.02111 结论`, insight:`AR 解码的**注意力对齐混乱**是漏读/重复的根因，且论文承认无显式约束可解。这恰恰点明了 VALL-E 类自回归 codec LM 的工程短板，也成为后续 E2-TTS、MaskGCT 等转向完全非自回归路线的直接动机。` },
-    { q:`据公开信息/架构可知的推导论点：VALL-E 以 60K 小时「音频+ASR 转写」为训练前提，其 zero-shot 表现高度依赖提示音频质量，而 AR 注意力错位使长句更易丢字或重复，工程落地通常需要后处理或 NAR 修正。`, src:`推导（依据 arXiv:2301.02111 摘要）`, insight:`从架构看，VALL-E 的稳健性短板并非偶然 bug，而是**自回归逐 token 生成对长序列对齐缺乏全局约束**的固有代价。因此它在短句、朗读类场景惊艳，但在口语长句、同音词密集场景更易翻车，落地时必须配合护栏或改用非自回归解码。` }
+    { q:`Specifically, we train a neural codec language model (called VALL-E) using discrete codes derived from an off-the-shelf neural audio codec model, and regard TTS as a conditional language modeling task rather than continuous signal regression as in previous work.`,
+      src:`arXiv:2301.02111v1 Abstract`,
+      insight:`VALL-E 把 TTS 重新定义为**条件语言建模**而非连续信号回归，用现成神经 Codec（EnCodec）的离散码作中间表示。这一「拿来主义」让语音合成首次借用 NLP 大语言模型的范式与规模化红利，是零样本 TTS 的奠基性转折。` },
+    { q:`When we obtain the first quantizer codes by the AR model, we employ a non-autoregressive (NAR) model to generate codes of the other seven quantizers.`,
+      src:`arXiv:2301.02111v1 §4.2.2`,
+      insight:`第一码本用 AR 建模内容/音色、其余 7 个码本用 NAR 并行生成，是「用 AR 保语义、用 NAR 提速」的经典折中。但两套独立模型也埋下结构冗余——论文自己指出未来方向是用一个统一大模型预测所有码本。` },
+    { q:`We observe that some words may be unclear, missed, or duplicated in speech synthesis.`,
+      src:`arXiv:2301.02111v1 §6 Conclusion, Limitations`,
+      insight:`因为音素→声学的 AR 部分存在**乱序注意力对齐**且缺乏约束，VALL-E 会出现漏字、重复、吞音等鲁棒性问题。这暴露了「Codec LM 范式」的根本代价：把语音当 token 序列生成就继承了自回归语言模型的对齐脆弱性，后续 NaturalSpeech/Voicebox 等转向 NAR/扩散正是为补这一刀。` }
   ],
   "voicebox": [
-    { q:`Voicebox is a non-autoregressive flow-matching model trained to infill speech, given audio context and text, trained on over 50K hours of speech that are neither filtered nor enhanced.`, src:`arXiv:2306.15687 摘要`, insight:`Voicebox 用 **flow-matching 做语音 infill（填空）** 而非自回归逐 token 生成，且直接用 50K 小时「未过滤未增强」的真实野数据训练。这既规避了 AR 的延迟与对齐问题，也证明脏数据规模本身就能换来强泛化，不必过度清洗。` },
-    { q:`Voicebox outperforms the state-of-the-art zero-shot TTS model VALL-E on both intelligibility (5.9% vs 1.9% word error rates) and audio similarity (0.580 vs 0.681) while being up to 20 times faster.`, src:`arXiv:2306.15687 摘要`, insight:`论文给出硬指标：相比 VALL-E，**词错率 1.9% 对 5.9%、相似度 0.681 对 0.580、速度快至多 20 倍**。这组数字几乎同时击中 AR 路线的质量、相似度与延迟三处软肋，是 NAR 语音生成里程碑式的结果。` },
-    { q:`To give a concrete example, the model can answer a question like, "What is the capital of Japan?" with an example of such a relationship in the context: "The capital of Germany is Berlin. The capital of Japan is".`, src:`arXiv:2306.15687 引言`, insight:`作者借 GPT 的 few-shot 类比来解释 in-context learning：**把语音合成也建模成「补全缺失数据」的通用任务**。这种统一视角让同一模型能不经微调就兼做 TTS、去噪、编辑、风格转换，是「通用语音模型」设想的雏形。` },
-    { q:`Hence, scale and diversity are the most crucial factors for building general-purpose models, as we see the state-of-the-art (SOTA) language and vision-language models are trained on web-scale data with billions to hundreds of billions of parameters.`, src:`arXiv:2306.15687 引言`, insight:`这句话把语音模型落后的原因归结为**规模与多样性不足**而非方法缺陷。它既是 Voicebox 的设计纲领，也预言了后续 TTS 竞赛会沿着「更大野数据 + 更大流匹配模型」的轴线展开。` },
-    { q:`Previous works consider highly curated datasets such as VCTK, which contains only clean audio recorded in studio from about 100 speakers with little speaking style and text variation. Such models struggle to synthesize speech with rich variation in emotion, voice, background noise, acoustic condition.`, src:`arXiv:2306.15687 引言`, insight:`点名批评「百人干净录音室数据」的天花板：**风格与文本多样性太窄**，模型学不出真实世界的情感、噪声与声学条件变化。这从需求侧解释了为何必须用 in-the-wild 大数据，而非继续精雕小数据集。` }
+    { q:`Voicebox is a non-autoregressive flow-matching model trained to infill speech, given audio context and text, trained on over 50K hours of speech that are neither filtered nor enhanced.`,
+      src:`arXiv:2306.15687v2 Abstract`,
+      insight:`用 **flow-matching（连续归一化流）** 把语音生成建模为「文本引导的语音补全」任务，并以 GPT 式 in-context learning 获得任务泛化能力。它是首个把大规模生成模型「通用主义者」思路带入语音、且能在 50K 小时未清洗数据上训练的代表作。` },
+    { q:`Voicebox outperforms the state-of-the-art zero-shot TTS model VALL-E on both intelligibility (5.9% vs 1.9% word error rates) and audio similarity (0.580 vs 0.681) while being up to 20 times faster.`,
+      src:`arXiv:2306.15687v2 Abstract`,
+      insight:`关键结论：flow-matching 的 CNF 只需极少 NFE（<10 步 ODE）即可生成，效率相较自回归 VALL-E 提升一个数量级，同时 WER/SIM 全面占优。证明**非自回归连续生成**在质量与速度上可同时击败 AR Codec LM。 ` },
+    { q:`Voicebox depends on a phonemizer and a forced aligner to produce frame-level phonetic transcript.`,
+      src:`arXiv:2306.15687v2 §7 Conclusion and Discussion`,
+      insight:`与后续 E2-TTS/F5-TTS/MaskGCT 不同，Voicebox 仍依赖**音素化器 + 强制对齐器**产出帧级音素标注，且无法对音色/情感/风格等属性做解耦独立控制。这条管线依赖正是后来 fully-NAR 模型刻意要消除的边界。` }
   ],
   "natural_speech3": [
-    { q:`Motivated by it, we propose NaturalSpeech 3, a TTS system with novel factorized diffusion models to generate natural speech in a zero-shot way.`, src:`arXiv:2403.03100 摘要`, insight:`NaturalSpeech 3 的核心主张是用**分解式扩散模型**把复杂语音拆开逐个子空间生成。相较于把整段波形当黑箱，这种「分而治之」思路更利于可控合成，是 NS 系列从 NS2 的单一 latent 扩散走向结构化生成的关键转折。` },
-    { q:`Specifically, 1) we design a neural codec with factorized vector quantization (FVQ) to disentangle speech waveform into subspaces of content, prosody, timbre, and acoustic details; 2) we propose a factorized diffusion model to generate attributes in each subspace following its corresponding prompt.`, src:`arXiv:2403.03100 摘要`, insight:`FVQ 把语音解耦为 **content / prosody / timbre / detail 四个子空间**，再用各自的扩散模型按提示生成。这种「先解耦、后生成」的设计让音色、韵律、细节可被独立控制，是后续语音编辑与风格迁移工作的重要基石。` },
-    { q:`With this factorization design, NaturalSpeech 3 can effectively and efficiently model intricate speech with disentangled subspaces in a divide-and-conquer way.`, src:`arXiv:2403.03100 摘要`, insight:`作者强调分解式设计带来**效率与效果的双重收益**：各子空间维度低、目标单一，扩散模型更易收敛。但这也意味着解耦质量上限由 FVQ 码本容量决定，子空间一旦耦合就会在生成时串扰。` },
-    { q:`Furthermore, we achieve better performance by scaling to 1B parameters and 200K hours of training data.`, src:`arXiv:2403.03100 摘要`, insight:`明确的规模化结论：**1B 参数 + 200K 小时**继续带来质量提升，说明 TTS 仍处在数据/参数未饱和区间。需要注意的是，200K 小时远超市面多数开源可复现数据集，其门槛更多是工程与合规而非算法。` },
-    { q:`Since our model could synthesize speech with great speaker similarity, it may carry potential risks in misuse of the model, such as spoofing voice identification or impersonating a specific speaker.`, src:`arXiv:2403.03100 结论`, insight:`论文罕见地在正文直面**声纹伪造与冒用风险**，承认高相似度克隆是一把双刃剑。这反映出 2024 年 TTS 研究共同体的责任意识提升，也为后续合成语音检测、水印等防御工作提供了动机。` },
-    { q:`据公开信息/架构可知的推导论点：NaturalSpeech 3 将语音解耦为 content/prosody/timbre/detail 多个子空间，理论上便于独立控制，但各子空间重建保真度受 FVQ 码本容量与训练数据覆盖率制约，极端音色或低资源语种可能仍出现耦合串扰。`, src:`推导（依据 arXiv:2403.03100 摘要）`, insight:`分解式 codec 的假设是「各属性可线性解耦」，但真实语音中音色与韵律高度纠缠，**理想解耦往往需要极大码本与极广覆盖**才能真正成立。因此 NS3 在常见英文说话人上表现优异，但跨语种、跨方言的泛化仍是待验证项。` }
+    { q:`Motivated by it, we propose NaturalSpeech 3, a TTS system with novel factorized diffusion models to generate natural speech in a zero-shot way.`,
+      src:`arXiv:2403.03100 Abstract`,
+      insight:`核心创新是把语音**因式分解**为内容/韵律/音色/声学细节等子空间分别生成，而非端到端硬回归。这是从「整体波形建模」转向「属性可分解生成」的范式转折，为可控性与解耦奠定结构基础。` },
+    { q:`we design a neural codec with factorized vector quantization (FVQ) to disentangle speech waveform into subspaces of content, prosody, timbre, and acoustic details`,
+      src:`arXiv:2403.03100 Abstract`,
+      insight:`提出 **FACodec（FVQ 神经声码器）** 作为各属性的离散表示来源，再用 factorized diffusion 在每个子空间按对应 prompt 生成。配合 1B 参数 + 200K 小时训练，把「解耦生成」从理念落到可扩展系统，质量追平真人录音。` },
+    { q:`we need phoneme transcription for content supervision, which limits the scalability`,
+      src:`arXiv:2403.03100 Appendix C Limitation`,
+      insight:`局限在于 FACodec 的内容监督仍需**音素转写**，且只在英文 LibriVox 有声书（朗读风格）上验证，不支持多语言、也难覆盖背景音等属性。说明「解耦表示」在可扩展性与真实多样性上仍有未填的坑。` }
   ],
   "audiobox": [
-    { q:`This paper presents Audiobox, a unified model based on flow-matching that is capable of generating various audio modalities. We design description-based and example-based prompting to enhance controllability and unify speech and sound generation paradigms.`, src:`arXiv:2312.15821 摘要`, insight:`Audiobox 用 flow-matching 把**语音、音效、音乐统一到一个模型**，并以「描述式 + 示例式」双提示增强可控性。它的野心不在单一任务 SOTA，而在打通多模态音频生成的统一接口，是 AudioGen 之后「音频版统一模型」的代表作。` },
-    { q:`Audiobox sets new benchmarks on speech and sound generation (0.745 similarity on Librispeech for zero-shot TTS; 0.77 FAD on AudioCaps for text-to-sound) and unlocks new methods for generating audio with novel vocal and acoustic styles.`, src:`arXiv:2312.15821 摘要`, insight:`给出可引用指标：zero-shot TTS 相似度 **0.745**、text-to-sound FAD **0.77**。这些基准说明统一模型并未以牺牲单任务质量为代价，反而因为多模态共享表征获得更丰富的风格空间。` },
-    { q:`We further integrate Bespoke Solvers, which speeds up generation by over 25 times compared to the default ODE solver for flow-matching, without loss of performance on several tasks.`, src:`arXiv:2312.15821 摘要`, insight:`**Bespoke Solvers 把流匹配采样加速 25 倍以上且不掉点**，是面向部署的关键工程贡献。它揭示了一个常被忽视的事实：流匹配推理的 ODE 求解器本身才是延迟大头，定制求解器比换 backbone 更划算。` },
-    { q:`While the in-context style transfer paradigm is powerful, it also possesses several limitations in terms of controllability. First, audio prompt is the only input mechanism of controlling the audio style.`, src:`arXiv:2312.15821 结论`, insight:`作者坦诚示例式提示的局限：**只能靠一段音频提示来控制风格**，用户无法用自然语言精确指定。这恰恰是 Audiobox 同时引入描述式提示的根本原因——纯 in-context 范式在产品化可控性上不够用。` },
-    { q:`Second, disentangled style control is not enabled with the paradigm, where voice and other attributes, such as emotion and acoustic condition, can be controlled independently.`, src:`arXiv:2312.15821 结论`, insight:`第二个局限是**音色与情感/声学条件无法解耦独立控制**。这意味着示例式迁移会把提示音频里的所有属性一股脑复制过来，难以「换音色保情感」或「保音色换环境」，制约了细粒度创作。` },
-    { q:`据公开信息/架构可知的推导论点：Audiobox 的 in-context 风格迁移范式以音频提示为唯一控制入口，难以像文本提示那样精确解耦音素、情感与声学条件，因此面向产品化可控语音时仍需辅以描述式提示或显式解耦模块。`, src:`推导（依据 arXiv:2312.15821 摘要）`, insight:`从控制论角度看，示例式提示是「整体风格克隆」而非「维度解耦」，**可控性的上界由提示音频本身决定**。要支持「年轻男性、开心、礼堂」这类组合式指令，必须引入自然语言条件或正交风格编码，这正是 Audiobox 描述式分支的补偿逻辑。` }
+    { q:`This paper presents Audiobox, a unified model based on flow-matching that is capable of generating various audio modalities.`,
+      src:`arXiv:2312.15821v1 Introduction`,
+      insight:`用统一的 flow-matching 架构把**语音与声波/音效生成**收进同一个模型，并设计 description-based（自然语言）与 example-based（参考音频）两种提示方式。是把「通用音频生成」从单模态拼凑推向统一范式的关键一步。` },
+    { q:`To improve model generalization with limited labels, we adapt a self-supervised infilling objective to pre-train on large quantities of unlabeled audio.`,
+      src:`arXiv:2312.15821v1 Introduction`,
+      insight:`核心方法是用**自监督补全（infilling）目标**在海量无标注音频上预训练，以缓解标注稀缺。配合 Bespoke Solvers 把生成加速 25 倍以上，体现「用无标注数据换可控性」的扩展思路。` },
+    { q:`Hence, it is harder to generalize description-based control due to the scarcity of labeled data covering various concepts and concepts of different granularity.`,
+      src:`arXiv:2312.15821v1 §10.1 Limitations`,
+      insight:`局限在于基于文本描述的控制高度依赖稀缺的「音频-描述」配对数据，难以泛化到细粒度概念；而基于参考音频的控制虽易扩展，却无法精细解耦。揭示「自然语言可控生成」受限于标注规模这一普遍瓶颈。` }
   ],
   "e2_tts": [
-    { q:`This paper introduces Embarrassingly Easy Text-to-Speech (E2 TTS), a fully non-autoregressive zero-shot text-to-speech system that offers human-level naturalness and state-of-the-art speaker similarity and intelligibility.`, src:`arXiv:2406.18009 摘要`, insight:`E2-TTS 把「完全非自回归零样本 TTS」做到人类级自然度，标题 **Embarrassingly Easy** 点明其哲学：不靠复杂组件，靠把问题框定成「音频填空」即可。它验证了 NAR 路线不仅能追上、还能超越 AR 路线的相似度与可懂度。` },
-    { q:`In the E2 TTS framework, the text input is converted into a character sequence with filler tokens. The flow-matching-based mel spectrogram generator is then trained based on the audio infilling task.`, src:`arXiv:2406.18009 摘要`, insight:`其巧妙处在于**用 filler token 把文本 pad 到与语音等长**，再训练流匹配模型做 mel 谱的 infill。这样文本-语音对齐不再需要外部对齐器或时长模型，长度对齐在填充过程中被隐式解决，极大简化了流水线。` },
-    { q:`Unlike many previous works, it does not require additional components (e.g., duration model, grapheme-to-phoneme) or complex techniques (e.g., monotonic alignment search).`, src:`arXiv:2406.18009 摘要`, insight:`去掉时长模型、G2P、单调对齐搜索后，**系统组件显著减少、工程脆弱点随之消失**。这正是「尴尬地简单」的实操含义：少一个显式模块，就少一处可能出错或需调参的环节。` },
-    { q:`One of our findings in this paper is that such techniques are not necessary to achieve high-quality zero-shot TTS, and they are sometimes even harmful to naturalness.`, src:`arXiv:2406.18009 引言`, insight:`作者给出一个反直觉结论：**显式对齐/时长模块有时反而损害自然度**。这挑战了当时 NAR 模型「必须单调对齐或 MAS」的共识，为后续 F5-TTS、Seed-TTSDiT 等端到端无对齐路线提供了理论支撑。` },
-    { q:`because the codec token needs to be sampled sequentially, it inevitably increases the inference latency.`, src:`arXiv:2406.18009 结论`, insight:`这句话虽在讲 AR 路线的代价，却也是 E2-TTS 的立论动机：**逐 token 串行采样必然拖慢推理**。E2-TTS 用并行去噪直接消除该瓶颈，呼应了 Voicebox 对 AR 延迟的批判。` },
-    { q:`a dedicated effort to figure out the best tokenizer (both for text tokens and audio tokens) is necessary to achieve the best quality.`, src:`arXiv:2406.18009 结论`, insight:`即便转向 NAR，codec/文本 tokenizer 的选择仍是质量天花板：**tokenizer 不到位，模型结构再优也白搭**。这提示从业者，在追求生成模型创新前，先把音频 codec 与文本表征打磨好，往往收益更大。` }
+    { q:`We propose E2 TTS, a fully non-autoregressive (NAR), zero-shot text-to-speech system.`,
+      src:`arXiv:2406.18009v2 Abstract`,
+      insight:`首个彻底抛弃自回归的零样本 TTS：不预测 token 序列，而是直接在连续 mel 空间用 flow-matching 并行生成。相比 VALL-E 的 AR Codec LM，从根上消除了顺序采样的延迟与暴露偏差。` },
+    { q:`We convert the input text into a character sequence with filler tokens to match the length of the input character sequence and the output mel-filterbank sequence.`,
+      src:`arXiv:2406.18009v2 §4 Conclusions`,
+      insight:`方法极简：字符序列用特殊 **filler token <F>** 填充到与 mel 等长，既不需要时长模型，也不依赖 G2P/强制对齐器。把「文本-语音对齐」这个 NAR 最大难题，转化为 filler 位置的隐式学习。` },
+    { q:`While the neural codec language model-based zero-shot TTS achieved promising results, there are still a few limitations based on its auto-regressive (AR) model-based architecture.`,
+      src:`arXiv:2406.18009v2 §1 Introduction`,
+      insight:`E2 选择 fully-NAR 正是为消除 AR Codec LM 的三大痛点：顺序采样导致推理延迟、需精心调 tokenizer、长序列需 AR+NAR 混合技巧维稳。但 fully-NAR 以 filler 长度猜测 + 训练**收敛慢、鲁棒性低**为代价——这正是 F5-TTS 后续用 ConvNeXt 与 Sway Sampling 要补的。` }
   ],
   "f5_tts": [
-    { q:`This paper introduces F5-TTS, a fully non-autoregressive text-to-speech system based on flow matching with Diffusion Transformer (DiT).`, src:`arXiv:2410.06885 摘要`, insight:`F5-TTS 把 **flow matching 与 Diffusion Transformer (DiT)** 结合做完全非自回归 TTS。DiT 的引入让长序列建模具备更强的可扩展性，也顺应了视觉生成里 DiT 取代 U-Net 的趋势，是 TTS backbone 现代化的一次明确迁移。` },
-    { q:`Without requiring complex designs such as duration model, text encoder, and phoneme alignment, the text input is simply padded with filler tokens to the same length as input speech, and then the denoising is performed for speech generation, which was originally proved feasible by E2 TTS.`, src:`arXiv:2410.06885 摘要`, insight:`F5-TTS 直接继承 E2-TTS 的 **filler-token 对齐范式**，并坦承可行性由 E2-TTS 证明。其价值不在发明范式，而在把它做「好用」：用 ConvNeXt 精炼文本表征以加速收敛、提升稳健性。` },
-    { q:`We further propose an inference-time Sway Sampling strategy, which significantly improves our model's performance and efficiency. This sampling strategy for flow step can be easily applied to existing flow matching based models without retraining.`, src:`arXiv:2410.06885 摘要`, insight:`**Sway Sampling 是即插即用的推理期技巧**，无需重训就能提升其他流匹配 TTS 的质量与效率。这种「不改训练只改采样」的低成本增益，对社区特别友好，体现了工程巧思大于算力堆砌的思路。` },
-    { q:`Our design allows faster training and achieves an inference RTF of 0.15, which is greatly improved compared to state-of-the-art diffusion-based TTS models.`, src:`arXiv:2410.06885 摘要`, insight:`**RTF 0.15** 意味着推理速度远超实时，且训练也更省。对流匹配类模型而言，瓶颈常在 ODE 步数与 DiT 计算，F5 通过 ConvNeXt 表征与 Sway Sampling 把两者同时压下，是实用部署向的重要信号。` },
-    { q:`Trained on a public 100K hours multilingual dataset, our F5-TTS exhibits highly natural and expressive zero-shot ability, seamless code-switching capability, and speed control efficiency.`, src:`arXiv:2410.06885 摘要`, insight:`**公开 100K 小时多语种数据 + 开源代码/权重**是 F5-TTS 影响力大的主因：可复现、可多语种、可代码切换。它把前沿 NAR TTS 从论文结果变成社区可玩工具，加速了相关研究扩散。` },
-    { q:`the inherent limitations of AR modeling require extra efforts addressing issues such as inference latency and exposure bias.`, src:`arXiv:2410.06885 结论`, insight:`作者再次点明 AR 的**推理延迟与曝光偏差**两大硬伤。F5-TTS 的整套设计都可视为对这两点的规避：并行去噪消除延迟，无自回归依赖消除训练-推理不匹配带来的曝光偏差。` }
+    { q:`This paper introduces F5-TTS, a fully non-autoregressive text-to-speech system based on flow matching with Diffusion Transformer (DiT).`,
+      src:`arXiv:2410.06885v3 Abstract`,
+      insight:`在 E2-TTS 的 fully-NAR + flow-matching 骨架上，把主干换成 **Diffusion Transformer (DiT)**，是「轻量填充」范式走向可扩展、强对齐的成熟化标志，证明该路线可兼具质量、零样本与推理速度。` },
+    { q:`We further propose an inference-time Sway Sampling strategy, which significantly improves our model's performance and efficiency.`,
+      src:`arXiv:2410.06885v3 Abstract`,
+      insight:`关键改进有两点：用 **ConvNeXt** 细化文本表示以易对齐，并提出推理期 **Sway Sampling** 重排 flow 步——无需重训即可套用到任何 flow-matching 模型。最终 RTF 0.15，较同期扩散 TTS 大幅提速，是对 E2「慢收敛」的直接回应。` },
+    { q:`There are two limitations to this work. First, although F5-TTS accelerates the training and inference while maintaining the simplicity of the system through better structure design, the mel spectrogram sequence length is still much longer than the text modality.`,
+      src:`arXiv:2410.06885v3 §Limitations`,
+      insight:`局限在于仍受困于 **mel 序列远长于文本**的表征效率问题，且对情绪等副语言细节缺乏细粒度控制。指向未来更紧凑、通用的连续语音表示，是该范式进一步提效提控的方向。` }
   ],
   "maskgct": [
-    { q:`In this paper, we introduce Masked Generative Codec Transformer (MaskGCT), a fully non-autoregressive TTS model that eliminates the need for explicit alignment information between text and speech supervision, as well as phone-level duration prediction.`, src:`arXiv:2409.00750 摘要`, insight:`MaskGCT 的卖点是**彻底去掉文本-语音显式对齐与音素级时长预测**。它借 mask-and-predict 范式让时长被「隐式」建模，既保留了 NAR 的并行速度，又避免了 diffusion/flow 路线对对齐信息的依赖，是 NAR TTS 结构上的新分支。` },
-    { q:`MaskGCT is a two-stage model: in the first stage, the model uses text to predict semantic tokens extracted from a speech self-supervised learning (SSL) model, and in the second stage, the model predicts acoustic tokens conditioned on these semantic tokens.`, src:`arXiv:2409.00750 摘要`, insight:`两阶段 **T2S（文本→语义 token）+ S2A（语义→声学 token）** 把「说什么」与「怎么发声」解耦。语义 token 来自 SSL 模型而非 k-means，使信息损失更小，也让人能分别控制内容语义与声学风格。` },
-    { q:`Experiments with 100K hours of in-the-wild speech demonstrate that MaskGCT outperforms the current state-of-the-art zero-shot TTS systems in terms of quality, similarity, and intelligibility.`, src:`arXiv:2409.00750 摘要`, insight:`在 **100K 小时野数据** 上取得质量/相似度/可懂度的全面领先，说明 masked generative transformer 在语音域的潜力不输 AR 与扩散。它也为「语音基础模型」提供了除自回归外的另一条可扩展路径。` },
-    { q:`NAR-based models, typically based on diffusion, flow matching, or GAN, require explicit text and speech alignment information as well as the prediction of phone-level duration, resulting in a complex pipeline and producing more standardized but less diverse speech.`, src:`arXiv:2409.00750 引言`, insight:`作者指出主流 NAR 的悖论：**显式对齐换来可控，却牺牲了多样性与自然度**。MaskGCT 想两全——用 mask 迭代解码保留多样性，又靠无对齐训练简化流水线，是对「标准化 vs 生动」权衡的直接回应。` },
-    { q:`a text-to-semantic model predicts semantic tokens with text and prompt semantic tokens; a semantic-to-acoustic model predicts acoustic tokens conditioned on semantic tokens; a speech acoustic codec reconstructs waveform from acoustic tokens.`, src:`arXiv:2409.00750 结论`, insight:`框架图 caption 把四件套讲得很清楚：**语义 codec + T2S + S2A + 声学 codec**。这种模块化让 MaskGCT 易于扩展到语音翻译、编辑、变声、情感控制等任务，凸显其作为基础模型的通用性。` },
-    { q:`we train a VQ-VAE to quantize speech self-supervised learning embedding, rather than using k-means to extract semantic tokens that is common in previous work. This approach minimizes the information loss of semantic features even with a single codebook.`, src:`arXiv:2409.00750 引言`, insight:`用 **VQ-VAE 替代常见的 k-means** 提取语义 token，是少被注意却关键的设计：单码本下信息损失更小、语义更连续。它解释了为何 MaskGCT 在相似度上能压过依赖 k-means 语义的 SoundStorm 类方案。` }
+    { q:`In this paper, we introduce Masked Generative Codec Transformer (MaskGCT), a fully non-autoregressive TTS model that eliminates the need for explicit alignment information between text and speech supervision, as well as phone-level duration prediction.`,
+      src:`arXiv:2409.00750v3 Abstract`,
+      insight:`用**掩码生成（mask-and-predict）**Transformer 实现 fully-NAR 零样本 TTS，同时去掉了显式文本-语音对齐监督与音素级时长预测——补齐了 NaturalSpeech 3 仍依赖对齐的最后一公里，是 NAR 范式对 AR 与扩散两条路线的汇合。` },
+    { q:`MaskGCT is a two-stage model: in the first stage, the model uses text to predict semantic tokens extracted from a speech self-supervised learning (SSL) model, and in the second stage, the model predicts acoustic tokens conditioned on these semantic tokens.`,
+      src:`arXiv:2409.00750v3 Abstract`,
+      insight:`两阶段（T2S 文本→语义 token，S2A 语义→RVQ 声学 token）并以 **VQ-VAE** 量化 SSL 表征替代 k-means，单码本即最小化语义信息损失；并行迭代解码天然支持长度控制，在 100K 小时上 CMOS 追平真人。` },
+    { q:`Achieving more robust cross-lingual translation remains a focus for future work.`,
+      src:`arXiv:2409.00750v3 §Discussion`,
+      insight:`局限/未来在于跨语言鲁棒性仍不足，且「更适配语音生成的离散表示」本身仍是开放问题。说明掩码生成虽解了对齐束缚，但**语义-声学表示的适用性**与多语言泛化仍是待攻克的边界。` }
   ],
   "seed_tts": [
-    { q:`We introduce Seed-TTS, a family of large-scale autoregressive text-to-speech (TTS) models capable of generating speech that is virtually indistinguishable from human speech.`, src:`arXiv:2406.02430 摘要`, insight:`Seed-TTS 是工业级 **AR 语言模型 TTS** 的代表，强调「几乎与人类无法区分」。它把规模、数据与后训练工程做到极致，目标不是单一指标 SOTA，而是逼近真人上限的可部署语音基础模型。` },
-    { q:`Furthermore, we propose a self-distillation method for speech factorization, as well as a reinforcement learning approach to enhance model robustness, speaker similarity, and controllability.`, src:`arXiv:2406.02430 摘要`, insight:`两大扩展技术很有意思：**自蒸馏做语音因式分解（音色解耦）+ RL 做偏好偏置**。相比改结构或设计特殊 loss，这种「后训练增强」路线更贴合工业迭代——不破坏主干就能持续提升鲁棒性与可控性。` },
-    { q:`We additionally present a non-autoregressive (NAR) variant of the Seed-TTS model, named Seed-TTSDiT, which utilizes a fully diffusion-based architecture. Unlike previous NAR-based TTS systems, Seed-TTSDiT does not depend on pre-estimated phoneme durations and performs speech generation through end-to-end processing.`, src:`arXiv:2406.02430 摘要`, insight:`Seed-TTSDiT 用 **端到端扩散** 去掉预估计音素时长，直接预测语音 latent。它证明 NAR 也能达到 AR 路线的水平，且更适合语音编辑——体现团队对两条路线优劣的务实权衡而非押注单一范式。` },
-    { q:`We further introduce two novel extension techniques that can significantly enhance model performance: speech factorization via self-distillation and preference biasing through reinforcement learning (RL).`, src:`arXiv:2406.02430 引言`, insight:`把自蒸馏与 RL 称为「novel extension」而非模型本体，透露出**大模型时代 TTS 的竞争力在训练策略与数据**，而非网络结构本身。这种后训练范式与 LLM 的 RLHF/蒸馏如出一辙。` },
-    { q:`Under a zero-shot ICL setup, we show that Seed-TTS is able to generate robust, similar, and highly dynamic speech that is indistinguishable from human speech.`, src:`arXiv:2406.02430 结论`, insight:`强调 zero-shot ICL 下语音**稳健、相似且高动态**——"dynamic" 一词点出相比死板朗读，Seed-TTS 更看重韵律活力。这也呼应其情感控制与 in-the-wild 说话人目标，是产品体验导向的指标。` },
-    { q:`据公开信息/架构可知的推导论点：Seed-TTS 主流为 AR 语言模型路线，虽经 RL 与自蒸馏提升鲁棒性，但 AR 自回归本质仍可能在极长文本或罕见字词上出现漏读/重复，NAR 的 Seed-TTSDiT 正是为规避此类问题而设。`, src:`推导（依据 arXiv:2406.02430 摘要）`, insight:`AR 与 NAR 双线并推，说明团队清楚 **AR 的漏读/重复是结构性风险**，无法仅靠后训练根除。用 Seed-TTSDiT 覆盖编辑与高风险场景，是一种工程上的风险对冲，而非单纯追求某一路线更优。` }
+    { q:`We introduce Seed-TTS, a family of large-scale autoregressive text-to-speech (TTS) models capable of generating speech that is virtually indistinguishable from human speech.`,
+      src:`arXiv:2406.02430v1 Abstract`,
+      insight:`工业级 AR TTS 基础模型：在比以往大几个数量级的数据/模型规模上训练，零样本 ICL 的说话人相似度与自然度**可追平真人录音**，并展示出情绪控制等涌现能力，代表「规模化即质量」路线的顶峰。` },
+    { q:`We additionally present a non-autoregressive (NAR) variant of the Seed-TTS model, named Seed-TTSDiT, which utilizes a fully diffusion-based architecture. Unlike previous NAR-based TTS systems, Seed-TTSDiT does not depend on pre-estimated phoneme durations and performs speech generation through end-to-end processing.`,
+      src:`arXiv:2406.02430v1 Abstract`,
+      insight:`同时给出 **Seed-TTSDiT**：完全扩散、端到端、不依赖预估计音素时长的 NAR 变体，性能媲美 AR 版且更擅语音编辑。配合**自蒸馏**（音色解耦）与 **RL 后训练**（鲁棒性/相似度/可控性）两套扩展，是「AR 主干 + 扩散分支 + 强化调优」的完整工业方案。` },
+    { q:`Despite its capabilities, Seed-TTS has several limitations. Although emergent behavior is observed, the model sometimes has limitations in scenarios requiring nuanced emotion and contextual understanding.`,
+      src:`arXiv:2406.02430v1 §5 Model applications, limitations, and safety`,
+      insight:`局限在于对细腻情感与上下文理解仍力不从心，且唱歌、带背景音乐/噪声的 prompt 表现不稳。揭示「规模驱动的 AR 基础模型」在**细粒度语义与复杂场景泛化**上的天花板，以及作为闭源工业系统的安全部署代价。` }
   ]
 };
 
-const INSIGHTS_PART_F = {
-  "nim4_asr": [
-    { q:`In deployment, particularly for real-time speech interfaces, lightweight ASR models are favored for their lower inference latency and computational cost.`, src:`arXiv:2604.18105 结论`, insight:`推理延迟与算力成本是端侧/实时语音交互的硬约束，**小模型优先**是工程常态而非学术偏好。这篇论文把"轻量化"当作核心痛点，说明 LLM-ASR 的落地瓶颈并不在精度上限，而在部署侧的可伸缩性。` },
-    { q:`However, the downward scalability of LLM-based ASR appears disappointing: lightweight variants such as Qwen3-ASR-0.6B and Fun-ASR-nano exhibit substantial performance gaps relative to their full-scale counterparts.`, src:`arXiv:2604.18105 结论`, insight:`作者点名 Qwen3-ASR-0.6B 与 Fun-ASR-nano，说明**缩参带来的性能塌方**比传统 ASR 更陡。横向看，这提示"大模型蒸馏到小模型"在语音模态上并不像文本那样平滑，小规模 LLM-ASR 仍是开放难题。` },
-    { q:`Beyond the degradation ordinarily expected from model downscaling, LLM-based ASR models carry an additional structural cost from the modality tax: a non-trivial number of parameters are devoted to cross-modal alignment rather than the ASR task itself.`, src:`arXiv:2604.18105 结论`, insight:`**"模态税"(modality tax)** 是核心论点——跨模态对齐占用了本应用于 ASR 的参数预算。这意味着单纯堆参数或常规蒸馏都治标不治本，架构上需要把对齐成本与任务能力解耦。` },
-    { q:`This overhead leaves lightweight LLMs with less effective capacity, imposing a disproportionate performance degradation.`, src:`arXiv:2604.18105 结论`, insight:`对小模型而言，固定开销的占比被放大，导致**边际退化不成比例**。这解释了为何 0.6B 级别的 LLM-ASR 比同量级传统模型掉得更多，是选型时不能忽略的隐性成本。` },
-    { q:`key limitations in real-world scenarios.`, src:`arXiv:2604.18105 结论`, insight:`论文坦承在真实场景（噪声、口音、长尾）上仍有明显局限。这对工程落地是重要提醒：**bench 指标好 ≠ 线上可用**，评估应更重视真实分布而非公开测试集。` }
-  ],
-  "on_device": [
-    { q:`Table 16: Nemotron-0.6B int4 k-quant at 0.16s algorithmic delay. Config: (2,20,2), 3.2s history.`, src:`arXiv:2604.14493 结论`, insight:`该表给出 Nemotron-0.6B 在 **int4 k-quant + 0.16s 算法延迟** 下的流式配置，说明工作重点是低延迟端侧流式 ASR。Config (2,20,2) 代表 chunk/左上下文/右上下文，3.2s 历史窗口是实时性与上下文的权衡点。` },
-    { q:`Variant Format Size Device Avg RTFx AMI Earn. Giga LS-c LS-o SPGI TED VoxP.`, src:`arXiv:2604.14493 结论`, insight:`评测矩阵覆盖 AMI、Earnings、GigaSpeech、LibriSpeech、SPGISpeech、TED-LIUM、VoxPopuli 等**多领域基准**，说明作者刻意验证量化后模型在会议/金融/朗读/口语等多场景的鲁棒性。RTFx 与 WER 双指标并列，强调端侧既要快也要准。` },
-    { q:`int4 k-quant ONNX 0.67GB CPU 8.89 2.87 19.92 14.02 11.08 2.99 6.59 3.76 3.94 8.84`, src:`arXiv:2604.14493 结论`, insight:`int4 k-quant 把模型压到 **0.67GB** 且 CPU 平均 RTFx 达 8.89×，证明 0.6B 级模型可在纯 CPU 上实时运行。但 AMI 2.87 的 WER 仍偏高，说明会议远场场景是量化小模型的薄弱环节。` },
-    { q:`Earn.=Earnings22, Giga=GigaSpeech, LS-c/o=LibriSpeechClean/Other, SPGI=SPGISpeech, TED=TED-LIUM,VoxP.=VoxPopuli.`, src:`arXiv:2604.14493 结论`, insight:`缩写表揭示了基准的实际指向，**SPGISpeech 代表带标点的财经播报、VoxPopuli 代表多语种口语**，覆盖面广。对读者而言，跨基准的 WER 差距（如 AMI 与 LibriSpeech 之差）比单一数字更能反映模型的真实泛化边界。` },
-    { q:`Parenthesized values are reported by original authors. A dash (–) indicates the configuration was not evaluated or results`, src:`arXiv:2604.14493 结论`, insight:`脚注提示部分数值**引自原作者、且有未测配置**，说明跨论文对比需谨慎。这也侧面反映端侧 ASR 评测尚无统一协议，横向比较 RTFx/WER 时容易 apples-to-oranges。` }
-  ],
-  "voxtral_mini": [
-    { q:`Speechtokenizer: Unified speech tokenizer for speech large language models.arXiv preprint arXiv:2308.16692, 2023.`, src:`arXiv:2603.25551 结论`, insight:`引用 SpeechTokenizer 表明 Voxral Mini 走**离散语音 token + 语言模型**路线，把语音当作"另一种语言"来做生成与理解。这是 2023 年以来语音 LLM 的主流范式，引用它等于声明站在该范式之上。` },
-    { q:`Mr-flowdpo: Multi-reward direct preference optimization for flow-matching text-to-music generation, 2025.`, src:`arXiv:2603.25551 结论`, insight:`引用 Mr-FlowDPO 暗示其**对齐/后训练阶段采用 flow-matching + 多奖励 DPO**，把 TTS 中的偏好优化思路迁移到语音模型。这反映行业趋势：不再单纯监督训练，而用偏好对齐提升自然度。` },
-    { q:`vllm-omni: Fully disaggregated serving for any-to-any multimodal models, 2026.`, src:`arXiv:2603.25551 结论`, insight:`引用 vllm-omni 说明作者关注**多模态任意到任意(any-to-any)的分布式推理服务**，不只单模型精度。对边缘部署而言，吞吐与解耦调度往往比单点延迟更决定可用性。` },
-    { q:`Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder, 2025.`, src:`arXiv:2603.25551 结论`, insight:`引用 MiniMax-Speech 指向**零样本 TTS + 可学习说话人编码器**，说明其语音合成侧追求免微调克隆音色。这与 SpeechTokenizer 的离散表征思路互补，构成"理解+生成"双能力。` },
-    { q:`Revisiting self-supervised learning of speech representation from a mutual information perspective.`, src:`arXiv:2603.25551 结论`, insight:`引用 ICASSP 2024 的互信息自监督表征工作，表明 backbone 可能受益于**基于互信息的 SSL 预训练**。这提醒我们：语音 LLM 的底座质量仍取决于前端表征，而非只靠后面的语言模型。` }
-  ],
-  "vibevoice_asr": [
-    { q:`Despite these advancements, VIBEVOICE-ASR has several limitations that guide future research:`, src:`arXiv:2601.18184 结论`, insight:`论文主动列局限，说明其定位是**开源可复现的研究模型**而非成品。把局限明示，反而便于社区在其微调代码上补强，是开放研究的务实姿态。` },
-    { q:`While our pre-training covered over 50 languages, the SFT phase predominantly focused on English, Chinese, and code-switching data.`, src:`arXiv:2601.18184 结论`, insight:`预训练 50+ 语言却只在 SFT 聚焦中英与语码切换，是典型的**"广预训练、窄对齐"**现象。这揭示多语种能力的短板往往不在表征容量，而在指令微调数据的语言覆盖。` },
-    { q:`Consequently, the model may experience performance degradation on low-resource languages absent from the instruction tuning stage.`, src:`arXiv:2601.18184 结论`, insight:`低资源语言在 SFT 缺位即掉点，提示**指令微调是 multilingual forgetting 的主因**。对落地而言，要支持小语种必须补 SFT 语料，而非仅依赖预训练的广覆盖。` },
-    { q:`The current architecture generates a serialized output stream and does not explicitly handle overlapping speech (the "cocktail party problem").`, src:`arXiv:2601.18184 结论`, insight:`序列化输出无法表达**多人同时说话**的结构，是架构性盲区。语音 LLM 大多如此——把多说话人压成一维序列，天然丢失"鸡尾酒会"信息，是超越转录、走向真正场景理解的关键缺口。` },
-    { q:`Future iterations will explore separation-aware modeling to address this challenge.`, src:`arXiv:2601.18184 结论`, insight:`作者把"分离感知建模"列为下一步，意味着未来版本可能引入**说话人分离前端或并行解码头**。这预示语音 ASR 的演进方向：从单流转录走向多流、结构化的场景解析。` }
-  ]
-};
-
-const INSIGHTS_PART_G = {
-  "stepaudio25_tts": [
-    { q:`A third frontier has emerged in realtime conversational speech agents, exemplified by GPT-realtime, Gemini Live, and Doubao Realtime, that must understand paralinguistic signals, respond with low latency, preserve persona, and remain emotionally appropriate within an unfolding emotional expression.`, src:`arXiv:2605.23463 引言`, insight:`作者把实时对话语音 agent 列为 TTS 之外的第三战场,强调**副语言信号理解 + 低延迟 + 人设一致性**的复合能力。这提示 TTS 评测不能只看音质,而要纳入延迟与情感合时性。相较 ElevenLabs/Gemini 的强可控路线,该文更看重对话链路里的工程化约束。` },
-    { q:`Subjective MOS evaluation also presents significant limitations, as it requires highly trained annotators and often suffers from inconsistencies in scoring criteria across evaluators.`, src:`arXiv:2605.23463 结论`, insight:`MOS 的主观性被点名为核心痛点:**标注员训练成本高且评分标准不一致**。这解释了为何工业界转向 pairwise arena。对读者而言,任何引用绝对 MOS 的论文都应警惕标注口径差异带来的不可比性。` },
-    { q:`Considering these limitations, we adopt an arena-style pairwise evaluation framework, in which models are compared via pairwise preference judgments, and their overall performance is measured by aggregated win rates.`, src:`arXiv:2605.23463 结论`, insight:`用**胜率聚合**替代绝对打分,本质是借鉴 LLM 竞技场的相对评估范式。好处是降低标注方差、便于跨模型排位;局限是赢率高度依赖对手池与提示分布。做横向对比时需注意其 arena 构成是否具代表性。` },
-    { q:`To ensure evaluation reliability, we invest substantial effort in standardizing the evaluation protocol and improving inter-rater consistency among human evaluators.`, src:`arXiv:2605.23463 结论`, insight:`即便采用 pairwise 框架,作者仍花大力气标准化协议与**评分者间一致性**。这反衬出主观听评的脆弱:方法改进不敌标注噪声。对复现者而言,开源评测脚本与固定标注员名单比指标本身更关键。` },
-    { q:`Specifically, we proceed as follows: (1) We first conduct a listening sensitivity screening using a small set of audio samples to select qualified evaluators.`, src:`arXiv:2605.23463 结论`, insight:`用**听敏度筛查**筛掉不合格标注员,是把听评当实验科学来对待。该做法提升了数据信噪比,却提高了成本与门槛。小团队若无法复刻这套流程,其 pairwise 结果的可信度会打折扣。` }
-  ],
-  "wavtts": [
-    { q:`During inference, once the predicted real and imaginary components are generated via the ODE solver, we reconstruct the final audio waveform using the inverse STFT (iSTFT).`, src:`arXiv:2606.03455 结论`, insight:`WavTTS 走**复数 STFT 域流匹配**路线:在频域预测实部/虚部,再用 iSTFT 还原波形。相比直接生成波形,频域建模天然满足相位一致性。代价是 iSTFT 的混叠伪影需在训练目标里被显式抑制。` },
-    { q:`For MDCT-based diffusion modeling, we first resample the audio to 16 kHz and extract MDCT features using a standard Vorbis window with a length of 320. Due to the overlapped-transform property of MDCT, the hop length is set to half of the window length (i.e., 160), again yielding a frame rate of 100 Hz.`, src:`arXiv:2606.03455 结论`, insight:`同一模型并行支持 **STFT 与 MDCT 双表征**,后者借重叠变换把帧率压到 100Hz。MDCT 在音频编码里久经考验(如 Vorbis/AAC),适合长时相关建模。双表征设计让作者能在质量与效率间做折中,也增加工程复杂度。` },
-    { q:`Under this configuration, each frame corresponds to a 160-dimensional continuous feature vector.`, src:`arXiv:2606.03455 结论`, insight:`每帧 160 维连续向量,说明 MDCT 路径直接做**连续值流匹配**而非离散 token。这避开了神经 codec 的量化损失,保留更多细节。但连续目标对噪声尺度更敏感,下文乘 200 的缩放正是为此。` },
-    { q:`Empirical statistics on Emilia show that the standard deviation of the MDCT features is approximately 0.005. We therefore multiply the MDCT coefficients by a factor of 200 to align their scale with the Gaussian noise used in flow matching.`, src:`arXiv:2606.03455 结论`, insight:`一个**被忽视的工程细节**:MDCT 特征标准差仅约 0.005,直接喂流匹配会被高斯噪声淹没,故乘 200 对齐尺度。这提醒复现者:连续特征的值域归一化往往比模型结构更影响收敛。` },
-    { q:`During inference, after the ODE solver generates the predicted MDCT features, we reconstruct the final waveform using inverse MDCT (iMDCT).`, src:`arXiv:2606.03455 结论`, insight:`推理端两条路径都靠 **ODE 求解器**一步生成连续表征,再看是否走 iSTFT 或 iMDCT 还原。ODE 求解步数直接决定延迟与质量权衡。这种"生成表征 + 可逆变换"的解耦,便于单独优化声码器部分。` }
-  ],
-  "longcat_audiodit": [
-    { q:`UMT5 supports 107 languages and employs a subword tokenizer that maintains reasonable sequence lengths across diverse languages, perfectly aligning with our architectural requirements.`, src:`arXiv:2603.29339 引言`, insight:`选 **UMT5 当文本编码器**的核心动机是多语覆盖:107 种语言且子词分词在各族语言上序列长度可控。对做多语 TTS 的团队,这比单语 T5 友好得多。代价是 UMT5 体量更大、推理更重。` },
-    { q:`A standard practice when utilizing pretrained language models is to extract the last hidden state as the text representation q.`, src:`arXiv:2603.29339 结论`, insight:`业界默认把**最后一层隐状态**当文本表征,但这篇指出它在 TTS 上并不够好。这挑战了"越大越深的语义表示越优"的直觉。对读者:文本编码器的用法比选哪个模型更关键。` },
-    { q:`However, we observed that relying exclusively on the final layer yields poor intelligibility in the TTS task.`, src:`arXiv:2603.29339 结论`, insight:`只靠末层的**可懂度下降**是个反直觉但可解释的现象:语义被高度抽象后丢掉了音素级线索。这提示 TTS 文本编码器不应盲目复用 LLM 的表征习惯。后续工作开始回头重视浅层/词嵌入信息。` },
-    { q:`We hypothesize that while the last hidden state is rich in high-level semantic information, it abstracts away the low-level lexical and phonetic cues that are crucial for precise acoustic mapping.`, src:`arXiv:2603.29339 结论`, insight:`作者的假设点明矛盾:**高层语义与低层音素线索不可兼得**于单层。这本质是表征粒度问题,而非模型容量问题。横向看,这与用 BERT 浅层做音素对齐的思路一脉相承。` },
-    { q:`Motivated by this, we propose integrating the raw word embeddings (the initial embedding layer of UMT5) with the final hidden state. The resulting text representation q for LongCat-AudioDiT is formulated as: q = LayerNorm(last_hidden_state) + LayerNorm(raw_word_embedding).`, src:`arXiv:2603.29339 引言`, insight:`解法是**末层 + 原始词嵌入**两路加和,各自先 LayerNorm 再相加以平衡尺度。非参数 LayerNorm 避免了额外可学参数,轻量且即插即用。该技巧可迁移到任何"LLM 文本编码器 + 声学模型"的管线。` }
-  ],
-  "voxcpm2": [
-    { q:`We decompose instruction following into subtasks of increasing abstraction: APS (acoustic-parameter specification), DSD (descriptive-style directive), and RP (role-play).`, src:`arXiv:2606.06928 摘要`, insight:`把**指令遵循拆成三层抽象递增**的任务:声学参数、描述性风格、角色扮演。这种分层让评测可定位模型到底卡在"不会发某个音"还是"不懂人设"。对多能力 TTS 评测是干净的设计范式。` },
-    { q:`To better evaluate languages not fully covered by public benchmarks, we constructed an Internal 30-Language Benchmark consisting of 500 utterances per language.`, src:`arXiv:2606.06928 摘要`, insight:`自建 **30 语内部基准**(每语 500 句)补足公开集的覆盖盲区。这反映多语 TTS 评测的公开数据严重不足。注意内部基准不透明,结论的可复现性依赖作者后续开源。` },
-    { q:`The reference audio clips for cloning evaluation were collected from CommonVoice and Fleurs.`, src:`arXiv:2606.06928 摘要`, insight:`克隆评测的参考音频取自 **CommonVoice 与 Fleurs**,都是公开多语语料,保证可比性。但这两者的录音条件偏规整,对"真实场景零样本克隆"的鲁棒性可能高估。横向对比时应留意参考音频分布差异。` },
-    { q:`For public benchmarks, intelligibility is evaluated with the benchmark-standard or previously reported ASR setup when applicable, and with Whisper-large-v3 on MiniMax-MLS-Test for consistency with prior comparisons.`, src:`arXiv:2606.06928 摘要`, insight:`可懂度用 **ASR 词错率**作为代理,且统一 Whisper-large-v3 以保证与先前工作可比。用 ASR 替代人工听评是工业常态,但 ASR 与真人感知并非等价。读者需意识到这是效率取向的近似指标。` },
-    { q:`Driven by the success of large language models (LLMs), the dominant paradigm in contemporary TTS frames speech synthesis as sequence modeling over discrete tokens produced by neural audio codecs or tokenizers.`, src:`arXiv:2606.06928 结论`, insight:`综述式论断:**离散 token + LLM 序列建模**已成当代 TTS 主流范式。它把语音合成统一进语言建模框架,利于零样本与指令控制。但 codec 量化损失与长序列开销仍是未解难题。` }
-  ],
-  "voxtral_tts": [
-    { q:`据公开信息/架构可知的推导论点：Voxtral-TTS 作为 Mistral 旗下的语音合成模型,应在统一语音-文本框架下支持多语零样本语音克隆与指令式风格控制。`, src:`推导（依据 arXiv:2603.25551 摘要）`, insight:`(推导)从 Mistral 多模态布局看,Voxtral 大概率延续**文本/语音联合建模**路线,以零样本克隆 + 自然语言风格指令为卖点。局限在于:若沿用离散 token 范式,codec 损失与长序列成本仍是瓶颈。横向对比可参考 Minimax-Speech 的可学习说话人编码器思路。` },
-    { q:`据公开信息/架构可知的推导论点：该论文参考文献大量引用 SpeechTokenizer、Minimax-Speech、Mr-FlowDPO 等与语音 token 化及流匹配偏好优化相关的工作,暗示其方法可能融合离散表征与流匹配。`, src:`推导（依据 arXiv:2603.25551 摘要）`, insight:`(推导)引文组合暴露技术 lineage:**SpeechTokenizer 提供统一 tokenizer,Flow-DPO 做偏好对齐**。这提示 Voxtral 或把"流匹配声学模型 + DPO 风格对齐"作为质量提升手段。需警惕的是偏好优化依赖成对数据,标注成本不低。` },
-    { q:`据公开信息/架构可知的推导论点：引用 vllm-omni 说明作者关注任意到任意多模态模型的解耦式服务,Voxtral-TTS 很可能被设计为可独立部署的流式或批式推理模块。`, src:`推导（依据 arXiv:2603.25551 摘要）`, insight:`(推导)vllm-omni 指向**解耦服务与高吞吐推理**,反映工业落地诉求。对 TTS 而言,意味着要兼顾首包延迟与批处理效率。若主打实时对话,ODE 步数与 KV-cache 管理将决定体验上限。` },
-    { q:`据公开信息/架构可知的推导论点：论文将自监督语音表征(如 mutual-information 视角的工作)列入参考,表明前端可能采用自监督表征作为音素或语义对齐的辅助特征。`, src:`推导（依据 arXiv:2603.25551 摘要）`, insight:`(推导)自监督表征文献暗示**用 wav2vec 类特征做对齐辅助**,缓解文本-语音模态鸿沟。这与 longcat 等"补回低层线索"的动机相通。局限是额外表征带来显存与对齐复杂度。` },
-    { q:`据公开信息/架构可知的推导论点：作为面向开发者的 TTS API,Voxtral-TTS 的工程重点应在鲁棒性、可控参数与多语一致性,而非单纯 MOS 指标。`, src:`推导（依据 arXiv:2603.25551 摘要）`, insight:`(推导)API 型产品更看重**可控性与失败模式可预测**,而非实验室 MOS。这要求评测覆盖长尾口音、罕见词与对抗输入。建议读者以实际可用性而非论文指标判断其强弱。` }
-  ],
-  "indextts2": [
-    { q:`Techniques like CosyVoice (Du et al. 2024a), Spark-TTS (Wang et al. 2025), DubWise (Sahipjohn et al. 2024), and FleSpeech (Li et al. 2025) address token generation control through specialized cues, attribute labels, cross-modal fusion, or multimodal embeddings.`, src:`arXiv:2506.21619 结论`, insight:`作者把既有可控 TTS 归为四类手段:**专用提示符、属性标签、跨模态融合、多模态嵌入**。这说明 token 级控制缺乏统一接口,各家各搞一套。IndexTTS2 的卖点恰是绕开这些花式提示,直接控 token 数。` },
-    { q:`This work introduces an enhanced autoregressive TTS model with precise token number control.`, src:`arXiv:2506.21619 结论`, insight:`核心创新是**精确控制生成 token 数量**,这直接对应语速/时长控制。自回归 TTS 常因 token 数漂移导致节奏不稳,定点数约束等于把时长变成可配置超参。对视频配音等强同步场景价值明显。` },
-    { q:`Emotion control in large-scale TTS leverages natural language descriptions (e.g., Controlspeech (Ji et al. 2024)).`, src:`arXiv:2506.21619 结论`, insight:`情感控制走**自然语言描述**路线(如 ControlSpeech),降低用户使用门槛。但自然语言粒度粗、易歧义,需对齐到具体韵律参数。IndexTTS2 若叠加 token 数控制,可做到"说什么情绪 + 说多快"双维度解耦。` },
-    { q:`据公开信息/架构可知的推导论点：IndexTTS2 作为 IndexTTS 的迭代,应在保持强零样本克隆的同时,把时长或韵律控制做成显式可调接口。`, src:`推导（依据 arXiv:2506.21619 摘要）`, insight:`(推导)从 IndexTTS 系列定位看,迭代重点在**可控性而非从头建模**。精确 token 数即把"时长"这一最常被诟病的不可控项显式化。局限:AR 模型的 token 数上限仍受训练分布约束,极端语速可能退化。` },
-    { q:`据公开信息/架构可知的推导论点：将 token 数控制与情感或说话人解耦后,模型可在推理时独立调节节奏而不破坏音色一致性。`, src:`推导（依据 arXiv:2506.21619 摘要）`, insight:`(推导)**解耦式控制**的好处是各维度互不污染:改语速不串味,改情绪不变速。这比端到端提示更可预测,利于产品化。需验证的是解耦是否带来音质折中,以及长文本下 token 数累积误差。` }
-  ]
-};
-
-const INSIGHTS_PART_H = {
+const INSIGHTS_PART_S1 = {
   "cohere_transcribe": [
-    { q:`据公开信息/架构可知的推导论点：Cohere Transcribe 把 90% 以上参数压在 Fast-Conformer 编码器、解码器极轻，本质是 encoder-heavy 专用 ASR，用容量换吞吐而非语言理解。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`这与 Qwen3-ASR、IBM Granite 等挂接 LLM 的路线相反，**放弃 LLM 的语言理解与指令能力**换取更低延迟与更高吞吐。代价是若企业需要标点、ITN、后处理，往往要外挂文本模型，在企业语音智能链路上反而多一层依赖。` },
-    { q:`据公开信息/架构可知的推导论点：其 HF Open ASR Leaderboard 平均 WER 5.42% 居首，但仅比第二名 IBM Granite 4.0 1B（5.52%）低 0.1 点，榜首是边际胜出而非代际领先。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出该均值由干净朗读（LibriSpeech Clean 1.25%）与难集（AMI 8.13%、Earnings22 10.86%）聚合，被难集拉高。把均值当唯一指标易误导，**真实会议/电话场景退化到 8–11%** 才是企业更该关注的边界。` },
-    { q:`据公开信息/架构可知的推导论点：Cohere 用 50 万小时人工标注数据从零训练、不蒸馏 Whisper，说明其精度主要来自数据与训练配方，而非结构创新。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库明确其差异主要来自数据而非结构，且未给独立结构消融。但 500K 小时纯标注数据比弱监督爬取的同质化更可控，**人工标注的质量红利**是它能在开放榜登顶的真实底牌。` },
-    { q:`据公开信息/架构可知的推导论点：Cohere Transcribe 仅覆盖 14 语种、不支持自动语种检测与说话人分离，定位偏企业功利语种而非通用多语。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`相对 Whisper 的 100+ 语种，其覆盖明显偏窄。知识库批判其低资源/方言覆盖弱于多语大模型，因此**更适合英语为主的企业会议/客服**，而非全球化长尾语种场景。` },
-    { q:`据公开信息/架构可知的推导论点：宣称比同规模专用 ASR 高约 3x 吞吐、RTFx 最高 524x（vLLM 额外约 2x），核心卖点是精度-速度帕累托前沿上的 encoder-heavy 优势。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`人类偏好评测平均胜率 61%、对 IBM Granite 4.0 1B 高达 78%，说明原始 WER 接近时**主观质量差距更大**。但 RTFx 上限依赖高端硬件，普通自托管节点难复现 524x，落地需按真实算力折算。` }
+    { q:`据公开信息/架构可知的推导论点：Cohere Transcribe 采用 Conformer 编码器 + 自回归/Transducer 解码器的经典 AED 结构而非 LLM 解码，定位为与 Whisper 同范式的 2B 级工程化弱监督 ASR。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 文本明确其为 Conformer+Transducer/AED 且未引入 LLM 解码，规模 2B，属 Whisper 式弱监督范式。与同类对比：相比引入 LLM 解码的 Canary-Qwen、hy_asr30，其推理路径更短、延迟更可控，但语义/上下文纠错能力较弱。边界与不确定性：2B 参数、弱监督数据规模等为公开/行业披露或合理推断，具体数据配比与训练语料未公开，属合理推断。` },
+    { q:`据公开信息/架构可知的推导论点：沿用 Whisper 式“海量带噪标注→强鲁棒性”弱监督训练，该模型在英语及常见带噪真实场景的泛化能力应优于纯监督小模型。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 指出以大规模弱监督音频为主并针对开放榜单调优。与同类对比：相对纯监督的 parakeet_tdt，弱监督带来更广域口音/噪声鲁棒性，但可能在对齐精度上略逊于强监督 TDT。边界与不确定性：具体 WER 未公开，以上为基于范式与“针对榜单调优”的推断。` },
+    { q:`据公开信息/架构可知的推导论点：未采用 LLM 解码且为闭源黑箱，其在低频语言、专业术语及标点/ITN 后处理的精细度与可控性存在不确定性。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：架构描述明确无 LLM 解码；闭源意味着无权重可审计。与同类对比：对比 canary_qwen 显式联合标点/ITN 多任务，Cohere Transcribe 的后处理策略未披露。边界与不确定性：闭源，无法验证训练数据偏见，跨领域与边缘语言的稳定性为风险点，属推断。` }
   ],
   "ibm_granite41": [
-    { q:`据公开信息/架构可知的推导论点：Granite Speech 4.1 的 NAR 变体把 ASR 重述为基于双向 LLM 的转写编辑（NLE），冻结 CTC 先出草稿、双向 LLM 单程编辑，以消除串行解码瓶颈。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`这是与自回归生成路线最本质的区别：**用双向编辑替代 token 循环**，在保精度的同时把 RTFx 从 231x 拉到约 1820x。代价是 NAR 丢掉翻译、关键词偏置、说话人属性与词级时间戳，定位成吞吐优先的专用件。` },
-    { q:`据公开信息/架构可知的推导论点：NLE 的质量上界受冻结 CTC 草稿限制，若草稿在专有名词或强口音上错得离谱，双向编辑的修正空间有限。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库批判其论文未给出草稿质量 vs 最终精度的关联分析。这点在**医疗/法律专名、强口音方言**上风险最大，NAR 高速的前提是 CTC 草稿本身足够好。` },
-    { q:`据公开信息/架构可知的推导论点：AR base 2B 在 HF Open ASR 榜平均 WER 5.33%，与 Cohere 的 5.42%、Zoom Scribe v1 的 5.47% 同一量级，榜首之争是微差。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`需注意 5.33% 是 AR base 的口径，**公开榜未单列 NAR 均值**，不宜直接用 5.33% 形容 NAR。NAR 以轻微精度换约 8x 吞吐，但精度已微降，跨变体套用数字会误导。` },
-    { q:`据公开信息/架构可知的推导论点：输入上限约 6 分钟（4096 token 硬限），长音频被拒而非静默截断，工程价值在长会议/通话上打折扣。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出这对其会议场景不友好。相比能原生吃长音频的模型，**6 分钟硬限要求前置分块或 VAD 切段**，增加了部署胶水代码。` },
-    { q:`据公开信息/架构可知的推导论点：Apache 2.0 全开源、可商用，且 GGUF Q4_K_M 下 LibriSpeech WER 仅 1.35%（BF16 1.29%），量化对 NAR 几乎中性。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`在闭源 API 当道的 2026 年，**全开源+量化友好**是其与 Cohere/ElevenLabs 相比的稀缺卖点。对需要自托管、合规驻留、边缘部署的团队，Granite 4.1 的可控性明显占优。` }
+    { q:`据公开信息/架构可知的推导论点：IBM Granite 41 采用“编码器+NAR 解码”的非自回归结构以并行输出文本，定位为低延迟、可嵌入 Granite LLM 生态的开放 ASR。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 明确其为 NAR（mask-predict/CTC+NAR）且 Apache 2.0 全开源。与同类对比：相比 cohere/meta 的自回归/统一建模，NAR 显著降低首字延迟，且与 Granite LM 打通便于后续摘要/问答。边界与不确定性：是否纯 NAR 或 CTC+NAR 混合为 DEEP 给出的候选，属合理推断。` },
+    { q:`据公开信息/架构可知的推导论点：NAR 解码与编码器联合优化的目标，使其在流式/实时场景的吞吐与延迟表现应优于同规模自回归模型。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 称 NAR 减少自回归等待并联合优化。与同类对比：相对 kyutai_stt 的流式 Conformer/AR chunk，Granite41 的 NAR 并行性利于高并发批处理。边界与不确定性：NAR 常伴随质量-延迟权衡，具体 WER 与延迟未公开，为推断。` },
+    { q:`据公开信息/架构可知的推导论点：尽管 Apache 2.0 开源可审计，其多语种覆盖广度与低资源语言表现未在 DEEP 中披露，存在能力边界不确定性。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 仅提“大规模语音-文本对齐”未列语言范围。与同类对比：对比 meta_omni 的“超多语种统一建模”，Granite41 的语种广度可能更聚焦。边界与不确定性：开源但缺公开基准，实际多语种表现属未证实推断。` }
   ],
   "moonshine_v2": [
-    { q:`据公开信息/架构可知的推导论点：Moonshine v2 用无位置编码的因果滑动窗口编码器（ergodic encoder）+ 适配器补位置，换取真正的流式低首包延迟，而非把 Whisper 硬改流式。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`这是与典型 encoder-decoder 的本质区别：**编码器可逐 chunk 处理、无需等整段才出首 token**，实现无界长度流式。medium 在 MacBook Pro 上流式延迟约 107ms，端侧实时可行。` },
-    { q:`据公开信息/架构可知的推导论点：其“参数量仅 Whisper Large V3 约 1/6、精度持平”是选择性对比——Moonshine 是英文专用且仅在英文集比，Whisper Large V3 是 1.6B 多语模型。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库批判跨语种公平比较缺失。LibriSpeech clean 约 3.0% WER 是其上限，**难比 1.x% 级大模型**，定位应是端侧/实时而非绝对精度。` },
-    { q:`据公开信息/架构可知的推导论点：相对 Whisper 同精度量级推理快约 100x，是相对 Whisper 而非其最优批处理部署，易被误读为全面百倍优势。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`该加速是“同精度量级”而非“同绝对精度”。对**字幕、指令、听写**等对精度容忍度高的端侧场景，100x 价值真实；但对高精度转写，它仍是小模型点。` },
-    { q:`据公开信息/架构可知的推导论点：无位置编码的 ergodic 编码器在长程依赖（超长句、跨段落指代）上理论上弱于带显式位置/双向注意力的模型。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出论文未给长音频退化曲线。**端侧极低算力**的代价是长上下文建模能力上限，适合短句交互而非长篇会议纪要。` },
-    { q:`据公开信息/架构可知的推导论点：Apache 2.0 / MIT 友好、tiny 约 43M 可跑 NPU/CPU 浮点实时，是开源社区可用的端侧 ASR 代表。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`ONNX 拆成 frontend/encoder/adapter/cross_kv/decoder_kv 五组件便于 NPU 融合、减少 NPU-CPU 传输。**轻量+流式+开源**三者兼得，是其差异化卡位。` }
+    { q:`据公开信息/架构可知的推导论点：Moonshine v2 为面向嵌入式/MCU 的轻量流式编码器-解码器，定位极致低算力实时 ASR 而非高精度旗舰。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 明确“小参数量换取极低算力、适合 MCU/嵌入式、流式裁剪”。与同类对比：相较 2B 的 cohere_transcribe、2.5B 的 canary_qwen，其规模显著更小，目标场景为端侧而非云端。边界与不确定性：具体参数量与流式策略（是否 chunked）未披露，为合理推断。` },
+    { q:`据公开信息/架构可知的推导论点：以“延迟/精度权衡”为优化目标的轻量训练，使其在资源受限设备上的实时性占优，但绝对识别精度应为其取舍代价。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 称面向实时场景的延迟/精度权衡优化。与同类对比：相对 parakeet_tdt 的 TDT 流式，Moonshine 用更小模型换更低功耗，精度上限更低。边界与不确定性：Apache 2.0 可复现，但缺乏公开 WER 对照，精度损失幅度为推断。` },
+    { q:`据公开信息/架构可知的推导论点：超小模型容量决定了其在嘈杂环境、多语种与专业词汇上的鲁棒性天然受限，属结构性短板而非可调参数问题。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：架构指向“小参数量”，容量即上界。与同类对比：对比 hy_asr30 的 MoE 稀疏扩容，Moonshine 无法通过稀疏激活扩展容量。边界与不确定性：开源但架构决定了能力天花板，具体场景失效边界需实测，为推断。` }
   ],
   "kyutai_stt": [
-    { q:`据公开信息/架构可知的推导论点：Kyutai STT 用多流（multistream）decoder-only Transformer 把流式、并发、语义 VAD 内建进同一模型，而非 encoder-decoder + 外部 VAD 级联。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`源自 Moshi 的文本流/语音流分别建模使模型天然流式，**相对 Whisper-Streaming 反复重跑重叠片段的 hack，吞吐与延迟更优**。单卡 H100 可并发 400 路实时音频。` },
-    { q:`据公开信息/架构可知的推导论点：stt-1b-en_fr 延迟约 0.5s、stt-2.6b-en 延迟约 2.5s，两档跨度大且中间档缺失，应用选型受限。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`0.5s 是 1B 低延迟版指标，2.6b 精度版延迟达 2.5s。**强实时交互选 1B、强精度选 2.6B**，但缺少中间档意味着无法在单一部署里兼顾两者。` },
-    { q:`据公开信息/架构可知的推导论点：预训练用 whisper-timestamped 合成标签（2.5M 小时伪标签），标签噪声会随规模放大，可能限制精度上限。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库批判系统性偏差未被量化，虽经带真值数据微调。**伪标签的固有噪声**是开源复现路线最该警惕的点，尤其在多语/方言/强噪场景是否仍与非流式 SOTA 持平缺乏细拆。` },
-    { q:`据公开信息/架构可知的推导论点：语义 VAD 输出“用户是否说完”的概率、停顿等待随内容与语调自适应，比固定静音阈值更自然，但目前仅在 Rust 服务实现。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`这点在对话式 AI 里价值高，避免长句中误判。但**语义 VAD 仅 Rust 实现、跨平台一致性存疑**，限制了其在非 Rust 栈的复用。` },
-    { q:`据公开信息/架构可知的推导论点：依赖 Mimi codec（12.5Hz/32 token）做音频表征，非原生波形建模，长音频 2 小时可用但无额外处理。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`codec 表征是其能 decoder-only 消费音频的前提，也带来**对 Mimi 质量的依赖**。Unmute 的 flush trick 把额外等待从 500ms 压到约 125ms，说明工程优化能补一部分延迟，但本质延迟仍由架构决定。` }
+    { q:`据公开信息/架构可知的推导论点：Kyutai STT 为端到端流式 ASR，去掉独立 VAD 级联、边听边出，定位为对话式低首包延迟场景。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 明确“无独立 VAD 级联、流式 Conformer/Transformer+chunk、低延迟”。与同类对比：相对需 VAD+ASR 两级的传统流水线，其一体化更利于自然对话节奏。边界与不确定性：具体 backbone（Conformer 或 Transformer）DEEP 用“通常采用”表述，属推断。` },
+    { q:`据公开信息/架构可知的推导论点：以 chunk 级流式损失训练并强调首包延迟，其在交互/会议等实时转录的端到端延迟应显著低于非流式模型。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 称流式目标训练、强调首包延迟。与同类对比：相对 cohere（非流式 AED）更适合实时，相对 NAR 的 granite41 则在自然对话节奏上更优。边界与不确定性：开源可复现，但具体延迟/WER 未列，为推断。` },
+    { q:`据公开信息/架构可知的推导论点：端到端流式去掉 VAD 后，对长静音、重叠说话人与远场噪声的边界处理依赖模型本身，鲁棒性边界不透明。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 称无独立 VAD 级联。与同类对比：对比带 VAD 的级联系统，少了一道可独立调优的静音/切分模块。边界与不确定性：开源但无公开长音频/重叠语音基准，实际边界为推断。` }
+  ],
+  "parakeet_tdt": [
+    { q:`据公开信息/架构可知的推导论点：Parakeet TDT 在 RNN-T 上叠加 duration 预测（Token-and-Duration Transducer），定位为兼顾流式与高吞吐的强监督 ASR。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 明确 TDT=token+duration 联合预测、天然流式、减帧重复。与同类对比：相对标准 RNN-T/Transducer（cohere），TDT 通过跳帧减少冗余计算。边界与不确定性：CC-BY-4.0 开源，但“duration”分布假设依赖训练设定，为合理推断。` },
+    { q:`据公开信息/架构可知的推导论点：duration 预测大幅削减帧级重复计算，使其在批处理/服务端高并发场景的吞吐与成本效率应优于普通 Transducer。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 称“大幅减少帧级重复计算，利于批处理”。与同类对比：相对 moonshine 的轻量端侧，Parakeet 走服务端高精度+高吞吐路线。边界与不确定性：强监督训练带来对齐精度，但跨域泛化可能弱于弱监督 cohere，属推断。` },
+    { q:`据公开信息/架构可知的推导论点：作为强监督 CC-BY 模型，其能力上限受监督数据覆盖约束，对带噪/口音长尾的鲁棒性可能不及弱监督范式。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 称“大规模监督语音训练”。与同类对比：对比 cohere 的弱监督海量带噪标注，Parakeet 在分布外噪声上或更易退化。边界与不确定性：开源可审计，但具体鲁棒性基准未列，为推断。` }
   ],
   "canary_qwen": [
-    { q:`据公开信息/架构可知的推导论点：Canary-Qwen 2.5B 是 Speech-Augmented Language Model（SALM），把 FastConformer 编码器经线性投影+LoRA 注入 Qwen3-1.7B，让音频直接驱动真实 LLM，原生支持转写后处理。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`相对纯 Transducer（Parakeet）或级联后处理，**LLM 作为解码器本体**使其能在一个模型里做摘要、问答。适配器模块化，可拆下编码器把 Qwen3 当独立文本 LLM 用，是相对 Canary 1B 的关键升级。` },
-    { q:`据公开信息/架构可知的推导论点：HF Open ASR 榜平均 WER 5.63% 居首、LibriSpeech-clean 1.60%，但榜首口径是 HF 平均，与 Artificial Analysis 等更硬口径不可直接横比。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出跨榜不可直比。其**四语（英/法/德/西）能力继承自 Canary 系列**，公开宣传以英语 SOTA 为主，多语种是可用而非主打卖点。` },
-    { q:`据公开信息/架构可知的推导论点：在 0dB 信噪比下仍保持约 9.83% WER（行业平均约 18.2%），抗噪增强来自约 48 小时 MUSAN 噪声数据，是其工程化强项。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`这体现**抗噪鲁棒性的真实优势**，对企业电话/现场声学环境价值高。但 48 小时 MUSAN 体量不大，增益能否泛化到未见噪声类型仍待验证。` },
-    { q:`据公开信息/架构可知的推导论点：418 RTFx 与 Parakeet-TDT 的 2000–3300 RTFx 直接对比不公平——前者带 1.7B LLM 解码、后者是轻量 Transducer，二者精度档位不同。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库批判这种对比误导。但**418 RTFx 仍属实时 400 倍以上**，证明高精度+可理解可在 2.5B 规模共存，代价是部署需约 5GB 显存。` },
-    { q:`据公开信息/架构可知的推导论点：转录+理解一体化的卖点常受限于上下文长度与延迟——LLM 模式做长音频摘要仍需先把整段转写塞进上下文，并非真正边听边总结。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`这点在长会议场景会暴露。其**价值在短/中段音频的转写后处理**，而非无限长流式理解；CC-BY-4.0 可商用是其相对闭源模型的合规优势。` }
+    { q:`据公开信息/架构可知的推导论点：Canary-Qwen 为多语种（英/法/德/西）编码器-解码器，并将标点恢复与逆文本归一化作为联合任务，定位为“开箱即用”的生产级转写。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 明确四语 + 标点/ITN 多任务、2.5B。与同类对比：相对 cohere（无显式后处理）、parakeet（纯 ASR），其内置 ITN/标点更贴合落地。边界与不确定性：CC-BY-4.0 开源；“Qwen”暗示 LLM 解码关联但未证实，为推断。` },
+    { q:`据公开信息/架构可知的推导论点：2.5B 规模 + 四语多任务联合训练，使其在目标语种内的转写可读性与后处理完整度应高于无 ITN 的同类模型。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 称多任务联合训练、兼顾精度与成本。与同类对比：对比 moonshine（轻量无后处理），Canary 输出更贴近最终文本。边界与不确定性：仅四语，非目标语种为短板，具体指标未列，为推断。` },
+    { q:`据公开信息/架构可知的推导论点：明确仅覆盖英/法/德/西四语，其多语种边界清晰受限，且 ITN 规则的语言/地区适配存在不确定性。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 列明四语。与同类对比：对比 meta_omni 的超多语种统一建模，Canary 语种广度远窄。边界与不确定性：ITN 在不同地区格式（如数字/货币）差异大，开源但无覆盖说明，属推断。` }
+  ],
+  "meta_omni": [
+    { q:`据公开信息/架构可知的推导论点：Meta Omni 采用超多语种统一建模（类 w2v-BERT/Conformer），定位为单模型通吃高/低资源语言的广覆盖 ASR。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 明确“超多语种统一建模、单一模型覆盖高低资源”。与同类对比：相对 canary_qwen 的四语聚焦，其追求语种广度。边界与不确定性：具体骨干与语种数未披露，“类 w2v-BERT”为推断表述。` },
+    { q:`据公开信息/架构可知的推导论点：以海量含低资源语种数据统一训练，其在长尾语言上的可用性应优于仅覆盖主流语种的模型，但单语精度或被摊薄。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 称含大量低资源语种、兼顾主流与长尾。与同类对比：对比 parakeet（强监督主流），Omni 在低频语种更可用但高频语种精度或略低。边界与不确定性：统一模型容量分配是权衡，具体权衡结果未公开，为推断。` },
+    { q:`据公开信息/架构可知的推导论点：广覆盖统一模型面临低资源语种数据质量与评估稀缺的固有风险，且闭源下偏见与失败模式不可审计。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：低资源语种标注稀疏为行业常识，DEEP 未给评估。与同类对比：对比开源的 canary/parakeet，Omni 闭源无法审计权重。边界与不确定性：长尾语言真实表现缺乏公开基准，属高风险推断。` }
   ],
   "hy_asr30": [
-    { q:`据公开信息/架构可知的推导论点：腾讯 Hy ASR 3.0 是 MoE LLM（Hy3）解码器 + 自研无监督语音 Encoder 的端到端对齐，MoE 指 LLM 主干稀疏激活控成本，语音 Encoder 并非 MoE。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库纠正 batches.json 的误述。其本质是**让 Encoder 与 LLM 在训练期耦合、识别即理解一体**，而非把 LLM 当后置重排器，这是与 Canary-Qwen 路线的近源但更深的耦合。` },
-    { q:`据公开信息/架构可知的推导论点：中文场景 WER 3.34%、英语 2.62%、粤语 3.12%，但 WER 与“理解语境”存在指标错配——同音纠错可能不改变 WER 却改变正确性。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`其价值在语义消歧（如筠州 vs 云州借苏轼背景锁定），**传统 WER 无法充分捕捉**。作为 preview 版，数字为官方口径、闭源不可独立复现，需以腾讯云 API 实测为准。` },
-    { q:`据公开信息/架构可知的推导论点：把 LLM 推理引入 ASR 会引入幻觉式纠错风险——模型可能因上下文偏向把正确声学词改成语义更顺但错误的词。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库警示医疗/法律等不容错场景需谨慎。**理解优先是把双刃剑**：消歧提专名准确率，也可能过度“脑补”。这要求产品层提供可关闭的上下文纠错开关。` },
-    { q:`据公开信息/架构可知的推导论点：语种以中文/粤语/英语为主，广度弱于 Omnilingual/Canary 等；强依赖 Hy3 LLM 推理，端侧不现实。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`其卡位是**中文工业高精度**，延迟与成本高于轻量 Conformer。对需端侧低功耗的场景不适用，更适合云端高质量转写。` },
-    { q:`据公开信息/架构可知的推导论点：多阶段强化学习分别优化通用转写、Any-context 上下文、复杂长尾，是其相对纯声学模型的核心后训练差异。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出量化消融（去掉上下文模块后的 WER 增量）未公开。**RL 塑形的具体收益不可见**，但 SFT 覆盖 10 大方言片区+20 余二级小片区，方言识别是其明确卖点。` }
-  ],
+    { q:`据公开信息/架构可知的推导论点：HY-ASR30 采用 MoE 稀疏语音编码器 + LLM 解码，将语音表征对齐到语言模型，定位为高精度中文/多方言大模型 ASR。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 明确 MoE 编码器 + LLM 解码、对齐到 LM。与同类对比：相对 cohere（无 LLM）、canary（疑似 LLM 关联），其显式用 LLM 解码提升语义理解。边界与不确定性：MoE 专家数与 LLM 基座未披露，为推断。` },
+    { q:`据公开信息/架构可知的推导论点：稀疏激活在扩容模型容量的同时保持推理成本可控，使其在中文多方言/语义纠错上应强于同成本稠密模型。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 称稀疏激活平衡容量与成本、中文/多方言数据。与同类对比：对比 moonshine 的小模型，HY 走高容量路线。边界与不确定性：LLM 解码带来语义纠错增益，但具体 WER/延迟未公开，为推断。` },
+    { q:`据公开信息/架构可知的推导论点：MoE+LLM 的两级结构带来更高系统复杂度和首包延迟，且闭源下方言覆盖边界与失败模式不可验证。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：架构描述含 MoE+LLM 两级。与同类对比：相对 NAR 的 granite41，其延迟更高；相对开源模型不可审计。边界与不确定性：多方言实际覆盖、长音频稳定性为风险，属推断。` }
+  ]
+};
+
+const INSIGHTS_PART_S2 = {
   "fun_realtime_asr": [
-    { q:`据公开信息/架构可知的推导论点：Fun-Realtime-ASR 在 Artificial Analysis 词错率榜 WER 1.8% 居首，但 AA 榜口径偏产品级真实分布（难句/口音/真实场景），与 HF Open ASR 榜不可直接横比。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库强调横评时不可直接比较。1.8% 意味着每 100 词错不到 2 字，**超越 GPT-Realtime-2 等国际模型**，但榜测试集构成未透明，存在为榜单优化的方法论风险。` },
-    { q:`据公开信息/架构可知的推导论点：作为阿里语音大模型家族一员，其合理推断延续 Fun-ASR 系语音表征+大模型解码路线，并在实时推理上做流式分块、低首包延迟工程优化。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`内部结构未公开属商业闭源。其与**同族 AudioChat（语音推理 97.6%）同源**，便于把识别直接喂给理解/对话链路，形成低延迟闭环，这是三赛道大满贯的工程基础。` },
-    { q:`据公开信息/架构可知的推导论点：WER 1.8% 在短句/清晰语音上容易达成，真实会议、电话、重叠说话的 WER 往往数倍于此，把实时榜第一直接等同通用最强 ASR 是过度外推。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库建议以 HF Open ASR、AISHELL、方言专项等开放基准交叉验证。**闭源系统社区无法独立验证边界**，建议落地前做自分集盲测。` },
-    { q:`据公开信息/架构可知的推导论点：支持毫秒级响应、30+ 语言、七大中文方言体系、20+ 地区口音，并提供企业级定制接口（金融/医疗术语库），定位实时语音交互基础设施。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`其差异化在**实时+高精度双优 + 同族 TTS/Chat 闭环**，而非单一精度。但实时低延迟与超高精度的兼顾在极长音频/超多方言混合时仍需验证。` },
-    { q:`据公开信息/架构可知的推导论点：指标依赖 AA 榜且口径特殊，内部结构/数据/训练细节未公开，学术可复现性低，作为闭源 API 不可微调/自部署。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`这是闭源系统的通病。对企业而言**vendor lock-in 与成本**是长期考量，建议保留可替换的开源兜底（如 GLM-ASR / Granite）以防单点依赖。` }
+    { q:`据公开信息/架构可知的推导论点：fun_realtime_asr 属于统一实时 ASR 分支，其架构以"流式+低延迟"为第一约束，并在工程上针对 AA 词错率榜（难句/口音口径）做定向优化，说明它并非通用离线大模型路线，而是面向实时交互场景的专用 ASR。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 文本明确其为"统一实时架构的 ASR 分支"且"针对 AA 词错率榜优化"，架构选择天然偏向低首包延迟与流式断句。与同类对比：相比离线大模型转写（如纯 LLM-ASR），它在实时性上更优但牺牲了部分长上下文语义纠错。边界与不确定性：此论点为基于架构目标的推断，实际延迟与流式稳定性需以官方基准/线上实测为准，闭源使其内部实现不可核验。` },
+    { q:`据公开信息/架构可知的推导论点：因以 AA 榜（偏难句与口音）为优化目标并共享同族基座，可推断 fun_realtime_asr 在中文方言/口音、远场等"难分布"上相对通用离线模型有优势，且实时性应达到生产可用水平。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：优化目标是难句/口音口径，意味着训练与评测都偏向高噪声、强口音分布。与同类对比：在中文方言重度场景，它大概率优于以干净朗读为主的轻量模型；但相比同族离线大模型，绝对词错率未必领先。边界与不确定性：AA 榜本身的口径偏难，存在"为榜单调优"的可能，干净朗读或特定垂直域表现可能与榜单不符，属推断性质。` },
+    { q:`据公开信息/架构可知的推导论点：闭源/未开源使训练数据规模、语种覆盖、是否含热词/说话人分离等能力不可核验；AA 榜口径偏难句口音，可能在干净朗读或特定垂直域出现与榜单不符的表现，存在评测分布外风险。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 中 Results/Limitations 为空，缺少公开可复现基准。与同类对比：对比开源可审计的 Fun-ASR 系模型，闭源带来可复现性劣势。边界与不确定性：热词增强、说话人分离、并发成本等工程属性均为未知，需以官方文档为准；此为风险层面的诚实推断，非确证结论。` }
+  ],
+  "seed_asr20": [
+    { q:`据公开信息/架构可知的推导论点：Seed-ASR 2.0 是字节"大规模多任务语音"模型的一部分，ASR 只是其中一项能力，架构上强调统一语音表征复用，说明其底层是一个多任务语音基座而非单任务识别器。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 写明"大规模多任务语音训练，识别为其中一项能力"且"强调统一语音表征复用"。与同类对比：不同于 Qwen3-ASR 的"对齐到 LLM"路线，Seed 更偏统一语音表征的多任务范式。边界与不确定性：多任务具体包含哪些能力（翻译/理解/合成）及配比属内部信息，此判断为基于公开架构描述的推断。` },
+    { q:`据公开信息/架构可知的推导论点：因与豆包生态打通且采用统一语音表征，可推断 Seed-ASR 2.0 在中文真实场景（短视频、直播、对话）的鲁棒性较强，并具备从识别平滑扩展到翻译/理解等任务的能力。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：统一表征+豆包生态意味着训练数据高度贴合国内真实语音分布。与同类对比：在中文短视频/直播等高噪声、强口语分布上，可能优于以通用语料为主的海外模型。边界与不确定性：跨任务泛化能力与中文以外的语种表现需官方基准佐证，属合理推论而非实测结论。` },
+    { q:`据公开信息/架构可知的推导论点：闭源导致多任务间能力是否均衡、长音频/超低资源语种表现不可复现；统一表征在多任务联合训练下可能带来 ASR 单项被"稀释"或推理成本偏高的问题。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：多任务联合训练存在能力分配权衡，单一 ASR 指标未必最优。与同类对比：相比单任务轻量 ASR，其推理成本与部署门槛可能更高。边界与不确定性：是否存在 ASR 质量被稀释、长音频稳定性如何，均不可公开验证；此为风险推断，须以官方发布为准。` }
+  ],
+  "qwen3_asr": [
+    { q:`据公开信息/架构可知的推导论点：Qwen3-ASR 将语音编码器对齐到 Qwen LLM，走"识别即语言理解"路线，架构上把 ASR 视为 LLM 的一个模态分支，而非独立声学模型。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 明确"语音编码器对齐到 Qwen LLM，识别即语言理解"。与同类对比：区别于 Seed 的统一语音表征范式，Qwen3-ASR 直接挂在文本 LLM 上，语义纠错能力更强但实时性更受限。边界与不确定性：编码器与 LLM 的具体对齐方式（如是否端到端微调）为内部实现，此论点为基于架构描述的推断。` },
+    { q:`据公开信息/架构可知的推导论点：因复用 Qwen 文本/agent 生态与多语种对齐训练，可推断 Qwen3-ASR 在多语种、以及"识别+后续语义处理（摘要/问答/agent 调用）"一体化链路上有优势，适合中文及跨语种业务。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：复用 Qwen 生态意味着识别结果可直接进入 LLM 流水线。与同类对比：相比纯 ASR 服务，它在"语音→理解→行动"端到端场景具有生态协同优势。边界与不确定性：多语种覆盖深度、长音频稳定性需以官方基准为准；一体化优势依赖 LLM 调用成本，属推断性质。` },
+    { q:`据公开信息/架构可知的推导论点：闭源使对齐所用的语音-文本配对规模、低资源语种覆盖不可核验；LLM 化识别可能引入幻觉/复述风险，且推理资源需求高于轻量 CTC/Transducer 模型，端侧部署受限。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：LLM 解码天然存在生成式幻觉可能。与同类对比：相对 CTC/Transducer 的确定性输出，生成式识别更灵活但更难保证逐字忠实。边界与不确定性：幻觉率、端侧可行性、低资源语种边界均不可公开审计；此为风险层面的诚实推断。` }
   ],
   "glm_asr": [
-    { q:`据公开信息/架构可知的推导论点：GLM-ASR 本质是改进版 Conformer + Transformer Decoder 的经典 AED（非 LLM 范式），“语义对齐”来自 Conformer 先验而非 GLM 文本 LLM 驱动，命名易与 GLM 大模型混淆。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出其与 Qwen3-ASR / StepAudio 的 LALM 路线有代差。其**“重感知、极致压缩、轻量推理”非对称设计**适合端侧，但缺语言理解与指令跟随能力。` },
-    { q:`据公开信息/架构可知的推导论点：端侧 Nano 平均 CER 4.10 优于 Whisper V3 的 6.93（同参数量级），但 Whisper V3 参数量更大且为近百语通用模型，该对比对中文公平、对多语不公平，存在 selection bias。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`云端 2512 版中文 CER 低至 0.0717 进工业第一梯队。**其强项在中文/方言/低音量**，刻意不与 Whisper 在近百语全面竞争，定位清晰。` },
-    { q:`据公开信息/架构可知的推导论点：构建 2000+ 小时轻声/不同分贝数据集、训练中动态音量调整，低音量/方言增益更多来自数据覆盖而非架构创新。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库验证耳语、街道/咖啡馆噪声均能可靠转写。但**端侧 1.5B 在极长会议上的流式与显存表现未充分披露**，生产落地仍有工程缺口。` },
-    { q:`据公开信息/架构可知的推导论点：支持 17 语、针对普通话/英语/粤语深度优化，多语广度不及 Whisper / GPT-4o-Transcribe，长音频依赖外部 VAD 切分。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`其**“一云一端”布局**（云端 2512 极致精度、端侧 Nano 本地隐私低延迟）是务实的双轨策略，覆盖从服务器到边缘的不同部署。` },
-    { q:`据公开信息/架构可知的推导论点：用 SFT + RL 对齐保输出质量，Nano 版显式覆盖嘈杂/重叠语音/会议场景，说明对齐手段是其相对纯识别模型的加分项。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`但非 LLM 范式下，**复杂语义消歧（同音词）上限低于 Hy ASR 3.0 类 LLM 系**，在医疗/法律专名场景可能需外挂语言模型兜底。` }
+    { q:`据公开信息/架构可知的推导论点：GLM-ASR 在 GLM 表征上接识别头，利用语言模型语义先验提升识别的语言学合理性，架构本质是"LLM 表征 + 轻量识别解码"的范式。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 写明"在 GLM 表征上接识别头，利用语言模型语义先验"。与同类对比：相比纯声学模型，它更依赖语义先验做消歧；相比 Qwen3-ASR 的完整 LLM 化，它更轻量（接识别头而非全生成）。边界与不确定性：识别头的具体形式（CTC/Transformer 解码）为内部实现，此判断为基于架构描述的推断。` },
+    { q:`据公开信息/架构可知的推导论点：因借助 GLM 语义先验且针对中文数据优化，可推断 GLM-ASR 在同音词消歧、语法合理的长句、专有名词语境理解上优于纯声学模型，中文场景优势明显。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：语义先验对中文同音字（如"公式/公司"）消歧天然有利。与同类对比：在中文长句与领域专有名词上，可能优于无语义先验的轻量 ASR。边界与不确定性：中文优势的具体幅度需官方基准佐证；英文/多语种能力未知，属合理推论。` },
+    { q:`据公开信息/架构可知的推导论点：闭源下训练数据、是否支持多语种及实时流式未知；语义先验过强可能导致"过度纠正"（把口误/口语化表达改成规范书面语），在需忠实转写的场景存在偏差风险。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：强语义先验会倾向输出"更合理"而非"更忠实"的文本。与同类对比：相对逐字转写模型，它在口语、口误、俚语场景可能产生偏差。边界与不确定性：是否支持流式、过度纠正的实际发生率均不可验证；此为风险推断，须以官方为准。` }
   ],
   "fun_asr": [
-    { q:`据公开信息/架构可知的推导论点：SenseVoice 采用非自回归、CTC 式编码器 + 多任务头，单次前向同时输出 ASR/LID/SER/AED/ITN，把情感/事件检测内建而非级联多模型。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`这是与 Whisper（仅自回归 ASR）的本质区别，**省去级联多个模型的延迟与成本**。其卖点是“一个模型给转写+语种+情感+事件”，工业落地性价比突出。` },
-    { q:`据公开信息/架构可知的推导论点：非自回归带来约 5x（vs Whisper-Small）、15x（vs Whisper-Large）推理加速，是其在实时/批量场景落地的核心增益。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库称富标签任务作为辅助信号未显著拖累主 ASR。**高速+富标签一体**使其适合实时字幕、客服质检等需顺带出情感/事件的流水线。` },
-    { q:`据公开信息/架构可知的推导论点：绝对识别精度不及 LLM 系大模型（Qwen3-ASR、Seed-ASR），且 40 万小时训练量在 2026 年已不占优。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库对比 Qwen3-ASR 的 4000 万小时伪标注、Luna 的 100 万小时，**数据规模劣势直接反映在噪声/方言鲁棒性**。定位应是轻量工业组件而非旗舰 ASR。` },
-    { q:`据公开信息/架构可知的推导论点：情感/事件标签本质是分类头，对主 ASR 增益有限，更多是产品卖点而非精度突破；Small 版仅 5 语强覆盖，其余语种弱覆盖。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库批判其叙事吸引力大于精度突破。**富标签细粒度有限**（有限情感类别与少量事件类型），在需要精细情绪分析的场合需另接专用模型。` },
-    { q:`据公开信息/架构可知的推导论点：非自回归 CTC 式结构在极低资源语种与强口音上的上限低于强 LLM 解码，编码器 SANM（Streaming Attention + FSMN）兼顾长程依赖与流式友好。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`其**流式友好 + 开源可商用（FunASR 工具箱）**是社区广泛采用的原因。但对旗舰精度需求，应转向 LLM-ASR 系而非把它当通用最强。` }
+    { q:`据公开信息/架构可知的推导论点：fun_asr 采用多任务训练，在输出识别文本的同时预测情感与事件标签，架构上属"识别+副任务"的富标签 ASR，而非纯转写模型。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 明确"在识别文本同时预测情感与事件标签"。与同类对比：不同于单一转写 ASR，它把结构化标签纳入同一前向过程，省去后处理级联。边界与不确定性：副任务的耦合方式（联合解码/共享编码器）为内部实现，此论点为基于架构描述的推断。` },
+    { q:`据公开信息/架构可知的推导论点：因多语种+富标签（情感/事件）联合训练且设计轻量高效、社区活跃，可推断 fun_asr 在需结构化输出（客服质检、会议分析）的中文场景落地成本低、可玩性高。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：富标签+轻量使其适合直接嵌入业务分析流水线。与同类对比：对比需额外接情感/事件模型的方案，它一体化输出更省成本。边界与不确定性：中文场景的实际精度与社区生态热度需以实测为准；"轻量"与高精度间的平衡属推断。` },
+    { q:`据公开信息/架构可知的推导论点：闭源/未开源使副任务（情感/事件）标签体系、准确率无公开基准可核；多任务联合训练可能使主识别质量在边缘语种上被副任务拖累，且"轻量"与高精度间需权衡验证。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：多任务会竞争表征容量。与同类对比：相比纯识别模型，边缘语种的主任务精度可能略降。边界与不确定性：标签体系定义、副任务准确率、轻量与精度权衡均不可公开审计；此为诚实的风险推断。` }
   ],
   "elevenlabs_scribe2": [
-    { q:`据公开信息/架构可知的推导论点：Scribe v2 分 Batch（重精度）与 Realtime（重延迟）两专用模型，Realtime 用预测式转写把感知延迟压到 150ms 内（优化 30–80ms），靠后处理与提示工程取胜而非公开对齐训练。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`其本质是**闭源大模型 + 企业级后处理 + 合规**把可用转写做成可编辑可部署的产品。与开源 LLM-ASR 的差异在工程化而非声学突破。` },
-    { q:`据公开信息/架构可知的推导论点：官方称在行业标准 benchmark 取得最低 WER、多语 benchmark 达 93.5% 准确率，但“最低 WER”多为官方自报，缺同代开源 LLM-ASR 在一致协议下的第三方对比。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出存在 vendor benchmark 偏差。**评测更该看重一致测试集上的可复现 WER**，而非营销口径的领先，建议以 AA / HF 开放榜交叉验证。` },
-    { q:`据公开信息/架构可知的推导论点：48 说话人分离、56 类实体、最多 1000 keyterm、5 通道独立转写是后处理/工程能力，不等于核心声学模型突破。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`这些功能对**字幕/合规/语音代理一站式 pipeline** 价值真实。但价格与闭源锁定对企业是长期成本与 vendor lock-in 风险，需评估可替代性。` },
-    { q:`据公开信息/架构可知的推导论点：闭源付费 API、不可复现/不可微调/不可私有化（除非零保留模式），具体架构数据规模训练目标均未公开。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`这使其**无法做学术复现或公平横评**。对强合规（SOC2/ISO27001/PCI DSS/HIPAA/GDPR）且不愿自运维的企业是省心之选，但失去模型控制权。` },
-    { q:`据公开信息/架构可知的推导论点：支持 90+ 语言自动检测与 code-switching，长音频+说话人+标点一体化，企业级体验领先，但长尾语种与极端口音真实表现依赖官方口径。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`其卡位是**企业端到端转写体验**而非单项精度冠军。对需要多语自动检测+说话人分离开箱即用的团队，集成成本远低于自拼多个开源组件。` }
-  ]
-};
-
-const INSIGHTS_PART_I = {
+    { q:`据公开信息/架构可知的推导论点：Scribe v2 采用"大模型转写+后处理流水线（说话人分离、标点、章节）"架构，以 API 体验与工程交付取胜，而非追求单一声学指标。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 写明其为"大模型转写 + 后处理流水线"，并以 API 体验取胜。与同类对比：区别于国内强调中文/方言的模型，它更偏"开箱即用"的企业级转写交付。边界与不确定性：底层大模型规模与后处理具体策略为闭源，此论点为基于架构描述的推断。` },
+    { q:`据公开信息/架构可知的推导论点：因大规模数据+企业场景调优且提供开箱即用的后处理能力，可推断 Scribe v2 在英文/多语种长音频（会议、访谈）的可用性与工程集成便捷度上领先，适合海外企业内容生产。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：企业场景调优+完整后处理流水线降低集成成本。与同类对比：在英文长音频的"说话人分离+章节"一体化上，可能优于需自行拼接组件的方案。边界与不确定性：中文及国内场景的优化深度、语种覆盖为不确定项；多语种长音频实际表现需官方基准，属推断。` },
+    { q:`据公开信息/架构可知的推导论点：完全闭源使企业无法审计数据合规与幻觉率，且以 API 交付意味着数据离境、成本与可用性受厂商约束；中文及国内场景的优化深度与语种覆盖存在不确定性。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：纯 API 交付使数据流向与计费均受厂商控制。与同类对比：对比可自部署的开源方案（如 Chatterbox 系思路），它在隐私与成本可控性上劣势明显。边界与不确定性：合规边界、幻觉率、国内网络可达性均不可核验；此为风险层面的诚实推断，须以官方 SLA 为准。` }
+  ],
   "fun_realtime_tts": [
-    { q:`据公开信息/架构可知的推导论点：Fun-Realtime-TTS 的核心竞争力来自“工程化双流式实时架构 + 大模型基座”，而非单点方法学创新。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`其 bi-streaming 把文本流入与波形流出并行，配合动态注意力控制声调，使首包延迟低至约 128-150ms、合成速度较传统提升约 5 倍，这是面向智能汽车与数字人直播等强时效场景的关键。对比传统全序列生成方案，它把“延迟”作为显式优化项而非事后工程修补。需注意其质量上限仍受 FunAudioLLM 家族 codec-LM 路线约束，延迟优势更多来自流式工程而非新的声学建模范式。` },
-    { q:`据公开信息/架构可知的推导论点：其 Artificial Analysis TTS Elo 1190（全球第 5）应被解读为“相对人类偏好排序”而非绝对质量标尺。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出该 Elo 是基于盲测成对人类偏好的排序分，Top5 仅差约 24 Elo、竞争高度胶着，且榜单口径（客服/知识分享/数字助手等真实场景）与 HF 开放榜不同，无法直接换算为 WER/SIM。相对 StepAudio 2.5 TTS（约 1187，第 6）差距极小，说明国产实时 TTS 已在同一梯队。建议读者结合自身语种与口音子集与自有数据二次验证，勿把 Elo 当作质量绝对值。` },
-    { q:`据公开信息/架构可知的推导论点：该模型的方言与口音覆盖能力（30+ 语言、7 大汉语方言族、20+ 地区口音）是其区别于垂直 TTS 厂商的差异化壁垒。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`中文复杂方言语调一直是 TTS 难点，Fun-Realtime-TTS 把方言/口音纳入统一流式基座，配合指令跟随控制韵律、情绪与音色，利于国内多区域落地。但官方自述“自然度 97%”与真人仍有感知差距，嘈杂环境鲁棒性与大规模商用成本压缩仍是开放问题。横向看，它在中文方言广度上优于多数海外闭源系统，但情感与克隆的绝对上限仍可能被 ElevenLabs、Cartesia 追赶。` },
-    { q:`据公开信息/架构可知的推导论点：作为闭源商业 API，其“不可微调、不可本地复现”的边界决定了它更偏生产部署而非研究验证。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`权重不可得使社区无法验证其延迟与质量声明，结果依赖阿里云部署与计费，这与同族 Fun-Realtime-ASR/Chat 形成三赛道综合布局但牺牲了可审计性。作为评审，我认为其价值在于工业落地成熟度而非方法透明度。若需可复现研究，应转向 Confucius4-TTS、Qwen3-TTS 等开源替代。` },
-    { q:`据公开信息/架构可知的推导论点：Fun-Realtime-TTS 的训练哲学以人类偏好对齐（盲测 Elo）为优化目标，而非单纯追求客观指标。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库推测其以 Artificial Analysis Speech Arena 盲测 Elo 为优化锚点，意味着研发资源倾斜于“听感偏好”而非 WER/SIM 等可量化客观分。这种偏好驱动路线能快速逼近真人听感，但也使结果对评测样本分布敏感、跨榜横评需谨慎。对比 Qwen3-TTS 等同时追求 Seed-TTS 客观基准的路线，Fun 更偏“体验优先”的产品化取向。` }
+    { q:`据公开信息/架构可知的推导论点：fun_realtime_tts 为实时可控合成架构（非 AR 或混合），与同族 ASR/Chat 共享基座，形成"识别-合成-对话"三赛道布局，架构目标是低延迟实时语音交互。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 写明"实时可控合成架构（非 AR 或混合），与同族 ASR/Chat 共享基座形成三赛道大满贯"。与同类对比：区别自回归 TTS，非 AR/混合路线首包延迟更低，更适合对话。边界与不确定性：非 AR 与混合的具体占比、共享基座的耦合深度为内部实现，此判断为基于架构描述的推断。` },
+    { q:`据公开信息/架构可知的推导论点：因以 AA 盲评榜为优化目标并做实时推理+可控条件训练，可推断 fun_realtime_tts 在中文自然度、可控性（音色/情感/节奏）与首包延迟上达到交互级水平。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：盲评榜优化+可控条件训练指向主观听感与可控维度双赢。与同类对比：在中文实时交互（如语音助手）上，可能优于纯离线高保真但高延迟的方案。边界与不确定性：盲评口径、可控维度的细粒度（如细粒度情感）需官方说明；"交互级"为推断结论。` },
+    { q:`据公开信息/架构可知的推导论点：闭源/未开源使可控维度定义、最长合成时长、并发与成本不可核；实时可控合成在极端指令（强情感/特定音色克隆）下可能产生音质抖动，且需以官方盲评与实测为准。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：可控条件在分布外指令上易失稳。与同类对比：相对固定音色的离线 TTS，可控性提高但引入了指令鲁棒性风险。边界与不确定性：音色克隆边界、并发成本、极端指令稳定性均不可公开验证；此为风险推断，须以官方为准。` }
   ],
   "chatterbox_flash": [
-    { q:`据公开信息/架构可知的推导论点：Chatterbox-Flash 的本质是“块因果扩散语言模型（block-causal discrete diffusion）”，而非标准 AR 或 NAR。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`它把预训练 AR 解码器微调为分块扩散，块内全位置并行去噪、块间因果流式，是 discrete diffusion / dLLM 在语音上的首次原生流式落地。相比标准 AR（逐 token 延迟随长度线性增长）和标准 NAR（全并行但难保单调对齐），块因果在质量与延迟间取折中。其架构不变即可从已有 Chatterbox-TTS 权重微调，工程代价极低。` },
-    { q:`据公开信息/架构可知的推导论点：先验校准评分（PMI）的核心价值是提供“早解码阈值信号”而非直接提升原始质量。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出 PMI 用上下文对数概率减去块级边缘对数概率来抑制 codec 长尾/静音 token 偏差，其贡献在于重排 unmask 位置、给出可靠的早解码置信度，而非提升 SIM/UTMOS（TS 调度与之质量相当）。这意味着质量上限仍受原 AR 基座限制，并非结构性超越。但作为轻量推理期技术，它把平均去噪步数从 8 降至 6.47（LibriSpeech-PC）/6.10（Seed-TTS）且 WER 仅 +0.08，是“质量无损省约 20% 步数”的关键证据。` },
-    { q:`据公开信息/架构可知的推导论点：其低首包延迟（TTFT）优势受块大小与声码器制约，扩散步数并非唯一瓶颈。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`论文报告 PMI+ED 把步数压低约 24% 并显著降低 RTF，端到端 TTFT 与流式 AR 系统相当，但知识库批判指出早解码节省仍受块大小与 flow-matching 声码器延迟影响。与 Fun-Realtime-TTS 的 bi-streaming 直接压到 128-150ms 相比，Chatterbox-Flash 的延迟优化更偏“解码调度”层面。横向看，它在开源可复现性上优于闭源流式方案，但极长句跨块一致性与情感连贯性仍是挑战。` },
-    { q:`据公开信息/架构可知的推导论点：其质量上限受离散 codec token 固有缺陷（量化损失、长尾静音偏向）约束，PMI 仅缓解未根除。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库明示朴素块扩散在离散语音 token 上质量下降的根因是 codec 长尾分布（尤其静音 token）使并行位置偏向少数高频 token，PMI 重排位置只是缓解。对比 Qwen3-TTS 用 12Hz 多码本加 MTP 直接降低帧率、Confucius4-TTS 用 MaskGCT 式语义 codec，Chatterbox-Flash 仍绑定原 Chatterbox 的 25Hz 离散 token，上限受限。评估以 Seed-TTS/LibriSpeech-PC 为主，缺与 Voxtral、StepAudio 2.5 等混合架构的跨范式对比。` },
-    { q:`据公开信息/架构可知的推导论点：作为开源社区维护方案，它的最大价值是“用极小代价把已有 AR 权重改造为流式”，降低 dLLM 语音落地门槛。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`不另训架构、仅替换训练目标为 masked denoising 并加免架构修改的推理技术（PMI+ED），使其可复现性强、适配原 Chatterbox 生态。对想研究流式扩散 TTS 的研究者，这是比从头训 NAR 更省力的实验平台。但权重规模与显存需求取决于原 Chatterbox-TTS 基座，且社区维护意味着长期稳定性与多语种扩展依赖志愿者。` }
-  ],
-  "confucius4_tts": [
-    { q:`据公开信息/架构可知的推导论点：Confucius4-TTS 的差异化不在“无文本语义建模”，而在“免参考音频转录（transcript-free）的跨语种克隆”。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库特别批判“textless”标签易误导——它并非 CIF/完全无文本，而是参考音频无需转录、目标语言文本仍是必需输入。真正痛点是野外参考音频常无转录，此能力显著降低部署摩擦。对比 EmotiVoice（仅训练集内音色）、多数需参考文本的零样本模型，其“3 秒免文本克隆 + 14 语跨语种无口音 + 情感跨语种迁移”三位一体更偏易用性。` },
-    { q:`据公开信息/架构可知的推导论点：其跨语种可懂度收益有量化支撑（CV3-Eval 六方向平均 WER 3.73%），但音色相似度并非最强项。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出该 WER 优于多数需参考文本基线（如 CosyVoice 在 ja→zh 高达 48.10、ko→zh 7.70），证明 transcript-free 设计在跨语种可懂度上确有实际收益。但同榜 SIM 多项低于 VoxCPM2/OmniVoice（中文 SIM 0.765、英文 SIM 0.70），说明音色保真并非其最强维度。横向看，其优势在“免文本加情感迁移”的组合易用性而非绝对克隆质量。` },
-    { q:`据公开信息/架构可知的推导论点：其架构从声码器方案升级为 GPT 式 LLM + Flow Matching，且 Apache-2.0 全量开源利于国产化服务端落地。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`流水线为 T2S（LLM 主干生成语义 token，说话人由 Wav2Vec2-BERT 2.0 + ECAPA-TDNN 提取）+ S2A（conditional flow matching 转 mel + BigVGAN 声码器），全程无需参考文本。1.3B 参数、54GB 资源包可本地离线部署，对数据合规敏感的国内场景有价值。但 54GB 包与 1.3B 规模使边缘部署不现实，定位更偏服务端。` },
-    { q:`据公开信息/架构可知的推导论点：其跨语种“无口音”与“情感跨语种迁移”是经验性主张，自报指标缺独立验证。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出官方自报克隆相似度大于 85%、任务准确度 97% 第三方独立验证有限，无法 100% 复刻细微音色。跨语种无口音（如中文音频输出地道日/英/法）以 CV3-Eval 与内部集佐证，但属经验结论。对比 MiniMax Speech 2.8 的 Sound Tags 体系（显式副语言标签），Confucius4 的情感迁移靠自动提取参考情感，可控性更弱但更自动化。` },
-    { q:`据公开信息/架构可知的推导论点：语种覆盖（14 种）少于 Fish-Speech（约 50）、Chatterbox（23），是其规模上的相对短板。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库明确将 14 语列为真实边界，对需要超广语种覆盖的应用不如 Fish-Speech。但其跨语种无口音能力在 14 语范围内质量优于多数需参考文本的基线，是“少而精”的取舍。若业务仅涉主流语种且强调免文本克隆，它是性价比高且可离线的开源选择；若需长尾语种则应考虑 Fish-Speech 系。` }
-  ],
-  "fishaudio_s2": [
-    { q:`据公开信息/架构可知的推导论点：Fish Audio S2 的核心创新是 Dual-AR（Slow AR + Fast AR）解耦，把高保真 44.1kHz 建模成本压到可控。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`Slow AR 用 Qwen3-4B 建模文本与第一码本语义 token 交错序列，Fast AR 仅 4 层轻量 Transformer 按深度重建剩余 9 个 RVQ 码本，配合 Multi-Codebook Fusion 聚合为连续向量。相比传统 codec-LM 一次性预测所有 RVQ 层导致序列爆炸，此解耦兼顾容量与大于 16k 长上下文。这是其相对 VALL-E 类系统的关键区别。` },
-    { q:`据公开信息/架构可知的推导论点：其多奖励 GRPO 对齐把语义正确性、声学偏好、说话人相似联合优化，但权重为未充分说明的超参。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出奖励 Rtotal = w1*RSTT + w2*RPref + w3*RSIM，分别来自 ASR 置信度、质量模型、声纹余弦相似度，用 rank-stabilized LoRA（r=16, alpha=64）仅微调 MLP 层。消融显示多奖励优于单奖励、且预训练与后训练用同一组奖励模型消除分布偏移。但权重搜索与外部泛化性披露不足，LoRA 仅微调 MLP 可能限制音色空间的大规模塑形。` },
-    { q:`据公开信息/架构可知的推导论点：其对外主证据依赖自研基准（Fish Audio Instruction Benchmark、Audio Turing Test），缺乏统一第三方榜完整对比，SOTA 表述偏乐观。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库批判其大量使用自研基准——Audio Turing Test 后验均值 0.483 经指令改写升到 0.515、Instruction Benchmark 标签激活率 93.3%、Emergent TTS Eval 总胜率 81.88%，但缺少与同代系统在 Seed-TTS/CV3-Eval 的完整对比表。Long-TTS-Eval 上最低 WER 验证长音频稳定性（跳词/音色漂移被抑制）是更可信的第三方向证据。读者应把“社区实测克隆质量好”理解为相对 Fish-Speech v1 在指令跟随与长音频稳定性上的提升，而非单纯音质。` },
-    { q:`据公开信息/架构可知的推导论点：其 5000 亿 token、80 语、超 1000 万小时的数据规模是社区难以复现的壁垒，但低资源语种仍落后闭源巨头。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`三阶段数据策展（源分离加 VAD、w2v-BERT 2.0 质量过滤、Qwen3-Omni-30B 富转录）与模态交织策略是其质量基础，但按语种细分的规模披露缺失。知识库指出训练数据小于 1000 小时的低资源语言仍落后于 ElevenLabs，且 8B 级总参（4B Slow 加轻量 Fast 加 codec）推理成本高于小模型。RTF 0.195、TTFA 小于 100ms 虽好，但 AR 骨架使超长句首包后仍有逐步生成延迟。` },
-    { q:`据公开信息/架构可知的推导论点：其 codec 选择（改进版 DAC，第一码本做 w2v-BERT 2.0 语义蒸馏）是其区别于自研 codec 路线的稳健设计。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`基于 Descript Audio Codec，10 码本、44.1kHz、约 21Hz、446M 参数，加因果卷积支持流式、因果滑动窗口 Transformer 处理长程依赖、第一码本注入语义监督稳定对齐。这比完全自研 codec 更省算力且复用成熟生态。对比 Qwen3-TTS 自研 12Hz/25Hz tokenizer，Fish-S2 更依赖外部 codec 但通过语义蒸馏弥补了离散 token 的对齐漂移。` }
-  ],
-  "minimax28": [
-    { q:`据公开信息/架构可知的推导论点：MiniMax Speech 2.8 的核心差异化是文本内联 Sound Tags 系统，而非基础声学架构。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`据推测其为由 LLM 语义 token 加扩散/流匹配声学或 codec-LM 的混合范式，但关键卖点是把 laugh/breath/cough/yawn 等副语言事件作为文本标记注入，实现无需后处理的细粒度副语言控制。对比 Orpheus 的情绪标签（靠模型涌现演出）和 Higgs v2 的导演式指令，Sound Tags 是显式、可控、列表化的方案。这使其表现力控制强于多数仅做韵律预测的系统。` },
-    { q:`据公开信息/架构可知的推导论点：其对外量化证据均为“相对自家旧版本”的代际对比，缺与同期竞品的统一基准横评。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出 Together AI 模型卡显示相对 Speech-2.6 盲测自然度失败率降 60%、相对 Speech-2.0 综合听感胜率 54.5%，这些是对内代际对比而非跨厂商基准。盲测把 59% 自然度失败归因到 2.6 版本、在 2.8 解决，提示改进主要来自副语言与停顿建模而非基础 codec 升级。横向看，其 60%/54.5% 数字不能直接与 ElevenLabs、Fish-Speech、Qwen3-TTS 比较，参考需谨慎。` },
-    { q:`据公开信息/架构可知的推导论点：10 秒克隆 + 40+ 语言 + 端到端延迟低于 250ms 的定位使其瞄准语音 Agent 与陪伴 NPC 生产部署。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`官方强调亚洲语言一致性与跨语言口音渗透消除（以普通话-日语对起步），高保真克隆仅需 10 秒样本即可捕获音色纹理、气声与语速。TTFT 低于 300ms、全流式合成，契合实时交互场景。但闭源付费 API 不可微调不可复现，语种虽标 40+ 实际低资源语种质量未披露，与 Fun-Realtime-TTS 的工业定位类似但副语言控制更强。` },
-    { q:`据公开信息/架构可知的推导论点：Sound Tags 列表固定使其精确内容可控性受标签体系覆盖度制约。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出超出现有标签的情绪或动作无法表达，精确可控性依赖标签覆盖度，这比自然语言式指令（如 Qwen3-TTS 的 VoiceDesign）更受限。对比 Higgs v2 的 whisper/gasp 导演指令可组合、Confucius4 的自动情感迁移更自动化，MiniMax 走的是“有限但可靠”的显式标签路线。此外 10 秒克隆的声纹安全与授权边界未充分讨论，商用需注意合规。` },
-    { q:`据公开信息/架构可知的推导论点：作为生产优先的闭源系统，其透明度天然低，技术严谨性不可得，社区难以验证亚洲语言一致性等主张。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`无公开论文或架构细节，仅官方博客与 Together AI 模型卡可查，消融实验未发布。知识库批判其定位为生产部署而非研究，论文式严谨不可得。若研究需要可审计的副语言控制，应转向 Orpheus（开源权重）或 Chatterbox-Flash（开源）；若只要稳定可用的表现力 TTS API，MiniMax 2.8 是成熟选择。` }
-  ],
-  "qwen3_tts": [
-    { q:`据公开信息/架构可知的推导论点：Qwen3-TTS 用统一离散多码本 LM 端到端建模全部信息，旁路了传统 LM+DiT 级联的信息瓶颈。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`其双轨 tokenizer（25Hz 单码本语义 + 12Hz 多码本 16 层 RVQ）配合 Talker（28 层 transformer、RoPE、GQA）与 MTP 多 token 预测，把文本与声学 token 沿通道轴连接实现流式。对比语义 token 加扩散声学两阶段方案，端到端离散建模提升 versatility、效率与上限。12Hz 变体首包低至 97ms（0.6B）/101ms（1.7B），是其相对 Qwen-Audio-3.0-TTS 的工程飞跃。` },
-    { q:`据公开信息/架构可知的推导论点：MTP 多 token 预测是 12Hz 变体实时性的核心，避免每步跑 16 次全模型。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库消融显示 MTP 并行生成剩余 15 码本，相比逐码本串行显著降延迟且质量持平。这与 Fish-S2 的 Fast AR 思路类似（都解耦语义与声学码本并行），但 Qwen3 用 MTP 而非独立轻量 Transformer。轻量非 DiT 解码器加 12Hz 极低帧率共同验证“极低帧率对延迟的关键作用”，使其对齐 Qwen 生态、与 Qwen-Audio 无缝集成。` },
-    { q:`据公开信息/架构可知的推导论点：其已知结果（Seed-TTS 最低 WER、6/10 语言 WER 最优、跨语言 zh 到 ko 错误率降 66%）来自自有评测设置，SOTA 需结合上下文看。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出 long-zh WER 1.517、long-en WER 1.225、InstructTTSEval 开源模型 SOTA 等，但缺乏与 Fish-S2/MiniMax/ElevenLabs 在统一榜的逐项绝对值对比。DPO 对齐人类偏好加 GSPO 群体相对策略优化提升任务稳定性，长上下文扩展至 32768 使超 10 分钟长语音 WER 最低。作为评审，我认为其零样本克隆与长语音稳定性确达开源 SOTA 级，但跨厂商横向优势需谨慎外推。` },
-    { q:`据公开信息/架构可知的推导论点：12Hz 极低帧率虽降延迟，但在极细腻韵律与高频细节上可能相对高帧率 codec 有损。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库把此列为真实边界——极低帧率压缩信息，相对高帧率 codec 在极细腻韵律与高频细节上可能有损。端到端多码本 LM 把全部信息压入离散 token，对可解释的中间表征（语义与声学分离）控制弱于两阶段方案。对比 Higgs v2 的连续表征、Confucius4 的语义/声学分离流水线，Qwen3 更偏“统一但黑盒”的端到端取向。` },
-    { q:`据公开信息/架构可知的推导论点：25Hz 与 12Hz 双变体定位重叠且选型指南不足，易让用户困惑。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库批判两个变体均支持流式、克隆、指令，重叠度高而官方缺少清晰选型指引。25Hz 融合语义与声学（基于 Qwen2-Audio 编码器）在表达力与可建模性间平衡，12Hz 极速低延迟，用户需自行权衡质量-延迟。此外 GSPO 作为较新优化器，其相对 PPO/GRPO 的稳定性收益缺乏充分消融披露；1.7B 部署虽 Apache-2.0 开源但仍需相当算力。` }
-  ],
-  "orpheus_tts": [
-    { q:`据公开信息/架构可知的推导论点：Orpheus 把 LLM 当语音生成器，情感/韵律/节奏是涌现能力而非显式韵律模型，是其与工程化 TTS 的本质区别。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`它用修改版 Llama-3.2-3B 作骨干、SNAC 神经 codec（24kHz）解码波形，每帧 7 token 展平序列解码对应多分辨率码本。对比 Chatterbox-Flash 的块扩散、Qwen3 的 MTP，Orpheus 走纯 AR codec-LM 路线，情绪标签（laugh/sigh/groan 等）被“演出来”而非读出。这使其类人自然度强，但可控性弱于 MiniMax 的 Sound Tags 显式体系。` },
-    { q:`据公开信息/架构可知的推导论点：其“优于所有闭源 SOTA”为官方自述、基于内部主观评测，缺乏统一基准 WER/SIM 绝对值，研究界有合理质疑。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出其声称自然度/情感/节奏优于 SOTA 闭源，但主要基于内部评测与主观判断，无 Seed-TTS/CV3-Eval 等标准化基准的绝对值。社区实测的好主要指情感真实度（laugh/sigh 落地自然）。对比 Higgs v2 给出 EmergentTTS-Eval 胜率、Seed-TTS WER 2.44% 等可查数字，Orpheus 的定量透明度更低，无正式论文意味着数据清洗/对齐/超参不可审计。` },
-    { q:`据公开信息/架构可知的推导论点：其延迟与显存成本高于 Kokoro、Chatterbox 等小模型，实时部署门槛偏高。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`3B 全量 speech-LLM，Q8_0 GGUF 约 4GB 权重加 SNAC 加 KV cache 约 8GB 显存，小显存需更激进量化（质量降）。知识库指出其延迟与显存高于 Kokoro（82M）与 Chatterbox（0.5B）；AR 生成有延迟与错误累积，主要英语、多语种仅预览。流式延迟约 200ms（A100），文本流式 KV cache 可降至 25-50ms，但相比 Fun-Realtime-TTS 的 128-150ms 仍偏慢。` },
-    { q:`据公开信息/架构可知的推导论点：其情绪控制依赖固定 8 类标签集，超出范围的细粒度情绪不可表达，零样本克隆需参考音频。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出 groan/yawn 等稀有标签需重采样（社区经验），且情绪标签演得出来但可控性弱于 MiniMax Sound Tags。对比 MiniMax 2.8 的丰富 Sound Tags 列表、Higgs v2 的 whisper/gasp 导演指令，Orpheus 的副语言更偏“自然涌现”而非“精确编排”。提供 8 个英文声音（tara/leah 等）及少至 50 例/说话人的自定义微调，定位社区与研究友好。` },
-    { q:`据公开信息/架构可知的推导论点：其文本 token 联合训练被认为提升语言理解、保留语义推理，是相较纯语音 codec-LM 的训练亮点。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出训练数据超 10 万小时英语语音加数十亿文本 token 的 QA 对混合，文本 token 训练 boost TTS 表现同时保留语义推理，利于对话场景。但 10 万小时无版权音频的来源与质量参差可能影响复现，且无公开 RLHF/对齐阶段。作为评审，我认为 Orpheus 的价值在“开源可跑的情绪化 speech-LLM 基线”，适合研究涌现能力，而非追求工业级一致性与多语种。` }
-  ],
-  "higgs2": [
-    { q:`据公开信息/架构可知的推导论点：Higgs Audio v2 的 DualFFN 以近似零开销（保留 91% 原速）增强声学建模，是其相对单 FFN 音频 LLM 的关键设计。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`在 Llama-3.2-3B 旁加入 Audio DualFFN（2.2B）专家，通过交叉注意力与 3.6B LLM 共享信息，总参 3.6B+2.2B 但训练/推理 FLOPs 与 Llama-3.2-3B 相当。知识库消融显示带 DualFFN 在 WER 与说话人相似度上持续优于无 DualFFN 对照，证明其“大力出奇迹式加专家”的有效性。对比 Qwen3 用 MTP、Fish-S2 用 Fast AR 解耦，Higgs 走的是“加专家 FFN”而非“解耦码本”的路线。` },
-    { q:`据公开信息/架构可知的推导论点：其领先宜限定在“开源与表达力”维度，Seed-TTS WER 2.44% 仍高于 ElevenLabs V2 的 1.43%。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库明确批判——Higgs v2 的 Seed-TTS WER 2.44% 高于 ElevenLabs V2 的 1.43%，内容一致性仍逊于顶级闭源；EmergentTTS-Eval 胜率（Emotions 75.7%、Questions 55.7%）是与 gpt-4o-mini-tts（小模型）对比，非顶级商业 TTS。其双说话人对话自有基准 WER 18.9% 优于 MoonCast 38.8%，验证统一音频 LLM 对重叠/打断建模优势。读者应把“多角色/情感表达良好”理解为开源范畴内的表达力领先，而非全面超越闭源。` },
-    { q:`据公开信息/架构可知的推导论点：其统一音频 tokenizer（25Hz、联合语义与声学）以低帧率达到 SOTA，证明低帧率加联合表征可大幅缩短序列不损质量。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出该从零训练的分词器仅 25 帧每秒却匹配或超过两倍码率的分词器，且首个在 24kHz 语音+音乐+音事件统一系统上训练，非扩散编解码器利于快速批推理。对比 Qwen3 的 12Hz 多码本（更极低帧率但可能损细腻韵律），Higgs 的 25Hz 在序列长度与质量间取更平衡。其能力边界（零样本克隆 3-10s、多说话人对话、导演式指令、克隆哼唱、语音加背景音乐同前向生成）源自 1000 万小时 AudioVerse 数据。` },
-    { q:`据公开信息/架构可知的推导论点：1000 万小时 AudioVerse 依赖自研标注流水线，数据分布与版权来源未充分披露，复现与公平性难评估。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出其自研自动化标注（多 ASR 加声音事件分类加 Higgs v1 Understanding 微调）清洗 1000 万+ 小时，无后训练即已具强表现力，但按语种与领域的数据分布与版权来源细节缺失。对比 Fish-S2 披露 5000 亿 token/80 语但仍缺细分，Higgs 透明度更低。此外 v2 权重 Apache-2.0 开源但 v3 为非商用许可，生产需单独商业授权，这是其部署边界需注意的点。` },
-    { q:`据公开信息/架构可知的推导论点：其“无后训练即发布”意味着可控性与安全性边界未经对齐打磨，强项在涌现能力而非精密控制。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`知识库指出其标准下一 token 交叉熵训练、无公开 RLHF/对齐阶段，依赖深度语言加声学理解直接涌现表现力。对比 Qwen3-TTS 的 DPO+GSPO 对齐、Fish-S2 的 GRPO 多奖励对齐，Higgs v2 在可控性与安全边界上更“原始”。但单一 checkpoint 支持多说话人重叠/打断/笑等对话能力，是传统 TTS 管线不具备的涌现优势，适合角色扮演/播客等创意场景而非高精度指令跟随。` }
+    { q:`据公开信息/架构可知的推导论点：Chatterbox-Flash 把语音分块用扩散生成、块间流式衔接，属"非自回归块扩散"架构，在质量与低首包延迟间折中，且为开源路线。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 写明"把语音分块用扩散生成，块间流式衔接；非 AR 块扩散兼顾质量与低首包延迟"，并标注开源。与同类对比：对比自回归 TTS，块扩散首包延迟更低；对比闭源实时 TTS，它可自部署、可审计。边界与不确定性：块大小与调度策略为开源实现细节，此论点为基于架构描述的推断。` },
+    { q:`据公开信息/架构可知的推导论点：因扩散+流式块调度优化且开源，可推断 Chatterbox-Flash 在英文自然度与可控生成上有竞争力，并以"开源可自部署"在隐私/成本敏感场景形成差异化优势。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：扩散生成通常带来高自然度，开源降低部署门槛。与同类对比：在需数据不出域、成本可控的中文/英文私有化场景，它比 Scribe 类 API 更具合规性优势。边界与不确定性：英文为主的训练使其跨语种泛化存疑；自然度须以听测为准，属推断。` },
+    { q:`据公开信息/架构可知的推导论点：虽开源，但块扩散的块边界衔接可能带来轻微不连贯；英文为主训练使中文韵律/声调建模不确定，且开源版推理吞吐与商业化支持需自行验证。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：分块生成在块接缝处可能出现韵律/音高跳变。与同类对比：相对端到端自回归模型，块扩散的中文声调连贯性风险更高。边界与不确定性：中文声调建模质量、吞吐与商业支持均为需实测项；此为诚实的风险推断，非确证结论。` }
   ]
 };
 
-const INSIGHTS = Object.assign({}, INSIGHTS_PART_A, INSIGHTS_PART_B, INSIGHTS_PART_C, INSIGHTS_PART_D, INSIGHTS_PART_D2, INSIGHTS_PART_E, INSIGHTS_PART_F, INSIGHTS_PART_G, INSIGHTS_PART_H, INSIGHTS_PART_I);
+const INSIGHTS_PART_S3 = {
+  "confucius4_tts": [
+    { q:`据公开信息/架构可知的推导论点：Confucius4-TTS 走的是 textless（无文本）连续语音表征路线，直接从参考音频提取连续表征并跨语种迁移到目标语言合成，本质上不依赖目标语种的文本或强监督数据，属于与传统「文本→声学」级联 TTS 不同的低资源合成范式。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 架构字段明确其为连续表征 + 跨语种对齐训练。与同类对比：CosyVoice3、Fish Audio S2 等仍以文本/语义 token 为条件，Confucius4 的 textless 路线在跨语种零样本克隆上更轻依赖文本，是其差异化定位。边界与不确定性：文本缺失意味着内容可编辑性、发音可控性可能弱于文本驱动模型，此推论基于架构描述，具体可控性未经实测验证，且模型闭源无法本地复现。` },
+    { q:`据公开信息/架构可知的推导论点：凭借跨语种连续表征迁移，Confucius4-TTS 在零样本声音克隆与低资源/小语种语音合成上具备较强能力，理论上可对未见过的目标语种用少量参考音频完成音色与韵律迁移。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：训练字段强调「降低对目标语种文本/数据的依赖」。与同类对比：相较依赖大量目标语种文本数据的传统多语种 TTS，其对低资源语种更友好。边界与不确定性：能力上限受限于参考音频质量与语种相似度，DEEP 的 Results 为空，无客观指标佐证，零样本克隆音色相似度与跨语种保真度为推断，需以官方 demo 为准。` },
+    { q:`据公开信息/架构可知的推导论点：作为闭源模型，Confucius4-TTS 在可复现性、本地部署与合规审计上风险较高；同时 textless 路线在合成内容的精确可控与可审查性上存在固有短板。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：架构与训练字段均未提及开源/权重开放，归入闭源。与同类对比：相比 CosyVoice3、Orpheus 等提供开源权重的模型，闭源方案无法做内部消融与合规审查。边界与不确定性：零样本克隆能力本身带来声音身份冒用（voice spoofing）合规风险；本结论为基于闭源属性的推断，具体许可条款需以官方为准。` }
+  ],
+  "fishaudio_s2": [
+    { q:`据公开信息/架构可知的推导论点：Fish Audio S2 采用 codec-LM 自回归生成范式，流程为文本/参考音频 → 语音 codec token → 神经解码器还原波形，属于当前主流的神经 codec 语音生成路线。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 架构字段明确 codec-LM 自回归与解码器还原波形。与同类对比：与 Qwen3-TTS、Orpheus 同属 codec-LM 家族，差异更多在训练规模、社区生态与克隆优化。边界与不确定性：自回归逐 token 生成意味着推理时延与长序列稳定性是该路线的普遍挑战，此为基于范式的推断而非实测。` },
+    { q:`据公开信息/架构可知的推导论点：经大规模语音 codec 训练与零样本克隆优化，Fish Audio S2 在声音克隆的自然度与相似度上应有较强表现，且活跃的开源社区生态有助于生态扩展。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：训练字段提及「大规模语音 codec 训练；零样本克隆优化；社区生态活跃」。与同类对比：社区生态是相对 MiniMax、Qwen 等纯闭源商业模型的优势。边界与不确定性：DEEP Results 为空，无 MOS/相似度指标，克隆质量与跨语种泛化为推断；社区版本与官方闭源版本能力可能不一致。` },
+    { q:`据公开信息/架构可知的推导论点：该模型未开源，可复现性与合规审计受限；自回归 codec 生成在极端参考或长文本下可能出现韵律重复、token 崩坏等不稳定现象。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 未标注开源，且架构为自回归 codec。与同类对比：相比扩散/混合范式（如 CosyVoice3）在长序列稳定性上更脆弱。边界与不确定性：闭源导致无法本地复现与做安全过滤审查；零样本克隆同样带来声音冒用合规风险，结论为基于属性与范式的推断。` }
+  ],
+  "minimax28": [
+    { q:`据公开信息/架构可知的推导论点：MiniMax Speech 2.8 属表现力增强路线，在合成中原生支持声音/情绪标签控制（如 breath、laugh、情绪），并面向 40+ 语种与 10 秒参考克隆，定位为商业化多语种情感语音合成服务。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：架构字段明确「原生支持声音/情绪标签控制」与表现力增强路线，训练字段给出 40+ 语种与 10 秒克隆。与同类对比：情绪/ breath/laugh 等标签控制比 CosyVoice3、Qwen3 仅靠参考音频更显式、更可控。边界与不确定性：标签体系的覆盖范围与中文支持程度未披露，此为基于官方描述的推断。` },
+    { q:`据公开信息/架构可知的推导论点：凭借显式情绪标签 + 多语种训练，MiniMax Speech 2.8 在情感表达（喜怒哀乐、笑声、气声）与多语种零样本克隆上应具较强能力，适合有声书、游戏角色配音等高频情感场景。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：训练字段「表现力标签数据 + 多语种(40+) 训练；10 秒参考克隆」。与同类对比：相对 Orpheus（仅靠情绪条件）其标签更系统、语种覆盖更广。边界与不确定性：DEEP Results 为空，情感可控性与跨语种克隆相似度无客观指标，且 40+ 语种中低资源语种质量可能参差，均属推断。` },
+    { q:`据公开信息/架构可知的推导论点：作为闭源商业模型，MiniMax Speech 2.8 不可本地部署与复现，情绪标签能力高度依赖其平台 API；多语种广度带来语种质量不均与合规审查困难。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 未标注开源，且能力绑定平台情绪标签。与同类对比：相比开源 CosyVoice3/Orpheus，闭源在可审计性与合规上风险更高。边界与不确定性：声音克隆涉身份冒用合规风险；语种广度下小语种质量边界、标签细粒度上限为推断，需以官方文档与实测为准。` }
+  ],
+  "cosyvoice3": [
+    { q:`据公开信息/架构可知的推导论点：CosyVoice 3 采用「LLM 生成语义 token + 扩散模型生成声学细节」的混合范式，并支持 in-context learning 零样本克隆与多语种，且官方开源权重，属于可复现的社区型 TTS 路线。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：架构字段明确 LLM+扩散混合与 in-context learning，训练字段标注「开源」。与同类对比：相较纯自回归 codec（Fish Audio S2、Qwen3-TTS）用扩散补声学细节，通常声学自然度更优；且开源降低复现门槛。边界与不确定性：混合范式通常推理开销高于纯 codec-LM，此为基于范式的推断。` },
+    { q:`据公开信息/架构可知的推导论点：借助 LLM 语义建模与扩散声学建模联合训练，CosyVoice 3 在零样本克隆相似度、多语种覆盖与合成自然度上应具较强且可本地验证的能力。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：训练字段「大规模多语种语音 + LLM 语义建模 + 扩散声学建模联合；开源」。与同类对比：开源使其能力可被社区独立评测，比闭源模型更透明。边界与不确定性：DEEP Results 为空，无公开 MOS/相似度佐证；多语种中各语种子集质量可能不一，结论为基于架构与开源属性的推断。` },
+    { q:`据公开信息/架构可知的推导论点：主要局限在混合范式推理开销较大，且虽开源但蒸馏版/完整权重可用性与商用许可需核实；零样本克隆仍带来声音冒用合规风险。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：架构为 LLM+扩散，训练标注开源但商用许可未细述。与同类对比：相比端到端 codec-LM 延迟更低，但扩散步数带来算力成本。边界与不确定性：开源仅降低技术复现风险，不消除合规风险；权重分发渠道与许可条款边界需以官方仓库为准，属推断性提示。` }
+  ],
+  "qwen3_tts": [
+    { q:`据公开信息/架构可知的推导论点：Qwen3-TTS 复用 Qwen 大模型的表征空间，采用 codec-LM 自回归生成并支持零样本克隆，定位为通义大模型家族内与语言模型生态对齐的语音合成组件。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：架构字段「codec-LM 自回归，复用 Qwen 表征；零样本克隆」。与同类对比：复用 Qwen 表征使其在中文/多语种语义理解上与通义生态协同，区别于独立训练的 Fish Audio S2。边界与不确定性：表征复用带来的具体增益（如多音字、语义韵律）未经实测，为推断；模型闭源不可本地验证。` },
+    { q:`据公开信息/架构可知的推导论点：依托 Qwen 生态对齐与 codec-LM 训练，Qwen3-TTS 在多语种零样本克隆与端到端语音生成上应具备较强能力，并可与通义系对话/agent 流水线低摩擦集成。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：训练字段「codec-LM 训练 + Qwen 生态对齐；多语种」。与同类对比：生态内对齐是其相对独立 TTS 产品的集成优势。边界与不确定性：DEEP Results 为空，克隆相似度与多语种质量无客观指标；零样本克隆在远语种上泛化为推断，需以官方评测为准。` },
+    { q:`据公开信息/架构可知的推导论点：作为闭源模型，Qwen3-TTS 不可本地复现与部署，codec-LM 自回归路线存在长序列不稳定风险，且零样本克隆带来声音身份冒用合规风险。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 未标注开源，且架构为自回归 codec。与同类对比：闭源使其可审计性低于 CosyVoice3/Orpheus。边界与不确定性：自回归 token 崩坏/重复为范式共性推断；商业调用下数据合规、声音授权边界需以官方条款为准，属推断性提示。` }
+  ],
+  "orpheus_tts": [
+    { q:`据公开信息/架构可知的推导论点：Orpheus-TTS 采用 codec-LM 生成并引入情绪标签条件以强调韵律自然度，且官方开源，定位为开源、偏情感表达质量的语音合成模型。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：架构字段「codec-LM + 情绪标签条件，强调韵律自然度」，训练字段标注「开源」。与同类对比：相对纯克隆向的 Qwen3-TTS，更突出情感/韵律；相对 MiniMax 商业情绪标签，开源更透明。边界与不确定性：情绪标签的细粒度与中文覆盖未经实测，为基于描述的推断。` },
+    { q:`据公开信息/架构可知的推导论点：情绪标签数据 + codec-LM 训练使 Orpheus 在情感表达自然度与基础零样本克隆上具备可用能力，且因开源可本地部署与社区优化。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：训练字段「情绪标签数据 + codec-LM 训练；开源」。与同类对比：开源使其可复现性与可定制性优于闭源商业 TTS。边界与不确定性：DEEP Results 为空，无 MOS/情感准确度指标；克隆相似度与跨语种能力为推断，需以社区评测为准。` },
+    { q:`据公开信息/架构可知的推导论点：局限在情绪标签体系覆盖有限、自回归 codec 长序列稳定性风险，以及开源权重可用性/部署依赖需核实；零样本克隆仍存合规风险。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：架构为自回归 codec，训练标注开源但权重分发未详述。与同类对比：闭源商业模型有平台保障，开源需自行解决依赖与算力。边界与不确定性：开源降低技术复现风险但不消除合规风险；情绪标签边界与权重发布渠道为推断性提示，需以官方仓库为准。` }
+  ],
+  "higgs2": [
+    { q:`据公开信息/架构可知的推导论点：Higgs Audio v2 采用连续语音表征 + 多说话者/情感条件，支持角色扮演与情绪表达，定位为面向角色化、情感化语音生成的方向。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：架构字段「连续表征 + 多说话者/情感条件，支持角色扮演与情绪表达」。与同类对比：角色扮演/多说话者条件使其比单一克隆向模型更偏「多角色内容生产」。边界与不确定性：连续表征与情感解耦程度未经实测，为推断；模型未标注开源，归闭源。` },
+    { q:`据公开信息/架构可知的推导论点：多说话者 + 情感数据训练使 Higgs Audio v2 在角色扮演一致性、情绪表达丰富度上应具较强能力，适合虚拟人、互动剧情等需多角色声音的场景。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：训练字段「多说话者 + 情感数据训练；连续表征建模」。与同类对比：相对仅做单说话者克隆的模型，其多角色切换是差异点。边界与不确定性：DEEP Results 为空，角色一致性与情感准确度无客观指标；长对话中音色漂移为推断风险，需以官方 demo 为准。` },
+    { q:`据公开信息/架构可知的推导论点：作为闭源模型，Higgs Audio v2 不可本地复现，情感/角色条件可控性依赖标注质量，且多角色克隆叠加带来更高的声音冒用与伦理合规风险。`, src:`推导（依据知识库 DEEP 文本 / 官方发布）`, insight:`推导根据：DEEP 未标注开源，架构含多说话者/情感条件。与同类对比：闭源使其可审计性低于开源方案，多角色能力放大滥用面。边界与不确定性：情感标签细粒度与可控边界未披露；合规与许可以官方条款为准，属推断性提示。` }
+  ]
+};
+
+const INSIGHTS = Object.assign({}, INSIGHTS_PART_R1, INSIGHTS_PART_R2, INSIGHTS_PART_R3, INSIGHTS_PART_R4, INSIGHTS_PART_S1, INSIGHTS_PART_S2, INSIGHTS_PART_S3);
 
 
 
