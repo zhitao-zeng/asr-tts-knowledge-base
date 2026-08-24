@@ -1,0 +1,4 @@
+# WorkBuddy internal project data — not part of the knowledge base deliverable
+.workbuddy/
+.DS_Store
+.git/

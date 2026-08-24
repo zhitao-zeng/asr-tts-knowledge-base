@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASR & TTS 近半年（2026.02–2026.08）论文汇总 · 各 20 个</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1f2733; --sub:#5b6675;
+    --line:#e6e9ee; --asr:#2563eb; --tts:#db2777; --accent:#0f766e;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+       background:var(--bg);color:var(--ink);line-height:1.6;}
+  .wrap{max-width:1100px;margin:0 auto;padding:32px 22px 64px;}
+  header h1{font-size:25px;margin:0 0 6px;}
+  header p{color:var(--sub);margin:4px 0;}
+  .badge{display:inline-block;font-size:12px;background:#eef2f7;color:var(--sub);
+         border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin-right:6px;}
+  h2{font-size:20px;margin:34px 0 10px;padding-left:10px;border-left:4px solid var(--asr);}
+  h2.tts{border-left-color:var(--tts);}
+  .note{background:#fff8ec;border:1px solid #f3e2b8;border-radius:10px;padding:12px 16px;font-size:13.5px;color:#7a5b16;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);
+        border-radius:10px;overflow:hidden;font-size:13px;margin:10px 0 6px;}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:#f0f3f7;color:var(--sub);font-weight:600;font-size:12px;}
+  tr:last-child td{border-bottom:none;}
+  .num{color:var(--sub);font-weight:700;width:22px;}
+  .model{font-weight:700;font-size:13.5px;}
+  .org{color:var(--sub);font-size:11.5px;}
+  .metrics{color:#33404f;font-size:12px;}
+  .small{font-size:11px;color:var(--sub);}
+  a{color:var(--accent);text-decoration:none;} a:hover{text-decoration:underline;}
+  .pill{font-size:10.5px;background:#eef7f4;color:var(--accent);border:1px solid #cfe9e1;border-radius:6px;padding:1px 6px;white-space:nowrap;}
+  .pillw{font-size:10.5px;background:#fdeef2;color:#be185d;border:1px solid #f6cdd8;border-radius:6px;padding:1px 6px;white-space:nowrap;}
+  footer{margin-top:38px;color:var(--sub);font-size:12px;border-top:1px solid var(--line);padding-top:14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>ASR &amp; TTS 近半年论文汇总 · 各 20 个</h1>
+    <p><span class="badge">时间范围：2026.02 – 2026.08</span>
+       <span class="badge">含 2026.01 及 2025 边界奠基工作</span>
+       <span class="badge">整理日期：2026-08-19</span></p>
+    <p>自动语音识别（ASR）与语音合成（TTS）在 2026 年上半年最值得关注的模型/技术报告汇编，共 20 + 20 个，附直达链接。</p>
+  </header>
+
+  <div class="note">
+    <strong>读前提示：</strong>① 部分工业模型（Cohere / Moonshine / 腾讯 Hy / Fun-Realtime / MiniMax / ElevenLabs / GPT-Realtime / Parakeet / Canary / Kyutai 等）以博客、发布页或榜单形式公开，<strong>没有独立 arXiv 论文</strong>，已标注「发布/榜单」。
+    ② 标 ⚠️ 者为 2025 年发表、但 2026 上半年仍属社区主流参照的边界工作。③ 榜单口径差异大（HF Open ASR 偏英文 WER、Artificial Analysis TTS Arena 偏自然度盲评），头部差距常小于 1–2 点，选型请结合自有数据实测。
+  </div>
+
+  <!-- ===================== ASR 20 ===================== -->
+  <h2>一、ASR（自动语音识别）20 个代表模型</h2>
+  <table>
+    <thead><tr><th class="num">#</th><th style="width:18%">模型 / 机构</th><th style="width:10%">时间</th><th style="width:13%">论文 / 来源</th><th>核心亮点与关键指标</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td><div class="model">Cohere Transcribe</div><div class="org">Cohere</div></td><td>2026.03</td><td><a href="https://huggingface.co/blog/CohereLabs/cohere-transcribe-03-2026-release">HF 发布</a></td><td class="metrics">2B Conformer 编码器-解码器，14 语言，Apache 2.0。<strong>登顶 HF Open ASR Leaderboard</strong>（平均 WER 5.42%，Whisper Large v3 为 7.44%）。RTFx 比同规模快约 3 倍。<span class="pillw">无 arXiv</span></td></tr>
+      <tr><td class="num">2</td><td><div class="model">FireRedASR2S</div><div class="org">小红书 FireRed</div></td><td>2026.03</td><td><a href="https://arxiv.org/abs/2603.10420">2603.10420</a></td><td class="metrics">工业级一体管线：ASR+VAD+LID+标点。AED 变体 AISHELL-1 CER <strong>0.57%</strong>（开源中文天花板）；LLM 变体（8B+）19 方言集 11.55%。已开源。</td></tr>
+      <tr><td class="num">3</td><td><div class="model">NIM4-ASR</div><div class="org">网易 NIM</div></td><td>2026.04→06</td><td><a href="https://arxiv.org/abs/2604.18105">2604.18105</a></td><td class="metrics">生产级 LLM-ASR，仅 2.3B 即 SOTA。重构 encoder-LLM 职责边界 + 异步 SFT + ASR 专用 RL；强调噪声/静音鲁棒、流式、<strong>RAG 热词定制</strong>（百万级、亚毫秒检索）。</td></tr>
+      <tr><td class="num">4</td><td><div class="model">On-Device Streaming ASR</div><div class="org">NVIDIA 等</div></td><td>2026.04</td><td><a href="https://arxiv.org/abs/2604.14493">2604.14493</a></td><td class="metrics">边缘 CPU 部署实证研究。对比 Whisper/Nemotron/Parakeet/Canary/Qwen3-ASR 50+ 配置；int4 量化 2.47GB→0.67GB，流式平均 WER 8.20%、算法延迟 0.56s。</td></tr>
+      <tr><td class="num">5</td><td><div class="model">Moonshine v2</div><div class="org">Moonshine AI</div></td><td>2026.02</td><td><a href="https://techplanet.today/post/moonshine-voice-the-open-source-speech-recognition-revolution-for-edge-devices-and-real-time-applications">发布</a></td><td class="metrics">流式优先架构，解决 Whisper 30s 固定窗口与无缓存问题。Medium（245M）WER 6.65%、比 Whisper Large v3 快约 100×；多语言独立模型，面向树莓派/手机。<span class="pillw">无 arXiv</span></td></tr>
+      <tr><td class="num">6</td><td><div class="model">IBM Granite Speech 4.1</div><div class="org">IBM</div></td><td>2026.05</td><td><a href="https://webainews.com/best-open-speech-recognition-asr-models-in-2026-wer-languages-latency-and-license-compared">介绍</a></td><td class="metrics">开源精度层代表。2B-NAR 用双向 LLM 单次前向编辑 CTC 假设，RTFx ~1820；平均 WER 5.33%，Apache 2.0。另含 +speaker、+nar 兄弟模型。</td></tr>
+      <tr><td class="num">7</td><td><div class="model">Meta Omnilingual ASR</div><div class="org">Meta</div></td><td>2026</td><td><a href="https://webainews.com/best-open-speech-recognition-asr-models-in-2026-wer-languages-latency-and-license-compared">介绍</a></td><td class="metrics">范式级多语言覆盖：原生 1,600+ 语言，零样本扩至 5,400+；7B 变体在 78% 支持语言 CER<10%。Apache 2.0 + 开源语料。</td></tr>
+      <tr><td class="num">8</td><td><div class="model">腾讯 Hy ASR 3.0</div><div class="org">腾讯混元</div></td><td>2026.08</td><td><a href="https://www.tahou.com/article/213682804263810053">报道</a></td><td class="metrics">MoE 架构 + 自研无监督语音 Encoder + Hy3 大模型（2950 亿）联合训练。中文 WER 3.34%、英语 2.62%、粤语 3.12%；10 大方言片区，「从听清到听懂」。<span class="pillw">preview</span></td></tr>
+      <tr><td class="num">9</td><td><div class="model">Qwen3-ASR</div><div class="org">阿里通义</div></td><td>2026.01 ⚠️</td><td><a href="https://arxiv.org/abs/2601.21337">2601.21337</a></td><td class="metrics">边界。1.7B/0.6B，52 语言+22 方言；0.6B 在 128 并发下 1 秒转录 2000s、TTFT 92ms。附 NAR ForcedAligner-0.6B（11 语言时间戳）。Apache 2.0。</td></tr>
+      <tr><td class="num">10</td><td><div class="model">VibeVoice ASR</div><div class="org">微软亚研</div></td><td>2026.01 ⚠️</td><td><a href="https://arxiv.org/abs/2601.18184">2601.18184</a></td><td class="metrics">边界。单次推理最长 60 分钟连续音频，转录+说话人日志+时间戳一体化输出，避免长音频切片拼接的上下文丢失。已集成 HF Transformers。</td></tr>
+      <tr><td class="num">11</td><td><div class="model">StepAudio 2.5（ASR 分支）</div><div class="org">阶跃星辰</div></td><td>2026.05</td><td><a href="https://arxiv.org/abs/2605.23463">2605.23463</a></td><td class="metrics">统一音频-语言基座的 ASR 模式。MTP-5 多 token 并行解码，RTF 0.0053（比 Qwen3-ASR 快 1.8×），AISHELL-1 CER 0.71%；长音频均值 WER 3.70%。</td></tr>
+      <tr><td class="num">12</td><td><div class="model">Fun-Realtime-ASR</div><div class="org">阿里通义</div></td><td>2026.05</td><td><a href="https://t.cj.sina.cn/articles/view/1653603955/628ffe7302001v6wy">报道</a></td><td class="metrics"><strong>WER 1.8% 登顶</strong> Artificial Analysis 词错误率榜；覆盖 30+ 语言、7 大方言、20+ 地区口音，毫秒级响应。<span class="pillw">榜单</span></td></tr>
+      <tr><td class="num">13</td><td><div class="model">Doubao-ASR / Seed-ASR 2.0</div><div class="org">字节跳动</div></td><td>2025.12 ⚠️</td><td><a href="https://arxiv.org/abs/2407.04675">2407.04675</a></td><td class="metrics">边界。AcLLM 框架，2B 音频编码器 + 数十 B MoE LLM，2000 万小时训练；v2.0 加 PPO 与多模态视觉消歧。上下文感知最强，13 方言。仅火山引擎 API（闭源）。</td></tr>
+      <tr><td class="num">14</td><td><div class="model">Parakeet TDT 0.6B v3</div><div class="org">NVIDIA NeMo</div></td><td>2025 末 ⚠️</td><td><a href="https://aiwiki.ai/wiki/parakeet">介绍</a></td><td class="metrics">边界/持续领先。<strong>吞吐之王</strong>：RTFx 3332，25 欧洲语言自动 ID，单次处理 24 分钟；平均 WER 6.32%。CC-BY-4.0。v2 曾登顶 Open ASR 榜。</td></tr>
+      <tr><td class="num">15</td><td><div class="model">Canary-Qwen 2.5B</div><div class="org">NVIDIA</div></td><td>2026</td><td><a href="https://webainews.com/best-open-speech-recognition-asr-models-in-2026-wer-languages-latency-and-license-compared">介绍</a></td><td class="metrics">FastConformer 编码器 + Qwen3-1.7B 解码器，平均 WER 5.63%（英文开放榜前列）；支持纯转录与 LLM 问答两种模式。CC-BY-4.0。</td></tr>
+      <tr><td class="num">16</td><td><div class="model">Kyutai STT</div><div class="org">Kyutai Labs</div></td><td>2026</td><td><a href="https://d-central.tech/local-voice-ai-models">介绍</a></td><td class="metrics">原生实时流式，1B（英/法，0.5s 延迟，含语义 VAD）/ 2.6B（英文，2.5s）两档；H100 可服务 400 并发流。CC-BY-4.0。<span class="pillw">无 arXiv</span></td></tr>
+      <tr><td class="num">17</td><td><div class="model">Voxtral Mini Realtime</div><div class="org">Mistral AI</div></td><td>2026.02</td><td><a href="https://devtoollab.com/blog/best-speech-to-text-apis">介绍</a></td><td class="metrics">3.4B LM + 970M 因果音频编码器，滑窗注意力的无限流式；13 语言，延迟 80–1200ms 可调（推荐 480ms）；单 16GB GPU，day-0 vLLM Realtime。Apache 2.0。</td></tr>
+      <tr><td class="num">18</td><td><div class="model">GLM-ASR</div><div class="org">智谱 Zhipu</div></td><td>2026</td><td><a href="https://ruoqijin.com/blog/asr-deep-dive-2025-2026">介绍</a></td><td class="metrics">智谱开源/API ASR，多场景 CER 约 4.10%；与 GLM 大模型生态打通，支持标点/ITN 后处理。具体论文未在本轮检索确认。<span class="pillw">待确认</span></td></tr>
+      <tr><td class="num">19</td><td><div class="model">Fun-ASR / FunASR-Nano</div><div class="org">阿里通义</div></td><td>2025.12 ⚠️</td><td><a href="https://ruoqijin.com/blog/asr-deep-dive-2025-2026">介绍</a></td><td class="metrics">边界。千万小时训练；FunASR-Nano 0.8B 实现 CER 1.96%，Fun-ASR API（7.7B Qwen3 底座）多场景强。开源工具链 + API。<span class="pillw">技术报告</span></td></tr>
+      <tr><td class="num">20</td><td><div class="model">ElevenLabs Scribe v2</div><div class="org">ElevenLabs</div></td><td>2026</td><td><a href="https://kili-technology.com/blog/asr-models-guide-word-error-rate-benchmarks-and-failure-modes-2026">介绍</a></td><td class="metrics">商业闭源。HF Open ASR 平均 WER 5.83%（#4/5），与 Cohere/Granite 同梯队；强在生产级标点、说话人、99+ 语言。无开源权重。<span class="pillw">商业</span></td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===================== TTS 20 ===================== -->
+  <h2 class="tts">二、TTS（语音合成）20 个代表模型</h2>
+  <table>
+    <thead><tr><th class="num">#</th><th style="width:18%">模型 / 机构</th><th style="width:10%">时间</th><th style="width:13%">论文 / 来源</th><th>核心亮点与关键指标</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td><div class="model">Qwen-Audio-3.0-TTS</div><div class="org">阿里巴巴</div></td><td>2026.07</td><td><a href="https://arxiv.org/abs/2607.23938">2607.23938</a></td><td class="metrics">生产级零样本多语言。12.5Hz 低帧率分词器 + LM/FM 五阶段渐进训练（含 RL）。16 语言、20 中文方言区、最长 3 分钟一次性合成、抗噪参考音频。<strong>登顶 Artificial Analysis TTS 榜</strong>。</td></tr>
+      <tr><td class="num">2</td><td><div class="model">Luna-TTS Family</div><div class="org">Luna</div></td><td>2026.08</td><td><a href="https://arxiv.org/abs/2608.11593">2608.11593</a></td><td class="metrics">扩散语言模型（Diffusion-LM）TTS，100 万小时（中/英/日/韩）。Luna-TTS 完全非自回归；Realtime 变体块自回归+块内并行去噪，RTF 0.024、首块 41.6ms。Seed-TTS-Eval 四项 SOTA。</td></tr>
+      <tr><td class="num">3</td><td><div class="model">ZONOS2</div><div class="org">Zyphra</div></td><td>2026.06</td><td><a href="https://arxiv.org/abs/2606.24320">2606.24320</a></td><td class="metrics">8B MoE（900M 激活），训练数据扩至 6M 小时，新基准 ZTTS1-Eval。自然度/韵律/克隆保真度 SOTA，兼顾流式延迟。Apache 2.0 开源。</td></tr>
+      <tr><td class="num">4</td><td><div class="model">OmniVoice</div><div class="org">K2 / 出门问问</div></td><td>2026.04</td><td><a href="https://arxiv.org/abs/2604.00688">2604.00688</a></td><td class="metrics">超大规模多语言零样本，覆盖 <strong>600+ 语言</strong>。Diffusion-LM 风格离散 NAR，文本直接映射到多码本声学 token；全码本随机掩码 + LLM 初始化。581k 小时开源数据。</td></tr>
+      <tr><td class="num">5</td><td><div class="model">WavTTS</div><div class="org">多家联合</div></td><td>2026.06</td><td><a href="https://arxiv.org/abs/2606.03455">2606.03455</a></td><td class="metrics">首个直接在原始波形空间做零样本 TTS 的扩散模型（DiT + patch 化 + 多尺度 mel 监督），避免 latent 信息损失，逼近 SOTA 同时证明端到端波形生成可行。</td></tr>
+      <tr><td class="num">6</td><td><div class="model">LongCat-AudioDiT</div><div class="org">美团</div></td><td>2026.03</td><td><a href="https://arxiv.org/abs/2603.29339">2603.29339</a></td><td class="metrics">波形潜空间（Wav-VAE）扩散 TTS，非自回归。修正训练-推理不匹配、以自适应投影引导替代 CFG。3.5B 在 Seed 基准 SIM 0.809→0.818（ZH）、0.776→0.797（Hard）。开源。</td></tr>
+      <tr><td class="num">7</td><td><div class="model">Chatterbox-Flash</div><div class="org">—</div></td><td>2026.05</td><td><a href="https://arxiv.org/abs/2605.30748">2605.30748</a></td><td class="metrics">将 AR TTS 解码器微调为「块扩散」：块内并行、块间流式。先验校准打分 + 早解码调度，缓解离散 token 长尾偏置，首包延迟媲美流式 AR、RTF 更低。</td></tr>
+      <tr><td class="num">8</td><td><div class="model">Fish Audio S2</div><div class="org">Fish Audio</div></td><td>2026.03</td><td><a href="https://arxiv.org/abs/2603.08823">2603.08823</a></td><td class="metrics">Dual-AR（4B Slow + 400M Fast AR）+ 10 码本 RVQ + GRPO 对齐。80+ 语言、词级情绪控制（15000+ 标签）；开源质量头部（AA Elo ~1117），RTF 0.195、首包 <100ms。</td></tr>
+      <tr><td class="num">9</td><td><div class="model">CosyVoice 3</div><div class="org">阿里通义</div></td><td>2025.05 ⚠️</td><td><a href="https://arxiv.org/abs/2505.17589">2505.17589</a></td><td class="metrics">边界/基座参照。多任务 FSQ 分词器 + DiffRO 可微分奖励后训练；数据扩至 100 万小时、9 语言+18 方言；1.5B LM。SEED/CV3-Eval 多项 SOTA。</td></tr>
+      <tr><td class="num">10</td><td><div class="model">Qwen3-TTS</div><div class="org">阿里通义</div></td><td>2026.01 ⚠️</td><td><a href="https://arxiv.org/abs/2601.15621">2601.15621</a></td><td class="metrics">边界。双分词器（25Hz 语义 / 12Hz 16 层多码本）流式，3 秒克隆、自然语言音色设计，首包 97ms。500 万小时、10 语言，Apache 2.0。</td></tr>
+      <tr><td class="num">11</td><td><div class="model">StepAudio 2.5（TTS 分支）</div><div class="org">阶跃星辰</div></td><td>2026.05</td><td><a href="https://arxiv.org/abs/2605.23463">2605.23463</a></td><td class="metrics">统一基座的 TTS 模式。偏好式 RLHF + 上下文丰富监督实现可控、富有表现力的合成；对 MiniMax-2.8-HD / ElevenLabs-v3 / Gemini-3.1 整体胜率 67.6%。</td></tr>
+      <tr><td class="num">12</td><td><div class="model">Fun-Realtime-TTS</div><div class="org">阿里通义</div></td><td>2026.05</td><td><a href="https://www.aichaai.com/article/details/VbuxAzG8RDkw.html">报道</a></td><td class="metrics">端到端架构攻破「自然度-延迟」悖论；Elo 1190 全球第 5、国产第 1，与 Fun-Realtime-ASR/AudioChat 同获三赛道大满贯。<span class="pillw">榜单</span></td></tr>
+      <tr><td class="num">13</td><td><div class="model">Voxtral TTS</div><div class="org">Mistral AI</div></td><td>2026.03</td><td><a href="https://arxiv.org/abs/2603.25551">2603.25551</a></td><td class="metrics">4B 混合：AR 语义 token + flow-matching 声学 token，Voxtral Codec（VQ-FSQ）。3 秒克隆、9 语言、~70ms；对 ElevenLabs Flash v2.5 胜率 68.4%。CC BY-NC。</td></tr>
+      <tr><td class="num">14</td><td><div class="model">VoxCPM2</div><div class="org">OpenBMB</div></td><td>2026.06</td><td><a href="https://arxiv.org/abs/2606.06928">2606.06928</a></td><td class="metrics">2B 分层连续隐空间扩散-自回归，<strong>不依赖外部离散 tokenizer</strong>。30 语言+9 中文方言、2M+ 小时；AudioVAE 16kHz 编码/48kHz 重建超分。Apache 2.0 全开源。</td></tr>
+      <tr><td class="num">15</td><td><div class="model">MiniMax Speech 2.8</div><div class="org">MiniMax</div></td><td>2026.01 ⚠️</td><td><a href="https://minimax.io/news/minimax-speech-28">发布</a></td><td class="metrics">边界。原生语气词/声音标签（breath、laugh、clear-throat），10 秒高保真克隆，录音棚级纯净音质，跨语言口音优化。HD/Turbo 两档，40+ 语言。<span class="pillw">商业 API</span></td></tr>
+      <tr><td class="num">16</td><td><div class="model">IndexTTS2</div><div class="org">哔哩哔哩</div></td><td>2025.06 ⚠️</td><td><a href="https://arxiv.org/abs/2506.21619">2506.21619</a></td><td class="metrics">边界/持续热门。自回归零样本 TTS 首个实现<strong>精准时长控制</strong>（显式 token 数 / 自然时长）+ 情感与音色解耦；8 维情感向量、情感参考音频、文本描述三控法。配音/音画对齐利器。</td></tr>
+      <tr><td class="num">17</td><td><div class="model">MegaTTS 3</div><div class="org">字节跳动</div></td><td>2025.02 ⚠️</td><td><a href="https://arxiv.org/abs/2502.18924">2502.18924</a></td><td class="metrics">边界/广泛引用。稀疏对齐引导潜在 DiT：粗粒度对齐边界降难度不限位；多条件 CFG 调口音强度；分段修正流加速，<strong>仅 8 步生成 1 分钟语音</strong>。Apache 2.0。</td></tr>
+      <tr><td class="num">18</td><td><div class="model">Confucius4-TTS</div><div class="org">网易有道</div></td><td>2026.08</td><td><a href="https://arxiv.org/abs/2608.11650">2608.11650</a></td><td class="metrics">14 语言<strong>无参考文本跨语种克隆</strong>：可学习说话人编码器从自监督表示提取音色，T2S+S2A 两阶段。CV3-Eval 跨语言平均 WER 3.73%；3 秒素材、相似度>85%。Apache 2.0 全量开源。</td></tr>
+      <tr><td class="num">19</td><td><div class="model">Orpheus TTS</div><div class="org">Canopy Labs</div></td><td>2025.03 ⚠️</td><td><a href="https://github.com/canopylabs/orpheus-tts">GitHub</a></td><td class="metrics">边界/长青热门。Llama-3B 语音-LLM，预测 SNAC 离散音频 token；内联情绪标签（laugh/sigh/gasp），零样本克隆，~200ms 流式。Apache 2.0，适合本地情感化语音。<span class="pillw">无 arXiv</span></td></tr>
+      <tr><td class="num">20</td><td><div class="model">Higgs Audio v2</div><div class="org">Boson AI</div></td><td>2025.05 ⚠️</td><td><a href="https://arxiv.org/abs/2505.23009">2505.23009</a></td><td class="metrics">边界。3B 纯预训练音频基础模型（10M+ 小时 AudioVerse），首个开源多说话者情感语音生成；EmergentTTS 上对 gpt-4o-mini-tts 情感/提问胜率 75.7%/55.7%。支持旋律哼唱、语音+背景乐同生成。</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ===================== 榜单速览 ===================== -->
+  <h2>三、2026 上半年榜单速览（选型参考）</h2>
+  <table>
+    <thead><tr><th>榜单</th><th>当前头部</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td><strong>HF Open ASR Leaderboard</strong><br>（ASR，偏英文 WER）</td>
+        <td>Cohere Transcribe（5.42% #1）</td><td>随后 Zoom Scribe v1 5.47%、IBM Granite 4.0/4.1 5.33–5.52%、Canary-Qwen 2.5B 5.63%、Qwen3-ASR-1.7B 5.76%、Whisper Large v3 7.44%。</td></tr>
+      <tr><td><strong>Artificial Analysis TTS Arena</strong><br>（TTS，自然度盲评 Elo）</td>
+        <td>Fun-Realtime-TTS（阿里云，~1226 #1）</td><td>随后 Gemini 3.1 Flash TTS、Realtime TTS-2（Inworld）、Sonic 3.5（Cartesia）、xAI TTS。前 5 名 Elo 差距仅约 24–30 分。开源头部：Fish Audio S2 Pro、Step Audio EditX、Voxtral TTS、Kokoro 82M。</td></tr>
+      <tr><td><strong>Speech-to-Speech</strong><br>（端到端语音对话）</td>
+        <td>Fun-Realtime-Audiochat（阿里云）</td><td>推理 97.6% / 流畅度 97.8%；随后 Step-Audio R1.1、GPT-Realtime-2、Gemini 3.1 Flash Live。</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <strong>技术主线小结：</strong>
+    <br>• <strong>ASR</strong>：从「大而全 Whisper 替代」走向 ① 专用高精度小模型（Cohere/NIM4/Granite）、② 端侧流式（Moonshine/Nemotron 量化/Kyutai/Voxtral-Mini）、③ 长音频一体化（VibeVoice/FireRedASR2S/StepAudio）、④ 超多语言（Meta Omnilingual 1600+）。LLM 底座 + NAR 对齐成为效率关键。
+    <br>• <strong>TTS</strong>：从 AR codec-LM 收敛到「语义规划 + 连续/扩散声学渲染」混合（CosyVoice/Qwen-Audio-3.0），并出现 ① 完全非自回归扩散-LM（Luna-TTS、OmniVoice）、② 端到端波形扩散（WavTTS、LongCat-AudioDiT）、③ 免外部 tokenizer 的连续隐空间（VoxCPM2）。多语言、音色/情绪可控、长文本稳定生成为共同焦点。
+  </div>
+
+  <footer>
+    说明：本汇总基于 2026-08-19 的公开检索（arXiv、Hugging Face、Artificial Analysis、各机构博客与报道）。
+    标 ⚠️ 者为 2025 年发表、2026 上半年仍属主流参照的边界工作；标「无 arXiv / 榜单 / 商业 / 技术报告」者无独立论文。
+    具体指标以各论文/官方基准页面为准，榜单排名随更新频繁变动。
+  </footer>
+</div>
+</body>
+</html>
