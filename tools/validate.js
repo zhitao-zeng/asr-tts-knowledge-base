@@ -100,6 +100,7 @@ const DERIVED_RE = /推导|推测/;
 const REF_RE = /^\s*(arXiv:|\d+\.|Reference|ref\.|\[)/i;
 
 // 3) 逐模型逐条校验
+const CAP_KEYS = ["stream", "long", "multi", "clone", "emot"];
 let total = 0;
 for (const m of KB.models) {
   const id = m.id;
@@ -107,6 +108,9 @@ for (const m of KB.models) {
   if (!arr) { problems.push(`[缺失] ${id} 在 INSIGHTS 中无条目`); continue; }
   if (arr.length !== 3) problems.push(`[条数] ${id} 应有 3 条，实际 ${arr.length}`);
   total += arr.length;
+  // P1-9 回归守护：每个模型必须有显式 caps 字段且 5 个维度均为布尔
+  if (!m.caps || typeof m.caps !== "object") { problems.push(`[能力矩阵] ${id} 缺少显式 caps 字段`); }
+  else { for (const k of CAP_KEYS) if (typeof m.caps[k] !== "boolean") problems.push(`[能力矩阵] ${id}.caps.${k} 应为布尔，实为 ${typeof m.caps[k]}`); }
   arr.forEach((it, i) => {
     const label = `${id}#${i + 1}`;
     ok(it && typeof it.q === "string" && it.q.trim(), `[空字段] ${label} q 为空`);

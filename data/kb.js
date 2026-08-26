@@ -1,6 +1,6 @@
 // 自动生成：语音模型知识库结构化数据（单一事实来源 / single source of truth）
-// 本文件由 tools/split_data.js 从 index.html 抽离。编辑数据请改这里，勿改 index.html 内联。
-// 通过页面 <script src="data/kb.js"> 加载；globalThis 在浏览器===window，在 Node vm 下===sandbox，二者通用。
+// 本文件由 tools/split_data.js 从 index.html 抽离，caps 字段由 tools/add_caps.js 生成/补全。
+// 编辑数据请改这里，勿改 index.html 内联。通过页面 <script src="data/kb.js"> 加载。
 globalThis.KB = {
   "lineages": [
     {
@@ -292,7 +292,14 @@ globalThis.KB = {
           "title": "Cohere Transcribe 官方博客",
           "url": "https://cohere.com/blog/transcribe"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": true,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "fireredasr2",
@@ -394,7 +401,14 @@ globalThis.KB = {
           "title": "FireRedASR2S arXiv:2603.10420",
           "url": "https://arxiv.org/abs/2603.10420"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": true,
+        "multi": true,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "nim4_asr",
@@ -445,7 +459,14 @@ globalThis.KB = {
           "title": "NIM4-ASR arXiv:2604.18105",
           "url": "https://arxiv.org/abs/2604.18105"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "ibm_granite41",
@@ -497,7 +518,14 @@ globalThis.KB = {
           "title": "IBM Granite Speech 4.1（无公开论文 PDF，以官方发布为准）",
           "url": ""
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "moonshine_v2",
@@ -547,7 +575,14 @@ globalThis.KB = {
           "title": "Moonshine v2 仓库",
           "url": "https://github.com/usefulsensors/moonshine"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "on_device",
@@ -598,7 +633,14 @@ globalThis.KB = {
           "title": "On-Device Streaming ASR arXiv:2604.14493",
           "url": "https://arxiv.org/abs/2604.14493"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "kyutai_stt",
@@ -650,7 +692,14 @@ globalThis.KB = {
           "title": "Kyutai STT 仓库",
           "url": "https://github.com/kyutai-late/kyutai-stt"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "voxtral_mini",
@@ -703,7 +752,14 @@ globalThis.KB = {
           "title": "Voxtral Realtime arXiv:2602.11298",
           "url": "https://arxiv.org/abs/2602.11298"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "parakeet_tdt",
@@ -755,7 +811,14 @@ globalThis.KB = {
           "title": "NVIDIA NeMo Parakeet",
           "url": "https://catalog.ngc.nvidia.com/"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "canary_qwen",
@@ -805,7 +868,14 @@ globalThis.KB = {
           "title": "NVIDIA NeMo Canary",
           "url": "https://catalog.ngc.nvidia.com/"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": true,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "vibevoice_asr",
@@ -856,7 +926,14 @@ globalThis.KB = {
           "title": "VibeVoice ASR arXiv:2601.18184",
           "url": "https://arxiv.org/abs/2601.18184"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": true,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "stepaudio25",
@@ -935,7 +1012,14 @@ globalThis.KB = {
           "title": "StepAudio 2.5 arXiv:2605.23463",
           "url": "https://arxiv.org/abs/2605.23463"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "meta_omni",
@@ -987,7 +1071,14 @@ globalThis.KB = {
           "title": "Meta Omnilingual ASR（无公开论文 PDF，以官方发布为准）",
           "url": ""
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": true,
+        "multi": true,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "hy_asr30",
@@ -1039,7 +1130,14 @@ globalThis.KB = {
           "title": "腾讯 Hy ASR 3.0（官方发布页，链接待补）",
           "url": "https://www.tencent.com/"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "fun_realtime_asr",
@@ -1091,7 +1189,14 @@ globalThis.KB = {
           "title": "Fun-Realtime（阿里云，链接待补）",
           "url": "https://www.aliyun.com/"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "seed_asr20",
@@ -1141,7 +1246,14 @@ globalThis.KB = {
           "title": "Seed/豆包 语音（官方，链接待补）",
           "url": "https://team.doubao.com/"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "qwen3_asr",
@@ -1191,7 +1303,14 @@ globalThis.KB = {
           "title": "（无公开论文 PDF，以官方发布为准）",
           "url": ""
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": true,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "glm_asr",
@@ -1241,7 +1360,14 @@ globalThis.KB = {
           "title": "（无公开论文 PDF，以官方发布为准）",
           "url": ""
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "fun_asr",
@@ -1291,7 +1417,14 @@ globalThis.KB = {
           "title": "FunAudioLLM 仓库",
           "url": "https://github.com/FunAudioLLM"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": true,
+        "clone": false,
+        "emot": true
+      }
     },
     {
       "id": "elevenlabs_scribe2",
@@ -1341,7 +1474,14 @@ globalThis.KB = {
           "title": "ElevenLabs Scribe",
           "url": "https://elevenlabs.io/"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": true,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "qwen_audio_tts",
@@ -1399,7 +1539,14 @@ globalThis.KB = {
           "title": "Qwen-Audio-3.0-TTS arXiv:2607.23938",
           "url": "https://arxiv.org/abs/2607.23938"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "luna_tts",
@@ -1469,7 +1616,14 @@ globalThis.KB = {
           "title": "Luna-TTS arXiv:2608.11593",
           "url": "https://arxiv.org/abs/2608.11593"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": true,
+        "emot": false
+      }
     },
     {
       "id": "zonos2",
@@ -1520,7 +1674,14 @@ globalThis.KB = {
           "title": "ZONOS2 arXiv:2606.24320",
           "url": "https://arxiv.org/abs/2606.24320"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": true,
+        "emot": false
+      }
     },
     {
       "id": "omnivoice",
@@ -1574,7 +1735,14 @@ globalThis.KB = {
           "title": "OmniVoice arXiv:2604.00688",
           "url": "https://arxiv.org/abs/2604.00688"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "fun_realtime_tts",
@@ -1626,7 +1794,14 @@ globalThis.KB = {
           "title": "Fun-Realtime（阿里云，链接待补）",
           "url": "https://www.aliyun.com/"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "stepaudio25_tts",
@@ -1685,7 +1860,14 @@ globalThis.KB = {
           "title": "StepAudio 2.5 arXiv:2605.23463",
           "url": "https://arxiv.org/abs/2605.23463"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": true
+      }
     },
     {
       "id": "wavtts",
@@ -1737,7 +1919,14 @@ globalThis.KB = {
           "title": "WavTTS arXiv:2606.03455",
           "url": "https://arxiv.org/abs/2606.03455"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "longcat_audiodit",
@@ -1795,7 +1984,14 @@ globalThis.KB = {
           "title": "LongCat-AudioDiT arXiv:2603.29339",
           "url": "https://arxiv.org/abs/2603.29339"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "voxcpm2",
@@ -1855,7 +2051,14 @@ globalThis.KB = {
           "title": "VoxCPM2 arXiv:2606.06928",
           "url": "https://arxiv.org/abs/2606.06928"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": true,
+        "clone": true,
+        "emot": false
+      }
     },
     {
       "id": "chatterbox_flash",
@@ -1905,7 +2108,14 @@ globalThis.KB = {
           "title": "Chatterbox 仓库",
           "url": "https://github.com/resemble-ai/chatterbox"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "confucius4_tts",
@@ -1955,7 +2165,14 @@ globalThis.KB = {
           "title": "（无公开论文 PDF，以官方发布为准）",
           "url": ""
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": true,
+        "clone": true,
+        "emot": false
+      }
     },
     {
       "id": "voxtral_tts",
@@ -2015,7 +2232,14 @@ globalThis.KB = {
           "title": "Voxtral TTS arXiv:2603.25551",
           "url": "https://arxiv.org/abs/2603.25551"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": true,
+        "emot": false
+      }
     },
     {
       "id": "fishaudio_s2",
@@ -2074,7 +2298,14 @@ globalThis.KB = {
           "title": "Fish Audio S2 arXiv:2603.08823",
           "url": "https://arxiv.org/abs/2603.08823"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": true
+      }
     },
     {
       "id": "minimax28",
@@ -2126,7 +2357,14 @@ globalThis.KB = {
           "title": "MiniMax Speech",
           "url": "https://www.minimax.io/"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": true,
+        "emot": true
+      }
     },
     {
       "id": "indextts2",
@@ -2178,7 +2416,14 @@ globalThis.KB = {
           "title": "IndexTTS2 arXiv:2506.21619",
           "url": "https://arxiv.org/abs/2506.21619"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": true,
+        "emot": true
+      }
     },
     {
       "id": "mega_tts3",
@@ -2230,7 +2475,14 @@ globalThis.KB = {
           "title": "MegaTTS 3 arXiv:2502.18924",
           "url": "https://arxiv.org/abs/2502.18924"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "cosyvoice3",
@@ -2285,7 +2537,14 @@ globalThis.KB = {
           "title": "CosyVoice 仓库",
           "url": "https://github.com/FunAudioLLM/CosyVoice"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": true,
+        "clone": true,
+        "emot": false
+      }
     },
     {
       "id": "qwen3_tts",
@@ -2335,7 +2594,14 @@ globalThis.KB = {
           "title": "（无公开论文 PDF，以官方发布为准）",
           "url": ""
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": true,
+        "emot": false
+      }
     },
     {
       "id": "orpheus_tts",
@@ -2385,7 +2651,14 @@ globalThis.KB = {
           "title": "Orpheus-TTS 仓库",
           "url": "https://github.com/canopyai/Orpheus-TTS"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": true
+      }
     },
     {
       "id": "higgs2",
@@ -2435,7 +2708,14 @@ globalThis.KB = {
           "title": "（无公开论文 PDF，以官方发布为准）",
           "url": ""
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": true
+      }
     },
     {
       "id": "whisper",
@@ -2495,7 +2775,14 @@ globalThis.KB = {
           "title": "Whisper arXiv:2212.04356",
           "url": "https://arxiv.org/abs/2212.04356"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": true,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "wav2vec2",
@@ -2555,7 +2842,14 @@ globalThis.KB = {
           "title": "Wav2Vec 2.0 arXiv:2006.11477",
           "url": "https://arxiv.org/abs/2006.11477"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": true,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "hubert",
@@ -2615,7 +2909,14 @@ globalThis.KB = {
           "title": "HuBERT arXiv:2106.07447",
           "url": "https://arxiv.org/abs/2106.07447"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": true,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "google_usm",
@@ -2680,7 +2981,14 @@ globalThis.KB = {
           "title": "Google USM arXiv:2303.01037",
           "url": "https://arxiv.org/abs/2303.01037"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "meta_mms",
@@ -2739,7 +3047,14 @@ globalThis.KB = {
           "title": "MMS arXiv:2305.13516",
           "url": "https://arxiv.org/abs/2305.13516"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": true,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "qwen2_audio",
@@ -2792,7 +3107,14 @@ globalThis.KB = {
           "title": "Qwen2-Audio arXiv:2407.10759",
           "url": "https://arxiv.org/abs/2407.10759"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "mini_omni",
@@ -2851,7 +3173,14 @@ globalThis.KB = {
           "title": "Mini-Omni arXiv:2408.16725",
           "url": "https://arxiv.org/abs/2408.16725"
         }
-      ]
+      ],
+      "caps": {
+        "stream": true,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "seamless_m4t",
@@ -2904,7 +3233,14 @@ globalThis.KB = {
           "title": "SeamlessM4T arXiv:2308.11596",
           "url": "https://arxiv.org/abs/2308.11596"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": true,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "valle",
@@ -2961,7 +3297,14 @@ globalThis.KB = {
           "title": "VALL-E arXiv:2301.02111",
           "url": "https://arxiv.org/abs/2301.02111"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": true,
+        "emot": false
+      }
     },
     {
       "id": "voicebox",
@@ -3024,7 +3367,14 @@ globalThis.KB = {
           "title": "Voicebox arXiv:2306.15687",
           "url": "https://arxiv.org/abs/2306.15687"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "natural_speech3",
@@ -3088,7 +3438,14 @@ globalThis.KB = {
           "title": "NaturalSpeech 3 arXiv:2403.03100",
           "url": "https://arxiv.org/abs/2403.03100"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": true,
+        "emot": true
+      }
     },
     {
       "id": "audiobox",
@@ -3152,7 +3509,14 @@ globalThis.KB = {
           "title": "Audiobox arXiv:2312.15821",
           "url": "https://arxiv.org/abs/2312.15821"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "e2_tts",
@@ -3203,7 +3567,14 @@ globalThis.KB = {
           "title": "E2-TTS arXiv:2406.18009",
           "url": "https://arxiv.org/abs/2406.18009"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": true,
+        "emot": false
+      }
     },
     {
       "id": "f5_tts",
@@ -3260,7 +3631,14 @@ globalThis.KB = {
           "title": "F5-TTS arXiv:2410.06885",
           "url": "https://arxiv.org/abs/2410.06885"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": false,
+        "emot": false
+      }
     },
     {
       "id": "maskgct",
@@ -3312,7 +3690,14 @@ globalThis.KB = {
           "title": "MaskGCT arXiv:2409.00750",
           "url": "https://arxiv.org/abs/2409.00750"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": true,
+        "emot": false
+      }
     },
     {
       "id": "seed_tts",
@@ -3376,7 +3761,14 @@ globalThis.KB = {
           "title": "Seed-TTS arXiv:2406.02430",
           "url": "https://arxiv.org/abs/2406.02430"
         }
-      ]
+      ],
+      "caps": {
+        "stream": false,
+        "long": false,
+        "multi": false,
+        "clone": true,
+        "emot": false
+      }
     }
   ]
 };

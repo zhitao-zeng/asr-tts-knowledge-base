@@ -508,15 +508,9 @@ function renderBench(){
 
 /* ---------- 能力维度矩阵 ---------- */
 function capsOf(m){
-  const s=(m.summary||"").toLowerCase();
-  const fw=(m.framework_lines||[]).join(" ").toLowerCase();
-  return {
-    stream: /stream/.test(fw) || /流式|实时|低延迟|streaming|首包/.test(s),
-    long:   /asr_long/.test(fw) || /长音频|60 ?分钟|long audio|超长/.test(s),
-    multi:  /多语|multilingual|语种|跨语|100\+ ?语|1600|多语言/.test(s),
-    clone:  m.domain==="TTS" && /零样本|zero.?shot|克隆|clone|voice cloning/.test(s),
-    emot:   /情感|emotion|表现力|expressive|韵律|情绪/.test(s),
-  };
+  // P1-9：能力维度改为读取每个模型卡的显式 caps 字段（在 data/kb.js 中人工标注/修订），
+  // 不再在渲染时靠摘要关键词猜测。缺失时回落空对象（矩阵显示"—"）。
+  return (m && m.caps) || {};
 }
 function renderMatrix(){
   const cols=[
@@ -554,7 +548,7 @@ function renderMatrix(){
   app.innerHTML=`
     <a class="back" href="#/">← 返回概览</a>
     <h1>能力维度矩阵</h1>
-    <div class="note">🧭 矩阵由 <b>流派主线 / 开放状态 / 论文字段 + 一句话摘要关键词</b> 自动推导，是<b>粗粒度速览</b>。✓=具备倾向，—=未标注/不具备，~=混合/有限开放。<b>精确能力标注待后续人工补 <code>caps</code> 字段</b>。</div>
+    <div class="note">🧭 矩阵由每个模型卡的<b>显式 caps 字段</b>标注（在 data/kb.js 中人工修订），不再靠摘要关键词实时猜测。✓=具备，—=未标注/不具备，~=混合/有限开放。能力维度如需精修，直接改 data/kb.js 中对应模型的 <code>caps</code> 即可。</div>
     <div style="overflow-x:auto">
     <table class="rtable matrix">
       <thead><tr>${head}</tr></thead>
