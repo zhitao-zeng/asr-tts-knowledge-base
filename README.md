@@ -2,21 +2,22 @@
 
 一个**单文件、零依赖**的交互式语音模型知识库，覆盖 ASR（自动语音识别）与 TTS（语音合成）方向 **56 个模型 / 系统**，并附带 **31 篇 2026 上半年论文**的本地全文与逐句 Insight 旁注。
 
+🌐 **在线演示（GitHub Pages）**：https://zhitao-zeng.github.io/asr-tts-knowledge-base/
+
 ## 内容
 
 - `index.html` — 主交付物。直接在浏览器打开即可使用（哈希路由、内联 JS/CSS、无需服务器）。
   - **模型库**：56 个 ASR/TTS 模型卡片，含架构、定位、关键能力与局限。
   - **论文逐句解读**：31 篇论文的全文本地化 + Insight 旁注，可在线检索、定位原文段落。
 - `ASR_TTS_2026H1_论文汇总.html` — 论文汇总视图（含 arXiv 链接、主题归类）。
-- `papers/` — 31 篇论文 PDF 原文，通过 **Git LFS** 托管（首次克隆后需 `git lfs pull` 才能看到实际文件）。
+- `papers/` — 31 篇论文 PDF 原文，直接随仓库托管（普通文件，克隆即得，无需 LFS / `git lfs pull`）。
 
 ## 本地运行
 
 ```bash
-# 克隆（含 LFS 论文）
+# 克隆（PDF 已直接随仓库，克隆即得）
 git clone https://github.com/zhitao-zeng/asr-tts-knowledge-base.git
 cd asr-tts-knowledge-base
-git lfs pull          # 拉取实际 PDF（首次克隆后建议执行）
 
 # 直接打开
 open index.html       # macOS
