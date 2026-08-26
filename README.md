@@ -24,7 +24,7 @@ open index.html       # macOS
 # 或任意浏览器打开 index.html
 ```
 
-> 提示：仅 `git clone` 而不执行 `git lfs pull` 时，`papers/*.pdf` 会是 LFS 指针文件，论文内链将打不开。
+> 提示：`papers/` 已直接随仓库托管（普通文件），克隆即得真实 PDF，无需 `git lfs pull`。
 
 ## 数据说明
 
@@ -33,15 +33,15 @@ open index.html       # macOS
 
 ## 版权与合规（公开仓库提示）
 
-本仓库当前为 **public** 且通过 Git LFS 托管了 31 篇论文 PDF。这意味着论文原文
-也随仓库**公开再分发**，存在被原作者/出版方要求下架的潜在风险。已采取的缓解：
+本仓库为 **public**，且 `papers/` 中 31 篇论文 PDF 已随仓库直接公开再分发（非 LFS，克隆即得）。
+这些 PDF **均来自 arXiv 提交**：作者保留版权并授予 arXiv 非独占分发许可，多数以 CC BY 发布，
+公开再分发风险显著低于出版社网关 PDF。已采取的合规措施：
 
-- 在 `LICENSE` 与本文档明确声明 `papers/` 为第三方版权作品、仅作个人研究备份；
-- `index.html` 的论文链接已加 **arXiv 摘要页兜底**——克隆后若未执行
-  `git lfs pull` 导致本地 PDF 缺失，仍能通过在线链接阅读。
+- 在 `LICENSE` 与本文档明确声明 `papers/` 为第三方版权作品，版权归原作者 / arXiv，
+  本仓库仅作研究聚合托管，请遵守原许可、勿作商业使用；
+- `index.html` 每个模型均保留 **arXiv 摘要页在线链接**，与本地 PDF 并列，便于溯源与原文核对。
 
-如需进一步降低风险，可选：① 将仓库转为 **private** 并保留 PDF；② 移除
-`papers/` 的 LFS 托管、仅保留 arXiv 链接（仓库更小、无版权再分发）。
+如需进一步降低风险，可将仓库转为 **private**（PDF 仅自留），或将 `papers/` 移除、仅保留 arXiv 链接。
 
 ## 更新与版本
 
