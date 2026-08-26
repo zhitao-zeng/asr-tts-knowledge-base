@@ -126,6 +126,11 @@
   .rtable{width:100%;border-collapse:collapse;font-size:13px;margin:6px 0}
   .rtable th{background:#eef2ff;position:static;cursor:default}
   .rtable th:hover{color:inherit}
+  table.matrix td,table.matrix th{text-align:center;padding:6px 8px;white-space:nowrap}
+  table.matrix td:first-child,table.matrix th:first-child{text-align:left}
+  table.matrix td.cy{color:#047857;font-weight:800}
+  table.matrix td.cm{color:#b45309;font-weight:700}
+  table.matrix td.cn{color:#cbd5e1}
   .deep-badge{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;font-weight:700;margin-left:6px}
 </style>
 </head>
@@ -137,6 +142,7 @@
     <a href="#/models" data-route>模型库</a>
     <a href="#/lineage" data-route>框架谱系</a>
     <a href="#/bench" data-route>横评 Benchmark</a>
+    <a href="#/matrix" data-route>能力矩阵</a>
     <a href="#/insights" data-route>论文逐句解读</a>
     <span class="spacer"></span>
     <input id="globSearch" type="text" placeholder="搜索模型…" style="width:160px">
@@ -574,7 +580,7 @@ const KB = {
 
   { id:"fun_realtime_tts", name:"Fun-Realtime-TTS", org:"阿里", date:"2026-05", domain:"TTS",
     framework_lines:["tts_nar"], paper_url:"https://www.aliyun.com/", has_arxiv:false, source_type:"榜单",
-    license:"商业", params:"大", metrics:{},
+    license:"商业", params:"大", metrics:{aa_tts_elo:1190},
     summary:"AA TTS Elo 1190 全球第 5，实时可控，三赛道大满贯之一。",
     architecture:"实时可控合成架构（非 AR 或混合），与同族 ASR/Chat 共享基座形成三赛道大满贯。",
     training:"实时推理优化 + 可控条件训练；以 AA 盲评榜为优化目标。",
@@ -1134,6 +1140,7 @@ function router(){
   if(route==="bench") return renderBench();
   if(route==="insights") return renderInsightsList();
   if(route==="insight") return renderInsight(parts[1]);
+  if(route==="matrix") return renderMatrix();
   renderHome();
 }
 window.addEventListener("hashchange",router);
@@ -1160,15 +1167,33 @@ function renderHome(){
     <a class="card model-card" href="#/insights" style="text-decoration:none;color:inherit">
       <h3>📝 论文逐句解读</h3><div class="sum">${Object.keys(INSIGHTS||{}).length} 篇旗舰论文的<strong>原句/论点 + Insight 旁注</strong>：逐句拆解设计动机、巧妙之处与可疑之处，支持上一篇/下一篇连续读。</div></a>
   </div>
-  <div class="note">⚠️ 口径说明：HF Open ASR 榜偏英文 WER、Artificial Analysis 偏自然度盲评/词错率，各榜头部差距常 &lt; 1–2 点。部分工业模型仅发布页/榜单、无独立 arXiv 论文，已在卡片用来源标签标明（并标注「官方 / 链接待核实」）。少数 2025 年发表但 2026 上半年仍是主流参照的模型已标注。带 <span class="deep-badge">精读</span> 的字段均基于论文/官方技术报告的具体数字。<br>📦 <b>离线包</b>：本页已与 <code>papers/</code> 目录（收录的可下载 arXiv 原文 PDF）一同交付。卡片/详情页带 <span class="pill paper">📄 本地PDF</span> 的模型，可直接点开离线 PDF；无公开 PDF 的（闭源或仅发布页）已如实标注。</div>
+  <div class="note">⚠️ 口径说明：HF Open ASR 榜偏英文 WER、Artificial Analysis 偏自然度盲评/词错率，各榜头部差距常 &lt; 1–2 点。部分工业模型仅发布页/榜单、无独立 arXiv 论文，已在卡片用来源标签标明（并标注「官方 / 链接待核实」）。少数 2025 年发表但 2026 上半年仍是主流参照的模型已标注。带 <span class="deep-badge">精读</span> 的字段均基于论文/官方技术报告的具体数字。<br>📦 <b>离线包</b>：本页已与 <code>papers/</code> 目录（收录的可下载 arXiv 原文 PDF）一同交付。卡片/详情页带 <span class="pill paper">📄 本地PDF</span> 的模型，可直接点开离线 PDF；无公开 PDF 的（闭源或仅发布页）已如实标注。 论文 PDF 均来自 arXiv（版权归原作者 / arXiv，本仓库仅作研究聚合托管，请遵守原许可）。</div>
   `;
 }
 
-let modelFilter={domain:"All",q:""};
+let modelFilter={domain:"All",open:"All",paper:"All",q:""};
+
+// 开放状态（由 license / source_type 启发式推导，粗粒度；精确标注待补 caps 字段）
+function openStatus(m){
+  const L=((m.license||"")+" "+(m.source_type||"")).toLowerCase();
+  const open=/开源|apache|mit|cc-?by|研究|开放权重|权重已发布|已开源|fairseq|transformers|代码与权重|有限开放|iclr|公开/.test(L);
+  const closed=/闭源|商业|未公开|受限|专有|技术报告/.test(L);
+  if(open) return "Open";
+  if(closed) return "Closed";
+  return "Mixed";
+}
+// 论文状态（精确，来自字段）
+function paperStatus(m){
+  if(m.pdf_local) return "Local";
+  if(m.paper_url) return "Online";
+  return "None";
+}
 function renderModels(){
   const q=modelFilter.q.toLowerCase();
   let list=KB.models.filter(m=>{
     if(modelFilter.domain!=="All"&&m.domain!==modelFilter.domain)return false;
+    if(modelFilter.open!=="All"&&openStatus(m)!==modelFilter.open)return false;
+    if(modelFilter.paper!=="All"&&paperStatus(m)!==modelFilter.paper)return false;
     if(q&&!(m.name.toLowerCase().includes(q)||m.org.toLowerCase().includes(q)||m.summary.toLowerCase().includes(q)))return false;
     return true;
   });
@@ -1190,6 +1215,10 @@ function renderModels(){
     <div class="filters">
       <div><label>领域</label>
         <select id="fDom"><option value="All">全部</option><option value="ASR">ASR</option><option value="TTS">TTS</option></select></div>
+      <div><label>开放状态</label>
+        <select id="fOpen"><option value="All">全部</option><option value="Open">开源可复现</option><option value="Closed">闭源商业</option><option value="Mixed">其他/混合</option></select></div>
+      <div><label>论文</label>
+        <select id="fPaper"><option value="All">全部</option><option value="Local">有本地PDF</option><option value="Online">仅在线链接</option><option value="None">无论文</option></select></div>
       <div><label>搜索</label>
         <input id="fQ" type="text" placeholder="模型 / 机构 / 关键词" style="width:220px"></div>
       <div class="stat" style="align-self:center">命中 <b>${list.length}</b> / ${KB.models.length}</div>
@@ -1197,6 +1226,8 @@ function renderModels(){
     <div class="grid g2">${cards||'<p class="muted">无匹配。</p>'}</div>
   `;
   $("#fDom").value=modelFilter.domain;$("#fDom").onchange=e=>{modelFilter.domain=e.target.value;renderModels();};
+  $("#fOpen").value=modelFilter.open;$("#fOpen").onchange=e=>{modelFilter.open=e.target.value;renderModels();};
+  $("#fPaper").value=modelFilter.paper;$("#fPaper").onchange=e=>{modelFilter.paper=e.target.value;renderModels();};
   $("#fQ").value=modelFilter.q;$("#fQ").oninput=e=>{modelFilter.q=e.target.value;renderModels();};
 }
 
@@ -3968,7 +3999,7 @@ function renderModel(id){
       ${archHtml?`<div class="sec"><div class="h">架构变体（多架构拆分）</div>${archHtml}</div>`:""}
       <div class="sec"><div class="h">与别家技术差异</div>${diffHtml}</div>
       ${refHtml?`<div class="sec"><div class="h">参考来源</div><ul class="tight">${refHtml}</ul></div>`:""}
-      ${(m.pdf_local)?`<div class="sec"><div class="h">本地论文 PDF（离线可用）</div><p><a class="link" href="${esc(m.pdf_local)}" target="_blank" rel="noopener">📄 打开已下载的 PDF</a></p><p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开。</p></div>`:""}
+      ${(m.pdf_local||m.paper_url)?`<div class="sec"><div class="h">论文 / 来源</div>${m.pdf_local?`<p><a class="link" href="${esc(m.pdf_local)}" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p><p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开。</p>`:''}${m.paper_url?`<p><a class="link" href="${esc(m.paper_url)}" target="_blank" rel="noopener">🔗 在线来源${/arxiv/.test(m.paper_url)?'（arXiv 摘要页）':''}</a></p><p class="muted" style="font-size:12px">PDF 已随仓库直接托管（非 LFS），克隆即离线可读；线上站点亦可直接打开 arXiv 原文。</p>`:''}</div>`:""}
       ${(typeof INSIGHTS!=="undefined"&&INSIGHTS[id])?`<div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div><p><a class="link" href="#/insight/${id}">打开逐句解读 →</a>（${INSIGHTS[id].length} 条原句/论点 + 解读）</p></div>`:""}
     </div>
     <p class="src-note">来源类型：${esc(m.source_type)} ${m.has_arxiv?"· 含 arXiv 论文":""} ${(m.pdf_local)?"· 已下载本地 PDF":""}</p>
@@ -4144,6 +4175,66 @@ function renderBench(){
   `;
   $("#bDom").value=benchState.domain;$("#bDom").onchange=e=>{benchState.domain=e.target.value;renderBench();};
   $("#bNum").checked=benchState.onlyNum;$("#bNum").onchange=e=>{benchState.onlyNum=e.target.checked;renderBench();};
+}
+
+/* ---------- 能力维度矩阵 ---------- */
+function capsOf(m){
+  const s=(m.summary||"").toLowerCase();
+  const fw=(m.framework_lines||[]).join(" ").toLowerCase();
+  return {
+    stream: /stream/.test(fw) || /流式|实时|低延迟|streaming|首包/.test(s),
+    long:   /asr_long/.test(fw) || /长音频|60 ?分钟|long audio|超长/.test(s),
+    multi:  /多语|multilingual|语种|跨语|100\+ ?语|1600|多语言/.test(s),
+    clone:  m.domain==="TTS" && /零样本|zero.?shot|克隆|clone|voice cloning/.test(s),
+    emot:   /情感|emotion|表现力|expressive|韵律|情绪/.test(s),
+  };
+}
+function renderMatrix(){
+  const cols=[
+    {k:"pdf",t:"本地论文"},
+    {k:"open",t:"开源可复现"},
+    {k:"stream",t:"流式/低延迟"},
+    {k:"long",t:"长音频"},
+    {k:"multi",t:"多语种/方言"},
+    {k:"clone",t:"零样本克隆"},
+    {k:"emot",t:"情感/表现力"},
+  ];
+  const rows=KB.models.map(m=>{
+    const c=capsOf(m);
+    const open=openStatus(m);
+    const cells={
+      pdf:   m.pdf_local?"✓":"—",
+      open:  open==="Open"?"✓":(open==="Mixed"?"~":"—"),
+      stream:c.stream?"✓":"—",
+      long:  c.long?"✓":"—",
+      multi: c.multi?"✓":"—",
+      clone: c.clone?"✓":"—",
+      emot:  c.emot?"✓":"—",
+    };
+    return {m,cells};
+  });
+  const head=`<th>模型</th><th>领域</th>`+cols.map(c=>`<th>${c.t}</th>`).join("");
+  const body=rows.map(r=>{
+    const m=r.m;
+    return `<tr>
+      <td><a class="link" href="#/model/${m.id}">${esc(m.name)}</a></td>
+      <td>${domTag(m.domain)}</td>
+      ${cols.map(c=>`<td class="c${r.cells[c.k]==='✓'?'y':(r.cells[c.k]==='~'?'m':'n')}">${r.cells[c.k]}</td>`).join("")}
+    </tr>`;
+  }).join("");
+  app.innerHTML=`
+    <a class="back" href="#/">← 返回概览</a>
+    <h1>能力维度矩阵</h1>
+    <div class="note">🧭 矩阵由 <b>流派主线 / 开放状态 / 论文字段 + 一句话摘要关键词</b> 自动推导，是<b>粗粒度速览</b>。✓=具备倾向，—=未标注/不具备，~=混合/有限开放。<b>精确能力标注待后续人工补 <code>caps</code> 字段</b>。</div>
+    <div style="overflow-x:auto">
+    <table class="rtable matrix">
+      <thead><tr>${head}</tr></thead>
+      <tbody>${body}</tbody>
+    </table>
+    </div>
+    <p class="stat">共 ${rows.length} 个模型。点击模型名进入精读卡片。</p>
+  `;
+  window.scrollTo(0,0);
 }
 $("#globSearch").addEventListener("input",e=>{
   const q=e.target.value.trim();

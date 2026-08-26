@@ -2,3 +2,6 @@
 .workbuddy/
 .DS_Store
 .git/
+
+# 构建流水线中间产物（由 tools/ 脚本生成，非交付物）
+.cache/

@@ -1,0 +1,20 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      # 质检门禁：校验 insight 无退化（56 模型全覆盖、每篇 3 条、q 无 ** / 无参考文献、
+      # 闭源推导注带规定前缀）。注意：不拉取 Git LFS（校验只需 index.html）。
+      - name: Run insight quality gate
+        run: node tools/validate.js
