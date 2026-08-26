@@ -132,7 +132,7 @@ for (const b of sandbox.__BENCHMARKS || []) {
 const CANONICAL = {
   cohere_transcribe: { date: "2026-03", domain: "ASR", licenseRe: /Apache/i },
   fireredasr2:       { domain: "ASR", orgRe: /小红书/ },
-  voxtral_mini:      { date: "2026-02", domain: "ASR", paperRe: /2602\.11298/ },
+  voxtral_mini:      { date: "2026-02", domain: "ASR", paperRe: /2602\.11298/, latency_ms: 480 },
   fishaudio_s2:      { date: "2026-03", domain: "TTS", has_arxiv: true, paperRe: /2603\.08823/ },
 };
 for (const [id, rule] of Object.entries(CANONICAL)) {
@@ -144,6 +144,7 @@ for (const [id, rule] of Object.entries(CANONICAL)) {
   if (rule.licenseRe) ok(rule.licenseRe.test(m.license || ""), `[守护] ${id} license 应匹配 ${rule.licenseRe}，实为 "${m.license}"`);
   if (rule.orgRe) ok(rule.orgRe.test(m.org || ""), `[守护] ${id} org 应匹配 ${rule.orgRe}，实为 "${m.org}"`);
   if (rule.paperRe) ok(rule.paperRe.test(m.paper_url || ""), `[守护] ${id} paper_url 应匹配 ${rule.paperRe}，实为 "${m.paper_url}"`);
+  if (rule.latency_ms !== undefined) ok(m.metrics && m.metrics.latency_ms === rule.latency_ms, `[守护] ${id} metrics.latency_ms 应为 ${rule.latency_ms}，实为 ${m.metrics && m.metrics.latency_ms}`);
   if (rule.has_arxiv !== undefined) ok(m.has_arxiv === rule.has_arxiv, `[守护] ${id} has_arxiv 应为 ${rule.has_arxiv}，实为 ${m.has_arxiv}`);
 }
 

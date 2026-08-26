@@ -175,7 +175,7 @@ const KB = {
         {model_id:"on_device", innovation_point:"Nemotron 量化至 0.67GB，端侧可跑"},
         {model_id:"parakeet_tdt", innovation_point:"TDT + 高吞吐，RTFx 3332"},
         {model_id:"canary_qwen", innovation_point:"2.5B 多语种 + 标点 + ITN"},
-        {model_id:"voxtral_mini", innovation_point:"Mistral 实时 mini，~70ms 首包"}
+        {model_id:"voxtral_mini", innovation_point:"Mistral 原生流式 ASR，~480ms 延迟≈Whisper"}
       ]},
     { id:"asr_llm", domain:"ASR", name:"LLM / MoE 统一系",
       baseline:"把语音编码器对齐到 LLM/MoE，用语言模型做识别与理解",
@@ -2407,7 +2407,7 @@ training: `## 训练配方
 - 后训练 DPO：把 Direct Preference Optimization 适配到“离散语义 + 连续声学”混合设定——语义用标准交叉熵 DPO，声学用 Flow-DPO；胜-负对用 WER、说话人相似度、响度一致性、UTMOS-v2、LM 评委等指标。约 3–30 秒参考音频做零样本克隆，9 语训练。
 
 ## batches.json 数字解读
-- 已知结果：母语者人工评测中，多语种零样本克隆对 ElevenLabs Flash v2.5 胜率 68.4%；实测首包延迟约 70ms。68.4% 为成对盲测胜率（人类偏好 Voxtral 的自然度/表现力），显著高于随机基线 50%，表明在跨语种克隆听感上明显优于 ElevenLabs 旗舰；70ms TTFT 印证其低延迟实时友好定位（同族 Voxtral Mini Realtime ASR 亦约 70ms，构成实时语音栈听/说两端）。`,
+- 已知结果：母语者人工评测中，多语种零样本克隆对 ElevenLabs Flash v2.5 胜率 68.4%；实测首包延迟约 70ms。68.4% 为成对盲测胜率（人类偏好 Voxtral 的自然度/表现力），显著高于随机基线 50%，表明在跨语种克隆听感上明显优于 ElevenLabs 旗舰；70ms TTFT 印证其低延迟实时友好定位（注：同族 Voxtral Mini Realtime 为 ASR，流式延迟约 480ms、首包更低，二者构成实时语音栈听/说两端，但延迟量级不同）。`,
 ablation: `## 消融与关键发现
 - 声学生成范式对比：flow-matching 在人工评测的表现力上优于 MaskGIT 与 Depth Transformer；且 FM 仅需 8 NFE，而 Depth Transformer 每帧需 36 个 AR 步，计算更优。
 - 语义 token 设计：由 Whisper 蒸馏的 VQ 语义 token 实现 meaning-aware 量化，优于随机/自监督初始化。
@@ -2416,7 +2416,7 @@ ablation: `## 消融与关键发现
 
 ## 数字解读
 - 68.4% 胜率 vs ElevenLabs Flash v2.5：在 9 语多语种零样本克隆人工配对偏好中，人类评审以 68.4% 概率偏好 Voxtral，是“表现力鸿沟”被缩小的直接证据；需注意该评测聚焦克隆自然度/表现力，且 ElevenLabs 为商业强基线，结果有力但场景受限（默认语音场景胜率约 58.3%，相对低一些）。
-- 约 70ms TTFT：与同族 ASR 一致的低首包延迟，支撑实时对讲；但完整句子延迟仍取决于 AR 语义逐帧生成，长句端到端延迟高于纯 NAR 模型。`,
+- 约 70ms TTFT：TTS 侧低首包延迟，支撑实时对讲；同族 ASR（Voxtral Mini Realtime）流式延迟约 480ms，二者延迟量级不同但共同构成实时语音栈的听/说两端；但完整句子延迟仍取决于 AR 语义逐帧生成，长句端到端延迟高于纯 NAR 模型。`,
 limitation: `## 真实边界
 - CC BY-NC 不可商用；4B 规模推理成本不低。
 - 语种限于 9 语；高噪/野外参考音频需更高 CFG，可能削弱情感细腻度。
