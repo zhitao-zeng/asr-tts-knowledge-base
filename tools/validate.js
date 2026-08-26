@@ -43,26 +43,31 @@ const stubEl = () => ({
   querySelector: () => stubEl(),
   querySelectorAll: () => [],
 });
+const appStub = stubEl();
 const sandbox = {
-  window: { addEventListener() {}, location: { hash: "#" } },
+  window: { addEventListener() {}, location: { hash: "#/" } },
   document: {
-    getElementById: () => stubEl(),
-    querySelector: () => stubEl(),
+    getElementById: () => appStub,
+    querySelector: () => appStub,
     querySelectorAll: () => [],
     addEventListener() {},
     createElement: stubEl,
-    body: stubEl(),
+    body: appStub,
   },
-  location: { hash: "#" },
+  location: { hash: "#/" },
   localStorage: { getItem: () => null, setItem() {} },
   addEventListener() {},
   console,
 };
 sandbox.globalThis = sandbox;
 vm.createContext(sandbox);
-// 顶层 const 声明不会挂到 sandbox 全局，故在同一脚本作用域内把结果导出到 globalThis
-const exportHook = "\n;try{globalThis.__KB=KB;globalThis.__INSIGHTS=INSIGHTS;globalThis.__BENCHMARKS=BENCHMARKS;}catch(e){}\n";
+// 重构后：先加载 data/kb.js（定义 globalThis.KB/DEEP/INSIGHTS/BENCHMARKS），再跑主逻辑
+const kbPath = path.join(__dirname, "..", "data", "kb.js");
+if (!fs.existsSync(kbPath)) { console.error("data/kb.js 不存在（请先运行 tools/split_data.js）"); process.exit(1); }
+const kbJs = fs.readFileSync(kbPath, "utf8");
+const exportHook = "\n;try{globalThis.__KB=KB;globalThis.__DEEP=DEEP;globalThis.__INSIGHTS=INSIGHTS;globalThis.__BENCHMARKS=BENCHMARKS;}catch(e){}\n";
 try {
+  vm.runInContext(kbJs, sandbox, { timeout: 8000 });
   vm.runInContext(js + exportHook, sandbox, { timeout: 8000 });
 } catch (e) {
   console.error("脚本执行失败（语法/运行错误）:", e.message);
@@ -73,6 +78,13 @@ const INSIGHTS = sandbox.__INSIGHTS;
 const KB = sandbox.__KB;
 const problems = [];
 const ok = (cond, msg) => { if (!cond) problems.push(msg); };
+
+// 渲染冒烟测试：主逻辑顶层会按 location.hash 渲染首页到 #app，验证数据/逻辑引用未断裂
+{
+  const rendered = String(appStub.innerHTML || "");
+  ok(rendered.length > 200, "[渲染] #app 未渲染出内容（疑似数据/逻辑引用断裂）");
+  if (rendered.length > 200) console.log(`渲染冒烟：#app 输出 ${rendered.length} 字节`);
+}
 
 if (!KB || !Array.isArray(KB.models)) {
   console.error("未找到 KB.models");
