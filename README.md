@@ -26,6 +26,16 @@ open index.html       # macOS
 
 > 提示：`papers/` 已直接随仓库托管（普通文件），克隆即得真实 PDF，无需 `git lfs pull`。
 
+## SEO / 可发现性
+
+本站为客户端渲染（CSR）+ 哈希路由的单页应用，为使搜索引擎与无 JS 环境也能获取内容，额外提供了：
+
+- `index.html` 内 `<head>` 的 Open Graph / Twitter Card / canonical / description 元标签，以及由 `tools/gen_seo.js` 自动注入的 **JSON-LD 结构化数据**（`WebSite` + 含全部 56 个模型的 `ItemList`）。
+- `models.html` — 由同一脚本生成的**静态可爬取镜像**，列出全部模型的名称、机构、许可证与一句话摘要（无需 JavaScript 即可阅读，所有内容真实可见）。
+- `sitemap.xml` + `robots.txt` — 供爬虫发现主站与静态镜像。
+
+> 哈希路由在 GitHub Pages 这类静态托管下反而更稳健（深链不会 404）；若要进一步让每个模型被单独索引，需要预渲染/构建步骤，目前以 JSON-LD + 静态镜像覆盖主要 SEO 需求。数据更新后运行 `node tools/gen_seo.js` 即可同步上述全部产物。
+
 ## 数据说明
 
 - 模型与论文信息均来自公开 arXiv 论文与官方发布，部分未开源模型的条目为「基于公开信息的推导注」，已在库内明确标注。

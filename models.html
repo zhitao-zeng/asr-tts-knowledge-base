@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASR / TTS 模型静态清单（无需 JavaScript）· 知识库</title>
+<meta name="description" content="56 个 ASR / TTS 语音模型的名称、机构、许可证与一句话摘要静态清单，供搜索引擎与无 JS 环境浏览。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models.html">
+</head>
+<body>
+<header><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a></header>
+<h1>ASR / TTS 模型静态清单</h1>
+<p>共 56 个模型。点击模型名可在交互版中打开精读卡片（需 JavaScript）。</p>
+    <section class="sec">
+      <h2>ASR · 28 个模型</h2>
+      <ul class="mlist">
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/cohere_transcribe">Cohere Transcribe</a>
+        <span class="mo">Cohere</span>
+        <span class="md">ASR</span>
+        <span class="ml">Apache 2.0</span>
+        <p class="ms">2B Conformer 编码器 + 轻量 Transformer 解码器的开放权重 ASR，登顶 HuggingFace Open ASR Leaderboard（平均 WER 5.42%）。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fireredasr2">FireRedASR2 (2S)</a>
+        <span class="mo">FireRed / 小红书</span>
+        <span class="md">ASR</span>
+        <span class="ml">开源(权重)</span>
+        <p class="ms">工业级 All-in-One ASR 系统：ASR+VAD+LID+标点四模块一体；ASR 含 LLM(8B+) 与 AED(1B+) 两变体，中文/方言强劲。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/nim4_asr">NIM4-ASR</a>
+        <span class="mo">NVIDIA</span>
+        <span class="md">ASR</span>
+        <span class="ml">商业/可部署</span>
+        <p class="ms">2.3B LLM 架构 ASR，引入 RAG 热词机制强化专名/术语识别。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/ibm_granite41">IBM Granite Speech 4.1</a>
+        <span class="mo">IBM</span>
+        <span class="md">ASR</span>
+        <span class="ml">Apache 2.0</span>
+        <p class="ms">2B 非自回归(NAR)解码的识别模型，WER 5.33%，低延迟且可商用。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/moonshine_v2">Moonshine v2</a>
+        <span class="mo">Useful Sensors</span>
+        <span class="md">ASR</span>
+        <span class="ml">Apache 2.0</span>
+        <p class="ms">流式优先的小模型，比 Whisper 快约 100 倍，主打端侧/实时。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/on_device">On-Device Streaming ASR</a>
+        <span class="mo">NVIDIA</span>
+        <span class="md">ASR</span>
+        <span class="ml">商业</span>
+        <p class="ms">将 Nemotron 语音模型量化至 0.67GB，可在端侧设备流式运行。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/kyutai_stt">Kyutai STT</a>
+        <span class="mo">Kyutai</span>
+        <span class="md">ASR</span>
+        <span class="ml">开源</span>
+        <p class="ms">端到端实时 STT，延迟约 0.5s，强调自然实时对话体验。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/voxtral_mini">Voxtral Mini Realtime</a>
+        <span class="mo">Mistral</span>
+        <span class="md">ASR</span>
+        <span class="ml">Apache 2.0</span>
+        <p class="ms">Mistral 原生流式 ASR（Voxtral Realtime）：约 480ms 延迟下质量与 Whisper 相当，13 种语言，Apache 2.0 开放权重。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/parakeet_tdt">NVIDIA Parakeet TDT</a>
+        <span class="mo">NVIDIA</span>
+        <span class="md">ASR</span>
+        <span class="ml">CC-BY-4.0</span>
+        <p class="ms">TDT 架构高吞吐 ASR，RTFx 约 3332，服务端批处理之王。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/canary_qwen">Canary-Qwen 2.5B</a>
+        <span class="mo">NVIDIA</span>
+        <span class="md">ASR</span>
+        <span class="ml">CC-BY-4.0</span>
+        <p class="ms">2.5B multilingual ASR，覆盖英/法/德/西，内置标点与 ITN。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/vibevoice_asr">VibeVoice ASR</a>
+        <span class="mo">微软</span>
+        <span class="md">ASR</span>
+        <span class="ml">研究</span>
+        <p class="ms">单次处理 60 分钟音频并附说话人日志，面向长会议/访谈。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/stepaudio25">StepAudio 2.5</a>
+        <span class="mo">阶梯星辰</span>
+        <span class="md">ASR</span>
+        <span class="ml">研究/有限开放</span>
+        <p class="ms">统一音频-语言基座，ASR 分支用可验证多 token 并行解码(RTF 0.0053)，三赛道(A SR/TTS/实时对话) SOTA。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/meta_omni">Meta Omnilingual ASR</a>
+        <span class="mo">Meta</span>
+        <span class="md">ASR</span>
+        <span class="ml">开源</span>
+        <p class="ms">单模型覆盖 1600+ 语言，面向超多语言/长尾语种统一识别。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/hy_asr30">腾讯 Hy ASR 3.0</a>
+        <span class="mo">腾讯</span>
+        <span class="md">ASR</span>
+        <span class="ml">商业</span>
+        <p class="ms">MoE + LLM 架构，中文 WER 低至 3.34%，工业高精度代表。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fun_realtime_asr">Fun-Realtime-ASR</a>
+        <span class="mo">阿里</span>
+        <span class="md">ASR</span>
+        <span class="ml">商业</span>
+        <p class="ms">ASR WER 1.8% 登顶 Artificial Analysis 词错误率榜，三赛道‘大满贯’之一。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/seed_asr20">Doubao / Seed-ASR 2.0</a>
+        <span class="mo">字节跳动</span>
+        <span class="md">ASR</span>
+        <span class="ml">商业</span>
+        <p class="ms">字节 Seed 统一语音基座，多任务（识别/理解/翻译）一体。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/qwen3_asr">Qwen3-ASR</a>
+        <span class="mo">阿里巴巴</span>
+        <span class="md">ASR</span>
+        <span class="ml">开源(通义)</span>
+        <p class="ms">Qwen 大模型原生语音识别，多语种、与 Qwen 生态无缝衔接。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/glm_asr">GLM-ASR</a>
+        <span class="mo">智谱 AI</span>
+        <span class="md">ASR</span>
+        <span class="ml">开源</span>
+        <p class="ms">基于 GLM 语义对齐的识别头，中文场景优化，开源可商用。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fun_asr">Fun-ASR (SenseVoice 系)</a>
+        <span class="mo">阿里</span>
+        <span class="md">ASR</span>
+        <span class="ml">开源</span>
+        <p class="ms">FunAudioLLM 家族的识别模型（SenseVoice 路线），多语种+情感/事件标签。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/elevenlabs_scribe2">ElevenLabs Scribe v2</a>
+        <span class="mo">ElevenLabs</span>
+        <span class="md">ASR</span>
+        <span class="ml">商业</span>
+        <p class="ms">商业 SOTA 转写，长音频 + 说话人 + 标点一体化，企业级体验。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/whisper">Whisper</a>
+        <span class="mo">OpenAI</span>
+        <span class="md">ASR</span>
+        <span class="ml">MIT(代码)/权重受限</span>
+        <p class="ms">OpenAI 的弱监督大规模多语种语音识别与翻译模型，零样本泛化能力强。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/wav2vec2">Wav2Vec 2.0</a>
+        <span class="mo">Meta</span>
+        <span class="md">ASR</span>
+        <span class="ml">MIT (fairseq/transformers 开源)</span>
+        <p class="ms">Meta 提出的自监督语音表征学习框架，用掩码对比学习从无标注音频习得表征，少量标注即可微调出强 ASR。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/hubert">HuBERT</a>
+        <span class="mo">Meta</span>
+        <span class="md">ASR</span>
+        <span class="ml">MIT (fairseq 开源)</span>
+        <p class="ms">Meta 提出的隐藏单元 BERT，用离线聚类伪标签做 BERT 式掩码预测，在 LibriSpeech 上匹配或超越 wav2vec 2.0。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/google_usm">Google USM</a>
+        <span class="mo">Google</span>
+        <span class="md">ASR</span>
+        <span class="ml">闭源（Google Cloud Chirp 提供）</span>
+        <p class="ms">Google 的通用语音模型，用 BEST-RQ 在 1200 万小时、300+ 语言音频上自监督预训练，单一模型支持 100+ 语言 ASR 与翻译。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/meta_mms">MMS (Massively Multilingual Speech)</a>
+        <span class="mo">Meta</span>
+        <span class="md">ASR</span>
+        <span class="ml">CC-BY-NC 4.0（非商业）</span>
+        <p class="ms">Meta 的大规模多语种语音项目，基于 wav2vec 2.0 把 ASR 扩展到 1107 种语言、TTS 与语种识别覆盖超过 4000 种语言。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/qwen2_audio">Qwen2-Audio</a>
+        <span class="mo">Alibaba</span>
+        <span class="md">ASR</span>
+        <span class="ml">Apache 2.0 / Qwen 许可</span>
+        <p class="ms">阿里通义千问的音频-语言模型，以 Qwen2 为骨干统一处理语音识别、翻译、音频理解与问答等多任务。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/mini_omni">Mini-Omni</a>
+        <span class="mo">gpt-omni</span>
+        <span class="md">ASR</span>
+        <span class="ml">Apache 2.0</span>
+        <p class="ms">首个开源的端到端实时语音对话模型，文本与语音 token 并行生成，仅 0.5B 参数即可实时交互。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/seamless_m4t">SeamlessM4T</a>
+        <span class="mo">Meta</span>
+        <span class="md">ASR</span>
+        <span class="ml">CC-BY-NC 4.0（非商业）</span>
+        <p class="ms">Meta 的大规模多语种多模态翻译模型，单一模型支持语音/文本到语音/文本翻译，覆盖约 100 种语言。</p>
+      </li>
+      </ul>
+    </section>
+    <section class="sec">
+      <h2>TTS · 28 个模型</h2>
+      <ul class="mlist">
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/qwen_audio_tts">Qwen-Audio-3.0-TTS</a>
+        <span class="mo">阿里巴巴</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源(通义)</span>
+        <p class="ms">12.5Hz 低帧率 tokenizer + 五阶段渐进训练(LM+flow-matching 协同)，登顶 Artificial Analysis TTS 榜。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/luna_tts">Luna-TTS Family</a>
+        <span class="mo">社区/工业</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源</span>
+        <p class="ms">扩散-LM 全非自回归 TTS：整个 RVQ token 网格固定步并行细化；实时变体块级 RTF 0.024、首块 41.6ms。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/zonos2">ZONOS2</a>
+        <span class="mo">Zyphra</span>
+        <span class="md">TTS</span>
+        <span class="ml">Apache 2.0</span>
+        <p class="ms">8B MoE(900M 激活) TTS，训练语料 200K→6M+ 小时，自然度/克隆 SOTA，Apache 2.0。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/omnivoice">OmniVoice</a>
+        <span class="mo">k2-fsa / 社区</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源</span>
+        <p class="ms">600+ 语言全非自回归扩散-LM TTS：文本直接映射到多 codebook 声学 token，免去两阶段语义中介。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fun_realtime_tts">Fun-Realtime-TTS</a>
+        <span class="mo">阿里</span>
+        <span class="md">TTS</span>
+        <span class="ml">商业</span>
+        <p class="ms">AA TTS Elo 1190 全球第 5，实时可控，三赛道大满贯之一。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/stepaudio25_tts">StepAudio 2.5 (TTS)</a>
+        <span class="mo">阶梯星辰</span>
+        <span class="md">TTS</span>
+        <span class="ml">研究/有限开放</span>
+        <p class="ms">统一基座的 TTS 分支，用偏好 RLHF + 上下文丰富监督做可控、富表现力合成。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/wavtts">WavTTS</a>
+        <span class="mo">社区/工业</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源</span>
+        <p class="ms">首个原始波形生成式 TTS：DiT+flow matching 直接建模波形，配多尺度 mel 监督，逼近潜空间 SOTA。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/longcat_audiodit">LongCat-AudioDiT</a>
+        <span class="mo">美团</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源</span>
+        <p class="ms">波形潜空间 NAR 扩散 TTS：仅 Wav-VAE + 扩散主干；自适应投影引导；Seed-ZH SIM 0.818(超 Seed-TTS 0.809)。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/voxcpm2">VoxCPM2</a>
+        <span class="mo">OpenBMB</span>
+        <span class="md">TTS</span>
+        <span class="ml">Apache 2.0</span>
+        <p class="ms">2B 分层连续隐空间模型，不依赖任何外部离散 tokenizer；非对称 AudioVAE 16k→48k；30 语+9 方言、2M+ 小时，Apache 2.0。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/chatterbox_flash">Chatterbox-Flash</a>
+        <span class="mo">Resemble / 社区</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源</span>
+        <p class="ms">块扩散(chunk diffusion)流式 TTS，低首包延迟，适合实时对话。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/confucius4_tts">Confucius4-TTS</a>
+        <span class="mo">网易</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源</span>
+        <p class="ms">无文本(textless)跨语种克隆，用连续表征实现‘听一段即跨语克隆’。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/voxtral_tts">Voxtral TTS</a>
+        <span class="mo">Mistral</span>
+        <span class="md">TTS</span>
+        <span class="ml">CC BY-NC</span>
+        <p class="ms">4B 混合(AR 语义 token + flow-matching 声学 token)；自研 Voxtral Codec(VQ-FSQ)；3s 克隆、9 语、对 ElevenLabs Flash v2.5 胜率 68.4%。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fishaudio_s2">Fish Audio S2</a>
+        <span class="mo">Fish Audio</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源</span>
+        <p class="ms">开源 TTS：Dual-AR（4B Slow + 400M Fast AR）+ RVQ codec，80+ 语言、词级情绪控制；发布权重、微调代码与 SGLang 推理引擎（RTF 0.195、首包 &lt;100ms）。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/minimax28">MiniMax Speech 2.8</a>
+        <span class="mo">MiniMax</span>
+        <span class="md">TTS</span>
+        <span class="ml">商业</span>
+        <p class="ms">原生语气词/声音标签(breath、laugh 等)，10 秒克隆、40+ 语言（略早于窗口）。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/indextts2">IndexTTS2</a>
+        <span class="mo">B站</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源</span>
+        <p class="ms">AR TTS 中首个做‘精准时长控制 + 情感/音色解耦’，视频配音/音画对齐神器。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/mega_tts3">MegaTTS 3</a>
+        <span class="mo">字节跳动</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源</span>
+        <p class="ms">稀疏对齐引导潜在 DiT：给定稀疏对齐边界降低难度又不限搜索空间；8 步生成 1 分钟语音。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/cosyvoice3">CosyVoice 3</a>
+        <span class="mo">阿里巴巴</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源</span>
+        <p class="ms">LLM 语义 + 扩散声学的混合 TTS，多语种零样本克隆，社区与工业双热（跨 AR/混合两线）。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/qwen3_tts">Qwen3-TTS</a>
+        <span class="mo">阿里巴巴</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源(通义)</span>
+        <p class="ms">Qwen 自回归 TTS，零样本克隆，与 Qwen 生态互通。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/orpheus_tts">Orpheus TTS</a>
+        <span class="mo">社区</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源</span>
+        <p class="ms">情绪标签驱动的类人韵律 TTS，自回归 codec-LM。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/higgs2">Higgs Audio v2</a>
+        <span class="mo">社区/工业</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源</span>
+        <p class="ms">多说话者 + 情感，连续表征 TTS，强在角色与情绪表达。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/valle">VALL-E</a>
+        <span class="mo">Microsoft</span>
+        <span class="md">TTS</span>
+        <span class="ml">研究用途</span>
+        <p class="ms">将 TTS 建模为神经编解码器语言模型，仅凭 3 秒语音提示即可实现零样本音色克隆。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/voicebox">Voicebox</a>
+        <span class="mo">Meta</span>
+        <span class="md">TTS</span>
+        <span class="ml">研究用途（权重未公开）</span>
+        <p class="ms">基于条件流匹配（flow matching）的语音修复式生成模型，通过上下文学习统一多种语音任务。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/natural_speech3">NaturalSpeech 3</a>
+        <span class="mo">Microsoft</span>
+        <span class="md">TTS</span>
+        <span class="ml">研究用途（FACodec 已开源）</span>
+        <p class="ms">用属性分解编解码器 FACodec 与分解扩散模型，将语音按属性子空间分别生成，实现超自然零样本 TTS。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/audiobox">Audiobox</a>
+        <span class="mo">Meta</span>
+        <span class="md">TTS</span>
+        <span class="ml">研究用途</span>
+        <p class="ms">基于流匹配的统一音频生成模型，用自然语言描述与示例双重提示统一语音与音效生成。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/e2_tts">E2-TTS</a>
+        <span class="mo">Microsoft</span>
+        <span class="md">TTS</span>
+        <span class="ml">CC BY-SA 4.0（论文）</span>
+        <p class="ms">极简的全非自回归零样本 TTS，仅靠填充式流匹配从字符序列生成语音，无需时长/对齐模块。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/f5_tts">F5-TTS</a>
+        <span class="mo">上海交大 / 剑桥等</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源（CC BY 4.0，代码与权重已发布）</span>
+        <p class="ms">基于流匹配与 Diffusion Transformer 的全非自回归 TTS，用 ConvNeXt 细化文本并引入 Sway Sampling。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/maskgct">MaskGCT</a>
+        <span class="mo">港中文（深圳）等</span>
+        <span class="md">TTS</span>
+        <span class="ml">开源（代码与权重已发布，ICLR 2025）</span>
+        <p class="ms">全非自回归的掩码生成编解码 Transformer，无需文本-语音显式对齐与时长预测即可零样本 TTS。</p>
+      </li>
+      <li class="mc">
+        <a class="mn" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/seed_tts">Seed-TTS</a>
+        <span class="mo">ByteDance</span>
+        <span class="md">TTS</span>
+        <span class="ml">技术报告（权重未公开）</span>
+        <p class="ms">字节跳动的大规模自回归 TTS 模型家族，零样本上下文学习在自然度与相似度上匹配真人语音。</p>
+      </li>
+      </ul>
+    </section>
+
+<footer><p class="mut">本页为 SEO / 无障碍静态镜像，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:980px;margin:0 auto;padding:24px 18px 60px;color:#1f2937;line-height:1.6;background:#f6f8fb}
+  header{margin-bottom:10px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:24px;margin:6px 0 4px}h2{font-size:18px;margin:22px 0 10px;color:#3730a3}
+  .sec{border-top:1px solid #e5e7eb;padding-top:8px}
+  .mlist{list-style:none;padding:0;display:grid;gap:10px}
+  .mc{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:12px 14px}
+  .mn{font-weight:700;font-size:16px}.mo{color:#6b7280;margin-left:8px;font-size:13px}
+  .md{display:inline-block;font-size:11px;padding:1px 7px;border-radius:6px;background:#dbeafe;color:#1e40af;margin-left:6px}
+  .ml{display:inline-block;font-size:11px;padding:1px 7px;border-radius:6px;background:#f1f5f9;color:#475569;margin-left:6px}
+  .ms{margin:6px 0 0;font-size:13.5px;color:#374151}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>
