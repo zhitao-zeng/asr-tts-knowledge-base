@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASR / TTS 知识库 · 2026 H1（论文精读版）</title>
+<title>ASR / TTS 知识库 · 更新至 2026-08（论文精读版）</title>
 <style>
   :root{
     --bg:#f6f8fb; --panel:#ffffff; --ink:#1f2937; --muted:#6b7280;
@@ -47,6 +47,7 @@
   .pill.blog{background:#fef3c7;color:#92400e}
   .pill.rank{background:#e0e7ff;color:#3730a3}
   .pill.comm{background:#fee2e2;color:#991b1b}
+  .pill.role{background:#e2e8f0;color:#334155}
   .model-card{cursor:pointer;transition:transform .08s ease,box-shadow .12s ease}
   .model-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,99,235,.12)}
   .model-card h3{margin:0 0 4px;font-size:16px}
@@ -235,20 +236,20 @@ const KB = {
 
   models: [
   /* ===================== ASR ===================== */
-  { id:"cohere_transcribe", name:"Cohere Transcribe", org:"Cohere", date:"2026-04", domain:"ASR",
-    framework_lines:["asr_aed"], paper_url:"https://cohere.com/blog/transcribe", has_arxiv:false, source_type:"博客",
-    license:"商业", params:"2B", metrics:{wer:5.42},
-    summary:"2B Conformer 弱监督模型，登顶 HuggingFace Open ASR Leaderboard（平均 WER 5.42%）。",
-    architecture:"标准 Conformer 编码器 + 自回归/Transducer 解码器的经典 AED 结构；在 Whisper 式范式上以 2B 规模做工程化弱监督训练，不引入 LLM 解码。推理路径短、延迟可控。",
-    training:"以大规模弱监督（weakly-labeled）音频为主，沿用‘海量带噪标注 → 强鲁棒性’的范式；超参与数据配比经过针对开放榜单的调优。",
+  { id:"cohere_transcribe", name:"Cohere Transcribe", org:"Cohere", date:"2026-03", domain:"ASR",
+    framework_lines:["asr_aed"], paper_url:"https://cohere.com/blog/transcribe", has_arxiv:false, source_type:"官方博客",
+    license:"Apache 2.0", params:"2B", metrics:{wer:5.42},
+    summary:"2B Conformer 编码器 + 轻量 Transformer 解码器的开放权重 ASR，登顶 HuggingFace Open ASR Leaderboard（平均 WER 5.42%）。",
+    architecture:"大 Conformer 编码器承担主要参数，后接轻量 Transformer 解码器做 token 生成；从零监督训练，不引入 LLM 解码，推理路径短、延迟可控。",
+    training:"标准监督交叉熵（输出 token），从零训练；覆盖 14 种语言（英/法/德/意/西/葡/希/荷/波 + 中/日/韩/越/阿），面向实际条件下的低 WER 调优。",
     results:[{dataset:"HF Open ASR Leaderboard（多数据集均值）",metric:"WER",value:"5.42%",note:"平均，居榜首"}],
-    ablation:"未公开独立消融；其卖点在于‘同规模开放榜第一’，差异主要来自数据规模与弱监督策略而非结构创新。",
-    limitation:"偏英文/常见语种；作为闭源商业 API，不可复现、不可微调；无 LLM 带来的语言理解/指令能力。",
-    innovation:["大规模弱监督 Conformer","以开放榜第一为标志的高性价比高精度","2B 规模易部署"],
-    diff_vs:[{vs:"Whisper / Parakeet",note:"同规模下 WER 更低且登顶开放榜，但未开源"},{vs:"LLM 系 ASR",note:"纯 Conformer 更轻、延迟更可控，但缺语言理解"}],
+    ablation:"未公开独立消融；其卖点在于‘同规模开放榜第一’，差异主要来自架构简洁（大编码器 + 轻解码器）与监督数据规模，而非结构创新。",
+    limitation:"覆盖 14 种语言，超多语种/极低资源场景弱于专门多语种模型；无 LLM 带来的语言理解/指令能力；可自托管或经 API，不参与端侧小模型。",
+    innovation:["大 Conformer 编码器 + 轻量 Transformer 解码器","开放权重（Apache 2.0）可自托管","HF Open ASR 榜第一（WER 5.42%）","2B 规模易部署"],
+    diff_vs:[{vs:"Whisper / Parakeet",note:"同规模下 WER 更低且登顶开放榜，且完全开源"},{vs:"LLM 系 ASR",note:"纯 Conformer 更轻、延迟更可控，但缺语言理解"}],
     references:[{title:"Cohere Transcribe 官方博客",url:"https://cohere.com/blog/transcribe"}] },
 
-  { id:"fireredasr2", name:"FireRedASR2 (2S)", org:"FireRed / 快手", date:"2026-03", domain:"ASR",
+  { id:"fireredasr2", name:"FireRedASR2 (2S)", org:"FireRed / 小红书", date:"2026-03", domain:"ASR",
     framework_lines:["asr_aed","asr_llm","asr_long"], paper_url:"https://arxiv.org/abs/2603.10420", has_arxiv:true, source_type:"论文", pdf_local:"papers/2603.10420.pdf",
     license:"开源(权重)", params:"LLM 8B+ / AED 1B+", metrics:{cer:2.89},
     summary:"工业级 All-in-One ASR 系统：ASR+VAD+LID+标点四模块一体；ASR 含 LLM(8B+) 与 AED(1B+) 两变体，中文/方言强劲。",
@@ -269,7 +270,7 @@ const KB = {
     ablation:"论文给出四模块各自在对应基准上超越强基线，证明‘一体化流水线’在工程上优于级联开源组件；方言覆盖广度是其关键增益。",
     limitation:"LLM 变体 8B+ 推理成本较高；AED 变体精度低于 LLM 变体；与统一音频-语言基座(如 StepAudio)相比，不具备对话/生成能力。",
     innovation:["四模块 All-in-One 流水线","LLM / AED 双变体按需选型","方言/口音覆盖广度(19 基准 11.55%)"],
-    diff_vs:[{vs:"Cohere Transcribe",note:"FireRedASR2 多模块+多变体+开源，Cohere 仅单模型闭源"},{vs:"StepAudio 2.5",note:"FireRedASR2 偏识别流水线，StepAudio 偏统一音频-语言基座"}],
+    diff_vs:[{vs:"Cohere Transcribe",note:"FireRedASR2 多模块+多变体+开源，Cohere 同为 Apache 2.0 开放权重、纯 ASR 单模型"},{vs:"StepAudio 2.5",note:"FireRedASR2 偏识别流水线，StepAudio 偏统一音频-语言基座"}],
     references:[{title:"FireRedASR2S arXiv:2603.10420",url:"https://arxiv.org/abs/2603.10420"}] },
 
   { id:"nim4_asr", name:"NIM4-ASR", org:"NVIDIA", date:"2026-04", domain:"ASR",
@@ -337,18 +338,18 @@ const KB = {
     diff_vs:[{vs:"Moonshine v2",note:"同样实时，Kyutai 强调端到端与自然对话"},{vs:"Voxtral Mini",note:"二者均实时，Voxtral 配 TTS 生态"}],
     references:[{title:"Kyutai STT 仓库",url:"https://github.com/kyutai-late/kyutai-stt"}] },
 
-  { id:"voxtral_mini", name:"Voxtral Mini Realtime", org:"Mistral", date:"2026-03", domain:"ASR",
-    framework_lines:["asr_stream"], paper_url:"https://arxiv.org/abs/2603.25551", has_arxiv:true, source_type:"论文", pdf_local:"papers/2603.25551.pdf",
-    license:"商业/开放权重", params:"小", metrics:{latency_ms:70},
-    summary:"Mistral 实时 mini ASR，首包延迟约 70ms，与 Voxtral TTS 同生态。",
-    architecture:"轻量流式 ASR，与同族 TTS(Voxtral) 共享部署与接口，构成实时语音栈的听/说两端。",
-    training:"流式训练，优化首包延迟；与 Voxtral 家族联合调优。",
-    results:[{dataset:"实测",metric:"首包延迟",value:"~70ms",note:"适合实时对讲"}],
-    ablation:"延迟与精度的权衡设计；与 Voxtral TTS 配对验证全栈实时。",
-    limitation:"作为 mini 模型绝对精度有限；主要价值在‘低延迟 + 同生态 TTS’。",
-    innovation:["~70ms 首包延迟的实时 ASR","与 Voxtral TTS 组成实时语音栈","小权重可部署"],
-    diff_vs:[{vs:"Kyutai STT",note:"同实时，Voxtral 首包更低且配 TTS 生态"},{vs:"Whisper",note:"实时性显著优于 Whisper"}],
-    references:[{title:"Voxtral arXiv:2603.25551",url:"https://arxiv.org/abs/2603.25551"}] },
+  { id:"voxtral_mini", name:"Voxtral Mini Realtime", org:"Mistral", date:"2026-02", domain:"ASR",
+    framework_lines:["asr_stream"], paper_url:"https://arxiv.org/abs/2602.11298", has_arxiv:true, source_type:"论文",
+    license:"Apache 2.0", params:"4B", metrics:{latency_ms:480},
+    summary:"Mistral 原生流式 ASR（Voxtral Realtime）：约 480ms 延迟下质量与 Whisper 相当，13 种语言，Apache 2.0 开放权重。",
+    architecture:"基于 Delayed Streams Modeling 的端到端流式 ASR：3.4B LM + 970M 因果音频编码器，Ada RMS-Norm 做延迟调节，显式对齐音频流与文本流，而非把离线模型切块/滑窗凑流式。",
+    training:"端到端为流式训练（非离线模型适配）；大规模多语预训练覆盖 13 种语言；Apache 2.0 开放权重。",
+    results:[{dataset:"实测（480ms 延迟）",metric:"质量",value:"≈Whisper",note:"亚秒延迟下与 Whisper 相当"}],
+    ablation:"因果编码器 + Ada RMS-Norm 的延迟条件化是流式质量的关键；相比 chunking/sliding-window 离线适配，端到端流式训练避免块边界截断。",
+    limitation:"4B 规模推理成本高于小端侧模型；语种（13）少于部分多语专用模型；实时性以 ~480ms 延迟为代价。",
+    innovation:["原生端到端流式 ASR（非离线切块）","因果音频编码器 + Ada RMS-Norm 延迟调节","480ms 延迟质量≈Whisper","Apache 2.0 开放权重"],
+    diff_vs:[{vs:"Kyutai STT",note:"二者均实时，Voxtral ~480ms 略低于 Kyutai ~500ms，且配 TTS 生态"},{vs:"Whisper",note:"实时性显著优于 Whisper，质量相当"}],
+    references:[{title:"Voxtral Realtime arXiv:2602.11298",url:"https://arxiv.org/abs/2602.11298"}] },
 
   { id:"parakeet_tdt", name:"NVIDIA Parakeet TDT", org:"NVIDIA", date:"2026-01", domain:"ASR",
     framework_lines:["asr_stream"], paper_url:"https://catalog.ngc.nvidia.com/", has_arxiv:false, source_type:"榜单",
@@ -484,7 +485,7 @@ const KB = {
     ablation:"语义对齐对中文同音字/专名的改善。",
     limitation:"相对 LLM 系大模型，理解能力有限；语种以中文为主。",
     innovation:["GLM 语义对齐提升语言学合理性","中文优化","开源"],
-    diff_vs:[{vs:"Qwen3-ASR",note:"同为国产开源大模型系，GLM 偏语义对齐"},{vs:"Cohere Transcribe",note:"GLM 开源，Cohere 闭源商业"}],
+    diff_vs:[{vs:"Qwen3-ASR",note:"同为国产开源大模型系，GLM 偏语义对齐"},{vs:"Cohere Transcribe",note:"GLM 开源，Cohere 同为 Apache 2.0 开放权重、纯 ASR 单模型"}],
     references:[{title:"（无公开论文 PDF，以官方发布为准）",url:""}] },
 
   { id:"fun_asr", name:"Fun-ASR (SenseVoice 系)", org:"阿里", date:"2026-02", domain:"ASR",
@@ -696,18 +697,18 @@ const KB = {
     diff_vs:[{vs:"Qwen-Audio-3.0-TTS",note:"Voxtral 混合架构+低延迟，Qwen-Audio 为榜首"},{vs:"CosyVoice3",note:"同混合，Voxtral 偏实时低延迟+自研 codec"}],
     references:[{title:"Voxtral TTS arXiv:2603.25551",url:"https://arxiv.org/abs/2603.25551"}] },
 
-  { id:"fishaudio_s2", name:"Fish Audio S2", org:"Fish Audio", date:"2026-02", domain:"TTS",
-    framework_lines:["tts_ar"], paper_url:"https://fish.audio/", has_arxiv:false, source_type:"博客",
-    license:"开源/商业", params:"中等", metrics:{},
-    summary:"轻量 codec-LM TTS，社区高人气，零样本克隆质量好。",
-    architecture:"codec-LM 自回归生成：文本/参考 → 语音 codec token → 解码器还原波形。",
-    training:"大规模语音 codec 训练；零样本克隆优化；社区生态活跃。",
-    results:[{dataset:"社区实测",metric:"克隆质量",value:"好",note:"以实测为准"}],
-    ablation:"codec 码本/采样率对质量的影响。",
-    limitation:"AR 生成有延迟与错误累积；规模小于大模型。",
-    innovation:["轻量 codec-LM","零样本克隆质量好","社区生态活跃"],
-    diff_vs:[{vs:"CosyVoice3",note:"Fish 偏轻量社区，CosyVoice 偏大厂多语种"},{vs:"Luna-TTS",note:"Fish 为 AR，Luna 为非 AR"}],
-    references:[{title:"Fish Audio",url:"https://fish.audio/"}] },
+  { id:"fishaudio_s2", name:"Fish Audio S2", org:"Fish Audio", date:"2026-03", domain:"TTS",
+    framework_lines:["tts_ar"], paper_url:"https://arxiv.org/abs/2603.08823", has_arxiv:true, source_type:"论文",
+    license:"开源", params:"4B", metrics:{rtf:0.195},
+    summary:"开源 TTS：Dual-AR（4B Slow + 400M Fast AR）+ RVQ codec，80+ 语言、词级情绪控制；发布权重、微调代码与 SGLang 推理引擎（RTF 0.195、首包 <100ms）。",
+    architecture:"decoder-only Transformer 主干 + RVQ 音频 codec（沿用 Fish-Speech）；Dual-AR 把生成解耦为 Slow AR 与 Fast AR，10 码本 RVQ + GRPO 对齐；自研多阶段训练配方与分阶段数据管线（视频/语音字幕、音质评估、奖励建模）支撑指令跟随。",
+    training:"大规模语音 codec 训练 + 指令跟随控制；分阶段数据管线覆盖视频字幕、语音字幕、音质评估与奖励建模；开源权重与微调代码。",
+    results:[{dataset:"SGLang 推理引擎",metric:"RTF",value:"0.195",note:"流式生产级"},{dataset:"首包音频",metric:"延迟",value:"<100ms",note:"time-to-first-audio"}],
+    ablation:"codec 码本/采样率对质量的影响；多阶段训练与奖励建模对指令跟随的贡献。",
+    limitation:"AR 生成有延迟与错误累积；规模小于大模型；指令跟随质量依赖奖励建模。",
+    innovation:["开源 TTS + 微调代码 + SGLang 引擎","Dual-AR（Slow+Fast AR）+ RVQ codec","80+ 语言、词级情绪控制","RTF 0.195、首包 <100ms"],
+    diff_vs:[{vs:"CosyVoice3",note:"Fish 偏开源社区+指令控制，CosyVoice 偏大厂多语种"},{vs:"Luna-TTS",note:"Fish 为 AR，Luna 为非 AR"}],
+    references:[{title:"Fish Audio S2 arXiv:2603.08823",url:"https://arxiv.org/abs/2603.08823"}] },
 
   { id:"minimax28", name:"MiniMax Speech 2.8", org:"MiniMax", date:"2026-01", domain:"TTS",
     framework_lines:["tts_wave"], paper_url:"https://www.minimax.io/", has_arxiv:false, source_type:"博客",
@@ -804,7 +805,7 @@ const KB = {
     diff_vs:[{vs:"ZONOS2",note:"Higgs 重多说话者情感，ZONOS2 重 MoE 可控"},{vs:"Orpheus TTS",note:"同为情感，Higgs 走连续表征"}],
     references:[{title:"（无公开论文 PDF，以官方发布为准）",url:""}] },
 
-  { id:"whisper", name:"Whisper", org:"OpenAI", date:"2022-09", domain:"ASR",
+  { id:"whisper", name:"Whisper", org:"OpenAI", date:"2022-09", domain:"ASR", role:"baseline",
     framework_lines:["asr_aed"], paper_url:"https://arxiv.org/abs/2212.04356", has_arxiv:true, source_type:"论文", pdf_local:"papers/2212.04356.pdf",
     license:"MIT(代码)/权重受限", params:"Large-v3 约 1.5B", metrics:{wer:"Large-v3 约 2.7% (LibriSpeech clean)"},
     summary:"OpenAI 的弱监督大规模多语种语音识别与翻译模型，零样本泛化能力强。",
@@ -819,7 +820,7 @@ const KB = {
              {vs:"Google USM",note:"Whisper 开源且数据量更小（68 万 vs 1200 万小时），USM 在 100+ 语言上精度更高"}],
     references:[{title:"Whisper arXiv:2212.04356",url:"https://arxiv.org/abs/2212.04356"}] },
 
-  { id:"wav2vec2", name:"Wav2Vec 2.0", org:"Meta", date:"2020-06", domain:"ASR",
+  { id:"wav2vec2", name:"Wav2Vec 2.0", org:"Meta", date:"2020-06", domain:"ASR", role:"baseline",
     framework_lines:["asr_aed"], paper_url:"https://arxiv.org/abs/2006.11477", has_arxiv:true, source_type:"论文", pdf_local:"papers/2006.11477.pdf",
     license:"MIT (fairseq/transformers 开源)", params:"Base 95M / Large 317M", metrics:{wer:"1.8/3.3 (LibriSpeech clean/other, Large)"},
     summary:"Meta 提出的自监督语音表征学习框架，用掩码对比学习从无标注音频习得表征，少量标注即可微调出强 ASR。",
@@ -834,7 +835,7 @@ const KB = {
              {vs:"Whisper",note:"wav2vec 2.0 是自监督表征+微调，Whisper 是弱监督端到端零样本"}],
     references:[{title:"Wav2Vec 2.0 arXiv:2006.11477",url:"https://arxiv.org/abs/2006.11477"}] },
 
-  { id:"hubert", name:"HuBERT", org:"Meta", date:"2021-06", domain:"ASR",
+  { id:"hubert", name:"HuBERT", org:"Meta", date:"2021-06", domain:"ASR", role:"baseline",
     framework_lines:["asr_aed"], paper_url:"https://arxiv.org/abs/2106.07447", has_arxiv:true, source_type:"论文", pdf_local:"papers/2106.07447.pdf",
     license:"MIT (fairseq 开源)", params:"Base 95M / Large 317M / X-Large 1B", metrics:{wer:"1.9/3.3 (LibriSpeech clean/other, Large)"},
     summary:"Meta 提出的隐藏单元 BERT，用离线聚类伪标签做 BERT 式掩码预测，在 LibriSpeech 上匹配或超越 wav2vec 2.0。",
@@ -1152,10 +1153,10 @@ function renderHome(){
   app.innerHTML=`
   <div class="hero">
     <h1>ASR / TTS 模型知识库 <span class="muted" style="font-size:15px">· 2026 前沿 + 近年代表作（含可下载 PDF 离线包）</span></h1>
-    <p>近半年（2026.02–2026.08）语音识别与合成代表模型的<strong>论文深度解读</strong>：每个模型点进去有
+    <p>近半年（2026.02–2026.08，含中文方言与经典基础论文）语音识别与合成代表模型的<strong>论文深度解读</strong>：每个模型点进去有
     <strong>架构细节 · 训练数据与目标 · 关键实验结果（带具体数字）· 消融与关键发现 · 局限与开放问题 · 与别家技术差异</strong>。
     多架构模型（FireRedASR2、StepAudio 2.5）挂多条主线并拆分架构变体。</p>
-    <div class="stat">共 <b>${KB.models.length}</b> 个模型（ASR ${asr} · TTS ${tts}）｜ <b>${KB.lineages.length}</b> 条框架主线 ｜ 深度精读覆盖 <b>${deep}</b> 个 ｜ <b>${KB.models.filter(m=>m.pdf_local).length}</b> 篇论文已随包下载（断网可读）</div>
+    <div class="stat">共 <b>${KB.models.length}</b> 个模型（ASR ${asr} · TTS ${tts}）｜ <b>${KB.lineages.length}</b> 条框架主线 ｜ 深度精读覆盖 <b>${deep}</b> 个 ｜ <b>${KB.models.filter(m=>m.pdf_local).length}</b> 篇论文已随包下载（断网可读）｜ 数据快照 2026-08-20</div>
   </div>
   <div class="grid g3" style="margin-top:16px">
     <a class="card model-card" href="#/models" style="text-decoration:none;color:inherit">
@@ -1200,7 +1201,7 @@ function renderModels(){
   const cards=list.map(m=>`
     <a class="card model-card" href="#/model/${m.id}" style="text-decoration:none;color:inherit">
       <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
-        <h3>${esc(m.name)}</h3>${srcPill(m.source_type)} ${m.pdf_local?'<span class="pill paper">PDF</span>':''}
+        <h3>${esc(m.name)}</h3>${srcPill(m.source_type)} ${m.role?`<span class="pill role">${esc({baseline:"经典基线",boundary:"边界参考",current:"当前主流"}[m.role]||m.role)}</span>`:''} ${m.pdf_local?'<span class="pill paper">PDF</span>':''}
       </div>
       <div class="org">${esc(m.org)} · ${esc(m.date)} · ${m.params}</div>
       <div class="sum">${esc(m.summary)}</div>
@@ -3376,9 +3377,9 @@ const INSIGHTS_PART_R1 = {
     { q:`Our evaluation focuses on core transcription accuracy and does not cover several important system-level capabilities often required in production settings, such as robust inverse text normalization, speaker diarization, code-switching, custom vocabulary adaptation, or broader internal evaluation suites.`, src:`arXiv:2604.14493 讨论`, insight:`作者很诚实：这套边缘系统 **只验证了核心转写，没覆盖 ITN/说话人分离/码切换/热词自适应** 等生产必需能力。所以「ESB 上接近生产系统」的结论要打折——它更像是隐私/离线/低延迟场景的强选项，而非端到端生产替代品。另一个代价是仅英文。` }
   ],
   "voxtral_mini": [
-    { q:`A voice prompt is tokenized through Voxtral Codec, a low-bitrate speech tokenizer with an ASR-distilled semantic token and finite scalar quantized (FSQ) acoustic tokens; a decoder-only transformer auto-regressively predicts the semantic token sequence, while a lightweight flow-matching model predicts the acoustic tokens conditioned on the decoder states.`, src:`arXiv:2603.25551 引言/建模`, insight:`Voxtral 的巧思是 **把语义（AR）与声学（flow-matching 连续生成）解耦**：语义走 AR 保证长程一致性，声学走 flow-matching 补细节，避开了传统 codec LM 的「深度自回归声学」瓶颈。Codec 用 **ASR 蒸馏语义 token + FSQ 声学 token**，低码率也保真，是目前零样本 TTS 里较平衡的混合架构。` },
-    { q:`In human evaluation for multilingual zero-shot voice cloning, it is preferred over ElevenLabs Flash v2.5 with a 68.4% win rate, while remaining competitive with strong proprietary systems on expressive flagship-voice evaluations.`, src:`arXiv:2603.25551 引言`, insight:`**68.4% 人工胜率压过 ElevenLabs Flash v2.5**，且旗舰音色也具竞争力，说明混合架构在音质/相似度上已够打商业闭源。但注意评测是 pairwise 盲评、样本量有限（77 旗舰 / 60 克隆），且 ElevenLabs v3 在自动指标上仍被 Beat——结论应理解为「追平第一梯队」而非全面超越。` },
-    { q:`However, internal human evaluations found that a higher α led to over-adherence to the provided voice-prompt and the model failed to bias towards emotions that are implicit in the text prompt.`, src:`arXiv:2603.25551 实验`, insight:`这是 DPO + CFG 调参的真实代价：**CFG α 调大虽提升相似度指标，却会让模型过度贴合参考音色、压制文本隐含情感**。说明偏好学习目标存在内在张力——相似度和情感表达此消彼长，部署时得按场景（专业录音 vs 野生录音）分别设 α，没有万能默认值。` }
+    { q:`Unlike approaches that adapt offline models through chunking or sliding windows, Voxtral Realtime is trained end-to-end for streaming, with explicit alignment between audio and text streams.`, src:`arXiv:2602.11298 摘要`, insight:`Voxtral Realtime 的关键判断是：**流式 ASR 不该靠把离线模型切块/滑窗凑出来**，而应端到端为流式训练、显式对齐音频流与文本流。这避开 chunking 方案的固有缺陷（块边界截断、延迟-精度权衡僵化），是它能在亚秒延迟下仍逼近离线质量的前提。` },
+    { q:`Our architecture builds on the Delayed Streams Modeling framework, introducing a new causal audio encoder and Ada RMS-Norm for improved delay conditioning.`, src:`arXiv:2602.11298 摘要/方法`, insight:`具体手段是在 Delayed Streams Modeling 上引入 **因果音频编码器 + Ada RMS-Norm**：前者保证流式可解码，后者自适应调节延迟条件，让模型在不同延迟预算下稳定输出。这类「延迟感知」归一化是流式 ASR 把延迟和精度解耦的工程要点。` },
+    { q:`We scale pretraining to a large-scale dataset spanning 13 languages. At a delay of 480ms, Voxtral Realtime achieves performance on par with Whisper... We release the model weights under the Apache 2.0 license.`, src:`arXiv:2602.11298 摘要`, insight:`落地规模与开放度：预训练覆盖 **13 种语言**，在 **480ms 延迟**下达到与 Whisper 相当的质量——即「流式也能打离线 SOTA」。权重以 **Apache 2.0 开放**，可直接自托管，对需要低延迟又不愿依赖闭源 API 的场景是 Whisper 之外的高性价比流式替代。` }
   ],
   "vibevoice_asr": [
     { q:`Unlike traditional pipelined approaches that rely on audio chunking, VIBEVOICE-ASR supports single-pass processing for up to 60 minutes of audio. It unifies Automatic Speech Recognition, Speaker Diarization, and Timestamping into a single end-to-end generation task.`, src:`arXiv:2601.18184 摘要`, insight:`VIBEVOICE-ASR 主打 **单趟处理 60 分钟、把 ASR/说话人分离/时间戳统一成一个端到端生成任务**，直接解决长音频的「上下文碎片」问题——传统分块流水线会丢失跨块信息。这是与 VIBEVOICE 同源、但把多任务塞进同一生成流的关键升级。` },
@@ -3981,7 +3982,7 @@ function renderModel(id){
     <div class="card">
       <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap">
         <h1 style="margin:0">${esc(m.name)}</h1>
-        <div>${domTag(m.domain)} ${srcPill(m.source_type)} ${(m.pdf_local)?'<span class="pill paper">📄 本地PDF</span>':''}</div>
+        <div>${domTag(m.domain)} ${srcPill(m.source_type)} ${m.role?`<span class="pill role">${esc({baseline:"经典基线",boundary:"边界参考",current:"当前主流"}[m.role]||m.role)}</span>`:''} ${(m.pdf_local)?'<span class="pill paper">📄 本地PDF</span>':''}</div>
       </div>
       <div class="org" style="font-size:14px">${esc(m.org)} · ${esc(m.date)} · 参数量 ${esc(m.params)} · 许可 ${esc(m.license)}</div>
       <div class="sec"><div class="h">一句话</div><p>${esc(m.summary)}</p></div>
@@ -4061,7 +4062,7 @@ function renderLineage(domain){
 const BENCHMARKS=[
   /* ===== ASR ===== */
   {id:"asr_aishell1",name:"AISHELL-1",domain:"ASR",metric:"CER",unit:"%",better:"lower",
-   entries:[{id:"stepaudio25",v:0.71,note:"AISHELL-1 CER"}]},
+   entries:[{id:"stepaudio25",v:0.71,note:"AISHELL-1 CER"},{id:"fireredasr2",v:0.57,note:"AED 变体 AISHELL-1 CER（论文）"}]},
   {id:"asr_zh_cer",name:"中文通用基准 (CER% 均值)",domain:"ASR",metric:"CER",unit:"%",better:"lower",
    entries:[{id:"fireredasr2",v:2.89,note:"4 个公开中文基准平均"}]},
   {id:"asr_zh_wer",name:"中文场景 (WER%)",domain:"ASR",metric:"WER",unit:"%",better:"lower",
@@ -4087,7 +4088,7 @@ const BENCHMARKS=[
   {id:"asr_size",name:"端侧模型体积 (GB)",domain:"ASR",metric:"体积",unit:"GB",better:"lower",
    entries:[{id:"on_device",v:0.67,note:"0.67GB 量化"}]},
   {id:"asr_latency",name:"端侧/流式延迟 (首包/总)",domain:"ASR",metric:"延迟",unit:"ms",better:"lower",
-   entries:[{id:"voxtral_mini",v:70,note:"首包 ~70ms"},{id:"kyutai_stt",v:500,approx:true,note:"实测 ~0.5s（约）"}]},
+   entries:[{id:"voxtral_mini",v:480,note:"流式延迟 ~480ms（论文，≈Whisper）"},{id:"kyutai_stt",v:500,approx:true,note:"实测 ~0.5s（约）"}]},
   {id:"asr_rtfx",name:"服务端吞吐 (RTFx)",domain:"ASR",metric:"RTFx",unit:"",better:"higher",
    entries:[{id:"parakeet_tdt",v:3332,note:"批处理 RTFx"}]},
   {id:"asr_claim",name:"综合质量（官方宣称，无统一数字）",domain:"ASR",metric:"综合",unit:"",better:"rank",
@@ -4139,11 +4140,11 @@ function renderBench(){
     const numeric=b.entries.filter(e=>e.v!=null);
     const qual=b.entries.filter(e=>e.v==null);
     let best=null;
-    if(numeric.length){ best=(b.better==="lower")?Math.min(...numeric.map(e=>e.v)):(b.better==="higher")?Math.max(...numeric.map(e=>e.v)):null; }
+    if(numeric.length>=2){ best=(b.better==="lower")?Math.min(...numeric.map(e=>e.v)):(b.better==="higher")?Math.max(...numeric.map(e=>e.v)):null; }
     const maxV=numeric.length?Math.max(...numeric.map(e=>e.v)):1;
     const span=(maxV-Math.min(...numeric.map(e=>e.v)))||1;
-    const rows=numeric.slice().sort((a,b)=> (b.better==="lower")? a.v-b.v : b.v-a.v).map(e=>{
-      const isBest=(best!=null)&&(e.v===best);
+    const rows=numeric.slice().sort((x,y)=> (b.better==="lower")? x.v-y.v : y.v-x.v).map(e=>{
+      const isBest=(best!=null)&&(numeric.length>=2)&&(e.v===best);
       let goodness = (b.better==="higher") ? (maxV? e.v/maxV : 1) : (span? (maxV-e.v)/span : 1);
       const w=Math.max(6,goodness*100);
       const valTxt=(e.approx?"~":"")+e.v+(b.unit||"");
@@ -4157,7 +4158,7 @@ function renderBench(){
     const dirText={lower:"越低越好",higher:"越高越好",rank:"官方宣称"}[b.better]||"官方宣称";
     return `<div class="bench-card">
       <h3>${esc(b.name)}<span class="bench-dir ${dirCls}">${dirText}</span></h3>
-      <div class="bench-meta">${b.domain} · 指标 ${esc(b.metric)}${b.unit?(" ("+b.unit+")"):""} · ${numeric.length} 个模型有公开数字</div>
+      <div class="bench-meta">${b.domain} · 指标 ${esc(b.metric)}${b.unit?(" ("+b.unit+")"):""} · ${numeric.length>=2? numeric.length+" 个模型有公开数字（★ 为该数据集最优）" : "已收录 "+numeric.length+" 个结果（暂无同口径对比，不排名）"}</div>
       ${rows||'<p class="muted">该数据集暂无公开统一数字。</p>'}
       ${qtags?`<div class="qline">${qtags}</div>`:""}
     </div>`;
@@ -4169,7 +4170,7 @@ function renderBench(){
       <div><label>领域</label><select id="bDom"><option value="All">全部</option><option value="ASR">ASR</option><option value="TTS">TTS</option></select></div>
       <div style="display:flex;align-items:flex-end"><label style="display:flex;gap:6px;align-items:center;font-size:13px;color:#374151"><input type="checkbox" id="bNum"> 仅显示有公开数字的榜单</label></div>
     </div>
-    <div class="note">⚠️ 口径：<b>每个数据集是独立评测，跨数据集/跨模型不可直接比较</b>。同一数据集下仅列入官方公开了数字的模型并按方向排序（★ 为该数据集最优）；未公开统一数字的以「官方宣称」标签单列、<b>不参与排序</b>。数字来源：论文/技术报告或榜单/发布页，已在卡片注明。</div>
+    <div class="note">⚠️ 口径：<b>每个数据集是独立评测，跨数据集/跨模型不可直接比较</b>。同一数据集下仅列入官方公开了数字的模型并按方向排序（★ 为该数据集最优）；未公开统一数字的以「官方宣称」标签单列、<b>不参与排序</b>。数字来源：论文/技术报告或榜单/发布页，已在卡片注明。仅当同数据集≥2 个公开数字时才排序标★，单一结果只标注「已收录结果」、不作排名。</div>
     <div class="grid g2">${cards}</div>
     <p class="stat">点击模型名可进入该模型的论文精读卡片。</p>
   `;
@@ -4239,7 +4240,7 @@ function renderMatrix(){
 $("#globSearch").addEventListener("input",e=>{
   const q=e.target.value.trim();
   if(q){modelFilter.q=q;if(location.hash!=="#/models")location.hash="#/models";else renderModels();}
-  else{modelFilter.q="";}
+  else{modelFilter.q="";if(location.hash!=="#/models")location.hash="#/models";else renderModels();}
 });
 router();
 </script>

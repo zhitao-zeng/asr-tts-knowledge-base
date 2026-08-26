@@ -61,7 +61,7 @@ const sandbox = {
 sandbox.globalThis = sandbox;
 vm.createContext(sandbox);
 // 顶层 const 声明不会挂到 sandbox 全局，故在同一脚本作用域内把结果导出到 globalThis
-const exportHook = "\n;try{globalThis.__KB=KB;globalThis.__INSIGHTS=INSIGHTS;}catch(e){}\n";
+const exportHook = "\n;try{globalThis.__KB=KB;globalThis.__INSIGHTS=INSIGHTS;globalThis.__BENCHMARKS=BENCHMARKS;}catch(e){}\n";
 try {
   vm.runInContext(js + exportHook, sandbox, { timeout: 8000 });
 } catch (e) {
@@ -118,10 +118,40 @@ for (const m of KB.models) {
 const orphan = Object.keys(INSIGHTS).filter((k) => !KB.models.some((m) => m.id === k));
 orphan.forEach((k) => problems.push(`[孤儿] INSIGHTS 含 KB 不存在的模型 ${k}`));
 
+// 6) Benchmark 条目 id 必须能在 KB.models 解析（防四源漂移 / 笔误）
+const modelIds = new Set(KB.models.map((m) => m.id));
+let benchRows = 0;
+for (const b of sandbox.__BENCHMARKS || []) {
+  for (const e of b.entries || []) {
+    benchRows++;
+    ok(modelIds.has(e.id), `[基准漂移] 数据集 "${b.id}" 引用了不存在的模型 id: ${e.id}`);
+  }
+}
+
+// 7) 已核实事实的回归守护（防本次 P0 纠错再次漂移）
+const CANONICAL = {
+  cohere_transcribe: { date: "2026-03", domain: "ASR", licenseRe: /Apache/i },
+  fireredasr2:       { domain: "ASR", orgRe: /小红书/ },
+  voxtral_mini:      { date: "2026-02", domain: "ASR", paperRe: /2602\.11298/ },
+  fishaudio_s2:      { date: "2026-03", domain: "TTS", has_arxiv: true, paperRe: /2603\.08823/ },
+};
+for (const [id, rule] of Object.entries(CANONICAL)) {
+  const m = KB.models.find((x) => x.id === id);
+  ok(m, `[守护] 缺失已核实模型 ${id}`);
+  if (!m) continue;
+  if (rule.date !== undefined) ok(m.date === rule.date, `[守护] ${id} date 应为 ${rule.date}，实为 ${m.date}`);
+  if (rule.domain !== undefined) ok(m.domain === rule.domain, `[守护] ${id} domain 应为 ${rule.domain}，实为 ${m.domain}`);
+  if (rule.licenseRe) ok(rule.licenseRe.test(m.license || ""), `[守护] ${id} license 应匹配 ${rule.licenseRe}，实为 "${m.license}"`);
+  if (rule.orgRe) ok(rule.orgRe.test(m.org || ""), `[守护] ${id} org 应匹配 ${rule.orgRe}，实为 "${m.org}"`);
+  if (rule.paperRe) ok(rule.paperRe.test(m.paper_url || ""), `[守护] ${id} paper_url 应匹配 ${rule.paperRe}，实为 "${m.paper_url}"`);
+  if (rule.has_arxiv !== undefined) ok(m.has_arxiv === rule.has_arxiv, `[守护] ${id} has_arxiv 应为 ${rule.has_arxiv}，实为 ${m.has_arxiv}`);
+}
+
 // 5) 汇总
 console.log(`模型总数: ${KB.models.length}`);
 console.log(`INSIGHTS 条目数: ${total} (期望 ${KB.models.length * 3})`);
 console.log(`每篇 3 条达成: ${KB.models.every((m) => (INSIGHTS[m.id] || []).length === 3)}`);
+console.log(`Benchmark 条目数: ${benchRows}（均能在 KB.models 解析）`);
 if (orphan.length) console.log(`孤儿 key: ${orphan.length}`);
 
 if (problems.length) {
@@ -129,6 +159,6 @@ if (problems.length) {
   problems.forEach((p) => console.error("  - " + p));
   process.exit(1);
 } else {
-  console.log("\n✅ 校验通过：56 模型全覆盖、每篇恰好 3 条、无退化条目、闭源前缀合规。");
+  console.log(`\n✅ 校验通过：${KB.models.length} 模型全覆盖、每篇恰好 3 条、无退化条目、闭源前缀合规、基准无漂移、已核实事实守护通过。`);
   process.exit(0);
 }
