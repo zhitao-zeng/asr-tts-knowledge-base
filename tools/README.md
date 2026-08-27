@@ -116,6 +116,51 @@ node tools/gen_seo.js                      # 同步 sitemap（含 papers-read/ �
   自动出现「全文双语精读」入口，sitemap 自动收录。
 - `validate_paper.js` 已接入 CI（`.github/workflows/validate.yml`）；CI 无 `.cache`，
   自动退化为数据自洽校验。
+- **防重跑**：对已有 `data/papers/*.js` 成品的论文不要再跑 `extract_paper.py`
+  （会改变 block/sentence 编号使结构校验失败）；确需重跑必须同步迁移 `.cache/papers/zh/<id>/` 片段的 key。
+
+### 3.1 翻译 agent 派发模板（通用 prompt，把 `<ID>` 换成 arXiv 编号）
+
+```text
+你在 /mnt/disk1/zengzhitao/asr-tts-knowledge-base 仓库工作。任务：为论文 arXiv:<ID> 撰写「全文中文翻译 + 句子级讲解」数据，供双语精读静态页使用。只允许创建/修改 .cache/papers/zh/<ID>/ 下的文件，仓库其他文件一律不碰。
+
+一、先读（按顺序）
+1. tools/PAPER_DATA_SPEC.md —— 数据规范，必须严格遵守
+2. tools/glossary.json —— 术语表
+3. .cache/papers/<ID>.txt —— 抽取层全文，含全部 section/block/sentence id 与英文原文（大文件分段读完；若不存在先跑 python3 tools/extract_paper.py papers/<ID>.pdf）
+4. 校准讲解语气，运行：
+   node -e "require('/mnt/disk1/zengzhitao/asr-tts-knowledge-base/data/kb.js'); const map=require('/mnt/disk1/zengzhitao/asr-tts-knowledge-base/.cache/model_map.json'); const mid=map['<ID>'].model_id; console.log('model_id:', mid); console.log(JSON.stringify({deep:(globalThis.DEEP||{})[mid], insights:(globalThis.INSIGHTS||{})[mid]}, null, 1))"
+   这是该模型已有的知识卡分析，讲解的深度、具体性和「敢质疑」的语气向它看齐；可呼应但不得照抄。
+5. 质量范例（可选）：data/papers/2212.04356.js（已完成的 Whisper 精读数据）
+
+二、产出（目录 .cache/papers/zh/<ID>/）
+1. meta.json：{"model_id": "<从 .cache/model_map.json 查得>", "title_zh": "<论文标题的中文译名>"}
+2. 每个非豁免 section 一个片段 <sec_id>.json：
+   {"title_zh": "该节标题译名", "sentences": {"<sid>": "译文。", ...}, "blocks": {"<图表标题id>": "译文", "<table_body id>": "一句说明（可选）"}}
+   - 豁免、不用写片段：sec-references、sec-front
+   - key 必须与抽取层 id 完全一致，覆盖该 section 全部句子与全部 figure_caption/table_caption
+3. annotations.json：15–25 条句子级讲解（schema 见 SPEC）
+
+三、翻译要求
+- 按段落通读后逐句意译；术语遵守 glossary（首次出现「中文（English）」，之后统一）
+- 数字保留阿拉伯原形（"680,000 小时" 不要写成 "68 万小时"）；模型/数据集/指标名不译；[12]、Table 3、Figure 2 等引用编号必须原样保留
+- 抽取残留（断词、连字 ﬁ/ﬂ、乱码、版权页脚行）按上下文自然译出或如实标注，不臆造原文没有的内容
+- 中文通顺、不翻译腔，每句以中文标点结尾
+
+四、讲解要求
+- 15–25 条；选句覆盖方法/实验/局限多个 section，不要挤在 Introduction
+- 每条 80–250 字，直接、具体、敢质疑
+- kind 枚举：concept/motivation/comparison/number/engineering/critique/connection；featured 标 8–12 条；一句最多挂 1 条
+- anchor.quote 必须从 .txt 抽取文本里复制粘贴（保留 ﬁ 等连字），不得手打；sentence_id 必须真实存在
+
+五、自检（必须全绿）
+cd /mnt/disk1/zengzhitao/asr-tts-knowledge-base
+node tools/compile_paper.js <ID> && node tools/validate_paper.js <ID>
+报错就修（常见：漏句子、quote 不是子串、数字丢失、引用丢失），直到退出码 0。
+
+六、最终回复只汇报
+覆盖 section 数/句子总数、讲解条数与 kind 分布、validate 是否通过、存疑的点（若有）。
+```
 
 ---
 
