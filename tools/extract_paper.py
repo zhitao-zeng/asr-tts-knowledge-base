@@ -120,8 +120,11 @@ def extract(pdf_path):
         norm = re.sub(r"\d+", "#", t.strip())[:60]
         # 纯数字/节号行不参与“跨页重复”过滤（页码规范化后都是 "#"，会误杀分体式标题编号；
         # 页码由下面的位置规则处理）
+        # 首页大字号行也不过滤：论文标题常与页眉 running head 同文（如 Whisper），
+        # 重复的是页眉（小字），首页 14pt+ 的是真标题
         if len(t) < 70 and norm in repeated and not SEC_NUM_ONLY_RE.match(t):
-            continue
+            if not (l["page"] == 1 and l["size"] >= 13):
+                continue
         if SEC_NUM_ONLY_RE.match(t) and not (l["bold"] and l["size"] >= BODY_SIZE_MIN):
             if l["y0"] < 70 or l["y1"] > page_h - 55:
                 continue  # 页边页码
