@@ -18,3 +18,7 @@ jobs:
       # 闭源推导注带规定前缀）。注意：不拉取 Git LFS（校验只需 index.html）。
       - name: Run insight quality gate
         run: node tools/validate.js
+      # 论文全文双语精读门禁：data/papers/*.js 的翻译覆盖、锚点有效性、
+      # 数字/引用一致性（data/papers/ 为空时自动跳过）。
+      - name: Run paper-reader quality gate
+        run: node tools/validate_paper.js

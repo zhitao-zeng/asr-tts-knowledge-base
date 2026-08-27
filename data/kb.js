@@ -316,6 +316,7 @@ globalThis.KB = {
       "has_arxiv": true,
       "source_type": "论文",
       "pdf_local": "papers/2603.10420.pdf",
+      "reader_paper": "2603.10420",
       "license": "开源(权重)",
       "params": "LLM 8B+ / AED 1B+",
       "metrics": {
@@ -2253,6 +2254,8 @@ globalThis.KB = {
       "paper_url": "https://arxiv.org/abs/2603.08823",
       "has_arxiv": true,
       "source_type": "论文",
+      "pdf_local": "papers/2603.08823.pdf",
+      "reader_paper": "2603.08823",
       "license": "开源",
       "params": "4B",
       "metrics": {
@@ -2731,6 +2734,7 @@ globalThis.KB = {
       "has_arxiv": true,
       "source_type": "论文",
       "pdf_local": "papers/2212.04356.pdf",
+      "reader_paper": "2212.04356",
       "license": "MIT(代码)/权重受限",
       "params": "Large-v3 约 1.5B",
       "metrics": {

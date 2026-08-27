@@ -81,13 +81,60 @@ const INSIGHTS = Object.assign({},
 
 ---
 
-## 3. 目录说明
+## 3. 论文全文双语精读流水线（papers-read/）
+
+在「每篇 3 条 insight」之上的第二层交付：**全文原文 + 全文中文翻译 + 句子级锚定讲解**，
+产出 `papers-read/<arxiv_id>/index.html` 静态阅读页（三种阅读模式、讲解密度/深度开关，
+可 file:// 离线打开，SEO 可爬）。数据规范详见 `tools/PAPER_DATA_SPEC.md`。
+
+```bash
+# 1) PDF → 结构化正文（PyMuPDF；保留页码/标题层级/句子/图表标题/公式，稳定 ID）
+python3 tools/extract_paper.py papers/<arxiv_id>.pdf
+#    产物：.cache/papers/<id>.json（结构层）+ .cache/papers/<id>.txt（通读视图）
+
+# 2) 翻译 agent 撰写片段（LLM 判断步骤，无法纯脚本化）：
+#    .cache/papers/zh/<id>/meta.json            model_id + 标题译名
+#    .cache/papers/zh/<id>/<sec_id>.json      每 section 的句子/标题翻译映射
+#    .cache/papers/zh/<id>/annotations.json   15–25 条句子级讲解（锚定 sentence_id + quote）
+
+# 3) 装配 + 质检（机械步骤，agent 不得手改 data/papers/*.js 的结构与原文）
+node tools/compile_paper.js <arxiv_id>     # 片段 + 抽取层 → data/papers/<id>.js
+node tools/validate_paper.js [id ...]      # 覆盖/锚点/quote/数字/引用/枚举/密度门禁
+
+# 4) 生成静态阅读页
+node tools/build_paper.js [id ...]         # → papers-read/<id>/index.html + 索引页
+node tools/gen_seo.js                      # 同步 sitemap（含 papers-read/ 路径）
+```
+
+要点：
+
+- **结构只信抽取层**：id / original / 顺序由 `extract_paper.py` 产出，agent 只填 `zh` 文本映射，
+  从机制上杜绝重打原文导致的漂移。
+- **豁免区**：`sec-references` / `sec-front` 不强制翻译；`equation` 不翻译；`table_body`
+  （大附录数值表的 PDF 碎块）只写一句说明。
+- **关联主站**：模型条目加 `reader_paper: "<arxiv_id>"` 字段后，模型详情页 / 逐句解读页
+  自动出现「全文双语精读」入口，sitemap 自动收录。
+- `validate_paper.js` 已接入 CI（`.github/workflows/validate.yml`）；CI 无 `.cache`，
+  自动退化为数据自洽校验。
+
+---
+
+## 4. 目录说明
 
 ```
 tools/
 ├── validate.js          # 质检门禁（Node，无依赖，CI 调用）
-├── extract.py           # PDF 全文抽取
+├── validate_paper.js    # 论文精读数据门禁（CI 调用）
+├── compile_paper.js     # 翻译片段 → data/papers/<id>.js 装配器
+├── build_paper.js       # data/papers/<id>.js → papers-read/ 静态阅读页
+├── extract_paper.py     # PDF → 结构化 JSON（PyMuPDF，稳定 ID）
+├── glossary.json        # ASR/TTS 术语表（翻译一致性）
+├── PAPER_DATA_SPEC.md   # 精读数据规范（schema + 翻译/讲解规则）
+├── extract.py           # PDF 全文抽取（insight 流水线用）
 ├── build_excerpts.py    # 排除参考文献的结构化摘要
 ├── build_derived.py     # 闭源模型派生锚点
+├── gen_seo.js           # JSON-LD / models.html / sitemap / robots
+├── split_data.js        # index.html ↔ data/kb.js 数据抽离
+├── add_caps.js          # 能力矩阵 caps 字段
 └── README.md            # 本文
 ```

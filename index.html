@@ -1083,6 +1083,7 @@
     <a href="#/bench" data-route>横评 Benchmark</a>
     <a href="#/matrix" data-route>能力矩阵</a>
     <a href="#/insights" data-route>论文逐句解读</a>
+    <a href="papers-read/">全文精读</a>
     <span class="spacer"></span>
     <input id="globSearch" type="text" placeholder="搜索模型…" style="width:160px">
   </nav>
@@ -1185,6 +1186,8 @@ function renderHome(){
       <h3>📊 横评 Benchmark（按数据集）</h3><div class="sum">按数据集归集的对比：每个榜单下列出在该数据集上<strong>公开了具体数字</strong>的模型与数值（★ 为最优），未公开者单列「官方宣称」、不参与排序。</div></a>
     <a class="card model-card" href="#/insights" style="text-decoration:none;color:inherit">
       <h3>📝 论文逐句解读</h3><div class="sum">${Object.keys(INSIGHTS||{}).length} 篇旗舰论文的<strong>原句/论点 + Insight 旁注</strong>：逐句拆解设计动机、巧妙之处与可疑之处，支持上一篇/下一篇连续读。</div></a>
+    <a class="card model-card" href="papers-read/" style="text-decoration:none;color:inherit">
+      <h3>📖 全文双语精读</h3><div class="sum">${KB.models.filter(m=>m.reader_paper).length} 篇论文的<strong>全文中文翻译 + 句子级锚定讲解</strong>：中英对照 / 仅中文 / 仅原文，讲解挂在具体句子旁，静态页可离线、可被检索。</div></a>
   </div>
   <div class="note">⚠️ 口径说明：HF Open ASR 榜偏英文 WER、Artificial Analysis 偏自然度盲评/词错率，各榜头部差距常 &lt; 1–2 点。部分工业模型仅发布页/榜单、无独立 arXiv 论文，已在卡片用来源标签标明（并标注「官方 / 链接待核实」）。少数 2025 年发表但 2026 上半年仍是主流参照的模型已标注。带 <span class="deep-badge">精读</span> 的字段均基于论文/官方技术报告的具体数字。<br>📦 <b>离线包</b>：本页已与 <code>papers/</code> 目录（收录的可下载 arXiv 原文 PDF）一同交付。卡片/详情页带 <span class="pill paper">📄 本地PDF</span> 的模型，可直接点开离线 PDF；无公开 PDF 的（闭源或仅发布页）已如实标注。 论文 PDF 均来自 arXiv（版权归原作者 / arXiv，本仓库仅作研究聚合托管，请遵守原许可）。</div>
   `;
@@ -1299,7 +1302,7 @@ function renderInsight(id){
         <h1 style="margin:0">${esc(m.name)} <span class="muted" style="font-size:15px">· 论文逐句解读</span></h1>
         <div>${domTag(m.domain)} ${srcPill(m.source_type)}</div>
       </div>
-      <div class="ins-paper-meta">${esc(m.org)} · ${esc(m.date)} · <a class="link" href="#/model/${id}">查看完整论文精读卡片 →</a></div>
+      <div class="ins-paper-meta">${esc(m.org)} · ${esc(m.date)} · <a class="link" href="#/model/${id}">查看完整论文精读卡片 →</a>${m.reader_paper?` · <a class="link" href="papers-read/${esc(m.reader_paper)}/">📖 全文双语精读 →</a>`:""}</div>
       ${items}
     </div>
     <div class="ins-nav">${prevNav}${nextNav}</div>`;
@@ -1346,6 +1349,7 @@ function renderModel(id){
       ${refHtml?`<div class="sec"><div class="h">参考来源</div><ul class="tight">${refHtml}</ul></div>`:""}
       ${(m.pdf_local||m.paper_url)?`<div class="sec"><div class="h">论文 / 来源</div>${m.pdf_local?`<p><a class="link" href="${esc(m.pdf_local)}" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p><p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开。</p>`:''}${m.paper_url?`<p><a class="link" href="${esc(m.paper_url)}" target="_blank" rel="noopener">🔗 在线来源${/arxiv/.test(m.paper_url)?'（arXiv 摘要页）':''}</a></p><p class="muted" style="font-size:12px">PDF 已随仓库直接托管（非 LFS），克隆即离线可读；线上站点亦可直接打开 arXiv 原文。</p>`:''}</div>`:""}
       ${(typeof INSIGHTS!=="undefined"&&INSIGHTS[id])?`<div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div><p><a class="link" href="#/insight/${id}">打开逐句解读 →</a>（${INSIGHTS[id].length} 条原句/论点 + 解读）</p></div>`:""}
+      ${m.reader_paper?`<div class="sec"><div class="h acc">全文双语精读 <span class="deep-badge">新</span></div><p><a class="link" href="papers-read/${esc(m.reader_paper)}/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>`:""}
     </div>
     <p class="src-note">来源类型：${esc(m.source_type)} ${m.has_arxiv?"· 含 arXiv 论文":""} ${(m.pdf_local)?"· 已下载本地 PDF":""}</p>
   `;

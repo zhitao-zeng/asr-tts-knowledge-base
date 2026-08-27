@@ -2,4 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://zhitao-zeng.github.io/asr-tts-knowledge-base/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://zhitao-zeng.github.io/asr-tts-knowledge-base/models.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2603.10420/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2603.08823/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2212.04356/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>

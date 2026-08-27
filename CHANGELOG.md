@@ -5,6 +5,22 @@
 
 ---
 
+## [2026-08-26] 全文双语精读（Annotated Bilingual Paper Reader）
+
+- **新产品层**：在「每篇 3 条 insight」之上增加**全文原文 + 全文中文翻译 + 句子级锚定讲解**，
+  首批 3 篇原型：Whisper（2212.04356）、FireRedASR2S（2603.10420）、Fish Audio S2（2603.08823）。
+- **静态阅读页** `papers-read/<arxiv_id>/`：中英对照 / 仅中文 / 仅原文三种模式，
+  讲解密度（关闭/精选/全部）与深度（白话/技术）开关；讲解锚定到具体句子，
+  桌面端右侧浮动面板、移动端段内展开；预渲染全文，SEO 可爬，file:// 可离线打开。
+- **流水线**：`extract_paper.py`（PyMuPDF 结构化抽取，稳定 block/sentence ID、
+  页眉页脚过滤、附录字母标题、表格碎块合并）→ 翻译片段（LLM agent）→
+  `compile_paper.js`（机械装配，结构只信抽取层）→ `validate_paper.js`
+  （覆盖/锚点/quote/数字/引用/枚举/密度门禁，已入 CI）→ `build_paper.js`（静态页）。
+- **数据规范**：`tools/PAPER_DATA_SPEC.md` + `tools/glossary.json`（术语表）。
+- **主站集成**：模型详情页与逐句解读页新增「全文双语精读」入口（`reader_paper` 字段驱动），
+  导航与首页加入口，sitemap 收录 papers-read/ 路径。
+- **论文 PDF**：补录 Fish Audio S2（2603.08823）原文 PDF 至 `papers/`。
+
 ## [2026-08-25] 优化与工程化
 
 - **构建流水线入库**：新增 `tools/`（extract.py / build_excerpts.py /

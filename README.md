@@ -9,6 +9,7 @@
 - `index.html` + `data/kb.js` — 主交付物。直接在浏览器打开 `index.html` 即可使用（哈希路由、渲染逻辑内联于 index.html、结构化数据抽离至 `data/kb.js`、无需服务器、可离线以 `file://` 直接打开）。
   - **模型库**：56 个 ASR/TTS 模型卡片，含架构、定位、关键能力与局限。
   - **论文逐句解读**：31 篇论文的全文本地化 + Insight 旁注，可在线检索、定位原文段落。
+- `papers-read/` — **全文双语精读**（新）：逐篇论文的「全文原文 + 全文中文翻译 + 句子级锚定讲解」静态阅读页。中英对照 / 仅中文 / 仅原文三种模式，讲解密度（关闭/精选/全部）与深度（白话/技术）可调，讲解挂在具体句子旁。首批：Whisper、FireRedASR2S、Fish Audio S2。
 - `ASR_TTS_2026H1_论文汇总.html` — 论文汇总视图（含 arXiv 链接、主题归类）。
 - `papers/` — 31 篇论文 PDF 原文，直接随仓库托管（普通文件，克隆即得，无需 LFS / `git lfs pull`）。
 
@@ -56,8 +57,9 @@ open index.html       # macOS
 ## 更新与版本
 
 - 版本与变更记录见 `CHANGELOG.md`。
-- 模型/论文的增补、insight 重写的复现流程见 `tools/README.md`；每次改动后跑
-  `node tools/validate.js` 做质检门禁。
+- 模型/论文的增补、insight 重写、全文双语精读（`papers-read/`）的复现流程见 `tools/README.md`
+  与 `tools/PAPER_DATA_SPEC.md`；每次改动后跑 `node tools/validate.js` 与
+  `node tools/validate_paper.js` 做质检门禁。
 
 ## 技术
 
