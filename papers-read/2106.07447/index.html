@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HuBERT：基于隐藏单元掩码预测的自监督语音表示学习 · 全文双语精读 | ASR/TTS 知识库</title>
+<meta name="description" content="HuBERT：基于隐藏单元掩码预测的自监督语音表示学习（HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units）全文中文翻译 + 20 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2106.07447/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HuBERT：基于隐藏单元掩码预测的自监督语音表示学习 · 全文双语精读">
+<meta property="og:description" content="HuBERT：基于隐藏单元掩码预测的自监督语音表示学习（HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units）全文中文翻译 + 20 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta property="og:url" content="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2106.07447/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units","alternateName":"HuBERT：基于隐藏单元掩码预测的自监督语音表示学习","url":"https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2106.07447/","isBasedOn":"https://arxiv.org/abs/2106.07447","inLanguage":["en","zh-CN"],"isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Zhitao Zeng"}}</script>
+<style>
+:root{--brand:#2563eb;--brand2:#4338ca;--accent:#0f766e;--warn:#b45309;--bg:#f6f8fb;--panel:#fff;--line:#e5e7eb;--muted:#64748b;--ink:#1f2937;--chip:#eef2f7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.75}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header.top{background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.nav{max-width:1180px;margin:0 auto;display:flex;gap:6px;align-items:center;padding:10px 18px;font-size:14px;flex-wrap:wrap}
+.nav .brand{font-weight:800;margin-right:8px}
+.nav .spacer{flex:1}
+main{max-width:1180px;margin:0 auto;padding:20px 18px 80px;display:grid;grid-template-columns:220px 1fr;gap:24px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.muted{color:var(--muted)}
+/* 头部 */
+.phead{grid-column:1/-1}
+.phead h1{font-size:24px;margin:8px 0 2px}
+.phead .en-title{font-size:15px;color:var(--muted);font-style:italic}
+.phead .meta{font-size:13.5px;color:var(--muted);margin-top:8px}
+.phead .meta a{margin:0 6px}
+/* 控制条 */
+.controls{grid-column:1/-1;display:flex;gap:18px;flex-wrap:wrap;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 16px;font-size:13.5px;position:sticky;top:52px;z-index:40}
+.controls .grp{display:flex;gap:6px;align-items:center}
+.controls label{color:var(--muted);font-weight:600;font-size:12.5px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.seg button{border:0;background:#fff;padding:5px 11px;font-size:13px;cursor:pointer;color:var(--muted);font-weight:600}
+.seg button.on{background:var(--brand);color:#fff}
+/* 目录 */
+.toc{position:sticky;top:118px;align-self:start;max-height:calc(100vh - 140px);overflow:auto;font-size:13px;padding:8px 0}
+.toc a{display:block;color:var(--muted);padding:3px 10px;border-radius:7px;line-height:1.45}
+.toc a:hover{background:var(--chip);color:var(--brand);text-decoration:none}
+.toc a.lv2{padding-left:24px;font-size:12.5px}
+/* 正文 */
+.reader{min-width:0}
+section{margin-bottom:8px}
+.sech{scroll-margin-top:120px}
+.sech .secnum{color:var(--brand2)}
+h2.sech{font-size:21px;margin:26px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3.sech{font-size:16.5px;margin:20px 0 8px}
+.sech .t-en{display:block;font-size:12.5px;color:var(--muted);font-weight:400;font-style:italic;margin-top:1px}
+/* 段落：双语 */
+.pblk{margin:10px 0;position:relative}
+.en-lines{color:#334155;font-size:14px;line-height:1.7;margin:4px 0}
+.zh-lines{font-size:15.5px;line-height:1.85;margin:4px 0}
+.sent{position:relative}
+/* 阅读模式切换 */
+body.mode-en .zh-lines,body.mode-en .cap .zh,body.mode-en .sech .t-zh{display:none}
+body.mode-zh .en-lines,body.mode-zh .cap .en,body.mode-zh .sech .t-en{display:none}
+body.mode-bi .en-lines{border-left:3px solid var(--chip);padding-left:10px}
+/* [解] 标记 */
+.mk{display:inline-block;vertical-align:super;font-size:10.5px;line-height:1.4;margin-left:2px;padding:1px 5px;border-radius:5px;border:1px solid #c7d2fe;background:#eef2ff;color:#4338ca;cursor:pointer;font-weight:700}
+.mk:hover{background:#e0e7ff}
+.mk i{font-style:normal;margin-left:2px;color:#7c3aed}
+.mk.open{background:var(--brand2);color:#fff}
+body.dens-off .mk{display:none}
+body.dens-feat .mk:not(.feat){display:none}
+/* 讲解面板 */
+.ann-panel{display:none;margin:8px 0 14px;max-width:520px}
+.ann-panel.open{display:block}
+.ann-card{background:#fbfaff;border:1px solid #ddd6fe;border-left:4px solid var(--brand2);border-radius:10px;padding:11px 14px;font-size:14px}
+.ann-kind{display:inline-block;font-size:11px;font-weight:700;color:#4338ca;background:#ede9fe;border-radius:999px;padding:1px 9px;margin-bottom:5px}
+.kind-critique .ann-kind{color:#991b1b;background:#fee2e2}
+.kind-critique{border-left-color:#dc2626;background:#fffbeb;border-color:#fde68a}
+.kind-engineering .ann-kind{color:#166534;background:#dcfce7}
+.kind-engineering{border-left-color:#16a34a}
+.ann-title{font-weight:800;margin:2px 0 4px}
+.ann-quote{font-size:12px;color:var(--muted);font-style:italic;border-left:2px solid var(--line);padding-left:8px;margin-bottom:6px}
+.exp{font-size:13.5px;line-height:1.7;color:#334155}
+body.depth-tech .exp-plain{display:none}
+body.depth-plain .exp-tech{display:none}
+body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-plain)) .exp-tech{display:block}
+.ann-more{margin-top:8px}
+.ann-more summary{font-size:12.5px;color:var(--brand2);cursor:pointer}
+/* 桌面端：讲解面板浮动到右侧 */
+@media(min-width:1180px){
+  .ann-zone{position:absolute;right:-315px;width:300px;top:0}
+  .ann-panel{position:absolute;margin:0;max-width:300px}
+  .reader{position:relative;margin-right:315px}
+  main{grid-template-columns:210px 1fr}
+}
+/* 图/表标题、公式、表格主体 */
+.cap{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:12px 0;font-size:13px}
+.cap-k{display:inline-block;font-size:11px;font-weight:700;color:#0f766e;background:#ccfbf1;border-radius:6px;padding:1px 7px;margin-right:6px}
+.cap p{margin:3px 0;display:inline}
+.cap .zh{display:block;color:#0f172a}
+.cap .en{color:var(--muted);display:block;font-size:12.5px}
+.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
+.eq code{background:none;font-size:14px}
+.tbwrap{margin:10px 0}
+.tb-note{font-size:13px;color:var(--muted);margin:4px 0}
+.tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+.tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
+.refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
+/* 三分钟摘要 */
+.tldr{grid-column:1/-1;border-left:4px solid var(--brand2)}
+.tldr h2{margin:0 0 10px;font-size:18px}
+.insight-block{border:1px solid #e6e0f3;border-radius:10px;padding:10px 14px;margin:10px 0;background:#fbfaff}
+.ins-src{display:inline-block;font-size:11px;color:#4338ca;background:#ede9fe;border-radius:999px;padding:1px 9px;margin-bottom:6px}
+.ins-quote{font-style:italic;color:#1e1b4b;font-size:13.5px;margin-bottom:6px}
+.ins-body{font-size:14px;line-height:1.75;color:#334155}
+footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
+@media(max-width:900px){
+  main{grid-template-columns:1fr}
+  .toc{display:none}
+  .controls{position:static}
+}
+</style>
+</head>
+<body class="mode-bi dens-feat depth-tech">
+<header class="top"><nav class="nav">
+  <span class="brand">ASR/TTS 知识库<span style="color:var(--brand)">.</span> 论文精读</span>
+  <a href="../../index.html">交互知识库</a>
+  <a href="../">精读列表</a>
+  <a href="../../index.html#/model/hubert">HuBERT 模型卡</a>
+  <span class="spacer"></span>
+  <a href="https://arxiv.org/abs/2106.07447" target="_blank" rel="noopener">arXiv:2106.07447</a>
+  <a href="../../papers/2106.07447.pdf" target="_blank" rel="noopener">本地 PDF</a>
+</nav></header>
+<main>
+  <div class="phead card">
+    <h1>HuBERT：基于隐藏单元掩码预测的自监督语音表示学习</h1>
+    <div class="en-title">HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units</div>
+    <div class="meta">
+      关联模型：<a href="../../index.html#/model/hubert">HuBERT</a>（Meta · 2021-06） ·
+      全文 123 个语块 · 讲解 20 条（精选 12 条）
+    </div>
+  </div>
+  <div class="controls">
+    <div class="grp"><label>阅读模式</label><span class="seg" id="segMode">
+      <button data-v="bi" class="on">中英对照</button><button data-v="zh">仅中文</button><button data-v="en">仅原文</button></span></div>
+    <div class="grp"><label>讲解密度</label><span class="seg" id="segDens">
+      <button data-v="off">关闭</button><button data-v="feat" class="on">精选</button><button data-v="all">全部</button></span></div>
+    <div class="grp"><label>讲解深度</label><span class="seg" id="segDepth">
+      <button data-v="plain">白话</button><button data-v="tech" class="on">技术</button></span></div>
+  </div>
+  
+  <section class="tldr card">
+    <h2>三分钟看懂这篇论文</h2>
+    
+      <div class="insight-block">
+        <div class="ins-src">arXiv:2106.07447 Abstract</div>
+        <div class="ins-quote">we propose the Hidden-Unit BERT (HuBERT) approach for self-supervised speech representation learning, which utilizes an offline clustering step to provide aligned target labels for a BERT-like prediction loss.</div>
+        <div class="ins-body"><strong>核心创新</strong>：与 wav2vec 2.0 的「在线量化+对比学习」不同，HuBERT 先用<strong>离线聚类</strong>生成对齐伪标签，再用 <strong>BERT 式掩码预测</strong>去预测这些隐藏单元。它把语音自监督从「对比」扭成「预测聚类目标」，思路更接近 NLP 的 MLM。</div>
+      </div>
+      <div class="insight-block">
+        <div class="ins-src">arXiv:2106.07447 Abstract</div>
+        <div class="ins-quote">HuBERT relies primarily on the consistency of the unsupervised clustering step rather than the intrinsic quality of the assigned cluster labels.</div>
+        <div class="ins-body"><strong>关键方法洞察</strong>：HuBERT 的成功不依赖聚类标签本身多「准」，而依赖<strong>聚类结果的一致性</strong>——只要伪标签稳定，模型就能学到好表示。这降低了「伪标签必须语义正确」的门槛，也解释了为何简单 k-means 教师就能匹敌甚至超过 wav2vec 2.0。</div>
+      </div>
+      <div class="insight-block">
+        <div class="ins-src">arXiv:2106.07447 Abstract</div>
+        <div class="ins-quote">Using a 1B parameter model, HuBERT shows up to 19% and 13% relative WER reduction on the more challenging dev-other and test-other evaluation subsets.</div>
+        <div class="ins-body"><strong>实验结论与边界</strong>：1B 参数下在更难集 dev-other/test-other 上相对降 WER 19%/13%，验证「预测式」自监督在大模型上更优。但代价是离线聚类带来额外流程与迭代（需多轮聚类），且同样是非端到端、需任务特定微调，时代局限与 wav2vec 2.0 类似。</div>
+      </div>
+    <p class="muted" style="font-size:12.5px">以上为论文级三条摘要；下面进入全文双语精读，讲解锚定在具体句子旁。</p>
+  </section>
+  <nav class="toc"><a class="lv1" href="#sec-abstract">摘要</a><a class="lv1" href="#sec-I">I 引言</a><a class="lv1" href="#sec-II">II 方法</a><a class="lv2" href="#sec-II-A">A 为 HuBERT 学习隐藏单元</a><a class="lv2" href="#sec-II-B">B 通过掩码预测学习表示</a><a class="lv2" href="#sec-II-C">C 用簇集成学习</a><a class="lv2" href="#sec-II-D">D 簇分配的迭代精炼</a><a class="lv2" href="#sec-II-E">E 实现</a><a class="lv1" href="#sec-III">III 相关工作</a><a class="lv1" href="#sec-IV">IV 实验细节</a><a class="lv2" href="#sec-IV-A">A 数据</a><a class="lv2" href="#sec-IV-B">B 无监督单元发现</a><a class="lv2" href="#sec-IV-C">C 预训练</a><a class="lv2" href="#sec-IV-D">D 监督微调与解码</a><a class="lv2" href="#sec-IV-E">E 目标质量的度量</a><a class="lv1" href="#sec-V">V 实验结果</a><a class="lv2" href="#sec-V-A">A 主要结果：低资源与高资源设定</a><a class="lv2" href="#sec-V-B">B 分析：k-means 的稳定性</a><a class="lv2" href="#sec-V-C">C 分析：跨层与跨迭代的聚类质量</a><a class="lv2" href="#sec-V-D">D 消融：预测被掩码帧的重要性</a><a class="lv2" href="#sec-V-E">E 消融：簇集成的作用</a><a class="lv2" href="#sec-V-F">F 消融：超参数的影响</a><a class="lv1" href="#sec-VI">VI 结论</a><a class="lv1" href="#sec-references">REFERENCES</a></nav>
+  <article class="reader"><section><div class="pblk plain" id="p-front-1"><p class="refline">Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, Abdelrahman Mohamed</p></div></section>
+<section>
+      <h2 class="sech lv1" id="sec-abstract"><span class="t-zh">摘要</span><span class="t-en">Abstract</span></h2><div class="pblk" id="p-abstract-1">
+          <p class="en-lines"><span class="sent" data-sid="s-abstract-1-1"><span class="en">Self-supervised approaches for speech representa-</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-abstract-1-1"><span class="zh">（本句为断行残句，完整译文见下句。）</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-abstract-2">
+          <p class="en-lines"><span class="sent" data-sid="s-abstract-2-1"><span class="en">tion learning are challenged by three unique problems: (1) there are multiple sound units in each input utterance, (2) there is no lexicon of input sound units during the pre-training phase, and (3) sound units have variable lengths with no explicit segmentation.</span></span> <span class="sent" data-sid="s-abstract-2-2"><span class="en">To deal with these three problems, we propose the Hidden-Unit BERT (HuBERT) approach for self-supervised speech representation learning, which utilizes an ofﬂine clustering step to provide aligned target labels for a BERT-like prediction loss.</span></span> <span class="sent" data-sid="s-abstract-2-3"><span class="en">A key ingredient of our approach is applying the prediction loss over the masked regions only, which forces the model to learn a combined acoustic and language model over the continuous inputs.</span><button class="mk feat" data-sid="s-abstract-2-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-abstract-2-4"><span class="en">HuBERT relies primarily on the consistency of the unsupervised clustering step rather than the intrinsic quality of the assigned cluster labels.</span><button class="mk feat" data-sid="s-abstract-2-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-abstract-2-5"><span class="en">Starting with a simple k-means teacher of 100 clusters, and using two iterations of clustering, the HuBERT model either matches or improves upon the state-ofthe-art wav2vec 2.0 performance on the Librispeech (960h) and Libri-light (60,000h) benchmarks with 10min, 1h, 10h, 100h, and 960h ﬁne-tuning subsets.</span></span> <span class="sent" data-sid="s-abstract-2-6"><span class="en">Using a 1B parameter model, HuBERT shows up to 19% and 13% relative WER reduction on the more challenging dev-other and test-other evaluation subsets.1 Index Terms—Self-supervised learning, BERT.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-abstract-2-1"><span class="zh">语音表示学习的自监督方法面临 3 个独特难题：(1) 每条输入语音中包含多个声学单元；(2) 预训练阶段不存在输入声学单元的词表；(3) 声学单元长度可变，且没有显式的切分边界。</span></span><span class="sent" data-sid="s-abstract-2-2"><span class="zh">为应对这 3 个问题，我们提出用于自监督语音表示学习的隐藏单元 BERT（Hidden-Unit BERT，HuBERT）方法，它利用一个离线聚类步骤，为类 BERT 的预测损失提供对齐的目标标签。</span></span><span class="sent" data-sid="s-abstract-2-3"><span class="zh">我们方法的一个关键要素是将预测损失只施加在被掩码的区域上，这迫使模型在连续输入上同时学习一个声学模型和一个语言模型。</span><button class="mk feat" data-sid="s-abstract-2-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-abstract-2-4"><span class="zh">HuBERT 主要依赖无监督聚类步骤的一致性，而非所分配聚类标签本身的内在质量。</span><button class="mk feat" data-sid="s-abstract-2-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-abstract-2-5"><span class="zh">从一个仅有 100 个簇的简单 k-means 教师出发，经过两轮聚类迭代，HuBERT 在 Librispeech（960h）和 Libri-light（60,000h）基准上、在 10min、1h、10h、100h 和 960h 的各微调子集上，都达到或超过了当时最优的 wav2vec 2.0 的性能。</span></span><span class="sent" data-sid="s-abstract-2-6"><span class="zh">使用 1B 参数的模型，HuBERT 在更具挑战性的 dev-other 和 test-other 评测子集上取得了最高 19% 和 13% 的相对 WER 降低。（代码、预训练与微调模型开源于 fairseq 的 examples/hubert 目录。）关键词：自监督学习，BERT。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-abstract-2-3">
+      <div class="ann-card kind-concept">
+        <div class="ann-kind">概念</div>
+        <div class="ann-title">损失只打掩码区</div>
+        <div class="ann-quote">applying the prediction loss over the masked regions only</div>
+        <div class="exp exp-tech">只对被掩码位置计损失（α=1），是 HuBERT 与「逐帧模仿伪标签」的本质分界：未掩码帧的标签是可见的，若也计损失，模型直接把 k-means 的分类面抄一遍即可，学不到任何序列结构。掩码区计损失才迫使模型做「声音版的完形填空」，声学模型（给未掩码帧编码）和语言模型（长程依赖）被迫同时成立。Table V 的消融证实：目标越差，这一点越关键。</div>
+        
+      </div></div><div class="ann-panel" data-sid="s-abstract-2-4">
+      <div class="ann-card kind-concept">
+        <div class="ann-kind">概念</div>
+        <div class="ann-title">一致性大于正确性</div>
+        <div class="ann-quote">the consistency of the unsupervised clustering step rather than the intrinsic quality of the assigned cluster labels</div>
+        <div class="exp exp-tech">这是全文最贵的洞见。HuBERT 不要求 k-means 标签「是」真正的音素，只要求同一个声音反复被分到同一个簇——标签一致，模型就能把「从上下文推断被掩码簇 id」当成有梯度的任务，语音结构自然被学进表示里。这把 MLM 式预训练对「真词表」的依赖给拆掉了。后续 w2v-BERT、WavLM 这一系列工作的共同点，都是先找一个足够稳定的离散化目标。</div>
+        <div class="exp exp-plain">聚类分错没关系，分得「稳」就行——学生翻来覆去预测同一套标签，语音的规律就逼它自己学会了。</div>
+      </div></div></div>
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-I"><span class="secnum">I</span> <span class="t-zh">引言</span><span class="t-en">INTRODUCTION</span></h2><div class="pblk" id="p-I-1">
+          <p class="en-lines"><span class="sent" data-sid="s-I-1-1"><span class="en">The north star for many research programs has been learning speech and audio representations through listening and interaction, similar to how babies learn their ﬁrst language.</span></span> <span class="sent" data-sid="s-I-1-2"><span class="en">High ﬁdelity speech representation includes disentangled aspects of the spoken content along with non-lexical information of how it is delivered, e.g., speaker identity, emotion, hesitation, interruptions.</span></span> <span class="sent" data-sid="s-I-1-3"><span class="en">Furthermore, reaching a complete situational understanding requires modeling structured noise interleaving and overlapping with the speech signal, e.g., laughter, coughing, lip-smacking, background vehicle engine, birds chirping, or food sizzling sounds.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-I-1-1"><span class="zh">许多研究计划的北极星，是让机器通过聆听和交互来学习语音与音频的表示，就像婴儿习得母语那样。</span></span><span class="sent" data-sid="s-I-1-2"><span class="zh">高保真的语音表示既包含与语音内容解耦的各个侧面，也包含内容如何被表达的非词汇信息，例如说话人身份、情绪、迟疑、打断等。</span></span><span class="sent" data-sid="s-I-1-3"><span class="zh">此外，要达到完整的情境理解，还需要对与语音信号交织、重叠的结构化噪声建模，例如笑声、咳嗽声、咂嘴声、背景中的车辆引擎声、鸟鸣声或食物的滋滋声。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-I-2">
+          <p class="en-lines"><span class="sent" data-sid="s-I-2-1"><span class="en">The need for such high-ﬁdelity representations drove research in self-supervised learning for speech and audio where the targets driving the learning process of a designed pretext task are drawn from the input signal itself.</span></span> <span class="sent" data-sid="s-I-2-2"><span class="en">Examples of pretext tasks for self-supervised speech representation learning include distinguishing near-by features from temporally distant ones [1]–[3], next-step prediction of audio features [4], masked prediction of audio features given unmasked context [5], [6].</span></span> <span class="sent" data-sid="s-I-2-3"><span class="en">Besides, self-supervised learning methods do not rely on any linguistic resources during training, allowing them to learn 1The code, pre-trained and ﬁne-tuned models are available at https:// github.com/pytorch/fairseq/tree/master/examples/hubert. universal representations since labels, annotations, and textonly material ignores rich information in the input signal.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-I-2-1"><span class="zh">对这种高保真表示的需求推动了语音与音频自监督学习的研究：在设计好的前置任务中，驱动学习过程的目标取自输入信号本身。</span></span><span class="sent" data-sid="s-I-2-2"><span class="zh">语音表示自监督学习的前置任务例子包括：区分时间上相近的特征与遥远的特征 [1]–[3]、对音频特征做下一步预测 [4]、在给定未掩码上下文的情况下对被掩码的音频特征做掩码预测 [5]、[6]。</span></span><span class="sent" data-sid="s-I-2-3"><span class="zh">此外，自监督学习方法在训练中不依赖任何语言学资源，因而能够学到通用的表示——标签、标注和纯文本材料都忽略了输入信号中丰富的信息。（脚注 1：代码、预训练与微调模型见 https://github.com/pytorch/fairseq/tree/master/examples/hubert。）</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-I-3">
+          <p class="en-lines"><span class="sent" data-sid="s-I-3-1"><span class="en">Learning speech representations without reliance on large volumes of labeled data is crucial for industrial applications and products with ever-increasing coverage of new languages and domains.</span></span> <span class="sent" data-sid="s-I-3-2"><span class="en">The time needed to collect large labeled datasets covering each of these scenarios is the real bottleneck in the current fast-moving AI industry, with time-to-market playing a critical role for product success.</span></span> <span class="sent" data-sid="s-I-3-3"><span class="en">Building more inclusive applications covering spoken-only dialects and languages is another signiﬁcant beneﬁt of reducing dependence on linguistic resources.</span></span> <span class="sent" data-sid="s-I-3-4"><span class="en">Given their non-standard orthographic rules, many of these languages and dialects have very little or no resources at all.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-I-3-1"><span class="zh">在工业应用与产品中，新语言和新领域的覆盖不断扩大，不依赖大规模标注数据来学习语音表示至关重要。</span></span><span class="sent" data-sid="s-I-3-2"><span class="zh">为上述每一种场景收集大规模标注数据集所需的时间，是当今快速迭代的 AI 产业中真正的瓶颈——上市时间对产品成败起着关键作用。</span></span><span class="sent" data-sid="s-I-3-3"><span class="zh">降低对语言学资源的依赖还有另一大好处：能构建覆盖纯口语方言与语言的、更具包容性的应用。</span></span><span class="sent" data-sid="s-I-3-4"><span class="zh">由于这些语言和方言的书写规则并不规范，其中许多几乎没有或完全没有可用的语言学资源。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-I-4">
+          <p class="en-lines"><span class="sent" data-sid="s-I-4-1"><span class="en">Pseudo-labeling (PL), also known as self-training and belongs to the family of semi-supervised learning techniques, has been the dominant approach for utilizing unlabeled speech and audio with successful applications dating back to the mid1990s [7]–[10].</span><button class="mk" data-sid="s-I-4-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-I-4-2"><span class="en">PL starts with some supervised data to train a ”teacher” model in one speciﬁc downstream task.</span></span> <span class="sent" data-sid="s-I-4-3"><span class="en">Pseudolabels are then generated for the unlabeled data using the teacher model.</span></span> <span class="sent" data-sid="s-I-4-4"><span class="en">Next, a student model is trained using the combined supervised and teacher-labeled data either using the standard cross-entropy [9] loss or using a contrastive loss [11] to account for noise in teacher-generated labels.</span></span> <span class="sent" data-sid="s-I-4-5"><span class="en">The pseudolabeling process may be repeated multiple times to improve teacher label quality [12] iteratively.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-I-4-1"><span class="zh">伪标注（Pseudo-labeling，PL），又称自训练，属于半监督学习技术家族，自 1990 年代中期以来一直是利用无标注语音与音频的主流方法，并有许多成功应用 [7]–[10]。</span><button class="mk" data-sid="s-I-4-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-I-4-2"><span class="zh">PL 先用一部分监督数据，在某个特定的下游任务上训练一个「教师」模型。</span></span><span class="sent" data-sid="s-I-4-3"><span class="zh">然后用教师模型为无标注数据生成伪标签。</span></span><span class="sent" data-sid="s-I-4-4"><span class="zh">接着，用监督数据与教师标注数据的合集训练一个学生模型，既可以使用标准的交叉熵损失 [9]，也可以使用对比损失 [11] 来容忍教师生成标签中的噪声。</span></span><span class="sent" data-sid="s-I-4-5"><span class="zh">伪标注过程可以重复多轮，以迭代地提升教师标签的质量 [12]。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-I-4-1">
+      <div class="ann-card kind-comparison">
+        <div class="ann-kind">和以前有什么区别</div>
+        <div class="ann-title">伪标注的旧路线</div>
+        <div class="ann-quote">has been the dominant approach for utilizing unlabeled speech and audio with successful applications dating back to the mid1990s</div>
+        <div class="exp exp-tech">作者先把伪标注（PL）这条从 1990 年代中期延续至今的主线摆上桌，再指出它两个结构性缺陷：学生被老师的天花板锁死，且整个学习被迫面向单一任务。这个对比是理解 HuBERT 价值的坐标系——它不是又一个打标循环，而是把打标对象从「文本」换成了「聚类 id」。有意思的是，论文最终也承认 PL+预训练结合最强，HuBERT 赢在当更好的底座。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-I-5">
+          <p class="en-lines"><span class="sent" data-sid="s-I-5-1"><span class="en">Without discounting the immense success of pseudolabeling techniques, self-supervised representations offer two unique advantages: (1) Pseudo-label methods force student models to merely mimic a teacher model, which is limited by its supervised data size and the provided annotation quality.</span></span> <span class="sent" data-sid="s-I-5-2"><span class="en">On the other hand, self-supervised pretext tasks force the model to represent the entire input signal by compressing much more bits of information into the learned latent representation.</span></span> <span class="sent" data-sid="s-I-5-3"><span class="en">(2) In pseudo-labeling, the supervised data of the teacher model forces the whole learning to be geared towards a single downstream task.</span></span> <span class="sent" data-sid="s-I-5-4"><span class="en">On the contrary, self-supervised features show better generalization to a multitude of downstream applications.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-I-5-1"><span class="zh">我们并不否认伪标注技术的巨大成功，但自监督表示提供了两个独特的优势：（1）伪标注方法迫使学生模型仅仅模仿教师模型，而教师受限于其监督数据的规模和标注质量。</span></span><span class="sent" data-sid="s-I-5-2"><span class="zh">另一方面，自监督前置任务迫使模型对整个输入信号建模，把多得多的信息比特压缩进学到的隐表示中。</span></span><span class="sent" data-sid="s-I-5-3"><span class="zh">（2）在伪标注中，教师模型的监督数据迫使整个学习过程面向单一下游任务。</span></span><span class="sent" data-sid="s-I-5-4"><span class="zh">相反，自监督特征对众多下游应用表现出更好的泛化能力。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-I-6">
+          <p class="en-lines"><span class="sent" data-sid="s-I-6-1"><span class="en">There have been impressive successes for self-supervised learning in Computer Vision (CV) [13]–[15] and Natural Language Processing (NLP) [16]–[18] applications.</span></span> <span class="sent" data-sid="s-I-6-2"><span class="en">Learning representations of discrete input sequences, such as in Natural Language Processing (NLP) applications, uses either masked prediction [19], [20] or auto-regressive generation [18], [21] of input sequences with partial obfuscation.</span></span> <span class="sent" data-sid="s-I-6-3"><span class="en">For continuous inputs, such as in Computer Vision (CV) applications, representations are often learned through instance classiﬁcation, in which each image and its augmentations are treated as a single output class to be pulled together [14], [15] or contrasted against other negative samples [22].</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-I-6-1"><span class="zh">自监督学习在计算机视觉（CV）[13]–[15] 和自然语言处理（NLP）[16]–[18] 应用中都取得了令人瞩目的成功。</span></span><span class="sent" data-sid="s-I-6-2"><span class="zh">对离散输入序列的表示学习（如 NLP 应用），通常采用对部分混淆的输入序列做掩码预测 [19]、[20] 或自回归生成 [18]、[21]。</span></span><span class="sent" data-sid="s-I-6-3"><span class="zh">对连续输入（如 CV 应用），表示通常通过实例分类来学习：每张图像及其增强版本被当作一个独立的输出类别，要么彼此拉近 [14]、[15]，要么与其他负样本对比拉远 [22]。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-I-7">
+          <p class="en-lines"><span class="sent" data-sid="s-I-7-1"><span class="en">Speech signals differ from text and images in that they are continuous-valued sequences.</span></span> <span class="sent" data-sid="s-I-7-2"><span class="en">Self-supervised learning for the speech recognition domain faces unique challenges from those in CV and NLP.</span></span> <span class="sent" data-sid="s-I-7-3"><span class="en">Firstly, the presence of multiple sounds in each input utterance breaks the instance classiﬁcation assumption used in many CV pre-training approaches.</span></span> <span class="sent" data-sid="s-I-7-4"><span class="en">Secondly, during pre-training, there is no prior lexicon of discrete sound units available, as in NLP applications in which words or word pieces are used, hindering the use of predictive losses.</span><button class="mk feat" data-sid="s-I-7-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-I-7-5"><span class="en">Lastly, the boundaries between sound units are not known, which complicates masked prediction pre-training.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-I-7-1"><span class="zh">语音信号不同于文本和图像之处在于：它是连续取值的序列。</span></span><span class="sent" data-sid="s-I-7-2"><span class="zh">因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。</span></span><span class="sent" data-sid="s-I-7-3"><span class="zh">首先，每条输入语音中存在多个声音，这打破了许多 CV 预训练方法所依赖的实例分类假设。</span></span><span class="sent" data-sid="s-I-7-4"><span class="zh">其次，预训练期间没有像 NLP 应用那样可用的离散声学单元先验词表（NLP 中使用词或子词），这阻碍了预测式损失的使用。</span><button class="mk feat" data-sid="s-I-7-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-I-7-5"><span class="zh">最后，声学单元之间的边界是未知的，这让掩码预测式预训练变得更加复杂。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-I-7-4">
+      <div class="ann-card kind-motivation">
+        <div class="ann-kind">为什么这样设计</div>
+        <div class="ann-title">语音缺一本词典</div>
+        <div class="ann-quote">there is no prior lexicon of discrete sound units available</div>
+        <div class="exp exp-tech">这是语音自监督照搬 BERT 的根本障碍：NLP 的词表是现成的离散类别，masked word prediction 是标准分类问题；语音帧是连续向量，没有先验的「音素词表」，预测无从谈起。HuBERT 的解法是离线造一本临时词典——k-means 聚类就是音素词表的拙劣近似。理解这一点就会明白为什么 wav2vec 2.0 选择在线量化+对比，而 HuBERT 选择离线聚类+预测：两条路都在补这本词典。</div>
+        <div class="exp exp-plain">BERT 能玩掩码预测是因为有词表可猜；语音没有词表，就拿 k-means 现造一个。</div>
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-I-8">
+          <p class="en-lines"><span class="sent" data-sid="s-I-8-1"><span class="en">In this paper, we introduce Hidden unit BERT (HuBERT) that beneﬁts from an ofﬂine clustering step to generate noisy labels for a BERT-like per-training.</span></span> <span class="sent" data-sid="s-I-8-2"><span class="en">Concretely, a BERT model consumes masked continuous speech features to predict predetermined cluster assignments.</span><button class="mk" data-sid="s-I-8-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-I-8-3"><span class="en">The predictive loss is only applied over the masked regions, forcing the model to learn good high-level representations of unmasked inputs to infer the targets of masked ones correctly.</span></span> <span class="sent" data-sid="s-I-8-4"><span class="en">Intuitively, the HuBERT model is forced to learn both acoustic and language models from continuous inputs.</span></span> <span class="sent" data-sid="s-I-8-5"><span class="en">First, the model needs to model unmasked inputs into meaningful continuous latent representations, which maps to the classical acoustic modeling problem.</span></span> <span class="sent" data-sid="s-I-8-6"><span class="en">Second, to reduce the prediction error, the model needs to capture the long-range temporal relations between learned representations.</span></span> <span class="sent" data-sid="s-I-8-7"><span class="en">One crucial insight motivating this work is the importance of consistency of the targets, not just their correctness, which enables the model to focus on modeling the sequential structure of input data.</span><button class="mk feat" data-sid="s-I-8-7" title="查看讲解">解</button></span> <span class="sent" data-sid="s-I-8-8"><span class="en">Our approach draws inspiration from the DeepCluster method for self-supervised visual learning [23]; however, HuBERT beneﬁts from the masked prediction loss over speech sequences to represent their sequential structure.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-I-8-1"><span class="zh">本文提出隐藏单元 BERT（HuBERT），它借助一个离线聚类步骤为类 BERT 的预训练生成带噪标签。</span></span><span class="sent" data-sid="s-I-8-2"><span class="zh">具体来说，一个 BERT 模型以被掩码的连续语音特征为输入，预测预先确定的聚类分配。</span><button class="mk" data-sid="s-I-8-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-I-8-3"><span class="zh">预测损失只施加在被掩码的区域上，迫使模型为未掩码输入学到好的高层表示，从而能正确推断被掩码部分的目标。</span></span><span class="sent" data-sid="s-I-8-4"><span class="zh">直观地说，HuBERT 模型被迫从连续输入中同时学习声学模型和语言模型。</span></span><span class="sent" data-sid="s-I-8-5"><span class="zh">其一，模型需要把未掩码输入建模成有意义的连续隐表示，这对应经典的声学建模问题。</span></span><span class="sent" data-sid="s-I-8-6"><span class="zh">其二，为了降低预测误差，模型需要捕捉所学表示之间的长程时间关系。</span></span><span class="sent" data-sid="s-I-8-7"><span class="zh">激发本工作的一个关键洞见是：目标的一致性比其正确性更重要——一致性使模型能专注于对输入数据的序列结构建模。</span><button class="mk feat" data-sid="s-I-8-7" title="查看讲解">解</button></span><span class="sent" data-sid="s-I-8-8"><span class="zh">我们的方法受到自监督视觉学习方法 DeepCluster [23] 的启发；但 HuBERT 借助语音序列上的掩码预测损失来刻画其序列结构。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-I-8-2">
+      <div class="ann-card kind-concept">
+        <div class="ann-kind">概念</div>
+        <div class="ann-title">连续输入离散目标</div>
+        <div class="ann-quote">a BERT model consumes masked continuous speech features to predict predetermined cluster assignments</div>
+        <div class="exp exp-tech">注意输入输出是不对称的：输入是被掩码的连续波形特征，输出是离散的簇 id 分类。这让模型拿到的信息量比 DiscreteBERT 那种「输入也量化」的方案大一个量级——量化只在目标侧发生，信息瓶废弃。后来 Table V 里 HuBERT 大幅甩开 DiscreteBERT，论文把这一半功劳归给波形输入，另一半归给迭代精炼的教师。</div>
+        
+      </div></div><div class="ann-panel" data-sid="s-I-8-7">
+      <div class="ann-card kind-connection">
+        <div class="ann-kind">延伸阅读</div>
+        <div class="ann-title">与知识蒸馏同源</div>
+        <div class="ann-quote">the importance of consistency of the targets, not just their correctness</div>
+        <div class="exp exp-tech">「目标一致性比正确性更重要」和蒸馏领域的经验异曲同工：软标签哪怕带噪，只要温度平滑、错误模式稳定，学生照样学到决策面的几何结构。HuBERT 相当于把 k-means 当成一个会犯系统性错误的固定教师；系统性偏差不可怕，随机噪声才可怕——后者会让模型去拟合不可泛化的抖动。做伪标签/重标注管线时这条原则同样成立：宁可换一个稳定的差教师，不要在每次迭代里换随机化的好教师。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-I-9">
+          <p class="en-lines"><span class="sent" data-sid="s-I-9-1"><span class="en">When the HuBERT model is pre-trained on either the standard Librispeech 960h [24] or the Libri-Light 60k hours [25], it either matches or improves upon the state-of-theart wav2vec 2.0 [6] performance on all ﬁne-tuning subsets of 10mins, 1h, 10h, 100h, and 960h.</span></span> <span class="sent" data-sid="s-I-9-2"><span class="en">We present systematic results on three model sizes pre-trained with HuBERT: BASE (90M parameters), LARGE (300M), and X-LARGE (1B).</span></span> <span class="sent" data-sid="s-I-9-3"><span class="en">The X-LARGE model shows up to 19% and 13% relative WER improvement from LARGE models on dev-other and test-other evaluation subsets when pre-trained on the Libri-Light 60k hours.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-I-9-1"><span class="zh">当 HuBERT 模型在标准的 Librispeech 960h [24] 或 Libri-Light 60k 小时 [25] 上预训练时，它在 10mins、1h、10h、100h 和 960h 全部微调子集上都达到或超过了当时最优的 wav2vec 2.0 [6] 的性能。</span></span><span class="sent" data-sid="s-I-9-2"><span class="zh">我们给出了三种模型规模上 HuBERT 预训练的系统结果：BASE（90M 参数）、LARGE（300M）和 X-LARGE（1B）。</span></span><span class="sent" data-sid="s-I-9-3"><span class="zh">在 Libri-Light 60k 小时上预训练时，X-LARGE 模型在 dev-other 和 test-other 评测子集上相对 LARGE 模型取得了最高 19% 和 13% 的 WER 改进。</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-II"><span class="secnum">II</span> <span class="t-zh">方法</span><span class="t-en">METHOD</span></h2></section>
+<section>
+      <h3 class="sech lv2" id="sec-II-A"><span class="secnum">A</span> <span class="t-zh">为 HuBERT 学习隐藏单元</span><span class="t-en">Learning the Hidden Units for HuBERT</span></h3><div class="pblk" id="p-II-A-1">
+          <p class="en-lines"><span class="sent" data-sid="s-II-A-1-1"><span class="en">An acoustic model trained on text and speech pairs provides pseudo-phonetic labels for each frame via forced alignment in semi-supervised learning.</span></span> <span class="sent" data-sid="s-II-A-1-2"><span class="en">On the contrary, the self-supervised representation learning setup has access to speech-only data.</span></span> <span class="sent" data-sid="s-II-A-1-3"><span class="en">Nevertheless, simple discrete latent variable models such as k-means and Gaussian mixture models (GMMs) infer hidden units that exhibit non-trivial correlation with the underlying acoustic units [26] (see also Table V).</span></span> <span class="sent" data-sid="s-II-A-1-4"><span class="en">More advanced systems can achieve better acoustic unit discovery performance using better graphical models [27], [28] or parameterizes the distributions with more powerful neural network models [29]– [33].</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-A-1-1"><span class="zh">在半监督学习中，一个用文本-语音对训练的声学模型可以通过强制对齐为每一帧提供伪音素标签。</span></span><span class="sent" data-sid="s-II-A-1-2"><span class="zh">相比之下，自监督表示学习只能拿到纯语音数据。</span></span><span class="sent" data-sid="s-II-A-1-3"><span class="zh">尽管如此，k-means、高斯混合模型（GMM）等简单的离散隐变量模型所推断出的隐藏单元，与底层声学单元之间表现出非平凡的相关性 [26]（另见 Table V）。</span></span><span class="sent" data-sid="s-II-A-1-4"><span class="zh">更先进的系统可以通过更好的图模型 [27]、[28]，或用更强大的神经网络模型来参数化这些分布 [29]–[33]，取得更好的声学单元发现性能。</span></span></p>
+          
+        </div>
+<div class="cap" id="fig-II-A-1"><span class="cap-k">图</span><p class="en">Fig. 1: The HuBERT approach predicts hidden cluster assignments of the masked frames (y2, y3, y4 in the ﬁgure) generated by one or more iterations of k-means clustering.</p><p class="zh">图 1：HuBERT 方法预测被掩码帧（图中的 y2、y3、y4）的隐藏簇分配，这些分配由一轮或多轮 k-means 聚类生成。</p></div>
+<div class="pblk" id="p-II-A-2">
+          <p class="en-lines"><span class="sent" data-sid="s-II-A-2-1"><span class="en">Inspired by this, we propose to use acoustic unit discovery models to provide frame-level targets.</span></span> <span class="sent" data-sid="s-II-A-2-2"><span class="en">Let X denote a speech utterance X = [x1, · · · , xT ] of T frames.</span></span> <span class="sent" data-sid="s-II-A-2-3"><span class="en">Discovered hidden units are denoted with h(X) = Z = [z1, · · · , zT ], where zt ∈[C] is a C-class categorical variable and h is a clustering model, e.g. k-means.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-A-2-1"><span class="zh">受此启发，我们提出用声学单元发现模型来提供帧级目标。</span></span><span class="sent" data-sid="s-II-A-2-2"><span class="zh">记一段语音为 X = [x1, · · · , xT]，共 T 帧。</span></span><span class="sent" data-sid="s-II-A-2-3"><span class="zh">发现的隐藏单元记为 h(X) = Z = [z1, · · · , zT]，其中 zt ∈ [C] 是取 C 类的类别变量，h 是一个聚类模型，例如 k-means。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-II-B"><span class="secnum">B</span> <span class="t-zh">通过掩码预测学习表示</span><span class="t-en">Representation Learning via Masked Prediction</span></h3><div class="pblk" id="p-II-B-1">
+          <p class="en-lines"><span class="sent" data-sid="s-II-B-1-1"><span class="en">Let M ⊂[T] denote the set of indices to be masked for a length-T sequence X, and ˜X = r(X, M) denote a corrupted version of X where xt is replaced with a mask embedding ˜x if t ∈M.</span></span> <span class="sent" data-sid="s-II-B-1-2"><span class="en">A masked prediction model f takes as input ˜X and predicts a distribution over the target indeces at each timestep pf(· | ˜X, t).</span></span> <span class="sent" data-sid="s-II-B-1-3"><span class="en">There are two decisions to be made for masked prediction: how to mask and where to apply the prediction loss.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-B-1-1"><span class="zh">记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。</span></span><span class="sent" data-sid="s-II-B-1-2"><span class="zh">掩码预测模型 f 以 X̃ 为输入，在每个时间步预测目标下标的分布 pf(· | X̃, t)。</span></span><span class="sent" data-sid="s-II-B-1-3"><span class="zh">掩码预测需要做出两个决定：如何掩码，以及在何处施加预测损失。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-II-B-2">
+          <p class="en-lines"><span class="sent" data-sid="s-II-B-2-1"><span class="en">Regarding the ﬁrst decision, we adopt the same strategies used in SpanBERT [34] and wav2vec 2.0 [6] for mask generation, where p% of the timesteps are randomly selected as start indices, and spans of l steps are masked.</span></span> <span class="sent" data-sid="s-II-B-2-2"><span class="en">To address the second decision, we denote the cross-entropy loss computed over masked and unmasked timesteps as Lm and Lu, respectively.</span></span> <span class="sent" data-sid="s-II-B-2-3"><span class="en">Lm is deﬁned as:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-B-2-1"><span class="zh">关于第一个决定，我们采用 SpanBERT [34] 和 wav2vec 2.0 [6] 中相同的掩码生成策略：随机选取 p% 的时间步作为起始下标，并掩码长度为 l 步的连续片段。</span></span><span class="sent" data-sid="s-II-B-2-2"><span class="zh">针对第二个决定，我们把在被掩码时间步上计算的交叉熵损失记为 Lm，在未掩码时间步上计算的记为 Lu。</span></span><span class="sent" data-sid="s-II-B-2-3"><span class="zh">Lm 定义为：</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-II-B-1"><code>t∈M log pf(zt | ˜X, t), Lm(f; X, M, Z) =</code></div>
+<div class="pblk" id="p-II-B-3">
+          <p class="en-lines"><span class="sent" data-sid="s-II-B-3-1"><span class="en">and Lu is of the same form except that it sums over t ̸∈ M.</span></span> <span class="sent" data-sid="s-II-B-3-2"><span class="en">The ﬁnal loss is computed as a weighted sum of the two terms: L = αLm + (1 −α)Lu.</span></span> <span class="sent" data-sid="s-II-B-3-3"><span class="en">In the extreme case when α = 0, the loss is computed over the unmasked timesteps, which is similar to acoustic modeling in hybrid speech recognition systems [35]–[38].</span><button class="mk" data-sid="s-II-B-3-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-II-B-3-4"><span class="en">In our setup, this limits the learning process to mimicking the clustering model.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-B-3-1"><span class="zh">Lu 的形式相同，只是求和范围换成 t ∉ M。</span></span><span class="sent" data-sid="s-II-B-3-2"><span class="zh">最终损失是两项的加权和：L = αLm + (1 − α)Lu。</span></span><span class="sent" data-sid="s-II-B-3-3"><span class="zh">在 α = 0 的极端情况下，损失只在未掩码时间步上计算，这类似于混合式语音识别系统中的声学建模 [35]–[38]。</span><button class="mk" data-sid="s-II-B-3-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-II-B-3-4"><span class="zh">在我们的设定下，这会把学习过程限制为仅仅模仿聚类模型。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-II-B-3-3">
+      <div class="ann-card kind-comparison">
+        <div class="ann-kind">和以前有什么区别</div>
+        <div class="ann-title">α=0 退化回混合式</div>
+        <div class="ann-quote">when α = 0, the loss is computed over the unmasked timesteps, which is similar to acoustic modeling in hybrid speech recognition systems</div>
+        <div class="exp exp-tech">α=0 时模型在可见帧上预测聚类标签，数学上等价于传统 HMM-DNN 混合系统的帧级声学建模，只是把 senone 换成 k-means 簇。作者点出这一点意在说明：HuBERT 的新意全部藏在 α=1 那一端。这给「HuBERT 算不算新东西」的争论提供了标尺——若把掩码去掉，它确实只是用聚类伪标签重跑了一遍几十年前的老范式；新的是掩码带来的序列建模压力。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-II-B-4">
+          <p class="en-lines"><span class="sent" data-sid="s-II-B-4-1"><span class="en">In the other extreme with α = 1, the loss is only computed over the masked timesteps where the model has to predict the targets corresponding to the unseen frames from context, analogous to language modeling.</span></span> <span class="sent" data-sid="s-II-B-4-2"><span class="en">It forces the model to learn both the acoustic representation of unmasked segments and the long-range temporal structure of the speech data.</span></span> <span class="sent" data-sid="s-II-B-4-3"><span class="en">We hypothesize that the setup with α = 1 is more resilient to the quality of cluster targets, which is demonstrated in our experiments (see Table V).</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-B-4-1"><span class="zh">在另一个极端 α = 1 下，损失只在被掩码的时间步上计算，模型必须从上下文推断出那些不可见帧对应的目标，这类似于语言建模。</span></span><span class="sent" data-sid="s-II-B-4-2"><span class="zh">这迫使模型同时学习未掩码片段的声学表示和语音数据的长程时间结构。</span></span><span class="sent" data-sid="s-II-B-4-3"><span class="zh">我们假设 α = 1 的设定对聚类目标的质量更鲁棒，实验也证实了这一点（见 Table V）。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-II-C"><span class="secnum">C</span> <span class="t-zh">用簇集成学习</span><span class="t-en">Learning with Cluster Ensembles</span></h3><div class="pblk" id="p-II-C-1">
+          <p class="en-lines"><span class="sent" data-sid="s-II-C-1-1"><span class="en">A simple idea to improve target quality is to utilize multiple clustering models.</span></span> <span class="sent" data-sid="s-II-C-1-2"><span class="en">While an individual clustering model may perform terribly, cluster ensembles can provide complementary information to facilitate representation learning.</span></span> <span class="sent" data-sid="s-II-C-1-3"><span class="en">For example, an ensemble of k-means models with different codebook sizes can create targets of different granularity, from manner classes (vowel/consonant) to sub-phone states (senones).</span></span> <span class="sent" data-sid="s-II-C-1-4"><span class="en">To extend the proposed framework, let Z(k) be the target sequences generated by the k-th clustering model.</span></span> <span class="sent" data-sid="s-II-C-1-5"><span class="en">We can now re-write Lm as: k log p(k) f (z(k) t | ˜X, t), (2)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-C-1-1"><span class="zh">提升目标质量的一个简单想法是使用多个聚类模型。</span></span><span class="sent" data-sid="s-II-C-1-2"><span class="zh">单个聚类模型可能表现很差，但簇集成可以提供互补信息，促进表示学习。</span></span><span class="sent" data-sid="s-II-C-1-3"><span class="zh">例如，用不同码本大小的 k-means 模型做集成，可以产生不同粒度的目标：从发音方式类别（元音/辅音）到子音素状态（senone）。</span></span><span class="sent" data-sid="s-II-C-1-4"><span class="zh">为扩展所提框架，记 Z(k) 为第 k 个聚类模型生成的目标序列。</span></span><span class="sent" data-sid="s-II-C-1-5"><span class="zh">现在可以把 Lm 重写为公式 (2) 的形式（对所有簇模型的预测对数似然求和）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-II-C-1"><code>Lm(f; X, {Z(k)}k, M) = t∈M</code></div>
+<div class="pblk" id="p-II-C-2">
+          <p class="en-lines"><span class="sent" data-sid="s-II-C-2-1"><span class="en">and similarly for the unmasked loss Lu.</span></span> <span class="sent" data-sid="s-II-C-2-2"><span class="en">This is analogous to multi-task learning, but with tasks created by unsupervised clustering.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-C-2-1"><span class="zh">未掩码损失 Lu 也类似。</span></span><span class="sent" data-sid="s-II-C-2-2"><span class="zh">这类似于多任务学习，只不过任务是由无监督聚类创造出来的。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-II-C-3">
+          <p class="en-lines"><span class="sent" data-sid="s-II-C-3-1"><span class="en">Additionally, ensembling is intriguing because it can be used alongside product quantization (PQ) [39], where a feature space is partitioned into multiple subspaces, and each subspace is quantized separately.</span></span> <span class="sent" data-sid="s-II-C-3-2"><span class="en">PQ allows effective Euclidean distance-based quantization such as k-means for highdimensional features and heterogeneous features whose scale differs signiﬁcantly between subspaces.</span></span> <span class="sent" data-sid="s-II-C-3-3"><span class="en">In this case, the theoretical size of the target space is the product of all codebooks’ sizes.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-C-3-1"><span class="zh">此外，集成之所以有吸引力，还因为它可以与乘积量化（PQ）[39] 搭配使用：PQ 把特征空间划分为多个子空间，每个子空间单独量化。</span></span><span class="sent" data-sid="s-II-C-3-2"><span class="zh">PQ 使得基于欧氏距离的量化方法（如 k-means）对高维特征、以及各子空间尺度差异很大的异质特征依然有效。</span></span><span class="sent" data-sid="s-II-C-3-3"><span class="zh">此时，目标空间的理论大小是所有码本大小的乘积。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-II-D"><span class="secnum">D</span> <span class="t-zh">簇分配的迭代精炼</span><span class="t-en">Iterative Reﬁnement of Cluster Assignments</span></h3><div class="pblk" id="p-II-D-1">
+          <p class="en-lines"><span class="sent" data-sid="s-II-D-1-1"><span class="en">In addition to using cluster ensembles, another direction for improved representation is reﬁning the cluster assignments throughout the learning process.</span></span> <span class="sent" data-sid="s-II-D-1-2"><span class="en">Since we expect a pre-trained model to provide better representations than the raw acoustic feature such as MFCCs, we can create a new generation of clusters by training a discrete latent model over the learned latent representations.</span><button class="mk feat" data-sid="s-II-D-1-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-II-D-1-3"><span class="en">The learning process then proceeds with the newly discovered units.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-D-1-1"><span class="zh">除了使用簇集成，另一条改进表示的方向是在学习过程中不断精炼簇分配。</span></span><span class="sent" data-sid="s-II-D-1-2"><span class="zh">既然我们预期预训练模型能提供比 MFCC 等原始声学特征更好的表示，就可以在学到的隐表示上训练一个离散隐变量模型，生成新一代簇。</span><button class="mk feat" data-sid="s-II-D-1-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-II-D-1-3"><span class="zh">随后学习过程用这些新发现的单元继续进行。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-II-D-1-2">
+      <div class="ann-card kind-engineering">
+        <div class="ann-kind">工程启发</div>
+        <div class="ann-title">自举的飞轮怎么转</div>
+        <div class="ann-quote">create a new generation of clusters by training a discrete latent model over the learned latent representations</div>
+        <div class="exp exp-tech">迭代精炼是一个自举飞轮：MFCC 簇教出第一轮模型 → 用第一轮中间层特征重新聚类 → 更好的标签教第二轮模型。实证上(PNMI 从 0.24 级升到 0.64 级)收益巨大，但作者只跑了 2-3 轮，没有回答「何时饱和/是否会塌缩到教师偏差里」。工程上要复现这套流程，聚类那一步是纯 CPU 的 MiniBatchKMeans，与 GPU 训练交替调度，pipeline 复杂度和故障面都不小——这也是后来 SINGLE-iteration 方法被追捧的原因之一。</div>
+        
+      </div></div></div>
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-II-E"><span class="secnum">E</span> <span class="t-zh">实现</span><span class="t-en">Implementation</span></h3><div class="pblk" id="p-II-E-1">
+          <p class="en-lines"><span class="sent" data-sid="s-II-E-1-1"><span class="en">Our pre-trained models follows the wav2vec 2.0 architecture [6], with a convolutional waveform encoder, a BERT encoder [19], a projection layer and a code embedding layer.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-E-1-1"><span class="zh">我们的预训练模型沿用 wav2vec 2.0 的架构 [6]，包括一个卷积波形编码器、一个 BERT 编码器 [19]、一个投影层和一个码元嵌入层。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-II-E-2">
+          <p class="en-lines"><span class="sent" data-sid="s-II-E-2-1"><span class="en">We consider HuBERT in three different conﬁgurations: BASE, LARGE, and X-LARGE.</span></span> <span class="sent" data-sid="s-II-E-2-2"><span class="en">The ﬁsrt two follow the architectures of wav2vec 2.0 BASE and LARGE closely.</span></span> <span class="sent" data-sid="s-II-E-2-3"><span class="en">The X-LARGE architecture expands the model size to about 1 billion parameters, similar to the size of the Conformer XXL model in [40].</span></span> <span class="sent" data-sid="s-II-E-2-4"><span class="en">The waveform encoder is identical for all the three conﬁgurations, which is composed of seven 512-channel layers with strides [5,2,2,2,2,2,2] and kernel widths [10,3,3,3,3,2,2].</span></span> <span class="sent" data-sid="s-II-E-2-5"><span class="en">The BERT encoder consists of many identical transformer blocks, whose parameters along with the parameter of the subsequent projection layer are speciﬁed in Table I.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-E-2-1"><span class="zh">我们考虑 HuBERT 的三种配置：BASE、LARGE 和 X-LARGE。</span></span><span class="sent" data-sid="s-II-E-2-2"><span class="zh">前两种与 wav2vec 2.0 的 BASE 和 LARGE 架构基本一致。</span></span><span class="sent" data-sid="s-II-E-2-3"><span class="zh">X-LARGE 架构把模型规模扩大到约 10 亿（1 billion）参数，与 [40] 中的 Conformer XXL 模型规模相当。</span></span><span class="sent" data-sid="s-II-E-2-4"><span class="zh">三种配置的波形编码器完全相同：由 7 个 512 通道的卷积层组成，步幅为 [5,2,2,2,2,2,2]，核宽为 [10,3,3,3,3,2,2]。</span></span><span class="sent" data-sid="s-II-E-2-5"><span class="zh">BERT 编码器由多个相同的 Transformer 块堆叠而成，其参数连同后续投影层的参数列于 Table I。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-II-E-3">
+          <p class="en-lines"><span class="sent" data-sid="s-II-E-3-1"><span class="en">BASE LARGE X-LARGE CNN Encoder strides 5, 2, 2, 2, 2, 2, 2 kernel width 10, 3, 3, 3, 3, 2, 2 channel 512 layer 12 24 48 embedding dim.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-E-3-1"><span class="zh">（Table I 各列依次为 BASE / LARGE / X-LARGE）CNN 编码器：步幅 5, 2, 2, 2, 2, 2, 2；核宽 10, 3, 3, 3, 3, 2, 2；通道数 512；Transformer 层数分别为 12、24、48；嵌入维度</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-II-E-4">
+          <p class="en-lines"><span class="sent" data-sid="s-II-E-4-1"><span class="en">768 1024 1280 inner FFN dim.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-E-4-1"><span class="zh">分别为 768、1024、1280；FFN 内部维度</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-II-E-5">
+          <p class="en-lines"><span class="sent" data-sid="s-II-E-5-1"><span class="en">3072 4096 5120 layerdrop prob 0.05 0 0 attention heads 8 16 16 Projection dim.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-E-5-1"><span class="zh">分别为 3072、4096、5120；layerdrop 概率 0.05、0、0；注意力头数 8、16、16；投影维度</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-II-E-6">
+          <p class="en-lines"><span class="sent" data-sid="s-II-E-6-1"><span class="en">256 768 1024 Num. of Params TABLE I: Model architecture summary for BASE, LARGE, and X-LARGE HuBERT models The convolutional waveform encoder generates a feature sequence at a 20ms framerate for audio sampled at 16kHz (CNN encoder down-sampling factor is 320x).</span></span> <span class="sent" data-sid="s-II-E-6-2"><span class="en">The audio encoded features are then randomly masked as described in Section II-B.</span></span> <span class="sent" data-sid="s-II-E-6-3"><span class="en">The BERT encoder takes as input the masked sequence and outputs a feature sequence [o1, · · · , oT ].</span></span> <span class="sent" data-sid="s-II-E-6-4"><span class="en">The distribution over codewords is parameterized with p(k) f (c | ˜X, t) = exp(sim(A(k)ot, ec)/τ) PC c′=1 exp(sim(A(k)ot, ec′)/τ) , where A is the projection matrix, ec is the embedding for codeword c, sim(·, ·) computes the cosine similarity between two vectors, and τ scales the logit, which is set to 0.1.</span></span> <span class="sent" data-sid="s-II-E-6-5"><span class="en">When cluster ensembles are used, one projection matrix A(k) is applied for each clustering model k.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-E-6-1"><span class="zh">分别为 256、768、1024。Table I：BASE、LARGE、X-LARGE 三种 HuBERT 模型的架构与参数量汇总。卷积波形编码器对 16kHz 采样的音频输出 20ms 帧率的特征序列（CNN 编码器的下采样倍率为 320x）。</span></span><span class="sent" data-sid="s-II-E-6-2"><span class="zh">随后按第 II-B 节所述对编码后的音频特征做随机掩码。</span></span><span class="sent" data-sid="s-II-E-6-3"><span class="zh">BERT 编码器以被掩码的序列为输入，输出特征序列 [o1, · · · , oT]。</span></span><span class="sent" data-sid="s-II-E-6-4"><span class="zh">码元上的分布按 softmax(cos 相似度/τ) 参数化：分子为 exp(sim(A(k)ot, ec)/τ)，其中 A 是投影矩阵，ec 是码元 c 的嵌入，sim(·, ·) 计算两向量的余弦相似度，τ 用于缩放 logit，取 0.1（分母为对 c′=1 到 C 的归一化求和）。</span></span><span class="sent" data-sid="s-II-E-6-5"><span class="zh">使用簇集成时，每个聚类模型 k 各使用一个投影矩阵 A(k)。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-II-E-7">
+          <p class="en-lines"><span class="sent" data-sid="s-II-E-7-1"><span class="en">After HuBERT pre-training, We use the connectionist temporal classiﬁcation (CTC) [41] loss for ASR ﬁne-tuning of the whole model weights except the convolutional audio encoder, which remains frozen.</span></span> <span class="sent" data-sid="s-II-E-7-2"><span class="en">The projection layer(s) is removed and replaced with a randomly initialized softmax layer.</span></span> <span class="sent" data-sid="s-II-E-7-3"><span class="en">The CTC target vocabulary includes 26 English characters, a space token, an apostrophe, and a special CTC blank symbol.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-II-E-7-1"><span class="zh">HuBERT 预训练完成后，我们使用连接时序分类（CTC）[41] 损失对整个模型做 ASR 微调，但卷积音频编码器保持冻结。</span></span><span class="sent" data-sid="s-II-E-7-2"><span class="zh">投影层被移除，替换为一个随机初始化的 softmax 层。</span></span><span class="sent" data-sid="s-II-E-7-3"><span class="zh">CTC 目标词表包括 26 个英文字母、一个空格 token、一个撇号，以及 CTC 专用的空白（blank）符号。</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-III"><span class="secnum">III</span> <span class="t-zh">相关工作</span><span class="t-en">RELATED WORK</span></h2><div class="pblk" id="p-III-1">
+          <p class="en-lines"><span class="sent" data-sid="s-III-1-1"><span class="en">We discuss recent studies on self-supervised speech representation learning by grouping them by training objective.</span></span> <span class="sent" data-sid="s-III-1-2"><span class="en">The earliest line of work learns representations by postulating a generative model for speech with latent variables, which are assumed to capture the relevant phonetic information.</span></span> <span class="sent" data-sid="s-III-1-3"><span class="en">Training of these models amounts to likelihood maximization.</span></span> <span class="sent" data-sid="s-III-1-4"><span class="en">Different latent structures have been applied to encode the prior assumption, such as continuous [29], discrete [31], [42], or sequential [28], [30], [32], [33], [43].</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-III-1-1"><span class="zh">下面按训练目标对近期自监督语音表示学习的研究分类讨论。</span></span><span class="sent" data-sid="s-III-1-2"><span class="zh">最早的一系工作为语音假设一个带隐变量的生成模型，并假定这些隐变量捕捉了相关的音素信息，以此学习表示。</span></span><span class="sent" data-sid="s-III-1-3"><span class="zh">这些模型的训练等价于似然最大化。</span></span><span class="sent" data-sid="s-III-1-4"><span class="zh">人们用过不同的隐变量结构来编码先验假设，例如连续型 [29]、离散型 [31]、[42] 或序列型 [28]、[30]、[32]、[33]、[43]。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-III-2">
+          <p class="en-lines"><span class="sent" data-sid="s-III-2-1"><span class="en">Prediction-based self-supervised learning has gathered increasing interests recently, where a model is tasked to predict the content of the unseen regions [4], [44]–[50] or to contrast the target unseen frame with randomly sampled ones [1]– [3], [6].</span></span> <span class="sent" data-sid="s-III-2-2"><span class="en">Some models combine both the predictive and the contrastive losses [5], [51].</span></span> <span class="sent" data-sid="s-III-2-3"><span class="en">These objectives can usually be interpreted as mutual information maximization [52].</span></span> <span class="sent" data-sid="s-III-2-4"><span class="en">Other objectives do not belong to these categories, for example, [53].</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-III-2-1"><span class="zh">预测式自监督学习近来受到越来越多关注：让模型预测不可见区域的内容 [4]、[44]–[50]，或把目标不可见帧与随机采样的帧做对比 [1]–[3]、[6]。</span></span><span class="sent" data-sid="s-III-2-2"><span class="zh">有些模型同时使用预测损失和对比损失 [5]、[51]。</span></span><span class="sent" data-sid="s-III-2-3"><span class="zh">这些目标通常可以被解释为互信息最大化 [52]。</span></span><span class="sent" data-sid="s-III-2-4"><span class="zh">还有一些目标不属于上述类别，例如 [53]。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-III-3">
+          <p class="en-lines"><span class="sent" data-sid="s-III-3-1"><span class="en">This work is most related to DiscreteBERT [51]: both HuBERT and DiscreteBERT predict discrete targets of masked regions.</span></span> <span class="sent" data-sid="s-III-3-2"><span class="en">However, there are several crucial differences.</span></span> <span class="sent" data-sid="s-III-3-3"><span class="en">First, instead of taking quantized units as input, HuBERT takes raw waveforms as input to pass as much information as possible to the transformer layers, which was shown to be important in [6].</span></span> <span class="sent" data-sid="s-III-3-4"><span class="en">Furthermore, in the experiment section, we show that our model, with simple k-means targets, can achieve better performance than DiscreteBERT that uses vq-wav2vec [5] learned units.</span></span> <span class="sent" data-sid="s-III-3-5"><span class="en">Second, we also present many techniques to improve teacher quality instead of using a single ﬁxed teacher as done in DiscreteBERT.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-III-3-1"><span class="zh">本工作与 DiscreteBERT [51] 最为相关：HuBERT 和 DiscreteBERT 都预测被掩码区域的离散目标。</span></span><span class="sent" data-sid="s-III-3-2"><span class="zh">但二者存在几个关键差异。</span></span><span class="sent" data-sid="s-III-3-3"><span class="zh">第一，HuBERT 不以量化单元为输入，而是以原始波形为输入，把尽可能多的信息传给 Transformer 层——[6] 已证明这一点很重要。</span></span><span class="sent" data-sid="s-III-3-4"><span class="zh">此外，在实验部分我们表明：即使只用简单的 k-means 目标，我们的模型也能超过使用 vq-wav2vec [5] 学习单元的 DiscreteBERT。</span></span><span class="sent" data-sid="s-III-3-5"><span class="zh">第二，我们还提出了多种提升教师质量的技术，而不像 DiscreteBERT 那样只使用单一的固定教师。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-III-4">
+          <p class="en-lines"><span class="sent" data-sid="s-III-4-1"><span class="en">HuBERT is also related to wav2vec 2.0 [6].</span></span> <span class="sent" data-sid="s-III-4-2"><span class="en">However, the latter employs a contrastive loss that requires careful design of where to sample negative frames from, an auxiliary diversity loss to encourage the discrete unit usage, and demands a proper Gumbel-softmax temperature annealing schedule.</span><button class="mk feat" data-sid="s-III-4-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-III-4-3"><span class="en">In addition, it only explores quantizing the waveform encoder output, which may not be the best feature for quantization due to the limited capacity of the convolutional encoder, as suggested by our ablation studies in Figure 2.</span></span> <span class="sent" data-sid="s-III-4-4"><span class="en">Concretely, our proposed method adopts a more direct predictive loss by separating the acoustic unit discovery step from the masked prediction representation learning phase and achieves the stateof-the-art results that match or outperform wav2vec 2.0 on different ﬁne-tuning scales.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-III-4-1"><span class="zh">HuBERT 与 wav2vec 2.0 [6] 也密切相关。</span></span><span class="sent" data-sid="s-III-4-2"><span class="zh">然而后者采用对比损失：需要精心设计从何处采样负帧、需要一个鼓励离散单元使用的辅助多样性损失、还需要一套恰当的 Gumbel-softmax 温度退火计划。</span><button class="mk feat" data-sid="s-III-4-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-III-4-3"><span class="zh">此外，它只探索了对波形编码器输出做量化；而正如我们在 Figure 2 的消融研究所示，卷积编码器容量有限，其输出未必是最适合量化的特征。</span></span><span class="sent" data-sid="s-III-4-4"><span class="zh">具体而言，我们的方法把声学单元发现步骤与掩码预测表示学习阶段解耦，采用更直接的预测损失，在不同微调规模上都取得了与 wav2vec 2.0 持平或更优的最先进结果。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-III-4-2">
+      <div class="ann-card kind-critique">
+        <div class="ann-kind">值得质疑</div>
+        <div class="ann-title">对 wav2vec 2.0 的拆解</div>
+        <div class="ann-quote">requires careful design of where to sample negative frames from, an auxiliary diversity loss to encourage the discrete unit usage, and demands a proper Gumbel-softmax temperature annealing schedule</div>
+        <div class="exp exp-tech">这是作者对 wav2vec 2.0 训练复杂度的集中吐槽：负样本采样策略、多样性损失、Gumbel 温度退火，三个任何一项调不好都会训崩的旋钮。HuBERT 的交叉熵+离线聚类把这些旋钮全部移除，工程可靠性显著提升——这也是为什么很多团队复现 wav2vec 2.0 失败却能复现 HuBERT。但别忘了代价被转移到了离线聚类与多轮迭代的 pipeline 上，并非真正免费。</div>
+        <div class="exp exp-plain">wav2vec 2.0 难训是因为旋钮太多；HuBERT 把旋钮卸了，但代价是多了个离线聚类流水线。</div>
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-III-5">
+          <p class="en-lines"><span class="sent" data-sid="s-III-5-1"><span class="en">Finally, the idea of iterative reﬁnement target labels is similar to iterative pseudo labeling for semi-supervised ASR [12], [54], which leverages an improving student model to generate better pseudo-labels for the next iteration of training.</span></span> <span class="sent" data-sid="s-III-5-2"><span class="en">The HuBERT approach can be seen as extending this method to the self-supervised setup with a masked prediction loss.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-III-5-1"><span class="zh">最后，迭代精炼目标标签的思路与半监督 ASR 中的迭代伪标注 [12]、[54] 相似：后者利用不断改进的学生模型为下一轮训练生成更好的伪标签。</span></span><span class="sent" data-sid="s-III-5-2"><span class="zh">HuBERT 方法可以看作是把这一思路扩展到带掩码预测损失的自监督设定中。</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-IV"><span class="secnum">IV</span> <span class="t-zh">实验细节</span><span class="t-en">EXPERIMENTAL DETAILS</span></h2></section>
+<section>
+      <h3 class="sech lv2" id="sec-IV-A"><span class="secnum">A</span> <span class="t-zh">数据</span><span class="t-en">Data</span></h3><div class="pblk" id="p-IV-A-1">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-A-1-1"><span class="en">For unsupervised pre-training, we use the full 960 hours of LibriSpeech audio [24] or 60,000 hours of Libri-light [25] audio, both of which are derived from the LibriVox project that contains English recordings of copyright-free audiobooks by volunteers from the Internet.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-A-1-1"><span class="zh">无监督预训练使用完整的 960 小时 LibriSpeech 音频 [24]，或 60,000 小时 Libri-light 音频 [25]；两者都源自 LibriVox 项目——该项目收集了互联网志愿者朗读的无版权英文有声书。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-IV-A-2">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-A-2-1"><span class="en">For supervised ﬁne-tuning, ﬁve different partitions are considered: Libri-light 10-minute, 1-hour, 10- hour splits and LibriSpeech 100-hour (train-clean-100) and 960-hour (train-clean-100, train-clean-360, train-other-500 combined) splits.</span></span> <span class="sent" data-sid="s-IV-A-2-2"><span class="en">The three Libri-light splits are subsets of the the LibriSpeech training split, and each of them contain half of the audio from train-clean-* and the other from train-other-500.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-A-2-1"><span class="zh">监督微调考虑五种划分：Libri-light 的 10-minute、1-hour、10-hour 子集，以及 LibriSpeech 的 100-hour（train-clean-100）和 960-hour（train-clean-100、train-clean-360、train-other-500 合并）子集。</span></span><span class="sent" data-sid="s-IV-A-2-2"><span class="zh">三个 Libri-light 子集都是 LibriSpeech 训练集的子集，且每个子集都各取一半来自 train-clean-*、另一半来自 train-other-500。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-IV-B"><span class="secnum">B</span> <span class="t-zh">无监督单元发现</span><span class="t-en">Unsupervised Unit Discovery</span></h3><div class="pblk" id="p-IV-B-1">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-B-1-1"><span class="en">To demonstrate the effectiveness of the proposed method on utilizing low-quality cluster assignments, we consider the k-means algorithm [55] for acoustic unit discovery by default.</span></span> <span class="sent" data-sid="s-IV-B-1-2"><span class="en">It is one of the most naive unit discovery models that can be treated as modeling an isotropic Gaussian with the same scalar variance for each acoustic unit.</span></span> <span class="sent" data-sid="s-IV-B-1-3"><span class="en">To generate labels for the ﬁrst iteration HuBERT training over the 960 hour LibriSpeech training set, we run k-means clustering with 100 clusters on 39-dimensional MFCC features, which are 13 coefﬁcients with the ﬁrst and the second-order derivatives.</span><button class="mk feat" data-sid="s-IV-B-1-3" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-B-1-1"><span class="zh">为展示所提方法利用低质量簇分配的能力，我们默认采用 k-means 算法 [55] 做声学单元发现。</span></span><span class="sent" data-sid="s-IV-B-1-2"><span class="zh">它是最朴素的单元发现模型之一，等价于为每个声学单元建模一个共享标量方差的各向同性高斯分布。</span></span><span class="sent" data-sid="s-IV-B-1-3"><span class="zh">为第一轮 HuBERT 训练生成标签时，我们在 960 小时 LibriSpeech 训练集的 39 维 MFCC 特征上跑 100 簇的 k-means 聚类——39 维即 13 个系数加一阶、二阶导数。</span><button class="mk feat" data-sid="s-IV-B-1-3" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-IV-B-1-3">
+      <div class="ann-card kind-number">
+        <div class="ann-kind">数字怎么理解</div>
+        <div class="ann-title">教师可以有多糙</div>
+        <div class="ann-quote">we run k-means clustering with 100 clusters on 39-dimensional MFCC features</div>
+        <div class="exp exp-tech">第一轮的教师糙得惊人：39 维 MFCC（13 维系数+一阶二阶差分）、100 个簇，PNMI 只有 0.24 上下，簇纯度约 10%——按传统标准这标签根本不能用。但配合 α=1 的掩码预测损失，它依然把 BASE 模型喂了起来。这条数字给所有「伪标签质量焦虑」提供了反例：在一致性+掩码预测的组合下，标签质量的门槛远低于直觉。当然上限也由教师决定，所以才有后面的迭代精炼。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-IV-B-2">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-B-2-1"><span class="en">To generate better targets for the subsequent iterations, we run k-means clustering with 500 clusters on the latent features extracted from the HuBERT model pre-trained in the previous iteration (not ﬁne-tuned) at some intermediate transformer layer.</span></span> <span class="sent" data-sid="s-IV-B-2-2"><span class="en">Since the feature dimension at the transformer output is much higher than the MFCC features (768-D for HuBERT BASE), we cannot afford to load the entire 960 hour training split to the memory.</span></span> <span class="sent" data-sid="s-IV-B-2-3"><span class="en">So instead, we randomly sample 10% of the data for ﬁtting the k-means model.</span><button class="mk" data-sid="s-IV-B-2-3" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-B-2-1"><span class="zh">为后续迭代生成更好的目标，我们从上一轮预训练（未微调）的 HuBERT 模型的某个中间 Transformer 层抽取隐特征，在其上跑 500 簇的 k-means 聚类。</span></span><span class="sent" data-sid="s-IV-B-2-2"><span class="zh">由于 Transformer 输出的特征维度远高于 MFCC 特征（HuBERT BASE 为 768-D），我们无法把整个 960 小时训练集载入内存。</span></span><span class="sent" data-sid="s-IV-B-2-3"><span class="zh">因此我们随机采样 10% 的数据来拟合 k-means 模型。</span><button class="mk" data-sid="s-IV-B-2-3" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-IV-B-2-3">
+      <div class="ann-card kind-engineering">
+        <div class="ann-kind">工程启发</div>
+        <div class="ann-title">聚类的内存妥协</div>
+        <div class="ann-quote">randomly sample 10% of the data for ﬁtting the k-means model</div>
+        <div class="exp exp-tech">768 维特征、960 小时、数千帧每秒，全量载入内存不现实，作者直接随机抽样 10% 拟合 k-means。Table IV 的稳定性实验给这个妥协兜底：训练数据从 1 小时加到 100 小时，PNMI 最多只涨 0.012。这是个很实用的工程结论——k-means 聚类对拟合数据量极度不敏感，做类似 pipeline 时完全可以激进降采样，把内存和时间的预算留给主训练。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-IV-B-3">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-B-3-1"><span class="en">The MiniBatchKMeans algorithm implemented in the scikit-learn [56] package is used for clustering, which ﬁts a mini-batch of samples at a time.2 We set the mini-batch size to be 10,000 frames. k-means++ [57] with 20 random starts is used for better initialization.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-B-3-1"><span class="zh">聚类使用 scikit-learn [56] 实现的 MiniBatchKMeans 算法，每次拟合一个 mini-batch 样本（脚注 2）。mini-batch 大小设为 10,000 帧；并采用带 20 次随机重启的 k-means++ [57] 以获得更好的初始化。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-IV-C"><span class="secnum">C</span> <span class="t-zh">预训练</span><span class="t-en">Pre-Training</span></h3><div class="pblk" id="p-IV-C-1">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-C-1-1"><span class="en">We train the BASE model for two iterations on the 960 hours of LibriSpeech audio on 32 GPUs, with a batch size of at most 87.5 seconds of audio per GPU.</span></span> <span class="sent" data-sid="s-IV-C-1-2"><span class="en">The ﬁrst iteration is trained for 250k steps, while the second iteration is trained for 400k steps using labels generated by clustering the 6-th transformer layer output of the ﬁrst iteration model.</span><button class="mk feat" data-sid="s-IV-C-1-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-IV-C-1-3"><span class="en">Training for 100k steps takes about 9.5 hours.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-C-1-1"><span class="zh">我们在 32 块 GPU 上、用 960 小时 LibriSpeech 音频把 BASE 模型训练两轮，每块 GPU 的 batch 大小至多为 87.5 秒音频。</span></span><span class="sent" data-sid="s-IV-C-1-2"><span class="zh">第一轮训练 250k 步；第二轮训练 400k 步，其标签来自对第一轮模型第 6 层 Transformer 输出的聚类。</span><button class="mk feat" data-sid="s-IV-C-1-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-IV-C-1-3"><span class="zh">训练 100k 步约需 9.5 小时。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-IV-C-1-2">
+      <div class="ann-card kind-engineering">
+        <div class="ann-kind">工程启发</div>
+        <div class="ann-title">取中间层而非末层</div>
+        <div class="ann-quote">The ﬁrst iteration is trained for 250k steps, while the second iteration is trained for 400k steps using labels generated by clustering the 6-th transformer layer output</div>
+        <div class="exp exp-tech">第二轮标签来自第一轮模型的第 6 层（共 12 层），不是最后一层。Figure 2 解释了原因：第一轮的末几层在「模仿坏标签」的压力下明显退化，中间层才是音素信息最纯的地方。迭代自训练时这是条普适经验——喂下一轮的特征不要取被上一轮目标污染最深的末层。但注意第二轮的最佳层号漂到了第 9 层，说明「取哪层」本身是随迭代漂移的超参数，并非有定论。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-IV-C-2">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-C-2-1"><span class="en">Next we train HuBERT LARGE and X-LARGE for one iteration on 60,000 hours of Libri-light audio on 128 and 256 GPUs, respectively, for 400k steps.</span></span> <span class="sent" data-sid="s-IV-C-2-2"><span class="en">The batch sizes are reduced to 56.25 and 22.5 seconds of audio per GPU due to memory constraints.</span></span> <span class="sent" data-sid="s-IV-C-2-3"><span class="en">Instead of restarting the iterative process from clustering MFCC features, we extract features from the 9- th transformer layer of the second iteration BASE HuBERT for clustering and use those labels for training these two models.</span><button class="mk" data-sid="s-IV-C-2-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-IV-C-2-4"><span class="en">Hence, these two models can also be seen as the third iteration models.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-C-2-1"><span class="zh">接着我们在 60,000 小时 Libri-light 音频上把 HuBERT LARGE 和 X-LARGE 各训练一轮，分别使用 128 和 256 块 GPU，训练 400k 步。</span></span><span class="sent" data-sid="s-IV-C-2-2"><span class="zh">由于显存限制，每块 GPU 的 batch 大小分别缩减到 56.25 和 22.5 秒音频。</span></span><span class="sent" data-sid="s-IV-C-2-3"><span class="zh">我们没有重新从 MFCC 特征聚类开始迭代过程，而是从第二轮 BASE HuBERT 的第 9 层 Transformer 抽取特征做聚类，并用这些标签训练这两个模型。</span><button class="mk" data-sid="s-IV-C-2-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-IV-C-2-4"><span class="zh">因此，这两个模型也可以看作第三轮迭代模型。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-IV-C-2-3">
+      <div class="ann-card kind-critique">
+        <div class="ann-kind">值得质疑</div>
+        <div class="ann-title">大模型的小捷径</div>
+        <div class="ann-quote">we extract features from the 9- th transformer layer of the second iteration BASE HuBERT for clustering and use those labels for training these two models</div>
+        <div class="exp exp-tech">LARGE 和 X-LARGE 没有从 MFCC 重跑迭代流程，而是直接拿第二轮 BASE 的第 9 层特征聚类当教师——省了大量聚类和冷启动成本，但也意味着 1B 模型的上限被 90M 小模型的表示质量锚定。作者把这称作「第三轮迭代」，严格说它更像「教师蒸馏式换尺度」。若真按各自模型的中间层重新聚类，大模型或许还有空间；论文没有做这组对照，这 19%/13% 的相对提升可能仍是被低估的。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-IV-C-3">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-C-3-1"><span class="en">For all HuBERT conﬁgurations, mask span is set to l = 10, and p = 8% of the waveform encoder output frames are randomly selected as mask start if not otherwise mentioned.</span></span> <span class="sent" data-sid="s-IV-C-3-2"><span class="en">Adam [58] optimizer is used with β = (0.9, 0.98), and the learning rate ramps up linearly from 0 to the peak learning rate for the ﬁrst 8% of the training steps, and then decays linearly back to zero.</span></span> <span class="sent" data-sid="s-IV-C-3-3"><span class="en">The peak learning rates are 5e-4/1.5e3/3e-3 for BASE/LARGE/X-LARGE models.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-C-3-1"><span class="zh">如无特别说明，所有 HuBERT 配置的掩码片段长度设为 l = 10，并随机选取波形编码器输出帧的 p = 8% 作为掩码起点。</span></span><span class="sent" data-sid="s-IV-C-3-2"><span class="zh">优化器使用 Adam [58]，β = (0.9, 0.98)；学习率先在前 8% 的训练步内从 0 线性升到峰值，再线性衰减回 0。</span></span><span class="sent" data-sid="s-IV-C-3-3"><span class="zh">BASE/LARGE/X-LARGE 模型的峰值学习率分别为 5e-4/1.5e3/3e-3（原文如此；从量级看 LARGE 的 1.5e3 疑为 1.5e-3 之笔误）。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-IV-D"><span class="secnum">D</span> <span class="t-zh">监督微调与解码</span><span class="t-en">Supervised Fine-Tuning and Decoding</span></h3><div class="pblk" id="p-IV-D-1">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-D-1-1"><span class="en">We ﬁne-tune each model on 8 GPUs on the labeled splits described in Section IV-A.</span></span> <span class="sent" data-sid="s-IV-D-1-2"><span class="en">The batch sizes per GPU are at 2It still requires loading the entire dataset to the memory ﬁrst. most 200/80/40 seconds of audio for BASE/LARGE/X-LARGE models.</span></span> <span class="sent" data-sid="s-IV-D-1-3"><span class="en">During ﬁne-tuning, the convolutional waveform audio encoder parameters are ﬁxed.</span></span> <span class="sent" data-sid="s-IV-D-1-4"><span class="en">Like wav2vec 2.0, we introduce a freeze-step hyperparameter to control how many ﬁne-tuning steps the transformer parameters are ﬁxed, and only the new softmax matrix is trained.</span><button class="mk" data-sid="s-IV-D-1-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-IV-D-1-5"><span class="en">We sweep over peak learning rate ([1e-5, 1e-4]), learning rate schedule (percentage of steps for linear ramp-up and decay), number of ﬁne-tuning steps, freeze step, and waveform encoder output masking probability for each model size and ﬁne-tuning split combination using the word error rate (WER) on the dev-other subset as a criterion for model selection.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-D-1-1"><span class="zh">我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。</span></span><span class="sent" data-sid="s-IV-D-1-2"><span class="zh">（脚注 2：聚类仍需先把整个数据集载入内存。）BASE/LARGE/X-LARGE 模型每块 GPU 的 batch 大小至多为 200/80/40 秒音频。</span></span><span class="sent" data-sid="s-IV-D-1-3"><span class="zh">微调期间，卷积波形音频编码器的参数固定不变。</span></span><span class="sent" data-sid="s-IV-D-1-4"><span class="zh">与 wav2vec 2.0 一样，我们引入 freeze-step 超参数，控制微调前多少步内冻结 Transformer 参数、只训练新的 softmax 矩阵。</span><button class="mk" data-sid="s-IV-D-1-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-IV-D-1-5"><span class="zh">针对每种模型规模与微调子集的组合，我们以 dev-other 子集上的词错误率（WER）作为模型选择标准，对峰值学习率（[1e-5, 1e-4]）、学习率计划（线性升温和衰减的步数占比）、微调步数、freeze step 以及波形编码器输出的掩码概率做网格搜索。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-IV-D-1-4">
+      <div class="ann-card kind-engineering">
+        <div class="ann-kind">工程启发</div>
+        <div class="ann-title">冻结步数这个旋钮</div>
+        <div class="ann-quote">we introduce a freeze-step hyperparameter to control how many ﬁne-tuning steps the transformer parameters are ﬁxed</div>
+        <div class="exp exp-tech">低资源微调时，随机初始化的 CTC 头在头几百步会输出近乎随机的梯度，若立刻回传进预训练 Transformer，几十轮内就能把好表示冲坏。freeze-step 的合理性在此：先让 softmax 头在冻结主干上校准，再整体放开。这个技巧沿用自 wav2vec 2.0，也是现在微调一切自监督语音模型的默认操作之一。代价是多一个需要和 lr、mask 概率联合扫的超参数——作者用 dev-other 做选择，每个组合都扫，成本不低。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-IV-D-2">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-D-2-1"><span class="en">We use the wav2letter++ [59] beam search decoder wrapped in Fairseq [60] for language model-fused decoding, which optimizes: log pCT C(Y | X) + w1 log PLM(Y ) + w2|Y |, where Y is the predicted text, |Y | is the length of the text, and w1 and w2 denote the language model weight and word score.</span></span> <span class="sent" data-sid="s-IV-D-2-2"><span class="en">The decoding hyperparameters are searched with Ax, a Bayesian optimization toolkit,3.</span></span> <span class="sent" data-sid="s-IV-D-2-3"><span class="en">In this work, we consider both n-gram and transformer language models trained on the ofﬁcial Librispeech language modeling data.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-D-2-1"><span class="zh">语言模型融合解码使用 Fairseq [60] 封装的 wav2letter++ [59] 束搜索解码器，优化目标为：log pCTC(Y | X) + w1 log PLM(Y) + w2|Y |，其中 Y 是预测文本，|Y | 是文本长度，w1、w2 分别是语言模型权重和词得分。</span></span><span class="sent" data-sid="s-IV-D-2-2"><span class="zh">解码超参数用 Ax（一个贝叶斯优化工具包，见脚注 3：https://github.com/facebook/Ax）搜索。</span></span><span class="sent" data-sid="s-IV-D-2-3"><span class="zh">本工作同时使用在 LibriSpeech 官方语言建模数据上训练的 n-gram 语言模型和 Transformer 语言模型。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-IV-E"><span class="secnum">E</span> <span class="t-zh">目标质量的度量</span><span class="t-en">Metrics of Target Quality</span></h3><div class="pblk" id="p-IV-E-1">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-E-1-1"><span class="en">For analysis, we derive frame-level forced-aligned phonetic transcripts using a hybrid ASR system to measure the correlation between the k-means cluster assignments and the actual phonetic units.</span></span> <span class="sent" data-sid="s-IV-E-1-2"><span class="en">Given aligned frame-level phonetic labels [y1, · · · , yT ] and k-means labels [z1, · · · , zT ], the joint distribution between the two variables pyz(i, j) can be estimated by counting the occurrences:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-E-1-1"><span class="zh">为便于分析，我们用一个混合式 ASR 系统生成帧级的强制对齐音素转写，用来衡量 k-means 簇分配与真实音素单元之间的相关性。</span></span><span class="sent" data-sid="s-IV-E-1-2"><span class="zh">给定对齐后的帧级音素标签 [y1, · · · , yT] 和 k-means 标签 [z1, · · · , zT]，两个变量的联合分布 pyz(i, j) 可以通过计数来估计：</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-IV-E-1"><code>pyz(i, j) = PT t=1[yt = i ∧zt = j]</code></div>
+<div class="pblk" id="p-IV-E-2">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-E-2-1"><span class="en">T , where i denotes the i-th phoneme class and j denotes the j-th k-means label class.</span></span> <span class="sent" data-sid="s-IV-E-2-2"><span class="en">The marginal probabilities are computed as pz(j) = P</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-E-2-1"><span class="zh">（分母为 T，）其中 i 表示第 i 个音素类别，j 表示第 j 个 k-means 标签类别。</span></span><span class="sent" data-sid="s-IV-E-2-2"><span class="zh">边缘概率按 pz(j) = Σ</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-IV-E-2"><code>i pyz(i, j) and py(j) = P</code></div>
+<div class="pblk" id="p-IV-E-3">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-E-3-1"><span class="en">j pyz(i, j).</span></span> <span class="sent" data-sid="s-IV-E-3-2"><span class="en">For each phone class i, we further compute the most likely target label as: z∗(i) = arg max j pyz(i, j).</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-E-3-1"><span class="zh">j 方向求和 pyz(i, j) 计算（py(i) 同理对 i 求和）。</span></span><span class="sent" data-sid="s-IV-E-3-2"><span class="zh">对每个音素类别 i，进一步计算其最可能的目标标签：z*(i) = arg max j pyz(i, j)。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-IV-E-4">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-E-4-1"><span class="en">Likewise, for each k-means class j, we compute the most likely phone label as: y∗(j) = arg max i pyz(i, j).</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-E-4-1"><span class="zh">类似地，对每个 k-means 类别 j，计算其最可能的音素标签：y*(j) = arg max i pyz(i, j)。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-IV-E-5">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-E-5-1"><span class="en">Three metrics are considered:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-E-5-1"><span class="zh">我们考虑三个指标：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-IV-E-6">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-E-6-1"><span class="en">1) phone purity (Phn Pur.):</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-E-6-1"><span class="zh">1）音素纯度（phone purity，Phn Pur.）：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-IV-E-7">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-E-7-1"><span class="en">Epz(j)[py|z(y∗(j) | j)], where py|z(i | j) = pyz(i, j)/pz(j) denotes the conditional probability of phone given a k-means label.</span></span> <span class="sent" data-sid="s-IV-E-7-2"><span class="en">This metric measures the average phone purity within one class, which can be interpreted as the frame-level phone accuracy if we transcribe each k-means class with its 3https://github.com/facebook/Ax most likely phone label.</span></span> <span class="sent" data-sid="s-IV-E-7-3"><span class="en">When comparing different sets of target labels with the same number of units, higher purity indicates better quality.</span></span> <span class="sent" data-sid="s-IV-E-7-4"><span class="en">However, this metric is less meaningful when comparing two sets with different numbers of units: in the extreme case where each frame is assigned a unique target label, the phone purity would be 100%.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-E-7-1"><span class="zh">Epz(j)[py|z(y*(j) | j)]，其中 py|z(i | j) = pyz(i, j)/pz(j) 是给定 k-means 标签时音素的条件概率。</span></span><span class="sent" data-sid="s-IV-E-7-2"><span class="zh">该指标衡量同一簇内的平均音素纯度：如果把每个 k-means 簇都转写为其最可能的音素标签，它可以解释为帧级音素准确率。（脚注 3：https://github.com/facebook/Ax）</span></span><span class="sent" data-sid="s-IV-E-7-3"><span class="zh">在比较单元数相同的两组目标标签时，纯度越高质量越好。</span></span><span class="sent" data-sid="s-IV-E-7-4"><span class="zh">但在比较单元数不同的两组标签时，这个指标意义不大：极端情况下若每帧都被分配一个唯一标签，音素纯度会达到 100%。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-IV-E-8">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-E-8-1"><span class="en">2) cluster purity (Cls Pur.):</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-E-8-1"><span class="zh">2）簇纯度（cluster purity，Cls Pur.）：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-IV-E-9">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-E-9-1"><span class="en">Epy(i)[pz|y(z∗(i) | i)], where pz|y(j | i) = pyz(i, j)/py(i) denotes the conditional probability of a k-means label given phone label.</span></span> <span class="sent" data-sid="s-IV-E-9-2"><span class="en">Cluster purity is the counterpart of phone purity, whose value would typically decrease when the number of units increases.</span></span> <span class="sent" data-sid="s-IV-E-9-3"><span class="en">When comparing target labels with the same number of units, higher cluster purity also indicates a better quality, as frames of the same phone are more likely labeled as the same k-means label class. 3) phone-normalized mutual information (PNMI): i j pyz(i, j) log pyz(i, j)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-E-9-1"><span class="zh">Epy(i)[pz|y(z*(i) | i)]，其中 pz|y(j | i) = pyz(i, j)/py(i) 是给定音素标签时 k-means 标签的条件概率。</span></span><span class="sent" data-sid="s-IV-E-9-2"><span class="zh">簇纯度是音素纯度的对偶指标，其取值通常随单元数增加而下降。</span></span><span class="sent" data-sid="s-IV-E-9-3"><span class="zh">比较单元数相同的目标标签时，簇纯度越高同样说明质量越好——同一音素的帧更可能被标为同一个 k-means 簇。3）音素归一化互信息（PNMI）：对 i、j 求和 pyz(i, j) log(pyz(i, j) 与边缘概率乘积之比）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-IV-E-3"><code>I(y; z)</code></div>
+<div class="eq" id="eq-IV-E-4"><code>py(i)pz(j) H(y) =</code></div>
+<div class="eq" id="eq-IV-E-5"><code>i py(i) log py(i) = H(y) −H(y | z)</code></div>
+<div class="eq" id="eq-IV-E-6"><code>H(y) = 1 −H(y | z)</code></div>
+<div class="pblk" id="p-IV-E-10">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-E-10-1"><span class="en">H(y) .</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-E-10-1"><span class="zh">（PNMI 即互信息 I(y; z) 除以音素标签熵 H(y)。）</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-IV-E-11">
+          <p class="en-lines"><span class="sent" data-sid="s-IV-E-11-1"><span class="en">PNMI is an information-theoretic metric that measures the percentage of uncertainty about the phone label y eliminated after observing the k-means label z.</span></span> <span class="sent" data-sid="s-IV-E-11-2"><span class="en">Higher PNMI also indicates better k-means clustering quality.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-IV-E-11-1"><span class="zh">PNMI 是一个信息论指标，衡量观察到 k-means 标签 z 之后、关于音素标签 y 的不确定性被消除了百分之多少。</span></span><span class="sent" data-sid="s-IV-E-11-2"><span class="zh">PNMI 越高也说明 k-means 聚类质量越好。</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-V"><span class="secnum">V</span> <span class="t-zh">实验结果</span><span class="t-en">RESULTS</span></h2></section>
+<section>
+      <h3 class="sech lv2" id="sec-V-A"><span class="secnum">A</span> <span class="t-zh">主要结果：低资源与高资源设定</span><span class="t-en">Main Results: Low- and High-Resource Setups</span></h3><div class="pblk" id="p-V-A-1">
+          <p class="en-lines"><span class="sent" data-sid="s-V-A-1-1"><span class="en">Table II presents results for the low-resource setup, where pre-trained models are ﬁne-tuned on 10 minutes, 1 hour, 10 hours, or 100 hours of labeled data.</span></span> <span class="sent" data-sid="s-V-A-1-2"><span class="en">We include comparison with semi-supervised (iterative pseudo labeling (IPL) [12], slimIPL [54], noisy student [61]) and self-supervised approaches (DeCoAR 2.0 [50], DiscreteBERT [51], wav2vec 2.0 [6]) in the literature.</span></span> <span class="sent" data-sid="s-V-A-1-3"><span class="en">Increasing the amount of unlabeled data and increasing the model size improve performance, demonstrating the scalability of the proposed HuBERT selfsupervised pre-training method.</span></span> <span class="sent" data-sid="s-V-A-1-4"><span class="en">In the ultra-low resource setup with just 10 minutes of labeled data, the HuBERT LARGE model can achieve a WER of 4.7% on the test-clean set and 7.6% on the test-other set, which is 0.1% and 0.6% WER lower, respectively than the state-of-the-art wav2vec 2.0 LARGE model.</span><button class="mk feat" data-sid="s-V-A-1-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-V-A-1-5"><span class="en">By further scaling up the model size to 1B parameters, the HuBERT X-LARGE model can further reduce the WER to 4.6% and 6.8% on test-clean and test-other.</span></span> <span class="sent" data-sid="s-V-A-1-6"><span class="en">The superiority of HuBERT persists across setups with different amounts of labeled data, with the only exceptions being ﬁnetuning on 100 hours of labeled data, where HuBERT LARGE is 0.1% WER higher than wav2vec 2.0 LARGE on test-clean, and HuBERT BASE is 0.1% WER higher than wav2vec 2.0 Model Unlabeled Data LM dev-clean dev-other test-clean test-other 10-min labeled 15.7 24.1 16.3 25.2 8.9 15.7 9.1 15.6 6.3 9.8 6.6 10.3 4.6 7.9 4.8 8.2 9.1 15.0 9.7 15.3 6.1 9.4 6.6 10.1 4.3 7.0 4.7 7.6 4.4 6.1 4.6 6.8 13.8 29.1 8.5 16.4 9.0 17.6 5.0 10.8 5.5 11.3 2.9 5.4 2.9 5.8 5.6 10.9 6.1 11.3 2.6 4.9 2.9 5.4 2.6 4.2 2.8 4.8 SlimIPL [54] 5.3 7.9 5.5 9.0 5.4 13.3 5.3 13.2 5.9 14.1 3.8 9.1 4.3 9.5 2.4 4.8 2.6 4.9 3.9 9.0 4.3 9.4 2.2 4.3 2.4 4.6 2.1 3.6 2.3 4.0 IPL [12] 3.19 6.14 3.72 7.11 SlimIPL [54] 2.2 4.6 2.7 5.2 Noisy Student [61] 3.9 8.8 4.2 8.6 5.0 12.1 4.0 10.9 4.5 12.1 2.7 7.9 3.4 8.0 1.9 4.0 2.0 4.0 2.7 7.8 3.4 8.1 1.8 3.7 2.1 3.9 1.7 3.0 1.9 3.5 TABLE II: Results and comparison with the literature on low resource setups (10-min, 1-hour, 10-hour, and 100-hour of labeled data).</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-A-1-1"><span class="zh">Table II 给出低资源设定的结果：预训练模型分别在 10 minutes、1 hour、10 hours 或 100 hours 的标注数据上微调。</span></span><span class="sent" data-sid="s-V-A-1-2"><span class="zh">我们纳入了文献中半监督方法（迭代伪标注 IPL [12]、slimIPL [54]、noisy student [61]）和自监督方法（DeCoAR 2.0 [50]、DiscreteBERT [51]、wav2vec 2.0 [6]）的对比。</span></span><span class="sent" data-sid="s-V-A-1-3"><span class="zh">增加无标注数据量、增大模型规模都能提升性能，展示了所提 HuBERT 自监督预训练方法的可扩展性。</span></span><span class="sent" data-sid="s-V-A-1-4"><span class="zh">在仅 10 minutes 标注数据的极低资源设定下，HuBERT LARGE 模型在 test-clean 上取得 4.7% 的 WER、在 test-other 上取得 7.6%，分别比当时最优的 wav2vec 2.0 LARGE 模型低 0.1% 和 0.6%。</span><button class="mk feat" data-sid="s-V-A-1-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-V-A-1-5"><span class="zh">把模型规模进一步扩大到 1B 参数后，HuBERT X-LARGE 模型在 test-clean 和 test-other 上把 WER 进一步降到 4.6% 和 6.8%。</span></span><span class="sent" data-sid="s-V-A-1-6"><span class="zh">HuBERT 的优势在不同标注数据量的设定下都成立，仅有的例外是在 100 hours 标注数据上微调时：HuBERT LARGE 在 test-clean 上比 wav2vec 2.0 LARGE 高 0.1% WER，HuBERT BASE 在 test-other 上比 wav2vec 2.0 BASE 高 0.1% WER。（Table II：低资源设定（10-min、1-hour、10-hour、100-hour 标注数据）下与文献的对比结果；表格各列为模型、无标注数据、语言模型及 dev-clean、dev-other、test-clean、test-other 的 WER，各模型行数据与原文一致：15.7 24.1 16.3 25.2；8.9 15.7 9.1 15.6；6.3 9.8 6.6 10.3；4.6 7.9 4.8 8.2；9.1 15.0 9.7 15.3；6.1 9.4 6.6 10.1；4.3 7.0 4.7 7.6；4.4 6.1 4.6 6.8；13.8 29.1；8.5 16.4；9.0 17.6；5.0 10.8 5.5 11.3；2.9 5.4 2.9 5.8；5.6 10.9 6.1 11.3；2.6 4.9 2.9 5.4；2.6 4.2 2.8 4.8；SlimIPL [54] 5.3 7.9 5.5 9.0；5.4 13.3 5.3 13.2；5.9 14.1；3.8 9.1 4.3 9.5；2.4 4.8 2.6 4.9；3.9 9.0 4.3 9.4；2.2 4.3 2.4 4.6；2.1 3.6 2.3 4.0；IPL [12] 3.19 6.14 3.72 7.11；SlimIPL [54] 2.2 4.6 2.7 5.2；Noisy Student [61] 3.9 8.8 4.2 8.6；5.0 12.1 4.0 10.9；4.5 12.1；2.7 7.9 3.4 8.0；1.9 4.0 2.0 4.0；2.7 7.8 3.4 8.1；1.8 3.7 2.1 3.9；1.7 3.0 1.9 3.5。）</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-V-A-1-4">
+      <div class="ann-card kind-number">
+        <div class="ann-kind">数字怎么理解</div>
+        <div class="ann-title">10 分钟标注能走多远</div>
+        <div class="ann-quote">the HuBERT LARGE model can achieve a WER of 4.7% on the test-clean set and 7.6% on the test-other set</div>
+        <div class="exp exp-tech">只用 10 分钟标注微调，test-clean 4.7% / test-other 7.6%——这个数放在 2021 年是颠覆性的：它意味着 Librispeech 级别的干净朗读语音上，标注瓶颈被自监督预训练基本消除了。但要注意分母：10 分钟标签只用来教 CTC 头对齐字符，真正重活全在 60,000 小时无标注预训练里。对实际业务,衡量低资源方法时要把「无标注数据+算力」也计入成本,这不是免费的低资源。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-V-A-2">
+          <p class="en-lines"><span class="sent" data-sid="s-V-A-2-1"><span class="en">BASE on test-other.</span></span> <span class="sent" data-sid="s-V-A-2-2"><span class="en">In addition, HuBERT also outperforms DiscreteBERT by a large margin in all setups, while both are trained with a virtually identical objective - masked prediction of discovered units.</span></span> <span class="sent" data-sid="s-V-A-2-3"><span class="en">The considerable performance gap suggests two things.</span></span> <span class="sent" data-sid="s-V-A-2-4"><span class="en">First, using waveform as the input to the model is crucial for avoiding loss of information during quantization.</span><button class="mk" data-sid="s-V-A-2-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-V-A-2-5"><span class="en">Second, while vq-wav2vec [5], the units that DiscreteBERT uses for training, may discover better units than k-means clustering of MFCC features, the proposed iterative reﬁnement beneﬁts from the improving HuBERT model and learn better units eventually.</span></span> <span class="sent" data-sid="s-V-A-2-6"><span class="en">We will verify these statements in the ablation study sections.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-A-2-1"><span class="zh">（接上句，即 test-other 上的 BASE 对比。）</span></span><span class="sent" data-sid="s-V-A-2-2"><span class="zh">此外，HuBERT 在所有设定下都大幅超过 DiscreteBERT，尽管两者的训练目标几乎相同——都是对发现的单元做掩码预测。</span></span><span class="sent" data-sid="s-V-A-2-3"><span class="zh">这一巨大的性能差距说明了两点。</span></span><span class="sent" data-sid="s-V-A-2-4"><span class="zh">第一，用波形作为模型输入对于避免量化过程中的信息损失至关重要。</span><button class="mk" data-sid="s-V-A-2-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-V-A-2-5"><span class="zh">第二，尽管 DiscreteBERT 所用的 vq-wav2vec [5] 单元可能比 MFCC 特征的 k-means 聚类发现更好的单元，但我们提出的迭代精炼能受益于不断改进的 HuBERT 模型，最终学到更好的单元。</span></span><span class="sent" data-sid="s-V-A-2-6"><span class="zh">我们将在消融研究部分验证这些论断。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-V-A-2-4">
+      <div class="ann-card kind-critique">
+        <div class="ann-kind">值得质疑</div>
+        <div class="ann-title">归因是否干净</div>
+        <div class="ann-quote">using waveform as the input to the model is crucial for avoiding loss of information during quantization</div>
+        <div class="exp exp-tech">作者把对 DiscreteBERT 的大幅领先归因于两点：波形输入避免量化信息损失、迭代精炼带来更好教师。方向大概率是对的,但对照并不严格——DiscreteBERT 输入输出都用同一套 13.5k 单元的 vq-wav2vec 码本，变量不止「输入连续与否」一个,码本粒度、蒸馏教师的训练量都不同。「波形输入至关重要」更多是「合理推断+消融支持」而非「隔离变量的因果结论」，引用时别把话说满。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-V-A-3">
+          <p class="en-lines"><span class="sent" data-sid="s-V-A-3-1"><span class="en">We report results of ﬁne-tuning HuBERT models on the full 960 hours of Librispeech data and compare with the literature in Table III.</span></span> <span class="sent" data-sid="s-V-A-3-2"><span class="en">Prior studies using additional unpaired speech are classiﬁed into:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-A-3-1"><span class="zh">我们在完整 960 hours 的 Librispeech 数据上微调 HuBERT 模型，并在 Table III 中与文献对比。</span></span><span class="sent" data-sid="s-V-A-3-2"><span class="zh">使用额外不成对语音的既往研究可分为：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-V-A-4">
+          <p class="en-lines"><span class="sent" data-sid="s-V-A-4-1"><span class="en">1) self-training: ﬁrst train an ASR on labeled data to annotate unlabeled speech, and then combine both golden and ASR-annotated text-speech pairs for supervised training. 2) pre-training: ﬁrst use unlabeled speech for pre-training a model, and then ﬁne-tune the model on labeled data with a supervised training objective.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-A-4-1"><span class="zh">1）自训练：先在标注数据上训练一个 ASR 为无标注语音打标，再把黄金标注与 ASR 标注的文本-语音对合并做监督训练。2）预训练：先用无标注语音预训练模型，再用监督训练目标在标注数据上微调。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-V-A-5">
+          <p class="en-lines"><span class="sent" data-sid="s-V-A-5-1"><span class="en">3) pre-training + self-training: ﬁrst pre-train and ﬁne-tune a model, and then use it to annotate unlabeled speech for self-training combined with supervised data.</span></span> <span class="sent" data-sid="s-V-A-5-2"><span class="en">HuBERT outperforms the state-of-the-art supervised and selftraining methods and is on par with the two best pre-training results in the literature; both are based on wav2vec 2.0 contrastive learning.</span></span> <span class="sent" data-sid="s-V-A-5-3"><span class="en">In contrast, it lags behind methods combining pre-training with self-training.</span></span> <span class="sent" data-sid="s-V-A-5-4"><span class="en">However, as observed in [63] and [40], we expect that HuBERT can achieve comparable or better performance after combining with self-training, since the pre-trained HuBERT model is on par or better than the pre-trained model those two methods use for pseudo labeling.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-A-5-1"><span class="zh">3）预训练 + 自训练：先预训练并微调一个模型，再用它为无标注语音打标，与监督数据合并做自训练。</span></span><span class="sent" data-sid="s-V-A-5-2"><span class="zh">HuBERT 超过了最先进的监督方法和自训练方法，并与文献中最好的两个预训练结果持平——这两者都基于 wav2vec 2.0 对比学习。</span></span><span class="sent" data-sid="s-V-A-5-3"><span class="zh">相比之下，它落后于「预训练 + 自训练」相结合的方法。</span></span><span class="sent" data-sid="s-V-A-5-4"><span class="zh">不过，如 [63] 和 [40] 所观察到的，我们预期 HuBERT 与自训练结合后能取得相当或更好的性能，因为预训练的 HuBERT 模型与那两个方法用于伪标注的预训练模型持平或更好。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-V-B"><span class="secnum">B</span> <span class="t-zh">分析：k-means 的稳定性</span><span class="t-en">Analysis: K-Means Stability</span></h3><div class="pblk" id="p-V-B-1">
+          <p class="en-lines"><span class="sent" data-sid="s-V-B-1-1"><span class="en">To better understand why masked prediction of discovered units is effective, we conduct a series of analyses and ablation studies.</span></span> <span class="sent" data-sid="s-V-B-1-2"><span class="en">We start with probing the stability of the k-means clustering algorithm concerning different numbers of clusters and Model Unlabeled Data LM dev-clean dev-other test-clean test-other Superivsed Conformer L [62] 1.9 3.9 Self-Training IPL [12] 1.85 3.26 2.10 4.01 Noisy Student [61] LV-60k 1.6 3.4 1.7 3.4 Pre-Training 1.6 3.0 1.8 3.3 pre-trained Conformer XXL [40] 1.5 3.0 1.5 3.1 Pre-Training + Self-Training wav2vec 2.0 + self-training [63] 1.1 2.7 1.5 3.1 pre-trained Conformer XXL + Noisy Student [40] 1.3 2.6 1.4 2.6 This work (Pre-Training) 1.5 3.0 1.9 3.3 1.5 2.5 1.8 2.9 TABLE III: Comparison with the literature on high resource setups using all 960 hours of labeled LibriSpeech data. different sizes of its training data.</span></span> <span class="sent" data-sid="s-V-B-1-3"><span class="en">Two features are considered: 39-dimensional MFCC features and 768-dimensional output from the 6-th transformer layer of the ﬁrst iteration HuBERT- BASE model.</span></span> <span class="sent" data-sid="s-V-B-1-4"><span class="en">These two features are used to produce cluster assignments for the ﬁrst and the second iteration HUBERT training, respectively.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-B-1-1"><span class="zh">为更好地理解为什么掩码预测发现的单元是有效的，我们进行了一系列分析与消融研究。</span></span><span class="sent" data-sid="s-V-B-1-2"><span class="zh">我们首先考察 k-means 聚类算法在不同簇数与不同训练数据量下的稳定性。（Table III：使用全部 960 小时 LibriSpeech 标注数据的高资源设定下与文献的对比；表格各列为模型、无标注数据、语言模型及 dev-clean、dev-other、test-clean、test-other 的 WER，各行数据与原文一致：监督 Conformer L [62] 1.9 3.9；自训练 IPL [12] 1.85 3.26 2.10 4.01；Noisy Student [61]（LV-60k）1.6 3.4 1.7 3.4；纯预训练 1.6 3.0 1.8 3.3；预训练 Conformer XXL [40] 1.5 3.0 1.5 3.1；预训练+自训练 wav2vec 2.0 + self-training [63] 1.1 2.7 1.5 3.1；预训练 Conformer XXL + Noisy Student [40] 1.3 2.6 1.4 2.6；本工作（纯预训练）1.5 3.0 1.9 3.3 与 1.5 2.5 1.8 2.9。）</span></span><span class="sent" data-sid="s-V-B-1-3"><span class="zh">考虑两种特征：39 维 MFCC 特征，以及第一轮 HuBERT-BASE 模型第 6 层 Transformer 的 768 维输出。</span></span><span class="sent" data-sid="s-V-B-1-4"><span class="zh">这两种特征分别用于生成第一轮和第二轮 HuBERT 训练的簇分配。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-V-B-2">
+          <p class="en-lines"><span class="sent" data-sid="s-V-B-2-1"><span class="en">For k-means clustering, we consider K = {100, 500} clusters ﬁtted on {1, 10, 100} hours of speech sampled from the LibriSpeech training split.</span></span> <span class="sent" data-sid="s-V-B-2-2"><span class="en">Each combination of the hyperparameters and the features are trained for 10 trials, and the mean and standard deviation of the supervised PNMI metric on the development set (combining dev-clean and devother from LibriSpeech) is reported in Table IV.</span></span> <span class="sent" data-sid="s-V-B-2-3"><span class="en">The results show that the k-means clustering is reasonably stable given the small standard deviations across different hyperparameters and features.</span></span> <span class="sent" data-sid="s-V-B-2-4"><span class="en">Furthermore, increasing the amount of data used for ﬁtting k-means models improves PNMI in general, but the gain is only as much as 0.012, suggesting the feasibility of using k-means for unit discovery even with limited CPU memory relative to the feature matrix size.</span></span> <span class="sent" data-sid="s-V-B-2-5"><span class="en">Lastly, the PNMI score is much higher when clustering on HuBERT features than clustering on MFCC features, and the gap is even larger with 500 clusters, indicating that iterative reﬁnement signiﬁcantly improves the clustering quality. feature PNMI (mean ± std) with K-means Training Size = MFCC 100 500 BASE-it1-L6 100 500 TABLE IV: Stability of K-means as an unsupervised unit discovery algorithm with respect to different features, numbers of clusters, and training data sizes.</span><button class="mk" data-sid="s-V-B-2-5" title="查看讲解">解</button></span> <span class="sent" data-sid="s-V-B-2-6"><span class="en">PNMI stands for phonenormalized mutual information.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-B-2-1"><span class="zh">k-means 聚类考虑 K = {100, 500} 个簇，分别拟合在从 LibriSpeech 训练集采样的 {1, 10, 100} 小时语音上。</span></span><span class="sent" data-sid="s-V-B-2-2"><span class="zh">每种超参数与特征的组合训练 10 次，报告开发集（合并 LibriSpeech 的 dev-clean 和 dev-other）上监督 PNMI 指标的均值和标准差，见 Table IV。</span></span><span class="sent" data-sid="s-V-B-2-3"><span class="zh">结果表明，在不同超参数和特征下，k-means 聚类的标准差都很小，相当稳定。</span></span><span class="sent" data-sid="s-V-B-2-4"><span class="zh">此外，增加拟合 k-means 所用的数据量总体能提升 PNMI，但最大增益只有 0.012——这说明即使 CPU 内存相对特征矩阵大小有限，用 k-means 做单元发现也是可行的。</span></span><span class="sent" data-sid="s-V-B-2-5"><span class="zh">最后，在 HuBERT 特征上聚类的 PNMI 远高于在 MFCC 特征上聚类，且 500 簇时差距更大，说明迭代精炼显著提升了聚类质量。（Table IV：k-means 作为无监督单元发现算法的稳定性；表格为不同特征（MFCC 与 BASE-it1-L6）、簇数（100 与 500）与训练数据量（1、10、100 小时）下的 PNMI 均值 ± 标准差。）</span><button class="mk" data-sid="s-V-B-2-5" title="查看讲解">解</button></span><span class="sent" data-sid="s-V-B-2-6"><span class="zh">PNMI 即音素归一化互信息（phone-normalized mutual information）。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-V-B-2-5">
+      <div class="ann-card kind-number">
+        <div class="ann-kind">数字怎么理解</div>
+        <div class="ann-title">PNMI 跨了多少量级</div>
+        <div class="ann-quote">the PNMI score is much higher when clustering on HuBERT features than clustering on MFCC features</div>
+        <div class="exp exp-tech">MFCC 上聚类 PNMI 约 0.24-0.29，第二轮 BASE-it2 第 9 层特征上聚类达 0.704——教师与真实音素的互信息翻了近 3 倍，这是迭代精炼有效的最直接量化证据。更有意思的是 500 簇时差距更大:学到的表示撑起了更细粒度的切分。反过来要警惕：PNMI 衡量的是「与 HMM 强制对齐音素的相关性」，而 HMM 对齐本身也只是参照系,不能把 PNMI 当绝对真理去最大化。</div>
+        
+      </div></div></div>
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-V-C"><span class="secnum">C</span> <span class="t-zh">分析：跨层与跨迭代的聚类质量</span><span class="t-en">Analysis: Clustering Quality Across Layers and Iterations</span></h3><div class="pblk" id="p-V-C-1">
+          <p class="en-lines"><span class="sent" data-sid="s-V-C-1-1"><span class="en">We next study how each layer of the HuBERT model from each iteration performs when used for clustering to generate</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-C-1-1"><span class="zh">接下来研究：用每轮迭代 HuBERT 模型的各层特征做聚类来生成训练目标时，</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-V-C-1"><code>0.4</code></div>
+<div class="pblk" id="p-V-C-2">
+          <p class="en-lines"><span class="sent" data-sid="s-V-C-2-1"><span class="en">Cluster Purity (%)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-C-2-1"><span class="zh">（图中纵轴：）簇纯度（%）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-V-C-2"><code>0.3</code></div>
+<div class="eq" id="eq-V-C-3"><code>0.2</code></div>
+<div class="eq" id="eq-V-C-4"><code>0.1</code></div>
+<div class="pblk" id="p-V-C-3">
+          <p class="en-lines"><span class="sent" data-sid="s-V-C-3-1"><span class="en">0 Phone Purity (%)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-C-3-1"><span class="zh">（纵轴刻度从 0 起）音素纯度（%）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-V-C-5"><code>0.7</code></div>
+<div class="eq" id="eq-V-C-6"><code>0.6</code></div>
+<div class="eq" id="eq-V-C-7"><code>0.5</code></div>
+<div class="eq" id="eq-V-C-8"><code>0.4</code></div>
+<div class="eq" id="eq-V-C-9"><code>0.7</code></div>
+<div class="pblk" id="p-V-C-4">
+          <p class="en-lines"><span class="sent" data-sid="s-V-C-4-1"><span class="en">PNMI (%)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-C-4-1"><span class="zh">PNMI（%）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-V-C-10"><code>0.6</code></div>
+<div class="eq" id="eq-V-C-11"><code>0.5</code></div>
+<div class="eq" id="eq-V-C-12"><code>0.4</code></div>
+<div class="pblk" id="p-V-C-5">
+          <p class="en-lines"><span class="sent" data-sid="s-V-C-5-1"><span class="en">Layer</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-C-5-1"><span class="zh">层号（Layer）</span></span></p>
+          
+        </div>
+<div class="cap" id="fig-V-C-1"><span class="cap-k">图</span><p class="en">Fig. 2: Quality of the cluster assignments obtained by running k-means clustering on features extracted from each transformer layer of the ﬁrst and the second iteration BASE HuBERT models.</p><p class="zh">图 2：对第一轮和第二轮 BASE HuBERT 模型的各 Transformer 层特征跑 k-means 聚类，所得簇分配的质量对比。</p></div>
+<div class="pblk" id="p-V-C-6">
+          <p class="en-lines"><span class="sent" data-sid="s-V-C-6-1"><span class="en">training targets.</span></span> <span class="sent" data-sid="s-V-C-6-2"><span class="en">The two BASE HuBERT models from the ﬁrst two iterations as described in Section IV-C are considered, which are referred to as BASE-it1 and BASE-it2, respectively.</span></span> <span class="sent" data-sid="s-V-C-6-3"><span class="en">There are 26 features representing 12 transformer layers plus the input to the ﬁrst transformer layer (denoted as “Layer 0”) from the two HuBERT models.</span></span> <span class="sent" data-sid="s-V-C-6-4"><span class="en">For each feature, we ﬁt three kmeans models (K = {100, 500, 1000} clusters) on a 100 hour subset randomly sampled from the LibriSpeech training data.</span></span> <span class="sent" data-sid="s-V-C-6-5"><span class="en">PNMI dev-other WER (%) WER Chenone (supervised top-line) 8976 0.809 10.38 9.16 9.79 K-means {50,100} 17.81 K-means {50,100,500} 17.56 K-means on MFCC 50 0.227 18.68 31.07 94.60 100 0.243 17.86 29.57 96.37 500 0.276 18.40 33.42 97.66 K-means on BASE-it1-layer6 500 0.637 11.91 13.47 23.29 K-means on BASE-it2-layer9 500 0.704 10.75 11.59 13.79 19.26 17.64 18.46 Product K-means-{0,1,2}-100 16.73 TABLE V: The effect of the training objective and clustering quality on performance.</span></span> <span class="sent" data-sid="s-V-C-6-6"><span class="en">C refers to the number of units, and α is the weight for masked frames.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-C-6-1"><span class="zh">（各层）表现如何。</span></span><span class="sent" data-sid="s-V-C-6-2"><span class="zh">考虑第 IV-C 节所述前两轮迭代的两个 BASE HuBERT 模型，分别记为 BASE-it1 和 BASE-it2。</span></span><span class="sent" data-sid="s-V-C-6-3"><span class="zh">共 26 个特征：两个模型各自的 12 个 Transformer 层，加上第一个 Transformer 层的输入（记为「Layer 0」）。</span></span><span class="sent" data-sid="s-V-C-6-4"><span class="zh">对每个特征，在从 LibriSpeech 训练数据随机采样的 100 hour 子集上拟合三个 k-means 模型（K = {100, 500, 1000} 个簇）。</span></span><span class="sent" data-sid="s-V-C-6-5"><span class="zh">（Table V：训练目标与聚类质量对性能的影响；列为 PNMI、dev-other WER（%）及不同 α 权重下的 WER，各行数据与原文一致：chenone（监督上线）8976 单元（按 0 1 2…编号）、PNMI 0.809、dev-other 10.38、9.16、9.79；K-means {50,100}（50100）17.81；K-means {50,100,500}（50100 加 500）17.56；MFCC 上 k-means 50 簇：0.227 18.68 31.07 94.60；100 簇：0.243 17.86 29.57 96.37；500 簇：0.276 18.40 33.42 97.66；BASE-it1-layer6 上 k-means 500 簇：0.637 11.91 13.47 23.29；BASE-it2-layer9 上 k-means 500 簇：0.704 10.75 11.59 13.79 19.26 17.64 18.46；乘积 K-means-{0,1,2}-100：16.73。）</span></span><span class="sent" data-sid="s-V-C-6-6"><span class="zh">C 表示单元数，α 是被掩码帧损失的权重。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-V-C-7">
+          <p class="en-lines"><span class="sent" data-sid="s-V-C-7-1"><span class="en">The teacher quality measured in cluster purity, phone purity, and phone normalized mutual information (PNMI) is shown in Figure 2.</span></span> <span class="sent" data-sid="s-V-C-7-2"><span class="en">As a baseline, MFCC achieves (cluster purity, phone purity, PNMI) = (0.099, 0.335, 0.255) for K = 100 and (0.031, 0.356, 0.287) for K = 500.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-C-7-1"><span class="zh">以簇纯度、音素纯度和音素归一化互信息（PNMI）衡量的教师质量如 Figure 2 所示。</span></span><span class="sent" data-sid="s-V-C-7-2"><span class="zh">作为基线，MFCC 在 K = 100 时取得（簇纯度、音素纯度、PNMI）= (0.099, 0.335, 0.255)，K = 500 时为 (0.031, 0.356, 0.287)。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-V-C-8">
+          <p class="en-lines"><span class="sent" data-sid="s-V-C-8-1"><span class="en">Both BASE-it1 and BASE-it2 features result in signiﬁcantly better clustering quality on all three metrics than MFCC with the same number of clusters.</span></span> <span class="sent" data-sid="s-V-C-8-2"><span class="en">On the other hand, the best BASE-it2 feature is better than the best BASE-it1 on phone purity and PNMI, but slightly worse on cluster purity.</span></span> <span class="sent" data-sid="s-V-C-8-3"><span class="en">Finally, we observe different trends across layers from BASE-it1 and BASE-it2: while BASE-it2 model features generally improve over layers, BASE-it1 has the best features in the middle layers around the 6th layer.</span></span> <span class="sent" data-sid="s-V-C-8-4"><span class="en">Interestingly, the quality of the last few layers degrades dramatically for BASE-it1, potentially because it is trained on target assignments of worse quality, and therefore the last few layers learn to mimic their bad label behavior.</span><button class="mk feat" data-sid="s-V-C-8-4" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-C-8-1"><span class="zh">在相同簇数下，BASE-it1 和 BASE-it2 的特征在全部三个指标上都显著优于 MFCC。</span></span><span class="sent" data-sid="s-V-C-8-2"><span class="zh">另一方面，最好的 BASE-it2 特征在音素纯度和 PNMI 上优于最好的 BASE-it1，但在簇纯度上略逊。</span></span><span class="sent" data-sid="s-V-C-8-3"><span class="zh">最后，我们观察到 BASE-it1 与 BASE-it2 的跨层趋势不同：BASE-it2 的特征质量总体上随层数提升，而 BASE-it1 的最佳特征出现在第 6 层附近的中间层。</span></span><span class="sent" data-sid="s-V-C-8-4"><span class="zh">有趣的是，BASE-it1 最后几层的质量急剧下降，可能是因为它的训练目标本身质量较差，最后几层学会了模仿这些糟糕标签的行为。</span><button class="mk feat" data-sid="s-V-C-8-4" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-V-C-8-4">
+      <div class="ann-card kind-concept">
+        <div class="ann-kind">概念</div>
+        <div class="ann-title">末层被教师污染</div>
+        <div class="ann-quote">the last few layers learn to mimic their bad label behavior</div>
+        <div class="exp exp-tech">BASE-it1 的末几层聚类质量骤降，作者解释为「学会了模仿糟糕标签」。这揭示了预测式自监督的一个结构性现象：网络逐层从「声学细节」过渡到「任务目标本身」，末层表示越来越像教师的输出空间而非音素空间。学生要取其神而非其形,就必须从中间层抽取特征。这一现象后来在 WavLM 的层分析、SUPERB 的逐层权重里反复出现,是自监督语音模型的通用解剖学结论。</div>
+        
+      </div></div></div>
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-V-D"><span class="secnum">D</span> <span class="t-zh">消融：预测被掩码帧的重要性</span><span class="t-en">Ablation: The Importance of Predicting Masked Frames</span></h3><div class="pblk" id="p-V-D-1">
+          <p class="en-lines"><span class="sent" data-sid="s-V-D-1-1"><span class="en">We present a series of ablation studies in the following sections to learn how pre-training objective, cluster quality, and hyperparameters affect the performance.</span></span> <span class="sent" data-sid="s-V-D-1-2"><span class="en">The models for ablation studies are pre-trained for 100k steps and ﬁne-tuned on the 10-hour libri-light split using ﬁxed hyperaprameters.</span></span> <span class="sent" data-sid="s-V-D-1-3"><span class="en">MFCC-based k-means units with C=100 are used if not otherwise mentioned.</span></span> <span class="sent" data-sid="s-V-D-1-4"><span class="en">We report WERs on the dev-other set decoded with the n-gram language model using ﬁxed decoding hyperparameters.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-D-1-1"><span class="zh">下面几节给出一系列消融研究，考察预训练目标、聚类质量和超参数如何影响性能。</span></span><span class="sent" data-sid="s-V-D-1-2"><span class="zh">消融所用模型预训练 100k 步，在 libri-light 10-hour 子集上用固定超参数微调。</span></span><span class="sent" data-sid="s-V-D-1-3"><span class="zh">如无特别说明，使用基于 MFCC 的 k-means 单元，C=100。</span></span><span class="sent" data-sid="s-V-D-1-4"><span class="zh">我们报告 dev-other 集上用 n-gram 语言模型、固定解码超参数解码得到的 WER。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-V-D-2">
+          <p class="en-lines"><span class="sent" data-sid="s-V-D-2-1"><span class="en">To understand the importance of our proposal to predict the masked frames only, we compare three conditions: 1) predicting masked frames, 2) predicting all frames, and 3) predicting unmasked frames, which can be simulated by setting α to 1.0, 0.5, and 0.0, respectively.</span></span> <span class="sent" data-sid="s-V-D-2-2"><span class="en">We are comparing three k-means models learned from clustering MFCC teachers with 50, 100, 500 clusters, one learned from clustering HuBERT-BASE-it1 6th transformer layer features, and supervised labels obtained from the forced-alignment of character-based HMM models (chenone) [64].</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-D-2-1"><span class="zh">为验证「只预测被掩码帧」这一设计的重要性，我们比较三种条件：1）只预测被掩码帧，2）预测全部帧，3）只预测未掩码帧——分别对应 α = 1.0、0.5 和 0.0。</span></span><span class="sent" data-sid="s-V-D-2-2"><span class="zh">我们比较了五种目标：簇数为 50、100、500 的 MFCC k-means 教师、在 HuBERT-BASE-it1 第 6 层 Transformer 特征上聚类得到的 k-means，以及由基于字符的 HMM 模型强制对齐得到的监督标签（chenone）[64]。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-V-D-3">
+          <p class="en-lines"><span class="sent" data-sid="s-V-D-3-1"><span class="en">Results shown in Table V indicate that when learning from bad cluster assignments, computing loss only from the masked regions achieves the best performance, while the inclusion of unmasked loss results in signiﬁcantly higher WERs.</span><button class="mk feat" data-sid="s-V-D-3-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-V-D-3-2"><span class="en">However, as the clustering quality improves, the model would suffer less when computing losses on the unmasked frames (BASE- TABLE VI: Cluster ensembles with k-means and product k-means. it1-layer6) or even achieve better performance as the case of chenone.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-D-3-1"><span class="zh">Table V 的结果表明：当从糟糕的簇分配中学习时，只计算掩码区域的损失取得最好性能，而引入未掩码损失会导致 WER 显著升高。</span><button class="mk feat" data-sid="s-V-D-3-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-V-D-3-2"><span class="zh">然而，随着聚类质量提升，在未掩码帧上计算损失的负面影响会减小（BASE-it1-layer6），甚至在 chenone 监督标签的情形下反而更好。（Table VI：k-means 与乘积 k-means 的簇集成结果。）</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-V-D-3-1">
+      <div class="ann-card kind-number">
+        <div class="ann-kind">数字怎么理解</div>
+        <div class="ann-title">目标差时掩码护体</div>
+        <div class="ann-quote">computing loss only from the masked regions achieves the best performance, while the inclusion of unmasked loss results in signiﬁcantly higher WERs</div>
+        <div class="exp exp-tech">Table V 的数字很直白：MFCC-100 目标下,α=1 的 dev-other WER 17.86%,α=0.5 恶化到 29.57%,α=0 崩到 96.37%——掺入未掩码损失在坏教师手中是灾难性的。但同一张表也给出反转:换监督级 chenone 目标(10.38%)后,加未掩码损失反而略好。所以「只在掩码区计损失」不是普适最优，而是「教师越差越必须」的防护机制；教师足够可信时,全序列监督的信息量优势会回来。做伪标签训练的配比设计值得对照这条曲线。</div>
+        
+      </div></div></div>
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-V-E"><span class="secnum">E</span> <span class="t-zh">消融：簇集成的作用</span><span class="t-en">Ablation: The Effect of Cluster Ensembles</span></h3><div class="pblk" id="p-V-E-1">
+          <p class="en-lines"><span class="sent" data-sid="s-V-E-1-1"><span class="en">To understand the effect of combining multiple k-means models for generating targets, we consider two setups.</span></span> <span class="sent" data-sid="s-V-E-1-2"><span class="en">The ﬁrst one has k-means models of different numbers of clusters presented in Table V, denoted with KM-{50,100,500}.</span></span> <span class="sent" data-sid="s-V-E-1-3"><span class="en">The second one has k-means models trained on spliced MFCC features with a window of three; hence, each input feature is represented as a 117-dimensional vector.</span></span> <span class="sent" data-sid="s-V-E-1-4"><span class="en">In this second case, we apply product quantization on the spliced features, where dimensions are split into the coefﬁcients of the zeroth, ﬁrst, and second-order derivatives, with each 39-dimensional subspace quantized to a codebook of 100 entries.</span></span> <span class="sent" data-sid="s-V-E-1-5"><span class="en">We denote these codebooks with Product k-means-{0,1,2}-100, respectively.</span></span> <span class="sent" data-sid="s-V-E-1-6"><span class="en">By comparing the results from Table V and Table VI, it is clear that using an ensemble leads to better performance than what a single k-means clustering can achieve.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-V-E-1-1"><span class="zh">为理解组合多个 k-means 模型生成目标的效果，我们考虑两种设定。</span></span><span class="sent" data-sid="s-V-E-1-2"><span class="zh">第一种是 Table V 中簇数各不相同的 k-means 模型集合，记为 KM-{50,100,500}。</span></span><span class="sent" data-sid="s-V-E-1-3"><span class="zh">第二种是在窗长为 3 的拼接 MFCC 特征上训练的 k-means 模型，因此每个输入特征表示为 117 维向量。</span></span><span class="sent" data-sid="s-V-E-1-4"><span class="zh">在第二种情形下，我们对拼接特征做乘积量化：维度按零阶、一阶、二阶导数系数切分，每个 39 维子空间量化到 100 个码词条目。</span></span><span class="sent" data-sid="s-V-E-1-5"><span class="zh">这些码本分别记为 Product k-means-{0,1,2}-100。</span></span><span class="sent" data-sid="s-V-E-1-6"><span class="zh">对比 Table V 和 Table VI 的结果可以清楚看到：使用集成比任何单个 k-means 聚类都取得更好的性能。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-V-F"><span class="secnum">F</span> <span class="t-zh">消融：超参数的影响</span><span class="t-en">Ablation: Impact of Hyperparameters</span></h3><div class="cap" id="fig-V-F-1"><span class="cap-k">图</span><p class="en">Figure 3 and Table VII studies how hyperparameters affect HuBERT pre-training. It is shown that (1) the portion of frames selected as mask start is optimal at p =8%; (2) increasing the batch size can signiﬁcantly improve the performance; (3) training for longer consistently helps for both k-means models with C={50, 100}, and the best model achieves a WER of 11.68%. These ﬁndings are also consistent with those from BERT-like models [20]. In addition, we include a comparable result from DiscreteBERT [51] in Table VII which applies kmeans to quantize the same MFCC features into 13.5k units, used as both the output and the input to the BERT model. Besides using continuous speech input rather than discrete units, We hypothesize that HuBERT achieves signiﬁcantly better performance because its fewer k-means clusters of 100 or 500 help capture broad phonetic concepts without delving into inter/intra-speaker variation.</p><p class="zh">图 3 与 Table VII 研究超参数如何影响 HuBERT 预训练。结果表明：（1）作为掩码起点的帧比例在 p =8% 时最优；（2）增大 batch 大小可以显著提升性能；（3）延长训练对 C={50, 100} 的 k-means 模型都有稳定帮助，最佳模型取得 11.68% 的 WER。这些发现与 BERT 类模型 [20] 的结论一致。此外，Table VII 还纳入了 DiscreteBERT [51] 的一个可比结果：它对同样的 MFCC 特征做 k-means 量化出 13.5k 个单元，同时作为 BERT 模型的输出和输入。除了用连续语音输入而非离散单元之外，我们推测 HuBERT 性能显著更好的另一个原因是：100 或 500 个较少的 k-means 簇有助于捕捉宽泛的音素概念，而不陷入说话人间/说话人内差异的细节。</p></div></section>
+<section>
+      <h2 class="sech lv1" id="sec-VI"><span class="secnum">VI</span> <span class="t-zh">结论</span><span class="t-en">CONCLUSION</span></h2><div class="pblk" id="p-VI-1">
+          <p class="en-lines"><span class="sent" data-sid="s-VI-1-1"><span class="en">This paper presents HuBERT, a speech representation learning approach that relies on predicting K-means cluster assignments of masked segments of continuous input.</span></span> <span class="sent" data-sid="s-VI-1-2"><span class="en">On both the Librispeech 960 hours and the 60,000 hours Libri-light pretraining setups, HuBERT matches or outperforms the stateof-the-art systems over all ﬁne-tuning subsets of 10mins, 1h, dev-other WER (%) steps=100k K-means 50 18.68 13.65 12.40 11.82 100 17.86 12.97 12.32 11.68 [51] 13.5k 26.6 TABLE VII: Varying the number of HuBERT pre-training steps. p is set to 6.5%.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-VI-1-1"><span class="zh">本文提出 HuBERT：一种语音表示学习方法，它依赖对连续输入被掩码片段的 k-means 簇分配做预测。</span></span><span class="sent" data-sid="s-VI-1-2"><span class="zh">在 Librispeech 960 hours 和 60,000 hours Libri-light 两种预训练设定下，HuBERT 在 10mins、1h、（Table VII：改变 HuBERT 预训练步数的结果，p 设为 6.5%；列为 steps=100k 时不同单元配置的 dev-other WER（%），各行数据与原文一致：k-means 50 簇：18.68 13.65 12.40 11.82；100 簇：17.86 12.97 12.32 11.68；[51] 13.5k 单元：26.6。）</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-VI-2">
+          <p class="en-lines"><span class="sent" data-sid="s-VI-2-1"><span class="en">WER (%) WER (%)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-VI-2-1"><span class="zh">（Figure 3 左图纵轴为 WER（%）与掩码概率的关系，右图纵轴为 WER（%）。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-VI-1"><code>20 30 40</code></div>
+<div class="pblk" id="p-VI-3">
+          <p class="en-lines"><span class="sent" data-sid="s-VI-3-1"><span class="en">2 4.5 6.5 8 9 16 18 20 22 24</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-VI-3-1"><span class="zh">（Figure 3 横轴刻度：掩码概率 p 取 2、4.5、6.5、8、9 等，GPU 数量取 16、18、20、22、24 等。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-VI-2"><code>8 16 32</code></div>
+<div class="eq" id="eq-VI-3"><code>p</code></div>
+<div class="pblk" id="p-VI-4">
+          <p class="en-lines"><span class="sent" data-sid="s-VI-4-1"><span class="en">#GPUs</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-VI-4-1"><span class="zh">（横轴：）GPU 数量（#GPUs）</span></span></p>
+          
+        </div>
+<div class="cap" id="fig-VI-1"><span class="cap-k">图</span><p class="en">Fig. 3: Varying masking probability p (left) and effective batch size through the number of GPUs (right).</p><p class="zh">图 3：改变掩码概率 p（左）与通过 GPU 数量改变有效 batch 大小（右）。</p></div>
+<div class="pblk" id="p-VI-5">
+          <p class="en-lines"><span class="sent" data-sid="s-VI-5-1"><span class="en">10h, 100h, and 960h.</span></span> <span class="sent" data-sid="s-VI-5-2"><span class="en">Furthermore, the learned representation quality improves dramatically with iteratively reﬁning K- means cluster assignments using learned latent representations for a previous iteration.</span></span> <span class="sent" data-sid="s-VI-5-3"><span class="en">Finally, HuBERT scales well to a 1B transformer model showing a relative reduction in WER of up to 13% on the test-other subset.</span></span> <span class="sent" data-sid="s-VI-5-4"><span class="en">For future work, we plan to improve the HuBERT training procedure to consist of a single phase.</span><button class="mk feat" data-sid="s-VI-5-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-VI-5-5"><span class="en">Furthermore, given the high quality of its representations, we will consider using HuBERT pretrained representations for multiple downstream recognition and generation tasks beyond ASR.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-VI-5-1"><span class="zh">10h、100h 和 960h 全部微调子集上都达到或超过最先进系统。</span></span><span class="sent" data-sid="s-VI-5-2"><span class="zh">此外，用上一轮学到的隐表示对 k-means 簇分配做迭代精炼，能大幅提升学到的表示质量。</span></span><span class="sent" data-sid="s-VI-5-3"><span class="zh">最后，HuBERT 可以良好地扩展到 1B 参数的 Transformer 模型，在 test-other 子集上取得最高 13% 的相对 WER 降低。</span></span><span class="sent" data-sid="s-VI-5-4"><span class="zh">未来工作中，我们计划把 HuBERT 的训练流程改进为单一阶段。</span><button class="mk feat" data-sid="s-VI-5-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-VI-5-5"><span class="zh">此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-VI-5-4">
+      <div class="ann-card kind-critique">
+        <div class="ann-kind">值得质疑</div>
+        <div class="ann-title">两段式是已知软肋</div>
+        <div class="ann-quote">we plan to improve the HuBERT training procedure to consist of a single phase</div>
+        <div class="exp exp-tech">作者自己在结论里承认：「离线聚类—掩码预训练」两段式是个待拆的脚手架。每迭代一轮就要全量提特征、跑一趟 CPU k-means、再重新洗数据,流水线重、周期长、目标还是「上轮的旧模型」。后续工作沿两个方向拆它：一是 w2v-BERT 式在线化,用可学的量化器替代离线聚类;二是干脆绕开离散目标(WavLM 仍是离线教师但流程简化, BEST-RQ 用随机码本直接一阶段)。评价 HuBERT 的历史位置时,这个「未来工作」一句其实点中了它最大的工程局限。</div>
+        
+      </div></div></div>
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-references"><span class="t-zh">REFERENCES</span><span class="t-en">REFERENCES</span></h2><div class="pblk plain" id="p-references-1"><p class="refline">[1] A. v. d. Oord, Y. Li, and O. Vinyals, “Representation learning with contrastive predictive coding,” arXiv preprint arXiv:1807.03748, 2018. [2] S. Schneider, A. Baevski, R. Collobert, and M. Auli, “wav2vec: Unsupervised pre-training for speech recognition,” arXiv preprint [3] E. Kharitonov, M. Rivi`ere, G. Synnaeve, L. Wolf, P.-E. Mazar´e, M. Douze, and E. Dupoux, “Data augmenting contrastive learning of speech representations in the time domain,” arXiv preprint [4] Y.-A. Chung, W.-N. Hsu, H. Tang, and J. Glass, “An unsupervised autoregressive model for speech representation learning,” arXiv preprint [5] A.</p></div>
+<div class="pblk plain" id="p-references-2"><p class="refline">Baevski, S.</p></div>
+<div class="pblk plain" id="p-references-3"><p class="refline">Schneider, and M.</p></div>
+<div class="pblk plain" id="p-references-4"><p class="refline">Auli, “vq-wav2vec: Selfsupervised learning of discrete speech representations,” arXiv preprint [6] A. Baevski, H. Zhou, A. Mohamed, and M. Auli, “wav2vec 2.0: A framework for self-supervised learning of speech representations,” arXiv [7] G. Zavaliagkos and T. Colthurst, “Utilizing untranscribed training data to improve performance,” in DARPA Broadcast News Transcription and Understanding Workshop, 1998. [8] J. Ma, S. Matsoukas, O. Kimball, and R. Schwartz, “Unsupervised training on large amounts of broadcast news data,” in ICASSP, 2006. [9] J. Kahn, A. Lee, and A. Hannun, “Self-training for end-to-end speech recognition,” in ICASSP, 2020. [10] W.-N.</p></div>
+<div class="pblk plain" id="p-references-5"><p class="refline">Hsu, A.</p></div>
+<div class="pblk plain" id="p-references-6"><p class="refline">Lee, G.</p></div>
+<div class="pblk plain" id="p-references-7"><p class="refline">Synnaeve, and A.</p></div>
+<div class="pblk plain" id="p-references-8"><p class="refline">Hannun, “Semisupervised speech recognition via local prior matching,” arXiv preprint [11] A. Xiao, C. Fuegen, and A. Mohamed, “Contrastive semi-supervised learning for asr,” arXiv preprint arXiv:2103.05149, 2021. [12] Q. Xu, T. Likhomanenko, J. Kahn, A. Hannun, G. Synnaeve, and R. Collobert, “Iterative pseudo-labeling for speech recognition,” arXiv [13] M. Caron, I. Misra, J. Mairal, P. Goyal, P. Bojanowski, and A. Joulin, “Unsupervised learning of visual features by contrasting cluster assignments,” CoRR, vol. abs/2006.09882, 2020.</p></div>
+<div class="pblk plain" id="p-references-9"><p class="refline">[14] X. Chen and K. He, “Exploring simple siamese representation learning,” CoRR, vol. abs/2011.10566, 2020. [15] J. Grill, F. Strub, F. Altch´e, C. Tallec, P. H. Richemond, E. Buchatskaya, C.</p></div>
+<div class="tbwrap" id="tb-references-10">
+          <details class="tb"><summary>原始表格文本（7 个单元格，PDF 抽取顺序，数字与原文一致；精确排版见原文 PDF）</summary><pre>Doersch, B.
+´A.
+Pires, Z.
+D.
+Guo, M.
+G.
+Azar, B.</pre></details></div>
+<div class="pblk plain" id="p-references-17"><p class="refline">Piot, K. Kavukcuoglu, R. Munos, and M. Valko, “Bootstrap your own latent: A new approach to self-supervised learning,” CoRR, vol. abs/2006.07733, 2020. [16] T. B. Brown, B. Mann, N. Ryder, M. Subbiah, J. Kaplan, P. Dhariwal, A. Neelakantan, P. Shyam, G. Sastry, A. Askell, S. Agarwal, A. HerbertVoss, G. Krueger, T. Henighan, R. Child, A. Ramesh, D. M. Ziegler, J. Wu, C. Winter, C. Hesse, M. Chen, E. Sigler, M. Litwin, S. Gray, B. Chess, J. Clark, C. Berner, S. McCandlish, A. Radford, I. Sutskever, and D. Amodei, “Language models are few-shot learners,” CoRR, vol.</p></div>
+<div class="pblk plain" id="p-references-18"><p class="refline">abs/2005.14165, 2020. [17] Y. Liu, M. Ott, N. Goyal, J. Du, M. Joshi, D. Chen, O. Levy, M. Lewis, L. Zettlemoyer, and V. Stoyanov, “Roberta: A robustly optimized bert pretraining approach,” arXiv preprint arXiv:1907.11692, 2019. [18] M. Lewis, Y. Liu, N. Goyal, M. Ghazvininejad, A. Mohamed, O. Levy, V. Stoyanov, and L. Zettlemoyer, “Bart: Denoising sequence-to-sequence pre-training for natural language generation, translation, and comprehension,” arXiv preprint arXiv:1910.13461, 2019. [19] J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova, “Bert: Pre-training of deep bidirectional transformers for language understanding,” arXiv [20] K. Clark, M.-T. Luong, Q. V. Le, and C. D. Manning, “Electra: Pretraining text encoders as discriminators rather than generators,” arXiv [21] M. E. Peters, M. Neumann, M. Iyyer, M. Gardner, C. Clark, K. Lee, and L. Zettlemoyer, “Deep contextualized word representations,” in NAACL, 2018. [22] K. He, H. Fan, Y. Wu, S. Xie, and R. Girshick, “Momentum contrast for unsupervised visual representation learning,” in CVPR, 2020. [23] M. Caron, P. Bojanowski, A. Joulin, and M. Douze, “Deep clustering for unsupervised learning of visual features,” in ECCV, 2018. [24] V. Panayotov, G. Chen, D. Povey, and S. Khudanpur, “Librispeech: an asr corpus based on public domain audio books,” in ICASSP, 2015. [25] J. Kahn et al., “Libri-light: A benchmark for asr with limited or no supervision,” in ICASSP, 2020. [26] C.-y. Lee and J. Glass, “A nonparametric bayesian approach to acoustic model discovery,” in ACL, 2012. [27] L. Ondel, L. Burget, and J. ˇCernock`y, “Variational inference for acoustic unit discovery,” Procedia Computer Science, vol. 81, pp. 80–86, 2016. [28] J. Ebbers, J. Heymann, L. Drude, T. Glarner, R. Haeb-Umbach, and B. Raj, “Hidden markov model variational autoencoder for acoustic unit discovery.” in INTERSPEECH, 2017. [29] W.-N. Hsu, Y. Zhang, and J. Glass, “Learning latent representations for speech generation and transformation,” in INTERSPEECH, 2017. [30] ——, “Unsupervised learning of disentangled and interpretable representations from sequential data,” in NeurIPS, 2017. [31] J. Chorowski, R. J. Weiss, S. Bengio, and A. van den Oord, “Unsupervised speech representation learning using wavenet autoencoders,” IEEE/ACM transactions on audio, speech, and language processing, vol. 27, no. 12, pp. 2041–2053, 2019. [32] S. Khurana, S. R. Joty, A. Ali, and J. Glass, “A factorial deep markov model for unsupervised disentangled representation learning from speech,” in ICASSP, 2019. [33] S. Khurana, A. Laurent, W.-N. Hsu, J. Chorowski, A. Lancucki, R. Marxer, and J. Glass, “A convolutional deep markov model for unsupervised speech representation learning,” arXiv preprint [34] M. Joshi, D. Chen, Y. Liu, D. S. Weld, L. Zettlemoyer, and O. Levy, “Spanbert: Improving pre-training by representing and predicting spans,” Transactions of the Association for Computational Linguistics, 2020. [35] S. Young, “Large vocabulary continuous speech recognition: A review,” IEEE Signal Processing Magazine, vol. 13, no. 5, pp. 45–57, 1996. [36] O. Abdel-Hamid, A.-r. Mohamed, H. Jiang, and G. Penn, “Applying convolutional neural networks concepts to hybrid nn-hmm model for speech recognition,” in 2012 IEEE international conference on Acoustics, speech and signal processing (ICASSP).</p></div>
+<div class="pblk plain" id="p-references-19"><p class="refline">IEEE, 2012, pp. 4277– 4280. [37] D. Povey, “Discriminative training for large vocabulary speech recognition,” Ph.D. dissertation, University of Cambridge, 2005. [38] H. A. Bourlard and N. Morgan, Connectionist speech recognition: a hybrid approach.</p></div>
+<div class="pblk plain" id="p-references-20"><p class="refline">Springer Science &amp; Business Media, 2012, vol. 247. [39] R. M. Gray and D. L. Neuhoff, “Quantization,” IEEE transactions on information theory, vol. 44, no. 6, pp. 2325–2383, 1998.</p></div>
+<div class="pblk plain" id="p-references-21"><p class="refline">[40] Y. Zhang, J. Qin, D. S. Park, W. Han, C.-C. Chiu, R. Pang, Q. V. Le, and Y. Wu, “Pushing the limits of semi-supervised learning for automatic speech recognition,” arXiv preprint arXiv:2010.10504, 2020. [41] A. Graves, S. Fern´andez, F. Gomez, and J. Schmidhuber, “Connectionist temporal classiﬁcation: labelling unsegmented sequence data with recurrent neural networks,” in ICML, 2006. [42] A. van den Oord, O. Vinyals et al., “Neural discrete representation learning,” in NeurIPS, 2017. [43] T. Glarner, P. Hanebrink, J. Ebbers, and R. Haeb-Umbach, “Full bayesian hidden markov model variational autoencoder for acoustic unit discovery.” in INTERSPEECH, 2018. [44] Y.-A. Chung and J. Glass, “Generative pre-training for speech with autoregressive predictive coding,” in ICASSP, 2020. [45] ——, “Improved speech representations with multi-target autoregressive predictive coding,” arXiv preprint arXiv:2004.05274, 2020. [46] S. Ling, Y. Liu, J. Salazar, and K. Kirchhoff, “Deep contextualized acoustic representations for semi-supervised speech recognition,” in ICASSP, 2020. [47] W. Wang, Q. Tang, and K. Livescu, “Unsupervised pre-training of bidirectional speech encoders via masked reconstruction,” in ICASSP, 2020. [48] A. T. Liu, S.-w. Yang, P.-H. Chi, P.-c. Hsu, and H.-y. Lee, “Mockingjay: Unsupervised speech representation learning with deep bidirectional transformer encoders,” in ICASSP, 2020. [49] P.-H. Chi, P.-H. Chung, T.-H. Wu, C.-C. Hsieh, S.-W. Li, and H.-y.</p></div>
+<div class="pblk plain" id="p-references-22"><p class="refline">Lee, “Audio albert: A lite bert for self-supervised learning of audio representation,” arXiv preprint arXiv:2005.08575, 2020. [50] S. Ling and Y. Liu, “Decoar 2.0: Deep contextualized acoustic representations with vector quantization,” arXiv preprint arXiv:2012.06659, 2020. [51] A. Baevski, M. Auli, and A. Mohamed, “Effectiveness of self-supervised pre-training for speech recognition,” arXiv preprint arXiv:1911.03912, 2019. [52] Y.-H. H. Tsai, Y. Wu, R. Salakhutdinov, and L.-P. Morency, “Selfsupervised learning from a multi-view perspective,” arXiv preprint [53] S. Pascual, M. Ravanelli, J. Serr`a, A. Bonafonte, and Y. Bengio, “Learning problem-agnostic speech representations from multiple selfsupervised tasks,” in INTERSPEECH, 2019. [54] T. Likhomanenko, Q. Xu, J. Kahn, G. Synnaeve, and R. Collobert, “slimipl: Language-model-free iterative pseudo-labeling,” arXiv preprint [55] S. Lloyd, “Least squares quantization in pcm,” IEEE transactions on information theory, vol. 28, no. 2, pp. 129–137, 1982. [56] F. Pedregosa et al., “Scikit-learn: Machine learning in python,” the Journal of machine Learning research, 2011. [57] D. Arthur and S. Vassilvitskii, “k-means++: The advantages of careful seeding,” Stanford, Tech. Rep., 2006. [58] D. P. Kingma and J. Ba, “Adam: A method for stochastic optimization,” arXiv preprint arXiv:1412.6980, 2014. [59] V. Pratap et al., “wav2letter++: The fastest open-source speech recognition system,” arXiv preprint arXiv:1812.07625, 2018. [60] M. Ott et al., “fairseq: A fast, extensible toolkit for sequence modeling,” in NAACL, 2019. [61] D. S. Park, Y. Zhang, Y. Jia, W. Han, C.-C. Chiu, B. Li, Y. Wu, and Q. V.</p></div>
+<div class="pblk plain" id="p-references-23"><p class="refline">Le, “Improved noisy student training for automatic speech recognition,” arXiv preprint arXiv:2005.09629, 2020. [62] A. Gulati, J. Qin, C.-C. Chiu, N. Parmar, Y. Zhang, J. Yu, W. Han, S. Wang, Z. Zhang, Y. Wu et al., “Conformer: Convolution-augmented transformer for speech recognition,” arXiv preprint arXiv:2005.08100, 2020. [63] Q. Xu, A. Baevski, T. Likhomanenko, P. Tomasello, A. Conneau, R. Collobert, G. Synnaeve, and M. Auli, “Self-training and pretraining are complementary for speech recognition,” arXiv preprint [64] D. Le, X. Zhang, W. Zheng, C. F¨ugen, G. Zweig, and M. L. Seltzer, “From senones to chenones: Tied context-dependent graphemes for hybrid speech recognition,” in ASRU, 2019.</p></div></section></article>
+  <footer class="foot">
+    原文来自 arXiv:2106.07447（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。
+    本地 PDF：<a href="../../papers/2106.07447.pdf">papers/2106.07447.pdf</a>。
+    页面由 tools/build_paper.js 自动生成，数据来源 data/papers/2106.07447.js。
+  </footer>
+</main>
+<script>
+(function(){
+  var body=document.body;
+  function seg(id,cls,key){
+    var el=document.getElementById(id);
+    el.addEventListener("click",function(e){
+      var b=e.target.closest("button");if(!b)return;
+      el.querySelectorAll("button").forEach(function(x){x.classList.remove("on")});
+      b.classList.add("on");
+      body.className=body.className.replace(new RegExp(cls+"-\w+"),"").trim();
+      body.classList.add(cls+"-"+b.dataset.v);
+      try{localStorage.setItem(key,b.dataset.v)}catch(_){}
+      closeAll();
+    });
+    try{var v=localStorage.getItem(key);if(v){var btn=el.querySelector('[data-v="'+v+'"]');if(btn)btn.click();}}catch(_){}
+  }
+  seg("segMode","mode","pr_mode");
+  seg("segDens","dens","pr_dens");
+  seg("segDepth","depth","pr_depth");
+
+  var article=document.querySelector(".reader");
+  function closeAll(){
+    document.querySelectorAll(".ann-panel.open").forEach(function(p){p.classList.remove("open")});
+    document.querySelectorAll(".mk.open").forEach(function(m){m.classList.remove("open")});
+  }
+  document.addEventListener("click",function(e){
+    var mk=e.target.closest(".mk");
+    if(!mk)return;
+    var sid=mk.dataset.sid;
+    var blk=mk.closest(".pblk");
+    var panel=blk?blk.querySelector('.ann-panel[data-sid="'+sid+'"]'):null;
+    if(!panel)return;
+    var was=panel.classList.contains("open");
+    closeAll();
+    if(!was){
+      panel.classList.add("open");
+      document.querySelectorAll('.mk[data-sid="'+sid+'"]').forEach(function(m){m.classList.add("open")});
+      if(window.innerWidth>=1180){
+        // 面板绝对定位于 .ann-zone（其顶对齐 .pblk 顶），top = 标记相对 .pblk 的纵向偏移
+        var top=0,el=mk;
+        while(el&&el!==blk){top+=el.offsetTop||0;el=el.offsetParent;}
+        panel.style.top=Math.max(0,top-4)+"px";
+      }
+    }
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll();});
+})();
+</script>
+</body>
+</html>

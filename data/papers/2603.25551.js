@@ -1,0 +1,3158 @@
+// 自动生成：2603.25551 全文双语精读数据（由 tools/compile_paper.js 装配）
+// 结构/原文来自 .cache/papers/2603.25551.json（tools/extract_paper.py）；
+// 翻译与讲解来自 .cache/papers/zh/2603.25551/（LLM agent 撰写）。
+// 改翻译请改片段后重新装配；勿手改本文件的结构与 original 字段。
+globalThis.PAPER_2603_25551 = {
+ "paper_id": "2603.25551",
+ "model_id": "voxtral_tts",
+ "title": {
+  "original": "Voxtral TTS",
+  "zh": "Voxtral TTS 技术报告"
+ },
+ "sections": [
+  {
+   "id": "sec-abstract",
+   "num": null,
+   "level": 1,
+   "page": 1,
+   "title": {
+    "original": "Abstract",
+    "zh": "摘要"
+   },
+   "blocks": [
+    {
+     "id": "p-abstract-1",
+     "type": "paragraph",
+     "page": 1,
+     "sentences": [
+      {
+       "id": "s-abstract-1-1",
+       "original": "We introduce Voxtral TTS, an expressive multilingual text-to-speech model that generates natural speech from as little as 3 seconds of reference audio.",
+       "zh": "我们介绍 Voxtral TTS：一个表现力丰富的多语种文本转语音模型，最少只需 3 秒参考音频即可生成自然的语音。"
+      },
+      {
+       "id": "s-abstract-1-2",
+       "original": "Voxtral TTS adopts a hybrid architecture that combines auto-regressive generation of semantic speech tokens with flow-matching for acoustic tokens.",
+       "zh": "Voxtral TTS 采用混合架构：以自回归方式生成语义语音 token，并用流匹配（flow matching）生成声学 token。"
+      },
+      {
+       "id": "s-abstract-1-3",
+       "original": "These tokens are encoded and decoded with Voxtral Codec, a speech tokenizer trained from scratch with a hybrid VQ-FSQ quantization scheme.",
+       "zh": "这些 token 由 Voxtral Codec 完成编码与解码，这是一个从零训练、采用混合 VQ-FSQ 量化方案的语音分词器。"
+      },
+      {
+       "id": "s-abstract-1-4",
+       "original": "In human evaluations conducted by native speakers, Voxtral TTS is preferred for multilingual voice cloning due to its naturalness and expressivity, achieving a 68.4% win rate over ElevenLabs Flash v2.5.",
+       "zh": "在由母语者进行的人工评测中，Voxtral TTS 凭借自然度与表现力在多语种声音克隆上更受偏好，对 ElevenLabs Flash v2.5 取得 68.4% 的胜率。"
+      },
+      {
+       "id": "s-abstract-1-5",
+       "original": "We release the model weights under a CC BY-NC license.",
+       "zh": "我们以 CC BY-NC 许可发布模型权重。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-webpage",
+   "num": null,
+   "level": 2,
+   "page": 1,
+   "title": {
+    "original": "Webpage:",
+    "zh": "项目主页："
+   },
+   "blocks": [
+    {
+     "id": "p-webpage-1",
+     "type": "paragraph",
+     "page": 1,
+     "sentences": [
+      {
+       "id": "s-webpage-1-1",
+       "original": "https://mistral.ai/news/voxtral-tts Model weights: https://huggingface.co/mistralai/Voxtral-4B-TTS-2603 0 20 40 60 80 100 Average Listener Preference (%) Voice cloning Flagship voices Win Rate Voxtral TTS ElevenLabs Flash v2.5",
+       "zh": "https://mistral.ai/news/voxtral-tts 模型权重：https://huggingface.co/mistralai/Voxtral-4B-TTS-2603。此处嵌入了首页图表（抽取时被打散为散行）：横轴为 Voxtral TTS 与 ElevenLabs Flash v2.5，纵轴为平均听众偏好（%），在声音克隆与旗舰音色两类设置下标注胜率（0、20、40、60、80、100 为刻度）。"
+      }
+     ]
+    },
+    {
+     "id": "fig-webpage-1",
+     "type": "figure_caption",
+     "page": 1,
+     "original": "Figure 1: Voxtral TTS is preferred to ElevenLabs Flash v2.5 in human evaluations. We plot the win rate for Voxtral TTS against ElevenLabs Flash v2.5 in human evaluations across two categories. For flagship voices, we use the default voices for each model and 77 unique text examples. In the voice cloning set-up, we provide a short audio reference clip and 60 text prompts. In both categories, human annotators blindly rate which audio is better between the two models. Voxtral TTS is preferred in 58.3 and 68.4% of instances.",
+     "zh": "图 1：在人工评测中，Voxtral TTS 相比 ElevenLabs Flash v2.5 更受偏好。图中绘制了人工评测里 Voxtral TTS 对 ElevenLabs Flash v2.5 的胜率，覆盖两个类别。旗舰音色设置下，我们使用各模型的默认音色和 77 条不重复的文本样例；声音克隆设置下，我们提供一段短音频参考片段和 60 条文本提示。两个类别中，人工标注者都在不知道模型身份的情况下盲选哪段音频更好。Voxtral TTS 在 58.3% 和 68.4% 的样本上更受偏好。"
+    }
+   ]
+  },
+  {
+   "id": "sec-1",
+   "num": "1",
+   "level": 1,
+   "page": 1,
+   "title": {
+    "original": "Introduction",
+    "zh": "引言"
+   },
+   "blocks": [
+    {
+     "id": "p-1-1",
+     "type": "paragraph",
+     "page": 1,
+     "sentences": [
+      {
+       "id": "s-1-1-1",
+       "original": "Natural and expressive text-to-speech (TTS) remains a cornerstone of flexible human-computer interactions, with applications spanning virtual assistants, audiobooks, and accessibility tools.",
+       "zh": "自然且富有表现力的文本转语音（TTS）仍是灵活人机交互的基石，应用横跨虚拟助手、有声书和辅助无障碍工具。"
+      },
+      {
+       "id": "s-1-1-2",
+       "original": "While recent neural TTS models achieve strong intelligibility, capturing the nuances and expressivity of human speech remains an open challenge, particularly in the zero-shot voice setting.",
+       "zh": "尽管近期的神经 TTS 模型已经实现了很高的可懂度，但捕捉人声的细腻质感与表现力仍然是开放的难题，在零样本声音场景下尤其如此。"
+      }
+     ]
+    },
+    {
+     "id": "p-1-2",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-1-2-1",
+       "original": "Recent zero-shot TTS systems typically condition generation on discrete speech tokens extracted from a short voice prompt, enabling generalization to unseen speakers and natural synthesis across long sequences [Borsos et al., 2023, Wang et al., 2023].",
+       "zh": "近期的零样本 TTS 系统通常以从一段短语音提示中抽取的离散语音 token 为条件进行生成，从而能对未见过的说话人泛化，并在长序列上自然合成 [Borsos et al., 2023, Wang et al., 2023]。"
+      },
+      {
+       "id": "s-1-2-2",
+       "original": "In parallel, diffusion and flow-based models are effective for modeling rich acoustic variation in speech generation [Popov et al., 2021, Le et al., 2023].",
+       "zh": "与此同时，扩散模型和基于流的模型被证明能有效建模语音生成中丰富的声学变化 [Popov et al., 2021, Le et al., 2023]。"
+      },
+      {
+       "id": "s-1-2-3",
+       "original": "Recent speech codecs demonstrate that speech can be factorized into a low-rate semantic stream and a higher-rate acoustic stream [Défossez et al., 2024].",
+       "zh": "近期的语音 codec 表明，语音可以被分解为一条低速率的语义流和一条更高速率的声学流 [Défossez et al., 2024]。"
+      },
+      {
+       "id": "s-1-2-4",
+       "original": "Hierarchical generators such as Moshi already exploit this structure using a temporal transformer over timesteps and a depth transformer over codec levels.",
+       "zh": "像 Moshi 这样的分层生成器已经利用了这种结构：用一个时间维度上的 Transformer 处理时序，再用一个深度维度上的 Transformer 处理 codec 层级。"
+      },
+      {
+       "id": "s-1-2-5",
+       "original": "However, acoustic generation in these systems remains depth-wise autoregressive.",
+       "zh": "然而，这类系统中的声学生成仍然沿深度方向自回归进行。"
+      },
+      {
+       "id": "s-1-2-6",
+       "original": "For TTS, this raises the question whether the dense acoustic component must be modeled auto-regressively at all, or whether it can instead be generated more effectively with a conditional continuous model.",
+       "zh": "对 TTS 而言，这就提出了一个问题：稠密的声学分量是否真的必须用自回归来建模，还是用一个条件化的连续模型能更有效地生成。"
+      }
+     ]
+    },
+    {
+     "id": "p-1-3",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-1-3-1",
+       "original": "In this work, we introduce Voxtral TTS, a multilingual zero-shot TTS system built around a representation-aware hybrid architecture.",
+       "zh": "本工作中，我们提出 Voxtral TTS——一个围绕「表征感知」混合架构构建的多语种零样本 TTS 系统。"
+      },
+      {
+       "id": "s-1-3-2",
+       "original": "A voice prompt is tokenized through Voxtral Codec, a low-bitrate speech tokenizer with an ASR-distilled semantic token and finite scalar quantized (FSQ) acoustic tokens [Mentzer et al., 2023].",
+       "zh": "语音提示先经过 Voxtral Codec 分词；这是一个低码率语音分词器，带有经 ASR 蒸馏的语义 token 和有限标量量化（FSQ）的声学 token [Mentzer et al., 2023]。"
+      },
+      {
+       "id": "s-1-3-3",
+       "original": "Given this factorized representation, a decoder-only transformer auto-regressively predicts the semantic token sequence, while a lightweight flow-matching model predicts the acoustic tokens conditioned on the decoder states.",
+       "zh": "在这种分解式表征之上，一个仅解码器 Transformer 自回归地预测语义 token 序列，同时一个轻量的流匹配模型以解码器状态为条件预测声学 token。"
+      },
+      {
+       "id": "s-1-3-4",
+       "original": "This design combines the strengths of auto-regressive modeling for long-range consistency with continuous flow-matching for rich acoustic detail.",
+       "zh": "这一设计把自回归建模在长程一致性上的优势，与连续流匹配在丰富声学细节上的优势结合了起来。"
+      },
+      {
+       "id": "s-1-3-5",
+       "original": "We adapt Direct Preference Optimization (DPO) [Rafailov et al., 2023] to this hybrid discrete-continuous setting by combining a standard preference objective over semantic token generation with a flow-based preference objective for acoustic prediction [Ziv et al., 2025].",
+       "zh": "我们还将直接偏好优化（DPO）[Rafailov et al., 2023] 适配到这一离散-连续混合设定：对语义 token 生成使用标准偏好目标，对声学预测使用基于流的偏好目标 [Ziv et al., 2025]。"
+      }
+     ]
+    },
+    {
+     "id": "p-1-4",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-1-4-1",
+       "original": "Voxtral TTS supports 9 languages, supports voice prompts as short as 3 seconds, and is designed for low-latency streaming inference.",
+       "zh": "Voxtral TTS 支持 9 种语言，支持最短 3 秒的语音提示，并为低延迟流式推理而设计。"
+      },
+      {
+       "id": "s-1-4-2",
+       "original": "Across automatic evaluations on SEED-TTS [Anastassiou et al., 2024] and MiniMax-TTS [Zhang et al., 2025], it achieves strong intelligibility and naturalness, beating ElevenLabs v3 on speaker similarity scores.",
+       "zh": "在 SEED-TTS [Anastassiou et al., 2024] 与 MiniMax-TTS [Zhang et al., 2025] 的自动评测上，它取得了很强的可懂度与自然度，说话人相似度得分超过 ElevenLabs v3。"
+      },
+      {
+       "id": "s-1-4-3",
+       "original": "In human evaluation for multilingual zero-shot voice cloning, it is preferred over ElevenLabs Flash v2.5 with a 68.4% win rate, while remaining competitive with strong proprietary systems on expressive flagship-voice evaluations.",
+       "zh": "在多语种零样本声音克隆的人工评测中，它以 68.4% 的胜率胜过 ElevenLabs Flash v2.5，同时在表现力的旗舰音色评测上与领先的商业系统保持竞争力。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-2",
+   "num": "2",
+   "level": 1,
+   "page": 2,
+   "title": {
+    "original": "Modeling",
+    "zh": "建模"
+   },
+   "blocks": [
+    {
+     "id": "fig-2-1",
+     "type": "figure_caption",
+     "page": 2,
+     "original": "Figure 2 highlights the architecture of Voxtral TTS. It consists of a novel audio codec—Voxtral Codec—which encodes a reference voice sample into audio tokens consisting of semantic and acoustic tokens. The audio tokens are combined with text tokens to form the input to the LM decoder backbone. To generate speech, the decoder backbone auto-regressively generates semantic token outputs. A flow-matching transformer generates the acoustic tokens. The codec decoder maps the output tokens to the corresponding audio waveform.",
+     "zh": "图 2 展示了 Voxtral TTS 的架构要点。它包含一个全新的音频 codec——Voxtral Codec，把参考语音样本编码为由语义 token 和声学 token 组成的音频 token。音频 token 与文本 token 拼接后构成 LM 解码器主干的输入。生成语音时，解码器主干自回归地生成语义 token 输出；一个流匹配 Transformer 生成声学 token；codec 解码器再把输出 token 映射为对应的音频波形。"
+    }
+   ]
+  },
+  {
+   "id": "sec-2-1",
+   "num": "2.1",
+   "level": 2,
+   "page": 2,
+   "title": {
+    "original": "Voxtral Codec",
+    "zh": "2.1 Voxtral Codec"
+   },
+   "blocks": [
+    {
+     "id": "p-2-1-1",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-2-1-1-1",
+       "original": "Voxtral Codec is a convolutional–transformer autoencoder [Défossez et al., 2022] that compresses raw 24 kHz mono waveforms into 12.5 Hz frames of 37 discrete tokens (1 semantic + 36 acoustic), achieving a total bitrate of 2.14 kbps.",
+       "zh": "Voxtral Codec 是一个卷积-Transformer 自编码器 [Défossez et al., 2022]，把 24 kHz 单声道的原始波形压缩成 12.5 Hz 帧率、每帧 37 个离散 token（1 个语义 token + 36 个声学 token），总码率为 2.14 kbps。"
+      },
+      {
+       "id": "s-2-1-1-2",
+       "original": "These tokens serve as the input audio representation to Voxtral TTS.",
+       "zh": "这些 token 就是 Voxtral TTS 的输入音频表征。"
+      },
+      {
+       "id": "s-2-1-1-3",
+       "original": "Through a novel combination of architectural and training objective improvements, Voxtral Codec outperforms existing baselines such as Mimi [Défossez et al., 2024], with results presented in Section 4.1.",
+       "zh": "通过一系列新颖的架构与训练目标改进，Voxtral Codec 优于 Mimi [Défossez et al., 2024] 等现有基线，结果见 Section 4.1。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-waveform-autoencoder",
+   "num": null,
+   "level": 2,
+   "page": 2,
+   "title": {
+    "original": "Waveform Autoencoder.",
+    "zh": "波形自编码器。"
+   },
+   "blocks": [
+    {
+     "id": "p-waveform-autoencoder-1",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-waveform-autoencoder-1-1",
+       "original": "Inspired by prior works on transformer-based audio codecs [Parker et al., 2024, Wu et al., 2024], our audio tokenizer operates on “patchified” waveforms.",
+       "zh": "借鉴此前基于 Transformer 的音频 codec 工作 [Parker et al., 2024, Wu et al., 2024]，我们的音频分词器工作在「分块化」（patchified）的波形上。"
+      },
+      {
+       "id": "s-waveform-autoencoder-1-2",
+       "original": "A 24 kHz mono input waveform is chunked into non-overlapping patches of 240 samples, yielding a 100 Hz input to the encoder.",
+       "zh": "24 kHz 单声道输入波形被切成不重叠的 240 采样点块，形成 100 Hz 的编码器输入。"
+      },
+      {
+       "id": "s-waveform-autoencoder-1-3",
+       "original": "The 100 Hz input frames are first projected to 1024-dimensional embeddings via a causal convolution with kernel size 7.",
+       "zh": "100 Hz 的输入帧先通过核大小为 7 的因果卷积投影到 1024 维嵌入。"
+      },
+      {
+       "id": "s-waveform-autoencoder-1-4",
+       "original": "The embeddings are then forwarded through 4 encoder blocks, each comprising:",
+       "zh": "嵌入随后经过 4 个编码器块，每个块包含："
+      }
+     ]
+    },
+    {
+     "id": "p-waveform-autoencoder-2",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-waveform-autoencoder-2-1",
+       "original": "• A 2-layer causal self-attention transformer with sliding window attention (window sizes 16 →8 →4 →2, halved at each downsampling stage), ALiBi positional bias [Press et al., 2021], QK-norm, and LayerScale [Touvron et al., 2021] initialized at 0.01. • A causal CNN layer.",
+       "zh": "• 一个 2 层因果自注意力 Transformer，使用滑动窗口注意力（窗口大小 16 →8 →4 →2，每个下采样阶段减半）、ALiBi 位置偏置 [Press et al., 2021]、QK-norm，以及初始化为 0.01 的 LayerScale [Touvron et al., 2021]；• 一个因果 CNN 层。"
+      },
+      {
+       "id": "s-waveform-autoencoder-2-2",
+       "original": "In the first three blocks, the CNN downsamples by 2× (stride 2), yielding a cumulative 8× reduction from 100 Hz to 12.5 Hz.",
+       "zh": "在前三个块中，CNN 以 2× 下采样（步幅 2），把 100 Hz 累计降低 8× 至 12.5 Hz。"
+      },
+      {
+       "id": "s-waveform-autoencoder-2-3",
+       "original": "In the fourth block, the CNN has stride 1 and projects the 1024-dimensional representation to a 292-dimensional latent space.",
+       "zh": "在第四个块中，CNN 步幅为 1，把 1024 维表征投影到 292 维潜空间。"
+      }
+     ]
+    },
+    {
+     "id": "p-waveform-autoencoder-3",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-waveform-autoencoder-3-1",
+       "original": "80ms audio Acoustic Flow-Matching Transformer Semantic Linear Head <EOA> Autoregressive Decoder Backbone voice reference",
+       "zh": "此处为抽取自架构图的散行文字：80 ms 音频经声学流匹配 Transformer 与语义线性头处理，由自回归解码器主干消费语音参考（voice reference），直至 <EOA> 结束标记。"
+      }
+     ]
+    },
+    {
+     "id": "fig-waveform-autoencoder-1",
+     "type": "figure_caption",
+     "page": 3,
+     "original": "Figure 2: Architecture overview of Voxtral TTS. A voice reference ranging from 3s-30s is fed to the Voxtral Codec encoder to obtain audio tokens at a frame rate of 12.5 Hz. Each audio frame (labeled A) consists of a semantic token and acoustic tokens. The voice reference audio tokens along with the text prompt tokens (labeled T) are fed to the decoder backbone. The decoder auto-regressively generates a sequence of semantic tokens until it reaches a special End of Audio token (<EOA>). At each timestep, the semantic token from the decoder backbone is fed to a flow-matching transformer, which is run multiple times to predict the acoustic tokens. The semantic and acoustic tokens are fed to the Voxtral Codec decoder to obtain the generated waveform.",
+     "zh": "图 2：Voxtral TTS 的架构总览。一段 3s-30s 的语音参考被送入 Voxtral Codec 编码器，得到 12.5 Hz 帧率的音频 token。每个音频帧（标记为 A）由一个语义 token 和若干声学 token 组成。语音参考的音频 token 与文本提示 token（标记为 T）一起送入解码器主干。解码器自回归地生成语义 token 序列，直到遇到特殊的音频结束 token（<EOA>）。在每个时间步，解码器主干输出的语义 token 被送入流匹配 Transformer，后者运行多次以预测声学 token。语义与声学 token 一起送入 Voxtral Codec 解码器，得到生成的波形。"
+    },
+    {
+     "id": "p-waveform-autoencoder-4",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-waveform-autoencoder-4-1",
+       "original": "Adversarial + Reconstruction Losses Soft-Aligned ASR Distillation Loss ASR Model Encoder Decoder q1 (d=256) q2 (d=36) Linear Linear VQ FSQ Strided Causal Conv Strided Causal Conv Causal Conv Patch 24 kHz Quantization Transposed Causal Conv Causal Conv Unpatch (21 levels) x36 Repeat 4x Repeat 4x",
+       "zh": "此处为 Voxtral Codec 架构图的散行文字，依次为：对抗损失 + 重建损失、软对齐 ASR 蒸馏损失、ASR 模型；编码器-解码器中含 q1（d=256）与 q2（d=36）两路表征，分别经线性层进入 VQ 与 FSQ；编码侧为分块（Patch）24 kHz 输入加跨步因果卷积、因果卷积，量化层 FSQ 为 21 级、共 36 路，解码侧为转置因果卷积与解块（Unpatch）；编码与解码各重复 4 次。"
+      }
+     ]
+    },
+    {
+     "id": "fig-waveform-autoencoder-2",
+     "type": "figure_caption",
+     "page": 3,
+     "original": "Figure 3: Architecture overview and training of Voxtral Codec. It consists of a split semantic VQ codebook and acoustic FSQ codebooks. Both semantic and acoustic tokens are combined for reconstruction. The semantic token has an additional distillation loss from a supervised ASR model.",
+     "zh": "图 3：Voxtral Codec 的架构与训练总览。它由分裂的语义 VQ 码本与声学 FSQ 码本构成；语义与声学 token 共同用于重建；语义 token 还带有一个来自监督式 ASR 模型的蒸馏损失。"
+    },
+    {
+     "id": "p-waveform-autoencoder-5",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-waveform-autoencoder-5-1",
+       "original": "The 292-dimensional latent is subsequently quantized to audio tokens (detailed below).",
+       "zh": "随后，292 维潜表征被量化为音频 token（详见下文）。"
+      },
+      {
+       "id": "s-waveform-autoencoder-5-2",
+       "original": "The decoder mirrors the encoder in reverse: a causal CNN first projects the 292-dimensional latent back to 1024 dimensions, followed by 4 blocks each containing a transposed CNN (for 2× upsampling) and a 2-layer causal self-attention transformer, gradually restoring the 12.5 Hz latent to 100 Hz.",
+       "zh": "解码器按相反顺序镜像编码器：先用一个因果 CNN 把 292 维潜表征投回 1024 维，再接 4 个块，每个块含一个转置 CNN（用于 2× 上采样）和一个 2 层因果自注意力 Transformer，逐步把 12.5 Hz 潜表征恢复到 100 Hz。"
+      },
+      {
+       "id": "s-waveform-autoencoder-5-3",
+       "original": "A final causal convolution with kernel size 7 maps from 1024 dimensions back to the patch size of 240 samples to reconstruct the waveform.",
+       "zh": "最后一个核大小为 7 的因果卷积把 1024 维映射回 240 采样点的块大小，重建出波形。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-representation-quantization",
+   "num": null,
+   "level": 2,
+   "page": 4,
+   "title": {
+    "original": "Representation Quantization.",
+    "zh": "表征量化。"
+   },
+   "blocks": [
+    {
+     "id": "p-representation-quantization-1",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-representation-quantization-1-1",
+       "original": "The 292-dimensional latent is split into a 256-dimensional semantic component and a 36-dimensional acoustic component, which are quantized independently:",
+       "zh": "292 维潜表征被拆成 256 维的语义分量和 36 维的声学分量，二者分别独立量化："
+      }
+     ]
+    },
+    {
+     "id": "p-representation-quantization-2",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-representation-quantization-2-1",
+       "original": "• The semantic component is quantized through a learned vector quantizer (VQ; [Van Den Oord et al., 2017]) with a codebook of size 8192.",
+       "zh": "• 语义分量通过一个学习得到的向量量化器（VQ; [Van Den Oord et al., 2017]）量化，码本大小为 8192。"
+      },
+      {
+       "id": "s-representation-quantization-2-2",
+       "original": "During training, VQ is applied with 50% probability; the remaining samples pass through unquantized. • Each of the 36 acoustic dimensions is passed through a tanh activation and independently quantized to 21 uniform levels via finite scalar quantization (FSQ; [Mentzer et al., 2023]).",
+       "zh": "训练时 VQ 以 50% 概率施加；其余样本不量化直接通过。• 36 个声学维度各自经过 tanh 激活，并通过有限标量量化（FSQ; [Mentzer et al., 2023]）独立量化为 21 个均匀等级。"
+      }
+     ]
+    },
+    {
+     "id": "p-representation-quantization-3",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-representation-quantization-3-1",
+       "original": "During training, we apply dither-style FSQ [Parker et al., 2024]: 50% of samples are quantized with FSQ, 25% receive uniform noise of magnitude 1/L (where L=21 is the number of levels), and 25% pass through unquantized.",
+       "zh": "训练时我们采用抖动式（dither-style）FSQ [Parker et al., 2024]：50% 的样本用 FSQ 量化，25% 加上幅度为 1/L 的均匀噪声（其中 L=21 为等级数），25% 不量化直接通过。"
+      }
+     ]
+    },
+    {
+     "id": "eq-representation-quantization-1",
+     "type": "equation",
+     "page": 4,
+     "original": "The total bitrate is 12.5 × (log2 8192 + 36 × log2 21) ≈2.14 kbps."
+    }
+   ]
+  },
+  {
+   "id": "sec-semantic-token-learning",
+   "num": null,
+   "level": 2,
+   "page": 4,
+   "title": {
+    "original": "Semantic Token Learning.",
+    "zh": "语义 token 学习。"
+   },
+   "blocks": [
+    {
+     "id": "p-semantic-token-learning-1",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-semantic-token-learning-1-1",
+       "original": "To better incorporate the semantic content of speech into the semantic tokens, we adopt an auxiliary ASR distillation loss.",
+       "zh": "为更好地把语音的语义内容纳入语义 token，我们采用一个辅助的 ASR 蒸馏损失。"
+      },
+      {
+       "id": "s-semantic-token-learning-1-2",
+       "original": "Unlike prior works that learn “semantic” tokens by distilling self-supervised speech representations [Zhang et al., 2023, Défossez et al., 2024], which are more phonetic than semantic [Liu et al., 2024], we distill from a supervised ASR model.",
+       "zh": "不同于此前通过蒸馏自监督语音表征来学习「语义」token 的工作 [Zhang et al., 2023, Défossez et al., 2024]——那些表征更偏音素而非语义 [Liu et al., 2024]——我们从监督式 ASR 模型蒸馏。"
+      },
+      {
+       "id": "s-semantic-token-learning-1-3",
+       "original": "This has been shown to produce more effective semantic representations [Vashishth et al., 2024].",
+       "zh": "这已被证明能产生更有效的语义表征 [Vashishth et al., 2024]。"
+      }
+     ]
+    },
+    {
+     "id": "p-semantic-token-learning-2",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-semantic-token-learning-2-1",
+       "original": "A frozen Whisper [Radford et al., 2023] model is run auto-regressively on the input audio to generate decoder hidden states and cross-attention weights.",
+       "zh": "一个冻结的 Whisper [Radford et al., 2023] 模型以自回归方式跑在输入音频上，生成解码器隐状态和交叉注意力权重。"
+      },
+      {
+       "id": "s-semantic-token-learning-2-2",
+       "original": "The post-VQ semantic embeddings are linearly projected to match the Whisper hidden dimension and then aligned to the decoder hidden states from the last decoder layer using a cosine distance loss:",
+       "zh": "VQ 之后的语义嵌入被线性投影到 Whisper 的隐状态维度，然后用余弦距离损失与最后一层解码器的隐状态对齐："
+      }
+     ]
+    },
+    {
+     "id": "eq-semantic-token-learning-1",
+     "type": "equation",
+     "page": 4,
+     "original": "˜zl · hl ∥˜zl∥∥hl∥, ˜zl ="
+    },
+    {
+     "id": "eq-semantic-token-learning-2",
+     "type": "equation",
+     "page": 4,
+     "original": "L LASR = 1 −1"
+    },
+    {
+     "id": "eq-semantic-token-learning-3",
+     "type": "equation",
+     "page": 4,
+     "original": "L"
+    },
+    {
+     "id": "eq-semantic-token-learning-4",
+     "type": "equation",
+     "page": 4,
+     "original": "l=1"
+    },
+    {
+     "id": "eq-semantic-token-learning-5",
+     "type": "equation",
+     "page": 4,
+     "original": "F f=1"
+    },
+    {
+     "id": "p-semantic-token-learning-3",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-semantic-token-learning-3-1",
+       "original": "Al,f zf where zf are the projected post-VQ semantic embeddings at codec frame f, hl are the last-layer decoder hidden states from Whisper at token position l, and A ∈RL×F is a soft alignment matrix derived from a subset of Whisper’s cross-attention heads identified as best correlating with wordlevel timestamps via dynamic time warping (DTW) [Berndt and Clifford, 1994].",
+       "zh": "Al,f zf 其中 zf 是 codec 第 f 帧投影后的 VQ 后语义嵌入，hl 是 Whisper 在 token 位置 l 处的最后一层解码器隐状态，A ∈RL×F 是软对齐矩阵，来自与词级时间戳相关性最强的一部分 Whisper 交叉注意力头（通过动态时间规整（DTW）[Berndt and Clifford, 1994] 识别）。"
+      },
+      {
+       "id": "s-semantic-token-learning-3-2",
+       "original": "To compute A, the cross-attention weights from these heads are normalized across the decoder token dimension, median-filtered, and averaged over heads.",
+       "zh": "计算 A 时，先把这些头的交叉注意力权重沿解码器 token 维归一化，再做中值滤波并对各头取平均。"
+      },
+      {
+       "id": "s-semantic-token-learning-3-3",
+       "original": "The resulting matrix is linearly interpolated along the encoder frame axis to match the codec frame rate (12.5 Hz), so that ˜zl is the attention-weighted sum of codec embeddings aligned to the l-th decoder token.",
+       "zh": "所得矩阵沿编码器帧轴线性插值以匹配 codec 帧率（12.5 Hz），使 ˜zl 成为与第 l 个解码器 token 对齐的 codec 嵌入的注意力加权和。"
+      }
+     ]
+    },
+    {
+     "id": "p-semantic-token-learning-4",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-semantic-token-learning-4-1",
+       "original": "This design allows the tokenizer to learn text-aligned semantic tokens without requiring an external forced aligner or paired transcripts, since the alignment is derived implicitly from Whisper’s crossattention weights.",
+       "zh": "这一设计让分词器无需外部强制对齐器或配对转写文本，就能学到与文本对齐的语义 token，因为对齐是隐式地从 Whisper 的交叉注意力权重中导出的。"
+      },
+      {
+       "id": "s-semantic-token-learning-4-2",
+       "original": "Distilling from continuous hidden states rather than hard transcript labels provides richer supervision, including model confidence and phonetic similarities.",
+       "zh": "从连续隐状态而非硬转写标签蒸馏，能提供更丰富的监督信息，包括模型置信度和音素相似性。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-adversarial-training",
+   "num": null,
+   "level": 2,
+   "page": 4,
+   "title": {
+    "original": "Adversarial Training.",
+    "zh": "对抗训练。"
+   },
+   "blocks": [
+    {
+     "id": "p-adversarial-training-1",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-adversarial-training-1-1",
+       "original": "A multi-resolution discriminator with 8 STFT sizes (2296, 1418, 876, 542, 334, 206, 126, 76) is trained along with the codec.",
+       "zh": "一个使用 8 种 STFT 大小（2296, 1418, 876, 542, 334, 206, 126, 76）的多分辨率判别器与 codec 一同训练。"
+      },
+      {
+       "id": "s-adversarial-training-1-2",
+       "original": "Each discriminator is trained as a binary classifier between real audios x and reconstructed audios ˆx using a hinge loss.",
+       "zh": "每个判别器都被训练成一个二分类器，用合页损失（hinge loss）区分真实音频 x 与重建音频 x̂（原文作 ˆx）。"
+      },
+      {
+       "id": "s-adversarial-training-1-3",
+       "original": "An L1-based feature-matching loss is computed on the activations of every layer of each discriminator:",
+       "zh": "在每个判别器每一层的激活上计算基于 L1 的特征匹配损失："
+      }
+     ]
+    },
+    {
+     "id": "p-adversarial-training-2",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-adversarial-training-2-1",
+       "original": "M Lfeature(x, ˆx) = 1 MN",
+       "zh": "M Lfeature(x, ˆx) = 1 MN"
+      }
+     ]
+    },
+    {
+     "id": "eq-adversarial-training-1",
+     "type": "equation",
+     "page": 4,
+     "original": "m=1"
+    },
+    {
+     "id": "eq-adversarial-training-2",
+     "type": "equation",
+     "page": 4,
+     "original": "N n=1"
+    },
+    {
+     "id": "p-adversarial-training-3",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-adversarial-training-3-1",
+       "original": "∥Dm n (x) −Dm n (ˆx)∥1 Here, Dm n denotes the m-th layer of the n-th discriminator, where each of the N discriminators has M layers.",
+       "zh": "∥Dm n (x) −Dm n (ˆx)∥1 其中 Dm n 表示第 n 个判别器的第 m 层，N 个判别器各有 M 层。"
+      },
+      {
+       "id": "s-adversarial-training-3-2",
+       "original": "Following Défossez et al. [2024], Parker et al. [2024], we use this feature-matching",
+       "zh": "沿用 Défossez et al. [2024]、Parker et al. [2024]，我们用这一特征匹配"
+      }
+     ]
+    },
+    {
+     "id": "tab-adversarial-training-1",
+     "type": "table_caption",
+     "page": 5,
+     "original": "Table 1: Key hyperparameters of the Voxtral Codec.",
+     "zh": "表 1：Voxtral Codec 的关键超参数。"
+    }
+   ]
+  },
+  {
+   "id": "sec-parameter",
+   "num": null,
+   "level": 2,
+   "page": 5,
+   "title": {
+    "original": "Parameter",
+    "zh": "参数"
+   },
+   "blocks": [
+    {
+     "id": "p-parameter-1",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-parameter-1-1",
+       "original": "Value Input / Preprocessing Sampling rate 24000 Patch size 240 AutoEncoder Encoder patch projection kernel size 7 Encoder patch projection dimension 1024 Encoder transformer layers1 Encoder sliding window size Encoder conv kernels Encoder conv strides (Decoder flips all →to ←and uses transposed convolutions) Discrete bottleneck Semantic VQ2 codebook size 8192 Acoustic FSQ3 codebook count×size 36 × 21 Discriminator FFT sizes 2296, 1418, 876, 542, 334, 206, 126, 76 Channels 256 1 For training stability, we use LayerScale with initial scale of 0.01 and QK normalization with ϵ = 10−6. 2 During training, VQ is applied with 50% probability. 3 During training: 50% quantized with FSQ, 25% dithered (uniform noise of magnitude 1/L), 25% unquantized. loss in place of the standard GAN generator loss, as the evolving discriminator features provide an increasingly discriminative reconstruction signal throughout training.",
+       "zh": "此处为表 1 散行（抽取时按阅读顺序混入正文），依次给出：取值；输入/预处理——采样率 24000、块大小 240；自编码器——编码器块投影核大小 7、投影维度 1024、编码器 Transformer 层数与滑动窗口大小、卷积核与步幅（解码器把所有 → 翻转为 ← 并使用转置卷积）；离散瓶颈——语义 VQ 码本大小 8192、声学 FSQ 码本数量×大小 36 × 21；判别器 FFT 大小 2296, 1418, 876, 542, 334, 206, 126, 76；通道数 256。脚注：1) 为训练稳定，LayerScale 初始缩放 0.01，QK 归一化 ε = 10−6；2) 训练时 VQ 以 50% 概率施加；3) 训练时 50% 用 FSQ 量化、25% 加抖动（幅度 1/L 的均匀噪声）、25% 不量化。损失的其余部分接上一段：用该特征匹配损失替代标准 GAN 生成器损失，因为随着训练推进，判别器特征能提供越来越有判别力的重建信号。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-training-objective",
+   "num": null,
+   "level": 2,
+   "page": 5,
+   "title": {
+    "original": "Training Objective.",
+    "zh": "训练目标。"
+   },
+   "blocks": [
+    {
+     "id": "p-training-objective-1",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-training-objective-1-1",
+       "original": "Voxtral Codec is trained end-to-end with the following losses:",
+       "zh": "Voxtral Codec 以端到端方式训练，使用如下损失："
+      }
+     ]
+    },
+    {
+     "id": "p-training-objective-2",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-training-objective-2-1",
+       "original": "αLfeature + βLASR + γLL1 + γLSTFT + δLcommit where α=1.0, β=1.0, γ=0.9999t (with t the current training step), and δ=0.1.",
+       "zh": "αLfeature + βLASR + γLL1 + γLSTFT + δLcommit，其中 α=1.0、β=1.0、γ=0.9999t（t 为当前训练步数）、δ=0.1。"
+      },
+      {
+       "id": "s-training-objective-2-2",
+       "original": "LL1 is the L1 distance between the original and reconstructed waveforms, and LSTFT is an L1 loss on their STFT magnitudes.",
+       "zh": "LL1 是原始波形与重建波形之间的 L1 距离，LSTFT 是两者 STFT 幅度谱上的 L1 损失。"
+      }
+     ]
+    },
+    {
+     "id": "p-training-objective-3",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-training-objective-3-1",
+       "original": "Both reconstruction losses share the same exponential decay schedule γ, which bootstraps learning early in training and diminishes their influence as the adversarial signal strengthens [Parker et al., 2024].",
+       "zh": "两个重建损失共用同一个指数衰减调度 γ：它在训练早期引导学习，并随着对抗信号增强而逐渐降低权重 [Parker et al., 2024]。"
+      },
+      {
+       "id": "s-training-objective-3-2",
+       "original": "Lcommit = ∥ze −sg(zq)∥2 2 is the VQ commitment loss [Van Den Oord et al., 2017], where sg denotes the stop-gradient operator.",
+       "zh": "Lcommit = ∥ze −sg(zq)∥2 2 是 VQ 承诺损失（commitment loss）[Van Den Oord et al., 2017]，sg 表示停止梯度算子。"
+      }
+     ]
+    },
+    {
+     "id": "tab-training-objective-1",
+     "type": "table_caption",
+     "page": 5,
+     "original": "Table 1 presents a summary of the Voxtral Codec configuration. The full model has approximately 300M parameters. All decisions are ablated and the final configuration achieves stable optimization with the best audio quality.",
+     "zh": "表 1 总结了 Voxtral Codec 的配置。完整模型约 300M 参数。所有设计决策都经过消融，最终配置实现了稳定优化与最佳音质。"
+    }
+   ]
+  },
+  {
+   "id": "sec-2-2",
+   "num": "2.2",
+   "level": 2,
+   "page": 5,
+   "title": {
+    "original": "Decoder Backbone",
+    "zh": "2.2 解码器主干"
+   },
+   "blocks": [
+    {
+     "id": "p-2-2-1",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-2-2-1-1",
+       "original": "The decoder backbone of Voxtral TTS follows the architecture of Ministral 3B [Liu et al., 2026], an auto-regressive decoder-only transformer.",
+       "zh": "Voxtral TTS 的解码器主干沿用 Ministral 3B [Liu et al., 2026] 的架构——一个自回归的仅解码器 Transformer。"
+      },
+      {
+       "id": "s-2-2-1-2",
+       "original": "The input sequence consists of voice reference audio tokens followed by text tokens, from which the output audio tokens are auto-regressively generated.",
+       "zh": "输入序列由语音参考的音频 token 在前、文本 token 在后组成，输出音频 token 由此自回归地生成。"
+      },
+      {
+       "id": "s-2-2-1-3",
+       "original": "Each audio frame is represented by 37 discrete tokens (1 semantic, 36 acoustic).",
+       "zh": "每个音频帧由 37 个离散 token 表示（1 个语义、36 个声学）。"
+      },
+      {
+       "id": "s-2-2-1-4",
+       "original": "Each codebook has its own embedding lookup table (8192 entries for semantic and 21 for each acoustic), which are summed to produce a single embedding per audio frame.",
+       "zh": "每个码本有自己独立的嵌入查找表（语义码本 8192 条，声学码本各 21 条），它们的嵌入相加得到每帧一个的音频嵌入。"
+      }
+     ]
+    },
+    {
+     "id": "p-2-2-2",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-2-2-2-1",
+       "original": "The decoder backbone generates a sequence of hidden states.",
+       "zh": "解码器主干生成一串隐状态序列。"
+      },
+      {
+       "id": "s-2-2-2-2",
+       "original": "A linear head projects each hidden state h to logits over the semantic codebook vocabulary (8192 entries plus a special End of Audio (<EOA>) token), trained with a standard cross-entropy loss.",
+       "zh": "一个线性头把每个隐状态 h 投影为语义码本词表（8192 个条目外加一个特殊的音频结束（<EOA>）token）上的 logits，并用标准交叉熵损失训练。"
+      },
+      {
+       "id": "s-2-2-2-3",
+       "original": "To predict the acoustic tokens, h is fed to a flow-matching transformer, described in Section 2.3.",
+       "zh": "为预测声学 token，h 被送入流匹配 Transformer（见 Section 2.3）。"
+      },
+      {
+       "id": "s-2-2-2-4",
+       "original": "The float-valued outputs of the flow-matching transformer are discretized before the next AR step to maintain a fully discrete token interface.",
+       "zh": "流匹配 Transformer 的浮点输出在下一个自回归步之前被离散化，以保持完全离散的 token 接口。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-2-3",
+   "num": "2.3",
+   "level": 2,
+   "page": 6,
+   "title": {
+    "original": "Flow-Matching Transformer",
+    "zh": "2.3 流匹配 Transformer"
+   },
+   "blocks": [
+    {
+     "id": "p-2-3-1",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-2-3-1-1",
+       "original": "To predict the acoustic tokens, a flow-matching (FM) transformer operates independently on the hidden state h from each generation step in the decoder backbone.",
+       "zh": "为预测声学 token，一个流匹配（FM）Transformer 独立地作用于解码器主干每一步生成的隐状态 h。"
+      },
+      {
+       "id": "s-2-3-1-2",
+       "original": "We model acoustic tokens in continuous space to leverage the smooth velocity field of FM, and discretize only at the output to interface with the AR backbone’s discrete token vocabulary.",
+       "zh": "我们在连续空间中建模声学 token，以利用 FM 平滑的速度场，只在输出端离散化，以对接自回归主干的离散 token 词表。"
+      }
+     ]
+    },
+    {
+     "id": "p-2-3-2",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-2-3-2-1",
+       "original": "The FM transformer consists of a bidirectional 3-layer transformer with the same width as the decoder backbone.",
+       "zh": "FM Transformer 是一个 3 层的双向 Transformer，宽度与解码器主干相同。"
+      },
+      {
+       "id": "s-2-3-2-2",
+       "original": "It models the velocity field that transports Gaussian noise (x0) to acoustic embedding (x1) over a series of function evaluation steps 0 ≤t ≤1.",
+       "zh": "它建模的是在一系列函数评估步 0 ≤t ≤1 上把高斯噪声（x0）输运到声学嵌入（x1）的速度场。"
+      },
+      {
+       "id": "s-2-3-2-3",
+       "original": "It receives as input h, the current function evaluation step t encoded as a sinusoidal embedding, and the current acoustic embedding xt ∈R36.",
+       "zh": "它的输入包括：h、编码为正弦嵌入的当前函数评估步 t，以及当前声学嵌入 xt ∈R36。"
+      },
+      {
+       "id": "s-2-3-2-4",
+       "original": "We use a separate projection layer for each input h, t and xt, because the scale of activations are different for each one.",
+       "zh": "我们为 h、t、xt 各用一个独立的投影层，因为三者的激活尺度不同。"
+      },
+      {
+       "id": "s-2-3-2-5",
+       "original": "We also ablated providing conditioning using DiT style adaptive LayerNorm (AdaLN) layers [Peebles and Xie, 2023], but found our approach superior.",
+       "zh": "我们还消融过用 DiT 式自适应 LayerNorm（AdaLN）层 [Peebles and Xie, 2023] 提供条件的方式，但发现我们的做法更优。"
+      }
+     ]
+    },
+    {
+     "id": "p-2-3-3",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-2-3-3-1",
+       "original": "During training, the hidden state is dropped out 10% of the time for “unconditional” modeling.",
+       "zh": "训练时，隐状态有 10% 的概率被丢弃，用于「无条件」建模。"
+      },
+      {
+       "id": "s-2-3-3-2",
+       "original": "For inference, we use the Euler method to integrate the velocity vector field vt using 8 function evaluations (NFEs) and classifier-free guidance (CFG) [Ho and Salimans, 2022].",
+       "zh": "推理时，我们用欧拉法积分速度向量场 vt，共做 8 次函数评估（NFE），并施加无分类器引导（CFG）[Ho and Salimans, 2022]。"
+      },
+      {
+       "id": "s-2-3-3-3",
+       "original": "Concretely, the form of vt and xt is: vt = αvθ(xt, t, h) + (1 −α)vθ(xt, t, ∅) xt+∆t = xt + vt · ∆t where h is the hidden state from decoder backbone and ∅is the unconditional case where we pass a vector of zeros with the same shape as h. vθ(xt, t, h) is the predicted velocity field at time step t, sample xt and conditioning input h.",
+       "zh": "具体地，vt 与 xt 的形式为：vt = αvθ(xt, t, h) + (1 −α)vθ(xt, t, ∅)；xt+∆t = xt + vt · ∆t。其中 h 是解码器主干的隐状态，∅ 表示无条件情形——我们传入一个与 h 形状相同的全零向量；vθ(xt, t, h) 是在时间步 t、样本 xt、条件输入 h 下预测的速度场。"
+      },
+      {
+       "id": "s-2-3-3-4",
+       "original": "We set ∆t = 1/8 and α = 1.2 based on the analysis in Section 5.2.",
+       "zh": "基于 Section 5.2 的分析，我们设 ∆t = 1/8、α = 1.2。"
+      }
+     ]
+    },
+    {
+     "id": "p-2-3-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-2-3-4-1",
+       "original": "Note that in our architecture, CFG is applied independently at every frame in the FM transformer.",
+       "zh": "注意在我们的架构中，CFG 是在 FM Transformer 的每一帧上独立施加的。"
+      },
+      {
+       "id": "s-2-3-4-2",
+       "original": "Hence, it only requires an extra forward-propagation of only the FM transformer, and is thus significantly cheaper than applying CFG in the decoder backbone.",
+       "zh": "因此它只需要对 FM Transformer 做一次额外前向传播，相比在解码器主干上施加 CFG 要便宜得多。"
+      },
+      {
+       "id": "s-2-3-4-3",
+       "original": "The float values predicted by the FM transformer are converted to discrete integer values by quantizing to the 21 FSQ levels.",
+       "zh": "FM Transformer 预测的浮点值通过量化到 21 个 FSQ 等级转换为离散整数值。"
+      },
+      {
+       "id": "s-2-3-4-4",
+       "original": "These discretized tokens are provided as input to the decoder backbone in the next decoding step.",
+       "zh": "这些离散化后的 token 在下一个解码步中作为输入送回解码器主干。"
+      }
+     ]
+    },
+    {
+     "id": "p-2-3-5",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-2-3-5-1",
+       "original": "Given the inputs to the decoder backbone are discrete tokens with embedding lookup, we also considered alternative architectures inspired by MaskGIT [Chang et al., 2022] and Depth Transformer [Défossez et al., 2024].",
+       "zh": "既然解码器主干的输入是带嵌入查找的离散 token，我们也考虑过受 MaskGIT [Chang et al., 2022] 与 Depth Transformer [Défossez et al., 2024] 启发的替代架构。"
+      },
+      {
+       "id": "s-2-3-5-2",
+       "original": "Both approaches performed reasonably well, but were inferior to FM in human evaluations, especially on expressivity.",
+       "zh": "两种方案表现都尚可，但在人工评测中不及 FM，差距在表现力维度上尤其明显。"
+      },
+      {
+       "id": "s-2-3-5-3",
+       "original": "In addition, MaskGIT requires attending over all 36 acoustic codebook positions and conditioning tokens, resulting in a per-frame sequence length of 38, compared to just 3 in the FM transformer (h, t, xt).",
+       "zh": "此外，MaskGIT 需要同时注意全部 36 个声学码本位置与条件 token，每帧序列长度达 38，而 FM Transformer 只有 3（h、t、xt）。"
+      },
+      {
+       "id": "s-2-3-5-4",
+       "original": "Similarly, the Depth Transformer requires 36 auto-regressive decoding steps, compared to 8 NFEs for FM.",
+       "zh": "同样，Depth Transformer 每帧需要 36 个自回归解码步，而 FM 只需 8 个 NFE。"
+      },
+      {
+       "id": "s-2-3-5-5",
+       "original": "Thus, FM is superior in quality, compute and latency.",
+       "zh": "因此 FM 在质量、计算量和延迟上都更优。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-3",
+   "num": "3",
+   "level": 1,
+   "page": 6,
+   "title": {
+    "original": "Training",
+    "zh": "训练"
+   },
+   "blocks": []
+  },
+  {
+   "id": "sec-3-1",
+   "num": "3.1",
+   "level": 2,
+   "page": 6,
+   "title": {
+    "original": "Pretraining",
+    "zh": "3.1 预训练"
+   },
+   "blocks": [
+    {
+     "id": "p-3-1-1",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-1-1-1",
+       "original": "We train the model using paired audio and transcripts pseudo-labelled with Voxtral Mini Transcribe [Liu et al., 2025].",
+       "zh": "我们使用成对的音频与转写文本训练模型，转写由 Voxtral Mini Transcribe [Liu et al., 2025] 伪标注生成。"
+      },
+      {
+       "id": "s-3-1-1-2",
+       "original": "Each training sample consists of a tuple (A1, T2, A2) where A1 is a voice reference and T2 is the transcript for A2, which is our target for generation.",
+       "zh": "每个训练样本是一个三元组 (A1, T2, A2)：A1 是语音参考，T2 是 A2 的转写文本，A2 是我们要生成的目标。"
+      },
+      {
+       "id": "s-3-1-1-3",
+       "original": "Similar to Voxtral, we interleave these segments with a <next> special token between A1 and T2, and a <repeat> special token between T2 and A2.",
+       "zh": "与 Voxtral 类似，我们在 A1 和 T2 之间插入 <next> 特殊 token、在 T2 和 A2 之间插入 <repeat> 特殊 token，把这些段交错拼接。"
+      },
+      {
+       "id": "s-3-1-1-4",
+       "original": "We ensure that A1 and A2 are single-speaker segments from the same speaker, but not necessarily temporally adjacent.",
+       "zh": "我们保证 A1 和 A2 是来自同一说话人的单说话人片段，但不必在时间上相邻。"
+      },
+      {
+       "id": "s-3-1-1-5",
+       "original": "The maximum duration of A1 and A2 are 180 seconds, and we ensure A1 is at least 1 second long.",
+       "zh": "A1 和 A2 的最大时长均为 180 秒，并保证 A1 至少 1 秒长。"
+      },
+      {
+       "id": "s-3-1-1-6",
+       "original": "Due to the long-tailed nature of natural conversational human speech duration, we find the model works best on voice prompts (A1) between 3 and 25 seconds.",
+       "zh": "由于自然对话语音时长呈长尾分布，我们发现模型在 3 到 25 秒的语音提示（A1）上效果最好。"
+      }
+     ]
+    },
+    {
+     "id": "p-3-1-2",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-1-2-1",
+       "original": "The loss is computed only on the tokens of A2.",
+       "zh": "损失只在 A2 的 token 上计算。"
+      },
+      {
+       "id": "s-3-1-2-2",
+       "original": "We optimize the model using a two-part loss function consisting of a cross-entropy loss on the semantic token Lsemantic and flow-matching loss Lacoustic on the acoustic tokens.",
+       "zh": "我们用一个两部分的损失函数优化模型：语义 token 上的交叉熵损失 Lsemantic，以及声学 token 上的流匹配损失 Lacoustic。"
+      },
+      {
+       "id": "s-3-1-2-3",
+       "original": "We use the simple conditional flow-matching objective as shown below:",
+       "zh": "我们采用简单的条件流匹配目标，如下所示："
+      }
+     ]
+    },
+    {
+     "id": "eq-3-1-1",
+     "type": "equation",
+     "page": 6,
+     "original": "Lacoustic = Et∼U[0,1],x0∼D,x1∼N (0,1)∥vθ(xt, t) −ut(xt|x1, x0)∥2 2 ut(xt|x1, x0) = x1 −x0"
+    },
+    {
+     "id": "p-3-1-3",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-1-3-1",
+       "original": "where ut is the conditional velocity target, vθ is the velocity predicted by the FM transformer, x1 is sampled from a normal distribution, and x0 the data distribution D.",
+       "zh": "其中 ut 是条件速度目标，vθ 是 FM Transformer 预测的速度，x1 采样自正态分布，x0 采样自数据分布 D。"
+      },
+      {
+       "id": "s-3-1-3-2",
+       "original": "We initialize the decoder backbone with Ministral 3B.",
+       "zh": "我们用 Ministral 3B 初始化解码器主干。"
+      },
+      {
+       "id": "s-3-1-3-3",
+       "original": "Newly introduced modules, such as the FM transformer, audio codebook embedding lookup-tables and output projection layers, are randomly initialized.",
+       "zh": "新引入的模块——FM Transformer、音频码本嵌入查找表和输出投影层——均采用随机初始化。"
+      },
+      {
+       "id": "s-3-1-3-4",
+       "original": "During training, we freeze the text-embedding layers in the decoder backbone to improve robustness to text tokens that appear with low-frequency in the Voxtral Mini Transcribe transcriptions.",
+       "zh": "训练时我们冻结解码器主干中的文本嵌入层，以增强对 Voxtral Mini Transcribe 转写中低频文本 token 的鲁棒性。"
+      },
+      {
+       "id": "s-3-1-3-5",
+       "original": "To avoid overfitting to silence, we also use a lower loss weight for frames that have no speech as determined by a voice-activity-detection (VAD) model and set the loss weight to 0 for extremely long silences.",
+       "zh": "为避免向静音过拟合，我们对由语音活动检测（VAD）模型判定为无语音的帧使用更低的损失权重，并对极长静音段把损失权重设为 0。"
+      },
+      {
+       "id": "s-3-1-3-6",
+       "original": "We also perform simple LLM based rewrites of the transcripts to introduce robustness to normalized vs un-normalized text (e.g. \"5 - 4\" vs \"five minus four\").",
+       "zh": "我们还用 LLM 对转写文本做简单改写，让模型对「是否做过文本规范化」更鲁棒（例如 \"5 - 4\" 与 \"five minus four\"）。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-3-2",
+   "num": "3.2",
+   "level": 2,
+   "page": 7,
+   "title": {
+    "original": "Direct Preference Optimization",
+    "zh": "3.2 直接偏好优化"
+   },
+   "blocks": [
+    {
+     "id": "p-3-2-1",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-2-1-1",
+       "original": "We use Direct Preference Optimization (DPO) [Rafailov et al., 2023] to post-train the model, focusing on improving word error rate (WER) and speaker similarity.",
+       "zh": "我们使用直接偏好优化（DPO）[Rafailov et al., 2023] 对模型做后训练，重点改进词错误率（WER）和说话人相似度。"
+      },
+      {
+       "id": "s-3-2-1-2",
+       "original": "For the semantic codebook, we use the standard DPO objective.",
+       "zh": "对语义码本，我们使用标准的 DPO 目标。"
+      },
+      {
+       "id": "s-3-2-1-3",
+       "original": "Given that the acoustic codebooks are predicted with flow-matching, we adapt the objective from Ziv et al. [2025]:",
+       "zh": "鉴于声学码本由流匹配预测，我们采用并改造了 Ziv et al. [2025] 的目标："
+      }
+     ]
+    },
+    {
+     "id": "p-3-2-2",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-2-2-1",
+       "original": "L(θ) = −Et∼U(0,1), xw,xl log σ −β ∆θ(xw, xl, t) −∆θref(xw, xl, t) , where ∆θ(xw, xl, t) = ∥vθ(xw t , t) −ut(xw t |xw)∥2 2 −∥vθ(xl t, t) −ut(xl t|xl)∥2 2.",
+       "zh": "L(θ) = −Et∼U(0,1), xw,xl log σ −β ∆θ(xw, xl, t) −∆θref(xw, xl, t)，其中 ∆θ(xw, xl, t) = ∥vθ(xw t , t) −ut(xw t |xw)∥2 2 − ∥vθ(xl t, t) −ut(xl t|xl)∥2 2。"
+      }
+     ]
+    },
+    {
+     "id": "p-3-2-3",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-2-3-1",
+       "original": "We make the objective suitable for our auto-regressive setup (note the bold t showing each token has a differently sampled t) by computing: i=1 ∥vθ(xw i,ti, ti) −uw i,ti∥2 2 −",
+       "zh": "为使该目标适配我们的自回归设定（注意加粗的 t 表示每个 token 有各自采样的 t），我们计算：i=1 ∥vθ(xw i,ti, ti) −uw i,ti∥2 2 −"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-1",
+     "type": "equation",
+     "page": 7,
+     "original": "Nw ∆θ(xw, xl, t) ="
+    },
+    {
+     "id": "eq-3-2-2",
+     "type": "equation",
+     "page": 7,
+     "original": "Nl i=1"
+    },
+    {
+     "id": "p-3-2-4",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-2-4-1",
+       "original": "∥vθ(xl i,ti, ti) −ul i,ti∥2 2 and find that length normalization (dividing by length of winner) causes instability.",
+       "zh": "∥vθ(xl i,ti, ti) −ul i,ti∥2 2；并且我们发现长度归一化（除以优胜样本的长度）会导致不稳定。"
+      }
+     ]
+    },
+    {
+     "id": "p-3-2-5",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-2-5-1",
+       "original": "We ensure that the t and x0 sampled for each location in the sequence is consistent for the policy model θ and reference model θref.",
+       "zh": "我们保证对序列中每个位置采样的 t 和 x0，在策略模型 θ 与参考模型 θref 之间是一致的。"
+      },
+      {
+       "id": "s-3-2-5-2",
+       "original": "The two DPO losses are added with uniform weights but we use a βsemantic = 0.1 and βacoustic = 0.5 as training is sensitive to the flow-DPO loss.",
+       "zh": "两个 DPO 损失以均匀权重相加，但我们取 βsemantic = 0.1、βacoustic = 0.5，因为训练对 flow-DPO 损失很敏感。"
+      },
+      {
+       "id": "s-3-2-5-3",
+       "original": "A low learning rate of 8e−8 is used for training stability.",
+       "zh": "为保证训练稳定，使用了 8e−8 的极低学习率。"
+      }
+     ]
+    },
+    {
+     "id": "p-3-2-6",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-2-6-1",
+       "original": "The data for DPO is gathered using a rejection-sampling pipeline that takes as input a set of voice samples from a held-out set of single-speaker voice samples and diverse synthetically generated textprompts.",
+       "zh": "DPO 数据通过一个拒绝采样流水线收集：输入是一个留出集里的单说话人语音样本，以及多样化的合成文本提示。"
+      },
+      {
+       "id": "s-3-2-6-2",
+       "original": "We prompt Mistral Small Creative 1 with the transcript of the voice prompt and randomly chosen personas to synthesize a diverse array of texts which continue or reply to the conversational context.",
+       "zh": "我们把语音提示的转写和随机选取的人设（persona)一起交给 Mistral Small Creative 1，合成多种多样的文本，作为对话上下文的延续或回应。"
+      },
+      {
+       "id": "s-3-2-6-3",
+       "original": "The pretrained checkpoint then takes as input the voice and text prompts and generates multiple samples from each input, from which winner and loser pairs can be constructed.",
+       "zh": "随后预训练检查点接收语音与文本提示，为每个输入生成多个样本，从中构造优胜-落败样本对。"
+      },
+      {
+       "id": "s-3-2-6-4",
+       "original": "Winners and losers are determined from WER, speaker similarity, loudness consistency, UTMOS-v2 [Baba et al., 2024] and other LM judge metrics.",
+       "zh": "优胜与落败由 WER、说话人相似度、响度一致性、UTMOS-v2 [Baba et al., 2024] 以及其他语言模型评委指标共同决定。"
+      },
+      {
+       "id": "s-3-2-6-5",
+       "original": "We optimize the model using the combined DPO loss along with the pretraining objective on high-quality speech for 1 epoch, as we found that training longer on synthetic data led to more robotic speech.",
+       "zh": "我们用组合的 DPO 损失加上在高质量语音上的预训练目标优化模型，只训 1 个 epoch，因为我们发现，在合成数据上训练更久会导致语音更机械。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-4",
+   "num": "4",
+   "level": 1,
+   "page": 7,
+   "title": {
+    "original": "Results",
+    "zh": "结果"
+   },
+   "blocks": []
+  },
+  {
+   "id": "sec-4-1",
+   "num": "4.1",
+   "level": 2,
+   "page": 7,
+   "title": {
+    "original": "Voxtral Codec",
+    "zh": "4.1 Voxtral Codec"
+   },
+   "blocks": [
+    {
+     "id": "tab-4-1-1",
+     "type": "table_caption",
+     "page": 7,
+     "original": "Table 2 shows a comparison between Voxtral Codec and Mimi on the Expresso dataset [Nguyen et al., 2023]. We evaluate on the following objective metrics: Mel distance, STFT distance, perceptual evaluation of speech quality (PESQ), extended short-time objective intelligibility (ESTOI), word error rate between transcriptions generated using an ASR model corresponding to the source and reconstruction (ASR-WER), speaker similarity score computed using a speaker embedding model. We also report the bitrates and frames per second (fps), which are relevant as these codecs are used in the context of auto-regressive decoder models. Given Mimi uses an RVQ design for acoustic",
+     "zh": "表 2 展示了 Voxtral Codec 与 Mimi 在 Expresso 数据集 [Nguyen et al., 2023] 上的对比。我们评估以下客观指标：Mel 距离、STFT 距离、语音质量感知评估（PESQ）、扩展短时客观可懂度（ESTOI）、用 ASR 模型分别转写源音频与重建音频所得的词错误率（ASR-WER），以及用说话人嵌入模型计算的说话人相似度得分。我们还报告码率和每秒帧数（fps），因为在自回归解码器模型的语境下这些指标很重要。鉴于 Mimi 对声学"
+    },
+    {
+     "id": "p-4-1-1",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-4-1-1-1",
+       "original": "1https://docs.mistral.ai/models/mistral-small-creative-25-12 codebooks, it has the flexibility to choose a subset of codebooks to trade-off bitrate and quality.",
+       "zh": "1https://docs.mistral.ai/models/mistral-small-creative-25-12 码本方面，Mimi 采用 RVQ 设计，因此可以灵活选取码本子集，在码率与质量之间做权衡。"
+      },
+      {
+       "id": "s-4-1-1-2",
+       "original": "When Voxtral Codec is compared to Mimi in a 16 codebook configuration, such that the bitrates are similar, Voxtral Codec outperforms on all the objective metrics.",
+       "zh": "当 Voxtral Codec 与 Mimi 在 16 码本配置下比较（此时码率相近）时，Voxtral Codec 在所有客观指标上都更优。"
+      },
+      {
+       "id": "s-4-1-1-3",
+       "original": "On an internal subjective assessment, we found Voxtral Codec to be comparable or better than Mimi at 16 codebooks on audios consisting of speech which is our main focus.",
+       "zh": "在内部主观评估中，我们发现 Voxtral Codec 在语音音频（我们的主要关注点）上可与 16 码本的 Mimi 相当或更好。"
+      }
+     ]
+    },
+    {
+     "id": "tab-4-1-2",
+     "type": "table_caption",
+     "page": 8,
+     "original": "Table 2: Comparison of Voxtral Codec and Mimi on the Expresso dataset.",
+     "zh": "表 2：Voxtral Codec 与 Mimi 在 Expresso 数据集上的对比。"
+    },
+    {
+     "id": "p-4-1-2",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-1-2-1",
+       "original": "Model fps token/frame × vocab. size bitrate Reconstruction (↓) Intrusive (↑) Perceptual (kbps) Mel STFT PESQ ESTOI ASR-WER (%)↓ Speaker Sim↑ Mimi – 8cb (Moshi) 12.5 8 × (2048) 1.1 0.702 1.177 2.07 0.803 11.75 0.672 Mimi – 16cb 12.5 16 × (2048) 2.2 0.618 1.100 2.67 0.865 11.01 0.829 Mimi – full 32cb 12.5 32 × (2048) 4.4 0.552 1.040 3.18 0.910 10.25 0.902 Voxtral Codec 12.5 1 × (8192) + 36 × (21) 2.1 0.545 0.982 3.05 0.882 10.66 0.843",
+       "zh": "此处为表 2 数值散行。表头依次为：模型、fps、token/帧 × 词表大小、码率（kbps）、重建指标（↓，Mel、STFT）、侵入式指标（↑，PESQ、ESTOI、ASR-WER (%)↓）、感知指标（说话人相似度↑）。Mimi – 8cb（Moshi）：12.5 fps、8 × (2048)、1.1 kbps、Mel 0.702、STFT 1.177、PESQ 2.07、ESTOI 0.803、ASR-WER 11.75、说话人相似度 0.672。Mimi – 16cb：12.5 fps、16 × (2048)、2.2 kbps、Mel 0.618、STFT 1.100、PESQ 2.67、ESTOI 0.865、ASR-WER 11.01、说话人相似度 0.829。Mimi – 全量 32cb：12.5 fps、32 × (2048)、4.4 kbps、Mel 0.552、STFT 1.040、PESQ 3.18、ESTOI 0.910、ASR-WER 10.25、说话人相似度 0.902。Voxtral Codec：12.5 fps、1 × (8192) + 36 × (21)、2.1 kbps、Mel 0.545、STFT 0.982、PESQ 3.05、ESTOI 0.882、ASR-WER 10.66、说话人相似度 0.843。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-4-2",
+   "num": "4.2",
+   "level": 2,
+   "page": 8,
+   "title": {
+    "original": "Automatic Evaluations",
+    "zh": "4.2 自动评测"
+   },
+   "blocks": [
+    {
+     "id": "p-4-2-1",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-2-1-1",
+       "original": "We evaluate Voxtral TTS, ElevenLabs v3 and ElevenLabs Flash v2.5 on SEED-TTS [Anastassiou et al., 2024] and the nine supported languages in MiniMax-TTS [Zhang et al., 2025] using automated metrics:",
+       "zh": "我们用自动指标在 SEED-TTS [Anastassiou et al., 2024] 以及 MiniMax-TTS [Zhang et al., 2025] 涵盖的 9 种受支持语言上评测 Voxtral TTS、ElevenLabs v3 和 ElevenLabs Flash v2.5："
+      }
+     ]
+    },
+    {
+     "id": "p-4-2-2",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-2-2-1",
+       "original": "1.",
+       "zh": "1."
+      },
+      {
+       "id": "s-4-2-2-2",
+       "original": "Word Error Rate (WER): Measured by Voxtral Mini Transcribe v2 to capture the intelligibility of speech.",
+       "zh": "词错误率（WER）：由 Voxtral Mini Transcribe v2 测得，用于刻画语音的可懂度。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-2-3",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-2-3-1",
+       "original": "2.",
+       "zh": "2."
+      },
+      {
+       "id": "s-4-2-3-2",
+       "original": "UTMOS-v2 [Baba et al., 2024]: Predicts the Mean Opinion Score (MOS) of generated speech.",
+       "zh": "UTMOS-v2 [Baba et al., 2024]：预测生成语音的平均意见分（MOS）。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-2-4",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-2-4-1",
+       "original": "3.",
+       "zh": "3."
+      },
+      {
+       "id": "s-4-2-4-2",
+       "original": "Speaker Similarity: Speaker embeddings are predicted using the ECAPA-TDNN model [Desplanques et al., 2020] and the cosine similarity is computed against the reference embedding.",
+       "zh": "说话人相似度：用 ECAPA-TDNN 模型 [Desplanques et al., 2020] 预测说话人嵌入，并计算与参考嵌入的余弦相似度。"
+      },
+      {
+       "id": "s-4-2-4-3",
+       "original": "This evaluates how closely generated speech emulates the provided voice reference.",
+       "zh": "该指标评估生成语音与给定语音参考的相似程度。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-2-5",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-2-5-1",
+       "original": "The results for the three models are presented in Table 3.",
+       "zh": "三个模型的结果见 Table 3。"
+      },
+      {
+       "id": "s-4-2-5-2",
+       "original": "While both ElevenLabs models achieve low WERs across languages, Voxtral TTS significantly outperforms ElevenLabs on the speaker similarity metrics.",
+       "zh": "尽管两个 ElevenLabs 模型在各语言上都取得了低 WER，Voxtral TTS 在说话人相似度指标上显著优于 ElevenLabs。"
+      },
+      {
+       "id": "s-4-2-5-3",
+       "original": "Surprisingly, we find that ElevenLabs Flash v2.5 performs better on most automated metrics and ElevenLabs v3 better on human evaluations, particularly with emotion steering.",
+       "zh": "令人意外的是，我们发现 ElevenLabs Flash v2.5 在多数自动指标上更好，而 ElevenLabs v3 在人工评测中更好，尤其是在带情感引导时。"
+      },
+      {
+       "id": "s-4-2-5-4",
+       "original": "This highlights the importance of performing human evaluations in conjunction with automatic evaluations.",
+       "zh": "这凸显了在做自动评测的同时进行人工评测的重要性。"
+      }
+     ]
+    },
+    {
+     "id": "tab-4-2-1",
+     "type": "table_caption",
+     "page": 8,
+     "original": "Table 3: WER, UTMOS, and Speaker Similarity scores for Voxtral TTS, ElevenLabs v3, and ElevenLabs Flash v2.5.",
+     "zh": "表 3：Voxtral TTS、ElevenLabs v3 与 ElevenLabs Flash v2.5 的 WER、UTMOS 与说话人相似度得分。"
+    },
+    {
+     "id": "p-4-2-6",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-2-6-1",
+       "original": "WER (%) ↓ UTMOS ↑ Speaker Sim ↑ Task Voxtral ElevenLabs Flash Voxtral ElevenLabs Flash Voxtral ElevenLabs Flash MiniMax Arabic 2.68 3.67 2.86 3.07 2.50 2.89 0.746 0.546 0.539 German 0.83 0.45 1.08 3.12 2.90 3.27 0.721 0.457 0.489 English 0.63 0.48 0.33 4.30 4.27 4.27 0.786 0.484 0.489 Spanish 0.51 0.87 0.49 3.41 3.18 2.99 0.762 0.443 0.541 French 3.22 2.34 2.26 2.83 2.90 2.94 0.587 0.339 0.378 Hindi 4.99 8.71 5.08 3.56 3.56 3.35 0.839 0.707 0.679 Italian 1.32 0.58 0.55 3.43 3.08 3.09 0.739 0.527 0.485 Dutch 1.99 1.52 0.83 3.89 3.53 3.68 0.720 0.397 0.598 Portuguese 1.02 0.92 1.15 3.66 3.41 3.41 0.785 0.571 0.642 Seed TTS 1.23 1.26 0.86 4.11 3.92 4.09 0.628 0.392 0.413",
+       "zh": "此处为表 3 数值散行。表头：WER (%) ↓、UTMOS ↑、说话人相似度 ↑，每列下分 Voxtral、ElevenLabs（v3）、Flash（v2.5）。MiniMax 集：阿拉伯语 WER 2.68/3.67/2.86、UTMOS 3.07/2.50/2.89、说话人相似度 0.746/0.546/0.539；德语 0.83/0.45/1.08、3.12/2.90/3.27、0.721/0.457/0.489；英语 0.63/0.48/0.33、4.30/4.27/4.27、0.786/0.484/0.489；西班牙语 0.51/0.87/0.49、3.41/3.18/2.99、0.762/0.443/0.541；法语 3.22/2.34/2.26、2.83/2.90/2.94、0.587/0.339/0.378；印地语 4.99/8.71/5.08、3.56/3.56/3.35、0.839/0.707/0.679；意大利语 1.32/0.58/0.55、3.43/3.08/3.09、0.739/0.527/0.485；荷兰语 1.99/1.52/0.83、3.89/3.53/3.68、0.720/0.397/0.598；葡萄牙语 1.02/0.92/1.15、3.66/3.41/3.41、0.785/0.571/0.642；Seed TTS 集：1.23/1.26/0.86、4.11/3.92/4.09、0.628/0.392/0.413。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-4-3",
+   "num": "4.3",
+   "level": 2,
+   "page": 8,
+   "title": {
+    "original": "Human Evaluations",
+    "zh": "4.3 人工评测"
+   },
+   "blocks": [
+    {
+     "id": "p-4-3-1",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-3-1-1",
+       "original": "Automated metrics cannot measure the naturalness and expressivity of a TTS model, especially the ability of the model to speak with a specific emotion.",
+       "zh": "自动指标无法衡量 TTS 模型的自然度与表现力，尤其是模型以特定情感说话的能力。"
+      },
+      {
+       "id": "s-4-3-1-2",
+       "original": "We find that UTMOS is only a loose proxy, not well calibrated across languages and only weakly correlated with human preference.",
+       "zh": "我们发现 UTMOS 只是一个松散的代理指标：它在各语言间校准不佳，与人工偏好只有弱相关。"
+      },
+      {
+       "id": "s-4-3-1-3",
+       "original": "Hence, we perform two sets of human evaluations in which annotators compare generations between two models without knowing their identities.",
+       "zh": "因此，我们做了两组人工评测，标注者在不知道模型身份的情况下比较两个模型的生成结果。"
+      },
+      {
+       "id": "s-4-3-1-4",
+       "original": "The evaluation consists of 77 prompts, with 11 of them neutral while 66 of them have an associated expected emotion.",
+       "zh": "评测包含 77 条提示，其中 11 条为中性，66 条带有对应的期望情感。"
+      },
+      {
+       "id": "s-4-3-1-5",
+       "original": "For all evaluations, annotators are instructed to choose whether one of the generations is \"slightly better\", \"much better\" or if they are \"both good\" or \"both bad\".",
+       "zh": "在所有评测中，标注者被要求选择某一段生成「略好」「明显更好」，或两者「都好」「都差」。"
+      },
+      {
+       "id": "s-4-3-1-6",
+       "original": "During labeling, all audio samples are resampled to 24 kHz WAV format (even the reference samples) to ensure there is no bias due to audio quality.",
+       "zh": "标注时，所有音频样本都被重采样到 24 kHz 的 WAV 格式（包括参考样本），以确保不存在由音频质量带来的偏置。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-4-3-1",
+   "num": "4.3.1",
+   "level": 2,
+   "page": 9,
+   "title": {
+    "original": "Flagship voices",
+    "zh": "4.3.1 旗舰音色"
+   },
+   "blocks": [
+    {
+     "id": "p-4-3-1-1",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-4-3-1-1-1",
+       "original": "First, we compare our flagship voices (British-Female, British-Male, American-Male, French-Female) against the flagship voices of same gender and accent provided by competitors.",
+       "zh": "首先，我们把自家旗舰音色（英式女声、英式男声、美式男声、法式女声）与竞品提供的同性别、同口音旗舰音色做比较。"
+      },
+      {
+       "id": "s-4-3-1-1-2",
+       "original": "We run two sub-evaluations:",
+       "zh": "我们运行两个子评测："
+      }
+     ]
+    },
+    {
+     "id": "p-4-3-1-2",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-4-3-1-2-1",
+       "original": "1.",
+       "zh": "1."
+      },
+      {
+       "id": "s-4-3-1-2-2",
+       "original": "Explicit steering: We test the ability to bias a TTS model’s generation toward a specific emotion.",
+       "zh": "显式引导：测试把 TTS 模型的生成偏置到特定情感的能力。"
+      },
+      {
+       "id": "s-4-3-1-2-3",
+       "original": "The TTS prompts which have an associated emotion (not Neutral) are provided as free-form instruction to Gemini 2.5 Flash TTS as it supports free-form instructions such as \"Speak in an angry tone.\".",
+       "zh": "带情感（非中性）的 TTS 提示以自由文本指令的形式提供给 Gemini 2.5 Flash TTS，因为它支持诸如「用生气的语气说」这样的自由文本指令。"
+      },
+      {
+       "id": "s-4-3-1-2-4",
+       "original": "For ElevenLabs v3 we provide emotion tags enclosed in brackets 2.",
+       "zh": "对 ElevenLabs v3，我们提供包裹在方括号里的情感标签。2"
+      },
+      {
+       "id": "s-4-3-1-2-5",
+       "original": "While Voxtral TTS does not support emotion tags/text-instructions, we steer the generation by leveraging a different voice prompt provided from the same speaker which embodies the requested emotion.",
+       "zh": "Voxtral TTS 虽不支持情感标签或文本指令，但我们可以通过换用同一说话人另一段带有目标情感的语音提示来引导生成。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-3-1-3",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-4-3-1-3-1",
+       "original": "2.",
+       "zh": "2."
+      },
+      {
+       "id": "s-4-3-1-3-2",
+       "original": "Implicit steering: We test the model’s capabilities to infer emotion from provided text (e.g.",
+       "zh": "隐式引导：测试模型从给定文本自行推断情感的能力（例如"
+      }
+     ]
+    },
+    {
+     "id": "p-4-3-1-4",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-4-3-1-4-1",
+       "original": "\"This is the best day of my life!\").",
+       "zh": "「这是我一生中最美好的一天！」）。"
+      },
+      {
+       "id": "s-4-3-1-4-2",
+       "original": "No emotion label or instruction is provided to the model.",
+       "zh": "不向模型提供任何情感标签或指令。"
+      },
+      {
+       "id": "s-4-3-1-4-3",
+       "original": "For Voxtral TTS, we use a neutral voice prompt.",
+       "zh": "对 Voxtral TTS，我们使用中性语音提示。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-3-1-5",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-4-3-1-5-1",
+       "original": "We use three annotators who are native speakers of the same dialect for each language per pair.",
+       "zh": "每种语言、每个模型对，我们使用三名以该方言为母语的标注者。"
+      },
+      {
+       "id": "s-4-3-1-5-2",
+       "original": "The win rates of Voxtral TTS (excluding ties) are presented in Table 4.",
+       "zh": "Voxtral TTS 的胜率（不计平局）见 Table 4。"
+      },
+      {
+       "id": "s-4-3-1-5-3",
+       "original": "Gemini 2.5 Flash TTS is the strongest model, and Voxtral TTS is competitive against ElevenLabs v3.",
+       "zh": "Gemini 2.5 Flash TTS 是最强的模型，Voxtral TTS 则与 ElevenLabs v3 相当。"
+      },
+      {
+       "id": "s-4-3-1-5-4",
+       "original": "In the implicit steering setting, Voxtral TTS consistently outperforms both ElevenLabs models.",
+       "zh": "在隐式引导设置下，Voxtral TTS 稳定优于两个 ElevenLabs 模型。"
+      }
+     ]
+    },
+    {
+     "id": "tab-4-3-1-1",
+     "type": "table_caption",
+     "page": 9,
+     "original": "Table 4: Voxtral TTS win rates by steering type. In the explicit steering setting, Voxtral TTS is competitive with ElevenLabs v3, while having a higher win rate compared to both ElevenLabs models in the implicit steering setting.",
+     "zh": "表 4：按引导类型分列的 Voxtral TTS 胜率。显式引导设置下 Voxtral TTS 与 ElevenLabs v3 相当；隐式引导设置下对两个 ElevenLabs 模型都有更高胜率。"
+    }
+   ]
+  },
+  {
+   "id": "sec-emotion-steering",
+   "num": null,
+   "level": 2,
+   "page": 9,
+   "title": {
+    "original": "Emotion steering",
+    "zh": "情感引导"
+   },
+   "blocks": [
+    {
+     "id": "p-emotion-steering-1",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-emotion-steering-1-1",
+       "original": "Opponent Model Voxtral TTS Win Rate (%) Explicit 51.0 Gemini 2.5 Flash TTS 35.4 Implicit ElevenLabs Flash v2.5 58.3 55.4 Gemini 2.5 Flash TTS 37.1",
+       "zh": "此处为表 4 数值散行。表头：对手模型、Voxtral TTS 胜率（%）。显式引导：对 ElevenLabs v3 胜率 51.0，对 Gemini 2.5 Flash TTS 胜率 35.4；隐式引导：对 ElevenLabs Flash v2.5 胜率 58.3、对 ElevenLabs v3 胜率 55.4，对 Gemini 2.5 Flash TTS 胜率 37.1。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-4-3-2",
+   "num": "4.3.2",
+   "level": 2,
+   "page": 9,
+   "title": {
+    "original": "Zero-Shot Voice Cloning",
+    "zh": "4.3.2 零样本声音克隆"
+   },
+   "blocks": [
+    {
+     "id": "p-4-3-2-1",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-4-3-2-1-1",
+       "original": "To evaluate voice cloning capabilities, we source high quality audios from two recognized speakers in each language.",
+       "zh": "为评测声音克隆能力，我们从每种语言的两位可辨识说话人处采集高质量音频。"
+      },
+      {
+       "id": "s-4-3-2-1-2",
+       "original": "We generate speech from each model in a zero-shot setting, and instruct annotators to rate the generations based on (a) likeness of the generated audio to voice prompt and (b) naturalness of speech and expressivity.",
+       "zh": "我们在零样本设置下让每个模型生成语音，并要求标注者从两方面打分：（a）生成音频与语音提示的相似度；（b）语音的自然度与表现力。"
+      }
+     ]
+    },
+    {
+     "id": "tab-4-3-2-1",
+     "type": "table_caption",
+     "page": 9,
+     "original": "Table 5 shows the Voxtral TTS win rates against ElevenLabs Flash v2.5 across languages. Overall, Voxtral TTS has a win rate of 68.4%, with significantly better results across both high and lowresource languages (such as Arabic and Hindi). Notably, the Voxtral TTS win rate is much higher in the zero-shot setting (68.4%) compared with flagship voices (58.3%), highlighting that Voxtral TTS is a far more generalizable model, capturing a diverse range of user-voices.",
+     "zh": "表 5 展示了 Voxtral TTS 对 ElevenLabs Flash v2.5 在各语言上的胜率。总体上，Voxtral TTS 的胜率为 68.4%，在高资源语言与低资源语言（如阿拉伯语和印地语）上都明显更好。值得注意的是，Voxtral TTS 在零样本设置下的胜率（68.4%）远高于旗舰音色设置（58.3%），凸显它是一个泛化性强得多的模型，能捕捉多样的用户声音。"
+    }
+   ]
+  },
+  {
+   "id": "sec-5",
+   "num": "5",
+   "level": 1,
+   "page": 9,
+   "title": {
+    "original": "Analysis",
+    "zh": "分析"
+   },
+   "blocks": [
+    {
+     "id": "p-5-1",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-5-1-1",
+       "original": "In this Section, we provide a comparison between the pretrained and DPO checkpoints and ablate the pertinent inference parameters.",
+       "zh": "本节中，我们比较预训练检查点与 DPO 检查点，并对关键推理参数做消融。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-2",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-5-2-1",
+       "original": "2https://elevenlabs.io/blog/eleven-v3-audio-tags-expressing-emotional-context-i n-speech",
+       "zh": "2https://elevenlabs.io/blog/eleven-v3-audio-tags-expressing-emotional-context-i n-speech（脚注 2 链接，抽取时在 URL 中出现换行断词。）"
+      }
+     ]
+    },
+    {
+     "id": "tab-5-1",
+     "type": "table_caption",
+     "page": 10,
+     "original": "Table 5: Voxtral TTS win rate against ElevenLabs Flash v2.5 across languages. Voxtral TTS matches or outperforms ElevenLabs Flash v2.5 on every language, and has an overall micro-average win rate of 68.4%.",
+     "zh": "表 5：Voxtral TTS 对 ElevenLabs Flash v2.5 在各语言上的胜率。Voxtral TTS 在每种语言上都追平或超过 ElevenLabs Flash v2.5，整体微平均胜率为 68.4%。"
+    }
+   ]
+  },
+  {
+   "id": "sec-language",
+   "num": null,
+   "level": 2,
+   "page": 10,
+   "title": {
+    "original": "Language",
+    "zh": "语言"
+   },
+   "blocks": [
+    {
+     "id": "p-language-1",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-language-1-1",
+       "original": "Voxtral TTS Win Rate (%) Arabic 72.9 Dutch 49.4 English 60.8 French 54.4 German 72.0 Hindi 79.8 Italian 57.1 Portuguese 74.4 Spanish 87.8",
+       "zh": "此处为表 5 数值散行：Voxtral TTS 胜率（%）——阿拉伯语 72.9、荷兰语 49.4、英语 60.8、法语 54.4、德语 72.0、印地语 79.8、意大利语 57.1、葡萄牙语 74.4、西班牙语 87.8。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-overall",
+   "num": null,
+   "level": 2,
+   "page": 10,
+   "title": {
+    "original": "Overall",
+    "zh": "整体"
+   },
+   "blocks": [
+    {
+     "id": "p-overall-1",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-overall-1-1",
+       "original": "68.4",
+       "zh": "68.4。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-5-1",
+   "num": "5.1",
+   "level": 2,
+   "page": 10,
+   "title": {
+    "original": "DPO improvements",
+    "zh": "5.1 DPO 带来的改进"
+   },
+   "blocks": [
+    {
+     "id": "tab-5-1-1",
+     "type": "table_caption",
+     "page": 10,
+     "original": "Table 6 shows the WER and UTMOS metrics for the pretrained and DPO checkpoints. Overall, DPO improves on both metrics, with the largest gains in German and French and regressions only on Hindi. Qualitatively, we find that the DPO model hallucinates less and skips fewer words. DPO also ameliorates the pretrained model’s occasional tendency to significantly taper in volume throughout the audio. Interestingly, DPO has minimal effect on speaker similarity, which is within ±0.01 of the pretrained checkpoint (not presented here for brevity).",
+     "zh": "表 6 给出了预训练检查点与 DPO 检查点的 WER 与 UTMOS 指标。总体上 DPO 在两项指标上都有提升，其中德语和法语收益最大，仅印地语有回退。定性上，我们发现 DPO 模型的幻觉更少、漏词更少；DPO 还缓解了预训练模型偶尔出现的、整段音频中音量逐渐衰弱的倾向。有趣的是，DPO 对说话人相似度几乎无影响，变化在预训练检查点的 ±0.01 以内（此处从略未列）。"
+    },
+    {
+     "id": "tab-5-1-2",
+     "type": "table_caption",
+     "page": 10,
+     "original": "Table 6: DPO improves WER and UTMOS across languages.",
+     "zh": "表 6：DPO 在各语言上改进 WER 与 UTMOS。"
+    },
+    {
+     "id": "p-5-1-1",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-5-1-1-1",
+       "original": "WER (%) ↓ UTMOS ↑ Task Pretrain DPO Pretrain DPO MiniMax Arabic 2.80 3.01 German 4.08 3.05 English 0.84 4.25 Spanish 0.56 3.38 French 5.01 2.76 Hindi 3.39 3.43 Italian 2.18 3.36 Dutch 3.10 3.85 Portuguese 1.17 3.60 Seed TTS 1.58 4.07",
+       "zh": "此处为表 6 数值散行。表头：WER (%) ↓、UTMOS ↑，每列下分预训练（Pretrain）与 DPO。MiniMax 集：阿拉伯语 WER 2.80、UTMOS 3.01；德语 4.08、3.05；英语 0.84、4.25；西班牙语 0.56、3.38；法语 5.01、2.76；印地语 3.39、3.43；意大利语 2.18、3.36；荷兰语 3.10、3.85；葡萄牙语 1.17、3.60；Seed TTS 集 1.58、4.07。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-5-2",
+   "num": "5.2",
+   "level": 2,
+   "page": 10,
+   "title": {
+    "original": "Inference Parameters",
+    "zh": "5.2 推理参数"
+   },
+   "blocks": [
+    {
+     "id": "fig-5-2-1",
+     "type": "figure_caption",
+     "page": 10,
+     "original": "Figure 4 demonstrates the effect on the automatic evaluation metrics as the number of functional evaluations (NFEs) and choice of CFG α are varied. There are marked improvements across metrics as the NFEs is increased from 2 to 8. We find that increasing number of NFEs beyond 8 yields marginal improvement in speaker similarity and minor degradations in WER. Thus, we chose 8 NFEs as our default inference setting.",
+     "zh": "图 4 展示了函数评估次数（NFE）与 CFG α 取值变化对自动评测指标的影响。当 NFE 从 2 增加到 8 时，各项指标都有明显改善。我们发现，把 NFE 增加到 8 以上只能带来说话人相似度的边际提升，并会让 WER 轻微变差。因此我们选择 8 个 NFE 作为默认推理设置。"
+    },
+    {
+     "id": "p-5-2-1",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-5-2-1-1",
+       "original": "Increasing the value of CFG α, we find that there is a nearly monotonic improvement in all metrics except UTMOS-v2.",
+       "zh": "增大 CFG α 的值，我们发现除 UTMOS-v2 外，所有指标都近乎单调改善。"
+      },
+      {
+       "id": "s-5-2-1-2",
+       "original": "However, internal human evaluations found that a higher α led to over-adherence to the provided voice-prompt and the model failed to bias towards emotions that are implicit in the text prompt.",
+       "zh": "然而，内部人工评测发现，更高的 α 会导致对给定语音提示的过度贴合，模型无法偏向文本提示中隐含的情感。"
+      },
+      {
+       "id": "s-5-2-1-3",
+       "original": "We also find that lower α = 1.2 works best for higher quality audio (e.g. professional recordings), while in-the-wild recordings might benefit from a higher α.",
+       "zh": "我们还发现，较低的 α = 1.2 对高质量音频（如专业录音）效果最好，而野外录音可能需要更高的 α 才有收益。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-2-2",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-5-2-2-1",
+       "original": "Effect of NFEs 30.1 3.5 30.0 25.0 3.0 UTMOS ( WER ( 2.58 20.0 2.5 15.0 2.0 10.0 6.5 6.7 7.0 1.44 1.5 3.48 3.48 0.732 0.735 0.75 Speaker Similarity ( 0.70 0.656 0.65 0.60 0.55 0.50 0.45 0.421 2 4 8 16 NFEs 2 4 8 16 NFEs 2 4 8 16 NFEs Effect of CFG Scale 7.5 7.5 3.48 3.5 3.41 7.2 7.1 UTMOS ( 3.4 WER ( 7.0 3.3 6.7 6.8 3.2 6.5 6.3 6.2 3.09 3.1 6.2 3.52 0.737 Speaker Similarity ( 3.48 0.732 0.733 0.735 0.730 0.726 0.725 0.720 0.715 0.710 0.707 1.0 1.1 1.2 1.3 1.4 1.0 1.1 1.2 1.3 1.4 1.0 1.1 1.2 1.3 1.4",
+       "zh": "此处为图 4 双联图的散行标注。上半部分「NFE 的影响」：横轴 NFEs 取 2、4、8、16，三列依次为 UTMOS、WER、说话人相似度；图中读数包括 UTMOS 约 3.48（30.1、30.0、25.0、20.0、15.0、10.0 等为坐标/面板编号刻度）、WER 各点（2.58、1.44、1.5 等，横轴 6.5、6.7、7.0 为 WER 刻度，2.5、2.0、1.5 为 UTMOS 方向刻度）、说话人相似度（0.421、0.656、0.732、0.735，纵轴 0.45 至 0.75）。下半部分「CFG 尺度的影响」：横轴取 1.0、1.1、1.2、1.3、1.4，读数包括 UTMOS（3.41、3.48、3.52，纵轴 3.1 至 3.5）、WER（7.2、7.1、7.0、6.8、6.7、6.5、6.3、6.2、6.2 等，纵轴 7.5 至 6.2）、说话人相似度（0.707、0.710、0.715、0.720、0.725、0.726、0.730、0.732、0.733、0.735、0.737，纵轴刻度 3.0、3.1、3.2、3.3、3.4、3.5 与 0.50、0.55、0.60、0.65、0.70、0.75，3.09、6.2、3.48 等混入读数）。"
+      }
+     ]
+    },
+    {
+     "id": "fig-5-2-2",
+     "type": "figure_caption",
+     "page": 11,
+     "original": "Figure 4: Effect of NFEs and CFG on automatic evaluations. The metrics are averaged over SEED-TTS and the 9 languages in MiniMax. Increasing the NFEs from 2 to 8 improves speaker similarity and UTMOS metrics. There is a slight regression in WER as the NFEs is increased beyond this. The metrics monotonically increase with higher CFG, but human evaluations flagged regressions in text-adherence with high α.",
+     "zh": "图 4：NFE 与 CFG 对自动评测的影响。指标在 SEED-TTS 与 MiniMax 的 9 种语言上取平均。把 NFE 从 2 增加到 8 会改善说话人相似度与 UTMOS；超过 8 之后 WER 会轻微回退。指标随 CFG 升高单调改善，但人工评测发现高 α 会带来文本贴合度（text-adherence）上的回退。"
+    }
+   ]
+  },
+  {
+   "id": "sec-6",
+   "num": "6",
+   "level": 1,
+   "page": 11,
+   "title": {
+    "original": "Inference and Serving in vLLM-Omni",
+    "zh": "基于 vLLM-Omni 的推理与服务"
+   },
+   "blocks": [
+    {
+     "id": "p-6-1",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-6-1-1",
+       "original": "Voxtral TTS is served through vLLM-Omni [Yin et al., 2026], an extension of the vLLM [Kwon et al., 2023] for multi-stage multimodal models.",
+       "zh": "Voxtral TTS 通过 vLLM-Omni [Yin et al., 2026] 提供服务，后者是 vLLM [Kwon et al., 2023] 面向多阶段多模态模型的扩展。"
+      },
+      {
+       "id": "s-6-1-2",
+       "original": "Voxtral TTS is decomposed into a two-stage pipeline: a generation stage that predicts the audio tokens (semantic and acoustic), followed by a codec decoding stage that converts the tokens into a waveform.",
+       "zh": "Voxtral TTS 被分解为两阶段流水线：生成阶段预测音频 token（语义与声学），codec 解码阶段把 token 转换为波形。"
+      },
+      {
+       "id": "s-6-1-3",
+       "original": "The two stages communicate through an asynchronous chunked streaming protocol over shared memory, enabling first-audio latency well before the full waveform has been generated.",
+       "zh": "两个阶段通过共享内存上的异步分块流式协议通信，在完整波形生成完毕之前就能以很低延迟给出首个音频包。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-6-1",
+   "num": "6.1",
+   "level": 2,
+   "page": 11,
+   "title": {
+    "original": "CUDA Graph Acceleration for Flow-Matching Transformer",
+    "zh": "6.1 流匹配 Transformer 的 CUDA Graph 加速"
+   },
+   "blocks": [
+    {
+     "id": "p-6-1-1",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-6-1-1-1",
+       "original": "The flow-matching transformer is the computational bottleneck of the generation stage.",
+       "zh": "流匹配 Transformer 是生成阶段的计算瓶颈。"
+      },
+      {
+       "id": "s-6-1-1-2",
+       "original": "Each decoding step requires N function evaluations with CFG, requiring 2 × N forward passes per generated frame.",
+       "zh": "每个解码步在 CFG 下需要 N 次函数评估，即每生成一帧需要 2 × N 次前向传播。"
+      }
+     ]
+    },
+    {
+     "id": "p-6-1-2",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-6-1-2-1",
+       "original": "To eliminate Python-level overhead and kernel-launch latency, the entire ODE solver is captured into CUDA graphs.",
+       "zh": "为消除 Python 层开销与 kernel 启动延迟，整个 ODE 求解器被捕获进 CUDA graph。"
+      },
+      {
+       "id": "s-6-1-2-2",
+       "original": "At startup, an eager warmup pass is performed for each bucket size and the corresponding CUDA graph is then captured.",
+       "zh": "启动时，先对每个 bucket 大小做一次 eager 预热前向，然后捕获对应的 CUDA graph。"
+      },
+      {
+       "id": "s-6-1-2-3",
+       "original": "During inference, the actual batch size is rounded up to the nearest bucket by padding the input with zeros.",
+       "zh": "推理时，实际 batch 大小通过零填充向上取整到最近的 bucket。"
+      },
+      {
+       "id": "s-6-1-2-4",
+       "original": "Next, the CUDA graph is replayed and outputs are sliced back to the actual batch size.",
+       "zh": "随后重放 CUDA graph，并把输出按实际 batch 大小切回来。"
+      },
+      {
+       "id": "s-6-1-2-5",
+       "original": "If the batch size exceeds the largest captured bucket, the model falls back to eager execution.",
+       "zh": "如果 batch 大小超过最大已捕获 bucket，模型回退到 eager 模式执行。"
+      }
+     ]
+    },
+    {
+     "id": "p-6-1-3",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-6-1-3-1",
+       "original": "To evaluate the effect of CUDA graph acceleration, we compare the latency and real-time factor (RTF) when decoding with eager mode and CUDA graphs.",
+       "zh": "为评估 CUDA graph 加速的效果，我们比较了 eager 模式与 CUDA graph 解码下的延迟与 RTF（实时因子）。"
+      },
+      {
+       "id": "s-6-1-3-2",
+       "original": "Table 7 reports results for a 500-character text input, a 10-second audio reference and concurrency 1 on a single H200.",
+       "zh": "Table 7 报告了在单张 H200 上、500 字符文本输入、10 秒音频参考、并发为 1 时的结果。"
+      },
+      {
+       "id": "s-6-1-3-3",
+       "original": "Enabling CUDA graphs results in a 47% improvement to latency and reduces the RTF by 2.5x.",
+       "zh": "启用 CUDA graph 使延迟改善 47%，并把 RTF 降低 2.5 倍。"
+      }
+     ]
+    },
+    {
+     "id": "tab-6-1-1",
+     "type": "table_caption",
+     "page": 11,
+     "original": "Table 7: Effect of CUDA graph acceleration on the flow-matching transformer.",
+     "zh": "表 7：CUDA graph 加速对流匹配 Transformer 的影响。"
+    }
+   ]
+  },
+  {
+   "id": "sec-configuration",
+   "num": null,
+   "level": 2,
+   "page": 11,
+   "title": {
+    "original": "Configuration",
+    "zh": "配置"
+   },
+   "blocks": [
+    {
+     "id": "p-configuration-1",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-configuration-1-1",
+       "original": "Latency RTF Eager mode 0.258 CUDA graph 0.103",
+       "zh": "此处为表 7 数值散行。表头：延迟 RTF。eager 模式 0.258；CUDA graph 0.103。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-6-2",
+   "num": "6.2",
+   "level": 2,
+   "page": 12,
+   "title": {
+    "original": "Asynchronous Chunked Streaming",
+    "zh": "6.2 异步分块流式"
+   },
+   "blocks": [
+    {
+     "id": "p-6-2-1",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-6-2-1-1",
+       "original": "The two pipeline stages run in separate scheduling loops.",
+       "zh": "两个流水线阶段运行在各自独立的调度循环里。"
+      },
+      {
+       "id": "s-6-2-1-2",
+       "original": "To overlap the autoregressive generation stage decoding with codec decoding stage waveform synthesis, an asynchronous chunked streaming protocol is introduced.",
+       "zh": "为让自回归生成阶段的解码与 codec 解码阶段的波形合成重叠起来，我们引入了一个异步分块流式协议。"
+      }
+     ]
+    },
+    {
+     "id": "p-6-2-2",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-6-2-2-1",
+       "original": "After each generation step, the vLLM-Omni transfer manager stores the audio tokens to a per-request buffer.",
+       "zh": "每个生成步结束后，vLLM-Omni 的传输管理器把音频 token 存入按请求划分的缓冲区。"
+      },
+      {
+       "id": "s-6-2-2-2",
+       "original": "Once the buffer length reaches a pre-defined length, a chunk of tokens are emitted to the codec decoding stage.",
+       "zh": "一旦缓冲长度达到预设长度，就把一个 token 块发给 codec 解码阶段。"
+      },
+      {
+       "id": "s-6-2-2-3",
+       "original": "To ensure coherence between chunks, each emitted chunk includes a slice of previous frames in addition to the new frames.",
+       "zh": "为保证块与块之间的连贯，每个发出的块除新帧外还带上一段之前帧的切片。"
+      },
+      {
+       "id": "s-6-2-2-4",
+       "original": "This overlap enables the codec decoder’s causal sliding-window attention to maintain temporal coherence across chunk boundaries.",
+       "zh": "这种重叠让 codec 解码器的因果滑动窗口注意力能跨块边界保持时间上的连贯性。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-6-3",
+   "num": "6.3",
+   "level": 2,
+   "page": 12,
+   "title": {
+    "original": "Inference Throughput",
+    "zh": "6.3 推理吞吐"
+   },
+   "blocks": [
+    {
+     "id": "p-6-3-1",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-6-3-1-1",
+       "original": "With the techniques introduced in this section, Voxtral TTS achieves low-latency, high-throughput inference.",
+       "zh": "借助本节引入的技术，Voxtral TTS 实现了低延迟、高吞吐的推理。"
+      },
+      {
+       "id": "s-6-3-1-2",
+       "original": "Table 8 shows the serving performance on a single NVIDIA H200 from concurrency 1 to 32 with 500-character text inputs and 10-second audio references.",
+       "zh": "Table 8 展示了在单张 NVIDIA H200 上、并发从 1 到 32、500 字符文本输入、10 秒音频参考时的服务性能。"
+      },
+      {
+       "id": "s-6-3-1-3",
+       "original": "As the concurrency is increased from 1 to 32, the throughput scales from 119 to 1,431 characters per second per GPU, a 12x increase, while latency remains sub-second.",
+       "zh": "当并发从 1 提高到 32 时，吞吐从每 GPU 每秒 119 字符扩展到 1,431 字符，提升 12 倍，同时延迟保持在亚秒级。"
+      },
+      {
+       "id": "s-6-3-1-4",
+       "original": "The wait rate, defined as the fraction of audio chunks for which the client must stall since it is waiting for outputs, remains zero across all concurrency levels.",
+       "zh": "等待率（wait rate）定义为客户端因等待输出而必须停顿的音频块占比，在所有并发级别下都保持为 0。"
+      },
+      {
+       "id": "s-6-3-1-5",
+       "original": "As concurrency grows, per-request RTF increases modestly to 0.302 at concurrency 32, still well within the real-time boundary.",
+       "zh": "随着并发增长，单请求 RTF 在并发 32 时温和上升到 0.302，仍远低于实时界限。"
+      }
+     ]
+    },
+    {
+     "id": "p-6-3-2",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-6-3-2-1",
+       "original": "These results demonstrate that Voxtral TTS is suitable for production deployment: a single H200 can serve over 30 concurrent users with uninterrupted streaming output and sub-second time to first audio.",
+       "zh": "这些结果表明 Voxtral TTS 适合生产部署：单张 H200 就能以不间断的流式输出与亚秒级首包音频时间服务超过 30 个并发用户。"
+      }
+     ]
+    },
+    {
+     "id": "tab-6-3-1",
+     "type": "table_caption",
+     "page": 12,
+     "original": "Table 8: Serving performance of Voxtral TTS on a single H200.",
+     "zh": "表 8：Voxtral TTS 在单张 H200 上的服务性能。"
+    }
+   ]
+  },
+  {
+   "id": "sec-concurrency",
+   "num": null,
+   "level": 2,
+   "page": 12,
+   "title": {
+    "original": "Concurrency",
+    "zh": "并发"
+   },
+   "blocks": [
+    {
+     "id": "p-concurrency-1",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-concurrency-1-1",
+       "original": "Latency RTF Throughput (char/s/GPU) Wait Rate 1 0.103 119.14 0% 16 0.237 879.11 0% 32 0.302 1430.78 0%",
+       "zh": "此处为表 8 数值散行。表头：延迟 RTF、吞吐（字符/秒/GPU）、等待率。并发 1：RTF 0.103、吞吐 119.14、等待率 0%；并发 16：RTF 0.237、吞吐 879.11、等待率 0%；并发 32：RTF 0.302、吞吐 1430.78、等待率 0%。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-7",
+   "num": "7",
+   "level": 1,
+   "page": 12,
+   "title": {
+    "original": "Conclusion",
+    "zh": "结论"
+   },
+   "blocks": [
+    {
+     "id": "p-7-1",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-7-1-1",
+       "original": "We introduced Voxtral TTS, a multilingual TTS model that leverages a hybrid architecture for auto-regressive generation of semantic tokens and flow-matching for acoustic tokens.",
+       "zh": "我们提出了 Voxtral TTS——一个多语种 TTS 模型，采用混合架构：自回归生成语义 token，流匹配生成声学 token。"
+      },
+      {
+       "id": "s-7-1-2",
+       "original": "The tokens correspond to those from Voxtral Codec, a speech tokenizer that combines ASR-distilled semantic tokens with FSQ acoustic tokens.",
+       "zh": "这些 token 对应 Voxtral Codec 的输出；Voxtral Codec 是一个把 ASR 蒸馏的语义 token 与 FSQ 声学 token 结合起来的语音分词器。"
+      }
+     ]
+    },
+    {
+     "id": "p-7-2",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-7-2-1",
+       "original": "Voxtral TTS is able to generate expressive, voice-cloned speech from as little as 3 seconds of reference audio, and is preferred to API baselines in human evaluations.",
+       "zh": "Voxtral TTS 最少只用 3 秒参考音频即可生成富有表现力的克隆语音，并在人工评测中优于各 API 基线。"
+      },
+      {
+       "id": "s-7-2-2",
+       "original": "We release Voxtral TTS as open weights under the CC BY-NC license to support further research and development of expressive TTS systems.",
+       "zh": "我们以 CC BY-NC 许可发布 Voxtral TTS 的开放权重，以支持表现力 TTS 系统的后续研究与开发。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-core-contributors",
+   "num": null,
+   "level": 2,
+   "page": 12,
+   "title": {
+    "original": "Core contributors",
+    "zh": "核心贡献者"
+   },
+   "blocks": [
+    {
+     "id": "p-core-contributors-1",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-core-contributors-1-1",
+       "original": "Alexander H.",
+       "zh": "Alexander H."
+      },
+      {
+       "id": "s-core-contributors-1-2",
+       "original": "Liu, Alexis Tacnet, Andy Ehrenberg, Andy Lo, Chen-Yo Sun, Guillaume Lample, Henry Lagarde, Jean-Malo Delignon, Jaeyoung Kim, John Harvill, Khyathi Raghavi Chandu, Lorenzo Signoretti, Margaret Jennings, Patrick von Platen, Pavankumar Reddy Muddireddy, Rohin Arora, Sanchit Gandhi, Samuel Humeau, Soham Ghosh, Srijan Mishra, Van Phung.",
+       "zh": "Liu, Alexis Tacnet, Andy Ehrenberg, Andy Lo, Chen-Yo Sun, Guillaume Lample, Henry Lagarde, Jean-Malo Delignon, Jaeyoung Kim, John Harvill, Khyathi Raghavi Chandu, Lorenzo Signoretti, Margaret Jennings, Patrick von Platen, Pavankumar Reddy Muddireddy, Rohin Arora, Sanchit Gandhi, Samuel Humeau, Soham Ghosh, Srijan Mishra, Van Phung（作者名单，人名从略不译）。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-contributors",
+   "num": null,
+   "level": 2,
+   "page": 12,
+   "title": {
+    "original": "Contributors",
+    "zh": "贡献者"
+   },
+   "blocks": [
+    {
+     "id": "p-contributors-1",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-contributors-1-1",
+       "original": "Abdelaziz Bounhar, Abhinav Rastogi, Adrien Sadé, Alan Jeffares, Albert Jiang, Alexandre Cahill, Alexandre Gavaudan, Alexandre Sablayrolles, Amélie Héliou, Amos You, Andrew Bai, Andrew Zhao, Angele Lenglemetz, Anmol Agarwal, Anton Eliseev, Antonia Calvi, Arjun Majumdar, Arthur Fournier, Artjom Joosen, Avi Sooriyarachchi, Aysenur Karaduman Utkur, Baptiste Bout, Baptiste Rozière, Baudouin De Monicault, Benjamin Tibi, Bowen Yang, Charlotte Cronjäger, Clémence Lanfranchi, Connor Chen, Corentin Barreau, Corentin Sautier, Cyprien Courtot, Darius Dabert, Diego de las Casas, Elizaveta Demyanenko, Elliot Chane-Sane, Emmanuel Gottlob, Enguerrand Paquin, Etienne Goffinet, Fabien Niel, Faruk Ahmed, Federico Baldassarre, Gabrielle Berrada, Gaëtan Ecrepont, Gauthier Guinet, Genevieve Hayes, Georgii Novikov, Giada Pistilli, Guillaume Kunsch, Guillaume Martin, Guillaume Raille, Gunjan Dhanuka, Gunshi Gupta, Han Zhou, Harshil Shah, Hope McGovern, Hugo Thimonier, Indraneel Mukherjee, Irene Zhang, Jacques Sun, Jan Ludziejewski, Jason Rute, Jérémie Dentan, Joachim Studnia, Jonas Amar, Joséphine Delas, Josselin Somerville Roberts, Julien Tauran, Karmesh Yadav, Kartik Khandelwal, Kilian Tep, Kush Jain, Laurence Aitchison, Laurent Fainsin, Léonard Blier, Lingxiao Zhao, Louis Martin, Lucile Saulnier, Luyu Gao, Maarten Buyl, Manan Sharma, Marie Pellat, Mark Prins, Martin Alexandre, Mathieu Poirée, Mathieu Schmitt, Mathilde Guillaumin, Matthieu Dinot, Matthieu Futeral, Maxime Darrin, Maximilian Augustin, Mert Unsal, Mia Chiquier, Mikhail Biriuchinskii, Minh-Quang Pham, Mircea Lica, Morgane Rivière, Nathan Grinsztajn, Neha Gupta, Olivier Bousquet, Olivier Duchenne, Patricia Wang, Paul Jacob, Paul Wambergue, Paula Kurylowicz, Philippe Pinel, Philomène Chagniot, Pierre Stock, Piotr Miło´s, Prateek Gupta, Pravesh Agrawal, Quentin Torroba, Ram Ramrakhya, Randall Isenhour, Rishi Shah, Romain Sauvestre, Roman Soletskyi, Rosalie Millner, Rupert Menneer, Sagar Vaze, Samuel Barry, Samuel Belkadi, Sandeep Subramanian, Sean Cha, Shashwat Verma, Siddhant Waghjale, Siddharth Gandhi, Simon Lepage, Sumukh Aithal, Szymon Antoniak, Tarun Kumar Vangani, Teven Le Scao, Théo Cachet, Theo Simon Sorg, Thibaut Lavril, Thomas Chabal, Thomas Foubert, Thomas Robert, Thomas Wang, Tim Lawson, Tom Bewley, Tom Edwards, Tyler Wang, Umar Jamil, Umberto Tomasini, Valeriia Nemychnikova, Vedant Nanda, Victor Jouault, Vincent Maladière, Vincent Pfister, Virgile Richard, Vladislav Bataev, Wassim Bouaziz, Wen-Ding Li, William Havard, William Marshall, Xinghui Li, Xingran Guo, Xinyu Yang, Yannic Neuhaus, Yassine El Ouahidi, Yassir Bendou, Yihan Wang, Yimu Pan, Zaccharie Ramzi, Zhenlin Xu.",
+       "zh": "Abdelaziz Bounhar, Abhinav Rastogi, Adrien Sadé, Alan Jeffares, Albert Jiang, Alexandre Cahill, Alexandre Gavaudan, Alexandre Sablayrolles, Amélie Héliou, Amos You, Andrew Bai, Andrew Zhao, Angele Lenglemetz, Anmol Agarwal, Anton Eliseev, Antonia Calvi, Arjun Majumdar, Arthur Fournier, Artjom Joosen, Avi Sooriyarachchi, Aysenur Karaduman Utkur, Baptiste Bout, Baptiste Rozière, Baudouin De Monicault, Benjamin Tibi, Bowen Yang, Charlotte Cronjäger, Clémence Lanfranchi, Connor Chen, Corentin Barreau, Corentin Sautier, Cyprien Courtot, Darius Dabert, Diego de las Casas, Elizaveta Demyanenko, Elliot Chane-Sane, Emmanuel Gottlob, Enguerrand Paquin, Etienne Goffinet, Fabien Niel, Faruk Ahmed, Federico Baldassarre, Gabrielle Berrada, Gaëtan Ecrepont, Gauthier Guinet, Genevieve Hayes, Georgii Novikov, Giada Pistilli, Guillaume Kunsch, Guillaume Martin, Guillaume Raille, Gunjan Dhanuka, Gunshi Gupta, Han Zhou, Harshil Shah, Hope McGovern, Hugo Thimonier, Indraneel Mukherjee, Irene Zhang, Jacques Sun, Jan Ludziejewski, Jason Rute, Jérémie Dentan, Joachim Studnia, Jonas Amar, Joséphine Delas, Josselin Somerville Roberts, Julien Tauran, Karmesh Yadav, Kartik Khandelwal, Kilian Tep, Kush Jain, Laurence Aitchison, Laurent Fainsin, Léonard Blier, Lingxiao Zhao, Louis Martin, Lucile Saulnier, Luyu Gao, Maarten Buyl, Manan Sharma, Marie Pellat, Mark Prins, Martin Alexandre, Mathieu Poirée, Mathieu Schmitt, Mathilde Guillaumin, Matthieu Dinot, Matthieu Futeral, Maxime Darrin, Maximilian Augustin, Mert Unsal, Mia Chiquier, Mikhail Biriuchinskii, Minh-Quang Pham, Mircea Lica, Morgane Rivière, Nathan Grinsztajn, Neha Gupta, Olivier Bousquet, Olivier Duchenne, Patricia Wang, Paul Jacob, Paul Wambergue, Paula Kurylowicz, Philippe Pinel, Philomène Chagniot, Pierre Stock, Piotr Miło´s, Prateek Gupta, Pravesh Agrawal, Quentin Torroba, Ram Ramrakhya, Randall Isenhour, Rishi Shah, Romain Sauvestre, Roman Soletskyi, Rosalie Millner, Rupert Menneer, Sagar Vaze, Samuel Barry, Samuel Belkadi, Sandeep Subramanian, Sean Cha, Shashwat Verma, Siddhant Waghjale, Siddharth Gandhi, Simon Lepage, Sumukh Aithal, Szymon Antoniak, Tarun Kumar Vangani, Teven Le Scao, Théo Cachet, Theo Simon Sorg, Thibaut Lavril, Thomas Chabal, Thomas Foubert, Thomas Robert, Thomas Wang, Tim Lawson, Tom Bewley, Tom Edwards, Tyler Wang, Umar Jamil, Umberto Tomasini, Valeriia Nemychnikova, Vedant Nanda, Victor Jouault, Vincent Maladière, Vincent Pfister, Virgile Richard, Vladislav Bataev, Wassim Bouaziz, Wen-Ding Li, William Havard, William Marshall, Xinghui Li, Xingran Guo, Xinyu Yang, Yannic Neuhaus, Yassine El Ouahidi, Yassir Bendou, Yihan Wang, Yimu Pan, Zaccharie Ramzi, Zhenlin Xu（贡献者名单，人名从略不译）。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-7-1",
+   "num": "7.1",
+   "level": 2,
+   "page": 13,
+   "title": {
+    "original": "Acknowledgements",
+    "zh": "7.1 致谢"
+   },
+   "blocks": [
+    {
+     "id": "p-7-1-1",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-7-1-1-1",
+       "original": "We would like to thank Han Gao, Hongsheng Liu, Roger Wang, and Yueqian Lin from the vLLM- Omni team for their support and contributions in integrating Voxtral TTS into the vLLM-Omni framework.",
+       "zh": "我们感谢 vLLM-Omni 团队的 Han Gao、Hongsheng Liu、Roger Wang 和 Yueqian Lin 在把 Voxtral TTS 集成进 vLLM-Omni 框架过程中给予的支持与贡献。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-references",
+   "num": null,
+   "level": 1,
+   "page": 14,
+   "title": {
+    "original": "References",
+    "zh": "References"
+   },
+   "blocks": [
+    {
+     "id": "p-references-1",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-1-1",
+       "original": "Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, Mingqing Gong, Peisong Huang, Qingqing Huang, Zhiying Huang, Yuanyuan Huo, Dongya Jia, Chumin Li, Feiya Li, Hui Li, Jiaxin Li, Xiaoyang Li, Xingxing Li, Lin Liu, Shouda Liu, Sichao Liu, Xudong Liu, Yuchen Liu, Zhengxi Liu, Lu Lu, Junjie Pan, Xin Wang, Yuping Wang, Yuxuan Wang, Zhengnan Wei, Jian Wu, Chao Yao, Yifeng Yang, Yuanhao Yi, Junteng Zhang, Qidi Zhang, Shuo Zhang, Wenjie Zhang, Yang Zhang, Zilin Zhao, Dejian Zhong, and Xiaobin Zhuang."
+      },
+      {
+       "id": "s-references-1-2",
+       "original": "Seed-tts: A family of high-quality versatile speech generation models, 2024."
+      }
+     ]
+    },
+    {
+     "id": "p-references-2",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-2-1",
+       "original": "URL https://arxiv.org/abs/2406.02430."
+      }
+     ]
+    },
+    {
+     "id": "p-references-3",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-3-1",
+       "original": "Kaito Baba, Wataru Nakata, Yuki Saito, and Hiroshi Saruwatari."
+      },
+      {
+       "id": "s-references-3-2",
+       "original": "The t05 system for the VoiceMOS Challenge 2024: Transfer learning from deep image classifier to naturalness MOS prediction of high-quality synthetic speech."
+      },
+      {
+       "id": "s-references-3-3",
+       "original": "In IEEE Spoken Language Technology Workshop (SLT), pages 818–824, 2024. doi: 10.1109/SLT61566.2024.10832315."
+      }
+     ]
+    },
+    {
+     "id": "p-references-4",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-4-1",
+       "original": "Donald J."
+      },
+      {
+       "id": "s-references-4-2",
+       "original": "Berndt and James Clifford."
+      },
+      {
+       "id": "s-references-4-3",
+       "original": "Using dynamic time warping to find patterns in time series."
+      }
+     ]
+    },
+    {
+     "id": "p-references-5",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-5-1",
+       "original": "In Proceedings of the 3rd International Conference on Knowledge Discovery and Data Mining, AAAIWS’94, page 359–370."
+      },
+      {
+       "id": "s-references-5-2",
+       "original": "AAAI Press, 1994."
+      }
+     ]
+    },
+    {
+     "id": "p-references-6",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-6-1",
+       "original": "Zalán Borsos, Raphaël Marinier, Damien Vincent, Eugene Kharitonov, Olivier Pietquin, Matt Sharifi, Dominik Roblek, Olivier Teboul, David Grangier, Marco Tagliasacchi, and Neil Zeghidour."
+      },
+      {
+       "id": "s-references-6-2",
+       "original": "Audiolm: A language modeling approach to audio generation."
+      },
+      {
+       "id": "s-references-6-3",
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 31:2523–2533, 2023. doi: 10.1109/TASLP.2023.3288409."
+      }
+     ]
+    },
+    {
+     "id": "p-references-7",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-7-1",
+       "original": "Huiwen Chang, Han Zhang, Lu Jiang, Ce Liu, and William T."
+      },
+      {
+       "id": "s-references-7-2",
+       "original": "Freeman."
+      },
+      {
+       "id": "s-references-7-3",
+       "original": "Maskgit: Masked generative image transformer."
+      },
+      {
+       "id": "s-references-7-4",
+       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pages 11315–11325, June 2022."
+      }
+     ]
+    },
+    {
+     "id": "p-references-8",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-8-1",
+       "original": "Alexandre Défossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
+      },
+      {
+       "id": "s-references-8-2",
+       "original": "High fidelity neural audio compression. arXiv preprint arXiv:2210.13438, 2022."
+      }
+     ]
+    },
+    {
+     "id": "p-references-9",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-9-1",
+       "original": "Alexandre Défossez, Laurent Mazaré, Manu Orsini, Amélie Royer, Patrick Pérez, Hervé Jégou, Edouard Grave, and Neil Zeghidour."
+      },
+      {
+       "id": "s-references-9-2",
+       "original": "Moshi: a speech-text foundation model for real-time dialogue."
+      }
+     ]
+    },
+    {
+     "id": "p-references-10",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-10-1",
+       "original": "arXiv preprint arXiv:2410.00037, 2024."
+      }
+     ]
+    },
+    {
+     "id": "p-references-11",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-11-1",
+       "original": "Brecht Desplanques, Jenthe Thienpondt, and Kris Demuynck."
+      },
+      {
+       "id": "s-references-11-2",
+       "original": "ECAPA-TDNN: Emphasized channel attention, propagation and aggregation in TDNN based speaker verification."
+      },
+      {
+       "id": "s-references-11-3",
+       "original": "In Interspeech 2020, pages 3830–3834, 2020. doi: 10.21437/Interspeech.2020-2650."
+      }
+     ]
+    },
+    {
+     "id": "p-references-12",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-12-1",
+       "original": "Jonathan Ho and Tim Salimans."
+      },
+      {
+       "id": "s-references-12-2",
+       "original": "Classifier-free diffusion guidance. arXiv preprint arXiv:2207.12598, 2022."
+      },
+      {
+       "id": "s-references-12-3",
+       "original": "URL https://arxiv.org/abs/2207.12598."
+      }
+     ]
+    },
+    {
+     "id": "p-references-13",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-13-1",
+       "original": "Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph E."
+      }
+     ]
+    },
+    {
+     "id": "p-references-14",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-14-1",
+       "original": "Gonzalez, Hao Zhang, and Ion Stoica."
+      },
+      {
+       "id": "s-references-14-2",
+       "original": "Efficient memory management for large language model serving with PagedAttention."
+      },
+      {
+       "id": "s-references-14-3",
+       "original": "In Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles, 2023. doi: 10.1145/3600006.3613165."
+      }
+     ]
+    },
+    {
+     "id": "p-references-15",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-15-1",
+       "original": "Matt Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, and Wei-Ning Hsu."
+      },
+      {
+       "id": "s-references-15-2",
+       "original": "Voicebox: Text-guided multilingual universal speech generation at scale."
+      },
+      {
+       "id": "s-references-15-3",
+       "original": "In Advances in Neural Information Processing Systems, volume 36, 2023."
+      },
+      {
+       "id": "s-references-15-4",
+       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2023/ha sh/2d8911db9ecedf866015091b28946e15-Abstract-Conference.html."
+      }
+     ]
+    },
+    {
+     "id": "p-references-16",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-16-1",
+       "original": "Alexander H Liu, Sung-Lin Yeh, and James R Glass."
+      },
+      {
+       "id": "s-references-16-2",
+       "original": "Revisiting self-supervised learning of speech representation from a mutual information perspective."
+      },
+      {
+       "id": "s-references-16-3",
+       "original": "In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 12051–12055."
+      },
+      {
+       "id": "s-references-16-4",
+       "original": "IEEE, 2024."
+      }
+     ]
+    },
+    {
+     "id": "p-references-17",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-17-1",
+       "original": "Alexander H."
+      },
+      {
+       "id": "s-references-17-2",
+       "original": "Liu, Andy Ehrenberg, Andy Lo, Clément Denoix, Corentin Barreau, Guillaume Lample, Jean-Malo Delignon, Khyathi Raghavi Chandu, Patrick von Platen, Pavankumar Reddy Muddireddy, Sanchit Gandhi, Soham Ghosh, Srijan Mishra, and Thomas Foubert."
+      },
+      {
+       "id": "s-references-17-3",
+       "original": "Voxtral, 2025."
+      }
+     ]
+    },
+    {
+     "id": "p-references-18",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-18-1",
+       "original": "URL https://arxiv.org/abs/2507.13264."
+      }
+     ]
+    },
+    {
+     "id": "p-references-19",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-19-1",
+       "original": "Alexander H Liu, Kartik Khandelwal, Sandeep Subramanian, Victor Jouault, Abhinav Rastogi, Adrien Sadé, Alan Jeffares, Albert Jiang, Alexandre Cahill, Alexandre Gavaudan, et al. Ministral 3. arXiv preprint arXiv:2601.08584, 2026."
+      }
+     ]
+    },
+    {
+     "id": "p-references-20",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-20-1",
+       "original": "Fabian Mentzer, David Minnen, Eirikur Agustsson, and Michael Tschannen."
+      },
+      {
+       "id": "s-references-20-2",
+       "original": "Finite scalar quantization: VQ-VAE made simple, 2023."
+      }
+     ]
+    },
+    {
+     "id": "p-references-21",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-21-1",
+       "original": "Tu Anh Nguyen, Wei-Ning Hsu, Antony d’Avirro, Bowen Shi, Itai Gat, Maryam Fazel-Zarani, Tal Remez, Jade Copet, Gabriel Synnaeve, Michael Hassid, et al. Expresso: A benchmark and analysis of discrete expressive speech resynthesis. arXiv preprint arXiv:2308.05725, 2023."
+      }
+     ]
+    },
+    {
+     "id": "p-references-22",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-22-1",
+       "original": "Julian D Parker, Anton Smirnov, Jordi Pons, CJ Carr, Zack Zukowski, Zach Evans, and Xubo Liu."
+      }
+     ]
+    },
+    {
+     "id": "p-references-23",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-23-1",
+       "original": "Scaling transformers for low-bitrate high-quality speech coding. arXiv preprint arXiv:2411.19842, 2024."
+      }
+     ]
+    },
+    {
+     "id": "p-references-24",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-24-1",
+       "original": "William Peebles and Saining Xie."
+      },
+      {
+       "id": "s-references-24-2",
+       "original": "Scalable diffusion models with transformers."
+      },
+      {
+       "id": "s-references-24-3",
+       "original": "In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), pages 4195–4205, October 2023."
+      }
+     ]
+    },
+    {
+     "id": "p-references-25",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-25-1",
+       "original": "Vadim Popov, Ivan Vovk, Vladimir Gogoryan, Tasnima Sadekova, and Mikhail Kudinov."
+      },
+      {
+       "id": "s-references-25-2",
+       "original": "GradTTS: A diffusion probabilistic model for text-to-speech."
+      },
+      {
+       "id": "s-references-25-3",
+       "original": "In Proceedings of the 38th International Conference on Machine Learning, volume 139 of Proceedings of Machine Learning Research, pages 8599–8608."
+      },
+      {
+       "id": "s-references-25-4",
+       "original": "PMLR, 2021."
+      },
+      {
+       "id": "s-references-25-5",
+       "original": "URL https://proceedings.mlr.press/v139/popov21a."
+      }
+     ]
+    },
+    {
+     "id": "p-references-26",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-26-1",
+       "original": "html."
+      }
+     ]
+    },
+    {
+     "id": "p-references-27",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-27-1",
+       "original": "Ofir Press, Noah A Smith, and Mike Lewis."
+      },
+      {
+       "id": "s-references-27-2",
+       "original": "Train short, test long: Attention with linear biases enables input length extrapolation. arXiv preprint arXiv:2108.12409, 2021."
+      }
+     ]
+    },
+    {
+     "id": "p-references-28",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-28-1",
+       "original": "Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
+      }
+     ]
+    },
+    {
+     "id": "p-references-29",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-29-1",
+       "original": "Robust speech recognition via large-scale weak supervision."
+      },
+      {
+       "id": "s-references-29-2",
+       "original": "In International conference on machine learning, pages 28492–28518."
+      },
+      {
+       "id": "s-references-29-3",
+       "original": "PMLR, 2023."
+      }
+     ]
+    },
+    {
+     "id": "p-references-30",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-30-1",
+       "original": "Rafael Rafailov, Archit Sharma, Eric Mitchell, Stefano Ermon, Christopher D."
+      },
+      {
+       "id": "s-references-30-2",
+       "original": "Manning, and Chelsea Finn."
+      },
+      {
+       "id": "s-references-30-3",
+       "original": "Direct preference optimization: Your language model is secretly a reward model."
+      },
+      {
+       "id": "s-references-30-4",
+       "original": "In Advances in Neural Information Processing Systems, 2023."
+      },
+      {
+       "id": "s-references-30-5",
+       "original": "URL https://arxiv.org/abs/2305.18290."
+      }
+     ]
+    },
+    {
+     "id": "p-references-31",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-31-1",
+       "original": "Hugo Touvron, Matthieu Cord, Alexandre Sablayrolles, Gabriel Synnaeve, and Hervé Jégou."
+      },
+      {
+       "id": "s-references-31-2",
+       "original": "Going deeper with image transformers."
+      },
+      {
+       "id": "s-references-31-3",
+       "original": "In Proceedings of the IEEE/CVF international conference on computer vision, pages 32–42, 2021."
+      }
+     ]
+    },
+    {
+     "id": "p-references-32",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-32-1",
+       "original": "Aaron Van Den Oord, Oriol Vinyals, et al. Neural discrete representation learning."
+      },
+      {
+       "id": "s-references-32-2",
+       "original": "Advances in neural information processing systems, 30, 2017."
+      }
+     ]
+    },
+    {
+     "id": "p-references-33",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-33-1",
+       "original": "Shikhar Vashishth, Harman Singh, Shikhar Bharadwaj, Sriram Ganapathy, Chulayuth Asawaroengchai, Kartik Audhkhasi, Andrew Rosenberg, Ankur Bapna, and Bhuvana Ramabhadran."
+      },
+      {
+       "id": "s-references-33-2",
+       "original": "Stab: Speech tokenizer assessment benchmark. arXiv preprint arXiv:2409.02384, 2024."
+      }
+     ]
+    },
+    {
+     "id": "p-references-34",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-34-1",
+       "original": "Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, and Furu Wei."
+      },
+      {
+       "id": "s-references-34-2",
+       "original": "Neural codec language models are zero-shot text to speech synthesizers. arXiv preprint arXiv:2301.02111, 2023."
+      },
+      {
+       "id": "s-references-34-3",
+       "original": "URL https://arxiv.org/abs/2301.02111."
+      }
+     ]
+    },
+    {
+     "id": "p-references-35",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-35-1",
+       "original": "Haibin Wu, Naoyuki Kanda, Sefik Emre Eskimez, and Jinyu Li."
+      },
+      {
+       "id": "s-references-35-2",
+       "original": "Ts3-codec: Transformer-based simple streaming single codec. arXiv preprint arXiv:2411.18803, 2024."
+      }
+     ]
+    },
+    {
+     "id": "p-references-36",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-36-1",
+       "original": "Peiqi Yin, Jiangyun Zhu, Han Gao, Chenguang Zheng, Yongxiang Huang, Taichang Zhou, Ruirui Yang, Weizhi Liu, Weiqing Chen, Canlin Guo, Didan Deng, Zifeng Mo, Cong Wang, James Cheng, Roger Wang, and Hongsheng Liu. vllm-omni: Fully disaggregated serving for any-to-any multimodal models, 2026."
+      },
+      {
+       "id": "s-references-36-2",
+       "original": "URL https://arxiv.org/abs/2602.02204."
+      }
+     ]
+    },
+    {
+     "id": "p-references-37",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-37-1",
+       "original": "Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, Peikai Huang, Ruiyang Jin, Sitan Jiang, Weihua Cheng, Yawei Li, Yichen Xiao, Yiying Zhou, Yongmao Zhang, Yuan Lu, and Yucen He."
+      },
+      {
+       "id": "s-references-37-2",
+       "original": "Minimaxspeech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder, 2025."
+      },
+      {
+       "id": "s-references-37-3",
+       "original": "URL https: //arxiv.org/abs/2505.07916."
+      }
+     ]
+    },
+    {
+     "id": "p-references-38",
+     "type": "paragraph",
+     "page": 16,
+     "sentences": [
+      {
+       "id": "s-references-38-1",
+       "original": "Xin Zhang, Dong Zhang, Shimin Li, Yaqian Zhou, and Xipeng Qiu."
+      },
+      {
+       "id": "s-references-38-2",
+       "original": "Speechtokenizer: Unified speech tokenizer for speech large language models. arXiv preprint arXiv:2308.16692, 2023."
+      }
+     ]
+    },
+    {
+     "id": "p-references-39",
+     "type": "paragraph",
+     "page": 16,
+     "sentences": [
+      {
+       "id": "s-references-39-1",
+       "original": "Alon Ziv, Sanyuan Chen, Andros Tjandra, Yossi Adi, Wei-Ning Hsu, and Bowen Shi."
+      },
+      {
+       "id": "s-references-39-2",
+       "original": "Mr-flowdpo: Multi-reward direct preference optimization for flow-matching text-to-music generation, 2025."
+      }
+     ]
+    },
+    {
+     "id": "p-references-40",
+     "type": "paragraph",
+     "page": 16,
+     "sentences": [
+      {
+       "id": "s-references-40-1",
+       "original": "URL https://arxiv.org/abs/2512.10264."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "id": "ann-001",
+   "anchor": {
+    "sentence_id": "s-1-2-6",
+    "quote": "whether the dense acoustic component must be modeled auto-regressively at all"
+   },
+   "kind": "motivation",
+   "title": "全文的核心设问",
+   "explanation": "整篇论文其实是围绕这一问展开的：语义必须 AR（长程一致、对齐文本），但 36 路稠密声学维度是否也必须逐个 AR 预测？Moshi 的 Depth Transformer 路径答案是「是」，Voxtral 的答案是否定的——把一个每帧要 36 步的 AR 问题换成 8 步 ODE 积分的连续生成问题。后面所有架构、训练与部署设计（FSQ、CFG 逐帧施加、CUDA graph）都是这个选择题的连锁后果。判断一篇 TTS 论文是否真混合架构，看它对这一个问题怎么回答就够了。",
+   "featured": true
+  },
+  {
+   "id": "ann-002",
+   "anchor": {
+    "sentence_id": "s-2-1-1-1",
+    "quote": "12.5 Hz frames of 37 discrete tokens"
+   },
+   "kind": "number",
+   "title": "2.14 kbps 的分解账",
+   "explanation": "12.5 Hz × (log2 8192 + 36 × log2 21) ≈ 2.14 kbps：语义流每秒只贡献 13 bit/帧 × 12.5 = 0.16 kbps，声学流扛了剩下的大头。这意味着保证「说什么」的代价极低，算力和码率几乎全部花在「说得像不像」。对比 Mimi 的 32 × 2048 RVQ（4.4 kbps），Voxtral 把声学从 32 个 2048 项码本换成 36 个 21 级 FSQ，码率减半还反超 PESQ，说明非码本式的标量量化在低码率段效率更高。",
+   "featured": true
+  },
+  {
+   "id": "ann-003",
+   "anchor": {
+    "sentence_id": "s-representation-quantization-2-2",
+    "quote": "VQ is applied with 50% probability"
+   },
+   "kind": "engineering",
+   "title": "50% 量化概率的意图",
+   "explanation": "训练时一半样本跳过量化、VF 一半样本做真量化，配合后面的 dither-FSQ（50% 量化 / 25% 加噪 / 25% 直通），本质是让解码器同时见到「干净连续输入」和「有损离散输入」两种分布。这样推理时即使量化带来很大的表征失真，解码器也不会崩。这个 trick 在 SpeechTokenizer/Parker 一脉里常见，但它暗示一个事实：VQ 层仍是整个 codec 最不稳定的一环，否则不需要这么高的直通比例。",
+   "featured": false
+  },
+  {
+   "id": "ann-004",
+   "anchor": {
+    "sentence_id": "s-semantic-token-learning-1-2",
+    "quote": "which are more phonetic than semantic"
+   },
+   "kind": "concept",
+   "title": "音素 ≠ 语义",
+   "explanation": "「更偏音素而非语义」是锐评此前 SSL 蒸馏路线（SpeechTokenizer、Mimi）：HuBERT/wav2vec2 介的表征学到的是发音内容，对「哪个词、什么话术」的高层意图并不敏感。Voxtral 改成从监督式 ASR（冻结 Whisper）的解码器隐状态蒸馏，等于把「这段音频对应哪一段文字」的映射直接压进语义 token。有意义的地方在于：这让下游 AR 主干学到的 token 序列天然更像「语音版文字」，而不是「语音版音标」。",
+   "featured": true
+  },
+  {
+   "id": "ann-005",
+   "anchor": {
+    "sentence_id": "s-2-2-1-1",
+    "quote": "Ministral 3B"
+   },
+   "kind": "engineering",
+   "title": "主干预训练遗产的复用",
+   "explanation": "直接用 Ministral 3B 权重初始化解码器主干，是本文最「Mistral 内部便利」的工程决策：文本-语音交错的 LM 骨架、<next>/<repeat> 分隔符、RoPE/滑动窗口注意力全部继承自现成的 Voxtral 语音理解模型。这解释了为什么 4B 参数里只有 390M 是新生模块——FM transformer、码本嵌入、输出头都得从零学。社区复现者应警惕：你不用 Mistral 内部模型起步，收敛曲线和最终上限大概率都不达标。",
+   "featured": true
+  },
+  {
+   "id": "ann-006",
+   "anchor": {
+    "sentence_id": "s-2-2-2-4",
+    "quote": "discretized before the next AR step"
+   },
+   "kind": "concept",
+   "title": "连续与离散的接口",
+   "explanation": "FM 输出是 36 维浮点，但下一个 AR 步要重新查 21 级 FSQ 嵌入表，所以必须量化回整数。这个「连续生成 → 离散 token」的往返听起来繁琐，实际是整个混合架构的接缝：语义侧彻底离散（查码本交叉熵），声学侧彻底连续（ODE 积分），两端只在 FSQ 量化点交接。代价是每帧损失一次浮点精度，好处是主干看到的永远是同一套离散 token 接口，预训练遗产可以无损复用。",
+   "featured": false
+  },
+  {
+   "id": "ann-007",
+   "anchor": {
+    "sentence_id": "s-2-3-4-2",
+    "quote": "significantly cheaper than applying CFG in the decoder backbone"
+   },
+   "kind": "engineering",
+   "title": "CFG 放在便宜的一侧",
+   "explanation": "CFG 每帧多一次前向，常规做法是在 LM 主干上算覆盖整段上下文，代价近乎翻倍。Voxtral 把 CFG 限制在 3 层、单向帧内的小 FM transformer，主干零额外开销。这是一个值得被所有条件 TTS 借鉴的工程布局：把「增强引导」从昂贵的长上下文主干搬到便宜的、宽度可裁的局部模块，同样拿到 CFG 的表现力收益。第 6 章 CUDA graph 对 ODE 整段捕获，前提是 CFG 必须能像 Triton kernel 一样被整体 replay。",
+   "featured": true
+  },
+  {
+   "id": "ann-008",
+   "anchor": {
+    "sentence_id": "s-2-3-5-4",
+    "quote": "36 auto-regressive decoding steps, compared to 8 NFEs"
+   },
+   "kind": "comparison",
+   "title": "36 AR 步 vs 8 次 NFE",
+   "explanation": "Depth Transformer 路径每帧 36 个 AR 步且相互依赖，难以多步并行；FM 用 8 个 NFE 并行逼近同一件事，而且每一次 NFE 只需过 3 层双向 Transformer，不是整段 LM。在 H200 上这种结构差异直接决定了第 6 章能做到 119-1431 字/秒的吞吐。值得追问的是：论文没有报告 8 NFE 相对 16/32 NFE 在人评上的饱和点，仅给了自动指标，可能掩盖了 NFE 对「听感表现力」的边际价值。",
+   "featured": true
+  },
+  {
+   "id": "ann-009",
+   "anchor": {
+    "sentence_id": "s-3-1-1-6",
+    "quote": "between 3 and 25 seconds"
+   },
+   "kind": "number",
+   "title": "3-25 秒甜蜜区间",
+   "explanation": "论文只在 A1 最大 180 秒的前提下提了句「3 到 25 秒最好」，但没解释为什么超过 25 秒会变差。合理猜测：训练样本时长呈长尾，长参考在自然数据里本来就稀少；加上 DPO 阶段用 3-30 秒参考合成偏好对，更长区间分布覆盖不足。对产品方这是个明确告警——宣传「3 秒就够了」是对的，但别指望用户甩给你 1 分钟素材还能更稳，超过 25 秒可能得自行截断或挑选片段。",
+   "featured": true
+  },
+  {
+   "id": "ann-010",
+   "anchor": {
+    "sentence_id": "s-3-1-3-4",
+    "quote": "freeze the text-embedding layers"
+   },
+   "kind": "engineering",
+   "title": "冻结文本嵌入的潜台词",
+   "explanation": "冻结解码器主干的文本嵌入层，是因为 Voxtral Mini Transcribe 伪标注产生的低频 token 分布和原始 LM 训练分布差异巨大，一训就漂。这条措施听起来小，实际决定了 TTS 主干能否保住多语种文本理解能力——一旦文本嵌入在 9 语伪标注数据上漂移，CFG α、情感引导都会跟着退化。这是「大模型初始化的多模态微调」里最实用也最常被忽视的一招。",
+   "featured": false
+  },
+  {
+   "id": "ann-011",
+   "anchor": {
+    "sentence_id": "s-3-1-3-5",
+    "quote": "set the loss weight to 0 for extremely long silences"
+   },
+   "kind": "engineering",
+   "title": "静音降权到 0 的代价",
+   "explanation": "对 VAD 判为无语音的帧降权、对极长静音直接把损失权重设为 0，是为了防止模型把容量浪费在对「安静」的精确拟合上。但这会让模型对自然停顿、呼吸声、犹豫的实践变弱——这些语气微表情恰恰是「表现力鸿沟」的一部分。结合后文 DPO 才治「音量渐弱」、「幻觉词」，可以推测预训练期的静音处理把一些侧枝问题压到了偏好对齐阶段，并不是免费的收益。",
+   "featured": false
+  },
+  {
+   "id": "ann-012",
+   "anchor": {
+    "sentence_id": "s-3-2-4-1",
+    "quote": "length normalization (dividing by length of winner) causes instability"
+   },
+   "kind": "critique",
+   "title": "flow-DPO 的暗坑",
+   "explanation": "论文一笔带过「按胜者长度归一会不稳定」，但这一步原本是为了消除样本长度对 DPO log-ratio 的偏置，是当前语言模型 DPO 的标准做法。在 flow-DPO 里它反而炸掉，可能因为逐 token 的 t 同步采样让速度场损失和长度耦合，不再是简单的对数似然比。作者没给失败曲线，只给了结论，这意味着读者无法判断不稳定来自实现 bug、β 不合适还是目标本身的问题。算复现陷阱里的高危险点。",
+   "featured": true
+  },
+  {
+   "id": "ann-013",
+   "anchor": {
+    "sentence_id": "s-3-2-6-5",
+    "quote": "training longer on synthetic data led to more robotic speech"
+   },
+   "kind": "critique",
+   "title": "偏好对齐的天花板",
+   "explanation": "只用 1 个 epoch、8e−8 的极低学习率，理由是更久更机械。这透露两件事：(1) 偏好对都来自自家 checkpoint 的合成数据，分布和真实人声有不可消除的距离；(2) DPO 的优化仍然在模仿「评委偏好」，不是在逼近真实分布。对社区而言这是一条警示：如果你用相同 pipeline 做后训练，一训过头指标反而会降。这也是目前所有「LLM 评委驱动」的 RLHF/DPO 音频系统共同面对的问题，不只是 Voxtral。",
+   "featured": true
+  },
+  {
+   "id": "ann-014",
+   "anchor": {
+    "sentence_id": "s-4-2-5-3",
+    "quote": "ElevenLabs Flash v2.5 performs better on most automated metrics and ElevenLabs v3 better on human evaluations"
+   },
+   "kind": "comparison",
+   "title": "自动指标集体失真",
+   "explanation": "这一句是论文里最诚恳的一段：商用系统中，自动指标排名（Flash v2.5 更优）和人工盲听排名（v3 更优）是反着的。它直接戳破了 WER/UTMOS/Speaker-sim 三件套在 TTS 评测中的有效性——尤其是当模型开始拼情感、拼表现力时，参考指标会被「稳定但木讷」的输出刷高。这也是为什么论文必须做 77 条带情感提示的人工盲测；任何只跑 WER 就宣布击败商业系统的 TTS 工作都应该被打折扣看待。",
+   "featured": true
+  },
+  {
+   "id": "ann-015",
+   "anchor": {
+    "sentence_id": "s-4-3-1-2",
+    "quote": "UTMOS is only a loose proxy"
+   },
+   "kind": "critique",
+   "title": "UTMOS 的校准问题",
+   "explanation": "论文明确指出 UTMOS 跨语言间校准差、与人工偏好仅弱相关，并在第 5.2 节又补一刀：UTMOS 是 CFG 增大时唯一不单调提升的指标。综合起来看，UTMOS-v2 在「高分值区间」的区分度很低——4.1 和 4.3 之间的差在听感上可能远超 0.2。这提示 TTS 社区评估时应把 UTMOS 当作粗筛而非排序依据，尤其在多语言、多风格场景下。",
+   "featured": false
+  },
+  {
+   "id": "ann-016",
+   "anchor": {
+    "sentence_id": "s-4-3-1-2-5",
+    "quote": "Voxtral TTS does not support emotion tags/text-instructions"
+   },
+   "kind": "critique",
+   "title": "没有情感标签是双刃剑",
+   "explanation": "Voxtral 用「换一段带目标情感的语音提示」绕开情感标签，在隐式引导场景甚至压过两个 ElevenLabs 模型；但显式引导胜率只有 51.0%，落后于 Gemini 2.5 Flash TTS 的自然语言指令。这意味着：用户不能只靠 prompt 文本就改变情感，必须备好多情绪的参考素材库。对严肃情感 TTS 工作流（如小说配音、客服应答）来说，这是产品形态的硬约束，不是小功能缺失。",
+   "featured": true
+  },
+  {
+   "id": "ann-017",
+   "anchor": {
+    "sentence_id": "s-4-3-2-1-1",
+    "quote": "two recognized speakers in each language"
+   },
+   "kind": "critique",
+   "title": "盲测的覆盖面存疑",
+   "explanation": "每种语言只取两位「可被辨识的」说话人、60 条提示，用来支撑 68.4% 整体胜率。这个子集的选择风险很高：如果两位说话人都是演播级、单口音、无重叠发声，盲听难度本身就低一档。真实用户克隆场景包含口音混合、多人环境底噪、非标准麦克风，论文没报告这种 in-the-wild 参考下的胜率。所以 68.4% 应该读作「受控优质参考下的克隆胜利率」，不是「随便给段手机录音就能赢 ElevenLabs」。",
+   "featured": true
+  },
+  {
+   "id": "ann-018",
+   "anchor": {
+    "sentence_id": "s-5-2-1-2",
+    "quote": "over-adherence to the provided voice-prompt"
+   },
+   "kind": "critique",
+   "title": "CFG 高的反噬",
+   "explanation": "自动指标几乎全线随 CFG α 单调改善，但内部人工评测发现高 α 让模型「过度粘住参考」，丢掉文本自带的情感偏置。这条张力是论文最诚实的发现之一：CFG 在 TTS 里不只是「保真旋钮」，它同时压制了文本→情感的推理能力。工程上意味着不能套一刀切 α 值；产品上意味着同一模型在「克隆保真」和「情感表现力」之间必须做显式 trade-off，这正好对应 4.3 节里显式 vs 隐式引导的胜率差异。",
+   "featured": true
+  },
+  {
+   "id": "ann-019",
+   "anchor": {
+    "sentence_id": "s-5-2-1-3",
+    "quote": "α = 1.2 works best for higher quality audio"
+   },
+   "kind": "engineering",
+   "title": "高质量参考用低 α",
+   "explanation": "论文建议专业录音用 α=1.2、野外录音用更高 α，本质是把 CFG 当作「参考保真度补偿器」：参考干净时不需要太多引导，引导过度会压掉情感表达；参考脏时得逼模型更贴参考才能盖过噪声。这给 vLLM-Omni 部署留了接口：按参考信噪比/质量自动调 α，或服务端接受 α 作为推理参数。是值得写进 TTS serving 工程手册的一条经验值。",
+   "featured": false
+  },
+  {
+   "id": "ann-020",
+   "anchor": {
+    "sentence_id": "s-6-1-2-1",
+    "quote": "captured into CUDA graphs"
+   },
+   "kind": "engineering",
+   "title": "把 ODE 求解器整个抓进 CUDA graph",
+   "explanation": "把 8 步 Euler 积分的整个 ODE 求解器一次性捕获为单个 CUDA graph，而不是逐 NFE、逐层抓 kernel。这要求所有输入形状在 bucket 内固定（向上零填充）、所有控制流静态展开，一旦超过最大 bucket 就回退 eager。配合异步分块流式，把 FM transformer 从「每帧 Python 调度 + kernel 启动」的瓶颈降为一帧一次 graph replay。这种「整段 deterministic 子图全捕获」的思路对所有条件实时生成系统都有借鉴价值。",
+   "featured": false
+  },
+  {
+   "id": "ann-021",
+   "anchor": {
+    "sentence_id": "s-6-3-1-3",
+    "quote": "119 to 1,431 characters per second per GPU"
+   },
+   "kind": "number",
+   "title": "12× 并发扩展的读法",
+   "explanation": "并发从 1 到 32 吞吐涨到 119→1431 字/秒，看起来很线性，但注意 RTF 从 0.103 涨到 0.302——已经逼近 RT 边界。表里 wait rate 全为 0 是因为 wait 定义为「客户端等 chunk」；只要 codec 流水线跟得上，客户端在听音乐时是不会察觉后台 batching 的。这张表实际说明 H200 单卡承载约 30 并发实时 TTS 用户是舒适的，再多就要牺牲 RTF 或者横向扩展，别误读成「32 并发仍 RT」。",
+   "featured": true
+  },
+  {
+   "id": "ann-022",
+   "anchor": {
+    "sentence_id": "s-7-2-2",
+    "quote": "CC BY-NC license"
+   },
+   "kind": "critique",
+   "title": "开放权重 ≠ 商用可用",
+   "explanation": "以 CC BY-NC 发布，意味着研究可玩、商用不行——这正好掐住了下游最痛的位置：能用权重做声音克隆 PoC，却不能部署到收费客服/有声书产品里。更需要警惕的是 community checkpoint 很多只包含解码器和 AR 主干，codec 编码器未释出，导致真正的零样本克隆流水线不完全可自托管。这条许可细节决定了 Voxtral TTS 的实际生态位——改变研究格局，但短期内不会直接重塑商用 TTS 版图。",
+   "featured": true
+  }
+ ]
+};

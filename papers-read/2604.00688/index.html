@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OmniVoice：用扩散语言模型实现覆盖全语种的零样本文本转语音 · 全文双语精读 | ASR/TTS 知识库</title>
+<meta name="description" content="OmniVoice：用扩散语言模型实现覆盖全语种的零样本文本转语音（OmniVoice: Towards Omnilingual Zero-Shot Text-to-Speech with Diffusion Language Models）全文中文翻译 + 22 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2604.00688/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OmniVoice：用扩散语言模型实现覆盖全语种的零样本文本转语音 · 全文双语精读">
+<meta property="og:description" content="OmniVoice：用扩散语言模型实现覆盖全语种的零样本文本转语音（OmniVoice: Towards Omnilingual Zero-Shot Text-to-Speech with Diffusion Language Models）全文中文翻译 + 22 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta property="og:url" content="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2604.00688/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"OmniVoice: Towards Omnilingual Zero-Shot Text-to-Speech with Diffusion Language Models","alternateName":"OmniVoice：用扩散语言模型实现覆盖全语种的零样本文本转语音","url":"https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2604.00688/","isBasedOn":"https://arxiv.org/abs/2604.00688","inLanguage":["en","zh-CN"],"isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Zhitao Zeng"}}</script>
+<style>
+:root{--brand:#2563eb;--brand2:#4338ca;--accent:#0f766e;--warn:#b45309;--bg:#f6f8fb;--panel:#fff;--line:#e5e7eb;--muted:#64748b;--ink:#1f2937;--chip:#eef2f7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.75}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header.top{background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.nav{max-width:1180px;margin:0 auto;display:flex;gap:6px;align-items:center;padding:10px 18px;font-size:14px;flex-wrap:wrap}
+.nav .brand{font-weight:800;margin-right:8px}
+.nav .spacer{flex:1}
+main{max-width:1180px;margin:0 auto;padding:20px 18px 80px;display:grid;grid-template-columns:220px 1fr;gap:24px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.muted{color:var(--muted)}
+/* 头部 */
+.phead{grid-column:1/-1}
+.phead h1{font-size:24px;margin:8px 0 2px}
+.phead .en-title{font-size:15px;color:var(--muted);font-style:italic}
+.phead .meta{font-size:13.5px;color:var(--muted);margin-top:8px}
+.phead .meta a{margin:0 6px}
+/* 控制条 */
+.controls{grid-column:1/-1;display:flex;gap:18px;flex-wrap:wrap;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 16px;font-size:13.5px;position:sticky;top:52px;z-index:40}
+.controls .grp{display:flex;gap:6px;align-items:center}
+.controls label{color:var(--muted);font-weight:600;font-size:12.5px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.seg button{border:0;background:#fff;padding:5px 11px;font-size:13px;cursor:pointer;color:var(--muted);font-weight:600}
+.seg button.on{background:var(--brand);color:#fff}
+/* 目录 */
+.toc{position:sticky;top:118px;align-self:start;max-height:calc(100vh - 140px);overflow:auto;font-size:13px;padding:8px 0}
+.toc a{display:block;color:var(--muted);padding:3px 10px;border-radius:7px;line-height:1.45}
+.toc a:hover{background:var(--chip);color:var(--brand);text-decoration:none}
+.toc a.lv2{padding-left:24px;font-size:12.5px}
+/* 正文 */
+.reader{min-width:0}
+section{margin-bottom:8px}
+.sech{scroll-margin-top:120px}
+.sech .secnum{color:var(--brand2)}
+h2.sech{font-size:21px;margin:26px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3.sech{font-size:16.5px;margin:20px 0 8px}
+.sech .t-en{display:block;font-size:12.5px;color:var(--muted);font-weight:400;font-style:italic;margin-top:1px}
+/* 段落：双语 */
+.pblk{margin:10px 0;position:relative}
+.en-lines{color:#334155;font-size:14px;line-height:1.7;margin:4px 0}
+.zh-lines{font-size:15.5px;line-height:1.85;margin:4px 0}
+.sent{position:relative}
+/* 阅读模式切换 */
+body.mode-en .zh-lines,body.mode-en .cap .zh,body.mode-en .sech .t-zh{display:none}
+body.mode-zh .en-lines,body.mode-zh .cap .en,body.mode-zh .sech .t-en{display:none}
+body.mode-bi .en-lines{border-left:3px solid var(--chip);padding-left:10px}
+/* [解] 标记 */
+.mk{display:inline-block;vertical-align:super;font-size:10.5px;line-height:1.4;margin-left:2px;padding:1px 5px;border-radius:5px;border:1px solid #c7d2fe;background:#eef2ff;color:#4338ca;cursor:pointer;font-weight:700}
+.mk:hover{background:#e0e7ff}
+.mk i{font-style:normal;margin-left:2px;color:#7c3aed}
+.mk.open{background:var(--brand2);color:#fff}
+body.dens-off .mk{display:none}
+body.dens-feat .mk:not(.feat){display:none}
+/* 讲解面板 */
+.ann-panel{display:none;margin:8px 0 14px;max-width:520px}
+.ann-panel.open{display:block}
+.ann-card{background:#fbfaff;border:1px solid #ddd6fe;border-left:4px solid var(--brand2);border-radius:10px;padding:11px 14px;font-size:14px}
+.ann-kind{display:inline-block;font-size:11px;font-weight:700;color:#4338ca;background:#ede9fe;border-radius:999px;padding:1px 9px;margin-bottom:5px}
+.kind-critique .ann-kind{color:#991b1b;background:#fee2e2}
+.kind-critique{border-left-color:#dc2626;background:#fffbeb;border-color:#fde68a}
+.kind-engineering .ann-kind{color:#166534;background:#dcfce7}
+.kind-engineering{border-left-color:#16a34a}
+.ann-title{font-weight:800;margin:2px 0 4px}
+.ann-quote{font-size:12px;color:var(--muted);font-style:italic;border-left:2px solid var(--line);padding-left:8px;margin-bottom:6px}
+.exp{font-size:13.5px;line-height:1.7;color:#334155}
+body.depth-tech .exp-plain{display:none}
+body.depth-plain .exp-tech{display:none}
+body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-plain)) .exp-tech{display:block}
+.ann-more{margin-top:8px}
+.ann-more summary{font-size:12.5px;color:var(--brand2);cursor:pointer}
+/* 桌面端：讲解面板浮动到右侧 */
+@media(min-width:1180px){
+  .ann-zone{position:absolute;right:-315px;width:300px;top:0}
+  .ann-panel{position:absolute;margin:0;max-width:300px}
+  .reader{position:relative;margin-right:315px}
+  main{grid-template-columns:210px 1fr}
+}
+/* 图/表标题、公式、表格主体 */
+.cap{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:12px 0;font-size:13px}
+.cap-k{display:inline-block;font-size:11px;font-weight:700;color:#0f766e;background:#ccfbf1;border-radius:6px;padding:1px 7px;margin-right:6px}
+.cap p{margin:3px 0;display:inline}
+.cap .zh{display:block;color:#0f172a}
+.cap .en{color:var(--muted);display:block;font-size:12.5px}
+.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
+.eq code{background:none;font-size:14px}
+.tbwrap{margin:10px 0}
+.tb-note{font-size:13px;color:var(--muted);margin:4px 0}
+.tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+.tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
+.refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
+/* 三分钟摘要 */
+.tldr{grid-column:1/-1;border-left:4px solid var(--brand2)}
+.tldr h2{margin:0 0 10px;font-size:18px}
+.insight-block{border:1px solid #e6e0f3;border-radius:10px;padding:10px 14px;margin:10px 0;background:#fbfaff}
+.ins-src{display:inline-block;font-size:11px;color:#4338ca;background:#ede9fe;border-radius:999px;padding:1px 9px;margin-bottom:6px}
+.ins-quote{font-style:italic;color:#1e1b4b;font-size:13.5px;margin-bottom:6px}
+.ins-body{font-size:14px;line-height:1.75;color:#334155}
+footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
+@media(max-width:900px){
+  main{grid-template-columns:1fr}
+  .toc{display:none}
+  .controls{position:static}
+}
+</style>
+</head>
+<body class="mode-bi dens-feat depth-tech">
+<header class="top"><nav class="nav">
+  <span class="brand">ASR/TTS 知识库<span style="color:var(--brand)">.</span> 论文精读</span>
+  <a href="../../index.html">交互知识库</a>
+  <a href="../">精读列表</a>
+  <a href="../../index.html#/model/omnivoice">OmniVoice 模型卡</a>
+  <span class="spacer"></span>
+  <a href="https://arxiv.org/abs/2604.00688" target="_blank" rel="noopener">arXiv:2604.00688</a>
+  <a href="../../papers/2604.00688.pdf" target="_blank" rel="noopener">本地 PDF</a>
+</nav></header>
+<main>
+  <div class="phead card">
+    <h1>OmniVoice：用扩散语言模型实现覆盖全语种的零样本文本转语音</h1>
+    <div class="en-title">OmniVoice: Towards Omnilingual Zero-Shot Text-to-Speech with Diffusion Language Models</div>
+    <div class="meta">
+      关联模型：<a href="../../index.html#/model/omnivoice">OmniVoice</a>（k2-fsa / 社区 · 2026-04） ·
+      全文 222 个语块 · 讲解 22 条（精选 13 条）
+    </div>
+  </div>
+  <div class="controls">
+    <div class="grp"><label>阅读模式</label><span class="seg" id="segMode">
+      <button data-v="bi" class="on">中英对照</button><button data-v="zh">仅中文</button><button data-v="en">仅原文</button></span></div>
+    <div class="grp"><label>讲解密度</label><span class="seg" id="segDens">
+      <button data-v="off">关闭</button><button data-v="feat" class="on">精选</button><button data-v="all">全部</button></span></div>
+    <div class="grp"><label>讲解深度</label><span class="seg" id="segDepth">
+      <button data-v="plain">白话</button><button data-v="tech" class="on">技术</button></span></div>
+  </div>
+  
+  <section class="tldr card">
+    <h2>三分钟看懂这篇论文</h2>
+    
+      <div class="insight-block">
+        <div class="ins-src">arXiv:2604.00688 Abstract</div>
+        <div class="ins-quote">We present OmniVoice, a massively multilingual zero-shot text-to-speech (TTS) model that scales to over 600 languages. At its core is a novel diffusion language model-style discrete non-autoregressive (NAR) architecture.</div>
+        <div class="ins-body"><strong>核心创新</strong>：OmniVoice 把零样本 TTS 推向 <strong>600+ 语言</strong>，且用“扩散语言模型”风格的离散 NAR 架构直接从文本映射到多 codebook 声学 token，绕开传统“文本→语义→声学”两段式级联。对比同期的 Seed-TTS / CosyVoice（多聚焦中英），它是目前语言覆盖最广的开源 TTS 之一。</div>
+      </div>
+      <div class="insight-block">
+        <div class="ins-src">arXiv:2604.00688 Section 2.1.1</div>
+        <div class="ins-quote">To circumvent this limitation, OmniVoice adopts a fully stochastic masking strategy across all codebook layers.</div>
+        <div class="ins-body"><strong>关键方法</strong>：全 codebook 随机掩码（每个 token 独立按 Bernoulli 采样）替代以往“单层掩码”，让每次迭代平均优化约 50% 的 token 矩阵，显著提升训练效率；并借助预训练 LLM 初始化保证低资源语言的可懂度。这是其能在 581k 小时开放数据上稳定训出 600 语的关键训练技巧。</div>
+      </div>
+      <div class="insight-block">
+        <div class="ins-src">arXiv:2604.00688 Section E Limitations and Future Works</div>
+        <div class="ins-quote">Unlike continuous-space NAR TTS models, where inference steps can be drastically reduced via techniques such as flow distillation, no existing approach enables comparable inference acceleration for discrete-space NAR TTS models.</div>
+        <div class="ins-body"><strong>主要局限</strong>：离散空间 NAR 缺少像 flow distillation 那样成熟的推理加速手段，步数难以大幅压缩，推理效率是明显短板；此外仅用开源数据、缺乏高质量指令微调数据也限制了可控语音设计上限。相比连续隐空间扩散 TTS（如 LongCat-AudioDiT），其加速路线仍是开放问题。</div>
+      </div>
+    <p class="muted" style="font-size:12.5px">以上为论文级三条摘要；下面进入全文双语精读，讲解锚定在具体句子旁。</p>
+  </section>
+  <nav class="toc"><a class="lv1" href="#sec-abstract">摘要</a><a class="lv1" href="#sec-1">1 1 引言</a><a class="lv1" href="#sec-2">2 2 提出的方法</a><a class="lv2" href="#sec-2-1">2.1 2.1 架构</a><a class="lv2" href="#sec-2-1-1">2.1.1 2.1.1 面向训练效率的全码本随机掩码</a><a class="lv2" href="#sec-2-1-2">2.1.2 2.1.2 面向可懂度的 LLM 初始化</a><a class="lv2" href="#sec-2-2">2.2 2.2 多语种规模化</a><a class="lv2" href="#sec-2-3">2.3 2.3 多维度可控性</a><a class="lv2" href="#sec-2-3-1">2.3.1 2.3.1 声学控制：提示去噪</a><a class="lv2" href="#sec-2-3-2">2.3.2 2.3.2 身份控制：基于说话人属性的声音设计</a><a class="lv2" href="#sec-2-3-3">2.3.3 2.3.3 语言控制：副语言与语音学</a><a class="lv1" href="#sec-3">3 3 实验设置</a><a class="lv2" href="#sec-3-1">3.1 3.1 训练数据集</a><a class="lv2" href="#sec-3-2">3.2 3.2 模型细节</a><a class="lv2" href="#sec-3-3">3.3 3.3 训练</a><a class="lv2" href="#sec-3-4">3.4 3.4 推理</a><a class="lv2" href="#sec-3-4-1">3.4.1 3.4.1 评估基准</a><a class="lv2" href="#sec-3-5">3.5 3.5 评估指标</a><a class="lv1" href="#sec-4">4 4 实验结果</a><a class="lv2" href="#sec-4-1">4.1 4.1 英文与中文评估</a><a class="lv2" href="#sec-4-2">4.2 4.2 多语基准评估</a><a class="lv2" href="#sec-ar-models">AR 模型</a><a class="lv2" href="#sec-4-41">4.41 4.41 NAR 模型</a><a class="lv2" href="#sec-ar-models-2">AR 模型</a><a class="lv2" href="#sec-3-46">3.46 3.46 NAR 模型</a><a class="lv2" href="#sec-average">平均值</a><a class="lv2" href="#sec-5">5%（表格碎块小节）</a><a class="lv2" href="#sec-4-3">4.3 4.3 关键设计的有效性</a><a class="lv2" href="#sec-masking-strategy">掩码策略</a><a class="lv2" href="#sec-libri">Libri（表格碎块小节）</a><a class="lv2" href="#sec-4-3-1">4.3.1 4.3.1 推理速度</a><a class="lv2" href="#sec-inference-steps">推理步数</a><a class="lv1" href="#sec-5-2">5 5 结论</a><a class="lv1" href="#sec-references">References</a><a class="lv1" href="#sec-A">A 附录 A 多语训练数据完整清单</a><a class="lv1" href="#sec-B">B 附录 B 不同推理步数的结果</a><a class="lv1" href="#sec-C">C 附录 C FLEURS-Multilingual-102 详细结果</a><a class="lv1" href="#sec-D">D 附录 D OmniVoice 支持的语言</a><a class="lv1" href="#sec-E">E 附录 E 局限与未来工作</a><a class="lv1" href="#sec-F">F 附录 F 伦理声明</a></nav>
+  <article class="reader"><section><div class="pblk plain" id="p-front-1"><p class="refline">Han Zhu, Lingxuan Ye, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang Zhifeng Han, Weiji Zhuang, Long Lin, Daniel Povey Xiaomi Corp., China {zhuhan3,dpovey}@xiaomi.com</p></div></section>
+<section>
+      <h2 class="sech lv1" id="sec-abstract"><span class="t-zh">摘要</span><span class="t-en">Abstract</span></h2><div class="pblk" id="p-abstract-1">
+          <p class="en-lines"><span class="sent" data-sid="s-abstract-1-1"><span class="en">We present OmniVoice, a massively multilingual zero-shot text-to-speech (TTS) model that scales to over 600 languages.</span></span> <span class="sent" data-sid="s-abstract-1-2"><span class="en">At its core is a novel diffusion language model-style discrete non-autoregressive (NAR) architecture.</span></span> <span class="sent" data-sid="s-abstract-1-3"><span class="en">Unlike conventional discrete NAR models that suffer from performance bottlenecks in complex twostage (text-to-semantic-to-acoustic) pipelines, OmniVoice directly maps text to multi-codebook acoustic tokens.</span></span> <span class="sent" data-sid="s-abstract-1-4"><span class="en">This simplified approach is facilitated by two key technical innovations: (1) a full-codebook random masking strategy for efficient training, and (2) initialization from a pre-trained LLM to ensure superior intelligibility.</span><button class="mk feat" data-sid="s-abstract-1-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-abstract-1-5"><span class="en">By leveraging a 581k-hour multilingual dataset curated entirely from open-source data, OmniVoice achieves the broadest language coverage to date and delivers state-of-the-art performance across Chinese, English, and diverse multilingual benchmarks.</span><button class="mk feat" data-sid="s-abstract-1-5" title="查看讲解">解</button></span> <span class="sent" data-sid="s-abstract-1-6"><span class="en">Our code and pre-trained models are publicly available1.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-abstract-1-1"><span class="zh">我们提出 OmniVoice，一个大规模多语种的零样本文本转语音（TTS）模型，语言覆盖规模超过 600 种。</span></span><span class="sent" data-sid="s-abstract-1-2"><span class="zh">其核心是一种新颖的扩散语言模型风格的离散非自回归（NAR）架构。</span></span><span class="sent" data-sid="s-abstract-1-3"><span class="zh">传统的离散 NAR 模型在复杂的两阶段（文本到语义再到声学）流水线中存在性能瓶颈，与之不同，OmniVoice 直接将文本映射到多码本声学 token。</span></span><span class="sent" data-sid="s-abstract-1-4"><span class="zh">这一简化的方案得益于两项关键技术创新：(1) 用于高效训练的全码本随机掩码策略；(2) 从预训练 LLM 初始化，以确保出色的可懂度。</span><button class="mk feat" data-sid="s-abstract-1-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-abstract-1-5"><span class="zh">凭借一个完全来自开源数据的 581k 小时多语数据集，OmniVoice 实现了迄今最广的语言覆盖，并在中文、英文以及多样化的多语种基准上取得了 SOTA 表现。</span><button class="mk feat" data-sid="s-abstract-1-5" title="查看讲解">解</button></span><span class="sent" data-sid="s-abstract-1-6"><span class="zh">我们的代码和预训练模型已公开 [1]。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-abstract-1-4">
+      <div class="ann-card kind-concept">
+        <div class="ann-kind">概念</div>
+        <div class="ann-title">LLM 初始化是什么</div>
+        <div class="ann-quote">initialization from a pre-trained LLM</div>
+        <div class="exp exp-tech">指直接用预训练大语言模型（Qwen3-0.6B）的权重初始化双向 Transformer 主干，让模型'天生'具备语言学先验。这一手在 AR-TTS（如 CosyVoice 系）已是常规操作，但 NAR TTS 此前没人成功过——因为 NAR 的双向注意力与 LLM 的因果掩码训练方式矛盾，作者声称首次把它做成了。这是全文最值得记住的贡献点之一。</div>
+        
+      </div></div><div class="ann-panel" data-sid="s-abstract-1-5">
+      <div class="ann-card kind-number">
+        <div class="ann-kind">数字怎么理解</div>
+        <div class="ann-title">581k 小时什么量级</div>
+        <div class="ann-quote">a 581k-hour multilingual dataset curated entirely from open-source data</div>
+        <div class="exp exp-tech">581k 小时（约 66 年不间断音频）是本文真正的护城河：它不是闭源堆出来的，而是聚合 50 个开源数据集（附录 A）清洗而来。相比 Whisper 的 680k 小时、MMS 的约 50 万小时级语料，这个量级处在同一梯队，但全部开源可复现——这在 600+ 语种 TTS 里是第一次。需要注意：开源数据声学质量参差，作者在附录 E 也承认这是上限所在。</div>
+        
+      </div></div></div>
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-1"><span class="secnum">1</span> <span class="t-zh">1 引言</span><span class="t-en">Introduction</span></h2><div class="pblk" id="p-1-1">
+          <p class="en-lines"><span class="sent" data-sid="s-1-1-1"><span class="en">Zero-shot text-to-speech (TTS) models trained on large-scale datasets have demonstrated a remarkable ability to generate high-quality speech conditioned on only a few seconds of reference audio [1, 2].</span></span> <span class="sent" data-sid="s-1-1-2"><span class="en">Despite these advances, most existing models support only a limited set of languages, often leaving hundreds of low-resource languages behind.</span></span> <span class="sent" data-sid="s-1-1-3"><span class="en">Expanding language coverage is not merely a technical challenge but also a crucial step toward extending speech technologies to languages across the globe.</span></span> <span class="sent" data-sid="s-1-1-4"><span class="en">To address this gap, we aim to develop a massively multilingual zero-shot TTS model supporting hundreds of languages.</span></span> <span class="sent" data-sid="s-1-1-5"><span class="en">Realizing such extensive scaling requires a TTS architecture with exceptional capacity and robustness to handle diverse linguistic patterns.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-1-1"><span class="zh">在大规模数据集上训练的零样本文本转语音（TTS）模型，已展现出仅凭几秒钟参考音频即可生成高质量语音的出色能力 [1, 2]。</span></span><span class="sent" data-sid="s-1-1-2"><span class="zh">尽管取得了这些进展，现有的大多数模型只支持有限的几种语言，往往把数百种低资源语言落在了后面。</span></span><span class="sent" data-sid="s-1-1-3"><span class="zh">扩大语言覆盖不仅是一个技术挑战，更是把语音技术推广到全球各种语言的关键一步。</span></span><span class="sent" data-sid="s-1-1-4"><span class="zh">为弥补这一缺口，我们的目标是开发一个支持数百种语言的大规模多语种零样本 TTS 模型。</span></span><span class="sent" data-sid="s-1-1-5"><span class="zh">要实现如此大规模的扩展，需要一个具备出色容量与鲁棒性的 TTS 架构，以应对多样的语言模式。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-1-2">
+          <p class="en-lines"><span class="sent" data-sid="s-1-2-1"><span class="en">In the pursuit of such scalable and high-quality TTS, current research primarily adheres to two paradigms: autoregressive (AR) [3, 4, 5, 6, 7, 8, 9, 10, 11] and non-autoregressive (NAR) models [12, 13, 14].</span></span> <span class="sent" data-sid="s-1-2-2"><span class="en">NAR models offer advantages in both inference speed (via parallel decoding) and robustness (owing to bidirectional context) [12, 14, 15].</span></span> <span class="sent" data-sid="s-1-2-3"><span class="en">Within NAR frameworks, models can be broadly categorized into continuous-latent-based [14, 16, 17, 18] and discrete-token-based [19].</span></span> <span class="sent" data-sid="s-1-2-4"><span class="en">The latter was shown to yield superior prosodic diversity [20].</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-2-1"><span class="zh">在追求这种可扩展、高质量 TTS 的过程中，当前研究主要遵循两种范式：自回归（AR）模型 [3, 4, 5, 6, 7, 8, 9, 10, 11] 与非自回归（NAR）模型 [12, 13, 14]。</span></span><span class="sent" data-sid="s-1-2-2"><span class="zh">NAR 模型在推理速度（通过并行解码）和鲁棒性（得益于双向上下文）两方面都有优势 [12, 14, 15]。</span></span><span class="sent" data-sid="s-1-2-3"><span class="zh">在 NAR 框架内部，模型大体可以分为基于连续隐空间的 [14, 16, 17, 18] 和基于离散 token 的 [19] 两类。</span></span><span class="sent" data-sid="s-1-2-4"><span class="zh">后者已被证明能带来更丰富的韵律多样性 [20]。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-1-3">
+          <p class="en-lines"><span class="sent" data-sid="s-1-3-1"><span class="en">However, state-of-the-art (SOTA) discrete-token NAR systems [19] typically rely on complex twostage cascaded pipelines (text-to-semantic followed by semantic-to-acoustic).</span></span> <span class="sent" data-sid="s-1-3-2"><span class="en">While such decoupling simplifies the training of individual modules, it also introduces significant drawbacks: (1) error propagation, where inaccuracies in semantic prediction degrade the final audio quality; and (2) information bottlenecks, where low-bitrate semantic representations sacrifice fine-grained acoustic details.</span><button class="mk feat" data-sid="s-1-3-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-1-3-3"><span class="en">While single-stage alternatives [21] attempt to bypass these issues, they have historically lagged behind two-stage systems in terms of speech intelligibility.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-3-1"><span class="zh">然而，最先进的离散 token NAR 系统 [19] 通常依赖复杂的两阶段级联流水线（先文本到语义，再语义到声学）。</span></span><span class="sent" data-sid="s-1-3-2"><span class="zh">这种解耦虽然简化了各模块的训练，但也带来了明显的缺陷：(1) 误差传播，语义预测的偏差会降低最终音频质量；(2) 信息瓶颈，低比特率的语义表示会牺牲细粒度的声学细节。</span><button class="mk feat" data-sid="s-1-3-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-1-3-3"><span class="zh">虽然单阶段方案 [21] 试图绕过这些问题，但历史上它们在语音可懂度上一直落后于两阶段系统。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-1-3-2">
+      <div class="ann-card kind-motivation">
+        <div class="ann-kind">为什么这样设计</div>
+        <div class="ann-title">为什么抛弃两阶段</div>
+        <div class="ann-quote">error propagation, where inaccuracies in semantic prediction degrade the final audio quality</div>
+        <div class="exp exp-tech">SOTA 离散 NAR 系统（如 MaskGCT）走 text-to-semantic + semantic-to-acoustic 两级管线：语义预测错一点，声学阶段只能错上加错；且语义 token 码率低，韵律细节天然丢失。OmniVoice 的回应很激进——干脆删掉语义层，单阶段直接从文本到声学码本。代价是单阶段模型历来可懂度差，这正是后面 LLM 初始化要补的窟窿。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-1-4">
+          <p class="en-lines"><span class="sent" data-sid="s-1-4-1"><span class="en">1https://github.com/k2-fsa/OmniVoice Preprint.</span></span> <span class="sent" data-sid="s-1-4-2"><span class="en">Under review.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-4-1"><span class="zh">[1] https://github.com/k2-fsa/OmniVoice 预印本。</span></span><span class="sent" data-sid="s-1-4-2"><span class="zh">审稿中。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-1-5">
+          <p class="en-lines"><span class="sent" data-sid="s-1-5-1"><span class="en">Text Tokens Acoustic Tokens Predicted Target Bidirectional Transformer Instruct Transcript Prompt Segment Target Masked Segment</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-5-1"><span class="zh">文本 token、声学 token、预测目标、双向 Transformer、指令、转写文本、提示段、目标掩码段。</span></span></p>
+          
+        </div>
+<div class="cap" id="fig-1-1"><span class="cap-k">图</span><p class="en">Figure 1: Illustration of OmniVoice architecture.</p><p class="zh">图 1：OmniVoice 架构示意图。</p></div>
+<div class="pblk" id="p-1-6">
+          <p class="en-lines"><span class="sent" data-sid="s-1-6-1"><span class="en">To bridge this gap, we introduce OmniVoice, an architecturally streamlined yet highly effective discrete NAR TTS framework.</span></span> <span class="sent" data-sid="s-1-6-2"><span class="en">OmniVoice employs a discrete masked diffusion objective [22] with a bidirectional Transformer [23] to directly map text to multi-codebook acoustic tokens, thereby bypassing the complexity and limitations of cascaded pipelines.</span></span> <span class="sent" data-sid="s-1-6-3"><span class="en">Its core modeling philosophy extends the success of diffusion language models [24, 25] to the speech domain.</span></span> <span class="sent" data-sid="s-1-6-4"><span class="en">We demonstrate that the potential of this minimalist architecture can be fully unleashed through two technical innovations: (1) Full-Codebook Random Masking: Conventional multi-codebook acoustic prediction methods adopt &quot;per-layer&quot; masking schedules [26, 19], suffering from inefficient convergence.</span></span> <span class="sent" data-sid="s-1-6-5"><span class="en">We propose a fully stochastic masking strategy across all codebooks that significantly enhances training efficiency and generative quality.</span></span> <span class="sent" data-sid="s-1-6-6"><span class="en">(2) LLM Initialization: To resolve the intelligibility issues in single-stage discrete NAR models, we initialize our backbone with pre-trained AR LLM weights to inherit linguistic knowledge, making OmniVoice the first NAR TTS model to successfully benefit from LLM initialization [3].</span><button class="mk feat" data-sid="s-1-6-6" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-6-1"><span class="zh">为弥合这一差距，我们提出 OmniVoice——一个架构精简但高度有效的离散 NAR TTS 框架。</span></span><span class="sent" data-sid="s-1-6-2"><span class="zh">OmniVoice 采用离散掩码扩散目标 [22]，配合双向 Transformer [23]，直接将文本映射到多码本声学 token，从而绕开级联流水线的复杂性与固有局限。</span></span><span class="sent" data-sid="s-1-6-3"><span class="zh">其建模理念的核心，是把扩散语言模型 [24, 25] 的成功经验延伸到语音领域。</span></span><span class="sent" data-sid="s-1-6-4"><span class="zh">我们证明，通过两项技术创新可以充分释放这种极简架构的潜力：(1) 全码本随机掩码：传统的多码本声学预测方法采用「逐层」掩码调度 [26, 19]，收敛效率低下。</span></span><span class="sent" data-sid="s-1-6-5"><span class="zh">我们提出一种跨全部码本的完全随机掩码策略，显著提升了训练效率与生成质量。</span></span><span class="sent" data-sid="s-1-6-6"><span class="zh">(2) LLM 初始化：为解决单阶段离散 NAR 模型的可懂度问题，我们用预训练 AR LLM 的权重初始化骨干网络以继承语言知识，使 OmniVoice 成为首个成功受益于 LLM 初始化的 NAR TTS 模型 [3]。</span><button class="mk feat" data-sid="s-1-6-6" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-1-6-6">
+      <div class="ann-card kind-comparison">
+        <div class="ann-kind">和以前有什么区别</div>
+        <div class="ann-title">首个吃到 LLM 红利的 NAR</div>
+        <div class="ann-quote">the first NAR TTS model to successfully benefit from LLM initialization</div>
+        <div class="exp exp-tech">AR-TTS 借 LLM 初始化提升可懂度早已是公开配方（VALL-E 系、CosyVoice、Qwen3-TTS 均如此），但 NAR 方向此前照搬即失败。本文表 6 的消融给出了直接证据：同数据同超参下，无 LLM 初始化的模型即便反复调学习率，WER 仍全面高于初始化版本。'first' 的声明是消融撑着的，不是修辞。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-1-7">
+          <p class="en-lines"><span class="sent" data-sid="s-1-7-1"><span class="en">The architectural advantage of OmniVoice makes it uniquely suited for scaling across diverse linguistic contexts.</span></span> <span class="sent" data-sid="s-1-7-2"><span class="en">We curated a 581k-hour multilingual dataset encompassing more than 600 languages, derived exclusively from open-source resources.</span></span> <span class="sent" data-sid="s-1-7-3"><span class="en">Training on this dataset allows OmniVoice to achieve the most extensive language coverage reported to date, bridging the gap for hundreds of previously under-served low-resource languages.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-7-1"><span class="zh">OmniVoice 的架构优势使其特别适合在多样的语言环境中规模化扩展。</span></span><span class="sent" data-sid="s-1-7-2"><span class="zh">我们构建了一个 581k 小时的多语数据集，覆盖超过 600 种语言，且完全来自开源资源。</span></span><span class="sent" data-sid="s-1-7-3"><span class="zh">在该数据集上训练使 OmniVoice 取得了迄今报道过的最广语言覆盖，为数百种此前缺乏服务的低资源语言弥合了鸿沟。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-1-8">
+          <p class="en-lines"><span class="sent" data-sid="s-1-8-1"><span class="en">Beyond its extensive language coverage, OmniVoice supports multi-dimensional controllability, including prompt denoising [27, 28], speaker attribute-based voice design [29], and fine-grained paralinguistic and phonetic control [30, 31].</span></span> <span class="sent" data-sid="s-1-8-2"><span class="en">These features significantly enhance its versatility, making OmniVoice well-suited for a wide range of real-world applications.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-8-1"><span class="zh">除广泛的语言覆盖外，OmniVoice 还支持多维度的可控性，包括提示去噪 [27, 28]、基于说话人属性的声音设计 [29]，以及细粒度的副语言与语音学控制 [30, 31]。</span></span><span class="sent" data-sid="s-1-8-2"><span class="zh">这些特性显著增强了模型的通用性，使 OmniVoice 适用于广泛的实际应用场景。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-1-9">
+          <p class="en-lines"><span class="sent" data-sid="s-1-9-1"><span class="en">Comprehensive experimental evaluations across Chinese, English, and massively multilingual benchmarks (covering up to 102 languages) validate that OmniVoice delivers SOTA performance in intelligibility, speaker similarity and naturalness, setting a new frontier for high-quality, highcoverage multilingual TTS.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-9-1"><span class="zh">在中文、英文以及大规模多语种基准（覆盖多达 102 种语言）上的综合实验评估表明，OmniVoice 在可懂度、说话人相似度和自然度上均达到 SOTA 表现，为高质量、高覆盖的多语种 TTS 树立了新的前沿。</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-2"><span class="secnum">2</span> <span class="t-zh">2 提出的方法</span><span class="t-en">Proposed Method</span></h2><div class="pblk" id="p-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-1"><span class="en">This section elaborates the design of OmniVoice.</span></span> <span class="sent" data-sid="s-2-1-2"><span class="en">We first introduce the streamlined single-stage architecture that serves as the high-performance backbone for massively multilingual modeling, followed by two core technical optimizations to boost model training efficiency and speech intelligibility.</span></span> <span class="sent" data-sid="s-2-1-3"><span class="en">On this basis, we further present the large-scale multilingual data construction and balancing strategies to realize extensive language coverage, and finally equip the model with multi-dimensional controllability for practical deployment.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-1"><span class="zh">本节详细阐述 OmniVoice 的设计。</span></span><span class="sent" data-sid="s-2-1-2"><span class="zh">我们首先介绍作为大规模多语种建模高性能骨干的精简单阶段架构，随后给出两项核心技术优化，以提升模型的训练效率与语音可懂度。</span></span><span class="sent" data-sid="s-2-1-3"><span class="zh">在此基础上，我们进一步介绍大规模多语数据的构建与均衡策略，以实现广泛的语言覆盖，最后为模型配备多维度的可控性，便于实际部署。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-2-1"><span class="secnum">2.1</span> <span class="t-zh">2.1 架构</span><span class="t-en">Architecture</span></h3><div class="pblk" id="p-2-1-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-1-1"><span class="en">OmniVoice is a single-stage NAR TTS model with a diffusion language model-style architecture [24, 25].</span></span> <span class="sent" data-sid="s-2-1-1-2"><span class="en">Specifically, the model is trained with discrete diffusion objective and adopts a bidirectional Transformer backbone.</span></span> <span class="sent" data-sid="s-2-1-1-3"><span class="en">OmniVoice directly maps text to multi-codebook acoustic tokens, (a) Per-layer masking (b) Full-codebook random masking</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-1-1"><span class="zh">OmniVoice 是一个单阶段 NAR TTS 模型，采用扩散语言模型风格的架构 [24, 25]。</span></span><span class="sent" data-sid="s-2-1-1-2"><span class="zh">具体而言，模型以离散扩散目标进行训练，并采用双向 Transformer 骨干。</span></span><span class="sent" data-sid="s-2-1-1-3"><span class="zh">OmniVoice 直接将文本映射到多码本声学 token，(a) 逐层掩码 (b) 全码本随机掩码。</span></span></p>
+          
+        </div>
+<div class="cap" id="fig-2-1-1"><span class="cap-k">图</span><p class="en">Figure 2: Comparison of per-layer masking and full-codebook random masking. The x-axis denotes the time dimension, the y-axis the codebook dimension, and white blocks indicate masked tokens.</p><p class="zh">图 2：逐层掩码与全码本随机掩码的对比。横轴为时间维度，纵轴为码本维度，白色方块表示被掩码的 token。</p></div>
+<div class="pblk" id="p-2-1-2">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-2-1"><span class="en">eliminating the error propagation and information bottlenecks issues in conventional two-stage cascaded pipelines.</span></span> <span class="sent" data-sid="s-2-1-2-2"><span class="en">This end-to-end streamlined architecture lays the foundation for large-scale multilingual modeling, with targeted optimizations and scaling strategies detailed in the subsequent sections.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-2-1"><span class="zh">从而消除了传统两阶段级联流水线中的误差传播与信息瓶颈问题。</span></span><span class="sent" data-sid="s-2-1-2-2"><span class="zh">这种端到端的精简架构为大规模多语种建模奠定了基础，后续章节将详细介绍针对性的优化与规模化策略。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-1-3">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-3-1"><span class="en">The architecture of OmniVoice is illustrated in Fig. 1.</span></span> <span class="sent" data-sid="s-2-1-3-2"><span class="en">The input of OmniVoice comprises:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-3-1"><span class="zh">OmniVoice 的架构如图 1 所示。</span></span><span class="sent" data-sid="s-2-1-3-2"><span class="zh">OmniVoice 的输入包括：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-1-4">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-4-1"><span class="en">• Text token sequence (Y ): A concatenated sequence of instruct and transcript tokens, providing the linguistic and task-oriented guidance. • Acoustic token matrix (X): A multi-codebook matrix X ∈RT ×C, where T is the number of time steps and C is the number of codebooks.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-4-1"><span class="zh">• 文本 token 序列（Y）：由指令 token 与转写文本 token 拼接而成，提供语言层面与任务层面的引导。• 声学 token 矩阵（X）：一个多码本矩阵 X ∈ R^{T×C}，其中 T 是时间步数，C 是码本数。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-1-5">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-5-1"><span class="en">The acoustic matrix X is partitioned along the temporal dimension into two segments: the prompt segment Xprompt, which contains the prefix acoustic context, and the target masked segment Xtarget, where tokens are randomly replaced with a special mask token [M].</span></span> <span class="sent" data-sid="s-2-1-5-2"><span class="en">The model is designed to leverage the text conditions Y , the prompt Xprompt and unmasked tokens in Xtarget to recover the original tokens in the masked position in Xtarget.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-5-1"><span class="zh">声学矩阵 X 沿时间维度被划分为两段：提示段 Xprompt（包含前缀声学上下文）与目标掩码段 Xtarget（其中的 token 被随机替换为特殊的掩码 token [M]）。</span></span><span class="sent" data-sid="s-2-1-5-2"><span class="zh">模型的设计目标是利用文本条件 Y、提示段 Xprompt 以及 Xtarget 中未被掩码的 token，恢复 Xtarget 中掩码位置的原始 token。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-1-6">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-6-1"><span class="en">The text tokens are embedded via a text embedding layer, and the acoustic tokens are embedded via codebook-specific embedding layers.</span></span> <span class="sent" data-sid="s-2-1-6-2"><span class="en">The embeddings of all C codebooks at the same temporal position are summed to form a unified embedding, which is then fed into a bidirectional Transformer.</span></span> <span class="sent" data-sid="s-2-1-6-3"><span class="en">On the output side, to reconstruct the multi-codebook tokens, OmniVoice employs C independent, codebook-specific prediction heads.</span></span> <span class="sent" data-sid="s-2-1-6-4"><span class="en">Each head projects the final hidden states to output a probability distribution over the vocabulary of its corresponding codebook.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-6-1"><span class="zh">文本 token 经由文本嵌入层进行嵌入，声学 token 则经由各码本专属的嵌入层进行嵌入。</span></span><span class="sent" data-sid="s-2-1-6-2"><span class="zh">同一时间位置上全部 C 个码本的嵌入被相加，形成统一嵌入，随后送入双向 Transformer。</span></span><span class="sent" data-sid="s-2-1-6-3"><span class="zh">在输出侧，为重建多码本 token，OmniVoice 采用 C 个相互独立、码本专属的预测头。</span></span><span class="sent" data-sid="s-2-1-6-4"><span class="zh">每个预测头将最终隐状态投影为对应码本词表上的概率分布。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-1-7">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-7-1"><span class="en">The training loss is computed on the masked acoustic token positions, aiming to optimize the model for accurate token recovery.</span></span> <span class="sent" data-sid="s-2-1-7-2"><span class="en">Let M denote the set of indices (t, c) corresponding to masked positions within the target segment, where t ∈{Tp + 1, . . . , T} and c ∈{1, . . . , C}.</span></span> <span class="sent" data-sid="s-2-1-7-3"><span class="en">The training loss L is formulated as:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-7-1"><span class="zh">训练损失在被掩码的声学 token 位置上计算，目标是优化模型准确恢复 token 的能力。</span></span><span class="sent" data-sid="s-2-1-7-2"><span class="zh">记 M 为目标段内被掩码位置的索引集合 (t, c)，其中 t ∈ {Tp + 1, . . . , T}，c ∈ {1, . . . , C}。</span></span><span class="sent" data-sid="s-2-1-7-3"><span class="zh">训练损失 L 定义为：</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-1-1"><code>L = − X</code></div>
+<div class="eq" id="eq-2-1-2"><code>(t,c)∈M log P(xt,c | X, Y ; θ) (1)</code></div>
+<div class="pblk" id="p-2-1-8">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-8-1"><span class="en">where xt,c is the ground-truth acoustic token at time step t and codebook index c, and P(xt,c | . . . ; θ) is the probability distribution predicted by the model parameterized by θ.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-8-1"><span class="zh">其中 xt,c 是时间步 t、码本索引 c 处的真实声学 token，P(xt,c | . . . ; θ) 是由参数 θ 化的模型所预测的概率分布。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-2-1-1"><span class="secnum">2.1.1</span> <span class="t-zh">2.1.1 面向训练效率的全码本随机掩码</span><span class="t-en">Full-Codebook Random Masking for Training Efficiency</span></h3><div class="pblk" id="p-2-1-1-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-1-1-1"><span class="en">Masking design is critical for OmniVoice, as it directly determines the training pattern and loss function.</span></span> <span class="sent" data-sid="s-2-1-1-1-2"><span class="en">Previous methods for multi-codebook acoustic token prediction typically employ a &quot;perlayer&quot; masking schedule [26, 19], which randomly masks within a single codebook layer c per sample and computes the loss exclusively for that layer.</span></span> <span class="sent" data-sid="s-2-1-1-1-3"><span class="en">Tokens in layers above the selected layer are fully masked but excluded from loss computation.</span></span> <span class="sent" data-sid="s-2-1-1-1-4"><span class="en">Such masking strategy is designed to align with the layer-wise inference.</span></span> <span class="sent" data-sid="s-2-1-1-1-5"><span class="en">However, it optimizes only a sparse subset of the token matrix at each iteration, leading to suboptimal training efficiency.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-1-1-1"><span class="zh">掩码设计对 OmniVoice 至关重要，因为它直接决定了训练模式与损失函数。</span></span><span class="sent" data-sid="s-2-1-1-1-2"><span class="zh">以往的多码本声学 token 预测方法通常采用「逐层」掩码调度 [26, 19]，即每个样本只在某一个码本层 c 内随机掩码，并且只对该层计算损失。</span></span><span class="sent" data-sid="s-2-1-1-1-3"><span class="zh">高于所选层的各层中的 token 虽然被全部掩码，但不参与损失计算。</span></span><span class="sent" data-sid="s-2-1-1-1-4"><span class="zh">这种掩码策略是为了与逐层推理方式对齐而设计的。</span></span><span class="sent" data-sid="s-2-1-1-1-5"><span class="zh">然而，它每次迭代只优化 token 矩阵的一个稀疏子集，导致训练效率欠佳。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-1-1-2">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-1-2-1"><span class="en">To circumvent this limitation, OmniVoice adopts a fully stochastic masking strategy across all codebook layers.</span></span> <span class="sent" data-sid="s-2-1-1-2-2"><span class="en">Specifically, we independently sample a binary mask mi,j ∼Bernoulli(pt) for every entry in the T × C token matrix, where the masking ratio pt is drawn from a uniform distribution pt ∼U(0, 1) for each training instance.</span><button class="mk" data-sid="s-2-1-1-2-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-1-1-2-3"><span class="en">Consequently, on average, 50% of the tokens are used for Duration (Hours) 100 10 1 0.1 100K hours: 2 10K hours: 10 1K hours: 33 100 hours: 76 10 hours: 381 1 hours: 635 1 100 200 300 400 500 600 646 Language Rank 0.01</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-1-2-1"><span class="zh">为绕开这一局限，OmniVoice 采用跨全部码本层的完全随机掩码策略。</span></span><span class="sent" data-sid="s-2-1-1-2-2"><span class="zh">具体而言，我们对 T × C token 矩阵中的每个元素独立采样一个二值掩码 mi,j ∼ Bernoulli(pt)，其中每个训练实例的掩码比例 pt 从均匀分布 pt ∼ U(0, 1) 中抽取。</span><button class="mk" data-sid="s-2-1-1-2-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-1-1-2-3"><span class="zh">因此，平均有 50% 的 token 被用于（抽取残留的图表正文：时长（小时）100 / 10 / 1 / 0.1；100K 小时：2 种语言，10K 小时：10 种，1K 小时：33 种，100 小时：76 种，10 小时：381 种，1 小时：635 种；语言排名轴刻度 1 / 100 / 200 / 300 / 400 / 500 / 600，共 646 种语言；0.01）。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-1-1-2-2">
+      <div class="ann-card kind-engineering">
+        <div class="ann-kind">工程启发</div>
+        <div class="ann-title">掩码率均匀采样的用意</div>
+        <div class="ann-quote">the masking ratio pt is drawn from a uniform distribution pt ∼U(0, 1)</div>
+        <div class="exp exp-tech">pt 从 0 到 1 均匀采样，意味着训练时模型见过从'几乎全部可见'到'几乎全部掩码'的所有难度档位，这恰好覆盖了推理时 32 步迭代去掩码过程中每一步的条件分布。这是掩码扩散训练的标配技巧（与 MaskGIT/dLLM 一脉相承）：训练分布与推理轨迹对齐，避免某一步遇到训练中没见过的掩码比例而崩坏。实现成本为零，收益是推理稳定性。</div>
+        
+      </div></div></div>
+        </div>
+<div class="cap" id="fig-2-1-1-1"><span class="cap-k">图</span><p class="en">Figure 3: Statistics of the multilingual training dataset.</p><p class="zh">图 3：多语训练数据集的统计信息。</p></div>
+<div class="pblk" id="p-2-1-1-3">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-1-3-1"><span class="en">loss computation, C times more than per-layer masking strategy, significantly accelerating convergence and boosting generative quality.</span><button class="mk feat" data-sid="s-2-1-1-3-1" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-1-3-1"><span class="zh">损失计算的 token 数约为逐层掩码策略的 C 倍，显著加速了收敛并提升了生成质量。</span><button class="mk feat" data-sid="s-2-1-1-3-1" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-1-1-3-1">
+      <div class="ann-card kind-concept">
+        <div class="ann-kind">概念</div>
+        <div class="ann-title">全码本随机掩码</div>
+        <div class="ann-quote">C times more than per-layer masking strategy</div>
+        <div class="exp exp-tech">传统 per-layer 掩码每个样本只在某一个码本层内随机掩码、只算该层损失；OmniVoice 对 T×C 个 token 位置逐点独立伯努利采样，掩码率 pt 再从 U(0,1) 均匀抽取。平均每次迭代约 50% 的 token 参与损失，是单层的 C 倍（C=8 即 8 倍监督密度）。监督信号密度的提升直接换来收敛速度和生成质量，这是扩散 LM 式训练相对层序生成的结构性优势。</div>
+        
+      </div></div></div>
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-2-1-2"><span class="secnum">2.1.2</span> <span class="t-zh">2.1.2 面向可懂度的 LLM 初始化</span><span class="t-en">LLM Initialization for Intelligibility</span></h3><div class="pblk" id="p-2-1-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-2-1-1"><span class="en">Existing discrete NAR TTS models [19, 21], particularly single-stage architectures [21], often exhibit suboptimal intelligibility compared to their counterparts.</span></span> <span class="sent" data-sid="s-2-1-2-1-2"><span class="en">To address this, we propose a simple yet effective strategy: initializing the model backbone with pre-trained AR large language models (LLMs) [32].</span></span> <span class="sent" data-sid="s-2-1-2-1-3"><span class="en">While LLM-based initialization has been successfully integrated into recent AR-TTS frameworks [3, 33], OmniVoice is the first NAR TTS model that successfully leverages LLM initialization to achieve notable intelligibility gains.</span></span> <span class="sent" data-sid="s-2-1-2-1-4"><span class="en">Our backbone is structurally identical to standard AR LLMs, facilitating direct weight transfer.</span></span> <span class="sent" data-sid="s-2-1-2-1-5"><span class="en">While these LLMs are originally trained with a causal mask, we empirically find that their pre-trained knowledge translates well to our bidirectional architecture.</span><button class="mk feat" data-sid="s-2-1-2-1-5" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-1-2-1-6"><span class="en">This initialization allows OmniVoice to repurpose LLM’s linguistic capacity as a strong prior for text-to-speech mapping, significantly enhancing the intelligibility of the generated speech.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-2-1-1"><span class="zh">现有的离散 NAR TTS 模型 [19, 21]——尤其是单阶段架构 [21]——与其他类型的模型相比，往往表现出欠佳的可懂度。</span></span><span class="sent" data-sid="s-2-1-2-1-2"><span class="zh">为解决这一问题，我们提出一个简单却有效的策略：用预训练 AR 大语言模型（LLM）[32] 初始化模型骨干。</span></span><span class="sent" data-sid="s-2-1-2-1-3"><span class="zh">虽然基于 LLM 的初始化已被成功引入近期的 AR-TTS 框架 [3, 33]，但 OmniVoice 是首个成功利用 LLM 初始化并获得显著可懂度提升的 NAR TTS 模型。</span></span><span class="sent" data-sid="s-2-1-2-1-4"><span class="zh">我们的骨干在结构上与标准 AR LLM 完全一致，因此可以直接迁移权重。</span></span><span class="sent" data-sid="s-2-1-2-1-5"><span class="zh">尽管这些 LLM 最初是用因果掩码训练的，但我们凭经验发现，其预训练知识可以很好地迁移到我们的双向架构中。</span><button class="mk feat" data-sid="s-2-1-2-1-5" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-1-2-1-6"><span class="zh">这种初始化让 OmniVoice 能够把 LLM 的语言能力重新用作文本到语音映射的强先验，显著提升生成语音的可懂度。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-1-2-1-5">
+      <div class="ann-card kind-critique">
+        <div class="ann-kind">值得质疑</div>
+        <div class="ann-title">因果到双向为何能迁</div>
+        <div class="ann-quote">their pre-trained knowledge translates well to our bidirectional architecture</div>
+        <div class="exp exp-tech">LLM 是用因果掩码训练的，搬来做双向注意力理论上存在分布失配，作者只用 'empirically find' 一句带过，未给出机制解释。可能的原因是底层句法/词法表示对掩码方向不敏感，且语音目标提供了足够强的下游监督。但读者应注意：这是一个工程上成立、理论上未解释的关键假设，换成更大或不同架构的 LLM 未必同样顺利。</div>
+        
+      </div></div></div>
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-2-2"><span class="secnum">2.2</span> <span class="t-zh">2.2 多语种规模化</span><span class="t-en">Multilingual Scaling</span></h3><div class="pblk" id="p-2-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-1-1"><span class="en">A core objective of this work is to extend language support to over 600 languages, including hundreds of low-resource languages that are rarely supported in mainstream TTS systems.</span></span> <span class="sent" data-sid="s-2-2-1-2"><span class="en">OmniVoice’s streamlined end-to-end architecture is inherently well-suited for such large-scale multilingual scaling.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-1-1"><span class="zh">本工作的核心目标之一，是把语言支持扩展到 600 种以上，其中包括数百种主流 TTS 系统很少支持的低资源语言。</span></span><span class="sent" data-sid="s-2-2-1-2"><span class="zh">OmniVoice 精简的端到端架构天然适合这种大规模的多语种扩展。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-2-1"><span class="en">Expanding language coverage of TTS is a long-standing challenge [34, 35, 36, 37, 38].</span></span> <span class="sent" data-sid="s-2-2-2-2"><span class="en">While MMS [39] scales to more than 1,000 languages, yet lacks zero-shot voice cloning capabilities and relies on language-specific modeling.</span></span> <span class="sent" data-sid="s-2-2-2-3"><span class="en">Conversely, current multilingual zero-shot TTS models remain limited to narrow linguistic scopes, covering only a few dozen languages [40, 41, 36, 42, 33, 43, 38].</span></span> <span class="sent" data-sid="s-2-2-2-4"><span class="en">To bridge this gap, we introduce the first massively multilingual zero-shot TTS model capable of generalizing across hundreds of diverse languages within a single, unified model.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-2-1"><span class="zh">扩大 TTS 的语言覆盖是一个长期存在的挑战 [34, 35, 36, 37, 38]。</span></span><span class="sent" data-sid="s-2-2-2-2"><span class="zh">MMS [39] 虽然扩展到超过 1,000 种语言，但不具备零样本声音克隆能力，且依赖特定于语言的建模。</span></span><span class="sent" data-sid="s-2-2-2-3"><span class="zh">反过来看，当前的多语零样本 TTS 模型仍局限于狭窄的语言范围，只覆盖几十种语言 [40, 41, 36, 42, 33, 43, 38]。</span></span><span class="sent" data-sid="s-2-2-2-4"><span class="zh">为弥合这一差距，我们提出首个大规模多语种零样本 TTS 模型，能够在单一统一模型内泛化到数百种差异巨大的语言。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-3-1"><span class="en">Data acquisition remains one of the primary bottlenecks for large-scale multilingual expansion.</span></span> <span class="sent" data-sid="s-2-2-3-2"><span class="en">To address this, we aggregated 50 datasets by leveraging open-source community efforts (see Appendix A for the complete list).</span></span> <span class="sent" data-sid="s-2-2-3-3"><span class="en">Given the heterogeneous quality of these sources (many of which were not originally designed for TTS and contain noisy audio or transcriptions), we employed a speech restoration model [44] to enhance degraded speech and applied rule-based filtering [17] to exclude invalid transcriptions.</span></span> <span class="sent" data-sid="s-2-2-3-4"><span class="en">The resulting corpus comprises 581k hours of audio spanning more than 600 languages (detailed statistics in Fig. 3).</span></span> <span class="sent" data-sid="s-2-2-3-5"><span class="en">Training on this unprecedented dataset empowers OmniVoice to achieve the broadest language coverage reported to date, significantly advancing the SOTA in multilingual TTS.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-3-1"><span class="zh">数据获取仍是大规模多语种扩展的主要瓶颈之一。</span></span><span class="sent" data-sid="s-2-2-3-2"><span class="zh">为此，我们借助开源社区的成果，聚合了 50 个数据集（完整清单见附录 A）。</span></span><span class="sent" data-sid="s-2-2-3-3"><span class="zh">考虑到这些数据源质量参差不齐（许多并非为 TTS 设计，含有噪声音频或错误转写），我们使用语音修复模型 [44] 增强受损语音，并采用基于规则的过滤 [17] 剔除无效转写。</span></span><span class="sent" data-sid="s-2-2-3-4"><span class="zh">最终得到的语料包含 581k 小时音频，覆盖超过 600 种语言（详细统计见图 3）。</span></span><span class="sent" data-sid="s-2-2-3-5"><span class="zh">在这个前所未有的数据集上训练，使 OmniVoice 取得了迄今报道过的最广语言覆盖，显著推进了多语种 TTS 的 SOTA。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-2-4">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-4-1"><span class="en">To mitigate the severe data imbalance inherent in massively multilingual datasets, where highresource languages vastly outnumber low-resource ones, we apply a language-level data resampling strategy.</span></span> <span class="sent" data-sid="s-2-2-4-2"><span class="en">Specifically, we upsample the training data of low-resource languages by assigning a repetition factor, ri, to each language i.</span></span> <span class="sent" data-sid="s-2-2-4-3"><span class="en">Let Di denote the total audio duration for language i, and Dmax represent the maximum duration across all languages.</span></span> <span class="sent" data-sid="s-2-2-4-4"><span class="en">The repetition factor is formulated as:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-4-1"><span class="zh">大规模多语数据集中固有的数据失衡问题十分严重——高资源语言的数据量远超低资源语言；为缓解这一点，我们采用语言级数据重采样策略。</span></span><span class="sent" data-sid="s-2-2-4-2"><span class="zh">具体而言，我们为每种语言 i 赋予一个重复因子 ri，对低资源语言的训练数据进行上采样。</span></span><span class="sent" data-sid="s-2-2-4-3"><span class="zh">记 Di 为语言 i 的总音频时长，Dmax 为所有语言中的最大时长。</span></span><span class="sent" data-sid="s-2-2-4-4"><span class="zh">重复因子定义为：</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-2-1"><code>ri = max</code></div>
+<div class="pblk" id="p-2-2-5">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-5-1"><span class="en">1, round</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-5-1"><span class="zh">1，四舍五入（为公式 (2) 的抽取残留片段）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-2-2"><code>Dmax</code></div>
+<div class="eq" id="eq-2-2-3"><code>1−β!!</code></div>
+<div class="eq" id="eq-2-2-4"><code>(2)</code></div>
+<div class="eq" id="eq-2-2-5"><code>Di</code></div>
+<div class="pblk" id="p-2-2-6">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-6-1"><span class="en">where β ∈[0, 1] is a hyperparameter controlling the degree of smoothing.</span></span> <span class="sent" data-sid="s-2-2-6-2"><span class="en">Setting β = 1.0 retains the natural long-tail distribution of the dataset, whereas β = 0.0 yields a uniform distribution across all languages.</span></span> <span class="sent" data-sid="s-2-2-6-3"><span class="en">In our implementation, we empirically set β = 0.8 to keep the performance of highresource languages while ensuring adequate model exposure to low-resource languages.</span><button class="mk" data-sid="s-2-2-6-3" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-6-1"><span class="zh">其中 β ∈ [0, 1] 是控制平滑程度的超参数。</span></span><span class="sent" data-sid="s-2-2-6-2"><span class="zh">设 β = 1.0 时保留数据集天然的长尾分布，而 β = 0.0 则得到所有语言上的均匀分布。</span></span><span class="sent" data-sid="s-2-2-6-3"><span class="zh">在我们的实现中，经验性地取 β = 0.8，在保持高资源语言性能的同时，确保模型对低资源语言有充分的接触。</span><button class="mk" data-sid="s-2-2-6-3" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-2-6-3">
+      <div class="ann-card kind-number">
+        <div class="ann-kind">数字怎么理解</div>
+        <div class="ann-title">重采样 β=0.8 的取舍</div>
+        <div class="ann-quote">we empirically set β = 0.8</div>
+        <div class="exp exp-tech">β 控制语言重采样的平滑程度：β=1.0 保留自然长尾分布（高资源语言占绝对主导），β=0.0 所有语言等频。取 0.8 意味着向低资源语言大幅倾斜但不彻底拉平——英语 206k 小时和仅 0.02 小时的濒危语言差距依然悬殊，只是低资源语言获得了最低限度的曝光。这是多语种训练的经典配方（mT5、MMS 同款思路），数值本身是经验调出来的，论文没有给 β 扫描的消融。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-2-2-7">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-7-1"><span class="en">For multilingual text processing, we employ the subword tokenizer of pre-trained LLMs, eliminating cumbersome grapheme-to-phoneme conversion and language-specific text normalization.</span><button class="mk" data-sid="s-2-2-7-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-2-7-2"><span class="en">This strategy also allows the LLM backbone to inherit and leverage its pre-trained knowledge efficiently.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-7-1"><span class="zh">在多语文本处理方面，我们直接采用预训练 LLM 的子词分词器，避免了繁琐的字位到音素转换和特定语言的文本规范化。</span><button class="mk" data-sid="s-2-2-7-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-2-7-2"><span class="zh">这一策略也让 LLM 骨干能够高效地继承并利用其预训练知识。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-2-7-1">
+      <div class="ann-card kind-motivation">
+        <div class="ann-kind">为什么这样设计</div>
+        <div class="ann-title">为什么不做 G2P</div>
+        <div class="ann-quote">eliminating cumbersome grapheme-to-phoneme conversion and language-specific text normalization</div>
+        <div class="exp exp-tech">600+ 语种逐一配字位转音素（G2P）和文本规范化规则是不现实的工程负担，直接用 LLM 子词 tokenizer 把文本处理'外包'给语言模型的预训练知识，是规模化覆盖的必然选择。但这也是把双刃剑：附录 E 承认复杂数字序列和数学表达的处理因此受限，需要外部文本规范化前端补齐——绕开的问题最终会以另一种形式回来。</div>
+        
+      </div></div></div>
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-2-3"><span class="secnum">2.3</span> <span class="t-zh">2.3 多维度可控性</span><span class="t-en">Multi-Dimensional Controllability</span></h3><div class="pblk" id="p-2-3-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-1-1"><span class="en">Beyond its extensive multilingual coverage, we further equip OmniVoice with multi-dimensional controllability across acoustic, identity, and linguistic aspects.</span></span> <span class="sent" data-sid="s-2-3-1-2"><span class="en">This comprehensive control mechanism significantly improves the model’s practicality for complex, real-world applications.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-3-1-1"><span class="zh">除广泛的多语种覆盖外，我们还为 OmniVoice 配备了声学、身份与语言三个方面的多维度可控性。</span></span><span class="sent" data-sid="s-2-3-1-2"><span class="zh">这套完整的控制机制显著提升了模型在复杂的真实应用场景中的实用性。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-2-3-1"><span class="secnum">2.3.1</span> <span class="t-zh">2.3.1 声学控制：提示去噪</span><span class="t-en">Acoustic Control: Prompt Denoising</span></h3><div class="pblk" id="p-2-3-1-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-1-1-1"><span class="en">In practical scenarios, audio prompts are often recorded in non-ideal conditions, potentially compromised by environmental noise or reverberation.</span></span> <span class="sent" data-sid="s-2-3-1-1-2"><span class="en">To prevent the model from replicating these unwanted artifacts, we implement a prompt denoising task [27, 28].</span></span> <span class="sent" data-sid="s-2-3-1-1-3"><span class="en">During training, we augment a subset of the data by injecting synthetic noise and reverberation into the prompt segments.</span></span> <span class="sent" data-sid="s-2-3-1-1-4"><span class="en">These samples are paired with a specific instruction token, &lt;|denoise|&gt;.</span><button class="mk" data-sid="s-2-3-1-1-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-3-1-1-5"><span class="en">This mechanism compels the model to disentangle the speaker’s intrinsic voice identity from the acoustic environment, enabling the synthesis of clean, high-fidelity speech even when conditioned on degraded prompts.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-3-1-1-1"><span class="zh">在实际场景中，音频提示往往在非理想条件下录制，可能受到环境噪声或混响的影响。</span></span><span class="sent" data-sid="s-2-3-1-1-2"><span class="zh">为防止模型复现这些不想要的瑕疵，我们实现了提示去噪任务 [27, 28]。</span></span><span class="sent" data-sid="s-2-3-1-1-3"><span class="zh">训练时，我们对部分数据进行增强，向提示段注入合成噪声与混响。</span></span><span class="sent" data-sid="s-2-3-1-1-4"><span class="zh">这些样本与一个特定的指令 token &lt;|denoise|&gt; 配对。</span><button class="mk" data-sid="s-2-3-1-1-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-3-1-1-5"><span class="zh">这一机制迫使模型把说话人内在的音色身份与声学环境解耦，使得即使在退化的提示条件下，也能合成干净、高保真的语音。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-3-1-1-4">
+      <div class="ann-card kind-engineering">
+        <div class="ann-kind">工程启发</div>
+        <div class="ann-title">提示去噪的实现</div>
+        <div class="ann-quote">These samples are paired with a specific instruction token, &lt;|denoise|&gt;.</div>
+        <div class="exp exp-tech">做法朴素有效：训练时给一部分样本的提示段注入合成噪声/混响，同时在指令位加 &lt;|denoise|&gt; token，强迫模型把说话人身份与声学环境解耦——条件可以脏，目标必须干净。推理时只需在带噪提示前加该 token 即得干净输出。表 7 显示代价是 SIM-o 从 0.697 微降到 0.668（输出比噪声提示'更标准'所致），作者认为这笔交易划算。</div>
+        
+      </div></div></div>
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-2-3-2"><span class="secnum">2.3.2</span> <span class="t-zh">2.3.2 身份控制：基于说话人属性的声音设计</span><span class="t-en">Identity Control: Speaker-Attribute-Based Voice Design</span></h3><div class="pblk" id="p-2-3-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-2-1-1"><span class="en">To enable flexible TTS in the absence of an audio prompt, OmniVoice supports speaker-attributebased voice design [29, 42].</span></span> <span class="sent" data-sid="s-2-3-2-1-2"><span class="en">By incorporating specific speaker attributes (e.g., gender, age, pitch, and accent/dialect) into the training instruction sequence, the model can synthesize highly customized voices on demand.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-3-2-1-1"><span class="zh">为在没有音频提示的情况下也能灵活合成语音，OmniVoice 支持基于说话人属性的声音设计 [29, 42]。</span></span><span class="sent" data-sid="s-2-3-2-1-2"><span class="zh">通过把具体的说话人属性（如性别、年龄、音高以及口音/方言）纳入训练指令序列，模型可以按需合成高度定制化的声音。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-2-3-3"><span class="secnum">2.3.3</span> <span class="t-zh">2.3.3 语言控制：副语言与语音学</span><span class="t-en">Linguistic Control: Paralinguistics and Phonetics</span></h3><div class="pblk" id="p-2-3-3-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-3-1-1"><span class="en">To bridge the gap between basic intelligibility and human-like expressiveness, we incorporate paralinguistic control (e.g., laughter) by training on datasets enriched with affective cues [30, 45].</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-3-3-1-1"><span class="zh">为弥合基础可懂度与类人表现力之间的差距，我们引入副语言控制（如笑声），通过在富含情感线索的数据集 [30, 45] 上训练来实现。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-3-3-2">
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-3-2-1"><span class="en">Furthermore, recognizing that models may occasionally encounter challenges with the pronunciation of linguistic corner cases, such as Chinese polyphonic characters or specialized English terminology, we adopt a hybrid text input format [31] to provide users with explicit phonetic override capabilities.</span></span> <span class="sent" data-sid="s-2-3-3-2-2"><span class="en">During training, we stochastically replace characters or words with their corresponding phonetic transcriptions, specifically Pinyin for Chinese and phonemes from the CMU pronunciation dictionary for English.</span></span> <span class="sent" data-sid="s-2-3-3-2-3"><span class="en">This mechanism allows for deterministic control over pronunciation during inference, enabling the model to handle complex linguistic scenarios with high precision.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-3-3-2-1"><span class="zh">此外，考虑到模型偶尔会在一些语言学的边角案例上遇到发音困难——例如中文多音字或专业英文术语，我们采用混合文本输入格式 [31]，为用户提供显式的发音覆盖能力。</span></span><span class="sent" data-sid="s-2-3-3-2-2"><span class="zh">训练时，我们随机地把字符或单词替换为对应的语音转写——中文用拼音，英文用 CMU 发音词典的音素。</span></span><span class="sent" data-sid="s-2-3-3-2-3"><span class="zh">该机制使得推理时可以确定性地控制发音，让模型能够以高精度处理复杂的语言场景。</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-3"><span class="secnum">3</span> <span class="t-zh">3 实验设置</span><span class="t-en">Experimental Setup</span></h2><div class="pblk" id="p-3-1">
+          <p class="en-lines"><span class="sent" data-sid="s-3-1-1"><span class="en">This section details the training datasets, model configurations, training and inference protocols, evaluation benchmarks, and evaluation metrics of our experiments.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-1-1"><span class="zh">本节详细介绍实验所用的训练数据集、模型配置、训练与推理协议、评估基准以及评估指标。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-3-1"><span class="secnum">3.1</span> <span class="t-zh">3.1 训练数据集</span><span class="t-en">Training Datasets</span></h3><div class="pblk" id="p-3-1-1">
+          <p class="en-lines"><span class="sent" data-sid="s-3-1-1-1"><span class="en">We train OmniVoice under two distinct data configurations.</span></span> <span class="sent" data-sid="s-3-1-1-2"><span class="en">First, a bilingual variant is trained on the Chinese and English subsets of the Emilia dataset [46], enabling fair comparison with existing SOTA zero-shot TTS models trained on the same data.</span></span> <span class="sent" data-sid="s-3-1-1-3"><span class="en">Prompt denoising is omitted in this variant to isolate its impact and highlight the inherent advantages of our architecture.</span></span> <span class="sent" data-sid="s-3-1-1-4"><span class="en">Second, a multilingual variant is trained on a self-built 581k-hour multilingual dataset spanning 600+ languages.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-1-1-1"><span class="zh">我们在两种不同的数据配置下训练 OmniVoice。</span></span><span class="sent" data-sid="s-3-1-1-2"><span class="zh">第一种是双语变体，在 Emilia 数据集 [46] 的中英文子集上训练，以便与在相同数据上训练的现有 SOTA 零样本 TTS 模型进行公平对比。</span></span><span class="sent" data-sid="s-3-1-1-3"><span class="zh">该变体中不使用提示去噪，以隔离其影响、凸显我们架构的固有优势。</span></span><span class="sent" data-sid="s-3-1-1-4"><span class="zh">第二种是多语变体，在自建的 581k 小时多语数据集上训练，覆盖 600+ 种语言。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-3-2"><span class="secnum">3.2</span> <span class="t-zh">3.2 模型细节</span><span class="t-en">Model Details</span></h3><div class="pblk" id="p-3-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-1-1"><span class="en">OmniVoice is built on a bidirectional Transformer backbone, which is initialized with the pre-trained LLM weights of Qwen3-0.6B [32].</span></span> <span class="sent" data-sid="s-3-2-1-2"><span class="en">The Higgs-audio tokenizer [47] is adopted to extract 8-codebook acoustic tokens and reconstruct audio from these tokens.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-1-1"><span class="zh">OmniVoice 构建在双向 Transformer 骨干之上，以 Qwen3-0.6B [32] 的预训练 LLM 权重进行初始化。</span></span><span class="sent" data-sid="s-3-2-1-2"><span class="zh">我们采用 Higgs-audio 分词器 [47] 提取 8 码本声学 token，并由这些 token 重建音频。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-3-3"><span class="secnum">3.3</span> <span class="t-zh">3.3 训练</span><span class="t-en">Training</span></h3><div class="pblk" id="p-3-3-1">
+          <p class="en-lines"><span class="sent" data-sid="s-3-3-1-1"><span class="en">The AdamW optimizer [48] is used, with a peak learning rate of 1e −4 and a cosine learning rate schedule that includes 3% of total training steps as warmup.</span></span> <span class="sent" data-sid="s-3-3-1-2"><span class="en">Mixed precision (BF16) and sequence packing (8192 tokens per GPU) are employed during training to improve efficiency.</span></span> <span class="sent" data-sid="s-3-3-1-3"><span class="en">Using 8 H800 GPUs, the multilingual variant (2M training updates) and the bilingual Emilia variant (300k training updates) were trained in 9.66 days and 1.33 days, respectively.</span><button class="mk feat" data-sid="s-3-3-1-3" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-3-1-1"><span class="zh">优化器采用 AdamW [48]，峰值学习率为 1e-4，使用余弦学习率调度，其中总训练步数的 3% 用于预热。</span></span><span class="sent" data-sid="s-3-3-1-2"><span class="zh">训练中采用混合精度（BF16）与序列打包（每 GPU 8192 个 token）以提升效率。</span></span><span class="sent" data-sid="s-3-3-1-3"><span class="zh">使用 8 张 H800 GPU，多语变体（2M，即 200 万次训练更新）与双语 Emilia 变体（300k，即 30 万次训练更新）分别训练了 9.66 天和 1.33 天。</span><button class="mk feat" data-sid="s-3-3-1-3" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-3-1-3">
+      <div class="ann-card kind-number">
+        <div class="ann-kind">数字怎么理解</div>
+        <div class="ann-title">训练成本并不夸张</div>
+        <div class="ann-quote">were trained in 9.66 days and 1.33 days</div>
+        <div class="exp exp-tech">多语版 2M 步、8 张 H800 跑 9.66 天，约 1855 GPU·天；双语版 300k 步仅 1.33 天。以 646 语种、581k 小时的规模看，这个成本相当克制——得益于 BF16 混合精度、8192 token 序列打包，以及全码本掩码带来的高监督密度。相比之下，同级别 AR 大模型 TTS 的训练账单通常更高。这也让'全开源复现'在算力门槛上可信。</div>
+        
+      </div></div></div>
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-3-4"><span class="secnum">3.4</span> <span class="t-zh">3.4 推理</span><span class="t-en">Inference</span></h3><div class="pblk" id="p-3-4-1">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-1-1"><span class="en">During inference, we perform a 32-steps iterative unmasking process.</span><button class="mk" data-sid="s-3-4-1-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-4-1-2"><span class="en">The cumulative proportion of unmasked tokens at step n, denoted as rn, follows a time-shifted schedule that was originally used in [16]:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-1-1"><span class="zh">推理时，我们执行 32 步的迭代式去掩码过程。</span><button class="mk" data-sid="s-3-4-1-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-3-4-1-2"><span class="zh">第 n 步已去掩码 token 的累计比例记为 rn，遵循 [16] 最初使用的时移调度：</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-4-1-1">
+      <div class="ann-card kind-concept">
+        <div class="ann-kind">概念</div>
+        <div class="ann-title">32 步迭代去掩码</div>
+        <div class="ann-quote">we perform a 32-steps iterative unmasking process</div>
+        <div class="exp exp-tech">推理从全掩码序列出发，每步按置信度选 kn 个位置揭开并填 token，32 步填满。步数是质量与速度的主旋钮：附录 B 显示从 64 步降到 16 步指标几乎不掉（test-clean WER 0.729→0.728），降到 8 步才开始劣化（0.713，UTMOS 明显下滑）。默认 32 步是保守选择，实际部署 16 步即可兼得质量与 RTF 0.0319。</div>
+        
+      </div></div></div>
+        </div>
+<div class="eq" id="eq-3-4-1"><code>rn = τ · (n/N) 1 + (τ −1) · (n/N) (3)</code></div>
+<div class="pblk" id="p-3-4-2">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-2-1"><span class="en">where N = 32 is the total number of steps, and τ = 0.1 is the shift parameter.</span></span> <span class="sent" data-sid="s-3-4-2-2"><span class="en">The proportion of tokens to be newly unmasked at each step n is given by kn = rn −rn−1, where r0 = 0.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-2-1"><span class="zh">其中 N = 32 为总步数，τ = 0.1 为位移参数。</span></span><span class="sent" data-sid="s-3-4-2-2"><span class="zh">第 n 步新去掩码 token 的比例为 kn = rn − rn−1，其中 r0 = 0。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-4-3">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="en">The selection of unmasking positions and token identities is handled as follows:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="zh">去掩码位置的选择与 token 的取值按如下方式处理：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-4-4">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="en">• Position Selection: At each step, we identify kn positions to be unmasked by sampling from the confidence scores in the log-softmax space.</span></span> <span class="sent" data-sid="s-3-4-4-2"><span class="en">To introduce beneficial stochasticity and avoid local optima, we apply a temperature T = 5 to the confidence scores before sampling the indices.</span><button class="mk" data-sid="s-3-4-4-2" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="zh">• 位置选择：每一步，我们从 log-softmax 空间中的置信度分数里采样，选出 kn 个待去掩码的位置。</span></span><span class="sent" data-sid="s-3-4-4-2"><span class="zh">为引入有益的随机性并避免局部最优，我们在采样位置索引前对置信度分数施加温度 T = 5。</span><button class="mk" data-sid="s-3-4-4-2" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-4-4-2">
+      <div class="ann-card kind-engineering">
+        <div class="ann-kind">工程启发</div>
+        <div class="ann-title">温度 5 防局部最优</div>
+        <div class="ann-quote">we apply a temperature T = 5 to the confidence scores before sampling</div>
+        <div class="exp exp-tech">每步揭开哪些位置不是纯取 top-k 置信度，而是先给置信度加 T=5 的高温再采样——高温度拉平分布，让低置信度位置也有机会提前揭开，注入随机性以避免'先易后难'的贪心轨迹锁死在次优解。这与 MaskGIT 的置信度调度思路一致，属于推理期零成本的稳定性技巧，作者称所有这组策略（温度、层惩罚、CFG=2）都经消融验证有效。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-3-4-5">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-5-1"><span class="en">• Token Assignment: Once the positions are selected, the specific token class for each position is determined deterministically by taking the argmax of the predicted probability distribution.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-5-1"><span class="zh">• token 赋值：位置选定后，每个位置的具体 token 类别通过对预测概率分布取 argmax 确定性地决定。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-4-6">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-6-1"><span class="en">We also apply a layer penalty on the confidence scores to encourage unmasking lower-layer tokens first.</span></span> <span class="sent" data-sid="s-3-4-6-2"><span class="en">Furthermore, classifier-free guidance [49] is utilized in the log-softmax space with a guidance scale of 2.</span></span> <span class="sent" data-sid="s-3-4-6-3"><span class="en">All aforementioned strategies are verified to effectively improve model performance and generation stability.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-6-1"><span class="zh">我们还在置信度分数上施加层惩罚，以鼓励先去掩码低层 token。</span></span><span class="sent" data-sid="s-3-4-6-2"><span class="zh">此外，我们在 log-softmax 空间中使用无分类器引导 [49]，引导强度为 2。</span></span><span class="sent" data-sid="s-3-4-6-3"><span class="zh">上述所有策略均被验证能有效提升模型性能与生成稳定性。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-4-7">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-7-1"><span class="en">During inference, each character is assigned a script-dependent duration weight w(c) to reflect intrinsic duration differences across writing systems (e.g., CJK, Latin).</span></span> <span class="sent" data-sid="s-3-4-7-2"><span class="en">Given the prompt audio duration Dprompt, the target duration Dtarget is estimated by scaling with the ratio of total character weights:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-7-1"><span class="zh">推理时，每个字符被赋予一个依书写体系而异的时长权重 w(c)，以反映不同文字系统（如 CJK、拉丁字母）固有的时长差异。</span></span><span class="sent" data-sid="s-3-4-7-2"><span class="zh">给定提示音频时长 Dprompt，目标时长 Dtarget 通过字符总权重之比进行缩放估计：</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-4-2"><code>Dtarget = Dprompt · Wtarget</code></div>
+<div class="eq" id="eq-3-4-3"><code>Wprompt (4)</code></div>
+<div class="eq" id="eq-3-4-4"><code>where Wtarget = P c∈Target w(c) and Wprompt = P c∈Prompt w(c).</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-3-4-1"><span class="secnum">3.4.1</span> <span class="t-zh">3.4.1 评估基准</span><span class="t-en">Evaluation Benchmarks</span></h3><div class="pblk" id="p-3-4-1-1">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-1-1-1"><span class="en">We evaluate OmniVoice on four benchmarks covering standard Chinese/English settings and massively multilingual scenarios:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-1-1-1"><span class="zh">我们在四个基准上评估 OmniVoice，覆盖标准的中英文场景与大规模多语种场景：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-4-1-2">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-1-2-1"><span class="en">• LibriSpeech-PC [50, 14]: A standard English zero-shot TTS benchmark.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-1-2-1"><span class="zh">• LibriSpeech-PC [50, 14]：标准的英文零样本 TTS 基准。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-4-1-3">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-1-3-1"><span class="en">• Seed-TTS [2]: A bilingual (Chinese/English) zero-shot benchmark.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-1-3-1"><span class="zh">• Seed-TTS [2]：双语（中/英文）零样本基准。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-4-1-4">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-1-4-1"><span class="en">• MiniMax-Multilingual-24[51]: A multilingual benchmark covering 24 languages.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-1-4-1"><span class="zh">• MiniMax-Multilingual-24 [51]：覆盖 24 种语言的多语基准。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-4-1-5">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-1-5-1"><span class="en">• FLEURS-Multilingual-102: A 102-language multilingual benchmark constructed from the dev/test splits of the FLEURS dataset [52] to further evaluate OmniVoice’s multilingual capability.</span></span> <span class="sent" data-sid="s-3-4-1-5-2"><span class="en">It is the zero-shot TTS evaluation benchmark with the widest language coverage to date.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-1-5-1"><span class="zh">• FLEURS-Multilingual-102：由 FLEURS 数据集 [52] 的 dev/test 划分构建的 102 语种多语基准，用于进一步评估 OmniVoice 的多语种能力。</span></span><span class="sent" data-sid="s-3-4-1-5-2"><span class="zh">它是迄今语言覆盖最广的零样本 TTS 评估基准。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-3-5"><span class="secnum">3.5</span> <span class="t-zh">3.5 评估指标</span><span class="t-en">Evaluation Metrics</span></h3><div class="pblk" id="p-3-5-1">
+          <p class="en-lines"><span class="sent" data-sid="s-3-5-1-1"><span class="en">Our evaluation combines several objective and subjective metrics.</span></span> <span class="sent" data-sid="s-3-5-1-2"><span class="en">For speaker similarity evaluation, we use SIM-o [12] with a WavLM-based [53] ECAPA-TDNN model [54].</span></span> <span class="sent" data-sid="s-3-5-1-3"><span class="en">Intelligibility is measured using word error rate (WER) or character error rate (CER) across different languages.</span></span> <span class="sent" data-sid="s-3-5-1-4"><span class="en">For brevity and consistency, we refer to both WER and CER as WER for datasets using both metrics (SeedTTS and MiniMax-Multilingual-24), while evaluating each language with its appropriate metric.</span></span> <span class="sent" data-sid="s-3-5-1-5"><span class="en">Specifically, we use the Hubert-based ASR model [55] for LibriSpeech-PC test-clean, Paraformerzh [56] for Chinese, the Omnilingual ASR model [57] for the FLEURS benchmark, and Whisperlarge-v3 [58] for the remaining datasets.</span></span> <span class="sent" data-sid="s-3-5-1-6"><span class="en">We also adopt UTMOS [59] to assess objective speech naturalness.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-5-1-1"><span class="zh">我们的评估结合了多项客观与主观指标。</span></span><span class="sent" data-sid="s-3-5-1-2"><span class="zh">说话人相似度评估采用 SIM-o [12]，使用基于 WavLM [53] 的 ECAPA-TDNN 模型 [54]。</span></span><span class="sent" data-sid="s-3-5-1-3"><span class="zh">可懂度按不同语言用词错误率（WER）或字错误率（CER）衡量。</span></span><span class="sent" data-sid="s-3-5-1-4"><span class="zh">为简洁与一致起见，对同时使用两种指标的数据集（SeedTTS 与 MiniMax-Multilingual-24），我们把 WER 和 CER 统称为 WER，但对每种语言使用与其相适应的指标。</span></span><span class="sent" data-sid="s-3-5-1-5"><span class="zh">具体而言，LibriSpeech-PC test-clean 使用基于 Hubert 的 ASR 模型 [55]，中文使用 Paraformer-zh [56]，FLEURS 基准使用 Omnilingual ASR 模型 [57]，其余数据集使用 Whisper large-v3 [58]。</span></span><span class="sent" data-sid="s-3-5-1-6"><span class="zh">我们还采用 UTMOS [59] 评估客观的语音自然度。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-5-2">
+          <p class="en-lines"><span class="sent" data-sid="s-3-5-2-1"><span class="en">These objective metrics are supplemented with subjective evaluations, including comparative mean opinion score (CMOS, [−3, 3]) and similarity mean opinion score (SMOS, [0, 5]), which measure human opinions on relative speech quality and absolute speaker similarity to the prompt audio.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-5-2-1"><span class="zh">这些客观指标之外，还辅以主观评估，包括比较平均意见分（CMOS，[−3, 3]）与相似度平均意见分（SMOS，[0, 5]），分别衡量人类对相对语音质量的评价，以及与提示音频的绝对说话人相似度。</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-4"><span class="secnum">4</span> <span class="t-zh">4 实验结果</span><span class="t-en">Experimental Results</span></h2></section>
+<section>
+      <h3 class="sech lv2" id="sec-4-1"><span class="secnum">4.1</span> <span class="t-zh">4.1 英文与中文评估</span><span class="t-en">Evaluation on English and Chinese</span></h3><div class="cap" id="tab-4-1-1"><span class="cap-k">表</span><p class="en">Table 1 and Table 2 summarize the Chinese and English performance of OmniVoice in comparison with SOTA AR/NAR TTS models.</p><p class="zh">表 1 与表 2 汇总了 OmniVoice 与 SOTA AR/NAR TTS 模型在中文和英文上的性能对比。</p></div>
+<div class="pblk" id="p-4-1-1">
+          <p class="en-lines"><span class="sent" data-sid="s-4-1-1-1"><span class="en">OmniVoice-Emilia surpasses all NAR baselines (F5-TTS [14], ZipVoice [16], MaskGCT [19]) trained on the same Emilia corpus, verifying the effectiveness of our proposed architecture.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-1-1-1"><span class="zh">OmniVoice-Emilia 超越了所有同样在 Emilia 语料上训练的 NAR 基线（F5-TTS [14]、ZipVoice [16]、MaskGCT [19]），验证了我们所提架构的有效性。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-4-1-2">
+          <p class="en-lines"><span class="sent" data-sid="s-4-1-2-1"><span class="en">The final multilingual version OmniVoice model yields competitive overall performance across all benchmarks against baselines trained on unconstrained datasets (IndexTTS2 [5], CosyVoice3 [33], VoxCPM [10], Qwen3-TTS [42]), with particular advantages in speaker similarity and intelligibility.</span></span> <span class="sent" data-sid="s-4-1-2-2"><span class="en">This demonstrates OmniVoice’s strong capability on the two most high-resource languages.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-1-2-1"><span class="zh">最终的多语版 OmniVoice 模型，与在无约束数据集上训练的基线（IndexTTS2 [5]、CosyVoice3 [33]、VoxCPM [10]、Qwen3-TTS [42]）相比，在所有基准上都取得了有竞争力的整体表现，并在说话人相似度与可懂度上具有明显优势。</span></span><span class="sent" data-sid="s-4-1-2-2"><span class="zh">这展示了 OmniVoice 在两种资源最丰富语言上的强大能力。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-4-2"><span class="secnum">4.2</span> <span class="t-zh">4.2 多语基准评估</span><span class="t-en">Evaluation on Multilingual Benchmarks</span></h3><div class="pblk" id="p-4-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-4-2-1-1"><span class="en">We validate OmniVoice’s multilingual capability on the 24-language MiniMax-Multilingual-24 benchmark and the 102-language FLEURS-Multilingual-102 benchmark.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-2-1-1"><span class="zh">我们在 24 语种的 MiniMax-Multilingual-24 基准与 102 语种的 FLEURS-Multilingual-102 基准上验证 OmniVoice 的多语种能力。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-4-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-4-2-2-1"><span class="en">As shown in Table 3, despite being trained exclusively on open-source datasets, OmniVoice clearly outperforms leading commercial systems (ElevenLabs Multilingual v2 and MiniMax-Speech) in both average SIM-o and WER, demonstrating that OmniVoice achieves commercial-grade multilingual TTS performance.</span><button class="mk" data-sid="s-4-2-2-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-2-2-2"><span class="en">While Cantonese shows a higher WER in the table, our analysis reveals that this is due to limitations in the Whisper ASR model rather than the quality of the generated speech.</span><button class="mk feat" data-sid="s-4-2-2-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-2-2-3"><span class="en">When evaluated with the SenseVoice-Small ASR model [60], the WER for Cantonese decreases to 2.273%.</span></span> <span class="sent" data-sid="s-4-2-2-4"><span class="en">However, to maintain consistency with the benchmarks in [51], we retain the Whisper-based results in our report.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-1"><span class="zh">如表 3 所示，尽管完全在开源数据集上训练，OmniVoice 在平均 SIM-o 与 WER 两项上都明显优于领先的商业系统（ElevenLabs Multilingual v2 与 MiniMax-Speech），表明 OmniVoice 达到了商业级的多语 TTS 性能。</span><button class="mk" data-sid="s-4-2-2-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-4-2-2-2"><span class="zh">虽然表中粤语的 WER 偏高，但我们的分析表明，这是 Whisper ASR 模型的局限所致，而非生成语音质量的问题。</span><button class="mk feat" data-sid="s-4-2-2-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-4-2-2-3"><span class="zh">改用 SenseVoice-Small ASR 模型 [60] 评估时，粤语的 WER 降至 2.273%。</span></span><span class="sent" data-sid="s-4-2-2-4"><span class="zh">不过，为与 [51] 中的基准保持一致，我们在报告中仍保留基于 Whisper 的结果。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-4-2-2-1">
+      <div class="ann-card kind-comparison">
+        <div class="ann-kind">和以前有什么区别</div>
+        <div class="ann-title">开源打赢商业系统</div>
+        <div class="ann-quote">clearly outperforms leading commercial systems (ElevenLabs Multilingual v2 and MiniMax-Speech)</div>
+        <div class="exp exp-tech">MiniMax-Multilingual-24 基准上，纯开源数据训练的 OmniVoice 在平均 SIM-o 和 WER 上同时超过 ElevenLabs Multilingual v2 与 MiniMax-Speech 两个头部商业系统。商业系统的训练数据量和质量理论上占优，这个结果说明架构效率（单阶段 + 全码本掩码 + LLM 初始化）可以补偿数据劣势。不过商业系统版本会迭代，此对比是快照而非终局。</div>
+        
+      </div></div><div class="ann-panel" data-sid="s-4-2-2-2">
+      <div class="ann-card kind-critique">
+        <div class="ann-kind">值得质疑</div>
+        <div class="ann-title">WER 指标的测量陷阱</div>
+        <div class="ann-quote">this is due to limitations in the Whisper ASR model rather than the quality of the generated speech</div>
+        <div class="exp exp-tech">粤语 WER 用 Whisper-large-v3 测得 21.92，换 SenseVoice-Small 立刻降到 2.273%——差距近十倍，说明瓶颈在 ASR 评测器而非生成质量。这暴露了整个'用 ASR 测 TTS'范式的系统性风险：当 TTS 逼近甚至超过评测 ASR 的能力边界时，WER/CER 数字失去意义。作者保留了 Whisper 口径以示可比，是诚实的处理，但读者看任何 TTS 的 WER 都该先问用的哪个 ASR。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-4-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-4-2-3-1"><span class="en">Next, we evaluate OmniVoice on our self-built FLEURS-Multilingual-102 benchmark.</span></span> <span class="sent" data-sid="s-4-2-3-2"><span class="en">We report the average SIM-o, average CER, and the number of languages below specific CER thresholds in Table 4.</span></span> <span class="sent" data-sid="s-4-2-3-3"><span class="en">We observe that OmniVoice achieves an average CER of 4.00%, which is comparable to that of the ground truth.</span><button class="mk feat" data-sid="s-4-2-3-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-2-3-4"><span class="en">Per-language CER results are provided in Appendix C.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-2-3-1"><span class="zh">接下来，我们在自建的 FLEURS-Multilingual-102 基准上评估 OmniVoice。</span></span><span class="sent" data-sid="s-4-2-3-2"><span class="zh">我们在表 4 中报告平均 SIM-o、平均 CER，以及 CER 低于特定阈值的语言数量。</span></span><span class="sent" data-sid="s-4-2-3-3"><span class="zh">我们观察到 OmniVoice 的平均 CER 为 4.00%，与真实语音的水平相当。</span><button class="mk feat" data-sid="s-4-2-3-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-4-2-3-4"><span class="zh">逐语言的 CER 结果见附录 C。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-4-2-3-3">
+      <div class="ann-card kind-number">
+        <div class="ann-kind">数字怎么理解</div>
+        <div class="ann-title">4.00% 与真实语音打平</div>
+        <div class="ann-quote">an average CER of 4.00%, which is comparable to that of the ground truth</div>
+        <div class="exp exp-tech">在 102 语种 FLEURS 基准上平均 CER 4.00%，与真实语音录音的 2.850%（不同 ASR 口径）处在同一量级——即合成语音的可懂度已经逼近真实录音被 ASR 识别的水平。更值得注意的是图 4：约半数语言 OmniVoice 的 CER 低于真实语音，因为训练数据里很多真实录音本身含噪或转写不准。'打平真实语音'在两年前是不可想象的里程碑。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-4-2-4">
+          <p class="en-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="en">To better understand OmniVoice’s performance, we plot a figure illustrating the relationship between per-language CER and training data duration in Fig. 4.</span></span> <span class="sent" data-sid="s-4-2-4-2"><span class="en">It can be seen that OmniVoice maintains high</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="zh">为更好地理解 OmniVoice 的表现，我们在图 4 中绘制了逐语言 CER 与训练数据时长之间的关系。</span></span><span class="sent" data-sid="s-4-2-4-2"><span class="zh">可以看到，OmniVoice 保持了较高的（句意延续到后文）。</span></span></p>
+          
+        </div>
+<div class="cap" id="tab-4-2-1"><span class="cap-k">表</span><p class="en">Table 1: Objective evaluation results on Chinese and English test sets. Baseline results are obtained using official checkpoints. Params. (Parameters) denotes the total parameter size of voice cloning TTS systems (including audio tokenizer, vocoder, and other related components). Best results are highlighted in bold. Top: Results on LibriSpeech-PC. Bottom: Results on Seed-TTS test sets.</p><p class="zh">表 1：中英文测试集上的客观评估结果。基线结果使用官方 checkpoint 获得。Params.（参数）表示声音克隆 TTS 系统的总参数规模（包括音频分词器、声码器及其他相关组件）。最优结果以粗体标出。上：LibriSpeech-PC 上的结果。下：Seed-TTS 测试集上的结果。</p></div>
+<div class="pblk" id="p-4-2-5">
+          <p class="en-lines"><span class="sent" data-sid="s-4-2-5-1"><span class="en">Params.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-2-5-1"><span class="zh">参数量。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-4-2-6">
+          <p class="en-lines"><span class="sent" data-sid="s-4-2-6-1"><span class="en">Training Data (hours) LibriSpeech-PC test-clean - - 0.690 1.87 4.10</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-2-6-1"><span class="zh">训练数据（小时）；LibriSpeech-PC test-clean — 数值列（抽取残留的表格碎块）：0.690、1.87、4.10。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-ar-models"><span class="t-zh">AR 模型</span><span class="t-en">AR Models</span></h3><div class="pblk" id="p-ar-models-1">
+          <p class="en-lines"><span class="sent" data-sid="s-ar-models-1-1"><span class="en">IndexTTS2 0.700 2.35 4.06 CosyVoice3 0.694 1.59 4.28 VoxCPM 0.717 1.74 4.18 Qwen3-TTS 0.704 1.60</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-ar-models-1-1"><span class="zh">（表格碎块，客观指标数值）IndexTTS2：0.700、2.35、4.06；CosyVoice3：0.694、1.59、4.28；VoxCPM：0.717、1.74、4.18；Qwen3-TTS：0.704、1.60。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-4-41"><span class="secnum">4.41</span> <span class="t-zh">4.41 NAR 模型</span><span class="t-en">NAR Models</span></h3><div class="pblk" id="p-4-41-1">
+          <p class="en-lines"><span class="sent" data-sid="s-4-41-1-1"><span class="en">F5-TTS 100K Emilia 0.655 1.89 3.89 ZipVoice 100k Emilia 0.668 1.64 3.98 MaskGCT 100K Emilia 0.691 2.26 3.91 OmniVoice-Emilia 100k Emilia 0.697 1.57 4.23 0.729 1.30 4.28 Seed-TTS test-en Seed-TTS test-zh 0.734 2.14 3.52 0.755 1.25 2.78</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-41-1-1"><span class="zh">（表格碎块，客观指标数值）F5-TTS（100K 小时 Emilia）：0.655、1.89、3.89；ZipVoice（100K 小时 Emilia）：0.668、1.64、3.98；MaskGCT（100K 小时 Emilia）：0.691、2.26、3.91；OmniVoice-Emilia（100K 小时 Emilia）：0.697、1.57、4.23；多语版 OmniVoice：0.729、1.30、4.28；Seed-TTS test-en 与 Seed-TTS test-zh 上分别为 0.734、2.14、3.52 与 0.755、1.25、2.78。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-ar-models-2"><span class="t-zh">AR 模型</span><span class="t-en">AR Models</span></h3><div class="pblk" id="p-ar-models-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-ar-models-2-1-1"><span class="en">IndexTTS2 0.706 2.33 3.65 0.764 1.05 3.00 CosyVoice3 0.696 2.17 3.96 0.778 1.14 3.32 VoxCPM 0.731 1.92 3.77 0.772 0.99 2.94 Qwen3-TTS 0.708 1.54 4.16 0.766 1.15</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-ar-models-2-1-1"><span class="zh">（表格碎块，客观指标数值）IndexTTS2：0.706、2.33、3.65，另一列为 0.764、1.05、3.00；CosyVoice3：0.696、2.17、3.96，另一列为 0.778、1.14、3.32；VoxCPM：0.731、1.92、3.77，另一列为 0.772、0.99、2.94；Qwen3-TTS：0.708、1.54、4.16，另一列为 0.766、1.15。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-3-46"><span class="secnum">3.46</span> <span class="t-zh">3.46 NAR 模型</span><span class="t-en">NAR Models</span></h3><div class="pblk" id="p-3-46-1">
+          <p class="en-lines"><span class="sent" data-sid="s-3-46-1-1"><span class="en">F5-TTS 0.664 1.85 3.72 0.750 1.53 2.93 ZipVoice 0.697 1.70 3.82 0.751 1.40 3.15 MaskGCT 0.713 2.88 3.55 0.773 2.40 2.63 OmniVoice-Emilia 0.717 1.72 3.88 0.765 0.89 3.05 0.741 1.60 3.91 0.777 0.84 3.11</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-46-1-1"><span class="zh">（表格碎块，客观指标数值）F5-TTS：0.664、1.85、3.72，另一列 0.750、1.53、2.93；ZipVoice：0.697、1.70、3.82，另一列 0.751、1.40、3.15；MaskGCT：0.713、2.88、3.55，另一列 0.773、2.40、2.63；OmniVoice-Emilia：0.717、1.72、3.88，另一列 0.765、0.89、3.05；多语版 OmniVoice：0.741、1.60、3.91，另一列 0.777、0.84、3.11。</span></span></p>
+          
+        </div>
+<div class="cap" id="tab-3-46-1"><span class="cap-k">表</span><p class="en">Table 2: Subjective evaluation results on Chinese and English test sets. CMOS and SMOS are used for evaluation. Best results are highlighted in bold.</p><p class="zh">表 2：中英文测试集上的主观评估结果。采用 CMOS 与 SMOS 进行评估。最优结果以粗体标出。</p></div>
+<div class="pblk" id="p-3-46-2">
+          <p class="en-lines"><span class="sent" data-sid="s-3-46-2-1"><span class="en">CMOS ↑ SMOS ↑ 0.00 3.02±0.20 Qwen3-TTS 3.65 ± 0.18 ZipVoice -0.30± 0.16 MaskGCT -0.38± 0.17 OmniVoice-Emilia intelligibility (CER &lt; 5%) even for many languages with less than 10 hours of training data, demonstrating strong generalization capability on low-resource languages.</span></span> <span class="sent" data-sid="s-3-46-2-2"><span class="en">Note that we do not claim OmniVoice can generate speech of better quality than the ground truth for all languages.</span></span> <span class="sent" data-sid="s-3-46-2-3"><span class="en">However, OmniVoice’s performance has exceeded the measurement capability of existing ASR models.</span><button class="mk feat" data-sid="s-3-46-2-3" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-46-2-1"><span class="zh">（抽取残留的跨栏碎块）主观指标表头：CMOS ↑、SMOS ↑，数值 0.00、3.02±0.20；Qwen3-TTS：3.65 ± 0.18；ZipVoice：-0.30± 0.16；MaskGCT：-0.38± 0.17；OmniVoice-Emilia……（接前文图 4 正文）即使对许多训练数据不足 10 小时的语言，也能保持高可懂度（CER &lt; 5%），展现出在低资源语言上的强泛化能力。</span></span><span class="sent" data-sid="s-3-46-2-2"><span class="zh">需要说明的是，我们并不声称 OmniVoice 在所有语言上都能生成比真实语音质量更好的语音。</span></span><span class="sent" data-sid="s-3-46-2-3"><span class="zh">然而，OmniVoice 的表现已经超出现有 ASR 模型的测量能力。</span><button class="mk feat" data-sid="s-3-46-2-3" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-46-2-3">
+      <div class="ann-card kind-critique">
+        <div class="ann-kind">值得质疑</div>
+        <div class="ann-title">超出评测器能力之后</div>
+        <div class="ann-quote">exceeded the measurement capability of existing ASR models</div>
+        <div class="exp exp-tech">作者罕见地自我拆台：既然模型已超过 ASR 评测器的测量能力，论文里所有 CER/WER 数字本质上都是下界估计而非精确值，'优于真实语音'的结论也要打上问号。这是 TTS 评测走向成熟的标志性困境——客观指标的天花板先于生成质量的天花板到来。下一步只能靠更可靠的主观评测或更强的裁判模型，论文在这点上保持了难得的克制。</div>
+        
+      </div></div></div>
+        </div>
+<div class="cap" id="tab-3-46-2"><span class="cap-k">表</span><p class="en">Table 3: Evaluation on the MiniMax-Multilingual-24 test set.</p><p class="zh">表 3：MiniMax-Multilingual-24 测试集上的评估结果。</p></div>
+<div class="pblk" id="p-3-46-3">
+          <p class="en-lines"><span class="sent" data-sid="s-3-46-3-1"><span class="en">MiniMax ElevenLabs MiniMax ElevenLabs Arabic 1.392 1.665 1.666 0.776 0.736 0.706 Cantonese 17.709* 34.111 51.513 0.838 0.778 0.670 Chinese 1.008 2.252 16.026 0.821 0.780 0.677 Czech 2.856 3.875 2.108 0.837 0.796 0.685 Dutch 1.358 1.143 0.803 0.813 0.738 0.680 English 1.560 2.164 2.339 0.884 0.756 0.613 Finnish 3.750 4.666 2.964 0.864 0.835 0.759 French 3.347 4.099 5.216 0.801 0.628 0.535 German 0.964 1.906 0.572 0.812 0.733 0.614 Greek 1.057 2.016 0.991 0.867 0.826 0.733 Hindi 4.330 6.962 5.827 0.863 0.818 0.730 Indonesian 1.973 1.237 1.059 0.805 0.729 0.660 Italian 2.070 1.543 1.743 0.812 0.699 0.579 Japanese 4.027 3.519 10.646 0.828 0.776 0.738 Korean 2.651 1.747 1.865 0.828 0.776 0.700 Polish 0.874 1.415 0.766 0.877 0.802 0.729 Portuguese 2.511 1.877 1.331 0.859 0.805 0.711 Romanian 2.424 2.878 1.347 0.836 0.809 0.699 Russian 2.233 4.281 3.878 0.783 0.761 0.676 Spanish 1.026 1.029 1.084 0.804 0.762 0.615 Thai 3.978 2.701 73.936 0.841 0.800 0.588 Turkish 2.166 1.520 0.699 0.851 0.779 0.596 Ukrainian 1.774 1.082 0.997 0.810 0.730 0.647 Vietnamese 1.373 0.880 73.415 0.804 0.743 0.369</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-46-3-1"><span class="zh">（表格碎块，MiniMax-Multilingual-24 逐语言数值；列依次为 MiniMax、ElevenLabs）Arabic 1.392、1.665、1.666，0.776、0.736、0.706；Cantonese 17.709*、34.111、51.513，0.838、0.778、0.670；Chinese 1.008、2.252、16.026，0.821、0.780、0.677；Czech 2.856、3.875、2.108，0.837、0.796、0.685；Dutch 1.358、1.143、0.803，0.813、0.738、0.680；English 1.560、2.164、2.339，0.884、0.756、0.613；Finnish 3.750、4.666、2.964，0.864、0.835、0.759；French 3.347、4.099、5.216，0.801、0.628、0.535；German 0.964、1.906、0.572，0.812、0.733、0.614；Greek 1.057、2.016、0.991，0.867、0.826、0.733；Hindi 4.330、6.962、5.827，0.863、0.818、0.730；Indonesian 1.973、1.237、1.059，0.805、0.729、0.660；Italian 2.070、1.543、1.743，0.812、0.699、0.579；Japanese 4.027、3.519、10.646，0.828、0.776、0.738；Korean 2.651、1.747、1.865，0.828、0.776、0.700；Polish 0.874、1.415、0.766，0.877、0.802、0.729；Portuguese 2.511、1.877、1.331，0.859、0.805、0.711；Romanian 2.424、2.878、1.347，0.836、0.809、0.699；Russian 2.233、4.281、3.878，0.783、0.761、0.676；Spanish 1.026、1.029、1.084，0.804、0.762、0.615；Thai 3.978、2.701、73.936，0.841、0.800、0.588；Turkish 2.166、1.520、0.699，0.851、0.779、0.596；Ukrainian 1.774、1.082、0.997，0.810、0.730、0.647；Vietnamese 1.373、0.880、73.415，0.804、0.743、0.369。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-average"><span class="t-zh">平均值</span><span class="t-en">Average</span></h3><div class="pblk" id="p-average-1">
+          <p class="en-lines"><span class="sent" data-sid="s-average-1-1"><span class="en">2.850 3.774 10.950 0.830 0.766 0.655 * Cantonese WER is 2.273% when evaluated with the SenseVoice-Small ASR model. ur 80 40 lo ur yo lo 20 yo oc Ground-Truth OmniVoice (CER higher than GT) OmniVoice (CER lower than GT) yue yue ja ny zh ja ny zh CER (%) 10 oc 5 af fr hi hu hi af 2 hu 1 en sl en fr sl pl ca es et et ca es pl 2 10 100 Duration (Hours) 0.5</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-average-1-1"><span class="zh">（表格碎块）平均值：2.850、3.774、10.950，0.830、0.766、0.655。* 用 SenseVoice-Small ASR 模型评估时，粤语 WER 为 2.273%。（图 4 散点图的坐标轴与图例文字碎块，含 80/40/20/10/5/2/1/0.5 等 CER 刻度与 2/10/100 小时时长刻度，此处从略，含义见图 4 标题。）</span></span></p>
+          
+        </div>
+<div class="cap" id="fig-average-1"><span class="cap-k">图</span><p class="en">Figure 4: CERs of OmniVoice vs. ground truth across languages with varying training data durations on FLEURS-Multilingual-102. Hollow circles indicate languages where OmniVoice achieves lower CER than ground-truth, Filled circles indicate higher CER.</p><p class="zh">图 4：在 FLEURS-Multilingual-102 上，不同训练数据时长下 OmniVoice 与真实语音的逐语言 CER 对比。空心圆表示 OmniVoice 的 CER 低于真实语音的语言，实心圆表示 CER 更高的语言。</p></div>
+<div class="cap" id="tab-average-1"><span class="cap-k">表</span><p class="en">Table 4: Evaluation on the FLEURS-Multilingual-102 test set.</p><p class="zh">表 4：FLEURS-Multilingual-102 测试集上的评估结果。</p></div>
+<div class="pblk" id="p-average-2">
+          <p class="en-lines"><span class="sent" data-sid="s-average-2-1"><span class="en">FLEURS-Multilingual-102 Avg SIM-o ↑ Avg CER ↓ Languages with CER ≤</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-average-2-1"><span class="zh">FLEURS-Multilingual-102：平均 SIM-o ↑、平均 CER ↓、CER ≤ 某阈值的语言数量（表头）。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-5"><span class="t-zh">5%（表格碎块小节）</span><span class="t-en">5%</span></h3><div class="pblk" id="p-5-1">
+          <p class="en-lines"><span class="sent" data-sid="s-5-1-1"><span class="en">10% - 5.11 75 92 0.788 4.00 82 95</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-1-1"><span class="zh">（表格碎块）阈值 10% 列：-、5.11、75、92；对应行数值：0.788、4.00、82、95。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-4-3"><span class="secnum">4.3</span> <span class="t-zh">4.3 关键设计的有效性</span><span class="t-en">Effectiveness of Key Designs</span></h3><div class="pblk" id="p-4-3-1">
+          <p class="en-lines"><span class="sent" data-sid="s-4-3-1-1"><span class="en">To validate the effectiveness of our core designs, we conduct ablation experiments on the Emilia dataset.</span></span> <span class="sent" data-sid="s-4-3-1-2"><span class="en">All models are trained for 300k updates with the same hyperparameters, with prompt denoising disabled unless otherwise specified.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-3-1-1"><span class="zh">为验证核心设计的有效性，我们在 Emilia 数据集上进行了消融实验。</span></span><span class="sent" data-sid="s-4-3-1-2"><span class="zh">所有模型均以相同超参数训练 300k 次更新，除特别说明外均关闭提示去噪。</span></span></p>
+          
+        </div>
+<div class="cap" id="tab-4-3-1"><span class="cap-k">表</span><p class="en">Table 5: Impact of different masking strategies.</p><p class="zh">表 5：不同掩码策略的影响。</p></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-masking-strategy"><span class="t-zh">掩码策略</span><span class="t-en">Masking Strategy</span></h3><div class="pblk" id="p-masking-strategy-1">
+          <p class="en-lines"><span class="sent" data-sid="s-masking-strategy-1-1"><span class="en">Librispeech-PC test-clean SoundStorm-style mask 0.661 3.00 4.12 MaskGCT-style mask 0.660 2.04 4.17 Full-codebook random mask 0.697 1.57 4.23 - compute loss on a single codebook 0.648 2.85 4.22 Firstly, we compare different masking strategies to validate the effectiveness of our proposed fullcodebook random masking strategy.</span></span> <span class="sent" data-sid="s-masking-strategy-1-2"><span class="en">SoundStorm-style masking is a variant of the per-layer masking strategy, which samples layers for loss computation from a uniform distribution and selects the masking ratio according to a cosine function.</span></span> <span class="sent" data-sid="s-masking-strategy-1-3"><span class="en">MaskGCT-style masking further samples layers based on a linear distribution, where lower layers are selected with higher probability.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-masking-strategy-1-1"><span class="zh">（表格碎块，LibriSpeech-PC test-clean 数值）SoundStorm 式掩码：0.661、3.00、4.12；MaskGCT 式掩码：0.660、2.04、4.17；全码本随机掩码：0.697、1.57、4.23；- 只在单码本上计算损失：0.648、2.85、4.22。（正文）首先，我们比较不同掩码策略，以验证所提全码本随机掩码策略的有效性。</span></span><span class="sent" data-sid="s-masking-strategy-1-2"><span class="zh">SoundStorm 式掩码是逐层掩码策略的一种变体，它从均匀分布中采样参与损失计算的层，并按余弦函数选择掩码比例。</span></span><span class="sent" data-sid="s-masking-strategy-1-3"><span class="zh">MaskGCT 式掩码进一步按线性分布采样层，低层被选中的概率更高。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-masking-strategy-2">
+          <p class="en-lines"><span class="sent" data-sid="s-masking-strategy-2-1"><span class="en">As shown in Table 5, full-codebook random masking consistently outperforms the single-codebook masking strategies adopted by MaskGCT and SoundStorm.</span></span> <span class="sent" data-sid="s-masking-strategy-2-2"><span class="en">Furthermore, we conduct an experiment where the loss is calculated only on a single codebook, which also results in significant performance degradation, confirming the advantages of the proposed dense loss computation.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-masking-strategy-2-1"><span class="zh">如表 5 所示，全码本随机掩码一致优于 MaskGCT 与 SoundStorm 所采用的单码本掩码策略。</span></span><span class="sent" data-sid="s-masking-strategy-2-2"><span class="zh">此外，我们还进行了一个只在单码本上计算损失的实验，结果同样出现显著的性能下降，证实了所提密集损失计算的优势。</span></span></p>
+          
+        </div>
+<div class="cap" id="tab-masking-strategy-1"><span class="cap-k">表</span><p class="en">Table 6: Impact of LLM initialization on WER across datasets. Abbreviations: Libri = LibrispeechPC test-clean, Seed-en = Seed-TTS test-en, Seed-zh = Seed-TTS test-zh.</p><p class="zh">表 6：LLM 初始化对各数据集 WER 的影响。缩写：Libri = LibriSpeech-PC test-clean，Seed-en = Seed-TTS test-en，Seed-zh = Seed-TTS test-zh。</p></div>
+<div class="pblk" id="p-masking-strategy-3">
+          <p class="en-lines"><span class="sent" data-sid="s-masking-strategy-3-1"><span class="en">Learning Rate</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-masking-strategy-3-1"><span class="zh">学习率。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-libri"><span class="t-zh">Libri（表格碎块小节）</span><span class="t-en">Libri</span></h3><div class="pblk" id="p-libri-1">
+          <p class="en-lines"><span class="sent" data-sid="s-libri-1-1"><span class="en">Seed-en Seed-zh LLM initialization 1.57 1.72 0.89 2.79 2.34 1.11 2.52 2.43 1.01 2.56 2.07 1.01 2.72 2.29 1.02 Random initialization We illustrate the importance of LLM initialization for high intelligibility (i.e., low WER) in Table 6.</span></span> <span class="sent" data-sid="s-libri-1-2"><span class="en">It can be observed that even after extensive learning rate tuning, the WERs of models without LLM initialization are still consistently higher than those of the model with LLM initialization, highlighting the importance of inheriting linguistic knowledge from pre-trained LLMs.</span><button class="mk feat" data-sid="s-libri-1-2" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-libri-1-1"><span class="zh">（表格碎块）Seed-en、Seed-zh 列；LLM 初始化：1.57、1.72、0.89；随机初始化各学习率下：2.79、2.34、1.11；2.52、2.43、1.01；2.56、2.07、1.01；2.72、2.29、1.02。（正文）我们在表 6 中展示了 LLM 初始化对高可懂度（即低 WER）的重要性。</span></span><span class="sent" data-sid="s-libri-1-2"><span class="zh">可以观察到，即使经过充分的学习率调参，没有 LLM 初始化的模型 WER 仍一致高于有 LLM 初始化的模型，凸显了从预训练 LLM 继承语言知识的重要性。</span><button class="mk feat" data-sid="s-libri-1-2" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-libri-1-2">
+      <div class="ann-card kind-comparison">
+        <div class="ann-kind">和以前有什么区别</div>
+        <div class="ann-title">消融：LLM 初始化见效</div>
+        <div class="ann-quote">even after extensive learning rate tuning, the WERs of models without LLM initialization are still consistently higher</div>
+        <div class="exp exp-tech">表 6 的对照设计干净：同样 300k 步、同样超参，唯一变量是有无 LLM 初始化，且对照组做过充分的学习率扫描排除了'没调好'的借口。结果无初始化组 WER 全面更高，直接坐实'可懂度收益来自语言学先验而非偶然'。这是全文因果链最扎实的一组实验，也是'first NAR + LLM init'声明的实证地基。</div>
+        
+      </div></div></div>
+        </div>
+<div class="pblk" id="p-libri-2">
+          <p class="en-lines"><span class="sent" data-sid="s-libri-2-1"><span class="en">We illustrate the impact of prompt denoising in Table 7.</span></span> <span class="sent" data-sid="s-libri-2-2"><span class="en">When prompt denoising is enabled, UTMOS improves from 4.23 to 4.32 because the model generates cleaner speech, while SIM-o decreases slightly (0.697 →0.668) because the generated speech is more standardized than the noisy prompt, which aligns with our design objective of generating high-quality speech from degraded prompts.</span><button class="mk" data-sid="s-libri-2-2" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-libri-2-1"><span class="zh">我们在表 7 中展示提示去噪的影响。</span></span><span class="sent" data-sid="s-libri-2-2"><span class="zh">启用提示去噪后，UTMOS 从 4.23 提升到 4.32，因为模型生成的语音更干净；同时 SIM-o 略有下降（0.697 → 0.668），因为生成的语音比带噪提示更「标准化」——这与我们「从退化提示生成高质量语音」的设计目标一致。</span><button class="mk" data-sid="s-libri-2-2" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-libri-2-2">
+      <div class="ann-card kind-number">
+        <div class="ann-kind">数字怎么理解</div>
+        <div class="ann-title">去噪的相似度代价</div>
+        <div class="ann-quote">SIM-o decreases slightly (0.697 →0.668)</div>
+        <div class="exp exp-tech">开启提示去噪后 UTMOS 从 4.23 升到 4.32（语音更干净），但 SIM-o 从 0.697 降到 0.668。作者的解释自洽：生成的语音比带噪提示'更标准'，说话人相似度模型会因声学环境差异而扣分。这提醒读者 SIM 类指标混合了'像不像这个人'和'像不像这段录音的声学环境'两个因素——去噪场景下 SIM 轻微下降是指标盲区，不是模型退化。</div>
+        
+      </div></div></div>
+        </div>
+<div class="cap" id="tab-libri-1"><span class="cap-k">表</span><p class="en">Table 7: Impact of prompt denoising task.</p><p class="zh">表 7：提示去噪任务的影响。</p></div>
+<div class="pblk" id="p-libri-3">
+          <p class="en-lines"><span class="sent" data-sid="s-libri-3-1"><span class="en">Librispeech-PC test-clean w/o prompt denoise 0.697 1.57 4.23 w/ prompt denoise 0.668 1.56 4.32</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-libri-3-1"><span class="zh">（表格碎块，LibriSpeech-PC test-clean）不使用提示去噪：0.697、1.57、4.23；使用提示去噪：0.668、1.56、4.32。</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-4-3-1"><span class="secnum">4.3.1</span> <span class="t-zh">4.3.1 推理速度</span><span class="t-en">Inference Speed</span></h3><div class="pblk" id="p-4-3-1-1">
+          <p class="en-lines"><span class="sent" data-sid="s-4-3-1-1-1"><span class="en">We evaluate the inference speed of OmniVoice on an H20 GPU using PyTorch as the inference framework.</span></span> <span class="sent" data-sid="s-4-3-1-1-2"><span class="en">Following the identical experimental setup in [16, 14], we use a 3-second audio prompt to generate 10-second audio clips, and report the real-time factor (RTF) across different batch sizes and inference steps.</span></span> <span class="sent" data-sid="s-4-3-1-1-3"><span class="en">As shown in Table 8, OmniVoice achieves an RTF of 0.0319 with 16 inference steps and a batch size of 1, outperforming the corresponding results of ZipVoice (0.0557) with the same inference step configuration.</span><button class="mk feat" data-sid="s-4-3-1-1-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-3-1-1-4"><span class="en">Notably, OmniVoice also yields better generation quality in the same 16-step setting (shown in Appendix B).</span></span> <span class="sent" data-sid="s-4-3-1-1-5"><span class="en">When batch inference is employed, OmniVoice attains an even lower RTF of 0.022.</span></span> <span class="sent" data-sid="s-4-3-1-1-6"><span class="en">In addition, its inference efficiency can be further improved with acceleration techniques such as TensorRT.</span></span> <span class="sent" data-sid="s-4-3-1-1-7"><span class="en">These results demonstrate the high inference efficiency of OmniVoice.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-3-1-1-1"><span class="zh">我们在 H20 GPU 上、以 PyTorch 作为推理框架评估 OmniVoice 的推理速度。</span></span><span class="sent" data-sid="s-4-3-1-1-2"><span class="zh">遵循与 [16, 14] 完全相同的实验设置，我们使用 3 秒音频提示生成 10 秒音频片段，并报告不同批大小与推理步数下的实时因子（RTF）。</span></span><span class="sent" data-sid="s-4-3-1-1-3"><span class="zh">如表 8 所示，OmniVoice 在 16 步推理、批大小为 1 时取得 0.0319 的 RTF，优于相同推理步数配置下 ZipVoice 的对应结果（0.0557）。</span><button class="mk feat" data-sid="s-4-3-1-1-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-4-3-1-1-4"><span class="zh">值得注意的是，在相同的 16 步设置下，OmniVoice 还取得了更好的生成质量（见附录 B）。</span></span><span class="sent" data-sid="s-4-3-1-1-5"><span class="zh">采用批量推理时，OmniVoice 的 RTF 可进一步低至 0.022。</span></span><span class="sent" data-sid="s-4-3-1-1-6"><span class="zh">此外，其推理效率还可以通过 TensorRT 等加速技术进一步提升。</span></span><span class="sent" data-sid="s-4-3-1-1-7"><span class="zh">这些结果展示了 OmniVoice 的高推理效率。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-4-3-1-1-3">
+      <div class="ann-card kind-number">
+        <div class="ann-kind">数字怎么理解</div>
+        <div class="ann-title">RTF 0.0319 的含义</div>
+        <div class="ann-quote">an RTF of 0.0319 with 16 inference steps</div>
+        <div class="exp exp-tech">RTF 0.0319 意味着生成 10 秒音频只需约 0.32 秒（H20、PyTorch、batch=1），比同步数的 ZipVoice（0.0557）快约 43%；批量推理还能压到 0.022。离散 NAR 并行解码的速度优势在此兑现。但注意测试条件是消费级之外的 H20 + 纯 PyTorch，且 16 步是质量不掉线的下限——端侧部署和更少步数仍有距离，附录 E 也承认缺离散版的流蒸馏加速手段。</div>
+        
+      </div></div></div>
+        </div>
+<div class="cap" id="tab-4-3-1-1"><span class="cap-k">表</span><p class="en">Table 8: RTF with different inference steps and batch sizes.</p><p class="zh">表 8：不同推理步数与批大小下的 RTF。</p></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-inference-steps"><span class="t-zh">推理步数</span><span class="t-en">Inference Steps</span></h3><div class="pblk" id="p-inference-steps-1">
+          <p class="en-lines"><span class="sent" data-sid="s-inference-steps-1-1"><span class="en">Batch Size 1 2 4 8 16 0.0319 0.0263 0.0235 0.0224 32 0.0598 0.0486 0.0436 0.0414</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-inference-steps-1-1"><span class="zh">（表格碎块）批大小 1、2、4、8、16 列；16 步：RTF 0.0319、0.0263、0.0235、0.0224；32 步：0.0598、0.0486、0.0436、0.0414。</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-5-2"><span class="secnum">5</span> <span class="t-zh">5 结论</span><span class="t-en">Conclusions</span></h2><div class="pblk" id="p-5-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-5-2-1-1"><span class="en">In this work, we introduce OmniVoice, a massively multilingual zero-shot TTS model supporting over 600 languages with SOTA performance, addressing the critical limitation of narrow language coverage in existing zero-shot TTS systems.</span></span> <span class="sent" data-sid="s-5-2-1-2"><span class="en">The core of OmniVoice is a novel diffusion language model-style single-stage discrete-token NAR framework, which directly maps text to multicodebook acoustic tokens to circumvent the inherent limitations of conventional two-stage models.</span></span> <span class="sent" data-sid="s-5-2-1-3"><span class="en">To unlock the full potential of this streamlined architecture, we propose a full-codebook random masking strategy to enhance training efficiency and LLM weight initialization to resolve the intelligibility challenge.</span></span> <span class="sent" data-sid="s-5-2-1-4"><span class="en">Trained on a 581k-hour multilingual dataset curated exclusively from opensource resources, OmniVoice achieves the broadest language coverage of zero-shot TTS models to date, delivers SOTA performance on Chinese, English and diverse multilingual benchmarks, exhibits exceptional generalization to low-resource languages, and is equipped with multi-dimensional controllability and high inference efficiency, marking a significant advance in expanding high-quality TTS capabilities to a broad spectrum of the world’s languages.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-2-1-1"><span class="zh">本工作提出 OmniVoice——一个支持超过 600 种语言、性能达到 SOTA 的大规模多语种零样本 TTS 模型，解决了现有零样本 TTS 系统语言覆盖狭窄这一关键局限。</span></span><span class="sent" data-sid="s-5-2-1-2"><span class="zh">OmniVoice 的核心是一个新颖的扩散语言模型风格的单阶段离散 token NAR 框架，它将文本直接映射到多码本声学 token，绕开了传统两阶段模型的固有局限。</span></span><span class="sent" data-sid="s-5-2-1-3"><span class="zh">为释放这一精简架构的全部潜力，我们提出全码本随机掩码策略以提升训练效率，并提出 LLM 权重初始化以解决可懂度难题。</span></span><span class="sent" data-sid="s-5-2-1-4"><span class="zh">在完全由开源资源构建的 581k 小时多语数据集上训练后，OmniVoice 取得了迄今零样本 TTS 模型中最广的语言覆盖，在中文、英文及多样化的多语种基准上达到 SOTA 表现，展现出对低资源语言的出色泛化能力，并具备多维度可控性与高推理效率，标志着把高质量 TTS 能力推广到世界广泛语言的重要进展。</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-references"><span class="t-zh">References</span><span class="t-en">References</span></h2><div class="pblk plain" id="p-references-1"><p class="refline">[1] Sanyuan Chen, Chengyi Wang, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, et al. Neural codec language models are zero-shot text to speech synthesizers. IEEE Transactions on Audio, Speech and Language Processing, 2025.</p></div>
+<div class="pblk plain" id="p-references-2"><p class="refline">[2] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al. Seed-tts: A family of high-quality versatile speech generation models. arXiv preprint arXiv:2406.02430, 2024.</p></div>
+<div class="pblk plain" id="p-references-3"><p class="refline">[3] Zhihao Du, Yuxuan Wang, Qian Chen, Xian Shi, Xiang Lv, Tianyu Zhao, Zhifu Gao, Yexin Yang, Changfeng Gao, Hui Wang, et al. Cosyvoice 2: Scalable streaming speech synthesis with large language models. arXiv preprint arXiv:2412.10117, 2024.</p></div>
+<div class="pblk plain" id="p-references-4"><p class="refline">[4] Hao-Han Guo, Yao Hu, Kun Liu, Fei-Yu Shen, Xu Tang, Yi-Chen Wu, Feng-Long Xie, Kun Xie, and Kai-Tuo Xu. Fireredtts: A foundation text-to-speech framework for industry-level generative speech applications. arXiv preprint arXiv:2409.03283, 2024.</p></div>
+<div class="pblk plain" id="p-references-5"><p class="refline">[5] Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu.</p></div>
+<div class="pblk plain" id="p-references-6"><p class="refline">Indextts2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech. arXiv preprint arXiv:2506.21619, 2025.</p></div>
+<div class="pblk plain" id="p-references-7"><p class="refline">[6] Dongya Jia, Zhuo Chen, Jiawei Chen, Chenpeng Du, Jian Wu, Jian Cong, Xiaobin Zhuang, Chumin Li, Zhen Wei, Yuping Wang, et al. Ditar: Diffusion transformer autoregressive modeling for speech generation. In International Conference on Machine Learning, pages 27255– 27270. PMLR, 2025.</p></div>
+<div class="pblk plain" id="p-references-8"><p class="refline">[7] Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, Zheng Liang, Qixi Zheng, Rui Wang, Xiaoqin Feng, et al. Spark-tts: An efficient llm-based text-tospeech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710, 2025.</p></div>
+<div class="pblk plain" id="p-references-9"><p class="refline">[8] Zhen Ye, Xinfa Zhu, Chi-Min Chan, Xinsheng Wang, Xu Tan, Jiahe Lei, Yi Peng, Haohe Liu, Yizhu Jin, Zheqi Dai, et al. Llasa: Scaling train-time and inference-time compute for llama-based speech synthesis. arXiv preprint arXiv:2502.04128, 2025.</p></div>
+<div class="pblk plain" id="p-references-10"><p class="refline">[9] Yakun Song, Xiaobin Zhuang, Jiawei Chen, Zhikang Niu, Guanrou Yang, Chenpeng Du, Dongya Jia, Zhuo Chen, Yuping Wang, Yuxuan Wang, et al. Distar: Diffusion over a scalable token autoregressive representation for speech generation. arXiv preprint arXiv:2510.12210, 2025.</p></div>
+<div class="pblk plain" id="p-references-11"><p class="refline">[10] Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, et al. Voxcpm: Tokenizer-free tts for context-aware speech generation and true-to-life voice cloning. arXiv preprint arXiv:2509.24650, 2025.</p></div>
+<div class="pblk plain" id="p-references-12"><p class="refline">[11] Jiayan Cui, Zhihan Yang, Naihan Li, Jiankun Tian, Xingyu Ma, Yi Zhang, Guangyu Chen, Runxuan Yang, Yuqing Cheng, Yizhi Zhou, et al. Glm-tts technical report. arXiv preprint [12] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, et al. Voicebox: Text-guided multilingual universal speech generation at scale. Advances in neural information processing systems, 36:14005–14034, 2023.</p></div>
+<div class="pblk plain" id="p-references-13"><p class="refline">[13] Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao, Hemin Yang, Zirun Zhu, Min Tang, Xu Tan, et al. E2 tts: Embarrassingly easy fully non-autoregressive zero-shot tts. In 2024 IEEE Spoken Language Technology Workshop (SLT), pages 682–689. IEEE, 2024.</p></div>
+<div class="pblk plain" id="p-references-14"><p class="refline">[14] Yushen Chen, Zhikang Niu, Ziyang Ma, Keqi Deng, Chunhui Wang, Jian Zhao, Kai Yu, and Xie Chen. F5-tts: A fairytaler that fakes fluent and faithful speech with flow matching. arXiv preprint arXiv:2410.06885, 2024.</p></div>
+<div class="pblk plain" id="p-references-15"><p class="refline">[15] Yifan Yang, Shujie Liu, Jinyu Li, Yuxuan Hu, Haibin Wu, Hui Wang, Jianwei Yu, Lingwei Meng, Haiyang Sun, Yanqing Liu, et al. Pseudo-autoregressive neural codec language models for efficient zero-shot text-to-speech synthesis. In Proceedings of the 33rd ACM International Conference on Multimedia, pages 9316–9325, 2025.</p></div>
+<div class="pblk plain" id="p-references-16"><p class="refline">[16] Han Zhu, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang, Zhaoqing Li, Weiji Zhuang, Long Lin, and Daniel Povey. Zipvoice: Fast and high-quality zero-shot text-to-speech with flow matching. arXiv preprint arXiv:2506.13053, 2025.</p></div>
+<div class="pblk plain" id="p-references-17"><p class="refline">[17] Han Zhu, Wei Kang, Liyong Guo, Zengwei Yao, Fangjun Kuang, Weiji Zhuang, Zhaoqing Li, Zhifeng Han, Dong Zhang, Xin Zhang, et al. Zipvoice-dialog: Non-autoregressive spoken dialogue generation with flow matching. arXiv preprint arXiv:2507.09318, 2025.</p></div>
+<div class="pblk plain" id="p-references-18"><p class="refline">[18] Ziyue Jiang, Yi Ren, Ruiqi Li, Shengpeng Ji, Boyang Zhang, Zhenhui Ye, Chen Zhang, Bai Jionghao, Xiaoda Yang, Jialong Zuo, et al.</p></div>
+<div class="pblk plain" id="p-references-19"><p class="refline">Megatts 3: Sparse alignment enhanced latent diffusion transformer for zero-shot speech synthesis. arXiv preprint arXiv:2502.18924, 2025.</p></div>
+<div class="pblk plain" id="p-references-20"><p class="refline">[19] Yuancheng Wang, Haoyue Zhan, Liwei Liu, Ruihong Zeng, Haotian Guo, Jiachen Zheng, Qiang Zhang, Xueyao Zhang, Shunsi Zhang, and Zhizheng Wu. MaskGCT: Zero-shot text-tospeech with masked generative codec transformer. In The Thirteenth International Conference on Learning Representations, 2025.</p></div>
+<div class="pblk plain" id="p-references-21"><p class="refline">[20] Yifan Yang, Bing Han, Hui Wang, Long Zhou, Wei Wang, Mingyu Cui, Xu Tan, and Xie Chen.</p></div>
+<div class="pblk plain" id="p-references-22"><p class="refline">Measuring prosody diversity in zero-shot tts: A new metric, benchmark, and exploration. arXiv preprint arXiv:2509.19928, 2025.</p></div>
+<div class="pblk plain" id="p-references-23"><p class="refline">[21] Gerard I Gállego, Roy Fejgin, Chunghsin Yeh, Xiaoyu Liu, and Gautam Bhattacharya.</p></div>
+<div class="pblk plain" id="p-references-24"><p class="refline">Single-stage tts with masked audio token modeling and semantic knowledge distillation. In ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1–5. IEEE, 2025.</p></div>
+<div class="pblk plain" id="p-references-25"><p class="refline">[22] Subham Sahoo, Marianne Arriola, Yair Schiff, Aaron Gokaslan, Edgar Marroquin, Justin Chiu, Alexander Rush, and Volodymyr Kuleshov. Simple and effective masked diffusion language models. Advances in Neural Information Processing Systems, 37:130136–130184, 2024.</p></div>
+<div class="pblk plain" id="p-references-26"><p class="refline">[23] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. Attention is all you need. Advances in neural information processing systems, 30, 2017.</p></div>
+<div class="pblk plain" id="p-references-27"><p class="refline">[24] Shen Nie, Fengqi Zhu, Zebin You, Xiaolu Zhang, Jingyang Ou, Jun Hu, JUN ZHOU, Yankai Lin, Ji-Rong Wen, and Chongxuan Li. Large language diffusion models. In The Thirty-ninth Annual Conference on Neural Information Processing Systems, 2025.</p></div>
+<div class="pblk plain" id="p-references-28"><p class="refline">[25] Jiacheng Ye, Zhihui Xie, Lin Zheng, Jiahui Gao, Zirui Wu, Xin Jiang, Zhenguo Li, and Lingpeng Kong. Dream 7b: Diffusion large language models. arXiv preprint arXiv:2508.15487, 2025.</p></div>
+<div class="pblk plain" id="p-references-29"><p class="refline">[26] Zalán Borsos, Matt Sharifi, Damien Vincent, Eugene Kharitonov, Neil Zeghidour, and Marco Tagliasacchi.</p></div>
+<div class="pblk plain" id="p-references-30"><p class="refline">Soundstorm: Efficient parallel audio generation.</p></div>
+<div class="pblk plain" id="p-references-31"><p class="refline">arXiv preprint [27] Leying Zhang, Wangyou Zhang, Zhengyang Chen, and Yanmin Qian. Advanced zero-shot text-to-speech for background removal and preservation with controllable masked speech prediction. In ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1–5. IEEE, 2025.</p></div>
+<div class="pblk plain" id="p-references-32"><p class="refline">[28] Xiaofei Wang, Sefik Emre Eskimez, Manthan Thakker, Hemin Yang, Zirun Zhu, Min Tang, Yufei Xia, Jinzhu Li, Sheng Zhao, Jinyu Li, et al. An investigation of noise robustness for flow-matching-based zero-shot tts. arXiv preprint arXiv:2406.05699, 2024.</p></div>
+<div class="pblk plain" id="p-references-33"><p class="refline">[29] Jingbin Hu, Huakang Chen, Linhan Ma, Dake Guo, Qirui Zhan, Wenhao Li, Haoyu Zhang, Kangxiang Xia, Ziyu Zhang, Wenjie Tian, et al. Voicesculptor: Your voice, designed by you.</p></div>
+<div class="pblk plain" id="p-references-34"><p class="refline">arXiv preprint arXiv:2601.10629, 2026.</p></div>
+<div class="pblk plain" id="p-references-35"><p class="refline">[30] Huan Liao, Qinke Ni, Yuancheng Wang, Yiheng Lu, Haoyue Zhan, Pengyuan Xie, Qiang Zhang, and Zhizheng Wu. Nvspeech: An integrated and scalable pipeline for human-like speech modeling with paralinguistic vocalizations. arXiv preprint arXiv:2508.04195, 2025.</p></div>
+<div class="pblk plain" id="p-references-36"><p class="refline">[31] Wei Deng, Siyi Zhou, Jingchen Shu, Jinchao Wang, and Lu Wang. Indextts: An industrial-level controllable and efficient zero-shot text-to-speech system. arXiv preprint arXiv:2502.05512, 2025.</p></div>
+<div class="pblk plain" id="p-references-37"><p class="refline">[32] An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, et al.</p></div>
+<div class="pblk plain" id="p-references-38"><p class="refline">Qwen3 technical report.</p></div>
+<div class="pblk plain" id="p-references-39"><p class="refline">arXiv preprint [33] Zhihao Du, Changfeng Gao, Yuxuan Wang, Fan Yu, Tianyu Zhao, Hao Wang, Xiang Lv, Hui Wang, Chongjia Ni, Xian Shi, et al. Cosyvoice 3: Towards in-the-wild speech generation via scaling-up and post-training. arXiv preprint arXiv:2505.17589, 2025.</p></div>
+<div class="pblk plain" id="p-references-40"><p class="refline">[34] Edresson Casanova, Julian Weber, Christopher D Shulby, Arnaldo Candido Junior, Eren Gölge, and Moacir A Ponti. Yourtts: Towards zero-shot multi-speaker tts and zero-shot voice conversion for everyone. In International conference on machine learning, pages 2709–2720. PMLR, 2022.</p></div>
+<div class="pblk plain" id="p-references-41"><p class="refline">[35] Edresson Casanova, Kelly Davis, Eren Gölge, Görkem Göknar, Iulian Gulea, Logan Hart, Aya Aljafari, Joshua Meyer, Reuben Morais, Samuel Olayemi, et al. Xtts: a massively multilingual zero-shot text-to-speech model. In Proc. Interspeech 2024, pages 4978–4982, 2024.</p></div>
+<div class="pblk plain" id="p-references-42"><p class="refline">[36] Zhisheng Zheng, Puyuan Peng, Anuj Diwan, Cong Phuoc Huynh, Xiaohang Sun, Zhu Liu, Vimal Bhat, and David Harwath. Voicecraft-x: Unifying multilingual, voice-cloning speech synthesis and speech editing. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 2737–2756, 2025.</p></div>
+<div class="pblk plain" id="p-references-43"><p class="refline">[37] Yushen Chen, Junzhe Liu, Yujie Tu, Zhikang Niu, Yuzhe Liang, Kai Yu, Chunyu Qiang, Chen Zhang, and Xie Chen. Habibi: Laying the open-source foundation of unified-dialectal arabic speech synthesis. arXiv preprint arXiv:2601.13802, 2026.</p></div>
+<div class="pblk plain" id="p-references-44"><p class="refline">[38] Zhiyuan Zhao, Lijian Lin, Ye Zhu, Kai Xie, Yunfei Liu, and Yu Li. Lemas: Large a 150k-hour large-scale extensible multilingual audio suite with generative speech models. arXiv preprint [39] Vineel Pratap, Andros Tjandra, Bowen Shi, Paden Tomasello, Arun Babu, Sayani Kundu, Ali Elkahky, Zhaoheng Ni, Apoorv Vyas, Maryam Fazel-Zarandi, et al. Scaling speech technology to 1,000+ languages. Journal of Machine Learning Research, 25(97):1–52, 2024.</p></div>
+<div class="pblk plain" id="p-references-45"><p class="refline">[40] Resemble AI. Chatterbox-TTS. https://github.com/resemble-ai/chatterbox, 2025.</p></div>
+<div class="pblk plain" id="p-references-46"><p class="refline">GitHub repository.</p></div>
+<div class="pblk plain" id="p-references-47"><p class="refline">[41] Shijia Liao, Yuxuan Wang, Tianyu Li, Yifan Cheng, Ruoyi Zhang, Rongzhi Zhou, and Yijin Xing. Fish-speech: Leveraging large language models for advanced multilingual text-tospeech synthesis. arXiv preprint arXiv:2411.01156, 2024.</p></div>
+<div class="pblk plain" id="p-references-48"><p class="refline">[42] Hangrui Hu, Xinfa Zhu, Ting He, Dake Guo, Bin Zhang, Xiong Wang, Zhifang Guo, Ziyue Jiang, Hongkun Hao, Zishan Guo, et al. Qwen3-tts technical report. arXiv preprint [43] Yunpei Li, Xun Zhou, Jinchao Wang, Lu Wang, Yong Wu, Siyi Zhou, Yiquan Zhou, and Jingchen Shu. Indextts 2.5 technical report. arXiv preprint arXiv:2601.03888, 2026.</p></div>
+<div class="pblk plain" id="p-references-49"><p class="refline">[44] Wataru Nakata, Yuki Saito, Yota Ueda, and Hiroshi Saruwatari.</p></div>
+<div class="pblk plain" id="p-references-50"><p class="refline">Sidon: Fast and robust open-source multilingual speech restoration for large-scale dataset cleansing. arXiv preprint [45] Runchuan Ye, Yixuan Zhou, Renjie Yu, Zijian Lin, Kehan Li, Xiang Li, Xin Liu, Guoyang Zeng, and Zhiyong Wu. A scalable pipeline for enabling non-verbal speech generation and understanding. arXiv preprint arXiv:2508.05385, 2025.</p></div>
+<div class="pblk plain" id="p-references-51"><p class="refline">[46] Haorui He, Zengqiang Shang, Chaoren Wang, Xuyuan Li, Yicheng Gu, Hua Hua, Liwei Liu, Chen Yang, Jiaqi Li, Peiyang Shi, et al. Emilia: A large-scale, extensive, multilingual, and diverse dataset for speech generation. IEEE Transactions on Audio, Speech and Language Processing, 2025.</p></div>
+<div class="pblk plain" id="p-references-52"><p class="refline">[47] Boson AI. Higgs Audio V2: Redefining Expressiveness in Audio Generation. https:// github.com/boson-ai/higgs-audio, 2025. GitHub repository. Release blog available at https://www.boson.ai/blog/higgs-audio-v2.</p></div>
+<div class="pblk plain" id="p-references-53"><p class="refline">[48] Ilya Loshchilov and Frank Hutter. Decoupled weight decay regularization. arXiv preprint [49] Jonathan Ho and Tim Salimans. Classifier-free diffusion guidance. In NeurIPS 2021 Workshop on Deep Generative Models and Downstream Applications, 2021.</p></div>
+<div class="pblk plain" id="p-references-54"><p class="refline">[50] Aleksandr Meister, Matvei Novikov, Nikolay Karpov, Evelina Bakhturina, Vitaly Lavrukhin, and Boris Ginsburg. Librispeech-pc: Benchmark for evaluation of punctuation and capitalization capabilities of end-to-end asr models. In 2023 IEEE automatic speech recognition and understanding workshop (ASRU), pages 1–7. IEEE, 2023.</p></div>
+<div class="pblk plain" id="p-references-55"><p class="refline">[51] Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, et al. Minimax-speech: Intrinsic zero-shot text-tospeech with a learnable speaker encoder. arXiv preprint arXiv:2505.07916, 2025.</p></div>
+<div class="pblk plain" id="p-references-56"><p class="refline">[52] Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera, and Ankur Bapna. Fleurs: Few-shot learning evaluation of universal representations of speech. In 2022 IEEE Spoken Language Technology Workshop (SLT), pages 798–805. IEEE, 2023.</p></div>
+<div class="pblk plain" id="p-references-57"><p class="refline">[53] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al. Wavlm: Large-scale self-supervised pretraining for full stack speech processing. IEEE Journal of Selected Topics in Signal Processing, 16(6):1505–1518, 2022.</p></div>
+<div class="pblk plain" id="p-references-58"><p class="refline">[54] Brecht Desplanques, Jenthe Thienpondt, and Kris Demuynck. Ecapa-tdnn: Emphasized channel attention, propagation and aggregation in tdnn based speaker verification. In Proc. Interspeech 2020, pages 3830–3834, 2020.</p></div>
+<div class="pblk plain" id="p-references-59"><p class="refline">[55] Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed. Hubert: Self-supervised speech representation learning by masked prediction of hidden units. IEEE/ACM transactions on audio, speech, and language processing, 29:3451–3460, 2021.</p></div>
+<div class="pblk plain" id="p-references-60"><p class="refline">[56] Zhifu Gao, ShiLiang Zhang, Ian McLoughlin, and Zhijie Yan. Paraformer: Fast and accurate parallel transformer for non-autoregressive end-to-end speech recognition. In Proc. Interspeech 2022, pages 2063–2067, 2022.</p></div>
+<div class="pblk plain" id="p-references-61"><p class="refline">[57] ASR Omnilingual, Gil Keren, Artyom Kozhevnikov, Yen Meng, Christophe Ropers, Matthew Setzler, Skyler Wang, Ife Adebara, Michael Auli, Can Balioglu, et al. Omnilingual asr: Opensource multilingual speech recognition for 1600+ languages. arXiv preprint arXiv:2511.09690, 2025.</p></div>
+<div class="pblk plain" id="p-references-62"><p class="refline">[58] Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever. Robust speech recognition via large-scale weak supervision. In International conference on machine learning, pages 28492–28518. PMLR, 2023.</p></div>
+<div class="pblk plain" id="p-references-63"><p class="refline">[59] Takaaki Saeki, Detai Xin, Wataru Nakata, Tomoki Koriyama, Shinnosuke Takamichi, and Hiroshi Saruwatari. Utmos: Utokyo-sarulab system for voicemos challenge 2022. Interspeech 2022, 2022.</p></div>
+<div class="pblk plain" id="p-references-64"><p class="refline">[60] Keyu An, Qian Chen, Chong Deng, Zhihao Du, Changfeng Gao, Zhifu Gao, Yue Gu, Ting He, Hangrui Hu, Kai Hu, et al. Funaudiollm: Voice understanding and generation foundation models for natural interaction between humans and llms. arXiv preprint arXiv:2407.04051, 2024.</p></div>
+<div class="pblk plain" id="p-references-65"><p class="refline">[61] Heiga Zen, Viet Dang, Rob Clark, Yu Zhang, Ron J Weiss, Ye Jia, Zhifeng Chen, and Yonghui Wu. Libritts: A corpus derived from librispeech for text-to-speech. In Proc. Interspeech 2019, pages 1526–1530, 2019.</p></div>
+<div class="pblk plain" id="p-references-66"><p class="refline">[62] Rosana Ardila, Megan Branson, Kelly Davis, Michael Kohler, Josh Meyer, Michael Henretty, Reuben Morais, Lindsay Saunders, Francis Tyers, and Gregor Weber.</p></div>
+<div class="pblk plain" id="p-references-67"><p class="refline">Common voice: A massively-multilingual speech corpus. In Proceedings of the Twelfth Language Resources and Evaluation Conference, pages 4218–4222, 2020.</p></div>
+<div class="pblk plain" id="p-references-68"><p class="refline">[63] Yifan Yang, Zheshu Song, Jianheng Zhuo, Mingyu Cui, Jinpeng Li, Bo Yang, Yexing Du, Ziyang Ma, Xunying Liu, Ziyuan Wang, et al. Gigaspeech 2: An evolving, large-scale and multi-domain asr corpus for low-resource languages with automated crawling, transcription and refinement. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 2673–2686, 2025.</p></div>
+<div class="pblk plain" id="p-references-69"><p class="refline">[64] Nithin Rao Koluguri, Monica Sekoyan, George Zelenfroynd, Sasha Meister, Shuoyang Ding, Sofia Kostandian, He Huang, Nikolay Karpov, Jagadeesh Balam, Vitaly Lavrukhin, et al. Granary: Speech recognition and translation dataset in 25 european languages. arXiv preprint [65] Samuel Pfisterer, Florian Grötschla, Luca A Lanzendörfer, Florian Yan, and Roger Wattenhofer. Eurospeech: A multilingual speech corpus. arXiv preprint arXiv:2510.00514, 2025.</p></div>
+<div class="pblk plain" id="p-references-70"><p class="refline">[66] Ashwin Sankar, Srija Anand, Praveen Varadhan, Sherry Thomas, Mehak Singal, Shridhar Kumar, Deovrat Mehendale, Aditi Krishana, Giri Raju, and Mitesh Khapra. Indicvoices-r: Unlocking a massive multilingual multi-speaker speech corpus for scaling indian tts. Advances in Neural Information Processing Systems, 37:68161–68182, 2024.</p></div>
+<div class="pblk plain" id="p-references-71"><p class="refline">[67] Gokul Karthik Kumar, SV Praveen, Pratyush Kumar, Mitesh M Khapra, and Karthik Nandakumar. Towards building text-to-speech systems for the next billion users. In Icassp 2023-2023 ieee international conference on acoustics, speech and signal processing (icassp), pages 1–5.</p></div>
+<div class="pblk plain" id="p-references-72"><p class="refline">IEEE, 2023.</p></div>
+<div class="pblk plain" id="p-references-73"><p class="refline">[68] Praveen Srinivasa Varadhan, Ashwin Sankar, Giri Raju, and Mitesh M Khapra. Rasa: Building expressive speech synthesis systems for indian languages in low-resource settings. In Proc.</p></div>
+<div class="pblk plain" id="p-references-74"><p class="refline">Interspeech 2024, pages 1830–1834, 2024.</p></div>
+<div class="pblk plain" id="p-references-75"><p class="refline">[69] Thi Vu, Linh The Nguyen, and Dat Quoc Nguyen. Zero-shot text-to-speech for vietnamese. In Proceedings of ACL, 2025.</p></div>
+<div class="pblk plain" id="p-references-76"><p class="refline">[70] Frederico S Oliveira, Edresson Casanova, Arnaldo Candido Junior, Anderson S Soares, and Arlindo R Galvão Filho. Cml-tts: A multilingual dataset for speech synthesis in low-resource languages. In International Conference on Text, Speech, and Dialogue, pages 188–199. Springer, 2023.</p></div>
+<div class="pblk plain" id="p-references-77"><p class="refline">[71] Longhao Li, Zhao Guo, Hongjie Chen, Yuhang Dai, Ziyu Zhang, Hongfei Xue, Tianlun Zuo, Chengyou Wang, Shuiyuan Wang, Jie Li, et al. Wenetspeech-yue: A large-scale cantonese speech corpus with multi-dimensional annotation. arXiv preprint arXiv:2509.03959, 2025.</p></div>
+<div class="pblk plain" id="p-references-78"><p class="refline">[72] Yuhang Dai, Ziyu Zhang, Shuai Wang, Longhao Li, Zhao Guo, Tianlun Zuo, Shuiyuan Wang, Hongfei Xue, Chengyou Wang, Qing Wang, et al.</p></div>
+<div class="pblk plain" id="p-references-79"><p class="refline">Wenetspeech-chuan: A largescale sichuanese corpus with rich annotation for dialectal speech processing. arXiv preprint [73] Zhiyuan Tang, Dong Wang, Yanguang Xu, Jianwei Sun, Xiaoning Lei, Shuaijiang Zhao, Cheng Wen, Xingjun Tan, Chuandong Xie, Shuran Zhou, et al. Kespeech: An open source speech dataset of mandarin and its eight subdialects. In Thirty-fifth conference on neural information processing systems datasets and benchmarks track (Round 2), 2021.</p></div>
+<div class="pblk plain" id="p-references-80"><p class="refline">[74] Xian Shi, Fan Yu, Yizhou Lu, Yuhao Liang, Qiangze Feng, Daliang Wang, Yanmin Qian, and Lei Xie. The accented english speech recognition challenge 2020: open datasets, tracks, baselines, results and methods. In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6918–6922. IEEE, 2021.</p></div>
+<div class="pblk plain" id="p-references-81"><p class="refline">[75] Jeong-Uk Bang, Seung Yun, Seung-Hi Kim, Mu-Yeol Choi, Min-Kyu Lee, Yeo-Jeong Kim, Dong-Hyun Kim, Jun Park, Young-Jik Lee, and Sang-Hun Kim. Ksponspeech: Korean spontaneous speech corpus for automatic speech recognition. Applied Sciences, 10(19):6936, 2020.</p></div>
+<div class="pblk plain" id="p-references-82"><p class="refline">[76] YYDMS Fujimoto. Reazonspeech: A free and massive corpus for japanese asr, 2016.</p></div>
+<div class="pblk plain" id="p-references-83"><p class="refline">[77] Cancan Li, Fei Su, Juan Liu, Hui Bu, Yulong Wan, Hongbin Suo, and Ming Li. Aishell6- whisper: A chinese mandarin audio-visual whisper speech dataset with speech recognition baselines. arXiv preprint arXiv:2509.23833, 2025.</p></div>
+<div class="pblk plain" id="p-references-84"><p class="refline">[78] Anuj Diwan, Zhisheng Zheng, David Harwath, and Eunsol Choi. Scaling rich style-prompted text-to-speech datasets. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 3639–3659, 2025.</p></div>
+<div class="pblk plain" id="p-references-85"><p class="refline">[79] Yang Chen, Hui Wang, Shiyao Wang, Junyang Chen, Jiabei He, Jiaming Zhou, Xi Yang, Yequan Wang, Yonghua Lin, and Yong Qin. Seniortalk: A chinese conversation dataset with rich annotations for super-aged seniors, 2025.</p></div>
+<div class="pblk plain" id="p-references-86"><p class="refline">[80] Jiaming Zhou, Shiyao Wang, Shiwan Zhao, Jiabei He, Haoqin Sun, Hui Wang, Cheng Liu, Aobo Kong, Yujie Guo, and Yong Qin. Childmandarin: A comprehensive mandarin speech dataset for young children aged 3-5. arXiv preprint arXiv:2409.18584, 2024.</p></div>
+<div class="pblk plain" id="p-references-87"><p class="refline">[81] Saida Mussakhojayeva, Yerbolat Khassanov, and Huseyin Atakan Varol. Ksc2: An industrialscale open-source kazakh speech corpus. In Interspeech 2022, pages 1367–1371, 2022.</p></div>
+<div class="pblk plain" id="p-references-88"><p class="refline">[82] Ajinkya Kulkarni, Atharva Kulkarni, Sara Abedalmon’em Mohammad Shatnawi, and Hanan Aldarmaki. Clartts: An open-source classical arabic text-to-speech corpus. In Proc. Interspeech 2023, pages 5511–5515, 2023.</p></div>
+<div class="pblk plain" id="p-references-89"><p class="refline">[83] Hawau Toyin, Rufael Marew, Humaid Alblooshi, Samar M Magdy, and Hanan Aldarmaki.</p></div>
+<div class="pblk plain" id="p-references-90"><p class="refline">Arvoice: A multi-speaker dataset for arabic speech synthesis.</p></div>
+<div class="pblk plain" id="p-references-91"><p class="refline">In Proc. Interspeech 2025, pages 4808–4812, 2025.</p></div>
+<div class="pblk plain" id="p-references-92"><p class="refline">[84] Saida Mussakhojayeva, Yerbolat Khassanov, and Huseyin Atakan Varol. Kazakhtts2: Extending the open-source kazakh tts corpus with more data, speakers, and topics. In Proceedings of the Thirteenth Language Resources and Evaluation Conference, pages 5404–5411, 2022.</p></div>
+<div class="pblk plain" id="p-references-93"><p class="refline">[85] Zhiqiang Liu, Zhiqiang Ma, Xiaoxu Zhang, Caijilahu Bao, Xiulan Xie, and Fangyuan Zhu.</p></div>
+<div class="pblk plain" id="p-references-94"><p class="refline">Imut-mc: A speech corpus for mongolian speech recognition. China Sci. Data, 7:13, 2022.</p></div>
+<div class="pblk plain" id="p-references-95"><p class="refline">[86] Ahmed Ali, Peter Bell, James Glass, Yacine Messaoui, Hamdy Mubarak, Steve Renals, and Yifan Zhang. The mgb-2 challenge: Arabic multi-dialect broadcast media recognition. In 2016 IEEE Spoken Language Technology Workshop (SLT), pages 279–284. IEEE, 2016.</p></div>
+<div class="pblk plain" id="p-references-96"><p class="refline">[87] Ahmed Ali, Stephan Vogel, and Steve Renals. Speech recognition challenge in the wild: Arabic mgb-3. In 2017 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 316–322. IEEE, 2017.</p></div>
+<div class="pblk plain" id="p-references-97"><p class="refline">[88] Ahmed Ali, Suwon Shon, Younes Samih, Hamdy Mubarak, Ahmed Abdelali, James Glass, Steve Renals, and Khalid Choukri. The mgb-5 challenge: Recognition and dialect identification of dialectal arabic speech. In 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 1026–1033. IEEE, 2019.</p></div>
+<div class="pblk plain" id="p-references-98"><p class="refline">[89] Sadeen Alharbi, Areeb Alowisheq, Zoltán Tüske, Kareem Darwish, Abdullah Alrajeh, Abdulmajeed Alrowithi, Aljawharah Bin Tamran, Asma Ibrahim, Raghad Aloraini, Raneem Alnajim, et al. Sada: Saudi audio dataset for arabic. In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 10286–10290. IEEE, 2024.</p></div>
+<div class="pblk plain" id="p-references-99"><p class="refline">[90] Mohammad Al-Fetyani, Muhammad Al-Barham, Gheith Abandah, Adham Alsharkawi, and Maha Dawas. Masc: Massive arabic speech corpus. In 2022 IEEE Spoken Language Technology Workshop (SLT), pages 1006–1013. IEEE, 2023.</p></div>
+<div class="pblk plain" id="p-references-100"><p class="refline">[91] Maryam Khalifa Al Ali and Hanan Aldarmaki. Mixat: A data set of bilingual emirati-english speech. In Proceedings of the 3rd Annual Meeting of the Special Interest Group on Underresourced Languages@ LREC-COLING 2024, pages 222–226, 2024.</p></div>
+<div class="pblk plain" id="p-references-101"><p class="refline">[92] Kak Soky, Zhuo Gong, and Sheng Li. NICT-Tib1: A Public Speech Corpus of Lhasa Dialect for Benchmarking Tibetan Language Speech Recognition Systems. In Proc. O-COCOSDA, pages 1–5, 2022.</p></div>
+<div class="pblk plain" id="p-references-102"><p class="refline">[93] Yue Zhao, Xiaona Xu, Jianjian Yue, Wei Song, Xiali Li, Licheng Wu, and Qiang Ji. An open speech resource for tibetan multi-dialect and multitask recognition. International Journal of Computational Science and Engineering, 22(2/3):297–304, 2020.</p></div>
+<div class="pblk plain" id="p-references-103"><p class="refline">[94] Senyan Li, Guanyu Li, and Jiewen Ning. Xbmu-amdo31: An open source of amdo tibetan speech database and speech recognition baseline system. In National Conference on ManMachine Speech Communication, NCMMSC2022, 2022.</p></div>
+<div class="pblk plain" id="p-references-104"><p class="refline">[95] Linfei Lu, Jiaxin Pang, Stansencuo, Buwonglam, and Linting Huang. Tibetan greetings. http: //www.openslr.org/149/.</p></div></section>
+<section>
+      <h2 class="sech lv1" id="sec-A"><span class="secnum">A</span> <span class="t-zh">附录 A 多语训练数据完整清单</span><span class="t-en">Complete List of Multilingual Training Data</span></h2><div class="pblk" id="p-A-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-1-1"><span class="en">We used the following datasets to train OmniVoice:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-1-1"><span class="zh">我们使用以下数据集训练 OmniVoice：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-2-1"><span class="en">Emilia [46], Emilia-YODAS [46], LibriTTS [61], Common Voice [62], VoxBox [7], Meta Omnilingual ASR Corpus [57], FLEURS [52], GigaSpeech 2 [63], YODAS-Granary [64], EuroSpeech [65], IndicVoices-R [66], IndicTTS [67], Rasa [68], PhoAudiobook [69], viVoice2, CML- TTS [70], Wenetspeech-yue [71], Wenetspeech-chuan [72], Kespeech [73], AESRC [74], Ksponspeech [75], Reazonspeech [76], AISHELL6-whisper [77], ParaSpeechCaps [78], Nvspeech [30], NonVerbalSpeech-38K [45], SeniorTalk [79], ChildMandarin [80], KSC2 [81], ClArTTS [82], ArVoice [83], KazakhTTS2 [84], RuLS3, IMUT-MC [85], HUI-Audio-Corpus-German4, MGB- 2 [86], MGB-3 [87], MGB-5 [88], SADA [89], MASC [90], Mixat [91], Arabic datasets found from [37] (darija speech to text5, DarijaTTS-clean6, Jordan-Audio7, UAE 100K8), NICT-Tib1 [92], TIBMD@MUC [93], XBMU-AMDO3 [94], Tibetan-Greetings [95].</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-2-1"><span class="zh">Emilia [46]、Emilia-YODAS [46]、LibriTTS [61]、Common Voice [62]、VoxBox [7]、Meta Omnilingual ASR Corpus [57]、FLEURS [52]、GigaSpeech 2 [63]、YODAS-Granary [64]、EuroSpeech [65]、IndicVoices-R [66]、IndicTTS [67]、Rasa [68]、PhoAudiobook [69]、viVoice2、CML-TTS [70]、Wenetspeech-yue [71]、Wenetspeech-chuan [72]、Kespeech [73]、AESRC [74]、Ksponspeech [75]、Reazonspeech [76]、AISHELL6-whisper [77]、ParaSpeechCaps [78]、Nvspeech [30]、NonVerbalSpeech-38K [45]、SeniorTalk [79]、ChildMandarin [80]、KSC2 [81]、ClArTTS [82]、ArVoice [83]、KazakhTTS2 [84]、RuLS3、IMUT-MC [85]、HUI-Audio-Corpus-German4、MGB-2 [86]、MGB-3 [87]、MGB-5 [88]、SADA [89]、MASC [90]、Mixat [91]、来自 [37] 的阿拉伯语数据集（darija speech to text5、DarijaTTS-clean6、Jordan-Audio7、UAE 100K8）、NICT-Tib1 [92]、TIBMD@MUC [93]、XBMU-AMDO3 [94]、Tibetan-Greetings [95]。</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-B"><span class="secnum">B</span> <span class="t-zh">附录 B 不同推理步数的结果</span><span class="t-en">Results of Different Inference Steps</span></h2><div class="pblk" id="p-B-1">
+          <p class="en-lines"><span class="sent" data-sid="s-B-1-1"><span class="en">In Table 9, we evaluate the multilingual version OmniVoice model with different inference steps on English and Chinese benchmarks.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-B-1-1"><span class="zh">在表 9 中，我们在中英文基准上评估了多语版 OmniVoice 模型在不同推理步数下的表现。</span></span></p>
+          
+        </div>
+<div class="cap" id="tab-B-1"><span class="cap-k">表</span><p class="en">Table 9: Objective evaluation results of OmniVoice with different inference steps.</p><p class="zh">表 9：OmniVoice 在不同推理步数下的客观评估结果。</p></div>
+<div class="pblk" id="p-B-2">
+          <p class="en-lines"><span class="sent" data-sid="s-B-2-1"><span class="en">LibriSpeech-PC test-clean Seed-TTS test-en Seed-TTS test-zh Steps 64 0.729 1.28 4.30 0.742 1.60 3.92 0.777 0.81 3.13 32 0.729 1.30 4.28 0.741 1.53 3.91 0.777 0.84 3.11 16 0.728 1.50 4.23 0.735 1.72 3.92 0.773 0.99 3.00 8 0.713 2.02 4.02 0.716 1.94 3.59 0.756 1.58 2.72 2https://huggingface.co/datasets/capleaf/viVoice 3https://www.openslr.org/96/ 4https://huggingface.co/datasets/Paradoxia/opendata-iisys-hui 5https://huggingface.co/datasets/adiren7/darija_speech_to_text 6https://huggingface.co/datasets/KandirResearch/DarijaTTS-clean 7https://huggingface.co/datasets/nadsoft/Jordan-Audio 8https://huggingface.co/datasets/AhmedBadawy11/UAE_100K</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-B-2-1"><span class="zh">（表格碎块）LibriSpeech-PC test-clean、Seed-TTS test-en、Seed-TTS test-zh 三组数值；步数 64：0.729、1.28、4.30，0.742、1.60、3.92，0.777、0.81、3.13；步数 32：0.729、1.30、4.28，0.741、1.53、3.91，0.777、0.84、3.11；步数 16：0.728、1.50、4.23，0.735、1.72、3.92，0.773、0.99、3.00；步数 8：0.713、2.02、4.02，0.716、1.94、3.59，0.756、1.58、2.72。（页脚链接：2 https://huggingface.co/datasets/capleaf/viVoice；3 https://www.openslr.org/96/；4 https://huggingface.co/datasets/Paradoxia/opendata-iisys-hui；5 https://huggingface.co/datasets/adiren7/darija_speech_to_text；6 https://huggingface.co/datasets/KandirResearch/DarijaTTS-clean；7 https://huggingface.co/datasets/nadsoft/Jordan-Audio；8 https://huggingface.co/datasets/AhmedBadawy11/UAE_100K）</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">附录 C FLEURS-Multilingual-102 详细结果</span><span class="t-en">Detailed Results on FLEURS-Multilingual-102</span></h2><div class="pblk" id="p-C-1">
+          <p class="en-lines"><span class="sent" data-sid="s-C-1-1"><span class="en">Per-language CERs of of ground-truth and OmniVoice on FLEURS-Multilingual-102 is shown in Fig. 4.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-C-1-1"><span class="zh">真实语音与 OmniVoice 在 FLEURS-Multilingual-102 上的逐语言 CER 如图 4 所示。</span></span></p>
+          
+        </div>
+<div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 10: Per-language CERs of ground-truth and OmniVoice on FLEURS-Multilingual-102</p><p class="zh">表 10：真实语音与 OmniVoice 在 FLEURS-Multilingual-102 上的逐语言 CER。</p></div>
+<div class="pblk" id="p-C-2">
+          <p class="en-lines"><span class="sent" data-sid="s-C-2-1"><span class="en">Afrikaans 3.54 3.08 Amharic 4.98 7.30 Armenian 1.38 1.45 Assamese 5.29 3.92 Asturian 3.79 2.07 Azerbaijani 2.60 3.20 Belarusian 1.80 1.00 Bengali 4.10 3.08 Bosnian 1.61 0.66 Bulgarian 1.66 0.87 Burmese 6.77 12.20 Cantonese 11.01 21.92 Catalan 1.17 0.86 Cebuano 1.74 1.81 Central Kurdish 3.92 2.97 Chichewa 4.63 3.32 Chinese 5.54 3.16 Croatian 4.64 0.93 Czech 2.19 1.21 Danish 2.86 1.79 Dutch 2.01 1.87 English 2.63 1.67 Estonian 0.97 1.03 Filipino 2.34 1.24 Finnish 1.60 1.46 French 2.13 1.95 Fulah 12.33 7.70 Galician 1.52 1.03 Ganda 7.87 6.60 Georgian 1.78 1.83 German 2.22 1.35 Greek 2.31 1.57 Gujarati 3.06 2.74 Hausa 5.14 3.03 Hebrew 4.91 9.75 Hindi 2.54 2.64 Hungarian 1.75 1.04 Icelandic 2.82 3.77 Igbo 7.75 7.40 Indonesian 1.87 2.95 Irish 17.56 8.52 Italian 1.27 1.56 Japanese 7.70 5.96 Javanese 3.17 2.80 Kabuverdianu 3.29 2.10 Kamba 8.81 10.42 Kannada 2.84 2.70 Kazakh 2.01 3.11 Khmer 6.20 11.48 Kirghiz 2.33 1.80 Korean 3.72 3.78 Lao 22.87 25.51 Latvian 1.87 1.55 Lingala 2.36 1.68 Lithuanian 2.98 2.05 Luo 3.58 3.37 Luxembourgish 5.48 4.52 Macedonian 1.05 0.89 Malay 1.59 1.19 Malayalam 2.99 3.40 Maltese 2.01 3.65 Maori 4.90 1.98 Marathi 5.02 2.76 Mongolian 4.78 4.26 Nepali 4.76 3.43 Norwegian Bokmål 1.50 1.14 Occitan 9.63 6.99 Odia 5.77 5.53 Oromo 12.50 4.97 Panjabi 5.76 2.95 Pedi 4.88 4.44 Persian 1.57 1.90 Polish 1.14 0.61 Portuguese 1.45 1.22 Pushto 11.42 5.53 Romanian 2.15 0.94 Russian 1.68 1.10 Serbian 1.36 0.82 Shona 4.07 1.80 Sindhi 5.51 3.26 Slovak 2.76 0.85 Slovenian 2.40 1.20 Somali 10.13 4.86 Spanish 1.08 0.77 Standard Arabic 2.58 1.92 Swahili 2.41 1.37 Swedish 2.14 1.43 Tajik 3.17 2.36 Tamil 4.00 3.77 Telugu 4.51 3.77 Thai 6.98 7.71 Turkish 1.94 2.71 Ukrainian 1.45 1.23 Umbundu 6.97 5.44 Urdu 80.27 28.73 Uzbek 3.31 2.23 Vietnamese 3.49 2.63 Welsh 3.91 3.37 Wolof 12.17 6.87 Xhosa 3.62 3.83 Yoruba 17.97 21.37 Zulu 3.33 2.03</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-C-2-1"><span class="zh">（表格碎块，逐语言 CER 数值表，左列为真实语音、右列为 OmniVoice）Afrikaans 3.54/3.08；Amharic 4.98/7.30；Armenian 1.38/1.45；Assamese 5.29/3.92；Asturian 3.79/2.07；Azerbaijani 2.60/3.20；Belarusian 1.80/1.00；Bengali 4.10/3.08；Bosnian 1.61/0.66；Bulgarian 1.66/0.87；Burmese 6.77/12.20；Cantonese 11.01/21.92；Catalan 1.17/0.86；Cebuano 1.74/1.81；Central Kurdish 3.92/2.97；Chichewa 4.63/3.32；Chinese 5.54/3.16；Croatian 4.64/0.93；Czech 2.19/1.21；Danish 2.86/1.79；Dutch 2.01/1.87；English 2.63/1.67；Estonian 0.97/1.03；Filipino 2.34/1.24；Finnish 1.60/1.46；French 2.13/1.95；Fulah 12.33/7.70；Galician 1.52/1.03；Ganda 7.87/6.60；Georgian 1.78/1.83；German 2.22/1.35；Greek 2.31/1.57；Gujarati 3.06/2.74；Hausa 5.14/3.03；Hebrew 4.91/9.75；Hindi 2.54/2.64；Hungarian 1.75/1.04；Icelandic 2.82/3.77；Igbo 7.75/7.40；Indonesian 1.87/2.95；Irish 17.56/8.52；Italian 1.27/1.56；Japanese 7.70/5.96；Javanese 3.17/2.80；Kabuverdianu 3.29/2.10；Kamba 8.81/10.42；Kannada 2.84/2.70；Kazakh 2.01/3.11；Khmer 6.20/11.48；Kirghiz 2.33/1.80；Korean 3.72/3.78；Lao 22.87/25.51；Latvian 1.87/1.55；Lingala 2.36/1.68；Lithuanian 2.98/2.05；Luo 3.58/3.37；Luxembourgish 5.48/4.52；Macedonian 1.05/0.89；Malay 1.59/1.19；Malayalam 2.99/3.40；Maltese 2.01/3.65；Maori 4.90/1.98；Marathi 5.02/2.76；Mongolian 4.78/4.26；Nepali 4.76/3.43；Norwegian Bokmål 1.50/1.14；Occitan 9.63/6.99；Odia 5.77/5.53；Oromo 12.50/4.97；Panjabi 5.76/2.95；Pedi 4.88/4.44；Persian 1.57/1.90；Polish 1.14/0.61；Portuguese 1.45/1.22；Pushto 11.42/5.53；Romanian 2.15/0.94；Russian 1.68/1.10；Serbian 1.36/0.82；Shona 4.07/1.80；Sindhi 5.51/3.26；Slovak 2.76/0.85；Slovenian 2.40/1.20；Somali 10.13/4.86；Spanish 1.08/0.77；Standard Arabic 2.58/1.92；Swahili 2.41/1.37；Swedish 2.14/1.43；Tajik 3.17/2.36；Tamil 4.00/3.77；Telugu 4.51/3.77；Thai 6.98/7.71；Turkish 1.94/2.71；Ukrainian 1.45/1.23；Umbundu 6.97/5.44；Urdu 80.27/28.73；Uzbek 3.31/2.23；Vietnamese 3.49/2.63；Welsh 3.91/3.37；Wolof 12.17/6.87；Xhosa 3.62/3.83；Yoruba 17.97/21.37；Zulu 3.33/2.03。</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-D"><span class="secnum">D</span> <span class="t-zh">附录 D OmniVoice 支持的语言</span><span class="t-en">Supported Languages of OmniVoice</span></h2><div class="pblk" id="p-D-1">
+          <p class="en-lines"><span class="sent" data-sid="s-D-1-1"><span class="en">OmniVoice supports 646 languages with a total of 581k hours of training data.</span></span> <span class="sent" data-sid="s-D-1-2"><span class="en">Detailed language, along with its OmniVoice language ID, ISO 639-3 code, and training data duration are shown in Table 11.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-D-1-1"><span class="zh">OmniVoice 支持 646 种语言，训练数据总量为 581k 小时。</span></span><span class="sent" data-sid="s-D-1-2"><span class="zh">每种语言的详细信息——包括其 OmniVoice 语言 ID、ISO 639-3 代码与训练数据时长——见表 11。</span></span></p>
+          
+        </div>
+<div class="cap" id="tab-D-1"><span class="cap-k">表</span><p class="en">Table 11: Supported languages of OmniVoice along with its OmniVoice language ID, ISO 639-3 code, and training data duration (hours).</p><p class="zh">表 11：OmniVoice 支持的语言，附其 OmniVoice 语言 ID、ISO 639-3 代码与训练数据时长（小时）。</p></div>
+<div class="pblk" id="p-D-2">
+          <p class="en-lines"><span class="sent" data-sid="s-D-2-1"><span class="en">Abadi kbt kbt 9.73 Abkhazian ab abk 57.27 Abron abr abr 9.22 Abua abn abn 10.27 Adamawa Fulfulde fub fub 13.12 Adyghe ady ady 32.6 Afade aal aal 10.19 Afrikaans af afr 4.4 Agwagwune yay yay 8.26 Aja (Benin) ajg ajg 5.63 Akebu keu keu 9.1 Alago ala ala 11.04 Albanian sq sqi 8.59 Algerian Arabic arq arq 9.64 Algerian Saharan Arabic aao aao 2.02 Ambo-Pasco Quechua qva qva 9.59 Ambonese Malay abs abs 10.03 Amdo Tibetan adx adx 56.94 Amharic am amh 12.83 Anaang anw anw 9.65 Angika anp anp 10.65 Antankarana Malagasy xmv xmv 17.9 Aragonese an arg 16.4 Arbëreshë Albanian aae aae 6.11 Arequipa-La Unión Quechua qxu qxu 10.12 Armenian hy hye 42.15 Ashe ahs ahs 10.62 Ashéninka Perenë prq prq 7.16 Askopan eiv eiv 10.44 Assamese as asm 270.85 Asturian ast ast 8.48 Atayal tay tay 7.02 Awak awo awo 10.22 Ayacucho Quechua quy quy 0.05 Azerbaijani az aze 9.84 Baatonum bba bba 10.53 Bacama bcy bcy 9.94 Bade bde bde 9.89 Bafia ksf ksf 16.43 Bafut bfd bfd 9.03 Bagirmi Fulfulde fui fui 15.04 Bago-Kusuntu bqg bqg 8.86 Baharna Arabic abv abv 10.41 Bakoko bkh bkh 6.0 Balanta-Ganja bjt bjt 9.41 Balti bft bft 16.28 Bamenyam bce bce 9.9 Bamun bax bax 10.24 Bangwinji bsj bsj 10.0 Banjar bjn bjn 11.68 Bankon abb abb 11.2 Baoulé bci bci 10.21 Bara Malagasy bhr bhr 12.14 Barok bjk bjk 10.16 Basa (Cameroon) bas bas 10.66 Basa (Nigeria) bzw bzw 10.27 Bashkir ba bak 249.1 Basque eu eus 479.86 Batak Mandailing btm btm 11.09 Batanga bnm bnm 15.01 Bateri btv btv 9.8 Bats bbl bbl 11.22 Bayot bda bda 9.47 Bebele beb beb 7.52 Belarusian be bel 1809.43 Bengali bn ben 271.76 Betawi bew bew 11.15 Bhili bhb bhb 9.98 Bhojpuri bho bho 10.05 Bilur bxf bxf 10.84 Bima bhp bhp 10.67 Bodo brx brx 231.57 Boghom bux bux 10.48 Bokyi bky bky 9.85 Bomu bmq bmq 10.68 Bondei bou bou 9.98 Borgu Fulfulde fue fue 20.1 Bosnian bs bos 690.73 Brahui brh brh 19.89 Braj bra bra 10.68 Breton br bre 25.48 Buduma bdm bdm 10.17 Buginese bug bug 11.09 Bukharic bhh bhh 11.38 Bulgarian bg bul 2190.76 Bulu (Cameroon) bum bum 9.06 Bundeli bns bns 10.88 Bunun bnn bnn 9.26 Bura-Pabir bwr bwr 10.4 Burak bys bys 9.92 Burmese my mya 12.14 Burushaski bsk bsk 9.14 Cacaloxtepec Mixtec miu miu 9.18 Cajatambo North Lima Quechua qvl qvl 9.95 Cakfem-Mushere cky cky 8.96 Cameroon Pidgin wes wes 10.06 Campidanese Sardinian sro sro 10.16 Cantonese yue yue 13302.38 Catalan ca cat 3358.6 Cebuano ceb ceb 12.17 Cen cen cen 9.85 Central Kurdish ckb ckb 137.52 Central Nahuatl nhn nhn 9.51 Central Pame pbs pbs 9.69 Central Pashto pst pst 11.4 Central Puebla Nahuatl ncx ncx 9.86 Central Tarahumara tar tar 9.73 Central Yupik esu esu 2.18 Central-Eastern Niger Fulfulde fuq fuq 9.28 Chadian Arabic shu shu 2.29 Chichewa ny nya 10.8 Chichicapan Zapotec zpv zpv 9.85 Chiga cgg cgg 10.84 Chimalapa Zoque zoh zoh 9.35 Chimborazo Highland Quichua qug qug 10.12 Chinese zh cmn 111343.3 Chiquián Ancash Quechua qxa qxa 9.99 Chitwania Tharu the the 10.06 Chokwe cjk cjk 11.01 Chuvash cv chv 23.96 Cibak ckl ckl 10.91 Coastal Konjo kjc kjc 10.18 Copainalá Zoque zoc zoc 10.07 Cornish kw cor 12.15 Corongo Ancash Quechua qwa qwa 9.72 Croatian hr hrv 2795.31 Cross River Mbembe mfn mfn 10.03 Cuyamecalco Mixtec xtu xtu 9.4 Czech cs ces 148.13 Dadiya dbd dbd 9.61 Dagbani dag dag 10.14 Dameli dml dml 9.18 Danish da dan 1665.98 Dargwa dar dar 1.22 Dazaga dzg dzg 9.96 Deccan dcc dcc 10.38 Degema deg deg 11.07 Dera (Nigeria) kna kna 11.91 Dghwede dgh dgh 9.95 Dhatki mki mki 8.83 Dhivehi dv div 38.61 Dhofari Arabic adf adf 0.31 Dijim-Bwilim cfa cfa 10.32 Dogri dgo dgo 117.04 Domaaki dmk dmk 6.38 Dotyali dty dty 10.85 Duala dua dua 12.13 Dutch nl nld 2264.13 D˜uya ldb ldb 11.31 Dyula dyu dyu 0.34 Eastern Balochi bgp bgp 10.98 Eastern Bolivian Guaraní gui gui 22.72 Eastern Egyptian Bedawi Arabic avl avl 1.86 Eastern Krahn kqo kqo 9.28 Eastern Mari mhr mhr 272.31 Eastern Yiddish ydd ydd 18.43 Ebrié ebr ebr 1.5 Eggon ego ego 9.95 Egyptian Arabic arz arz 23.23 Ejagham etu etu 10.3 Eleme elm elm 11.27 Eloyi afo afo 11.21 Embu ebu ebu 9.81 English en eng 206061.1 Erzya myv myv 3.1 Esan ish ish 10.05 Esperanto eo epo 1396.64 Estonian et est 960.37 Eton (Cameroon) eto eto 7.43 Ewondo ewo ewo 12.71 Extremaduran ext ext 13.59 Fang (Equatorial Guinea) fan fan 3.51 Fanti fat fat 11.38 Farefare gur gur 9.24 Fe’fe’ fmp fmp 9.86 Filipino fil fil 7.71 Filomena Mata-Coahuitlán Totonac tlp tlp 11.35 Finnish fi fin 468.62 Fipa fip fip 10.55 French fr fra 23675.32 Fulah ff ful 13.84 Galician gl glg 208.81 Gambian Wolof wof wof 9.46 Ganda lg lug 447.82 Garhwali gbm gbm 19.14 Gawar-Bati gwt gwt 12.16 Gawri gwc gwc 10.83 Gbagyi gbr gbr 12.12 Gbari gby gby 12.59 Geji gyz gyz 10.49 Gen gej gej 5.39 Georgian ka kat 156.96 German de deu 21927.13 Geser-Gorom ges ges 10.08 Gheg Albanian aln aln 3.92 Ghomálá’ bbj bbj 7.32 Gidar gid gid 10.06 Glavda glw glw 10.51 Goan Konkani gom gom 9.82 Goaria gig gig 9.41 Goemai ank ank 10.0 Gola gol gol 9.26 Greek el ell 2412.54 Guarani gn grn 4.06 Guduf-Gava gdf gdf 12.21 Guerrero Amuzgo amu amu 10.1 Gujarati gu guj 91.18 Gujari gju gju 8.66 Gulf Arabic afb afb 98.55 Gurgula ggg ggg 7.12 Gusii guz guz 9.5 Gusilay gsl gsl 10.0 Gweno gwe gwe 8.87 Güilá Zapotec ztu ztu 9.17 Hadothi hoj hoj 10.08 Hahon hah hah 9.64 Haitian ht hat 0.04 Hakha Chin cnh cnh 2.24 Hakö hao hao 8.56 Halia hla hla 9.86 Hausa ha hau 17.75 Hawaiian haw haw 11.79 Hazaragi haz haz 9.69 Hebrew he heb 13.4 Hemba hem hem 9.53 Herero hz her 9.59 Highland Konjo kjk kjk 10.21 Hijazi Arabic acw acw 22.32 Hindi hi hin 117.17 Huarijio var var 9.28 Huautla Mazatec mau mau 6.39 Huaxcaleca Nahuatl nhq nhq 5.07 Huba hbb hbb 10.7 Huitepec Mixtec mxs mxs 9.64 Hula hul hul 10.33 Hungarian hu hun 255.83 Hunjara-Kaina Ke hkk hkk 8.69 Hwana hwo hwo 11.23 Ibibio ibb ibb 7.38 Icelandic is isl 647.29 Idakho-Isukha-Tiriki ida ida 9.31 Idoma idu idu 11.16 Igbo ig ibo 13.69 Igo ahl ahl 9.22 Ikposo kpo kpo 7.83 Ikwere ikw ikw 10.0 Imbabura Highland Quichua qvi qvi 11.0 Indonesian id ind 6327.87 Indus Kohistani mvy mvy 21.64 Interlingua ia ina 13.48 Inupiaq ik ipk 2.11 Irish ga gle 21.4 Iron Ossetic os oss 1.38 Isekiri its its 11.85 Isoko iso iso 10.33 Italian it ita 9402.46 Ito itw itw 9.19 Itzá itz itz 7.08 Ixtayutla Mixtec vmj vmj 10.17 Izon ijc ijc 9.95 Jambi Malay jax jax 10.29 Japanese ja jpn 36914.4 Jaqaru jqr jqr 9.32 Jauja Wanca Quechua qxw qxw 11.42 Jaunsari jns jns 11.25 Javanese jv jav 11.19 Jiba juo juo 10.43 Jju kaj kaj 10.16 Judeo-Moroccan Arabic aju aju 7.21 Juxtlahuaca Mixtec vmc vmc 9.43 Kabardian kbd kbd 108.35 Kabras lkb lkb 9.99 Kabuverdianu kea kea 10.51 Kabyle kab kab 529.52 Kachi Koli gjk gjk 20.83 Kairak ckr ckr 10.51 Kalabari ijn ijn 11.04 Kalasha kls kls 9.11 Kalenjin kln kln 40.42 Kalkoti xka xka 8.0 Kamba kam kam 14.72 Kamo kcq kcq 10.49 Kanauji bjj bjj 11.01 Kanembu kbl kbl 10.19 Kannada kn kan 128.06 Karekare kai kai 10.52 Kashmiri ks kas 110.42 Kathoriya Tharu tkt tkt 10.64 Kati bsh bsh 8.77 Kazakh kk kaz 1537.29 Keiyo eyo eyo 9.24 Khams Tibetan khg khg 6.38 Khana ogo ogo 10.51 Khetrani xhe xhe 9.4 Khmer km khm 7.1 Khowar khw khw 15.55 Kinga zga zga 9.5 Kinnauri kfk kfk 10.32 Kinyarwanda rw kin 2021.66 Kirghiz ky kir 46.63 Kirya-Konzäl fkk fkk 9.98 Kochila Tharu thq thq 10.28 Kohistani Shina plk plk 12.75 Kohumono bcs bcs 10.45 Kok Borok trp trp 10.74 Kol (Papua New Guinea) kol kol 9.95 Kom (Cameroon) bkm bkm 10.76 Koma kmy kmy 10.28 Konkani knn knn 112.83 Konzo koo koo 13.23 Korean ko kor 8609.28 Korwa kfp kfp 11.87 Kota (India) kfe kfe 10.25 Koti eko eko 8.15 Kuanua ksd ksd 9.91 Kuanyama kj kua 9.88 Kui (India) uki uki 10.77 Kulung (Nigeria) bbu bbu 10.39 Kuot kto kto 9.77 Kushi kuh kuh 10.35 Kwambi kwm kwm 9.9 Kwasio nmg nmg 10.39 Lala-Roba lla lla 10.38 Lamang hia hia 11.07 Lao lo lao 7.63 Larike-Wakasihu alo alo 9.97 Lasi lss lss 6.53 Latgalian ltg ltg 27.23 Latvian lv lav 1441.58 Levantine Arabic apc apc 15.65 Liana-Seti ste ste 10.43 Liberia Kpelle xpe xpe 9.5 Liberian English lir lir 10.26 Libyan Arabic ayl ayl 20.13 Ligurian lij lij 15.97 Lijili mgi mgi 10.89 Lingala ln lin 17.99 Lithuanian lt lit 2629.45 Loarki lrk lrk 10.5 Logooli rag rag 9.39 Logudorese Sardinian src src 10.67 Loja Highland Quichua qvj qvj 10.59 Loloda loa loa 9.31 Longuda lnu lnu 10.46 Loxicha Zapotec ztp ztp 9.62 Luba-Lulua lua lua 8.47 Luo luo luo 36.17 Lushai lus lus 20.24 Luxembourgish lb ltz 8.46 Maasina Fulfulde ffm ffm 10.46 Maba (Chad) mde mde 9.5 Macedo-Romanian rup rup 0.02 Macedonian mk mkd 27.21 Mada (Cameroon) mxu mxu 12.0 Mafa maf maf 9.97 Maithili mai mai 131.37 Malay ms msa 9.57 Malayalam ml mal 166.57 Mali gcc gcc 9.87 Malinaltepec Me’phaa tcf tcf 9.04 Maltese mt mlt 630.29 Mandara tbf tbf 10.01 Mandjak mfv mfv 9.55 Manggarai mqy mqy 10.5 Manipuri mni mni 44.46 Mansoanka msw msw 9.32 Manx gv glv 10.07 Maori mi mri 18.02 Marathi mr mar 156.71 Marghi Central mrt mrt 10.36 Marghi South mfm mfm 10.05 Maria (India) mrr mrr 11.0 Marwari (Pakistan) mve mve 9.96 Masana mcn mcn 10.09 Masikoro Malagasy msh msh 14.16 Matsés mcf mcf 9.61 Mazaltepec Zapotec zpy zpy 9.47 Mazatlán Mazatec vmz vmz 9.82 Mazatlán Mixe mzl mzl 10.05 Mbe mfo mfo 10.24 Mbo (Cameroon) mbo mbo 9.51 Mbum mdd mdd 9.82 Medumba byv byv 10.95 Mekeo mek mek 9.18 Meru mer mer 9.89 Mesopotamian Arabic acm acm 3.78 Mewari mtr mtr 10.58 Min Nan Chinese nan nan 17.55 Mingrelian xmf xmf 11.47 Mitlatongo Mixtec vmm vmm 9.95 Miya mkf mkf 10.16 Mokpwe bri bri 7.53 Moksha mdf mdf 0.47 Mom Jango ver ver 10.93 Mongolian mn mon 269.08 Moroccan Arabic ary ary 104.67 Motu meu meu 9.88 Mpiemo mcx mcx 9.88 Mpumpong mgg mgg 4.94 Mundang mua mua 9.2 Mungaka mhk mhk 7.53 Musey mse mse 7.21 Musgu mug mug 4.74 Musi mui mui 10.52 Naba mne mne 10.37 Najdi Arabic ars ars 203.54 Nalik nal nal 10.33 Nawdm nmz nmz 6.3 Ndonga ng ndo 9.08 Neapolitan nap nap 9.97 Nepali npi npi 171.5 Ngamo nbh nbh 10.04 Ngas anc anc 10.14 Ngiemboon nnh nnh 16.15 Ngizim ngi ngi 10.06 Ngomba jgo jgo 10.15 Ngombale nla nla 8.79 Nigerian Fulfulde fuv fuv 9.97 Nigerian Pidgin pcm pcm 11.04 Nimadi noe noe 11.12 Nobiin fia fia 9.96 North Mesopotamian Arabic ayp ayp 10.92 North Moluccan Malay max max 9.43 Northern Betsimisaraka Malagasy bmm bmm 19.12 Northern Hindko hno hno 20.04 Northern Kurdish kmr kmr 69.59 Northern Pame pmq pmq 10.24 Northern Pashto pbu pbu 11.03 Northern Uzbek uzn uzn 15.23 Northwest Gbaya gya gya 8.45 Norwegian no nor 3849.8 Norwegian Bokmål nb nob 12.7 Norwegian Nynorsk nn nno 1.54 Notsi ncf ncf 9.84 Nyankpa yes yes 10.26 Nyungwe nyu nyu 8.98 Nzanyi nja nja 10.02 Nüpode Huitoto hux hux 9.04 Occitan oc oci 16.8 Od odk odk 20.26 Odia ory ory 144.81 Odual odu odu 10.57 Omani Arabic acx acx 22.03 Orizaba Nahuatl nlv nlv 11.42 Orma orc orc 22.01 Ormuri oru oru 16.74 Oromo om orm 6.6 Pahari-Potwari phr phr 24.03 Paiwan pwn pwn 13.76 Panjabi pa pan 147.37 Papuan Malay pmy pmy 10.17 Parkari Koli kvx kvx 11.04 Pedi nso nso 12.64 Pero pip pip 9.85 Persian fa fas 366.07 Petats pex pex 10.2 Phalura phl phl 20.69 Piemontese pms pms 16.01 Piya-Kwonci piy piy 10.38 Plateau Malagasy plt plt 19.39 Polish pl pol 911.68 Poqomam poc poc 9.63 Portuguese pt por 16855.05 Pulaar fuc fuc 14.77 Pular fuf fuf 13.77 Puno Quechua qxp qxp 9.81 Pushto ps pus 88.62 Pökoot pko pko 10.4 Qaqet byx byx 9.79 Quiotepec Chinantec chq chq 9.76 Rana Tharu thr thr 9.99 Rangi lag lag 9.47 Rapoisi kyx kyx 9.17 Ratahan rth rth 9.34 Rayón Zoque zor zor 9.04 Romanian ro ron 70.23 Romansh rm roh 9.21 Rombo rof rof 18.9 Rotokas roo roo 9.07 Rukai dru dru 9.26 Russian ru rus 20338.5 Sacapulteco quv quv 8.9 Saidi Arabic aec aec 9.28 Sakalava Malagasy skg skg 9.02 Sakizaya szy szy 11.47 Saleman sau sau 10.53 Samba Daka ccg ccg 10.11 Samba Leko ndi ndi 11.27 San Felipe Otlaltepec Popoloca pow pow 8.84 San Francisco Del Mar Huave hue hue 9.45 San Juan Atzingo Popoloca poe poe 10.01 San Martín Itunyoso Triqui trq trq 8.29 San Miguel El Grande Mixtec mig mig 9.66 Sansi ssi ssi 10.47 Sanskrit sa san 84.44 Santa Ana de Tusi Pasco Quechua qxt qxt 10.05 Santa Catarina Albarradas Zapotec ztn ztn 10.02 Santali sat sat 98.37 Santiago del Estero Quichua qus qus 9.55 Saposa sps sps 9.81 Saraiki skr skr 4.13 Sardinian sc srd 2.77 Saya say say 10.02 Sediq trv trv 7.77 Serbian sr srp 1855.33 Seri sei sei 9.81 Shina scl scl 9.84 Shona sn sna 9.96 Siar-Lak sjr sjr 9.87 Sibe nco nco 9.96 Sicilian scn scn 13.35 Sihuas Ancash Quechua qws qws 10.18 Sikkimese sip sip 10.07 Sinaugoro snc snc 10.38 Sindhi sd snd 46.27 Sindhi Bhil sbn sbn 10.53 Sinhala si sin 11.98 Sinicahua Mixtec xti xti 9.5 Sipacapense qum qum 9.37 Siwai siw siw 10.47 Slovak sk slk 2478.46 Slovenian sl slv 1172.61 Solos sol sol 9.95 Somali so som 13.22 Soninke snk snk 10.04 South Giziga giz giz 10.03 South Ucayali Ashéninka cpy cpy 9.15 Southeastern Nochixtlán Mixtec mxy mxy 9.48 Southern Betsimisaraka Malagasy bzc bzc 17.45 Southern Pashto pbt pbt 11.6 Southern Pastaza Quechua qup qup 11.13 Soyaltepec Mazatec vmp vmp 10.17 Spanish es spa 27559.74 Standard Arabic arb arb 1483.53 Standard Moroccan Tamazight zgh zgh 1.19 Sudanese Arabic apd apd 9.93 Sulka sua sua 10.12 Svan sva sva 15.11 Swahili sw swa 418.41 Swedish sv swe 2453.14 Tae’ rob rob 9.02 Tahaggart Tamahaq thv thv 4.25 Taita dav dav 9.12 Tajik tg tgk 9.23 Tamil ta tam 423.09 Tandroy-Mahafaly Malagasy tdx tdx 3.81 Tangale tan tan 10.14 Tanosy Malagasy txy txy 12.07 Tarok yer yer 10.08 Tatar tt tat 30.03 Tedaga tuq tuq 10.0 Telugu te tel 230.21 Tem kdh kdh 4.07 Teop tio tio 9.85 Tepeuxila Cuicatec cux cux 7.83 Tepinapa Chinantec cte cte 9.54 Tera ttr ttr 9.89 Terei buo buo 9.48 Termanu twu twu 11.45 Tesaka Malagasy tkg tkg 17.86 Tetelcingo Nahuatl nhg nhg 8.92 Teutila Cuicatec cut cut 8.04 Thai th tha 10499.77 Tibetan bo bod 82.27 Tidaá Mixtec mtx mtx 9.09 Tidore tvo tvo 10.31 Tigak tgc tgc 9.71 Tigre tig tig 7.49 Tigrinya ti tir 0.08 Tilquiapan Zapotec zts zts 9.33 Tinputz tpz tpz 9.33 Tlacoapa Me’phaa tpl tpl 9.28 Tlacoatzintepec Chinantec ctl ctl 10.04 Tlingit tli tli 0.41 Toki Pona tok tok 13.51 Tomoip tqp tqp 10.1 Tondano tdn tdn 9.14 Tonsea txs txs 9.32 Tooro ttj ttj 10.31 Torau ttu ttu 9.87 Torwali trw trw 14.98 Tsimihety Malagasy xmw xmw 11.53 Tsotso lto lto 9.77 Tswana tn tsn 4.24 Tugen tuy tuy 8.79 Tuki bag bag 10.97 Tula tul tul 9.79 Tulu tcy tcy 11.72 Tunen tvu tvu 9.85 Tungag lcm lcm 9.77 Tunisian Arabic aeb aeb 21.63 Tupuri tui tui 9.26 Turkana tuv tuv 10.17 Turkish tr tur 125.36 Turkmen tk tuk 2.86 Tututepec Mixtec mtu mtu 10.13 Twi tw twi 0.25 Ubaghara byc byc 11.11 Uighur ug uig 428.77 Ukrainian uk ukr 1851.97 Umbundu umb umb 10.59 Upper Sorbian hsb hsb 2.71 Urdu ur urd 211.27 Ushojo ush ush 6.36 Uzbek uz uzb 115.28 Vai vai vai 8.76 Vietnamese vi vie 8481.98 Votic vot vot 0.1 Vöro vro vro 15.66 Waci Gbe wci wci 8.02 Wadiyara Koli kxp kxp 20.0 Waja wja wja 10.22 Wakhi wbl wbl 11.67 Wanga lwg lwg 9.36 Wapan juk juk 10.22 Warji wji wji 11.39 Welsh cy cym 131.21 Wemale weo weo 9.09 Western Frisian fy fry 70.41 Western Highland Purepecha pua pua 10.17 Western Juxtlahuaca Mixtec jmx jmx 10.01 Western Maninkakan mlq mlq 9.83 Western Mari mrj mrj 32.26 Western Niger Fulfulde fuh fuh 9.69 Western Panjabi pnb pnb 10.0 Wolof wo wol 8.71 Wuzlam udl udl 9.23 Xanaguía Zapotec ztg ztg 9.86 Xhosa xh xho 13.35 Yace ekr ekr 10.76 Yakut sah sah 16.08 Yalahatan jal jal 11.18 Yanahuanca Pasco Quechua qur qur 9.95 Yangben yav yav 8.7 Yaqui yaq yaq 9.93 Yauyos Quechua qux qux 9.35 Yekhee ets ets 10.11 Yiddish yi yid 1.81 Yidgha ydg ydg 9.89 Yoruba yo yor 15.66 Yutanduchi Mixtec mab mab 9.26 Zacatlán-Ahuacatlán-Tepetzintla Nahuatl nhi nhi 0.05 Zarma dje dje 10.72 Zaza zza zza 1.52 Zulu zu zul 14.83 Ömie aom aom 8.19</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-D-2-1"><span class="zh">（646 种语言的完整清单，每行依次为语言名、OmniVoice 语言 ID、ISO 639-3 代码、训练时长（小时）；时长数值与原文一致，按原顺序转写如下：）9.73 57.27 9.22 10.27 13.12 32.6 10.19 4.4 8.26 5.63 9.1 11.04 8.59 9.64 2.02 9.59 10.03 56.94 12.83 9.65 10.65 17.9 16.4 6.11 10.12 42.15 10.62 7.16 10.44 270.85 8.48 7.02 10.22 0.05 9.84 10.53 9.94 9.89 16.43 9.03 15.04 8.86 10.41 6.0 9.41 16.28 9.9 10.24 10.0 11.68 11.2 10.21 12.14 10.16 10.66 10.27 249.1 479.86 11.09 15.01 9.8 11.22 9.47 7.52 1809.43 271.76 11.15 9.98 10.05 10.84 10.67 231.57 10.48 9.85 10.68 9.98 20.1 690.73 19.89 10.68 25.48 10.17 11.09 11.38 2190.76 9.06 10.88 9.26 10.4 9.92 12.14 9.14 9.18 9.95 8.96 10.06 10.16 13302.38 3358.6 12.17 9.85 137.52 9.51 9.69 11.4 9.86 9.73 2.18 9.28 2.29 10.8 9.85 10.84 9.35 10.12 111343.3 9.99 10.06 11.01 23.96 10.91 10.18 10.07 12.15 9.72 2795.31 10.03 9.4 148.13 9.61 10.14 9.18 1665.98 1.22 9.96 10.38 11.07 11.91 9.95 8.83 38.61 0.31 10.32 117.04 6.38 10.85 12.13 2264.13 11.31 0.34 10.98 22.72 1.86 9.28 272.31 18.43 1.5 9.95 23.23 10.3 11.27 11.21 9.81 206061.1 3.1 10.05 1396.64 960.37 7.43 12.71 13.59 3.51 11.38 9.24 9.86 7.71 11.35 468.62 10.55 23675.32 13.84 208.81 9.46 447.82 19.14 12.16 10.83 12.12 12.59 10.49 5.39 156.96 21927.13 10.08 3.92 7.32 10.06 10.51 9.82 9.41 10.0 9.26 2412.54 4.06 12.21 10.1 91.18 8.66 98.55 7.12 9.5 10.0 8.87 9.17 10.08 9.64 0.04 2.24 8.56 9.86 17.75 11.79 9.69 13.4 9.53 9.59 10.21 22.32 117.17 9.28 6.39 5.07 10.7 9.64 10.33 255.83 8.69 11.23 7.38 647.29 9.31 11.16 13.69 9.22 7.83 10.0 11.0 6327.87 21.64 13.48 2.11 21.4 1.38 11.85 10.33 9402.46 9.19 7.08 10.17 9.95 10.29 36914.4 9.32 11.42 11.25 11.19 10.43 10.16 7.21 9.43 108.35 9.99 10.51 529.52 20.83 10.51 11.04 9.11 40.42 8.0 14.72 10.49 11.01 10.19 128.06 10.52 110.42 10.64 8.77 1537.29 9.24 6.38 10.51 9.4 7.1 15.55 9.5 10.32 2021.66 46.63 9.98 10.28 12.75 10.45 10.74 9.95 10.76 10.28 112.83 13.23 8609.28 11.87 10.25 8.15 9.91 9.88 10.77 10.39 9.77 10.35 9.9 10.39 10.38 11.07 7.63 9.97 6.53 27.23 1441.58 15.65 10.43 9.5 10.26 20.13 15.97 10.89 17.99 2629.45 10.5 9.39 10.67 10.59 9.31 10.46 9.62 8.47 36.17 20.24 8.46 10.46 9.5 0.02 27.21 12.0 9.97 131.37 9.57 166.57 9.87 9.04 630.29 10.01 9.55 10.5 44.46 9.32 10.07 18.02 156.71 10.36 10.05 11.0 9.96 10.09 14.16 9.61 9.47 9.82 10.05 10.24 9.51 9.82 10.95 9.18 9.89 3.78 10.58 17.55 11.47 9.95 10.16 7.53 0.47 10.93 269.08 104.67 9.88 9.88 4.94 9.2 7.53 7.21 4.74 10.52 10.37 203.54 10.33 6.3 9.08 9.97 171.5 10.04 10.14 16.15 10.06 10.15 8.79 9.97 11.04 11.12 9.96 10.92 9.43 19.12 20.04 69.59 10.24 11.03 15.23 8.45 3849.8 12.7 1.54 9.84 10.26 8.98 10.02 9.04 16.8 20.26 144.81 10.57 22.03 11.42 22.01 16.74 6.6 24.03 13.76 147.37 10.17 11.04 12.64 9.85 366.07 10.2 20.69 16.01 10.38 19.39 911.68 9.63 16855.05 14.77 13.77 9.81 88.62 10.4 9.79 9.76 9.99 9.47 9.17 9.34 9.04 70.23 9.21 18.9 9.07 9.26 20338.5 8.9 9.28 9.02 11.47 10.53 10.11 11.27 8.84 9.45 10.01 8.29 9.66 10.47 84.44 10.05 10.02 98.37 9.55 9.81 4.13 2.77 10.02 7.77 1855.33 9.81 9.84 9.96 9.87 9.96 13.35 10.18 10.07 10.38 46.27 10.53 11.98 9.5 9.37 10.47 2478.46 1172.61 9.95 13.22 10.04 10.03 9.15 9.48 17.45 11.6 11.13 10.17 27559.74 1483.53 1.19 9.93 10.12 15.11 418.41 2453.14 9.02 4.25 9.12 9.23 423.09 3.81 10.14 12.07 10.08 30.03 10.0 230.21 4.07 9.85 7.83 9.54 9.89 9.48 11.45 17.86 8.92 8.04 10499.77 82.27 9.09 10.31 9.71 7.49 0.08 9.33 9.33 9.28 10.04 0.41 13.51 10.1 9.14 9.32 10.31 9.87 14.98 11.53 9.77 4.24 8.79 10.97 9.79 11.72 9.85 9.77 21.63 9.26 10.17 125.36 2.86 10.13 0.25 11.11 428.77 1851.97 10.59 2.71 211.27 6.36 115.28 8.76 8481.98 0.1 15.66 8.02 20.0 10.22 11.67 9.36 10.22 11.39 131.21 9.09 70.41 10.17 10.01 9.83 32.26 9.69 10.0 8.71 9.23 9.86 13.35 10.76 16.08 11.18 9.95 8.7 9.93 9.35 10.11 1.81 9.89 15.66 9.26 0.05 10.72 1.52 14.83 8.19 小时。</span></span></p>
+          
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-E"><span class="secnum">E</span> <span class="t-zh">附录 E 局限与未来工作</span><span class="t-en">Limitations and Future Works</span></h2><div class="pblk" id="p-E-1">
+          <p class="en-lines"><span class="sent" data-sid="s-E-1-1"><span class="en">OmniVoice is currently trained solely on publicly available open-source datasets.</span></span> <span class="sent" data-sid="s-E-1-2"><span class="en">Due to inconsistent annotation quality and uneven acoustic quality across these sources, substantial room remains for performance improvement when trained on more curated, high-quality data.</span><button class="mk" data-sid="s-E-1-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-E-1-3"><span class="en">Likewise, the scope and flexibility of the model’s instruction-following capacity are constrained by the diversity and quality of existing instruction-tuning data.</span></span> <span class="sent" data-sid="s-E-1-4"><span class="en">Constructing high-quality instruction datasets would therefore notably enhance the model’s voice design and customization capabilities.</span></span> <span class="sent" data-sid="s-E-1-5"><span class="en">Furthermore, OmniVoice has not yet been optimized for processing complex numeric sequences or mathematical patterns.</span></span> <span class="sent" data-sid="s-E-1-6"><span class="en">Integrating an external text-normalization front-end would effectively strengthen the model’s performance in such scenarios.</span></span> <span class="sent" data-sid="s-E-1-7"><span class="en">Additionally, unlike continuous-space NAR TTS models, where inference steps can be drastically reduced via techniques such as flow distillation [16], no existing approach enables comparable inference acceleration for discrete-space NAR TTS models.</span><button class="mk feat" data-sid="s-E-1-7" title="查看讲解">解</button></span> <span class="sent" data-sid="s-E-1-8"><span class="en">Exploring optimization strategies to decrease inference steps for this branch of models thus constitutes a promising direction for future work.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-E-1-1"><span class="zh">OmniVoice 目前完全在公开的开源数据集上训练。</span></span><span class="sent" data-sid="s-E-1-2"><span class="zh">由于这些数据源之间标注质量不一、声学质量参差，若在更精心整理的高质量数据上训练，仍有很大的性能提升空间。</span><button class="mk" data-sid="s-E-1-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-E-1-3"><span class="zh">同样，模型指令跟随能力的范围与灵活性，也受限于现有指令微调数据的多样性与质量。</span></span><span class="sent" data-sid="s-E-1-4"><span class="zh">因此，构建高质量的指令数据集将明显增强模型的声音设计与定制能力。</span></span><span class="sent" data-sid="s-E-1-5"><span class="zh">此外，OmniVoice 尚未针对复杂数字序列或数学模式的处理进行优化。</span></span><span class="sent" data-sid="s-E-1-6"><span class="zh">集成一个外部的文本规范化前端，将有效增强模型在这类场景下的表现。</span></span><span class="sent" data-sid="s-E-1-7"><span class="zh">另外，连续空间 NAR TTS 模型的推理步数可以通过流蒸馏 [16] 等技术大幅减少，而离散空间 NAR TTS 模型目前尚不存在能实现同等推理加速的方法。</span><button class="mk feat" data-sid="s-E-1-7" title="查看讲解">解</button></span><span class="sent" data-sid="s-E-1-8"><span class="zh">因此，探索减少这一类模型推理步数的优化策略，是未来工作中一个有前景的方向。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-E-1-2">
+      <div class="ann-card kind-critique">
+        <div class="ann-kind">值得质疑</div>
+        <div class="ann-title">开源数据的天花板</div>
+        <div class="ann-quote">substantial room remains for performance improvement when trained on more curated, high-quality data</div>
+        <div class="exp exp-tech">这句自我局限值得放大读：581k 小时全部来自开源数据，标注与声学质量参差，作者直言换用精修高质量数据还有很大提升空间。换言之，当前成绩是'数据质量受限下的下限'而非模型上限。这给复现者和竞品都留了空间——同样的架构喂更好的数据理应更强，'全开源'既是卖点也是封印。</div>
+        
+      </div></div><div class="ann-panel" data-sid="s-E-1-7">
+      <div class="ann-card kind-connection">
+        <div class="ann-kind">延伸阅读</div>
+        <div class="ann-title">离散 NAR 的加速空白</div>
+        <div class="ann-quote">no existing approach enables comparable inference acceleration for discrete-space NAR TTS models</div>
+        <div class="exp exp-tech">连续空间 NAR（如 ZipVoice 之流匹配模型）可用流蒸馏把推理步数砍到个位数甚至 1–2 步，而离散空间没有等价技术——概率质量分布在离散 token 上，连续空间的 ODE 蒸馏工具箱用不上。作者把'离散 NAR 步数压缩'点名为开放问题，这实际上是给后续研究者留的明确坑位：谁先做出离散扩散 TTS 的蒸馏方案，谁就能补上这条线的最后短板。</div>
+        
+      </div></div></div>
+        </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-F"><span class="secnum">F</span> <span class="t-zh">附录 F 伦理声明</span><span class="t-en">Ethics Statements</span></h2><div class="pblk" id="p-F-1">
+          <p class="en-lines"><span class="sent" data-sid="s-F-1-1"><span class="en">This work is intended only for academic research purposes.</span></span> <span class="sent" data-sid="s-F-1-2"><span class="en">The proposed TTS model is not used for commercial purposes by the authors’ affiliated institutions.</span></span> <span class="sent" data-sid="s-F-1-3"><span class="en">Given its ability to synthesize speech with high speaker similarity, it carries potential risks of misuse.</span></span> <span class="sent" data-sid="s-F-1-4"><span class="en">Any illegal use of this model is strictly prohibited.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-F-1-1"><span class="zh">本工作仅用于学术研究目的。</span></span><span class="sent" data-sid="s-F-1-2"><span class="zh">所提出的 TTS 模型未被作者所属机构用于商业目的。</span></span><span class="sent" data-sid="s-F-1-3"><span class="zh">鉴于其合成高说话人相似度语音的能力，该模型存在被滥用的潜在风险。</span></span><span class="sent" data-sid="s-F-1-4"><span class="zh">严禁任何对本模型的非法使用。</span></span></p>
+          
+        </div></section></article>
+  <footer class="foot">
+    原文来自 arXiv:2604.00688（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。
+    本地 PDF：<a href="../../papers/2604.00688.pdf">papers/2604.00688.pdf</a>。
+    页面由 tools/build_paper.js 自动生成，数据来源 data/papers/2604.00688.js。
+  </footer>
+</main>
+<script>
+(function(){
+  var body=document.body;
+  function seg(id,cls,key){
+    var el=document.getElementById(id);
+    el.addEventListener("click",function(e){
+      var b=e.target.closest("button");if(!b)return;
+      el.querySelectorAll("button").forEach(function(x){x.classList.remove("on")});
+      b.classList.add("on");
+      body.className=body.className.replace(new RegExp(cls+"-\w+"),"").trim();
+      body.classList.add(cls+"-"+b.dataset.v);
+      try{localStorage.setItem(key,b.dataset.v)}catch(_){}
+      closeAll();
+    });
+    try{var v=localStorage.getItem(key);if(v){var btn=el.querySelector('[data-v="'+v+'"]');if(btn)btn.click();}}catch(_){}
+  }
+  seg("segMode","mode","pr_mode");
+  seg("segDens","dens","pr_dens");
+  seg("segDepth","depth","pr_depth");
+
+  var article=document.querySelector(".reader");
+  function closeAll(){
+    document.querySelectorAll(".ann-panel.open").forEach(function(p){p.classList.remove("open")});
+    document.querySelectorAll(".mk.open").forEach(function(m){m.classList.remove("open")});
+  }
+  document.addEventListener("click",function(e){
+    var mk=e.target.closest(".mk");
+    if(!mk)return;
+    var sid=mk.dataset.sid;
+    var blk=mk.closest(".pblk");
+    var panel=blk?blk.querySelector('.ann-panel[data-sid="'+sid+'"]'):null;
+    if(!panel)return;
+    var was=panel.classList.contains("open");
+    closeAll();
+    if(!was){
+      panel.classList.add("open");
+      document.querySelectorAll('.mk[data-sid="'+sid+'"]').forEach(function(m){m.classList.add("open")});
+      if(window.innerWidth>=1180){
+        // 面板绝对定位于 .ann-zone（其顶对齐 .pblk 顶），top = 标记相对 .pblk 的纵向偏移
+        var top=0,el=mk;
+        while(el&&el!==blk){top+=el.offsetTop||0;el=el.offsetParent;}
+        panel.style.top=Math.max(0,top-4)+"px";
+      }
+    }
+  });
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeAll();});
+})();
+</script>
+</body>
+</html>

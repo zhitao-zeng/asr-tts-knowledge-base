@@ -5,6 +5,19 @@
 
 ---
 
+## [2026-08-27] 全文双语精读 · 全量 32 篇
+
+- **精读覆盖扩至全部 32 篇本地论文**（在 3 篇原型基础上新增 29 篇）：wav2vec 2.0、
+  HuBERT、VALL-E、Google USM、MMS、Voicebox、SeamlessM4T、Audiobox、NaturalSpeech 3、
+  Seed-TTS、E2-TTS、Qwen2-Audio、Mini-Omni、MaskGCT、F5-TTS、MegaTTS 3、IndexTTS2、
+  VibeVoice ASR、Voxtral TTS、LongCat-AudioDiT、OmniVoice、On-Device ASR、NIM4-ASR、
+  StepAudio 2.5、WavTTS、VoxCPM2、ZONOS2、Qwen-Audio-3.0-TTS、Luna-TTS。
+- 每篇 15–26 条句子级讲解（kind 七类，featured 8–12），翻译与讲解由外部模型按
+  `tools/README.md` 3.1 节派发模板撰写，全部通过 `validate_paper.js` 门禁。
+- **抽取器批量适配**：双栏重排、IEEEtran（罗马数字/斜体/small-caps 标题）、
+  AAAI 无编号加粗标题、目录页跳过、首行缩进分段、NUL 清洗、自适应字号阈值。
+- 翻译派发模板固化在 `tools/README.md` 3.1 节，arXiv 编号单参数即可派发新论文。
+
 ## [2026-08-26] 全文双语精读（Annotated Bilingual Paper Reader）
 
 - **新产品层**：在「每篇 3 条 insight」之上增加**全文原文 + 全文中文翻译 + 句子级锚定讲解**，
