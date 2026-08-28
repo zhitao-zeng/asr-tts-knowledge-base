@@ -147,22 +147,124 @@ globalThis.PAPER_2407_10759 = {
       {
        "id": "s-1-2-1",
        "original": "In this report, we develop Qwen2-Audio, with a primary focus on enhancing its instruction-following capabilities.",
-       "zh": "在本报告中，我们开发了 Qwen2-Audio，主要聚焦于提升其指令遵循能力。"
+       "zh": "本报告开发了 Qwen2-Audio，重点提升其指令遵循能力。"
       },
       {
        "id": "s-1-2-2",
        "original": "Qwen2-Audio is a Large Audio-Language Model (LALM) designed to process both audio and text inputs to generate textual outputs.",
-       "zh": "Qwen2-Audio 是一个大型音频-语言模型（LALM），设计为处理音频与文本输入并生成文本输出。"
+       "zh": "Qwen2-Audio 是一个大型音频-语言模型（LALM），可处理音频与文本输入并生成文本输出。"
       },
       {
        "id": "s-1-2-3",
        "original": "Compared to previous models, Qwen2-Audio significantly scales up the training dataset.",
-       "zh": "与以往的模型相比，Qwen2-Audio 大幅扩大了训练数据集的规模。"
+       "zh": "与之前的模型相比，Qwen2-Audio 大幅扩展了训练数据规模。"
       },
       {
        "id": "s-1-2-4",
-       "original": "To reduce the gap between pre-training and post-training stages, we simplify the ∗Equal contribution, †Corresponding author Librispeech Mixed 96.0 6.43 94.0 5.95 Music 92.0 6.5 5.48 6.0 5.5 N/A 5.58 6.15 5.62 6.72 90.88 6.25 Sound 91.75 6.88 92.62 Speech FLUERS-ZH Aishell2 96.0 94.0 CoVoST2 30.0 92.0 20.0 10.0 15.0 30.0 45.0 62.5 Meld 75.0 87.5 Previous Top-tiers Qwen-Audio VocalSound",
-       "zh": "为了缩小预训练阶段与后训练阶段之间的差距，我们简化了……（此处原文被页面脚注与 Figure 1 的图表数值打断，残留散值照录如下：Librispeech Mixed 96.0、6.43、94.0、5.95；Music 92.0、6.5、5.48、6.0、5.5、N/A、5.58、6.15、5.62、6.72、90.88、6.25；Sound 91.75、6.88、92.62；Speech；FLUERS-ZH、Aishell2 96.0、94.0；CoVoST2 30.0、92.0、20.0、10.0、15.0、30.0、45.0、62.5；Meld 75.0、87.5；Previous Top-tiers、Qwen-Audio、VocalSound；并含 *Equal contribution（同等贡献）与 †Corresponding author（通讯作者）脚注，正文延续见下句）。"
+       "original": "To reduce the gap between pre-training and post-training stages, we simplify the ∗Equal contribution, †Corresponding author Librispeech AIR-Bench-ChatMixed",
+       "zh": "为缩小预训练与后训练阶段的差距，我们简化了（脚注：∗Equal contribution，†Corresponding author；图内标签：Librispeech / AIR-Bench-Chat / Mixed。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-1-1",
+     "type": "equation",
+     "page": 1,
+     "original": "96.0 6.43 94.0 5.95"
+    },
+    {
+     "id": "eq-1-2",
+     "type": "equation",
+     "page": 1,
+     "original": "AIR-Bench-ChatMusic"
+    },
+    {
+     "id": "eq-1-3",
+     "type": "equation",
+     "page": 1,
+     "original": "92.0 6.5 5.48 6.0 5.5"
+    },
+    {
+     "id": "eq-1-4",
+     "type": "equation",
+     "page": 1,
+     "original": "N/A"
+    },
+    {
+     "id": "eq-1-5",
+     "type": "equation",
+     "page": 1,
+     "original": "5.58 6.15 5.62 6.72 90.88"
+    },
+    {
+     "id": "eq-1-6",
+     "type": "equation",
+     "page": 1,
+     "original": "AIR-Bench-Chat-"
+    },
+    {
+     "id": "eq-1-7",
+     "type": "equation",
+     "page": 1,
+     "original": "6.25"
+    },
+    {
+     "id": "eq-1-8",
+     "type": "equation",
+     "page": 1,
+     "original": "Sound"
+    },
+    {
+     "id": "eq-1-9",
+     "type": "equation",
+     "page": 1,
+     "original": "91.75 6.88 92.62"
+    },
+    {
+     "id": "eq-1-10",
+     "type": "equation",
+     "page": 1,
+     "original": "AIR-Bench-ChatSpeech FLUERS-ZH Aishell2"
+    },
+    {
+     "id": "eq-1-11",
+     "type": "equation",
+     "page": 1,
+     "original": "96.0 94.0"
+    },
+    {
+     "id": "eq-1-12",
+     "type": "equation",
+     "page": 1,
+     "original": "CoVoST2"
+    },
+    {
+     "id": "eq-1-13",
+     "type": "equation",
+     "page": 1,
+     "original": "30.0 92.0 20.0 10.0 15.0 30.0 45.0 62.5"
+    },
+    {
+     "id": "eq-1-14",
+     "type": "equation",
+     "page": 1,
+     "original": "Meld"
+    },
+    {
+     "id": "eq-1-15",
+     "type": "equation",
+     "page": 1,
+     "original": "75.0 87.5"
+    },
+    {
+     "id": "p-1-3",
+     "type": "paragraph",
+     "page": 1,
+     "sentences": [
+      {
+       "id": "s-1-3-1",
+       "original": "Previous Top-tiers Qwen-Audio Qwen2-Audio VocalSound",
+       "zh": "（图 1 图例：Previous Top-tiers / Qwen-Audio / Qwen2-Audio； VocalSound。）"
       }
      ]
     },
@@ -174,61 +276,19 @@ globalThis.PAPER_2407_10759 = {
      "zh": "Figure 1：Qwen2-Audio、Qwen-Audio 以及此前的顶级 LALM（如 SpeechT5 (Ao et al., 2021)、SpeechNet (Chen et al., 2021)、SpeechLLaMA (Wu et al., 2023a)、SALMONN (Tang et al., 2024)、Whisper (Radford et al., 2023)、Pengi (Deshmukh et al., 2023)、SpeechVerse (Das et al., 2024)）的性能对比。我们展示了覆盖自动语音识别（ASR）、语音到文本翻译（S2TT）、语音情感识别（SER）、人声分类（VSC）以及指令遵循基准（Yang et al., 2024）的 10 个测试集结果。Librispeech、Aishell2 等 ASR 数据集的结果为 1 - WER%。CoVoST2 的结果是七个翻译方向（en-de、de-en、en-zh、zh-en、es-en、fr-en、it-en）的平均 BLEU 分数。AIR-Bench chat 基准的结果涵盖四个维度：语音（speech）、声音（sound）、音乐（music）与混合（mixed）。每个维度的分数由 GPT-4 自动评估，取值范围为 0 到 10。Qwen2-Audio 在不要求任何任务特定微调的情况下取得了出色的表现，超过了同类模型。"
     },
     {
-     "id": "p-1-3",
-     "type": "paragraph",
-     "page": 2,
-     "sentences": [
-      {
-       "id": "s-1-3-1",
-       "original": "pre-training process by directly using natural language prompts for various data and tasks, as illustrated in figure 2.",
-       "zh": "……预训练流程改为直接对各类数据与任务使用自然语言提示，如 Figure 2 所示。"
-      },
-      {
-       "id": "s-1-3-2",
-       "original": "Following the practices in Large Language Models (LLMs) (OpenAI, 2023; Qwen, 2023), we further conduct instruction tuning and direct preference optimization to align the model’s outputs with human preferences.",
-       "zh": "沿用大语言模型（LLM）中的做法（OpenAI, 2023; Qwen, 2023），我们进一步进行了指令微调与直接偏好优化（DPO），使模型输出与人类偏好对齐。"
-      }
-     ]
-    },
-    {
      "id": "p-1-4",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
        "id": "s-1-4-1",
-       "original": "Qwen2-Audio operates in two distinct modes: Audio Analysis and Voice Chat.",
-       "zh": "Qwen2-Audio 工作在两种不同的模式下：音频分析（Audio Analysis）与语音聊天（Voice Chat）。"
+       "original": "pre-training process by directly using natural language prompts for various data and tasks, as illustrated in figure 2.",
+       "zh": "……预训练流程改为直接对各类数据与任务使用自然语言提示，如 Figure 2 所示。"
       },
       {
        "id": "s-1-4-2",
-       "original": "These two modes are differentiated by their functionality, but there is no need for users to distinguish between them during use.",
-       "zh": "这两种模式在功能上有所区分，但用户在使用过程中无需去区分它们。"
-      },
-      {
-       "id": "s-1-4-3",
-       "original": "In the audio analysis mode, users can leverage Qwen2-Audio to analyze a diverse range of audio types, including speech, sound, music, or various mixed audio forms.",
-       "zh": "在音频分析模式下，用户可以利用 Qwen2-Audio 分析多种多样的音频类型，包括语音、声音、音乐，或各种混合音频形式。"
-      },
-      {
-       "id": "s-1-4-4",
-       "original": "Commands can be issued either through audio or text, and Qwen2-Audio will autonomously discern the command segments within the audio.",
-       "zh": "命令可以通过音频或文本发出，Qwen2-Audio 会自主辨别音频中的命令片段。"
-      },
-      {
-       "id": "s-1-4-5",
-       "original": "Conversely, in voice chat mode, users can interact with Qwen2-Audio as if it were a conversational agent, engaging in unrestricted dialogue.",
-       "zh": "相反，在语音聊天模式下，用户可以将 Qwen2-Audio 当作一个对话智能体，进行不受限的对话。"
-      },
-      {
-       "id": "s-1-4-6",
-       "original": "Audio interaction is available, and users can switch to text interaction at any moment they choose.",
-       "zh": "语音交互可用，用户也可以选择随时切换到文本交互。"
-      },
-      {
-       "id": "s-1-4-7",
-       "original": "For instance, if a user inputs an audio clip where the initial part is the sound of typing on a keyboard, followed by the user asking \"What is this sound?\" in spoken language, Qwen2-Audio is expected to respond directly with \"This is the sound of a keyboard.\"",
-       "zh": "例如，如果用户输入一段音频，其开头部分是敲击键盘的声音，随后用户用口语问「这是什么声音？」，我们期望 Qwen2-Audio 直接回答「这是键盘的声音」。"
+       "original": "Following the practices in Large Language Models (LLMs) (OpenAI, 2023; Qwen, 2023), we further conduct instruction tuning and direct preference optimization to align the model’s outputs with human preferences.",
+       "zh": "沿用大语言模型（LLM）中的做法（OpenAI, 2023; Qwen, 2023），我们进一步进行了指令微调与直接偏好优化（DPO），使模型输出与人类偏好对齐。"
       }
      ]
     },
@@ -239,25 +299,55 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-1-5-1",
-       "original": "As shown in Figure 1, extensive evaluation demonstrates that Qwen2-Audio, without any task-specific fine-tuning, outperforms previous LALMs across a diverse range of tasks.",
-       "zh": "如 Figure 1 所示，大量评测表明，Qwen2-Audio 在不做任何任务特定微调的情况下，于多种任务上超过了以往的 LALM。"
+       "original": "Qwen2-Audio operates in two distinct modes: Audio Analysis and Voice Chat.",
+       "zh": "Qwen2-Audio 工作在两种不同的模式下：音频分析（Audio Analysis）与语音聊天（Voice Chat）。"
       },
       {
        "id": "s-1-5-2",
-       "original": "Among them, Qwen2-Audio Multi-Task Pre-training “A man says “Hello” in Chinese.”",
-       "zh": "其中，Qwen2-Audio 的多任务预训练……（此处为 Figure 2 内的示例文字「A man says 'Hello' in Chinese.」，意为「一个男人用中文说'你好'」）。"
+       "original": "These two modes are differentiated by their functionality, but there is no need for users to distinguish between them during use.",
+       "zh": "这两种模式在功能上有所区分，但用户在使用过程中无需去区分它们。"
+      },
+      {
+       "id": "s-1-5-3",
+       "original": "In the audio analysis mode, users can leverage Qwen2-Audio to analyze a diverse range of audio types, including speech, sound, music, or various mixed audio forms.",
+       "zh": "在音频分析模式下，用户可以利用 Qwen2-Audio 分析多种多样的音频类型，包括语音、声音、音乐，或各种混合音频形式。"
+      },
+      {
+       "id": "s-1-5-4",
+       "original": "Commands can be issued either through audio or text, and Qwen2-Audio will autonomously discern the command segments within the audio.",
+       "zh": "命令可以通过音频或文本发出，Qwen2-Audio 会自主辨别音频中的命令片段。"
+      },
+      {
+       "id": "s-1-5-5",
+       "original": "Conversely, in voice chat mode, users can interact with Qwen2-Audio as if it were a conversational agent, engaging in unrestricted dialogue.",
+       "zh": "相反，在语音聊天模式下，用户可以将 Qwen2-Audio 当作一个对话智能体，进行不受限的对话。"
+      },
+      {
+       "id": "s-1-5-6",
+       "original": "Audio interaction is available, and users can switch to text interaction at any moment they choose.",
+       "zh": "语音交互可用，用户也可以选择随时切换到文本交互。"
+      },
+      {
+       "id": "s-1-5-7",
+       "original": "For instance, if a user inputs an audio clip where the initial part is the sound of typing on a keyboard, followed by the user asking \"What is this sound?\" in spoken language, Qwen2-Audio is expected to respond directly with \"This is the sound of a keyboard.\"",
+       "zh": "例如，如果用户输入一段音频，其开头部分是敲击键盘的声音，随后用户用口语问「这是什么声音？」，我们期望 Qwen2-Audio 直接回答「这是键盘的声音」。"
       }
      ]
     },
     {
      "id": "p-1-6",
      "type": "paragraph",
-     "page": 3,
+     "page": 2,
      "sentences": [
       {
        "id": "s-1-6-1",
-       "original": "Input audio ASR Detect the language and recognize the speech:",
-       "zh": "（Figure 2 图内文字）输入音频；ASR（任务）；「检测语言并识别语音」。"
+       "original": "As shown in Figure 1, extensive evaluation demonstrates that Qwen2-Audio, without any task-specific fine-tuning, outperforms previous LALMs across a diverse range of tasks.",
+       "zh": "如 Figure 1 所示，大量评测表明，Qwen2-Audio 在不做任何任务特定微调的情况下，于多种任务上超过了以往的 LALM。"
+      },
+      {
+       "id": "s-1-6-2",
+       "original": "Among them, Qwen2-Audio Multi-Task Pre-training “A man says “Hello” in Chinese.”",
+       "zh": "其中，Qwen2-Audio 的多任务预训练……（此处为 Figure 2 内的示例文字「A man says 'Hello' in Chinese.」，意为「一个男人用中文说'你好'」）。"
       }
      ]
     },
@@ -268,8 +358,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-1-7-1",
-       "original": "Language prompt (Sound of a car horning.)",
-       "zh": "（Figure 2 图内文字）语言提示；（Sound of a car horning. 汽车鸣笛声。）"
+       "original": "Input audio ASR Detect the language and recognize the speech:",
+       "zh": "（Figure 2 图内文字）输入音频；ASR（任务）；「检测语言并识别语音」。"
       }
      ]
     },
@@ -280,8 +370,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-1-8-1",
-       "original": "Input audio AAC Generate the caption in English:",
-       "zh": "（Figure 2 图内文字）输入音频；AAC（音频描述任务）；「用英文生成描述」。"
+       "original": "Language prompt (Sound of a car horning.)",
+       "zh": "（Figure 2 图内文字）语言提示；（Sound of a car horning. 汽车鸣笛声。）"
       }
      ]
     },
@@ -292,8 +382,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-1-9-1",
-       "original": "Language prompt Audio Encoder SFT Voice Chat “I lost my phone today…”",
-       "zh": "（Figure 2 图内文字）语言提示；音频编码器；SFT；语音聊天；「我今天把手机丢了……」"
+       "original": "Input audio AAC Generate the caption in English:",
+       "zh": "（Figure 2 图内文字）输入音频；AAC（音频描述任务）；「用英文生成描述」。"
       }
      ]
     },
@@ -304,8 +394,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-1-10-1",
-       "original": "“What’s the mood of the speaker?”",
-       "zh": "「说话人的情绪如何？」"
+       "original": "Language prompt Audio Encoder SFT Voice Chat “I lost my phone today…”",
+       "zh": "（Figure 2 图内文字）语言提示；音频编码器；SFT；语音聊天；「我今天把手机丢了……」"
       }
      ]
     },
@@ -316,8 +406,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-1-11-1",
-       "original": "Audio Analysis DPO “What emotions does the music convey?” (A guitar melody.)",
-       "zh": "音频分析；DPO；「这段音乐传达了什么情绪？」（一段吉他旋律。）"
+       "original": "“What’s the mood of the speaker?”",
+       "zh": "「说话人的情绪如何？」"
       }
      ]
     },
@@ -328,8 +418,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-1-12-1",
-       "original": "Query Input audio This piece of guitar music, with its soothing folk style, conveys a sense of calmness and nostalgia.",
-       "zh": "查询；输入音频；这段吉他曲以其舒缓的民谣风格，传达出一种平静与怀旧之感。"
+       "original": "Audio Analysis DPO “What emotions does the music convey?” (A guitar melody.)",
+       "zh": "音频分析；DPO；「这段音乐传达了什么情绪？」（一段吉他旋律。）"
       }
      ]
     },
@@ -340,13 +430,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-1-13-1",
-       "original": "This piece of guitar music evokes a deep sense of calm and relaxation.",
-       "zh": "这段吉他曲唤起了深深的平静与放松之感。"
-      },
-      {
-       "id": "s-1-13-2",
-       "original": "The gentle strumming patterns and melodies resonate with a feeling of peacefulness, as if transporting the listener to a quiet, serene place.",
-       "zh": "轻柔的扫弦节奏与旋律唤起一种安宁的感觉，仿佛把听者带到一处静谧之地。"
+       "original": "Query Input audio This piece of guitar music, with its soothing folk style, conveys a sense of calmness and nostalgia.",
+       "zh": "查询；输入音频；这段吉他曲以其舒缓的民谣风格，传达出一种平静与怀旧之感。"
       }
      ]
     },
@@ -357,8 +442,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-1-14-1",
-       "original": "<|zh|>你好。 A loud honk from a car startles a man crossing a busy city street, the noise echoing through the bustling surroundings.",
-       "zh": "<|zh|>你好。（模型输出示例：）一声响亮的汽车鸣笛惊到了正穿过繁忙城市街道的男子，噪声在熙攘的四周回荡。"
+       "original": "Response 1 This piece of guitar music evokes a deep sense of calm and relaxation.",
+       "zh": "（示例回答 1：这段吉他音乐唤起深深的平静与放松感。）"
       }
      ]
     },
@@ -369,13 +454,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-1-15-1",
-       "original": "Next Token Prediction QwenLM I'm sorry to hear that!",
-       "zh": "（Figure 2 训练信号）下一个 token 预测（Next Token Prediction）；QwenLM；（回答示例：）听到这个消息我很难过！"
-      },
-      {
-       "id": "s-1-15-2",
-       "original": "Losing your phone can be frustrating.",
-       "zh": "丢了手机确实很让人沮丧。"
+       "original": "The gentle strumming patterns and melodies resonate with a feeling of peacefulness, as if transporting the listener to a quiet, serene place.",
+       "zh": "轻柔的扫弦节奏与旋律唤起一种安宁的感觉，仿佛把听者带到一处静谧之地。"
       }
      ]
     },
@@ -386,8 +466,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-1-16-1",
-       "original": "She is sad.",
-       "zh": "（Figure 2 中标注回答的示例：）她很难过。"
+       "original": "Response 2 <|zh|>你好。 A loud honk from a car startles a man crossing a busy city street, the noise echoing through the bustling surroundings.",
+       "zh": "（示例回答 2：<|zh|>你好。一声汽车鸣笛惊到了正穿过繁忙城市街道的男子，噪声在熙攘环境中回荡。）"
       }
      ]
     },
@@ -398,8 +478,79 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-1-17-1",
-       "original": "Preference scores FeedBack Lose！ 3.0 9.0 Win!",
-       "zh": "（Figure 2 中 DPO 阶段示意：）偏好分数；反馈；负样本 3.0；正样本 9.0；胜出！"
+       "original": "Next Token Prediction QwenLM I'm sorry to hear that!",
+       "zh": "（Figure 2 训练信号）下一个 token 预测（Next Token Prediction）；QwenLM；（回答示例：）听到这个消息我很难过！"
+      },
+      {
+       "id": "s-1-17-2",
+       "original": "Losing your phone can be frustrating.",
+       "zh": "丢了手机确实很让人沮丧。"
+      }
+     ]
+    },
+    {
+     "id": "p-1-18",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-1-18-1",
+       "original": "She is sad.",
+       "zh": "（Figure 2 中标注回答的示例：）她很难过。"
+      }
+     ]
+    },
+    {
+     "id": "p-1-19",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-1-19-1",
+       "original": "Qwen2-Audio Preference scores FeedBack Lose！",
+       "zh": "（图 1 标签：Qwen2-Audio 偏好打分（Preference scores）；反馈示例「Lose! 3.0 / Win! 9.0」，Response 1。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-1-16",
+     "type": "equation",
+     "page": 3,
+     "original": "3.0"
+    },
+    {
+     "id": "eq-1-17",
+     "type": "equation",
+     "page": 3,
+     "original": "Response 1"
+    },
+    {
+     "id": "eq-1-18",
+     "type": "equation",
+     "page": 3,
+     "original": "9.0"
+    },
+    {
+     "id": "p-1-20",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-1-20-1",
+       "original": "Win!",
+       "zh": "（图 1 标签：Qwen2-Audio 偏好打分（Preference scores）；反馈示例「Lose! 3.0 / Win! 9.0」，Response 1。）"
+      }
+     ]
+    },
+    {
+     "id": "p-1-21",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-1-21-1",
+       "original": "Response 2",
+       "zh": "（图 1 标签：Response 2。）"
       }
      ]
     },
@@ -411,12 +562,12 @@ globalThis.PAPER_2407_10759 = {
      "zh": "Figure 2：Qwen2-Audio 三阶段训练流程概览。"
     },
     {
-     "id": "p-1-18",
+     "id": "p-1-22",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-1-18-1",
+       "id": "s-1-22-1",
        "original": "achieves state-of-the-art performance on the test set of Aishell2, FLUERS-zh, VocalSound and AIR-Bench chat benchmark.",
        "zh": "……在 Aishell2、FLUERS-zh、VocalSound 以及 AIR-Bench chat 基准的测试集上取得了 SOTA 的表现。"
       }
@@ -721,28 +872,39 @@ globalThis.PAPER_2407_10759 = {
      "original": "LDPO(Pθ; Pref) = −E(x,yw,yl)∼D"
     },
     {
+     "id": "eq-direct-preference-optimization-2",
+     "type": "equation",
+     "page": 4,
+     "original": ", (2)"
+    },
+    {
+     "id": "eq-direct-preference-optimization-3",
+     "type": "equation",
+     "page": 4,
+     "original": "Pref(yw | x) −β log Pθ(yl | x)"
+    },
+    {
+     "id": "eq-direct-preference-optimization-4",
+     "type": "equation",
+     "page": 4,
+     "original": "Pref(yl | x)"
+    },
+    {
      "id": "p-direct-preference-optimization-2",
      "type": "paragraph",
      "page": 4,
      "sentences": [
       {
        "id": "s-direct-preference-optimization-2-1",
-       "original": ", (2)",
-       "zh": "，(2)"
+       "original": "where Pref denotes the reference model initialized with Pθ, σ represents sigmoid function and β is a hyperparameter.",
+       "zh": "其中 Pref 表示以 Pθ 初始化的参考模型，σ 表示 sigmoid 函数，β 是一个超参数。"
+      },
+      {
+       "id": "s-direct-preference-optimization-2-2",
+       "original": "Figure 2 illustrates the three-stage training process of Qwen2-Audio.",
+       "zh": "Figure 2 展示了 Qwen2-Audio 的三阶段训练流程。"
       }
      ]
-    },
-    {
-     "id": "eq-direct-preference-optimization-2",
-     "type": "equation",
-     "page": 4,
-     "original": "Pref(yw | x) −β log Pθ(yl | x)"
-    },
-    {
-     "id": "eq-direct-preference-optimization-3",
-     "type": "equation",
-     "page": 4,
-     "original": "Pref(yl | x)"
     },
     {
      "id": "p-direct-preference-optimization-3",
@@ -751,23 +913,6 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-direct-preference-optimization-3-1",
-       "original": "where Pref denotes the reference model initialized with Pθ, σ represents sigmoid function and β is a hyperparameter.",
-       "zh": "其中 Pref 表示以 Pθ 初始化的参考模型，σ 表示 sigmoid 函数，β 是一个超参数。"
-      },
-      {
-       "id": "s-direct-preference-optimization-3-2",
-       "original": "Figure 2 illustrates the three-stage training process of Qwen2-Audio.",
-       "zh": "Figure 2 展示了 Qwen2-Audio 的三阶段训练流程。"
-      }
-     ]
-    },
-    {
-     "id": "p-direct-preference-optimization-4",
-     "type": "paragraph",
-     "page": 4,
-     "sentences": [
-      {
-       "id": "s-direct-preference-optimization-4-1",
        "original": "1https://github.com/mjpost/sacrebleu",
        "zh": "（脚注）1https://github.com/mjpost/sacrebleu"
       }
@@ -781,14 +926,14 @@ globalThis.PAPER_2407_10759 = {
      "zh": "Table 1：Qwen2-Audio 评测基准汇总。"
     },
     {
-     "id": "p-direct-preference-optimization-5",
+     "id": "p-direct-preference-optimization-4",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-direct-preference-optimization-5-1",
-       "original": "Task Description Dataset Split Metric Fleurs (Conneau et al., 2022) WER Aishell2 (Du et al., 2018) Librispeech (Panayotov et al., 2015) Common Voice (Ardila et al., 2020) ASR Automatic Speech Recognition S2TT Speech-to-Text Translation CoVoST2 (Wang et al., 2020) BLEU 1 (Papineni et al., 2002) SER Speech Emotion Recognition Meld (Poria et al., 2019) ACC VSC Vocal Sound Classification VocalSound (Gong et al., 2022) ACC Fisher (Cieri et al., 2004) SpokenWOZ (Si et al., 2023) IEMOCAP (Si et al., 2023) Common voice (Ardila et al., 2020) Chat-Benchmark-Speech AIR-Bench (Yang et al., 2024) Chat-Benchmark-Sound Clotho (Drossos et al., 2020) Chat-Benchmark-Music MusicCaps (Agostinelli et al., 2023) Chat-Benchmark-Mixed-Audio Common voice (Ardila et al., 2020) AudioCaps (Kim et al., 2019) MusicCaps (Agostinelli et al., 2023)",
-       "zh": "（Table 1 表格正文抽取残留，含各任务描述、数据集、划分与指标：）Fleurs (Conneau et al., 2022)，WER；Aishell2 (Du et al., 2018)；Librispeech (Panayotov et al., 2015)；Common Voice (Ardila et al., 2020)；任务为 ASR 自动语音识别；S2TT 语音到文本翻译使用 CoVoST2 (Wang et al., 2020)，指标 BLEU 1 (Papineni et al., 2002)；SER 语音情感识别使用 Meld (Poria et al., 2019)，指标 ACC；VSC 人声分类使用 VocalSound (Gong et al., 2022)，指标 ACC；聊天基准方面，Speech 使用 Fisher (Cieri et al., 2004)、SpokenWOZ (Si et al., 2023)、IEMOCAP (Si et al., 2023)、Common voice (Ardila et al., 2020)；Chat-Benchmark-Speech 归属 AIR-Bench (Yang et al., 2024)；Chat-Benchmark-Sound 使用 Clotho (Drossos et al., 2020)；Chat-Benchmark-Music 使用 MusicCaps (Agostinelli et al., 2023)；Chat-Benchmark-Mixed-Audio 使用 Common voice (Ardila et al., 2020)、AudioCaps (Kim et al., 2019)、MusicCaps (Agostinelli et al., 2023)。"
+       "id": "s-direct-preference-optimization-4-1",
+       "original": "Task Description Dataset Split Metric Fleurs (Conneau et al., 2022) dev | test WER Aishell2 (Du et al., 2018) test Librispeech (Panayotov et al., 2015) dev | test Common Voice (Ardila et al., 2020) dev | test ASR Automatic Speech Recognition S2TT Speech-to-Text Translation CoVoST2 (Wang et al., 2020) test BLEU 1 (Papineni et al., 2002) SER Speech Emotion Recognition Meld (Poria et al., 2019) test ACC VSC Vocal Sound Classification VocalSound (Gong et al., 2022) test ACC Fisher (Cieri et al., 2004) SpokenWOZ (Si et al., 2023) IEMOCAP (Si et al., 2023) Common voice (Ardila et al., 2020) Chat-Benchmark-Speech AIR-Bench (Yang et al., 2024) dev | test GPT-4 Eval Chat-Benchmark-Sound Clotho (Drossos et al., 2020) dev | test GPT-4 Eval Chat-Benchmark-Music MusicCaps (Agostinelli et al., 2023) dev | test GPT-4 Eval Chat-Benchmark-Mixed-Audio Common voice (Ardila et al., 2020) AudioCaps (Kim et al., 2019) MusicCaps (Agostinelli et al., 2023) dev | test GPT-4 Eval",
+       "zh": "（评测配置表：任务 × 数据集 × 划分 × 指标——ASR（自动语音识别）：Fleurs（Conneau et al., 2022）dev/test、Aishell2（Du et al., 2018）test、Librispeech（Panayotov et al., 2015）dev/test、Common Voice（Ardila et al., 2020）dev/test，指标 WER；S2TT（语音到文本翻译）：CoVoST2（Wang et al., 2020）test，指标 BLEU（Papineni et al., 2002，式 1）；SER（语音情感识别）：Meld（Poria et al., 2019）test，指标 ACC；VSC（声音分类）：VocalSound（Gong et al., 2022）test，指标 ACC；另有 Fisher（Cieri et al., 2004）、SpokenWOZ（Si et al., 2023）、IEMOCAP（Si et al., 2023）、Common voice（Ardila et al., 2020）；Chat-Benchmark-Speech/Sound/Music/Mixed-Audio：AIR-Bench（Yang et al., 2024）、Clotho（Drossos et al., 2020）、MusicCaps（Agostinelli et al., 2023）、AudioCaps（Kim et al., 2019）、Common voice（Ardila et al., 2020）等 dev/test，GPT-4 Eval。）"
       }
      ]
     }
@@ -952,25 +1097,88 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-3-2-3-1",
-       "original": "Task Dataset Model Performance Metrics Results SpeechT5 (Ao et al., 2021) SpeechNet (Chen et al., 2021) - | - | 30.7 | - SLM-FT (Wang et al., 2023b) - | - | 2.6 | 5.0 SALMONN (Tang et al., 2024) - | - | 2.1 | 4.9 SpeechVerse (Das et al., 2024) - | - | 2.1 | 4.4 Librispeech dev-clean | dev-other | test-clean | test-other Common Voice 15 en | zh | yue | fr Whisper-large-v3 (Radford et al., 2023) ASR Fleurs zh Whisper-large-v3 (Radford et al., 2023) 7.7 7.5 MMSpeech-base (Zhou et al., 2022) Paraformer-large (Gao et al., 2023) - | 2.9 | - Aishell2 Mic | iOS | Android SALMONN (Tang et al., 2024) 18.6 | - | 33.1 | - SpeechLLaMA (Wu et al., 2023a) - | 27.1 | - | 12.3 BLSP (Wang et al., 2023a) 14.1 | - | - | - CoVoST2 en-de | de-en | en-zh | zh-en S2TT BLEU ↑ SpeechLLaMA (Wu et al., 2023a) BLEU ↑ CoVoST2 es-en | fr-en | it-en | SER Meld WavLM-large (Chen et al., 2022) ACC ↑ 0.542 0.557 0.553 CLAP (Elizalde et al., 2022) 0.4945 Pengi (Deshmukh et al., 2023) 0.6035 0.9289 0.9392 VSC VocalSound ACC ↑ SALMONN (Tang et al., 2024) BLSP (Wang et al., 2023a) Pandagpt (Su et al., 2023) Macaw-LLM (Lyu et al., 2023) SpeechGPT (Zhang et al., 2023) Next-gpt (Wu et al., 2023b) Gemini-1.5-pro (Reid et al., 2024) Chat Benchmark Speech | Sound | Music | Mixed-Audio AIR-Bench (Yang et al., 2024) GPT-4 ↑ chat benchmark of the AIR-Bench (Yang et al., 2024).",
+       "original": "Task Dataset Model Performance Metrics Results SpeechT5 (Ao et al., 2021)",
        "zh": "（Table 2 表格正文抽取残留，含各模型与任务的数值散块：）任务、数据集、模型、性能指标与结果；SpeechT5 (Ao et al., 2021)、SpeechNet (Chen et al., 2021)（数值如 30.7）；SLM-FT (Wang et al., 2023b)（2.6 | 5.0）；SALMONN (Tang et al., 2024)（2.1 | 4.9）；SpeechVerse (Das et al., 2024)（2.1 | 4.4）；Librispeech dev-clean | dev-other | test-clean | test-other；Common Voice 15 en | zh | yue | fr；Whisper-large-v3 (Radford et al., 2023)；ASR Fleurs zh：Whisper-large-v3 (Radford et al., 2023) 7.7、7.5；MMSpeech-base (Zhou et al., 2022)、Paraformer-large (Gao et al., 2023)（2.9）；Aishell2 Mic | iOS | Android；SALMONN (18.6 | 33.1)；SpeechLLaMA (Wu et al., 2023a)（27.1 | 12.3）；BLSP (Wang et al., 2023a)（14.1）；CoVoST2 en-de | de-en | en-zh | zh-en；S2TT BLEU ↑：SpeechLLaMA；CoVoST2 es-en | fr-en | it-en；SER Meld：WavLM-large (Chen et al., 2022) ACC ↑ 0.542、0.557、0.553；CLAP (Elizalde et al., 2022) 0.4945；Pengi (Deshmukh et al., 2023) 0.6035、0.9289、0.9392；VSC VocalSound ACC ↑：SALMONN、BLSP、Pandagpt (Su et al., 2023)、Macaw-LLM (Lyu et al., 2023)、SpeechGPT (Zhang et al., 2023)、Next-gpt (Wu et al., 2023b)、Gemini-1.5-pro (Reid et al., 2024)；聊天基准 Speech | Sound | Music | Mixed-Audio：AIR-Bench（GPT-4 打分 ↑）。"
-      },
-      {
-       "id": "s-3-2-3-2",
-       "original": "Note that since Gemini-1.5 (Reid et al., 2024)2 cannot correctly return some test samples due to its SAFETY reasons during testing, the number of samples of Gemini1.5 on AIR-Bench-chat has been reduced by about 1/5.",
-       "zh": "请注意，由于 Gemini-1.5（Reid et al., 2024）在测试期间因安全原因无法正确返回部分测试样本（见脚注 2），Gemini-1.5 在 AIR-Bench-chat 上的样本数减少了约 1/5。"
-      },
-      {
-       "id": "s-3-2-3-3",
-       "original": "As shown in table 2, Qwen2-Audio demonstrates state-of-the-art (SOTA) instruction-following capabilities across speech, sound music and mixed-Audio subsets.",
-       "zh": "如 Table 2 所示，Qwen2-Audio 在语音、声音、音乐和混合音频子集上展现出 SOTA 的指令遵循能力。"
-      },
-      {
-       "id": "s-3-2-3-4",
-       "original": "It shows substantial improvements compared to Qwen-Audio and significantly outperforms other LALMs.",
-       "zh": "相比 Qwen-Audio 它有显著提升，并且明显超过其他 LALM。"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-1",
+     "type": "equation",
+     "page": 6,
+     "original": "2.1 | 5.5 | 2.4 | 5.8"
+    },
+    {
+     "id": "eq-3-2-2",
+     "type": "equation",
+     "page": 6,
+     "original": "SpeechNet (Chen et al., 2021)"
+    },
+    {
+     "id": "eq-3-2-3",
+     "type": "equation",
+     "page": 6,
+     "original": "- | - | 30.7 | -"
+    },
+    {
+     "id": "eq-3-2-4",
+     "type": "equation",
+     "page": 6,
+     "original": "SLM-FT (Wang et al., 2023b)"
+    },
+    {
+     "id": "eq-3-2-5",
+     "type": "equation",
+     "page": 6,
+     "original": "- | - | 2.6 | 5.0"
+    },
+    {
+     "id": "eq-3-2-6",
+     "type": "equation",
+     "page": 6,
+     "original": "SALMONN (Tang et al., 2024)"
+    },
+    {
+     "id": "eq-3-2-7",
+     "type": "equation",
+     "page": 6,
+     "original": "- | - | 2.1 | 4.9"
+    },
+    {
+     "id": "eq-3-2-8",
+     "type": "equation",
+     "page": 6,
+     "original": "SpeechVerse (Das et al., 2024)"
+    },
+    {
+     "id": "eq-3-2-9",
+     "type": "equation",
+     "page": 6,
+     "original": "- | - | 2.1 | 4.4"
+    },
+    {
+     "id": "eq-3-2-10",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen-Audio (Chu et al., 2023)"
+    },
+    {
+     "id": "eq-3-2-11",
+     "type": "equation",
+     "page": 6,
+     "original": "1.8 | 4.0 | 2.0 | 4.2"
+    },
+    {
+     "id": "eq-3-2-12",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen2-Audio"
+    },
+    {
+     "id": "eq-3-2-13",
+     "type": "equation",
+     "page": 6,
+     "original": "1.3 | 3.4 | 1.6 | 3.6"
     },
     {
      "id": "p-3-2-4",
@@ -979,6 +1187,357 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-3-2-4-1",
+       "original": "Librispeech dev-clean | dev-other | test-clean | test-other WER ↓ Common Voice 15 en | zh | yue | fr Whisper-large-v3 (Radford et al., 2023) WER ↓",
+       "zh": "（表头：Librispeech dev-clean/dev-other/test-clean/test-other WER↓；Common Voice 15（en/zh/yue/fr 等 15 种语言）；Whisper-large-v3（Radford et al., 2023）的 WER↓。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-14",
+     "type": "equation",
+     "page": 6,
+     "original": "9.3 | 12.8 | 10.9 | 10.8"
+    },
+    {
+     "id": "eq-3-2-15",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen2-Audio"
+    },
+    {
+     "id": "eq-3-2-16",
+     "type": "equation",
+     "page": 6,
+     "original": "8.6 | 6.9 | 5.9 | 9.6"
+    },
+    {
+     "id": "p-3-2-5",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-2-5-1",
+       "original": "ASR Fleurs zh Whisper-large-v3 (Radford et al., 2023) WER ↓",
+       "zh": "（表格行：ASR × Fleurs zh——Whisper-large-v3（Radford et al., 2023）WER↓ 7.7；Qwen2-Audio 7.5；MMSpeech-base（Zhou et al., 2022）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-17",
+     "type": "equation",
+     "page": 6,
+     "original": "7.7"
+    },
+    {
+     "id": "eq-3-2-18",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen2-Audio"
+    },
+    {
+     "id": "eq-3-2-19",
+     "type": "equation",
+     "page": 6,
+     "original": "7.5"
+    },
+    {
+     "id": "eq-3-2-20",
+     "type": "equation",
+     "page": 6,
+     "original": "MMSpeech-base (Zhou et al., 2022)"
+    },
+    {
+     "id": "eq-3-2-21",
+     "type": "equation",
+     "page": 6,
+     "original": "4.5 | 3.9 | 4.0"
+    },
+    {
+     "id": "eq-3-2-22",
+     "type": "equation",
+     "page": 6,
+     "original": "Paraformer-large (Gao et al., 2023)"
+    },
+    {
+     "id": "eq-3-2-23",
+     "type": "equation",
+     "page": 6,
+     "original": "- | 2.9 | -"
+    },
+    {
+     "id": "eq-3-2-24",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen-Audio (Chu et al., 2023)"
+    },
+    {
+     "id": "eq-3-2-25",
+     "type": "equation",
+     "page": 6,
+     "original": "3.3 | 3.1 | 3.3"
+    },
+    {
+     "id": "eq-3-2-26",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen2-Audio"
+    },
+    {
+     "id": "eq-3-2-27",
+     "type": "equation",
+     "page": 6,
+     "original": "3.0 | 3.0 | 2.9"
+    },
+    {
+     "id": "p-3-2-6",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-2-6-1",
+       "original": "Aishell2 Mic | iOS | Android WER ↓ SALMONN (Tang et al., 2024)",
+       "zh": "（表头：Aishell2 的 Mic/iOS/Android 三通道 WER↓；SALMONN（Tang et al., 2024）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-28",
+     "type": "equation",
+     "page": 6,
+     "original": "18.6 | - | 33.1 | -"
+    },
+    {
+     "id": "eq-3-2-29",
+     "type": "equation",
+     "page": 6,
+     "original": "SpeechLLaMA (Wu et al., 2023a)"
+    },
+    {
+     "id": "eq-3-2-30",
+     "type": "equation",
+     "page": 6,
+     "original": "- | 27.1 | - | 12.3"
+    },
+    {
+     "id": "eq-3-2-31",
+     "type": "equation",
+     "page": 6,
+     "original": "BLSP (Wang et al., 2023a)"
+    },
+    {
+     "id": "eq-3-2-32",
+     "type": "equation",
+     "page": 6,
+     "original": "14.1 | - | - | -"
+    },
+    {
+     "id": "eq-3-2-33",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen-Audio (Chu et al., 2023)"
+    },
+    {
+     "id": "eq-3-2-34",
+     "type": "equation",
+     "page": 6,
+     "original": "25.1 | 33.9 | 41.5 | 15.7"
+    },
+    {
+     "id": "eq-3-2-35",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen2-Audio"
+    },
+    {
+     "id": "eq-3-2-36",
+     "type": "equation",
+     "page": 6,
+     "original": "29.9 | 35.2 | 45.2 | 24.4"
+    },
+    {
+     "id": "p-3-2-7",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-2-7-1",
+       "original": "CoVoST2 en-de | de-en | en-zh | zh-en S2TT BLEU ↑ SpeechLLaMA (Wu et al., 2023a) BLEU ↑",
+       "zh": "（Table 2 表格正文抽取残留，含各模型与任务的数值散块：）任务、数据集、模型、性能指标与结果；SpeechT5 (Ao et al., 2021)、SpeechNet (Chen et al., 2021)（数值如 30.7）；SLM-FT (Wang et al., 2023b)（2.6 | 5.0）；SALMONN (Tang et al., 2024)（2.1 | 4.9）；SpeechVerse (Das et al., 2024)（2.1 | 4.4）；Librispeech dev-clean | dev-other | test-clean | test-other；Common Voice 15 en | zh | yue | fr；Whisper-large-v3 (Radford et al., 2023)；ASR Fleurs zh：Whisper-large-v3 (Radford et al., 2023) 7.7、7.5；MMSpeech-base (Zhou et al., 2022)、Paraformer-large (Gao et al., 2023)（2.9）；Aishell2 Mic | iOS | Android；SALMONN (18.6 | 33.1)；SpeechLLaMA (Wu et al., 2023a)（27.1 | 12.3）；BLSP (Wang et al., 2023a)（14.1）；CoVoST2 en-de | de-en | en-zh | zh-en；S2TT BLEU ↑：SpeechLLaMA；CoVoST2 es-en | fr-en | it-en；SER Meld：WavLM-large (Chen et al., 2022) ACC ↑ 0.542、0.557、0.553；CLAP (Elizalde et al., 2022) 0.4945；Pengi (Deshmukh et al., 2023) 0.6035、0.9289、0.9392；VSC VocalSound ACC ↑：SALMONN、BLSP、Pandagpt (Su et al., 2023)、Macaw-LLM (Lyu et al., 2023)、SpeechGPT (Zhang et al., 2023)、Next-gpt (Wu et al., 2023b)、Gemini-1.5-pro (Reid et al., 2024)；聊天基准 Speech | Sound | Music | Mixed-Audio：AIR-Bench（GPT-4 打分 ↑）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-37",
+     "type": "equation",
+     "page": 6,
+     "original": "27.9 | 25.2 | 25.9"
+    },
+    {
+     "id": "eq-3-2-38",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen-Audio (Chu et al., 2023)"
+    },
+    {
+     "id": "eq-3-2-39",
+     "type": "equation",
+     "page": 6,
+     "original": "39.7 | 38.5 | 36.0"
+    },
+    {
+     "id": "eq-3-2-40",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen2-Audio"
+    },
+    {
+     "id": "eq-3-2-41",
+     "type": "equation",
+     "page": 6,
+     "original": "40.0 | 38.5 | 36.3"
+    },
+    {
+     "id": "p-3-2-8",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-2-8-1",
+       "original": "CoVoST2 es-en | fr-en | it-en | SER Meld WavLM-large (Chen et al., 2022) ACC ↑",
+       "zh": "（表：CoVoST2 es-en/fr-en/it-en；SER Meld ACC↑——WavLM-large（Chen et al., 2022）0.542；Qwen-Audio（Chu et al., 2023）0.557；Qwen2-Audio 0.553；CLAP（Elizalde et al., 2022）0.4945；Pengi（Deshmukh et al., 2023）0.6035；Qwen-Audio 0.9289；Qwen2-Audio 0.9392；VSC VocalSound ACC↑：SALMONN（Tang et al., 2024）、BLSP（Wang et al., 2023a）、Pandagpt（Su et al., 2023）、Macaw-LLM（Lyu et al., 2023）、SpeechGPT（Zhang et al., 2023）、Next-gpt（Wu et al., 2023b）、Qwen-Audio（Chu et al., 2023）、Gemini-1.5-pro（Reid et al., 2024）、Qwen2-Audio；Chat Benchmark：Speech/Sound/Music/Mixed-Audio，AIR-Bench（Yang et al., 2024）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-42",
+     "type": "equation",
+     "page": 6,
+     "original": "0.542"
+    },
+    {
+     "id": "eq-3-2-43",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen-Audio (Chu et al., 2023)"
+    },
+    {
+     "id": "eq-3-2-44",
+     "type": "equation",
+     "page": 6,
+     "original": "0.557"
+    },
+    {
+     "id": "eq-3-2-45",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen2-Audio"
+    },
+    {
+     "id": "eq-3-2-46",
+     "type": "equation",
+     "page": 6,
+     "original": "0.553"
+    },
+    {
+     "id": "eq-3-2-47",
+     "type": "equation",
+     "page": 6,
+     "original": "CLAP (Elizalde et al., 2022)"
+    },
+    {
+     "id": "eq-3-2-48",
+     "type": "equation",
+     "page": 6,
+     "original": "0.4945"
+    },
+    {
+     "id": "eq-3-2-49",
+     "type": "equation",
+     "page": 6,
+     "original": "Pengi (Deshmukh et al., 2023)"
+    },
+    {
+     "id": "eq-3-2-50",
+     "type": "equation",
+     "page": 6,
+     "original": "0.6035"
+    },
+    {
+     "id": "eq-3-2-51",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen-Audio (Chu et al., 2023)"
+    },
+    {
+     "id": "eq-3-2-52",
+     "type": "equation",
+     "page": 6,
+     "original": "0.9289"
+    },
+    {
+     "id": "eq-3-2-53",
+     "type": "equation",
+     "page": 6,
+     "original": "Qwen2-Audio"
+    },
+    {
+     "id": "eq-3-2-54",
+     "type": "equation",
+     "page": 6,
+     "original": "0.9392"
+    },
+    {
+     "id": "p-3-2-9",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-2-9-1",
+       "original": "VSC VocalSound ACC ↑ SALMONN (Tang et al., 2024) BLSP (Wang et al., 2023a) Pandagpt (Su et al., 2023) Macaw-LLM (Lyu et al., 2023) SpeechGPT (Zhang et al., 2023) Next-gpt (Wu et al., 2023b) Qwen-Audio (Chu et al., 2023) Gemini-1.5-pro (Reid et al., 2024) Qwen2-Audio Chat Benchmark Speech | Sound | Music | Mixed-Audio AIR-Bench (Yang et al., 2024)",
+       "zh": "（表：CoVoST2 es-en/fr-en/it-en；SER Meld ACC↑——WavLM-large（Chen et al., 2022）0.542；Qwen-Audio（Chu et al., 2023）0.557；Qwen2-Audio 0.553；CLAP（Elizalde et al., 2022）0.4945；Pengi（Deshmukh et al., 2023）0.6035；Qwen-Audio 0.9289；Qwen2-Audio 0.9392；VSC VocalSound ACC↑：SALMONN（Tang et al., 2024）、BLSP（Wang et al., 2023a）、Pandagpt（Su et al., 2023）、Macaw-LLM（Lyu et al., 2023）、SpeechGPT（Zhang et al., 2023）、Next-gpt（Wu et al., 2023b）、Qwen-Audio（Chu et al., 2023）、Gemini-1.5-pro（Reid et al., 2024）、Qwen2-Audio；Chat Benchmark：Speech/Sound/Music/Mixed-Audio，AIR-Bench（Yang et al., 2024）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-55",
+     "type": "equation",
+     "page": 6,
+     "original": "6.16 | 6.28 | 5.95 | 6.08 6.17 | 5.55 | 5.08 | 5.33 3.58 | 5.46 | 5.06 | 4.25 0.97 | 1.01 | 0.91 | 1.01 1.57 | 0.95 | 0.95 | 4.13 3.86 | 4.76 | 4.18 | 4.13 6.47 | 6.95 | 5.52 | 6.08 6.97 | 5.49 | 5.06 | 5.27 7.18 | 6.99 | 6.79 | 6.77"
+    },
+    {
+     "id": "p-3-2-10",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-2-10-1",
+       "original": "GPT-4 ↑ chat benchmark of the AIR-Bench (Yang et al., 2024).",
+       "zh": "（Table 2 表格正文抽取残留，含各模型与任务的数值散块：）任务、数据集、模型、性能指标与结果；SpeechT5 (Ao et al., 2021)、SpeechNet (Chen et al., 2021)（数值如 30.7）；SLM-FT (Wang et al., 2023b)（2.6 | 5.0）；SALMONN (Tang et al., 2024)（2.1 | 4.9）；SpeechVerse (Das et al., 2024)（2.1 | 4.4）；Librispeech dev-clean | dev-other | test-clean | test-other；Common Voice 15 en | zh | yue | fr；Whisper-large-v3 (Radford et al., 2023)；ASR Fleurs zh：Whisper-large-v3 (Radford et al., 2023) 7.7、7.5；MMSpeech-base (Zhou et al., 2022)、Paraformer-large (Gao et al., 2023)（2.9）；Aishell2 Mic | iOS | Android；SALMONN (18.6 | 33.1)；SpeechLLaMA (Wu et al., 2023a)（27.1 | 12.3）；BLSP (Wang et al., 2023a)（14.1）；CoVoST2 en-de | de-en | en-zh | zh-en；S2TT BLEU ↑：SpeechLLaMA；CoVoST2 es-en | fr-en | it-en；SER Meld：WavLM-large (Chen et al., 2022) ACC ↑ 0.542、0.557、0.553；CLAP (Elizalde et al., 2022) 0.4945；Pengi (Deshmukh et al., 2023) 0.6035、0.9289、0.9392；VSC VocalSound ACC ↑：SALMONN、BLSP、Pandagpt (Su et al., 2023)、Macaw-LLM (Lyu et al., 2023)、SpeechGPT (Zhang et al., 2023)、Next-gpt (Wu et al., 2023b)、Gemini-1.5-pro (Reid et al., 2024)；聊天基准 Speech | Sound | Music | Mixed-Audio：AIR-Bench（GPT-4 打分 ↑）。"
+      },
+      {
+       "id": "s-3-2-10-2",
+       "original": "Note that since Gemini-1.5 (Reid et al., 2024)2 cannot correctly return some test samples due to its SAFETY reasons during testing, the number of samples of Gemini1.5 on AIR-Bench-chat has been reduced by about 1/5.",
+       "zh": "请注意，由于 Gemini-1.5（Reid et al., 2024）在测试期间因安全原因无法正确返回部分测试样本（见脚注 2），Gemini-1.5 在 AIR-Bench-chat 上的样本数减少了约 1/5。"
+      },
+      {
+       "id": "s-3-2-10-3",
+       "original": "As shown in table 2, Qwen2-Audio demonstrates state-of-the-art (SOTA) instruction-following capabilities across speech, sound music and mixed-Audio subsets.",
+       "zh": "如 Table 2 所示，Qwen2-Audio 在语音、声音、音乐和混合音频子集上展现出 SOTA 的指令遵循能力。"
+      },
+      {
+       "id": "s-3-2-10-4",
+       "original": "It shows substantial improvements compared to Qwen-Audio and significantly outperforms other LALMs.",
+       "zh": "相比 Qwen-Audio 它有显著提升，并且明显超过其他 LALM。"
+      }
+     ]
+    },
+    {
+     "id": "p-3-2-11",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-2-11-1",
        "original": "2https://console.cloud.google.com/vertex-ai/generative/multimodal/create",
        "zh": "（脚注）2https://console.cloud.google.com/vertex-ai/generative/multimodal/create"
       }
@@ -1014,6 +1573,12 @@ globalThis.PAPER_2407_10759 = {
      ]
     },
     {
+     "id": "eq-4-1",
+     "type": "equation",
+     "page": 7,
+     "original": "0:00 / 0:07"
+    },
+    {
      "id": "p-4-2",
      "type": "paragraph",
      "page": 7,
@@ -1021,9 +1586,15 @@ globalThis.PAPER_2407_10759 = {
       {
        "id": "s-4-2-1",
        "original": "Yes, the speaker is female and in her twenties.",
-       "zh": "（模型回答：）是的，说话人是女性，二十多岁。"
+       "zh": "（音频示例 0:00/0:07：「是的，说话者是女性，二十多岁。」）"
       }
      ]
+    },
+    {
+     "id": "eq-4-2",
+     "type": "equation",
+     "page": 7,
+     "original": "0:00 / 0:09"
     },
     {
      "id": "p-4-3",
@@ -1033,7 +1604,7 @@ globalThis.PAPER_2407_10759 = {
       {
        "id": "s-4-3-1",
        "original": "“I have an exam coming up, but I'm not well prepared.",
-       "zh": "（用户语音：）「我马上有一场考试，但我准备得不太好。"
+       "zh": "（音频示例 0:00/0:09：「我马上要考试了，但准备得不太充分。」）"
       },
       {
        "id": "s-4-3-2",
@@ -1236,14 +1807,32 @@ globalThis.PAPER_2407_10759 = {
      ]
     },
     {
+     "id": "eq-5-1",
+     "type": "equation",
+     "page": 8,
+     "original": "0:00 / 0:07"
+    },
+    {
+     "id": "eq-5-2",
+     "type": "equation",
+     "page": 8,
+     "original": "每个⼈都希望被欣赏，所以如果你欣赏某⼈，不要把它保密。"
+    },
+    {
+     "id": "eq-5-3",
+     "type": "equation",
+     "page": 8,
+     "original": "0:00 / 0:03"
+    },
+    {
      "id": "p-5-2",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
        "id": "s-5-2-1",
-       "original": "每个⼈都希望被欣赏，所以如果你欣赏某⼈，不要把它保密。 “Translate it into German.”",
-       "zh": "（用户语音内容为中文：）「每个人都希望被欣赏，所以如果你欣赏某人，不要把它保密。」（随后用户指令：）「把它翻译成德语。」"
+       "original": "“Translate it into German.”",
+       "zh": "（音频示例：0:00/0:07「每个人都希望被欣赏，所以如果你欣赏某人，不要把它保密。」0:00/0:03 指令「把它翻译成德语。」）"
       }
      ]
     },
@@ -1277,6 +1866,12 @@ globalThis.PAPER_2407_10759 = {
      ]
     },
     {
+     "id": "eq-5-4",
+     "type": "equation",
+     "page": 8,
+     "original": "0:00 / 0:03"
+    },
+    {
      "id": "p-5-5",
      "type": "paragraph",
      "page": 8,
@@ -1284,7 +1879,7 @@ globalThis.PAPER_2407_10759 = {
       {
        "id": "s-5-5-1",
        "original": "“How about into French?”",
-       "zh": "（用户追问：）「那法语呢？」"
+       "zh": "（音频示例 0:00/0:03：「翻译成法语怎么样？」）"
       }
      ]
     },
@@ -1301,6 +1896,12 @@ globalThis.PAPER_2407_10759 = {
      ]
     },
     {
+     "id": "eq-5-5",
+     "type": "equation",
+     "page": 8,
+     "original": "0:00 / 0:05"
+    },
+    {
      "id": "p-5-7",
      "type": "paragraph",
      "page": 8,
@@ -1308,7 +1909,7 @@ globalThis.PAPER_2407_10759 = {
       {
        "id": "s-5-7-1",
        "original": "“给我⽣成⼀些类似这句话意思的，其他说法的句⼦，⽤中⽂⽣成。” 1. 每个⼈都喜欢被赞美，所以如果你喜欢⼀个⼈，不要隐藏你的赞赏。 2. 所有⼈都渴望得到认可，因此如果你欣赏某⼈，请不要独⾃享⽤这种感觉。 3. 欣赏他⼈是⼀种美德，所以不要让别⼈知道你对他们的赞赏是秘密的。 4. ⼈们都希望受到赞扬，所以如果你欣赏某⼈，不妨公开表达出来。 5. 如果你喜欢某⼈，不要犹豫告诉他们，因为每个⼈都有权利享受他⼈的赞赏。",
-       "zh": "（用户指令：）「给我生成一些类似这句话意思的、其他说法的句子，用中文生成。」（模型输出：）1. 每个人都喜欢被赞美，所以如果你喜欢一个人，不要隐藏你的赞赏。2. 所有人都渴望得到认可，因此如果你欣赏某人，请不要独自享用这种感觉。3. 欣赏他人是一种美德，所以不要让别人对你的赞赏一无所知。4. 人们都希望受到赞扬，所以如果你欣赏某人，不妨公开表达出来。5. 如果你喜欢一个人，不要犹豫地告诉他们，因为每个人都有权利享受他人的赞赏。"
+       "zh": "1.\n（原始数据照录）\n“给我⽣成⼀些类似这句话意思的，其他说法的句⼦，⽤中⽂⽣成。” 1. 每个⼈都喜欢被赞美，所以如果你喜欢⼀个⼈，不要隐藏你的赞赏。 2. 所有⼈都渴望得到认可，因此如果你欣赏某⼈，请不要独⾃享⽤这种感觉。 3. 欣赏他⼈是⼀种美德，所以不要让别⼈知道你对他们的赞赏是秘密的。 4. ⼈们都希望受到赞扬，所以如果你欣赏某⼈，不妨公开表达出来。 5. 如果你喜欢某⼈，不要犹豫告诉他们，因为每个⼈都有权利享受他⼈的赞赏。"
       }
      ]
     },
@@ -1320,6 +1921,12 @@ globalThis.PAPER_2407_10759 = {
      "zh": "Figure 5：示例展示 Qwen2-Audio 围绕语音进行自由对话的能力。"
     },
     {
+     "id": "eq-5-6",
+     "type": "equation",
+     "page": 9,
+     "original": "0:00 / 0:05"
+    },
+    {
      "id": "p-5-8",
      "type": "paragraph",
      "page": 9,
@@ -1327,7 +1934,7 @@ globalThis.PAPER_2407_10759 = {
       {
        "id": "s-5-8-1",
        "original": "Use headphones to block out external noise and ﬁnd a quiet place to study.",
-       "zh": "（模型回答续：）用耳机隔绝外界噪声，并找一个安静的地方学习。"
+       "zh": "（音频示例 0:00/0:05：用耳机隔绝外界噪声，找个安静的地方学习。）"
       },
       {
        "id": "s-5-8-2",
@@ -1347,6 +1954,12 @@ globalThis.PAPER_2407_10759 = {
      ]
     },
     {
+     "id": "eq-5-7",
+     "type": "equation",
+     "page": 9,
+     "original": "0:00 / 0:05"
+    },
+    {
      "id": "p-5-9",
      "type": "paragraph",
      "page": 9,
@@ -1354,7 +1967,7 @@ globalThis.PAPER_2407_10759 = {
       {
        "id": "s-5-9-1",
        "original": "（with renovation noise）“In this situation, can I negotiate with them?”",
-       "zh": "（伴随装修噪声的语音：）「这种情况下，我可以和他们协商吗？」"
+       "zh": "（音频示例 0:00/0:05：（伴随装修噪声）「这种情况下，我可以和他们协商吗？」）"
       }
      ]
     },
@@ -1388,6 +2001,12 @@ globalThis.PAPER_2407_10759 = {
      ]
     },
     {
+     "id": "eq-5-8",
+     "type": "equation",
+     "page": 9,
+     "original": "0:00 / 0:07"
+    },
+    {
      "id": "p-5-12",
      "type": "paragraph",
      "page": 9,
@@ -1395,7 +2014,7 @@ globalThis.PAPER_2407_10759 = {
       {
        "id": "s-5-12-1",
        "original": "因为这种场景让你感到放松和舒适，有助于提⾼睡眠质量。 （⾬声）“哎呀，真喜欢在这种场景下睡觉啊睡的真⾹，你能猜猜为什么我喜欢在这种场景 下睡觉吗？”",
-       "zh": "（模型回答：）因为这种场景让你感到放松和舒适，有助于提高睡眠质量。（伴随雨声的语音：）「哎呀，真喜欢在这种场景下睡觉啊，睡得真香，你能猜猜为什么我喜欢在这种场景下睡觉吗？」"
+       "zh": "（音频示例 0:00/0:07：「因为这种场景让你感到放松和舒适，有助于提高睡眠质量。（雨声）哎呀，真喜欢在这种场景下睡觉啊睡的真香，你能猜猜为什么我喜欢在这种场景下睡觉吗？」）"
       }
      ]
     },
@@ -1413,10 +2032,16 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-13-1",
-       "original": "“Please transcribe the content of the next audio clip.” (Then a piece of audio is played) The original content of this audio is: 'Stop all the clocks, cut oﬀ the telephone, prevent the dog from barking, silence the pianos and with muﬄed drum bring out the coﬃn, let the mourners come.'",
-       "zh": "（用户语音：）「请转写下一段音频的内容。」（随后播放一段音频）这段音频的原始内容是：「停止所有的时钟，切断电话线，阻止狗吠，让钢琴静默，随着低沉的鼓声抬出棺材，让哀悼者前来。」（出自 W. H. Auden 的 Funeral Blues）"
+       "original": "“Please transcribe the content of the next audio clip.” (Then a piece of audio is played)",
+       "zh": "（音频示例：指令「请转写下一段音频的内容。」（随后播放一段音频）0:00/0:10，音频原文为「Stop all the clocks, cut off the telephone, prevent the dog from barking, silence the pianos and with muffled drum bring out the coffin, let the mourners come.」）"
       }
      ]
+    },
+    {
+     "id": "eq-5-9",
+     "type": "equation",
+     "page": 10,
+     "original": "0:00 / 0:10"
     },
     {
      "id": "p-5-14",
@@ -1425,13 +2050,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-14-1",
-       "original": "No less than 50 words and no more than 200 words, add scenes such as rain and thunder to the poem.",
-       "zh": "（用户追加指令：）不少于 50 词、不超过 200 词，在诗中加入雨和雷等场景。"
-      },
-      {
-       "id": "s-5-14-2",
-       "original": "Finally, give the verses you created in lines.",
-       "zh": "最后，把你创作的诗句按行给出。"
+       "original": "The original content of this audio is: 'Stop all the clocks, cut oﬀ the telephone, prevent the dog from barking, silence the pianos and with muﬄed drum bring out the coﬃn, let the mourners come.'",
+       "zh": "（音频示例：指令「请转写下一段音频的内容。」（随后播放一段音频）0:00/0:10，音频原文为「Stop all the clocks, cut off the telephone, prevent the dog from barking, silence the pianos and with muffled drum bring out the coffin, let the mourners come.」）"
       }
      ]
     },
@@ -1442,26 +2062,43 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-15-1",
+       "original": "No less than 50 words and no more than 200 words, add scenes such as rain and thunder to the poem.",
+       "zh": "（用户追加指令：）不少于 50 词、不超过 200 词，在诗中加入雨和雷等场景。"
+      },
+      {
+       "id": "s-5-15-2",
+       "original": "Finally, give the verses you created in lines.",
+       "zh": "最后，把你创作的诗句按行给出。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-16",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-5-16-1",
        "original": "In the midst of an eerie stormy night, With raindrops falling heavy and bright, The world seemed to hush its voice, As winds howled through the darkened space.",
        "zh": "（模型创作的诗歌：）在一个诡异的暴风雨之夜，/ 雨点重重落下，明亮而密集，/ 世界仿佛屏住了声音，/ 狂风在黑暗的空间中呼啸。"
       },
       {
-       "id": "s-5-15-2",
+       "id": "s-5-16-2",
        "original": "Stop all the clocks, the time stood still, As the lightning ﬂashed through the sky, The telephone's ring was drowned out, By the roaring thunder that shook the ground.",
        "zh": "停止所有的时钟，时间凝固了，/ 闪电划过天空，/ 电话铃声被淹没，/ 被震动大地的滚滚雷声吞没。"
       },
       {
-       "id": "s-5-15-3",
+       "id": "s-5-16-3",
        "original": "Prevent the dog from barking, its cries were silenced, By the fear that gripped it in the night, Silence the pianos, their keys were muted, As the mournful sound of raindrops beat on wood.",
        "zh": "阻止狗吠，它的哀鸣被沉默，/ 被黑夜里攫住它的恐惧压制，/ 让钢琴静默，琴键都已喑哑，/ 只有雨滴敲打木头的哀伤声响。"
       },
       {
-       "id": "s-5-15-4",
+       "id": "s-5-16-4",
        "original": "With muﬄed drums, a slow march began, A solemn procession through the storm, The coﬃn was carried, heavy and solemn, Let the mourners come, to pay their ﬁnal respects.",
        "zh": "随着低沉的鼓声，缓慢的行进步伐开始，/ 一场庄重的队伍穿过风暴，/ 棺材被抬着，沉重而肃穆，/ 让哀悼者前来，致以最后的敬意。"
       },
       {
-       "id": "s-5-15-5",
+       "id": "s-5-16-5",
        "original": "As the storm slowly passed, the world emerged, A new day dawned, but memories lingered, Of the night when time stood still, And the mourners came, to say goodbye.",
        "zh": "当风暴缓缓过去，世界重新浮现，/ 新的一天破晓，但记忆仍萦绕，/ 那一夜时间凝固，/ 哀悼者前来，作最后的告别。"
       }
@@ -1475,16 +2112,10 @@ globalThis.PAPER_2407_10759 = {
      "zh": "Figure 7：示例展示 Qwen2-Audio 在语音分析方面的能力。"
     },
     {
-     "id": "p-5-16",
-     "type": "paragraph",
+     "id": "eq-5-10",
+     "type": "equation",
      "page": 11,
-     "sentences": [
-      {
-       "id": "s-5-16-1",
-       "original": "What do you hear?",
-       "zh": "（用户提问：）你听到了什么？"
-      }
-     ]
+     "original": "0:00 / 0:22"
     },
     {
      "id": "p-5-17",
@@ -1493,8 +2124,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-17-1",
-       "original": "I heard the sound of an alarm and a truck's air brake mixed with the noise of a heavy engine running and shifting gears.",
-       "zh": "（模型回答：）我听到了警报声、卡车的气刹车声，混杂着一台重型发动机运转和换挡的噪声。"
+       "original": "What do you hear?",
+       "zh": "（音频示例 0:00/0:22：问「你听到了什么？」）"
       }
      ]
     },
@@ -1505,8 +2136,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-18-1",
-       "original": "Under what circumstances can you hear such sounds?",
-       "zh": "（用户追问：）在什么场合下会听到这样的声音？"
+       "original": "I heard the sound of an alarm and a truck's air brake mixed with the noise of a heavy engine running and shifting gears.",
+       "zh": "（模型回答：）我听到了警报声、卡车的气刹车声，混杂着一台重型发动机运转和换挡的噪声。"
       }
      ]
     },
@@ -1517,8 +2148,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-19-1",
-       "original": "These types of sounds might be commonly heard in industrial settings like construction sites or factories where machinery is operated, or during emergency situations like traﬃc accidents where sirens are triggered.",
-       "zh": "（模型回答：）这类声音可能常见于工地或工厂等运转机械的工业环境，也可能出现在警笛被触发的紧急情况（如交通事故）中。"
+       "original": "Under what circumstances can you hear such sounds?",
+       "zh": "（用户追问：）在什么场合下会听到这样的声音？"
       }
      ]
     },
@@ -1529,13 +2160,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-20-1",
-       "original": "“I am so scared!",
-       "zh": "（用户语音：）「我好害怕！"
-      },
-      {
-       "id": "s-5-20-2",
-       "original": "What should I do?”",
-       "zh": "我该怎么办？」"
+       "original": "These types of sounds might be commonly heard in industrial settings like construction sites or factories where machinery is operated, or during emergency situations like traﬃc accidents where sirens are triggered.",
+       "zh": "（模型回答：）这类声音可能常见于工地或工厂等运转机械的工业环境，也可能出现在警笛被触发的紧急情况（如交通事故）中。"
       }
      ]
     },
@@ -1546,20 +2172,21 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-21-1",
-       "original": "It's understandable to feel scared under any situation that makes you feel uncomfortable.",
-       "zh": "（模型回答：）在任何让你感到不适的情况下感到害怕都是可以理解的。"
+       "original": "“I am so scared!",
+       "zh": "（用户语音：）「我好害怕！"
       },
       {
        "id": "s-5-21-2",
-       "original": "It's important to remember that it's okay to be scared.",
-       "zh": "重要的是记住：害怕是正常的。"
-      },
-      {
-       "id": "s-5-21-3",
-       "original": "Here are some things you can do:",
-       "zh": "以下是你可以做的一些事情："
+       "original": "What should I do?”",
+       "zh": "我该怎么办？」"
       }
      ]
+    },
+    {
+     "id": "eq-5-11",
+     "type": "equation",
+     "page": 11,
+     "original": "0:00 / 0:03"
     },
     {
      "id": "p-5-22",
@@ -1568,53 +2195,18 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-22-1",
-       "original": "1.",
-       "zh": "1."
+       "original": "It's understandable to feel scared under any situation that makes you feel uncomfortable.",
+       "zh": "（音频示例 0:00/0:03：「在任何让你不舒服的情况下感到害怕都是可以理解的。」）"
       },
       {
        "id": "s-5-22-2",
-       "original": "Take deep breaths: Inhale deeply through your nose and exhale slowly through your mouth.",
-       "zh": "深呼吸：用鼻子深吸气，再缓慢地用嘴呼出。"
+       "original": "It's important to remember that it's okay to be scared.",
+       "zh": "重要的是记住：害怕是正常的。"
       },
       {
        "id": "s-5-22-3",
-       "original": "This can help calm your mind and body. 2.",
-       "zh": "这可以帮助平复你的身心。2."
-      },
-      {
-       "id": "s-5-22-4",
-       "original": "Find a safe place: If possible, move to a safe location away from the source of the fear.",
-       "zh": "找一个安全的地方：如果可能，转移到远离恐惧来源的安全位置。"
-      },
-      {
-       "id": "s-5-22-5",
-       "original": "If you're in a car, pull over to a parking lot or a safe spot on the side of the road. 3.",
-       "zh": "如果你在开车，驶到停车场或路边安全地带停下。3."
-      },
-      {
-       "id": "s-5-22-6",
-       "original": "Stay informed: If you have access to information about the situation, stay informed but don't overdo it.",
-       "zh": "保持知情：如果你能获取有关事态的信息，保持关注即可，但不要过度。"
-      },
-      {
-       "id": "s-5-22-7",
-       "original": "Too much information can create more anxiety. 4.",
-       "zh": "过多的信息可能带来更多焦虑。4."
-      },
-      {
-       "id": "s-5-22-8",
-       "original": "Talk to someone: Talking to someone you trust can help you process your feelings and gain perspective.",
-       "zh": "与他人交谈：与你信任的人交谈，能帮助你梳理情绪并获得新的视角。"
-      },
-      {
-       "id": "s-5-22-9",
-       "original": "You can call a friend, family member, or even a professional counselor if needed. 5.",
-       "zh": "如果需要，可以打给朋友、家人，甚至专业咨询师。5."
-      },
-      {
-       "id": "s-5-22-10",
-       "original": "Practice relaxation techniques: Listening to music, doing yoga or meditation, or engaging in other relaxing activities can help reduce stress and anxiety.",
-       "zh": "练习放松技巧：听音乐、做瑜伽或冥想，或进行其他放松活动，都有助于减轻压力与焦虑。"
+       "original": "Here are some things you can do:",
+       "zh": "以下是你可以做的一些事情："
       }
      ]
     },
@@ -1625,6 +2217,63 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-23-1",
+       "original": "1.",
+       "zh": "1."
+      },
+      {
+       "id": "s-5-23-2",
+       "original": "Take deep breaths: Inhale deeply through your nose and exhale slowly through your mouth.",
+       "zh": "深呼吸：用鼻子深吸气，再缓慢地用嘴呼出。"
+      },
+      {
+       "id": "s-5-23-3",
+       "original": "This can help calm your mind and body. 2.",
+       "zh": "这可以帮助平复你的身心。2."
+      },
+      {
+       "id": "s-5-23-4",
+       "original": "Find a safe place: If possible, move to a safe location away from the source of the fear.",
+       "zh": "找一个安全的地方：如果可能，转移到远离恐惧来源的安全位置。"
+      },
+      {
+       "id": "s-5-23-5",
+       "original": "If you're in a car, pull over to a parking lot or a safe spot on the side of the road. 3.",
+       "zh": "如果你在开车，驶到停车场或路边安全地带停下。3."
+      },
+      {
+       "id": "s-5-23-6",
+       "original": "Stay informed: If you have access to information about the situation, stay informed but don't overdo it.",
+       "zh": "保持知情：如果你能获取有关事态的信息，保持关注即可，但不要过度。"
+      },
+      {
+       "id": "s-5-23-7",
+       "original": "Too much information can create more anxiety. 4.",
+       "zh": "过多的信息可能带来更多焦虑。4."
+      },
+      {
+       "id": "s-5-23-8",
+       "original": "Talk to someone: Talking to someone you trust can help you process your feelings and gain perspective.",
+       "zh": "与他人交谈：与你信任的人交谈，能帮助你梳理情绪并获得新的视角。"
+      },
+      {
+       "id": "s-5-23-9",
+       "original": "You can call a friend, family member, or even a professional counselor if needed. 5.",
+       "zh": "如果需要，可以打给朋友、家人，甚至专业咨询师。5."
+      },
+      {
+       "id": "s-5-23-10",
+       "original": "Practice relaxation techniques: Listening to music, doing yoga or meditation, or engaging in other relaxing activities can help reduce stress and anxiety.",
+       "zh": "练习放松技巧：听音乐、做瑜伽或冥想，或进行其他放松活动，都有助于减轻压力与焦虑。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-24",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-5-24-1",
        "original": "Remember, it's okay to take time for yourself to process your emotions and come up with a plan that works best for you.",
        "zh": "请记住：给自己时间处理情绪、并制定出最适合自己的应对方案，是完全正常的。"
       }
@@ -1638,53 +2287,22 @@ globalThis.PAPER_2407_10759 = {
      "zh": "Figure 8：示例展示 Qwen2-Audio 在声音分析方面的能力。"
     },
     {
-     "id": "p-5-24",
-     "type": "paragraph",
-     "page": 12,
-     "sentences": [
-      {
-       "id": "s-5-24-1",
-       "original": "（play a piece of music without asking anything） This is a pop punk music piece.",
-       "zh": "（播放一段音乐，未提任何问题。模型主动描述：）这是一首流行朋克（pop punk）风格的乐曲。"
-      },
-      {
-       "id": "s-5-24-2",
-       "original": "There is a male vocalist singing melodically in the lead.",
-       "zh": "有一位男声主唱，演唱旋律动听。"
-      },
-      {
-       "id": "s-5-24-3",
-       "original": "The tune is being played by the guitar with the bass guitar playing in the background.",
-       "zh": "乐曲由吉他演奏，背景中有贝斯吉他伴奏。"
-      },
-      {
-       "id": "s-5-24-4",
-       "original": "The rhythmic background consists of loud and aggressive sounding drums.",
-       "zh": "背景节奏由响亮而有攻击性的鼓点构成。"
-      },
-      {
-       "id": "s-5-24-5",
-       "original": "The atmosphere is rebellious.",
-       "zh": "整体氛围带有叛逆感。"
-      },
-      {
-       "id": "s-5-24-6",
-       "original": "This piece could be used in the soundtrack of a high school drama movie or TV show during scenes where the characters are rebelling against authority.",
-       "zh": "这首曲子很适合用在高中题材影视剧的配乐中，尤其是角色反抗权威的场景。"
-      }
-     ]
-    },
-    {
      "id": "p-5-25",
      "type": "paragraph",
      "page": 12,
      "sentences": [
       {
        "id": "s-5-25-1",
-       "original": "“What’s the tempo of this music?”",
-       "zh": "（用户提问：）「这段音乐的速度（tempo）是多少？」"
+       "original": "（play a piece of music without asking anything）",
+       "zh": "（音频示例：（只播放一段音乐、不提任何问题）0:00/0:30，模型回答「这是一段流行朋克（pop punk）音乐。」）"
       }
      ]
+    },
+    {
+     "id": "eq-5-12",
+     "type": "equation",
+     "page": 12,
+     "original": "0:00 / 0:30"
     },
     {
      "id": "p-5-26",
@@ -1693,8 +2311,33 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-26-1",
-       "original": "The tempo of this music is 104.17  bpm.",
-       "zh": "（模型回答：）这段音乐的速度是 104.17 bpm。"
+       "original": "This is a pop punk music piece.",
+       "zh": "（音频示例：（只播放一段音乐、不提任何问题）0:00/0:30，模型回答「这是一段流行朋克（pop punk）音乐。」）"
+      },
+      {
+       "id": "s-5-26-2",
+       "original": "There is a male vocalist singing melodically in the lead.",
+       "zh": "有一位男声主唱，演唱旋律动听。"
+      },
+      {
+       "id": "s-5-26-3",
+       "original": "The tune is being played by the guitar with the bass guitar playing in the background.",
+       "zh": "乐曲由吉他演奏，背景中有贝斯吉他伴奏。"
+      },
+      {
+       "id": "s-5-26-4",
+       "original": "The rhythmic background consists of loud and aggressive sounding drums.",
+       "zh": "背景节奏由响亮而有攻击性的鼓点构成。"
+      },
+      {
+       "id": "s-5-26-5",
+       "original": "The atmosphere is rebellious.",
+       "zh": "整体氛围带有叛逆感。"
+      },
+      {
+       "id": "s-5-26-6",
+       "original": "This piece could be used in the soundtrack of a high school drama movie or TV show during scenes where the characters are rebelling against authority.",
+       "zh": "这首曲子很适合用在高中题材影视剧的配乐中，尤其是角色反抗权威的场景。"
       }
      ]
     },
@@ -1705,10 +2348,16 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-27-1",
-       "original": "“What’s the time signature of this music” The time signature of this music is 4/4.",
-       "zh": "（用户提问：）「这段音乐的拍号是什么？」（模型回答：）这段音乐的拍号是 4/4。"
+       "original": "“What’s the tempo of this music?”",
+       "zh": "（用户提问：）「这段音乐的速度（tempo）是多少？」"
       }
      ]
+    },
+    {
+     "id": "eq-5-13",
+     "type": "equation",
+     "page": 12,
+     "original": "0:00 / 0:03"
     },
     {
      "id": "p-5-28",
@@ -1717,8 +2366,68 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-28-1",
-       "original": "“What’s the key of this music” The key of this music piece is F# major.",
-       "zh": "（用户提问：）「这段音乐的调是什么？」（模型回答：）这段音乐是 F# 大调。"
+       "original": "The tempo of this music is 104.17  bpm.",
+       "zh": "（音频示例 0:00/0:03：「这段音乐的速度是 104.17 bpm。」）"
+      }
+     ]
+    },
+    {
+     "id": "p-5-29",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-5-29-1",
+       "original": "“What’s the time signature of this music”",
+       "zh": "（音频示例：问「这段音乐的拍号是什么？」0:00/0:03，回答「这段音乐的拍号是 4/4。」）"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-14",
+     "type": "equation",
+     "page": 12,
+     "original": "0:00 / 0:03"
+    },
+    {
+     "id": "p-5-30",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-5-30-1",
+       "original": "The time signature of this music is 4/4.",
+       "zh": "（音频示例：问「这段音乐的拍号是什么？」0:00/0:03，回答「这段音乐的拍号是 4/4。」）"
+      }
+     ]
+    },
+    {
+     "id": "p-5-31",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-5-31-1",
+       "original": "“What’s the key of this music”",
+       "zh": "（音频示例：问「这段音乐是什么调？」0:00/0:03，回答「这段音乐是 F# 大调。」）"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-15",
+     "type": "equation",
+     "page": 12,
+     "original": "0:00 / 0:03"
+    },
+    {
+     "id": "p-5-32",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-5-32-1",
+       "original": "The key of this music piece is F# major.",
+       "zh": "（音频示例：问「这段音乐是什么调？」0:00/0:03，回答「这段音乐是 F# 大调。」）"
       }
      ]
     },
@@ -1730,64 +2439,22 @@ globalThis.PAPER_2407_10759 = {
      "zh": "Figure 9：示例展示 Qwen2-Audio 在音乐分析方面的能力。"
     },
     {
-     "id": "p-5-29",
-     "type": "paragraph",
-     "page": 13,
-     "sentences": [
-      {
-       "id": "s-5-29-1",
-       "original": "“What are the lyrics of the singing?” (Then a song is played.)",
-       "zh": "（用户提问：）「歌唱部分的歌词是什么？」（随后播放一首歌。）"
-      }
-     ]
-    },
-    {
-     "id": "p-5-30",
-     "type": "paragraph",
-     "page": 13,
-     "sentences": [
-      {
-       "id": "s-5-30-1",
-       "original": "The lyrics are 'Waiting for my favorite song.'",
-       "zh": "（模型回答：）歌词是「Waiting for my favorite song.（在等我最喜欢的那首歌。）」"
-      }
-     ]
-    },
-    {
-     "id": "p-5-31",
-     "type": "paragraph",
-     "page": 13,
-     "sentences": [
-      {
-       "id": "s-5-31-1",
-       "original": "“What are the lyrics of the singing?” (Then a song mixed with a sound is played.",
-       "zh": "（用户再次提问：）「歌唱部分的歌词是什么？」（随后播放一段混有环境声音的歌。）"
-      }
-     ]
-    },
-    {
-     "id": "p-5-32",
-     "type": "paragraph",
-     "page": 13,
-     "sentences": [
-      {
-       "id": "s-5-32-1",
-       "original": "The lyrics are 'Waiting for my favorite song.'",
-       "zh": "（模型回答：）歌词是「Waiting for my favorite song.（在等我最喜欢的那首歌。）」"
-      }
-     ]
-    },
-    {
      "id": "p-5-33",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
        "id": "s-5-33-1",
-       "original": "“What are the lyrics of the singing?” (Then a song mixed with a speech(man speaking) is played.)",
-       "zh": "（用户再次提问：）「歌唱部分的歌词是什么？」（随后播放一段混有人声语音（男子说话）的歌。）"
+       "original": "“What are the lyrics of the singing?” (Then a song is played.)",
+       "zh": "（用户提问：）「歌唱部分的歌词是什么？」（随后播放一首歌。）"
       }
      ]
+    },
+    {
+     "id": "eq-5-16",
+     "type": "equation",
+     "page": 13,
+     "original": "0:00 / 0:20"
     },
     {
      "id": "p-5-34",
@@ -1797,7 +2464,7 @@ globalThis.PAPER_2407_10759 = {
       {
        "id": "s-5-34-1",
        "original": "The lyrics are 'Waiting for my favorite song.'",
-       "zh": "（模型回答：）歌词是「Waiting for my favorite song.（在等我最喜欢的那首歌。）」"
+       "zh": "（音频示例 0:00/0:20：歌词是「Waiting for my favorite song.」）"
       }
      ]
     },
@@ -1808,10 +2475,16 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-35-1",
-       "original": "“What does the person say?” (Then a speech is played.)",
-       "zh": "（用户提问：）「这个人说了什么？」（随后播放一段语音。）"
+       "original": "“What are the lyrics of the singing?” (Then a song mixed with a sound is played.",
+       "zh": "（用户再次提问：）「歌唱部分的歌词是什么？」（随后播放一段混有环境声音的歌。）"
       }
      ]
+    },
+    {
+     "id": "eq-5-17",
+     "type": "equation",
+     "page": 13,
+     "original": "0:00 / 0:20"
     },
     {
      "id": "p-5-36",
@@ -1820,8 +2493,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-36-1",
-       "original": "The old man laid down his hand to light a cigar.",
-       "zh": "（模型回答：）老人放下手，点燃了一支雪茄。"
+       "original": "The lyrics are 'Waiting for my favorite song.'",
+       "zh": "（音频示例 0:00/0:20：歌词是「Waiting for my favorite song.」）"
       }
      ]
     },
@@ -1832,10 +2505,16 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-37-1",
-       "original": "“What does the person say?” (Then a speech mixed with a music is played.)",
-       "zh": "（用户再次提问：）「这个人说了什么？」（随后播放一段混有音乐的语音。）"
+       "original": "“What are the lyrics of the singing?” (Then a song mixed with a speech(man speaking) is played.)",
+       "zh": "（用户再次提问：）「歌唱部分的歌词是什么？」（随后播放一段混有人声语音（男子说话）的歌。）"
       }
      ]
+    },
+    {
+     "id": "eq-5-18",
+     "type": "equation",
+     "page": 13,
+     "original": "0:00 / 0:20"
     },
     {
      "id": "p-5-38",
@@ -1844,8 +2523,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-38-1",
-       "original": "The old man laid down his hand to light a cigar.",
-       "zh": "（模型回答：）老人放下手，点燃了一支雪茄。"
+       "original": "The lyrics are 'Waiting for my favorite song.'",
+       "zh": "（音频示例 0:00/0:20：歌词是「Waiting for my favorite song.」）"
       }
      ]
     },
@@ -1856,10 +2535,16 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-5-39-1",
-       "original": "“What does the person say?” (Then a speech mixed with a sound is played.)",
-       "zh": "（用户再次提问：）「这个人说了什么？」（随后播放一段混有环境声音的语音。）"
+       "original": "“What does the person say?” (Then a speech is played.)",
+       "zh": "（用户提问：）「这个人说了什么？」（随后播放一段语音。）"
       }
      ]
+    },
+    {
+     "id": "eq-5-19",
+     "type": "equation",
+     "page": 13,
+     "original": "0:00 / 0:10"
     },
     {
      "id": "p-5-40",
@@ -1869,7 +2554,67 @@ globalThis.PAPER_2407_10759 = {
       {
        "id": "s-5-40-1",
        "original": "The old man laid down his hand to light a cigar.",
-       "zh": "（模型回答：）老人放下手，点燃了一支雪茄。"
+       "zh": "（音频示例 0:00/0:10：老人放下手去点雪茄。）"
+      }
+     ]
+    },
+    {
+     "id": "p-5-41",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-5-41-1",
+       "original": "“What does the person say?” (Then a speech mixed with a music is played.)",
+       "zh": "（用户再次提问：）「这个人说了什么？」（随后播放一段混有音乐的语音。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-20",
+     "type": "equation",
+     "page": 13,
+     "original": "0:00 / 0:10"
+    },
+    {
+     "id": "p-5-42",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-5-42-1",
+       "original": "The old man laid down his hand to light a cigar.",
+       "zh": "（音频示例 0:00/0:10：老人放下手去点雪茄。）"
+      }
+     ]
+    },
+    {
+     "id": "p-5-43",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-5-43-1",
+       "original": "“What does the person say?” (Then a speech mixed with a sound is played.)",
+       "zh": "（用户再次提问：）「这个人说了什么？」（随后播放一段混有环境声音的语音。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-21",
+     "type": "equation",
+     "page": 13,
+     "original": "0:00 / 0:10"
+    },
+    {
+     "id": "p-5-44",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-5-44-1",
+       "original": "The old man laid down his hand to light a cigar.",
+       "zh": "（音频示例 0:00/0:10：老人放下手去点雪茄。）"
       }
      ]
     },
@@ -1923,7 +2668,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-references-1-1",
-       "original": "Andrea Agostinelli, Timo I Denk, Zalán Borsos, Jesse Engel, Mauro Verzetti, Antoine Caillon, Qingqing Huang, Aren Jansen, Adam Roberts, Marco Tagliasacchi, et al. Musiclm: Generating music from text. arXiv preprint arXiv:2301.11325, 2023."
+       "original": "Andrea Agostinelli, Timo I Denk, Zalán Borsos, Jesse Engel, Mauro Verzetti, Antoine Caillon, Qingqing Huang, Aren Jansen, Adam Roberts, Marco Tagliasacchi, et al. Musiclm: Generating music from text. arXiv preprint arXiv:2301.11325, 2023.",
+       "zh": "1."
       }
      ]
     },
@@ -1945,9 +2691,16 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-references-3-1",
-       "original": "Speecht5: Unified-modal encoder-decoder pre-training for spoken language processing. arXiv:2110.07205, 2021."
+       "original": "Speecht5: Unified-modal encoder-decoder pre-training for spoken language processing. arXiv:2110.07205,",
+       "zh": "1."
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 14,
+     "original": "2021."
     },
     {
      "id": "p-references-4",
@@ -2065,7 +2818,8 @@ globalThis.PAPER_2407_10759 = {
       },
       {
        "id": "s-references-7-2",
-       "original": "Speechnet: A universal modularized model for speech processing tasks. arXiv:2105.03070, 2021."
+       "original": "Speechnet: A universal modularized model for speech processing tasks. arXiv:2105.03070, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -2087,7 +2841,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "Qwen-audio: Advancing universal audio understanding via unified large-scale audio-language models. arXiv preprint arXiv:2311.07919, 2023."
+       "original": "Qwen-audio: Advancing universal audio understanding via unified large-scale audio-language models. arXiv preprint arXiv:2311.07919, 2023.",
+       "zh": "1."
       }
      ]
     },
@@ -2181,13 +2936,15 @@ globalThis.PAPER_2407_10759 = {
       },
       {
        "id": "s-references-15-3",
-       "original": "In 2020 IEEE International Conference on Acoustics, Speech and Signal Processing, ICASSP 2020, Barcelona, Spain, May 4-8, 2020."
-      },
-      {
-       "id": "s-references-15-4",
-       "original": "IEEE, 2020."
+       "original": "In 2020 IEEE International Conference on Acoustics, Speech and Signal Processing, ICASSP 2020, Barcelona, Spain, May"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 14,
+     "original": "4-8, 2020. IEEE, 2020."
     },
     {
      "id": "p-references-16",
@@ -2313,9 +3070,15 @@ globalThis.PAPER_2407_10759 = {
       },
       {
        "id": "s-references-23-2",
-       "original": "Audio flamingo: A novel audio language model with few-shot learning and dialogue abilities. arXiv preprint arXiv:2402.01831, 2024."
+       "original": "Audio flamingo: A novel audio language model with few-shot learning and dialogue abilities. arXiv preprint arXiv:2402.01831,"
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 15,
+     "original": "2024."
     },
     {
      "id": "p-references-24",
@@ -2415,9 +3178,15 @@ globalThis.PAPER_2407_10759 = {
       },
       {
        "id": "s-references-29-3",
-       "original": "In Proceedings of the 40th annual meeting of the Association for Computational Linguistics, 2002."
+       "original": "In Proceedings of the 40th annual meeting of the Association for Computational Linguistics,"
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 15,
+     "original": "2002."
     },
     {
      "id": "p-references-30",
@@ -2527,7 +3296,8 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "Machel Reid, Nikolay Savinov, Denis Teplyashin, Dmitry Lepikhin, Timothy Lillicrap, Jean-baptiste Alayrac, Radu Soricut, Angeliki Lazaridou, Orhan Firat, Julian Schrittwieser, et al. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. arXiv preprint arXiv:2403.05530, 2024."
+       "original": "Machel Reid, Nikolay Savinov, Denis Teplyashin, Dmitry Lepikhin, Timothy Lillicrap, Jean-baptiste Alayrac, Radu Soricut, Angeliki Lazaridou, Orhan Firat, Julian Schrittwieser, et al. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. arXiv preprint arXiv:2403.05530, 2024.",
+       "zh": "1."
       }
      ]
     },
@@ -2712,9 +3482,15 @@ globalThis.PAPER_2407_10759 = {
       },
       {
        "id": "s-references-48-3",
-       "original": "CoRR, abs/2305.11000, 2023."
+       "original": "CoRR, abs/2305.11000,"
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 16,
+     "original": "2023."
     },
     {
      "id": "p-references-49",
@@ -2734,9 +3510,15 @@ globalThis.PAPER_2407_10759 = {
      "sentences": [
       {
        "id": "s-references-50-1",
-       "original": "Mmspeech: Multi-modal multi-task encoder-decoder pre-training for speech recognition. abs/2212.00500, 2022."
+       "original": "Mmspeech: Multi-modal multi-task encoder-decoder pre-training for speech recognition. abs/2212.00500,"
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 16,
+     "original": "2022."
     }
    ]
   }
@@ -2776,20 +3558,9 @@ globalThis.PAPER_2407_10759 = {
    "featured": true
   },
   {
-   "id": "ann-004",
-   "anchor": {
-    "sentence_id": "s-1-2-4",
-    "quote": "we simplify the ∗Equal contribution, †Corresponding author"
-   },
-   "kind": "engineering",
-   "title": "抽样噪音的一个现场证据",
-   "explanation": "这一行的原文被 PDF 抽取破坏——正文「simplify the pre-training process」和脚注「Equal contribution, Corresponding author」、Figure 1 的图表散值被粘到了同一句。这类残留是抽取层（PyMuPDF / pdfplumber 等）把双栏 PDF、页脚、图表文字按文本流展平的典型副作用。做下游 NLP（RAG、精读、句子级标注）时必须把这种「句子碎块」单独处理，否则要么污染翻译，要么把图表数值误当正文事实喂给模型。这条句子本身就是最好的警示案例。",
-   "featured": false
-  },
-  {
    "id": "ann-005",
    "anchor": {
-    "sentence_id": "s-1-5-1",
+    "sentence_id": "s-1-6-1",
     "quote": "without any task-specific fine-tuning"
    },
    "kind": "critique",
@@ -2899,7 +3670,7 @@ globalThis.PAPER_2407_10759 = {
   {
    "id": "ann-015",
    "anchor": {
-    "sentence_id": "s-3-2-3-2",
+    "sentence_id": "s-3-2-10-2",
     "quote": "the number of samples of Gemini1.5 on AIR-Bench-chat has been reduced by about 1/5"
    },
    "kind": "critique",
@@ -2921,7 +3692,7 @@ globalThis.PAPER_2407_10759 = {
   {
    "id": "ann-017",
    "anchor": {
-    "sentence_id": "s-5-13-1",
+    "sentence_id": "s-5-14-1",
     "quote": "Stop all the clocks, cut oﬀ the telephone, prevent the dog from barking"
    },
    "kind": "connection",
@@ -2932,7 +3703,7 @@ globalThis.PAPER_2407_10759 = {
   {
    "id": "ann-018",
    "anchor": {
-    "sentence_id": "s-5-26-1",
+    "sentence_id": "s-5-28-1",
     "quote": "The tempo of this music is 104.17  bpm"
    },
    "kind": "critique",
@@ -2943,7 +3714,7 @@ globalThis.PAPER_2407_10759 = {
   {
    "id": "ann-019",
    "anchor": {
-    "sentence_id": "s-5-30-1",
+    "sentence_id": "s-5-34-1",
     "quote": "The lyrics are 'Waiting for my favorite song.'"
    },
    "kind": "concept",

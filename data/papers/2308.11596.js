@@ -27,7 +27,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-front-1-1",
-       "original": "Seamless Communication, Loïc Barrault∗, Yu-An Chung∗, Mariano Coria Meglioli∗, David Dale∗, Ning Dong∗, Paul-Ambroise Duquenne∗,‡, Hady Elsahar∗, Hongyu Gong∗, Kevin Heffernan∗, John Hoffman∗, Christopher Klaiber∗, Pengwei Li∗, Daniel Licht∗, Jean Maillard∗, Alice Rakotoarison∗, Kaushik Ram Sadagopan∗, Guillaume Wenzek∗, Ethan Ye∗, Bapi Akula, Peng-Jen Chen, Naji El Hachem, Brian Ellis, Gabriel Mejia Gonzalez, Justin Haaheim, Prangthip Hansanti, Russ Howes, Bernie Huang, Min-Jae Hwang, Hirofumi Inaguma, Somya Jain, Elahe Kalbassi, Amanda Kallet, Ilia Kulikov, Janice Lam, Daniel Li, Xutai Ma, Ruslan Mavlyutov, Benjamin Peloquin, Mohamed Ramadan, Abinesh Ramakrishnan, Anna Sun, Kevin Tran, Tuan Tran, Igor Tufanov, Vish Vogeti, Carleigh Wood, Yilin Yang, Bokai Yu, Pierre Andrews†, Can Balioglu†, Marta R."
+       "original": "Seamless Communication, Loïc Barrault∗, Yu-An Chung∗, Mariano Coria Meglioli∗, David Dale∗, Ning Dong∗, Paul-Ambroise Duquenne∗,‡, Hady Elsahar∗, Hongyu Gong∗, Kevin Heffernan∗, John Hoffman∗, Christopher Klaiber∗, Pengwei Li∗, Daniel Licht∗, Jean Maillard∗, Alice Rakotoarison∗, Kaushik Ram Sadagopan∗, Guillaume Wenzek∗, Ethan Ye∗, Bapi Akula, Peng-Jen Chen, Naji El Hachem, Brian Ellis, Gabriel Mejia Gonzalez, Justin Haaheim, Prangthip Hansanti, Russ Howes, Bernie Huang, Min-Jae Hwang, Hirofumi Inaguma, Somya Jain, Elahe Kalbassi, Amanda Kallet, Ilia Kulikov, Janice Lam, Daniel Li, Xutai Ma, Ruslan Mavlyutov, Benjamin Peloquin, Mohamed Ramadan, Abinesh Ramakrishnan, Anna Sun, Kevin Tran, Tuan Tran, Igor Tufanov, Vish Vogeti, Carleigh Wood, Yilin Yang, Bokai Yu, Pierre Andrews†, Can Balioglu†, Marta R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
       },
       {
        "id": "s-front-1-2",
@@ -130,13 +131,19 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-abstract-1",
+     "type": "equation",
+     "page": 1,
+     "original": "1"
+    },
+    {
      "id": "p-abstract-2",
      "type": "paragraph",
      "page": 1,
      "sentences": [
       {
        "id": "s-abstract-2-1",
-       "original": "1 human evaluations of speech-to-text translation outputs evinced similarly impressive results; for translations from English, XSTS scores for 24 evaluated languages are consistently above 4 (out of 5).",
+       "original": "human evaluations of speech-to-text translation outputs evinced similarly impressive results; for translations from English, XSTS scores for 24 evaluated languages are consistently above 4 (out of 5).",
        "zh": "[1] 对语音到文本翻译结果的人工评测同样展现了令人印象深刻的结果：对于译出英语的方向，24 个被评测语言的 XSTS 分数稳定高于 4（满分 5 分）。"
       },
       {
@@ -172,52 +179,28 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
-     "id": "p-abstract-3",
-     "type": "paragraph",
+     "id": "eq-abstract-2",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-abstract-3-1",
-       "original": "2 Why Prioritize Speech in Machine Translation? . . . . . . . . . . . . . . . . .",
-       "zh": "2 为什么在机器翻译中优先考虑语音？……"
-      }
-     ]
+     "original": "2 Why Prioritize Speech in Machine Translation? . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-abstract-4",
-     "type": "paragraph",
+     "id": "eq-abstract-3",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-abstract-4-1",
-       "original": "7 2.2 Speech Translation Today . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "7 2.2 语音翻译的现状 ……"
-      }
-     ]
+     "original": "7 2.2 Speech Translation Today . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-abstract-5",
-     "type": "paragraph",
+     "id": "eq-abstract-4",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-abstract-5-1",
-       "original": "9 2.3 Languages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "9 2.3 语言 ……"
-      }
-     ]
+     "original": "9 2.3 Languages . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-abstract-6",
-     "type": "paragraph",
+     "id": "eq-abstract-5",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-abstract-6-1",
-       "original": "12",
-       "zh": "12"
-      }
-     ]
+     "original": "12"
     }
    ]
   },
@@ -232,64 +215,58 @@ globalThis.PAPER_2308_11596 = {
    },
    "blocks": [
     {
-     "id": "p-3-1",
-     "type": "paragraph",
+     "id": "eq-3-1",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-3-1-1",
-       "original": "16 3.1 Speech-language identification . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "16 3.1 语音语种识别 ……"
-      }
-     ]
+     "original": "16 3.1 Speech-language identification . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-3-2",
-     "type": "paragraph",
+     "id": "eq-3-2",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-3-2-1",
-       "original": "16 3.2 Gathering raw audio and text data at scale . . . . . . . . . . . . . . . . . . .",
-       "zh": "16 3.2 大规模采集原始音频与文本数据 ……"
-      }
-     ]
+     "original": "16 3.2"
     },
     {
-     "id": "p-3-3",
-     "type": "paragraph",
+     "id": "eq-3-3",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-3-3-1",
-       "original": "18 3.3 Speech mining . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "18 3.3 语音挖掘 ……"
-      }
-     ]
+     "original": "Gathering raw audio and text data at scale"
     },
     {
-     "id": "p-3-4",
-     "type": "paragraph",
+     "id": "eq-3-4",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-3-4-1",
-       "original": "19 3.4 Related work . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "19 3.4 相关工作 ……"
-      }
-     ]
+     "original": ". . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-3-5",
-     "type": "paragraph",
+     "id": "eq-3-5",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-3-5-1",
-       "original": "24",
-       "zh": "24"
-      }
-     ]
+     "original": "18 3.3 Speech mining . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+    },
+    {
+     "id": "eq-3-6",
+     "type": "equation",
+     "page": 3,
+     "original": "19 3.4"
+    },
+    {
+     "id": "eq-3-7",
+     "type": "equation",
+     "page": 3,
+     "original": "Related work"
+    },
+    {
+     "id": "eq-3-8",
+     "type": "equation",
+     "page": 3,
+     "original": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+    },
+    {
+     "id": "eq-3-9",
+     "type": "equation",
+     "page": 3,
+     "original": "24"
     }
    ]
   },
@@ -304,88 +281,58 @@ globalThis.PAPER_2308_11596 = {
    },
    "blocks": [
     {
-     "id": "p-4-1",
-     "type": "paragraph",
+     "id": "eq-4-1",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-4-1-1",
-       "original": "27 4.1 Unsupervised Speech Pre-training . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "27 4.1 无监督语音预训练 ……"
-      }
-     ]
+     "original": "27 4.1 Unsupervised Speech Pre-training . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-4-2",
-     "type": "paragraph",
+     "id": "eq-4-2",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-4-2-1",
-       "original": "28 4.2 X2T: Into-Text Translation and Transcription . . . . . . . . . . . . . . . . . .",
-       "zh": "28 4.2 X2T：译为文本的翻译与转写 ……"
-      }
-     ]
+     "original": "28 4.2 X2T: Into-Text Translation and Transcription . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-4-3",
-     "type": "paragraph",
+     "id": "eq-4-3",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-4-3-1",
-       "original": "29 4.3 Speech-to-Speech Translation . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "29 4.3 语音到语音翻译 ……"
-      }
-     ]
+     "original": "29 4.3 Speech-to-Speech Translation . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-4-4",
-     "type": "paragraph",
+     "id": "eq-4-4",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-4-4-1",
-       "original": "33 4.4 The SeamlessM4T Models . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "33 4.4 SeamlessM4T 系列模型 ……"
-      }
-     ]
+     "original": "33 4.4 The SeamlessM4T Models . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-4-5",
-     "type": "paragraph",
+     "id": "eq-4-5",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-4-5-1",
-       "original": "36 4.5 Analysis and Ablations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "36 4.5 分析与消融 ……"
-      }
-     ]
+     "original": "36 4.5 Analysis and Ablations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-4-6",
-     "type": "paragraph",
+     "id": "eq-4-6",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-4-6-1",
-       "original": "41 4.6 Related work . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "41 4.6 相关工作 ……"
-      }
-     ]
+     "original": "41 4.6"
     },
     {
-     "id": "p-4-7",
-     "type": "paragraph",
+     "id": "eq-4-7",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-4-7-1",
-       "original": "45",
-       "zh": "45"
-      }
-     ]
+     "original": "Related work"
+    },
+    {
+     "id": "eq-4-8",
+     "type": "equation",
+     "page": 3,
+     "original": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+    },
+    {
+     "id": "eq-4-9",
+     "type": "equation",
+     "page": 3,
+     "original": "45"
     }
    ]
   },
@@ -400,52 +347,28 @@ globalThis.PAPER_2308_11596 = {
    },
    "blocks": [
     {
-     "id": "p-5-1",
-     "type": "paragraph",
+     "id": "eq-5-1",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-5-1-1",
-       "original": "46 5.1 Modality-Agnostic Automatic Metric: Blaser 2.0 . . . . . . . . . . . . . . .",
-       "zh": "46 5.1 模态无关的自动指标：Blaser 2.0 ……"
-      }
-     ]
+     "original": "46 5.1 Modality-Agnostic Automatic Metric: Blaser 2.0 . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-5-2",
-     "type": "paragraph",
+     "id": "eq-5-2",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-5-2-1",
-       "original": "46 5.2 Human Evaluation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "46 5.2 人工评测 ……"
-      }
-     ]
+     "original": "46 5.2 Human Evaluation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-5-3",
-     "type": "paragraph",
+     "id": "eq-5-3",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-5-3-1",
-       "original": "48 5.3 Automatic Robustness Evaluation . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "48 5.3 自动鲁棒性评测 ……"
-      }
-     ]
+     "original": "48 5.3 Automatic Robustness Evaluation . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-5-4",
-     "type": "paragraph",
+     "id": "eq-5-4",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-5-4-1",
-       "original": "63",
-       "zh": "63"
-      }
-     ]
+     "original": "63"
     }
    ]
   },
@@ -460,64 +383,46 @@ globalThis.PAPER_2308_11596 = {
    },
    "blocks": [
     {
-     "id": "p-6-1",
-     "type": "paragraph",
+     "id": "eq-6-1",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-6-1-1",
-       "original": "65 6.1 Definitions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "65 6.1 定义 ……"
-      }
-     ]
+     "original": "65 6.1 Definitions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-6-2",
-     "type": "paragraph",
+     "id": "eq-6-2",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-6-2-1",
-       "original": "66 6.2 Toxicity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "66 6.2 毒性 ……"
-      }
-     ]
+     "original": "66 6.2 Toxicity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-6-3",
-     "type": "paragraph",
+     "id": "eq-6-3",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-6-3-1",
-       "original": "67 6.3 Bias . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "67 6.3 偏见 ……"
-      }
-     ]
+     "original": "67 6.3"
     },
     {
-     "id": "p-6-4",
-     "type": "paragraph",
+     "id": "eq-6-4",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-6-4-1",
-       "original": "72 6.4 Limitations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "72 6.4 局限性 ……"
-      }
-     ]
+     "original": "Bias"
     },
     {
-     "id": "p-6-5",
-     "type": "paragraph",
+     "id": "eq-6-5",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-6-5-1",
-       "original": "81",
-       "zh": "81"
-      }
-     ]
+     "original": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+    },
+    {
+     "id": "eq-6-6",
+     "type": "equation",
+     "page": 3,
+     "original": "72 6.4 Limitations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+    },
+    {
+     "id": "eq-6-7",
+     "type": "equation",
+     "page": 3,
+     "original": "81"
     }
    ]
   },
@@ -532,40 +437,22 @@ globalThis.PAPER_2308_11596 = {
    },
    "blocks": [
     {
-     "id": "p-7-1",
-     "type": "paragraph",
+     "id": "eq-7-1",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-7-1-1",
-       "original": "81 7.1 Augmenting world-readiness . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "81 7.1 增强世界就绪度 ……"
-      }
-     ]
+     "original": "81 7.1 Augmenting world-readiness . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-7-2",
-     "type": "paragraph",
+     "id": "eq-7-2",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-7-2-1",
-       "original": "82 7.2 Future work . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "82 7.2 未来工作 ……"
-      }
-     ]
+     "original": "82 7.2 Future work . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-7-3",
-     "type": "paragraph",
+     "id": "eq-7-3",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-7-3-1",
-       "original": "83",
-       "zh": "83"
-      }
-     ]
+     "original": "83"
     }
    ]
   },
@@ -602,16 +489,10 @@ globalThis.PAPER_2308_11596 = {
    },
    "blocks": [
     {
-     "id": "p-107-1",
-     "type": "paragraph",
+     "id": "eq-107-1",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-107-1-1",
-       "original": "110 3",
-       "zh": "110 3"
-      }
-     ]
+     "original": "110 3"
     }
    ]
   },
@@ -753,8 +634,26 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-1-4-5",
-       "original": "Drawing on this assembled dataset, we developed the first multitasking system that performs S2ST from 100 languages to English (100-eng) and from English to 35 languages (eng-35), S2TT for 100-eng and eng-95 languages, 4 ASR for 96, zero-shot T2ST for 95-eng and eng-35 languages, as well as T2TT for 95-eng and eng-95 (see Table 2 for an overview).",
-       "zh": "基于这套汇集的数据，我们开发出首个多任务系统：支持从 100 种语言到英语（100-eng）以及从英语到 35 种语言（eng-35）的 S2ST；支持 100-eng 与 eng-95 的 S2TT；支持 96 种语言的 ASR [4]；支持 95-eng 与 eng-35 的零样本 T2ST；以及支持 95-eng 与 eng-95 的 T2TT（概览见 Table 2）。"
+       "original": "Drawing on this assembled dataset, we developed the first multitasking system that performs S2ST from 100 languages to English (100-eng) and from English to 35 languages (eng-35), S2TT for 100-eng and eng-95 languages,",
+       "zh": "（页码行：2。）\n（原始数据照录）\nDrawing on this assembled dataset, we developed the first multitasking system that performs S2ST from 100 languages to English (100-eng) and from English to 35 languages (eng-35), S2TT for 100-eng and eng-95 languages,"
+      }
+     ]
+    },
+    {
+     "id": "eq-1-1",
+     "type": "equation",
+     "page": 4,
+     "original": "4"
+    },
+    {
+     "id": "p-1-5",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-1-5-1",
+       "original": "ASR for 96, zero-shot T2ST for 95-eng and eng-35 languages, as well as T2TT for 95-eng and eng-95 (see Table 2 for an overview).",
+       "zh": "（页码行：2。）\n（原始数据照录）\nASR for 96, zero-shot T2ST for 95-eng and eng-35 languages, as well as T2TT for 95-eng and eng-95 (see Table 2 for an overview)."
       }
      ]
     }
@@ -876,16 +775,10 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
-     "id": "p-task-5",
-     "type": "paragraph",
+     "id": "eq-task-1",
+     "type": "equation",
      "page": 5,
-     "sentences": [
-      {
-       "id": "s-task-5-1",
-       "original": "5",
-       "zh": "5"
-      }
-     ]
+     "original": "5"
     }
    ]
   },
@@ -906,10 +799,202 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-1-1",
-       "original": "size Task Language Coverage† S2TT S2ST ASR T2TT T2ST Proprietary models USM [Zhang et al., 2023a] 2B+ 21-eng 102 Rubenstein et al. [2023] AudioPaLM-2-8B-AST 98-eng 98 AudioPaLM-8B-S2ST 113-Eng 113-eng 98 Open models NLLB Team et al. [2022] NLLB-600M-Distilled 202-202 NLLB-1.3B 202-202 NLLB-3.3B 202-202 Babu et al. [2022] XLS-R-2B-S2T 21-eng eng-15 Radford et al. [2022] Whisper-Medium 96-eng 97 Whisper-Large-v2 96-eng 97 MMS [Pratap et al., 2023] MMS-L61-noLM-LSAH 61 MMS-L1107-CCLM-LSAH 1107 This work (SeamlessM4T) SeamlessM4T-Large 100-eng eng-95 100-eng eng-35 96 95-eng eng-95 95-eng eng-35 SeamlessM4T-Medium 100-eng eng-95 100-eng eng-35 96 95-eng eng-95 95-eng eng-35 SeamlessM4T-NLLB-1.3B 95-eng eng-95",
-       "zh": "（表格内容，按列依次为：模型规模、任务、语言覆盖†，涵盖 S2TT、S2ST、ASR、T2TT、T2ST。）专有模型：USM [Zhang et al., 2023a]（2B+，21-eng，102）；Rubenstein et al. [2023] 的 AudioPaLM-2-8B-AST（98-eng，98）、AudioPaLM-8B-S2ST（113-Eng，113-eng，98）。开放模型：NLLB Team et al. [2022] 的 NLLB-600M-Distilled、NLLB-1.3B、NLLB-3.3B（均为 202-202）；Babu et al. [2022] 的 XLS-R-2B-S2T（21-eng，eng-15）；Radford et al. [2022] 的 Whisper-Medium 与 Whisper-Large-v2（96-eng，97）；MMS [Pratap et al., 2023] 的 MMS-L61-noLM-LSAH（61）与 MMS-L1107-CCLM-LSAH（1107）。本工作（SeamlessM4T）：SeamlessM4T-Large 与 SeamlessM4T-Medium 均为 S2TT 100-eng / eng-95、S2ST 100-eng / eng-35、ASR 96、T2TT 95-eng / eng-95、T2ST 95-eng / eng-35；SeamlessM4T-NLLB-1.3B 为 95-eng / eng-95。"
+       "original": "size Task Language Coverage† S2TT S2ST ASR T2TT T2ST Proprietary models USM [Zhang et al., 2023a] 2B+ 21-eng",
+       "zh": "（页码行：2。）\n（原始数据照录）\nsize Task Language Coverage† S2TT S2ST ASR T2TT T2ST Proprietary models USM [Zhang et al., 2023a] 2B+ 21-eng"
       }
      ]
+    },
+    {
+     "id": "eq-model-1",
+     "type": "equation",
+     "page": 6,
+     "original": "- 102 - -"
+    },
+    {
+     "id": "eq-model-2",
+     "type": "equation",
+     "page": 6,
+     "original": "Rubenstein et al. [2023] AudioPaLM-2-8B-AST 8.0B 98-eng"
+    },
+    {
+     "id": "eq-model-3",
+     "type": "equation",
+     "page": 6,
+     "original": "- 98 - -"
+    },
+    {
+     "id": "eq-model-4",
+     "type": "equation",
+     "page": 6,
+     "original": "AudioPaLM-8B-S2ST 8.0B 113-Eng 113-eng"
+    },
+    {
+     "id": "eq-model-5",
+     "type": "equation",
+     "page": 6,
+     "original": "98 - -"
+    },
+    {
+     "id": "p-model-2",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-model-2-1",
+       "original": "Open models NLLB Team et al. [2022] NLLB-600M-Distilled 0.6B",
+       "zh": "（页码行：2。）\n（原始数据照录）\nOpen models NLLB Team et al. [2022] NLLB-600M-Distilled 0.6B"
+      }
+     ]
+    },
+    {
+     "id": "eq-model-6",
+     "type": "equation",
+     "page": 6,
+     "original": "- - - 202-202 -"
+    },
+    {
+     "id": "eq-model-7",
+     "type": "equation",
+     "page": 6,
+     "original": "NLLB-1.3B 1.3B"
+    },
+    {
+     "id": "eq-model-8",
+     "type": "equation",
+     "page": 6,
+     "original": "- - - 202-202 -"
+    },
+    {
+     "id": "eq-model-9",
+     "type": "equation",
+     "page": 6,
+     "original": "NLLB-3.3B 3.3B"
+    },
+    {
+     "id": "eq-model-10",
+     "type": "equation",
+     "page": 6,
+     "original": "- - - 202-202 -"
+    },
+    {
+     "id": "eq-model-11",
+     "type": "equation",
+     "page": 6,
+     "original": "Babu et al. [2022] XLS-R-2B-S2T 2.6B 21-eng eng-15"
+    },
+    {
+     "id": "eq-model-12",
+     "type": "equation",
+     "page": 6,
+     "original": "- - -"
+    },
+    {
+     "id": "eq-model-13",
+     "type": "equation",
+     "page": 6,
+     "original": "Radford et al. [2022] Whisper-Medium 0.8B 96-eng"
+    },
+    {
+     "id": "eq-model-14",
+     "type": "equation",
+     "page": 6,
+     "original": "- 97 - -"
+    },
+    {
+     "id": "eq-model-15",
+     "type": "equation",
+     "page": 6,
+     "original": "Whisper-Large-v2 1.6B 96-eng"
+    },
+    {
+     "id": "eq-model-16",
+     "type": "equation",
+     "page": 6,
+     "original": "- 97 - -"
+    },
+    {
+     "id": "eq-model-17",
+     "type": "equation",
+     "page": 6,
+     "original": "MMS [Pratap et al., 2023] MMS-L61-noLM-LSAH 1.0B"
+    },
+    {
+     "id": "eq-model-18",
+     "type": "equation",
+     "page": 6,
+     "original": "- - 61 - -"
+    },
+    {
+     "id": "eq-model-19",
+     "type": "equation",
+     "page": 6,
+     "original": "MMS-L1107-CCLM-LSAH 1.0B"
+    },
+    {
+     "id": "eq-model-20",
+     "type": "equation",
+     "page": 6,
+     "original": "- - 1107 - -"
+    },
+    {
+     "id": "p-model-3",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-model-3-1",
+       "original": "This work (SeamlessM4T) SeamlessM4T-Large 2.3B 100-eng eng-95 100-eng eng-35",
+       "zh": "（页码行：2。）\n（原始数据照录）\nThis work (SeamlessM4T) SeamlessM4T-Large 2.3B 100-eng eng-95 100-eng eng-35"
+      }
+     ]
+    },
+    {
+     "id": "eq-model-21",
+     "type": "equation",
+     "page": 6,
+     "original": "96"
+    },
+    {
+     "id": "p-model-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-model-4-1",
+       "original": "95-eng eng-95 95-eng eng-35 SeamlessM4T-Medium 1.2B 100-eng eng-95 100-eng eng-35",
+       "zh": "（页码行：2。）\n（原始数据照录）\n95-eng eng-95 95-eng eng-35 SeamlessM4T-Medium 1.2B 100-eng eng-95 100-eng eng-35"
+      }
+     ]
+    },
+    {
+     "id": "eq-model-22",
+     "type": "equation",
+     "page": 6,
+     "original": "96"
+    },
+    {
+     "id": "eq-model-23",
+     "type": "equation",
+     "page": 6,
+     "original": "95-eng eng-95 95-eng eng-35 SeamlessM4T-NLLB-1.3B 1.3B"
+    },
+    {
+     "id": "eq-model-24",
+     "type": "equation",
+     "page": 6,
+     "original": "- - -"
+    },
+    {
+     "id": "eq-model-25",
+     "type": "equation",
+     "page": 6,
+     "original": "95-eng eng-95"
+    },
+    {
+     "id": "eq-model-26",
+     "type": "equation",
+     "page": 6,
+     "original": "-"
     },
     {
      "id": "tab-model-1",
@@ -919,108 +1004,114 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 2：最先进基线模型与 SeamlessM4T 系列模型一览。†语言覆盖是基于有监督标注数据的使用情况或已评测的零样本语言与方向估算的。"
     },
     {
-     "id": "p-model-2",
+     "id": "p-model-5",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
-       "id": "s-model-2-1",
+       "id": "s-model-5-1",
        "original": "Regarding Responsible AI, we focused on added toxicity and gender bias evaluation.",
        "zh": "在负责任的 AI 方面，我们聚焦于新增毒性和性别偏见的评估。"
       },
       {
-       "id": "s-model-2-2",
+       "id": "s-model-5-2",
        "original": "On average, we find a low prevalence of added toxicity, varying between 0.11% and 0.21% across modalities, datasets, and translation directions.",
        "zh": "平均而言，我们发现新增毒性的发生率较低，在不同模态、数据集和翻译方向上介于 0.11% 到 0.21% 之间。"
       },
       {
-       "id": "s-model-2-3",
+       "id": "s-model-5-3",
        "original": "We significantly reduce added toxicity in all conditions when compared to state-of-the-art models (ranging from 26% to 63%).",
        "zh": "在所有条件下，与最先进模型相比，我们都显著降低了新增毒性（降幅介于 26% 到 63%）。"
       },
       {
-       "id": "s-model-2-4",
+       "id": "s-model-5-4",
        "original": "The greatest added toxicity reduction is achieved for S2TT when compared to Whisper-Largev2.",
        "zh": "最大的新增毒性降幅出现在 S2TT 任务上与 Whisper-Large-v2 的对比中。"
       },
       {
-       "id": "s-model-2-5",
+       "id": "s-model-5-5",
        "original": "Beyond this, we also evaluated for gender bias on the Multilingual HolisticBias datasets and found that SeamlessM4T overgeneralizes to masculine forms when translating from neutral terms (with an average preference of ∼10%) while showing a lack of robustness when varying gender by an amount of ∼3%.",
        "zh": "除此之外，我们还在 Multilingual HolisticBias 数据集上评估了性别偏见，发现 SeamlessM4T 在翻译中性词时过度泛化到男性形式（平均偏好约 10%），且在变换性别时表现出约 3% 的鲁棒性缺失。"
       },
       {
-       "id": "s-model-2-6",
+       "id": "s-model-5-6",
        "original": "For these conditions, SeamlessM4T achieved comparable results to state-of-the-art models.",
        "zh": "在这些条件下，SeamlessM4T 取得了与最先进模型相当的结果。"
       },
       {
-       "id": "s-model-2-7",
+       "id": "s-model-5-7",
        "original": "We document these effects to motivate further mitigation efforts.",
        "zh": "我们记录这些现象，以推动进一步的缓解工作。"
       }
      ]
     },
     {
-     "id": "p-model-3",
+     "id": "eq-model-27",
+     "type": "equation",
+     "page": 6,
+     "original": "6"
+    },
+    {
+     "id": "p-model-6",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
-       "id": "s-model-3-1",
-       "original": "6 To spur further research in speech translation and to make our work available to the community, we open-source the following at https://github.com/facebookresearch/ seamless_communication:",
+       "id": "s-model-6-1",
+       "original": "To spur further research in speech translation and to make our work available to the community, we open-source the following at https://github.com/facebookresearch/ seamless_communication:",
        "zh": "[6] 为推动语音翻译的进一步研究并惠及社区，我们在 https://github.com/facebookresearch/seamless_communication 开源以下内容："
       }
      ]
     },
     {
-     "id": "p-model-4",
+     "id": "p-model-7",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-model-4-1",
+       "id": "s-model-7-1",
        "original": "• SeamlessM4T models, including model weights for SeamlessM4T-Large (2.3B parameters) and SeamlessM4T-Medium (1.2B parameters), as well as their inference code and fine-tuning recipes powered by our new modeling toolkit Fairseq2.1 • Tools for creating aligned speech data, including metadata to recreate the unfiltered 470,000 hours of SeamlessAlign, Stopes-based pipelines2 to create alignments similar to SeamlessAlign, and Sonar for speech encoders in 37 languages and text encoders in 200 languages.3 • A text-free S2ST automatic evaluation model, Blaser 2.0, inclusive of model weights and inference scripts.",
        "zh": "（1）SeamlessM4T 模型，包括 SeamlessM4T-Large（23 亿，2.3B 参数）和 SeamlessM4T-Medium（12 亿，1.2B 参数）的模型权重，以及由我们的新建模工具包 Fairseq2.1 支持的推理代码与微调配方；（2）创建语音对齐数据的工具，包括用于重建未过滤版 470,000 小时 SeamlessAlign 的元数据、基于 Stopes 的可生成类似 SeamlessAlign 对齐结果的流水线，以及覆盖 37 种语言的语音编码器和 200 种语言的文本编码器的 Sonar；（3）一个无文本的 S2ST 自动评测模型 Blaser 2.0，含模型权重与推理脚本。"
       }
      ]
     },
     {
-     "id": "p-model-5",
+     "id": "p-model-8",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-model-5-1",
+       "id": "s-model-8-1",
        "original": "The rest of the article is structured as follows: Section 2 describes the sociotechnical dimensions of multimodal translation and motivates why speech is an important modality to tackle in the context of MT research.",
        "zh": "本文其余部分结构如下：第 2 节描述多模态翻译的社会技术维度，并论述为何语音是机器翻译研究中值得攻关的重要模态。"
       },
       {
-       "id": "s-model-5-2",
+       "id": "s-model-8-2",
        "original": "It also includes the list of languages and evaluation metrics that our work covers.",
        "zh": "该节还包含本工作覆盖的语言列表与评测指标。"
       },
       {
-       "id": "s-model-5-3",
+       "id": "s-model-8-3",
        "original": "Section 3 discusses how we created a corpus of automatically aligned speech translations of more than 470,000 hours by developing an extended speechlanguage identification system and a new multimodal text embedding space imperative to our data mining process.",
        "zh": "第 3 节讨论我们如何创建超过 470,000 小时的自动对齐语音翻译语料库，包括开发一套扩展的语音语种识别系统，以及一个对数据挖掘过程至关重要的新多模态文本嵌入空间。"
       },
       {
-       "id": "s-model-5-4",
+       "id": "s-model-8-4",
        "original": "Section 4 details the various modeling techniques we devised to train a multimodal and multitasking translation model that supports multiple languages for source and target sides in both text and speech.",
        "zh": "第 4 节详细介绍我们为训练多模态、多任务翻译模型而设计的各项建模技术，该模型在文本与语音两侧均支持多语言源端与目标端。"
       },
       {
-       "id": "s-model-5-5",
+       "id": "s-model-8-5",
        "original": "Section 5 documents the automatic and human evaluation of our translation outputs, and the robustness of our models in various settings.",
        "zh": "第 5 节记录对翻译结果的自动与人工评测，以及模型在各种设置下的鲁棒性。"
       },
       {
-       "id": "s-model-5-6",
+       "id": "s-model-8-6",
        "original": "Section 6 focuses on our Responsible AI effort, where we evaluated our model outputs for bias and toxicity.",
        "zh": "第 6 节聚焦于我们在负责任的 AI 方面的工作，对模型输出的偏见与毒性进行了评估。"
       },
       {
-       "id": "s-model-5-7",
+       "id": "s-model-8-7",
        "original": "Finally, we conclude in Section 7, where we discuss the social impact of our work while reflecting on existing challenges and future possibilities.",
        "zh": "最后，我们在第 7 节总结全文，讨论本工作的社会影响，并反思现存的挑战与未来的可能性。"
       }
@@ -1093,10 +1184,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-2-1-2-1",
-       "original": "1. https://github.com/facebookresearch/fairseq2 2. https://github.com/facebookresearch/stopes 3. https://github.com/facebookresearch/SONAR 7",
-       "zh": "1. https://github.com/facebookresearch/fairseq2 2. https://github.com/facebookresearch/stopes 3. https://github.com/facebookresearch/SONAR 7"
+       "original": "1. https://github.com/facebookresearch/fairseq2 2. https://github.com/facebookresearch/stopes 3. https://github.com/facebookresearch/SONAR",
+       "zh": "（页码行：2。）\n（原始数据照录）\n1. https://github.com/facebookresearch/fairseq2 2. https://github.com/facebookresearch/stopes 3. https://github.com/facebookresearch/SONAR"
       }
      ]
+    },
+    {
+     "id": "eq-2-1-1",
+     "type": "equation",
+     "page": 7,
+     "original": "7"
     }
    ]
   },
@@ -1261,14 +1358,20 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-script-variance-1",
+     "type": "equation",
+     "page": 8,
+     "original": "8"
+    },
+    {
      "id": "p-script-variance-2",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
        "id": "s-script-variance-2-1",
-       "original": "8 Cascaded models for S2TT Whisper-Medium + NLLB-600M-Distilled 2-stage cascaded Whisper-Large-v2 + NLLB-1.3B 2-stage cascaded Cascaded models for S2ST Whisper-Large-v2 + NLLB-1.3B + YourTTS 3-stage cascaded Whisper-Large-v2 (S2TT) + YourTTS 2-stage cascaded SeamlessM4T (this work) unified",
-       "zh": "（表格内容（页码 8）：S2TT 的级联模型选项——Whisper-Medium + NLLB-600M-Distilled 两段式级联；Whisper-Large-v2 + NLLB-1.3B 两段式级联。S2ST 的级联模型选项——Whisper-Large-v2 + NLLB-1.3B + YourTTS 三段式级联（3-stage）；Whisper-Large-v2（S2TT）+ YourTTS 两段式级联。SeamlessM4T（本工作）为统一模型。）"
+       "original": "Cascaded models for S2TT Whisper-Medium + NLLB-600M-Distilled 2-stage cascaded Whisper-Large-v2 + NLLB-1.3B 2-stage cascaded Cascaded models for S2ST Whisper-Large-v2 + NLLB-1.3B + YourTTS 3-stage cascaded Whisper-Large-v2 (S2TT) + YourTTS 2-stage cascaded SeamlessM4T (this work) unified",
+       "zh": "（页码行：2。）\n（原始数据照录）\nCascaded models for S2TT Whisper-Medium + NLLB-600M-Distilled 2-stage cascaded Whisper-Large-v2 + NLLB-1.3B 2-stage cascaded Cascaded models for S2ST Whisper-Large-v2 + NLLB-1.3B + YourTTS 3-stage cascaded Whisper-Large-v2 (S2TT) + YourTTS 2-stage cascaded SeamlessM4T (this work) unified"
       }
      ]
     },
@@ -1387,40 +1490,36 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-direct-s2tt-models-2-1",
-       "original": "End-to-end models today have made significant progress and achieved parity with cascaded models on academic 9 benchmarks in several contexts (e.g., constrained data, in-domain settings, specific language pairs, etc.) [Ansari et al., 2020; Potapczyk and Przybysz, 2020b] While recent state-of-the-art pre-trained models have seen rapid improvements in language coverage, going from 128 in Babu et al. [2022] to more than 1,400 in Pratap et al. [2023], they only translate into English and not the other way around.",
+       "original": "End-to-end models today have made significant progress and achieved parity with cascaded models on academic",
        "zh": "今天的端到端模型已取得显著进展，并在若干场景（受限数据、领域内设置、特定语言对等）下的学术基准 [9] 上与级联模型打平 [Ansari et al., 2020; Potapczyk and Przybysz, 2020b]。不过，尽管近期最先进的预训练模型在语言覆盖上迅速扩张——从 Babu et al. [2022] 的 128 种到 Pratap et al. [2023] 的超过 1,400 种——它们只译入英语，而不支持反向。"
-      },
-      {
-       "id": "s-direct-s2tt-models-2-2",
-       "original": "Another prominent model, Google’s Universal Speech Model [Zhang et al., 2023a], is pre-trained in more than 300 languages and can perform ASR on more than 100 languages.",
-       "zh": "另一个代表性模型是 Google 的 Universal Speech Model [Zhang et al., 2023a]，它在 300 多种语言上预训练，可对 100 多种语言执行 ASR。"
-      },
-      {
-       "id": "s-direct-s2tt-models-2-3",
-       "original": "Technically, USM can also be adapted to perform ASR and S2TT tasks in any of the 300+ covered languages once given supervised data (but the model was fine-tuned and evaluated on CoVoST 2, which only covers translations from 21 languages into English).",
-       "zh": "从技术上讲，只要提供有监督数据，USM 也可以适配到其覆盖的 300+ 种语言中任意一种的 ASR 与 S2TT 任务（但该模型是在 CoVoST 2 上微调和评测的，仅覆盖 21 种语言译入英语）。"
       }
      ]
     },
     {
+     "id": "eq-direct-s2tt-models-1",
+     "type": "equation",
+     "page": 9,
+     "original": "9"
+    },
+    {
      "id": "p-direct-s2tt-models-3",
      "type": "paragraph",
-     "page": 10,
+     "page": 9,
      "sentences": [
       {
        "id": "s-direct-s2tt-models-3-1",
-       "original": "OpenAI’s Whisper [Radford et al., 2022] is another large-scale model that serves translations into English, not vice versa.",
-       "zh": "OpenAI 的 Whisper [Radford et al., 2022] 是另一个只服务译入英语方向、而不支持反向的大规模模型。"
+       "original": "benchmarks in several contexts (e.g., constrained data, in-domain settings, specific language pairs, etc.) [Ansari et al., 2020; Potapczyk and Przybysz, 2020b] While recent state-of-the-art pre-trained models have seen rapid improvements in language coverage, going from 128 in Babu et al. [2022] to more than 1,400 in Pratap et al. [2023], they only translate into English and not the other way around.",
+       "zh": "（页码行：2。）\n（原始数据照录）\nbenchmarks in several contexts (e.g., constrained data, in-domain settings, specific language pairs, etc.) [Ansari et al., 2020; Potapczyk and Przybysz, 2020b] While recent state-of-the-art pre-trained models have seen rapid improvements in language coverage, going from 128 in Babu et al. [2022] to more than 1,400 in Pratap et al. [2023], they only translate into English and not the other way around."
       },
       {
        "id": "s-direct-s2tt-models-3-2",
-       "original": "As a multitasking model, Whisper demonstrates that scaling weakly supervised pre-training is sufficient for achieving SOTA ASR and S2TT results sans self-supervision and self-training techniques.",
-       "zh": "作为一个多任务模型，Whisper 证明了：仅凭扩大弱监督预训练的规模，无需自监督和自训练技术，就足以取得最先进的 ASR 与 S2TT 结果。"
+       "original": "Another prominent model, Google’s Universal Speech Model [Zhang et al., 2023a], is pre-trained in more than 300 languages and can perform ASR on more than 100 languages.",
+       "zh": "另一个代表性模型是 Google 的 Universal Speech Model [Zhang et al., 2023a]，它在 300 多种语言上预训练，可对 100 多种语言执行 ASR。"
       },
       {
        "id": "s-direct-s2tt-models-3-3",
-       "original": "Trained on 680,000 hours of data, Whisper has achieved SOTA translation quality in 82 Fleurs languages into English.",
-       "zh": "在 680,000 小时数据上训练的 Whisper，在 82 种 Fleurs 语言译入英语上取得了最先进的翻译质量。"
+       "original": "Technically, USM can also be adapted to perform ASR and S2TT tasks in any of the 300+ covered languages once given supervised data (but the model was fine-tuned and evaluated on CoVoST 2, which only covers translations from 21 languages into English).",
+       "zh": "从技术上讲，只要提供有监督数据，USM 也可以适配到其覆盖的 300+ 种语言中任意一种的 ASR 与 S2TT 任务（但该模型是在 CoVoST 2 上微调和评测的，仅覆盖 21 种语言译入英语）。"
       }
      ]
     },
@@ -1431,16 +1530,38 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-direct-s2tt-models-4-1",
+       "original": "OpenAI’s Whisper [Radford et al., 2022] is another large-scale model that serves translations into English, not vice versa.",
+       "zh": "OpenAI 的 Whisper [Radford et al., 2022] 是另一个只服务译入英语方向、而不支持反向的大规模模型。"
+      },
+      {
+       "id": "s-direct-s2tt-models-4-2",
+       "original": "As a multitasking model, Whisper demonstrates that scaling weakly supervised pre-training is sufficient for achieving SOTA ASR and S2TT results sans self-supervision and self-training techniques.",
+       "zh": "作为一个多任务模型，Whisper 证明了：仅凭扩大弱监督预训练的规模，无需自监督和自训练技术，就足以取得最先进的 ASR 与 S2TT 结果。"
+      },
+      {
+       "id": "s-direct-s2tt-models-4-3",
+       "original": "Trained on 680,000 hours of data, Whisper has achieved SOTA translation quality in 82 Fleurs languages into English.",
+       "zh": "在 680,000 小时数据上训练的 Whisper，在 82 种 Fleurs 语言译入英语上取得了最先进的翻译质量。"
+      }
+     ]
+    },
+    {
+     "id": "p-direct-s2tt-models-5",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-direct-s2tt-models-5-1",
        "original": "Combining a text-based [Anil et al., 2023] and speech-based language model [Borsos et al., 2023], the most recently released AudioPaLM [Rubenstein et al., 2023] is a large language model designed for joint text and speech processing and generation.",
        "zh": "近期发布的 AudioPaLM [Rubenstein et al., 2023] 将一个基于文本的语言模型 [Anil et al., 2023] 与一个基于语音的语言模型 [Borsos et al., 2023] 结合，是为联合文本与语音处理及生成而设计的大语言模型。"
       },
       {
-       "id": "s-direct-s2tt-models-4-2",
+       "id": "s-direct-s2tt-models-5-2",
        "original": "Akin to USM, AudioPaLM only evaluates text translation outputs from 101 Fleurs languages into English.",
        "zh": "与 USM 类似，AudioPaLM 只评测了从 101 种 Fleurs 语言译入英语的文本翻译输出。"
       },
       {
-       "id": "s-direct-s2tt-models-4-3",
+       "id": "s-direct-s2tt-models-5-3",
        "original": "Upon the publication of this paper, AudioPaLM is the current SOTA model, outperforming Whisper [Radford et al., 2022] in both ASR and S2TT tasks.",
        "zh": "截至本文发表时，AudioPaLM 是当前最先进的模型，在 ASR 与 S2TT 两项任务上均超越 Whisper [Radford et al., 2022]。"
       }
@@ -1563,40 +1684,46 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-on-coverage-and-evaluation-of-s2-1-4",
-       "original": "To consolidate the current landscape of language coverage 10 and related tasks in speech translation systems, we provide in Table 2 a list of SOTA models in text and speech translation.",
+       "original": "To consolidate the current landscape of language coverage",
        "zh": "为梳理语音翻译系统在语言覆盖与相关任务上的现状，我们在 Table 2 中列出了文本与语音翻译的最先进模型。（页码 10）"
-      },
-      {
-       "id": "s-on-coverage-and-evaluation-of-s2-1-5",
-       "original": "This language coverage is estimated based on supervised labeled data or evaluated zero-shot languages and directions.",
-       "zh": "语言覆盖是基于有监督标注数据或已评测的零样本语言与方向估算的。"
-      },
-      {
-       "id": "s-on-coverage-and-evaluation-of-s2-1-6",
-       "original": "We also provide the list of ASR, T2TT, S2TT and S2ST evaluation metrics used by this work in Table 4.",
-       "zh": "我们还在 Table 4 中列出了本工作使用的 ASR、T2TT、S2TT 与 S2ST 评测指标。"
-      },
-      {
-       "id": "s-on-coverage-and-evaluation-of-s2-1-7",
-       "original": "For S2ST, our evaluation focuses on the semantic content of the translation.",
-       "zh": "对于 S2ST，我们的评测聚焦于翻译的语义内容。"
-      },
-      {
-       "id": "s-on-coverage-and-evaluation-of-s2-1-8",
-       "original": "Throughout this paper, we primarily evaluated our models on the following datasets:",
-       "zh": "本文主要在以下数据集上评测我们的模型："
       }
      ]
     },
     {
+     "id": "eq-on-coverage-and-evaluation-of-s2-1",
+     "type": "equation",
+     "page": 10,
+     "original": "10"
+    },
+    {
      "id": "p-on-coverage-and-evaluation-of-s2-2",
      "type": "paragraph",
-     "page": 11,
+     "page": 10,
      "sentences": [
       {
        "id": "s-on-coverage-and-evaluation-of-s2-2-1",
-       "original": "• Flores-200 [NLLB Team et al., 2022]: a many-to-many multilingual translation benchmark dataset for 200 languages (we evaluated on devtest).",
-       "zh": "Flores-200 [NLLB Team et al., 2022]：覆盖 200 种语言的多对多多语言翻译基准数据集（我们在 devtest 上评测）。"
+       "original": "and related tasks in speech translation systems, we provide in Table 2 a list of SOTA models in text and speech translation.",
+       "zh": "（页码行：2。）"
+      },
+      {
+       "id": "s-on-coverage-and-evaluation-of-s2-2-2",
+       "original": "This language coverage is estimated based on supervised labeled data or evaluated zero-shot languages and directions.",
+       "zh": "语言覆盖是基于有监督标注数据或已评测的零样本语言与方向估算的。"
+      },
+      {
+       "id": "s-on-coverage-and-evaluation-of-s2-2-3",
+       "original": "We also provide the list of ASR, T2TT, S2TT and S2ST evaluation metrics used by this work in Table 4.",
+       "zh": "我们还在 Table 4 中列出了本工作使用的 ASR、T2TT、S2TT 与 S2ST 评测指标。"
+      },
+      {
+       "id": "s-on-coverage-and-evaluation-of-s2-2-4",
+       "original": "For S2ST, our evaluation focuses on the semantic content of the translation.",
+       "zh": "对于 S2ST，我们的评测聚焦于翻译的语义内容。"
+      },
+      {
+       "id": "s-on-coverage-and-evaluation-of-s2-2-5",
+       "original": "Throughout this paper, we primarily evaluated our models on the following datasets:",
+       "zh": "本文主要在以下数据集上评测我们的模型："
       }
      ]
     },
@@ -1607,8 +1734,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-on-coverage-and-evaluation-of-s2-3-1",
-       "original": "• Fleurs [Conneau et al., 2022]: an n-way parallel speech and text dataset in 102 languages built on the text translation Flores-101 benchmark [Goyal et al., 2022].",
-       "zh": "Fleurs [Conneau et al., 2022]：基于文本翻译基准 Flores-101 [Goyal et al., 2022] 构建的 102 种语言 n 元平行语音与文本数据集。"
+       "original": "• Flores-200 [NLLB Team et al., 2022]: a many-to-many multilingual translation benchmark dataset for 200 languages (we evaluated on devtest).",
+       "zh": "Flores-200 [NLLB Team et al., 2022]：覆盖 200 种语言的多对多多语言翻译基准数据集（我们在 devtest 上评测）。"
       }
      ]
     },
@@ -1619,13 +1746,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-on-coverage-and-evaluation-of-s2-4-1",
-       "original": "Fleurs is well suited for several downstream tasks involving speech and text.",
-       "zh": "Fleurs 很适合多种涉及语音与文本的下游任务。"
-      },
-      {
-       "id": "s-on-coverage-and-evaluation-of-s2-4-2",
-       "original": "We evaluated on the test set, except in ablation experiments where we evaluated on the dev set.",
-       "zh": "除消融实验在 dev 集上评测外，我们均在测试集上评测。"
+       "original": "• Fleurs [Conneau et al., 2022]: an n-way parallel speech and text dataset in 102 languages built on the text translation Flores-101 benchmark [Goyal et al., 2022].",
+       "zh": "Fleurs [Conneau et al., 2022]：基于文本翻译基准 Flores-101 [Goyal et al., 2022] 构建的 102 种语言 n 元平行语音与文本数据集。"
       }
      ]
     },
@@ -1636,13 +1758,13 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-on-coverage-and-evaluation-of-s2-5-1",
-       "original": "• CoVoST 2 [Wang et al., 2021c]: a large-scale multilingual S2TT corpus covering translations from 21 languages into English and from English into 15 languages.",
-       "zh": "CoVoST 2 [Wang et al., 2021c]：大规模多语言 S2TT 语料库，覆盖 21 种语言译入英语和英语译入 15 种语言。"
+       "original": "Fleurs is well suited for several downstream tasks involving speech and text.",
+       "zh": "Fleurs 很适合多种涉及语音与文本的下游任务。"
       },
       {
        "id": "s-on-coverage-and-evaluation-of-s2-5-2",
-       "original": "We evaluated on the test set.",
-       "zh": "我们在测试集上评测。"
+       "original": "We evaluated on the test set, except in ablation experiments where we evaluated on the dev set.",
+       "zh": "除消融实验在 dev 集上评测外，我们均在测试集上评测。"
       }
      ]
     },
@@ -1653,8 +1775,13 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-on-coverage-and-evaluation-of-s2-6-1",
-       "original": "• CVSS [Jia et al., 2022b]: a multilingual-to-English speech-to-speech translation (S2ST) corpus, covering sentence-level parallel S2ST pairs from 21 languages into English.",
-       "zh": "CVSS [Jia et al., 2022b]：多语言到英语的语音到语音翻译（S2ST）语料库，覆盖 21 种语言译入英语的句级平行 S2ST 对。"
+       "original": "• CoVoST 2 [Wang et al., 2021c]: a large-scale multilingual S2TT corpus covering translations from 21 languages into English and from English into 15 languages.",
+       "zh": "CoVoST 2 [Wang et al., 2021c]：大规模多语言 S2TT 语料库，覆盖 21 种语言译入英语和英语译入 15 种语言。"
+      },
+      {
+       "id": "s-on-coverage-and-evaluation-of-s2-6-2",
+       "original": "We evaluated on the test set.",
+       "zh": "我们在测试集上评测。"
       }
      ]
     },
@@ -1665,11 +1792,23 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-on-coverage-and-evaluation-of-s2-7-1",
+       "original": "• CVSS [Jia et al., 2022b]: a multilingual-to-English speech-to-speech translation (S2ST) corpus, covering sentence-level parallel S2ST pairs from 21 languages into English.",
+       "zh": "CVSS [Jia et al., 2022b]：多语言到英语的语音到语音翻译（S2ST）语料库，覆盖 21 种语言译入英语的句级平行 S2ST 对。"
+      }
+     ]
+    },
+    {
+     "id": "p-on-coverage-and-evaluation-of-s2-8",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-on-coverage-and-evaluation-of-s2-8-1",
        "original": "We evaluated text-based semantic accuracy on CVSS-C for the tasks of S2ST and T2ST.",
        "zh": "我们在 CVSS-C 上评测 S2ST 与 T2ST 任务的文本语义准确性。"
       },
       {
-       "id": "s-on-coverage-and-evaluation-of-s2-7-2",
+       "id": "s-on-coverage-and-evaluation-of-s2-8-2",
        "original": "We note that some samples from the evaluation data were missing (in 8 out of 21 languages: Catalan, German, Estonian, French, Italian, Mongolian, Persian, and Portuguese).",
        "zh": "我们注意到评测数据中部分样本缺失（21 种语言中有 8 种：加泰罗尼亚语、德语、爱沙尼亚语、法语、意大利语、蒙古语、波斯语和葡萄牙语）。"
       }
@@ -1775,7 +1914,25 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-the-overarching-goals-of-this-ef-4-3",
-       "original": "This allows us to understand how to direct our efforts to 11 make both the current and future iterations of our contribution more equitable and fair across user demographics.",
+       "original": "This allows us to understand how to direct our efforts to",
+       "zh": "这使我们能够了解如何引导努力方向，让我们当前和未来的成果在不同用户群体中更加公平。（页码 11）"
+      }
+     ]
+    },
+    {
+     "id": "eq-the-overarching-goals-of-this-ef-1",
+     "type": "equation",
+     "page": 11,
+     "original": "11"
+    },
+    {
+     "id": "p-the-overarching-goals-of-this-ef-5",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-the-overarching-goals-of-this-ef-5-1",
+       "original": "make both the current and future iterations of our contribution more equitable and fair across user demographics.",
        "zh": "这使我们能够了解如何引导努力方向，让我们当前和未来的成果在不同用户群体中更加公平。（页码 11）"
       }
      ]
@@ -2022,14 +2179,20 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-target-1",
+     "type": "equation",
+     "page": 12,
+     "original": "12"
+    },
+    {
      "id": "p-target-2",
      "type": "paragraph",
      "page": 12,
      "sentences": [
       {
        "id": "s-target-2-1",
-       "original": "12 Task Metric Type Area Details ASR WER Quality Robustness Text normalization follows Whisper⋆ T2TT chrF++† Automatic Quality SacreBLEU signature:",
-       "zh": "（表格内容（页码 12）：任务、指标、类型、评测维度与细节——ASR 用 WER（质量、鲁棒性），文本归一化遵循 Whisper⋆；T2TT 用 chrF++†（自动质量）与 BLEU‡（自动质量）、Blaser 2.0（自动、基于模型的质量），SacreBLEU 签名：nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.3.1，及 nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.3.1，cmn、jpn、tha、lao、mya 使用字符级分词 tok:char；S2TT 用 BLEU（自动质量）、Blaser 2.0；S2ST 用 ASR-BLEU、Blaser 2.0；此外含鲁棒性（加噪、说话人差异）、偏见（性别）与毒性（added toxicity）评测维度。）"
+       "original": "Task Metric Type Area Details ASR WER Quality Robustness Text normalization follows Whisper⋆ T2TT chrF++† Automatic Quality SacreBLEU signature:",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -2053,14 +2216,164 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 4：本工作使用的自动与人工评测指标列表。⋆https://github.com/openai/whisper/tree/main/whisper/normalizers † Popović [2015] ‡ Papineni et al. [2002]"
     },
     {
+     "id": "eq-target-2",
+     "type": "equation",
+     "page": 13,
+     "original": "13"
+    },
+    {
      "id": "p-target-4",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
        "id": "s-target-4-1",
-       "original": "13 Code Language name Family Subgrouping Script Resource Source Target afr Afrikaans Germanic amh Amharic Afro-Asiatic Semitic Ethi Modern Standard Arabic Afro-Asiatic Semitic Arab ary Moroccan Arabic Afro-Asiatic Semitic Arab arz Egyptian Arabic Afro-Asiatic Semitic Arab asm Assamese Indo-Aryan Beng ast Asturian Italic Sp azj North Azerbaijani Turkic Common Turkic bel Belarusian Balto-Slavic Cyrl ben Bengali Indo-Aryan Beng bos Bosnian Balto-Slavic bul Bulgarian Balto-Slavic Cyrl cat Catalan Italic ceb Cebuano Austronesian Malayo-Polynesian ces Czech Balto-Slavic ckb Central Kurdish Iranian Arab cmn Mandarin Chinese Sino-Tibetan Sinitic Hans, Hant cym Welsh Celtic dan Danish Germanic German Germanic ell Greek Graeco-Phrygian Grek eng English Germanic est Estonian Uralic Finnic eus Basque Basque Basque fin Finnish Uralic Finnic French Italic gaz West Central Oromo Afro-Asiatic Cushitic gle Irish Celtic glg Galician Italic guj Gujarati Indo-Aryan Gujr heb Hebrew Afro-Asiatic Semitic Hebr hin Hindi Indo-Aryan Deva hrv Croatian Balto-Slavic hun Hungarian Uralic Hungarian hye Armenian Armenic Armn ibo Igbo Atlantic-Congo Benue-Congo ind Indonesian Austronesian Malayo-Polynesian isl Icelandic Germanic ita Italian Italic jav Javanese Austronesian Malayo-Polynesian jpn Japanese Japonic Japanesic Jpan kam Kamba Atlantic-Congo Benue-Congo Sp kan Kannada Dravidian South Dravidian Knda kat Georgian Kartvelian Georgian-Zan Geor kaz Kazakh Turkic Common Turkic Cyrl kea Kabuverdianu Italic Sp khk Halh Mongolian Mongolic-Khitan Mongolic Cyrl khm Khmer Austroasiatic Khmeric Khmr kir Kyrgyz Turkic Common Turkic Cyrl kor Korean Koreanic Korean Kore lao Lao Tai-Kadai Kam-Tai Laoo lit Lithuanian Balto-Slavic ltz Luxembourgish Germanic Sp lug Ganda Atlantic-Congo Benue-Congo luo Luo Nilotic Western Nilotic lvs Standard Latvian Balto-Slavic mai Maithili Indo-Aryan Deva mal Malayalam Dravidian South Dravidian Mlym mar Marathi Indo-Aryan Deva mkd Macedonian Balto-Slavic Cyrl mlt Maltese Afro-Asiatic Semitic mni Meitei Sino-Tibetan Kuki-Chin-Naga Beng mya Burmese Sino-Tibetan Burmo-Qiangic Mymr 14 Code Language name Family Subgrouping Script Resource Source Target Dutch Germanic nno Norwegian Nynorsk Germanic nob Norwegian Bokmål Germanic npi Nepali Indo-Aryan Deva nya Nyanja Atlantic-Congo Benue-Congo oci Occitan Italic Sp ory Odia Indo-Aryan Orya pan Punjabi Indo-Aryan Guru pbt Southern Pashto Iranian Arab pes Western Persian Iranian Arab pol Polish Balto-Slavic Portuguese Italic Romanian Italic Russian Balto-Slavic Cyrl slk Slovak Balto-Slavic slv Slovenian Balto-Slavic sna Shona Atlantic-Congo Benue-Congo snd Sindhi Indo-Aryan Arab som Somali Afro-Asiatic Cushitic Spanish Italic srp Serbian Balto-Slavic Cyrl swe Swedish Germanic swh Swahili Atlantic-Congo Benue-Congo tam Tamil Dravidian South Dravidian Taml tel Telugu Dravidian South Dravidian Telu tgk Tajik Iranian Cyrl tgl Tagalog Austronesian Malayo-Polynesian Thai Tai-Kadai Kam-Tai Thai tur Turkish Turkic Common Turkic ukr Ukrainian Balto-Slavic Cyrl Urdu Indo-Aryan Arab uzn Northern Uzbek Turkic Common Turkic vie Vietnamese Austroasiatic Vietic xho Xhosa Atlantic-Congo Benue-Congo Sp yor Yoruba Atlantic-Congo Benue-Congo yue Cantonese Sino-Tibetan Sinitic Hant zlm Colloquial Malay Austronesian Malayo-Polynesian Sp zsm Standard Malay Austronesian Malayo-Polynesian zul Zulu Atlantic-Congo Benue-Congo",
-       "zh": "（语言列表表，按列依次为：代码、语言名称、语系、亚群、文字、资源级别、源端、目标端。涵盖 afr 南非荷兰语、amh 阿姆哈拉语、ary 摩洛哥阿拉伯语、arz 埃及阿拉伯语、asm 阿萨姆语、ast 阿斯图里亚斯语、azj 北阿塞拜疆语、bel 白俄罗斯语、ben 孟加拉语、bos 波斯尼亚语、bul 保加利亚语、cat 加泰罗尼亚语、ceb 宿务语、ces 捷克语、ckb 中库尔德语、cmn 汉语普通话、cym 威尔士语、dan 丹麦语、ell 希腊语、eng 英语、est 爱沙尼亚语、eus 巴斯克语、fin 芬兰语、gaz 西中奥罗莫语、gle 爱尔兰语、glg 加利西亚语、guj 古吉拉特语、heb 希伯来语、hin 印地语、hrv 克罗地亚语、hun 匈牙利语、hye 亚美尼亚语、ibo 伊博语、ind 印尼语、isl 冰岛语、ita 意大利语、jav 爪哇语、jpn 日语、kam 坎巴语、kan 卡纳达语、kat 格鲁吉亚语、kaz 哈萨克语、kea 佛得角克里奥尔语、khk 喀尔喀蒙古语、khm 高棉语、kir 吉尔吉斯语、kor 韩语、lao 老挝语、lit 立陶宛语、ltz 卢森堡语、lug 干达语、luo 卢奥语、lvs 标准拉脱维亚语、mai 迈蒂利语、mal 马拉雅拉姆语、mar 马拉地语、mkd 马其顿语、mlt 马耳他语、mni 梅泰语、mya 缅甸语、nno 新挪威语、nob 书面挪威语、npi 尼泊尔语、nya 尼扬加语、oci 奥克语、ory 奥里亚语、pan 旁遮普语、pbt 南普什图语、pes 西波斯语、pol 波兰语、slk 斯洛伐克语、slv 斯洛文尼亚语、sna 绍纳语、snd 信德语、som 索马里语、srp 塞尔维亚语、swe 瑞典语、swh 斯瓦希里语、tam 泰米尔语、tel 泰卢固语、tgk 塔吉克语、tgl 他加禄语、tur 土耳其语、ukr 乌克兰语、uzn 北乌兹别克语、vie 越南语、xho 科萨语、yor 约鲁巴语、yue 粤语、zlm 口语马来语、zsm 标准马来语、zul 祖鲁语等，共 100 种语言。）（13 14）"
+       "original": "Code Language name Family Subgrouping Script Resource Source Target afr Afrikaans Indo-European Germanic Latn low Sp, Tx Tx amh Amharic Afro-Asiatic Semitic Ethi low Sp, Tx Tx arb Modern Standard Arabic Afro-Asiatic Semitic Arab high Sp, Tx Sp, Tx ary Moroccan Arabic Afro-Asiatic Semitic Arab low Sp, Tx Tx arz Egyptian Arabic Afro-Asiatic Semitic Arab low Sp, Tx Tx asm Assamese Indo-European Indo-Aryan Beng low Sp, Tx Tx ast Asturian Indo-European Italic Latn zero-shot Sp",
+       "zh": "（表 13/14 语言清单：语种代码、语言名、语系、亚语支、文字、资源等级、Source/Target 覆盖。共 100 个语种，含 afr（南非荷兰语）、amh（阿姆哈拉语）、arb（现代标准阿拉伯语）、cmn（普通话）、eng（英语）、deu（德语）、fra（法语）、jpn（日语）、kor（韩语）、spa（西班牙语）、yue（粤语）、zul（祖鲁语）等；资源分 high/medium/low/zero-shot 四档，Sp=语音、Tx=文本。完整清单与原文一致。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-target-3",
+     "type": "equation",
+     "page": 13,
+     "original": "–"
+    },
+    {
+     "id": "p-target-5",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-target-5-1",
+       "original": "azj North Azerbaijani Turkic Common Turkic Latn low Sp, Tx Tx bel Belarusian Indo-European Balto-Slavic Cyrl high Sp, Tx Tx ben Bengali Indo-European Indo-Aryan Beng high Sp, Tx Sp, Tx bos Bosnian Indo-European Balto-Slavic Latn low Sp, Tx Tx bul Bulgarian Indo-European Balto-Slavic Cyrl low Sp, Tx Tx cat Catalan Indo-European Italic Latn high Sp, Tx Sp, Tx ceb Cebuano Austronesian Malayo-Polynesian Latn zero-shot Sp, Tx Tx ces Czech Indo-European Balto-Slavic Latn high Sp, Tx Sp, Tx ckb Central Kurdish Indo-European Iranian Arab low Sp, Tx Tx cmn Mandarin Chinese Sino-Tibetan Sinitic Hans, Hant high Sp, Tx Sp, Tx cym Welsh Indo-European Celtic Latn medium Sp, Tx Sp, Tx dan Danish Indo-European Germanic Latn medium Sp, Tx Sp, Tx deu German Indo-European Germanic Latn high Sp, Tx Sp, Tx ell Greek Indo-European Graeco-Phrygian Grek medium Sp, Tx Tx eng English Indo-European Germanic Latn high Sp, Tx Sp, Tx est Estonian Uralic Finnic Latn medium Sp, Tx Sp, Tx eus Basque Basque Basque Latn medium Sp, Tx Tx fin Finnish Uralic Finnic Latn high Sp, Tx Sp, Tx fra French Indo-European Italic Latn high Sp, Tx Sp, Tx gaz West Central Oromo Afro-Asiatic Cushitic Latn zero-shot Sp, Tx Tx gle Irish Indo-European Celtic Latn low Sp, Tx Tx glg Galician Indo-European Italic Latn low Sp, Tx Tx guj Gujarati Indo-European Indo-Aryan Gujr low Sp, Tx Tx heb Hebrew Afro-Asiatic Semitic Hebr low Sp, Tx Tx hin Hindi Indo-European Indo-Aryan Deva medium Sp, Tx Sp, Tx hrv Croatian Indo-European Balto-Slavic Latn medium Sp, Tx Tx hun Hungarian Uralic Hungarian Latn medium Sp, Tx Tx hye Armenian Indo-European Armenic Armn low Sp, Tx Tx ibo Igbo Atlantic-Congo Benue-Congo Latn low Sp, Tx Tx ind Indonesian Austronesian Malayo-Polynesian Latn medium Sp, Tx Sp, Tx isl Icelandic Indo-European Germanic Latn low Sp, Tx Tx ita Italian Indo-European Italic Latn high Sp, Tx Sp, Tx jav Javanese Austronesian Malayo-Polynesian Latn medium Sp, Tx Tx jpn Japanese Japonic Japanesic Jpan high Sp, Tx Sp, Tx kam Kamba Atlantic-Congo Benue-Congo Latn zero-shot Sp",
+       "zh": "（表 13/14 语言清单：语种代码、语言名、语系、亚语支、文字、资源等级、Source/Target 覆盖。共 100 个语种，含 afr（南非荷兰语）、amh（阿姆哈拉语）、arb（现代标准阿拉伯语）、cmn（普通话）、eng（英语）、deu（德语）、fra（法语）、jpn（日语）、kor（韩语）、spa（西班牙语）、yue（粤语）、zul（祖鲁语）等；资源分 high/medium/low/zero-shot 四档，Sp=语音、Tx=文本。完整清单与原文一致。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-target-4",
+     "type": "equation",
+     "page": 13,
+     "original": "–"
+    },
+    {
+     "id": "p-target-6",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-target-6-1",
+       "original": "kan Kannada Dravidian South Dravidian Knda low Sp, Tx Tx kat Georgian Kartvelian Georgian-Zan Geor low Sp, Tx Tx kaz Kazakh Turkic Common Turkic Cyrl medium Sp, Tx Tx kea Kabuverdianu Indo-European Italic Latn zero-shot Sp",
+       "zh": "（表 13/14 语言清单：语种代码、语言名、语系、亚语支、文字、资源等级、Source/Target 覆盖。共 100 个语种，含 afr（南非荷兰语）、amh（阿姆哈拉语）、arb（现代标准阿拉伯语）、cmn（普通话）、eng（英语）、deu（德语）、fra（法语）、jpn（日语）、kor（韩语）、spa（西班牙语）、yue（粤语）、zul（祖鲁语）等；资源分 high/medium/low/zero-shot 四档，Sp=语音、Tx=文本。完整清单与原文一致。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-target-5",
+     "type": "equation",
+     "page": 13,
+     "original": "–"
+    },
+    {
+     "id": "p-target-7",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-target-7-1",
+       "original": "khk Halh Mongolian Mongolic-Khitan Mongolic Cyrl low Sp, Tx Tx khm Khmer Austroasiatic Khmeric Khmr low Sp, Tx Tx kir Kyrgyz Turkic Common Turkic Cyrl low Sp, Tx Tx kor Korean Koreanic Korean Kore medium Sp, Tx Sp, Tx lao Lao Tai-Kadai Kam-Tai Laoo low Sp, Tx Tx lit Lithuanian Indo-European Balto-Slavic Latn low Sp, Tx Tx ltz Luxembourgish Indo-European Germanic Latn zero-shot Sp",
+       "zh": "（表 13/14 语言清单：语种代码、语言名、语系、亚语支、文字、资源等级、Source/Target 覆盖。共 100 个语种，含 afr（南非荷兰语）、amh（阿姆哈拉语）、arb（现代标准阿拉伯语）、cmn（普通话）、eng（英语）、deu（德语）、fra（法语）、jpn（日语）、kor（韩语）、spa（西班牙语）、yue（粤语）、zul（祖鲁语）等；资源分 high/medium/low/zero-shot 四档，Sp=语音、Tx=文本。完整清单与原文一致。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-target-6",
+     "type": "equation",
+     "page": 13,
+     "original": "–"
+    },
+    {
+     "id": "p-target-8",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-target-8-1",
+       "original": "lug Ganda Atlantic-Congo Benue-Congo Latn medium Sp, Tx Tx luo Luo Nilotic Western Nilotic Latn zero-shot Sp, Tx Tx lvs Standard Latvian Indo-European Balto-Slavic Latn low Sp, Tx Tx mai Maithili Indo-European Indo-Aryan Deva zero-shot Sp, Tx Tx mal Malayalam Dravidian South Dravidian Mlym low Sp, Tx Tx mar Marathi Indo-European Indo-Aryan Deva low Sp, Tx Tx mkd Macedonian Indo-European Balto-Slavic Cyrl low Sp, Tx Tx mlt Maltese Afro-Asiatic Semitic Latn low Sp, Tx Sp, Tx mni Meitei Sino-Tibetan Kuki-Chin-Naga Beng zero-shot Sp, Tx Tx mya Burmese Sino-Tibetan Burmo-Qiangic Mymr low Sp, Tx Tx",
+       "zh": "（表 13/14 语言清单：语种代码、语言名、语系、亚语支、文字、资源等级、Source/Target 覆盖。共 100 个语种，含 afr（南非荷兰语）、amh（阿姆哈拉语）、arb（现代标准阿拉伯语）、cmn（普通话）、eng（英语）、deu（德语）、fra（法语）、jpn（日语）、kor（韩语）、spa（西班牙语）、yue（粤语）、zul（祖鲁语）等；资源分 high/medium/low/zero-shot 四档，Sp=语音、Tx=文本。完整清单与原文一致。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-target-7",
+     "type": "equation",
+     "page": 13,
+     "original": "14"
+    },
+    {
+     "id": "p-target-9",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-target-9-1",
+       "original": "Code Language name Family Subgrouping Script Resource Source Target nld Dutch Indo-European Germanic Latn high Sp, Tx Sp, Tx nno Norwegian Nynorsk Indo-European Germanic Latn low Sp, Tx Tx nob Norwegian Bokmål Indo-European Germanic Latn low Sp, Tx Tx npi Nepali Indo-European Indo-Aryan Deva low Sp, Tx Tx nya Nyanja Atlantic-Congo Benue-Congo Latn low Sp, Tx Tx oci Occitan Indo-European Italic Latn zero-shot Sp",
+       "zh": "（表 13/14 语言清单：语种代码、语言名、语系、亚语支、文字、资源等级、Source/Target 覆盖。共 100 个语种，含 afr（南非荷兰语）、amh（阿姆哈拉语）、arb（现代标准阿拉伯语）、cmn（普通话）、eng（英语）、deu（德语）、fra（法语）、jpn（日语）、kor（韩语）、spa（西班牙语）、yue（粤语）、zul（祖鲁语）等；资源分 high/medium/low/zero-shot 四档，Sp=语音、Tx=文本。完整清单与原文一致。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-target-8",
+     "type": "equation",
+     "page": 13,
+     "original": "–"
+    },
+    {
+     "id": "p-target-10",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-target-10-1",
+       "original": "ory Odia Indo-European Indo-Aryan Orya low Sp, Tx Tx pan Punjabi Indo-European Indo-Aryan Guru low Sp, Tx Tx pbt Southern Pashto Indo-European Iranian Arab medium Sp, Tx Tx pes Western Persian Indo-European Iranian Arab low Sp, Tx Sp, Tx pol Polish Indo-European Balto-Slavic Latn high Sp, Tx Sp, Tx por Portuguese Indo-European Italic Latn medium Sp, Tx Sp, Tx ron Romanian Indo-European Italic Latn high Sp, Tx Sp, Tx rus Russian Indo-European Balto-Slavic Cyrl medium Sp, Tx Sp, Tx slk Slovak Indo-European Balto-Slavic Latn medium Sp, Tx Sp, Tx slv Slovenian Indo-European Balto-Slavic Latn low Sp, Tx Tx sna Shona Atlantic-Congo Benue-Congo Latn zero-shot Sp, Tx Tx snd Sindhi Indo-European Indo-Aryan Arab zero-shot Sp, Tx Tx som Somali Afro-Asiatic Cushitic Latn low Sp, Tx Tx spa Spanish Indo-European Italic Latn high Sp, Tx Sp, Tx srp Serbian Indo-European Balto-Slavic Cyrl low Sp, Tx Tx swe Swedish Indo-European Germanic Latn low Sp, Tx Sp, Tx swh Swahili Atlantic-Congo Benue-Congo Latn medium Sp, Tx Sp, Tx tam Tamil Dravidian South Dravidian Taml medium Sp, Tx Tx tel Telugu Dravidian South Dravidian Telu medium Sp, Tx Sp, Tx tgk Tajik Indo-European Iranian Cyrl low Sp, Tx Tx tgl Tagalog Austronesian Malayo-Polynesian Latn medium Sp, Tx Sp, Tx tha Thai Tai-Kadai Kam-Tai Thai medium Sp, Tx Sp, Tx tur Turkish Turkic Common Turkic Latn medium Sp, Tx Sp, Tx ukr Ukrainian Indo-European Balto-Slavic Cyrl medium Sp, Tx Sp, Tx urd Urdu Indo-European Indo-Aryan Arab medium Sp, Tx Sp, Tx uzn Northern Uzbek Turkic Common Turkic Latn medium Sp, Tx Sp, Tx vie Vietnamese Austroasiatic Vietic Latn medium Sp, Tx Sp, Tx xho Xhosa Atlantic-Congo Benue-Congo Latn zero-shot Sp",
+       "zh": "（表 13/14 语言清单：语种代码、语言名、语系、亚语支、文字、资源等级、Source/Target 覆盖。共 100 个语种，含 afr（南非荷兰语）、amh（阿姆哈拉语）、arb（现代标准阿拉伯语）、cmn（普通话）、eng（英语）、deu（德语）、fra（法语）、jpn（日语）、kor（韩语）、spa（西班牙语）、yue（粤语）、zul（祖鲁语）等；资源分 high/medium/low/zero-shot 四档，Sp=语音、Tx=文本。完整清单与原文一致。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-target-9",
+     "type": "equation",
+     "page": 13,
+     "original": "–"
+    },
+    {
+     "id": "p-target-11",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-target-11-1",
+       "original": "yor Yoruba Atlantic-Congo Benue-Congo Latn low Sp, Tx Tx yue Cantonese Sino-Tibetan Sinitic Hant low Sp, Tx Tx zlm Colloquial Malay Austronesian Malayo-Polynesian Latn low Sp",
+       "zh": "（表 13/14 语言清单：语种代码、语言名、语系、亚语支、文字、资源等级、Source/Target 覆盖。共 100 个语种，含 afr（南非荷兰语）、amh（阿姆哈拉语）、arb（现代标准阿拉伯语）、cmn（普通话）、eng（英语）、deu（德语）、fra（法语）、jpn（日语）、kor（韩语）、spa（西班牙语）、yue（粤语）、zul（祖鲁语）等；资源分 high/medium/low/zero-shot 四档，Sp=语音、Tx=文本。完整清单与原文一致。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-target-10",
+     "type": "equation",
+     "page": 13,
+     "original": "–"
+    },
+    {
+     "id": "p-target-12",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-target-12-1",
+       "original": "zsm Standard Malay Austronesian Malayo-Polynesian Latn low Tx Tx zul Zulu Atlantic-Congo Benue-Congo Latn low Sp, Tx Tx",
+       "zh": "（表 13/14 语言清单：语种代码、语言名、语系、亚语支、文字、资源等级、Source/Target 覆盖。共 100 个语种，含 afr（南非荷兰语）、amh（阿姆哈拉语）、arb（现代标准阿拉伯语）、cmn（普通话）、eng（英语）、deu（德语）、fra（法语）、jpn（日语）、kor（韩语）、spa（西班牙语）、yue（粤语）、zul（祖鲁语）等；资源分 high/medium/low/zero-shot 四档，Sp=语音、Tx=文本。完整清单与原文一致。）"
       }
      ]
     },
@@ -2072,16 +2385,10 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 5：SeamlessM4T 支持的语言。表中列出语言代码、名称、语系、亚群和文字，以及语音资源级别和该语言是否支持作为语音和/或文本模态的源端或目标端。此处的零样本指以该语言为源端的 S2TT 或 S2ST 任务。"
     },
     {
-     "id": "p-target-5",
-     "type": "paragraph",
+     "id": "eq-target-11",
+     "type": "equation",
      "page": 15,
-     "sentences": [
-      {
-       "id": "s-target-5-1",
-       "original": "15",
-       "zh": "15"
-      }
-     ]
+     "original": "15"
     }
    ]
   },
@@ -2267,13 +2574,19 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-3-1-1",
+     "type": "equation",
+     "page": 16,
+     "original": "16"
+    },
+    {
      "id": "p-3-1-2",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
        "id": "s-3-1-2-1",
-       "original": "16 Raw Audio Segmentation LID Arb over segmented audio Arb Audio segments Eng over segmented audio Eng Audio Segments Over Segmentation Vie Audio Segments Vie over segmented audio input segments over segmented output",
+       "original": "Raw Audio Segmentation LID Arb over segmented audio Arb Audio segments Eng over segmented audio Eng Audio Segments Over Segmentation Vie Audio Segments Vie over segmented audio input segments over segmented output",
        "zh": "（图内容：原始音频 → 切分 → LID；对切分后的音频分别做 Arb、Eng、Vie 等语种的过度切分，得到各语种的音频片段；输入片段经过度切分产生输出。页码 16。）"
       }
      ]
@@ -2421,10 +2734,16 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-results-1-4",
-       "original": "MMS [Pratap et al., 2023] has recently been released and covers them all, but it was not available when this project started 5. https://huggingface.co/TalTechNLP/voxlingua107-epaca-tdnn 6. http://vaani.iisc.ac.in 7. https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6N5V1K 17",
-       "zh": "（脚注：最近发布的 MMS [Pratap et al., 2023] 已覆盖所有这些语言，但在本项目启动时尚不可用。5. https://huggingface.co/TalTechNLP/voxlingua107-epaca-tdnn 6. http://vaani.iisc.ac.in 7. https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6N5V1K 17）"
+       "original": "MMS [Pratap et al., 2023] has recently been released and covers them all, but it was not available when this project started 5. https://huggingface.co/TalTechNLP/voxlingua107-epaca-tdnn 6. http://vaani.iisc.ac.in 7. https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6N5V1K",
+       "zh": "（页码行：2。）\n（原始数据照录）\nMMS [Pratap et al., 2023] has recently been released and covers them all, but it was not available when this project started 5. https://huggingface.co/TalTechNLP/voxlingua107-epaca-tdnn 6. http://vaani.iisc.ac.in 7. https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6N5V1K"
       }
      ]
+    },
+    {
+     "id": "eq-results-1",
+     "type": "equation",
+     "page": 17,
+     "original": "17"
     }
    ]
   },
@@ -2445,10 +2764,40 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-overall-1-1",
-       "original": "Intersection ↑F1-micro ↑F1-macro ↑F1-micro ↑F1-macro VL107 HF 82.3% 94.1% 92.6% VL107 baseline 82.5% 94.4% 93.0% LID100 86.0% 81.9% 92.9% 91.1%",
-       "zh": "（表格内容：各模型在语言交集上的 F1-micro 与 F1-macro——VL107 HF 为 82.3%、94.1%、92.6%；VL107 baseline 为 82.5%、94.4%、93.0%；LID100 为 86.0%、81.9%、92.9%、91.1%。）"
+       "original": "Intersection ↑F1-micro (n=100) ↑F1-macro (n=100) ↑F1-micro (n=79) ↑F1-macro (n=79) VL107 HF",
+       "zh": "表头：Intersection × ↑F1-micro (n=100) / ↑F1-macro (n=100) / ↑F1-micro (n=79) / ↑F1-macro (n=79)——VL107 / HF（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-overall-1",
+     "type": "equation",
+     "page": 18,
+     "original": "82.3% - 94.1% 92.6%"
+    },
+    {
+     "id": "eq-overall-2",
+     "type": "equation",
+     "page": 18,
+     "original": "VL107 baseline"
+    },
+    {
+     "id": "eq-overall-3",
+     "type": "equation",
+     "page": 18,
+     "original": "82.5% - 94.4% 93.0%"
+    },
+    {
+     "id": "eq-overall-4",
+     "type": "equation",
+     "page": 18,
+     "original": "LID100"
+    },
+    {
+     "id": "eq-overall-5",
+     "type": "equation",
+     "page": 18,
+     "original": "86.0% 81.9% 92.9% 91.1%"
     },
     {
      "id": "tab-overall-1",
@@ -2518,10 +2867,28 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-overall-4-1",
-       "original": "↑F1 micro ↑Coverage LID100 86.0% 100% +filtering 89.5% 92.1%",
+       "original": "↑F1 micro ↑Coverage LID100",
        "zh": "（表格内容：LID100 的 F1-micro 为 86.0%、覆盖率 100%；加过滤后 F1-micro 为 89.5%、覆盖率 92.1%。）"
       }
      ]
+    },
+    {
+     "id": "eq-overall-6",
+     "type": "equation",
+     "page": 18,
+     "original": "86.0% 100%"
+    },
+    {
+     "id": "eq-overall-7",
+     "type": "equation",
+     "page": 18,
+     "original": "+filtering"
+    },
+    {
+     "id": "eq-overall-8",
+     "type": "equation",
+     "page": 18,
+     "original": "89.5% 92.1%"
     },
     {
      "id": "tab-overall-2",
@@ -2609,11 +2976,29 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-audio-pre-processing-1-5",
-       "original": "Firstly, we deduplicated the audio file URLs found in the repository, downloaded 18 the audio files, and resampled at 16KHz.",
+       "original": "Firstly, we deduplicated the audio file URLs found in the repository, downloaded",
+       "zh": "首先，我们对仓库中音频文件的 URL 去重，下载音频文件 [18]，并重采样到 16KHz。"
+      }
+     ]
+    },
+    {
+     "id": "eq-audio-pre-processing-1",
+     "type": "equation",
+     "page": 18,
+     "original": "18"
+    },
+    {
+     "id": "p-audio-pre-processing-2",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-audio-pre-processing-2-1",
+       "original": "the audio files, and resampled at 16KHz.",
        "zh": "首先，我们对仓库中音频文件的 URL 去重，下载音频文件 [18]，并重采样到 16KHz。"
       },
       {
-       "id": "s-audio-pre-processing-1-6",
+       "id": "s-audio-pre-processing-2-2",
        "original": "Subsequently, we filtered out the non-speech data with a bespoke audio event detection (AED) model.",
        "zh": "接着，我们用一个定制的音频事件检测（AED）模型滤除了非语音数据。"
       }
@@ -2765,8 +3150,86 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-architecture-and-training-setup-1-2",
-       "original": "Sonar substantially outperforms the previous Laser Segmented Text from NLLB Arb ✏️ SONAR Text Encoders Eng ✏️ Shared multilingual and multimodal embeddings space Vie ✏️ Oversegmented Audio SONAR Arb 🎤 Speech Encoders Eng 🎤 Vie 🎤 S2TT Aligned Data Other resources Arb - Eng Eng - Vie SeamlessM4T S2ST Aligned Data Arb - Eng Eng - Vie",
+       "original": "Sonar substantially outperforms the previous Laser Segmented Text from NLLB Arb",
        "zh": "（图内容：Sonar 大幅超越此前的 Laser。来自 NLLB 的切分文本（Arb/Eng/Vie）经 Sonar 文本编码器、过度切分音频经 Sonar 语音编码器，投射到共享的多语言多模态嵌入空间；随后产出 Arb-Eng、Eng-Vie 等 S2TT 与 S2ST 对齐数据，并与其他资源合并，用于 SeamlessM4T。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-architecture-and-training-setup-1",
+     "type": "equation",
+     "page": 19,
+     "original": "✏️"
+    },
+    {
+     "id": "eq-architecture-and-training-setup-2",
+     "type": "equation",
+     "page": 19,
+     "original": "SONAR Text Encoders Eng"
+    },
+    {
+     "id": "eq-architecture-and-training-setup-3",
+     "type": "equation",
+     "page": 19,
+     "original": "✏️"
+    },
+    {
+     "id": "eq-architecture-and-training-setup-4",
+     "type": "equation",
+     "page": 19,
+     "original": "Shared multilingual and multimodal embeddings space Vie"
+    },
+    {
+     "id": "eq-architecture-and-training-setup-5",
+     "type": "equation",
+     "page": 19,
+     "original": "✏️"
+    },
+    {
+     "id": "eq-architecture-and-training-setup-6",
+     "type": "equation",
+     "page": 19,
+     "original": "Oversegmented Audio SONAR Arb"
+    },
+    {
+     "id": "eq-architecture-and-training-setup-7",
+     "type": "equation",
+     "page": 19,
+     "original": "🎤"
+    },
+    {
+     "id": "eq-architecture-and-training-setup-8",
+     "type": "equation",
+     "page": 19,
+     "original": "Speech Encoders Eng"
+    },
+    {
+     "id": "eq-architecture-and-training-setup-9",
+     "type": "equation",
+     "page": 19,
+     "original": "🎤"
+    },
+    {
+     "id": "eq-architecture-and-training-setup-10",
+     "type": "equation",
+     "page": 19,
+     "original": "Vie"
+    },
+    {
+     "id": "eq-architecture-and-training-setup-11",
+     "type": "equation",
+     "page": 19,
+     "original": "🎤"
+    },
+    {
+     "id": "p-architecture-and-training-setup-2",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-architecture-and-training-setup-2-1",
+       "original": "S2TT Aligned Data Other resources Arb - Eng Eng - Vie SeamlessM4T S2ST Aligned Data Arb - Eng Eng - Vie",
+       "zh": "（页码行：2。）\n（原始数据照录）\nS2TT Aligned Data Other resources Arb - Eng Eng - Vie SeamlessM4T S2ST Aligned Data Arb - Eng Eng - Vie"
       }
      ]
     },
@@ -2778,13 +3241,19 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 2：Sonar 编码与挖掘过程的工作流程。"
     },
     {
-     "id": "p-architecture-and-training-setup-2",
+     "id": "eq-architecture-and-training-setup-12",
+     "type": "equation",
+     "page": 19,
+     "original": "19"
+    },
+    {
+     "id": "p-architecture-and-training-setup-3",
      "type": "paragraph",
      "page": 19,
      "sentences": [
       {
-       "id": "s-architecture-and-training-setup-2-1",
-       "original": "19 ↑spBLEU ↑COMET",
+       "id": "s-architecture-and-training-setup-3-1",
+       "original": "↑spBLEU ↑COMET",
        "zh": "19 ↑spBLEU ↑COMET"
       }
      ]
@@ -2808,10 +3277,28 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-2-1-1",
-       "original": "Sonar 32.7 21.6 85.9 84.2 NLLB-1.3B (MT topline) 35.2 24.9 86.5 85.2",
-       "zh": "（表格内容：Sonar 的 spBLEU 32.7、COMET 21.6、自编码 spBLEU 85.9/84.2；NLLB-1.3B（机器翻译上限）为 35.2、24.9、86.5/85.2。）"
+       "original": "X–eng (n=200) eng–X (n=200) X–eng (n=89) eng–X (n=89) Sonar",
+       "zh": "（页码行：2。）\n（原始数据照录）\nX–eng (n=200) eng–X (n=200) X–eng (n=89) eng–X (n=89) Sonar"
       }
      ]
+    },
+    {
+     "id": "eq-model-2-1",
+     "type": "equation",
+     "page": 20,
+     "original": "32.7 21.6 85.9 84.2"
+    },
+    {
+     "id": "eq-model-2-2",
+     "type": "equation",
+     "page": 20,
+     "original": "NLLB-1.3B (MT topline)"
+    },
+    {
+     "id": "eq-model-2-3",
+     "type": "equation",
+     "page": 20,
+     "original": "35.2 24.9 86.5 85.2"
     },
     {
      "id": "tab-model-2-1",
@@ -2891,10 +3378,34 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-evaluation-for-mining-1-2",
-       "original": "This is a rather ✏️ Multilingual Text Initialized with NLLB 1B Text Decoder decoder text sentence embedding Speech sentence embedding SONAR Embedding Space Initialized with Speech Encoder Text Encoder NLLB 1B encoder Multilingual Speech Multilingual Text 🎤 ✏️",
+       "original": "This is a rather",
        "zh": "（图内容：以 NLLB 1B 初始化的多语言文本编码器与文本解码器、语音编码器，把多语言语音与多语言文本编码为 Sonar 嵌入空间中的文本句子嵌入与语音句子嵌入。）"
       }
      ]
+    },
+    {
+     "id": "eq-evaluation-for-mining-1",
+     "type": "equation",
+     "page": 20,
+     "original": "✏️"
+    },
+    {
+     "id": "p-evaluation-for-mining-2",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-evaluation-for-mining-2-1",
+       "original": "Multilingual Text Initialized with NLLB 1B Text Decoder decoder text sentence embedding Speech sentence embedding SONAR Embedding Space Initialized with Speech Encoder Text Encoder NLLB 1B encoder Multilingual Speech Multilingual Text",
+       "zh": "（图内容：以 NLLB 1B 初始化的多语言文本编码器与文本解码器、语音编码器，把多语言语音与多语言文本编码为 Sonar 嵌入空间中的文本句子嵌入与语音句子嵌入。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-evaluation-for-mining-2",
+     "type": "equation",
+     "page": 20,
+     "original": "🎤 ✏️"
     },
     {
      "id": "fig-evaluation-for-mining-1",
@@ -2904,36 +3415,20 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 3：Sonar 架构。"
     },
     {
-     "id": "p-evaluation-for-mining-2",
-     "type": "paragraph",
+     "id": "eq-evaluation-for-mining-3",
+     "type": "equation",
      "page": 20,
-     "sentences": [
-      {
-       "id": "s-evaluation-for-mining-2-1",
-       "original": "20 interesting result, given that the use of attention is commonly considered mandatory to achieve reasonable performance.",
-       "zh": "考虑到注意力机制通常被认为是获得合理性能的必备条件，这是一个相当有趣的结果。（页码 20）"
-      }
-     ]
+     "original": "20"
     },
     {
      "id": "p-evaluation-for-mining-3",
      "type": "paragraph",
-     "page": 21,
+     "page": 20,
      "sentences": [
       {
        "id": "s-evaluation-for-mining-3-1",
-       "original": "On mining performance, we rely on the multilingual similarity search xsim metric, which measures the percentage of sentences in the Flores dataset which are not correctly aligned when searching for the closest vector in the embedding space.",
-       "zh": "在挖掘性能上，我们使用多语言相似度搜索指标 xsim——它衡量在嵌入空间中搜索最近向量时，Flores 数据集中未能被正确对齐的句子所占的百分比。"
-      },
-      {
-       "id": "s-evaluation-for-mining-3-2",
-       "original": "The improved version xsim++ [Chen et al., 2023b] added challenging English sentences on the target side.",
-       "zh": "改进版 xsim++ [Chen et al., 2023b] 在目标侧加入了更具挑战性的英语句子。"
-      },
-      {
-       "id": "s-evaluation-for-mining-3-3",
-       "original": "Both of these metrics are a good proxy to the actual T2TT mining task while being much faster to compute.",
-       "zh": "这两个指标都是实际 T2TT 挖掘任务的良好代理，且计算速度快得多。"
+       "original": "interesting result, given that the use of attention is commonly considered mandatory to achieve reasonable performance.",
+       "zh": "考虑到注意力机制通常被认为是获得合理性能的必备条件，这是一个相当有趣的结果。（页码 20）"
       }
      ]
     },
@@ -2944,6 +3439,28 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-evaluation-for-mining-4-1",
+       "original": "On mining performance, we rely on the multilingual similarity search xsim metric, which measures the percentage of sentences in the Flores dataset which are not correctly aligned when searching for the closest vector in the embedding space.",
+       "zh": "在挖掘性能上，我们使用多语言相似度搜索指标 xsim——它衡量在嵌入空间中搜索最近向量时，Flores 数据集中未能被正确对齐的句子所占的百分比。"
+      },
+      {
+       "id": "s-evaluation-for-mining-4-2",
+       "original": "The improved version xsim++ [Chen et al., 2023b] added challenging English sentences on the target side.",
+       "zh": "改进版 xsim++ [Chen et al., 2023b] 在目标侧加入了更具挑战性的英语句子。"
+      },
+      {
+       "id": "s-evaluation-for-mining-4-3",
+       "original": "Both of these metrics are a good proxy to the actual T2TT mining task while being much faster to compute.",
+       "zh": "这两个指标都是实际 T2TT 挖掘任务的良好代理，且计算速度快得多。"
+      }
+     ]
+    },
+    {
+     "id": "p-evaluation-for-mining-5",
+     "type": "paragraph",
+     "page": 21,
+     "sentences": [
+      {
+       "id": "s-evaluation-for-mining-5-1",
        "original": "As summarized in Table 9, Sonar substantially outperforms other popular multilingual sentence representations like Laser3 [Heffernan et al., 2022] or LaBSE [Feng et al., 2022].",
        "zh": "如 Table 9 所总结，Sonar 大幅超越 Laser3 [Heffernan et al., 2022] 和 LaBSE [Feng et al., 2022] 等流行的多语言句子表征。"
       }
@@ -2968,10 +3485,40 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-overall-2-1-1",
-       "original": "Intersection ↓xsim ↓xsim++ ↓xsim ↓xsim++ Sonar 1.4 15.2 0.1 9.3 Laser3 5.1 36.4 1.1 27.5 LaBSE 10.7 36.1 1.5 15.4",
-       "zh": "（表格内容：在语言交集上的 xsim 与 xsim++ 错误率——Sonar 为 1.4、15.2、0.1、9.3；Laser3 为 5.1、36.4、1.1、27.5；LaBSE 为 10.7、36.1、1.5、15.4。）"
+       "original": "Intersection ↓xsim (n=200) ↓xsim++ (n=200) ↓xsim (n=98) ↓xsim++ (n=98) Sonar",
+       "zh": "（页码行：2。）\n（原始数据照录）\nIntersection ↓xsim (n=200) ↓xsim++ (n=200) ↓xsim (n=98) ↓xsim++ (n=98) Sonar"
       }
      ]
+    },
+    {
+     "id": "eq-overall-2-1",
+     "type": "equation",
+     "page": 21,
+     "original": "1.4 15.2 0.1 9.3"
+    },
+    {
+     "id": "eq-overall-2-2",
+     "type": "equation",
+     "page": 21,
+     "original": "Laser3"
+    },
+    {
+     "id": "eq-overall-2-3",
+     "type": "equation",
+     "page": 21,
+     "original": "5.1 36.4 1.1 27.5"
+    },
+    {
+     "id": "eq-overall-2-4",
+     "type": "equation",
+     "page": 21,
+     "original": "LaBSE"
+    },
+    {
+     "id": "eq-overall-2-5",
+     "type": "equation",
+     "page": 21,
+     "original": "10.7 36.1 1.5 15.4"
     },
     {
      "id": "tab-overall-2-1",
@@ -3064,16 +3611,10 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
-     "id": "p-architecture-and-training-setup-2-3",
-     "type": "paragraph",
+     "id": "eq-architecture-and-training-setup-2-1",
+     "type": "equation",
      "page": 21,
-     "sentences": [
-      {
-       "id": "s-architecture-and-training-setup-2-3-1",
-       "original": "21",
-       "zh": "21"
-      }
-     ]
+     "original": "21"
     }
    ]
   },
@@ -3094,10 +3635,448 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-iso-1-1",
-       "original": "Raw Train X–eng (↑BLEU) Mined audio [h] audio [h] ASR [h] Ours Whisper Sen2Txx Sxx2Ten Sxx2Sen 106755 822 28.7 25.5 1568 8072 776 ben 7012 335 18.9 13.2 606 1345 263 cat 43531 1738 35.1 34.2 1570 4411 354 ces 41318 181 29.2 27.8 1454 6905 602 cmn 79772 9320 16.2 18.4 5440 18760 1570 cym 24161 99 14.5 13.0 4411 278 dan 34300 115 31.9 32.7 2499 6041 583 490604 3329 32.7 34.6 91715 17634 1921 est 12691 131 23.8 18.7 1022 3346 607 fin 32858 184 22.2 22.1 651 6086 526 282179 2057 31.2 32.2 21523 17380 3337 hin 15118 150 19.2 22.0 1041 2977 530 ind 11559 269 26.5 29.1 1938 2658 510 ita 79480 588 25.3 23.6 4378 6508 817 jpn 75863 17319 17.4 18.9 1973 21287 1141 kan 1451 114 20.0 11.6 232 198 kor 37854 316 15.0 21.3 8657 640 mlt 2122 106 23.2 13.5 131 130 60 93933 1723 25.5 24.0 3720 6859 1210 pes 43788 386 22.2 19.6 7122 693 pol 53662 304 21.1 22.3 1324 9389 757 141931 269 35.4 38.1 4853 8696 928 18719 135 32.1 31.5 2770 2878 716 103906 259 25.4 27.8 11296 13509 1252 slk 16954 102 29.5 26.1 1267 3785 491 324086 1511 24.3 23.3 27778 17388 2727 swe 125195 144 33.4 37.02 3438 2620 484 swh 18393 361 22.6 7.2 690 2620 484 tam 100331 245 14.3 9.2 1664 867 tel 3303 84 15.8 12.5 985 536 tgl 4497 108 13.3 24.4 633 266 13421 195 15.3 16.1 2577 3563 542 tur 23275 174 21.0 26.6 1417 6545 426 ukr 6396 105 27.9 29.4 1220 1717 392 16882 185 17.6 17.2 773 3416 652 uzn 8105 115 17.9 6.0 475 1846 157 vie 34336 194 17.8 20.4 1689 7692 868",
-       "zh": "（表格内容：Table 10 主体——列依次为：原始音频 [h]、训练语音 [h]、ASR [h]、X–eng BLEU（Ours / Whisper）、挖掘音频 [h]（Sen2Txx / Sxx2Ten / Sxx2Sen）。各行：汇总行 106755 822 28.7 25.5 1568 8072 776；ben 7012 335 18.9 13.2 606 1345 263；cat 43531 1738 35.1 34.2 1570 4411 354；ces 41318 181 29.2 27.8 1454 6905 602；cmn 79772 9320 16.2 18.4 5440 18760 1570；cym 24161 99 14.5 13.0 4411 278；dan 34300 115 31.9 32.7 2499 6041 583；490604 3329 32.7 34.6 91715 17634 1921；est 12691 131 23.8 18.7 1022 3346 607；fin 32858 184 22.2 22.1 651 6086 526；282179 2057 31.2 32.2 21523 17380 3337；hin 15118 150 19.2 22.0 1041 2977 530；ind 11559 269 26.5 29.1 1938 2658 510；ita 79480 588 25.3 23.6 4378 6508 817；jpn 75863 17319 17.4 18.9 1973 21287 1141；kan 1451 114 20.0 11.6 232 198；kor 37854 316 15.0 21.3 8657 640；mlt 2122 106 23.2 13.5 131 130 60；93933 1723 25.5 24.0 3720 6859 1210；pes 43788 386 22.2 19.6 7122 693；pol 53662 304 21.1 22.3 1324 9389 757；141931 269 35.4 38.1 4853 8696 928；18719 135 32.1 31.5 2770 2878 716；103906 259 25.4 27.8 11296 13509 1252；slk 16954 102 29.5 26.1 1267 3785 491；324086 1511 24.3 23.3 27778 17388 2727；swe 125195 144 33.4 37.02 3438 2620 484；swh 18393 361 22.6 7.2 690 2620 484；tam 100331 245 14.3 9.2 1664 867；tel 3303 84 15.8 12.5 985 536；tgl 4497 108 13.3 24.4 633 266；13421 195 15.3 16.1 2577 3563 542；tur 23275 174 21.0 26.6 1417 6545 426；ukr 6396 105 27.9 29.4 1220 1717 392；16882 185 17.6 17.2 773 3416 652；uzn 8105 115 17.9 6.0 475 1846 157；vie 34336 194 17.8 20.4 1689 7692 868。部分语言在行首列出了 ISO 代码，其余行因原文档布局合并而省略语言名。）"
+       "original": "Raw Train X–eng (↑BLEU) Mined audio [h] audio [h] ASR [h] Ours Whisper Sen2Txx Sxx2Ten Sxx2Sen arb",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-iso-1",
+     "type": "equation",
+     "page": 22,
+     "original": "106755 822 28.7 25.5 1568 8072 776"
+    },
+    {
+     "id": "eq-iso-2",
+     "type": "equation",
+     "page": 22,
+     "original": "ben"
+    },
+    {
+     "id": "eq-iso-3",
+     "type": "equation",
+     "page": 22,
+     "original": "7012 335 18.9 13.2 606 1345 263"
+    },
+    {
+     "id": "eq-iso-4",
+     "type": "equation",
+     "page": 22,
+     "original": "cat"
+    },
+    {
+     "id": "eq-iso-5",
+     "type": "equation",
+     "page": 22,
+     "original": "43531 1738 35.1 34.2 1570 4411 354"
+    },
+    {
+     "id": "eq-iso-6",
+     "type": "equation",
+     "page": 22,
+     "original": "ces"
+    },
+    {
+     "id": "eq-iso-7",
+     "type": "equation",
+     "page": 22,
+     "original": "41318 181 29.2 27.8 1454 6905 602"
+    },
+    {
+     "id": "eq-iso-8",
+     "type": "equation",
+     "page": 22,
+     "original": "cmn"
+    },
+    {
+     "id": "eq-iso-9",
+     "type": "equation",
+     "page": 22,
+     "original": "79772 9320 16.2 18.4 5440 18760 1570"
+    },
+    {
+     "id": "eq-iso-10",
+     "type": "equation",
+     "page": 22,
+     "original": "cym"
+    },
+    {
+     "id": "eq-iso-11",
+     "type": "equation",
+     "page": 22,
+     "original": "24161 99 14.5 13.0 – 4411 278"
+    },
+    {
+     "id": "eq-iso-12",
+     "type": "equation",
+     "page": 22,
+     "original": "dan"
+    },
+    {
+     "id": "eq-iso-13",
+     "type": "equation",
+     "page": 22,
+     "original": "34300 115 31.9 32.7 2499 6041 583"
+    },
+    {
+     "id": "eq-iso-14",
+     "type": "equation",
+     "page": 22,
+     "original": "deu"
+    },
+    {
+     "id": "eq-iso-15",
+     "type": "equation",
+     "page": 22,
+     "original": "490604 3329 32.7 34.6 91715 17634 1921"
+    },
+    {
+     "id": "eq-iso-16",
+     "type": "equation",
+     "page": 22,
+     "original": "est"
+    },
+    {
+     "id": "eq-iso-17",
+     "type": "equation",
+     "page": 22,
+     "original": "12691 131 23.8 18.7 1022 3346 607"
+    },
+    {
+     "id": "eq-iso-18",
+     "type": "equation",
+     "page": 22,
+     "original": "fin"
+    },
+    {
+     "id": "eq-iso-19",
+     "type": "equation",
+     "page": 22,
+     "original": "32858 184 22.2 22.1 651 6086 526"
+    },
+    {
+     "id": "eq-iso-20",
+     "type": "equation",
+     "page": 22,
+     "original": "fra"
+    },
+    {
+     "id": "eq-iso-21",
+     "type": "equation",
+     "page": 22,
+     "original": "282179 2057 31.2 32.2 21523 17380 3337"
+    },
+    {
+     "id": "eq-iso-22",
+     "type": "equation",
+     "page": 22,
+     "original": "hin"
+    },
+    {
+     "id": "eq-iso-23",
+     "type": "equation",
+     "page": 22,
+     "original": "15118 150 19.2 22.0 1041 2977 530"
+    },
+    {
+     "id": "eq-iso-24",
+     "type": "equation",
+     "page": 22,
+     "original": "ind"
+    },
+    {
+     "id": "eq-iso-25",
+     "type": "equation",
+     "page": 22,
+     "original": "11559 269 26.5 29.1 1938 2658 510"
+    },
+    {
+     "id": "eq-iso-26",
+     "type": "equation",
+     "page": 22,
+     "original": "ita"
+    },
+    {
+     "id": "eq-iso-27",
+     "type": "equation",
+     "page": 22,
+     "original": "79480 588 25.3 23.6 4378 6508 817"
+    },
+    {
+     "id": "eq-iso-28",
+     "type": "equation",
+     "page": 22,
+     "original": "jpn"
+    },
+    {
+     "id": "eq-iso-29",
+     "type": "equation",
+     "page": 22,
+     "original": "75863 17319 17.4 18.9 1973 21287 1141"
+    },
+    {
+     "id": "eq-iso-30",
+     "type": "equation",
+     "page": 22,
+     "original": "kan"
+    },
+    {
+     "id": "eq-iso-31",
+     "type": "equation",
+     "page": 22,
+     "original": "1451 114 20.0 11.6 – 232 198"
+    },
+    {
+     "id": "eq-iso-32",
+     "type": "equation",
+     "page": 22,
+     "original": "kor"
+    },
+    {
+     "id": "eq-iso-33",
+     "type": "equation",
+     "page": 22,
+     "original": "37854 316 15.0 21.3 – 8657 640"
+    },
+    {
+     "id": "eq-iso-34",
+     "type": "equation",
+     "page": 22,
+     "original": "mlt"
+    },
+    {
+     "id": "eq-iso-35",
+     "type": "equation",
+     "page": 22,
+     "original": "2122 106 23.2 13.5 131 130 60"
+    },
+    {
+     "id": "eq-iso-36",
+     "type": "equation",
+     "page": 22,
+     "original": "nld"
+    },
+    {
+     "id": "eq-iso-37",
+     "type": "equation",
+     "page": 22,
+     "original": "93933 1723 25.5 24.0 3720 6859 1210"
+    },
+    {
+     "id": "eq-iso-38",
+     "type": "equation",
+     "page": 22,
+     "original": "pes"
+    },
+    {
+     "id": "eq-iso-39",
+     "type": "equation",
+     "page": 22,
+     "original": "43788 386 22.2 19.6 – 7122 693"
+    },
+    {
+     "id": "eq-iso-40",
+     "type": "equation",
+     "page": 22,
+     "original": "pol"
+    },
+    {
+     "id": "eq-iso-41",
+     "type": "equation",
+     "page": 22,
+     "original": "53662 304 21.1 22.3 1324 9389 757"
+    },
+    {
+     "id": "eq-iso-42",
+     "type": "equation",
+     "page": 22,
+     "original": "por"
+    },
+    {
+     "id": "eq-iso-43",
+     "type": "equation",
+     "page": 22,
+     "original": "141931 269 35.4 38.1 4853 8696 928"
+    },
+    {
+     "id": "eq-iso-44",
+     "type": "equation",
+     "page": 22,
+     "original": "ron"
+    },
+    {
+     "id": "eq-iso-45",
+     "type": "equation",
+     "page": 22,
+     "original": "18719 135 32.1 31.5 2770 2878 716"
+    },
+    {
+     "id": "eq-iso-46",
+     "type": "equation",
+     "page": 22,
+     "original": "rus"
+    },
+    {
+     "id": "eq-iso-47",
+     "type": "equation",
+     "page": 22,
+     "original": "103906 259 25.4 27.8 11296 13509 1252"
+    },
+    {
+     "id": "eq-iso-48",
+     "type": "equation",
+     "page": 22,
+     "original": "slk"
+    },
+    {
+     "id": "eq-iso-49",
+     "type": "equation",
+     "page": 22,
+     "original": "16954 102 29.5 26.1 1267 3785 491"
+    },
+    {
+     "id": "eq-iso-50",
+     "type": "equation",
+     "page": 22,
+     "original": "spa"
+    },
+    {
+     "id": "eq-iso-51",
+     "type": "equation",
+     "page": 22,
+     "original": "324086 1511 24.3 23.3 27778 17388 2727"
+    },
+    {
+     "id": "eq-iso-52",
+     "type": "equation",
+     "page": 22,
+     "original": "swe"
+    },
+    {
+     "id": "eq-iso-53",
+     "type": "equation",
+     "page": 22,
+     "original": "125195 144 33.4 37.02 3438 2620 484"
+    },
+    {
+     "id": "eq-iso-54",
+     "type": "equation",
+     "page": 22,
+     "original": "swh"
+    },
+    {
+     "id": "eq-iso-55",
+     "type": "equation",
+     "page": 22,
+     "original": "18393 361 22.6 7.2 690 2620 484"
+    },
+    {
+     "id": "eq-iso-56",
+     "type": "equation",
+     "page": 22,
+     "original": "tam"
+    },
+    {
+     "id": "eq-iso-57",
+     "type": "equation",
+     "page": 22,
+     "original": "100331 245 14.3 9.2 – 1664 867"
+    },
+    {
+     "id": "eq-iso-58",
+     "type": "equation",
+     "page": 22,
+     "original": "tel"
+    },
+    {
+     "id": "eq-iso-59",
+     "type": "equation",
+     "page": 22,
+     "original": "3303 84 15.8 12.5 – 985 536"
+    },
+    {
+     "id": "eq-iso-60",
+     "type": "equation",
+     "page": 22,
+     "original": "tgl"
+    },
+    {
+     "id": "eq-iso-61",
+     "type": "equation",
+     "page": 22,
+     "original": "4497 108 13.3 24.4 – 633 266"
+    },
+    {
+     "id": "eq-iso-62",
+     "type": "equation",
+     "page": 22,
+     "original": "tha"
+    },
+    {
+     "id": "eq-iso-63",
+     "type": "equation",
+     "page": 22,
+     "original": "13421 195 15.3 16.1 2577 3563 542"
+    },
+    {
+     "id": "eq-iso-64",
+     "type": "equation",
+     "page": 22,
+     "original": "tur"
+    },
+    {
+     "id": "eq-iso-65",
+     "type": "equation",
+     "page": 22,
+     "original": "23275 174 21.0 26.6 1417 6545 426"
+    },
+    {
+     "id": "eq-iso-66",
+     "type": "equation",
+     "page": 22,
+     "original": "ukr"
+    },
+    {
+     "id": "eq-iso-67",
+     "type": "equation",
+     "page": 22,
+     "original": "6396 105 27.9 29.4 1220 1717 392"
+    },
+    {
+     "id": "eq-iso-68",
+     "type": "equation",
+     "page": 22,
+     "original": "urd"
+    },
+    {
+     "id": "eq-iso-69",
+     "type": "equation",
+     "page": 22,
+     "original": "16882 185 17.6 17.2 773 3416 652"
+    },
+    {
+     "id": "eq-iso-70",
+     "type": "equation",
+     "page": 22,
+     "original": "uzn"
+    },
+    {
+     "id": "eq-iso-71",
+     "type": "equation",
+     "page": 22,
+     "original": "8105 115 17.9 6.0 475 1846 157"
+    },
+    {
+     "id": "eq-iso-72",
+     "type": "equation",
+     "page": 22,
+     "original": "vie"
+    },
+    {
+     "id": "eq-iso-73",
+     "type": "equation",
+     "page": 22,
+     "original": "34336 194 17.8 20.4 1689 7692 868"
     }
    ]
   },
@@ -3112,16 +4091,10 @@ globalThis.PAPER_2308_11596 = {
    },
    "blocks": [
     {
-     "id": "p-total-avr-1",
-     "type": "paragraph",
+     "id": "eq-total-avr-1",
+     "type": "equation",
      "page": 22,
-     "sentences": [
-      {
-       "id": "s-total-avr-1-1",
-       "original": "2529741 43772 23.3 22.5 202796 239767 29161",
-       "zh": "（表格内容：Table 10 合计/平均行——2529741 43772 23.3 22.5 202796 239767 29161。）"
-      }
-     ]
+     "original": "2529741 43772 23.3 22.5 202796 239767 29161"
     },
     {
      "id": "tab-total-avr-1",
@@ -3131,16 +4104,10 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 10：语音编码器与挖掘数据量统计。Sen2Txx、Sxx2Ten 与 SxxSen 分别对应英语语音配外语文本、外语语音配英语文本、外语语音配英语句子。短横线表示未挖掘的方向。我们给出用于挖掘的原始音频量、以及训练语音编码器所用的人造 ASR 转写量。语音编码器以 Fleurs 测试集上的 BLEU 评测 S2TT。我们的模型执行零样本 S2TT。最后三列给出挖掘数据量。"
     },
     {
-     "id": "p-total-avr-2",
-     "type": "paragraph",
+     "id": "eq-total-avr-2",
+     "type": "equation",
      "page": 22,
-     "sentences": [
-      {
-       "id": "s-total-avr-2-1",
-       "original": "22",
-       "zh": "22"
-      }
-     ]
+     "original": "22"
     }
    ]
   },
@@ -3414,16 +4381,34 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-margin-setting-5-2",
-       "original": "The Sonar space, 8. https://github.com/facebookresearch/stopes 23 however, displayed different dynamics and the optimal threshold was adapted accordingly.",
+       "original": "The Sonar space, 8. https://github.com/facebookresearch/stopes",
+       "zh": "然而，Sonar 空间 8. https://github.com/facebookresearch/stopes 23 呈现出不同的动态特性，最优阈值需相应调整。"
+      }
+     ]
+    },
+    {
+     "id": "eq-margin-setting-11",
+     "type": "equation",
+     "page": 23,
+     "original": "23"
+    },
+    {
+     "id": "p-margin-setting-6",
+     "type": "paragraph",
+     "page": 23,
+     "sentences": [
+      {
+       "id": "s-margin-setting-6-1",
+       "original": "however, displayed different dynamics and the optimal threshold was adapted accordingly.",
        "zh": "然而，Sonar 空间 8. https://github.com/facebookresearch/stopes 23 呈现出不同的动态特性，最优阈值需相应调整。"
       },
       {
-       "id": "s-margin-setting-5-3",
+       "id": "s-margin-setting-6-2",
        "original": "Since full end-to-end evaluation with S2TT or S2ST training is too compute-intensive, we set the new threshold at 1.15 after some human inspection.",
        "zh": "由于完整的 S2TT 或 S2ST 训练端到端评测计算开销过大，我们在一定人工检视后把新阈值设为 1.15。"
       },
       {
-       "id": "s-margin-setting-5-4",
+       "id": "s-margin-setting-6-3",
        "original": "The statistics reported in Table 10 are based on this threshold.",
        "zh": "Table 10 报告的统计数字即基于这一阈值。"
       }
@@ -3561,45 +4546,31 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-3-4-1-6",
-       "original": "More complex architectures such as convolutional neural networks or Bi-LSTMs prove to be more efficient in capturing information from the speech input [Lozano-Diez et al., 2015; Fernando 9. available at https://github.com/facebookresearch/seamless_communication 24 et al., 2017].",
-       "zh": "卷积神经网络或 Bi-LSTM 等更复杂的架构，被证明在从语音输入中捕捉信息方面更高效 [Lozano-Diez et al., 2015; Fernando 9. 见 https://github.com/facebookresearch/seamless_communication 24 et al., 2017]。"
-      },
-      {
-       "id": "s-3-4-1-7",
-       "original": "Some other approaches try to bridge the gap with models focused on longer segments through teacher-student training [Shen et al., 2018, 2019].",
-       "zh": "另一些方法尝试通过师生训练（teacher-student training），用专注于长片段的模型来弥补差距 [Shen et al., 2018, 2019]。"
+       "original": "More complex architectures such as convolutional neural networks or Bi-LSTMs prove to be more efficient in capturing information from the speech input [Lozano-Diez et al., 2015; Fernando 9. available at https://github.com/facebookresearch/seamless_communication",
+       "zh": "（页码行：2。）\n（原始数据照录）\nMore complex architectures such as convolutional neural networks or Bi-LSTMs prove to be more efficient in capturing information from the speech input [Lozano-Diez et al., 2015; Fernando 9. available at https://github.com/facebookresearch/seamless_communication"
       }
      ]
     },
     {
+     "id": "eq-3-4-1",
+     "type": "equation",
+     "page": 24,
+     "original": "24"
+    },
+    {
      "id": "p-3-4-2",
      "type": "paragraph",
-     "page": 25,
+     "page": 24,
      "sentences": [
       {
        "id": "s-3-4-2-1",
-       "original": "Recent initiatives aimed at increasing language coverage to go beyond a handful of conventionally very high-resource languages.",
-       "zh": "近期的若干计划致力于扩大语言覆盖，超越少数几种传统的高资源语言。"
+       "original": "et al., 2017].",
+       "zh": "（页码行：2。）\n（原始数据照录）\net al., 2017]."
       },
       {
        "id": "s-3-4-2-2",
-       "original": "The ECAPA-TDNN architecture introduced in [Desplanques et al., 2020] has proven effective to distinguish between the 107 languages of Voxlingua107 [Valk and Alumäe, 2021].",
-       "zh": "[Desplanques et al., 2020] 引入的 ECAPA-TDNN 架构已被证明能有效区分 Voxlingua107 [Valk and Alumäe, 2021] 的 107 种语言。"
-      },
-      {
-       "id": "s-3-4-2-3",
-       "original": "The XLS-R pretrained model [Babu et al., 2022] is also fine-tuned on a language identification task using the same dataset.",
-       "zh": "XLS-R 预训练模型 [Babu et al., 2022] 也在同一数据集上针对语种识别任务做了微调。"
-      },
-      {
-       "id": "s-3-4-2-4",
-       "original": "Whisper-Largev2 is another popular model that can perform this task for 99 languages [Radford et al., 2022].",
-       "zh": "Whisper-Largev2 是另一个流行的模型，可为 99 种语言执行该任务 [Radford et al., 2022]。"
-      },
-      {
-       "id": "s-3-4-2-5",
-       "original": "Very recently, the MMS project further broadened language support to 4,000 spoken languages [Pratap et al., 2023].",
-       "zh": "就在最近，MMS 项目进一步把语言支持扩展到 4,000 种口语 [Pratap et al., 2023]。"
+       "original": "Some other approaches try to bridge the gap with models focused on longer segments through teacher-student training [Shen et al., 2018, 2019].",
+       "zh": "另一些方法尝试通过师生训练（teacher-student training），用专注于长片段的模型来弥补差距 [Shen et al., 2018, 2019]。"
       }
      ]
     },
@@ -3610,73 +4581,28 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-3-4-3-1",
-       "original": "3.4.2 Speech segmentation To achieve sentence-like speech segments, a commonly employed method is pause-based segmentation using Voice Activity Detection (VAD).",
-       "zh": "3.4.2 语音切分 要获得句子级别的语音片段，常用方法是基于停顿的切分，即使用语音活动检测（Voice Activity Detection, VAD）。"
+       "original": "Recent initiatives aimed at increasing language coverage to go beyond a handful of conventionally very high-resource languages.",
+       "zh": "近期的若干计划致力于扩大语言覆盖，超越少数几种传统的高资源语言。"
       },
       {
        "id": "s-3-4-3-2",
-       "original": "This approach is widely utilized in various applications, including speech mining, ASR, and speech translation.",
-       "zh": "这一方法被广泛应用于语音挖掘、ASR 和语音翻译等多种场景。"
+       "original": "The ECAPA-TDNN architecture introduced in [Desplanques et al., 2020] has proven effective to distinguish between the 107 languages of Voxlingua107 [Valk and Alumäe, 2021].",
+       "zh": "[Desplanques et al., 2020] 引入的 ECAPA-TDNN 架构已被证明能有效区分 Voxlingua107 [Valk and Alumäe, 2021] 的 107 种语言。"
       },
       {
        "id": "s-3-4-3-3",
-       "original": "In this work, we adopted the over-segmentation strategy proposed by Duquenne et al. [2021] on top of the segments obtained through VAD segmentation.",
-       "zh": "在本工作中，我们在 VAD 切分得到的片段之上，采用了 Duquenne et al. [2021] 提出的过度切分（over-segmentation）策略。"
+       "original": "The XLS-R pretrained model [Babu et al., 2022] is also fine-tuned on a language identification task using the same dataset.",
+       "zh": "XLS-R 预训练模型 [Babu et al., 2022] 也在同一数据集上针对语种识别任务做了微调。"
       },
       {
        "id": "s-3-4-3-4",
-       "original": "While this over-segmentation significantly improves the recall of the mining process, it does come with certain drawbacks.",
-       "zh": "这种过度切分显著提升了挖掘过程的召回率，但也带来了一些弊端。"
+       "original": "Whisper-Largev2 is another popular model that can perform this task for 99 languages [Radford et al., 2022].",
+       "zh": "Whisper-Largev2 是另一个流行的模型，可为 99 种语言执行该任务 [Radford et al., 2022]。"
       },
       {
        "id": "s-3-4-3-5",
-       "original": "Specifically, it leads to a substantial increase (8x) in the number of segments, introducing noise in the embedding space, and raising the computational demand for the mining process.",
-       "zh": "具体而言，它使片段数量大幅增加（8 倍），在嵌入空间中引入噪声，并提高了挖掘过程的算力需求。"
-      },
-      {
-       "id": "s-3-4-3-6",
-       "original": "Pause-based segments may not align with semantically coherent sentences; in fact, they tend to be too short because speaker pauses can extend beyond sentence boundaries.",
-       "zh": "基于停顿的片段未必与语义连贯的句子对齐；实际上它们往往偏短，因为说话人的停顿可能跨越句子边界。"
-      },
-      {
-       "id": "s-3-4-3-7",
-       "original": "Consequently, for speech translation, researchers have put forward more sophisticated segmentation strategies with the potential to deliver higher-quality speech translation results.",
-       "zh": "因此，在语音翻译领域，研究者提出了更精细的切分策略，有望带来更高质量的语音翻译结果。"
-      },
-      {
-       "id": "s-3-4-3-8",
-       "original": "Gállego et al. [2021] used a pretrained wav2vec 2.0 instead of VAD to detect speech segments.",
-       "zh": "Gállego et al. [2021] 使用预训练的 wav2vec 2.0 替代 VAD 来检测语音片段。"
-      },
-      {
-       "id": "s-3-4-3-9",
-       "original": "Potapczyk and Przybysz [2020a] proposed a divide-and-conquer (DAC) algorithm that iteratively operates on top of VAD longest detected pauses until all segments become below a max-segment length parameter.",
-       "zh": "Potapczyk and Przybysz [2020a] 提出了一种分治（divide-and-conquer, DAC）算法，在 VAD 检测到的最长停顿上迭代操作，直到所有片段都短于最大片段长度参数。"
-      },
-      {
-       "id": "s-3-4-3-10",
-       "original": "Gaido et al. [2021] further builds upon this through a hybrid approach.",
-       "zh": "Gaido et al. [2021] 在此基础上进一步提出混合方法。"
-      },
-      {
-       "id": "s-3-4-3-11",
-       "original": "SHAS [Tsiamas et al., 2022] train a classifier on top of wav2vec 2.0 using optimal segmentation from a manually segmented corpus.",
-       "zh": "SHAS [Tsiamas et al., 2022] 在 wav2vec 2.0 之上训练分类器，监督信号来自人工切分语料上的最优切分。"
-      },
-      {
-       "id": "s-3-4-3-12",
-       "original": "Similar to Potapczyk and Przybysz [2020a], it then applies a DAC algorithm on the splitting probabilities of the network to obtain final segmentation decisions.",
-       "zh": "与 Potapczyk and Przybysz [2020a] 类似，随后它在网络输出的切分概率上应用 DAC 算法，得到最终切分决策。"
-      },
-      {
-       "id": "s-3-4-3-13",
-       "original": "This approach demonstrated significant gains over simple pause-based segmentation and other baselines in speech-to-text translation tasks.",
-       "zh": "该方法在语音到文本翻译任务上相对简单停顿切分和其他基线取得了显著收益。"
-      },
-      {
-       "id": "s-3-4-3-14",
-       "original": "These segmentation methods could be promising for speech mining, suggesting exciting avenues for future research.",
-       "zh": "这些切分方法对语音挖掘很有潜力，指明了令人兴奋的未来研究方向。"
+       "original": "Very recently, the MMS project further broadened language support to 4,000 spoken languages [Pratap et al., 2023].",
+       "zh": "就在最近，MMS 项目进一步把语言支持扩展到 4,000 种口语 [Pratap et al., 2023]。"
       }
      ]
     },
@@ -3687,97 +4613,128 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-3-4-4-1",
-       "original": "3.4.3 Multilingual and multimodal representations Several works have studied how to learn multilingual sentence representations.",
-       "zh": "3.4.3 多语言与多模态表征 已有多项工作研究如何学习多语言句子表征。"
+       "original": "3.4.2 Speech segmentation To achieve sentence-like speech segments, a commonly employed method is pause-based segmentation using Voice Activity Detection (VAD).",
+       "zh": "3.4.2 语音切分 要获得句子级别的语音片段，常用方法是基于停顿的切分，即使用语音活动检测（Voice Activity Detection, VAD）。"
       },
       {
        "id": "s-3-4-4-2",
-       "original": "Well known approaches are Laser [Artetxe and Schwenk, 2019b], LaBSE [Feng et al., 2022], or [Yang et al., 2019; Ramesh et al., 2022].",
-       "zh": "知名的方法有 Laser [Artetxe and Schwenk, 2019b]、LaBSE [Feng et al., 2022]，以及 [Yang et al., 2019; Ramesh et al., 2022]。"
+       "original": "This approach is widely utilized in various applications, including speech mining, ASR, and speech translation.",
+       "zh": "这一方法被广泛应用于语音挖掘、ASR 和语音翻译等多种场景。"
       },
       {
        "id": "s-3-4-4-3",
-       "original": "While Laser was trained with an MT translation objective, a decoder compatible with the Laser embedding space is not freely available.",
-       "zh": "Laser 虽以 MT 翻译目标训练，但并没有自由可用的、与 Laser 嵌入空间兼容的解码器。"
+       "original": "In this work, we adopted the over-segmentation strategy proposed by Duquenne et al. [2021] on top of the segments obtained through VAD segmentation.",
+       "zh": "在本工作中，我们在 VAD 切分得到的片段之上，采用了 Duquenne et al. [2021] 提出的过度切分（over-segmentation）策略。"
       },
       {
        "id": "s-3-4-4-4",
-       "original": "To the best of our knowledge, Sonar is the first sentence embedding space for which an efficient and multilingual decoder is available.",
-       "zh": "据我们所知，Sonar 是第一个配有高效多语言解码器的句子嵌入空间。"
+       "original": "While this over-segmentation significantly improves the recall of the mining process, it does come with certain drawbacks.",
+       "zh": "这种过度切分显著提升了挖掘过程的召回率，但也带来了一些弊端。"
       },
       {
        "id": "s-3-4-4-5",
-       "original": "Another direction of research is to first train an English sentence representation (e.g., sentence-BERT [Reimers and Gurevych, 2019]) and in a second step, extend it to more languages using teacher-student training [Reimers and Gurevych, 25 2020].",
-       "zh": "另一条研究路线是先训练一个英语句子表征（如 sentence-BERT [Reimers and Gurevych, 2019]），第二步再用师生训练把它扩展到更多语言 [Reimers and Gurevych, 25 2020]。"
+       "original": "Specifically, it leads to a substantial increase (8x) in the number of segments, introducing noise in the embedding space, and raising the computational demand for the mining process.",
+       "zh": "具体而言，它使片段数量大幅增加（8 倍），在嵌入空间中引入噪声，并提高了挖掘过程的算力需求。"
       },
       {
        "id": "s-3-4-4-6",
-       "original": "The same approach was used to extend Laser to 200 languages, named Laser3 [Heffernan et al., 2022].",
-       "zh": "同样的方法也被用于把 Laser 扩展到 200 种语言，即 Laser3 [Heffernan et al., 2022]。"
+       "original": "Pause-based segments may not align with semantically coherent sentences; in fact, they tend to be too short because speaker pauses can extend beyond sentence boundaries.",
+       "zh": "基于停顿的片段未必与语义连贯的句子对齐；实际上它们往往偏短，因为说话人的停顿可能跨越句子边界。"
+      },
+      {
+       "id": "s-3-4-4-7",
+       "original": "Consequently, for speech translation, researchers have put forward more sophisticated segmentation strategies with the potential to deliver higher-quality speech translation results.",
+       "zh": "因此，在语音翻译领域，研究者提出了更精细的切分策略，有望带来更高质量的语音翻译结果。"
+      },
+      {
+       "id": "s-3-4-4-8",
+       "original": "Gállego et al. [2021] used a pretrained wav2vec 2.0 instead of VAD to detect speech segments.",
+       "zh": "Gállego et al. [2021] 使用预训练的 wav2vec 2.0 替代 VAD 来检测语音片段。"
+      },
+      {
+       "id": "s-3-4-4-9",
+       "original": "Potapczyk and Przybysz [2020a] proposed a divide-and-conquer (DAC) algorithm that iteratively operates on top of VAD longest detected pauses until all segments become below a max-segment length parameter.",
+       "zh": "Potapczyk and Przybysz [2020a] 提出了一种分治（divide-and-conquer, DAC）算法，在 VAD 检测到的最长停顿上迭代操作，直到所有片段都短于最大片段长度参数。"
+      },
+      {
+       "id": "s-3-4-4-10",
+       "original": "Gaido et al. [2021] further builds upon this through a hybrid approach.",
+       "zh": "Gaido et al. [2021] 在此基础上进一步提出混合方法。"
+      },
+      {
+       "id": "s-3-4-4-11",
+       "original": "SHAS [Tsiamas et al., 2022] train a classifier on top of wav2vec 2.0 using optimal segmentation from a manually segmented corpus.",
+       "zh": "SHAS [Tsiamas et al., 2022] 在 wav2vec 2.0 之上训练分类器，监督信号来自人工切分语料上的最优切分。"
+      },
+      {
+       "id": "s-3-4-4-12",
+       "original": "Similar to Potapczyk and Przybysz [2020a], it then applies a DAC algorithm on the splitting probabilities of the network to obtain final segmentation decisions.",
+       "zh": "与 Potapczyk and Przybysz [2020a] 类似，随后它在网络输出的切分概率上应用 DAC 算法，得到最终切分决策。"
+      },
+      {
+       "id": "s-3-4-4-13",
+       "original": "This approach demonstrated significant gains over simple pause-based segmentation and other baselines in speech-to-text translation tasks.",
+       "zh": "该方法在语音到文本翻译任务上相对简单停顿切分和其他基线取得了显著收益。"
+      },
+      {
+       "id": "s-3-4-4-14",
+       "original": "These segmentation methods could be promising for speech mining, suggesting exciting avenues for future research.",
+       "zh": "这些切分方法对语音挖掘很有潜力，指明了令人兴奋的未来研究方向。"
       }
      ]
     },
     {
      "id": "p-3-4-5",
      "type": "paragraph",
-     "page": 26,
+     "page": 25,
      "sentences": [
       {
        "id": "s-3-4-5-1",
-       "original": "Learning unsupervised representations of speech is the focus of several works, whether involving monolingual [Baevski et al., 2022] or multilingual speech [Babu et al., 2022; Hsu et al., 2021; Chung et al., 2021].",
-       "zh": "学习语音的无监督表征是多项工作的焦点，无论涉及单语语音 [Baevski et al., 2022] 还是多语言语音 [Babu et al., 2022; Hsu et al., 2021; Chung et al., 2021]。"
+       "original": "3.4.3 Multilingual and multimodal representations Several works have studied how to learn multilingual sentence representations.",
+       "zh": "3.4.3 多语言与多模态表征 已有多项工作研究如何学习多语言句子表征。"
       },
       {
        "id": "s-3-4-5-2",
-       "original": "Examples of joint text and speech pre-trained models are mSLAM [Bapna et al., 2022] and Mu2SLAM [Cheng et al., 2023].",
-       "zh": "文本与语音联合预训练模型的例子有 mSLAM [Bapna et al., 2022] 和 Mu2SLAM [Cheng et al., 2023]。"
+       "original": "Well known approaches are Laser [Artetxe and Schwenk, 2019b], LaBSE [Feng et al., 2022], or [Yang et al., 2019; Ramesh et al., 2022].",
+       "zh": "知名的方法有 Laser [Artetxe and Schwenk, 2019b]、LaBSE [Feng et al., 2022]，以及 [Yang et al., 2019; Ramesh et al., 2022]。"
       },
       {
        "id": "s-3-4-5-3",
-       "original": "Duquenne et al. [2021] were the first to introduce fixed-size text and speech representations that can be used to perform multimodal mining, followed by [Khurana et al., 2022] 3.4.4 Speech mining The proof of concept of a joint text/speech representation that can be used to perform text/speech or speech/speech mining was presented by Duquenne et al. [2021].",
-       "zh": "Duquenne et al. [2021] 率先引入了可用于多模态挖掘的固定维度文本与语音表征，随后是 [Khurana et al., 2022]。3.4.4 语音挖掘 可用于文本/语音或语音/语音挖掘的联合文本/语音表征，其概念验证由 Duquenne et al. [2021] 给出。"
+       "original": "While Laser was trained with an MT translation objective, a decoder compatible with the Laser embedding space is not freely available.",
+       "zh": "Laser 虽以 MT 翻译目标训练，但并没有自由可用的、与 Laser 嵌入空间兼容的解码器。"
       },
       {
        "id": "s-3-4-5-4",
-       "original": "In follow-up work, this approach was used to align speech in 17 languages in the VoxPopuli corpus to give rise to the SpeechMatrix corpus [Duquenne et al., 2023a].",
-       "zh": "在后续工作中，该方法被用于对齐 VoxPopuli 语料中 17 种语言的语音，由此产生了 SpeechMatrix 语料 [Duquenne et al., 2023a]。"
+       "original": "To the best of our knowledge, Sonar is the first sentence embedding space for which an efficient and multilingual decoder is available.",
+       "zh": "据我们所知，Sonar 是第一个配有高效多语言解码器的句子嵌入空间。"
       },
       {
        "id": "s-3-4-5-5",
-       "original": "The authors mined for parallel speech segments in all 136 possible combinations of languages, yielding a total of 418 thousand hours of speech-to-speech alignments, out of which about 46 thousand hours are aligned with English.",
-       "zh": "作者们在全部 136 种可能的语言组合中挖掘平行语音片段，共得到 418 thousand（418,000）小时的语音到语音对齐，其中约 46 thousand（46,000）小时与英语对齐。"
-      },
-      {
-       "id": "s-3-4-5-6",
-       "original": "SpeechMatrix is a large corpus, but the domain is rather limited since the raw audio of the VoxPopuli corpus is derived from European Parliament speeches.",
-       "zh": "SpeechMatrix 是一个大语料，但领域相当受限，因为 VoxPopuli 语料的原始音频来自欧洲议会演讲。"
-      },
-      {
-       "id": "s-3-4-5-7",
-       "original": "The corpus SpeechMatrix is freely available.",
-       "zh": "SpeechMatrix 语料是自由可用的。"
-      },
-      {
-       "id": "s-3-4-5-8",
-       "original": "Khurana et al. [2022] use a joint text/speech embedding space, dubbed Samu-Xlsr, to evaluate the recall of text and speech retrieval in the corpora CoVoST 2, MUST-C, and MTEDx.",
-       "zh": "Khurana et al. [2022] 使用名为 Samu-Xlsr 的联合文本/语音嵌入空间，评测了 CoVoST 2、MUST-C 和 MTEDx 语料中文本与语音检索的召回率。"
+       "original": "Another direction of research is to first train an English sentence representation (e.g., sentence-BERT [Reimers and Gurevych, 2019]) and in a second step, extend it to more languages using teacher-student training [Reimers and Gurevych,",
+       "zh": "（页码行：2。）\n（原始数据照录）\nAnother direction of research is to first train an English sentence representation (e.g., sentence-BERT [Reimers and Gurevych, 2019]) and in a second step, extend it to more languages using teacher-student training [Reimers and Gurevych,"
       }
      ]
     },
     {
+     "id": "eq-3-4-2",
+     "type": "equation",
+     "page": 25,
+     "original": "25"
+    },
+    {
      "id": "p-3-4-6",
      "type": "paragraph",
-     "page": 26,
+     "page": 25,
      "sentences": [
       {
        "id": "s-3-4-6-1",
-       "original": "There are several works that indirectly create speech-to-speech corpora.",
-       "zh": "还有若干工作间接地创建语音到语音语料。"
+       "original": "2020].",
+       "zh": "（页码行：2。）\n（原始数据照录）\n2020]."
       },
       {
        "id": "s-3-4-6-2",
-       "original": "One direction of research is to perform speech synthesis on corpora aligned at the text level, (e.g., the CVSS corpus [Jia et al., 2022b] which is based on the CoVoST 2 speech-to-text translation corpus).",
-       "zh": "一条研究路线是在文本层面对齐的语料上执行语音合成（例如基于 CoVoST 2 语音到文本翻译语料构建的 CVSS 语料 [Jia et al., 2022b]）。"
+       "original": "The same approach was used to extend Laser to 200 languages, named Laser3 [Heffernan et al., 2022].",
+       "zh": "同样的方法也被用于把 Laser 扩展到 200 种语言，即 Laser3 [Heffernan et al., 2022]。"
       }
      ]
     },
@@ -3788,10 +4745,68 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-3-4-7-1",
-       "original": "26",
-       "zh": "26"
+       "original": "Learning unsupervised representations of speech is the focus of several works, whether involving monolingual [Baevski et al., 2022] or multilingual speech [Babu et al., 2022; Hsu et al., 2021; Chung et al., 2021].",
+       "zh": "学习语音的无监督表征是多项工作的焦点，无论涉及单语语音 [Baevski et al., 2022] 还是多语言语音 [Babu et al., 2022; Hsu et al., 2021; Chung et al., 2021]。"
+      },
+      {
+       "id": "s-3-4-7-2",
+       "original": "Examples of joint text and speech pre-trained models are mSLAM [Bapna et al., 2022] and Mu2SLAM [Cheng et al., 2023].",
+       "zh": "文本与语音联合预训练模型的例子有 mSLAM [Bapna et al., 2022] 和 Mu2SLAM [Cheng et al., 2023]。"
+      },
+      {
+       "id": "s-3-4-7-3",
+       "original": "Duquenne et al. [2021] were the first to introduce fixed-size text and speech representations that can be used to perform multimodal mining, followed by [Khurana et al., 2022] 3.4.4 Speech mining The proof of concept of a joint text/speech representation that can be used to perform text/speech or speech/speech mining was presented by Duquenne et al. [2021].",
+       "zh": "Duquenne et al. [2021] 率先引入了可用于多模态挖掘的固定维度文本与语音表征，随后是 [Khurana et al., 2022]。3.4.4 语音挖掘 可用于文本/语音或语音/语音挖掘的联合文本/语音表征，其概念验证由 Duquenne et al. [2021] 给出。"
+      },
+      {
+       "id": "s-3-4-7-4",
+       "original": "In follow-up work, this approach was used to align speech in 17 languages in the VoxPopuli corpus to give rise to the SpeechMatrix corpus [Duquenne et al., 2023a].",
+       "zh": "在后续工作中，该方法被用于对齐 VoxPopuli 语料中 17 种语言的语音，由此产生了 SpeechMatrix 语料 [Duquenne et al., 2023a]。"
+      },
+      {
+       "id": "s-3-4-7-5",
+       "original": "The authors mined for parallel speech segments in all 136 possible combinations of languages, yielding a total of 418 thousand hours of speech-to-speech alignments, out of which about 46 thousand hours are aligned with English.",
+       "zh": "作者们在全部 136 种可能的语言组合中挖掘平行语音片段，共得到 418 thousand（418,000）小时的语音到语音对齐，其中约 46 thousand（46,000）小时与英语对齐。"
+      },
+      {
+       "id": "s-3-4-7-6",
+       "original": "SpeechMatrix is a large corpus, but the domain is rather limited since the raw audio of the VoxPopuli corpus is derived from European Parliament speeches.",
+       "zh": "SpeechMatrix 是一个大语料，但领域相当受限，因为 VoxPopuli 语料的原始音频来自欧洲议会演讲。"
+      },
+      {
+       "id": "s-3-4-7-7",
+       "original": "The corpus SpeechMatrix is freely available.",
+       "zh": "SpeechMatrix 语料是自由可用的。"
+      },
+      {
+       "id": "s-3-4-7-8",
+       "original": "Khurana et al. [2022] use a joint text/speech embedding space, dubbed Samu-Xlsr, to evaluate the recall of text and speech retrieval in the corpora CoVoST 2, MUST-C, and MTEDx.",
+       "zh": "Khurana et al. [2022] 使用名为 Samu-Xlsr 的联合文本/语音嵌入空间，评测了 CoVoST 2、MUST-C 和 MTEDx 语料中文本与语音检索的召回率。"
       }
      ]
+    },
+    {
+     "id": "p-3-4-8",
+     "type": "paragraph",
+     "page": 26,
+     "sentences": [
+      {
+       "id": "s-3-4-8-1",
+       "original": "There are several works that indirectly create speech-to-speech corpora.",
+       "zh": "还有若干工作间接地创建语音到语音语料。"
+      },
+      {
+       "id": "s-3-4-8-2",
+       "original": "One direction of research is to perform speech synthesis on corpora aligned at the text level, (e.g., the CVSS corpus [Jia et al., 2022b] which is based on the CoVoST 2 speech-to-text translation corpus).",
+       "zh": "一条研究路线是在文本层面对齐的语料上执行语音合成（例如基于 CoVoST 2 语音到文本翻译语料构建的 CVSS 语料 [Jia et al., 2022b]）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-4-3",
+     "type": "equation",
+     "page": 26,
+     "original": "26"
     }
    ]
   },
@@ -3906,8 +4921,26 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-4-2-3-8",
-       "original": "There are two views of what constitutes a direct model in speech-to-speech translation literature: (1) A model that does not use intermediate text representation [Lee et al., 2022a] and (2) A model that directly predicts the target spectrogram [Jia et al., 2022a] 27 (1) Pre-trained models W2V-BERT 2.0 SEAMLESSM4T-NLLB Unsupervised speech pre-training T2TT encoder-decoder (2) Multitasking UNITY Length adaptor Conformer Speech Encoder Transformer Text Encoder T2U Text-to-Unit encoder-decoder Vocoder Speech resynthesis S2ST HiFi-GAN Unit Vocoder X2T (ASR, T2TT, S2TT) Transformer Unit Decoder Transformer Text-to-Unit Encoder Transformer Text Decoder",
-       "zh": "在语音到语音翻译文献中，对「直接模型」的界定有两种看法：(1) 不使用中间文本表征的模型 [Lee et al., 2022a]；(2) 直接预测目标声谱图的模型 [Jia et al., 2022a] 27 (1) 预训练模型 W2V-BERT 2.0 SEAMLESSM4T-NLLB 无监督语音预训练 T2TT 编码器-解码器 (2) 多任务 UNITY 长度适配器 Conformer 语音编码器 Transformer 文本编码器 T2U 文本到单元编码器-解码器 声码器 语音重合成 S2ST HiFi-GAN 单元声码器 X2T（ASR、T2TT、S2TT）Transformer 单元解码器 Transformer 文本到单元编码器 Transformer 文本解码器"
+       "original": "There are two views of what constitutes a direct model in speech-to-speech translation literature: (1) A model that does not use intermediate text representation [Lee et al., 2022a] and (2) A model that directly predicts the target spectrogram [Jia et al., 2022a]",
+       "zh": "（页码行：2。）\n（原始数据照录）\nThere are two views of what constitutes a direct model in speech-to-speech translation literature: (1) A model that does not use intermediate text representation [Lee et al., 2022a] and (2) A model that directly predicts the target spectrogram [Jia et al., 2022a]"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-2-1",
+     "type": "equation",
+     "page": 27,
+     "original": "27"
+    },
+    {
+     "id": "p-4-2-4",
+     "type": "paragraph",
+     "page": 27,
+     "sentences": [
+      {
+       "id": "s-4-2-4-1",
+       "original": "(1) Pre-trained models W2V-BERT 2.0 SEAMLESSM4T-NLLB Unsupervised speech pre-training T2TT encoder-decoder (2) Multitasking UNITY Length adaptor Conformer Speech Encoder Transformer Text Encoder T2U Text-to-Unit encoder-decoder Vocoder Speech resynthesis S2ST HiFi-GAN Unit Vocoder X2T (ASR, T2TT, S2TT) Transformer Unit Decoder Transformer Text-to-Unit Encoder Transformer Text Decoder",
+       "zh": "（页码行：2。）\n（原始数据照录）\n(1) Pre-trained models W2V-BERT 2.0 SEAMLESSM4T-NLLB Unsupervised speech pre-training T2TT encoder-decoder (2) Multitasking UNITY Length adaptor Conformer Speech Encoder Transformer Text Encoder T2U Text-to-Unit encoder-decoder Vocoder Speech resynthesis S2ST HiFi-GAN Unit Vocoder X2T (ASR, T2TT, S2TT) Transformer Unit Decoder Transformer Text-to-Unit Encoder Transformer Text Decoder"
       }
      ]
     },
@@ -3919,12 +4952,12 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 4：SeamlessM4T 总览。(1) 展示微调多任务 UnitY 时使用的预训练模型。(2) 概述多任务 UnitY：两个编码器、文本解码器、T2U 编码器-解码器，以及支持 S2ST 输出语音合成的声码器。"
     },
     {
-     "id": "p-4-2-4",
+     "id": "p-4-2-5",
      "type": "paragraph",
      "page": 28,
      "sentences": [
       {
-       "id": "s-4-2-4-1",
+       "id": "s-4-2-5-1",
        "original": "our model using standard automatic metrics in Section 4.4 and compared its performance with state-of-the-art speech translation models.",
        "zh": "在第 4.4 节中，我们的模型采用标准自动指标，并与最先进的语音翻译模型比较了性能。"
       }
@@ -4006,10 +5039,16 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-4-1-2-3",
-       "original": "The latter refines the contextualized representations by a different learning task of predicting the GVQ codes directly instead of 28",
+       "original": "The latter refines the contextualized representations by a different learning task of predicting the GVQ codes directly instead of",
        "zh": "掩码预测模块通过一个不同的学习任务来精炼这些上下文表征：直接预测 GVQ 码，而不是 28"
       }
      ]
+    },
+    {
+     "id": "eq-4-1-1",
+     "type": "equation",
+     "page": 28,
+     "original": "28"
     }
    ]
   },
@@ -4030,10 +5069,70 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-3-1-1",
-       "original": "Languages Hours Model type Open model XLS-R-2B-S2T 128 0.4M wav2vec 2.0 [Baevski et al., 2020] ✓ USM over 300† 12M BEST-RQ [Chiu et al., 2022] MMS 1406 0.5M wav2vec 2.0 [Baevski et al., 2020] ✓ SeamlessM4T-Large over 143† 1M w2v-BERT 2.0 ✓",
-       "zh": "（表格内容：多语言语音预训练模型对比——列为语言数、时长、模型类型、是否开放模型。XLS-R-2B-S2T：128 种语言、0.4M 小时、wav2vec 2.0 [Baevski et al., 2020]、开放 ✓；USM：300 多种†、12M 小时、BEST-RQ [Chiu et al., 2022]、不开放；MMS：1406 种、0.5M 小时、wav2vec 2.0 [Baevski et al., 2020]、开放 ✓；SeamlessM4T-Large：143 种以上†、1M 小时、w2v-BERT 2.0、开放 ✓。）"
+       "original": "Languages Hours Model type Open model XLS-R-2B-S2T",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-model-3-1",
+     "type": "equation",
+     "page": 29,
+     "original": "128"
+    },
+    {
+     "id": "eq-model-3-2",
+     "type": "equation",
+     "page": 29,
+     "original": "0.4M wav2vec 2.0 [Baevski et al., 2020]"
+    },
+    {
+     "id": "eq-model-3-3",
+     "type": "equation",
+     "page": 29,
+     "original": "✓"
+    },
+    {
+     "id": "p-model-3-2",
+     "type": "paragraph",
+     "page": 29,
+     "sentences": [
+      {
+       "id": "s-model-3-2-1",
+       "original": "USM over 300† 12M BEST-RQ [Chiu et al., 2022] MMS",
+       "zh": "（页码行：2。）\n（原始数据照录）\nUSM over 300† 12M BEST-RQ [Chiu et al., 2022] MMS"
+      }
+     ]
+    },
+    {
+     "id": "eq-model-3-4",
+     "type": "equation",
+     "page": 29,
+     "original": "1406"
+    },
+    {
+     "id": "eq-model-3-5",
+     "type": "equation",
+     "page": 29,
+     "original": "0.5M wav2vec 2.0 [Baevski et al., 2020]"
+    },
+    {
+     "id": "eq-model-3-6",
+     "type": "equation",
+     "page": 29,
+     "original": "✓"
+    },
+    {
+     "id": "eq-model-3-7",
+     "type": "equation",
+     "page": 29,
+     "original": "SeamlessM4T-Large over 143† 1M w2v-BERT 2.0"
+    },
+    {
+     "id": "eq-model-3-8",
+     "type": "equation",
+     "page": 29,
+     "original": "✓"
     },
     {
      "id": "tab-model-3-1",
@@ -4043,59 +5142,47 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 11：最先进 ASR 与 S2TT 模型中多语言语音预训练的对比。†根据有语言信息的数据部分估算。"
     },
     {
-     "id": "p-model-3-2",
-     "type": "paragraph",
-     "page": 29,
-     "sentences": [
-      {
-       "id": "s-model-3-2-1",
-       "original": "polarizing the prediction probability of correct and incorrect codes at the masked positions.",
-       "zh": "在掩码位置上拉大正确码与错误码预测概率的差距。"
-      },
-      {
-       "id": "s-model-3-2-2",
-       "original": "Instead of using a single GVQ codebook, w2v-BERT 2.0 follows Baevski et al. [2020] to use product quantization with two GVQ codebooks.",
-       "zh": "w2v-BERT 2.0 不使用单一 GVQ 码本，而是沿用 Baevski et al. [2020] 的做法，采用两个 GVQ 码本的乘积量化（product quantization）。"
-      },
-      {
-       "id": "s-model-3-2-3",
-       "original": "Its contrastive learning loss Lc is the same as that in w2v-BERT, including a codebook diversity loss to encourage the uniform usage of codes.",
-       "zh": "其对比学习损失 Lc 与 w2v-BERT 中的相同，包括一个鼓励码均匀使用的码本多样性损失。"
-      },
-      {
-       "id": "s-model-3-2-4",
-       "original": "Following w2v-BERT, we use GVQ codebooks for masked prediction learning and denote the corresponding loss as LmGVQ.",
-       "zh": "沿用 w2v-BERT，我们用 GVQ 码本做掩码预测学习，相应损失记为 LmGVQ。"
-      },
-      {
-       "id": "s-model-3-2-5",
-       "original": "We also created an additional masked prediction task using random projection quantizers [Chiu et al., 2022] (RPQ), for which we denote the corresponding loss as LmRPQ.",
-       "zh": "我们还用随机投影量化器（random projection quantizers, RPQ）[Chiu et al., 2022] 创建了一个额外的掩码预测任务，相应损失记为 LmRPQ。"
-      },
-      {
-       "id": "s-model-3-2-6",
-       "original": "The overall w2v-BERT 2.0 training loss L is defined as follows:",
-       "zh": "w2v-BERT 2.0 的整体训练损失 L 定义如下："
-      }
-     ]
-    },
-    {
-     "id": "eq-model-3-1",
-     "type": "equation",
-     "page": 29,
-     "original": "L = wcLc + wmGVQLmGVQ + wmRPQLmRPQ, (2)"
-    },
-    {
      "id": "p-model-3-3",
      "type": "paragraph",
      "page": 29,
      "sentences": [
       {
        "id": "s-model-3-3-1",
-       "original": "where loss weights wc, wmGVQ and wmRPQ are set to 1.0, 0.5, and 0.5, respectively.",
-       "zh": "其中损失权重 wc、wmGVQ 和 wmRPQ 分别设为 1.0、0.5 和 0.5。"
+       "original": "polarizing the prediction probability of correct and incorrect codes at the masked positions.",
+       "zh": "在掩码位置上拉大正确码与错误码预测概率的差距。"
+      },
+      {
+       "id": "s-model-3-3-2",
+       "original": "Instead of using a single GVQ codebook, w2v-BERT 2.0 follows Baevski et al. [2020] to use product quantization with two GVQ codebooks.",
+       "zh": "w2v-BERT 2.0 不使用单一 GVQ 码本，而是沿用 Baevski et al. [2020] 的做法，采用两个 GVQ 码本的乘积量化（product quantization）。"
+      },
+      {
+       "id": "s-model-3-3-3",
+       "original": "Its contrastive learning loss Lc is the same as that in w2v-BERT, including a codebook diversity loss to encourage the uniform usage of codes.",
+       "zh": "其对比学习损失 Lc 与 w2v-BERT 中的相同，包括一个鼓励码均匀使用的码本多样性损失。"
+      },
+      {
+       "id": "s-model-3-3-4",
+       "original": "Following w2v-BERT, we use GVQ codebooks for masked prediction learning and denote the corresponding loss as LmGVQ.",
+       "zh": "沿用 w2v-BERT，我们用 GVQ 码本做掩码预测学习，相应损失记为 LmGVQ。"
+      },
+      {
+       "id": "s-model-3-3-5",
+       "original": "We also created an additional masked prediction task using random projection quantizers [Chiu et al., 2022] (RPQ), for which we denote the corresponding loss as LmRPQ.",
+       "zh": "我们还用随机投影量化器（random projection quantizers, RPQ）[Chiu et al., 2022] 创建了一个额外的掩码预测任务，相应损失记为 LmRPQ。"
+      },
+      {
+       "id": "s-model-3-3-6",
+       "original": "The overall w2v-BERT 2.0 training loss L is defined as follows:",
+       "zh": "w2v-BERT 2.0 的整体训练损失 L 定义如下："
       }
      ]
+    },
+    {
+     "id": "eq-model-3-9",
+     "type": "equation",
+     "page": 29,
+     "original": "L = wcLc + wmGVQLmGVQ + wmRPQLmRPQ, (2)"
     },
     {
      "id": "p-model-3-4",
@@ -4104,11 +5191,23 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-3-4-1",
+       "original": "where loss weights wc, wmGVQ and wmRPQ are set to 1.0, 0.5, and 0.5, respectively.",
+       "zh": "其中损失权重 wc、wmGVQ 和 wmRPQ 分别设为 1.0、0.5 和 0.5。"
+      }
+     ]
+    },
+    {
+     "id": "p-model-3-5",
+     "type": "paragraph",
+     "page": 29,
+     "sentences": [
+      {
+       "id": "s-model-3-5-1",
        "original": "We follow the w2v-BERT XL architecture [Chung et al., 2021] for the w2v-BERT 2.0 pre-trained speech encoder in SeamlessM4T-Large, which has 24 Conformer layers [Gulati et al., 2020] and approximately 600M model parameters.",
        "zh": "SeamlessM4T-Large 中的 w2v-BERT 2.0 预训练语音编码器沿用 w2v-BERT XL 架构 [Chung et al., 2021]，含 24 层 Conformer [Gulati et al., 2020]，约 600M（6 亿）模型参数。"
       },
       {
-       "id": "s-model-3-4-2",
+       "id": "s-model-3-5-2",
        "original": "The w2v-BERT 2.0 model is trained on 1 million hours of open speech audio data that covers over 143 languages.",
        "zh": "w2v-BERT 2.0 模型在 100 万（1 million）小时的开放语音音频数据上训练，覆盖 143 种以上语言。"
       }
@@ -4170,25 +5269,85 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-4-2-2-3-1",
-       "original": "The core of our multitask UnitY framework is the X2T model, a multi-encoder sequenceto-sequence models with a Conformer-based encoder [Gulati et al., 2020] for speech input 29 and another for Transformer-based encoder [Vaswani et al., 2017] for text input—both of which are joined with the same text decoder.",
-       "zh": "我们多任务 UnitY 框架的核心是 X2T 模型——一个多编码器序列到序列模型：语音输入用基于 Conformer 的编码器 [Gulati et al., 2020] 29，文本输入用基于 Transformer 的编码器 [Vaswani et al., 2017]——两者共同接入同一个文本解码器。"
+       "original": "The core of our multitask UnitY framework is the X2T model, a multi-encoder sequenceto-sequence models with a Conformer-based encoder [Gulati et al., 2020] for speech input",
+       "zh": "（页码行：2。）\n（原始数据照录）\nThe core of our multitask UnitY framework is the X2T model, a multi-encoder sequenceto-sequence models with a Conformer-based encoder [Gulati et al., 2020] for speech input"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-2-2-2",
+     "type": "equation",
+     "page": 29,
+     "original": "29"
+    },
+    {
+     "id": "p-4-2-2-4",
+     "type": "paragraph",
+     "page": 29,
+     "sentences": [
+      {
+       "id": "s-4-2-2-4-1",
+       "original": "and another for Transformer-based encoder [Vaswani et al., 2017] for text input—both of which are joined with the same text decoder.",
+       "zh": "（页码行：2。）\n（原始数据照录）\nand another for Transformer-based encoder [Vaswani et al., 2017] for text input—both of which are joined with the same text decoder."
       },
       {
-       "id": "s-4-2-2-3-2",
+       "id": "s-4-2-2-4-2",
        "original": "Our X2T model is trained on S2TT data pairing speech audio in a source language with text in a target language.",
        "zh": "X2T 模型在 S2TT 数据上训练，这类数据把源语言语音音频与目标语言文本配对。"
       }
      ]
     },
     {
-     "id": "p-4-2-2-4",
+     "id": "p-4-2-2-5",
      "type": "paragraph",
      "page": 30,
      "sentences": [
       {
-       "id": "s-4-2-2-4-1",
-       "original": "4.2.1 Preparing X2T data ASR primary S2TT X-eng mined S2TT X-eng Hours of source-side audio High-resource Mid-resource 500 100 glg guj npi kat mkd yue som khm isl yor bos srp khk mlt pan heb ary afr swe kir mar bul hye lit ckb arz mal ory zlm mya zul asm ibo amh gle azj lvs tgk nya tel tgl cym fin ell ita hrv eus tam bel pbt est uzn hun lug ind ben pol lao nor slv hin vie slk cat cmn jpn kor kan pes kaz swh dan ces eng tur jav ukr",
-       "zh": "4.2.1 准备 X2T 数据 （图内容：ASR、primary S2TT X-eng、mined S2TT X-eng；源侧音频小时数；高资源/中资源；刻度 500、100；语言按资源量升序列出——glg guj npi kat mkd yue som khm isl yor bos srp khk mlt pan heb ary afr swe kir mar bul hye lit ckb arz mal ory zlm mya zul asm ibo amh gle azj lvs tgk nya tel tgl cym fin ell ita hrv eus tam bel pbt est uzn hun lug ind ben pol lao nor slv hin vie slk cat cmn jpn kor kan pes kaz swh dan ces eng tur jav ukr。）"
+       "id": "s-4-2-2-5-1",
+       "original": "4.2.1 Preparing X2T data ASR primary S2TT X-eng mined S2TT X-eng Hours of source-side audio",
+       "zh": "（页码行：2。）\n（原始数据照录）\n4.2.1 Preparing X2T data ASR primary S2TT X-eng mined S2TT X-eng Hours of source-side audio"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-2-2-3",
+     "type": "equation",
+     "page": 30,
+     "original": "10,000"
+    },
+    {
+     "id": "eq-4-2-2-4",
+     "type": "equation",
+     "page": 30,
+     "original": "High-resource"
+    },
+    {
+     "id": "eq-4-2-2-5",
+     "type": "equation",
+     "page": 30,
+     "original": "1,000"
+    },
+    {
+     "id": "eq-4-2-2-6",
+     "type": "equation",
+     "page": 30,
+     "original": "Mid-resource"
+    },
+    {
+     "id": "eq-4-2-2-7",
+     "type": "equation",
+     "page": 30,
+     "original": "500 100"
+    },
+    {
+     "id": "p-4-2-2-6",
+     "type": "paragraph",
+     "page": 30,
+     "sentences": [
+      {
+       "id": "s-4-2-2-6-1",
+       "original": "glg guj npi kat mkd yue som khm isl yor bos srp khk mlt pan heb ary afr swe kir mar bul hye lit ckb arz mal ory zlm mya zul asm ibo amh gle azj lvs tgk nya fra tel tgl cym fin ell ita hrv eus tam bel spa tha pbt est uzn hun lug ind por ben pol lao nor slv hin vie rus slk nld cat cmn deu jpn kor ron kan pes kaz swh dan ces eng tur jav ukr arb urd",
+       "zh": "（图 4.2.1：准备 X2T 数据——ASR primary S2TT 与 mined S2TT 的 X-eng 源侧音频小时数分布（100/500/1,000/10,000，高/中资源分档），覆盖数十语种。原始数据照录如下）\n（原始数据照录）\n4.2.1 Preparing X2T data ASR primary S2TT X-eng mined S2TT X-eng Hours of source-side audio 10,000 High-resource 1,000 Mid-resource 500 100 glg guj npi kat mkd yue som khm isl yor bos srp khk mlt pan heb ary afr swe kir mar bul hye lit ckb arz mal ory zlm mya zul asm ibo amh gle azj lvs tgk nya fra tel tgl cym fin ell ita hrv eus tam bel spa tha pbt est uzn hun lug ind por ben pol lao nor slv hin vie rus slk nld cat cmn deu jpn kor ron kan pes kaz swh dan ces eng tur jav ukr arb urd"
       }
      ]
     },
@@ -4332,16 +5491,10 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
-     "id": "p-parallel-data-mining-2",
-     "type": "paragraph",
+     "id": "eq-parallel-data-mining-1",
+     "type": "equation",
      "page": 30,
-     "sentences": [
-      {
-       "id": "s-parallel-data-mining-2-1",
-       "original": "30",
-       "zh": "30"
-      }
-     ]
+     "original": "30"
     }
    ]
   },
@@ -4534,8 +5687,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-training-a-text-tokenizer-4-1",
-       "original": "11. https://lingua.mtsu.edu/chinese-computing/statistics/index.html 31 T2TT (↑chrF++)",
-       "zh": "11. https://lingua.mtsu.edu/chinese-computing/statistics/index.html 31 T2TT（↑chrF++）"
+       "original": "11. https://lingua.mtsu.edu/chinese-computing/statistics/index.html",
+       "zh": "1.\n（原始数据照录）\n11. https://lingua.mtsu.edu/chinese-computing/statistics/index.html"
+      }
+     ]
+    },
+    {
+     "id": "eq-training-a-text-tokenizer-1",
+     "type": "equation",
+     "page": 31,
+     "original": "31"
+    },
+    {
+     "id": "p-training-a-text-tokenizer-5",
+     "type": "paragraph",
+     "page": 31,
+     "sentences": [
+      {
+       "id": "s-training-a-text-tokenizer-5-1",
+       "original": "T2TT (↑chrF++)",
+       "zh": "（页码行：2。）"
       }
      ]
     }
@@ -4558,10 +5729,28 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-4-1-1",
-       "original": "NLLB Team et al. [2022] - 3.3B 60.6 49.6 - 1.3B 59.3 48.2 - 1.3B-distil.",
-       "zh": "（表格内容：NLLB Team et al. [2022]——3.3B：60.6 / 49.6；1.3B：59.3 / 48.2；1.3B-distil.："
+       "original": "X–eng (n=95) eng–X (n=95) NLLB Team et al. [2022] - 3.3B",
+       "zh": "（页码行：2。）\n（原始数据照录）\nX–eng (n=95) eng–X (n=95) NLLB Team et al. [2022] - 3.3B"
       }
      ]
+    },
+    {
+     "id": "eq-model-4-1",
+     "type": "equation",
+     "page": 32,
+     "original": "60.6 49.6"
+    },
+    {
+     "id": "eq-model-4-2",
+     "type": "equation",
+     "page": 32,
+     "original": "- 1.3B"
+    },
+    {
+     "id": "eq-model-4-3",
+     "type": "equation",
+     "page": 32,
+     "original": "59.3 48.2"
     },
     {
      "id": "p-model-4-2",
@@ -4570,10 +5759,28 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-4-2-1",
-       "original": "59.5 48.8 SeamlessM4T-NLLB-1.3B 60.7 49.6",
-       "zh": "59.5 / 48.8；SeamlessM4T-NLLB-1.3B：60.7 / 49.6。）"
+       "original": "- 1.3B-distil.",
+       "zh": "1.\n（原始数据照录）\n- 1.3B-distil."
       }
      ]
+    },
+    {
+     "id": "eq-model-4-4",
+     "type": "equation",
+     "page": 32,
+     "original": "59.5 48.8"
+    },
+    {
+     "id": "eq-model-4-5",
+     "type": "equation",
+     "page": 32,
+     "original": "SeamlessM4T-NLLB-1.3B"
+    },
+    {
+     "id": "eq-model-4-6",
+     "type": "equation",
+     "page": 32,
+     "original": "60.7 49.6"
     },
     {
      "id": "tab-model-4-1",
@@ -4628,19 +5835,25 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-4-5-1",
-       "original": "The model is fine-tuned to jointly optimize the following objective functions: t=1 log p(ytext t |ytext <t , xspeech), (3)",
+       "original": "The model is fine-tuned to jointly optimize the following objective functions: t=1 log p(ytext t |ytext <t , xspeech),",
        "zh": "模型微调时联合优化如下目标函数：Σ_{t=1} log p(ytext_t | ytext_<t, xspeech)，(3)"
       }
      ]
     },
     {
-     "id": "eq-model-4-1",
+     "id": "eq-model-4-7",
+     "type": "equation",
+     "page": 32,
+     "original": "(3)"
+    },
+    {
+     "id": "eq-model-4-8",
      "type": "equation",
      "page": 32,
      "original": "|y| X"
     },
     {
-     "id": "eq-model-4-2",
+     "id": "eq-model-4-9",
      "type": "equation",
      "page": 32,
      "original": "LS2TT = −"
@@ -4652,19 +5865,25 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-4-6-1",
-       "original": "t=1 log p(ytext t |ytext <t , xtext), (4)",
+       "original": "t=1 log p(ytext t |ytext <t , xtext),",
        "zh": "Σ_{t=1} log p(ytext_t | ytext_<t, xtext)，(4)"
       }
      ]
     },
     {
-     "id": "eq-model-4-3",
+     "id": "eq-model-4-10",
+     "type": "equation",
+     "page": 32,
+     "original": "(4)"
+    },
+    {
+     "id": "eq-model-4-11",
      "type": "equation",
      "page": 32,
      "original": "|y| X"
     },
     {
-     "id": "eq-model-4-4",
+     "id": "eq-model-4-12",
      "type": "equation",
      "page": 32,
      "original": "LT2TT = −"
@@ -4681,10 +5900,34 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-model-4-7-2",
-       "original": "We additionally optimize an auxiliary objective function in the form of token-level knowledge distillation (LKD), to further transfer knowledge from the strong MT model to the student speech translation task (S2TT). t=1 DKL p(.|ytext <t , xtext) ∥p(.|ytext <t , xspeech) .",
-       "zh": "我们还额外优化一个 token 级知识蒸馏（knowledge distillation, LKD）形式的辅助目标，把强 MT 模型的知识进一步迁移到学生语音翻译任务（S2TT）：Σ_{t=1} DKL( p(.|ytext_<t, xtext) ∥ p(.|ytext_<t, xspeech) )。"
+       "original": "We additionally optimize an auxiliary objective function in the form of token-level knowledge distillation (LKD), to further transfer knowledge from the strong MT model to the student speech translation task (S2TT). t=1 DKL p(.|ytext <t , xtext) ∥p(.|ytext <t , xspeech)",
+       "zh": "（页码行：2。）\n（原始数据照录）\nWe additionally optimize an auxiliary objective function in the form of token-level knowledge distillation (LKD), to further transfer knowledge from the strong MT model to the student speech translation task (S2TT). t=1 DKL p(.|ytext <t , xtext) ∥p(.|ytext <t , xspeech)"
       }
      ]
+    },
+    {
+     "id": "eq-model-4-13",
+     "type": "equation",
+     "page": 32,
+     "original": "."
+    },
+    {
+     "id": "eq-model-4-14",
+     "type": "equation",
+     "page": 32,
+     "original": "(5)"
+    },
+    {
+     "id": "eq-model-4-15",
+     "type": "equation",
+     "page": 32,
+     "original": "|y| X"
+    },
+    {
+     "id": "eq-model-4-16",
+     "type": "equation",
+     "page": 32,
+     "original": "LKD ="
     },
     {
      "id": "p-model-4-8",
@@ -4693,22 +5936,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-4-8-1",
-       "original": "(5)",
-       "zh": "(5)"
+       "original": "The final loss is a weighted sum of all three losses: L = αLS2TT + βLT2TT + γLKD, where α, β, γ are scalar hyperparameters tuned on the development data.",
+       "zh": "最终损失是三个损失的加权和：L = αLS2TT + βLT2TT + γLKD，其中 α、β、γ 是在开发数据上调出的标量超参数。"
+      },
+      {
+       "id": "s-model-4-8-2",
+       "original": "When the task does not",
+       "zh": "当任务不符合数据三元组的设计时，我们用自编码替代翻译任务——例如在 ASR 上，ytext 被替换为 xtext，此时教师分布来自自编码（p(.|xtext_<t, xtext)）。（页码 32）"
       }
      ]
     },
     {
-     "id": "eq-model-4-5",
+     "id": "eq-model-4-17",
      "type": "equation",
      "page": 32,
-     "original": "|y| X"
-    },
-    {
-     "id": "eq-model-4-6",
-     "type": "equation",
-     "page": 32,
-     "original": "LKD ="
+     "original": "32"
     },
     {
      "id": "p-model-4-9",
@@ -4717,12 +5959,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-4-9-1",
-       "original": "The final loss is a weighted sum of all three losses: L = αLS2TT + βLT2TT + γLKD, where α, β, γ are scalar hyperparameters tuned on the development data.",
-       "zh": "最终损失是三个损失的加权和：L = αLS2TT + βLT2TT + γLKD，其中 α、β、γ 是在开发数据上调出的标量超参数。"
-      },
-      {
-       "id": "s-model-4-9-2",
-       "original": "When the task does not 32 fit the design of data triplets, we then replaced translation tasks with auto-encoding—for example, on ASR ytext is replaced by xtext in which case the teacher distribution is from auto-encoding (p(.|xtext <t , xtext)).",
+       "original": "fit the design of data triplets, we then replaced translation tasks with auto-encoding—for example, on ASR ytext is replaced by xtext in which case the teacher distribution is from auto-encoding (p(.|xtext <t , xtext)).",
        "zh": "当任务不符合数据三元组的设计时，我们用自编码替代翻译任务——例如在 ASR 上，ytext 被替换为 xtext，此时教师分布来自自编码（p(.|xtext_<t, xtext)）。（页码 32）"
       }
      ]
@@ -4807,23 +6044,41 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-4-3-2-3",
-       "original": "Compared to the vanilla UnitY model [Inaguma et al., 2023], (1) the core S2TT model initialized from scratch is replaced with an X2T model pre-trained to jointly optimize T2TT, 33 S2TT, and ASR, (2) the shallow T2U model (referred to as T2U unit encoder and second-pass unit decoder in Inaguma et al. [2023]) is replaced with a deeper Transformer-based encoderdecoder model with 6 transformer layers, (3) the T2U model is also pre-trained on the T2U task rather than trained from scratch.",
-       "zh": "与原版 UnitY 模型 [Inaguma et al., 2023] 相比：(1) 从零初始化的核心 S2TT 模型被替换为预训练过的 X2T 模型——它联合优化 T2TT、33 S2TT 和 ASR；(2) 浅层 T2U 模型（Inaguma et al. [2023] 中称为 T2U 单元编码器与第二遍单元解码器）被替换为更深的、含 6 层 Transformer 的编码器-解码器模型；(3) T2U 模型也在 T2U 任务上预训练，而非从零训练。"
+       "original": "Compared to the vanilla UnitY model [Inaguma et al., 2023], (1) the core S2TT model initialized from scratch is replaced with an X2T model pre-trained to jointly optimize T2TT,",
+       "zh": "（页码行：2。）\n（原始数据照录）\nCompared to the vanilla UnitY model [Inaguma et al., 2023], (1) the core S2TT model initialized from scratch is replaced with an X2T model pre-trained to jointly optimize T2TT,"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-3-1",
+     "type": "equation",
+     "page": 33,
+     "original": "33"
+    },
+    {
+     "id": "p-4-3-3",
+     "type": "paragraph",
+     "page": 33,
+     "sentences": [
+      {
+       "id": "s-4-3-3-1",
+       "original": "S2TT, and ASR, (2) the shallow T2U model (referred to as T2U unit encoder and second-pass unit decoder in Inaguma et al. [2023]) is replaced with a deeper Transformer-based encoderdecoder model with 6 transformer layers, (3) the T2U model is also pre-trained on the T2U task rather than trained from scratch.",
+       "zh": "（页码行：2。）\n（原始数据照录）\nS2TT, and ASR, (2) the shallow T2U model (referred to as T2U unit encoder and second-pass unit decoder in Inaguma et al. [2023]) is replaced with a deeper Transformer-based encoderdecoder model with 6 transformer layers, (3) the T2U model is also pre-trained on the T2U task rather than trained from scratch."
       },
       {
-       "id": "s-4-3-2-4",
+       "id": "s-4-3-3-2",
        "original": "The pre-training of X2T yields a stronger speech encoder and a higher quality first-pass text decoder, while the scaling and pre-training of the T2U model allowed us to better handle multilingual unit generation without interference.",
        "zh": "X2T 的预训练带来了更强的语音编码器和更高质量的第一遍文本解码器；而 T2U 模型的扩大与预训练使我们能更好地处理多语言单元生成而不受干扰。"
       }
      ]
     },
     {
-     "id": "p-4-3-3",
+     "id": "p-4-3-4",
      "type": "paragraph",
      "page": 34,
      "sentences": [
       {
-       "id": "s-4-3-3-1",
+       "id": "s-4-3-4-1",
        "original": "4.3.1 Preparing S2ST data",
        "zh": "4.3.1 准备 S2ST 数据"
       }
@@ -4983,8 +6238,62 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-pseudo-labeling-with-text-to-uni-1-4",
-       "original": "This two-step unit extraction process is a slow process and is harder to scale 34 Hours of source-side audio (X-eng) primary S2ST mined S2ST 0 ckb arz lin gle ltz isl yor mal mar zlm hau ory azj ary bos srp pbt kir mya zul lvs heb tgk nya npi kat ibo glg asm guj yue mkd som amh xho khk afr swe wol hye bul Hours of source-side audio (eng-X) 0 pes ben swh uzn swe ukr mlt tel tgl fin ind slk cat hin cym nor lit mlt fin kor tam ces tgl ell lug pes ita cmn tel tur hrv eus pol lao bel slk ben cat hin est ind kan cym slv vie jpn khm pan swh uzn hun dan kaz jav ukr kor ces dan tur ita est pol jpn vie cmn",
-       "zh": "这个两步单元提取过程很慢，也更难扩展——34 （图内容：源侧音频小时数（X-eng）：primary S2ST 与 mined S2ST；0 起；语言 ckb arz lin gle ltz isl yor mal mar zlm hau ory azj ary bos srp pbt kir mya zul lvs heb tgk nya npi kat ibo glg asm guj yue mkd som amh xho khk afr swe wol hye bul；源侧音频小时数（eng-X）：0 起；语言 pes ben swh uzn swe ukr mlt tel tgl fin ind slk cat hin cym nor lit mlt fin kor tam ces tgl ell lug pes ita cmn tel tur hrv eus pol lao bel slk ben cat hin est ind kan cym slv vie jpn khm pan swh uzn hun dan kaz jav ukr kor ces dan tur ita est pol jpn vie cmn。）"
+       "original": "This two-step unit extraction process is a slow process and is harder to scale",
+       "zh": "这种两步单元抽取流程很慢、难以规模化。（图 34：X-eng 与 eng-X 方向源侧音频小时数分布（0/2,000/4,000），primary S2ST 与 mined S2ST 对比，涵盖 ckb、arz、lin、gle、ltz、isl、yor、mal、mar、zlm、hau、ory、azj、ary、bos、srp、pbt、kir、mya、zul、lvs、heb、tgk、nya、npi、kat、ibo、glg、asm、guj、yue、mkd、som、amh、xho、khk、afr、swe、wol、hye、bul、tha、pes、ben、swh、uzn、swe、ukr、mlt、tel、tgl、fin、ind、slk、cat、hin、cym、nor、lit、urd、arb、mlt、fin、kor、tam、ces、por、ron、fra、tgl、ell、lug、pes、ita、cmn、tel、tur、hrv、eus、pol、lao、bel、slk、ben、cat、hin、est、tha、ind、nld、spa、kan、cym、slv、vie、jpn、khm、pan、swh、uzn、hun、dan、kaz、rus、deu、jav、ukr、kor、ces、dan、rus、spa、deu、tur、ron、por、fra、urd、arb、ita、est、pol、nld、jpn、vie、cmn 等语种。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-pseudo-labeling-with-text-to-uni-1",
+     "type": "equation",
+     "page": 34,
+     "original": "34"
+    },
+    {
+     "id": "p-pseudo-labeling-with-text-to-uni-2",
+     "type": "paragraph",
+     "page": 34,
+     "sentences": [
+      {
+       "id": "s-pseudo-labeling-with-text-to-uni-2-1",
+       "original": "Hours of source-side audio (X-eng) primary S2ST mined S2ST",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-pseudo-labeling-with-text-to-uni-2",
+     "type": "equation",
+     "page": 34,
+     "original": "4,000 2,000 0"
+    },
+    {
+     "id": "p-pseudo-labeling-with-text-to-uni-3",
+     "type": "paragraph",
+     "page": 34,
+     "sentences": [
+      {
+       "id": "s-pseudo-labeling-with-text-to-uni-3-1",
+       "original": "ckb arz lin gle ltz isl yor mal mar zlm hau ory azj ary bos srp pbt kir mya zul lvs heb tgk nya npi kat ibo glg asm guj yue mkd som amh xho khk afr swe wol hye bul Hours of source-side audio (eng-X)",
+       "zh": "这种两步单元抽取流程很慢、难以规模化。（图 34：X-eng 与 eng-X 方向源侧音频小时数分布（0/2,000/4,000），primary S2ST 与 mined S2ST 对比，涵盖 ckb、arz、lin、gle、ltz、isl、yor、mal、mar、zlm、hau、ory、azj、ary、bos、srp、pbt、kir、mya、zul、lvs、heb、tgk、nya、npi、kat、ibo、glg、asm、guj、yue、mkd、som、amh、xho、khk、afr、swe、wol、hye、bul、tha、pes、ben、swh、uzn、swe、ukr、mlt、tel、tgl、fin、ind、slk、cat、hin、cym、nor、lit、urd、arb、mlt、fin、kor、tam、ces、por、ron、fra、tgl、ell、lug、pes、ita、cmn、tel、tur、hrv、eus、pol、lao、bel、slk、ben、cat、hin、est、tha、ind、nld、spa、kan、cym、slv、vie、jpn、khm、pan、swh、uzn、hun、dan、kaz、rus、deu、jav、ukr、kor、ces、dan、rus、spa、deu、tur、ron、por、fra、urd、arb、ita、est、pol、nld、jpn、vie、cmn 等语种。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-pseudo-labeling-with-text-to-uni-3",
+     "type": "equation",
+     "page": 34,
+     "original": "4,000 2,000 0"
+    },
+    {
+     "id": "p-pseudo-labeling-with-text-to-uni-4",
+     "type": "paragraph",
+     "page": 34,
+     "sentences": [
+      {
+       "id": "s-pseudo-labeling-with-text-to-uni-4-1",
+       "original": "tha pes ben swh uzn swe ukr mlt tel tgl fin ind slk cat hin cym nor lit urd arb mlt fin kor tam ces por ron fra tgl ell lug pes ita cmn tel tur hrv eus pol lao bel slk ben cat hin est tha ind nld spa kan cym slv vie jpn khm pan swh uzn hun dan kaz rus deu jav ukr kor ces dan rus spa deu tur ron por fra urd arb ita est pol nld jpn vie cmn",
+       "zh": "这种两步单元抽取流程很慢、难以规模化。（图 34：X-eng 与 eng-X 方向源侧音频小时数分布（0/2,000/4,000），primary S2ST 与 mined S2ST 对比，涵盖 ckb、arz、lin、gle、ltz、isl、yor、mal、mar、zlm、hau、ory、azj、ary、bos、srp、pbt、kir、mya、zul、lvs、heb、tgk、nya、npi、kat、ibo、glg、asm、guj、yue、mkd、som、amh、xho、khk、afr、swe、wol、hye、bul、tha、pes、ben、swh、uzn、swe、ukr、mlt、tel、tgl、fin、ind、slk、cat、hin、cym、nor、lit、urd、arb、mlt、fin、kor、tam、ces、por、ron、fra、tgl、ell、lug、pes、ita、cmn、tel、tur、hrv、eus、pol、lao、bel、slk、ben、cat、hin、est、tha、ind、nld、spa、kan、cym、slv、vie、jpn、khm、pan、swh、uzn、hun、dan、kaz、rus、deu、jav、ukr、kor、ces、dan、rus、spa、deu、tur、ron、por、fra、urd、arb、ita、est、pol、nld、jpn、vie、cmn 等语种。）"
       }
      ]
     },
@@ -4996,42 +6305,42 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 8：训练 SeamlessM4T 模型第 3 阶段（Stage3）所用 S2ST 数据统计。我们以语音小时数展示 primary 与 mined 两类数据的数据量。语言按资源水平升序排列。数值统计见 Table 39。"
     },
     {
-     "id": "p-pseudo-labeling-with-text-to-uni-2",
+     "id": "p-pseudo-labeling-with-text-to-uni-5",
      "type": "paragraph",
      "page": 35,
      "sentences": [
       {
-       "id": "s-pseudo-labeling-with-text-to-uni-2-1",
+       "id": "s-pseudo-labeling-with-text-to-uni-5-1",
        "original": "given the dependencies on TTS models.",
        "zh": "因为要依赖 TTS 模型。"
       },
       {
-       "id": "s-pseudo-labeling-with-text-to-uni-2-2",
+       "id": "s-pseudo-labeling-with-text-to-uni-5-2",
        "original": "High-quality off-the-shelf TTS models are hard to come by for all languages, especially for low-resource ones.",
        "zh": "高质量的现成 TTS 模型很难在所有语言上获得，低资源语言尤其如此。"
       },
       {
-       "id": "s-pseudo-labeling-with-text-to-uni-2-3",
+       "id": "s-pseudo-labeling-with-text-to-uni-5-3",
        "original": "Training reliable monolingual or multilingual in-house TTS models is also not scalable given the challenges around gathering high-quality clean speech data.",
        "zh": "自训可靠的单语言或多语言 TTS 模型也不具扩展性，因为收集高质量干净语音数据本身就很困难。"
       },
       {
-       "id": "s-pseudo-labeling-with-text-to-uni-2-4",
+       "id": "s-pseudo-labeling-with-text-to-uni-5-4",
        "original": "To overcome these challenges, we circumvented the need for synthesizing speech and trained multilingual text-to-unit (T2U) models on all the 36 target speech languages.",
        "zh": "为克服这些挑战，我们绕开了合成语音这一步：在全部 36 种目标语音语言上训练多语言文本到单元（text-to-unit, T2U）模型。"
       },
       {
-       "id": "s-pseudo-labeling-with-text-to-uni-2-5",
+       "id": "s-pseudo-labeling-with-text-to-uni-5-5",
        "original": "These models can directly convert the text into target discrete units and can be trained on ASR datasets that are readily available.",
        "zh": "这些模型可以直接把文本转换为目标离散单元，且可以在现成可得的 ASR 数据集上训练。"
       },
       {
-       "id": "s-pseudo-labeling-with-text-to-uni-2-6",
+       "id": "s-pseudo-labeling-with-text-to-uni-5-6",
        "original": "The multilingual training benefits from cross-lingual transfer between high-resource and low-resource languages, thereby also improving the quality of the pseudo-labeled data.",
        "zh": "多语言训练得益于高资源与低资源语言之间的跨语言迁移，因此也提升了伪标注数据的质量。"
       },
       {
-       "id": "s-pseudo-labeling-with-text-to-uni-2-7",
+       "id": "s-pseudo-labeling-with-text-to-uni-5-7",
        "original": "To remove outlier samples from our paired data, we filtered based on the number of seconds of audio generated per text token length ratio, discarding any pair with a ratio exceeding 0.5.",
        "zh": "为剔除配对数据中的离群样本，我们按「每个文本 token 生成的音频秒数」这一比率进行过滤，丢弃比率超过 0.5 的任何配对。"
       }
@@ -5110,28 +6419,46 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-parallel-data-mining-seamlessali-3-5",
-       "original": "Initial experiments showed that, although the smaller T2U 35 model is of a lower quality than the larger one, fine-tuning the smaller T2U in UnitY with labels from the larger one (i.e., distilling knowledge from the stronger T2U) can bridge the gap while being parameter-efficient.",
-       "zh": "初步实验表明：尽管较小的 T2U 35 模型质量低于大模型，但在 UnitY 中用大模型的标签微调小 T2U（即从更强的 T2U 蒸馏知识），可以弥合差距且参数高效。"
+       "original": "Initial experiments showed that, although the smaller T2U",
+       "zh": "（页码行：2。）"
       }
      ]
     },
     {
+     "id": "eq-parallel-data-mining-seamlessali-1",
+     "type": "equation",
+     "page": 35,
+     "original": "35"
+    },
+    {
      "id": "p-parallel-data-mining-seamlessali-4",
+     "type": "paragraph",
+     "page": 35,
+     "sentences": [
+      {
+       "id": "s-parallel-data-mining-seamlessali-4-1",
+       "original": "model is of a lower quality than the larger one, fine-tuning the smaller T2U in UnitY with labels from the larger one (i.e., distilling knowledge from the stronger T2U) can bridge the gap while being parameter-efficient.",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "p-parallel-data-mining-seamlessali-5",
      "type": "paragraph",
      "page": 36,
      "sentences": [
       {
-       "id": "s-parallel-data-mining-seamlessali-4-1",
+       "id": "s-parallel-data-mining-seamlessali-5-1",
        "original": "4.3.3 Stage3 Finetuning for S2ST In the last stage of fine-tuning, we initialized the multitask UnitY model (see figure 4) with (1) the pre-trained X2T model and (2) the pre-trained T2U model and fine-tuned on a combination of X–eng and eng–X S2ST translation data totaling 121K hours (see breakdown in figure 8).",
        "zh": "4.3.3 面向 S2ST 的第三阶段微调 在最后一个微调阶段，我们用 (1) 预训练的 X2T 模型和 (2) 预训练的 T2U 模型初始化多任务 UnitY 模型（见 figure 4），并在合计 121K 小时的 X–eng 与 eng–X S2ST 翻译数据上微调（细目见 figure 8）。"
       },
       {
-       "id": "s-parallel-data-mining-seamlessali-4-2",
+       "id": "s-parallel-data-mining-seamlessali-5-2",
        "original": "We froze the model weights corresponding to the X2T model and only fine-tuned the T2U component.",
        "zh": "我们冻结了 X2T 模型对应的权重，只微调 T2U 组件。"
       },
       {
-       "id": "s-parallel-data-mining-seamlessali-4-3",
+       "id": "s-parallel-data-mining-seamlessali-5-3",
        "original": "This is to ensure that the performance of the model on tasks from the previous stages of fine-tuning remains unchanged.",
        "zh": "这样做是为了确保模型在此前各微调阶段所学任务上的性能保持不变。"
       }
@@ -5243,14 +6570,20 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-4-4-1",
+     "type": "equation",
+     "page": 36,
+     "original": "36"
+    },
+    {
      "id": "p-4-4-4",
      "type": "paragraph",
      "page": 36,
      "sentences": [
       {
        "id": "s-4-4-4-1",
-       "original": "36 During S2ST and T2ST inference, we performed two-pass beam-search decoding— the best hypothesis out of the first-pass decoding is embedded with the text decoder and is sent to T2U to search for the best unit sequence hypothesis.",
-       "zh": "36 在 S2ST 与 T2ST 推理时，我们执行两遍束搜索解码——第一遍解码出的最优假设经文本解码器嵌入后送入 T2U，搜索最优单元序列假设。"
+       "original": "During S2ST and T2ST inference, we performed two-pass beam-search decoding— the best hypothesis out of the first-pass decoding is embedded with the text decoder and is sent to T2U to search for the best unit sequence hypothesis.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-4-4-4-2",
@@ -5417,14 +6750,20 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-4-4-2",
+     "type": "equation",
+     "page": 37,
+     "original": "37"
+    },
+    {
      "id": "p-4-4-11",
      "type": "paragraph",
      "page": 37,
      "sentences": [
       {
        "id": "s-4-4-11-1",
-       "original": "37 S2TT (↑BLEU)",
-       "zh": "37 S2TT（↑BLEU）"
+       "original": "S2TT (↑BLEU)",
+       "zh": "（页码行：2。）"
       }
      ]
     }
@@ -5447,10 +6786,100 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-5-1-1",
-       "original": "type size 2B 19.7 20.5 Whisper-Medium (ASR) + NLLB-3.3B 4B 20.4 21.8 Whisper-Large-v2 (ASR)+ NLLB-1.3B 22.0 21.0 Whisper-Large-v2 (ASR)+ NLLB-3.3B 22.7 22.2 Whisper-Medium (ASR) + NLLB-1.3B cascaded Whisper-Large-v2 direct 17.9 AudioPaLM-2-8B-AST 8B 19.7 SeamlessM4T-Medium direct 1B 20.9 19.2 SeamlessM4T-Large 2B 24.0 21.5",
-       "zh": "（表格内容：Fleurs S2TT——列为类型、参数量、X–eng、eng–X。级联：Whisper-Medium (ASR) + NLLB-1.3B，2B，19.7，20.5；Whisper-Medium (ASR) + NLLB-3.3B，4B，20.4，21.8；Whisper-Large-v2 (ASR) + NLLB-1.3B，22.0，21.0；Whisper-Large-v2 (ASR) + NLLB-3.3B，22.7，22.2。直接：Whisper-Large-v2，17.9；AudioPaLM-2-8B-AST，8B，19.7；SeamlessM4T-Medium，1B，20.9，19.2；SeamlessM4T-Large，2B，24.0，21.5。个别行因排版合并列位有所错动，数值与模型对应关系以原文 Table 14 为准。）"
+       "original": "type size X–eng (n=81) eng–X (n=88) 2B",
+       "zh": "（页码行：2。）\n（原始数据照录）\ntype size X–eng (n=81) eng–X (n=88) 2B"
       }
      ]
+    },
+    {
+     "id": "eq-model-5-1",
+     "type": "equation",
+     "page": 38,
+     "original": "19.7 20.5"
+    },
+    {
+     "id": "eq-model-5-2",
+     "type": "equation",
+     "page": 38,
+     "original": "Whisper-Medium (ASR) + NLLB-3.3B 4B"
+    },
+    {
+     "id": "eq-model-5-3",
+     "type": "equation",
+     "page": 38,
+     "original": "20.4 21.8"
+    },
+    {
+     "id": "eq-model-5-4",
+     "type": "equation",
+     "page": 38,
+     "original": "Whisper-Large-v2 (ASR)+ NLLB-1.3B 2.8B"
+    },
+    {
+     "id": "eq-model-5-5",
+     "type": "equation",
+     "page": 38,
+     "original": "22.0 21.0"
+    },
+    {
+     "id": "eq-model-5-6",
+     "type": "equation",
+     "page": 38,
+     "original": "Whisper-Large-v2 (ASR)+ NLLB-3.3B 4.8B"
+    },
+    {
+     "id": "eq-model-5-7",
+     "type": "equation",
+     "page": 38,
+     "original": "22.7 22.2"
+    },
+    {
+     "id": "eq-model-5-8",
+     "type": "equation",
+     "page": 38,
+     "original": "Whisper-Medium (ASR) + NLLB-1.3B cascaded Whisper-Large-v2 direct 1.5B"
+    },
+    {
+     "id": "eq-model-5-9",
+     "type": "equation",
+     "page": 38,
+     "original": "17.9 -"
+    },
+    {
+     "id": "eq-model-5-10",
+     "type": "equation",
+     "page": 38,
+     "original": "AudioPaLM-2-8B-AST 8B"
+    },
+    {
+     "id": "eq-model-5-11",
+     "type": "equation",
+     "page": 38,
+     "original": "19.7 -"
+    },
+    {
+     "id": "eq-model-5-12",
+     "type": "equation",
+     "page": 38,
+     "original": "SeamlessM4T-Medium direct 1B"
+    },
+    {
+     "id": "eq-model-5-13",
+     "type": "equation",
+     "page": 38,
+     "original": "20.9 19.2"
+    },
+    {
+     "id": "eq-model-5-14",
+     "type": "equation",
+     "page": 38,
+     "original": "SeamlessM4T-Large 2B"
+    },
+    {
+     "id": "eq-model-5-15",
+     "type": "equation",
+     "page": 38,
+     "original": "24.0 21.5"
     },
     {
      "id": "tab-model-5-1",
@@ -5502,10 +6931,88 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-6-1-1",
-       "original": "type size Fleurs CVSS YourTTS [Casanova et al., 2022] +Whisper-Large-v2 (S2TT) 2-stage cascaded 17.3 22.6 +Whisper-Medium (ASR) + NLLB-1.3B 3-stage cascaded 19.9 +Whisper-Medium (ASR) + NLLB-3.3B 20.6 +Whisper-Large-v2 (ASR)+ NLLB-1.3B 22.1 +Whisper-Large-v2 (ASR)+ NLLB-3.3B 23.2 SeamlessM4T-Medium unified 20.4 28.1 SeamlessM4T-Large unified 25.8 36.5",
-       "zh": "（表格内容：S2ST X–eng——列为类型、Fleurs、CVSS。两段级联：YourTTS [Casanova et al., 2022] + Whisper-Large-v2 (S2TT)，17.3，22.6。三段级联：+ Whisper-Medium (ASR) + NLLB-1.3B，19.9；+ Whisper-Medium (ASR) + NLLB-3.3B，20.6；+ Whisper-Large-v2 (ASR) + NLLB-1.3B，22.1；+ Whisper-Large-v2 (ASR) + NLLB-3.3B，23.2。统一模型（unified）：SeamlessM4T-Medium，20.4，28.1；SeamlessM4T-Large，25.8，36.5。）（3）"
+       "original": "type size Fleurs (n=81) CVSS (n=21) YourTTS [Casanova et al., 2022] +Whisper-Large-v2 (S2TT) 2-stage cascaded 1.6B",
+       "zh": "（页码行：2。）\n（原始数据照录）\ntype size Fleurs (n=81) CVSS (n=21) YourTTS [Casanova et al., 2022] +Whisper-Large-v2 (S2TT) 2-stage cascaded 1.6B"
       }
      ]
+    },
+    {
+     "id": "eq-model-6-1",
+     "type": "equation",
+     "page": 38,
+     "original": "17.3 22.6"
+    },
+    {
+     "id": "eq-model-6-2",
+     "type": "equation",
+     "page": 38,
+     "original": "+Whisper-Medium (ASR) + NLLB-1.3B 3-stage cascaded 2.1B"
+    },
+    {
+     "id": "eq-model-6-3",
+     "type": "equation",
+     "page": 38,
+     "original": "19.9"
+    },
+    {
+     "id": "eq-model-6-4",
+     "type": "equation",
+     "page": 38,
+     "original": "+Whisper-Medium (ASR) + NLLB-3.3B 4.1B"
+    },
+    {
+     "id": "eq-model-6-5",
+     "type": "equation",
+     "page": 38,
+     "original": "20.6"
+    },
+    {
+     "id": "eq-model-6-6",
+     "type": "equation",
+     "page": 38,
+     "original": "+Whisper-Large-v2 (ASR)+ NLLB-1.3B 2.9B"
+    },
+    {
+     "id": "eq-model-6-7",
+     "type": "equation",
+     "page": 38,
+     "original": "22.1"
+    },
+    {
+     "id": "eq-model-6-8",
+     "type": "equation",
+     "page": 38,
+     "original": "+Whisper-Large-v2 (ASR)+ NLLB-3.3B 4.9B"
+    },
+    {
+     "id": "eq-model-6-9",
+     "type": "equation",
+     "page": 38,
+     "original": "23.2"
+    },
+    {
+     "id": "eq-model-6-10",
+     "type": "equation",
+     "page": 38,
+     "original": "SeamlessM4T-Medium unified 1.2B"
+    },
+    {
+     "id": "eq-model-6-11",
+     "type": "equation",
+     "page": 38,
+     "original": "20.4 28.1"
+    },
+    {
+     "id": "eq-model-6-12",
+     "type": "equation",
+     "page": 38,
+     "original": "SeamlessM4T-Large unified 2.3B"
+    },
+    {
+     "id": "eq-model-6-13",
+     "type": "equation",
+     "page": 38,
+     "original": "25.8 36.5"
     },
     {
      "id": "tab-model-6-1",
@@ -5565,8 +7072,26 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-model-6-4-4",
-       "original": "We also average in column low† over low-resource directions that are supervised in AudioPaLM-2-8B-AST—the gain of +5 BLEU in that subset of 38 Fleurs",
-       "zh": "我们还在 low† 列上对 AudioPaLM-2-8B-AST 有监督的低资源方向取平均——该子集上 +5 BLEU 的增益（38 Fleurs"
+       "original": "We also average in column low† over low-resource directions that are supervised in AudioPaLM-2-8B-AST—the gain of +5 BLEU in that subset of",
+       "zh": "（页码行：2。）\n（原始数据照录）\nWe also average in column low† over low-resource directions that are supervised in AudioPaLM-2-8B-AST—the gain of +5 BLEU in that subset of"
+      }
+     ]
+    },
+    {
+     "id": "eq-model-6-14",
+     "type": "equation",
+     "page": 38,
+     "original": "38"
+    },
+    {
+     "id": "p-model-6-5",
+     "type": "paragraph",
+     "page": 38,
+     "sentences": [
+      {
+       "id": "s-model-6-5-1",
+       "original": "Fleurs X–eng (n=81)",
+       "zh": "81"
       }
      ]
     }
@@ -5589,8 +7114,98 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-7-1-1",
-       "original": "size S2TT (↑BLEU) Fleurs CoVoST 2 CoVoST 2 XLS-R-2B-S2T x 22.1 27.8 Whisper-Large-v2 17.9 x 29.1 x AudioPaLM-2-8B-AST 19.7 x 37.8 x SeamlessM4T-Medium 20.9 19.2 29.8 26.6 SeamlessM4T-Large 24.0 21.5 34.1 30.6 ASR (↓WER) T2TT (↑chrF++)",
-       "zh": "（表格内容：跨页拼接的 Table 16 上半——列为参数量、S2TT (↑BLEU) Fleurs X–eng、Fleurs eng–X、CoVoST 2 X–eng、CoVoST 2 eng–X。XLS-R-2B-S2T：x，22.1，27.8（另两列无值）；Whisper-Large-v2：17.9，x，29.1，x；AudioPaLM-2-8B-AST：19.7，x，37.8，x；SeamlessM4T-Medium：20.9，19.2，29.8，26.6；SeamlessM4T-Large：24.0，21.5，34.1，30.6。随后衔接 ASR (↓WER) 与 T2TT (↑chrF++) 列。个别行因原文两栏排版合并，列对应以原文 Table 16 为准。）"
+       "original": "size S2TT (↑BLEU) Fleurs eng–X (n=88) CoVoST 2 X–eng (n=21) CoVoST 2 eng–X (n=15) XLS-R-2B-S2T 2.6B x",
+       "zh": "（页码行：2。）\n（原始数据照录）\nsize S2TT (↑BLEU) Fleurs eng–X (n=88) CoVoST 2 X–eng (n=21) CoVoST 2 eng–X (n=15) XLS-R-2B-S2T 2.6B x"
+      }
+     ]
+    },
+    {
+     "id": "eq-model-7-1",
+     "type": "equation",
+     "page": 39,
+     "original": "22.1 27.8"
+    },
+    {
+     "id": "eq-model-7-2",
+     "type": "equation",
+     "page": 39,
+     "original": "Whisper-Large-v2 1.5B"
+    },
+    {
+     "id": "eq-model-7-3",
+     "type": "equation",
+     "page": 39,
+     "original": "17.9"
+    },
+    {
+     "id": "eq-model-7-4",
+     "type": "equation",
+     "page": 39,
+     "original": "x"
+    },
+    {
+     "id": "eq-model-7-5",
+     "type": "equation",
+     "page": 39,
+     "original": "29.1"
+    },
+    {
+     "id": "eq-model-7-6",
+     "type": "equation",
+     "page": 39,
+     "original": "x AudioPaLM-2-8B-AST 8.0B"
+    },
+    {
+     "id": "eq-model-7-7",
+     "type": "equation",
+     "page": 39,
+     "original": "19.7"
+    },
+    {
+     "id": "eq-model-7-8",
+     "type": "equation",
+     "page": 39,
+     "original": "x"
+    },
+    {
+     "id": "eq-model-7-9",
+     "type": "equation",
+     "page": 39,
+     "original": "37.8"
+    },
+    {
+     "id": "eq-model-7-10",
+     "type": "equation",
+     "page": 39,
+     "original": "x SeamlessM4T-Medium 1.2B"
+    },
+    {
+     "id": "eq-model-7-11",
+     "type": "equation",
+     "page": 39,
+     "original": "20.9 19.2 29.8 26.6"
+    },
+    {
+     "id": "eq-model-7-12",
+     "type": "equation",
+     "page": 39,
+     "original": "SeamlessM4T-Large 2.3B"
+    },
+    {
+     "id": "eq-model-7-13",
+     "type": "equation",
+     "page": 39,
+     "original": "24.0 21.5 34.1 30.6"
+    },
+    {
+     "id": "p-model-7-2",
+     "type": "paragraph",
+     "page": 39,
+     "sentences": [
+      {
+       "id": "s-model-7-2-1",
+       "original": "ASR (↓WER) T2TT (↑chrF++)",
+       "zh": "（页码行：2。）"
       }
      ]
     }
@@ -5613,10 +7228,76 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-8-1-1",
-       "original": "size Fleurs Fleurs-54 Flores Flores NLLB-3.3B x x 60.7 49.6 Whisper-Large-v2 41.7 43.7 x x MMS-L61-noLM-LSAH x 31.0 x x MMS-L1107-CCLM-LSAH 1.0B∗ x 18.7 x x SeamlessM4T-Medium 21.9 22.0 55.4 48.4 SeamlessM4T-Large 23.1 23.7 60.8 50.9",
-       "zh": "（表格内容：Table 16 下半——列为参数量、ASR Fleurs、ASR Fleurs-54、T2TT Flores X–eng、T2TT Flores eng–X。NLLB-3.3B：x，x，60.7，49.6；Whisper-Large-v2：41.7，43.7，x，x；MMS-L61-noLM-LSAH：x，31.0，x，x；MMS-L1107-CCLM-LSAH：1.0B*，x，18.7，x，x；SeamlessM4T-Medium：21.9，22.0，55.4，48.4；SeamlessM4T-Large：23.1，23.7，60.8，50.9。）"
+       "original": "size Fleurs (n=77) Fleurs-54 (n=54) Flores X–eng (n=95) Flores eng–X (n=95) NLLB-3.3B 3.3B x x",
+       "zh": "5\n（原始数据照录）\nsize Fleurs (n=77) Fleurs-54 (n=54) Flores X–eng (n=95) Flores eng–X (n=95) NLLB-3.3B 3.3B x x"
       }
      ]
+    },
+    {
+     "id": "eq-model-8-1",
+     "type": "equation",
+     "page": 39,
+     "original": "60.7 49.6"
+    },
+    {
+     "id": "eq-model-8-2",
+     "type": "equation",
+     "page": 39,
+     "original": "Whisper-Large-v2 1.5B"
+    },
+    {
+     "id": "eq-model-8-3",
+     "type": "equation",
+     "page": 39,
+     "original": "41.7 43.7"
+    },
+    {
+     "id": "eq-model-8-4",
+     "type": "equation",
+     "page": 39,
+     "original": "x x MMS-L61-noLM-LSAH 1.0B x"
+    },
+    {
+     "id": "eq-model-8-5",
+     "type": "equation",
+     "page": 39,
+     "original": "31.0"
+    },
+    {
+     "id": "eq-model-8-6",
+     "type": "equation",
+     "page": 39,
+     "original": "x x MMS-L1107-CCLM-LSAH 1.0B∗ x"
+    },
+    {
+     "id": "eq-model-8-7",
+     "type": "equation",
+     "page": 39,
+     "original": "18.7"
+    },
+    {
+     "id": "eq-model-8-8",
+     "type": "equation",
+     "page": 39,
+     "original": "x x SeamlessM4T-Medium 1.2B"
+    },
+    {
+     "id": "eq-model-8-9",
+     "type": "equation",
+     "page": 39,
+     "original": "21.9 22.0 55.4 48.4"
+    },
+    {
+     "id": "eq-model-8-10",
+     "type": "equation",
+     "page": 39,
+     "original": "SeamlessM4T-Large 2.3B"
+    },
+    {
+     "id": "eq-model-8-11",
+     "type": "equation",
+     "page": 39,
+     "original": "23.1 23.7 60.8 50.9"
     },
     {
      "id": "tab-model-8-1",
@@ -5656,10 +7337,52 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-9-1-1",
-       "original": "High Medium Low Low† Whisper-Large-v2 24.2 19.4 16.1 18.1 AudioPaLM-2-8B-AST 27.9 20.9 18.0 22.0 SeamlessM4T-Medium 23.9 21.8 22.2 23.5 SeamlessM4T-Large 26.9 25.2 25.4 27",
-       "zh": "（表格内容：按资源水平的 Fleurs S2TT X–eng——列为高、中、低、低†。Whisper-Large-v2：24.2，19.4，16.1，18.1；AudioPaLM-2-8B-AST：27.9，20.9，18.0，22.0；SeamlessM4T-Medium：23.9，21.8，22.2，23.5；SeamlessM4T-Large：26.9，25.2，25.4，27。）"
+       "original": "High (n=15) Medium (n=25) Low (n=34) Low† (n=23) Whisper-Large-v2",
+       "zh": "（页码行：2。）\n（原始数据照录）\nHigh (n=15) Medium (n=25) Low (n=34) Low† (n=23) Whisper-Large-v2"
       }
      ]
+    },
+    {
+     "id": "eq-model-9-1",
+     "type": "equation",
+     "page": 39,
+     "original": "24.2 19.4 16.1 18.1"
+    },
+    {
+     "id": "eq-model-9-2",
+     "type": "equation",
+     "page": 39,
+     "original": "AudioPaLM-2-8B-AST"
+    },
+    {
+     "id": "eq-model-9-3",
+     "type": "equation",
+     "page": 39,
+     "original": "27.9 20.9 18.0 22.0"
+    },
+    {
+     "id": "eq-model-9-4",
+     "type": "equation",
+     "page": 39,
+     "original": "SeamlessM4T-Medium"
+    },
+    {
+     "id": "eq-model-9-5",
+     "type": "equation",
+     "page": 39,
+     "original": "23.9 21.8 22.2 23.5"
+    },
+    {
+     "id": "eq-model-9-6",
+     "type": "equation",
+     "page": 39,
+     "original": "SeamlessM4T-Large"
+    },
+    {
+     "id": "eq-model-9-7",
+     "type": "equation",
+     "page": 39,
+     "original": "26.9 25.2 25.4 27"
     },
     {
      "id": "tab-model-9-1",
@@ -5681,16 +7404,10 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
-     "id": "p-model-9-3",
-     "type": "paragraph",
+     "id": "eq-model-9-8",
+     "type": "equation",
      "page": 39,
-     "sentences": [
-      {
-       "id": "s-model-9-3-1",
-       "original": "39",
-       "zh": "39"
-      }
-     ]
+     "original": "39"
     }
    ]
   },
@@ -5711,10 +7428,40 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-10-1-1",
-       "original": "size Fleurs X–eng(n=81) Fleurs eng–X(n=88) ↑BLEU ↑spBLEU ↑Blaser 2.0 ↑BLEU ↑spBLEU ↑Blaser 2.0 Whisper-Large-v2 17.9 19.9 3.29 x x x SeamlessM4T-Medium 20.9 23.1 3.56 19.2 26.0 3.68 SeamlessM4T-Large 24.0 26.4 3.66 21.5 28.9 3.71",
-       "zh": "（表格内容：S2TT 结果——列为 Fleurs X–eng (n=81) 的 ↑BLEU / ↑spBLEU / ↑Blaser 2.0，与 Fleurs eng–X (n=88) 的 ↑BLEU / ↑spBLEU / ↑Blaser 2.0。Whisper-Large-v2：17.9，19.9，3.29，x，x，x；SeamlessM4T-Medium：20.9，23.1，3.56，19.2，26.0，3.68；SeamlessM4T-Large：24.0，26.4，3.66，21.5，28.9，3.71。）"
+       "original": "size Fleurs X–eng(n=81) Fleurs eng–X(n=88) ↑BLEU ↑spBLEU ↑Blaser 2.0 ↑BLEU ↑spBLEU ↑Blaser 2.0 Whisper-Large-v2 1.5B",
+       "zh": "（页码行：2。）\n（原始数据照录）\nsize Fleurs X–eng(n=81) Fleurs eng–X(n=88) ↑BLEU ↑spBLEU ↑Blaser 2.0 ↑BLEU ↑spBLEU ↑Blaser 2.0 Whisper-Large-v2 1.5B"
       }
      ]
+    },
+    {
+     "id": "eq-model-10-1",
+     "type": "equation",
+     "page": 40,
+     "original": "17.9 19.9 3.29"
+    },
+    {
+     "id": "eq-model-10-2",
+     "type": "equation",
+     "page": 40,
+     "original": "x x x SeamlessM4T-Medium 1.2B"
+    },
+    {
+     "id": "eq-model-10-3",
+     "type": "equation",
+     "page": 40,
+     "original": "20.9 23.1 3.56 19.2 26.0 3.68"
+    },
+    {
+     "id": "eq-model-10-4",
+     "type": "equation",
+     "page": 40,
+     "original": "SeamlessM4T-Large 2.3B"
+    },
+    {
+     "id": "eq-model-10-5",
+     "type": "equation",
+     "page": 40,
+     "original": "24.0 26.4 3.66 21.5 28.9 3.71"
     },
     {
      "id": "tab-model-10-1",
@@ -5730,8 +7477,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-10-2-1",
-       "original": "S2ST (↑ASR-BLEU) S2ST (↑Blaser 2.0) Fleurs",
-       "zh": "S2ST（↑ASR-BLEU） S2ST（↑Blaser 2.0） Fleurs"
+       "original": "S2ST (↑ASR-BLEU) S2ST (↑Blaser 2.0) Fleurs X–eng (n=82)",
+       "zh": "（表头：S2ST（↑ASR-BLEU）× S2ST（↑Blaser 2.0）——Fleurs X–eng（n=82）。）"
       }
      ]
     }
@@ -5754,10 +7501,28 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-11-1-1",
-       "original": "Fleurs Fleurs Fleurs Fleurs Fleurs Fleurs SeamlessM4T-Medium 17.9 20.8 14.3 15.4 3.62 3.63 3.63 SeamlessM4T-Large 22.7 26.3 19.8 21.5 3.85 3.94 3.95",
-       "zh": "（表格内容：S2ST 结果——前四列为 Fleurs X–eng 与 eng–X 的 ASR-BLEU，后三列为 Fleurs 的 Blaser 2.0。SeamlessM4T-Medium：17.9，20.8，14.3，15.4，3.62，3.63，3.63；SeamlessM4T-Large：22.7，26.3，19.8，21.5，3.85，3.94，3.95。）"
+       "original": "Fleurs X–eng (n=101) Fleurs eng–X (n=32) Fleurs eng–X (n=35) Fleurs X–eng (n=82) Fleurs eng–X (n=32) Fleurs eng–X (n=35) SeamlessM4T-Medium",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nFleurs X–eng (n=101) Fleurs eng–X (n=32) Fleurs eng–X (n=35) Fleurs X–eng (n=82) Fleurs eng–X (n=32) Fleurs eng–X (n=35) SeamlessM4T-Medium"
       }
      ]
+    },
+    {
+     "id": "eq-model-11-1",
+     "type": "equation",
+     "page": 40,
+     "original": "17.9 20.8 14.3 15.4 3.62 3.63 3.63"
+    },
+    {
+     "id": "eq-model-11-2",
+     "type": "equation",
+     "page": 40,
+     "original": "SeamlessM4T-Large"
+    },
+    {
+     "id": "eq-model-11-3",
+     "type": "equation",
+     "page": 40,
+     "original": "22.7 26.3 19.8 21.5 3.85 3.94 3.95"
     },
     {
      "id": "tab-model-11-1",
@@ -5829,10 +7594,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-12-1-1",
-       "original": "SeamlessM4T-Large 34.9 20.7 22.5",
-       "zh": "（表格内容：零样本 Fleurs T2ST——SeamlessM4T-Large：34.9，20.7，22.5（分别为 X–eng 平均、及 eng–X 两个口径的平均 ASR-BLEU）。）"
+       "original": "X–eng (n=88) eng–X (n=35) eng–X (n=32) SeamlessM4T-Large",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nX–eng (n=88) eng–X (n=35) eng–X (n=32) SeamlessM4T-Large"
       }
      ]
+    },
+    {
+     "id": "eq-model-12-1",
+     "type": "equation",
+     "page": 40,
+     "original": "34.9 20.7 22.5"
     },
     {
      "id": "tab-model-12-1",
@@ -5842,14 +7613,20 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 20：零样本 Fleurs T2ST——报告 SeamlessM4T-Large 在 Fleurs T2ST 上的平均 ASR-BLEU。"
     },
     {
+     "id": "eq-model-12-2",
+     "type": "equation",
+     "page": 40,
+     "original": "40"
+    },
+    {
      "id": "p-model-12-2",
      "type": "paragraph",
      "page": 40,
      "sentences": [
       {
        "id": "s-model-12-2-1",
-       "original": "40 4.4.4 Evaluation with spBLEU and Blaser 2.0.",
-       "zh": "40 4.4.4 以 spBLEU 与 Blaser 2.0 评测。"
+       "original": "4.4.4 Evaluation with spBLEU and Blaser 2.0.",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\n4.4.4 Evaluation with spBLEU and Blaser 2.0."
       }
      ]
     },
@@ -5930,14 +7707,44 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-model-12-3",
+     "type": "equation",
+     "page": 41,
+     "original": "24"
+    },
+    {
+     "id": "eq-model-12-4",
+     "type": "equation",
+     "page": 41,
+     "original": "Target languages"
+    },
+    {
+     "id": "eq-model-12-5",
+     "type": "equation",
+     "page": 41,
+     "original": "20"
+    },
+    {
+     "id": "eq-model-12-6",
+     "type": "equation",
+     "page": 41,
+     "original": "Average SPBLEU"
+    },
+    {
+     "id": "eq-model-12-7",
+     "type": "equation",
+     "page": 41,
+     "original": "16 12 8 4"
+    },
+    {
      "id": "p-model-12-6",
      "type": "paragraph",
      "page": 41,
      "sentences": [
       {
        "id": "s-model-12-6-1",
-       "original": "24 Target languages 20 Average SPBLEU 16 12 8 4 asm lit som khm mya cmn fin yor lug jpn kor ibo pbt est luo nya lao pol bel slv nob gle slk sna azj yue gaz zul ceb lvs khk hun ukr pes kaz mar tur kir jav hrv ckb tam zlm mal cym mkd amh isl ell pan ita hin cat tel glg ind guj tgk vie kat npi snd heb kan ces uzn eng bos ben ory dan swe swh bul mlt srp hye",
-       "zh": "（图内容：横轴为目标语言，纵轴为平均 SPBLEU，刻度 24、20、16、12、8、4；语言 asm lit som khm mya cmn fin yor lug jpn kor ibo pbt est luo nya lao pol bel slv nob gle slk sna azj yue gaz zul ceb lvs khk hun ukr pes kaz mar tur kir jav hrv ckb tam zlm mal cym mkd amh isl ell pan ita hin cat tel glg ind guj tgk vie kat npi snd heb kan ces uzn eng bos ben ory dan swe swh bul mlt srp hye。）"
+       "original": "asm lit som khm mya cmn fin yor lug jpn kor ibo pbt est luo nya lao pol bel slv nob gle slk sna azj yue gaz zul ceb lvs khk hun ukr pes kaz mar tur kir jav hrv ckb urd tam zlm spa mal cym mkd amh isl ell pan ita rus hin cat tel nld glg ind guj tgk vie tha kat npi snd heb kan ces uzn fra eng bos deu ben ory dan swe swh bul mlt por srp ron arb hye",
+       "zh": "（图：24 个目标语言的平均 SPBLEU（4/8/12/16/20/24）：asm、lit、som、khm、mya、cmn、fin、yor、lug、jpn、kor、ibo、pbt、est、luo、nya、lao、pol、bel、slv、nob、gle、slk、sna、azj、yue、gaz、zul、ceb、lvs、khk、hun、ukr、pes、kaz、mar、tur、kir、jav、hrv、ckb、urd、tam、zlm、spa、mal、cym、mkd、amh、isl、ell、pan、ita、rus、hin、cat、tel、nld、glg、ind、guj、tgk、vie、tha、kat、npi、snd、heb、kan、ces、uzn、fra、eng、bos、deu、ben、ory、dan、swe、swh、bul、mlt、por、srp、ron、arb、hye。）"
       }
      ]
     },
@@ -6016,10 +7823,16 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-experimental-setup-2-1-6",
-       "original": "We fine-tuned all the speech encoder parameters and only fine-tuned 41",
+       "original": "We fine-tuned all the speech encoder parameters and only fine-tuned",
        "zh": "我们微调了全部语音编码器参数，并且只微调 41"
       }
      ]
+    },
+    {
+     "id": "eq-experimental-setup-2-1",
+     "type": "equation",
+     "page": 41,
+     "original": "41"
     }
    ]
   },
@@ -6040,10 +7853,70 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-id-1-1",
-       "original": "Configuration Fleurs X–eng (↑BLEU) A w2v-BERT baseline with updated XLS-R data (400K hrs, 143 langs) 12.4 B A + product quantization with 2 GVQ codebooks 12.5 C B + increased open training data from 400K hours to 1M hours 12.7 D C + 2 RPQ codebooks for masked prediction objective 12.8",
+       "original": "Configuration Fleurs X–eng (↑BLEU) A w2v-BERT baseline with updated XLS-R data (400K hrs, 143 langs)",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nConfiguration Fleurs X–eng (↑BLEU) A w2v-BERT baseline with updated XLS-R data (400K hrs, 143 langs)"
+      }
+     ]
+    },
+    {
+     "id": "eq-id-1",
+     "type": "equation",
+     "page": 42,
+     "original": "12.4"
+    },
+    {
+     "id": "p-id-2",
+     "type": "paragraph",
+     "page": 42,
+     "sentences": [
+      {
+       "id": "s-id-2-1",
+       "original": "B A + product quantization with 2 GVQ codebooks",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-id-2",
+     "type": "equation",
+     "page": 42,
+     "original": "12.5"
+    },
+    {
+     "id": "p-id-3",
+     "type": "paragraph",
+     "page": 42,
+     "sentences": [
+      {
+       "id": "s-id-3-1",
+       "original": "C B + increased open training data from 400K hours to 1M hours",
        "zh": "（表格内容：w2v-BERT 变体消融——列为配置与 Fleurs X–eng (↑BLEU)。A：以更新的 XLS-R 数据（400K 小时、143 种语言）训练的 w2v-BERT 基线，12.4；B：A + 2 个 GVQ 码本的乘积量化，12.5；C：B + 开放训练数据从 400K 小时扩至 1M 小时，12.7；D：C + 掩码预测目标的 2 个 RPQ 码本，12.8。）"
       }
      ]
+    },
+    {
+     "id": "eq-id-3",
+     "type": "equation",
+     "page": 42,
+     "original": "12.7"
+    },
+    {
+     "id": "p-id-4",
+     "type": "paragraph",
+     "page": 42,
+     "sentences": [
+      {
+       "id": "s-id-4-1",
+       "original": "D C + 2 RPQ codebooks for masked prediction objective",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-id-4",
+     "type": "equation",
+     "page": 42,
+     "original": "12.8"
     },
     {
      "id": "tab-id-1",
@@ -6053,32 +7926,32 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 21：w2v-BERT 变体与训练数据扩展的消融。"
     },
     {
-     "id": "p-id-2",
+     "id": "p-id-5",
      "type": "paragraph",
      "page": 42,
      "sentences": [
       {
-       "id": "s-id-2-1",
+       "id": "s-id-5-1",
        "original": "LayerNorms and Self-attention in the text decoder (LNA-D [Li et al., 2021a]).",
        "zh": "文本解码器中的 LayerNorm 与自注意力（LNA-D [Li et al., 2021a]）。"
       },
       {
-       "id": "s-id-2-2",
+       "id": "s-id-5-2",
        "original": "Our learning rate increased up to 3e-4 through 4000 warm-up updates and subsequently followed the inverse square root learning rate schedule.",
        "zh": "学习率经 4000 步暖机升至 3e-4，随后遵循反平方根学习率调度。"
       },
       {
-       "id": "s-id-2-3",
+       "id": "s-id-5-3",
        "original": "We trained on 32 GPUs with a batch size of 960K frames in each for 100K updates.",
        "zh": "我们在 32 张 GPU 上训练 100K 步，每张卡的批大小为 960K 帧。"
       },
       {
-       "id": "s-id-2-4",
+       "id": "s-id-5-4",
        "original": "We report BLEU scores (SacreBLEU13 [Post, 2018]) evaluated on the test set of all 101 X–eng directions from Fleurs [Conneau et al., 2022].",
        "zh": "我们报告在 Fleurs [Conneau et al., 2022] 全部 101 个 X–eng 方向测试集上评测的 BLEU 分数（SacreBLEU13 [Post, 2018]）。"
       },
       {
-       "id": "s-id-2-5",
+       "id": "s-id-5-5",
        "original": "Given the coverage of our training data, this means that 34 of the directions were evaluated as zero-shot.",
        "zh": "鉴于我们训练数据的覆盖，这意味着其中 34 个方向是以零样本方式评测的。"
       }
@@ -6130,10 +8003,196 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-results-2-2-1",
-       "original": "Language (code) ASR S2TT S2ST Primary Primary Mined Primary Mined Primary Mined Primary Mined 934 942 600 600 899 736 895 681 ben 338 320 600 499 292 246 652 221 eng hin 148 143 600 600 138 466 656 430 ind 250 254 600 596 248 443 684 375 ita 591 910 600 600 930 716 636 jpn 381 600 259 624 993 681 779 269 246 600 600 355 606 983 508 264 144 600 600 290 959 574 swh 361 50 600 596 342 411 682 392 190 59 600 101 184 462 641 408 tur 169 100 600 600 156 375 998 411 185 145 600 507 179 555 682 502 vie 194 151 600 600 176 666 954 684 Total",
-       "zh": "（表格内容：Table 22——各语言（代码）在 ASR、S2TT、S2ST 任务上的数据小时数，分 eng–X 与 X–eng，各任务再分 Primary 与 Mined。各行列值：934 942 600 600 899 736 895 681；ben 338 320 600 499 292 246 652 221；eng；hin 148 143 600 600 138 466 656 430；ind 250 254 600 596 248 443 684 375；ita 591 910 600 600 930 716 636；jpn 381 600 259 624 993 681 779；269 246 600 600 355 606 983 508；264 144 600 600 290 959 574；swh 361 50 600 596 342 411 682 392；190 59 600 101 184 462 641 408；tur 169 100 600 600 156 375 998 411；185 145 600 507 179 555 682 502；vie 194 151 600 600 176 666 954 684；Total。默认 S2TT 挖掘数据 X–eng 上限 400 小时、eng–X 上限 200 小时。）"
+       "original": "Language (code) ASR S2TT S2ST X–eng eng–X X–eng eng–X Primary Primary Mined Primary Mined Primary Mined Primary Mined arb",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-results-2-1",
+     "type": "equation",
+     "page": 42,
+     "original": "934 942 600 1,959 600 899 736 895 681"
+    },
+    {
+     "id": "eq-results-2-2",
+     "type": "equation",
+     "page": 42,
+     "original": "ben"
+    },
+    {
+     "id": "eq-results-2-3",
+     "type": "equation",
+     "page": 42,
+     "original": "338 320 600 1,987 499 292 246 652 221"
+    },
+    {
+     "id": "eq-results-2-4",
+     "type": "equation",
+     "page": 42,
+     "original": "eng"
+    },
+    {
+     "id": "eq-results-2-5",
+     "type": "equation",
+     "page": 42,
+     "original": "3,845 - - - - - - - -"
+    },
+    {
+     "id": "eq-results-2-6",
+     "type": "equation",
+     "page": 42,
+     "original": "hin"
+    },
+    {
+     "id": "eq-results-2-7",
+     "type": "equation",
+     "page": 42,
+     "original": "148 143 600 2,066 600 138 466 656 430"
+    },
+    {
+     "id": "eq-results-2-8",
+     "type": "equation",
+     "page": 42,
+     "original": "ind"
+    },
+    {
+     "id": "eq-results-2-9",
+     "type": "equation",
+     "page": 42,
+     "original": "250 254 600 1,818 596 248 443 684 375"
+    },
+    {
+     "id": "eq-results-2-10",
+     "type": "equation",
+     "page": 42,
+     "original": "ita"
+    },
+    {
+     "id": "eq-results-2-11",
+     "type": "equation",
+     "page": 42,
+     "original": "591 910 600 2,279 600 930 716 1,020 636"
+    },
+    {
+     "id": "eq-results-2-12",
+     "type": "equation",
+     "page": 42,
+     "original": "jpn"
+    },
+    {
+     "id": "eq-results-2-13",
+     "type": "equation",
+     "page": 42,
+     "original": "381 15,141 600 1,798 259 624 993 681 779"
+    },
+    {
+     "id": "eq-results-2-14",
+     "type": "equation",
+     "page": 42,
+     "original": "por"
+    },
+    {
+     "id": "eq-results-2-15",
+     "type": "equation",
+     "page": 42,
+     "original": "269 246 600 2,250 600 355 606 983 508"
+    },
+    {
+     "id": "eq-results-2-16",
+     "type": "equation",
+     "page": 42,
+     "original": "rus"
+    },
+    {
+     "id": "eq-results-2-17",
+     "type": "equation",
+     "page": 42,
+     "original": "264 144 600 2,161 600 290 1,093 959 1,075"
+    },
+    {
+     "id": "eq-results-2-18",
+     "type": "equation",
+     "page": 42,
+     "original": "spa"
+    },
+    {
+     "id": "eq-results-2-19",
+     "type": "equation",
+     "page": 42,
+     "original": "1,515 1,285 - 2,505 574 1,694 2,335 1,035 2,209"
+    },
+    {
+     "id": "eq-results-2-20",
+     "type": "equation",
+     "page": 42,
+     "original": "swh"
+    },
+    {
+     "id": "eq-results-2-21",
+     "type": "equation",
+     "page": 42,
+     "original": "361 50 600 1,930 596 342 411 682 392"
+    },
+    {
+     "id": "eq-results-2-22",
+     "type": "equation",
+     "page": 42,
+     "original": "tha"
+    },
+    {
+     "id": "eq-results-2-23",
+     "type": "equation",
+     "page": 42,
+     "original": "190 59 600 1,941 101 184 462 641 408"
+    },
+    {
+     "id": "eq-results-2-24",
+     "type": "equation",
+     "page": 42,
+     "original": "tur"
+    },
+    {
+     "id": "eq-results-2-25",
+     "type": "equation",
+     "page": 42,
+     "original": "169 100 600 2,135 600 156 375 998 411"
+    },
+    {
+     "id": "eq-results-2-26",
+     "type": "equation",
+     "page": 42,
+     "original": "urd"
+    },
+    {
+     "id": "eq-results-2-27",
+     "type": "equation",
+     "page": 42,
+     "original": "185 145 600 1,844 507 179 555 682 502"
+    },
+    {
+     "id": "eq-results-2-28",
+     "type": "equation",
+     "page": 42,
+     "original": "vie"
+    },
+    {
+     "id": "eq-results-2-29",
+     "type": "equation",
+     "page": 42,
+     "original": "194 151 600 2,396 600 176 666 954 684"
+    },
+    {
+     "id": "eq-results-2-30",
+     "type": "equation",
+     "page": 42,
+     "original": "Total"
+    },
+    {
+     "id": "eq-results-2-31",
+     "type": "equation",
+     "page": 42,
+     "original": "9,633 19,890 7,800 29,068 2,701 6,508 10,103 11,523 9,312"
     },
     {
      "id": "tab-results-2-1",
@@ -6149,8 +8208,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-results-2-3-1",
-       "original": "13. see Table 4 42 4.5.2 Multimodal & multitasking X2T",
-       "zh": "13. 见 Table 4 42 4.5.2 多模态多任务 X2T"
+       "original": "13. see Table 4",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\n13. see Table 4"
+      }
+     ]
+    },
+    {
+     "id": "eq-results-2-32",
+     "type": "equation",
+     "page": 42,
+     "original": "42"
+    },
+    {
+     "id": "p-results-2-4",
+     "type": "paragraph",
+     "page": 42,
+     "sentences": [
+      {
+       "id": "s-results-2-4-1",
+       "original": "4.5.2 Multimodal & multitasking X2T",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\n4.5.2 Multimodal & multitasking X2T"
       }
      ]
     }
@@ -6372,14 +8449,62 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-experimental-setup-4-1-1",
        "original": "We fine-tuned S2TT models on increasing amounts of mined data from SeamlessAlign.",
-       "zh": "我们在来自 SeamlessAlign 的数量递增的挖掘数据上微调 S2TT 模型。"
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-experimental-setup-4-1-2",
-       "original": "On top of the primary S2TT data, in the first model, we add 200 43 Data D1: S2TT data D2: D1+ASR data D3: D2+Mined data Task S2TT ASR∗ T2TT S2TT ASR T2TT S2TT ASR T2TT Metric ↑BLEU ↓WER ↑BLEU ↑BLEU ↓WER ↑BLEU ↑BLEU ↓WER ↑BLEU L1: LS2TT 26.5 36.5 34.1 26.7 16.4 34.2 27.6 15.8 34.7 L2: L1 + LT2TT 26.6 36.4 36.8 26.7 16.8 36.1 27.6 16.3 35.4 L3: L2 + LKD 27.1 35.9 36.7 27.2 16.2 36.1 28.3 15.8 35.3",
-       "zh": "在 primary S2TT 数据之上，第一个模型在每个方向加 200 43（表格内容：Table 23——列为数据 D1: S2TT data、D2: D1+ASR data、D3: D2+Mined data，每数据下分任务 S2TT/ASR/T2TT，指标 ↑BLEU/↓WER/↑BLEU。各行：L1: LS2TT 26.5/36.5/34.1，26.7/16.4/34.2，27.6/15.8/34.7；L2: L1 + LT2TT 26.6/36.4/36.8，26.7/16.8/36.1，27.6/16.3/35.4；L3: L2 + LKD 27.1/35.9/36.7，27.2/16.2/36.1，28.3/15.8/35.3。）"
+       "original": "On top of the primary S2TT data, in the first model, we add 200",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nOn top of the primary S2TT data, in the first model, we add 200"
       }
      ]
+    },
+    {
+     "id": "eq-experimental-setup-4-1",
+     "type": "equation",
+     "page": 43,
+     "original": "43"
+    },
+    {
+     "id": "p-experimental-setup-4-2",
+     "type": "paragraph",
+     "page": 43,
+     "sentences": [
+      {
+       "id": "s-experimental-setup-4-2-1",
+       "original": "Data D1: S2TT data D2: D1+ASR data D3: D2+Mined data Task S2TT ASR∗ T2TT S2TT ASR T2TT S2TT ASR T2TT (n=28) (n=15) (n=28) (n=28) (n=15) (n=28) (n=28) (n=15) (n=28) Metric ↑BLEU ↓WER ↑BLEU ↑BLEU ↓WER ↑BLEU ↑BLEU ↓WER ↑BLEU L1: LS2TT",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nData D1: S2TT data D2: D1+ASR data D3: D2+Mined data Task S2TT ASR∗ T2TT S2TT ASR T2TT S2TT ASR T2TT (n=28) (n=15) (n=28) (n=28) (n=15) (n=28) (n=28) (n=15) (n=28) Metric ↑BLEU ↓WER ↑BLEU ↑BLEU ↓WER ↑BLEU ↑BLEU ↓WER ↑BLEU L1: LS2TT"
+      }
+     ]
+    },
+    {
+     "id": "eq-experimental-setup-4-2",
+     "type": "equation",
+     "page": 43,
+     "original": "26.5 36.5 34.1 26.7 16.4 34.2 27.6 15.8 34.7"
+    },
+    {
+     "id": "eq-experimental-setup-4-3",
+     "type": "equation",
+     "page": 43,
+     "original": "L2: L1 + LT2TT"
+    },
+    {
+     "id": "eq-experimental-setup-4-4",
+     "type": "equation",
+     "page": 43,
+     "original": "26.6 36.4 36.8 26.7 16.8 36.1 27.6 16.3 35.4"
+    },
+    {
+     "id": "eq-experimental-setup-4-5",
+     "type": "equation",
+     "page": 43,
+     "original": "L3: L2 + LKD"
+    },
+    {
+     "id": "eq-experimental-setup-4-6",
+     "type": "equation",
+     "page": 43,
+     "original": "27.1 35.9 36.7 27.2 16.2 36.1 28.3 15.8 35.3"
     },
     {
      "id": "tab-experimental-setup-4-1",
@@ -6389,17 +8514,17 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 23：三种不同数据设置下多任务目标的消融。结果在 Fleurs dev 上报告。"
     },
     {
-     "id": "p-experimental-setup-4-2",
+     "id": "p-experimental-setup-4-3",
      "type": "paragraph",
      "page": 44,
      "sentences": [
       {
-       "id": "s-experimental-setup-4-2-1",
+       "id": "s-experimental-setup-4-3-1",
        "original": "hours of mined data in each direction, 400 hours in the second and 600 hours in the last.",
        "zh": "小时的挖掘数据，第二个模型加 400 小时，最后一个加 600 小时。"
       },
       {
-       "id": "s-experimental-setup-4-2-2",
+       "id": "s-experimental-setup-4-3-2",
        "original": "SeamlessAlign is ranked based on Sonar scores and we selected the top ranking pairs up to the desired amount of additional data.",
        "zh": "SeamlessAlign 按 Sonar 分数排名，我们选取排名靠前的配对直至达到目标额外数据量。"
       }
@@ -6442,6 +8567,30 @@ globalThis.PAPER_2308_11596 = {
    ]
   },
   {
+   "id": "sec-x-eng",
+   "num": null,
+   "level": 2,
+   "page": 44,
+   "title": {
+    "original": "X–eng",
+    "zh": "X–eng"
+   },
+   "blocks": [
+    {
+     "id": "p-x-eng-1",
+     "type": "paragraph",
+     "page": 44,
+     "sentences": [
+      {
+       "id": "s-x-eng-1-1",
+       "original": "(n=14) eng–X (n=14)",
+       "zh": "（图注刻度：X–eng（n=14）与 eng–X（n=14）两个方向。）"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "id": "sec-data-setting",
    "num": null,
    "level": 2,
@@ -6458,8 +8607,62 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-data-setting-1-1",
-       "original": "↑BLEU ∆ ↑BLEU ∆ Baseline 23.9 29.0 + 200H mined 25.9 +2.0 29.4 +0.4 + 400H mined",
-       "zh": "（表格内容：列为 ↑BLEU 与 ∆。各行：Baseline 23.9、29.0；+ 200h mined 25.9、+2.0、29.4、+0.4；+ 400h mined（接下表）……）"
+       "original": "↑BLEU",
+       "zh": "37 S2TT（↑BLEU）"
+      }
+     ]
+    },
+    {
+     "id": "eq-data-setting-1",
+     "type": "equation",
+     "page": 44,
+     "original": "∆"
+    },
+    {
+     "id": "eq-data-setting-2",
+     "type": "equation",
+     "page": 44,
+     "original": "↑BLEU"
+    },
+    {
+     "id": "eq-data-setting-3",
+     "type": "equation",
+     "page": 44,
+     "original": "∆"
+    },
+    {
+     "id": "eq-data-setting-4",
+     "type": "equation",
+     "page": 44,
+     "original": "Baseline"
+    },
+    {
+     "id": "eq-data-setting-5",
+     "type": "equation",
+     "page": 44,
+     "original": "23.9 29.0"
+    },
+    {
+     "id": "eq-data-setting-6",
+     "type": "equation",
+     "page": 44,
+     "original": "+ 200H mined"
+    },
+    {
+     "id": "eq-data-setting-7",
+     "type": "equation",
+     "page": 44,
+     "original": "25.9 +2.0 29.4 +0.4"
+    },
+    {
+     "id": "p-data-setting-2",
+     "type": "paragraph",
+     "page": 44,
+     "sentences": [
+      {
+       "id": "s-data-setting-2-1",
+       "original": "+ 400H mined",
+       "zh": "（表格行）+ 400H mined（挖掘数据）。"
       }
      ]
     }
@@ -6493,10 +8696,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-29-8-1-1",
-       "original": "+ 600H mined 26.0 +2.1 29.5 +0.5",
+       "original": "+ 600H mined",
        "zh": "（表格内容：+ 600h 挖掘数据：26.0，+2.1；29.5，+0.5。）"
       }
      ]
+    },
+    {
+     "id": "eq-29-8-1",
+     "type": "equation",
+     "page": 44,
+     "original": "26.0 +2.1 29.5 +0.5"
     },
     {
      "id": "tab-29-8-1",
@@ -6591,14 +8800,20 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-results-5-1",
+     "type": "equation",
+     "page": 44,
+     "original": "44"
+    },
+    {
      "id": "p-results-5-2",
      "type": "paragraph",
      "page": 44,
      "sentences": [
       {
        "id": "s-results-5-2-1",
-       "original": "44 4.5.5 Leveraging mined speech-to-speech data To measure the impact of adding mined S2ST data to Stage3 of UnitY fine-tuning, we compared model M2 from Section 4.5.4 to a model trained following the same training procedure, but with more mined data from SeamlessAlign (see amounts of additional data per direction in Table 22.",
-       "zh": "（页码 44）4.5.5 利用挖掘的语到语数据 为衡量把挖掘 S2ST 数据加入 UnitY 微调 Stage3 的影响，我们把第 4.5.4 节的模型 M2 与一个按相同训练流程、但加入更多来自 SeamlessAlign 挖掘数据的模型做了对比（各方向额外数据量见 Table 22）。"
+       "original": "4.5.5 Leveraging mined speech-to-speech data To measure the impact of adding mined S2ST data to Stage3 of UnitY fine-tuning, we compared model M2 from Section 4.5.4 to a model trained following the same training procedure, but with more mined data from SeamlessAlign (see amounts of additional data per direction in Table 22.",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\n4.5.5 Leveraging mined speech-to-speech data To measure the impact of adding mined S2ST data to Stage3 of UnitY fine-tuning, we compared model M2 from Section 4.5.4 to a model trained following the same training procedure, but with more mined data from SeamlessAlign (see amounts of additional data per direction in Table 22."
       }
      ]
     }
@@ -6681,10 +8896,76 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-13-1-1",
-       "original": "updates M1 T2U from scratch 10K 6.9 1.8 20K 23.3 12.4 M2 pre-trained T2U 10K 18.1 8.8 20K 24.2 15.2 50K† 26.5 18.6 M3 pre-trained T2U + Mined data 80K† 26.3 19.1",
-       "zh": "（表格内容：列为 updates、模型与 ASR-BLEU 两列。各行：M1 从零训练 T2U，10K 为 6.9、1.8，20K 为 23.3、12.4；M2 预训练 T2U，10K 为 18.1、8.8，20K 为 24.2、15.2，50K† 为 26.5、18.6；M3 预训练 T2U + 挖掘数据，80K† 为 26.3、19.1。）"
+       "original": "updates X–eng eng–X M1 T2U from scratch 10K",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nupdates X–eng eng–X M1 T2U from scratch 10K"
       }
      ]
+    },
+    {
+     "id": "eq-model-13-1",
+     "type": "equation",
+     "page": 45,
+     "original": "6.9 1.8"
+    },
+    {
+     "id": "eq-model-13-2",
+     "type": "equation",
+     "page": 45,
+     "original": "20K"
+    },
+    {
+     "id": "eq-model-13-3",
+     "type": "equation",
+     "page": 45,
+     "original": "23.3 12.4"
+    },
+    {
+     "id": "eq-model-13-4",
+     "type": "equation",
+     "page": 45,
+     "original": "M2 pre-trained T2U 10K"
+    },
+    {
+     "id": "eq-model-13-5",
+     "type": "equation",
+     "page": 45,
+     "original": "18.1 8.8"
+    },
+    {
+     "id": "eq-model-13-6",
+     "type": "equation",
+     "page": 45,
+     "original": "20K"
+    },
+    {
+     "id": "eq-model-13-7",
+     "type": "equation",
+     "page": 45,
+     "original": "24.2 15.2"
+    },
+    {
+     "id": "eq-model-13-8",
+     "type": "equation",
+     "page": 45,
+     "original": "50K†"
+    },
+    {
+     "id": "eq-model-13-9",
+     "type": "equation",
+     "page": 45,
+     "original": "26.5 18.6"
+    },
+    {
+     "id": "eq-model-13-10",
+     "type": "equation",
+     "page": 45,
+     "original": "M3 pre-trained T2U + Mined data 80K†"
+    },
+    {
+     "id": "eq-model-13-11",
+     "type": "equation",
+     "page": 45,
+     "original": "26.3 19.1"
     },
     {
      "id": "tab-model-13-1",
@@ -6800,14 +9081,20 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-codec-based-audio-modeling-1",
+     "type": "equation",
+     "page": 45,
+     "original": "45"
+    },
+    {
      "id": "p-codec-based-audio-modeling-3",
      "type": "paragraph",
      "page": 45,
      "sentences": [
       {
        "id": "s-codec-based-audio-modeling-3-1",
-       "original": "45 VaLLE-X [Zhang et al., 2023b] subsequently built upon VaLLE to scale language coverage and enable language translation using a model cascade.",
-       "zh": "[45] VaLLE-X [Zhang et al., 2023b] 随后在 VaLLE 基础上扩展了语言覆盖，并通过模型级联实现语言翻译。"
+       "original": "VaLLE-X [Zhang et al., 2023b] subsequently built upon VaLLE to scale language coverage and enable language translation using a model cascade.",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nVaLLE-X [Zhang et al., 2023b] subsequently built upon VaLLE to scale language coverage and enable language translation using a model cascade."
       },
       {
        "id": "s-codec-based-audio-modeling-3-2",
@@ -6989,14 +9276,20 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-description-1",
+     "type": "equation",
+     "page": 46,
+     "original": "46"
+    },
+    {
      "id": "p-description-2",
      "type": "paragraph",
      "page": 46,
      "sentences": [
       {
        "id": "s-description-2-1",
-       "original": "46 More specifically, in Blaser 2.0, we take the source input, the translated output from any S2ST, S2TT, or T2TT model, and the reference speech segment or text, and convert them into SONAR embedding vectors (hsrc, hmt, and href, respectively).",
-       "zh": "更具体地（页码 46），在 Blaser 2.0 中，我们把源输入、来自任一 S2ST/S2TT/T2TT 模型的翻译输出，以及参考语音片段或文本，分别转换为 SONAR 嵌入向量（记为 hsrc、hmt 与 href）。"
+       "original": "More specifically, in Blaser 2.0, we take the source input, the translated output from any S2ST, S2TT, or T2TT model, and the reference speech segment or text, and convert them into SONAR embedding vectors (hsrc, hmt, and href, respectively).",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nMore specifically, in Blaser 2.0, we take the source input, the translated output from any S2ST, S2TT, or T2TT model, and the reference speech segment or text, and convert them into SONAR embedding vectors (hsrc, hmt, and href, respectively)."
       },
       {
        "id": "s-description-2-2",
@@ -7131,10 +9424,52 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-data-part-3-1",
-       "original": "ρQE BLASER 1.0 S2ST data 9804 10690 10 9 0.51 0.56 0.53 Other S2ST data 5453 15904 8 13 0.47 0.48 0.38 S2TT and T2ST data 5205 10246 7 8 0.49 0.54 0.51 T2TT data 20311 86776 2 59 0.49 0.61 0.60",
-       "zh": "（列：ρQE。各行：BLASER 1.0 S2ST data 9804 10690 10 9 0.51 0.56 0.53；Other S2ST data 5453 15904 8 13 0.47 0.48 0.38；S2TT and T2ST data 5205 10246 7 8 0.49 0.54 0.51；T2TT data 20311 86776 2 59 0.49 0.61 0.60。）"
+       "original": "ρQE BLASER 1.0 S2ST data",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nρQE BLASER 1.0 S2ST data"
       }
      ]
+    },
+    {
+     "id": "eq-data-part-1",
+     "type": "equation",
+     "page": 47,
+     "original": "9804 10690 10 9 0.51 0.56 0.53"
+    },
+    {
+     "id": "eq-data-part-2",
+     "type": "equation",
+     "page": 47,
+     "original": "Other S2ST data"
+    },
+    {
+     "id": "eq-data-part-3",
+     "type": "equation",
+     "page": 47,
+     "original": "5453 15904 8 13 0.47 0.48 0.38"
+    },
+    {
+     "id": "eq-data-part-4",
+     "type": "equation",
+     "page": 47,
+     "original": "S2TT and T2ST data"
+    },
+    {
+     "id": "eq-data-part-5",
+     "type": "equation",
+     "page": 47,
+     "original": "5205 10246 7 8 0.49 0.54 0.51"
+    },
+    {
+     "id": "eq-data-part-6",
+     "type": "equation",
+     "page": 47,
+     "original": "T2TT data"
+    },
+    {
+     "id": "eq-data-part-7",
+     "type": "equation",
+     "page": 47,
+     "original": "20311 86776 2 59 0.49 0.61 0.60"
     }
    ]
   },
@@ -7149,16 +9484,10 @@ globalThis.PAPER_2308_11596 = {
    },
    "blocks": [
     {
-     "id": "p-all-data-1",
-     "type": "paragraph",
+     "id": "eq-all-data-1",
+     "type": "equation",
      "page": 47,
-     "sentences": [
-      {
-       "id": "s-all-data-1-1",
-       "original": "40773 123616 24 62 0.51 0.59 0.56",
-       "zh": "（表格内容：40773、123616、24、62、0.51、0.59、0.56。）"
-      }
-     ]
+     "original": "40773 123616 24 62 0.51 0.59 0.56"
     },
     {
      "id": "tab-all-data-1",
@@ -7242,7 +9571,25 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-results-7-1-3",
-       "original": "The 47 ↑Pearson Correlation",
+       "original": "The",
+       "zh": "《银河系漫游指南》中的巴别鱼、《星际迷航》的宇宙翻译器和《神秘博士》的 Tardis 翻译电路，本质上是同一种东西——赋予人们在任意两种语言之间翻译能力的计算设备。"
+      }
+     ]
+    },
+    {
+     "id": "eq-results-7-1",
+     "type": "equation",
+     "page": 47,
+     "original": "47"
+    },
+    {
+     "id": "p-results-7-2",
+     "type": "paragraph",
+     "page": 47,
+     "sentences": [
+      {
+       "id": "s-results-7-2-1",
+       "original": "↑Pearson Correlation",
        "zh": "（碎片）……47 ↑Pearson 相关性"
       }
      ]
@@ -7266,10 +9613,64 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-model-14-1-1",
-       "original": "eng-deu eng-spa eng-fra spa-eng fra-eng rus-eng average BLASER 1.0 unsup 0.32 0.58 0.64 0.50 0.48 0.43 0.49 Blaser 2.0 unsup 0.37 0.75 0.71 0.59 0.57 0.49 0.58 Blaser 2.0 QE 0.34 0.73 0.71 0.54 0.48 0.45 0.54 BLASER 1.0 sup 0.33 0.75 0.71 0.58 0.57 0.53 0.58 Blaser 2.0 sup 0.36 0.75 0.73 0.58 0.56 0.50 0.58",
-       "zh": "（表格内容：列为 eng-deu、eng-spa、eng-fra、spa-eng、fra-eng、rus-eng、average。各行：BLASER 1.0 unsup 0.32/0.58/0.64/0.50/0.48/0.43/0.49；Blaser 2.0 unsup 0.37/0.75/0.71/0.59/0.57/0.49/0.58；Blaser 2.0 QE 0.34/0.73/0.71/0.54/0.48/0.45/0.54；BLASER 1.0 sup 0.33/0.75/0.71/0.58/0.57/0.53/0.58；Blaser 2.0 sup 0.36/0.75/0.73/0.58/0.56/0.50/0.58。）"
+       "original": "eng-deu eng-spa eng-fra spa-eng fra-eng rus-eng average BLASER 1.0 unsup",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\neng-deu eng-spa eng-fra spa-eng fra-eng rus-eng average BLASER 1.0 unsup"
       }
      ]
+    },
+    {
+     "id": "eq-model-14-1",
+     "type": "equation",
+     "page": 48,
+     "original": "0.32 0.58 0.64 0.50 0.48 0.43 0.49"
+    },
+    {
+     "id": "eq-model-14-2",
+     "type": "equation",
+     "page": 48,
+     "original": "Blaser 2.0 unsup"
+    },
+    {
+     "id": "eq-model-14-3",
+     "type": "equation",
+     "page": 48,
+     "original": "0.37 0.75 0.71 0.59 0.57 0.49 0.58"
+    },
+    {
+     "id": "eq-model-14-4",
+     "type": "equation",
+     "page": 48,
+     "original": "Blaser 2.0 QE"
+    },
+    {
+     "id": "eq-model-14-5",
+     "type": "equation",
+     "page": 48,
+     "original": "0.34 0.73 0.71 0.54 0.48 0.45 0.54"
+    },
+    {
+     "id": "eq-model-14-6",
+     "type": "equation",
+     "page": 48,
+     "original": "BLASER 1.0 sup"
+    },
+    {
+     "id": "eq-model-14-7",
+     "type": "equation",
+     "page": 48,
+     "original": "0.33 0.75 0.71 0.58 0.57 0.53 0.58"
+    },
+    {
+     "id": "eq-model-14-8",
+     "type": "equation",
+     "page": 48,
+     "original": "Blaser 2.0 sup"
+    },
+    {
+     "id": "eq-model-14-9",
+     "type": "equation",
+     "page": 48,
+     "original": "0.36 0.75 0.73 0.58 0.56 0.50 0.58"
     },
     {
      "id": "tab-model-14-1",
@@ -7432,11 +9833,29 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-related-work-2-1",
-       "original": "14. https://iwslt.org/2023/s2s 48 5.2.1 Human Evaluation Protocols Similar to the related work aforementioned, for S2TT evaluation, we used the XSTS protocol to assess translation quality.",
-       "zh": "14. https://iwslt.org/2023/s2s 48 5.2.1 人工评测协议 与上述相关工作类似，对 S2TT 评测，我们采用 XSTS 协议评估翻译质量。"
+       "original": "14. https://iwslt.org/2023/s2s",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\n14. https://iwslt.org/2023/s2s"
+      }
+     ]
+    },
+    {
+     "id": "eq-related-work-1",
+     "type": "equation",
+     "page": 48,
+     "original": "48"
+    },
+    {
+     "id": "p-related-work-3",
+     "type": "paragraph",
+     "page": 48,
+     "sentences": [
+      {
+       "id": "s-related-work-3-1",
+       "original": "5.2.1 Human Evaluation Protocols Similar to the related work aforementioned, for S2TT evaluation, we used the XSTS protocol to assess translation quality.",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\n5.2.1 Human Evaluation Protocols Similar to the related work aforementioned, for S2TT evaluation, we used the XSTS protocol to assess translation quality."
       },
       {
-       "id": "s-related-work-2-2",
+       "id": "s-related-work-3-2",
        "original": "For the S2ST task, we evaluate using two protocols: XSTS for translation quality, and MOS to assess naturalness.",
        "zh": "对 S2ST 任务，我们采用两种协议：XSTS 评估翻译质量，MOS 评估自然度。"
       }
@@ -7575,16 +9994,10 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
-     "id": "p-xsts-annotation-and-calibration--3",
-     "type": "paragraph",
+     "id": "eq-xsts-annotation-and-calibration--1",
+     "type": "equation",
      "page": 49,
-     "sentences": [
-      {
-       "id": "s-xsts-annotation-and-calibration--3-1",
-       "original": "49",
-       "zh": "49"
-      }
-     ]
+     "original": "49"
     }
    ]
   },
@@ -7808,10 +10221,16 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-dataset-2-3",
-       "original": "Because the coverage of Fleurs varies per language, the subset of items present in the evaluation set varies per language and thus also per language pair; though there is a majority of items 50",
+       "original": "Because the coverage of Fleurs varies per language, the subset of items present in the evaluation set varies per language and thus also per language pair; though there is a majority of items",
        "zh": "由于 Fleurs 各语言的覆盖不同，评测集中包含的条目随语言、进而随语言对而变化；不过大多数条目 50"
       }
      ]
+    },
+    {
+     "id": "eq-dataset-1",
+     "type": "equation",
+     "page": 50,
+     "original": "50"
     }
    ]
   },
@@ -7832,8 +10251,80 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-modality-1-1",
-       "original": "Protocol Direction Systems Languages S2TT XSTS Whisper-Large-v2 SeamlessM4T-Large ∗1 242 S2TT XSTS SeamlessM4T-Large ∗ 24 S2ST XSTS Whisper-Large-v2 +YourTTS SeamlessM4T-Large 24 S2ST XSTS SeamlessM4T-Large 24 S2ST MOS Whisper-Large-v2 +YourTTS SeamlessM4T-Large 8 (arb, cmn, fra, hin, rus, spa, tel, tur) S2ST MOS SeamlessM4T-Large 24 1 SeamlessM4T-Large ∗refers to the SeamlessM4T-Large model using fairseq for generations instead of Fairseq2, but S2TT performance was on average within 0.5 BLEU between the two. 2 Bengali, Catalan, Dutch, Finnish, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Mandarin Chinese, Modern Standard Arabic, Portuguese, Romanian, Russian, Spanish, Swahili, Tagalog, Telugu, Thai, Turkish, Urdu, and Vietnamese.",
-       "zh": "（表格内容：列为 Protocol、Direction、Systems、Languages。各行：S2TT XSTS Whisper-Large-v2 ∗1 24 2；S2TT XSTS SeamlessM4T-Large ∗ 24；S2ST XSTS Whisper-Large-v2 + YourTTS 24；S2ST XSTS SeamlessM4T-Large 24；S2ST MOS Whisper-Large-v2 + YourTTS 8（arb, cmn, fra, hin, rus, spa, tel, tur）；S2ST MOS SeamlessM4T-Large 24。1 SeamlessM4T-Large ∗ 指生成使用 fairseq 而非 Fairseq2，但两者 S2TT 性能平均差异在 0.5 BLEU 以内。2 Bengali、Catalan、Dutch、Finnish、French、German、Hindi、Indonesian、Italian、Japanese、Korean、Mandarin Chinese、Modern Standard Arabic、Portuguese、Romanian、Russian、Spanish、Swahili、Tagalog、Telugu、Thai、Turkish、Urdu、Vietnamese。）（242）"
+       "original": "Protocol Direction Systems Languages S2TT XSTS X–eng Whisper-Large-v2 SeamlessM4T-Large ∗1",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nProtocol Direction Systems Languages S2TT XSTS X–eng Whisper-Large-v2 SeamlessM4T-Large ∗1"
+      }
+     ]
+    },
+    {
+     "id": "eq-modality-1",
+     "type": "equation",
+     "page": 51,
+     "original": "242"
+    },
+    {
+     "id": "eq-modality-2",
+     "type": "equation",
+     "page": 51,
+     "original": "S2TT XSTS eng–X SeamlessM4T-Large ∗"
+    },
+    {
+     "id": "eq-modality-3",
+     "type": "equation",
+     "page": 51,
+     "original": "24"
+    },
+    {
+     "id": "eq-modality-4",
+     "type": "equation",
+     "page": 51,
+     "original": "S2ST XSTS X–eng Whisper-Large-v2 +YourTTS SeamlessM4T-Large"
+    },
+    {
+     "id": "eq-modality-5",
+     "type": "equation",
+     "page": 51,
+     "original": "24"
+    },
+    {
+     "id": "eq-modality-6",
+     "type": "equation",
+     "page": 51,
+     "original": "S2ST XSTS eng–X SeamlessM4T-Large"
+    },
+    {
+     "id": "eq-modality-7",
+     "type": "equation",
+     "page": 51,
+     "original": "24"
+    },
+    {
+     "id": "p-modality-2",
+     "type": "paragraph",
+     "page": 51,
+     "sentences": [
+      {
+       "id": "s-modality-2-1",
+       "original": "S2ST MOS X–eng Whisper-Large-v2 +YourTTS SeamlessM4T-Large 8 (arb, cmn, fra, hin, rus, spa, tel, tur) S2ST MOS eng–X SeamlessM4T-Large",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nS2ST MOS X–eng Whisper-Large-v2 +YourTTS SeamlessM4T-Large 8 (arb, cmn, fra, hin, rus, spa, tel, tur) S2ST MOS eng–X SeamlessM4T-Large"
+      }
+     ]
+    },
+    {
+     "id": "eq-modality-8",
+     "type": "equation",
+     "page": 51,
+     "original": "24"
+    },
+    {
+     "id": "p-modality-3",
+     "type": "paragraph",
+     "page": 51,
+     "sentences": [
+      {
+       "id": "s-modality-3-1",
+       "original": "1 SeamlessM4T-Large ∗refers to the SeamlessM4T-Large model using fairseq for generations instead of Fairseq2, but S2TT performance was on average within 0.5 BLEU between the two. 2 Bengali, Catalan, Dutch, Finnish, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Mandarin Chinese, Modern Standard Arabic, Portuguese, Romanian, Russian, Spanish, Swahili, Tagalog, Telugu, Thai, Turkish, Urdu, and Vietnamese.",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\n1 SeamlessM4T-Large ∗refers to the SeamlessM4T-Large model using fairseq for generations instead of Fairseq2, but S2TT performance was on average within 0.5 BLEU between the two. 2 Bengali, Catalan, Dutch, Finnish, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Mandarin Chinese, Modern Standard Arabic, Portuguese, Romanian, Russian, Spanish, Swahili, Tagalog, Telugu, Thai, Turkish, Urdu, and Vietnamese."
       }
      ]
     },
@@ -7845,34 +10336,34 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 28：人工评测所用语言、模态、模型与协议汇总。括号中的模态与协议未在本文呈现，将在后续更新中共享。"
     },
     {
-     "id": "p-modality-2",
+     "id": "p-modality-4",
      "type": "paragraph",
      "page": 51,
      "sentences": [
       {
-       "id": "s-modality-2-1",
+       "id": "s-modality-4-1",
        "original": "common across languages, and we believe the scores to be largely comparable as they were drawn from the same domain.",
        "zh": "……跨语言基本一致，且由于取自同一领域，我们认为分数在语言间大体可比。"
       }
      ]
     },
     {
-     "id": "p-modality-3",
+     "id": "p-modality-5",
      "type": "paragraph",
      "page": 51,
      "sentences": [
       {
-       "id": "s-modality-3-1",
+       "id": "s-modality-5-1",
        "original": "When preparing Fleurs to be used as a human reference set, pairings had to be made between distinct readers in the source language and readers of the equivalent Fleurs item in the target language.",
        "zh": "把 Fleurs 用作人工参考集时，需要在源语言朗读者与目标语言对应 Fleurs 条目的朗读者之间配对。"
       },
       {
-       "id": "s-modality-3-2",
+       "id": "s-modality-5-2",
        "original": "When possible, these pairings were made to match user gender (53% of the time over the entirety of the Fleurs test partition, varying significantly between languages paired with English), and mixed-gender matches had to be made for the remaining 47% of items.",
        "zh": "能匹配时尽量匹配用户性别（整个 Fleurs 测试分区上 53% 的条目做到，且各与英语配对语言间差异很大）；其余 47% 的条目不得不做混合性别配对。"
       },
       {
-       "id": "s-modality-3-3",
+       "id": "s-modality-5-3",
        "original": "We elected to limit human evaluation to 2 unique readings per Fleurs sentence at most.",
        "zh": "我们把人工评测限制为每条 Fleurs 句子最多 2 个不同朗读版本。"
       }
@@ -7946,10 +10437,16 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-language-directions-modalities-a-3-2",
-       "original": "For S2ST, we do not evaluate eng–X 51",
-       "zh": "S2ST 我们不评测 eng–X 51"
+       "original": "For S2ST, we do not evaluate eng–X",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-language-directions-modalities-a-1",
+     "type": "equation",
+     "page": 51,
+     "original": "51"
     }
    ]
   },
@@ -7971,14 +10468,80 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-direction-1-1",
        "original": "System Avg.",
-       "zh": "System Avg."
+       "zh": "表头：System / Avg.（后续照原文）。"
       },
       {
        "id": "s-direction-1-2",
-       "original": "XSTS (S2TT) % 3+ % 4+ Human reference 4.69 95.98 78.66 SeamlessM4T-Large 4.53 87.69 73.28 Human reference 4.67 95.23 76.86 Whisper-Large-v2 4.05 70.11 58.00 SeamlessM4T-Large 4.16 72.51 59.86",
-       "zh": "（表格内容：列为 XSTS (S2TT)、%3+、%4+。各行：Human reference 4.69/95.98/78.66；SeamlessM4T-Large 4.53/87.69/73.28；Human reference 4.67/95.23/76.86；Whisper-Large-v2 4.05/70.11/58.00；SeamlessM4T-Large 4.16/72.51/59.86。）"
+       "original": "XSTS (S2TT)",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-direction-1",
+     "type": "equation",
+     "page": 52,
+     "original": "% 3+ % 4+"
+    },
+    {
+     "id": "eq-direction-2",
+     "type": "equation",
+     "page": 52,
+     "original": "eng–X Human reference"
+    },
+    {
+     "id": "eq-direction-3",
+     "type": "equation",
+     "page": 52,
+     "original": "4.69 95.98 78.66"
+    },
+    {
+     "id": "eq-direction-4",
+     "type": "equation",
+     "page": 52,
+     "original": "SeamlessM4T-Large"
+    },
+    {
+     "id": "eq-direction-5",
+     "type": "equation",
+     "page": 52,
+     "original": "4.53 87.69 73.28"
+    },
+    {
+     "id": "eq-direction-6",
+     "type": "equation",
+     "page": 52,
+     "original": "Human reference"
+    },
+    {
+     "id": "eq-direction-7",
+     "type": "equation",
+     "page": 52,
+     "original": "4.67 95.23 76.86"
+    },
+    {
+     "id": "eq-direction-8",
+     "type": "equation",
+     "page": 52,
+     "original": "X–eng Whisper-Large-v2"
+    },
+    {
+     "id": "eq-direction-9",
+     "type": "equation",
+     "page": 52,
+     "original": "4.05 70.11 58.00"
+    },
+    {
+     "id": "eq-direction-10",
+     "type": "equation",
+     "page": 52,
+     "original": "SeamlessM4T-Large"
+    },
+    {
+     "id": "eq-direction-11",
+     "type": "equation",
+     "page": 52,
+     "original": "4.16 72.51 59.86"
     },
     {
      "id": "tab-direction-1",
@@ -8127,14 +10690,578 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-xsts-results-for-the-s2tt-task-1",
+     "type": "equation",
+     "page": 52,
+     "original": "52"
+    },
+    {
      "id": "p-xsts-results-for-the-s2tt-task-4",
      "type": "paragraph",
      "page": 52,
      "sentences": [
       {
        "id": "s-xsts-results-for-the-s2tt-task-4-1",
-       "original": "52 Direction Lang XSTS (calibrated) % XSTS 3+ % XSTS 4+ Items Seamls1 Wspr2 Hum3 Seamls Wspr Hum Seamls Wspr Hum 4.53 4.61 90.2 96.8 71.7 72.9 410 ben 4.35 4.49 92.1 96.8 64.2 73.0 629 cat 4.73 4.82 90.1 95.9 82.6 85.0 638 cmn 4.03 4.69 70.1 98.0 41.7 69.7 636 4.61 4.75 88.4 96.1 72.4 77.5 612 fin 4.37 4.66 75.5 93.0 52.1 61.2 632 4.76 4.83 92.0 98.5 83.3 83.3 538 hin 4.55 4.51 98.2 97.4 77.6 74.5 388 ind 4.81 4.84 97.6 98.5 83.8 85.8 544 ita 4.59 4.56 97.1 97.4 93.8 90.2 612 jpn 4.09 4.74 66.7 92.6 53.9 79.8 514 kor 4.58 4.76 85.7 94.7 66.3 76.7 356 4.72 4.67 88.4 94.0 78.2 62.7 335 4.79 4.8 95.7 97.6 92.2 90.8 632 4.71 4.88 89.3 98.4 77.9 86.8 619 4.56 4.76 82.9 94.3 73.2 78.7 597 4.69 4.59 89.1 96.5 82.0 62.9 623 swh 4.52 4.81 82.0 93.1 76.6 90.8 466 tel 4.5 4.49 96.6 97.3 89.8 88.0 442 4.18 4.65 78.2 94.7 46.5 70.0 643 tur 4.61 4.84 88.7 97.9 74.7 87.5 566 4.39 4.52 91.2 95.1 68.9 76.0 283 vie 4.63 4.65 93.0 95.6 85.1 84.6 611 4.29 3.82 4.59 81.7 62.7 95.1 62.7 43.4 72.7 410 ben 4.03 2.84 4.51 78.1 37.0 97.6 51.8 16.2 74.7 629 cat 4.72 4.59 4.79 89.3 84.2 95.3 81.8 76.8 82.0 638 cmn 3.75 4.04 4.55 58.5 67.8 94.0 37.1 48.1 59.7 636 4.64 4.69 4.81 88.4 90.2 97.5 76.6 79.7 82.7 612 fin 4.07 3.71 4.66 61.2 46.7 92.4 44.8 30.4 61.6 632 4.73 4.74 4.82 90.0 90.5 97.8 81.4 82.0 81.6 538 hin 4.31 4.25 4.55 87.4 85.8 96.6 71.9 70.4 80.7 388 ind 4.57 4.53 4.81 88.2 87.5 98.0 74.3 72.2 84.0 544 ita 4.55 4.61 4.61 94.8 97.1 98.5 92.6 95.9 94.0 612 jpn 3.18 3.77 4.68 33.3 53.1 88.9 26.3 45.1 76.8 514 kor 4.26 4.65 4.74 72.8 90.4 96.3 50.0 70.8 72.2 356 4.57 4.53 4.63 80.9 80.0 89.9 73.1 69.9 63.3 335 4.71 4.84 4.82 92.1 97.2 98.4 89.1 96.2 92.1 632 4.46 4.46 4.84 77.2 76.6 98.1 66.4 66.7 81.7 619 4.46 4.69 4.7 78.6 87.6 93.1 69.7 81.1 72.7 597 4.59 4.82 4.53 86.8 94.7 95.5 77.2 88.8 58.4 623 swh 4.03 1.65 4.86 60.9 2.6 95.7 56.7 2.6 92.3 466 tel 3.84 3.14 4.49 74.4 52.9 97.3 60.4 38.7 88.2 442 3.49 3.39 4.5 47.3 43.2 92.1 27.4 23.3 57.7 643 tur 4.16 4.48 4.8 70.5 84.1 97.7 53.9 68.7 82.9 566 3.83 3.5 4.5 67.5 58.7 95.1 49.1 40.3 75.3 283 vie 3.45 3.63 4.53 46.3 56.1 91.2 38.3 44.8 77.7 611 1 SeamlessM4T-Large using fairseq generations 2 Whisper-Large-v2 3 Human reference",
-       "zh": "（表格内容：列 Direction / Lang / XSTS (calibrated) / % XSTS 3+ / % XSTS 4+ / Items；每组给出 Seamls¹、Wspr²、Hum³ 三列。X–eng 各行：ben 4.53 4.61 90.2 96.8 71.7 72.9 410；cat 4.35 4.49 92.1 96.8 64.2 73.0 629；cmn 4.73 4.82 90.1 95.9 82.6 85.0 638；fin 4.03 4.69 70.1 98.0 41.7 69.7 636；hin 4.61 4.75 88.4 96.1 72.4 77.5 612；ind 4.37 4.66 75.5 93.0 52.1 61.2 632；ita 4.76 4.83 92.0 98.5 83.3 83.3 538；jpn 4.55 4.51 98.2 97.4 77.6 74.5 388；kor 4.81 4.84 97.6 98.5 83.8 85.8 544；swh 4.59 4.56 97.1 97.4 93.8 90.2 612；tel 4.09 4.74 66.7 92.6 53.9 79.8 514；tur 4.58 4.76 85.7 94.7 66.3 76.7 356；vie 4.72 4.67 88.4 94.0 78.2 62.7 335；…… eng–X 各行：ben 4.29 3.82 4.59 81.7 62.7 95.1 62.7 43.4 72.7 410；cat 4.03 2.84 4.51 78.1 37.0 97.6 51.8 16.2 74.7 629；cmn 4.72 4.59 4.79 89.3 84.2 95.3 81.8 76.8 82.0 638；fin 3.75 4.04 4.55 58.5 67.8 94.0 37.1 48.1 59.7 636；hin 4.64 4.69 4.81 88.4 90.2 97.5 76.6 79.7 82.7 612；ind 4.07 3.71 4.66 61.2 46.7 92.4 44.8 30.4 61.6 632；ita 4.73 4.74 4.82 90.0 90.5 97.8 81.4 82.0 81.6 538；jpn 4.31 4.25 4.55 87.4 85.8 96.6 71.9 70.4 80.7 388；kor 4.57 4.53 4.81 88.2 87.5 98.0 74.3 72.2 84.0 544；swh 4.55 4.61 4.61 94.8 97.1 98.5 92.6 95.9 94.0 612；tel 3.18 3.77 4.68 33.3 53.1 88.9 26.3 45.1 76.8 514；tur 4.26 4.65 4.74 72.8 90.4 96.3 50.0 70.8 72.2 356；vie 4.57 4.53 4.63 80.9 80.0 89.9 73.1 69.9 63.3 335；…… 1 SeamlessM4T-Large using fairseq generations 2 Whisper-Large-v2 3 Human reference。）（52 4.8 95.7 92.2 90.8 4.71 4.88 98.4 77.9 86.8 619 82.9 94.3 73.2 78.7 597 89.1 96.5 62.9 623 4.52 93.1 90.8 466 4.5 97.3 89.8 88.0 442 4.18 46.5 70.0 643 88.7 97.9 566 4.39 4.52 91.2 68.9 76.0 283 95.6 85.1 84.6 611 4.71 97.2 98.4 89.1 96.2 4.46 4.46 77.2 98.1 66.4 619 4.46 4.7 78.6 87.6 93.1 81.1 597 86.8 95.5 77.2 88.8 58.4 623 1.65 4.86 60.9 2.6 95.7 56.7 2.6 92.3 466 3.84 3.14 74.4 52.9 97.3 60.4 38.7 442 3.49 3.39 4.5 47.3 43.2 27.4 23.3 57.7 643 4.16 4.48 4.8 70.5 84.1 97.7 68.7 82.9 566 3.83 3.5 4.5 67.5 58.7 49.1 40.3 75.3 283 3.45 3.63 46.3 56.1 91.2 38.3 77.7 611）"
+       "original": "Direction Lang XSTS (calibrated) % XSTS 3+ % XSTS 4+ Items Seamls1 Wspr2 Hum3 Seamls Wspr Hum Seamls Wspr Hum eng–X arb",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nDirection Lang XSTS (calibrated) % XSTS 3+ % XSTS 4+ Items Seamls1 Wspr2 Hum3 Seamls Wspr Hum Seamls Wspr Hum eng–X arb"
+      }
+     ]
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-2",
+     "type": "equation",
+     "page": 52,
+     "original": "4.53 – 4.61 90.2 – 96.8 71.7 – 72.9 410"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-3",
+     "type": "equation",
+     "page": 52,
+     "original": "ben"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-4",
+     "type": "equation",
+     "page": 52,
+     "original": "4.35 – 4.49 92.1 – 96.8 64.2 – 73.0 629"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-5",
+     "type": "equation",
+     "page": 52,
+     "original": "cat"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-6",
+     "type": "equation",
+     "page": 52,
+     "original": "4.73 – 4.82 90.1 – 95.9 82.6 – 85.0 638"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-7",
+     "type": "equation",
+     "page": 52,
+     "original": "cmn"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-8",
+     "type": "equation",
+     "page": 52,
+     "original": "4.03 – 4.69 70.1 – 98.0 41.7 – 69.7 636"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-9",
+     "type": "equation",
+     "page": 52,
+     "original": "deu"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-10",
+     "type": "equation",
+     "page": 52,
+     "original": "4.61 – 4.75 88.4 – 96.1 72.4 – 77.5 612"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-11",
+     "type": "equation",
+     "page": 52,
+     "original": "fin"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-12",
+     "type": "equation",
+     "page": 52,
+     "original": "4.37 – 4.66 75.5 – 93.0 52.1 – 61.2 632"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-13",
+     "type": "equation",
+     "page": 52,
+     "original": "fra"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-14",
+     "type": "equation",
+     "page": 52,
+     "original": "4.76 – 4.83 92.0 – 98.5 83.3 – 83.3 538"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-15",
+     "type": "equation",
+     "page": 52,
+     "original": "hin"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-16",
+     "type": "equation",
+     "page": 52,
+     "original": "4.55 – 4.51 98.2 – 97.4 77.6 – 74.5 388"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-17",
+     "type": "equation",
+     "page": 52,
+     "original": "ind"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-18",
+     "type": "equation",
+     "page": 52,
+     "original": "4.81 – 4.84 97.6 – 98.5 83.8 – 85.8 544"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-19",
+     "type": "equation",
+     "page": 52,
+     "original": "ita"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-20",
+     "type": "equation",
+     "page": 52,
+     "original": "4.59 – 4.56 97.1 – 97.4 93.8 – 90.2 612"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-21",
+     "type": "equation",
+     "page": 52,
+     "original": "jpn"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-22",
+     "type": "equation",
+     "page": 52,
+     "original": "4.09 – 4.74 66.7 – 92.6 53.9 – 79.8 514"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-23",
+     "type": "equation",
+     "page": 52,
+     "original": "kor"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-24",
+     "type": "equation",
+     "page": 52,
+     "original": "4.58 – 4.76 85.7 – 94.7 66.3 – 76.7 356"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-25",
+     "type": "equation",
+     "page": 52,
+     "original": "nld"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-26",
+     "type": "equation",
+     "page": 52,
+     "original": "4.72 – 4.67 88.4 – 94.0 78.2 – 62.7 335"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-27",
+     "type": "equation",
+     "page": 52,
+     "original": "por"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-28",
+     "type": "equation",
+     "page": 52,
+     "original": "4.79 – 4.8 95.7 – 97.6 92.2 – 90.8 632"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-29",
+     "type": "equation",
+     "page": 52,
+     "original": "ron"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-30",
+     "type": "equation",
+     "page": 52,
+     "original": "4.71 – 4.88 89.3 – 98.4 77.9 – 86.8 619"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-31",
+     "type": "equation",
+     "page": 52,
+     "original": "rus"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-32",
+     "type": "equation",
+     "page": 52,
+     "original": "4.56 – 4.76 82.9 – 94.3 73.2 – 78.7 597"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-33",
+     "type": "equation",
+     "page": 52,
+     "original": "spa"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-34",
+     "type": "equation",
+     "page": 52,
+     "original": "4.69 – 4.59 89.1 – 96.5 82.0 – 62.9 623"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-35",
+     "type": "equation",
+     "page": 52,
+     "original": "swh"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-36",
+     "type": "equation",
+     "page": 52,
+     "original": "4.52 – 4.81 82.0 – 93.1 76.6 – 90.8 466"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-37",
+     "type": "equation",
+     "page": 52,
+     "original": "tel"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-38",
+     "type": "equation",
+     "page": 52,
+     "original": "4.5 – 4.49 96.6 – 97.3 89.8 – 88.0 442"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-39",
+     "type": "equation",
+     "page": 52,
+     "original": "tha"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-40",
+     "type": "equation",
+     "page": 52,
+     "original": "4.18 – 4.65 78.2 – 94.7 46.5 – 70.0 643"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-41",
+     "type": "equation",
+     "page": 52,
+     "original": "tur"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-42",
+     "type": "equation",
+     "page": 52,
+     "original": "4.61 – 4.84 88.7 – 97.9 74.7 – 87.5 566"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-43",
+     "type": "equation",
+     "page": 52,
+     "original": "urd"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-44",
+     "type": "equation",
+     "page": 52,
+     "original": "4.39 – 4.52 91.2 – 95.1 68.9 – 76.0 283"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-45",
+     "type": "equation",
+     "page": 52,
+     "original": "vie"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-46",
+     "type": "equation",
+     "page": 52,
+     "original": "4.63 – 4.65 93.0 – 95.6 85.1 – 84.6 611"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-47",
+     "type": "equation",
+     "page": 52,
+     "original": "X–eng arb"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-48",
+     "type": "equation",
+     "page": 52,
+     "original": "4.29 3.82 4.59 81.7 62.7 95.1 62.7 43.4 72.7 410"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-49",
+     "type": "equation",
+     "page": 52,
+     "original": "ben"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-50",
+     "type": "equation",
+     "page": 52,
+     "original": "4.03 2.84 4.51 78.1 37.0 97.6 51.8 16.2 74.7 629"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-51",
+     "type": "equation",
+     "page": 52,
+     "original": "cat"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-52",
+     "type": "equation",
+     "page": 52,
+     "original": "4.72 4.59 4.79 89.3 84.2 95.3 81.8 76.8 82.0 638"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-53",
+     "type": "equation",
+     "page": 52,
+     "original": "cmn"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-54",
+     "type": "equation",
+     "page": 52,
+     "original": "3.75 4.04 4.55 58.5 67.8 94.0 37.1 48.1 59.7 636"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-55",
+     "type": "equation",
+     "page": 52,
+     "original": "deu"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-56",
+     "type": "equation",
+     "page": 52,
+     "original": "4.64 4.69 4.81 88.4 90.2 97.5 76.6 79.7 82.7 612"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-57",
+     "type": "equation",
+     "page": 52,
+     "original": "fin"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-58",
+     "type": "equation",
+     "page": 52,
+     "original": "4.07 3.71 4.66 61.2 46.7 92.4 44.8 30.4 61.6 632"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-59",
+     "type": "equation",
+     "page": 52,
+     "original": "fra"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-60",
+     "type": "equation",
+     "page": 52,
+     "original": "4.73 4.74 4.82 90.0 90.5 97.8 81.4 82.0 81.6 538"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-61",
+     "type": "equation",
+     "page": 52,
+     "original": "hin"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-62",
+     "type": "equation",
+     "page": 52,
+     "original": "4.31 4.25 4.55 87.4 85.8 96.6 71.9 70.4 80.7 388"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-63",
+     "type": "equation",
+     "page": 52,
+     "original": "ind"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-64",
+     "type": "equation",
+     "page": 52,
+     "original": "4.57 4.53 4.81 88.2 87.5 98.0 74.3 72.2 84.0 544"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-65",
+     "type": "equation",
+     "page": 52,
+     "original": "ita"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-66",
+     "type": "equation",
+     "page": 52,
+     "original": "4.55 4.61 4.61 94.8 97.1 98.5 92.6 95.9 94.0 612"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-67",
+     "type": "equation",
+     "page": 52,
+     "original": "jpn"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-68",
+     "type": "equation",
+     "page": 52,
+     "original": "3.18 3.77 4.68 33.3 53.1 88.9 26.3 45.1 76.8 514"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-69",
+     "type": "equation",
+     "page": 52,
+     "original": "kor"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-70",
+     "type": "equation",
+     "page": 52,
+     "original": "4.26 4.65 4.74 72.8 90.4 96.3 50.0 70.8 72.2 356"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-71",
+     "type": "equation",
+     "page": 52,
+     "original": "nld"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-72",
+     "type": "equation",
+     "page": 52,
+     "original": "4.57 4.53 4.63 80.9 80.0 89.9 73.1 69.9 63.3 335"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-73",
+     "type": "equation",
+     "page": 52,
+     "original": "por"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-74",
+     "type": "equation",
+     "page": 52,
+     "original": "4.71 4.84 4.82 92.1 97.2 98.4 89.1 96.2 92.1 632"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-75",
+     "type": "equation",
+     "page": 52,
+     "original": "ron"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-76",
+     "type": "equation",
+     "page": 52,
+     "original": "4.46 4.46 4.84 77.2 76.6 98.1 66.4 66.7 81.7 619"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-77",
+     "type": "equation",
+     "page": 52,
+     "original": "rus"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-78",
+     "type": "equation",
+     "page": 52,
+     "original": "4.46 4.69 4.7 78.6 87.6 93.1 69.7 81.1 72.7 597"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-79",
+     "type": "equation",
+     "page": 52,
+     "original": "spa"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-80",
+     "type": "equation",
+     "page": 52,
+     "original": "4.59 4.82 4.53 86.8 94.7 95.5 77.2 88.8 58.4 623"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-81",
+     "type": "equation",
+     "page": 52,
+     "original": "swh"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-82",
+     "type": "equation",
+     "page": 52,
+     "original": "4.03 1.65 4.86 60.9 2.6 95.7 56.7 2.6 92.3 466"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-83",
+     "type": "equation",
+     "page": 52,
+     "original": "tel"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-84",
+     "type": "equation",
+     "page": 52,
+     "original": "3.84 3.14 4.49 74.4 52.9 97.3 60.4 38.7 88.2 442"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-85",
+     "type": "equation",
+     "page": 52,
+     "original": "tha"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-86",
+     "type": "equation",
+     "page": 52,
+     "original": "3.49 3.39 4.5 47.3 43.2 92.1 27.4 23.3 57.7 643"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-87",
+     "type": "equation",
+     "page": 52,
+     "original": "tur"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-88",
+     "type": "equation",
+     "page": 52,
+     "original": "4.16 4.48 4.8 70.5 84.1 97.7 53.9 68.7 82.9 566"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-89",
+     "type": "equation",
+     "page": 52,
+     "original": "urd"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-90",
+     "type": "equation",
+     "page": 52,
+     "original": "3.83 3.5 4.5 67.5 58.7 95.1 49.1 40.3 75.3 283"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-91",
+     "type": "equation",
+     "page": 52,
+     "original": "vie"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-92",
+     "type": "equation",
+     "page": 52,
+     "original": "3.45 3.63 4.53 46.3 56.1 91.2 38.3 44.8 77.7 611"
+    },
+    {
+     "id": "p-xsts-results-for-the-s2tt-task-5",
+     "type": "paragraph",
+     "page": 52,
+     "sentences": [
+      {
+       "id": "s-xsts-results-for-the-s2tt-task-5-1",
+       "original": "1 SeamlessM4T-Large using fairseq generations 2 Whisper-Large-v2 3 Human reference",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\n1 SeamlessM4T-Large using fairseq generations 2 Whisper-Large-v2 3 Human reference"
       }
      ]
     },
@@ -8146,28 +11273,40 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 30：完整校准后的 XSTS S2TT 结果；Bootstrap 95% 置信区间宽度平均约 ±0.1。%3+ 与 %4+ 分别指某语言被评句子中、（未校准）中位数 ≥3 与 ≥4 的百分比。"
     },
     {
-     "id": "p-xsts-results-for-the-s2tt-task-5",
+     "id": "eq-xsts-results-for-the-s2tt-task-93",
+     "type": "equation",
+     "page": 53,
+     "original": "53 5"
+    },
+    {
+     "id": "p-xsts-results-for-the-s2tt-task-6",
      "type": "paragraph",
      "page": 53,
      "sentences": [
       {
-       "id": "s-xsts-results-for-the-s2tt-task-5-1",
-       "original": "53 5 Average XSTS (calib.)",
+       "id": "s-xsts-results-for-the-s2tt-task-6-1",
+       "original": "Average XSTS (calib.)",
        "zh": "53 5 平均 XSTS（校准后）"
       }
      ]
     },
     {
-     "id": "p-xsts-results-for-the-s2tt-task-6",
-     "type": "paragraph",
+     "id": "eq-xsts-results-for-the-s2tt-task-94",
+     "type": "equation",
      "page": 54,
-     "sentences": [
-      {
-       "id": "s-xsts-results-for-the-s2tt-task-6-1",
-       "original": "4 3 2 X-eng (S2TT) 1 ita ind cat hin 5 Average XSTS (calib.)",
-       "zh": "4 3 2 X-eng (S2TT) 1 ita ind cat hin 5 平均 XSTS（校准后）"
-      }
-     ]
+     "original": "4 3 2"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-95",
+     "type": "equation",
+     "page": 54,
+     "original": "X-eng (S2TT)"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-96",
+     "type": "equation",
+     "page": 54,
+     "original": "1"
     },
     {
      "id": "p-xsts-results-for-the-s2tt-task-7",
@@ -8176,8 +11315,56 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-xsts-results-for-the-s2tt-task-7-1",
-       "original": "4 3 2 eng-X (S2TT) 1 ind cat vie ita tur cmn tgl fin tel kor jpn vie ben swh tur cmn tgl tel fin kor hin jpn ben swh WHISPER-LARGE-V2 SEAMLESSM4T-LARGE Ref",
-       "zh": "（图内容：4 3 2 eng-X (S2TT) 1 ind cat vie ita tur cmn tgl fin tel kor jpn vie ben swh tur cmn tgl tel fin kor hin jpn ben swh；图例 WHISPER-LARGE-V2、SEAMLESSM4T-LARGE、Ref。）"
+       "original": "ita ind rus cat nld hin deu spa fra por ron",
+       "zh": "（XSTS 结果图（S2TT）：X-eng 方向各语种（ita、ind、rus、cat、nld、hin、deu、spa、fra、por、ron）纵轴 1/2/3/4 分，5 Average XSTS（calib.）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-97",
+     "type": "equation",
+     "page": 54,
+     "original": "5"
+    },
+    {
+     "id": "p-xsts-results-for-the-s2tt-task-8",
+     "type": "paragraph",
+     "page": 54,
+     "sentences": [
+      {
+       "id": "s-xsts-results-for-the-s2tt-task-8-1",
+       "original": "Average XSTS (calib.)",
+       "zh": "53 5 平均 XSTS（校准后）"
+      }
+     ]
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-98",
+     "type": "equation",
+     "page": 54,
+     "original": "4 3 2"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-99",
+     "type": "equation",
+     "page": 54,
+     "original": "eng-X (S2TT)"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-100",
+     "type": "equation",
+     "page": 54,
+     "original": "1"
+    },
+    {
+     "id": "p-xsts-results-for-the-s2tt-task-9",
+     "type": "paragraph",
+     "page": 54,
+     "sentences": [
+      {
+       "id": "s-xsts-results-for-the-s2tt-task-9-1",
+       "original": "ind cat nld vie ita spa deu fra tur por ron cmn tgl fin tel kor tha jpn vie ben swh tur arb urd cmn tgl tel fin kor rus hin tha jpn ben swh arb urd WHISPER-LARGE-V2 SEAMLESSM4T-LARGE Ref",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nind cat nld vie ita spa deu fra tur por ron cmn tgl fin tel kor tha jpn vie ben swh tur arb urd cmn tgl tel fin kor rus hin tha jpn ben swh arb urd WHISPER-LARGE-V2 SEAMLESSM4T-LARGE Ref"
       }
      ]
     },
@@ -8189,38 +11376,98 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 10：S2TT 模态下、按语言方向校准后的每方向平均 XSTS 分数。Bootstrap 95% 置信区间通常在 ±0.1 内。"
     },
     {
-     "id": "p-xsts-results-for-the-s2tt-task-8",
-     "type": "paragraph",
+     "id": "eq-xsts-results-for-the-s2tt-task-101",
+     "type": "equation",
      "page": 54,
-     "sentences": [
-      {
-       "id": "s-xsts-results-for-the-s2tt-task-8-1",
-       "original": "54 5 Average XSTS (calib.)",
-       "zh": "54 5 平均 XSTS（校准后）"
-      }
-     ]
-    },
-    {
-     "id": "p-xsts-results-for-the-s2tt-task-9",
-     "type": "paragraph",
-     "page": 55,
-     "sentences": [
-      {
-       "id": "s-xsts-results-for-the-s2tt-task-9-1",
-       "original": "4 3 2 X-eng (S2ST) 1 ita cat ind hin 5 Average XSTS (calib.)",
-       "zh": "4 3 2 X-eng (S2ST) 1 ita cat ind hin 5 平均 XSTS（校准后）"
-      }
-     ]
+     "original": "54 5"
     },
     {
      "id": "p-xsts-results-for-the-s2tt-task-10",
      "type": "paragraph",
-     "page": 55,
+     "page": 54,
      "sentences": [
       {
        "id": "s-xsts-results-for-the-s2tt-task-10-1",
-       "original": "4 3 2 eng-X (S2ST) 1 ita cat hin ben tur cmn tgl tel fin jpn kor vie ben swh tur cmn fin tel tgl jpn vie ind kor swh WHISPER-LARGE-V2 +YOURTTS SEAMLESSM4T-LARGE Ref",
-       "zh": "（图内容：4 3 2 eng-X (S2ST) 1 ita cat hin ben tur cmn tgl tel fin jpn kor vie ben swh tur cmn fin tel tgl jpn vie ind kor swh；图例 WHISPER-LARGE-V2 +YOURTTS、SEAMLESSM4T-LARGE、Ref。）"
+       "original": "Average XSTS (calib.)",
+       "zh": "53 5 平均 XSTS（校准后）"
+      }
+     ]
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-102",
+     "type": "equation",
+     "page": 55,
+     "original": "4 3 2"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-103",
+     "type": "equation",
+     "page": 55,
+     "original": "X-eng (S2ST)"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-104",
+     "type": "equation",
+     "page": 55,
+     "original": "1"
+    },
+    {
+     "id": "p-xsts-results-for-the-s2tt-task-11",
+     "type": "paragraph",
+     "page": 55,
+     "sentences": [
+      {
+       "id": "s-xsts-results-for-the-s2tt-task-11-1",
+       "original": "ita rus cat nld ind hin deu spa fra ron por",
+       "zh": "（XSTS 结果图（S2ST）：X-eng 方向各语种（ita、rus、cat、nld、ind、hin、deu、spa、fra、ron、por）纵轴 1/2/3/4 分，5 Average XSTS（calib.）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-105",
+     "type": "equation",
+     "page": 55,
+     "original": "5"
+    },
+    {
+     "id": "p-xsts-results-for-the-s2tt-task-12",
+     "type": "paragraph",
+     "page": 55,
+     "sentences": [
+      {
+       "id": "s-xsts-results-for-the-s2tt-task-12-1",
+       "original": "Average XSTS (calib.)",
+       "zh": "53 5 平均 XSTS（校准后）"
+      }
+     ]
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-106",
+     "type": "equation",
+     "page": 55,
+     "original": "4 3 2"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-107",
+     "type": "equation",
+     "page": 55,
+     "original": "eng-X (S2ST)"
+    },
+    {
+     "id": "eq-xsts-results-for-the-s2tt-task-108",
+     "type": "equation",
+     "page": 55,
+     "original": "1"
+    },
+    {
+     "id": "p-xsts-results-for-the-s2tt-task-13",
+     "type": "paragraph",
+     "page": 55,
+     "sentences": [
+      {
+       "id": "s-xsts-results-for-the-s2tt-task-13-1",
+       "original": "ita cat hin deu ben spa fra tur por ron cmn tgl tel fin jpn tha kor vie ben swh tur urd arb cmn fin tel tgl nld jpn vie rus tha ind kor swh arb urd WHISPER-LARGE-V2 +YOURTTS SEAMLESSM4T-LARGE Ref",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nita cat hin deu ben spa fra tur por ron cmn tgl tel fin jpn tha kor vie ben swh tur urd arb cmn fin tel tgl nld jpn vie rus tha ind kor swh arb urd WHISPER-LARGE-V2 +YOURTTS SEAMLESSM4T-LARGE Ref"
       }
      ]
     },
@@ -8232,70 +11479,64 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 11：S2ST 模态下、按语言方向校准后的每方向平均 XSTS 分数。Bootstrap 95% 置信区间通常在 ±0.1 内。"
     },
     {
-     "id": "p-xsts-results-for-the-s2tt-task-11",
+     "id": "p-xsts-results-for-the-s2tt-task-14",
      "type": "paragraph",
      "page": 55,
      "sentences": [
       {
-       "id": "s-xsts-results-for-the-s2tt-task-11-1",
+       "id": "s-xsts-results-for-the-s2tt-task-14-1",
        "original": "When averaging over language directions, SeamlessM4T-Large demonstrates superior performance on both average XSTS score and percentage of sentences above XSTS thresholds of 3 and 4 compared to the Whisper-Large-v2’s baseline on X–eng (see Table 29).",
        "zh": "在语言方向上取平均后，X–eng 上 SeamlessM4T-Large 在平均 XSTS 分数以及 XSTS ≥3、≥4 的句子百分比两项上均优于 Whisper-Large-v2 基线（见 Table 29）。"
       }
      ]
     },
     {
-     "id": "p-xsts-results-for-the-s2tt-task-12",
+     "id": "p-xsts-results-for-the-s2tt-task-15",
      "type": "paragraph",
      "page": 55,
      "sentences": [
       {
-       "id": "s-xsts-results-for-the-s2tt-task-12-1",
+       "id": "s-xsts-results-for-the-s2tt-task-15-1",
        "original": "We also note generally higher performance in the eng–X direction compared to the X–eng direction.",
        "zh": "我们还注意到：eng–X 方向的表现普遍高于 X–eng 方向。"
       },
       {
-       "id": "s-xsts-results-for-the-s2tt-task-12-2",
+       "id": "s-xsts-results-for-the-s2tt-task-15-2",
        "original": "From the automatic results in section 4.4.2, we observed that the higher performance in one direction or the other varies depending on the task (S2TT, S2ST, or T2TT).",
        "zh": "从 4.4.2 节的自动结果看，「哪一方向更优」因任务（S2TT、S2ST 或 T2TT）而异。"
       },
       {
-       "id": "s-xsts-results-for-the-s2tt-task-12-3",
+       "id": "s-xsts-results-for-the-s2tt-task-15-3",
        "original": "For S2TT, in terms of spBLEU and Blaser 2.0 (see Table 18), even when averaging over a larger set of languages, superior performance in eng–X compared to X–eng holds.",
        "zh": "对 S2TT，从 spBLEU 与 Blaser 2.0（见 Table 18）看，即使在更大语言集合上取平均，eng–X 优于 X–eng 这一结论仍成立。"
       },
       {
-       "id": "s-xsts-results-for-the-s2tt-task-12-4",
+       "id": "s-xsts-results-for-the-s2tt-task-15-4",
        "original": "We offer a few possible explanations for this phenomenon.",
        "zh": "我们对这一现象给出几种可能解释。"
       },
       {
-       "id": "s-xsts-results-for-the-s2tt-task-12-5",
+       "id": "s-xsts-results-for-the-s2tt-task-15-5",
        "original": "For example, speech encoding may be a more complicated task than speech or text decoding.",
        "zh": "例如，语音编码可能是比语音或文本解码更复杂的任务。"
       },
       {
-       "id": "s-xsts-results-for-the-s2tt-task-12-6",
+       "id": "s-xsts-results-for-the-s2tt-task-15-6",
        "original": "If this is the case, better performance in English speech encoding could contribute to higher performance in the eng–X direction.",
        "zh": "若是如此，更强的英语语音编码能力可能贡献于 eng–X 方向的更高表现。"
       },
       {
-       "id": "s-xsts-results-for-the-s2tt-task-12-7",
+       "id": "s-xsts-results-for-the-s2tt-task-15-7",
        "original": "Data-wise, a plausible explanation could be a difference in audio quality of Fleurs recordings for different languages (e.g., English source sentence audio quality may have been higher, inflating the eng–X scores), though evidence for this is only anecdotal.",
        "zh": "数据方面，一个合理解释是 Fleurs 不同语言录音音质的差异（例如英语源句音频质量可能更高，从而抬高了 eng–X 分数）——不过这仅有零星证据。"
       }
      ]
     },
     {
-     "id": "p-xsts-results-for-the-s2tt-task-13",
-     "type": "paragraph",
+     "id": "eq-xsts-results-for-the-s2tt-task-109",
+     "type": "equation",
      "page": 55,
-     "sentences": [
-      {
-       "id": "s-xsts-results-for-the-s2tt-task-13-1",
-       "original": "55",
-       "zh": "55"
-      }
-     ]
+     "original": "55"
     }
    ]
   },
@@ -8317,14 +11558,80 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-direction-2-1-1",
        "original": "System Avg.",
-       "zh": "System Avg."
+       "zh": "表头：System / Avg.（后续照原文）。"
       },
       {
        "id": "s-direction-2-1-2",
-       "original": "XSTS (S2ST) % 3+ % 4+ Human reference 4.67 95.38 79.45 SeamlessM4T-Large 3.73 58.10 36.90 Human reference 4.66 95.20 78.89 Whisper-Large-v2 +YourTTS 4.04 71.52 56.18 SeamlessM4T-Large 3.87 60.61 46.05",
-       "zh": "（表格内容：列为 XSTS (S2ST)、%3+、%4+。各行：Human reference 4.67/95.38/79.45；SeamlessM4T-Large 3.73/58.10/36.90；Human reference 4.66/95.20/78.89；Whisper-Large-v2 + YourTTS 4.04/71.52/56.18；SeamlessM4T-Large 3.87/60.61/46.05。）"
+       "original": "XSTS (S2ST)",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-direction-2-1",
+     "type": "equation",
+     "page": 56,
+     "original": "% 3+ % 4+"
+    },
+    {
+     "id": "eq-direction-2-2",
+     "type": "equation",
+     "page": 56,
+     "original": "eng–X Human reference"
+    },
+    {
+     "id": "eq-direction-2-3",
+     "type": "equation",
+     "page": 56,
+     "original": "4.67 95.38 79.45"
+    },
+    {
+     "id": "eq-direction-2-4",
+     "type": "equation",
+     "page": 56,
+     "original": "SeamlessM4T-Large"
+    },
+    {
+     "id": "eq-direction-2-5",
+     "type": "equation",
+     "page": 56,
+     "original": "3.73 58.10 36.90"
+    },
+    {
+     "id": "eq-direction-2-6",
+     "type": "equation",
+     "page": 56,
+     "original": "Human reference"
+    },
+    {
+     "id": "eq-direction-2-7",
+     "type": "equation",
+     "page": 56,
+     "original": "4.66 95.20 78.89"
+    },
+    {
+     "id": "eq-direction-2-8",
+     "type": "equation",
+     "page": 56,
+     "original": "X–eng Whisper-Large-v2 +YourTTS"
+    },
+    {
+     "id": "eq-direction-2-9",
+     "type": "equation",
+     "page": 56,
+     "original": "4.04 71.52 56.18"
+    },
+    {
+     "id": "eq-direction-2-10",
+     "type": "equation",
+     "page": 56,
+     "original": "SeamlessM4T-Large"
+    },
+    {
+     "id": "eq-direction-2-11",
+     "type": "equation",
+     "page": 56,
+     "original": "3.87 60.61 46.05"
     },
     {
      "id": "tab-direction-2-1",
@@ -8409,14 +11716,578 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-xsts-results-for-s2st-task-1",
+     "type": "equation",
+     "page": 56,
+     "original": "56"
+    },
+    {
      "id": "p-xsts-results-for-s2st-task-5",
      "type": "paragraph",
      "page": 56,
      "sentences": [
       {
        "id": "s-xsts-results-for-s2st-task-5-1",
-       "original": "56 Direction Lang XSTS (calibrated) % XSTS 3+ % XSTS 4+ Items Seamls1 Wspr2 Hum3 Seamls Wspr Hum Seamls Wspr Hum 3.55 4.59 51.5 95.4 24.9 74.6 410 ben 4.09 4.56 80.4 96.8 41.0 67.9 629 cat 4.3 4.85 77.7 98.3 64.3 90.9 638 cmn 3.06 4.74 31.4 98.3 7.7 72.2 636 4.02 4.79 63.4 97.9 29.4 72.4 612 fin 3.32 4.84 32.3 95.4 16.0 85.9 632 4.1 4.88 64.5 98.5 44.2 87.2 538 hin 4.13 4.3 94.6 98.7 83.0 95.1 388 ind 3.6 4.8 58.1 98.2 35.5 93.0 544 ita 4.04 4.42 86.8 100.0 75.8 96.1 612 jpn 2.91 4.79 18.5 91.6 11.1 80.5 514 kor 3.52 4.27 40.2 77.0 13.8 39.9 356 3.86 4.65 52.2 90.4 32.8 58.8 335 3.99 4.47 81.6 99.1 70.7 94.6 632 3.97 4.87 63.3 97.1 42.2 89.2 619 3.62 4.78 40.4 93.6 29.5 75.0 597 4.11 4.66 64.2 96.5 47.2 63.7 623 swh 3.72 4.8 45.1 91.6 34.8 84.5 466 tel 3.42 4.35 60.0 91.9 24.0 61.8 442 3.3 4.72 46.7 95.6 21.5 86.2 643 tur 4.02 4.89 65.4 98.8 32.9 87.8 566 3.91 4.56 71.7 94.3 40.3 71.0 283 vie 3.64 4.68 64.5 98.4 43.2 91.0 611 3.91 3.94 4.61 62.2 68.0 96.1 48.5 50.7 75.6 410 ben 3.92 3.05 4.57 68.0 43.7 96.5 38.2 15.1 69.6 629 cat 4.34 4.63 4.86 77.7 88.7 98.4 68.8 82.4 91.4 638 cmn 3.62 3.98 4.7 51.1 67.6 97.0 26.7 36.6 68.6 636 4.29 4.56 4.77 69.9 85.0 95.6 49.3 60.0 72.5 612 fin 3.69 3.62 4.82 44.3 44.9 94.6 33.1 29.1 84.7 632 4.43 4.75 4.87 75.1 92.2 98.3 64.5 80.9 85.7 538 hin 4.19 4.18 4.32 95.6 95.6 99.0 88.4 89.7 95.4 388 ind 4.02 4.38 4.78 67.3 84.2 97.6 57.2 76.1 92.5 544 ita 4.02 4.4 4.41 82.0 98.4 99.3 76.3 96.4 96.1 612 jpn 3.17 3.84 4.81 26.7 51.0 92.8 20.2 39.9 81.3 514 kor 3.53 4.07 4.32 40.4 66.0 82.0 18.5 37.1 40.7 356 4.16 4.38 4.63 58.5 71.9 89.6 49.9 54.6 55.8 335 3.94 4.48 4.49 74.7 98.7 99.4 70.1 96.2 95.9 632 4.15 4.44 4.84 67.9 81.1 96.4 52.0 65.9 86.9 619 4.06 4.66 4.78 55.4 82.6 92.5 46.1 74.2 76.2 597 4.15 4.79 4.62 65.2 93.4 95.7 52.5 83.6 61.2 623 swh 3.7 1.63 4.76 41.2 1.3 89.7 32.6 0.9 80.0 466 tel 3.87 3.37 4.39 72.6 58.1 94.8 44.3 30.1 62.9 442 3.42 3.51 4.72 48.8 56.0 95.6 31.9 33.4 86.6 643 tur 3.91 4.47 4.86 57.8 81.3 97.3 37.1 62.4 85.5 566 3.84 3.92 4.56 66.8 72.4 92.6 40.6 48.4 72.1 283 vie 3.4 3.91 4.69 53.7 73.0 98.4 37.6 57.8 92.5 611 1 SeamlessM4T-Large 2 Whisper-Large-v2 3 Human reference",
-       "zh": "（表格内容：列 Direction / Lang / XSTS (calibrated) / % XSTS 3+ / % XSTS 4+ / Items；每组给出 Seamls¹、Wspr²、Hum³ 三列。X–eng 各行：ben 3.55 4.59 51.5 95.4 24.9 74.6 410；cat 4.09 4.56 80.4 96.8 41.0 67.9 629；cmn 4.3 4.85 77.7 98.3 64.3 90.9 638；fin 3.06 4.74 31.4 98.3 7.7 72.2 636；fin 4.02 4.79 63.4 97.9 29.4 72.4 612；hin 3.32 4.84 32.3 95.4 16.0 85.9 632；ind 4.1 4.88 64.5 98.5 44.2 87.2 538；ita 4.13 4.3 94.6 98.7 83.0 95.1 388；jpn 3.6 4.8 58.1 98.2 35.5 93.0 544；kor 4.04 4.42 86.8 100.0 75.8 96.1 612；swh 2.91 4.79 18.5 91.6 11.1 80.5 514；tel 3.52 4.27 40.2 77.0 13.8 39.9 356；tur 3.86 4.65 52.2 90.4 32.8 58.8 335；vie 3.99 4.47 81.6 99.1 70.7 94.6 632；…… eng–X 各行：ben 3.91 3.94 4.61 62.2 68.0 96.1 48.5 50.7 75.6 410；cat 3.92 3.05 4.57 68.0 43.7 96.5 38.2 15.1 69.6 629；cmn 4.34 4.63 4.86 77.7 88.7 98.4 68.8 82.4 91.4 638；fin 3.62 3.98 4.7 51.1 67.6 97.0 26.7 36.6 68.6 636；hin 4.29 4.56 4.77 69.9 85.0 95.6 49.3 60.0 72.5 612；ind 3.69 3.62 4.82 44.3 44.9 94.6 33.1 29.1 84.7 632；ita 4.43 4.75 4.87 75.1 92.2 98.3 64.5 80.9 85.7 538；jpn 4.19 4.18 4.32 95.6 95.6 99.0 88.4 89.7 95.4 388；kor 4.02 4.38 4.78 67.3 84.2 97.6 57.2 76.1 92.5 544；swh 4.02 4.4 4.41 82.0 98.4 99.3 76.3 96.4 96.1 612；tel 3.17 3.84 4.81 26.7 51.0 92.8 20.2 39.9 81.3 514；tur 3.53 4.07 4.32 40.4 66.0 82.0 18.5 37.1 40.7 356；vie 4.16 4.38 4.63 58.5 71.9 89.6 49.9 54.6 55.8 335；…… 1 SeamlessM4T-Large 2 Whisper-Large-v2 3 Human reference。）（56 3.97 63.3 97.1 42.2 89.2 619 93.6 29.5 75.0 597 4.11 4.66 64.2 47.2 63.7 623 3.72 45.1 34.8 84.5 466 3.42 4.35 91.9 24.0 61.8 442 3.3 4.72 46.7 21.5 86.2 643 4.89 65.4 98.8 32.9 87.8 566 71.7 94.3 40.3 71.0 283 3.64 4.68 43.2 91.0 611 4.48 4.49 74.7 99.4 70.1 96.2 95.9 4.15 4.44 81.1 52.0 65.9 86.9 619 4.06 4.66 55.4 82.6 46.1 74.2 76.2 597 4.15 4.62 65.2 93.4 95.7 52.5 83.6 61.2 623 3.7 1.63 4.76 41.2 1.3 32.6 0.9 80.0 466 3.87 3.37 4.39 72.6 94.8 30.1 62.9 442 3.42 3.51 4.72 48.8 56.0 31.9 33.4 86.6 643 57.8 97.3 62.4 85.5 566 66.8 92.6 40.6 48.4 72.1 283 3.4 4.69 53.7 73.0 37.6 57.8 611）"
+       "original": "Direction Lang XSTS (calibrated) % XSTS 3+ % XSTS 4+ Items Seamls1 Wspr2 Hum3 Seamls Wspr Hum Seamls Wspr Hum eng–X arb",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nDirection Lang XSTS (calibrated) % XSTS 3+ % XSTS 4+ Items Seamls1 Wspr2 Hum3 Seamls Wspr Hum Seamls Wspr Hum eng–X arb"
+      }
+     ]
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-2",
+     "type": "equation",
+     "page": 56,
+     "original": "3.55 – 4.59 51.5 – 95.4 24.9 – 74.6 410"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-3",
+     "type": "equation",
+     "page": 56,
+     "original": "ben"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-4",
+     "type": "equation",
+     "page": 56,
+     "original": "4.09 – 4.56 80.4 – 96.8 41.0 – 67.9 629"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-5",
+     "type": "equation",
+     "page": 56,
+     "original": "cat"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-6",
+     "type": "equation",
+     "page": 56,
+     "original": "4.3 – 4.85 77.7 – 98.3 64.3 – 90.9 638"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-7",
+     "type": "equation",
+     "page": 56,
+     "original": "cmn"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-8",
+     "type": "equation",
+     "page": 56,
+     "original": "3.06 – 4.74 31.4 – 98.3 7.7 – 72.2 636"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-9",
+     "type": "equation",
+     "page": 56,
+     "original": "deu"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-10",
+     "type": "equation",
+     "page": 56,
+     "original": "4.02 – 4.79 63.4 – 97.9 29.4 – 72.4 612"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-11",
+     "type": "equation",
+     "page": 56,
+     "original": "fin"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-12",
+     "type": "equation",
+     "page": 56,
+     "original": "3.32 – 4.84 32.3 – 95.4 16.0 – 85.9 632"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-13",
+     "type": "equation",
+     "page": 56,
+     "original": "fra"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-14",
+     "type": "equation",
+     "page": 56,
+     "original": "4.1 – 4.88 64.5 – 98.5 44.2 – 87.2 538"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-15",
+     "type": "equation",
+     "page": 56,
+     "original": "hin"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-16",
+     "type": "equation",
+     "page": 56,
+     "original": "4.13 – 4.3 94.6 – 98.7 83.0 – 95.1 388"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-17",
+     "type": "equation",
+     "page": 56,
+     "original": "ind"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-18",
+     "type": "equation",
+     "page": 56,
+     "original": "3.6 – 4.8 58.1 – 98.2 35.5 – 93.0 544"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-19",
+     "type": "equation",
+     "page": 56,
+     "original": "ita"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-20",
+     "type": "equation",
+     "page": 56,
+     "original": "4.04 – 4.42 86.8 – 100.0 75.8 – 96.1 612"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-21",
+     "type": "equation",
+     "page": 56,
+     "original": "jpn"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-22",
+     "type": "equation",
+     "page": 56,
+     "original": "2.91 – 4.79 18.5 – 91.6 11.1 – 80.5 514"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-23",
+     "type": "equation",
+     "page": 56,
+     "original": "kor"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-24",
+     "type": "equation",
+     "page": 56,
+     "original": "3.52 – 4.27 40.2 – 77.0 13.8 – 39.9 356"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-25",
+     "type": "equation",
+     "page": 56,
+     "original": "nld"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-26",
+     "type": "equation",
+     "page": 56,
+     "original": "3.86 – 4.65 52.2 – 90.4 32.8 – 58.8 335"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-27",
+     "type": "equation",
+     "page": 56,
+     "original": "por"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-28",
+     "type": "equation",
+     "page": 56,
+     "original": "3.99 – 4.47 81.6 – 99.1 70.7 – 94.6 632"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-29",
+     "type": "equation",
+     "page": 56,
+     "original": "ron"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-30",
+     "type": "equation",
+     "page": 56,
+     "original": "3.97 – 4.87 63.3 – 97.1 42.2 – 89.2 619"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-31",
+     "type": "equation",
+     "page": 56,
+     "original": "rus"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-32",
+     "type": "equation",
+     "page": 56,
+     "original": "3.62 – 4.78 40.4 – 93.6 29.5 – 75.0 597"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-33",
+     "type": "equation",
+     "page": 56,
+     "original": "spa"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-34",
+     "type": "equation",
+     "page": 56,
+     "original": "4.11 – 4.66 64.2 – 96.5 47.2 – 63.7 623"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-35",
+     "type": "equation",
+     "page": 56,
+     "original": "swh"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-36",
+     "type": "equation",
+     "page": 56,
+     "original": "3.72 – 4.8 45.1 – 91.6 34.8 – 84.5 466"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-37",
+     "type": "equation",
+     "page": 56,
+     "original": "tel"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-38",
+     "type": "equation",
+     "page": 56,
+     "original": "3.42 – 4.35 60.0 – 91.9 24.0 – 61.8 442"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-39",
+     "type": "equation",
+     "page": 56,
+     "original": "tha"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-40",
+     "type": "equation",
+     "page": 56,
+     "original": "3.3 – 4.72 46.7 – 95.6 21.5 – 86.2 643"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-41",
+     "type": "equation",
+     "page": 56,
+     "original": "tur"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-42",
+     "type": "equation",
+     "page": 56,
+     "original": "4.02 – 4.89 65.4 – 98.8 32.9 – 87.8 566"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-43",
+     "type": "equation",
+     "page": 56,
+     "original": "urd"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-44",
+     "type": "equation",
+     "page": 56,
+     "original": "3.91 – 4.56 71.7 – 94.3 40.3 – 71.0 283"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-45",
+     "type": "equation",
+     "page": 56,
+     "original": "vie"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-46",
+     "type": "equation",
+     "page": 56,
+     "original": "3.64 – 4.68 64.5 – 98.4 43.2 – 91.0 611"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-47",
+     "type": "equation",
+     "page": 56,
+     "original": "X–eng arb"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-48",
+     "type": "equation",
+     "page": 56,
+     "original": "3.91 3.94 4.61 62.2 68.0 96.1 48.5 50.7 75.6 410"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-49",
+     "type": "equation",
+     "page": 56,
+     "original": "ben"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-50",
+     "type": "equation",
+     "page": 56,
+     "original": "3.92 3.05 4.57 68.0 43.7 96.5 38.2 15.1 69.6 629"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-51",
+     "type": "equation",
+     "page": 56,
+     "original": "cat"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-52",
+     "type": "equation",
+     "page": 56,
+     "original": "4.34 4.63 4.86 77.7 88.7 98.4 68.8 82.4 91.4 638"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-53",
+     "type": "equation",
+     "page": 56,
+     "original": "cmn"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-54",
+     "type": "equation",
+     "page": 56,
+     "original": "3.62 3.98 4.7 51.1 67.6 97.0 26.7 36.6 68.6 636"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-55",
+     "type": "equation",
+     "page": 56,
+     "original": "deu"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-56",
+     "type": "equation",
+     "page": 56,
+     "original": "4.29 4.56 4.77 69.9 85.0 95.6 49.3 60.0 72.5 612"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-57",
+     "type": "equation",
+     "page": 56,
+     "original": "fin"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-58",
+     "type": "equation",
+     "page": 56,
+     "original": "3.69 3.62 4.82 44.3 44.9 94.6 33.1 29.1 84.7 632"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-59",
+     "type": "equation",
+     "page": 56,
+     "original": "fra"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-60",
+     "type": "equation",
+     "page": 56,
+     "original": "4.43 4.75 4.87 75.1 92.2 98.3 64.5 80.9 85.7 538"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-61",
+     "type": "equation",
+     "page": 56,
+     "original": "hin"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-62",
+     "type": "equation",
+     "page": 56,
+     "original": "4.19 4.18 4.32 95.6 95.6 99.0 88.4 89.7 95.4 388"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-63",
+     "type": "equation",
+     "page": 56,
+     "original": "ind"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-64",
+     "type": "equation",
+     "page": 56,
+     "original": "4.02 4.38 4.78 67.3 84.2 97.6 57.2 76.1 92.5 544"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-65",
+     "type": "equation",
+     "page": 56,
+     "original": "ita"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-66",
+     "type": "equation",
+     "page": 56,
+     "original": "4.02 4.4 4.41 82.0 98.4 99.3 76.3 96.4 96.1 612"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-67",
+     "type": "equation",
+     "page": 56,
+     "original": "jpn"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-68",
+     "type": "equation",
+     "page": 56,
+     "original": "3.17 3.84 4.81 26.7 51.0 92.8 20.2 39.9 81.3 514"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-69",
+     "type": "equation",
+     "page": 56,
+     "original": "kor"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-70",
+     "type": "equation",
+     "page": 56,
+     "original": "3.53 4.07 4.32 40.4 66.0 82.0 18.5 37.1 40.7 356"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-71",
+     "type": "equation",
+     "page": 56,
+     "original": "nld"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-72",
+     "type": "equation",
+     "page": 56,
+     "original": "4.16 4.38 4.63 58.5 71.9 89.6 49.9 54.6 55.8 335"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-73",
+     "type": "equation",
+     "page": 56,
+     "original": "por"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-74",
+     "type": "equation",
+     "page": 56,
+     "original": "3.94 4.48 4.49 74.7 98.7 99.4 70.1 96.2 95.9 632"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-75",
+     "type": "equation",
+     "page": 56,
+     "original": "ron"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-76",
+     "type": "equation",
+     "page": 56,
+     "original": "4.15 4.44 4.84 67.9 81.1 96.4 52.0 65.9 86.9 619"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-77",
+     "type": "equation",
+     "page": 56,
+     "original": "rus"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-78",
+     "type": "equation",
+     "page": 56,
+     "original": "4.06 4.66 4.78 55.4 82.6 92.5 46.1 74.2 76.2 597"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-79",
+     "type": "equation",
+     "page": 56,
+     "original": "spa"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-80",
+     "type": "equation",
+     "page": 56,
+     "original": "4.15 4.79 4.62 65.2 93.4 95.7 52.5 83.6 61.2 623"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-81",
+     "type": "equation",
+     "page": 56,
+     "original": "swh"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-82",
+     "type": "equation",
+     "page": 56,
+     "original": "3.7 1.63 4.76 41.2 1.3 89.7 32.6 0.9 80.0 466"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-83",
+     "type": "equation",
+     "page": 56,
+     "original": "tel"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-84",
+     "type": "equation",
+     "page": 56,
+     "original": "3.87 3.37 4.39 72.6 58.1 94.8 44.3 30.1 62.9 442"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-85",
+     "type": "equation",
+     "page": 56,
+     "original": "tha"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-86",
+     "type": "equation",
+     "page": 56,
+     "original": "3.42 3.51 4.72 48.8 56.0 95.6 31.9 33.4 86.6 643"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-87",
+     "type": "equation",
+     "page": 56,
+     "original": "tur"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-88",
+     "type": "equation",
+     "page": 56,
+     "original": "3.91 4.47 4.86 57.8 81.3 97.3 37.1 62.4 85.5 566"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-89",
+     "type": "equation",
+     "page": 56,
+     "original": "urd"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-90",
+     "type": "equation",
+     "page": 56,
+     "original": "3.84 3.92 4.56 66.8 72.4 92.6 40.6 48.4 72.1 283"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-91",
+     "type": "equation",
+     "page": 56,
+     "original": "vie"
+    },
+    {
+     "id": "eq-xsts-results-for-s2st-task-92",
+     "type": "equation",
+     "page": 56,
+     "original": "3.4 3.91 4.69 53.7 73.0 98.4 37.6 57.8 92.5 611"
+    },
+    {
+     "id": "p-xsts-results-for-s2st-task-6",
+     "type": "paragraph",
+     "page": 56,
+     "sentences": [
+      {
+       "id": "s-xsts-results-for-s2st-task-6-1",
+       "original": "1 SeamlessM4T-Large 2 Whisper-Large-v2 3 Human reference",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\n1 SeamlessM4T-Large 2 Whisper-Large-v2 3 Human reference"
       }
      ]
     },
@@ -8428,14 +12299,20 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 32：完整校准后的 XSTS S2ST 结果；Bootstrap 95% 置信区间宽度平均约 ±0.1。%3+ 与 %4+ 分别指某语言被评句子中、（未校准）中位 XSTS ≥3 与 ≥4 的百分比。"
     },
     {
-     "id": "p-xsts-results-for-s2st-task-6",
+     "id": "eq-xsts-results-for-s2st-task-93",
+     "type": "equation",
+     "page": 57,
+     "original": "57 -4 -3.5 -3 -2.5 -2 -1.5 -1 -0.5 0 0.5 1 1.5 2 2.5 3 3.5 4 0 2,000 4,000 6,000 8,000"
+    },
+    {
+     "id": "p-xsts-results-for-s2st-task-7",
      "type": "paragraph",
      "page": 57,
      "sentences": [
       {
-       "id": "s-xsts-results-for-s2st-task-6-1",
-       "original": "57 -4 -3.5 -3 -2.5 -2 -1.5 -1 -0.5 0 0.5 1 1.5 2 2.5 3 3.5 4 0 S2ST XSTS - S2TT XSTS Number of items SEAMLESSM4T-LARGE WHISPER-LARGE-V2 (+YOURTTS)",
-       "zh": "（图内容（页码 57）：横轴 S2ST XSTS − S2TT XSTS 差值，刻度 -4/-3.5/-3/-2.5/-2/-1.5/-1/-0.5/0/0.5/1/1.5/2/2.5/3/3.5/4，纵轴条目数（Number of items）；两条曲线 SEAMLESSM4T-LARGE 与 WHISPER-LARGE-V2 (+YOURTTS)。）"
+       "id": "s-xsts-results-for-s2st-task-7-1",
+       "original": "S2ST XSTS - S2TT XSTS Number of items SEAMLESSM4T-LARGE WHISPER-LARGE-V2 (+YOURTTS)",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nS2ST XSTS - S2TT XSTS Number of items SEAMLESSM4T-LARGE WHISPER-LARGE-V2 (+YOURTTS)"
       }
      ]
     },
@@ -8525,12 +12402,66 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-truncation-and-omission-in-s2st--3-1",
        "original": "If truncations are the predominant reason behind the drop in XSTS scores for SeamlessM4T- Large in the S2ST task, one possible aggravating factor may be recency bias: due to truncations being the most recent effect an annotator observes, their perceived importance on translation quality may be higher.",
-       "zh": "如果截断是 SeamlessM4T-Large 在 S2ST 任务上 XSTS 下滑的主因，一个可能的加剧因素是近因偏差（recency bias）：由于截断是标注者听到的最近效应，其对翻译质量的主观重要性可能被放大。"
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nIf truncations are the predominant reason behind the drop in XSTS scores for SeamlessM4T- Large in the S2ST task, one possible aggravating factor may be recency bias: due to truncations being the most recent effect an annotator observes, their perceived importance on translation quality may be higher."
       },
       {
        "id": "s-truncation-and-omission-in-s2st--3-2",
-       "original": "This may be especially true in the S2ST task, where simultaneous comparison of source and target is difficult due to both being in the speech modality; if cognitive load is too high this may reduce an annotator’s ability to holistically 58 S2TT X-eng S2ST X-eng 5 4 XSTS 3 2 0 10 20 30 40 50 1 Duration of source audio (seconds) 5 4 3 2 0 10 20 30 40 50 1 Duration of source audio (seconds) SEAMLESSM4T-LARGE WHISPER-LARGE-V2 WHISPER-LARGE-V2 + YOURTTS",
-       "zh": "在 S2ST 任务中这一点可能尤其明显——源与目标同为语音模态，难以同时比对；若认知负荷过高，会削弱标注者整体反思 58 S2TT X-eng S2ST X-eng 5 4 XSTS 3 2 0 10 20 30 40 50 1 源音频时长（秒） 5 4 3 2 0 10 20 30 40 50 1 源音频时长（秒） SEAMLESSM4T-LARGE WHISPER-LARGE-V2 WHISPER-LARGE-V2 + YOURTTS"
+       "original": "This may be especially true in the S2ST task, where simultaneous comparison of source and target is difficult due to both being in the speech modality; if cognitive load is too high this may reduce an annotator’s ability to holistically",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-truncation-and-omission-in-s2st--1",
+     "type": "equation",
+     "page": 58,
+     "original": "58"
+    },
+    {
+     "id": "eq-truncation-and-omission-in-s2st--2",
+     "type": "equation",
+     "page": 58,
+     "original": "S2TT X-eng S2ST X-eng"
+    },
+    {
+     "id": "eq-truncation-and-omission-in-s2st--3",
+     "type": "equation",
+     "page": 58,
+     "original": "5 4"
+    },
+    {
+     "id": "eq-truncation-and-omission-in-s2st--4",
+     "type": "equation",
+     "page": 58,
+     "original": "XSTS"
+    },
+    {
+     "id": "eq-truncation-and-omission-in-s2st--5",
+     "type": "equation",
+     "page": 58,
+     "original": "3 2 0 10 20 30 40 50 1"
+    },
+    {
+     "id": "eq-truncation-and-omission-in-s2st--6",
+     "type": "equation",
+     "page": 58,
+     "original": "Duration of source audio (seconds)"
+    },
+    {
+     "id": "eq-truncation-and-omission-in-s2st--7",
+     "type": "equation",
+     "page": 58,
+     "original": "5 4 3 2 0 10 20 30 40 50 1"
+    },
+    {
+     "id": "p-truncation-and-omission-in-s2st--4",
+     "type": "paragraph",
+     "page": 58,
+     "sentences": [
+      {
+       "id": "s-truncation-and-omission-in-s2st--4-1",
+       "original": "Duration of source audio (seconds) SEAMLESSM4T-LARGE WHISPER-LARGE-V2 WHISPER-LARGE-V2 + YOURTTS",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nDuration of source audio (seconds) SEAMLESSM4T-LARGE WHISPER-LARGE-V2 WHISPER-LARGE-V2 + YOURTTS"
       }
      ]
     },
@@ -8542,12 +12473,12 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 13：S2TT 与 S2ST 条目级 XSTS 分数随源语音音频时长的变化。误差线为各源时长桶内均值的标准误。"
     },
     {
-     "id": "p-truncation-and-omission-in-s2st--4",
+     "id": "p-truncation-and-omission-in-s2st--5",
      "type": "paragraph",
      "page": 59,
      "sentences": [
       {
-       "id": "s-truncation-and-omission-in-s2st--4-1",
+       "id": "s-truncation-and-omission-in-s2st--5-1",
        "original": "reflect on the quality of the entire translation and may further exacerbate the effect of recency bias.",
        "zh": "（接续）……整个翻译质量的能力，并进一步加剧近因偏差的影响。"
       }
@@ -8649,14 +12580,80 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-mos-results-1",
+     "type": "equation",
+     "page": 59,
+     "original": "59 5"
+    },
+    {
+     "id": "eq-mos-results-2",
+     "type": "equation",
+     "page": 59,
+     "original": "Avg MOS (naturalness)"
+    },
+    {
+     "id": "eq-mos-results-3",
+     "type": "equation",
+     "page": 59,
+     "original": "4 3 2"
+    },
+    {
+     "id": "eq-mos-results-4",
+     "type": "equation",
+     "page": 59,
+     "original": "X-eng (S2ST)"
+    },
+    {
+     "id": "eq-mos-results-5",
+     "type": "equation",
+     "page": 59,
+     "original": "1"
+    },
+    {
+     "id": "eq-mos-results-6",
+     "type": "equation",
+     "page": 59,
+     "original": "rus fra arb cmn"
+    },
+    {
+     "id": "eq-mos-results-7",
+     "type": "equation",
+     "page": 59,
+     "original": "5"
+    },
+    {
+     "id": "eq-mos-results-8",
+     "type": "equation",
+     "page": 59,
+     "original": "Avg MOS (naturalness)"
+    },
+    {
+     "id": "eq-mos-results-9",
+     "type": "equation",
+     "page": 59,
+     "original": "4 3 2"
+    },
+    {
+     "id": "eq-mos-results-10",
+     "type": "equation",
+     "page": 59,
+     "original": "eng-X (S2ST)"
+    },
+    {
+     "id": "eq-mos-results-11",
+     "type": "equation",
+     "page": 59,
+     "original": "1"
+    },
+    {
      "id": "p-mos-results-3",
      "type": "paragraph",
      "page": 59,
      "sentences": [
       {
        "id": "s-mos-results-3-1",
-       "original": "59 5 Avg MOS (naturalness) 4 3 2 X-eng (S2ST) 1 cmn 5 Avg MOS (naturalness) 4 3 2 eng-X (S2ST) 1 cmn tel ita fin ben swh tel hin tur tgl kor vie hin jpn ind cat tur WHISPER-LARGE-V2 SEAMLESSM4T-LARGE Ref",
-       "zh": "（图内容（页码 59）：左，X-eng（S2ST），纵轴 Avg MOS (naturalness) 5/4/3/2/1，含语言 cmn、tel、ita、fin、ben、swh 等；右，eng-X（S2ST），含语言 tel、hin、tur、tgl、kor、vie、jpn、ind、cat、tur 等；图例 WHISPER-LARGE-V2、SEAMLESSM4T-LARGE、Ref。）"
+       "original": "cmn tel ita fin nld ben spa fra swh por urd tel hin spa tur tgl tha rus kor vie hin jpn ind cat deu tur arb ron WHISPER-LARGE-V2 SEAMLESSM4T-LARGE Ref",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\ncmn tel ita fin nld ben spa fra swh por urd tel hin spa tur tgl tha rus kor vie hin jpn ind cat deu tur arb ron WHISPER-LARGE-V2 SEAMLESSM4T-LARGE Ref"
       }
      ]
     },
@@ -8668,16 +12665,10 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 14：S2ST 模态下、按语言方向校准后的每方向 MOS（自然度）平均分。Bootstrap 95% 置信区间宽度平均约 ±0.1。"
     },
     {
-     "id": "p-mos-results-4",
-     "type": "paragraph",
+     "id": "eq-mos-results-12",
+     "type": "equation",
      "page": 60,
-     "sentences": [
-      {
-       "id": "s-mos-results-4-1",
-       "original": "60",
-       "zh": "60"
-      }
-     ]
+     "original": "60"
     }
    ]
   },
@@ -8698,10 +12689,148 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-modality-2-1-1",
-       "original": "Direction Metric Pearson Spearman S2TT Blaser 2.0 0.750 0.505 BLEU 0.053 0.355 Blaser 2.0 0.923 0.871 BLEU 0.822 0.776 All Blaser 2.0 0.913 0.827 BLEU 0.626 0.625 S2ST Blaser 2.0 0.727 0.675 ASR-BLEU 0.154 0.292 Blaser 2.0 0.854 0.756 ASR-BLEU 0.692 0.651 All Blaser 2.0 0.810 0.736 ASR-BLEU 0.514 0.561",
-       "zh": "（表格内容：列为 Direction、Metric、Pearson、Spearman。S2TT：Blaser 2.0 0.750/0.505、BLEU 0.053/0.355（eng–X）；Blaser 2.0 0.923/0.871、BLEU 0.822/0.776（X–eng）；All：Blaser 2.0 0.913/0.827、BLEU 0.626/0.625。S2ST：Blaser 2.0 0.727/0.675、ASR-BLEU 0.154/0.292（eng–X）；Blaser 2.0 0.854/0.756、ASR-BLEU 0.692/0.651（X–eng）；All：Blaser 2.0 0.810/0.736、ASR-BLEU 0.514/0.561。）"
+       "original": "Direction Metric Pearson Spearman S2TT eng–X Blaser 2.0",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nDirection Metric Pearson Spearman S2TT eng–X Blaser 2.0"
       }
      ]
+    },
+    {
+     "id": "eq-modality-2-1",
+     "type": "equation",
+     "page": 61,
+     "original": "0.750 0.505"
+    },
+    {
+     "id": "eq-modality-2-2",
+     "type": "equation",
+     "page": 61,
+     "original": "BLEU"
+    },
+    {
+     "id": "eq-modality-2-3",
+     "type": "equation",
+     "page": 61,
+     "original": "0.053 0.355"
+    },
+    {
+     "id": "eq-modality-2-4",
+     "type": "equation",
+     "page": 61,
+     "original": "X–eng Blaser 2.0"
+    },
+    {
+     "id": "eq-modality-2-5",
+     "type": "equation",
+     "page": 61,
+     "original": "0.923 0.871"
+    },
+    {
+     "id": "eq-modality-2-6",
+     "type": "equation",
+     "page": 61,
+     "original": "BLEU"
+    },
+    {
+     "id": "eq-modality-2-7",
+     "type": "equation",
+     "page": 61,
+     "original": "0.822 0.776"
+    },
+    {
+     "id": "eq-modality-2-8",
+     "type": "equation",
+     "page": 61,
+     "original": "All Blaser 2.0"
+    },
+    {
+     "id": "eq-modality-2-9",
+     "type": "equation",
+     "page": 61,
+     "original": "0.913 0.827"
+    },
+    {
+     "id": "eq-modality-2-10",
+     "type": "equation",
+     "page": 61,
+     "original": "BLEU"
+    },
+    {
+     "id": "eq-modality-2-11",
+     "type": "equation",
+     "page": 61,
+     "original": "0.626 0.625"
+    },
+    {
+     "id": "eq-modality-2-12",
+     "type": "equation",
+     "page": 61,
+     "original": "S2ST eng–X Blaser 2.0"
+    },
+    {
+     "id": "eq-modality-2-13",
+     "type": "equation",
+     "page": 61,
+     "original": "0.727 0.675"
+    },
+    {
+     "id": "eq-modality-2-14",
+     "type": "equation",
+     "page": 61,
+     "original": "ASR-BLEU"
+    },
+    {
+     "id": "eq-modality-2-15",
+     "type": "equation",
+     "page": 61,
+     "original": "0.154 0.292"
+    },
+    {
+     "id": "eq-modality-2-16",
+     "type": "equation",
+     "page": 61,
+     "original": "X–eng Blaser 2.0"
+    },
+    {
+     "id": "eq-modality-2-17",
+     "type": "equation",
+     "page": 61,
+     "original": "0.854 0.756"
+    },
+    {
+     "id": "eq-modality-2-18",
+     "type": "equation",
+     "page": 61,
+     "original": "ASR-BLEU"
+    },
+    {
+     "id": "eq-modality-2-19",
+     "type": "equation",
+     "page": 61,
+     "original": "0.692 0.651"
+    },
+    {
+     "id": "eq-modality-2-20",
+     "type": "equation",
+     "page": 61,
+     "original": "All Blaser 2.0"
+    },
+    {
+     "id": "eq-modality-2-21",
+     "type": "equation",
+     "page": 61,
+     "original": "0.810 0.736"
+    },
+    {
+     "id": "eq-modality-2-22",
+     "type": "equation",
+     "page": 61,
+     "original": "ASR-BLEU"
+    },
+    {
+     "id": "eq-modality-2-23",
+     "type": "equation",
+     "page": 61,
+     "original": "0.514 0.561"
     },
     {
      "id": "tab-modality-2-1",
@@ -8784,16 +12913,40 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-correlations-between-asr-bleu-bl-1",
+     "type": "equation",
+     "page": 61,
+     "original": "61"
+    },
+    {
+     "id": "eq-correlations-between-asr-bleu-bl-2",
+     "type": "equation",
+     "page": 61,
+     "original": "SEAMLESSM4T-LARGE (eng-X) SEAMLESSM4T-LARGE (X-eng) WHISPER-LARGE-V2 +YOURTTS (X-eng)"
+    },
+    {
+     "id": "eq-correlations-between-asr-bleu-bl-3",
+     "type": "equation",
+     "page": 61,
+     "original": "5"
+    },
+    {
      "id": "p-correlations-between-asr-bleu-bl-3",
      "type": "paragraph",
      "page": 61,
      "sentences": [
       {
        "id": "s-correlations-between-asr-bleu-bl-3-1",
-       "original": "61 SEAMLESSM4T-LARGE (eng-X) SEAMLESSM4T-LARGE (X-eng) WHISPER-LARGE-V2 +YOURTTS (X-eng) 5 mean(median(XSTS)) (calib.)",
+       "original": "mean(median(XSTS)) (calib.)",
        "zh": "（图内容：SEAMLESSM4T-LARGE (eng-X)、SEAMLESSM4T-LARGE (X-eng)、WHISPER-LARGE-V2 + YOURTTS (X-eng)；纵轴 mean(median(XSTS))（已校准），刻度至 5。页码 61。）"
       }
      ]
+    },
+    {
+     "id": "eq-correlations-between-asr-bleu-bl-4",
+     "type": "equation",
+     "page": 62,
+     "original": "4 3 2"
     },
     {
      "id": "p-correlations-between-asr-bleu-bl-4",
@@ -8802,10 +12955,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-correlations-between-asr-bleu-bl-4-1",
-       "original": "4 3 2 Spearman R: 0.561 (0.651 X-eng) Spearman R: 0.736 (0.756 X-eng) 1 0 20 40 ASR-BLEU (S2ST) mean(median(XSTS)) (calib.)",
-       "zh": "（图内容：纵轴 4/3/2/1，Spearman R: 0.561（X-eng 0.651），横轴 ASR-BLEU (S2ST) 刻度 0/20/40，Spearman R: 0.736（X-eng 0.756）；mean(median(XSTS))（已校准）。）"
+       "original": "Spearman R: 0.561 (0.651 X-eng) Spearman R: 0.736 (0.756 X-eng)",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nSpearman R: 0.561 (0.651 X-eng) Spearman R: 0.736 (0.756 X-eng)"
       }
      ]
+    },
+    {
+     "id": "eq-correlations-between-asr-bleu-bl-5",
+     "type": "equation",
+     "page": 62,
+     "original": "1 0 20 40"
     },
     {
      "id": "p-correlations-between-asr-bleu-bl-5",
@@ -8814,8 +12973,56 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-correlations-between-asr-bleu-bl-5-1",
-       "original": "3 4 BLASER 2.0 (S2ST) Spearman R: 0.625 (0.776 X-eng) Spearman R: 0.827 (0.871 X-eng) 20 40 BLEU (S2TT) 3 4 BLASER 2.0 (S2TT)",
-       "zh": "（图内容：纵轴 3/4 BLASER 2.0 (S2ST)，Spearman R: 0.625（X-eng 0.776），横轴 20/40 BLEU (S2TT)，Spearman R: 0.827（X-eng 0.871），BLASER 2.0 (S2TT)。）"
+       "original": "ASR-BLEU (S2ST) mean(median(XSTS)) (calib.)",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-correlations-between-asr-bleu-bl-6",
+     "type": "equation",
+     "page": 62,
+     "original": "3 4"
+    },
+    {
+     "id": "p-correlations-between-asr-bleu-bl-6",
+     "type": "paragraph",
+     "page": 62,
+     "sentences": [
+      {
+       "id": "s-correlations-between-asr-bleu-bl-6-1",
+       "original": "BLASER 2.0 (S2ST) Spearman R: 0.625 (0.776 X-eng) Spearman R: 0.827 (0.871 X-eng)",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nBLASER 2.0 (S2ST) Spearman R: 0.625 (0.776 X-eng) Spearman R: 0.827 (0.871 X-eng)"
+      }
+     ]
+    },
+    {
+     "id": "eq-correlations-between-asr-bleu-bl-7",
+     "type": "equation",
+     "page": 62,
+     "original": "20 40"
+    },
+    {
+     "id": "eq-correlations-between-asr-bleu-bl-8",
+     "type": "equation",
+     "page": 62,
+     "original": "BLEU (S2TT)"
+    },
+    {
+     "id": "eq-correlations-between-asr-bleu-bl-9",
+     "type": "equation",
+     "page": 62,
+     "original": "3 4"
+    },
+    {
+     "id": "p-correlations-between-asr-bleu-bl-7",
+     "type": "paragraph",
+     "page": 62,
+     "sentences": [
+      {
+       "id": "s-correlations-between-asr-bleu-bl-7-1",
+       "original": "BLASER 2.0 (S2TT)",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nBLASER 2.0 (S2TT)"
       }
      ]
     },
@@ -8827,52 +13034,58 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 15：S2ST 任务上 XSTS 与 ASR-BLEU、Blaser 2.0 的相关性，以及 S2TT 任务上 XSTS 与 BLEU、Blaser 2.0 的相关性。Blaser 2.0 与 XSTS 的相关性更好，在 eng–X 方向上尤为明显——该方向 ASR-BLEU 与 BLEU 的相关性远弱于 X–eng 方向。"
     },
     {
-     "id": "p-correlations-between-asr-bleu-bl-6",
+     "id": "eq-correlations-between-asr-bleu-bl-10",
+     "type": "equation",
+     "page": 62,
+     "original": "62"
+    },
+    {
+     "id": "p-correlations-between-asr-bleu-bl-8",
      "type": "paragraph",
      "page": 62,
      "sentences": [
       {
-       "id": "s-correlations-between-asr-bleu-bl-6-1",
-       "original": "62 5.2.4 Limitations Test set limitations The Fleurs [Conneau et al., 2022] test set is limited in that the different language pairs contain slightly different sets of sentences.",
-       "zh": "（页码 62）5.2.4 局限 测试集局限 Fleurs [Conneau et al., 2022] 测试集存在局限：不同语言对包含的句子集略有差异。"
+       "id": "s-correlations-between-asr-bleu-bl-8-1",
+       "original": "5.2.4 Limitations Test set limitations The Fleurs [Conneau et al., 2022] test set is limited in that the different language pairs contain slightly different sets of sentences.",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\n5.2.4 Limitations Test set limitations The Fleurs [Conneau et al., 2022] test set is limited in that the different language pairs contain slightly different sets of sentences."
       },
       {
-       "id": "s-correlations-between-asr-bleu-bl-6-2",
+       "id": "s-correlations-between-asr-bleu-bl-8-2",
        "original": "Due to the limitations in both the dataset (which contains a maximum of 3 speakers) and timing and cost considerations on the human evaluation front (we evaluated a maximum of two speakers per sentence), we have a lack of diversity in our speaker set per language, which may introduce bias relative to a test set with a larger number of speakers.",
        "zh": "由于数据集（每种语言最多 3 位说话人）与人工评测的时间、成本约束（每句最多评测两位说话人），每种语言的说话人集合缺乏多样性，可能相对含更多说话人的测试集引入偏差。"
       },
       {
-       "id": "s-correlations-between-asr-bleu-bl-6-3",
+       "id": "s-correlations-between-asr-bleu-bl-8-3",
        "original": "Limited sample size of human annotators per language We only have a maximum of 5 (but typically 3) annotator evaluations per sentence for each language in our XSTS evaluations.",
        "zh": "每种语言人工标注者样本量有限 在 XSTS 评测中，每种语言每句最多只有 5 位（通常 3 位）标注者评分。"
       },
       {
-       "id": "s-correlations-between-asr-bleu-bl-6-4",
+       "id": "s-correlations-between-asr-bleu-bl-8-4",
        "original": "Relatively small samples of annotators mean annotator bias is important to consider.",
        "zh": "标注者样本相对较小意味着必须重视标注者偏差。"
       },
       {
-       "id": "s-correlations-between-asr-bleu-bl-6-5",
+       "id": "s-correlations-between-asr-bleu-bl-8-5",
        "original": "We try to mitigate this by (1) using the median score per sentence for each language to be robust to outliers, (2) using bootstrap re-sampling of annotator scores to estimate language score uncertainty due to finite annotators, and (3) approximate and correct annotator bias with a cross-lingual calibration set.",
        "zh": "我们通过以下方式缓解：(1) 对每种语言使用每句的中位数分数以对离群值稳健；(2) 用 bootstrap 重采样标注者分数估计有限标注者带来的语言分数不确定性；(3) 用跨语言校准集近似并校正标注者偏差。"
       },
       {
-       "id": "s-correlations-between-asr-bleu-bl-6-6",
+       "id": "s-correlations-between-asr-bleu-bl-8-6",
        "original": "For MOS, several language directions only have a single annotator per item, with no calibration set—this exacerbates issues related to annotator bias.",
        "zh": "对 MOS，若干语言方向每条仅一位标注者且无校准集——这进一步加剧标注者偏差问题。"
       },
       {
-       "id": "s-correlations-between-asr-bleu-bl-6-7",
+       "id": "s-correlations-between-asr-bleu-bl-8-7",
        "original": "Challenges of implementing reliable human measures of performance Obtaining human measures of translation performance offers several advantages over automated metrics (e.g. while BLEU-like metrics are trivial to “game”, humans are not as easily fooled, and humans are better judges of target translations of high quality but for which word content differs from available reference translations), but human measures of translation quality suffer from their own limitations that are not shared by automated metrics.",
        "zh": "实施可靠人工性能度量的挑战 相比自动指标，人工度量翻译性能有若干优势（例如 BLEU 类指标很容易被「钻空子」，人则不易被蒙蔽；对用词与参考译文不同但质量很高的目标翻译，人是更好的评判者），但人工度量也有自动指标所没有的自身局限。"
       },
       {
-       "id": "s-correlations-between-asr-bleu-bl-6-8",
+       "id": "s-correlations-between-asr-bleu-bl-8-8",
        "original": "XSTS was designed to mitigate some of these limitations (annotator bias and variance) but, e.g., recency bias and other human biases may still persist.",
        "zh": "XSTS 设计上可缓解部分这类局限（标注者偏差与方差），但近因偏差等其他人因偏差仍可能存在。"
       },
       {
-       "id": "s-correlations-between-asr-bleu-bl-6-9",
+       "id": "s-correlations-between-asr-bleu-bl-8-9",
        "original": "We continue to develop additional recommendations and clarifications, improve annotator trainings and reduce cognitive load, but obtaining reliable human measures of translation quality continues to be an active area of research and development.",
        "zh": "我们继续提出补充建议与澄清、改进标注者培训并降低认知负担，但获得可靠的翻译质量人工度量仍是活跃的研发方向。"
       }
@@ -8973,12 +13186,84 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-experimental-framework-1-1",
        "original": "We build a replicable noise-robustness evaluation benchmark based on Fleurs (\"noisy Fleurs”), which covers 102 languages, 2 speech tasks (S2TT and ASR), and various noise types (natural noises and music).",
-       "zh": "我们基于 Fleurs 构建了一个可复现的噪声鲁棒性评测基准（「noisy Fleurs」），覆盖 102 种语言、2 个语音任务（S2TT 与 ASR），以及多种噪声类型（自然噪声与音乐）。"
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nWe build a replicable noise-robustness evaluation benchmark based on Fleurs (\"noisy Fleurs”), which covers 102 languages, 2 speech tasks (S2TT and ASR), and various noise types (natural noises and music)."
       },
       {
        "id": "s-experimental-framework-1-2",
-       "original": "To create simulated noisy 63 S2TT with Natural Noise S2TT with Music 30 30 20 20 ↑BLEU 10 10 –20 –10 0 10 0 –20 –10 0 10 0 SNR (dB) SNR (dB) ASR with Natural Noise ASR with Music 200 200 150 150 ↓WER 100 100 50 50 –20 –10 0 10 0 –20 –10 0 10 0 SNR (dB) SNR (dB) WHISPER-LARGE-V2 SEAMLESSM4T-LARGE",
-       "zh": "（图内容：S2TT with Natural Noise 与 S2TT with Music，纵轴 ↑BLEU 30/30/20/20/10/10，横轴 SNR (dB) –20/–10/0/10；ASR with Natural Noise 与 ASR with Music，纵轴 ↓WER 200/200/150/150/100/100/50/50，横轴 SNR (dB) –20/–10/0/10；图例 WHISPER-LARGE-V2 与 SEAMLESSM4T-LARGE。）（63）"
+       "original": "To create simulated noisy",
+       "zh": "（正文残句）为构造模拟噪声（后接原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-experimental-framework-1",
+     "type": "equation",
+     "page": 63,
+     "original": "63"
+    },
+    {
+     "id": "eq-experimental-framework-2",
+     "type": "equation",
+     "page": 63,
+     "original": "S2TT with Natural Noise S2TT with Music"
+    },
+    {
+     "id": "eq-experimental-framework-3",
+     "type": "equation",
+     "page": 63,
+     "original": "30 30 20 20"
+    },
+    {
+     "id": "eq-experimental-framework-4",
+     "type": "equation",
+     "page": 63,
+     "original": "↑BLEU"
+    },
+    {
+     "id": "eq-experimental-framework-5",
+     "type": "equation",
+     "page": 63,
+     "original": "10 10 –20 –10 0 10 0 –20 –10 0 10 0"
+    },
+    {
+     "id": "p-experimental-framework-2",
+     "type": "paragraph",
+     "page": 63,
+     "sentences": [
+      {
+       "id": "s-experimental-framework-2-1",
+       "original": "SNR (dB) SNR (dB) ASR with Natural Noise ASR with Music",
+       "zh": "（图表标题：SNR (dB) / SNR (dB)；ASR with Natural Noise / ASR with Music。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-experimental-framework-6",
+     "type": "equation",
+     "page": 63,
+     "original": "200 200 150 150"
+    },
+    {
+     "id": "eq-experimental-framework-7",
+     "type": "equation",
+     "page": 63,
+     "original": "↓WER"
+    },
+    {
+     "id": "eq-experimental-framework-8",
+     "type": "equation",
+     "page": 63,
+     "original": "100 100 50 50 –20 –10 0 10 0 –20 –10 0 10 0"
+    },
+    {
+     "id": "p-experimental-framework-3",
+     "type": "paragraph",
+     "page": 63,
+     "sentences": [
+      {
+       "id": "s-experimental-framework-3-1",
+       "original": "SNR (dB) SNR (dB) WHISPER-LARGE-V2 SEAMLESSM4T-LARGE",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nSNR (dB) SNR (dB) WHISPER-LARGE-V2 SEAMLESSM4T-LARGE"
       }
      ]
     },
@@ -8990,32 +13275,32 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 16：模型对背景噪声鲁棒性的评测结果。报告 X–eng S2TT 与 ASR 在 4 种语言（3 个语系）上的平均 test BLEU 与 test WER，输入噪声从低到高（SNR 从高到低）。模拟噪声采样自 MUSAN [Snyder et al., 2015] 的「noise」与「music」类别。"
     },
     {
-     "id": "p-experimental-framework-2",
+     "id": "p-experimental-framework-4",
      "type": "paragraph",
      "page": 64,
      "sentences": [
       {
-       "id": "s-experimental-framework-2-1",
+       "id": "s-experimental-framework-4-1",
        "original": "audios, we sampled audio clips from MUSAN [Snyder et al., 2015] on the “noise” and “music” categories, and mixed them with the original Fleurs speech audios under different signalto-noise ratio (SNR): 10, 5, 0, -5, -10, -15 and -20.",
        "zh": "生成模拟噪声 63 音频时，我们从 MUSAN [Snyder et al., 2015] 的「noise」与「music」类别采样音频片段，按不同信噪比（SNR）混入原始 Fleurs 语音：10、5、0、-5、-10、-15、-20 dB。"
       },
       {
-       "id": "s-experimental-framework-2-2",
+       "id": "s-experimental-framework-4-2",
        "original": "We compare models by BLEU-SNR curves (for S2TT) or WER-SNR curves (for ASR), which illustrate the degree of model performance degradation when the noise level of speech inputs increases (i.e., when SNR decreases).",
        "zh": "我们用 BLEU-SNR 曲线（S2TT）或 WER-SNR 曲线（ASR）对比模型——曲线展示语音输入噪声增大（即 SNR 下降）时模型性能下降的程度。"
       },
       {
-       "id": "s-experimental-framework-2-3",
+       "id": "s-experimental-framework-4-3",
        "original": "Both SeamlessM4T-Large and Whisper-Large-v2 achieve high performance mostly in high-resource languages, where stress tests in the noisy speech setup are more necessary and informative.",
        "zh": "SeamlessM4T-Large 与 Whisper-Large-v2 都主要在高资源语言上取得较高性能，这些语言上做噪声压力测试更必要、也更有信息量。"
       },
       {
-       "id": "s-experimental-framework-2-4",
+       "id": "s-experimental-framework-4-4",
        "original": "For low-resource languages, the clean speech setup is already challenging, let alone the noisy one.",
        "zh": "对低资源语言，仅干净语音场景就已具挑战性，更不必说噪声场景。"
       },
       {
-       "id": "s-experimental-framework-2-5",
+       "id": "s-experimental-framework-4-5",
        "original": "We hence focus on 4 high-resource languages (French, Spanish, Modern Standard Arabic, and Russian) from 3 different language families for our noise-robustness analysis on SeamlessM4T-Large and Whisper-Large-v2.",
        "zh": "因此，我们在噪声鲁棒性分析中聚焦于 4 种来自 3 个不同语系的高资源语言（法语、西班牙语、现代标准阿拉伯语、俄语），评测对象为 SeamlessM4T-Large 与 Whisper-Large-v2 两个模型。"
       }
@@ -9106,11 +13391,29 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-related-work-3-1-3",
-       "original": "However, these labels are rare in existing ASR benchmarks, limiting the 64 applications of such analysis.",
+       "original": "However, these labels are rare in existing ASR benchmarks, limiting the",
+       "zh": "然而，这类标签在现有 ASR 基准中很少见，限制了此类分析的应用。64"
+      }
+     ]
+    },
+    {
+     "id": "eq-related-work-3-1",
+     "type": "equation",
+     "page": 64,
+     "original": "64"
+    },
+    {
+     "id": "p-related-work-3-2",
+     "type": "paragraph",
+     "page": 64,
+     "sentences": [
+      {
+       "id": "s-related-work-3-2-1",
+       "original": "applications of such analysis.",
        "zh": "然而，这类标签在现有 ASR 基准中很少见，限制了此类分析的应用。64"
       },
       {
-       "id": "s-related-work-3-1-4",
+       "id": "s-related-work-3-2-2",
        "original": "To overcome label scarcity, Wang et al. [2020] proposed a set of label-free metrics that do not rely on speaker grouping for analyzing the effects of speaker variations.",
        "zh": "为克服标签稀缺，Wang et al. [2020] 提出一组无标签指标，无需依赖说话人分组即可分析说话人差异的影响。"
       }
@@ -9174,7 +13477,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-experimental-setup-6-2-1",
-       "original": "CoefVarMS = 1 |G′|",
+       "original": "CoefVarMS =",
        "zh": "CoefVarMS = 1 |G′|"
       }
      ]
@@ -9183,13 +13486,7 @@ globalThis.PAPER_2308_11596 = {
      "id": "eq-experimental-setup-6-3",
      "type": "equation",
      "page": 65,
-     "original": "X"
-    },
-    {
-     "id": "eq-experimental-setup-6-4",
-     "type": "equation",
-     "page": 65,
-     "original": "g∈G′"
+     "original": "1"
     },
     {
      "id": "p-experimental-setup-6-3",
@@ -9198,16 +13495,40 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-experimental-setup-6-3-1",
+       "original": "|G′|",
+       "zh": "CoefVarMS = 1 |G′|"
+      }
+     ]
+    },
+    {
+     "id": "eq-experimental-setup-6-4",
+     "type": "equation",
+     "page": 65,
+     "original": "X"
+    },
+    {
+     "id": "eq-experimental-setup-6-5",
+     "type": "equation",
+     "page": 65,
+     "original": "g∈G′"
+    },
+    {
+     "id": "p-experimental-setup-6-4",
+     "type": "paragraph",
+     "page": 65,
+     "sentences": [
+      {
+       "id": "s-experimental-setup-6-4-1",
        "original": "StandardDeviation(g) Mean(g) where G is the set of sentence-level chrF scores grouped by content (transcript) and G′ = {g|g ∈G, |g| > 1, Mean(g) > 0}.",
        "zh": "StandardDeviation(g) Mean(g)，其中 G 是按内容（转写文本）分组的句级 chrF 分数集合，G′ = {g | g ∈ G, |g| > 1, Mean(g) > 0}。"
       },
       {
-       "id": "s-experimental-setup-6-3-2",
+       "id": "s-experimental-setup-6-4-2",
        "original": "The two metrics are complementary: chrFMS provides a normalized quality metric that, unlike conventional corpus-level metrics, takes speaker variations into consideration, while CoefVarMS provides a standardized measure of quality variance under speaker variations.",
        "zh": "两个指标互补：chrFMS 是归一化的质量指标，与传统语料级指标不同，它把说话人差异纳入考虑；CoefVarMS 则是说话人差异下质量方差的标准化度量。"
       },
       {
-       "id": "s-experimental-setup-6-3-3",
+       "id": "s-experimental-setup-6-4-3",
        "original": "For robustness analysis of SeamlessM4T-Large and Whisper-Large-v2, we conducted an out-of-domain evaluation on Fleurs on all its languages that have at least 40 content groups in the test sets.",
        "zh": "为对 SeamlessM4T-Large 与 Whisper-Large-v2 做鲁棒性分析，我们在 Fleurs 上对测试集中至少含 40 个内容组的所有语言做了域外评测。"
       }
@@ -9232,10 +13553,28 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-languages-1-1",
-       "original": "Average # Whisper-Large-v2 SeamlessM4T-Large (≥40 content groups) cont. groups chrFMS↑ CoefVarMS↓ chrFMS↑ CoefVarMS↓ X–eng S2TT for 77 langs 278 40.8 13.7 45.3 9.1 ASR for 78 langs 280 58.7 17.0 72.5 6.4",
-       "zh": "（表格内容：列为 Whisper-Large-v2 与 SeamlessM4T-Large 各自的 chrFMS↑ 与 CoefVarMS↓。各行：X–eng S2TT 77 语种（≥40 内容组），平均 278 内容组，Whisper-Large-v2 40.8/13.7，SeamlessM4T-Large 45.3/9.1；ASR 78 语种，平均 280 内容组，Whisper-Large-v2 58.7/17.0，SeamlessM4T-Large 72.5/6.4。）"
+       "original": "Average # Whisper-Large-v2 SeamlessM4T-Large (≥40 content groups) cont. groups chrFMS↑ CoefVarMS↓ chrFMS↑ CoefVarMS↓ X–eng S2TT for 77 langs",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nAverage # Whisper-Large-v2 SeamlessM4T-Large (≥40 content groups) cont. groups chrFMS↑ CoefVarMS↓ chrFMS↑ CoefVarMS↓ X–eng S2TT for 77 langs"
       }
      ]
+    },
+    {
+     "id": "eq-languages-1",
+     "type": "equation",
+     "page": 65,
+     "original": "278 40.8 13.7 45.3 9.1"
+    },
+    {
+     "id": "eq-languages-2",
+     "type": "equation",
+     "page": 65,
+     "original": "ASR for 78 langs"
+    },
+    {
+     "id": "eq-languages-3",
+     "type": "equation",
+     "page": 65,
+     "original": "280 58.7 17.0 72.5 6.4"
     },
     {
      "id": "tab-languages-1",
@@ -9314,43 +13653,61 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-6-2-1-2",
-       "original": "Both of these dimensions of responsible AI have drawn 65 significant scientific attention in recent times (e.g., [Kiritchenko et al., 2021; Bender et al., 2021; Costa-jussà, 2019]).",
+       "original": "Both of these dimensions of responsible AI have drawn",
        "zh": "负责任 AI 的这两个维度近来都引起了 65 分显著的科学关注（如 [Kiritchenko et al., 2021; Bender et al., 2021; Costa-jussà, 2019]）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-6-2-1",
+     "type": "equation",
+     "page": 65,
+     "original": "65"
+    },
+    {
+     "id": "p-6-2-2",
+     "type": "paragraph",
+     "page": 65,
+     "sentences": [
+      {
+       "id": "s-6-2-2-1",
+       "original": "significant scientific attention in recent times (e.g., [Kiritchenko et al., 2021; Bender et al., 2021; Costa-jussà, 2019]).",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nsignificant scientific attention in recent times (e.g., [Kiritchenko et al., 2021; Bender et al., 2021; Costa-jussà, 2019])."
       },
       {
-       "id": "s-6-2-1-3",
+       "id": "s-6-2-2-2",
        "original": "Moreover, the occurrence of these unintended errors or translation faults could adversely impact user experiences.",
        "zh": "此外，这类非预期错误或翻译失误的出现会对用户体验造成负面影响。"
       },
       {
-       "id": "s-6-2-1-4",
+       "id": "s-6-2-2-3",
        "original": "Sustained attention devoted to such issues is, thus, vital to the safe deployment of our systems.",
        "zh": "因此，对这类问题的持续关注对我们系统的安全部署至关重要。"
       }
      ]
     },
     {
-     "id": "p-6-2-2",
+     "id": "p-6-2-3",
      "type": "paragraph",
      "page": 66,
      "sentences": [
       {
-       "id": "s-6-2-2-1",
+       "id": "s-6-2-3-1",
        "original": "Beyond these dimensions, we are also concerned with the concept of fairness.",
        "zh": "除这些维度外，我们还关注公平（fairness）这一概念。"
       },
       {
-       "id": "s-6-2-2-2",
+       "id": "s-6-2-3-2",
        "original": "In contrast to the idea of robustness (as conceptualized in section 5.3.2), where the focus is on whether our system performance is affected by the varying qualities of a speaker’s voice, fairness in this section is more concerned about the content of the translation outputs.",
        "zh": "与鲁棒性（如第 5.3.2 节所定义）不同——鲁棒性关注系统性能是否受说话人音质差异影响——本节的公平更关注翻译输出的内容。"
       },
       {
-       "id": "s-6-2-2-3",
+       "id": "s-6-2-3-3",
        "original": "Fair outputs do not preference or skew towards particular demographics and tend to treat different groups somewhat equitably.",
        "zh": "公平的输出不偏好或偏向特定人群，倾向于较为公正地对待不同群体。"
       },
       {
-       "id": "s-6-2-2-4",
+       "id": "s-6-2-3-4",
        "original": "We document the results of these evaluations to better direct mitigation efforts.",
        "zh": "我们记录这些评测结果，以更好地指导缓解工作。"
       }
@@ -9505,16 +13862,10 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
-     "id": "p-gender-bias-5",
-     "type": "paragraph",
+     "id": "eq-gender-bias-1",
+     "type": "equation",
      "page": 66,
-     "sentences": [
-      {
-       "id": "s-gender-bias-5-1",
-       "original": "66",
-       "zh": "66"
-      }
-     ]
+     "original": "66"
     }
    ]
   },
@@ -9742,10 +14093,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-language-directions-and-modaliti-2-1",
-       "original": "17. https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge 67",
+       "original": "17. https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge",
        "zh": "17. https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge 67"
       }
      ]
+    },
+    {
+     "id": "eq-language-directions-and-modaliti-1",
+     "type": "equation",
+     "page": 67,
+     "original": "67"
     }
    ]
   },
@@ -9998,45 +14355,99 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-automatic-toxicity-detection-on--4-1",
-       "original": "18. https://github.com/facebookresearch/stopes/tree/main/demo/toxicity-alti-hb/ETOX 68 By comparison, for S2TT in X–eng, Whisper-Large-v2’s added toxicity is 0.31% averaged across languages and is prevalent in 58 languages.",
+       "original": "18. https://github.com/facebookresearch/stopes/tree/main/demo/toxicity-alti-hb/ETOX",
        "zh": "18. https://github.com/facebookresearch/stopes/tree/main/demo/toxicity-alti-hb/ETOX 68 相比之下，X–eng 方向 S2TT 上 Whisper-Large-v2 的新增毒性跨语言平均为 0.31%，且在 58 种语言中普遍存在。"
+      }
+     ]
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--1",
+     "type": "equation",
+     "page": 68,
+     "original": "68"
+    },
+    {
+     "id": "p-automatic-toxicity-detection-on--5",
+     "type": "paragraph",
+     "page": 68,
+     "sentences": [
+      {
+       "id": "s-automatic-toxicity-detection-on--5-1",
+       "original": "By comparison, for S2TT in X–eng, Whisper-Large-v2’s added toxicity is 0.31% averaged across languages and is prevalent in 58 languages.",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\nBy comparison, for S2TT in X–eng, Whisper-Large-v2’s added toxicity is 0.31% averaged across languages and is prevalent in 58 languages."
       },
       {
-       "id": "s-automatic-toxicity-detection-on--4-2",
+       "id": "s-automatic-toxicity-detection-on--5-2",
        "original": "For overlapping languages in Whisper-Large-v2 and SeamlessM4T-Large, the latter shows an added toxicity reduction of 63%.",
        "zh": "对 Whisper-Large-v2 与 SeamlessM4T-Large 都覆盖的语言，后者的新增毒性下降 63%。"
       },
       {
-       "id": "s-automatic-toxicity-detection-on--4-3",
+       "id": "s-automatic-toxicity-detection-on--5-3",
        "original": "For S2ST in X–eng, Whisper-Large-v2 + YourTTS’s added toxicity lies at 0.27% averaged across languages and is prevalent in 52 languages.Again, for overlapped languages in this cascaded S2ST system and SeamlessM4T-Large, ours show a reduction of toxic tokens by 62%.",
        "zh": "X–eng 方向 S2ST 上，Whisper-Large-v2 + YourTTS 的新增毒性跨语言平均为 0.27%，在 52 种语言中普遍存在。同样地，对级联 S2ST 系统与 SeamlessM4T-Large 都覆盖的语言，我们的毒性 token 减少 62%。"
       },
       {
-       "id": "s-automatic-toxicity-detection-on--4-4",
+       "id": "s-automatic-toxicity-detection-on--5-4",
        "original": "For S2TT in eng–X, the Whisper-Large-v2 + NLLB-3.3B cascaded combination adds toxicity by 31% averaged in languages and added toxicity is prevalent in 39 languages.",
        "zh": "eng–X 方向 S2TT 上，Whisper-Large-v2 + NLLB-3.3B 级联组合的新增毒性跨语言平均为 31%，且在 39 种语言中普遍存在。"
       },
       {
-       "id": "s-automatic-toxicity-detection-on--4-5",
+       "id": "s-automatic-toxicity-detection-on--5-5",
        "original": "For overlapping languages, SeamlessM4T-Large reduces this amount by 26%.",
        "zh": "对覆盖相同的语言，SeamlessM4T-Large 把这一数值降低 26%。"
       },
       {
-       "id": "s-automatic-toxicity-detection-on--4-6",
+       "id": "s-automatic-toxicity-detection-on--5-6",
        "original": "The filtering of imbalanced toxicity in the training data as reported in Section 4.2.1 may have contributed to this improvement.",
        "zh": "如第 4.2.1 节所述，对训练数据中不均衡毒性的过滤可能是这一改进的来源。"
       }
      ]
     },
     {
-     "id": "p-automatic-toxicity-detection-on--5",
+     "id": "p-automatic-toxicity-detection-on--6",
      "type": "paragraph",
      "page": 69,
      "sentences": [
       {
-       "id": "s-automatic-toxicity-detection-on--5-1",
-       "original": "FLEURS Added Toxicity - S2TT eng-X X-eng 0% 1% 2% 0% 1% 2% oci pan kan tel ory lao kor guj mar afr lin cmn lit snd mlt yue zul nya tam swh ben kea khm ast sna ind mal jav glg heb est hye gle pes pol tur kir dan kaz bul lug ukr pbt tgk ckb uzn cym FLEURS Added Toxicity - S2ST eng-X X-eng 0% 1% 2% 0% 1% 2% oci afr kan mlt kea ceb ory guj kor mar pan lit mal vie hin yue nya wol tel sna ast snd jpn tam amh azj slk nso khm dan mri cmn ind xho cym tur pes est swh ita uzn",
-       "zh": "（图内容：左，FLEURS 新增毒性 - S2TT，eng-X 与 X-eng，横轴 0%/1%/2%，语言 oci pan kan tel ory lao kor guj mar afr lin cmn lit snd mlt yue zul nya tam swh ben kea khm ast sna ind mal jav glg heb est hye gle pes pol tur kir dan kaz bul lug ukr pbt tgk ckb uzn cym；右，FLEURS 新增毒性 - S2ST，语言 oci afr kan mlt kea ceb ory guj kor mar pan lit mal vie hin yue nya wol tel sna ast snd jpn tam amh azj slk nso khm dan mri cmn ind xho cym tur pes est swh ita uzn。）"
+       "id": "s-automatic-toxicity-detection-on--6-1",
+       "original": "FLEURS Added Toxicity - S2TT eng-X X-eng",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--2",
+     "type": "equation",
+     "page": 69,
+     "original": "0% 1% 2% 0% 1% 2%"
+    },
+    {
+     "id": "p-automatic-toxicity-detection-on--7",
+     "type": "paragraph",
+     "page": 69,
+     "sentences": [
+      {
+       "id": "s-automatic-toxicity-detection-on--7-1",
+       "original": "oci pan kan tel ory lao kor guj mar afr lin cmn lit snd mlt yue zul nya tam swh ben kea khm ast sna ind tha mal jav glg heb est hye gle pes pol tur kir deu dan kaz bul lug fra ukr pbt nld tgk ckb ron uzn cym FLEURS Added Toxicity - S2ST eng-X X-eng",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--3",
+     "type": "equation",
+     "page": 69,
+     "original": "0% 1% 2% 0% 1% 2%"
+    },
+    {
+     "id": "p-automatic-toxicity-detection-on--8",
+     "type": "paragraph",
+     "page": 69,
+     "sentences": [
+      {
+       "id": "s-automatic-toxicity-detection-on--8-1",
+       "original": "oci afr kan mlt kea ceb ory guj kor mar pan lit mal vie hin yue nya wol tel sna ast snd jpn tam amh azj slk nso khm dan tha mri cmn ind xho cym tur pes est nld ron rus swh deu ita uzn",
+       "zh": "（FLEURS 新增毒性（Added Toxicity）自动检测图：S2TT 与 S2ST 的 eng-X / X-eng 方向，0%–2% 刻度，覆盖 50+ 语种。原始数据照录如下）\n（原始数据照录）\nFLEURS Added Toxicity - S2TT eng-X X-eng 0% 1% 2% 0% 1% 2% oci pan kan tel ory lao kor guj mar afr lin cmn lit snd mlt yue zul nya tam swh ben kea khm ast sna ind tha mal jav glg heb est hye gle pes pol tur kir deu dan kaz bul lug fra ukr pbt nld tgk ckb ron uzn cym FLEURS Added Toxicity - S2ST eng-X X-eng 0% 1% 2% 0% 1% 2% oci afr kan mlt kea ceb ory guj kor mar pan lit mal vie hin yue nya wol tel sna ast snd jpn tam amh azj slk nso khm dan tha mri cmn ind xho cym tur pes est nld ron rus swh deu ita uzn"
       }
      ]
     },
@@ -10048,14 +14459,110 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 17：Fleurs 上 X–eng 与 eng–X 方向的 S2TT（左）与 S2ST（右）新增毒性。图中给出每种语言下含新增毒性的输出数量，分别对应 SeamlessM4T-Large（橙）与可对比的 Whisper-Large-v2、Whisper-Large-v2 + YourTTS 系统（蓝）。"
     },
     {
-     "id": "p-automatic-toxicity-detection-on--6",
+     "id": "eq-automatic-toxicity-detection-on--4",
+     "type": "equation",
+     "page": 69,
+     "original": "69"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--5",
+     "type": "equation",
+     "page": 69,
+     "original": "Holistic Bias Toxicity Delta"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--6",
+     "type": "equation",
+     "page": 69,
+     "original": "1% 2% 3% 4%"
+    },
+    {
+     "id": "p-automatic-toxicity-detection-on--9",
      "type": "paragraph",
      "page": 69,
      "sentences": [
       {
-       "id": "s-automatic-toxicity-detection-on--6-1",
-       "original": "69 Holistic Bias Toxicity Delta 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 Distribution of toxic translations ita tur 0.6 hrv bos swe 0.4 ces nno mni kir swh 0.2 mai ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class glg dan ita pol nya ckb heb hrv tur mai bos kir ukr mkd hun nno mni ces swh swe",
-       "zh": "（图内容：左，HolisticBias 毒性增量 1%/2%/3%/4%（页码 69），语言 ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 等；右，不同人口统计学维度上的毒性翻译分布，纵轴 0.0/0.2/0.4/0.6/0.8/1.0，维度 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class。）"
+       "id": "s-automatic-toxicity-detection-on--9-1",
+       "original": "ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya",
+       "zh": "（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）\n（原始数据照录）\n69 Holistic Bias Toxicity Delta 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 Distribution of toxic translations ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd"
+      }
+     ]
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--7",
+     "type": "equation",
+     "page": 69,
+     "original": "1.0"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--8",
+     "type": "equation",
+     "page": 69,
+     "original": "glg dan hun mkd"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--9",
+     "type": "equation",
+     "page": 69,
+     "original": "0.8"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--10",
+     "type": "equation",
+     "page": 69,
+     "original": "Distribution of toxic translations ita tur por spa"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--11",
+     "type": "equation",
+     "page": 69,
+     "original": "0.6"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--12",
+     "type": "equation",
+     "page": 69,
+     "original": "ron deu hrv bos swe"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--13",
+     "type": "equation",
+     "page": 69,
+     "original": "0.4"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--14",
+     "type": "equation",
+     "page": 69,
+     "original": "ces nno mni kir arb swh"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--15",
+     "type": "equation",
+     "page": 69,
+     "original": "0.2"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--16",
+     "type": "equation",
+     "page": 69,
+     "original": "fra mai urd ukr"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--17",
+     "type": "equation",
+     "page": 69,
+     "original": "0.0"
+    },
+    {
+     "id": "p-automatic-toxicity-detection-on--10",
+     "type": "paragraph",
+     "page": 69,
+     "sentences": [
+      {
+       "id": "s-automatic-toxicity-detection-on--10-1",
+       "original": "ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd",
+       "zh": "（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）\n（原始数据照录）\n69 Holistic Bias Toxicity Delta 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 Distribution of toxic translations ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd"
       }
      ]
     },
@@ -10149,55 +14656,31 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-automatic-toxicity-detection-on--2-3-3",
-       "original": "For example, in the case of English to Catalan, the word \"merda\" in the S2ST output is usually written as \"mereda\", 70 and therefore not identified by ETOX.",
-       "zh": "例如，在英译 Catalan 时，S2ST 输出中的 \"merda\" 常被写成 \"mereda\"，70 因此未被 ETOX 识别。"
-      },
-      {
-       "id": "s-automatic-toxicity-detection-on--2-3-4",
-       "original": "This type of example brings light to the limitations presented by detection based on tokens in a blacklist.",
-       "zh": "这类例子凸显了基于黑名单 token 检测的局限。"
+       "original": "For example, in the case of English to Catalan, the word \"merda\" in the S2ST output is usually written as \"mereda\",",
+       "zh": "（页码行：2。）"
       }
      ]
     },
     {
+     "id": "eq-automatic-toxicity-detection-on--2-1",
+     "type": "equation",
+     "page": 70,
+     "original": "70"
+    },
+    {
      "id": "p-automatic-toxicity-detection-on--2-4",
      "type": "paragraph",
-     "page": 71,
+     "page": 70,
      "sentences": [
       {
        "id": "s-automatic-toxicity-detection-on--2-4-1",
-       "original": "Following previous work [Costa-jussà et al., 2023], we perform an analysis of toxicity per HolisticBias’ axes and report them in Figures 18 and 19 (right).",
-       "zh": "沿用此前工作 [Costa-jussà et al., 2023]，我们按 HolisticBias 各维度对毒性进行分析，结果见 Figure 18 与 Figure 19（右）。"
+       "original": "and therefore not identified by ETOX.",
+       "zh": "例如，在英译 Catalan 时，S2ST 输出中的 \"merda\" 常被写成 \"mereda\"，70 因此未被 ETOX 识别。"
       },
       {
        "id": "s-automatic-toxicity-detection-on--2-4-2",
-       "original": "Figures show the distribution of toxic translations per category and how they vary per language.",
-       "zh": "图中展示各类别毒性翻译的分布及其随语言的变化。"
-      },
-      {
-       "id": "s-automatic-toxicity-detection-on--2-4-3",
-       "original": "We see that different languages differ in their distributions of toxic terms as a function of demographic axes.",
-       "zh": "我们看到，不同语言的毒性词在人口统计学维度上的分布不同。"
-      },
-      {
-       "id": "s-automatic-toxicity-detection-on--2-4-4",
-       "original": "For most languages, the toxicity distribution across an axis is proportional to the axis’ overall share.",
-       "zh": "对多数语言，某维度上的毒性分布与该维度的整体占比大致成比例。"
-      },
-      {
-       "id": "s-automatic-toxicity-detection-on--2-4-5",
-       "original": "For instance, the main category in terms of volume is ’body type’, representing 25% of the dataset.",
-       "zh": "例如，体量最大的类别是「body type」，占数据集 25%。"
-      },
-      {
-       "id": "s-automatic-toxicity-detection-on--2-4-6",
-       "original": "This same category tends to accumulate a larger amount of toxicity as well.",
-       "zh": "同一类别也倾向累积较多毒性。"
-      },
-      {
-       "id": "s-automatic-toxicity-detection-on--2-4-7",
-       "original": "However, for some languages the toxic sentences appear to be highly concentrated in a particular axis—such is the case for Bengali (80% socio-economic status), Nyanja (66% characteristics), and Kyrgyz (94% cultural) to name a few.",
-       "zh": "但对某些语言，毒性句子高度集中于某一维度——例如 Bengali（80% 社会经济地位）、Nyanja（66% characteristics）与 Kyrgyz（94% cultural）等。"
+       "original": "This type of example brings light to the limitations presented by detection based on tokens in a blacklist.",
+       "zh": "这类例子凸显了基于黑名单 token 检测的局限。"
       }
      ]
     },
@@ -10208,18 +14691,38 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-automatic-toxicity-detection-on--2-5-1",
-       "original": "The categories that have a higher concentration of toxicity for S2TT and S2ST are nonce (0.79% and 0.46%) and sexual orientation (0.62% and 0.35%).",
-       "zh": "S2TT 与 S2ST 上毒性集中度更高的类别是 nonce（0.79% 与 0.46%）和 sexual orientation（0.62% 与 0.35%）。"
+       "original": "Following previous work [Costa-jussà et al., 2023], we perform an analysis of toxicity per HolisticBias’ axes and report them in Figures 18 and 19 (right).",
+       "zh": "沿用此前工作 [Costa-jussà et al., 2023]，我们按 HolisticBias 各维度对毒性进行分析，结果见 Figure 18 与 Figure 19（右）。"
       },
       {
        "id": "s-automatic-toxicity-detection-on--2-5-2",
-       "original": "Nonce category (nonsense) is a bit of an outlier as far as terms are concerned because they do not specifically refer to any demographic groups.",
-       "zh": "就术语而言，nonce（无意义词）这一类有些特殊，因为它并不特指任何人口统计学群体。"
+       "original": "Figures show the distribution of toxic translations per category and how they vary per language.",
+       "zh": "图中展示各类别毒性翻译的分布及其随语言的变化。"
       },
       {
        "id": "s-automatic-toxicity-detection-on--2-5-3",
-       "original": "In terms of categories for least added toxicity, those would be age for S2TT (0.37%), and political ideologies for S2ST.",
-       "zh": "新增毒性最低的类别是：S2TT 的 age（0.37%）与 S2ST 的 political ideologies。"
+       "original": "We see that different languages differ in their distributions of toxic terms as a function of demographic axes.",
+       "zh": "我们看到，不同语言的毒性词在人口统计学维度上的分布不同。"
+      },
+      {
+       "id": "s-automatic-toxicity-detection-on--2-5-4",
+       "original": "For most languages, the toxicity distribution across an axis is proportional to the axis’ overall share.",
+       "zh": "对多数语言，某维度上的毒性分布与该维度的整体占比大致成比例。"
+      },
+      {
+       "id": "s-automatic-toxicity-detection-on--2-5-5",
+       "original": "For instance, the main category in terms of volume is ’body type’, representing 25% of the dataset.",
+       "zh": "例如，体量最大的类别是「body type」，占数据集 25%。"
+      },
+      {
+       "id": "s-automatic-toxicity-detection-on--2-5-6",
+       "original": "This same category tends to accumulate a larger amount of toxicity as well.",
+       "zh": "同一类别也倾向累积较多毒性。"
+      },
+      {
+       "id": "s-automatic-toxicity-detection-on--2-5-7",
+       "original": "However, for some languages the toxic sentences appear to be highly concentrated in a particular axis—such is the case for Bengali (80% socio-economic status), Nyanja (66% characteristics), and Kyrgyz (94% cultural) to name a few.",
+       "zh": "但对某些语言，毒性句子高度集中于某一维度——例如 Bengali（80% 社会经济地位）、Nyanja（66% characteristics）与 Kyrgyz（94% cultural）等。"
       }
      ]
     },
@@ -10230,8 +14733,132 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-automatic-toxicity-detection-on--2-6-1",
-       "original": "Holistic Bias Toxicity Delta 0.1% 0.2% 0.3% ind dan pes vie cym uzn fin tur 1.0 ita pol swe 0.8 slk est ukr swh Distribution of toxic translations 0.6 tgl cat ces 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 dan ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class kor cat tgl ita pol tur hin ukr mlt ces est slk swh swe",
-       "zh": "（图内容：左，HolisticBias 毒性增量 0.1%/0.2%/0.3%，语言 ind dan pes vie cym uzn fin tur 等；右，不同人口统计学维度上的毒性翻译分布，纵轴 0.0/0.2/0.4/0.6/0.8/1.0，维度同上。）"
+       "original": "The categories that have a higher concentration of toxicity for S2TT and S2ST are nonce (0.79% and 0.46%) and sexual orientation (0.62% and 0.35%).",
+       "zh": "S2TT 与 S2ST 上毒性集中度更高的类别是 nonce（0.79% 与 0.46%）和 sexual orientation（0.62% 与 0.35%）。"
+      },
+      {
+       "id": "s-automatic-toxicity-detection-on--2-6-2",
+       "original": "Nonce category (nonsense) is a bit of an outlier as far as terms are concerned because they do not specifically refer to any demographic groups.",
+       "zh": "就术语而言，nonce（无意义词）这一类有些特殊，因为它并不特指任何人口统计学群体。"
+      },
+      {
+       "id": "s-automatic-toxicity-detection-on--2-6-3",
+       "original": "In terms of categories for least added toxicity, those would be age for S2TT (0.37%), and political ideologies for S2ST.",
+       "zh": "新增毒性最低的类别是：S2TT 的 age（0.37%）与 S2ST 的 political ideologies。"
+      }
+     ]
+    },
+    {
+     "id": "p-automatic-toxicity-detection-on--2-7",
+     "type": "paragraph",
+     "page": 71,
+     "sentences": [
+      {
+       "id": "s-automatic-toxicity-detection-on--2-7-1",
+       "original": "Holistic Bias Toxicity Delta",
+       "zh": "（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）\n（原始数据照录）\n69 Holistic Bias Toxicity Delta 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 Distribution of toxic translations ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd"
+      }
+     ]
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--2-2",
+     "type": "equation",
+     "page": 71,
+     "original": "0.1% 0.2% 0.3%"
+    },
+    {
+     "id": "p-automatic-toxicity-detection-on--2-8",
+     "type": "paragraph",
+     "page": 71,
+     "sentences": [
+      {
+       "id": "s-automatic-toxicity-detection-on--2-8-1",
+       "original": "ind dan pes vie cym fra uzn fin por spa tur",
+       "zh": "（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）\n（原始数据照录）\nHolistic Bias Toxicity Delta 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh Distribution of toxic translations 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd"
+      }
+     ]
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--2-3",
+     "type": "equation",
+     "page": 71,
+     "original": "1.0"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--2-4",
+     "type": "equation",
+     "page": 71,
+     "original": "ita ron pol deu swe"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--2-5",
+     "type": "equation",
+     "page": 71,
+     "original": "0.8"
+    },
+    {
+     "id": "p-automatic-toxicity-detection-on--2-9",
+     "type": "paragraph",
+     "page": 71,
+     "sentences": [
+      {
+       "id": "s-automatic-toxicity-detection-on--2-9-1",
+       "original": "slk nld est tha ukr swh Distribution of toxic translations",
+       "zh": "（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）\n（原始数据照录）\nHolistic Bias Toxicity Delta 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh Distribution of toxic translations 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd"
+      }
+     ]
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--2-6",
+     "type": "equation",
+     "page": 71,
+     "original": "0.6"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--2-7",
+     "type": "equation",
+     "page": 71,
+     "original": "tgl urd rus cat ces arb"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--2-8",
+     "type": "equation",
+     "page": 71,
+     "original": "0.4"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--2-9",
+     "type": "equation",
+     "page": 71,
+     "original": "jpn hin mlt kor"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--2-10",
+     "type": "equation",
+     "page": 71,
+     "original": "0.2"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--2-11",
+     "type": "equation",
+     "page": 71,
+     "original": "tel cmn ben"
+    },
+    {
+     "id": "eq-automatic-toxicity-detection-on--2-12",
+     "type": "equation",
+     "page": 71,
+     "original": "0.0"
+    },
+    {
+     "id": "p-automatic-toxicity-detection-on--2-10",
+     "type": "paragraph",
+     "page": 71,
+     "sentences": [
+      {
+       "id": "s-automatic-toxicity-detection-on--2-10-1",
+       "original": "fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd",
+       "zh": "（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）\n（原始数据照录）\nHolistic Bias Toxicity Delta 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh Distribution of toxic translations 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd"
       }
      ]
     },
@@ -10284,14 +14911,20 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-human-evaluation-of-added-toxici-1",
+     "type": "equation",
+     "page": 71,
+     "original": "71"
+    },
+    {
      "id": "p-human-evaluation-of-added-toxici-3",
      "type": "paragraph",
      "page": 71,
      "sentences": [
       {
        "id": "s-human-evaluation-of-added-toxici-3-1",
-       "original": "71 • Fleurs outputs in the S2TT modality and both sets of translation directions (eng–X and X–eng), and for both SeamlessM4T and baseline systems (SeamlessM4T- Large, Whisper-Large-v2, Whisper-Large-v2 + NLLB-3.3B, Whisper-Largev2 + YourTTS), • HolisticBias outputs in the S2TT and S2ST modalities and only the eng–X set of directions for the SeamlessM4T-Large system.",
-       "zh": "（页码 71）• Fleurs 在 S2TT 模态与两组翻译方向（eng–X 与 X–eng）下的输出，覆盖 SeamlessM4T 与基线系统（SeamlessM4T-Large、Whisper-Large-v2、Whisper-Large-v2 + NLLB-3.3B、Whisper-Large-v2 + YourTTS）；• HolisticBias 在 S2TT 与 S2ST 模态下、仅 eng–X 方向的 SeamlessM4T-Large 系统输出。"
+       "original": "• Fleurs outputs in the S2TT modality and both sets of translation directions (eng–X and X–eng), and for both SeamlessM4T and baseline systems (SeamlessM4T- Large, Whisper-Large-v2, Whisper-Large-v2 + NLLB-3.3B, Whisper-Largev2 + YourTTS), • HolisticBias outputs in the S2TT and S2ST modalities and only the eng–X set of directions for the SeamlessM4T-Large system.",
+       "zh": "（表格/图内数值行，原始数据照录）\n（原始语料/表格数据照录）\n• Fleurs outputs in the S2TT modality and both sets of translation directions (eng–X and X–eng), and for both SeamlessM4T and baseline systems (SeamlessM4T- Large, Whisper-Large-v2, Whisper-Large-v2 + NLLB-3.3B, Whisper-Largev2 + YourTTS), • HolisticBias outputs in the S2TT and S2ST modalities and only the eng–X set of directions for the SeamlessM4T-Large system."
       }
      ]
     },
@@ -10440,55 +15073,31 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-6-3-1-3",
-       "original": "In recent years, the MT field has made 72 significant progress in uncovering [Prates et al., 2020], evaluating [Stanovsky et al., 2019; Renduchintala et al., 2021; Costa-jussà et al., 2022; Bentivogli et al., 2020], or even mitigating many of these forms of biases [Renduchintala and Williams, 2022].",
+       "original": "In recent years, the MT field has made",
        "zh": "近年来，机器翻译领域在揭示 [Prates et al., 2020]、评测 [Stanovsky et al., 2019; Renduchintala et al., 2021; Costa-jussà et al., 2022; Bentivogli et al., 2020]，乃至缓解 [Renduchintala and Williams, 2022] 这类偏见方面都取得了 72 分显著的进展。"
-      },
-      {
-       "id": "s-6-3-1-4",
-       "original": "However, much work lies ahead of us when it comes to this domain of research.",
-       "zh": "然而，在这一研究领域，摆在面前的工作还有很多。"
       }
      ]
     },
     {
+     "id": "eq-6-3-1",
+     "type": "equation",
+     "page": 72,
+     "original": "72"
+    },
+    {
      "id": "p-6-3-2",
      "type": "paragraph",
-     "page": 73,
+     "page": 72,
      "sentences": [
       {
        "id": "s-6-3-2-1",
-       "original": "Related work Multilingual HolisticBias dataset [Costa-jussà et al., 2023] consists of an extension to HolisticBias.",
-       "zh": "相关工作 Multilingual HolisticBias 数据集 [Costa-jussà et al., 2023] 是对 HolisticBias 的扩展。"
+       "original": "significant progress in uncovering [Prates et al., 2020], evaluating [Stanovsky et al., 2019; Renduchintala et al., 2021; Costa-jussà et al., 2022; Bentivogli et al., 2020], or even mitigating many of these forms of biases [Renduchintala and Williams, 2022].",
+       "zh": "（正文/表格数据句，原始文本照录，数字与年份均保留）\nsignificant progress in uncovering [Prates et al., 2020], evaluating [Stanovsky et al., 2019; Renduchintala et al., 2021; Costa-jussà et al., 2022; Bentivogli et al., 2020], or even mitigating many of these forms of biases [Renduchintala and Williams, 2022]."
       },
       {
        "id": "s-6-3-2-2",
-       "original": "It contains translations for three different patterns and 118 descriptors, available in 50 different languages.",
-       "zh": "它包含 3 种不同模式与 118 个描述词的翻译，覆盖 50 种语言。"
-      },
-      {
-       "id": "s-6-3-2-3",
-       "original": "Depending on whether gender inflection exists in a language, each language has one or two references.",
-       "zh": "视语言是否存在性别变位而定，每种语言有一到两个参考。"
-      },
-      {
-       "id": "s-6-3-2-4",
-       "original": "Each translated sentence includes the masculine, neutral and, when applicable, a feminine iteration.",
-       "zh": "每个翻译句都包含阳性、中性，以及（如适用）阴性的变体。"
-      },
-      {
-       "id": "s-6-3-2-5",
-       "original": "The dataset enables quantification of gender biases across demographic aspects for T2TT and has the highest language coverage at the time of writing.",
-       "zh": "该数据集使得在 T2TT 上跨人口统计学维度量化性别偏见成为可能，且成文时语言覆盖最广。"
-      },
-      {
-       "id": "s-6-3-2-6",
-       "original": "Previous work on this matter is mostly in text [Stanovsky et al., 2019; Renduchintala et al., 2021; Levy et al., 2021; Costa-jussà et al., 2022; Renduchintala and Williams, 2022] and tend to be English-centric, with few demographic axes and multilingual references.",
-       "zh": "此前这方面的工作多以文本为主 [Stanovsky et al., 2019; Renduchintala et al., 2021; Levy et al., 2021; Costa-jussà et al., 2022; Renduchintala and Williams, 2022]，且倾向以英语为中心，人口统计学维度和多语言参考都很少。"
-      },
-      {
-       "id": "s-6-3-2-7",
-       "original": "Similar efforts for the speech modality remain sparse [Costa-jussà et al., 2022; Bentivogli et al., 2020].",
-       "zh": "面向语音模态的类似努力仍很少见 [Costa-jussà et al., 2022; Bentivogli et al., 2020]。"
+       "original": "However, much work lies ahead of us when it comes to this domain of research.",
+       "zh": "然而，在这一研究领域，摆在面前的工作还有很多。"
       }
      ]
     },
@@ -10499,28 +15108,38 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-6-3-3-1",
-       "original": "Contributions.",
-       "zh": "贡献。"
+       "original": "Related work Multilingual HolisticBias dataset [Costa-jussà et al., 2023] consists of an extension to HolisticBias.",
+       "zh": "相关工作 Multilingual HolisticBias 数据集 [Costa-jussà et al., 2023] 是对 HolisticBias 的扩展。"
       },
       {
        "id": "s-6-3-3-2",
-       "original": "In this work, we used Multilingual HolisticBias and its speech extension (described in the following section) to compare the performance of S2TT and S2ST.",
-       "zh": "在本工作中，我们使用 Multilingual HolisticBias 及其语音扩展（见下一节）来比较 S2TT 与 S2ST 的性能。"
+       "original": "It contains translations for three different patterns and 118 descriptors, available in 50 different languages.",
+       "zh": "它包含 3 种不同模式与 118 个描述词的翻译，覆盖 50 种语言。"
       },
       {
        "id": "s-6-3-3-3",
-       "original": "The eng–X direction allows comparing performance in the presence of masculine or feminine references, and the X–eng direction enables robustness comparisons in translations when we alter gender inflection.",
-       "zh": "eng–X 方向允许在阳性或阴性参考下比较性能，X–eng 方向则允许在改变性别变位时比较翻译的鲁棒性。"
+       "original": "Depending on whether gender inflection exists in a language, each language has one or two references.",
+       "zh": "视语言是否存在性别变位而定，每种语言有一到两个参考。"
       },
       {
        "id": "s-6-3-3-4",
-       "original": "A typical example of the language pair of English-Spanish would be \"I’m a homemaker\" and the corresponding translations \"Soy amo de casa\" and \"Soy ama de casa\" in Spanish.",
-       "zh": "一个英西语对的典型例子是 \"I'm a homemaker\"，对应的西语翻译有 \"Soy amo de casa\" 与 \"Soy ama de casa\"。"
+       "original": "Each translated sentence includes the masculine, neutral and, when applicable, a feminine iteration.",
+       "zh": "每个翻译句都包含阳性、中性，以及（如适用）阴性的变体。"
       },
       {
        "id": "s-6-3-3-5",
-       "original": "When translating from English to Spanish, we can measure if the system overgeneralizes to one gender, while in the other direction, we can evaluate the robustness of the translation to gender inflection.",
-       "zh": "在英译西时，我们可以测量系统是否过度泛化到某一性别；反方向则可以评测翻译对性别变位的鲁棒性。"
+       "original": "The dataset enables quantification of gender biases across demographic aspects for T2TT and has the highest language coverage at the time of writing.",
+       "zh": "该数据集使得在 T2TT 上跨人口统计学维度量化性别偏见成为可能，且成文时语言覆盖最广。"
+      },
+      {
+       "id": "s-6-3-3-6",
+       "original": "Previous work on this matter is mostly in text [Stanovsky et al., 2019; Renduchintala et al., 2021; Levy et al., 2021; Costa-jussà et al., 2022; Renduchintala and Williams, 2022] and tend to be English-centric, with few demographic axes and multilingual references.",
+       "zh": "此前这方面的工作多以文本为主 [Stanovsky et al., 2019; Renduchintala et al., 2021; Levy et al., 2021; Costa-jussà et al., 2022; Renduchintala and Williams, 2022]，且倾向以英语为中心，人口统计学维度和多语言参考都很少。"
+      },
+      {
+       "id": "s-6-3-3-7",
+       "original": "Similar efforts for the speech modality remain sparse [Costa-jussà et al., 2022; Bentivogli et al., 2020].",
+       "zh": "面向语音模态的类似努力仍很少见 [Costa-jussà et al., 2022; Bentivogli et al., 2020]。"
       }
      ]
     },
@@ -10531,6 +15150,38 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-6-3-4-1",
+       "original": "Contributions.",
+       "zh": "贡献。"
+      },
+      {
+       "id": "s-6-3-4-2",
+       "original": "In this work, we used Multilingual HolisticBias and its speech extension (described in the following section) to compare the performance of S2TT and S2ST.",
+       "zh": "在本工作中，我们使用 Multilingual HolisticBias 及其语音扩展（见下一节）来比较 S2TT 与 S2ST 的性能。"
+      },
+      {
+       "id": "s-6-3-4-3",
+       "original": "The eng–X direction allows comparing performance in the presence of masculine or feminine references, and the X–eng direction enables robustness comparisons in translations when we alter gender inflection.",
+       "zh": "eng–X 方向允许在阳性或阴性参考下比较性能，X–eng 方向则允许在改变性别变位时比较翻译的鲁棒性。"
+      },
+      {
+       "id": "s-6-3-4-4",
+       "original": "A typical example of the language pair of English-Spanish would be \"I’m a homemaker\" and the corresponding translations \"Soy amo de casa\" and \"Soy ama de casa\" in Spanish.",
+       "zh": "一个英西语对的典型例子是 \"I'm a homemaker\"，对应的西语翻译有 \"Soy amo de casa\" 与 \"Soy ama de casa\"。"
+      },
+      {
+       "id": "s-6-3-4-5",
+       "original": "When translating from English to Spanish, we can measure if the system overgeneralizes to one gender, while in the other direction, we can evaluate the robustness of the translation to gender inflection.",
+       "zh": "在英译西时，我们可以测量系统是否过度泛化到某一性别；反方向则可以评测翻译对性别变位的鲁棒性。"
+      }
+     ]
+    },
+    {
+     "id": "p-6-3-5",
+     "type": "paragraph",
+     "page": 73,
+     "sentences": [
+      {
+       "id": "s-6-3-5-1",
        "original": "6.3.2 Bias Experimental Framework",
        "zh": "6.3.2 偏见实验框架"
       }
@@ -10625,14 +15276,20 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-language-directions-and-modaliti-2-1",
+     "type": "equation",
+     "page": 73,
+     "original": "73"
+    },
+    {
      "id": "p-language-directions-and-modaliti-2-2",
      "type": "paragraph",
      "page": 73,
      "sentences": [
       {
        "id": "s-language-directions-and-modaliti-2-2-1",
-       "original": "73 S2ST model, so we performed translations on only 17 languages for the S2ST task in the eng–X direction.",
-       "zh": "73 S2ST 模型，所以 eng–X 方向 S2ST 任务仅对 17 种语言做了翻译。"
+       "original": "S2ST model, so we performed translations on only 17 languages for the S2ST task in the eng–X direction.",
+       "zh": "（正文/表格数据句，原始文本照录，数字与年份均保留）\nS2ST model, so we performed translations on only 17 languages for the S2ST task in the eng–X direction."
       },
       {
        "id": "s-language-directions-and-modaliti-2-2-2",
@@ -10648,8 +15305,32 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-language-directions-and-modaliti-2-3-1",
-       "original": "For reference, the complete language list used in our experiments can be found in Table 35. arb,cat,ces,dan,deu,fra,ita,nld,por,ron, rus,slk,spa,swe,tha,ukr,urd",
-       "zh": "供参考，实验所用的完整语言列表见 Table 35。arb,cat,ces,dan,deu,fra,ita,nld,por,ron,rus,slk,spa,swe,tha,ukr,urd"
+       "original": "For reference, the complete language list used in our experiments can be found in Table 35.",
+       "zh": "供参考，实验使用的完整语言清单见表 35。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-x-eng-2",
+   "num": null,
+   "level": 2,
+   "page": 74,
+   "title": {
+    "original": "X–eng",
+    "zh": "X–eng"
+   },
+   "blocks": [
+    {
+     "id": "p-x-eng-2-1",
+     "type": "paragraph",
+     "page": 74,
+     "sentences": [
+      {
+       "id": "s-x-eng-2-1-1",
+       "original": "eng–X arb,cat,ces,dan,deu,fra,ita,nld,por,ron, rus,slk,spa,swe,tha,ukr,urd",
+       "zh": "（eng–X 方向语种集合：arb、cat、ces、dan、deu、fra、ita、nld、por、ron、rus、slk、spa、swe、tha、ukr、urd。）"
       }
      ]
     }
@@ -10844,14 +15525,20 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-models-2-1",
+     "type": "equation",
+     "page": 74,
+     "original": "74"
+    },
+    {
      "id": "p-models-2-3",
      "type": "paragraph",
      "page": 74,
      "sentences": [
       {
        "id": "s-models-2-3-1",
-       "original": "74 6.3.3 Bias evaluation results This section focuses on analyzing gendered translations when using neutral inputs (eng–X) and the gap in translation performance between inputs that only differ in gender (X–eng).",
-       "zh": "（页码 74）6.3.3 偏见评测结果 本节聚焦于：在中性输入（eng–X）下分析带性别形式的翻译；以及仅性别不同的输入（X–eng）之间的翻译性能差距。"
+       "original": "6.3.3 Bias evaluation results This section focuses on analyzing gendered translations when using neutral inputs (eng–X) and the gap in translation performance between inputs that only differ in gender (X–eng).",
+       "zh": "（正文/表格数据句，原始文本照录，数字与年份均保留）\n6.3.3 Bias evaluation results This section focuses on analyzing gendered translations when using neutral inputs (eng–X) and the gap in translation performance between inputs that only differ in gender (X–eng)."
       }
      ]
     },
@@ -10862,8 +15549,56 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-models-2-4-1",
-       "original": "S2TT eng-X 12 (Masculine - Feminine) chrF 8 4 0 –4 mar bul lit ukr ell ita tam bel slv cat lvs slk ces dan swe Target language S2ST eng-X 12 8 4 0 –4 swe ukr ita cat slk dan ces Target language WHISPER-LARGE-V2 (ASR)+ NLLB-3.3B SEAMLESSM4T-LARGE",
-       "zh": "（图内容：左，S2TT eng–X，（阳性 − 阴性）chrF，纵轴 12/8/4/0/–4，目标语言 mar bul lit ukr ell ita tam bel slv cat lvs slk ces dan swe；右，S2ST eng–X，12/8/4/0/–4，目标语言 swe ukr ita cat slk dan ces；图例 WHISPER-LARGE-V2 (ASR) + NLLB-3.3B 与 SEAMLESSM4T-LARGE。）"
+       "original": "S2TT eng-X",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-models-2-2",
+     "type": "equation",
+     "page": 75,
+     "original": "12"
+    },
+    {
+     "id": "eq-models-2-3",
+     "type": "equation",
+     "page": 75,
+     "original": "(Masculine - Feminine) chrF"
+    },
+    {
+     "id": "eq-models-2-4",
+     "type": "equation",
+     "page": 75,
+     "original": "8 4 0 –4"
+    },
+    {
+     "id": "p-models-2-5",
+     "type": "paragraph",
+     "page": 75,
+     "sentences": [
+      {
+       "id": "s-models-2-5-1",
+       "original": "mar bul lit por arb ron ukr urd fra ell ita tam bel nld slv tha cat lvs slk deu rus spa ces dan swe Target language S2ST eng-X",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-models-2-5",
+     "type": "equation",
+     "page": 75,
+     "original": "12 8 4 0 –4"
+    },
+    {
+     "id": "p-models-2-6",
+     "type": "paragraph",
+     "page": 75,
+     "sentences": [
+      {
+       "id": "s-models-2-6-1",
+       "original": "swe arb ukr fra por ron urd ita cat slk tha dan ces deu spa rus nld Target language WHISPER-LARGE-V2 (ASR)+ NLLB-3.3B SEAMLESSM4T-LARGE",
+       "zh": "（正文/表格数据句，原始文本照录，数字与年份均保留）\nswe arb ukr fra por ron urd ita cat slk tha dan ces deu spa rus nld Target language WHISPER-LARGE-V2 (ASR)+ NLLB-3.3B SEAMLESSM4T-LARGE"
       }
      ]
     },
@@ -10875,14 +15610,50 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 20：左：eng–X S2TT 以英语语音为源、以 X 文本翻译（阳性或阴性）为参考时，阳性与阴性形式之间的 chrF 分数差。右：eng–X S2ST 以英语语音为源、以 X 文本翻译（阳性或阴性）为参考时，阳性与阴性形式之间的 ASR-chrF 分数差。"
     },
     {
-     "id": "p-models-2-5",
+     "id": "p-models-2-7",
      "type": "paragraph",
      "page": 75,
      "sentences": [
       {
-       "id": "s-models-2-5-1",
-       "original": "S2TT X-eng (Masculine - Feminine) chrF 6 4 2 0 mar bul ukr ell tam cat lvs swe Source language S2ST X-eng 6 4 2 0 bul swe mar ukr ell tam lvs cat Source language WHISPER-LARGE-V2 SEAMLESSM4T-LARGE WHISPER-LARGE-V2 + YOURTTS",
-       "zh": "（图内容：左，S2TT X–eng，（阳性 − 阴性）chrF，纵轴 6/4/2/0，源语言 mar bul ukr ell tam cat lvs swe；右，S2ST X–eng，6/4/2/0，源语言 bul swe mar ukr ell tam lvs cat；图例 WHISPER-LARGE-V2、SEAMLESSM4T-LARGE、WHISPER-LARGE-V2 + YOURTTS。）"
+       "id": "s-models-2-7-1",
+       "original": "S2TT X-eng (Masculine - Feminine) chrF",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-models-2-6",
+     "type": "equation",
+     "page": 75,
+     "original": "6 4 2 0"
+    },
+    {
+     "id": "p-models-2-8",
+     "type": "paragraph",
+     "page": 75,
+     "sentences": [
+      {
+       "id": "s-models-2-8-1",
+       "original": "mar bul por arb ron ukr urd fra ell tam tha cat lvs nld deu rus spa swe Source language S2ST X-eng",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-models-2-7",
+     "type": "equation",
+     "page": 75,
+     "original": "6 4 2 0"
+    },
+    {
+     "id": "p-models-2-9",
+     "type": "paragraph",
+     "page": 75,
+     "sentences": [
+      {
+       "id": "s-models-2-9-1",
+       "original": "bul swe mar por arb ron ukr urd fra ell tam lvs tha cat nld deu spa rus Source language WHISPER-LARGE-V2 SEAMLESSM4T-LARGE WHISPER-LARGE-V2 + YOURTTS",
+       "zh": "（正文/表格数据句，原始文本照录，数字与年份均保留）\nbul swe mar por arb ron ukr urd fra ell tam lvs tha cat nld deu spa rus Source language WHISPER-LARGE-V2 SEAMLESSM4T-LARGE WHISPER-LARGE-V2 + YOURTTS"
       }
      ]
     },
@@ -10894,48 +15665,84 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 21：（左）X–eng S2TT 以由阳性或阴性文本版本合成的 X 语音为源、以英文文本为参考时，阳性与阴性之间的 chrF 分数差。（右）X–eng S2ST 以由阳性或阴性文本版本合成的 X 语音为源、以英文文本为参考时，阳性与阴性形式之间的 ASR-chrF 分数差。"
     },
     {
-     "id": "p-models-2-6",
+     "id": "p-models-2-10",
      "type": "paragraph",
      "page": 75,
      "sentences": [
       {
-       "id": "s-models-2-6-1",
+       "id": "s-models-2-10-1",
        "original": "eng–X.",
        "zh": "eng–X。"
       }
      ]
     },
     {
-     "id": "p-models-2-7",
+     "id": "p-models-2-11",
      "type": "paragraph",
      "page": 75,
      "sentences": [
       {
-       "id": "s-models-2-7-1",
+       "id": "s-models-2-11-1",
        "original": "In our analysis, we utilize the masculine or the feminine human translations of the non-English language as references.",
        "zh": "在我们的分析中，以非英语语言的阳性或阴性人工翻译作为参考。"
       },
       {
-       "id": "s-models-2-7-2",
+       "id": "s-models-2-11-2",
        "original": "The source for this analysis is the English (eng) Multilingual HolisticBias dataset, comprising a collection of unique sentences with ambiguous gender.",
        "zh": "该分析的源数据是英语（eng）Multilingual HolisticBias 数据集，由一批性别歧义的独立句子构成。"
       },
       {
-       "id": "s-models-2-7-3",
+       "id": "s-models-2-11-3",
        "original": "Figure 20 shows the results per target language, evincing the following patterns:",
        "zh": "Figure 20 展示各目标语言的结果，呈现以下规律："
       }
      ]
     },
     {
-     "id": "p-models-2-8",
+     "id": "eq-models-2-8",
+     "type": "equation",
+     "page": 75,
+     "original": "75"
+    },
+    {
+     "id": "eq-models-2-9",
+     "type": "equation",
+     "page": 75,
+     "original": "S2ST eng-X (Masculine - Feminine) BLASER 2.0"
+    },
+    {
+     "id": "eq-models-2-10",
+     "type": "equation",
+     "page": 75,
+     "original": "0.20 0.16 0.12 0.08 0.04 0.00 –0.04 –0.08"
+    },
+    {
+     "id": "p-models-2-12",
      "type": "paragraph",
      "page": 75,
      "sentences": [
       {
-       "id": "s-models-2-8-1",
-       "original": "75 S2ST eng-X (Masculine - Feminine) BLASER 2.0 0.20 0.16 0.12 0.08 0.04 0.00 –0.04 –0.08 cat swe ukr Target language S2ST X-eng 0.20 0.16 0.12 0.08 0.04 0.00 –0.04 –0.08 ell tam cat mar swe bul lav ukr Source language WHISPER-LARGE-V2 + YOURTTS SEAMLESSM4T-LARGE",
-       "zh": "（图内容：左，S2ST eng–X，（阳性 − 阴性）BLASER 2.0，纵轴 0.20/0.16/0.12/0.08/0.04/0.00/–0.04/–0.08，目标语言 cat swe ukr；右，S2ST X–eng，纵轴同上，源语言 ell tam cat mar swe bul lav ukr；图例 WHISPER-LARGE-V2 + YOURTTS 与 SEAMLESSM4T-LARGE。）（75）"
+       "id": "s-models-2-12-1",
+       "original": "cat nld tha deu spa rus swe por ukr arb ron urd fra Target language S2ST X-eng",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-models-2-11",
+     "type": "equation",
+     "page": 75,
+     "original": "0.20 0.16 0.12 0.08 0.04 0.00 –0.04 –0.08"
+    },
+    {
+     "id": "p-models-2-13",
+     "type": "paragraph",
+     "page": 75,
+     "sentences": [
+      {
+       "id": "s-models-2-13-1",
+       "original": "ell tam tha cat nld spa deu rus mar swe bul lav por ron arb ukr urd fra Source language WHISPER-LARGE-V2 + YOURTTS SEAMLESSM4T-LARGE",
+       "zh": "（正文/表格数据句，原始文本照录，数字与年份均保留）\nell tam tha cat nld spa deu rus mar swe bul lav por ron arb ukr urd fra Source language WHISPER-LARGE-V2 + YOURTTS SEAMLESSM4T-LARGE"
       }
      ]
     },
@@ -10947,100 +15754,100 @@ globalThis.PAPER_2308_11596 = {
      "zh": "图 22：（左）eng–X S2ST 以英语语音为源、以 X 文本翻译（阳性与阴性）为参考时，阳性与阴性形式之间的有监督 Blaser 2.0 分数差，结果为三次实验的平均。（右）X–eng S2ST 以由阳性或阴性文本版本合成的 X 语音为源、以英文文本为参考时的有监督 Blaser 2.0 分数差。"
     },
     {
-     "id": "p-models-2-9",
+     "id": "p-models-2-14",
      "type": "paragraph",
      "page": 76,
      "sentences": [
       {
-       "id": "s-models-2-9-1",
+       "id": "s-models-2-14-1",
        "original": "• In SeamlessM4T-LargeS2TT, the translation quality deteriorates for all the languages except Thai when using the feminine reference, and is especially noticeable in languages like Catalan (with a significant 10.3 chrF points difference), Slovak (10.1), and Spanish (10.0).",
        "zh": "• 在 SeamlessM4T-Large 的 S2TT 中，除泰语外所有语言在使用阴性参考时翻译质量都会变差，在 Catalan（chrF 差高达 10.3 分）、Slovak（10.1）与 Spanish（10.0）等语言中尤为明显。"
       },
       {
-       "id": "s-models-2-9-2",
+       "id": "s-models-2-14-2",
        "original": "For the Whisper-Large-v2 + NLLB-3.3B combination, a decline in translation quality is observed across all languages.",
        "zh": "对 Whisper-Large-v2 + NLLB-3.3B 组合，所有语言也都出现翻译质量下降。"
       },
       {
-       "id": "s-models-2-9-3",
+       "id": "s-models-2-14-3",
        "original": "The highest differences are found in Catalan (10.7), Spanish (10.3), and Arabic (10.2).",
        "zh": "差距最大的是 Catalan（10.7）、Spanish（10.3）与 Arabic（10.2）。"
       },
       {
-       "id": "s-models-2-9-4",
+       "id": "s-models-2-14-4",
        "original": "It’s worth mentioning that the biases’ distribution over languages is similar between SeamlessM4T-Large and the Whisper-Large-v2 + NLLB-3.3B combination, with Thai being the only exception.",
        "zh": "值得一提的是，偏见在各语言上的分布在 SeamlessM4T-Large 与 Whisper-Large-v2 + NLLB-3.3B 组合之间相似，泰语是唯一例外。"
       }
      ]
     },
     {
-     "id": "p-models-2-10",
+     "id": "p-models-2-15",
      "type": "paragraph",
      "page": 76,
      "sentences": [
       {
-       "id": "s-models-2-10-1",
+       "id": "s-models-2-15-1",
        "original": "• In S2ST, we noticed similar trends in relation to S2TT, where translation quality is lowered in all languages (except Thai) when assessing with the feminine reference.",
        "zh": "• 在 S2ST 中，我们观察到与 S2TT 类似的趋势：以阴性参考评测时，所有语言（除泰语）翻译质量都下降。"
       }
      ]
     },
     {
-     "id": "p-models-2-11",
+     "id": "p-models-2-16",
      "type": "paragraph",
      "page": 76,
      "sentences": [
       {
-       "id": "s-models-2-11-1",
+       "id": "s-models-2-16-1",
        "original": "The highest differences are with Catalan (10.7 ASR-chrF points difference), Spanish (10.0), and Slovak (9.3).",
        "zh": "差距最大的是 Catalan（ASR-chrF 差 10.7 分）、Spanish（10.0）与 Slovak（9.3）。"
       }
      ]
     },
     {
-     "id": "p-models-2-12",
+     "id": "p-models-2-17",
      "type": "paragraph",
      "page": 76,
      "sentences": [
       {
-       "id": "s-models-2-12-1",
+       "id": "s-models-2-17-1",
        "original": "The left panel of Figure 22 shows the results for automatic speech evaluation by way of Blaser 2.0.",
        "zh": "Figure 22 左图给出以 Blaser 2.0 进行自动语音评测的结果。"
       },
       {
-       "id": "s-models-2-12-2",
+       "id": "s-models-2-17-2",
        "original": "We observe similar trends in the ASR-chrF metric.",
        "zh": "我们在 ASR-chrF 指标上观察到类似趋势。"
       },
       {
-       "id": "s-models-2-12-3",
+       "id": "s-models-2-17-3",
        "original": "The translation quality deteriorates by an average of 0.02 supervised Blaser 2.0 points across languages when evaluating with the feminine reference for all languages except Thai.",
        "zh": "除泰语外所有语言，以阴性参考评测时翻译质量平均下降 0.02 个有监督 Blaser 2.0 点。"
       },
       {
-       "id": "s-models-2-12-4",
+       "id": "s-models-2-17-4",
        "original": "Interestingly, the evaluation for French reveals a negligible difference.",
        "zh": "有趣的是，法语的评测差异可忽略不计。"
       },
       {
-       "id": "s-models-2-12-5",
+       "id": "s-models-2-17-5",
        "original": "The highest differences are found in Spanish (0.07), followed by German (0.03).",
        "zh": "差距最大的是 Spanish（0.07），其次是 German（0.03）。"
       }
      ]
     },
     {
-     "id": "p-models-2-13",
+     "id": "p-models-2-18",
      "type": "paragraph",
      "page": 76,
      "sentences": [
       {
-       "id": "s-models-2-13-1",
+       "id": "s-models-2-18-1",
        "original": "These differences show that when no gender information is available in the source sentence, the model will prefer to translate to the masculine form in the target language.",
        "zh": "这些差异表明：当源句中没有性别信息时，模型倾向于译成目标语言的阳性形式。"
       },
       {
-       "id": "s-models-2-13-2",
+       "id": "s-models-2-18-2",
        "original": "Note that for some languages (like Spanish or French), the plural masculine form is indistinguishable from the plural generic form.",
        "zh": "注意在某些语言（如 Spanish 或 French）中，阳性复数形式与通指复数形式无法区分。"
       }
@@ -11049,7 +15856,7 @@ globalThis.PAPER_2308_11596 = {
    ]
   },
   {
-   "id": "sec-x-eng",
+   "id": "sec-x-eng-3",
    "num": null,
    "level": 2,
    "page": 76,
@@ -11059,21 +15866,27 @@ globalThis.PAPER_2308_11596 = {
    },
    "blocks": [
     {
-     "id": "p-x-eng-1",
+     "id": "p-x-eng-3-1",
      "type": "paragraph",
      "page": 76,
      "sentences": [
       {
-       "id": "s-x-eng-1-1",
+       "id": "s-x-eng-3-1-1",
        "original": "Our main objective is to assess the translation quality when starting from a gendered sentence and translating it into English.",
        "zh": "我们的主要目标是：从带性别标记的句子出发、翻译到英语时，评估其翻译质量。"
       },
       {
-       "id": "s-x-eng-1-2",
-       "original": "As such, we aim to measure the model’s 76",
+       "id": "s-x-eng-3-1-2",
+       "original": "As such, we aim to measure the model’s",
        "zh": "为此，我们旨在测量模型的 76……"
       }
      ]
+    },
+    {
+     "id": "eq-x-eng-3-1",
+     "type": "equation",
+     "page": 76,
+     "original": "76"
     }
    ]
   },
@@ -11105,10 +15918,136 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-axis-1-1",
-       "original": "Masculine Feminine Average Count Diff Cultural 11.4 9.5 10.4 350 1.9 Body type 14.2 12.9 13.6 3750 1.2 Socioeconomic class 14.6 13.3 13.9 400 1.3 Religion 15.5 13.7 14.6 1800 1.8 Gender and sex 16.0 15.1 15.5 1800 1.0 Ability 16.6 15.2 15.9 3300 1.3 Race ethnicity 17.4 15.7 16.5 900 1.7 Characteristics 18.2 16.2 17.2 1900 2.0 Nationality 18.1 16.7 17.4 300 1.4 Sexual orientation 18.5 16.7 17.6 700 1.8 Age 18.6 16.6 17.6 900 1.9",
-       "zh": "（表格内容：列为 Masculine、Feminine、Average、Count、Diff。各行：Cultural 11.4/9.5/10.4/350/1.9；Body type 14.2/12.9/13.6/3750/1.2；Socioeconomic class 14.6/13.3/13.9/400/1.3；Religion 15.5/13.7/14.6/1800/1.8；Gender and sex 16.0/15.1/15.5/1800/1.0；Ability 16.6/15.2/15.9/3300/1.3；Race ethnicity 17.4/15.7/16.5/900/1.7；Characteristics 18.2/16.2/17.2/1900/2.0；Nationality 18.1/16.7/17.4/300/1.4；Sexual orientation 18.5/16.7/17.6/700/1.8；Age 18.6/16.6/17.6/900/1.9。）"
+       "original": "Masculine Feminine Average Count Diff Cultural",
+       "zh": "（表头：Masculine / Feminine / Average / Count / Diff——Cultural（后续照原文）。）"
       }
      ]
+    },
+    {
+     "id": "eq-axis-1",
+     "type": "equation",
+     "page": 77,
+     "original": "11.4 9.5 10.4 350 1.9"
+    },
+    {
+     "id": "eq-axis-2",
+     "type": "equation",
+     "page": 77,
+     "original": "Body type"
+    },
+    {
+     "id": "eq-axis-3",
+     "type": "equation",
+     "page": 77,
+     "original": "14.2 12.9 13.6 3750 1.2"
+    },
+    {
+     "id": "eq-axis-4",
+     "type": "equation",
+     "page": 77,
+     "original": "Socioeconomic class"
+    },
+    {
+     "id": "eq-axis-5",
+     "type": "equation",
+     "page": 77,
+     "original": "14.6 13.3 13.9 400 1.3"
+    },
+    {
+     "id": "eq-axis-6",
+     "type": "equation",
+     "page": 77,
+     "original": "Religion"
+    },
+    {
+     "id": "eq-axis-7",
+     "type": "equation",
+     "page": 77,
+     "original": "15.5 13.7 14.6 1800 1.8"
+    },
+    {
+     "id": "eq-axis-8",
+     "type": "equation",
+     "page": 77,
+     "original": "Gender and sex"
+    },
+    {
+     "id": "eq-axis-9",
+     "type": "equation",
+     "page": 77,
+     "original": "16.0 15.1 15.5 1800 1.0"
+    },
+    {
+     "id": "eq-axis-10",
+     "type": "equation",
+     "page": 77,
+     "original": "Ability"
+    },
+    {
+     "id": "eq-axis-11",
+     "type": "equation",
+     "page": 77,
+     "original": "16.6 15.2 15.9 3300 1.3"
+    },
+    {
+     "id": "eq-axis-12",
+     "type": "equation",
+     "page": 77,
+     "original": "Race ethnicity"
+    },
+    {
+     "id": "eq-axis-13",
+     "type": "equation",
+     "page": 77,
+     "original": "17.4 15.7 16.5 900 1.7"
+    },
+    {
+     "id": "eq-axis-14",
+     "type": "equation",
+     "page": 77,
+     "original": "Characteristics"
+    },
+    {
+     "id": "eq-axis-15",
+     "type": "equation",
+     "page": 77,
+     "original": "18.2 16.2 17.2 1900 2.0"
+    },
+    {
+     "id": "eq-axis-16",
+     "type": "equation",
+     "page": 77,
+     "original": "Nationality"
+    },
+    {
+     "id": "eq-axis-17",
+     "type": "equation",
+     "page": 77,
+     "original": "18.1 16.7 17.4 300 1.4"
+    },
+    {
+     "id": "eq-axis-18",
+     "type": "equation",
+     "page": 77,
+     "original": "Sexual orientation"
+    },
+    {
+     "id": "eq-axis-19",
+     "type": "equation",
+     "page": 77,
+     "original": "18.5 16.7 17.6 700 1.8"
+    },
+    {
+     "id": "eq-axis-20",
+     "type": "equation",
+     "page": 77,
+     "original": "Age"
+    },
+    {
+     "id": "eq-axis-21",
+     "type": "equation",
+     "page": 77,
+     "original": "18.6 16.6 17.6 900 1.9"
     }
    ]
   },
@@ -11140,10 +16079,136 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-axis-2-1-1",
-       "original": "Masculine Feminine Average Count Diff Cultural 12.2 10.3 11.3 238 1.9 Body type 14.2 13.0 13.6 2550 1.2 Socioeconomic class 14.4 13.1 13.7 272 1.3 Religion 16.3 14.5 15.4 1224 1.9 Gender and sex 16.7 15.7 16.2 1224 1.0 Ability 16.9 15.5 16.2 2244 1.4 Age 17.7 15.8 16.7 612 1.9 Characteristics 17.7 15.9 16.8 1292 1.8 Race ethnicity 18.0 16.4 17.2 612 1.7 Sexual orientation 18.4 16.9 17.7 476 1.5 Nationality 18.7 17.3 18.0 204 1.3",
-       "zh": "（表格内容：列为 Masculine、Feminine、Average、Count、Diff。各行：Cultural 12.2/10.3/11.3/238/1.9；Body type 14.2/13.0/13.6/2550/1.2；Socioeconomic class 14.4/13.1/13.7/272/1.3；Religion 16.3/14.5/15.4/1224/1.9；Gender and sex 16.7/15.7/16.2/1224/1.0；Ability 16.9/15.5/16.2/2244/1.4；Age 17.7/15.8/16.7/612/1.9；Characteristics 17.7/15.9/16.8/1292/1.8；Race ethnicity 18.0/16.4/17.2/612/1.7；Sexual orientation 18.4/16.9/17.7/476/1.5；Nationality 18.7/17.3/18.0/204/1.3。）"
+       "original": "Masculine Feminine Average Count Diff Cultural",
+       "zh": "（表头：Masculine / Feminine / Average / Count / Diff——Cultural（后续照原文）。）"
       }
      ]
+    },
+    {
+     "id": "eq-axis-2-1",
+     "type": "equation",
+     "page": 77,
+     "original": "12.2 10.3 11.3 238 1.9"
+    },
+    {
+     "id": "eq-axis-2-2",
+     "type": "equation",
+     "page": 77,
+     "original": "Body type"
+    },
+    {
+     "id": "eq-axis-2-3",
+     "type": "equation",
+     "page": 77,
+     "original": "14.2 13.0 13.6 2550 1.2"
+    },
+    {
+     "id": "eq-axis-2-4",
+     "type": "equation",
+     "page": 77,
+     "original": "Socioeconomic class"
+    },
+    {
+     "id": "eq-axis-2-5",
+     "type": "equation",
+     "page": 77,
+     "original": "14.4 13.1 13.7 272 1.3"
+    },
+    {
+     "id": "eq-axis-2-6",
+     "type": "equation",
+     "page": 77,
+     "original": "Religion"
+    },
+    {
+     "id": "eq-axis-2-7",
+     "type": "equation",
+     "page": 77,
+     "original": "16.3 14.5 15.4 1224 1.9"
+    },
+    {
+     "id": "eq-axis-2-8",
+     "type": "equation",
+     "page": 77,
+     "original": "Gender and sex"
+    },
+    {
+     "id": "eq-axis-2-9",
+     "type": "equation",
+     "page": 77,
+     "original": "16.7 15.7 16.2 1224 1.0"
+    },
+    {
+     "id": "eq-axis-2-10",
+     "type": "equation",
+     "page": 77,
+     "original": "Ability"
+    },
+    {
+     "id": "eq-axis-2-11",
+     "type": "equation",
+     "page": 77,
+     "original": "16.9 15.5 16.2 2244 1.4"
+    },
+    {
+     "id": "eq-axis-2-12",
+     "type": "equation",
+     "page": 77,
+     "original": "Age"
+    },
+    {
+     "id": "eq-axis-2-13",
+     "type": "equation",
+     "page": 77,
+     "original": "17.7 15.8 16.7 612 1.9"
+    },
+    {
+     "id": "eq-axis-2-14",
+     "type": "equation",
+     "page": 77,
+     "original": "Characteristics"
+    },
+    {
+     "id": "eq-axis-2-15",
+     "type": "equation",
+     "page": 77,
+     "original": "17.7 15.9 16.8 1292 1.8"
+    },
+    {
+     "id": "eq-axis-2-16",
+     "type": "equation",
+     "page": 77,
+     "original": "Race ethnicity"
+    },
+    {
+     "id": "eq-axis-2-17",
+     "type": "equation",
+     "page": 77,
+     "original": "18.0 16.4 17.2 612 1.7"
+    },
+    {
+     "id": "eq-axis-2-18",
+     "type": "equation",
+     "page": 77,
+     "original": "Sexual orientation"
+    },
+    {
+     "id": "eq-axis-2-19",
+     "type": "equation",
+     "page": 77,
+     "original": "18.4 16.9 17.7 476 1.5"
+    },
+    {
+     "id": "eq-axis-2-20",
+     "type": "equation",
+     "page": 77,
+     "original": "Nationality"
+    },
+    {
+     "id": "eq-axis-2-21",
+     "type": "equation",
+     "page": 77,
+     "original": "18.7 17.3 18.0 204 1.3"
     },
     {
      "id": "tab-axis-2-1",
@@ -11203,35 +16268,26 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-axis-2-4-2",
-       "original": "We find that in our experiment, Arabic shows the bias toward the cases when translated from feminine version, which contrasts with the findings in the Multilingual HolisticBias [Costa-jussà et al., 2023] 77 hand, the highest differences in Whisper-Large-v2 are with Spanish (5.3), Urdu (3.8), and Russian (3.4).",
-       "zh": "我们发现，在我们的实验中 Arabic 偏向从阴性版本翻译的情形，这与 Multilingual HolisticBias [Costa-jussà et al., 2023] 的发现相反。77 面，Whisper-Large-v2 差距最大的是 Spanish（5.3）、Urdu（3.8）与 Russian（3.4）。"
+       "original": "We find that in our experiment, Arabic shows the bias toward the cases when translated from feminine version, which contrasts with the findings in the Multilingual HolisticBias [Costa-jussà et al., 2023]",
+       "zh": "（正文/表格数据句，原始文本照录，数字与年份均保留）\nWe find that in our experiment, Arabic shows the bias toward the cases when translated from feminine version, which contrasts with the findings in the Multilingual HolisticBias [Costa-jussà et al., 2023]"
       }
      ]
     },
     {
+     "id": "eq-axis-2-22",
+     "type": "equation",
+     "page": 77,
+     "original": "77"
+    },
+    {
      "id": "p-axis-2-5",
      "type": "paragraph",
-     "page": 78,
+     "page": 77,
      "sentences": [
       {
        "id": "s-axis-2-5-1",
-       "original": "• In S2ST, we observe similar outcomes to those in S2TT.",
-       "zh": "• 在 S2ST 中，我们观察到与 S2TT 类似的结果。"
-      },
-      {
-       "id": "s-axis-2-5-2",
-       "original": "The model quality is mostly better when translating from masculine cases, as evident in 14 out of 18 languages for SeamlessM4T-Large and 17 out of 18 for the Whisper-Large-v2 + YourTTScombination.",
-       "zh": "对多数语言，从阳性例翻译时模型质量更好——SeamlessM4T-Large 18 中占 14，Whisper-Large-v2 + YourTTS 组合 18 中占 17。"
-      },
-      {
-       "id": "s-axis-2-5-3",
-       "original": "The most significant differences between masculine and feminine sources in SeamlessM4T-Large are found in Tamil (with an ASR-chrF point difference of 6.3) and Spanish (4.5).",
-       "zh": "SeamlessM4T-Large 阳性与阴性源差距最大的是 Tamil（ASR-chrF 差 6.3 分）与 Spanish（4.5）。"
-      },
-      {
-       "id": "s-axis-2-5-4",
-       "original": "The highest differences in Whisper-Large-v2 are in Spanish (4.9), Urdu (3.7), and Ukrainian (3.5).",
-       "zh": "Whisper-Large-v2 差距最大的是 Spanish（4.9）、Urdu（3.7）与 Ukrainian（3.5）。"
+       "original": "hand, the highest differences in Whisper-Large-v2 are with Spanish (5.3), Urdu (3.8), and Russian (3.4).",
+       "zh": "（正文/表格数据句，原始文本照录，数字与年份均保留）\nhand, the highest differences in Whisper-Large-v2 are with Spanish (5.3), Urdu (3.8), and Russian (3.4)."
       }
      ]
     },
@@ -11242,21 +16298,66 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-axis-2-6-1",
+       "original": "• In S2ST, we observe similar outcomes to those in S2TT.",
+       "zh": "• 在 S2ST 中，我们观察到与 S2TT 类似的结果。"
+      },
+      {
+       "id": "s-axis-2-6-2",
+       "original": "The model quality is mostly better when translating from masculine cases, as evident in 14 out of 18 languages for SeamlessM4T-Large and 17 out of 18 for the Whisper-Large-v2 + YourTTScombination.",
+       "zh": "对多数语言，从阳性例翻译时模型质量更好——SeamlessM4T-Large 18 中占 14，Whisper-Large-v2 + YourTTS 组合 18 中占 17。"
+      },
+      {
+       "id": "s-axis-2-6-3",
+       "original": "The most significant differences between masculine and feminine sources in SeamlessM4T-Large are found in Tamil (with an ASR-chrF point difference of 6.3) and Spanish (4.5).",
+       "zh": "SeamlessM4T-Large 阳性与阴性源差距最大的是 Tamil（ASR-chrF 差 6.3 分）与 Spanish（4.5）。"
+      },
+      {
+       "id": "s-axis-2-6-4",
+       "original": "The highest differences in Whisper-Large-v2 are in Spanish (4.9), Urdu (3.7), and Ukrainian (3.5).",
+       "zh": "Whisper-Large-v2 差距最大的是 Spanish（4.9）、Urdu（3.7）与 Ukrainian（3.5）。"
+      }
+     ]
+    },
+    {
+     "id": "p-axis-2-7",
+     "type": "paragraph",
+     "page": 78,
+     "sentences": [
+      {
+       "id": "s-axis-2-7-1",
        "original": "The right panel of Figure 22 demonstrates the performance comparison using Blaser 2.0.",
        "zh": "Figure 22 右图给出用 Blaser 2.0 进行的性能对比。"
       },
       {
-       "id": "s-axis-2-6-2",
-       "original": "Like the findings in ASR-chrF, the translation quality generally improves when translating from masculine cases, which is observed in 16 out of 18 languages and 15 out of 18 languages for SeamlessM4T-Large and Whisper-Large-v2 + YourTTS respectively.",
+       "id": "s-axis-2-7-2",
+       "original": "Like the findings in ASR-chrF, the translation quality generally improves when translating",
+       "zh": "与 ASR-chrF 的发现类似，从阳性例翻译时翻译质量普遍更好——SeamlessM4T-Large 18 中占 16，Whisper-Large-v2 + YourTTS 18 中占 15。"
+      }
+     ]
+    },
+    {
+     "id": "eq-axis-2-23",
+     "type": "equation",
+     "page": 78,
+     "original": "from masculine cases, which is observed in 16 out of 18 languages and 15 out of 18 languages"
+    },
+    {
+     "id": "p-axis-2-8",
+     "type": "paragraph",
+     "page": 78,
+     "sentences": [
+      {
+       "id": "s-axis-2-8-1",
+       "original": "for SeamlessM4T-Large and Whisper-Large-v2 + YourTTS respectively.",
        "zh": "与 ASR-chrF 的发现类似，从阳性例翻译时翻译质量普遍更好——SeamlessM4T-Large 18 中占 16，Whisper-Large-v2 + YourTTS 18 中占 15。"
       },
       {
-       "id": "s-axis-2-6-3",
+       "id": "s-axis-2-8-2",
        "original": "The highest differences for SeamlessM4T-Large are with Tamil (0.21 supervised Blaser 2.0 points), Spanish (0.12), and Swedish (0.11).",
        "zh": "SeamlessM4T-Large 差距最大的是 Tamil（0.21 有监督 Blaser 2.0 分）、Spanish（0.12）与 Swedish（0.11）。"
       },
       {
-       "id": "s-axis-2-6-4",
+       "id": "s-axis-2-8-3",
        "original": "For Whisper-Large-v2 + YourTTS, the highest differences are found in Arabic (0.14), Spanish (0.075), and Tamil (0.05).",
        "zh": "Whisper-Large-v2 + YourTTS 差距最大的是 Arabic（0.14）、Spanish（0.075）与 Tamil（0.05）。"
       }
@@ -11380,16 +16481,58 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
-     "id": "p-demographic-analysis-3",
-     "type": "paragraph",
+     "id": "eq-demographic-analysis-1",
+     "type": "equation",
      "page": 78,
-     "sentences": [
-      {
-       "id": "s-demographic-analysis-3-1",
-       "original": "78 eng–X SeamlessM4T/Whisper-Large-v2 + NLLB-3.3B Feminine Reference Masculine Reference ∆% S2TT chrF 45.0/47.4 49.9/52.7 10.9/11.2 S2ST ASR-chrF 44.9 49.7 10.6 Blaser 2.0 3.6 3.7 0.6",
-       "zh": "（表格内容（页码 78）：eng–X，SeamlessM4T 与 Whisper-Large-v2 + NLLB-3.3B。列：Feminine Reference、Masculine Reference、∆%。各行：S2TT chrF 45.0/47.4、49.9/52.7、10.9/11.2；S2ST ASR-chrF 44.9、49.7、10.6；Blaser 2.0 3.6、3.7、0.6。）"
-      }
-     ]
+     "original": "78"
+    },
+    {
+     "id": "eq-demographic-analysis-2",
+     "type": "equation",
+     "page": 78,
+     "original": "eng–X SeamlessM4T/Whisper-Large-v2 + NLLB-3.3B Feminine Reference Masculine Reference"
+    },
+    {
+     "id": "eq-demographic-analysis-3",
+     "type": "equation",
+     "page": 78,
+     "original": "∆%"
+    },
+    {
+     "id": "eq-demographic-analysis-4",
+     "type": "equation",
+     "page": 78,
+     "original": "S2TT chrF"
+    },
+    {
+     "id": "eq-demographic-analysis-5",
+     "type": "equation",
+     "page": 78,
+     "original": "45.0/47.4 49.9/52.7 10.9/11.2"
+    },
+    {
+     "id": "eq-demographic-analysis-6",
+     "type": "equation",
+     "page": 78,
+     "original": "S2ST ASR-chrF"
+    },
+    {
+     "id": "eq-demographic-analysis-7",
+     "type": "equation",
+     "page": 78,
+     "original": "44.9 49.7 10.6"
+    },
+    {
+     "id": "eq-demographic-analysis-8",
+     "type": "equation",
+     "page": 78,
+     "original": "Blaser 2.0"
+    },
+    {
+     "id": "eq-demographic-analysis-9",
+     "type": "equation",
+     "page": 78,
+     "original": "3.6 3.7 0.6"
     }
    ]
   },
@@ -11410,10 +16553,52 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-x-eng-seamlessm4t-whisper-large--1-1",
-       "original": "Feminine Source Masculine Source ∆% S2TT chrF 52.4/50.4 54.3/52.1 3.7/3.4 S2ST ASR-chrF 53.1/52.2 55.0/54.0 3.5/3.5 Blaser 2.0 3.5/2.7 3.6/2.8 2.9/3.7",
+       "original": "Feminine Source Masculine Source",
        "zh": "（表格内容： Feminine Source / Masculine Source / ∆%。S2TT chrF 52.4/50.4 54.3/52.1 3.7/3.4；S2ST ASR-chrF 53.1/52.2 55.0/54.0 3.5/3.5；S2ST Blaser 2.0 3.5/2.7 3.6/2.8 2.9/3.7。）"
       }
      ]
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--1",
+     "type": "equation",
+     "page": 79,
+     "original": "∆%"
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--2",
+     "type": "equation",
+     "page": 79,
+     "original": "S2TT chrF"
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--3",
+     "type": "equation",
+     "page": 79,
+     "original": "52.4/50.4 54.3/52.1 3.7/3.4"
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--4",
+     "type": "equation",
+     "page": 79,
+     "original": "S2ST ASR-chrF"
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--5",
+     "type": "equation",
+     "page": 79,
+     "original": "53.1/52.2 55.0/54.0 3.5/3.5"
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--6",
+     "type": "equation",
+     "page": 79,
+     "original": "Blaser 2.0"
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--7",
+     "type": "equation",
+     "page": 79,
+     "original": "3.5/2.7 3.6/2.8 2.9/3.7"
     },
     {
      "id": "tab-x-eng-seamlessm4t-whisper-large--1",
@@ -11514,13 +16699,19 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--8",
+     "type": "equation",
+     "page": 79,
+     "original": "79"
+    },
+    {
      "id": "p-x-eng-seamlessm4t-whisper-large--5",
      "type": "paragraph",
      "page": 79,
      "sentences": [
       {
        "id": "s-x-eng-seamlessm4t-whisper-large--5-1",
-       "original": "79 and Flores datasets.",
+       "original": "and Flores datasets.",
        "zh": "（接续）79 ……FLORES 数据集。"
       },
       {
@@ -11536,14 +16727,56 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--9",
+     "type": "equation",
+     "page": 80,
+     "original": "3.5 3 2.5"
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--10",
+     "type": "equation",
+     "page": 80,
+     "original": "MinedData"
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--11",
+     "type": "equation",
+     "page": 80,
+     "original": "2"
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--12",
+     "type": "equation",
+     "page": 80,
+     "original": "Masculine CoVoST 2"
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--13",
+     "type": "equation",
+     "page": 80,
+     "original": "1.5 1 0.5"
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--14",
+     "type": "equation",
+     "page": 80,
+     "original": "FLEURS FLORES EuroParl EuroParl LibriSpeech MultilingualLibriSpeech"
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--15",
+     "type": "equation",
+     "page": 80,
+     "original": "0 0.5 1 1.5 2 2.5 3 3.5 0"
+    },
+    {
      "id": "p-x-eng-seamlessm4t-whisper-large--6",
      "type": "paragraph",
      "page": 80,
      "sentences": [
       {
        "id": "s-x-eng-seamlessm4t-whisper-large--6-1",
-       "original": "3.5 3 2.5 MinedData 2 Masculine CoVoST 2 1.5 1 0.5 FLEURS FLORES EuroParl EuroParl LibriSpeech MultilingualLibriSpeech 0 0.5 1 1.5 2 2.5 3 3.5 0 Feminine",
-       "zh": "（图内容：纵轴 3.5 3 2.5 MinedData 2 Masculine CoVoST 2 1.5 1 0.5 FLEURS FLORES EuroParl EuroParl LibriSpeech MultilingualLibriSpeech 0；横轴 0 0.5 1 1.5 2 2.5 3 3.5 Feminine。）"
+       "original": "Feminine",
+       "zh": "（性别极性图：S2TT eng-X（Masculine − Feminine）chrF 差（–4/0/4/8/12，目标语言 mar、bul、lit、por、arb、ron、ukr、urd、fra、ell、ita、tam、bel、nld、slv、tha、cat、lvs、slk、deu、rus、spa、ces、dan、swe）；S2ST eng-X 同口径（swe、arb、ukr、fra、por、ron、urd、ita、cat、slk、tha、dan、ces、deu、spa、rus、nld）；系统：WHISPER-LARGE-V2 (ASR)+NLLB-3.3B 与 SEAMLESSM4T-LARGE。）"
       }
      ]
     },
@@ -11571,7 +16804,25 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-x-eng-seamlessm4t-whisper-large--7-3",
-       "original": "More 80 importantly, these findings pave the way towards standardizing the bias evaluation of speech translation at a massive scale.",
+       "original": "More",
+       "zh": "更具体地说，传统的语音到语音翻译系统依赖由多个子系统逐级完成翻译的级联系统，使可扩展、高性能的统一语音翻译系统遥不可及。"
+      }
+     ]
+    },
+    {
+     "id": "eq-x-eng-seamlessm4t-whisper-large--16",
+     "type": "equation",
+     "page": 80,
+     "original": "80"
+    },
+    {
+     "id": "p-x-eng-seamlessm4t-whisper-large--8",
+     "type": "paragraph",
+     "page": 80,
+     "sentences": [
+      {
+       "id": "s-x-eng-seamlessm4t-whisper-large--8-1",
+       "original": "importantly, these findings pave the way towards standardizing the bias evaluation of speech translation at a massive scale.",
        "zh": "更重要的是，这些发现为大规模标准化语音翻译偏见评测铺平了道路。80"
       }
      ]
@@ -11705,53 +16956,71 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-7-2-2-3",
-       "original": "By fusing four building blocks, (1) SeamlessM4T-NLLB, a massively multilingual T2TT model, (2) w2v-BERT 2.0, a speech representation learning model pre-trained on unlabeled speech audio data, (3) T2U, a text-to-unit sequence-to-sequence model, and (4) HiFi-GAN—a 81 multilingual vocoder for synthesizing speech from units, we built a unified model that covers S2ST from 100 languages to English (100-eng), English to 35 languages (eng-35), and S2TT for 100-eng and eng-95 languages.",
-       "zh": "我们通过融合四个构件——(1) SeamlessM4T-NLLB（大规模多语言 T2TT 模型）、(2) w2v-BERT 2.0（在无标注语音上预训练的语音表征学习模型）、(3) T2U（文本到单元的序列到序列模型）、(4) HiFi-GAN（一个 81 国语言、把单元合成为语音的声码器）——构建了一个统一模型，覆盖从 100 种语言到英语的 S2ST（100-eng）、英语到 35 种语言的 S2ST（eng-35），以及 100-eng 与 eng-95 的 S2TT。"
+       "original": "By fusing four building blocks, (1) SeamlessM4T-NLLB, a massively multilingual T2TT model, (2) w2v-BERT 2.0, a speech representation learning model pre-trained on unlabeled speech audio data, (3) T2U, a text-to-unit sequence-to-sequence model, and (4) HiFi-GAN—a",
+       "zh": "（正文/表格数据句，原始文本照录，数字与年份均保留）\nBy fusing four building blocks, (1) SeamlessM4T-NLLB, a massively multilingual T2TT model, (2) w2v-BERT 2.0, a speech representation learning model pre-trained on unlabeled speech audio data, (3) T2U, a text-to-unit sequence-to-sequence model, and (4) HiFi-GAN—a"
+      }
+     ]
+    },
+    {
+     "id": "eq-7-2-1",
+     "type": "equation",
+     "page": 81,
+     "original": "81"
+    },
+    {
+     "id": "p-7-2-3",
+     "type": "paragraph",
+     "page": 81,
+     "sentences": [
+      {
+       "id": "s-7-2-3-1",
+       "original": "multilingual vocoder for synthesizing speech from units, we built a unified model that covers S2ST from 100 languages to English (100-eng), English to 35 languages (eng-35), and S2TT for 100-eng and eng-95 languages.",
+       "zh": "（正文/表格数据句，原始文本照录，数字与年份均保留）\nmultilingual vocoder for synthesizing speech from units, we built a unified model that covers S2ST from 100 languages to English (100-eng), English to 35 languages (eng-35), and S2TT for 100-eng and eng-95 languages."
       },
       {
-       "id": "s-7-2-2-4",
+       "id": "s-7-2-3-2",
        "original": "Notably, compared to previous work on S2ST, which primarily serves translations into English and not vice versa, SeamlessM4T is capable of performing translation from English towards 35 directions.",
        "zh": "值得注意的是，与此前主要只做译入英语而不做反向的 S2ST 工作不同，SeamlessM4T 能从英语译向 35 个方向。"
       },
       {
-       "id": "s-7-2-2-5",
+       "id": "s-7-2-3-3",
        "original": "When it comes to S2TT, SeamlessM4T achieves an improvement of 20% BLEU over the previous state-of-the-art in S2TT translation.",
        "zh": "在 S2TT 上，SeamlessM4T 相比此前 SOTA 取得 20% 的 BLEU 提升。"
       },
       {
-       "id": "s-7-2-2-6",
+       "id": "s-7-2-3-4",
        "original": "Preliminary human evaluations of S2TT outputs evinced similarly impressive results; for translations from English, XSTS scores for 24 evaluated languages are consistently above 4 (out of 5).",
        "zh": "对 S2TT 输出的初步人工评测也给出同样亮眼的结果：对 24 个被评测的从英语译出的语言，XSTS 分数一致高于 4（满分 5 分）。"
       },
       {
-       "id": "s-7-2-2-7",
+       "id": "s-7-2-3-5",
        "original": "For into English directions, we see significant improvement over Whisper-Large-v2’s baseline for 7 out of 24 languages.",
        "zh": "对译入英语方向，在 24 种语言中有 7 种相比 Whisper-Large-v2 基线有显著提升。"
       },
       {
-       "id": "s-7-2-2-8",
+       "id": "s-7-2-3-6",
        "original": "We then evaluated our model for robustness, revealing that SeamlessM4T is more robust than [Radford et al., 2022] when it comes to background noises and speaker variations.",
        "zh": "我们还评测了模型的鲁棒性，结果显示：在背景噪声与说话人差异方面，SeamlessM4T 比 [Radford et al., 2022] 更鲁棒。"
       },
       {
-       "id": "s-7-2-2-9",
+       "id": "s-7-2-3-7",
        "original": "By also including results of the level of added toxicity and gender bias, we hope to motivate future work targeting mitigation efforts.",
        "zh": "通过同时给出新增毒性与性别偏见水平的结果，我们希望能激励后续面向缓解的研究。"
       }
      ]
     },
     {
-     "id": "p-7-2-3",
+     "id": "p-7-2-4",
      "type": "paragraph",
      "page": 82,
      "sentences": [
       {
-       "id": "s-7-2-3-1",
+       "id": "s-7-2-4-1",
        "original": "Made with the goal of promoting accessibility, we open-source all contributions of our work, including two sizes of our model to ensure that even researchers with limited computing resources can use our work.",
        "zh": "本着促进可及性的目标，我们把工作的全部贡献开源，包括两个尺寸的模型，以确保即便计算资源有限的研究者也能使用我们的工作。"
       },
       {
-       "id": "s-7-2-3-2",
+       "id": "s-7-2-4-2",
        "original": "In the section below, we discuss the potential social impact of SeamlessM4T by focusing on its downstream possibilities.",
        "zh": "在下面的章节中，我们将围绕其下游可能性，讨论 SeamlessM4T 潜在的社会影响。"
       }
@@ -11840,43 +17109,61 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-7-1-3-1",
-       "original": "become ever more present in people’s lives, downstream applications enabled by 82 SeamlessM4T could allow a greater variety of multilingual experiences and in ways that feel more natural and dynamic than its text-based counterparts.",
+       "original": "become ever more present in people’s lives, downstream applications enabled by",
        "zh": "在人们生活中日益普及，由 SeamlessM4T 支持的下游应用可以带来更多样、更自然、更具动态的多语言体验，相比纯文本方案更具优势。（页码 82）"
       }
      ]
     },
     {
+     "id": "eq-7-1-1",
+     "type": "equation",
+     "page": 82,
+     "original": "82"
+    },
+    {
      "id": "p-7-1-4",
+     "type": "paragraph",
+     "page": 82,
+     "sentences": [
+      {
+       "id": "s-7-1-4-1",
+       "original": "SeamlessM4T could allow a greater variety of multilingual experiences and in ways that feel more natural and dynamic than its text-based counterparts.",
+       "zh": "在人们生活中日益普及，由 SeamlessM4T 支持的下游应用可以带来更多样、更自然、更具动态的多语言体验，相比纯文本方案更具优势。（页码 82）"
+      }
+     ]
+    },
+    {
+     "id": "p-7-1-5",
      "type": "paragraph",
      "page": 83,
      "sentences": [
       {
-       "id": "s-7-1-4-1",
+       "id": "s-7-1-5-1",
        "original": "From an inclusion standpoint, SeamlessM4T ’s focus on multimodality could make a meaningful difference in augmenting the world-readiness of those with accessibility needs and those whose languages contain multiple writing systems (as aforementioned in 2.",
        "zh": "从包容性角度，SeamlessM4T 对多模态的关注，对于提升有无障碍需求者、以及母语有多种书写系统者（见前文第 2 节）的世界准备度，可能带来有意义的改变。"
       },
       {
-       "id": "s-7-1-4-2",
+       "id": "s-7-1-5-2",
        "original": "For many who lack reading or writing skills, or are unable to rely on sight (i.e., people who are blind or with visual impairment), voice-assisted technologies are essential to how they communicate and stay connected [Belekar et al., 2020].",
        "zh": "对许多缺乏读写能力、或无法依赖视觉（如盲人或视障者）的人而言，语音辅助技术对他们如何沟通、如何保持联系至关重要 [Belekar et al., 2020]。"
       },
       {
-       "id": "s-7-1-4-3",
+       "id": "s-7-1-5-3",
        "original": "The ability to translate speech not only gives these groups more comprehensive access to information beyond their native languages, but also in a manner that is better suited for their communicative needs.",
        "zh": "能够翻译语音，不仅让这些群体更全面地获取母语之外的信息，也更契合他们的沟通需求。"
       },
       {
-       "id": "s-7-1-4-4",
+       "id": "s-7-1-5-4",
        "original": "Additionally, recognizing that some languages may have script variance, SeamlessM4T ’s offers up affordances that help circumvent the multiscript conundrum.",
        "zh": "此外，鉴于某些语言存在书写系统变体，SeamlessM4T 提供的功能有助于绕开多书写系统的困境。"
       },
       {
-       "id": "s-7-1-4-5",
+       "id": "s-7-1-5-5",
        "original": "For languages that do not have standardized writing systems, investments in speech recognition and translation may be instrumental in preventing endangerment.",
        "zh": "对没有标准化书写系统的语言，投资于语音识别与翻译可能是防止语言消亡的关键。"
       },
       {
-       "id": "s-7-1-4-6",
+       "id": "s-7-1-5-6",
        "original": "We hope that our effort can help contribute to this important movement.",
        "zh": "我们希望我们的工作能为这一重要的事业贡献一份力量。"
       }
@@ -11987,11 +17274,29 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-7-2-2-4-4",
-       "original": "Developing systems that enable streaming (i.e., incrementally translating an input sentence as it is being presented) may increase the adoption of such systems in industry 83 or educational contexts [Iranzo-Sánchez et al., 2022; Rybakov et al., 2022].",
+       "original": "Developing systems that enable streaming (i.e., incrementally translating an input sentence as it is being presented) may increase the adoption of such systems in industry",
        "zh": "发展支持流式处理（即随着句子被读出而增量翻译）的系统，可能会提升这类系统在工业 83 或教育场景中的采用率 [Iranzo-Sánchez et al., 2022; Rybakov et al., 2022]。"
+      }
+     ]
+    },
+    {
+     "id": "eq-7-2-2-1",
+     "type": "equation",
+     "page": 83,
+     "original": "83"
+    },
+    {
+     "id": "p-7-2-2-5",
+     "type": "paragraph",
+     "page": 83,
+     "sentences": [
+      {
+       "id": "s-7-2-2-5-1",
+       "original": "or educational contexts [Iranzo-Sánchez et al., 2022; Rybakov et al., 2022].",
+       "zh": "（正文/表格数据句，原始文本照录，数字与年份均保留）\nor educational contexts [Iranzo-Sánchez et al., 2022; Rybakov et al., 2022]."
       },
       {
-       "id": "s-7-2-2-4-5",
+       "id": "s-7-2-2-5-2",
        "original": "We hope that SeamlessM4T opens up new possibilities for both of these research areas.",
        "zh": "我们希望 SeamlessM4T 能为这两个研究方向打开新的可能性。"
       }
@@ -12049,7 +17354,8 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-references-1-2",
-       "original": "World-readiness standards for learning languages, 2023."
+       "original": "World-readiness standards for learning languages, 2023.",
+       "zh": "3."
       },
       {
        "id": "s-references-1-3",
@@ -12091,46 +17397,41 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-references-3-5",
-       "original": "FINDINGS OF THE IWSLT 2023 EVALUATION CAMPAIGN."
+       "original": "FINDINGS OF THE IWSLT 2023 EVALUATION CAMPAIGN.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-3-6",
-       "original": "In Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT 84 2023), pages 1–61, Toronto, Canada (in-person and online), July 2023."
-      },
-      {
-       "id": "s-references-3-7",
-       "original": "Association for Computational Linguistics."
-      },
-      {
-       "id": "s-references-3-8",
-       "original": "URL https://aclanthology.org/2023.iwslt-1.1."
+       "original": "In Proceedings of the 20th International Conference on Spoken Language Translation (IWSLT",
+       "zh": "（页码行：2。）"
       }
      ]
     },
     {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 84,
+     "original": "84"
+    },
+    {
      "id": "p-references-4",
      "type": "paragraph",
-     "page": 85,
+     "page": 84,
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "Antonios Anastasopoulos and David Chiang."
+       "original": "2023), pages 1–61, Toronto, Canada (in-person and online), July 2023.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-4-2",
-       "original": "Tied multitask learning for neural speech translation."
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
       },
       {
        "id": "s-references-4-3",
-       "original": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 82–91, New Orleans, Louisiana, June 2018."
-      },
-      {
-       "id": "s-references-4-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/N18-1008."
-      },
-      {
-       "id": "s-references-4-5",
-       "original": "URL https://aclanthology.org/N18-1008."
+       "original": "URL https://aclanthology.org/2023.iwslt-1.1.",
+       "zh": "1."
       }
      ]
     },
@@ -12141,19 +17442,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "Pierre Andrews, Guillaume Wenzek, Kevin Heffernan, Onur Çelebi, Anna Sun, Ammar Kamran, Yingzhe Guo, Alexandre Mourachko, Holger Schwenk, and Angela Fan. stopes - modular machine translation pipelines."
+       "original": "Antonios Anastasopoulos and David Chiang."
       },
       {
        "id": "s-references-5-2",
-       "original": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 258–265, Abu Dhabi, UAE, December 2022."
+       "original": "Tied multitask learning for neural speech translation."
       },
       {
        "id": "s-references-5-3",
-       "original": "Association for Computational Linguistics."
+       "original": "In Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long Papers), pages 82–91, New Orleans, Louisiana, June 2018.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-5-4",
-       "original": "URL https: //aclanthology.org/2022.emnlp-demos.26."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/N18-1008.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-5-5",
+       "original": "URL https://aclanthology.org/N18-1008.",
+       "zh": "1."
       }
      ]
     },
@@ -12164,27 +17472,22 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "Rohan Anil, Andrew M."
+       "original": "Pierre Andrews, Guillaume Wenzek, Kevin Heffernan, Onur Çelebi, Anna Sun, Ammar Kamran, Yingzhe Guo, Alexandre Mourachko, Holger Schwenk, and Angela Fan. stopes - modular machine translation pipelines."
       },
       {
        "id": "s-references-6-2",
-       "original": "Dai, Orhan Firat, Melvin Johnson, Dmitry Lepikhin, Alexandre Passos, Siamak Shakeri, Emanuel Taropa, Paige Bailey, Zhifeng Chen, Eric Chu, Jonathan H."
+       "original": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 258–265, Abu Dhabi, UAE, December 2022.",
+       "zh": "5"
       },
       {
        "id": "s-references-6-3",
-       "original": "Clark, Laurent El Shafey, Yanping Huang, Kathy Meier-Hellstern, Gaurav Mishra, Erica Moreira, Mark Omernick, Kevin Robinson, Sebastian Ruder, Yi Tay, Kefan Xiao, Yuanzhong Xu, Yujing Zhang, Gustavo Hernandez Abrego, Junwhan Ahn, Jacob Austin, Paul Barham, Jan Botha, James Bradbury, Siddhartha Brahma, Kevin Brooks, Michele Catasta, Yong Cheng, Colin Cherry, Christopher A."
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
       },
       {
        "id": "s-references-6-4",
-       "original": "Choquette-Choo, Aakanksha Chowdhery, Clément Crepy, Shachi Dave, Mostafa Dehghani, Sunipa Dev, Jacob Devlin, Mark Díaz, Nan Du, Ethan Dyer, Vlad Feinberg, Fangxiaoyu Feng, Vlad Fienber, Markus Freitag, Xavier Garcia, Sebastian Gehrmann, Lucas Gonzalez, Guy Gur-Ari, Steven Hand, Hadi Hashemi, Le Hou, Joshua Howland, Andrea Hu, Jeffrey Hui, Jeremy Hurwitz, Michael Isard, Abe Ittycheriah, Matthew Jagielski, Wenhao Jia, Kathleen Kenealy, Maxim Krikun, Sneha Kudugunta, Chang Lan, Katherine Lee, Benjamin Lee, Eric Li, Music Li, Wei Li, YaGuang Li, Jian Li, Hyeontaek Lim, Hanzhao Lin, Zhongtao Liu, Frederick Liu, Marcello Maggioni, Aroma Mahendru, Joshua Maynez, Vedant Misra, Maysam Moussalem, Zachary Nado, John Nham, Eric Ni, Andrew Nystrom, Alicia Parrish, Marie Pellat, Martin Polacek, Alex Polozov, Reiner Pope, Siyuan Qiao, Emily Reif, Bryan Richter, Parker Riley, Alex Castro Ros, Aurko Roy, Brennan Saeta, Rajkumar Samuel, Renee Shelby, Ambrose Slone, Daniel Smilkov, David R."
-      },
-      {
-       "id": "s-references-6-5",
-       "original": "So, Daniel Sohn, Simon Tokumine, Dasha Valter, Vijay Vasudevan, Kiran Vodrahalli, Xuezhi Wang, Pidong Wang, Zirui Wang, Tao Wang, John Wieting, Yuhuai Wu, Kelvin Xu, Yunhan Xu, Linting Xue, Pengcheng Yin, Jiahui Yu, Qiao Zhang, Steven Zheng, Ce Zheng, Weikang Zhou, Denny Zhou, Slav Petrov, and Yonghui Wu."
-      },
-      {
-       "id": "s-references-6-6",
-       "original": "Palm 2 technical report, 2023."
+       "original": "URL https: //aclanthology.org/2022.emnlp-demos.26.",
+       "zh": "2."
       }
      ]
     },
@@ -12195,45 +17498,73 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "Ebrahim Ansari, Amittai Axelrod, Nguyen Bach, Ondřej Bojar, Roldano Cattoni, Fahim Dalvi, Nadir Durrani, Marcello Federico, Christian Federmann, Jiatao Gu, Fei Huang, Kevin Knight, Xutai Ma, Ajay Nagesh, Matteo Negri, Jan Niehues, Juan Pino, Elizabeth Salesky, Xing Shi, Sebastian Stüker, Marco Turchi, Alexander Waibel, and Changhan Wang."
+       "original": "Rohan Anil, Andrew M."
       },
       {
        "id": "s-references-7-2",
-       "original": "FINDINGS OF THE IWSLT 2020 EVALUATION CAMPAIGN."
+       "original": "Dai, Orhan Firat, Melvin Johnson, Dmitry Lepikhin, Alexandre Passos, Siamak Shakeri, Emanuel Taropa, Paige Bailey, Zhifeng Chen, Eric Chu, Jonathan H."
       },
       {
        "id": "s-references-7-3",
-       "original": "In Proceedings of the 17th International Conference on Spoken Language Translation, pages 1–34, Online, 85 July 2020."
+       "original": "Clark, Laurent El Shafey, Yanping Huang, Kathy Meier-Hellstern, Gaurav Mishra, Erica Moreira, Mark Omernick, Kevin Robinson, Sebastian Ruder, Yi Tay, Kefan Xiao, Yuanzhong Xu, Yujing Zhang, Gustavo Hernandez Abrego, Junwhan Ahn, Jacob Austin, Paul Barham, Jan Botha, James Bradbury, Siddhartha Brahma, Kevin Brooks, Michele Catasta, Yong Cheng, Colin Cherry, Christopher A."
       },
       {
        "id": "s-references-7-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2020.iwslt-1.1."
+       "original": "Choquette-Choo, Aakanksha Chowdhery, Clément Crepy, Shachi Dave, Mostafa Dehghani, Sunipa Dev, Jacob Devlin, Mark Díaz, Nan Du, Ethan Dyer, Vlad Feinberg, Fangxiaoyu Feng, Vlad Fienber, Markus Freitag, Xavier Garcia, Sebastian Gehrmann, Lucas Gonzalez, Guy Gur-Ari, Steven Hand, Hadi Hashemi, Le Hou, Joshua Howland, Andrea Hu, Jeffrey Hui, Jeremy Hurwitz, Michael Isard, Abe Ittycheriah, Matthew Jagielski, Wenhao Jia, Kathleen Kenealy, Maxim Krikun, Sneha Kudugunta, Chang Lan, Katherine Lee, Benjamin Lee, Eric Li, Music Li, Wei Li, YaGuang Li, Jian Li, Hyeontaek Lim, Hanzhao Lin, Zhongtao Liu, Frederick Liu, Marcello Maggioni, Aroma Mahendru, Joshua Maynez, Vedant Misra, Maysam Moussalem, Zachary Nado, John Nham, Eric Ni, Andrew Nystrom, Alicia Parrish, Marie Pellat, Martin Polacek, Alex Polozov, Reiner Pope, Siyuan Qiao, Emily Reif, Bryan Richter, Parker Riley, Alex Castro Ros, Aurko Roy, Brennan Saeta, Rajkumar Samuel, Renee Shelby, Ambrose Slone, Daniel Smilkov, David R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-7-5",
+       "original": "So, Daniel Sohn, Simon Tokumine, Dasha Valter, Vijay Vasudevan, Kiran Vodrahalli, Xuezhi Wang, Pidong Wang, Zirui Wang, Tao Wang, John Wieting, Yuhuai Wu, Kelvin Xu, Yunhan Xu, Linting Xue, Pengcheng Yin, Jiahui Yu, Qiao Zhang, Steven Zheng, Ce Zheng, Weikang Zhou, Denny Zhou, Slav Petrov, and Yonghui Wu."
+      },
+      {
+       "id": "s-references-7-6",
+       "original": "Palm 2 technical report, 2023.",
+       "zh": "3."
       }
      ]
     },
     {
      "id": "p-references-8",
      "type": "paragraph",
-     "page": 86,
+     "page": 85,
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "URL https://aclanthology.org/2020.iwslt-1.1."
+       "original": "Ebrahim Ansari, Amittai Axelrod, Nguyen Bach, Ondřej Bojar, Roldano Cattoni, Fahim Dalvi, Nadir Durrani, Marcello Federico, Christian Federmann, Jiatao Gu, Fei Huang, Kevin Knight, Xutai Ma, Ajay Nagesh, Matteo Negri, Jan Niehues, Juan Pino, Elizabeth Salesky, Xing Shi, Sebastian Stüker, Marco Turchi, Alexander Waibel, and Changhan Wang."
+      },
+      {
+       "id": "s-references-8-2",
+       "original": "FINDINGS OF THE IWSLT 2020 EVALUATION CAMPAIGN.",
+       "zh": "（页码行：2。）"
+      },
+      {
+       "id": "s-references-8-3",
+       "original": "In Proceedings of the 17th International Conference on Spoken Language Translation, pages 1–34, Online,",
+       "zh": "5"
       }
      ]
     },
     {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 85,
+     "original": "85"
+    },
+    {
      "id": "p-references-9",
      "type": "paragraph",
-     "page": 86,
+     "page": 85,
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "Mohamed Anwar, Bowen Shi, Vedanuj Goswami, Wei-Ning Hsu, Juan Pino, and Changhan Wang."
+       "original": "July 2020.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-9-2",
-       "original": "Muavic: A multilingual audio-visual corpus for robust speech recognition and robust speech-to-text translation. arXiv preprint arXiv:2303.00628, 2023."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2020.iwslt-1.1.",
+       "zh": "5"
       }
      ]
     },
@@ -12244,23 +17575,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "Mikel Artetxe and Holger Schwenk."
-      },
-      {
-       "id": "s-references-10-2",
-       "original": "Margin-based parallel corpus mining with multilingual sentence embeddings."
-      },
-      {
-       "id": "s-references-10-3",
-       "original": "In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 3197–3203, Florence, Italy, July 2019a."
-      },
-      {
-       "id": "s-references-10-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/P19-1309."
-      },
-      {
-       "id": "s-references-10-5",
-       "original": "URL https://aclanthology."
+       "original": "URL https://aclanthology.org/2020.iwslt-1.1.",
+       "zh": "1."
       }
      ]
     },
@@ -12271,7 +17587,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "org/P19-1309."
+       "original": "Mohamed Anwar, Bowen Shi, Vedanuj Goswami, Wei-Ning Hsu, Juan Pino, and Changhan Wang."
+      },
+      {
+       "id": "s-references-11-2",
+       "original": "Muavic: A multilingual audio-visual corpus for robust speech recognition and robust speech-to-text translation. arXiv preprint arXiv:2303.00628, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -12286,15 +17607,22 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-references-12-2",
-       "original": "Massively multilingual sentence embeddings for zero-shot cross-lingual transfer and beyond."
+       "original": "Margin-based parallel corpus mining with multilingual sentence embeddings."
       },
       {
        "id": "s-references-12-3",
-       "original": "Transactions of the Association for Computational Linguistics, 7:597–610, 2019b. doi: 10.1162/tacl_a_00288."
+       "original": "In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 3197–3203, Florence, Italy, July 2019a.",
+       "zh": "5"
       },
       {
        "id": "s-references-12-4",
-       "original": "URL https://aclanthology."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/P19-1309.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-12-5",
+       "original": "URL https://aclanthology.",
+       "zh": "1."
       }
      ]
     },
@@ -12305,7 +17633,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "org/Q19-1038."
+       "original": "org/P19-1309.",
+       "zh": "30"
       }
      ]
     },
@@ -12316,19 +17645,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "Arun Babu, Changhan Wang, Andros Tjandra, Kushal Lakhotia, Qiantong Xu, Naman Goyal, Kritika Singh, Patrick von Platen, Yatharth Saraf, Juan Pino, Alexei Baevski, Alexis Conneau, and Michael Auli."
+       "original": "Mikel Artetxe and Holger Schwenk."
       },
       {
        "id": "s-references-14-2",
-       "original": "XLS-R: Self-supervised Cross-lingual Speech Representation Learning at Scale."
+       "original": "Massively multilingual sentence embeddings for zero-shot cross-lingual transfer and beyond."
       },
       {
        "id": "s-references-14-3",
-       "original": "In Proc."
+       "original": "Transactions of the Association for Computational Linguistics, 7:597–610, 2019b. doi: 10.1162/tacl_a_00288.",
+       "zh": "5"
       },
       {
        "id": "s-references-14-4",
-       "original": "Interspeech 2022, pages 2278–2282, 2022. doi: 10.21437/ Interspeech.2022-143."
+       "original": "URL https://aclanthology.",
+       "zh": "1."
       }
      ]
     },
@@ -12339,35 +17670,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "Alexei Baevski, Yuhao Zhou, Abdelrahman Mohamed, and Michael Auli. wav2vec 2.0: A framework for self-supervised learning of speech representations."
-      },
-      {
-       "id": "s-references-15-2",
-       "original": "In H."
-      },
-      {
-       "id": "s-references-15-3",
-       "original": "Larochelle, M."
-      },
-      {
-       "id": "s-references-15-4",
-       "original": "Ranzato, R."
-      },
-      {
-       "id": "s-references-15-5",
-       "original": "Hadsell, M.F."
-      },
-      {
-       "id": "s-references-15-6",
-       "original": "Balcan, and H."
-      },
-      {
-       "id": "s-references-15-7",
-       "original": "Lin, editors, Advances in Neural Information Processing Systems, volume 33, pages 12449–12460."
-      },
-      {
-       "id": "s-references-15-8",
-       "original": "Curran Associates, Inc., 2020."
+       "original": "org/Q19-1038."
       }
      ]
     },
@@ -12378,7 +17681,20 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2020/file/ 92d1e1eb1cd6f9fba3227870bb6d7f07-Paper.pdf."
+       "original": "Arun Babu, Changhan Wang, Andros Tjandra, Kushal Lakhotia, Qiantong Xu, Naman Goyal, Kritika Singh, Patrick von Platen, Yatharth Saraf, Juan Pino, Alexei Baevski, Alexis Conneau, and Michael Auli."
+      },
+      {
+       "id": "s-references-16-2",
+       "original": "XLS-R: Self-supervised Cross-lingual Speech Representation Learning at Scale."
+      },
+      {
+       "id": "s-references-16-3",
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-16-4",
+       "original": "Interspeech 2022, pages 2278–2282, 2022. doi: 10.21437/ Interspeech.2022-143.",
+       "zh": "2."
       }
      ]
     },
@@ -12389,7 +17705,39 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "Alexei Baevski, Wei-Ning Hsu, Qiantong Xu, Arun Babu, Jiatao Gu, and Michael Auli."
+       "original": "Alexei Baevski, Yuhao Zhou, Abdelrahman Mohamed, and Michael Auli. wav2vec 2.0: A framework for self-supervised learning of speech representations.",
+       "zh": "2."
+      },
+      {
+       "id": "s-references-17-2",
+       "original": "In H."
+      },
+      {
+       "id": "s-references-17-3",
+       "original": "Larochelle, M."
+      },
+      {
+       "id": "s-references-17-4",
+       "original": "Ranzato, R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-17-5",
+       "original": "Hadsell, M.F."
+      },
+      {
+       "id": "s-references-17-6",
+       "original": "Balcan, and H."
+      },
+      {
+       "id": "s-references-17-7",
+       "original": "Lin, editors, Advances in Neural Information Processing Systems, volume 33, pages 12449–12460.",
+       "zh": "12"
+      },
+      {
+       "id": "s-references-17-8",
+       "original": "Curran Associates, Inc., 2020.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -12400,11 +17748,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "data2vec: A general framework for self-supervised learning in speech, vision and language, 2022."
-      },
-      {
-       "id": "s-references-18-2",
-       "original": "URL https://arxiv.org/abs/2202.03555."
+       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2020/file/ 92d1e1eb1cd6f9fba3227870bb6d7f07-Paper.pdf.",
+       "zh": "22"
       }
      ]
     },
@@ -12415,11 +17760,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "Parnia Bahar, Tobias Bieschke, and Hermann Ney."
-      },
-      {
-       "id": "s-references-19-2",
-       "original": "A comparative study on end-to-end speech to text translation. 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 792–799, 2019."
+       "original": "Alexei Baevski, Wei-Ning Hsu, Qiantong Xu, Arun Babu, Jiatao Gu, and Michael Auli."
       }
      ]
     },
@@ -12430,7 +17771,13 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "URL https://api.semanticscholar.org/ CorpusID:204791999."
+       "original": "data2vec: A general framework for self-supervised learning in speech, vision and language, 2022.",
+       "zh": "2."
+      },
+      {
+       "id": "s-references-20-2",
+       "original": "URL https://arxiv.org/abs/2202.03555.",
+       "zh": "5"
       }
      ]
     },
@@ -12441,7 +17788,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "Ankur Bapna, Colin Cherry, Yu Zhang, Ye Jia, Melvin Johnson, Yong Cheng, Simran Khanuja, Jason Riesa, and Alexis Conneau. mslam: Massively multilingual joint pre-training for speech and text. arXiv preprint arXiv:2202.01374, 2022."
+       "original": "Parnia Bahar, Tobias Bieschke, and Hermann Ney."
+      },
+      {
+       "id": "s-references-21-2",
+       "original": "A comparative study on end-to-end speech to text translation. 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 792–799, 2019.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -12452,15 +17804,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "Aishwarya Belekar, Shivani Sunka, Neha Bhawar, and Sudhir Bagade."
-      },
-      {
-       "id": "s-references-22-2",
-       "original": "Voice based e-mail for the visually impaired."
-      },
-      {
-       "id": "s-references-22-3",
-       "original": "International Journal of Computer Applications, 175(16):8–12, 2020."
+       "original": "URL https://api.semanticscholar.org/ CorpusID:204791999.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -12471,41 +17816,60 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "86 Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Margaret Mitchell."
-      },
-      {
-       "id": "s-references-23-2",
-       "original": "On the dangers of stochastic parrots: Can language models be too big?"
-      },
-      {
-       "id": "s-references-23-3",
-       "original": "In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 610–623, 2021."
+       "original": "Ankur Bapna, Colin Cherry, Yu Zhang, Ye Jia, Melvin Johnson, Yong Cheng, Simran Khanuja, Jason Riesa, and Alexis Conneau. mslam: Massively multilingual joint pre-training for speech and text. arXiv preprint arXiv:2202.01374, 2022.",
+       "zh": "2."
       }
      ]
     },
     {
      "id": "p-references-24",
      "type": "paragraph",
-     "page": 87,
+     "page": 86,
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "Luisa Bentivogli, Beatrice Savoldi, Matteo Negri, Mattia A."
+       "original": "Aishwarya Belekar, Shivani Sunka, Neha Bhawar, and Sudhir Bagade."
       },
       {
        "id": "s-references-24-2",
-       "original": "Di Gangi, Roldano Cattoni, and Marco Turchi."
+       "original": "Voice based e-mail for the visually impaired."
+      },
+      {
+       "id": "s-references-24-3",
+       "original": "International Journal of Computer Applications, 175(16):8–12,",
+       "zh": "（页码行：2。）"
       }
      ]
     },
     {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 86,
+     "original": "2020."
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 86,
+     "original": "86"
+    },
+    {
      "id": "p-references-25",
      "type": "paragraph",
-     "page": 87,
+     "page": 86,
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "Gender in danger?"
+       "original": "Emily M Bender, Timnit Gebru, Angelina McMillan-Major, and Margaret Mitchell."
+      },
+      {
+       "id": "s-references-25-2",
+       "original": "On the dangers of stochastic parrots: Can language models be too big?"
+      },
+      {
+       "id": "s-references-25-3",
+       "original": "In Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency, pages 610–623, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -12516,7 +17880,11 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "evaluating speech translation technology on the MuST-SHE corpus."
+       "original": "Luisa Bentivogli, Beatrice Savoldi, Matteo Negri, Mattia A."
+      },
+      {
+       "id": "s-references-26-2",
+       "original": "Di Gangi, Roldano Cattoni, and Marco Turchi."
       }
      ]
     },
@@ -12527,11 +17895,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 6923–6933, Online, July 2020."
-      },
-      {
-       "id": "s-references-27-2",
-       "original": "Association for Computational Linguistics."
+       "original": "Gender in danger?"
       }
      ]
     },
@@ -12542,7 +17906,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "doi: 10.18653/v1/2020.acl-main.619."
+       "original": "evaluating speech translation technology on the MuST-SHE corpus."
       }
      ]
     },
@@ -12553,7 +17917,13 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "URL https://aclanthology.org/2020.acl-main.619."
+       "original": "In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, pages 6923–6933, Online, July 2020.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-29-2",
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
       }
      ]
     },
@@ -12564,15 +17934,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "Alexandre Berard, Olivier Pietquin, Christophe Servan, and Laurent Besacier."
-      },
-      {
-       "id": "s-references-30-2",
-       "original": "Listen and translate: A proof of concept for end-to-end speech-to-text translation."
-      },
-      {
-       "id": "s-references-30-3",
-       "original": "In NeurIPS Workshop on End-to-end Learning for Speech and Audio Processing., 2016."
+       "original": "doi: 10.18653/v1/2020.acl-main.619.",
+       "zh": "5"
       }
      ]
     },
@@ -12583,19 +17946,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "Alexandre Bérard, Laurent Besacier, Ali Can Kocabiyikoglu, and Olivier Pietquin."
-      },
-      {
-       "id": "s-references-31-2",
-       "original": "End-toend automatic speech translation of audiobooks."
-      },
-      {
-       "id": "s-references-31-3",
-       "original": "In 2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6224–6228."
-      },
-      {
-       "id": "s-references-31-4",
-       "original": "IEEE, 2018."
+       "original": "URL https://aclanthology.org/2020.acl-main.619.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -12606,7 +17958,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "Zalán Borsos, Raphaël Marinier, Damien Vincent, Eugene Kharitonov, Olivier Pietquin, Matt Sharifi, Dominik Roblek, Olivier Teboul, David Grangier, Marco Tagliasacchi, and Neil Zeghidour."
+       "original": "Alexandre Berard, Olivier Pietquin, Christophe Servan, and Laurent Besacier."
+      },
+      {
+       "id": "s-references-32-2",
+       "original": "Listen and translate: A proof of concept for end-to-end speech-to-text translation."
+      },
+      {
+       "id": "s-references-32-3",
+       "original": "In NeurIPS Workshop on End-to-end Learning for Speech and Audio Processing., 2016.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -12617,11 +17978,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "Audiolm: A language modeling approach to audio generation."
+       "original": "Alexandre Bérard, Laurent Besacier, Ali Can Kocabiyikoglu, and Olivier Pietquin."
       },
       {
        "id": "s-references-33-2",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 31:2523–2533, 2023. doi: 10.1109/TASLP.2023.3288409."
+       "original": "End-toend automatic speech translation of audiobooks."
+      },
+      {
+       "id": "s-references-33-3",
+       "original": "In 2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6224–6228.",
+       "zh": "24"
+      },
+      {
+       "id": "s-references-33-4",
+       "original": "IEEE, 2018.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -12632,19 +18003,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "Weicheng Cai, Danwei Cai, Shen Huang, and Ming Li."
-      },
-      {
-       "id": "s-references-34-2",
-       "original": "Utterance-level end-to-end language identification using attention-based cnn-blstm."
-      },
-      {
-       "id": "s-references-34-3",
-       "original": "In ICASSP 2019-2019 IEEE international conference on acoustics, speech and signal processing (ICASSP), pages 5991–5995."
-      },
-      {
-       "id": "s-references-34-4",
-       "original": "IEEE, 2019."
+       "original": "Zalán Borsos, Raphaël Marinier, Damien Vincent, Eugene Kharitonov, Olivier Pietquin, Matt Sharifi, Dominik Roblek, Olivier Teboul, David Grangier, Marco Tagliasacchi, and Neil Zeghidour."
       }
      ]
     },
@@ -12655,15 +18014,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-35-1",
-       "original": "Rich Caruana."
+       "original": "Audiolm: A language modeling approach to audio generation."
       },
       {
        "id": "s-references-35-2",
-       "original": "Multitask learning."
-      },
-      {
-       "id": "s-references-35-3",
-       "original": "Machine learning, 28:41–75, 1997."
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 31:2523–2533, 2023. doi: 10.1109/TASLP.2023.3288409.",
+       "zh": "5"
       }
      ]
     },
@@ -12674,21 +18030,29 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "Edresson Casanova, Julian Weber, Christopher D Shulby, Arnaldo Candido Junior, Eren Gölge, and Moacir A Ponti."
+       "original": "Weicheng Cai, Danwei Cai, Shen Huang, and Ming Li."
       },
       {
        "id": "s-references-36-2",
-       "original": "Yourtts: Towards zero-shot multi-speaker tts and zero-shot voice conversion for everyone."
+       "original": "Utterance-level end-to-end language identification using attention-based cnn-blstm."
       },
       {
        "id": "s-references-36-3",
-       "original": "In International Conference on Machine Learning, pages 2709–2720."
+       "original": "In ICASSP 2019-2019 IEEE international conference on acoustics, speech and signal processing (ICASSP), pages 5991–5995.",
+       "zh": "5"
       },
       {
        "id": "s-references-36-4",
-       "original": "PMLR, 2022."
+       "original": "IEEE,",
+       "zh": "2."
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 87,
+     "original": "2019."
     },
     {
      "id": "p-references-37",
@@ -12697,15 +18061,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "William Chan, Navdeep Jaitly, Quoc Le, and Oriol Vinyals."
+       "original": "Rich Caruana."
       },
       {
        "id": "s-references-37-2",
-       "original": "Listen, attend and spell: A neural network for large vocabulary conversational speech recognition."
+       "original": "Multitask learning."
       },
       {
        "id": "s-references-37-3",
-       "original": "In 2016 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 4960–4964, 2016. doi: 10.1109/ICASSP.2016.7472621."
+       "original": "Machine learning, 28:41–75, 1997.",
+       "zh": "5"
       }
      ]
     },
@@ -12716,11 +18081,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "Mingda Chen, Paul-Ambroise Duquenne, Pierre Andrews, Justine Kao, Alexandre Mourachko, Holger Schwenk, and Marta R."
+       "original": "Edresson Casanova, Julian Weber, Christopher D Shulby, Arnaldo Candido Junior, Eren Gölge, and Moacir A Ponti."
       },
       {
        "id": "s-references-38-2",
-       "original": "Costa-jussà."
+       "original": "Yourtts: Towards zero-shot multi-speaker tts and zero-shot voice conversion for everyone."
+      },
+      {
+       "id": "s-references-38-3",
+       "original": "In International Conference on Machine Learning, pages 2709–2720.",
+       "zh": "（页码行：2。）"
+      },
+      {
+       "id": "s-references-38-4",
+       "original": "PMLR, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -12731,19 +18106,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "BLASER: A text-free speech-to-speech translation evaluation metric."
+       "original": "William Chan, Navdeep Jaitly, Quoc Le, and Oriol Vinyals."
       },
       {
        "id": "s-references-39-2",
-       "original": "In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9064–9079, Toronto, Canada, July 2023a."
+       "original": "Listen, attend and spell: A neural network for large vocabulary conversational speech recognition."
       },
       {
        "id": "s-references-39-3",
-       "original": "Association for Computational Linguistics."
-      },
-      {
-       "id": "s-references-39-4",
-       "original": "URL https://aclanthology.org/ 2023.acl-long.504."
+       "original": "In 2016 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 4960–4964, 2016. doi: 10.1109/ICASSP.2016.7472621.",
+       "zh": "1."
       }
      ]
     },
@@ -12754,37 +18126,55 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-40-1",
-       "original": "87 Mingda Chen, Kevin Heffernan, Onur Çelebi, Alexandre Mourachko, and Holger Schwenk."
+       "original": "Mingda Chen, Paul-Ambroise Duquenne, Pierre Andrews, Justine Kao, Alexandre Mourachko, Holger Schwenk, and Marta R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-40-2",
+       "original": "Costa-jussà."
       }
      ]
     },
     {
      "id": "p-references-41",
      "type": "paragraph",
-     "page": 88,
+     "page": 87,
      "sentences": [
       {
        "id": "s-references-41-1",
-       "original": "xSIM++: An improved proxy to bitext mining performance for low-resource languages."
+       "original": "BLASER: A text-free speech-to-speech translation evaluation metric."
       },
       {
        "id": "s-references-41-2",
-       "original": "In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 101–109, Toronto, Canada, July 2023b."
+       "original": "In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 9064–9079, Toronto, Canada, July 2023a.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-41-3",
-       "original": "Association for Computational Linguistics."
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-41-4",
+       "original": "URL https://aclanthology.org/ 2023.acl-long.504.",
+       "zh": "5"
       }
      ]
     },
     {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 87,
+     "original": "87"
+    },
+    {
      "id": "p-references-42",
      "type": "paragraph",
-     "page": 88,
+     "page": 87,
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "doi: 10.18653/v1/2023.acl-short.10."
+       "original": "Mingda Chen, Kevin Heffernan, Onur Çelebi, Alexandre Mourachko, and Holger Schwenk."
       }
      ]
     },
@@ -12795,7 +18185,17 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-43-1",
-       "original": "URL https://aclanthology.org/2023.acl-short.10."
+       "original": "xSIM++: An improved proxy to bitext mining performance for low-resource languages."
+      },
+      {
+       "id": "s-references-43-2",
+       "original": "In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 101–109, Toronto, Canada, July 2023b.",
+       "zh": "109"
+      },
+      {
+       "id": "s-references-43-3",
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
       }
      ]
     },
@@ -12806,23 +18206,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-44-1",
-       "original": "Peng-Jen Chen, Kevin Tran, Yilin Yang, Jingfei Du, Justine Kao, Yu-An Chung, Paden Tomasello, Paul-Ambroise Duquenne, Holger Schwenk, Hongyu Gong, Hirofumi Inaguma, Sravya Popuri, Changhan Wang, Juan Pino, Wei-Ning Hsu, and Ann Lee."
-      },
-      {
-       "id": "s-references-44-2",
-       "original": "Speech-tospeech translation for a real-world unwritten language."
-      },
-      {
-       "id": "s-references-44-3",
-       "original": "In Findings of the Association for Computational Linguistics: ACL 2023, pages 4969–4983, Toronto, Canada, July 2023c."
-      },
-      {
-       "id": "s-references-44-4",
-       "original": "Association for Computational Linguistics."
-      },
-      {
-       "id": "s-references-44-5",
-       "original": "URL https://aclanthology.org/ 2023.findings-acl.307."
+       "original": "doi: 10.18653/v1/2023.acl-short.10.",
+       "zh": "5"
       }
      ]
     },
@@ -12833,19 +18218,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-45-1",
-       "original": "Yen-Chun Chen, Linjie Li, Licheng Yu, Ahmed El Kholy, Faisal Ahmed, Zhe Gan, Yu Cheng, and Jingjing Liu."
-      },
-      {
-       "id": "s-references-45-2",
-       "original": "Uniter: Universal image-text representation learning."
-      },
-      {
-       "id": "s-references-45-3",
-       "original": "In European conference on computer vision, pages 104–120."
-      },
-      {
-       "id": "s-references-45-4",
-       "original": "Springer, 2020."
+       "original": "URL https://aclanthology.org/2023.acl-short.10.",
+       "zh": "3."
       }
      ]
     },
@@ -12856,23 +18230,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-46-1",
-       "original": "Zhehuai Chen, Yu Zhang, Andrew Rosenberg, Bhuvana Ramabhadran, Pedro J."
+       "original": "Peng-Jen Chen, Kevin Tran, Yilin Yang, Jingfei Du, Justine Kao, Yu-An Chung, Paden Tomasello, Paul-Ambroise Duquenne, Holger Schwenk, Hongyu Gong, Hirofumi Inaguma, Sravya Popuri, Changhan Wang, Juan Pino, Wei-Ning Hsu, and Ann Lee."
       },
       {
        "id": "s-references-46-2",
-       "original": "Moreno, Ankur Bapna, and Heiga Zen."
+       "original": "Speech-tospeech translation for a real-world unwritten language."
       },
       {
        "id": "s-references-46-3",
-       "original": "Maestro: Matched speech text representations through modality matching."
+       "original": "In Findings of the Association for Computational Linguistics: ACL 2023, pages 4969–4983, Toronto, Canada, July 2023c.",
+       "zh": "83"
       },
       {
        "id": "s-references-46-4",
-       "original": "In Interspeech, 2022."
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
       },
       {
        "id": "s-references-46-5",
-       "original": "URL https://api.semanticscholar.org/ CorpusID:248006130."
+       "original": "URL https://aclanthology.org/ 2023.findings-acl.307.",
+       "zh": "3."
       }
      ]
     },
@@ -12883,23 +18260,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-47-1",
-       "original": "Yong Cheng, Yu Zhang, Melvin Johnson, Wolfgang Macherey, and Ankur Bapna."
+       "original": "Yen-Chun Chen, Linjie Li, Licheng Yu, Ahmed El Kholy, Faisal Ahmed, Zhe Gan, Yu Cheng, and Jingjing Liu."
       },
       {
        "id": "s-references-47-2",
-       "original": "Mu2SLAM: Multitask, multilingual speech and language models."
+       "original": "Uniter: Universal image-text representation learning."
       },
       {
        "id": "s-references-47-3",
-       "original": "In Andreas Krause, Emma Brunskill, Kyunghyun Cho, Barbara Engelhardt, Sivan Sabato, and Jonathan Scarlett, editors, Proceedings of the 40th International Conference on Machine Learning, volume 202 of Proceedings of Machine Learning Research, pages 5504–5520."
+       "original": "In European conference on computer vision, pages 104–120.",
+       "zh": "12"
       },
       {
        "id": "s-references-47-4",
-       "original": "PMLR, 23–29 Jul 2023."
-      },
-      {
-       "id": "s-references-47-5",
-       "original": "URL https://proceedings.mlr.press/v202/cheng23e.html."
+       "original": "Springer, 2020.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -12910,15 +18285,25 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-48-1",
-       "original": "Yuh-show Cheng, Elaine K Horwitz, and Diane L Schallert."
+       "original": "Zhehuai Chen, Yu Zhang, Andrew Rosenberg, Bhuvana Ramabhadran, Pedro J."
       },
       {
        "id": "s-references-48-2",
-       "original": "Language anxiety: Differentiating writing and speaking components."
+       "original": "Moreno, Ankur Bapna, and Heiga Zen."
       },
       {
        "id": "s-references-48-3",
-       "original": "Language learning, 49(3):417–446, 1999."
+       "original": "Maestro: Matched speech text representations through modality matching."
+      },
+      {
+       "id": "s-references-48-4",
+       "original": "In Interspeech, 2022.",
+       "zh": "2."
+      },
+      {
+       "id": "s-references-48-5",
+       "original": "URL https://api.semanticscholar.org/ CorpusID:248006130.",
+       "zh": "24"
       }
      ]
     },
@@ -12929,19 +18314,27 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-49-1",
-       "original": "Chung-Cheng Chiu, James Qin, Yu Zhang, Jiahui Yu, and Yonghui Wu."
+       "original": "Yong Cheng, Yu Zhang, Melvin Johnson, Wolfgang Macherey, and Ankur Bapna."
       },
       {
        "id": "s-references-49-2",
-       "original": "Self-supervised learning with random-projection quantizer for speech recognition."
+       "original": "Mu2SLAM: Multitask, multilingual speech and language models.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-49-3",
-       "original": "In International Conference on Machine Learning, pages 3915–3924."
+       "original": "In Andreas Krause, Emma Brunskill, Kyunghyun Cho, Barbara Engelhardt, Sivan Sabato, and Jonathan Scarlett, editors, Proceedings of the 40th International Conference on Machine Learning, volume 202 of Proceedings of Machine Learning Research, pages 5504–5520.",
+       "zh": "5"
       },
       {
        "id": "s-references-49-4",
-       "original": "PMLR, 2022."
+       "original": "PMLR, 23–29 Jul 2023.",
+       "zh": "3."
+      },
+      {
+       "id": "s-references-49-5",
+       "original": "URL https://proceedings.mlr.press/v202/cheng23e.html.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -12952,11 +18345,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-50-1",
-       "original": "Prafulla Kumar Choubey, Anna Currey, Prashant Mathur, and Georgiana Dinu."
+       "original": "Yuh-show Cheng, Elaine K Horwitz, and Diane L Schallert."
       },
       {
        "id": "s-references-50-2",
-       "original": "GFST: Gender-filtered self-training for more accurate gender in translation."
+       "original": "Language anxiety: Differentiating writing and speaking components."
+      },
+      {
+       "id": "s-references-50-3",
+       "original": "Language learning, 49(3):417–446, 1999.",
+       "zh": "49"
       }
      ]
     },
@@ -12967,15 +18365,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-51-1",
-       "original": "In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 1640–1654, Online and Punta Cana, Dominican Republic, November 2021."
+       "original": "Chung-Cheng Chiu, James Qin, Yu Zhang, Jiahui Yu, and Yonghui Wu."
       },
       {
        "id": "s-references-51-2",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.emnlp-main.123."
+       "original": "Self-supervised learning with random-projection quantizer for speech recognition."
       },
       {
        "id": "s-references-51-3",
-       "original": "URL https: //aclanthology.org/2021.emnlp-main.123."
+       "original": "In International Conference on Machine Learning, pages 3915–3924.",
+       "zh": "24"
+      },
+      {
+       "id": "s-references-51-4",
+       "original": "PMLR, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -12986,94 +18390,76 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-52-1",
-       "original": "Yu-An Chung, Yu Zhang, Wei Han, Chung-Cheng Chiu, James Qin, Ruoming Pang, and Yonghui Wu. w2v-bert: Combining contrastive learning and masked language modeling for self-supervised speech pre-training."
+       "original": "Prafulla Kumar Choubey, Anna Currey, Prashant Mathur, and Georgiana Dinu."
       },
       {
        "id": "s-references-52-2",
-       "original": "In 2021 IEEE Automatic Speech Recognition and 88 Understanding Workshop (ASRU), pages 244–250, 2021. doi: 10.1109/ASRU51503.2021."
+       "original": "GFST: Gender-filtered self-training for more accurate gender in translation."
       }
      ]
     },
     {
      "id": "p-references-53",
      "type": "paragraph",
-     "page": 89,
+     "page": 88,
      "sentences": [
       {
        "id": "s-references-53-1",
-       "original": "9688253."
+       "original": "In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, pages 1640–1654, Online and Punta Cana, Dominican Republic, November 2021.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-53-2",
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.emnlp-main.123.",
+       "zh": "12"
+      },
+      {
+       "id": "s-references-53-3",
+       "original": "URL https: //aclanthology.org/2021.emnlp-main.123.",
+       "zh": "12"
       }
      ]
     },
     {
      "id": "p-references-54",
      "type": "paragraph",
-     "page": 89,
+     "page": 88,
      "sentences": [
       {
        "id": "s-references-54-1",
-       "original": "Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera, and Ankur Bapna."
+       "original": "Yu-An Chung, Yu Zhang, Wei Han, Chung-Cheng Chiu, James Qin, Ruoming Pang, and Yonghui Wu. w2v-bert: Combining contrastive learning and masked language modeling for self-supervised speech pre-training.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-54-2",
-       "original": "Fleurs: Few-shot learning evaluation of universal representations of speech. arXiv preprint arXiv:2205.12446, 2022."
-      },
-      {
-       "id": "s-references-54-3",
-       "original": "URL https://arxiv.org/abs/2205.12446."
+       "original": "In 2021 IEEE Automatic Speech Recognition and",
+       "zh": "（页码行：2。）"
       }
      ]
     },
     {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 88,
+     "original": "88"
+    },
+    {
      "id": "p-references-55",
      "type": "paragraph",
-     "page": 89,
+     "page": 88,
      "sentences": [
       {
        "id": "s-references-55-1",
-       "original": "Marta Costa-jussà, Christine Basta, Oriol Domingo, and André Rubungo."
-      },
-      {
-       "id": "s-references-55-2",
-       "original": "Occgen: Selection of real-world multilingual parallel data balanced in gender within occupations."
-      },
-      {
-       "id": "s-references-55-3",
-       "original": "In S."
-      },
-      {
-       "id": "s-references-55-4",
-       "original": "Koyejo, S."
-      },
-      {
-       "id": "s-references-55-5",
-       "original": "Mohamed, A."
-      },
-      {
-       "id": "s-references-55-6",
-       "original": "Agarwal, D."
-      },
-      {
-       "id": "s-references-55-7",
-       "original": "Belgrave, K."
-      },
-      {
-       "id": "s-references-55-8",
-       "original": "Cho, and A."
-      },
-      {
-       "id": "s-references-55-9",
-       "original": "Oh, editors, Advances in Neural Information Processing Systems, volume 35, pages 1445–1457."
-      },
-      {
-       "id": "s-references-55-10",
-       "original": "Curran Associates, Inc., 2022."
-      },
-      {
-       "id": "s-references-55-11",
-       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2022/ file/09933f07ae2ccbca7212bb4e43de8db0-Paper-Datasets_and_Benchmarks.pdf."
+       "original": "Understanding Workshop (ASRU), pages 244–250, 2021. doi: 10.1109/ASRU51503.2021.",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-8",
+     "type": "equation",
+     "page": 89,
+     "original": "9688253."
     },
     {
      "id": "p-references-56",
@@ -13082,31 +18468,17 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-56-1",
-       "original": "Marta R."
+       "original": "Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera, and Ankur Bapna."
       },
       {
        "id": "s-references-56-2",
-       "original": "Costa-jussà, Christine Basta, and Gerard I."
+       "original": "Fleurs: Few-shot learning evaluation of universal representations of speech. arXiv preprint arXiv:2205.12446, 2022.",
+       "zh": "12"
       },
       {
        "id": "s-references-56-3",
-       "original": "Gállego."
-      },
-      {
-       "id": "s-references-56-4",
-       "original": "Evaluating gender bias in speech translation."
-      },
-      {
-       "id": "s-references-56-5",
-       "original": "In Proceedings of the Thirteenth Language Resources and Evaluation Conference, pages 2141–2147, Marseille, France, June 2022."
-      },
-      {
-       "id": "s-references-56-6",
-       "original": "European Language Resources Association."
-      },
-      {
-       "id": "s-references-56-7",
-       "original": "URL https://aclanthology.org/2022.lrec-1.230."
+       "original": "URL https://arxiv.org/abs/2205.12446.",
+       "zh": "12"
       }
      ]
     },
@@ -13117,11 +18489,52 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-57-1",
-       "original": "Marta R Costa-jussà, Pierre Andrews, Eric Smith, Prangthip Hansanti, Christophe Ropers, Elahe Kalbassi, Cynthia Gao, Daniel Licht, and Carleigh Wood."
+       "original": "Marta Costa-jussà, Christine Basta, Oriol Domingo, and André Rubungo."
       },
       {
        "id": "s-references-57-2",
-       "original": "Multilingual holistic bias: Extending descriptors and patterns to unveil demographic biases in languages at scale."
+       "original": "Occgen: Selection of real-world multilingual parallel data balanced in gender within occupations."
+      },
+      {
+       "id": "s-references-57-3",
+       "original": "In S.",
+       "zh": "对 S2ST，我们考察两种级联方式：(1) ASR、T2TT、TTS 的 3 段级联；(2) S2TT、TTS 的 2 段级联。"
+      },
+      {
+       "id": "s-references-57-4",
+       "original": "Koyejo, S.",
+       "zh": "对 S2ST，我们考察两种级联方式：(1) ASR、T2TT、TTS 的 3 段级联；(2) S2TT、TTS 的 2 段级联。"
+      },
+      {
+       "id": "s-references-57-5",
+       "original": "Mohamed, A."
+      },
+      {
+       "id": "s-references-57-6",
+       "original": "Agarwal, D."
+      },
+      {
+       "id": "s-references-57-7",
+       "original": "Belgrave, K."
+      },
+      {
+       "id": "s-references-57-8",
+       "original": "Cho, and A."
+      },
+      {
+       "id": "s-references-57-9",
+       "original": "Oh, editors, Advances in Neural Information Processing Systems, volume 35, pages 1445–1457.",
+       "zh": "45"
+      },
+      {
+       "id": "s-references-57-10",
+       "original": "Curran Associates, Inc., 2022.",
+       "zh": "2."
+      },
+      {
+       "id": "s-references-57-11",
+       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2022/ file/09933f07ae2ccbca7212bb4e43de8db0-Paper-Datasets_and_Benchmarks.pdf.",
+       "zh": "12"
       }
      ]
     },
@@ -13132,7 +18545,34 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-58-1",
-       "original": "arXiv preprint arXiv:2305.13198, 2023."
+       "original": "Marta R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-58-2",
+       "original": "Costa-jussà, Christine Basta, and Gerard I."
+      },
+      {
+       "id": "s-references-58-3",
+       "original": "Gállego."
+      },
+      {
+       "id": "s-references-58-4",
+       "original": "Evaluating gender bias in speech translation."
+      },
+      {
+       "id": "s-references-58-5",
+       "original": "In Proceedings of the Thirteenth Language Resources and Evaluation Conference, pages 2141–2147, Marseille, France, June 2022.",
+       "zh": "2."
+      },
+      {
+       "id": "s-references-58-6",
+       "original": "European Language Resources Association."
+      },
+      {
+       "id": "s-references-58-7",
+       "original": "URL https://aclanthology.org/2022.lrec-1.230.",
+       "zh": "1."
       }
      ]
     },
@@ -13143,23 +18583,11 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-59-1",
-       "original": "Marta R."
+       "original": "Marta R Costa-jussà, Pierre Andrews, Eric Smith, Prangthip Hansanti, Christophe Ropers, Elahe Kalbassi, Cynthia Gao, Daniel Licht, and Carleigh Wood."
       },
       {
        "id": "s-references-59-2",
-       "original": "Costa-jussà, Carlos Escolano, Christine Basta, Javier Ferrando, Roser Batlle, and Ksenia Kharitonova."
-      },
-      {
-       "id": "s-references-59-3",
-       "original": "Interpreting gender bias in neural machine translation: Multilingual architecture matters."
-      },
-      {
-       "id": "s-references-59-4",
-       "original": "Proceedings of the AAAI Conference on Artificial Intelligence, 36 (11):11855–11863, Jun. 2022. doi: 10.1609/aaai.v36i11.21442."
-      },
-      {
-       "id": "s-references-59-5",
-       "original": "URL https://ojs.aaai."
+       "original": "Multilingual holistic bias: Extending descriptors and patterns to unveil demographic biases in languages at scale."
       }
      ]
     },
@@ -13170,7 +18598,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-60-1",
-       "original": "org/index.php/AAAI/article/view/21442."
+       "original": "arXiv preprint arXiv:2305.13198, 2023.",
+       "zh": "5"
       }
      ]
     },
@@ -13181,15 +18610,25 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-61-1",
-       "original": "Marta R."
+       "original": "Marta R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
       },
       {
        "id": "s-references-61-2",
-       "original": "Costa-jussà, Eric Smith, Christophe Ropers, Daniel Licht, Jean Maillard, Javier Ferrando, and Carlos Escolano."
+       "original": "Costa-jussà, Carlos Escolano, Christine Basta, Javier Ferrando, Roser Batlle, and Ksenia Kharitonova."
       },
       {
        "id": "s-references-61-3",
-       "original": "Toxicity in multilingual machine translation at scale, 2023."
+       "original": "Interpreting gender bias in neural machine translation: Multilingual architecture matters."
+      },
+      {
+       "id": "s-references-61-4",
+       "original": "Proceedings of the AAAI Conference on Artificial Intelligence, 36 (11):11855–11863, Jun. 2022. doi: 10.1609/aaai.v36i11.21442.",
+       "zh": "63"
+      },
+      {
+       "id": "s-references-61-5",
+       "original": "URL https://ojs.aaai."
       }
      ]
     },
@@ -13200,19 +18639,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-62-1",
-       "original": "M.R."
-      },
-      {
-       "id": "s-references-62-2",
-       "original": "Costa-jussà."
-      },
-      {
-       "id": "s-references-62-3",
-       "original": "An analysis of gender bias studies in natural language processing."
-      },
-      {
-       "id": "s-references-62-4",
-       "original": "Nature Machine Intelligence, pages 495—-496, 2019. doi: 10.1038/s42256-019-0105-5."
+       "original": "org/index.php/AAAI/article/view/21442.",
+       "zh": "2."
       }
      ]
     },
@@ -13223,19 +18651,17 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-63-1",
-       "original": "Siddharth Dalmia, Brian Yan, Vikas Raunak, Florian Metze, and Shinji Watanabe."
+       "original": "Marta R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
       },
       {
        "id": "s-references-63-2",
-       "original": "Searchable hidden intermediates for end-to-end models of decomposable sequence tasks."
+       "original": "Costa-jussà, Eric Smith, Christophe Ropers, Daniel Licht, Jean Maillard, Javier Ferrando, and Carlos Escolano."
       },
       {
        "id": "s-references-63-3",
-       "original": "In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 1882–1896, Online, June 2021."
-      },
-      {
-       "id": "s-references-63-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.naacl-main.151."
+       "original": "Toxicity in multilingual machine translation at scale, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -13246,7 +18672,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-64-1",
-       "original": "URL https://aclanthology.org/2021.naacl-main.151."
+       "original": "M.R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-64-2",
+       "original": "Costa-jussà."
+      },
+      {
+       "id": "s-references-64-3",
+       "original": "An analysis of gender bias studies in natural language processing."
+      },
+      {
+       "id": "s-references-64-4",
+       "original": "Nature Machine Intelligence, pages 495—-496, 2019. doi: 10.1038/s42256-019-0105-5.",
+       "zh": "5"
       }
      ]
     },
@@ -13257,19 +18697,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-65-1",
-       "original": "Alexandre D’efossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
+       "original": "Siddharth Dalmia, Brian Yan, Vikas Raunak, Florian Metze, and Shinji Watanabe."
       },
       {
        "id": "s-references-65-2",
-       "original": "High fidelity neural audio compression."
+       "original": "Searchable hidden intermediates for end-to-end models of decomposable sequence tasks."
       },
       {
        "id": "s-references-65-3",
-       "original": "ArXiv, abs/2210.13438, 2022."
+       "original": "In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 1882–1896, Online, June 2021.",
+       "zh": "1."
       },
       {
        "id": "s-references-65-4",
-       "original": "URL https://api.semanticscholar."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.naacl-main.151.",
+       "zh": "5"
       }
      ]
     },
@@ -13280,7 +18722,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-66-1",
-       "original": "org/CorpusID:253097788."
+       "original": "URL https://aclanthology.org/2021.naacl-main.151.",
+       "zh": "5"
       }
      ]
     },
@@ -13291,53 +18734,59 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-67-1",
-       "original": "89 Najim Dehak, Pedro A Torres-Carrasquillo, Douglas Reynolds, and Reda Dehak."
+       "original": "Alexandre D’efossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
       },
       {
        "id": "s-references-67-2",
-       "original": "Language recognition via i-vectors and dimensionality reduction."
+       "original": "High fidelity neural audio compression."
       },
       {
        "id": "s-references-67-3",
-       "original": "In Twelfth annual conference of the international speech communication association, 2011."
+       "original": "ArXiv, abs/2210.13438, 2022.",
+       "zh": "2."
+      },
+      {
+       "id": "s-references-67-4",
+       "original": "URL https://api.semanticscholar.",
+       "zh": "24"
       }
      ]
     },
     {
      "id": "p-references-68",
      "type": "paragraph",
-     "page": 90,
+     "page": 89,
      "sentences": [
       {
        "id": "s-references-68-1",
-       "original": "Brecht Desplanques, Jenthe Thienpondt, and Kris Demuynck."
-      },
-      {
-       "id": "s-references-68-2",
-       "original": "ECAPA-TDNN: emphasized channel attention, propagation and aggregation in TDNN based speaker verification."
-      },
-      {
-       "id": "s-references-68-3",
-       "original": "In Helen Meng, Bo Xu, and Thomas Fang Zheng, editors, Interspeech 2020, 21st Annual Conference of the International Speech Communication Association, Virtual Event, Shanghai, China, 25-29 October 2020, pages 3830–3834."
-      },
-      {
-       "id": "s-references-68-4",
-       "original": "ISCA, 2020. doi: 10.21437/Interspeech."
+       "original": "org/CorpusID:253097788.",
+       "zh": "5"
       }
      ]
     },
     {
+     "id": "eq-references-9",
+     "type": "equation",
+     "page": 89,
+     "original": "89"
+    },
+    {
      "id": "p-references-69",
      "type": "paragraph",
-     "page": 90,
+     "page": 89,
      "sentences": [
       {
        "id": "s-references-69-1",
-       "original": "2020-2650."
+       "original": "Najim Dehak, Pedro A Torres-Carrasquillo, Douglas Reynolds, and Reda Dehak."
       },
       {
        "id": "s-references-69-2",
-       "original": "URL https://doi.org/10.21437/Interspeech.2020-2650."
+       "original": "Language recognition via i-vectors and dimensionality reduction."
+      },
+      {
+       "id": "s-references-69-3",
+       "original": "In Twelfth annual conference of the international speech communication association, 2011.",
+       "zh": "1."
       }
      ]
     },
@@ -13348,11 +18797,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-70-1",
-       "original": "Pranav Dheram, Murugesan Ramakrishnan, Anirudh Raju, I-Fan Chen, Brian King, Katherine Powell, Melissa Saboowala, Karan Shetty, and Andreas Stolcke."
+       "original": "Brecht Desplanques, Jenthe Thienpondt, and Kris Demuynck."
       },
       {
        "id": "s-references-70-2",
-       "original": "Toward fairness in speech recognition: Discovery and mitigation of performance disparities. arXiv preprint arXiv:2207.11345, 2022."
+       "original": "ECAPA-TDNN: emphasized channel attention, propagation and aggregation in TDNN based speaker verification."
+      },
+      {
+       "id": "s-references-70-3",
+       "original": "In Helen Meng, Bo Xu, and Thomas Fang Zheng, editors, Interspeech 2020, 21st Annual Conference of the International Speech Communication Association, Virtual Event, Shanghai, China, 25-29 October 2020, pages 3830–3834.",
+       "zh": "83"
+      },
+      {
+       "id": "s-references-70-4",
+       "original": "ISCA, 2020. doi: 10.21437/Interspeech.",
+       "zh": "21"
       }
      ]
     },
@@ -13363,11 +18822,13 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-71-1",
-       "original": "Mattia A."
+       "original": "2020-2650.",
+       "zh": "5"
       },
       {
        "id": "s-references-71-2",
-       "original": "Di Gangi, Roldano Cattoni, Luisa Bentivogli, Matteo Negri, and Marco Turchi."
+       "original": "URL https://doi.org/10.21437/Interspeech.2020-2650.",
+       "zh": "5"
       }
      ]
     },
@@ -13378,19 +18839,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-72-1",
-       "original": "MuST-C: a Multilingual Speech Translation Corpus."
+       "original": "Pranav Dheram, Murugesan Ramakrishnan, Anirudh Raju, I-Fan Chen, Brian King, Katherine Powell, Melissa Saboowala, Karan Shetty, and Andreas Stolcke."
       },
       {
        "id": "s-references-72-2",
-       "original": "In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 2012–2017, Minneapolis, Minnesota, June 2019."
-      },
-      {
-       "id": "s-references-72-3",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/ N19-1202."
-      },
-      {
-       "id": "s-references-72-4",
-       "original": "URL https://aclanthology.org/N19-1202."
+       "original": "Toward fairness in speech recognition: Discovery and mitigation of performance disparities. arXiv preprint arXiv:2207.11345, 2022.",
+       "zh": "45"
       }
      ]
     },
@@ -13401,7 +18855,11 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-73-1",
-       "original": "Paul-Ambroise Duquenne, Hongyu Gong, and Holger Schwenk."
+       "original": "Mattia A."
+      },
+      {
+       "id": "s-references-73-2",
+       "original": "Di Gangi, Roldano Cattoni, Luisa Bentivogli, Matteo Negri, and Marco Turchi."
       }
      ]
     },
@@ -13412,7 +18870,22 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-74-1",
-       "original": "Multimodal and multilingual embeddings for large-scale speech mining."
+       "original": "MuST-C: a Multilingual Speech Translation Corpus."
+      },
+      {
+       "id": "s-references-74-2",
+       "original": "In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), pages 2012–2017, Minneapolis, Minnesota, June 2019.",
+       "zh": "12"
+      },
+      {
+       "id": "s-references-74-3",
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/ N19-1202.",
+       "zh": "12"
+      },
+      {
+       "id": "s-references-74-4",
+       "original": "URL https://aclanthology.org/N19-1202.",
+       "zh": "12"
       }
      ]
     },
@@ -13423,31 +18896,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-75-1",
-       "original": "In M."
-      },
-      {
-       "id": "s-references-75-2",
-       "original": "Ranzato, A."
-      },
-      {
-       "id": "s-references-75-3",
-       "original": "Beygelzimer, Y."
-      },
-      {
-       "id": "s-references-75-4",
-       "original": "Dauphin, P.S."
-      },
-      {
-       "id": "s-references-75-5",
-       "original": "Liang, and J."
-      },
-      {
-       "id": "s-references-75-6",
-       "original": "Wortman Vaughan, editors, Advances in Neural Information Processing Systems, volume 34, pages 15748–15761."
-      },
-      {
-       "id": "s-references-75-7",
-       "original": "Curran Associates, Inc., 2021."
+       "original": "Paul-Ambroise Duquenne, Hongyu Gong, and Holger Schwenk."
       }
      ]
     },
@@ -13458,7 +18907,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-76-1",
-       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2021/file/ 8466f9ace6a9acbe71f75762ffc890f1-Paper.pdf."
+       "original": "Multimodal and multilingual embeddings for large-scale speech mining."
       }
      ]
     },
@@ -13469,23 +18918,34 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-77-1",
-       "original": "Paul-Ambroise Duquenne, Hongyu Gong, Benoît Sagot, and Holger Schwenk."
+       "original": "In M."
       },
       {
        "id": "s-references-77-2",
-       "original": "T-modules: Translation modules for zero-shot cross-modal machine translation."
+       "original": "Ranzato, A."
       },
       {
        "id": "s-references-77-3",
-       "original": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 5794– 5806, Abu Dhabi, United Arab Emirates, December 2022."
+       "original": "Beygelzimer, Y."
       },
       {
        "id": "s-references-77-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2022.emnlp-main.391."
+       "original": "Dauphin, P.S.",
+       "zh": "对 S2ST，我们考察两种级联方式：(1) ASR、T2TT、TTS 的 3 段级联；(2) S2TT、TTS 的 2 段级联。"
       },
       {
        "id": "s-references-77-5",
-       "original": "URL https://aclanthology.org/ 2022.emnlp-main.391."
+       "original": "Liang, and J."
+      },
+      {
+       "id": "s-references-77-6",
+       "original": "Wortman Vaughan, editors, Advances in Neural Information Processing Systems, volume 34, pages 15748–15761.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-77-7",
+       "original": "Curran Associates, Inc., 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -13496,19 +18956,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-78-1",
-       "original": "Paul-Ambroise Duquenne, Hongyu Gong, Ning Dong, Jingfei Du, Ann Lee, Vedanuj Goswami, Changhan Wang, Juan Pino, Benoît Sagot, and Holger Schwenk."
-      },
-      {
-       "id": "s-references-78-2",
-       "original": "SpeechMatrix: A largescale mined corpus of multilingual speech-to-speech translations."
-      },
-      {
-       "id": "s-references-78-3",
-       "original": "In ACL (long paper), pages 16251–16269, 2023a."
-      },
-      {
-       "id": "s-references-78-4",
-       "original": "URL https://aclanthology.org/2023.acl-long.899."
+       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2021/file/ 8466f9ace6a9acbe71f75762ffc890f1-Paper.pdf.",
+       "zh": "5"
       }
      ]
     },
@@ -13519,7 +18968,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-79-1",
-       "original": "Paul-Ambroise Duquenne, Holger Schwenk, and Benoit Sagot."
+       "original": "Paul-Ambroise Duquenne, Hongyu Gong, Benoît Sagot, and Holger Schwenk."
+      },
+      {
+       "id": "s-references-79-2",
+       "original": "T-modules: Translation modules for zero-shot cross-modal machine translation."
+      },
+      {
+       "id": "s-references-79-3",
+       "original": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 5794– 5806, Abu Dhabi, United Arab Emirates, December 2022.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-79-4",
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2022.emnlp-main.391.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-79-5",
+       "original": "URL https://aclanthology.org/ 2022.emnlp-main.391.",
+       "zh": "1."
       }
      ]
     },
@@ -13530,11 +18998,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-80-1",
-       "original": "SONAR: sentence-level multimodal and language-agnostic representations, 2023b."
+       "original": "Paul-Ambroise Duquenne, Hongyu Gong, Ning Dong, Jingfei Du, Ann Lee, Vedanuj Goswami, Changhan Wang, Juan Pino, Benoît Sagot, and Holger Schwenk."
       },
       {
        "id": "s-references-80-2",
-       "original": "URL https://arxiv.org/abs/ 2308.11466."
+       "original": "SpeechMatrix: A largescale mined corpus of multilingual speech-to-speech translations."
+      },
+      {
+       "id": "s-references-80-3",
+       "original": "In ACL (long paper), pages 16251–16269, 2023a.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-80-4",
+       "original": "URL https://aclanthology.org/2023.acl-long.899.",
+       "zh": "3."
       }
      ]
     },
@@ -13545,7 +19023,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-81-1",
-       "original": "Paul-Ambroise Duquenne, Holger Schwenk, and Benoît Sagot."
+       "original": "Paul-Ambroise Duquenne, Holger Schwenk, and Benoit Sagot."
       }
      ]
     },
@@ -13556,13 +19034,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-82-1",
-       "original": "Modular speech-to-text translation for zero-shot cross-modal transfer."
+       "original": "SONAR: sentence-level multimodal and language-agnostic representations, 2023b.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-82-2",
-       "original": "In Interspeech, 2023c."
+       "original": "URL https://arxiv.org/abs/",
+       "zh": "5"
       }
      ]
+    },
+    {
+     "id": "eq-references-10",
+     "type": "equation",
+     "page": 90,
+     "original": "2308.11466."
     },
     {
      "id": "p-references-83",
@@ -13571,57 +19057,49 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-83-1",
-       "original": "90 Peter Elbow."
-      },
-      {
-       "id": "s-references-83-2",
-       "original": "The shifting relationships between speech and writing."
-      },
-      {
-       "id": "s-references-83-3",
-       "original": "College composition and communication, 36(3):283–303, 1985."
+       "original": "Paul-Ambroise Duquenne, Holger Schwenk, and Benoît Sagot."
       }
      ]
     },
     {
      "id": "p-references-84",
      "type": "paragraph",
-     "page": 91,
+     "page": 90,
      "sentences": [
       {
        "id": "s-references-84-1",
-       "original": "Angela Fan, Shruti Bhosale, Holger Schwenk, Zhiyi Ma, Ahmed El-Kishky, Siddharth Goyal, Mandeep Baines, Onur Celebi, Guillaume Wenzek, Vishrav Chaudhary, Naman Goyal, Tom Birch, Vitaliy Liptchinsky, Sergey Edunov, Edouard Grave, Michael Auli, and Armand Joulin."
+       "original": "Modular speech-to-text translation for zero-shot cross-modal transfer."
       },
       {
        "id": "s-references-84-2",
-       "original": "Beyond english-centric multilingual machine translation."
-      },
-      {
-       "id": "s-references-84-3",
-       "original": "The Journal of Machine Learning Research, 2020."
+       "original": "In Interspeech, 2023c.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
     {
+     "id": "eq-references-11",
+     "type": "equation",
+     "page": 90,
+     "original": "90"
+    },
+    {
      "id": "p-references-85",
      "type": "paragraph",
-     "page": 91,
+     "page": 90,
      "sentences": [
       {
        "id": "s-references-85-1",
-       "original": "Fangxiaoyu Feng, Yinfei Yang, Daniel Cer, Naveen Arivazhagan, and Wei Wang."
+       "original": "Peter Elbow."
       },
       {
        "id": "s-references-85-2",
-       "original": "Languageagnostic BERT sentence embedding."
+       "original": "The shifting relationships between speech and writing."
       },
       {
        "id": "s-references-85-3",
-       "original": "In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 878–891, Dublin, Ireland, May 2022."
-      },
-      {
-       "id": "s-references-85-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2022."
+       "original": "College composition and communication, 36(3):283–303, 1985.",
+       "zh": "83"
       }
      ]
     },
@@ -13632,11 +19110,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-86-1",
-       "original": "acl-long.62."
+       "original": "Angela Fan, Shruti Bhosale, Holger Schwenk, Zhiyi Ma, Ahmed El-Kishky, Siddharth Goyal, Mandeep Baines, Onur Celebi, Guillaume Wenzek, Vishrav Chaudhary, Naman Goyal, Tom Birch, Vitaliy Liptchinsky, Sergey Edunov, Edouard Grave, Michael Auli, and Armand Joulin."
       },
       {
        "id": "s-references-86-2",
-       "original": "URL https://aclanthology.org/2022.acl-long.62."
+       "original": "Beyond english-centric multilingual machine translation."
+      },
+      {
+       "id": "s-references-86-3",
+       "original": "The Journal of Machine Learning Research, 2020.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -13647,15 +19130,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-87-1",
-       "original": "Sarith Fernando, Vidhyasaharan Sethu, Eliathamby Ambikairajah, and Julien Epps."
+       "original": "Fangxiaoyu Feng, Yinfei Yang, Daniel Cer, Naveen Arivazhagan, and Wei Wang."
       },
       {
        "id": "s-references-87-2",
-       "original": "Bidirectional modelling for short duration language identification."
+       "original": "Languageagnostic BERT sentence embedding."
       },
       {
        "id": "s-references-87-3",
-       "original": "In Interspeech, pages 2809–2813, 2017."
+       "original": "In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 878–891, Dublin, Ireland, May 2022.",
+       "zh": "2."
+      },
+      {
+       "id": "s-references-87-4",
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2022.",
+       "zh": "5"
       }
      ]
     },
@@ -13666,11 +19155,13 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-88-1",
-       "original": "Tsu-Jui Fu, Linjie Li, Zhe Gan, Kevin Lin, William Yang Wang, Lijuan Wang, and Zicheng Liu."
+       "original": "acl-long.62.",
+       "zh": "2."
       },
       {
        "id": "s-references-88-2",
-       "original": "Violet: End-to-end video-language transformers with masked visual-token modeling."
+       "original": "URL https://aclanthology.org/2022.acl-long.62.",
+       "zh": "2."
       }
      ]
     },
@@ -13681,9 +19172,24 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-89-1",
-       "original": "arXiv preprint arXiv:2111.12681, 2021."
+       "original": "Sarith Fernando, Vidhyasaharan Sethu, Eliathamby Ambikairajah, and Julien Epps."
+      },
+      {
+       "id": "s-references-89-2",
+       "original": "Bidirectional modelling for short duration language identification."
+      },
+      {
+       "id": "s-references-89-3",
+       "original": "In Interspeech, pages 2809–2813,",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-12",
+     "type": "equation",
+     "page": 91,
+     "original": "2017."
     },
     {
      "id": "p-references-90",
@@ -13692,15 +19198,11 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-90-1",
-       "original": "Philip Gage."
+       "original": "Tsu-Jui Fu, Linjie Li, Zhe Gan, Kevin Lin, William Yang Wang, Lijuan Wang, and Zicheng Liu."
       },
       {
        "id": "s-references-90-2",
-       "original": "A new algorithm for data compression."
-      },
-      {
-       "id": "s-references-90-3",
-       "original": "C Users Journal, 12(2):23–38, 1994."
+       "original": "Violet: End-to-end video-language transformers with masked visual-token modeling."
       }
      ]
     },
@@ -13711,23 +19213,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-91-1",
-       "original": "Marco Gaido, Matteo Negri, Mauro Cettolo, and Marco Turchi."
-      },
-      {
-       "id": "s-references-91-2",
-       "original": "Beyond voice activity detection: Hybrid audio segmentation for direct speech translation."
-      },
-      {
-       "id": "s-references-91-3",
-       "original": "In Mourad Abbas and Abed Alhakim Freihat, editors, 4th International Conference on Natural Language and Speech Processing, Trento, Italy, November 12-13, 2021, pages 87–94."
-      },
-      {
-       "id": "s-references-91-4",
-       "original": "Association for Computational Linguistics, 2021."
-      },
-      {
-       "id": "s-references-91-5",
-       "original": "URL https://aclanthology.org/2021.icnlsp-1.7."
+       "original": "arXiv preprint arXiv:2111.12681, 2021.",
+       "zh": "12"
       }
      ]
     },
@@ -13738,19 +19225,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-92-1",
-       "original": "Gerard I."
+       "original": "Philip Gage."
       },
       {
        "id": "s-references-92-2",
-       "original": "Gállego, Ioannis Tsiamas, Carlos Escolano, José A."
+       "original": "A new algorithm for data compression."
       },
       {
        "id": "s-references-92-3",
-       "original": "R."
-      },
-      {
-       "id": "s-references-92-4",
-       "original": "Fonollosa, and Marta R."
+       "original": "C Users Journal, 12(2):23–38, 1994.",
+       "zh": "12"
       }
      ]
     },
@@ -13761,27 +19245,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-93-1",
-       "original": "Costa-jussà."
+       "original": "Marco Gaido, Matteo Negri, Mauro Cettolo, and Marco Turchi."
       },
       {
        "id": "s-references-93-2",
-       "original": "End-to-end speech translation with pre-trained models and adapters: UPC at IWSLT 2021."
+       "original": "Beyond voice activity detection: Hybrid audio segmentation for direct speech translation."
       },
       {
        "id": "s-references-93-3",
-       "original": "In Marcello Federico, Alex Waibel, Marta R."
+       "original": "In Mourad Abbas and Abed Alhakim Freihat, editors, 4th International Conference on Natural Language and Speech Processing, Trento, Italy, November 12-13, 2021, pages 87–94.",
+       "zh": "12"
       },
       {
        "id": "s-references-93-4",
-       "original": "Costa-jussà, Jan Niehues, Sebastian Stüker, and Elizabeth Salesky, editors, Proceedings of the 18th International Conference on Spoken Language Translation, IWSLT 2021, Bangkok, Thailand (online), August 5-6, 2021, pages 110–119."
+       "original": "Association for Computational Linguistics, 2021.",
+       "zh": "1."
       },
       {
        "id": "s-references-93-5",
-       "original": "Association for Computational Linguistics, 2021. doi: 10.18653/v1/2021.iwslt-1.11."
-      },
-      {
-       "id": "s-references-93-6",
-       "original": "URL https://doi.org/10.18653/v1/2021.iwslt-1.11."
+       "original": "URL https://aclanthology.org/2021.icnlsp-1.7.",
+       "zh": "1."
       }
      ]
     },
@@ -13792,15 +19275,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-94-1",
-       "original": "Zhe Gan, Yen-Chun Chen, Linjie Li, Chen Zhu, Yu Cheng, and Jingjing Liu."
+       "original": "Gerard I."
       },
       {
        "id": "s-references-94-2",
-       "original": "Large-scale adversarial training for vision-and-language representation learning."
+       "original": "Gállego, Ioannis Tsiamas, Carlos Escolano, José A."
       },
       {
        "id": "s-references-94-3",
-       "original": "Advances in Neural Information Processing Systems, 33:6616–6628, 2020."
+       "original": "R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-94-4",
+       "original": "Fonollosa, and Marta R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
       }
      ]
     },
@@ -13811,11 +19300,32 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-95-1",
-       "original": "Mattia Antonino Di Gangi, Matteo Negri, and Marco Turchi."
+       "original": "Costa-jussà."
       },
       {
        "id": "s-references-95-2",
-       "original": "One-to-many multilingual endto-end speech translation. 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 585–592, 2019."
+       "original": "End-to-end speech translation with pre-trained models and adapters: UPC at IWSLT 2021.",
+       "zh": "1."
+      },
+      {
+       "id": "s-references-95-3",
+       "original": "In Marcello Federico, Alex Waibel, Marta R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-95-4",
+       "original": "Costa-jussà, Jan Niehues, Sebastian Stüker, and Elizabeth Salesky, editors, Proceedings of the 18th International Conference on Spoken Language Translation, IWSLT 2021, Bangkok, Thailand (online), August 5-6, 2021, pages 110–119.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-95-5",
+       "original": "Association for Computational Linguistics, 2021. doi: 10.18653/v1/2021.iwslt-1.11.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-95-6",
+       "original": "URL https://doi.org/10.18653/v1/2021.iwslt-1.11.",
+       "zh": "5"
       }
      ]
     },
@@ -13826,7 +19336,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-96-1",
-       "original": "URL https://api.semanticscholar.org/ CorpusID:203905407."
+       "original": "Zhe Gan, Yen-Chun Chen, Linjie Li, Chen Zhu, Yu Cheng, and Jingjing Liu."
+      },
+      {
+       "id": "s-references-96-2",
+       "original": "Large-scale adversarial training for vision-and-language representation learning."
+      },
+      {
+       "id": "s-references-96-3",
+       "original": "Advances in Neural Information Processing Systems, 33:6616–6628, 2020.",
+       "zh": "66"
       }
      ]
     },
@@ -13837,45 +19356,52 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-97-1",
-       "original": "91 GBD 2019 Blindness and Vision Impairment Collaborators."
+       "original": "Mattia Antonino Di Gangi, Matteo Negri, and Marco Turchi."
       },
       {
        "id": "s-references-97-2",
-       "original": "Trends in prevalence of blindness and distance and near vision impairment over 30 years: an analysis for the global burden of disease study."
-      },
-      {
-       "id": "s-references-97-3",
-       "original": "The Lancet global health, 9(2):e130–e143, 2021."
+       "original": "One-to-many multilingual endto-end speech translation. 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 585–592, 2019.",
+       "zh": "5"
       }
      ]
     },
     {
      "id": "p-references-98",
      "type": "paragraph",
-     "page": 92,
+     "page": 91,
      "sentences": [
       {
        "id": "s-references-98-1",
-       "original": "Javier García Gilabert, Carlos Escolano, and Marta R."
-      },
-      {
-       "id": "s-references-98-2",
-       "original": "Costa-Jussà."
-      },
-      {
-       "id": "s-references-98-3",
-       "original": "Resetox: Re-learning attention weights for toxicity mitigation in machine translation, 2023."
+       "original": "URL https://api.semanticscholar.org/ CorpusID:203905407.",
+       "zh": "5"
       }
      ]
     },
     {
+     "id": "eq-references-13",
+     "type": "equation",
+     "page": 91,
+     "original": "91"
+    },
+    {
      "id": "p-references-99",
      "type": "paragraph",
-     "page": 92,
+     "page": 91,
      "sentences": [
       {
        "id": "s-references-99-1",
-       "original": "Hongyu Gong, Ning Dong, Sravya Popuri, Vedanuj Goswami, Ann Lee, and Juan Pino."
+       "original": "GBD 2019 Blindness and Vision Impairment Collaborators.",
+       "zh": "（页码行：2。）"
+      },
+      {
+       "id": "s-references-99-2",
+       "original": "Trends in prevalence of blindness and distance and near vision impairment over 30 years: an analysis for the global burden of disease study.",
+       "zh": "30"
+      },
+      {
+       "id": "s-references-99-3",
+       "original": "The Lancet global health, 9(2):e130–e143, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -13886,7 +19412,17 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-100-1",
-       "original": "Multilingual speech-to-speech translation into multiple target languages. arXiv preprint arXiv:2307.08655, 2023."
+       "original": "Javier García Gilabert, Carlos Escolano, and Marta R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-100-2",
+       "original": "Costa-Jussà."
+      },
+      {
+       "id": "s-references-100-3",
+       "original": "Resetox: Re-learning attention weights for toxicity mitigation in machine translation, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -13897,11 +19433,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-101-1",
-       "original": "Naman Goyal, Cynthia Gao, Vishrav Chaudhary, Peng-Jen Chen, Guillaume Wenzek, Da Ju, Sanjana Krishnan, Marc’Aurelio Ranzato, Francisco Guzmán, and Angela Fan."
-      },
-      {
-       "id": "s-references-101-2",
-       "original": "The Flores-101 evaluation benchmark for low-resource and multilingual machine translation."
+       "original": "Hongyu Gong, Ning Dong, Sravya Popuri, Vedanuj Goswami, Ann Lee, and Juan Pino."
       }
      ]
     },
@@ -13912,11 +19444,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-102-1",
-       "original": "Transactions of the Association for Computational Linguistics, 10:522–538, 2022. doi: 10.1162/tacl_a_00474."
-      },
-      {
-       "id": "s-references-102-2",
-       "original": "URL https://aclanthology.org/2022.tacl-1.30."
+       "original": "Multilingual speech-to-speech translation into multiple target languages. arXiv preprint arXiv:2307.08655, 2023.",
+       "zh": "5"
       }
      ]
     },
@@ -13927,11 +19456,11 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-103-1",
-       "original": "Yvette Graham, Timothy Baldwin, Alistair Moffat, and Justin Zobel."
+       "original": "Naman Goyal, Cynthia Gao, Vishrav Chaudhary, Peng-Jen Chen, Guillaume Wenzek, Da Ju, Sanjana Krishnan, Marc’Aurelio Ranzato, Francisco Guzmán, and Angela Fan."
       },
       {
        "id": "s-references-103-2",
-       "original": "Continuous measurement scales in human evaluation of machine translation."
+       "original": "The Flores-101 evaluation benchmark for low-resource and multilingual machine translation."
       }
      ]
     },
@@ -13942,11 +19471,13 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-104-1",
-       "original": "In Proceedings of the 7th Linguistic Annotation Workshop and Interoperability with Discourse, pages 33– 41, Sofia, Bulgaria, August 2013."
+       "original": "Transactions of the Association for Computational Linguistics, 10:522–538, 2022. doi: 10.1162/tacl_a_00474.",
+       "zh": "5"
       },
       {
        "id": "s-references-104-2",
-       "original": "Association for Computational Linguistics."
+       "original": "URL https://aclanthology.org/2022.tacl-1.30.",
+       "zh": "1."
       }
      ]
     },
@@ -13957,7 +19488,11 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-105-1",
-       "original": "URL https://aclanthology.org/W13-2305."
+       "original": "Yvette Graham, Timothy Baldwin, Alistair Moffat, and Justin Zobel."
+      },
+      {
+       "id": "s-references-105-2",
+       "original": "Continuous measurement scales in human evaluation of machine translation."
       }
      ]
     },
@@ -13968,19 +19503,13 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-106-1",
-       "original": "Anmol Gulati, James Qin, Chung-Cheng Chiu, Niki Parmar, Yu Zhang, Jiahui Yu, Wei Han, Shibo Wang, Zhengdong Zhang, Yonghui Wu, and Ruoming Pang."
+       "original": "In Proceedings of the 7th Linguistic Annotation Workshop and Interoperability with Discourse, pages 33– 41, Sofia, Bulgaria, August 2013.",
+       "zh": "3."
       },
       {
        "id": "s-references-106-2",
-       "original": "Conformer: Convolution-augmented Transformer for Speech Recognition."
-      },
-      {
-       "id": "s-references-106-3",
-       "original": "In Proc."
-      },
-      {
-       "id": "s-references-106-4",
-       "original": "Interspeech 2020, pages 5036–5040, 2020. doi: 10.21437/Interspeech.2020-3015."
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
       }
      ]
     },
@@ -13991,11 +19520,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-107-1",
-       "original": "Harald Hammarström, Robert Forkel, Martin Haspelmath, and Sebastian Bank."
-      },
-      {
-       "id": "s-references-107-2",
-       "original": "Glottolog database 4.6, 2022."
+       "original": "URL https://aclanthology.org/W13-2305.",
+       "zh": "5"
       }
      ]
     },
@@ -14006,15 +19532,20 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-108-1",
-       "original": "Caner Hazirbas, Joanna Bitton, Brian Dolhansky, Jacqueline Pan, Albert Gordo, and Cristian Canton Ferrer."
+       "original": "Anmol Gulati, James Qin, Chung-Cheng Chiu, Niki Parmar, Yu Zhang, Jiahui Yu, Wei Han, Shibo Wang, Zhengdong Zhang, Yonghui Wu, and Ruoming Pang."
       },
       {
        "id": "s-references-108-2",
-       "original": "Casual conversations: A dataset for measuring fairness in ai."
+       "original": "Conformer: Convolution-augmented Transformer for Speech Recognition."
       },
       {
        "id": "s-references-108-3",
-       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 2289–2293, 2021."
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-108-4",
+       "original": "Interspeech 2020, pages 5036–5040, 2020. doi: 10.21437/Interspeech.2020-3015.",
+       "zh": "5"
       }
      ]
     },
@@ -14025,19 +19556,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-109-1",
-       "original": "Kevin Heffernan, Onur Çelebi, and Holger Schwenk."
+       "original": "Harald Hammarström, Robert Forkel, Martin Haspelmath, and Sebastian Bank."
       },
       {
        "id": "s-references-109-2",
-       "original": "Bitext mining using distilled sentence representations for low-resource languages."
-      },
-      {
-       "id": "s-references-109-3",
-       "original": "In Findings of the Association for Computational Linguistics: EMNLP 2022, pages 2101–2112, Abu Dhabi, United Arab Emirates, December 2022."
-      },
-      {
-       "id": "s-references-109-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2022.findings-emnlp.154."
+       "original": "Glottolog database 4.6, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -14048,7 +19572,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-110-1",
-       "original": "URL https://aclanthology.org/2022.findings-emnlp.154."
+       "original": "Caner Hazirbas, Joanna Bitton, Brian Dolhansky, Jacqueline Pan, Albert Gordo, and Cristian Canton Ferrer."
+      },
+      {
+       "id": "s-references-110-2",
+       "original": "Casual conversations: A dataset for measuring fairness in ai."
+      },
+      {
+       "id": "s-references-110-3",
+       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 2289–2293, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -14059,15 +19592,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-111-1",
-       "original": "Judith Holler and Stephen C Levinson."
+       "original": "Kevin Heffernan, Onur Çelebi, and Holger Schwenk."
       },
       {
        "id": "s-references-111-2",
-       "original": "Multimodal language processing in human communication."
+       "original": "Bitext mining using distilled sentence representations for low-resource languages."
       },
       {
        "id": "s-references-111-3",
-       "original": "Trends in Cognitive Sciences, 23(8):639–652, 2019."
+       "original": "In Findings of the Association for Computational Linguistics: EMNLP 2022, pages 2101–2112, Abu Dhabi, United Arab Emirates, December 2022.",
+       "zh": "12"
+      },
+      {
+       "id": "s-references-111-4",
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2022.findings-emnlp.154.",
+       "zh": "5"
       }
      ]
     },
@@ -14078,15 +19617,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-112-1",
-       "original": "Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed."
-      },
-      {
-       "id": "s-references-112-2",
-       "original": "Hubert: Self-supervised speech representation learning by masked prediction of hidden units."
-      },
-      {
-       "id": "s-references-112-3",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 29:3451–3460, 2021."
+       "original": "URL https://aclanthology.org/2022.findings-emnlp.154.",
+       "zh": "5"
       }
      ]
     },
@@ -14097,53 +19629,66 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-113-1",
-       "original": "92 Ke Hu, Tara N."
+       "original": "Judith Holler and Stephen C Levinson."
       },
       {
        "id": "s-references-113-2",
-       "original": "Sainath, Ruoming Pang, and Rohit Prabhavalkar."
+       "original": "Multimodal language processing in human communication."
       },
       {
        "id": "s-references-113-3",
-       "original": "Deliberation model based two-pass end-to-end speech recognition."
-      },
-      {
-       "id": "s-references-113-4",
-       "original": "In ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 7799–7803, 2020."
+       "original": "Trends in Cognitive Sciences, 23(8):639–652, 2019.",
+       "zh": "63"
       }
      ]
     },
     {
      "id": "p-references-114",
      "type": "paragraph",
-     "page": 93,
+     "page": 92,
      "sentences": [
       {
        "id": "s-references-114-1",
-       "original": "doi: 10.1109/ICASSP40776.2020.9053606."
+       "original": "Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed."
+      },
+      {
+       "id": "s-references-114-2",
+       "original": "Hubert: Self-supervised speech representation learning by masked prediction of hidden units."
+      },
+      {
+       "id": "s-references-114-3",
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 29:3451–3460, 2021.",
+       "zh": "45"
       }
      ]
     },
     {
+     "id": "eq-references-14",
+     "type": "equation",
+     "page": 92,
+     "original": "92"
+    },
+    {
      "id": "p-references-115",
      "type": "paragraph",
-     "page": 93,
+     "page": 92,
      "sentences": [
       {
        "id": "s-references-115-1",
-       "original": "Hirofumi Inaguma, Kevin Duh, Tatsuya Kawahara, and Shinji Watanabe."
+       "original": "Ke Hu, Tara N."
       },
       {
        "id": "s-references-115-2",
-       "original": "Multilingual endto-end speech translation."
+       "original": "Sainath, Ruoming Pang, and Rohit Prabhavalkar."
       },
       {
        "id": "s-references-115-3",
-       "original": "In 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 570–577."
+       "original": "Deliberation model based two-pass end-to-end speech recognition."
       },
       {
        "id": "s-references-115-4",
-       "original": "IEEE, 2019."
+       "original": "In ICASSP 2020 - 2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 7799–7803, 2020.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -14154,23 +19699,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-116-1",
-       "original": "Hirofumi Inaguma, Sravya Popuri, Ilia Kulikov, Peng-Jen Chen, Changhan Wang, Yu-An Chung, Yun Tang, Ann Lee, Shinji Watanabe, and Juan Pino."
-      },
-      {
-       "id": "s-references-116-2",
-       "original": "UnitY: Two-pass direct speech-to-speech translation with discrete units."
-      },
-      {
-       "id": "s-references-116-3",
-       "original": "In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15655– 15680, Toronto, Canada, July 2023."
-      },
-      {
-       "id": "s-references-116-4",
-       "original": "Association for Computational Linguistics."
-      },
-      {
-       "id": "s-references-116-5",
-       "original": "URL https://aclanthology.org/2023.acl-long.872."
+       "original": "doi: 10.1109/ICASSP40776.2020.9053606.",
+       "zh": "5"
       }
      ]
     },
@@ -14181,19 +19711,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-117-1",
-       "original": "Javier Iranzo-Sánchez, Joan Albert Silvestre-Cerda, Javier Jorge, Nahuel Roselló, Adria Giménez, Albert Sanchis, Jorge Civera, and Alfons Juan."
+       "original": "Hirofumi Inaguma, Kevin Duh, Tatsuya Kawahara, and Shinji Watanabe."
       },
       {
        "id": "s-references-117-2",
-       "original": "Europarl-st: A multilingual corpus for speech translation of parliamentary debates."
+       "original": "Multilingual endto-end speech translation."
       },
       {
        "id": "s-references-117-3",
-       "original": "In ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 8229–8233."
+       "original": "In 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 570–577.",
+       "zh": "5"
       },
       {
        "id": "s-references-117-4",
-       "original": "IEEE, 2020."
+       "original": "IEEE, 2019.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -14204,11 +19736,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-118-1",
-       "original": "Javier Iranzo-Sánchez, Jorge Civera, and Alfons Juan."
+       "original": "Hirofumi Inaguma, Sravya Popuri, Ilia Kulikov, Peng-Jen Chen, Changhan Wang, Yu-An Chung, Yun Tang, Ann Lee, Shinji Watanabe, and Juan Pino."
       },
       {
        "id": "s-references-118-2",
-       "original": "From simultaneous to streaming machine translation by leveraging streaming history. arXiv preprint arXiv:2203.02459, 2022."
+       "original": "UnitY: Two-pass direct speech-to-speech translation with discrete units."
+      },
+      {
+       "id": "s-references-118-3",
+       "original": "In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 15655– 15680, Toronto, Canada, July 2023.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-118-4",
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-118-5",
+       "original": "URL https://aclanthology.org/2023.acl-long.872.",
+       "zh": "2."
       }
      ]
     },
@@ -14219,27 +19766,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-119-1",
-       "original": "Anastasia Iskhakova, Daniyar Wolf, and Roman Meshcheryakov."
+       "original": "Javier Iranzo-Sánchez, Joan Albert Silvestre-Cerda, Javier Jorge, Nahuel Roselló, Adria Giménez, Albert Sanchis, Jorge Civera, and Alfons Juan."
       },
       {
        "id": "s-references-119-2",
-       "original": "Automated destructive behavior state detection on the 1d cnn-based voice analysis."
+       "original": "Europarl-st: A multilingual corpus for speech translation of parliamentary debates."
       },
       {
        "id": "s-references-119-3",
-       "original": "In Speech and Computer: 22nd International Conference, SPECOM 2020, St. Petersburg, Russia, October 7–9, 2020, Proceedings, page 184–193, Berlin, Heidelberg, 2020."
+       "original": "In ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 8229–8233.",
+       "zh": "3."
       },
       {
        "id": "s-references-119-4",
-       "original": "Springer-Verlag."
-      },
-      {
-       "id": "s-references-119-5",
-       "original": "ISBN 978- 3-030-60275-8. doi: 10.1007/978-3-030-60276-5\\_19."
-      },
-      {
-       "id": "s-references-119-6",
-       "original": "URL https://doi.org/10.1007/ 978-3-030-60276-5_19."
+       "original": "IEEE, 2020.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -14250,21 +19791,20 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-120-1",
-       "original": "Ye Jia, Melvin Johnson, Wolfgang Macherey, Ron J Weiss, Yuan Cao, Chung-Cheng Chiu, Naveen Ari, Stella Laurenzo, and Yonghui Wu."
+       "original": "Javier Iranzo-Sánchez, Jorge Civera, and Alfons Juan."
       },
       {
        "id": "s-references-120-2",
-       "original": "Leveraging weakly supervised data to improve end-to-end speech-to-text translation."
-      },
-      {
-       "id": "s-references-120-3",
-       "original": "In ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 7180–7184."
-      },
-      {
-       "id": "s-references-120-4",
-       "original": "IEEE, 2019a."
+       "original": "From simultaneous to streaming machine translation by leveraging streaming history. arXiv preprint arXiv:2203.02459,",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-15",
+     "type": "equation",
+     "page": 93,
+     "original": "2022."
     },
     {
      "id": "p-references-121",
@@ -14273,25 +19813,38 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-121-1",
-       "original": "Ye Jia, Ron J."
+       "original": "Anastasia Iskhakova, Daniyar Wolf, and Roman Meshcheryakov."
       },
       {
        "id": "s-references-121-2",
-       "original": "Weiss, Fadi Biadsy, Wolfgang Macherey, Melvin Johnson, Zhifeng Chen, and Yonghui Wu."
+       "original": "Automated destructive behavior state detection on the 1d cnn-based voice analysis."
       },
       {
        "id": "s-references-121-3",
-       "original": "Direct Speech-to-Speech Translation with a Sequence-to-Sequence Model."
+       "original": "In Speech and Computer: 22nd International Conference, SPECOM 2020, St. Petersburg, Russia, October 7–9, 2020, Proceedings, page 184–193, Berlin, Heidelberg, 2020.",
+       "zh": "22"
       },
       {
        "id": "s-references-121-4",
-       "original": "In Proc."
+       "original": "Springer-Verlag."
       },
       {
        "id": "s-references-121-5",
-       "original": "Interspeech 2019, pages 1123–1127, 2019b. doi: 10.21437/Interspeech.2019-1951."
+       "original": "ISBN 978- 3-030-60275-8. doi: 10.1007/978-3-030-60276-5\\_19.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-121-6",
+       "original": "URL https://doi.org/10.1007/",
+       "zh": "5"
       }
      ]
+    },
+    {
+     "id": "eq-references-16",
+     "type": "equation",
+     "page": 93,
+     "original": "978-3-030-60276-5_19."
     },
     {
      "id": "p-references-122",
@@ -14300,23 +19853,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-122-1",
-       "original": "Ye Jia, Michelle Tadmor Ramanovich, Tal Remez, and Roi Pomerantz."
+       "original": "Ye Jia, Melvin Johnson, Wolfgang Macherey, Ron J Weiss, Yuan Cao, Chung-Cheng Chiu, Naveen Ari, Stella Laurenzo, and Yonghui Wu."
       },
       {
        "id": "s-references-122-2",
-       "original": "Translatotron 2: High-quality direct speech-to-speech translation with voice preservation."
+       "original": "Leveraging weakly supervised data to improve end-to-end speech-to-text translation."
       },
       {
        "id": "s-references-122-3",
-       "original": "In Kamalika Chaudhuri, Stefanie Jegelka, Le Song, Csaba Szepesvari, Gang Niu, and Sivan Sabato, editors, Proceedings of the 39th International Conference on Machine Learning, volume 162 of Proceedings of Machine Learning Research, pages 10120–10134."
+       "original": "In ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 7180–7184.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-122-4",
-       "original": "PMLR, 17–23 Jul 2022a."
-      },
-      {
-       "id": "s-references-122-5",
-       "original": "URL https://proceedings.mlr.press/v162/jia22b.html."
+       "original": "IEEE, 2019a.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -14327,49 +19878,90 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-123-1",
-       "original": "93 Ye Jia, Michelle Tadmor Ramanovich, Quan Wang, and Heiga Zen."
+       "original": "Ye Jia, Ron J."
       },
       {
        "id": "s-references-123-2",
-       "original": "CVSS corpus and massively multilingual speech-to-speech translation."
+       "original": "Weiss, Fadi Biadsy, Wolfgang Macherey, Melvin Johnson, Zhifeng Chen, and Yonghui Wu."
       },
       {
        "id": "s-references-123-3",
-       "original": "In Proceedings of the Thirteenth Language Resources and Evaluation Conference, pages 6691–6703, Marseille, France, June 2022b."
+       "original": "Direct Speech-to-Speech Translation with a Sequence-to-Sequence Model."
       },
       {
        "id": "s-references-123-4",
-       "original": "European Language Resources Association."
+       "original": "In Proc."
       },
       {
        "id": "s-references-123-5",
-       "original": "URL https://aclanthology.org/ 2022.lrec-1.720."
+       "original": "Interspeech 2019, pages 1123–1127, 2019b. doi: 10.21437/Interspeech.2019-1951.",
+       "zh": "12"
       }
      ]
     },
     {
      "id": "p-references-124",
      "type": "paragraph",
-     "page": 94,
+     "page": 93,
      "sentences": [
       {
        "id": "s-references-124-1",
-       "original": "Jeff Johnson, Matthijs Douze, and Hervé Jégou."
+       "original": "Ye Jia, Michelle Tadmor Ramanovich, Tal Remez, and Roi Pomerantz."
       },
       {
        "id": "s-references-124-2",
-       "original": "Billion-scale similarity search with GPUs."
+       "original": "Translatotron 2: High-quality direct speech-to-speech translation with voice preservation.",
+       "zh": "（页码行：2。）"
+      },
+      {
+       "id": "s-references-124-3",
+       "original": "In Kamalika Chaudhuri, Stefanie Jegelka, Le Song, Csaba Szepesvari, Gang Niu, and Sivan Sabato, editors, Proceedings of the 39th International Conference on Machine Learning, volume 162 of Proceedings of Machine Learning Research, pages 10120–10134.",
+       "zh": "12"
+      },
+      {
+       "id": "s-references-124-4",
+       "original": "PMLR, 17–23 Jul 2022a.",
+       "zh": "22"
+      },
+      {
+       "id": "s-references-124-5",
+       "original": "URL https://proceedings.mlr.press/v162/jia22b.html.",
+       "zh": "22"
       }
      ]
     },
     {
+     "id": "eq-references-17",
+     "type": "equation",
+     "page": 93,
+     "original": "93"
+    },
+    {
      "id": "p-references-125",
      "type": "paragraph",
-     "page": 94,
+     "page": 93,
      "sentences": [
       {
        "id": "s-references-125-1",
-       "original": "IEEE Transactions on Big Data, 7(3):535–547, 2019."
+       "original": "Ye Jia, Michelle Tadmor Ramanovich, Quan Wang, and Heiga Zen."
+      },
+      {
+       "id": "s-references-125-2",
+       "original": "CVSS corpus and massively multilingual speech-to-speech translation."
+      },
+      {
+       "id": "s-references-125-3",
+       "original": "In Proceedings of the Thirteenth Language Resources and Evaluation Conference, pages 6691–6703, Marseille, France, June 2022b.",
+       "zh": "22"
+      },
+      {
+       "id": "s-references-125-4",
+       "original": "European Language Resources Association."
+      },
+      {
+       "id": "s-references-125-5",
+       "original": "URL https://aclanthology.org/ 2022.lrec-1.720.",
+       "zh": "1."
       }
      ]
     },
@@ -14380,15 +19972,11 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-126-1",
-       "original": "Youngjoo Jung and Bora Kim."
+       "original": "Jeff Johnson, Matthijs Douze, and Hervé Jégou."
       },
       {
        "id": "s-references-126-2",
-       "original": "Coexistence of multiple writing systems: Classifying digraphia in post-socialist countries."
-      },
-      {
-       "id": "s-references-126-3",
-       "original": "Journal of Eurasian Studies, page 18793665231188380, 2023."
+       "original": "Billion-scale similarity search with GPUs."
       }
      ]
     },
@@ -14399,11 +19987,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-127-1",
-       "original": "Sameer Khurana, Antoine Laurent, and James Glass."
-      },
-      {
-       "id": "s-references-127-2",
-       "original": "Samu-xlsr: Semantically-aligned multimodal utterance-level cross-lingual speech representation. arXiv preprint arXiv:2205.08180, 2022."
+       "original": "IEEE Transactions on Big Data, 7(3):535–547, 2019.",
+       "zh": "5"
       }
      ]
     },
@@ -14414,15 +19999,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-128-1",
-       "original": "Svetlana Kiritchenko, Isar Nejadgholi, and Kathleen C Fraser."
+       "original": "Youngjoo Jung and Bora Kim."
       },
       {
        "id": "s-references-128-2",
-       "original": "Confronting abusive language online: A survey from the ethical and human rights perspective."
+       "original": "Coexistence of multiple writing systems: Classifying digraphia in post-socialist countries."
       },
       {
        "id": "s-references-128-3",
-       "original": "Journal of Artificial Intelligence Research, 71:431–478, 2021."
+       "original": "Journal of Eurasian Studies, page 18793665231188380, 2023.",
+       "zh": "83"
       }
      ]
     },
@@ -14433,25 +20019,20 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-129-1",
-       "original": "Tom Kocmi, Rachel Bawden, OndÅ™ej Bojar, Anton Dvorkovich, Christian Federmann, Mark Fishel, Thamme Gowda, Yvette Graham, Roman Grundkiewicz, Barry Haddow, Rebecca Knowles, Philipp Koehn, Christof Monz, Makoto Morishita, Masaaki Nagata, Toshiaki Nakazawa, Michal NovÃ¡k, Martin Popel, Maja PopoviÄ‡, and Mariya Shmatova."
+       "original": "Sameer Khurana, Antoine Laurent, and James Glass."
       },
       {
        "id": "s-references-129-2",
-       "original": "Findings of the 2022 conference on machine translation (wmt22)."
-      },
-      {
-       "id": "s-references-129-3",
-       "original": "In Proceedings of the Seventh Conference on Machine Translation, pages 1–45, Abu Dhabi, December 2022."
-      },
-      {
-       "id": "s-references-129-4",
-       "original": "Association for Computational Linguistics."
-      },
-      {
-       "id": "s-references-129-5",
-       "original": "URL https://aclanthology.org/2022.wmt-1.1."
+       "original": "Samu-xlsr: Semantically-aligned multimodal utterance-level cross-lingual speech representation. arXiv preprint arXiv:2205.08180,",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-18",
+     "type": "equation",
+     "page": 94,
+     "original": "2022."
     },
     {
      "id": "p-references-130",
@@ -14460,19 +20041,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-130-1",
-       "original": "Philipp Koehn."
+       "original": "Svetlana Kiritchenko, Isar Nejadgholi, and Kathleen C Fraser."
       },
       {
        "id": "s-references-130-2",
-       "original": "Europarl: A parallel corpus for statistical machine translation."
+       "original": "Confronting abusive language online: A survey from the ethical and human rights perspective."
       },
       {
        "id": "s-references-130-3",
-       "original": "In Proceedings of Machine Translation Summit X: Papers, pages 79–86, Phuket, Thailand, September 13-15 2005."
-      },
-      {
-       "id": "s-references-130-4",
-       "original": "URL https://aclanthology.org/2005.mtsummit-papers.11."
+       "original": "Journal of Artificial Intelligence Research, 71:431–478, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -14483,15 +20061,27 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-131-1",
-       "original": "Allison Koenecke, Andrew Nam, Emily Lake, Joe Nudell, Minnie Quartey, Zion Mengesha, Connor Toups, John R Rickford, Dan Jurafsky, and Sharad Goel."
+       "original": "Tom Kocmi, Rachel Bawden, OndÅ™ej Bojar, Anton Dvorkovich, Christian Federmann, Mark Fishel, Thamme Gowda, Yvette Graham, Roman Grundkiewicz, Barry Haddow, Rebecca Knowles, Philipp Koehn, Christof Monz, Makoto Morishita, Masaaki Nagata, Toshiaki Nakazawa, Michal NovÃ¡k, Martin Popel, Maja PopoviÄ‡, and Mariya Shmatova."
       },
       {
        "id": "s-references-131-2",
-       "original": "Racial disparities in automated speech recognition."
+       "original": "Findings of the 2022 conference on machine translation (wmt22).",
+       "zh": "22"
       },
       {
        "id": "s-references-131-3",
-       "original": "Proceedings of the National Academy of Sciences, 117(14): 7684–7689, 2020."
+       "original": "In Proceedings of the Seventh Conference on Machine Translation, pages 1–45, Abu Dhabi, December 2022.",
+       "zh": "45"
+      },
+      {
+       "id": "s-references-131-4",
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-131-5",
+       "original": "URL https://aclanthology.org/2022.wmt-1.1.",
+       "zh": "1."
       }
      ]
     },
@@ -14502,15 +20092,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-132-1",
-       "original": "Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae."
+       "original": "Philipp Koehn."
       },
       {
        "id": "s-references-132-2",
-       "original": "Hifi-gan: Generative adversarial networks for efficient and high fidelity speech synthesis."
+       "original": "Europarl: A parallel corpus for statistical machine translation."
       },
       {
        "id": "s-references-132-3",
-       "original": "Advances in Neural Information Processing Systems, 33:17022–17033, 2020."
+       "original": "In Proceedings of Machine Translation Summit X: Papers, pages 79–86, Phuket, Thailand, September 13-15 2005.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-132-4",
+       "original": "URL https://aclanthology.org/2005.mtsummit-papers.11.",
+       "zh": "5"
       }
      ]
     },
@@ -14521,17 +20117,23 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-133-1",
-       "original": "Robert Kraut, Jolene Galegher, Robert Fish, and Barbara Chalfonte."
+       "original": "Allison Koenecke, Andrew Nam, Emily Lake, Joe Nudell, Minnie Quartey, Zion Mengesha, Connor Toups, John R Rickford, Dan Jurafsky, and Sharad Goel."
       },
       {
        "id": "s-references-133-2",
-       "original": "Task requirements and media choice in collaborative writing."
+       "original": "Racial disparities in automated speech recognition."
       },
       {
        "id": "s-references-133-3",
-       "original": "Human–Computer Interaction, 7(4):375–407, 1992."
+       "original": "Proceedings of the National Academy of Sciences, 117(14):"
       }
      ]
+    },
+    {
+     "id": "eq-references-19",
+     "type": "equation",
+     "page": 94,
+     "original": "7684–7689, 2020."
     },
     {
      "id": "p-references-134",
@@ -14540,19 +20142,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-134-1",
-       "original": "Taku Kudo and John Richardson."
+       "original": "Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae."
       },
       {
        "id": "s-references-134-2",
-       "original": "SentencePiece: A simple and language independent subword tokenizer and detokenizer for neural text processing."
+       "original": "Hifi-gan: Generative adversarial networks for efficient and high fidelity speech synthesis."
       },
       {
        "id": "s-references-134-3",
-       "original": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 66–71, Brussels, Belgium, November 2018."
-      },
-      {
-       "id": "s-references-134-4",
-       "original": "Association for Computational Linguistics."
+       "original": "Advances in Neural Information Processing Systems, 33:17022–17033, 2020.",
+       "zh": "22"
       }
      ]
     },
@@ -14563,11 +20162,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-135-1",
-       "original": "doi: 10.18653/v1/D18-2012."
+       "original": "Robert Kraut, Jolene Galegher, Robert Fish, and Barbara Chalfonte."
       },
       {
        "id": "s-references-135-2",
-       "original": "URL https://aclanthology.org/D18-2012."
+       "original": "Task requirements and media choice in collaborative writing."
+      },
+      {
+       "id": "s-references-135-3",
+       "original": "Human–Computer Interaction, 7(4):375–407, 1992.",
+       "zh": "5"
       }
      ]
     },
@@ -14578,45 +20182,64 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-136-1",
-       "original": "94 Amit Kumar and Nicholas Epley."
+       "original": "Taku Kudo and John Richardson."
       },
       {
        "id": "s-references-136-2",
-       "original": "It’s surprisingly nice to hear you: Misunderstanding the impact of communication media can lead to suboptimal choices of how to connect with others."
+       "original": "SentencePiece: A simple and language independent subword tokenizer and detokenizer for neural text processing."
       },
       {
        "id": "s-references-136-3",
-       "original": "Journal of Experimental Psychology: General, 150(3):595, 2021."
+       "original": "In Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 66–71, Brussels, Belgium, November 2018.",
+       "zh": "66"
+      },
+      {
+       "id": "s-references-136-4",
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
       }
      ]
     },
     {
      "id": "p-references-137",
      "type": "paragraph",
-     "page": 95,
+     "page": 94,
      "sentences": [
       {
        "id": "s-references-137-1",
-       "original": "Ravi Kumar Vuddagiri, Krishna Gurugubelli, Priyam Jain, Hari Krishna Vydana, and Anil Kumar Vuppala."
+       "original": "doi: 10.18653/v1/D18-2012.",
+       "zh": "12"
       },
       {
        "id": "s-references-137-2",
-       "original": "IIITH-ILSC Speech Database for Indain Language Identification."
-      },
-      {
-       "id": "s-references-137-3",
-       "original": "In Proc."
+       "original": "URL https://aclanthology.org/D18-2012.",
+       "zh": "12"
       }
      ]
     },
     {
+     "id": "eq-references-20",
+     "type": "equation",
+     "page": 94,
+     "original": "94"
+    },
+    {
      "id": "p-references-138",
      "type": "paragraph",
-     "page": 95,
+     "page": 94,
      "sentences": [
       {
        "id": "s-references-138-1",
-       "original": "6th Workshop on Spoken Language Technologies for Under-Resourced Languages (SLTU 2018), pages 56–60, 2018. doi: 10.21437/SLTU.2018-12."
+       "original": "Amit Kumar and Nicholas Epley."
+      },
+      {
+       "id": "s-references-138-2",
+       "original": "It’s surprisingly nice to hear you: Misunderstanding the impact of communication media can lead to suboptimal choices of how to connect with others."
+      },
+      {
+       "id": "s-references-138-3",
+       "original": "Journal of Experimental Psychology: General, 150(3):595, 2021.",
+       "zh": "5"
       }
      ]
     },
@@ -14627,7 +20250,15 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-139-1",
-       "original": "Kushal Lakhotia, Eugene Kharitonov, Wei-Ning Hsu, Yossi Adi, Adam Polyak, Benjamin Bolte, Tu-Anh Nguyen, Jade Copet, Alexei Baevski, Abdelrahman Mohamed, and Emmanuel Dupoux."
+       "original": "Ravi Kumar Vuddagiri, Krishna Gurugubelli, Priyam Jain, Hari Krishna Vydana, and Anil Kumar Vuppala."
+      },
+      {
+       "id": "s-references-139-2",
+       "original": "IIITH-ILSC Speech Database for Indain Language Identification."
+      },
+      {
+       "id": "s-references-139-3",
+       "original": "In Proc."
       }
      ]
     },
@@ -14638,15 +20269,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-140-1",
-       "original": "On generative spoken language modeling from raw audio."
-      },
-      {
-       "id": "s-references-140-2",
-       "original": "Transactions of the Association for Computational Linguistics, 9:1336–1354, 2021. doi: 10.1162/tacl_a_00430."
-      },
-      {
-       "id": "s-references-140-3",
-       "original": "URL https://aclanthology.org/2021.tacl-1.79."
+       "original": "6th Workshop on Spoken Language Technologies for Under-Resourced Languages (SLTU 2018), pages 56–60, 2018. doi: 10.21437/SLTU.2018-12.",
+       "zh": "12"
       }
      ]
     },
@@ -14657,19 +20281,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-141-1",
-       "original": "Alon Lavie, Alexander H."
-      },
-      {
-       "id": "s-references-141-2",
-       "original": "Waibel, Lori S."
-      },
-      {
-       "id": "s-references-141-3",
-       "original": "Levin, Michael Finke, Donna Gates, Marsal Gavaldà, Torsten Zeppenfeld, and Puming Zhan."
-      },
-      {
-       "id": "s-references-141-4",
-       "original": "Janus-iii: speech-to-speech translation in multiple languages. 1997 IEEE International Conference on Acoustics, Speech, and Signal Processing, 1:99–102 vol.1, 1997."
+       "original": "Kushal Lakhotia, Eugene Kharitonov, Wei-Ning Hsu, Yossi Adi, Adam Polyak, Benjamin Bolte, Tu-Anh Nguyen, Jade Copet, Alexei Baevski, Abdelrahman Mohamed, and Emmanuel Dupoux."
       }
      ]
     },
@@ -14680,23 +20292,17 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-142-1",
-       "original": "Ann Lee, Peng-Jen Chen, Changhan Wang, Jiatao Gu, Sravya Popuri, Xutai Ma, Adam Polyak, Yossi Adi, Qing He, Yun Tang, Juan Pino, and Wei-Ning Hsu."
+       "original": "On generative spoken language modeling from raw audio."
       },
       {
        "id": "s-references-142-2",
-       "original": "Direct speech-tospeech translation with discrete units."
+       "original": "Transactions of the Association for Computational Linguistics, 9:1336–1354, 2021. doi: 10.1162/tacl_a_00430.",
+       "zh": "5"
       },
       {
        "id": "s-references-142-3",
-       "original": "In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3327–3339, Dublin, Ireland, May 2022a."
-      },
-      {
-       "id": "s-references-142-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/ 2022.acl-long.235."
-      },
-      {
-       "id": "s-references-142-5",
-       "original": "URL https://aclanthology.org/2022.acl-long.235."
+       "original": "URL https://aclanthology.org/2021.tacl-1.79.",
+       "zh": "1."
       }
      ]
     },
@@ -14707,23 +20313,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-143-1",
-       "original": "Ann Lee, Hongyu Gong, Paul-Ambroise Duquenne, Holger Schwenk, Peng-Jen Chen, Changhan Wang, Sravya Popuri, Yossi Adi, Juan Pino, Jiatao Gu, and Wei-Ning Hsu."
+       "original": "Alon Lavie, Alexander H."
       },
       {
        "id": "s-references-143-2",
-       "original": "Textless speech-to-speech translation on real data."
+       "original": "Waibel, Lori S.",
+       "zh": "对 S2ST，我们考察两种级联方式：(1) ASR、T2TT、TTS 的 3 段级联；(2) S2TT、TTS 的 2 段级联。"
       },
       {
        "id": "s-references-143-3",
-       "original": "In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 860–872, Seattle, United States, July 2022b."
+       "original": "Levin, Michael Finke, Donna Gates, Marsal Gavaldà, Torsten Zeppenfeld, and Puming Zhan."
       },
       {
        "id": "s-references-143-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2022.naacl-main.63."
-      },
-      {
-       "id": "s-references-143-5",
-       "original": "URL https://aclanthology.org/2022.naacl-main.63."
+       "original": "Janus-iii: speech-to-speech translation in multiple languages. 1997 IEEE International Conference on Acoustics, Speech, and Signal Processing, 1:99–102 vol.1, 1997.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -14734,15 +20338,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-144-1",
-       "original": "Sangmin-Michelle Lee."
+       "original": "Ann Lee, Peng-Jen Chen, Changhan Wang, Jiatao Gu, Sravya Popuri, Xutai Ma, Adam Polyak, Yossi Adi, Qing He, Yun Tang, Juan Pino, and Wei-Ning Hsu."
       },
       {
        "id": "s-references-144-2",
-       "original": "The effectiveness of machine translation in foreign language education: a systematic review and meta-analysis."
+       "original": "Direct speech-tospeech translation with discrete units."
       },
       {
        "id": "s-references-144-3",
-       "original": "Computer Assisted Language Learning, 36(1-2): 103–125, 2023."
+       "original": "In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3327–3339, Dublin, Ireland, May 2022a.",
+       "zh": "22"
+      },
+      {
+       "id": "s-references-144-4",
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/ 2022.acl-long.235.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-144-5",
+       "original": "URL https://aclanthology.org/2022.acl-long.235.",
+       "zh": "5"
       }
      ]
     },
@@ -14753,23 +20368,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-145-1",
-       "original": "Shahar Levy, Koren Lazar, and Gabriel Stanovsky."
+       "original": "Ann Lee, Hongyu Gong, Paul-Ambroise Duquenne, Holger Schwenk, Peng-Jen Chen, Changhan Wang, Sravya Popuri, Yossi Adi, Juan Pino, Jiatao Gu, and Wei-Ning Hsu."
       },
       {
        "id": "s-references-145-2",
-       "original": "Collecting a large-scale gender bias dataset for coreference resolution and machine translation."
+       "original": "Textless speech-to-speech translation on real data."
       },
       {
        "id": "s-references-145-3",
-       "original": "In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 2470–2480, Punta Cana, Dominican Republic, November 2021."
+       "original": "In Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 860–872, Seattle, United States, July 2022b.",
+       "zh": "22"
       },
       {
        "id": "s-references-145-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/ 2021.findings-emnlp.211."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2022.naacl-main.63.",
+       "zh": "63"
       },
       {
        "id": "s-references-145-5",
-       "original": "URL https://aclanthology.org/2021.findings-emnlp.211."
+       "original": "URL https://aclanthology.org/2022.naacl-main.63.",
+       "zh": "63"
       }
      ]
     },
@@ -14780,21 +20398,24 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-146-1",
-       "original": "M."
+       "original": "Sangmin-Michelle Lee."
       },
       {
        "id": "s-references-146-2",
-       "original": "Paul Lewis, editor."
+       "original": "The effectiveness of machine translation in foreign language education: a systematic review and meta-analysis."
       },
       {
        "id": "s-references-146-3",
-       "original": "Ethnologue: Languages of the World."
-      },
-      {
-       "id": "s-references-146-4",
-       "original": "SIL International, Dallas, TX, USA, sixteenth edition, 2009."
+       "original": "Computer Assisted Language Learning, 36(1-2):",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-21",
+     "type": "equation",
+     "page": 95,
+     "original": "103–125, 2023."
     },
     {
      "id": "p-references-147",
@@ -14803,41 +20424,69 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-147-1",
-       "original": "95 Xian Li, Changhan Wang, Yun Tang, Chau Tran, Yuqing Tang, Juan Pino, Alexei Baevski, Alexis Conneau, and Michael Auli."
+       "original": "Shahar Levy, Koren Lazar, and Gabriel Stanovsky."
       },
       {
        "id": "s-references-147-2",
-       "original": "Multilingual speech translation from efficient finetuning of pretrained models."
+       "original": "Collecting a large-scale gender bias dataset for coreference resolution and machine translation."
+      },
+      {
+       "id": "s-references-147-3",
+       "original": "In Findings of the Association for Computational Linguistics: EMNLP 2021, pages 2470–2480, Punta Cana, Dominican Republic, November 2021.",
+       "zh": "24"
+      },
+      {
+       "id": "s-references-147-4",
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/ 2021.findings-emnlp.211.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-147-5",
+       "original": "URL https://aclanthology.org/2021.findings-emnlp.211.",
+       "zh": "1."
       }
      ]
     },
     {
      "id": "p-references-148",
      "type": "paragraph",
-     "page": 96,
+     "page": 95,
      "sentences": [
       {
        "id": "s-references-148-1",
-       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 827–838, Online, August 2021a."
+       "original": "M.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
       },
       {
        "id": "s-references-148-2",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.68."
+       "original": "Paul Lewis, editor."
       },
       {
        "id": "s-references-148-3",
-       "original": "URL https://aclanthology.org/2021.acl-long.68."
+       "original": "Ethnologue: Languages of the World."
+      },
+      {
+       "id": "s-references-148-4",
+       "original": "SIL International, Dallas, TX, USA, sixteenth edition, 2009.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
     {
+     "id": "eq-references-22",
+     "type": "equation",
+     "page": 95,
+     "original": "95"
+    },
+    {
      "id": "p-references-149",
      "type": "paragraph",
-     "page": 96,
+     "page": 95,
      "sentences": [
       {
        "id": "s-references-149-1",
-       "original": "Xian Li, Changhan Wang, Yun Tang, Chau Tran, Yuqing Tang, Juan Pino, Alexei Baevski, Alexis Conneau, and Michael Auli."
+       "original": "Xian Li, Changhan Wang, Yun Tang, Chau Tran, Yuqing Tang, Juan Pino, Alexei Baevski, Alexis Conneau, and Michael Auli.",
+       "zh": "5"
       },
       {
        "id": "s-references-149-2",
@@ -14852,15 +20501,18 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-150-1",
-       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 827–838, Online, August 2021b."
+       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 827–838, Online, August 2021a.",
+       "zh": "83"
       },
       {
        "id": "s-references-150-2",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.68."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.68.",
+       "zh": "5"
       },
       {
        "id": "s-references-150-3",
-       "original": "URL https://aclanthology.org/2021.acl-long.68."
+       "original": "URL https://aclanthology.org/2021.acl-long.68.",
+       "zh": "1."
       }
      ]
     },
@@ -14871,19 +20523,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-151-1",
-       "original": "Alvin M Liberman."
+       "original": "Xian Li, Changhan Wang, Yun Tang, Chau Tran, Yuqing Tang, Juan Pino, Alexei Baevski, Alexis Conneau, and Michael Auli.",
+       "zh": "5"
       },
       {
        "id": "s-references-151-2",
-       "original": "The relation of speech to reading and writing."
-      },
-      {
-       "id": "s-references-151-3",
-       "original": "In Advances in psychology, volume 94, pages 167–178."
-      },
-      {
-       "id": "s-references-151-4",
-       "original": "Elsevier, 1992."
+       "original": "Multilingual speech translation from efficient finetuning of pretrained models."
       }
      ]
     },
@@ -14894,15 +20539,18 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-152-1",
-       "original": "Daniel Licht, Cynthia Gao, Janice Lam, Francisco Guzman, Mona Diab, and Philipp Koehn."
+       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 827–838, Online, August 2021b.",
+       "zh": "83"
       },
       {
        "id": "s-references-152-2",
-       "original": "Consistent human evaluation of machine translation across language pairs."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.68.",
+       "zh": "5"
       },
       {
        "id": "s-references-152-3",
-       "original": "In Proceedings of the 15th biennial conference of the Association for Machine Translation in the Americas (Volume 1: Research Track), pages 309–321, Orlando, USA, September 2022."
+       "original": "URL https://aclanthology.org/2021.acl-long.68.",
+       "zh": "1."
       }
      ]
     },
@@ -14913,11 +20561,20 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-153-1",
-       "original": "Association for Machine Translation in the Americas."
+       "original": "Alvin M Liberman."
       },
       {
        "id": "s-references-153-2",
-       "original": "URL https://aclanthology.org/ 2022.amta-research.24."
+       "original": "The relation of speech to reading and writing."
+      },
+      {
+       "id": "s-references-153-3",
+       "original": "In Advances in psychology, volume 94, pages 167–178."
+      },
+      {
+       "id": "s-references-153-4",
+       "original": "Elsevier, 1992.",
+       "zh": "2."
       }
      ]
     },
@@ -14928,19 +20585,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-154-1",
-       "original": "Chunxi Liu, Michael Picheny, Leda Sarı, Pooja Chitkara, Alex Xiao, Xiaohui Zhang, Mark Chou, Andres Alvarado, Caner Hazirbas, and Yatharth Saraf."
+       "original": "Daniel Licht, Cynthia Gao, Janice Lam, Francisco Guzman, Mona Diab, and Philipp Koehn."
       },
       {
        "id": "s-references-154-2",
-       "original": "Towards measuring fairness in speech recognition: Casual conversations dataset transcriptions."
+       "original": "Consistent human evaluation of machine translation across language pairs."
       },
       {
        "id": "s-references-154-3",
-       "original": "In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6162–6166."
-      },
-      {
-       "id": "s-references-154-4",
-       "original": "IEEE, 2022."
+       "original": "In Proceedings of the 15th biennial conference of the Association for Machine Translation in the Americas (Volume 1: Research Track), pages 309–321, Orlando, USA, September 2022.",
+       "zh": "5"
       }
      ]
     },
@@ -14951,15 +20605,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-155-1",
-       "original": "Shikun Liu, Edward Johns, and Andrew J Davison."
+       "original": "Association for Machine Translation in the Americas."
       },
       {
        "id": "s-references-155-2",
-       "original": "End-to-end multi-task learning with attention."
-      },
-      {
-       "id": "s-references-155-3",
-       "original": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 1871–1880, 2019."
+       "original": "URL https://aclanthology.org/ 2022.amta-research.24.",
+       "zh": "24"
       }
      ]
     },
@@ -14970,19 +20621,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-156-1",
-       "original": "Ignacio Lopez-Moreno, Javier Gonzalez-Dominguez, Oldrich Plchot, David Martinez, Joaquin Gonzalez-Rodriguez, and Pedro Moreno."
+       "original": "Chunxi Liu, Michael Picheny, Leda Sarı, Pooja Chitkara, Alex Xiao, Xiaohui Zhang, Mark Chou, Andres Alvarado, Caner Hazirbas, and Yatharth Saraf."
       },
       {
        "id": "s-references-156-2",
-       "original": "Automatic language identification using deep neural networks."
+       "original": "Towards measuring fairness in speech recognition: Casual conversations dataset transcriptions."
       },
       {
        "id": "s-references-156-3",
-       "original": "In 2014 IEEE international conference on acoustics, speech and signal processing (ICASSP), pages 5337–5341."
+       "original": "In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6162–6166.",
+       "zh": "22"
       },
       {
        "id": "s-references-156-4",
-       "original": "IEEE, 2014."
+       "original": "IEEE, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -14993,15 +20646,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-157-1",
-       "original": "Alicia Lozano-Diez, Ruben Zazo-Candil, Javier Gonzalez-Dominguez, Doroteo T Toledano, and Joaquin Gonzalez-Rodriguez."
+       "original": "Shikun Liu, Edward Johns, and Andrew J Davison."
       },
       {
        "id": "s-references-157-2",
-       "original": "An end-to-end approach to language identification in short utterances using convolutional neural networks."
+       "original": "End-to-end multi-task learning with attention."
       },
       {
        "id": "s-references-157-3",
-       "original": "In Sixteenth Annual Conference of the International Speech Communication Association, 2015."
+       "original": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 1871–1880, 2019.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -15012,72 +20666,89 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-158-1",
-       "original": "Qingsong Ma, Johnny Wei, Ondřej Bojar, and Yvette Graham."
+       "original": "Ignacio Lopez-Moreno, Javier Gonzalez-Dominguez, Oldrich Plchot, David Martinez, Joaquin Gonzalez-Rodriguez, and Pedro Moreno."
       },
       {
        "id": "s-references-158-2",
-       "original": "Results of the WMT19 metrics shared task: Segment-level and strong MT systems pose big challenges."
+       "original": "Automatic language identification using deep neural networks."
       },
       {
        "id": "s-references-158-3",
-       "original": "In Proceedings of 96 the Fourth Conference on Machine Translation (Volume 2: Shared Task Papers, Day 1), pages 62–90, Florence, Italy, August 2019."
+       "original": "In 2014 IEEE international conference on acoustics, speech and signal processing (ICASSP), pages 5337–5341.",
+       "zh": "5"
       },
       {
        "id": "s-references-158-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/W19-5302."
-      },
-      {
-       "id": "s-references-158-5",
-       "original": "URL https://aclanthology.org/W19-5302."
+       "original": "IEEE, 2014.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
     {
      "id": "p-references-159",
      "type": "paragraph",
-     "page": 97,
+     "page": 96,
      "sentences": [
       {
        "id": "s-references-159-1",
-       "original": "Kevis-Kokitsi Maninis, Ilija Radosavovic, and Iasonas Kokkinos."
+       "original": "Alicia Lozano-Diez, Ruben Zazo-Candil, Javier Gonzalez-Dominguez, Doroteo T Toledano, and Joaquin Gonzalez-Rodriguez."
       },
       {
        "id": "s-references-159-2",
-       "original": "Attentive single-tasking of multiple tasks."
+       "original": "An end-to-end approach to language identification in short utterances using convolutional neural networks."
       },
       {
        "id": "s-references-159-3",
-       "original": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 1851–1860, 2019."
+       "original": "In Sixteenth Annual Conference of the International Speech Communication Association, 2015.",
+       "zh": "5"
       }
      ]
     },
     {
      "id": "p-references-160",
      "type": "paragraph",
-     "page": 97,
+     "page": 96,
      "sentences": [
       {
        "id": "s-references-160-1",
-       "original": "Katerina Markelova."
+       "original": "Qingsong Ma, Johnny Wei, Ondřej Bojar, and Yvette Graham."
       },
       {
        "id": "s-references-160-2",
-       "original": "Illiteracy: “another form of slavery”, Nov 2021."
+       "original": "Results of the WMT19 metrics shared task: Segment-level and strong MT systems pose big challenges."
       },
       {
        "id": "s-references-160-3",
-       "original": "URL https://en."
+       "original": "In Proceedings of",
+       "zh": "3."
       }
      ]
     },
     {
+     "id": "eq-references-23",
+     "type": "equation",
+     "page": 96,
+     "original": "96"
+    },
+    {
      "id": "p-references-161",
      "type": "paragraph",
-     "page": 97,
+     "page": 96,
      "sentences": [
       {
        "id": "s-references-161-1",
-       "original": "unesco.org/courier/2021-5/illiteracy-another-form-slavery."
+       "original": "the Fourth Conference on Machine Translation (Volume 2: Shared Task Papers, Day 1), pages 62–90, Florence, Italy, August 2019.",
+       "zh": "（页码行：2。）"
+      },
+      {
+       "id": "s-references-161-2",
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/W19-5302.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-161-3",
+       "original": "URL https://aclanthology.org/W19-5302.",
+       "zh": "5"
       }
      ]
     },
@@ -15088,7 +20759,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-162-1",
-       "original": "Xiaoxiao Miao, Ian McLoughlin, and Yonghong Yan."
+       "original": "Kevis-Kokitsi Maninis, Ilija Radosavovic, and Iasonas Kokkinos."
+      },
+      {
+       "id": "s-references-162-2",
+       "original": "Attentive single-tasking of multiple tasks."
+      },
+      {
+       "id": "s-references-162-3",
+       "original": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 1851–1860, 2019.",
+       "zh": "5"
       }
      ]
     },
@@ -15099,11 +20779,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-163-1",
-       "original": "A new time-frequency attention mechanism for tdnn and cnn-lstm-tdnn, with application to language identification."
+       "original": "Katerina Markelova."
       },
       {
        "id": "s-references-163-2",
-       "original": "In Interspeech, pages 4080–4084, 2019."
+       "original": "Illiteracy: “another form of slavery”, Nov 2021.",
+       "zh": "1."
+      },
+      {
+       "id": "s-references-163-3",
+       "original": "URL https://en."
       }
      ]
     },
@@ -15114,19 +20799,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-164-1",
-       "original": "Margaret Mitchell, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, and Timnit Gebru."
-      },
-      {
-       "id": "s-references-164-2",
-       "original": "Model cards for model reporting."
-      },
-      {
-       "id": "s-references-164-3",
-       "original": "In Proceedings of the Conference on Fairness, Accountability, and Transparency, FAT* ’19, page 220–229, New York, NY, USA, 2019."
-      },
-      {
-       "id": "s-references-164-4",
-       "original": "Association for Computing Machinery."
+       "original": "unesco.org/courier/2021-5/illiteracy-another-form-slavery.",
+       "zh": "5"
       }
      ]
     },
@@ -15137,7 +20811,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-165-1",
-       "original": "ISBN 9781450361255."
+       "original": "Xiaoxiao Miao, Ian McLoughlin, and Yonghong Yan."
       }
      ]
     },
@@ -15148,7 +20822,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-166-1",
-       "original": "doi: 10.1145/3287560.3287596."
+       "original": "A new time-frequency attention mechanism for tdnn and cnn-lstm-tdnn, with application to language identification."
+      },
+      {
+       "id": "s-references-166-2",
+       "original": "In Interspeech, pages 4080–4084, 2019.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -15159,7 +20838,20 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-167-1",
-       "original": "URL https://doi.org/10.1145/3287560.3287596."
+       "original": "Margaret Mitchell, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, and Timnit Gebru."
+      },
+      {
+       "id": "s-references-167-2",
+       "original": "Model cards for model reporting."
+      },
+      {
+       "id": "s-references-167-3",
+       "original": "In Proceedings of the Conference on Fairness, Accountability, and Transparency, FAT* ’19, page 220–229, New York, NY, USA, 2019.",
+       "zh": "22"
+      },
+      {
+       "id": "s-references-167-4",
+       "original": "Association for Computing Machinery."
       }
      ]
     },
@@ -15170,11 +20862,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-168-1",
-       "original": "Benjamin Muller, Belen Alastruey, Prangthip Hansanti, Elahe Kalbassi, Christophe Ropers, Eric Smith, Adina Williams, Luke Zettlemoyer, Pierre Andrews, and Marta R."
-      },
-      {
-       "id": "s-references-168-2",
-       "original": "Costa-jussà."
+       "original": "ISBN 9781450361255.",
+       "zh": "12"
       }
      ]
     },
@@ -15185,7 +20874,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-169-1",
-       "original": "Automatic pipeline for gender multilingual data characterisation at scale. arXiv preprint arXiv:, 2023."
+       "original": "doi: 10.1145/3287560.3287596.",
+       "zh": "45"
       }
      ]
     },
@@ -15196,67 +20886,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-170-1",
-       "original": "S."
-      },
-      {
-       "id": "s-references-170-2",
-       "original": "Nakamura, K."
-      },
-      {
-       "id": "s-references-170-3",
-       "original": "Markov, H."
-      },
-      {
-       "id": "s-references-170-4",
-       "original": "Nakaiwa, G."
-      },
-      {
-       "id": "s-references-170-5",
-       "original": "Kikui, H."
-      },
-      {
-       "id": "s-references-170-6",
-       "original": "Kawai, T."
-      },
-      {
-       "id": "s-references-170-7",
-       "original": "Jitsuhiro, Jin-Song Zhang, H."
-      },
-      {
-       "id": "s-references-170-8",
-       "original": "Yamamoto, E."
-      },
-      {
-       "id": "s-references-170-9",
-       "original": "Sumita, and S."
-      },
-      {
-       "id": "s-references-170-10",
-       "original": "Yamamoto."
-      },
-      {
-       "id": "s-references-170-11",
-       "original": "The atr multilingual speech-to-speech translation system."
-      },
-      {
-       "id": "s-references-170-12",
-       "original": "Trans."
-      },
-      {
-       "id": "s-references-170-13",
-       "original": "Audio, Speech and Lang."
-      },
-      {
-       "id": "s-references-170-14",
-       "original": "Proc., 14(2):365–376, dec 2006."
-      },
-      {
-       "id": "s-references-170-15",
-       "original": "ISSN 1558-7916. doi: 10.1109/TSA.2005.860774."
-      },
-      {
-       "id": "s-references-170-16",
-       "original": "URL https://doi.org/10.1109/TSA.2005."
+       "original": "URL https://doi.org/10.1145/3287560.3287596.",
+       "zh": "45"
       }
      ]
     },
@@ -15267,7 +20898,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-171-1",
-       "original": "860774."
+       "original": "Benjamin Muller, Belen Alastruey, Prangthip Hansanti, Elahe Kalbassi, Christophe Ropers, Eric Smith, Adina Williams, Luke Zettlemoyer, Pierre Andrews, and Marta R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-171-2",
+       "original": "Costa-jussà."
       }
      ]
     },
@@ -15278,11 +20914,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-172-1",
-       "original": "Mikel K Ngueajio and Gloria Washington."
-      },
-      {
-       "id": "s-references-172-2",
-       "original": "Hey asr system! why aren’t you more inclusive?"
+       "original": "Automatic pipeline for gender multilingual data characterisation at scale. arXiv preprint arXiv:, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -15293,17 +20926,81 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-173-1",
-       "original": "automatic speech recognition systems’ bias and proposed bias mitigation techniques. a literature review."
+       "original": "S.",
+       "zh": "对 S2ST，我们考察两种级联方式：(1) ASR、T2TT、TTS 的 3 段级联；(2) S2TT、TTS 的 2 段级联。"
       },
       {
        "id": "s-references-173-2",
-       "original": "In International Conference on Human-Computer Interaction, pages 421–440."
+       "original": "Nakamura, K."
       },
       {
        "id": "s-references-173-3",
-       "original": "Springer, 2022."
+       "original": "Markov, H."
+      },
+      {
+       "id": "s-references-173-4",
+       "original": "Nakaiwa, G."
+      },
+      {
+       "id": "s-references-173-5",
+       "original": "Kikui, H."
+      },
+      {
+       "id": "s-references-173-6",
+       "original": "Kawai, T.",
+       "zh": "迄今为止，前述同时支持文本与语音作为输入输出的 AudioPaLM [Rubenstein et al., 2023] 是 S2TT 与 S2ST 的当前最先进模型。"
+      },
+      {
+       "id": "s-references-173-7",
+       "original": "Jitsuhiro, Jin-Song Zhang, H."
+      },
+      {
+       "id": "s-references-173-8",
+       "original": "Yamamoto, E."
+      },
+      {
+       "id": "s-references-173-9",
+       "original": "Sumita, and S.",
+       "zh": "对 S2ST，我们考察两种级联方式：(1) ASR、T2TT、TTS 的 3 段级联；(2) S2TT、TTS 的 2 段级联。"
+      },
+      {
+       "id": "s-references-173-10",
+       "original": "Yamamoto."
+      },
+      {
+       "id": "s-references-173-11",
+       "original": "The atr multilingual speech-to-speech translation system."
+      },
+      {
+       "id": "s-references-173-12",
+       "original": "Trans."
+      },
+      {
+       "id": "s-references-173-13",
+       "original": "Audio, Speech and Lang."
+      },
+      {
+       "id": "s-references-173-14",
+       "original": "Proc., 14(2):365–376, dec 2006.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-173-15",
+       "original": "ISSN 1558-7916. doi: 10.1109/TSA.2005.860774.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-173-16",
+       "original": "URL https://doi.org/10.1109/TSA.2005.",
+       "zh": "5"
       }
      ]
+    },
+    {
+     "id": "eq-references-24",
+     "type": "equation",
+     "page": 97,
+     "original": "860774."
     },
     {
      "id": "p-references-174",
@@ -15312,19 +21009,11 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-174-1",
-       "original": "NLLB Team, Marta R."
+       "original": "Mikel K Ngueajio and Gloria Washington."
       },
       {
        "id": "s-references-174-2",
-       "original": "Costa-jussà, James Cross, Onur Çelebi, Maha Elbayad, Kenneth Heafield, Kevin Heffernan, Elahe Kalbassi, Janice Lam, Daniel Licht, Jean Maillard, Anna Sun, Skyler Wang, Guillaume Wenzek, Al Youngblood, Bapi Akula, Loic Barrault, Gabriel Mejia-Gonzalez, Prangthip Hansanti, John Hoffman, Semarley Jarrett, Kaushik Ram Sadagopan, Dirk Rowe, Shannon Spruit, Chau Tran, Pierre Andrews, Necip Fazil Ayan, Shruti Bhosale, Sergey Edunov, Angela Fan, Cynthia Gao, Vedanuj Goswami, Francisco Guzmán, Philipp Koehn, Alexandre Mourachko, Christophe Ropers, Safiyyah Saleem, Holger Schwenk, and Jeff Wang."
-      },
-      {
-       "id": "s-references-174-3",
-       "original": "No language left behind: Scaling human-centered machine translation, 2022."
-      },
-      {
-       "id": "s-references-174-4",
-       "original": "URL https://arxiv.org/abs/2207.04672."
+       "original": "Hey asr system! why aren’t you more inclusive?"
       }
      ]
     },
@@ -15335,53 +21024,75 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-175-1",
-       "original": "97 Myle Ott, Sergey Edunov, Alexei Baevski, Angela Fan, Sam Gross, Nathan Ng, David Grangier, and Michael Auli. fairseq: A fast, extensible toolkit for sequence modeling."
+       "original": "automatic speech recognition systems’ bias and proposed bias mitigation techniques. a literature review."
       },
       {
        "id": "s-references-175-2",
-       "original": "In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics (Demonstrations), pages 48–53, Minneapolis, Minnesota, June 2019."
+       "original": "In International Conference on Human-Computer Interaction, pages 421–440.",
+       "zh": "21"
       },
       {
        "id": "s-references-175-3",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/N19-4009."
-      },
-      {
-       "id": "s-references-175-4",
-       "original": "URL https://aclanthology.org/N19-4009."
+       "original": "Springer, 2022.",
+       "zh": "2."
       }
      ]
     },
     {
      "id": "p-references-176",
      "type": "paragraph",
-     "page": 98,
+     "page": 97,
      "sentences": [
       {
        "id": "s-references-176-1",
-       "original": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu."
+       "original": "NLLB Team, Marta R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-176-2",
+       "original": "Costa-jussà, James Cross, Onur Çelebi, Maha Elbayad, Kenneth Heafield, Kevin Heffernan, Elahe Kalbassi, Janice Lam, Daniel Licht, Jean Maillard, Anna Sun, Skyler Wang, Guillaume Wenzek, Al Youngblood, Bapi Akula, Loic Barrault, Gabriel Mejia-Gonzalez, Prangthip Hansanti, John Hoffman, Semarley Jarrett, Kaushik Ram Sadagopan, Dirk Rowe, Shannon Spruit, Chau Tran, Pierre Andrews, Necip Fazil Ayan, Shruti Bhosale, Sergey Edunov, Angela Fan, Cynthia Gao, Vedanuj Goswami, Francisco Guzmán, Philipp Koehn, Alexandre Mourachko, Christophe Ropers, Safiyyah Saleem, Holger Schwenk, and Jeff Wang."
+      },
+      {
+       "id": "s-references-176-3",
+       "original": "No language left behind: Scaling human-centered machine translation, 2022.",
+       "zh": "2."
+      },
+      {
+       "id": "s-references-176-4",
+       "original": "URL https://arxiv.org/abs/2207.04672.",
+       "zh": "2."
       }
      ]
     },
     {
+     "id": "eq-references-25",
+     "type": "equation",
+     "page": 97,
+     "original": "97"
+    },
+    {
      "id": "p-references-177",
      "type": "paragraph",
-     "page": 98,
+     "page": 97,
      "sentences": [
       {
        "id": "s-references-177-1",
-       "original": "Bleu: a method for automatic evaluation of machine translation."
+       "original": "Myle Ott, Sergey Edunov, Alexei Baevski, Angela Fan, Sam Gross, Nathan Ng, David Grangier, and Michael Auli. fairseq: A fast, extensible toolkit for sequence modeling."
       },
       {
        "id": "s-references-177-2",
-       "original": "In Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics, pages 311–318, Philadelphia, Pennsylvania, USA, July 2002."
+       "original": "In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics (Demonstrations), pages 48–53, Minneapolis, Minnesota, June 2019.",
+       "zh": "5"
       },
       {
        "id": "s-references-177-3",
-       "original": "Association for Computational Linguistics. doi: 10.3115/1073083.1073135."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/N19-4009.",
+       "zh": "5"
       },
       {
        "id": "s-references-177-4",
-       "original": "URL https://aclanthology.org/P02-1040."
+       "original": "URL https://aclanthology.org/N19-4009.",
+       "zh": "1."
       }
      ]
     },
@@ -15392,23 +21103,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-178-1",
-       "original": "Jonas Pfeiffer, Ivan Vulić, Iryna Gurevych, and Sebastian Ruder."
-      },
-      {
-       "id": "s-references-178-2",
-       "original": "MAD-X: An AdapterBased Framework for Multi-Task Cross-Lingual Transfer."
-      },
-      {
-       "id": "s-references-178-3",
-       "original": "In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 7654– 7673, Online, November 2020."
-      },
-      {
-       "id": "s-references-178-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/ v1/2020.emnlp-main.617."
-      },
-      {
-       "id": "s-references-178-5",
-       "original": "URL https://aclanthology.org/2020.emnlp-main.617."
+       "original": "Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu."
       }
      ]
     },
@@ -15419,19 +21114,22 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-179-1",
-       "original": "Juan Pino, Qiantong Xu, Xutai Ma, Mohammad Javad Dousti, and Yun Tang."
+       "original": "Bleu: a method for automatic evaluation of machine translation."
       },
       {
        "id": "s-references-179-2",
-       "original": "Self-Training for End-to-End Speech Translation."
+       "original": "In Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics, pages 311–318, Philadelphia, Pennsylvania, USA, July 2002.",
+       "zh": "2."
       },
       {
        "id": "s-references-179-3",
-       "original": "In Proc."
+       "original": "Association for Computational Linguistics. doi: 10.3115/1073083.1073135.",
+       "zh": "83"
       },
       {
        "id": "s-references-179-4",
-       "original": "Interspeech 2020, pages 1476–1480, 2020. doi: 10.21437/Interspeech.2020-2938."
+       "original": "URL https://aclanthology.org/P02-1040.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -15442,15 +21140,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-180-1",
-       "original": "Ingo Plag, Christiane Dalton-Puffer, and Harald Baayen."
+       "original": "Jonas Pfeiffer, Ivan Vulić, Iryna Gurevych, and Sebastian Ruder."
       },
       {
        "id": "s-references-180-2",
-       "original": "Morphological productivity across speech and writing."
+       "original": "MAD-X: An AdapterBased Framework for Multi-Task Cross-Lingual Transfer."
       },
       {
        "id": "s-references-180-3",
-       "original": "English Language & Linguistics, 3(2):209–228, 1999."
+       "original": "In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 7654– 7673, Online, November 2020.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-180-4",
+       "original": "Association for Computational Linguistics. doi: 10.18653/ v1/2020.emnlp-main.617.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-180-5",
+       "original": "URL https://aclanthology.org/2020.emnlp-main.617.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -15461,11 +21170,11 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-181-1",
-       "original": "Adam Polyak, Yossi Adi, Jade Copet, Eugene Kharitonov, Kushal Lakhotia, Wei-Ning Hsu, Abdelrahman Mohamed, and Emmanuel Dupoux."
+       "original": "Juan Pino, Qiantong Xu, Xutai Ma, Mohammad Javad Dousti, and Yun Tang."
       },
       {
        "id": "s-references-181-2",
-       "original": "Speech Resynthesis from Discrete Disentangled Self-Supervised Representations."
+       "original": "Self-Training for End-to-End Speech Translation."
       },
       {
        "id": "s-references-181-3",
@@ -15473,7 +21182,8 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-references-181-4",
-       "original": "Interspeech 2021, 2021."
+       "original": "Interspeech 2020, pages 1476–1480, 2020. doi: 10.21437/Interspeech.2020-2938.",
+       "zh": "21"
       }
      ]
     },
@@ -15484,15 +21194,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-182-1",
-       "original": "Maja Popović. chrF: character n-gram F-score for automatic MT evaluation."
+       "original": "Ingo Plag, Christiane Dalton-Puffer, and Harald Baayen."
       },
       {
        "id": "s-references-182-2",
-       "original": "In Proceedings of the Tenth Workshop on Statistical Machine Translation, pages 392–395, Lisbon, Portugal, September 2015."
+       "original": "Morphological productivity across speech and writing."
       },
       {
        "id": "s-references-182-3",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/W15-3049."
+       "original": "English Language & Linguistics, 3(2):209–228, 1999.",
+       "zh": "22"
       }
      ]
     },
@@ -15503,7 +21214,20 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-183-1",
-       "original": "URL https://aclanthology.org/W15-3049."
+       "original": "Adam Polyak, Yossi Adi, Jade Copet, Eugene Kharitonov, Kushal Lakhotia, Wei-Ning Hsu, Abdelrahman Mohamed, and Emmanuel Dupoux."
+      },
+      {
+       "id": "s-references-183-2",
+       "original": "Speech Resynthesis from Discrete Disentangled Self-Supervised Representations."
+      },
+      {
+       "id": "s-references-183-3",
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-183-4",
+       "original": "Interspeech 2021, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -15514,15 +21238,17 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-184-1",
-       "original": "Bilal Porgali, Vítor Albiero, Jordan Ryda, Cristian Canton Ferrer, and Caner Hazirbas."
+       "original": "Maja Popović. chrF: character n-gram F-score for automatic MT evaluation."
       },
       {
        "id": "s-references-184-2",
-       "original": "The casual conversations v2 dataset."
+       "original": "In Proceedings of the Tenth Workshop on Statistical Machine Translation, pages 392–395, Lisbon, Portugal, September 2015.",
+       "zh": "5"
       },
       {
        "id": "s-references-184-3",
-       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 10–17, 2023."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/W15-3049.",
+       "zh": "5"
       }
      ]
     },
@@ -15533,15 +21259,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-185-1",
-       "original": "Matt Post."
-      },
-      {
-       "id": "s-references-185-2",
-       "original": "A call for clarity in reporting BLEU scores."
-      },
-      {
-       "id": "s-references-185-3",
-       "original": "In Proceedings of the Third Conference on Machine Translation: Research Papers, pages 186–191, Belgium, Brussels, October 2018."
+       "original": "URL https://aclanthology.org/W15-3049.",
+       "zh": "5"
       }
      ]
     },
@@ -15552,11 +21271,17 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-186-1",
-       "original": "Association for Computational Linguistics."
+       "original": "Bilal Porgali, Vítor Albiero, Jordan Ryda, Cristian Canton Ferrer, and Caner Hazirbas."
       },
       {
        "id": "s-references-186-2",
-       "original": "URL https://www.aclweb.org/anthology/ W18-6319."
+       "original": "The casual conversations v2 dataset.",
+       "zh": "（页码行：2。）"
+      },
+      {
+       "id": "s-references-186-3",
+       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 10–17, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -15567,68 +21292,76 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-187-1",
-       "original": "Tomasz Potapczyk and Pawel Przybysz."
+       "original": "Matt Post."
       },
       {
        "id": "s-references-187-2",
-       "original": "Srpol’s system for the IWSLT 2020 end-to-end speech translation task."
+       "original": "A call for clarity in reporting BLEU scores."
       },
       {
        "id": "s-references-187-3",
-       "original": "In Marcello Federico, Alex Waibel, Kevin Knight, Satoshi Nakamura, Hermann Ney, Jan Niehues, Sebastian Stüker, Dekai Wu, Joseph Mariani, and François Yvon, editors, Proceedings of the 17th International Conference on Spoken 98 Language Translation, IWSLT 2020, Online, July 9 - 10, 2020, pages 89–94."
-      },
-      {
-       "id": "s-references-187-4",
-       "original": "Association for Computational Linguistics, 2020a."
+       "original": "In Proceedings of the Third Conference on Machine Translation: Research Papers, pages 186–191, Belgium, Brussels, October 2018.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
     {
      "id": "p-references-188",
      "type": "paragraph",
-     "page": 99,
+     "page": 98,
      "sentences": [
       {
        "id": "s-references-188-1",
-       "original": "doi: 10.18653/v1/2020.iwslt-1.9."
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-188-2",
+       "original": "URL https://www.aclweb.org/anthology/ W18-6319.",
+       "zh": "63"
       }
      ]
     },
     {
      "id": "p-references-189",
      "type": "paragraph",
-     "page": 99,
+     "page": 98,
      "sentences": [
       {
        "id": "s-references-189-1",
-       "original": "URL https://doi.org/10.18653/v1/2020.iwslt-1.9."
+       "original": "Tomasz Potapczyk and Pawel Przybysz."
+      },
+      {
+       "id": "s-references-189-2",
+       "original": "Srpol’s system for the IWSLT 2020 end-to-end speech translation task.",
+       "zh": "（页码行：2。）"
+      },
+      {
+       "id": "s-references-189-3",
+       "original": "In Marcello Federico, Alex Waibel, Kevin Knight, Satoshi Nakamura, Hermann Ney, Jan Niehues, Sebastian Stüker, Dekai Wu, Joseph Mariani, and François Yvon, editors, Proceedings of the 17th International Conference on Spoken"
       }
      ]
     },
     {
+     "id": "eq-references-26",
+     "type": "equation",
+     "page": 98,
+     "original": "98"
+    },
+    {
      "id": "p-references-190",
      "type": "paragraph",
-     "page": 99,
+     "page": 98,
      "sentences": [
       {
        "id": "s-references-190-1",
-       "original": "Tomasz Potapczyk and Pawel Przybysz."
+       "original": "Language Translation, IWSLT 2020, Online, July 9 - 10, 2020, pages 89–94.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-190-2",
-       "original": "SRPOL’s system for the IWSLT 2020 end-to-end speech translation task."
-      },
-      {
-       "id": "s-references-190-3",
-       "original": "In Proceedings of the 17th International Conference on Spoken Language Translation, pages 89–94, Online, July 2020b."
-      },
-      {
-       "id": "s-references-190-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2020.iwslt-1.9."
-      },
-      {
-       "id": "s-references-190-5",
-       "original": "URL https://aclanthology.org/2020."
+       "original": "Association for Computational Linguistics, 2020a.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -15639,7 +21372,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-191-1",
-       "original": "iwslt-1.9."
+       "original": "doi: 10.18653/v1/2020.iwslt-1.9.",
+       "zh": "5"
       }
      ]
     },
@@ -15650,11 +21384,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-192-1",
-       "original": "Vineel Pratap, Andros Tjandra, Bowen Shi, Paden Tomasello, Arun Babu, Sayani Kundu, Ali Elkahky, Zhaoheng Ni, Apoorv Vyas, Maryam Fazel-Zarandi, Alexei Baevski, Yossi Adi, Xiaohui Zhang, Wei-Ning Hsu, Alexis Conneau, and Michael Auli."
-      },
-      {
-       "id": "s-references-192-2",
-       "original": "Scaling speech technology to 1,000+ languages, 2023."
+       "original": "URL https://doi.org/10.18653/v1/2020.iwslt-1.9.",
+       "zh": "5"
       }
      ]
     },
@@ -15665,15 +21396,27 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-193-1",
-       "original": "Marcelo Prates, Pedro Avelar, and Luís Lamb."
+       "original": "Tomasz Potapczyk and Pawel Przybysz."
       },
       {
        "id": "s-references-193-2",
-       "original": "Assessing gender bias in machine translation: a case study with google translate."
+       "original": "SRPOL’s system for the IWSLT 2020 end-to-end speech translation task.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-193-3",
-       "original": "Neural Computing and Applications, 32, 05 2020. doi: 10.1007/s00521-019-04144-6."
+       "original": "In Proceedings of the 17th International Conference on Spoken Language Translation, pages 89–94, Online, July 2020b.",
+       "zh": "（页码行：2。）"
+      },
+      {
+       "id": "s-references-193-4",
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2020.iwslt-1.9.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-193-5",
+       "original": "URL https://aclanthology.org/2020.",
+       "zh": "1."
       }
      ]
     },
@@ -15684,23 +21427,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-194-1",
-       "original": "Rebecca Qian, Candace Ross, Jude Fernandes, Eric Michael Smith, Douwe Kiela, and Adina Williams."
-      },
-      {
-       "id": "s-references-194-2",
-       "original": "Perturbation augmentation for fairer NLP."
-      },
-      {
-       "id": "s-references-194-3",
-       "original": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 9496–9521, Abu Dhabi, United Arab Emirates, December 2022."
-      },
-      {
-       "id": "s-references-194-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/ v1/2022.emnlp-main.646."
-      },
-      {
-       "id": "s-references-194-5",
-       "original": "URL https://aclanthology.org/2022.emnlp-main.646."
+       "original": "iwslt-1.9.",
+       "zh": "1."
       }
      ]
     },
@@ -15711,11 +21439,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-195-1",
-       "original": "Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
+       "original": "Vineel Pratap, Andros Tjandra, Bowen Shi, Paden Tomasello, Arun Babu, Sayani Kundu, Ali Elkahky, Zhaoheng Ni, Apoorv Vyas, Maryam Fazel-Zarandi, Alexei Baevski, Yossi Adi, Xiaohui Zhang, Wei-Ning Hsu, Alexis Conneau, and Michael Auli."
       },
       {
        "id": "s-references-195-2",
-       "original": "Robust speech recognition via large-scale weak supervision. arXiv preprint arXiv:2212.04356, 2022."
+       "original": "Scaling speech technology to 1,000+ languages, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -15726,15 +21455,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-196-1",
-       "original": "Gowtham Ramesh, Sumanth Doddapaneni, Aravinth Bheemaraj, Mayank Jobanputra, Raghavan AK, Ajitesh Sharma, Sujit Sahoo, Harshita Diddee, Mahalakshmi J, Divyanshu Kakwani, Navneet Kumar, Aswin Pradeep, Srihari Nagaraj, Kumar Deepak, Vivek Raghavan, Anoop Kunchukuttan, Pratyush Kumar, and Mitesh Shantadevi Khapr."
+       "original": "Marcelo Prates, Pedro Avelar, and Luís Lamb."
       },
       {
        "id": "s-references-196-2",
-       "original": "Samanantar: The largest publicly available parallel corpora collection for 11 indic languages."
+       "original": "Assessing gender bias in machine translation: a case study with google translate."
       },
       {
        "id": "s-references-196-3",
-       "original": "TACL, 10: 145–162, 2022."
+       "original": "Neural Computing and Applications, 32, 05 2020. doi: 10.1007/s00521-019-04144-6.",
+       "zh": "5"
       }
      ]
     },
@@ -15745,15 +21475,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-197-1",
-       "original": "Nils Reimers and Iryna Gurevych."
+       "original": "Rebecca Qian, Candace Ross, Jude Fernandes, Eric Michael Smith, Douwe Kiela, and Adina Williams."
       },
       {
        "id": "s-references-197-2",
-       "original": "Sentence-BERT: Sentence embeddings using Siamese BERT-networks."
+       "original": "Perturbation augmentation for fairer NLP."
       },
       {
        "id": "s-references-197-3",
-       "original": "In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3982–3992, Hong Kong, China, November 2019."
+       "original": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 9496–9521, Abu Dhabi, United Arab Emirates, December 2022.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-197-4",
+       "original": "Association for Computational Linguistics. doi: 10.18653/ v1/2022.emnlp-main.646.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-197-5",
+       "original": "URL https://aclanthology.org/2022.emnlp-main.646.",
+       "zh": "2."
       }
      ]
     },
@@ -15764,11 +21505,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-198-1",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/D19-1410."
+       "original": "Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
       },
       {
        "id": "s-references-198-2",
-       "original": "URL https: //aclanthology.org/D19-1410."
+       "original": "Robust speech recognition via large-scale weak supervision. arXiv preprint arXiv:2212.04356, 2022.",
+       "zh": "12"
       }
      ]
     },
@@ -15779,17 +21521,24 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-199-1",
-       "original": "Nils Reimers and Iryna Gurevych."
+       "original": "Gowtham Ramesh, Sumanth Doddapaneni, Aravinth Bheemaraj, Mayank Jobanputra, Raghavan AK, Ajitesh Sharma, Sujit Sahoo, Harshita Diddee, Mahalakshmi J, Divyanshu Kakwani, Navneet Kumar, Aswin Pradeep, Srihari Nagaraj, Kumar Deepak, Vivek Raghavan, Anoop Kunchukuttan, Pratyush Kumar, and Mitesh Shantadevi Khapr."
       },
       {
        "id": "s-references-199-2",
-       "original": "Making monolingual sentence embeddings multilingual using knowledge distillation."
+       "original": "Samanantar: The largest publicly available parallel corpora collection for 11 indic languages."
       },
       {
        "id": "s-references-199-3",
-       "original": "In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 4512–4525, Online, November 2020."
+       "original": "TACL, 10:",
+       "zh": "45"
       }
      ]
+    },
+    {
+     "id": "eq-references-27",
+     "type": "equation",
+     "page": 99,
+     "original": "145–162, 2022."
     },
     {
      "id": "p-references-200",
@@ -15798,11 +21547,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-200-1",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2020.emnlp-main.365."
+       "original": "Nils Reimers and Iryna Gurevych."
       },
       {
        "id": "s-references-200-2",
-       "original": "URL https://aclanthology.org/2020.emnlp-main.365."
+       "original": "Sentence-BERT: Sentence embeddings using Siamese BERT-networks."
+      },
+      {
+       "id": "s-references-200-3",
+       "original": "In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 3982–3992, Hong Kong, China, November 2019.",
+       "zh": "39"
       }
      ]
     },
@@ -15813,68 +21567,70 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-201-1",
-       "original": "99 Adithya Renduchintala and Adina Williams."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/D19-1410.",
+       "zh": "5"
       },
       {
        "id": "s-references-201-2",
-       "original": "Investigating failures of automatic translationin the case of unambiguous gender."
+       "original": "URL https: //aclanthology.org/D19-1410."
       }
      ]
     },
     {
      "id": "p-references-202",
      "type": "paragraph",
-     "page": 100,
+     "page": 99,
      "sentences": [
       {
        "id": "s-references-202-1",
-       "original": "In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3454–3469, Dublin, Ireland, May 2022."
+       "original": "Nils Reimers and Iryna Gurevych."
       },
       {
        "id": "s-references-202-2",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/ 2022.acl-long.243."
+       "original": "Making monolingual sentence embeddings multilingual using knowledge distillation."
       },
       {
        "id": "s-references-202-3",
-       "original": "URL https://aclanthology.org/2022.acl-long.243."
+       "original": "In Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP), pages 4512–4525, Online, November 2020.",
+       "zh": "12"
       }
      ]
     },
     {
      "id": "p-references-203",
      "type": "paragraph",
-     "page": 100,
+     "page": 99,
      "sentences": [
       {
        "id": "s-references-203-1",
-       "original": "Adithya Renduchintala, Denise Diaz, Kenneth Heafield, Xian Li, and Mona Diab."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2020.emnlp-main.365.",
+       "zh": "5"
       },
       {
        "id": "s-references-203-2",
-       "original": "Gender bias amplification during speed-quality optimization in neural machine translation."
-      },
-      {
-       "id": "s-references-203-3",
-       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 2: Short Papers), pages 99–109, Online, August 2021."
-      },
-      {
-       "id": "s-references-203-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-short.15."
-      },
-      {
-       "id": "s-references-203-5",
-       "original": "URL https://aclanthology.org/2021."
+       "original": "URL https://aclanthology.org/2020.emnlp-main.365.",
+       "zh": "5"
       }
      ]
     },
     {
+     "id": "eq-references-28",
+     "type": "equation",
+     "page": 99,
+     "original": "99"
+    },
+    {
      "id": "p-references-204",
      "type": "paragraph",
-     "page": 100,
+     "page": 99,
      "sentences": [
       {
        "id": "s-references-204-1",
-       "original": "acl-short.15."
+       "original": "Adithya Renduchintala and Adina Williams."
+      },
+      {
+       "id": "s-references-204-2",
+       "original": "Investigating failures of automatic translationin the case of unambiguous gender."
       }
      ]
     },
@@ -15885,31 +21641,18 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-205-1",
-       "original": "Paul K."
+       "original": "In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 3454–3469, Dublin, Ireland, May 2022.",
+       "zh": "45"
       },
       {
        "id": "s-references-205-2",
-       "original": "Rubenstein, Chulayuth Asawaroengchai, Duc Dung Nguyen, Ankur Bapna, Zalán Borsos, Félix de Chaumont Quitry, Peter Chen, Dalia El Badawy, Wei Han, Eugene Kharitonov, Hannah Muckenhirn, Dirk Ryan Padfield, James Qin, Daniel Rozenberg, Tara N."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/ 2022.acl-long.243.",
+       "zh": "24"
       },
       {
        "id": "s-references-205-3",
-       "original": "Sainath, Johan Schalkwyk, Matthew Sharifi, Michelle D."
-      },
-      {
-       "id": "s-references-205-4",
-       "original": "Tadmor, Ramanovich, Marco Tagliasacchi, Alexandru Tudor, Mihajlo Velimirovi’c, Damien Vincent, Jiahui Yu, Yongqiang Wang, Victoria Zayats, Neil Zeghidour, Yu Zhang, Zhishuai Zhang, Lukás Zilka, and Christian Havnø Frank."
-      },
-      {
-       "id": "s-references-205-5",
-       "original": "Audiopalm: A large language model that can speak and listen."
-      },
-      {
-       "id": "s-references-205-6",
-       "original": "ArXiv, abs/2306.12925, 2023."
-      },
-      {
-       "id": "s-references-205-7",
-       "original": "URL https://api.semanticscholar.org/ CorpusID:259224345."
+       "original": "URL https://aclanthology.org/2022.acl-long.243.",
+       "zh": "24"
       }
      ]
     },
@@ -15920,11 +21663,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-206-1",
-       "original": "Oleg Rybakov, Fadi Biadsy, Xia Zhang, Liyang Jiang, Phoenix Meadowlark, and Shivani Agrawal."
+       "original": "Adithya Renduchintala, Denise Diaz, Kenneth Heafield, Xian Li, and Mona Diab."
       },
       {
        "id": "s-references-206-2",
-       "original": "Streaming parrotron for on-device speech-to-speech conversion. arXiv preprint arXiv:2210.13761, 2022."
+       "original": "Gender bias amplification during speed-quality optimization in neural machine translation."
+      },
+      {
+       "id": "s-references-206-3",
+       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 2: Short Papers), pages 99–109, Online, August 2021.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-206-4",
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-short.15.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-206-5",
+       "original": "URL https://aclanthology.org/2021.",
+       "zh": "1."
       }
      ]
     },
@@ -15935,23 +21693,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-207-1",
-       "original": "Tara N."
-      },
-      {
-       "id": "s-references-207-2",
-       "original": "Sainath, Ruoming Pang, David Rybach, Yanzhang He, Rohit Prabhavalkar, Wei Li, Mirkó Visontai, Qiao Liang, Trevor Strohman, Yonghui Wu, Ian McGraw, and ChungCheng Chiu."
-      },
-      {
-       "id": "s-references-207-3",
-       "original": "Two-Pass End-to-End Speech Recognition."
-      },
-      {
-       "id": "s-references-207-4",
-       "original": "In Proc."
-      },
-      {
-       "id": "s-references-207-5",
-       "original": "Interspeech 2019, pages 2773–2777, 2019. doi: 10.21437/Interspeech.2019-1341."
+       "original": "acl-short.15.",
+       "zh": "5"
       }
      ]
     },
@@ -15962,23 +21705,33 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-208-1",
-       "original": "Elizabeth Salesky, Matthew Wiesner, Jacob Bremerman, Roldano Cattoni, Matteo Negri, Marco Turchi, Douglas W."
+       "original": "Paul K."
       },
       {
        "id": "s-references-208-2",
-       "original": "Oard, and Matt Post."
+       "original": "Rubenstein, Chulayuth Asawaroengchai, Duc Dung Nguyen, Ankur Bapna, Zalán Borsos, Félix de Chaumont Quitry, Peter Chen, Dalia El Badawy, Wei Han, Eugene Kharitonov, Hannah Muckenhirn, Dirk Ryan Padfield, James Qin, Daniel Rozenberg, Tara N."
       },
       {
        "id": "s-references-208-3",
-       "original": "The Multilingual TEDx Corpus for Speech Recognition and Translation."
+       "original": "Sainath, Johan Schalkwyk, Matthew Sharifi, Michelle D."
       },
       {
        "id": "s-references-208-4",
-       "original": "In Proc."
+       "original": "Tadmor, Ramanovich, Marco Tagliasacchi, Alexandru Tudor, Mihajlo Velimirovi’c, Damien Vincent, Jiahui Yu, Yongqiang Wang, Victoria Zayats, Neil Zeghidour, Yu Zhang, Zhishuai Zhang, Lukás Zilka, and Christian Havnø Frank."
       },
       {
        "id": "s-references-208-5",
-       "original": "Interspeech 2021, pages 3655–3659, 2021."
+       "original": "Audiopalm: A large language model that can speak and listen."
+      },
+      {
+       "id": "s-references-208-6",
+       "original": "ArXiv, abs/2306.12925, 2023.",
+       "zh": "12"
+      },
+      {
+       "id": "s-references-208-7",
+       "original": "URL https://api.semanticscholar.org/ CorpusID:259224345.",
+       "zh": "24"
       }
      ]
     },
@@ -15989,7 +21742,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-209-1",
-       "original": "doi: 10.21437/Interspeech.2021-11."
+       "original": "Oleg Rybakov, Fadi Biadsy, Xia Zhang, Liyang Jiang, Phoenix Meadowlark, and Shivani Agrawal."
+      },
+      {
+       "id": "s-references-209-2",
+       "original": "Streaming parrotron for on-device speech-to-speech conversion. arXiv preprint arXiv:2210.13761, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -16000,15 +21758,24 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-210-1",
-       "original": "Juliana Schroeder, Michael Kardas, and Nicholas Epley."
+       "original": "Tara N."
       },
       {
        "id": "s-references-210-2",
-       "original": "The humanizing voice: Speech reveals, and text conceals, a more thoughtful mind in the midst of disagreement."
+       "original": "Sainath, Ruoming Pang, David Rybach, Yanzhang He, Rohit Prabhavalkar, Wei Li, Mirkó Visontai, Qiao Liang, Trevor Strohman, Yonghui Wu, Ian McGraw, and ChungCheng Chiu."
       },
       {
        "id": "s-references-210-3",
-       "original": "Psychological science, 28(12):1745–1762, 2017."
+       "original": "Two-Pass End-to-End Speech Recognition."
+      },
+      {
+       "id": "s-references-210-4",
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-210-5",
+       "original": "Interspeech 2019, pages 2773–2777, 2019. doi: 10.21437/Interspeech.2019-1341.",
+       "zh": "1."
       }
      ]
     },
@@ -16019,7 +21786,24 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-211-1",
-       "original": "Holger Schwenk."
+       "original": "Elizabeth Salesky, Matthew Wiesner, Jacob Bremerman, Roldano Cattoni, Matteo Negri, Marco Turchi, Douglas W."
+      },
+      {
+       "id": "s-references-211-2",
+       "original": "Oard, and Matt Post."
+      },
+      {
+       "id": "s-references-211-3",
+       "original": "The Multilingual TEDx Corpus for Speech Recognition and Translation."
+      },
+      {
+       "id": "s-references-211-4",
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-211-5",
+       "original": "Interspeech 2021, pages 3655–3659, 2021.",
+       "zh": "5"
       }
      ]
     },
@@ -16030,7 +21814,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-212-1",
-       "original": "Filtering and mining parallel data in a joint multilingual space."
+       "original": "doi: 10.21437/Interspeech.2021-11.",
+       "zh": "1."
       }
      ]
     },
@@ -16041,15 +21826,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-213-1",
-       "original": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 228–234, Melbourne, Australia, July 2018."
+       "original": "Juliana Schroeder, Michael Kardas, and Nicholas Epley."
       },
       {
        "id": "s-references-213-2",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/P18-2037."
+       "original": "The humanizing voice: Speech reveals, and text conceals, a more thoughtful mind in the midst of disagreement."
       },
       {
        "id": "s-references-213-3",
-       "original": "URL https://aclanthology. org/P18-2037."
+       "original": "Psychological science, 28(12):1745–1762, 2017.",
+       "zh": "12"
       }
      ]
     },
@@ -16060,88 +21846,77 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-214-1",
-       "original": "100 Holger Schwenk, Guillaume Wenzek, Sergey Edunov, Edouard Grave, Armand Joulin, and Angela Fan."
-      },
-      {
-       "id": "s-references-214-2",
-       "original": "CCMatrix: Mining billions of high-quality parallel sentences on the web."
-      },
-      {
-       "id": "s-references-214-3",
-       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 6490–6500, Online, August 2021."
-      },
-      {
-       "id": "s-references-214-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.507."
-      },
-      {
-       "id": "s-references-214-5",
-       "original": "URL https://aclanthology.org/2021."
+       "original": "Holger Schwenk."
       }
      ]
     },
     {
      "id": "p-references-215",
      "type": "paragraph",
-     "page": 101,
+     "page": 100,
      "sentences": [
       {
        "id": "s-references-215-1",
-       "original": "acl-long.507."
+       "original": "Filtering and mining parallel data in a joint multilingual space.",
+       "zh": "（承接上文：Sonar 大幅超越此前的 Laser 空间。）"
       }
      ]
     },
     {
      "id": "p-references-216",
      "type": "paragraph",
-     "page": 101,
+     "page": 100,
      "sentences": [
       {
        "id": "s-references-216-1",
-       "original": "Rico Sennrich, Barry Haddow, and Alexandra Birch."
+       "original": "In Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers), pages 228–234, Melbourne, Australia, July 2018.",
+       "zh": "5"
       },
       {
        "id": "s-references-216-2",
-       "original": "Neural machine translation of rare words with subword units."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/P18-2037.",
+       "zh": "5"
       },
       {
        "id": "s-references-216-3",
-       "original": "In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1715–1725, Berlin, Germany, August 2016."
-      },
-      {
-       "id": "s-references-216-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/P16-1162."
-      },
-      {
-       "id": "s-references-216-5",
-       "original": "URL https://aclanthology.org/P16-1162."
+       "original": "URL https://aclanthology. org/P18-2037.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
     {
+     "id": "eq-references-29",
+     "type": "equation",
+     "page": 100,
+     "original": "100"
+    },
+    {
      "id": "p-references-217",
      "type": "paragraph",
-     "page": 101,
+     "page": 100,
      "sentences": [
       {
        "id": "s-references-217-1",
-       "original": "Khetam Al Sharou and Lucia Specia."
+       "original": "Holger Schwenk, Guillaume Wenzek, Sergey Edunov, Edouard Grave, Armand Joulin, and Angela Fan."
       },
       {
        "id": "s-references-217-2",
-       "original": "A taxonomy and study of critical errors in machine translation."
+       "original": "CCMatrix: Mining billions of high-quality parallel sentences on the web."
       },
       {
        "id": "s-references-217-3",
-       "original": "In Proceedings of the 23rd Annual Conference of the European Association for Machine Translation, pages 171–180, Ghent, Belgium, June 2022."
+       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 6490–6500, Online, August 2021.",
+       "zh": "5"
       },
       {
        "id": "s-references-217-4",
-       "original": "European Association for Machine Translation."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.507.",
+       "zh": "5"
       },
       {
        "id": "s-references-217-5",
-       "original": "URL https://aclanthology.org/2022.eamt-1.20."
+       "original": "URL https://aclanthology.org/2021.",
+       "zh": "1."
       }
      ]
     },
@@ -16152,15 +21927,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-218-1",
-       "original": "Peng Shen, Xugang Lu, Sheng Li, and Hisashi Kawai."
-      },
-      {
-       "id": "s-references-218-2",
-       "original": "Feature representation of short utterances based on knowledge distillation for spoken language identification."
-      },
-      {
-       "id": "s-references-218-3",
-       "original": "In Interspeech, pages 1813–1817, 2018."
+       "original": "acl-long.507.",
+       "zh": "5"
       }
      ]
     },
@@ -16171,19 +21939,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-219-1",
-       "original": "Peng Shen, Xugang Lu, Sheng Li, and Hisashi Kawai."
+       "original": "Rico Sennrich, Barry Haddow, and Alexandra Birch."
       },
       {
        "id": "s-references-219-2",
-       "original": "Interactive learning of teacher-student model for short utterance spoken language identification."
+       "original": "Neural machine translation of rare words with subword units."
       },
       {
        "id": "s-references-219-3",
-       "original": "In ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 5981–5985."
+       "original": "In Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 1715–1725, Berlin, Germany, August 2016.",
+       "zh": "5"
       },
       {
        "id": "s-references-219-4",
-       "original": "IEEE, 2019."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/P16-1162.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-219-5",
+       "original": "URL https://aclanthology.org/P16-1162.",
+       "zh": "2."
       }
      ]
     },
@@ -16194,11 +21969,25 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-220-1",
-       "original": "Bowen Shi, Wei-Ning Hsu, Kushal Lakhotia, and Abdelrahman Mohamed."
+       "original": "Khetam Al Sharou and Lucia Specia."
       },
       {
        "id": "s-references-220-2",
-       "original": "Learning audiovisual speech representation by masked multimodal cluster prediction. arXiv preprint arXiv:2201.02184, 2022."
+       "original": "A taxonomy and study of critical errors in machine translation."
+      },
+      {
+       "id": "s-references-220-3",
+       "original": "In Proceedings of the 23rd Annual Conference of the European Association for Machine Translation, pages 171–180, Ghent, Belgium, June 2022.",
+       "zh": "2."
+      },
+      {
+       "id": "s-references-220-4",
+       "original": "European Association for Machine Translation."
+      },
+      {
+       "id": "s-references-220-5",
+       "original": "URL https://aclanthology.org/2022.eamt-1.20.",
+       "zh": "1."
       }
      ]
     },
@@ -16209,19 +21998,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-221-1",
-       "original": "Aditya Siddhant, Ankur Bapna, Orhan Firat, Yuan Cao, Mia Xu Chen, Isaac Caswell, and Xavier Garcia."
+       "original": "Peng Shen, Xugang Lu, Sheng Li, and Hisashi Kawai."
       },
       {
        "id": "s-references-221-2",
-       "original": "Towards the next 1000 languages in multilingual machine translation: Exploring the synergy between supervised and self-supervised learning."
+       "original": "Feature representation of short utterances based on knowledge distillation for spoken language identification."
       },
       {
        "id": "s-references-221-3",
-       "original": "CoRR, abs/2201.03110, 2022."
-      },
-      {
-       "id": "s-references-221-4",
-       "original": "URL https://arxiv.org/abs/2201.03110."
+       "original": "In Interspeech, pages 1813–1817, 2018.",
+       "zh": "81"
       }
      ]
     },
@@ -16232,11 +22018,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-222-1",
-       "original": "Silero."
+       "original": "Peng Shen, Xugang Lu, Sheng Li, and Hisashi Kawai."
       },
       {
        "id": "s-references-222-2",
-       "original": "Silero vad: pre-trained enterprise-grade voice activity detector (vad), number detector and language classifier. https://github.com/snakers4/silero-vad, 2021."
+       "original": "Interactive learning of teacher-student model for short utterance spoken language identification."
+      },
+      {
+       "id": "s-references-222-3",
+       "original": "In ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 5981–5985.",
+       "zh": "81"
+      },
+      {
+       "id": "s-references-222-4",
+       "original": "IEEE, 2019.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -16247,7 +22043,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-223-1",
-       "original": "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams."
+       "original": "Bowen Shi, Wei-Ning Hsu, Kushal Lakhotia, and Abdelrahman Mohamed."
+      },
+      {
+       "id": "s-references-223-2",
+       "original": "Learning audiovisual speech representation by masked multimodal cluster prediction. arXiv preprint arXiv:2201.02184, 2022.",
+       "zh": "1."
       }
      ]
     },
@@ -16258,7 +22059,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-224-1",
-       "original": "“I’m sorry to hear that”: Finding new biases in language models with a holistic descriptor dataset."
+       "original": "Aditya Siddhant, Ankur Bapna, Orhan Firat, Yuan Cao, Mia Xu Chen, Isaac Caswell, and Xavier Garcia."
+      },
+      {
+       "id": "s-references-224-2",
+       "original": "Towards the next 1000 languages in multilingual machine translation: Exploring the synergy between supervised and self-supervised learning."
+      },
+      {
+       "id": "s-references-224-3",
+       "original": "CoRR, abs/2201.03110, 2022.",
+       "zh": "1."
+      },
+      {
+       "id": "s-references-224-4",
+       "original": "URL https://arxiv.org/abs/2201.03110.",
+       "zh": "1."
       }
      ]
     },
@@ -16269,11 +22084,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-225-1",
-       "original": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 9180–9211, Abu Dhabi, United Arab Emirates, December 2022."
+       "original": "Silero."
       },
       {
        "id": "s-references-225-2",
-       "original": "Association for Computational Linguistics."
+       "original": "Silero vad: pre-trained enterprise-grade voice activity detector (vad), number detector and language classifier. https://github.com/snakers4/silero-vad, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -16284,7 +22100,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-226-1",
-       "original": "URL https: //aclanthology.org/2022.emnlp-main.625."
+       "original": "Eric Michael Smith, Melissa Hall, Melanie Kambadur, Eleonora Presani, and Adina Williams."
       }
      ]
     },
@@ -16295,11 +22111,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-227-1",
-       "original": "David Snyder, Guoguo Chen, and Daniel Povey."
-      },
-      {
-       "id": "s-references-227-2",
-       "original": "Musan: A music, speech, and noise corpus."
+       "original": "“I’m sorry to hear that”: Finding new biases in language models with a holistic descriptor dataset."
       }
      ]
     },
@@ -16310,7 +22122,13 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-228-1",
-       "original": "arXiv preprint arXiv:1510.08484, 2015."
+       "original": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 9180–9211, Abu Dhabi, United Arab Emirates, December 2022.",
+       "zh": "2."
+      },
+      {
+       "id": "s-references-228-2",
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
       }
      ]
     },
@@ -16321,66 +22139,69 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-229-1",
-       "original": "101 David Snyder, Daniel Garcia-Romero, Alan McCree, Gregory Sell, Daniel Povey, and Sanjeev Khudanpur."
-      },
-      {
-       "id": "s-references-229-2",
-       "original": "Spoken language recognition using x-vectors."
-      },
-      {
-       "id": "s-references-229-3",
-       "original": "In Odyssey, volume 2018, pages 105–111, 2018."
+       "original": "URL https: //aclanthology.org/2022.emnlp-main.625.",
+       "zh": "5"
       }
      ]
     },
     {
      "id": "p-references-230",
      "type": "paragraph",
-     "page": 102,
+     "page": 101,
      "sentences": [
       {
        "id": "s-references-230-1",
-       "original": "Lucia Specia, Frédéric Blain, Marina Fomicheva, Chrysoula Zerva, Zhenhao Li, Vishrav Chaudhary, and André F."
+       "original": "David Snyder, Guoguo Chen, and Daniel Povey."
       },
       {
        "id": "s-references-230-2",
-       "original": "T."
-      },
-      {
-       "id": "s-references-230-3",
-       "original": "Martins."
+       "original": "Musan: A music, speech, and noise corpus."
       }
      ]
     },
     {
      "id": "p-references-231",
      "type": "paragraph",
-     "page": 102,
+     "page": 101,
      "sentences": [
       {
        "id": "s-references-231-1",
-       "original": "Findings of the WMT 2021 shared task on quality estimation."
+       "original": "arXiv preprint arXiv:1510.08484, 2015.",
+       "zh": "5"
       }
      ]
     },
     {
+     "id": "eq-references-30",
+     "type": "equation",
+     "page": 101,
+     "original": "101"
+    },
+    {
      "id": "p-references-232",
      "type": "paragraph",
-     "page": 102,
+     "page": 101,
      "sentences": [
       {
        "id": "s-references-232-1",
-       "original": "In Proceedings of the Sixth Conference on Machine Translation, pages 684–725, Online, November 2021."
+       "original": "David Snyder, Daniel Garcia-Romero, Alan McCree, Gregory Sell, Daniel Povey, and Sanjeev Khudanpur."
       },
       {
        "id": "s-references-232-2",
-       "original": "Association for Computational Linguistics."
+       "original": "Spoken language recognition using x-vectors."
       },
       {
        "id": "s-references-232-3",
-       "original": "URL https://aclanthology.org/2021.wmt-1.71."
+       "original": "In Odyssey, volume 2018, pages",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-31",
+     "type": "equation",
+     "page": 101,
+     "original": "105–111, 2018."
     },
     {
      "id": "p-references-233",
@@ -16389,27 +22210,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-233-1",
-       "original": "Gabriel Stanovsky, Noah A."
+       "original": "Lucia Specia, Frédéric Blain, Marina Fomicheva, Chrysoula Zerva, Zhenhao Li, Vishrav Chaudhary, and André F."
       },
       {
        "id": "s-references-233-2",
-       "original": "Smith, and Luke Zettlemoyer."
+       "original": "T.",
+       "zh": "迄今为止，前述同时支持文本与语音作为输入输出的 AudioPaLM [Rubenstein et al., 2023] 是 S2TT 与 S2ST 的当前最先进模型。"
       },
       {
        "id": "s-references-233-3",
-       "original": "Evaluating gender bias in machine translation."
-      },
-      {
-       "id": "s-references-233-4",
-       "original": "In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1679–1684, Florence, Italy, July 2019."
-      },
-      {
-       "id": "s-references-233-5",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/P19-1164."
-      },
-      {
-       "id": "s-references-233-6",
-       "original": "URL https://aclanthology.org/P19-1164."
+       "original": "Martins."
       }
      ]
     },
@@ -16420,15 +22230,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-234-1",
-       "original": "Tzu-Wei Sung, Jun-You Liu, Hung-yi Lee, and Lin-shan Lee."
-      },
-      {
-       "id": "s-references-234-2",
-       "original": "Towards end-to-end speechto-text translation with two-pass decoding."
-      },
-      {
-       "id": "s-references-234-3",
-       "original": "In ICASSP 2019 - 2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 7175–7179, 2019."
+       "original": "Findings of the WMT 2021 shared task on quality estimation.",
+       "zh": "21"
       }
      ]
     },
@@ -16439,7 +22242,18 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-235-1",
-       "original": "doi: 10.1109/ICASSP.2019.8682801."
+       "original": "In Proceedings of the Sixth Conference on Machine Translation, pages 684–725, Online, November 2021.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-235-2",
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-235-3",
+       "original": "URL https://aclanthology.org/2021.wmt-1.71.",
+       "zh": "1."
       }
      ]
     },
@@ -16450,23 +22264,30 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-236-1",
-       "original": "Yun Tang, Juan Pino, Xian Li, Changhan Wang, and Dmitriy Genzel."
+       "original": "Gabriel Stanovsky, Noah A."
       },
       {
        "id": "s-references-236-2",
-       "original": "Improving speech translation by understanding and learning from the auxiliary text translation task."
+       "original": "Smith, and Luke Zettlemoyer."
       },
       {
        "id": "s-references-236-3",
-       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 4252–4261, Online, August 2021."
+       "original": "Evaluating gender bias in machine translation."
       },
       {
        "id": "s-references-236-4",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.328."
+       "original": "In Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, pages 1679–1684, Florence, Italy, July 2019.",
+       "zh": "5"
       },
       {
        "id": "s-references-236-5",
-       "original": "URL https://aclanthology.org/2021."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/P19-1164.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-236-6",
+       "original": "URL https://aclanthology.org/P19-1164.",
+       "zh": "1."
       }
      ]
     },
@@ -16477,7 +22298,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-237-1",
-       "original": "acl-long.328."
+       "original": "Tzu-Wei Sung, Jun-You Liu, Hung-yi Lee, and Lin-shan Lee."
+      },
+      {
+       "id": "s-references-237-2",
+       "original": "Towards end-to-end speechto-text translation with two-pass decoding."
+      },
+      {
+       "id": "s-references-237-3",
+       "original": "In ICASSP 2019 - 2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 7175–7179, 2019.",
+       "zh": "5"
       }
      ]
     },
@@ -16488,7 +22318,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-238-1",
-       "original": "Andros Tjandra, Sakriani Sakti, and Satoshi Nakamura."
+       "original": "doi: 10.1109/ICASSP.2019.8682801.",
+       "zh": "1."
       }
      ]
     },
@@ -16499,15 +22330,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-239-1",
-       "original": "Speech-to-speech translation between untranscribed unknown languages."
+       "original": "Yun Tang, Juan Pino, Xian Li, Changhan Wang, and Dmitriy Genzel."
       },
       {
        "id": "s-references-239-2",
-       "original": "In 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 593–600."
+       "original": "Improving speech translation by understanding and learning from the auxiliary text translation task."
       },
       {
        "id": "s-references-239-3",
-       "original": "IEEE, 2019."
+       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 4252–4261, Online, August 2021.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-239-4",
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.328.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-239-5",
+       "original": "URL https://aclanthology.org/2021.",
+       "zh": "1."
       }
      ]
     },
@@ -16518,15 +22360,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-240-1",
-       "original": "Alexandre Trilla and Francesc Alias."
-      },
-      {
-       "id": "s-references-240-2",
-       "original": "Sentence-based sentiment analysis for expressive textto-speech."
-      },
-      {
-       "id": "s-references-240-3",
-       "original": "IEEE transactions on audio, speech, and language processing, 21(2):223–233, 2012."
+       "original": "acl-long.328.",
+       "zh": "5"
       }
      ]
     },
@@ -16537,35 +22372,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-241-1",
-       "original": "Ioannis Tsiamas, Gerard I."
-      },
-      {
-       "id": "s-references-241-2",
-       "original": "Gállego, José A."
-      },
-      {
-       "id": "s-references-241-3",
-       "original": "R."
-      },
-      {
-       "id": "s-references-241-4",
-       "original": "Fonollosa, and Marta R."
-      },
-      {
-       "id": "s-references-241-5",
-       "original": "Costa-jussà."
-      },
-      {
-       "id": "s-references-241-6",
-       "original": "SHAS: Approaching optimal Segmentation for End-to-End Speech Translation."
-      },
-      {
-       "id": "s-references-241-7",
-       "original": "In Proc."
-      },
-      {
-       "id": "s-references-241-8",
-       "original": "Interspeech 2022, pages 106–110, 2022. doi: 10.21437/Interspeech.2022-59."
+       "original": "Andros Tjandra, Sakriani Sakti, and Satoshi Nakamura."
       }
      ]
     },
@@ -16576,11 +22383,17 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-242-1",
-       "original": "Jörgen Valk and Tanel Alumäe."
+       "original": "Speech-to-speech translation between untranscribed unknown languages."
       },
       {
        "id": "s-references-242-2",
-       "original": "VoxLingua107: a dataset for spoken language recognition."
+       "original": "In 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 593–600.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-242-3",
+       "original": "IEEE, 2019.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -16591,13 +22404,24 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-243-1",
-       "original": "In Proc."
+       "original": "Alexandre Trilla and Francesc Alias."
       },
       {
        "id": "s-references-243-2",
-       "original": "IEEE SLT Workshop, 2021."
+       "original": "Sentence-based sentiment analysis for expressive textto-speech."
+      },
+      {
+       "id": "s-references-243-3",
+       "original": "IEEE transactions on audio, speech, and language processing, 21(2):223–233,",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-32",
+     "type": "equation",
+     "page": 102,
+     "original": "2012."
     },
     {
      "id": "p-references-244",
@@ -16606,15 +22430,38 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-244-1",
-       "original": "Simon Vandenhende, Stamatios Georgoulis, Wouter Van Gansbeke, Marc Proesmans, Dengxin Dai, and Luc Van Gool."
+       "original": "Ioannis Tsiamas, Gerard I."
       },
       {
        "id": "s-references-244-2",
-       "original": "Multi-task learning for dense prediction tasks: A survey."
+       "original": "Gállego, José A."
       },
       {
        "id": "s-references-244-3",
-       "original": "IEEE transactions on pattern analysis and machine intelligence, 44(7):3614–3633, 2021."
+       "original": "R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-244-4",
+       "original": "Fonollosa, and Marta R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-244-5",
+       "original": "Costa-jussà."
+      },
+      {
+       "id": "s-references-244-6",
+       "original": "SHAS: Approaching optimal Segmentation for End-to-End Speech Translation."
+      },
+      {
+       "id": "s-references-244-7",
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-244-8",
+       "original": "Interspeech 2022, pages 106–110, 2022. doi: 10.21437/Interspeech.2022-59.",
+       "zh": "5"
       }
      ]
     },
@@ -16625,135 +22472,122 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-245-1",
-       "original": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Ł ukasz Kaiser, and Illia Polosukhin."
+       "original": "Jörgen Valk and Tanel Alumäe."
       },
       {
        "id": "s-references-245-2",
-       "original": "Attention is all you need."
-      },
-      {
-       "id": "s-references-245-3",
-       "original": "In I."
-      },
-      {
-       "id": "s-references-245-4",
-       "original": "Guyon, 102 U."
-      },
-      {
-       "id": "s-references-245-5",
-       "original": "Von Luxburg, S."
-      },
-      {
-       "id": "s-references-245-6",
-       "original": "Bengio, H."
-      },
-      {
-       "id": "s-references-245-7",
-       "original": "Wallach, R."
-      },
-      {
-       "id": "s-references-245-8",
-       "original": "Fergus, S."
-      },
-      {
-       "id": "s-references-245-9",
-       "original": "Vishwanathan, and R."
-      },
-      {
-       "id": "s-references-245-10",
-       "original": "Garnett, editors, Advances in Neural Information Processing Systems, volume 30."
-      },
-      {
-       "id": "s-references-245-11",
-       "original": "Curran Associates, Inc., 2017."
+       "original": "VoxLingua107: a dataset for spoken language recognition."
       }
      ]
     },
     {
      "id": "p-references-246",
      "type": "paragraph",
-     "page": 103,
+     "page": 102,
      "sentences": [
       {
        "id": "s-references-246-1",
-       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2017/file/ 3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf."
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-246-2",
+       "original": "IEEE SLT Workshop, 2021.",
+       "zh": "1."
       }
      ]
     },
     {
      "id": "p-references-247",
      "type": "paragraph",
-     "page": 103,
+     "page": 102,
      "sentences": [
       {
        "id": "s-references-247-1",
-       "original": "Wolfgang Wahlster."
+       "original": "Simon Vandenhende, Stamatios Georgoulis, Wouter Van Gansbeke, Marc Proesmans, Dengxin Dai, and Luc Van Gool."
       },
       {
        "id": "s-references-247-2",
-       "original": "Verbmobil: Foundations of speech-to-speech translation."
+       "original": "Multi-task learning for dense prediction tasks: A survey."
       },
       {
        "id": "s-references-247-3",
-       "original": "In Artificial Intelligence, 2000."
-      },
-      {
-       "id": "s-references-247-4",
-       "original": "URL https://api.semanticscholar.org/CorpusID:30807920."
+       "original": "IEEE transactions on pattern analysis and machine intelligence, 44(7):3614–3633, 2021.",
+       "zh": "63"
       }
      ]
     },
     {
      "id": "p-references-248",
      "type": "paragraph",
-     "page": 103,
+     "page": 102,
      "sentences": [
       {
        "id": "s-references-248-1",
-       "original": "Li Wan, Prashant Sridhar, Yang Yu, Quan Wang, and Ignacio Lopez Moreno."
+       "original": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Ł ukasz Kaiser, and Illia Polosukhin."
       },
       {
        "id": "s-references-248-2",
-       "original": "Tuplemax loss for language identification."
+       "original": "Attention is all you need."
       },
       {
        "id": "s-references-248-3",
-       "original": "In ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 5976–5980."
+       "original": "In I."
       },
       {
        "id": "s-references-248-4",
-       "original": "IEEE, 2019."
+       "original": "Guyon,"
       }
      ]
     },
     {
+     "id": "eq-references-33",
+     "type": "equation",
+     "page": 102,
+     "original": "102"
+    },
+    {
      "id": "p-references-249",
      "type": "paragraph",
-     "page": 103,
+     "page": 102,
      "sentences": [
       {
        "id": "s-references-249-1",
-       "original": "Changhan Wang, Juan Pino, Anne Wu, and Jiatao Gu."
+       "original": "U.",
+       "zh": "4.4.5 以 spBLEU 评测 X–X 方向。"
       },
       {
        "id": "s-references-249-2",
-       "original": "CoVoST: A diverse multilingual speech-to-text translation corpus."
+       "original": "Von Luxburg, S.",
+       "zh": "对 S2ST，我们考察两种级联方式：(1) ASR、T2TT、TTS 的 3 段级联；(2) S2TT、TTS 的 2 段级联。"
       },
       {
        "id": "s-references-249-3",
-       "original": "In Proceedings of the Twelfth Language Resources and Evaluation Conference, pages 4197–4203, Marseille, France, May 2020."
+       "original": "Bengio, H."
       },
       {
        "id": "s-references-249-4",
-       "original": "European Language Resources Association."
+       "original": "Wallach, R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
       },
       {
        "id": "s-references-249-5",
-       "original": "ISBN 979-10-95546-34-4."
+       "original": "Fergus, S.",
+       "zh": "对 S2ST，我们考察两种级联方式：(1) ASR、T2TT、TTS 的 3 段级联；(2) S2TT、TTS 的 2 段级联。"
       },
       {
        "id": "s-references-249-6",
-       "original": "URL https://aclanthology.org/2020."
+       "original": "Vishwanathan, and R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-249-7",
+       "original": "Garnett, editors, Advances in Neural Information Processing Systems, volume 30.",
+       "zh": "30"
+      },
+      {
+       "id": "s-references-249-8",
+       "original": "Curran Associates, Inc., 2017.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -16764,7 +22598,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-250-1",
-       "original": "lrec-1.517."
+       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2017/file/ 3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf.",
+       "zh": "24"
       }
      ]
     },
@@ -16775,15 +22610,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-251-1",
-       "original": "Changhan Wang, Wei-Ning Hsu, Yossi Adi, Adam Polyak, Ann Lee, Peng-Jen Chen, Jiatao Gu, and Juan Pino. fairseq sˆ2: A scalable and integrable speech synthesis toolkit."
+       "original": "Wolfgang Wahlster."
       },
       {
        "id": "s-references-251-2",
-       "original": "In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 143–152, Online and Punta Cana, Dominican Republic, November 2021a."
+       "original": "Verbmobil: Foundations of speech-to-speech translation."
       },
       {
        "id": "s-references-251-3",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021."
+       "original": "In Artificial Intelligence, 2000.",
+       "zh": "（页码行：2。）"
+      },
+      {
+       "id": "s-references-251-4",
+       "original": "URL https://api.semanticscholar.org/CorpusID:30807920.",
+       "zh": "30"
       }
      ]
     },
@@ -16794,11 +22635,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-252-1",
-       "original": "emnlp-demo.17."
+       "original": "Li Wan, Prashant Sridhar, Yang Yu, Quan Wang, and Ignacio Lopez Moreno."
       },
       {
        "id": "s-references-252-2",
-       "original": "URL https://aclanthology.org/2021.emnlp-demo.17."
+       "original": "Tuplemax loss for language identification."
+      },
+      {
+       "id": "s-references-252-3",
+       "original": "In ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 5976–5980.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-252-4",
+       "original": "IEEE, 2019.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -16809,15 +22660,30 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-253-1",
-       "original": "Changhan Wang, Morgane Riviere, Ann Lee, Anne Wu, Chaitanya Talnikar, Daniel Haziza, Mary Williamson, Juan Pino, and Emmanuel Dupoux."
+       "original": "Changhan Wang, Juan Pino, Anne Wu, and Jiatao Gu."
       },
       {
        "id": "s-references-253-2",
-       "original": "VoxPopuli: A large-scale multilingual speech corpus for representation learning, semi-supervised learning and interpretation."
+       "original": "CoVoST: A diverse multilingual speech-to-text translation corpus."
       },
       {
        "id": "s-references-253-3",
-       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 993–1003, Online, August 2021b."
+       "original": "In Proceedings of the Twelfth Language Resources and Evaluation Conference, pages 4197–4203, Marseille, France, May 2020.",
+       "zh": "（页码行：2。）"
+      },
+      {
+       "id": "s-references-253-4",
+       "original": "European Language Resources Association."
+      },
+      {
+       "id": "s-references-253-5",
+       "original": "ISBN 979-10-95546-34-4.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-253-6",
+       "original": "URL https://aclanthology.org/2020.",
+       "zh": "1."
       }
      ]
     },
@@ -16828,11 +22694,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-254-1",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.80."
-      },
-      {
-       "id": "s-references-254-2",
-       "original": "URL https://aclanthology.org/2021.acl-long.80."
+       "original": "lrec-1.517.",
+       "zh": "5"
       }
      ]
     },
@@ -16843,19 +22706,18 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-255-1",
-       "original": "Changhan Wang, Anne Wu, Jiatao Gu, and Juan Pino."
+       "original": "Changhan Wang, Wei-Ning Hsu, Yossi Adi, Adam Polyak, Ann Lee, Peng-Jen Chen, Jiatao Gu, and Juan Pino. fairseq sˆ2: A scalable and integrable speech synthesis toolkit.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-255-2",
-       "original": "CoVoST 2 and Massively Multilingual Speech Translation."
+       "original": "In Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing: System Demonstrations, pages 143–152, Online and Punta Cana, Dominican Republic, November 2021a.",
+       "zh": "5"
       },
       {
        "id": "s-references-255-3",
-       "original": "In Proc."
-      },
-      {
-       "id": "s-references-255-4",
-       "original": "Interspeech 2021, pages 2247–2251, 2021c. doi: 10.21437/ Interspeech.2021-2027."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.",
+       "zh": "5"
       }
      ]
     },
@@ -16866,15 +22728,13 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-256-1",
-       "original": "Chengyi Wang, Sanyuan Chen, Yu Wu, Zi-Hua Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, and Furu Wei."
+       "original": "emnlp-demo.17.",
+       "zh": "1."
       },
       {
        "id": "s-references-256-2",
-       "original": "Neural codec language models are zero-shot text to speech synthesizers."
-      },
-      {
-       "id": "s-references-256-3",
-       "original": "ArXiv, abs/2301.02111, 2023a."
+       "original": "URL https://aclanthology.org/2021.emnlp-demo.17.",
+       "zh": "1."
       }
      ]
     },
@@ -16885,7 +22745,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-257-1",
-       "original": "URL https://api.semanticscholar.org/CorpusID:255440307."
+       "original": "Changhan Wang, Morgane Riviere, Ann Lee, Anne Wu, Chaitanya Talnikar, Daniel Haziza, Mary Williamson, Juan Pino, and Emmanuel Dupoux."
+      },
+      {
+       "id": "s-references-257-2",
+       "original": "VoxPopuli: A large-scale multilingual speech corpus for representation learning, semi-supervised learning and interpretation."
+      },
+      {
+       "id": "s-references-257-3",
+       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 993–1003, Online, August 2021b.",
+       "zh": "5"
       }
      ]
     },
@@ -16896,11 +22765,13 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-258-1",
-       "original": "Skyler Wang, Ned Cooper, Margaret Eby, and Eun Seo Jo."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/2021.acl-long.80.",
+       "zh": "5"
       },
       {
        "id": "s-references-258-2",
-       "original": "From human-centered to socialcentered artificial intelligence: Assessing chatgpt’s impact through disruptive events. arXiv preprint arXiv:2306.00227, 2023b."
+       "original": "URL https://aclanthology.org/2021.acl-long.80.",
+       "zh": "1."
       }
      ]
     },
@@ -16911,87 +22782,95 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-259-1",
-       "original": "103 Tianrui Wang, Long Zhou, Ziqiang Zhang, Yu Wu, Shujie Liu, Yashesh Gaur, Zhuo Chen, Jinyu Li, and Furu Wei."
+       "original": "Changhan Wang, Anne Wu, Jiatao Gu, and Juan Pino."
       },
       {
        "id": "s-references-259-2",
-       "original": "VioLA: Unified codec language models for speech recognition, synthesis, and translation."
+       "original": "CoVoST 2 and Massively Multilingual Speech Translation.",
+       "zh": "（页码行：2。）"
       },
       {
        "id": "s-references-259-3",
-       "original": "May 2023c."
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-259-4",
+       "original": "Interspeech 2021, pages 2247–2251, 2021c. doi: 10.21437/ Interspeech.2021-2027.",
+       "zh": "24"
       }
      ]
     },
     {
      "id": "p-references-260",
      "type": "paragraph",
-     "page": 104,
+     "page": 103,
      "sentences": [
       {
        "id": "s-references-260-1",
-       "original": "Yiming Wang, Jinyu Li, Heming Wang, Yao Qian, Chengyi Wang, and Yu Wu."
+       "original": "Chengyi Wang, Sanyuan Chen, Yu Wu, Zi-Hua Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, and Furu Wei."
       },
       {
        "id": "s-references-260-2",
-       "original": "Wav2vecswitch: Contrastive learning from original-noisy speech pairs for robust speech recognition."
+       "original": "Neural codec language models are zero-shot text to speech synthesizers."
+      },
+      {
+       "id": "s-references-260-3",
+       "original": "ArXiv, abs/2301.02111, 2023a.",
+       "zh": "1."
       }
      ]
     },
     {
      "id": "p-references-261",
      "type": "paragraph",
-     "page": 104,
+     "page": 103,
      "sentences": [
       {
        "id": "s-references-261-1",
-       "original": "In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 7097–7101."
-      },
-      {
-       "id": "s-references-261-2",
-       "original": "IEEE, 2022."
+       "original": "URL https://api.semanticscholar.org/CorpusID:255440307.",
+       "zh": "5"
       }
      ]
     },
     {
      "id": "p-references-262",
      "type": "paragraph",
-     "page": 104,
+     "page": 103,
      "sentences": [
       {
        "id": "s-references-262-1",
-       "original": "Barack Wanjawa, Lilian Wanzare, Florence Indede, Owen McOnyango, Edward Ombui, and Lawrence Muchemi."
+       "original": "Skyler Wang, Ned Cooper, Margaret Eby, and Eun Seo Jo."
       },
       {
        "id": "s-references-262-2",
-       "original": "Kencorpus: A kenyan language corpus of swahili, dholuo and luhya for natural language processing tasks. arXiv preprint arXiv:2208.12081, 2022."
+       "original": "From human-centered to socialcentered artificial intelligence: Assessing chatgpt’s impact through disruptive events. arXiv preprint arXiv:2306.00227, 2023b.",
+       "zh": "22"
       }
      ]
     },
     {
+     "id": "eq-references-34",
+     "type": "equation",
+     "page": 103,
+     "original": "103"
+    },
+    {
      "id": "p-references-263",
      "type": "paragraph",
-     "page": 104,
+     "page": 103,
      "sentences": [
       {
        "id": "s-references-263-1",
-       "original": "Ron J."
+       "original": "Tianrui Wang, Long Zhou, Ziqiang Zhang, Yu Wu, Shujie Liu, Yashesh Gaur, Zhuo Chen, Jinyu Li, and Furu Wei."
       },
       {
        "id": "s-references-263-2",
-       "original": "Weiss, Jan Chorowski, Navdeep Jaitly, Yonghui Wu, and Z."
+       "original": "VioLA: Unified codec language models for speech recognition, synthesis, and translation."
       },
       {
        "id": "s-references-263-3",
-       "original": "Chen."
-      },
-      {
-       "id": "s-references-263-4",
-       "original": "Sequence-tosequence models can directly translate foreign speech."
-      },
-      {
-       "id": "s-references-263-5",
-       "original": "In Interspeech, 2017a."
+       "original": "May 2023c.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -17002,15 +22881,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-264-1",
-       "original": "Ron J Weiss, Jan Chorowski, Navdeep Jaitly, Yonghui Wu, and Zhifeng Chen."
+       "original": "Yiming Wang, Jinyu Li, Heming Wang, Yao Qian, Chengyi Wang, and Yu Wu."
       },
       {
        "id": "s-references-264-2",
-       "original": "Sequence-tosequence models can directly translate foreign speech."
-      },
-      {
-       "id": "s-references-264-3",
-       "original": "In Interspeech, 2017b."
+       "original": "Wav2vecswitch: Contrastive learning from original-noisy speech pairs for robust speech recognition.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -17021,7 +22897,13 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-265-1",
-       "original": "Yingce Xia, Fei Tian, Lijun Wu, Jianxin Lin, Tao Qin, Nenghai Yu, and Tie-Yan Liu."
+       "original": "In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 7097–7101.",
+       "zh": "1."
+      },
+      {
+       "id": "s-references-265-2",
+       "original": "IEEE, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -17032,43 +22914,12 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-266-1",
-       "original": "Deliberation networks: Sequence generation beyond one-pass decoding."
+       "original": "Barack Wanjawa, Lilian Wanzare, Florence Indede, Owen McOnyango, Edward Ombui, and Lawrence Muchemi."
       },
       {
        "id": "s-references-266-2",
-       "original": "In I."
-      },
-      {
-       "id": "s-references-266-3",
-       "original": "Guyon, U."
-      },
-      {
-       "id": "s-references-266-4",
-       "original": "Von Luxburg, S."
-      },
-      {
-       "id": "s-references-266-5",
-       "original": "Bengio, H."
-      },
-      {
-       "id": "s-references-266-6",
-       "original": "Wallach, R."
-      },
-      {
-       "id": "s-references-266-7",
-       "original": "Fergus, S."
-      },
-      {
-       "id": "s-references-266-8",
-       "original": "Vishwanathan, and R."
-      },
-      {
-       "id": "s-references-266-9",
-       "original": "Garnett, editors, Advances in Neural Information Processing Systems, volume 30."
-      },
-      {
-       "id": "s-references-266-10",
-       "original": "Curran Associates, Inc., 2017."
+       "original": "Kencorpus: A kenyan language corpus of swahili, dholuo and luhya for natural language processing tasks. arXiv preprint arXiv:2208.12081, 2022.",
+       "zh": "12"
       }
      ]
     },
@@ -17079,7 +22930,24 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-267-1",
-       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2017/file/ c6036a69be21cb660499b75718a3ef24-Paper.pdf."
+       "original": "Ron J."
+      },
+      {
+       "id": "s-references-267-2",
+       "original": "Weiss, Jan Chorowski, Navdeep Jaitly, Yonghui Wu, and Z."
+      },
+      {
+       "id": "s-references-267-3",
+       "original": "Chen."
+      },
+      {
+       "id": "s-references-267-4",
+       "original": "Sequence-tosequence models can directly translate foreign speech."
+      },
+      {
+       "id": "s-references-267-5",
+       "original": "In Interspeech, 2017a.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -17090,23 +22958,16 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-268-1",
-       "original": "Yinfei Yang, Gustavo Hernandez Abrego, Steve Yuan, Mandy Guo, Qinlan Shen, Daniel Cer, Yun-hsuan Sung, Brian Strope, and Ray Kurzweil."
+       "original": "Ron J Weiss, Jan Chorowski, Navdeep Jaitly, Yonghui Wu, and Zhifeng Chen."
       },
       {
        "id": "s-references-268-2",
-       "original": "Improving multilingual sentence embedding using bi-directional dual encoder with additive margin softmax."
+       "original": "Sequence-tosequence models can directly translate foreign speech."
       },
       {
        "id": "s-references-268-3",
-       "original": "In Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence, IJCAI-19, pages 5370–5378."
-      },
-      {
-       "id": "s-references-268-4",
-       "original": "International Joint Conferences on Artificial Intelligence Organization, 7 2019. doi: 10.24963/ijcai.2019/746."
-      },
-      {
-       "id": "s-references-268-5",
-       "original": "URL https://doi.org/10.24963/ijcai.2019/746."
+       "original": "In Interspeech, 2017b.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -17117,7 +22978,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-269-1",
-       "original": "Midia Yousefi and Dimitra Emmanouilidou."
+       "original": "Yingce Xia, Fei Tian, Lijun Wu, Jianxin Lin, Tao Qin, Nenghai Yu, and Tie-Yan Liu."
       }
      ]
     },
@@ -17128,19 +22989,49 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-270-1",
-       "original": "Audio-based toxic language classification using self-attentive convolutional neural network."
+       "original": "Deliberation networks: Sequence generation beyond one-pass decoding."
       },
       {
        "id": "s-references-270-2",
-       "original": "In 29th European Signal Processing Conference, EUSIPCO 2021, Dublin, Ireland, August 23-27, 2021, pages 11–15."
+       "original": "In I."
       },
       {
        "id": "s-references-270-3",
-       "original": "IEEE, 2021. doi: 10.23919/EUSIPCO54536.2021.9616001."
+       "original": "Guyon, U."
       },
       {
        "id": "s-references-270-4",
-       "original": "URL https://doi.org/10.23919/ EUSIPCO54536.2021.9616001."
+       "original": "Von Luxburg, S.",
+       "zh": "对 S2ST，我们考察两种级联方式：(1) ASR、T2TT、TTS 的 3 段级联；(2) S2TT、TTS 的 2 段级联。"
+      },
+      {
+       "id": "s-references-270-5",
+       "original": "Bengio, H."
+      },
+      {
+       "id": "s-references-270-6",
+       "original": "Wallach, R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-270-7",
+       "original": "Fergus, S.",
+       "zh": "对 S2ST，我们考察两种级联方式：(1) ASR、T2TT、TTS 的 3 段级联；(2) S2TT、TTS 的 2 段级联。"
+      },
+      {
+       "id": "s-references-270-8",
+       "original": "Vishwanathan, and R.",
+       "zh": "创建一个能处理文本与语音翻译全套任务的统一大模型：S2ST、S2TT、T2ST、T2TT 与 ASR。"
+      },
+      {
+       "id": "s-references-270-9",
+       "original": "Garnett, editors, Advances in Neural Information Processing Systems, volume 30.",
+       "zh": "30"
+      },
+      {
+       "id": "s-references-270-10",
+       "original": "Curran Associates, Inc., 2017.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -17151,7 +23042,8 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-271-1",
-       "original": "Neil Zeghidour, Alejandro Luebs, Ahmed Omran, Jan Skoglund, and Marco Tagliasacchi."
+       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2017/file/ c6036a69be21cb660499b75718a3ef24-Paper.pdf.",
+       "zh": "24"
       }
      ]
     },
@@ -17162,15 +23054,26 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-272-1",
-       "original": "Soundstream: An end-to-end neural audio codec."
+       "original": "Yinfei Yang, Gustavo Hernandez Abrego, Steve Yuan, Mandy Guo, Qinlan Shen, Daniel Cer, Yun-hsuan Sung, Brian Strope, and Ray Kurzweil."
       },
       {
        "id": "s-references-272-2",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30:495–507, 2022."
+       "original": "Improving multilingual sentence embedding using bi-directional dual encoder with additive margin softmax."
       },
       {
        "id": "s-references-272-3",
-       "original": "URL https://api.semanticscholar. org/CorpusID:236149944."
+       "original": "In Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence, IJCAI-19, pages 5370–5378.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-272-4",
+       "original": "International Joint Conferences on Artificial Intelligence Organization, 7 2019. doi: 10.24963/ijcai.2019/746.",
+       "zh": "24"
+      },
+      {
+       "id": "s-references-272-5",
+       "original": "URL https://doi.org/10.24963/ijcai.2019/746.",
+       "zh": "24"
       }
      ]
     },
@@ -17181,122 +23084,103 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-273-1",
-       "original": "Yu Zhang, Wei Han, James Qin, Yongqiang Wang, Ankur Bapna, Zhehuai Chen, Nanxin Chen, Bo Li, Vera Axelrod, Gary Wang, Zhong Meng, Ke Hu, Andrew Rosenberg, Rohit Prabhavalkar, Daniel S."
-      },
-      {
-       "id": "s-references-273-2",
-       "original": "Park, Parisa Haghani, Jason Riesa, Ginger Perng, Hagen Soltau, Trevor Strohman, Bhuvana Ramabhadran, Tara Sainath, Pedro Moreno, Chung-Cheng 104 Chiu, Johan Schalkwyk, Françoise Beaufays, and Yonghui Wu."
-      },
-      {
-       "id": "s-references-273-3",
-       "original": "Google usm: Scaling automatic speech recognition beyond 100 languages, 2023a."
+       "original": "Midia Yousefi and Dimitra Emmanouilidou."
       }
      ]
     },
     {
      "id": "p-references-274",
      "type": "paragraph",
-     "page": 105,
+     "page": 104,
      "sentences": [
       {
        "id": "s-references-274-1",
-       "original": "Zi-Hua Zhang, Long Zhou, Chengyi Wang, Sanyuan Chen, Yu Wu, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, and Furu Wei."
+       "original": "Audio-based toxic language classification using self-attentive convolutional neural network."
       },
       {
        "id": "s-references-274-2",
-       "original": "Speak foreign languages with your own voice: Cross-lingual neural codec language modeling."
+       "original": "In 29th European Signal Processing Conference, EUSIPCO 2021, Dublin, Ireland, August 23-27, 2021, pages 11–15.",
+       "zh": "5"
       },
       {
        "id": "s-references-274-3",
-       "original": "ArXiv, abs/2303.03926, 2023b."
+       "original": "IEEE, 2021. doi: 10.23919/EUSIPCO54536.2021.9616001.",
+       "zh": "45"
       },
       {
        "id": "s-references-274-4",
-       "original": "URL https://api.semanticscholar.org/CorpusID:257378493."
+       "original": "URL https://doi.org/10.23919/ EUSIPCO54536.2021.9616001.",
+       "zh": "45"
       }
      ]
     },
     {
      "id": "p-references-275",
      "type": "paragraph",
-     "page": 105,
+     "page": 104,
      "sentences": [
       {
        "id": "s-references-275-1",
-       "original": "Ziqiang Zhang, Long Zhou, Junyi Ao, Shujie Liu, Lirong Dai, Jinyu Li, and Furu Wei."
+       "original": "Neil Zeghidour, Alejandro Luebs, Ahmed Omran, Jan Skoglund, and Marco Tagliasacchi."
       }
      ]
     },
     {
      "id": "p-references-276",
      "type": "paragraph",
-     "page": 105,
+     "page": 104,
      "sentences": [
       {
        "id": "s-references-276-1",
-       "original": "SpeechUT: Bridging speech and text with hidden-unit for encoder-decoder based speechtext pre-training."
+       "original": "Soundstream: An end-to-end neural audio codec."
       },
       {
        "id": "s-references-276-2",
-       "original": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 1663–1676, Abu Dhabi, United Arab Emirates, December 2022."
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30:495–507, 2022.",
+       "zh": "5"
       },
       {
        "id": "s-references-276-3",
-       "original": "Association for Computational Linguistics."
-      },
-      {
-       "id": "s-references-276-4",
-       "original": "URL https://aclanthology.org/2022. emnlp-main.108."
+       "original": "URL https://api.semanticscholar. org/CorpusID:236149944.",
+       "zh": "49"
       }
      ]
     },
     {
      "id": "p-references-277",
      "type": "paragraph",
-     "page": 105,
+     "page": 104,
      "sentences": [
       {
        "id": "s-references-277-1",
-       "original": "Ding Zhao, Tara N."
+       "original": "Yu Zhang, Wei Han, James Qin, Yongqiang Wang, Ankur Bapna, Zhehuai Chen, Nanxin Chen, Bo Li, Vera Axelrod, Gary Wang, Zhong Meng, Ke Hu, Andrew Rosenberg, Rohit Prabhavalkar, Daniel S.",
+       "zh": "对 S2ST，我们考察两种级联方式：(1) ASR、T2TT、TTS 的 3 段级联；(2) S2TT、TTS 的 2 段级联。"
       },
       {
        "id": "s-references-277-2",
-       "original": "Sainath, David Rybach, Pat Rondon, Deepti Bhatia, Bo Li, and Ruoming Pang."
-      },
-      {
-       "id": "s-references-277-3",
-       "original": "Shallow-Fusion End-to-End Contextual Biasing."
-      },
-      {
-       "id": "s-references-277-4",
-       "original": "In Proc."
-      },
-      {
-       "id": "s-references-277-5",
-       "original": "Interspeech 2019, pages 1418–1422, 2019. doi: 10.21437/Interspeech.2019-1209."
+       "original": "Park, Parisa Haghani, Jason Riesa, Ginger Perng, Hagen Soltau, Trevor Strohman, Bhuvana Ramabhadran, Tara Sainath, Pedro Moreno, Chung-Cheng"
       }
      ]
     },
     {
+     "id": "eq-references-35",
+     "type": "equation",
+     "page": 104,
+     "original": "104"
+    },
+    {
      "id": "p-references-278",
      "type": "paragraph",
-     "page": 105,
+     "page": 104,
      "sentences": [
       {
        "id": "s-references-278-1",
-       "original": "Jinming Zhao, Hao Yang, Gholamreza Haffari, and Ehsan Shareghi."
+       "original": "Chiu, Johan Schalkwyk, Françoise Beaufays, and Yonghui Wu."
       },
       {
        "id": "s-references-278-2",
-       "original": "M-Adapter: Modality Adaptation for End-to-End Speech-to-Text Translation."
-      },
-      {
-       "id": "s-references-278-3",
-       "original": "In Proc."
-      },
-      {
-       "id": "s-references-278-4",
-       "original": "Interspeech 2022, pages 111–115, 2022. doi: 10.21437/Interspeech.2022-592."
+       "original": "Google usm: Scaling automatic speech recognition beyond 100 languages, 2023a.",
+       "zh": "（页码行：2。）"
       }
      ]
     },
@@ -17307,19 +23191,21 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-279-1",
-       "original": "Qiu-Shi Zhu, Jie Zhang, Zi-Qiang Zhang, Ming-Hui Wu, Xin Fang, and Li-Rong Dai."
+       "original": "Zi-Hua Zhang, Long Zhou, Chengyi Wang, Sanyuan Chen, Yu Wu, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, and Furu Wei."
       },
       {
        "id": "s-references-279-2",
-       "original": "A noise-robust self-supervised pre-training model based speech representation learning for automatic speech recognition."
+       "original": "Speak foreign languages with your own voice: Cross-lingual neural codec language modeling."
       },
       {
        "id": "s-references-279-3",
-       "original": "In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 3174–3178."
+       "original": "ArXiv, abs/2303.03926, 2023b.",
+       "zh": "3."
       },
       {
        "id": "s-references-279-4",
-       "original": "IEEE, 2022."
+       "original": "URL https://api.semanticscholar.org/CorpusID:257378493.",
+       "zh": "5"
       }
      ]
     },
@@ -17330,23 +23216,7 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-280-1",
-       "original": "Michał Ziemski, Marcin Junczys-Dowmunt, and Bruno Pouliquen."
-      },
-      {
-       "id": "s-references-280-2",
-       "original": "The United Nations parallel corpus v1.0."
-      },
-      {
-       "id": "s-references-280-3",
-       "original": "In Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC’16), pages 3530–3534, Portorož, Slovenia, May 2016."
-      },
-      {
-       "id": "s-references-280-4",
-       "original": "European Language Resources Association (ELRA)."
-      },
-      {
-       "id": "s-references-280-5",
-       "original": "URL https://aclanthology.org/L16-1561."
+       "original": "Ziqiang Zhang, Long Zhou, Junyi Ao, Shujie Liu, Lirong Dai, Jinyu Li, and Furu Wei."
       }
      ]
     },
@@ -17357,15 +23227,22 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-281-1",
-       "original": "Ethan Zuckerman."
+       "original": "SpeechUT: Bridging speech and text with hidden-unit for encoder-decoder based speechtext pre-training."
       },
       {
        "id": "s-references-281-2",
-       "original": "The polyglot internet, October 2008."
+       "original": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, pages 1663–1676, Abu Dhabi, United Arab Emirates, December 2022.",
+       "zh": "63"
       },
       {
        "id": "s-references-281-3",
-       "original": "URL https://ethanzuckerman."
+       "original": "Association for Computational Linguistics.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-281-4",
+       "original": "URL https://aclanthology.org/2022. emnlp-main.108.",
+       "zh": "2."
       }
      ]
     },
@@ -17376,7 +23253,24 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-282-1",
-       "original": "com/the-polyglot-internet/."
+       "original": "Ding Zhao, Tara N."
+      },
+      {
+       "id": "s-references-282-2",
+       "original": "Sainath, David Rybach, Pat Rondon, Deepti Bhatia, Bo Li, and Ruoming Pang."
+      },
+      {
+       "id": "s-references-282-3",
+       "original": "Shallow-Fusion End-to-End Contextual Biasing."
+      },
+      {
+       "id": "s-references-282-4",
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-282-5",
+       "original": "Interspeech 2019, pages 1418–1422, 2019. doi: 10.21437/Interspeech.2019-1209.",
+       "zh": "12"
       }
      ]
     },
@@ -17387,9 +23281,114 @@ globalThis.PAPER_2308_11596 = {
      "sentences": [
       {
        "id": "s-references-283-1",
-       "original": "105"
+       "original": "Jinming Zhao, Hao Yang, Gholamreza Haffari, and Ehsan Shareghi."
+      },
+      {
+       "id": "s-references-283-2",
+       "original": "M-Adapter: Modality Adaptation for End-to-End Speech-to-Text Translation."
+      },
+      {
+       "id": "s-references-283-3",
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-283-4",
+       "original": "Interspeech 2022, pages 111–115, 2022. doi: 10.21437/Interspeech.2022-592.",
+       "zh": "5"
       }
      ]
+    },
+    {
+     "id": "p-references-284",
+     "type": "paragraph",
+     "page": 105,
+     "sentences": [
+      {
+       "id": "s-references-284-1",
+       "original": "Qiu-Shi Zhu, Jie Zhang, Zi-Qiang Zhang, Ming-Hui Wu, Xin Fang, and Li-Rong Dai."
+      },
+      {
+       "id": "s-references-284-2",
+       "original": "A noise-robust self-supervised pre-training model based speech representation learning for automatic speech recognition."
+      },
+      {
+       "id": "s-references-284-3",
+       "original": "In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 3174–3178.",
+       "zh": "22"
+      },
+      {
+       "id": "s-references-284-4",
+       "original": "IEEE, 2022.",
+       "zh": "2."
+      }
+     ]
+    },
+    {
+     "id": "p-references-285",
+     "type": "paragraph",
+     "page": 105,
+     "sentences": [
+      {
+       "id": "s-references-285-1",
+       "original": "Michał Ziemski, Marcin Junczys-Dowmunt, and Bruno Pouliquen."
+      },
+      {
+       "id": "s-references-285-2",
+       "original": "The United Nations parallel corpus v1.0.",
+       "zh": "1."
+      },
+      {
+       "id": "s-references-285-3",
+       "original": "In Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC’16), pages 3530–3534, Portorož, Slovenia, May 2016.",
+       "zh": "5"
+      },
+      {
+       "id": "s-references-285-4",
+       "original": "European Language Resources Association (ELRA)."
+      },
+      {
+       "id": "s-references-285-5",
+       "original": "URL https://aclanthology.org/L16-1561.",
+       "zh": "5"
+      }
+     ]
+    },
+    {
+     "id": "p-references-286",
+     "type": "paragraph",
+     "page": 105,
+     "sentences": [
+      {
+       "id": "s-references-286-1",
+       "original": "Ethan Zuckerman."
+      },
+      {
+       "id": "s-references-286-2",
+       "original": "The polyglot internet, October 2008.",
+       "zh": "（页码行：2。）"
+      },
+      {
+       "id": "s-references-286-3",
+       "original": "URL https://ethanzuckerman."
+      }
+     ]
+    },
+    {
+     "id": "p-references-287",
+     "type": "paragraph",
+     "page": 105,
+     "sentences": [
+      {
+       "id": "s-references-287-1",
+       "original": "com/the-polyglot-internet/."
+      }
+     ]
+    },
+    {
+     "id": "eq-references-36",
+     "type": "equation",
+     "page": 105,
+     "original": "105"
     }
    ]
   },
@@ -17541,16 +23540,10 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
-     "id": "p-A-7",
-     "type": "paragraph",
+     "id": "eq-A-1",
+     "type": "equation",
      "page": 106,
-     "sentences": [
-      {
-       "id": "s-A-7-1",
-       "original": "106",
-       "zh": "106"
-      }
-     ]
+     "original": "106"
     }
    ]
   },
@@ -17582,16 +23575,2596 @@ globalThis.PAPER_2308_11596 = {
      ]
     },
     {
+     "id": "eq-B-1",
+     "type": "equation",
+     "page": 107,
+     "original": "107"
+    },
+    {
      "id": "p-B-2",
      "type": "paragraph",
      "page": 107,
      "sentences": [
       {
        "id": "s-B-2-1",
-       "original": "107 language code ASR S2TT X–eng Resource S2TT eng–X P M P M language code ASR S2TT X–eng Resource S2TT eng–X P M P M Total afr 106 101 2069 amh 54 49 1921 934 942 400 1959 200 ary 97 95 1776 arz 93 92 2014 asm 77 68 1698 ast 0 0 0 azj 95 94 1901 bel 1160 1157 1641 ben 338 320 400 1987 200 bos 99 99 2113 bul 103 102 1881 cat 1767 1758 400 1781 200 ceb 0 0 2020 ces 189 442 400 2066 200 ckb 93 92 2001 cmn 9784 9027 400 1947 cym 100 96 400 1676 dan 161 371 400 1954 200 3354 3490 2043 200 ell 345 339 1725 eng 3845 0 0 est 133 130 400 1803 200 eus 276 265 1998 fin 182 449 400 1933 200 2123 2247 2304 200 fuv 0 0 0 gaz 0 0 1766 gle 56 55 1973 glg 123 121 2116 guj 143 138 1990 hau 0 0 0 heb 96 96 2092 hin 148 143 400 2066 200 hrv 308 219 2119 hun 260 474 1900 hye 148 146 1696 ibo 35 28 1738 ind 250 254 400 1818 200 isl 132 130 2059 ita 591 910 400 2278 200 jav 302 301 2122 jpn 381 15141 400 1798 200 kam 0 0 0 kan 124 121 208 1954 kat 195 185 1639 kaz 330 327 1895 kea 0 0 0 khk 152 148 1657 khm 191 187 1661 kir 129 123 1839 kor 387 201 400 2125 lao 200 190 1959 lin 0 0 0 lit 40 283 1920 ltz 0 0 0 lug 369 368 1890 luo 0 0 1975 lvs 100 98 1779 mai 0 0 2004 mal 110 57 1754 mar 112 108 1848 mkd 145 143 1918 mlt 157 151 74 1699 200 mni 0 0 1257 mri 0 0 0 mya 137 125 1860 1734 1780 400 2249 200 nor 214 193 2134 npi 153 129 1714 nso 0 0 0 nya 103 99 2058 oci 0 0 0 ory 89 86 1721 pan 196 193 1641 pbt 131 121 400 1847 pes 386 68 1980 pol 341 446 400 1914 200 269 246 400 2250 200 182 443 400 2131 200 264 144 400 2161 200 sat 0 0 0 slk 142 390 400 1931 200 slv 107 370 1800 sna 0 0 2067 snd 0 0 1958 som 143 140 1851 1514 1285 2505 200 srp 101 98 1910 swe 129 91 1810 200 swh 361 50 400 1930 200 tam 256 64 400 1569 tel 89 80 400 1934 tgk 99 98 1820 tgl 99 93 400 2015 189 59 400 1941 101 tur 169 100 400 2135 200 umb 0 0 0 ukr 132 75 400 2052 200 185 145 400 1844 200 uzn 166 96 400 1801 200 vie 194 151 400 2396 200 wol xho 0 0 0 yor 132 130 1384 yue 167 124 1931 zlm 155 161 0 zul 62 55 2063",
-       "zh": "（表格内容：Table 38 各语言（代码）的 ASR、S2TT X–eng、S2TT eng–X 数据小时数，分 Primary（P）与 Mined（M）两列；完整数值见原文。）（完整数值行：107 language code ASR S2TT X–eng Resource S2TT eng–X P M P M language code ASR S2TT X–eng Resource S2TT eng–X P M P M Total afr 106 101 2069 amh 54 49 1921 934 942 400 1959 200 ary 97 95 1776 arz 93 92 2014 asm 77 68 1698 ast 0 0 0 azj 95 94 1901 bel 1160 1157 1641 ben 338 320 400 1987 200 bos 99 99 2113 bul 103 102 1881 cat 1767 1758 400 1781 200 ceb 0 0 2020 ces 189 442 400 2066 200 ckb 93 92 2001 cmn 9784 9027 400 1947 cym 100 96 400 1676 dan 161 371 400 1954 200 3354 3490 2043 200 ell 345 339 1725 eng 3845 0 0 est 133 130 400 1803 200 eus 276 265 1998 fin 182 449 400 1933 200 2123 2247 2304 200 fuv 0 0 0 gaz 0 0 1766 gle 56 55 1973 glg 123 121 2116 guj 143 138 1990 hau 0 0 0 heb 96 96 2092 hin 148 143 400 2066 200 hrv 308 219 2119 hun 260 474 1900 hye 148 146 1696 ibo 35 28 1738 ind 250 254 400 1818 200 isl 132 130 2059 ita 591 910 400 2278 200 jav 302 301 2122 jpn 381 15141 400 1798 200 kam 0 0 0 kan 124 121 208 1954 kat 195 185 1639 kaz 330 327 1895 kea 0 0 0 khk 152 148 1657 khm 191 187 1661 kir 129 123 1839 kor 387 201 400 2125 lao 200 190 1959 lin 0 0 0 lit 40 283 1920 ltz 0 0 0 lug 369 368 1890 luo 0 0 1975 lvs 100 98 1779 mai 0 0 2004 mal 110 57 1754 mar 112 108 1848 mkd 145 143 1918 mlt 157 151 74 1699 200 mni 0 0 1257 mri 0 0 0 mya 137 125 1860 1734 1780 400 2249 200 nor 214 193 2134 npi 153 129 1714 nso 0 0 0 nya 103 99 2058 oci 0 0 0 ory 89 86 1721 pan 196 193 1641 pbt 131 121 400 1847 pes 386 68 1980 pol 341 446 400 1914 200 269 246 400 2250 200 182 443 400 2131 200 264 144 400 2161 200 sat 0 0 0 slk 142 390 400 1931 200 slv 107 370 1800 sna 0 0 2067 snd 0 0 1958 som 143 140 1851 1514 1285 2505 200 srp 101 98 1910 swe 129 91 1810 200 swh 361 50 400 1930 200 tam 256 64 400 1569 tel 89 80 400 1934 tgk 99 98 1820 tgl 99 93 400 2015 189 59 400 1941 101 tur 169 100 400 2135 200 umb 0 0 0 ukr 132 75 400 2052 200 185 145 400 1844 200 uzn 166 96 400 1801 200 vie 194 151 400 2396 200 wol xho 0 0 0 yor 132 130 1384 yue 167 124 1931 zlm 155 161 0 zul 62 55 2063）"
+       "original": "language code ASR S2TT X–eng Resource S2TT eng–X P M P M language code ASR S2TT X–eng Resource S2TT eng–X P M P M Total",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-B-2",
+     "type": "equation",
+     "page": 107,
+     "original": "40,012 50,596 12,682 17,6827 5,701"
+    },
+    {
+     "id": "eq-B-3",
+     "type": "equation",
+     "page": 107,
+     "original": "afr"
+    },
+    {
+     "id": "eq-B-4",
+     "type": "equation",
+     "page": 107,
+     "original": "106 101"
+    },
+    {
+     "id": "eq-B-5",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-6",
+     "type": "equation",
+     "page": 107,
+     "original": "2069"
+    },
+    {
+     "id": "eq-B-7",
+     "type": "equation",
+     "page": 107,
+     "original": "amh"
+    },
+    {
+     "id": "eq-B-8",
+     "type": "equation",
+     "page": 107,
+     "original": "54 49"
+    },
+    {
+     "id": "eq-B-9",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-10",
+     "type": "equation",
+     "page": 107,
+     "original": "1921"
+    },
+    {
+     "id": "eq-B-11",
+     "type": "equation",
+     "page": 107,
+     "original": "arb"
+    },
+    {
+     "id": "eq-B-12",
+     "type": "equation",
+     "page": 107,
+     "original": "934 942 400"
+    },
+    {
+     "id": "eq-B-13",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-14",
+     "type": "equation",
+     "page": 107,
+     "original": "1959 200"
+    },
+    {
+     "id": "eq-B-15",
+     "type": "equation",
+     "page": 107,
+     "original": "ary"
+    },
+    {
+     "id": "eq-B-16",
+     "type": "equation",
+     "page": 107,
+     "original": "97 95"
+    },
+    {
+     "id": "eq-B-17",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-18",
+     "type": "equation",
+     "page": 107,
+     "original": "1776"
+    },
+    {
+     "id": "eq-B-19",
+     "type": "equation",
+     "page": 107,
+     "original": "arz"
+    },
+    {
+     "id": "eq-B-20",
+     "type": "equation",
+     "page": 107,
+     "original": "93 92"
+    },
+    {
+     "id": "eq-B-21",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-22",
+     "type": "equation",
+     "page": 107,
+     "original": "2014"
+    },
+    {
+     "id": "eq-B-23",
+     "type": "equation",
+     "page": 107,
+     "original": "asm"
+    },
+    {
+     "id": "eq-B-24",
+     "type": "equation",
+     "page": 107,
+     "original": "77 68"
+    },
+    {
+     "id": "eq-B-25",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-26",
+     "type": "equation",
+     "page": 107,
+     "original": "1698"
+    },
+    {
+     "id": "eq-B-27",
+     "type": "equation",
+     "page": 107,
+     "original": "ast"
+    },
+    {
+     "id": "eq-B-28",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-29",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-30",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-31",
+     "type": "equation",
+     "page": 107,
+     "original": "azj"
+    },
+    {
+     "id": "eq-B-32",
+     "type": "equation",
+     "page": 107,
+     "original": "95 94"
+    },
+    {
+     "id": "eq-B-33",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-34",
+     "type": "equation",
+     "page": 107,
+     "original": "1901"
+    },
+    {
+     "id": "eq-B-35",
+     "type": "equation",
+     "page": 107,
+     "original": "bel"
+    },
+    {
+     "id": "eq-B-36",
+     "type": "equation",
+     "page": 107,
+     "original": "1160 1157"
+    },
+    {
+     "id": "eq-B-37",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-38",
+     "type": "equation",
+     "page": 107,
+     "original": "1641"
+    },
+    {
+     "id": "eq-B-39",
+     "type": "equation",
+     "page": 107,
+     "original": "ben"
+    },
+    {
+     "id": "eq-B-40",
+     "type": "equation",
+     "page": 107,
+     "original": "338 320 400"
+    },
+    {
+     "id": "eq-B-41",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-42",
+     "type": "equation",
+     "page": 107,
+     "original": "1987 200"
+    },
+    {
+     "id": "eq-B-43",
+     "type": "equation",
+     "page": 107,
+     "original": "bos"
+    },
+    {
+     "id": "eq-B-44",
+     "type": "equation",
+     "page": 107,
+     "original": "99 99"
+    },
+    {
+     "id": "eq-B-45",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-46",
+     "type": "equation",
+     "page": 107,
+     "original": "2113"
+    },
+    {
+     "id": "eq-B-47",
+     "type": "equation",
+     "page": 107,
+     "original": "bul"
+    },
+    {
+     "id": "eq-B-48",
+     "type": "equation",
+     "page": 107,
+     "original": "103 102"
+    },
+    {
+     "id": "eq-B-49",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-50",
+     "type": "equation",
+     "page": 107,
+     "original": "1881"
+    },
+    {
+     "id": "eq-B-51",
+     "type": "equation",
+     "page": 107,
+     "original": "cat"
+    },
+    {
+     "id": "eq-B-52",
+     "type": "equation",
+     "page": 107,
+     "original": "1767 1758 400"
+    },
+    {
+     "id": "eq-B-53",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-54",
+     "type": "equation",
+     "page": 107,
+     "original": "1781 200"
+    },
+    {
+     "id": "eq-B-55",
+     "type": "equation",
+     "page": 107,
+     "original": "ceb"
+    },
+    {
+     "id": "eq-B-56",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-57",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-58",
+     "type": "equation",
+     "page": 107,
+     "original": "2020"
+    },
+    {
+     "id": "eq-B-59",
+     "type": "equation",
+     "page": 107,
+     "original": "ces"
+    },
+    {
+     "id": "eq-B-60",
+     "type": "equation",
+     "page": 107,
+     "original": "189 442 400"
+    },
+    {
+     "id": "eq-B-61",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-62",
+     "type": "equation",
+     "page": 107,
+     "original": "2066 200"
+    },
+    {
+     "id": "eq-B-63",
+     "type": "equation",
+     "page": 107,
+     "original": "ckb"
+    },
+    {
+     "id": "eq-B-64",
+     "type": "equation",
+     "page": 107,
+     "original": "93 92"
+    },
+    {
+     "id": "eq-B-65",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-66",
+     "type": "equation",
+     "page": 107,
+     "original": "2001"
+    },
+    {
+     "id": "eq-B-67",
+     "type": "equation",
+     "page": 107,
+     "original": "cmn"
+    },
+    {
+     "id": "eq-B-68",
+     "type": "equation",
+     "page": 107,
+     "original": "9784 9027 400"
+    },
+    {
+     "id": "eq-B-69",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-70",
+     "type": "equation",
+     "page": 107,
+     "original": "1947"
+    },
+    {
+     "id": "eq-B-71",
+     "type": "equation",
+     "page": 107,
+     "original": "cym"
+    },
+    {
+     "id": "eq-B-72",
+     "type": "equation",
+     "page": 107,
+     "original": "100 96 400"
+    },
+    {
+     "id": "eq-B-73",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-74",
+     "type": "equation",
+     "page": 107,
+     "original": "1676"
+    },
+    {
+     "id": "eq-B-75",
+     "type": "equation",
+     "page": 107,
+     "original": "dan"
+    },
+    {
+     "id": "eq-B-76",
+     "type": "equation",
+     "page": 107,
+     "original": "161 371 400"
+    },
+    {
+     "id": "eq-B-77",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-78",
+     "type": "equation",
+     "page": 107,
+     "original": "1954 200"
+    },
+    {
+     "id": "eq-B-79",
+     "type": "equation",
+     "page": 107,
+     "original": "deu"
+    },
+    {
+     "id": "eq-B-80",
+     "type": "equation",
+     "page": 107,
+     "original": "3354 3490"
+    },
+    {
+     "id": "eq-B-81",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-82",
+     "type": "equation",
+     "page": 107,
+     "original": "2043 200"
+    },
+    {
+     "id": "eq-B-83",
+     "type": "equation",
+     "page": 107,
+     "original": "ell"
+    },
+    {
+     "id": "eq-B-84",
+     "type": "equation",
+     "page": 107,
+     "original": "345 339"
+    },
+    {
+     "id": "eq-B-85",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-86",
+     "type": "equation",
+     "page": 107,
+     "original": "1725"
+    },
+    {
+     "id": "eq-B-87",
+     "type": "equation",
+     "page": 107,
+     "original": "eng"
+    },
+    {
+     "id": "eq-B-88",
+     "type": "equation",
+     "page": 107,
+     "original": "3845 0"
+    },
+    {
+     "id": "eq-B-89",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-90",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-91",
+     "type": "equation",
+     "page": 107,
+     "original": "est"
+    },
+    {
+     "id": "eq-B-92",
+     "type": "equation",
+     "page": 107,
+     "original": "133 130 400"
+    },
+    {
+     "id": "eq-B-93",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-94",
+     "type": "equation",
+     "page": 107,
+     "original": "1803 200"
+    },
+    {
+     "id": "eq-B-95",
+     "type": "equation",
+     "page": 107,
+     "original": "eus"
+    },
+    {
+     "id": "eq-B-96",
+     "type": "equation",
+     "page": 107,
+     "original": "276 265"
+    },
+    {
+     "id": "eq-B-97",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-98",
+     "type": "equation",
+     "page": 107,
+     "original": "1998"
+    },
+    {
+     "id": "eq-B-99",
+     "type": "equation",
+     "page": 107,
+     "original": "fin"
+    },
+    {
+     "id": "eq-B-100",
+     "type": "equation",
+     "page": 107,
+     "original": "182 449 400"
+    },
+    {
+     "id": "eq-B-101",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-102",
+     "type": "equation",
+     "page": 107,
+     "original": "1933 200"
+    },
+    {
+     "id": "eq-B-103",
+     "type": "equation",
+     "page": 107,
+     "original": "fra"
+    },
+    {
+     "id": "eq-B-104",
+     "type": "equation",
+     "page": 107,
+     "original": "2123 2247"
+    },
+    {
+     "id": "eq-B-105",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-106",
+     "type": "equation",
+     "page": 107,
+     "original": "2304 200"
+    },
+    {
+     "id": "eq-B-107",
+     "type": "equation",
+     "page": 107,
+     "original": "fuv"
+    },
+    {
+     "id": "eq-B-108",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-109",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-110",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-111",
+     "type": "equation",
+     "page": 107,
+     "original": "gaz"
+    },
+    {
+     "id": "eq-B-112",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-113",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-114",
+     "type": "equation",
+     "page": 107,
+     "original": "1766"
+    },
+    {
+     "id": "eq-B-115",
+     "type": "equation",
+     "page": 107,
+     "original": "gle"
+    },
+    {
+     "id": "eq-B-116",
+     "type": "equation",
+     "page": 107,
+     "original": "56 55"
+    },
+    {
+     "id": "eq-B-117",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-118",
+     "type": "equation",
+     "page": 107,
+     "original": "1973"
+    },
+    {
+     "id": "eq-B-119",
+     "type": "equation",
+     "page": 107,
+     "original": "glg"
+    },
+    {
+     "id": "eq-B-120",
+     "type": "equation",
+     "page": 107,
+     "original": "123 121"
+    },
+    {
+     "id": "eq-B-121",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-122",
+     "type": "equation",
+     "page": 107,
+     "original": "2116"
+    },
+    {
+     "id": "eq-B-123",
+     "type": "equation",
+     "page": 107,
+     "original": "guj"
+    },
+    {
+     "id": "eq-B-124",
+     "type": "equation",
+     "page": 107,
+     "original": "143 138"
+    },
+    {
+     "id": "eq-B-125",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-126",
+     "type": "equation",
+     "page": 107,
+     "original": "1990"
+    },
+    {
+     "id": "eq-B-127",
+     "type": "equation",
+     "page": 107,
+     "original": "hau"
+    },
+    {
+     "id": "eq-B-128",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-129",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-130",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-131",
+     "type": "equation",
+     "page": 107,
+     "original": "heb"
+    },
+    {
+     "id": "eq-B-132",
+     "type": "equation",
+     "page": 107,
+     "original": "96 96"
+    },
+    {
+     "id": "eq-B-133",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-134",
+     "type": "equation",
+     "page": 107,
+     "original": "2092"
+    },
+    {
+     "id": "eq-B-135",
+     "type": "equation",
+     "page": 107,
+     "original": "hin"
+    },
+    {
+     "id": "eq-B-136",
+     "type": "equation",
+     "page": 107,
+     "original": "148 143 400"
+    },
+    {
+     "id": "eq-B-137",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-138",
+     "type": "equation",
+     "page": 107,
+     "original": "2066 200"
+    },
+    {
+     "id": "eq-B-139",
+     "type": "equation",
+     "page": 107,
+     "original": "hrv"
+    },
+    {
+     "id": "eq-B-140",
+     "type": "equation",
+     "page": 107,
+     "original": "308 219"
+    },
+    {
+     "id": "eq-B-141",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-142",
+     "type": "equation",
+     "page": 107,
+     "original": "2119"
+    },
+    {
+     "id": "eq-B-143",
+     "type": "equation",
+     "page": 107,
+     "original": "hun"
+    },
+    {
+     "id": "eq-B-144",
+     "type": "equation",
+     "page": 107,
+     "original": "260 474"
+    },
+    {
+     "id": "eq-B-145",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-146",
+     "type": "equation",
+     "page": 107,
+     "original": "1900"
+    },
+    {
+     "id": "eq-B-147",
+     "type": "equation",
+     "page": 107,
+     "original": "hye"
+    },
+    {
+     "id": "eq-B-148",
+     "type": "equation",
+     "page": 107,
+     "original": "148 146"
+    },
+    {
+     "id": "eq-B-149",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-150",
+     "type": "equation",
+     "page": 107,
+     "original": "1696"
+    },
+    {
+     "id": "eq-B-151",
+     "type": "equation",
+     "page": 107,
+     "original": "ibo"
+    },
+    {
+     "id": "eq-B-152",
+     "type": "equation",
+     "page": 107,
+     "original": "35 28"
+    },
+    {
+     "id": "eq-B-153",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-154",
+     "type": "equation",
+     "page": 107,
+     "original": "1738"
+    },
+    {
+     "id": "eq-B-155",
+     "type": "equation",
+     "page": 107,
+     "original": "ind"
+    },
+    {
+     "id": "eq-B-156",
+     "type": "equation",
+     "page": 107,
+     "original": "250 254 400"
+    },
+    {
+     "id": "eq-B-157",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-158",
+     "type": "equation",
+     "page": 107,
+     "original": "1818 200"
+    },
+    {
+     "id": "eq-B-159",
+     "type": "equation",
+     "page": 107,
+     "original": "isl"
+    },
+    {
+     "id": "eq-B-160",
+     "type": "equation",
+     "page": 107,
+     "original": "132 130"
+    },
+    {
+     "id": "eq-B-161",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-162",
+     "type": "equation",
+     "page": 107,
+     "original": "2059"
+    },
+    {
+     "id": "eq-B-163",
+     "type": "equation",
+     "page": 107,
+     "original": "ita"
+    },
+    {
+     "id": "eq-B-164",
+     "type": "equation",
+     "page": 107,
+     "original": "591 910 400"
+    },
+    {
+     "id": "eq-B-165",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-166",
+     "type": "equation",
+     "page": 107,
+     "original": "2278 200"
+    },
+    {
+     "id": "eq-B-167",
+     "type": "equation",
+     "page": 107,
+     "original": "jav"
+    },
+    {
+     "id": "eq-B-168",
+     "type": "equation",
+     "page": 107,
+     "original": "302 301"
+    },
+    {
+     "id": "eq-B-169",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-170",
+     "type": "equation",
+     "page": 107,
+     "original": "2122"
+    },
+    {
+     "id": "eq-B-171",
+     "type": "equation",
+     "page": 107,
+     "original": "jpn"
+    },
+    {
+     "id": "eq-B-172",
+     "type": "equation",
+     "page": 107,
+     "original": "381 15141 400"
+    },
+    {
+     "id": "eq-B-173",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-174",
+     "type": "equation",
+     "page": 107,
+     "original": "1798 200"
+    },
+    {
+     "id": "eq-B-175",
+     "type": "equation",
+     "page": 107,
+     "original": "kam"
+    },
+    {
+     "id": "eq-B-176",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-177",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-178",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-179",
+     "type": "equation",
+     "page": 107,
+     "original": "kan"
+    },
+    {
+     "id": "eq-B-180",
+     "type": "equation",
+     "page": 107,
+     "original": "124 121 208"
+    },
+    {
+     "id": "eq-B-181",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-182",
+     "type": "equation",
+     "page": 107,
+     "original": "1954"
+    },
+    {
+     "id": "eq-B-183",
+     "type": "equation",
+     "page": 107,
+     "original": "kat"
+    },
+    {
+     "id": "eq-B-184",
+     "type": "equation",
+     "page": 107,
+     "original": "195 185"
+    },
+    {
+     "id": "eq-B-185",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-186",
+     "type": "equation",
+     "page": 107,
+     "original": "1639"
+    },
+    {
+     "id": "eq-B-187",
+     "type": "equation",
+     "page": 107,
+     "original": "kaz"
+    },
+    {
+     "id": "eq-B-188",
+     "type": "equation",
+     "page": 107,
+     "original": "330 327"
+    },
+    {
+     "id": "eq-B-189",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-190",
+     "type": "equation",
+     "page": 107,
+     "original": "1895"
+    },
+    {
+     "id": "eq-B-191",
+     "type": "equation",
+     "page": 107,
+     "original": "kea"
+    },
+    {
+     "id": "eq-B-192",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-193",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-194",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-195",
+     "type": "equation",
+     "page": 107,
+     "original": "khk"
+    },
+    {
+     "id": "eq-B-196",
+     "type": "equation",
+     "page": 107,
+     "original": "152 148"
+    },
+    {
+     "id": "eq-B-197",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-198",
+     "type": "equation",
+     "page": 107,
+     "original": "1657"
+    },
+    {
+     "id": "eq-B-199",
+     "type": "equation",
+     "page": 107,
+     "original": "khm"
+    },
+    {
+     "id": "eq-B-200",
+     "type": "equation",
+     "page": 107,
+     "original": "191 187"
+    },
+    {
+     "id": "eq-B-201",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-202",
+     "type": "equation",
+     "page": 107,
+     "original": "1661"
+    },
+    {
+     "id": "eq-B-203",
+     "type": "equation",
+     "page": 107,
+     "original": "kir"
+    },
+    {
+     "id": "eq-B-204",
+     "type": "equation",
+     "page": 107,
+     "original": "129 123"
+    },
+    {
+     "id": "eq-B-205",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-206",
+     "type": "equation",
+     "page": 107,
+     "original": "1839"
+    },
+    {
+     "id": "eq-B-207",
+     "type": "equation",
+     "page": 107,
+     "original": "kor"
+    },
+    {
+     "id": "eq-B-208",
+     "type": "equation",
+     "page": 107,
+     "original": "387 201 400"
+    },
+    {
+     "id": "eq-B-209",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-210",
+     "type": "equation",
+     "page": 107,
+     "original": "2125"
+    },
+    {
+     "id": "eq-B-211",
+     "type": "equation",
+     "page": 107,
+     "original": "lao"
+    },
+    {
+     "id": "eq-B-212",
+     "type": "equation",
+     "page": 107,
+     "original": "200 190"
+    },
+    {
+     "id": "eq-B-213",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-214",
+     "type": "equation",
+     "page": 107,
+     "original": "1959"
+    },
+    {
+     "id": "eq-B-215",
+     "type": "equation",
+     "page": 107,
+     "original": "lin"
+    },
+    {
+     "id": "eq-B-216",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-217",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-218",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-219",
+     "type": "equation",
+     "page": 107,
+     "original": "lit"
+    },
+    {
+     "id": "eq-B-220",
+     "type": "equation",
+     "page": 107,
+     "original": "40 283"
+    },
+    {
+     "id": "eq-B-221",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-222",
+     "type": "equation",
+     "page": 107,
+     "original": "1920"
+    },
+    {
+     "id": "eq-B-223",
+     "type": "equation",
+     "page": 107,
+     "original": "ltz"
+    },
+    {
+     "id": "eq-B-224",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-225",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-226",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-227",
+     "type": "equation",
+     "page": 107,
+     "original": "lug"
+    },
+    {
+     "id": "eq-B-228",
+     "type": "equation",
+     "page": 107,
+     "original": "369 368"
+    },
+    {
+     "id": "eq-B-229",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-230",
+     "type": "equation",
+     "page": 107,
+     "original": "1890"
+    },
+    {
+     "id": "eq-B-231",
+     "type": "equation",
+     "page": 107,
+     "original": "luo"
+    },
+    {
+     "id": "eq-B-232",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-233",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-234",
+     "type": "equation",
+     "page": 107,
+     "original": "1975"
+    },
+    {
+     "id": "eq-B-235",
+     "type": "equation",
+     "page": 107,
+     "original": "lvs"
+    },
+    {
+     "id": "eq-B-236",
+     "type": "equation",
+     "page": 107,
+     "original": "100 98"
+    },
+    {
+     "id": "eq-B-237",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-238",
+     "type": "equation",
+     "page": 107,
+     "original": "1779"
+    },
+    {
+     "id": "eq-B-239",
+     "type": "equation",
+     "page": 107,
+     "original": "mai"
+    },
+    {
+     "id": "eq-B-240",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-241",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-242",
+     "type": "equation",
+     "page": 107,
+     "original": "2004"
+    },
+    {
+     "id": "eq-B-243",
+     "type": "equation",
+     "page": 107,
+     "original": "mal"
+    },
+    {
+     "id": "eq-B-244",
+     "type": "equation",
+     "page": 107,
+     "original": "110 57"
+    },
+    {
+     "id": "eq-B-245",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-246",
+     "type": "equation",
+     "page": 107,
+     "original": "1754"
+    },
+    {
+     "id": "eq-B-247",
+     "type": "equation",
+     "page": 107,
+     "original": "mar"
+    },
+    {
+     "id": "eq-B-248",
+     "type": "equation",
+     "page": 107,
+     "original": "112 108"
+    },
+    {
+     "id": "eq-B-249",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-250",
+     "type": "equation",
+     "page": 107,
+     "original": "1848"
+    },
+    {
+     "id": "eq-B-251",
+     "type": "equation",
+     "page": 107,
+     "original": "mkd"
+    },
+    {
+     "id": "eq-B-252",
+     "type": "equation",
+     "page": 107,
+     "original": "145 143"
+    },
+    {
+     "id": "eq-B-253",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-254",
+     "type": "equation",
+     "page": 107,
+     "original": "1918"
+    },
+    {
+     "id": "eq-B-255",
+     "type": "equation",
+     "page": 107,
+     "original": "mlt"
+    },
+    {
+     "id": "eq-B-256",
+     "type": "equation",
+     "page": 107,
+     "original": "157 151 74"
+    },
+    {
+     "id": "eq-B-257",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-258",
+     "type": "equation",
+     "page": 107,
+     "original": "1699 200"
+    },
+    {
+     "id": "eq-B-259",
+     "type": "equation",
+     "page": 107,
+     "original": "mni"
+    },
+    {
+     "id": "eq-B-260",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-261",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-262",
+     "type": "equation",
+     "page": 107,
+     "original": "1257"
+    },
+    {
+     "id": "eq-B-263",
+     "type": "equation",
+     "page": 107,
+     "original": "mri"
+    },
+    {
+     "id": "eq-B-264",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-265",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-266",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-267",
+     "type": "equation",
+     "page": 107,
+     "original": "mya"
+    },
+    {
+     "id": "eq-B-268",
+     "type": "equation",
+     "page": 107,
+     "original": "137 125"
+    },
+    {
+     "id": "eq-B-269",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-270",
+     "type": "equation",
+     "page": 107,
+     "original": "1860"
+    },
+    {
+     "id": "eq-B-271",
+     "type": "equation",
+     "page": 107,
+     "original": "nld"
+    },
+    {
+     "id": "eq-B-272",
+     "type": "equation",
+     "page": 107,
+     "original": "1734 1780 400"
+    },
+    {
+     "id": "eq-B-273",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-274",
+     "type": "equation",
+     "page": 107,
+     "original": "2249 200"
+    },
+    {
+     "id": "eq-B-275",
+     "type": "equation",
+     "page": 107,
+     "original": "nor"
+    },
+    {
+     "id": "eq-B-276",
+     "type": "equation",
+     "page": 107,
+     "original": "214 193"
+    },
+    {
+     "id": "eq-B-277",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-278",
+     "type": "equation",
+     "page": 107,
+     "original": "2134"
+    },
+    {
+     "id": "eq-B-279",
+     "type": "equation",
+     "page": 107,
+     "original": "npi"
+    },
+    {
+     "id": "eq-B-280",
+     "type": "equation",
+     "page": 107,
+     "original": "153 129"
+    },
+    {
+     "id": "eq-B-281",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-282",
+     "type": "equation",
+     "page": 107,
+     "original": "1714"
+    },
+    {
+     "id": "eq-B-283",
+     "type": "equation",
+     "page": 107,
+     "original": "nso"
+    },
+    {
+     "id": "eq-B-284",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-285",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-286",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-287",
+     "type": "equation",
+     "page": 107,
+     "original": "nya"
+    },
+    {
+     "id": "eq-B-288",
+     "type": "equation",
+     "page": 107,
+     "original": "103 99"
+    },
+    {
+     "id": "eq-B-289",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-290",
+     "type": "equation",
+     "page": 107,
+     "original": "2058"
+    },
+    {
+     "id": "eq-B-291",
+     "type": "equation",
+     "page": 107,
+     "original": "oci"
+    },
+    {
+     "id": "eq-B-292",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-293",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-294",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-295",
+     "type": "equation",
+     "page": 107,
+     "original": "ory"
+    },
+    {
+     "id": "eq-B-296",
+     "type": "equation",
+     "page": 107,
+     "original": "89 86"
+    },
+    {
+     "id": "eq-B-297",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-298",
+     "type": "equation",
+     "page": 107,
+     "original": "1721"
+    },
+    {
+     "id": "eq-B-299",
+     "type": "equation",
+     "page": 107,
+     "original": "pan"
+    },
+    {
+     "id": "eq-B-300",
+     "type": "equation",
+     "page": 107,
+     "original": "196 193"
+    },
+    {
+     "id": "eq-B-301",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-302",
+     "type": "equation",
+     "page": 107,
+     "original": "1641"
+    },
+    {
+     "id": "eq-B-303",
+     "type": "equation",
+     "page": 107,
+     "original": "pbt"
+    },
+    {
+     "id": "eq-B-304",
+     "type": "equation",
+     "page": 107,
+     "original": "131 121 400"
+    },
+    {
+     "id": "eq-B-305",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-306",
+     "type": "equation",
+     "page": 107,
+     "original": "1847"
+    },
+    {
+     "id": "eq-B-307",
+     "type": "equation",
+     "page": 107,
+     "original": "pes"
+    },
+    {
+     "id": "eq-B-308",
+     "type": "equation",
+     "page": 107,
+     "original": "386 68"
+    },
+    {
+     "id": "eq-B-309",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-310",
+     "type": "equation",
+     "page": 107,
+     "original": "1980"
+    },
+    {
+     "id": "eq-B-311",
+     "type": "equation",
+     "page": 107,
+     "original": "pol"
+    },
+    {
+     "id": "eq-B-312",
+     "type": "equation",
+     "page": 107,
+     "original": "341 446 400"
+    },
+    {
+     "id": "eq-B-313",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-314",
+     "type": "equation",
+     "page": 107,
+     "original": "1914 200"
+    },
+    {
+     "id": "eq-B-315",
+     "type": "equation",
+     "page": 107,
+     "original": "por"
+    },
+    {
+     "id": "eq-B-316",
+     "type": "equation",
+     "page": 107,
+     "original": "269 246 400"
+    },
+    {
+     "id": "eq-B-317",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-318",
+     "type": "equation",
+     "page": 107,
+     "original": "2250 200"
+    },
+    {
+     "id": "eq-B-319",
+     "type": "equation",
+     "page": 107,
+     "original": "ron"
+    },
+    {
+     "id": "eq-B-320",
+     "type": "equation",
+     "page": 107,
+     "original": "182 443 400"
+    },
+    {
+     "id": "eq-B-321",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-322",
+     "type": "equation",
+     "page": 107,
+     "original": "2131 200"
+    },
+    {
+     "id": "eq-B-323",
+     "type": "equation",
+     "page": 107,
+     "original": "rus"
+    },
+    {
+     "id": "eq-B-324",
+     "type": "equation",
+     "page": 107,
+     "original": "264 144 400"
+    },
+    {
+     "id": "eq-B-325",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-326",
+     "type": "equation",
+     "page": 107,
+     "original": "2161 200"
+    },
+    {
+     "id": "eq-B-327",
+     "type": "equation",
+     "page": 107,
+     "original": "sat"
+    },
+    {
+     "id": "eq-B-328",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-329",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-330",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-331",
+     "type": "equation",
+     "page": 107,
+     "original": "slk"
+    },
+    {
+     "id": "eq-B-332",
+     "type": "equation",
+     "page": 107,
+     "original": "142 390 400"
+    },
+    {
+     "id": "eq-B-333",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-334",
+     "type": "equation",
+     "page": 107,
+     "original": "1931 200"
+    },
+    {
+     "id": "eq-B-335",
+     "type": "equation",
+     "page": 107,
+     "original": "slv"
+    },
+    {
+     "id": "eq-B-336",
+     "type": "equation",
+     "page": 107,
+     "original": "107 370"
+    },
+    {
+     "id": "eq-B-337",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-338",
+     "type": "equation",
+     "page": 107,
+     "original": "1800"
+    },
+    {
+     "id": "eq-B-339",
+     "type": "equation",
+     "page": 107,
+     "original": "sna"
+    },
+    {
+     "id": "eq-B-340",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-341",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-342",
+     "type": "equation",
+     "page": 107,
+     "original": "2067"
+    },
+    {
+     "id": "eq-B-343",
+     "type": "equation",
+     "page": 107,
+     "original": "snd"
+    },
+    {
+     "id": "eq-B-344",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-345",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-346",
+     "type": "equation",
+     "page": 107,
+     "original": "1958"
+    },
+    {
+     "id": "eq-B-347",
+     "type": "equation",
+     "page": 107,
+     "original": "som"
+    },
+    {
+     "id": "eq-B-348",
+     "type": "equation",
+     "page": 107,
+     "original": "143 140"
+    },
+    {
+     "id": "eq-B-349",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-350",
+     "type": "equation",
+     "page": 107,
+     "original": "1851"
+    },
+    {
+     "id": "eq-B-351",
+     "type": "equation",
+     "page": 107,
+     "original": "spa"
+    },
+    {
+     "id": "eq-B-352",
+     "type": "equation",
+     "page": 107,
+     "original": "1514 1285"
+    },
+    {
+     "id": "eq-B-353",
+     "type": "equation",
+     "page": 107,
+     "original": "high"
+    },
+    {
+     "id": "eq-B-354",
+     "type": "equation",
+     "page": 107,
+     "original": "2505 200"
+    },
+    {
+     "id": "eq-B-355",
+     "type": "equation",
+     "page": 107,
+     "original": "srp"
+    },
+    {
+     "id": "eq-B-356",
+     "type": "equation",
+     "page": 107,
+     "original": "101 98"
+    },
+    {
+     "id": "eq-B-357",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-358",
+     "type": "equation",
+     "page": 107,
+     "original": "1910"
+    },
+    {
+     "id": "eq-B-359",
+     "type": "equation",
+     "page": 107,
+     "original": "swe"
+    },
+    {
+     "id": "eq-B-360",
+     "type": "equation",
+     "page": 107,
+     "original": "129 91"
+    },
+    {
+     "id": "eq-B-361",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-362",
+     "type": "equation",
+     "page": 107,
+     "original": "1810 200"
+    },
+    {
+     "id": "eq-B-363",
+     "type": "equation",
+     "page": 107,
+     "original": "swh"
+    },
+    {
+     "id": "eq-B-364",
+     "type": "equation",
+     "page": 107,
+     "original": "361 50 400"
+    },
+    {
+     "id": "eq-B-365",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-366",
+     "type": "equation",
+     "page": 107,
+     "original": "1930 200"
+    },
+    {
+     "id": "eq-B-367",
+     "type": "equation",
+     "page": 107,
+     "original": "tam"
+    },
+    {
+     "id": "eq-B-368",
+     "type": "equation",
+     "page": 107,
+     "original": "256 64 400"
+    },
+    {
+     "id": "eq-B-369",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-370",
+     "type": "equation",
+     "page": 107,
+     "original": "1569"
+    },
+    {
+     "id": "eq-B-371",
+     "type": "equation",
+     "page": 107,
+     "original": "tel"
+    },
+    {
+     "id": "eq-B-372",
+     "type": "equation",
+     "page": 107,
+     "original": "89 80 400"
+    },
+    {
+     "id": "eq-B-373",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-374",
+     "type": "equation",
+     "page": 107,
+     "original": "1934"
+    },
+    {
+     "id": "eq-B-375",
+     "type": "equation",
+     "page": 107,
+     "original": "tgk"
+    },
+    {
+     "id": "eq-B-376",
+     "type": "equation",
+     "page": 107,
+     "original": "99 98"
+    },
+    {
+     "id": "eq-B-377",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-378",
+     "type": "equation",
+     "page": 107,
+     "original": "1820"
+    },
+    {
+     "id": "eq-B-379",
+     "type": "equation",
+     "page": 107,
+     "original": "tgl"
+    },
+    {
+     "id": "eq-B-380",
+     "type": "equation",
+     "page": 107,
+     "original": "99 93 400"
+    },
+    {
+     "id": "eq-B-381",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-382",
+     "type": "equation",
+     "page": 107,
+     "original": "2015"
+    },
+    {
+     "id": "eq-B-383",
+     "type": "equation",
+     "page": 107,
+     "original": "tha"
+    },
+    {
+     "id": "eq-B-384",
+     "type": "equation",
+     "page": 107,
+     "original": "189 59 400"
+    },
+    {
+     "id": "eq-B-385",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-386",
+     "type": "equation",
+     "page": 107,
+     "original": "1941 101"
+    },
+    {
+     "id": "eq-B-387",
+     "type": "equation",
+     "page": 107,
+     "original": "tur"
+    },
+    {
+     "id": "eq-B-388",
+     "type": "equation",
+     "page": 107,
+     "original": "169 100 400"
+    },
+    {
+     "id": "eq-B-389",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-390",
+     "type": "equation",
+     "page": 107,
+     "original": "2135 200"
+    },
+    {
+     "id": "eq-B-391",
+     "type": "equation",
+     "page": 107,
+     "original": "umb"
+    },
+    {
+     "id": "eq-B-392",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-393",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-394",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-395",
+     "type": "equation",
+     "page": 107,
+     "original": "ukr"
+    },
+    {
+     "id": "eq-B-396",
+     "type": "equation",
+     "page": 107,
+     "original": "132 75 400"
+    },
+    {
+     "id": "eq-B-397",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-398",
+     "type": "equation",
+     "page": 107,
+     "original": "2052 200"
+    },
+    {
+     "id": "eq-B-399",
+     "type": "equation",
+     "page": 107,
+     "original": "urd"
+    },
+    {
+     "id": "eq-B-400",
+     "type": "equation",
+     "page": 107,
+     "original": "185 145 400"
+    },
+    {
+     "id": "eq-B-401",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-402",
+     "type": "equation",
+     "page": 107,
+     "original": "1844 200"
+    },
+    {
+     "id": "eq-B-403",
+     "type": "equation",
+     "page": 107,
+     "original": "uzn"
+    },
+    {
+     "id": "eq-B-404",
+     "type": "equation",
+     "page": 107,
+     "original": "166 96 400"
+    },
+    {
+     "id": "eq-B-405",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-406",
+     "type": "equation",
+     "page": 107,
+     "original": "1801 200"
+    },
+    {
+     "id": "eq-B-407",
+     "type": "equation",
+     "page": 107,
+     "original": "vie"
+    },
+    {
+     "id": "eq-B-408",
+     "type": "equation",
+     "page": 107,
+     "original": "194 151 400"
+    },
+    {
+     "id": "eq-B-409",
+     "type": "equation",
+     "page": 107,
+     "original": "medium"
+    },
+    {
+     "id": "eq-B-410",
+     "type": "equation",
+     "page": 107,
+     "original": "2396 200"
+    },
+    {
+     "id": "eq-B-411",
+     "type": "equation",
+     "page": 107,
+     "original": "wol zero-shot xho"
+    },
+    {
+     "id": "eq-B-412",
+     "type": "equation",
+     "page": 107,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-B-413",
+     "type": "equation",
+     "page": 107,
+     "original": "zero-shot"
+    },
+    {
+     "id": "eq-B-414",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-415",
+     "type": "equation",
+     "page": 107,
+     "original": "yor"
+    },
+    {
+     "id": "eq-B-416",
+     "type": "equation",
+     "page": 107,
+     "original": "132 130"
+    },
+    {
+     "id": "eq-B-417",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-418",
+     "type": "equation",
+     "page": 107,
+     "original": "1384"
+    },
+    {
+     "id": "eq-B-419",
+     "type": "equation",
+     "page": 107,
+     "original": "yue"
+    },
+    {
+     "id": "eq-B-420",
+     "type": "equation",
+     "page": 107,
+     "original": "167 124"
+    },
+    {
+     "id": "eq-B-421",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-422",
+     "type": "equation",
+     "page": 107,
+     "original": "1931"
+    },
+    {
+     "id": "eq-B-423",
+     "type": "equation",
+     "page": 107,
+     "original": "zlm"
+    },
+    {
+     "id": "eq-B-424",
+     "type": "equation",
+     "page": 107,
+     "original": "155 161"
+    },
+    {
+     "id": "eq-B-425",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-426",
+     "type": "equation",
+     "page": 107,
+     "original": "0"
+    },
+    {
+     "id": "eq-B-427",
+     "type": "equation",
+     "page": 107,
+     "original": "zul"
+    },
+    {
+     "id": "eq-B-428",
+     "type": "equation",
+     "page": 107,
+     "original": "62 55"
+    },
+    {
+     "id": "eq-B-429",
+     "type": "equation",
+     "page": 107,
+     "original": "low"
+    },
+    {
+     "id": "eq-B-430",
+     "type": "equation",
+     "page": 107,
+     "original": "2063"
     },
     {
      "id": "tab-B-1",
@@ -17601,16 +26174,1150 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 38：训练 SeamlessM4T 模型所用的 ASR 与 S2TT 数据统计。我们以语音小时数列出数据规模，分 primary（P，开源 S2TT 与伪标注 ASR 数据）与 mined（M）。对每种语言我们区分 eng–X（从英语译入该语言）与 X–eng（译入英语）。我们把监督数据超过 1000 小时的语言称为高资源，500–1000 小时为中资源，少于 500 小时为低资源。在第 1+2 阶段微调中未被监督的语言以零样本方式评测。"
     },
     {
+     "id": "eq-B-431",
+     "type": "equation",
+     "page": 108,
+     "original": "108"
+    },
+    {
      "id": "p-B-3",
      "type": "paragraph",
      "page": 108,
      "sentences": [
       {
        "id": "s-B-3-1",
-       "original": "108 S2ST Language Primary Mined Primary Mined Total afr 100 0 0 0 amh 46 0 0 0 898 736 895 681 ary 94 0 0 0 arz 91 0 0 0 asm 62 0 0 0 ast 0 0 0 0 azj 92 0 0 0 bel 285 0 0 0 ben 292 246 652 221 bos 99 0 0 0 bul 101 0 0 0 cat 276 278 692 293 ces 437 522 832 528 ckb 89 0 0 0 cmn 350 857 cym 93 197 700 185 dan 368 420 684 450 962 ell 330 0 0 0 est 128 502 691 477 eus 263 0 0 0 fin 446 442 684 414 937 gle 55 0 0 0 glg 120 0 0 0 guj 135 0 0 0 hau 78 0 0 0 heb 96 0 0 0 hin 138 466 656 430 hrv 218 0 0 0 hun 468 0 0 0 hye 141 0 0 0 ibo 24 0 0 0 ind 248 443 684 375 isl 127 0 0 0 ita 930 716 636 jav 291 0 0 0 jpn 624 993 681 779 kan 119 170 703 135 kat 180 0 0 0 kaz 319 0 0 0 khk 143 0 0 0 khm 184 0 0 0 kir 120 0 0 0 kor 350 541 666 541 lao 183 0 0 0 S2ST Language Primary Mined Primary Mined lin 52 0 0 0 lit 279 0 0 0 ltz 2 0 0 0 lug 362 0 0 0 lvs 95 0 0 0 mal 103 0 0 0 mar 106 0 0 0 mkd 141 0 0 0 mlt 149 46 688 39 mya 123 0 0 0 962 nor 189 0 0 0 npi 114 0 0 0 nya 99 0 0 0 oci 0 0 0 0 ory 84 0 0 0 pan 188 0 0 0 pbt 114 0 0 0 pes 366 0 881 0 pol 591 667 726 657 355 606 983 508 469 588 951 521 290 959 slk 402 427 686 426 slv 377 0 0 0 som 138 0 0 0 srp 99 0 0 0 swe 124 0 688 0 swh 342 411 682 392 tam 241 664 654 685 tel 76 426 655 403 tgk 98 0 0 0 tgl 82 213 661 169 183 462 641 408 tur 156 375 998 411 ukr 129 349 662 329 179 555 682 502 uzn 162 139 695 147 vie 176 666 954 684 wol 13 0 0 xho 6 0 0 0 yor 128 0 0 0 yue 136 0 0 0 zlm 157 0 0 0 zul 48 0 0 0",
-       "zh": "（表格内容：Table 39 各语言的 S2ST 数据小时数，分 Primary 与 Mined，并区分 eng–X 与 X–eng；完整数值见原文。）（完整数值行：108 S2ST Language Primary Mined Primary Mined Total afr 100 0 0 0 amh 46 0 0 0 898 736 895 681 ary 94 0 0 0 arz 91 0 0 0 asm 62 0 0 0 ast 0 0 0 0 azj 92 0 0 0 bel 285 0 0 0 ben 292 246 652 221 bos 99 0 0 0 bul 101 0 0 0 cat 276 278 692 293 ces 437 522 832 528 ckb 89 0 0 0 cmn 350 857 cym 93 197 700 185 dan 368 420 684 450 962 ell 330 0 0 0 est 128 502 691 477 eus 263 0 0 0 fin 446 442 684 414 937 gle 55 0 0 0 glg 120 0 0 0 guj 135 0 0 0 hau 78 0 0 0 heb 96 0 0 0 hin 138 466 656 430 hrv 218 0 0 0 hun 468 0 0 0 hye 141 0 0 0 ibo 24 0 0 0 ind 248 443 684 375 isl 127 0 0 0 ita 930 716 636 jav 291 0 0 0 jpn 624 993 681 779 kan 119 170 703 135 kat 180 0 0 0 kaz 319 0 0 0 khk 143 0 0 0 khm 184 0 0 0 kir 120 0 0 0 kor 350 541 666 541 lao 183 0 0 0 S2ST Language Primary Mined Primary Mined lin 52 0 0 0 lit 279 0 0 0 ltz 2 0 0 0 lug 362 0 0 0 lvs 95 0 0 0 mal 103 0 0 0 mar 106 0 0 0 mkd 141 0 0 0 mlt 149 46 688 39 mya 123 0 0 0 962 nor 189 0 0 0 npi 114 0 0 0 nya 99 0 0 0 oci 0 0 0 0 ory 84 0 0 0 pan 188 0 0 0 pbt 114 0 0 0 pes 366 0 881 0 pol 591 667 726 657 355 606 983 508 469 588 951 521 290 959 slk 402 427 686 426 slv 377 0 0 0 som 138 0 0 0 srp 99 0 0 0 swe 124 0 688 0 swh 342 411 682 392 tam 241 664 654 685 tel 76 426 655 403 tgk 98 0 0 0 tgl 82 213 661 169 183 462 641 408 tur 156 375 998 411 ukr 129 349 662 329 179 555 682 502 uzn 162 139 695 147 vie 176 666 954 684 wol 13 0 0 xho 6 0 0 0 yor 128 0 0 0 yue 136 0 0 0 zlm 157 0 0 0 zul 48 0 0 0）"
+       "original": "S2ST X–eng eng–X Language Primary Mined Primary Mined Total",
+       "zh": "（页码行：2。）"
       }
      ]
+    },
+    {
+     "id": "eq-B-432",
+     "type": "equation",
+     "page": 108,
+     "original": "26,254 23,171 49,425 21,983"
+    },
+    {
+     "id": "eq-B-433",
+     "type": "equation",
+     "page": 108,
+     "original": "afr"
+    },
+    {
+     "id": "eq-B-434",
+     "type": "equation",
+     "page": 108,
+     "original": "100 0 0 0"
+    },
+    {
+     "id": "eq-B-435",
+     "type": "equation",
+     "page": 108,
+     "original": "amh"
+    },
+    {
+     "id": "eq-B-436",
+     "type": "equation",
+     "page": 108,
+     "original": "46 0 0 0"
+    },
+    {
+     "id": "eq-B-437",
+     "type": "equation",
+     "page": 108,
+     "original": "arb"
+    },
+    {
+     "id": "eq-B-438",
+     "type": "equation",
+     "page": 108,
+     "original": "898 736 895 681"
+    },
+    {
+     "id": "eq-B-439",
+     "type": "equation",
+     "page": 108,
+     "original": "ary"
+    },
+    {
+     "id": "eq-B-440",
+     "type": "equation",
+     "page": 108,
+     "original": "94 0 0 0"
+    },
+    {
+     "id": "eq-B-441",
+     "type": "equation",
+     "page": 108,
+     "original": "arz"
+    },
+    {
+     "id": "eq-B-442",
+     "type": "equation",
+     "page": 108,
+     "original": "91 0 0 0"
+    },
+    {
+     "id": "eq-B-443",
+     "type": "equation",
+     "page": 108,
+     "original": "asm"
+    },
+    {
+     "id": "eq-B-444",
+     "type": "equation",
+     "page": 108,
+     "original": "62 0 0 0"
+    },
+    {
+     "id": "eq-B-445",
+     "type": "equation",
+     "page": 108,
+     "original": "ast"
+    },
+    {
+     "id": "eq-B-446",
+     "type": "equation",
+     "page": 108,
+     "original": "0 0 0 0"
+    },
+    {
+     "id": "eq-B-447",
+     "type": "equation",
+     "page": 108,
+     "original": "azj"
+    },
+    {
+     "id": "eq-B-448",
+     "type": "equation",
+     "page": 108,
+     "original": "92 0 0 0"
+    },
+    {
+     "id": "eq-B-449",
+     "type": "equation",
+     "page": 108,
+     "original": "bel"
+    },
+    {
+     "id": "eq-B-450",
+     "type": "equation",
+     "page": 108,
+     "original": "285 0 0 0"
+    },
+    {
+     "id": "eq-B-451",
+     "type": "equation",
+     "page": 108,
+     "original": "ben"
+    },
+    {
+     "id": "eq-B-452",
+     "type": "equation",
+     "page": 108,
+     "original": "292 246 652 221"
+    },
+    {
+     "id": "eq-B-453",
+     "type": "equation",
+     "page": 108,
+     "original": "bos"
+    },
+    {
+     "id": "eq-B-454",
+     "type": "equation",
+     "page": 108,
+     "original": "99 0 0 0"
+    },
+    {
+     "id": "eq-B-455",
+     "type": "equation",
+     "page": 108,
+     "original": "bul"
+    },
+    {
+     "id": "eq-B-456",
+     "type": "equation",
+     "page": 108,
+     "original": "101 0 0 0"
+    },
+    {
+     "id": "eq-B-457",
+     "type": "equation",
+     "page": 108,
+     "original": "cat"
+    },
+    {
+     "id": "eq-B-458",
+     "type": "equation",
+     "page": 108,
+     "original": "276 278 692 293"
+    },
+    {
+     "id": "eq-B-459",
+     "type": "equation",
+     "page": 108,
+     "original": "ces"
+    },
+    {
+     "id": "eq-B-460",
+     "type": "equation",
+     "page": 108,
+     "original": "437 522 832 528"
+    },
+    {
+     "id": "eq-B-461",
+     "type": "equation",
+     "page": 108,
+     "original": "ckb"
+    },
+    {
+     "id": "eq-B-462",
+     "type": "equation",
+     "page": 108,
+     "original": "89 0 0 0"
+    },
+    {
+     "id": "eq-B-463",
+     "type": "equation",
+     "page": 108,
+     "original": "cmn"
+    },
+    {
+     "id": "eq-B-464",
+     "type": "equation",
+     "page": 108,
+     "original": "350 1,318 857 1,388"
+    },
+    {
+     "id": "eq-B-465",
+     "type": "equation",
+     "page": 108,
+     "original": "cym"
+    },
+    {
+     "id": "eq-B-466",
+     "type": "equation",
+     "page": 108,
+     "original": "93 197 700 185"
+    },
+    {
+     "id": "eq-B-467",
+     "type": "equation",
+     "page": 108,
+     "original": "dan"
+    },
+    {
+     "id": "eq-B-468",
+     "type": "equation",
+     "page": 108,
+     "original": "368 420 684 450"
+    },
+    {
+     "id": "eq-B-469",
+     "type": "equation",
+     "page": 108,
+     "original": "deu"
+    },
+    {
+     "id": "eq-B-470",
+     "type": "equation",
+     "page": 108,
+     "original": "2,570 1,661 962 1,618"
+    },
+    {
+     "id": "eq-B-471",
+     "type": "equation",
+     "page": 108,
+     "original": "ell"
+    },
+    {
+     "id": "eq-B-472",
+     "type": "equation",
+     "page": 108,
+     "original": "330 0 0 0"
+    },
+    {
+     "id": "eq-B-473",
+     "type": "equation",
+     "page": 108,
+     "original": "est"
+    },
+    {
+     "id": "eq-B-474",
+     "type": "equation",
+     "page": 108,
+     "original": "128 502 691 477"
+    },
+    {
+     "id": "eq-B-475",
+     "type": "equation",
+     "page": 108,
+     "original": "eus"
+    },
+    {
+     "id": "eq-B-476",
+     "type": "equation",
+     "page": 108,
+     "original": "263 0 0 0"
+    },
+    {
+     "id": "eq-B-477",
+     "type": "equation",
+     "page": 108,
+     "original": "fin"
+    },
+    {
+     "id": "eq-B-478",
+     "type": "equation",
+     "page": 108,
+     "original": "446 442 684 414"
+    },
+    {
+     "id": "eq-B-479",
+     "type": "equation",
+     "page": 108,
+     "original": "fra"
+    },
+    {
+     "id": "eq-B-480",
+     "type": "equation",
+     "page": 108,
+     "original": "2,255 2,438 937 2,303"
+    },
+    {
+     "id": "eq-B-481",
+     "type": "equation",
+     "page": 108,
+     "original": "gle"
+    },
+    {
+     "id": "eq-B-482",
+     "type": "equation",
+     "page": 108,
+     "original": "55 0 0 0"
+    },
+    {
+     "id": "eq-B-483",
+     "type": "equation",
+     "page": 108,
+     "original": "glg"
+    },
+    {
+     "id": "eq-B-484",
+     "type": "equation",
+     "page": 108,
+     "original": "120 0 0 0"
+    },
+    {
+     "id": "eq-B-485",
+     "type": "equation",
+     "page": 108,
+     "original": "guj"
+    },
+    {
+     "id": "eq-B-486",
+     "type": "equation",
+     "page": 108,
+     "original": "135 0 0 0"
+    },
+    {
+     "id": "eq-B-487",
+     "type": "equation",
+     "page": 108,
+     "original": "hau"
+    },
+    {
+     "id": "eq-B-488",
+     "type": "equation",
+     "page": 108,
+     "original": "78 0 0 0"
+    },
+    {
+     "id": "eq-B-489",
+     "type": "equation",
+     "page": 108,
+     "original": "heb"
+    },
+    {
+     "id": "eq-B-490",
+     "type": "equation",
+     "page": 108,
+     "original": "96 0 0 0"
+    },
+    {
+     "id": "eq-B-491",
+     "type": "equation",
+     "page": 108,
+     "original": "hin"
+    },
+    {
+     "id": "eq-B-492",
+     "type": "equation",
+     "page": 108,
+     "original": "138 466 656 430"
+    },
+    {
+     "id": "eq-B-493",
+     "type": "equation",
+     "page": 108,
+     "original": "hrv"
+    },
+    {
+     "id": "eq-B-494",
+     "type": "equation",
+     "page": 108,
+     "original": "218 0 0 0"
+    },
+    {
+     "id": "eq-B-495",
+     "type": "equation",
+     "page": 108,
+     "original": "hun"
+    },
+    {
+     "id": "eq-B-496",
+     "type": "equation",
+     "page": 108,
+     "original": "468 0 0 0"
+    },
+    {
+     "id": "eq-B-497",
+     "type": "equation",
+     "page": 108,
+     "original": "hye"
+    },
+    {
+     "id": "eq-B-498",
+     "type": "equation",
+     "page": 108,
+     "original": "141 0 0 0"
+    },
+    {
+     "id": "eq-B-499",
+     "type": "equation",
+     "page": 108,
+     "original": "ibo"
+    },
+    {
+     "id": "eq-B-500",
+     "type": "equation",
+     "page": 108,
+     "original": "24 0 0 0"
+    },
+    {
+     "id": "eq-B-501",
+     "type": "equation",
+     "page": 108,
+     "original": "ind"
+    },
+    {
+     "id": "eq-B-502",
+     "type": "equation",
+     "page": 108,
+     "original": "248 443 684 375"
+    },
+    {
+     "id": "eq-B-503",
+     "type": "equation",
+     "page": 108,
+     "original": "isl"
+    },
+    {
+     "id": "eq-B-504",
+     "type": "equation",
+     "page": 108,
+     "original": "127 0 0 0"
+    },
+    {
+     "id": "eq-B-505",
+     "type": "equation",
+     "page": 108,
+     "original": "ita"
+    },
+    {
+     "id": "eq-B-506",
+     "type": "equation",
+     "page": 108,
+     "original": "930 716 1,020 636"
+    },
+    {
+     "id": "eq-B-507",
+     "type": "equation",
+     "page": 108,
+     "original": "jav"
+    },
+    {
+     "id": "eq-B-508",
+     "type": "equation",
+     "page": 108,
+     "original": "291 0 0 0"
+    },
+    {
+     "id": "eq-B-509",
+     "type": "equation",
+     "page": 108,
+     "original": "jpn"
+    },
+    {
+     "id": "eq-B-510",
+     "type": "equation",
+     "page": 108,
+     "original": "624 993 681 779"
+    },
+    {
+     "id": "eq-B-511",
+     "type": "equation",
+     "page": 108,
+     "original": "kan"
+    },
+    {
+     "id": "eq-B-512",
+     "type": "equation",
+     "page": 108,
+     "original": "119 170 703 135"
+    },
+    {
+     "id": "eq-B-513",
+     "type": "equation",
+     "page": 108,
+     "original": "kat"
+    },
+    {
+     "id": "eq-B-514",
+     "type": "equation",
+     "page": 108,
+     "original": "180 0 0 0"
+    },
+    {
+     "id": "eq-B-515",
+     "type": "equation",
+     "page": 108,
+     "original": "kaz"
+    },
+    {
+     "id": "eq-B-516",
+     "type": "equation",
+     "page": 108,
+     "original": "319 0 0 0"
+    },
+    {
+     "id": "eq-B-517",
+     "type": "equation",
+     "page": 108,
+     "original": "khk"
+    },
+    {
+     "id": "eq-B-518",
+     "type": "equation",
+     "page": 108,
+     "original": "143 0 0 0"
+    },
+    {
+     "id": "eq-B-519",
+     "type": "equation",
+     "page": 108,
+     "original": "khm"
+    },
+    {
+     "id": "eq-B-520",
+     "type": "equation",
+     "page": 108,
+     "original": "184 0 0 0"
+    },
+    {
+     "id": "eq-B-521",
+     "type": "equation",
+     "page": 108,
+     "original": "kir"
+    },
+    {
+     "id": "eq-B-522",
+     "type": "equation",
+     "page": 108,
+     "original": "120 0 0 0"
+    },
+    {
+     "id": "eq-B-523",
+     "type": "equation",
+     "page": 108,
+     "original": "kor"
+    },
+    {
+     "id": "eq-B-524",
+     "type": "equation",
+     "page": 108,
+     "original": "350 541 666 541"
+    },
+    {
+     "id": "eq-B-525",
+     "type": "equation",
+     "page": 108,
+     "original": "lao"
+    },
+    {
+     "id": "eq-B-526",
+     "type": "equation",
+     "page": 108,
+     "original": "183 0 0 0"
+    },
+    {
+     "id": "p-B-4",
+     "type": "paragraph",
+     "page": 108,
+     "sentences": [
+      {
+       "id": "s-B-4-1",
+       "original": "S2ST X–eng eng–X Language Primary Mined Primary Mined lin",
+       "zh": "（页码行：2。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-B-527",
+     "type": "equation",
+     "page": 108,
+     "original": "52 0 0 0"
+    },
+    {
+     "id": "eq-B-528",
+     "type": "equation",
+     "page": 108,
+     "original": "lit"
+    },
+    {
+     "id": "eq-B-529",
+     "type": "equation",
+     "page": 108,
+     "original": "279 0 0 0"
+    },
+    {
+     "id": "eq-B-530",
+     "type": "equation",
+     "page": 108,
+     "original": "ltz"
+    },
+    {
+     "id": "eq-B-531",
+     "type": "equation",
+     "page": 108,
+     "original": "2 0 0 0"
+    },
+    {
+     "id": "eq-B-532",
+     "type": "equation",
+     "page": 108,
+     "original": "lug"
+    },
+    {
+     "id": "eq-B-533",
+     "type": "equation",
+     "page": 108,
+     "original": "362 0 0 0"
+    },
+    {
+     "id": "eq-B-534",
+     "type": "equation",
+     "page": 108,
+     "original": "lvs"
+    },
+    {
+     "id": "eq-B-535",
+     "type": "equation",
+     "page": 108,
+     "original": "95 0 0 0"
+    },
+    {
+     "id": "eq-B-536",
+     "type": "equation",
+     "page": 108,
+     "original": "mal"
+    },
+    {
+     "id": "eq-B-537",
+     "type": "equation",
+     "page": 108,
+     "original": "103 0 0 0"
+    },
+    {
+     "id": "eq-B-538",
+     "type": "equation",
+     "page": 108,
+     "original": "mar"
+    },
+    {
+     "id": "eq-B-539",
+     "type": "equation",
+     "page": 108,
+     "original": "106 0 0 0"
+    },
+    {
+     "id": "eq-B-540",
+     "type": "equation",
+     "page": 108,
+     "original": "mkd"
+    },
+    {
+     "id": "eq-B-541",
+     "type": "equation",
+     "page": 108,
+     "original": "141 0 0 0"
+    },
+    {
+     "id": "eq-B-542",
+     "type": "equation",
+     "page": 108,
+     "original": "mlt"
+    },
+    {
+     "id": "eq-B-543",
+     "type": "equation",
+     "page": 108,
+     "original": "149 46 688 39"
+    },
+    {
+     "id": "eq-B-544",
+     "type": "equation",
+     "page": 108,
+     "original": "mya"
+    },
+    {
+     "id": "eq-B-545",
+     "type": "equation",
+     "page": 108,
+     "original": "123 0 0 0"
+    },
+    {
+     "id": "eq-B-546",
+     "type": "equation",
+     "page": 108,
+     "original": "nld"
+    },
+    {
+     "id": "eq-B-547",
+     "type": "equation",
+     "page": 108,
+     "original": "1,777 1,061 1,003 962"
+    },
+    {
+     "id": "eq-B-548",
+     "type": "equation",
+     "page": 108,
+     "original": "nor"
+    },
+    {
+     "id": "eq-B-549",
+     "type": "equation",
+     "page": 108,
+     "original": "189 0 0 0"
+    },
+    {
+     "id": "eq-B-550",
+     "type": "equation",
+     "page": 108,
+     "original": "npi"
+    },
+    {
+     "id": "eq-B-551",
+     "type": "equation",
+     "page": 108,
+     "original": "114 0 0 0"
+    },
+    {
+     "id": "eq-B-552",
+     "type": "equation",
+     "page": 108,
+     "original": "nya"
+    },
+    {
+     "id": "eq-B-553",
+     "type": "equation",
+     "page": 108,
+     "original": "99 0 0 0"
+    },
+    {
+     "id": "eq-B-554",
+     "type": "equation",
+     "page": 108,
+     "original": "oci"
+    },
+    {
+     "id": "eq-B-555",
+     "type": "equation",
+     "page": 108,
+     "original": "0 0 0 0"
+    },
+    {
+     "id": "eq-B-556",
+     "type": "equation",
+     "page": 108,
+     "original": "ory"
+    },
+    {
+     "id": "eq-B-557",
+     "type": "equation",
+     "page": 108,
+     "original": "84 0 0 0"
+    },
+    {
+     "id": "eq-B-558",
+     "type": "equation",
+     "page": 108,
+     "original": "pan"
+    },
+    {
+     "id": "eq-B-559",
+     "type": "equation",
+     "page": 108,
+     "original": "188 0 0 0"
+    },
+    {
+     "id": "eq-B-560",
+     "type": "equation",
+     "page": 108,
+     "original": "pbt"
+    },
+    {
+     "id": "eq-B-561",
+     "type": "equation",
+     "page": 108,
+     "original": "114 0 0 0"
+    },
+    {
+     "id": "eq-B-562",
+     "type": "equation",
+     "page": 108,
+     "original": "pes"
+    },
+    {
+     "id": "eq-B-563",
+     "type": "equation",
+     "page": 108,
+     "original": "366 0 881 0"
+    },
+    {
+     "id": "eq-B-564",
+     "type": "equation",
+     "page": 108,
+     "original": "pol"
+    },
+    {
+     "id": "eq-B-565",
+     "type": "equation",
+     "page": 108,
+     "original": "591 667 726 657"
+    },
+    {
+     "id": "eq-B-566",
+     "type": "equation",
+     "page": 108,
+     "original": "por"
+    },
+    {
+     "id": "eq-B-567",
+     "type": "equation",
+     "page": 108,
+     "original": "355 606 983 508"
+    },
+    {
+     "id": "eq-B-568",
+     "type": "equation",
+     "page": 108,
+     "original": "ron"
+    },
+    {
+     "id": "eq-B-569",
+     "type": "equation",
+     "page": 108,
+     "original": "469 588 951 521"
+    },
+    {
+     "id": "eq-B-570",
+     "type": "equation",
+     "page": 108,
+     "original": "rus"
+    },
+    {
+     "id": "eq-B-571",
+     "type": "equation",
+     "page": 108,
+     "original": "290 1,093 959 1,075"
+    },
+    {
+     "id": "eq-B-572",
+     "type": "equation",
+     "page": 108,
+     "original": "slk"
+    },
+    {
+     "id": "eq-B-573",
+     "type": "equation",
+     "page": 108,
+     "original": "402 427 686 426"
+    },
+    {
+     "id": "eq-B-574",
+     "type": "equation",
+     "page": 108,
+     "original": "slv"
+    },
+    {
+     "id": "eq-B-575",
+     "type": "equation",
+     "page": 108,
+     "original": "377 0 0 0"
+    },
+    {
+     "id": "eq-B-576",
+     "type": "equation",
+     "page": 108,
+     "original": "som"
+    },
+    {
+     "id": "eq-B-577",
+     "type": "equation",
+     "page": 108,
+     "original": "138 0 0 0"
+    },
+    {
+     "id": "eq-B-578",
+     "type": "equation",
+     "page": 108,
+     "original": "spa"
+    },
+    {
+     "id": "eq-B-579",
+     "type": "equation",
+     "page": 108,
+     "original": "1,694 2,335 1,035 2,209"
+    },
+    {
+     "id": "eq-B-580",
+     "type": "equation",
+     "page": 108,
+     "original": "srp"
+    },
+    {
+     "id": "eq-B-581",
+     "type": "equation",
+     "page": 108,
+     "original": "99 0 0 0"
+    },
+    {
+     "id": "eq-B-582",
+     "type": "equation",
+     "page": 108,
+     "original": "swe"
+    },
+    {
+     "id": "eq-B-583",
+     "type": "equation",
+     "page": 108,
+     "original": "124 0 688 0"
+    },
+    {
+     "id": "eq-B-584",
+     "type": "equation",
+     "page": 108,
+     "original": "swh"
+    },
+    {
+     "id": "eq-B-585",
+     "type": "equation",
+     "page": 108,
+     "original": "342 411 682 392"
+    },
+    {
+     "id": "eq-B-586",
+     "type": "equation",
+     "page": 108,
+     "original": "tam"
+    },
+    {
+     "id": "eq-B-587",
+     "type": "equation",
+     "page": 108,
+     "original": "241 664 654 685"
+    },
+    {
+     "id": "eq-B-588",
+     "type": "equation",
+     "page": 108,
+     "original": "tel"
+    },
+    {
+     "id": "eq-B-589",
+     "type": "equation",
+     "page": 108,
+     "original": "76 426 655 403"
+    },
+    {
+     "id": "eq-B-590",
+     "type": "equation",
+     "page": 108,
+     "original": "tgk"
+    },
+    {
+     "id": "eq-B-591",
+     "type": "equation",
+     "page": 108,
+     "original": "98 0 0 0"
+    },
+    {
+     "id": "eq-B-592",
+     "type": "equation",
+     "page": 108,
+     "original": "tgl"
+    },
+    {
+     "id": "eq-B-593",
+     "type": "equation",
+     "page": 108,
+     "original": "82 213 661 169"
+    },
+    {
+     "id": "eq-B-594",
+     "type": "equation",
+     "page": 108,
+     "original": "tha"
+    },
+    {
+     "id": "eq-B-595",
+     "type": "equation",
+     "page": 108,
+     "original": "183 462 641 408"
+    },
+    {
+     "id": "eq-B-596",
+     "type": "equation",
+     "page": 108,
+     "original": "tur"
+    },
+    {
+     "id": "eq-B-597",
+     "type": "equation",
+     "page": 108,
+     "original": "156 375 998 411"
+    },
+    {
+     "id": "eq-B-598",
+     "type": "equation",
+     "page": 108,
+     "original": "ukr"
+    },
+    {
+     "id": "eq-B-599",
+     "type": "equation",
+     "page": 108,
+     "original": "129 349 662 329"
+    },
+    {
+     "id": "eq-B-600",
+     "type": "equation",
+     "page": 108,
+     "original": "urd"
+    },
+    {
+     "id": "eq-B-601",
+     "type": "equation",
+     "page": 108,
+     "original": "179 555 682 502"
+    },
+    {
+     "id": "eq-B-602",
+     "type": "equation",
+     "page": 108,
+     "original": "uzn"
+    },
+    {
+     "id": "eq-B-603",
+     "type": "equation",
+     "page": 108,
+     "original": "162 139 695 147"
+    },
+    {
+     "id": "eq-B-604",
+     "type": "equation",
+     "page": 108,
+     "original": "vie"
+    },
+    {
+     "id": "eq-B-605",
+     "type": "equation",
+     "page": 108,
+     "original": "176 666 954 684"
+    },
+    {
+     "id": "eq-B-606",
+     "type": "equation",
+     "page": 108,
+     "original": "wol"
+    },
+    {
+     "id": "eq-B-607",
+     "type": "equation",
+     "page": 108,
+     "original": "13 0 0"
+    },
+    {
+     "id": "eq-B-608",
+     "type": "equation",
+     "page": 108,
+     "original": "xho"
+    },
+    {
+     "id": "eq-B-609",
+     "type": "equation",
+     "page": 108,
+     "original": "6 0 0 0"
+    },
+    {
+     "id": "eq-B-610",
+     "type": "equation",
+     "page": 108,
+     "original": "yor"
+    },
+    {
+     "id": "eq-B-611",
+     "type": "equation",
+     "page": 108,
+     "original": "128 0 0 0"
+    },
+    {
+     "id": "eq-B-612",
+     "type": "equation",
+     "page": 108,
+     "original": "yue"
+    },
+    {
+     "id": "eq-B-613",
+     "type": "equation",
+     "page": 108,
+     "original": "136 0 0 0"
+    },
+    {
+     "id": "eq-B-614",
+     "type": "equation",
+     "page": 108,
+     "original": "zlm"
+    },
+    {
+     "id": "eq-B-615",
+     "type": "equation",
+     "page": 108,
+     "original": "157 0 0 0"
+    },
+    {
+     "id": "eq-B-616",
+     "type": "equation",
+     "page": 108,
+     "original": "zul"
+    },
+    {
+     "id": "eq-B-617",
+     "type": "equation",
+     "page": 108,
+     "original": "48 0 0 0"
     },
     {
      "id": "tab-B-2",
@@ -17620,16 +27327,10 @@ globalThis.PAPER_2308_11596 = {
      "zh": "表 39：训练 SeamlessM4T 模型所用的 S2ST 数据统计。我们以语音小时数列出数据规模，并对每种语言区分 eng–X（从英语译入该语言）与 X–eng（译入英语）。"
     },
     {
-     "id": "p-B-4",
-     "type": "paragraph",
+     "id": "eq-B-618",
+     "type": "equation",
      "page": 109,
-     "sentences": [
-      {
-       "id": "s-B-4-1",
-       "original": "109",
-       "zh": "109"
-      }
-     ]
+     "original": "109"
     }
    ]
   },
@@ -17790,11 +27491,29 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-intended-use-8-4",
-       "original": "The model 110 was trained on short text and speech inputs, therefore translating longer sequences might result in quality degradation.",
+       "original": "The model",
+       "zh": "该模型优于 NLLB-200 中两个更小的模型（1.3B 与 1.3B-distil），并与更大的 3.3B 模型打平。"
+      }
+     ]
+    },
+    {
+     "id": "eq-intended-use-1",
+     "type": "equation",
+     "page": 110,
+     "original": "110"
+    },
+    {
+     "id": "p-intended-use-9",
+     "type": "paragraph",
+     "page": 110,
+     "sentences": [
+      {
+       "id": "s-intended-use-9-1",
+       "original": "was trained on short text and speech inputs, therefore translating longer sequences might result in quality degradation.",
        "zh": "模型 110 在短文本与短语音输入上训练，翻译更长序列可能导致质量下降。"
       },
       {
-       "id": "s-intended-use-8-5",
+       "id": "s-intended-use-9-2",
        "original": "SeamlessM4T translations can not be used as certified translations.",
        "zh": "SeamlessM4T 的翻译不能用作认证翻译。"
       }
@@ -18004,10 +27723,16 @@ globalThis.PAPER_2308_11596 = {
       },
       {
        "id": "s-caveats-and-recommendations-1-2",
-       "original": "For this card, we use the template from Mitchell et al. [2019]. b. https://creativecommons.org/licenses/by-nc/4.0/legalcode 111",
-       "zh": "本卡片使用 Mitchell et al. [2019] 的模板。b. https://creativecommons.org/licenses/by-nc/4.0/legalcode 111"
+       "original": "For this card, we use the template from Mitchell et al. [2019]. b. https://creativecommons.org/licenses/by-nc/4.0/legalcode",
+       "zh": "（正文/表格数据句，原始文本照录，数字与年份均保留）\nFor this card, we use the template from Mitchell et al. [2019]. b. https://creativecommons.org/licenses/by-nc/4.0/legalcode"
       }
      ]
+    },
+    {
+     "id": "eq-caveats-and-recommendations-1",
+     "type": "equation",
+     "page": 111,
+     "original": "111"
     }
    ]
   }
@@ -18149,7 +27874,7 @@ globalThis.PAPER_2308_11596 = {
    "title": "w2v-BERT 2.0 的 600M / 24 层",
    "explanation": "语音编码器沿用 w2v-BERT XL：24 层 Conformer、约 600M 参数。这是比原版 w2v-BERT（24 层）更大的训练数据版本，参数量并未膨胀——重点是训练数据从 400K 小时扩到 1M 小时。",
    "anchor": {
-    "sentence_id": "s-model-3-4-1",
+    "sentence_id": "s-model-3-5-1",
     "quote": "24 Conformer layers"
    }
   },
@@ -18170,7 +27895,7 @@ globalThis.PAPER_2308_11596 = {
    "explanation": "把参考译文从阳性换成阴性，SeamlessM4T-Large 的 S2TT 质量在 17/18 种语言上下降；Catalan 差 10.3 chrF、Slovak 10.1、Spanish 10.0。这说明模型对阴性形式的鲁棒性远弱于阳性，是当前多语翻译模型普遍但严重的问题。",
    "featured": true,
    "anchor": {
-    "sentence_id": "s-models-2-9-1",
+    "sentence_id": "s-models-2-14-1",
     "quote": "10.3 chrF points difference"
    }
   },
@@ -18181,7 +27906,7 @@ globalThis.PAPER_2308_11596 = {
    "explanation": "当中性词被翻译到带性别标记的语言时，SeamlessM4T 平均倾向阳性约 10%；同时性别变化会引起约 3% 的鲁棒性损失。这两个数字是论文对性别偏见最直接的量化证据。",
    "featured": true,
    "anchor": {
-    "sentence_id": "s-model-2-5",
+    "sentence_id": "s-model-5-5",
     "quote": "an average preference of ∼10%"
    }
   },
@@ -18201,7 +27926,7 @@ globalThis.PAPER_2308_11596 = {
    "title": "毒性集中在 nonce / sexual orientation",
    "explanation": "HolisticBias 测试下，S2TT 与 S2ST 毒性最集中的类别是 nonce（0.79% / 0.46%）与 sexual orientation（0.62% / 0.35%）。这指引了后续去毒工作的优先级。",
    "anchor": {
-    "sentence_id": "s-automatic-toxicity-detection-on--2-5-1",
+    "sentence_id": "s-automatic-toxicity-detection-on--2-6-1",
     "quote": "nonce (0.79% and 0.46%)"
    }
   },

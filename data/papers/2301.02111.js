@@ -268,7 +268,7 @@ globalThis.PAPER_2301_02111 = {
      "sentences": [
       {
        "id": "s-current-systems-1-1",
-       "original": "Intermediate representation mel spectrogram audio codec code Objective function continuous signal regression language model Training data ≤600 hours 60K hours In-context learning We evaluate VALL-E on LibriSpeech [Panayotov et al., 2015] and VCTK [Veaux et al., 2016] datasets, where all test speakers are unseen in the training corpus.",
+       "original": "VALL-E Intermediate representation mel spectrogram audio codec code Objective function continuous signal regression language model Training data ≤600 hours 60K hours In-context learning We evaluate VALL-E on LibriSpeech [Panayotov et al., 2015] and VCTK [Veaux et al., 2016] datasets, where all test speakers are unseen in the training corpus.",
        "zh": "（本段前半为 Table 1 的表格体抽取残留：中间表示——Mel 频谱图 vs 音频 codec 码；目标函数——连续信号回归 vs 语言模型；训练数据——≤600 小时 vs 60K 小时；上下文学习能力。）我们在 LibriSpeech [Panayotov et al., 2015] 和 VCTK [Veaux et al., 2016] 数据集上评估 VALL-E，其中所有测试说话人在训练语料中都未出现过。"
       },
       {
@@ -657,26 +657,44 @@ globalThis.PAPER_2301_02111 = {
       },
       {
        "id": "s-3-3-6",
-       "original": "In this setting, given a 10-second waveform, the discrete representation is a matrix with 750 × 8 entries, where 750 = 24,000×10 320 is the downsampled time step and 8 is the number of quantizers.",
+       "original": "In this setting, given a 10-second waveform, the discrete representation is a matrix with 750 × 8 entries, where 750 = 24,000×10",
+       "zh": "在该设定下，给定一段 10 秒波形，其离散表示是一个 750 × 8 的矩阵，其中 750 = 24,000×10/320 是下采样后的时间步数，8 是量化器个数。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-1",
+     "type": "equation",
+     "page": 5,
+     "original": "320"
+    },
+    {
+     "id": "p-3-4",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-3-4-1",
+       "original": "is the downsampled time step and 8 is the number of quantizers.",
        "zh": "在该设定下，给定一段 10 秒波形，其离散表示是一个 750 × 8 的矩阵，其中 750 = 24,000×10/320 是下采样后的时间步数，8 是量化器个数。"
       },
       {
-       "id": "s-3-3-7",
+       "id": "s-3-4-2",
        "original": "It is ﬁne to choose other bitrate settings.",
        "zh": "选择其他码率设定也是可以的。"
       },
       {
-       "id": "s-3-3-8",
+       "id": "s-3-4-3",
        "original": "A larger bitrate corresponds to more quantizers and better reconstruction quality.",
        "zh": "码率越大，对应的量化器越多，重建质量越好。"
       },
       {
-       "id": "s-3-3-9",
+       "id": "s-3-4-4",
        "original": "For example, if we choose EnCodecc at 12K bitrates, there are 16 quantizers are needed and the 10-second waveform corresponds to a matrix with 750 × 16 entries.",
        "zh": "例如，如果选择 12K 码率的 EnCodec（原文此处误作 EnCodecc），则需要 16 个量化器，10 秒波形对应一个 750 × 16 的矩阵。"
       },
       {
-       "id": "s-3-3-10",
+       "id": "s-3-4-5",
        "original": "With the discrete codes from all quantizers, the convolutional decoder of EnCodec generates real-valued embeddings and reconstructs the waveform at 24 kHz.",
        "zh": "利用来自全部量化器的离散码，EnCodec 的卷积解码器生成实值嵌入，并重建出 24 kHz 的波形。"
       }
@@ -686,12 +704,12 @@ globalThis.PAPER_2301_02111 = {
   },
   {
    "id": "sec-4",
-   "num": null,
+   "num": "4",
    "level": 1,
    "page": 5,
    "title": {
-    "original": "4",
-    "zh": "方法（原节标题抽取为空，内容为 4.1–4.3 各小节）"
+    "original": "VALL-E",
+    "zh": "VALL-E"
    },
    "blocks": []
   },
@@ -838,13 +856,19 @@ globalThis.PAPER_2301_02111 = {
      "original": "p(c:,1|x, ˜C:,1; θAR) ="
     },
     {
+     "id": "eq-4-2-3",
+     "type": "equation",
+     "page": 5,
+     "original": "t=0 p(ct,1|c<t,1,˜c:,1, x; θAR) (1)"
+    },
+    {
      "id": "p-4-2-3",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
        "id": "s-4-2-3-1",
-       "original": "t=0 p(ct,1|c<t,1,˜c:,1, x; θAR) Since VALL-E is a decoder-only LM, the concatenation of ˜c:,1 and c:,1 is a whole sequence, and we do not distinguish them or insert a speciﬁc token in training.",
+       "original": "Since VALL-E is a decoder-only LM, the concatenation of ˜c:,1 and c:,1 is a whole sequence, and we do not distinguish them or insert a speciﬁc token in training.",
        "zh": "（上式即 p(c_{:,1}|x, C̃_{:,1}; θ_AR) = ∏_{t=0}^{T} p(c_{t,1}|c_{<t,1}, c̃_{:,1}, x; θ_AR)。）由于 VALL-E 是 decoder-only 语言模型，c̃_{:,1} 和 c_{:,1} 的拼接是一条完整序列，训练中我们不区分它们，也不插入特定 token。"
       },
       {
@@ -871,10 +895,58 @@ globalThis.PAPER_2301_02111 = {
       },
       {
        "id": "s-4-2-4-3",
-       "original": "Thus, the model is NAR:  attend to all tokens 𝒄𝟎,𝒋 𝒄𝟏,𝒋 𝒄𝑻,𝒋 …",
+       "original": "Thus, the model is NAR:  attend to all tokens",
        "zh": "因此，该模型是 NAR 的：（此处抽取混入 Figure 3 的图内标注残片「attend to all tokens 𝒄₀,ⱼ 𝒄₁,ⱼ … 𝒄_T,ⱼ」，意指 NAR 注意力覆盖整行 token。）"
       }
      ]
+    },
+    {
+     "id": "eq-4-2-4",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒋−𝟏 𝒄𝟏"
+    },
+    {
+     "id": "eq-4-2-5",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒋−𝟏"
+    },
+    {
+     "id": "eq-4-2-6",
+     "type": "equation",
+     "page": 6,
+     "original": "෩𝑪 𝒙"
+    },
+    {
+     "id": "eq-4-2-7",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒄𝟎"
+    },
+    {
+     "id": "eq-4-2-8",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒙"
+    },
+    {
+     "id": "eq-4-2-9",
+     "type": "equation",
+     "page": 6,
+     "original": "෩𝑪"
+    },
+    {
+     "id": "eq-4-2-10",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒙"
+    },
+    {
+     "id": "eq-4-2-11",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒄𝟎,𝒋 𝒄𝟏,𝒋 𝒄𝑻,𝒋 …"
     }
    ]
   },
@@ -889,28 +961,40 @@ globalThis.PAPER_2301_02111 = {
    },
    "blocks": [
     {
+     "id": "eq-nar-transformer-decoder-1",
+     "type": "equation",
+     "page": 6,
+     "original": "෩𝑪"
+    },
+    {
      "id": "p-nar-transformer-decoder-1",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
        "id": "s-nar-transformer-decoder-1-1",
-       "original": "EnCodec G2P Text AR: 𝑐𝑖only attends to left G2P",
+       "original": "EnCodec G2P",
        "zh": "（此处为 Figure 3 图内标注的抽取残块：EnCodec、G2P、Text；AR：𝑐_i 只注意左侧。）"
       }
      ]
     },
     {
-     "id": "eq-nar-transformer-decoder-1",
-     "type": "equation",
-     "page": 6,
-     "original": "෤𝒄𝟎,𝟏"
-    },
-    {
      "id": "eq-nar-transformer-decoder-2",
      "type": "equation",
      "page": 6,
-     "original": "𝒄𝟎,𝟏:𝒋−𝟏 𝒄𝟏,𝟏:𝒋−𝟏 𝒄𝑻,𝟏:𝒋−𝟏"
+     "original": "𝒋−𝟏"
+    },
+    {
+     "id": "eq-nar-transformer-decoder-3",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒄𝟎"
+    },
+    {
+     "id": "eq-nar-transformer-decoder-4",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒋−𝟏"
     },
     {
      "id": "p-nar-transformer-decoder-2",
@@ -919,10 +1003,112 @@ globalThis.PAPER_2301_02111 = {
      "sentences": [
       {
        "id": "s-nar-transformer-decoder-2-1",
+       "original": "Text",
+       "zh": "（此处为 Figure 3 图内标注的抽取残块：EnCodec、G2P、Text；AR：𝑐_i 只注意左侧。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-nar-transformer-decoder-5",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒄𝟏"
+    },
+    {
+     "id": "p-nar-transformer-decoder-3",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-nar-transformer-decoder-3-1",
+       "original": "AR: 𝑐𝑖only attends to left",
+       "zh": "（此处为 Figure 3 图内标注的抽取残块：EnCodec、G2P、Text；AR：𝑐_i 只注意左侧。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-nar-transformer-decoder-6",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒙 ෩𝑪"
+    },
+    {
+     "id": "eq-nar-transformer-decoder-7",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒄𝟎 𝒄𝟏"
+    },
+    {
+     "id": "eq-nar-transformer-decoder-8",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒙"
+    },
+    {
+     "id": "eq-nar-transformer-decoder-9",
+     "type": "equation",
+     "page": 6,
+     "original": "෩𝑪"
+    },
+    {
+     "id": "eq-nar-transformer-decoder-10",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒙"
+    },
+    {
+     "id": "p-nar-transformer-decoder-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-nar-transformer-decoder-4-1",
+       "original": "G2P",
+       "zh": "（此处为 Figure 3 图内标注的抽取残块：EnCodec、G2P、Text；AR：𝑐_i 只注意左侧。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-nar-transformer-decoder-11",
+     "type": "equation",
+     "page": 6,
+     "original": "෤𝒄𝟎,𝟏"
+    },
+    {
+     "id": "eq-nar-transformer-decoder-12",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒄𝟎"
+    },
+    {
+     "id": "eq-nar-transformer-decoder-13",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒄𝟎,𝟏:𝒋−𝟏 𝒄𝟏,𝟏:𝒋−𝟏 𝒄𝑻,𝟏:𝒋−𝟏"
+    },
+    {
+     "id": "p-nar-transformer-decoder-5",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-nar-transformer-decoder-5-1",
        "original": "NAR ID 𝒋 <EOS>",
        "zh": "（Figure 3 图内标注：NAR、第 j 个码本 ID、<EOS>。）"
       }
      ]
+    },
+    {
+     "id": "eq-nar-transformer-decoder-14",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒄𝟏,𝟏 𝒄𝟐,𝟏"
+    },
+    {
+     "id": "eq-nar-transformer-decoder-15",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒄𝟎,𝟏"
     }
    ]
   },
@@ -937,28 +1123,40 @@ globalThis.PAPER_2301_02111 = {
    },
    "blocks": [
     {
+     "id": "eq-ar-transformer-decoder-1",
+     "type": "equation",
+     "page": 6,
+     "original": "෤𝒄𝟎,𝟏 ෤𝒄𝑻′,𝟏 …"
+    },
+    {
+     "id": "eq-ar-transformer-decoder-2",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒄𝟏,𝟏 𝒄𝐓,𝟏"
+    },
+    {
+     "id": "eq-ar-transformer-decoder-3",
+     "type": "equation",
+     "page": 6,
+     "original": "𝒄𝟎,𝟏"
+    },
+    {
      "id": "p-ar-transformer-decoder-1",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
        "id": "s-ar-transformer-decoder-1-1",
-       "original": "෤𝒄𝟎,𝟏 ෤𝒄𝑻′,𝟏 …",
-       "zh": "（Figure 3 图内标注：声学提示 token 序列 𝒄̃₀,₁ … 𝒄̃_T',₁。）"
+       "original": "Text EnCodec",
+       "zh": "（Figure 3 图内标注：生成目标 𝒄_T,₁、Text、EnCodec。）"
       }
      ]
     },
     {
-     "id": "p-ar-transformer-decoder-2",
-     "type": "paragraph",
+     "id": "eq-ar-transformer-decoder-4",
+     "type": "equation",
      "page": 6,
-     "sentences": [
-      {
-       "id": "s-ar-transformer-decoder-2-1",
-       "original": "𝒄𝐓,𝟏 Text EnCodec",
-       "zh": "（Figure 3 图内标注：生成目标 𝒄_T,₁、Text、EnCodec。）"
-      }
-     ]
+     "original": "𝒄𝟏"
     }
    ]
   },
@@ -1016,13 +1214,19 @@ globalThis.PAPER_2301_02111 = {
      "original": "p(C:,2:8|x, ˜C; θNAR) ="
     },
     {
+     "id": "eq-conditional-codec-language-model-3",
+     "type": "equation",
+     "page": 6,
+     "original": "j=2 p(c:,j|C:,<j, x, ˜C; θNAR) (2)"
+    },
+    {
      "id": "p-conditional-codec-language-model-3",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
        "id": "s-conditional-codec-language-model-3-1",
-       "original": "j=2 p(c:,j|C:,<j, x, ˜C; θNAR) The combination of the AR model and the NAR model provides a good trade-off between speech quality and inference speed.",
+       "original": "The combination of the AR model and the NAR model provides a good trade-off between speech quality and inference speed.",
        "zh": "（上式即 p(C_{:,2:8}|x, C̃; θ_NAR) = ∏_{j=2}^{8} p(c_{:,j}|C_{:,<j}, x, C̃; θ_NAR)。）AR 模型与 NAR 模型的组合在语音质量和推理速度之间取得了很好的折中。"
       },
       {
@@ -1048,7 +1252,7 @@ globalThis.PAPER_2301_02111 = {
      ]
     },
     {
-     "id": "eq-conditional-codec-language-model-3",
+     "id": "eq-conditional-codec-language-model-4",
      "type": "equation",
      "page": 6,
      "original": "p(C|x, ˜C; θ) = p(c:,1|˜C:,1, X; θAR)"
@@ -1072,13 +1276,19 @@ globalThis.PAPER_2301_02111 = {
      "original": "8 Y"
     },
     {
+     "id": "eq-4-2-1-2",
+     "type": "equation",
+     "page": 6,
+     "original": "j=2 p(c:,j|c:,<j, x, ˜C; θNAR) (3)"
+    },
+    {
      "id": "p-4-2-1-1",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
        "id": "s-4-2-1-1-1",
-       "original": "j=2 p(c:,j|c:,<j, x, ˜C; θNAR) The autoregressive language model generates the tokens from the ﬁrst quantizer.",
+       "original": "The autoregressive language model generates the tokens from the ﬁrst quantizer.",
        "zh": "（接前式 ∏_{j=2}^{8} p(c_{:,j}|c_{:,<j}, x, C̃; θ_NAR)。）自回归语言模型生成来自第一个量化器的 token。"
       },
       {
@@ -1194,7 +1404,7 @@ globalThis.PAPER_2301_02111 = {
       },
       {
        "id": "s-4-2-2-1-5",
-       "original": "The acoustic tokens from stage 1 to stage i −1 are embedded and summed up as model input: ect,j = W j a ⊙ct,j ect =",
+       "original": "The acoustic tokens from stage 1 to stage i −1 are embedded and summed up as model input:",
        "zh": "来自第 1 到第 i−1 阶段的声学 token 被嵌入并求和，作为模型输入：ec_{t,j} = W_a^j ⊙ c_{t,j}，ec_t = "
       }
      ]
@@ -1203,7 +1413,7 @@ globalThis.PAPER_2301_02111 = {
      "id": "eq-4-2-2-1",
      "type": "equation",
      "page": 7,
-     "original": "i−1 X"
+     "original": "ect,j = W j a ⊙ct,j (4)"
     },
     {
      "id": "p-4-2-2-2",
@@ -1212,51 +1422,75 @@ globalThis.PAPER_2301_02111 = {
      "sentences": [
       {
        "id": "s-4-2-2-2-1",
-       "original": "j=1 ect,j where ⊙indicates index selection.",
+       "original": "ect =",
+       "zh": "来自第 1 到第 i−1 阶段的声学 token 被嵌入并求和，作为模型输入：ec_{t,j} = W_a^j ⊙ c_{t,j}，ec_t = "
+      }
+     ]
+    },
+    {
+     "id": "eq-4-2-2-2",
+     "type": "equation",
+     "page": 7,
+     "original": "i−1 X"
+    },
+    {
+     "id": "eq-4-2-2-3",
+     "type": "equation",
+     "page": 7,
+     "original": "j=1 ect,j (5)"
+    },
+    {
+     "id": "p-4-2-2-3",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-4-2-2-3-1",
+       "original": "where ⊙indicates index selection.",
        "zh": "∑_{j=1}^{i−1} ec_{t,j}，其中 ⊙ 表示下标选取。（此句为公式抽取残片，已与上下句合并译出。）"
       },
       {
-       "id": "s-4-2-2-2-2",
+       "id": "s-4-2-2-3-2",
        "original": "The phoneme sequence is also regarded as the prompt of the language model.",
        "zh": "音素序列同样被当作语言模型的提示。"
       },
       {
-       "id": "s-4-2-2-2-3",
+       "id": "s-4-2-2-3-3",
        "original": "Besides, to clone the unique voice of the given speaker, we also use the acoustic tokens from the enrolled speech as the acoustic prompt.",
        "zh": "此外，为了克隆给定说话人的独特声音，我们还使用注册语音的声学 token 作为声学提示。"
       },
       {
-       "id": "s-4-2-2-2-4",
+       "id": "s-4-2-2-3-4",
        "original": "Speciﬁcally, we ﬁrst tokenize the enrolled speech with the neural codec model as ˜CT ×8.",
        "zh": "具体来说，我们先用神经 codec 模型把注册语音分词为 C̃^{T×8}。"
       },
       {
-       "id": "s-4-2-2-2-5",
+       "id": "s-4-2-2-3-5",
        "original": "The embedded representations from all of the eight codebooks are summed up as the acoustic prompt e˜ct = P8 j=1 e˜ct,j.",
        "zh": "来自全部 8 个码本的嵌入表示被求和，作为声学提示 ec̃_t = ∑_{j=1}^{8} ec̃_{t,j}。"
       },
       {
-       "id": "s-4-2-2-2-6",
+       "id": "s-4-2-2-3-6",
        "original": "To predict the acoustic tokens from the i-th codebook, the transformer input is the concatenation of (ex, e˜c, ec:,<i).",
        "zh": "为了预测第 i 个码本上的声学 token，Transformer 的输入是 (e_x, ec̃, e_{c:,<i}) 的拼接。"
       },
       {
-       "id": "s-4-2-2-2-7",
+       "id": "s-4-2-2-3-7",
        "original": "The positional embeddings are also computed separately for prompts and the acoustic sequence.",
        "zh": "位置嵌入同样分别为提示和声学序列单独计算。"
       },
       {
-       "id": "s-4-2-2-2-8",
+       "id": "s-4-2-2-3-8",
        "original": "The current stage i is injected into the network with Adaptive Layer Normalization [Xu et al., 2019] operator, i.e., AdaLN(h, i) = aiLayerNorm(h) + bi, where h is the intermediate activations, ai and bi are obtained from a linear projection of the stage embedding.",
        "zh": "当前阶段 i 通过自适应层归一化（Adaptive Layer Normalization）[Xu et al., 2019] 算子注入网络，即 AdaLN(h, i) = a_i·LayerNorm(h) + b_i，其中 h 是中间激活，a_i 和 b_i 由阶段嵌入经线性投影得到。"
       },
       {
-       "id": "s-4-2-2-2-9",
+       "id": "s-4-2-2-3-9",
        "original": "Unlike AR, the NAR model allows each token to attend to all the input tokens in the self-attention layer.",
        "zh": "与 AR 不同，NAR 模型允许每个 token 在自注意力层中注意所有输入 token。"
       },
       {
-       "id": "s-4-2-2-2-10",
+       "id": "s-4-2-2-3-10",
        "original": "We also share the parameters of the acoustic embedding layer and the output prediction layer, which means the weights of the j-th prediction layer are the same as the (j + 1)-th acoustic embedding layer.",
        "zh": "我们同样共享声学嵌入层与输出预测层的参数，这意味着第 j 个预测层的权重与第 (j + 1) 个声学嵌入层相同。"
       }
@@ -1676,50 +1910,76 @@ globalThis.PAPER_2301_02111 = {
      "sentences": [
       {
        "id": "s-5-2-3-1",
-       "original": "model WER SPK 2.2 0.754 Speech-to-Speech Systems GSLM 12.4 0.126 AudioLM* 6.0 - TTS Systems YourTTS 7.7 0.337 5.9 0.580 VALL-E-continual 3.8 0.508 model is signiﬁcantly better in both robustness and speaker similarity, showing that our generated speech is highly faithful to the given text and the given enrolled speech.",
-       "zh": "（本句开头为 Table 2 表格体的抽取残留：模型 / WER / SPK——上限 2.2、0.754；语音到语音系统：GSLM 12.4、0.126；AudioLM* 6.0、-；TTS 系统：YourTTS 7.7、0.337；VALL-E 5.9、0.580；VALL-E-continual 3.8、0.508。）我们的模型在鲁棒性和说话人相似度上都显著更好，表明生成的语音对给定文本和给定注册语音都高度忠实。"
-      },
-      {
-       "id": "s-5-2-3-2",
-       "original": "Furthermore, the word error rate can be further reduced in VALL-E-continual setting, because the acoustic tokens for the ﬁrst 3 seconds are extracted from the ground truth.",
-       "zh": "此外，在 VALL-E-continual 设定下词错误率可进一步降低，因为前 3 秒的声学 token 提取自真实语音。"
-      },
-      {
-       "id": "s-5-2-3-3",
-       "original": "We also compare the robustness with other speech-to-speech LM-based generation models, GSLM and AudioLM, which use audio latent codes as input.",
-       "zh": "我们还将鲁棒性与其他基于语言模型的语音到语音生成模型 GSLM 和 AudioLM 进行了比较，它们使用音频潜码作为输入。"
-      },
-      {
-       "id": "s-5-2-3-4",
-       "original": "GSLM uses HuBERT code as input and reconstructs the waveform with the Tacotron2 [Shen et al., 2018] model and the WaveGlow [Prenger et al., 2019] vocoder.",
-       "zh": "GSLM 使用 HuBERT 码作为输入，并用 Tacotron2 [Shen et al., 2018] 模型和 WaveGlow [Prenger et al., 2019] 声码器重建波形。"
-      },
-      {
-       "id": "s-5-2-3-5",
-       "original": "We run their open-sourced code using the released model and evaluate the results.",
-       "zh": "我们用他们发布的模型运行其开源代码并评估结果。"
-      },
-      {
-       "id": "s-5-2-3-6",
-       "original": "Since the HuBERT codes discard the speaker identity, it achieves a poor speaker score.",
-       "zh": "由于 HuBERT 码丢弃了说话人身份，其说话人得分很差。"
-      },
-      {
-       "id": "s-5-2-3-7",
-       "original": "For the AudioLM, we list their WER score reported in their paper, which is obtained by a Conformer Transducer model.",
-       "zh": "对 AudioLM，我们列出其论文报告的 WER 分数，该分数由 Conformer Transducer 模型得到。"
-      },
-      {
-       "id": "s-5-2-3-8",
-       "original": "The experiment results show that VALL-E is better than other speech-to-speech LM-based generative systems in terms of robustness.",
-       "zh": "实验结果表明，在鲁棒性上 VALL-E 优于其他基于语言模型的语音到语音生成系统。"
-      },
-      {
-       "id": "s-5-2-3-9",
-       "original": "One major reason is VALL-E trained with pseudo-phoneme instead of HuBERT/w2v-BERT codes, which enjoys better alignment quality with the input text.",
-       "zh": "一个主要原因是 VALL-E 用伪音素训练，而非 HuBERT/w2v-BERT 码，从而与输入文本有更好的对齐质量。"
+       "original": "model WER SPK GroundTruth",
+       "zh": "（表格：model × WER × SPK——GroundTruth 2.2/0.754；语音到语音系统 GSLM 12.4/0.126、AudioLM* 6.0/-；TTS 系统 YourTTS 7.7/0.337、VALL-E 5.9/0.580、VALL-E-continual 3.8/0.508。）模型在鲁棒性与说话人相似度上都显著更好，说明生成语音对给定文本与给定注册语音都高度忠实。"
       }
      ]
+    },
+    {
+     "id": "eq-5-2-1",
+     "type": "equation",
+     "page": 9,
+     "original": "2.2 0.754"
+    },
+    {
+     "id": "eq-5-2-2",
+     "type": "equation",
+     "page": 9,
+     "original": "Speech-to-Speech Systems GSLM"
+    },
+    {
+     "id": "eq-5-2-3",
+     "type": "equation",
+     "page": 9,
+     "original": "12.4 0.126"
+    },
+    {
+     "id": "eq-5-2-4",
+     "type": "equation",
+     "page": 9,
+     "original": "AudioLM*"
+    },
+    {
+     "id": "eq-5-2-5",
+     "type": "equation",
+     "page": 9,
+     "original": "6.0 -"
+    },
+    {
+     "id": "eq-5-2-6",
+     "type": "equation",
+     "page": 9,
+     "original": "TTS Systems YourTTS"
+    },
+    {
+     "id": "eq-5-2-7",
+     "type": "equation",
+     "page": 9,
+     "original": "7.7 0.337"
+    },
+    {
+     "id": "eq-5-2-8",
+     "type": "equation",
+     "page": 9,
+     "original": "VALL-E"
+    },
+    {
+     "id": "eq-5-2-9",
+     "type": "equation",
+     "page": 9,
+     "original": "5.9 0.580"
+    },
+    {
+     "id": "eq-5-2-10",
+     "type": "equation",
+     "page": 9,
+     "original": "VALL-E-continual"
+    },
+    {
+     "id": "eq-5-2-11",
+     "type": "equation",
+     "page": 9,
+     "original": "3.8 0.508"
     },
     {
      "id": "p-5-2-4",
@@ -1728,26 +1988,78 @@ globalThis.PAPER_2301_02111 = {
      "sentences": [
       {
        "id": "s-5-2-4-1",
+       "original": "model is signiﬁcantly better in both robustness and speaker similarity, showing that our generated speech is highly faithful to the given text and the given enrolled speech.",
+       "zh": "（表格：model × WER × SPK——GroundTruth 2.2/0.754；语音到语音系统 GSLM 12.4/0.126、AudioLM* 6.0/-；TTS 系统 YourTTS 7.7/0.337、VALL-E 5.9/0.580、VALL-E-continual 3.8/0.508。）模型在鲁棒性与说话人相似度上都显著更好，说明生成语音对给定文本与给定注册语音都高度忠实。"
+      },
+      {
+       "id": "s-5-2-4-2",
+       "original": "Furthermore, the word error rate can be further reduced in VALL-E-continual setting, because the acoustic tokens for the ﬁrst 3 seconds are extracted from the ground truth.",
+       "zh": "此外，在 VALL-E-continual 设定下词错误率可进一步降低，因为前 3 秒的声学 token 提取自真实语音。"
+      },
+      {
+       "id": "s-5-2-4-3",
+       "original": "We also compare the robustness with other speech-to-speech LM-based generation models, GSLM and AudioLM, which use audio latent codes as input.",
+       "zh": "我们还将鲁棒性与其他基于语言模型的语音到语音生成模型 GSLM 和 AudioLM 进行了比较，它们使用音频潜码作为输入。"
+      },
+      {
+       "id": "s-5-2-4-4",
+       "original": "GSLM uses HuBERT code as input and reconstructs the waveform with the Tacotron2 [Shen et al., 2018] model and the WaveGlow [Prenger et al., 2019] vocoder.",
+       "zh": "GSLM 使用 HuBERT 码作为输入，并用 Tacotron2 [Shen et al., 2018] 模型和 WaveGlow [Prenger et al., 2019] 声码器重建波形。"
+      },
+      {
+       "id": "s-5-2-4-5",
+       "original": "We run their open-sourced code using the released model and evaluate the results.",
+       "zh": "我们用他们发布的模型运行其开源代码并评估结果。"
+      },
+      {
+       "id": "s-5-2-4-6",
+       "original": "Since the HuBERT codes discard the speaker identity, it achieves a poor speaker score.",
+       "zh": "由于 HuBERT 码丢弃了说话人身份，其说话人得分很差。"
+      },
+      {
+       "id": "s-5-2-4-7",
+       "original": "For the AudioLM, we list their WER score reported in their paper, which is obtained by a Conformer Transducer model.",
+       "zh": "对 AudioLM，我们列出其论文报告的 WER 分数，该分数由 Conformer Transducer 模型得到。"
+      },
+      {
+       "id": "s-5-2-4-8",
+       "original": "The experiment results show that VALL-E is better than other speech-to-speech LM-based generative systems in terms of robustness.",
+       "zh": "实验结果表明，在鲁棒性上 VALL-E 优于其他基于语言模型的语音到语音生成系统。"
+      },
+      {
+       "id": "s-5-2-4-9",
+       "original": "One major reason is VALL-E trained with pseudo-phoneme instead of HuBERT/w2v-BERT codes, which enjoys better alignment quality with the input text.",
+       "zh": "一个主要原因是 VALL-E 用伪音素训练，而非 HuBERT/w2v-BERT 码，从而与输入文本有更好的对齐质量。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-2-5",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-5-2-5-1",
        "original": "We randomly sample one utterance for each speaker in LibriSpeech test-clean for the human evaluation, resulting in 40 test cases.",
        "zh": "我们为 LibriSpeech test-clean 中的每位说话人随机采样一条语句用于人工评估，共 40 个测试用例。"
       },
       {
-       "id": "s-5-2-4-2",
+       "id": "s-5-2-5-2",
        "original": "Table 3 shows the human evaluation results.",
        "zh": "Table 3 给出了人工评估结果。"
       },
       {
-       "id": "s-5-2-4-3",
+       "id": "s-5-2-5-3",
        "original": "VALL-E is very closed to ground truth in terms of SMOS, indicating the synthesized speech is similar to the given unseen speaker in testing.",
        "zh": "VALL-E 在 SMOS 上非常接近真实录音，表明合成语音与测试中的未见说话人相似。"
       },
       {
-       "id": "s-5-2-4-4",
+       "id": "s-5-2-5-4",
        "original": "It signiﬁcantly outperforms the baseline with +0.93 SMOS, demonstrating the effectiveness of VALL-E in zero-shot scenarios.",
        "zh": "它以 +0.93 SMOS 显著优于基线，证明了 VALL-E 在零样本场景下的有效性。"
       },
       {
-       "id": "s-5-2-4-5",
+       "id": "s-5-2-5-5",
        "original": "Regarding naturalness, VALL-E beats the baseline with +0.12 CMOS, indicating the proposed method could synthesize more natural and realistic speech against baselines.",
        "zh": "在自然度方面，VALL-E 以 +0.12 CMOS 击败基线，表明所提方法能比基线合成更自然、更真实的语音。"
       }
@@ -1761,67 +2073,109 @@ globalThis.PAPER_2301_02111 = {
      "zh": "表 3：在 LibriSpeech test-clean 上对 40 位说话人（每人一段 3 秒注册录音）的人工评估。"
     },
     {
-     "id": "p-5-2-5",
+     "id": "p-5-2-6",
      "type": "paragraph",
      "page": 9,
      "sentences": [
       {
-       "id": "s-5-2-5-1",
+       "id": "s-5-2-6-1",
        "original": "SMOS CMOS (v.s.",
-       "zh": "（本句开头为 Table 3 表格体的抽取残留：SMOS / CMOS（对比 VALL-E）；YourTTS：-0.12；VALL-E：0.00；Ground truth：+0.17。）"
+       "zh": "（本句开头为 Table 7 表格体的抽取残留：SMOS / CMOS（对比 VALL-E）；YourTTS*：-0.23；VALL-E：0.00；Ground truth：-0.04。）"
       },
       {
-       "id": "s-5-2-5-2",
-       "original": "VALL-E) YourTTS -0.12 0.00 +0.17 Ablation study: In this section, we perform detailed ablation experiments.",
-       "zh": "（本句开头为 Table 3 表格体的抽取残留：SMOS / CMOS（对比 VALL-E）；YourTTS：-0.12；VALL-E：0.00；Ground truth：+0.17。）消融研究：本节我们进行详细的消融实验。"
+       "id": "s-5-2-6-2",
+       "original": "VALL-E) YourTTS",
+       "zh": "（表格行，对比 VALL-E：YourTTS 3.45±0.09/-0.12；VALL-E 4.38±0.10/0.00；GroundTruth 4.5±0.10/+0.17。）消融研究：本节进行详细的消融实验。"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-2-12",
+     "type": "equation",
+     "page": 9,
+     "original": "3.45±0.09 -0.12"
+    },
+    {
+     "id": "eq-5-2-13",
+     "type": "equation",
+     "page": 9,
+     "original": "VALL-E"
+    },
+    {
+     "id": "eq-5-2-14",
+     "type": "equation",
+     "page": 9,
+     "original": "4.38±0.10 0.00"
+    },
+    {
+     "id": "eq-5-2-15",
+     "type": "equation",
+     "page": 9,
+     "original": "GroundTruth"
+    },
+    {
+     "id": "eq-5-2-16",
+     "type": "equation",
+     "page": 9,
+     "original": "4.5±0.10 +0.17"
+    },
+    {
+     "id": "p-5-2-7",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-5-2-7-1",
+       "original": "Ablation study: In this section, we perform detailed ablation experiments.",
+       "zh": "（表格行，对比 VALL-E：YourTTS 3.45±0.09/-0.12；VALL-E 4.38±0.10/0.00；GroundTruth 4.5±0.10/+0.17。）消融研究：本节进行详细的消融实验。"
       },
       {
-       "id": "s-5-2-5-3",
+       "id": "s-5-2-7-2",
        "original": "We ﬁrst study the NAR model.",
        "zh": "我们首先研究 NAR 模型。"
       },
       {
-       "id": "s-5-2-5-4",
+       "id": "s-5-2-7-3",
        "original": "We train three NAR models with different numbers of prompts.",
        "zh": "我们训练了三个使用不同数量提示的 NAR 模型。"
       },
       {
-       "id": "s-5-2-5-5",
+       "id": "s-5-2-7-4",
        "original": "The setting NAR-no prompt is trained without any prompts.",
        "zh": "NAR-no prompt 设定在训练时不使用任何提示。"
       },
       {
-       "id": "s-5-2-5-6",
+       "id": "s-5-2-7-5",
        "original": "The setting NAR-phn prompt is trained with only phoneme sequence as prompt and the setting NAR-2 prompts uses both phoneme prompt and acoustic token prompt as conditions.",
        "zh": "NAR-phn prompt 设定只使用音素序列作为提示，NAR-2 prompts 设定同时使用音素提示和声学 token 提示作为条件。"
       },
       {
-       "id": "s-5-2-5-7",
+       "id": "s-5-2-7-6",
        "original": "In evaluation, we use the ground-truth ﬁrst-level acoustic tokens as the model input and compute the WER and speaker similarity scores.",
        "zh": "评估时，我们用真实的第一层声学 token 作为模型输入，计算 WER 和说话人相似度分数。"
       },
       {
-       "id": "s-5-2-5-8",
+       "id": "s-5-2-7-7",
        "original": "The results are listed in Table 4.",
        "zh": "结果列于 Table 4。"
       },
       {
-       "id": "s-5-2-5-9",
+       "id": "s-5-2-7-8",
        "original": "Results show that the model without any prompts performs poorly on both ASR and speaker similarity evaluations, even though the acoustic input token is ground truth.",
        "zh": "结果表明，即使声学输入 token 是真实的，不带任何提示的模型在 ASR 和说话人相似度评估上都表现很差。"
       },
       {
-       "id": "s-5-2-5-10",
+       "id": "s-5-2-7-9",
        "original": "When adding the phoneme prompt, the WER is reduced by a large margin from 19.6 to 3.0.",
        "zh": "加入音素提示后，WER 从 19.6 大幅降至 3.0。"
       },
       {
-       "id": "s-5-2-5-11",
+       "id": "s-5-2-7-10",
        "original": "It shows the phoneme prompt mainly contributes to the content of the generation.",
        "zh": "这说明音素提示主要贡献于生成内容。"
       },
       {
-       "id": "s-5-2-5-12",
+       "id": "s-5-2-7-11",
        "original": "In the NAR-2 prompts, the model can learn speaker information from the acoustic token prompt and thus improve the speaker evaluation quality.",
        "zh": "在 NAR-2 prompts 中，模型能从声学 token 提示中学习说话人信息，从而改善说话人评估质量。"
       }
@@ -1853,21 +2207,51 @@ globalThis.PAPER_2301_02111 = {
      "sentences": [
       {
        "id": "s-nar-no-prompt-1-1",
-       "original": "NAR-phn prompt NAR-2 prompts WER 19.6 3.0 2.8 SPK 0.518 0.541 0.732 We further conduct the ablation experiments on the AR model.",
+       "original": "NAR-phn prompt NAR-2 prompts WER",
+       "zh": "（本句开头为 Table 4 表格体的抽取残留：NAR-no prompt / NAR-phn prompt / NAR-2 prompts；WER 19.6 / 3.0 / 2.8；SPK 0.518 / 0.541 / 0.732。）我们进一步在 AR 模型上进行消融实验。"
+      }
+     ]
+    },
+    {
+     "id": "eq-nar-no-prompt-1",
+     "type": "equation",
+     "page": 10,
+     "original": "19.6 3.0 2.8"
+    },
+    {
+     "id": "eq-nar-no-prompt-2",
+     "type": "equation",
+     "page": 10,
+     "original": "SPK"
+    },
+    {
+     "id": "eq-nar-no-prompt-3",
+     "type": "equation",
+     "page": 10,
+     "original": "0.518 0.541 0.732"
+    },
+    {
+     "id": "p-nar-no-prompt-2",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-nar-no-prompt-2-1",
+       "original": "We further conduct the ablation experiments on the AR model.",
        "zh": "（本句开头为 Table 4 表格体的抽取残留：NAR-no prompt / NAR-phn prompt / NAR-2 prompts；WER 19.6 / 3.0 / 2.8；SPK 0.518 / 0.541 / 0.732。）我们进一步在 AR 模型上进行消融实验。"
       },
       {
-       "id": "s-nar-no-prompt-1-2",
+       "id": "s-nar-no-prompt-2-2",
        "original": "In these experiments, we always use the NAR-2 prompts setting as the NAR model.",
        "zh": "在这些实验中，我们总是使用 NAR-2 prompts 设定作为 NAR 模型。"
       },
       {
-       "id": "s-nar-no-prompt-1-3",
+       "id": "s-nar-no-prompt-2-3",
        "original": "In Table 5, we can see that when we remove the acoustic prompt (w/o acoustic prompt), it can only obtain a speaker similarity score of 0.236, showing the prompt is extremely crucial for speaker identity.",
        "zh": "在 Table 5 中可以看到，当去掉声学提示（w/o acoustic prompt）时，说话人相似度分数只有 0.236，说明提示对说话人身份极其关键。"
       },
       {
-       "id": "s-nar-no-prompt-1-4",
+       "id": "s-nar-no-prompt-2-4",
        "original": "Even if the NAR model could see the prompt, the prompt for the AR model also contributes a lot to speaker similarity.",
        "zh": "即使 NAR 模型能看到提示，AR 模型的提示对说话人相似度也有很大贡献。"
       }
@@ -1881,16 +2265,34 @@ globalThis.PAPER_2301_02111 = {
      "zh": "表 5：AR 模型的消融研究。"
     },
     {
-     "id": "p-nar-no-prompt-2",
+     "id": "p-nar-no-prompt-3",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
-       "id": "s-nar-no-prompt-2-1",
-       "original": "WER SPK 5.9 0.585 w/o acoustic prompt 5.9 0.236",
-       "zh": "（本句为 Table 5 表格体的抽取残留：WER / SPK——完整模型 5.9 / 0.585；w/o acoustic prompt 5.9 / 0.236。）"
+       "id": "s-nar-no-prompt-3-1",
+       "original": "WER SPK VALL-E",
+       "zh": "（表格行：WER/SPK——VALL-E 5.9/0.585；w/o acoustic prompt 5.9/0.236。）"
       }
      ]
+    },
+    {
+     "id": "eq-nar-no-prompt-4",
+     "type": "equation",
+     "page": 10,
+     "original": "5.9 0.585"
+    },
+    {
+     "id": "eq-nar-no-prompt-5",
+     "type": "equation",
+     "page": 10,
+     "original": "w/o acoustic prompt"
+    },
+    {
+     "id": "eq-nar-no-prompt-6",
+     "type": "equation",
+     "page": 10,
+     "original": "5.9 0.236"
     }
    ]
   },
@@ -1940,25 +2342,76 @@ globalThis.PAPER_2301_02111 = {
      "sentences": [
       {
        "id": "s-5-3-2-1",
-       "original": "3s prompt 5s prompt 10s prompt 108 full speakers YourTTS* 0.357 0.377 0.394 0.382 0.423 0.484 0.546 0.591 0.620 11 unseen speakers YourTTS 0.331 0.337 0.344 0.389 0.380 0.414 0.528 0.556 0.586 We ﬁrst evaluate two models with the speaker veriﬁcation metric as described before.",
-       "zh": "（本句开头为 Table 6 表格体的抽取残留：3s 提示 / 5s 提示 / 10s 提示；108 位完整说话人——YourTTS* 0.357 / 0.377 / 0.394，VALL-E 0.382 / 0.423 / 0.484，真实录音 0.546 / 0.591 / 0.620；11 位未见说话人——YourTTS 0.331 / 0.337 / 0.344，VALL-E 0.389 / 0.380 / 0.414，真实录音 0.528 / 0.556 / 0.586。）我们首先用前述说话人验证指标评估两个模型。"
-      },
-      {
-       "id": "s-5-3-2-2",
-       "original": "From Table 6, we can see that VALL-E outperforms the baseline even if the baseline has seen 97 speakers in training, indicating our model is able to synthesize speech with higher speaker similarity.",
-       "zh": "从 Table 6 可以看到，即使基线在训练中见过 97 位说话人，VALL-E 仍然优于它，表明我们的模型能合成说话人相似度更高的语音。"
-      },
-      {
-       "id": "s-5-3-2-3",
-       "original": "When we compare with the baseline in a fair setting (11 speakers), the performance gap becomes larger, especially when only 3s prompts are available.",
-       "zh": "当我们在公平设定下（11 位说话人）与基线比较时，性能差距变得更大，尤其是只有 3s 提示可用时。"
-      },
-      {
-       "id": "s-5-3-2-4",
-       "original": "By comparing different lengths of the prompt, we can see our model is able to generate more similar speech when the prompt becomes longer, which is consistent with our intuition.",
-       "zh": "通过比较不同长度的提示，可以看到提示越长，我们的模型能生成相似度越高的语音，这与直觉一致。"
+       "original": "3s prompt 5s prompt 10s prompt 108 full speakers YourTTS*",
+       "zh": "（表格：3s/5s/10s prompt 三档——108 个完整说话人：YourTTS* 0.357/0.377/0.394，VALL-E 0.382/0.423/0.484，GroundTruth 0.546/0.591/0.620；11 个未见说话人：YourTTS 0.331/0.337/0.344，VALL-E 0.389/0.380/0.414，GroundTruth 0.528/0.556/0.586。）我们首先用前述说话人验证指标评测两个模型。"
       }
      ]
+    },
+    {
+     "id": "eq-5-3-1",
+     "type": "equation",
+     "page": 10,
+     "original": "0.357 0.377 0.394"
+    },
+    {
+     "id": "eq-5-3-2",
+     "type": "equation",
+     "page": 10,
+     "original": "VALL-E"
+    },
+    {
+     "id": "eq-5-3-3",
+     "type": "equation",
+     "page": 10,
+     "original": "0.382 0.423 0.484"
+    },
+    {
+     "id": "eq-5-3-4",
+     "type": "equation",
+     "page": 10,
+     "original": "GroundTruth"
+    },
+    {
+     "id": "eq-5-3-5",
+     "type": "equation",
+     "page": 10,
+     "original": "0.546 0.591 0.620"
+    },
+    {
+     "id": "eq-5-3-6",
+     "type": "equation",
+     "page": 10,
+     "original": "11 unseen speakers YourTTS"
+    },
+    {
+     "id": "eq-5-3-7",
+     "type": "equation",
+     "page": 10,
+     "original": "0.331 0.337 0.344"
+    },
+    {
+     "id": "eq-5-3-8",
+     "type": "equation",
+     "page": 10,
+     "original": "VALL-E"
+    },
+    {
+     "id": "eq-5-3-9",
+     "type": "equation",
+     "page": 10,
+     "original": "0.389 0.380 0.414"
+    },
+    {
+     "id": "eq-5-3-10",
+     "type": "equation",
+     "page": 10,
+     "original": "GroundTruth"
+    },
+    {
+     "id": "eq-5-3-11",
+     "type": "equation",
+     "page": 10,
+     "original": "0.528 0.556 0.586"
     },
     {
      "id": "p-5-3-3",
@@ -1967,41 +2420,68 @@ globalThis.PAPER_2301_02111 = {
      "sentences": [
       {
        "id": "s-5-3-3-1",
+       "original": "We ﬁrst evaluate two models with the speaker veriﬁcation metric as described before.",
+       "zh": "（表格：3s/5s/10s prompt 三档——108 个完整说话人：YourTTS* 0.357/0.377/0.394，VALL-E 0.382/0.423/0.484，GroundTruth 0.546/0.591/0.620；11 个未见说话人：YourTTS 0.331/0.337/0.344，VALL-E 0.389/0.380/0.414，GroundTruth 0.528/0.556/0.586。）我们首先用前述说话人验证指标评测两个模型。"
+      },
+      {
+       "id": "s-5-3-3-2",
+       "original": "From Table 6, we can see that VALL-E outperforms the baseline even if the baseline has seen 97 speakers in training, indicating our model is able to synthesize speech with higher speaker similarity.",
+       "zh": "从 Table 6 可以看到，即使基线在训练中见过 97 位说话人，VALL-E 仍然优于它，表明我们的模型能合成说话人相似度更高的语音。"
+      },
+      {
+       "id": "s-5-3-3-3",
+       "original": "When we compare with the baseline in a fair setting (11 speakers), the performance gap becomes larger, especially when only 3s prompts are available.",
+       "zh": "当我们在公平设定下（11 位说话人）与基线比较时，性能差距变得更大，尤其是只有 3s 提示可用时。"
+      },
+      {
+       "id": "s-5-3-3-4",
+       "original": "By comparing different lengths of the prompt, we can see our model is able to generate more similar speech when the prompt becomes longer, which is consistent with our intuition.",
+       "zh": "通过比较不同长度的提示，可以看到提示越长，我们的模型能生成相似度越高的语音，这与直觉一致。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-3-4",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-5-3-4-1",
        "original": "We sample 60 speakers for human evaluation, one utterance for each, where 11 are unseen speakers, and 49 speakers have been seen for YourTTS.",
        "zh": "我们抽取 60 位说话人做人工评估，每人一条语句，其中 11 位是未见说话人，49 位对 YourTTS 来说是见过的。"
       },
       {
-       "id": "s-5-3-3-2",
+       "id": "s-5-3-4-2",
        "original": "VALL-E do not see any of the 60 speakers.",
        "zh": "VALL-E 未见过这 60 位说话人中的任何一位。"
       },
       {
-       "id": "s-5-3-3-3",
+       "id": "s-5-3-4-3",
        "original": "During model synthesis, each speaker has a 3-second enrolled recording.",
        "zh": "模型合成时，每位说话人有一段 3 秒注册录音。"
       },
       {
-       "id": "s-5-3-3-4",
+       "id": "s-5-3-4-4",
        "original": "Table 7 shows a comparison of our method against baseline and ground truth.",
        "zh": "Table 7 给出了我们的方法与基线及真实录音的对比。"
       },
       {
-       "id": "s-5-3-3-5",
+       "id": "s-5-3-4-5",
        "original": "The comparison of SMOS shows that VALL-E has better speaker similarity than the baseline, even if the baseline has seen some of the speakers in training.",
        "zh": "SMOS 对比显示，即使基线在训练中见过部分说话人，VALL-E 的说话人相似度仍优于基线。"
       },
       {
-       "id": "s-5-3-3-6",
+       "id": "s-5-3-4-6",
        "original": "The side-by-side CMOS evaluation shows that VALL-E is +0.23 over YourTTS, indicating a signiﬁcantly better performance on speaking of naturalness.",
        "zh": "并排对比的 CMOS 评估显示 VALL-E 比 YourTTS 高 +0.23，表明在自然度上显著更好。"
       },
       {
-       "id": "s-5-3-3-7",
+       "id": "s-5-3-4-7",
        "original": "Furthermore, VALL-E achieves +0.04 CMOS over ground-truth, demonstrating no statistically signiﬁcant difference from human recordings on this dataset.",
        "zh": "此外，VALL-E 相对真实录音取得了 +0.04 CMOS，表明在该数据集上与真人录音没有统计学上的显著差异。"
       },
       {
-       "id": "s-5-3-3-8",
+       "id": "s-5-3-4-8",
        "original": "Compared to the evaluation results on LibriSpeech, VALL-E shows a better CMOS",
        "zh": "与 LibriSpeech 上的评估结果相比，VALL-E 在与真实录音的对比中表现出更好的 CMOS"
       }
@@ -2015,34 +2495,76 @@ globalThis.PAPER_2301_02111 = {
      "zh": "表 7：在 VCTK 上对 60 位说话人（每人一段 3 秒注册录音）的人工评估。"
     },
     {
-     "id": "p-5-3-4",
-     "type": "paragraph",
-     "page": 11,
-     "sentences": [
-      {
-       "id": "s-5-3-4-1",
-       "original": "SMOS CMOS (v.s.",
-       "zh": "（本句开头为 Table 7 表格体的抽取残留：SMOS / CMOS（对比 VALL-E）；YourTTS*：-0.23；VALL-E：0.00；Ground truth：-0.04。）"
-      },
-      {
-       "id": "s-5-3-4-2",
-       "original": "VALL-E) YourTTS* -0.23 0.00 -0.04 score in the comparison with ground truth, which is mainly because the average sentence length is shorter and some of the ground truth utterances also have noisy environments in VCTK.",
-       "zh": "（本句开头为 Table 7 表格体的抽取残留：SMOS / CMOS（对比 VALL-E）；YourTTS*：-0.23；VALL-E：0.00；Ground truth：-0.04。）分数，这主要是因为 VCTK 中平均句子长度更短，且部分真实录音语句本身也带有噪声环境。"
-      },
-      {
-       "id": "s-5-3-4-3",
-       "original": "In terms of speaker similarity, VCTK is more challenging as it contains speakers with various accents while the training data and LibriSpeech test data do not contain various accent speakers. would light up the yellow here and after early nightfall lamps there the squalid quarter of the brothels after early nightfall the yellow lamps would light up here and there the squalid quarter of the brothels (a) A LibriSpeech sample: After early nightfall, the yellow lamp would light up here and there the squalid quarter of the brothels.",
-       "zh": "在说话人相似度上，VCTK 更具挑战性，因为它包含各种口音的说话人，而训练数据和 LibriSpeech 测试数据都不包含口音多样的说话人。（本句末尾为 Figure 4 图内文本的抽取残留：一段 LibriSpeech 样例「夜幕降临后，黄色路灯会在烟花巷各处零零星星亮起」，两个版本的语序不同，展示多样性。）"
-      }
-     ]
-    },
-    {
      "id": "p-5-3-5",
      "type": "paragraph",
      "page": 11,
      "sentences": [
       {
        "id": "s-5-3-5-1",
+       "original": "SMOS CMOS (v.s.",
+       "zh": "（本句开头为 Table 7 表格体的抽取残留：SMOS / CMOS（对比 VALL-E）；YourTTS*：-0.23；VALL-E：0.00；Ground truth：-0.04。）"
+      },
+      {
+       "id": "s-5-3-5-2",
+       "original": "VALL-E) YourTTS*",
+       "zh": "（表格行，对比 VALL-E：YourTTS* 3.70±0.09/-0.23；VALL-E 3.81±0.09/0.00；GroundTruth 4.29±0.09/-0.04。）与 ground truth 对比时的分数差距，主要因为 VCTK 中平均句长更短且部分 ground truth 语音本身带噪声。"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-3-12",
+     "type": "equation",
+     "page": 11,
+     "original": "3.70±0.09 -0.23"
+    },
+    {
+     "id": "eq-5-3-13",
+     "type": "equation",
+     "page": 11,
+     "original": "VALL-E"
+    },
+    {
+     "id": "eq-5-3-14",
+     "type": "equation",
+     "page": 11,
+     "original": "3.81±0.09 0.00"
+    },
+    {
+     "id": "eq-5-3-15",
+     "type": "equation",
+     "page": 11,
+     "original": "GroundTruth"
+    },
+    {
+     "id": "eq-5-3-16",
+     "type": "equation",
+     "page": 11,
+     "original": "4.29±0.09 -0.04"
+    },
+    {
+     "id": "p-5-3-6",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-5-3-6-1",
+       "original": "score in the comparison with ground truth, which is mainly because the average sentence length is shorter and some of the ground truth utterances also have noisy environments in VCTK.",
+       "zh": "（表格行，对比 VALL-E：YourTTS* 3.70±0.09/-0.23；VALL-E 3.81±0.09/0.00；GroundTruth 4.29±0.09/-0.04。）与 ground truth 对比时的分数差距，主要因为 VCTK 中平均句长更短且部分 ground truth 语音本身带噪声。"
+      },
+      {
+       "id": "s-5-3-6-2",
+       "original": "In terms of speaker similarity, VCTK is more challenging as it contains speakers with various accents while the training data and LibriSpeech test data do not contain various accent speakers. would light up the yellow here and after early nightfall lamps there the squalid quarter of the brothels after early nightfall the yellow lamps would light up here and there the squalid quarter of the brothels (a) A LibriSpeech sample: After early nightfall, the yellow lamp would light up here and there the squalid quarter of the brothels.",
+       "zh": "在说话人相似度上，VCTK 更具挑战性，因为它包含各种口音的说话人，而训练数据和 LibriSpeech 测试数据都不包含口音多样的说话人。（本句末尾为 Figure 4 图内文本的抽取残留：一段 LibriSpeech 样例「夜幕降临后，黄色路灯会在烟花巷各处零零星星亮起」，两个版本的语序不同，展示多样性。）"
+      }
+     ]
+    },
+    {
+     "id": "p-5-3-7",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-5-3-7-1",
        "original": "I must do something about it I must do something about it (b) A VCTK sample: I must do something about it.",
        "zh": "（Figure 4 图内文本的抽取残留：一条 VCTK 样例「I must do something about it」（我必须做点什么），两次合成的重音位置不同。）"
       }
@@ -2611,9 +3133,15 @@ globalThis.PAPER_2301_02111 = {
       },
       {
        "id": "s-references-13-2",
-       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6): 1505–1518, 2022."
+       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6):"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 13,
+     "original": "1505–1518, 2022."
     },
     {
      "id": "p-references-14",
@@ -2786,9 +3314,15 @@ globalThis.PAPER_2301_02111 = {
       },
       {
        "id": "s-references-22-3",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 29:3451–3460, 2021."
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing,"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 14,
+     "original": "29:3451–3460, 2021."
     },
     {
      "id": "p-references-23",
@@ -3338,9 +3872,15 @@ globalThis.PAPER_2301_02111 = {
      "sentences": [
       {
        "id": "s-references-50-1",
-       "original": "In Advances in Neural Information Processing Systems 30: Annual Conference on Neural Information Processing Systems 2017, December 4-9, 2017, Long Beach, CA, USA, pages 6306–6315, 2017."
+       "original": "In Advances in Neural Information Processing Systems 30: Annual Conference on Neural Information Processing Systems 2017, December 4-9, 2017, Long Beach, CA, USA, pages 6306–6315,"
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 16,
+     "original": "2017."
     },
     {
      "id": "p-references-51",
@@ -3372,9 +3912,15 @@ globalThis.PAPER_2301_02111 = {
       },
       {
        "id": "s-references-52-4",
-       "original": "ISCA, 2020."
+       "original": "ISCA,"
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 16,
+     "original": "2020."
     },
     {
      "id": "p-references-53",
@@ -3448,9 +3994,15 @@ globalThis.PAPER_2301_02111 = {
       },
       {
        "id": "s-references-56-5",
-       "original": "Process., 30: 495–507, 2022."
+       "original": "Process., 30:"
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 16,
+     "original": "495–507, 2022."
     },
     {
      "id": "p-references-57",
@@ -3625,7 +4177,7 @@ globalThis.PAPER_2301_02111 = {
   {
    "id": "ann-013",
    "anchor": {
-    "sentence_id": "s-5-2-4-4",
+    "sentence_id": "s-5-2-5-4",
     "quote": "outperforms the baseline with +0.93 SMOS"
    },
    "kind": "number",
@@ -3636,7 +4188,7 @@ globalThis.PAPER_2301_02111 = {
   {
    "id": "ann-014",
    "anchor": {
-    "sentence_id": "s-5-2-5-10",
+    "sentence_id": "s-5-2-7-9",
     "quote": "the WER is reduced by a large margin from 19.6 to 3.0"
    },
    "kind": "number",
@@ -3647,7 +4199,7 @@ globalThis.PAPER_2301_02111 = {
   {
    "id": "ann-015",
    "anchor": {
-    "sentence_id": "s-nar-no-prompt-1-3",
+    "sentence_id": "s-nar-no-prompt-2-3",
     "quote": "it can only obtain a speaker similarity score of 0.236"
    },
    "kind": "number",
@@ -3658,7 +4210,7 @@ globalThis.PAPER_2301_02111 = {
   {
    "id": "ann-016",
    "anchor": {
-    "sentence_id": "s-5-3-2-2",
+    "sentence_id": "s-5-3-3-2",
     "quote": "VALL-E outperforms the baseline even if the baseline has seen 97 speakers in training"
    },
    "kind": "comparison",

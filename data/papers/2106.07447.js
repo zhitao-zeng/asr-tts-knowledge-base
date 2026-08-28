@@ -402,10 +402,16 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-II-A-1-4",
-       "original": "More advanced systems can achieve better acoustic unit discovery performance using better graphical models [27], [28] or parameterizes the distributions with more powerful neural network models [29]– [33].",
+       "original": "More advanced systems can achieve better acoustic unit discovery performance using better graphical models [27], [28] or parameterizes the distributions with more powerful neural network models [29]–",
        "zh": "更先进的系统可以通过更好的图模型 [27]、[28]，或用更强大的神经网络模型来参数化这些分布 [29]–[33]，取得更好的声学单元发现性能。"
       }
      ]
+    },
+    {
+     "id": "eq-II-A-1",
+     "type": "equation",
+     "page": 2,
+     "original": "[33]."
     },
     {
      "id": "fig-II-A-1",
@@ -496,7 +502,13 @@ globalThis.PAPER_2106_07447 = {
      "id": "eq-II-B-1",
      "type": "equation",
      "page": 2,
-     "original": "t∈M log pf(zt | ˜X, t), Lm(f; X, M, Z) ="
+     "original": "t∈M log pf(zt | ˜X, t), (1)"
+    },
+    {
+     "id": "eq-II-B-2",
+     "type": "equation",
+     "page": 2,
+     "original": "Lm(f; X, M, Z) = X"
     },
     {
      "id": "p-II-B-3",
@@ -595,7 +607,19 @@ globalThis.PAPER_2106_07447 = {
      "id": "eq-II-C-1",
      "type": "equation",
      "page": 3,
-     "original": "Lm(f; X, {Z(k)}k, M) = t∈M"
+     "original": "Lm(f; X, {Z(k)}k, M) = X"
+    },
+    {
+     "id": "eq-II-C-2",
+     "type": "equation",
+     "page": 3,
+     "original": "X"
+    },
+    {
+     "id": "eq-II-C-3",
+     "type": "equation",
+     "page": 3,
+     "original": "t∈M"
     },
     {
      "id": "p-II-C-2",
@@ -733,10 +757,52 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-II-E-3-1",
-       "original": "BASE LARGE X-LARGE CNN Encoder strides 5, 2, 2, 2, 2, 2, 2 kernel width 10, 3, 3, 3, 3, 2, 2 channel 512 layer 12 24 48 embedding dim.",
-       "zh": "（Table I 各列依次为 BASE / LARGE / X-LARGE）CNN 编码器：步幅 5, 2, 2, 2, 2, 2, 2；核宽 10, 3, 3, 3, 3, 2, 2；通道数 512；Transformer 层数分别为 12、24、48；嵌入维度"
+       "original": "BASE LARGE X-LARGE CNN Encoder strides",
+       "zh": "表头：BASE / LARGE / X-LARGE；CNN Encoder strides（卷积编码器步幅）。"
       }
      ]
+    },
+    {
+     "id": "eq-II-E-1",
+     "type": "equation",
+     "page": 3,
+     "original": "5, 2, 2, 2, 2, 2, 2"
+    },
+    {
+     "id": "eq-II-E-2",
+     "type": "equation",
+     "page": 3,
+     "original": "kernel width"
+    },
+    {
+     "id": "eq-II-E-3",
+     "type": "equation",
+     "page": 3,
+     "original": "10, 3, 3, 3, 3, 2, 2"
+    },
+    {
+     "id": "eq-II-E-4",
+     "type": "equation",
+     "page": 3,
+     "original": "channel"
+    },
+    {
+     "id": "eq-II-E-5",
+     "type": "equation",
+     "page": 3,
+     "original": "512"
+    },
+    {
+     "id": "eq-II-E-6",
+     "type": "equation",
+     "page": 3,
+     "original": "layer"
+    },
+    {
+     "id": "eq-II-E-7",
+     "type": "equation",
+     "page": 3,
+     "original": "12 24 48"
     },
     {
      "id": "p-II-E-4",
@@ -745,10 +811,16 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-II-E-4-1",
-       "original": "768 1024 1280 inner FFN dim.",
-       "zh": "分别为 768、1024、1280；FFN 内部维度"
+       "original": "embedding dim.",
+       "zh": "（表格行）channel 512；layer 12 / 24 / 48；embedding dim.（嵌入维度，后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-II-E-8",
+     "type": "equation",
+     "page": 3,
+     "original": "768 1024 1280"
     },
     {
      "id": "p-II-E-5",
@@ -757,10 +829,40 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-II-E-5-1",
-       "original": "3072 4096 5120 layerdrop prob 0.05 0 0 attention heads 8 16 16 Projection dim.",
-       "zh": "分别为 3072、4096、5120；layerdrop 概率 0.05、0、0；注意力头数 8、16、16；投影维度"
+       "original": "inner FFN dim.",
+       "zh": "分别为 768、1024、1280；FFN 内部维度"
       }
      ]
+    },
+    {
+     "id": "eq-II-E-9",
+     "type": "equation",
+     "page": 3,
+     "original": "3072 4096 5120"
+    },
+    {
+     "id": "eq-II-E-10",
+     "type": "equation",
+     "page": 3,
+     "original": "layerdrop prob"
+    },
+    {
+     "id": "eq-II-E-11",
+     "type": "equation",
+     "page": 3,
+     "original": "0.05 0 0"
+    },
+    {
+     "id": "eq-II-E-12",
+     "type": "equation",
+     "page": 3,
+     "original": "attention heads"
+    },
+    {
+     "id": "eq-II-E-13",
+     "type": "equation",
+     "page": 3,
+     "original": "8 16 16"
     },
     {
      "id": "p-II-E-6",
@@ -769,30 +871,16 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-II-E-6-1",
-       "original": "256 768 1024 Num. of Params TABLE I: Model architecture summary for BASE, LARGE, and X-LARGE HuBERT models The convolutional waveform encoder generates a feature sequence at a 20ms framerate for audio sampled at 16kHz (CNN encoder down-sampling factor is 320x).",
-       "zh": "分别为 256、768、1024。Table I：BASE、LARGE、X-LARGE 三种 HuBERT 模型的架构与参数量汇总。卷积波形编码器对 16kHz 采样的音频输出 20ms 帧率的特征序列（CNN 编码器的下采样倍率为 320x）。"
-      },
-      {
-       "id": "s-II-E-6-2",
-       "original": "The audio encoded features are then randomly masked as described in Section II-B.",
-       "zh": "随后按第 II-B 节所述对编码后的音频特征做随机掩码。"
-      },
-      {
-       "id": "s-II-E-6-3",
-       "original": "The BERT encoder takes as input the masked sequence and outputs a feature sequence [o1, · · · , oT ].",
-       "zh": "BERT 编码器以被掩码的序列为输入，输出特征序列 [o1, · · · , oT]。"
-      },
-      {
-       "id": "s-II-E-6-4",
-       "original": "The distribution over codewords is parameterized with p(k) f (c | ˜X, t) = exp(sim(A(k)ot, ec)/τ) PC c′=1 exp(sim(A(k)ot, ec′)/τ) , where A is the projection matrix, ec is the embedding for codeword c, sim(·, ·) computes the cosine similarity between two vectors, and τ scales the logit, which is set to 0.1.",
-       "zh": "码元上的分布按 softmax(cos 相似度/τ) 参数化：分子为 exp(sim(A(k)ot, ec)/τ)，其中 A 是投影矩阵，ec 是码元 c 的嵌入，sim(·, ·) 计算两向量的余弦相似度，τ 用于缩放 logit，取 0.1（分母为对 c′=1 到 C 的归一化求和）。"
-      },
-      {
-       "id": "s-II-E-6-5",
-       "original": "When cluster ensembles are used, one projection matrix A(k) is applied for each clustering model k.",
-       "zh": "使用簇集成时，每个聚类模型 k 各使用一个投影矩阵 A(k)。"
+       "original": "Transformer Projection dim.",
+       "zh": "表头：Transformer / Projection dim.（投影维度）。"
       }
      ]
+    },
+    {
+     "id": "eq-II-E-14",
+     "type": "equation",
+     "page": 3,
+     "original": "256 768 1024"
     },
     {
      "id": "p-II-E-7",
@@ -801,16 +889,66 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-II-E-7-1",
+       "original": "Num. of Params 95M 317M 964M TABLE I: Model architecture summary for BASE, LARGE, and X-LARGE HuBERT models The convolutional waveform encoder generates a feature sequence at a 20ms framerate for audio sampled at 16kHz (CNN encoder down-sampling factor is 320x).",
+       "zh": "（Table I 行）256 768 1024；参数量 95M/317M/964M。表 I：BASE、LARGE、X-LARGE 三个 HuBERT 模型的架构汇总。卷积波形编码器对 16kHz 音频生成 20ms 帧率的特征序列（CNN 编码器下采样因子 320x）。"
+      },
+      {
+       "id": "s-II-E-7-2",
+       "original": "The audio encoded features are then randomly masked as described in Section II-B.",
+       "zh": "随后按第 II-B 节所述对编码后的音频特征做随机掩码。"
+      },
+      {
+       "id": "s-II-E-7-3",
+       "original": "The BERT encoder takes as input the masked sequence and outputs a feature sequence [o1, · · · , oT ].",
+       "zh": "BERT 编码器以被掩码的序列为输入，输出特征序列 [o1, · · · , oT]。"
+      },
+      {
+       "id": "s-II-E-7-4",
+       "original": "The distribution over codewords is parameterized with p(k) f (c | ˜X, t) = exp(sim(A(k)ot, ec)/τ) PC c′=1 exp(sim(A(k)ot, ec′)/τ)",
+       "zh": "码字分布参数化为 p(k) f(c | X̃, t) = exp(sim(A(k)o_t, e_c)/τ) / Σ_{c′=1..C} exp(sim(A(k)o_t, e_{c′})/τ)（式 3），其中 A 为投影矩阵，e_c 为码字 c 的嵌入，sim(·, ·) 计算两向量余弦相似度，τ 为 logit 缩放系数，取 0.1。"
+      }
+     ]
+    },
+    {
+     "id": "eq-II-E-15",
+     "type": "equation",
+     "page": 3,
+     "original": ", (3)"
+    },
+    {
+     "id": "p-II-E-8",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-II-E-8-1",
+       "original": "where A is the projection matrix, ec is the embedding for codeword c, sim(·, ·) computes the cosine similarity between two vectors, and τ scales the logit, which is set to 0.1.",
+       "zh": "码字分布参数化为 p(k) f(c | X̃, t) = exp(sim(A(k)o_t, e_c)/τ) / Σ_{c′=1..C} exp(sim(A(k)o_t, e_{c′})/τ)（式 3），其中 A 为投影矩阵，e_c 为码字 c 的嵌入，sim(·, ·) 计算两向量余弦相似度，τ 为 logit 缩放系数，取 0.1。"
+      },
+      {
+       "id": "s-II-E-8-2",
+       "original": "When cluster ensembles are used, one projection matrix A(k) is applied for each clustering model k.",
+       "zh": "使用簇集成时，每个聚类模型 k 各使用一个投影矩阵 A(k)。"
+      }
+     ]
+    },
+    {
+     "id": "p-II-E-9",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-II-E-9-1",
        "original": "After HuBERT pre-training, We use the connectionist temporal classiﬁcation (CTC) [41] loss for ASR ﬁne-tuning of the whole model weights except the convolutional audio encoder, which remains frozen.",
        "zh": "HuBERT 预训练完成后，我们使用连接时序分类（CTC）[41] 损失对整个模型做 ASR 微调，但卷积音频编码器保持冻结。"
       },
       {
-       "id": "s-II-E-7-2",
+       "id": "s-II-E-9-2",
        "original": "The projection layer(s) is removed and replaced with a randomly initialized softmax layer.",
        "zh": "投影层被移除，替换为一个随机初始化的 softmax 层。"
       },
       {
-       "id": "s-II-E-7-3",
+       "id": "s-II-E-9-3",
        "original": "The CTC target vocabulary includes 26 English characters, a space token, an apostrophe, and a special CTC blank symbol.",
        "zh": "CTC 目标词表包括 26 个英文字母、一个空格 token、一个撇号，以及 CTC 专用的空白（blank）符号。"
       }
@@ -850,10 +988,16 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-III-1-4",
-       "original": "Different latent structures have been applied to encode the prior assumption, such as continuous [29], discrete [31], [42], or sequential [28], [30], [32], [33], [43].",
+       "original": "Different latent structures have been applied to encode the prior assumption, such as continuous [29], discrete [31], [42],",
        "zh": "人们用过不同的隐变量结构来编码先验假设，例如连续型 [29]、离散型 [31]、[42] 或序列型 [28]、[30]、[32]、[33]、[43]。"
       }
      ]
+    },
+    {
+     "id": "eq-III-1",
+     "type": "equation",
+     "page": 3,
+     "original": "or sequential [28], [30], [32], [33], [43]."
     },
     {
      "id": "p-III-2",
@@ -988,10 +1132,40 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-IV-A-1-1",
-       "original": "For unsupervised pre-training, we use the full 960 hours of LibriSpeech audio [24] or 60,000 hours of Libri-light [25] audio, both of which are derived from the LibriVox project that contains English recordings of copyright-free audiobooks by volunteers from the Internet.",
+       "original": "For unsupervised pre-training, we use the full",
        "zh": "无监督预训练使用完整的 960 小时 LibriSpeech 音频 [24]，或 60,000 小时 Libri-light 音频 [25]；两者都源自 LibriVox 项目——该项目收集了互联网志愿者朗读的无版权英文有声书。"
       }
      ]
+    },
+    {
+     "id": "eq-IV-A-1",
+     "type": "equation",
+     "page": 4,
+     "original": "960"
+    },
+    {
+     "id": "eq-IV-A-2",
+     "type": "equation",
+     "page": 4,
+     "original": "hours of LibriSpeech audio"
+    },
+    {
+     "id": "eq-IV-A-3",
+     "type": "equation",
+     "page": 4,
+     "original": "[24]"
+    },
+    {
+     "id": "eq-IV-A-4",
+     "type": "equation",
+     "page": 4,
+     "original": "or"
+    },
+    {
+     "id": "eq-IV-A-5",
+     "type": "equation",
+     "page": 4,
+     "original": "60,000"
     },
     {
      "id": "p-IV-A-2",
@@ -1000,11 +1174,23 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-IV-A-2-1",
+       "original": "hours of Libri-light [25] audio, both of which are derived from the LibriVox project that contains English recordings of copyright-free audiobooks by volunteers from the Internet.",
+       "zh": "无监督预训练使用完整的 960 小时 LibriSpeech 音频 [24]，或 60,000 小时 Libri-light 音频 [25]；两者都源自 LibriVox 项目——该项目收集了互联网志愿者朗读的无版权英文有声书。"
+      }
+     ]
+    },
+    {
+     "id": "p-IV-A-3",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-IV-A-3-1",
        "original": "For supervised ﬁne-tuning, ﬁve different partitions are considered: Libri-light 10-minute, 1-hour, 10- hour splits and LibriSpeech 100-hour (train-clean-100) and 960-hour (train-clean-100, train-clean-360, train-other-500 combined) splits.",
        "zh": "监督微调考虑五种划分：Libri-light 的 10-minute、1-hour、10-hour 子集，以及 LibriSpeech 的 100-hour（train-clean-100）和 960-hour（train-clean-100、train-clean-360、train-other-500 合并）子集。"
       },
       {
-       "id": "s-IV-A-2-2",
+       "id": "s-IV-A-3-2",
        "original": "The three Libri-light splits are subsets of the the LibriSpeech training split, and each of them contain half of the audio from train-clean-* and the other from train-other-500.",
        "zh": "三个 Libri-light 子集都是 LibriSpeech 训练集的子集，且每个子集都各取一半来自 train-clean-*、另一半来自 train-other-500。"
       }
@@ -1212,16 +1398,34 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-IV-D-2-1",
-       "original": "We use the wav2letter++ [59] beam search decoder wrapped in Fairseq [60] for language model-fused decoding, which optimizes: log pCT C(Y | X) + w1 log PLM(Y ) + w2|Y |, where Y is the predicted text, |Y | is the length of the text, and w1 and w2 denote the language model weight and word score.",
+       "original": "We use the wav2letter++ [59] beam search decoder wrapped in Fairseq [60] for language model-fused decoding, which optimizes:",
+       "zh": "语言模型融合解码使用 Fairseq [60] 封装的 wav2letter++ [59] 束搜索解码器，优化目标为：log pCTC(Y | X) + w1 log PLM(Y) + w2|Y |，其中 Y 是预测文本，|Y | 是文本长度，w1、w2 分别是语言模型权重和词得分。"
+      }
+     ]
+    },
+    {
+     "id": "eq-IV-D-1",
+     "type": "equation",
+     "page": 5,
+     "original": "log pCT C(Y | X) + w1 log PLM(Y ) + w2|Y |, (4)"
+    },
+    {
+     "id": "p-IV-D-3",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-IV-D-3-1",
+       "original": "where Y is the predicted text, |Y | is the length of the text, and w1 and w2 denote the language model weight and word score.",
        "zh": "语言模型融合解码使用 Fairseq [60] 封装的 wav2letter++ [59] 束搜索解码器，优化目标为：log pCTC(Y | X) + w1 log PLM(Y) + w2|Y |，其中 Y 是预测文本，|Y | 是文本长度，w1、w2 分别是语言模型权重和词得分。"
       },
       {
-       "id": "s-IV-D-2-2",
+       "id": "s-IV-D-3-2",
        "original": "The decoding hyperparameters are searched with Ax, a Bayesian optimization toolkit,3.",
        "zh": "解码超参数用 Ax（一个贝叶斯优化工具包，见脚注 3：https://github.com/facebook/Ax）搜索。"
       },
       {
-       "id": "s-IV-D-2-3",
+       "id": "s-IV-D-3-3",
        "original": "In this work, we consider both n-gram and transformer language models trained on the ofﬁcial Librispeech language modeling data.",
        "zh": "本工作同时使用在 LibriSpeech 官方语言建模数据上训练的 n-gram 语言模型和 Transformer 语言模型。"
       }
@@ -1263,13 +1467,19 @@ globalThis.PAPER_2106_07447 = {
      "original": "pyz(i, j) = PT t=1[yt = i ∧zt = j]"
     },
     {
+     "id": "eq-IV-E-2",
+     "type": "equation",
+     "page": 5,
+     "original": "T , (5)"
+    },
+    {
      "id": "p-IV-E-2",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
        "id": "s-IV-E-2-1",
-       "original": "T , where i denotes the i-th phoneme class and j denotes the j-th k-means label class.",
+       "original": "where i denotes the i-th phoneme class and j denotes the j-th k-means label class.",
        "zh": "（分母为 T，）其中 i 表示第 i 个音素类别，j 表示第 j 个 k-means 标签类别。"
       },
       {
@@ -1280,7 +1490,7 @@ globalThis.PAPER_2106_07447 = {
      ]
     },
     {
-     "id": "eq-IV-E-2",
+     "id": "eq-IV-E-3",
      "type": "equation",
      "page": 5,
      "original": "i pyz(i, j) and py(j) = P"
@@ -1297,10 +1507,16 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-IV-E-3-2",
-       "original": "For each phone class i, we further compute the most likely target label as: z∗(i) = arg max j pyz(i, j).",
+       "original": "For each phone class i, we further compute the most likely target label as:",
        "zh": "对每个音素类别 i，进一步计算其最可能的目标标签：z*(i) = arg max j pyz(i, j)。"
       }
      ]
+    },
+    {
+     "id": "eq-IV-E-4",
+     "type": "equation",
+     "page": 5,
+     "original": "z∗(i) = arg max j pyz(i, j). (6)"
     },
     {
      "id": "p-IV-E-4",
@@ -1309,10 +1525,16 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-IV-E-4-1",
-       "original": "Likewise, for each k-means class j, we compute the most likely phone label as: y∗(j) = arg max i pyz(i, j).",
+       "original": "Likewise, for each k-means class j, we compute the most likely phone label as:",
        "zh": "类似地，对每个 k-means 类别 j，计算其最可能的音素标签：y*(j) = arg max i pyz(i, j)。"
       }
      ]
+    },
+    {
+     "id": "eq-IV-E-5",
+     "type": "equation",
+     "page": 5,
+     "original": "y∗(j) = arg max i pyz(i, j). (7)"
     },
     {
      "id": "p-IV-E-5",
@@ -1339,13 +1561,19 @@ globalThis.PAPER_2106_07447 = {
      ]
     },
     {
+     "id": "eq-IV-E-6",
+     "type": "equation",
+     "page": 5,
+     "original": "Epz(j)[py|z(y∗(j) | j)], (8)"
+    },
+    {
      "id": "p-IV-E-7",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
        "id": "s-IV-E-7-1",
-       "original": "Epz(j)[py|z(y∗(j) | j)], where py|z(i | j) = pyz(i, j)/pz(j) denotes the conditional probability of phone given a k-means label.",
+       "original": "where py|z(i | j) = pyz(i, j)/pz(j) denotes the conditional probability of phone given a k-means label.",
        "zh": "Epz(j)[py|z(y*(j) | j)]，其中 py|z(i | j) = pyz(i, j)/pz(j) 是给定 k-means 标签时音素的条件概率。"
       },
       {
@@ -1378,13 +1606,19 @@ globalThis.PAPER_2106_07447 = {
      ]
     },
     {
+     "id": "eq-IV-E-7",
+     "type": "equation",
+     "page": 5,
+     "original": "Epy(i)[pz|y(z∗(i) | i)], (9)"
+    },
+    {
      "id": "p-IV-E-9",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
        "id": "s-IV-E-9-1",
-       "original": "Epy(i)[pz|y(z∗(i) | i)], where pz|y(j | i) = pyz(i, j)/py(i) denotes the conditional probability of a k-means label given phone label.",
+       "original": "where pz|y(j | i) = pyz(i, j)/py(i) denotes the conditional probability of a k-means label given phone label.",
        "zh": "Epy(i)[pz|y(z*(i) | i)]，其中 pz|y(j | i) = pyz(i, j)/py(i) 是给定音素标签时 k-means 标签的条件概率。"
       },
       {
@@ -1394,34 +1628,64 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-IV-E-9-3",
-       "original": "When comparing target labels with the same number of units, higher cluster purity also indicates a better quality, as frames of the same phone are more likely labeled as the same k-means label class. 3) phone-normalized mutual information (PNMI): i j pyz(i, j) log pyz(i, j)",
+       "original": "When comparing target labels with the same number of units, higher cluster purity also indicates a better quality, as frames of the same phone are more likely labeled as the same k-means label class. 3) phone-normalized mutual information (PNMI):",
        "zh": "比较单元数相同的目标标签时，簇纯度越高同样说明质量越好——同一音素的帧更可能被标为同一个 k-means 簇。3）音素归一化互信息（PNMI）：对 i、j 求和 pyz(i, j) log(pyz(i, j) 与边缘概率乘积之比）。"
       }
      ]
     },
     {
-     "id": "eq-IV-E-3",
+     "id": "eq-IV-E-8",
+     "type": "equation",
+     "page": 5,
+     "original": "P i P j pyz(i, j) log pyz(i, j)"
+    },
+    {
+     "id": "eq-IV-E-9",
      "type": "equation",
      "page": 5,
      "original": "I(y; z)"
     },
     {
-     "id": "eq-IV-E-4",
+     "id": "eq-IV-E-10",
      "type": "equation",
      "page": 5,
-     "original": "py(i)pz(j) H(y) ="
+     "original": "py(i)pz(j) P"
     },
     {
-     "id": "eq-IV-E-5",
+     "id": "eq-IV-E-11",
      "type": "equation",
      "page": 5,
-     "original": "i py(i) log py(i) = H(y) −H(y | z)"
+     "original": "H(y) ="
     },
     {
-     "id": "eq-IV-E-6",
+     "id": "eq-IV-E-12",
      "type": "equation",
      "page": 5,
-     "original": "H(y) = 1 −H(y | z)"
+     "original": "i py(i) log py(i) (10)"
+    },
+    {
+     "id": "eq-IV-E-13",
+     "type": "equation",
+     "page": 5,
+     "original": "= H(y) −H(y | z)"
+    },
+    {
+     "id": "eq-IV-E-14",
+     "type": "equation",
+     "page": 5,
+     "original": "H(y) (11)"
+    },
+    {
+     "id": "eq-IV-E-15",
+     "type": "equation",
+     "page": 5,
+     "original": "= 1 −H(y | z)"
+    },
+    {
+     "id": "eq-IV-E-16",
+     "type": "equation",
+     "page": 5,
+     "original": "H(y) . (12)"
     },
     {
      "id": "p-IV-E-10",
@@ -1430,23 +1694,11 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-IV-E-10-1",
-       "original": "H(y) .",
-       "zh": "（PNMI 即互信息 I(y; z) 除以音素标签熵 H(y)。）"
-      }
-     ]
-    },
-    {
-     "id": "p-IV-E-11",
-     "type": "paragraph",
-     "page": 5,
-     "sentences": [
-      {
-       "id": "s-IV-E-11-1",
        "original": "PNMI is an information-theoretic metric that measures the percentage of uncertainty about the phone label y eliminated after observing the k-means label z.",
        "zh": "PNMI 是一个信息论指标，衡量观察到 k-means 标签 z 之后、关于音素标签 y 的不确定性被消除了百分之多少。"
       },
       {
-       "id": "s-IV-E-11-2",
+       "id": "s-IV-E-10-2",
        "original": "Higher PNMI also indicates better k-means clustering quality.",
        "zh": "PNMI 越高也说明 k-means 聚类质量越好。"
       }
@@ -1507,45 +1759,410 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-V-A-1-6",
-       "original": "The superiority of HuBERT persists across setups with different amounts of labeled data, with the only exceptions being ﬁnetuning on 100 hours of labeled data, where HuBERT LARGE is 0.1% WER higher than wav2vec 2.0 LARGE on test-clean, and HuBERT BASE is 0.1% WER higher than wav2vec 2.0 Model Unlabeled Data LM dev-clean dev-other test-clean test-other 10-min labeled 15.7 24.1 16.3 25.2 8.9 15.7 9.1 15.6 6.3 9.8 6.6 10.3 4.6 7.9 4.8 8.2 9.1 15.0 9.7 15.3 6.1 9.4 6.6 10.1 4.3 7.0 4.7 7.6 4.4 6.1 4.6 6.8 13.8 29.1 8.5 16.4 9.0 17.6 5.0 10.8 5.5 11.3 2.9 5.4 2.9 5.8 5.6 10.9 6.1 11.3 2.6 4.9 2.9 5.4 2.6 4.2 2.8 4.8 SlimIPL [54] 5.3 7.9 5.5 9.0 5.4 13.3 5.3 13.2 5.9 14.1 3.8 9.1 4.3 9.5 2.4 4.8 2.6 4.9 3.9 9.0 4.3 9.4 2.2 4.3 2.4 4.6 2.1 3.6 2.3 4.0 IPL [12] 3.19 6.14 3.72 7.11 SlimIPL [54] 2.2 4.6 2.7 5.2 Noisy Student [61] 3.9 8.8 4.2 8.6 5.0 12.1 4.0 10.9 4.5 12.1 2.7 7.9 3.4 8.0 1.9 4.0 2.0 4.0 2.7 7.8 3.4 8.1 1.8 3.7 2.1 3.9 1.7 3.0 1.9 3.5 TABLE II: Results and comparison with the literature on low resource setups (10-min, 1-hour, 10-hour, and 100-hour of labeled data).",
-       "zh": "HuBERT 的优势在不同标注数据量的设定下都成立，仅有的例外是在 100 hours 标注数据上微调时：HuBERT LARGE 在 test-clean 上比 wav2vec 2.0 LARGE 高 0.1% WER，HuBERT BASE 在 test-other 上比 wav2vec 2.0 BASE 高 0.1% WER。（Table II：低资源设定（10-min、1-hour、10-hour、100-hour 标注数据）下与文献的对比结果；表格各列为模型、无标注数据、语言模型及 dev-clean、dev-other、test-clean、test-other 的 WER，各模型行数据与原文一致：15.7 24.1 16.3 25.2；8.9 15.7 9.1 15.6；6.3 9.8 6.6 10.3；4.6 7.9 4.8 8.2；9.1 15.0 9.7 15.3；6.1 9.4 6.6 10.1；4.3 7.0 4.7 7.6；4.4 6.1 4.6 6.8；13.8 29.1；8.5 16.4；9.0 17.6；5.0 10.8 5.5 11.3；2.9 5.4 2.9 5.8；5.6 10.9 6.1 11.3；2.6 4.9 2.9 5.4；2.6 4.2 2.8 4.8；SlimIPL [54] 5.3 7.9 5.5 9.0；5.4 13.3 5.3 13.2；5.9 14.1；3.8 9.1 4.3 9.5；2.4 4.8 2.6 4.9；3.9 9.0 4.3 9.4；2.2 4.3 2.4 4.6；2.1 3.6 2.3 4.0；IPL [12] 3.19 6.14 3.72 7.11；SlimIPL [54] 2.2 4.6 2.7 5.2；Noisy Student [61] 3.9 8.8 4.2 8.6；5.0 12.1 4.0 10.9；4.5 12.1；2.7 7.9 3.4 8.0；1.9 4.0 2.0 4.0；2.7 7.8 3.4 8.1；1.8 3.7 2.1 3.9；1.7 3.0 1.9 3.5。）"
+       "original": "The superiority of HuBERT persists across setups with different amounts of labeled data, with the only exceptions being ﬁnetuning on 100 hours of labeled data, where HuBERT LARGE is 0.1% WER higher than wav2vec 2.0 LARGE on test-clean, and HuBERT BASE is 0.1% WER higher than wav2vec 2.0 Model Unlabeled Data LM dev-clean dev-other test-clean test-other 10-min labeled DiscreteBERT [51] LS-960 4-gram",
+       "zh": "HuBERT 的优势在不同标注数据量的设置下都成立，唯一例外是 100 小时标注微调时 HuBERT LARGE 在 test-clean 上比 wav2vec 2.0 LARGE 高 0.1% WER、HuBERT BASE 高 0.1% WER。（表 II 全表：10 分钟/1 小时/10 小时/100 小时四档低资源设置下与 DiscreteBERT、DeCoAR 2.0、SlimIPL、IPL、Noisy Student 等文献的对比，原始数据照录）\n（原始数据照录）\nThe superiority of HuBERT persists across setups with different amounts of labeled data, with the only exceptions being ﬁnetuning on 100 hours of labeled data, where HuBERT LARGE is 0.1% WER higher than wav2vec 2.0 LARGE on test-clean, and HuBERT BASE is 0.1% WER higher than wav2vec 2.0 Model Unlabeled Data LM dev-clean dev-other test-clean test-other 10-min labeled DiscreteBERT [51] LS-960 4-gram 15.7 24.1 16.3 25.2 wav2vec 2.0 BASE [6] LS-960 4-gram 8.9 15.7 9.1 15.6 wav2vec 2.0 LARGE [6] LL-60k 4-gram 6.3 9.8 6.6 10.3 wav2vec 2.0 LARGE [6] LL-60k Transformer 4.6 7.9 4.8 8.2 HUBERT BASE LS-960 4-gram 9.1 15.0 9.7 15.3 HUBERT LARGE LL-60k 4-gram 6.1 9.4 6.6 10.1 HUBERT LARGE LL-60k Transformer 4.3 7.0 4.7 7.6 HUBERT X-LARGE LL-60k Transformer 4.4 6.1 4.6 6.8 1-hour labeled DeCoAR 2.0 [50] LS-960 4-gram - - 13.8 29.1 DiscreteBERT [51] LS-960 4-gram 8.5 16.4 9.0 17.6 wav2vec 2.0 BASE [6] LS-960 4-gram 5.0 10.8 5.5 11.3 wav2vec 2.0 LARGE [6] LL-60k Transformer 2.9 5.4 2.9 5.8 HUBERT BASE LS-960 4-gram 5.6 10.9 6.1 11.3 HUBERT LARGE LL-60k Transformer 2.6 4.9 2.9 5.4 HUBERT X-LARGE LL-60k Transformer 2.6 4.2 2.8 4.8 10-hour labeled SlimIPL [54] LS-960 4-gram + Transformer 5.3 7.9 5.5 9.0 DeCoAR 2.0 [50] LS-960 4-gram - - 5.4 13.3 DiscreteBERT [51] LS-960 4-gram 5.3 13.2 5.9 14.1 wav2vec 2.0 BASE [6] LS-960 4-gram 3.8 9.1 4.3 9.5 wav2vec 2.0 LARGE [6] LL-60k Transformer 2.4 4.8 2.6 4.9 HUBERT BASE LS-960 4-gram 3.9 9.0 4.3 9.4 HUBERT LARGE LL-60k Transformer 2.2 4.3 2.4 4.6 HUBERT X-LARGE LL-60k Transformer 2.1 3.6 2.3 4.0 100-hour labeled IPL [12] LL-60k 4-gram + Transformer 3.19 6.14 3.72 7.11 SlimIPL [54] LS-860 4-gram + Transformer 2.2 4.6 2.7 5.2 Noisy Student [61] LS-860 LSTM 3.9 8.8 4.2 8.6 DeCoAR 2.0 [50] LS-960 4-gram - - 5.0 12.1 DiscreteBERT [51] LS-960 4-gram 4.0 10.9 4.5 12.1 wav2vec 2.0 BASE [6] LS-960 4-gram 2.7 7.9 3.4 8.0 wav2vec 2.0 LARGE [6] LL-60k Transformer 1.9 4.0 2.0 4.0 HUBERT BASE LS-960 4-gram 2.7 7.8 3.4 8.1 HUBERT LARGE LL-60k Transformer 1.8 3.7 2.1 3.9 HUBERT X-LARGE LL-60k Transformer 1.7 3.0 1.9 3.5 TABLE II: Results and comparison with the literature on low resource setups (10-min, 1-hour, 10-hour, and 100-hour of labeled data)."
       }
      ]
     },
     {
+     "id": "eq-V-A-1",
+     "type": "equation",
+     "page": 5,
+     "original": "15.7 24.1 16.3 25.2"
+    },
+    {
+     "id": "eq-V-A-2",
+     "type": "equation",
+     "page": 5,
+     "original": "wav2vec 2.0 BASE [6] LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-3",
+     "type": "equation",
+     "page": 5,
+     "original": "8.9 15.7 9.1 15.6"
+    },
+    {
+     "id": "eq-V-A-4",
+     "type": "equation",
+     "page": 5,
+     "original": "wav2vec 2.0 LARGE [6] LL-60k 4-gram"
+    },
+    {
+     "id": "eq-V-A-5",
+     "type": "equation",
+     "page": 5,
+     "original": "6.3 9.8 6.6 10.3"
+    },
+    {
+     "id": "eq-V-A-6",
+     "type": "equation",
+     "page": 5,
+     "original": "wav2vec 2.0 LARGE [6] LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-A-7",
+     "type": "equation",
+     "page": 5,
+     "original": "4.6 7.9 4.8 8.2"
+    },
+    {
+     "id": "eq-V-A-8",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT BASE LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-9",
+     "type": "equation",
+     "page": 5,
+     "original": "9.1 15.0 9.7 15.3"
+    },
+    {
+     "id": "eq-V-A-10",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT LARGE LL-60k 4-gram"
+    },
+    {
+     "id": "eq-V-A-11",
+     "type": "equation",
+     "page": 5,
+     "original": "6.1 9.4 6.6 10.1"
+    },
+    {
+     "id": "eq-V-A-12",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT LARGE LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-A-13",
+     "type": "equation",
+     "page": 5,
+     "original": "4.3 7.0 4.7 7.6"
+    },
+    {
+     "id": "eq-V-A-14",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT X-LARGE LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-A-15",
+     "type": "equation",
+     "page": 5,
+     "original": "4.4 6.1 4.6 6.8"
+    },
+    {
+     "id": "eq-V-A-16",
+     "type": "equation",
+     "page": 5,
+     "original": "1-hour labeled DeCoAR 2.0 [50] LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-17",
+     "type": "equation",
+     "page": 5,
+     "original": "- - 13.8 29.1"
+    },
+    {
+     "id": "eq-V-A-18",
+     "type": "equation",
+     "page": 5,
+     "original": "DiscreteBERT [51] LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-19",
+     "type": "equation",
+     "page": 5,
+     "original": "8.5 16.4 9.0 17.6"
+    },
+    {
+     "id": "eq-V-A-20",
+     "type": "equation",
+     "page": 5,
+     "original": "wav2vec 2.0 BASE [6] LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-21",
+     "type": "equation",
+     "page": 5,
+     "original": "5.0 10.8 5.5 11.3"
+    },
+    {
+     "id": "eq-V-A-22",
+     "type": "equation",
+     "page": 5,
+     "original": "wav2vec 2.0 LARGE [6] LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-A-23",
+     "type": "equation",
+     "page": 5,
+     "original": "2.9 5.4 2.9 5.8"
+    },
+    {
+     "id": "eq-V-A-24",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT BASE LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-25",
+     "type": "equation",
+     "page": 5,
+     "original": "5.6 10.9 6.1 11.3"
+    },
+    {
+     "id": "eq-V-A-26",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT LARGE LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-A-27",
+     "type": "equation",
+     "page": 5,
+     "original": "2.6 4.9 2.9 5.4"
+    },
+    {
+     "id": "eq-V-A-28",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT X-LARGE LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-A-29",
+     "type": "equation",
+     "page": 5,
+     "original": "2.6 4.2 2.8 4.8"
+    },
+    {
+     "id": "eq-V-A-30",
+     "type": "equation",
+     "page": 5,
+     "original": "10-hour labeled SlimIPL [54] LS-960 4-gram + Transformer"
+    },
+    {
+     "id": "eq-V-A-31",
+     "type": "equation",
+     "page": 5,
+     "original": "5.3 7.9 5.5 9.0"
+    },
+    {
+     "id": "eq-V-A-32",
+     "type": "equation",
+     "page": 5,
+     "original": "DeCoAR 2.0 [50] LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-33",
+     "type": "equation",
+     "page": 5,
+     "original": "- - 5.4 13.3"
+    },
+    {
+     "id": "eq-V-A-34",
+     "type": "equation",
+     "page": 5,
+     "original": "DiscreteBERT [51] LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-35",
+     "type": "equation",
+     "page": 5,
+     "original": "5.3 13.2 5.9 14.1"
+    },
+    {
+     "id": "eq-V-A-36",
+     "type": "equation",
+     "page": 5,
+     "original": "wav2vec 2.0 BASE [6] LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-37",
+     "type": "equation",
+     "page": 5,
+     "original": "3.8 9.1 4.3 9.5"
+    },
+    {
+     "id": "eq-V-A-38",
+     "type": "equation",
+     "page": 5,
+     "original": "wav2vec 2.0 LARGE [6] LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-A-39",
+     "type": "equation",
+     "page": 5,
+     "original": "2.4 4.8 2.6 4.9"
+    },
+    {
+     "id": "eq-V-A-40",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT BASE LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-41",
+     "type": "equation",
+     "page": 5,
+     "original": "3.9 9.0 4.3 9.4"
+    },
+    {
+     "id": "eq-V-A-42",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT LARGE LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-A-43",
+     "type": "equation",
+     "page": 5,
+     "original": "2.2 4.3 2.4 4.6"
+    },
+    {
+     "id": "eq-V-A-44",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT X-LARGE LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-A-45",
+     "type": "equation",
+     "page": 5,
+     "original": "2.1 3.6 2.3 4.0"
+    },
+    {
+     "id": "eq-V-A-46",
+     "type": "equation",
+     "page": 5,
+     "original": "100-hour labeled IPL [12] LL-60k 4-gram + Transformer"
+    },
+    {
+     "id": "eq-V-A-47",
+     "type": "equation",
+     "page": 5,
+     "original": "3.19 6.14 3.72 7.11"
+    },
+    {
+     "id": "eq-V-A-48",
+     "type": "equation",
+     "page": 5,
+     "original": "SlimIPL [54] LS-860 4-gram + Transformer"
+    },
+    {
+     "id": "eq-V-A-49",
+     "type": "equation",
+     "page": 5,
+     "original": "2.2 4.6 2.7 5.2"
+    },
+    {
+     "id": "eq-V-A-50",
+     "type": "equation",
+     "page": 5,
+     "original": "Noisy Student [61] LS-860 LSTM"
+    },
+    {
+     "id": "eq-V-A-51",
+     "type": "equation",
+     "page": 5,
+     "original": "3.9 8.8 4.2 8.6"
+    },
+    {
+     "id": "eq-V-A-52",
+     "type": "equation",
+     "page": 5,
+     "original": "DeCoAR 2.0 [50] LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-53",
+     "type": "equation",
+     "page": 5,
+     "original": "- - 5.0 12.1"
+    },
+    {
+     "id": "eq-V-A-54",
+     "type": "equation",
+     "page": 5,
+     "original": "DiscreteBERT [51] LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-55",
+     "type": "equation",
+     "page": 5,
+     "original": "4.0 10.9 4.5 12.1"
+    },
+    {
+     "id": "eq-V-A-56",
+     "type": "equation",
+     "page": 5,
+     "original": "wav2vec 2.0 BASE [6] LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-57",
+     "type": "equation",
+     "page": 5,
+     "original": "2.7 7.9 3.4 8.0"
+    },
+    {
+     "id": "eq-V-A-58",
+     "type": "equation",
+     "page": 5,
+     "original": "wav2vec 2.0 LARGE [6] LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-A-59",
+     "type": "equation",
+     "page": 5,
+     "original": "1.9 4.0 2.0 4.0"
+    },
+    {
+     "id": "eq-V-A-60",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT BASE LS-960 4-gram"
+    },
+    {
+     "id": "eq-V-A-61",
+     "type": "equation",
+     "page": 5,
+     "original": "2.7 7.8 3.4 8.1"
+    },
+    {
+     "id": "eq-V-A-62",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT LARGE LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-A-63",
+     "type": "equation",
+     "page": 5,
+     "original": "1.8 3.7 2.1 3.9"
+    },
+    {
+     "id": "eq-V-A-64",
+     "type": "equation",
+     "page": 5,
+     "original": "HUBERT X-LARGE LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-A-65",
+     "type": "equation",
+     "page": 5,
+     "original": "1.7 3.0 1.9 3.5"
+    },
+    {
      "id": "p-V-A-2",
      "type": "paragraph",
-     "page": 6,
+     "page": 5,
      "sentences": [
       {
        "id": "s-V-A-2-1",
-       "original": "BASE on test-other.",
-       "zh": "（接上句，即 test-other 上的 BASE 对比。）"
-      },
-      {
-       "id": "s-V-A-2-2",
-       "original": "In addition, HuBERT also outperforms DiscreteBERT by a large margin in all setups, while both are trained with a virtually identical objective - masked prediction of discovered units.",
-       "zh": "此外，HuBERT 在所有设定下都大幅超过 DiscreteBERT，尽管两者的训练目标几乎相同——都是对发现的单元做掩码预测。"
-      },
-      {
-       "id": "s-V-A-2-3",
-       "original": "The considerable performance gap suggests two things.",
-       "zh": "这一巨大的性能差距说明了两点。"
-      },
-      {
-       "id": "s-V-A-2-4",
-       "original": "First, using waveform as the input to the model is crucial for avoiding loss of information during quantization.",
-       "zh": "第一，用波形作为模型输入对于避免量化过程中的信息损失至关重要。"
-      },
-      {
-       "id": "s-V-A-2-5",
-       "original": "Second, while vq-wav2vec [5], the units that DiscreteBERT uses for training, may discover better units than k-means clustering of MFCC features, the proposed iterative reﬁnement beneﬁts from the improving HuBERT model and learn better units eventually.",
-       "zh": "第二，尽管 DiscreteBERT 所用的 vq-wav2vec [5] 单元可能比 MFCC 特征的 k-means 聚类发现更好的单元，但我们提出的迭代精炼能受益于不断改进的 HuBERT 模型，最终学到更好的单元。"
-      },
-      {
-       "id": "s-V-A-2-6",
-       "original": "We will verify these statements in the ablation study sections.",
-       "zh": "我们将在消融研究部分验证这些论断。"
+       "original": "TABLE II: Results and comparison with the literature on low resource setups (10-min, 1-hour, 10-hour, and 100-hour of labeled data).",
+       "zh": "HuBERT 的优势在不同标注数据量的设置下都成立，唯一例外是 100 小时标注微调时 HuBERT LARGE 在 test-clean 上比 wav2vec 2.0 LARGE 高 0.1% WER、HuBERT BASE 高 0.1% WER。（表 II 全表：10 分钟/1 小时/10 小时/100 小时四档低资源设置下与 DiscreteBERT、DeCoAR 2.0、SlimIPL、IPL、Noisy Student 等文献的对比，原始数据照录）\n（原始数据照录）\nThe superiority of HuBERT persists across setups with different amounts of labeled data, with the only exceptions being ﬁnetuning on 100 hours of labeled data, where HuBERT LARGE is 0.1% WER higher than wav2vec 2.0 LARGE on test-clean, and HuBERT BASE is 0.1% WER higher than wav2vec 2.0 Model Unlabeled Data LM dev-clean dev-other test-clean test-other 10-min labeled DiscreteBERT [51] LS-960 4-gram 15.7 24.1 16.3 25.2 wav2vec 2.0 BASE [6] LS-960 4-gram 8.9 15.7 9.1 15.6 wav2vec 2.0 LARGE [6] LL-60k 4-gram 6.3 9.8 6.6 10.3 wav2vec 2.0 LARGE [6] LL-60k Transformer 4.6 7.9 4.8 8.2 HUBERT BASE LS-960 4-gram 9.1 15.0 9.7 15.3 HUBERT LARGE LL-60k 4-gram 6.1 9.4 6.6 10.1 HUBERT LARGE LL-60k Transformer 4.3 7.0 4.7 7.6 HUBERT X-LARGE LL-60k Transformer 4.4 6.1 4.6 6.8 1-hour labeled DeCoAR 2.0 [50] LS-960 4-gram - - 13.8 29.1 DiscreteBERT [51] LS-960 4-gram 8.5 16.4 9.0 17.6 wav2vec 2.0 BASE [6] LS-960 4-gram 5.0 10.8 5.5 11.3 wav2vec 2.0 LARGE [6] LL-60k Transformer 2.9 5.4 2.9 5.8 HUBERT BASE LS-960 4-gram 5.6 10.9 6.1 11.3 HUBERT LARGE LL-60k Transformer 2.6 4.9 2.9 5.4 HUBERT X-LARGE LL-60k Transformer 2.6 4.2 2.8 4.8 10-hour labeled SlimIPL [54] LS-960 4-gram + Transformer 5.3 7.9 5.5 9.0 DeCoAR 2.0 [50] LS-960 4-gram - - 5.4 13.3 DiscreteBERT [51] LS-960 4-gram 5.3 13.2 5.9 14.1 wav2vec 2.0 BASE [6] LS-960 4-gram 3.8 9.1 4.3 9.5 wav2vec 2.0 LARGE [6] LL-60k Transformer 2.4 4.8 2.6 4.9 HUBERT BASE LS-960 4-gram 3.9 9.0 4.3 9.4 HUBERT LARGE LL-60k Transformer 2.2 4.3 2.4 4.6 HUBERT X-LARGE LL-60k Transformer 2.1 3.6 2.3 4.0 100-hour labeled IPL [12] LL-60k 4-gram + Transformer 3.19 6.14 3.72 7.11 SlimIPL [54] LS-860 4-gram + Transformer 2.2 4.6 2.7 5.2 Noisy Student [61] LS-860 LSTM 3.9 8.8 4.2 8.6 DeCoAR 2.0 [50] LS-960 4-gram - - 5.0 12.1 DiscreteBERT [51] LS-960 4-gram 4.0 10.9 4.5 12.1 wav2vec 2.0 BASE [6] LS-960 4-gram 2.7 7.9 3.4 8.0 wav2vec 2.0 LARGE [6] LL-60k Transformer 1.9 4.0 2.0 4.0 HUBERT BASE LS-960 4-gram 2.7 7.8 3.4 8.1 HUBERT LARGE LL-60k Transformer 1.8 3.7 2.1 3.9 HUBERT X-LARGE LL-60k Transformer 1.7 3.0 1.9 3.5 TABLE II: Results and comparison with the literature on low resource setups (10-min, 1-hour, 10-hour, and 100-hour of labeled data)."
       }
      ]
     },
@@ -1556,13 +2173,33 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-V-A-3-1",
-       "original": "We report results of ﬁne-tuning HuBERT models on the full 960 hours of Librispeech data and compare with the literature in Table III.",
-       "zh": "我们在完整 960 hours 的 Librispeech 数据上微调 HuBERT 模型，并在 Table III 中与文献对比。"
+       "original": "BASE on test-other.",
+       "zh": "（接上句，即 test-other 上的 BASE 对比。）"
       },
       {
        "id": "s-V-A-3-2",
-       "original": "Prior studies using additional unpaired speech are classiﬁed into:",
-       "zh": "使用额外不成对语音的既往研究可分为："
+       "original": "In addition, HuBERT also outperforms DiscreteBERT by a large margin in all setups, while both are trained with a virtually identical objective - masked prediction of discovered units.",
+       "zh": "此外，HuBERT 在所有设定下都大幅超过 DiscreteBERT，尽管两者的训练目标几乎相同——都是对发现的单元做掩码预测。"
+      },
+      {
+       "id": "s-V-A-3-3",
+       "original": "The considerable performance gap suggests two things.",
+       "zh": "这一巨大的性能差距说明了两点。"
+      },
+      {
+       "id": "s-V-A-3-4",
+       "original": "First, using waveform as the input to the model is crucial for avoiding loss of information during quantization.",
+       "zh": "第一，用波形作为模型输入对于避免量化过程中的信息损失至关重要。"
+      },
+      {
+       "id": "s-V-A-3-5",
+       "original": "Second, while vq-wav2vec [5], the units that DiscreteBERT uses for training, may discover better units than k-means clustering of MFCC features, the proposed iterative reﬁnement beneﬁts from the improving HuBERT model and learn better units eventually.",
+       "zh": "第二，尽管 DiscreteBERT 所用的 vq-wav2vec [5] 单元可能比 MFCC 特征的 k-means 聚类发现更好的单元，但我们提出的迭代精炼能受益于不断改进的 HuBERT 模型，最终学到更好的单元。"
+      },
+      {
+       "id": "s-V-A-3-6",
+       "original": "We will verify these statements in the ablation study sections.",
+       "zh": "我们将在消融研究部分验证这些论断。"
       }
      ]
     },
@@ -1573,8 +2210,13 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-V-A-4-1",
-       "original": "1) self-training: ﬁrst train an ASR on labeled data to annotate unlabeled speech, and then combine both golden and ASR-annotated text-speech pairs for supervised training. 2) pre-training: ﬁrst use unlabeled speech for pre-training a model, and then ﬁne-tune the model on labeled data with a supervised training objective.",
-       "zh": "1）自训练：先在标注数据上训练一个 ASR 为无标注语音打标，再把黄金标注与 ASR 标注的文本-语音对合并做监督训练。2）预训练：先用无标注语音预训练模型，再用监督训练目标在标注数据上微调。"
+       "original": "We report results of ﬁne-tuning HuBERT models on the full 960 hours of Librispeech data and compare with the literature in Table III.",
+       "zh": "我们在完整 960 hours 的 Librispeech 数据上微调 HuBERT 模型，并在 Table III 中与文献对比。"
+      },
+      {
+       "id": "s-V-A-4-2",
+       "original": "Prior studies using additional unpaired speech are classiﬁed into:",
+       "zh": "使用额外不成对语音的既往研究可分为："
       }
      ]
     },
@@ -1585,21 +2227,33 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-V-A-5-1",
+       "original": "1) self-training: ﬁrst train an ASR on labeled data to annotate unlabeled speech, and then combine both golden and ASR-annotated text-speech pairs for supervised training. 2) pre-training: ﬁrst use unlabeled speech for pre-training a model, and then ﬁne-tune the model on labeled data with a supervised training objective.",
+       "zh": "1）自训练：先在标注数据上训练一个 ASR 为无标注语音打标，再把黄金标注与 ASR 标注的文本-语音对合并做监督训练。2）预训练：先用无标注语音预训练模型，再用监督训练目标在标注数据上微调。"
+      }
+     ]
+    },
+    {
+     "id": "p-V-A-6",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-V-A-6-1",
        "original": "3) pre-training + self-training: ﬁrst pre-train and ﬁne-tune a model, and then use it to annotate unlabeled speech for self-training combined with supervised data.",
        "zh": "3）预训练 + 自训练：先预训练并微调一个模型，再用它为无标注语音打标，与监督数据合并做自训练。"
       },
       {
-       "id": "s-V-A-5-2",
+       "id": "s-V-A-6-2",
        "original": "HuBERT outperforms the state-of-the-art supervised and selftraining methods and is on par with the two best pre-training results in the literature; both are based on wav2vec 2.0 contrastive learning.",
        "zh": "HuBERT 超过了最先进的监督方法和自训练方法，并与文献中最好的两个预训练结果持平——这两者都基于 wav2vec 2.0 对比学习。"
       },
       {
-       "id": "s-V-A-5-3",
+       "id": "s-V-A-6-3",
        "original": "In contrast, it lags behind methods combining pre-training with self-training.",
        "zh": "相比之下，它落后于「预训练 + 自训练」相结合的方法。"
       },
       {
-       "id": "s-V-A-5-4",
+       "id": "s-V-A-6-4",
        "original": "However, as observed in [63] and [40], we expect that HuBERT can achieve comparable or better performance after combining with self-training, since the pre-trained HuBERT model is on par or better than the pre-trained model those two methods use for pseudo labeling.",
        "zh": "不过，如 [63] 和 [40] 所观察到的，我们预期 HuBERT 与自训练结合后能取得相当或更好的性能，因为预训练的 HuBERT 模型与那两个方法用于伪标注的预训练模型持平或更好。"
       }
@@ -1629,53 +2283,227 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-V-B-1-2",
-       "original": "We start with probing the stability of the k-means clustering algorithm concerning different numbers of clusters and Model Unlabeled Data LM dev-clean dev-other test-clean test-other Superivsed Conformer L [62] 1.9 3.9 Self-Training IPL [12] 1.85 3.26 2.10 4.01 Noisy Student [61] LV-60k 1.6 3.4 1.7 3.4 Pre-Training 1.6 3.0 1.8 3.3 pre-trained Conformer XXL [40] 1.5 3.0 1.5 3.1 Pre-Training + Self-Training wav2vec 2.0 + self-training [63] 1.1 2.7 1.5 3.1 pre-trained Conformer XXL + Noisy Student [40] 1.3 2.6 1.4 2.6 This work (Pre-Training) 1.5 3.0 1.9 3.3 1.5 2.5 1.8 2.9 TABLE III: Comparison with the literature on high resource setups using all 960 hours of labeled LibriSpeech data. different sizes of its training data.",
-       "zh": "我们首先考察 k-means 聚类算法在不同簇数与不同训练数据量下的稳定性。（Table III：使用全部 960 小时 LibriSpeech 标注数据的高资源设定下与文献的对比；表格各列为模型、无标注数据、语言模型及 dev-clean、dev-other、test-clean、test-other 的 WER，各行数据与原文一致：监督 Conformer L [62] 1.9 3.9；自训练 IPL [12] 1.85 3.26 2.10 4.01；Noisy Student [61]（LV-60k）1.6 3.4 1.7 3.4；纯预训练 1.6 3.0 1.8 3.3；预训练 Conformer XXL [40] 1.5 3.0 1.5 3.1；预训练+自训练 wav2vec 2.0 + self-training [63] 1.1 2.7 1.5 3.1；预训练 Conformer XXL + Noisy Student [40] 1.3 2.6 1.4 2.6；本工作（纯预训练）1.5 3.0 1.9 3.3 与 1.5 2.5 1.8 2.9。）"
+       "original": "We start with probing the stability of the k-means clustering algorithm concerning different numbers of clusters and Model Unlabeled Data LM dev-clean dev-other test-clean test-other Superivsed Conformer L [62] LSTM",
+       "zh": "我们首先考察 k-means 聚类算法在聚类数与训练数据规模变化下的稳定性。（表 III 高资源对比全表：监督 Conformer L、IPL、Noisy Student、wav2vec 2.0 LARGE、预训练 Conformer XXL、wav2vec 2.0+自训练、Conformer XXL+Noisy Student 与本文 HUBERT LARGE/X-LARGE，原始数据照录）\n（原始数据照录）\nWe start with probing the stability of the k-means clustering algorithm concerning different numbers of clusters and Model Unlabeled Data LM dev-clean dev-other test-clean test-other Superivsed Conformer L [62] LSTM 1.9 3.9 Self-Training IPL [12] LL-60k 4-gram + Transformer 1.85 3.26 2.10 4.01 Noisy Student [61] LV-60k LSTM 1.6 3.4 1.7 3.4 Pre-Training wav2vec 2.0 LARGE [6] LL-60k Transformer 1.6 3.0 1.8 3.3 pre-trained Conformer XXL [40] LL-60k LSTM 1.5 3.0 1.5 3.1 Pre-Training + Self-Training wav2vec 2.0 + self-training [63] LL-60k Transformer 1.1 2.7 1.5 3.1 pre-trained Conformer XXL + Noisy Student [40] LL-60k LSTM 1.3 2.6 1.4 2.6 This work (Pre-Training) HUBERT LARGE LL-60k Transformer 1.5 3.0 1.9 3.3 HUBERT X-LARGE LL-60k Transformer 1.5 2.5 1.8 2.9 TABLE III: Comparison with the literature on high resource setups using all 960 hours of labeled LibriSpeech data. different sizes of its training data."
+      }
+     ]
+    },
+    {
+     "id": "eq-V-B-1",
+     "type": "equation",
+     "page": 6,
+     "original": "1.9 3.9"
+    },
+    {
+     "id": "eq-V-B-2",
+     "type": "equation",
+     "page": 6,
+     "original": "Self-Training IPL [12] LL-60k 4-gram + Transformer"
+    },
+    {
+     "id": "eq-V-B-3",
+     "type": "equation",
+     "page": 6,
+     "original": "1.85 3.26 2.10 4.01"
+    },
+    {
+     "id": "eq-V-B-4",
+     "type": "equation",
+     "page": 6,
+     "original": "Noisy Student [61] LV-60k LSTM"
+    },
+    {
+     "id": "eq-V-B-5",
+     "type": "equation",
+     "page": 6,
+     "original": "1.6 3.4 1.7 3.4"
+    },
+    {
+     "id": "eq-V-B-6",
+     "type": "equation",
+     "page": 6,
+     "original": "Pre-Training wav2vec 2.0 LARGE [6] LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-B-7",
+     "type": "equation",
+     "page": 6,
+     "original": "1.6 3.0 1.8 3.3"
+    },
+    {
+     "id": "eq-V-B-8",
+     "type": "equation",
+     "page": 6,
+     "original": "pre-trained Conformer XXL [40] LL-60k LSTM"
+    },
+    {
+     "id": "eq-V-B-9",
+     "type": "equation",
+     "page": 6,
+     "original": "1.5 3.0 1.5 3.1"
+    },
+    {
+     "id": "p-V-B-2",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-V-B-2-1",
+       "original": "Pre-Training + Self-Training wav2vec 2.0 + self-training [63] LL-60k Transformer",
+       "zh": "我们首先考察 k-means 聚类算法在聚类数与训练数据规模变化下的稳定性。（表 III 高资源对比全表：监督 Conformer L、IPL、Noisy Student、wav2vec 2.0 LARGE、预训练 Conformer XXL、wav2vec 2.0+自训练、Conformer XXL+Noisy Student 与本文 HUBERT LARGE/X-LARGE，原始数据照录）\n（原始数据照录）\nWe start with probing the stability of the k-means clustering algorithm concerning different numbers of clusters and Model Unlabeled Data LM dev-clean dev-other test-clean test-other Superivsed Conformer L [62] LSTM 1.9 3.9 Self-Training IPL [12] LL-60k 4-gram + Transformer 1.85 3.26 2.10 4.01 Noisy Student [61] LV-60k LSTM 1.6 3.4 1.7 3.4 Pre-Training wav2vec 2.0 LARGE [6] LL-60k Transformer 1.6 3.0 1.8 3.3 pre-trained Conformer XXL [40] LL-60k LSTM 1.5 3.0 1.5 3.1 Pre-Training + Self-Training wav2vec 2.0 + self-training [63] LL-60k Transformer 1.1 2.7 1.5 3.1 pre-trained Conformer XXL + Noisy Student [40] LL-60k LSTM 1.3 2.6 1.4 2.6 This work (Pre-Training) HUBERT LARGE LL-60k Transformer 1.5 3.0 1.9 3.3 HUBERT X-LARGE LL-60k Transformer 1.5 2.5 1.8 2.9 TABLE III: Comparison with the literature on high resource setups using all 960 hours of labeled LibriSpeech data. different sizes of its training data."
+      }
+     ]
+    },
+    {
+     "id": "eq-V-B-10",
+     "type": "equation",
+     "page": 6,
+     "original": "1.1 2.7 1.5 3.1"
+    },
+    {
+     "id": "p-V-B-3",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-V-B-3-1",
+       "original": "pre-trained Conformer XXL + Noisy Student [40] LL-60k LSTM",
+       "zh": "我们首先考察 k-means 聚类算法在聚类数与训练数据规模变化下的稳定性。（表 III 高资源对比全表：监督 Conformer L、IPL、Noisy Student、wav2vec 2.0 LARGE、预训练 Conformer XXL、wav2vec 2.0+自训练、Conformer XXL+Noisy Student 与本文 HUBERT LARGE/X-LARGE，原始数据照录）\n（原始数据照录）\nWe start with probing the stability of the k-means clustering algorithm concerning different numbers of clusters and Model Unlabeled Data LM dev-clean dev-other test-clean test-other Superivsed Conformer L [62] LSTM 1.9 3.9 Self-Training IPL [12] LL-60k 4-gram + Transformer 1.85 3.26 2.10 4.01 Noisy Student [61] LV-60k LSTM 1.6 3.4 1.7 3.4 Pre-Training wav2vec 2.0 LARGE [6] LL-60k Transformer 1.6 3.0 1.8 3.3 pre-trained Conformer XXL [40] LL-60k LSTM 1.5 3.0 1.5 3.1 Pre-Training + Self-Training wav2vec 2.0 + self-training [63] LL-60k Transformer 1.1 2.7 1.5 3.1 pre-trained Conformer XXL + Noisy Student [40] LL-60k LSTM 1.3 2.6 1.4 2.6 This work (Pre-Training) HUBERT LARGE LL-60k Transformer 1.5 3.0 1.9 3.3 HUBERT X-LARGE LL-60k Transformer 1.5 2.5 1.8 2.9 TABLE III: Comparison with the literature on high resource setups using all 960 hours of labeled LibriSpeech data. different sizes of its training data."
+      }
+     ]
+    },
+    {
+     "id": "eq-V-B-11",
+     "type": "equation",
+     "page": 6,
+     "original": "1.3 2.6 1.4 2.6"
+    },
+    {
+     "id": "eq-V-B-12",
+     "type": "equation",
+     "page": 6,
+     "original": "This work (Pre-Training) HUBERT LARGE LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-B-13",
+     "type": "equation",
+     "page": 6,
+     "original": "1.5 3.0 1.9 3.3"
+    },
+    {
+     "id": "eq-V-B-14",
+     "type": "equation",
+     "page": 6,
+     "original": "HUBERT X-LARGE LL-60k Transformer"
+    },
+    {
+     "id": "eq-V-B-15",
+     "type": "equation",
+     "page": 6,
+     "original": "1.5 2.5 1.8 2.9"
+    },
+    {
+     "id": "p-V-B-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-V-B-4-1",
+       "original": "TABLE III: Comparison with the literature on high resource setups using all 960 hours of labeled LibriSpeech data. different sizes of its training data.",
+       "zh": "我们首先考察 k-means 聚类算法在聚类数与训练数据规模变化下的稳定性。（表 III 高资源对比全表：监督 Conformer L、IPL、Noisy Student、wav2vec 2.0 LARGE、预训练 Conformer XXL、wav2vec 2.0+自训练、Conformer XXL+Noisy Student 与本文 HUBERT LARGE/X-LARGE，原始数据照录）\n（原始数据照录）\nWe start with probing the stability of the k-means clustering algorithm concerning different numbers of clusters and Model Unlabeled Data LM dev-clean dev-other test-clean test-other Superivsed Conformer L [62] LSTM 1.9 3.9 Self-Training IPL [12] LL-60k 4-gram + Transformer 1.85 3.26 2.10 4.01 Noisy Student [61] LV-60k LSTM 1.6 3.4 1.7 3.4 Pre-Training wav2vec 2.0 LARGE [6] LL-60k Transformer 1.6 3.0 1.8 3.3 pre-trained Conformer XXL [40] LL-60k LSTM 1.5 3.0 1.5 3.1 Pre-Training + Self-Training wav2vec 2.0 + self-training [63] LL-60k Transformer 1.1 2.7 1.5 3.1 pre-trained Conformer XXL + Noisy Student [40] LL-60k LSTM 1.3 2.6 1.4 2.6 This work (Pre-Training) HUBERT LARGE LL-60k Transformer 1.5 3.0 1.9 3.3 HUBERT X-LARGE LL-60k Transformer 1.5 2.5 1.8 2.9 TABLE III: Comparison with the literature on high resource setups using all 960 hours of labeled LibriSpeech data. different sizes of its training data."
       },
       {
-       "id": "s-V-B-1-3",
+       "id": "s-V-B-4-2",
        "original": "Two features are considered: 39-dimensional MFCC features and 768-dimensional output from the 6-th transformer layer of the ﬁrst iteration HuBERT- BASE model.",
        "zh": "考虑两种特征：39 维 MFCC 特征，以及第一轮 HuBERT-BASE 模型第 6 层 Transformer 的 768 维输出。"
       },
       {
-       "id": "s-V-B-1-4",
+       "id": "s-V-B-4-3",
        "original": "These two features are used to produce cluster assignments for the ﬁrst and the second iteration HUBERT training, respectively.",
        "zh": "这两种特征分别用于生成第一轮和第二轮 HuBERT 训练的簇分配。"
       }
      ]
     },
     {
-     "id": "p-V-B-2",
+     "id": "p-V-B-5",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-V-B-2-1",
-       "original": "For k-means clustering, we consider K = {100, 500} clusters ﬁtted on {1, 10, 100} hours of speech sampled from the LibriSpeech training split.",
+       "id": "s-V-B-5-1",
+       "original": "For k-means clustering, we consider K",
+       "zh": "k-means 聚类考虑 K = {100, 500} 个簇，分别拟合在从 LibriSpeech 训练集采样的 {1, 10, 100} 小时语音上。"
+      }
+     ]
+    },
+    {
+     "id": "eq-V-B-16",
+     "type": "equation",
+     "page": 7,
+     "original": "= {100, 500}"
+    },
+    {
+     "id": "p-V-B-6",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-V-B-6-1",
+       "original": "clusters ﬁtted on {1, 10, 100} hours of speech sampled from the LibriSpeech training split.",
        "zh": "k-means 聚类考虑 K = {100, 500} 个簇，分别拟合在从 LibriSpeech 训练集采样的 {1, 10, 100} 小时语音上。"
       },
       {
-       "id": "s-V-B-2-2",
+       "id": "s-V-B-6-2",
        "original": "Each combination of the hyperparameters and the features are trained for 10 trials, and the mean and standard deviation of the supervised PNMI metric on the development set (combining dev-clean and devother from LibriSpeech) is reported in Table IV.",
        "zh": "每种超参数与特征的组合训练 10 次，报告开发集（合并 LibriSpeech 的 dev-clean 和 dev-other）上监督 PNMI 指标的均值和标准差，见 Table IV。"
       },
       {
-       "id": "s-V-B-2-3",
+       "id": "s-V-B-6-3",
        "original": "The results show that the k-means clustering is reasonably stable given the small standard deviations across different hyperparameters and features.",
        "zh": "结果表明，在不同超参数和特征下，k-means 聚类的标准差都很小，相当稳定。"
       },
       {
-       "id": "s-V-B-2-4",
+       "id": "s-V-B-6-4",
        "original": "Furthermore, increasing the amount of data used for ﬁtting k-means models improves PNMI in general, but the gain is only as much as 0.012, suggesting the feasibility of using k-means for unit discovery even with limited CPU memory relative to the feature matrix size.",
        "zh": "此外，增加拟合 k-means 所用的数据量总体能提升 PNMI，但最大增益只有 0.012——这说明即使 CPU 内存相对特征矩阵大小有限，用 k-means 做单元发现也是可行的。"
       },
       {
-       "id": "s-V-B-2-5",
-       "original": "Lastly, the PNMI score is much higher when clustering on HuBERT features than clustering on MFCC features, and the gap is even larger with 500 clusters, indicating that iterative reﬁnement signiﬁcantly improves the clustering quality. feature PNMI (mean ± std) with K-means Training Size = MFCC 100 500 BASE-it1-L6 100 500 TABLE IV: Stability of K-means as an unsupervised unit discovery algorithm with respect to different features, numbers of clusters, and training data sizes.",
-       "zh": "最后，在 HuBERT 特征上聚类的 PNMI 远高于在 MFCC 特征上聚类，且 500 簇时差距更大，说明迭代精炼显著提升了聚类质量。（Table IV：k-means 作为无监督单元发现算法的稳定性；表格为不同特征（MFCC 与 BASE-it1-L6）、簇数（100 与 500）与训练数据量（1、10、100 小时）下的 PNMI 均值 ± 标准差。）"
+       "id": "s-V-B-6-5",
+       "original": "Lastly, the PNMI score is much higher when clustering on HuBERT features than clustering on MFCC features, and the gap is even larger with 500 clusters, indicating that iterative reﬁnement signiﬁcantly improves the clustering quality. feature C PNMI (mean ± std) with K-means Training Size = 1h 10h 100h MFCC",
+       "zh": "最后，在 HuBERT 特征上聚类的 PNMI 远高于在 MFCC 特征上聚类，且 500 类时差距更大，说明迭代精炼显著提升了聚类质量。（表 IV 全表：feature × 聚类数 × k-means 训练规模（1h/10h/100h）的 PNMI 均值±标准差，原始数据照录）\n（原始数据照录）\nLastly, the PNMI score is much higher when clustering on HuBERT features than clustering on MFCC features, and the gap is even larger with 500 clusters, indicating that iterative reﬁnement signiﬁcantly improves the clustering quality. feature C PNMI (mean ± std) with K-means Training Size = 1h 10h 100h MFCC 100 0.251 ± 0.001 0.253 ± 0.001 0.253 ± 0.001 500 0.283 ± 0.001 0.285 ± 0.000 0.287 ± 0.001 BASE-it1-L6 100 0.563 ± 0.012 0.561 ± 0.012 0.575 ± 0.008 500 0.680 ± 0.005 0.684 ± 0.003 0.686 ± 0.004 TABLE IV: Stability of K-means as an unsupervised unit discovery algorithm with respect to different features, numbers of clusters, and training data sizes."
+      }
+     ]
+    },
+    {
+     "id": "eq-V-B-17",
+     "type": "equation",
+     "page": 7,
+     "original": "100 0.251 ± 0.001 0.253 ± 0.001 0.253 ± 0.001 500 0.283 ± 0.001 0.285 ± 0.000 0.287 ± 0.001"
+    },
+    {
+     "id": "eq-V-B-18",
+     "type": "equation",
+     "page": 7,
+     "original": "BASE-it1-L6"
+    },
+    {
+     "id": "eq-V-B-19",
+     "type": "equation",
+     "page": 7,
+     "original": "100 0.563 ± 0.012 0.561 ± 0.012 0.575 ± 0.008 500 0.680 ± 0.005 0.684 ± 0.003 0.686 ± 0.004"
+    },
+    {
+     "id": "p-V-B-7",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-V-B-7-1",
+       "original": "TABLE IV: Stability of K-means as an unsupervised unit discovery algorithm with respect to different features, numbers of clusters, and training data sizes.",
+       "zh": "最后，在 HuBERT 特征上聚类的 PNMI 远高于在 MFCC 特征上聚类，且 500 类时差距更大，说明迭代精炼显著提升了聚类质量。（表 IV 全表：feature × 聚类数 × k-means 训练规模（1h/10h/100h）的 PNMI 均值±标准差，原始数据照录）\n（原始数据照录）\nLastly, the PNMI score is much higher when clustering on HuBERT features than clustering on MFCC features, and the gap is even larger with 500 clusters, indicating that iterative reﬁnement signiﬁcantly improves the clustering quality. feature C PNMI (mean ± std) with K-means Training Size = 1h 10h 100h MFCC 100 0.251 ± 0.001 0.253 ± 0.001 0.253 ± 0.001 500 0.283 ± 0.001 0.285 ± 0.000 0.287 ± 0.001 BASE-it1-L6 100 0.563 ± 0.012 0.561 ± 0.012 0.575 ± 0.008 500 0.680 ± 0.005 0.684 ± 0.003 0.686 ± 0.004 TABLE IV: Stability of K-means as an unsupervised unit discovery algorithm with respect to different features, numbers of clusters, and training data sizes."
       },
       {
-       "id": "s-V-B-2-6",
+       "id": "s-V-B-7-2",
        "original": "PNMI stands for phonenormalized mutual information.",
        "zh": "PNMI 即音素归一化互信息（phone-normalized mutual information）。"
       }
@@ -1718,8 +2546,8 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-V-C-2-1",
-       "original": "Cluster Purity (%)",
-       "zh": "（图中纵轴：）簇纯度（%）"
+       "original": "C=100, BASE-it1 C=500, BASE-it1 C=1000, BASE-it1 Cluster Purity (%) C=100, BASE-it2 C=500, BASE-it2 C=1000, BASE-it2",
+       "zh": "（图 5 标签：C=100/500/1000 聚类数下 BASE-it1 与 BASE-it2 的 Cluster Purity (%) 曲线对比。）"
       }
      ]
     },
@@ -1742,43 +2570,55 @@ globalThis.PAPER_2106_07447 = {
      "original": "0.1"
     },
     {
+     "id": "eq-V-C-5",
+     "type": "equation",
+     "page": 7,
+     "original": "0 1 2 3 4 5 6 7 8 9 10 11 12 0"
+    },
+    {
      "id": "p-V-C-3",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
        "id": "s-V-C-3-1",
-       "original": "0 Phone Purity (%)",
+       "original": "Phone Purity (%)",
        "zh": "（纵轴刻度从 0 起）音素纯度（%）"
       }
      ]
     },
     {
-     "id": "eq-V-C-5",
+     "id": "eq-V-C-6",
      "type": "equation",
      "page": 7,
      "original": "0.7"
     },
     {
-     "id": "eq-V-C-6",
+     "id": "eq-V-C-7",
      "type": "equation",
      "page": 7,
      "original": "0.6"
     },
     {
-     "id": "eq-V-C-7",
+     "id": "eq-V-C-8",
      "type": "equation",
      "page": 7,
      "original": "0.5"
     },
     {
-     "id": "eq-V-C-8",
+     "id": "eq-V-C-9",
      "type": "equation",
      "page": 7,
      "original": "0.4"
     },
     {
-     "id": "eq-V-C-9",
+     "id": "eq-V-C-10",
+     "type": "equation",
+     "page": 7,
+     "original": "0 1 2 3 4 5 6 7 8 9 10 11 12"
+    },
+    {
+     "id": "eq-V-C-11",
      "type": "equation",
      "page": 7,
      "original": "0.7"
@@ -1796,22 +2636,28 @@ globalThis.PAPER_2106_07447 = {
      ]
     },
     {
-     "id": "eq-V-C-10",
+     "id": "eq-V-C-12",
      "type": "equation",
      "page": 7,
      "original": "0.6"
     },
     {
-     "id": "eq-V-C-11",
+     "id": "eq-V-C-13",
      "type": "equation",
      "page": 7,
      "original": "0.5"
     },
     {
-     "id": "eq-V-C-12",
+     "id": "eq-V-C-14",
      "type": "equation",
      "page": 7,
      "original": "0.4"
+    },
+    {
+     "id": "eq-V-C-15",
+     "type": "equation",
+     "page": 7,
+     "original": "0 1 2 3 4 5 6 7 8 9 10 11 12"
     },
     {
      "id": "p-V-C-5",
@@ -1859,30 +2705,139 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-V-C-6-5",
-       "original": "PNMI dev-other WER (%) WER Chenone (supervised top-line) 8976 0.809 10.38 9.16 9.79 K-means {50,100} 17.81 K-means {50,100,500} 17.56 K-means on MFCC 50 0.227 18.68 31.07 94.60 100 0.243 17.86 29.57 96.37 500 0.276 18.40 33.42 97.66 K-means on BASE-it1-layer6 500 0.637 11.91 13.47 23.29 K-means on BASE-it2-layer9 500 0.704 10.75 11.59 13.79 19.26 17.64 18.46 Product K-means-{0,1,2}-100 16.73 TABLE V: The effect of the training objective and clustering quality on performance.",
-       "zh": "（Table V：训练目标与聚类质量对性能的影响；列为 PNMI、dev-other WER（%）及不同 α 权重下的 WER，各行数据与原文一致：chenone（监督上线）8976 单元（按 0 1 2…编号）、PNMI 0.809、dev-other 10.38、9.16、9.79；K-means {50,100}（50100）17.81；K-means {50,100,500}（50100 加 500）17.56；MFCC 上 k-means 50 簇：0.227 18.68 31.07 94.60；100 簇：0.243 17.86 29.57 96.37；500 簇：0.276 18.40 33.42 97.66；BASE-it1-layer6 上 k-means 500 簇：0.637 11.91 13.47 23.29；BASE-it2-layer9 上 k-means 500 簇：0.704 10.75 11.59 13.79 19.26 17.64 18.46；乘积 K-means-{0,1,2}-100：16.73。）"
-      },
-      {
-       "id": "s-V-C-6-6",
-       "original": "C refers to the number of units, and α is the weight for masked frames.",
-       "zh": "C 表示单元数，α 是被掩码帧损失的权重。"
+       "original": "C PNMI dev-other WER (%) WER Chenone (supervised top-line)",
+       "zh": "（表 V 全表：训练目标与聚类质量对性能的影响——Chenone 监督上限、K-means 各配置、MFCC/BASE-it1-layer6/BASE-it2-layer9 特征、Product K-means 各组合的 PNMI 与 dev-other WER 数值。原始数据照录如下）\n（原始数据照录）\nC PNMI dev-other WER (%) WER Chenone (supervised top-line) 8976 0.809 10.38 9.16 9.79 K-means {50,100} 17.81 K-means {50,100,500} 17.56 K-means on MFCC 50 0.227 18.68 31.07 94.60 100 0.243 17.86 29.57 96.37 500 0.276 18.40 33.42 97.66 K-means on BASE-it1-layer6 500 0.637 11.91 13.47 23.29 K-means on BASE-it2-layer9 500 0.704 10.75 11.59 13.79 Product K-means-0-100 19.26 Product K-means-1-100 17.64 Product K-means-2-100 18.46 Product K-means-{0,1,2}-100 16.73 TABLE V: The effect of the training objective and clustering quality on performance."
       }
      ]
     },
     {
+     "id": "eq-V-C-16",
+     "type": "equation",
+     "page": 7,
+     "original": "8976 0.809 10.38 9.16 9.79"
+    },
+    {
+     "id": "eq-V-C-17",
+     "type": "equation",
+     "page": 7,
+     "original": "K-means {50,100}"
+    },
+    {
+     "id": "eq-V-C-18",
+     "type": "equation",
+     "page": 7,
+     "original": "17.81"
+    },
+    {
+     "id": "eq-V-C-19",
+     "type": "equation",
+     "page": 7,
+     "original": "K-means {50,100,500}"
+    },
+    {
+     "id": "eq-V-C-20",
+     "type": "equation",
+     "page": 7,
+     "original": "17.56"
+    },
+    {
+     "id": "eq-V-C-21",
+     "type": "equation",
+     "page": 7,
+     "original": "K-means on MFCC"
+    },
+    {
+     "id": "eq-V-C-22",
+     "type": "equation",
+     "page": 7,
+     "original": "50 0.227 18.68 31.07 94.60 100 0.243 17.86 29.57 96.37 500 0.276 18.40 33.42 97.66"
+    },
+    {
+     "id": "eq-V-C-23",
+     "type": "equation",
+     "page": 7,
+     "original": "K-means on BASE-it1-layer6"
+    },
+    {
+     "id": "eq-V-C-24",
+     "type": "equation",
+     "page": 7,
+     "original": "500 0.637 11.91 13.47 23.29"
+    },
+    {
+     "id": "eq-V-C-25",
+     "type": "equation",
+     "page": 7,
+     "original": "K-means on BASE-it2-layer9"
+    },
+    {
+     "id": "eq-V-C-26",
+     "type": "equation",
+     "page": 7,
+     "original": "500 0.704 10.75 11.59 13.79"
+    },
+    {
+     "id": "eq-V-C-27",
+     "type": "equation",
+     "page": 7,
+     "original": "Product K-means-0-100"
+    },
+    {
+     "id": "eq-V-C-28",
+     "type": "equation",
+     "page": 7,
+     "original": "19.26"
+    },
+    {
+     "id": "eq-V-C-29",
+     "type": "equation",
+     "page": 7,
+     "original": "Product K-means-1-100"
+    },
+    {
+     "id": "eq-V-C-30",
+     "type": "equation",
+     "page": 7,
+     "original": "17.64"
+    },
+    {
+     "id": "eq-V-C-31",
+     "type": "equation",
+     "page": 7,
+     "original": "Product K-means-2-100"
+    },
+    {
+     "id": "eq-V-C-32",
+     "type": "equation",
+     "page": 7,
+     "original": "18.46"
+    },
+    {
+     "id": "eq-V-C-33",
+     "type": "equation",
+     "page": 7,
+     "original": "Product K-means-{0,1,2}-100"
+    },
+    {
+     "id": "eq-V-C-34",
+     "type": "equation",
+     "page": 7,
+     "original": "16.73"
+    },
+    {
      "id": "p-V-C-7",
      "type": "paragraph",
-     "page": 8,
+     "page": 7,
      "sentences": [
       {
        "id": "s-V-C-7-1",
-       "original": "The teacher quality measured in cluster purity, phone purity, and phone normalized mutual information (PNMI) is shown in Figure 2.",
-       "zh": "以簇纯度、音素纯度和音素归一化互信息（PNMI）衡量的教师质量如 Figure 2 所示。"
+       "original": "TABLE V: The effect of the training objective and clustering quality on performance.",
+       "zh": "（表 V 全表：训练目标与聚类质量对性能的影响——Chenone 监督上限、K-means 各配置、MFCC/BASE-it1-layer6/BASE-it2-layer9 特征、Product K-means 各组合的 PNMI 与 dev-other WER 数值。原始数据照录如下）\n（原始数据照录）\nC PNMI dev-other WER (%) WER Chenone (supervised top-line) 8976 0.809 10.38 9.16 9.79 K-means {50,100} 17.81 K-means {50,100,500} 17.56 K-means on MFCC 50 0.227 18.68 31.07 94.60 100 0.243 17.86 29.57 96.37 500 0.276 18.40 33.42 97.66 K-means on BASE-it1-layer6 500 0.637 11.91 13.47 23.29 K-means on BASE-it2-layer9 500 0.704 10.75 11.59 13.79 Product K-means-0-100 19.26 Product K-means-1-100 17.64 Product K-means-2-100 18.46 Product K-means-{0,1,2}-100 16.73 TABLE V: The effect of the training objective and clustering quality on performance."
       },
       {
        "id": "s-V-C-7-2",
-       "original": "As a baseline, MFCC achieves (cluster purity, phone purity, PNMI) = (0.099, 0.335, 0.255) for K = 100 and (0.031, 0.356, 0.287) for K = 500.",
-       "zh": "作为基线，MFCC 在 K = 100 时取得（簇纯度、音素纯度、PNMI）= (0.099, 0.335, 0.255)，K = 500 时为 (0.031, 0.356, 0.287)。"
+       "original": "C refers to the number of units, and α is the weight for masked frames.",
+       "zh": "C 表示单元数，α 是被掩码帧损失的权重。"
       }
      ]
     },
@@ -1893,21 +2848,44 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-V-C-8-1",
+       "original": "The teacher quality measured in cluster purity, phone purity, and phone normalized mutual information (PNMI) is shown in Figure 2.",
+       "zh": "以簇纯度、音素纯度和音素归一化互信息（PNMI）衡量的教师质量如 Figure 2 所示。"
+      },
+      {
+       "id": "s-V-C-8-2",
+       "original": "As a baseline, MFCC achieves (cluster purity, phone purity, PNMI) = (0.099, 0.335, 0.255) for K = 100",
+       "zh": "作为基线，MFCC 在 K = 100 时取得（簇纯度、音素纯度、PNMI）= (0.099, 0.335, 0.255)，K = 500 时为 (0.031, 0.356, 0.287)。"
+      }
+     ]
+    },
+    {
+     "id": "eq-V-C-35",
+     "type": "equation",
+     "page": 8,
+     "original": "and (0.031, 0.356, 0.287) for K = 500."
+    },
+    {
+     "id": "p-V-C-9",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-V-C-9-1",
        "original": "Both BASE-it1 and BASE-it2 features result in signiﬁcantly better clustering quality on all three metrics than MFCC with the same number of clusters.",
        "zh": "在相同簇数下，BASE-it1 和 BASE-it2 的特征在全部三个指标上都显著优于 MFCC。"
       },
       {
-       "id": "s-V-C-8-2",
+       "id": "s-V-C-9-2",
        "original": "On the other hand, the best BASE-it2 feature is better than the best BASE-it1 on phone purity and PNMI, but slightly worse on cluster purity.",
        "zh": "另一方面，最好的 BASE-it2 特征在音素纯度和 PNMI 上优于最好的 BASE-it1，但在簇纯度上略逊。"
       },
       {
-       "id": "s-V-C-8-3",
+       "id": "s-V-C-9-3",
        "original": "Finally, we observe different trends across layers from BASE-it1 and BASE-it2: while BASE-it2 model features generally improve over layers, BASE-it1 has the best features in the middle layers around the 6th layer.",
        "zh": "最后，我们观察到 BASE-it1 与 BASE-it2 的跨层趋势不同：BASE-it2 的特征质量总体上随层数提升，而 BASE-it1 的最佳特征出现在第 6 层附近的中间层。"
       },
       {
-       "id": "s-V-C-8-4",
+       "id": "s-V-C-9-4",
        "original": "Interestingly, the quality of the last few layers degrades dramatically for BASE-it1, potentially because it is trained on target assignments of worse quality, and therefore the last few layers learn to mimic their bad label behavior.",
        "zh": "有趣的是，BASE-it1 最后几层的质量急剧下降，可能是因为它的训练目标本身质量较差，最后几层学会了模仿这些糟糕标签的行为。"
       }
@@ -2078,28 +3056,40 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-VI-1-2",
-       "original": "On both the Librispeech 960 hours and the 60,000 hours Libri-light pretraining setups, HuBERT matches or outperforms the stateof-the-art systems over all ﬁne-tuning subsets of 10mins, 1h, dev-other WER (%) steps=100k K-means 50 18.68 13.65 12.40 11.82 100 17.86 12.97 12.32 11.68 [51] 13.5k 26.6 TABLE VII: Varying the number of HuBERT pre-training steps. p is set to 6.5%.",
-       "zh": "在 Librispeech 960 hours 和 60,000 hours Libri-light 两种预训练设定下，HuBERT 在 10mins、1h、（Table VII：改变 HuBERT 预训练步数的结果，p 设为 6.5%；列为 steps=100k 时不同单元配置的 dev-other WER（%），各行数据与原文一致：k-means 50 簇：18.68 13.65 12.40 11.82；100 簇：17.86 12.97 12.32 11.68；[51] 13.5k 单元：26.6。）"
-      }
-     ]
-    },
-    {
-     "id": "p-VI-2",
-     "type": "paragraph",
-     "page": 9,
-     "sentences": [
-      {
-       "id": "s-VI-2-1",
-       "original": "WER (%) WER (%)",
-       "zh": "（Figure 3 左图纵轴为 WER（%）与掩码概率的关系，右图纵轴为 WER（%）。）"
+       "original": "On both the Librispeech 960 hours and the 60,000 hours Libri-light pretraining setups, HuBERT matches or outperforms the stateof-the-art systems over all ﬁne-tuning subsets of 10mins, 1h, C dev-other WER (%) steps=100k K-means",
+       "zh": "在 LibriSpeech 960 小时与 60,000 小时 Libri-light 两种预训练设置下，HuBERT 在 10 分钟、1 小时等各微调子集上都匹配或超过当时 SOTA 系统。（Table VII：预训练步数变化，K-means 聚类数 50/100，dev-other WER 分别为 18.68→13.65→12.40→11.82 与 17.86→12.97→12.32→11.68；[51] 13.5k 26.6。p 取 6.5%。）表 VII：改变 HuBERT 预训练步数的影响。"
       }
      ]
     },
     {
      "id": "eq-VI-1",
      "type": "equation",
-     "page": 9,
-     "original": "20 30 40"
+     "page": 8,
+     "original": "50 18.68 13.65 12.40 11.82 100 17.86 12.97 12.32 11.68 [51]"
+    },
+    {
+     "id": "eq-VI-2",
+     "type": "equation",
+     "page": 8,
+     "original": "13.5k"
+    },
+    {
+     "id": "eq-VI-3",
+     "type": "equation",
+     "page": 8,
+     "original": "26.6"
+    },
+    {
+     "id": "p-VI-2",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-VI-2-1",
+       "original": "TABLE VII: Varying the number of HuBERT pre-training steps. p is set to 6.5%.",
+       "zh": "在 LibriSpeech 960 小时与 60,000 小时 Libri-light 两种预训练设置下，HuBERT 在 10 分钟、1 小时等各微调子集上都匹配或超过当时 SOTA 系统。（Table VII：预训练步数变化，K-means 聚类数 50/100，dev-other WER 分别为 18.68→13.65→12.40→11.82 与 17.86→12.97→12.32→11.68；[51] 13.5k 26.6。p 取 6.5%。）表 VII：改变 HuBERT 预训练步数的影响。"
+      }
+     ]
     },
     {
      "id": "p-VI-3",
@@ -2108,19 +3098,31 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-VI-3-1",
-       "original": "2 4.5 6.5 8 9 16 18 20 22 24",
-       "zh": "（Figure 3 横轴刻度：掩码概率 p 取 2、4.5、6.5、8、9 等，GPU 数量取 16、18、20、22、24 等。）"
+       "original": "WER (%) WER (%)",
+       "zh": "（Figure 3 左图纵轴为 WER（%）与掩码概率的关系，右图纵轴为 WER（%）。）"
       }
      ]
     },
     {
-     "id": "eq-VI-2",
+     "id": "eq-VI-4",
+     "type": "equation",
+     "page": 9,
+     "original": "20 30 40"
+    },
+    {
+     "id": "eq-VI-5",
+     "type": "equation",
+     "page": 9,
+     "original": "2 4.5 6.5 8 9 16 18 20 22 24"
+    },
+    {
+     "id": "eq-VI-6",
      "type": "equation",
      "page": 9,
      "original": "8 16 32"
     },
     {
-     "id": "eq-VI-3",
+     "id": "eq-VI-7",
      "type": "equation",
      "page": 9,
      "original": "p"
@@ -2195,7 +3197,8 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-references-1-1",
-       "original": "[1] A. v. d."
+       "original": "[1] A. v. d.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-1-2",
@@ -2215,63 +3218,85 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-1-6",
-       "original": "Schneider, A."
+       "original": "Schneider, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-1-7",
-       "original": "Baevski, R."
+       "original": "Baevski, R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
       },
       {
        "id": "s-references-1-8",
-       "original": "Collobert, and M."
+       "original": "Collobert, and M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-1-9",
-       "original": "Auli, “wav2vec: Unsupervised pre-training for speech recognition,” arXiv preprint [3] E."
+       "original": "Auli, “wav2vec: Unsupervised pre-training for speech recognition,” arXiv preprint arXiv:1904.05862, 2019."
       },
       {
        "id": "s-references-1-10",
-       "original": "Kharitonov, M."
+       "original": "[3] E.",
+       "zh": "我们考虑 HuBERT 的三种配置：BASE、LARGE 和 X-LARGE。"
       },
       {
        "id": "s-references-1-11",
-       "original": "Rivi`ere, G."
+       "original": "Kharitonov, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-1-12",
-       "original": "Synnaeve, L."
+       "original": "Rivi`ere, G."
       },
       {
        "id": "s-references-1-13",
-       "original": "Wolf, P.-E."
+       "original": "Synnaeve, L."
       },
       {
        "id": "s-references-1-14",
-       "original": "Mazar´e, M."
+       "original": "Wolf, P.-E.",
+       "zh": "我们考虑 HuBERT 的三种配置：BASE、LARGE 和 X-LARGE。"
       },
       {
        "id": "s-references-1-15",
-       "original": "Douze, and E."
+       "original": "Mazar´e, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-1-16",
-       "original": "Dupoux, “Data augmenting contrastive learning of speech representations in the time domain,” arXiv preprint [4] Y.-A."
+       "original": "Douze, and E.",
+       "zh": "我们考虑 HuBERT 的三种配置：BASE、LARGE 和 X-LARGE。"
       },
       {
        "id": "s-references-1-17",
-       "original": "Chung, W.-N."
+       "original": "Dupoux, “Data augmenting contrastive learning of speech representations in the time domain,” arXiv preprint arXiv:2007.00991, 2020."
       },
       {
        "id": "s-references-1-18",
-       "original": "Hsu, H."
+       "original": "[4] Y.-A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-1-19",
-       "original": "Tang, and J."
+       "original": "Chung, W.-N."
       },
       {
        "id": "s-references-1-20",
-       "original": "Glass, “An unsupervised autoregressive model for speech representation learning,” arXiv preprint [5] A."
+       "original": "Hsu, H."
+      },
+      {
+       "id": "s-references-1-21",
+       "original": "Tang, and J."
+      },
+      {
+       "id": "s-references-1-22",
+       "original": "Glass, “An unsupervised autoregressive model for speech representation learning,” arXiv preprint arXiv:1904.03240, 2019."
+      },
+      {
+       "id": "s-references-1-23",
+       "original": "[5] A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       }
      ]
     },
@@ -2293,7 +3318,8 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-references-3-1",
-       "original": "Schneider, and M."
+       "original": "Schneider, and M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       }
      ]
     },
@@ -2304,70 +3330,85 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "Auli, “vq-wav2vec: Selfsupervised learning of discrete speech representations,” arXiv preprint [6] A."
+       "original": "Auli, “vq-wav2vec: Selfsupervised learning of discrete speech representations,” arXiv preprint arXiv:1910.05453, 2019."
       },
       {
        "id": "s-references-4-2",
-       "original": "Baevski, H."
+       "original": "[6] A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-4-3",
-       "original": "Zhou, A."
+       "original": "Baevski, H."
       },
       {
        "id": "s-references-4-4",
-       "original": "Mohamed, and M."
+       "original": "Zhou, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-4-5",
-       "original": "Auli, “wav2vec 2.0: A framework for self-supervised learning of speech representations,” arXiv [7] G."
+       "original": "Mohamed, and M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-4-6",
-       "original": "Zavaliagkos and T."
+       "original": "Auli, “wav2vec 2.0: A framework for self-supervised learning of speech representations,” arXiv preprint arXiv:2006.11477, 2020."
       },
       {
        "id": "s-references-4-7",
-       "original": "Colthurst, “Utilizing untranscribed training data to improve performance,” in DARPA Broadcast News Transcription and Understanding Workshop, 1998."
+       "original": "[7] G."
       },
       {
        "id": "s-references-4-8",
-       "original": "[8] J."
+       "original": "Zavaliagkos and T.",
+       "zh": "使用 1B 参数的模型，HuBERT 在更具挑战性的 dev-other 和 test-other 评测子集上取得了最高 19% 和 13% 的相对 WER 降低。（代码、预训练与微调模型开源于 fairseq 的 examples/hubert 目录。）关键词：自监督学习，BERT。"
       },
       {
        "id": "s-references-4-9",
-       "original": "Ma, S."
+       "original": "Colthurst, “Utilizing untranscribed training data to improve performance,” in DARPA Broadcast News Transcription and Understanding Workshop, 1998."
       },
       {
        "id": "s-references-4-10",
-       "original": "Matsoukas, O."
+       "original": "[8] J."
       },
       {
        "id": "s-references-4-11",
-       "original": "Kimball, and R."
+       "original": "Ma, S."
       },
       {
        "id": "s-references-4-12",
-       "original": "Schwartz, “Unsupervised training on large amounts of broadcast news data,” in ICASSP, 2006."
+       "original": "Matsoukas, O."
       },
       {
        "id": "s-references-4-13",
-       "original": "[9] J."
+       "original": "Kimball, and R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
       },
       {
        "id": "s-references-4-14",
-       "original": "Kahn, A."
+       "original": "Schwartz, “Unsupervised training on large amounts of broadcast news data,” in ICASSP, 2006."
       },
       {
        "id": "s-references-4-15",
-       "original": "Lee, and A."
+       "original": "[9] J."
       },
       {
        "id": "s-references-4-16",
-       "original": "Hannun, “Self-training for end-to-end speech recognition,” in ICASSP, 2020."
+       "original": "Kahn, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-4-17",
+       "original": "Lee, and A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-4-18",
+       "original": "Hannun, “Self-training for end-to-end speech recognition,” in ICASSP, 2020."
+      },
+      {
+       "id": "s-references-4-19",
        "original": "[10] W.-N."
       }
      ]
@@ -2379,7 +3420,8 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "Hsu, A."
+       "original": "Hsu, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       }
      ]
     },
@@ -2401,7 +3443,8 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "Synnaeve, and A."
+       "original": "Synnaeve, and A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       }
      ]
     },
@@ -2412,70 +3455,87 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "Hannun, “Semisupervised speech recognition via local prior matching,” arXiv preprint [11] A."
+       "original": "Hannun, “Semisupervised speech recognition via local prior matching,” arXiv preprint arXiv:2002.10336, 2020."
       },
       {
        "id": "s-references-8-2",
-       "original": "Xiao, C."
+       "original": "[11] A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-8-3",
-       "original": "Fuegen, and A."
+       "original": "Xiao, C."
       },
       {
        "id": "s-references-8-4",
-       "original": "Mohamed, “Contrastive semi-supervised learning for asr,” arXiv preprint arXiv:2103.05149, 2021."
+       "original": "Fuegen, and A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-8-5",
-       "original": "[12] Q."
+       "original": "Mohamed, “Contrastive semi-supervised learning for asr,” arXiv preprint arXiv:2103.05149, 2021."
       },
       {
        "id": "s-references-8-6",
-       "original": "Xu, T."
+       "original": "[12] Q."
       },
       {
        "id": "s-references-8-7",
-       "original": "Likhomanenko, J."
+       "original": "Xu, T.",
+       "zh": "使用 1B 参数的模型，HuBERT 在更具挑战性的 dev-other 和 test-other 评测子集上取得了最高 19% 和 13% 的相对 WER 降低。（代码、预训练与微调模型开源于 fairseq 的 examples/hubert 目录。）关键词：自监督学习，BERT。"
       },
       {
        "id": "s-references-8-8",
-       "original": "Kahn, A."
+       "original": "Likhomanenko, J."
       },
       {
        "id": "s-references-8-9",
-       "original": "Hannun, G."
+       "original": "Kahn, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-8-10",
-       "original": "Synnaeve, and R."
+       "original": "Hannun, G."
       },
       {
        "id": "s-references-8-11",
-       "original": "Collobert, “Iterative pseudo-labeling for speech recognition,” arXiv [13] M."
+       "original": "Synnaeve, and R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
       },
       {
        "id": "s-references-8-12",
-       "original": "Caron, I."
+       "original": "Collobert, “Iterative pseudo-labeling for speech recognition,” arXiv preprint arXiv:2005.09267, 2020."
       },
       {
        "id": "s-references-8-13",
-       "original": "Misra, J."
+       "original": "[13] M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-8-14",
-       "original": "Mairal, P."
+       "original": "Caron, I."
       },
       {
        "id": "s-references-8-15",
-       "original": "Goyal, P."
+       "original": "Misra, J."
       },
       {
        "id": "s-references-8-16",
-       "original": "Bojanowski, and A."
+       "original": "Mairal, P.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
       },
       {
        "id": "s-references-8-17",
+       "original": "Goyal, P.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
+      },
+      {
+       "id": "s-references-8-18",
+       "original": "Bojanowski, and A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-8-19",
        "original": "Joulin, “Unsupervised learning of visual features by contrasting cluster assignments,” CoRR, vol. abs/2006.09882, 2020."
       }
      ]
@@ -2515,15 +3575,18 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-9-8",
-       "original": "Tallec, P."
+       "original": "Tallec, P.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
       },
       {
        "id": "s-references-9-9",
-       "original": "H."
+       "original": "H.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
       },
       {
        "id": "s-references-9-10",
-       "original": "Richemond, E."
+       "original": "Richemond, E.",
+       "zh": "我们考虑 HuBERT 的三种配置：BASE、LARGE 和 X-LARGE。"
       },
       {
        "id": "s-references-9-11",
@@ -2536,7 +3599,8 @@ globalThis.PAPER_2106_07447 = {
      "type": "table_body",
      "page": 9,
      "original": "Doersch, B.\n´A.\nPires, Z.\nD.\nGuo, M.\nG.\nAzar, B.",
-     "cells": 7
+     "cells": 7,
+     "zh": "随后按第 II-B 节所述对编码后的音频特征做随机掩码。"
     },
     {
      "id": "p-references-17",
@@ -2549,11 +3613,13 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-17-2",
-       "original": "Kavukcuoglu, R."
+       "original": "Kavukcuoglu, R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
       },
       {
        "id": "s-references-17-3",
-       "original": "Munos, and M."
+       "original": "Munos, and M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-17-4",
@@ -2561,15 +3627,18 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-17-5",
-       "original": "[16] T."
+       "original": "[16] T.",
+       "zh": "使用 1B 参数的模型，HuBERT 在更具挑战性的 dev-other 和 test-other 评测子集上取得了最高 19% 和 13% 的相对 WER 降低。（代码、预训练与微调模型开源于 fairseq 的 examples/hubert 目录。）关键词：自监督学习，BERT。"
       },
       {
        "id": "s-references-17-6",
-       "original": "B."
+       "original": "B.",
+       "zh": "随后按第 II-B 节所述对编码后的音频特征做随机掩码。"
       },
       {
        "id": "s-references-17-7",
-       "original": "Brown, B."
+       "original": "Brown, B.",
+       "zh": "随后按第 II-B 节所述对编码后的音频特征做随机掩码。"
       },
       {
        "id": "s-references-17-8",
@@ -2577,7 +3646,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-17-9",
-       "original": "Ryder, M."
+       "original": "Ryder, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-17-10",
@@ -2585,15 +3655,18 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-17-11",
-       "original": "Kaplan, P."
+       "original": "Kaplan, P.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
       },
       {
        "id": "s-references-17-12",
-       "original": "Dhariwal, A."
+       "original": "Dhariwal, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-17-13",
-       "original": "Neelakantan, P."
+       "original": "Neelakantan, P.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
       },
       {
        "id": "s-references-17-14",
@@ -2601,7 +3674,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-17-15",
-       "original": "Sastry, A."
+       "original": "Sastry, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-17-16",
@@ -2609,7 +3683,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-17-17",
-       "original": "Agarwal, A."
+       "original": "Agarwal, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-17-18",
@@ -2617,15 +3692,18 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-17-19",
-       "original": "Krueger, T."
+       "original": "Krueger, T.",
+       "zh": "使用 1B 参数的模型，HuBERT 在更具挑战性的 dev-other 和 test-other 评测子集上取得了最高 19% 和 13% 的相对 WER 降低。（代码、预训练与微调模型开源于 fairseq 的 examples/hubert 目录。）关键词：自监督学习，BERT。"
       },
       {
        "id": "s-references-17-20",
-       "original": "Henighan, R."
+       "original": "Henighan, R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
       },
       {
        "id": "s-references-17-21",
-       "original": "Child, A."
+       "original": "Child, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-17-22",
@@ -2633,7 +3711,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-17-23",
-       "original": "M."
+       "original": "M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-17-24",
@@ -2649,15 +3728,18 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-17-27",
-       "original": "Hesse, M."
+       "original": "Hesse, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-17-28",
-       "original": "Chen, E."
+       "original": "Chen, E.",
+       "zh": "我们考虑 HuBERT 的三种配置：BASE、LARGE 和 X-LARGE。"
       },
       {
        "id": "s-references-17-29",
-       "original": "Sigler, M."
+       "original": "Sigler, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-17-30",
@@ -2665,7 +3747,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-17-31",
-       "original": "Gray, B."
+       "original": "Gray, B.",
+       "zh": "随后按第 II-B 节所述对编码后的音频特征做随机掩码。"
       },
       {
        "id": "s-references-17-32",
@@ -2681,7 +3764,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-17-35",
-       "original": "McCandlish, A."
+       "original": "McCandlish, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-17-36",
@@ -2712,7 +3796,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-18-3",
-       "original": "Liu, M."
+       "original": "Liu, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-18-4",
@@ -2724,7 +3809,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-18-6",
-       "original": "Du, M."
+       "original": "Du, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-18-7",
@@ -2736,7 +3822,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-18-9",
-       "original": "Levy, M."
+       "original": "Levy, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-18-10",
@@ -2744,7 +3831,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-18-11",
-       "original": "Zettlemoyer, and V."
+       "original": "Zettlemoyer, and V.",
+       "zh": "每种超参数与特征的组合训练 10 次，报告开发集（合并 LibriSpeech 的 dev-clean 和 dev-other）上监督 PNMI 指标的均值和标准差，见 Table IV。"
       },
       {
        "id": "s-references-18-12",
@@ -2752,7 +3840,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-18-13",
-       "original": "[18] M."
+       "original": "[18] M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-18-14",
@@ -2764,11 +3853,13 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-18-16",
-       "original": "Goyal, M."
+       "original": "Goyal, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-18-17",
-       "original": "Ghazvininejad, A."
+       "original": "Ghazvininejad, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-18-18",
@@ -2776,7 +3867,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-18-19",
-       "original": "Levy, V."
+       "original": "Levy, V.",
+       "zh": "每种超参数与特征的组合训练 10 次，报告开发集（合并 LibriSpeech 的 dev-clean 和 dev-other）上监督 PNMI 指标的均值和标准差，见 Table IV。"
       },
       {
        "id": "s-references-18-20",
@@ -2792,7 +3884,8 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-18-23",
-       "original": "Devlin, M.-W."
+       "original": "Devlin, M.-W.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-18-24",
@@ -2804,341 +3897,86 @@ globalThis.PAPER_2106_07447 = {
       },
       {
        "id": "s-references-18-26",
-       "original": "Toutanova, “Bert: Pre-training of deep bidirectional transformers for language understanding,” arXiv [20] K."
+       "original": "Toutanova, “Bert: Pre-training of deep bidirectional transformers for language understanding,” arXiv preprint arXiv:1810.04805, 2018."
       },
       {
        "id": "s-references-18-27",
-       "original": "Clark, M.-T."
+       "original": "[20] K."
       },
       {
        "id": "s-references-18-28",
-       "original": "Luong, Q."
+       "original": "Clark, M.-T.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-18-29",
-       "original": "V."
+       "original": "Luong, Q."
       },
       {
        "id": "s-references-18-30",
-       "original": "Le, and C."
+       "original": "V.",
+       "zh": "每种超参数与特征的组合训练 10 次，报告开发集（合并 LibriSpeech 的 dev-clean 和 dev-other）上监督 PNMI 指标的均值和标准差，见 Table IV。"
       },
       {
        "id": "s-references-18-31",
-       "original": "D."
+       "original": "Le, and C."
       },
       {
        "id": "s-references-18-32",
-       "original": "Manning, “Electra: Pretraining text encoders as discriminators rather than generators,” arXiv [21] M."
+       "original": "D."
       },
       {
        "id": "s-references-18-33",
-       "original": "E."
+       "original": "Manning, “Electra: Pretraining text encoders as discriminators rather than generators,” arXiv preprint arXiv:2003.10555, 2020."
       },
       {
        "id": "s-references-18-34",
-       "original": "Peters, M."
+       "original": "[21] M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-18-35",
-       "original": "Neumann, M."
+       "original": "E.",
+       "zh": "我们考虑 HuBERT 的三种配置：BASE、LARGE 和 X-LARGE。"
       },
       {
        "id": "s-references-18-36",
-       "original": "Iyyer, M."
+       "original": "Peters, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-18-37",
-       "original": "Gardner, C."
+       "original": "Neumann, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-18-38",
-       "original": "Clark, K."
+       "original": "Iyyer, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-18-39",
-       "original": "Lee, and L."
+       "original": "Gardner, C."
       },
       {
        "id": "s-references-18-40",
-       "original": "Zettlemoyer, “Deep contextualized word representations,” in NAACL, 2018."
+       "original": "Clark, K."
       },
       {
        "id": "s-references-18-41",
-       "original": "[22] K."
+       "original": "Lee, and L."
       },
       {
        "id": "s-references-18-42",
-       "original": "He, H."
-      },
-      {
-       "id": "s-references-18-43",
-       "original": "Fan, Y."
-      },
-      {
-       "id": "s-references-18-44",
-       "original": "Wu, S."
-      },
-      {
-       "id": "s-references-18-45",
-       "original": "Xie, and R."
-      },
-      {
-       "id": "s-references-18-46",
-       "original": "Girshick, “Momentum contrast for unsupervised visual representation learning,” in CVPR, 2020."
-      },
-      {
-       "id": "s-references-18-47",
-       "original": "[23] M."
-      },
-      {
-       "id": "s-references-18-48",
-       "original": "Caron, P."
-      },
-      {
-       "id": "s-references-18-49",
-       "original": "Bojanowski, A."
-      },
-      {
-       "id": "s-references-18-50",
-       "original": "Joulin, and M."
-      },
-      {
-       "id": "s-references-18-51",
-       "original": "Douze, “Deep clustering for unsupervised learning of visual features,” in ECCV, 2018."
-      },
-      {
-       "id": "s-references-18-52",
-       "original": "[24] V."
-      },
-      {
-       "id": "s-references-18-53",
-       "original": "Panayotov, G."
-      },
-      {
-       "id": "s-references-18-54",
-       "original": "Chen, D."
-      },
-      {
-       "id": "s-references-18-55",
-       "original": "Povey, and S."
-      },
-      {
-       "id": "s-references-18-56",
-       "original": "Khudanpur, “Librispeech: an asr corpus based on public domain audio books,” in ICASSP, 2015."
-      },
-      {
-       "id": "s-references-18-57",
-       "original": "[25] J."
-      },
-      {
-       "id": "s-references-18-58",
-       "original": "Kahn et al., “Libri-light: A benchmark for asr with limited or no supervision,” in ICASSP, 2020."
-      },
-      {
-       "id": "s-references-18-59",
-       "original": "[26] C.-y."
-      },
-      {
-       "id": "s-references-18-60",
-       "original": "Lee and J."
-      },
-      {
-       "id": "s-references-18-61",
-       "original": "Glass, “A nonparametric bayesian approach to acoustic model discovery,” in ACL, 2012."
-      },
-      {
-       "id": "s-references-18-62",
-       "original": "[27] L."
-      },
-      {
-       "id": "s-references-18-63",
-       "original": "Ondel, L."
-      },
-      {
-       "id": "s-references-18-64",
-       "original": "Burget, and J. ˇCernock`y, “Variational inference for acoustic unit discovery,” Procedia Computer Science, vol. 81, pp. 80–86, 2016."
-      },
-      {
-       "id": "s-references-18-65",
-       "original": "[28] J."
-      },
-      {
-       "id": "s-references-18-66",
-       "original": "Ebbers, J."
-      },
-      {
-       "id": "s-references-18-67",
-       "original": "Heymann, L."
-      },
-      {
-       "id": "s-references-18-68",
-       "original": "Drude, T."
-      },
-      {
-       "id": "s-references-18-69",
-       "original": "Glarner, R."
-      },
-      {
-       "id": "s-references-18-70",
-       "original": "Haeb-Umbach, and B."
-      },
-      {
-       "id": "s-references-18-71",
-       "original": "Raj, “Hidden markov model variational autoencoder for acoustic unit discovery.” in INTERSPEECH, 2017."
-      },
-      {
-       "id": "s-references-18-72",
-       "original": "[29] W.-N."
-      },
-      {
-       "id": "s-references-18-73",
-       "original": "Hsu, Y."
-      },
-      {
-       "id": "s-references-18-74",
-       "original": "Zhang, and J."
-      },
-      {
-       "id": "s-references-18-75",
-       "original": "Glass, “Learning latent representations for speech generation and transformation,” in INTERSPEECH, 2017."
-      },
-      {
-       "id": "s-references-18-76",
-       "original": "[30] ——, “Unsupervised learning of disentangled and interpretable representations from sequential data,” in NeurIPS, 2017."
-      },
-      {
-       "id": "s-references-18-77",
-       "original": "[31] J."
-      },
-      {
-       "id": "s-references-18-78",
-       "original": "Chorowski, R."
-      },
-      {
-       "id": "s-references-18-79",
-       "original": "J."
-      },
-      {
-       "id": "s-references-18-80",
-       "original": "Weiss, S."
-      },
-      {
-       "id": "s-references-18-81",
-       "original": "Bengio, and A. van den Oord, “Unsupervised speech representation learning using wavenet autoencoders,” IEEE/ACM transactions on audio, speech, and language processing, vol. 27, no. 12, pp. 2041–2053, 2019."
-      },
-      {
-       "id": "s-references-18-82",
-       "original": "[32] S."
-      },
-      {
-       "id": "s-references-18-83",
-       "original": "Khurana, S."
-      },
-      {
-       "id": "s-references-18-84",
-       "original": "R."
-      },
-      {
-       "id": "s-references-18-85",
-       "original": "Joty, A."
-      },
-      {
-       "id": "s-references-18-86",
-       "original": "Ali, and J."
-      },
-      {
-       "id": "s-references-18-87",
-       "original": "Glass, “A factorial deep markov model for unsupervised disentangled representation learning from speech,” in ICASSP, 2019."
-      },
-      {
-       "id": "s-references-18-88",
-       "original": "[33] S."
-      },
-      {
-       "id": "s-references-18-89",
-       "original": "Khurana, A."
-      },
-      {
-       "id": "s-references-18-90",
-       "original": "Laurent, W.-N."
-      },
-      {
-       "id": "s-references-18-91",
-       "original": "Hsu, J."
-      },
-      {
-       "id": "s-references-18-92",
-       "original": "Chorowski, A."
-      },
-      {
-       "id": "s-references-18-93",
-       "original": "Lancucki, R."
-      },
-      {
-       "id": "s-references-18-94",
-       "original": "Marxer, and J."
-      },
-      {
-       "id": "s-references-18-95",
-       "original": "Glass, “A convolutional deep markov model for unsupervised speech representation learning,” arXiv preprint [34] M."
-      },
-      {
-       "id": "s-references-18-96",
-       "original": "Joshi, D."
-      },
-      {
-       "id": "s-references-18-97",
-       "original": "Chen, Y."
-      },
-      {
-       "id": "s-references-18-98",
-       "original": "Liu, D."
-      },
-      {
-       "id": "s-references-18-99",
-       "original": "S."
-      },
-      {
-       "id": "s-references-18-100",
-       "original": "Weld, L."
-      },
-      {
-       "id": "s-references-18-101",
-       "original": "Zettlemoyer, and O."
-      },
-      {
-       "id": "s-references-18-102",
-       "original": "Levy, “Spanbert: Improving pre-training by representing and predicting spans,” Transactions of the Association for Computational Linguistics, 2020."
-      },
-      {
-       "id": "s-references-18-103",
-       "original": "[35] S."
-      },
-      {
-       "id": "s-references-18-104",
-       "original": "Young, “Large vocabulary continuous speech recognition: A review,” IEEE Signal Processing Magazine, vol. 13, no. 5, pp. 45–57, 1996."
-      },
-      {
-       "id": "s-references-18-105",
-       "original": "[36] O."
-      },
-      {
-       "id": "s-references-18-106",
-       "original": "Abdel-Hamid, A.-r."
-      },
-      {
-       "id": "s-references-18-107",
-       "original": "Mohamed, H."
-      },
-      {
-       "id": "s-references-18-108",
-       "original": "Jiang, and G."
-      },
-      {
-       "id": "s-references-18-109",
-       "original": "Penn, “Applying convolutional neural networks concepts to hybrid nn-hmm model for speech recognition,” in 2012 IEEE international conference on Acoustics, speech and signal processing (ICASSP)."
+       "original": "Zettlemoyer, “Deep contextualized word representations,” in NAACL,"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 9,
+     "original": "2018."
     },
     {
      "id": "p-references-19",
@@ -3147,31 +3985,301 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "IEEE, 2012, pp. 4277– 4280."
+       "original": "[22] K."
       },
       {
        "id": "s-references-19-2",
-       "original": "[37] D."
+       "original": "He, H."
       },
       {
        "id": "s-references-19-3",
-       "original": "Povey, “Discriminative training for large vocabulary speech recognition,” Ph.D. dissertation, University of Cambridge, 2005."
+       "original": "Fan, Y."
       },
       {
        "id": "s-references-19-4",
-       "original": "[38] H."
+       "original": "Wu, S."
       },
       {
        "id": "s-references-19-5",
-       "original": "A."
+       "original": "Xie, and R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
       },
       {
        "id": "s-references-19-6",
-       "original": "Bourlard and N."
+       "original": "Girshick, “Momentum contrast for unsupervised visual representation learning,” in CVPR, 2020."
       },
       {
        "id": "s-references-19-7",
-       "original": "Morgan, Connectionist speech recognition: a hybrid approach."
+       "original": "[23] M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
+      },
+      {
+       "id": "s-references-19-8",
+       "original": "Caron, P.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
+      },
+      {
+       "id": "s-references-19-9",
+       "original": "Bojanowski, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-19-10",
+       "original": "Joulin, and M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
+      },
+      {
+       "id": "s-references-19-11",
+       "original": "Douze, “Deep clustering for unsupervised learning of visual features,” in ECCV, 2018."
+      },
+      {
+       "id": "s-references-19-12",
+       "original": "[24] V.",
+       "zh": "每种超参数与特征的组合训练 10 次，报告开发集（合并 LibriSpeech 的 dev-clean 和 dev-other）上监督 PNMI 指标的均值和标准差，见 Table IV。"
+      },
+      {
+       "id": "s-references-19-13",
+       "original": "Panayotov, G."
+      },
+      {
+       "id": "s-references-19-14",
+       "original": "Chen, D."
+      },
+      {
+       "id": "s-references-19-15",
+       "original": "Povey, and S."
+      },
+      {
+       "id": "s-references-19-16",
+       "original": "Khudanpur, “Librispeech: an asr corpus based on public domain audio books,” in ICASSP, 2015."
+      },
+      {
+       "id": "s-references-19-17",
+       "original": "[25] J."
+      },
+      {
+       "id": "s-references-19-18",
+       "original": "Kahn et al., “Libri-light: A benchmark for asr with limited or no supervision,” in ICASSP, 2020."
+      },
+      {
+       "id": "s-references-19-19",
+       "original": "[26] C.-y."
+      },
+      {
+       "id": "s-references-19-20",
+       "original": "Lee and J."
+      },
+      {
+       "id": "s-references-19-21",
+       "original": "Glass, “A nonparametric bayesian approach to acoustic model discovery,” in ACL, 2012."
+      },
+      {
+       "id": "s-references-19-22",
+       "original": "[27] L."
+      },
+      {
+       "id": "s-references-19-23",
+       "original": "Ondel, L."
+      },
+      {
+       "id": "s-references-19-24",
+       "original": "Burget, and J. ˇCernock`y, “Variational inference for acoustic unit discovery,” Procedia Computer Science, vol. 81, pp. 80–86, 2016."
+      },
+      {
+       "id": "s-references-19-25",
+       "original": "[28] J."
+      },
+      {
+       "id": "s-references-19-26",
+       "original": "Ebbers, J."
+      },
+      {
+       "id": "s-references-19-27",
+       "original": "Heymann, L."
+      },
+      {
+       "id": "s-references-19-28",
+       "original": "Drude, T.",
+       "zh": "使用 1B 参数的模型，HuBERT 在更具挑战性的 dev-other 和 test-other 评测子集上取得了最高 19% 和 13% 的相对 WER 降低。（代码、预训练与微调模型开源于 fairseq 的 examples/hubert 目录。）关键词：自监督学习，BERT。"
+      },
+      {
+       "id": "s-references-19-29",
+       "original": "Glarner, R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
+      },
+      {
+       "id": "s-references-19-30",
+       "original": "Haeb-Umbach, and B.",
+       "zh": "随后按第 II-B 节所述对编码后的音频特征做随机掩码。"
+      },
+      {
+       "id": "s-references-19-31",
+       "original": "Raj, “Hidden markov model variational autoencoder for acoustic unit discovery.” in INTERSPEECH, 2017."
+      },
+      {
+       "id": "s-references-19-32",
+       "original": "[29] W.-N."
+      },
+      {
+       "id": "s-references-19-33",
+       "original": "Hsu, Y."
+      },
+      {
+       "id": "s-references-19-34",
+       "original": "Zhang, and J."
+      },
+      {
+       "id": "s-references-19-35",
+       "original": "Glass, “Learning latent representations for speech generation and transformation,” in INTERSPEECH, 2017."
+      },
+      {
+       "id": "s-references-19-36",
+       "original": "[30] ——, “Unsupervised learning of disentangled and interpretable representations from sequential data,” in NeurIPS, 2017."
+      },
+      {
+       "id": "s-references-19-37",
+       "original": "[31] J."
+      },
+      {
+       "id": "s-references-19-38",
+       "original": "Chorowski, R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
+      },
+      {
+       "id": "s-references-19-39",
+       "original": "J."
+      },
+      {
+       "id": "s-references-19-40",
+       "original": "Weiss, S."
+      },
+      {
+       "id": "s-references-19-41",
+       "original": "Bengio, and A. van den Oord, “Unsupervised speech representation learning using wavenet autoencoders,” IEEE/ACM transactions on audio, speech, and language processing, vol. 27, no. 12, pp. 2041–2053, 2019.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-19-42",
+       "original": "[32] S."
+      },
+      {
+       "id": "s-references-19-43",
+       "original": "Khurana, S."
+      },
+      {
+       "id": "s-references-19-44",
+       "original": "R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
+      },
+      {
+       "id": "s-references-19-45",
+       "original": "Joty, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-19-46",
+       "original": "Ali, and J."
+      },
+      {
+       "id": "s-references-19-47",
+       "original": "Glass, “A factorial deep markov model for unsupervised disentangled representation learning from speech,” in ICASSP, 2019."
+      },
+      {
+       "id": "s-references-19-48",
+       "original": "[33] S."
+      },
+      {
+       "id": "s-references-19-49",
+       "original": "Khurana, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-19-50",
+       "original": "Laurent, W.-N."
+      },
+      {
+       "id": "s-references-19-51",
+       "original": "Hsu, J."
+      },
+      {
+       "id": "s-references-19-52",
+       "original": "Chorowski, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-19-53",
+       "original": "Lancucki, R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
+      },
+      {
+       "id": "s-references-19-54",
+       "original": "Marxer, and J."
+      },
+      {
+       "id": "s-references-19-55",
+       "original": "Glass, “A convolutional deep markov model for unsupervised speech representation learning,” arXiv preprint arXiv:2006.02547, 2020."
+      },
+      {
+       "id": "s-references-19-56",
+       "original": "[34] M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
+      },
+      {
+       "id": "s-references-19-57",
+       "original": "Joshi, D."
+      },
+      {
+       "id": "s-references-19-58",
+       "original": "Chen, Y."
+      },
+      {
+       "id": "s-references-19-59",
+       "original": "Liu, D."
+      },
+      {
+       "id": "s-references-19-60",
+       "original": "S."
+      },
+      {
+       "id": "s-references-19-61",
+       "original": "Weld, L."
+      },
+      {
+       "id": "s-references-19-62",
+       "original": "Zettlemoyer, and O."
+      },
+      {
+       "id": "s-references-19-63",
+       "original": "Levy, “Spanbert: Improving pre-training by representing and predicting spans,” Transactions of the Association for Computational Linguistics, 2020."
+      },
+      {
+       "id": "s-references-19-64",
+       "original": "[35] S."
+      },
+      {
+       "id": "s-references-19-65",
+       "original": "Young, “Large vocabulary continuous speech recognition: A review,” IEEE Signal Processing Magazine, vol. 13, no. 5, pp. 45–57, 1996."
+      },
+      {
+       "id": "s-references-19-66",
+       "original": "[36] O."
+      },
+      {
+       "id": "s-references-19-67",
+       "original": "Abdel-Hamid, A.-r.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-19-68",
+       "original": "Mohamed, H."
+      },
+      {
+       "id": "s-references-19-69",
+       "original": "Jiang, and G."
+      },
+      {
+       "id": "s-references-19-70",
+       "original": "Penn, “Applying convolutional neural networks concepts to hybrid nn-hmm model for speech recognition,” in 2012 IEEE international conference on Acoustics, speech and signal processing (ICASSP)."
       }
      ]
     },
@@ -3182,437 +4290,79 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "Springer Science & Business Media, 2012, vol. 247."
-      },
-      {
-       "id": "s-references-20-2",
-       "original": "[39] R."
-      },
-      {
-       "id": "s-references-20-3",
-       "original": "M."
-      },
-      {
-       "id": "s-references-20-4",
-       "original": "Gray and D."
-      },
-      {
-       "id": "s-references-20-5",
-       "original": "L."
-      },
-      {
-       "id": "s-references-20-6",
-       "original": "Neuhoff, “Quantization,” IEEE transactions on information theory, vol. 44, no. 6, pp. 2325–2383, 1998."
+       "original": "IEEE, 2012, pp. 4277–"
       }
      ]
     },
     {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 9,
+     "original": "4280."
+    },
+    {
      "id": "p-references-21",
      "type": "paragraph",
-     "page": 10,
+     "page": 9,
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "[40] Y."
+       "original": "[37] D."
       },
       {
        "id": "s-references-21-2",
-       "original": "Zhang, J."
+       "original": "Povey, “Discriminative training for large vocabulary speech recognition,” Ph.D. dissertation, University of Cambridge, 2005."
       },
       {
        "id": "s-references-21-3",
-       "original": "Qin, D."
+       "original": "[38] H."
       },
       {
        "id": "s-references-21-4",
-       "original": "S."
+       "original": "A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-21-5",
-       "original": "Park, W."
+       "original": "Bourlard and N."
       },
       {
        "id": "s-references-21-6",
-       "original": "Han, C.-C."
-      },
-      {
-       "id": "s-references-21-7",
-       "original": "Chiu, R."
-      },
-      {
-       "id": "s-references-21-8",
-       "original": "Pang, Q."
-      },
-      {
-       "id": "s-references-21-9",
-       "original": "V."
-      },
-      {
-       "id": "s-references-21-10",
-       "original": "Le, and Y."
-      },
-      {
-       "id": "s-references-21-11",
-       "original": "Wu, “Pushing the limits of semi-supervised learning for automatic speech recognition,” arXiv preprint arXiv:2010.10504, 2020."
-      },
-      {
-       "id": "s-references-21-12",
-       "original": "[41] A."
-      },
-      {
-       "id": "s-references-21-13",
-       "original": "Graves, S."
-      },
-      {
-       "id": "s-references-21-14",
-       "original": "Fern´andez, F."
-      },
-      {
-       "id": "s-references-21-15",
-       "original": "Gomez, and J."
-      },
-      {
-       "id": "s-references-21-16",
-       "original": "Schmidhuber, “Connectionist temporal classiﬁcation: labelling unsegmented sequence data with recurrent neural networks,” in ICML, 2006."
-      },
-      {
-       "id": "s-references-21-17",
-       "original": "[42] A. van den Oord, O."
-      },
-      {
-       "id": "s-references-21-18",
-       "original": "Vinyals et al., “Neural discrete representation learning,” in NeurIPS, 2017."
-      },
-      {
-       "id": "s-references-21-19",
-       "original": "[43] T."
-      },
-      {
-       "id": "s-references-21-20",
-       "original": "Glarner, P."
-      },
-      {
-       "id": "s-references-21-21",
-       "original": "Hanebrink, J."
-      },
-      {
-       "id": "s-references-21-22",
-       "original": "Ebbers, and R."
-      },
-      {
-       "id": "s-references-21-23",
-       "original": "Haeb-Umbach, “Full bayesian hidden markov model variational autoencoder for acoustic unit discovery.” in INTERSPEECH, 2018."
-      },
-      {
-       "id": "s-references-21-24",
-       "original": "[44] Y.-A."
-      },
-      {
-       "id": "s-references-21-25",
-       "original": "Chung and J."
-      },
-      {
-       "id": "s-references-21-26",
-       "original": "Glass, “Generative pre-training for speech with autoregressive predictive coding,” in ICASSP, 2020."
-      },
-      {
-       "id": "s-references-21-27",
-       "original": "[45] ——, “Improved speech representations with multi-target autoregressive predictive coding,” arXiv preprint arXiv:2004.05274, 2020."
-      },
-      {
-       "id": "s-references-21-28",
-       "original": "[46] S."
-      },
-      {
-       "id": "s-references-21-29",
-       "original": "Ling, Y."
-      },
-      {
-       "id": "s-references-21-30",
-       "original": "Liu, J."
-      },
-      {
-       "id": "s-references-21-31",
-       "original": "Salazar, and K."
-      },
-      {
-       "id": "s-references-21-32",
-       "original": "Kirchhoff, “Deep contextualized acoustic representations for semi-supervised speech recognition,” in ICASSP, 2020."
-      },
-      {
-       "id": "s-references-21-33",
-       "original": "[47] W."
-      },
-      {
-       "id": "s-references-21-34",
-       "original": "Wang, Q."
-      },
-      {
-       "id": "s-references-21-35",
-       "original": "Tang, and K."
-      },
-      {
-       "id": "s-references-21-36",
-       "original": "Livescu, “Unsupervised pre-training of bidirectional speech encoders via masked reconstruction,” in ICASSP, 2020."
-      },
-      {
-       "id": "s-references-21-37",
-       "original": "[48] A."
-      },
-      {
-       "id": "s-references-21-38",
-       "original": "T."
-      },
-      {
-       "id": "s-references-21-39",
-       "original": "Liu, S.-w."
-      },
-      {
-       "id": "s-references-21-40",
-       "original": "Yang, P.-H."
-      },
-      {
-       "id": "s-references-21-41",
-       "original": "Chi, P.-c."
-      },
-      {
-       "id": "s-references-21-42",
-       "original": "Hsu, and H.-y."
-      },
-      {
-       "id": "s-references-21-43",
-       "original": "Lee, “Mockingjay: Unsupervised speech representation learning with deep bidirectional transformer encoders,” in ICASSP, 2020."
-      },
-      {
-       "id": "s-references-21-44",
-       "original": "[49] P.-H."
-      },
-      {
-       "id": "s-references-21-45",
-       "original": "Chi, P.-H."
-      },
-      {
-       "id": "s-references-21-46",
-       "original": "Chung, T.-H."
-      },
-      {
-       "id": "s-references-21-47",
-       "original": "Wu, C.-C."
-      },
-      {
-       "id": "s-references-21-48",
-       "original": "Hsieh, S.-W."
-      },
-      {
-       "id": "s-references-21-49",
-       "original": "Li, and H.-y."
+       "original": "Morgan, Connectionist speech recognition: a hybrid approach."
       }
      ]
     },
     {
      "id": "p-references-22",
      "type": "paragraph",
-     "page": 10,
+     "page": 9,
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "Lee, “Audio albert: A lite bert for self-supervised learning of audio representation,” arXiv preprint arXiv:2005.08575, 2020."
+       "original": "Springer Science & Business Media, 2012, vol. 247."
       },
       {
        "id": "s-references-22-2",
-       "original": "[50] S."
+       "original": "[39] R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
       },
       {
        "id": "s-references-22-3",
-       "original": "Ling and Y."
+       "original": "M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
       },
       {
        "id": "s-references-22-4",
-       "original": "Liu, “Decoar 2.0: Deep contextualized acoustic representations with vector quantization,” arXiv preprint arXiv:2012.06659, 2020."
+       "original": "Gray and D."
       },
       {
        "id": "s-references-22-5",
-       "original": "[51] A."
+       "original": "L.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
       },
       {
        "id": "s-references-22-6",
-       "original": "Baevski, M."
-      },
-      {
-       "id": "s-references-22-7",
-       "original": "Auli, and A."
-      },
-      {
-       "id": "s-references-22-8",
-       "original": "Mohamed, “Effectiveness of self-supervised pre-training for speech recognition,” arXiv preprint arXiv:1911.03912, 2019."
-      },
-      {
-       "id": "s-references-22-9",
-       "original": "[52] Y.-H."
-      },
-      {
-       "id": "s-references-22-10",
-       "original": "H."
-      },
-      {
-       "id": "s-references-22-11",
-       "original": "Tsai, Y."
-      },
-      {
-       "id": "s-references-22-12",
-       "original": "Wu, R."
-      },
-      {
-       "id": "s-references-22-13",
-       "original": "Salakhutdinov, and L.-P."
-      },
-      {
-       "id": "s-references-22-14",
-       "original": "Morency, “Selfsupervised learning from a multi-view perspective,” arXiv preprint [53] S."
-      },
-      {
-       "id": "s-references-22-15",
-       "original": "Pascual, M."
-      },
-      {
-       "id": "s-references-22-16",
-       "original": "Ravanelli, J."
-      },
-      {
-       "id": "s-references-22-17",
-       "original": "Serr`a, A."
-      },
-      {
-       "id": "s-references-22-18",
-       "original": "Bonafonte, and Y."
-      },
-      {
-       "id": "s-references-22-19",
-       "original": "Bengio, “Learning problem-agnostic speech representations from multiple selfsupervised tasks,” in INTERSPEECH, 2019."
-      },
-      {
-       "id": "s-references-22-20",
-       "original": "[54] T."
-      },
-      {
-       "id": "s-references-22-21",
-       "original": "Likhomanenko, Q."
-      },
-      {
-       "id": "s-references-22-22",
-       "original": "Xu, J."
-      },
-      {
-       "id": "s-references-22-23",
-       "original": "Kahn, G."
-      },
-      {
-       "id": "s-references-22-24",
-       "original": "Synnaeve, and R."
-      },
-      {
-       "id": "s-references-22-25",
-       "original": "Collobert, “slimipl: Language-model-free iterative pseudo-labeling,” arXiv preprint [55] S."
-      },
-      {
-       "id": "s-references-22-26",
-       "original": "Lloyd, “Least squares quantization in pcm,” IEEE transactions on information theory, vol. 28, no. 2, pp. 129–137, 1982."
-      },
-      {
-       "id": "s-references-22-27",
-       "original": "[56] F."
-      },
-      {
-       "id": "s-references-22-28",
-       "original": "Pedregosa et al., “Scikit-learn: Machine learning in python,” the Journal of machine Learning research, 2011."
-      },
-      {
-       "id": "s-references-22-29",
-       "original": "[57] D."
-      },
-      {
-       "id": "s-references-22-30",
-       "original": "Arthur and S."
-      },
-      {
-       "id": "s-references-22-31",
-       "original": "Vassilvitskii, “k-means++: The advantages of careful seeding,” Stanford, Tech."
-      },
-      {
-       "id": "s-references-22-32",
-       "original": "Rep., 2006."
-      },
-      {
-       "id": "s-references-22-33",
-       "original": "[58] D."
-      },
-      {
-       "id": "s-references-22-34",
-       "original": "P."
-      },
-      {
-       "id": "s-references-22-35",
-       "original": "Kingma and J."
-      },
-      {
-       "id": "s-references-22-36",
-       "original": "Ba, “Adam: A method for stochastic optimization,” arXiv preprint arXiv:1412.6980, 2014."
-      },
-      {
-       "id": "s-references-22-37",
-       "original": "[59] V."
-      },
-      {
-       "id": "s-references-22-38",
-       "original": "Pratap et al., “wav2letter++: The fastest open-source speech recognition system,” arXiv preprint arXiv:1812.07625, 2018."
-      },
-      {
-       "id": "s-references-22-39",
-       "original": "[60] M."
-      },
-      {
-       "id": "s-references-22-40",
-       "original": "Ott et al., “fairseq: A fast, extensible toolkit for sequence modeling,” in NAACL, 2019."
-      },
-      {
-       "id": "s-references-22-41",
-       "original": "[61] D."
-      },
-      {
-       "id": "s-references-22-42",
-       "original": "S."
-      },
-      {
-       "id": "s-references-22-43",
-       "original": "Park, Y."
-      },
-      {
-       "id": "s-references-22-44",
-       "original": "Zhang, Y."
-      },
-      {
-       "id": "s-references-22-45",
-       "original": "Jia, W."
-      },
-      {
-       "id": "s-references-22-46",
-       "original": "Han, C.-C."
-      },
-      {
-       "id": "s-references-22-47",
-       "original": "Chiu, B."
-      },
-      {
-       "id": "s-references-22-48",
-       "original": "Li, Y."
-      },
-      {
-       "id": "s-references-22-49",
-       "original": "Wu, and Q."
-      },
-      {
-       "id": "s-references-22-50",
-       "original": "V."
+       "original": "Neuhoff, “Quantization,” IEEE transactions on information theory, vol. 44, no. 6, pp. 2325–2383, 1998."
       }
      ]
     },
@@ -3623,114 +4373,627 @@ globalThis.PAPER_2106_07447 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "Le, “Improved noisy student training for automatic speech recognition,” arXiv preprint arXiv:2005.09629, 2020."
+       "original": "[40] Y."
       },
       {
        "id": "s-references-23-2",
-       "original": "[62] A."
-      },
-      {
-       "id": "s-references-23-3",
-       "original": "Gulati, J."
-      },
-      {
-       "id": "s-references-23-4",
-       "original": "Qin, C.-C."
-      },
-      {
-       "id": "s-references-23-5",
-       "original": "Chiu, N."
-      },
-      {
-       "id": "s-references-23-6",
-       "original": "Parmar, Y."
-      },
-      {
-       "id": "s-references-23-7",
        "original": "Zhang, J."
       },
       {
+       "id": "s-references-23-3",
+       "original": "Qin, D."
+      },
+      {
+       "id": "s-references-23-4",
+       "original": "S."
+      },
+      {
+       "id": "s-references-23-5",
+       "original": "Park, W."
+      },
+      {
+       "id": "s-references-23-6",
+       "original": "Han, C.-C."
+      },
+      {
+       "id": "s-references-23-7",
+       "original": "Chiu, R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
+      },
+      {
        "id": "s-references-23-8",
-       "original": "Yu, W."
+       "original": "Pang, Q."
       },
       {
        "id": "s-references-23-9",
-       "original": "Han, S."
+       "original": "V.",
+       "zh": "每种超参数与特征的组合训练 10 次，报告开发集（合并 LibriSpeech 的 dev-clean 和 dev-other）上监督 PNMI 指标的均值和标准差，见 Table IV。"
       },
       {
        "id": "s-references-23-10",
-       "original": "Wang, Z."
+       "original": "Le, and Y."
       },
       {
        "id": "s-references-23-11",
-       "original": "Zhang, Y."
+       "original": "Wu, “Pushing the limits of semi-supervised learning for automatic speech recognition,” arXiv preprint arXiv:2010.10504, 2020."
       },
       {
        "id": "s-references-23-12",
-       "original": "Wu et al., “Conformer: Convolution-augmented transformer for speech recognition,” arXiv preprint arXiv:2005.08100, 2020."
+       "original": "[41] A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-23-13",
-       "original": "[63] Q."
+       "original": "Graves, S."
       },
       {
        "id": "s-references-23-14",
-       "original": "Xu, A."
+       "original": "Fern´andez, F."
       },
       {
        "id": "s-references-23-15",
-       "original": "Baevski, T."
+       "original": "Gomez, and J."
       },
       {
        "id": "s-references-23-16",
-       "original": "Likhomanenko, P."
+       "original": "Schmidhuber, “Connectionist temporal classiﬁcation: labelling unsegmented sequence data with recurrent neural networks,” in ICML, 2006."
       },
       {
        "id": "s-references-23-17",
-       "original": "Tomasello, A."
+       "original": "[42] A. van den Oord, O.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-23-18",
-       "original": "Conneau, R."
+       "original": "Vinyals et al., “Neural discrete representation learning,” in NeurIPS, 2017."
       },
       {
        "id": "s-references-23-19",
-       "original": "Collobert, G."
+       "original": "[43] T.",
+       "zh": "使用 1B 参数的模型，HuBERT 在更具挑战性的 dev-other 和 test-other 评测子集上取得了最高 19% 和 13% 的相对 WER 降低。（代码、预训练与微调模型开源于 fairseq 的 examples/hubert 目录。）关键词：自监督学习，BERT。"
       },
       {
        "id": "s-references-23-20",
-       "original": "Synnaeve, and M."
+       "original": "Glarner, P.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
       },
       {
        "id": "s-references-23-21",
-       "original": "Auli, “Self-training and pretraining are complementary for speech recognition,” arXiv preprint [64] D."
+       "original": "Hanebrink, J."
       },
       {
        "id": "s-references-23-22",
-       "original": "Le, X."
+       "original": "Ebbers, and R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
       },
       {
        "id": "s-references-23-23",
-       "original": "Zhang, W."
+       "original": "Haeb-Umbach, “Full bayesian hidden markov model variational autoencoder for acoustic unit discovery.” in INTERSPEECH, 2018."
       },
       {
        "id": "s-references-23-24",
-       "original": "Zheng, C."
+       "original": "[44] Y.-A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
       },
       {
        "id": "s-references-23-25",
-       "original": "F¨ugen, G."
+       "original": "Chung and J."
       },
       {
        "id": "s-references-23-26",
-       "original": "Zweig, and M."
+       "original": "Glass, “Generative pre-training for speech with autoregressive predictive coding,” in ICASSP, 2020."
       },
       {
        "id": "s-references-23-27",
-       "original": "L."
+       "original": "[45] ——, “Improved speech representations with multi-target autoregressive predictive coding,” arXiv preprint arXiv:2004.05274, 2020."
       },
       {
        "id": "s-references-23-28",
+       "original": "[46] S."
+      },
+      {
+       "id": "s-references-23-29",
+       "original": "Ling, Y."
+      },
+      {
+       "id": "s-references-23-30",
+       "original": "Liu, J."
+      },
+      {
+       "id": "s-references-23-31",
+       "original": "Salazar, and K."
+      },
+      {
+       "id": "s-references-23-32",
+       "original": "Kirchhoff, “Deep contextualized acoustic representations for semi-supervised speech recognition,” in ICASSP, 2020."
+      },
+      {
+       "id": "s-references-23-33",
+       "original": "[47] W."
+      },
+      {
+       "id": "s-references-23-34",
+       "original": "Wang, Q."
+      },
+      {
+       "id": "s-references-23-35",
+       "original": "Tang, and K."
+      },
+      {
+       "id": "s-references-23-36",
+       "original": "Livescu, “Unsupervised pre-training of bidirectional speech encoders via masked reconstruction,” in ICASSP,"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 10,
+     "original": "2020."
+    },
+    {
+     "id": "p-references-24",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-references-24-1",
+       "original": "[48] A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-24-2",
+       "original": "T.",
+       "zh": "使用 1B 参数的模型，HuBERT 在更具挑战性的 dev-other 和 test-other 评测子集上取得了最高 19% 和 13% 的相对 WER 降低。（代码、预训练与微调模型开源于 fairseq 的 examples/hubert 目录。）关键词：自监督学习，BERT。"
+      },
+      {
+       "id": "s-references-24-3",
+       "original": "Liu, S.-w."
+      },
+      {
+       "id": "s-references-24-4",
+       "original": "Yang, P.-H.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
+      },
+      {
+       "id": "s-references-24-5",
+       "original": "Chi, P.-c.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
+      },
+      {
+       "id": "s-references-24-6",
+       "original": "Hsu, and H.-y."
+      },
+      {
+       "id": "s-references-24-7",
+       "original": "Lee, “Mockingjay: Unsupervised speech representation learning with deep bidirectional transformer encoders,” in ICASSP, 2020."
+      },
+      {
+       "id": "s-references-24-8",
+       "original": "[49] P.-H.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
+      },
+      {
+       "id": "s-references-24-9",
+       "original": "Chi, P.-H.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
+      },
+      {
+       "id": "s-references-24-10",
+       "original": "Chung, T.-H.",
+       "zh": "使用 1B 参数的模型，HuBERT 在更具挑战性的 dev-other 和 test-other 评测子集上取得了最高 19% 和 13% 的相对 WER 降低。（代码、预训练与微调模型开源于 fairseq 的 examples/hubert 目录。）关键词：自监督学习，BERT。"
+      },
+      {
+       "id": "s-references-24-11",
+       "original": "Wu, C.-C."
+      },
+      {
+       "id": "s-references-24-12",
+       "original": "Hsieh, S.-W."
+      },
+      {
+       "id": "s-references-24-13",
+       "original": "Li, and H.-y."
+      }
+     ]
+    },
+    {
+     "id": "p-references-25",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-references-25-1",
+       "original": "Lee, “Audio albert: A lite bert for self-supervised learning of audio representation,” arXiv preprint arXiv:2005.08575, 2020."
+      },
+      {
+       "id": "s-references-25-2",
+       "original": "[50] S."
+      },
+      {
+       "id": "s-references-25-3",
+       "original": "Ling and Y."
+      },
+      {
+       "id": "s-references-25-4",
+       "original": "Liu, “Decoar 2.0: Deep contextualized acoustic representations with vector quantization,” arXiv preprint arXiv:2012.06659,"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 10,
+     "original": "2020."
+    },
+    {
+     "id": "p-references-26",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-references-26-1",
+       "original": "[51] A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-26-2",
+       "original": "Baevski, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
+      },
+      {
+       "id": "s-references-26-3",
+       "original": "Auli, and A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-26-4",
+       "original": "Mohamed, “Effectiveness of self-supervised pre-training for speech recognition,” arXiv preprint arXiv:1911.03912,"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 10,
+     "original": "2019."
+    },
+    {
+     "id": "p-references-27",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-references-27-1",
+       "original": "[52] Y.-H."
+      },
+      {
+       "id": "s-references-27-2",
+       "original": "H.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
+      },
+      {
+       "id": "s-references-27-3",
+       "original": "Tsai, Y."
+      },
+      {
+       "id": "s-references-27-4",
+       "original": "Wu, R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
+      },
+      {
+       "id": "s-references-27-5",
+       "original": "Salakhutdinov, and L.-P.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
+      },
+      {
+       "id": "s-references-27-6",
+       "original": "Morency, “Selfsupervised learning from a multi-view perspective,” arXiv preprint arXiv:2006.05576, 2020."
+      },
+      {
+       "id": "s-references-27-7",
+       "original": "[53] S."
+      },
+      {
+       "id": "s-references-27-8",
+       "original": "Pascual, M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
+      },
+      {
+       "id": "s-references-27-9",
+       "original": "Ravanelli, J."
+      },
+      {
+       "id": "s-references-27-10",
+       "original": "Serr`a, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-27-11",
+       "original": "Bonafonte, and Y."
+      },
+      {
+       "id": "s-references-27-12",
+       "original": "Bengio, “Learning problem-agnostic speech representations from multiple selfsupervised tasks,” in INTERSPEECH, 2019."
+      },
+      {
+       "id": "s-references-27-13",
+       "original": "[54] T.",
+       "zh": "使用 1B 参数的模型，HuBERT 在更具挑战性的 dev-other 和 test-other 评测子集上取得了最高 19% 和 13% 的相对 WER 降低。（代码、预训练与微调模型开源于 fairseq 的 examples/hubert 目录。）关键词：自监督学习，BERT。"
+      },
+      {
+       "id": "s-references-27-14",
+       "original": "Likhomanenko, Q."
+      },
+      {
+       "id": "s-references-27-15",
+       "original": "Xu, J."
+      },
+      {
+       "id": "s-references-27-16",
+       "original": "Kahn, G."
+      },
+      {
+       "id": "s-references-27-17",
+       "original": "Synnaeve, and R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
+      },
+      {
+       "id": "s-references-27-18",
+       "original": "Collobert, “slimipl: Language-model-free iterative pseudo-labeling,” arXiv preprint arXiv:2010.11524, 2020."
+      },
+      {
+       "id": "s-references-27-19",
+       "original": "[55] S."
+      },
+      {
+       "id": "s-references-27-20",
+       "original": "Lloyd, “Least squares quantization in pcm,” IEEE transactions on information theory, vol. 28, no. 2, pp. 129–137, 1982."
+      },
+      {
+       "id": "s-references-27-21",
+       "original": "[56] F."
+      },
+      {
+       "id": "s-references-27-22",
+       "original": "Pedregosa et al., “Scikit-learn: Machine learning in python,” the Journal of machine Learning research, 2011."
+      },
+      {
+       "id": "s-references-27-23",
+       "original": "[57] D."
+      },
+      {
+       "id": "s-references-27-24",
+       "original": "Arthur and S."
+      },
+      {
+       "id": "s-references-27-25",
+       "original": "Vassilvitskii, “k-means++: The advantages of careful seeding,” Stanford, Tech."
+      },
+      {
+       "id": "s-references-27-26",
+       "original": "Rep., 2006."
+      },
+      {
+       "id": "s-references-27-27",
+       "original": "[58] D."
+      },
+      {
+       "id": "s-references-27-28",
+       "original": "P.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
+      },
+      {
+       "id": "s-references-27-29",
+       "original": "Kingma and J."
+      },
+      {
+       "id": "s-references-27-30",
+       "original": "Ba, “Adam: A method for stochastic optimization,” arXiv preprint arXiv:1412.6980, 2014."
+      },
+      {
+       "id": "s-references-27-31",
+       "original": "[59] V.",
+       "zh": "每种超参数与特征的组合训练 10 次，报告开发集（合并 LibriSpeech 的 dev-clean 和 dev-other）上监督 PNMI 指标的均值和标准差，见 Table IV。"
+      },
+      {
+       "id": "s-references-27-32",
+       "original": "Pratap et al., “wav2letter++: The fastest open-source speech recognition system,” arXiv preprint arXiv:1812.07625, 2018."
+      },
+      {
+       "id": "s-references-27-33",
+       "original": "[60] M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
+      },
+      {
+       "id": "s-references-27-34",
+       "original": "Ott et al., “fairseq: A fast, extensible toolkit for sequence modeling,” in NAACL, 2019."
+      },
+      {
+       "id": "s-references-27-35",
+       "original": "[61] D."
+      },
+      {
+       "id": "s-references-27-36",
+       "original": "S."
+      },
+      {
+       "id": "s-references-27-37",
+       "original": "Park, Y."
+      },
+      {
+       "id": "s-references-27-38",
+       "original": "Zhang, Y."
+      },
+      {
+       "id": "s-references-27-39",
+       "original": "Jia, W."
+      },
+      {
+       "id": "s-references-27-40",
+       "original": "Han, C.-C."
+      },
+      {
+       "id": "s-references-27-41",
+       "original": "Chiu, B.",
+       "zh": "随后按第 II-B 节所述对编码后的音频特征做随机掩码。"
+      },
+      {
+       "id": "s-references-27-42",
+       "original": "Li, Y."
+      },
+      {
+       "id": "s-references-27-43",
+       "original": "Wu, and Q."
+      },
+      {
+       "id": "s-references-27-44",
+       "original": "V.",
+       "zh": "每种超参数与特征的组合训练 10 次，报告开发集（合并 LibriSpeech 的 dev-clean 和 dev-other）上监督 PNMI 指标的均值和标准差，见 Table IV。"
+      }
+     ]
+    },
+    {
+     "id": "p-references-28",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-references-28-1",
+       "original": "Le, “Improved noisy student training for automatic speech recognition,” arXiv preprint arXiv:2005.09629, 2020."
+      },
+      {
+       "id": "s-references-28-2",
+       "original": "[62] A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-28-3",
+       "original": "Gulati, J."
+      },
+      {
+       "id": "s-references-28-4",
+       "original": "Qin, C.-C."
+      },
+      {
+       "id": "s-references-28-5",
+       "original": "Chiu, N."
+      },
+      {
+       "id": "s-references-28-6",
+       "original": "Parmar, Y."
+      },
+      {
+       "id": "s-references-28-7",
+       "original": "Zhang, J."
+      },
+      {
+       "id": "s-references-28-8",
+       "original": "Yu, W."
+      },
+      {
+       "id": "s-references-28-9",
+       "original": "Han, S."
+      },
+      {
+       "id": "s-references-28-10",
+       "original": "Wang, Z."
+      },
+      {
+       "id": "s-references-28-11",
+       "original": "Zhang, Y."
+      },
+      {
+       "id": "s-references-28-12",
+       "original": "Wu et al., “Conformer: Convolution-augmented transformer for speech recognition,” arXiv preprint arXiv:2005.08100,"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 10,
+     "original": "2020."
+    },
+    {
+     "id": "p-references-29",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-references-29-1",
+       "original": "[63] Q."
+      },
+      {
+       "id": "s-references-29-2",
+       "original": "Xu, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-29-3",
+       "original": "Baevski, T.",
+       "zh": "使用 1B 参数的模型，HuBERT 在更具挑战性的 dev-other 和 test-other 评测子集上取得了最高 19% 和 13% 的相对 WER 降低。（代码、预训练与微调模型开源于 fairseq 的 examples/hubert 目录。）关键词：自监督学习，BERT。"
+      },
+      {
+       "id": "s-references-29-4",
+       "original": "Likhomanenko, P.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
+      },
+      {
+       "id": "s-references-29-5",
+       "original": "Tomasello, A.",
+       "zh": "我们在 8 块 GPU 上、按第 IV-A 节所述的标注子集微调每个模型。"
+      },
+      {
+       "id": "s-references-29-6",
+       "original": "Conneau, R.",
+       "zh": "此外，鉴于其表示的高质量，我们将考虑把 HuBERT 预训练表示用于 ASR 之外的多种下游识别与生成任务。"
+      },
+      {
+       "id": "s-references-29-7",
+       "original": "Collobert, G."
+      },
+      {
+       "id": "s-references-29-8",
+       "original": "Synnaeve, and M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
+      },
+      {
+       "id": "s-references-29-9",
+       "original": "Auli, “Self-training and pretraining are complementary for speech recognition,” arXiv preprint arXiv:2010.11430, 2020."
+      },
+      {
+       "id": "s-references-29-10",
+       "original": "[64] D."
+      },
+      {
+       "id": "s-references-29-11",
+       "original": "Le, X."
+      },
+      {
+       "id": "s-references-29-12",
+       "original": "Zhang, W."
+      },
+      {
+       "id": "s-references-29-13",
+       "original": "Zheng, C."
+      },
+      {
+       "id": "s-references-29-14",
+       "original": "F¨ugen, G."
+      },
+      {
+       "id": "s-references-29-15",
+       "original": "Zweig, and M.",
+       "zh": "记 M ⊂ [T] 为一条长度 T 序列 X 中被掩码的下标集合，记 X̃ = r(X, M) 为 X 的受损版本——若 t ∈ M，则 xt 被替换为掩码嵌入 x̃。"
+      },
+      {
+       "id": "s-references-29-16",
+       "original": "L.",
+       "zh": "因此，语音识别领域的自监督学习面临与 CV 和 NLP 不同的独特挑战。"
+      },
+      {
+       "id": "s-references-29-17",
        "original": "Seltzer, “From senones to chenones: Tied context-dependent graphemes for hybrid speech recognition,” in ASRU, 2019."
       }
      ]
@@ -3910,7 +5173,7 @@ globalThis.PAPER_2106_07447 = {
   {
    "id": "ann-016",
    "anchor": {
-    "sentence_id": "s-V-A-2-4",
+    "sentence_id": "s-V-A-3-4",
     "quote": "using waveform as the input to the model is crucial for avoiding loss of information during quantization"
    },
    "kind": "critique",
@@ -3921,7 +5184,7 @@ globalThis.PAPER_2106_07447 = {
   {
    "id": "ann-017",
    "anchor": {
-    "sentence_id": "s-V-B-2-5",
+    "sentence_id": "s-V-B-6-5",
     "quote": "the PNMI score is much higher when clustering on HuBERT features than clustering on MFCC features"
    },
    "kind": "number",
@@ -3932,7 +5195,7 @@ globalThis.PAPER_2106_07447 = {
   {
    "id": "ann-018",
    "anchor": {
-    "sentence_id": "s-V-C-8-4",
+    "sentence_id": "s-V-C-9-4",
     "quote": "the last few layers learn to mimic their bad label behavior"
    },
    "kind": "concept",

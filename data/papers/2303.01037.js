@@ -503,40 +503,48 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-1-1-13-1",
-       "original": "BEST-RQ MOST Model-Type Decoder Upstream Chunk-wise ASR Dataset Attention USM YT-NTL-U Pre-trained Downstream Dependent USM-M Pre-trained Downstream Dependent USM-LAS Generic ASR LAS YT-SUP+ USM-CTC Generic ASR CTC YT-SUP+ We denote the pre-trained models USM and USM-M, where the appendix -M indicates that MOST has been utilized for the preparation of the model.",
-       "zh": "（Table 1 正文，抽取已打散为句子，保留原序）BEST-RQ MOST 模型类型 解码器 上游数据集 分块注意力：USM — 上游 YT-NTL-U，预训练型，下游解码器按需选择；USM-M — 预训练型，下游解码器按需选择；USM-LAS — 通用 ASR，解码器 LAS，上游 YT-SUP+；USM-CTC — 通用 ASR，解码器 CTC，上游 YT-SUP+。我们将预训练模型记作 USM 和 USM-M，其中后缀 -M 表示模型准备过程中使用了 MOST。"
-      },
-      {
-       "id": "s-1-1-13-2",
-       "original": "The USM and USM-M models can be further fine-tuned on the downstream task of choice with an appropriate transducer unit, which can be a CTC, LAS or RNN transducer (RNN-T) unit.",
-       "zh": "USM 和 USM-M 模型可以在选定的下游任务上，配合合适的 Transducer 单元进行微调——可以是 CTC、LAS 或 RNN Transducer（RNN-T）单元。"
-      },
-      {
-       "id": "s-1-1-13-3",
-       "original": "We evaluate our USM models on two types of benchmarks:",
-       "zh": "我们在两类基准上评估 USM 模型："
+       "original": "Model BEST-RQ MOST Model-Type Decoder Upstream Chunk-wise ASR Dataset Attention USM YT-NTL-U N Pre-trained Downstream Dependent",
+       "zh": "（表 1 模型谱系：Model × BEST-RQ/MOST × Model-Type × Decoder × Upstream × Chunk-wise ASR Dataset × Attention——USM（YT-NTL-U，预训练）、USM-M（Y，预训练，-M 表示使用了 MOST）、USM-LAS（N，通用 ASR，LAS，YT-SUP+）、USM-CTC（N，通用 ASR，CTC，YT-SUP+）。）我们把预训练模型记为 USM 与 USM-M，后缀 -M 表示该模型在准备阶段使用了 MOST。"
       }
      ]
     },
     {
+     "id": "eq-1-1-1",
+     "type": "equation",
+     "page": 2,
+     "original": "-"
+    },
+    {
+     "id": "eq-1-1-2",
+     "type": "equation",
+     "page": 2,
+     "original": "N USM-M Y Pre-trained Downstream Dependent"
+    },
+    {
+     "id": "eq-1-1-3",
+     "type": "equation",
+     "page": 2,
+     "original": "-"
+    },
+    {
      "id": "p-1-1-14",
      "type": "paragraph",
-     "page": 3,
+     "page": 2,
      "sentences": [
       {
        "id": "s-1-1-14-1",
-       "original": "• Automatic Speech Recognition (ASR): We use YouTube data to train USMs for YouTube (e.g., closed captions).",
-       "zh": "• 自动语音识别（ASR）：我们用 YouTube 数据为 YouTube 场景（如自动字幕）训练 USM。"
+       "original": "N USM-LAS N Generic ASR LAS YT-SUP+ Y USM-CTC N Generic ASR CTC YT-SUP+ Y We denote the pre-trained models USM and USM-M, where the appendix -M indicates that MOST has been utilized for the preparation of the model.",
+       "zh": "（表 1 模型谱系：Model × BEST-RQ/MOST × Model-Type × Decoder × Upstream × Chunk-wise ASR Dataset × Attention——USM（YT-NTL-U，预训练）、USM-M（Y，预训练，-M 表示使用了 MOST）、USM-LAS（N，通用 ASR，LAS，YT-SUP+）、USM-CTC（N，通用 ASR，CTC，YT-SUP+）。）我们把预训练模型记为 USM 与 USM-M，后缀 -M 表示该模型在准备阶段使用了 MOST。"
       },
       {
        "id": "s-1-1-14-2",
-       "original": "We evaluate the USMs on two public benchmarks, SpeechStew [2] and FLEURS [16].",
-       "zh": "我们在两个公开基准 SpeechStew [2] 和 FLEURS [16] 上评估 USM。"
+       "original": "The USM and USM-M models can be further fine-tuned on the downstream task of choice with an appropriate transducer unit, which can be a CTC, LAS or RNN transducer (RNN-T) unit.",
+       "zh": "USM 和 USM-M 模型可以在选定的下游任务上，配合合适的 Transducer 单元进行微调——可以是 CTC、LAS 或 RNN Transducer（RNN-T）单元。"
       },
       {
        "id": "s-1-1-14-3",
-       "original": "We also report results on the long-form test set CORAAL [17] for which only the evaluation set is available.",
-       "zh": "我们还报告了长音频测试集 CORAAL [17] 上的结果，该数据集只有评估集可用。"
+       "original": "We evaluate our USM models on two types of benchmarks:",
+       "zh": "我们在两类基准上评估 USM 模型："
       }
      ]
     },
@@ -547,8 +555,18 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-1-1-15-1",
-       "original": "• Automatic Speech Translation (AST): We test AST performance on CoVoST 2 [18].",
-       "zh": "• 自动语音翻译（AST）：我们在 CoVoST 2 [18] 上测试 AST 性能。"
+       "original": "• Automatic Speech Recognition (ASR): We use YouTube data to train USMs for YouTube (e.g., closed captions).",
+       "zh": "• 自动语音识别（ASR）：我们用 YouTube 数据为 YouTube 场景（如自动字幕）训练 USM。"
+      },
+      {
+       "id": "s-1-1-15-2",
+       "original": "We evaluate the USMs on two public benchmarks, SpeechStew [2] and FLEURS [16].",
+       "zh": "我们在两个公开基准 SpeechStew [2] 和 FLEURS [16] 上评估 USM。"
+      },
+      {
+       "id": "s-1-1-15-3",
+       "original": "We also report results on the long-form test set CORAAL [17] for which only the evaluation set is available.",
+       "zh": "我们还报告了长音频测试集 CORAAL [17] 上的结果，该数据集只有评估集可用。"
       }
      ]
     },
@@ -559,13 +577,8 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-1-1-16-1",
-       "original": "As indicated in Table 1, the generic ASR models are trained with YT-SUP+ and not fine-tuned on domain-specific datasets for downstream ASR tasks.",
-       "zh": "如 Table 1 所示，通用 ASR 模型在 YT-SUP+ 上训练，且不为下游 ASR 任务在特定领域数据集上微调。"
-      },
-      {
-       "id": "s-1-1-16-2",
-       "original": "We, however, explore the possibility of attaching additional “adapter\" units [19] to both generic and pre-trained ASR models and training adapter weights while keeping the rest of the model frozen.",
-       "zh": "不过，我们探索了另一种可能：为通用 ASR 模型和预训练 ASR 模型挂载额外的「适配器」（adapter）单元 [19]，并在保持模型其余部分冻结的情况下训练适配器权重。"
+       "original": "• Automatic Speech Translation (AST): We test AST performance on CoVoST 2 [18].",
+       "zh": "• 自动语音翻译（AST）：我们在 CoVoST 2 [18] 上测试 AST 性能。"
       }
      ]
     },
@@ -576,6 +589,23 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-1-1-17-1",
+       "original": "As indicated in Table 1, the generic ASR models are trained with YT-SUP+ and not fine-tuned on domain-specific datasets for downstream ASR tasks.",
+       "zh": "如 Table 1 所示，通用 ASR 模型在 YT-SUP+ 上训练，且不为下游 ASR 任务在特定领域数据集上微调。"
+      },
+      {
+       "id": "s-1-1-17-2",
+       "original": "We, however, explore the possibility of attaching additional “adapter\" units [19] to both generic and pre-trained ASR models and training adapter weights while keeping the rest of the model frozen.",
+       "zh": "不过，我们探索了另一种可能：为通用 ASR 模型和预训练 ASR 模型挂载额外的「适配器」（adapter）单元 [19]，并在保持模型其余部分冻结的情况下训练适配器权重。"
+      }
+     ]
+    },
+    {
+     "id": "p-1-1-18",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-1-1-18-1",
        "original": "Text-injection + BEST-RQ + Conformer Encoder BEST-RQ + Supervised ASR loss RNN-T - Low Resource CTC - Long-form LAS - Short-form and Speech Translation Multi-Objective Supervised Pre-Training Unsupervised Pre-training Unsupervised Audio from hundreds of languages, ~10M hrs High/Mid resource supervised data 100h to 10k per language 80% of compute 15% of compute In-domain Fine-tuning with task specific transducer Unsupervised Task specific paired data Text data 28B sentences in over 1000 languages 5% of compute",
        "zh": "（Figure 1 内嵌流程图文字，抽取已打散）文本注入 + BEST-RQ + Conformer 编码器；BEST-RQ + 监督 ASR 损失；RNN-T 用于低资源，CTC 用于长音频，LAS 用于短音频与语音翻译；多目标监督预训练；无监督预训练；来自数百种语言的无监督音频，约 10M（1000 万）小时；高/中资源监督数据每语言 100 至 10k（1 万）小时；占 80% 算力、15% 算力；用任务特定的 Transducer 做域内微调；无监督数据；任务特定的配对数据；超过 1000 种语言的 28B（280 亿）句文本数据；占 5% 算力。"
       }
@@ -589,34 +619,34 @@ globalThis.PAPER_2303_01037 = {
      "zh": "图 1：我们方法的总览。训练分为三个阶段。(i) 第一阶段在大型无标注语音数据集上训练 Conformer 主干，优化 BEST-RQ 目标。(ii) 我们接着继续训练该语音表征学习模型，同时优化多个目标：无标注语音上的 BEST-RQ 目标、配对语音-转写数据上的模态匹配损失、监督 ASR 损失与时长建模损失，以及用 RNN-T 解码器在无标注文本上的文本重建目标。(iii) 第三阶段在 ASR 或 AST 任务上微调这个预训练编码器。"
     },
     {
-     "id": "p-1-1-18",
-     "type": "paragraph",
-     "page": 3,
-     "sentences": [
-      {
-       "id": "s-1-1-18-1",
-       "original": "The overall training pipeline of our models is summarized in Fig. 1.",
-       "zh": "我们模型的整体训练流水线概括于 Fig. 1。"
-      },
-      {
-       "id": "s-1-1-18-2",
-       "original": "In our design, once a large amount of compute is expended in the pre-training stages, the downstream application can be conveniently fine-tuned from a model trained from stage-1 or stage-2 with a task-specific transducer.",
-       "zh": "在我们的设计中，一旦在预训练阶段投入了大量算力，下游应用就可以方便地从阶段 1 或阶段 2 的模型出发、配合任务特定的 Transducer 进行微调。"
-      },
-      {
-       "id": "s-1-1-18-3",
-       "original": "Our experimental results demonstrate that this pipelined training framework enables us to build both generic multilingual ASR systems and domain specific models with state-of-the-art performance.",
-       "zh": "我们的实验结果表明，这一流水线式训练框架使我们既能构建通用多语种 ASR 系统，也能构建达到最先进水平的领域特定模型。"
-      }
-     ]
-    },
-    {
      "id": "p-1-1-19",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
        "id": "s-1-1-19-1",
+       "original": "The overall training pipeline of our models is summarized in Fig. 1.",
+       "zh": "我们模型的整体训练流水线概括于 Fig. 1。"
+      },
+      {
+       "id": "s-1-1-19-2",
+       "original": "In our design, once a large amount of compute is expended in the pre-training stages, the downstream application can be conveniently fine-tuned from a model trained from stage-1 or stage-2 with a task-specific transducer.",
+       "zh": "在我们的设计中，一旦在预训练阶段投入了大量算力，下游应用就可以方便地从阶段 1 或阶段 2 的模型出发、配合任务特定的 Transducer 进行微调。"
+      },
+      {
+       "id": "s-1-1-19-3",
+       "original": "Our experimental results demonstrate that this pipelined training framework enables us to build both generic multilingual ASR systems and domain specific models with state-of-the-art performance.",
+       "zh": "我们的实验结果表明，这一流水线式训练框架使我们既能构建通用多语种 ASR 系统，也能构建达到最先进水平的领域特定模型。"
+      }
+     ]
+    },
+    {
+     "id": "p-1-1-20",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-1-1-20-1",
        "original": "We next present the key findings of our research, provide an overall view of the report, and review related work.",
        "zh": "接下来，我们给出本研究的关键发现，介绍本报告的整体结构，并回顾相关工作。"
       }
@@ -876,10 +906,16 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-1-4-1-4",
-       "original": "Various unsupervised pre-training methods for speech models have been proposed and applied in [6,10,21].",
+       "original": "Various unsupervised pre-training methods for speech models have been proposed and applied in",
        "zh": "各种针对语音模型的无监督预训练方法已在 [6,10,21] 中被提出和应用。"
       }
      ]
+    },
+    {
+     "id": "eq-1-4-1",
+     "type": "equation",
+     "page": 5,
+     "original": "[6,10,21]."
     },
     {
      "id": "p-1-4-2",
@@ -1033,20 +1069,38 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-2-1-3-1",
-       "original": "# Params (B) # Layers Dimension Att.",
-       "zh": "（Table 2 表头）参数量（B）/ 层数 / 维度 / 注意力头数。"
+       "original": "Model # Params (B) # Layers Dimension Att.",
+       "zh": "表头：Model / # Params (B) / # Layers / Dimension / Att.（后续照原文）。"
       },
       {
        "id": "s-2-1-3-2",
        "original": "Heads Conv.",
-       "zh": "（Table 2 表头续）卷积核大小。"
+       "zh": "表头续：Heads / Conv.。"
       },
       {
        "id": "s-2-1-3-3",
-       "original": "Kernel Size Conformer-0.6 0.6 24 1024 8 5 2.0 32 1536 16 5",
-       "zh": "（Table 2 正文）Conformer-0.6：参数量 0.6B、24 层、维度 1024、8 个注意力头、卷积核大小 5；Conformer-2B：参数量 2.0B、32 层、维度 1536、16 个注意力头、卷积核大小 5。"
+       "original": "Kernel Size Conformer-0.6",
+       "zh": "表头续：Kernel Size——Conformer-0.6（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-2-1-1",
+     "type": "equation",
+     "page": 5,
+     "original": "0.6 24 1024 8 5"
+    },
+    {
+     "id": "eq-2-1-2",
+     "type": "equation",
+     "page": 5,
+     "original": "Conformer-2B"
+    },
+    {
+     "id": "eq-2-1-3",
+     "type": "equation",
+     "page": 5,
+     "original": "2.0 32 1536 16 5"
     }
    ]
   },
@@ -1401,24 +1455,18 @@ globalThis.PAPER_2303_01037 = {
      ]
     },
     {
+     "id": "eq-2-4-1",
+     "type": "equation",
+     "page": 8,
+     "original": "…"
+    },
+    {
      "id": "p-2-4-5",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
        "id": "s-2-4-5-1",
-       "original": "…",
-       "zh": "……"
-      }
-     ]
-    },
-    {
-     "id": "p-2-4-6",
-     "type": "paragraph",
-     "page": 8,
-     "sentences": [
-      {
-       "id": "s-2-4-6-1",
        "original": "On Speech input On paired input On text input",
        "zh": "（Figure 5 内嵌文字）语音输入时 / 配对输入时 / 文本输入时。"
       }
@@ -2303,15 +2351,148 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-3-3-1-5-1",
-       "original": "Task Multilingual Long-form ASR Multidomain en-US Multilingual ASR AST Dataset YouTube CORAAL SpeechStew FLEURS CoVoST 2 Langauges en-US 18 73 en-US en-US 62 102 21 Prior Work (single model) Whisper-longform 17.7 27.8 23.9 12.8 Whisper-shortform† 13.2‡ 11.5 36.6 29.1 Our Work (single model) USM-LAS 14.4 19.0 29.8 11.2 10.5 12.5 USM-CTC 13.7 18.7 26.7 12.1 10.8 15.5 Prior Work (in-domain fine-tuning) BigSSL [3] 14.8 7.5 Maestro [67] 7.2 25.2 Maestro-U [67] 26.0 (8.7) Our Work (in-domain fine-tuning) USM 13.2 7.4 13.5 19.2 (6.9) 28.7 USM-M 12.5 7.0 11.8 17.4 (6.5) 30.7 Our Work (frozen encoder) USM-M-adapter§ 7.5 12.4 17.6 (6.7) 29.6 performance for some languages.",
-       "zh": "（Table 3 正文，数值与原文一致，抽取顺序已打散）任务：多语种长音频 ASR、多领域 en-US、多语种 ASR、AST；数据集：YouTube、CORAAL、SpeechStew、FLEURS、CoVoST 2；语言数：en-US 单语、18、73、en-US、en-US、62、102、21。已有工作（单一模型）：Whisper-longform 17.7、27.8、23.9、12.8；Whisper-shortform† 13.2‡、11.5、36.6、29.1。本工作（单一模型）：USM-LAS 14.4、19.0、29.8、11.2、10.5、12.5；USM-CTC 13.7、18.7、26.7、12.1、10.8、15.5。已有工作（域内微调）：BigSSL [3] 14.8、7.5；Maestro [67] 7.2、25.2；Maestro-U [67] 26.0（8.7）。本工作（域内微调）：USM 13.2、7.4、13.5、19.2（6.9）、28.7；USM-M 12.5、7.0、11.8、17.4（6.5）、30.7。本工作（冻结编码器）：USM-M-adapter§ 7.5、12.4、17.6（6.7）、29.6。（CoVoST 2 列报告 BLEU 分数；括号内为 CER）"
-      },
-      {
-       "id": "s-3-3-1-5-2",
-       "original": "When presenting the error rate metrics, we use CER for Chinese, Japanese, Thai, Lao, and Burmese to be consistent with Whisper [1].",
-       "zh": "在报告错误率指标时，为与 Whisper [1] 保持一致，我们对中文、日语、泰语、老挝语和缅甸语使用 CER。"
+       "original": "Task Multilingual Long-form ASR Multidomain en-US Multilingual ASR AST Dataset YouTube CORAAL SpeechStew FLEURS CoVoST 2 Langauges en-US",
+       "zh": "（表 7 全表：多语种长音频 ASR / 多领域 en-US / 多语种 ASR / AST 各任务在 YouTube、CORAAL、SpeechStew、FLEURS、CoVoST 2 上，Whisper-longform/shortform、USM-LAS/USM-CTC、BigSSL/Maestro/Maestro-U、USM/USM-M、USM-M-adapter 的数值对比。原始数据照录如下）\n（原始数据照录）\nTask Multilingual Long-form ASR Multidomain en-US Multilingual ASR AST Dataset YouTube CORAAL SpeechStew FLEURS CoVoST 2 Langauges en-US 18 73 en-US en-US 62 102 21 Prior Work (single model) Whisper-longform 17.7 27.8 - 23.9 12.8 Whisper-shortform† - - - 13.2‡ 11.5 36.6 - 29.1 Our Work (single model) USM-LAS 14.4 19.0 29.8 11.2 10.5 12.5 - - USM-CTC 13.7 18.7 26.7 12.1 10.8 15.5 - - Prior Work (in-domain fine-tuning) BigSSL [3] 14.8 - - - 7.5 - - - Maestro [67] 7.2 25.2 Maestro-U [67] 26.0 (8.7) Our Work (in-domain fine-tuning) USM 13.2 - - - 7.4 13.5 19.2 (6.9) 28.7 USM-M 12.5 - - - 7.0 11.8 17.4 (6.5) 30.7 Our Work (frozen encoder) USM-M-adapter§ - - - - 7.5 12.4 17.6 (6.7) 29.6 performance for some languages."
       }
      ]
+    },
+    {
+     "id": "eq-3-3-1-1",
+     "type": "equation",
+     "page": 12,
+     "original": "18 73"
+    },
+    {
+     "id": "eq-3-3-1-2",
+     "type": "equation",
+     "page": 12,
+     "original": "en-US en-US"
+    },
+    {
+     "id": "eq-3-3-1-3",
+     "type": "equation",
+     "page": 12,
+     "original": "62 102 21"
+    },
+    {
+     "id": "eq-3-3-1-4",
+     "type": "equation",
+     "page": 12,
+     "original": "Prior Work (single model) Whisper-longform"
+    },
+    {
+     "id": "eq-3-3-1-5",
+     "type": "equation",
+     "page": 12,
+     "original": "17.7 27.8 - 23.9 12.8"
+    },
+    {
+     "id": "eq-3-3-1-6",
+     "type": "equation",
+     "page": 12,
+     "original": "Whisper-shortform†"
+    },
+    {
+     "id": "eq-3-3-1-7",
+     "type": "equation",
+     "page": 12,
+     "original": "- - - 13.2‡ 11.5 36.6 - 29.1"
+    },
+    {
+     "id": "eq-3-3-1-8",
+     "type": "equation",
+     "page": 12,
+     "original": "Our Work (single model) USM-LAS"
+    },
+    {
+     "id": "eq-3-3-1-9",
+     "type": "equation",
+     "page": 12,
+     "original": "14.4 19.0 29.8 11.2 10.5 12.5 - -"
+    },
+    {
+     "id": "eq-3-3-1-10",
+     "type": "equation",
+     "page": 12,
+     "original": "USM-CTC"
+    },
+    {
+     "id": "eq-3-3-1-11",
+     "type": "equation",
+     "page": 12,
+     "original": "13.7 18.7 26.7 12.1 10.8 15.5 - -"
+    },
+    {
+     "id": "eq-3-3-1-12",
+     "type": "equation",
+     "page": 12,
+     "original": "Prior Work (in-domain fine-tuning) BigSSL [3]"
+    },
+    {
+     "id": "eq-3-3-1-13",
+     "type": "equation",
+     "page": 12,
+     "original": "14.8 - - - 7.5 - - -"
+    },
+    {
+     "id": "eq-3-3-1-14",
+     "type": "equation",
+     "page": 12,
+     "original": "Maestro [67]"
+    },
+    {
+     "id": "eq-3-3-1-15",
+     "type": "equation",
+     "page": 12,
+     "original": "7.2 25.2"
+    },
+    {
+     "id": "eq-3-3-1-16",
+     "type": "equation",
+     "page": 12,
+     "original": "Maestro-U [67]"
+    },
+    {
+     "id": "eq-3-3-1-17",
+     "type": "equation",
+     "page": 12,
+     "original": "26.0 (8.7)"
+    },
+    {
+     "id": "eq-3-3-1-18",
+     "type": "equation",
+     "page": 12,
+     "original": "Our Work (in-domain fine-tuning) USM"
+    },
+    {
+     "id": "eq-3-3-1-19",
+     "type": "equation",
+     "page": 12,
+     "original": "13.2 - - - 7.4 13.5 19.2 (6.9) 28.7"
+    },
+    {
+     "id": "eq-3-3-1-20",
+     "type": "equation",
+     "page": 12,
+     "original": "USM-M"
+    },
+    {
+     "id": "eq-3-3-1-21",
+     "type": "equation",
+     "page": 12,
+     "original": "12.5 - - - 7.0 11.8 17.4 (6.5) 30.7"
+    },
+    {
+     "id": "eq-3-3-1-22",
+     "type": "equation",
+     "page": 12,
+     "original": "Our Work (frozen encoder) USM-M-adapter§"
+    },
+    {
+     "id": "eq-3-3-1-23",
+     "type": "equation",
+     "page": 12,
+     "original": "- - - - 7.5 12.4 17.6 (6.7) 29.6"
     },
     {
      "id": "p-3-3-1-6",
@@ -2320,11 +2501,28 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-3-3-1-6-1",
+       "original": "performance for some languages.",
+       "zh": "（表 7 全表：多语种长音频 ASR / 多领域 en-US / 多语种 ASR / AST 各任务在 YouTube、CORAAL、SpeechStew、FLEURS、CoVoST 2 上，Whisper-longform/shortform、USM-LAS/USM-CTC、BigSSL/Maestro/Maestro-U、USM/USM-M、USM-M-adapter 的数值对比。原始数据照录如下）\n（原始数据照录）\nTask Multilingual Long-form ASR Multidomain en-US Multilingual ASR AST Dataset YouTube CORAAL SpeechStew FLEURS CoVoST 2 Langauges en-US 18 73 en-US en-US 62 102 21 Prior Work (single model) Whisper-longform 17.7 27.8 - 23.9 12.8 Whisper-shortform† - - - 13.2‡ 11.5 36.6 - 29.1 Our Work (single model) USM-LAS 14.4 19.0 29.8 11.2 10.5 12.5 - - USM-CTC 13.7 18.7 26.7 12.1 10.8 15.5 - - Prior Work (in-domain fine-tuning) BigSSL [3] 14.8 - - - 7.5 - - - Maestro [67] 7.2 25.2 Maestro-U [67] 26.0 (8.7) Our Work (in-domain fine-tuning) USM 13.2 - - - 7.4 13.5 19.2 (6.9) 28.7 USM-M 12.5 - - - 7.0 11.8 17.4 (6.5) 30.7 Our Work (frozen encoder) USM-M-adapter§ - - - - 7.5 12.4 17.6 (6.7) 29.6 performance for some languages."
+      },
+      {
+       "id": "s-3-3-1-6-2",
+       "original": "When presenting the error rate metrics, we use CER for Chinese, Japanese, Thai, Lao, and Burmese to be consistent with Whisper [1].",
+       "zh": "在报告错误率指标时，为与 Whisper [1] 保持一致，我们对中文、日语、泰语、老挝语和缅甸语使用 CER。"
+      }
+     ]
+    },
+    {
+     "id": "p-3-3-1-7",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-3-3-1-7-1",
        "original": "The test set for the YouTube domain consists of utterances from 73 languages with an average of 15 hours of audio per language, the audio length for each individual language ranging from 1 to 24 hours.",
        "zh": "YouTube 领域的测试集由 73 种语言的语句组成，平均每语言 15 小时音频，单个语言的音频时长从 1 小时到 24 小时不等。"
       },
       {
-       "id": "s-3-3-1-6-2",
+       "id": "s-3-3-1-7-2",
        "original": "The audio is transcribed manually from popular YouTube videos, each with a duration of up to 30 minutes.",
        "zh": "音频来自热门 YouTube 视频并人工转写，每条视频最长 30 分钟。"
       }
@@ -2625,36 +2823,102 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-4-4-2-1",
-       "original": "Hausa (ha) 88.9 2175.0 24.5 22.8 7.5 Kazakh (kk) 37.7 196.0 11.8 10.9 8.3 Shona (sn) 121.0 247.0 29.1 22.2 31.1 Pashto (ps) 93.7 254.0 36.0 35.4 1.7 Yoruba (yo) 94.8 1292.0 33.4 30.6 9.2 Tail languages often do not have paired transcriptions for supervised learning—we refer to these languages as unseen languages, as the model has not seen paired data for these lanugages during training.",
+       "original": "Hausa (ha)",
+       "zh": "（Table 4 正文，数值与原文一致）豪萨语（ha）88.9、2175.0、24.5、22.8、7.5；哈萨克语（kk）37.7、196.0、11.8、10.9、8.3；绍纳语（sn）121.0、247.0、29.1、22.2、31.1；普什图语（ps）93.7、254.0、36.0、35.4、1.7；约鲁巴语（yo）94.8、1292.0、33.4、30.6、9.2。长尾语言往往没有可用于监督学习的配对转写——我们把这类语言称为「未见过」语言，因为模型在训练中从未见过这些语言的配对数据。"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-4-1",
+     "type": "equation",
+     "page": 13,
+     "original": "88.9 2175.0 24.5 22.8 7.5"
+    },
+    {
+     "id": "eq-4-4-2",
+     "type": "equation",
+     "page": 13,
+     "original": "Kazakh (kk)"
+    },
+    {
+     "id": "eq-4-4-3",
+     "type": "equation",
+     "page": 13,
+     "original": "37.7 196.0 11.8 10.9 8.3"
+    },
+    {
+     "id": "eq-4-4-4",
+     "type": "equation",
+     "page": 13,
+     "original": "Shona (sn)"
+    },
+    {
+     "id": "eq-4-4-5",
+     "type": "equation",
+     "page": 13,
+     "original": "121.0 247.0 29.1 22.2 31.1"
+    },
+    {
+     "id": "eq-4-4-6",
+     "type": "equation",
+     "page": 13,
+     "original": "Pashto (ps)"
+    },
+    {
+     "id": "eq-4-4-7",
+     "type": "equation",
+     "page": 13,
+     "original": "93.7 254.0 36.0 35.4 1.7"
+    },
+    {
+     "id": "eq-4-4-8",
+     "type": "equation",
+     "page": 13,
+     "original": "Yoruba (yo)"
+    },
+    {
+     "id": "eq-4-4-9",
+     "type": "equation",
+     "page": 13,
+     "original": "94.8 1292.0 33.4 30.6 9.2"
+    },
+    {
+     "id": "p-4-4-3",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-4-4-3-1",
+       "original": "Tail languages often do not have paired transcriptions for supervised learning—we refer to these languages as unseen languages, as the model has not seen paired data for these lanugages during training.",
        "zh": "（Table 4 正文，数值与原文一致）豪萨语（ha）88.9、2175.0、24.5、22.8、7.5；哈萨克语（kk）37.7、196.0、11.8、10.9、8.3；绍纳语（sn）121.0、247.0、29.1、22.2、31.1；普什图语（ps）93.7、254.0、36.0、35.4、1.7；约鲁巴语（yo）94.8、1292.0、33.4、30.6、9.2。长尾语言往往没有可用于监督学习的配对转写——我们把这类语言称为「未见过」语言，因为模型在训练中从未见过这些语言的配对数据。"
       },
       {
-       "id": "s-4-4-2-2",
+       "id": "s-4-4-3-2",
        "original": "To create pseudo-labels for these languages, we first build a USM-LAS-Adapter by attaching residual adapters to USM-LAS and training them using FLEURS data.",
        "zh": "为给这些语言构造伪标注，我们首先构建一个 USM-LAS-Adapter：把残差适配器挂到 USM-LAS 上，并用 FLEURS 数据训练它们。"
       },
       {
-       "id": "s-4-4-2-3",
+       "id": "s-4-4-3-3",
        "original": "By using the USM-LAS- Adapter as a teacher, we can now transcribe the unlabeled data in the unseen languages as part of the YT-NTL dataset.",
        "zh": "以 USM-LAS-Adapter 为教师，我们现在就可以转写 YT-NTL 数据集中未见过语言的无标注数据。"
       },
       {
-       "id": "s-4-4-2-4",
+       "id": "s-4-4-3-4",
        "original": "As shown in Table 4, we observe consistent wins for all languages on the FLEURS benchmark.",
        "zh": "如 Table 4 所示，我们观察到所有语言在 FLEURS 基准上都一致地取得收益。"
       },
       {
-       "id": "s-4-4-2-5",
+       "id": "s-4-4-3-5",
        "original": "For some languages, the improvement is larger than 30%.",
        "zh": "对某些语言，改进幅度超过 30%。"
       },
       {
-       "id": "s-4-4-2-6",
+       "id": "s-4-4-3-6",
        "original": "This further demonstrates the robustness of the USM-LAS model—despite using only 10 hours of out of domain data from FLEURS, the USM-LAS-Adapter is able to transcribe YouTube data to produce meaningful recognition results that lead to these improvements.",
        "zh": "这进一步证明了 USM-LAS 模型的鲁棒性——尽管只用了来自 FLEURS 的 10 小时域外数据，USM-LAS-Adapter 就能转写 YouTube 数据，产出有意义的识别结果并带来这些改进。"
       },
       {
-       "id": "s-4-4-2-7",
+       "id": "s-4-4-3-7",
        "original": "We find the approach of training adapter models on small datasets and utilizing them for pseudo-labeling to be a promising route for scaling up the number of languages that can be transcribed by USMs.",
        "zh": "我们发现，「先在小数据集上训练适配器模型、再用它们生成伪标注」这一路线，在扩展 USM 可转写语言数量方面很有前景。"
       }
@@ -2758,10 +3022,16 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-5-1-2-1",
-       "original": "pre-train Set # Params (B) # Softmax FLEURS (CER) CoVoST (BLEU) .",
+       "original": "Model pre-train Set # Params (B) # Softmax FLEURS (CER) CoVoST (BLEU)",
        "zh": "（Table 5 表头）预训练集 / 参数量（B）/ softmax 组数 / FLEURS（CER）/ CoVoST（BLEU）。"
       }
      ]
+    },
+    {
+     "id": "eq-5-1-1",
+     "type": "equation",
+     "page": 14,
+     "original": "."
     },
     {
      "id": "p-5-1-3",
@@ -2770,10 +3040,52 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-5-1-3-1",
-       "original": "102 langs 27 langs Conformer-0.6B YT-55 0.6 1 9.5 20.9 YT-55 2.0 1 7.9 9.5 26.6 YT-NTL-U 2.0 1 7.4 8.5 27.5 YT-NTL-U 2.0 16 6.9 8.1 28.7",
-       "zh": "（Table 5 正文，数值与原文一致；FLEURS 分为 102 语言与 27 语言两列）Conformer-0.6B：预训练集 YT-55，参数量 0.6B，1 个 softmax，FLEURS CER 9.5，CoVoST BLEU 20.9；YT-55，2.0B，1 个 softmax，7.9、9.5、26.6；YT-NTL-U，2.0B，1 个 softmax，7.4、8.5、27.5；YT-NTL-U，2.0B，16 个 softmax，6.9、8.1、28.7。"
+       "original": "102 langs 27 langs Conformer-0.6B YT-55",
+       "zh": "（图内标签：102 langs / 27 langs；Conformer-0.6B；YT-55。）"
       }
      ]
+    },
+    {
+     "id": "eq-5-1-2",
+     "type": "equation",
+     "page": 14,
+     "original": "0.6 1 9.5 - 20.9"
+    },
+    {
+     "id": "eq-5-1-3",
+     "type": "equation",
+     "page": 14,
+     "original": "Conformer-2B YT-55"
+    },
+    {
+     "id": "eq-5-1-4",
+     "type": "equation",
+     "page": 14,
+     "original": "2.0 1 7.9 9.5 26.6"
+    },
+    {
+     "id": "eq-5-1-5",
+     "type": "equation",
+     "page": 14,
+     "original": "Conformer-2B YT-NTL-U"
+    },
+    {
+     "id": "eq-5-1-6",
+     "type": "equation",
+     "page": 14,
+     "original": "2.0 1 7.4 8.5 27.5"
+    },
+    {
+     "id": "eq-5-1-7",
+     "type": "equation",
+     "page": 14,
+     "original": "Conformer-2B YT-NTL-U"
+    },
+    {
+     "id": "eq-5-1-8",
+     "type": "equation",
+     "page": 14,
+     "original": "2.0 16 6.9 8.1 28.7"
     }
    ]
   },
@@ -2910,10 +3222,40 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-previous-work-1-1",
-       "original": "XLS-R (0.3B) [33] 30.6 18.9 5.1 13.2 XLS-R (1B) [33] 34.3 25.5 11.7 19.3 XLS-R (2B) [33] 36.1 27.7 15.1 22.1",
-       "zh": "（Table 6 基线行，数值与原文一致）XLS-R（0.3B）[33]：30.6、18.9、5.1、13.2；XLS-R（1B）[33]：34.3、25.5、11.7、19.3；XLS-R（2B）[33]：36.1、27.7、15.1、22.1。"
+       "original": "XLS-R (0.3B) [33]",
+       "zh": "（表格行）XLS-R (0.3B) [33]。"
       }
      ]
+    },
+    {
+     "id": "eq-previous-work-1",
+     "type": "equation",
+     "page": 15,
+     "original": "30.6 18.9 5.1 13.2"
+    },
+    {
+     "id": "eq-previous-work-2",
+     "type": "equation",
+     "page": 15,
+     "original": "XLS-R (1B) [33]"
+    },
+    {
+     "id": "eq-previous-work-3",
+     "type": "equation",
+     "page": 15,
+     "original": "34.3 25.5 11.7 19.3"
+    },
+    {
+     "id": "eq-previous-work-4",
+     "type": "equation",
+     "page": 15,
+     "original": "XLS-R (2B) [33]"
+    },
+    {
+     "id": "eq-previous-work-5",
+     "type": "equation",
+     "page": 15,
+     "original": "36.1 27.7 15.1 22.1"
     }
    ]
   },
@@ -2934,60 +3276,138 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-conformer-0-6b-1-1",
-       "original": "W2v-BERT 35.6 25.3 13.4 20.4 BEST-RQ 32.5 25.6 14.7 20.7 W2v-BERT 36.0 27.8 15.6 22.4 BEST-RQ 35.8 31.3 21.5 26.6",
-       "zh": "（Table 6 正文，数值与原文一致）W2v-BERT：35.6、25.3、13.4、20.4；BEST-RQ：32.5、25.6、14.7、20.7；W2v-BERT：36.0、27.8、15.6、22.4；BEST-RQ：35.8、31.3、21.5、26.6。"
+       "original": "W2v-BERT",
+       "zh": "BEST-RQ 是可扩展的语音表征学习器：我们发现，基于 2B 参数 Conformer 主干，BEST-RQ 预训练可以有效扩展到超大规模数据场景，并且在该设定下与 Wav2Vec 2.0 [6] 和 W2v-BERT [21] 相比表现更优。"
       }
      ]
     },
     {
-     "id": "fig-conformer-0-6b-1",
+     "id": "eq-conformer-0-6b-1",
+     "type": "equation",
+     "page": 15,
+     "original": "35.6 25.3 13.4 20.4"
+    },
+    {
+     "id": "eq-conformer-0-6b-2",
+     "type": "equation",
+     "page": 15,
+     "original": "BEST-RQ"
+    },
+    {
+     "id": "eq-conformer-0-6b-3",
+     "type": "equation",
+     "page": 15,
+     "original": "32.5 25.6 14.7 20.7"
+    }
+   ]
+  },
+  {
+   "id": "sec-conformer-2b",
+   "num": null,
+   "level": 2,
+   "page": 15,
+   "title": {
+    "original": "Conformer-2B",
+    "zh": "Conformer-2B"
+   },
+   "blocks": [
+    {
+     "id": "p-conformer-2b-1",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-conformer-2b-1-1",
+       "original": "W2v-BERT",
+       "zh": "BEST-RQ 是可扩展的语音表征学习器：我们发现，基于 2B 参数 Conformer 主干，BEST-RQ 预训练可以有效扩展到超大规模数据场景，并且在该设定下与 Wav2Vec 2.0 [6] 和 W2v-BERT [21] 相比表现更优。"
+      }
+     ]
+    },
+    {
+     "id": "eq-conformer-2b-1",
+     "type": "equation",
+     "page": 15,
+     "original": "36.0 27.8 15.6 22.4"
+    },
+    {
+     "id": "eq-conformer-2b-2",
+     "type": "equation",
+     "page": 15,
+     "original": "BEST-RQ"
+    },
+    {
+     "id": "eq-conformer-2b-3",
+     "type": "equation",
+     "page": 15,
+     "original": "35.8 31.3 21.5 26.6"
+    },
+    {
+     "id": "fig-conformer-2b-1",
      "type": "figure_caption",
      "page": 15,
      "original": "Figure 7: The word error rate measured on the YouTube en-US long-form test set for Conformer models with varying depth.",
      "zh": "图 7：不同深度 Conformer 模型在 YouTube en-US 长音频测试集上测得的词错误率。"
     },
     {
-     "id": "p-conformer-0-6b-2",
+     "id": "p-conformer-2b-2",
      "type": "paragraph",
      "page": 15,
      "sentences": [
       {
-       "id": "s-conformer-0-6b-2-1",
+       "id": "s-conformer-2b-2-1",
        "original": "(65) length, the word error rate measured on the long-form test set gradually improves as the training progresses.",
        "zh": "（……上接 Figure 7 图注，原句含页码残留「(65)」）……长度（65）时，长音频测试集上测得的词错误率随训练进行逐渐改善。"
       },
       {
-       "id": "s-conformer-0-6b-2-2",
+       "id": "s-conformer-2b-2-2",
        "original": "With a deeper model that has 48 layers but roughly the same number of parameters, however, the larger receptive field mismatch results in higher test WERs as the training step increases.",
        "zh": "然而，对于一个有 48 层但参数量大致相同的更深模型，更大的感受野失配导致测试 WER 随训练步数增加而升高。"
       }
      ]
     },
     {
-     "id": "tab-conformer-0-6b-1",
+     "id": "tab-conformer-2b-1",
      "type": "table_caption",
      "page": 15,
      "original": "Table 7 demonstrates that chunk-wise attention is able to address the long-form degradation issue and show robust performance across four different languages—en-US (English), ru-RU (Russian), ko-KR (Korean), and uk-UA (Ukrainian). We compare chunk-wise attention models with an 8-second chunk size (CW-8s in Table 7) against local self attention models which uses 128 context frames in each conformer layer (LSA-128). We note that further increasing the context window size of the local self attention model results in high deletion error rates on all languages of the YouTube long-form test sets. These results show that the chunk-wise attention models do not exhibit long-form performance degradation and are able to improve upon the performance of the local self attention models operating at the maximum allowed receptive field length.",
      "zh": "表 7（文字说明部分）：证明分块注意力能解决长音频退化问题，并在四种不同语言——en-US（英语）、ru-RU（俄语）、ko-KR（韩语）和 uk-UA（乌克兰语）——上表现鲁棒。我们把块长为 8 秒的分块注意力模型（Table 7 中的 CW-8s）与每个 Conformer 层使用 128 帧上下文的局部自注意力模型（LSA-128）对比。我们注意到，进一步增大局部自注意力模型的上下文窗口，会在 YouTube 长音频测试集的所有语言上导致高删除错误率。这些结果表明：分块注意力模型不出现长音频性能退化，且能优于工作在最大允许感受野长度下的局部自注意力模型。"
     },
     {
-     "id": "tab-conformer-0-6b-2",
+     "id": "tab-conformer-2b-2",
      "type": "table_caption",
      "page": 15,
      "original": "Table 7: Chunk-wise attention. WER (%) is reported on the YouTube long-form set.",
      "zh": "表 7：分块注意力。报告 YouTube 长音频集上的 WER（%）。"
     },
     {
-     "id": "p-conformer-0-6b-3",
+     "id": "p-conformer-2b-3",
      "type": "paragraph",
      "page": 15,
      "sentences": [
       {
-       "id": "s-conformer-0-6b-3-1",
-       "original": "# Params (B) # Layers en-US ru-RU ko-KR uk-UA LSA-128 0.6 24 16.2 16.6 26.2 15.5 CW-8s 0.6 24 12.5 14.7 19.5 15.3",
-       "zh": "（Table 7 正文，数值与原文一致）参数量（B）/ 层数 / en-US / ru-RU / ko-KR / uk-UA：LSA-128，0.6B、24 层，16.2、16.6、26.2、15.5；CW-8s，0.6B、24 层，12.5、14.7、19.5、15.3。"
+       "id": "s-conformer-2b-3-1",
+       "original": "Model # Params (B) # Layers en-US ru-RU ko-KR uk-UA LSA-128",
+       "zh": "表头：Model / # Params (B) / # Layers / en-US / ru-RU / ko-KR / uk-UA / LSA-128。"
       }
      ]
+    },
+    {
+     "id": "eq-conformer-2b-4",
+     "type": "equation",
+     "page": 15,
+     "original": "0.6 24 16.2 16.6 26.2 15.5"
+    },
+    {
+     "id": "eq-conformer-2b-5",
+     "type": "equation",
+     "page": 15,
+     "original": "CW-8s"
+    },
+    {
+     "id": "eq-conformer-2b-6",
+     "type": "equation",
+     "page": 15,
+     "original": "0.6 24 12.5 14.7 19.5 15.3"
     }
    ]
   },
@@ -3032,21 +3452,99 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-5-5-2-1",
-       "original": "bf-16 Streaming # Params (B) TPU [88] Batch Size 1.0/RTF Conformer-0.1B 0.1 TPUv4i 64 3047 Conformer-0.6B 0.6 TPUv4i 64 1920 2.0 TPUv4i 32 827 measure the serving capacity of the USM-CTC model as represented by the real time factor (RTF) in an ideal setup where we assume that each batch sent to TPU is fully packed along the time axis.",
-       "zh": "（Table 8 正文，数值与原文一致）bf-16 / 流式；参数量（B）/ TPU 类型 [88] / 批大小 / 1.0/RTF：Conformer-0.1B，0.1B，TPUv4i，批大小 64，3047；Conformer-0.6B，0.6B，TPUv4i，批大小 64，1920；Conformer-2B，2.0B，TPUv4i，批大小 32，827。（接上句）……以实时因子（RTF）衡量 USM-CTC 模型的服务能力——在一个理想设定下测量：我们假设发送到 TPU 的每个批次在时间轴上被完全填满。"
+       "original": "Model bf-16 Streaming # Params (B) TPU [88] Batch Size 1.0/RTF Conformer-0.1B Y Y",
+       "zh": "1.\n（原始数据照录）\nModel bf-16 Streaming # Params (B) TPU [88] Batch Size 1.0/RTF Conformer-0.1B Y Y"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-5-1",
+     "type": "equation",
+     "page": 16,
+     "original": "0.1"
+    },
+    {
+     "id": "eq-5-5-2",
+     "type": "equation",
+     "page": 16,
+     "original": "TPUv4i"
+    },
+    {
+     "id": "eq-5-5-3",
+     "type": "equation",
+     "page": 16,
+     "original": "64 3047"
+    },
+    {
+     "id": "eq-5-5-4",
+     "type": "equation",
+     "page": 16,
+     "original": "Conformer-0.6B N N"
+    },
+    {
+     "id": "eq-5-5-5",
+     "type": "equation",
+     "page": 16,
+     "original": "0.6"
+    },
+    {
+     "id": "eq-5-5-6",
+     "type": "equation",
+     "page": 16,
+     "original": "TPUv4i"
+    },
+    {
+     "id": "eq-5-5-7",
+     "type": "equation",
+     "page": 16,
+     "original": "64 1920"
+    },
+    {
+     "id": "eq-5-5-8",
+     "type": "equation",
+     "page": 16,
+     "original": "Conformer-2B N N"
+    },
+    {
+     "id": "eq-5-5-9",
+     "type": "equation",
+     "page": 16,
+     "original": "2.0"
+    },
+    {
+     "id": "eq-5-5-10",
+     "type": "equation",
+     "page": 16,
+     "original": "TPUv4i"
+    },
+    {
+     "id": "eq-5-5-11",
+     "type": "equation",
+     "page": 16,
+     "original": "32 827"
+    },
+    {
+     "id": "p-5-5-3",
+     "type": "paragraph",
+     "page": 16,
+     "sentences": [
+      {
+       "id": "s-5-5-3-1",
+       "original": "measure the serving capacity of the USM-CTC model as represented by the real time factor (RTF) in an ideal setup where we assume that each batch sent to TPU is fully packed along the time axis.",
+       "zh": "（表格：Model × bf-16 × Streaming × #Params (B) × TPU [88] × Batch Size × 1.0/RTF——Conformer-0.1B：Y/Y/0.1/TPUv4i/64/3047；Conformer-0.6B：N/N/0.6/TPUv4i/64/1920；Conformer-2B：N/N/2.0/TPUv4i/32/827。）在理想设置（假设送往 TPU 的每个 batch 在时间轴上完全排满）下，以实时因子（RTF）度量 USM-CTC 模型的服务能力。"
       },
       {
-       "id": "s-5-5-2-2",
+       "id": "s-5-5-3-2",
        "original": "The results of these measurements are presented in Table 8.",
        "zh": "这些测量的结果呈现在 Table 8 中。"
       },
       {
-       "id": "s-5-5-2-3",
+       "id": "s-5-5-3-3",
        "original": "Surprisingly, we find that the 2B-paramter USM-CTC model is only 3.9× slower than the 100M-parameter streaming model [89], primarily due to the fact that our models operate at batch processing mode.",
        "zh": "令人意外的是，我们发现 2B 参数的 USM-CTC 模型只比 100M 参数的流式模型 [89] 慢 3.9×（3.9 倍）——这主要归功于我们的模型以批处理模式运行。"
       },
       {
-       "id": "s-5-5-2-4",
+       "id": "s-5-5-3-4",
        "original": "This result demonstrates that the USM-CTC can be used as an offline transcriber efficiently on TPUs (or GPUs).",
        "zh": "这一结果表明，USM-CTC 可以作为离线转写器在 TPU（或 GPU）上高效运行。"
       }
@@ -3200,7 +3698,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-1-3",
-       "original": "W."
+       "original": "W.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-1-4",
@@ -3220,7 +3719,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-1-8",
-       "original": "Sutskever, “Robust speech recognition via large-scale weak supervision,” arXiv preprint arXiv:2212.04356, 2022."
+       "original": "Sutskever, “Robust speech recognition via large-scale weak supervision,” arXiv preprint arXiv:2212.04356, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -3251,11 +3751,13 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-2-6",
-       "original": "Le, and M."
+       "original": "Le, and M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-2-7",
-       "original": "Norouzi, “Speechstew: Simply mix all available speech recognition data to train one large neural network,” arXiv preprint arXiv:2104.02133, 2021."
+       "original": "Norouzi, “Speechstew: Simply mix all available speech recognition data to train one large neural network,” arXiv preprint arXiv:2104.02133, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -3274,7 +3776,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-3-3",
-       "original": "S."
+       "original": "S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-3-4",
@@ -3306,7 +3809,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-3-11",
-       "original": "Huang, S."
+       "original": "Huang, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-3-12",
@@ -3314,11 +3818,13 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-3-13",
-       "original": "Zhou, B."
+       "original": "Zhou, B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
       },
       {
        "id": "s-references-3-14",
-       "original": "Li, M."
+       "original": "Li, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-3-15",
@@ -3346,7 +3852,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-3-21",
-       "original": "Sim, B."
+       "original": "Sim, B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
       },
       {
        "id": "s-references-3-22",
@@ -3378,7 +3885,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-3-29",
-       "original": "Chiu, R."
+       "original": "Chiu, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-3-30",
@@ -3386,7 +3894,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-3-31",
-       "original": "Wu, “Bigssl: Exploring the frontier of large-scale semi-supervised learning for automatic speech recognition,” IEEE Journal of Selected Topics in Signal Processing, vol. 16, no. 6, pp. 1519–1532, 2022."
+       "original": "Wu, “Bigssl: Exploring the frontier of large-scale semi-supervised learning for automatic speech recognition,” IEEE Journal of Selected Topics in Signal Processing, vol. 16, no. 6, pp. 1519–1532, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -3397,11 +3906,13 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "[4] B."
+       "original": "[4] B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
       },
       {
        "id": "s-references-4-2",
-       "original": "Li, R."
+       "original": "Li, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-4-3",
@@ -3425,7 +3936,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-4-8",
-       "original": "Qin, P."
+       "original": "Qin, P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
       },
       {
        "id": "s-references-4-9",
@@ -3433,15 +3945,18 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-4-10",
-       "original": "R."
+       "original": "R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-4-11",
-       "original": "Huang, and M."
+       "original": "Huang, and M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-4-12",
-       "original": "Ma, “Scaling end-to-end models for large-scale multilingual asr,” arXiv preprint arXiv:2104.14830, 2021."
+       "original": "Ma, “Scaling end-to-end models for large-scale multilingual asr,” arXiv preprint arXiv:2104.14830, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -3464,7 +3979,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-5-4",
-       "original": "R."
+       "original": "R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-5-5",
@@ -3472,15 +3988,18 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-5-6",
-       "original": "W."
+       "original": "W.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-5-7",
-       "original": "Black, and S."
+       "original": "Black, and S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-5-8",
-       "original": "Watanabe, “Asr2k: Speech recognition for around 2000 languages without audio,” arXiv preprint arXiv:2209.02842, 2022."
+       "original": "Watanabe, “Asr2k: Speech recognition for around 2000 languages without audio,” arXiv preprint arXiv:2209.02842, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -3503,11 +4022,13 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-6-4",
-       "original": "Mohamed, and M."
+       "original": "Mohamed, and M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-6-5",
-       "original": "Auli, “wav2vec 2.0: A framework for self-supervised learning of speech representations,” arXiv preprint arXiv:2006.11477, 2020."
+       "original": "Auli, “wav2vec 2.0: A framework for self-supervised learning of speech representations,” arXiv preprint arXiv:2006.11477, 2020.",
+       "zh": "2."
       }
      ]
     },
@@ -3522,7 +4043,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-7-2",
-       "original": "Xie, M.-T."
+       "original": "Xie, M.-T.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-7-3",
@@ -3538,9 +4060,15 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-7-6",
-       "original": "Le, “Self-training with noisy student improves imagenet classification,” in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2020, pp. 10 687–10 698."
+       "original": "Le, “Self-training with noisy student improves imagenet classification,” in Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition,"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 17,
+     "original": "2020, pp. 10 687–10 698."
     },
     {
      "id": "p-references-8",
@@ -3553,7 +4081,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-8-2",
-       "original": "S."
+       "original": "S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-8-3",
@@ -3573,7 +4102,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-8-7",
-       "original": "Chiu, B."
+       "original": "Chiu, B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
       },
       {
        "id": "s-references-8-8",
@@ -3628,7 +4158,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-9-8",
-       "original": "Han, S."
+       "original": "Han, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-9-9",
@@ -3640,9 +4171,15 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-9-11",
-       "original": "Wu et al., “Conformer: Convolution-augmented transformer for speech recognition,” arXiv preprint arXiv:2005.08100, 2020."
+       "original": "Wu et al., “Conformer: Convolution-augmented transformer for speech recognition,” arXiv preprint arXiv:2005.08100,"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 17,
+     "original": "2020."
     },
     {
      "id": "p-references-10",
@@ -3679,7 +4216,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-10-8",
-       "original": "Chaudhuri, S."
+       "original": "Chaudhuri, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-10-9",
@@ -3695,11 +4233,13 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-10-12",
-       "original": "Niu, and S."
+       "original": "Niu, and S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-10-13",
-       "original": "Sabato, Eds., vol. 162."
+       "original": "Sabato, Eds., vol. 162.",
+       "zh": "2."
       }
      ]
     },
@@ -3722,7 +4262,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-11-4",
-       "original": "Devlin, M.-W."
+       "original": "Devlin, M.-W.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-11-5",
@@ -3757,7 +4298,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-12-4",
-       "original": "Rosenberg, B."
+       "original": "Rosenberg, B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
       },
       {
        "id": "s-references-12-5",
@@ -3765,11 +4307,13 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-12-6",
-       "original": "Wang, and P."
+       "original": "Wang, and P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
       },
       {
        "id": "s-references-12-7",
-       "original": "Moreno, “Injecting text in selfsupervised speech pretraining,” arXiv preprint arXiv:2108.12226, 2021."
+       "original": "Moreno, “Injecting text in selfsupervised speech pretraining,” arXiv preprint arXiv:2108.12226, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -3792,11 +4336,13 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-13-4",
-       "original": "Rosenberg, B."
+       "original": "Rosenberg, B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
       },
       {
        "id": "s-references-13-5",
-       "original": "Ramabhadran, P."
+       "original": "Ramabhadran, P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
       },
       {
        "id": "s-references-13-6",
@@ -3808,7 +4354,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-13-8",
-       "original": "Zen, “Maestro: Matched speech text representations through modality matching,” arXiv preprint arXiv:2204.03409, 2022."
+       "original": "Zen, “Maestro: Matched speech text representations through modality matching,” arXiv preprint arXiv:2204.03409, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -3823,7 +4370,8 @@ globalThis.PAPER_2303_01037 = {
       },
       {
        "id": "s-references-14-2",
-       "original": "Graves, S."
+       "original": "Graves, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-14-3",
@@ -3873,51 +4421,7 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "[16] A."
-      },
-      {
-       "id": "s-references-16-2",
-       "original": "Conneau, M."
-      },
-      {
-       "id": "s-references-16-3",
-       "original": "Ma, S."
-      },
-      {
-       "id": "s-references-16-4",
-       "original": "Khanuja, Y."
-      },
-      {
-       "id": "s-references-16-5",
-       "original": "Zhang, V."
-      },
-      {
-       "id": "s-references-16-6",
-       "original": "Axelrod, S."
-      },
-      {
-       "id": "s-references-16-7",
-       "original": "Dalmia, J."
-      },
-      {
-       "id": "s-references-16-8",
-       "original": "Riesa, C."
-      },
-      {
-       "id": "s-references-16-9",
-       "original": "Rivera, and A."
-      },
-      {
-       "id": "s-references-16-10",
-       "original": "Bapna, “Fleurs: Few-shot learning evaluation of universal representations of speech,” arXiv preprint [17] T."
-      },
-      {
-       "id": "s-references-16-11",
-       "original": "Kendall and C."
-      },
-      {
-       "id": "s-references-16-12",
-       "original": "Farrington, “The corpus of regional african american language. version 2021.07. eugene, or: The online resources for african american language project,” 2021."
+       "original": "IEEE, 2016, pp. 4960–4964."
       }
      ]
     },
@@ -3928,19 +4432,47 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "[18] C."
+       "original": "[16] A."
       },
       {
        "id": "s-references-17-2",
-       "original": "Wang, A."
+       "original": "Conneau, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-17-3",
-       "original": "Wu, and J."
+       "original": "Ma, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-17-4",
-       "original": "Pino, “CoVoST 2 and massively multilingual speech-to-text translation,” in interspeech, 2021."
+       "original": "Khanuja, Y."
+      },
+      {
+       "id": "s-references-17-5",
+       "original": "Zhang, V."
+      },
+      {
+       "id": "s-references-17-6",
+       "original": "Axelrod, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-17-7",
+       "original": "Dalmia, J."
+      },
+      {
+       "id": "s-references-17-8",
+       "original": "Riesa, C."
+      },
+      {
+       "id": "s-references-17-9",
+       "original": "Rivera, and A."
+      },
+      {
+       "id": "s-references-17-10",
+       "original": "Bapna, “Fleurs: Few-shot learning evaluation of universal representations of speech,” arXiv preprint arXiv:2205.12446, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -3951,71 +4483,16 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "[19] J."
+       "original": "[17] T."
       },
       {
        "id": "s-references-18-2",
-       "original": "He, C."
+       "original": "Kendall and C."
       },
       {
        "id": "s-references-18-3",
-       "original": "Zhou, X."
-      },
-      {
-       "id": "s-references-18-4",
-       "original": "Ma, T."
-      },
-      {
-       "id": "s-references-18-5",
-       "original": "Berg-Kirkpatrick, and G."
-      },
-      {
-       "id": "s-references-18-6",
-       "original": "Neubig, “Towards a unified view of parameter-efficient transfer learning,” in International Conference on Learning Representations, 2022."
-      },
-      {
-       "id": "s-references-18-7",
-       "original": "[Online]."
-      },
-      {
-       "id": "s-references-18-8",
-       "original": "Available: https://openreview.net/forum?id=0RDcd5Axok [20] A."
-      },
-      {
-       "id": "s-references-18-9",
-       "original": "Bapna, C."
-      },
-      {
-       "id": "s-references-18-10",
-       "original": "Cherry, Y."
-      },
-      {
-       "id": "s-references-18-11",
-       "original": "Zhang, Y."
-      },
-      {
-       "id": "s-references-18-12",
-       "original": "Jia, M."
-      },
-      {
-       "id": "s-references-18-13",
-       "original": "Johnson, Y."
-      },
-      {
-       "id": "s-references-18-14",
-       "original": "Cheng, S."
-      },
-      {
-       "id": "s-references-18-15",
-       "original": "Khanuja, J."
-      },
-      {
-       "id": "s-references-18-16",
-       "original": "Riesa, and A."
-      },
-      {
-       "id": "s-references-18-17",
-       "original": "Conneau, “mslam: Massively multilingual joint pre-training for speech and text,” arXiv preprint arXiv:2202.01374, 2022."
+       "original": "Farrington, “The corpus of regional african american language. version 2021.07. eugene, or: The online resources for african american language project,” 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -4026,35 +4503,20 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "[21] Y.-A."
+       "original": "[18] C."
       },
       {
        "id": "s-references-19-2",
-       "original": "Chung, Y."
+       "original": "Wang, A."
       },
       {
        "id": "s-references-19-3",
-       "original": "Zhang, W."
+       "original": "Wu, and J."
       },
       {
        "id": "s-references-19-4",
-       "original": "Han, C.-C."
-      },
-      {
-       "id": "s-references-19-5",
-       "original": "Chiu, J."
-      },
-      {
-       "id": "s-references-19-6",
-       "original": "Qin, R."
-      },
-      {
-       "id": "s-references-19-7",
-       "original": "Pang, and Y."
-      },
-      {
-       "id": "s-references-19-8",
-       "original": "Wu, “W2v-bert: Combining contrastive learning and masked language modeling for self-supervised speech pre-training,” in 2021 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)."
+       "original": "Pino, “CoVoST 2 and massively multilingual speech-to-text translation,” in interspeech, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -4065,17 +4527,83 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "[22] W.-N."
+       "original": "[19] J."
       },
       {
        "id": "s-references-20-2",
-       "original": "Hsu and J."
+       "original": "He, C."
       },
       {
        "id": "s-references-20-3",
-       "original": "Glass, “Extracting domain invariant features by unsupervised learning for robust automatic speech recognition,” in 2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
+       "original": "Zhou, X."
+      },
+      {
+       "id": "s-references-20-4",
+       "original": "Ma, T."
+      },
+      {
+       "id": "s-references-20-5",
+       "original": "Berg-Kirkpatrick, and G."
+      },
+      {
+       "id": "s-references-20-6",
+       "original": "Neubig, “Towards a unified view of parameter-efficient transfer learning,” in International Conference on Learning Representations, 2022.",
+       "zh": "2."
+      },
+      {
+       "id": "s-references-20-7",
+       "original": "[Online]."
+      },
+      {
+       "id": "s-references-20-8",
+       "original": "Available: https://openreview.net/forum?id=0RDcd5Axok [20] A."
+      },
+      {
+       "id": "s-references-20-9",
+       "original": "Bapna, C."
+      },
+      {
+       "id": "s-references-20-10",
+       "original": "Cherry, Y."
+      },
+      {
+       "id": "s-references-20-11",
+       "original": "Zhang, Y."
+      },
+      {
+       "id": "s-references-20-12",
+       "original": "Jia, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-20-13",
+       "original": "Johnson, Y."
+      },
+      {
+       "id": "s-references-20-14",
+       "original": "Cheng, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-20-15",
+       "original": "Khanuja, J."
+      },
+      {
+       "id": "s-references-20-16",
+       "original": "Riesa, and A."
+      },
+      {
+       "id": "s-references-20-17",
+       "original": "Conneau, “mslam: Massively multilingual joint pre-training for speech and text,” arXiv preprint arXiv:2202.01374,",
+       "zh": "2."
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 17,
+     "original": "2022."
     },
     {
      "id": "p-references-21",
@@ -4084,15 +4612,36 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "[23] Y.-A."
+       "original": "[21] Y.-A."
       },
       {
        "id": "s-references-21-2",
-       "original": "Chung and J."
+       "original": "Chung, Y."
       },
       {
        "id": "s-references-21-3",
-       "original": "Glass, “Speech2vec: A sequence-to-sequence framework for learning word embeddings from speech,” arXiv preprint arXiv:1803.08976, 2018."
+       "original": "Zhang, W."
+      },
+      {
+       "id": "s-references-21-4",
+       "original": "Han, C.-C."
+      },
+      {
+       "id": "s-references-21-5",
+       "original": "Chiu, J."
+      },
+      {
+       "id": "s-references-21-6",
+       "original": "Qin, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-21-7",
+       "original": "Pang, and Y."
+      },
+      {
+       "id": "s-references-21-8",
+       "original": "Wu, “W2v-bert: Combining contrastive learning and masked language modeling for self-supervised speech pre-training,” in 2021 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)."
       }
      ]
     },
@@ -4103,19 +4652,7 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "[24] A. v. d."
-      },
-      {
-       "id": "s-references-22-2",
-       "original": "Oord, Y."
-      },
-      {
-       "id": "s-references-22-3",
-       "original": "Li, and O."
-      },
-      {
-       "id": "s-references-22-4",
-       "original": "Vinyals, “Representation learning with contrastive predictive coding,” arXiv preprint arXiv:1807.03748, 2018."
+       "original": "IEEE, 2021, pp. 244–250."
       }
      ]
     },
@@ -4126,23 +4663,15 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "[25] Y.-A."
+       "original": "[22] W.-N."
       },
       {
        "id": "s-references-23-2",
-       "original": "Chung, W.-N."
+       "original": "Hsu and J."
       },
       {
        "id": "s-references-23-3",
-       "original": "Hsu, H."
-      },
-      {
-       "id": "s-references-23-4",
-       "original": "Tang, and J."
-      },
-      {
-       "id": "s-references-23-5",
-       "original": "Glass, “An unsupervised autoregressive model for speech representation learning,” arXiv preprint arXiv:1904.03240, 2019."
+       "original": "Glass, “Extracting domain invariant features by unsupervised learning for robust automatic speech recognition,” in 2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
       }
      ]
     },
@@ -4153,123 +4682,106 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "[26] J."
-      },
-      {
-       "id": "s-references-24-2",
-       "original": "Chorowski, R."
-      },
-      {
-       "id": "s-references-24-3",
-       "original": "J."
-      },
-      {
-       "id": "s-references-24-4",
-       "original": "Weiss, S."
-      },
-      {
-       "id": "s-references-24-5",
-       "original": "Bengio, and A. van den Oord, “Unsupervised speech representation learning using wavenet autoencoders,” IEEE/ACM transactions on audio, speech, and language processing, vol. 27, no. 12, pp. 2041–2053, 2019."
+       "original": "IEEE, 2018, pp. 5614–5618."
       }
      ]
     },
     {
      "id": "p-references-25",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "[27] S."
+       "original": "[23] Y.-A."
       },
       {
        "id": "s-references-25-2",
-       "original": "Schneider, A."
+       "original": "Chung and J."
       },
       {
        "id": "s-references-25-3",
-       "original": "Baevski, R."
-      },
-      {
-       "id": "s-references-25-4",
-       "original": "Collobert, and M."
-      },
-      {
-       "id": "s-references-25-5",
-       "original": "Auli, “wav2vec: Unsupervised pre-training for speech recognition,” arXiv preprint arXiv:1904.05862, 2019."
+       "original": "Glass, “Speech2vec: A sequence-to-sequence framework for learning word embeddings from speech,” arXiv preprint arXiv:1803.08976, 2018.",
+       "zh": "3."
       }
      ]
     },
     {
      "id": "p-references-26",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "[28] A."
+       "original": "[24] A. v. d."
       },
       {
        "id": "s-references-26-2",
-       "original": "Baevski, S."
+       "original": "Oord, Y."
       },
       {
        "id": "s-references-26-3",
-       "original": "Schneider, and M."
+       "original": "Li, and O."
       },
       {
        "id": "s-references-26-4",
-       "original": "Auli, “vq-wav2vec: Self-supervised learning of discrete speech representations,” arXiv preprint arXiv:1910.05453, 2019."
+       "original": "Vinyals, “Representation learning with contrastive predictive coding,” arXiv preprint arXiv:1807.03748, 2018."
       }
      ]
     },
     {
      "id": "p-references-27",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "[29] S."
+       "original": "[25] Y.-A."
       },
       {
        "id": "s-references-27-2",
-       "original": "Ling, Y."
+       "original": "Chung, W.-N."
       },
       {
        "id": "s-references-27-3",
-       "original": "Liu, J."
+       "original": "Hsu, H."
       },
       {
        "id": "s-references-27-4",
-       "original": "Salazar, and K."
+       "original": "Tang, and J."
       },
       {
        "id": "s-references-27-5",
-       "original": "Kirchhoff, “Deep contextualized acoustic representations for semisupervised speech recognition,” in ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
+       "original": "Glass, “An unsupervised autoregressive model for speech representation learning,” arXiv preprint arXiv:1904.03240, 2019."
       }
      ]
     },
     {
      "id": "p-references-28",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "[30] A."
+       "original": "[26] J."
       },
       {
        "id": "s-references-28-2",
-       "original": "Baevski, M."
+       "original": "Chorowski, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-28-3",
-       "original": "Auli, and A."
+       "original": "J."
       },
       {
        "id": "s-references-28-4",
-       "original": "Mohamed, “Effectiveness of self-supervised pre-training for speech recognition,” arXiv preprint arXiv:1911.03912, 2019."
+       "original": "Weiss, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-28-5",
+       "original": "Bengio, and A. van den Oord, “Unsupervised speech representation learning using wavenet autoencoders,” IEEE/ACM transactions on audio, speech, and language processing, vol. 27, no. 12, pp. 2041–2053, 2019."
       }
      ]
     },
@@ -4280,23 +4792,26 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "[31] M."
+       "original": "[27] S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-29-2",
-       "original": "Riviere, A."
+       "original": "Schneider, A."
       },
       {
        "id": "s-references-29-3",
-       "original": "Joulin, P.-E."
+       "original": "Baevski, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-29-4",
-       "original": "Mazaré, and E."
+       "original": "Collobert, and M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-29-5",
-       "original": "Dupoux, “Unsupervised pretraining transfers well across languages,” in ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
+       "original": "Auli, “wav2vec: Unsupervised pre-training for speech recognition,” arXiv preprint arXiv:1904.05862, 2019."
       }
      ]
     },
@@ -4307,27 +4822,21 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "[32] K."
+       "original": "[28] A."
       },
       {
        "id": "s-references-30-2",
-       "original": "Kawakami, L."
+       "original": "Baevski, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-30-3",
-       "original": "Wang, C."
+       "original": "Schneider, and M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-30-4",
-       "original": "Dyer, P."
-      },
-      {
-       "id": "s-references-30-5",
-       "original": "Blunsom, and A. v. d."
-      },
-      {
-       "id": "s-references-30-6",
-       "original": "Oord, “Learning robust and multilingual speech representations,” arXiv preprint arXiv:2001.11128, 2020."
+       "original": "Auli, “vq-wav2vec: Self-supervised learning of discrete speech representations,” arXiv preprint arXiv:1910.05453, 2019."
       }
      ]
     },
@@ -4338,51 +4847,24 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "[33] A."
+       "original": "[29] S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-31-2",
-       "original": "Babu, C."
+       "original": "Ling, Y."
       },
       {
        "id": "s-references-31-3",
-       "original": "Wang, A."
+       "original": "Liu, J."
       },
       {
        "id": "s-references-31-4",
-       "original": "Tjandra, K."
+       "original": "Salazar, and K."
       },
       {
        "id": "s-references-31-5",
-       "original": "Lakhotia, Q."
-      },
-      {
-       "id": "s-references-31-6",
-       "original": "Xu, N."
-      },
-      {
-       "id": "s-references-31-7",
-       "original": "Goyal, K."
-      },
-      {
-       "id": "s-references-31-8",
-       "original": "Singh, P. von Platen, Y."
-      },
-      {
-       "id": "s-references-31-9",
-       "original": "Saraf, J."
-      },
-      {
-       "id": "s-references-31-10",
-       "original": "Pino et al., “Xls-r: Self-supervised cross-lingual speech representation learning at scale,” arXiv preprint [34] G."
-      },
-      {
-       "id": "s-references-31-11",
-       "original": "Zavaliagkos and T."
-      },
-      {
-       "id": "s-references-31-12",
-       "original": "Colthurst, “Utilizing untranscribed training data to improve performance,” in DARPA Broadcast News Transcription and Understanding Workshop, Landsdowne, 1998, pp. 301–305."
+       "original": "Kirchhoff, “Deep contextualized acoustic representations for semisupervised speech recognition,” in ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
       }
      ]
     },
@@ -4393,19 +4875,8 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "[35] L."
-      },
-      {
-       "id": "s-references-32-2",
-       "original": "Lamel, J. luc Gauvain, and G."
-      },
-      {
-       "id": "s-references-32-3",
-       "original": "Adda, “Lightly supervised acoustic model training,” in Proc."
-      },
-      {
-       "id": "s-references-32-4",
-       "original": "ISCA ITRW ASR2000, 2000, pp. 150–154."
+       "original": "IEEE, 2020, pp. 6429–6433.",
+       "zh": "3."
       }
      ]
     },
@@ -4416,15 +4887,21 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "[36] S."
+       "original": "[30] A."
       },
       {
        "id": "s-references-33-2",
-       "original": "Novotney and R."
+       "original": "Baevski, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-33-3",
-       "original": "Schwartz, “Analysis of low-resource acoustic model self-training,” in Tenth Annual Conference of the International Speech Communication Association, 2009."
+       "original": "Auli, and A."
+      },
+      {
+       "id": "s-references-33-4",
+       "original": "Mohamed, “Effectiveness of self-supervised pre-training for speech recognition,” arXiv preprint arXiv:1911.03912, 2019.",
+       "zh": "1."
       }
      ]
     },
@@ -4435,27 +4912,25 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "[37] S."
+       "original": "[31] M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-34-2",
-       "original": "Thomas, M."
+       "original": "Riviere, A."
       },
       {
        "id": "s-references-34-3",
-       "original": "L."
+       "original": "Joulin, P.-E.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
       },
       {
        "id": "s-references-34-4",
-       "original": "Seltzer, K."
+       "original": "Mazaré, and E."
       },
       {
        "id": "s-references-34-5",
-       "original": "Church, and H."
-      },
-      {
-       "id": "s-references-34-6",
-       "original": "Hermansky, “Deep neural network features and semisupervised training for low resource speech recognition,” in 2013 IEEE international conference on acoustics, speech and signal processing."
+       "original": "Dupoux, “Unsupervised pretraining transfers well across languages,” in ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
       }
      ]
     },
@@ -4466,27 +4941,7 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-35-1",
-       "original": "[38] B."
-      },
-      {
-       "id": "s-references-35-2",
-       "original": "Li, T."
-      },
-      {
-       "id": "s-references-35-3",
-       "original": "N."
-      },
-      {
-       "id": "s-references-35-4",
-       "original": "Sainath, R."
-      },
-      {
-       "id": "s-references-35-5",
-       "original": "Pang, and Z."
-      },
-      {
-       "id": "s-references-35-6",
-       "original": "Wu, “Semi-supervised training for end-to-end models via weak distillation,” in ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
+       "original": "IEEE, 2020, pp. 7414–7418."
       }
      ]
     },
@@ -4497,19 +4952,29 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "[39] J."
+       "original": "[32] K."
       },
       {
        "id": "s-references-36-2",
-       "original": "Kahn, A."
+       "original": "Kawakami, L."
       },
       {
        "id": "s-references-36-3",
-       "original": "Lee, and A."
+       "original": "Wang, C."
       },
       {
        "id": "s-references-36-4",
-       "original": "Hannun, “Self-training for end-to-end speech recognition,” in ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
+       "original": "Dyer, P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
+      },
+      {
+       "id": "s-references-36-5",
+       "original": "Blunsom, and A. v. d."
+      },
+      {
+       "id": "s-references-36-6",
+       "original": "Oord, “Learning robust and multilingual speech representations,” arXiv preprint arXiv:2001.11128, 2020.",
+       "zh": "1."
       }
      ]
     },
@@ -4520,7 +4985,45 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "IEEE, 2020, pp. 7084–7088."
+       "original": "[33] A."
+      },
+      {
+       "id": "s-references-37-2",
+       "original": "Babu, C."
+      },
+      {
+       "id": "s-references-37-3",
+       "original": "Wang, A."
+      },
+      {
+       "id": "s-references-37-4",
+       "original": "Tjandra, K."
+      },
+      {
+       "id": "s-references-37-5",
+       "original": "Lakhotia, Q."
+      },
+      {
+       "id": "s-references-37-6",
+       "original": "Xu, N."
+      },
+      {
+       "id": "s-references-37-7",
+       "original": "Goyal, K."
+      },
+      {
+       "id": "s-references-37-8",
+       "original": "Singh, P. von Platen, Y.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
+      },
+      {
+       "id": "s-references-37-9",
+       "original": "Saraf, J."
+      },
+      {
+       "id": "s-references-37-10",
+       "original": "Pino et al., “Xls-r: Self-supervised cross-lingual speech representation learning at scale,” arXiv preprint arXiv:2111.09296, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -4531,43 +5034,15 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "[40] G."
+       "original": "[34] G."
       },
       {
        "id": "s-references-38-2",
-       "original": "Synnaeve, Q."
+       "original": "Zavaliagkos and T."
       },
       {
        "id": "s-references-38-3",
-       "original": "Xu, J."
-      },
-      {
-       "id": "s-references-38-4",
-       "original": "Kahn, T."
-      },
-      {
-       "id": "s-references-38-5",
-       "original": "Likhomanenko, E."
-      },
-      {
-       "id": "s-references-38-6",
-       "original": "Grave, V."
-      },
-      {
-       "id": "s-references-38-7",
-       "original": "Pratap, A."
-      },
-      {
-       "id": "s-references-38-8",
-       "original": "Sriram, V."
-      },
-      {
-       "id": "s-references-38-9",
-       "original": "Liptchinsky, and R."
-      },
-      {
-       "id": "s-references-38-10",
-       "original": "Collobert, “End-to-end asr: from supervised to semi-supervised learning with modern architectures,” in arXiv, 2019."
+       "original": "Colthurst, “Utilizing untranscribed training data to improve performance,” in DARPA Broadcast News Transcription and Understanding Workshop, Landsdowne, 1998, pp. 301–305."
       }
      ]
     },
@@ -4578,23 +5053,19 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "[41] S."
+       "original": "[35] L."
       },
       {
        "id": "s-references-39-2",
-       "original": "H."
+       "original": "Lamel, J. luc Gauvain, and G."
       },
       {
        "id": "s-references-39-3",
-       "original": "K."
+       "original": "Adda, “Lightly supervised acoustic model training,” in Proc."
       },
       {
        "id": "s-references-39-4",
-       "original": "Parthasarathi and N."
-      },
-      {
-       "id": "s-references-39-5",
-       "original": "Strom, “Lessons from building acoustic models with a million hours of speech,” in ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
+       "original": "ISCA ITRW ASR2000, 2000, pp. 150–154."
       }
      ]
     },
@@ -4605,23 +5076,17 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-40-1",
-       "original": "[42] W.-N."
+       "original": "[36] S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-40-2",
-       "original": "Hsu, A."
+       "original": "Novotney and R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-40-3",
-       "original": "Lee, G."
-      },
-      {
-       "id": "s-references-40-4",
-       "original": "Synnaeve, and A."
-      },
-      {
-       "id": "s-references-40-5",
-       "original": "Hannun, “Semi-supervised speech recognition via local prior matching,” arXiv preprint arXiv:2002.10336, 2020."
+       "original": "Schwartz, “Analysis of low-resource acoustic model self-training,” in Tenth Annual Conference of the International Speech Communication Association, 2009."
       }
      ]
     },
@@ -4632,31 +5097,29 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-41-1",
-       "original": "[43] Q."
+       "original": "[37] S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-41-2",
-       "original": "Xu, T."
+       "original": "Thomas, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-41-3",
-       "original": "Likhomanenko, J."
+       "original": "L."
       },
       {
        "id": "s-references-41-4",
-       "original": "Kahn, A."
+       "original": "Seltzer, K."
       },
       {
        "id": "s-references-41-5",
-       "original": "Hannun, G."
+       "original": "Church, and H."
       },
       {
        "id": "s-references-41-6",
-       "original": "Synnaeve, and R."
-      },
-      {
-       "id": "s-references-41-7",
-       "original": "Collobert, “Iterative pseudo-labeling for speech recognition,” arXiv preprint arXiv:2005.09267, 2020."
+       "original": "Hermansky, “Deep neural network features and semisupervised training for low resource speech recognition,” in 2013 IEEE international conference on acoustics, speech and signal processing."
       }
      ]
     },
@@ -4667,55 +5130,7 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "[44] Z."
-      },
-      {
-       "id": "s-references-42-2",
-       "original": "Chen, A."
-      },
-      {
-       "id": "s-references-42-3",
-       "original": "Rosenberg, Y."
-      },
-      {
-       "id": "s-references-42-4",
-       "original": "Zhang, H."
-      },
-      {
-       "id": "s-references-42-5",
-       "original": "Zen, M."
-      },
-      {
-       "id": "s-references-42-6",
-       "original": "Ghodsi, Y."
-      },
-      {
-       "id": "s-references-42-7",
-       "original": "Huang, J."
-      },
-      {
-       "id": "s-references-42-8",
-       "original": "Emond, G."
-      },
-      {
-       "id": "s-references-42-9",
-       "original": "Wang, B."
-      },
-      {
-       "id": "s-references-42-10",
-       "original": "Ramabhadran, and P."
-      },
-      {
-       "id": "s-references-42-11",
-       "original": "J."
-      },
-      {
-       "id": "s-references-42-12",
-       "original": "Moreno, “Semi-Supervision in ASR: Sequential MixMatch and Factorized TTS-Based Augmentation,” in Proc."
-      },
-      {
-       "id": "s-references-42-13",
-       "original": "Interspeech 2021, 2021, pp. 736–740."
+       "original": "IEEE, 2013, pp. 6704–6708."
       }
      ]
     },
@@ -4726,23 +5141,29 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-43-1",
-       "original": "[45] A."
+       "original": "[38] B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
       },
       {
        "id": "s-references-43-2",
-       "original": "Renduchintala, S."
+       "original": "Li, T."
       },
       {
        "id": "s-references-43-3",
-       "original": "Ding, M."
+       "original": "N."
       },
       {
        "id": "s-references-43-4",
-       "original": "Wiesner, and S."
+       "original": "Sainath, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-43-5",
-       "original": "Watanabe, “Multi-modal data augmentation for end-to-end asr,” arXiv preprint arXiv:1803.10299, 2018."
+       "original": "Pang, and Z."
+      },
+      {
+       "id": "s-references-43-6",
+       "original": "Wu, “Semi-supervised training for end-to-end models via weak distillation,” in ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
       }
      ]
     },
@@ -4753,51 +5174,8 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-44-1",
-       "original": "[46] A."
-      },
-      {
-       "id": "s-references-44-2",
-       "original": "Bapna, Y.-a."
-      },
-      {
-       "id": "s-references-44-3",
-       "original": "Chung, N."
-      },
-      {
-       "id": "s-references-44-4",
-       "original": "Wu, A."
-      },
-      {
-       "id": "s-references-44-5",
-       "original": "Gulati, Y."
-      },
-      {
-       "id": "s-references-44-6",
-       "original": "Jia, J."
-      },
-      {
-       "id": "s-references-44-7",
-       "original": "H."
-      },
-      {
-       "id": "s-references-44-8",
-       "original": "Clark, M."
-      },
-      {
-       "id": "s-references-44-9",
-       "original": "Johnson, J."
-      },
-      {
-       "id": "s-references-44-10",
-       "original": "Riesa, A."
-      },
-      {
-       "id": "s-references-44-11",
-       "original": "Conneau, and Y."
-      },
-      {
-       "id": "s-references-44-12",
-       "original": "Zhang, “Slam: A unified encoder for speech and language modeling via speech-text joint pre-training,” arXiv preprint arXiv:2110.10329, 2021."
+       "original": "IEEE, 2019, pp. 2837–2841.",
+       "zh": "1."
       }
      ]
     },
@@ -4808,27 +5186,19 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-45-1",
-       "original": "[47] S."
+       "original": "[39] J."
       },
       {
        "id": "s-references-45-2",
-       "original": "Thomas, B."
+       "original": "Kahn, A."
       },
       {
        "id": "s-references-45-3",
-       "original": "Kingsbury, G."
+       "original": "Lee, and A."
       },
       {
        "id": "s-references-45-4",
-       "original": "Saon, and H.-K."
-      },
-      {
-       "id": "s-references-45-5",
-       "original": "J."
-      },
-      {
-       "id": "s-references-45-6",
-       "original": "Kuo, “Integrating text inputs for training and adapting rnn transducer asr models,” in ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2022, pp. 8127–8131."
+       "original": "Hannun, “Self-training for end-to-end speech recognition,” in ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
       }
      ]
     },
@@ -4839,481 +5209,382 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-46-1",
-       "original": "[48] Y."
-      },
-      {
-       "id": "s-references-46-2",
-       "original": "Cheng, Y."
-      },
-      {
-       "id": "s-references-46-3",
-       "original": "Zhang, M."
-      },
-      {
-       "id": "s-references-46-4",
-       "original": "Johnson, W."
-      },
-      {
-       "id": "s-references-46-5",
-       "original": "Macherey, and A."
-      },
-      {
-       "id": "s-references-46-6",
-       "original": "Bapna, “Mu2slam: Multitask, multilingual speech and language models,” arXiv preprint arXiv:2212.09553, 2022."
+       "original": "IEEE, 2020, pp.",
+       "zh": "3."
       }
      ]
     },
     {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 18,
+     "original": "7084–7088."
+    },
+    {
      "id": "p-references-47",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-47-1",
-       "original": "[49] Z.-H."
+       "original": "[40] G."
       },
       {
        "id": "s-references-47-2",
-       "original": "Zhang, L."
+       "original": "Synnaeve, Q."
       },
       {
        "id": "s-references-47-3",
-       "original": "Zhou, J."
+       "original": "Xu, J."
       },
       {
        "id": "s-references-47-4",
-       "original": "Ao, S."
+       "original": "Kahn, T."
       },
       {
        "id": "s-references-47-5",
-       "original": "Liu, L."
+       "original": "Likhomanenko, E."
       },
       {
        "id": "s-references-47-6",
-       "original": "Dai, J."
+       "original": "Grave, V."
       },
       {
        "id": "s-references-47-7",
-       "original": "Li, and F."
+       "original": "Pratap, A."
       },
       {
        "id": "s-references-47-8",
-       "original": "Wei, “Speechut: Bridging speech and text with hidden-unit for encoder-decoder based speech-text pre-training,” in Conference on Empirical Methods in Natural Language Processing, 2022."
+       "original": "Sriram, V."
+      },
+      {
+       "id": "s-references-47-9",
+       "original": "Liptchinsky, and R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-47-10",
+       "original": "Collobert, “End-to-end asr: from supervised to semi-supervised learning with modern architectures,” in arXiv, 2019."
       }
      ]
     },
     {
      "id": "p-references-48",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-48-1",
-       "original": "[50] Z.-H."
+       "original": "[41] S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-48-2",
-       "original": "Zhang, S."
+       "original": "H."
       },
       {
        "id": "s-references-48-3",
-       "original": "Chen, L."
+       "original": "K."
       },
       {
        "id": "s-references-48-4",
-       "original": "Zhou, Y."
+       "original": "Parthasarathi and N."
       },
       {
        "id": "s-references-48-5",
-       "original": "Wu, S."
-      },
-      {
-       "id": "s-references-48-6",
-       "original": "Ren, S."
-      },
-      {
-       "id": "s-references-48-7",
-       "original": "Liu, Z."
-      },
-      {
-       "id": "s-references-48-8",
-       "original": "Yao, X."
-      },
-      {
-       "id": "s-references-48-9",
-       "original": "Gong, L."
-      },
-      {
-       "id": "s-references-48-10",
-       "original": "Dai, J."
-      },
-      {
-       "id": "s-references-48-11",
-       "original": "Li, and F."
-      },
-      {
-       "id": "s-references-48-12",
-       "original": "Wei, “Speechlm: Enhanced speech pre-training with unpaired textual data,” ArXiv, vol. abs/2209.15329, 2022."
+       "original": "Strom, “Lessons from building acoustic models with a million hours of speech,” in ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
       }
      ]
     },
     {
      "id": "p-references-49",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-49-1",
-       "original": "[51] S."
-      },
-      {
-       "id": "s-references-49-2",
-       "original": "Khurana, A."
-      },
-      {
-       "id": "s-references-49-3",
-       "original": "Laurent, and J."
-      },
-      {
-       "id": "s-references-49-4",
-       "original": "R."
-      },
-      {
-       "id": "s-references-49-5",
-       "original": "Glass, “Samu-xlsr: Semantically-aligned multimodal utterance-level cross-lingual speech representation,” IEEE Journal of Selected Topics in Signal Processing, vol. 16, pp."
+       "original": "IEEE, 2019, pp. 6670–6674."
       }
      ]
     },
     {
      "id": "p-references-50",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-50-1",
-       "original": "1493–1504, 2022."
+       "original": "[42] W.-N."
+      },
+      {
+       "id": "s-references-50-2",
+       "original": "Hsu, A."
+      },
+      {
+       "id": "s-references-50-3",
+       "original": "Lee, G."
+      },
+      {
+       "id": "s-references-50-4",
+       "original": "Synnaeve, and A."
+      },
+      {
+       "id": "s-references-50-5",
+       "original": "Hannun, “Semi-supervised speech recognition via local prior matching,” arXiv preprint arXiv:2002.10336, 2020.",
+       "zh": "2."
       }
      ]
     },
     {
      "id": "p-references-51",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-51-1",
-       "original": "[52] X."
+       "original": "[43] Q."
       },
       {
        "id": "s-references-51-2",
-       "original": "Zhou, J."
+       "original": "Xu, T."
       },
       {
        "id": "s-references-51-3",
-       "original": "Wang, Z."
+       "original": "Likhomanenko, J."
       },
       {
        "id": "s-references-51-4",
-       "original": "Cui, S."
+       "original": "Kahn, A."
       },
       {
        "id": "s-references-51-5",
-       "original": "Zhang, Z."
+       "original": "Hannun, G."
       },
       {
        "id": "s-references-51-6",
-       "original": "Yan, J."
+       "original": "Synnaeve, and R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-51-7",
-       "original": "Zhou, and C."
-      },
-      {
-       "id": "s-references-51-8",
-       "original": "Zhou, “Mmspeech: Multi-modal multi-task encoder-decoder pre-training for speech recognition,” ArXiv, vol. abs/2212.00500, 2022."
+       "original": "Collobert, “Iterative pseudo-labeling for speech recognition,” arXiv preprint arXiv:2005.09267, 2020."
       }
      ]
     },
     {
      "id": "p-references-52",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-52-1",
-       "original": "[53] T."
+       "original": "[44] Z."
       },
       {
        "id": "s-references-52-2",
-       "original": "N."
+       "original": "Chen, A."
       },
       {
        "id": "s-references-52-3",
-       "original": "Sainath, R."
+       "original": "Rosenberg, Y."
       },
       {
        "id": "s-references-52-4",
-       "original": "Prabhavalkar, A."
+       "original": "Zhang, H."
       },
       {
        "id": "s-references-52-5",
-       "original": "Bapna, Y."
+       "original": "Zen, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-52-6",
-       "original": "Zhang, Z."
+       "original": "Ghodsi, Y."
       },
       {
        "id": "s-references-52-7",
-       "original": "Huo, Z."
+       "original": "Huang, J."
       },
       {
        "id": "s-references-52-8",
-       "original": "Chen, B."
+       "original": "Emond, G."
       },
       {
        "id": "s-references-52-9",
-       "original": "Li, W."
+       "original": "Wang, B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
       },
       {
        "id": "s-references-52-10",
-       "original": "Wang, and T."
+       "original": "Ramabhadran, and P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
       },
       {
        "id": "s-references-52-11",
-       "original": "Strohman, “Joist: A joint speech and text streaming model for asr,” in 2022 IEEE Spoken Language Technology Workshop (SLT)."
+       "original": "J."
+      },
+      {
+       "id": "s-references-52-12",
+       "original": "Moreno, “Semi-Supervision in ASR: Sequential MixMatch and Factorized TTS-Based Augmentation,” in Proc."
+      },
+      {
+       "id": "s-references-52-13",
+       "original": "Interspeech 2021, 2021, pp. 736–740."
       }
      ]
     },
     {
      "id": "p-references-53",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-53-1",
-       "original": "[54] Z."
+       "original": "[45] A."
       },
       {
        "id": "s-references-53-2",
-       "original": "Meng, W."
+       "original": "Renduchintala, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-53-3",
-       "original": "Wang, R."
+       "original": "Ding, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-53-4",
-       "original": "Prabhavalkar, T."
+       "original": "Wiesner, and S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-53-5",
-       "original": "N."
-      },
-      {
-       "id": "s-references-53-6",
-       "original": "Sainath, T."
-      },
-      {
-       "id": "s-references-53-7",
-       "original": "Chen, E."
-      },
-      {
-       "id": "s-references-53-8",
-       "original": "Variani, Y."
-      },
-      {
-       "id": "s-references-53-9",
-       "original": "Zhang, B."
-      },
-      {
-       "id": "s-references-53-10",
-       "original": "Li, A."
-      },
-      {
-       "id": "s-references-53-11",
-       "original": "Rosenberg, and B."
-      },
-      {
-       "id": "s-references-53-12",
-       "original": "Ramabhadran, “Jeit: Joint end-to-end model and internal language model training for speech recognition,” in ICASSP, 2023, 2023."
+       "original": "Watanabe, “Multi-modal data augmentation for end-to-end asr,” arXiv preprint arXiv:1803.10299, 2018.",
+       "zh": "3."
       }
      ]
     },
     {
      "id": "p-references-54",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-54-1",
-       "original": "[55] Z."
+       "original": "[46] A."
       },
       {
        "id": "s-references-54-2",
-       "original": "Meng, T."
+       "original": "Bapna, Y.-a."
       },
       {
        "id": "s-references-54-3",
-       "original": "Chen, R."
+       "original": "Chung, N."
       },
       {
        "id": "s-references-54-4",
-       "original": "Prabhavalkar, Y."
+       "original": "Wu, A."
       },
       {
        "id": "s-references-54-5",
-       "original": "Zhang, G."
+       "original": "Gulati, Y."
       },
       {
        "id": "s-references-54-6",
-       "original": "Wang, K."
+       "original": "Jia, J."
       },
       {
        "id": "s-references-54-7",
-       "original": "Audhkhasi, J."
+       "original": "H."
       },
       {
        "id": "s-references-54-8",
-       "original": "Emond, T."
+       "original": "Clark, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-54-9",
-       "original": "Strohman, B."
+       "original": "Johnson, J."
       },
       {
        "id": "s-references-54-10",
-       "original": "Ramabhadran, W."
+       "original": "Riesa, A."
       },
       {
        "id": "s-references-54-11",
-       "original": "R."
+       "original": "Conneau, and Y."
       },
       {
        "id": "s-references-54-12",
-       "original": "Huang et al., “Modular hybrid autoregressive transducer,” in 2022 IEEE Spoken Language Technology Workshop (SLT)."
+       "original": "Zhang, “Slam: A unified encoder for speech and language modeling via speech-text joint pre-training,” arXiv preprint arXiv:2110.10329, 2021.",
+       "zh": "1."
       }
      ]
     },
     {
      "id": "p-references-55",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-55-1",
-       "original": "[56] C.-C."
+       "original": "[47] S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-55-2",
-       "original": "Chiu, W."
+       "original": "Thomas, B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
       },
       {
        "id": "s-references-55-3",
-       "original": "Han, Y."
+       "original": "Kingsbury, G."
       },
       {
        "id": "s-references-55-4",
-       "original": "Zhang, R."
+       "original": "Saon, and H.-K."
       },
       {
        "id": "s-references-55-5",
-       "original": "Pang, S."
+       "original": "J."
       },
       {
        "id": "s-references-55-6",
-       "original": "Kishchenko, P."
-      },
-      {
-       "id": "s-references-55-7",
-       "original": "Nguyen, A."
-      },
-      {
-       "id": "s-references-55-8",
-       "original": "Narayanan, H."
-      },
-      {
-       "id": "s-references-55-9",
-       "original": "Liao, S."
-      },
-      {
-       "id": "s-references-55-10",
-       "original": "Zhang, A."
-      },
-      {
-       "id": "s-references-55-11",
-       "original": "Kannan et al., “A comparison of end-to-end models for long-form speech recognition,” in 2019 IEEE automatic speech recognition and understanding workshop (ASRU)."
+       "original": "Kuo, “Integrating text inputs for training and adapting rnn transducer asr models,” in ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2022, pp. 8127–8131.",
+       "zh": "1."
       }
      ]
     },
     {
      "id": "p-references-56",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-56-1",
-       "original": "[57] Z."
+       "original": "[48] Y."
       },
       {
        "id": "s-references-56-2",
-       "original": "Lu, Y."
+       "original": "Cheng, Y."
       },
       {
        "id": "s-references-56-3",
-       "original": "Pan, T."
+       "original": "Zhang, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-56-4",
-       "original": "Doutre, P."
+       "original": "Johnson, W."
       },
       {
        "id": "s-references-56-5",
-       "original": "Haghani, L."
+       "original": "Macherey, and A."
       },
       {
        "id": "s-references-56-6",
-       "original": "Cao, R."
-      },
-      {
-       "id": "s-references-56-7",
-       "original": "Prabhavalkar, C."
-      },
-      {
-       "id": "s-references-56-8",
-       "original": "Zhang, and T."
-      },
-      {
-       "id": "s-references-56-9",
-       "original": "Strohman, “Input length matters: Improving rnn-t and mwer training for long-form telephony speech recognition,” arXiv preprint [58] Z."
-      },
-      {
-       "id": "s-references-56-10",
-       "original": "Dai, Z."
-      },
-      {
-       "id": "s-references-56-11",
-       "original": "Yang, Y."
-      },
-      {
-       "id": "s-references-56-12",
-       "original": "Yang, J."
-      },
-      {
-       "id": "s-references-56-13",
-       "original": "Carbonell, Q."
-      },
-      {
-       "id": "s-references-56-14",
-       "original": "V."
-      },
-      {
-       "id": "s-references-56-15",
-       "original": "Le, and R."
-      },
-      {
-       "id": "s-references-56-16",
-       "original": "Salakhutdinov, “Transformer-xl: Attentive language models beyond a fixed-length context,” arXiv preprint arXiv:1901.02860, 2019."
+       "original": "Bapna, “Mu2slam: Multitask, multilingual speech and language models,” arXiv preprint arXiv:2212.09553, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -5324,11 +5595,37 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-57-1",
-       "original": "[59] A."
+       "original": "[49] Z.-H."
       },
       {
        "id": "s-references-57-2",
-       "original": "Graves, “Sequence transduction with recurrent neural networks,” arXiv preprint arXiv:1211.3711, 2012."
+       "original": "Zhang, L."
+      },
+      {
+       "id": "s-references-57-3",
+       "original": "Zhou, J."
+      },
+      {
+       "id": "s-references-57-4",
+       "original": "Ao, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-57-5",
+       "original": "Liu, L."
+      },
+      {
+       "id": "s-references-57-6",
+       "original": "Dai, J."
+      },
+      {
+       "id": "s-references-57-7",
+       "original": "Li, and F."
+      },
+      {
+       "id": "s-references-57-8",
+       "original": "Wei, “Speechut: Bridging speech and text with hidden-unit for encoder-decoder based speech-text pre-training,” in Conference on Empirical Methods in Natural Language Processing, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -5339,47 +5636,55 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-58-1",
-       "original": "[60] C."
+       "original": "[50] Z.-H."
       },
       {
        "id": "s-references-58-2",
-       "original": "Raffel, N."
+       "original": "Zhang, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-58-3",
-       "original": "Shazeer, A."
+       "original": "Chen, L."
       },
       {
        "id": "s-references-58-4",
-       "original": "Roberts, K."
+       "original": "Zhou, Y."
       },
       {
        "id": "s-references-58-5",
-       "original": "Lee, S."
+       "original": "Wu, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-58-6",
-       "original": "Narang, M."
+       "original": "Ren, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-58-7",
-       "original": "Matena, Y."
+       "original": "Liu, Z."
       },
       {
        "id": "s-references-58-8",
-       "original": "Zhou, W."
+       "original": "Yao, X."
       },
       {
        "id": "s-references-58-9",
-       "original": "Li, and P."
+       "original": "Gong, L."
       },
       {
        "id": "s-references-58-10",
-       "original": "J."
+       "original": "Dai, J."
       },
       {
        "id": "s-references-58-11",
-       "original": "Liu, “Exploring the limits of transfer learning with a unified text-to-text transformer,” The Journal of Machine Learning Research, vol. 21, no. 1, pp. 5485–5551, 2020."
+       "original": "Li, and F."
+      },
+      {
+       "id": "s-references-58-12",
+       "original": "Wei, “Speechlm: Enhanced speech pre-training with unpaired textual data,” ArXiv, vol. abs/2209.15329, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -5390,33 +5695,33 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-59-1",
-       "original": "[61] B."
+       "original": "[51] S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-59-2",
-       "original": "Ramabhadran, K."
+       "original": "Khurana, A."
       },
       {
        "id": "s-references-59-3",
-       "original": "Audhkhasi, P."
+       "original": "Laurent, and J."
       },
       {
        "id": "s-references-59-4",
-       "original": "J."
+       "original": "R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-59-5",
-       "original": "M."
-      },
-      {
-       "id": "s-references-59-6",
-       "original": "Mengibar, and T."
-      },
-      {
-       "id": "s-references-59-7",
-       "original": "Chen, “Mixture model attention: Flexible streaming and non-streaming automatic speech recognition,” in Proceedings of Interspeech, 2021, 2021."
+       "original": "Glass, “Samu-xlsr: Semantically-aligned multimodal utterance-level cross-lingual speech representation,” IEEE Journal of Selected Topics in Signal Processing, vol. 16, pp."
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 19,
+     "original": "1493–1504, 2022."
     },
     {
      "id": "p-references-60",
@@ -5425,23 +5730,37 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-60-1",
-       "original": "[62] L."
+       "original": "[52] X."
       },
       {
        "id": "s-references-60-2",
-       "original": "Lu, C."
+       "original": "Zhou, J."
       },
       {
        "id": "s-references-60-3",
-       "original": "Liu, J."
+       "original": "Wang, Z."
       },
       {
        "id": "s-references-60-4",
-       "original": "Li, and Y."
+       "original": "Cui, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-60-5",
-       "original": "Gong, “Exploring transformers for large-scale speech recognition,” arXiv preprint arXiv:2005.09684, 2020."
+       "original": "Zhang, Z."
+      },
+      {
+       "id": "s-references-60-6",
+       "original": "Yan, J."
+      },
+      {
+       "id": "s-references-60-7",
+       "original": "Zhou, and C."
+      },
+      {
+       "id": "s-references-60-8",
+       "original": "Zhou, “Mmspeech: Multi-modal multi-task encoder-decoder pre-training for speech recognition,” ArXiv, vol. abs/2212.00500, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -5452,27 +5771,49 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-61-1",
-       "original": "[63] X."
+       "original": "[53] T."
       },
       {
        "id": "s-references-61-2",
-       "original": "Chen, Y."
+       "original": "N."
       },
       {
        "id": "s-references-61-3",
-       "original": "Wu, Z."
+       "original": "Sainath, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-61-4",
-       "original": "Wang, S."
+       "original": "Prabhavalkar, A."
       },
       {
        "id": "s-references-61-5",
-       "original": "Liu, and J."
+       "original": "Bapna, Y."
       },
       {
        "id": "s-references-61-6",
-       "original": "Li, “Developing real-time streaming transformer transducer for speech recognition on large-scale dataset,” in International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2021, pp. 5904–5908."
+       "original": "Zhang, Z."
+      },
+      {
+       "id": "s-references-61-7",
+       "original": "Huo, Z."
+      },
+      {
+       "id": "s-references-61-8",
+       "original": "Chen, B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
+      },
+      {
+       "id": "s-references-61-9",
+       "original": "Li, W."
+      },
+      {
+       "id": "s-references-61-10",
+       "original": "Wang, and T."
+      },
+      {
+       "id": "s-references-61-11",
+       "original": "Strohman, “Joist: A joint speech and text streaming model for asr,” in 2022 IEEE Spoken Language Technology Workshop (SLT)."
       }
      ]
     },
@@ -5483,27 +5824,7 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-62-1",
-       "original": "[64] C."
-      },
-      {
-       "id": "s-references-62-2",
-       "original": "Wu, Y."
-      },
-      {
-       "id": "s-references-62-3",
-       "original": "Wang, Y."
-      },
-      {
-       "id": "s-references-62-4",
-       "original": "Shi, C.-F."
-      },
-      {
-       "id": "s-references-62-5",
-       "original": "Yeh, and F."
-      },
-      {
-       "id": "s-references-62-6",
-       "original": "Zhang, “Streaming transformer-based acoustic models using self-attention with augmented memory,” arXiv preprint arXiv:2005.08042, 2020."
+       "original": "IEEE, 2023, pp. 52–59."
       }
      ]
     },
@@ -5514,39 +5835,55 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-63-1",
-       "original": "[65] Y."
+       "original": "[54] Z."
       },
       {
        "id": "s-references-63-2",
-       "original": "Shi, Y."
+       "original": "Meng, W."
       },
       {
        "id": "s-references-63-3",
-       "original": "Wang, C."
+       "original": "Wang, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-63-4",
-       "original": "Wu, C.-F."
+       "original": "Prabhavalkar, T."
       },
       {
        "id": "s-references-63-5",
-       "original": "Yeh, J."
+       "original": "N."
       },
       {
        "id": "s-references-63-6",
-       "original": "Chan, F."
+       "original": "Sainath, T."
       },
       {
        "id": "s-references-63-7",
-       "original": "Zhang, D."
+       "original": "Chen, E."
       },
       {
        "id": "s-references-63-8",
-       "original": "Le, and M."
+       "original": "Variani, Y."
       },
       {
        "id": "s-references-63-9",
-       "original": "Seltzer, “Emformer: Efficient memory transformer based acoustic model for low latency streaming speech recognition,” in International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
+       "original": "Zhang, B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
+      },
+      {
+       "id": "s-references-63-10",
+       "original": "Li, A."
+      },
+      {
+       "id": "s-references-63-11",
+       "original": "Rosenberg, and B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
+      },
+      {
+       "id": "s-references-63-12",
+       "original": "Ramabhadran, “Jeit: Joint end-to-end model and internal language model training for speech recognition,” in ICASSP, 2023, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -5557,23 +5894,54 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-64-1",
-       "original": "[66] E."
+       "original": "[55] Z."
       },
       {
        "id": "s-references-64-2",
-       "original": "Tsunoo, Y."
+       "original": "Meng, T."
       },
       {
        "id": "s-references-64-3",
-       "original": "Kashiwagi, T."
+       "original": "Chen, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-64-4",
-       "original": "Kumakura, and S."
+       "original": "Prabhavalkar, Y."
       },
       {
        "id": "s-references-64-5",
-       "original": "Watanabe, “Transformer asr with contextual block processing,” in 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)."
+       "original": "Zhang, G."
+      },
+      {
+       "id": "s-references-64-6",
+       "original": "Wang, K."
+      },
+      {
+       "id": "s-references-64-7",
+       "original": "Audhkhasi, J."
+      },
+      {
+       "id": "s-references-64-8",
+       "original": "Emond, T."
+      },
+      {
+       "id": "s-references-64-9",
+       "original": "Strohman, B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
+      },
+      {
+       "id": "s-references-64-10",
+       "original": "Ramabhadran, W."
+      },
+      {
+       "id": "s-references-64-11",
+       "original": "R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-64-12",
+       "original": "Huang et al., “Modular hybrid autoregressive transducer,” in 2022 IEEE Spoken Language Technology Workshop (SLT)."
       }
      ]
     },
@@ -5584,7 +5952,7 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-65-1",
-       "original": "IEEE, 2019, pp. 427–433."
+       "original": "IEEE, 2023, pp. 197–204."
       }
      ]
     },
@@ -5595,67 +5963,51 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-66-1",
-       "original": "[67] Z."
+       "original": "[56] C.-C."
       },
       {
        "id": "s-references-66-2",
-       "original": "Chen, A."
+       "original": "Chiu, W."
       },
       {
        "id": "s-references-66-3",
-       "original": "Bapna, A."
+       "original": "Han, Y."
       },
       {
        "id": "s-references-66-4",
-       "original": "Rosenberg, Y."
+       "original": "Zhang, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-66-5",
-       "original": "Zhang, B."
+       "original": "Pang, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-66-6",
-       "original": "Ramabhadran, P."
+       "original": "Kishchenko, P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
       },
       {
        "id": "s-references-66-7",
-       "original": "Moreno, and N."
+       "original": "Nguyen, A."
       },
       {
        "id": "s-references-66-8",
-       "original": "Chen, “Maestrou: Leveraging joint speech-text representation learning for zero supervised speech asr,” arXiv preprint [68] F."
+       "original": "Narayanan, H."
       },
       {
        "id": "s-references-66-9",
-       "original": "Biadsy, Y."
+       "original": "Liao, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-66-10",
-       "original": "Chen, X."
+       "original": "Zhang, A."
       },
       {
        "id": "s-references-66-11",
-       "original": "Zhang, O."
-      },
-      {
-       "id": "s-references-66-12",
-       "original": "Rybakov, A."
-      },
-      {
-       "id": "s-references-66-13",
-       "original": "Rosenberg, and P."
-      },
-      {
-       "id": "s-references-66-14",
-       "original": "J."
-      },
-      {
-       "id": "s-references-66-15",
-       "original": "Moreno, “A scalable model specialization framework for training and inference using submodels and its application to speech model personalization,” in Proc."
-      },
-      {
-       "id": "s-references-66-16",
-       "original": "Interspeech 2022."
+       "original": "Kannan et al., “A comparison of end-to-end models for long-form speech recognition,” in 2019 IEEE automatic speech recognition and understanding workshop (ASRU)."
       }
      ]
     },
@@ -5666,7 +6018,7 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-67-1",
-       "original": "ISCA, 2022, pp. 5125–5129."
+       "original": "IEEE, 2019, pp. 889–896."
       }
      ]
     },
@@ -5677,27 +6029,42 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-68-1",
-       "original": "[69] K."
+       "original": "[57] Z."
       },
       {
        "id": "s-references-68-2",
-       "original": "Tomanek, V."
+       "original": "Lu, Y."
       },
       {
        "id": "s-references-68-3",
-       "original": "Zayats, D."
+       "original": "Pan, T."
       },
       {
        "id": "s-references-68-4",
-       "original": "Padfield, K."
+       "original": "Doutre, P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
       },
       {
        "id": "s-references-68-5",
-       "original": "Vaillancourt, and F."
+       "original": "Haghani, L."
       },
       {
        "id": "s-references-68-6",
-       "original": "Biadsy, “Residual adapters for parameterefficient asr adaptation to atypical and accented speech,” in Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, 2021, pp. 6751–6760."
+       "original": "Cao, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-68-7",
+       "original": "Prabhavalkar, C."
+      },
+      {
+       "id": "s-references-68-8",
+       "original": "Zhang, and T."
+      },
+      {
+       "id": "s-references-68-9",
+       "original": "Strohman, “Input length matters: Improving rnn-t and mwer training for long-form telephony speech recognition,” arXiv preprint arXiv:2110.03841, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -5708,715 +6075,492 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-69-1",
-       "original": "[70] M."
+       "original": "[58] Z."
       },
       {
        "id": "s-references-69-2",
-       "original": "Schuster and K."
+       "original": "Dai, Z."
       },
       {
        "id": "s-references-69-3",
-       "original": "Nakajima, “Japanese and korean voice search,” in 2012 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
+       "original": "Yang, Y."
+      },
+      {
+       "id": "s-references-69-4",
+       "original": "Yang, J."
+      },
+      {
+       "id": "s-references-69-5",
+       "original": "Carbonell, Q."
+      },
+      {
+       "id": "s-references-69-6",
+       "original": "V."
+      },
+      {
+       "id": "s-references-69-7",
+       "original": "Le, and R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-69-8",
+       "original": "Salakhutdinov, “Transformer-xl: Attentive language models beyond a fixed-length context,” arXiv preprint arXiv:1901.02860, 2019.",
+       "zh": "1."
       }
      ]
     },
     {
      "id": "p-references-70",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-70-1",
-       "original": "[71] Y."
+       "original": "[59] A."
       },
       {
        "id": "s-references-70-2",
-       "original": "Zhang, J."
-      },
-      {
-       "id": "s-references-70-3",
-       "original": "Qin, D."
-      },
-      {
-       "id": "s-references-70-4",
-       "original": "S."
-      },
-      {
-       "id": "s-references-70-5",
-       "original": "Park, W."
-      },
-      {
-       "id": "s-references-70-6",
-       "original": "Han, C.-C."
-      },
-      {
-       "id": "s-references-70-7",
-       "original": "Chiu, R."
-      },
-      {
-       "id": "s-references-70-8",
-       "original": "Pang, Q."
-      },
-      {
-       "id": "s-references-70-9",
-       "original": "V."
-      },
-      {
-       "id": "s-references-70-10",
-       "original": "Le, and Y."
-      },
-      {
-       "id": "s-references-70-11",
-       "original": "Wu, “Pushing the limits of semi-supervised learning for automatic speech recognition,” arXiv preprint arXiv:2010.10504, 2020."
+       "original": "Graves, “Sequence transduction with recurrent neural networks,” arXiv preprint arXiv:1211.3711, 2012.",
+       "zh": "1."
       }
      ]
     },
     {
      "id": "p-references-71",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-71-1",
-       "original": "[72] D."
+       "original": "[60] C."
       },
       {
        "id": "s-references-71-2",
-       "original": "Lepikhin, H."
+       "original": "Raffel, N."
       },
       {
        "id": "s-references-71-3",
-       "original": "Lee, Y."
+       "original": "Shazeer, A."
       },
       {
        "id": "s-references-71-4",
-       "original": "Xu, D."
+       "original": "Roberts, K."
       },
       {
        "id": "s-references-71-5",
-       "original": "Chen, O."
+       "original": "Lee, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-71-6",
-       "original": "Firat, Y."
+       "original": "Narang, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-71-7",
-       "original": "Huang, M."
+       "original": "Matena, Y."
       },
       {
        "id": "s-references-71-8",
-       "original": "Krikun, N."
+       "original": "Zhou, W."
       },
       {
        "id": "s-references-71-9",
-       "original": "Shazeer, and Z."
+       "original": "Li, and P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
       },
       {
        "id": "s-references-71-10",
-       "original": "Chen, “GShard: Scaling giant models with conditional computation and automatic sharding,” CoRR, vol. abs/2006.16668, 2020."
+       "original": "J."
       },
       {
        "id": "s-references-71-11",
-       "original": "[Online]."
-      },
-      {
-       "id": "s-references-71-12",
-       "original": "Available: https://arxiv.org/abs/2006.16668 [73] Y."
-      },
-      {
-       "id": "s-references-71-13",
-       "original": "Xu, H."
-      },
-      {
-       "id": "s-references-71-14",
-       "original": "Lee, D."
-      },
-      {
-       "id": "s-references-71-15",
-       "original": "Chen, B."
-      },
-      {
-       "id": "s-references-71-16",
-       "original": "A."
-      },
-      {
-       "id": "s-references-71-17",
-       "original": "Hechtman, Y."
-      },
-      {
-       "id": "s-references-71-18",
-       "original": "Huang, R."
-      },
-      {
-       "id": "s-references-71-19",
-       "original": "Joshi, M."
-      },
-      {
-       "id": "s-references-71-20",
-       "original": "Krikun, D."
-      },
-      {
-       "id": "s-references-71-21",
-       "original": "Lepikhin, A."
-      },
-      {
-       "id": "s-references-71-22",
-       "original": "Ly, M."
-      },
-      {
-       "id": "s-references-71-23",
-       "original": "Maggioni, R."
-      },
-      {
-       "id": "s-references-71-24",
-       "original": "Pang, N."
-      },
-      {
-       "id": "s-references-71-25",
-       "original": "Shazeer, S."
-      },
-      {
-       "id": "s-references-71-26",
-       "original": "Wang, T."
-      },
-      {
-       "id": "s-references-71-27",
-       "original": "Wang, Y."
-      },
-      {
-       "id": "s-references-71-28",
-       "original": "Wu, and Z."
-      },
-      {
-       "id": "s-references-71-29",
-       "original": "Chen, “GSPMD: general and scalable parallelization for ML computation graphs,” CoRR, vol. abs/2105.04663, 2021."
-      },
-      {
-       "id": "s-references-71-30",
-       "original": "[Online]."
-      },
-      {
-       "id": "s-references-71-31",
-       "original": "Available: https://arxiv.org/abs/2105.04663 [74] C."
-      },
-      {
-       "id": "s-references-71-32",
-       "original": "Wang, M."
-      },
-      {
-       "id": "s-references-71-33",
-       "original": "Rivière, A."
-      },
-      {
-       "id": "s-references-71-34",
-       "original": "Lee, A."
-      },
-      {
-       "id": "s-references-71-35",
-       "original": "Wu, C."
-      },
-      {
-       "id": "s-references-71-36",
-       "original": "Talnikar, D."
-      },
-      {
-       "id": "s-references-71-37",
-       "original": "Haziza, M."
-      },
-      {
-       "id": "s-references-71-38",
-       "original": "Williamson, J."
-      },
-      {
-       "id": "s-references-71-39",
-       "original": "Pino, and E."
-      },
-      {
-       "id": "s-references-71-40",
-       "original": "Dupoux, “Voxpopuli: A large-scale multilingual speech corpus for representation learning, semi-supervised learning and interpretation,” arXiv preprint arXiv:2101.00390, 2021."
+       "original": "Liu, “Exploring the limits of transfer learning with a unified text-to-text transformer,” The Journal of Machine Learning Research, vol. 21, no. 1, pp. 5485–5551, 2020."
       }
      ]
     },
     {
      "id": "p-references-72",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-72-1",
-       "original": "[75] R."
+       "original": "[61] B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
       },
       {
        "id": "s-references-72-2",
-       "original": "Ardila, M."
+       "original": "Ramabhadran, K."
       },
       {
        "id": "s-references-72-3",
-       "original": "Branson, K."
+       "original": "Audhkhasi, P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
       },
       {
        "id": "s-references-72-4",
-       "original": "Davis, M."
+       "original": "J."
       },
       {
        "id": "s-references-72-5",
-       "original": "Henretty, M."
+       "original": "M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-72-6",
-       "original": "Kohler, J."
+       "original": "Mengibar, and T."
       },
       {
        "id": "s-references-72-7",
-       "original": "Meyer, R."
-      },
-      {
-       "id": "s-references-72-8",
-       "original": "Morais, L."
-      },
-      {
-       "id": "s-references-72-9",
-       "original": "Saunders, F."
-      },
-      {
-       "id": "s-references-72-10",
-       "original": "M."
-      },
-      {
-       "id": "s-references-72-11",
-       "original": "Tyers, and G."
-      },
-      {
-       "id": "s-references-72-12",
-       "original": "Weber, “Common voice: A massively-multilingual speech corpus,” arXiv preprint arXiv:1912.06670, 2019."
+       "original": "Chen, “Mixture model attention: Flexible streaming and non-streaming automatic speech recognition,” in Proceedings of Interspeech, 2021, 2021.",
+       "zh": "1."
       }
      ]
     },
     {
      "id": "p-references-73",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-73-1",
-       "original": "[76] V."
+       "original": "[62] L."
       },
       {
        "id": "s-references-73-2",
-       "original": "Pratap, Q."
+       "original": "Lu, C."
       },
       {
        "id": "s-references-73-3",
-       "original": "Xu, A."
+       "original": "Liu, J."
       },
       {
        "id": "s-references-73-4",
-       "original": "Sriram, G."
+       "original": "Li, and Y."
       },
       {
        "id": "s-references-73-5",
-       "original": "Synnaeve, and R."
-      },
-      {
-       "id": "s-references-73-6",
-       "original": "Collobert, “Mls: A large-scale multilingual dataset for speech research,” arXiv preprint arXiv:2012.03411, 2020."
+       "original": "Gong, “Exploring transformers for large-scale speech recognition,” arXiv preprint arXiv:2005.09684, 2020."
       }
      ]
     },
     {
      "id": "p-references-74",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-74-1",
-       "original": "[77] M."
+       "original": "[63] X."
       },
       {
        "id": "s-references-74-2",
-       "original": "J."
+       "original": "Chen, Y."
       },
       {
        "id": "s-references-74-3",
-       "original": "F."
+       "original": "Wu, Z."
       },
       {
        "id": "s-references-74-4",
-       "original": "Gales, K."
+       "original": "Wang, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-74-5",
-       "original": "Knill, A."
+       "original": "Liu, and J."
       },
       {
        "id": "s-references-74-6",
-       "original": "Ragni, and S."
-      },
-      {
-       "id": "s-references-74-7",
-       "original": "P."
-      },
-      {
-       "id": "s-references-74-8",
-       "original": "Rath, “Speech recognition and keyword spotting for lowresource languages: Babel project research at cued,” in SLTU, 2014."
+       "original": "Li, “Developing real-time streaming transformer transducer for speech recognition on large-scale dataset,” in International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2021, pp. 5904–5908."
       }
      ]
     },
     {
      "id": "p-references-75",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-75-1",
-       "original": "[78] A."
+       "original": "[64] C."
       },
       {
        "id": "s-references-75-2",
-       "original": "Bapna, I."
+       "original": "Wu, Y."
       },
       {
        "id": "s-references-75-3",
-       "original": "Caswell, J."
+       "original": "Wang, Y."
       },
       {
        "id": "s-references-75-4",
-       "original": "Kreutzer, O."
+       "original": "Shi, C.-F."
       },
       {
        "id": "s-references-75-5",
-       "original": "Firat, D. van Esch, A."
+       "original": "Yeh, and F."
       },
       {
        "id": "s-references-75-6",
-       "original": "Siddhant, M."
-      },
-      {
-       "id": "s-references-75-7",
-       "original": "Niu, P."
-      },
-      {
-       "id": "s-references-75-8",
-       "original": "Baljekar, X."
-      },
-      {
-       "id": "s-references-75-9",
-       "original": "Garcia, W."
-      },
-      {
-       "id": "s-references-75-10",
-       "original": "Macherey et al., “Building machine translation systems for the next thousand languages,” arXiv preprint [79] N."
-      },
-      {
-       "id": "s-references-75-11",
-       "original": "Arivazhagan, A."
-      },
-      {
-       "id": "s-references-75-12",
-       "original": "Bapna, O."
-      },
-      {
-       "id": "s-references-75-13",
-       "original": "Firat, D."
-      },
-      {
-       "id": "s-references-75-14",
-       "original": "Lepikhin, M."
-      },
-      {
-       "id": "s-references-75-15",
-       "original": "Johnson, M."
-      },
-      {
-       "id": "s-references-75-16",
-       "original": "Krikun, M."
-      },
-      {
-       "id": "s-references-75-17",
-       "original": "X."
-      },
-      {
-       "id": "s-references-75-18",
-       "original": "Chen, Y."
-      },
-      {
-       "id": "s-references-75-19",
-       "original": "Cao, G."
-      },
-      {
-       "id": "s-references-75-20",
-       "original": "Foster, C."
-      },
-      {
-       "id": "s-references-75-21",
-       "original": "Cherry et al., “Massively multilingual neural machine translation in the wild: Findings and challenges,” arXiv preprint arXiv:1907.05019, 2019."
+       "original": "Zhang, “Streaming transformer-based acoustic models using self-attention with augmented memory,” arXiv preprint arXiv:2005.08042, 2020."
       }
      ]
     },
     {
      "id": "p-references-76",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-76-1",
-       "original": "[80] J."
+       "original": "[65] Y."
       },
       {
        "id": "s-references-76-2",
-       "original": "Carletta, S."
+       "original": "Shi, Y."
       },
       {
        "id": "s-references-76-3",
-       "original": "Ashby, S."
+       "original": "Wang, C."
       },
       {
        "id": "s-references-76-4",
-       "original": "Bourban, M."
+       "original": "Wu, C.-F."
       },
       {
        "id": "s-references-76-5",
-       "original": "Flynn, M."
+       "original": "Yeh, J."
       },
       {
        "id": "s-references-76-6",
-       "original": "Guillemot, T."
+       "original": "Chan, F."
       },
       {
        "id": "s-references-76-7",
-       "original": "Hain, J."
+       "original": "Zhang, D."
       },
       {
        "id": "s-references-76-8",
-       "original": "Kadlec, V."
+       "original": "Le, and M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-76-9",
-       "original": "Karaiskos, W."
-      },
-      {
-       "id": "s-references-76-10",
-       "original": "Kraaij, M."
-      },
-      {
-       "id": "s-references-76-11",
-       "original": "Kronenthal et al., “The ami meeting corpus: A pre-announcement,” in International workshop on machine learning for multimodal interaction."
+       "original": "Seltzer, “Emformer: Efficient memory transformer based acoustic model for low latency streaming speech recognition,” in International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
       }
      ]
     },
     {
      "id": "p-references-77",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-77-1",
-       "original": "Springer, 2005, pp. 28–39."
+       "original": "IEEE, 2021, pp. 6783–6787."
       }
      ]
     },
     {
      "id": "p-references-78",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-78-1",
-       "original": "[81] R."
+       "original": "[66] E."
       },
       {
        "id": "s-references-78-2",
-       "original": "Ardila, M."
+       "original": "Tsunoo, Y."
       },
       {
        "id": "s-references-78-3",
-       "original": "Branson, K."
+       "original": "Kashiwagi, T."
       },
       {
        "id": "s-references-78-4",
-       "original": "Davis, M."
+       "original": "Kumakura, and S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-78-5",
-       "original": "Henretty, M."
-      },
-      {
-       "id": "s-references-78-6",
-       "original": "Kohler, J."
-      },
-      {
-       "id": "s-references-78-7",
-       "original": "Meyer, R."
-      },
-      {
-       "id": "s-references-78-8",
-       "original": "Morais, L."
-      },
-      {
-       "id": "s-references-78-9",
-       "original": "Saunders, F."
-      },
-      {
-       "id": "s-references-78-10",
-       "original": "M."
-      },
-      {
-       "id": "s-references-78-11",
-       "original": "Tyers, and G."
-      },
-      {
-       "id": "s-references-78-12",
-       "original": "Weber, “Common voice: A massively-multilingual speech corpus,” arXiv preprint arXiv:1912.06670, 2019."
+       "original": "Watanabe, “Transformer asr with contextual block processing,” in 2019 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)."
       }
      ]
     },
     {
      "id": "p-references-79",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-79-1",
-       "original": "[82] V."
-      },
-      {
-       "id": "s-references-79-2",
-       "original": "Panayotov, G."
-      },
-      {
-       "id": "s-references-79-3",
-       "original": "Chen, D."
-      },
-      {
-       "id": "s-references-79-4",
-       "original": "Povey, and S."
-      },
-      {
-       "id": "s-references-79-5",
-       "original": "Khudanpur, “Librispeech: an asr corpus based on public domain audio books,” in 2015 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
+       "original": "IEEE, 2019, pp. 427–433.",
+       "zh": "3."
       }
      ]
     },
     {
      "id": "p-references-80",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-80-1",
-       "original": "[83] A."
+       "original": "[67] Z."
       },
       {
        "id": "s-references-80-2",
-       "original": "Rousseau, P."
+       "original": "Chen, A."
       },
       {
        "id": "s-references-80-3",
-       "original": "Deléglise, and Y."
+       "original": "Bapna, A."
       },
       {
        "id": "s-references-80-4",
-       "original": "Esteve, “Ted-lium: an automatic speech recognition dedicated corpus.”"
+       "original": "Rosenberg, Y."
+      },
+      {
+       "id": "s-references-80-5",
+       "original": "Zhang, B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
+      },
+      {
+       "id": "s-references-80-6",
+       "original": "Ramabhadran, P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
+      },
+      {
+       "id": "s-references-80-7",
+       "original": "Moreno, and N."
+      },
+      {
+       "id": "s-references-80-8",
+       "original": "Chen, “Maestrou: Leveraging joint speech-text representation learning for zero supervised speech asr,” arXiv preprint arXiv:2210.10027, 2022.",
+       "zh": "2."
       }
      ]
     },
     {
      "id": "p-references-81",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-81-1",
-       "original": "in LREC, 2012, pp. 125–129."
+       "original": "[68] F."
+      },
+      {
+       "id": "s-references-81-2",
+       "original": "Biadsy, Y."
+      },
+      {
+       "id": "s-references-81-3",
+       "original": "Chen, X."
+      },
+      {
+       "id": "s-references-81-4",
+       "original": "Zhang, O."
+      },
+      {
+       "id": "s-references-81-5",
+       "original": "Rybakov, A."
+      },
+      {
+       "id": "s-references-81-6",
+       "original": "Rosenberg, and P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
+      },
+      {
+       "id": "s-references-81-7",
+       "original": "J."
+      },
+      {
+       "id": "s-references-81-8",
+       "original": "Moreno, “A scalable model specialization framework for training and inference using submodels and its application to speech model personalization,” in Proc."
+      },
+      {
+       "id": "s-references-81-9",
+       "original": "Interspeech 2022.",
+       "zh": "2."
       }
      ]
     },
     {
      "id": "p-references-82",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-82-1",
-       "original": "[84] F."
-      },
-      {
-       "id": "s-references-82-2",
-       "original": "Hernandez, V."
-      },
-      {
-       "id": "s-references-82-3",
-       "original": "Nguyen, S."
-      },
-      {
-       "id": "s-references-82-4",
-       "original": "Ghannay, N."
-      },
-      {
-       "id": "s-references-82-5",
-       "original": "Tomashenko, and Y."
-      },
-      {
-       "id": "s-references-82-6",
-       "original": "Esteve, “Ted-lium 3: twice as much data and corpus repartition for experiments on speaker adaptation,” in International conference on speech and computer."
+       "original": "ISCA, 2022, pp. 5125–5129."
       }
      ]
     },
     {
      "id": "p-references-83",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-83-1",
-       "original": "Springer, 2018, pp. 198–208."
+       "original": "[69] K."
+      },
+      {
+       "id": "s-references-83-2",
+       "original": "Tomanek, V."
+      },
+      {
+       "id": "s-references-83-3",
+       "original": "Zayats, D."
+      },
+      {
+       "id": "s-references-83-4",
+       "original": "Padfield, K."
+      },
+      {
+       "id": "s-references-83-5",
+       "original": "Vaillancourt, and F."
+      },
+      {
+       "id": "s-references-83-6",
+       "original": "Biadsy, “Residual adapters for parameterefficient asr adaptation to atypical and accented speech,” in Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing, 2021, pp. 6751–6760."
       }
      ]
     },
     {
      "id": "p-references-84",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-84-1",
-       "original": "[85] J.-L."
+       "original": "[70] M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-84-2",
-       "original": "Gauvain, L."
+       "original": "Schuster and K."
       },
       {
        "id": "s-references-84-3",
-       "original": "F."
-      },
-      {
-       "id": "s-references-84-4",
-       "original": "Lamel, G."
-      },
-      {
-       "id": "s-references-84-5",
-       "original": "Adda, and M."
-      },
-      {
-       "id": "s-references-84-6",
-       "original": "Adda-Decker, “The limsi continuous speech dictation system: evaluation on the arpa wall street journal task,” in Proceedings of ICASSP’94."
-      },
-      {
-       "id": "s-references-84-7",
-       "original": "IEEE International Conference on Acoustics, Speech and Signal Processing, vol. 1."
+       "original": "Nakajima, “Japanese and korean voice search,” in 2012 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
       }
      ]
     },
     {
      "id": "p-references-85",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-85-1",
-       "original": "IEEE, 1994, pp. I–557."
+       "original": "IEEE, 2012, pp. 5149–5152.",
+       "zh": "2."
       }
      ]
     },
@@ -6427,51 +6571,49 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-86-1",
-       "original": "[86] F."
+       "original": "[71] Y."
       },
       {
        "id": "s-references-86-2",
-       "original": "Kubala, J."
+       "original": "Zhang, J."
       },
       {
        "id": "s-references-86-3",
-       "original": "Davenport, H."
+       "original": "Qin, D."
       },
       {
        "id": "s-references-86-4",
-       "original": "Jin, D."
+       "original": "S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-86-5",
-       "original": "Liu, T."
+       "original": "Park, W."
       },
       {
        "id": "s-references-86-6",
-       "original": "Leek, S."
+       "original": "Han, C.-C."
       },
       {
        "id": "s-references-86-7",
-       "original": "Matsoukas, D."
+       "original": "Chiu, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-86-8",
-       "original": "Miller, L."
+       "original": "Pang, Q."
       },
       {
        "id": "s-references-86-9",
-       "original": "Nguyen, F."
+       "original": "V."
       },
       {
        "id": "s-references-86-10",
-       "original": "Richardson, R."
+       "original": "Le, and Y."
       },
       {
        "id": "s-references-86-11",
-       "original": "Schwartz et al., “The 1997 bbn byblos system applied to broadcast news transcription,” in Proc."
-      },
-      {
-       "id": "s-references-86-12",
-       "original": "DARPA Broadcast News Transcription and Understanding Workshop."
+       "original": "Wu, “Pushing the limits of semi-supervised learning for automatic speech recognition,” arXiv preprint arXiv:2010.10504, 2020."
       }
      ]
     },
@@ -6482,7 +6624,174 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-87-1",
-       "original": "Morgan Kaufmann, 1998, pp. 35–40."
+       "original": "[72] D."
+      },
+      {
+       "id": "s-references-87-2",
+       "original": "Lepikhin, H."
+      },
+      {
+       "id": "s-references-87-3",
+       "original": "Lee, Y."
+      },
+      {
+       "id": "s-references-87-4",
+       "original": "Xu, D."
+      },
+      {
+       "id": "s-references-87-5",
+       "original": "Chen, O."
+      },
+      {
+       "id": "s-references-87-6",
+       "original": "Firat, Y."
+      },
+      {
+       "id": "s-references-87-7",
+       "original": "Huang, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-87-8",
+       "original": "Krikun, N."
+      },
+      {
+       "id": "s-references-87-9",
+       "original": "Shazeer, and Z."
+      },
+      {
+       "id": "s-references-87-10",
+       "original": "Chen, “GShard: Scaling giant models with conditional computation and automatic sharding,” CoRR, vol. abs/2006.16668, 2020."
+      },
+      {
+       "id": "s-references-87-11",
+       "original": "[Online]."
+      },
+      {
+       "id": "s-references-87-12",
+       "original": "Available: https://arxiv.org/abs/2006.16668 [73] Y."
+      },
+      {
+       "id": "s-references-87-13",
+       "original": "Xu, H."
+      },
+      {
+       "id": "s-references-87-14",
+       "original": "Lee, D."
+      },
+      {
+       "id": "s-references-87-15",
+       "original": "Chen, B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
+      },
+      {
+       "id": "s-references-87-16",
+       "original": "A."
+      },
+      {
+       "id": "s-references-87-17",
+       "original": "Hechtman, Y."
+      },
+      {
+       "id": "s-references-87-18",
+       "original": "Huang, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-87-19",
+       "original": "Joshi, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-87-20",
+       "original": "Krikun, D."
+      },
+      {
+       "id": "s-references-87-21",
+       "original": "Lepikhin, A."
+      },
+      {
+       "id": "s-references-87-22",
+       "original": "Ly, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-87-23",
+       "original": "Maggioni, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-87-24",
+       "original": "Pang, N."
+      },
+      {
+       "id": "s-references-87-25",
+       "original": "Shazeer, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-87-26",
+       "original": "Wang, T."
+      },
+      {
+       "id": "s-references-87-27",
+       "original": "Wang, Y."
+      },
+      {
+       "id": "s-references-87-28",
+       "original": "Wu, and Z."
+      },
+      {
+       "id": "s-references-87-29",
+       "original": "Chen, “GSPMD: general and scalable parallelization for ML computation graphs,” CoRR, vol. abs/2105.04663, 2021.",
+       "zh": "1."
+      },
+      {
+       "id": "s-references-87-30",
+       "original": "[Online]."
+      },
+      {
+       "id": "s-references-87-31",
+       "original": "Available: https://arxiv.org/abs/2105.04663 [74] C."
+      },
+      {
+       "id": "s-references-87-32",
+       "original": "Wang, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-87-33",
+       "original": "Rivière, A."
+      },
+      {
+       "id": "s-references-87-34",
+       "original": "Lee, A."
+      },
+      {
+       "id": "s-references-87-35",
+       "original": "Wu, C."
+      },
+      {
+       "id": "s-references-87-36",
+       "original": "Talnikar, D."
+      },
+      {
+       "id": "s-references-87-37",
+       "original": "Haziza, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-87-38",
+       "original": "Williamson, J."
+      },
+      {
+       "id": "s-references-87-39",
+       "original": "Pino, and E."
+      },
+      {
+       "id": "s-references-87-40",
+       "original": "Dupoux, “Voxpopuli: A large-scale multilingual speech corpus for representation learning, semi-supervised learning and interpretation,” arXiv preprint arXiv:2101.00390, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6493,41 +6802,66 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-88-1",
-       "original": "[87] S."
+       "original": "[75] R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-88-2",
-       "original": "Chen, M."
+       "original": "Ardila, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-88-3",
-       "original": "Gales, P."
+       "original": "Branson, K."
       },
       {
        "id": "s-references-88-4",
-       "original": "Gopalakrishnan, R."
+       "original": "Davis, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-88-5",
-       "original": "Gopinath, H."
+       "original": "Henretty, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-88-6",
-       "original": "Printz, D."
+       "original": "Kohler, J."
       },
       {
        "id": "s-references-88-7",
-       "original": "Kanevsky, P."
+       "original": "Meyer, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
       },
       {
        "id": "s-references-88-8",
-       "original": "Olsen, and L."
+       "original": "Morais, L."
       },
       {
        "id": "s-references-88-9",
-       "original": "Polymenakos, “Ibm’s lvcsr system for transcription of broadcast news used in the 1997 hub4 english evaluation,” in Proceedings of the Speech Recognition Workshop."
+       "original": "Saunders, F."
+      },
+      {
+       "id": "s-references-88-10",
+       "original": "M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-88-11",
+       "original": "Tyers, and G."
+      },
+      {
+       "id": "s-references-88-12",
+       "original": "Weber, “Common voice: A massively-multilingual speech corpus,” arXiv preprint arXiv:1912.06670,",
+       "zh": "2."
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 20,
+     "original": "2019."
     },
     {
      "id": "p-references-89",
@@ -6536,7 +6870,29 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-89-1",
-       "original": "Citeseer, 1998."
+       "original": "[76] V."
+      },
+      {
+       "id": "s-references-89-2",
+       "original": "Pratap, Q."
+      },
+      {
+       "id": "s-references-89-3",
+       "original": "Xu, A."
+      },
+      {
+       "id": "s-references-89-4",
+       "original": "Sriram, G."
+      },
+      {
+       "id": "s-references-89-5",
+       "original": "Synnaeve, and R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-89-6",
+       "original": "Collobert, “Mls: A large-scale multilingual dataset for speech research,” arXiv preprint arXiv:2012.03411, 2020.",
+       "zh": "2."
       }
      ]
     },
@@ -6547,59 +6903,38 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-90-1",
-       "original": "[88] N."
+       "original": "[77] M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-90-2",
-       "original": "P."
+       "original": "J."
       },
       {
        "id": "s-references-90-3",
-       "original": "Jouppi, D."
+       "original": "F."
       },
       {
        "id": "s-references-90-4",
-       "original": "H."
+       "original": "Gales, K."
       },
       {
        "id": "s-references-90-5",
-       "original": "Yoon, M."
+       "original": "Knill, A."
       },
       {
        "id": "s-references-90-6",
-       "original": "Ashcraft, M."
+       "original": "Ragni, and S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
       },
       {
        "id": "s-references-90-7",
-       "original": "Gottscho, T."
+       "original": "P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
       },
       {
        "id": "s-references-90-8",
-       "original": "B."
-      },
-      {
-       "id": "s-references-90-9",
-       "original": "Jablin, G."
-      },
-      {
-       "id": "s-references-90-10",
-       "original": "Kurian, J."
-      },
-      {
-       "id": "s-references-90-11",
-       "original": "Laudon, S."
-      },
-      {
-       "id": "s-references-90-12",
-       "original": "Li, P."
-      },
-      {
-       "id": "s-references-90-13",
-       "original": "Ma, X."
-      },
-      {
-       "id": "s-references-90-14",
-       "original": "Ma et al., “Ten lessons from three generations shaped google’s tpuv4i: Industrial product,” in 2021 ACM/IEEE 48th Annual International Symposium on Computer Architecture (ISCA)."
+       "original": "Rath, “Speech recognition and keyword spotting for lowresource languages: Babel project research at cued,” in SLTU, 2014."
       }
      ]
     },
@@ -6610,51 +6945,680 @@ globalThis.PAPER_2303_01037 = {
      "sentences": [
       {
        "id": "s-references-91-1",
-       "original": "[89] B."
+       "original": "[78] A."
       },
       {
        "id": "s-references-91-2",
-       "original": "Li, A."
+       "original": "Bapna, I."
       },
       {
        "id": "s-references-91-3",
-       "original": "Gulati, J."
+       "original": "Caswell, J."
       },
       {
        "id": "s-references-91-4",
-       "original": "Yu, T."
+       "original": "Kreutzer, O."
       },
       {
        "id": "s-references-91-5",
-       "original": "N."
+       "original": "Firat, D. van Esch, A."
       },
       {
        "id": "s-references-91-6",
-       "original": "Sainath, C.-C."
+       "original": "Siddhant, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
       },
       {
        "id": "s-references-91-7",
-       "original": "Chiu, A."
+       "original": "Niu, P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
       },
       {
        "id": "s-references-91-8",
-       "original": "Narayanan, S.-Y."
+       "original": "Baljekar, X."
       },
       {
        "id": "s-references-91-9",
-       "original": "Chang, R."
+       "original": "Garcia, W."
       },
       {
        "id": "s-references-91-10",
+       "original": "Macherey et al., “Building machine translation systems for the next thousand languages,” arXiv preprint arXiv:2205.03983, 2022.",
+       "zh": "2."
+      }
+     ]
+    },
+    {
+     "id": "p-references-92",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-92-1",
+       "original": "[79] N."
+      },
+      {
+       "id": "s-references-92-2",
+       "original": "Arivazhagan, A."
+      },
+      {
+       "id": "s-references-92-3",
+       "original": "Bapna, O."
+      },
+      {
+       "id": "s-references-92-4",
+       "original": "Firat, D."
+      },
+      {
+       "id": "s-references-92-5",
+       "original": "Lepikhin, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-92-6",
+       "original": "Johnson, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-92-7",
+       "original": "Krikun, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-92-8",
+       "original": "X."
+      },
+      {
+       "id": "s-references-92-9",
+       "original": "Chen, Y."
+      },
+      {
+       "id": "s-references-92-10",
+       "original": "Cao, G."
+      },
+      {
+       "id": "s-references-92-11",
+       "original": "Foster, C."
+      },
+      {
+       "id": "s-references-92-12",
+       "original": "Cherry et al., “Massively multilingual neural machine translation in the wild: Findings and challenges,” arXiv preprint arXiv:1907.05019, 2019."
+      }
+     ]
+    },
+    {
+     "id": "p-references-93",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-93-1",
+       "original": "[80] J."
+      },
+      {
+       "id": "s-references-93-2",
+       "original": "Carletta, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-93-3",
+       "original": "Ashby, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-93-4",
+       "original": "Bourban, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-93-5",
+       "original": "Flynn, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-93-6",
+       "original": "Guillemot, T."
+      },
+      {
+       "id": "s-references-93-7",
+       "original": "Hain, J."
+      },
+      {
+       "id": "s-references-93-8",
+       "original": "Kadlec, V."
+      },
+      {
+       "id": "s-references-93-9",
+       "original": "Karaiskos, W."
+      },
+      {
+       "id": "s-references-93-10",
+       "original": "Kraaij, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-93-11",
+       "original": "Kronenthal et al., “The ami meeting corpus: A pre-announcement,” in International workshop on machine learning for multimodal interaction."
+      }
+     ]
+    },
+    {
+     "id": "p-references-94",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-94-1",
+       "original": "Springer, 2005, pp. 28–39."
+      }
+     ]
+    },
+    {
+     "id": "p-references-95",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-95-1",
+       "original": "[81] R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-95-2",
+       "original": "Ardila, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-95-3",
+       "original": "Branson, K."
+      },
+      {
+       "id": "s-references-95-4",
+       "original": "Davis, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-95-5",
+       "original": "Henretty, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-95-6",
+       "original": "Kohler, J."
+      },
+      {
+       "id": "s-references-95-7",
+       "original": "Meyer, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-95-8",
+       "original": "Morais, L."
+      },
+      {
+       "id": "s-references-95-9",
+       "original": "Saunders, F."
+      },
+      {
+       "id": "s-references-95-10",
+       "original": "M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-95-11",
+       "original": "Tyers, and G."
+      },
+      {
+       "id": "s-references-95-12",
+       "original": "Weber, “Common voice: A massively-multilingual speech corpus,” arXiv preprint arXiv:1912.06670,",
+       "zh": "2."
+      }
+     ]
+    },
+    {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 20,
+     "original": "2019."
+    },
+    {
+     "id": "p-references-96",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-96-1",
+       "original": "[82] V."
+      },
+      {
+       "id": "s-references-96-2",
+       "original": "Panayotov, G."
+      },
+      {
+       "id": "s-references-96-3",
+       "original": "Chen, D."
+      },
+      {
+       "id": "s-references-96-4",
+       "original": "Povey, and S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-96-5",
+       "original": "Khudanpur, “Librispeech: an asr corpus based on public domain audio books,” in 2015 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
+      }
+     ]
+    },
+    {
+     "id": "p-references-97",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-97-1",
+       "original": "IEEE, 2015, pp. 5206–5210."
+      }
+     ]
+    },
+    {
+     "id": "p-references-98",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-98-1",
+       "original": "[83] A."
+      },
+      {
+       "id": "s-references-98-2",
+       "original": "Rousseau, P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
+      },
+      {
+       "id": "s-references-98-3",
+       "original": "Deléglise, and Y."
+      },
+      {
+       "id": "s-references-98-4",
+       "original": "Esteve, “Ted-lium: an automatic speech recognition dedicated corpus.”"
+      }
+     ]
+    },
+    {
+     "id": "p-references-99",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-99-1",
+       "original": "in LREC, 2012, pp. 125–129."
+      }
+     ]
+    },
+    {
+     "id": "p-references-100",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-100-1",
+       "original": "[84] F."
+      },
+      {
+       "id": "s-references-100-2",
+       "original": "Hernandez, V."
+      },
+      {
+       "id": "s-references-100-3",
+       "original": "Nguyen, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-100-4",
+       "original": "Ghannay, N."
+      },
+      {
+       "id": "s-references-100-5",
+       "original": "Tomashenko, and Y."
+      },
+      {
+       "id": "s-references-100-6",
+       "original": "Esteve, “Ted-lium 3: twice as much data and corpus repartition for experiments on speaker adaptation,” in International conference on speech and computer."
+      }
+     ]
+    },
+    {
+     "id": "p-references-101",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-101-1",
+       "original": "Springer, 2018, pp. 198–208."
+      }
+     ]
+    },
+    {
+     "id": "p-references-102",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-102-1",
+       "original": "[85] J.-L."
+      },
+      {
+       "id": "s-references-102-2",
+       "original": "Gauvain, L."
+      },
+      {
+       "id": "s-references-102-3",
+       "original": "F."
+      },
+      {
+       "id": "s-references-102-4",
+       "original": "Lamel, G."
+      },
+      {
+       "id": "s-references-102-5",
+       "original": "Adda, and M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-102-6",
+       "original": "Adda-Decker, “The limsi continuous speech dictation system: evaluation on the arpa wall street journal task,” in Proceedings of ICASSP’94."
+      },
+      {
+       "id": "s-references-102-7",
+       "original": "IEEE International Conference on Acoustics, Speech and Signal Processing, vol. 1.",
+       "zh": "1."
+      }
+     ]
+    },
+    {
+     "id": "p-references-103",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-103-1",
+       "original": "IEEE, 1994, pp. I–557."
+      }
+     ]
+    },
+    {
+     "id": "p-references-104",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-104-1",
+       "original": "[86] F."
+      },
+      {
+       "id": "s-references-104-2",
+       "original": "Kubala, J."
+      },
+      {
+       "id": "s-references-104-3",
+       "original": "Davenport, H."
+      },
+      {
+       "id": "s-references-104-4",
+       "original": "Jin, D."
+      },
+      {
+       "id": "s-references-104-5",
+       "original": "Liu, T."
+      },
+      {
+       "id": "s-references-104-6",
+       "original": "Leek, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-104-7",
+       "original": "Matsoukas, D."
+      },
+      {
+       "id": "s-references-104-8",
+       "original": "Miller, L."
+      },
+      {
+       "id": "s-references-104-9",
+       "original": "Nguyen, F."
+      },
+      {
+       "id": "s-references-104-10",
+       "original": "Richardson, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-104-11",
+       "original": "Schwartz et al., “The 1997 bbn byblos system applied to broadcast news transcription,” in Proc."
+      },
+      {
+       "id": "s-references-104-12",
+       "original": "DARPA Broadcast News Transcription and Understanding Workshop."
+      }
+     ]
+    },
+    {
+     "id": "p-references-105",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-105-1",
+       "original": "Morgan Kaufmann, 1998, pp. 35–40."
+      }
+     ]
+    },
+    {
+     "id": "p-references-106",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-106-1",
+       "original": "[87] S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-106-2",
+       "original": "Chen, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-106-3",
+       "original": "Gales, P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
+      },
+      {
+       "id": "s-references-106-4",
+       "original": "Gopalakrishnan, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-106-5",
+       "original": "Gopinath, H."
+      },
+      {
+       "id": "s-references-106-6",
+       "original": "Printz, D."
+      },
+      {
+       "id": "s-references-106-7",
+       "original": "Kanevsky, P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
+      },
+      {
+       "id": "s-references-106-8",
+       "original": "Olsen, and L."
+      },
+      {
+       "id": "s-references-106-9",
+       "original": "Polymenakos, “Ibm’s lvcsr system for transcription of broadcast news used in the 1997 hub4 english evaluation,” in Proceedings of the Speech Recognition Workshop."
+      }
+     ]
+    },
+    {
+     "id": "p-references-107",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-107-1",
+       "original": "Citeseer, 1998."
+      }
+     ]
+    },
+    {
+     "id": "p-references-108",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-108-1",
+       "original": "[88] N."
+      },
+      {
+       "id": "s-references-108-2",
+       "original": "P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
+      },
+      {
+       "id": "s-references-108-3",
+       "original": "Jouppi, D."
+      },
+      {
+       "id": "s-references-108-4",
+       "original": "H."
+      },
+      {
+       "id": "s-references-108-5",
+       "original": "Yoon, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-108-6",
+       "original": "Ashcraft, M.",
+       "zh": "我们发现，仅微调纯语音版 USM，就已经能与 CoVoST 2 的最优 BLEU 分数相当。"
+      },
+      {
+       "id": "s-references-108-7",
+       "original": "Gottscho, T."
+      },
+      {
+       "id": "s-references-108-8",
+       "original": "B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
+      },
+      {
+       "id": "s-references-108-9",
+       "original": "Jablin, G."
+      },
+      {
+       "id": "s-references-108-10",
+       "original": "Kurian, J."
+      },
+      {
+       "id": "s-references-108-11",
+       "original": "Laudon, S.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-108-12",
+       "original": "Li, P.",
+       "zh": "我们还从 YT-NTL-U 向 YT-SUP 额外引入 100k 小时 en-US 音频。"
+      },
+      {
+       "id": "s-references-108-13",
+       "original": "Ma, X."
+      },
+      {
+       "id": "s-references-108-14",
+       "original": "Ma et al., “Ten lessons from three generations shaped google’s tpuv4i: Industrial product,” in 2021 ACM/IEEE 48th Annual International Symposium on Computer Architecture (ISCA)."
+      }
+     ]
+    },
+    {
+     "id": "p-references-109",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-109-1",
+       "original": "IEEE, 2021, pp. 1–14."
+      }
+     ]
+    },
+    {
+     "id": "p-references-110",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-110-1",
+       "original": "[89] B.",
+       "zh": "（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）"
+      },
+      {
+       "id": "s-references-110-2",
+       "original": "Li, A."
+      },
+      {
+       "id": "s-references-110-3",
+       "original": "Gulati, J."
+      },
+      {
+       "id": "s-references-110-4",
+       "original": "Yu, T."
+      },
+      {
+       "id": "s-references-110-5",
+       "original": "N."
+      },
+      {
+       "id": "s-references-110-6",
+       "original": "Sainath, C.-C."
+      },
+      {
+       "id": "s-references-110-7",
+       "original": "Chiu, A."
+      },
+      {
+       "id": "s-references-110-8",
+       "original": "Narayanan, S.-Y.",
+       "zh": "（作者名单，续）Rohit Prabhavalkar、Daniel S."
+      },
+      {
+       "id": "s-references-110-9",
+       "original": "Chang, R.",
+       "zh": "关于 ASR 的预训练 [6,12,22–33] 与自训练 [8,34–44] 已有大量文献。"
+      },
+      {
+       "id": "s-references-110-10",
        "original": "Pang, Y."
       },
       {
-       "id": "s-references-91-11",
+       "id": "s-references-110-11",
        "original": "He, J."
       },
       {
-       "id": "s-references-91-12",
+       "id": "s-references-110-12",
        "original": "Qin et al., “A better and faster end-to-end model for streaming asr,” in ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)."
+      }
+     ]
+    },
+    {
+     "id": "p-references-111",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-references-111-1",
+       "original": "IEEE, 2021, pp. 5634–5638."
       }
      ]
     }
@@ -6893,7 +7857,7 @@ globalThis.PAPER_2303_01037 = {
   {
    "id": "ann-023",
    "anchor": {
-    "sentence_id": "s-5-5-2-3",
+    "sentence_id": "s-5-5-3-3",
     "quote": "only 3.9× slower than the 100M-parameter streaming model"
    },
    "kind": "engineering",

@@ -27,7 +27,8 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-front-1-1",
-       "original": "Gabriel Clark*, Sofian Mejjoute, Mohamed Osman, George Close, Beren Millidge*"
+       "original": "Gabriel Clark*, Sofian Mejjoute, Mohamed Osman, George Close, Beren Millidge*",
+       "zh": "，"
       }
      ]
     }
@@ -478,74 +479,74 @@ globalThis.PAPER_2606_24320 = {
      ]
     },
     {
+     "id": "eq-II-A-1",
+     "type": "equation",
+     "page": 2,
+     "original": "{"
+    },
+    {
+     "id": "eq-II-A-2",
+     "type": "equation",
+     "page": 2,
+     "original": "X[t −j, j] if t ≥j, p otherwise,"
+    },
+    {
+     "id": "eq-II-A-3",
+     "type": "equation",
+     "page": 2,
+     "original": "(1)"
+    },
+    {
+     "id": "eq-II-A-4",
+     "type": "equation",
+     "page": 2,
+     "original": "Y [t, j] ="
+    },
+    {
      "id": "p-II-A-2",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
        "id": "s-II-A-2-1",
-       "original": "{ X[t −j, j] if t ≥j, p otherwise,",
-       "zh": "{ 当 t ≥ j 时取 X[t − j, j]，否则取 p，"
-      }
-     ]
-    },
-    {
-     "id": "eq-II-A-1",
-     "type": "equation",
-     "page": 2,
-     "original": "Y [t, j] ="
-    },
-    {
-     "id": "p-II-A-3",
-     "type": "paragraph",
-     "page": 2,
-     "sentences": [
-      {
-       "id": "s-II-A-3-1",
        "original": "where p is the ID of a special audio padding token.",
        "zh": "其中 p 是一个特殊的音频填充 token 的 ID。"
       },
       {
-       "id": "s-II-A-3-2",
+       "id": "s-II-A-2-2",
        "original": "Thus, codebook j is delayed by j frames.",
        "zh": "也就是说，码本 j 被延迟了 j 帧。"
       },
       {
-       "id": "s-II-A-3-3",
+       "id": "s-II-A-2-3",
        "original": "The delay pattern turns the within-frame dependency among RVQ codebooks into an autoregressive dependency over sequence positions: the token for codebook j + 1 at audio frame t is generated immediately after the token for codebook j at the same frame.",
        "zh": "延迟模式把同一帧内 RVQ 各码本之间的依赖，转化为序列位置上的自回归依赖：音频帧 t 上码本 j + 1 的 token，紧跟在同一帧码本 j 的 token 之后生成。"
       },
       {
-       "id": "s-II-A-3-4",
+       "id": "s-II-A-2-4",
        "original": "As a result, the model can predict each codebook token while conditioning on preceding codebooks for that frame, rather than treating the codebooks as conditionally independent.",
        "zh": "由此，模型在预测每个码本 token 时，能够以该帧之前的码本为条件，而不是把这些码本当作条件独立。"
       },
       {
-       "id": "s-II-A-3-5",
+       "id": "s-II-A-2-5",
        "original": "Before DAC decoding, the shearing operation is inverted:",
        "zh": "在 DAC 解码之前，剪切操作被逆变换："
       }
      ]
     },
     {
-     "id": "p-II-A-4",
-     "type": "paragraph",
+     "id": "eq-II-A-5",
+     "type": "equation",
      "page": 3,
-     "sentences": [
-      {
-       "id": "s-II-A-4-1",
-       "original": "ˆX[t, j] = Y [t + j, j].",
-       "zh": "X̂[t, j] = Y[t + j, j]。"
-      }
-     ]
+     "original": "ˆX[t, j] = Y [t + j, j]. (2)"
     },
     {
-     "id": "p-II-A-5",
+     "id": "p-II-A-3",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-II-A-5-1",
+       "id": "s-II-A-3-1",
        "original": "As a result, streaming decoding requires a lookahead buffer of N −1 generated frames before all codebooks for an aligned audio frame are available and the tokens from that frame can be passed to the DAC decoder.",
        "zh": "因此，流式解码需要一个 N − 1 帧的前瞻缓冲：在凑齐某个对齐音频帧的全部码本、并把该帧 token 送入 DAC 解码器之前，必须先多生成 N − 1 帧。"
       }
@@ -779,10 +780,16 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-II-C-4-1",
-       "original": "To condition the autoregressive TTS model on this representation, a learned projection of the speaker embedding is placed at the beginning of the sequence: hspk = Wspkˆex + bspk, where Wspk ∈Rdmodel×1024 maps the speaker embedding into the transformer hidden dimension.",
+       "original": "To condition the autoregressive TTS model on this representation, a learned projection of the speaker embedding is placed at the beginning of the sequence:",
        "zh": "为让自回归 TTS 模型以该表示为条件，把说话人嵌入的学习投影放在序列开头：hspk = Wspk êx + bspk，其中 Wspk ∈ Rdmodel×1024 将说话人嵌入映射到 Transformer 的隐藏维度。"
       }
      ]
+    },
+    {
+     "id": "eq-II-C-1",
+     "type": "equation",
+     "page": 4,
+     "original": "hspk = Wspkˆex + bspk, (3)"
     },
     {
      "id": "p-II-C-5",
@@ -791,38 +798,8 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-II-C-5-1",
-       "original": "Beyond discarding nuisance factors, the LDA projection helps mitigate a core problem with the speaker embeddings.",
-       "zh": "除了丢弃干扰因素，LDA 投影还有助于缓解说话人嵌入的一个核心问题。"
-      },
-      {
-       "id": "s-II-C-5-2",
-       "original": "There is a tradeoff between how much information an embedding carries about its source utterance and how long the model can be trained on embeddings drawn from that utterance before overfitting starts to occur.",
-       "zh": "嵌入携带其源语句的信息量，与模型能在来自该语句的嵌入上训练多久才会过拟合，二者之间存在权衡。"
-      },
-      {
-       "id": "s-II-C-5-3",
-       "original": "Because the embedding is computed from the groundtruth recording of the target utterance, any utterancespecific information it leaks, such as lexical content and pause timing, offers the model a shortcut.",
-       "zh": "因为嵌入是从目标语句的真实录音计算的，它泄漏的任何语句特定信息（如词汇内容与停顿时机）都给模型提供了一条捷径。"
-      },
-      {
-       "id": "s-II-C-5-4",
-       "original": "It can reduce its training loss by reading these specifics out of the speaker embedding instead of learning a solution that generalizes to text, emotion, or pauses not present in the reference clip.",
-       "zh": "模型可以直接从说话人嵌入中读出这些细节来降低训练损失，而不去学一个能泛化到参考片段之外的文本、情感或停顿的解。"
-      },
-      {
-       "id": "s-II-C-5-5",
-       "original": "The more information about the target the embedding exposes, the sooner this shortcut comes to dominate and the fewer useful training steps remain.",
-       "zh": "嵌入暴露的目标信息越多，这条捷径就越快占据主导，剩余的有效训练步数就越少。"
-      },
-      {
-       "id": "s-II-C-5-6",
-       "original": "Without the LDA transformation, we found we could not take enough training steps with the speaker embedding to learn high-quality voice cloning before overfitting occurred.",
-       "zh": "我们发现，若不做 LDA 变换，用说话人嵌入训练时还没学到高质量的声音克隆，模型就已经过拟合了。"
-      },
-      {
-       "id": "s-II-C-5-7",
-       "original": "The LDA projection is necessary to extend the usable training horizon of the embedding.",
-       "zh": "LDA 投影是延长嵌入可用训练时程的必要手段。"
+       "original": "where Wspk ∈Rdmodel×1024 maps the speaker embedding into the transformer hidden dimension.",
+       "zh": "为让自回归 TTS 模型以该表示为条件，把说话人嵌入的学习投影放在序列开头：hspk = Wspk êx + bspk，其中 Wspk ∈ Rdmodel×1024 将说话人嵌入映射到 Transformer 的隐藏维度。"
       }
      ]
     },
@@ -833,11 +810,53 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-II-C-6-1",
+       "original": "Beyond discarding nuisance factors, the LDA projection helps mitigate a core problem with the speaker embeddings.",
+       "zh": "除了丢弃干扰因素，LDA 投影还有助于缓解说话人嵌入的一个核心问题。"
+      },
+      {
+       "id": "s-II-C-6-2",
+       "original": "There is a tradeoff between how much information an embedding carries about its source utterance and how long the model can be trained on embeddings drawn from that utterance before overfitting starts to occur.",
+       "zh": "嵌入携带其源语句的信息量，与模型能在来自该语句的嵌入上训练多久才会过拟合，二者之间存在权衡。"
+      },
+      {
+       "id": "s-II-C-6-3",
+       "original": "Because the embedding is computed from the groundtruth recording of the target utterance, any utterancespecific information it leaks, such as lexical content and pause timing, offers the model a shortcut.",
+       "zh": "因为嵌入是从目标语句的真实录音计算的，它泄漏的任何语句特定信息（如词汇内容与停顿时机）都给模型提供了一条捷径。"
+      },
+      {
+       "id": "s-II-C-6-4",
+       "original": "It can reduce its training loss by reading these specifics out of the speaker embedding instead of learning a solution that generalizes to text, emotion, or pauses not present in the reference clip.",
+       "zh": "模型可以直接从说话人嵌入中读出这些细节来降低训练损失，而不去学一个能泛化到参考片段之外的文本、情感或停顿的解。"
+      },
+      {
+       "id": "s-II-C-6-5",
+       "original": "The more information about the target the embedding exposes, the sooner this shortcut comes to dominate and the fewer useful training steps remain.",
+       "zh": "嵌入暴露的目标信息越多，这条捷径就越快占据主导，剩余的有效训练步数就越少。"
+      },
+      {
+       "id": "s-II-C-6-6",
+       "original": "Without the LDA transformation, we found we could not take enough training steps with the speaker embedding to learn high-quality voice cloning before overfitting occurred.",
+       "zh": "我们发现，若不做 LDA 变换，用说话人嵌入训练时还没学到高质量的声音克隆，模型就已经过拟合了。"
+      },
+      {
+       "id": "s-II-C-6-7",
+       "original": "The LDA projection is necessary to extend the usable training horizon of the embedding.",
+       "zh": "LDA 投影是延长嵌入可用训练时程的必要手段。"
+      }
+     ]
+    },
+    {
+     "id": "p-II-C-7",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-II-C-7-1",
        "original": "Even with the LDA projection, the extent to which the model can be safely trained using embeddings extracted from the target utterance remains limited.",
        "zh": "即便有了 LDA 投影，用从目标语句提取的嵌入能安全训练的限度仍然有限。"
       },
       {
-       "id": "s-II-C-6-2",
+       "id": "s-II-C-7-2",
        "original": "The training horizon is extended with a two-phase scheme for speaker conditioning, described in Section IV-C, which is ultimately what yielded the final ZONOS2 model.",
        "zh": "第 IV-C 节所述的两阶段说话人条件化方案进一步延长了训练时程，最终产出 ZONOS2 的正是这一方案。"
       }
@@ -1079,10 +1098,16 @@ globalThis.PAPER_2606_24320 = {
       },
       {
        "id": "s-II-G-1-3",
-       "original": "Given the causal hidden state ht = fθ(s<t), the model predicts the next delayed audiocodebook frame: pθ(Y [t + 1, n] = v | s<t) = softmax(˜ℓt,n)v.",
+       "original": "Given the causal hidden state ht = fθ(s<t), the model predicts the next delayed audiocodebook frame:",
        "zh": "给定因果隐状态 ht = fθ(s<t)，模型预测下一个延迟音频码本帧：pθ(Y[t + 1, n] = v | s<t) = softmax(ℓ̃t,n)v。"
       }
      ]
+    },
+    {
+     "id": "eq-II-G-1",
+     "type": "equation",
+     "page": 5,
+     "original": "pθ(Y [t + 1, n] = v | s<t) = softmax(˜ℓt,n)v. (4)"
     },
     {
      "id": "p-II-G-2",
@@ -1097,10 +1122,22 @@ globalThis.PAPER_2606_24320 = {
      ]
     },
     {
-     "id": "eq-II-G-1",
+     "id": "eq-II-G-2",
      "type": "equation",
      "page": 5,
      "original": "˜ℓt,j = τ tanh (ℓt,j"
+    },
+    {
+     "id": "eq-II-G-3",
+     "type": "equation",
+     "page": 5,
+     "original": ") ,"
+    },
+    {
+     "id": "eq-II-G-4",
+     "type": "equation",
+     "page": 5,
+     "original": "τ"
     },
     {
      "id": "p-II-G-3",
@@ -1109,16 +1146,21 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-II-G-3-1",
-       "original": ",",
-       "zh": "，"
+       "original": "with τ = 15 in our training runs.",
+       "zh": "我们的训练运行中取 τ = 15。"
+      },
+      {
+       "id": "s-II-G-3-2",
+       "original": "The per-codebook predictive distribution is then",
+       "zh": "每个码本的预测分布即为 pθ(Yt,j = v | s<t) = softmax(ℓ̃t,j)v。"
       }
      ]
     },
     {
-     "id": "eq-II-G-2",
+     "id": "eq-II-G-5",
      "type": "equation",
      "page": 5,
-     "original": "τ"
+     "original": "pθ(Yt,j = v | s<t) = softmax(˜ℓt,j)v. (5)"
     },
     {
      "id": "p-II-G-4",
@@ -1127,15 +1169,16 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-II-G-4-1",
-       "original": "with τ = 15 in our training runs.",
-       "zh": "我们的训练运行中取 τ = 15。"
-      },
-      {
-       "id": "s-II-G-4-2",
-       "original": "The per-codebook predictive distribution is then pθ(Yt,j = v | s<t) = softmax(˜ℓt,j)v.",
-       "zh": "每个码本的预测分布即为 pθ(Yt,j = v | s<t) = softmax(ℓ̃t,j)v。"
+       "original": "The main training loss is the masked negative loglikelihood over non-padding audio targets:",
+       "zh": "主训练损失是对非填充音频目标计算的掩码负对数似然："
       }
      ]
+    },
+    {
+     "id": "eq-II-G-6",
+     "type": "equation",
+     "page": 5,
+     "original": "∑"
     },
     {
      "id": "p-II-G-5",
@@ -1144,10 +1187,16 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-II-G-5-1",
-       "original": "The main training loss is the masked negative loglikelihood over non-padding audio targets:",
-       "zh": "主训练损失是对非填充音频目标计算的掩码负对数似然："
+       "original": "LNLL = −",
+       "zh": "LNLL = − (1/Maud) Σt,j mt,j log pθ(Y[t + 1, j] | s<t)，其中 mt,j = 1 当且仅当目标 yt,j 不是 p，且 Maud = Σt,j mt,j。"
       }
      ]
+    },
+    {
+     "id": "eq-II-G-7",
+     "type": "equation",
+     "page": 5,
+     "original": "1"
     },
     {
      "id": "p-II-G-6",
@@ -1156,11 +1205,65 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-II-G-6-1",
-       "original": "LNLL = − 1 Maud t,j mt,j log pθ(Y [t + 1, j] | s<t), where mt,j = 1 only when the target yt,j is not p, and Maud = t,j mt,j.",
+       "original": "Maud",
        "zh": "LNLL = − (1/Maud) Σt,j mt,j log pθ(Y[t + 1, j] | s<t)，其中 mt,j = 1 当且仅当目标 yt,j 不是 p，且 Maud = Σt,j mt,j。"
+      }
+     ]
+    },
+    {
+     "id": "eq-II-G-8",
+     "type": "equation",
+     "page": 5,
+     "original": "t,j mt,j log pθ(Y [t + 1, j] | s<t), (6)"
+    },
+    {
+     "id": "p-II-G-7",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-II-G-7-1",
+       "original": "where mt,j",
+       "zh": "（公式片段：……其中 m_{t,j} = 1 仅当目标 y_{t,j} 不是 p 时，M_aud = Σ_{t,j} m_{t,j}。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-II-G-9",
+     "type": "equation",
+     "page": 5,
+     "original": "="
+    },
+    {
+     "id": "p-II-G-8",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-II-G-8-1",
+       "original": "1 only when the target yt,j is not p, and Maud",
+       "zh": "（公式片段：……其中 m_{t,j} = 1 仅当目标 y_{t,j} 不是 p 时，M_aud = Σ_{t,j} m_{t,j}。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-II-G-10",
+     "type": "equation",
+     "page": 5,
+     "original": "= ∑"
+    },
+    {
+     "id": "p-II-G-9",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-II-G-9-1",
+       "original": "t,j mt,j.",
+       "zh": "（公式片段：……其中 m_{t,j} = 1 仅当目标 y_{t,j} 不是 p 时，M_aud = Σ_{t,j} m_{t,j}。）"
       },
       {
-       "id": "s-II-G-6-2",
+       "id": "s-II-G-9-2",
        "original": "Text tokens and optional speaker-conditioning, speaking-rate and quality positions are therefore used as context but are not reconstructed as targets.",
        "zh": "因此，文本 token 以及可选的说话人条件化、语速与质量位置都被用作上下文，但不作为被重建的目标。"
       }
@@ -1174,78 +1277,43 @@ globalThis.PAPER_2606_24320 = {
      "zh": "图 3：ZONOS2 训练数据集按语言的构成拆分。"
     },
     {
-     "id": "p-II-G-7",
-     "type": "paragraph",
-     "page": 5,
-     "sentences": [
-      {
-       "id": "s-II-G-7-1",
-       "original": "For mixture-of-experts layers, a router balancing objective is used during training.",
-       "zh": "对混合专家层，训练时使用一个路由均衡目标。"
-      },
-      {
-       "id": "s-II-G-7-2",
-       "original": "Let uℓ,e be the empirical fraction of routed tokens assigned to expert e in MoE layer ℓ, and let ¯ue = 1/E be the uniform expert usage for E experts (Wang, Gao, & Zhao et al., 2024).",
-       "zh": "记 uℓ,e 为 MoE 层 ℓ 中被路由到专家 e 的 token 的经验占比，记 ūe = 1/E 为 E 个专家下的均匀使用率（Wang, Gao, & Zhao et al., 2024）。"
-      },
-      {
-       "id": "s-II-G-7-3",
-       "original": "Each MoE layer maintains a zero-mean balancing bias vector bℓ.",
-       "zh": "每个 MoE 层维护一个零均值的均衡偏置向量 bℓ。"
-      },
-      {
-       "id": "s-II-G-7-4",
-       "original": "The auxiliary loss is",
-       "zh": "辅助损失为"
-      }
-     ]
-    },
-    {
-     "id": "eq-II-G-3",
-     "type": "equation",
-     "page": 5,
-     "original": "Lbal = ℓ∈M"
-    },
-    {
-     "id": "p-II-G-8",
-     "type": "paragraph",
-     "page": 5,
-     "sentences": [
-      {
-       "id": "s-II-G-8-1",
-       "original": "b⊤ ℓsg(uℓ−¯u), where sg(·) denotes stop-gradient.",
-       "zh": "bℓ⊤ sg(uℓ − ū)，其中 sg(·) 表示停止梯度。"
-      },
-      {
-       "id": "s-II-G-8-2",
-       "original": "Minimizing this term decreases the routing bias for overused experts and increases for underused experts.",
-       "zh": "最小化该项会降低对过度使用专家的路由偏置、提高对使用不足专家的偏置。"
-      }
-     ]
-    },
-    {
-     "id": "p-II-G-9",
-     "type": "paragraph",
-     "page": 5,
-     "sentences": [
-      {
-       "id": "s-II-G-9-1",
-       "original": "A separate AdamW (Loshchilov & Hutter, 2019) optimizer is used to learn the bias vectors.",
-       "zh": "偏置向量由一个独立的 AdamW（Loshchilov & Hutter, 2019）优化器学习。"
-      }
-     ]
-    },
-    {
      "id": "p-II-G-10",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
        "id": "s-II-G-10-1",
-       "original": "The total objective minimized during training is simply the sum of these terms:",
-       "zh": "训练中最小化的总目标就是这些项的简单求和："
+       "original": "For mixture-of-experts layers, a router balancing objective is used during training.",
+       "zh": "对混合专家层，训练时使用一个路由均衡目标。"
+      },
+      {
+       "id": "s-II-G-10-2",
+       "original": "Let uℓ,e be the empirical fraction of routed tokens assigned to expert e in MoE layer ℓ, and let ¯ue = 1/E be the uniform expert usage for E experts (Wang, Gao, & Zhao et al., 2024).",
+       "zh": "记 uℓ,e 为 MoE 层 ℓ 中被路由到专家 e 的 token 的经验占比，记 ūe = 1/E 为 E 个专家下的均匀使用率（Wang, Gao, & Zhao et al., 2024）。"
+      },
+      {
+       "id": "s-II-G-10-3",
+       "original": "Each MoE layer maintains a zero-mean balancing bias vector bℓ.",
+       "zh": "每个 MoE 层维护一个零均值的均衡偏置向量 bℓ。"
+      },
+      {
+       "id": "s-II-G-10-4",
+       "original": "The auxiliary loss is",
+       "zh": "辅助损失为"
       }
      ]
+    },
+    {
+     "id": "eq-II-G-11",
+     "type": "equation",
+     "page": 5,
+     "original": "Lbal = ∑"
+    },
+    {
+     "id": "eq-II-G-12",
+     "type": "equation",
+     "page": 5,
+     "original": "ℓ∈M b⊤ ℓsg(uℓ−¯u), (7)"
     },
     {
      "id": "p-II-G-11",
@@ -1254,10 +1322,45 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-II-G-11-1",
-       "original": "L = LNLL + Lbal.",
-       "zh": "L = LNLL + Lbal。"
+       "original": "where sg(·) denotes stop-gradient.",
+       "zh": "bℓ⊤ sg(uℓ − ū)，其中 sg(·) 表示停止梯度。"
+      },
+      {
+       "id": "s-II-G-11-2",
+       "original": "Minimizing this term decreases the routing bias for overused experts and increases it for underused experts.",
+       "zh": "最小化该项会降低被过度使用专家的路由偏置、提高使用不足专家的偏置。"
       }
      ]
+    },
+    {
+     "id": "p-II-G-12",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-II-G-12-1",
+       "original": "A separate AdamW (Loshchilov & Hutter, 2019) optimizer is used to learn the bias vectors.",
+       "zh": "偏置向量由一个独立的 AdamW（Loshchilov & Hutter, 2019）优化器学习。"
+      }
+     ]
+    },
+    {
+     "id": "p-II-G-13",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-II-G-13-1",
+       "original": "The total objective minimized during training is simply the sum of these terms:",
+       "zh": "训练中最小化的总目标就是这些项的简单求和："
+      }
+     ]
+    },
+    {
+     "id": "eq-II-G-13",
+     "type": "equation",
+     "page": 5,
+     "original": "L = LNLL + Lbal. (8)"
     }
    ]
   },
@@ -1500,22 +1603,46 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-IV-A-3-1",
-       "original": "We trained with the Muon optimizer (Jordan, Jin, & Boza et al., 2024; Liu, Su, & Yao et al., 2025) with a base learning rate of 5×10−4, a Muon learning rate of 5×10−3, Seed-TTS-Eval CV3-Eval MiniMax-ML ZTTS1-Eval Languages up to 17 Audio read read/expressive read read and ITW spontaneous Duration –† Prosody / div.",
+       "original": "We trained with the Muon optimizer (Jordan, Jin, & Boza et al., 2024; Liu, Su, & Yao et al., 2025) with a base learning rate of 5×10−4, a Muon learning rate of 5×10−3, Seed-TTS-Eval CV3-Eval MiniMax-ML ZTTS1-Eval Languages up to 17 Audio read read/expressive read read and ITW spontaneous Duration",
+       "zh": "我们\n（原始数据照录）\nWe trained with the Muon optimizer (Jordan, Jin, & Boza et al., 2024; Liu, Su, & Yao et al., 2025) with a base learning rate of 5×10−4, a Muon learning rate of 5×10−3, Seed-TTS-Eval CV3-Eval MiniMax-ML ZTTS1-Eval Languages up to 17 Audio read read/expressive read read and ITW spontaneous Duration"
+      }
+     ]
+    },
+    {
+     "id": "eq-IV-A-1",
+     "type": "equation",
+     "page": 6,
+     "original": "–†"
+    },
+    {
+     "id": "p-IV-A-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-IV-A-4-1",
+       "original": "Prosody / div.",
        "zh": "我们使用 Muon 优化器（Jordan, Jin, & Boza et al., 2024; Liu, Su, & Yao et al., 2025），基础学习率 5×10^−4，Muon 学习率 5×10^−3，（以下为抽取层混入正文的表 II 栏名残片，逐词译为中文标签：Seed-TTS-Eval CV3-Eval MiniMax-ML ZTTS1-Eval 语言 up to 17 音频 read read/expressive read read 与 ITW spontaneous 时长 –† 韵律 / 多样性。）"
       }
      ]
     },
     {
-     "id": "p-IV-A-4",
-     "type": "paragraph",
+     "id": "eq-IV-A-2",
+     "type": "equation",
      "page": 7,
-     "sentences": [
-      {
-       "id": "s-IV-A-4-1",
-       "original": "task specific TTSDS2 + DS-WED ASR scorer Qwen3-ASR Speaker scorer WavLM ERes2Net WavLM ReDimNet Quality scorer DNSMOS MSR-UTMOS TABLE II: Comparison of Seed-TTS-Eval, CV3-Eval, the MiniMax multilingual test set (MiniMax-ML), and the proposed ZTTS1-Eval. †: MiniMax-ML contains 100 sentences and two reference utterances per language. weight decay of 0.1, gradient clipping at 0.5, a 100-step warmup, and cosine learning-rate decay.",
-       "zh": "（以下为抽取层混入正文的表 II 内容，逐词译为中文标签：任务特定 TTSDS2 + DS-WED ASR 评分器 Qwen3-ASR 说话人评分器 WavLM ERes2Net WavLM ReDimNet 质量评分器 DNSMOS MSR-UTMOS 表 II： Comparison of Seed-TTS-Eval, CV3-Eval, the MiniMax multilingual test set (MiniMax-ML), and the proposed ZTTS1-Eval. †: MiniMax-ML contains 100 sentences and two reference utterances per language. ）权重衰减 0.1，梯度裁剪于 0.5，100 步 warmup，余弦学习率衰减。"
-      }
-     ]
+     "original": "–"
+    },
+    {
+     "id": "eq-IV-A-3",
+     "type": "equation",
+     "page": 7,
+     "original": "task specific"
+    },
+    {
+     "id": "eq-IV-A-4",
+     "type": "equation",
+     "page": 7,
+     "original": "–"
     },
     {
      "id": "p-IV-A-5",
@@ -1524,31 +1651,73 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-IV-A-5-1",
+       "original": "TTSDS2 + DS-WED ASR scorer Whisper-L / Paraformer Whisper-L / Paraformer Whisper-L / Paraformer Qwen3-ASR Speaker scorer WavLM ERes2Net WavLM ReDimNet Quality scorer",
+       "zh": "（表 II：Seed-TTS-Eval、CV3-Eval、MiniMax 多语测试集（MiniMax-ML）与本文 ZTTS1-Eval 的对比——任务特定性：task specific / TTSDS2 + DS-WED；ASR scorer：Whisper-L / Paraformer（三者）与 Qwen3-ASR；Speaker scorer：WavLM / ERes2Net / WavLM / ReDimNet；Quality scorer：– / DNSMOS / – / MSR-UTMOS。表注 †：MiniMax-ML 每语言 100 句、每语 2 条参考语音。训练配置：weight decay 0.1、梯度裁剪 0.5、100 步 warmup、余弦学习率衰减。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-IV-A-5",
+     "type": "equation",
+     "page": 7,
+     "original": "–"
+    },
+    {
+     "id": "eq-IV-A-6",
+     "type": "equation",
+     "page": 7,
+     "original": "DNSMOS"
+    },
+    {
+     "id": "eq-IV-A-7",
+     "type": "equation",
+     "page": 7,
+     "original": "–"
+    },
+    {
+     "id": "p-IV-A-6",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-IV-A-6-1",
+       "original": "MSR-UTMOS TABLE II: Comparison of Seed-TTS-Eval, CV3-Eval, the MiniMax multilingual test set (MiniMax-ML), and the proposed ZTTS1-Eval. †: MiniMax-ML contains 100 sentences and two reference utterances per language. weight decay of 0.1, gradient clipping at 0.5, a 100-step warmup, and cosine learning-rate decay.",
+       "zh": "（表 II：Seed-TTS-Eval、CV3-Eval、MiniMax 多语测试集（MiniMax-ML）与本文 ZTTS1-Eval 的对比——任务特定性：task specific / TTSDS2 + DS-WED；ASR scorer：Whisper-L / Paraformer（三者）与 Qwen3-ASR；Speaker scorer：WavLM / ERes2Net / WavLM / ReDimNet；Quality scorer：– / DNSMOS / – / MSR-UTMOS。表注 †：MiniMax-ML 每语言 100 句、每语 2 条参考语音。训练配置：weight decay 0.1、梯度裁剪 0.5、100 步 warmup、余弦学习率衰减。）"
+      }
+     ]
+    },
+    {
+     "id": "p-IV-A-7",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-IV-A-7-1",
        "original": "During the pre-training stage, we found that the expert routing was highly unstable and the normalized entropy of several layers periodically collapsed to as low as 0.6 and remained there without intervention.",
        "zh": "预训练阶段，我们发现专家路由高度不稳定，若干层的归一化熵会周期性塌缩到最低 0.6，且不经干预就一直停留在那里。"
       },
       {
-       "id": "s-IV-A-5-2",
+       "id": "s-IV-A-7-2",
        "original": "Normalized entropy for unbalanced layers is visible in Figure 4.",
        "zh": "不均衡层的归一化熵可见于图 4。"
       },
       {
-       "id": "s-IV-A-5-3",
+       "id": "s-IV-A-7-3",
        "original": "To mitigate this instability, we set the first three layers and the final layer to be dense transformer blocks, and the last MoE block to use top-2 routing.",
        "zh": "为缓解这种不稳定，我们把前三层与最后一层设为稠密 Transformer 块，并令最后一个 MoE 块使用 top-2 路由。"
       },
       {
-       "id": "s-IV-A-5-4",
+       "id": "s-IV-A-7-4",
        "original": "In addition, the balancing-bias and router learning rates were adjusted manually in response to the different types of expert collapse encountered during training.",
        "zh": "此外，针对训练中遇到的不同类型的专家塌缩，我们手动调整了均衡偏置与路由器的学习率。"
       },
       {
-       "id": "s-IV-A-5-5",
+       "id": "s-IV-A-7-5",
        "original": "We found that MoE balancing on audio data is substantially harder than on text data, for reasons we do not fully understand.",
        "zh": "我们发现，在音频数据上做 MoE 均衡比在文本数据上难得多，原因我们并未完全理解。"
       },
       {
-       "id": "s-IV-A-5-6",
+       "id": "s-IV-A-7-6",
        "original": "We speculate that this could be due to the intrinsic diﬀiculty and noisiness of delayed DAC tokens, the unique challenge of aligning high frame rate audio with low frame rate text tokens, or other statistical properties of audio data.",
        "zh": "我们推测，这可能源于延迟 DAC token 本身的困难与噪声、高帧率音频与低帧率文本 token 对齐的独特挑战，或音频数据的其他统计特性。"
       }
@@ -1969,127 +2138,895 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-VI-2-1",
-       "original": "On the Clean subset, shown in Table III, ZONOS2 shows competitive performance in terms of cloning accuracy §https://github.com/Zyphra/ZTTS1-Eval Model Metric hard_en hard_zh Reference Ground truth 3.53 1.04 2.83 1.28 4.68 3.23 3.03 5.09 4.06 2.88 6.12 3.66 2.73 3.26 2.63 3.33 3.20 3.47 3.07 3.47 3.29 3.30 Open-source models ZONOS2 8B 2.76 15.04 15.62 26.23 5.67 4.78 13.18 6.53 8.27 18.96 8.26 3.40 2.57 3.10 2.29 3.23 2.96 3.27 2.89 3.23 3.13 2.97 78.6 62.1 73.3 74.6 78.3 79.4 70.0 77.7 81.3 73.3 80.2 ZONOS2 8B Quality Mode 3.99 2.68 6.73 14.41 3.74 3.25 4.30 3.52 7.67 4.14 6.99 3.47 2.94 3.21 2.65 3.36 2.94 3.31 2.92 3.31 3.18 3.02 74.4 58.2 81.1 73.4 76.2 79.0 75.9 78.0 82.0 83.0 79.4 1.94 1.26 2.91 6.04 2.78 1.98 3.08 2.19 3.78 2.85 4.25 3.86 3.33 3.71 3.16 3.72 3.43 3.64 3.38 3.71 3.53 3.49 68.3 60.2 79.7 75.8 69.7 69.2 72.0 75.2 81.0 79.3 74.1 Qwen 3 TTS 1.7B (Hu, Zhu, & He et al., 2026) 3.60 5.00 4.33 7.95 3.04 3.73 5.90 4.17 4.20 3.92 7.74 3.47 3.06 3.23 3.00 3.26 3.01 3.22 3.02 3.37 3.18 3.09 76.9 64.7 82.9 76.0 78.5 82.8 78.0 79.3 85.4 83.9 80.6 Fish S2 Pro (Liao, Wang, & Liu et al., 2026) 4.23 0.94 5.01 5.21 4.84 4.44 5.10 5.80 4.92 3.99 7.43 3.51 2.82 3.12 2.55 3.07 2.85 3.25 2.71 3.23 3.04 2.83 65.2 66.8 77.3 77.5 79.7 75.4 75.8 80.8 83.3 83.1 80.4 VoxCPM 2 (Zhou, Zeng, & Liu et al., 2026) Closed-source models 2.56 0.86 4.53 7.66 3.14 3.21 3.41 3.05 3.65 3.24 6.01 3.62 3.19 3.17 3.01 3.18 2.97 3.29 2.90 3.36 3.11 3.05 79.9 67.1 85.4 80.0 82.8 85.9 83.1 83.4 87.5 86.4 84.2 Cartesia Sonic 3.5 (Cartesia, 2026) 2.35 0.75 4.20 8.31 3.79 3.24 3.62 2.70 4.26 4.57 5.63 3.59 3.53 3.31 3.37 3.54 3.25 3.29 3.19 3.45 3.36 3.15 7.2 6.8 36.9 29.4 17.1 18.0 21.9 21.9 36.3 38.6 25.4 Eleven Labs V3 (ElevenLabs, 2026) 2.50 0.80 4.09 5.63 3.61 4.41 4.77 3.24 3.79 3.06 6.58 3.87 3.79 3.54 3.37 3.71 3.43 3.52 3.39 3.65 3.51 3.37 12.7 9.8 36.6 28.6 17.7 19.5 20.9 20.4 33.6 36.2 23.5 Gemini 3.1 Flash (Google DeepMind, 2026) 3.14 1.96 4.04 7.86 4.05 4.38 4.95 3.98 5.63 3.13 7.08 3.53 3.15 3.14 2.94 3.27 3.05 3.33 2.95 3.27 3.11 3.01 65.8 54.8 74.8 67.1 68.4 73.0 68.5 70.4 77.7 78.3 69.8 Inworld TTS 2 (Inworld AI, 2026) TABLE III: ZTTS1-Eval Clean zero-shot results across WER, MSR-UTMOS and speaker similarity, segmented by open-source and closed-source models.",
-       "zh": "在表 III 所示的干净子集上，ZONOS2 的克隆准确度表现具有竞争力；（以下为抽取层混入正文的表 III 内容，逐词译为中文标签：模型 指标 hard_en hard_zh 参考 真实值 3.53 1.04 2.83 1.28 4.68 3.23 3.03 5.09 4.06 2.88 6.12 3.66 2.73 3.26 2.63 3.33 3.20 3.47 3.07 3.47 3.29 3.30 开源模型 ZONOS2 8B 2.76 15.04 15.62 26.23 5.67 4.78 13.18 6.53 8.27 18.96 8.26 3.40 2.57 3.10 2.29 3.23 2.96 3.27 2.89 3.23 3.13 2.97 78.6 62.1 73.3 74.6 78.3 79.4 70.0 77.7 81.3 73.3 80.2 ZONOS2 8B 质量模式 3.99 2.68 6.73 14.41 3.74 3.25 4.30 3.52 7.67 4.14 6.99 3.47 2.94 3.21 2.65 3.36 2.94 3.31 2.92 3.31 3.18 3.02 74.4 58.2 81.1 73.4 76.2 79.0 75.9 78.0 82.0 83.0 79.4 1.94 1.26 2.91 6.04 2.78 1.98 3.08 2.19 3.78 2.85 4.25 3.86 3.33 3.71 3.16 3.72 3.43 3.64 3.38 3.71 3.53 3.49 68.3 60.2 79.7 75.8 69.7 69.2 72.0 75.2 81.0 79.3 74.1 Qwen 3 TTS 1.7B (Hu, Zhu, & He et al., 2026) 3.60 5.00 4.33 7.95 3.04 3.73 5.90 4.17 4.20 3.92 7.74 3.47 3.06 3.23 3.00 3.26 3.01 3.22 3.02 3.37 3.18 3.09 76.9 64.7 82.9 76.0 78.5 82.8 78.0 79.3 85.4 83.9 80.6 Fish S2 Pro (Liao, Wang, & Liu et al., 2026) 4.23 0.94 5.01 5.21 4.84 4.44 5.10 5.80 4.92 3.99 7.43 3.51 2.82 3.12 2.55 3.07 2.85 3.25 2.71 3.23 3.04 2.83 65.2 66.8 77.3 77.5 79.7 75.4 75.8 80.8 83.3 83.1 80.4 VoxCPM 2 (Zhou, Zeng, & Liu et al., 2026) 闭源模型 2.56 0.86 4.53 7.66 3.14 3.21 3.41 3.05 3.65 3.24 6.01 3.62 3.19 3.17 3.01 3.18 2.97 3.29 2.90 3.36 3.11 3.05 79.9 67.1 85.4 80.0 82.8 85.9 83.1 83.4 87.5 86.4 84.2 Cartesia Sonic 3.5 (Cartesia, 2026) 2.35 0.75 4.20 8.31 3.79 3.24 3.62 2.70 4.26 4.57 5.63 3.59 3.53 3.31 3.37 3.54 3.25 3.29 3.19 3.45 3.36 3.15 7.2 6.8 36.9 29.4 17.1 18.0 21.9 21.9 36.3 38.6 25.4 Eleven Labs V3 (ElevenLabs, 2026) 2.50 0.80 4.09 5.63 3.61 4.41 4.77 3.24 3.79 3.06 6.58 3.87 3.79 3.54 3.37 3.71 3.43 3.52 3.39 3.65 3.51 3.37 12.7 9.8 36.6 28.6 17.7 19.5 20.9 20.4 33.6 36.2 23.5 Gemini 3.1 Flash (Google DeepMind, 2026) 3.14 1.96 4.04 7.86 4.05 4.38 4.95 3.98 5.63 3.13 7.08 3.53 3.15 3.14 2.94 3.27 3.05 3.33 2.95 3.27 3.11 3.01 65.8 54.8 74.8 67.1 68.4 73.0 68.5 70.4 77.7 78.3 69.8 Inworld TTS 2 (Inworld AI, 2026) 表 III： ZTTS1-Eval 干净集零样本结果，按 WER、MSR-UTMOS 与说话人相似度报告，并区分开源与闭源模型。）"
-      },
-      {
-       "id": "s-VI-2-2",
-       "original": "Best result per language and metric is shown in bold; second-best is underlined.",
-       "zh": "每种语言、每项指标的最优结果加粗显示，次优加下划线。"
-      },
-      {
-       "id": "s-VI-2-3",
-       "original": "Ground-truth reference results are shown for context and excluded from the ranking. * denotes models which do not support zero-shot voice cloning. as measured by speaker similarity, achieving the best open-source and the second best overall speaker similarity for English (en).",
-       "zh": "真实参考结果仅供对照、不参与排名；* 表示不支持零样本声音克隆的模型。在表 III 所示的干净子集上，以说话人相似度衡量，ZONOS2 的克隆准确度具有竞争力，在英语（en）上取得开源最优、总体次优的说话人相似度。"
-      },
-      {
-       "id": "s-VI-2-4",
-       "original": "The gain in intelligibility here, as measured by WER via use of the ‘Quality Mode’ token, is somewhat uneven.",
-       "zh": "通过「质量模式」token 获得的、以 WER 衡量的可懂度提升并不均衡。"
-      },
-      {
-       "id": "s-VI-2-5",
-       "original": "We observe degraded WER scores for English but improvements for all other languages.",
-       "zh": "我们观察到英语的 WER 变差了，而其余所有语言都有改善。"
-      },
-      {
-       "id": "s-VI-2-6",
-       "original": "Quality Mode drastically improves intelligibility for some languages such as Mandarin (zh) from 15.62% to 6.73%, while also improving speaker similarity.",
-       "zh": "质量模式大幅改善了部分语言的可懂度，例如普通话（zh）从 15.62% 降到 6.73%，同时还提高了说话人相似度。"
-      },
-      {
-       "id": "s-VI-2-7",
-       "original": "Quality Mode also improves the acoustic quality of the generated audio as measured by UTMOS.",
-       "zh": "质量模式还改善了以 UTMOS 衡量的生成音频音质。"
+       "original": "On the Clean subset, shown in Table III, ZONOS2 shows competitive performance in terms of cloning accuracy §https://github.com/Zyphra/ZTTS1-Eval Model Metric en hard_en zh hard_zh de es fr it ja ko ru Reference Ground truth WER ↓",
+       "zh": "在 Clean 子集上（表 III），ZONOS2 在克隆准确率上具有竞争力（脚注 §：https://github.com/Zyphra/ZTTS1-Eval）。（表头：Model / Metric × en / hard_en / zh / hard_zh / de / es / fr / it / ja / ko / ru——Reference / Ground truth；WER ↓。）"
       }
      ]
     },
     {
+     "id": "eq-VI-1",
+     "type": "equation",
+     "page": 8,
+     "original": "3.53 1.04 2.83 1.28 4.68 3.23 3.03 5.09 4.06 2.88 6.12"
+    },
+    {
+     "id": "eq-VI-2",
+     "type": "equation",
+     "page": 8,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-3",
+     "type": "equation",
+     "page": 8,
+     "original": "3.66 2.73 3.26 2.63 3.33 3.20 3.47 3.07 3.47 3.29 3.30"
+    },
+    {
+     "id": "eq-VI-4",
+     "type": "equation",
+     "page": 8,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-5",
+     "type": "equation",
+     "page": 8,
+     "original": "– – – – – – – – – – –"
+    },
+    {
+     "id": "eq-VI-6",
+     "type": "equation",
+     "page": 8,
+     "original": "Open-source models ZONOS2 8B WER ↓"
+    },
+    {
+     "id": "eq-VI-7",
+     "type": "equation",
+     "page": 8,
+     "original": "2.76 15.04 15.62 26.23 5.67 4.78 13.18 6.53 8.27 18.96 8.26"
+    },
+    {
+     "id": "eq-VI-8",
+     "type": "equation",
+     "page": 8,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-9",
+     "type": "equation",
+     "page": 8,
+     "original": "3.40 2.57 3.10 2.29 3.23 2.96 3.27 2.89 3.23 3.13 2.97"
+    },
+    {
+     "id": "eq-VI-10",
+     "type": "equation",
+     "page": 8,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-11",
+     "type": "equation",
+     "page": 8,
+     "original": "78.6 62.1 73.3 74.6 78.3 79.4 70.0 77.7 81.3 73.3 80.2"
+    },
+    {
+     "id": "eq-VI-12",
+     "type": "equation",
+     "page": 8,
+     "original": "ZONOS2 8B Quality Mode WER ↓"
+    },
+    {
+     "id": "eq-VI-13",
+     "type": "equation",
+     "page": 8,
+     "original": "3.99 2.68 6.73 14.41 3.74 3.25 4.30 3.52 7.67 4.14 6.99"
+    },
+    {
+     "id": "eq-VI-14",
+     "type": "equation",
+     "page": 8,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-15",
+     "type": "equation",
+     "page": 8,
+     "original": "3.47 2.94 3.21 2.65 3.36 2.94 3.31 2.92 3.31 3.18 3.02"
+    },
+    {
+     "id": "eq-VI-16",
+     "type": "equation",
+     "page": 8,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-17",
+     "type": "equation",
+     "page": 8,
+     "original": "74.4 58.2 81.1 73.4 76.2 79.0 75.9 78.0 82.0 83.0 79.4"
+    },
+    {
+     "id": "eq-VI-18",
+     "type": "equation",
+     "page": 8,
+     "original": "WER ↓"
+    },
+    {
+     "id": "eq-VI-19",
+     "type": "equation",
+     "page": 8,
+     "original": "1.94 1.26 2.91 6.04 2.78 1.98 3.08 2.19 3.78 2.85 4.25"
+    },
+    {
+     "id": "eq-VI-20",
+     "type": "equation",
+     "page": 8,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-21",
+     "type": "equation",
+     "page": 8,
+     "original": "3.86 3.33 3.71 3.16 3.72 3.43 3.64 3.38 3.71 3.53 3.49"
+    },
+    {
+     "id": "eq-VI-22",
+     "type": "equation",
+     "page": 8,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-23",
+     "type": "equation",
+     "page": 8,
+     "original": "68.3 60.2 79.7 75.8 69.7 69.2 72.0 75.2 81.0 79.3 74.1"
+    },
+    {
      "id": "p-VI-3",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-VI-3-1",
+       "original": "Qwen 3 TTS 1.7B (Hu, Zhu, & He et al., 2026) WER ↓",
+       "zh": "（表格行）Qwen 3 TTS 1.7B (Hu, Zhu, & He et al., 2026)；指标 WER ↓。"
+      }
+     ]
+    },
+    {
+     "id": "eq-VI-24",
+     "type": "equation",
+     "page": 8,
+     "original": "3.60 5.00 4.33 7.95 3.04 3.73 5.90 4.17 4.20 3.92 7.74"
+    },
+    {
+     "id": "eq-VI-25",
+     "type": "equation",
+     "page": 8,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-26",
+     "type": "equation",
+     "page": 8,
+     "original": "3.47 3.06 3.23 3.00 3.26 3.01 3.22 3.02 3.37 3.18 3.09"
+    },
+    {
+     "id": "eq-VI-27",
+     "type": "equation",
+     "page": 8,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-28",
+     "type": "equation",
+     "page": 8,
+     "original": "76.9 64.7 82.9 76.0 78.5 82.8 78.0 79.3 85.4 83.9 80.6"
+    },
+    {
+     "id": "p-VI-4",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-VI-4-1",
+       "original": "Fish S2 Pro (Liao, Wang, & Liu et al., 2026) WER ↓",
+       "zh": "（表格行）Fish S2 Pro (Liao, Wang, & Liu et al., 2026)；指标 WER ↓。"
+      }
+     ]
+    },
+    {
+     "id": "eq-VI-29",
+     "type": "equation",
+     "page": 8,
+     "original": "4.23 0.94 5.01 5.21 4.84 4.44 5.10 5.80 4.92 3.99 7.43"
+    },
+    {
+     "id": "eq-VI-30",
+     "type": "equation",
+     "page": 8,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-31",
+     "type": "equation",
+     "page": 8,
+     "original": "3.51 2.82 3.12 2.55 3.07 2.85 3.25 2.71 3.23 3.04 2.83"
+    },
+    {
+     "id": "eq-VI-32",
+     "type": "equation",
+     "page": 8,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-33",
+     "type": "equation",
+     "page": 8,
+     "original": "65.2 66.8 77.3 77.5 79.7 75.4 75.8 80.8 83.3 83.1 80.4"
+    },
+    {
+     "id": "p-VI-5",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-VI-5-1",
+       "original": "VoxCPM 2 (Zhou, Zeng, & Liu et al., 2026) Closed-source models WER ↓",
+       "zh": "（表格行）VoxCPM 2 (Zhou, Zeng, & Liu et al., 2026)；闭源模型（Closed-source models）；指标 WER ↓。"
+      }
+     ]
+    },
+    {
+     "id": "eq-VI-34",
+     "type": "equation",
+     "page": 8,
+     "original": "2.56 0.86 4.53 7.66 3.14 3.21 3.41 3.05 3.65 3.24 6.01"
+    },
+    {
+     "id": "eq-VI-35",
+     "type": "equation",
+     "page": 8,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-36",
+     "type": "equation",
+     "page": 8,
+     "original": "3.62 3.19 3.17 3.01 3.18 2.97 3.29 2.90 3.36 3.11 3.05"
+    },
+    {
+     "id": "eq-VI-37",
+     "type": "equation",
+     "page": 8,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-38",
+     "type": "equation",
+     "page": 8,
+     "original": "79.9 67.1 85.4 80.0 82.8 85.9 83.1 83.4 87.5 86.4 84.2"
+    },
+    {
+     "id": "eq-VI-39",
+     "type": "equation",
+     "page": 8,
+     "original": "Cartesia Sonic 3.5 (Cartesia, 2026) WER ↓"
+    },
+    {
+     "id": "eq-VI-40",
+     "type": "equation",
+     "page": 8,
+     "original": "2.35 0.75 4.20 8.31 3.79 3.24 3.62 2.70 4.26 4.57 5.63"
+    },
+    {
+     "id": "eq-VI-41",
+     "type": "equation",
+     "page": 8,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-42",
+     "type": "equation",
+     "page": 8,
+     "original": "3.59 3.53 3.31 3.37 3.54 3.25 3.29 3.19 3.45 3.36 3.15"
+    },
+    {
+     "id": "eq-VI-43",
+     "type": "equation",
+     "page": 8,
+     "original": "Spk. sim.* ↑"
+    },
+    {
+     "id": "eq-VI-44",
+     "type": "equation",
+     "page": 8,
+     "original": "7.2 6.8 36.9 29.4 17.1 18.0 21.9 21.9 36.3 38.6 25.4"
+    },
+    {
+     "id": "eq-VI-45",
+     "type": "equation",
+     "page": 8,
+     "original": "Eleven Labs V3 (ElevenLabs, 2026) WER ↓"
+    },
+    {
+     "id": "eq-VI-46",
+     "type": "equation",
+     "page": 8,
+     "original": "2.50 0.80 4.09 5.63 3.61 4.41 4.77 3.24 3.79 3.06 6.58"
+    },
+    {
+     "id": "eq-VI-47",
+     "type": "equation",
+     "page": 8,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-48",
+     "type": "equation",
+     "page": 8,
+     "original": "3.87 3.79 3.54 3.37 3.71 3.43 3.52 3.39 3.65 3.51 3.37"
+    },
+    {
+     "id": "eq-VI-49",
+     "type": "equation",
+     "page": 8,
+     "original": "Spk. sim.* ↑"
+    },
+    {
+     "id": "eq-VI-50",
+     "type": "equation",
+     "page": 8,
+     "original": "12.7 9.8 36.6 28.6 17.7 19.5 20.9 20.4 33.6 36.2 23.5"
+    },
+    {
+     "id": "eq-VI-51",
+     "type": "equation",
+     "page": 8,
+     "original": "Gemini 3.1 Flash (Google DeepMind, 2026) WER ↓"
+    },
+    {
+     "id": "eq-VI-52",
+     "type": "equation",
+     "page": 8,
+     "original": "3.14 1.96 4.04 7.86 4.05 4.38 4.95 3.98 5.63 3.13 7.08"
+    },
+    {
+     "id": "eq-VI-53",
+     "type": "equation",
+     "page": 8,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-54",
+     "type": "equation",
+     "page": 8,
+     "original": "3.53 3.15 3.14 2.94 3.27 3.05 3.33 2.95 3.27 3.11 3.01"
+    },
+    {
+     "id": "eq-VI-55",
+     "type": "equation",
+     "page": 8,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-56",
+     "type": "equation",
+     "page": 8,
+     "original": "65.8 54.8 74.8 67.1 68.4 73.0 68.5 70.4 77.7 78.3 69.8"
+    },
+    {
+     "id": "p-VI-6",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-VI-6-1",
+       "original": "Inworld TTS 2 (Inworld AI, 2026) TABLE III: ZTTS1-Eval Clean zero-shot results across WER, MSR-UTMOS and speaker similarity, segmented by open-source and closed-source models.",
+       "zh": "（表格行）Inworld TTS 2 (Inworld AI, 2026)。表 III：ZTTS1-Eval Clean 零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。"
+      },
+      {
+       "id": "s-VI-6-2",
+       "original": "Best result per language and metric is shown in bold; second-best is underlined.",
+       "zh": "每种语言、每项指标的最优结果加粗显示，次优加下划线。"
+      },
+      {
+       "id": "s-VI-6-3",
+       "original": "Ground-truth reference results are shown for context and excluded from the ranking. * denotes models which do not support zero-shot voice cloning. as measured by speaker similarity, achieving the best open-source and the second best overall speaker similarity for English (en).",
+       "zh": "真实参考结果仅供对照、不参与排名。"
+      },
+      {
+       "id": "s-VI-6-4",
+       "original": "The gain in intelligibility here, as measured by WER via use of the ‘Quality Mode’ token, is somewhat uneven.",
+       "zh": "以「Quality Mode」token 测得的可懂度（WER）增益在不同语种间并不均匀。"
+      },
+      {
+       "id": "s-VI-6-5",
+       "original": "We observe degraded WER scores for English but improvements for all other languages.",
+       "zh": "我们"
+      },
+      {
+       "id": "s-VI-6-6",
+       "original": "Quality Mode drastically improves intelligibility for some languages such as Mandarin (zh) from 15.62% to 6.73%, while also improving speaker similarity.",
+       "zh": "Quality Mode 大幅提升了部分语言的可懂度，例如普通话（zh）从 15.62% 降至 6.73%，同时还提升了说话人相似度。"
+      },
+      {
+       "id": "s-VI-6-7",
+       "original": "Quality Mode also improves the acoustic quality of the generated audio as measured by UTMOS.",
+       "zh": "Quality Mode 也提升了以 UTMOS 衡量的生成音频声学质量。"
+      }
+     ]
+    },
+    {
+     "id": "p-VI-7",
      "type": "paragraph",
      "page": 9,
      "sentences": [
       {
-       "id": "s-VI-3-1",
+       "id": "s-VI-7-1",
        "original": "On the ITW subset, shown in Table IV, ZONOS2 performs well in terms of WER and speaker similarity; here the positive effect of Quality Mode is most apparent, where it shows improved WER and UTMOS across all languages versus the base setting.",
        "zh": "在表 IV 所示的 ITW 子集上，ZONOS2 在 WER 与说话人相似度上表现良好；质量模式的正面效果在这里最为明显——相对基础设置，它在所有语言上都改善了 WER 与 UTMOS。"
       },
       {
-       "id": "s-VI-3-2",
+       "id": "s-VI-7-2",
        "original": "The use of Quality Mode has a negative effect on speaker similarity but raises intelligibility and quality metrics.",
        "zh": "使用质量模式对说话人相似度有负面影响，但提升了可懂度与质量指标。"
       }
      ]
     },
     {
-     "id": "p-VI-4",
+     "id": "p-VI-8",
      "type": "paragraph",
      "page": 9,
      "sentences": [
       {
-       "id": "s-VI-4-1",
+       "id": "s-VI-8-1",
        "original": "Figures 5a and 5b show the mean TTSDS2 prosody for the English portions of the Clean and ITW eval sets, respectively.",
        "zh": "图 5a 与图 5b 分别给出干净集与 ITW 集英文部分的平均 TTSDS2 韵律。"
       },
       {
-       "id": "s-VI-4-2",
+       "id": "s-VI-8-2",
        "original": "On the ITW set, ZONOS2 is the best performing model for this metric.",
        "zh": "在 ITW 集上，ZONOS2 是该指标上表现最好的模型。"
       },
       {
-       "id": "s-VI-4-3",
+       "id": "s-VI-8-3",
        "original": "The performance of ZONOS2 on the Clean set is weaker, but remains competitive with the top performing models.",
        "zh": "ZONOS2 在干净集上的表现较弱，但仍与头部模型具有竞争力。"
       },
       {
-       "id": "s-VI-4-4",
+       "id": "s-VI-8-4",
        "original": "These results demonstrate the ability of ZONOS2 to retain prosody information as well as identity from the source clone audio.",
        "zh": "这些结果表明 ZONOS2 能够从源克隆音频中同时保留韵律信息与身份信息。"
       },
       {
-       "id": "s-VI-4-5",
+       "id": "s-VI-8-5",
        "original": "Figure 6 further illustrates this, depicting the DS-WED scores for the English subsets of ZTTS1-Eval.",
        "zh": "图 6 进一步说明了这一点，展示了 ZTTS1-Eval 英文子集的 DS-WED 分数。"
       },
       {
-       "id": "s-VI-4-6",
+       "id": "s-VI-8-6",
        "original": "ZONOS2 demonstrates significantly higher prosodic variation in its generations relative to all other models across both eval sets.",
        "zh": "在两个评测集上，ZONOS2 生成结果的韵律多样性都显著高于所有其他模型。"
       },
       {
-       "id": "s-VI-4-7",
+       "id": "s-VI-8-7",
        "original": "Figure 7 shows the distribution of the prosodic content relative to the source audio measured as Allosaurus (Li, Dalmia, & Li et al., 2020) SR distance; ZONOS2 has a clear advantage here, showing a much closer distribution to that of the source.",
        "zh": "图 7 展示了以 Allosaurus（Li, Dalmia, & Li et al., 2020）SR 距离衡量的、相对源音频的韵律内容分布；ZONOS2 在这里优势明显，其分布与源音频接近得多。"
       },
       {
-       "id": "s-VI-4-8",
+       "id": "s-VI-8-8",
        "original": "See Table VII for ZONOS2 performance on the CosyVoice 3 and Seed-TTS evaluation sets.",
        "zh": "ZONOS2 在 CosyVoice 3 与 Seed-TTS 评测集上的表现见表 VII。"
       }
      ]
     },
     {
-     "id": "p-VI-5",
+     "id": "p-VI-9",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
-       "id": "s-VI-5-1",
-       "original": "Model Metric ar hi id pl pt th tl tr Reference Ground truth 21.05 6.77 7.34 8.08 14.20 17.23 6.94 9.18 8.86 14.10 7.56 12.38 86.41 2.22 2.23 2.40 2.24 2.27 78.7 79.2 82.5 78.9 80.8 Open-source models ZONOS2 8B 21.43 5.84 5.38 4.56 15.50 11.84 5.61 10.18 7.45 10.16 6.73 2.47 2.30 2.43 2.52 2.41 66.3 70.9 68.4 68.5 72.1 ZONOS2 8B Quality Mode 9.04 4.32 5.93 16.05 7.47 2.73 2.62 2.74 2.88 2.64 62.3 67.7 68.3 65.0 67.7 – 12.46 2.85 3.88 9.61 2.74 2.93 3.13 2.70 72.8 73.1 60.5 62.1 Qwen 3 TTS 1.7B (Hu, Zhu, & He et al., 2026) 15.59 2.65 2.97 3.45 11.69 11.02 2.79 19.13 7.64 2.69 2.56 2.75 2.89 2.58 69.9 72.4 75.5 64.9 74.2 Fish S2 Pro (Liao, Wang, & Liu et al., 2026) 7.13 5.37 6.26 2.41 2.30 2.39 2.51 2.32 73.4 75.9 78.6 73.0 76.9 VoxCPM 2 (Zhou, Zeng, & Liu et al., 2026) Closed-source models 7.87 3.75 4.84 2.71 2.64 2.57 76.1 78.2 78.5 Cartesia Sonic 3.5 (Cartesia, 2026) 7.36 4.28 3.84 17.76 7.78 3.47 3.26 3.48 3.51 3.44 16.3 19.7 33.9 13.1 26.4 Eleven Labs V3 (ElevenLabs, 2026) 2.12 1.45 10.51 2.40 1.94 3.56 8.73 3.77 6.92 3.60 3.36 3.66 Spk. sim.* ↑10.2 29.9 18.1 20.9 26.7 Gemini 3.1 Flash (Google DeepMind, 2026) 14.85 3.54 2.67 4.40 10.14 5.32 19.56 2.65 2.66 2.99 60.5 61.8 59.5 Inworld TTS 2 (Inworld AI, 2026) TABLE IV: ZTTS1-Eval In-the-wild zero-shot results across WER, MSR-UTMOS, and speaker similarity segmented by open-source and closed-source models.",
-       "zh": "以下为抽取层混入正文的表 IV 内容，逐词译为中文标签：模型 指标 ar hi id pl pt th tl tr 参考 真实值 21.05 6.77 7.34 8.08 14.20 17.23 6.94 9.18 8.86 14.10 7.56 12.38 86.41 2.22 2.23 2.40 2.24 2.27 78.7 79.2 82.5 78.9 80.8 开源模型 ZONOS2 8B 21.43 5.84 5.38 4.56 15.50 11.84 5.61 10.18 7.45 10.16 6.73 2.47 2.30 2.43 2.52 2.41 66.3 70.9 68.4 68.5 72.1 ZONOS2 8B 质量模式 9.04 4.32 5.93 16.05 7.47 2.73 2.62 2.74 2.88 2.64 62.3 67.7 68.3 65.0 67.7 – 12.46 2.85 3.88 9.61 2.74 2.93 3.13 2.70 72.8 73.1 60.5 62.1 Qwen 3 TTS 1.7B (Hu, Zhu, & He et al., 2026) 15.59 2.65 2.97 3.45 11.69 11.02 2.79 19.13 7.64 2.69 2.56 2.75 2.89 2.58 69.9 72.4 75.5 64.9 74.2 Fish S2 Pro (Liao, Wang, & Liu et al., 2026) 7.13 5.37 6.26 2.41 2.30 2.39 2.51 2.32 73.4 75.9 78.6 73.0 76.9 VoxCPM 2 (Zhou, Zeng, & Liu et al., 2026) 闭源模型 7.87 3.75 4.84 2.71 2.64 2.57 76.1 78.2 78.5 Cartesia Sonic 3.5 (Cartesia, 2026) 7.36 4.28 3.84 17.76 7.78 3.47 3.26 3.48 3.51 3.44 16.3 19.7 33.9 13.1 26.4 Eleven Labs V3 (ElevenLabs, 2026) 2.12 1.45 10.51 2.40 1.94 3.56 8.73 3.77 6.92 3.60 3.36 3.66 说话人相似度* ↑10.2 29.9 18.1 20.9 26.7 Gemini 3.1 Flash (Google DeepMind, 2026) 14.85 3.54 2.67 4.40 10.14 5.32 19.56 2.65 2.66 2.99 60.5 61.8 59.5 Inworld TTS 2 (Inworld AI, 2026) 表 IV： ZTTS1-Eval 野外零样本结果，按 WER、MSR-UTMOS 与说话人相似度报告，并区分开源与闭源模型。"
+       "id": "s-VI-9-1",
+       "original": "Model Metric en zh ar de es fr hi id it ja ko pl pt ru th tl tr Reference Ground truth WER ↓",
+       "zh": "表头：Model × Metric × en/zh/ar/de/es/fr/hi/id/it/ja/ko/pl/pt/ru/th/tl/tr 各语种——参考行 Ground truth，指标 WER↓。"
+      }
+     ]
+    },
+    {
+     "id": "eq-VI-57",
+     "type": "equation",
+     "page": 10,
+     "original": "21.05 6.77 7.34 8.08 14.20 17.23 6.94 9.18 8.86 14.10 7.56 12.38 86.41"
+    },
+    {
+     "id": "eq-VI-58",
+     "type": "equation",
+     "page": 10,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-59",
+     "type": "equation",
+     "page": 10,
+     "original": "2.22 2.52 2.22 2.27 2.22 2.23 2.40 2.24 2.27"
+    },
+    {
+     "id": "eq-VI-60",
+     "type": "equation",
+     "page": 10,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-61",
+     "type": "equation",
+     "page": 10,
+     "original": "75.9 82.1 81.0 78.5 78.0 77.6 78.7 80.0 78.7 82.3 79.7 82.5 79.5 79.2 82.5 78.9 80.8"
+    },
+    {
+     "id": "eq-VI-62",
+     "type": "equation",
+     "page": 10,
+     "original": "Open-source models ZONOS2 8B WER ↓"
+    },
+    {
+     "id": "eq-VI-63",
+     "type": "equation",
+     "page": 10,
+     "original": "4.70 3.19 21.43 5.84 5.38 4.56 15.50 11.84 5.61 10.18 7.45 10.16 6.73 7.80 12.87 23.49 10.46"
+    },
+    {
+     "id": "eq-VI-64",
+     "type": "equation",
+     "page": 10,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-65",
+     "type": "equation",
+     "page": 10,
+     "original": "2.44 2.43 2.22 2.52 2.42 2.37 2.47 2.25 2.32 2.34 2.55 2.48 2.33 2.30 2.43 2.52 2.41"
+    },
+    {
+     "id": "eq-VI-66",
+     "type": "equation",
+     "page": 10,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-67",
+     "type": "equation",
+     "page": 10,
+     "original": "67.0 74.3 67.4 69.4 69.4 67.7 66.3 71.9 69.2 70.9 72.1 72.9 70.4 70.9 68.4 68.5 72.1"
+    },
+    {
+     "id": "eq-VI-68",
+     "type": "equation",
+     "page": 10,
+     "original": "ZONOS2 8B Quality Mode WER ↓"
+    },
+    {
+     "id": "eq-VI-69",
+     "type": "equation",
+     "page": 10,
+     "original": "2.21 2.77 13.94 3.37 2.10 2.79 9.04 6.48 2.51 8.70 4.59 5.85 2.94 4.32 5.93 16.05 7.47"
+    },
+    {
+     "id": "eq-VI-70",
+     "type": "equation",
+     "page": 10,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-71",
+     "type": "equation",
+     "page": 10,
+     "original": "2.99 2.68 2.51 2.92 2.72 2.74 2.73 2.66 2.63 2.69 2.78 2.76 2.75 2.62 2.74 2.88 2.64"
+    },
+    {
+     "id": "eq-VI-72",
+     "type": "equation",
+     "page": 10,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-73",
+     "type": "equation",
+     "page": 10,
+     "original": "56.9 70.6 63.8 63.1 63.3 61.2 62.3 67.6 63.8 70.0 67.3 69.0 63.8 67.7 68.3 65.0 67.7"
+    },
+    {
+     "id": "eq-VI-74",
+     "type": "equation",
+     "page": 10,
+     "original": "WER ↓"
+    },
+    {
+     "id": "eq-VI-75",
+     "type": "equation",
+     "page": 10,
+     "original": "1.05 0.99 – 2.11 1.77 2.62 – 12.46 2.85 2.32 2.80 82.04 2.20 3.88 9.61 18.04 83.20"
+    },
+    {
+     "id": "eq-VI-76",
+     "type": "equation",
+     "page": 10,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-77",
+     "type": "equation",
+     "page": 10,
+     "original": "3.20 2.90 – 3.12 2.87 2.84 – 2.94 2.76 2.86 2.97 2.92 2.85 2.74 2.93 3.13 2.70"
+    },
+    {
+     "id": "eq-VI-78",
+     "type": "equation",
+     "page": 10,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-79",
+     "type": "equation",
+     "page": 10,
+     "original": "61.5 75.3 – 68.3 65.8 67.1 – 67.4 71.9 75.2 73.7 62.7 69.4 72.8 73.1 60.5 62.1"
+    },
+    {
+     "id": "p-VI-10",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-VI-10-1",
+       "original": "Qwen 3 TTS 1.7B (Hu, Zhu, & He et al., 2026) WER ↓",
+       "zh": "（表格行）Qwen 3 TTS 1.7B (Hu, Zhu, & He et al., 2026)；指标 WER ↓。"
+      }
+     ]
+    },
+    {
+     "id": "eq-VI-80",
+     "type": "equation",
+     "page": 10,
+     "original": "2.09 1.26 15.59 2.65 2.97 3.45 11.69 11.02 2.79 2.17 3.48 8.25 2.86 5.28 74.12 19.13 7.64"
+    },
+    {
+     "id": "eq-VI-81",
+     "type": "equation",
+     "page": 10,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-82",
+     "type": "equation",
+     "page": 10,
+     "original": "2.92 2.73 2.58 2.90 2.69 2.67 2.69 2.72 2.54 2.73 2.76 2.67 2.57 2.56 2.75 2.89 2.58"
+    },
+    {
+     "id": "eq-VI-83",
+     "type": "equation",
+     "page": 10,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-84",
+     "type": "equation",
+     "page": 10,
+     "original": "65.0 75.5 72.0 69.4 68.2 68.3 69.9 71.4 70.4 75.0 72.8 73.5 71.8 72.4 75.5 64.9 74.2"
+    },
+    {
+     "id": "p-VI-11",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-VI-11-1",
+       "original": "Fish S2 Pro (Liao, Wang, & Liu et al., 2026) WER ↓",
+       "zh": "（表格行）Fish S2 Pro (Liao, Wang, & Liu et al., 2026)；指标 WER ↓。"
+      }
+     ]
+    },
+    {
+     "id": "eq-VI-85",
+     "type": "equation",
+     "page": 10,
+     "original": "1.69 1.44 12.18 2.84 3.19 4.54 7.13 6.43 3.50 4.56 4.89 7.28 4.09 5.37 4.74 15.70 6.26"
+    },
+    {
+     "id": "eq-VI-86",
+     "type": "equation",
+     "page": 10,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-87",
+     "type": "equation",
+     "page": 10,
+     "original": "2.51 2.40 2.25 2.60 2.39 2.36 2.41 2.30 2.26 2.30 2.51 2.35 2.32 2.30 2.39 2.51 2.32"
+    },
+    {
+     "id": "eq-VI-88",
+     "type": "equation",
+     "page": 10,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-89",
+     "type": "equation",
+     "page": 10,
+     "original": "68.1 78.7 74.7 72.8 70.4 72.2 73.4 76.9 74.5 77.1 74.8 78.0 73.5 75.9 78.6 73.0 76.9"
+    },
+    {
+     "id": "p-VI-12",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-VI-12-1",
+       "original": "VoxCPM 2 (Zhou, Zeng, & Liu et al., 2026) Closed-source models WER ↓",
+       "zh": "（表格行）VoxCPM 2 (Zhou, Zeng, & Liu et al., 2026)；闭源模型；指标 WER ↓。"
+      }
+     ]
+    },
+    {
+     "id": "eq-VI-90",
+     "type": "equation",
+     "page": 10,
+     "original": "1.40 1.17 – 3.00 2.37 2.52 7.87 – 2.40 3.63 3.38 5.30 2.10 3.75 – – 4.84"
+    },
+    {
+     "id": "eq-VI-91",
+     "type": "equation",
+     "page": 10,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-92",
+     "type": "equation",
+     "page": 10,
+     "original": "3.05 2.76 – 2.98 2.71 2.69 2.71 – 2.60 2.69 2.86 2.73 2.68 2.64 – – 2.57"
+    },
+    {
+     "id": "eq-VI-93",
+     "type": "equation",
+     "page": 10,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-94",
+     "type": "equation",
+     "page": 10,
+     "original": "70.2 79.1 – 76.7 75.4 75.5 76.1 – 77.2 78.4 77.8 79.5 77.6 78.2 – – 78.5"
+    },
+    {
+     "id": "eq-VI-95",
+     "type": "equation",
+     "page": 10,
+     "original": "Cartesia Sonic 3.5 (Cartesia, 2026) WER ↓"
+    },
+    {
+     "id": "eq-VI-96",
+     "type": "equation",
+     "page": 10,
+     "original": "1.35 1.22 12.19 2.50 1.58 2.17 7.36 5.98 2.36 2.84 3.93 4.66 2.06 4.28 3.84 17.76 7.78"
+    },
+    {
+     "id": "eq-VI-97",
+     "type": "equation",
+     "page": 10,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-98",
+     "type": "equation",
+     "page": 10,
+     "original": "3.61 3.36 3.41 3.57 3.34 3.28 3.47 3.34 3.21 3.49 3.40 3.37 3.39 3.26 3.48 3.51 3.44"
+    },
+    {
+     "id": "eq-VI-99",
+     "type": "equation",
+     "page": 10,
+     "original": "Spk. sim.* ↑"
+    },
+    {
+     "id": "eq-VI-100",
+     "type": "equation",
+     "page": 10,
+     "original": "6.3 29.7 24.4 15.3 16.4 13.6 16.3 26.2 19.6 28.6 28.7 23.6 22.1 19.7 33.9 13.1 26.4"
+    },
+    {
+     "id": "eq-VI-101",
+     "type": "equation",
+     "page": 10,
+     "original": "Eleven Labs V3 (ElevenLabs, 2026) WER ↓"
+    },
+    {
+     "id": "eq-VI-102",
+     "type": "equation",
+     "page": 10,
+     "original": "2.12 1.45 10.51 2.40 1.94 3.56 8.73 – 2.08 2.72 2.27 5.33 3.21 3.77 – – 6.92"
+    },
+    {
+     "id": "eq-VI-103",
+     "type": "equation",
+     "page": 10,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-104",
+     "type": "equation",
+     "page": 10,
+     "original": "3.78 3.55 3.40 3.67 3.41 3.45 3.60 – 3.45 3.56 3.45 3.47 3.43 3.36 – – 3.66"
+    },
+    {
+     "id": "eq-VI-105",
+     "type": "equation",
+     "page": 10,
+     "original": "Spk. sim.* ↑10.2 29.9"
+    },
+    {
+     "id": "eq-VI-106",
+     "type": "equation",
+     "page": 10,
+     "original": "26.3 17.5 20.5 15.0 18.1 – 19.1 28.3 29.2 26.2 24.1 20.9 – – 26.7"
+    },
+    {
+     "id": "eq-VI-107",
+     "type": "equation",
+     "page": 10,
+     "original": "Gemini 3.1 Flash (Google DeepMind, 2026) WER ↓"
+    },
+    {
+     "id": "eq-VI-108",
+     "type": "equation",
+     "page": 10,
+     "original": "1.89 1.42 14.85 3.54 2.67 4.40 10.14 – 3.46 6.93 4.16 7.65 3.87 5.32 – 19.56 –"
+    },
+    {
+     "id": "eq-VI-109",
+     "type": "equation",
+     "page": 10,
+     "original": "UTMOS ↑"
+    },
+    {
+     "id": "eq-VI-110",
+     "type": "equation",
+     "page": 10,
+     "original": "3.02 2.71 2.70 3.03 2.83 2.76 2.65 – 2.71 2.81 2.86 2.80 2.70 2.66 – 2.99 –"
+    },
+    {
+     "id": "eq-VI-111",
+     "type": "equation",
+     "page": 10,
+     "original": "Spk. sim. ↑"
+    },
+    {
+     "id": "eq-VI-112",
+     "type": "equation",
+     "page": 10,
+     "original": "53.0 66.4 60.5 58.7 56.2 54.9 60.5 – 56.0 63.3 62.6 60.6 61.4 61.8 – 59.5 –"
+    },
+    {
+     "id": "p-VI-13",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-VI-13-1",
+       "original": "Inworld TTS 2 (Inworld AI, 2026) TABLE IV: ZTTS1-Eval In-the-wild zero-shot results across WER, MSR-UTMOS, and speaker similarity segmented by open-source and closed-source models.",
+       "zh": "（表格行）60.5/–/56.0/63.3/62.6/60.6/61.4/61.8/–/59.5/–；Inworld TTS 2（Inworld AI, 2026）。表 IV：ZTTS1-Eval 实景（in-the-wild）零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。"
       },
       {
-       "id": "s-VI-5-2",
+       "id": "s-VI-13-2",
        "original": "Best result per language and metric is shown in bold; second-best is underlined.",
        "zh": "每种语言、每项指标的最优结果加粗显示，次优加下划线。"
       },
       {
-       "id": "s-VI-5-3",
+       "id": "s-VI-13-3",
        "original": "Ground-truth reference results are shown for context and excluded from the ranking.",
        "zh": "真实参考结果仅供对照、不参与排名。"
       },
       {
-       "id": "s-VI-5-4",
+       "id": "s-VI-13-4",
        "original": "Note that some languages are unsupported by the baseline models. * denotes models which do not support zero-shot voice cloning.",
        "zh": "注意部分语言不被某些基线模型支持；* 表示不支持零样本声音克隆的模型。"
       }
@@ -2317,11 +3254,13 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-1-1",
-       "original": "Joshua Ainslie, James Lee-Thorp."
+       "original": "Joshua Ainslie, James Lee-Thorp.",
+       "zh": "，"
       },
       {
        "id": "s-references-1-2",
-       "original": "Gqa: Training generalized multi-query transformer models from multi-head checkpoints, 2023."
+       "original": "Gqa: Training generalized multi-query transformer models from multi-head checkpoints, 2023.",
+       "zh": "，"
       }
      ]
     },
@@ -2332,13 +3271,15 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-2-1",
-       "original": "URL https://arxiv.org/abs/2305. 13245."
-      },
-      {
-       "id": "s-references-2-2",
-       "original": "Philip Anastassiou, Jiawei Chen et al. Seed-tts: A family of high-quality versatile speech generation models, 2024."
+       "original": "URL https://arxiv.org/abs/2305."
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 11,
+     "original": "13245."
     },
     {
      "id": "p-references-3",
@@ -2347,19 +3288,8 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-3-1",
-       "original": "URL https://arxiv.org/abs/2406.02430."
-      },
-      {
-       "id": "s-references-3-2",
-       "original": "Rosana Ardila, Megan Branson et al. Common voice: A massively-multilingual speech corpus, 2020."
-      },
-      {
-       "id": "s-references-3-3",
-       "original": "URL https: Cartesia."
-      },
-      {
-       "id": "s-references-3-4",
-       "original": "Sonic 3.5: Real-time text-to-speech api with ai laughter and emotion."
+       "original": "Philip Anastassiou, Jiawei Chen et al. Seed-tts: A family of high-quality versatile speech generation models, 2024.",
+       "zh": "，"
       }
      ]
     },
@@ -2370,15 +3300,24 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "https://www.cartesia.ai/sonic, 2026."
+       "original": "URL https://arxiv.org/abs/2406.02430."
       },
       {
        "id": "s-references-4-2",
-       "original": "Accessed: 2026-06-03."
+       "original": "Rosana Ardila, Megan Branson et al. Common voice: A massively-multilingual speech corpus, 2020.",
+       "zh": "，"
       },
       {
        "id": "s-references-4-3",
-       "original": "Sanyuan Chen, Chengyi Wang et al."
+       "original": "URL https: //arxiv.org/abs/1912.06670."
+      },
+      {
+       "id": "s-references-4-4",
+       "original": "Cartesia."
+      },
+      {
+       "id": "s-references-4-5",
+       "original": "Sonic 3.5: Real-time text-to-speech api with ai laughter and emotion."
       }
      ]
     },
@@ -2389,23 +3328,17 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "Wavlm: Largescale self-supervised pre-training for full stack speech processing."
+       "original": "https://www.cartesia.ai/sonic, 2026.",
+       "zh": "，"
       },
       {
        "id": "s-references-5-2",
-       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6):1505–1518, October 2022."
+       "original": "Accessed: 2026-06-03."
       },
       {
        "id": "s-references-5-3",
-       "original": "ISSN 1941- 0484. doi:10.1109/jstsp.2022.3188113."
-      },
-      {
-       "id": "s-references-5-4",
-       "original": "URL http://dx. doi.org/10.1109/JSTSP.2022.3188113."
-      },
-      {
-       "id": "s-references-5-5",
-       "original": "Jade Copet, Felix Kreuk."
+       "original": "Sanyuan Chen, Chengyi Wang et al.",
+       "zh": "，"
       }
      ]
     },
@@ -2416,27 +3349,25 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "Simple and controllable music generation, 2024."
+       "original": "Wavlm: Largescale self-supervised pre-training for full stack speech processing."
       },
       {
        "id": "s-references-6-2",
-       "original": "URL https://arxiv.org/abs/2306. 05284."
+       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6):1505–1518, October 2022.",
+       "zh": "，"
       },
       {
        "id": "s-references-6-3",
-       "original": "Tri Dao, Daniel Y."
+       "original": "ISSN 1941- 0484. doi:10.1109/jstsp.2022.3188113."
       },
       {
        "id": "s-references-6-4",
-       "original": "Fu."
+       "original": "URL http://dx. doi.org/10.1109/JSTSP.2022.3188113."
       },
       {
        "id": "s-references-6-5",
-       "original": "Flashattention: Fast and memoryeﬀicient exact attention with io-awareness, 2022."
-      },
-      {
-       "id": "s-references-6-6",
-       "original": "URL https://arxiv.org/abs/2205.14135."
+       "original": "Jade Copet, Felix Kreuk.",
+       "zh": "，"
       }
      ]
     },
@@ -2447,9 +3378,20 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "Brecht Desplanques, Jenthe Thienpondt."
+       "original": "Simple and controllable music generation, 2024.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-7-2",
+       "original": "URL https://arxiv.org/abs/2306."
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 11,
+     "original": "05284."
     },
     {
      "id": "p-references-8",
@@ -2458,55 +3400,21 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "ECAPA- TDNN: Emphasized channel attention, propagation and aggregation in TDNN based speaker verification."
+       "original": "Tri Dao, Daniel Y.",
+       "zh": "，"
       },
       {
        "id": "s-references-8-2",
-       "original": "In Interspeech 2020, pp. 3830–3834."
+       "original": "Fu."
       },
       {
        "id": "s-references-8-3",
-       "original": "ISCA, 2020. doi:10.21437/Interspeech.2020-2650."
+       "original": "Flashattention: Fast and memoryeﬀicient exact attention with io-awareness, 2022.",
+       "zh": "，"
       },
       {
        "id": "s-references-8-4",
-       "original": "Zhihao Du, Changfeng Gao et al. Cosyvoice 3: Towards in-the-wild speech generation via scaling-up and posttraining. arXiv preprint arXiv:2505.17589, 2025."
-      },
-      {
-       "id": "s-references-8-5",
-       "original": "ElevenLabs."
-      },
-      {
-       "id": "s-references-8-6",
-       "original": "Eleven v3: Most expressive ai voice model. https://elevenlabs.io/v3, 2026."
-      },
-      {
-       "id": "s-references-8-7",
-       "original": "Accessed: 2026-06-03."
-      },
-      {
-       "id": "s-references-8-8",
-       "original": "Zhifu Gao, Shiliang Zhang."
-      },
-      {
-       "id": "s-references-8-9",
-       "original": "Paraformer: Fast and accurate parallel transformer for non-autoregressive end-to-end speech recognition, 2023."
-      },
-      {
-       "id": "s-references-8-10",
-       "original": "URL https://arxiv.org/abs/ 2206.08317."
-      },
-      {
-       "id": "s-references-8-11",
-       "original": "Google."
-      },
-      {
-       "id": "s-references-8-12",
-       "original": "Gemma 2: Improving open language models at a practical size, 2024."
-      },
-      {
-       "id": "s-references-8-13",
-       "original": "URL https://arxiv.org/abs/2408."
+       "original": "URL https://arxiv.org/abs/2205.14135."
       }
      ]
     },
@@ -2517,11 +3425,8 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "00118."
-      },
-      {
-       "id": "s-references-9-2",
-       "original": "Google DeepMind."
+       "original": "Brecht Desplanques, Jenthe Thienpondt.",
+       "zh": "，"
       }
      ]
     },
@@ -2532,9 +3437,58 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "Gemini 3.1 Flash Audio: Model card."
+       "original": "ECAPA- TDNN: Emphasized channel attention, propagation and aggregation in TDNN based speaker verification.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-10-2",
+       "original": "In Interspeech 2020, pp. 3830–3834.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-10-3",
+       "original": "ISCA, 2020. doi:10.21437/Interspeech.2020-2650.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-10-4",
+       "original": "Zhihao Du, Changfeng Gao et al. Cosyvoice 3: Towards in-the-wild speech generation via scaling-up and posttraining. arXiv preprint arXiv:2505.17589, 2025.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-10-5",
+       "original": "ElevenLabs."
+      },
+      {
+       "id": "s-references-10-6",
+       "original": "Eleven v3: Most expressive ai voice model. https://elevenlabs.io/v3, 2026.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-10-7",
+       "original": "Accessed: 2026-06-03."
+      },
+      {
+       "id": "s-references-10-8",
+       "original": "Zhifu Gao, Shiliang Zhang.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-10-9",
+       "original": "Paraformer: Fast and accurate parallel transformer for non-autoregressive end-to-end speech recognition, 2023.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-10-10",
+       "original": "URL https://arxiv.org/abs/"
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 11,
+     "original": "2206.08317."
     },
     {
      "id": "p-references-11",
@@ -2543,41 +3497,24 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "https://deepmind.google/models/model-cards/ gemini-3-1-flash-audio/, 2026."
+       "original": "Google."
       },
       {
        "id": "s-references-11-2",
-       "original": "Published: March 2026; updated: April 2026."
+       "original": "Gemma 2: Improving open language models at a practical size, 2024.",
+       "zh": "，"
       },
       {
        "id": "s-references-11-3",
-       "original": "Accessed: 2026-06-03."
-      },
-      {
-       "id": "s-references-11-4",
-       "original": "Tingwei Guo, Cheng Wen et al. Didispeech: A large scale mandarin speech corpus, 2021."
-      },
-      {
-       "id": "s-references-11-5",
-       "original": "URL https://arxiv.org/ abs/2010.09275."
-      },
-      {
-       "id": "s-references-11-6",
-       "original": "Dan Hendrycks, Kevin Gimpel."
-      },
-      {
-       "id": "s-references-11-7",
-       "original": "Gaussian error linear units (gelus), 2023."
-      },
-      {
-       "id": "s-references-11-8",
-       "original": "URL https://arxiv.org/abs/1606.08415."
-      },
-      {
-       "id": "s-references-11-9",
-       "original": "Alex Henry, Prudhvi Raj Dachapally."
+       "original": "URL https://arxiv.org/abs/2408."
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 11,
+     "original": "00118."
     },
     {
      "id": "p-references-12",
@@ -2586,7 +3523,7 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "Query-key normalization for transformers."
+       "original": "Google DeepMind."
       }
      ]
     },
@@ -2597,11 +3534,7 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "In Trevor Cohn, Yulan He (eds.), Findings of the Association for Computational Linguistics: EMNLP 2020, pp. 4246–4253, Online, November 2020."
-      },
-      {
-       "id": "s-references-13-2",
-       "original": "Association for Computational Linguistics."
+       "original": "Gemini 3.1 Flash Audio: Model card."
       }
      ]
     },
@@ -2612,31 +3545,44 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "doi:10.18653/v1/2020.findings-emnlp.379. https://aclanthology.org/2020.findings-emnlp.379/."
+       "original": "https://deepmind.google/models/model-cards/ gemini-3-1-flash-audio/, 2026.",
+       "zh": "，"
       },
       {
        "id": "s-references-14-2",
-       "original": "Hangrui Hu, Xinfa Zhu et al. Qwen3-tts technical report, 2026."
+       "original": "Published: March 2026; updated: April 2026."
       },
       {
        "id": "s-references-14-3",
-       "original": "URL https://arxiv.org/abs/2601.15621."
-      },
-      {
-       "id": "s-references-14-4",
-       "original": "Inworld AI."
-      },
-      {
-       "id": "s-references-14-5",
-       "original": "Realtime TTS-2: A new frontier voice model that feels as human as it sounds. https://inworld.ai/ blog/realtime-tts-2, May 2026."
-      },
-      {
-       "id": "s-references-14-6",
        "original": "Accessed: 2026-06-03."
       },
       {
+       "id": "s-references-14-4",
+       "original": "Tingwei Guo, Cheng Wen et al. Didispeech: A large scale mandarin speech corpus, 2021.",
+       "zh": "我们"
+      },
+      {
+       "id": "s-references-14-5",
+       "original": "URL https://arxiv.org/ abs/2010.09275."
+      },
+      {
+       "id": "s-references-14-6",
+       "original": "Dan Hendrycks, Kevin Gimpel.",
+       "zh": "，"
+      },
+      {
        "id": "s-references-14-7",
-       "original": "Keller Jordan, Yuchen Jin."
+       "original": "Gaussian error linear units (gelus), 2023.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-14-8",
+       "original": "URL https://arxiv.org/abs/1606.08415."
+      },
+      {
+       "id": "s-references-14-9",
+       "original": "Alex Henry, Prudhvi Raj Dachapally.",
+       "zh": "，"
       }
      ]
     },
@@ -2647,11 +3593,7 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "Muon: An optimizer for hidden layers in neural networks, 2024. https://kellerjordan. github. io/posts/muon, 6, 2024."
-      },
-      {
-       "id": "s-references-15-2",
-       "original": "Nithin Rao Koluguri, Monica Sekoyan et al."
+       "original": "Query-key normalization for transformers."
       }
      ]
     },
@@ -2662,23 +3604,12 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "Granary: Speech recognition and translation dataset in 25 european languages, 2025."
+       "original": "In Trevor Cohn, Yulan He (eds.), Findings of the Association for Computational Linguistics: EMNLP 2020, pp. 4246–4253, Online, November 2020.",
+       "zh": "，"
       },
       {
        "id": "s-references-16-2",
-       "original": "URL https://arxiv.org/abs/2505. 13404."
-      },
-      {
-       "id": "s-references-16-3",
-       "original": "Rithesh Kumar, Prem Seetharaman."
-      },
-      {
-       "id": "s-references-16-4",
-       "original": "High-fidelity audio compression with improved rvqgan, 2023."
-      },
-      {
-       "id": "s-references-16-5",
-       "original": "URL https: Xinjian Li, Siddharth Dalmia et al."
+       "original": "Association for Computational Linguistics."
       }
      ]
     },
@@ -2689,7 +3620,7 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "Universal phone recognition with a multilingual allophone system."
+       "original": "doi:10.18653/v1/2020.findings-emnlp.379."
       }
      ]
     },
@@ -2700,137 +3631,158 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "In ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 8249–8253."
+       "original": "URL https://aclanthology.org/2020.findings-emnlp.379/."
       },
       {
        "id": "s-references-18-2",
-       "original": "IEEE, 2020."
+       "original": "Hangrui Hu, Xinfa Zhu et al. Qwen3-tts technical report, 2026.",
+       "zh": "，"
       },
       {
        "id": "s-references-18-3",
-       "original": "Shijia Liao, Yuxuan Wang et al. Fish audio s2 technical Yuke Lin, Ming Cheng."
+       "original": "URL https://arxiv.org/abs/2601.15621."
       },
       {
        "id": "s-references-18-4",
-       "original": "Voxblink2: A 100k+ speaker recognition corpus and the open-set speaker-identification benchmark, 2024."
+       "original": "Inworld AI."
+      },
+      {
+       "id": "s-references-18-5",
+       "original": "Realtime TTS-2: A new frontier voice model that feels as human as it sounds. https://inworld.ai/ blog/realtime-tts-2, May 2026.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-18-6",
+       "original": "Accessed: 2026-06-03."
+      },
+      {
+       "id": "s-references-18-7",
+       "original": "Keller Jordan, Yuchen Jin.",
+       "zh": "，"
       }
      ]
     },
     {
      "id": "p-references-19",
      "type": "paragraph",
-     "page": 12,
+     "page": 11,
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "URL https://arxiv.org/abs/2407. 11510."
-      },
-      {
-       "id": "s-references-19-2",
-       "original": "Jingyuan Liu, Jianlin Su et al. Muon is scalable for llm training. arXiv preprint arXiv:2502.16982, 2025."
-      },
-      {
-       "id": "s-references-19-3",
-       "original": "Ilya Loshchilov, Frank Hutter."
+       "original": "Muon: An optimizer for hidden layers in neural networks, 2024.",
+       "zh": "，"
       }
      ]
     },
     {
      "id": "p-references-20",
      "type": "paragraph",
-     "page": 12,
+     "page": 11,
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "Decoupled weight decay regularization."
+       "original": "URL https://kellerjordan. github. io/posts/muon, 6, 2024.",
+       "zh": "，"
       },
       {
        "id": "s-references-20-2",
-       "original": "In International Conference on Learning Representations, 2019."
+       "original": "Nithin Rao Koluguri, Monica Sekoyan et al.",
+       "zh": "，"
       }
      ]
     },
     {
      "id": "p-references-21",
      "type": "paragraph",
-     "page": 12,
+     "page": 11,
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "URL https://openreview.net/ forum?id=Bkg6RiCqY7."
+       "original": "Granary: Speech recognition and translation dataset in 25 european languages, 2025.",
+       "zh": "，"
       },
       {
        "id": "s-references-21-2",
-       "original": "Min Ma, Yuma Koizumi."
-      },
-      {
-       "id": "s-references-21-3",
-       "original": "Fleurs-r: A restored multilingual speech corpus for generation tasks, 2024."
-      },
-      {
-       "id": "s-references-21-4",
-       "original": "URL https: MiniMax, others."
+       "original": "URL https://arxiv.org/abs/2505."
       }
      ]
     },
     {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 11,
+     "original": "13404."
+    },
+    {
      "id": "p-references-22",
      "type": "paragraph",
-     "page": 12,
+     "page": 11,
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "MiniMax-Speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder. arXiv preprint arXiv:2505.07916, 2025."
+       "original": "Rithesh Kumar, Prem Seetharaman.",
+       "zh": "，"
       },
       {
        "id": "s-references-22-2",
-       "original": "Christoph Minixhofer, Ondřej Klejch."
+       "original": "High-fidelity audio compression with improved rvqgan, 2023.",
+       "zh": "，"
       },
       {
        "id": "s-references-22-3",
-       "original": "Ttsds2: Resources and benchmark for evaluating human-quality text to speech systems, 2025."
+       "original": "URL https: //arxiv.org/abs/2306.06546."
       },
       {
        "id": "s-references-22-4",
-       "original": "URL https://arxiv.org/abs/2506."
+       "original": "Xinjian Li, Siddharth Dalmia et al.",
+       "zh": "，"
       }
      ]
     },
     {
      "id": "p-references-23",
      "type": "paragraph",
-     "page": 12,
+     "page": 11,
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "19441."
-      },
-      {
-       "id": "s-references-23-2",
-       "original": "Go Nishikawa, Wataru Nakata."
-      },
-      {
-       "id": "s-references-23-3",
-       "original": "Multi-sampling-frequency naturalness mos prediction using self-supervised learning model with sampling-frequency-independent layer, 2025."
-      },
-      {
-       "id": "s-references-23-4",
-       "original": "URL https://arxiv.org/abs/2507.14647."
-      },
-      {
-       "id": "s-references-23-5",
-       "original": "Matteo Pagliardini, Amirkeivan Mohtashami."
+       "original": "Universal phone recognition with a multilingual allophone system."
       }
      ]
     },
     {
      "id": "p-references-24",
      "type": "paragraph",
-     "page": 12,
+     "page": 11,
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "Denseformer: Enhancing information flow in transformers via depth weighted averaging, 2024."
+       "original": "In ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 8249–8253.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-24-2",
+       "original": "IEEE, 2020.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-24-3",
+       "original": "Shijia Liao, Yuxuan Wang et al. Fish audio s2 technical report, 2026.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-24-4",
+       "original": "URL https://arxiv.org/abs/2603.08823."
+      },
+      {
+       "id": "s-references-24-5",
+       "original": "Yuke Lin, Ming Cheng.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-24-6",
+       "original": "Voxblink2: A 100k+ speaker recognition corpus and the open-set speaker-identification benchmark, 2024.",
+       "zh": "，"
       }
      ]
     },
@@ -2841,25 +3793,15 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "URL https://arxiv. org/abs/2402.02622."
-      },
-      {
-       "id": "s-references-25-2",
-       "original": "Zihan Qiu, Zekun Wang et al. Gated attention for large language models: Non-linearity, sparsity, and attentionsink-free, 2025."
-      },
-      {
-       "id": "s-references-25-3",
-       "original": "URL https://arxiv.org/abs/2505.06708."
-      },
-      {
-       "id": "s-references-25-4",
-       "original": "Alec Radford, Jong Wook Kim."
-      },
-      {
-       "id": "s-references-25-5",
-       "original": "Robust speech recognition via large-scale weak supervision, 2022."
+       "original": "URL https://arxiv.org/abs/2407."
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 12,
+     "original": "11510."
     },
     {
      "id": "p-references-26",
@@ -2868,15 +3810,13 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "URL https:// arxiv.org/abs/2212.04356."
+       "original": "Jingyuan Liu, Jianlin Su et al. Muon is scalable for llm training. arXiv preprint arXiv:2502.16982, 2025.",
+       "zh": "，"
       },
       {
        "id": "s-references-26-2",
-       "original": "Noam Shazeer."
-      },
-      {
-       "id": "s-references-26-3",
-       "original": "Glu variants improve transformer, 2020."
+       "original": "Ilya Loshchilov, Frank Hutter.",
+       "zh": "，"
       }
      ]
     },
@@ -2887,11 +3827,12 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "URL https://arxiv.org/abs/2002.05202."
+       "original": "Decoupled weight decay regularization."
       },
       {
        "id": "s-references-27-2",
-       "original": "Xian Shi, Xiong Wang et al. Qwen3-asr technical report."
+       "original": "In International Conference on Learning Representations, 2019.",
+       "zh": "，"
       }
      ]
     },
@@ -2902,11 +3843,26 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "arXiv preprint arXiv:2601.21337, 2026."
+       "original": "URL https://openreview.net/ forum?id=Bkg6RiCqY7."
       },
       {
        "id": "s-references-28-2",
-       "original": "Jianlin Su, Murtadha Ahmed."
+       "original": "Min Ma, Yuma Koizumi.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-28-3",
+       "original": "Fleurs-r: A restored multilingual speech corpus for generation tasks, 2024.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-28-4",
+       "original": "URL https: //arxiv.org/abs/2408.06227."
+      },
+      {
+       "id": "s-references-28-5",
+       "original": "MiniMax, others.",
+       "zh": "，"
       }
      ]
     },
@@ -2917,13 +3873,30 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "Roformer: Enhanced transformer with rotary position embedding."
+       "original": "MiniMax-Speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder. arXiv preprint arXiv:2505.07916, 2025.",
+       "zh": "，"
       },
       {
        "id": "s-references-29-2",
-       "original": "Neurocomputing, 568:127063, 2024."
+       "original": "Christoph Minixhofer, Ondřej Klejch.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-29-3",
+       "original": "Ttsds2: Resources and benchmark for evaluating human-quality text to speech systems, 2025.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-29-4",
+       "original": "URL https://arxiv.org/abs/2506."
       }
      ]
+    },
+    {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 12,
+     "original": "19441."
     },
     {
      "id": "p-references-30",
@@ -2932,7 +3905,22 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "ISSN 0925-2312. doi:https://doi.org/10.1016/j.neucom.2023.127063."
+       "original": "Go Nishikawa, Wataru Nakata.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-30-2",
+       "original": "Multi-sampling-frequency naturalness mos prediction using self-supervised learning model with sampling-frequency-independent layer, 2025.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-30-3",
+       "original": "URL https://arxiv.org/abs/2507.14647."
+      },
+      {
+       "id": "s-references-30-4",
+       "original": "Matteo Pagliardini, Amirkeivan Mohtashami.",
+       "zh": "，"
       }
      ]
     },
@@ -2943,11 +3931,8 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "https://www.sciencedirect.com/science/article/ pii/S0925231223011864."
-      },
-      {
-       "id": "s-references-31-2",
-       "original": "Lean Wang, Huazuo Gao."
+       "original": "Denseformer: Enhancing information flow in transformers via depth weighted averaging, 2024.",
+       "zh": "，"
       }
      ]
     },
@@ -2958,15 +3943,26 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "Auxiliary-loss-free load balancing strategy for mixture-of-experts, 2024. https://arxiv.org/abs/2408.15664."
+       "original": "URL https://arxiv. org/abs/2402.02622."
       },
       {
        "id": "s-references-32-2",
-       "original": "Robert Washbourne, Rishi Iyer et al. Zaya1-8b technical Ivan Yakovlev, Rostislav Makarov."
+       "original": "Zihan Qiu, Zekun Wang et al. Gated attention for large language models: Non-linearity, sparsity, and attentionsink-free, 2025.",
+       "zh": "，"
       },
       {
        "id": "s-references-32-3",
-       "original": "Reshape dimensions network for speaker recognition."
+       "original": "URL https://arxiv.org/abs/2505.06708."
+      },
+      {
+       "id": "s-references-32-4",
+       "original": "Alec Radford, Jong Wook Kim.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-32-5",
+       "original": "Robust speech recognition via large-scale weak supervision, 2022.",
+       "zh": "，"
       }
      ]
     },
@@ -2977,15 +3973,16 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "In Interspeech 2024, interspeech-2024, pp. 3235––3239."
+       "original": "URL https:// arxiv.org/abs/2212.04356."
       },
       {
        "id": "s-references-33-2",
-       "original": "ISCA, 2024."
+       "original": "Noam Shazeer."
       },
       {
        "id": "s-references-33-3",
-       "original": "Yifan Yang, Bing Han."
+       "original": "Glu variants improve transformer, 2020.",
+       "zh": "，"
       }
      ]
     },
@@ -2996,23 +3993,12 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "Measuring prosody diversity in zero-shot tts: A new metric, benchmark, and exploration."
+       "original": "URL https://arxiv.org/abs/2002.05202."
       },
       {
        "id": "s-references-34-2",
-       "original": "In Proc."
-      },
-      {
-       "id": "s-references-34-3",
-       "original": "ICASSP, Barcelona, 2026."
-      },
-      {
-       "id": "s-references-34-4",
-       "original": "Neil Zeghidour, Alejandro Luebs."
-      },
-      {
-       "id": "s-references-34-5",
-       "original": "Soundstream: An endto-end neural audio codec, 2021."
+       "original": "Xian Shi, Xiong Wang et al. Qwen3-asr technical report.",
+       "zh": "，"
       }
      ]
     },
@@ -3023,7 +4009,13 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-35-1",
-       "original": "URL https://arxiv. org/abs/2107.03312."
+       "original": "arXiv preprint arXiv:2601.21337, 2026.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-35-2",
+       "original": "Jianlin Su, Murtadha Ahmed.",
+       "zh": "，"
       }
      ]
     },
@@ -3034,7 +4026,12 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "Biao Zhang, Rico Sennrich."
+       "original": "Roformer: Enhanced transformer with rotary position embedding."
+      },
+      {
+       "id": "s-references-36-2",
+       "original": "Neurocomputing, 568:127063, 2024.",
+       "zh": "，"
       }
      ]
     },
@@ -3045,15 +4042,16 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "Root mean square layer normalization, 2019."
+       "original": "ISSN 0925-2312. doi:https://doi.org/10.1016/j.neucom.2023.127063."
       },
       {
        "id": "s-references-37-2",
-       "original": "URL https://arxiv.org/abs/1910. 07467."
+       "original": "URL https://www.sciencedirect.com/science/article/ pii/S0925231223011864."
       },
       {
        "id": "s-references-37-3",
-       "original": "Yixuan Zhou, Guoyang Zeng et al."
+       "original": "Lean Wang, Huazuo Gao.",
+       "zh": "，"
       }
      ]
     },
@@ -3064,7 +4062,163 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "Voxcpm2 technical"
+       "original": "Auxiliary-loss-free load balancing strategy for mixture-of-experts, 2024.",
+       "zh": "，"
+      }
+     ]
+    },
+    {
+     "id": "p-references-39",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-references-39-1",
+       "original": "URL https://arxiv.org/abs/2408.15664."
+      },
+      {
+       "id": "s-references-39-2",
+       "original": "Robert Washbourne, Rishi Iyer et al. Zaya1-8b technical report, 2026.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-39-3",
+       "original": "URL https://arxiv.org/abs/2605.05365."
+      },
+      {
+       "id": "s-references-39-4",
+       "original": "Ivan Yakovlev, Rostislav Makarov.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-39-5",
+       "original": "Reshape dimensions network for speaker recognition."
+      }
+     ]
+    },
+    {
+     "id": "p-references-40",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-references-40-1",
+       "original": "In Interspeech 2024, interspeech-2024, pp. 3235––3239.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-40-2",
+       "original": "ISCA, 2024.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-40-3",
+       "original": "Yifan Yang, Bing Han.",
+       "zh": "，"
+      }
+     ]
+    },
+    {
+     "id": "p-references-41",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-references-41-1",
+       "original": "Measuring prosody diversity in zero-shot tts: A new metric, benchmark, and exploration.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-41-2",
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-41-3",
+       "original": "ICASSP, Barcelona, 2026.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-41-4",
+       "original": "Neil Zeghidour, Alejandro Luebs.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-41-5",
+       "original": "Soundstream: An endto-end neural audio codec, 2021.",
+       "zh": "，"
+      }
+     ]
+    },
+    {
+     "id": "p-references-42",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-references-42-1",
+       "original": "URL https://arxiv. org/abs/2107.03312."
+      }
+     ]
+    },
+    {
+     "id": "p-references-43",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-references-43-1",
+       "original": "Biao Zhang, Rico Sennrich.",
+       "zh": "，"
+      }
+     ]
+    },
+    {
+     "id": "p-references-44",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-references-44-1",
+       "original": "Root mean square layer normalization, 2019.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-44-2",
+       "original": "URL https://arxiv.org/abs/1910."
+      }
+     ]
+    },
+    {
+     "id": "eq-references-8",
+     "type": "equation",
+     "page": 12,
+     "original": "07467."
+    },
+    {
+     "id": "p-references-45",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-references-45-1",
+       "original": "Yixuan Zhou, Guoyang Zeng et al.",
+       "zh": "，"
+      }
+     ]
+    },
+    {
+     "id": "p-references-46",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-references-46-1",
+       "original": "Voxcpm2 technical report, 2026.",
+       "zh": "，"
+      },
+      {
+       "id": "s-references-46-2",
+       "original": "URL https://arxiv.org/abs/2606.06928."
       }
      ]
     }
@@ -3087,7 +4241,121 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-A-1-1",
-       "original": "Property ZONOS2 8B Configuration Architecture Decoder-only MoE transformer Active Parameters 900M Total Parameters 8B Transformer Layers 28 Hidden Dimension 2048 GQA Query Heads 16 KV Heads 4 Head dimension 128 Attention variant GQA (4× grouping) Experts per MoE layer 16 Routing top-1, top-2 for final MoE Expert FFN width 3072 Qwen gating location headwise Router latent dimension 128 Router configuration EDA Positional embeddings RoPE Tokenizer Byte level TABLE V: ZONOS2 8B Configuration.",
+       "original": "Property ZONOS2 8B Configuration Architecture Decoder-only MoE transformer Active Parameters 900M Total Parameters 8B Transformer Layers",
+       "zh": "表 V：ZONOS2 8B 配置。属性取值——架构：decoder-only MoE Transformer；激活参数 900M；总参数 8B；Transformer 层数 28；隐藏维度 2048；GQA 查询头数 16；KV 头数 4；头维度 128；注意力变体：GQA（4× 分组）；每个 MoE 层专家数 16；路由：top-1（最后一个 MoE 层为 top-2）；专家 FFN 宽度 3072；Qwen 门控位置：逐头（headwise）；路由器潜在维度 128；路由器配置：EDA；位置嵌入：RoPE；分词器：字节级。"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-1",
+     "type": "equation",
+     "page": 12,
+     "original": "28"
+    },
+    {
+     "id": "eq-A-2",
+     "type": "equation",
+     "page": 12,
+     "original": "Hidden Dimension"
+    },
+    {
+     "id": "eq-A-3",
+     "type": "equation",
+     "page": 12,
+     "original": "2048"
+    },
+    {
+     "id": "eq-A-4",
+     "type": "equation",
+     "page": 12,
+     "original": "GQA Query Heads"
+    },
+    {
+     "id": "eq-A-5",
+     "type": "equation",
+     "page": 12,
+     "original": "16"
+    },
+    {
+     "id": "eq-A-6",
+     "type": "equation",
+     "page": 12,
+     "original": "KV Heads"
+    },
+    {
+     "id": "eq-A-7",
+     "type": "equation",
+     "page": 12,
+     "original": "4"
+    },
+    {
+     "id": "eq-A-8",
+     "type": "equation",
+     "page": 12,
+     "original": "Head dimension"
+    },
+    {
+     "id": "eq-A-9",
+     "type": "equation",
+     "page": 12,
+     "original": "128"
+    },
+    {
+     "id": "p-A-2",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-A-2-1",
+       "original": "Attention variant GQA (4× grouping) Experts per MoE layer",
+       "zh": "表 V：ZONOS2 8B 配置。属性取值——架构：decoder-only MoE Transformer；激活参数 900M；总参数 8B；Transformer 层数 28；隐藏维度 2048；GQA 查询头数 16；KV 头数 4；头维度 128；注意力变体：GQA（4× 分组）；每个 MoE 层专家数 16；路由：top-1（最后一个 MoE 层为 top-2）；专家 FFN 宽度 3072；Qwen 门控位置：逐头（headwise）；路由器潜在维度 128；路由器配置：EDA；位置嵌入：RoPE；分词器：字节级。"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-10",
+     "type": "equation",
+     "page": 12,
+     "original": "16"
+    },
+    {
+     "id": "p-A-3",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-A-3-1",
+       "original": "Routing top-1, top-2 for final MoE Expert FFN width",
+       "zh": "表 V：ZONOS2 8B 配置。属性取值——架构：decoder-only MoE Transformer；激活参数 900M；总参数 8B；Transformer 层数 28；隐藏维度 2048；GQA 查询头数 16；KV 头数 4；头维度 128；注意力变体：GQA（4× 分组）；每个 MoE 层专家数 16；路由：top-1（最后一个 MoE 层为 top-2）；专家 FFN 宽度 3072；Qwen 门控位置：逐头（headwise）；路由器潜在维度 128；路由器配置：EDA；位置嵌入：RoPE；分词器：字节级。"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-11",
+     "type": "equation",
+     "page": 12,
+     "original": "3072"
+    },
+    {
+     "id": "eq-A-12",
+     "type": "equation",
+     "page": 12,
+     "original": "Qwen gating location headwise Router latent dimension"
+    },
+    {
+     "id": "eq-A-13",
+     "type": "equation",
+     "page": 12,
+     "original": "128"
+    },
+    {
+     "id": "p-A-4",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-A-4-1",
+       "original": "Router configuration EDA Positional embeddings RoPE Tokenizer Byte level TABLE V: ZONOS2 8B Configuration.",
        "zh": "表 V：ZONOS2 8B 配置。属性取值——架构：decoder-only MoE Transformer；激活参数 900M；总参数 8B；Transformer 层数 28；隐藏维度 2048；GQA 查询头数 16；KV 头数 4；头维度 128；注意力变体：GQA（4× 分组）；每个 MoE 层专家数 16；路由：top-1（最后一个 MoE 层为 top-2）；专家 FFN 宽度 3072；Qwen 门控位置：逐头（headwise）；路由器潜在维度 128；路由器配置：EDA；位置嵌入：RoPE；分词器：字节级。"
       }
      ]
@@ -3122,10 +4390,208 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-language-1-1",
-       "original": "Utterances Hours 120 0.22 92 0.14 104 0.20 95 0.17 92 0.18 97 0.18 91 0.14 93 0.13 101 0.19 pt 93 0.19 ar 90 0.15 hi 86 0.14 id 84 0.16 tr 93 0.17 tl 89 0.14 pl 105 0.21 th 93 0.14",
-       "zh": "表 VI 正文：各语言「语句数／小时数」原始统计，抽取时语言标签与数值错位，数字按原文保留：120 0.22，92 0.14，104 0.20，95 0.17，92 0.18，97 0.18，91 0.14，93 0.13，101 0.19，pt 93 0.19，ar 90 0.15，hi 86 0.14，id 84 0.16，tr 93 0.17，tl 89 0.14，pl 105 0.21，th 93 0.14。"
+       "original": "Utterances Hours en",
+       "zh": "表头：Utterances / Hours——en（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-language-1",
+     "type": "equation",
+     "page": 12,
+     "original": "120 0.22"
+    },
+    {
+     "id": "eq-language-2",
+     "type": "equation",
+     "page": 12,
+     "original": "zh"
+    },
+    {
+     "id": "eq-language-3",
+     "type": "equation",
+     "page": 12,
+     "original": "92 0.14"
+    },
+    {
+     "id": "eq-language-4",
+     "type": "equation",
+     "page": 12,
+     "original": "de"
+    },
+    {
+     "id": "eq-language-5",
+     "type": "equation",
+     "page": 12,
+     "original": "104 0.20"
+    },
+    {
+     "id": "eq-language-6",
+     "type": "equation",
+     "page": 12,
+     "original": "es"
+    },
+    {
+     "id": "eq-language-7",
+     "type": "equation",
+     "page": 12,
+     "original": "95 0.17"
+    },
+    {
+     "id": "eq-language-8",
+     "type": "equation",
+     "page": 12,
+     "original": "fr"
+    },
+    {
+     "id": "eq-language-9",
+     "type": "equation",
+     "page": 12,
+     "original": "92 0.18"
+    },
+    {
+     "id": "eq-language-10",
+     "type": "equation",
+     "page": 12,
+     "original": "it"
+    },
+    {
+     "id": "eq-language-11",
+     "type": "equation",
+     "page": 12,
+     "original": "97 0.18"
+    },
+    {
+     "id": "eq-language-12",
+     "type": "equation",
+     "page": 12,
+     "original": "ja"
+    },
+    {
+     "id": "eq-language-13",
+     "type": "equation",
+     "page": 12,
+     "original": "91 0.14"
+    },
+    {
+     "id": "eq-language-14",
+     "type": "equation",
+     "page": 12,
+     "original": "ko"
+    },
+    {
+     "id": "eq-language-15",
+     "type": "equation",
+     "page": 12,
+     "original": "93 0.13"
+    },
+    {
+     "id": "eq-language-16",
+     "type": "equation",
+     "page": 12,
+     "original": "ru"
+    },
+    {
+     "id": "eq-language-17",
+     "type": "equation",
+     "page": 12,
+     "original": "101 0.19"
+    },
+    {
+     "id": "eq-language-18",
+     "type": "equation",
+     "page": 12,
+     "original": "pt"
+    },
+    {
+     "id": "eq-language-19",
+     "type": "equation",
+     "page": 12,
+     "original": "93 0.19"
+    },
+    {
+     "id": "eq-language-20",
+     "type": "equation",
+     "page": 12,
+     "original": "ar"
+    },
+    {
+     "id": "eq-language-21",
+     "type": "equation",
+     "page": 12,
+     "original": "90 0.15"
+    },
+    {
+     "id": "eq-language-22",
+     "type": "equation",
+     "page": 12,
+     "original": "hi"
+    },
+    {
+     "id": "eq-language-23",
+     "type": "equation",
+     "page": 12,
+     "original": "86 0.14"
+    },
+    {
+     "id": "eq-language-24",
+     "type": "equation",
+     "page": 12,
+     "original": "id"
+    },
+    {
+     "id": "eq-language-25",
+     "type": "equation",
+     "page": 12,
+     "original": "84 0.16"
+    },
+    {
+     "id": "eq-language-26",
+     "type": "equation",
+     "page": 12,
+     "original": "tr"
+    },
+    {
+     "id": "eq-language-27",
+     "type": "equation",
+     "page": 12,
+     "original": "93 0.17"
+    },
+    {
+     "id": "eq-language-28",
+     "type": "equation",
+     "page": 12,
+     "original": "tl"
+    },
+    {
+     "id": "eq-language-29",
+     "type": "equation",
+     "page": 12,
+     "original": "89 0.14"
+    },
+    {
+     "id": "eq-language-30",
+     "type": "equation",
+     "page": 12,
+     "original": "pl"
+    },
+    {
+     "id": "eq-language-31",
+     "type": "equation",
+     "page": 12,
+     "original": "105 0.21"
+    },
+    {
+     "id": "eq-language-32",
+     "type": "equation",
+     "page": 12,
+     "original": "th"
+    },
+    {
+     "id": "eq-language-33",
+     "type": "equation",
+     "page": 12,
+     "original": "93 0.14"
     }
    ]
   },
@@ -3140,13 +4606,19 @@ globalThis.PAPER_2606_24320 = {
    },
    "blocks": [
     {
+     "id": "eq-total-1",
+     "type": "equation",
+     "page": 12,
+     "original": "1618 2.86"
+    },
+    {
      "id": "p-total-1",
      "type": "paragraph",
      "page": 12,
      "sentences": [
       {
        "id": "s-total-1-1",
-       "original": "1618 2.86 TABLE VI: ZTTS1-Eval ITW language coverage statistics.",
+       "original": "TABLE VI: ZTTS1-Eval ITW language coverage statistics.",
        "zh": "合计 1618 条语句、2.86 小时。表 VI：ZTTS1-Eval ITW 语言覆盖统计。"
       }
      ]
@@ -3181,16 +4653,28 @@ globalThis.PAPER_2606_24320 = {
      ]
     },
     {
+     "id": "eq-C-1",
+     "type": "equation",
+     "page": 13,
+     "original": "¯hℓ t = RMSNormattn(hℓ t), (9)"
+    },
+    {
      "id": "p-C-2",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
        "id": "s-C-2-1",
-       "original": "¯hℓ t = RMSNormattn(hℓ t), rℓ t = hℓ t + Attnℓ(¯hℓ ≤t), hℓ+1 t = rℓ t + FFNℓ( RMSNormffn(rℓ t) .",
-       "zh": "h̄ℓt = RMSNormattn(hℓt)，rℓt = hℓt + Attnℓ(h̄ℓ≤t)，hℓ+1t = rℓt + FFNℓ(RMSNormffn(rℓt))。"
+       "original": "rℓ t = hℓ t + Attnℓ(¯hℓ ≤t),",
+       "zh": "（公式：r^ℓ_t = h^ℓ_t + Attn^ℓ(h̄^ℓ_{≤t})（式 10）；h^{ℓ+1}_t = r^ℓ_t + FFN^ℓ(RMSNorm_ffn(r^ℓ_t))。）"
       }
      ]
+    },
+    {
+     "id": "eq-C-2",
+     "type": "equation",
+     "page": 13,
+     "original": "(10)"
     },
     {
      "id": "p-C-3",
@@ -3199,31 +4683,22 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-C-3-1",
-       "original": "The attention module uses GQA.",
-       "zh": "注意力模块使用 GQA。"
-      },
-      {
-       "id": "s-C-3-2",
-       "original": "Queries are projected into H query heads, while keys and values are projected into Hkv heads, with Hkv ≤H.",
-       "zh": "查询被投影为 H 个查询头，键与值被投影为 Hkv 个头，且 Hkv ≤ H。"
-      },
-      {
-       "id": "s-C-3-3",
-       "original": "Rotary Positional Embeddings (RoPE) (Su, Ahmed, & Lu et al., 2024) are applied to queries and keys before attention.",
-       "zh": "注意力之前，对查询与键施加旋转位置嵌入（RoPE）（Su, Ahmed, & Lu et al., 2024）。"
-      },
-      {
-       "id": "s-C-3-4",
-       "original": "Query-key normalization is applied (Henry, Dachapally, & Pawar et al., 2020):",
-       "zh": "同时施加查询-键归一化（Henry, Dachapally, & Pawar et al., 2020）："
+       "original": "hℓ+1 t = rℓ t + FFNℓ( RMSNormffn(rℓ t)",
+       "zh": "（公式：r^ℓ_t = h^ℓ_t + Attn^ℓ(h̄^ℓ_{≤t})（式 10）；h^{ℓ+1}_t = r^ℓ_t + FFN^ℓ(RMSNorm_ffn(r^ℓ_t))。）"
       }
      ]
     },
     {
-     "id": "eq-C-1",
+     "id": "eq-C-3",
      "type": "equation",
      "page": 13,
-     "original": "qt,h ←αh qt,h RMS(qt,h), kt,h ←"
+     "original": ") ."
+    },
+    {
+     "id": "eq-C-4",
+     "type": "equation",
+     "page": 13,
+     "original": "(11)"
     },
     {
      "id": "p-C-4",
@@ -3232,27 +4707,37 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-C-4-1",
-       "original": "kt,h RMS(kt,h), where αh is a learned positive per-head scale.",
-       "zh": "kt,h/RMS(kt,h)，其中 αh 是每个头学习到的正的缩放系数。"
+       "original": "The attention module uses GQA.",
+       "zh": "（式 11）注意力模块使用 GQA。"
       },
       {
        "id": "s-C-4-2",
-       "original": "Attention is then computed using FlashAttention (Dao, Fu, & Ermon et al., 2022) over packed variable-length sequences:",
-       "zh": "随后在打包的变长序列上用 FlashAttention（Dao, Fu, & Ermon et al., 2022）计算注意力："
+       "original": "Queries are projected into H query heads, while keys and values are projected into Hkv heads, with Hkv ≤H.",
+       "zh": "查询被投影为 H 个查询头，键与值被投影为 Hkv 个头，且 Hkv ≤ H。"
+      },
+      {
+       "id": "s-C-4-3",
+       "original": "Rotary Positional Embeddings (RoPE) (Su, Ahmed, & Lu et al., 2024) are applied to queries and keys before attention.",
+       "zh": "注意力之前，对查询与键施加旋转位置嵌入（RoPE）（Su, Ahmed, & Lu et al., 2024）。"
+      },
+      {
+       "id": "s-C-4-4",
+       "original": "Query-key normalization is applied (Henry, Dachapally, & Pawar et al., 2020):",
+       "zh": "同时施加查询-键归一化（Henry, Dachapally, & Pawar et al., 2020）："
       }
      ]
     },
     {
-     "id": "eq-C-2",
+     "id": "eq-C-5",
      "type": "equation",
      "page": 13,
-     "original": "( q⊤ t,hkτ,h √dh"
+     "original": "qt,h ←αh qt,h RMS(qt,h), (12)"
     },
     {
-     "id": "eq-C-3",
+     "id": "eq-C-6",
      "type": "equation",
      "page": 13,
-     "original": "ot,h = vτ,h."
+     "original": "kt,h ← kt,h RMS(kt,h), (13)"
     },
     {
      "id": "p-C-5",
@@ -3261,10 +4746,39 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-C-5-1",
-       "original": "τ≤t softmaxτ The attention output is modulated with a learned headwise gate (Qiu, Wang, & Zheng et al., 2025): gt = σ(Wg¯hℓ t), ˜ot,h = gt,hot,h.",
-       "zh": "注意力输出再由学习到的逐头门控调制（Qiu, Wang, & Zheng et al., 2025）：gt = σ(Wg h̄ℓt)，õt,h = gt,h ot,h。"
+       "original": "where αh is a learned positive per-head scale.",
+       "zh": "kt,h/RMS(kt,h)，其中 αh 是每个头学习到的正的缩放系数。"
+      },
+      {
+       "id": "s-C-5-2",
+       "original": "Attention is then computed using FlashAttention (Dao, Fu, & Ermon et al., 2022) over packed variable-length sequences:",
+       "zh": "随后在打包的变长序列上用 FlashAttention（Dao, Fu, & Ermon et al., 2022）计算注意力："
       }
      ]
+    },
+    {
+     "id": "eq-C-7",
+     "type": "equation",
+     "page": 13,
+     "original": ")"
+    },
+    {
+     "id": "eq-C-8",
+     "type": "equation",
+     "page": 13,
+     "original": "( q⊤ t,hkτ,h √dh"
+    },
+    {
+     "id": "eq-C-9",
+     "type": "equation",
+     "page": 13,
+     "original": "ot,h = ∑"
+    },
+    {
+     "id": "eq-C-10",
+     "type": "equation",
+     "page": 13,
+     "original": "vτ,h. (14)"
     },
     {
      "id": "p-C-6",
@@ -3273,20 +4787,16 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-C-6-1",
-       "original": "The gated attention output is then projected back to the model dimension.",
-       "zh": "门控后的注意力输出再被投影回模型维度。"
-      },
-      {
-       "id": "s-C-6-2",
-       "original": "The feed-forward sublayer is either a dense SwiGLU (Shazeer, 2020) MLP in the initial and final non-MoE blocks or the routed MoE MLP shown in the center of Figure 2.",
-       "zh": "前馈子层有两种形态：在首尾的少数非 MoE 块中是稠密 SwiGLU（Shazeer, 2020）MLP，在其余块中是图 2 中部所示的路由 MoE MLP。"
-      },
-      {
-       "id": "s-C-6-3",
-       "original": "The dense form is FFN(x) = Wout (Win,1x ⊙SiLU(Win,2x)) .",
-       "zh": "稠密形式为 FFN(x) = Wout (Win,1 x ⊙ SiLU(Win,2 x))。"
+       "original": "τ≤t softmaxτ The attention output is modulated with a learned headwise gate (Qiu, Wang, & Zheng et al., 2025):",
+       "zh": "（公式片段：softmax_{τ≤t}。注意力输出用按头学习的门控调制（Qiu, Wang, & Zheng et al., 2025）：）"
       }
      ]
+    },
+    {
+     "id": "eq-C-11",
+     "type": "equation",
+     "page": 13,
+     "original": "gt = σ(Wg¯hℓ t), ˜ot,h = gt,hot,h. (15)"
     },
     {
      "id": "p-C-7",
@@ -3295,16 +4805,62 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-C-7-1",
-       "original": "For routed layers, a router produces expert probabilities πt = softmax(R(xt)), selects the top-k experts and combines their outputs, weighted by the corresponding router probabilities.",
-       "zh": "对路由层，路由器产生专家概率 πt = softmax(R(xt))，选出 top-k 个专家，并按对应的路由概率加权组合其输出。"
+       "original": "The gated attention output is then projected back to the model dimension.",
+       "zh": "门控后的注意力输出再被投影回模型维度。"
       },
       {
        "id": "s-C-7-2",
+       "original": "The feed-forward sublayer is either a dense SwiGLU (Shazeer, 2020) MLP in the initial and final non-MoE blocks or the routed MoE MLP shown in the center of Figure 2.",
+       "zh": "前馈子层有两种形态：在首尾的少数非 MoE 块中是稠密 SwiGLU（Shazeer, 2020）MLP，在其余块中是图 2 中部所示的路由 MoE MLP。"
+      },
+      {
+       "id": "s-C-7-3",
+       "original": "The dense form is",
+       "zh": "稠密形式为 FFN(x) = Wout (Win,1 x ⊙ SiLU(Win,2 x))。"
+      }
+     ]
+    },
+    {
+     "id": "eq-C-12",
+     "type": "equation",
+     "page": 13,
+     "original": "FFN(x) = Wout (Win,1x ⊙SiLU(Win,2x)) . (16)"
+    },
+    {
+     "id": "p-C-8",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-C-8-1",
+       "original": "For routed layers, a router produces expert probabilities",
+       "zh": "，"
+      }
+     ]
+    },
+    {
+     "id": "eq-C-13",
+     "type": "equation",
+     "page": 13,
+     "original": "πt = softmax(R(xt)), (17)"
+    },
+    {
+     "id": "p-C-9",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-C-9-1",
+       "original": "selects the top-k experts and combines their outputs, weighted by the corresponding router probabilities.",
+       "zh": "，"
+      },
+      {
+       "id": "s-C-9-2",
        "original": "Routed layers use E = 16 experts with top-1 routing, except the last MoE block, which uses top-2.",
        "zh": "路由层使用 E = 16 个专家、top-1 路由，最后一个 MoE 块除外——它使用 top-2。"
       },
       {
-       "id": "s-C-7-3",
+       "id": "s-C-9-3",
        "original": "The MoE layers begin after the first 3 dense layers, and the final layer is also dense.",
        "zh": "MoE 层从前 3 个稠密层之后开始，最后一层同样是稠密层。"
       }
@@ -3341,8 +4897,8 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-D-2-1",
-       "original": "Task Set DNSMOS ↑ WER % ↓ Emo. acc. % ↑",
-       "zh": "任务 子集 DNSMOS ↑ WER % ↓ 情感准确率 % ↑"
+       "original": "Task Set Spk. sim. ↑ DNSMOS ↑ WER % ↓ Emo. acc. % ↑",
+       "zh": "表头：Task Set × Spk. sim.↑ × DNSMOS↑ × WER%↓ × Emo. acc.%↑。"
       }
      ]
     },
@@ -3359,13 +4915,283 @@ globalThis.PAPER_2606_24320 = {
      "sentences": [
       {
        "id": "s-D-3-1",
-       "original": "CosyVoice 3 Eval 49.66 3.901 4.48 hard_en 49.58 4.020 5.23 56.93 3.710 12.08 hard_zh 50.64 3.614 25.55 53.15 3.846 8.60 58.75 3.945 6.03 Zero-shot to_en 46.66 3.896 4.94 to_hard_en 45.93 4.007 9.13 to_zh 47.00 3.701 18.72 to_hard_zh 47.60 3.665 23.27 to_ja 48.13 3.866 15.12 to_ko 50.40 3.918 6.82 Cross-lingual zero-shot Emotion zero-shot 39.12 3.837 4.71 37.3 58.48 3.610 7.57 36.7 emotion 48.16 3.743 rhyme 42.00 3.547 speed 45.25 3.768 volume 44.54 3.777 Subjective continuation Subjective zero-shot all 53.32 3.791 Seed-TTS-Eval Zero-shot Test-EN 47.60 2.05 Test-ZH 58.20 2.55 Test-ZH-Hard 56.2 11.15 TABLE VII: ZONOS2 evaluation results across speaker similarity, DNSMOS, WER, and emotion accuracy on the CosyVoice 3 Eval and Seed-TTS-Eval benchmarks, grouped by task.",
-       "zh": "以下为抽取层混入正文的表 VII 内容，逐词译为中文标签：CosyVoice 3 Eval 49.66 3.901 4.48 hard_en 49.58 4.020 5.23 56.93 3.710 12.08 hard_zh 50.64 3.614 25.55 53.15 3.846 8.60 58.75 3.945 6.03 Zero-shot to_en 46.66 3.896 4.94 to_hard_en 45.93 4.007 9.13 to_zh 47.00 3.701 18.72 to_hard_zh 47.60 3.665 23.27 to_ja 48.13 3.866 15.12 to_ko 50.40 3.918 6.82 跨语言零样本 情感零样本 39.12 3.837 4.71 37.3 58.48 3.610 7.57 36.7 情感 48.16 3.743 押韵 42.00 3.547 语速 45.25 3.768 音量 44.54 3.777 主观续写 主观零样本 all 53.32 3.791 Seed-TTS-Eval Zero-shot Test-EN 47.60 2.05 Test-ZH 58.20 2.55 Test-ZH-Hard 56.2 11.15 表 VII： ZONOS2 evaluation results across speaker similarity, DNSMOS, WER, and 情感 accuracy on the CosyVoice 3 Eval and Seed-TTS-Eval benchmarks, grouped by task."
+       "original": "CosyVoice 3 Eval en",
+       "zh": "（表格行）CosyVoice 3 Eval / en（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-D-2",
+     "type": "equation",
+     "page": 14,
+     "original": "49.66 3.901 4.48 –"
+    },
+    {
+     "id": "eq-D-3",
+     "type": "equation",
+     "page": 14,
+     "original": "hard_en"
+    },
+    {
+     "id": "eq-D-4",
+     "type": "equation",
+     "page": 14,
+     "original": "49.58 4.020 5.23 –"
+    },
+    {
+     "id": "eq-D-5",
+     "type": "equation",
+     "page": 14,
+     "original": "zh"
+    },
+    {
+     "id": "eq-D-6",
+     "type": "equation",
+     "page": 14,
+     "original": "56.93 3.710 12.08 –"
+    },
+    {
+     "id": "eq-D-7",
+     "type": "equation",
+     "page": 14,
+     "original": "hard_zh"
+    },
+    {
+     "id": "eq-D-8",
+     "type": "equation",
+     "page": 14,
+     "original": "50.64 3.614 25.55 –"
+    },
+    {
+     "id": "eq-D-9",
+     "type": "equation",
+     "page": 14,
+     "original": "ja"
+    },
+    {
+     "id": "eq-D-10",
+     "type": "equation",
+     "page": 14,
+     "original": "53.15 3.846 8.60 –"
+    },
+    {
+     "id": "eq-D-11",
+     "type": "equation",
+     "page": 14,
+     "original": "ko"
+    },
+    {
+     "id": "eq-D-12",
+     "type": "equation",
+     "page": 14,
+     "original": "58.75 3.945 6.03 –"
+    },
+    {
+     "id": "eq-D-13",
+     "type": "equation",
+     "page": 14,
+     "original": "Zero-shot to_en"
+    },
+    {
+     "id": "eq-D-14",
+     "type": "equation",
+     "page": 14,
+     "original": "46.66 3.896 4.94 –"
+    },
+    {
+     "id": "eq-D-15",
+     "type": "equation",
+     "page": 14,
+     "original": "to_hard_en"
+    },
+    {
+     "id": "eq-D-16",
+     "type": "equation",
+     "page": 14,
+     "original": "45.93 4.007 9.13 –"
+    },
+    {
+     "id": "eq-D-17",
+     "type": "equation",
+     "page": 14,
+     "original": "to_zh"
+    },
+    {
+     "id": "eq-D-18",
+     "type": "equation",
+     "page": 14,
+     "original": "47.00 3.701 18.72 –"
+    },
+    {
+     "id": "eq-D-19",
+     "type": "equation",
+     "page": 14,
+     "original": "to_hard_zh"
+    },
+    {
+     "id": "eq-D-20",
+     "type": "equation",
+     "page": 14,
+     "original": "47.60 3.665 23.27 –"
+    },
+    {
+     "id": "eq-D-21",
+     "type": "equation",
+     "page": 14,
+     "original": "to_ja"
+    },
+    {
+     "id": "eq-D-22",
+     "type": "equation",
+     "page": 14,
+     "original": "48.13 3.866 15.12 –"
+    },
+    {
+     "id": "eq-D-23",
+     "type": "equation",
+     "page": 14,
+     "original": "to_ko"
+    },
+    {
+     "id": "eq-D-24",
+     "type": "equation",
+     "page": 14,
+     "original": "50.40 3.918 6.82 –"
+    },
+    {
+     "id": "eq-D-25",
+     "type": "equation",
+     "page": 14,
+     "original": "Cross-lingual zero-shot Emotion zero-shot en"
+    },
+    {
+     "id": "eq-D-26",
+     "type": "equation",
+     "page": 14,
+     "original": "39.12 3.837 4.71 37.3"
+    },
+    {
+     "id": "eq-D-27",
+     "type": "equation",
+     "page": 14,
+     "original": "zh"
+    },
+    {
+     "id": "eq-D-28",
+     "type": "equation",
+     "page": 14,
+     "original": "58.48 3.610 7.57 36.7"
+    },
+    {
+     "id": "eq-D-29",
+     "type": "equation",
+     "page": 14,
+     "original": "emotion"
+    },
+    {
+     "id": "eq-D-30",
+     "type": "equation",
+     "page": 14,
+     "original": "48.16 3.743 – –"
+    },
+    {
+     "id": "eq-D-31",
+     "type": "equation",
+     "page": 14,
+     "original": "rhyme"
+    },
+    {
+     "id": "eq-D-32",
+     "type": "equation",
+     "page": 14,
+     "original": "42.00 3.547 – –"
+    },
+    {
+     "id": "eq-D-33",
+     "type": "equation",
+     "page": 14,
+     "original": "speed"
+    },
+    {
+     "id": "eq-D-34",
+     "type": "equation",
+     "page": 14,
+     "original": "45.25 3.768 – –"
+    },
+    {
+     "id": "eq-D-35",
+     "type": "equation",
+     "page": 14,
+     "original": "volume"
+    },
+    {
+     "id": "eq-D-36",
+     "type": "equation",
+     "page": 14,
+     "original": "44.54 3.777 – –"
+    },
+    {
+     "id": "eq-D-37",
+     "type": "equation",
+     "page": 14,
+     "original": "Subjective continuation Subjective zero-shot all"
+    },
+    {
+     "id": "eq-D-38",
+     "type": "equation",
+     "page": 14,
+     "original": "53.32 3.791 – –"
+    },
+    {
+     "id": "eq-D-39",
+     "type": "equation",
+     "page": 14,
+     "original": "Seed-TTS-Eval Zero-shot Test-EN"
+    },
+    {
+     "id": "eq-D-40",
+     "type": "equation",
+     "page": 14,
+     "original": "47.60 – 2.05 –"
+    },
+    {
+     "id": "eq-D-41",
+     "type": "equation",
+     "page": 14,
+     "original": "Test-ZH"
+    },
+    {
+     "id": "eq-D-42",
+     "type": "equation",
+     "page": 14,
+     "original": "58.20 – 2.55 –"
+    },
+    {
+     "id": "eq-D-43",
+     "type": "equation",
+     "page": 14,
+     "original": "Test-ZH-Hard"
+    },
+    {
+     "id": "eq-D-44",
+     "type": "equation",
+     "page": 14,
+     "original": "56.2 – 11.15 –"
+    },
+    {
+     "id": "p-D-4",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-D-4-1",
+       "original": "TABLE VII: ZONOS2 evaluation results across speaker similarity, DNSMOS, WER, and emotion accuracy on the CosyVoice 3 Eval and Seed-TTS-Eval benchmarks, grouped by task.",
+       "zh": "表 VII：ZONOS2 在 CosyVoice 3 Eval 与 Seed-TTS-Eval 基准上按任务分组的说话人相似度、DNSMOS、WER 与情绪准确率评测结果。"
       },
       {
-       "id": "s-D-3-2",
+       "id": "s-D-4-2",
        "original": "Emotion accuracy is only reported for the emotion zero-shot task.",
-       "zh": "情感准确率仅在情感零样本任务上报告。"
+       "zh": "情绪准确率仅在情绪零样本任务上报告。"
       }
      ]
     },
@@ -3446,7 +5272,7 @@ globalThis.PAPER_2606_24320 = {
   {
    "id": "ann-006",
    "anchor": {
-    "sentence_id": "s-II-A-3-3",
+    "sentence_id": "s-II-A-2-3",
     "quote": "j + 1 at audio frame t is generated immediately after the token for codebook j at the same frame"
    },
    "kind": "concept",
@@ -3457,7 +5283,7 @@ globalThis.PAPER_2606_24320 = {
   {
    "id": "ann-007",
    "anchor": {
-    "sentence_id": "s-II-A-5-1",
+    "sentence_id": "s-II-A-3-1",
     "quote": "lookahead buffer of N −1 generated frames"
    },
    "kind": "engineering",
@@ -3479,7 +5305,7 @@ globalThis.PAPER_2606_24320 = {
   {
    "id": "ann-009",
    "anchor": {
-    "sentence_id": "s-II-C-5-3",
+    "sentence_id": "s-II-C-6-3",
     "quote": "offers the model a shortcut"
    },
    "kind": "critique",
@@ -3490,7 +5316,7 @@ globalThis.PAPER_2606_24320 = {
   {
    "id": "ann-010",
    "anchor": {
-    "sentence_id": "s-II-C-5-6",
+    "sentence_id": "s-II-C-6-6",
     "quote": "could not take enough training steps"
    },
    "kind": "motivation",
@@ -3523,7 +5349,7 @@ globalThis.PAPER_2606_24320 = {
   {
    "id": "ann-013",
    "anchor": {
-    "sentence_id": "s-IV-A-5-1",
+    "sentence_id": "s-IV-A-7-1",
     "quote": "collapsed to as low as 0.6"
    },
    "kind": "number",
@@ -3534,7 +5360,7 @@ globalThis.PAPER_2606_24320 = {
   {
    "id": "ann-014",
    "anchor": {
-    "sentence_id": "s-IV-A-5-5",
+    "sentence_id": "s-IV-A-7-5",
     "quote": "substantially harder than on text data, for reasons we do not fully understand"
    },
    "kind": "critique",
@@ -3574,17 +5400,6 @@ globalThis.PAPER_2606_24320 = {
    "title": "无法排除的训练污染",
    "explanation": "作者声明 ZONOS2 刻意不在 ZTTS1-Eval 的音频上训练，但同时承认无法核实闭源对手是否训过这些数据——而 ZTTS1-Eval 的 Clean 集来自公开语料 FLEURS-R，ITW 集来自公开的 VoxBlink2，被商用系统吃进训练集是完全可能的。这意味着表 III/IV 的横向对比存在系统性不确定：对手若训过评测集，其数字虚高。厂商自建基准的固有困境正在于此——诚实声明值得肯定，但「干净对照」只有作者自己一方成立，所有跨模型排名都应打折阅读。",
    "featured": true
-  },
-  {
-   "id": "ann-018",
-   "anchor": {
-    "sentence_id": "s-VI-2-5",
-    "quote": "degraded WER scores for English"
-   },
-   "kind": "number",
-   "title": "质量模式的反常样本",
-   "explanation": "Quality Mode 在几乎所有语言上改善 WER——普通话从 15.62% 降到 6.73% 是最亮眼的——唯独英语变差。作者只做了观察没给解释。一个合理猜测：英语占训练数据主体，基础模型在英语上本就学得很充分，高质量子集退火带来的分布偏移反而扰动了英语的均衡；小语种则因基线弱、净收益为正。使用启示：Quality Mode 不应无脑全局开启，按语言 A/B 才是正确姿势——它对说话人相似度还有一致的负面影响。",
-   "explanation_plain": "质量模式救小语种、坑英语，还能牺牲音色相似度，开关要按语言分开调。"
   },
   {
    "id": "ann-019",

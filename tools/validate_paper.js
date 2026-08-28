@@ -26,6 +26,8 @@ const NUM_RE = /\d+(?:\.\d+)?%?/g;
 const CITE_RE = /\[\d+(?:[,\-–]\s*\d+)*\]/g;
 // 千分位归一化："680,000" → "680000"，避免译文写 680000 时误判丢数字
 const normNum = (s) => String(s).replace(/(\d),(\d{3})/g, "$1$2");
+// 数字 token 归一化：去掉尾随 %（"50" 与 "50%" 视为同一数值，% 的有无不算数字篡改）
+const numTokens = (s) => (normNum(s).match(NUM_RE) || []).map(t => t.replace(/%$/, ""));
 
 function loadPaper(id) {
   const f = path.join(ROOT, "data", "papers", id + ".js");
@@ -106,9 +108,9 @@ function validateOne(id) {
           if (!exempt) {
             if (typeof dsent.zh === "string" && dsent.zh.trim()) {
               nTranslated++;
-              // 数字一致（千分位归一化后比较）
-              const on = (normNum(dsent.original).match(NUM_RE) || []).sort();
-              const zn = (normNum(dsent.zh).match(NUM_RE) || []).sort();
+              // 数字一致（千分位/百分号归一化后比较）
+              const on = numTokens(dsent.original).sort();
+              const zn = numTokens(dsent.zh).sort();
               const missing = on.filter(x => !zn.includes(x));
               ok(missing.length === 0, `[数字] ${dsent.id} 原文数字在译文丢失: ${missing.join(", ")}`);
               // 引用保护

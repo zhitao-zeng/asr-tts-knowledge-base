@@ -71,8 +71,38 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-webpage-1-1",
-       "original": "https://mistral.ai/news/voxtral-tts Model weights: https://huggingface.co/mistralai/Voxtral-4B-TTS-2603 0 20 40 60 80 100 Average Listener Preference (%) Voice cloning Flagship voices Win Rate Voxtral TTS ElevenLabs Flash v2.5",
-       "zh": "https://mistral.ai/news/voxtral-tts 模型权重：https://huggingface.co/mistralai/Voxtral-4B-TTS-2603。此处嵌入了首页图表（抽取时被打散为散行）：横轴为 Voxtral TTS 与 ElevenLabs Flash v2.5，纵轴为平均听众偏好（%），在声音克隆与旗舰音色两类设置下标注胜率（0、20、40、60、80、100 为刻度）。"
+       "original": "https://mistral.ai/news/voxtral-tts Model weights: https://huggingface.co/mistralai/Voxtral-4B-TTS-2603",
+       "zh": "（链接行）https://mistral.ai/news/voxtral-tts；模型权重：https://huggingface.co/mistralai/Voxtral-4B-TTS-2603"
+      }
+     ]
+    },
+    {
+     "id": "eq-webpage-1",
+     "type": "equation",
+     "page": 1,
+     "original": "0 20 40 60 80 100"
+    },
+    {
+     "id": "eq-webpage-2",
+     "type": "equation",
+     "page": 1,
+     "original": "Average Listener Preference (%) Voice cloning Flagship voices"
+    },
+    {
+     "id": "eq-webpage-3",
+     "type": "equation",
+     "page": 1,
+     "original": "68.4% 31.6% 58.3% 41.7%"
+    },
+    {
+     "id": "p-webpage-2",
+     "type": "paragraph",
+     "page": 1,
+     "sentences": [
+      {
+       "id": "s-webpage-2-1",
+       "original": "Win Rate Voxtral TTS ElevenLabs Flash v2.5",
+       "zh": "2.\n（原始数据照录）\nWin Rate Voxtral TTS ElevenLabs Flash v2.5"
       }
      ]
     },
@@ -231,7 +261,7 @@ globalThis.PAPER_2603_25551 = {
    "page": 2,
    "title": {
     "original": "Voxtral Codec",
-    "zh": "2.1 Voxtral Codec"
+    "zh": "4.1 Voxtral Codec"
    },
    "blocks": [
     {
@@ -241,16 +271,34 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-2-1-1-1",
-       "original": "Voxtral Codec is a convolutional–transformer autoencoder [Défossez et al., 2022] that compresses raw 24 kHz mono waveforms into 12.5 Hz frames of 37 discrete tokens (1 semantic + 36 acoustic), achieving a total bitrate of 2.14 kbps.",
+       "original": "Voxtral Codec is a convolutional–transformer autoencoder [Défossez et al., 2022] that compresses raw",
+       "zh": "Voxtral Codec 是一个卷积-Transformer 自编码器 [Défossez et al., 2022]，把 24 kHz 单声道的原始波形压缩成 12.5 Hz 帧率、每帧 37 个离散 token（1 个语义 token + 36 个声学 token），总码率为 2.14 kbps。"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-1-1",
+     "type": "equation",
+     "page": 2,
+     "original": "24 kHz mono waveforms into 12.5 Hz frames of 37 discrete tokens (1 semantic + 36 acoustic), achiev-"
+    },
+    {
+     "id": "p-2-1-2",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-2-1-2-1",
+       "original": "ing a total bitrate of 2.14 kbps.",
        "zh": "Voxtral Codec 是一个卷积-Transformer 自编码器 [Défossez et al., 2022]，把 24 kHz 单声道的原始波形压缩成 12.5 Hz 帧率、每帧 37 个离散 token（1 个语义 token + 36 个声学 token），总码率为 2.14 kbps。"
       },
       {
-       "id": "s-2-1-1-2",
+       "id": "s-2-1-2-2",
        "original": "These tokens serve as the input audio representation to Voxtral TTS.",
        "zh": "这些 token 就是 Voxtral TTS 的输入音频表征。"
       },
       {
-       "id": "s-2-1-1-3",
+       "id": "s-2-1-2-3",
        "original": "Through a novel combination of architectural and training objective improvements, Voxtral Codec outperforms existing baselines such as Mimi [Défossez et al., 2024], with results presented in Section 4.1.",
        "zh": "通过一系列新颖的架构与训练目标改进，Voxtral Codec 优于 Mimi [Défossez et al., 2024] 等现有基线，结果见 Section 4.1。"
       }
@@ -324,8 +372,8 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-waveform-autoencoder-3-1",
-       "original": "80ms audio Acoustic Flow-Matching Transformer Semantic Linear Head <EOA> Autoregressive Decoder Backbone voice reference",
-       "zh": "此处为抽取自架构图的散行文字：80 ms 音频经声学流匹配 Transformer 与语义线性头处理，由自回归解码器主干消费语音参考（voice reference），直至 <EOA> 结束标记。"
+       "original": "80ms audio A Acoustic Flow-Matching Transformer Semantic Linear Head A A <EOA> Autoregressive Decoder Backbone A T A A A T T T A A A A voice reference",
+       "zh": "（图 1 标签：80ms 音频帧 A；声学 Flow-Matching Transformer；Semantic Linear Head；<EOA>；自回归 Decoder Backbone；token 序列 A/T 交替；voice reference。）"
       }
      ]
     },
@@ -343,8 +391,8 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-waveform-autoencoder-4-1",
-       "original": "Adversarial + Reconstruction Losses Soft-Aligned ASR Distillation Loss ASR Model Encoder Decoder q1 (d=256) q2 (d=36) Linear Linear VQ FSQ Strided Causal Conv Strided Causal Conv Causal Conv Patch 24 kHz Quantization Transposed Causal Conv Causal Conv Unpatch (21 levels) x36 Repeat 4x Repeat 4x",
-       "zh": "此处为 Voxtral Codec 架构图的散行文字，依次为：对抗损失 + 重建损失、软对齐 ASR 蒸馏损失、ASR 模型；编码器-解码器中含 q1（d=256）与 q2（d=36）两路表征，分别经线性层进入 VQ 与 FSQ；编码侧为分块（Patch）24 kHz 输入加跨步因果卷积、因果卷积，量化层 FSQ 为 21 级、共 36 路，解码侧为转置因果卷积与解块（Unpatch）；编码与解码各重复 4 次。"
+       "original": "Adversarial + Reconstruction Losses Soft-Aligned ASR Distillation Loss ASR Model Encoder Decoder q1 (d=256) q2 (d=36) Linear Linear VQ FSQ Strided Causal Conv Strided Causal Conv Transformer Block Transformer Block Transformer Block Transformer Block Causal Conv Patch 24 kHz Quantization Transposed Causal Conv Transformer Block Transformer Block Causal Conv Unpatch (21 levels) x36 Repeat 4x Repeat 4x",
+       "zh": "（图 2 音频编解码器标签：对抗+重建损失（Adversarial + Reconstruction Losses）；软对齐 ASR 蒸馏损失（Soft-Aligned ASR Distillation Loss）；ASR Model Encoder/Decoder；q1(d=256)/q2(d=36)；Linear；VQ/FSQ；Strided Causal Conv；Transformer Block；Causal Conv Patch；24 kHz 量化；转置卷积；Unpatch（21 levels）；x36；Repeat 4x。）"
       }
      ]
     },
@@ -497,25 +545,37 @@ globalThis.PAPER_2603_25551 = {
      "id": "eq-semantic-token-learning-2",
      "type": "equation",
      "page": 4,
-     "original": "L LASR = 1 −1"
+     "original": "L X"
     },
     {
      "id": "eq-semantic-token-learning-3",
      "type": "equation",
      "page": 4,
-     "original": "L"
+     "original": "LASR = 1 −1"
     },
     {
      "id": "eq-semantic-token-learning-4",
      "type": "equation",
      "page": 4,
-     "original": "l=1"
+     "original": "L"
     },
     {
      "id": "eq-semantic-token-learning-5",
      "type": "equation",
      "page": 4,
-     "original": "F f=1"
+     "original": "l=1"
+    },
+    {
+     "id": "eq-semantic-token-learning-6",
+     "type": "equation",
+     "page": 4,
+     "original": "F X"
+    },
+    {
+     "id": "eq-semantic-token-learning-7",
+     "type": "equation",
+     "page": 4,
+     "original": "f=1 Al,f zf (1)"
     },
     {
      "id": "p-semantic-token-learning-3",
@@ -524,7 +584,7 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-semantic-token-learning-3-1",
-       "original": "Al,f zf where zf are the projected post-VQ semantic embeddings at codec frame f, hl are the last-layer decoder hidden states from Whisper at token position l, and A ∈RL×F is a soft alignment matrix derived from a subset of Whisper’s cross-attention heads identified as best correlating with wordlevel timestamps via dynamic time warping (DTW) [Berndt and Clifford, 1994].",
+       "original": "where zf are the projected post-VQ semantic embeddings at codec frame f, hl are the last-layer decoder hidden states from Whisper at token position l, and A ∈RL×F is a soft alignment matrix derived from a subset of Whisper’s cross-attention heads identified as best correlating with wordlevel timestamps via dynamic time warping (DTW) [Berndt and Clifford, 1994].",
        "zh": "Al,f zf 其中 zf 是 codec 第 f 帧投影后的 VQ 后语义嵌入，hl 是 Whisper 在 token 位置 l 处的最后一层解码器隐状态，A ∈RL×F 是软对齐矩阵，来自与词级时间戳相关性最强的一部分 Whisper 交叉注意力头（通过动态时间规整（DTW）[Berndt and Clifford, 1994] 识别）。"
       },
       {
@@ -591,28 +651,28 @@ globalThis.PAPER_2603_25551 = {
      ]
     },
     {
+     "id": "eq-adversarial-training-1",
+     "type": "equation",
+     "page": 4,
+     "original": "M X"
+    },
+    {
      "id": "p-adversarial-training-2",
      "type": "paragraph",
      "page": 4,
      "sentences": [
       {
        "id": "s-adversarial-training-2-1",
-       "original": "M Lfeature(x, ˆx) = 1 MN",
+       "original": "Lfeature(x, ˆx) =",
        "zh": "M Lfeature(x, ˆx) = 1 MN"
       }
      ]
     },
     {
-     "id": "eq-adversarial-training-1",
-     "type": "equation",
-     "page": 4,
-     "original": "m=1"
-    },
-    {
      "id": "eq-adversarial-training-2",
      "type": "equation",
      "page": 4,
-     "original": "N n=1"
+     "original": "1"
     },
     {
      "id": "p-adversarial-training-3",
@@ -621,11 +681,53 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-adversarial-training-3-1",
-       "original": "∥Dm n (x) −Dm n (ˆx)∥1 Here, Dm n denotes the m-th layer of the n-th discriminator, where each of the N discriminators has M layers.",
-       "zh": "∥Dm n (x) −Dm n (ˆx)∥1 其中 Dm n 表示第 n 个判别器的第 m 层，N 个判别器各有 M 层。"
+       "original": "MN",
+       "zh": "M Lfeature(x, ˆx) = 1 MN"
+      }
+     ]
+    },
+    {
+     "id": "eq-adversarial-training-3",
+     "type": "equation",
+     "page": 4,
+     "original": "m=1"
+    },
+    {
+     "id": "eq-adversarial-training-4",
+     "type": "equation",
+     "page": 4,
+     "original": "N X"
+    },
+    {
+     "id": "p-adversarial-training-4",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-adversarial-training-4-1",
+       "original": "n=1 ∥Dm n (x) −Dm n (ˆx)∥1",
+       "zh": "（公式片段：Σ_{n=1} ‖Dm_n(x) − Dm_n(x̂)‖₁（式 2）。其中 Dm_n 表示第 n 个判别器的第 m 层，N 个判别器各有 M 层。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-adversarial-training-5",
+     "type": "equation",
+     "page": 4,
+     "original": "(2)"
+    },
+    {
+     "id": "p-adversarial-training-5",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-adversarial-training-5-1",
+       "original": "Here, Dm n denotes the m-th layer of the n-th discriminator, where each of the N discriminators has M layers.",
+       "zh": "（公式片段：Σ_{n=1} ‖Dm_n(x) − Dm_n(x̂)‖₁（式 2）。其中 Dm_n 表示第 n 个判别器的第 m 层，N 个判别器各有 M 层。）"
       },
       {
-       "id": "s-adversarial-training-3-2",
+       "id": "s-adversarial-training-5-2",
        "original": "Following Défossez et al. [2024], Parker et al. [2024], we use this feature-matching",
        "zh": "沿用 Défossez et al. [2024]、Parker et al. [2024]，我们用这一特征匹配"
       }
@@ -657,7 +759,181 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-parameter-1-1",
-       "original": "Value Input / Preprocessing Sampling rate 24000 Patch size 240 AutoEncoder Encoder patch projection kernel size 7 Encoder patch projection dimension 1024 Encoder transformer layers1 Encoder sliding window size Encoder conv kernels Encoder conv strides (Decoder flips all →to ←and uses transposed convolutions) Discrete bottleneck Semantic VQ2 codebook size 8192 Acoustic FSQ3 codebook count×size 36 × 21 Discriminator FFT sizes 2296, 1418, 876, 542, 334, 206, 126, 76 Channels 256 1 For training stability, we use LayerScale with initial scale of 0.01 and QK normalization with ϵ = 10−6. 2 During training, VQ is applied with 50% probability. 3 During training: 50% quantized with FSQ, 25% dithered (uniform noise of magnitude 1/L), 25% unquantized. loss in place of the standard GAN generator loss, as the evolving discriminator features provide an increasingly discriminative reconstruction signal throughout training.",
+       "original": "Value Input / Preprocessing Sampling rate",
+       "zh": "表头：Value / Input / Preprocessing / Sampling rate（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-parameter-1",
+     "type": "equation",
+     "page": 5,
+     "original": "24000"
+    },
+    {
+     "id": "eq-parameter-2",
+     "type": "equation",
+     "page": 5,
+     "original": "Patch size"
+    },
+    {
+     "id": "eq-parameter-3",
+     "type": "equation",
+     "page": 5,
+     "original": "240"
+    },
+    {
+     "id": "eq-parameter-4",
+     "type": "equation",
+     "page": 5,
+     "original": "AutoEncoder Encoder patch projection kernel size"
+    },
+    {
+     "id": "eq-parameter-5",
+     "type": "equation",
+     "page": 5,
+     "original": "7"
+    },
+    {
+     "id": "eq-parameter-6",
+     "type": "equation",
+     "page": 5,
+     "original": "Encoder patch projection dimension"
+    },
+    {
+     "id": "eq-parameter-7",
+     "type": "equation",
+     "page": 5,
+     "original": "1024"
+    },
+    {
+     "id": "eq-parameter-8",
+     "type": "equation",
+     "page": 5,
+     "original": "Encoder transformer layers1"
+    },
+    {
+     "id": "eq-parameter-9",
+     "type": "equation",
+     "page": 5,
+     "original": "2 →2 →2 →2"
+    },
+    {
+     "id": "eq-parameter-10",
+     "type": "equation",
+     "page": 5,
+     "original": "Encoder sliding window size"
+    },
+    {
+     "id": "eq-parameter-11",
+     "type": "equation",
+     "page": 5,
+     "original": "16 →8 →4 →2"
+    },
+    {
+     "id": "eq-parameter-12",
+     "type": "equation",
+     "page": 5,
+     "original": "Encoder conv kernels"
+    },
+    {
+     "id": "eq-parameter-13",
+     "type": "equation",
+     "page": 5,
+     "original": "4 →4 →4 →3"
+    },
+    {
+     "id": "eq-parameter-14",
+     "type": "equation",
+     "page": 5,
+     "original": "Encoder conv strides"
+    },
+    {
+     "id": "eq-parameter-15",
+     "type": "equation",
+     "page": 5,
+     "original": "2 →2 →2 →1"
+    },
+    {
+     "id": "p-parameter-2",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-parameter-2-1",
+       "original": "(Decoder flips all →to ←and uses transposed convolutions) Discrete bottleneck Semantic VQ2 codebook size",
+       "zh": "此处为表 1 散行（抽取时按阅读顺序混入正文），依次给出：取值；输入/预处理——采样率 24000、块大小 240；自编码器——编码器块投影核大小 7、投影维度 1024、编码器 Transformer 层数与滑动窗口大小、卷积核与步幅（解码器把所有 → 翻转为 ← 并使用转置卷积）；离散瓶颈——语义 VQ 码本大小 8192、声学 FSQ 码本数量×大小 36 × 21；判别器 FFT 大小 2296, 1418, 876, 542, 334, 206, 126, 76；通道数 256。脚注：1) 为训练稳定，LayerScale 初始缩放 0.01，QK 归一化 ε = 10−6；2) 训练时 VQ 以 50% 概率施加；3) 训练时 50% 用 FSQ 量化、25% 加抖动（幅度 1/L 的均匀噪声）、25% 不量化。损失的其余部分接上一段：用该特征匹配损失替代标准 GAN 生成器损失，因为随着训练推进，判别器特征能提供越来越有判别力的重建信号。"
+      }
+     ]
+    },
+    {
+     "id": "eq-parameter-16",
+     "type": "equation",
+     "page": 5,
+     "original": "8192"
+    },
+    {
+     "id": "eq-parameter-17",
+     "type": "equation",
+     "page": 5,
+     "original": "Acoustic FSQ3 codebook count×size"
+    },
+    {
+     "id": "eq-parameter-18",
+     "type": "equation",
+     "page": 5,
+     "original": "36 × 21"
+    },
+    {
+     "id": "eq-parameter-19",
+     "type": "equation",
+     "page": 5,
+     "original": "Discriminator FFT sizes"
+    },
+    {
+     "id": "eq-parameter-20",
+     "type": "equation",
+     "page": 5,
+     "original": "2296, 1418, 876, 542, 334, 206, 126, 76"
+    },
+    {
+     "id": "eq-parameter-21",
+     "type": "equation",
+     "page": 5,
+     "original": "Channels"
+    },
+    {
+     "id": "eq-parameter-22",
+     "type": "equation",
+     "page": 5,
+     "original": "256"
+    },
+    {
+     "id": "p-parameter-3",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-parameter-3-1",
+       "original": "1 For training stability, we use LayerScale with initial scale of 0.01 and QK normalization with ϵ = 10−6. 2 During training, VQ is applied with 50% probability.",
+       "zh": "此处为表 1 散行（抽取时按阅读顺序混入正文），依次给出：取值；输入/预处理——采样率 24000、块大小 240；自编码器——编码器块投影核大小 7、投影维度 1024、编码器 Transformer 层数与滑动窗口大小、卷积核与步幅（解码器把所有 → 翻转为 ← 并使用转置卷积）；离散瓶颈——语义 VQ 码本大小 8192、声学 FSQ 码本数量×大小 36 × 21；判别器 FFT 大小 2296, 1418, 876, 542, 334, 206, 126, 76；通道数 256。脚注：1) 为训练稳定，LayerScale 初始缩放 0.01，QK 归一化 ε = 10−6；2) 训练时 VQ 以 50% 概率施加；3) 训练时 50% 用 FSQ 量化、25% 加抖动（幅度 1/L 的均匀噪声）、25% 不量化。损失的其余部分接上一段：用该特征匹配损失替代标准 GAN 生成器损失，因为随着训练推进，判别器特征能提供越来越有判别力的重建信号。"
+      }
+     ]
+    },
+    {
+     "id": "eq-parameter-23",
+     "type": "equation",
+     "page": 5,
+     "original": "3 During training: 50% quantized with FSQ, 25% dithered (uniform noise of magnitude 1/L), 25% unquan-"
+    },
+    {
+     "id": "p-parameter-4",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-parameter-4-1",
+       "original": "tized. loss in place of the standard GAN generator loss, as the evolving discriminator features provide an increasingly discriminative reconstruction signal throughout training.",
        "zh": "此处为表 1 散行（抽取时按阅读顺序混入正文），依次给出：取值；输入/预处理——采样率 24000、块大小 240；自编码器——编码器块投影核大小 7、投影维度 1024、编码器 Transformer 层数与滑动窗口大小、卷积核与步幅（解码器把所有 → 翻转为 ← 并使用转置卷积）；离散瓶颈——语义 VQ 码本大小 8192、声学 FSQ 码本数量×大小 36 × 21；判别器 FFT 大小 2296, 1418, 876, 542, 334, 206, 126, 76；通道数 256。脚注：1) 为训练稳定，LayerScale 初始缩放 0.01，QK 归一化 ε = 10−6；2) 训练时 VQ 以 50% 概率施加；3) 训练时 50% 用 FSQ 量化、25% 加抖动（幅度 1/L 的均匀噪声）、25% 不量化。损失的其余部分接上一段：用该特征匹配损失替代标准 GAN 生成器损失，因为随着训练推进，判别器特征能提供越来越有判别力的重建信号。"
       }
      ]
@@ -687,13 +963,19 @@ globalThis.PAPER_2603_25551 = {
      ]
     },
     {
+     "id": "eq-training-objective-1",
+     "type": "equation",
+     "page": 5,
+     "original": "αLfeature + βLASR + γLL1 + γLSTFT + δLcommit (3)"
+    },
+    {
      "id": "p-training-objective-2",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
        "id": "s-training-objective-2-1",
-       "original": "αLfeature + βLASR + γLL1 + γLSTFT + δLcommit where α=1.0, β=1.0, γ=0.9999t (with t the current training step), and δ=0.1.",
+       "original": "where α=1.0, β=1.0, γ=0.9999t (with t the current training step), and δ=0.1.",
        "zh": "αLfeature + βLASR + γLL1 + γLSTFT + δLcommit，其中 α=1.0、β=1.0、γ=0.9999t（t 为当前训练步数）、δ=0.1。"
       },
       {
@@ -871,15 +1153,16 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-2-3-3-3",
-       "original": "Concretely, the form of vt and xt is: vt = αvθ(xt, t, h) + (1 −α)vθ(xt, t, ∅) xt+∆t = xt + vt · ∆t where h is the hidden state from decoder backbone and ∅is the unconditional case where we pass a vector of zeros with the same shape as h. vθ(xt, t, h) is the predicted velocity field at time step t, sample xt and conditioning input h.",
+       "original": "Concretely, the form of vt and xt is:",
        "zh": "具体地，vt 与 xt 的形式为：vt = αvθ(xt, t, h) + (1 −α)vθ(xt, t, ∅)；xt+∆t = xt + vt · ∆t。其中 h 是解码器主干的隐状态，∅ 表示无条件情形——我们传入一个与 h 形状相同的全零向量；vθ(xt, t, h) 是在时间步 t、样本 xt、条件输入 h 下预测的速度场。"
-      },
-      {
-       "id": "s-2-3-3-4",
-       "original": "We set ∆t = 1/8 and α = 1.2 based on the analysis in Section 5.2.",
-       "zh": "基于 Section 5.2 的分析，我们设 ∆t = 1/8、α = 1.2。"
       }
      ]
+    },
+    {
+     "id": "eq-2-3-1",
+     "type": "equation",
+     "page": 6,
+     "original": "vt = αvθ(xt, t, h) + (1 −α)vθ(xt, t, ∅) (4) xt+∆t = xt + vt · ∆t (5)"
     },
     {
      "id": "p-2-3-4",
@@ -888,23 +1171,13 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-2-3-4-1",
-       "original": "Note that in our architecture, CFG is applied independently at every frame in the FM transformer.",
-       "zh": "注意在我们的架构中，CFG 是在 FM Transformer 的每一帧上独立施加的。"
+       "original": "where h is the hidden state from decoder backbone and ∅is the unconditional case where we pass a vector of zeros with the same shape as h. vθ(xt, t, h) is the predicted velocity field at time step t, sample xt and conditioning input h.",
+       "zh": "具体地，vt 与 xt 的形式为：vt = αvθ(xt, t, h) + (1 −α)vθ(xt, t, ∅)；xt+∆t = xt + vt · ∆t。其中 h 是解码器主干的隐状态，∅ 表示无条件情形——我们传入一个与 h 形状相同的全零向量；vθ(xt, t, h) 是在时间步 t、样本 xt、条件输入 h 下预测的速度场。"
       },
       {
        "id": "s-2-3-4-2",
-       "original": "Hence, it only requires an extra forward-propagation of only the FM transformer, and is thus significantly cheaper than applying CFG in the decoder backbone.",
-       "zh": "因此它只需要对 FM Transformer 做一次额外前向传播，相比在解码器主干上施加 CFG 要便宜得多。"
-      },
-      {
-       "id": "s-2-3-4-3",
-       "original": "The float values predicted by the FM transformer are converted to discrete integer values by quantizing to the 21 FSQ levels.",
-       "zh": "FM Transformer 预测的浮点值通过量化到 21 个 FSQ 等级转换为离散整数值。"
-      },
-      {
-       "id": "s-2-3-4-4",
-       "original": "These discretized tokens are provided as input to the decoder backbone in the next decoding step.",
-       "zh": "这些离散化后的 token 在下一个解码步中作为输入送回解码器主干。"
+       "original": "We set ∆t = 1/8 and α = 1.2 based on the analysis in Section 5.2.",
+       "zh": "基于 Section 5.2 的分析，我们设 ∆t = 1/8、α = 1.2。"
       }
      ]
     },
@@ -915,26 +1188,53 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-2-3-5-1",
+       "original": "Note that in our architecture, CFG is applied independently at every frame in the FM transformer.",
+       "zh": "注意在我们的架构中，CFG 是在 FM Transformer 的每一帧上独立施加的。"
+      },
+      {
+       "id": "s-2-3-5-2",
+       "original": "Hence, it only requires an extra forward-propagation of only the FM transformer, and is thus significantly cheaper than applying CFG in the decoder backbone.",
+       "zh": "因此它只需要对 FM Transformer 做一次额外前向传播，相比在解码器主干上施加 CFG 要便宜得多。"
+      },
+      {
+       "id": "s-2-3-5-3",
+       "original": "The float values predicted by the FM transformer are converted to discrete integer values by quantizing to the 21 FSQ levels.",
+       "zh": "FM Transformer 预测的浮点值通过量化到 21 个 FSQ 等级转换为离散整数值。"
+      },
+      {
+       "id": "s-2-3-5-4",
+       "original": "These discretized tokens are provided as input to the decoder backbone in the next decoding step.",
+       "zh": "这些离散化后的 token 在下一个解码步中作为输入送回解码器主干。"
+      }
+     ]
+    },
+    {
+     "id": "p-2-3-6",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-2-3-6-1",
        "original": "Given the inputs to the decoder backbone are discrete tokens with embedding lookup, we also considered alternative architectures inspired by MaskGIT [Chang et al., 2022] and Depth Transformer [Défossez et al., 2024].",
        "zh": "既然解码器主干的输入是带嵌入查找的离散 token，我们也考虑过受 MaskGIT [Chang et al., 2022] 与 Depth Transformer [Défossez et al., 2024] 启发的替代架构。"
       },
       {
-       "id": "s-2-3-5-2",
+       "id": "s-2-3-6-2",
        "original": "Both approaches performed reasonably well, but were inferior to FM in human evaluations, especially on expressivity.",
        "zh": "两种方案表现都尚可，但在人工评测中不及 FM，差距在表现力维度上尤其明显。"
       },
       {
-       "id": "s-2-3-5-3",
+       "id": "s-2-3-6-3",
        "original": "In addition, MaskGIT requires attending over all 36 acoustic codebook positions and conditioning tokens, resulting in a per-frame sequence length of 38, compared to just 3 in the FM transformer (h, t, xt).",
        "zh": "此外，MaskGIT 需要同时注意全部 36 个声学码本位置与条件 token，每帧序列长度达 38，而 FM Transformer 只有 3（h、t、xt）。"
       },
       {
-       "id": "s-2-3-5-4",
+       "id": "s-2-3-6-4",
        "original": "Similarly, the Depth Transformer requires 36 auto-regressive decoding steps, compared to 8 NFEs for FM.",
        "zh": "同样，Depth Transformer 每帧需要 36 个自回归解码步，而 FM 只需 8 个 NFE。"
       },
       {
-       "id": "s-2-3-5-5",
+       "id": "s-2-3-6-5",
        "original": "Thus, FM is superior in quality, compute and latency.",
        "zh": "因此 FM 在质量、计算量和延迟上都更优。"
       }
@@ -1026,7 +1326,13 @@ globalThis.PAPER_2603_25551 = {
      "id": "eq-3-1-1",
      "type": "equation",
      "page": 6,
-     "original": "Lacoustic = Et∼U[0,1],x0∼D,x1∼N (0,1)∥vθ(xt, t) −ut(xt|x1, x0)∥2 2 ut(xt|x1, x0) = x1 −x0"
+     "original": "Lacoustic = Et∼U[0,1],x0∼D,x1∼N (0,1)∥vθ(xt, t) −ut(xt|x1, x0)∥2 2 (6)"
+    },
+    {
+     "id": "eq-3-1-2",
+     "type": "equation",
+     "page": 6,
+     "original": "ut(xt|x1, x0) = x1 −x0 (7)"
     },
     {
      "id": "p-3-1-3",
@@ -1106,10 +1412,28 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-3-2-2-1",
-       "original": "L(θ) = −Et∼U(0,1), xw,xl log σ −β ∆θ(xw, xl, t) −∆θref(xw, xl, t) , where ∆θ(xw, xl, t) = ∥vθ(xw t , t) −ut(xw t |xw)∥2 2 −∥vθ(xl t, t) −ut(xl t|xl)∥2 2.",
-       "zh": "L(θ) = −Et∼U(0,1), xw,xl log σ −β ∆θ(xw, xl, t) −∆θref(xw, xl, t)，其中 ∆θ(xw, xl, t) = ∥vθ(xw t , t) −ut(xw t |xw)∥2 2 − ∥vθ(xl t, t) −ut(xl t|xl)∥2 2。"
+       "original": "L(θ) = −Et∼U(0,1), xw,xl log σ",
+       "zh": "（公式：L(θ) = −E_{t~U(0,1), xw, xl} log σ[−β·(∆_θ(xw, xl, t) − ∆_θref(xw, xl, t))]（式 8），其中 ∆_θ(xw, xl, t) = ‖v_θ(xw_t, t) − u_t(xw_t|xw)‖^2_2 − ‖v_θ(xl_t, t) − u_t(xl_t|xl)‖^2_2。）"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-1",
+     "type": "equation",
+     "page": 7,
+     "original": "−β"
+    },
+    {
+     "id": "eq-3-2-2",
+     "type": "equation",
+     "page": 7,
+     "original": "∆θ(xw, xl, t) −∆θref(xw, xl, t)"
+    },
+    {
+     "id": "eq-3-2-3",
+     "type": "equation",
+     "page": 7,
+     "original": ", (8)"
     },
     {
      "id": "p-3-2-3",
@@ -1118,22 +1442,22 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-3-2-3-1",
-       "original": "We make the objective suitable for our auto-regressive setup (note the bold t showing each token has a differently sampled t) by computing: i=1 ∥vθ(xw i,ti, ti) −uw i,ti∥2 2 −",
-       "zh": "为使该目标适配我们的自回归设定（注意加粗的 t 表示每个 token 有各自采样的 t），我们计算：i=1 ∥vθ(xw i,ti, ti) −uw i,ti∥2 2 −"
+       "original": "where ∆θ(xw, xl, t) = ∥vθ(xw t , t) −ut(xw t |xw)∥2 2 −∥vθ(xl t, t) −ut(xl t|xl)∥2",
+       "zh": "（公式：L(θ) = −E_{t~U(0,1), xw, xl} log σ[−β·(∆_θ(xw, xl, t) − ∆_θref(xw, xl, t))]（式 8），其中 ∆_θ(xw, xl, t) = ‖v_θ(xw_t, t) − u_t(xw_t|xw)‖^2_2 − ‖v_θ(xl_t, t) − u_t(xl_t|xl)‖^2_2。）"
       }
      ]
     },
     {
-     "id": "eq-3-2-1",
+     "id": "eq-3-2-4",
      "type": "equation",
      "page": 7,
-     "original": "Nw ∆θ(xw, xl, t) ="
+     "original": "2."
     },
     {
-     "id": "eq-3-2-2",
+     "id": "eq-3-2-5",
      "type": "equation",
      "page": 7,
-     "original": "Nl i=1"
+     "original": "(9)"
     },
     {
      "id": "p-3-2-4",
@@ -1142,10 +1466,34 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-3-2-4-1",
-       "original": "∥vθ(xl i,ti, ti) −ul i,ti∥2 2 and find that length normalization (dividing by length of winner) causes instability.",
-       "zh": "∥vθ(xl i,ti, ti) −ul i,ti∥2 2；并且我们发现长度归一化（除以优胜样本的长度）会导致不稳定。"
+       "original": "We make the objective suitable for our auto-regressive setup (note the bold t showing each token has a differently sampled t) by computing: i=1 ∥vθ(xw i,ti, ti) −uw i,ti∥2",
+       "zh": "（式 9）为使该目标适配自回归设置（注意粗体 t 表示每个 token 有各自采样的 t），计算：Σ_{i=1} ‖v_θ(xw_{i,t_i}, t_i) − uw_{i,t_i}‖^2_2 −（续下式）。"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-6",
+     "type": "equation",
+     "page": 7,
+     "original": "2 −"
+    },
+    {
+     "id": "eq-3-2-7",
+     "type": "equation",
+     "page": 7,
+     "original": "Nw X"
+    },
+    {
+     "id": "eq-3-2-8",
+     "type": "equation",
+     "page": 7,
+     "original": "∆θ(xw, xl, t) ="
+    },
+    {
+     "id": "eq-3-2-9",
+     "type": "equation",
+     "page": 7,
+     "original": "Nl X"
     },
     {
      "id": "p-3-2-5",
@@ -1154,20 +1502,16 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-3-2-5-1",
-       "original": "We ensure that the t and x0 sampled for each location in the sequence is consistent for the policy model θ and reference model θref.",
-       "zh": "我们保证对序列中每个位置采样的 t 和 x0，在策略模型 θ 与参考模型 θref 之间是一致的。"
-      },
-      {
-       "id": "s-3-2-5-2",
-       "original": "The two DPO losses are added with uniform weights but we use a βsemantic = 0.1 and βacoustic = 0.5 as training is sensitive to the flow-DPO loss.",
-       "zh": "两个 DPO 损失以均匀权重相加，但我们取 βsemantic = 0.1、βacoustic = 0.5，因为训练对 flow-DPO 损失很敏感。"
-      },
-      {
-       "id": "s-3-2-5-3",
-       "original": "A low learning rate of 8e−8 is used for training stability.",
-       "zh": "为保证训练稳定，使用了 8e−8 的极低学习率。"
+       "original": "i=1 ∥vθ(xl i,ti, ti) −ul i,ti∥2",
+       "zh": "（公式片段：Σ_{i=1} ‖v_θ(x^l_{i,t_i}, t_i) − u^l_{i,t_i}‖^2_2（式 10）。并发现按长度归一化（除以获胜者长度）会导致不稳定。）"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-10",
+     "type": "equation",
+     "page": 7,
+     "original": "2 (10)"
     },
     {
      "id": "p-3-2-6",
@@ -1176,26 +1520,60 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-3-2-6-1",
+       "original": "and find that length normalization (dividing by length of winner) causes instability.",
+       "zh": "（公式片段：Σ_{i=1} ‖v_θ(x^l_{i,t_i}, t_i) − u^l_{i,t_i}‖^2_2（式 10）。并发现按长度归一化（除以获胜者长度）会导致不稳定。）"
+      }
+     ]
+    },
+    {
+     "id": "p-3-2-7",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-2-7-1",
+       "original": "We ensure that the t and x0 sampled for each location in the sequence is consistent for the policy model θ and reference model θref.",
+       "zh": "我们保证对序列中每个位置采样的 t 和 x0，在策略模型 θ 与参考模型 θref 之间是一致的。"
+      },
+      {
+       "id": "s-3-2-7-2",
+       "original": "The two DPO losses are added with uniform weights but we use a βsemantic = 0.1 and βacoustic = 0.5 as training is sensitive to the flow-DPO loss.",
+       "zh": "两个 DPO 损失以均匀权重相加，但我们取 βsemantic = 0.1、βacoustic = 0.5，因为训练对 flow-DPO 损失很敏感。"
+      },
+      {
+       "id": "s-3-2-7-3",
+       "original": "A low learning rate of 8e−8 is used for training stability.",
+       "zh": "为保证训练稳定，使用了 8e−8 的极低学习率。"
+      }
+     ]
+    },
+    {
+     "id": "p-3-2-8",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-2-8-1",
        "original": "The data for DPO is gathered using a rejection-sampling pipeline that takes as input a set of voice samples from a held-out set of single-speaker voice samples and diverse synthetically generated textprompts.",
        "zh": "DPO 数据通过一个拒绝采样流水线收集：输入是一个留出集里的单说话人语音样本，以及多样化的合成文本提示。"
       },
       {
-       "id": "s-3-2-6-2",
+       "id": "s-3-2-8-2",
        "original": "We prompt Mistral Small Creative 1 with the transcript of the voice prompt and randomly chosen personas to synthesize a diverse array of texts which continue or reply to the conversational context.",
        "zh": "我们把语音提示的转写和随机选取的人设（persona)一起交给 Mistral Small Creative 1，合成多种多样的文本，作为对话上下文的延续或回应。"
       },
       {
-       "id": "s-3-2-6-3",
+       "id": "s-3-2-8-3",
        "original": "The pretrained checkpoint then takes as input the voice and text prompts and generates multiple samples from each input, from which winner and loser pairs can be constructed.",
        "zh": "随后预训练检查点接收语音与文本提示，为每个输入生成多个样本，从中构造优胜-落败样本对。"
       },
       {
-       "id": "s-3-2-6-4",
+       "id": "s-3-2-8-4",
        "original": "Winners and losers are determined from WER, speaker similarity, loudness consistency, UTMOS-v2 [Baba et al., 2024] and other LM judge metrics.",
        "zh": "优胜与落败由 WER、说话人相似度、响度一致性、UTMOS-v2 [Baba et al., 2024] 以及其他语言模型评委指标共同决定。"
       },
       {
-       "id": "s-3-2-6-5",
+       "id": "s-3-2-8-5",
        "original": "We optimize the model using the combined DPO loss along with the pretraining objective on high-quality speech for 1 epoch, as we found that training longer on synthetic data led to more robotic speech.",
        "zh": "我们用组合的 DPO 损失加上在高质量语音上的预训练目标优化模型，只训 1 个 epoch，因为我们发现，在合成数据上训练更久会导致语音更机械。"
       }
@@ -1267,10 +1645,52 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-4-1-2-1",
-       "original": "Model fps token/frame × vocab. size bitrate Reconstruction (↓) Intrusive (↑) Perceptual (kbps) Mel STFT PESQ ESTOI ASR-WER (%)↓ Speaker Sim↑ Mimi – 8cb (Moshi) 12.5 8 × (2048) 1.1 0.702 1.177 2.07 0.803 11.75 0.672 Mimi – 16cb 12.5 16 × (2048) 2.2 0.618 1.100 2.67 0.865 11.01 0.829 Mimi – full 32cb 12.5 32 × (2048) 4.4 0.552 1.040 3.18 0.910 10.25 0.902 Voxtral Codec 12.5 1 × (8192) + 36 × (21) 2.1 0.545 0.982 3.05 0.882 10.66 0.843",
-       "zh": "此处为表 2 数值散行。表头依次为：模型、fps、token/帧 × 词表大小、码率（kbps）、重建指标（↓，Mel、STFT）、侵入式指标（↑，PESQ、ESTOI、ASR-WER (%)↓）、感知指标（说话人相似度↑）。Mimi – 8cb（Moshi）：12.5 fps、8 × (2048)、1.1 kbps、Mel 0.702、STFT 1.177、PESQ 2.07、ESTOI 0.803、ASR-WER 11.75、说话人相似度 0.672。Mimi – 16cb：12.5 fps、16 × (2048)、2.2 kbps、Mel 0.618、STFT 1.100、PESQ 2.67、ESTOI 0.865、ASR-WER 11.01、说话人相似度 0.829。Mimi – 全量 32cb：12.5 fps、32 × (2048)、4.4 kbps、Mel 0.552、STFT 1.040、PESQ 3.18、ESTOI 0.910、ASR-WER 10.25、说话人相似度 0.902。Voxtral Codec：12.5 fps、1 × (8192) + 36 × (21)、2.1 kbps、Mel 0.545、STFT 0.982、PESQ 3.05、ESTOI 0.882、ASR-WER 10.66、说话人相似度 0.843。"
+       "original": "Model fps token/frame × vocab. size bitrate Reconstruction (↓) Intrusive (↑) Perceptual (kbps) Mel STFT PESQ ESTOI ASR-WER (%)↓ Speaker Sim↑ Mimi – 8cb (Moshi)",
+       "zh": "表头：Model / fps token/frame × vocab. size / bitrate / Reconstruction (↓) / Intrusive (↑) / Perceptual (kbps) / Mel / STFT / PESQ / ESTOI / ASR-WER (%)↓ / Speaker Sim↑——Mimi – 8cb (Moshi)（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-1-1",
+     "type": "equation",
+     "page": 8,
+     "original": "12.5 8 × (2048) 1.1 0.702 1.177 2.07 0.803 11.75 0.672"
+    },
+    {
+     "id": "eq-4-1-2",
+     "type": "equation",
+     "page": 8,
+     "original": "Mimi – 16cb"
+    },
+    {
+     "id": "eq-4-1-3",
+     "type": "equation",
+     "page": 8,
+     "original": "12.5 16 × (2048) 2.2 0.618 1.100 2.67 0.865 11.01 0.829"
+    },
+    {
+     "id": "eq-4-1-4",
+     "type": "equation",
+     "page": 8,
+     "original": "Mimi – full 32cb"
+    },
+    {
+     "id": "eq-4-1-5",
+     "type": "equation",
+     "page": 8,
+     "original": "12.5 32 × (2048) 4.4 0.552 1.040 3.18 0.910 10.25 0.902"
+    },
+    {
+     "id": "eq-4-1-6",
+     "type": "equation",
+     "page": 8,
+     "original": "Voxtral Codec"
+    },
+    {
+     "id": "eq-4-1-7",
+     "type": "equation",
+     "page": 8,
+     "original": "12.5 1 × (8192) + 36 × (21) 2.1 0.545 0.982 3.05 0.882 10.66 0.843"
     }
    ]
   },
@@ -1393,10 +1813,124 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-4-2-6-1",
-       "original": "WER (%) ↓ UTMOS ↑ Speaker Sim ↑ Task Voxtral ElevenLabs Flash Voxtral ElevenLabs Flash Voxtral ElevenLabs Flash MiniMax Arabic 2.68 3.67 2.86 3.07 2.50 2.89 0.746 0.546 0.539 German 0.83 0.45 1.08 3.12 2.90 3.27 0.721 0.457 0.489 English 0.63 0.48 0.33 4.30 4.27 4.27 0.786 0.484 0.489 Spanish 0.51 0.87 0.49 3.41 3.18 2.99 0.762 0.443 0.541 French 3.22 2.34 2.26 2.83 2.90 2.94 0.587 0.339 0.378 Hindi 4.99 8.71 5.08 3.56 3.56 3.35 0.839 0.707 0.679 Italian 1.32 0.58 0.55 3.43 3.08 3.09 0.739 0.527 0.485 Dutch 1.99 1.52 0.83 3.89 3.53 3.68 0.720 0.397 0.598 Portuguese 1.02 0.92 1.15 3.66 3.41 3.41 0.785 0.571 0.642 Seed TTS 1.23 1.26 0.86 4.11 3.92 4.09 0.628 0.392 0.413",
-       "zh": "此处为表 3 数值散行。表头：WER (%) ↓、UTMOS ↑、说话人相似度 ↑，每列下分 Voxtral、ElevenLabs（v3）、Flash（v2.5）。MiniMax 集：阿拉伯语 WER 2.68/3.67/2.86、UTMOS 3.07/2.50/2.89、说话人相似度 0.746/0.546/0.539；德语 0.83/0.45/1.08、3.12/2.90/3.27、0.721/0.457/0.489；英语 0.63/0.48/0.33、4.30/4.27/4.27、0.786/0.484/0.489；西班牙语 0.51/0.87/0.49、3.41/3.18/2.99、0.762/0.443/0.541；法语 3.22/2.34/2.26、2.83/2.90/2.94、0.587/0.339/0.378；印地语 4.99/8.71/5.08、3.56/3.56/3.35、0.839/0.707/0.679；意大利语 1.32/0.58/0.55、3.43/3.08/3.09、0.739/0.527/0.485；荷兰语 1.99/1.52/0.83、3.89/3.53/3.68、0.720/0.397/0.598；葡萄牙语 1.02/0.92/1.15、3.66/3.41/3.41、0.785/0.571/0.642；Seed TTS 集：1.23/1.26/0.86、4.11/3.92/4.09、0.628/0.392/0.413。"
+       "original": "WER (%) ↓ UTMOS ↑ Speaker Sim ↑ Task Voxtral ElevenLabs v3 ElevenLabs Flash Voxtral ElevenLabs v3 ElevenLabs Flash Voxtral ElevenLabs v3 ElevenLabs Flash MiniMax Arabic",
+       "zh": "表头：WER (%) ↓ / UTMOS ↑ / Speaker Sim ↑ × Task（Voxtral / ElevenLabs v3 / ElevenLabs Flash 各列）——MiniMax / Arabic（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-2-1",
+     "type": "equation",
+     "page": 8,
+     "original": "2.68 3.67 2.86 3.07 2.50 2.89 0.746 0.546 0.539"
+    },
+    {
+     "id": "eq-4-2-2",
+     "type": "equation",
+     "page": 8,
+     "original": "German"
+    },
+    {
+     "id": "eq-4-2-3",
+     "type": "equation",
+     "page": 8,
+     "original": "0.83 0.45 1.08 3.12 2.90 3.27 0.721 0.457 0.489"
+    },
+    {
+     "id": "eq-4-2-4",
+     "type": "equation",
+     "page": 8,
+     "original": "English"
+    },
+    {
+     "id": "eq-4-2-5",
+     "type": "equation",
+     "page": 8,
+     "original": "0.63 0.48 0.33 4.30 4.27 4.27 0.786 0.484 0.489"
+    },
+    {
+     "id": "eq-4-2-6",
+     "type": "equation",
+     "page": 8,
+     "original": "Spanish"
+    },
+    {
+     "id": "eq-4-2-7",
+     "type": "equation",
+     "page": 8,
+     "original": "0.51 0.87 0.49 3.41 3.18 2.99 0.762 0.443 0.541"
+    },
+    {
+     "id": "eq-4-2-8",
+     "type": "equation",
+     "page": 8,
+     "original": "French"
+    },
+    {
+     "id": "eq-4-2-9",
+     "type": "equation",
+     "page": 8,
+     "original": "3.22 2.34 2.26 2.83 2.90 2.94 0.587 0.339 0.378"
+    },
+    {
+     "id": "eq-4-2-10",
+     "type": "equation",
+     "page": 8,
+     "original": "Hindi"
+    },
+    {
+     "id": "eq-4-2-11",
+     "type": "equation",
+     "page": 8,
+     "original": "4.99 8.71 5.08 3.56 3.56 3.35 0.839 0.707 0.679"
+    },
+    {
+     "id": "eq-4-2-12",
+     "type": "equation",
+     "page": 8,
+     "original": "Italian"
+    },
+    {
+     "id": "eq-4-2-13",
+     "type": "equation",
+     "page": 8,
+     "original": "1.32 0.58 0.55 3.43 3.08 3.09 0.739 0.527 0.485"
+    },
+    {
+     "id": "eq-4-2-14",
+     "type": "equation",
+     "page": 8,
+     "original": "Dutch"
+    },
+    {
+     "id": "eq-4-2-15",
+     "type": "equation",
+     "page": 8,
+     "original": "1.99 1.52 0.83 3.89 3.53 3.68 0.720 0.397 0.598"
+    },
+    {
+     "id": "eq-4-2-16",
+     "type": "equation",
+     "page": 8,
+     "original": "Portuguese"
+    },
+    {
+     "id": "eq-4-2-17",
+     "type": "equation",
+     "page": 8,
+     "original": "1.02 0.92 1.15 3.66 3.41 3.41 0.785 0.571 0.642"
+    },
+    {
+     "id": "eq-4-2-18",
+     "type": "equation",
+     "page": 8,
+     "original": "Seed TTS"
+    },
+    {
+     "id": "eq-4-2-19",
+     "type": "equation",
+     "page": 8,
+     "original": "1.23 1.26 0.86 4.11 3.92 4.09 0.628 0.392 0.413"
     }
    ]
   },
@@ -1600,10 +2134,64 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-emotion-steering-1-1",
-       "original": "Opponent Model Voxtral TTS Win Rate (%) Explicit 51.0 Gemini 2.5 Flash TTS 35.4 Implicit ElevenLabs Flash v2.5 58.3 55.4 Gemini 2.5 Flash TTS 37.1",
-       "zh": "此处为表 4 数值散行。表头：对手模型、Voxtral TTS 胜率（%）。显式引导：对 ElevenLabs v3 胜率 51.0，对 Gemini 2.5 Flash TTS 胜率 35.4；隐式引导：对 ElevenLabs Flash v2.5 胜率 58.3、对 ElevenLabs v3 胜率 55.4，对 Gemini 2.5 Flash TTS 胜率 37.1。"
+       "original": "Opponent Model Voxtral TTS Win Rate (%) Explicit ElevenLabs v3",
+       "zh": "表头：Opponent Model × Voxtral TTS Win Rate (%)——Explicit / ElevenLabs v3（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-emotion-steering-1",
+     "type": "equation",
+     "page": 9,
+     "original": "51.0"
+    },
+    {
+     "id": "eq-emotion-steering-2",
+     "type": "equation",
+     "page": 9,
+     "original": "Gemini 2.5 Flash TTS"
+    },
+    {
+     "id": "eq-emotion-steering-3",
+     "type": "equation",
+     "page": 9,
+     "original": "35.4"
+    },
+    {
+     "id": "eq-emotion-steering-4",
+     "type": "equation",
+     "page": 9,
+     "original": "Implicit ElevenLabs Flash v2.5"
+    },
+    {
+     "id": "eq-emotion-steering-5",
+     "type": "equation",
+     "page": 9,
+     "original": "58.3"
+    },
+    {
+     "id": "eq-emotion-steering-6",
+     "type": "equation",
+     "page": 9,
+     "original": "ElevenLabs v3"
+    },
+    {
+     "id": "eq-emotion-steering-7",
+     "type": "equation",
+     "page": 9,
+     "original": "55.4"
+    },
+    {
+     "id": "eq-emotion-steering-8",
+     "type": "equation",
+     "page": 9,
+     "original": "Gemini 2.5 Flash TTS"
+    },
+    {
+     "id": "eq-emotion-steering-9",
+     "type": "equation",
+     "page": 9,
+     "original": "37.1"
     }
    ]
   },
@@ -1703,10 +2291,112 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-language-1-1",
-       "original": "Voxtral TTS Win Rate (%) Arabic 72.9 Dutch 49.4 English 60.8 French 54.4 German 72.0 Hindi 79.8 Italian 57.1 Portuguese 74.4 Spanish 87.8",
-       "zh": "此处为表 5 数值散行：Voxtral TTS 胜率（%）——阿拉伯语 72.9、荷兰语 49.4、英语 60.8、法语 54.4、德语 72.0、印地语 79.8、意大利语 57.1、葡萄牙语 74.4、西班牙语 87.8。"
+       "original": "Voxtral TTS Win Rate (%) Arabic",
+       "zh": "表头：Voxtral TTS Win Rate (%)——Arabic（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-language-1",
+     "type": "equation",
+     "page": 10,
+     "original": "72.9"
+    },
+    {
+     "id": "eq-language-2",
+     "type": "equation",
+     "page": 10,
+     "original": "Dutch"
+    },
+    {
+     "id": "eq-language-3",
+     "type": "equation",
+     "page": 10,
+     "original": "49.4"
+    },
+    {
+     "id": "eq-language-4",
+     "type": "equation",
+     "page": 10,
+     "original": "English"
+    },
+    {
+     "id": "eq-language-5",
+     "type": "equation",
+     "page": 10,
+     "original": "60.8"
+    },
+    {
+     "id": "eq-language-6",
+     "type": "equation",
+     "page": 10,
+     "original": "French"
+    },
+    {
+     "id": "eq-language-7",
+     "type": "equation",
+     "page": 10,
+     "original": "54.4"
+    },
+    {
+     "id": "eq-language-8",
+     "type": "equation",
+     "page": 10,
+     "original": "German"
+    },
+    {
+     "id": "eq-language-9",
+     "type": "equation",
+     "page": 10,
+     "original": "72.0"
+    },
+    {
+     "id": "eq-language-10",
+     "type": "equation",
+     "page": 10,
+     "original": "Hindi"
+    },
+    {
+     "id": "eq-language-11",
+     "type": "equation",
+     "page": 10,
+     "original": "79.8"
+    },
+    {
+     "id": "eq-language-12",
+     "type": "equation",
+     "page": 10,
+     "original": "Italian"
+    },
+    {
+     "id": "eq-language-13",
+     "type": "equation",
+     "page": 10,
+     "original": "57.1"
+    },
+    {
+     "id": "eq-language-14",
+     "type": "equation",
+     "page": 10,
+     "original": "Portuguese"
+    },
+    {
+     "id": "eq-language-15",
+     "type": "equation",
+     "page": 10,
+     "original": "74.4"
+    },
+    {
+     "id": "eq-language-16",
+     "type": "equation",
+     "page": 10,
+     "original": "Spanish"
+    },
+    {
+     "id": "eq-language-17",
+     "type": "equation",
+     "page": 10,
+     "original": "87.8"
     }
    ]
   },
@@ -1721,16 +2411,10 @@ globalThis.PAPER_2603_25551 = {
    },
    "blocks": [
     {
-     "id": "p-overall-1",
-     "type": "paragraph",
+     "id": "eq-overall-1",
+     "type": "equation",
      "page": 10,
-     "sentences": [
-      {
-       "id": "s-overall-1-1",
-       "original": "68.4",
-       "zh": "68.4。"
-      }
-     ]
+     "original": "68.4"
     }
    ]
   },
@@ -1765,10 +2449,124 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-5-1-1-1",
-       "original": "WER (%) ↓ UTMOS ↑ Task Pretrain DPO Pretrain DPO MiniMax Arabic 2.80 3.01 German 4.08 3.05 English 0.84 4.25 Spanish 0.56 3.38 French 5.01 2.76 Hindi 3.39 3.43 Italian 2.18 3.36 Dutch 3.10 3.85 Portuguese 1.17 3.60 Seed TTS 1.58 4.07",
-       "zh": "此处为表 6 数值散行。表头：WER (%) ↓、UTMOS ↑，每列下分预训练（Pretrain）与 DPO。MiniMax 集：阿拉伯语 WER 2.80、UTMOS 3.01；德语 4.08、3.05；英语 0.84、4.25；西班牙语 0.56、3.38；法语 5.01、2.76；印地语 3.39、3.43；意大利语 2.18、3.36；荷兰语 3.10、3.85；葡萄牙语 1.17、3.60；Seed TTS 集 1.58、4.07。"
+       "original": "WER (%) ↓ UTMOS ↑ Task Pretrain DPO Pretrain DPO MiniMax Arabic",
+       "zh": "表头：WER (%) ↓ / UTMOS ↑ × Task（Pretrain / DPO）——MiniMax / Arabic（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-5-1-1",
+     "type": "equation",
+     "page": 10,
+     "original": "2.80 2.68 (-0.12) 3.01 3.07 (+0.06)"
+    },
+    {
+     "id": "eq-5-1-2",
+     "type": "equation",
+     "page": 10,
+     "original": "German"
+    },
+    {
+     "id": "eq-5-1-3",
+     "type": "equation",
+     "page": 10,
+     "original": "4.08 0.83 (-3.25) 3.05 3.12 (+0.07)"
+    },
+    {
+     "id": "eq-5-1-4",
+     "type": "equation",
+     "page": 10,
+     "original": "English"
+    },
+    {
+     "id": "eq-5-1-5",
+     "type": "equation",
+     "page": 10,
+     "original": "0.84 0.63 (-0.21) 4.25 4.30 (+0.05)"
+    },
+    {
+     "id": "eq-5-1-6",
+     "type": "equation",
+     "page": 10,
+     "original": "Spanish"
+    },
+    {
+     "id": "eq-5-1-7",
+     "type": "equation",
+     "page": 10,
+     "original": "0.56 0.51 (-0.06) 3.38 3.41 (+0.04)"
+    },
+    {
+     "id": "eq-5-1-8",
+     "type": "equation",
+     "page": 10,
+     "original": "French"
+    },
+    {
+     "id": "eq-5-1-9",
+     "type": "equation",
+     "page": 10,
+     "original": "5.01 3.22 (-1.79) 2.76 2.83 (+0.07)"
+    },
+    {
+     "id": "eq-5-1-10",
+     "type": "equation",
+     "page": 10,
+     "original": "Hindi"
+    },
+    {
+     "id": "eq-5-1-11",
+     "type": "equation",
+     "page": 10,
+     "original": "3.39 4.99 (+1.61) 3.43 3.56 (+0.13)"
+    },
+    {
+     "id": "eq-5-1-12",
+     "type": "equation",
+     "page": 10,
+     "original": "Italian"
+    },
+    {
+     "id": "eq-5-1-13",
+     "type": "equation",
+     "page": 10,
+     "original": "2.18 1.32 (-0.85) 3.36 3.43 (+0.07)"
+    },
+    {
+     "id": "eq-5-1-14",
+     "type": "equation",
+     "page": 10,
+     "original": "Dutch"
+    },
+    {
+     "id": "eq-5-1-15",
+     "type": "equation",
+     "page": 10,
+     "original": "3.10 1.99 (-1.11) 3.85 3.89 (+0.04)"
+    },
+    {
+     "id": "eq-5-1-16",
+     "type": "equation",
+     "page": 10,
+     "original": "Portuguese"
+    },
+    {
+     "id": "eq-5-1-17",
+     "type": "equation",
+     "page": 10,
+     "original": "1.17 1.02 (-0.15) 3.60 3.66 (+0.06)"
+    },
+    {
+     "id": "eq-5-1-18",
+     "type": "equation",
+     "page": 10,
+     "original": "Seed TTS"
+    },
+    {
+     "id": "eq-5-1-19",
+     "type": "equation",
+     "page": 10,
+     "original": "1.58 1.23 (-0.35) 4.07 4.11 (+0.04)"
     }
    ]
   },
@@ -1818,10 +2616,124 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-5-2-2-1",
-       "original": "Effect of NFEs 30.1 3.5 30.0 25.0 3.0 UTMOS ( WER ( 2.58 20.0 2.5 15.0 2.0 10.0 6.5 6.7 7.0 1.44 1.5 3.48 3.48 0.732 0.735 0.75 Speaker Similarity ( 0.70 0.656 0.65 0.60 0.55 0.50 0.45 0.421 2 4 8 16 NFEs 2 4 8 16 NFEs 2 4 8 16 NFEs Effect of CFG Scale 7.5 7.5 3.48 3.5 3.41 7.2 7.1 UTMOS ( 3.4 WER ( 7.0 3.3 6.7 6.8 3.2 6.5 6.3 6.2 3.09 3.1 6.2 3.52 0.737 Speaker Similarity ( 3.48 0.732 0.733 0.735 0.730 0.726 0.725 0.720 0.715 0.710 0.707 1.0 1.1 1.2 1.3 1.4 1.0 1.1 1.2 1.3 1.4 1.0 1.1 1.2 1.3 1.4",
-       "zh": "此处为图 4 双联图的散行标注。上半部分「NFE 的影响」：横轴 NFEs 取 2、4、8、16，三列依次为 UTMOS、WER、说话人相似度；图中读数包括 UTMOS 约 3.48（30.1、30.0、25.0、20.0、15.0、10.0 等为坐标/面板编号刻度）、WER 各点（2.58、1.44、1.5 等，横轴 6.5、6.7、7.0 为 WER 刻度，2.5、2.0、1.5 为 UTMOS 方向刻度）、说话人相似度（0.421、0.656、0.732、0.735，纵轴 0.45 至 0.75）。下半部分「CFG 尺度的影响」：横轴取 1.0、1.1、1.2、1.3、1.4，读数包括 UTMOS（3.41、3.48、3.52，纵轴 3.1 至 3.5）、WER（7.2、7.1、7.0、6.8、6.7、6.5、6.3、6.2、6.2 等，纵轴 7.5 至 6.2）、说话人相似度（0.707、0.710、0.715、0.720、0.725、0.726、0.730、0.732、0.733、0.735、0.737，纵轴刻度 3.0、3.1、3.2、3.3、3.4、3.5 与 0.50、0.55、0.60、0.65、0.70、0.75，3.09、6.2、3.48 等混入读数）。"
+       "original": "Effect of NFEs",
+       "zh": "（小标题：NFE 次数的影响（Effect of NFEs）。）"
       }
      ]
+    },
+    {
+     "id": "eq-5-2-1",
+     "type": "equation",
+     "page": 11,
+     "original": "30.1 3.5 30.0 25.0 3.0"
+    },
+    {
+     "id": "eq-5-2-2",
+     "type": "equation",
+     "page": 11,
+     "original": "UTMOS ("
+    },
+    {
+     "id": "eq-5-2-3",
+     "type": "equation",
+     "page": 11,
+     "original": ")"
+    },
+    {
+     "id": "eq-5-2-4",
+     "type": "equation",
+     "page": 11,
+     "original": "WER ("
+    },
+    {
+     "id": "eq-5-2-5",
+     "type": "equation",
+     "page": 11,
+     "original": ") 2.58 20.0 2.5 15.0 2.0 10.0 6.5 6.7 7.0 1.44 1.5 3.48 3.48 0.732 0.735 0.75"
+    },
+    {
+     "id": "eq-5-2-6",
+     "type": "equation",
+     "page": 11,
+     "original": "Speaker Similarity ("
+    },
+    {
+     "id": "eq-5-2-7",
+     "type": "equation",
+     "page": 11,
+     "original": ") 0.70 0.656 0.65 0.60 0.55 0.50 0.45 0.421 2 4 8 16"
+    },
+    {
+     "id": "eq-5-2-8",
+     "type": "equation",
+     "page": 11,
+     "original": "NFEs"
+    },
+    {
+     "id": "eq-5-2-9",
+     "type": "equation",
+     "page": 11,
+     "original": "2 4 8 16"
+    },
+    {
+     "id": "eq-5-2-10",
+     "type": "equation",
+     "page": 11,
+     "original": "NFEs"
+    },
+    {
+     "id": "eq-5-2-11",
+     "type": "equation",
+     "page": 11,
+     "original": "2 4 8 16"
+    },
+    {
+     "id": "eq-5-2-12",
+     "type": "equation",
+     "page": 11,
+     "original": "NFEs Effect of CFG Scale"
+    },
+    {
+     "id": "eq-5-2-13",
+     "type": "equation",
+     "page": 11,
+     "original": "7.5 7.5 3.48 3.5 3.41 7.2 7.1"
+    },
+    {
+     "id": "eq-5-2-14",
+     "type": "equation",
+     "page": 11,
+     "original": "UTMOS ("
+    },
+    {
+     "id": "eq-5-2-15",
+     "type": "equation",
+     "page": 11,
+     "original": ") 3.4"
+    },
+    {
+     "id": "eq-5-2-16",
+     "type": "equation",
+     "page": 11,
+     "original": "WER ("
+    },
+    {
+     "id": "eq-5-2-17",
+     "type": "equation",
+     "page": 11,
+     "original": ") 7.0 3.3 6.7 6.8 3.2 6.5 6.3 6.2 3.09 3.1 6.2 3.52 0.737"
+    },
+    {
+     "id": "eq-5-2-18",
+     "type": "equation",
+     "page": 11,
+     "original": "Speaker Similarity ("
+    },
+    {
+     "id": "eq-5-2-19",
+     "type": "equation",
+     "page": 11,
+     "original": ") 3.48 0.732 0.733 0.735 0.730 0.726 0.725 0.720 0.715 0.710 0.707 1.0 1.1 1.2 1.3 1.4 1.0 1.1 1.2 1.3 1.4 1.0 1.1 1.2 1.3 1.4"
     },
     {
      "id": "fig-5-2-2",
@@ -1973,10 +2885,28 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-configuration-1-1",
-       "original": "Latency RTF Eager mode 0.258 CUDA graph 0.103",
-       "zh": "此处为表 7 数值散行。表头：延迟 RTF。eager 模式 0.258；CUDA graph 0.103。"
+       "original": "Latency RTF Eager mode 133 ms",
+       "zh": "（表格：延迟/RTF——Eager 模式 133 ms/0.258；CUDA graph 70 ms/0.103。）"
       }
      ]
+    },
+    {
+     "id": "eq-configuration-1",
+     "type": "equation",
+     "page": 11,
+     "original": "0.258"
+    },
+    {
+     "id": "eq-configuration-2",
+     "type": "equation",
+     "page": 11,
+     "original": "CUDA graph 70 ms"
+    },
+    {
+     "id": "eq-configuration-3",
+     "type": "equation",
+     "page": 11,
+     "original": "0.103"
     }
    ]
   },
@@ -2116,10 +3046,52 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-concurrency-1-1",
-       "original": "Latency RTF Throughput (char/s/GPU) Wait Rate 1 0.103 119.14 0% 16 0.237 879.11 0% 32 0.302 1430.78 0%",
-       "zh": "此处为表 8 数值散行。表头：延迟 RTF、吞吐（字符/秒/GPU）、等待率。并发 1：RTF 0.103、吞吐 119.14、等待率 0%；并发 16：RTF 0.237、吞吐 879.11、等待率 0%；并发 32：RTF 0.302、吞吐 1430.78、等待率 0%。"
+       "original": "Latency RTF Throughput (char/s/GPU) Wait Rate",
+       "zh": "表头：Latency / RTF / Throughput (char/s/GPU) / Wait Rate（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-concurrency-1",
+     "type": "equation",
+     "page": 12,
+     "original": "1"
+    },
+    {
+     "id": "eq-concurrency-2",
+     "type": "equation",
+     "page": 12,
+     "original": "70 ms"
+    },
+    {
+     "id": "eq-concurrency-3",
+     "type": "equation",
+     "page": 12,
+     "original": "0.103 119.14 0% 16"
+    },
+    {
+     "id": "eq-concurrency-4",
+     "type": "equation",
+     "page": 12,
+     "original": "331 ms"
+    },
+    {
+     "id": "eq-concurrency-5",
+     "type": "equation",
+     "page": 12,
+     "original": "0.237 879.11 0% 32"
+    },
+    {
+     "id": "eq-concurrency-6",
+     "type": "equation",
+     "page": 12,
+     "original": "552 ms"
+    },
+    {
+     "id": "eq-concurrency-7",
+     "type": "equation",
+     "page": 12,
+     "original": "0.302 1430.78 0%"
     }
    ]
   },
@@ -2350,7 +3322,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-6-3",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 31:2523–2533, 2023. doi: 10.1109/TASLP.2023.3288409."
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 31:2523–2533, 2023. doi: 10.1109/TASLP.2023.3288409.",
+       "zh": "3."
       }
      ]
     },
@@ -2373,7 +3346,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-7-4",
-       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pages 11315–11325, June 2022."
+       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pages 11315–11325, June 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -2388,7 +3362,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-8-2",
-       "original": "High fidelity neural audio compression. arXiv preprint arXiv:2210.13438, 2022."
+       "original": "High fidelity neural audio compression. arXiv preprint arXiv:2210.13438, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -2448,7 +3423,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-12-2",
-       "original": "Classifier-free diffusion guidance. arXiv preprint arXiv:2207.12598, 2022."
+       "original": "Classifier-free diffusion guidance. arXiv preprint arXiv:2207.12598, 2022.",
+       "zh": "2."
       },
       {
        "id": "s-references-12-3",
@@ -2482,7 +3458,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-14-3",
-       "original": "In Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles, 2023. doi: 10.1145/3600006.3613165."
+       "original": "In Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles, 2023. doi: 10.1145/3600006.3613165.",
+       "zh": "3."
       }
      ]
     },
@@ -2501,7 +3478,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-15-3",
-       "original": "In Advances in Neural Information Processing Systems, volume 36, 2023."
+       "original": "In Advances in Neural Information Processing Systems, volume 36, 2023.",
+       "zh": "3."
       },
       {
        "id": "s-references-15-4",
@@ -2528,9 +3506,15 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-16-4",
-       "original": "IEEE, 2024."
+       "original": "IEEE,"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 14,
+     "original": "2024."
     },
     {
      "id": "p-references-17",
@@ -2539,7 +3523,8 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "Alexander H."
+       "original": "Alexander H.",
+       "zh": "Alexander H."
       },
       {
        "id": "s-references-17-2",
@@ -2569,7 +3554,8 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "Alexander H Liu, Kartik Khandelwal, Sandeep Subramanian, Victor Jouault, Abhinav Rastogi, Adrien Sadé, Alan Jeffares, Albert Jiang, Alexandre Cahill, Alexandre Gavaudan, et al. Ministral 3. arXiv preprint arXiv:2601.08584, 2026."
+       "original": "Alexander H Liu, Kartik Khandelwal, Sandeep Subramanian, Victor Jouault, Abhinav Rastogi, Adrien Sadé, Alan Jeffares, Albert Jiang, Alexandre Cahill, Alexandre Gavaudan, et al. Ministral 3. arXiv preprint arXiv:2601.08584, 2026.",
+       "zh": "1."
       }
      ]
     },
@@ -2584,7 +3570,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-20-2",
-       "original": "Finite scalar quantization: VQ-VAE made simple, 2023."
+       "original": "Finite scalar quantization: VQ-VAE made simple, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -2595,7 +3582,8 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "Tu Anh Nguyen, Wei-Ning Hsu, Antony d’Avirro, Bowen Shi, Itai Gat, Maryam Fazel-Zarani, Tal Remez, Jade Copet, Gabriel Synnaeve, Michael Hassid, et al. Expresso: A benchmark and analysis of discrete expressive speech resynthesis. arXiv preprint arXiv:2308.05725, 2023."
+       "original": "Tu Anh Nguyen, Wei-Ning Hsu, Antony d’Avirro, Bowen Shi, Itai Gat, Maryam Fazel-Zarani, Tal Remez, Jade Copet, Gabriel Synnaeve, Michael Hassid, et al. Expresso: A benchmark and analysis of discrete expressive speech resynthesis. arXiv preprint arXiv:2308.05725, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -2617,9 +3605,16 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "Scaling transformers for low-bitrate high-quality speech coding. arXiv preprint arXiv:2411.19842, 2024."
+       "original": "Scaling transformers for low-bitrate high-quality speech coding. arXiv preprint arXiv:2411.19842,",
+       "zh": "1."
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 15,
+     "original": "2024."
     },
     {
      "id": "p-references-24",
@@ -2636,9 +3631,16 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-24-3",
-       "original": "In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), pages 4195–4205, October 2023."
+       "original": "In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), pages 4195–4205, October",
+       "zh": "3."
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 15,
+     "original": "2023."
     },
     {
      "id": "p-references-25",
@@ -2659,7 +3661,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-25-4",
-       "original": "PMLR, 2021."
+       "original": "PMLR, 2021.",
+       "zh": "1."
       },
       {
        "id": "s-references-25-5",
@@ -2689,7 +3692,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-27-2",
-       "original": "Train short, test long: Attention with linear biases enables input length extrapolation. arXiv preprint arXiv:2108.12409, 2021."
+       "original": "Train short, test long: Attention with linear biases enables input length extrapolation. arXiv preprint arXiv:2108.12409, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -2719,7 +3723,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-29-3",
-       "original": "PMLR, 2023."
+       "original": "PMLR, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -2742,7 +3747,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-30-4",
-       "original": "In Advances in Neural Information Processing Systems, 2023."
+       "original": "In Advances in Neural Information Processing Systems, 2023.",
+       "zh": "3."
       },
       {
        "id": "s-references-30-5",
@@ -2765,7 +3771,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-31-3",
-       "original": "In Proceedings of the IEEE/CVF international conference on computer vision, pages 32–42, 2021."
+       "original": "In Proceedings of the IEEE/CVF international conference on computer vision, pages 32–42, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -2810,11 +3817,13 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-34-2",
-       "original": "Neural codec language models are zero-shot text to speech synthesizers. arXiv preprint arXiv:2301.02111, 2023."
+       "original": "Neural codec language models are zero-shot text to speech synthesizers. arXiv preprint arXiv:2301.02111, 2023.",
+       "zh": "1."
       },
       {
        "id": "s-references-34-3",
-       "original": "URL https://arxiv.org/abs/2301.02111."
+       "original": "URL https://arxiv.org/abs/2301.02111.",
+       "zh": "1."
       }
      ]
     },
@@ -2829,7 +3838,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-35-2",
-       "original": "Ts3-codec: Transformer-based simple streaming single codec. arXiv preprint arXiv:2411.18803, 2024."
+       "original": "Ts3-codec: Transformer-based simple streaming single codec. arXiv preprint arXiv:2411.18803, 2024.",
+       "zh": "1."
       }
      ]
     },
@@ -2844,7 +3854,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-36-2",
-       "original": "URL https://arxiv.org/abs/2602.02204."
+       "original": "URL https://arxiv.org/abs/2602.02204.",
+       "zh": "2."
       }
      ]
     },
@@ -2878,7 +3889,8 @@ globalThis.PAPER_2603_25551 = {
       },
       {
        "id": "s-references-38-2",
-       "original": "Speechtokenizer: Unified speech tokenizer for speech large language models. arXiv preprint arXiv:2308.16692, 2023."
+       "original": "Speechtokenizer: Unified speech tokenizer for speech large language models. arXiv preprint arXiv:2308.16692, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -2904,7 +3916,8 @@ globalThis.PAPER_2603_25551 = {
      "sentences": [
       {
        "id": "s-references-40-1",
-       "original": "URL https://arxiv.org/abs/2512.10264."
+       "original": "URL https://arxiv.org/abs/2512.10264.",
+       "zh": "2."
       }
      ]
     }
@@ -2921,17 +3934,6 @@ globalThis.PAPER_2603_25551 = {
    "kind": "motivation",
    "title": "全文的核心设问",
    "explanation": "整篇论文其实是围绕这一问展开的：语义必须 AR（长程一致、对齐文本），但 36 路稠密声学维度是否也必须逐个 AR 预测？Moshi 的 Depth Transformer 路径答案是「是」，Voxtral 的答案是否定的——把一个每帧要 36 步的 AR 问题换成 8 步 ODE 积分的连续生成问题。后面所有架构、训练与部署设计（FSQ、CFG 逐帧施加、CUDA graph）都是这个选择题的连锁后果。判断一篇 TTS 论文是否真混合架构，看它对这一个问题怎么回答就够了。",
-   "featured": true
-  },
-  {
-   "id": "ann-002",
-   "anchor": {
-    "sentence_id": "s-2-1-1-1",
-    "quote": "12.5 Hz frames of 37 discrete tokens"
-   },
-   "kind": "number",
-   "title": "2.14 kbps 的分解账",
-   "explanation": "12.5 Hz × (log2 8192 + 36 × log2 21) ≈ 2.14 kbps：语义流每秒只贡献 13 bit/帧 × 12.5 = 0.16 kbps，声学流扛了剩下的大头。这意味着保证「说什么」的代价极低，算力和码率几乎全部花在「说得像不像」。对比 Mimi 的 32 × 2048 RVQ（4.4 kbps），Voxtral 把声学从 32 个 2048 项码本换成 36 个 21 级 FSQ，码率减半还反超 PESQ，说明非码本式的标量量化在低码率段效率更高。",
    "featured": true
   },
   {
@@ -2981,7 +3983,7 @@ globalThis.PAPER_2603_25551 = {
   {
    "id": "ann-007",
    "anchor": {
-    "sentence_id": "s-2-3-4-2",
+    "sentence_id": "s-2-3-5-2",
     "quote": "significantly cheaper than applying CFG in the decoder backbone"
    },
    "kind": "engineering",
@@ -2992,7 +3994,7 @@ globalThis.PAPER_2603_25551 = {
   {
    "id": "ann-008",
    "anchor": {
-    "sentence_id": "s-2-3-5-4",
+    "sentence_id": "s-2-3-6-4",
     "quote": "36 auto-regressive decoding steps, compared to 8 NFEs"
    },
    "kind": "comparison",
@@ -3036,7 +4038,7 @@ globalThis.PAPER_2603_25551 = {
   {
    "id": "ann-012",
    "anchor": {
-    "sentence_id": "s-3-2-4-1",
+    "sentence_id": "s-3-2-6-1",
     "quote": "length normalization (dividing by length of winner) causes instability"
    },
    "kind": "critique",
@@ -3047,7 +4049,7 @@ globalThis.PAPER_2603_25551 = {
   {
    "id": "ann-013",
    "anchor": {
-    "sentence_id": "s-3-2-6-5",
+    "sentence_id": "s-3-2-8-5",
     "quote": "training longer on synthetic data led to more robotic speech"
    },
    "kind": "critique",

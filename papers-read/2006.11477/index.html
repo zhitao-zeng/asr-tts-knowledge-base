@@ -134,7 +134,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
     <div class="en-title">wav2vec 2.0: A Framework for Self-Supervised Learning of Speech Representations</div>
     <div class="meta">
       关联模型：<a href="../../index.html#/model/wav2vec2">Wav2Vec 2.0</a>（Meta · 2020-06） ·
-      全文 152 个语块 · 讲解 22 条（精选 12 条）
+      全文 481 个语块 · 讲解 22 条（精选 12 条）
     </div>
   </div>
   <div class="controls">
@@ -166,7 +166,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div>
     <p class="muted" style="font-size:12.5px">以上为论文级三条摘要；下面进入全文双语精读，讲解锚定在具体句子旁。</p>
   </section>
-  <nav class="toc"><a class="lv2" href="#sec-alexei-baevski">Alexei Baevski（作者信息）</a><a class="lv2" href="#sec-facebook-ai">Facebook AI（作者单位）</a><a class="lv1" href="#sec-abstract">摘要</a><a class="lv1" href="#sec-1">1 1 引言</a><a class="lv1" href="#sec-2">2 模型</a><a class="lv2" href="#sec-feature-encoder">特征编码器</a><a class="lv2" href="#sec-contextualized-representations-w">用 Transformer 构建上下文化表示</a><a class="lv2" href="#sec-quantization-module">量化模块</a><a class="lv1" href="#sec-3">3 3 训练</a><a class="lv2" href="#sec-3-1">3.1 3.1 掩码</a><a class="lv2" href="#sec-3-2">3.2 3.2 训练目标</a><a class="lv2" href="#sec-contrastive-loss">对比损失</a><a class="lv2" href="#sec-diversity-loss">多样性损失</a><a class="lv2" href="#sec-3-3">3.3 3.3 微调</a><a class="lv1" href="#sec-4">4 4 实验设置</a><a class="lv2" href="#sec-4-1">4.1 4.1 数据集</a><a class="lv2" href="#sec-4-2">4.2 4.2 预训练</a><a class="lv2" href="#sec-4-3">4.3 4.3 微调</a><a class="lv2" href="#sec-4-4">4.4 4.4 语言模型与解码</a><a class="lv1" href="#sec-5">5 5 实验结果</a><a class="lv2" href="#sec-5-1">5.1 5.1 低资源标注数据评测</a><a class="lv1" href="#sec-10">10 10 分钟标注（表格碎片）</a><a class="lv2" href="#sec-supervised">有监督（表格碎片）</a><a class="lv2" href="#sec-semi-supervised">半监督（表格碎片）</a><a class="lv2" href="#sec-this-work">本文方法（表格碎片）</a><a class="lv2" href="#sec-5-2">5.2 5.2 Librispeech 高资源标注数据评测</a><a class="lv2" href="#sec-5-3">5.3 5.3 TIMIT 音素识别</a><a class="lv2" href="#sec-this-work-no-lm">本文方法（无 LM，表格碎片）</a><a class="lv2" href="#sec-5-4">5.4 5.4 消融</a><a class="lv1" href="#sec-6">6 6 结论</a><a class="lv1" href="#sec-broader-impact">社会影响</a><a class="lv1" href="#sec-acknowledgments">致谢</a><a class="lv1" href="#sec-references">References</a><a class="lv1" href="#sec-appendices">附录</a><a class="lv1" href="#sec-A">A 附录 A 掩码分布</a><a class="lv1" href="#sec-B">B 附录 B 微调设置</a><a class="lv1" href="#sec-C">C 附录 C Libri-light 与 Librispeech 的完整结果</a><a class="lv1" href="#sec-10-2">10 10 分钟标注（附录表格碎片）</a><a class="lv1" href="#sec-D">D 附录 D 离散潜在语音表示分析</a><a class="lv1" href="#sec-E">E 附录 E 语音识别错误分析</a><a class="lv1" href="#sec-F">F 附录 F 消融</a></nav>
+  <nav class="toc"><a class="lv2" href="#sec-alexei-baevski">Alexei Baevski（作者信息）</a><a class="lv2" href="#sec-facebook-ai">Facebook AI（作者单位）</a><a class="lv1" href="#sec-abstract">摘要</a><a class="lv1" href="#sec-1">1 1 引言</a><a class="lv1" href="#sec-2">2 Model</a><a class="lv2" href="#sec-feature-encoder">特征编码器</a><a class="lv2" href="#sec-contextualized-representations-w">用 Transformer 构建上下文化表示</a><a class="lv2" href="#sec-quantization-module">量化模块</a><a class="lv1" href="#sec-3">3 3 训练</a><a class="lv2" href="#sec-3-1">3.1 3.1 掩码</a><a class="lv2" href="#sec-3-2">3.2 3.2 训练目标</a><a class="lv2" href="#sec-contrastive-loss">对比损失</a><a class="lv2" href="#sec-diversity-loss">多样性损失</a><a class="lv2" href="#sec-3-3">3.3 4.3 微调</a><a class="lv1" href="#sec-4">4 4 实验设置</a><a class="lv2" href="#sec-4-1">4.1 4.1 数据集</a><a class="lv2" href="#sec-4-2">4.2 4.2 预训练</a><a class="lv2" href="#sec-4-3">4.3 4.3 微调</a><a class="lv2" href="#sec-4-4">4.4 4.4 语言模型与解码</a><a class="lv1" href="#sec-5">5 5 实验结果</a><a class="lv2" href="#sec-5-1">5.1 5.1 低资源标注数据评测</a><a class="lv1" href="#sec-10">10 10 分钟标注（附录表格碎片）</a><a class="lv2" href="#sec-1h-labeled">1h labeled</a><a class="lv2" href="#sec-10h-labeled">10h labeled</a><a class="lv2" href="#sec-100h-labeled">100h labeled</a><a class="lv2" href="#sec-supervised">有监督（表格碎片）</a><a class="lv2" href="#sec-semi-supervised">半监督（表格碎片）</a><a class="lv2" href="#sec-this-work">本文方法（表格碎片）</a><a class="lv2" href="#sec-5-2">5.2 5.2 Librispeech 高资源标注数据评测</a><a class="lv2" href="#sec-5-3">5.3 5.3 TIMIT 音素识别</a><a class="lv2" href="#sec-this-work-no-lm">本文方法（无 LM，表格碎片）</a><a class="lv2" href="#sec-5-4">5.4 附录 F 消融</a><a class="lv1" href="#sec-6">6 6 结论</a><a class="lv1" href="#sec-broader-impact">社会影响</a><a class="lv1" href="#sec-acknowledgments">致谢</a><a class="lv1" href="#sec-references">References</a><a class="lv1" href="#sec-appendices">附录</a><a class="lv1" href="#sec-A">A 附录 A 掩码分布</a><a class="lv1" href="#sec-B">B 附录 B 微调设置</a><a class="lv1" href="#sec-C">C 附录 C Libri-light 与 Librispeech 的完整结果</a><a class="lv1" href="#sec-10-2">10 10 分钟标注（附录表格碎片）</a><a class="lv2" href="#sec-1h-labeled-2">1h labeled</a><a class="lv2" href="#sec-10h-labeled-2">10h labeled</a><a class="lv2" href="#sec-100h-labeled-2">100h labeled</a><a class="lv1" href="#sec-D">D 附录 D 离散潜在语音表示分析</a><a class="lv1" href="#sec-E">E 附录 E 语音识别错误分析</a><a class="lv1" href="#sec-F">F 附录 F 消融</a></nav>
   <article class="reader"><section>
       <h3 class="sech lv2" id="sec-alexei-baevski"><span class="t-zh">Alexei Baevski（作者信息）</span><span class="t-en">Alexei Baevski</span></h3><div class="pblk" id="p-alexei-baevski-1">
           <p class="en-lines"><span class="sent" data-sid="s-alexei-baevski-1-1"><span class="en">Henry Zhou Abdelrahman Mohamed Michael Auli {abaevski,henryzhou7,abdo,michaelauli}@fb.com</span></span></p>
@@ -202,12 +202,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-1-2-1"><span class="en">In machine learning, self-supervised learning has emerged as a paradigm to learn general data representations from unlabeled examples and to ﬁne-tune the model on labeled data.</span></span> <span class="sent" data-sid="s-1-2-2"><span class="en">This has been particularly successful for natural language processing [43, 45, 9] and is an active research area for computer vision [20, 2, 36, 19, 6].</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-2-1"><span class="en">In machine learning, self-supervised learning has emerged as a paradigm to learn general data representations from unlabeled examples and to ﬁne-tune the model on labeled data.</span></span> <span class="sent" data-sid="s-1-2-2"><span class="en">This has been particularly successful for natural language processing [43, 45, 9] and is an active research area for</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-2-1"><span class="zh">在机器学习领域，自监督学习已经成为一种范式：先从无标注样本中学习通用的数据表示，再在标注数据上微调模型。</span></span><span class="sent" data-sid="s-1-2-2"><span class="zh">这一思路在自然语言处理上取得了巨大成功 [43, 45, 9]，也是计算机视觉中一个活跃的研究方向 [20, 2, 36, 19, 6]。</span></span></p>
           
         </div>
+<div class="eq" id="eq-1-1"><code>computer vision [20, 2, 36, 19, 6].</code></div>
 <div class="pblk" id="p-1-3">
-          <p class="en-lines"><span class="sent" data-sid="s-1-3-1"><span class="en">In this paper, we present a framework for self-supervised learning of representations from raw audio data.</span></span> <span class="sent" data-sid="s-1-3-2"><span class="en">Our approach encodes speech audio via a multi-layer convolutional neural network and then masks spans of the resulting latent speech representations [26, 56], similar to masked language modeling [9].</span><button class="mk feat" data-sid="s-1-3-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-1-3-3"><span class="en">The latent representations are fed to a Transformer network to build contextualized representations and the model is trained via a contrastive task where the true latent is to be distinguished from distractors [54, 49, 48, 28] (§ 2).</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-3-1"><span class="en">In this paper, we present a framework for self-supervised learning of representations from raw audio data.</span></span> <span class="sent" data-sid="s-1-3-2"><span class="en">Our approach encodes speech audio via a multi-layer convolutional neural network and then masks spans of the resulting latent speech representations [26, 56], similar to masked language modeling [9].</span><button class="mk feat" data-sid="s-1-3-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-1-3-3"><span class="en">The latent representations are fed to a Transformer network to build contextualized representations and the model is trained via a contrastive task where the true latent is to be distinguished</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-3-1"><span class="zh">本文提出一个从原始音频数据做表示自监督学习的框架。</span></span><span class="sent" data-sid="s-1-3-2"><span class="zh">我们的方法用多层卷积神经网络对语音音频编码，然后对得到的潜在语音表示做片段级掩码 [26, 56]，做法与掩码语言建模 [9] 类似。</span><button class="mk feat" data-sid="s-1-3-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-1-3-3"><span class="zh">这些潜在表示被送入一个 Transformer 网络以构建上下文化表示，模型通过一个对比任务来训练：需要从一组干扰项中分辨出真正的潜在表示 [54, 49, 48, 28]（§ 2）。</span></span></p>
           <div class="ann-zone"><div class="ann-panel" data-sid="s-1-3-2">
       <div class="ann-card kind-concept">
@@ -218,6 +219,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
+<div class="eq" id="eq-1-2"><code>from distractors [54, 49, 48, 28] (§ 2).</code></div>
 <div class="pblk" id="p-1-4">
           <p class="en-lines"><span class="sent" data-sid="s-1-4-1"><span class="en">As part of training, we learn discrete speech units [53, 32, 7, 18] via a gumbel softmax [24, 5] to represent the latent representations in the contrastive task (Figure 1) which we ﬁnd to be more effective than non-quantized targets.</span><button class="mk feat" data-sid="s-1-4-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-1-4-2"><span class="en">After pre-training on unlabeled speech, the model is ﬁne-tuned 1Code and models are available at https://github.com/pytorch/fairseq Preprint.</span></span> <span class="sent" data-sid="s-1-4-3"><span class="en">Under review.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-4-1"><span class="zh">作为训练的一部分，我们通过 gumbel softmax [24, 5] 学习离散的语音单元 [53, 32, 7, 18]，用于在对比任务中表示潜在表示（Figure 1）；我们发现这比不做量化的目标更有效。</span><button class="mk feat" data-sid="s-1-4-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-1-4-2"><span class="zh">在无标注语音上预训练之后，模型再进入微调阶段（脚注 1：代码与模型见 https://github.com/pytorch/fairseq；预印本。）</span></span><span class="sent" data-sid="s-1-4-3"><span class="zh">（本稿）正在评审中。</span></span></p>
@@ -235,30 +237,33 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-1-5-1"><span class="zh">上下文表示</span></span></p>
           
         </div>
-<div class="eq" id="eq-1-1"><code>C</code></div>
+<div class="eq" id="eq-1-3"><code>C</code></div>
+<div class="eq" id="eq-1-4"><code>`</code></div>
 <div class="pblk" id="p-1-6">
-          <p class="en-lines"><span class="sent" data-sid="s-1-6-1"><span class="en">` Contrastive loss</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-6-1"><span class="en">Contrastive loss</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-6-1"><span class="zh">对比损失</span></span></p>
           
         </div>
-<div class="eq" id="eq-1-2"><code>L</code></div>
+<div class="eq" id="eq-1-5"><code>L</code></div>
 <div class="pblk" id="p-1-7">
-          <p class="en-lines"><span class="sent" data-sid="s-1-7-1"><span class="en">Transformer … …</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-7-1"><span class="zh">Transformer ……</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-7-1"><span class="en">Transformer</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-7-1"><span class="zh">这些潜在表示被送入一个 Transformer 网络以构建上下文化表示，模型通过一个对比任务来训练：需要从一组干扰项中分辨出真正的潜在表示 [54, 49, 48, 28]（§ 2）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-1-6"><code>… …</code></div>
 <div class="pblk" id="p-1-8">
-          <p class="en-lines"><span class="sent" data-sid="s-1-8-1"><span class="en">Masked Quantized representations</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-8-1"><span class="zh">被掩码的（可见）侧与量化表示</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-8-1"><span class="en">Masked q q q q q Quantized representations</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-8-1"><span class="zh">图 1 内部标签：掩码（Masked）后的表示经量化得到量化表示（Quantized representations），q 为量化向量。</span></span></p>
           
         </div>
-<div class="eq" id="eq-1-3"><code>Q</code></div>
+<div class="eq" id="eq-1-7"><code>Q</code></div>
 <div class="pblk" id="p-1-9">
           <p class="en-lines"><span class="sent" data-sid="s-1-9-1"><span class="en">Latent speech representations</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-9-1"><span class="zh">潜在语音表示</span></span></p>
           
         </div>
-<div class="eq" id="eq-1-4"><code>Z</code></div>
+<div class="eq" id="eq-1-8"><code>Z</code></div>
+<div class="eq" id="eq-1-9"><code>X</code></div>
 <div class="pblk" id="p-1-10">
           <p class="en-lines"><span class="sent" data-sid="s-1-10-1"><span class="en">raw waveform CNN</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-10-1"><span class="zh">原始波形 → CNN</span></span></p>
@@ -276,7 +281,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-2"><span class="t-zh">2 模型</span><span class="t-en">2</span></h2><div class="pblk" id="p-2-1">
+      <h2 class="sech lv1" id="sec-2"><span class="secnum">2</span> <span class="t-zh">Model</span><span class="t-en">Model</span></h2><div class="pblk" id="p-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-2-1-1"><span class="en">Our model is composed of a multi-layer convolutional feature encoder f : X 7→Z which takes as input raw audio X and outputs latent speech representations z1, . . . , zT for T time-steps.</span></span> <span class="sent" data-sid="s-2-1-2"><span class="en">They are then fed to a Transformer g : Z 7→C to build representations c1, . . . , cT capturing information from the entire sequence [9, 5, 4].</span></span> <span class="sent" data-sid="s-2-1-3"><span class="en">The output of the feature encoder is discretized to qt with a quantization module Z 7→Q to represent the targets (Figure 1) in the self-supervised objective (§ 3.2).</span></span> <span class="sent" data-sid="s-2-1-4"><span class="en">Compared to vq-wav2vec [5], our model builds context representations over continuous speech representations and self-attention captures dependencies over the entire sequence of latent representations end-to-end.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-1"><span class="zh">我们的模型由一个多层卷积特征编码器 f : X 7→ Z 组成，它以原始音频 X 为输入，输出 T 个时间步的潜在语音表示 z1, . . . , zT。</span></span><span class="sent" data-sid="s-2-1-2"><span class="zh">这些表示随后被送入一个 Transformer g : Z 7→ C，构建从整个序列中捕获信息的表示 c1, . . . , cT [9, 5, 4]。</span></span><span class="sent" data-sid="s-2-1-3"><span class="zh">特征编码器的输出经由一个量化模块 Z 7→ Q 被离散化为 qt，用来表示自监督目标中的目标（Figure 1）（§ 3.2）。</span></span><span class="sent" data-sid="s-2-1-4"><span class="zh">与 vq-wav2vec [5] 不同，我们的模型在连续语音表示之上构建上下文表示，并且自注意力以端到端方式捕获整条潜在表示序列上的依赖关系。</span></span></p>
           
@@ -314,8 +319,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div>
 <div class="pblk" id="p-quantization-module-2">
-          <p class="en-lines"><span class="sent" data-sid="s-quantization-module-2-1"><span class="en">The Gumbel softmax enables choosing discrete codebook entries in a fully differentiable way [16, 24, 35].</span></span> <span class="sent" data-sid="s-quantization-module-2-2"><span class="en">We use the straight-through estimator [26] and setup G hard Gumbel softmax operations [24].</span></span> <span class="sent" data-sid="s-quantization-module-2-3"><span class="en">The feature encoder output z is mapped to l ∈RG×V logits and the probabilities for choosing the v-th codebook entry for group g are pg,v = exp(lg,v + nv)/τ PV k=1 exp(lg,k + nk)/τ , where τ is a non-negative temperature, n = −log(−log(u)) and u are uniform samples from U(0, 1).</span></span> <span class="sent" data-sid="s-quantization-module-2-4"><span class="en">During the forward pass, codeword i is chosen by i = argmaxjpg,j and in the backward pass, the true gradient of the Gumbel softmax outputs is used.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-quantization-module-2-1"><span class="zh">Gumbel softmax 使得以完全可微的方式选取离散码本条目成为可能 [16, 24, 35]。</span></span><span class="sent" data-sid="s-quantization-module-2-2"><span class="zh">我们使用直通估计器（straight-through estimator）[26]，并设置 G 个硬（hard）Gumbel softmax 操作 [24]。</span></span><span class="sent" data-sid="s-quantization-module-2-3"><span class="zh">特征编码器的输出 z 被映射为 l ∈ R^(G×V) 的 logits，为组 g 选取第 v 个码本条目的概率为 pg,v = exp(lg,v + nv)/τ ÷ Σk=1..V exp(lg,k + nk)/τ，其中 τ 是非负温度，n = −log(−log(u))，u 是从 U(0, 1) 中采样的均匀随机数。</span></span><span class="sent" data-sid="s-quantization-module-2-4"><span class="zh">前向传播中按 i = argmax_j pg,j 选取码字 i；反向传播中则使用 Gumbel softmax 输出的真实梯度。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-quantization-module-2-1"><span class="en">The Gumbel softmax enables choosing discrete codebook entries in a fully differentiable way [16, 24, 35].</span></span> <span class="sent" data-sid="s-quantization-module-2-2"><span class="en">We use the straight-through estimator [26] and setup G hard Gumbel softmax operations [24].</span></span> <span class="sent" data-sid="s-quantization-module-2-3"><span class="en">The feature encoder output z is mapped to l ∈RG×V logits and the probabilities for choosing the v-th codebook entry for group g are pg,v = exp(lg,v + nv)/τ PV k=1 exp(lg,k + nk)/τ</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-quantization-module-2-1"><span class="zh">Gumbel softmax 使得以完全可微的方式选取离散码本条目成为可能 [16, 24, 35]。</span></span><span class="sent" data-sid="s-quantization-module-2-2"><span class="zh">我们使用直通估计器（straight-through estimator）[26]，并设置 G 个硬（hard）Gumbel softmax 操作 [24]。</span></span><span class="sent" data-sid="s-quantization-module-2-3"><span class="zh">特征编码器输出 z 被映射为 l ∈ R^{G×V} 个 logit，第 g 组选择第 v 个码本条目的概率为 pg,v = exp(lg,v + nv)/τ / Σ_{k=1..V} exp(lg,k + nk)/τ（式 1），其中 τ 为非负温度，n = −log(−log(u))，u 为 U(0, 1) 均匀采样。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-quantization-module-1"><code>, (1)</code></div>
+<div class="pblk" id="p-quantization-module-3">
+          <p class="en-lines"><span class="sent" data-sid="s-quantization-module-3-1"><span class="en">where τ is a non-negative temperature, n = −log(−log(u)) and u are uniform samples from U(0, 1).</span></span> <span class="sent" data-sid="s-quantization-module-3-2"><span class="en">During the forward pass, codeword i is chosen by i = argmaxjpg,j and in the backward pass, the true gradient of the Gumbel softmax outputs is used.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-quantization-module-3-1"><span class="zh">特征编码器输出 z 被映射为 l ∈ R^{G×V} 个 logit，第 g 组选择第 v 个码本条目的概率为 pg,v = exp(lg,v + nv)/τ / Σ_{k=1..V} exp(lg,k + nk)/τ（式 1），其中 τ 为非负温度，n = −log(−log(u))，u 为 U(0, 1) 均匀采样。</span></span><span class="sent" data-sid="s-quantization-module-3-2"><span class="zh">前向传播中按 i = argmax_j pg,j 选取码字 i；反向传播中则使用 Gumbel softmax 输出的真实梯度。</span></span></p>
           
         </div></section>
 <section>
@@ -344,8 +355,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-3-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="en">L = Lm + αLd where α is a tuned hyperparameter.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="zh">总目标为 L = Lm + αLd，其中 α 是一个调优得到的超参数。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="en">L = Lm + αLd</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="zh">总损失 L = Lm + αLd（式 2），其中 α 为可调超参数。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-2-1"><code>(2)</code></div>
+<div class="pblk" id="p-3-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="en">where α is a tuned hyperparameter.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="zh">总损失 L = Lm + αLd（式 2），其中 α 为可调超参数。</span></span></p>
           
         </div></section>
 <section>
@@ -362,8 +379,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div>
 <div class="eq" id="eq-contrastive-loss-1"><code>Lm = −log exp(sim(ct, qt)/κ) P</code></div>
+<div class="eq" id="eq-contrastive-loss-2"><code>˜q∼Qt exp(sim(ct, ˜q)/κ) (3)</code></div>
 <div class="pblk" id="p-contrastive-loss-2">
-          <p class="en-lines"><span class="sent" data-sid="s-contrastive-loss-2-1"><span class="en">˜q∼Qt exp(sim(ct, ˜q)/κ) where we compute the cosine similarity sim(a, b) = aT b/∥a∥∥b∥between context representations and quantized latent speech representations [19, 6].</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-contrastive-loss-2-1"><span class="en">where we compute the cosine similarity sim(a, b) = aT b/∥a∥∥b∥between context representations and quantized latent speech representations [19, 6].</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-contrastive-loss-2-1"><span class="zh">（分母为对 q̃~Qt 求和的 exp(sim(ct, q̃)/κ)），其中我们在上下文表示与量化潜在语音表示之间计算余弦相似度 sim(a, b) = aᵀb/‖a‖‖b‖ [19, 6]。</span></span></p>
           
         </div></section>
@@ -380,16 +398,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="eq" id="eq-diversity-loss-1"><code>G Ld =</code></div>
-<div class="pblk" id="p-diversity-loss-2">
-          <p class="en-lines"><span class="sent" data-sid="s-diversity-loss-2-1"><span class="en">1 GV</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-diversity-loss-2-1"><span class="zh">（上式系数）1/(GV)（接下式对 g 求和、取负熵 −H(p̄g)）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-diversity-loss-2"><code>g=1 −H(¯pg) = 1 GV</code></div></section>
+<div class="eq" id="eq-diversity-loss-1"><code>G X</code></div>
+<div class="eq" id="eq-diversity-loss-2"><code>Ld = 1 GV</code></div>
+<div class="eq" id="eq-diversity-loss-3"><code>g=1 −H(¯pg) = 1 GV</code></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-3-3"><span class="secnum">3.3</span> <span class="t-zh">3.3 微调</span><span class="t-en">Fine-tuning</span></h3><div class="eq" id="eq-3-3-1"><code>G V</code></div>
-<div class="eq" id="eq-3-3-2"><code>v=1 ¯pg,v log ¯pg,v g=1</code></div>
+      <h3 class="sech lv2" id="sec-3-3"><span class="secnum">3.3</span> <span class="t-zh">4.3 微调</span><span class="t-en">Fine-tuning</span></h3><div class="eq" id="eq-3-3-1"><code>G X</code></div>
+<div class="eq" id="eq-3-3-2"><code>V X</code></div>
+<div class="eq" id="eq-3-3-3"><code>v=1 ¯pg,v log ¯pg,v (4)</code></div>
+<div class="eq" id="eq-3-3-4"><code>g=1</code></div>
 <div class="pblk" id="p-3-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-3-3-1-1"><span class="en">Pre-trained models are ﬁne-tuned for speech recognition by adding a randomly initialized linear projection on top of the context network into C classes representing the vocabulary of the task [4].</span></span> <span class="sent" data-sid="s-3-3-1-2"><span class="en">For Librispeech, we have 29 tokens for character targets plus a word boundary token.</span></span> <span class="sent" data-sid="s-3-3-1-3"><span class="en">Models are optimized by minimizing a CTC loss [14] and we apply a modiﬁed version of SpecAugment [41] by masking to time-steps and channels during training which delays overﬁtting and signiﬁcantly improves the ﬁnal error rates, especially on the Libri-light subsets with few labeled examples.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-1-1"><span class="zh">预训练模型面向语音识别做微调的方式是：在上下文网络之上加一个随机初始化的线性投影，输出 C 个类别，即任务词表 [4]。</span></span><span class="sent" data-sid="s-3-3-1-2"><span class="zh">对 Librispeech，我们使用 29 个字符目标 token，外加一个词边界 token。</span></span><span class="sent" data-sid="s-3-3-1-3"><span class="zh">模型通过最小化 CTC 损失 [14] 来优化，并施加一个修改版的 SpecAugment [41]：训练中对时间步和通道做掩码；这能推迟过拟合并显著降低最终错误率，在标注样本很少的 Libri-light 子集上尤其明显。</span></span></p>
@@ -502,17 +518,163 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-1-3-1"><span class="zh">脚注 3：https://github.com/facebook/Ax</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 1: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech. Models use either the audio of Librispeech (LS-960) or the larger LibriVox (LV-60k) as unlabeled data. We consider two model sizes: BASE (95m parameters) and LARGE (317m parameters). Prior work used 860 unlabeled hours (LS-860) but the total with labeled data is 960 hours and comparable to our setup.</p><p class="zh">表 1：在 Libri-light 低资源标注数据设置（10 分钟、1 小时、10 小时）以及 Librispeech 的 clean 100h 子集上训练时，Librispeech dev/test 集上的 WER。模型分别以 Librispeech 音频（LS-960）或更大的 LibriVox（LV-60k）作为无标注数据。我们考察两种模型规模：BASE（95m 参数）与 LARGE（317m 参数）。先前工作使用 860 小时无标注数据（LS-860），但加上标注数据后总量为 960 小时，与我们的设置相当。</p></div></section>
+<div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 1: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech. Models use either the audio of Librispeech (LS-960) or the larger LibriVox (LV-60k) as unlabeled data. We consider two model sizes: BASE (95m parameters) and LARGE (317m parameters). Prior work used 860 unlabeled hours (LS-860) but the total with labeled data is 960 hours and comparable to our setup.</p><p class="zh">表 1：在 Libri-light 低资源标注数据设置（10 分钟、1 小时、10 小时）以及 Librispeech 的 clean 100h 子集上训练时，Librispeech dev/test 集上的 WER。模型分别以 Librispeech 音频（LS-960）或更大的 LibriVox（LV-60k）作为无标注数据。我们考察两种模型规模：BASE（95m 参数）与 LARGE（317m 参数）。先前工作使用 860 小时无标注数据（LS-860），但加上标注数据后总量为 960 小时，与我们的设置相当。</p></div>
+<div class="pblk" id="p-5-1-4">
+          <p class="en-lines"><span class="sent" data-sid="s-5-1-4-1"><span class="en">Model Unlabeled LM dev test data clean other clean other</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-1-4-1"><span class="zh">表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。</span></span></p>
+          
+        </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-10"><span class="secnum">10</span> <span class="t-zh">10 分钟标注（表格碎片）</span><span class="t-en">min labeled</span></h2><div class="pblk" id="p-10-1">
-          <p class="en-lines"><span class="sent" data-sid="s-10-1-1"><span class="en">15.7 24.1 16.3 25.2 8.9 15.7 9.1 15.6 6.6 13.2 6.9 12.9 6.6 10.6 6.8 10.8 4.6 7.9 4.8 8.2 8.5 16.4 9.0 17.6 5.0 10.8 5.5 11.3 3.8 9.0 4.0 9.3 3.8 7.1 3.9 7.6 2.9 5.4 2.9 5.8 5.3 13.2 5.9 14.1 Iter. pseudo-labeling [58] 23.51 25.48 24.37 26.02 17.00 19.34 18.03 19.92 3.8 9.1 4.3 9.5 2.9 7.4 3.2 7.8 2.9 5.7 3.2 6.1 2.4 4.8 2.6 4.9 Hybrid DNN/HMM [34] 5.0 19.5 5.8 18.6 TTS data augm.</span></span> <span class="sent" data-sid="s-10-1-2"><span class="en">[30] 4.3 13.5 4.0 10.9 4.5 12.1 Iter. pseudo-labeling [58] 4.98 7.97 5.59 8.95 3.19 6.14 3.72 7.11 Noisy student [42] 3.9 8.8 4.2 8.6 2.7 7.9 3.4 8.0 2.2 6.3 2.6 6.3 2.1 4.8 2.3 5.0 1.9 4.0 2.0 4.0 Our approach of jointly learning discrete units and contextualized representations clearly improves over previous work which learned quantized audio units in a separate step [4], reducing WER by a about a third.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-1-1"><span class="zh">（Table 1 数值碎块）各行（无 LM / 4-gram LM / Transformer LM 等解码条件下）WER 数值：15.7 24.1 16.3 25.2 8.9 15.7 9.1 15.6 6.6 13.2 6.9 12.9 6.6 10.6 6.8 10.8 4.6 7.9 4.8 8.2 8.5 16.4 9.0 17.6 5.0 10.8 5.5 11.3 3.8 9.0 4.0 9.3 3.8 7.1 3.9 7.6 2.9 5.4 2.9 5.8 5.3 13.2 5.9 14.1；对比基线：Iter. pseudo-labeling [58] 23.51 25.48 24.37 26.02 17.00 19.34 18.03 19.92 3.8 9.1 4.3 9.5 2.9 7.4 3.2 7.8 2.9 5.7 3.2 6.1 2.4 4.8 2.6 4.9；Hybrid DNN/HMM [34] 5.0 19.5 5.8 18.6；TTS data augm.（TTS 数据增强）。</span></span><span class="sent" data-sid="s-10-1-2"><span class="zh">（Table 1 数值碎块续）TTS 数据增强 [30]：4.3 13.5 4.0 10.9 4.5 12.1；Iter. pseudo-labeling [58]：4.98 7.97 5.59 8.95 3.19 6.14 3.72 7.11；Noisy student [42]：3.9 8.8 4.2 8.6 2.7 7.9 3.4 8.0 2.2 6.3 2.6 6.3 2.1 4.8 2.3 5.0 1.9 4.0 2.0 4.0。我们联合学习离散单元与上下文化表示的方法，明显优于先在单独一步中学习量化音频单元的先前工作 [4]，WER 降低了约三分之一。</span></span></p>
+      <h2 class="sech lv1" id="sec-10"><span class="secnum">10</span> <span class="t-zh">10 分钟标注（附录表格碎片）</span><span class="t-en">min labeled</span></h2><div class="pblk" id="p-10-1">
+          <p class="en-lines"><span class="sent" data-sid="s-10-1-1"><span class="en">Discrete BERT [4] LS-960 4-gram</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10-1-1"><span class="zh">（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。</span></span></p>
           
         </div>
+<div class="eq" id="eq-10-1"><code>15.7 24.1 16.3 25.2</code></div>
+<div class="eq" id="eq-10-2"><code>BASE LS-960 4-gram</code></div>
+<div class="eq" id="eq-10-3"><code>8.9 15.7 9.1 15.6</code></div>
 <div class="pblk" id="p-10-2">
-          <p class="en-lines"><span class="sent" data-sid="s-10-2-1"><span class="en">A recent iterative self-training approach [42] represents the state of the art on the clean 100 hour subset of Librispeech but it requires multiple iterations of labeling, ﬁltering, and re-training.</span></span> <span class="sent" data-sid="s-10-2-2"><span class="en">Our approach is simpler: we pre-train on the unlabeled data and ﬁne-tune on the labeled data.</span></span> <span class="sent" data-sid="s-10-2-3"><span class="en">On the 100 hour subset of Librispeech, their method achieves WER 4.2/8.6 on test-clean/other which compares to WER 2.3/5.0 with the LARGE model in a like for like setup, a relative WER reduction of 45%/42%.</span><button class="mk feat" data-sid="s-10-2-3" title="查看讲解">解</button></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-2-1"><span class="zh">近期一种迭代式自训练方法 [42] 在 Librispeech 的 clean 100 小时子集上代表了此前最佳水平，但它需要多轮「打伪标签—过滤—重训」的迭代。</span></span><span class="sent" data-sid="s-10-2-2"><span class="zh">我们的方法更简单：在无标注数据上预训练，再在标注数据上微调。</span></span><span class="sent" data-sid="s-10-2-3"><span class="zh">在 Librispeech 的 100 小时子集上，他们的方法在 test-clean/other 上取得 WER 4.2/8.6；而在完全对等的设置下，我们的 LARGE 模型取得 WER 2.3/5.0，相对 WER 降幅为 45%/42%。</span><button class="mk feat" data-sid="s-10-2-3" title="查看讲解">解</button></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-10-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-10-2-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10-4"><code>6.6 13.2 6.9 12.9</code></div>
+<div class="pblk" id="p-10-3">
+          <p class="en-lines"><span class="sent" data-sid="s-10-3-1"><span class="en">LARGE LS-960 Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10-3-1"><span class="zh">（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10-5"><code>6.6 10.6 6.8 10.8</code></div>
+<div class="pblk" id="p-10-4">
+          <p class="en-lines"><span class="sent" data-sid="s-10-4-1"><span class="en">LV-60k Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10-4-1"><span class="zh">（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10-6"><code>4.6 7.9 4.8 8.2</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-1h-labeled"><span class="t-zh">1h labeled</span><span class="t-en">1h labeled</span></h3><div class="pblk" id="p-1h-labeled-1">
+          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-1-1"><span class="en">Discrete BERT [4] LS-960 4-gram</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-1-1"><span class="zh">（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-1h-labeled-1"><code>8.5 16.4 9.0 17.6</code></div>
+<div class="eq" id="eq-1h-labeled-2"><code>BASE LS-960 4-gram</code></div>
+<div class="eq" id="eq-1h-labeled-3"><code>5.0 10.8 5.5 11.3</code></div>
+<div class="pblk" id="p-1h-labeled-2">
+          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-2-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-1h-labeled-4"><code>3.8 9.0 4.0 9.3</code></div>
+<div class="pblk" id="p-1h-labeled-3">
+          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-3-1"><span class="en">LARGE LS-960 Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-3-1"><span class="zh">（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-1h-labeled-5"><code>3.8 7.1 3.9 7.6</code></div>
+<div class="pblk" id="p-1h-labeled-4">
+          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-4-1"><span class="en">LV-60k Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-4-1"><span class="zh">（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-1h-labeled-6"><code>2.9 5.4 2.9 5.8</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-10h-labeled"><span class="t-zh">10h labeled</span><span class="t-en">10h labeled</span></h3><div class="pblk" id="p-10h-labeled-1">
+          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-1-1"><span class="en">Discrete BERT [4] LS-960 4-gram</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-1-1"><span class="zh">（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10h-labeled-1"><code>5.3 13.2 5.9 14.1</code></div>
+<div class="pblk" id="p-10h-labeled-2">
+          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-2-1"><span class="en">Iter. pseudo-labeling [58] LS-960 4-gram+Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-2-1"><span class="zh">（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10h-labeled-2"><code>23.51 25.48 24.37 26.02</code></div>
+<div class="pblk" id="p-10h-labeled-3">
+          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-3-1"><span class="en">LV-60k 4-gram+Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-3-1"><span class="zh">（表格行）23.51 25.48 24.37 26.02｜LV-60k｜4-gram+Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10h-labeled-3"><code>17.00 19.34 18.03 19.92</code></div>
+<div class="eq" id="eq-10h-labeled-4"><code>BASE LS-960 4-gram</code></div>
+<div class="eq" id="eq-10h-labeled-5"><code>3.8 9.1 4.3 9.5</code></div>
+<div class="pblk" id="p-10h-labeled-4">
+          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-4-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10h-labeled-6"><code>2.9 7.4 3.2 7.8</code></div>
+<div class="pblk" id="p-10h-labeled-5">
+          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-5-1"><span class="en">LARGE LS-960 Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-5-1"><span class="zh">（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10h-labeled-7"><code>2.9 5.7 3.2 6.1</code></div>
+<div class="pblk" id="p-10h-labeled-6">
+          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-6-1"><span class="en">LV-60k Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-6-1"><span class="zh">（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10h-labeled-8"><code>2.4 4.8 2.6 4.9</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-100h-labeled"><span class="t-zh">100h labeled</span><span class="t-en">100h labeled</span></h3><div class="pblk" id="p-100h-labeled-1">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-1-1"><span class="en">Hybrid DNN/HMM [34]</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-1-1"><span class="zh">（表格行）Hybrid DNN/HMM [34]｜-｜4-gram：5.0 19.5 5.8 18.6；TTS data augm.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-1"><code>-</code></div>
+<div class="eq" id="eq-100h-labeled-2"><code>4-gram</code></div>
+<div class="eq" id="eq-100h-labeled-3"><code>5.0 19.5 5.8 18.6</code></div>
+<div class="eq" id="eq-100h-labeled-4"><code>TTS data augm. [30]</code></div>
+<div class="eq" id="eq-100h-labeled-5"><code>-</code></div>
+<div class="eq" id="eq-100h-labeled-6"><code>LSTM</code></div>
+<div class="eq" id="eq-100h-labeled-7"><code>4.3 13.5</code></div>
+<div class="eq" id="eq-100h-labeled-8"><code>Discrete BERT [4] LS-960 4-gram</code></div>
+<div class="eq" id="eq-100h-labeled-9"><code>4.0 10.9 4.5 12.1</code></div>
+<div class="pblk" id="p-100h-labeled-2">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-1"><span class="en">Iter. pseudo-labeling [58] LS-860 4-gram+Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-1"><span class="zh">（表格行）[30]｜-｜LSTM：4.3 13.5；Discrete BERT [4]｜LS-960｜4-gram：4.0 10.9 4.5 12.1；Iter. pseudo-labeling [58]｜LS-860｜4-gram+Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-10"><code>4.98 7.97 5.59 8.95</code></div>
+<div class="pblk" id="p-100h-labeled-3">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-3-1"><span class="en">LV-60k 4-gram+Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-3-1"><span class="zh">（表格行）23.51 25.48 24.37 26.02｜LV-60k｜4-gram+Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-11"><code>3.19 6.14 3.72 7.11</code></div>
+<div class="eq" id="eq-100h-labeled-12"><code>Noisy student [42] LS-860 LSTM</code></div>
+<div class="eq" id="eq-100h-labeled-13"><code>3.9 8.8 4.2 8.6</code></div>
+<div class="eq" id="eq-100h-labeled-14"><code>BASE LS-960 4-gram</code></div>
+<div class="eq" id="eq-100h-labeled-15"><code>2.7 7.9 3.4 8.0</code></div>
+<div class="pblk" id="p-100h-labeled-4">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-4-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-16"><code>2.2 6.3 2.6 6.3</code></div>
+<div class="pblk" id="p-100h-labeled-5">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-5-1"><span class="en">LARGE LS-960 Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-5-1"><span class="zh">（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-17"><code>2.1 4.8 2.3 5.0</code></div>
+<div class="pblk" id="p-100h-labeled-6">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-6-1"><span class="en">LV-60k Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-6-1"><span class="zh">（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-18"><code>1.9 4.0 2.0 4.0</code></div>
+<div class="pblk" id="p-100h-labeled-7">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-7-1"><span class="en">Our approach of jointly learning discrete units and contextualized representations clearly improves over previous work which learned quantized audio units in a separate step [4], reducing WER by a about a third.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-7-1"><span class="zh">（Table 1 数值碎块续）TTS 数据增强 [30]：4.3 13.5 4.0 10.9 4.5 12.1；Iter. pseudo-labeling [58]：4.98 7.97 5.59 8.95 3.19 6.14 3.72 7.11；Noisy student [42]：3.9 8.8 4.2 8.6 2.7 7.9 3.4 8.0 2.2 6.3 2.6 6.3 2.1 4.8 2.3 5.0 1.9 4.0 2.0 4.0。我们联合学习离散单元与上下文化表示的方法，明显优于先在单独一步中学习量化音频单元的先前工作 [4]，WER 降低了约三分之一。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-100h-labeled-8">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-8-1"><span class="en">A recent iterative self-training approach [42] represents the state of the art on the clean 100 hour subset of Librispeech but it requires multiple iterations of labeling, ﬁltering, and re-training.</span></span> <span class="sent" data-sid="s-100h-labeled-8-2"><span class="en">Our approach is simpler: we pre-train on the unlabeled data and ﬁne-tune on the labeled data.</span></span> <span class="sent" data-sid="s-100h-labeled-8-3"><span class="en">On the 100 hour subset of Librispeech, their method achieves WER 4.2/8.6 on test-clean/other which compares to WER 2.3/5.0 with the LARGE model in a like for like setup, a relative WER reduction of 45%/42%.</span><button class="mk feat" data-sid="s-100h-labeled-8-3" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-8-1"><span class="zh">近期一种迭代式自训练方法 [42] 在 Librispeech 的 clean 100 小时子集上代表了此前最佳水平，但它需要多轮「打伪标签—过滤—重训」的迭代。</span></span><span class="sent" data-sid="s-100h-labeled-8-2"><span class="zh">我们的方法更简单：在无标注数据上预训练，再在标注数据上微调。</span></span><span class="sent" data-sid="s-100h-labeled-8-3"><span class="zh">在 Librispeech 的 100 小时子集上，他们的方法在 test-clean/other 上取得 WER 4.2/8.6；而在完全对等的设置下，我们的 LARGE 模型取得 WER 2.3/5.0，相对 WER 降幅为 45%/42%。</span><button class="mk feat" data-sid="s-100h-labeled-8-3" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-100h-labeled-8-3">
       <div class="ann-card kind-comparison">
         <div class="ann-kind">和以前有什么区别</div>
         <div class="ann-title">赢在哪、对谁赢</div>
@@ -521,28 +683,109 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-10-3">
-          <p class="en-lines"><span class="sent" data-sid="s-10-3-1"><span class="en">When the LARGE model uses an order of magnitude less labeled data (10h labeled), then it still achieves WER 3.2/6.1, an error reduction of 24%/29% relative to iterative self-training.</span></span> <span class="sent" data-sid="s-10-3-2"><span class="en">Using only a single hour of labeled data, the same model achieves WER 3.9/7.6 which improves on both test-clean and test-other by 7%/12% - with two orders of magnitude less labeled data.</span></span> <span class="sent" data-sid="s-10-3-3"><span class="en">We note that the Libri-</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-3-1"><span class="zh">当 LARGE 模型使用少一个数量级的标注数据（10 小时标注）时，仍取得 WER 3.2/6.1，相对迭代式自训练的错误率降幅为 24%/29%。</span></span><span class="sent" data-sid="s-10-3-2"><span class="zh">只用 1 小时标注数据，同一模型取得 WER 3.9/7.6，在 test-clean 和 test-other 上分别提升 7%/12%——而标注数据少了两个数量级。</span></span><span class="sent" data-sid="s-10-3-3"><span class="zh">我们注意到 Libri-（原文在此断行，接下页「light data splits…」）。</span></span></p>
+<div class="pblk" id="p-100h-labeled-9">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-9-1"><span class="en">When the LARGE model uses an order of magnitude less labeled data (10h labeled), then it still achieves WER 3.2/6.1, an error reduction of 24%/29% relative to iterative self-training.</span></span> <span class="sent" data-sid="s-100h-labeled-9-2"><span class="en">Using only a single hour of labeled data, the same model achieves WER 3.9/7.6 which improves on both test-clean and test-other by 7%/12% - with two orders of magnitude less labeled data.</span></span> <span class="sent" data-sid="s-100h-labeled-9-3"><span class="en">We note that the Libri-</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-9-1"><span class="zh">当 LARGE 模型使用少一个数量级的标注数据（10 小时标注）时，仍取得 WER 3.2/6.1，相对迭代式自训练的错误率降幅为 24%/29%。</span></span><span class="sent" data-sid="s-100h-labeled-9-2"><span class="zh">只用 1 小时标注数据，同一模型取得 WER 3.9/7.6，在 test-clean 和 test-other 上分别提升 7%/12%——而标注数据少了两个数量级。</span></span><span class="sent" data-sid="s-100h-labeled-9-3"><span class="zh">我们注意到 Libri-（原文在此断行，接下页「light data splits…」）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-10-1"><span class="cap-k">表</span><p class="en">Table 2: WER on Librispeech when using all 960 hours of labeled data (cf. Table 1).</p><p class="zh">表 2：使用全部 960 小时标注数据时 Librispeech 上的 WER（参见 Table 1）。</p></div></section>
+<div class="cap" id="tab-100h-labeled-1"><span class="cap-k">表</span><p class="en">Table 2: WER on Librispeech when using all 960 hours of labeled data (cf. Table 1).</p><p class="zh">表 2：使用全部 960 小时标注数据时 Librispeech 上的 WER（参见 Table 1）。</p></div>
+<div class="pblk" id="p-100h-labeled-10">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-10-1"><span class="en">Model Unlabeled LM dev test data clean other clean other</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-10-1"><span class="zh">表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。</span></span></p>
+          
+        </div></section>
 <section>
       <h3 class="sech lv2" id="sec-supervised"><span class="t-zh">有监督（表格碎片）</span><span class="t-en">Supervised</span></h3><div class="pblk" id="p-supervised-1">
-          <p class="en-lines"><span class="sent" data-sid="s-supervised-1-1"><span class="en">CTC Transf [51] 2.20 4.94 2.47 5.45 S2S Transf.</span></span> <span class="sent" data-sid="s-supervised-1-2"><span class="en">[51] 2.10 4.79 2.33 5.17 Transf.</span></span> <span class="sent" data-sid="s-supervised-1-3"><span class="en">Transducer [60] 2.0 4.6 ContextNet [17] 1.9 3.9 1.9 4.1 Conformer [15] 2.1 4.3 1.9 3.9</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-supervised-1-1"><span class="zh">（Table 2 有监督基线数值碎块）CTC Transf [51]：2.20 4.94 2.47 5.45；S2S Transf.（seq2seq Transformer）。</span></span><span class="sent" data-sid="s-supervised-1-2"><span class="zh">（接上）[51]：2.10 4.79 2.33 5.17；Transf.（Transformer）。</span></span><span class="sent" data-sid="s-supervised-1-3"><span class="zh">（接上）Transducer [60]：2.0 4.6；ContextNet [17]：1.9 3.9 1.9 4.1；Conformer [15]：2.1 4.3 1.9 3.9。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-supervised-1-1"><span class="en">CTC Transf [51]</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-supervised-1-1"><span class="zh">（表格行）CTC｜Transf [51]｜-｜CLM+Transf.。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-supervised-1"><code>-</code></div>
+<div class="pblk" id="p-supervised-2">
+          <p class="en-lines"><span class="sent" data-sid="s-supervised-2-1"><span class="en">CLM+Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-supervised-2-1"><span class="zh">（表格行）CTC｜Transf [51]｜-｜CLM+Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-supervised-2"><code>2.20 4.94 2.47 5.45</code></div>
+<div class="eq" id="eq-supervised-3"><code>S2S Transf. [51]</code></div>
+<div class="eq" id="eq-supervised-4"><code>-</code></div>
+<div class="pblk" id="p-supervised-3">
+          <p class="en-lines"><span class="sent" data-sid="s-supervised-3-1"><span class="en">CLM+Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-supervised-3-1"><span class="zh">（表格行）CTC｜Transf [51]｜-｜CLM+Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-supervised-5"><code>2.10 4.79 2.33 5.17</code></div>
+<div class="eq" id="eq-supervised-6"><code>Transf. Transducer [60]</code></div>
+<div class="eq" id="eq-supervised-7"><code>-</code></div>
+<div class="pblk" id="p-supervised-4">
+          <p class="en-lines"><span class="sent" data-sid="s-supervised-4-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-supervised-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-supervised-8"><code>- - 2.0 4.6</code></div>
+<div class="eq" id="eq-supervised-9"><code>ContextNet [17]</code></div>
+<div class="eq" id="eq-supervised-10"><code>-</code></div>
+<div class="eq" id="eq-supervised-11"><code>LSTM</code></div>
+<div class="eq" id="eq-supervised-12"><code>1.9 3.9 1.9 4.1</code></div>
+<div class="eq" id="eq-supervised-13"><code>Conformer [15]</code></div>
+<div class="eq" id="eq-supervised-14"><code>-</code></div>
+<div class="eq" id="eq-supervised-15"><code>LSTM</code></div>
+<div class="eq" id="eq-supervised-16"><code>2.1 4.3 1.9 3.9</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-semi-supervised"><span class="t-zh">半监督（表格碎片）</span><span class="t-en">Semi-supervised</span></h3><div class="pblk" id="p-semi-supervised-1">
-          <p class="en-lines"><span class="sent" data-sid="s-semi-supervised-1-1"><span class="en">CTC Transf. + PL [51] 2.10 4.79 2.33 4.54 S2S Transf. + PL [51] 2.00 3.65 2.09 4.11 Iter. pseudo-labeling [58] 1.85 3.26 2.10 4.01 Noisy student [42] 1.6 3.4 1.7 3.4</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-semi-supervised-1-1"><span class="zh">（Table 2 半监督基线数值碎块）CTC Transf. + PL [51]：2.10 4.79 2.33 4.54；S2S Transf. + PL [51]：2.00 3.65 2.09 4.11；Iter. pseudo-labeling [58]：1.85 3.26 2.10 4.01；Noisy student [42]：1.6 3.4 1.7 3.4。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-semi-supervised-1-1"><span class="en">CTC Transf. + PL [51] LV-60k CLM+Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-semi-supervised-1-1"><span class="zh">（表格行）CTC｜Transf. + PL [51]｜LV-60k｜CLM+Transf.。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-semi-supervised-1"><code>2.10 4.79 2.33 4.54</code></div>
+<div class="pblk" id="p-semi-supervised-2">
+          <p class="en-lines"><span class="sent" data-sid="s-semi-supervised-2-1"><span class="en">S2S Transf. + PL [51] LV-60k CLM+Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-semi-supervised-2-1"><span class="zh">（表格行）2.10 4.79 2.33 4.54；S2S｜Transf. + PL [51]｜LV-60k｜CLM+Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-semi-supervised-2"><code>2.00 3.65 2.09 4.11</code></div>
+<div class="pblk" id="p-semi-supervised-3">
+          <p class="en-lines"><span class="sent" data-sid="s-semi-supervised-3-1"><span class="en">Iter. pseudo-labeling [58] LV-60k 4-gram+Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-semi-supervised-3-1"><span class="zh">（表格行）2.00 3.65 2.09 4.11；Iter. pseudo-labeling [58]｜LV-60k｜4-gram+Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-semi-supervised-3"><code>1.85 3.26 2.10 4.01</code></div>
+<div class="eq" id="eq-semi-supervised-4"><code>Noisy student [42] LV-60k LSTM</code></div>
+<div class="eq" id="eq-semi-supervised-5"><code>1.6 3.4 1.7 3.4</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-this-work"><span class="t-zh">本文方法（表格碎片）</span><span class="t-en">This work</span></h3><div class="pblk" id="p-this-work-1">
-          <p class="en-lines"><span class="sent" data-sid="s-this-work-1-1"><span class="en">LARGE - from scratch 1.7 4.3 2.1 4.6 1.8 4.7 2.1 4.8 1.7 3.9 2.0 4.1 1.6 3.0 1.8 3.3 light data splits contain both clean and noisy data leading to better accuracy on test-other compared to test-clean.</span></span> <span class="sent" data-sid="s-this-work-1-2"><span class="en">Increasing model size reduces WER on all setups with the largest improvements on test-other (BASE vs. LARGE both on LS-960) and increasing the amount of unlabeled training data also leads to large improvements (LARGE LS-960 vs. LV-60k).</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-this-work-1-1"><span class="zh">（Table 2 本文方法数值碎块）LARGE - from scratch（从头训练）：1.7 4.3 2.1 4.6 1.8 4.7 2.1 4.8 1.7 3.9 2.0 4.1 1.6 3.0 1.8 3.3。说明：Libri-light 数据划分同时包含干净与嘈杂数据，这使得 test-other 上的准确率反而好于 test-clean。</span></span><span class="sent" data-sid="s-this-work-1-2"><span class="zh">增大模型规模在所有设置上都降低了 WER，其中 test-other 上的提升最大（同在 LS-960 上的 BASE 与 LARGE 对比）；增加无标注训练数据量也带来显著提升（LARGE 在 LS-960 与 LV-60k 上的对比）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-this-work-1-1"><span class="en">LARGE - from scratch</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-this-work-1-1"><span class="zh">表头与首行：模型（Model）｜无标注数据｜LM｜dev/test（clean/other）；LARGE 从头训练（from scratch）：None 2.8 7.6 3.0 7.7；4-gram 1.8 5.4 2.6 5.8；Transf.（后续数值照原文）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-this-work-1"><code>-</code></div>
+<div class="pblk" id="p-this-work-2">
+          <p class="en-lines"><span class="sent" data-sid="s-this-work-2-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-this-work-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-this-work-2"><code>1.7 4.3 2.1 4.6</code></div>
+<div class="pblk" id="p-this-work-3">
+          <p class="en-lines"><span class="sent" data-sid="s-this-work-3-1"><span class="en">BASE LS-960 Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-this-work-3-1"><span class="zh">（表格行）BASE｜LS-960｜Transf.（Transformer LM）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-this-work-3"><code>1.8 4.7 2.1 4.8</code></div>
+<div class="pblk" id="p-this-work-4">
+          <p class="en-lines"><span class="sent" data-sid="s-this-work-4-1"><span class="en">LARGE LS-960 Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-this-work-4-1"><span class="zh">（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-this-work-4"><code>1.7 3.9 2.0 4.1</code></div>
+<div class="pblk" id="p-this-work-5">
+          <p class="en-lines"><span class="sent" data-sid="s-this-work-5-1"><span class="en">LV-60k Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-this-work-5-1"><span class="zh">（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-this-work-5"><code>1.6 3.0 1.8 3.3</code></div>
+<div class="pblk" id="p-this-work-6">
+          <p class="en-lines"><span class="sent" data-sid="s-this-work-6-1"><span class="en">light data splits contain both clean and noisy data leading to better accuracy on test-other compared to test-clean.</span></span> <span class="sent" data-sid="s-this-work-6-2"><span class="en">Increasing model size reduces WER on all setups with the largest improvements on test-other (BASE vs. LARGE both on LS-960) and increasing the amount of unlabeled training data also leads to large improvements (LARGE LS-960 vs. LV-60k).</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-this-work-6-1"><span class="zh">（Table 2 本文方法数值碎块）LARGE - from scratch（从头训练）：1.7 4.3 2.1 4.6 1.8 4.7 2.1 4.8 1.7 3.9 2.0 4.1 1.6 3.0 1.8 3.3。说明：Libri-light 数据划分同时包含干净与嘈杂数据，这使得 test-other 上的准确率反而好于 test-clean。</span></span><span class="sent" data-sid="s-this-work-6-2"><span class="zh">增大模型规模在所有设置上都降低了 WER，其中 test-other 上的提升最大（同在 LS-960 上的 BASE 与 LARGE 对比）；增加无标注训练数据量也带来显著提升（LARGE 在 LS-960 与 LV-60k 上的对比）。</span></span></p>
           
         </div></section>
 <section>
@@ -572,16 +815,26 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="cap" id="tab-5-3-1"><span class="cap-k">表</span><p class="en">Table 3: TIMIT phoneme recognition accuracy in terms of phoneme error rate (PER).</p><p class="zh">表 3：以音素错误率（PER）衡量的 TIMIT 音素识别准确率。</p></div>
 <div class="pblk" id="p-5-3-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="en">dev PER test PER CNN + TD-ﬁlterbanks [59] 15.6 18.0 PASE+ [47] 17.2 Li-GRU + fMLLR [46] – 14.9 wav2vec [49] 12.9 14.7 vq-wav2vec [5] 9.6 11.6</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="zh">（Table 3 数值碎块）dev PER / test PER：CNN + TD-filterbanks [59] 15.6 18.0；PASE+ [47] 17.2；Li-GRU + fMLLR [46] – 14.9；wav2vec [49] 12.9 14.7；vq-wav2vec [5] 9.6 11.6。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="en">dev PER test PER CNN + TD-ﬁlterbanks [59]</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="zh">表头：dev PER / test PER；CNN + TD-filterbanks [59]（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-5-3-1"><code>15.6 18.0</code></div>
+<div class="eq" id="eq-5-3-2"><code>PASE+ [47]</code></div>
+<div class="eq" id="eq-5-3-3"><code>- 17.2</code></div>
+<div class="eq" id="eq-5-3-4"><code>Li-GRU + fMLLR [46]</code></div>
+<div class="eq" id="eq-5-3-5"><code>– 14.9</code></div>
+<div class="eq" id="eq-5-3-6"><code>wav2vec [49]</code></div>
+<div class="eq" id="eq-5-3-7"><code>12.9 14.7</code></div>
+<div class="eq" id="eq-5-3-8"><code>vq-wav2vec [5]</code></div>
+<div class="eq" id="eq-5-3-9"><code>9.6 11.6</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-this-work-no-lm"><span class="t-zh">本文方法（无 LM，表格碎片）</span><span class="t-en">This work (no LM)</span></h3><div class="pblk" id="p-this-work-no-lm-1">
-          <p class="en-lines"><span class="sent" data-sid="s-this-work-no-lm-1-1"><span class="en">LARGE (LS-960) 7.4 8.3</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-this-work-no-lm-1-1"><span class="en">LARGE (LS-960)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-this-work-no-lm-1-1"><span class="zh">（Table 3 续）本文方法（无 LM）：LARGE (LS-960) 7.4 8.3。</span></span></p>
           
         </div>
+<div class="eq" id="eq-this-work-no-lm-1"><code>7.4 8.3</code></div>
 <div class="cap" id="tab-this-work-no-lm-1"><span class="cap-k">表</span><p class="en">Table 4: Average WER and standard deviation on combined dev-clean/other of Librispeech for three training seeds. We ablate quantizing the context network input and the targets in the contrastive loss.</p><p class="zh">表 4：三种训练种子在 Librispeech dev-clean/other 合并集上的平均 WER 与标准差。我们对「上下文网络的输入是否量化」与「对比损失的目标是否量化」做了消融。</p></div>
 <div class="pblk" id="p-this-work-no-lm-2">
           <p class="en-lines"><span class="sent" data-sid="s-this-work-no-lm-2-1"><span class="en">avg.</span></span> <span class="sent" data-sid="s-this-work-no-lm-2-2"><span class="en">WER std.</span></span></p>
@@ -589,12 +842,19 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-this-work-no-lm-3">
-          <p class="en-lines"><span class="sent" data-sid="s-this-work-no-lm-3-1"><span class="en">Continuous inputs, quantized targets (Baseline) 7.97 0.02 Quantized inputs, quantized targets 12.18 0.41 Quantized inputs, continuous targets 11.18 0.16 Continuous inputs, continuous targets 8.58 0.08</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-this-work-no-lm-3-1"><span class="zh">（Table 4 数值碎块）连续输入 + 量化目标（Baseline，基线）：7.97 0.02；量化输入 + 量化目标：12.18 0.41；量化输入 + 连续目标：11.18 0.16；连续输入 + 连续目标：8.58 0.08。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-this-work-no-lm-3-1"><span class="en">Continuous inputs, quantized targets (Baseline)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-this-work-no-lm-3-1"><span class="zh">（表格行）连续输入、量化目标（Baseline 基线配置）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-this-work-no-lm-2"><code>7.97 0.02</code></div>
+<div class="eq" id="eq-this-work-no-lm-3"><code>Quantized inputs, quantized targets</code></div>
+<div class="eq" id="eq-this-work-no-lm-4"><code>12.18 0.41</code></div>
+<div class="eq" id="eq-this-work-no-lm-5"><code>Quantized inputs, continuous targets</code></div>
+<div class="eq" id="eq-this-work-no-lm-6"><code>11.18 0.16</code></div>
+<div class="eq" id="eq-this-work-no-lm-7"><code>Continuous inputs, continuous targets</code></div>
+<div class="eq" id="eq-this-work-no-lm-8"><code>8.58 0.08</code></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-5-4"><span class="secnum">5.4</span> <span class="t-zh">5.4 消融</span><span class="t-en">Ablations</span></h3><div class="pblk" id="p-5-4-1">
+      <h3 class="sech lv2" id="sec-5-4"><span class="secnum">5.4</span> <span class="t-zh">附录 F 消融</span><span class="t-en">Ablations</span></h3><div class="pblk" id="p-5-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-5-4-1-1"><span class="en">A difference to previous work [5, 4] is that we quantize the latent audio representations only for the contrastive loss, i.e., when latents are used as targets, but not when the latents are input to the Transformer network.</span><button class="mk feat" data-sid="s-5-4-1-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-4-1-2"><span class="en">We motivate this choice by an ablating for which we adopt a reduced training setup to increase experimental turn around: we pre-train BASE on LS-960 for 250k updates with masking probability p = 0.075, ﬁne-tune on train-10h for 60k updates on a single GPU with 640k samples per batch, or 40 sec of speech audio.</span></span> <span class="sent" data-sid="s-5-4-1-3"><span class="en">We report the average WER and standard deviation on the concatenation of dev-clean and dev-other (dev PER) for three seeds of ﬁne-tuning.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-4-1-1"><span class="zh">与先前工作 [5, 4] 的一个区别在于：我们只在对比损失中量化潜在音频表示，即潜在表示作为目标时才量化，而作为 Transformer 网络输入时不量化。</span><button class="mk feat" data-sid="s-5-4-1-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-4-1-2"><span class="zh">我们用一项消融来论证这一选择：为加快实验迭代，采用缩减版训练设置——在 LS-960 上以掩码概率 p = 0.075 预训练 BASE 共 250k 次更新，再在 train-10h 上用单张 GPU、每批 640k 个采样点（即 40 秒语音）微调 60k 次更新。</span></span><span class="sent" data-sid="s-5-4-1-3"><span class="zh">我们报告 dev-clean 与 dev-other 合并集（dev PER，原文如此）上三次微调种子的平均 WER 与标准差。</span></span></p>
           <div class="ann-zone"><div class="ann-panel" data-sid="s-5-4-1-1">
@@ -641,35 +901,49 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       <h2 class="sech lv1" id="sec-references"><span class="t-zh">References</span><span class="t-en">References</span></h2><div class="pblk plain" id="p-references-1"><p class="refline">[1] J. L. Ba, J. R. Kiros, and G. E. Hinton. Layer normalization. arXiv, 2016. [2] P. Bachman, R. D. Hjelm, and W. Buchwalter. Learning representations by maximizing mutual information across views. In Proc. of NeurIPS, 2019. [3] A. Baevski and M. Auli. Adaptive input representations for neural language modeling. In Proc.</p></div>
 <div class="pblk plain" id="p-references-2"><p class="refline">of ICLR, 2018. [4] A. Baevski, M. Auli, and A. Mohamed. Effectiveness of self-supervised pre-training for speech recognition. arXiv, abs/1911.03912, 2019. [5] A. Baevski, S. Schneider, and M. Auli. vq-wav2vec: Self-supervised learning of discrete speech representations. In Proc. of ICLR, 2020. [6] T. Chen, S. Kornblith, M. Norouzi, and G. Hinton. A simple framework for contrastive learning of visual representations. arXiv, abs/2002.05709, 2020. [7] J. Chorowski, R. J. Weiss, S. Bengio, and A. van den Oord. Unsupervised speech representation learning using wavenet autoencoders. arXiv, abs/1901.08810, 2019. [8] Y. Chung, W. Hsu, H. Tang, and J. R. Glass. An unsupervised autoregressive model for speech representation learning. arXiv, abs/1904.03240, 2019. [9] J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv, abs/1810.04805, 2018. [10] S. Dieleman, A. van den Oord, and K. Simonyan. The challenge of realistic music generation: modelling raw audio at scale. arXiv, 2018. [11] R. Eloff, A. Nortje, B. van Niekerk, A. Govender, L. Nortje, A. Pretorius, E. Van Biljon, E. van der Westhuizen, L. van Staden, and H. Kamper. Unsupervised acoustic unit discovery for speech synthesis using discrete latent-variable neural networks. arXiv, abs/1904.07556, 2019. [12] A. Fan, E. Grave, and A. Joulin. Reducing transformer depth on demand with structured dropout.</p></div>
 <div class="pblk plain" id="p-references-3"><p class="refline">In Proc. of ICLR, 2020. [13] J. S. Garofolo, L. F. Lamel, W. M. Fisher, J. G. Fiscus, D. S. Pallett, and N. L. Dahlgren.</p></div>
-<div class="pblk plain" id="p-references-4"><p class="refline">The DARPA TIMIT Acoustic-Phonetic Continuous Speech Corpus CDROM. Linguistic Data Consortium, 1993. [14] A. Graves, S. Fernández, and F. Gomez. Connectionist temporal classiﬁcation: Labelling unsegmented sequence data with recurrent neural networks. In Proc. of ICML, 2006. [15] A. Gulati, J. Qin, C.-C. Chiu, N. Parmar, Y. Zhang, J. Yu, W. Han, S. Wang, Z. Zhang, Y. Wu, and R. Pang. Conformer: Convolution-augmented transformer for speech recognition. arXiv, 2020. [16] E. J. Gumbel. Statistical theory of extreme values and some practical applications: a series of lectures, volume 33. US Government Printing Ofﬁce, 1954. [17] W. Han, Z. Zhang, Y. Zhang, J. Yu, C.-C. Chiu, J. Qin, A. Gulati, R. Pang, and Y. Wu. Contextnet: Improving convolutional neural networks for automatic speech recognition with global context.</p></div>
-<div class="pblk plain" id="p-references-5"><p class="refline">[18] D. Harwath, W.-N. Hsu, and J. Glass. Learning hierarchical discrete linguistic units from visually-grounded speech. In Proc. of ICLR, 2020.</p></div>
-<div class="pblk plain" id="p-references-6"><p class="refline">[19] K. He, H. Fan, Y. Wu, S. Xie, and R. Girshick. Momentum contrast for unsupervised visual representation learning. arXiv, abs/1911.05722, 2019.</p></div>
-<div class="pblk plain" id="p-references-7"><p class="refline">[20] O. J. Hénaff, A. Razavi, C. Doersch, S. M. A. Eslami, and A. van den Oord. Data-efﬁcient image recognition with contrastive predictive coding. arXiv, abs/1905.09272, 2019.</p></div>
-<div class="pblk plain" id="p-references-8"><p class="refline">[21] D. Hendrycks and K. Gimpel. Gaussian error linear units (gelus). arXiv, 2016.</p></div>
-<div class="pblk plain" id="p-references-9"><p class="refline">[22] G. Huang, Y. Sun, Z. Liu, D. Sedra, and K. Weinberger. Deep networks with stochastic depth.</p></div>
-<div class="pblk plain" id="p-references-10"><p class="refline">[23] M. G. A. Hyvärinen. Noise-contrastive estimation: A new estimation principle for unnormalized statistical models. In Proc. of AISTATS, 2010.</p></div>
-<div class="pblk plain" id="p-references-11"><p class="refline">[24] E. Jang, S. Gu, and B. Poole. Categorical reparameterization with gumbel-softmax. arXiv, abs/1611.01144, 2016.</p></div>
-<div class="pblk plain" id="p-references-12"><p class="refline">[25] H. Jegou, M. Douze, and C. Schmid. Product quantization for nearest neighbor search. IEEE Trans. Pattern Anal. Mach. Intell., 33(1):117–128, Jan. 2011.</p></div>
-<div class="pblk plain" id="p-references-13"><p class="refline">[26] D. Jiang, X. Lei, W. Li, N. Luo, Y. Hu, W. Zou, and X. Li. Improving transformer-based speech recognition using unsupervised pre-training. arXiv, abs/1910.09932, 2019.</p></div>
-<div class="pblk plain" id="p-references-14"><p class="refline">[27] J. Kahn et al. Libri-light: A benchmark for asr with limited or no supervision. In Proc. of ICASSP, 2020.</p></div>
-<div class="pblk plain" id="p-references-15"><p class="refline">[28] K. Kawakami, L. Wang, C. Dyer, P. Blunsom, and A. van den Oord. Learning robust and multilingual speech representations. arXiv, 2020.</p></div>
-<div class="pblk plain" id="p-references-16"><p class="refline">[29] D. P. Kingma and J. Ba. Adam: A Method for Stochastic Optimization. In Proc. of ICLR, 2015.</p></div>
-<div class="pblk plain" id="p-references-17"><p class="refline">[30] A. Laptev, R. Korostik, A. Svischev, A. Andrusenko, I. Medennikov, and S. Rybin. You do not need more data: Improving end-to-end speech recognition by text-to-speech data augmentation.</p></div>
-<div class="pblk plain" id="p-references-18"><p class="refline">arXiv, abs/2005.07157, 2020.</p></div>
-<div class="pblk plain" id="p-references-19"><p class="refline">[31] M. P. Lewis, G. F. Simon, and C. D. Fennig. Ethnologue: Languages of the world, nineteenth edition. Online version: http://www.ethnologue.com, 2016.</p></div>
-<div class="pblk plain" id="p-references-20"><p class="refline">[32] A. H. Liu, T. Tu, H. yi Lee, and L. shan Lee. Towards unsupervised speech recognition and synthesis with quantized speech representation learning. arXiv, 2019.</p></div>
-<div class="pblk plain" id="p-references-21"><p class="refline">[33] Y. Liu, M. Ott, N. Goyal, J. Du, M. Joshi, D. Chen, O. Levy, M. Lewis, L. Zettlemoyer, and V. Stoyanov. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692, 2019.</p></div>
-<div class="pblk plain" id="p-references-22"><p class="refline">[34] C. Lüscher, E. Beck, K. Irie, M. Kitza, W. Michel, A. Zeyer, R. Schlüter, and H. Ney. Rwth asr systems for librispeech: Hybrid vs attention. In Interspeech 2019, 2019.</p></div>
-<div class="pblk plain" id="p-references-23"><p class="refline">[35] C. J. Maddison, D. Tarlow, and T. Minka. A* sampling. In Advances in Neural Information Processing Systems, pages 3086–3094, 2014.</p></div>
-<div class="pblk plain" id="p-references-24"><p class="refline">[36] I. Misra and L. van der Maaten. Self-supervised learning of pretext-invariant representations.</p></div>
-<div class="pblk plain" id="p-references-25"><p class="refline">[37] A. Mohamed, D. Okhonko, and L. Zettlemoyer. Transformers with convolutional context for ASR. arXiv, abs/1904.11660, 2019.</p></div>
-<div class="pblk plain" id="p-references-26"><p class="refline">[38] M. Ott, S. Edunov, D. Grangier, and M. Auli. Scaling neural machine translation. In Proc. of WMT, 2018.</p></div>
-<div class="pblk plain" id="p-references-27"><p class="refline">[39] M. Ott, S. Edunov, A. Baevski, A. Fan, S. Gross, N. Ng, D. Grangier, and M. Auli. fairseq: A fast, extensible toolkit for sequence modeling. In Proc. of NAACL System Demonstrations, 2019.</p></div>
-<div class="pblk plain" id="p-references-28"><p class="refline">[40] V. Panayotov, G. Chen, D. Povey, and S. Khudanpur. Librispeech: an asr corpus based on public domain audio books. In Proc. of ICASSP, pages 5206–5210. IEEE, 2015.</p></div>
-<div class="pblk plain" id="p-references-29"><p class="refline">[41] D. S. Park, W. Chan, Y. Zhang, C.-C. Chiu, B. Zoph, E. D. Cubuk, and Q. V. Le. Specaugment: A simple data augmentation method for automatic speech recognition. In Proc. of Interspeech, 2019.</p></div>
-<div class="pblk plain" id="p-references-30"><p class="refline">[42] D. S. Park, Y. Zhang, Y. Jia, W. Han, C.-C. Chiu, B. Li, Y. Wu, and Q. V. Le. Improved noisy student training for automatic speech recognition. arXiv, abs/2005.09629, 2020. [43] M. E. Peters, M. Neumann, M. Iyyer, M. Gardner, C. Clark, K. Lee, and L. Zettlemoyer. Deep contextualized word representations. In Proc. of ACL, 2018. [44] V. Pratap, A. Hannun, Q. Xu, J. Cai, J. Kahn, G. Synnaeve, V. Liptchinsky, and R. Collobert.</p></div>
-<div class="pblk plain" id="p-references-31"><p class="refline">Wav2letter++: A fast open-source speech recognition system. In Proc. of ICASSP, 2019. [45] A. Radford, K. Narasimhan, T. Salimans, and I. Sutskever. Improving language understanding by generative pre-training. https://s3-us-west-2.amazonaws.com/openai-assets/ research-covers/language-unsupervised/language_understanding_paper.pdf, 2018. [46] M. Ravanelli, P. Brakel, M. Omologo, and Y. Bengio. Light gated recurrent units for speech recognition. IEEE Transactions on Emerging Topics in Computational Intelligence, 2(2):92–102, 2018. [47] M. Ravanelli, J. Zhong, S. Pascual, P. Swietojanski, J. Monteiro, J. Trmal, and Y. Bengio.</p></div>
-<div class="pblk plain" id="p-references-32"><p class="refline">Multi-task self-supervised learning for robust speech recognition. arXiv, 2020. [48] M. Rivière, A. Joulin, P.-E. Mazaré, and E. Dupoux. Unsupervised pretraining transfers well across languages. arXiv, abs/2002.02848, 2020. [49] S. Schneider, A. Baevski, R. Collobert, and M. Auli. wav2vec: Unsupervised pre-training for speech recognition. In Proc. of Interspeech, 2019. [50] M. Schuster and K. Nakajima. Japanese and korean voice search. In Proc. of ICASSP, 2012. [51] G. Synnaeve, Q. Xu, J. Kahn, T. Likhomanenko, E. Grave, V. Pratap, A. Sriram, V. Liptchinsky, and R. Collobert. End-to-end ASR: from Supervised to Semi-Supervised Learning with Modern Architectures. arXiv, abs/1911.08460, 2020. [52] A. Tjandra, B. Sisman, M. Zhang, S. Sakti, H. Li, and S. Nakamura. Vqvae unsupervised unit discovery and multi-scale code2spec inverter for zerospeech challenge 2019. arXiv, 1905.11449, 2019. [53] A. van den Oord, O. Vinyals, et al. Neural discrete representation learning. In Advances in Neural Information Processing Systems, pages 6306–6315, 2017. [54] A. van den Oord, Y. Li, and O. Vinyals. Representation learning with contrastive predictive coding. arXiv, abs/1807.03748, 2018. [55] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser, and I. Polosukhin. Attention is all you need. In Proc. of NIPS, 2017. [56] W. Wang, Q. Tang, and K. Livescu. Unsupervised pre-training of bidirectional speech encoders via masked reconstruction. arXiv, 2020. [57] F. Wu, A. Fan, A. Baevski, Y. N. Dauphin, and M. Auli. Pay less attention with lightweight and dynamic convolutions. In Proc. of ICLR, 2019. [58] Q. Xu, T. Likhomanenko, J. Kahn, A. Hannun, G. Synnaeve, and R. Collobert. Iterative pseudo-labeling for speech recognition. arXiv, 2020. [59] N. Zeghidour, N. Usunier, I. Kokkinos, T. Schaiz, G. Synnaeve, and E. Dupoux. Learning ﬁlterbanks from raw speech for phone recognition. In Proc. of ICASSP, 2018. [60] Q. Zhang, H. Lu, H. Sak, A. Tripathi, E. McDermott, S. Koo, and S. Kumar. Transformer transducer: A streamable speech recognition model with transformer encoders and rnn-t loss.</p></div></section>
+<div class="pblk plain" id="p-references-4"><p class="refline">The DARPA TIMIT Acoustic-Phonetic Continuous Speech Corpus CDROM. Linguistic Data Consortium, 1993. [14] A. Graves, S. Fernández, and F. Gomez. Connectionist temporal classiﬁcation: Labelling unsegmented sequence data with recurrent neural networks. In Proc. of ICML, 2006. [15] A. Gulati, J. Qin, C.-C. Chiu, N. Parmar, Y. Zhang, J. Yu, W. Han, S. Wang, Z. Zhang, Y. Wu, and R. Pang. Conformer: Convolution-augmented transformer for speech recognition. arXiv,</p></div>
+<div class="eq" id="eq-references-1"><code>2020.</code></div>
+<div class="pblk plain" id="p-references-5"><p class="refline">[16] E. J. Gumbel. Statistical theory of extreme values and some practical applications: a series of lectures, volume 33. US Government Printing Ofﬁce, 1954. [17] W. Han, Z. Zhang, Y. Zhang, J. Yu, C.-C. Chiu, J. Qin, A. Gulati, R. Pang, and Y. Wu. Contextnet: Improving convolutional neural networks for automatic speech recognition with global context.</p></div>
+<div class="pblk plain" id="p-references-6"><p class="refline">arXiv, 2020.</p></div>
+<div class="pblk plain" id="p-references-7"><p class="refline">[18] D. Harwath, W.-N. Hsu, and J. Glass. Learning hierarchical discrete linguistic units from visually-grounded speech. In Proc. of ICLR, 2020.</p></div>
+<div class="pblk plain" id="p-references-8"><p class="refline">[19] K. He, H. Fan, Y. Wu, S. Xie, and R. Girshick. Momentum contrast for unsupervised visual representation learning. arXiv, abs/1911.05722, 2019.</p></div>
+<div class="pblk plain" id="p-references-9"><p class="refline">[20] O. J. Hénaff, A. Razavi, C. Doersch, S. M. A. Eslami, and A. van den Oord. Data-efﬁcient image recognition with contrastive predictive coding. arXiv, abs/1905.09272, 2019.</p></div>
+<div class="pblk plain" id="p-references-10"><p class="refline">[21] D. Hendrycks and K. Gimpel. Gaussian error linear units (gelus). arXiv, 2016.</p></div>
+<div class="pblk plain" id="p-references-11"><p class="refline">[22] G. Huang, Y. Sun, Z. Liu, D. Sedra, and K. Weinberger. Deep networks with stochastic depth.</p></div>
+<div class="pblk plain" id="p-references-12"><p class="refline">arXiv, 2016.</p></div>
+<div class="pblk plain" id="p-references-13"><p class="refline">[23] M. G. A. Hyvärinen. Noise-contrastive estimation: A new estimation principle for unnormalized statistical models. In Proc. of AISTATS, 2010.</p></div>
+<div class="pblk plain" id="p-references-14"><p class="refline">[24] E. Jang, S. Gu, and B. Poole. Categorical reparameterization with gumbel-softmax. arXiv, abs/1611.01144, 2016.</p></div>
+<div class="pblk plain" id="p-references-15"><p class="refline">[25] H. Jegou, M. Douze, and C. Schmid. Product quantization for nearest neighbor search. IEEE Trans. Pattern Anal. Mach. Intell., 33(1):117–128, Jan. 2011.</p></div>
+<div class="pblk plain" id="p-references-16"><p class="refline">[26] D. Jiang, X. Lei, W. Li, N. Luo, Y. Hu, W. Zou, and X. Li. Improving transformer-based speech recognition using unsupervised pre-training. arXiv, abs/1910.09932, 2019.</p></div>
+<div class="pblk plain" id="p-references-17"><p class="refline">[27] J. Kahn et al. Libri-light: A benchmark for asr with limited or no supervision. In Proc. of ICASSP, 2020.</p></div>
+<div class="pblk plain" id="p-references-18"><p class="refline">[28] K. Kawakami, L. Wang, C. Dyer, P. Blunsom, and A. van den Oord. Learning robust and multilingual speech representations. arXiv, 2020.</p></div>
+<div class="pblk plain" id="p-references-19"><p class="refline">[29] D. P. Kingma and J. Ba. Adam: A Method for Stochastic Optimization. In Proc. of ICLR, 2015.</p></div>
+<div class="pblk plain" id="p-references-20"><p class="refline">[30] A. Laptev, R. Korostik, A. Svischev, A. Andrusenko, I. Medennikov, and S. Rybin. You do not need more data: Improving end-to-end speech recognition by text-to-speech data augmentation.</p></div>
+<div class="pblk plain" id="p-references-21"><p class="refline">arXiv, abs/2005.07157, 2020.</p></div>
+<div class="pblk plain" id="p-references-22"><p class="refline">[31] M. P. Lewis, G. F. Simon, and C. D. Fennig. Ethnologue: Languages of the world, nineteenth edition. Online version: http://www.ethnologue.com, 2016.</p></div>
+<div class="pblk plain" id="p-references-23"><p class="refline">[32] A. H. Liu, T. Tu, H. yi Lee, and L. shan Lee. Towards unsupervised speech recognition and synthesis with quantized speech representation learning. arXiv, 2019.</p></div>
+<div class="pblk plain" id="p-references-24"><p class="refline">[33] Y. Liu, M. Ott, N. Goyal, J. Du, M. Joshi, D. Chen, O. Levy, M. Lewis, L. Zettlemoyer, and V. Stoyanov. Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692, 2019.</p></div>
+<div class="pblk plain" id="p-references-25"><p class="refline">[34] C. Lüscher, E. Beck, K. Irie, M. Kitza, W. Michel, A. Zeyer, R. Schlüter, and H. Ney. Rwth asr systems for librispeech: Hybrid vs attention. In Interspeech 2019, 2019.</p></div>
+<div class="pblk plain" id="p-references-26"><p class="refline">[35] C. J. Maddison, D. Tarlow, and T. Minka. A* sampling. In Advances in Neural Information Processing Systems, pages 3086–3094, 2014.</p></div>
+<div class="pblk plain" id="p-references-27"><p class="refline">[36] I. Misra and L. van der Maaten. Self-supervised learning of pretext-invariant representations.</p></div>
+<div class="pblk plain" id="p-references-28"><p class="refline">arXiv, 2019.</p></div>
+<div class="pblk plain" id="p-references-29"><p class="refline">[37] A. Mohamed, D. Okhonko, and L. Zettlemoyer. Transformers with convolutional context for ASR. arXiv, abs/1904.11660, 2019.</p></div>
+<div class="pblk plain" id="p-references-30"><p class="refline">[38] M. Ott, S. Edunov, D. Grangier, and M. Auli. Scaling neural machine translation. In Proc. of WMT, 2018.</p></div>
+<div class="pblk plain" id="p-references-31"><p class="refline">[39] M. Ott, S. Edunov, A. Baevski, A. Fan, S. Gross, N. Ng, D. Grangier, and M. Auli. fairseq: A fast, extensible toolkit for sequence modeling. In Proc. of NAACL System Demonstrations,</p></div>
+<div class="eq" id="eq-references-2"><code>2019.</code></div>
+<div class="pblk plain" id="p-references-32"><p class="refline">[40] V. Panayotov, G. Chen, D. Povey, and S. Khudanpur. Librispeech: an asr corpus based on public domain audio books. In Proc. of ICASSP, pages 5206–5210. IEEE, 2015.</p></div>
+<div class="pblk plain" id="p-references-33"><p class="refline">[41] D. S. Park, W. Chan, Y. Zhang, C.-C. Chiu, B. Zoph, E. D. Cubuk, and Q. V. Le. Specaugment: A simple data augmentation method for automatic speech recognition. In Proc. of Interspeech,</p></div>
+<div class="eq" id="eq-references-3"><code>2019.</code></div>
+<div class="pblk plain" id="p-references-34"><p class="refline">[42] D. S. Park, Y. Zhang, Y. Jia, W. Han, C.-C. Chiu, B. Li, Y. Wu, and Q. V. Le. Improved noisy student training for automatic speech recognition. arXiv, abs/2005.09629, 2020. [43] M. E. Peters, M. Neumann, M. Iyyer, M. Gardner, C. Clark, K. Lee, and L. Zettlemoyer. Deep contextualized word representations. In Proc. of ACL, 2018. [44] V. Pratap, A. Hannun, Q. Xu, J. Cai, J. Kahn, G. Synnaeve, V. Liptchinsky, and R. Collobert.</p></div>
+<div class="pblk plain" id="p-references-35"><p class="refline">Wav2letter++: A fast open-source speech recognition system. In Proc. of ICASSP, 2019. [45] A. Radford, K. Narasimhan, T. Salimans, and I. Sutskever. Improving language understanding by generative pre-training. https://s3-us-west-2.amazonaws.com/openai-assets/ research-covers/language-unsupervised/language_understanding_paper.pdf,</p></div>
+<div class="eq" id="eq-references-4"><code>2018.</code></div>
+<div class="pblk plain" id="p-references-36"><p class="refline">[46] M. Ravanelli, P. Brakel, M. Omologo, and Y. Bengio. Light gated recurrent units for speech recognition. IEEE Transactions on Emerging Topics in Computational Intelligence, 2(2):92–102,</p></div>
+<div class="eq" id="eq-references-5"><code>2018.</code></div>
+<div class="pblk plain" id="p-references-37"><p class="refline">[47] M. Ravanelli, J. Zhong, S. Pascual, P. Swietojanski, J. Monteiro, J. Trmal, and Y. Bengio.</p></div>
+<div class="pblk plain" id="p-references-38"><p class="refline">Multi-task self-supervised learning for robust speech recognition. arXiv, 2020. [48] M. Rivière, A. Joulin, P.-E. Mazaré, and E. Dupoux. Unsupervised pretraining transfers well across languages. arXiv, abs/2002.02848, 2020. [49] S. Schneider, A. Baevski, R. Collobert, and M. Auli. wav2vec: Unsupervised pre-training for speech recognition. In Proc. of Interspeech, 2019. [50] M. Schuster and K. Nakajima. Japanese and korean voice search. In Proc. of ICASSP, 2012. [51] G. Synnaeve, Q. Xu, J. Kahn, T. Likhomanenko, E. Grave, V. Pratap, A. Sriram, V. Liptchinsky, and R. Collobert. End-to-end ASR: from Supervised to Semi-Supervised Learning with Modern Architectures. arXiv, abs/1911.08460, 2020. [52] A. Tjandra, B. Sisman, M. Zhang, S. Sakti, H. Li, and S. Nakamura. Vqvae unsupervised unit discovery and multi-scale code2spec inverter for zerospeech challenge 2019. arXiv, 1905.11449,</p></div>
+<div class="eq" id="eq-references-6"><code>2019.</code></div>
+<div class="pblk plain" id="p-references-39"><p class="refline">[53] A. van den Oord, O. Vinyals, et al. Neural discrete representation learning. In Advances in Neural Information Processing Systems, pages 6306–6315, 2017. [54] A. van den Oord, Y. Li, and O. Vinyals. Representation learning with contrastive predictive coding. arXiv, abs/1807.03748, 2018. [55] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser, and I. Polosukhin. Attention is all you need. In Proc. of NIPS, 2017. [56] W. Wang, Q. Tang, and K. Livescu. Unsupervised pre-training of bidirectional speech encoders via masked reconstruction. arXiv, 2020. [57] F. Wu, A. Fan, A. Baevski, Y. N. Dauphin, and M. Auli. Pay less attention with lightweight and dynamic convolutions. In Proc. of ICLR, 2019. [58] Q. Xu, T. Likhomanenko, J. Kahn, A. Hannun, G. Synnaeve, and R. Collobert. Iterative pseudo-labeling for speech recognition. arXiv, 2020. [59] N. Zeghidour, N. Usunier, I. Kokkinos, T. Schaiz, G. Synnaeve, and E. Dupoux. Learning ﬁlterbanks from raw speech for phone recognition. In Proc. of ICASSP, 2018. [60] Q. Zhang, H. Lu, H. Sak, A. Tripathi, E. McDermott, S. Koo, and S. Kumar. Transformer transducer: A streamable speech recognition model with transformer encoders and rnn-t loss.</p></div>
+<div class="pblk plain" id="p-references-40"><p class="refline">arXiv, 2020.</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-appendices"><span class="t-zh">附录</span><span class="t-en">Appendices</span></h2></section>
 <section>
@@ -690,18 +964,41 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-A-3">
-          <p class="en-lines"><span class="sent" data-sid="s-A-3-1"><span class="en">0.25 0.20 Percent of all spans 0.15 0.10 0.05 20 40 60 80 100 Span length 0.00</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-3-1"><span class="zh">（Figure 2 坐标轴文字碎块）0.25 0.20（占全部片段的百分比）0.15 0.10 0.05；（横轴）20 40 60 80 100（片段长度）0.00。</span></span></p>
-          
-        </div>
+<div class="eq" id="eq-A-1"><code>0.25 0.20</code></div>
+<div class="eq" id="eq-A-2"><code>Percent of all spans</code></div>
+<div class="eq" id="eq-A-3"><code>0.15 0.10 0.05 20 40 60 80 100</code></div>
+<div class="eq" id="eq-A-4"><code>Span length</code></div>
+<div class="eq" id="eq-A-5"><code>0.00</code></div>
 <div class="cap" id="fig-A-1"><span class="cap-k">图</span><p class="en">Figure 2: Mask length distribution for a 15 second sample with p = 0.065 and M = 10.</p><p class="zh">图 2：对 15 秒样本、p = 0.065、M = 10 时的掩码长度分布。</p></div>
 <div class="cap" id="tab-A-1"><span class="cap-k">表</span><p class="en">Table 5: Ablations on settings for the masking strategy during pre-training. When masking without overlap, we choose starting time steps with p = 0.037 which results in the total number of masked tokens to match the baseline.</p><p class="zh">表 5：预训练掩码策略各项设置的消融。当采用无重叠掩码时，我们以 p = 0.037 选取起始时间步，使被掩码 token 总数与基线一致。</p></div>
-<div class="pblk" id="p-A-4">
-          <p class="en-lines"><span class="sent" data-sid="s-A-4-1"><span class="en">avg WER std Baseline (p = 0.075) 7.97 0.02 Mask length M = 8 8.33 0.05 Mask length M = 12 8.19 0.08 Mask length M = 15 8.43 0.19 Mask probability p = 0.065 7.95 0.08 Mask probability p = 0.06 8.14 0.22 Mask w/o overlap, uniform(1,31) 8.39 0.02 Mask w/o overlap, uniform(10,30) 9.17 0.05 Mask w/o overlap, poisson(15) 8.13 0.04 Mask w/o overlap, normal(15, 10) 8.37 0.03 Mask w/o overlap, length 10 9.15 0.02 Mask w/o overlap, length 15 9.43 0.26</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-4-1"><span class="zh">（Table 5 数值碎块）平均 WER / 标准差：Baseline (p = 0.075) 7.97 0.02；掩码长度 M = 8：8.33 0.05；M = 12：8.19 0.08；M = 15：8.43 0.19；掩码概率 p = 0.065：7.95 0.08；p = 0.06：8.14 0.22；无重叠掩码 uniform(1,31)：8.39 0.02；uniform(10,30)：9.17 0.05；poisson(15)：8.13 0.04；normal(15, 10)：8.37 0.03；固定长度 10：9.15 0.02；固定长度 15：9.43 0.26。</span></span></p>
+<div class="pblk" id="p-A-3">
+          <p class="en-lines"><span class="sent" data-sid="s-A-3-1"><span class="en">avg WER std Baseline (p = 0.075)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-3-1"><span class="zh">表头：avg WER / std；Baseline（p = 0.075，掩码概率）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-A-6"><code>7.97 0.02</code></div>
+<div class="eq" id="eq-A-7"><code>Mask length M = 8</code></div>
+<div class="eq" id="eq-A-8"><code>8.33 0.05</code></div>
+<div class="eq" id="eq-A-9"><code>Mask length M = 12</code></div>
+<div class="eq" id="eq-A-10"><code>8.19 0.08</code></div>
+<div class="eq" id="eq-A-11"><code>Mask length M = 15</code></div>
+<div class="eq" id="eq-A-12"><code>8.43 0.19</code></div>
+<div class="eq" id="eq-A-13"><code>Mask probability p = 0.065</code></div>
+<div class="eq" id="eq-A-14"><code>7.95 0.08</code></div>
+<div class="eq" id="eq-A-15"><code>Mask probability p = 0.06</code></div>
+<div class="eq" id="eq-A-16"><code>8.14 0.22</code></div>
+<div class="eq" id="eq-A-17"><code>Mask w/o overlap, uniform(1,31)</code></div>
+<div class="eq" id="eq-A-18"><code>8.39 0.02</code></div>
+<div class="eq" id="eq-A-19"><code>Mask w/o overlap, uniform(10,30)</code></div>
+<div class="eq" id="eq-A-20"><code>9.17 0.05</code></div>
+<div class="eq" id="eq-A-21"><code>Mask w/o overlap, poisson(15)</code></div>
+<div class="eq" id="eq-A-22"><code>8.13 0.04</code></div>
+<div class="eq" id="eq-A-23"><code>Mask w/o overlap, normal(15, 10)</code></div>
+<div class="eq" id="eq-A-24"><code>8.37 0.03</code></div>
+<div class="eq" id="eq-A-25"><code>Mask w/o overlap, length 10</code></div>
+<div class="eq" id="eq-A-26"><code>9.15 0.02</code></div>
+<div class="eq" id="eq-A-27"><code>Mask w/o overlap, length 15</code></div>
+<div class="eq" id="eq-A-28"><code>9.43 0.26</code></div></section>
 <section>
       <h2 class="sech lv1" id="sec-B"><span class="secnum">B</span> <span class="t-zh">附录 B 微调设置</span><span class="t-en">Fine-tuning Setup</span></h2><div class="pblk" id="p-B-1">
           <p class="en-lines"><span class="sent" data-sid="s-B-1-1"><span class="en">During ﬁne-tuning we apply a masking strategy to the feature encoder outputs similar to SpecAugment [41]: we randomly choose a number of starting time steps for which a span of ten subsequent time-steps is replaced with a mask embedding; spans may overlap and we use the same masked time step embedding as during pre-training.</span></span> <span class="sent" data-sid="s-B-1-2"><span class="en">We also mask channels by choosing a number of channels as starting indices and then expand each one to cover the subsequent 64 channels.</span></span> <span class="sent" data-sid="s-B-1-3"><span class="en">Spans may overlap and the selected channel spans are set to zero value.</span></span> <span class="sent" data-sid="s-B-1-4"><span class="en">We use LayerDrop [22, 12] at a rate of 0.05 for BASE and 0.1 for LARGE during ﬁne-tuning.</span></span></p>
@@ -711,56 +1008,270 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="cap" id="tab-B-1"><span class="cap-k">表</span><p class="en">Table 6 summarizes the ﬁne-tuning hyper-parameter settings used for the different labeled data setup. Table 7 shows the decoding parameters used for ﬁnal evaluations of the various labeled data setups for Librispeech pre-trained models and Table 8 shows decoding parameters for LibriVox.</p><p class="zh">表 6 总结了各标注数据设置所用的微调超参数；Table 7 给出 Librispeech 预训练模型在各标注数据设置下做最终评测的解码参数；Table 8 给出 LibriVox 的解码参数。</p></div>
 <div class="cap" id="tab-B-2"><span class="cap-k">表</span><p class="en">Table 6: Fine-tuning hyperparameters timestep mask prob. channel mask prob. updates</p><p class="zh">表 6：微调超参数（时间步掩码概率、通道掩码概率、更新次数）。</p></div>
 <div class="pblk" id="p-B-2">
-          <p class="en-lines"><span class="sent" data-sid="s-B-2-1"><span class="en">10 min 0.075 0.008 1 hour 0.075 0.004 0.065 0.004 0.05 0.008 0.05 0.0016 TIMIT 0.065 0.012</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-2-1"><span class="zh">（Table 6 数值碎块）10 min：0.075 0.008；1 hour：0.075 0.004；0.065 0.004；0.05 0.008；0.05 0.0016；TIMIT：0.065 0.012。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-B-2-1"><span class="en">10 min</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-B-2-1"><span class="zh">我们还证明了超低资源语音识别的可行性：只用 10 分钟标注数据，我们的方法在 Librispeech 的 clean/other 测试集上取得词错误率（WER）4.8/8.2。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-B-1"><code>0.075 0.008</code></div>
+<div class="eq" id="eq-B-2"><code>12k 1 hour</code></div>
+<div class="eq" id="eq-B-3"><code>0.075 0.004</code></div>
+<div class="eq" id="eq-B-4"><code>13k 10 hours</code></div>
+<div class="eq" id="eq-B-5"><code>0.065 0.004</code></div>
+<div class="eq" id="eq-B-6"><code>20k 100 hours</code></div>
+<div class="eq" id="eq-B-7"><code>0.05 0.008</code></div>
+<div class="eq" id="eq-B-8"><code>50k 960 hours</code></div>
+<div class="eq" id="eq-B-9"><code>0.05 0.0016</code></div>
+<div class="eq" id="eq-B-10"><code>320k TIMIT</code></div>
+<div class="eq" id="eq-B-11"><code>0.065 0.012</code></div>
+<div class="pblk" id="p-B-3">
+          <p class="en-lines"><span class="sent" data-sid="s-B-3-1"><span class="en">40k</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-B-3-1"><span class="zh">我们用一项消融来论证这一选择：为加快实验迭代，采用缩减版训练设置——在 LS-960 上以掩码概率 p = 0.075 预训练 BASE 共 250k 次更新，再在 train-10h 上用单张 GPU、每批 640k 个采样点（即 40 秒语音）微调 60k 次更新。</span></span></p>
           
         </div>
 <div class="cap" id="tab-B-3"><span class="cap-k">表</span><p class="en">Table 7: Decoding parameters for Librispeech subsets for models pre-trained on Librispeech</p><p class="zh">表 7：在 Librispeech 上预训练的模型，于 Librispeech 各子集上的解码参数。</p></div>
-<div class="pblk" id="p-B-3">
-          <p class="en-lines"><span class="sent" data-sid="s-B-3-1"><span class="en">4gram LM weight 4gram word insert.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-3-1"><span class="zh">（Table 7 表头碎块）4gram LM 权重／4gram 词插入。</span></span></p>
-          
-        </div>
 <div class="pblk" id="p-B-4">
-          <p class="en-lines"><span class="sent" data-sid="s-B-4-1"><span class="en">TransLM weight TransLM word insert.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-4-1"><span class="zh">（Table 7 表头碎块）TransLM 权重／TransLM 词插入。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-B-4-1"><span class="en">4gram LM weight 4gram word insert.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-B-4-1"><span class="zh">（Table 8 表头碎块）4gram LM 权重／4gram 词插入。</span></span></p>
           
         </div>
 <div class="pblk" id="p-B-5">
-          <p class="en-lines"><span class="sent" data-sid="s-B-5-1"><span class="en">10 min 3.23 1.20 1 hour 2.90 1.15 2.46 1.06 2.15 0.87 1.74 0.52 0.92</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-5-1"><span class="zh">（Table 7 数值碎块）10 min：3.23 1.20；1 hour：2.90 1.15；2.46 1.06；2.15 0.87；1.74 0.52；0.92。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-B-5-1"><span class="en">TransLM weight TransLM word insert.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-B-5-1"><span class="zh">（Table 8 表头碎块）TransLM 权重／TransLM 词插入。</span></span></p>
           
         </div>
-<div class="cap" id="tab-B-4"><span class="cap-k">表</span><p class="en">Table 8: Decoding parameters for Librispeech subsets for models pre-trained on Librivox.</p><p class="zh">表 8：在 Librivox 上预训练的模型，于 Librispeech 各子集上的解码参数。</p></div>
 <div class="pblk" id="p-B-6">
-          <p class="en-lines"><span class="sent" data-sid="s-B-6-1"><span class="en">4gram LM weight 4gram word insert.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-6-1"><span class="zh">（Table 8 表头碎块）4gram LM 权重／4gram 词插入。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-B-6-1"><span class="en">10 min</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-B-6-1"><span class="zh">我们还证明了超低资源语音识别的可行性：只用 10 分钟标注数据，我们的方法在 Librispeech 的 clean/other 测试集上取得词错误率（WER）4.8/8.2。</span></span></p>
           
         </div>
+<div class="eq" id="eq-B-12"><code>3.23 -0.26 1.20 -1.39</code></div>
+<div class="eq" id="eq-B-13"><code>1 hour</code></div>
+<div class="eq" id="eq-B-14"><code>2.90 -1.62 1.15 -2.08</code></div>
+<div class="eq" id="eq-B-15"><code>10 hours</code></div>
+<div class="eq" id="eq-B-16"><code>2.46 -0.59 1.06 -2.32</code></div>
+<div class="eq" id="eq-B-17"><code>100 hours</code></div>
+<div class="eq" id="eq-B-18"><code>2.15 -0.52 0.87 -1.00</code></div>
+<div class="eq" id="eq-B-19"><code>960 hours</code></div>
+<div class="eq" id="eq-B-20"><code>1.74 0.52 0.92 -0.86</code></div>
+<div class="cap" id="tab-B-4"><span class="cap-k">表</span><p class="en">Table 8: Decoding parameters for Librispeech subsets for models pre-trained on Librivox.</p><p class="zh">表 8：在 Librivox 上预训练的模型，于 Librispeech 各子集上的解码参数。</p></div>
 <div class="pblk" id="p-B-7">
-          <p class="en-lines"><span class="sent" data-sid="s-B-7-1"><span class="en">TransLM weight TransLM word insert.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-7-1"><span class="zh">（Table 8 表头碎块）TransLM 权重／TransLM 词插入。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-B-7-1"><span class="en">4gram LM weight 4gram word insert.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-B-7-1"><span class="zh">（Table 8 表头碎块）4gram LM 权重／4gram 词插入。</span></span></p>
           
         </div>
 <div class="pblk" id="p-B-8">
-          <p class="en-lines"><span class="sent" data-sid="s-B-8-1"><span class="en">10 min 3.86 1.47 1 hour 3.09 1.33 2.12 0.94 2.15 0.87 1.57 0.90</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-8-1"><span class="zh">（Table 8 数值碎块）10 min：3.86 1.47；1 hour：3.09 1.33；2.12 0.94；2.15 0.87；1.57 0.90。</span></span></p>
-          
-        </div></section>
-<section>
-      <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">附录 C Libri-light 与 Librispeech 的完整结果</span><span class="t-en">Full results for Libri-light and Librispeech</span></h2><div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 9: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups (cf. Table 1).</p><p class="zh">表 9：在 Libri-light 低资源标注数据设置上训练时，Librispeech dev/test 集上的 WER（参见 Table 1）。</p></div></section>
-<section>
-      <h2 class="sech lv1" id="sec-10-2"><span class="secnum">10</span> <span class="t-zh">10 分钟标注（附录表格碎片）</span><span class="t-en">min labeled</span></h2><div class="pblk" id="p-10-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-10-2-1-1"><span class="en">46.1 51.5 46.9 50.9 8.9 15.7 9.1 15.6 6.6 13.2 6.9 12.9 43.0 46.3 43.5 45.3 8.6 12.9 8.9 13.1 6.6 10.6 6.8 10.8 38.3 41.0 40.2 38.7 6.3 9.8 6.6 10.3 4.6 7.9 4.8 8.2 24.1 29.6 24.5 29.7 5.0 10.8 5.5 11.3 3.8 9.0 4.0 9.3 21.6 25.3 22.1 25.3 4.8 8.5 5.1 9.4 3.8 7.1 3.9 7.6 17.3 20.6 17.2 20.3 3.6 6.5 3.8 7.1 2.9 5.4 2.9 5.8 10.9 17.4 11.1 17.6 3.8 9.1 4.3 9.5 2.9 7.4 3.2 7.8 8.1 12.0 8.0 12.1 3.4 6.9 3.8 7.3 2.9 5.7 3.2 6.1 6.3 9.8 6.3 10.0 2.6 5.5 3.0 5.8 2.4 4.8 2.6 4.9 6.1 13.5 6.1 13.3 2.7 7.9 3.4 8.0 2.2 6.3 2.6 6.3 4.6 9.3 4.7 9.0 2.3 5.7 2.8 6.0 2.1 4.8 2.3 5.0 3.3 6.5 3.1 6.3 1.8 4.5 2.3 4.6 1.9 4.0 2.0 4.0</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-2-1-1"><span class="zh">（Table 9 数值碎块，含无 LM 与各解码条件）46.1 51.5 46.9 50.9 8.9 15.7 9.1 15.6 6.6 13.2 6.9 12.9 43.0 46.3 43.5 45.3 8.6 12.9 8.9 13.1 6.6 10.6 6.8 10.8 38.3 41.0 40.2 38.7 6.3 9.8 6.6 10.3 4.6 7.9 4.8 8.2 24.1 29.6 24.5 29.7 5.0 10.8 5.5 11.3 3.8 9.0 4.0 9.3 21.6 25.3 22.1 25.3 4.8 8.5 5.1 9.4 3.8 7.1 3.9 7.6 17.3 20.6 17.2 20.3 3.6 6.5 3.8 7.1 2.9 5.4 2.9 5.8 10.9 17.4 11.1 17.6 3.8 9.1 4.3 9.5 2.9 7.4 3.2 7.8 8.1 12.0 8.0 12.1 3.4 6.9 3.8 7.3 2.9 5.7 3.2 6.1 6.3 9.8 6.3 10.0 2.6 5.5 3.0 5.8 2.4 4.8 2.6 4.9 6.1 13.5 6.1 13.3 2.7 7.9 3.4 8.0 2.2 6.3 2.6 6.3 4.6 9.3 4.7 9.0 2.3 5.7 2.8 6.0 2.1 4.8 2.3 5.0 3.3 6.5 3.1 6.3 1.8 4.5 2.3 4.6 1.9 4.0 2.0 4.0。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-B-8-1"><span class="en">TransLM weight TransLM word insert.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-B-8-1"><span class="zh">（Table 8 表头碎块）TransLM 权重／TransLM 词插入。</span></span></p>
           
         </div>
-<div class="cap" id="tab-10-2-1"><span class="cap-k">表</span><p class="en">Table 10: WER on Librispeech when using all 960 hours of Librispeech as labeled data (cf. Table 2).</p><p class="zh">表 10：使用 Librispeech 全部 960 小时作为标注数据时 Librispeech 上的 WER（参见 Table 2）。</p></div>
-<div class="pblk" id="p-10-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-10-2-2-1"><span class="en">LARGE - from scratch 2.8 7.6 3.0 7.7 1.8 5.4 2.6 5.8 1.7 4.3 2.1 4.6 3.2 8.9 3.4 8.5 2.0 5.9 2.6 6.1 1.8 4.7 2.1 4.8 2.6 6.5 2.8 6.3 1.7 4.6 2.3 5.0 1.7 3.9 2.0 4.1 2.1 4.5 2.2 4.5 1.4 3.5 2.0 3.6 1.6 3.0 1.8 3.3</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-2-2-1"><span class="zh">（Table 10 数值碎块）LARGE - from scratch（从头训练）：2.8 7.6 3.0 7.7 1.8 5.4 2.6 5.8 1.7 4.3 2.1 4.6 3.2 8.9 3.4 8.5 2.0 5.9 2.6 6.1 1.8 4.7 2.1 4.8 2.6 6.5 2.8 6.3 1.7 4.6 2.3 5.0 1.7 3.9 2.0 4.1 2.1 4.5 2.2 4.5 1.4 3.5 2.0 3.6 1.6 3.0 1.8 3.3。</span></span></p>
+<div class="pblk" id="p-B-9">
+          <p class="en-lines"><span class="sent" data-sid="s-B-9-1"><span class="en">10 min</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-B-9-1"><span class="zh">我们还证明了超低资源语音识别的可行性：只用 10 分钟标注数据，我们的方法在 Librispeech 的 clean/other 测试集上取得词错误率（WER）4.8/8.2。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-B-21"><code>3.86 -1.18 1.47 -2.82</code></div>
+<div class="eq" id="eq-B-22"><code>1 hour</code></div>
+<div class="eq" id="eq-B-23"><code>3.09 -2.33 1.33 -0.69</code></div>
+<div class="eq" id="eq-B-24"><code>10 hours</code></div>
+<div class="eq" id="eq-B-25"><code>2.12 -0.90 0.94 -1.05</code></div>
+<div class="eq" id="eq-B-26"><code>100 hours</code></div>
+<div class="eq" id="eq-B-27"><code>2.15 -0.52 0.87 -1.00</code></div>
+<div class="eq" id="eq-B-28"><code>960 hours</code></div>
+<div class="eq" id="eq-B-29"><code>1.57 -0.64 0.90 -0.31</code></div></section>
+<section>
+      <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">附录 C Libri-light 与 Librispeech 的完整结果</span><span class="t-en">Full results for Libri-light and Librispeech</span></h2><div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 9: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups (cf. Table 1).</p><p class="zh">表 9：在 Libri-light 低资源标注数据设置上训练时，Librispeech dev/test 集上的 WER（参见 Table 1）。</p></div>
+<div class="pblk" id="p-C-1">
+          <p class="en-lines"><span class="sent" data-sid="s-C-1-1"><span class="en">Model Unlabeled LM dev test data clean other clean other</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-C-1-1"><span class="zh">表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。</span></span></p>
           
         </div></section>
+<section>
+      <h2 class="sech lv1" id="sec-10-2"><span class="secnum">10</span> <span class="t-zh">10 分钟标注（附录表格碎片）</span><span class="t-en">min labeled</span></h2><div class="pblk" id="p-10-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-10-2-1-1"><span class="en">BASE LS-960 None</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10-2-1-1"><span class="zh">（表格行）BASE｜LS-960｜None：46.1 51.5 46.9 50.9；4-gram：8.9 15.7 9.1 15.6｜Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10-2-1"><code>46.1 51.5 46.9 50.9</code></div>
+<div class="eq" id="eq-10-2-2"><code>4-gram</code></div>
+<div class="eq" id="eq-10-2-3"><code>8.9 15.7 9.1 15.6</code></div>
+<div class="pblk" id="p-10-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-10-2-2-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10-2-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10-2-4"><code>6.6 13.2 6.9 12.9</code></div>
+<div class="eq" id="eq-10-2-5"><code>LARGE LS-960 None</code></div>
+<div class="eq" id="eq-10-2-6"><code>43.0 46.3 43.5 45.3</code></div>
+<div class="eq" id="eq-10-2-7"><code>4-gram</code></div>
+<div class="eq" id="eq-10-2-8"><code>8.6 12.9 8.9 13.1</code></div>
+<div class="pblk" id="p-10-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-10-2-3-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10-2-3-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10-2-9"><code>6.6 10.6 6.8 10.8</code></div>
+<div class="eq" id="eq-10-2-10"><code>LARGE LV-60k None</code></div>
+<div class="eq" id="eq-10-2-11"><code>38.3 41.0 40.2 38.7</code></div>
+<div class="eq" id="eq-10-2-12"><code>4-gram</code></div>
+<div class="eq" id="eq-10-2-13"><code>6.3 9.8 6.6 10.3</code></div>
+<div class="pblk" id="p-10-2-4">
+          <p class="en-lines"><span class="sent" data-sid="s-10-2-4-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10-2-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10-2-14"><code>4.6 7.9 4.8 8.2</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-1h-labeled-2"><span class="t-zh">1h labeled</span><span class="t-en">1h labeled</span></h3><div class="pblk" id="p-1h-labeled-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-2-1-1"><span class="en">BASE LS-960 None</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-2-1-1"><span class="zh">（表格行）BASE｜LS-960｜None：46.1 51.5 46.9 50.9；4-gram：8.9 15.7 9.1 15.6｜Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-1h-labeled-2-1"><code>24.1 29.6 24.5 29.7</code></div>
+<div class="eq" id="eq-1h-labeled-2-2"><code>4-gram</code></div>
+<div class="eq" id="eq-1h-labeled-2-3"><code>5.0 10.8 5.5 11.3</code></div>
+<div class="pblk" id="p-1h-labeled-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-2-2-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-2-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-1h-labeled-2-4"><code>3.8 9.0 4.0 9.3</code></div>
+<div class="eq" id="eq-1h-labeled-2-5"><code>LARGE LS-960 None</code></div>
+<div class="eq" id="eq-1h-labeled-2-6"><code>21.6 25.3 22.1 25.3</code></div>
+<div class="eq" id="eq-1h-labeled-2-7"><code>4-gram</code></div>
+<div class="eq" id="eq-1h-labeled-2-8"><code>4.8 8.5 5.1 9.4</code></div>
+<div class="pblk" id="p-1h-labeled-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-2-3-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-2-3-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-1h-labeled-2-9"><code>3.8 7.1 3.9 7.6</code></div>
+<div class="eq" id="eq-1h-labeled-2-10"><code>LARGE LV-60k None</code></div>
+<div class="eq" id="eq-1h-labeled-2-11"><code>17.3 20.6 17.2 20.3</code></div>
+<div class="eq" id="eq-1h-labeled-2-12"><code>4-gram</code></div>
+<div class="eq" id="eq-1h-labeled-2-13"><code>3.6 6.5 3.8 7.1</code></div>
+<div class="pblk" id="p-1h-labeled-2-4">
+          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-2-4-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-2-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-1h-labeled-2-14"><code>2.9 5.4 2.9 5.8</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-10h-labeled-2"><span class="t-zh">10h labeled</span><span class="t-en">10h labeled</span></h3><div class="pblk" id="p-10h-labeled-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-2-1-1"><span class="en">BASE LS-960 None</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-2-1-1"><span class="zh">（表格行）BASE｜LS-960｜None：46.1 51.5 46.9 50.9；4-gram：8.9 15.7 9.1 15.6｜Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10h-labeled-2-1"><code>10.9 17.4 11.1 17.6</code></div>
+<div class="eq" id="eq-10h-labeled-2-2"><code>4-gram</code></div>
+<div class="eq" id="eq-10h-labeled-2-3"><code>3.8 9.1 4.3 9.5</code></div>
+<div class="pblk" id="p-10h-labeled-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-2-2-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-2-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10h-labeled-2-4"><code>2.9 7.4 3.2 7.8</code></div>
+<div class="eq" id="eq-10h-labeled-2-5"><code>LARGE LS-960 None</code></div>
+<div class="eq" id="eq-10h-labeled-2-6"><code>8.1 12.0 8.0 12.1</code></div>
+<div class="eq" id="eq-10h-labeled-2-7"><code>4-gram</code></div>
+<div class="eq" id="eq-10h-labeled-2-8"><code>3.4 6.9 3.8 7.3</code></div>
+<div class="pblk" id="p-10h-labeled-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-2-3-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-2-3-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10h-labeled-2-9"><code>2.9 5.7 3.2 6.1</code></div>
+<div class="eq" id="eq-10h-labeled-2-10"><code>LARGE LV-60k None</code></div>
+<div class="eq" id="eq-10h-labeled-2-11"><code>6.3 9.8 6.3 10.0</code></div>
+<div class="eq" id="eq-10h-labeled-2-12"><code>4-gram</code></div>
+<div class="eq" id="eq-10h-labeled-2-13"><code>2.6 5.5 3.0 5.8</code></div>
+<div class="pblk" id="p-10h-labeled-2-4">
+          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-2-4-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-2-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-10h-labeled-2-14"><code>2.4 4.8 2.6 4.9</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-100h-labeled-2"><span class="t-zh">100h labeled</span><span class="t-en">100h labeled</span></h3><div class="pblk" id="p-100h-labeled-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-1-1"><span class="en">BASE LS-960 None</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-1-1"><span class="zh">（表格行）BASE｜LS-960｜None：46.1 51.5 46.9 50.9；4-gram：8.9 15.7 9.1 15.6｜Transf.。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-2-1"><code>6.1 13.5 6.1 13.3</code></div>
+<div class="eq" id="eq-100h-labeled-2-2"><code>4-gram</code></div>
+<div class="eq" id="eq-100h-labeled-2-3"><code>2.7 7.9 3.4 8.0</code></div>
+<div class="pblk" id="p-100h-labeled-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-2-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-2-4"><code>2.2 6.3 2.6 6.3</code></div>
+<div class="eq" id="eq-100h-labeled-2-5"><code>LARGE LS-960 None</code></div>
+<div class="eq" id="eq-100h-labeled-2-6"><code>4.6 9.3 4.7 9.0</code></div>
+<div class="eq" id="eq-100h-labeled-2-7"><code>4-gram</code></div>
+<div class="eq" id="eq-100h-labeled-2-8"><code>2.3 5.7 2.8 6.0</code></div>
+<div class="pblk" id="p-100h-labeled-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-3-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-3-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-2-9"><code>2.1 4.8 2.3 5.0</code></div>
+<div class="eq" id="eq-100h-labeled-2-10"><code>LARGE LV-60k None</code></div>
+<div class="eq" id="eq-100h-labeled-2-11"><code>3.3 6.5 3.1 6.3</code></div>
+<div class="eq" id="eq-100h-labeled-2-12"><code>4-gram</code></div>
+<div class="eq" id="eq-100h-labeled-2-13"><code>1.8 4.5 2.3 4.6</code></div>
+<div class="pblk" id="p-100h-labeled-2-4">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-4-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-2-14"><code>1.9 4.0 2.0 4.0</code></div>
+<div class="cap" id="tab-100h-labeled-2-1"><span class="cap-k">表</span><p class="en">Table 10: WER on Librispeech when using all 960 hours of Librispeech as labeled data (cf. Table 2).</p><p class="zh">表 10：使用 Librispeech 全部 960 小时作为标注数据时 Librispeech 上的 WER（参见 Table 2）。</p></div>
+<div class="pblk" id="p-100h-labeled-2-5">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-5-1"><span class="en">Model Unlabeled LM dev test data clean other clean other LARGE - from scratch</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-5-1"><span class="zh">表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-2-15"><code>-</code></div>
+<div class="eq" id="eq-100h-labeled-2-16"><code>None</code></div>
+<div class="eq" id="eq-100h-labeled-2-17"><code>2.8 7.6 3.0 7.7 -</code></div>
+<div class="eq" id="eq-100h-labeled-2-18"><code>4-gram</code></div>
+<div class="eq" id="eq-100h-labeled-2-19"><code>1.8 5.4 2.6 5.8 -</code></div>
+<div class="pblk" id="p-100h-labeled-2-6">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-6-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-6-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-2-20"><code>1.7 4.3 2.1 4.6</code></div>
+<div class="eq" id="eq-100h-labeled-2-21"><code>BASE LS-960 None</code></div>
+<div class="eq" id="eq-100h-labeled-2-22"><code>3.2 8.9 3.4 8.5</code></div>
+<div class="eq" id="eq-100h-labeled-2-23"><code>4-gram</code></div>
+<div class="eq" id="eq-100h-labeled-2-24"><code>2.0 5.9 2.6 6.1</code></div>
+<div class="pblk" id="p-100h-labeled-2-7">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-7-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-7-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-2-25"><code>1.8 4.7 2.1 4.8</code></div>
+<div class="eq" id="eq-100h-labeled-2-26"><code>LARGE LS-960 None</code></div>
+<div class="eq" id="eq-100h-labeled-2-27"><code>2.6 6.5 2.8 6.3</code></div>
+<div class="eq" id="eq-100h-labeled-2-28"><code>4-gram</code></div>
+<div class="eq" id="eq-100h-labeled-2-29"><code>1.7 4.6 2.3 5.0</code></div>
+<div class="pblk" id="p-100h-labeled-2-8">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-8-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-8-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-2-30"><code>1.7 3.9 2.0 4.1</code></div>
+<div class="eq" id="eq-100h-labeled-2-31"><code>LARGE LV-60k None</code></div>
+<div class="eq" id="eq-100h-labeled-2-32"><code>2.1 4.5 2.2 4.5</code></div>
+<div class="eq" id="eq-100h-labeled-2-33"><code>4-gram</code></div>
+<div class="eq" id="eq-100h-labeled-2-34"><code>1.4 3.5 2.0 3.6</code></div>
+<div class="pblk" id="p-100h-labeled-2-9">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-9-1"><span class="en">Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-9-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-100h-labeled-2-35"><code>1.6 3.0 1.8 3.3</code></div></section>
 <section>
       <h2 class="sech lv1" id="sec-D"><span class="secnum">D</span> <span class="t-zh">附录 D 离散潜在语音表示分析</span><span class="t-en">Analysis of Discrete Latent Speech Representations</span></h2><div class="pblk" id="p-D-1">
           <p class="en-lines"><span class="sent" data-sid="s-D-1-1"><span class="en">Next, we investigate whether the discrete latent speech representations qt learned by the quantizer relate to phonetic information: Using LARGE pre-trained on LV-60k and without any ﬁne-tuning, we compute the discrete latents for the training data of TIMIT and compute the co-occurrence between human annotated phonemes and the latents.</span><button class="mk feat" data-sid="s-D-1-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-D-1-2"><span class="en">Ties are broken by choosing the phoneme which is most represented in the receptive ﬁeld of qt.</span></span> <span class="sent" data-sid="s-D-1-3"><span class="en">The training data contains 3696 utterances of average length 13.6 sec, or 563k discrete latents.</span></span></p>
@@ -825,16 +1336,19 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="cap" id="tab-E-1"><span class="cap-k">表</span><p class="en">Table 11: Top word errors for models trained on 10m, 1h and 10h, 100h, 960h of labeled data and decoded on the Librispeech dev-clean subset without a language model or lexicon (see Table 9 and Table 10 - None). In brackets is the total number of occurrences of each error.</p><p class="zh">表 11：分别在 10m、1h、10h、100h、960h 标注数据上训练、且不用语言模型与词表解码的模型，在 Librispeech dev-clean 子集上的最高频词错误（见 Table 9 与 Table 10 的 None 列）；括号内为各错误出现的总次数。</p></div>
-<div class="eq" id="eq-E-1"><code>10m LARGE LV-60k all →al (181) too →to (26)</code></div>
 <div class="pblk" id="p-E-8">
-          <p class="en-lines"><span class="sent" data-sid="s-E-8-1"><span class="en">are →ar (115) until →untill (24) will →wil (100) new →knew (22) o →oh (10) you →yo (90) door →dor (18) one →on (89) says →sais (18) mode →mod (9) two →to (81) soul →sol (17) ursus →ersus (9) well →wel (80) bread →bred (16) tom →tome (8) been →ben (73) poor →pore (16) randal →randol (7) upon →apon (73) good →god (67) either →ither (13) color →colour (6) see →se (66) food →fud (13) ﬂour →ﬂower (6) we →whe (60) doubt →dout (12) phoebe →feeby (6) little →litle (54) earth →erth (12) an →and (5) great →grate (53) led →lead (12) cucumbers →cucombers (5) your →yor (53) sea →see (12) egg →eg (5) could →coud (51) thee →the (12) macklewain →macklewaine (5) here →hear (51) tom →tome (12) magpie →magpi (5) know →now (45) add →ad (11) milner →millner (5) there →ther (45) good →god (11) stacy →staci (5) three →thre (45) heaven →heven (11) trevelyan →trevellion (5) still →stil (42) mary →marry (11) verloc →verlock (5) off →of (40) randal →randel (11) ann →an (4) don’t →dont (37) answered →ansered (10) anyone →one (4) shall →shal (36) blood →blod (10) apartment →appartment (4) little →litl (35) bozzle →bosel (10) basin →bason (4) 960h LARGE from scratch macklewain →mackelwaine (7) o →oh (8) minnetaki →minnitaki (7) o →oh (6) in →an (8) randal →randall (7) bozzle →bosell (5) and →an (5) christie →cristy (6) criss →chris (5) clarke →clark (4) macklewain →mackelwane (6) bozzle →bosel (4) grethel →gretel (4) randal →randoll (6) clarke →clark (4) macklewain →mackelwaine (4) bozzle →bosall (5) colored →coloured (4) this →the (4) kaliko →calico (5) grethel →gretel (4) an →and (3) trevelyan →trevelian (5) lige →lyge (4) anyone →one (3) an →and (4) bozzle →basell (3) and →an (4) and →an (3) buns →bunds (3) anyone →one (4) ann →marianne (3) carrie →carry (3) bozzle →bozall (4) butte →bute (3) criss →chris (3) clarke →clark (4) color →colour (3) he’s →is (3) gryce →grice (4) deucalion →ducalion (3) his →is (3) i’m →am (4) forcemeat →meat (3) honor →honour (3) in →ind (4) gryce →grice (3) lattimer →latimer (3) letty →lettie (4) honor →honour (3) millet →mellet (3) phoebe →phebe (4) kearny →kirney (3) pyncheon →pension (3) nuova →noiva (3) tad →ted (3) ann →anne (3) thing →anything (3) thing →anything (3) awhile →while (3) this →the (3) trevelyan →trevelian (3)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-E-8-1"><span class="zh">（Table 11 数值碎块：各数据量模型最常见的词级错误，括号内为该错误出现总次数）10m LARGE LV-60k：all → al (181)、too → to (26)、are → ar (115)、until → untill (24)、will → wil (100)、new → knew (22)、o → oh (10)、you → yo (90)、door → dor (18)、one → on (89)、says → sais (18)、mode → mod (9)、two → to (81)、soul → sol (17)、ursus → ersus (9)、well → wel (80)、bread → bred (16)、tom → tome (8)、been → ben (73)、poor → pore (16)、randal → randol (7)、upon → apon (73)、good → god (67)、either → ither (13)、color → colour (6)、see → se (66)、food → fud (13)、ﬂour → ﬂower (6)、we → whe (60)、doubt → dout (12)、phoebe → feeby (6)、little → litle (54)、earth → erth (12)、an → and (5)、great → grate (53)、led → lead (12)、cucumbers → cucombers (5)、your → yor (53)、sea → see (12)、egg → eg (5)、could → coud (51)、thee → the (12)、macklewain → macklewaine (5)、here → hear (51)、tom → tome (12)、magpie → magpi (5)、know → now (45)、add → ad (11)、milner → millner (5)、there → ther (45)、good → god (11)、stacy → staci (5)、three → thre (45)、heaven → heven (11)、trevelyan → trevellion (5)、still → stil (42)、mary → marry (11)、verloc → verlock (5)、off → of (40)、randal → randel (11)、ann → an (4)、don’t → dont (37)、answered → ansered (10)、anyone → one (4)、shall → shal (36)、blood → blod (10)、apartment → appartment (4)、little → litl (35)、bozzle → bosel (10)、basin → bason (4)。960h LARGE from scratch：macklewain → mackelwaine (7)、o → oh (8)、minnetaki → minnitaki (7)、o → oh (6)、in → an (8)、randal → randall (7)、bozzle → bosell (5)、and → an (5)、christie → cristy (6)、criss → chris (5)、clarke → clark (4)、macklewain → mackelwane (6)、bozzle → bosel (4)、grethel → gretel (4)、randal → randoll (6)、clarke → clark (4)、macklewain → mackelwaine (4)、bozzle → bosall (5)、colored → coloured (4)、this → the (4)、kaliko → calico (5)、grethel → gretel (4)、an → and (3)、trevelyan → trevelian (5)、lige → lyge (4)、anyone → one (3)、an → and (4)、bozzle → basell (3)、and → an (4)、and → an (3)、buns → bunds (3)、anyone → one (4)、ann → marianne (3)、carrie → carry (3)、bozzle → bozall (4)、butte → bute (3)、criss → chris (3)、clarke → clark (4)、color → colour (3)、he’s → is (3)、gryce → grice (4)、deucalion → ducalion (3)、his → is (3)、i’m → am (4)、forcemeat → meat (3)、honor → honour (3)、in → ind (4)、gryce → grice (3)、lattimer → latimer (3)、letty → lettie (4)、honor → honour (3)、millet → mellet (3)、phoebe → phebe (4)、kearny → kirney (3)、pyncheon → pension (3)、nuova → noiva (3)、tad → ted (3)、ann → anne (3)、thing → anything (3)、thing → anything (3)、awhile → while (3)、this → the (3)、trevelyan → trevelian (3)。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-E-8-1"><span class="en">10m LARGE LV-60k 1h LARGE LV-60k 10h LARGE LV-60k all →al (181) too →to (26) in →and (15) are →ar (115) until →untill (24) a →the (11) will →wil (100) new →knew (22) o →oh (10) you →yo (90) door →dor (18) and →in (9) one →on (89) says →sais (18) mode →mod (9) two →to (81) soul →sol (17) ursus →ersus (9) well →wel (80) bread →bred (16) tom →tome (8) been →ben (73) poor →pore (16) randal →randol (7) upon →apon (73) a →the (13) the →a (7) good →god (67) either →ither (13) color →colour (6) see →se (66) food →fud (13) ﬂour →ﬂower (6) we →whe (60) doubt →dout (12) phoebe →feeby (6) little →litle (54) earth →erth (12) an →and (5) great →grate (53) led →lead (12) cucumbers →cucombers (5) your →yor (53) sea →see (12) egg →eg (5) could →coud (51) thee →the (12) macklewain →macklewaine (5) here →hear (51) tom →tome (12) magpie →magpi (5) know →now (45) add →ad (11) milner →millner (5) there →ther (45) good →god (11) stacy →staci (5) three →thre (45) heaven →heven (11) trevelyan →trevellion (5) still →stil (42) mary →marry (11) verloc →verlock (5) off →of (40) randal →randel (11) ann →an (4) don’t →dont (37) answered →ansered (10) anyone →one (4) shall →shal (36) blood →blod (10) apartment →appartment (4) little →litl (35) bozzle →bosel (10) basin →bason (4) 100h LARGE LV-60k 960h LARGE LV-60k 960h LARGE from scratch a →the (13) a →the (12) and →in (20) and →in (10) and →in (9) a →the (16) in →and (10) macklewain →mackelwaine (7) in →and (13) o →oh (8) in →and (6) the →a (10) minnetaki →minnitaki (7) o →oh (6) in →an (8) randal →randall (7) bozzle →bosell (5) and →an (5) christie →cristy (6) criss →chris (5) clarke →clark (4) macklewain →mackelwane (6) bozzle →bosel (4) grethel →gretel (4) randal →randoll (6) clarke →clark (4) macklewain →mackelwaine (4) bozzle →bosall (5) colored →coloured (4) this →the (4) kaliko →calico (5) grethel →gretel (4) an →and (3) trevelyan →trevelian (5) lige →lyge (4) anyone →one (3) an →and (4) the →a (4) bozzle →basell (3) and →an (4) and →an (3) buns →bunds (3) anyone →one (4) ann →marianne (3) carrie →carry (3) bozzle →bozall (4) butte →bute (3) criss →chris (3) clarke →clark (4) color →colour (3) he’s →is (3) gryce →grice (4) deucalion →ducalion (3) his →is (3) i’m →am (4) forcemeat →meat (3) honor →honour (3) in →ind (4) gryce →grice (3) lattimer →latimer (3) letty →lettie (4) honor →honour (3) millet →mellet (3) phoebe →phebe (4) kearny →kirney (3) pyncheon →pension (3) the →a (4) nuova →noiva (3) tad →ted (3) ann →anne (3) thing →anything (3) thing →anything (3) awhile →while (3) this →the (3) trevelyan →trevelian (3)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-E-8-1"><span class="zh">（附录 E 转写错误对照大表：10m/1h/10h/100h/960h 各配置下最常见替换错误，格式为「正确词 → 模型误词（次数）」。原始数据照录如下）
+（原始数据照录）
+10m LARGE LV-60k 1h LARGE LV-60k 10h LARGE LV-60k all →al (181) too →to (26) in →and (15) are →ar (115) until →untill (24) a →the (11) will →wil (100) new →knew (22) o →oh (10) you →yo (90) door →dor (18) and →in (9) one →on (89) says →sais (18) mode →mod (9) two →to (81) soul →sol (17) ursus →ersus (9) well →wel (80) bread →bred (16) tom →tome (8) been →ben (73) poor →pore (16) randal →randol (7) upon →apon (73) a →the (13) the →a (7) good →god (67) either →ither (13) color →colour (6) see →se (66) food →fud (13) ﬂour →ﬂower (6) we →whe (60) doubt →dout (12) phoebe →feeby (6) little →litle (54) earth →erth (12) an →and (5) great →grate (53) led →lead (12) cucumbers →cucombers (5) your →yor (53) sea →see (12) egg →eg (5) could →coud (51) thee →the (12) macklewain →macklewaine (5) here →hear (51) tom →tome (12) magpie →magpi (5) know →now (45) add →ad (11) milner →millner (5) there →ther (45) good →god (11) stacy →staci (5) three →thre (45) heaven →heven (11) trevelyan →trevellion (5) still →stil (42) mary →marry (11) verloc →verlock (5) off →of (40) randal →randel (11) ann →an (4) don’t →dont (37) answered →ansered (10) anyone →one (4) shall →shal (36) blood →blod (10) apartment →appartment (4) little →litl (35) bozzle →bosel (10) basin →bason (4) 100h LARGE LV-60k 960h LARGE LV-60k 960h LARGE from scratch a →the (13) a →the (12) and →in (20) and →in (10) and →in (9) a →the (16) in →and (10) macklewain →mackelwaine (7) in →and (13) o →oh (8) in →and (6) the →a (10) minnetaki →minnitaki (7) o →oh (6) in →an (8) randal →randall (7) bozzle →bosell (5) and →an (5) christie →cristy (6) criss →chris (5) clarke →clark (4) macklewain →mackelwane (6) bozzle →bosel (4) grethel →gretel (4) randal →randoll (6) clarke →clark (4) macklewain →mackelwaine (4) bozzle →bosall (5) colored →coloured (4) this →the (4) kaliko →calico (5) grethel →gretel (4) an →and (3) trevelyan →trevelian (5) lige →lyge (4) anyone →one (3) an →and (4) the →a (4) bozzle →basell (3) and →an (4) and →an (3) buns →bunds (3) anyone →one (4) ann →marianne (3) carrie →carry (3) bozzle →bozall (4) butte →bute (3) criss →chris (3) clarke →clark (4) color →colour (3) he’s →is (3) gryce →grice (4) deucalion →ducalion (3) his →is (3) i’m →am (4) forcemeat →meat (3) honor →honour (3) in →ind (4) gryce →grice (3) lattimer →latimer (3) letty →lettie (4) honor →honour (3) millet →mellet (3) phoebe →phebe (4) kearny →kirney (3) pyncheon →pension (3) the →a (4) nuova →noiva (3) tad →ted (3) ann →anne (3) thing →anything (3) thing →anything (3) awhile →while (3) this →the (3) trevelyan →trevelian (3)</span></span></p>
           
         </div>
 <div class="cap" id="tab-E-2"><span class="cap-k">表</span><p class="en">Table 12: Examples of transcription of selected utterances from the dev-clean subset by various models without a language model or lexicon. Capitalized words indicate errors.</p><p class="zh">表 12：不同模型在不用语言模型与词表的情况下，对 dev-clean 子集若干选定语音的转写示例；大写单词表示错误。</p></div>
 <div class="pblk" id="p-E-9">
-          <p class="en-lines"><span class="sent" data-sid="s-E-9-1"><span class="en">Transcription i’m mister christopher from london IM mister CRESTIFER FROME LUNDEN IM mister CRISTIFFHER from LOUNDEN i’m mister CHRYSTEPHER from london i’m mister christopher from london i’m mister christopher from london I MISSTER christopher from london il popolo e una bestia ILPOPULAR ONABESTIA O POPOLAONABASTIA U POPULAONABASTIAR O POPALOON A BASTYA YOU’LL POP A LAWYE ON A BAISTYE OL POPALOY ON ABESTIA he smelt the nutty aroma of the spirit he SMELTD the NUDY aroma of the spirit he SMELTD the NUDDY ARROMA of the spirit he smelt the NUDDY ERROMA of the spirit he smelt the NUDDY aroma of the spirit he smelt the NUTTIE aroma of the spirit he smelt the nutty EROMA of the spirit phoebe merely glanced at it and gave it back FEABY MEARLY glanced at it and gave it BAK FIEABY merely glanced at it and gave it back FEEBY merely glanced at it and gave it back BEBE merely glanced at it and gave it back phoebe merely glanced at it and gave it back phoebe merely glanced at it and gave it back sauterne is a white bordeaux a strong luscious wine the best known varieties being SULTERIN is a white BORDOE a strong LUCHOUS WIN the best NOWN VERIATYS being CLTEREN is a white BORDO a strong LUCHIOUS wine the best known VERIETIES being SOTERN is a white BOURDO a strong LUCIOUS wine the best known VORIETIES being SOTERN is a white BORDAUX a strong LUCIOUS wine the best known varieties being SOTERN is a white bordeaux a strong luscious wine the best known varieties being SOTERAN is a white bordeaux a strong luscious wine the best known varieties being i happen to have mac connell’s box for tonight or there’d be no chance of our getting places i HAPEND to have MECONALES BOXS for TONIT ORE THIRLD be no chance of OR GETING places i happen to have MACCONNEL’S BOCXS for tonight or TE’ELD be no chance of our getting places i HAPPENED to have MUKONNEL’S box for tonight or THERED be no chance of our getting places i HAPPENED to have MC CONNEL’S box for TO NIGHT or there’d be no chance of our getting places i happen to have MC CONALL’S box for TO NIGHT or there’d be no chance of our getting places i HAPPENE to have MACONEL’S box for TO NIGHT or there’d be no chance of our getting places</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-E-9-1"><span class="zh">（Table 12 数值碎块：dev-clean 若干困难语音在不同模型下的转写示例，大写词表示错误）原文「i’m mister christopher from london」，各模型输出如 IM mister CRESTIFER FROME LUNDEN / IM mister CRISTIFFHER from LOUNDEN / i’m mister CHRYSTEPHER from london 等，最佳模型可正确输出 i’m mister christopher from london；意大利语「il popolo e una bestia」被写成 ILPOPULAR ONABESTIA、O POPOLAONABASTIA 等；「he smelt the nutty aroma of the spirit」被写成 he SMELTD the NUDY aroma of the spirit 等；「phoebe merely glanced at it and gave it back」被写成 FEABY MEARLY glanced at it and gave it BAK 等；「sauterne is a white bordeaux…」被写成 SULTERIN is a white BORDOE 等；「i happen to have mac connell’s box for tonight…」被写成 i HAPEND to have MECONALES BOXS for TONIT 等。错误集中在人名、外来词与词边界上。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-E-9-1"><span class="en">Model Transcription Reference i’m mister christopher from london 10m LV-60k IM mister CRESTIFER FROME LUNDEN 1h LV-60k IM mister CRISTIFFHER from LOUNDEN 10h LV-60k i’m mister CHRYSTEPHER from london 100h LV-60k i’m mister christopher from london 960h LV-60k i’m mister christopher from london 960h scratch I MISSTER christopher from london Reference il popolo e una bestia 10m LV-60k ILPOPULAR ONABESTIA 1h LV-60k O POPOLAONABASTIA 10h LV-60k U POPULAONABASTIAR 100h LV-60k O POPALOON A BASTYA 960h LV-60k YOU’LL POP A LAWYE ON A BAISTYE 960h scratch OL POPALOY ON ABESTIA Reference he smelt the nutty aroma of the spirit 10m LV-60k he SMELTD the NUDY aroma of the spirit 1h LV-60k he SMELTD the NUDDY ARROMA of the spirit 10h LV-60k he smelt the NUDDY ERROMA of the spirit 100h LV-60k he smelt the NUDDY aroma of the spirit 960h LV-60k he smelt the NUTTIE aroma of the spirit 960h scratch he smelt the nutty EROMA of the spirit Reference phoebe merely glanced at it and gave it back 10m LV-60k FEABY MEARLY glanced at it and gave it BAK 1h LV-60k FIEABY merely glanced at it and gave it back 10h LV-60k FEEBY merely glanced at it and gave it back 100h LV-60k BEBE merely glanced at it and gave it back 960h LV-60k phoebe merely glanced at it and gave it back 960h scratch phoebe merely glanced at it and gave it back Reference sauterne is a white bordeaux a strong luscious wine the best known varieties being 10m LV-60k SULTERIN is a white BORDOE a strong LUCHOUS WIN the best NOWN VERIATYS being 1h LV-60k CLTEREN is a white BORDO a strong LUCHIOUS wine the best known VERIETIES being 10h LV-60k SOTERN is a white BOURDO a strong LUCIOUS wine the best known VORIETIES being 100h LV-60k SOTERN is a white BORDAUX a strong LUCIOUS wine the best known varieties being 960h LV-60k SOTERN is a white bordeaux a strong luscious wine the best known varieties being 960h scratch SOTERAN is a white bordeaux a strong luscious wine the best known varieties being Reference i happen to have mac connell’s box for tonight or there’d be no chance of our getting places 10m LV-60k i HAPEND to have MECONALES BOXS for TONIT ORE THIRLD be no chance of OR GETING places 1h LV-60k i happen to have MACCONNEL’S BOCXS for tonight or TE’ELD be no chance of our getting places 10h LV-60k i HAPPENED to have MUKONNEL’S box for tonight or THERED be no chance of our getting places 100h LV-60k i HAPPENED to have MC CONNEL’S box for TO NIGHT or there’d be no chance of our getting places 960h LV-60k i happen to have MC CONALL’S box for TO NIGHT or there’d be no chance of our getting places 960h scratch i HAPPENE to have MACONEL’S box for TO NIGHT or there’d be no chance of our getting places</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-E-9-1"><span class="zh">（附录 E 转写样例对照表：Reference 标准答案与各配置（10m/1h/10h/100h/960h/960h-scratch）模型转写对比，错误词以大写标出。原始数据照录如下）
+（原始数据照录）
+Model Transcription Reference i’m mister christopher from london 10m LV-60k IM mister CRESTIFER FROME LUNDEN 1h LV-60k IM mister CRISTIFFHER from LOUNDEN 10h LV-60k i’m mister CHRYSTEPHER from london 100h LV-60k i’m mister christopher from london 960h LV-60k i’m mister christopher from london 960h scratch I MISSTER christopher from london Reference il popolo e una bestia 10m LV-60k ILPOPULAR ONABESTIA 1h LV-60k O POPOLAONABASTIA 10h LV-60k U POPULAONABASTIAR 100h LV-60k O POPALOON A BASTYA 960h LV-60k YOU’LL POP A LAWYE ON A BAISTYE 960h scratch OL POPALOY ON ABESTIA Reference he smelt the nutty aroma of the spirit 10m LV-60k he SMELTD the NUDY aroma of the spirit 1h LV-60k he SMELTD the NUDDY ARROMA of the spirit 10h LV-60k he smelt the NUDDY ERROMA of the spirit 100h LV-60k he smelt the NUDDY aroma of the spirit 960h LV-60k he smelt the NUTTIE aroma of the spirit 960h scratch he smelt the nutty EROMA of the spirit Reference phoebe merely glanced at it and gave it back 10m LV-60k FEABY MEARLY glanced at it and gave it BAK 1h LV-60k FIEABY merely glanced at it and gave it back 10h LV-60k FEEBY merely glanced at it and gave it back 100h LV-60k BEBE merely glanced at it and gave it back 960h LV-60k phoebe merely glanced at it and gave it back 960h scratch phoebe merely glanced at it and gave it back Reference sauterne is a white bordeaux a strong luscious wine the best known varieties being 10m LV-60k SULTERIN is a white BORDOE a strong LUCHOUS WIN the best NOWN VERIATYS being 1h LV-60k CLTEREN is a white BORDO a strong LUCHIOUS wine the best known VERIETIES being 10h LV-60k SOTERN is a white BOURDO a strong LUCIOUS wine the best known VORIETIES being 100h LV-60k SOTERN is a white BORDAUX a strong LUCIOUS wine the best known varieties being 960h LV-60k SOTERN is a white bordeaux a strong luscious wine the best known varieties being 960h scratch SOTERAN is a white bordeaux a strong luscious wine the best known varieties being Reference i happen to have mac connell’s box for tonight or there’d be no chance of our getting places 10m LV-60k i HAPEND to have MECONALES BOXS for TONIT ORE THIRLD be no chance of OR GETING places 1h LV-60k i happen to have MACCONNEL’S BOCXS for tonight or TE’ELD be no chance of our getting places 10h LV-60k i HAPPENED to have MUKONNEL’S box for tonight or THERED be no chance of our getting places 100h LV-60k i HAPPENED to have MC CONNEL’S box for TO NIGHT or there’d be no chance of our getting places 960h LV-60k i happen to have MC CONALL’S box for TO NIGHT or there’d be no chance of our getting places 960h scratch i HAPPENE to have MACONEL’S box for TO NIGHT or there’d be no chance of our getting places</span></span></p>
           
         </div></section>
 <section>
@@ -869,9 +1383,60 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-F-3-1"><span class="zh">平均值</span></span><span class="sent" data-sid="s-F-3-2"><span class="zh">WER 标准差</span></span></p>
           
         </div>
+<div class="eq" id="eq-F-1"><code>Baseline (p = 0.075, α = 0.1) 7.97 0.02</code></div>
+<div class="eq" id="eq-F-2"><code>Continuous inputs, continuous targets</code></div>
+<div class="eq" id="eq-F-3"><code>8.58 0.08</code></div>
+<div class="eq" id="eq-F-4"><code>+ MLP on targets</code></div>
+<div class="eq" id="eq-F-5"><code>8.51 0.05</code></div>
+<div class="eq" id="eq-F-6"><code>+ Separate encoders</code></div>
+<div class="eq" id="eq-F-7"><code>8.90 0.01</code></div>
+<div class="eq" id="eq-F-8"><code>receptive ﬁeld 30ms</code></div>
+<div class="eq" id="eq-F-9"><code>7.99 0.06</code></div>
+<div class="eq" id="eq-F-10"><code>diversity penalty</code></div>
+<div class="eq" id="eq-F-11"><code>α = 0 8.48 0.08 α = 0.05 8.34 0.08 α = 0.2 8.58 0.45</code></div>
+<div class="eq" id="eq-F-12"><code>Conv pos emb, kernel 256</code></div>
+<div class="eq" id="eq-F-13"><code>8.14 0.05</code></div>
+<div class="eq" id="eq-F-14"><code>No gradient to encoder from quantizer</code></div>
+<div class="eq" id="eq-F-15"><code>8.41 0.08</code></div>
+<div class="eq" id="eq-F-16"><code>Negatives K = 200 same utterance</code></div>
+<div class="eq" id="eq-F-17"><code>8.12 0.05</code></div>
 <div class="pblk" id="p-F-4">
-          <p class="en-lines"><span class="sent" data-sid="s-F-4-1"><span class="en">Baseline (p = 0.075, α = 0.1) 7.97 0.02 Continuous inputs, continuous targets 8.58 0.08 + MLP on targets 8.51 0.05 + Separate encoders 8.90 0.01 receptive ﬁeld 30ms 7.99 0.06 diversity penalty α = 0 8.48 0.08 α = 0.05 8.34 0.08 α = 0.2 8.58 0.45 Conv pos emb, kernel 256 8.14 0.05 No gradient to encoder from quantizer 8.41 0.08 Negatives K = 200 same utterance 8.12 0.05 K = 50 same utterance + K = 50 from batch 8.79 0.06 Sample negatives from any time step 8.07 0.02 No Gumbel noise 8.73 0.42 Codebook G=4, V=18 9.02 0.38 G=8, V=8 8.13 0.07 Predict exactly U time steps from edges 9.53 0.91 8.19 0.07 8.07 0.07 7.89 0.10 7.90 0.01 We also investigated predicting only time steps immediately next to the last unmasked time step for each span.</span></span> <span class="sent" data-sid="s-F-4-2"><span class="en">This enables to better control the difﬁculty of the pre-training task.</span></span> <span class="sent" data-sid="s-F-4-3"><span class="en">Given the leftmost or rightmost unmasked time step next to a masked span, we compute the contrastive loss only for the ﬁrst U masked time steps next to these unsmasked spans.</span></span> <span class="sent" data-sid="s-F-4-4"><span class="en">Predicting only up to one time step performs poorly because there is little training signal from each utterance and predicting more time steps performs better but does not signiﬁcantly outperform predicting all masked time steps.</span></span> <span class="sent" data-sid="s-F-4-5"><span class="en">Increasing the number of training updates helps but this increases training time.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-F-4-1"><span class="zh">（Table 13 数值碎块）Baseline (p = 0.075, α = 0.1)：7.97 0.02；连续输入 + 连续目标：8.58 0.08；目标上加 MLP：8.51 0.05；分离编码器（Separate encoders）：8.90 0.01；感受野 30ms：7.99 0.06；多样性惩罚 α = 0：8.48 0.08；α = 0.05：8.34 0.08；α = 0.2：8.58 0.45；卷积位置嵌入 kernel 256：8.14 0.05；量化器到编码器无梯度：8.41 0.08；负例 K = 200 来自同一语音：8.12 0.05；K = 50 来自同一语音 + K = 50 来自批次：8.79 0.06；从任意时间步采样负例：8.07 0.02；无 Gumbel 噪声：8.73 0.42；码本 G=4、V=18：9.02 0.38；G=8、V=8：8.13 0.07；从边界起精确预测 U 个时间步：9.53 0.91、8.19 0.07、8.07 0.07、7.89 0.10、7.90 0.01。我们还考察了只对每个掩码片段紧邻最后一个未掩码时间步之后的时间步做预测。</span></span><span class="sent" data-sid="s-F-4-2"><span class="zh">这样可以更好地控制预训练任务的难度。</span></span><span class="sent" data-sid="s-F-4-3"><span class="zh">给定紧邻掩码片段的最左或最右未掩码时间步，我们只对紧邻这些未掩码片段的前 U 个被掩码时间步计算对比损失。</span></span><span class="sent" data-sid="s-F-4-4"><span class="zh">只预测至多一个时间步的效果很差，因为每条语音能提供的训练信号太少；预测更多时间步效果更好，但也没有显著超过「预测全部被掩码时间步」。</span></span><span class="sent" data-sid="s-F-4-5"><span class="zh">增加训练更新次数有帮助，但会增加训练时间。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-F-4-1"><span class="en">K = 50 same utterance + K = 50 from batch</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-F-4-1"><span class="zh">（附录 F 消融结果表：连续输入+连续目标、目标端 MLP、独立编码器、感受野、diversity penalty、卷积位置嵌入、量化器梯度、负样本策略、Gumbel 噪声、码本规模、边界预测步数 U 等各项的 WER 数值。原始数据照录如下）
+（原始数据照录）
+7.97 0.02 Continuous inputs, continuous targets 8.58 0.08 + MLP on targets 8.51 0.05 + Separate encoders 8.90 0.01 receptive ﬁeld 30ms 7.99 0.06 diversity penalty α = 0 8.48 0.08 α = 0.05 8.34 0.08 α = 0.2 8.58 0.45 Conv pos emb, kernel 256 8.14 0.05 No gradient to encoder from quantizer 8.41 0.08 Negatives K = 200 same utterance 8.12 0.05 K = 50 same utterance + K = 50 from batch 8.79 0.06 Sample negatives from any time step 8.07 0.02 No Gumbel noise 8.73 0.42 Codebook G=4, V=18 9.02 0.38 G=8, V=8 8.13 0.07 Predict exactly U time steps from edges U = 1 9.53 0.91 U = 5 8.19 0.07 U = 10 8.07 0.07 U = 15 7.89 0.10 U = 20 7.90 0.01 We also investigated predicting only time steps immediately next to the last unmasked time step for each span.</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-F-18"><code>8.79 0.06</code></div>
+<div class="eq" id="eq-F-19"><code>Sample negatives from any time step</code></div>
+<div class="eq" id="eq-F-20"><code>8.07 0.02</code></div>
+<div class="eq" id="eq-F-21"><code>No Gumbel noise</code></div>
+<div class="eq" id="eq-F-22"><code>8.73 0.42</code></div>
+<div class="eq" id="eq-F-23"><code>Codebook G=4, V=18</code></div>
+<div class="eq" id="eq-F-24"><code>9.02 0.38</code></div>
+<div class="eq" id="eq-F-25"><code>G=8, V=8</code></div>
+<div class="eq" id="eq-F-26"><code>8.13 0.07</code></div>
+<div class="pblk" id="p-F-5">
+          <p class="en-lines"><span class="sent" data-sid="s-F-5-1"><span class="en">Predict exactly U time steps from edges U = 1</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-F-5-1"><span class="zh">（附录 F 消融结果表：连续输入+连续目标、目标端 MLP、独立编码器、感受野、diversity penalty、卷积位置嵌入、量化器梯度、负样本策略、Gumbel 噪声、码本规模、边界预测步数 U 等各项的 WER 数值。原始数据照录如下）
+（原始数据照录）
+7.97 0.02 Continuous inputs, continuous targets 8.58 0.08 + MLP on targets 8.51 0.05 + Separate encoders 8.90 0.01 receptive ﬁeld 30ms 7.99 0.06 diversity penalty α = 0 8.48 0.08 α = 0.05 8.34 0.08 α = 0.2 8.58 0.45 Conv pos emb, kernel 256 8.14 0.05 No gradient to encoder from quantizer 8.41 0.08 Negatives K = 200 same utterance 8.12 0.05 K = 50 same utterance + K = 50 from batch 8.79 0.06 Sample negatives from any time step 8.07 0.02 No Gumbel noise 8.73 0.42 Codebook G=4, V=18 9.02 0.38 G=8, V=8 8.13 0.07 Predict exactly U time steps from edges U = 1 9.53 0.91 U = 5 8.19 0.07 U = 10 8.07 0.07 U = 15 7.89 0.10 U = 20 7.90 0.01 We also investigated predicting only time steps immediately next to the last unmasked time step for each span.</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-F-27"><code>9.53 0.91</code></div>
+<div class="eq" id="eq-F-28"><code>U = 5</code></div>
+<div class="eq" id="eq-F-29"><code>8.19 0.07</code></div>
+<div class="eq" id="eq-F-30"><code>U = 10</code></div>
+<div class="eq" id="eq-F-31"><code>8.07 0.07</code></div>
+<div class="eq" id="eq-F-32"><code>U = 15</code></div>
+<div class="eq" id="eq-F-33"><code>7.89 0.10</code></div>
+<div class="eq" id="eq-F-34"><code>U = 20</code></div>
+<div class="eq" id="eq-F-35"><code>7.90 0.01</code></div>
+<div class="pblk" id="p-F-6">
+          <p class="en-lines"><span class="sent" data-sid="s-F-6-1"><span class="en">We also investigated predicting only time steps immediately next to the last unmasked time step for each span.</span></span> <span class="sent" data-sid="s-F-6-2"><span class="en">This enables to better control the difﬁculty of the pre-training task.</span></span> <span class="sent" data-sid="s-F-6-3"><span class="en">Given the leftmost or rightmost unmasked time step next to a masked span, we compute the contrastive loss only for the ﬁrst U masked time steps next to these unsmasked spans.</span></span> <span class="sent" data-sid="s-F-6-4"><span class="en">Predicting only up to one time step performs poorly because there is little training signal from each utterance and predicting more time steps performs better but does not signiﬁcantly outperform predicting all masked time steps.</span></span> <span class="sent" data-sid="s-F-6-5"><span class="en">Increasing the number of training updates helps but this increases training time.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-F-6-1"><span class="zh">（附录 F 消融结果表：连续输入+连续目标、目标端 MLP、独立编码器、感受野、diversity penalty、卷积位置嵌入、量化器梯度、负样本策略、Gumbel 噪声、码本规模、边界预测步数 U 等各项的 WER 数值。原始数据照录如下）
+（原始数据照录）
+7.97 0.02 Continuous inputs, continuous targets 8.58 0.08 + MLP on targets 8.51 0.05 + Separate encoders 8.90 0.01 receptive ﬁeld 30ms 7.99 0.06 diversity penalty α = 0 8.48 0.08 α = 0.05 8.34 0.08 α = 0.2 8.58 0.45 Conv pos emb, kernel 256 8.14 0.05 No gradient to encoder from quantizer 8.41 0.08 Negatives K = 200 same utterance 8.12 0.05 K = 50 same utterance + K = 50 from batch 8.79 0.06 Sample negatives from any time step 8.07 0.02 No Gumbel noise 8.73 0.42 Codebook G=4, V=18 9.02 0.38 G=8, V=8 8.13 0.07 Predict exactly U time steps from edges U = 1 9.53 0.91 U = 5 8.19 0.07 U = 10 8.07 0.07 U = 15 7.89 0.10 U = 20 7.90 0.01 We also investigated predicting only time steps immediately next to the last unmasked time step for each span.</span></span><span class="sent" data-sid="s-F-6-2"><span class="zh">这样可以更好地控制预训练任务的难度。</span></span><span class="sent" data-sid="s-F-6-3"><span class="zh">给定紧邻掩码片段的最左或最右未掩码时间步，我们只对紧邻这些未掩码片段的前 U 个被掩码时间步计算对比损失。</span></span><span class="sent" data-sid="s-F-6-4"><span class="zh">只预测至多一个时间步的效果很差，因为每条语音能提供的训练信号太少；预测更多时间步效果更好，但也没有显著超过「预测全部被掩码时间步」。</span></span><span class="sent" data-sid="s-F-6-5"><span class="zh">增加训练更新次数有帮助，但会增加训练时间。</span></span></p>
           
         </div></section></article>
   <footer class="foot">

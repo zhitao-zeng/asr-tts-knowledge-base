@@ -11,6 +11,17 @@ globalThis.PAPER_2605_23463 = {
  },
  "sections": [
   {
+   "id": "sec-stepfun-audio-team",
+   "num": null,
+   "level": 2,
+   "page": 1,
+   "title": {
+    "original": "StepFun-Audio Team",
+    "zh": "StepFun-Audio Team"
+   },
+   "blocks": []
+  },
+  {
    "id": "sec-abstract",
    "num": null,
    "level": 1,
@@ -879,10 +890,16 @@ globalThis.PAPER_2605_23463 = {
       },
       {
        "id": "s-4-1-5-3",
-       "original": "The branch weights are exponentially decayed to reflect the serial dependency of MTP: wh = αh−1 PH j=1 αj−1, H = 5, α = 0.9.",
+       "original": "The branch weights are exponentially decayed to reflect the serial dependency of MTP: wh = αh−1 PH j=1 αj−1, H = 5,",
        "zh": "分支权重指数衰减，以反映 MTP 的串行依赖：wh = αh−1 PH j=1 αj−1，H = 5，α = 0.9（抽取层对公式有断行，原式为 wh=α^{h−1}/∏_{j=1..H} α^{j−1} 的归一化形式）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-1-1",
+     "type": "equation",
+     "page": 7,
+     "original": "α = 0.9."
     },
     {
      "id": "p-4-1-6",
@@ -897,19 +914,19 @@ globalThis.PAPER_2605_23463 = {
      ]
     },
     {
-     "id": "eq-4-1-1",
+     "id": "eq-4-1-2",
      "type": "equation",
      "page": 7,
      "original": "Lt = CE(pt, xt+1) +"
     },
     {
-     "id": "eq-4-1-2",
+     "id": "eq-4-1-3",
      "type": "equation",
      "page": 7,
      "original": "H X"
     },
     {
-     "id": "eq-4-1-3",
+     "id": "eq-4-1-4",
      "type": "equation",
      "page": 7,
      "original": "h=1 whCE(pt,h, xt+1+h),"
@@ -1251,10 +1268,208 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-4-3-6-1",
-       "original": "Category Test set VibeVoice-ASR FunASR-Nano Doubao-ASR-2603 Qwen3-ASR-1.7B StepAudio 2.5 ASR StepAudio 2.5 ASR w/o MTP training AISHELL-1 5.19 1.88 2.07 1.49 0.71 0.79 AISHELL-2 ios 5.10 2.61 2.70 2.50 2.29 2.30 WenetSpeech testnet 14.79 5.30 4.03 4.44 4.54 4.57 WenetSpeech testmeeting 17.09 5.31 5.09 4.66 4.70 4.73 FLEURS zh 8.77 3.19 2.83 2.74 2.63 2.63 Chinese Average 10.19 3.66 3.34 3.17 2.97 3.00 LibriSpeech clean 2.30 1.80 2.94 1.69 1.38 1.40 LibriSpeech other 5.79 4.43 5.98 3.57 3.16 3.14 Common Voice v11 en 20.03 11.05 14.06 7.50 7.57 7.62 FLEURS en 5.20 4.96 6.74 3.23 3.55 3.74 VoxPopuli cleaned AA 2.38 3.97 3.61 3.28 2.76 3.23 English Average 7.14 5.24 6.67 3.85 3.68 3.83 LibriSpeech clean long 1.66 2.34 2.81 1.95 1.27 1.27 LibriSpeech other long 3.48 4.89 5.59 3.81 2.90 2.81 WenetSpeech testnet long 8.73 4.74 3.72 4.15 4.09 4.09 Earnings22 cleaned AA 5.62 10.38 12.33 6.90 6.52 6.34 Long-form Average 4.87 5.59 6.11 4.20 3.70 3.63",
-       "zh": "（抽取自表 1 主体的原始数值流，列序为：类别、测试集、VibeVoice-ASR、FunASR-Nano、Doubao-ASR-2603、Qwen3-ASR-1.7B、StepAudio 2.5 ASR、StepAudio 2.5 ASR 去 MTP 训练。）AISHELL-1：5.19 / 1.88 / 2.07 / 1.49 / 0.71 / 0.79；AISHELL-2 ios：5.10 / 2.61 / 2.70 / 2.50 / 2.29 / 2.30；WenetSpeech testnet：14.79 / 5.30 / 4.03 / 4.44 / 4.54 / 4.57；WenetSpeech testmeeting：17.09 / 5.31 / 5.09 / 4.66 / 4.70 / 4.73；FLEURS zh：8.77 / 3.19 / 2.83 / 2.74 / 2.63 / 2.63；中文平均：10.19 / 3.66 / 3.34 / 3.17 / 2.97 / 3.00；LibriSpeech clean：2.30 / 1.80 / 2.94 / 1.69 / 1.38 / 1.40；LibriSpeech other：5.79 / 4.43 / 5.98 / 3.57 / 3.16 / 3.14；Common Voice v11 en：20.03 / 11.05 / 14.06 / 7.50 / 7.57 / 7.62；FLEURS en：5.20 / 4.96 / 6.74 / 3.23 / 3.55 / 3.74；VoxPopuli cleaned AA：2.38 / 3.97 / 3.61 / 3.28 / 2.76 / 3.23；英文平均：7.14 / 5.24 / 6.67 / 3.85 / 3.68 / 3.83；LibriSpeech clean long：1.66 / 2.34 / 2.81 / 1.95 / 1.27 / 1.27；LibriSpeech other long：3.48 / 4.89 / 5.59 / 3.81 / 2.90 / 2.81；WenetSpeech testnet long：8.73 / 4.74 / 3.72 / 4.15 / 4.09 / 4.09；Earnings22 cleaned AA：5.62 / 10.38 / 12.33 / 6.90 / 6.52 / 6.34；长音频平均：4.87 / 5.59 / 6.11 / 4.20 / 3.70 / 3.63。"
+       "original": "Category Test set VibeVoice-ASR FunASR-Nano Doubao-ASR-2603 Qwen3-ASR-1.7B StepAudio 2.5 ASR StepAudio 2.5 ASR w/o MTP training AISHELL-1",
+       "zh": "表头：Category / Test set × VibeVoice-ASR / FunASR-Nano / Doubao-ASR-2603 / Qwen3-ASR-1.7B / StepAudio 2.5 ASR / StepAudio 2.5 ASR w/o MTP training——AISHELL-1（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-3-1",
+     "type": "equation",
+     "page": 9,
+     "original": "5.19 1.88 2.07 1.49 0.71 0.79"
+    },
+    {
+     "id": "eq-4-3-2",
+     "type": "equation",
+     "page": 9,
+     "original": "AISHELL-2 ios"
+    },
+    {
+     "id": "eq-4-3-3",
+     "type": "equation",
+     "page": 9,
+     "original": "5.10 2.61 2.70 2.50 2.29 2.30"
+    },
+    {
+     "id": "eq-4-3-4",
+     "type": "equation",
+     "page": 9,
+     "original": "WenetSpeech testnet"
+    },
+    {
+     "id": "eq-4-3-5",
+     "type": "equation",
+     "page": 9,
+     "original": "14.79 5.30 4.03 4.44 4.54 4.57"
+    },
+    {
+     "id": "eq-4-3-6",
+     "type": "equation",
+     "page": 9,
+     "original": "WenetSpeech testmeeting"
+    },
+    {
+     "id": "eq-4-3-7",
+     "type": "equation",
+     "page": 9,
+     "original": "17.09 5.31 5.09 4.66 4.70 4.73"
+    },
+    {
+     "id": "eq-4-3-8",
+     "type": "equation",
+     "page": 9,
+     "original": "FLEURS zh"
+    },
+    {
+     "id": "eq-4-3-9",
+     "type": "equation",
+     "page": 9,
+     "original": "8.77 3.19 2.83 2.74 2.63 2.63"
+    },
+    {
+     "id": "eq-4-3-10",
+     "type": "equation",
+     "page": 9,
+     "original": "Chinese Average"
+    },
+    {
+     "id": "eq-4-3-11",
+     "type": "equation",
+     "page": 9,
+     "original": "10.19 3.66 3.34 3.17 2.97 3.00"
+    },
+    {
+     "id": "eq-4-3-12",
+     "type": "equation",
+     "page": 9,
+     "original": "LibriSpeech clean"
+    },
+    {
+     "id": "eq-4-3-13",
+     "type": "equation",
+     "page": 9,
+     "original": "2.30 1.80 2.94 1.69 1.38 1.40"
+    },
+    {
+     "id": "eq-4-3-14",
+     "type": "equation",
+     "page": 9,
+     "original": "LibriSpeech other"
+    },
+    {
+     "id": "eq-4-3-15",
+     "type": "equation",
+     "page": 9,
+     "original": "5.79 4.43 5.98 3.57 3.16 3.14"
+    },
+    {
+     "id": "eq-4-3-16",
+     "type": "equation",
+     "page": 9,
+     "original": "Common Voice v11 en"
+    },
+    {
+     "id": "eq-4-3-17",
+     "type": "equation",
+     "page": 9,
+     "original": "20.03 11.05 14.06 7.50 7.57 7.62"
+    },
+    {
+     "id": "eq-4-3-18",
+     "type": "equation",
+     "page": 9,
+     "original": "FLEURS en"
+    },
+    {
+     "id": "eq-4-3-19",
+     "type": "equation",
+     "page": 9,
+     "original": "5.20 4.96 6.74 3.23 3.55 3.74"
+    },
+    {
+     "id": "eq-4-3-20",
+     "type": "equation",
+     "page": 9,
+     "original": "VoxPopuli cleaned AA"
+    },
+    {
+     "id": "eq-4-3-21",
+     "type": "equation",
+     "page": 9,
+     "original": "2.38 3.97 3.61 3.28 2.76 3.23"
+    },
+    {
+     "id": "eq-4-3-22",
+     "type": "equation",
+     "page": 9,
+     "original": "English Average"
+    },
+    {
+     "id": "eq-4-3-23",
+     "type": "equation",
+     "page": 9,
+     "original": "7.14 5.24 6.67 3.85 3.68 3.83"
+    },
+    {
+     "id": "eq-4-3-24",
+     "type": "equation",
+     "page": 9,
+     "original": "LibriSpeech clean long"
+    },
+    {
+     "id": "eq-4-3-25",
+     "type": "equation",
+     "page": 9,
+     "original": "1.66 2.34 2.81 1.95 1.27 1.27"
+    },
+    {
+     "id": "eq-4-3-26",
+     "type": "equation",
+     "page": 9,
+     "original": "LibriSpeech other long"
+    },
+    {
+     "id": "eq-4-3-27",
+     "type": "equation",
+     "page": 9,
+     "original": "3.48 4.89 5.59 3.81 2.90 2.81"
+    },
+    {
+     "id": "eq-4-3-28",
+     "type": "equation",
+     "page": 9,
+     "original": "WenetSpeech testnet long"
+    },
+    {
+     "id": "eq-4-3-29",
+     "type": "equation",
+     "page": 9,
+     "original": "8.73 4.74 3.72 4.15 4.09 4.09"
+    },
+    {
+     "id": "eq-4-3-30",
+     "type": "equation",
+     "page": 9,
+     "original": "Earnings22 cleaned AA"
+    },
+    {
+     "id": "eq-4-3-31",
+     "type": "equation",
+     "page": 9,
+     "original": "5.62 10.38 12.33 6.90 6.52 6.34"
+    },
+    {
+     "id": "eq-4-3-32",
+     "type": "equation",
+     "page": 9,
+     "original": "Long-form Average"
+    },
+    {
+     "id": "eq-4-3-33",
+     "type": "equation",
+     "page": 9,
+     "original": "4.87 5.59 6.11 4.20 3.70 3.63"
     },
     {
      "id": "tab-4-3-2",
@@ -1270,26 +1485,44 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-4-3-7-1",
-       "original": "Model VibeVoice-ASR FunASR-Nano Doubao-ASR-2603 Qwen3-ASR-1.7B StepAudio 2.5 ASR RTF 0.1039 0.0591 0.0640 0.0094 0.0053 that each MTP head learns a stable, independent prediction task.",
+       "original": "Model VibeVoice-ASR FunASR-Nano Doubao-ASR-2603 Qwen3-ASR-1.7B StepAudio 2.5 ASR RTF",
+       "zh": "（抽取自表 2 主体的原始数值流，模型顺序为 VibeVoice-ASR、FunASR-Nano、Doubao-ASR-2603、Qwen3-ASR-1.7B、StepAudio 2.5 ASR，RTF 分别为 0.1039、0.0591、0.0640、0.0094、0.0053；末句承接正文第 4.3.5 节）每个 MTP 头学到的是一个稳定、独立的预测任务。"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-3-34",
+     "type": "equation",
+     "page": 9,
+     "original": "0.1039 0.0591 0.0640 0.0094 0.0053"
+    },
+    {
+     "id": "p-4-3-8",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-4-3-8-1",
+       "original": "that each MTP head learns a stable, independent prediction task.",
        "zh": "（抽取自表 2 主体的原始数值流，模型顺序为 VibeVoice-ASR、FunASR-Nano、Doubao-ASR-2603、Qwen3-ASR-1.7B、StepAudio 2.5 ASR，RTF 分别为 0.1039、0.0591、0.0640、0.0094、0.0053；末句承接正文第 4.3.5 节）每个 MTP 头学到的是一个稳定、独立的预测任务。"
       },
       {
-       "id": "s-4-3-7-2",
+       "id": "s-4-3-8-2",
        "original": "Second, starting from the second position, the acceptance rate decays at a consistent factor of approximately 0.9 per branch.",
        "zh": "第二，从第二个位置起，接受率以每个分支约 0.9 的一致因子衰减。"
       },
       {
-       "id": "s-4-3-7-3",
+       "id": "s-4-3-8-3",
        "original": "While increasing branches from three to five yields a substantial 39% gain in average accepted length, the additional step to MTP-7 provides a more modest improvement about 22%.",
        "zh": "把分支从 3 个增加到 5 个可带来平均接受长度 39% 的可观提升，而进一步到 MTP-7 只带来约 22% 的温和改进。"
       },
       {
-       "id": "s-4-3-7-4",
+       "id": "s-4-3-8-4",
        "original": "This diminishing return is driven by the high failure rates of the sixth and seventh positions, which frequently trigger KV cache rollbacks and interrupt the decoding stream, and finally offset the marginal utility of a longer lookahead.",
        "zh": "这种收益递减源于第六、第七位置的高失败率：它们频繁触发 KV cache 回滚、打断解码流，最终抵消了更长前瞻的边际效用。"
       },
       {
-       "id": "s-4-3-7-5",
+       "id": "s-4-3-8-5",
        "original": "Consequently, MTP-5 represents a deliberate choice for the optimal efficiency-complexity trade-off.",
        "zh": "因此，MTP-5 是在效率-复杂度权衡上有意选择的最优点。"
       }
@@ -1303,27 +1536,69 @@ globalThis.PAPER_2605_23463 = {
      "zh": "表 3：严格的逐位置 MTP 接受率与平均接受长度。"
     },
     {
-     "id": "p-4-3-8",
+     "id": "p-4-3-9",
      "type": "paragraph",
      "page": 9,
      "sentences": [
       {
-       "id": "s-4-3-8-1",
-       "original": "Config 1st 2nd 3rd Avg.",
-       "zh": "（表 3 列头：配置、第 1 位、第 2 位、第 3 位、平均。）"
+       "id": "s-4-3-9-1",
+       "original": "Config 1st 2nd 3rd 4th 5th 6th 7th Avg.",
+       "zh": "表头：Config × 1st/2nd/3rd/4th/5th/6th/7th × Avg.。"
       },
       {
-       "id": "s-4-3-8-2",
-       "original": "Length MTP-3 0.96 0.88 0.80 3.6 / 4 MTP-5 0.95 0.88 0.80 0.71 0.64 5.0 / 6 MTP-7 0.96 0.88 0.80 0.72 0.65 0.59 0.53 6.1 / 8 Insight.",
-       "zh": "（表 3 主体数值流）接受长度：MTP-3 为 0.96 / 0.88 / 0.80，平均 3.6 / 4；MTP-5 为 0.95 / 0.88 / 0.80 / 0.71 / 0.64，平均 5.0 / 6；MTP-7 为 0.96 / 0.88 / 0.80 / 0.72 / 0.65 / 0.59 / 0.53，平均 6.1 / 8。要点（Insight）："
+       "id": "s-4-3-9-2",
+       "original": "Length MTP-3",
+       "zh": "（表格行）Length：MTP-3 0.96/0.88/0.80/–/–/–/–（3.6/4）；MTP-5 0.95/0.88/0.80/0.71/0.64/–/–（5.0/6）；MTP-7 0.96/0.88/0.80/0.72/0.65/0.59/0.53（6.1/8）。Insight（解读见正文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-3-35",
+     "type": "equation",
+     "page": 9,
+     "original": "0.96 0.88 0.80 – – – – 3.6 / 4"
+    },
+    {
+     "id": "eq-4-3-36",
+     "type": "equation",
+     "page": 9,
+     "original": "MTP-5"
+    },
+    {
+     "id": "eq-4-3-37",
+     "type": "equation",
+     "page": 9,
+     "original": "0.95 0.88 0.80 0.71 0.64 – – 5.0 / 6"
+    },
+    {
+     "id": "eq-4-3-38",
+     "type": "equation",
+     "page": 9,
+     "original": "MTP-7"
+    },
+    {
+     "id": "eq-4-3-39",
+     "type": "equation",
+     "page": 9,
+     "original": "0.96 0.88 0.80 0.72 0.65 0.59 0.53 6.1 / 8"
+    },
+    {
+     "id": "p-4-3-10",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-4-3-10-1",
+       "original": "Insight.",
+       "zh": "（表格行）Length：MTP-3 0.96/0.88/0.80/–/–/–/–（3.6/4）；MTP-5 0.95/0.88/0.80/0.71/0.64/–/–（5.0/6）；MTP-7 0.96/0.88/0.80/0.72/0.65/0.59/0.53（6.1/8）。Insight（解读见正文）。"
       },
       {
-       "id": "s-4-3-8-3",
+       "id": "s-4-3-10-2",
        "original": "The ASR branch suggests a useful general lesson for multimodal systems: grounded generation tasks can sometimes be accelerated more aggressively than free-form text generation, precisely because the external modality reduces semantic branching.",
        "zh": "ASR 分支提示了一条对多模态系统有普适意义的经验：有外部信号锚定的生成任务，有时可以比自由文本生成更激进地加速，恰恰因为外部模态减少了语义分支。"
       },
       {
-       "id": "s-4-3-8-4",
+       "id": "s-4-3-10-3",
        "original": "In other words, grounding is not only a source of information; it is also a source of algorithmic structure.",
        "zh": "换句话说，锚定（grounding）不仅是信息来源，也是算法结构的来源。"
       }
@@ -2250,10 +2525,16 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-6-3-5-1",
-       "original": "• Step-SPQA: An 11-category audio-question/audio-answer benchmark introduced in Step-Audio 2.",
+       "original": "• Step-SPQA: An 11-category audio-question/audio-answer benchmark introduced in Step-Audio",
        "zh": "• Step-SPQA：Step-Audio 2 中提出的 11 类音频问题/音频回答基准。"
       }
      ]
+    },
+    {
+     "id": "eq-6-3-1",
+     "type": "equation",
+     "page": 15,
+     "original": "2."
     },
     {
      "id": "fig-6-3-1",
@@ -2428,26 +2709,22 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "arXiv preprint [3] William Chan, Navdeep Jaitly, Quoc V Le, and Oriol Vinyals."
-      },
-      {
-       "id": "s-references-4-2",
-       "original": "Listen, attend and spell. arXiv preprint arXiv:1508.01211, 2015."
+       "original": "arXiv preprint arXiv:1211.3711, 2012."
       }
      ]
     },
     {
      "id": "p-references-5",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "[4] Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
+       "original": "[3] William Chan, Navdeep Jaitly, Quoc V Le, and Oriol Vinyals."
       },
       {
        "id": "s-references-5-2",
-       "original": "Robust speech recognition via large-scale weak supervision. pages 28492–28518, 2023."
+       "original": "Listen, attend and spell. arXiv preprint arXiv:1508.01211, 2015."
       }
      ]
     },
@@ -2458,9 +2735,19 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "[5] Zhiliang Peng, Jianwei Yu, Yaoyao Chang, Zilong Wang, Li Dong, Yingbo Hao, et al."
+       "original": "[4] Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
+      },
+      {
+       "id": "s-references-6-2",
+       "original": "Robust speech recognition via large-scale weak supervision. pages 28492–28518,"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 17,
+     "original": "2023."
     },
     {
      "id": "p-references-7",
@@ -2469,7 +2756,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "VIBEVOICE-ASR technical report. arXiv preprint arXiv:2601.18184, 2026."
+       "original": "[5] Zhiliang Peng, Jianwei Yu, Yaoyao Chang, Zilong Wang, Li Dong, Yingbo Hao, et al."
       }
      ]
     },
@@ -2480,7 +2767,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "[6] Keyu An, Yanni Chen, Zhigao Chen, Chong Deng, Zhihao Du, Changfeng Gao, et al. Fun-ASR technical report. arXiv preprint arXiv:2509.12508, 2025."
+       "original": "VIBEVOICE-ASR technical report. arXiv preprint arXiv:2601.18184, 2026."
       }
      ]
     },
@@ -2491,7 +2778,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "[7] Ye Bai, Jingping Chen, Jitong Chen, Wei Chen, Zhuo Chen, Chuang Ding, Linhao Dong, Qianqian Dong, Yujiao Du, Kepan Gao, et al. Seed-asr: Understanding diverse speech and contexts with llm-based speech recognition. arXiv preprint arXiv:2407.04675, 2024."
+       "original": "[6] Keyu An, Yanni Chen, Zhigao Chen, Chong Deng, Zhihao Du, Changfeng Gao, et al. Fun-ASR technical report. arXiv preprint arXiv:2509.12508, 2025."
       }
      ]
     },
@@ -2502,7 +2789,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "[8] Xian Shi, Xiong Wang, Zhifang Guo, Yongqi Wang, Pei Zhang, Xinyu Zhang, et al. Qwen3- ASR technical report. arXiv preprint arXiv:2601.21337, 2026."
+       "original": "[7] Ye Bai, Jingping Chen, Jitong Chen, Wei Chen, Zhuo Chen, Chuang Ding, Linhao Dong, Qianqian Dong, Yujiao Du, Kepan Gao, et al. Seed-asr: Understanding diverse speech and contexts with llm-based speech recognition. arXiv preprint arXiv:2407.04675, 2024."
       }
      ]
     },
@@ -2513,7 +2800,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "[9] Boyong Wu, Chao Yan, Chen Hu, Cheng Yi, Chengli Feng, Fei Tian, Feiyu Shen, Gang Yu, Haoyang Zhang, Jingbei Li, et al."
+       "original": "[8] Xian Shi, Xiong Wang, Zhifang Guo, Yongqi Wang, Pei Zhang, Xinyu Zhang, et al. Qwen3- ASR technical report. arXiv preprint arXiv:2601.21337, 2026."
       }
      ]
     },
@@ -2524,7 +2811,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "StepAudio 2 technical report."
+       "original": "[9] Boyong Wu, Chao Yan, Chen Hu, Cheng Yi, Chengli Feng, Fei Tian, Feiyu Shen, Gang Yu, Haoyang Zhang, Jingbei Li, et al."
       }
      ]
     },
@@ -2535,7 +2822,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "arXiv preprint [10] Jin Xu, Zhifang Guo, Hangrui Hu, Yunfei Chu, Xiong Wang, Jinzheng He, Yuxuan Wang, Xian Shi, Ting He, Xinfa Zhu, et al. Qwen3-Omni technical report. arXiv preprint arXiv:2509.17765, 2025."
+       "original": "StepAudio 2 technical report."
       }
      ]
     },
@@ -2546,15 +2833,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "[11] Che Liu, Lichao Ma, Xiangyu Tony Zhang, Yuxin Zhang, Haoyang Zhang, Xuerui Yang, and Fei Tian."
-      },
-      {
-       "id": "s-references-14-2",
-       "original": "Boosting omni-modal language models: Staged post-training with visually debiased evaluation, 2026."
-      },
-      {
-       "id": "s-references-14-3",
-       "original": "URL https://arxiv.org/abs/2605.12034."
+       "original": "arXiv preprint arXiv:2507.16632, 2025."
       }
      ]
     },
@@ -2565,17 +2844,15 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "[12] Changli Tang, Wenyi Yu, Guangzhi Sun, Xianzhao Chen, Tian Tan, Wei Li, Lu Lu, Zejun Ma, and Chao Zhang."
-      },
-      {
-       "id": "s-references-15-2",
-       "original": "Salmonn: Towards generic hearing abilities for large language models."
-      },
-      {
-       "id": "s-references-15-3",
-       "original": "In International Conference on Learning Representations, volume 2024, pages 16607–16629, 2024."
+       "original": "[10] Jin Xu, Zhifang Guo, Hangrui Hu, Yunfei Chu, Xiong Wang, Jinzheng He, Yuxuan Wang, Xian Shi, Ting He, Xinfa Zhu, et al. Qwen3-Omni technical report. arXiv preprint arXiv:2509.17765,"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 17,
+     "original": "2025."
     },
     {
      "id": "p-references-16",
@@ -2584,11 +2861,15 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "[13] Zalán Borsos, Raphaël Marinier, Damien Vincent, Eugene Kharitonov, Olivier Pietquin, Matt Sharifi, Dominik Roblek, Olivier Teboul, David Grangier, Marco Tagliasacchi, et al. Audiolm: a language modeling approach to audio generation."
+       "original": "[11] Che Liu, Lichao Ma, Xiangyu Tony Zhang, Yuxin Zhang, Haoyang Zhang, Xuerui Yang, and Fei Tian."
       },
       {
        "id": "s-references-16-2",
-       "original": "IEEE/ACM transactions on audio, speech, and language processing, 31:2523–2533, 2023."
+       "original": "Boosting omni-modal language models: Staged post-training with visually debiased evaluation, 2026."
+      },
+      {
+       "id": "s-references-16-3",
+       "original": "URL https://arxiv.org/abs/2605.12034."
       }
      ]
     },
@@ -2599,13 +2880,23 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "[14] Wenqian Cui, Dianzhi Yu, Xiaoqi Jiao, Ziqiao Meng, Guangyan Zhang, Qichao Wang, Steven Y Guo, and Irwin King."
+       "original": "[12] Changli Tang, Wenyi Yu, Guangzhi Sun, Xianzhao Chen, Tian Tan, Wei Li, Lu Lu, Zejun Ma, and Chao Zhang."
       },
       {
        "id": "s-references-17-2",
-       "original": "Recent advances in speech language models: A survey."
+       "original": "Salmonn: Towards generic hearing abilities for large language models."
+      },
+      {
+       "id": "s-references-17-3",
+       "original": "In International Conference on Learning Representations, volume 2024, pages 16607–16629,"
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 17,
+     "original": "2024."
     },
     {
      "id": "p-references-18",
@@ -2614,7 +2905,11 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 13943–13970, 2025."
+       "original": "[13] Zalán Borsos, Raphaël Marinier, Damien Vincent, Eugene Kharitonov, Olivier Pietquin, Matt Sharifi, Dominik Roblek, Olivier Teboul, David Grangier, Marco Tagliasacchi, et al. Audiolm: a language modeling approach to audio generation."
+      },
+      {
+       "id": "s-references-18-2",
+       "original": "IEEE/ACM transactions on audio, speech, and language processing, 31:2523–2533, 2023."
       }
      ]
     },
@@ -2625,11 +2920,11 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "[15] Heeseung Kim, Soonshin Seo, Kyeongseok Jeong, Ohsung Kwon, Soyoon Kim, Jungwhan Kim, Jaehong Lee, Eunwoo Song, Myungwoo Oh, Jung-Woo Ha, et al. Paralinguistics-aware speech-empowered large language models for natural conversation."
+       "original": "[14] Wenqian Cui, Dianzhi Yu, Xiaoqi Jiao, Ziqiao Meng, Guangyan Zhang, Qichao Wang, Steven Y Guo, and Irwin King."
       },
       {
        "id": "s-references-19-2",
-       "original": "Advances in Neural Information Processing Systems, 37:131072–131103, 2024."
+       "original": "Recent advances in speech language models: A survey."
       }
      ]
     },
@@ -2640,57 +2935,45 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "[16] Xiong Wang, Yangze Li, Chaoyou Fu, Yike Zhang, Yunhang Shen, Lei Xie, Ke Li, Xing Sun, and Long MA."
-      },
-      {
-       "id": "s-references-20-2",
-       "original": "Freeze-omni: A smart and low latency speech-to-speech dialogue model with frozen LLM."
-      },
-      {
-       "id": "s-references-20-3",
-       "original": "In Forty-second International Conference on Machine Learning, 2025."
-      },
-      {
-       "id": "s-references-20-4",
-       "original": "URL https://openreview.net/forum?id=s1EImzs5Id."
+       "original": "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 13943–13970, 2025."
       }
      ]
     },
     {
      "id": "p-references-21",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "[17] Yuxin Li, Xiangyu Zhang, Yifei Li, Zhiwei Guo, Haoyang Zhang, Eng Siong Chng, and Cuntai Guan."
+       "original": "[15] Heeseung Kim, Soonshin Seo, Kyeongseok Jeong, Ohsung Kwon, Soyoon Kim, Jungwhan Kim, Jaehong Lee, Eunwoo Song, Myungwoo Oh, Jung-Woo Ha, et al. Paralinguistics-aware speech-empowered large language models for natural conversation."
       },
       {
        "id": "s-references-21-2",
-       "original": "Depflow: Disentangled speech generation to mitigate semantic bias in depression detection. arXiv preprint arXiv:2601.00303, 2026."
+       "original": "Advances in Neural Information Processing Systems, 37:131072–131103, 2024."
       }
      ]
     },
     {
      "id": "p-references-22",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "[18] Yu Xuan, Xiangyu Zhang, Shuyue Stella Li, Zihan Shen, Xin Xie, Leibny Paola Garcia, and Roberto Togneri."
+       "original": "[16] Xiong Wang, Yangze Li, Chaoyou Fu, Yike Zhang, Yunhang Shen, Lei Xie, Ke Li, Xing Sun, and Long MA."
       },
       {
        "id": "s-references-22-2",
-       "original": "A new approach to extract fetal electrocardiogram using affine combination of adaptive filters."
+       "original": "Freeze-omni: A smart and low latency speech-to-speech dialogue model with frozen LLM."
       },
       {
        "id": "s-references-22-3",
-       "original": "In ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1–5."
+       "original": "In Forty-second International Conference on Machine Learning, 2025."
       },
       {
        "id": "s-references-22-4",
-       "original": "IEEE, 2023."
+       "original": "URL https://openreview.net/forum?id=s1EImzs5Id."
       }
      ]
     },
@@ -2701,11 +2984,11 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "[19] Yayue Deng, Guoqiang Hu, Haiyang Sun, Xiangyu Zhang, Haoyang Zhang, Fei Tian, Xuerui Yang, Gang Yu, and Eng Siong Chng."
+       "original": "[17] Yuxin Li, Xiangyu Zhang, Yifei Li, Zhiwei Guo, Haoyang Zhang, Eng Siong Chng, and Cuntai Guan."
       },
       {
        "id": "s-references-23-2",
-       "original": "Multi-bench: A multi-turn interactive benchmark for assessing emotional intelligence ability of spoken dialogue models."
+       "original": "Depflow: Disentangled speech generation to mitigate semantic bias in depression detection. arXiv preprint arXiv:2601.00303, 2026."
       }
      ]
     },
@@ -2716,7 +2999,19 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "arXiv preprint [20] Gemini Team, Rohan Anil, Sebastian Borgeaud, Jean-Baptiste Alayrac, Jiahui Yu, Radu Soricut, Johan Schalkwyk, Andrew M Dai, Anja Hauth, Katie Millican, et al. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805, 2023."
+       "original": "[18] Yu Xuan, Xiangyu Zhang, Shuyue Stella Li, Zihan Shen, Xin Xie, Leibny Paola Garcia, and Roberto Togneri."
+      },
+      {
+       "id": "s-references-24-2",
+       "original": "A new approach to extract fetal electrocardiogram using affine combination of adaptive filters."
+      },
+      {
+       "id": "s-references-24-3",
+       "original": "In ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1–5."
+      },
+      {
+       "id": "s-references-24-4",
+       "original": "IEEE, 2023."
       }
      ]
     },
@@ -2727,7 +3022,11 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "[21] Chao Yan, Boyong Wu, Peng Yang, Pengfei Tan, Guoqiang Hu, Li Xie, Yuxin Zhang, Fei Tian, Xuerui Yang, Xiangyu Zhang, et al. Step-audio-editx technical report. arXiv preprint [22] Donghang Wu, Haoyang Zhang, Jun Chen, Hexin Liu, Eng Siong Chng, Fei Tian, Xuerui Yang, Xiangyu Zhang, Daxin Jiang, Gang Yu, et al. Mind-paced speaking: A dual-brain approach to real-time reasoning in spoken language models. arXiv preprint arXiv:2510.09592, 2025."
+       "original": "[19] Yayue Deng, Guoqiang Hu, Haiyang Sun, Xiangyu Zhang, Haoyang Zhang, Fei Tian, Xuerui Yang, Gang Yu, and Eng Siong Chng."
+      },
+      {
+       "id": "s-references-25-2",
+       "original": "Multi-bench: A multi-turn interactive benchmark for assessing emotional intelligence ability of spoken dialogue models."
       }
      ]
     },
@@ -2738,7 +3037,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "[23] Donghang Wu, Haoyang Zhang, Chen Chen, Tianyu Zhang, Fei Tian, Xuerui Yang, Gang Yu, Hexin Liu, Nana Hou, Yuchen Hu, et al. Chronological thinking in full-duplex spoken dialogue language models. arXiv preprint arXiv:2510.05150, 2025."
+       "original": "arXiv preprint arXiv:2511.00850, 2025."
       }
      ]
     },
@@ -2749,15 +3048,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "[24] Haoyang Zhang, Jun Chen, Donghang Wu, Yuxin Li, Yuxin Zhang, Xiangyu Tony Zhang, Che Liu, Qingjian Lin, Yizhou Peng, Hexin Liu, Eng Siong Chng, Chao Yan, Boyong Wu, Yechang Huang, Xuerui Yang, and Fei Tian."
-      },
-      {
-       "id": "s-references-27-2",
-       "original": "Duplexsla: A full-duplex spoken language model with synchronized speech, language, and action, 2026."
-      },
-      {
-       "id": "s-references-27-3",
-       "original": "URL https://arxiv.org/abs/2605."
+       "original": "[20] Gemini Team, Rohan Anil, Sebastian Borgeaud, Jean-Baptiste Alayrac, Jiahui Yu, Radu Soricut, Johan Schalkwyk, Andrew M Dai, Anja Hauth, Katie Millican, et al. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805, 2023."
       }
      ]
     },
@@ -2768,7 +3059,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "20755."
+       "original": "[21] Chao Yan, Boyong Wu, Peng Yang, Pengfei Tan, Guoqiang Hu, Li Xie, Yuxin Zhang, Fei Tian, Xuerui Yang, Xiangyu Zhang, et al. Step-audio-editx technical report. arXiv preprint arXiv:2511.03601, 2025."
       }
      ]
     },
@@ -2779,17 +3070,15 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "[25] Xiangyu Zhang, Qiquan Zhang, Hexin Liu, Tianyi Xiao, Xinyuan Qian, Beena Ahmed, Eliathamby Ambikairajah, Haizhou Li, and Julien Epps."
-      },
-      {
-       "id": "s-references-29-2",
-       "original": "Mamba in speech: Towards an alternative to self-attention."
-      },
-      {
-       "id": "s-references-29-3",
-       "original": "IEEE Transactions on Audio, Speech and Language Processing, 2025."
+       "original": "[22] Donghang Wu, Haoyang Zhang, Jun Chen, Hexin Liu, Eng Siong Chng, Fei Tian, Xuerui Yang, Xiangyu Zhang, Daxin Jiang, Gang Yu, et al. Mind-paced speaking: A dual-brain approach to real-time reasoning in spoken language models. arXiv preprint arXiv:2510.09592,"
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 18,
+     "original": "2025."
     },
     {
      "id": "p-references-30",
@@ -2798,15 +3087,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "[26] Hexin Liu, Haoyang Zhang, Qiquan Zhang, Xiangyu Zhang, Dongyuan Shi, Eng Siong Chng, and Haizhou Li."
-      },
-      {
-       "id": "s-references-30-2",
-       "original": "Code-switching speech recognition under the lens: Model-and data-centric perspectives."
-      },
-      {
-       "id": "s-references-30-3",
-       "original": "IEEE Transactions on Audio, Speech and Language Processing, 2026."
+       "original": "[23] Donghang Wu, Haoyang Zhang, Chen Chen, Tianyu Zhang, Fei Tian, Xuerui Yang, Gang Yu, Hexin Liu, Nana Hou, Yuchen Hu, et al. Chronological thinking in full-duplex spoken dialogue language models. arXiv preprint arXiv:2510.05150, 2025."
       }
      ]
     },
@@ -2817,64 +3098,76 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "[27] Fei Tian, Xiangyu Tony Zhang, Yuxin Zhang, Haoyang Zhang, Yuxin Li, Daijiao Liu, Yayue Deng, Donghang Wu, Jun Chen, Liang Zhao, et al. Step-audio-r1 technical report. arXiv preprint arXiv:2511.15848, 2025."
+       "original": "[24] Haoyang Zhang, Jun Chen, Donghang Wu, Yuxin Li, Yuxin Zhang, Xiangyu Tony Zhang, Che Liu, Qingjian Lin, Yizhou Peng, Hexin Liu, Eng Siong Chng, Chao Yan, Boyong Wu, Yechang Huang, Xuerui Yang, and Fei Tian."
+      },
+      {
+       "id": "s-references-31-2",
+       "original": "Duplexsla: A full-duplex spoken language model with synchronized speech, language, and action, 2026."
+      },
+      {
+       "id": "s-references-31-3",
+       "original": "URL https://arxiv.org/abs/2605."
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 18,
+     "original": "20755."
     },
     {
      "id": "p-references-32",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "[28] Yuxin Zhang, Xiangyu Tony Zhang, Daijiao Liu, Fei Tian, Yayue Deng, Jun Chen, Qingjian Lin, Haoyang Zhang, Yuxin Li, Jinglan Gong, et al. Step-audio-r1.5 technical report. arXiv preprint arXiv:2604.25719, 2026."
+       "original": "[25] Xiangyu Zhang, Qiquan Zhang, Hexin Liu, Tianyi Xiao, Xinyuan Qian, Beena Ahmed, Eliathamby Ambikairajah, Haizhou Li, and Julien Epps."
+      },
+      {
+       "id": "s-references-32-2",
+       "original": "Mamba in speech: Towards an alternative to self-attention."
+      },
+      {
+       "id": "s-references-32-3",
+       "original": "IEEE Transactions on Audio, Speech and Language Processing,"
       }
      ]
     },
     {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 18,
+     "original": "2025."
+    },
+    {
      "id": "p-references-33",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "[29] Daniel S."
+       "original": "[26] Hexin Liu, Haoyang Zhang, Qiquan Zhang, Xiangyu Zhang, Dongyuan Shi, Eng Siong Chng, and Haizhou Li."
       },
       {
        "id": "s-references-33-2",
-       "original": "Park, William Chan, Yu Zhang, et al. SpecAugment: A simple data augmentation method for automatic speech recognition."
+       "original": "Code-switching speech recognition under the lens: Model-and data-centric perspectives."
       },
       {
        "id": "s-references-33-3",
-       "original": "In Interspeech 2019, pages 2613–2617, 2019."
+       "original": "IEEE Transactions on Audio, Speech and Language Processing, 2026."
       }
      ]
     },
     {
      "id": "p-references-34",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "[30] J."
-      },
-      {
-       "id": "s-references-34-2",
-       "original": "G."
-      },
-      {
-       "id": "s-references-34-3",
-       "original": "Fiscus."
-      },
-      {
-       "id": "s-references-34-4",
-       "original": "A post-processing system to yield reduced word error rates: Recognizer output voting error reduction (ROVER)."
-      },
-      {
-       "id": "s-references-34-5",
-       "original": "In 1997 IEEE Workshop on Automatic Speech Recognition and Understanding Proceedings, pages 347–354, 1997."
+       "original": "[27] Fei Tian, Xiangyu Tony Zhang, Yuxin Zhang, Haoyang Zhang, Yuxin Li, Daijiao Liu, Yayue Deng, Donghang Wu, Jun Chen, Liang Zhao, et al. Step-audio-r1 technical report. arXiv preprint arXiv:2511.15848, 2025."
       }
      ]
     },
@@ -2885,15 +3178,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-35-1",
-       "original": "[31] Hui Bu, Jiatong Du, Xingyu Na, Bengu Wu, and Hao Zheng."
-      },
-      {
-       "id": "s-references-35-2",
-       "original": "AIShell-1: An open-source mandarin speech corpus and a speech recognition baseline."
-      },
-      {
-       "id": "s-references-35-3",
-       "original": "In 20th Conference of the Oriental Chapter of the International Coordinating Committee on Speech Databases and Speech I/O Systems and Assessment, pages 1–5, 2017."
+       "original": "[28] Yuxin Zhang, Xiangyu Tony Zhang, Daijiao Liu, Fei Tian, Yayue Deng, Jun Chen, Qingjian Lin, Haoyang Zhang, Yuxin Li, Jinglan Gong, et al. Step-audio-r1.5 technical report. arXiv preprint arXiv:2604.25719, 2026."
       }
      ]
     },
@@ -2904,15 +3189,15 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "[32] Jiatong Du, Xingyu Na, Xuechen Liu, and Hui Bu."
+       "original": "[29] Daniel S."
       },
       {
        "id": "s-references-36-2",
-       "original": "AISHELL-2: Transforming mandarin ASR research into industrial scale."
+       "original": "Park, William Chan, Yu Zhang, et al. SpecAugment: A simple data augmentation method for automatic speech recognition."
       },
       {
        "id": "s-references-36-3",
-       "original": "In arXiv preprint arXiv:1808.10583, 2018."
+       "original": "In Interspeech 2019, pages 2613–2617, 2019."
       }
      ]
     },
@@ -2923,11 +3208,23 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "[33] Binbin Zhang, Hang Lv, Pengcheng Guo, Qijie Shao, Chao Yang, Lei Xie, Xin Xu, Hui Bu, Xiaoyu Chen, Chenchen Zeng, et al. WenetSpeech: A 10000+ hours multi-domain mandarin corpus for speech recognition."
+       "original": "[30] J."
       },
       {
        "id": "s-references-37-2",
-       "original": "In ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing, pages 6182–6186, 2022."
+       "original": "G."
+      },
+      {
+       "id": "s-references-37-3",
+       "original": "Fiscus."
+      },
+      {
+       "id": "s-references-37-4",
+       "original": "A post-processing system to yield reduced word error rates: Recognizer output voting error reduction (ROVER)."
+      },
+      {
+       "id": "s-references-37-5",
+       "original": "In 1997 IEEE Workshop on Automatic Speech Recognition and Understanding Proceedings, pages 347–354, 1997."
       }
      ]
     },
@@ -2938,7 +3235,15 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "[34] Alexis Conneau, Min Ma, Simran Khanuja, et al. FLEURS: Few-shot learning evaluation of universal representations of speech. arXiv preprint arXiv:2205.12446, 2022."
+       "original": "[31] Hui Bu, Jiatong Du, Xingyu Na, Bengu Wu, and Hao Zheng."
+      },
+      {
+       "id": "s-references-38-2",
+       "original": "AIShell-1: An open-source mandarin speech corpus and a speech recognition baseline."
+      },
+      {
+       "id": "s-references-38-3",
+       "original": "In 20th Conference of the Oriental Chapter of the International Coordinating Committee on Speech Databases and Speech I/O Systems and Assessment, pages 1–5, 2017."
       }
      ]
     },
@@ -2949,15 +3254,15 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "[35] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur."
+       "original": "[32] Jiatong Du, Xingyu Na, Xuechen Liu, and Hui Bu."
       },
       {
        "id": "s-references-39-2",
-       "original": "LibriSpeech: An ASR corpus based on public domain audio books."
+       "original": "AISHELL-2: Transforming mandarin ASR research into industrial scale."
       },
       {
        "id": "s-references-39-3",
-       "original": "In 2015 IEEE International Conference on Acoustics, Speech and Signal Processing, pages 5206–5210, 2015."
+       "original": "In arXiv preprint arXiv:1808.10583, 2018."
       }
      ]
     },
@@ -2968,11 +3273,11 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-40-1",
-       "original": "[36] Rosana Ardila, Megan Branson, Kelly Davis, et al. Common voice: A massively-multilingual speech corpus."
+       "original": "[33] Binbin Zhang, Hang Lv, Pengcheng Guo, Qijie Shao, Chao Yang, Lei Xie, Xin Xu, Hui Bu, Xiaoyu Chen, Chenchen Zeng, et al. WenetSpeech: A 10000+ hours multi-domain mandarin corpus for speech recognition."
       },
       {
        "id": "s-references-40-2",
-       "original": "In Proceedings of the Twelfth Language Resources and Evaluation Conference, pages 4218–4222, 2020."
+       "original": "In ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing, pages 6182–6186, 2022."
       }
      ]
     },
@@ -2983,15 +3288,7 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-41-1",
-       "original": "[37] Artificial Analysis."
-      },
-      {
-       "id": "s-references-41-2",
-       "original": "Voxpopuli-cleaned-aa: Cleaned ground truth transcripts for voxpopuli english test set, 2026."
-      },
-      {
-       "id": "s-references-41-3",
-       "original": "URL https://artificialanalysis.ai/articles/aa-wer-v2."
+       "original": "[34] Alexis Conneau, Min Ma, Simran Khanuja, et al. FLEURS: Few-shot learning evaluation of universal representations of speech. arXiv preprint arXiv:2205.12446, 2022."
       }
      ]
     },
@@ -3002,15 +3299,15 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "[38] Artificial Analysis."
+       "original": "[35] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur."
       },
       {
        "id": "s-references-42-2",
-       "original": "Earnings22-cleaned-aa: Cleaned ground truth transcripts for earnings22 english test set, 2026."
+       "original": "LibriSpeech: An ASR corpus based on public domain audio books."
       },
       {
        "id": "s-references-42-3",
-       "original": "URL https://artificialanalysis.ai/articles/aa-wer-v2."
+       "original": "In 2015 IEEE International Conference on Acoustics, Speech and Signal Processing, pages 5206–5210, 2015."
       }
      ]
     },
@@ -3021,15 +3318,11 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-43-1",
-       "original": "[39] Chao Yan, Boyong Wu, Peng Yang, Pengfei Tan, Guoqiang Hu, Yuxin Zhang, Xiangyu, Zhang, Fei Tian, Xuerui Yang, Xiangyu Zhang, Daxin Jiang, and Gang Yu."
+       "original": "[36] Rosana Ardila, Megan Branson, Kelly Davis, et al. Common voice: A massively-multilingual speech corpus."
       },
       {
        "id": "s-references-43-2",
-       "original": "Step-audio-editx technical report, 2025."
-      },
-      {
-       "id": "s-references-43-3",
-       "original": "URL https://arxiv.org/abs/2511.03601."
+       "original": "In Proceedings of the Twelfth Language Resources and Evaluation Conference, pages 4218–4222, 2020."
       }
      ]
     },
@@ -3040,10 +3333,67 @@ globalThis.PAPER_2605_23463 = {
      "sentences": [
       {
        "id": "s-references-44-1",
-       "original": "[40] John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov."
+       "original": "[37] Artificial Analysis."
       },
       {
        "id": "s-references-44-2",
+       "original": "Voxpopuli-cleaned-aa: Cleaned ground truth transcripts for voxpopuli english test set, 2026."
+      },
+      {
+       "id": "s-references-44-3",
+       "original": "URL https://artificialanalysis.ai/articles/aa-wer-v2."
+      }
+     ]
+    },
+    {
+     "id": "p-references-45",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-references-45-1",
+       "original": "[38] Artificial Analysis."
+      },
+      {
+       "id": "s-references-45-2",
+       "original": "Earnings22-cleaned-aa: Cleaned ground truth transcripts for earnings22 english test set, 2026."
+      },
+      {
+       "id": "s-references-45-3",
+       "original": "URL https://artificialanalysis.ai/articles/aa-wer-v2."
+      }
+     ]
+    },
+    {
+     "id": "p-references-46",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-references-46-1",
+       "original": "[39] Chao Yan, Boyong Wu, Peng Yang, Pengfei Tan, Guoqiang Hu, Yuxin Zhang, Xiangyu, Zhang, Fei Tian, Xuerui Yang, Xiangyu Zhang, Daxin Jiang, and Gang Yu."
+      },
+      {
+       "id": "s-references-46-2",
+       "original": "Step-audio-editx technical report, 2025."
+      },
+      {
+       "id": "s-references-46-3",
+       "original": "URL https://arxiv.org/abs/2511.03601."
+      }
+     ]
+    },
+    {
+     "id": "p-references-47",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-references-47-1",
+       "original": "[40] John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov."
+      },
+      {
+       "id": "s-references-47-2",
        "original": "Proximal policy optimization algorithms. arXiv preprint arXiv:1707.06347, 2017."
       }
      ]
@@ -3165,7 +3515,7 @@ globalThis.PAPER_2605_23463 = {
   {
    "id": "ann-011",
    "anchor": {
-    "sentence_id": "s-4-3-7-3",
+    "sentence_id": "s-4-3-8-3",
     "quote": "39% gain in average accepted length"
    },
    "kind": "number",
@@ -3176,7 +3526,7 @@ globalThis.PAPER_2605_23463 = {
   {
    "id": "ann-012",
    "anchor": {
-    "sentence_id": "s-4-3-8-3",
+    "sentence_id": "s-4-3-10-2",
     "quote": "grounded generation tasks can sometimes be accelerated more aggressively than free-form text generation"
    },
    "kind": "connection",

@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Voxtral TTS 技术报告 · 全文双语精读 | ASR/TTS 知识库</title>
-<meta name="description" content="Voxtral TTS 技术报告（Voxtral TTS）全文中文翻译 + 22 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta name="description" content="Voxtral TTS 技术报告（Voxtral TTS）全文中文翻译 + 21 条句子级讲解 · ASR/TTS 知识库论文精读">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2603.25551/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Voxtral TTS 技术报告 · 全文双语精读">
-<meta property="og:description" content="Voxtral TTS 技术报告（Voxtral TTS）全文中文翻译 + 22 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta property="og:description" content="Voxtral TTS 技术报告（Voxtral TTS）全文中文翻译 + 21 条句子级讲解 · ASR/TTS 知识库论文精读">
 <meta property="og:url" content="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2603.25551/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Voxtral TTS","alternateName":"Voxtral TTS 技术报告","url":"https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2603.25551/","isBasedOn":"https://arxiv.org/abs/2603.25551","inLanguage":["en","zh-CN"],"isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Zhitao Zeng"}}</script>
 <style>
@@ -134,7 +134,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
     <div class="en-title">Voxtral TTS</div>
     <div class="meta">
       关联模型：<a href="../../index.html#/model/voxtral_tts">Voxtral TTS</a>（Mistral · 2026-03） ·
-      全文 149 个语块 · 讲解 22 条（精选 15 条）
+      全文 305 个语块 · 讲解 21 条（精选 14 条）
     </div>
   </div>
   <div class="controls">
@@ -166,7 +166,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div>
     <p class="muted" style="font-size:12.5px">以上为论文级三条摘要；下面进入全文双语精读，讲解锚定在具体句子旁。</p>
   </section>
-  <nav class="toc"><a class="lv1" href="#sec-abstract">摘要</a><a class="lv2" href="#sec-webpage">项目主页：</a><a class="lv1" href="#sec-1">1 引言</a><a class="lv1" href="#sec-2">2 建模</a><a class="lv2" href="#sec-2-1">2.1 2.1 Voxtral Codec</a><a class="lv2" href="#sec-waveform-autoencoder">波形自编码器。</a><a class="lv2" href="#sec-representation-quantization">表征量化。</a><a class="lv2" href="#sec-semantic-token-learning">语义 token 学习。</a><a class="lv2" href="#sec-adversarial-training">对抗训练。</a><a class="lv2" href="#sec-parameter">参数</a><a class="lv2" href="#sec-training-objective">训练目标。</a><a class="lv2" href="#sec-2-2">2.2 2.2 解码器主干</a><a class="lv2" href="#sec-2-3">2.3 2.3 流匹配 Transformer</a><a class="lv1" href="#sec-3">3 训练</a><a class="lv2" href="#sec-3-1">3.1 3.1 预训练</a><a class="lv2" href="#sec-3-2">3.2 3.2 直接偏好优化</a><a class="lv1" href="#sec-4">4 结果</a><a class="lv2" href="#sec-4-1">4.1 4.1 Voxtral Codec</a><a class="lv2" href="#sec-4-2">4.2 4.2 自动评测</a><a class="lv2" href="#sec-4-3">4.3 4.3 人工评测</a><a class="lv2" href="#sec-4-3-1">4.3.1 4.3.1 旗舰音色</a><a class="lv2" href="#sec-emotion-steering">情感引导</a><a class="lv2" href="#sec-4-3-2">4.3.2 4.3.2 零样本声音克隆</a><a class="lv1" href="#sec-5">5 分析</a><a class="lv2" href="#sec-language">语言</a><a class="lv2" href="#sec-overall">整体</a><a class="lv2" href="#sec-5-1">5.1 5.1 DPO 带来的改进</a><a class="lv2" href="#sec-5-2">5.2 5.2 推理参数</a><a class="lv1" href="#sec-6">6 基于 vLLM-Omni 的推理与服务</a><a class="lv2" href="#sec-6-1">6.1 6.1 流匹配 Transformer 的 CUDA Graph 加速</a><a class="lv2" href="#sec-configuration">配置</a><a class="lv2" href="#sec-6-2">6.2 6.2 异步分块流式</a><a class="lv2" href="#sec-6-3">6.3 6.3 推理吞吐</a><a class="lv2" href="#sec-concurrency">并发</a><a class="lv1" href="#sec-7">7 结论</a><a class="lv2" href="#sec-core-contributors">核心贡献者</a><a class="lv2" href="#sec-contributors">贡献者</a><a class="lv2" href="#sec-7-1">7.1 7.1 致谢</a><a class="lv1" href="#sec-references">References</a></nav>
+  <nav class="toc"><a class="lv1" href="#sec-abstract">摘要</a><a class="lv2" href="#sec-webpage">项目主页：</a><a class="lv1" href="#sec-1">1 引言</a><a class="lv1" href="#sec-2">2 建模</a><a class="lv2" href="#sec-2-1">2.1 4.1 Voxtral Codec</a><a class="lv2" href="#sec-waveform-autoencoder">波形自编码器。</a><a class="lv2" href="#sec-representation-quantization">表征量化。</a><a class="lv2" href="#sec-semantic-token-learning">语义 token 学习。</a><a class="lv2" href="#sec-adversarial-training">对抗训练。</a><a class="lv2" href="#sec-parameter">参数</a><a class="lv2" href="#sec-training-objective">训练目标。</a><a class="lv2" href="#sec-2-2">2.2 2.2 解码器主干</a><a class="lv2" href="#sec-2-3">2.3 2.3 流匹配 Transformer</a><a class="lv1" href="#sec-3">3 训练</a><a class="lv2" href="#sec-3-1">3.1 3.1 预训练</a><a class="lv2" href="#sec-3-2">3.2 3.2 直接偏好优化</a><a class="lv1" href="#sec-4">4 结果</a><a class="lv2" href="#sec-4-1">4.1 4.1 Voxtral Codec</a><a class="lv2" href="#sec-4-2">4.2 4.2 自动评测</a><a class="lv2" href="#sec-4-3">4.3 4.3 人工评测</a><a class="lv2" href="#sec-4-3-1">4.3.1 4.3.1 旗舰音色</a><a class="lv2" href="#sec-emotion-steering">情感引导</a><a class="lv2" href="#sec-4-3-2">4.3.2 4.3.2 零样本声音克隆</a><a class="lv1" href="#sec-5">5 分析</a><a class="lv2" href="#sec-language">语言</a><a class="lv2" href="#sec-overall">整体</a><a class="lv2" href="#sec-5-1">5.1 5.1 DPO 带来的改进</a><a class="lv2" href="#sec-5-2">5.2 5.2 推理参数</a><a class="lv1" href="#sec-6">6 基于 vLLM-Omni 的推理与服务</a><a class="lv2" href="#sec-6-1">6.1 6.1 流匹配 Transformer 的 CUDA Graph 加速</a><a class="lv2" href="#sec-configuration">配置</a><a class="lv2" href="#sec-6-2">6.2 6.2 异步分块流式</a><a class="lv2" href="#sec-6-3">6.3 6.3 推理吞吐</a><a class="lv2" href="#sec-concurrency">并发</a><a class="lv1" href="#sec-7">7 结论</a><a class="lv2" href="#sec-core-contributors">核心贡献者</a><a class="lv2" href="#sec-contributors">贡献者</a><a class="lv2" href="#sec-7-1">7.1 7.1 致谢</a><a class="lv1" href="#sec-references">References</a></nav>
   <article class="reader"><section>
       <h2 class="sech lv1" id="sec-abstract"><span class="t-zh">摘要</span><span class="t-en">Abstract</span></h2><div class="pblk" id="p-abstract-1">
           <p class="en-lines"><span class="sent" data-sid="s-abstract-1-1"><span class="en">We introduce Voxtral TTS, an expressive multilingual text-to-speech model that generates natural speech from as little as 3 seconds of reference audio.</span></span> <span class="sent" data-sid="s-abstract-1-2"><span class="en">Voxtral TTS adopts a hybrid architecture that combines auto-regressive generation of semantic speech tokens with flow-matching for acoustic tokens.</span></span> <span class="sent" data-sid="s-abstract-1-3"><span class="en">These tokens are encoded and decoded with Voxtral Codec, a speech tokenizer trained from scratch with a hybrid VQ-FSQ quantization scheme.</span></span> <span class="sent" data-sid="s-abstract-1-4"><span class="en">In human evaluations conducted by native speakers, Voxtral TTS is preferred for multilingual voice cloning due to its naturalness and expressivity, achieving a 68.4% win rate over ElevenLabs Flash v2.5.</span></span> <span class="sent" data-sid="s-abstract-1-5"><span class="en">We release the model weights under a CC BY-NC license.</span></span></p>
@@ -175,8 +175,18 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div></section>
 <section>
       <h3 class="sech lv2" id="sec-webpage"><span class="t-zh">项目主页：</span><span class="t-en">Webpage:</span></h3><div class="pblk" id="p-webpage-1">
-          <p class="en-lines"><span class="sent" data-sid="s-webpage-1-1"><span class="en">https://mistral.ai/news/voxtral-tts Model weights: https://huggingface.co/mistralai/Voxtral-4B-TTS-2603 0 20 40 60 80 100 Average Listener Preference (%) Voice cloning Flagship voices Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-webpage-1-1"><span class="zh">https://mistral.ai/news/voxtral-tts 模型权重：https://huggingface.co/mistralai/Voxtral-4B-TTS-2603。此处嵌入了首页图表（抽取时被打散为散行）：横轴为 Voxtral TTS 与 ElevenLabs Flash v2.5，纵轴为平均听众偏好（%），在声音克隆与旗舰音色两类设置下标注胜率（0、20、40、60、80、100 为刻度）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-webpage-1-1"><span class="en">https://mistral.ai/news/voxtral-tts Model weights: https://huggingface.co/mistralai/Voxtral-4B-TTS-2603</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-webpage-1-1"><span class="zh">（链接行）https://mistral.ai/news/voxtral-tts；模型权重：https://huggingface.co/mistralai/Voxtral-4B-TTS-2603</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-webpage-1"><code>0 20 40 60 80 100</code></div>
+<div class="eq" id="eq-webpage-2"><code>Average Listener Preference (%) Voice cloning Flagship voices</code></div>
+<div class="eq" id="eq-webpage-3"><code>68.4% 31.6% 58.3% 41.7%</code></div>
+<div class="pblk" id="p-webpage-2">
+          <p class="en-lines"><span class="sent" data-sid="s-webpage-2-1"><span class="en">Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-webpage-2-1"><span class="zh">2.
+（原始数据照录）
+Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
           
         </div>
 <div class="cap" id="fig-webpage-1"><span class="cap-k">图</span><p class="en">Figure 1: Voxtral TTS is preferred to ElevenLabs Flash v2.5 in human evaluations. We plot the win rate for Voxtral TTS against ElevenLabs Flash v2.5 in human evaluations across two categories. For flagship voices, we use the default voices for each model and 77 unique text examples. In the voice cloning set-up, we provide a short audio reference clip and 60 text prompts. In both categories, human annotators blindly rate which audio is better between the two models. Voxtral TTS is preferred in 58.3 and 68.4% of instances.</p><p class="zh">图 1：在人工评测中，Voxtral TTS 相比 ElevenLabs Flash v2.5 更受偏好。图中绘制了人工评测里 Voxtral TTS 对 ElevenLabs Flash v2.5 的胜率，覆盖两个类别。旗舰音色设置下，我们使用各模型的默认音色和 77 条不重复的文本样例；声音克隆设置下，我们提供一段短音频参考片段和 60 条文本提示。两个类别中，人工标注者都在不知道模型身份的情况下盲选哪段音频更好。Voxtral TTS 在 58.3% 和 68.4% 的样本上更受偏好。</p></div></section>
@@ -211,17 +221,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <section>
       <h2 class="sech lv1" id="sec-2"><span class="secnum">2</span> <span class="t-zh">建模</span><span class="t-en">Modeling</span></h2><div class="cap" id="fig-2-1"><span class="cap-k">图</span><p class="en">Figure 2 highlights the architecture of Voxtral TTS. It consists of a novel audio codec—Voxtral Codec—which encodes a reference voice sample into audio tokens consisting of semantic and acoustic tokens. The audio tokens are combined with text tokens to form the input to the LM decoder backbone. To generate speech, the decoder backbone auto-regressively generates semantic token outputs. A flow-matching transformer generates the acoustic tokens. The codec decoder maps the output tokens to the corresponding audio waveform.</p><p class="zh">图 2 展示了 Voxtral TTS 的架构要点。它包含一个全新的音频 codec——Voxtral Codec，把参考语音样本编码为由语义 token 和声学 token 组成的音频 token。音频 token 与文本 token 拼接后构成 LM 解码器主干的输入。生成语音时，解码器主干自回归地生成语义 token 输出；一个流匹配 Transformer 生成声学 token；codec 解码器再把输出 token 映射为对应的音频波形。</p></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-2-1"><span class="secnum">2.1</span> <span class="t-zh">2.1 Voxtral Codec</span><span class="t-en">Voxtral Codec</span></h3><div class="pblk" id="p-2-1-1">
-          <p class="en-lines"><span class="sent" data-sid="s-2-1-1-1"><span class="en">Voxtral Codec is a convolutional–transformer autoencoder [Défossez et al., 2022] that compresses raw 24 kHz mono waveforms into 12.5 Hz frames of 37 discrete tokens (1 semantic + 36 acoustic), achieving a total bitrate of 2.14 kbps.</span><button class="mk feat" data-sid="s-2-1-1-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-1-1-2"><span class="en">These tokens serve as the input audio representation to Voxtral TTS.</span></span> <span class="sent" data-sid="s-2-1-1-3"><span class="en">Through a novel combination of architectural and training objective improvements, Voxtral Codec outperforms existing baselines such as Mimi [Défossez et al., 2024], with results presented in Section 4.1.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-1-1-1"><span class="zh">Voxtral Codec 是一个卷积-Transformer 自编码器 [Défossez et al., 2022]，把 24 kHz 单声道的原始波形压缩成 12.5 Hz 帧率、每帧 37 个离散 token（1 个语义 token + 36 个声学 token），总码率为 2.14 kbps。</span><button class="mk feat" data-sid="s-2-1-1-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-1-1-2"><span class="zh">这些 token 就是 Voxtral TTS 的输入音频表征。</span></span><span class="sent" data-sid="s-2-1-1-3"><span class="zh">通过一系列新颖的架构与训练目标改进，Voxtral Codec 优于 Mimi [Défossez et al., 2024] 等现有基线，结果见 Section 4.1。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-1-1-1">
-      <div class="ann-card kind-number">
-        <div class="ann-kind">数字怎么理解</div>
-        <div class="ann-title">2.14 kbps 的分解账</div>
-        <div class="ann-quote">12.5 Hz frames of 37 discrete tokens</div>
-        <div class="exp exp-tech">12.5 Hz × (log2 8192 + 36 × log2 21) ≈ 2.14 kbps：语义流每秒只贡献 13 bit/帧 × 12.5 = 0.16 kbps，声学流扛了剩下的大头。这意味着保证「说什么」的代价极低，算力和码率几乎全部花在「说得像不像」。对比 Mimi 的 32 × 2048 RVQ（4.4 kbps），Voxtral 把声学从 32 个 2048 项码本换成 36 个 21 级 FSQ，码率减半还反超 PESQ，说明非码本式的标量量化在低码率段效率更高。</div>
-        
-      </div></div></div>
+      <h3 class="sech lv2" id="sec-2-1"><span class="secnum">2.1</span> <span class="t-zh">4.1 Voxtral Codec</span><span class="t-en">Voxtral Codec</span></h3><div class="pblk" id="p-2-1-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-1-1"><span class="en">Voxtral Codec is a convolutional–transformer autoencoder [Défossez et al., 2022] that compresses raw</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-1-1"><span class="zh">Voxtral Codec 是一个卷积-Transformer 自编码器 [Défossez et al., 2022]，把 24 kHz 单声道的原始波形压缩成 12.5 Hz 帧率、每帧 37 个离散 token（1 个语义 token + 36 个声学 token），总码率为 2.14 kbps。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-1-1"><code>24 kHz mono waveforms into 12.5 Hz frames of 37 discrete tokens (1 semantic + 36 acoustic), achiev-</code></div>
+<div class="pblk" id="p-2-1-2">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-2-1"><span class="en">ing a total bitrate of 2.14 kbps.</span></span> <span class="sent" data-sid="s-2-1-2-2"><span class="en">These tokens serve as the input audio representation to Voxtral TTS.</span></span> <span class="sent" data-sid="s-2-1-2-3"><span class="en">Through a novel combination of architectural and training objective improvements, Voxtral Codec outperforms existing baselines such as Mimi [Défossez et al., 2024], with results presented in Section 4.1.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-2-1"><span class="zh">Voxtral Codec 是一个卷积-Transformer 自编码器 [Défossez et al., 2022]，把 24 kHz 单声道的原始波形压缩成 12.5 Hz 帧率、每帧 37 个离散 token（1 个语义 token + 36 个声学 token），总码率为 2.14 kbps。</span></span><span class="sent" data-sid="s-2-1-2-2"><span class="zh">这些 token 就是 Voxtral TTS 的输入音频表征。</span></span><span class="sent" data-sid="s-2-1-2-3"><span class="zh">通过一系列新颖的架构与训练目标改进，Voxtral Codec 优于 Mimi [Défossez et al., 2024] 等现有基线，结果见 Section 4.1。</span></span></p>
+          
         </div></section>
 <section>
       <h3 class="sech lv2" id="sec-waveform-autoencoder"><span class="t-zh">波形自编码器。</span><span class="t-en">Waveform Autoencoder.</span></h3><div class="pblk" id="p-waveform-autoencoder-1">
@@ -235,14 +244,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-waveform-autoencoder-3">
-          <p class="en-lines"><span class="sent" data-sid="s-waveform-autoencoder-3-1"><span class="en">80ms audio Acoustic Flow-Matching Transformer Semantic Linear Head &lt;EOA&gt; Autoregressive Decoder Backbone voice reference</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-waveform-autoencoder-3-1"><span class="zh">此处为抽取自架构图的散行文字：80 ms 音频经声学流匹配 Transformer 与语义线性头处理，由自回归解码器主干消费语音参考（voice reference），直至 &lt;EOA&gt; 结束标记。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-waveform-autoencoder-3-1"><span class="en">80ms audio A Acoustic Flow-Matching Transformer Semantic Linear Head A A &lt;EOA&gt; Autoregressive Decoder Backbone A T A A A T T T A A A A voice reference</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-waveform-autoencoder-3-1"><span class="zh">（图 1 标签：80ms 音频帧 A；声学 Flow-Matching Transformer；Semantic Linear Head；&lt;EOA&gt;；自回归 Decoder Backbone；token 序列 A/T 交替；voice reference。）</span></span></p>
           
         </div>
 <div class="cap" id="fig-waveform-autoencoder-1"><span class="cap-k">图</span><p class="en">Figure 2: Architecture overview of Voxtral TTS. A voice reference ranging from 3s-30s is fed to the Voxtral Codec encoder to obtain audio tokens at a frame rate of 12.5 Hz. Each audio frame (labeled A) consists of a semantic token and acoustic tokens. The voice reference audio tokens along with the text prompt tokens (labeled T) are fed to the decoder backbone. The decoder auto-regressively generates a sequence of semantic tokens until it reaches a special End of Audio token (&lt;EOA&gt;). At each timestep, the semantic token from the decoder backbone is fed to a flow-matching transformer, which is run multiple times to predict the acoustic tokens. The semantic and acoustic tokens are fed to the Voxtral Codec decoder to obtain the generated waveform.</p><p class="zh">图 2：Voxtral TTS 的架构总览。一段 3s-30s 的语音参考被送入 Voxtral Codec 编码器，得到 12.5 Hz 帧率的音频 token。每个音频帧（标记为 A）由一个语义 token 和若干声学 token 组成。语音参考的音频 token 与文本提示 token（标记为 T）一起送入解码器主干。解码器自回归地生成语义 token 序列，直到遇到特殊的音频结束 token（&lt;EOA&gt;）。在每个时间步，解码器主干输出的语义 token 被送入流匹配 Transformer，后者运行多次以预测声学 token。语义与声学 token 一起送入 Voxtral Codec 解码器，得到生成的波形。</p></div>
 <div class="pblk" id="p-waveform-autoencoder-4">
-          <p class="en-lines"><span class="sent" data-sid="s-waveform-autoencoder-4-1"><span class="en">Adversarial + Reconstruction Losses Soft-Aligned ASR Distillation Loss ASR Model Encoder Decoder q1 (d=256) q2 (d=36) Linear Linear VQ FSQ Strided Causal Conv Strided Causal Conv Causal Conv Patch 24 kHz Quantization Transposed Causal Conv Causal Conv Unpatch (21 levels) x36 Repeat 4x Repeat 4x</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-waveform-autoencoder-4-1"><span class="zh">此处为 Voxtral Codec 架构图的散行文字，依次为：对抗损失 + 重建损失、软对齐 ASR 蒸馏损失、ASR 模型；编码器-解码器中含 q1（d=256）与 q2（d=36）两路表征，分别经线性层进入 VQ 与 FSQ；编码侧为分块（Patch）24 kHz 输入加跨步因果卷积、因果卷积，量化层 FSQ 为 21 级、共 36 路，解码侧为转置因果卷积与解块（Unpatch）；编码与解码各重复 4 次。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-waveform-autoencoder-4-1"><span class="en">Adversarial + Reconstruction Losses Soft-Aligned ASR Distillation Loss ASR Model Encoder Decoder q1 (d=256) q2 (d=36) Linear Linear VQ FSQ Strided Causal Conv Strided Causal Conv Transformer Block Transformer Block Transformer Block Transformer Block Causal Conv Patch 24 kHz Quantization Transposed Causal Conv Transformer Block Transformer Block Causal Conv Unpatch (21 levels) x36 Repeat 4x Repeat 4x</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-waveform-autoencoder-4-1"><span class="zh">（图 2 音频编解码器标签：对抗+重建损失（Adversarial + Reconstruction Losses）；软对齐 ASR 蒸馏损失（Soft-Aligned ASR Distillation Loss）；ASR Model Encoder/Decoder；q1(d=256)/q2(d=36)；Linear；VQ/FSQ；Strided Causal Conv；Transformer Block；Causal Conv Patch；24 kHz 量化；转置卷积；Unpatch（21 levels）；x36；Repeat 4x。）</span></span></p>
           
         </div>
 <div class="cap" id="fig-waveform-autoencoder-2"><span class="cap-k">图</span><p class="en">Figure 3: Architecture overview and training of Voxtral Codec. It consists of a split semantic VQ codebook and acoustic FSQ codebooks. Both semantic and acoustic tokens are combined for reconstruction. The semantic token has an additional distillation loss from a supervised ASR model.</p><p class="zh">图 3：Voxtral Codec 的架构与训练总览。它由分裂的语义 VQ 码本与声学 FSQ 码本构成；语义与声学 token 共同用于重建；语义 token 还带有一个来自监督式 ASR 模型的蒸馏损失。</p></div>
@@ -294,12 +303,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-semantic-token-learning-1"><code>˜zl · hl ∥˜zl∥∥hl∥, ˜zl =</code></div>
-<div class="eq" id="eq-semantic-token-learning-2"><code>L LASR = 1 −1</code></div>
-<div class="eq" id="eq-semantic-token-learning-3"><code>L</code></div>
-<div class="eq" id="eq-semantic-token-learning-4"><code>l=1</code></div>
-<div class="eq" id="eq-semantic-token-learning-5"><code>F f=1</code></div>
+<div class="eq" id="eq-semantic-token-learning-2"><code>L X</code></div>
+<div class="eq" id="eq-semantic-token-learning-3"><code>LASR = 1 −1</code></div>
+<div class="eq" id="eq-semantic-token-learning-4"><code>L</code></div>
+<div class="eq" id="eq-semantic-token-learning-5"><code>l=1</code></div>
+<div class="eq" id="eq-semantic-token-learning-6"><code>F X</code></div>
+<div class="eq" id="eq-semantic-token-learning-7"><code>f=1 Al,f zf (1)</code></div>
 <div class="pblk" id="p-semantic-token-learning-3">
-          <p class="en-lines"><span class="sent" data-sid="s-semantic-token-learning-3-1"><span class="en">Al,f zf where zf are the projected post-VQ semantic embeddings at codec frame f, hl are the last-layer decoder hidden states from Whisper at token position l, and A ∈RL×F is a soft alignment matrix derived from a subset of Whisper’s cross-attention heads identified as best correlating with wordlevel timestamps via dynamic time warping (DTW) [Berndt and Clifford, 1994].</span></span> <span class="sent" data-sid="s-semantic-token-learning-3-2"><span class="en">To compute A, the cross-attention weights from these heads are normalized across the decoder token dimension, median-filtered, and averaged over heads.</span></span> <span class="sent" data-sid="s-semantic-token-learning-3-3"><span class="en">The resulting matrix is linearly interpolated along the encoder frame axis to match the codec frame rate (12.5 Hz), so that ˜zl is the attention-weighted sum of codec embeddings aligned to the l-th decoder token.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-semantic-token-learning-3-1"><span class="en">where zf are the projected post-VQ semantic embeddings at codec frame f, hl are the last-layer decoder hidden states from Whisper at token position l, and A ∈RL×F is a soft alignment matrix derived from a subset of Whisper’s cross-attention heads identified as best correlating with wordlevel timestamps via dynamic time warping (DTW) [Berndt and Clifford, 1994].</span></span> <span class="sent" data-sid="s-semantic-token-learning-3-2"><span class="en">To compute A, the cross-attention weights from these heads are normalized across the decoder token dimension, median-filtered, and averaged over heads.</span></span> <span class="sent" data-sid="s-semantic-token-learning-3-3"><span class="en">The resulting matrix is linearly interpolated along the encoder frame axis to match the codec frame rate (12.5 Hz), so that ˜zl is the attention-weighted sum of codec embeddings aligned to the l-th decoder token.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-semantic-token-learning-3-1"><span class="zh">Al,f zf 其中 zf 是 codec 第 f 帧投影后的 VQ 后语义嵌入，hl 是 Whisper 在 token 位置 l 处的最后一层解码器隐状态，A ∈RL×F 是软对齐矩阵，来自与词级时间戳相关性最强的一部分 Whisper 交叉注意力头（通过动态时间规整（DTW）[Berndt and Clifford, 1994] 识别）。</span></span><span class="sent" data-sid="s-semantic-token-learning-3-2"><span class="zh">计算 A 时，先把这些头的交叉注意力权重沿解码器 token 维归一化，再做中值滤波并对各头取平均。</span></span><span class="sent" data-sid="s-semantic-token-learning-3-3"><span class="zh">所得矩阵沿编码器帧轴线性插值以匹配 codec 帧率（12.5 Hz），使 ˜zl 成为与第 l 个解码器 token 对齐的 codec 嵌入的注意力加权和。</span></span></p>
           
         </div>
@@ -314,23 +325,74 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-adversarial-training-1-1"><span class="zh">一个使用 8 种 STFT 大小（2296, 1418, 876, 542, 334, 206, 126, 76）的多分辨率判别器与 codec 一同训练。</span></span><span class="sent" data-sid="s-adversarial-training-1-2"><span class="zh">每个判别器都被训练成一个二分类器，用合页损失（hinge loss）区分真实音频 x 与重建音频 x̂（原文作 ˆx）。</span></span><span class="sent" data-sid="s-adversarial-training-1-3"><span class="zh">在每个判别器每一层的激活上计算基于 L1 的特征匹配损失：</span></span></p>
           
         </div>
+<div class="eq" id="eq-adversarial-training-1"><code>M X</code></div>
 <div class="pblk" id="p-adversarial-training-2">
-          <p class="en-lines"><span class="sent" data-sid="s-adversarial-training-2-1"><span class="en">M Lfeature(x, ˆx) = 1 MN</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-adversarial-training-2-1"><span class="en">Lfeature(x, ˆx) =</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-adversarial-training-2-1"><span class="zh">M Lfeature(x, ˆx) = 1 MN</span></span></p>
           
         </div>
-<div class="eq" id="eq-adversarial-training-1"><code>m=1</code></div>
-<div class="eq" id="eq-adversarial-training-2"><code>N n=1</code></div>
+<div class="eq" id="eq-adversarial-training-2"><code>1</code></div>
 <div class="pblk" id="p-adversarial-training-3">
-          <p class="en-lines"><span class="sent" data-sid="s-adversarial-training-3-1"><span class="en">∥Dm n (x) −Dm n (ˆx)∥1 Here, Dm n denotes the m-th layer of the n-th discriminator, where each of the N discriminators has M layers.</span></span> <span class="sent" data-sid="s-adversarial-training-3-2"><span class="en">Following Défossez et al. [2024], Parker et al. [2024], we use this feature-matching</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-adversarial-training-3-1"><span class="zh">∥Dm n (x) −Dm n (ˆx)∥1 其中 Dm n 表示第 n 个判别器的第 m 层，N 个判别器各有 M 层。</span></span><span class="sent" data-sid="s-adversarial-training-3-2"><span class="zh">沿用 Défossez et al. [2024]、Parker et al. [2024]，我们用这一特征匹配</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-adversarial-training-3-1"><span class="en">MN</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-adversarial-training-3-1"><span class="zh">M Lfeature(x, ˆx) = 1 MN</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-adversarial-training-3"><code>m=1</code></div>
+<div class="eq" id="eq-adversarial-training-4"><code>N X</code></div>
+<div class="pblk" id="p-adversarial-training-4">
+          <p class="en-lines"><span class="sent" data-sid="s-adversarial-training-4-1"><span class="en">n=1 ∥Dm n (x) −Dm n (ˆx)∥1</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-adversarial-training-4-1"><span class="zh">（公式片段：Σ_{n=1} ‖Dm_n(x) − Dm_n(x̂)‖₁（式 2）。其中 Dm_n 表示第 n 个判别器的第 m 层，N 个判别器各有 M 层。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-adversarial-training-5"><code>(2)</code></div>
+<div class="pblk" id="p-adversarial-training-5">
+          <p class="en-lines"><span class="sent" data-sid="s-adversarial-training-5-1"><span class="en">Here, Dm n denotes the m-th layer of the n-th discriminator, where each of the N discriminators has M layers.</span></span> <span class="sent" data-sid="s-adversarial-training-5-2"><span class="en">Following Défossez et al. [2024], Parker et al. [2024], we use this feature-matching</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-adversarial-training-5-1"><span class="zh">（公式片段：Σ_{n=1} ‖Dm_n(x) − Dm_n(x̂)‖₁（式 2）。其中 Dm_n 表示第 n 个判别器的第 m 层，N 个判别器各有 M 层。）</span></span><span class="sent" data-sid="s-adversarial-training-5-2"><span class="zh">沿用 Défossez et al. [2024]、Parker et al. [2024]，我们用这一特征匹配</span></span></p>
           
         </div>
 <div class="cap" id="tab-adversarial-training-1"><span class="cap-k">表</span><p class="en">Table 1: Key hyperparameters of the Voxtral Codec.</p><p class="zh">表 1：Voxtral Codec 的关键超参数。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-parameter"><span class="t-zh">参数</span><span class="t-en">Parameter</span></h3><div class="pblk" id="p-parameter-1">
-          <p class="en-lines"><span class="sent" data-sid="s-parameter-1-1"><span class="en">Value Input / Preprocessing Sampling rate 24000 Patch size 240 AutoEncoder Encoder patch projection kernel size 7 Encoder patch projection dimension 1024 Encoder transformer layers1 Encoder sliding window size Encoder conv kernels Encoder conv strides (Decoder flips all →to ←and uses transposed convolutions) Discrete bottleneck Semantic VQ2 codebook size 8192 Acoustic FSQ3 codebook count×size 36 × 21 Discriminator FFT sizes 2296, 1418, 876, 542, 334, 206, 126, 76 Channels 256 1 For training stability, we use LayerScale with initial scale of 0.01 and QK normalization with ϵ = 10−6. 2 During training, VQ is applied with 50% probability. 3 During training: 50% quantized with FSQ, 25% dithered (uniform noise of magnitude 1/L), 25% unquantized. loss in place of the standard GAN generator loss, as the evolving discriminator features provide an increasingly discriminative reconstruction signal throughout training.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-parameter-1-1"><span class="zh">此处为表 1 散行（抽取时按阅读顺序混入正文），依次给出：取值；输入/预处理——采样率 24000、块大小 240；自编码器——编码器块投影核大小 7、投影维度 1024、编码器 Transformer 层数与滑动窗口大小、卷积核与步幅（解码器把所有 → 翻转为 ← 并使用转置卷积）；离散瓶颈——语义 VQ 码本大小 8192、声学 FSQ 码本数量×大小 36 × 21；判别器 FFT 大小 2296, 1418, 876, 542, 334, 206, 126, 76；通道数 256。脚注：1) 为训练稳定，LayerScale 初始缩放 0.01，QK 归一化 ε = 10−6；2) 训练时 VQ 以 50% 概率施加；3) 训练时 50% 用 FSQ 量化、25% 加抖动（幅度 1/L 的均匀噪声）、25% 不量化。损失的其余部分接上一段：用该特征匹配损失替代标准 GAN 生成器损失，因为随着训练推进，判别器特征能提供越来越有判别力的重建信号。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-parameter-1-1"><span class="en">Value Input / Preprocessing Sampling rate</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-parameter-1-1"><span class="zh">表头：Value / Input / Preprocessing / Sampling rate（后续照原文）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-parameter-1"><code>24000</code></div>
+<div class="eq" id="eq-parameter-2"><code>Patch size</code></div>
+<div class="eq" id="eq-parameter-3"><code>240</code></div>
+<div class="eq" id="eq-parameter-4"><code>AutoEncoder Encoder patch projection kernel size</code></div>
+<div class="eq" id="eq-parameter-5"><code>7</code></div>
+<div class="eq" id="eq-parameter-6"><code>Encoder patch projection dimension</code></div>
+<div class="eq" id="eq-parameter-7"><code>1024</code></div>
+<div class="eq" id="eq-parameter-8"><code>Encoder transformer layers1</code></div>
+<div class="eq" id="eq-parameter-9"><code>2 →2 →2 →2</code></div>
+<div class="eq" id="eq-parameter-10"><code>Encoder sliding window size</code></div>
+<div class="eq" id="eq-parameter-11"><code>16 →8 →4 →2</code></div>
+<div class="eq" id="eq-parameter-12"><code>Encoder conv kernels</code></div>
+<div class="eq" id="eq-parameter-13"><code>4 →4 →4 →3</code></div>
+<div class="eq" id="eq-parameter-14"><code>Encoder conv strides</code></div>
+<div class="eq" id="eq-parameter-15"><code>2 →2 →2 →1</code></div>
+<div class="pblk" id="p-parameter-2">
+          <p class="en-lines"><span class="sent" data-sid="s-parameter-2-1"><span class="en">(Decoder flips all →to ←and uses transposed convolutions) Discrete bottleneck Semantic VQ2 codebook size</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-parameter-2-1"><span class="zh">此处为表 1 散行（抽取时按阅读顺序混入正文），依次给出：取值；输入/预处理——采样率 24000、块大小 240；自编码器——编码器块投影核大小 7、投影维度 1024、编码器 Transformer 层数与滑动窗口大小、卷积核与步幅（解码器把所有 → 翻转为 ← 并使用转置卷积）；离散瓶颈——语义 VQ 码本大小 8192、声学 FSQ 码本数量×大小 36 × 21；判别器 FFT 大小 2296, 1418, 876, 542, 334, 206, 126, 76；通道数 256。脚注：1) 为训练稳定，LayerScale 初始缩放 0.01，QK 归一化 ε = 10−6；2) 训练时 VQ 以 50% 概率施加；3) 训练时 50% 用 FSQ 量化、25% 加抖动（幅度 1/L 的均匀噪声）、25% 不量化。损失的其余部分接上一段：用该特征匹配损失替代标准 GAN 生成器损失，因为随着训练推进，判别器特征能提供越来越有判别力的重建信号。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-parameter-16"><code>8192</code></div>
+<div class="eq" id="eq-parameter-17"><code>Acoustic FSQ3 codebook count×size</code></div>
+<div class="eq" id="eq-parameter-18"><code>36 × 21</code></div>
+<div class="eq" id="eq-parameter-19"><code>Discriminator FFT sizes</code></div>
+<div class="eq" id="eq-parameter-20"><code>2296, 1418, 876, 542, 334, 206, 126, 76</code></div>
+<div class="eq" id="eq-parameter-21"><code>Channels</code></div>
+<div class="eq" id="eq-parameter-22"><code>256</code></div>
+<div class="pblk" id="p-parameter-3">
+          <p class="en-lines"><span class="sent" data-sid="s-parameter-3-1"><span class="en">1 For training stability, we use LayerScale with initial scale of 0.01 and QK normalization with ϵ = 10−6. 2 During training, VQ is applied with 50% probability.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-parameter-3-1"><span class="zh">此处为表 1 散行（抽取时按阅读顺序混入正文），依次给出：取值；输入/预处理——采样率 24000、块大小 240；自编码器——编码器块投影核大小 7、投影维度 1024、编码器 Transformer 层数与滑动窗口大小、卷积核与步幅（解码器把所有 → 翻转为 ← 并使用转置卷积）；离散瓶颈——语义 VQ 码本大小 8192、声学 FSQ 码本数量×大小 36 × 21；判别器 FFT 大小 2296, 1418, 876, 542, 334, 206, 126, 76；通道数 256。脚注：1) 为训练稳定，LayerScale 初始缩放 0.01，QK 归一化 ε = 10−6；2) 训练时 VQ 以 50% 概率施加；3) 训练时 50% 用 FSQ 量化、25% 加抖动（幅度 1/L 的均匀噪声）、25% 不量化。损失的其余部分接上一段：用该特征匹配损失替代标准 GAN 生成器损失，因为随着训练推进，判别器特征能提供越来越有判别力的重建信号。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-parameter-23"><code>3 During training: 50% quantized with FSQ, 25% dithered (uniform noise of magnitude 1/L), 25% unquan-</code></div>
+<div class="pblk" id="p-parameter-4">
+          <p class="en-lines"><span class="sent" data-sid="s-parameter-4-1"><span class="en">tized. loss in place of the standard GAN generator loss, as the evolving discriminator features provide an increasingly discriminative reconstruction signal throughout training.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-parameter-4-1"><span class="zh">此处为表 1 散行（抽取时按阅读顺序混入正文），依次给出：取值；输入/预处理——采样率 24000、块大小 240；自编码器——编码器块投影核大小 7、投影维度 1024、编码器 Transformer 层数与滑动窗口大小、卷积核与步幅（解码器把所有 → 翻转为 ← 并使用转置卷积）；离散瓶颈——语义 VQ 码本大小 8192、声学 FSQ 码本数量×大小 36 × 21；判别器 FFT 大小 2296, 1418, 876, 542, 334, 206, 126, 76；通道数 256。脚注：1) 为训练稳定，LayerScale 初始缩放 0.01，QK 归一化 ε = 10−6；2) 训练时 VQ 以 50% 概率施加；3) 训练时 50% 用 FSQ 量化、25% 加抖动（幅度 1/L 的均匀噪声）、25% 不量化。损失的其余部分接上一段：用该特征匹配损失替代标准 GAN 生成器损失，因为随着训练推进，判别器特征能提供越来越有判别力的重建信号。</span></span></p>
           
         </div></section>
 <section>
@@ -339,8 +401,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-training-objective-1-1"><span class="zh">Voxtral Codec 以端到端方式训练，使用如下损失：</span></span></p>
           
         </div>
+<div class="eq" id="eq-training-objective-1"><code>αLfeature + βLASR + γLL1 + γLSTFT + δLcommit (3)</code></div>
 <div class="pblk" id="p-training-objective-2">
-          <p class="en-lines"><span class="sent" data-sid="s-training-objective-2-1"><span class="en">αLfeature + βLASR + γLL1 + γLSTFT + δLcommit where α=1.0, β=1.0, γ=0.9999t (with t the current training step), and δ=0.1.</span></span> <span class="sent" data-sid="s-training-objective-2-2"><span class="en">LL1 is the L1 distance between the original and reconstructed waveforms, and LSTFT is an L1 loss on their STFT magnitudes.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-training-objective-2-1"><span class="en">where α=1.0, β=1.0, γ=0.9999t (with t the current training step), and δ=0.1.</span></span> <span class="sent" data-sid="s-training-objective-2-2"><span class="en">LL1 is the L1 distance between the original and reconstructed waveforms, and LSTFT is an L1 loss on their STFT magnitudes.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-training-objective-2-1"><span class="zh">αLfeature + βLASR + γLL1 + γLSTFT + δLcommit，其中 α=1.0、β=1.0、γ=0.9999t（t 为当前训练步数）、δ=0.1。</span></span><span class="sent" data-sid="s-training-objective-2-2"><span class="zh">LL1 是原始波形与重建波形之间的 L1 距离，LSTFT 是两者 STFT 幅度谱上的 L1 损失。</span></span></p>
           
         </div>
@@ -387,14 +450,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-2-3-3">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-3-1"><span class="en">During training, the hidden state is dropped out 10% of the time for “unconditional” modeling.</span></span> <span class="sent" data-sid="s-2-3-3-2"><span class="en">For inference, we use the Euler method to integrate the velocity vector field vt using 8 function evaluations (NFEs) and classifier-free guidance (CFG) [Ho and Salimans, 2022].</span></span> <span class="sent" data-sid="s-2-3-3-3"><span class="en">Concretely, the form of vt and xt is: vt = αvθ(xt, t, h) + (1 −α)vθ(xt, t, ∅) xt+∆t = xt + vt · ∆t where h is the hidden state from decoder backbone and ∅is the unconditional case where we pass a vector of zeros with the same shape as h. vθ(xt, t, h) is the predicted velocity field at time step t, sample xt and conditioning input h.</span></span> <span class="sent" data-sid="s-2-3-3-4"><span class="en">We set ∆t = 1/8 and α = 1.2 based on the analysis in Section 5.2.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-3-1"><span class="zh">训练时，隐状态有 10% 的概率被丢弃，用于「无条件」建模。</span></span><span class="sent" data-sid="s-2-3-3-2"><span class="zh">推理时，我们用欧拉法积分速度向量场 vt，共做 8 次函数评估（NFE），并施加无分类器引导（CFG）[Ho and Salimans, 2022]。</span></span><span class="sent" data-sid="s-2-3-3-3"><span class="zh">具体地，vt 与 xt 的形式为：vt = αvθ(xt, t, h) + (1 −α)vθ(xt, t, ∅)；xt+∆t = xt + vt · ∆t。其中 h 是解码器主干的隐状态，∅ 表示无条件情形——我们传入一个与 h 形状相同的全零向量；vθ(xt, t, h) 是在时间步 t、样本 xt、条件输入 h 下预测的速度场。</span></span><span class="sent" data-sid="s-2-3-3-4"><span class="zh">基于 Section 5.2 的分析，我们设 ∆t = 1/8、α = 1.2。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-3-1"><span class="en">During training, the hidden state is dropped out 10% of the time for “unconditional” modeling.</span></span> <span class="sent" data-sid="s-2-3-3-2"><span class="en">For inference, we use the Euler method to integrate the velocity vector field vt using 8 function evaluations (NFEs) and classifier-free guidance (CFG) [Ho and Salimans, 2022].</span></span> <span class="sent" data-sid="s-2-3-3-3"><span class="en">Concretely, the form of vt and xt is:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-3-3-1"><span class="zh">训练时，隐状态有 10% 的概率被丢弃，用于「无条件」建模。</span></span><span class="sent" data-sid="s-2-3-3-2"><span class="zh">推理时，我们用欧拉法积分速度向量场 vt，共做 8 次函数评估（NFE），并施加无分类器引导（CFG）[Ho and Salimans, 2022]。</span></span><span class="sent" data-sid="s-2-3-3-3"><span class="zh">具体地，vt 与 xt 的形式为：vt = αvθ(xt, t, h) + (1 −α)vθ(xt, t, ∅)；xt+∆t = xt + vt · ∆t。其中 h 是解码器主干的隐状态，∅ 表示无条件情形——我们传入一个与 h 形状相同的全零向量；vθ(xt, t, h) 是在时间步 t、样本 xt、条件输入 h 下预测的速度场。</span></span></p>
           
         </div>
+<div class="eq" id="eq-2-3-1"><code>vt = αvθ(xt, t, h) + (1 −α)vθ(xt, t, ∅) (4) xt+∆t = xt + vt · ∆t (5)</code></div>
 <div class="pblk" id="p-2-3-4">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-4-1"><span class="en">Note that in our architecture, CFG is applied independently at every frame in the FM transformer.</span></span> <span class="sent" data-sid="s-2-3-4-2"><span class="en">Hence, it only requires an extra forward-propagation of only the FM transformer, and is thus significantly cheaper than applying CFG in the decoder backbone.</span><button class="mk feat" data-sid="s-2-3-4-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-3-4-3"><span class="en">The float values predicted by the FM transformer are converted to discrete integer values by quantizing to the 21 FSQ levels.</span></span> <span class="sent" data-sid="s-2-3-4-4"><span class="en">These discretized tokens are provided as input to the decoder backbone in the next decoding step.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-4-1"><span class="zh">注意在我们的架构中，CFG 是在 FM Transformer 的每一帧上独立施加的。</span></span><span class="sent" data-sid="s-2-3-4-2"><span class="zh">因此它只需要对 FM Transformer 做一次额外前向传播，相比在解码器主干上施加 CFG 要便宜得多。</span><button class="mk feat" data-sid="s-2-3-4-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-3-4-3"><span class="zh">FM Transformer 预测的浮点值通过量化到 21 个 FSQ 等级转换为离散整数值。</span></span><span class="sent" data-sid="s-2-3-4-4"><span class="zh">这些离散化后的 token 在下一个解码步中作为输入送回解码器主干。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-3-4-2">
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-4-1"><span class="en">where h is the hidden state from decoder backbone and ∅is the unconditional case where we pass a vector of zeros with the same shape as h. vθ(xt, t, h) is the predicted velocity field at time step t, sample xt and conditioning input h.</span></span> <span class="sent" data-sid="s-2-3-4-2"><span class="en">We set ∆t = 1/8 and α = 1.2 based on the analysis in Section 5.2.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-3-4-1"><span class="zh">具体地，vt 与 xt 的形式为：vt = αvθ(xt, t, h) + (1 −α)vθ(xt, t, ∅)；xt+∆t = xt + vt · ∆t。其中 h 是解码器主干的隐状态，∅ 表示无条件情形——我们传入一个与 h 形状相同的全零向量；vθ(xt, t, h) 是在时间步 t、样本 xt、条件输入 h 下预测的速度场。</span></span><span class="sent" data-sid="s-2-3-4-2"><span class="zh">基于 Section 5.2 的分析，我们设 ∆t = 1/8、α = 1.2。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-3-5">
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-5-1"><span class="en">Note that in our architecture, CFG is applied independently at every frame in the FM transformer.</span></span> <span class="sent" data-sid="s-2-3-5-2"><span class="en">Hence, it only requires an extra forward-propagation of only the FM transformer, and is thus significantly cheaper than applying CFG in the decoder backbone.</span><button class="mk feat" data-sid="s-2-3-5-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-3-5-3"><span class="en">The float values predicted by the FM transformer are converted to discrete integer values by quantizing to the 21 FSQ levels.</span></span> <span class="sent" data-sid="s-2-3-5-4"><span class="en">These discretized tokens are provided as input to the decoder backbone in the next decoding step.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-3-5-1"><span class="zh">注意在我们的架构中，CFG 是在 FM Transformer 的每一帧上独立施加的。</span></span><span class="sent" data-sid="s-2-3-5-2"><span class="zh">因此它只需要对 FM Transformer 做一次额外前向传播，相比在解码器主干上施加 CFG 要便宜得多。</span><button class="mk feat" data-sid="s-2-3-5-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-3-5-3"><span class="zh">FM Transformer 预测的浮点值通过量化到 21 个 FSQ 等级转换为离散整数值。</span></span><span class="sent" data-sid="s-2-3-5-4"><span class="zh">这些离散化后的 token 在下一个解码步中作为输入送回解码器主干。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-3-5-2">
       <div class="ann-card kind-engineering">
         <div class="ann-kind">工程启发</div>
         <div class="ann-title">CFG 放在便宜的一侧</div>
@@ -403,10 +472,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-2-3-5">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-5-1"><span class="en">Given the inputs to the decoder backbone are discrete tokens with embedding lookup, we also considered alternative architectures inspired by MaskGIT [Chang et al., 2022] and Depth Transformer [Défossez et al., 2024].</span></span> <span class="sent" data-sid="s-2-3-5-2"><span class="en">Both approaches performed reasonably well, but were inferior to FM in human evaluations, especially on expressivity.</span></span> <span class="sent" data-sid="s-2-3-5-3"><span class="en">In addition, MaskGIT requires attending over all 36 acoustic codebook positions and conditioning tokens, resulting in a per-frame sequence length of 38, compared to just 3 in the FM transformer (h, t, xt).</span></span> <span class="sent" data-sid="s-2-3-5-4"><span class="en">Similarly, the Depth Transformer requires 36 auto-regressive decoding steps, compared to 8 NFEs for FM.</span><button class="mk feat" data-sid="s-2-3-5-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-3-5-5"><span class="en">Thus, FM is superior in quality, compute and latency.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-5-1"><span class="zh">既然解码器主干的输入是带嵌入查找的离散 token，我们也考虑过受 MaskGIT [Chang et al., 2022] 与 Depth Transformer [Défossez et al., 2024] 启发的替代架构。</span></span><span class="sent" data-sid="s-2-3-5-2"><span class="zh">两种方案表现都尚可，但在人工评测中不及 FM，差距在表现力维度上尤其明显。</span></span><span class="sent" data-sid="s-2-3-5-3"><span class="zh">此外，MaskGIT 需要同时注意全部 36 个声学码本位置与条件 token，每帧序列长度达 38，而 FM Transformer 只有 3（h、t、xt）。</span></span><span class="sent" data-sid="s-2-3-5-4"><span class="zh">同样，Depth Transformer 每帧需要 36 个自回归解码步，而 FM 只需 8 个 NFE。</span><button class="mk feat" data-sid="s-2-3-5-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-3-5-5"><span class="zh">因此 FM 在质量、计算量和延迟上都更优。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-3-5-4">
+<div class="pblk" id="p-2-3-6">
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-6-1"><span class="en">Given the inputs to the decoder backbone are discrete tokens with embedding lookup, we also considered alternative architectures inspired by MaskGIT [Chang et al., 2022] and Depth Transformer [Défossez et al., 2024].</span></span> <span class="sent" data-sid="s-2-3-6-2"><span class="en">Both approaches performed reasonably well, but were inferior to FM in human evaluations, especially on expressivity.</span></span> <span class="sent" data-sid="s-2-3-6-3"><span class="en">In addition, MaskGIT requires attending over all 36 acoustic codebook positions and conditioning tokens, resulting in a per-frame sequence length of 38, compared to just 3 in the FM transformer (h, t, xt).</span></span> <span class="sent" data-sid="s-2-3-6-4"><span class="en">Similarly, the Depth Transformer requires 36 auto-regressive decoding steps, compared to 8 NFEs for FM.</span><button class="mk feat" data-sid="s-2-3-6-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-3-6-5"><span class="en">Thus, FM is superior in quality, compute and latency.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-3-6-1"><span class="zh">既然解码器主干的输入是带嵌入查找的离散 token，我们也考虑过受 MaskGIT [Chang et al., 2022] 与 Depth Transformer [Défossez et al., 2024] 启发的替代架构。</span></span><span class="sent" data-sid="s-2-3-6-2"><span class="zh">两种方案表现都尚可，但在人工评测中不及 FM，差距在表现力维度上尤其明显。</span></span><span class="sent" data-sid="s-2-3-6-3"><span class="zh">此外，MaskGIT 需要同时注意全部 36 个声学码本位置与条件 token，每帧序列长度达 38，而 FM Transformer 只有 3（h、t、xt）。</span></span><span class="sent" data-sid="s-2-3-6-4"><span class="zh">同样，Depth Transformer 每帧需要 36 个自回归解码步，而 FM 只需 8 个 NFE。</span><button class="mk feat" data-sid="s-2-3-6-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-3-6-5"><span class="zh">因此 FM 在质量、计算量和延迟上都更优。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-3-6-4">
       <div class="ann-card kind-comparison">
         <div class="ann-kind">和以前有什么区别</div>
         <div class="ann-title">36 AR 步 vs 8 次 NFE</div>
@@ -435,7 +504,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-1-2-1"><span class="zh">损失只在 A2 的 token 上计算。</span></span><span class="sent" data-sid="s-3-1-2-2"><span class="zh">我们用一个两部分的损失函数优化模型：语义 token 上的交叉熵损失 Lsemantic，以及声学 token 上的流匹配损失 Lacoustic。</span></span><span class="sent" data-sid="s-3-1-2-3"><span class="zh">我们采用简单的条件流匹配目标，如下所示：</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-1-1"><code>Lacoustic = Et∼U[0,1],x0∼D,x1∼N (0,1)∥vθ(xt, t) −ut(xt|x1, x0)∥2 2 ut(xt|x1, x0) = x1 −x0</code></div>
+<div class="eq" id="eq-3-1-1"><code>Lacoustic = Et∼U[0,1],x0∼D,x1∼N (0,1)∥vθ(xt, t) −ut(xt|x1, x0)∥2 2 (6)</code></div>
+<div class="eq" id="eq-3-1-2"><code>ut(xt|x1, x0) = x1 −x0 (7)</code></div>
 <div class="pblk" id="p-3-1-3">
           <p class="en-lines"><span class="sent" data-sid="s-3-1-3-1"><span class="en">where ut is the conditional velocity target, vθ is the velocity predicted by the FM transformer, x1 is sampled from a normal distribution, and x0 the data distribution D.</span></span> <span class="sent" data-sid="s-3-1-3-2"><span class="en">We initialize the decoder backbone with Ministral 3B.</span></span> <span class="sent" data-sid="s-3-1-3-3"><span class="en">Newly introduced modules, such as the FM transformer, audio codebook embedding lookup-tables and output projection layers, are randomly initialized.</span></span> <span class="sent" data-sid="s-3-1-3-4"><span class="en">During training, we freeze the text-embedding layers in the decoder backbone to improve robustness to text tokens that appear with low-frequency in the Voxtral Mini Transcribe transcriptions.</span><button class="mk" data-sid="s-3-1-3-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-1-3-5"><span class="en">To avoid overfitting to silence, we also use a lower loss weight for frames that have no speech as determined by a voice-activity-detection (VAD) model and set the loss weight to 0 for extremely long silences.</span><button class="mk" data-sid="s-3-1-3-5" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-1-3-6"><span class="en">We also perform simple LLM based rewrites of the transcripts to introduce robustness to normalized vs un-normalized text (e.g. &quot;5 - 4&quot; vs &quot;five minus four&quot;).</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-1-3-1"><span class="zh">其中 ut 是条件速度目标，vθ 是 FM Transformer 预测的速度，x1 采样自正态分布，x0 采样自数据分布 D。</span></span><span class="sent" data-sid="s-3-1-3-2"><span class="zh">我们用 Ministral 3B 初始化解码器主干。</span></span><span class="sent" data-sid="s-3-1-3-3"><span class="zh">新引入的模块——FM Transformer、音频码本嵌入查找表和输出投影层——均采用随机初始化。</span></span><span class="sent" data-sid="s-3-1-3-4"><span class="zh">训练时我们冻结解码器主干中的文本嵌入层，以增强对 Voxtral Mini Transcribe 转写中低频文本 token 的鲁棒性。</span><button class="mk" data-sid="s-3-1-3-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-3-1-3-5"><span class="zh">为避免向静音过拟合，我们对由语音活动检测（VAD）模型判定为无语音的帧使用更低的损失权重，并对极长静音段把损失权重设为 0。</span><button class="mk" data-sid="s-3-1-3-5" title="查看讲解">解</button></span><span class="sent" data-sid="s-3-1-3-6"><span class="zh">我们还用 LLM 对转写文本做简单改写，让模型对「是否做过文本规范化」更鲁棒（例如 &quot;5 - 4&quot; 与 &quot;five minus four&quot;）。</span></span></p>
@@ -462,21 +532,39 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-3-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="en">L(θ) = −Et∼U(0,1), xw,xl log σ −β ∆θ(xw, xl, t) −∆θref(xw, xl, t) , where ∆θ(xw, xl, t) = ∥vθ(xw t , t) −ut(xw t |xw)∥2 2 −∥vθ(xl t, t) −ut(xl t|xl)∥2 2.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="zh">L(θ) = −Et∼U(0,1), xw,xl log σ −β ∆θ(xw, xl, t) −∆θref(xw, xl, t)，其中 ∆θ(xw, xl, t) = ∥vθ(xw t , t) −ut(xw t |xw)∥2 2 − ∥vθ(xl t, t) −ut(xl t|xl)∥2 2。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="en">L(θ) = −Et∼U(0,1), xw,xl log σ</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="zh">（公式：L(θ) = −E_{t~U(0,1), xw, xl} log σ[−β·(∆_θ(xw, xl, t) − ∆_θref(xw, xl, t))]（式 8），其中 ∆_θ(xw, xl, t) = ‖v_θ(xw_t, t) − u_t(xw_t|xw)‖^2_2 − ‖v_θ(xl_t, t) − u_t(xl_t|xl)‖^2_2。）</span></span></p>
           
         </div>
+<div class="eq" id="eq-3-2-1"><code>−β</code></div>
+<div class="eq" id="eq-3-2-2"><code>∆θ(xw, xl, t) −∆θref(xw, xl, t)</code></div>
+<div class="eq" id="eq-3-2-3"><code>, (8)</code></div>
 <div class="pblk" id="p-3-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="en">We make the objective suitable for our auto-regressive setup (note the bold t showing each token has a differently sampled t) by computing: i=1 ∥vθ(xw i,ti, ti) −uw i,ti∥2 2 −</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="zh">为使该目标适配我们的自回归设定（注意加粗的 t 表示每个 token 有各自采样的 t），我们计算：i=1 ∥vθ(xw i,ti, ti) −uw i,ti∥2 2 −</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="en">where ∆θ(xw, xl, t) = ∥vθ(xw t , t) −ut(xw t |xw)∥2 2 −∥vθ(xl t, t) −ut(xl t|xl)∥2</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="zh">（公式：L(θ) = −E_{t~U(0,1), xw, xl} log σ[−β·(∆_θ(xw, xl, t) − ∆_θref(xw, xl, t))]（式 8），其中 ∆_θ(xw, xl, t) = ‖v_θ(xw_t, t) − u_t(xw_t|xw)‖^2_2 − ‖v_θ(xl_t, t) − u_t(xl_t|xl)‖^2_2。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-2-1"><code>Nw ∆θ(xw, xl, t) =</code></div>
-<div class="eq" id="eq-3-2-2"><code>Nl i=1</code></div>
+<div class="eq" id="eq-3-2-4"><code>2.</code></div>
+<div class="eq" id="eq-3-2-5"><code>(9)</code></div>
 <div class="pblk" id="p-3-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-4-1"><span class="en">∥vθ(xl i,ti, ti) −ul i,ti∥2 2 and find that length normalization (dividing by length of winner) causes instability.</span><button class="mk feat" data-sid="s-3-2-4-1" title="查看讲解">解</button></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-4-1"><span class="zh">∥vθ(xl i,ti, ti) −ul i,ti∥2 2；并且我们发现长度归一化（除以优胜样本的长度）会导致不稳定。</span><button class="mk feat" data-sid="s-3-2-4-1" title="查看讲解">解</button></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-2-4-1">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-4-1"><span class="en">We make the objective suitable for our auto-regressive setup (note the bold t showing each token has a differently sampled t) by computing: i=1 ∥vθ(xw i,ti, ti) −uw i,ti∥2</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-4-1"><span class="zh">（式 9）为使该目标适配自回归设置（注意粗体 t 表示每个 token 有各自采样的 t），计算：Σ_{i=1} ‖v_θ(xw_{i,t_i}, t_i) − uw_{i,t_i}‖^2_2 −（续下式）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-2-6"><code>2 −</code></div>
+<div class="eq" id="eq-3-2-7"><code>Nw X</code></div>
+<div class="eq" id="eq-3-2-8"><code>∆θ(xw, xl, t) =</code></div>
+<div class="eq" id="eq-3-2-9"><code>Nl X</code></div>
+<div class="pblk" id="p-3-2-5">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-5-1"><span class="en">i=1 ∥vθ(xl i,ti, ti) −ul i,ti∥2</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-5-1"><span class="zh">（公式片段：Σ_{i=1} ‖v_θ(x^l_{i,t_i}, t_i) − u^l_{i,t_i}‖^2_2（式 10）。并发现按长度归一化（除以获胜者长度）会导致不稳定。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-2-10"><code>2 (10)</code></div>
+<div class="pblk" id="p-3-2-6">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-6-1"><span class="en">and find that length normalization (dividing by length of winner) causes instability.</span><button class="mk feat" data-sid="s-3-2-6-1" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-6-1"><span class="zh">（公式片段：Σ_{i=1} ‖v_θ(x^l_{i,t_i}, t_i) − u^l_{i,t_i}‖^2_2（式 10）。并发现按长度归一化（除以获胜者长度）会导致不稳定。）</span><button class="mk feat" data-sid="s-3-2-6-1" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-2-6-1">
       <div class="ann-card kind-critique">
         <div class="ann-kind">值得质疑</div>
         <div class="ann-title">flow-DPO 的暗坑</div>
@@ -485,15 +573,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-3-2-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-5-1"><span class="en">We ensure that the t and x0 sampled for each location in the sequence is consistent for the policy model θ and reference model θref.</span></span> <span class="sent" data-sid="s-3-2-5-2"><span class="en">The two DPO losses are added with uniform weights but we use a βsemantic = 0.1 and βacoustic = 0.5 as training is sensitive to the flow-DPO loss.</span></span> <span class="sent" data-sid="s-3-2-5-3"><span class="en">A low learning rate of 8e−8 is used for training stability.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-5-1"><span class="zh">我们保证对序列中每个位置采样的 t 和 x0，在策略模型 θ 与参考模型 θref 之间是一致的。</span></span><span class="sent" data-sid="s-3-2-5-2"><span class="zh">两个 DPO 损失以均匀权重相加，但我们取 βsemantic = 0.1、βacoustic = 0.5，因为训练对 flow-DPO 损失很敏感。</span></span><span class="sent" data-sid="s-3-2-5-3"><span class="zh">为保证训练稳定，使用了 8e−8 的极低学习率。</span></span></p>
+<div class="pblk" id="p-3-2-7">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-7-1"><span class="en">We ensure that the t and x0 sampled for each location in the sequence is consistent for the policy model θ and reference model θref.</span></span> <span class="sent" data-sid="s-3-2-7-2"><span class="en">The two DPO losses are added with uniform weights but we use a βsemantic = 0.1 and βacoustic = 0.5 as training is sensitive to the flow-DPO loss.</span></span> <span class="sent" data-sid="s-3-2-7-3"><span class="en">A low learning rate of 8e−8 is used for training stability.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-7-1"><span class="zh">我们保证对序列中每个位置采样的 t 和 x0，在策略模型 θ 与参考模型 θref 之间是一致的。</span></span><span class="sent" data-sid="s-3-2-7-2"><span class="zh">两个 DPO 损失以均匀权重相加，但我们取 βsemantic = 0.1、βacoustic = 0.5，因为训练对 flow-DPO 损失很敏感。</span></span><span class="sent" data-sid="s-3-2-7-3"><span class="zh">为保证训练稳定，使用了 8e−8 的极低学习率。</span></span></p>
           
         </div>
-<div class="pblk" id="p-3-2-6">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-6-1"><span class="en">The data for DPO is gathered using a rejection-sampling pipeline that takes as input a set of voice samples from a held-out set of single-speaker voice samples and diverse synthetically generated textprompts.</span></span> <span class="sent" data-sid="s-3-2-6-2"><span class="en">We prompt Mistral Small Creative 1 with the transcript of the voice prompt and randomly chosen personas to synthesize a diverse array of texts which continue or reply to the conversational context.</span></span> <span class="sent" data-sid="s-3-2-6-3"><span class="en">The pretrained checkpoint then takes as input the voice and text prompts and generates multiple samples from each input, from which winner and loser pairs can be constructed.</span></span> <span class="sent" data-sid="s-3-2-6-4"><span class="en">Winners and losers are determined from WER, speaker similarity, loudness consistency, UTMOS-v2 [Baba et al., 2024] and other LM judge metrics.</span></span> <span class="sent" data-sid="s-3-2-6-5"><span class="en">We optimize the model using the combined DPO loss along with the pretraining objective on high-quality speech for 1 epoch, as we found that training longer on synthetic data led to more robotic speech.</span><button class="mk feat" data-sid="s-3-2-6-5" title="查看讲解">解</button></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-6-1"><span class="zh">DPO 数据通过一个拒绝采样流水线收集：输入是一个留出集里的单说话人语音样本，以及多样化的合成文本提示。</span></span><span class="sent" data-sid="s-3-2-6-2"><span class="zh">我们把语音提示的转写和随机选取的人设（persona)一起交给 Mistral Small Creative 1，合成多种多样的文本，作为对话上下文的延续或回应。</span></span><span class="sent" data-sid="s-3-2-6-3"><span class="zh">随后预训练检查点接收语音与文本提示，为每个输入生成多个样本，从中构造优胜-落败样本对。</span></span><span class="sent" data-sid="s-3-2-6-4"><span class="zh">优胜与落败由 WER、说话人相似度、响度一致性、UTMOS-v2 [Baba et al., 2024] 以及其他语言模型评委指标共同决定。</span></span><span class="sent" data-sid="s-3-2-6-5"><span class="zh">我们用组合的 DPO 损失加上在高质量语音上的预训练目标优化模型，只训 1 个 epoch，因为我们发现，在合成数据上训练更久会导致语音更机械。</span><button class="mk feat" data-sid="s-3-2-6-5" title="查看讲解">解</button></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-2-6-5">
+<div class="pblk" id="p-3-2-8">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-8-1"><span class="en">The data for DPO is gathered using a rejection-sampling pipeline that takes as input a set of voice samples from a held-out set of single-speaker voice samples and diverse synthetically generated textprompts.</span></span> <span class="sent" data-sid="s-3-2-8-2"><span class="en">We prompt Mistral Small Creative 1 with the transcript of the voice prompt and randomly chosen personas to synthesize a diverse array of texts which continue or reply to the conversational context.</span></span> <span class="sent" data-sid="s-3-2-8-3"><span class="en">The pretrained checkpoint then takes as input the voice and text prompts and generates multiple samples from each input, from which winner and loser pairs can be constructed.</span></span> <span class="sent" data-sid="s-3-2-8-4"><span class="en">Winners and losers are determined from WER, speaker similarity, loudness consistency, UTMOS-v2 [Baba et al., 2024] and other LM judge metrics.</span></span> <span class="sent" data-sid="s-3-2-8-5"><span class="en">We optimize the model using the combined DPO loss along with the pretraining objective on high-quality speech for 1 epoch, as we found that training longer on synthetic data led to more robotic speech.</span><button class="mk feat" data-sid="s-3-2-8-5" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-8-1"><span class="zh">DPO 数据通过一个拒绝采样流水线收集：输入是一个留出集里的单说话人语音样本，以及多样化的合成文本提示。</span></span><span class="sent" data-sid="s-3-2-8-2"><span class="zh">我们把语音提示的转写和随机选取的人设（persona)一起交给 Mistral Small Creative 1，合成多种多样的文本，作为对话上下文的延续或回应。</span></span><span class="sent" data-sid="s-3-2-8-3"><span class="zh">随后预训练检查点接收语音与文本提示，为每个输入生成多个样本，从中构造优胜-落败样本对。</span></span><span class="sent" data-sid="s-3-2-8-4"><span class="zh">优胜与落败由 WER、说话人相似度、响度一致性、UTMOS-v2 [Baba et al., 2024] 以及其他语言模型评委指标共同决定。</span></span><span class="sent" data-sid="s-3-2-8-5"><span class="zh">我们用组合的 DPO 损失加上在高质量语音上的预训练目标优化模型，只训 1 个 epoch，因为我们发现，在合成数据上训练更久会导致语音更机械。</span><button class="mk feat" data-sid="s-3-2-8-5" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-2-8-5">
       <div class="ann-card kind-critique">
         <div class="ann-kind">值得质疑</div>
         <div class="ann-title">偏好对齐的天花板</div>
@@ -513,10 +601,17 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="cap" id="tab-4-1-2"><span class="cap-k">表</span><p class="en">Table 2: Comparison of Voxtral Codec and Mimi on the Expresso dataset.</p><p class="zh">表 2：Voxtral Codec 与 Mimi 在 Expresso 数据集上的对比。</p></div>
 <div class="pblk" id="p-4-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-1-2-1"><span class="en">Model fps token/frame × vocab. size bitrate Reconstruction (↓) Intrusive (↑) Perceptual (kbps) Mel STFT PESQ ESTOI ASR-WER (%)↓ Speaker Sim↑ Mimi – 8cb (Moshi) 12.5 8 × (2048) 1.1 0.702 1.177 2.07 0.803 11.75 0.672 Mimi – 16cb 12.5 16 × (2048) 2.2 0.618 1.100 2.67 0.865 11.01 0.829 Mimi – full 32cb 12.5 32 × (2048) 4.4 0.552 1.040 3.18 0.910 10.25 0.902 Voxtral Codec 12.5 1 × (8192) + 36 × (21) 2.1 0.545 0.982 3.05 0.882 10.66 0.843</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-1-2-1"><span class="zh">此处为表 2 数值散行。表头依次为：模型、fps、token/帧 × 词表大小、码率（kbps）、重建指标（↓，Mel、STFT）、侵入式指标（↑，PESQ、ESTOI、ASR-WER (%)↓）、感知指标（说话人相似度↑）。Mimi – 8cb（Moshi）：12.5 fps、8 × (2048)、1.1 kbps、Mel 0.702、STFT 1.177、PESQ 2.07、ESTOI 0.803、ASR-WER 11.75、说话人相似度 0.672。Mimi – 16cb：12.5 fps、16 × (2048)、2.2 kbps、Mel 0.618、STFT 1.100、PESQ 2.67、ESTOI 0.865、ASR-WER 11.01、说话人相似度 0.829。Mimi – 全量 32cb：12.5 fps、32 × (2048)、4.4 kbps、Mel 0.552、STFT 1.040、PESQ 3.18、ESTOI 0.910、ASR-WER 10.25、说话人相似度 0.902。Voxtral Codec：12.5 fps、1 × (8192) + 36 × (21)、2.1 kbps、Mel 0.545、STFT 0.982、PESQ 3.05、ESTOI 0.882、ASR-WER 10.66、说话人相似度 0.843。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-1-2-1"><span class="en">Model fps token/frame × vocab. size bitrate Reconstruction (↓) Intrusive (↑) Perceptual (kbps) Mel STFT PESQ ESTOI ASR-WER (%)↓ Speaker Sim↑ Mimi – 8cb (Moshi)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-1-2-1"><span class="zh">表头：Model / fps token/frame × vocab. size / bitrate / Reconstruction (↓) / Intrusive (↑) / Perceptual (kbps) / Mel / STFT / PESQ / ESTOI / ASR-WER (%)↓ / Speaker Sim↑——Mimi – 8cb (Moshi)（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-4-1-1"><code>12.5 8 × (2048) 1.1 0.702 1.177 2.07 0.803 11.75 0.672</code></div>
+<div class="eq" id="eq-4-1-2"><code>Mimi – 16cb</code></div>
+<div class="eq" id="eq-4-1-3"><code>12.5 16 × (2048) 2.2 0.618 1.100 2.67 0.865 11.01 0.829</code></div>
+<div class="eq" id="eq-4-1-4"><code>Mimi – full 32cb</code></div>
+<div class="eq" id="eq-4-1-5"><code>12.5 32 × (2048) 4.4 0.552 1.040 3.18 0.910 10.25 0.902</code></div>
+<div class="eq" id="eq-4-1-6"><code>Voxtral Codec</code></div>
+<div class="eq" id="eq-4-1-7"><code>12.5 1 × (8192) + 36 × (21) 2.1 0.545 0.982 3.05 0.882 10.66 0.843</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-2"><span class="secnum">4.2</span> <span class="t-zh">4.2 自动评测</span><span class="t-en">Automatic Evaluations</span></h3><div class="pblk" id="p-4-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-1-1"><span class="en">We evaluate Voxtral TTS, ElevenLabs v3 and ElevenLabs Flash v2.5 on SEED-TTS [Anastassiou et al., 2024] and the nine supported languages in MiniMax-TTS [Zhang et al., 2025] using automated metrics:</span></span></p>
@@ -552,10 +647,29 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="cap" id="tab-4-2-1"><span class="cap-k">表</span><p class="en">Table 3: WER, UTMOS, and Speaker Similarity scores for Voxtral TTS, ElevenLabs v3, and ElevenLabs Flash v2.5.</p><p class="zh">表 3：Voxtral TTS、ElevenLabs v3 与 ElevenLabs Flash v2.5 的 WER、UTMOS 与说话人相似度得分。</p></div>
 <div class="pblk" id="p-4-2-6">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-6-1"><span class="en">WER (%) ↓ UTMOS ↑ Speaker Sim ↑ Task Voxtral ElevenLabs Flash Voxtral ElevenLabs Flash Voxtral ElevenLabs Flash MiniMax Arabic 2.68 3.67 2.86 3.07 2.50 2.89 0.746 0.546 0.539 German 0.83 0.45 1.08 3.12 2.90 3.27 0.721 0.457 0.489 English 0.63 0.48 0.33 4.30 4.27 4.27 0.786 0.484 0.489 Spanish 0.51 0.87 0.49 3.41 3.18 2.99 0.762 0.443 0.541 French 3.22 2.34 2.26 2.83 2.90 2.94 0.587 0.339 0.378 Hindi 4.99 8.71 5.08 3.56 3.56 3.35 0.839 0.707 0.679 Italian 1.32 0.58 0.55 3.43 3.08 3.09 0.739 0.527 0.485 Dutch 1.99 1.52 0.83 3.89 3.53 3.68 0.720 0.397 0.598 Portuguese 1.02 0.92 1.15 3.66 3.41 3.41 0.785 0.571 0.642 Seed TTS 1.23 1.26 0.86 4.11 3.92 4.09 0.628 0.392 0.413</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-6-1"><span class="zh">此处为表 3 数值散行。表头：WER (%) ↓、UTMOS ↑、说话人相似度 ↑，每列下分 Voxtral、ElevenLabs（v3）、Flash（v2.5）。MiniMax 集：阿拉伯语 WER 2.68/3.67/2.86、UTMOS 3.07/2.50/2.89、说话人相似度 0.746/0.546/0.539；德语 0.83/0.45/1.08、3.12/2.90/3.27、0.721/0.457/0.489；英语 0.63/0.48/0.33、4.30/4.27/4.27、0.786/0.484/0.489；西班牙语 0.51/0.87/0.49、3.41/3.18/2.99、0.762/0.443/0.541；法语 3.22/2.34/2.26、2.83/2.90/2.94、0.587/0.339/0.378；印地语 4.99/8.71/5.08、3.56/3.56/3.35、0.839/0.707/0.679；意大利语 1.32/0.58/0.55、3.43/3.08/3.09、0.739/0.527/0.485；荷兰语 1.99/1.52/0.83、3.89/3.53/3.68、0.720/0.397/0.598；葡萄牙语 1.02/0.92/1.15、3.66/3.41/3.41、0.785/0.571/0.642；Seed TTS 集：1.23/1.26/0.86、4.11/3.92/4.09、0.628/0.392/0.413。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-2-6-1"><span class="en">WER (%) ↓ UTMOS ↑ Speaker Sim ↑ Task Voxtral ElevenLabs v3 ElevenLabs Flash Voxtral ElevenLabs v3 ElevenLabs Flash Voxtral ElevenLabs v3 ElevenLabs Flash MiniMax Arabic</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-2-6-1"><span class="zh">表头：WER (%) ↓ / UTMOS ↑ / Speaker Sim ↑ × Task（Voxtral / ElevenLabs v3 / ElevenLabs Flash 各列）——MiniMax / Arabic（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-4-2-1"><code>2.68 3.67 2.86 3.07 2.50 2.89 0.746 0.546 0.539</code></div>
+<div class="eq" id="eq-4-2-2"><code>German</code></div>
+<div class="eq" id="eq-4-2-3"><code>0.83 0.45 1.08 3.12 2.90 3.27 0.721 0.457 0.489</code></div>
+<div class="eq" id="eq-4-2-4"><code>English</code></div>
+<div class="eq" id="eq-4-2-5"><code>0.63 0.48 0.33 4.30 4.27 4.27 0.786 0.484 0.489</code></div>
+<div class="eq" id="eq-4-2-6"><code>Spanish</code></div>
+<div class="eq" id="eq-4-2-7"><code>0.51 0.87 0.49 3.41 3.18 2.99 0.762 0.443 0.541</code></div>
+<div class="eq" id="eq-4-2-8"><code>French</code></div>
+<div class="eq" id="eq-4-2-9"><code>3.22 2.34 2.26 2.83 2.90 2.94 0.587 0.339 0.378</code></div>
+<div class="eq" id="eq-4-2-10"><code>Hindi</code></div>
+<div class="eq" id="eq-4-2-11"><code>4.99 8.71 5.08 3.56 3.56 3.35 0.839 0.707 0.679</code></div>
+<div class="eq" id="eq-4-2-12"><code>Italian</code></div>
+<div class="eq" id="eq-4-2-13"><code>1.32 0.58 0.55 3.43 3.08 3.09 0.739 0.527 0.485</code></div>
+<div class="eq" id="eq-4-2-14"><code>Dutch</code></div>
+<div class="eq" id="eq-4-2-15"><code>1.99 1.52 0.83 3.89 3.53 3.68 0.720 0.397 0.598</code></div>
+<div class="eq" id="eq-4-2-16"><code>Portuguese</code></div>
+<div class="eq" id="eq-4-2-17"><code>1.02 0.92 1.15 3.66 3.41 3.41 0.785 0.571 0.642</code></div>
+<div class="eq" id="eq-4-2-18"><code>Seed TTS</code></div>
+<div class="eq" id="eq-4-2-19"><code>1.23 1.26 0.86 4.11 3.92 4.09 0.628 0.392 0.413</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-3"><span class="secnum">4.3</span> <span class="t-zh">4.3 人工评测</span><span class="t-en">Human Evaluations</span></h3><div class="pblk" id="p-4-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-1-1"><span class="en">Automated metrics cannot measure the naturalness and expressivity of a TTS model, especially the ability of the model to speak with a specific emotion.</span></span> <span class="sent" data-sid="s-4-3-1-2"><span class="en">We find that UTMOS is only a loose proxy, not well calibrated across languages and only weakly correlated with human preference.</span><button class="mk" data-sid="s-4-3-1-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-3-1-3"><span class="en">Hence, we perform two sets of human evaluations in which annotators compare generations between two models without knowing their identities.</span></span> <span class="sent" data-sid="s-4-3-1-4"><span class="en">The evaluation consists of 77 prompts, with 11 of them neutral while 66 of them have an associated expected emotion.</span></span> <span class="sent" data-sid="s-4-3-1-5"><span class="en">For all evaluations, annotators are instructed to choose whether one of the generations is &quot;slightly better&quot;, &quot;much better&quot; or if they are &quot;both good&quot; or &quot;both bad&quot;.</span></span> <span class="sent" data-sid="s-4-3-1-6"><span class="en">During labeling, all audio samples are resampled to 24 kHz WAV format (even the reference samples) to ensure there is no bias due to audio quality.</span></span></p>
@@ -605,10 +719,19 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="cap" id="tab-4-3-1-1"><span class="cap-k">表</span><p class="en">Table 4: Voxtral TTS win rates by steering type. In the explicit steering setting, Voxtral TTS is competitive with ElevenLabs v3, while having a higher win rate compared to both ElevenLabs models in the implicit steering setting.</p><p class="zh">表 4：按引导类型分列的 Voxtral TTS 胜率。显式引导设置下 Voxtral TTS 与 ElevenLabs v3 相当；隐式引导设置下对两个 ElevenLabs 模型都有更高胜率。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-emotion-steering"><span class="t-zh">情感引导</span><span class="t-en">Emotion steering</span></h3><div class="pblk" id="p-emotion-steering-1">
-          <p class="en-lines"><span class="sent" data-sid="s-emotion-steering-1-1"><span class="en">Opponent Model Voxtral TTS Win Rate (%) Explicit 51.0 Gemini 2.5 Flash TTS 35.4 Implicit ElevenLabs Flash v2.5 58.3 55.4 Gemini 2.5 Flash TTS 37.1</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-emotion-steering-1-1"><span class="zh">此处为表 4 数值散行。表头：对手模型、Voxtral TTS 胜率（%）。显式引导：对 ElevenLabs v3 胜率 51.0，对 Gemini 2.5 Flash TTS 胜率 35.4；隐式引导：对 ElevenLabs Flash v2.5 胜率 58.3、对 ElevenLabs v3 胜率 55.4，对 Gemini 2.5 Flash TTS 胜率 37.1。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-emotion-steering-1-1"><span class="en">Opponent Model Voxtral TTS Win Rate (%) Explicit ElevenLabs v3</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-emotion-steering-1-1"><span class="zh">表头：Opponent Model × Voxtral TTS Win Rate (%)——Explicit / ElevenLabs v3（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-emotion-steering-1"><code>51.0</code></div>
+<div class="eq" id="eq-emotion-steering-2"><code>Gemini 2.5 Flash TTS</code></div>
+<div class="eq" id="eq-emotion-steering-3"><code>35.4</code></div>
+<div class="eq" id="eq-emotion-steering-4"><code>Implicit ElevenLabs Flash v2.5</code></div>
+<div class="eq" id="eq-emotion-steering-5"><code>58.3</code></div>
+<div class="eq" id="eq-emotion-steering-6"><code>ElevenLabs v3</code></div>
+<div class="eq" id="eq-emotion-steering-7"><code>55.4</code></div>
+<div class="eq" id="eq-emotion-steering-8"><code>Gemini 2.5 Flash TTS</code></div>
+<div class="eq" id="eq-emotion-steering-9"><code>37.1</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-3-2"><span class="secnum">4.3.2</span> <span class="t-zh">4.3.2 零样本声音克隆</span><span class="t-en">Zero-Shot Voice Cloning</span></h3><div class="pblk" id="p-4-3-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-2-1-1"><span class="en">To evaluate voice cloning capabilities, we source high quality audios from two recognized speakers in each language.</span><button class="mk feat" data-sid="s-4-3-2-1-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-3-2-1-2"><span class="en">We generate speech from each model in a zero-shot setting, and instruct annotators to rate the generations based on (a) likeness of the generated audio to voice prompt and (b) naturalness of speech and expressivity.</span></span></p>
@@ -637,24 +760,56 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="cap" id="tab-5-1"><span class="cap-k">表</span><p class="en">Table 5: Voxtral TTS win rate against ElevenLabs Flash v2.5 across languages. Voxtral TTS matches or outperforms ElevenLabs Flash v2.5 on every language, and has an overall micro-average win rate of 68.4%.</p><p class="zh">表 5：Voxtral TTS 对 ElevenLabs Flash v2.5 在各语言上的胜率。Voxtral TTS 在每种语言上都追平或超过 ElevenLabs Flash v2.5，整体微平均胜率为 68.4%。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-language"><span class="t-zh">语言</span><span class="t-en">Language</span></h3><div class="pblk" id="p-language-1">
-          <p class="en-lines"><span class="sent" data-sid="s-language-1-1"><span class="en">Voxtral TTS Win Rate (%) Arabic 72.9 Dutch 49.4 English 60.8 French 54.4 German 72.0 Hindi 79.8 Italian 57.1 Portuguese 74.4 Spanish 87.8</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-language-1-1"><span class="zh">此处为表 5 数值散行：Voxtral TTS 胜率（%）——阿拉伯语 72.9、荷兰语 49.4、英语 60.8、法语 54.4、德语 72.0、印地语 79.8、意大利语 57.1、葡萄牙语 74.4、西班牙语 87.8。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-language-1-1"><span class="en">Voxtral TTS Win Rate (%) Arabic</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-language-1-1"><span class="zh">表头：Voxtral TTS Win Rate (%)——Arabic（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-language-1"><code>72.9</code></div>
+<div class="eq" id="eq-language-2"><code>Dutch</code></div>
+<div class="eq" id="eq-language-3"><code>49.4</code></div>
+<div class="eq" id="eq-language-4"><code>English</code></div>
+<div class="eq" id="eq-language-5"><code>60.8</code></div>
+<div class="eq" id="eq-language-6"><code>French</code></div>
+<div class="eq" id="eq-language-7"><code>54.4</code></div>
+<div class="eq" id="eq-language-8"><code>German</code></div>
+<div class="eq" id="eq-language-9"><code>72.0</code></div>
+<div class="eq" id="eq-language-10"><code>Hindi</code></div>
+<div class="eq" id="eq-language-11"><code>79.8</code></div>
+<div class="eq" id="eq-language-12"><code>Italian</code></div>
+<div class="eq" id="eq-language-13"><code>57.1</code></div>
+<div class="eq" id="eq-language-14"><code>Portuguese</code></div>
+<div class="eq" id="eq-language-15"><code>74.4</code></div>
+<div class="eq" id="eq-language-16"><code>Spanish</code></div>
+<div class="eq" id="eq-language-17"><code>87.8</code></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-overall"><span class="t-zh">整体</span><span class="t-en">Overall</span></h3><div class="pblk" id="p-overall-1">
-          <p class="en-lines"><span class="sent" data-sid="s-overall-1-1"><span class="en">68.4</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-overall-1-1"><span class="zh">68.4。</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-overall"><span class="t-zh">整体</span><span class="t-en">Overall</span></h3><div class="eq" id="eq-overall-1"><code>68.4</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-5-1"><span class="secnum">5.1</span> <span class="t-zh">5.1 DPO 带来的改进</span><span class="t-en">DPO improvements</span></h3><div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 6 shows the WER and UTMOS metrics for the pretrained and DPO checkpoints. Overall, DPO improves on both metrics, with the largest gains in German and French and regressions only on Hindi. Qualitatively, we find that the DPO model hallucinates less and skips fewer words. DPO also ameliorates the pretrained model’s occasional tendency to significantly taper in volume throughout the audio. Interestingly, DPO has minimal effect on speaker similarity, which is within ±0.01 of the pretrained checkpoint (not presented here for brevity).</p><p class="zh">表 6 给出了预训练检查点与 DPO 检查点的 WER 与 UTMOS 指标。总体上 DPO 在两项指标上都有提升，其中德语和法语收益最大，仅印地语有回退。定性上，我们发现 DPO 模型的幻觉更少、漏词更少；DPO 还缓解了预训练模型偶尔出现的、整段音频中音量逐渐衰弱的倾向。有趣的是，DPO 对说话人相似度几乎无影响，变化在预训练检查点的 ±0.01 以内（此处从略未列）。</p></div>
 <div class="cap" id="tab-5-1-2"><span class="cap-k">表</span><p class="en">Table 6: DPO improves WER and UTMOS across languages.</p><p class="zh">表 6：DPO 在各语言上改进 WER 与 UTMOS。</p></div>
 <div class="pblk" id="p-5-1-1">
-          <p class="en-lines"><span class="sent" data-sid="s-5-1-1-1"><span class="en">WER (%) ↓ UTMOS ↑ Task Pretrain DPO Pretrain DPO MiniMax Arabic 2.80 3.01 German 4.08 3.05 English 0.84 4.25 Spanish 0.56 3.38 French 5.01 2.76 Hindi 3.39 3.43 Italian 2.18 3.36 Dutch 3.10 3.85 Portuguese 1.17 3.60 Seed TTS 1.58 4.07</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-1-1-1"><span class="zh">此处为表 6 数值散行。表头：WER (%) ↓、UTMOS ↑，每列下分预训练（Pretrain）与 DPO。MiniMax 集：阿拉伯语 WER 2.80、UTMOS 3.01；德语 4.08、3.05；英语 0.84、4.25；西班牙语 0.56、3.38；法语 5.01、2.76；印地语 3.39、3.43；意大利语 2.18、3.36；荷兰语 3.10、3.85；葡萄牙语 1.17、3.60；Seed TTS 集 1.58、4.07。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-1-1-1"><span class="en">WER (%) ↓ UTMOS ↑ Task Pretrain DPO Pretrain DPO MiniMax Arabic</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-1-1-1"><span class="zh">表头：WER (%) ↓ / UTMOS ↑ × Task（Pretrain / DPO）——MiniMax / Arabic（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-5-1-1"><code>2.80 2.68 (-0.12) 3.01 3.07 (+0.06)</code></div>
+<div class="eq" id="eq-5-1-2"><code>German</code></div>
+<div class="eq" id="eq-5-1-3"><code>4.08 0.83 (-3.25) 3.05 3.12 (+0.07)</code></div>
+<div class="eq" id="eq-5-1-4"><code>English</code></div>
+<div class="eq" id="eq-5-1-5"><code>0.84 0.63 (-0.21) 4.25 4.30 (+0.05)</code></div>
+<div class="eq" id="eq-5-1-6"><code>Spanish</code></div>
+<div class="eq" id="eq-5-1-7"><code>0.56 0.51 (-0.06) 3.38 3.41 (+0.04)</code></div>
+<div class="eq" id="eq-5-1-8"><code>French</code></div>
+<div class="eq" id="eq-5-1-9"><code>5.01 3.22 (-1.79) 2.76 2.83 (+0.07)</code></div>
+<div class="eq" id="eq-5-1-10"><code>Hindi</code></div>
+<div class="eq" id="eq-5-1-11"><code>3.39 4.99 (+1.61) 3.43 3.56 (+0.13)</code></div>
+<div class="eq" id="eq-5-1-12"><code>Italian</code></div>
+<div class="eq" id="eq-5-1-13"><code>2.18 1.32 (-0.85) 3.36 3.43 (+0.07)</code></div>
+<div class="eq" id="eq-5-1-14"><code>Dutch</code></div>
+<div class="eq" id="eq-5-1-15"><code>3.10 1.99 (-1.11) 3.85 3.89 (+0.04)</code></div>
+<div class="eq" id="eq-5-1-16"><code>Portuguese</code></div>
+<div class="eq" id="eq-5-1-17"><code>1.17 1.02 (-0.15) 3.60 3.66 (+0.06)</code></div>
+<div class="eq" id="eq-5-1-18"><code>Seed TTS</code></div>
+<div class="eq" id="eq-5-1-19"><code>1.58 1.23 (-0.35) 4.07 4.11 (+0.04)</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-5-2"><span class="secnum">5.2</span> <span class="t-zh">5.2 推理参数</span><span class="t-en">Inference Parameters</span></h3><div class="cap" id="fig-5-2-1"><span class="cap-k">图</span><p class="en">Figure 4 demonstrates the effect on the automatic evaluation metrics as the number of functional evaluations (NFEs) and choice of CFG α are varied. There are marked improvements across metrics as the NFEs is increased from 2 to 8. We find that increasing number of NFEs beyond 8 yields marginal improvement in speaker similarity and minor degradations in WER. Thus, we chose 8 NFEs as our default inference setting.</p><p class="zh">图 4 展示了函数评估次数（NFE）与 CFG α 取值变化对自动评测指标的影响。当 NFE 从 2 增加到 8 时，各项指标都有明显改善。我们发现，把 NFE 增加到 8 以上只能带来说话人相似度的边际提升，并会让 WER 轻微变差。因此我们选择 8 个 NFE 作为默认推理设置。</p></div>
 <div class="pblk" id="p-5-2-1">
@@ -677,10 +832,29 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div>
 <div class="pblk" id="p-5-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="en">Effect of NFEs 30.1 3.5 30.0 25.0 3.0 UTMOS ( WER ( 2.58 20.0 2.5 15.0 2.0 10.0 6.5 6.7 7.0 1.44 1.5 3.48 3.48 0.732 0.735 0.75 Speaker Similarity ( 0.70 0.656 0.65 0.60 0.55 0.50 0.45 0.421 2 4 8 16 NFEs 2 4 8 16 NFEs 2 4 8 16 NFEs Effect of CFG Scale 7.5 7.5 3.48 3.5 3.41 7.2 7.1 UTMOS ( 3.4 WER ( 7.0 3.3 6.7 6.8 3.2 6.5 6.3 6.2 3.09 3.1 6.2 3.52 0.737 Speaker Similarity ( 3.48 0.732 0.733 0.735 0.730 0.726 0.725 0.720 0.715 0.710 0.707 1.0 1.1 1.2 1.3 1.4 1.0 1.1 1.2 1.3 1.4 1.0 1.1 1.2 1.3 1.4</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="zh">此处为图 4 双联图的散行标注。上半部分「NFE 的影响」：横轴 NFEs 取 2、4、8、16，三列依次为 UTMOS、WER、说话人相似度；图中读数包括 UTMOS 约 3.48（30.1、30.0、25.0、20.0、15.0、10.0 等为坐标/面板编号刻度）、WER 各点（2.58、1.44、1.5 等，横轴 6.5、6.7、7.0 为 WER 刻度，2.5、2.0、1.5 为 UTMOS 方向刻度）、说话人相似度（0.421、0.656、0.732、0.735，纵轴 0.45 至 0.75）。下半部分「CFG 尺度的影响」：横轴取 1.0、1.1、1.2、1.3、1.4，读数包括 UTMOS（3.41、3.48、3.52，纵轴 3.1 至 3.5）、WER（7.2、7.1、7.0、6.8、6.7、6.5、6.3、6.2、6.2 等，纵轴 7.5 至 6.2）、说话人相似度（0.707、0.710、0.715、0.720、0.725、0.726、0.730、0.732、0.733、0.735、0.737，纵轴刻度 3.0、3.1、3.2、3.3、3.4、3.5 与 0.50、0.55、0.60、0.65、0.70、0.75，3.09、6.2、3.48 等混入读数）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="en">Effect of NFEs</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="zh">（小标题：NFE 次数的影响（Effect of NFEs）。）</span></span></p>
           
         </div>
+<div class="eq" id="eq-5-2-1"><code>30.1 3.5 30.0 25.0 3.0</code></div>
+<div class="eq" id="eq-5-2-2"><code>UTMOS (</code></div>
+<div class="eq" id="eq-5-2-3"><code>)</code></div>
+<div class="eq" id="eq-5-2-4"><code>WER (</code></div>
+<div class="eq" id="eq-5-2-5"><code>) 2.58 20.0 2.5 15.0 2.0 10.0 6.5 6.7 7.0 1.44 1.5 3.48 3.48 0.732 0.735 0.75</code></div>
+<div class="eq" id="eq-5-2-6"><code>Speaker Similarity (</code></div>
+<div class="eq" id="eq-5-2-7"><code>) 0.70 0.656 0.65 0.60 0.55 0.50 0.45 0.421 2 4 8 16</code></div>
+<div class="eq" id="eq-5-2-8"><code>NFEs</code></div>
+<div class="eq" id="eq-5-2-9"><code>2 4 8 16</code></div>
+<div class="eq" id="eq-5-2-10"><code>NFEs</code></div>
+<div class="eq" id="eq-5-2-11"><code>2 4 8 16</code></div>
+<div class="eq" id="eq-5-2-12"><code>NFEs Effect of CFG Scale</code></div>
+<div class="eq" id="eq-5-2-13"><code>7.5 7.5 3.48 3.5 3.41 7.2 7.1</code></div>
+<div class="eq" id="eq-5-2-14"><code>UTMOS (</code></div>
+<div class="eq" id="eq-5-2-15"><code>) 3.4</code></div>
+<div class="eq" id="eq-5-2-16"><code>WER (</code></div>
+<div class="eq" id="eq-5-2-17"><code>) 7.0 3.3 6.7 6.8 3.2 6.5 6.3 6.2 3.09 3.1 6.2 3.52 0.737</code></div>
+<div class="eq" id="eq-5-2-18"><code>Speaker Similarity (</code></div>
+<div class="eq" id="eq-5-2-19"><code>) 3.48 0.732 0.733 0.735 0.730 0.726 0.725 0.720 0.715 0.710 0.707 1.0 1.1 1.2 1.3 1.4 1.0 1.1 1.2 1.3 1.4 1.0 1.1 1.2 1.3 1.4</code></div>
 <div class="cap" id="fig-5-2-2"><span class="cap-k">图</span><p class="en">Figure 4: Effect of NFEs and CFG on automatic evaluations. The metrics are averaged over SEED-TTS and the 9 languages in MiniMax. Increasing the NFEs from 2 to 8 improves speaker similarity and UTMOS metrics. There is a slight regression in WER as the NFEs is increased beyond this. The metrics monotonically increase with higher CFG, but human evaluations flagged regressions in text-adherence with high α.</p><p class="zh">图 4：NFE 与 CFG 对自动评测的影响。指标在 SEED-TTS 与 MiniMax 的 9 种语言上取平均。把 NFE 从 2 增加到 8 会改善说话人相似度与 UTMOS；超过 8 之后 WER 会轻微回退。指标随 CFG 升高单调改善，但人工评测发现高 α 会带来文本贴合度（text-adherence）上的回退。</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-6"><span class="secnum">6</span> <span class="t-zh">基于 vLLM-Omni 的推理与服务</span><span class="t-en">Inference and Serving in vLLM-Omni</span></h2><div class="pblk" id="p-6-1">
@@ -714,10 +888,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="cap" id="tab-6-1-1"><span class="cap-k">表</span><p class="en">Table 7: Effect of CUDA graph acceleration on the flow-matching transformer.</p><p class="zh">表 7：CUDA graph 加速对流匹配 Transformer 的影响。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-configuration"><span class="t-zh">配置</span><span class="t-en">Configuration</span></h3><div class="pblk" id="p-configuration-1">
-          <p class="en-lines"><span class="sent" data-sid="s-configuration-1-1"><span class="en">Latency RTF Eager mode 0.258 CUDA graph 0.103</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-configuration-1-1"><span class="zh">此处为表 7 数值散行。表头：延迟 RTF。eager 模式 0.258；CUDA graph 0.103。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-configuration-1-1"><span class="en">Latency RTF Eager mode 133 ms</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-configuration-1-1"><span class="zh">（表格：延迟/RTF——Eager 模式 133 ms/0.258；CUDA graph 70 ms/0.103。）</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-configuration-1"><code>0.258</code></div>
+<div class="eq" id="eq-configuration-2"><code>CUDA graph 70 ms</code></div>
+<div class="eq" id="eq-configuration-3"><code>0.103</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-6-2"><span class="secnum">6.2</span> <span class="t-zh">6.2 异步分块流式</span><span class="t-en">Asynchronous Chunked Streaming</span></h3><div class="pblk" id="p-6-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-6-2-1-1"><span class="en">The two pipeline stages run in separate scheduling loops.</span></span> <span class="sent" data-sid="s-6-2-1-2"><span class="en">To overlap the autoregressive generation stage decoding with codec decoding stage waveform synthesis, an asynchronous chunked streaming protocol is introduced.</span></span></p>
@@ -750,10 +927,17 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="cap" id="tab-6-3-1"><span class="cap-k">表</span><p class="en">Table 8: Serving performance of Voxtral TTS on a single H200.</p><p class="zh">表 8：Voxtral TTS 在单张 H200 上的服务性能。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-concurrency"><span class="t-zh">并发</span><span class="t-en">Concurrency</span></h3><div class="pblk" id="p-concurrency-1">
-          <p class="en-lines"><span class="sent" data-sid="s-concurrency-1-1"><span class="en">Latency RTF Throughput (char/s/GPU) Wait Rate 1 0.103 119.14 0% 16 0.237 879.11 0% 32 0.302 1430.78 0%</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-concurrency-1-1"><span class="zh">此处为表 8 数值散行。表头：延迟 RTF、吞吐（字符/秒/GPU）、等待率。并发 1：RTF 0.103、吞吐 119.14、等待率 0%；并发 16：RTF 0.237、吞吐 879.11、等待率 0%；并发 32：RTF 0.302、吞吐 1430.78、等待率 0%。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-concurrency-1-1"><span class="en">Latency RTF Throughput (char/s/GPU) Wait Rate</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-concurrency-1-1"><span class="zh">表头：Latency / RTF / Throughput (char/s/GPU) / Wait Rate（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-concurrency-1"><code>1</code></div>
+<div class="eq" id="eq-concurrency-2"><code>70 ms</code></div>
+<div class="eq" id="eq-concurrency-3"><code>0.103 119.14 0% 16</code></div>
+<div class="eq" id="eq-concurrency-4"><code>331 ms</code></div>
+<div class="eq" id="eq-concurrency-5"><code>0.237 879.11 0% 32</code></div>
+<div class="eq" id="eq-concurrency-6"><code>552 ms</code></div>
+<div class="eq" id="eq-concurrency-7"><code>0.302 1430.78 0%</code></div></section>
 <section>
       <h2 class="sech lv1" id="sec-7"><span class="secnum">7</span> <span class="t-zh">结论</span><span class="t-en">Conclusion</span></h2><div class="pblk" id="p-7-1">
           <p class="en-lines"><span class="sent" data-sid="s-7-1-1"><span class="en">We introduced Voxtral TTS, a multilingual TTS model that leverages a hybrid architecture for auto-regressive generation of semantic tokens and flow-matching for acoustic tokens.</span></span> <span class="sent" data-sid="s-7-1-2"><span class="en">The tokens correspond to those from Voxtral Codec, a speech tokenizer that combines ASR-distilled semantic tokens with FSQ acoustic tokens.</span></span></p>
@@ -806,15 +990,18 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk plain" id="p-references-13"><p class="refline">Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph E.</p></div>
 <div class="pblk plain" id="p-references-14"><p class="refline">Gonzalez, Hao Zhang, and Ion Stoica. Efficient memory management for large language model serving with PagedAttention. In Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles, 2023. doi: 10.1145/3600006.3613165.</p></div>
 <div class="pblk plain" id="p-references-15"><p class="refline">Matt Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, and Wei-Ning Hsu. Voicebox: Text-guided multilingual universal speech generation at scale. In Advances in Neural Information Processing Systems, volume 36, 2023. URL https://proceedings.neurips.cc/paper_files/paper/2023/ha sh/2d8911db9ecedf866015091b28946e15-Abstract-Conference.html.</p></div>
-<div class="pblk plain" id="p-references-16"><p class="refline">Alexander H Liu, Sung-Lin Yeh, and James R Glass. Revisiting self-supervised learning of speech representation from a mutual information perspective. In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 12051–12055. IEEE, 2024.</p></div>
+<div class="pblk plain" id="p-references-16"><p class="refline">Alexander H Liu, Sung-Lin Yeh, and James R Glass. Revisiting self-supervised learning of speech representation from a mutual information perspective. In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 12051–12055. IEEE,</p></div>
+<div class="eq" id="eq-references-1"><code>2024.</code></div>
 <div class="pblk plain" id="p-references-17"><p class="refline">Alexander H. Liu, Andy Ehrenberg, Andy Lo, Clément Denoix, Corentin Barreau, Guillaume Lample, Jean-Malo Delignon, Khyathi Raghavi Chandu, Patrick von Platen, Pavankumar Reddy Muddireddy, Sanchit Gandhi, Soham Ghosh, Srijan Mishra, and Thomas Foubert. Voxtral, 2025.</p></div>
 <div class="pblk plain" id="p-references-18"><p class="refline">URL https://arxiv.org/abs/2507.13264.</p></div>
 <div class="pblk plain" id="p-references-19"><p class="refline">Alexander H Liu, Kartik Khandelwal, Sandeep Subramanian, Victor Jouault, Abhinav Rastogi, Adrien Sadé, Alan Jeffares, Albert Jiang, Alexandre Cahill, Alexandre Gavaudan, et al. Ministral 3. arXiv preprint arXiv:2601.08584, 2026.</p></div>
 <div class="pblk plain" id="p-references-20"><p class="refline">Fabian Mentzer, David Minnen, Eirikur Agustsson, and Michael Tschannen. Finite scalar quantization: VQ-VAE made simple, 2023.</p></div>
 <div class="pblk plain" id="p-references-21"><p class="refline">Tu Anh Nguyen, Wei-Ning Hsu, Antony d’Avirro, Bowen Shi, Itai Gat, Maryam Fazel-Zarani, Tal Remez, Jade Copet, Gabriel Synnaeve, Michael Hassid, et al. Expresso: A benchmark and analysis of discrete expressive speech resynthesis. arXiv preprint arXiv:2308.05725, 2023.</p></div>
 <div class="pblk plain" id="p-references-22"><p class="refline">Julian D Parker, Anton Smirnov, Jordi Pons, CJ Carr, Zack Zukowski, Zach Evans, and Xubo Liu.</p></div>
-<div class="pblk plain" id="p-references-23"><p class="refline">Scaling transformers for low-bitrate high-quality speech coding. arXiv preprint arXiv:2411.19842, 2024.</p></div>
-<div class="pblk plain" id="p-references-24"><p class="refline">William Peebles and Saining Xie. Scalable diffusion models with transformers. In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), pages 4195–4205, October 2023.</p></div>
+<div class="pblk plain" id="p-references-23"><p class="refline">Scaling transformers for low-bitrate high-quality speech coding. arXiv preprint arXiv:2411.19842,</p></div>
+<div class="eq" id="eq-references-2"><code>2024.</code></div>
+<div class="pblk plain" id="p-references-24"><p class="refline">William Peebles and Saining Xie. Scalable diffusion models with transformers. In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), pages 4195–4205, October</p></div>
+<div class="eq" id="eq-references-3"><code>2023.</code></div>
 <div class="pblk plain" id="p-references-25"><p class="refline">Vadim Popov, Ivan Vovk, Vladimir Gogoryan, Tasnima Sadekova, and Mikhail Kudinov. GradTTS: A diffusion probabilistic model for text-to-speech. In Proceedings of the 38th International Conference on Machine Learning, volume 139 of Proceedings of Machine Learning Research, pages 8599–8608. PMLR, 2021. URL https://proceedings.mlr.press/v139/popov21a.</p></div>
 <div class="pblk plain" id="p-references-26"><p class="refline">html.</p></div>
 <div class="pblk plain" id="p-references-27"><p class="refline">Ofir Press, Noah A Smith, and Mike Lewis. Train short, test long: Attention with linear biases enables input length extrapolation. arXiv preprint arXiv:2108.12409, 2021.</p></div>

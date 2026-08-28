@@ -541,8 +541,8 @@ globalThis.PAPER_2608_11593 = {
       },
       {
        "id": "s-information-complete-acoustic-mo-1-3",
-       "original": "Luna-TTS Family instead models the full multi-codebook token grid directly, so that a single generative stage owns all information and the codec decoder is a deterministic, lightweight map back to audio. waveform (24 kHz) predicted X0 (all masked positions, in parallel) Causal Encoder RVQ (Q = 8) duration predictor (Qwen3-0.6B) →T",
-       "zh": "Luna-TTS 系列则直接对完整的多码本 token 网格建模，让单一生成阶段掌握全部信息，codec 解码器只是回到音频的一个确定性轻量映射。（抽取残留，图内文字：waveform (24 kHz) / predicted X0（并行预测全部掩码位置）/ Causal Encoder RVQ (Q = 8) / duration predictor (Qwen3-0.6B) → T，为图 1 中被混排的部件标签。）"
+       "original": "Luna-TTS Family instead models the full multi-codebook token grid directly, so that a single generative stage owns all information and the codec decoder is a deterministic, lightweight map back to audio. waveform (24 kHz) Luna-TTS predicted X0 (all masked positions, in parallel) Causal Encoder RVQ (Q = 8) duration predictor (Qwen3-0.6B) →T",
+       "zh": "Luna-TTS 系列则直接对完整的多码本 token 网格建模，让单一生成阶段掌握全部信息，codec 解码器只是回到音频的确定性轻量映射。（图 1 标签：24 kHz 波形；Luna-TTS 预测 X0（所有掩码位置并行）；Causal Encoder；RVQ（Q=8）；时长预测器（Qwen3-0.6B）→T。）"
       }
      ]
     },
@@ -564,8 +564,8 @@ globalThis.PAPER_2608_11593 = {
       },
       {
        "id": "s-information-complete-acoustic-mo-2-2",
-       "original": "Qwen3) attn: bidirectional (Luna-TTS) / block-causal (Luna-TTS Realtime) 25 Hz × 8 CB (2.2 kbps) KV cache Σ codebook embeddings per frame Causal Decoder streaming, frame-synchronous stream 1.28s/block Sb=8 steps block-causal · stop token at block boundary streaming · blockwise parallel text y + tags prompt P target Xt (b) unified masked-diffusion backbone (a) Luna-Codec direct conversion (c) decoding regimes block-causal adaptation masked diffusion · bidirectional Qwen3 LLM AR · causal · text continual pretraining, 1M hours (zh/en/ja/ko) block diffusion · block-causal continual training, block-causal objective",
-       "zh": "（图 1 内嵌文字，接上：Qwen3 初始化；attn: bidirectional（Luna-TTS）/ block-causal（Luna-TTS Realtime）；25 Hz × 8 CB（2.2 kbps）；KV cache；每帧码本嵌入求和；Causal Decoder——帧同步流式输出，1.28 秒/块，Sb=8 步；块因果 · 块边界处停止 token；流式 · 逐块并行；文本 y + 标签；提示 P；目标 Xt。(b) 统一掩码扩散骨架 (a) Luna-Codec 直接转换 (c) 解码机制；块因果适配；掩码扩散 · 双向；Qwen3 LLM AR · 因果 · 文本；继续预训练，1 百万小时（中/英/日/韩）；块扩散 · 块因果继续训练，块因果目标。）"
+       "original": "Qwen3) attn: bidirectional (Luna-TTS) / block-causal (Luna-TTS Realtime) 25 Hz × 8 CB (2.2 kbps) Luna-TTS Realtime KV cache Σ codebook embeddings per frame Causal Decoder streaming, frame-synchronous stream 1.28s/block Sb=8 steps block-causal · stop token at block boundary streaming · blockwise parallel text y + tags prompt P target Xt (b) unified masked-diffusion backbone (a) Luna-Codec direct conversion (c) decoding regimes block-causal adaptation Luna-TTS masked diffusion · bidirectional Qwen3 LLM AR · causal · text continual pretraining, 1M hours (zh/en/ja/ko) Luna-TTS Realtime block diffusion · block-causal continual training, block-causal objective",
+       "zh": "（图 1 标签续：(a) Luna-Codec 直接转换；(b) 统一掩码扩散主干；(c) 解码范式——Luna-TTS：掩码扩散、双向 Qwen3、文本继续预训练 1M 小时（zh/en/ja/ko）；Luna-TTS Realtime：块扩散、块因果目标续训；25 Hz × 8 CB（2.2 kbps）；KV cache；每帧码本嵌入求和（Σ）；Causal Decoder 流式、帧同步；1.28s/块、Sb=8 步、块边界 stop token。）"
       }
      ]
     },
@@ -806,7 +806,7 @@ globalThis.PAPER_2608_11593 = {
       },
       {
        "id": "s-forward-process-1-2",
-       "original": "Given a noise level t ∈(0, 1], each target position (i, q) is independently replaced by a special MASK token with probability t: h t · δM X i,q t + (1 −t) · δX i,q 0",
+       "original": "Given a noise level t ∈(0, 1], each target position (i, q) is independently replaced by a special MASK token with probability t: h t · δM X i,q t + (1 −t) · δX i,q",
        "zh": "给定噪声水平 t ∈ (0, 1]，每个目标位置 (i, q) 以概率 t 独立地被替换为特殊的 MASK token。"
       }
      ]
@@ -815,28 +815,34 @@ globalThis.PAPER_2608_11593 = {
      "id": "eq-forward-process-1",
      "type": "equation",
      "page": 5,
-     "original": "Q Y"
+     "original": "0"
     },
     {
      "id": "eq-forward-process-2",
      "type": "equation",
      "page": 5,
-     "original": "T Y"
+     "original": "Q Y"
     },
     {
      "id": "eq-forward-process-3",
      "type": "equation",
      "page": 5,
-     "original": "qt(Xt | X0) ="
+     "original": "T Y"
     },
     {
      "id": "eq-forward-process-4",
      "type": "equation",
      "page": 5,
-     "original": "q=1"
+     "original": "qt(Xt | X0) ="
     },
     {
      "id": "eq-forward-process-5",
+     "type": "equation",
+     "page": 5,
+     "original": "q=1"
+    },
+    {
+     "id": "eq-forward-process-6",
      "type": "equation",
      "page": 5,
      "original": "i=1"
@@ -848,44 +854,16 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-forward-process-2-1",
-       "original": "X i,q t i , (1) where δ denotes a point mass and M the mask token.",
+       "original": "X i,q t i",
        "zh": "如式 (1) 所示，其中 δ 表示点质量分布，M 表示掩码 token。"
-      },
-      {
-       "id": "s-forward-process-2-2",
-       "original": "Conditioning tokens are never masked.",
-       "zh": "条件 token 永不被掩码。"
-      },
-      {
-       "id": "s-forward-process-2-3",
-       "original": "The model pθ is trained to recover all masked positions in parallel, yielding the weighted denoising cross-entropy that upper-bounds the negative log-likelihood [34]:",
-       "zh": "模型 pθ 被训练为并行恢复所有掩码位置，由此得到负对数似然上界的加权去噪交叉熵 [34]："
       }
      ]
-    },
-    {
-     "id": "eq-forward-process-6",
-     "type": "equation",
-     "page": 5,
-     "original": ""
     },
     {
      "id": "eq-forward-process-7",
      "type": "equation",
      "page": 5,
-     "original": "1"
-    },
-    {
-     "id": "eq-forward-process-8",
-     "type": "equation",
-     "page": 5,
-     "original": "LMD(θ) = −Et∼U(0,1] EXt∼qt"
-    },
-    {
-     "id": "eq-forward-process-9",
-     "type": "equation",
-     "page": 5,
-     "original": "t"
+     "original": ", (1)"
     },
     {
      "id": "p-forward-process-3",
@@ -894,19 +872,83 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-forward-process-3-1",
-       "original": "(i,q) : X i,q t =M log pθ X i,q 0 Xt, c ",
-       "zh": "即对所有满足被掩码条件的位置 (i, q) 求 log pθ(X0 | Xt, c) 之和（式 (2) 的期望内表达式，公式抽取有断行）。"
+       "original": "where δ denotes a point mass and M the mask token.",
+       "zh": "如式 (1) 所示，其中 δ 表示点质量分布，M 表示掩码 token。"
+      },
+      {
+       "id": "s-forward-process-3-2",
+       "original": "Conditioning tokens are never masked.",
+       "zh": "条件 token 永不被掩码。"
+      },
+      {
+       "id": "s-forward-process-3-3",
+       "original": "The model pθ is trained to recover all masked positions in parallel, yielding the weighted denoising cross-entropy that upper-bounds the negative log-likelihood [34]:",
+       "zh": "模型 pθ 被训练为并行恢复所有掩码位置，由此得到负对数似然上界的加权去噪交叉熵 [34]："
       }
      ]
+    },
+    {
+     "id": "eq-forward-process-8",
+     "type": "equation",
+     "page": 5,
+     "original": ""
+    },
+    {
+     "id": "eq-forward-process-9",
+     "type": "equation",
+     "page": 5,
+     "original": "1"
     },
     {
      "id": "eq-forward-process-10",
      "type": "equation",
      "page": 5,
-     "original": "X"
+     "original": "LMD(θ) = −Et∼U(0,1] EXt∼qt"
     },
     {
      "id": "eq-forward-process-11",
+     "type": "equation",
+     "page": 5,
+     "original": "t"
+    },
+    {
+     "id": "p-forward-process-4",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-forward-process-4-1",
+       "original": "(i,q) : X i,q t =M log pθ X i,q",
+       "zh": "即对所有满足被掩码条件的位置 (i, q) 求 log pθ(X0 | Xt, c) 之和（式 (2) 的期望内表达式，公式抽取有断行）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-forward-process-12",
+     "type": "equation",
+     "page": 5,
+     "original": "0"
+    },
+    {
+     "id": "eq-forward-process-13",
+     "type": "equation",
+     "page": 5,
+     "original": "Xt, c"
+    },
+    {
+     "id": "eq-forward-process-14",
+     "type": "equation",
+     "page": 5,
+     "original": ""
+    },
+    {
+     "id": "eq-forward-process-15",
+     "type": "equation",
+     "page": 5,
+     "original": "X"
+    },
+    {
+     "id": "eq-forward-process-16",
      "type": "equation",
      "page": 5,
      "original": ". (2)"
@@ -1359,20 +1401,16 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-2-6-1-2-1",
-       "original": "b=1 pθ X(b) | X(<b), c , (3) where c denotes the linguistic and acoustic conditioning context.",
+       "original": "b=1 pθ X(b) | X(<b), c",
        "zh": "如式 (3) 所示的逐块连乘（公式块抽取断行：b=1 起 pθ(X(b) | X(<b), c)），其中 c 表示语言与声学条件上下文。"
-      },
-      {
-       "id": "s-2-6-1-2-2",
-       "original": "The factorization imposes an ordering over blocks but not over individual frames or codebooks within a block.",
-       "zh": "这个因式分解只对块施加顺序，对块内的帧或码本不施加任何顺序。"
-      },
-      {
-       "id": "s-2-6-1-2-3",
-       "original": "Consequently, the active block is refined as a joint acoustic structure rather than emitted as a token sequence.",
-       "zh": "因此，当前块是作为一个联合声学结构被细化出来的，而不是作为一条 token 序列被逐个发出的。"
       }
      ]
+    },
+    {
+     "id": "eq-2-6-1-3",
+     "type": "equation",
+     "page": 7,
+     "original": ", (3)"
     },
     {
      "id": "p-2-6-1-3",
@@ -1381,21 +1419,43 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-2-6-1-3-1",
+       "original": "where c denotes the linguistic and acoustic conditioning context.",
+       "zh": "如式 (3) 所示的逐块连乘（公式块抽取断行：b=1 起 pθ(X(b) | X(<b), c)），其中 c 表示语言与声学条件上下文。"
+      },
+      {
+       "id": "s-2-6-1-3-2",
+       "original": "The factorization imposes an ordering over blocks but not over individual frames or codebooks within a block.",
+       "zh": "这个因式分解只对块施加顺序，对块内的帧或码本不施加任何顺序。"
+      },
+      {
+       "id": "s-2-6-1-3-3",
+       "original": "Consequently, the active block is refined as a joint acoustic structure rather than emitted as a token sequence.",
+       "zh": "因此，当前块是作为一个联合声学结构被细化出来的，而不是作为一条 token 序列被逐个发出的。"
+      }
+     ]
+    },
+    {
+     "id": "p-2-6-1-4",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-2-6-1-4-1",
        "original": "We initialize Luna-TTS Realtime from Luna-TTS and adapt it using the block-diffusion formulation of Arriola et al. [41].",
        "zh": "我们从 Luna-TTS 初始化 Luna-TTS Realtime，并采用 Arriola 等人 [41] 的块扩散表述做适配。"
       },
       {
-       "id": "s-2-6-1-3-2",
+       "id": "s-2-6-1-4-2",
        "original": "During training, the model predicts a corrupted current block conditioned on the information that would already be available in a streaming execution.",
        "zh": "训练时，模型在「流式执行中此刻已经可用」的信息条件下，预测被加噪的当前块。"
       },
       {
-       "id": "s-2-6-1-3-3",
+       "id": "s-2-6-1-4-3",
        "original": "This aligns the learned conditional distribution with the block-causal generation process while retaining the masked acoustic-token objective of the non-autoregressive model.",
        "zh": "这让学到的条件分布与块因果生成过程对齐，同时保留非自回归模型的掩码声学 token 目标。"
       },
       {
-       "id": "s-2-6-1-3-4",
+       "id": "s-2-6-1-4-4",
        "original": "Block causality is therefore part of the learned generation behavior, rather than an inference-time masking modification alone.",
        "zh": "因此，块因果性是学出来的生成行为的一部分，而不仅仅是推理时改一下注意力掩码。"
       }
@@ -1484,10 +1544,16 @@ globalThis.PAPER_2608_11593 = {
       },
       {
        "id": "s-2-6-2-3-4",
-       "original": "We characterize these latency–quality operating points using the serving protocol in §5.2.",
+       "original": "We characterize these latency–quality operating points using the serving protocol in",
        "zh": "我们用 §5.2 的服务协议刻画这些延迟—质量运行点。"
       }
      ]
+    },
+    {
+     "id": "eq-2-6-2-1",
+     "type": "equation",
+     "page": 7,
+     "original": "§5.2."
     }
    ]
   },
@@ -1522,8 +1588,8 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-2-7-1-1",
-       "original": "AR codec LM Generation order fixed, left-to-right any-order, global any-order within block, left-to-right between blocks Sequential NFE O(T)–O(TQ) S (const.)",
-       "zh": "（以下为 Table 1 正文碎块，抽取后失去表结构：AR codec LM；生成顺序为固定的从左到右；任意顺序、全局；块内任意顺序、块间从左到右；串行 NFE 为 O(T)–O(TQ)；S（常数）。）"
+       "original": "AR codec LM Luna-TTS Luna-TTS Realtime Generation order fixed, left-to-right any-order, global any-order within block, left-to-right between blocks Sequential NFE O(T)–O(TQ) S (const.)",
+       "zh": "（表 1 对比维度行：AR codec LM / Luna-TTS / Luna-TTS Realtime——生成顺序：固定从左到右 / 任意顺序全局 / 块内任意顺序、块间从左到右；顺序 NFE：O(T)–O(TQ) / S（常数）。）"
       }
      ]
     },
@@ -1534,8 +1600,56 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-2-7-2-1",
-       "original": "Sb⌈T/B⌉ KV cache ✓ ✓ Streaming ✓ ✓(1.28s blocks) Length handling stop token duration predictor stop token Intra-frame codebooks delay / depth-AR / MTP native parallel native parallel Infilling & editing bespoke mechanisms native prefix-constrained Error propagation unbounded prefix iterative refinement within-block refinement; irrevocable after commit Preferred workload offline / batch streaming / interactive",
-       "zh": "（Table 1 正文接上：Sb⌈T/B⌉；KV cache ✓ ✓；流式 ✓ ✓（1.28 秒块）；长度处理——停止 token / 时长预测器 / 停止 token；帧内码本——延迟 / 深度 AR / MTP 对比 原生并行 对比 原生并行；填充与编辑——定制机制 / 原生 / 前缀受限；错误传播——前缀上无界 / 迭代细化 / 块内细化、提交后不可撤销；适配负载——离线 / 批量 对比 流式 / 交互。该段为表格内容，原顺序仅供参考）"
+       "original": "Sb⌈T/B⌉ KV cache",
+       "zh": "（表 1 续行：Sb⌈T/B⌉；KV cache ✓/—/✓；流式 ✓/—/✓（1.28s 块）；长度处理：stop token / 时长预测器 / stop token；帧内码本：delay/depth-AR/MTP / 原生并行 / 原生并行；填充编辑：定制机制 / 原生前缀约束；误差传播：前缀无界 / 块内迭代修正、提交后不可改；适用负载：离线批处理 / 流式交互。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-7-1",
+     "type": "equation",
+     "page": 7,
+     "original": "✓ — ✓"
+    },
+    {
+     "id": "eq-2-7-2",
+     "type": "equation",
+     "page": 7,
+     "original": "Streaming"
+    },
+    {
+     "id": "eq-2-7-3",
+     "type": "equation",
+     "page": 7,
+     "original": "✓ —"
+    },
+    {
+     "id": "p-2-7-3",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-2-7-3-1",
+       "original": "✓(1.28s blocks) Length handling stop token duration predictor stop token Intra-frame codebooks delay / depth-AR / MTP native parallel native parallel Infilling & editing bespoke mechanisms native prefix-constrained Error propagation unbounded prefix iterative refinement within-block refinement; irrevocable after commit Preferred workload",
+       "zh": "（表 1 续行：Sb⌈T/B⌉；KV cache ✓/—/✓；流式 ✓/—/✓（1.28s 块）；长度处理：stop token / 时长预测器 / stop token；帧内码本：delay/depth-AR/MTP / 原生并行 / 原生并行；填充编辑：定制机制 / 原生前缀约束；误差传播：前缀无界 / 块内迭代修正、提交后不可改；适用负载：离线批处理 / 流式交互。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-7-4",
+     "type": "equation",
+     "page": 7,
+     "original": "—"
+    },
+    {
+     "id": "p-2-7-4",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-2-7-4-1",
+       "original": "offline / batch streaming / interactive",
+       "zh": "（表 1 续行：Sb⌈T/B⌉；KV cache ✓/—/✓；流式 ✓/—/✓（1.28s 块）；长度处理：stop token / 时长预测器 / stop token；帧内码本：delay/depth-AR/MTP / 原生并行 / 原生并行；填充编辑：定制机制 / 原生前缀约束；误差传播：前缀无界 / 块内迭代修正、提交后不可改；适用负载：离线批处理 / 流式交互。）"
       }
      ]
     }
@@ -1612,13 +1726,37 @@ globalThis.PAPER_2608_11593 = {
      ]
     },
     {
+     "id": "eq-pretraining-data-construction-1",
+     "type": "equation",
+     "page": 8,
+     "original": "1 2"
+    },
+    {
      "id": "p-pretraining-data-construction-2",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
        "id": "s-pretraining-data-construction-2-1",
-       "original": "1 2 Standardize & Segment Transcribe & Align format & loudness norm. language identification VAD + speaker turns primary ASR transcripts forced alignment of text units to audio raw recordings zh · en · ja · ko 3 4 Filter & Verify Assemble & Tokenize acoustic-quality filters second independent ASR cross-ASR WER/CER check speech–text examples Luna-Codec acoustic tokenization discrete acoustic tokens rejected: low quality or cross-ASR disagreement",
+       "original": "Standardize & Segment Transcribe & Align format & loudness norm. language identification VAD + speaker turns primary ASR transcripts forced alignment of text units to audio raw recordings zh · en · ja · ko",
+       "zh": "（图 2 内嵌文字，抽取乱序：1 2 标准化与切分 / 转写与对齐；格式与响度归一化；语种识别；VAD + 说话人轮次；主 ASR 转写文本；文本单元到音频的强制对齐；原始录音；zh · en · ja · ko；3 4 过滤与验证 / 组装与分词；声学质量过滤器；第二个独立 ASR；跨 ASR 的 WER/CER 核验；语音—文本样本；Luna-Codec 声学 token 化；离散声学 token；被拒绝：质量过低或跨 ASR 不一致。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-pretraining-data-construction-2",
+     "type": "equation",
+     "page": 8,
+     "original": "3 4"
+    },
+    {
+     "id": "p-pretraining-data-construction-3",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-pretraining-data-construction-3-1",
+       "original": "Filter & Verify Assemble & Tokenize acoustic-quality filters second independent ASR cross-ASR WER/CER check speech–text examples Luna-Codec acoustic tokenization discrete acoustic tokens rejected: low quality or cross-ASR disagreement",
        "zh": "（图 2 内嵌文字，抽取乱序：1 2 标准化与切分 / 转写与对齐；格式与响度归一化；语种识别；VAD + 说话人轮次；主 ASR 转写文本；文本单元到音频的强制对齐；原始录音；zh · en · ja · ko；3 4 过滤与验证 / 组装与分词；声学质量过滤器；第二个独立 ASR；跨 ASR 的 WER/CER 核验；语音—文本样本；Luna-Codec 声学 token 化；离散声学 token；被拒绝：质量过低或跨 ASR 不一致。）"
       }
      ]
@@ -1631,54 +1769,54 @@ globalThis.PAPER_2608_11593 = {
      "zh": "图 2：四阶段多语言数据处理流水线。原始录音先被转成说话人一致、转写经验证的切片，再由 Luna-Codec 做声学 token 化；未通过质量或跨 ASR 一致性检查的切片被丢弃。"
     },
     {
-     "id": "p-pretraining-data-construction-3",
-     "type": "paragraph",
-     "page": 8,
-     "sentences": [
-      {
-       "id": "s-pretraining-data-construction-3-1",
-       "original": "Source recordings are first standardized, language identified, and segmented using speech activity and speaker boundaries.",
-       "zh": "源录音先做标准化与语种识别，再按语音活动与说话人边界切分。"
-      },
-      {
-       "id": "s-pretraining-data-construction-3-2",
-       "original": "A primary ASR system supplies transcripts, while forced alignment maps textual units to the waveform.",
-       "zh": "一套主 ASR 系统提供转写文本，强制对齐则把文本单元映射到波形。"
-      },
-      {
-       "id": "s-pretraining-data-construction-3-3",
-       "original": "Acoustic-quality filtering and a second, independently trained ASR system then verify each bounded, speakerconsistent cut; cross-ASR agreement is measured at the word level for English and the character level for Chinese, Japanese, and Korean.",
-       "zh": "随后，声学质量过滤与一套独立训练的第二 ASR 系统对每个有界、说话人一致的切片做验证；跨 ASR 一致性在英文上按词级、在中日韩上按字级衡量。"
-      },
-      {
-       "id": "s-pretraining-data-construction-3-4",
-       "original": "Accepted speaker-consistent cuts are encoded by Luna-Codec into the T × Q RVQ token grid.",
-       "zh": "通过验证的说话人一致切片由 Luna-Codec 编码成 T × Q 的 RVQ token 网格。"
-      }
-     ]
-    },
-    {
      "id": "p-pretraining-data-construction-4",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
        "id": "s-pretraining-data-construction-4-1",
+       "original": "Source recordings are first standardized, language identified, and segmented using speech activity and speaker boundaries.",
+       "zh": "源录音先做标准化与语种识别，再按语音活动与说话人边界切分。"
+      },
+      {
+       "id": "s-pretraining-data-construction-4-2",
+       "original": "A primary ASR system supplies transcripts, while forced alignment maps textual units to the waveform.",
+       "zh": "一套主 ASR 系统提供转写文本，强制对齐则把文本单元映射到波形。"
+      },
+      {
+       "id": "s-pretraining-data-construction-4-3",
+       "original": "Acoustic-quality filtering and a second, independently trained ASR system then verify each bounded, speakerconsistent cut; cross-ASR agreement is measured at the word level for English and the character level for Chinese, Japanese, and Korean.",
+       "zh": "随后，声学质量过滤与一套独立训练的第二 ASR 系统对每个有界、说话人一致的切片做验证；跨 ASR 一致性在英文上按词级、在中日韩上按字级衡量。"
+      },
+      {
+       "id": "s-pretraining-data-construction-4-4",
+       "original": "Accepted speaker-consistent cuts are encoded by Luna-Codec into the T × Q RVQ token grid.",
+       "zh": "通过验证的说话人一致切片由 Luna-Codec 编码成 T × Q 的 RVQ token 网格。"
+      }
+     ]
+    },
+    {
+     "id": "p-pretraining-data-construction-5",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-pretraining-data-construction-5-1",
        "original": "This pipeline yields approximately 1 million hours of curated speech across Chinese, English, Japanese, and Korean.",
        "zh": "这条流水线产出约 1 百万小时精选语音，覆盖中文、英文、日文、韩文。"
       },
       {
-       "id": "s-pretraining-data-construction-4-2",
+       "id": "s-pretraining-data-construction-5-2",
        "original": "The corpus fills three roles across the training pipeline (§3.2): the broad multilingual mixture used for foundation pretraining, a high-quality subset used for annealing, and the expressive subset described below.",
        "zh": "语料在训练流水线（§3.2）中承担三种角色：用于基础预训练的广覆盖多语言混合集、用于退火的高质量子集，以及下文介绍的表现力子集。"
       },
       {
-       "id": "s-pretraining-data-construction-4-3",
+       "id": "s-pretraining-data-construction-5-3",
        "original": "These subsets may overlap at the source-recording level but serve different purposes: broad coverage establishes linguistic and speaker diversity, while high-quality and expressive data improve fidelity and controllability.",
        "zh": "这些子集在源录音层面可能重叠，但用途不同：广覆盖保证语言与说话人多样性，高质量与表现力数据则提升保真度与可控性。"
       },
       {
-       "id": "s-pretraining-data-construction-4-4",
+       "id": "s-pretraining-data-construction-5-4",
        "original": "Table 2 gives the language composition: an evenly balanced Mandarin–English core, complemented by a combined 13.6% share of Japanese and Korean.",
        "zh": "表 2 给出语种构成：中英文大体均衡的核心，加上合计 13.6% 的日韩语份额。"
       }
@@ -1692,16 +1830,58 @@ globalThis.PAPER_2608_11593 = {
      "zh": "Table 2：训练语料的语种构成。各项份额独立四舍五入。"
     },
     {
-     "id": "p-pretraining-data-construction-5",
+     "id": "p-pretraining-data-construction-6",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
-       "id": "s-pretraining-data-construction-5-1",
-       "original": "Language Share Mandarin Chinese English Japanese Korean",
-       "zh": "（Table 2 正文：语种 / 份额——中文普通话、英文、日文、韩文；原表为各语种占比，抽取丢失数值行。）"
+       "id": "s-pretraining-data-construction-6-1",
+       "original": "Language Share Mandarin Chinese",
+       "zh": "（表格行：语种占比——普通话 43.4%；英语 43.1%；日语 6.7%；韩语 6.9%。）"
       }
      ]
+    },
+    {
+     "id": "eq-pretraining-data-construction-3",
+     "type": "equation",
+     "page": 8,
+     "original": "43.4%"
+    },
+    {
+     "id": "eq-pretraining-data-construction-4",
+     "type": "equation",
+     "page": 8,
+     "original": "English"
+    },
+    {
+     "id": "eq-pretraining-data-construction-5",
+     "type": "equation",
+     "page": 8,
+     "original": "43.1%"
+    },
+    {
+     "id": "eq-pretraining-data-construction-6",
+     "type": "equation",
+     "page": 8,
+     "original": "Japanese"
+    },
+    {
+     "id": "eq-pretraining-data-construction-7",
+     "type": "equation",
+     "page": 8,
+     "original": "6.7%"
+    },
+    {
+     "id": "eq-pretraining-data-construction-8",
+     "type": "equation",
+     "page": 8,
+     "original": "Korean"
+    },
+    {
+     "id": "eq-pretraining-data-construction-9",
+     "type": "equation",
+     "page": 8,
+     "original": "6.9%"
     }
    ]
   },
@@ -2738,20 +2918,148 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-5-2-2-1",
-       "original": "Profile Steps Execution Local first block (ms) Full response (ms) End-to-end RTF ↓ 32 1× H20, full-grid 419.6 419.6 0.0410 16 1× H20, full-grid 216.0 216.0 0.0211 16 1× H20, sequential CFG 98.9 837.7 0.0790 16 2× H20, parallel CFG 63.8 451.4 0.0426 8 1× H20, sequential CFG 59.6 457.6 0.0432 8 2× H20, parallel CFG 41.6 254.0 0.0240 The two serving profiles optimize different latency targets.",
-       "zh": "（Table 5 正文碎块与正文拼接：形态 / 步数 / 执行 / 本地首块 (ms) / 完整响应 (ms) / 端到端 RTF ↓——32 步 1× H20 全网格：419.6 / 419.6 / 0.0410；16 步 1× H20 全网格：216.0 / 216.0 / 0.0211；16 步 1× H20 顺序 CFG：98.9 / 837.7 / 0.0790；16 步 2× H20 并行 CFG：63.8 / 451.4 / 0.0426；8 步 1× H20 顺序 CFG：59.6 / 457.6 / 0.0432；8 步 2× H20 并行 CFG：41.6 / 254.0 / 0.0240。两种服务形态优化的是不同的延迟目标。）"
-      },
-      {
-       "id": "s-5-2-2-2",
-       "original": "At 16 steps, Luna-TTS synthesizes the complete waveform in 216.0 ms with an end-to-end RTF of 0.0211.",
-       "zh": "在 16 步时，Luna-TTS 以 216.0 毫秒合成完整波形，端到端 RTF 为 0.0211。"
-      },
-      {
-       "id": "s-5-2-2-3",
-       "original": "For streaming workloads, Luna-TTS Realtime returns the first decoded 1.28s audio block in 41.6 ms and completes a 10.6-second waveform in 254.0 ms.",
-       "zh": "对流式负载，Luna-TTS Realtime 在 41.6 毫秒内返回首个解码的 1.28 秒音频块，并在 254.0 毫秒内完成一段 10.6 秒的波形。"
+       "original": "Profile Steps Execution Local first block (ms) Full response (ms) End-to-end RTF ↓ Luna-TTS",
+       "zh": "（表 5：Profile × Steps × Execution × 首块延迟 (ms) × 完整响应 (ms) × 端到端 RTF↓——Luna-TTS 32 步 1×H20 全网格 419.6/419.6/0.0410；16 步 1×H20 216.0/216.0/0.0211；Luna-TTS Realtime 16 步 1×H20 顺序 CFG 98.9/837.7/0.0790；16 步 2×H20 并行 CFG 63.8/451.4/0.0426；8 步 1×H20 顺序 CFG 59.6/457.6/0.0432；8 步 2×H20 并行 CFG 41.6/254.0/0.0240。）两种服务配置优化不同延迟目标。"
       }
      ]
+    },
+    {
+     "id": "eq-5-2-1",
+     "type": "equation",
+     "page": 12,
+     "original": "32"
+    },
+    {
+     "id": "eq-5-2-2",
+     "type": "equation",
+     "page": 12,
+     "original": "1× H20, full-grid"
+    },
+    {
+     "id": "eq-5-2-3",
+     "type": "equation",
+     "page": 12,
+     "original": "419.6 419.6 0.0410"
+    },
+    {
+     "id": "eq-5-2-4",
+     "type": "equation",
+     "page": 12,
+     "original": "Luna-TTS"
+    },
+    {
+     "id": "eq-5-2-5",
+     "type": "equation",
+     "page": 12,
+     "original": "16"
+    },
+    {
+     "id": "eq-5-2-6",
+     "type": "equation",
+     "page": 12,
+     "original": "1× H20, full-grid"
+    },
+    {
+     "id": "eq-5-2-7",
+     "type": "equation",
+     "page": 12,
+     "original": "216.0 216.0 0.0211"
+    },
+    {
+     "id": "eq-5-2-8",
+     "type": "equation",
+     "page": 12,
+     "original": "Luna-TTS Realtime"
+    },
+    {
+     "id": "eq-5-2-9",
+     "type": "equation",
+     "page": 12,
+     "original": "16"
+    },
+    {
+     "id": "eq-5-2-10",
+     "type": "equation",
+     "page": 12,
+     "original": "1× H20, sequential CFG"
+    },
+    {
+     "id": "eq-5-2-11",
+     "type": "equation",
+     "page": 12,
+     "original": "98.9 837.7 0.0790"
+    },
+    {
+     "id": "eq-5-2-12",
+     "type": "equation",
+     "page": 12,
+     "original": "Luna-TTS Realtime"
+    },
+    {
+     "id": "eq-5-2-13",
+     "type": "equation",
+     "page": 12,
+     "original": "16"
+    },
+    {
+     "id": "eq-5-2-14",
+     "type": "equation",
+     "page": 12,
+     "original": "2× H20, parallel CFG"
+    },
+    {
+     "id": "eq-5-2-15",
+     "type": "equation",
+     "page": 12,
+     "original": "63.8 451.4 0.0426"
+    },
+    {
+     "id": "eq-5-2-16",
+     "type": "equation",
+     "page": 12,
+     "original": "Luna-TTS Realtime"
+    },
+    {
+     "id": "eq-5-2-17",
+     "type": "equation",
+     "page": 12,
+     "original": "8"
+    },
+    {
+     "id": "eq-5-2-18",
+     "type": "equation",
+     "page": 12,
+     "original": "1× H20, sequential CFG"
+    },
+    {
+     "id": "eq-5-2-19",
+     "type": "equation",
+     "page": 12,
+     "original": "59.6 457.6 0.0432"
+    },
+    {
+     "id": "eq-5-2-20",
+     "type": "equation",
+     "page": 12,
+     "original": "Luna-TTS Realtime"
+    },
+    {
+     "id": "eq-5-2-21",
+     "type": "equation",
+     "page": 12,
+     "original": "8"
+    },
+    {
+     "id": "eq-5-2-22",
+     "type": "equation",
+     "page": 12,
+     "original": "2× H20, parallel CFG"
+    },
+    {
+     "id": "eq-5-2-23",
+     "type": "equation",
+     "page": 12,
+     "original": "41.6 254.0 0.0240"
     },
     {
      "id": "p-5-2-3",
@@ -2760,21 +3068,56 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-5-2-3-1",
+       "original": "The two serving profiles optimize different latency targets.",
+       "zh": "（表 5：Profile × Steps × Execution × 首块延迟 (ms) × 完整响应 (ms) × 端到端 RTF↓——Luna-TTS 32 步 1×H20 全网格 419.6/419.6/0.0410；16 步 1×H20 216.0/216.0/0.0211；Luna-TTS Realtime 16 步 1×H20 顺序 CFG 98.9/837.7/0.0790；16 步 2×H20 并行 CFG 63.8/451.4/0.0426；8 步 1×H20 顺序 CFG 59.6/457.6/0.0432；8 步 2×H20 并行 CFG 41.6/254.0/0.0240。）两种服务配置优化不同延迟目标。"
+      },
+      {
+       "id": "s-5-2-3-2",
+       "original": "At 16 steps, Luna-TTS synthesizes the complete waveform in 216.0 ms with an end-to-end RTF of 0.0211.",
+       "zh": "在 16 步时，Luna-TTS 以 216.0 毫秒合成完整波形，端到端 RTF 为 0.0211。"
+      },
+      {
+       "id": "s-5-2-3-3",
+       "original": "For streaming workloads, Luna-TTS Realtime returns the first decoded 1.28s audio block in 41.6 ms and completes a 10.6-second waveform in 254.0 ms.",
+       "zh": "对流式负载，Luna-TTS Realtime 在 41.6 毫秒内返回首个解码的 1.28 秒音频块，并在 254.0 毫秒内完成一段 10.6 秒的波形。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-2-4",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-5-2-4-1",
        "original": "Parallel CFG substantially accelerates both operating points.",
        "zh": "并行 CFG 显著加速了两个运行点。"
       },
       {
-       "id": "s-5-2-3-2",
-       "original": "It reduces full-response latency by 46.1% at 16 steps and 44.5% at 8 steps.",
+       "id": "s-5-2-4-2",
+       "original": "It reduces full-response latency by 46.1% at 16 steps and",
        "zh": "它把完整响应延迟在 16 步时降低 46.1%，在 8 步时降低 44.5%。"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-2-24",
+     "type": "equation",
+     "page": 12,
+     "original": "44.5% at 8 steps. Local first-block latency decreases from 98.9 to 63.8 ms at 16 steps and from 59.6 to 41.6 ms at 8"
+    },
+    {
+     "id": "p-5-2-5",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-5-2-5-1",
+       "original": "steps.",
+       "zh": "生成从一个全 MASK 的 T 帧网格出发，以 S = 32 步细化产出整条语句。"
       },
       {
-       "id": "s-5-2-3-3",
-       "original": "Local first-block latency decreases from 98.9 to 63.8 ms at 16 steps and from 59.6 to 41.6 ms at 8 steps.",
-       "zh": "本地首块延迟在 16 步时从 98.9 毫秒降到 63.8 毫秒，在 8 步时从 59.6 毫秒降到 41.6 毫秒。"
-      },
-      {
-       "id": "s-5-2-3-4",
+       "id": "s-5-2-5-2",
        "original": "We use the 8-step dual-H20 configuration as the default latency-optimized deployment.",
        "zh": "我们把 8 步双 H20 配置作为默认的延迟优化部署形态。"
       }
@@ -2813,91 +3156,542 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-5-3-1-1",
-       "original": "Configuration Hardware RTF ↓ 16-step, full-grid 1× H20 0.0211 8-step, parallel CFG 2× H20 0.0240 Fast F5-TTS [65] 7-step EPSS RTX 3090 0.0300 OmniVoice [48] 16-step, batch 1 H20 0.0319 ZipVoice [66] 16 NFE H20 0.0557 VoxCPM2 [67] accelerated serving RTX 4090 ∼0.13 Spark-TTS [68] 0.5B, concurrency 1 L20 0.1362 F5-TTS [28] original model 0.15 Fish Audio S2 [15] SGLang-Omni [69] H200 0.195 Qwen3-TTS-25Hz [13] 0.6B, concurrency 1 0.234 Among the operating points in Table 6, Luna-TTS achieves the lowest RTF at 0.0211.",
-       "zh": "（Table 6 正文碎块与正文拼接：配置 / 硬件 / RTF ↓——16 步全网格 1× H20：0.0211；8 步并行 CFG 2× H20：0.0240；Fast F5-TTS [65] 7 步 EPSS RTX 3090：0.0300；OmniVoice [48] 16 步 batch 1 H20：0.0319；ZipVoice [66] 16 NFE H20：0.0557；VoxCPM2 [67] 加速服务 RTX 4090：约 0.13；Spark-TTS [68] 0.5B 并发 1 L20：0.1362；F5-TTS [28] 原模型：0.15；Fish Audio S2 [15] SGLang-Omni [69] H200：0.195；Qwen3-TTS-25Hz [13] 0.6B 并发 1：0.234。在 Table 6 的运行点中，Luna-TTS 以 0.0211 取得最低 RTF。）"
+       "original": "System Configuration Hardware RTF ↓",
+       "zh": "表头：System（系统）× Configuration（配置）× Hardware（硬件）× RTF↓。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-luna-tts",
+   "num": null,
+   "level": 2,
+   "page": 12,
+   "title": {
+    "original": "Luna-TTS",
+    "zh": "Luna-TTS"
+   },
+   "blocks": [
+    {
+     "id": "p-luna-tts-1",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-luna-tts-1-1",
+       "original": "16-step, full-grid 1× H20",
+       "zh": "（表 6 行：16 步全网格 1×H20 0.0211；Luna-TTS Realtime 8 步并行 CFG 2×H20 0.0240；Fast F5-TTS [65] 7 步 EPSS RTX 3090 0.0300；OmniVoice [48] 16 步 batch 1 H20 0.0319；ZipVoice [66] 16 NFE H20 0.0557；VoxCPM2 [67] 加速推理 RTX 4090 约 0.13；Spark-TTS [68] 0.5B 并发 1 L20 0.1362；F5-TTS [28] 原始模型 0.15；Fish Audio S2 [15] SGLang-Omni [69] H200 0.195；Qwen3-TTS-25Hz [13] 0.6B 并发 1 — 0.234。）在表 6 各工作点中，Luna-TTS 以 0.0211 取得最低 RTF。"
+      }
+     ]
+    },
+    {
+     "id": "eq-luna-tts-1",
+     "type": "equation",
+     "page": 12,
+     "original": "0.0211"
+    },
+    {
+     "id": "eq-luna-tts-2",
+     "type": "equation",
+     "page": 12,
+     "original": "Luna-TTS Realtime 8-step, parallel CFG 2× H20"
+    },
+    {
+     "id": "eq-luna-tts-3",
+     "type": "equation",
+     "page": 12,
+     "original": "0.0240"
+    },
+    {
+     "id": "eq-luna-tts-4",
+     "type": "equation",
+     "page": 12,
+     "original": "Fast F5-TTS [65] 7-step EPSS RTX 3090"
+    },
+    {
+     "id": "eq-luna-tts-5",
+     "type": "equation",
+     "page": 12,
+     "original": "0.0300"
+    },
+    {
+     "id": "eq-luna-tts-6",
+     "type": "equation",
+     "page": 12,
+     "original": "OmniVoice [48] 16-step, batch 1 H20"
+    },
+    {
+     "id": "eq-luna-tts-7",
+     "type": "equation",
+     "page": 12,
+     "original": "0.0319"
+    },
+    {
+     "id": "eq-luna-tts-8",
+     "type": "equation",
+     "page": 12,
+     "original": "ZipVoice [66] 16 NFE H20"
+    },
+    {
+     "id": "eq-luna-tts-9",
+     "type": "equation",
+     "page": 12,
+     "original": "0.0557"
+    },
+    {
+     "id": "eq-luna-tts-10",
+     "type": "equation",
+     "page": 12,
+     "original": "VoxCPM2 [67] accelerated serving RTX 4090"
+    },
+    {
+     "id": "eq-luna-tts-11",
+     "type": "equation",
+     "page": 12,
+     "original": "∼0.13"
+    },
+    {
+     "id": "eq-luna-tts-12",
+     "type": "equation",
+     "page": 12,
+     "original": "Spark-TTS [68] 0.5B, concurrency 1 L20"
+    },
+    {
+     "id": "eq-luna-tts-13",
+     "type": "equation",
+     "page": 12,
+     "original": "0.1362"
+    },
+    {
+     "id": "eq-luna-tts-14",
+     "type": "equation",
+     "page": 12,
+     "original": "F5-TTS [28] original model"
+    },
+    {
+     "id": "eq-luna-tts-15",
+     "type": "equation",
+     "page": 12,
+     "original": "— 0.15"
+    },
+    {
+     "id": "eq-luna-tts-16",
+     "type": "equation",
+     "page": 12,
+     "original": "Fish Audio S2 [15] SGLang-Omni [69] H200"
+    },
+    {
+     "id": "eq-luna-tts-17",
+     "type": "equation",
+     "page": 12,
+     "original": "0.195"
+    },
+    {
+     "id": "eq-luna-tts-18",
+     "type": "equation",
+     "page": 12,
+     "original": "Qwen3-TTS-25Hz [13] 0.6B, concurrency 1"
+    },
+    {
+     "id": "eq-luna-tts-19",
+     "type": "equation",
+     "page": 12,
+     "original": "— 0.234"
+    },
+    {
+     "id": "p-luna-tts-2",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-luna-tts-2-1",
+       "original": "Among the operating points in Table 6, Luna-TTS achieves the lowest RTF at 0.0211.",
+       "zh": "（表 6 行：16 步全网格 1×H20 0.0211；Luna-TTS Realtime 8 步并行 CFG 2×H20 0.0240；Fast F5-TTS [65] 7 步 EPSS RTX 3090 0.0300；OmniVoice [48] 16 步 batch 1 H20 0.0319；ZipVoice [66] 16 NFE H20 0.0557；VoxCPM2 [67] 加速推理 RTX 4090 约 0.13；Spark-TTS [68] 0.5B 并发 1 L20 0.1362；F5-TTS [28] 原始模型 0.15；Fish Audio S2 [15] SGLang-Omni [69] H200 0.195；Qwen3-TTS-25Hz [13] 0.6B 并发 1 — 0.234。）在表 6 各工作点中，Luna-TTS 以 0.0211 取得最低 RTF。"
       },
       {
-       "id": "s-5-3-1-2",
+       "id": "s-luna-tts-2-2",
        "original": "The streaming Luna-TTS Realtime profile ranks second at 0.0240, reducing RTF by 20.0% relative to Fast F5-TTS and by 24.8% relative to OmniVoice while delivering audio block by block.",
        "zh": "流式形态 Luna-TTS Realtime 以 0.0240 排名第二，在逐块投递音频的同时，RTF 相对 Fast F5-TTS 降低 20.0%，相对 OmniVoice 降低 24.8%。"
       }
      ]
     },
     {
-     "id": "tab-5-3-3",
+     "id": "tab-luna-tts-1",
      "type": "table_caption",
      "page": 12,
      "original": "Table 7 compares published first-output latency from leading commercial and open-source TTS systems.",
      "zh": "表 7（正文表）对比领先商用与开源 TTS 系统已发表的首包延迟。"
     },
     {
-     "id": "tab-5-3-4",
+     "id": "tab-luna-tts-2",
      "type": "table_caption",
      "page": 12,
      "original": "Table 7: Published first-output latency.",
      "zh": "Table 7：已发表的首包延迟。"
     },
     {
-     "id": "p-5-3-2",
+     "id": "p-luna-tts-3",
      "type": "paragraph",
      "page": 12,
      "sentences": [
       {
-       "id": "s-5-3-2-1",
-       "original": "Setup Latency 2× H20, excluding network 41.6 ms Cartesia Sonic 3.5 [70] H100, concurrency 1 50 ms ElevenLabs Flash v2.5 [71] Excluding application/network ∼75 ms Hume Octave 2 [72] Excluding network ∼100 ms PlayHT Play 3.0 Mini [73] 190 ms Deepgram Aura-2 [74] < 200 ms VibeVoice-Realtime [75] ∼300 ms Among the measurements collected in Table 7, Luna-TTS Realtime records the lowest first-output latency at 41.6 ms.",
-       "zh": "（Table 7 正文碎块与正文拼接：设置 / 延迟——2× H20 不含网络：41.6 毫秒；Cartesia Sonic 3.5 [70] H100 并发 1：50 毫秒；ElevenLabs Flash v2.5 [71] 不含应用/网络：约 75 毫秒；Hume Octave 2 [72] 不含网络：约 100 毫秒；PlayHT Play 3.0 Mini [73]：190 毫秒；Deepgram Aura-2 [74]：< 200 毫秒；VibeVoice-Realtime [75]：约 300 毫秒。在 Table 7 汇总的测量值中，Luna-TTS Realtime 以 41.6 毫秒录得最低首包延迟。）"
+       "id": "s-luna-tts-3-1",
+       "original": "System Setup Latency",
+       "zh": "表头：System（系统）× Setup（配置）× Latency（延迟）。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-luna-tts-realtime",
+   "num": null,
+   "level": 2,
+   "page": 12,
+   "title": {
+    "original": "Luna-TTS Realtime",
+    "zh": "Luna-TTS Realtime"
+   },
+   "blocks": [
+    {
+     "id": "p-luna-tts-realtime-1",
+     "type": "table_body",
+     "page": 12,
+     "original": "2× H20, excluding network 41.6 ms Cartesia Sonic 3.5 [70] H100, concurrency 1 50 ms ElevenLabs Flash v2.5 [71] Excluding application/network ∼75 ms Hume Octave 2 [72] Excluding network ∼100 ms PlayHT Play 3.0 Mini [73]",
+     "cells": 36
+    },
+    {
+     "id": "eq-luna-tts-realtime-1",
+     "type": "equation",
+     "page": 12,
+     "original": "—"
+    },
+    {
+     "id": "eq-luna-tts-realtime-2",
+     "type": "equation",
+     "page": 12,
+     "original": "190 ms Deepgram Aura-2 [74]"
+    },
+    {
+     "id": "eq-luna-tts-realtime-3",
+     "type": "equation",
+     "page": 12,
+     "original": "—"
+    },
+    {
+     "id": "eq-luna-tts-realtime-4",
+     "type": "equation",
+     "page": 12,
+     "original": "< 200 ms VibeVoice-Realtime [75]"
+    },
+    {
+     "id": "eq-luna-tts-realtime-5",
+     "type": "equation",
+     "page": 12,
+     "original": "—"
+    },
+    {
+     "id": "p-luna-tts-realtime-2",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-luna-tts-realtime-2-1",
+       "original": "∼300 ms Among the measurements collected in Table 7, Luna-TTS Realtime records the lowest first-output latency at 41.6 ms.",
+       "zh": "（表 7 行：2×H20（不含网络）41.6 ms；Cartesia Sonic 3.5 [70] H100 并发 1 50 ms；ElevenLabs Flash v2.5 [71] 不含应用/网络约 75 ms；Hume Octave 2 [72] 不含网络约 100 ms；PlayHT Play 3.0 Mini [73] 190 ms；Deepgram Aura-2 [74] < 200 ms；VibeVoice-Realtime [75] 约 300 ms。）在表 7 的测量中，Luna-TTS Realtime 以 41.6 ms 录得最低首包延迟。"
       }
      ]
     },
     {
-     "id": "tab-5-3-5",
+     "id": "tab-luna-tts-realtime-1",
      "type": "table_caption",
      "page": 13,
      "original": "Table 8: Zero-shot WER/CER (%) and speaker similarity on Seed-TTS-Eval. ⋄quoted directly from the original papers or technical reports of the respective models; † official checkpoint re-evaluated by us using the official evaluation toolkit. SIM is reported on a 100-point scale. Best result per column in bold.",
      "zh": "Table 8：Seed-TTS-Eval 上的零样本 WER/CER（%）与说话人相似度。⋄ 直接从各模型的原始论文或技术报告引用；† 我们使用官方评测工具包复评的官方检查点。SIM 以 100 分制报告。每列最佳结果加粗。"
     },
     {
-     "id": "p-5-3-3",
+     "id": "p-luna-tts-realtime-3",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
-       "id": "s-5-3-3-1",
-       "original": "Params zh CER↓ zh SIM↑ en WER↓ en SIM↑ Seed-TTS⋄[6] 1.12 79.6 2.25 76.2 MaskGCT⋄[31] 1B 2.27 77.4 2.62 71.7 F5-TTS⋄[28] 1.56 76.0 1.83 67.0 CosyVoice 3⋄[9] 1.12 78.1 2.21 72.0 MiniMax-Speech⋄[10] 0.83 78.3 1.65 69.2 GLM-TTS⋄[12] 1.03 76.1 2.23 67.2 Qwen3-TTS-12Hz-1.7B-Base† [13] 0.98 76.9 1.68 71.7 Qwen-Audio-3.0-TTS⋄[14] 0.84 79.2 1.54 76.2 MOSS-TTS-Local-Transformer⋄[16] 1.33 77.2 1.87 71.7 VoxCPM2⋄[76] 2B 0.97 79.5 1.84 75.3 OmniVoice⋄[48] 0.84 77.7 1.60 74.1 0.73 79.7 1.49 76.8 1.08 76.9 1.81 73.4",
-       "zh": "（Table 8 正文碎块，抽取后各系统数值错位粘连：参数量 / zh CER↓ / zh SIM↑ / en WER↓ / en SIM↑——Seed-TTS⋄[6]：1.12 / 79.6 / 2.25 / 76.2；MaskGCT⋄[31] 1B：2.27 / 77.4 / 2.62 / 71.7；F5-TTS⋄[28]：1.56 / 76.0 / 1.83 / 67.0；CosyVoice 3⋄[9]：1.12 / 78.1 / 2.21 / 72.0；MiniMax-Speech⋄[10]：0.83 / 78.3 / 1.65 / 69.2；GLM-TTS⋄[12]：1.03 / 76.1 / 2.23 / 67.2；Qwen3-TTS-12Hz-1.7B-Base†[13]：0.98 / 76.9 / 1.68 / 71.7；Qwen-Audio-3.0-TTS⋄[14]：0.84 / 79.2 / 1.54 / 76.2；MOSS-TTS-Local-Transformer⋄[16]：1.33 / 77.2 / 1.87 / 71.7；VoxCPM2⋄[76] 2B：0.97 / 79.5 / 1.84 / 75.3；OmniVoice⋄[48]：0.84 / 77.7 / 1.60 / 74.1。末尾四组数值 0.73 / 79.7 / 1.49 / 76.8 与 1.08 / 76.9 / 1.81 / 73.4 应为 Luna-TTS 与 Luna-TTS Realtime 两行，抽取丢行名。）"
+       "id": "s-luna-tts-realtime-3-1",
+       "original": "System Params zh CER↓ zh SIM↑ en WER↓ en SIM↑ Seed-TTS⋄[6]",
+       "zh": "表头：System / Params × zh CER↓ / zh SIM↑ / en WER↓ / en SIM↑——Seed-TTS⋄[6]（后续照原文）。"
       }
      ]
     },
     {
-     "id": "tab-5-3-6",
+     "id": "eq-luna-tts-realtime-6",
+     "type": "equation",
+     "page": 13,
+     "original": "— 1.12 79.6 2.25 76.2"
+    },
+    {
+     "id": "eq-luna-tts-realtime-7",
+     "type": "equation",
+     "page": 13,
+     "original": "MaskGCT⋄[31] 1B"
+    },
+    {
+     "id": "eq-luna-tts-realtime-8",
+     "type": "equation",
+     "page": 13,
+     "original": "2.27 77.4 2.62 71.7"
+    },
+    {
+     "id": "eq-luna-tts-realtime-9",
+     "type": "equation",
+     "page": 13,
+     "original": "F5-TTS⋄[28] 0.3B"
+    },
+    {
+     "id": "eq-luna-tts-realtime-10",
+     "type": "equation",
+     "page": 13,
+     "original": "1.56 76.0 1.83 67.0"
+    },
+    {
+     "id": "eq-luna-tts-realtime-11",
+     "type": "equation",
+     "page": 13,
+     "original": "CosyVoice 3⋄[9] 1.5B"
+    },
+    {
+     "id": "eq-luna-tts-realtime-12",
+     "type": "equation",
+     "page": 13,
+     "original": "1.12 78.1 2.21 72.0"
+    },
+    {
+     "id": "eq-luna-tts-realtime-13",
+     "type": "equation",
+     "page": 13,
+     "original": "MiniMax-Speech⋄[10]"
+    },
+    {
+     "id": "eq-luna-tts-realtime-14",
+     "type": "equation",
+     "page": 13,
+     "original": "— 0.83 78.3 1.65 69.2"
+    },
+    {
+     "id": "eq-luna-tts-realtime-15",
+     "type": "equation",
+     "page": 13,
+     "original": "GLM-TTS⋄[12] 1.5B"
+    },
+    {
+     "id": "eq-luna-tts-realtime-16",
+     "type": "equation",
+     "page": 13,
+     "original": "1.03 76.1 2.23 67.2"
+    },
+    {
+     "id": "eq-luna-tts-realtime-17",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen3-TTS-12Hz-1.7B-Base† [13] 1.7B"
+    },
+    {
+     "id": "eq-luna-tts-realtime-18",
+     "type": "equation",
+     "page": 13,
+     "original": "0.98 76.9 1.68 71.7"
+    },
+    {
+     "id": "eq-luna-tts-realtime-19",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen-Audio-3.0-TTS⋄[14]"
+    },
+    {
+     "id": "eq-luna-tts-realtime-20",
+     "type": "equation",
+     "page": 13,
+     "original": "— 0.84 79.2 1.54 76.2"
+    },
+    {
+     "id": "eq-luna-tts-realtime-21",
+     "type": "equation",
+     "page": 13,
+     "original": "MOSS-TTS-Local-Transformer⋄[16] 1.7B"
+    },
+    {
+     "id": "eq-luna-tts-realtime-22",
+     "type": "equation",
+     "page": 13,
+     "original": "1.33 77.2 1.87 71.7"
+    },
+    {
+     "id": "eq-luna-tts-realtime-23",
+     "type": "equation",
+     "page": 13,
+     "original": "VoxCPM2⋄[76] 2B"
+    },
+    {
+     "id": "eq-luna-tts-realtime-24",
+     "type": "equation",
+     "page": 13,
+     "original": "0.97 79.5 1.84 75.3"
+    },
+    {
+     "id": "eq-luna-tts-realtime-25",
+     "type": "equation",
+     "page": 13,
+     "original": "OmniVoice⋄[48] 0.6B"
+    },
+    {
+     "id": "eq-luna-tts-realtime-26",
+     "type": "equation",
+     "page": 13,
+     "original": "0.84 77.7 1.60 74.1"
+    },
+    {
+     "id": "eq-luna-tts-realtime-27",
+     "type": "equation",
+     "page": 13,
+     "original": "Luna-TTS 0.6B"
+    },
+    {
+     "id": "eq-luna-tts-realtime-28",
+     "type": "equation",
+     "page": 13,
+     "original": "0.73 79.7 1.49 76.8"
+    },
+    {
+     "id": "eq-luna-tts-realtime-29",
+     "type": "equation",
+     "page": 13,
+     "original": "Luna-TTS Realtime 0.6B"
+    },
+    {
+     "id": "eq-luna-tts-realtime-30",
+     "type": "equation",
+     "page": 13,
+     "original": "1.08 76.9 1.81 73.4"
+    },
+    {
+     "id": "tab-luna-tts-realtime-2",
      "type": "table_caption",
      "page": 13,
      "original": "Table 9: Zero-shot WER/CER (%) on the six subsets of CV3-Eval, scored with the official toolkit (CER for zh/ja/ko/hard-zh, WER for en/hard-en). Avg. is the mean over the four language subsets (500 utterances each); the hard subsets are reported separately as diagnostics. ⋄and † have the same meaning as in Table 8; “—” indicates values not reported by the source. Best result per column in bold.",
      "zh": "Table 9：CV3-Eval 六个子集上的零样本 WER/CER（%），用官方工具包评分（zh/ja/ko/hard-zh 用 CER，en/hard-en 用 WER）。Avg. 为四个语言子集（各 500 条）的均值；hard 子集作为诊断单列。⋄ 与 † 含义同 Table 8；“—” 表示来源未报告。每列最佳结果加粗。"
     },
     {
-     "id": "p-5-3-4",
+     "id": "p-luna-tts-realtime-4",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
-       "id": "s-5-3-4-1",
-       "original": "zh en ja ko Avg.",
+       "id": "s-luna-tts-realtime-4-1",
+       "original": "System zh en ja ko Avg.",
        "zh": "（Table 9 表头行：zh / en / ja / ko / Avg.）"
       }
      ]
     },
     {
-     "id": "p-5-3-5",
+     "id": "p-luna-tts-realtime-5",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
-       "id": "s-5-3-5-1",
-       "original": "hard-zh hard-en CosyVoice 3⋄[9] 3.91 4.99 7.57 5.69 5.54 9.77 10.55 VoxCPM2⋄[76] 3.55 6.21 5.88 9.95 6.40 8.10 7.48 MOSS-TTS-Local-Transformer⋄[16] 3.95 4.35 10.10 5.95 6.09 Qwen-Audio-3.0-TTS⋄[14] 3.35 4.25 4.78 4.30 4.17 7.44 6.71 Qwen3-TTS-12Hz-1.7B-Base† [13] 3.19 3.92 5.00 4.63 4.18 9.36 7.47 OmniVoice† [48] 3.89 4.57 7.24 11.80 6.88 11.98 19.69 3.17 3.18 5.00 5.93 4.32 6.90 6.18 3.62 4.06 6.36 5.76 4.95 12.56 13.98",
-       "zh": "（Table 9 正文碎块，表头续：hard-zh / hard-en——CosyVoice 3⋄[9]：3.91 / 4.99 / 7.57 / 5.69 / 5.54 / 9.77 / 10.55；VoxCPM2⋄[76]：3.55 / 6.21 / 5.88 / 9.95 / 6.40 / 8.10 / 7.48；MOSS-TTS-Local-Transformer⋄[16]：3.95 / 4.35 / 10.10 / 5.95 / 6.09（部分列缺失）；Qwen-Audio-3.0-TTS⋄[14]：3.35 / 4.25 / 4.78 / 4.30 / 4.17 / 7.44 / 6.71；Qwen3-TTS-12Hz-1.7B-Base†[13]：3.19 / 3.92 / 5.00 / 4.63 / 4.18 / 9.36 / 7.47；OmniVoice†[48]：3.89 / 4.57 / 7.24 / 11.80 / 6.88 / 11.98 / 19.69。末尾两行 3.17 / 3.18 / 5.00 / 5.93 / 4.32 / 6.90 / 6.18 与 3.62 / 4.06 / 6.36 / 5.76 / 4.95 / 12.56 / 13.98 应为 Luna-TTS 与 Luna-TTS Realtime，抽取丢行名。）"
+       "id": "s-luna-tts-realtime-5-1",
+       "original": "hard-zh hard-en CosyVoice 3⋄[9]",
+       "zh": "（表格行：hard-zh / hard-en——CosyVoice 3⋄[9]，后续照原文。）"
       }
      ]
+    },
+    {
+     "id": "eq-luna-tts-realtime-31",
+     "type": "equation",
+     "page": 13,
+     "original": "3.91 4.99 7.57 5.69 5.54 9.77 10.55"
+    },
+    {
+     "id": "eq-luna-tts-realtime-32",
+     "type": "equation",
+     "page": 13,
+     "original": "VoxCPM2⋄[76]"
+    },
+    {
+     "id": "eq-luna-tts-realtime-33",
+     "type": "equation",
+     "page": 13,
+     "original": "3.55 6.21 5.88 9.95 6.40 8.10 7.48"
+    },
+    {
+     "id": "eq-luna-tts-realtime-34",
+     "type": "equation",
+     "page": 13,
+     "original": "MOSS-TTS-Local-Transformer⋄[16]"
+    },
+    {
+     "id": "eq-luna-tts-realtime-35",
+     "type": "equation",
+     "page": 13,
+     "original": "3.95 4.35 10.10 5.95 6.09 — —"
+    },
+    {
+     "id": "eq-luna-tts-realtime-36",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen-Audio-3.0-TTS⋄[14]"
+    },
+    {
+     "id": "eq-luna-tts-realtime-37",
+     "type": "equation",
+     "page": 13,
+     "original": "3.35 4.25 4.78 4.30 4.17 7.44 6.71"
+    },
+    {
+     "id": "eq-luna-tts-realtime-38",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen3-TTS-12Hz-1.7B-Base† [13]"
+    },
+    {
+     "id": "eq-luna-tts-realtime-39",
+     "type": "equation",
+     "page": 13,
+     "original": "3.19 3.92 5.00 4.63 4.18 9.36 7.47"
+    },
+    {
+     "id": "eq-luna-tts-realtime-40",
+     "type": "equation",
+     "page": 13,
+     "original": "OmniVoice† [48]"
+    },
+    {
+     "id": "eq-luna-tts-realtime-41",
+     "type": "equation",
+     "page": 13,
+     "original": "3.89 4.57 7.24 11.80 6.88 11.98 19.69"
+    },
+    {
+     "id": "eq-luna-tts-realtime-42",
+     "type": "equation",
+     "page": 13,
+     "original": "Luna-TTS"
+    },
+    {
+     "id": "eq-luna-tts-realtime-43",
+     "type": "equation",
+     "page": 13,
+     "original": "3.17 3.18 5.00 5.93 4.32 6.90 6.18"
+    },
+    {
+     "id": "eq-luna-tts-realtime-44",
+     "type": "equation",
+     "page": 13,
+     "original": "Luna-TTS Realtime"
+    },
+    {
+     "id": "eq-luna-tts-realtime-45",
+     "type": "equation",
+     "page": 13,
+     "original": "3.62 4.06 6.36 5.76 4.95 12.56 13.98"
     }
    ]
   },
@@ -3066,36 +3860,54 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-results-for-the-streaming-varian-1-1",
-       "original": "Luna-TTS Realtime shows that streaming synthesis preserves most of the zeroshot quality: it reaches 1.08 CER / 76.9 SIM on Seed-TTS-Eval test-zh and 1.81 WER / 73.4 SIM on test-en, trading roughly 0.3 CER/WER and 3 SIM points against Luna-TTS, and stays close on the CV3-Eval language subsets (average 4.95 vs. 4.32).",
+       "original": "Luna-TTS Realtime shows that streaming synthesis preserves most of the zero-",
+       "zh": "Luna-TTS Realtime 表明流式合成保留了绝大部分零样本（zero-（后接原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-results-for-the-streaming-varian-1",
+     "type": "equation",
+     "page": 14,
+     "original": "shot quality: it reaches 1.08 CER / 76.9 SIM on Seed-TTS-Eval test-zh and 1.81 WER / 73.4 SIM on test-en, trading"
+    },
+    {
+     "id": "p-results-for-the-streaming-varian-2",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-results-for-the-streaming-varian-2-1",
+       "original": "roughly 0.3 CER/WER and 3 SIM points against Luna-TTS, and stays close on the CV3-Eval language subsets (average 4.95 vs. 4.32).",
        "zh": "Luna-TTS Realtime 表明流式合成保住了大部分零样本质量：Seed-TTS-Eval test-zh 上达到 1.08 CER / 76.9 SIM，test-en 上 1.81 WER / 73.4 SIM，相比 Luna-TTS 约付出 0.3 个 CER/WER 与 3 个 SIM 点的代价；在 CV3-Eval 语言子集上也保持接近（平均 4.95 对 4.32）。"
       },
       {
-       "id": "s-results-for-the-streaming-varian-1-2",
+       "id": "s-results-for-the-streaming-varian-2-2",
        "original": "Notably, while operating under streaming constraints, Luna-TTS Realtime still surpasses several offline-evaluated systems: its CV3-Eval four-language average is better than those of CosyVoice 3 (5.54), MOSS-TTS- Local-Transformer (6.09), and VoxCPM2 (6.40), and its Seed-TTS-Eval Mandarin CER (1.08) is lower than those of Seed-TTS and CosyVoice 3 (both 1.12).",
        "zh": "值得注意的是，在流式约束下运行的 Luna-TTS Realtime 仍超过了多个离线评测的系统：其 CV3-Eval 四语平均优于 CosyVoice 3（5.54）、MOSS-TTS-Local-Transformer（6.09）与 VoxCPM2（6.40），其 Seed-TTS-Eval 中文 CER（1.08）低于 Seed-TTS 与 CosyVoice 3（均为 1.12）。"
       },
       {
-       "id": "s-results-for-the-streaming-varian-1-3",
+       "id": "s-results-for-the-streaming-varian-2-3",
        "original": "The clearest gap is on the CV3-Eval hard subsets (12.56 vs. 6.90 on hard-zh, 13.98 vs. 6.18 on hard-en), which are demanding on two fronts: the text is long and irregular, and the prompt audio is itself of noticeably lower quality than in the regular subsets.",
        "zh": "最明显的差距出现在 CV3-Eval 的 hard 子集（hard-zh 12.56 对 6.90，hard-en 13.98 对 6.18），这些子集在两方面都很苛刻：文本长且不规则，提示音频本身质量也明显低于常规子集。"
       },
       {
-       "id": "s-results-for-the-streaming-varian-1-4",
+       "id": "s-results-for-the-streaming-varian-2-4",
        "original": "Two properties of block-causal decoding plausibly turn this difficulty into a wider gap.",
        "zh": "块因果解码的两个特性很可能把这种困难放大成了更大的差距。"
       },
       {
-       "id": "s-results-for-the-streaming-varian-1-5",
+       "id": "s-results-for-the-streaming-varian-2-5",
        "original": "The first is error recovery: difficult text and degraded prompts both raise the chance of flawed early acoustic decisions, which Luna-TTS can revise during its global refinement passes, whereas Luna-TTS Realtime commits each block irrevocably, so an early mistake persists and conditions every subsequent block.",
        "zh": "第一是错误恢复：困难文本与退化提示都会提高早期声学决策出错的概率，Luna-TTS 可以在全局细化中回头修正，而 Luna-TTS Realtime 每个块提交后不可撤销，早期错误会留存并持续影响之后的每一块。"
       },
       {
-       "id": "s-results-for-the-streaming-varian-1-6",
+       "id": "s-results-for-the-streaming-varian-2-6",
        "original": "The second is length control: Luna-TTS receives its frame count from the text-aware duration predictor, whereas LunaTTS Realtime must decide when to stop through its learned end-of-speech mechanism, which irregular text and noisy acoustic context can mislead into truncation or run-on errors.",
        "zh": "第二是长度控制：Luna-TTS 从文本感知的时长预测器获得帧数，而 Luna-TTS Realtime 须靠学习到的语音结束机制自行决定何时停止，不规则文本与含噪声学上下文可能把它误导成截断或拖长错误。"
       },
       {
-       "id": "s-results-for-the-streaming-varian-1-7",
+       "id": "s-results-for-the-streaming-varian-2-7",
        "original": "Taken together with the serving results of §5, this quantifies the streaming trade-off: a modest quality cost on regular content and a larger one on hard in-the-wild content, in exchange for blockwise delivery with 41.6 ms first-block latency.",
        "zh": "结合 §5 的服务结果，这量化了流式的代价：常规内容上质量损失温和，困难野外内容上损失更大，换来的是 41.6 毫秒首块延迟的逐块投递。"
       }
@@ -3202,7 +4014,7 @@ globalThis.PAPER_2608_11593 = {
    "page": 14,
    "title": {
     "original": "Model",
-    "zh": "模型（Table 10/11 区域）"
+    "zh": "模型（Table 13 正文）"
    },
    "blocks": [
     {
@@ -3212,21 +4024,75 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-model-1-1",
-       "original": "PCER ↓ Precision ↑ Recall ↑ F1 ↑ Fish Audio S2.1 Pro LALM-based perceptual evaluation.",
-       "zh": "（Table 10 正文碎块：PCER ↓ / Precision ↑ / Recall ↑ / F1 ↑；Fish Audio S2.1 Pro（该行数值抽取丢失）……基于 LALM 的感知评测。）"
+       "original": "PCER ↓ Precision ↑ Recall ↑ F1 ↑ MiniMax Speech 2.8 HD",
+       "zh": "（表格：PCER↓/Precision↑/Recall↑/F1↑——MiniMax Speech 2.8 HD 41.29%/78.00%/60.50%/68.14%；ElevenLabs Eleven v3 41.73%/87.45%/59.79%/71.02%；Fish Audio S2.1 Pro 47.36%/77.36%/55.59%/64.69%；Luna-TTS 39.95%/79.38%/66.76%/72.52%。）基于 LALM 的感知评测。"
+      }
+     ]
+    },
+    {
+     "id": "eq-model-1",
+     "type": "equation",
+     "page": 14,
+     "original": "41.29% 78.00% 60.50% 68.14%"
+    },
+    {
+     "id": "eq-model-2",
+     "type": "equation",
+     "page": 14,
+     "original": "ElevenLabs Eleven v3"
+    },
+    {
+     "id": "eq-model-3",
+     "type": "equation",
+     "page": 14,
+     "original": "41.73% 87.45% 59.79% 71.02%"
+    },
+    {
+     "id": "eq-model-4",
+     "type": "equation",
+     "page": 14,
+     "original": "Fish Audio S2.1 Pro"
+    },
+    {
+     "id": "eq-model-5",
+     "type": "equation",
+     "page": 14,
+     "original": "47.36% 77.36% 55.59% 64.69%"
+    },
+    {
+     "id": "eq-model-6",
+     "type": "equation",
+     "page": 14,
+     "original": "Luna-TTS"
+    },
+    {
+     "id": "eq-model-7",
+     "type": "equation",
+     "page": 14,
+     "original": "39.95% 79.38% 66.76% 72.52%"
+    },
+    {
+     "id": "p-model-2",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-model-2-1",
+       "original": "LALM-based perceptual evaluation.",
+       "zh": "（表格：PCER↓/Precision↑/Recall↑/F1↑——MiniMax Speech 2.8 HD 41.29%/78.00%/60.50%/68.14%；ElevenLabs Eleven v3 41.73%/87.45%/59.79%/71.02%；Fish Audio S2.1 Pro 47.36%/77.36%/55.59%/64.69%；Luna-TTS 39.95%/79.38%/66.76%/72.52%。）基于 LALM 的感知评测。"
       },
       {
-       "id": "s-model-1-2",
+       "id": "s-model-2-2",
        "original": "Gemini 3.1 Pro Preview [82] rates NVV Accuracy, NVV Perceptual Effect (NVV PE), and overall naturalness, quality, and expression.",
        "zh": "Gemini 3.1 Pro Preview [82] 对 NVV 准确性、NVV 感知效果（NVV PE）以及整体自然度、质量与表现力打分。"
       },
       {
-       "id": "s-model-1-3",
+       "id": "s-model-2-3",
        "original": "NVV Accuracy measures event realization and positioning, whereas NVV PE captures the perceptual effectiveness of the generated NVV.",
        "zh": "NVV 准确性衡量事件实现与定位，NVV PE 刻画所生成 NVV 的感知效果。"
       },
       {
-       "id": "s-model-1-4",
+       "id": "s-model-2-4",
        "original": "Overall metrics use a 1–5 scale, while NVV-specific metrics use a 0–5 scale (0 = absent or nearly inaudible).",
        "zh": "整体指标用 1–5 分制，NVV 专项指标用 0–5 分制（0 = 缺失或几乎不可闻）。"
       }
@@ -3248,7 +4114,7 @@ globalThis.PAPER_2608_11593 = {
    "page": 15,
    "title": {
     "original": "Model",
-    "zh": "模型（Table 11 正文）"
+    "zh": "模型（Table 13 正文）"
    },
    "blocks": [
     {
@@ -3258,10 +4124,52 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-model-2-1-1",
-       "original": "NVV Accuracy ↑ NVV PE↑ Overall Naturalness ↑ Overall Quality ↑ Overall Expression ↑ 3.95 3.62 3.50 4.12 3.54 3.65 3.75 3.40 4.15 3.30 Fish Audio S2.1 Pro 3.56 2.66 2.83 3.73 3.00 3.60 3.63 3.65 4.18 3.75",
-       "zh": "（Table 11 正文碎块：NVV Accuracy ↑ / NVV PE ↑ / Overall Naturalness ↑ / Overall Quality ↑ / Overall Expression ↑；各行数值 3.95 / 3.62 / 3.50 / 4.12 / 3.54，3.65 / 3.75 / 3.40 / 4.15 / 3.30，Fish Audio S2.1 Pro 3.56 / 2.66 / 2.83 / 3.73 / 3.00，3.60 / 3.63 / 3.65 / 4.18 / 3.75；系统名抽取丢失。）"
+       "original": "NVV Accuracy ↑ NVV PE↑ Overall Naturalness ↑ Overall Quality ↑ Overall Expression ↑ MiniMax Speech 2.8 HD",
+       "zh": "表头：NVV Accuracy ↑ / NVV PE↑ / Overall Naturalness ↑ / Overall Quality ↑ / Overall Expression ↑——MiniMax Speech 2.8 HD（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-model-2-1",
+     "type": "equation",
+     "page": 15,
+     "original": "3.95 3.62 3.50 4.12 3.54"
+    },
+    {
+     "id": "eq-model-2-2",
+     "type": "equation",
+     "page": 15,
+     "original": "ElevenLabs Eleven v3"
+    },
+    {
+     "id": "eq-model-2-3",
+     "type": "equation",
+     "page": 15,
+     "original": "3.65 3.75 3.40 4.15 3.30"
+    },
+    {
+     "id": "eq-model-2-4",
+     "type": "equation",
+     "page": 15,
+     "original": "Fish Audio S2.1 Pro"
+    },
+    {
+     "id": "eq-model-2-5",
+     "type": "equation",
+     "page": 15,
+     "original": "3.56 2.66 2.83 3.73 3.00"
+    },
+    {
+     "id": "eq-model-2-6",
+     "type": "equation",
+     "page": 15,
+     "original": "Luna-TTS"
+    },
+    {
+     "id": "eq-model-2-7",
+     "type": "equation",
+     "page": 15,
+     "original": "3.60 3.63 3.65 4.18 3.75"
     }
    ]
   },
@@ -3350,7 +4258,7 @@ globalThis.PAPER_2608_11593 = {
    "page": 15,
    "title": {
     "original": "Model",
-    "zh": "模型（Table 12/13 区域）"
+    "zh": "模型（Table 13 正文）"
    },
    "blocks": [
     {
@@ -3360,20 +4268,52 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-model-3-1-1",
-       "original": "Angry Happy Sad Surprise Neutral Overall 0.530 0.603 0.460 0.357 0.715 0.533 0.544 0.513 0.481 0.406 0.814 0.552 Fish Audio S2.1 Pro 0.473 0.416 0.402 0.279 0.867 0.487 0.608 0.497 0.543 0.403 0.741 0.558 LALM-based evaluation.",
-       "zh": "（Table 12 正文碎块：Angry / Happy / Sad / Surprise / Neutral / Overall；各行 0.530 / 0.603 / 0.460 / 0.357 / 0.715 / 0.533，0.544 / 0.513 / 0.481 / 0.406 / 0.814 / 0.552，Fish Audio S2.1 Pro 0.473 / 0.416 / 0.402 / 0.279 / 0.867 / 0.487，0.608 / 0.497 / 0.543 / 0.403 / 0.741 / 0.558；系统名抽取丢失。……基于 LALM 的评测。）"
-      },
-      {
-       "id": "s-model-3-1-2",
-       "original": "Following the model-as-a-judge paradigm of EmergentTTS-Eval [85] and the distinction between instruction following and perceptual quality in MINT-Bench [86], Gemini 3.1 Pro Preview [82] rates Emotion Match and Expression Quality on a 1–5 scale.",
-       "zh": "沿用 EmergentTTS-Eval [85] 的模型作裁判范式与 MINT-Bench [86] 对指令遵循和感知质量的区分，Gemini 3.1 Pro Preview [82] 按 1–5 分制对 Emotion Match 与 Expression Quality 打分。"
-      },
-      {
-       "id": "s-model-3-1-3",
-       "original": "These metrics measure target-emotion alignment and the quality of emotional delivery, respectively.",
-       "zh": "这两个指标分别衡量目标情绪对齐度与情绪表达的质量。"
+       "original": "Angry Happy Sad Surprise Neutral Overall MiniMax Speech 2.8 HD",
+       "zh": "（表格：Angry/Happy/Sad/Surprise/Neutral/Overall——MiniMax Speech 2.8 HD 0.530/0.603/0.460/0.357/0.715/0.533；ElevenLabs Eleven v3 0.544/0.513/0.481/0.406/0.814/0.552；Fish Audio S2.1 Pro 0.473/0.416/0.402/0.279/0.867/0.487；Luna-TTS 0.608/0.497/0.543/0.403/0.741/0.558。）基于 LALM 的评测。"
       }
      ]
+    },
+    {
+     "id": "eq-model-3-1",
+     "type": "equation",
+     "page": 15,
+     "original": "0.530 0.603 0.460 0.357 0.715 0.533"
+    },
+    {
+     "id": "eq-model-3-2",
+     "type": "equation",
+     "page": 15,
+     "original": "ElevenLabs Eleven v3"
+    },
+    {
+     "id": "eq-model-3-3",
+     "type": "equation",
+     "page": 15,
+     "original": "0.544 0.513 0.481 0.406 0.814 0.552"
+    },
+    {
+     "id": "eq-model-3-4",
+     "type": "equation",
+     "page": 15,
+     "original": "Fish Audio S2.1 Pro"
+    },
+    {
+     "id": "eq-model-3-5",
+     "type": "equation",
+     "page": 15,
+     "original": "0.473 0.416 0.402 0.279 0.867 0.487"
+    },
+    {
+     "id": "eq-model-3-6",
+     "type": "equation",
+     "page": 15,
+     "original": "Luna-TTS"
+    },
+    {
+     "id": "eq-model-3-7",
+     "type": "equation",
+     "page": 15,
+     "original": "0.608 0.497 0.543 0.403 0.741 0.558"
     },
     {
      "id": "p-model-3-2",
@@ -3382,11 +4322,33 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-model-3-2-1",
+       "original": "LALM-based evaluation.",
+       "zh": "（表格：Angry/Happy/Sad/Surprise/Neutral/Overall——MiniMax Speech 2.8 HD 0.530/0.603/0.460/0.357/0.715/0.533；ElevenLabs Eleven v3 0.544/0.513/0.481/0.406/0.814/0.552；Fish Audio S2.1 Pro 0.473/0.416/0.402/0.279/0.867/0.487；Luna-TTS 0.608/0.497/0.543/0.403/0.741/0.558。）基于 LALM 的评测。"
+      },
+      {
+       "id": "s-model-3-2-2",
+       "original": "Following the model-as-a-judge paradigm of EmergentTTS-Eval [85] and the distinction between instruction following and perceptual quality in MINT-Bench [86], Gemini 3.1 Pro Preview [82] rates Emotion Match and Expression Quality on a 1–5 scale.",
+       "zh": "沿用 EmergentTTS-Eval [85] 的模型作裁判范式与 MINT-Bench [86] 对指令遵循和感知质量的区分，Gemini 3.1 Pro Preview [82] 按 1–5 分制对 Emotion Match 与 Expression Quality 打分。"
+      },
+      {
+       "id": "s-model-3-2-3",
+       "original": "These metrics measure target-emotion alignment and the quality of emotional delivery, respectively.",
+       "zh": "这两个指标分别衡量目标情绪对齐度与情绪表达的质量。"
+      }
+     ]
+    },
+    {
+     "id": "p-model-3-3",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-model-3-3-1",
        "original": "Human listening test.",
        "zh": "人工听测。"
       },
       {
-       "id": "s-model-3-2-2",
+       "id": "s-model-3-3-2",
        "original": "In a randomized, blinded listening test, listeners independently rate each sample on a 1–5 scale for naturalness and human-likeness (N-MOS) and for how accurately and convincingly the target emotion is conveyed (E-MOS).",
        "zh": "在随机化盲听测试中，听者对每条样本独立按 1–5 分制打两组分：自然度与拟人度（N-MOS），以及目标情绪传达的准确与可信程度（E-MOS）。"
       }
@@ -3442,10 +4404,52 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-model-4-1-1",
-       "original": "Emotion Match ↑ Expression Quality ↑ N-MOS ↑ E-MOS ↑ 2.70 4.40 4.10 3.70 2.67 4.49 4.18 3.82 Fish Audio S2.1 Pro 1.93 3.94 3.95 3.55 2.63 4.54 4.14 3.90",
-       "zh": "（Table 13 正文碎块：Emotion Match ↑ / Expression Quality ↑ / N-MOS ↑ / E-MOS ↑；各行 2.70 / 4.40 / 4.10 / 3.70，2.67 / 4.49 / 4.18 / 3.82，Fish Audio S2.1 Pro 1.93 / 3.94 / 3.95 / 3.55，2.63 / 4.54 / 4.14 / 3.90；系统名抽取丢失。）"
+       "original": "Emotion Match ↑ Expression Quality ↑ N-MOS ↑ E-MOS ↑ MiniMax Speech 2.8 HD",
+       "zh": "表头：Emotion Match ↑ / Expression Quality ↑ / N-MOS ↑ / E-MOS ↑——MiniMax Speech 2.8 HD（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-model-4-1",
+     "type": "equation",
+     "page": 15,
+     "original": "2.70 4.40 4.10 3.70"
+    },
+    {
+     "id": "eq-model-4-2",
+     "type": "equation",
+     "page": 15,
+     "original": "ElevenLabs Eleven v3"
+    },
+    {
+     "id": "eq-model-4-3",
+     "type": "equation",
+     "page": 15,
+     "original": "2.67 4.49 4.18 3.82"
+    },
+    {
+     "id": "eq-model-4-4",
+     "type": "equation",
+     "page": 15,
+     "original": "Fish Audio S2.1 Pro"
+    },
+    {
+     "id": "eq-model-4-5",
+     "type": "equation",
+     "page": 15,
+     "original": "1.93 3.94 3.95 3.55"
+    },
+    {
+     "id": "eq-model-4-6",
+     "type": "equation",
+     "page": 15,
+     "original": "Luna-TTS"
+    },
+    {
+     "id": "eq-model-4-7",
+     "type": "equation",
+     "page": 15,
+     "original": "2.63 4.54 4.14 3.90"
     }
    ]
   },
@@ -3593,10 +4597,88 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-6-3-4-1",
-       "original": "Rank Elo 90% bootstrap interval Wins Losses Win rate 1 1548.47 495 368 2 Gemini 3.1 Flash TTS 1546.13 221 196 3 Inworld TTS 2 1495.67 283 317 4 1484.37 50 69 5 StepAudio 2.5 TTS 1480.39 229 298 6 1445.53 41 71",
-       "zh": "（Table 14 正文碎块：排名 / Elo / 90% bootstrap 区间 / 胜 / 负 / 胜率——第 1 名 1548.47，495 胜 368 负（系统名抽取丢失）；第 2 名 Gemini 3.1 Flash TTS 1546.13，221 胜 196 负；第 3 名 Inworld TTS 2 1495.67，283 胜 317 负；第 4 名 1484.37，50 胜 69 负（系统名丢失）；第 5 名 StepAudio 2.5 TTS 1480.39，229 胜 298 负；第 6 名 1445.53，41 胜 71 负（系统名丢失）。）"
+       "original": "Rank System Elo 90% bootstrap interval Wins Losses Win rate",
+       "zh": "表头：Rank / System / Elo / 90% bootstrap interval / Wins / Losses / Win rate（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-6-3-1",
+     "type": "equation",
+     "page": 16,
+     "original": "1"
+    },
+    {
+     "id": "eq-6-3-2",
+     "type": "equation",
+     "page": 16,
+     "original": "Luna-TTS"
+    },
+    {
+     "id": "eq-6-3-3",
+     "type": "equation",
+     "page": 16,
+     "original": "1548.47 1531.98–1566.59 495 368 57.36% 2"
+    },
+    {
+     "id": "eq-6-3-4",
+     "type": "equation",
+     "page": 16,
+     "original": "Gemini 3.1 Flash TTS"
+    },
+    {
+     "id": "eq-6-3-5",
+     "type": "equation",
+     "page": 16,
+     "original": "1546.13 1517.81–1572.46 221 196 53.00% 3"
+    },
+    {
+     "id": "eq-6-3-6",
+     "type": "equation",
+     "page": 16,
+     "original": "Inworld TTS 2"
+    },
+    {
+     "id": "eq-6-3-7",
+     "type": "equation",
+     "page": 16,
+     "original": "1495.67 1474.79–1519.24 283 317 47.17% 4"
+    },
+    {
+     "id": "eq-6-3-8",
+     "type": "equation",
+     "page": 16,
+     "original": "ElevenLabs Eleven v3"
+    },
+    {
+     "id": "eq-6-3-9",
+     "type": "equation",
+     "page": 16,
+     "original": "1484.37 1436.10–1529.14 50 69 42.02% 5"
+    },
+    {
+     "id": "eq-6-3-10",
+     "type": "equation",
+     "page": 16,
+     "original": "StepAudio 2.5 TTS"
+    },
+    {
+     "id": "eq-6-3-11",
+     "type": "equation",
+     "page": 16,
+     "original": "1480.39 1458.27–1506.09 229 298 43.45% 6"
+    },
+    {
+     "id": "eq-6-3-12",
+     "type": "equation",
+     "page": 16,
+     "original": "MiniMax Speech 2.8 HD"
+    },
+    {
+     "id": "eq-6-3-13",
+     "type": "equation",
+     "page": 16,
+     "original": "1445.53 1391.82–1495.23 41 71 36.61%"
     },
     {
      "id": "tab-6-3-2",
@@ -3619,10 +4701,76 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-6-3-5-1",
-       "original": "Opponent Luna-TTS wins–losses Win rate Inworld TTS 2 StepAudio 2.5 TTS Gemini 3.1 Flash TTS Overall",
-       "zh": "（Table 15 正文碎块：对手 / Luna-TTS 胜–负 / 胜率——Inworld TTS 2、StepAudio 2.5 TTS、Gemini 3.1 Flash TTS、Overall；各行数值抽取丢失。）"
+       "original": "Opponent Luna-TTS wins–losses Win rate Inworld TTS 2",
+       "zh": "表头：Opponent × Luna-TTS wins–losses / Win rate——Inworld TTS 2（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-6-3-14",
+     "type": "equation",
+     "page": 16,
+     "original": "92–52 63.89%"
+    },
+    {
+     "id": "eq-6-3-15",
+     "type": "equation",
+     "page": 16,
+     "original": "MiniMax Speech 2.8 HD"
+    },
+    {
+     "id": "eq-6-3-16",
+     "type": "equation",
+     "page": 16,
+     "original": "54–34 61.36%"
+    },
+    {
+     "id": "eq-6-3-17",
+     "type": "equation",
+     "page": 16,
+     "original": "ElevenLabs Eleven v3"
+    },
+    {
+     "id": "eq-6-3-18",
+     "type": "equation",
+     "page": 16,
+     "original": "56–38 59.57%"
+    },
+    {
+     "id": "eq-6-3-19",
+     "type": "equation",
+     "page": 16,
+     "original": "StepAudio 2.5 TTS"
+    },
+    {
+     "id": "eq-6-3-20",
+     "type": "equation",
+     "page": 16,
+     "original": "176–131 57.33%"
+    },
+    {
+     "id": "eq-6-3-21",
+     "type": "equation",
+     "page": 16,
+     "original": "Gemini 3.1 Flash TTS"
+    },
+    {
+     "id": "eq-6-3-22",
+     "type": "equation",
+     "page": 16,
+     "original": "117–113 50.87%"
+    },
+    {
+     "id": "eq-6-3-23",
+     "type": "equation",
+     "page": 16,
+     "original": "Overall"
+    },
+    {
+     "id": "eq-6-3-24",
+     "type": "equation",
+     "page": 16,
+     "original": "495–368 57.36%"
     }
    ]
   },
@@ -3799,17 +4947,15 @@ globalThis.PAPER_2608_11593 = {
       },
       {
        "id": "s-references-1-3",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30:495–507, 2022."
-      },
-      {
-       "id": "s-references-1-4",
-       "original": "[2] Alexandre Défossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
-      },
-      {
-       "id": "s-references-1-5",
-       "original": "High fidelity neural audio compression."
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30:495–507,"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 17,
+     "original": "2022."
     },
     {
      "id": "p-references-2",
@@ -3818,39 +4964,11 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-2-1",
-       "original": "arXiv preprint arXiv:2210.13438, 2022."
+       "original": "[2] Alexandre Défossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
       },
       {
        "id": "s-references-2-2",
-       "original": "[3] Rithesh Kumar, Prem Seetharaman, Alejandro Luebs, Ishaan Kumar, and Kundan Kumar."
-      },
-      {
-       "id": "s-references-2-3",
-       "original": "High-fidelity audio compression with improved RVQGAN."
-      },
-      {
-       "id": "s-references-2-4",
-       "original": "In Advances in Neural Information Processing Systems, 2023."
-      },
-      {
-       "id": "s-references-2-5",
-       "original": "[4] James Betker."
-      },
-      {
-       "id": "s-references-2-6",
-       "original": "Better speech synthesis through scaling. arXiv preprint arXiv:2305.07243, 2023."
-      },
-      {
-       "id": "s-references-2-7",
-       "original": "[5] Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, and Furu Wei."
-      },
-      {
-       "id": "s-references-2-8",
-       "original": "Neural codec language models are zero-shot text to speech synthesizers. arXiv preprint arXiv:2301.02111, 2023."
-      },
-      {
-       "id": "s-references-2-9",
-       "original": "[6] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, et al. Seed-TTS: A family of high-quality versatile speech generation models. arXiv preprint arXiv:2406.02430, 2024."
+       "original": "High fidelity neural audio compression."
       }
      ]
     },
@@ -3861,7 +4979,40 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-3-1",
-       "original": "* Equal contribution."
+       "original": "arXiv preprint arXiv:2210.13438, 2022."
+      },
+      {
+       "id": "s-references-3-2",
+       "original": "[3] Rithesh Kumar, Prem Seetharaman, Alejandro Luebs, Ishaan Kumar, and Kundan Kumar."
+      },
+      {
+       "id": "s-references-3-3",
+       "original": "High-fidelity audio compression with improved RVQGAN."
+      },
+      {
+       "id": "s-references-3-4",
+       "original": "In Advances in Neural Information Processing Systems, 2023."
+      },
+      {
+       "id": "s-references-3-5",
+       "original": "[4] James Betker."
+      },
+      {
+       "id": "s-references-3-6",
+       "original": "Better speech synthesis through scaling. arXiv preprint arXiv:2305.07243, 2023."
+      },
+      {
+       "id": "s-references-3-7",
+       "original": "[5] Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, and Furu Wei.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
+      },
+      {
+       "id": "s-references-3-8",
+       "original": "Neural codec language models are zero-shot text to speech synthesizers. arXiv preprint arXiv:2301.02111, 2023."
+      },
+      {
+       "id": "s-references-3-9",
+       "original": "[6] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, et al. Seed-TTS: A family of high-quality versatile speech generation models. arXiv preprint arXiv:2406.02430, 2024."
       }
      ]
     },
@@ -3872,7 +5023,7 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "† Corresponding author."
+       "original": "* Equal contribution."
       }
      ]
     },
@@ -3883,26 +5034,18 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "‡ Listed alphabetically by family name."
+       "original": "† Corresponding author."
       }
      ]
     },
     {
      "id": "p-references-6",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "[7] Zhihao Du, Qian Chen, Shiliang Zhang, Kai Hu, Heng Lu, Yexin Yang, Hangrui Hu, Siqi Zheng, Yue Gu, Ziyang Ma, Zhifu Gao, and Zhijie Yan."
-      },
-      {
-       "id": "s-references-6-2",
-       "original": "CosyVoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens. arXiv preprint arXiv:2407.05407, 2024."
-      },
-      {
-       "id": "s-references-6-3",
-       "original": "[8] Zhihao Du, Yuxuan Wang, Qian Chen, Xian Shi, Xiang Lv, Tianyu Zhao, Zhifu Gao, Yexin Yang, et al."
+       "original": "‡ Listed alphabetically by family name."
       }
      ]
     },
@@ -3913,43 +5056,15 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "CosyVoice 2: Scalable streaming speech synthesis with large language models. arXiv preprint arXiv:2412.10117, 2024."
+       "original": "[7] Zhihao Du, Qian Chen, Shiliang Zhang, Kai Hu, Heng Lu, Yexin Yang, Hangrui Hu, Siqi Zheng, Yue Gu, Ziyang Ma, Zhifu Gao, and Zhijie Yan."
       },
       {
        "id": "s-references-7-2",
-       "original": "[9] Zhihao Du, Changfeng Gao, Yuxuan Wang, Fan Yu, Tianyu Zhao, Hao Wang, Xiang Lv, Hui Wang, et al. CosyVoice 3: Towards in-the-wild speech generation via scaling-up and post-training. arXiv preprint [10] Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, et al. MiniMax-Speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder. arXiv preprint arXiv:2505.07916, 2025."
+       "original": "CosyVoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens. arXiv preprint arXiv:2407.05407, 2024."
       },
       {
        "id": "s-references-7-3",
-       "original": "[11] Zhen Ye, Xinfa Zhu, Chi-Min Chan, Xinsheng Wang, Xu Tan, Jiahe Lei, Yi Peng, et al. Llasa: Scaling train-time and inference-time compute for Llama-based speech synthesis. arXiv preprint arXiv:2502.04128, 2025."
-      },
-      {
-       "id": "s-references-7-4",
-       "original": "[12] Jiayan Cui, Zhihan Yang, Naihan Li, Jiankun Tian, Xingyu Ma, Yi Zhang, Guangyu Chen, Runxuan Yang, Zijian Huang, Yuqing Cheng, Yizhi Zhou, Guochen Yu, Xiaotao Gu, and Jie Tang."
-      },
-      {
-       "id": "s-references-7-5",
-       "original": "GLM-TTS technical report. arXiv preprint arXiv:2512.14291, 2025."
-      },
-      {
-       "id": "s-references-7-6",
-       "original": "[13] Hangrui Hu, Xinfa Zhu, Ting He, Dake Guo, Bin Zhang, et al. Qwen3-TTS technical report. arXiv preprint [14] Bajian Xiang, Cheng Wen, Han Zhao, Hao Wang, Haoxu Wang, et al. Qwen-Audio-3.0-TTS: Freely controllable and highly robust speech synthesis with multi-stage training paradigm. arXiv preprint arXiv:2607.23938, 2026."
-      },
-      {
-       "id": "s-references-7-7",
-       "original": "[15] Shijia Liao, Yuxuan Wang, Songting Liu, Yifan Cheng, et al. Fish audio S2 technical report. arXiv preprint [16] SII-OpenMOSS Team."
-      },
-      {
-       "id": "s-references-7-8",
-       "original": "MOSS-TTS technical report. arXiv preprint arXiv:2603.18090, 2026."
-      },
-      {
-       "id": "s-references-7-9",
-       "original": "[17] Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, et al. Spark-TTS: An efficient LLM-based text-to-speech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710, 2025."
-      },
-      {
-       "id": "s-references-7-10",
-       "original": "[18] Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu."
+       "original": "[8] Zhihao Du, Yuxuan Wang, Qian Chen, Xian Shi, Xiang Lv, Tianyu Zhao, Zhifu Gao, Yexin Yang, et al."
       }
      ]
     },
@@ -3960,17 +5075,15 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "IndexTTS2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech. arXiv preprint arXiv:2506.21619, 2025."
-      },
-      {
-       "id": "s-references-8-2",
-       "original": "[19] Hao-Han Guo, Kun Liu, Fei-Yu Shen, Yi-Chen Wu, Feng-Long Xie, Kun Xie, and Kai-Tuo Xu."
-      },
-      {
-       "id": "s-references-8-3",
-       "original": "FireRedTTS: A foundation text-to-speech framework for industry-level generative speech applications."
+       "original": "CosyVoice 2: Scalable streaming speech synthesis with large language models. arXiv preprint arXiv:2412.10117,"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 18,
+     "original": "2024."
     },
     {
      "id": "p-references-9",
@@ -3979,9 +5092,56 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "arXiv preprint [20] LLM-Core Xiaomi."
+       "original": "[9] Zhihao Du, Changfeng Gao, Yuxuan Wang, Fan Yu, Tianyu Zhao, Hao Wang, Xiang Lv, Hui Wang, et al. CosyVoice 3: Towards in-the-wild speech generation via scaling-up and post-training. arXiv preprint arXiv:2505.17589, 2025."
+      },
+      {
+       "id": "s-references-9-2",
+       "original": "[10] Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, et al. MiniMax-Speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder. arXiv preprint arXiv:2505.07916, 2025."
+      },
+      {
+       "id": "s-references-9-3",
+       "original": "[11] Zhen Ye, Xinfa Zhu, Chi-Min Chan, Xinsheng Wang, Xu Tan, Jiahe Lei, Yi Peng, et al. Llasa: Scaling train-time and inference-time compute for Llama-based speech synthesis. arXiv preprint arXiv:2502.04128, 2025."
+      },
+      {
+       "id": "s-references-9-4",
+       "original": "[12] Jiayan Cui, Zhihan Yang, Naihan Li, Jiankun Tian, Xingyu Ma, Yi Zhang, Guangyu Chen, Runxuan Yang, Zijian Huang, Yuqing Cheng, Yizhi Zhou, Guochen Yu, Xiaotao Gu, and Jie Tang."
+      },
+      {
+       "id": "s-references-9-5",
+       "original": "GLM-TTS technical report. arXiv preprint arXiv:2512.14291, 2025."
+      },
+      {
+       "id": "s-references-9-6",
+       "original": "[13] Hangrui Hu, Xinfa Zhu, Ting He, Dake Guo, Bin Zhang, et al. Qwen3-TTS technical report. arXiv preprint arXiv:2601.15621, 2026."
+      },
+      {
+       "id": "s-references-9-7",
+       "original": "[14] Bajian Xiang, Cheng Wen, Han Zhao, Hao Wang, Haoxu Wang, et al. Qwen-Audio-3.0-TTS: Freely controllable and highly robust speech synthesis with multi-stage training paradigm. arXiv preprint arXiv:2607.23938, 2026.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
+      },
+      {
+       "id": "s-references-9-8",
+       "original": "[15] Shijia Liao, Yuxuan Wang, Songting Liu, Yifan Cheng, et al. Fish audio S2 technical report. arXiv preprint arXiv:2603.08823, 2026."
+      },
+      {
+       "id": "s-references-9-9",
+       "original": "[16] SII-OpenMOSS Team."
+      },
+      {
+       "id": "s-references-9-10",
+       "original": "MOSS-TTS technical report. arXiv preprint arXiv:2603.18090, 2026."
+      },
+      {
+       "id": "s-references-9-11",
+       "original": "[17] Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, et al. Spark-TTS: An efficient LLM-based text-to-speech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710,"
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 18,
+     "original": "2025."
     },
     {
      "id": "p-references-10",
@@ -3990,7 +5150,8 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "MiMo-Audio: Audio language models are few-shot learners."
+       "original": "[18] Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
       }
      ]
     },
@@ -4001,15 +5162,15 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "arXiv preprint [21] StepFun Audio Team."
+       "original": "IndexTTS2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech. arXiv preprint arXiv:2506.21619, 2025."
       },
       {
        "id": "s-references-11-2",
-       "original": "Step-Audio 2 technical report. arXiv preprint arXiv:2507.16632, 2025."
+       "original": "[19] Hao-Han Guo, Kun Liu, Fei-Yu Shen, Yi-Chen Wu, Feng-Long Xie, Kun Xie, and Kai-Tuo Xu."
       },
       {
        "id": "s-references-11-3",
-       "original": "[22] Jade Copet, Felix Kreuk, Itai Gat, Tal Remez, David Kant, Gabriel Synnaeve, Yossi Adi, and Alexandre Défossez."
+       "original": "FireRedTTS: A foundation text-to-speech framework for industry-level generative speech applications."
       }
      ]
     },
@@ -4020,224 +5181,125 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "Simple and controllable music generation."
+       "original": "arXiv preprint arXiv:2409.03283, 2024."
       },
       {
        "id": "s-references-12-2",
-       "original": "In Advances in Neural Information Processing Systems, 2023."
-      },
-      {
-       "id": "s-references-12-3",
-       "original": "[23] Alexandre Défossez, Laurent Mazaré, Manu Orsini, Amélie Royer, Patrick Pérez, Hervé Jégou, Edouard Grave, and Neil Zeghidour."
-      },
-      {
-       "id": "s-references-12-4",
-       "original": "Moshi: A speech-text foundation model for real-time dialogue. arXiv preprint [24] Yakun Song, Xiaobin Zhuang, Jiawei Chen, et al. DiSTAR: Diffusion over a scalable token autoregressive representation for speech generation. arXiv preprint arXiv:2510.12210, 2025."
-      },
-      {
-       "id": "s-references-12-5",
-       "original": "[25] Yaron Lipman, Ricky T."
-      },
-      {
-       "id": "s-references-12-6",
-       "original": "Q."
-      },
-      {
-       "id": "s-references-12-7",
-       "original": "Chen, Heli Ben-Hamu, Maximilian Nickel, and Matt Le."
-      },
-      {
-       "id": "s-references-12-8",
-       "original": "Flow matching for generative modeling."
-      },
-      {
-       "id": "s-references-12-9",
-       "original": "In International Conference on Learning Representations, 2023."
-      },
-      {
-       "id": "s-references-12-10",
-       "original": "[26] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, and Wei-Ning Hsu."
-      },
-      {
-       "id": "s-references-12-11",
-       "original": "Voicebox: Text-guided multilingual universal speech generation at scale."
-      },
-      {
-       "id": "s-references-12-12",
-       "original": "In Advances in Neural Information Processing Systems, 2023."
-      },
-      {
-       "id": "s-references-12-13",
-       "original": "[27] Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao, Hemin Yang, Zirun Zhu, Min Tang, Xu Tan, Yanqing Liu, Sheng Zhao, and Naoyuki Kanda."
-      },
-      {
-       "id": "s-references-12-14",
-       "original": "E2 TTS: Embarrassingly easy fully non-autoregressive zero-shot TTS."
-      },
-      {
-       "id": "s-references-12-15",
-       "original": "In IEEE Spoken Language Technology Workshop (SLT), 2024."
-      },
-      {
-       "id": "s-references-12-16",
-       "original": "[28] Yushen Chen, Zhikang Niu, Ziyang Ma, Keqi Deng, Chunhui Wang, Jian Zhao, Kai Yu, and Xie Chen."
-      },
-      {
-       "id": "s-references-12-17",
-       "original": "F5-TTS: A fairytaler that fakes fluent and faithful speech with flow matching. arXiv preprint arXiv:2410.06885, 2024."
+       "original": "[20] LLM-Core Xiaomi."
       }
      ]
     },
     {
      "id": "p-references-13",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "[29] Zalán Borsos, Matt Sharifi, Damien Vincent, Eugene Kharitonov, Neil Zeghidour, and Marco Tagliasacchi."
+       "original": "MiMo-Audio: Audio language models are few-shot learners."
       }
      ]
     },
     {
      "id": "p-references-14",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "SoundStorm: Efficient parallel audio generation. arXiv preprint arXiv:2305.09636, 2023."
+       "original": "arXiv preprint arXiv:2512.23808, 2025."
       },
       {
        "id": "s-references-14-2",
-       "original": "[30] Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, et al. NaturalSpeech 3: Zero-shot speech synthesis with factorized codec and diffusion models."
+       "original": "[21] StepFun Audio Team."
       },
       {
        "id": "s-references-14-3",
-       "original": "In International Conference on Machine Learning, 2024."
+       "original": "Step-Audio 2 technical report. arXiv preprint arXiv:2507.16632, 2025."
       },
       {
        "id": "s-references-14-4",
-       "original": "[31] Yuancheng Wang, Haoyue Zhan, Liwei Liu, Ruihong Zeng, Haotian Guo, Jiachen Zheng, Qiang Zhang, Xueyao Zhang, Shunsi Zhang, and Zhizheng Wu."
-      },
-      {
-       "id": "s-references-14-5",
-       "original": "MaskGCT: Zero-shot text-to-speech with masked generative codec transformer."
-      },
-      {
-       "id": "s-references-14-6",
-       "original": "In International Conference on Learning Representations, 2025."
-      },
-      {
-       "id": "s-references-14-7",
-       "original": "[32] Jacob Austin, Daniel D."
-      },
-      {
-       "id": "s-references-14-8",
-       "original": "Johnson, Jonathan Ho, Daniel Tarlow, and Rianne van den Berg."
-      },
-      {
-       "id": "s-references-14-9",
-       "original": "Structured denoising diffusion models in discrete state-spaces."
-      },
-      {
-       "id": "s-references-14-10",
-       "original": "In Advances in Neural Information Processing Systems, 2021."
-      },
-      {
-       "id": "s-references-14-11",
-       "original": "[33] Aaron Lou, Chenlin Meng, and Stefano Ermon."
-      },
-      {
-       "id": "s-references-14-12",
-       "original": "Discrete diffusion modeling by estimating the ratios of the data distribution."
-      },
-      {
-       "id": "s-references-14-13",
-       "original": "In International Conference on Machine Learning, 2024."
-      },
-      {
-       "id": "s-references-14-14",
-       "original": "[34] Subham Sekhar Sahoo, Marianne Arriola, Yair Schiff, Aaron Gokaslan, Edgar Marroquin, Justin T."
-      },
-      {
-       "id": "s-references-14-15",
-       "original": "Chiu, Alexander Rush, and Volodymyr Kuleshov."
-      },
-      {
-       "id": "s-references-14-16",
-       "original": "Simple and effective masked diffusion language models."
-      },
-      {
-       "id": "s-references-14-17",
-       "original": "In Advances in Neural Information Processing Systems, volume 37, pages 130136–130184, 2024."
-      },
-      {
-       "id": "s-references-14-18",
-       "original": "[35] Jiaxin Shi, Kehang Han, Zhe Wang, Arnaud Doucet, and Michalis K."
-      },
-      {
-       "id": "s-references-14-19",
-       "original": "Titsias."
-      },
-      {
-       "id": "s-references-14-20",
-       "original": "Simplified and generalized masked diffusion for discrete data."
-      },
-      {
-       "id": "s-references-14-21",
-       "original": "In Advances in Neural Information Processing Systems, 2024."
-      },
-      {
-       "id": "s-references-14-22",
-       "original": "[36] Shen Nie, Fengqi Zhu, Zebin You, Xiaolu Zhang, Jingyang Ou, Jun Hu, Jun Zhou, Yankai Lin, Ji-Rong Wen, and Chongxuan Li."
-      },
-      {
-       "id": "s-references-14-23",
-       "original": "Large language diffusion models. arXiv preprint arXiv:2502.09992, 2025."
-      },
-      {
-       "id": "s-references-14-24",
-       "original": "[37] Jiacheng Ye, Zhihui Xie, Lin Zheng, Jiahui Gao, Zirui Wu, Xin Jiang, Zhenguo Li, and Lingpeng Kong."
-      },
-      {
-       "id": "s-references-14-25",
-       "original": "Dream 7B: Diffusion large language models. arXiv preprint arXiv:2508.15487, 2025."
-      },
-      {
-       "id": "s-references-14-26",
-       "original": "[38] Inception Labs, Samar Khanna, Siddhant Kharbanda, Shufan Li, et al. Mercury: Ultra-fast language models based on diffusion. arXiv preprint arXiv:2506.17298, 2025."
-      },
-      {
-       "id": "s-references-14-27",
-       "original": "[39] Yuxuan Song, Zheng Zhang, Cheng Luo, Pengyang Gao, Fan Xia, et al. Seed diffusion: A large-scale diffusion language model with high-speed inference. arXiv preprint arXiv:2508.02193, 2025."
-      },
-      {
-       "id": "s-references-14-28",
-       "original": "[40] Tiwei Bie, Maosong Cao, Kun Chen, Lun Du, et al. LLaDA2.0: Scaling up diffusion language models to 100B."
+       "original": "[22] Jade Copet, Felix Kreuk, Itai Gat, Tal Remez, David Kant, Gabriel Synnaeve, Yossi Adi, and Alexandre Défossez."
       }
      ]
     },
     {
      "id": "p-references-15",
      "type": "paragraph",
-     "page": 19,
+     "page": 18,
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "arXiv preprint arXiv:2512.15745, 2025."
+       "original": "Simple and controllable music generation."
       },
       {
        "id": "s-references-15-2",
-       "original": "[41] Marianne Arriola, Aaron Gokaslan, Justin T."
+       "original": "In Advances in Neural Information Processing Systems, 2023."
       },
       {
        "id": "s-references-15-3",
-       "original": "Chiu, Zhihan Yang, Zhixuan Qi, Jiaqi Han, Subham Sekhar Sahoo, and Volodymyr Kuleshov."
+       "original": "[23] Alexandre Défossez, Laurent Mazaré, Manu Orsini, Amélie Royer, Patrick Pérez, Hervé Jégou, Edouard Grave, and Neil Zeghidour."
       },
       {
        "id": "s-references-15-4",
-       "original": "Block diffusion: Interpolating between autoregressive and diffusion language models."
+       "original": "Moshi: A speech-text foundation model for real-time dialogue. arXiv preprint arXiv:2410.00037, 2024."
+      },
+      {
+       "id": "s-references-15-5",
+       "original": "[24] Yakun Song, Xiaobin Zhuang, Jiawei Chen, et al. DiSTAR: Diffusion over a scalable token autoregressive representation for speech generation. arXiv preprint arXiv:2510.12210, 2025."
+      },
+      {
+       "id": "s-references-15-6",
+       "original": "[25] Yaron Lipman, Ricky T."
+      },
+      {
+       "id": "s-references-15-7",
+       "original": "Q."
+      },
+      {
+       "id": "s-references-15-8",
+       "original": "Chen, Heli Ben-Hamu, Maximilian Nickel, and Matt Le."
+      },
+      {
+       "id": "s-references-15-9",
+       "original": "Flow matching for generative modeling."
+      },
+      {
+       "id": "s-references-15-10",
+       "original": "In International Conference on Learning Representations, 2023."
+      },
+      {
+       "id": "s-references-15-11",
+       "original": "[26] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, and Wei-Ning Hsu.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
+      },
+      {
+       "id": "s-references-15-12",
+       "original": "Voicebox: Text-guided multilingual universal speech generation at scale."
+      },
+      {
+       "id": "s-references-15-13",
+       "original": "In Advances in Neural Information Processing Systems, 2023."
+      },
+      {
+       "id": "s-references-15-14",
+       "original": "[27] Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao, Hemin Yang, Zirun Zhu, Min Tang, Xu Tan, Yanqing Liu, Sheng Zhao, and Naoyuki Kanda."
+      },
+      {
+       "id": "s-references-15-15",
+       "original": "E2 TTS: Embarrassingly easy fully non-autoregressive zero-shot TTS."
+      },
+      {
+       "id": "s-references-15-16",
+       "original": "In IEEE Spoken Language Technology Workshop (SLT), 2024."
+      },
+      {
+       "id": "s-references-15-17",
+       "original": "[28] Yushen Chen, Zhikang Niu, Ziyang Ma, Keqi Deng, Chunhui Wang, Jian Zhao, Kai Yu, and Xie Chen."
+      },
+      {
+       "id": "s-references-15-18",
+       "original": "F5-TTS: A fairytaler that fakes fluent and faithful speech with flow matching. arXiv preprint arXiv:2410.06885, 2024."
       }
      ]
     },
@@ -4248,19 +5310,7 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "In International Conference on Learning Representations, 2025."
-      },
-      {
-       "id": "s-references-16-2",
-       "original": "[42] Shansan Gong, Shivam Agarwal, Yizhe Zhang, Jiacheng Ye, Lin Zheng, Mukai Li, Chenxin An, et al. Scaling diffusion language models via adaptation from autoregressive models."
-      },
-      {
-       "id": "s-references-16-3",
-       "original": "In International Conference on Learning Representations, 2025."
-      },
-      {
-       "id": "s-references-16-4",
-       "original": "[43] Chengyue Wu, Hao Zhang, Shuchen Xue, Shizhe Diao, et al. Fast-dLLM v2: Efficient block-diffusion LLM."
+       "original": "[29] Zalán Borsos, Matt Sharifi, Damien Vincent, Eugene Kharitonov, Neil Zeghidour, and Marco Tagliasacchi."
       }
      ]
     },
@@ -4271,120 +5321,244 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "arXiv preprint arXiv:2509.26328, 2025."
+       "original": "SoundStorm: Efficient parallel audio generation. arXiv preprint arXiv:2305.09636, 2023."
       },
       {
        "id": "s-references-17-2",
-       "original": "[44] Yangzhou Liu, Yue Cao, Hao Li, Gen Luo, Zhe Chen, et al. Sequential diffusion language models. arXiv preprint [45] StepFun-Audio Team."
+       "original": "[30] Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, et al. NaturalSpeech 3: Zero-shot speech synthesis with factorized codec and diffusion models."
       },
       {
        "id": "s-references-17-3",
-       "original": "StepAudio 2.5 technical report. arXiv preprint arXiv:2605.23463, 2026."
+       "original": "In International Conference on Machine Learning, 2024."
       },
       {
        "id": "s-references-17-4",
-       "original": "[46] Xiaoyu Fan, Huizhi Xie, Wei Zou, and Yunzhang Chen."
+       "original": "[31] Yuancheng Wang, Haoyue Zhan, Liwei Liu, Ruihong Zeng, Haotian Guo, Jiachen Zheng, Qiang Zhang, Xueyao Zhang, Shunsi Zhang, and Zhizheng Wu."
       },
       {
        "id": "s-references-17-5",
-       "original": "LLaDA-TTS: Unifying speech synthesis and zero-shot editing via masked diffusion modeling. arXiv preprint arXiv:2603.26364, 2026."
+       "original": "MaskGCT: Zero-shot text-to-speech with masked generative codec transformer."
       },
       {
        "id": "s-references-17-6",
-       "original": "[47] Yuxuan Lou, Ziming Wu, Yaochen Wang, et al. DiffuSpeech: Silent thought, spoken answer via unified speechtext diffusion. arXiv preprint arXiv:2601.22889, 2026."
+       "original": "In International Conference on Learning Representations, 2025."
       },
       {
        "id": "s-references-17-7",
-       "original": "[48] Han Zhu, Lingxuan Ye, Wei Kang, et al. OmniVoice: Towards omnilingual zero-shot text-to-speech with diffusion language models. arXiv preprint arXiv:2604.00688, 2026."
+       "original": "[32] Jacob Austin, Daniel D."
       },
       {
        "id": "s-references-17-8",
-       "original": "[49] Deokjin Seo, Gangin Park, and Kihyun Nam."
+       "original": "Johnson, Jonathan Ho, Daniel Tarlow, and Rianne van den Berg."
       },
       {
        "id": "s-references-17-9",
-       "original": "Chatterbox-flash: Prior-calibrated block diffusion for streaming zero-shot TTS. arXiv preprint arXiv:2605.30748, 2026."
+       "original": "Structured denoising diffusion models in discrete state-spaces."
       },
       {
        "id": "s-references-17-10",
-       "original": "[50] Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei Zhang, Mingchuan Zhang, Y."
+       "original": "In Advances in Neural Information Processing Systems, 2021."
       },
       {
        "id": "s-references-17-11",
-       "original": "K."
+       "original": "[33] Aaron Lou, Chenlin Meng, and Stefano Ermon."
       },
       {
        "id": "s-references-17-12",
-       "original": "Li, Y."
+       "original": "Discrete diffusion modeling by estimating the ratios of the data distribution."
       },
       {
        "id": "s-references-17-13",
-       "original": "Wu, and Daya Guo."
+       "original": "In International Conference on Machine Learning, 2024."
       },
       {
        "id": "s-references-17-14",
-       "original": "DeepSeekMath: Pushing the limits of mathematical reasoning in open language models, 2024."
+       "original": "[34] Subham Sekhar Sahoo, Marianne Arriola, Yair Schiff, Aaron Gokaslan, Edgar Marroquin, Justin T."
       },
       {
        "id": "s-references-17-15",
-       "original": "URL https://arxiv.org/abs/2402.03300. arXiv preprint arXiv:2402.03300."
+       "original": "Chiu, Alexander Rush, and Volodymyr Kuleshov."
       },
       {
        "id": "s-references-17-16",
-       "original": "[51] Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, Zhiyong Wu, and Zhiyuan Liu."
+       "original": "Simple and effective masked diffusion language models."
       },
       {
        "id": "s-references-17-17",
-       "original": "VoxCPM: Tokenizer-free TTS for context-aware speech generation and true-to-life voice cloning. arXiv preprint arXiv:2509.24650, 2025."
+       "original": "In Advances in Neural Information Processing Systems, volume 37, pages 130136–130184, 2024."
+      },
+      {
+       "id": "s-references-17-18",
+       "original": "[35] Jiaxin Shi, Kehang Han, Zhe Wang, Arnaud Doucet, and Michalis K."
+      },
+      {
+       "id": "s-references-17-19",
+       "original": "Titsias."
+      },
+      {
+       "id": "s-references-17-20",
+       "original": "Simplified and generalized masked diffusion for discrete data."
+      },
+      {
+       "id": "s-references-17-21",
+       "original": "In Advances in Neural Information Processing Systems, 2024."
+      },
+      {
+       "id": "s-references-17-22",
+       "original": "[36] Shen Nie, Fengqi Zhu, Zebin You, Xiaolu Zhang, Jingyang Ou, Jun Hu, Jun Zhou, Yankai Lin, Ji-Rong Wen, and Chongxuan Li.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
+      },
+      {
+       "id": "s-references-17-23",
+       "original": "Large language diffusion models. arXiv preprint arXiv:2502.09992, 2025."
+      },
+      {
+       "id": "s-references-17-24",
+       "original": "[37] Jiacheng Ye, Zhihui Xie, Lin Zheng, Jiahui Gao, Zirui Wu, Xin Jiang, Zhenguo Li, and Lingpeng Kong."
+      },
+      {
+       "id": "s-references-17-25",
+       "original": "Dream 7B: Diffusion large language models. arXiv preprint arXiv:2508.15487, 2025."
+      },
+      {
+       "id": "s-references-17-26",
+       "original": "[38] Inception Labs, Samar Khanna, Siddhant Kharbanda, Shufan Li, et al. Mercury: Ultra-fast language models based on diffusion. arXiv preprint arXiv:2506.17298, 2025."
+      },
+      {
+       "id": "s-references-17-27",
+       "original": "[39] Yuxuan Song, Zheng Zhang, Cheng Luo, Pengyang Gao, Fan Xia, et al. Seed diffusion: A large-scale diffusion language model with high-speed inference. arXiv preprint arXiv:2508.02193, 2025."
+      },
+      {
+       "id": "s-references-17-28",
+       "original": "[40] Tiwei Bie, Maosong Cao, Kun Chen, Lun Du, et al. LLaDA2.0: Scaling up diffusion language models to 100B."
       }
      ]
     },
     {
      "id": "p-references-18",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "[52] Zhen Ye, Peiwen Sun, Jiahe Lei, Hongzhan Lin, Xu Tan, Zheqi Dai, Qiuqiang Kong, Jianyi Chen, Jiahao Pan, Qifeng Liu, Yike Guo, and Wei Xue."
+       "original": "arXiv preprint arXiv:2512.15745, 2025."
       },
       {
        "id": "s-references-18-2",
-       "original": "Codec does matter: Exploring the semantic shortcoming of codec for audio language model. arXiv preprint arXiv:2408.17175, 2024."
+       "original": "[41] Marianne Arriola, Aaron Gokaslan, Justin T."
+      },
+      {
+       "id": "s-references-18-3",
+       "original": "Chiu, Zhihan Yang, Zhixuan Qi, Jiaqi Han, Subham Sekhar Sahoo, and Volodymyr Kuleshov."
+      },
+      {
+       "id": "s-references-18-4",
+       "original": "Block diffusion: Interpolating between autoregressive and diffusion language models."
       }
      ]
     },
     {
      "id": "p-references-19",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "[53] Xin Zhang, Dong Zhang, Shimin Li, Yaqian Zhou, and Xipeng Qiu."
+       "original": "In International Conference on Learning Representations, 2025."
       },
       {
        "id": "s-references-19-2",
-       "original": "SpeechTokenizer: Unified speech tokenizer for speech large language models."
+       "original": "[42] Shansan Gong, Shivam Agarwal, Yizhe Zhang, Jiacheng Ye, Lin Zheng, Mukai Li, Chenxin An, et al. Scaling diffusion language models via adaptation from autoregressive models."
       },
       {
        "id": "s-references-19-3",
-       "original": "In International Conference on Learning Representations, 2024."
+       "original": "In International Conference on Learning Representations, 2025."
+      },
+      {
+       "id": "s-references-19-4",
+       "original": "[43] Chengyue Wu, Hao Zhang, Shuchen Xue, Shizhe Diao, et al. Fast-dLLM v2: Efficient block-diffusion LLM."
       }
      ]
     },
     {
      "id": "p-references-20",
      "type": "paragraph",
-     "page": 20,
+     "page": 19,
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "[54] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, Jian Wu, Long Zhou, Shuo Ren, Yanmin Qian, Yao Qian, Jian Wu, Michael Zeng, Xiangzhan Yu, and Furu Wei."
+       "original": "arXiv preprint arXiv:2509.26328, 2025."
       },
       {
        "id": "s-references-20-2",
-       "original": "WavLM: Large-scale self-supervised pre-training for full stack speech processing."
+       "original": "[44] Yangzhou Liu, Yue Cao, Hao Li, Gen Luo, Zhe Chen, et al. Sequential diffusion language models. arXiv preprint arXiv:2509.24007, 2025."
+      },
+      {
+       "id": "s-references-20-3",
+       "original": "[45] StepFun-Audio Team."
+      },
+      {
+       "id": "s-references-20-4",
+       "original": "StepAudio 2.5 technical report. arXiv preprint arXiv:2605.23463, 2026."
+      },
+      {
+       "id": "s-references-20-5",
+       "original": "[46] Xiaoyu Fan, Huizhi Xie, Wei Zou, and Yunzhang Chen.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
+      },
+      {
+       "id": "s-references-20-6",
+       "original": "LLaDA-TTS: Unifying speech synthesis and zero-shot editing via masked diffusion modeling. arXiv preprint arXiv:2603.26364, 2026."
+      },
+      {
+       "id": "s-references-20-7",
+       "original": "[47] Yuxuan Lou, Ziming Wu, Yaochen Wang, et al. DiffuSpeech: Silent thought, spoken answer via unified speechtext diffusion. arXiv preprint arXiv:2601.22889, 2026."
+      },
+      {
+       "id": "s-references-20-8",
+       "original": "[48] Han Zhu, Lingxuan Ye, Wei Kang, et al. OmniVoice: Towards omnilingual zero-shot text-to-speech with diffusion language models. arXiv preprint arXiv:2604.00688, 2026.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
+      },
+      {
+       "id": "s-references-20-9",
+       "original": "[49] Deokjin Seo, Gangin Park, and Kihyun Nam."
+      },
+      {
+       "id": "s-references-20-10",
+       "original": "Chatterbox-flash: Prior-calibrated block diffusion for streaming zero-shot TTS. arXiv preprint arXiv:2605.30748, 2026."
+      },
+      {
+       "id": "s-references-20-11",
+       "original": "[50] Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei Zhang, Mingchuan Zhang, Y."
+      },
+      {
+       "id": "s-references-20-12",
+       "original": "K."
+      },
+      {
+       "id": "s-references-20-13",
+       "original": "Li, Y."
+      },
+      {
+       "id": "s-references-20-14",
+       "original": "Wu, and Daya Guo."
+      },
+      {
+       "id": "s-references-20-15",
+       "original": "DeepSeekMath: Pushing the limits of mathematical reasoning in open language models, 2024."
+      },
+      {
+       "id": "s-references-20-16",
+       "original": "URL https://arxiv.org/abs/2402.03300. arXiv preprint arXiv:2402.03300."
+      },
+      {
+       "id": "s-references-20-17",
+       "original": "[51] Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, Zhiyong Wu, and Zhiyuan Liu.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
+      },
+      {
+       "id": "s-references-20-18",
+       "original": "VoxCPM: Tokenizer-free TTS for context-aware speech generation and true-to-life voice cloning. arXiv preprint arXiv:2509.24650, 2025."
       }
      ]
     },
@@ -4395,7 +5569,12 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6):1505–1518, 2022."
+       "original": "[52] Zhen Ye, Peiwen Sun, Jiahe Lei, Hongzhan Lin, Xu Tan, Zheqi Dai, Qiuqiang Kong, Jianyi Chen, Jiahao Pan, Qifeng Liu, Yike Guo, and Wei Xue.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
+      },
+      {
+       "id": "s-references-21-2",
+       "original": "Codec does matter: Exploring the semantic shortcoming of codec for audio language model. arXiv preprint arXiv:2408.17175, 2024."
       }
      ]
     },
@@ -4406,15 +5585,15 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "[55] Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae."
+       "original": "[53] Xin Zhang, Dong Zhang, Shimin Li, Yaqian Zhou, and Xipeng Qiu."
       },
       {
        "id": "s-references-22-2",
-       "original": "HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis."
+       "original": "SpeechTokenizer: Unified speech tokenizer for speech large language models."
       },
       {
        "id": "s-references-22-3",
-       "original": "In Advances in Neural Information Processing Systems, 2020."
+       "original": "In International Conference on Learning Representations, 2024."
       }
      ]
     },
@@ -4425,15 +5604,12 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "[56] Sang-gil Lee, Wei Ping, Boris Ginsburg, Bryan Catanzaro, and Sungroh Yoon."
+       "original": "[54] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, Jian Wu, Long Zhou, Shuo Ren, Yanmin Qian, Yao Qian, Jian Wu, Michael Zeng, Xiangzhan Yu, and Furu Wei.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
       },
       {
        "id": "s-references-23-2",
-       "original": "BigVGAN: A universal neural vocoder with large-scale training."
-      },
-      {
-       "id": "s-references-23-3",
-       "original": "In International Conference on Learning Representations, 2023."
+       "original": "WavLM: Large-scale self-supervised pre-training for full stack speech processing."
       }
      ]
     },
@@ -4444,15 +5620,7 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "[57] Boson AI."
-      },
-      {
-       "id": "s-references-24-2",
-       "original": "Higgs audio v2: Text-audio foundation model. https://github.com/boson-ai/higgs-audio, 2025."
-      },
-      {
-       "id": "s-references-24-3",
-       "original": "Open release with a unified semantic–acoustic audio tokenizer; no accompanying arXiv report."
+       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6):1505–1518, 2022."
       }
      ]
     },
@@ -4463,19 +5631,15 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "[58] Huiwen Chang, Han Zhang, Lu Jiang, Ce Liu, and William T."
+       "original": "[55] Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae."
       },
       {
        "id": "s-references-25-2",
-       "original": "Freeman."
+       "original": "HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis."
       },
       {
        "id": "s-references-25-3",
-       "original": "MaskGIT: Masked generative image transformer."
-      },
-      {
-       "id": "s-references-25-4",
-       "original": "In IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2022."
+       "original": "In Advances in Neural Information Processing Systems, 2020."
       }
      ]
     },
@@ -4486,15 +5650,16 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "[59] Siyan Zhao, Devaansh Gupta, Qinqing Zheng, and Aditya Grover. d1: Scaling reasoning in diffusion large language models via reinforcement learning."
+       "original": "[56] Sang-gil Lee, Wei Ping, Boris Ginsburg, Bryan Catanzaro, and Sungroh Yoon.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
       },
       {
        "id": "s-references-26-2",
-       "original": "In Advances in Neural Information Processing Systems, volume 38, pages 56729–56762, 2025."
+       "original": "BigVGAN: A universal neural vocoder with large-scale training."
       },
       {
        "id": "s-references-26-3",
-       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2025/file/ 52190a0362148d179f1cbd9080956872-Paper-Conference.pdf."
+       "original": "In International Conference on Learning Representations, 2023."
       }
      ]
     },
@@ -4505,7 +5670,15 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "[60] Kevin Black, Michael Janner, Yilun Du, Ilya Kostrikov, and Sergey Levine."
+       "original": "[57] Boson AI."
+      },
+      {
+       "id": "s-references-27-2",
+       "original": "Higgs audio v2: Text-audio foundation model. https://github.com/boson-ai/higgs-audio, 2025."
+      },
+      {
+       "id": "s-references-27-3",
+       "original": "Open release with a unified semantic–acoustic audio tokenizer; no accompanying arXiv report."
       }
      ]
     },
@@ -4516,7 +5689,19 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "Training diffusion models with reinforcement learning."
+       "original": "[58] Huiwen Chang, Han Zhang, Lu Jiang, Ce Liu, and William T."
+      },
+      {
+       "id": "s-references-28-2",
+       "original": "Freeman."
+      },
+      {
+       "id": "s-references-28-3",
+       "original": "MaskGIT: Masked generative image transformer."
+      },
+      {
+       "id": "s-references-28-4",
+       "original": "In IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2022."
       }
      ]
     },
@@ -4527,7 +5712,15 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "In International Conference on Learning Representations, 2024."
+       "original": "[59] Siyan Zhao, Devaansh Gupta, Qinqing Zheng, and Aditya Grover. d1: Scaling reasoning in diffusion large language models via reinforcement learning."
+      },
+      {
+       "id": "s-references-29-2",
+       "original": "In Advances in Neural Information Processing Systems, volume 38, pages 56729–56762, 2025."
+      },
+      {
+       "id": "s-references-29-3",
+       "original": "URL https://proceedings.neurips.cc/paper_files/paper/2025/file/ 52190a0362148d179f1cbd9080956872-Paper-Conference.pdf."
       }
      ]
     },
@@ -4538,7 +5731,7 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "URL https://proceedings.iclr.cc/paper_files/paper/2024/file/ 14f75513f0f1ca01de1e826b52e6b840-Paper-Conference.pdf."
+       "original": "[60] Kevin Black, Michael Janner, Yilun Du, Ilya Kostrikov, and Sergey Levine."
       }
      ]
     },
@@ -4549,15 +5742,7 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "[61] Haran Raajesh, Kulin Shah, Adam Klivans, and Philipp Krähenbühl."
-      },
-      {
-       "id": "s-references-31-2",
-       "original": "Mask-aware policy gradients for diffusion language models. arXiv preprint arXiv:2607.15200, 2026. doi: 10.48550/arXiv.2607.15200."
-      },
-      {
-       "id": "s-references-31-3",
-       "original": "Accepted at COLM 2026."
+       "original": "Training diffusion models with reinforcement learning."
       }
      ]
     },
@@ -4568,13 +5753,15 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "[62] Jonathan Ho and Tim Salimans."
-      },
-      {
-       "id": "s-references-32-2",
-       "original": "Classifier-free diffusion guidance. arXiv preprint arXiv:2207.12598, 2022. doi: 10.48550/arXiv.2207.12598."
+       "original": "In International Conference on Learning Representations,"
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 20,
+     "original": "2024."
     },
     {
      "id": "p-references-33",
@@ -4583,11 +5770,7 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "[63] John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov."
-      },
-      {
-       "id": "s-references-33-2",
-       "original": "Proximal policy optimization algorithms. arXiv preprint arXiv:1707.06347, 2017. doi: 10.48550/arXiv.1707.06347."
+       "original": "URL https://proceedings.iclr.cc/paper_files/paper/2024/file/ 14f75513f0f1ca01de1e826b52e6b840-Paper-Conference.pdf."
       }
      ]
     },
@@ -4598,9 +5781,23 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "[64] Peiqi Yin, Jiangyun Zhu, Han Gao, Chenguang Zheng, Yongxiang Huang, Taichang Zhou, Ruirui Yang, Weizhi Liu, Weiqing Chen, Canlin Guo, Didan Deng, Zifeng Mo, Cong Wang, James Cheng, Roger Wang, and Hongsheng Liu."
+       "original": "[61] Haran Raajesh, Kulin Shah, Adam Klivans, and Philipp Krähenbühl."
+      },
+      {
+       "id": "s-references-34-2",
+       "original": "Mask-aware policy gradients for diffusion language models. arXiv preprint arXiv:2607.15200, 2026. doi: 10.48550/arXiv.2607.15200."
+      },
+      {
+       "id": "s-references-34-3",
+       "original": "Accepted at COLM"
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 20,
+     "original": "2026."
     },
     {
      "id": "p-references-35",
@@ -4609,7 +5806,11 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-35-1",
-       "original": "vLLM-Omni: Fully disaggregated serving for any-to-any multimodal models."
+       "original": "[62] Jonathan Ho and Tim Salimans."
+      },
+      {
+       "id": "s-references-35-2",
+       "original": "Classifier-free diffusion guidance. arXiv preprint arXiv:2207.12598, 2022. doi: 10.48550/arXiv.2207.12598."
       }
      ]
     },
@@ -4620,7 +5821,11 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "arXiv preprint arXiv:2602.02204, 2026. doi: 10.48550/arXiv.2602.02204."
+       "original": "[63] John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov."
+      },
+      {
+       "id": "s-references-36-2",
+       "original": "Proximal policy optimization algorithms. arXiv preprint arXiv:1707.06347, 2017. doi: 10.48550/arXiv.1707.06347."
       }
      ]
     },
@@ -4631,11 +5836,8 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "[65] Qixi Zheng, Yushen Chen, Zhikang Niu, Ziyang Ma, Xiaofei Wang, Kai Yu, and Xie Chen."
-      },
-      {
-       "id": "s-references-37-2",
-       "original": "Accelerating flowmatching-based text-to-speech via empirically pruned step sampling. arXiv preprint arXiv:2505.19931, 2025."
+       "original": "[64] Peiqi Yin, Jiangyun Zhu, Han Gao, Chenguang Zheng, Yongxiang Huang, Taichang Zhou, Ruirui Yang, Weizhi Liu, Weiqing Chen, Canlin Guo, Didan Deng, Zifeng Mo, Cong Wang, James Cheng, Roger Wang, and Hongsheng Liu.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
       }
      ]
     },
@@ -4646,7 +5848,7 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "doi: 10.48550/arXiv.2505.19931."
+       "original": "vLLM-Omni: Fully disaggregated serving for any-to-any multimodal models."
       }
      ]
     },
@@ -4657,11 +5859,7 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "[66] Han Zhu, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang, Zhaoqing Li, Weiji Zhuang, Long Lin, and Daniel Povey."
-      },
-      {
-       "id": "s-references-39-2",
-       "original": "Zipvoice: Fast and high-quality zero-shot text-to-speech with flow matching. arXiv preprint arXiv:2506.13053, 2025. doi: 10.48550/arXiv.2506.13053."
+       "original": "arXiv preprint arXiv:2602.02204, 2026. doi: 10.48550/arXiv.2602.02204."
       }
      ]
     },
@@ -4672,15 +5870,11 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-40-1",
-       "original": "[67] OpenBMB."
+       "original": "[65] Qixi Zheng, Yushen Chen, Zhikang Niu, Ziyang Ma, Xiaofei Wang, Kai Yu, and Xie Chen."
       },
       {
        "id": "s-references-40-2",
-       "original": "VoxCPM2: Production deployment and inference performance. https://github.com/OpenBMB/ VoxCPM, 2026."
-      },
-      {
-       "id": "s-references-40-3",
-       "original": "Accessed: 2026-08-10."
+       "original": "Accelerating flowmatching-based text-to-speech via empirically pruned step sampling. arXiv preprint arXiv:2505.19931, 2025."
       }
      ]
     },
@@ -4691,15 +5885,7 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-41-1",
-       "original": "[68] SparkAudio."
-      },
-      {
-       "id": "s-references-41-2",
-       "original": "Spark-TTS: Nvidia triton inference serving. https://github.com/SparkAudio/Spark-TTS, 2025."
-      },
-      {
-       "id": "s-references-41-3",
-       "original": "Accessed: 2026-08-10."
+       "original": "doi: 10.48550/arXiv.2505.19931."
       }
      ]
     },
@@ -4710,15 +5896,12 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "[69] SGLang Team."
+       "original": "[66] Han Zhu, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang, Zhaoqing Li, Weiji Zhuang, Long Lin, and Daniel Povey.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
       },
       {
        "id": "s-references-42-2",
-       "original": "SGLang-Omni: High-performance multi-stage pipeline framework for omni models. https: //github.com/sgl-project/sglang-omni, 2026."
-      },
-      {
-       "id": "s-references-42-3",
-       "original": "Accessed: 2026-08-10."
+       "original": "Zipvoice: Fast and high-quality zero-shot text-to-speech with flow matching. arXiv preprint arXiv:2506.13053, 2025. doi: 10.48550/arXiv.2506.13053."
       }
      ]
     },
@@ -4729,11 +5912,11 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-43-1",
-       "original": "[70] Cartesia."
+       "original": "[67] OpenBMB."
       },
       {
        "id": "s-references-43-2",
-       "original": "Sonic 3.5 self-hosted hardware selection and latency. https://docs.cartesia.ai/self-hosted/ hardware-selection, 2026."
+       "original": "VoxCPM2: Production deployment and inference performance. https://github.com/OpenBMB/ VoxCPM, 2026."
       },
       {
        "id": "s-references-43-3",
@@ -4748,11 +5931,11 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-44-1",
-       "original": "[71] ElevenLabs."
+       "original": "[68] SparkAudio."
       },
       {
        "id": "s-references-44-2",
-       "original": "Models: Eleven flash v2.5. https://elevenlabs.io/docs/overview/models, 2026."
+       "original": "Spark-TTS: Nvidia triton inference serving. https://github.com/SparkAudio/Spark-TTS, 2025."
       },
       {
        "id": "s-references-44-3",
@@ -4763,65 +5946,57 @@ globalThis.PAPER_2608_11593 = {
     {
      "id": "p-references-45",
      "type": "paragraph",
-     "page": 21,
+     "page": 20,
      "sentences": [
       {
        "id": "s-references-45-1",
-       "original": "[72] Hume AI."
+       "original": "[69] SGLang Team."
       },
       {
        "id": "s-references-45-2",
-       "original": "Text-to-speech: Octave 2. https://dev.hume.ai/docs/text-to-speech-tts/overview, 2026."
+       "original": "SGLang-Omni: High-performance multi-stage pipeline framework for omni models. https: //github.com/sgl-project/sglang-omni, 2026."
+      },
+      {
+       "id": "s-references-45-3",
+       "original": "Accessed: 2026-08-10."
       }
      ]
     },
     {
      "id": "p-references-46",
      "type": "paragraph",
-     "page": 21,
+     "page": 20,
      "sentences": [
       {
        "id": "s-references-46-1",
-       "original": "Accessed: 2026-08-10."
+       "original": "[70] Cartesia."
       },
       {
        "id": "s-references-46-2",
-       "original": "[73] PlayHT."
+       "original": "Sonic 3.5 self-hosted hardware selection and latency. https://docs.cartesia.ai/self-hosted/ hardware-selection, 2026."
       },
       {
        "id": "s-references-46-3",
-       "original": "Text-to-speech models: Play 3.0 mini. https://docs.play.ht/reference/models, 2026."
-      },
-      {
-       "id": "s-references-46-4",
        "original": "Accessed: 2026-08-10."
-      },
-      {
-       "id": "s-references-46-5",
-       "original": "[74] Deepgram."
-      },
-      {
-       "id": "s-references-46-6",
-       "original": "Aura-2 text-to-speech performance. https://developers.deepgram.com/changelog/2025/5/ 14, 2025."
-      },
-      {
-       "id": "s-references-46-7",
-       "original": "Accessed: 2026-08-10."
-      },
-      {
-       "id": "s-references-46-8",
-       "original": "[75] Microsoft."
       }
      ]
     },
     {
      "id": "p-references-47",
      "type": "paragraph",
-     "page": 21,
+     "page": 20,
      "sentences": [
       {
        "id": "s-references-47-1",
-       "original": "Vibevoice-realtime: Real-time streaming text-to-speech."
+       "original": "[71] ElevenLabs."
+      },
+      {
+       "id": "s-references-47-2",
+       "original": "Models: Eleven flash v2.5. https://elevenlabs.io/docs/overview/models, 2026."
+      },
+      {
+       "id": "s-references-47-3",
+       "original": "Accessed: 2026-08-10."
       }
      ]
     },
@@ -4832,47 +6007,11 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-48-1",
-       "original": "https://github.com/microsoft/ VibeVoice, 2025."
+       "original": "[72] Hume AI."
       },
       {
        "id": "s-references-48-2",
-       "original": "Accessed: 2026-08-10."
-      },
-      {
-       "id": "s-references-48-3",
-       "original": "[76] Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Jiancheng Gui, Jiaheng Wu, Ziyang Wang, Xudong Shen, Runchuan Ye, Zhisheng Zhang, Jiuyang Zhou, Bingsong Bai, Weiyue Sun, Mengyuan Deng, Qundong Shi, Zhiyong Wu, and Zhiyuan Liu."
-      },
-      {
-       "id": "s-references-48-4",
-       "original": "VoxCPM2 technical report. arXiv preprint arXiv:2606.06928, 2026."
-      },
-      {
-       "id": "s-references-48-5",
-       "original": "[77] MiniMax."
-      },
-      {
-       "id": "s-references-48-6",
-       "original": "MiniMax Speech-2.8. https://www.minimax-speech.com/, 2026."
-      },
-      {
-       "id": "s-references-48-7",
-       "original": "Accessed: 2026-07-30."
-      },
-      {
-       "id": "s-references-48-8",
-       "original": "[78] ElevenLabs."
-      },
-      {
-       "id": "s-references-48-9",
-       "original": "Eleven v3. https://elevenlabs.io/v3, 2026."
-      },
-      {
-       "id": "s-references-48-10",
-       "original": "Accessed: 2026-07-30."
-      },
-      {
-       "id": "s-references-48-11",
-       "original": "[79] Fish Audio."
+       "original": "Text-to-speech: Octave 2. https://dev.hume.ai/docs/text-to-speech-tts/overview, 2026."
       }
      ]
     },
@@ -4883,9 +6022,35 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-49-1",
-       "original": "Introducing S2.1 Pro: Our most expressive TTS model yet."
+       "original": "Accessed: 2026-08-10."
+      },
+      {
+       "id": "s-references-49-2",
+       "original": "[73] PlayHT."
+      },
+      {
+       "id": "s-references-49-3",
+       "original": "Text-to-speech models: Play 3.0 mini. https://docs.play.ht/reference/models, 2026."
+      },
+      {
+       "id": "s-references-49-4",
+       "original": "Accessed: 2026-08-10."
+      },
+      {
+       "id": "s-references-49-5",
+       "original": "[74] Deepgram."
+      },
+      {
+       "id": "s-references-49-6",
+       "original": "Aura-2 text-to-speech performance. https://developers.deepgram.com/changelog/2025/5/"
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 21,
+     "original": "14, 2025. Accessed: 2026-08-10."
     },
     {
      "id": "p-references-50",
@@ -4894,27 +6059,7 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-50-1",
-       "original": "https://fish.audio/blog/ s2-1-pro-free-api/, 2026."
-      },
-      {
-       "id": "s-references-50-2",
-       "original": "Accessed: 2026-07-30."
-      },
-      {
-       "id": "s-references-50-3",
-       "original": "[80] Qinke Ni, Huan Liao, Dekun Chen, Yuxiang Wang, and Zhizheng Wu."
-      },
-      {
-       "id": "s-references-50-4",
-       "original": "NV-Bench: Benchmark of nonverbal vocalization synthesis for expressive text-to-speech generation. arXiv preprint arXiv:2603.15352, 2026. doi: 10.48550/arXiv.2603.15352."
-      },
-      {
-       "id": "s-references-50-5",
-       "original": "[81] Liumeng Xue, Weizhen Bian, Jiahao Pan, Wenxuan Wu, Yilin Ren, Boyi Kang, Jingbin Hu, Ziyang Ma, Shuai Wang, Xinyuan Qian, et al. NVV-SuperBench: Beyond words, beyond quality—benchmarking nonverbal vocalizations in speech generation. arXiv preprint arXiv:2604.16211, 2026. doi: 10.48550/arXiv.2604.16211."
-      },
-      {
-       "id": "s-references-50-6",
-       "original": "[82] Google DeepMind."
+       "original": "[75] Microsoft."
       }
      ]
     },
@@ -4925,7 +6070,7 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-51-1",
-       "original": "Gemini 3.1 Pro model card."
+       "original": "Vibevoice-realtime: Real-time streaming text-to-speech."
       }
      ]
     },
@@ -4936,19 +6081,48 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-52-1",
-       "original": "https://deepmind.google/models/model-cards/ gemini-3-1-pro/, 2026."
+       "original": "https://github.com/microsoft/ VibeVoice, 2025."
       },
       {
        "id": "s-references-52-2",
-       "original": "Accessed: 2026-07-30."
+       "original": "Accessed: 2026-08-10."
       },
       {
        "id": "s-references-52-3",
-       "original": "[83] Kun Zhou, Berrak Sisman, Rui Liu, and Haizhou Li."
+       "original": "[76] Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Jiancheng Gui, Jiaheng Wu, Ziyang Wang, Xudong Shen, Runchuan Ye, Zhisheng Zhang, Jiuyang Zhou, Bingsong Bai, Weiyue Sun, Mengyuan Deng, Qundong Shi, Zhiyong Wu, and Zhiyuan Liu.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
       },
       {
        "id": "s-references-52-4",
-       "original": "Emotional voice conversion: Theory, databases and ESD."
+       "original": "VoxCPM2 technical report. arXiv preprint arXiv:2606.06928, 2026."
+      },
+      {
+       "id": "s-references-52-5",
+       "original": "[77] MiniMax."
+      },
+      {
+       "id": "s-references-52-6",
+       "original": "MiniMax Speech-2.8. https://www.minimax-speech.com/, 2026."
+      },
+      {
+       "id": "s-references-52-7",
+       "original": "Accessed: 2026-07-30."
+      },
+      {
+       "id": "s-references-52-8",
+       "original": "[78] ElevenLabs."
+      },
+      {
+       "id": "s-references-52-9",
+       "original": "Eleven v3. https://elevenlabs.io/v3, 2026."
+      },
+      {
+       "id": "s-references-52-10",
+       "original": "Accessed: 2026-07-30."
+      },
+      {
+       "id": "s-references-52-11",
+       "original": "[79] Fish Audio."
       }
      ]
     },
@@ -4959,41 +6133,125 @@ globalThis.PAPER_2608_11593 = {
      "sentences": [
       {
        "id": "s-references-53-1",
+       "original": "Introducing S2.1 Pro: Our most expressive TTS model yet."
+      }
+     ]
+    },
+    {
+     "id": "p-references-54",
+     "type": "paragraph",
+     "page": 21,
+     "sentences": [
+      {
+       "id": "s-references-54-1",
+       "original": "https://fish.audio/blog/ s2-1-pro-free-api/, 2026."
+      },
+      {
+       "id": "s-references-54-2",
+       "original": "Accessed: 2026-07-30."
+      },
+      {
+       "id": "s-references-54-3",
+       "original": "[80] Qinke Ni, Huan Liao, Dekun Chen, Yuxiang Wang, and Zhizheng Wu."
+      },
+      {
+       "id": "s-references-54-4",
+       "original": "NV-Bench: Benchmark of nonverbal vocalization synthesis for expressive text-to-speech generation. arXiv preprint arXiv:2603.15352, 2026. doi: 10.48550/arXiv.2603.15352."
+      },
+      {
+       "id": "s-references-54-5",
+       "original": "[81] Liumeng Xue, Weizhen Bian, Jiahao Pan, Wenxuan Wu, Yilin Ren, Boyi Kang, Jingbin Hu, Ziyang Ma, Shuai Wang, Xinyuan Qian, et al. NVV-SuperBench: Beyond words, beyond quality—benchmarking nonverbal vocalizations in speech generation. arXiv preprint arXiv:2604.16211, 2026. doi: 10.48550/arXiv.2604.16211.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
+      },
+      {
+       "id": "s-references-54-6",
+       "original": "[82] Google DeepMind."
+      }
+     ]
+    },
+    {
+     "id": "p-references-55",
+     "type": "paragraph",
+     "page": 21,
+     "sentences": [
+      {
+       "id": "s-references-55-1",
+       "original": "Gemini 3.1 Pro model card."
+      }
+     ]
+    },
+    {
+     "id": "p-references-56",
+     "type": "paragraph",
+     "page": 21,
+     "sentences": [
+      {
+       "id": "s-references-56-1",
+       "original": "https://deepmind.google/models/model-cards/ gemini-3-1-pro/, 2026."
+      },
+      {
+       "id": "s-references-56-2",
+       "original": "Accessed: 2026-07-30."
+      },
+      {
+       "id": "s-references-56-3",
+       "original": "[83] Kun Zhou, Berrak Sisman, Rui Liu, and Haizhou Li."
+      },
+      {
+       "id": "s-references-56-4",
+       "original": "Emotional voice conversion: Theory, databases and ESD."
+      }
+     ]
+    },
+    {
+     "id": "p-references-57",
+     "type": "paragraph",
+     "page": 21,
+     "sentences": [
+      {
+       "id": "s-references-57-1",
        "original": "Speech Communication, 137:1–18, 2022. doi: 10.1016/j.specom.2021.11.006."
       },
       {
-       "id": "s-references-53-2",
+       "id": "s-references-57-2",
        "original": "[84] Ziyang Ma, Zhisheng Zheng, Jiaxin Ye, Jinchao Li, Zhifu Gao, Shiliang Zhang, and Xie Chen. emotion2vec: Self-supervised pre-training for speech emotion representation."
       },
       {
-       "id": "s-references-53-3",
+       "id": "s-references-57-3",
        "original": "In Findings of the Association for Computational Linguistics: ACL 2024, pages 15747–15760, 2024. doi: 10.18653/v1/2024.findings-acl.931."
       },
       {
-       "id": "s-references-53-4",
+       "id": "s-references-57-4",
        "original": "[85] Ruskin Raj Manku, Yuzhi Tang, Xingjian Shi, Mu Li, and Alexander J."
       },
       {
-       "id": "s-references-53-5",
+       "id": "s-references-57-5",
        "original": "Smola."
       },
       {
-       "id": "s-references-53-6",
+       "id": "s-references-57-6",
        "original": "Emergenttts-eval: Evaluating tts models on complex prosodic, expressiveness, and linguistic challenges using model-as-a-judge."
       },
       {
-       "id": "s-references-53-7",
+       "id": "s-references-57-7",
        "original": "In Advances in Neural Information Processing Systems, volume 38, 2025."
       },
       {
-       "id": "s-references-53-8",
-       "original": "[86] Huakang Chen, Jingbin Hu, Liumeng Xue, Qirui Zhan, Wenhao Li, Guobin Ma, Hanke Xie, Dake Guo, Linhan Ma, Yuepeng Jiang, Bengu Wu, Pengyuan Xie, Chuan Xie, Qiang Zhang, and Lei Xie."
+       "id": "s-references-57-8",
+       "original": "[86] Huakang Chen, Jingbin Hu, Liumeng Xue, Qirui Zhan, Wenhao Li, Guobin Ma, Hanke Xie, Dake Guo, Linhan Ma, Yuepeng Jiang, Bengu Wu, Pengyuan Xie, Chuan Xie, Qiang Zhang, and Lei Xie.",
+       "zh": "我们（此句被跨页表格截断，接表格后的正文。）"
       },
       {
-       "id": "s-references-53-9",
-       "original": "Mint-bench: A comprehensive multilingual benchmark for instruction-following text-to-speech. arXiv preprint arXiv:2604.17958, 2026."
+       "id": "s-references-57-9",
+       "original": "Mint-bench: A comprehensive multilingual benchmark for instruction-following text-to-speech. arXiv preprint arXiv:2604.17958,"
       }
      ]
+    },
+    {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 21,
+     "original": "2026."
     }
    ]
   }
@@ -5117,7 +6375,7 @@ globalThis.PAPER_2608_11593 = {
   {
    "id": "ann-012",
    "anchor": {
-    "sentence_id": "s-2-6-1-3-4",
+    "sentence_id": "s-2-6-1-4-4",
     "quote": "Block causality is therefore part of the learned generation behavior, rather than an inference-time masking modification alone"
    },
    "kind": "critique",
@@ -5128,7 +6386,7 @@ globalThis.PAPER_2608_11593 = {
   {
    "id": "ann-013",
    "anchor": {
-    "sentence_id": "s-pretraining-data-construction-3-3",
+    "sentence_id": "s-pretraining-data-construction-4-3",
     "quote": "a second, independently trained ASR system then verify each bounded, speakerconsistent cut"
    },
    "kind": "engineering",
@@ -5139,7 +6397,7 @@ globalThis.PAPER_2608_11593 = {
   {
    "id": "ann-014",
    "anchor": {
-    "sentence_id": "s-pretraining-data-construction-4-4",
+    "sentence_id": "s-pretraining-data-construction-5-4",
     "quote": "an evenly balanced Mandarin–English core, complemented by a combined 13.6% share of Japanese and Korean"
    },
    "kind": "number",
@@ -5182,7 +6440,7 @@ globalThis.PAPER_2608_11593 = {
   {
    "id": "ann-018",
    "anchor": {
-    "sentence_id": "s-5-2-2-3",
+    "sentence_id": "s-5-2-3-3",
     "quote": "returns the first decoded 1.28s audio block in 41.6 ms and completes a 10.6-second waveform in 254.0 ms"
    },
    "kind": "number",
@@ -5203,7 +6461,7 @@ globalThis.PAPER_2608_11593 = {
   {
    "id": "ann-020",
    "anchor": {
-    "sentence_id": "s-results-for-the-streaming-varian-1-5",
+    "sentence_id": "s-results-for-the-streaming-varian-2-5",
     "quote": "Luna-TTS can revise during its global refinement passes, whereas Luna-TTS Realtime commits each block irrevocably"
    },
    "kind": "comparison",

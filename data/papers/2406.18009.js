@@ -375,7 +375,7 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-e2-tts-training-1-1",
-       "original": "Training target",
+       "original": "Training target Masked Masked",
        "zh": "训练目标。"
       }
      ]
@@ -385,68 +385,104 @@ globalThis.PAPER_2406_18009 = {
      "type": "equation",
      "page": 2,
      "original": "𝑚⨀Ƹ𝑠"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-flow-matching-transformer",
+   "num": null,
+   "level": 2,
+   "page": 2,
+   "title": {
+    "original": "Flow-matching Transformer",
+    "zh": "Flow-matching Transformer"
+   },
+   "blocks": [
     {
-     "id": "p-e2-tts-training-2",
+     "id": "p-flow-matching-transformer-1",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
-       "id": "s-e2-tts-training-2-1",
-       "original": "Model input",
+       "id": "s-flow-matching-transformer-1-1",
+       "original": "(Mel spectrogram generator) Model input Masked",
        "zh": "模型输入。"
       }
      ]
     },
     {
-     "id": "eq-e2-tts-training-2",
+     "id": "eq-flow-matching-transformer-1",
      "type": "equation",
      "page": 2,
      "original": "(1 −𝑚)⨀Ƹ𝑠"
     },
     {
-     "id": "eq-e2-tts-training-3",
+     "id": "eq-flow-matching-transformer-2",
      "type": "equation",
      "page": 2,
      "original": "ො𝑦"
     },
     {
-     "id": "p-e2-tts-training-3",
+     "id": "p-flow-matching-transformer-2",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
-       "id": "s-e2-tts-training-3-1",
-       "original": "i w r u ?",
-       "zh": "i w r u ?（图示乱码碎片：音频转录中的零散字母。）"
+       "id": "s-flow-matching-transformer-2-1",
+       "original": "H i",
+       "zh": "（图内字符序列示意：H i !）"
       }
      ]
     },
     {
-     "id": "p-e2-tts-training-4",
+     "id": "eq-flow-matching-transformer-3",
+     "type": "equation",
+     "page": 2,
+     "original": "!"
+    },
+    {
+     "id": "p-flow-matching-transformer-3",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
-       "id": "s-e2-tts-training-4-1",
-       "original": "<F> <F> <F> <F> <F> <F> <F> <F> <F> <F> Audio mel spectrogram Ƹ𝑠 Transcription of the audio 𝑦 Hi!",
-       "zh": "<F> <F> <F> <F> <F> <F> <F> <F> <F> <F> 音频 mel 频谱图，音频的转录，\"Hi!\"（图注碎片：ŝ 为 mel 频谱图，y 为转录。）"
+       "id": "s-flow-matching-transformer-3-1",
+       "original": "H o w a r e y o u",
+       "zh": "（图内字符序列示意：H o w a r e y o u ?）"
+      }
+     ]
+    },
+    {
+     "id": "eq-flow-matching-transformer-4",
+     "type": "equation",
+     "page": 2,
+     "original": "?"
+    },
+    {
+     "id": "p-flow-matching-transformer-4",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-4-1",
+       "original": "<F> <F> <F> <F> <F> <F> <F> <F> <F> <F> Filler tokens Audio mel spectrogram Ƹ𝑠 Transcription of the audio 𝑦 Hi!",
+       "zh": "（图 1(a) 标签：⟨F⟩×10 填充 token（Filler tokens）；音频 mel 频谱图 ŝ；音频转写文本 y「Hi!」。）"
       },
       {
-       "id": "s-e2-tts-training-4-2",
+       "id": "s-flow-matching-transformer-4-2",
        "original": "How are you?",
        "zh": "\"How are you?\"（图示示例转录文字。）"
       }
      ]
     },
     {
-     "id": "p-e2-tts-training-5",
+     "id": "p-flow-matching-transformer-5",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
-       "id": "s-e2-tts-training-5-1",
-       "original": "Training data",
+       "id": "s-flow-matching-transformer-5-1",
+       "original": "Training data It’s a good day!",
        "zh": "训练数据。"
       }
      ]
@@ -462,7 +498,20 @@ globalThis.PAPER_2406_18009 = {
     "original": "E2 TTS - Inference",
     "zh": "E2 TTS - 推理"
    },
-   "blocks": []
+   "blocks": [
+    {
+     "id": "p-e2-tts-inference-1",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-e2-tts-inference-1-1",
+       "original": "2 sec",
+       "zh": "（图内时长标注：2 sec。）"
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "sec-vocoder",
@@ -485,91 +534,217 @@ globalThis.PAPER_2406_18009 = {
        "zh": "丢弃。"
       }
      ]
+    }
+   ]
+  },
+  {
+   "id": "sec-flow-matching-transformer-2",
+   "num": null,
+   "level": 2,
+   "page": 2,
+   "title": {
+    "original": "Flow-matching Transformer",
+    "zh": "Flow-matching Transformer"
+   },
+   "blocks": [
+    {
+     "id": "p-flow-matching-transformer-2-1",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-2-1-1",
+       "original": "(Mel spectrogram generator)",
+       "zh": "（图内模块标签：Mel 频谱生成器。）"
+      }
+     ]
     },
     {
-     "id": "eq-vocoder-1",
+     "id": "eq-flow-matching-transformer-2-1",
      "type": "equation",
      "page": 2,
      "original": "𝑧gen"
     },
     {
-     "id": "eq-vocoder-2",
+     "id": "eq-flow-matching-transformer-2-2",
      "type": "equation",
      "page": 2,
      "original": "ො𝑦′"
     },
     {
-     "id": "p-vocoder-2",
+     "id": "p-flow-matching-transformer-2-2",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
-       "id": "s-vocoder-2-1",
-       "original": "l l I t ‘ s g <F> <F> <F> Audio mel spectrogram Ƹ𝑠aud Transcription of the audio 𝑦aud Hello!",
-       "zh": "l l I t ' s g <F> <F> <F> <F> 音频 mel 频谱图（ŝaud），音频的转录（yaud），\"Hello!\"（图注碎片：推理输入示意。）"
+       "id": "s-flow-matching-transformer-2-2-1",
+       "original": "H e l l o",
+       "zh": "（图内字符序列示意：H e l l o !）"
       }
      ]
     },
     {
-     "id": "p-vocoder-3",
+     "id": "eq-flow-matching-transformer-2-3",
+     "type": "equation",
+     "page": 2,
+     "original": "!"
+    },
+    {
+     "id": "p-flow-matching-transformer-2-3",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
-       "id": "s-vocoder-3-1",
-       "original": "Audio prompt Text prompt 𝑦text Duration",
-       "zh": "音频提示、文本提示 ytext、时长（图示标注文字。）"
+       "id": "s-flow-matching-transformer-2-3-1",
+       "original": "I t",
+       "zh": "（图内字符序列示意：I t ‘ s a g o o d d a y !）"
       }
      ]
     },
     {
-     "id": "fig-vocoder-1",
+     "id": "eq-flow-matching-transformer-2-4",
+     "type": "equation",
+     "page": 2,
+     "original": "‘"
+    },
+    {
+     "id": "p-flow-matching-transformer-2-4",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-2-4-1",
+       "original": "s a g o o d d a y",
+       "zh": "（图内字符序列示意：I t ‘ s a g o o d d a y !）"
+      }
+     ]
+    },
+    {
+     "id": "eq-flow-matching-transformer-2-5",
+     "type": "equation",
+     "page": 2,
+     "original": "!"
+    },
+    {
+     "id": "p-flow-matching-transformer-2-5",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-2-5-1",
+       "original": "<F> <F> <F> Filler tokens Audio mel spectrogram Ƹ𝑠aud Transcription of the audio 𝑦aud Hello!",
+       "zh": "（图内标签：⟨F⟩×3 填充 token；音频 mel 频谱图 ŝ_aud；音频转写 y_aud「Hello!」。）"
+      }
+     ]
+    },
+    {
+     "id": "p-flow-matching-transformer-2-6",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-2-6-1",
+       "original": "It’s a good day!",
+       "zh": "（图内文本：It's a good day!）"
+      }
+     ]
+    },
+    {
+     "id": "p-flow-matching-transformer-2-7",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-2-7-1",
+       "original": "2 sec Audio prompt Text prompt 𝑦text Duration",
+       "zh": "（图内标签：2 sec；Audio prompt；Text prompt y_text；Duration。）"
+      }
+     ]
+    },
+    {
+     "id": "fig-flow-matching-transformer-2-1",
      "type": "figure_caption",
      "page": 2,
      "original": "Fig. 1. An overview of the training (left) and the inference (right) processes of E2 TTS.",
      "zh": "图 1. E2 TTS 训练（左）与推理（右）过程总览。"
     },
     {
-     "id": "p-vocoder-4",
+     "id": "p-flow-matching-transformer-2-8",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
-       "id": "s-vocoder-4-1",
+       "id": "s-flow-matching-transformer-2-8-1",
        "original": "where ci represents the i-th character of the transcription.2 First, we extract its mel-filterbank features ˆs ∈RD×T , where D denotes the feature dimension and T represents the sequence length.",
        "zh": "其中 ci 表示转录中的第 i 个字符。2 首先，我们提取其 mel 滤波器组特征 ŝ ∈ R^(D×T)，其中 D 表示特征维度，T 表示序列长度。"
       },
       {
-       "id": "s-vocoder-4-2",
-       "original": "We then create an extended character sequence ˆy, where a special filler token ⟨F⟩is appended to y to make the length of ˆy equal to T.3 ˆy = (c1, c2, . . . , cM, ⟨F⟩, . . . , ⟨F⟩ (T −M) times ).",
-       "zh": "然后，我们构造扩展字符序列 ŷ：在 y 后面追加特殊的填充 token ⟨F⟩，使 ŷ 的长度等于 T。3 ŷ = (c1, c2, ..., cM, ⟨F⟩, ..., ⟨F⟩（T − M 次）)。"
+       "id": "s-flow-matching-transformer-2-8-2",
+       "original": "We then create an extended character sequence ˆy, where a special filler token ⟨F⟩is appended to y to make the length of ˆy equal to T.3 ˆy = (c1, c2, . . . , cM, ⟨F⟩, . . . , ⟨F⟩",
+       "zh": "随后构造扩展字符序列 ŷ：在 y 后追加特殊填充 token ⟨F⟩，使 ŷ 长度等于 T（脚注 3：ŷ = (c1, c2, …, cM, ⟨F⟩, …, ⟨F⟩)，其中填充段共 (T −M) 个）。"
       }
      ]
     },
     {
-     "id": "p-vocoder-5",
+     "id": "eq-flow-matching-transformer-2-6",
+     "type": "equation",
+     "page": 2,
+     "original": "|"
+    },
+    {
+     "id": "eq-flow-matching-transformer-2-7",
+     "type": "equation",
+     "page": 2,
+     "original": "{z"
+    },
+    {
+     "id": "eq-flow-matching-transformer-2-8",
+     "type": "equation",
+     "page": 2,
+     "original": "}"
+    },
+    {
+     "id": "p-flow-matching-transformer-2-9",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
-       "id": "s-vocoder-5-1",
+       "id": "s-flow-matching-transformer-2-9-1",
+       "original": "(T −M) times",
+       "zh": "随后构造扩展字符序列 ŷ：在 y 后追加特殊填充 token ⟨F⟩，使 ŷ 长度等于 T（脚注 3：ŷ = (c1, c2, …, cM, ⟨F⟩, …, ⟨F⟩)，其中填充段共 (T −M) 个）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-flow-matching-transformer-2-9",
+     "type": "equation",
+     "page": 2,
+     "original": "). (1)"
+    },
+    {
+     "id": "p-flow-matching-transformer-2-10",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-2-10-1",
        "original": "A spectrogram generator, consisting of a vanilla Transformer [26] with U-net [23] style skip connection, is then trained based on the speech infilling task [18].",
        "zh": "随后，一个由带 U-net [23] 风格跳跃连接的原版 Transformer [26] 构成的频谱图生成器，基于语音填充任务 [18] 进行训练。"
       }
      ]
     },
     {
-     "id": "p-vocoder-6",
+     "id": "p-flow-matching-transformer-2-11",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
-       "id": "s-vocoder-6-1",
+       "id": "s-flow-matching-transformer-2-11-1",
        "original": "More specifically, the model is trained to learn the distribution P(m ⊙ˆs|(1 −m) ⊙ˆs, ˆy), where m ∈{0, 1}D×T represents a binary temporal mask, and ⊙is the Hadamard product.",
        "zh": "更具体地说，模型被训练来学习分布 P(m ⊙ ŝ | (1 − m) ⊙ ŝ, ŷ)，其中 m ∈ {0,1}^(D×T) 表示一个二元时间掩码，⊙ 是 Hadamard 积。"
       },
       {
-       "id": "s-vocoder-6-2",
+       "id": "s-flow-matching-transformer-2-11-2",
        "original": "E2 TTS uses the conditional flow-matching [20] to learn such distribution.",
        "zh": "E2 TTS 使用条件流匹配 [20] 来学习该分布。"
       }
@@ -591,8 +766,8 @@ globalThis.PAPER_2406_18009 = {
      "id": "fig-2-2-1",
      "type": "figure_caption",
      "page": 2,
-     "original": "Fig. 1 (b) provides an overview of the inference with E2 TTS. Suppose we have an audio prompt saud and its transcription yaud = (c′ 1, c′ 2, ..., c′ Maud) to mimic the speaker characteristics. We also suppose a text prompt ytext = (c′′ 2, ..., c′′ Mtext). In the E2 TTS framework, we also require the target duration of the speech that we want to generate, which may be determined arbitrarily. The target duration is internally represented by the frame length T gen. First, we extract the mel-filterbank features ˆsaud ∈RD×T aud from saud. We then create an extended character sequence ˆy′ by",
-     "zh": "图 1（b）给出了 E2 TTS 推理过程的总览。假设我们有一个音频提示 saud 及其转录 yaud = (c′1, c′2, ..., c′Maud)，用于模仿说话人特征；再假设有文本提示 ytext = (c′′2, ..., c′′Mtext)。在 E2 TTS 框架中，我们还需要指定希望生成的语音的目标时长，该时长可以任意确定。目标时长在内部以帧长度 Tgen 表示。首先，我们从 saud 中提取 mel 滤波器组特征 ŝaud ∈ R^(D×Taud)。然后，通过如下方式构造扩展字符序列 ŷ′……"
+     "original": "Fig. 1 (b) provides an overview of the inference with E2 TTS. Suppose we have an audio prompt saud and its transcription yaud = (c′ 1, c′ 2, ..., c′ Maud) to mimic the speaker characteristics. We also suppose a text prompt ytext = (c′′ 1, c′′ 2, ..., c′′ Mtext). In the E2 TTS framework, we also require the target duration of the speech that we want to generate, which may be determined arbitrarily. The target duration is internally represented by the frame length T gen. First, we extract the mel-filterbank features ˆsaud ∈RD×T aud",
+     "zh": "图 1(b) 给出 E2 TTS 推理过程概览。设有音频提示 s_aud 及其转写 y_aud = (c′1, c′2, …, c′M_aud) 用于模仿说话人特征；另有文本提示 y_text = (c′′1, c′′2, …, c′′M_text)。E2 TTS 框架还需指定目标语音时长，可任意给定，内部以帧长 T_gen 表示。首先从 s_aud 提取 mel 滤波组特征 ŝ_aud ∈ R^{D×T_aud}（式见原文）。"
     },
     {
      "id": "p-2-2-1",
@@ -601,7 +776,12 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-2-2-1-1",
-       "original": "concatenating yaud, ytext, and repeated ⟨F⟩, as follows:",
+       "original": "from saud.",
+       "zh": "（公式续行：从 s_aud 提取。）"
+      },
+      {
+       "id": "s-2-2-1-2",
+       "original": "We then create an extended character sequence ˆy′ by concatenating yaud, ytext, and repeated ⟨F⟩, as follows:",
        "zh": "将 yaud、ytext 与重复的 ⟨F⟩ 拼接，如下所示："
       }
      ]
@@ -613,10 +793,52 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-2-2-2-1",
-       "original": "ˆy′ = (c′ 1, c′ 2, . . . , c′ Maud, c′′ 2, . . . , c′′ Mtext, ⟨F⟩, . . . , ⟨F⟩ T times ), where T = T aud+T gen−M aud−M text, which ensures the length of ˆy′ is equal to T aud + T gen.4 2Alternatively, we can represent y as a sequence of Unicode bytes [25].",
-       "zh": "ŷ′ = (c′1, c′2, ..., c′Maud, c′′2, ..., c′′Mtext, ⟨F⟩, ..., ⟨F⟩（T 次）)，其中 T = Taud + Tgen − Maud − Mtext，这保证了 ŷ′ 的长度等于 Taud + Tgen。4 2或者，我们也可以将 y 表示为 Unicode 字节序列 [25]。"
+       "original": "ˆy′ = (c′ 1, c′",
+       "zh": "（公式片段：ŷ′ = (c′1, c′2, …（见原文）。）"
       }
      ]
+    },
+    {
+     "id": "eq-2-2-1",
+     "type": "equation",
+     "page": 2,
+     "original": "2, . . . , c′"
+    },
+    {
+     "id": "eq-2-2-2",
+     "type": "equation",
+     "page": 2,
+     "original": "Maud, c′′ 1, c′′"
+    },
+    {
+     "id": "eq-2-2-3",
+     "type": "equation",
+     "page": 2,
+     "original": "2, . . . , c′′"
+    },
+    {
+     "id": "eq-2-2-4",
+     "type": "equation",
+     "page": 2,
+     "original": "Mtext, ⟨F⟩, . . . , ⟨F⟩"
+    },
+    {
+     "id": "eq-2-2-5",
+     "type": "equation",
+     "page": 2,
+     "original": "|"
+    },
+    {
+     "id": "eq-2-2-6",
+     "type": "equation",
+     "page": 2,
+     "original": "{z"
+    },
+    {
+     "id": "eq-2-2-7",
+     "type": "equation",
+     "page": 2,
+     "original": "}"
     },
     {
      "id": "p-2-2-3",
@@ -625,10 +847,16 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-2-2-3-1",
-       "original": "3We assume M ≤T, which is almost always valid. 4To ensure T ≥0, T gen needs to satisfy T gen ≥Maud + Mtext − T aud, which is almost always valid in the TTS scenario.",
-       "zh": "3我们假设 M ≤ T，这在实际中几乎总是成立。4为保证 T ≥ 0，Tgen 需满足 Tgen ≥ Maud + Mtext − Taud，这在 TTS 场景下几乎总是成立。"
+       "original": "T times",
+       "zh": "（公式片段：M_text 个字符后接 ⟨F⟩×T 填充。）"
       }
      ]
+    },
+    {
+     "id": "eq-2-2-8",
+     "type": "equation",
+     "page": 2,
+     "original": "), (2)"
     },
     {
      "id": "p-2-2-4",
@@ -637,11 +865,35 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-2-2-4-1",
+       "original": "where T = T aud+T gen−M aud−M text, which ensures the length of ˆy′ is equal to T aud + T gen.4 2Alternatively, we can represent y as a sequence of Unicode bytes [25].",
+       "zh": "ŷ′ = (c′1, c′2, ..., c′Maud, c′′2, ..., c′′Mtext, ⟨F⟩, ..., ⟨F⟩（T 次）)，其中 T = Taud + Tgen − Maud − Mtext，这保证了 ŷ′ 的长度等于 Taud + Tgen。4 2或者，我们也可以将 y 表示为 Unicode 字节序列 [25]。"
+      }
+     ]
+    },
+    {
+     "id": "p-2-2-5",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-2-2-5-1",
+       "original": "3We assume M ≤T, which is almost always valid. 4To ensure T ≥0, T gen needs to satisfy T gen ≥Maud + Mtext − T aud, which is almost always valid in the TTS scenario.",
+       "zh": "3我们假设 M ≤ T，这在实际中几乎总是成立。4为保证 T ≥ 0，Tgen 需满足 Tgen ≥ Maud + Mtext − Taud，这在 TTS 场景下几乎总是成立。"
+      }
+     ]
+    },
+    {
+     "id": "p-2-2-6",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-2-2-6-1",
        "original": "The mel spectrogram generator then generates mel-filterbank features ˜s based on the learned distribution of P(˜s|[ˆsaud; zgen], ˆy′), where zgen is an all-zero matrix with a shape of D × T gen, and [; ] is a concatenation operation in the dimension of T ∗.",
        "zh": "mel 频谱图生成器随后基于学习到的分布 P(s̃ | [ŝaud; zgen], ŷ′) 生成 mel 滤波器组特征 s̃，其中 zgen 是形状为 D × Tgen 的全零矩阵，[; ] 表示在 T 维度上的拼接操作。"
       },
       {
-       "id": "s-2-2-4-2",
+       "id": "s-2-2-6-2",
        "original": "The generated part of ˜s are then converted to the speech signal based on the vocoder.",
        "zh": "s̃ 中生成的部分随后由声码器转换为语音信号。"
       }
@@ -692,13 +944,19 @@ globalThis.PAPER_2406_18009 = {
      ]
     },
     {
+     "id": "eq-2-3-1",
+     "type": "equation",
+     "page": 2,
+     "original": "LCFM(θ) = Et,q(x1),pt(x|x1) ∥ut(x|x1) −vt(x; θ)∥2 , (3)"
+    },
+    {
      "id": "p-2-3-2",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
        "id": "s-2-3-2-1",
-       "original": "LCFM(θ) = Et,q(x1),pt(x|x1) ∥ut(x|x1) −vt(x; θ)∥2 , where pt is the probability path at time t, ut is the designated vector field for pt, x1 symbolizes the random variable corresponding to the training data, and q is the distribution of the training data.",
+       "original": "where pt is the probability path at time t, ut is the designated vector field for pt, x1 symbolizes the random variable corresponding to the training data, and q is the distribution of the training data.",
        "zh": "LCFM(θ) = E_{t,q(x1),pt(x|x1)} ‖ut(x|x1) − vt(x; θ)‖^2，其中 pt 是时刻 t 的概率路径，ut 是为 pt 指定的向量场，x1 表示训练数据对应的随机变量，q 是训练数据的分布。"
       },
       {
@@ -781,8 +1039,8 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-e2-tts-x1-training-1-1",
-       "original": "E2 TTS X1 - Inference Training target",
-       "zh": "E2 TTS X1 - 推理；训练目标。"
+       "original": "E2 TTS X1 - Inference Training target Masked",
+       "zh": "（图内标签：E2 TTS X1 - Inference；Training target；Masked。）"
       }
      ]
     },
@@ -791,24 +1049,60 @@ globalThis.PAPER_2406_18009 = {
      "type": "equation",
      "page": 3,
      "original": "𝑚⨀Ƹ𝑠"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-flow-matching-transformer-3",
+   "num": null,
+   "level": 2,
+   "page": 3,
+   "title": {
+    "original": "Flow-matching Transformer",
+    "zh": "Flow-matching Transformer"
+   },
+   "blocks": [
     {
-     "id": "p-e2-tts-x1-training-2",
+     "id": "p-flow-matching-transformer-3-1",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-e2-tts-x1-training-2-1",
-       "original": "Model input",
+       "id": "s-flow-matching-transformer-3-1-1",
+       "original": "(Mel spectrogram generator) Model input Masked",
        "zh": "模型输入。"
       }
      ]
     },
     {
-     "id": "eq-e2-tts-x1-training-2",
+     "id": "eq-flow-matching-transformer-3-1",
      "type": "equation",
      "page": 3,
      "original": "(1 −𝑚)⨀Ƹ𝑠"
+    },
+    {
+     "id": "p-flow-matching-transformer-3-2",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-3-2-1",
+       "original": "It’s a good day!",
+       "zh": "（图内文本：It's a good day!）"
+      }
+     ]
+    },
+    {
+     "id": "p-flow-matching-transformer-3-3",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-3-3-1",
+       "original": "2 sec",
+       "zh": "（图内时长标注：2 sec。）"
+      }
+     ]
     }
    ]
   },
@@ -833,112 +1127,196 @@ globalThis.PAPER_2406_18009 = {
        "zh": "丢弃。"
       }
      ]
+    }
+   ]
+  },
+  {
+   "id": "sec-flow-matching-transformer-4",
+   "num": null,
+   "level": 2,
+   "page": 3,
+   "title": {
+    "original": "Flow-matching Transformer",
+    "zh": "Flow-matching Transformer"
+   },
+   "blocks": [
+    {
+     "id": "p-flow-matching-transformer-4-1",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-4-1-1",
+       "original": "(Mel spectrogram generator)",
+       "zh": "（图内模块标签：Mel 频谱生成器。）"
+      }
+     ]
     },
     {
-     "id": "eq-vocoder-2-1",
+     "id": "eq-flow-matching-transformer-4-1",
      "type": "equation",
      "page": 3,
      "original": "𝑧gen"
     },
     {
-     "id": "p-vocoder-2-2",
+     "id": "eq-flow-matching-transformer-4-2",
+     "type": "equation",
+     "page": 3,
+     "original": "ො𝑦′"
+    },
+    {
+     "id": "p-flow-matching-transformer-4-2",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-vocoder-2-2-1",
-       "original": "ො𝑦′ w r u ?",
-       "zh": "ŷ′，w r u ?（图示碎片：转录中的零散字母。）"
+       "id": "s-flow-matching-transformer-4-2-1",
+       "original": "H o w a r e y o u",
+       "zh": "（图内字符序列示意：H o w a r e y o u ?）"
       }
      ]
     },
     {
-     "id": "p-vocoder-2-3",
+     "id": "eq-flow-matching-transformer-4-3",
+     "type": "equation",
+     "page": 3,
+     "original": "?"
+    },
+    {
+     "id": "p-flow-matching-transformer-4-3",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-vocoder-2-3-1",
+       "id": "s-flow-matching-transformer-4-3-1",
        "original": "<F> <F> <F> <F> <F> <F> <F> <F> <F> <F> <F> <F> <F> <F>",
        "zh": "<F> <F> <F> <F> <F> <F> <F> <F> <F> <F> <F> <F> <F> <F>（图示填充 token 行。）"
       }
      ]
     },
     {
-     "id": "eq-vocoder-2-2",
+     "id": "eq-flow-matching-transformer-4-4",
      "type": "equation",
      "page": 3,
      "original": "ො𝑦"
     },
     {
-     "id": "p-vocoder-2-4",
+     "id": "p-flow-matching-transformer-4-4",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-vocoder-2-4-1",
-       "original": "Audio mel spectrogram Ƹ𝑠 Transcription of the masked region of the audio 𝑦 How are you?",
-       "zh": "音频 mel 频谱图（ŝ），音频被掩码区域的转录（y），\"How are you?\"（图注碎片。）"
+       "id": "s-flow-matching-transformer-4-4-1",
+       "original": "Filler tokens Audio mel spectrogram Ƹ𝑠 Transcription of the masked region of the audio 𝑦 How are you?",
+       "zh": "\"How are you?\"（图示示例转录文字。）"
       }
      ]
     },
     {
-     "id": "p-vocoder-2-5",
+     "id": "p-flow-matching-transformer-4-5",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-vocoder-2-5-1",
-       "original": "Training data I t ‘ s g <F> <F> <F> <F> <F> <F> <F> <F> <F> <F> Audio mel spectrogram Ƹ𝑠aud Audio prompt Text prompt 𝑦text Duration",
-       "zh": "训练数据：I t ' s g <F> <F> <F> <F> <F> <F> <F> <F> <F> <F> 音频 mel 频谱图（ŝaud）；音频提示、文本提示 ytext、时长（图注碎片。）"
+       "id": "s-flow-matching-transformer-4-5-1",
+       "original": "Training data I t",
+       "zh": "训练数据。"
       }
      ]
     },
     {
-     "id": "fig-vocoder-2-1",
+     "id": "eq-flow-matching-transformer-4-5",
+     "type": "equation",
+     "page": 3,
+     "original": "‘"
+    },
+    {
+     "id": "p-flow-matching-transformer-4-6",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-4-6-1",
+       "original": "s a g o o d d a y",
+       "zh": "（图内字符序列示意：I t ‘ s a g o o d d a y !）"
+      }
+     ]
+    },
+    {
+     "id": "eq-flow-matching-transformer-4-6",
+     "type": "equation",
+     "page": 3,
+     "original": "!"
+    },
+    {
+     "id": "p-flow-matching-transformer-4-7",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-4-7-1",
+       "original": "<F> <F> <F> <F> <F> <F> <F> <F> <F> <F> Filler tokens Audio mel spectrogram Ƹ𝑠aud It’s a good day!",
+       "zh": "（图内标签：⟨F⟩×10 填充 token；音频 mel 频谱图 ŝ_aud；「It's a good day!」。）"
+      }
+     ]
+    },
+    {
+     "id": "p-flow-matching-transformer-4-8",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-flow-matching-transformer-4-8-1",
+       "original": "2 sec Audio prompt Text prompt 𝑦text Duration",
+       "zh": "（图内标签：2 sec；Audio prompt；Text prompt y_text；Duration。）"
+      }
+     ]
+    },
+    {
+     "id": "fig-flow-matching-transformer-4-1",
      "type": "figure_caption",
      "page": 3,
      "original": "Fig. 2. An overview of the training (left) and the inference (right) processes of E2 TTS X1.",
      "zh": "图 2. E2 TTS X1 训练（左）与推理（右）过程总览。"
     },
     {
-     "id": "p-vocoder-2-6",
+     "id": "p-flow-matching-transformer-4-9",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-vocoder-2-6-1",
+       "id": "s-flow-matching-transformer-4-9-1",
        "original": "I enjoyed a day in Besiktas, Istanbul.",
        "zh": "\"I enjoyed a day in Besiktas, Istanbul.\"（示例原文，意为\"我在伊斯坦布尔的贝西克塔斯度过了愉快的一天\"。）"
       }
      ]
     },
     {
-     "id": "p-vocoder-2-7",
+     "id": "p-flow-matching-transformer-4-10",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-vocoder-2-7-1",
+       "id": "s-flow-matching-transformer-4-10-1",
        "original": "I enjoyed a day in (B EH1 SH IH0 K T AA0 SH), (IH0 S T AA1 N B UH0 L).",
        "zh": "\"I enjoyed a day in (B EH1 SH IH0 K T AA0 SH), (IH0 S T AA1 N B UH0 L).\"（其中括号内为音素序列。）"
       }
      ]
     },
     {
-     "id": "fig-vocoder-2-2",
+     "id": "fig-flow-matching-transformer-4-2",
      "type": "figure_caption",
      "page": 3,
      "original": "Fig. 3. Example of the transcription for E2 TTS X2 where words are replaced with phoneme sequences enclosed in parentheses.",
      "zh": "图 3. E2 TTS X2 的转录示例：单词被替换为括号包裹的音素序列。"
     },
     {
-     "id": "p-vocoder-2-8",
+     "id": "p-flow-matching-transformer-4-11",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-vocoder-2-8-1",
+       "id": "s-flow-matching-transformer-4-11-1",
        "original": "trained to output a vector field vt with the conditional flow-matching objective LCFM.",
        "zh": "被训练为以条件流匹配目标 LCFM 输出向量场 vt。"
       }
@@ -1027,10 +1405,40 @@ globalThis.PAPER_2406_18009 = {
       },
       {
        "id": "s-2-5-1-5",
-       "original": "During inference, the extended character sequence ˆy′ is formed without yaud, namely, ˆy′ = (c′′ 2, . . . , c′′ Mtext, ⟨F⟩, . . . , ⟨F⟩ T times ).",
-       "zh": "推理时，扩展字符序列 ŷ′ 的构造不包含 yaud，即 ŷ′ = (c′′2, ..., c′′Mtext, ⟨F⟩, ..., ⟨F⟩（T 次）)。"
+       "original": "During inference, the extended character sequence ˆy′ is formed without yaud, namely, ˆy′ = (c′′ 1, c′′",
+       "zh": "推理时不含 y_aud，直接构造扩展字符序列 ŷ′，即 ŷ′ = (c′′1, c′′2, …,（后接填充）。"
       }
      ]
+    },
+    {
+     "id": "eq-2-5-1",
+     "type": "equation",
+     "page": 3,
+     "original": "2, . . . , c′′"
+    },
+    {
+     "id": "eq-2-5-2",
+     "type": "equation",
+     "page": 3,
+     "original": "Mtext, ⟨F⟩, . . . , ⟨F⟩"
+    },
+    {
+     "id": "eq-2-5-3",
+     "type": "equation",
+     "page": 3,
+     "original": "|"
+    },
+    {
+     "id": "eq-2-5-4",
+     "type": "equation",
+     "page": 3,
+     "original": "{z"
+    },
+    {
+     "id": "eq-2-5-5",
+     "type": "equation",
+     "page": 3,
+     "original": "}"
     },
     {
      "id": "p-2-5-2",
@@ -1039,10 +1447,16 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-2-5-2-1",
-       "original": "The rest of the procedure remains the same as in the basic E2 TTS.",
-       "zh": "其余流程与基础版 E2 TTS 保持一致。"
+       "original": "T times",
+       "zh": "（公式片段：M_text 个字符后接 ⟨F⟩×T 填充。）"
       }
      ]
+    },
+    {
+     "id": "eq-2-5-6",
+     "type": "equation",
+     "page": 3,
+     "original": "). (4)"
     },
     {
      "id": "p-2-5-3",
@@ -1051,23 +1465,8 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-2-5-3-1",
-       "original": "The transcription of the masked region of the training audio can be obtained in several ways.",
-       "zh": "训练音频被掩码区域的转录可以通过几种方式获得。"
-      },
-      {
-       "id": "s-2-5-3-2",
-       "original": "One method is to simply apply automatic speech recognition (ASR) to the masked region during training, which is straightforward but costly.",
-       "zh": "一种方法是在训练时对被掩码区域直接应用自动语音识别（ASR），这很直接但成本较高。"
-      },
-      {
-       "id": "s-2-5-3-3",
-       "original": "In our experiment, we employed the Montreal Forced Aligner [28] to determine the start and end times of words within each training data sample.",
-       "zh": "在我们的实验中，我们使用 Montreal Forced Aligner [28] 来确定每个训练数据样本中各单词的起止时间。"
-      },
-      {
-       "id": "s-2-5-3-4",
-       "original": "The masked region was determined in such a way that we ensured not to cut the word in the middle.",
-       "zh": "掩码区域的选取保证不会把单词从中间切断。"
+       "original": "The rest of the procedure remains the same as in the basic E2 TTS.",
+       "zh": "其余流程与基础版 E2 TTS 保持一致。"
       }
      ]
     },
@@ -1078,18 +1477,23 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-2-5-4-1",
-       "original": "2.5.2.",
-       "zh": "2.5.2."
+       "original": "The transcription of the masked region of the training audio can be obtained in several ways.",
+       "zh": "训练音频被掩码区域的转录可以通过几种方式获得。"
       },
       {
        "id": "s-2-5-4-2",
-       "original": "Extension 2: Enabling explicit indication of pronunciation for parts of words in a sentence In certain scenarios, users want to specify the pronunciation of a specific word such as unique foreign names.",
-       "zh": "扩展 2：支持显式指定句中部分单词的发音。在某些场景中，用户希望指定特定单词（例如罕见的外国人名）的发音。"
+       "original": "One method is to simply apply automatic speech recognition (ASR) to the masked region during training, which is straightforward but costly.",
+       "zh": "一种方法是在训练时对被掩码区域直接应用自动语音识别（ASR），这很直接但成本较高。"
       },
       {
        "id": "s-2-5-4-3",
-       "original": "Retraining the model to accommodate such new words is both expensive and time-consuming.",
-       "zh": "为适配这类新词而重新训练模型既昂贵又耗时。"
+       "original": "In our experiment, we employed the Montreal Forced Aligner [28] to determine the start and end times of words within each training data sample.",
+       "zh": "在我们的实验中，我们使用 Montreal Forced Aligner [28] 来确定每个训练数据样本中各单词的起止时间。"
+      },
+      {
+       "id": "s-2-5-4-4",
+       "original": "The masked region was determined in such a way that we ensured not to cut the word in the middle.",
+       "zh": "掩码区域的选取保证不会把单词从中间切断。"
       }
      ]
     },
@@ -1100,23 +1504,18 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-2-5-5-1",
-       "original": "To tackle this challenge, we introduce another extension that enables us to indicate the pronunciation of a word during inference.",
-       "zh": "为应对这一挑战，我们引入了另一个扩展，使我们能够在推理时指定单词的发音。"
+       "original": "2.5.2.",
+       "zh": "2.5.2."
       },
       {
        "id": "s-2-5-5-2",
-       "original": "In this extension, referred to as E2 TTS X2, we occasionally substitute a word in y with a phoneme sequence enclosed in parentheses during training, as depicted in Fig. 3.",
-       "zh": "在这个被称为 E2 TTS X2 的扩展中，我们在训练时偶尔将 y 中的某个单词替换为括号包裹的音素序列，如 Fig. 3 所示。"
+       "original": "Extension 2: Enabling explicit indication of pronunciation for parts of words in a sentence In certain scenarios, users want to specify the pronunciation of a specific word such as unique foreign names.",
+       "zh": "扩展 2：支持显式指定句中部分单词的发音。在某些场景中，用户希望指定特定单词（例如罕见的外国人名）的发音。"
       },
       {
        "id": "s-2-5-5-3",
-       "original": "In our implementation, we replaced the word in y with the phoneme sequence from the CMU pronouncing dictionary [29] with a 15% probability.",
-       "zh": "在我们的实现中，我们以 15% 的概率将 y 中的单词替换为来自 CMU 发音词典 [29] 的音素序列。"
-      },
-      {
-       "id": "s-2-5-5-4",
-       "original": "During inference, we simply replace the target word with phoneme sequences enclosed in parentheses.",
-       "zh": "推理时，我们只需将目标单词替换为括号包裹的音素序列即可。"
+       "original": "Retraining the model to accommodate such new words is both expensive and time-consuming.",
+       "zh": "为适配这类新词而重新训练模型既昂贵又耗时。"
       }
      ]
     },
@@ -1127,11 +1526,38 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-2-5-6-1",
+       "original": "To tackle this challenge, we introduce another extension that enables us to indicate the pronunciation of a word during inference.",
+       "zh": "为应对这一挑战，我们引入了另一个扩展，使我们能够在推理时指定单词的发音。"
+      },
+      {
+       "id": "s-2-5-6-2",
+       "original": "In this extension, referred to as E2 TTS X2, we occasionally substitute a word in y with a phoneme sequence enclosed in parentheses during training, as depicted in Fig. 3.",
+       "zh": "在这个被称为 E2 TTS X2 的扩展中，我们在训练时偶尔将 y 中的某个单词替换为括号包裹的音素序列，如 Fig. 3 所示。"
+      },
+      {
+       "id": "s-2-5-6-3",
+       "original": "In our implementation, we replaced the word in y with the phoneme sequence from the CMU pronouncing dictionary [29] with a 15% probability.",
+       "zh": "在我们的实现中，我们以 15% 的概率将 y 中的单词替换为来自 CMU 发音词典 [29] 的音素序列。"
+      },
+      {
+       "id": "s-2-5-6-4",
+       "original": "During inference, we simply replace the target word with phoneme sequences enclosed in parentheses.",
+       "zh": "推理时，我们只需将目标单词替换为括号包裹的音素序列即可。"
+      }
+     ]
+    },
+    {
+     "id": "p-2-5-7",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-2-5-7-1",
        "original": "It’s important to note that y is still a simple sequence of characters, and whether the character represents a word or a phoneme is solely determined by the existence of parentheses and their content.",
        "zh": "需要注意的是，y 仍然是一个简单的字符序列，某个字符表示的是单词还是音素，完全由括号是否存在及其内容决定。"
       },
       {
-       "id": "s-2-5-6-2",
+       "id": "s-2-5-7-2",
        "original": "It’s also noteworthy that punctuation marks surrounding the word are retained during replacement, which allows the model to utilize these punctuation marks even when the word is replaced with phoneme sequences.",
        "zh": "同样值得注意的是，替换时单词周围的标点符号会被保留，这使得即使单词被替换为音素序列，模型仍然能利用这些标点符号。"
       }
@@ -1423,53 +1849,257 @@ globalThis.PAPER_2406_18009 = {
      "page": 4,
      "original": "Table 1. Objective results for LibriSpeech-PC test-clean evaluation set. WER is expressed in percentage. † Our reproduction. LL, LH, and PP stand for Librilight, Libriheavy, and Proprietary, respectively.",
      "zh": "Table 1. LibriSpeech-PC test-clean 评测集的客观结果。WER 以百分比表示。† 我们的复现。LL、LH、PP 分别表示 Librilight、Libriheavy 和专有数据（Proprietary）。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-id",
+   "num": null,
+   "level": 2,
+   "page": 4,
+   "title": {
+    "original": "ID",
+    "zh": "ID"
+   },
+   "blocks": [
     {
-     "id": "p-3-3-5",
+     "id": "p-id-1",
      "type": "paragraph",
      "page": 4,
      "sentences": [
       {
-       "id": "s-3-3-5-1",
-       "original": "Data (hours) Init WER↓SIM-o↑ (GT) Ground Truth - - 2.0 0.695 (B1) VALL-E [8] LL (60K) 4.9 0.500 (B2) NaturalSpeech 3 [15] LL (60K) 2.6 0.632 LL (60K) 2.1 0.658 2.2 0.667 Pretrain [34] 2.2 0.695 2.0 0.675 Pretrain [34] 1.9 0.708 PP (200K) 1.9 0.707",
-       "zh": "数据（小时数）、初始化、WER↓、SIM-o↑。（GT）Ground Truth - - 2.0 0.695。（B1）VALL-E [8] LL (60K) 4.9 0.500。（B2）NaturalSpeech 3 [15] LL (60K) 2.6 0.632。LL (60K) 2.1 0.658、2.2 0.667。Pretrain [34] 2.2 0.695、2.0 0.675。Pretrain [34] 1.9 0.708。PP (200K) 1.9 0.707。"
+       "id": "s-id-1-1",
+       "original": "Model Data (hours) Init WER↓SIM-o↑ (GT) Ground Truth",
+       "zh": "表头：Model / Data (hours) / Init / WER↓ / SIM-o↑——(GT) Ground Truth（后续照原文）。"
       }
      ]
     },
     {
-     "id": "tab-3-3-2",
+     "id": "eq-id-1",
+     "type": "equation",
+     "page": 4,
+     "original": "- - 2.0 0.695"
+    },
+    {
+     "id": "eq-id-2",
+     "type": "equation",
+     "page": 4,
+     "original": "(B1) VALL-E [8] LL (60K) Random"
+    },
+    {
+     "id": "eq-id-3",
+     "type": "equation",
+     "page": 4,
+     "original": "4.9 0.500"
+    },
+    {
+     "id": "eq-id-4",
+     "type": "equation",
+     "page": 4,
+     "original": "(B2) NaturalSpeech 3 [15] LL (60K) Random"
+    },
+    {
+     "id": "eq-id-5",
+     "type": "equation",
+     "page": 4,
+     "original": "2.6 0.632"
+    },
+    {
+     "id": "eq-id-6",
+     "type": "equation",
+     "page": 4,
+     "original": "(B3) Voicebox [18]† LL (60K) Random"
+    },
+    {
+     "id": "eq-id-7",
+     "type": "equation",
+     "page": 4,
+     "original": "2.1 0.658"
+    },
+    {
+     "id": "eq-id-8",
+     "type": "equation",
+     "page": 4,
+     "original": "(B4) Voicebox [18]† LH (50K) Random"
+    },
+    {
+     "id": "eq-id-9",
+     "type": "equation",
+     "page": 4,
+     "original": "2.2 0.667"
+    },
+    {
+     "id": "eq-id-10",
+     "type": "equation",
+     "page": 4,
+     "original": "(B5) Voicebox [18]† LH (50K) Pretrain [34]"
+    },
+    {
+     "id": "eq-id-11",
+     "type": "equation",
+     "page": 4,
+     "original": "2.2 0.695"
+    },
+    {
+     "id": "eq-id-12",
+     "type": "equation",
+     "page": 4,
+     "original": "(P1) E2 TTS LH (50K) Random"
+    },
+    {
+     "id": "eq-id-13",
+     "type": "equation",
+     "page": 4,
+     "original": "2.0 0.675"
+    },
+    {
+     "id": "eq-id-14",
+     "type": "equation",
+     "page": 4,
+     "original": "(P2) E2 TTS LH (50K) Pretrain [34]"
+    },
+    {
+     "id": "eq-id-15",
+     "type": "equation",
+     "page": 4,
+     "original": "1.9 0.708"
+    },
+    {
+     "id": "eq-id-16",
+     "type": "equation",
+     "page": 4,
+     "original": "(P3) E2 TTS PP (200K) Random"
+    },
+    {
+     "id": "eq-id-17",
+     "type": "equation",
+     "page": 4,
+     "original": "1.9 0.707"
+    },
+    {
+     "id": "tab-id-1",
      "type": "table_caption",
      "page": 4,
      "original": "Table 2. Subjective results for LibriSpeech-PC test-clean evaluation set. † Our reproduction.",
      "zh": "Table 2. LibriSpeech-PC test-clean 评测集的主观结果。† 我们的复现。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-id-2",
+   "num": null,
+   "level": 2,
+   "page": 4,
+   "title": {
+    "original": "ID",
+    "zh": "ID"
+   },
+   "blocks": [
     {
-     "id": "p-3-3-6",
+     "id": "p-id-2-1",
      "type": "paragraph",
      "page": 4,
      "sentences": [
       {
-       "id": "s-3-3-6-1",
-       "original": "CMOS↑ SMOS↑ (GT) Ground Truth 0.00 (B2) NaturalSpeech 3 [15] (B4) Voicebox [18]† For the subjective assessments, we conducted two tests: the Comparative Mean Opinion Score (CMOS) and the Speaker Similarity Mean Opinion Score (SMOS).",
-       "zh": "CMOS↑、SMOS↑。（GT）Ground Truth 0.00。（B2）NaturalSpeech 3 [15]。（B4）Voicebox [18]†。在主观评测中，我们进行了两项测试：比较平均意见分（CMOS）和说话人相似度平均意见分（SMOS）。"
+       "id": "s-id-2-1-1",
+       "original": "Model CMOS↑ SMOS↑ (GT) Ground Truth",
+       "zh": "（表：Model × CMOS↑ × SMOS↑——(GT) Ground Truth 0.00/3.91±0.13；(B2) NaturalSpeech 3 [15] -0.98/4.76±0.06；(B4) Voicebox [18]† -0.78/4.73±0.06；(P1) E2 TTS -0.14/4.66±0.07；(P2) E2 TTS -0.05/4.65±0.08；(P3) E2 TTS -0.18/4.64±0.08。）主观评测包含两项：比较平均意见分（CMOS）与说话人相似度平均意见分（SMOS）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-id-2-1",
+     "type": "equation",
+     "page": 4,
+     "original": "0.00 3.91±0.13"
+    },
+    {
+     "id": "eq-id-2-2",
+     "type": "equation",
+     "page": 4,
+     "original": "(B2) NaturalSpeech 3 [15]"
+    },
+    {
+     "id": "eq-id-2-3",
+     "type": "equation",
+     "page": 4,
+     "original": "-0.98 4.76±0.06"
+    },
+    {
+     "id": "eq-id-2-4",
+     "type": "equation",
+     "page": 4,
+     "original": "(B4) Voicebox [18]†"
+    },
+    {
+     "id": "eq-id-2-5",
+     "type": "equation",
+     "page": 4,
+     "original": "-0.78 4.73±0.06"
+    },
+    {
+     "id": "eq-id-2-6",
+     "type": "equation",
+     "page": 4,
+     "original": "(P1) E2 TTS"
+    },
+    {
+     "id": "eq-id-2-7",
+     "type": "equation",
+     "page": 4,
+     "original": "-0.14 4.66±0.07"
+    },
+    {
+     "id": "eq-id-2-8",
+     "type": "equation",
+     "page": 4,
+     "original": "(P2) E2 TTS"
+    },
+    {
+     "id": "eq-id-2-9",
+     "type": "equation",
+     "page": 4,
+     "original": "-0.05 4.65±0.08"
+    },
+    {
+     "id": "eq-id-2-10",
+     "type": "equation",
+     "page": 4,
+     "original": "(P3) E2 TTS"
+    },
+    {
+     "id": "eq-id-2-11",
+     "type": "equation",
+     "page": 4,
+     "original": "-0.18 4.64±0.08"
+    },
+    {
+     "id": "p-id-2-2",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-id-2-2-1",
+       "original": "For the subjective assessments, we conducted two tests: the Comparative Mean Opinion Score (CMOS) and the Speaker Similarity Mean Opinion Score (SMOS).",
+       "zh": "（表：Model × CMOS↑ × SMOS↑——(GT) Ground Truth 0.00/3.91±0.13；(B2) NaturalSpeech 3 [15] -0.98/4.76±0.06；(B4) Voicebox [18]† -0.78/4.73±0.06；(P1) E2 TTS -0.14/4.66±0.07；(P2) E2 TTS -0.05/4.65±0.08；(P3) E2 TTS -0.18/4.64±0.08。）主观评测包含两项：比较平均意见分（CMOS）与说话人相似度平均意见分（SMOS）。"
       },
       {
-       "id": "s-3-3-6-2",
+       "id": "s-id-2-2-2",
        "original": "We evaluated 39 samples for both tests, with one sample per speaker from our test-clean set.",
        "zh": "两项测试各评测 39 个样本，每个样本来自我们 test-clean 集中的一位说话人。"
       },
       {
-       "id": "s-3-3-6-3",
+       "id": "s-id-2-2-3",
        "original": "Each sample was assessed by 12 Native English evaluators.",
        "zh": "每个样本由 12 位以英语为母语的评测者评分。"
       },
       {
-       "id": "s-3-3-6-4",
+       "id": "s-id-2-2-4",
        "original": "In the CMOS test [15], evaluators were shown the ground-truth sample and the generated sample side-by-side without knowing which was the ground-truth, and were asked to rate the naturalness on a 7-point scale (from -3 to 3), where a negative value indicates a preference for the ground-truth and a positive value indicates the opposite.",
        "zh": "在 CMOS 测试 [15] 中，评测者并排看到真实样本与生成样本，但不知道哪个是真实样本，并被要求在 7 分制（-3 到 3）上评价自然度，负值表示偏好真实样本，正值表示相反。"
       },
       {
-       "id": "s-3-3-6-5",
+       "id": "s-id-2-2-5",
        "original": "In the SMOS test, evaluators were presented with the audio prompt and the generated sample, and asked to rate the speaker similarity on a scale of 1 (not similar at all) to 5 (identical), with increments of 1.",
        "zh": "在 SMOS 测试中，评测者看到音频提示和生成样本，并被要求按 1（完全不相似）到 5（完全相同）的尺度评价说话人相似度，步长为 1。"
       }
@@ -1522,34 +2152,159 @@ globalThis.PAPER_2406_18009 = {
       {
        "id": "s-3-4-2-1",
        "original": "Table 1 presents the objective evaluation results for the baseline and E2 TTS models across various configurations.",
-       "zh": "Table 1 展示了基线和 E2 TTS 模型在各种配置下的客观评测结果。"
+       "zh": "表 1 给出基线与 E2 TTS 模型在多种配置下的客观评测结果。"
       },
       {
        "id": "s-3-4-2-2",
        "original": "By comparing the (B4) and (P1) systems, we observe that the E2 TTS model achieved better WER and SIM-o than the Voicebox model when both were trained on the Libriheavy dataset.",
-       "zh": "通过比较 (B4) 与 (P1) 系统，我们观察到：当两者都在 Libriheavy 数据集上训练时，E2 TTS 模型取得了比 Voicebox 模型更好的 WER 和 SIM-o。"
+       "zh": "对比 (B4) 与 (P1) 系统可见，同样在 Libriheavy 数据集上训练时，E2 TTS 的 WER 与 SIM-o 优于 Voicebox。"
       },
       {
        "id": "s-3-4-2-3",
        "original": "This trend holds even when we initialize the model with unsupervised pre-training [34] ((B5) vs. (P2)), where the (P2) system achieved the best WER (1.9%) and SIM-o (0.708) which are better than those of the ground-truth audio.",
-       "zh": "即使我们用无监督预训练 [34] 初始化模型，这一趋势依然成立（(B5) 对 (P2)），其中 (P2) 系统取得了最佳 WER（1.9%）和 SIM-o（0.708），优于真实音频本身的指标。"
+       "zh": "即使用无监督预训练初始化 [34]（(B5) vs. (P2)），这一趋势依然成立：(P2) 系统取得最佳 WER (1.9%) 与 SIM-o (0.708)，甚至优于真实音频。"
       },
       {
        "id": "s-3-4-2-4",
        "original": "Finally, by using larger training data (P3), E2 TTS achieved the same best WER (1.9%) and the second best SIM-o (0.707) even when the model is trained from scratch, showcasing the scalability of E2 TTS.",
-       "zh": "最后，通过使用更大的训练数据 (P3)，即使模型从头训练，E2 TTS 仍取得了相同的最佳 WER（1.9%）和第二好的 SIM-o（0.707），展示了 E2 TTS 的可扩展性。"
+       "zh": "最后，使用更大训练数据 (P3) 时，即使从头训练，E2 TTS 也取得相同的最佳 WER (1.9%) 与第二好的 SIM-o (0.707)，展示了其可扩展性。"
+      },
+      {
+       "id": "s-3-4-2-5",
+       "original": "(B4) - Voicebox (P1) - E2 TTS",
+       "zh": "（图例：(B4) - Voicebox / (P1) - E2 TTS。）"
       }
      ]
     },
     {
+     "id": "eq-3-4-1",
+     "type": "equation",
+     "page": 4,
+     "original": "16% 12%"
+    },
+    {
+     "id": "eq-3-4-2",
+     "type": "equation",
+     "page": 4,
+     "original": "WER"
+    },
+    {
+     "id": "eq-3-4-3",
+     "type": "equation",
+     "page": 4,
+     "original": "8% 4% 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%"
+    },
+    {
+     "id": "eq-3-4-4",
+     "type": "equation",
+     "page": 4,
+     "original": "Training Progress"
+    },
+    {
+     "id": "eq-3-4-5",
+     "type": "equation",
+     "page": 4,
+     "original": "0.74 0.70 0.66"
+    },
+    {
+     "id": "eq-3-4-6",
+     "type": "equation",
+     "page": 4,
+     "original": "SIM-o"
+    },
+    {
+     "id": "eq-3-4-7",
+     "type": "equation",
+     "page": 4,
+     "original": "0.62"
+    },
+    {
+     "id": "eq-3-4-8",
+     "type": "equation",
+     "page": 4,
+     "original": "(B4) - Voicebox (P1) - E2 TTS"
+    },
+    {
+     "id": "eq-3-4-9",
+     "type": "equation",
+     "page": 4,
+     "original": "0.58 0.54 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%"
+    },
+    {
      "id": "p-3-4-3",
      "type": "paragraph",
-     "page": 5,
+     "page": 4,
      "sentences": [
       {
        "id": "s-3-4-3-1",
-       "original": "0.74 0.70 0.66 0.62 0.58 0.54 0.74 0.70 0.66 0.62 0.58 0.54",
-       "zh": "0.74 0.70 0.66 0.62 0.58 0.54 0.74 0.70 0.66 0.62 0.58 0.54（Fig. 4 坐标轴刻度碎片。）"
+       "original": "Training Progress (B5) - Voicebox (P2) - E2 TTS",
+       "zh": "（图横轴：Training Progress（训练进度）；图例：(B5) - Voicebox / (P2) - E2 TTS。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-4-10",
+     "type": "equation",
+     "page": 4,
+     "original": "16% 12%"
+    },
+    {
+     "id": "eq-3-4-11",
+     "type": "equation",
+     "page": 4,
+     "original": "WER"
+    },
+    {
+     "id": "eq-3-4-12",
+     "type": "equation",
+     "page": 4,
+     "original": "8% 4% 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%"
+    },
+    {
+     "id": "eq-3-4-13",
+     "type": "equation",
+     "page": 4,
+     "original": "Training Progress"
+    },
+    {
+     "id": "eq-3-4-14",
+     "type": "equation",
+     "page": 4,
+     "original": "0.74 0.70 0.66"
+    },
+    {
+     "id": "eq-3-4-15",
+     "type": "equation",
+     "page": 4,
+     "original": "SIM-o"
+    },
+    {
+     "id": "eq-3-4-16",
+     "type": "equation",
+     "page": 4,
+     "original": "0.62"
+    },
+    {
+     "id": "eq-3-4-17",
+     "type": "equation",
+     "page": 4,
+     "original": "(B5) - Voicebox (P2) - E2 TTS"
+    },
+    {
+     "id": "eq-3-4-18",
+     "type": "equation",
+     "page": 4,
+     "original": "0.58 0.54 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%"
+    },
+    {
+     "id": "p-3-4-4",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-3-4-4-1",
+       "original": "Training Progress",
+       "zh": "（图横轴：Training Progress（训练进度）。）"
       }
      ]
     },
@@ -1566,120 +2321,240 @@ globalThis.PAPER_2406_18009 = {
      "page": 5,
      "original": "Table 3. Comparison between the basic E2 TTS and E2 TTS X1. While the basic E2 TTS requires the transcription of the audio prompt during inference, E2 TTS X1 does not require it. WER is expressed in percentage.",
      "zh": "Table 3. 基础版 E2 TTS 与 E2 TTS X1 的比较。基础版 E2 TTS 在推理时需要音频提示的转录，E2 TTS X1 则不需要。WER 以百分比表示。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-id-3",
+   "num": null,
+   "level": 2,
+   "page": 5,
+   "title": {
+    "original": "ID",
+    "zh": "ID"
+   },
+   "blocks": [
     {
-     "id": "p-3-4-4",
+     "id": "p-id-3-1",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-3-4-4-1",
-       "original": "Init WER↓ SIM-o↑ 2.0 0.675 1.9 0.708 2.0 0.664 2.0 0.705 It is noteworthy that E2 TTS achieved superior performance compared to all strong baselines, including VALL-E, NaturalSpeech 3, and Voicebox, despite its extremely simple framework.",
-       "zh": "初始化、WER↓、SIM-o↑：2.0 0.675、1.9 0.708、2.0 0.664、2.0 0.705。值得注意的是，尽管框架极其简单，E2 TTS 的表现优于所有强基线，包括 VALL-E、NaturalSpeech 3 和 Voicebox。"
+       "id": "s-id-3-1-1",
+       "original": "Model Init WER↓ SIM-o↑ (P1) E2 TTS Random",
+       "zh": "（表：Model × Init × WER↓ × SIM-o↑——(P1) E2 TTS 随机初始化 2.0/0.675；(P2) E2 TTS 预训练 [34] 1.9/0.708；(P1-X1) E2 TTS X1 随机 2.0/0.664；(P2-X1) E2 TTS X1 预训练 [34] 2.0/0.705。）值得注意的是，尽管框架极其简单，E2 TTS 仍超过了 VALL-E、NaturalSpeech 3、Voicebox 等所有强基线。"
       }
      ]
     },
     {
-     "id": "p-3-4-5",
+     "id": "eq-id-3-1",
+     "type": "equation",
+     "page": 5,
+     "original": "2.0 0.675"
+    },
+    {
+     "id": "eq-id-3-2",
+     "type": "equation",
+     "page": 5,
+     "original": "(P2) E2 TTS Pre-trained [34]"
+    },
+    {
+     "id": "eq-id-3-3",
+     "type": "equation",
+     "page": 5,
+     "original": "1.9 0.708"
+    },
+    {
+     "id": "eq-id-3-4",
+     "type": "equation",
+     "page": 5,
+     "original": "(P1-X1) E2 TTS X1 Random"
+    },
+    {
+     "id": "eq-id-3-5",
+     "type": "equation",
+     "page": 5,
+     "original": "2.0 0.664"
+    },
+    {
+     "id": "eq-id-3-6",
+     "type": "equation",
+     "page": 5,
+     "original": "(P2-X1) E2 TTS X1 Pre-trained [34]"
+    },
+    {
+     "id": "eq-id-3-7",
+     "type": "equation",
+     "page": 5,
+     "original": "2.0 0.705"
+    },
+    {
+     "id": "p-id-3-2",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-3-4-5-1",
+       "id": "s-id-3-2-1",
+       "original": "It is noteworthy that E2 TTS achieved superior performance compared to all strong baselines, including VALL-E, NaturalSpeech 3, and Voicebox, despite its extremely simple framework.",
+       "zh": "（表：Model × Init × WER↓ × SIM-o↑——(P1) E2 TTS 随机初始化 2.0/0.675；(P2) E2 TTS 预训练 [34] 1.9/0.708；(P1-X1) E2 TTS X1 随机 2.0/0.664；(P2-X1) E2 TTS X1 预训练 [34] 2.0/0.705。）值得注意的是，尽管框架极其简单，E2 TTS 仍超过了 VALL-E、NaturalSpeech 3、Voicebox 等所有强基线。"
+      }
+     ]
+    },
+    {
+     "id": "p-id-3-3",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-id-3-3-1",
        "original": "Table 2 illustrated the subjective evaluation results for NaturalSpeech 3, Voicebox, and E2 TTS.",
        "zh": "Table 2 展示了 NaturalSpeech 3、Voicebox 和 E2 TTS 的主观评测结果。"
       },
       {
-       "id": "s-3-4-5-2",
+       "id": "s-id-3-3-2",
        "original": "Firstly, all variants of E2 TTS, from (P1) to (P3), showed a better CMOS score compared to NaturalSpeech 3 and Voicebox.",
        "zh": "首先，E2 TTS 的所有变体（从 (P1) 到 (P3)）的 CMOS 分数都优于 NaturalSpeech 3 和 Voicebox。"
       },
       {
-       "id": "s-3-4-5-3",
+       "id": "s-id-3-3-3",
        "original": "In particular, the (P2) model achieved a CMOS score of -0.05, which is considered to have a level of naturalness indistinguishable from the ground truth [15, 24].7 The comparison between (B4) and (P1) suggests that the use of phoneme alignment was the major bottleneck in achieving better naturalness.",
        "zh": "特别是，(P2) 模型取得了 -0.05 的 CMOS 分数，这被认为达到了与真实样本难以区分的自然度水平 [15, 24]。7 (B4) 与 (P1) 的比较表明，使用音素对齐是实现更高自然度的主要瓶颈。"
       },
       {
-       "id": "s-3-4-5-4",
+       "id": "s-id-3-3-4",
        "original": "Regarding speaker similarity, all the models we tested showed a better SMOS compared to the ground truth, a phenomenon also observed in NaturalSpeech 3 [15].8 Among the tested systems, E2 TTS achieved a comparable SMOS to Voicebox and NaturalSpeech 3.",
        "zh": "关于说话人相似度，我们测试的所有模型的 SMOS 都优于真实样本，NaturalSpeech 3 [15] 中也观察到了这一现象。8 在所测系统中，E2 TTS 取得了与 Voicebox 和 NaturalSpeech 3 相当的 SMOS。"
       }
      ]
     },
     {
-     "id": "p-3-4-6",
+     "id": "p-id-3-4",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-3-4-6-1",
+       "id": "s-id-3-4-1",
        "original": "Overall, E2 TTS demonstrated a robust zero-shot TTS capability that is either superior or comparable to strong baselines, including Voicebox and NaturalSpeech 3.",
        "zh": "总体而言，E2 TTS 展示了鲁棒的零样本 TTS 能力，优于或可比于 Voicebox、NaturalSpeech 3 等强基线。"
       },
       {
-       "id": "s-3-4-6-2",
+       "id": "s-id-3-4-2",
        "original": "The comparison between Voicebox and E2 TTS revealed that the use of phoneme alignment was the primary obstacle in achieving natural-sounding audio.",
        "zh": "Voicebox 与 E2 TTS 的比较表明，使用音素对齐是实现自然听感音频的主要障碍。"
       },
       {
-       "id": "s-3-4-6-3",
+       "id": "s-id-3-4-3",
        "original": "With a simple training scheme, E2 TTS can be easily scaled up to accommodate large training data.",
        "zh": "凭借简单的训练方案，E2 TTS 可以轻松扩展以适配大规模训练数据。"
       },
       {
-       "id": "s-3-4-6-4",
+       "id": "s-id-3-4-4",
        "original": "This resulted in human-level speaker similarity, intelligibility, and a level of naturalness that is indistinguishable from a human’s voice in the zero-shot TTS setting, despite the framework’s extreme simplicity.",
        "zh": "这使得在零样本 TTS 设定下达到了人类水平的说话人相似度、可懂度，以及与人类语音难以区分的自然度——尽管该框架极其简单。"
       }
      ]
     },
     {
-     "id": "p-3-4-7",
+     "id": "p-id-3-5",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-3-4-7-1",
+       "id": "s-id-3-5-1",
        "original": "7In the evaluation, E2 TTS was judged to be better in 33% of samples, while the ground truth was better in another 33% of samples.",
        "zh": "7在评测中，E2 TTS 在 33% 的样本上被评为更好，真实样本在另外 33% 的样本上被评为更好。"
       },
       {
-       "id": "s-3-4-7-2",
+       "id": "s-id-3-5-2",
        "original": "The remaining samples were judged to be of equal quality.",
        "zh": "其余样本被评为质量相当。"
       }
      ]
     },
     {
-     "id": "p-3-4-8",
+     "id": "p-id-3-6",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-3-4-8-1",
+       "id": "s-id-3-6-1",
        "original": "8In LibriSpeech, some speakers utilized varying voice characteristics for different characters in the book, leading to a low SMOS for the ground truth.",
        "zh": "8在 LibriSpeech 中，一些说话人为书中的不同角色使用了不同的声音特征，导致真实样本的 SMOS 偏低。"
       }
      ]
     },
     {
-     "id": "tab-3-4-2",
+     "id": "tab-id-3-1",
      "type": "table_caption",
      "page": 5,
      "original": "Table 4. The WER (%) and SIM-o of E2 TTS X2 where a word is randomly replaced with the phoneme sequence during inference. Even when we replaced 50% of words into phoneme sequences, E2 TTS X2 worked reasonably well. This indicates that we can specify the pronunciation of a new term without retraining.",
      "zh": "Table 4. E2 TTS X2 的 WER（%）与 SIM-o：推理时随机将单词替换为音素序列。即使我们把 50% 的单词替换为音素序列，E2 TTS X2 仍能正常工作。这表明我们可以在不重新训练的情况下指定新术语的发音。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-id-4",
+   "num": null,
+   "level": 2,
+   "page": 5,
+   "title": {
+    "original": "ID",
+    "zh": "ID"
+   },
+   "blocks": [
     {
-     "id": "p-3-4-9",
+     "id": "p-id-4-1",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-3-4-9-1",
-       "original": "Init Phoneme % WER↓ SIM-o↑ 2.0 0.675 2.0 0.679 2.0 0.678 2.1 0.679 1.9 0.708 1.9 0.708 2.0 0.708 2.1 0.707",
-       "zh": "初始化、音素替换比例、WER↓、SIM-o↑：2.0 0.675、2.0 0.679、2.0 0.678、2.1 0.679、1.9 0.708、1.9 0.708、2.0 0.708、2.1 0.707。"
+       "id": "s-id-4-1-1",
+       "original": "Model Init Phoneme % WER↓ SIM-o↑ (P1) E2 TTS Random",
+       "zh": "表头：Model / Init / Phoneme % / WER↓ / SIM-o↑——(P1) E2 TTS Random（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-id-4-1",
+     "type": "equation",
+     "page": 5,
+     "original": "0% 2.0 0.675"
+    },
+    {
+     "id": "eq-id-4-2",
+     "type": "equation",
+     "page": 5,
+     "original": "(P1-X2) E2 TTS X2 Random"
+    },
+    {
+     "id": "eq-id-4-3",
+     "type": "equation",
+     "page": 5,
+     "original": "0% 2.0 0.679 25% 2.0 0.678 50% 2.1 0.679"
+    },
+    {
+     "id": "eq-id-4-4",
+     "type": "equation",
+     "page": 5,
+     "original": "(P2) E2 TTS Pre-trained [34]"
+    },
+    {
+     "id": "eq-id-4-5",
+     "type": "equation",
+     "page": 5,
+     "original": "0% 1.9 0.708"
+    },
+    {
+     "id": "eq-id-4-6",
+     "type": "equation",
+     "page": 5,
+     "original": "(P2-X2) E2 TTS X2 Pre-trained [34]"
+    },
+    {
+     "id": "eq-id-4-7",
+     "type": "equation",
+     "page": 5,
+     "original": "0% 1.9 0.708 25% 2.0 0.708 50% 2.1 0.707"
     }
    ]
   },
@@ -1775,14 +2650,92 @@ globalThis.PAPER_2406_18009 = {
      ]
     },
     {
+     "id": "eq-3-5-1",
+     "type": "equation",
+     "page": 6,
+     "original": "0.850"
+    },
+    {
+     "id": "eq-3-5-2",
+     "type": "equation",
+     "page": 6,
+     "original": "SIM-o SIM-o"
+    },
+    {
+     "id": "eq-3-5-3",
+     "type": "equation",
+     "page": 6,
+     "original": "0.825 4% 0.800 4%"
+    },
+    {
+     "id": "eq-3-5-4",
+     "type": "equation",
+     "page": 6,
+     "original": "SIM-o WER WER"
+    },
+    {
+     "id": "eq-3-5-5",
+     "type": "equation",
+     "page": 6,
+     "original": "3% 0.775 3% 2% 0.750 2% 1% 0.725 1% 0.850 0.850"
+    },
+    {
+     "id": "eq-3-5-6",
+     "type": "equation",
+     "page": 6,
+     "original": "SIM-o"
+    },
+    {
+     "id": "eq-3-5-7",
+     "type": "equation",
+     "page": 6,
+     "original": "0.825 0.825 0.800 4% 0.800"
+    },
+    {
+     "id": "eq-3-5-8",
+     "type": "equation",
+     "page": 6,
+     "original": "SIM-o SIM-o WER"
+    },
+    {
+     "id": "eq-3-5-9",
+     "type": "equation",
+     "page": 6,
+     "original": "0.775 3% 0.775 0.750 2% 0.750 0.725 1% 0.725 [4, 5) [5, 6) [6, 7) [7, 8) [8, 9) [9, 10]"
+    },
+    {
+     "id": "eq-3-5-10",
+     "type": "equation",
+     "page": 6,
+     "original": "Audio Prompt Length (s)"
+    },
+    {
+     "id": "eq-3-5-11",
+     "type": "equation",
+     "page": 6,
+     "original": "0% 0.700 0% [4, 5) [5, 6) [6, 7) [7, 8) [8, 9) [9, 10]"
+    },
+    {
+     "id": "eq-3-5-12",
+     "type": "equation",
+     "page": 6,
+     "original": "Audio Prompt Length (s)"
+    },
+    {
+     "id": "eq-3-5-13",
+     "type": "equation",
+     "page": 6,
+     "original": "0.700 0% 0.700 [4, 5) [5, 6) [6, 7) [7, 8) [8, 9) [9, 10]"
+    },
+    {
      "id": "p-3-5-4",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
        "id": "s-3-5-4-1",
-       "original": "0.850 0.825 0.800 0.775 0.750 0.725 0.850 0.850 0.825 0.825 0.800 0.800 0.775 0.775 0.750 0.750 0.725 0.725 0.700 0.700 0.700",
-       "zh": "0.850 0.825 0.800 0.775 0.750 0.725 0.850 0.850 0.825 0.825 0.800 0.800 0.775 0.775 0.750 0.750 0.725 0.725 0.700 0.700 0.700（Fig. 5 坐标轴刻度碎片。）"
+       "original": "Audio Prompt Length (s) (P2) E2 TTS (P1) E2 TTS (P3) E2 TTS",
+       "zh": "（图横轴：Audio Prompt Length (s)；图例：(P2) E2 TTS / (P1) E2 TTS / (P3) E2 TTS。）"
       }
      ]
     },
@@ -1794,14 +2747,92 @@ globalThis.PAPER_2406_18009 = {
      "zh": "图 5. 按音频提示长度分桶展示的 WER 和 SIM 结果。左、中、右图分别为 (P1)、(P2)、(P3) 配置下的 E2 TTS。"
     },
     {
+     "id": "eq-3-5-14",
+     "type": "equation",
+     "page": 6,
+     "original": "5%"
+    },
+    {
      "id": "p-3-5-5",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
        "id": "s-3-5-5-1",
-       "original": "0.7 0.8 0.9 1.0 1.1 1.2 1.3 Speech Rate 0.72 0.70 0.68 0.66 0.64 0.62 0.60 0.7 0.8 0.9 1.0 1.1 1.2 1.3 Speech Rate",
-       "zh": "0.7 0.8 0.9 1.0 1.1 1.2 1.3 语速；0.72 0.70 0.68 0.66 0.64 0.62 0.60；0.7 0.8 0.9 1.0 1.1 1.2 1.3 语速（Fig. 6 坐标轴碎片。）"
+       "original": "(P1) - E2 TTS (P2) - E2 TTS (P3) - E2 TTS",
+       "zh": "（图例：(P1) - E2 TTS / (P2) - E2 TTS / (P3) - E2 TTS。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-5-15",
+     "type": "equation",
+     "page": 6,
+     "original": "4%"
+    },
+    {
+     "id": "eq-3-5-16",
+     "type": "equation",
+     "page": 6,
+     "original": "WER"
+    },
+    {
+     "id": "eq-3-5-17",
+     "type": "equation",
+     "page": 6,
+     "original": "3% 2% 1% 0.7 0.8 0.9 1.0 1.1 1.2 1.3"
+    },
+    {
+     "id": "eq-3-5-18",
+     "type": "equation",
+     "page": 6,
+     "original": "Speech Rate"
+    },
+    {
+     "id": "eq-3-5-19",
+     "type": "equation",
+     "page": 6,
+     "original": "0.72 0.70 0.68"
+    },
+    {
+     "id": "eq-3-5-20",
+     "type": "equation",
+     "page": 6,
+     "original": "SIM-o"
+    },
+    {
+     "id": "eq-3-5-21",
+     "type": "equation",
+     "page": 6,
+     "original": "0.66"
+    },
+    {
+     "id": "p-3-5-6",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-5-6-1",
+       "original": "(P1) - E2 TTS (P2) - E2 TTS (P3) - E2 TTS",
+       "zh": "（图例：(P1) - E2 TTS / (P2) - E2 TTS / (P3) - E2 TTS。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-5-22",
+     "type": "equation",
+     "page": 6,
+     "original": "0.64 0.62 0.60 0.7 0.8 0.9 1.0 1.1 1.2 1.3"
+    },
+    {
+     "id": "p-3-5-7",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-5-7-1",
+       "original": "Speech Rate",
+       "zh": "（图纵轴：Speech Rate（语速）。）"
       }
      ]
     },
@@ -1929,21 +2960,39 @@ globalThis.PAPER_2406_18009 = {
       },
       {
        "id": "s-3-6-4-3",
-       "original": "In this experiment, we adjusted the total duration by multiplying it by 1 sr , where sr represents the speech rate.",
+       "original": "In this experiment, we adjusted the total duration by multiplying it by",
+       "zh": "在本实验中，我们通过将总时长乘以 1/sr 来调整它，其中 sr 表示语速。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-6-1",
+     "type": "equation",
+     "page": 6,
+     "original": "1"
+    },
+    {
+     "id": "p-3-6-5",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-6-5-1",
+       "original": "sr , where sr represents the speech rate.",
        "zh": "在本实验中，我们通过将总时长乘以 1/sr 来调整它，其中 sr 表示语速。"
       },
       {
-       "id": "s-3-6-4-4",
+       "id": "s-3-6-5-2",
        "original": "The results are shown in Fig. 6.",
        "zh": "结果见 Fig. 6。"
       },
       {
-       "id": "s-3-6-4-5",
+       "id": "s-3-6-5-3",
        "original": "As depicted in the graphs, the E2 TTS model exhibited only a moderate increase in WER while maintaining a high SIM-o, even in the challenging cases of sr = 0.7 and sr = 1.3.",
        "zh": "如图所示，即使在 sr = 0.7 和 sr = 1.3 这样有挑战性的情况下，E2 TTS 模型的 WER 也只是适度上升，同时保持了较高的 SIM-o。"
       },
       {
-       "id": "s-3-6-4-6",
+       "id": "s-3-6-5-4",
        "original": "This result suggests the robustness of E2 TTS with respect to the total duration input.",
        "zh": "该结果表明 E2 TTS 对总时长输入具有鲁棒性。"
       }
@@ -2062,16 +3111,33 @@ globalThis.PAPER_2406_18009 = {
      ]
     },
     {
+     "id": "eq-5-1",
+     "type": "equation",
+     "page": 7,
+     "original": "8067–8077, 2020."
+    },
+    {
      "id": "p-5-4",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
        "id": "s-5-4-1",
-       "original": "8067–8077, 2020.",
-       "zh": "8067–8077, 2020."
+       "original": "[4] Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae, “HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis,” Proc.",
+       "zh": "[4] Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae, “HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis,” Proc."
+      },
+      {
+       "id": "s-5-4-2",
+       "original": "NeurIPS, vol. 33, pp. 17022–17033,",
+       "zh": "NeurIPS, vol. 33, pp.\n（原始数据照录）\nNeurIPS, vol. 33, pp. 17022–17033,"
       }
      ]
+    },
+    {
+     "id": "eq-5-2",
+     "type": "equation",
+     "page": 7,
+     "original": "2020."
     },
     {
      "id": "p-5-5",
@@ -2080,13 +3146,8 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-5-1",
-       "original": "[4] Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae, “HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis,” Proc.",
-       "zh": "[4] Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae, “HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis,” Proc."
-      },
-      {
-       "id": "s-5-5-2",
-       "original": "NeurIPS, vol. 33, pp. 17022–17033, 2020.",
-       "zh": "NeurIPS, vol. 33, pp. 17022–17033, 2020."
+       "original": "[5] Xu Tan, Jiawei Chen, Haohe Liu, Jian Cong, Chen Zhang, Yanqing Liu, Xi Wang, Yichong Leng, Yuanhao Yi, Lei He, et al., “Naturalspeech: End-to-end text-to-speech synthesis with human-level quality,” IEEE Transactions on Pattern Analysis and Machine Intelligence, 2024.",
+       "zh": "[5] Xu Tan, Jiawei Chen, Haohe Liu, Jian Cong, Chen Zhang, Yanqing Liu, Xi Wang, Yichong Leng, Yuanhao Yi, Lei He, et al., “Naturalspeech: End-to-end text-to-speech synthesis with human-level quality,” IEEE Transactions on Pattern Analysis and Machine Intelligence, 2024."
       }
      ]
     },
@@ -2097,8 +3158,8 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-6-1",
-       "original": "[5] Xu Tan, Jiawei Chen, Haohe Liu, Jian Cong, Chen Zhang, Yanqing Liu, Xi Wang, Yichong Leng, Yuanhao Yi, Lei He, et al., “Naturalspeech: End-to-end text-to-speech synthesis with human-level quality,” IEEE Transactions on Pattern Analysis and Machine Intelligence, 2024.",
-       "zh": "[5] Xu Tan, Jiawei Chen, Haohe Liu, Jian Cong, Chen Zhang, Yanqing Liu, Xi Wang, Yichong Leng, Yuanhao Yi, Lei He, et al., “Naturalspeech: End-to-end text-to-speech synthesis with human-level quality,” IEEE Transactions on Pattern Analysis and Machine Intelligence, 2024."
+       "original": "[6] Sercan Arik, Jitong Chen, Kainan Peng, Wei Ping, and Yanqi Zhou, “Neural voice cloning with a few samples,” Proc.",
+       "zh": "[6] Sercan Arik, Jitong Chen, Kainan Peng, Wei Ping, and Yanqi Zhou, “Neural voice cloning with a few samples,” Proc."
       }
      ]
     },
@@ -2109,8 +3170,8 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-7-1",
-       "original": "[6] Sercan Arik, Jitong Chen, Kainan Peng, Wei Ping, and Yanqi Zhou, “Neural voice cloning with a few samples,” Proc.",
-       "zh": "[6] Sercan Arik, Jitong Chen, Kainan Peng, Wei Ping, and Yanqi Zhou, “Neural voice cloning with a few samples,” Proc."
+       "original": "NeurIPS, vol. 31, 2018.",
+       "zh": "NeurIPS, vol. 31, 2018."
       }
      ]
     },
@@ -2121,6 +3182,11 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-8-1",
+       "original": "[7] Ye Jia, Yu Zhang, Ron Weiss, Quan Wang, Jonathan Shen, Fei Ren, Patrick Nguyen, Ruoming Pang, Ignacio Lopez Moreno, Yonghui Wu, et al., “Transfer learning from speaker verification to multispeaker text-to-speech synthesis,” Proc.",
+       "zh": "[7] Ye Jia, Yu Zhang, Ron Weiss, Quan Wang, Jonathan Shen, Fei Ren, Patrick Nguyen, Ruoming Pang, Ignacio Lopez Moreno, Yonghui Wu, et al., “Transfer learning from speaker verification to multispeaker text-to-speech synthesis,” Proc."
+      },
+      {
+       "id": "s-5-8-2",
        "original": "NeurIPS, vol. 31, 2018.",
        "zh": "NeurIPS, vol. 31, 2018."
       }
@@ -2133,15 +3199,16 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-9-1",
-       "original": "[7] Ye Jia, Yu Zhang, Ron Weiss, Quan Wang, Jonathan Shen, Fei Ren, Patrick Nguyen, Ruoming Pang, Ignacio Lopez Moreno, Yonghui Wu, et al., “Transfer learning from speaker verification to multispeaker text-to-speech synthesis,” Proc.",
-       "zh": "[7] Ye Jia, Yu Zhang, Ron Weiss, Quan Wang, Jonathan Shen, Fei Ren, Patrick Nguyen, Ruoming Pang, Ignacio Lopez Moreno, Yonghui Wu, et al., “Transfer learning from speaker verification to multispeaker text-to-speech synthesis,” Proc."
-      },
-      {
-       "id": "s-5-9-2",
-       "original": "NeurIPS, vol. 31, 2018.",
-       "zh": "NeurIPS, vol. 31, 2018."
+       "original": "[8] Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, et al., “Neural codec language models are zero-shot text to speech synthesizers,” arXiv preprint arXiv:2301.02111,",
+       "zh": "[8] Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, et al., “Neural codec language models are zero-shot text to speech synthesizers,” arXiv preprint arXiv:2301.02111, 2023."
       }
      ]
+    },
+    {
+     "id": "eq-5-3",
+     "type": "equation",
+     "page": 7,
+     "original": "2023."
     },
     {
      "id": "p-5-10",
@@ -2150,8 +3217,8 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-10-1",
-       "original": "[8] Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, et al., “Neural codec language models are zero-shot text to speech synthesizers,” arXiv preprint arXiv:2301.02111, 2023.",
-       "zh": "[8] Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, et al., “Neural codec language models are zero-shot text to speech synthesizers,” arXiv preprint arXiv:2301.02111, 2023."
+       "original": "[9] Xiaofei Wang, Manthan Thakker, Zhuo Chen, Naoyuki Kanda, Sefik Emre Eskimez, Sanyuan Chen, Min Tang, Shujie Liu, Jinyu Li, and Takuya Yoshioka, “Speechx: Neural codec language model as a versatile speech transformer,” arXiv preprint arXiv:2308.06873, 2023.",
+       "zh": "[9] Xiaofei Wang 等，「SpeechX: Neural codec language model as a versatile speech transformer」，arXiv:2308.06873，2023。（参考文献，照录）"
       }
      ]
     },
@@ -2162,8 +3229,8 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-11-1",
-       "original": "[9] Xiaofei Wang, Manthan Thakker, Zhuo Chen, Naoyuki Kanda, Sefik Emre Eskimez, Sanyuan Chen, Min Tang, Shujie Liu, Jinyu Li, and Takuya Yoshioka, “Speechx: Neural codec language model as a versatile speech transformer,” arXiv preprint [10] Chenpeng Du, Yiwei Guo, Hankun Wang, Yifan Yang, Zhikang Niu, Shuai Wang, Hui Zhang, Xie Chen, and Kai Yu, “Vall-t: Decoder-only generative transducer for robust and decoding-controllable text-to-speech,” arXiv preprint [11] Detai Xin, Xu Tan, Kai Shen, Zeqian Ju, Dongchao Yang, Yuancheng Wang, Shinnosuke Takamichi, Hiroshi Saruwatari, Shujie Liu, Jinyu Li, et al., “RALL-E: Robust codec language modeling with chain-of-thought prompting for text-to-speech synthesis,” arXiv preprint arXiv:2404.03204, 2024.",
-       "zh": "[9] Xiaofei Wang, Manthan Thakker, Zhuo Chen, Naoyuki Kanda, Sefik Emre Eskimez, Sanyuan Chen, Min Tang, Shujie Liu, Jinyu Li, and Takuya Yoshioka, “Speechx: Neural codec language model as a versatile speech transformer,” arXiv preprint [10] Chenpeng Du, Yiwei Guo, Hankun Wang, Yifan Yang, Zhikang Niu, Shuai Wang, Hui Zhang, Xie Chen, and Kai Yu, “Vall-t: Decoder-only generative transducer for robust and decoding-controllable text-to-speech,” arXiv preprint [11] Detai Xin, Xu Tan, Kai Shen, Zeqian Ju, Dongchao Yang, Yuancheng Wang, Shinnosuke Takamichi, Hiroshi Saruwatari, Shujie Liu, Jinyu Li, et al., “RALL-E: Robust codec language modeling with chain-of-thought prompting for text-to-speech synthesis,” arXiv preprint arXiv:2404.03204, 2024."
+       "original": "[10] Chenpeng Du, Yiwei Guo, Hankun Wang, Yifan Yang, Zhikang Niu, Shuai Wang, Hui Zhang, Xie Chen, and Kai Yu, “Vall-t: Decoder-only generative transducer for robust and decoding-controllable text-to-speech,” arXiv preprint arXiv:2401.14321, 2024.",
+       "zh": "[10] Chenpeng Du 等，「VALL-T: Decoder-only generative transducer for robust and decoding-controllable text-to-speech」，arXiv:2401.14321，2024。（参考文献，照录）"
       }
      ]
     },
@@ -2174,8 +3241,8 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-12-1",
-       "original": "[12] Sanyuan Chen, Shujie Liu, Long Zhou, Yanqing Liu, Xu Tan, Jinyu Li, Sheng Zhao, Yao Qian, and Furu Wei, “VALL- E 2: Neural Codec Language Models are Human Parity Zero-Shot Text to Speech Synthesizers,” arXiv preprint [13] Dongchao Yang, Jinchuan Tian, Xu Tan, Rongjie Huang, Songxiang Liu, Xuankai Chang, Jiatong Shi, Sheng Zhao, Jiang Bian, Xixin Wu, et al., “Uniaudio: An audio foundation model toward universal audio generation,” arXiv preprint [14] Kai Shen, Zeqian Ju, Xu Tan, Yanqing Liu, Yichong Leng, Lei He, Tao Qin, Sheng Zhao, and Jiang Bian, “NaturalSpeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers,” arXiv preprint arXiv:2304.09116, 2023.",
-       "zh": "[12] Sanyuan Chen, Shujie Liu, Long Zhou, Yanqing Liu, Xu Tan, Jinyu Li, Sheng Zhao, Yao Qian, and Furu Wei, “VALL- E 2: Neural Codec Language Models are Human Parity Zero-Shot Text to Speech Synthesizers,” arXiv preprint [13] Dongchao Yang, Jinchuan Tian, Xu Tan, Rongjie Huang, Songxiang Liu, Xuankai Chang, Jiatong Shi, Sheng Zhao, Jiang Bian, Xixin Wu, et al., “Uniaudio: An audio foundation model toward universal audio generation,” arXiv preprint [14] Kai Shen, Zeqian Ju, Xu Tan, Yanqing Liu, Yichong Leng, Lei He, Tao Qin, Sheng Zhao, and Jiang Bian, “NaturalSpeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers,” arXiv preprint arXiv:2304.09116, 2023."
+       "original": "[11] Detai Xin, Xu Tan, Kai Shen, Zeqian Ju, Dongchao Yang, Yuancheng Wang, Shinnosuke Takamichi, Hiroshi Saruwatari, Shujie Liu, Jinyu Li, et al., “RALL-E: Robust codec language modeling with chain-of-thought prompting for text-to-speech synthesis,” arXiv preprint arXiv:2404.03204, 2024.",
+       "zh": "[9] Xiaofei Wang, Manthan Thakker, Zhuo Chen, Naoyuki Kanda, Sefik Emre Eskimez, Sanyuan Chen, Min Tang, Shujie Liu, Jinyu Li, and Takuya Yoshioka, “Speechx: Neural codec language model as a versatile speech transformer,” arXiv preprint [10] Chenpeng Du, Yiwei Guo, Hankun Wang, Yifan Yang, Zhikang Niu, Shuai Wang, Hui Zhang, Xie Chen, and Kai Yu, “Vall-t: Decoder-only generative transducer for robust and decoding-controllable text-to-speech,” arXiv preprint [11] Detai Xin, Xu Tan, Kai Shen, Zeqian Ju, Dongchao Yang, Yuancheng Wang, Shinnosuke Takamichi, Hiroshi Saruwatari, Shujie Liu, Jinyu Li, et al., “RALL-E: Robust codec language modeling with chain-of-thought prompting for text-to-speech synthesis,” arXiv preprint arXiv:2404.03204, 2024."
       }
      ]
     },
@@ -2186,18 +3253,13 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-13-1",
-       "original": "[15] Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, Yichong Leng, Kaitao Song, Siliang Tang, et al., “Naturalspeech 3: Zero-shot speech synthesis with factorized codec and diffusion models,” arXiv preprint arXiv:2403.03100, 2024.",
-       "zh": "[15] Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, Yichong Leng, Kaitao Song, Siliang Tang, et al., “Naturalspeech 3: Zero-shot speech synthesis with factorized codec and diffusion models,” arXiv preprint arXiv:2403.03100, 2024."
+       "original": "[12] Sanyuan Chen, Shujie Liu, Long Zhou, Yanqing Liu, Xu Tan, Jinyu Li, Sheng Zhao, Yao Qian, and Furu Wei, “VALL- E 2: Neural Codec Language Models are Human Parity Zero-Shot Text to Speech Synthesizers,” arXiv preprint arXiv:2402.07383, 2024.",
+       "zh": "[12] Sanyuan Chen 等，「VALL-E 2: Neural Codec Language Models are Human Parity Zero-Shot Text to Speech Synthesizers」，arXiv:2402.07383，2024。（参考文献，照录）"
       },
       {
        "id": "s-5-13-2",
-       "original": "[16] Jonathan Ho, Ajay Jain, and Pieter Abbeel, “Denoising diffusion probabilistic models,” in Proc.",
-       "zh": "[16] Jonathan Ho, Ajay Jain, and Pieter Abbeel, “Denoising diffusion probabilistic models,” in Proc."
-      },
-      {
-       "id": "s-5-13-3",
-       "original": "NIPS, 2020, vol. 33, pp.",
-       "zh": "NIPS, 2020, vol. 33, pp."
+       "original": "[13] Dongchao Yang, Jinchuan Tian, Xu Tan, Rongjie Huang, Songxiang Liu, Xuankai Chang, Jiatong Shi, Sheng Zhao, Jiang Bian, Xixin Wu, et al., “Uniaudio: An audio foundation model toward universal audio generation,” arXiv preprint arXiv:2310.00704, 2023.",
+       "zh": "[13] Dongchao Yang 等，「UniAudio: An audio foundation model toward universal audio generation」，arXiv:2310.00704，2023。（参考文献，照录）"
       }
      ]
     },
@@ -2208,40 +3270,31 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-14-1",
-       "original": "6840–6851.",
-       "zh": "6840–6851."
+       "original": "[14] Kai Shen, Zeqian Ju, Xu Tan, Yanqing Liu, Yichong Leng, Lei He, Tao Qin, Sheng Zhao, and Jiang Bian, “NaturalSpeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers,” arXiv preprint arXiv:2304.09116, 2023.",
+       "zh": "[12] Sanyuan Chen, Shujie Liu, Long Zhou, Yanqing Liu, Xu Tan, Jinyu Li, Sheng Zhao, Yao Qian, and Furu Wei, “VALL- E 2: Neural Codec Language Models are Human Parity Zero-Shot Text to Speech Synthesizers,” arXiv preprint [13] Dongchao Yang, Jinchuan Tian, Xu Tan, Rongjie Huang, Songxiang Liu, Xuankai Chang, Jiatong Shi, Sheng Zhao, Jiang Bian, Xixin Wu, et al., “Uniaudio: An audio foundation model toward universal audio generation,” arXiv preprint [14] Kai Shen, Zeqian Ju, Xu Tan, Yanqing Liu, Yichong Leng, Lei He, Tao Qin, Sheng Zhao, and Jiang Bian, “NaturalSpeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers,” arXiv preprint arXiv:2304.09116, 2023."
       },
       {
        "id": "s-5-14-2",
-       "original": "[17] Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole, “Score-based generative modeling through stochastic differential equations,” in Proc.",
-       "zh": "[17] Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole, “Score-based generative modeling through stochastic differential equations,” in Proc."
+       "original": "[15] Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, Yichong Leng, Kaitao Song, Siliang Tang, et al., “Naturalspeech 3: Zero-shot speech synthesis with factorized codec and diffusion models,” arXiv preprint arXiv:2403.03100, 2024.",
+       "zh": "[15] Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, Yichong Leng, Kaitao Song, Siliang Tang, et al., “Naturalspeech 3: Zero-shot speech synthesis with factorized codec and diffusion models,” arXiv preprint arXiv:2403.03100, 2024."
       },
       {
        "id": "s-5-14-3",
-       "original": "ICML, 2020.",
-       "zh": "ICML, 2020."
+       "original": "[16] Jonathan Ho, Ajay Jain, and Pieter Abbeel, “Denoising diffusion probabilistic models,” in Proc.",
+       "zh": "[16] Jonathan Ho, Ajay Jain, and Pieter Abbeel, “Denoising diffusion probabilistic models,” in Proc."
       },
       {
        "id": "s-5-14-4",
-       "original": "[18] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, et al., “Voicebox: Text-guided multilingual universal speech generation at scale,” Advances in neural information processing systems, vol. 36, 2024.",
-       "zh": "[18] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, et al., “Voicebox: Text-guided multilingual universal speech generation at scale,” Advances in neural information processing systems, vol. 36, 2024."
-      },
-      {
-       "id": "s-5-14-5",
-       "original": "[19] Shivam Mehta, Ruibo Tu, Jonas Beskow, ´Eva Sz´ekely, and Gustav Eje Henter, “Matcha-TTS: A fast TTS architecture with conditional flow matching,” in Proc.",
-       "zh": "[19] Shivam Mehta, Ruibo Tu, Jonas Beskow, ´Eva Sz´ekely, and Gustav Eje Henter, “Matcha-TTS: A fast TTS architecture with conditional flow matching,” in Proc."
-      },
-      {
-       "id": "s-5-14-6",
-       "original": "ICASSP.",
-       "zh": "ICASSP."
-      },
-      {
-       "id": "s-5-14-7",
-       "original": "IEEE, 2024, pp.",
-       "zh": "IEEE, 2024, pp."
+       "original": "NIPS, 2020, vol. 33, pp.",
+       "zh": "NIPS, 2020, vol. 33, pp."
       }
      ]
+    },
+    {
+     "id": "eq-5-4",
+     "type": "equation",
+     "page": 7,
+     "original": "6840–6851."
     },
     {
      "id": "p-5-15",
@@ -2250,127 +3303,149 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-15-1",
-       "original": "11341–11345.",
-       "zh": "11341–11345."
+       "original": "[17] Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole, “Score-based generative modeling through stochastic differential equations,” in Proc.",
+       "zh": "[17] Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole, “Score-based generative modeling through stochastic differential equations,” in Proc."
       },
       {
        "id": "s-5-15-2",
-       "original": "[20] Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matthew Le, “Flow matching for generative modeling,” in Proc.",
-       "zh": "[20] Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matthew Le, “Flow matching for generative modeling,” in Proc."
+       "original": "ICML, 2020.",
+       "zh": "ICML, 2020."
       },
       {
        "id": "s-5-15-3",
-       "original": "ICLR, 2022.",
-       "zh": "ICLR, 2022."
+       "original": "[18] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, et al., “Voicebox: Text-guided multilingual universal speech generation at scale,” Advances in neural information processing systems, vol. 36, 2024.",
+       "zh": "[18] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, et al., “Voicebox: Text-guided multilingual universal speech generation at scale,” Advances in neural information processing systems, vol. 36, 2024."
       },
       {
        "id": "s-5-15-4",
-       "original": "[21] Vadim Popov, Ivan Vovk, Vladimir Gogoryan, Tasnima Sadekova, and Mikhail Kudinov, “Grad-TTS: A diffusion probabilistic model for text-to-speech,” in Proc.",
-       "zh": "[21] Vadim Popov, Ivan Vovk, Vladimir Gogoryan, Tasnima Sadekova, and Mikhail Kudinov, “Grad-TTS: A diffusion probabilistic model for text-to-speech,” in Proc."
+       "original": "[19] Shivam Mehta, Ruibo Tu, Jonas Beskow, ´Eva Sz´ekely, and Gustav Eje Henter, “Matcha-TTS: A fast TTS architecture with conditional flow matching,” in Proc.",
+       "zh": "[19] Shivam Mehta, Ruibo Tu, Jonas Beskow, ´Eva Sz´ekely, and Gustav Eje Henter, “Matcha-TTS: A fast TTS architecture with conditional flow matching,” in Proc."
       },
       {
        "id": "s-5-15-5",
-       "original": "ICML, 2021, pp. 8599–8608.",
-       "zh": "ICML, 2021, pp. 8599–8608."
-      },
-      {
-       "id": "s-5-15-6",
-       "original": "[22] Yuan Gao, Nobuyuki Morioka, Yu Zhang, and Nanxin Chen, “E3 TTS: Easy end-to-end diffusion-based text to speech,” in 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU).",
-       "zh": "[22] Yuan Gao, Nobuyuki Morioka, Yu Zhang, and Nanxin Chen, “E3 TTS: Easy end-to-end diffusion-based text to speech,” in 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)."
-      },
-      {
-       "id": "s-5-15-7",
-       "original": "IEEE, 2023, pp. 1–8.",
-       "zh": "IEEE, 2023, pp. 1–8."
-      },
-      {
-       "id": "s-5-15-8",
-       "original": "[23] Olaf Ronneberger, Philipp Fischer, and Thomas Brox, “U-net: Convolutional networks for biomedical image segmentation,” in Proc.",
-       "zh": "[23] Olaf Ronneberger, Philipp Fischer, and Thomas Brox, “U-net: Convolutional networks for biomedical image segmentation,” in Proc."
-      },
-      {
-       "id": "s-5-15-9",
-       "original": "MICCAI.",
-       "zh": "MICCAI."
-      },
-      {
-       "id": "s-5-15-10",
-       "original": "Springer, 2015, pp. 234–241.",
-       "zh": "Springer, 2015, pp. 234–241."
-      },
-      {
-       "id": "s-5-15-11",
-       "original": "[24] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al., “Seed-TTS: A Family of HighQuality Versatile Speech Generation Models,” arXiv preprint [25] Bo Li, Yu Zhang, Tara Sainath, Yonghui Wu, and William Chan, “Bytes are all you need: End-to-end multilingual speech recognition and synthesis with bytes,” in Proc.",
-       "zh": "[24] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al., “Seed-TTS: A Family of HighQuality Versatile Speech Generation Models,” arXiv preprint [25] Bo Li, Yu Zhang, Tara Sainath, Yonghui Wu, and William Chan, “Bytes are all you need: End-to-end multilingual speech recognition and synthesis with bytes,” in Proc."
-      },
-      {
-       "id": "s-5-15-12",
-       "original": "ICASSP, 2019, pp. 5621–5625.",
-       "zh": "ICASSP, 2019, pp. 5621–5625."
-      },
-      {
-       "id": "s-5-15-13",
-       "original": "[26] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin, “Attention is all you need,” Proc.",
-       "zh": "[26] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin, “Attention is all you need,” Proc."
-      },
-      {
-       "id": "s-5-15-14",
-       "original": "NIPS, vol. 30, 2017.",
-       "zh": "NIPS, vol. 30, 2017."
-      },
-      {
-       "id": "s-5-15-15",
-       "original": "[27] Ricky TQ Chen, Yulia Rubanova, Jesse Bettencourt, and David K Duvenaud, “Neural ordinary differential equations,” in Proc.",
-       "zh": "[27] Ricky TQ Chen, Yulia Rubanova, Jesse Bettencourt, and David K Duvenaud, “Neural ordinary differential equations,” in Proc."
-      },
-      {
-       "id": "s-5-15-16",
-       "original": "NeurIPS, 2018, vol. 31.",
-       "zh": "NeurIPS, 2018, vol. 31."
-      },
-      {
-       "id": "s-5-15-17",
-       "original": "[28] Michael McAuliffe, Michaela Socolof, Sarah Mihuc, Michael Wagner, and Morgan Sonderegger, “Montreal forced aligner: Trainable text-speech alignment using kaldi.,” in Proc.",
-       "zh": "[28] Michael McAuliffe, Michaela Socolof, Sarah Mihuc, Michael Wagner, and Morgan Sonderegger, “Montreal forced aligner: Trainable text-speech alignment using kaldi.,” in Proc."
-      },
-      {
-       "id": "s-5-15-18",
-       "original": "Interspeech, 2017, pp. 498–502.",
-       "zh": "Interspeech, 2017, pp. 498–502."
-      }
-     ]
-    },
-    {
-     "id": "p-5-16",
-     "type": "paragraph",
-     "page": 8,
-     "sentences": [
-      {
-       "id": "s-5-16-1",
-       "original": "[29] Kevin Lenzo, “The carnegie mellon university pronouncing dictionary,” .",
-       "zh": "[29] Kevin Lenzo, “The carnegie mellon university pronouncing dictionary,” ."
-      }
-     ]
-    },
-    {
-     "id": "p-5-17",
-     "type": "paragraph",
-     "page": 8,
-     "sentences": [
-      {
-       "id": "s-5-17-1",
-       "original": "[30] Wei Kang, Xiaoyu Yang, Zengwei Yao, Fangjun Kuang, Yifan Yang, Liyong Guo, Long Lin, and Daniel Povey, “LibriHeavy: a 50,000 hours ASR corpus with punctuation casing and context,” in Proc.",
-       "zh": "[30] Wei Kang, Xiaoyu Yang, Zengwei Yao, Fangjun Kuang, Yifan Yang, Liyong Guo, Long Lin, and Daniel Povey, “LibriHeavy: a 50,000 hours ASR corpus with punctuation casing and context,” in Proc."
-      },
-      {
-       "id": "s-5-17-2",
        "original": "ICASSP.",
        "zh": "ICASSP."
       },
       {
+       "id": "s-5-15-6",
+       "original": "IEEE, 2024, pp.",
+       "zh": "IEEE, 2024, pp."
+      }
+     ]
+    },
+    {
+     "id": "eq-5-5",
+     "type": "equation",
+     "page": 7,
+     "original": "11341–11345."
+    },
+    {
+     "id": "p-5-16",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-5-16-1",
+       "original": "[20] Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matthew Le, “Flow matching for generative modeling,” in Proc.",
+       "zh": "[20] Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matthew Le, “Flow matching for generative modeling,” in Proc."
+      },
+      {
+       "id": "s-5-16-2",
+       "original": "ICLR, 2022.",
+       "zh": "ICLR, 2022."
+      },
+      {
+       "id": "s-5-16-3",
+       "original": "[21] Vadim Popov, Ivan Vovk, Vladimir Gogoryan, Tasnima Sadekova, and Mikhail Kudinov, “Grad-TTS: A diffusion probabilistic model for text-to-speech,” in Proc.",
+       "zh": "[21] Vadim Popov, Ivan Vovk, Vladimir Gogoryan, Tasnima Sadekova, and Mikhail Kudinov, “Grad-TTS: A diffusion probabilistic model for text-to-speech,” in Proc."
+      },
+      {
+       "id": "s-5-16-4",
+       "original": "ICML, 2021, pp. 8599–8608.",
+       "zh": "ICML, 2021, pp. 8599–8608."
+      },
+      {
+       "id": "s-5-16-5",
+       "original": "[22] Yuan Gao, Nobuyuki Morioka, Yu Zhang, and Nanxin Chen, “E3 TTS: Easy end-to-end diffusion-based text to speech,” in 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU).",
+       "zh": "[22] Yuan Gao, Nobuyuki Morioka, Yu Zhang, and Nanxin Chen, “E3 TTS: Easy end-to-end diffusion-based text to speech,” in 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU)."
+      },
+      {
+       "id": "s-5-16-6",
+       "original": "IEEE, 2023, pp. 1–8.",
+       "zh": "IEEE, 2023, pp. 1–8."
+      },
+      {
+       "id": "s-5-16-7",
+       "original": "[23] Olaf Ronneberger, Philipp Fischer, and Thomas Brox, “U-net: Convolutional networks for biomedical image segmentation,” in Proc.",
+       "zh": "[23] Olaf Ronneberger, Philipp Fischer, and Thomas Brox, “U-net: Convolutional networks for biomedical image segmentation,” in Proc."
+      },
+      {
+       "id": "s-5-16-8",
+       "original": "MICCAI.",
+       "zh": "MICCAI."
+      },
+      {
+       "id": "s-5-16-9",
+       "original": "Springer, 2015, pp. 234–241.",
+       "zh": "Springer, 2015, pp. 234–241."
+      },
+      {
+       "id": "s-5-16-10",
+       "original": "[24] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al., “Seed-TTS: A Family of HighQuality Versatile Speech Generation Models,” arXiv preprint arXiv:2406.02430, 2024.",
+       "zh": "[24] Philip Anastassiou 等，「Seed-TTS: A Family of High-Quality Versatile Speech Generation Models」，arXiv:2406.02430，2024。（参考文献，照录）"
+      },
+      {
+       "id": "s-5-16-11",
+       "original": "[25] Bo Li, Yu Zhang, Tara Sainath, Yonghui Wu, and William Chan, “Bytes are all you need: End-to-end multilingual speech recognition and synthesis with bytes,” in Proc.",
+       "zh": "[24] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al., “Seed-TTS: A Family of HighQuality Versatile Speech Generation Models,” arXiv preprint [25] Bo Li, Yu Zhang, Tara Sainath, Yonghui Wu, and William Chan, “Bytes are all you need: End-to-end multilingual speech recognition and synthesis with bytes,” in Proc."
+      },
+      {
+       "id": "s-5-16-12",
+       "original": "ICASSP, 2019, pp. 5621–5625.",
+       "zh": "ICASSP, 2019, pp. 5621–5625."
+      },
+      {
+       "id": "s-5-16-13",
+       "original": "[26] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin, “Attention is all you need,” Proc.",
+       "zh": "[26] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin, “Attention is all you need,” Proc."
+      },
+      {
+       "id": "s-5-16-14",
+       "original": "NIPS, vol. 30,",
+       "zh": "NIPS, vol. 30, 2017."
+      }
+     ]
+    },
+    {
+     "id": "eq-5-6",
+     "type": "equation",
+     "page": 7,
+     "original": "2017."
+    },
+    {
+     "id": "p-5-17",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-5-17-1",
+       "original": "[27] Ricky TQ Chen, Yulia Rubanova, Jesse Bettencourt, and David K Duvenaud, “Neural ordinary differential equations,” in Proc.",
+       "zh": "[27] Ricky TQ Chen, Yulia Rubanova, Jesse Bettencourt, and David K Duvenaud, “Neural ordinary differential equations,” in Proc."
+      },
+      {
+       "id": "s-5-17-2",
+       "original": "NeurIPS, 2018, vol. 31.",
+       "zh": "NeurIPS, 2018, vol. 31."
+      },
+      {
        "id": "s-5-17-3",
-       "original": "IEEE, 2024, pp. 10991–10995.",
-       "zh": "IEEE, 2024, pp. 10991–10995."
+       "original": "[28] Michael McAuliffe, Michaela Socolof, Sarah Mihuc, Michael Wagner, and Morgan Sonderegger, “Montreal forced aligner: Trainable text-speech alignment using kaldi.,” in Proc.",
+       "zh": "[28] Michael McAuliffe, Michaela Socolof, Sarah Mihuc, Michael Wagner, and Morgan Sonderegger, “Montreal forced aligner: Trainable text-speech alignment using kaldi.,” in Proc."
+      },
+      {
+       "id": "s-5-17-4",
+       "original": "Interspeech, 2017, pp. 498–502.",
+       "zh": "Interspeech, 2017, pp. 498–502."
       }
      ]
     },
@@ -2381,13 +3456,8 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-18-1",
-       "original": "[31] Jacob Kahn, Morgane Rivi`ere, Weiyi Zheng, Evgeny Kharitonov, Qiantong Xu, Pierre-Emmanuel Mazar´e, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert, Christian Fuegen, et al., “Libri-light: A benchmark for ASR with limited or no supervision,” in Proc.",
-       "zh": "[31] Jacob Kahn, Morgane Rivi`ere, Weiyi Zheng, Evgeny Kharitonov, Qiantong Xu, Pierre-Emmanuel Mazar´e, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert, Christian Fuegen, et al., “Libri-light: A benchmark for ASR with limited or no supervision,” in Proc."
-      },
-      {
-       "id": "s-5-18-2",
-       "original": "ICASSP, 2020, pp. 7669–7673.",
-       "zh": "ICASSP, 2020, pp. 7669–7673."
+       "original": "[29] Kevin Lenzo, “The carnegie mellon university pronouncing dictionary,” .",
+       "zh": "[29] Kevin Lenzo, “The carnegie mellon university pronouncing dictionary,” ."
       }
      ]
     },
@@ -2398,13 +3468,18 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-19-1",
-       "original": "[32] Sang-gil Lee, Wei Ping, Boris Ginsburg, Bryan Catanzaro, and Sungroh Yoon, “BigVGAN: A universal neural vocoder with large-scale training,” in Proc.",
-       "zh": "[32] Sang-gil Lee, Wei Ping, Boris Ginsburg, Bryan Catanzaro, and Sungroh Yoon, “BigVGAN: A universal neural vocoder with large-scale training,” in Proc."
+       "original": "[30] Wei Kang, Xiaoyu Yang, Zengwei Yao, Fangjun Kuang, Yifan Yang, Liyong Guo, Long Lin, and Daniel Povey, “LibriHeavy: a 50,000 hours ASR corpus with punctuation casing and context,” in Proc.",
+       "zh": "[30] Wei Kang, Xiaoyu Yang, Zengwei Yao, Fangjun Kuang, Yifan Yang, Liyong Guo, Long Lin, and Daniel Povey, “LibriHeavy: a 50,000 hours ASR corpus with punctuation casing and context,” in Proc."
       },
       {
        "id": "s-5-19-2",
-       "original": "ICLR, 2022.",
-       "zh": "ICLR, 2022."
+       "original": "ICASSP.",
+       "zh": "ICASSP."
+      },
+      {
+       "id": "s-5-19-3",
+       "original": "IEEE, 2024, pp. 10991–10995.",
+       "zh": "IEEE, 2024, pp. 10991–10995."
       }
      ]
     },
@@ -2415,8 +3490,13 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-20-1",
-       "original": "[33] Jonathan Ho and Tim Salimans, “Classifier-free diffusion guidance,” arXiv preprint arXiv:2207.12598, 2022.",
-       "zh": "[33] Jonathan Ho and Tim Salimans, “Classifier-free diffusion guidance,” arXiv preprint arXiv:2207.12598, 2022."
+       "original": "[31] Jacob Kahn, Morgane Rivi`ere, Weiyi Zheng, Evgeny Kharitonov, Qiantong Xu, Pierre-Emmanuel Mazar´e, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert, Christian Fuegen, et al., “Libri-light: A benchmark for ASR with limited or no supervision,” in Proc.",
+       "zh": "[31] Jacob Kahn, Morgane Rivi`ere, Weiyi Zheng, Evgeny Kharitonov, Qiantong Xu, Pierre-Emmanuel Mazar´e, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert, Christian Fuegen, et al., “Libri-light: A benchmark for ASR with limited or no supervision,” in Proc."
+      },
+      {
+       "id": "s-5-20-2",
+       "original": "ICASSP, 2020, pp. 7669–7673.",
+       "zh": "ICASSP, 2020, pp. 7669–7673."
       }
      ]
     },
@@ -2427,13 +3507,13 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-21-1",
-       "original": "[34] Xiaofei Wang, Sefik Emre Eskimez, Manthan Thakker, Hemin Yang, Zirun Zhu, Min Tang, Yufei Xia, Jinzhu Li, Sheng Zhao, Jinyu Li, and Naoyuki Kanda, “An investigation of noise robustness for flow-matching-based zero-shot TTS,” in Proc.",
-       "zh": "[34] Xiaofei Wang, Sefik Emre Eskimez, Manthan Thakker, Hemin Yang, Zirun Zhu, Min Tang, Yufei Xia, Jinzhu Li, Sheng Zhao, Jinyu Li, and Naoyuki Kanda, “An investigation of noise robustness for flow-matching-based zero-shot TTS,” in Proc."
+       "original": "[32] Sang-gil Lee, Wei Ping, Boris Ginsburg, Bryan Catanzaro, and Sungroh Yoon, “BigVGAN: A universal neural vocoder with large-scale training,” in Proc.",
+       "zh": "[32] Sang-gil Lee, Wei Ping, Boris Ginsburg, Bryan Catanzaro, and Sungroh Yoon, “BigVGAN: A universal neural vocoder with large-scale training,” in Proc."
       },
       {
        "id": "s-5-21-2",
-       "original": "Interspeech, 2024.",
-       "zh": "Interspeech, 2024."
+       "original": "ICLR, 2022.",
+       "zh": "ICLR, 2022."
       }
      ]
     },
@@ -2444,18 +3524,8 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-22-1",
-       "original": "[35] Aleksandr Meister, Matvei Novikov, Nikolay Karpov, Evelina Bakhturina, Vitaly Lavrukhin, and Boris Ginsburg, “LibriSpeech-PC: Benchmark for evaluation of punctuation and capitalization capabilities of end-to-end asr models,” in Proc.",
-       "zh": "[35] Aleksandr Meister, Matvei Novikov, Nikolay Karpov, Evelina Bakhturina, Vitaly Lavrukhin, and Boris Ginsburg, “LibriSpeech-PC: Benchmark for evaluation of punctuation and capitalization capabilities of end-to-end asr models,” in Proc."
-      },
-      {
-       "id": "s-5-22-2",
-       "original": "ASRU.",
-       "zh": "ASRU."
-      },
-      {
-       "id": "s-5-22-3",
-       "original": "IEEE, 2023, pp. 1–7.",
-       "zh": "IEEE, 2023, pp. 1–7."
+       "original": "[33] Jonathan Ho and Tim Salimans, “Classifier-free diffusion guidance,” arXiv preprint arXiv:2207.12598, 2022.",
+       "zh": "[33] Jonathan Ho and Tim Salimans, “Classifier-free diffusion guidance,” arXiv preprint arXiv:2207.12598, 2022."
       }
      ]
     },
@@ -2466,13 +3536,13 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-23-1",
-       "original": "[36] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur, “LibriSpeech: an ASR corpus based on public domain audio books,” in Proc.",
-       "zh": "[36] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur, “LibriSpeech: an ASR corpus based on public domain audio books,” in Proc."
+       "original": "[34] Xiaofei Wang, Sefik Emre Eskimez, Manthan Thakker, Hemin Yang, Zirun Zhu, Min Tang, Yufei Xia, Jinzhu Li, Sheng Zhao, Jinyu Li, and Naoyuki Kanda, “An investigation of noise robustness for flow-matching-based zero-shot TTS,” in Proc.",
+       "zh": "[34] Xiaofei Wang, Sefik Emre Eskimez, Manthan Thakker, Hemin Yang, Zirun Zhu, Min Tang, Yufei Xia, Jinzhu Li, Sheng Zhao, Jinyu Li, and Naoyuki Kanda, “An investigation of noise robustness for flow-matching-based zero-shot TTS,” in Proc."
       },
       {
        "id": "s-5-23-2",
-       "original": "ICASSP, 2015, pp. 5206–5210.",
-       "zh": "ICASSP, 2015, pp. 5206–5210."
+       "original": "Interspeech, 2024.",
+       "zh": "Interspeech, 2024."
       }
      ]
     },
@@ -2483,8 +3553,18 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-24-1",
-       "original": "[37] Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed, “HuBERT: Self-supervised speech representation learning by masked prediction of hidden units,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol.",
-       "zh": "[37] Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed, “HuBERT: Self-supervised speech representation learning by masked prediction of hidden units,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol."
+       "original": "[35] Aleksandr Meister, Matvei Novikov, Nikolay Karpov, Evelina Bakhturina, Vitaly Lavrukhin, and Boris Ginsburg, “LibriSpeech-PC: Benchmark for evaluation of punctuation and capitalization capabilities of end-to-end asr models,” in Proc.",
+       "zh": "[35] Aleksandr Meister, Matvei Novikov, Nikolay Karpov, Evelina Bakhturina, Vitaly Lavrukhin, and Boris Ginsburg, “LibriSpeech-PC: Benchmark for evaluation of punctuation and capitalization capabilities of end-to-end asr models,” in Proc."
+      },
+      {
+       "id": "s-5-24-2",
+       "original": "ASRU.",
+       "zh": "ASRU."
+      },
+      {
+       "id": "s-5-24-3",
+       "original": "IEEE, 2023, pp. 1–7.",
+       "zh": "IEEE, 2023, pp. 1–7."
       }
      ]
     },
@@ -2495,8 +3575,13 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-25-1",
-       "original": "29, pp. 3451–3460, 2021.",
-       "zh": "29, pp. 3451–3460, 2021."
+       "original": "[36] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur, “LibriSpeech: an ASR corpus based on public domain audio books,” in Proc.",
+       "zh": "[36] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur, “LibriSpeech: an ASR corpus based on public domain audio books,” in Proc."
+      },
+      {
+       "id": "s-5-25-2",
+       "original": "ICASSP, 2015, pp. 5206–5210.",
+       "zh": "ICASSP, 2015, pp. 5206–5210."
       }
      ]
     },
@@ -2507,10 +3592,34 @@ globalThis.PAPER_2406_18009 = {
      "sentences": [
       {
        "id": "s-5-26-1",
-       "original": "[38] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al., “WavLM: Large-scale self-supervised pre-training for full stack speech processing,” IEEE Journal of Selected Topics in Signal Processing, vol. 16, no. 6, pp. 1505– 1518, 2022.",
+       "original": "[37] Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed, “HuBERT: Self-supervised speech representation learning by masked prediction of hidden units,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol.",
+       "zh": "[37] Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed, “HuBERT: Self-supervised speech representation learning by masked prediction of hidden units,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol."
+      }
+     ]
+    },
+    {
+     "id": "eq-5-7",
+     "type": "equation",
+     "page": 8,
+     "original": "29, pp. 3451–3460, 2021."
+    },
+    {
+     "id": "p-5-27",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-5-27-1",
+       "original": "[38] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al., “WavLM: Large-scale self-supervised pre-training for full stack speech processing,” IEEE Journal of Selected Topics in Signal Processing, vol. 16, no. 6, pp. 1505–",
        "zh": "[38] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al., “WavLM: Large-scale self-supervised pre-training for full stack speech processing,” IEEE Journal of Selected Topics in Signal Processing, vol. 16, no. 6, pp. 1505– 1518, 2022."
       }
      ]
+    },
+    {
+     "id": "eq-5-8",
+     "type": "equation",
+     "page": 8,
+     "original": "1518, 2022."
     }
    ]
   }
@@ -2574,7 +3683,7 @@ globalThis.PAPER_2406_18009 = {
   {
    "id": "ann-006",
    "anchor": {
-    "sentence_id": "s-vocoder-6-1",
+    "sentence_id": "s-flow-matching-transformer-2-11-1",
     "quote": "the model is trained to learn the distribution P(m ⊙ˆs|(1 −m) ⊙ˆs, ˆy)"
    },
    "kind": "concept",
@@ -2661,20 +3770,9 @@ globalThis.PAPER_2406_18009 = {
    "explanation": "一个反直觉的细节：主打「消灭时长模型」的 E2 TTS，主结果表里的数字其实都靠一个 8 层 Voicebox 式时长回归模型喂目标时长 Tgen。论文把它解释成「为了公平比较」，但这意味着生产部署要么接一个外置时长预测（砍掉的东西又回来了），要么由调用方拍脑袋给时长。3.6.3 节验证 ±30% 时长扰动下不崩，缓解了但没有根除这个输入自由度。「简单架构」的叙事在这里有一个不便明说的注脚。"
   },
   {
-   "id": "ann-014",
-   "anchor": {
-    "sentence_id": "s-3-4-2-3",
-    "quote": "the (P2) system achieved the best WER (1.9%) and SIM-o (0.708) which are better than those of the ground-truth audio"
-   },
-   "kind": "number",
-   "title": "超越真人的指标怎么读",
-   "explanation": "WER 1.9% 低于 Ground Truth 的 2.0%，SIM-o 0.708 高于真人的 0.695——「比真人还真」。这不是玄学：WER 由 Hubert-large ASR 反向评测，生成语音往往比真人朗读平稳、无口误无环境噪声，天然更讨 ASR 喜欢；SIM-o 是 WavLM 嵌入余弦相似度，生成样本刻意贴近提示音色，而 LibriSpeech 真人朗读会为不同角色变换嗓音（脚 8 承认这点），反而拉低真人分。两个指标都以模型为裁判，存在系统性偏好，超过 GT 不等于主观质量超过真人。",
-   "featured": true
-  },
-  {
    "id": "ann-015",
    "anchor": {
-    "sentence_id": "s-3-4-5-3",
+    "sentence_id": "s-id-3-3-3",
     "quote": "achieved a CMOS score of -0.05, which is considered to have a level of naturalness indistinguishable from the ground truth"
    },
    "kind": "number",
@@ -2685,7 +3783,7 @@ globalThis.PAPER_2406_18009 = {
   {
    "id": "ann-016",
    "anchor": {
-    "sentence_id": "s-3-4-6-2",
+    "sentence_id": "s-id-3-4-2",
     "quote": "the use of phoneme alignment was the primary obstacle in achieving natural-sounding audio"
    },
    "kind": "critique",
@@ -2707,7 +3805,7 @@ globalThis.PAPER_2406_18009 = {
   {
    "id": "ann-018",
    "anchor": {
-    "sentence_id": "s-2-5-5-3",
+    "sentence_id": "s-2-5-6-3",
     "quote": "we replaced the word in y with the phoneme sequence from the CMU pronouncing dictionary [29] with a 15% probability"
    },
    "kind": "engineering",
@@ -2728,7 +3826,7 @@ globalThis.PAPER_2406_18009 = {
   {
    "id": "ann-020",
    "anchor": {
-    "sentence_id": "s-3-6-4-5",
+    "sentence_id": "s-3-6-5-3",
     "quote": "only a moderate increase in WER while maintaining a high SIM-o, even in the challenging cases of sr = 0.7 and sr = 1.3"
    },
    "kind": "number",

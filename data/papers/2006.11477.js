@@ -133,10 +133,16 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-1-2-2",
-       "original": "This has been particularly successful for natural language processing [43, 45, 9] and is an active research area for computer vision [20, 2, 36, 19, 6].",
+       "original": "This has been particularly successful for natural language processing [43, 45, 9] and is an active research area for",
        "zh": "这一思路在自然语言处理上取得了巨大成功 [43, 45, 9]，也是计算机视觉中一个活跃的研究方向 [20, 2, 36, 19, 6]。"
       }
      ]
+    },
+    {
+     "id": "eq-1-1",
+     "type": "equation",
+     "page": 1,
+     "original": "computer vision [20, 2, 36, 19, 6]."
     },
     {
      "id": "p-1-3",
@@ -155,10 +161,16 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-1-3-3",
-       "original": "The latent representations are fed to a Transformer network to build contextualized representations and the model is trained via a contrastive task where the true latent is to be distinguished from distractors [54, 49, 48, 28] (§ 2).",
+       "original": "The latent representations are fed to a Transformer network to build contextualized representations and the model is trained via a contrastive task where the true latent is to be distinguished",
        "zh": "这些潜在表示被送入一个 Transformer 网络以构建上下文化表示，模型通过一个对比任务来训练：需要从一组干扰项中分辨出真正的潜在表示 [54, 49, 48, 28]（§ 2）。"
       }
      ]
+    },
+    {
+     "id": "eq-1-2",
+     "type": "equation",
+     "page": 1,
+     "original": "from distractors [54, 49, 48, 28] (§ 2)."
     },
     {
      "id": "p-1-4",
@@ -195,10 +207,16 @@ globalThis.PAPER_2006_11477 = {
      ]
     },
     {
-     "id": "eq-1-1",
+     "id": "eq-1-3",
      "type": "equation",
      "page": 2,
      "original": "C"
+    },
+    {
+     "id": "eq-1-4",
+     "type": "equation",
+     "page": 2,
+     "original": "`"
     },
     {
      "id": "p-1-6",
@@ -207,13 +225,13 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-1-6-1",
-       "original": "` Contrastive loss",
+       "original": "Contrastive loss",
        "zh": "对比损失"
       }
      ]
     },
     {
-     "id": "eq-1-2",
+     "id": "eq-1-5",
      "type": "equation",
      "page": 2,
      "original": "L"
@@ -225,10 +243,16 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-1-7-1",
-       "original": "Transformer … …",
-       "zh": "Transformer ……"
+       "original": "Transformer",
+       "zh": "这些潜在表示被送入一个 Transformer 网络以构建上下文化表示，模型通过一个对比任务来训练：需要从一组干扰项中分辨出真正的潜在表示 [54, 49, 48, 28]（§ 2）。"
       }
      ]
+    },
+    {
+     "id": "eq-1-6",
+     "type": "equation",
+     "page": 2,
+     "original": "… …"
     },
     {
      "id": "p-1-8",
@@ -237,13 +261,13 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-1-8-1",
-       "original": "Masked Quantized representations",
-       "zh": "被掩码的（可见）侧与量化表示"
+       "original": "Masked q q q q q Quantized representations",
+       "zh": "图 1 内部标签：掩码（Masked）后的表示经量化得到量化表示（Quantized representations），q 为量化向量。"
       }
      ]
     },
     {
-     "id": "eq-1-3",
+     "id": "eq-1-7",
      "type": "equation",
      "page": 2,
      "original": "Q"
@@ -261,10 +285,16 @@ globalThis.PAPER_2006_11477 = {
      ]
     },
     {
-     "id": "eq-1-4",
+     "id": "eq-1-8",
      "type": "equation",
      "page": 2,
      "original": "Z"
+    },
+    {
+     "id": "eq-1-9",
+     "type": "equation",
+     "page": 2,
+     "original": "X"
     },
     {
      "id": "p-1-10",
@@ -343,12 +373,12 @@ globalThis.PAPER_2006_11477 = {
   },
   {
    "id": "sec-2",
-   "num": null,
+   "num": "2",
    "level": 1,
    "page": 2,
    "title": {
-    "original": "2",
-    "zh": "2 模型"
+    "original": "Model",
+    "zh": "Model"
    },
    "blocks": [
     {
@@ -502,11 +532,29 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-quantization-module-2-3",
-       "original": "The feature encoder output z is mapped to l ∈RG×V logits and the probabilities for choosing the v-th codebook entry for group g are pg,v = exp(lg,v + nv)/τ PV k=1 exp(lg,k + nk)/τ , where τ is a non-negative temperature, n = −log(−log(u)) and u are uniform samples from U(0, 1).",
-       "zh": "特征编码器的输出 z 被映射为 l ∈ R^(G×V) 的 logits，为组 g 选取第 v 个码本条目的概率为 pg,v = exp(lg,v + nv)/τ ÷ Σk=1..V exp(lg,k + nk)/τ，其中 τ 是非负温度，n = −log(−log(u))，u 是从 U(0, 1) 中采样的均匀随机数。"
+       "original": "The feature encoder output z is mapped to l ∈RG×V logits and the probabilities for choosing the v-th codebook entry for group g are pg,v = exp(lg,v + nv)/τ PV k=1 exp(lg,k + nk)/τ",
+       "zh": "特征编码器输出 z 被映射为 l ∈ R^{G×V} 个 logit，第 g 组选择第 v 个码本条目的概率为 pg,v = exp(lg,v + nv)/τ / Σ_{k=1..V} exp(lg,k + nk)/τ（式 1），其中 τ 为非负温度，n = −log(−log(u))，u 为 U(0, 1) 均匀采样。"
+      }
+     ]
+    },
+    {
+     "id": "eq-quantization-module-1",
+     "type": "equation",
+     "page": 3,
+     "original": ", (1)"
+    },
+    {
+     "id": "p-quantization-module-3",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-quantization-module-3-1",
+       "original": "where τ is a non-negative temperature, n = −log(−log(u)) and u are uniform samples from U(0, 1).",
+       "zh": "特征编码器输出 z 被映射为 l ∈ R^{G×V} 个 logit，第 g 组选择第 v 个码本条目的概率为 pg,v = exp(lg,v + nv)/τ / Σ_{k=1..V} exp(lg,k + nk)/τ（式 1），其中 τ 为非负温度，n = −log(−log(u))，u 为 U(0, 1) 均匀采样。"
       },
       {
-       "id": "s-quantization-module-2-4",
+       "id": "s-quantization-module-3-2",
        "original": "During the forward pass, codeword i is chosen by i = argmaxjpg,j and in the backward pass, the true gradient of the Gumbel softmax outputs is used.",
        "zh": "前向传播中按 i = argmax_j pg,j 选取码字 i；反向传播中则使用 Gumbel softmax 输出的真实梯度。"
       }
@@ -606,8 +654,26 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-3-2-2-1",
-       "original": "L = Lm + αLd where α is a tuned hyperparameter.",
-       "zh": "总目标为 L = Lm + αLd，其中 α 是一个调优得到的超参数。"
+       "original": "L = Lm + αLd",
+       "zh": "总损失 L = Lm + αLd（式 2），其中 α 为可调超参数。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-1",
+     "type": "equation",
+     "page": 3,
+     "original": "(2)"
+    },
+    {
+     "id": "p-3-2-3",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-3-2-3-1",
+       "original": "where α is a tuned hyperparameter.",
+       "zh": "总损失 L = Lm + αLd（式 2），其中 α 为可调超参数。"
       }
      ]
     }
@@ -652,13 +718,19 @@ globalThis.PAPER_2006_11477 = {
      "original": "Lm = −log exp(sim(ct, qt)/κ) P"
     },
     {
+     "id": "eq-contrastive-loss-2",
+     "type": "equation",
+     "page": 3,
+     "original": "˜q∼Qt exp(sim(ct, ˜q)/κ) (3)"
+    },
+    {
      "id": "p-contrastive-loss-2",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
        "id": "s-contrastive-loss-2-1",
-       "original": "˜q∼Qt exp(sim(ct, ˜q)/κ) where we compute the cosine similarity sim(a, b) = aT b/∥a∥∥b∥between context representations and quantized latent speech representations [19, 6].",
+       "original": "where we compute the cosine similarity sim(a, b) = aT b/∥a∥∥b∥between context representations and quantized latent speech representations [19, 6].",
        "zh": "（分母为对 q̃~Qt 求和的 exp(sim(ct, q̃)/κ)），其中我们在上下文表示与量化潜在语音表示之间计算余弦相似度 sim(a, b) = aᵀb/‖a‖‖b‖ [19, 6]。"
       }
      ]
@@ -696,22 +768,16 @@ globalThis.PAPER_2006_11477 = {
      "id": "eq-diversity-loss-1",
      "type": "equation",
      "page": 4,
-     "original": "G Ld ="
-    },
-    {
-     "id": "p-diversity-loss-2",
-     "type": "paragraph",
-     "page": 4,
-     "sentences": [
-      {
-       "id": "s-diversity-loss-2-1",
-       "original": "1 GV",
-       "zh": "（上式系数）1/(GV)（接下式对 g 求和、取负熵 −H(p̄g)）。"
-      }
-     ]
+     "original": "G X"
     },
     {
      "id": "eq-diversity-loss-2",
+     "type": "equation",
+     "page": 4,
+     "original": "Ld = 1 GV"
+    },
+    {
+     "id": "eq-diversity-loss-3",
      "type": "equation",
      "page": 4,
      "original": "g=1 −H(¯pg) = 1 GV"
@@ -725,20 +791,32 @@ globalThis.PAPER_2006_11477 = {
    "page": 4,
    "title": {
     "original": "Fine-tuning",
-    "zh": "3.3 微调"
+    "zh": "4.3 微调"
    },
    "blocks": [
     {
      "id": "eq-3-3-1",
      "type": "equation",
      "page": 4,
-     "original": "G V"
+     "original": "G X"
     },
     {
      "id": "eq-3-3-2",
      "type": "equation",
      "page": 4,
-     "original": "v=1 ¯pg,v log ¯pg,v g=1"
+     "original": "V X"
+    },
+    {
+     "id": "eq-3-3-3",
+     "type": "equation",
+     "page": 4,
+     "original": "v=1 ¯pg,v log ¯pg,v (4)"
+    },
+    {
+     "id": "eq-3-3-4",
+     "type": "equation",
+     "page": 4,
+     "original": "g=1"
     },
     {
      "id": "p-3-3-1",
@@ -1213,6 +1291,18 @@ globalThis.PAPER_2006_11477 = {
      "page": 6,
      "original": "Table 1: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech. Models use either the audio of Librispeech (LS-960) or the larger LibriVox (LV-60k) as unlabeled data. We consider two model sizes: BASE (95m parameters) and LARGE (317m parameters). Prior work used 860 unlabeled hours (LS-860) but the total with labeled data is 960 hours and comparable to our setup.",
      "zh": "表 1：在 Libri-light 低资源标注数据设置（10 分钟、1 小时、10 小时）以及 Librispeech 的 clean 100h 子集上训练时，Librispeech dev/test 集上的 WER。模型分别以 Librispeech 音频（LS-960）或更大的 LibriVox（LV-60k）作为无标注数据。我们考察两种模型规模：BASE（95m 参数）与 LARGE（317m 参数）。先前工作使用 860 小时无标注数据（LS-860），但加上标注数据后总量为 960 小时，与我们的设置相当。"
+    },
+    {
+     "id": "p-5-1-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-5-1-4-1",
+       "original": "Model Unlabeled LM dev test data clean other clean other",
+       "zh": "表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。"
+      }
+     ]
     }
    ]
   },
@@ -1223,7 +1313,7 @@ globalThis.PAPER_2006_11477 = {
    "page": 6,
    "title": {
     "original": "min labeled",
-    "zh": "10 分钟标注（表格碎片）"
+    "zh": "10 分钟标注（附录表格碎片）"
    },
    "blocks": [
     {
@@ -1233,15 +1323,28 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-10-1-1",
-       "original": "15.7 24.1 16.3 25.2 8.9 15.7 9.1 15.6 6.6 13.2 6.9 12.9 6.6 10.6 6.8 10.8 4.6 7.9 4.8 8.2 8.5 16.4 9.0 17.6 5.0 10.8 5.5 11.3 3.8 9.0 4.0 9.3 3.8 7.1 3.9 7.6 2.9 5.4 2.9 5.8 5.3 13.2 5.9 14.1 Iter. pseudo-labeling [58] 23.51 25.48 24.37 26.02 17.00 19.34 18.03 19.92 3.8 9.1 4.3 9.5 2.9 7.4 3.2 7.8 2.9 5.7 3.2 6.1 2.4 4.8 2.6 4.9 Hybrid DNN/HMM [34] 5.0 19.5 5.8 18.6 TTS data augm.",
-       "zh": "（Table 1 数值碎块）各行（无 LM / 4-gram LM / Transformer LM 等解码条件下）WER 数值：15.7 24.1 16.3 25.2 8.9 15.7 9.1 15.6 6.6 13.2 6.9 12.9 6.6 10.6 6.8 10.8 4.6 7.9 4.8 8.2 8.5 16.4 9.0 17.6 5.0 10.8 5.5 11.3 3.8 9.0 4.0 9.3 3.8 7.1 3.9 7.6 2.9 5.4 2.9 5.8 5.3 13.2 5.9 14.1；对比基线：Iter. pseudo-labeling [58] 23.51 25.48 24.37 26.02 17.00 19.34 18.03 19.92 3.8 9.1 4.3 9.5 2.9 7.4 3.2 7.8 2.9 5.7 3.2 6.1 2.4 4.8 2.6 4.9；Hybrid DNN/HMM [34] 5.0 19.5 5.8 18.6；TTS data augm.（TTS 数据增强）。"
-      },
-      {
-       "id": "s-10-1-2",
-       "original": "[30] 4.3 13.5 4.0 10.9 4.5 12.1 Iter. pseudo-labeling [58] 4.98 7.97 5.59 8.95 3.19 6.14 3.72 7.11 Noisy student [42] 3.9 8.8 4.2 8.6 2.7 7.9 3.4 8.0 2.2 6.3 2.6 6.3 2.1 4.8 2.3 5.0 1.9 4.0 2.0 4.0 Our approach of jointly learning discrete units and contextualized representations clearly improves over previous work which learned quantized audio units in a separate step [4], reducing WER by a about a third.",
-       "zh": "（Table 1 数值碎块续）TTS 数据增强 [30]：4.3 13.5 4.0 10.9 4.5 12.1；Iter. pseudo-labeling [58]：4.98 7.97 5.59 8.95 3.19 6.14 3.72 7.11；Noisy student [42]：3.9 8.8 4.2 8.6 2.7 7.9 3.4 8.0 2.2 6.3 2.6 6.3 2.1 4.8 2.3 5.0 1.9 4.0 2.0 4.0。我们联合学习离散单元与上下文化表示的方法，明显优于先在单独一步中学习量化音频单元的先前工作 [4]，WER 降低了约三分之一。"
+       "original": "Discrete BERT [4] LS-960 4-gram",
+       "zh": "（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。"
       }
      ]
+    },
+    {
+     "id": "eq-10-1",
+     "type": "equation",
+     "page": 6,
+     "original": "15.7 24.1 16.3 25.2"
+    },
+    {
+     "id": "eq-10-2",
+     "type": "equation",
+     "page": 6,
+     "original": "BASE LS-960 4-gram"
+    },
+    {
+     "id": "eq-10-3",
+     "type": "equation",
+     "page": 6,
+     "original": "8.9 15.7 9.1 15.6"
     },
     {
      "id": "p-10-2",
@@ -1250,20 +1353,16 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-10-2-1",
-       "original": "A recent iterative self-training approach [42] represents the state of the art on the clean 100 hour subset of Librispeech but it requires multiple iterations of labeling, ﬁltering, and re-training.",
-       "zh": "近期一种迭代式自训练方法 [42] 在 Librispeech 的 clean 100 小时子集上代表了此前最佳水平，但它需要多轮「打伪标签—过滤—重训」的迭代。"
-      },
-      {
-       "id": "s-10-2-2",
-       "original": "Our approach is simpler: we pre-train on the unlabeled data and ﬁne-tune on the labeled data.",
-       "zh": "我们的方法更简单：在无标注数据上预训练，再在标注数据上微调。"
-      },
-      {
-       "id": "s-10-2-3",
-       "original": "On the 100 hour subset of Librispeech, their method achieves WER 4.2/8.6 on test-clean/other which compares to WER 2.3/5.0 with the LARGE model in a like for like setup, a relative WER reduction of 45%/42%.",
-       "zh": "在 Librispeech 的 100 小时子集上，他们的方法在 test-clean/other 上取得 WER 4.2/8.6；而在完全对等的设置下，我们的 LARGE 模型取得 WER 2.3/5.0，相对 WER 降幅为 45%/42%。"
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
       }
      ]
+    },
+    {
+     "id": "eq-10-4",
+     "type": "equation",
+     "page": 6,
+     "original": "6.6 13.2 6.9 12.9"
     },
     {
      "id": "p-10-3",
@@ -1272,27 +1371,529 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-10-3-1",
+       "original": "LARGE LS-960 Transf.",
+       "zh": "（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10-5",
+     "type": "equation",
+     "page": 6,
+     "original": "6.6 10.6 6.8 10.8"
+    },
+    {
+     "id": "p-10-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-10-4-1",
+       "original": "LV-60k Transf.",
+       "zh": "（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10-6",
+     "type": "equation",
+     "page": 6,
+     "original": "4.6 7.9 4.8 8.2"
+    }
+   ]
+  },
+  {
+   "id": "sec-1h-labeled",
+   "num": null,
+   "level": 2,
+   "page": 6,
+   "title": {
+    "original": "1h labeled",
+    "zh": "1h labeled"
+   },
+   "blocks": [
+    {
+     "id": "p-1h-labeled-1",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-1h-labeled-1-1",
+       "original": "Discrete BERT [4] LS-960 4-gram",
+       "zh": "（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-1h-labeled-1",
+     "type": "equation",
+     "page": 6,
+     "original": "8.5 16.4 9.0 17.6"
+    },
+    {
+     "id": "eq-1h-labeled-2",
+     "type": "equation",
+     "page": 6,
+     "original": "BASE LS-960 4-gram"
+    },
+    {
+     "id": "eq-1h-labeled-3",
+     "type": "equation",
+     "page": 6,
+     "original": "5.0 10.8 5.5 11.3"
+    },
+    {
+     "id": "p-1h-labeled-2",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-1h-labeled-2-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-1h-labeled-4",
+     "type": "equation",
+     "page": 6,
+     "original": "3.8 9.0 4.0 9.3"
+    },
+    {
+     "id": "p-1h-labeled-3",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-1h-labeled-3-1",
+       "original": "LARGE LS-960 Transf.",
+       "zh": "（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-1h-labeled-5",
+     "type": "equation",
+     "page": 6,
+     "original": "3.8 7.1 3.9 7.6"
+    },
+    {
+     "id": "p-1h-labeled-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-1h-labeled-4-1",
+       "original": "LV-60k Transf.",
+       "zh": "（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-1h-labeled-6",
+     "type": "equation",
+     "page": 6,
+     "original": "2.9 5.4 2.9 5.8"
+    }
+   ]
+  },
+  {
+   "id": "sec-10h-labeled",
+   "num": null,
+   "level": 2,
+   "page": 6,
+   "title": {
+    "original": "10h labeled",
+    "zh": "10h labeled"
+   },
+   "blocks": [
+    {
+     "id": "p-10h-labeled-1",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-10h-labeled-1-1",
+       "original": "Discrete BERT [4] LS-960 4-gram",
+       "zh": "（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10h-labeled-1",
+     "type": "equation",
+     "page": 6,
+     "original": "5.3 13.2 5.9 14.1"
+    },
+    {
+     "id": "p-10h-labeled-2",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-10h-labeled-2-1",
+       "original": "Iter. pseudo-labeling [58] LS-960 4-gram+Transf.",
+       "zh": "（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10h-labeled-2",
+     "type": "equation",
+     "page": 6,
+     "original": "23.51 25.48 24.37 26.02"
+    },
+    {
+     "id": "p-10h-labeled-3",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-10h-labeled-3-1",
+       "original": "LV-60k 4-gram+Transf.",
+       "zh": "（表格行）23.51 25.48 24.37 26.02｜LV-60k｜4-gram+Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10h-labeled-3",
+     "type": "equation",
+     "page": 6,
+     "original": "17.00 19.34 18.03 19.92"
+    },
+    {
+     "id": "eq-10h-labeled-4",
+     "type": "equation",
+     "page": 6,
+     "original": "BASE LS-960 4-gram"
+    },
+    {
+     "id": "eq-10h-labeled-5",
+     "type": "equation",
+     "page": 6,
+     "original": "3.8 9.1 4.3 9.5"
+    },
+    {
+     "id": "p-10h-labeled-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-10h-labeled-4-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10h-labeled-6",
+     "type": "equation",
+     "page": 6,
+     "original": "2.9 7.4 3.2 7.8"
+    },
+    {
+     "id": "p-10h-labeled-5",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-10h-labeled-5-1",
+       "original": "LARGE LS-960 Transf.",
+       "zh": "（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10h-labeled-7",
+     "type": "equation",
+     "page": 6,
+     "original": "2.9 5.7 3.2 6.1"
+    },
+    {
+     "id": "p-10h-labeled-6",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-10h-labeled-6-1",
+       "original": "LV-60k Transf.",
+       "zh": "（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10h-labeled-8",
+     "type": "equation",
+     "page": 6,
+     "original": "2.4 4.8 2.6 4.9"
+    }
+   ]
+  },
+  {
+   "id": "sec-100h-labeled",
+   "num": null,
+   "level": 2,
+   "page": 6,
+   "title": {
+    "original": "100h labeled",
+    "zh": "100h labeled"
+   },
+   "blocks": [
+    {
+     "id": "p-100h-labeled-1",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-1-1",
+       "original": "Hybrid DNN/HMM [34]",
+       "zh": "（表格行）Hybrid DNN/HMM [34]｜-｜4-gram：5.0 19.5 5.8 18.6；TTS data augm.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-1",
+     "type": "equation",
+     "page": 6,
+     "original": "-"
+    },
+    {
+     "id": "eq-100h-labeled-2",
+     "type": "equation",
+     "page": 6,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-100h-labeled-3",
+     "type": "equation",
+     "page": 6,
+     "original": "5.0 19.5 5.8 18.6"
+    },
+    {
+     "id": "eq-100h-labeled-4",
+     "type": "equation",
+     "page": 6,
+     "original": "TTS data augm. [30]"
+    },
+    {
+     "id": "eq-100h-labeled-5",
+     "type": "equation",
+     "page": 6,
+     "original": "-"
+    },
+    {
+     "id": "eq-100h-labeled-6",
+     "type": "equation",
+     "page": 6,
+     "original": "LSTM"
+    },
+    {
+     "id": "eq-100h-labeled-7",
+     "type": "equation",
+     "page": 6,
+     "original": "4.3 13.5"
+    },
+    {
+     "id": "eq-100h-labeled-8",
+     "type": "equation",
+     "page": 6,
+     "original": "Discrete BERT [4] LS-960 4-gram"
+    },
+    {
+     "id": "eq-100h-labeled-9",
+     "type": "equation",
+     "page": 6,
+     "original": "4.0 10.9 4.5 12.1"
+    },
+    {
+     "id": "p-100h-labeled-2",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-2-1",
+       "original": "Iter. pseudo-labeling [58] LS-860 4-gram+Transf.",
+       "zh": "（表格行）[30]｜-｜LSTM：4.3 13.5；Discrete BERT [4]｜LS-960｜4-gram：4.0 10.9 4.5 12.1；Iter. pseudo-labeling [58]｜LS-860｜4-gram+Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-10",
+     "type": "equation",
+     "page": 6,
+     "original": "4.98 7.97 5.59 8.95"
+    },
+    {
+     "id": "p-100h-labeled-3",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-3-1",
+       "original": "LV-60k 4-gram+Transf.",
+       "zh": "（表格行）23.51 25.48 24.37 26.02｜LV-60k｜4-gram+Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-11",
+     "type": "equation",
+     "page": 6,
+     "original": "3.19 6.14 3.72 7.11"
+    },
+    {
+     "id": "eq-100h-labeled-12",
+     "type": "equation",
+     "page": 6,
+     "original": "Noisy student [42] LS-860 LSTM"
+    },
+    {
+     "id": "eq-100h-labeled-13",
+     "type": "equation",
+     "page": 6,
+     "original": "3.9 8.8 4.2 8.6"
+    },
+    {
+     "id": "eq-100h-labeled-14",
+     "type": "equation",
+     "page": 6,
+     "original": "BASE LS-960 4-gram"
+    },
+    {
+     "id": "eq-100h-labeled-15",
+     "type": "equation",
+     "page": 6,
+     "original": "2.7 7.9 3.4 8.0"
+    },
+    {
+     "id": "p-100h-labeled-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-4-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-16",
+     "type": "equation",
+     "page": 6,
+     "original": "2.2 6.3 2.6 6.3"
+    },
+    {
+     "id": "p-100h-labeled-5",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-5-1",
+       "original": "LARGE LS-960 Transf.",
+       "zh": "（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-17",
+     "type": "equation",
+     "page": 6,
+     "original": "2.1 4.8 2.3 5.0"
+    },
+    {
+     "id": "p-100h-labeled-6",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-6-1",
+       "original": "LV-60k Transf.",
+       "zh": "（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-18",
+     "type": "equation",
+     "page": 6,
+     "original": "1.9 4.0 2.0 4.0"
+    },
+    {
+     "id": "p-100h-labeled-7",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-7-1",
+       "original": "Our approach of jointly learning discrete units and contextualized representations clearly improves over previous work which learned quantized audio units in a separate step [4], reducing WER by a about a third.",
+       "zh": "（Table 1 数值碎块续）TTS 数据增强 [30]：4.3 13.5 4.0 10.9 4.5 12.1；Iter. pseudo-labeling [58]：4.98 7.97 5.59 8.95 3.19 6.14 3.72 7.11；Noisy student [42]：3.9 8.8 4.2 8.6 2.7 7.9 3.4 8.0 2.2 6.3 2.6 6.3 2.1 4.8 2.3 5.0 1.9 4.0 2.0 4.0。我们联合学习离散单元与上下文化表示的方法，明显优于先在单独一步中学习量化音频单元的先前工作 [4]，WER 降低了约三分之一。"
+      }
+     ]
+    },
+    {
+     "id": "p-100h-labeled-8",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-8-1",
+       "original": "A recent iterative self-training approach [42] represents the state of the art on the clean 100 hour subset of Librispeech but it requires multiple iterations of labeling, ﬁltering, and re-training.",
+       "zh": "近期一种迭代式自训练方法 [42] 在 Librispeech 的 clean 100 小时子集上代表了此前最佳水平，但它需要多轮「打伪标签—过滤—重训」的迭代。"
+      },
+      {
+       "id": "s-100h-labeled-8-2",
+       "original": "Our approach is simpler: we pre-train on the unlabeled data and ﬁne-tune on the labeled data.",
+       "zh": "我们的方法更简单：在无标注数据上预训练，再在标注数据上微调。"
+      },
+      {
+       "id": "s-100h-labeled-8-3",
+       "original": "On the 100 hour subset of Librispeech, their method achieves WER 4.2/8.6 on test-clean/other which compares to WER 2.3/5.0 with the LARGE model in a like for like setup, a relative WER reduction of 45%/42%.",
+       "zh": "在 Librispeech 的 100 小时子集上，他们的方法在 test-clean/other 上取得 WER 4.2/8.6；而在完全对等的设置下，我们的 LARGE 模型取得 WER 2.3/5.0，相对 WER 降幅为 45%/42%。"
+      }
+     ]
+    },
+    {
+     "id": "p-100h-labeled-9",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-9-1",
        "original": "When the LARGE model uses an order of magnitude less labeled data (10h labeled), then it still achieves WER 3.2/6.1, an error reduction of 24%/29% relative to iterative self-training.",
        "zh": "当 LARGE 模型使用少一个数量级的标注数据（10 小时标注）时，仍取得 WER 3.2/6.1，相对迭代式自训练的错误率降幅为 24%/29%。"
       },
       {
-       "id": "s-10-3-2",
+       "id": "s-100h-labeled-9-2",
        "original": "Using only a single hour of labeled data, the same model achieves WER 3.9/7.6 which improves on both test-clean and test-other by 7%/12% - with two orders of magnitude less labeled data.",
        "zh": "只用 1 小时标注数据，同一模型取得 WER 3.9/7.6，在 test-clean 和 test-other 上分别提升 7%/12%——而标注数据少了两个数量级。"
       },
       {
-       "id": "s-10-3-3",
+       "id": "s-100h-labeled-9-3",
        "original": "We note that the Libri-",
        "zh": "我们注意到 Libri-（原文在此断行，接下页「light data splits…」）。"
       }
      ]
     },
     {
-     "id": "tab-10-1",
+     "id": "tab-100h-labeled-1",
      "type": "table_caption",
      "page": 7,
      "original": "Table 2: WER on Librispeech when using all 960 hours of labeled data (cf. Table 1).",
      "zh": "表 2：使用全部 960 小时标注数据时 Librispeech 上的 WER（参见 Table 1）。"
+    },
+    {
+     "id": "p-100h-labeled-10",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-10-1",
+       "original": "Model Unlabeled LM dev test data clean other clean other",
+       "zh": "表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。"
+      }
+     ]
     }
    ]
   },
@@ -1313,20 +1914,142 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-supervised-1-1",
-       "original": "CTC Transf [51] 2.20 4.94 2.47 5.45 S2S Transf.",
-       "zh": "（Table 2 有监督基线数值碎块）CTC Transf [51]：2.20 4.94 2.47 5.45；S2S Transf.（seq2seq Transformer）。"
-      },
-      {
-       "id": "s-supervised-1-2",
-       "original": "[51] 2.10 4.79 2.33 5.17 Transf.",
-       "zh": "（接上）[51]：2.10 4.79 2.33 5.17；Transf.（Transformer）。"
-      },
-      {
-       "id": "s-supervised-1-3",
-       "original": "Transducer [60] 2.0 4.6 ContextNet [17] 1.9 3.9 1.9 4.1 Conformer [15] 2.1 4.3 1.9 3.9",
-       "zh": "（接上）Transducer [60]：2.0 4.6；ContextNet [17]：1.9 3.9 1.9 4.1；Conformer [15]：2.1 4.3 1.9 3.9。"
+       "original": "CTC Transf [51]",
+       "zh": "（表格行）CTC｜Transf [51]｜-｜CLM+Transf.。"
       }
      ]
+    },
+    {
+     "id": "eq-supervised-1",
+     "type": "equation",
+     "page": 7,
+     "original": "-"
+    },
+    {
+     "id": "p-supervised-2",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-supervised-2-1",
+       "original": "CLM+Transf.",
+       "zh": "（表格行）CTC｜Transf [51]｜-｜CLM+Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-supervised-2",
+     "type": "equation",
+     "page": 7,
+     "original": "2.20 4.94 2.47 5.45"
+    },
+    {
+     "id": "eq-supervised-3",
+     "type": "equation",
+     "page": 7,
+     "original": "S2S Transf. [51]"
+    },
+    {
+     "id": "eq-supervised-4",
+     "type": "equation",
+     "page": 7,
+     "original": "-"
+    },
+    {
+     "id": "p-supervised-3",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-supervised-3-1",
+       "original": "CLM+Transf.",
+       "zh": "（表格行）CTC｜Transf [51]｜-｜CLM+Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-supervised-5",
+     "type": "equation",
+     "page": 7,
+     "original": "2.10 4.79 2.33 5.17"
+    },
+    {
+     "id": "eq-supervised-6",
+     "type": "equation",
+     "page": 7,
+     "original": "Transf. Transducer [60]"
+    },
+    {
+     "id": "eq-supervised-7",
+     "type": "equation",
+     "page": 7,
+     "original": "-"
+    },
+    {
+     "id": "p-supervised-4",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-supervised-4-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-supervised-8",
+     "type": "equation",
+     "page": 7,
+     "original": "- - 2.0 4.6"
+    },
+    {
+     "id": "eq-supervised-9",
+     "type": "equation",
+     "page": 7,
+     "original": "ContextNet [17]"
+    },
+    {
+     "id": "eq-supervised-10",
+     "type": "equation",
+     "page": 7,
+     "original": "-"
+    },
+    {
+     "id": "eq-supervised-11",
+     "type": "equation",
+     "page": 7,
+     "original": "LSTM"
+    },
+    {
+     "id": "eq-supervised-12",
+     "type": "equation",
+     "page": 7,
+     "original": "1.9 3.9 1.9 4.1"
+    },
+    {
+     "id": "eq-supervised-13",
+     "type": "equation",
+     "page": 7,
+     "original": "Conformer [15]"
+    },
+    {
+     "id": "eq-supervised-14",
+     "type": "equation",
+     "page": 7,
+     "original": "-"
+    },
+    {
+     "id": "eq-supervised-15",
+     "type": "equation",
+     "page": 7,
+     "original": "LSTM"
+    },
+    {
+     "id": "eq-supervised-16",
+     "type": "equation",
+     "page": 7,
+     "original": "2.1 4.3 1.9 3.9"
     }
    ]
   },
@@ -1347,10 +2070,64 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-semi-supervised-1-1",
-       "original": "CTC Transf. + PL [51] 2.10 4.79 2.33 4.54 S2S Transf. + PL [51] 2.00 3.65 2.09 4.11 Iter. pseudo-labeling [58] 1.85 3.26 2.10 4.01 Noisy student [42] 1.6 3.4 1.7 3.4",
-       "zh": "（Table 2 半监督基线数值碎块）CTC Transf. + PL [51]：2.10 4.79 2.33 4.54；S2S Transf. + PL [51]：2.00 3.65 2.09 4.11；Iter. pseudo-labeling [58]：1.85 3.26 2.10 4.01；Noisy student [42]：1.6 3.4 1.7 3.4。"
+       "original": "CTC Transf. + PL [51] LV-60k CLM+Transf.",
+       "zh": "（表格行）CTC｜Transf. + PL [51]｜LV-60k｜CLM+Transf.。"
       }
      ]
+    },
+    {
+     "id": "eq-semi-supervised-1",
+     "type": "equation",
+     "page": 7,
+     "original": "2.10 4.79 2.33 4.54"
+    },
+    {
+     "id": "p-semi-supervised-2",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-semi-supervised-2-1",
+       "original": "S2S Transf. + PL [51] LV-60k CLM+Transf.",
+       "zh": "（表格行）2.10 4.79 2.33 4.54；S2S｜Transf. + PL [51]｜LV-60k｜CLM+Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-semi-supervised-2",
+     "type": "equation",
+     "page": 7,
+     "original": "2.00 3.65 2.09 4.11"
+    },
+    {
+     "id": "p-semi-supervised-3",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-semi-supervised-3-1",
+       "original": "Iter. pseudo-labeling [58] LV-60k 4-gram+Transf.",
+       "zh": "（表格行）2.00 3.65 2.09 4.11；Iter. pseudo-labeling [58]｜LV-60k｜4-gram+Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-semi-supervised-3",
+     "type": "equation",
+     "page": 7,
+     "original": "1.85 3.26 2.10 4.01"
+    },
+    {
+     "id": "eq-semi-supervised-4",
+     "type": "equation",
+     "page": 7,
+     "original": "Noisy student [42] LV-60k LSTM"
+    },
+    {
+     "id": "eq-semi-supervised-5",
+     "type": "equation",
+     "page": 7,
+     "original": "1.6 3.4 1.7 3.4"
     }
    ]
   },
@@ -1371,11 +2148,101 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-this-work-1-1",
-       "original": "LARGE - from scratch 1.7 4.3 2.1 4.6 1.8 4.7 2.1 4.8 1.7 3.9 2.0 4.1 1.6 3.0 1.8 3.3 light data splits contain both clean and noisy data leading to better accuracy on test-other compared to test-clean.",
+       "original": "LARGE - from scratch",
+       "zh": "表头与首行：模型（Model）｜无标注数据｜LM｜dev/test（clean/other）；LARGE 从头训练（from scratch）：None 2.8 7.6 3.0 7.7；4-gram 1.8 5.4 2.6 5.8；Transf.（后续数值照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-this-work-1",
+     "type": "equation",
+     "page": 7,
+     "original": "-"
+    },
+    {
+     "id": "p-this-work-2",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-this-work-2-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-this-work-2",
+     "type": "equation",
+     "page": 7,
+     "original": "1.7 4.3 2.1 4.6"
+    },
+    {
+     "id": "p-this-work-3",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-this-work-3-1",
+       "original": "BASE LS-960 Transf.",
+       "zh": "（表格行）BASE｜LS-960｜Transf.（Transformer LM）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-this-work-3",
+     "type": "equation",
+     "page": 7,
+     "original": "1.8 4.7 2.1 4.8"
+    },
+    {
+     "id": "p-this-work-4",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-this-work-4-1",
+       "original": "LARGE LS-960 Transf.",
+       "zh": "（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-this-work-4",
+     "type": "equation",
+     "page": 7,
+     "original": "1.7 3.9 2.0 4.1"
+    },
+    {
+     "id": "p-this-work-5",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-this-work-5-1",
+       "original": "LV-60k Transf.",
+       "zh": "（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-this-work-5",
+     "type": "equation",
+     "page": 7,
+     "original": "1.6 3.0 1.8 3.3"
+    },
+    {
+     "id": "p-this-work-6",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-this-work-6-1",
+       "original": "light data splits contain both clean and noisy data leading to better accuracy on test-other compared to test-clean.",
        "zh": "（Table 2 本文方法数值碎块）LARGE - from scratch（从头训练）：1.7 4.3 2.1 4.6 1.8 4.7 2.1 4.8 1.7 3.9 2.0 4.1 1.6 3.0 1.8 3.3。说明：Libri-light 数据划分同时包含干净与嘈杂数据，这使得 test-other 上的准确率反而好于 test-clean。"
       },
       {
-       "id": "s-this-work-1-2",
+       "id": "s-this-work-6-2",
        "original": "Increasing model size reduces WER on all setups with the largest improvements on test-other (BASE vs. LARGE both on LS-960) and increasing the amount of unlabeled training data also leads to large improvements (LARGE LS-960 vs. LV-60k).",
        "zh": "增大模型规模在所有设置上都降低了 WER，其中 test-other 上的提升最大（同在 LS-960 上的 BASE 与 LARGE 对比）；增加无标注训练数据量也带来显著提升（LARGE 在 LS-960 与 LV-60k 上的对比）。"
       }
@@ -1507,10 +2374,64 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-5-3-2-1",
-       "original": "dev PER test PER CNN + TD-ﬁlterbanks [59] 15.6 18.0 PASE+ [47] 17.2 Li-GRU + fMLLR [46] – 14.9 wav2vec [49] 12.9 14.7 vq-wav2vec [5] 9.6 11.6",
-       "zh": "（Table 3 数值碎块）dev PER / test PER：CNN + TD-filterbanks [59] 15.6 18.0；PASE+ [47] 17.2；Li-GRU + fMLLR [46] – 14.9；wav2vec [49] 12.9 14.7；vq-wav2vec [5] 9.6 11.6。"
+       "original": "dev PER test PER CNN + TD-ﬁlterbanks [59]",
+       "zh": "表头：dev PER / test PER；CNN + TD-filterbanks [59]（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-5-3-1",
+     "type": "equation",
+     "page": 8,
+     "original": "15.6 18.0"
+    },
+    {
+     "id": "eq-5-3-2",
+     "type": "equation",
+     "page": 8,
+     "original": "PASE+ [47]"
+    },
+    {
+     "id": "eq-5-3-3",
+     "type": "equation",
+     "page": 8,
+     "original": "- 17.2"
+    },
+    {
+     "id": "eq-5-3-4",
+     "type": "equation",
+     "page": 8,
+     "original": "Li-GRU + fMLLR [46]"
+    },
+    {
+     "id": "eq-5-3-5",
+     "type": "equation",
+     "page": 8,
+     "original": "– 14.9"
+    },
+    {
+     "id": "eq-5-3-6",
+     "type": "equation",
+     "page": 8,
+     "original": "wav2vec [49]"
+    },
+    {
+     "id": "eq-5-3-7",
+     "type": "equation",
+     "page": 8,
+     "original": "12.9 14.7"
+    },
+    {
+     "id": "eq-5-3-8",
+     "type": "equation",
+     "page": 8,
+     "original": "vq-wav2vec [5]"
+    },
+    {
+     "id": "eq-5-3-9",
+     "type": "equation",
+     "page": 8,
+     "original": "9.6 11.6"
     }
    ]
   },
@@ -1531,10 +2452,16 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-this-work-no-lm-1-1",
-       "original": "LARGE (LS-960) 7.4 8.3",
+       "original": "LARGE (LS-960)",
        "zh": "（Table 3 续）本文方法（无 LM）：LARGE (LS-960) 7.4 8.3。"
       }
      ]
+    },
+    {
+     "id": "eq-this-work-no-lm-1",
+     "type": "equation",
+     "page": 8,
+     "original": "7.4 8.3"
     },
     {
      "id": "tab-this-work-no-lm-1",
@@ -1567,10 +2494,52 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-this-work-no-lm-3-1",
-       "original": "Continuous inputs, quantized targets (Baseline) 7.97 0.02 Quantized inputs, quantized targets 12.18 0.41 Quantized inputs, continuous targets 11.18 0.16 Continuous inputs, continuous targets 8.58 0.08",
-       "zh": "（Table 4 数值碎块）连续输入 + 量化目标（Baseline，基线）：7.97 0.02；量化输入 + 量化目标：12.18 0.41；量化输入 + 连续目标：11.18 0.16；连续输入 + 连续目标：8.58 0.08。"
+       "original": "Continuous inputs, quantized targets (Baseline)",
+       "zh": "（表格行）连续输入、量化目标（Baseline 基线配置）。"
       }
      ]
+    },
+    {
+     "id": "eq-this-work-no-lm-2",
+     "type": "equation",
+     "page": 8,
+     "original": "7.97 0.02"
+    },
+    {
+     "id": "eq-this-work-no-lm-3",
+     "type": "equation",
+     "page": 8,
+     "original": "Quantized inputs, quantized targets"
+    },
+    {
+     "id": "eq-this-work-no-lm-4",
+     "type": "equation",
+     "page": 8,
+     "original": "12.18 0.41"
+    },
+    {
+     "id": "eq-this-work-no-lm-5",
+     "type": "equation",
+     "page": 8,
+     "original": "Quantized inputs, continuous targets"
+    },
+    {
+     "id": "eq-this-work-no-lm-6",
+     "type": "equation",
+     "page": 8,
+     "original": "11.18 0.16"
+    },
+    {
+     "id": "eq-this-work-no-lm-7",
+     "type": "equation",
+     "page": 8,
+     "original": "Continuous inputs, continuous targets"
+    },
+    {
+     "id": "eq-this-work-no-lm-8",
+     "type": "equation",
+     "page": 8,
+     "original": "8.58 0.08"
     }
    ]
   },
@@ -1581,7 +2550,7 @@ globalThis.PAPER_2006_11477 = {
    "page": 8,
    "title": {
     "original": "Ablations",
-    "zh": "5.4 消融"
+    "zh": "附录 F 消融"
    },
    "blocks": [
     {
@@ -1755,7 +2724,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-1-2",
-       "original": "L."
+       "original": "L.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
        "id": "s-references-1-3",
@@ -1763,7 +2733,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-1-4",
-       "original": "R."
+       "original": "R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
       },
       {
        "id": "s-references-1-5",
@@ -1771,7 +2742,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-1-6",
-       "original": "E."
+       "original": "E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
        "id": "s-references-1-7",
@@ -1787,7 +2759,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-1-10",
-       "original": "Bachman, R."
+       "original": "Bachman, R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
       },
       {
        "id": "s-references-1-11",
@@ -1815,7 +2788,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-1-17",
-       "original": "Baevski and M."
+       "original": "Baevski and M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-1-18",
@@ -1846,7 +2820,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-2-3",
-       "original": "Baevski, M."
+       "original": "Baevski, M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-2-4",
@@ -1870,7 +2845,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-2-9",
-       "original": "Schneider, and M."
+       "original": "Schneider, and M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-2-10",
@@ -1890,7 +2866,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-2-14",
-       "original": "Kornblith, M."
+       "original": "Kornblith, M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-2-15",
@@ -1910,7 +2887,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-2-19",
-       "original": "Chorowski, R."
+       "original": "Chorowski, R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
       },
       {
        "id": "s-references-2-20",
@@ -1946,7 +2924,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-2-28",
-       "original": "R."
+       "original": "R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
       },
       {
        "id": "s-references-2-29",
@@ -1962,7 +2941,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-2-32",
-       "original": "Devlin, M.-W."
+       "original": "Devlin, M.-W.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-2-33",
@@ -1998,7 +2978,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-2-41",
-       "original": "[11] R."
+       "original": "[11] R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
       },
       {
        "id": "s-references-2-42",
@@ -2018,11 +2999,13 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-2-46",
-       "original": "Pretorius, E."
+       "original": "Pretorius, E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
        "id": "s-references-2-47",
-       "original": "Van Biljon, E. van der Westhuizen, L. van Staden, and H."
+       "original": "Van Biljon, E. van der Westhuizen, L. van Staden, and H.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
        "id": "s-references-2-48",
@@ -2038,7 +3021,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-2-51",
-       "original": "Fan, E."
+       "original": "Fan, E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
        "id": "s-references-2-52",
@@ -2085,7 +3069,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-3-7",
-       "original": "M."
+       "original": "M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-3-8",
@@ -2109,7 +3094,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-3-13",
-       "original": "L."
+       "original": "L.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
        "id": "s-references-3-14",
@@ -2124,7 +3110,8 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "The DARPA TIMIT Acoustic-Phonetic Continuous Speech Corpus CDROM."
+       "original": "The DARPA TIMIT Acoustic-Phonetic Continuous Speech Corpus CDROM.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-4-2",
@@ -2196,7 +3183,8 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-4-19",
-       "original": "Wu, and R."
+       "original": "Wu, and R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
       },
       {
        "id": "s-references-4-20",
@@ -2204,137 +3192,97 @@ globalThis.PAPER_2006_11477 = {
       },
       {
        "id": "s-references-4-21",
-       "original": "Conformer: Convolution-augmented transformer for speech recognition. arXiv, 2020."
-      },
-      {
-       "id": "s-references-4-22",
-       "original": "[16] E."
-      },
-      {
-       "id": "s-references-4-23",
-       "original": "J."
-      },
-      {
-       "id": "s-references-4-24",
-       "original": "Gumbel."
-      },
-      {
-       "id": "s-references-4-25",
-       "original": "Statistical theory of extreme values and some practical applications: a series of lectures, volume 33."
-      },
-      {
-       "id": "s-references-4-26",
-       "original": "US Government Printing Ofﬁce, 1954."
-      },
-      {
-       "id": "s-references-4-27",
-       "original": "[17] W."
-      },
-      {
-       "id": "s-references-4-28",
-       "original": "Han, Z."
-      },
-      {
-       "id": "s-references-4-29",
-       "original": "Zhang, Y."
-      },
-      {
-       "id": "s-references-4-30",
-       "original": "Zhang, J."
-      },
-      {
-       "id": "s-references-4-31",
-       "original": "Yu, C.-C."
-      },
-      {
-       "id": "s-references-4-32",
-       "original": "Chiu, J."
-      },
-      {
-       "id": "s-references-4-33",
-       "original": "Qin, A."
-      },
-      {
-       "id": "s-references-4-34",
-       "original": "Gulati, R."
-      },
-      {
-       "id": "s-references-4-35",
-       "original": "Pang, and Y."
-      },
-      {
-       "id": "s-references-4-36",
-       "original": "Wu."
-      },
-      {
-       "id": "s-references-4-37",
-       "original": "Contextnet: Improving convolutional neural networks for automatic speech recognition with global context."
+       "original": "Conformer: Convolution-augmented transformer for speech recognition. arXiv,"
       }
      ]
     },
     {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 9,
+     "original": "2020."
+    },
+    {
      "id": "p-references-5",
      "type": "paragraph",
-     "page": 10,
+     "page": 9,
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "[18] D."
+       "original": "[16] E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
        "id": "s-references-5-2",
-       "original": "Harwath, W.-N."
+       "original": "J."
       },
       {
        "id": "s-references-5-3",
-       "original": "Hsu, and J."
+       "original": "Gumbel."
       },
       {
        "id": "s-references-5-4",
-       "original": "Glass."
+       "original": "Statistical theory of extreme values and some practical applications: a series of lectures, volume 33."
       },
       {
        "id": "s-references-5-5",
-       "original": "Learning hierarchical discrete linguistic units from visually-grounded speech."
+       "original": "US Government Printing Ofﬁce, 1954."
       },
       {
        "id": "s-references-5-6",
-       "original": "In Proc. of ICLR, 2020."
+       "original": "[17] W."
+      },
+      {
+       "id": "s-references-5-7",
+       "original": "Han, Z."
+      },
+      {
+       "id": "s-references-5-8",
+       "original": "Zhang, Y."
+      },
+      {
+       "id": "s-references-5-9",
+       "original": "Zhang, J."
+      },
+      {
+       "id": "s-references-5-10",
+       "original": "Yu, C.-C."
+      },
+      {
+       "id": "s-references-5-11",
+       "original": "Chiu, J."
+      },
+      {
+       "id": "s-references-5-12",
+       "original": "Qin, A."
+      },
+      {
+       "id": "s-references-5-13",
+       "original": "Gulati, R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
+      },
+      {
+       "id": "s-references-5-14",
+       "original": "Pang, and Y."
+      },
+      {
+       "id": "s-references-5-15",
+       "original": "Wu."
+      },
+      {
+       "id": "s-references-5-16",
+       "original": "Contextnet: Improving convolutional neural networks for automatic speech recognition with global context."
       }
      ]
     },
     {
      "id": "p-references-6",
      "type": "paragraph",
-     "page": 10,
+     "page": 9,
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "[19] K."
-      },
-      {
-       "id": "s-references-6-2",
-       "original": "He, H."
-      },
-      {
-       "id": "s-references-6-3",
-       "original": "Fan, Y."
-      },
-      {
-       "id": "s-references-6-4",
-       "original": "Wu, S."
-      },
-      {
-       "id": "s-references-6-5",
-       "original": "Xie, and R."
-      },
-      {
-       "id": "s-references-6-6",
-       "original": "Girshick."
-      },
-      {
-       "id": "s-references-6-7",
-       "original": "Momentum contrast for unsupervised visual representation learning. arXiv, abs/1911.05722, 2019."
+       "original": "arXiv, 2020."
       }
      ]
     },
@@ -2345,39 +3293,27 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "[20] O."
+       "original": "[18] D."
       },
       {
        "id": "s-references-7-2",
-       "original": "J."
+       "original": "Harwath, W.-N."
       },
       {
        "id": "s-references-7-3",
-       "original": "Hénaff, A."
+       "original": "Hsu, and J."
       },
       {
        "id": "s-references-7-4",
-       "original": "Razavi, C."
+       "original": "Glass."
       },
       {
        "id": "s-references-7-5",
-       "original": "Doersch, S."
+       "original": "Learning hierarchical discrete linguistic units from visually-grounded speech."
       },
       {
        "id": "s-references-7-6",
-       "original": "M."
-      },
-      {
-       "id": "s-references-7-7",
-       "original": "A."
-      },
-      {
-       "id": "s-references-7-8",
-       "original": "Eslami, and A. van den Oord."
-      },
-      {
-       "id": "s-references-7-9",
-       "original": "Data-efﬁcient image recognition with contrastive predictive coding. arXiv, abs/1905.09272, 2019."
+       "original": "In Proc. of ICLR, 2020."
       }
      ]
     },
@@ -2388,19 +3324,32 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "[21] D."
+       "original": "[19] K."
       },
       {
        "id": "s-references-8-2",
-       "original": "Hendrycks and K."
+       "original": "He, H."
       },
       {
        "id": "s-references-8-3",
-       "original": "Gimpel."
+       "original": "Fan, Y."
       },
       {
        "id": "s-references-8-4",
-       "original": "Gaussian error linear units (gelus). arXiv, 2016."
+       "original": "Wu, S."
+      },
+      {
+       "id": "s-references-8-5",
+       "original": "Xie, and R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
+      },
+      {
+       "id": "s-references-8-6",
+       "original": "Girshick."
+      },
+      {
+       "id": "s-references-8-7",
+       "original": "Momentum contrast for unsupervised visual representation learning. arXiv, abs/1911.05722, 2019."
       }
      ]
     },
@@ -2411,31 +3360,40 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "[22] G."
+       "original": "[20] O."
       },
       {
        "id": "s-references-9-2",
-       "original": "Huang, Y."
+       "original": "J."
       },
       {
        "id": "s-references-9-3",
-       "original": "Sun, Z."
+       "original": "Hénaff, A."
       },
       {
        "id": "s-references-9-4",
-       "original": "Liu, D."
+       "original": "Razavi, C."
       },
       {
        "id": "s-references-9-5",
-       "original": "Sedra, and K."
+       "original": "Doersch, S."
       },
       {
        "id": "s-references-9-6",
-       "original": "Weinberger."
+       "original": "M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-9-7",
-       "original": "Deep networks with stochastic depth."
+       "original": "A."
+      },
+      {
+       "id": "s-references-9-8",
+       "original": "Eslami, and A. van den Oord."
+      },
+      {
+       "id": "s-references-9-9",
+       "original": "Data-efﬁcient image recognition with contrastive predictive coding. arXiv, abs/1905.09272, 2019."
       }
      ]
     },
@@ -2446,27 +3404,19 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "[23] M."
+       "original": "[21] D."
       },
       {
        "id": "s-references-10-2",
-       "original": "G."
+       "original": "Hendrycks and K."
       },
       {
        "id": "s-references-10-3",
-       "original": "A."
+       "original": "Gimpel."
       },
       {
        "id": "s-references-10-4",
-       "original": "Hyvärinen."
-      },
-      {
-       "id": "s-references-10-5",
-       "original": "Noise-contrastive estimation: A new estimation principle for unnormalized statistical models."
-      },
-      {
-       "id": "s-references-10-6",
-       "original": "In Proc. of AISTATS, 2010."
+       "original": "Gaussian error linear units (gelus). arXiv, 2016."
       }
      ]
     },
@@ -2477,23 +3427,31 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "[24] E."
+       "original": "[22] G."
       },
       {
        "id": "s-references-11-2",
-       "original": "Jang, S."
+       "original": "Huang, Y."
       },
       {
        "id": "s-references-11-3",
-       "original": "Gu, and B."
+       "original": "Sun, Z."
       },
       {
        "id": "s-references-11-4",
-       "original": "Poole."
+       "original": "Liu, D."
       },
       {
        "id": "s-references-11-5",
-       "original": "Categorical reparameterization with gumbel-softmax. arXiv, abs/1611.01144, 2016."
+       "original": "Sedra, and K."
+      },
+      {
+       "id": "s-references-11-6",
+       "original": "Weinberger."
+      },
+      {
+       "id": "s-references-11-7",
+       "original": "Deep networks with stochastic depth."
       }
      ]
     },
@@ -2504,39 +3462,7 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "[25] H."
-      },
-      {
-       "id": "s-references-12-2",
-       "original": "Jegou, M."
-      },
-      {
-       "id": "s-references-12-3",
-       "original": "Douze, and C."
-      },
-      {
-       "id": "s-references-12-4",
-       "original": "Schmid."
-      },
-      {
-       "id": "s-references-12-5",
-       "original": "Product quantization for nearest neighbor search."
-      },
-      {
-       "id": "s-references-12-6",
-       "original": "IEEE Trans."
-      },
-      {
-       "id": "s-references-12-7",
-       "original": "Pattern Anal."
-      },
-      {
-       "id": "s-references-12-8",
-       "original": "Mach."
-      },
-      {
-       "id": "s-references-12-9",
-       "original": "Intell., 33(1):117–128, Jan. 2011."
+       "original": "arXiv, 2016."
       }
      ]
     },
@@ -2547,39 +3473,28 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "[26] D."
+       "original": "[23] M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-13-2",
-       "original": "Jiang, X."
+       "original": "G."
       },
       {
        "id": "s-references-13-3",
-       "original": "Lei, W."
+       "original": "A."
       },
       {
        "id": "s-references-13-4",
-       "original": "Li, N."
+       "original": "Hyvärinen."
       },
       {
        "id": "s-references-13-5",
-       "original": "Luo, Y."
+       "original": "Noise-contrastive estimation: A new estimation principle for unnormalized statistical models."
       },
       {
        "id": "s-references-13-6",
-       "original": "Hu, W."
-      },
-      {
-       "id": "s-references-13-7",
-       "original": "Zou, and X."
-      },
-      {
-       "id": "s-references-13-8",
-       "original": "Li."
-      },
-      {
-       "id": "s-references-13-9",
-       "original": "Improving transformer-based speech recognition using unsupervised pre-training. arXiv, abs/1910.09932, 2019."
+       "original": "In Proc. of AISTATS, 2010."
       }
      ]
     },
@@ -2590,15 +3505,24 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "[27] J."
+       "original": "[24] E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
        "id": "s-references-14-2",
-       "original": "Kahn et al. Libri-light: A benchmark for asr with limited or no supervision."
+       "original": "Jang, S."
       },
       {
        "id": "s-references-14-3",
-       "original": "In Proc. of ICASSP, 2020."
+       "original": "Gu, and B."
+      },
+      {
+       "id": "s-references-14-4",
+       "original": "Poole."
+      },
+      {
+       "id": "s-references-14-5",
+       "original": "Categorical reparameterization with gumbel-softmax. arXiv, abs/1611.01144, 2016."
       }
      ]
     },
@@ -2609,27 +3533,40 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "[28] K."
+       "original": "[25] H."
       },
       {
        "id": "s-references-15-2",
-       "original": "Kawakami, L."
+       "original": "Jegou, M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-15-3",
-       "original": "Wang, C."
+       "original": "Douze, and C."
       },
       {
        "id": "s-references-15-4",
-       "original": "Dyer, P."
+       "original": "Schmid."
       },
       {
        "id": "s-references-15-5",
-       "original": "Blunsom, and A. van den Oord."
+       "original": "Product quantization for nearest neighbor search."
       },
       {
        "id": "s-references-15-6",
-       "original": "Learning robust and multilingual speech representations. arXiv, 2020."
+       "original": "IEEE Trans."
+      },
+      {
+       "id": "s-references-15-7",
+       "original": "Pattern Anal."
+      },
+      {
+       "id": "s-references-15-8",
+       "original": "Mach."
+      },
+      {
+       "id": "s-references-15-9",
+       "original": "Intell., 33(1):117–128, Jan. 2011."
       }
      ]
     },
@@ -2640,27 +3577,39 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "[29] D."
+       "original": "[26] D."
       },
       {
        "id": "s-references-16-2",
-       "original": "P."
+       "original": "Jiang, X."
       },
       {
        "id": "s-references-16-3",
-       "original": "Kingma and J."
+       "original": "Lei, W."
       },
       {
        "id": "s-references-16-4",
-       "original": "Ba."
+       "original": "Li, N."
       },
       {
        "id": "s-references-16-5",
-       "original": "Adam: A Method for Stochastic Optimization."
+       "original": "Luo, Y."
       },
       {
        "id": "s-references-16-6",
-       "original": "In Proc. of ICLR, 2015."
+       "original": "Hu, W."
+      },
+      {
+       "id": "s-references-16-7",
+       "original": "Zou, and X."
+      },
+      {
+       "id": "s-references-16-8",
+       "original": "Li."
+      },
+      {
+       "id": "s-references-16-9",
+       "original": "Improving transformer-based speech recognition using unsupervised pre-training. arXiv, abs/1910.09932, 2019."
       }
      ]
     },
@@ -2671,35 +3620,15 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "[30] A."
+       "original": "[27] J."
       },
       {
        "id": "s-references-17-2",
-       "original": "Laptev, R."
+       "original": "Kahn et al. Libri-light: A benchmark for asr with limited or no supervision."
       },
       {
        "id": "s-references-17-3",
-       "original": "Korostik, A."
-      },
-      {
-       "id": "s-references-17-4",
-       "original": "Svischev, A."
-      },
-      {
-       "id": "s-references-17-5",
-       "original": "Andrusenko, I."
-      },
-      {
-       "id": "s-references-17-6",
-       "original": "Medennikov, and S."
-      },
-      {
-       "id": "s-references-17-7",
-       "original": "Rybin."
-      },
-      {
-       "id": "s-references-17-8",
-       "original": "You do not need more data: Improving end-to-end speech recognition by text-to-speech data augmentation."
+       "original": "In Proc. of ICASSP, 2020."
       }
      ]
     },
@@ -2710,7 +3639,27 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "arXiv, abs/2005.07157, 2020."
+       "original": "[28] K."
+      },
+      {
+       "id": "s-references-18-2",
+       "original": "Kawakami, L."
+      },
+      {
+       "id": "s-references-18-3",
+       "original": "Wang, C."
+      },
+      {
+       "id": "s-references-18-4",
+       "original": "Dyer, P."
+      },
+      {
+       "id": "s-references-18-5",
+       "original": "Blunsom, and A. van den Oord."
+      },
+      {
+       "id": "s-references-18-6",
+       "original": "Learning robust and multilingual speech representations. arXiv, 2020."
       }
      ]
     },
@@ -2721,39 +3670,28 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "[31] M."
+       "original": "[29] D."
       },
       {
        "id": "s-references-19-2",
-       "original": "P."
+       "original": "P.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
        "id": "s-references-19-3",
-       "original": "Lewis, G."
+       "original": "Kingma and J."
       },
       {
        "id": "s-references-19-4",
-       "original": "F."
+       "original": "Ba."
       },
       {
        "id": "s-references-19-5",
-       "original": "Simon, and C."
+       "original": "Adam: A Method for Stochastic Optimization."
       },
       {
        "id": "s-references-19-6",
-       "original": "D."
-      },
-      {
-       "id": "s-references-19-7",
-       "original": "Fennig."
-      },
-      {
-       "id": "s-references-19-8",
-       "original": "Ethnologue: Languages of the world, nineteenth edition."
-      },
-      {
-       "id": "s-references-19-9",
-       "original": "Online version: http://www.ethnologue.com, 2016."
+       "original": "In Proc. of ICLR, 2015."
       }
      ]
     },
@@ -2764,23 +3702,36 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "[32] A."
+       "original": "[30] A."
       },
       {
        "id": "s-references-20-2",
-       "original": "H."
+       "original": "Laptev, R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
       },
       {
        "id": "s-references-20-3",
-       "original": "Liu, T."
+       "original": "Korostik, A."
       },
       {
        "id": "s-references-20-4",
-       "original": "Tu, H. yi Lee, and L. shan Lee."
+       "original": "Svischev, A."
       },
       {
        "id": "s-references-20-5",
-       "original": "Towards unsupervised speech recognition and synthesis with quantized speech representation learning. arXiv, 2019."
+       "original": "Andrusenko, I."
+      },
+      {
+       "id": "s-references-20-6",
+       "original": "Medennikov, and S."
+      },
+      {
+       "id": "s-references-20-7",
+       "original": "Rybin."
+      },
+      {
+       "id": "s-references-20-8",
+       "original": "You do not need more data: Improving end-to-end speech recognition by text-to-speech data augmentation."
       }
      ]
     },
@@ -2791,51 +3742,7 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "[33] Y."
-      },
-      {
-       "id": "s-references-21-2",
-       "original": "Liu, M."
-      },
-      {
-       "id": "s-references-21-3",
-       "original": "Ott, N."
-      },
-      {
-       "id": "s-references-21-4",
-       "original": "Goyal, J."
-      },
-      {
-       "id": "s-references-21-5",
-       "original": "Du, M."
-      },
-      {
-       "id": "s-references-21-6",
-       "original": "Joshi, D."
-      },
-      {
-       "id": "s-references-21-7",
-       "original": "Chen, O."
-      },
-      {
-       "id": "s-references-21-8",
-       "original": "Levy, M."
-      },
-      {
-       "id": "s-references-21-9",
-       "original": "Lewis, L."
-      },
-      {
-       "id": "s-references-21-10",
-       "original": "Zettlemoyer, and V."
-      },
-      {
-       "id": "s-references-21-11",
-       "original": "Stoyanov."
-      },
-      {
-       "id": "s-references-21-12",
-       "original": "Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692, 2019."
+       "original": "arXiv, abs/2005.07157, 2020."
       }
      ]
     },
@@ -2846,47 +3753,41 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "[34] C."
+       "original": "[31] M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-22-2",
-       "original": "Lüscher, E."
+       "original": "P.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
        "id": "s-references-22-3",
-       "original": "Beck, K."
+       "original": "Lewis, G."
       },
       {
        "id": "s-references-22-4",
-       "original": "Irie, M."
+       "original": "F."
       },
       {
        "id": "s-references-22-5",
-       "original": "Kitza, W."
+       "original": "Simon, and C."
       },
       {
        "id": "s-references-22-6",
-       "original": "Michel, A."
+       "original": "D."
       },
       {
        "id": "s-references-22-7",
-       "original": "Zeyer, R."
+       "original": "Fennig."
       },
       {
        "id": "s-references-22-8",
-       "original": "Schlüter, and H."
+       "original": "Ethnologue: Languages of the world, nineteenth edition."
       },
       {
        "id": "s-references-22-9",
-       "original": "Ney."
-      },
-      {
-       "id": "s-references-22-10",
-       "original": "Rwth asr systems for librispeech: Hybrid vs attention."
-      },
-      {
-       "id": "s-references-22-11",
-       "original": "In Interspeech 2019, 2019."
+       "original": "Online version: http://www.ethnologue.com, 2016."
       }
      ]
     },
@@ -2897,31 +3798,24 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "[35] C."
+       "original": "[32] A."
       },
       {
        "id": "s-references-23-2",
-       "original": "J."
+       "original": "H.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
        "id": "s-references-23-3",
-       "original": "Maddison, D."
+       "original": "Liu, T."
       },
       {
        "id": "s-references-23-4",
-       "original": "Tarlow, and T."
+       "original": "Tu, H. yi Lee, and L. shan Lee."
       },
       {
        "id": "s-references-23-5",
-       "original": "Minka."
-      },
-      {
-       "id": "s-references-23-6",
-       "original": "A* sampling."
-      },
-      {
-       "id": "s-references-23-7",
-       "original": "In Advances in Neural Information Processing Systems, pages 3086–3094, 2014."
+       "original": "Towards unsupervised speech recognition and synthesis with quantized speech representation learning. arXiv, 2019."
       }
      ]
     },
@@ -2932,15 +3826,54 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "[36] I."
+       "original": "[33] Y."
       },
       {
        "id": "s-references-24-2",
-       "original": "Misra and L. van der Maaten."
+       "original": "Liu, M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-24-3",
-       "original": "Self-supervised learning of pretext-invariant representations."
+       "original": "Ott, N."
+      },
+      {
+       "id": "s-references-24-4",
+       "original": "Goyal, J."
+      },
+      {
+       "id": "s-references-24-5",
+       "original": "Du, M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
+      },
+      {
+       "id": "s-references-24-6",
+       "original": "Joshi, D."
+      },
+      {
+       "id": "s-references-24-7",
+       "original": "Chen, O."
+      },
+      {
+       "id": "s-references-24-8",
+       "original": "Levy, M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
+      },
+      {
+       "id": "s-references-24-9",
+       "original": "Lewis, L."
+      },
+      {
+       "id": "s-references-24-10",
+       "original": "Zettlemoyer, and V."
+      },
+      {
+       "id": "s-references-24-11",
+       "original": "Stoyanov."
+      },
+      {
+       "id": "s-references-24-12",
+       "original": "Roberta: A robustly optimized bert pretraining approach. arXiv preprint arXiv:1907.11692, 2019."
       }
      ]
     },
@@ -2951,23 +3884,50 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "[37] A."
+       "original": "[34] C."
       },
       {
        "id": "s-references-25-2",
-       "original": "Mohamed, D."
+       "original": "Lüscher, E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
        "id": "s-references-25-3",
-       "original": "Okhonko, and L."
+       "original": "Beck, K."
       },
       {
        "id": "s-references-25-4",
-       "original": "Zettlemoyer."
+       "original": "Irie, M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-25-5",
-       "original": "Transformers with convolutional context for ASR. arXiv, abs/1904.11660, 2019."
+       "original": "Kitza, W."
+      },
+      {
+       "id": "s-references-25-6",
+       "original": "Michel, A."
+      },
+      {
+       "id": "s-references-25-7",
+       "original": "Zeyer, R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
+      },
+      {
+       "id": "s-references-25-8",
+       "original": "Schlüter, and H."
+      },
+      {
+       "id": "s-references-25-9",
+       "original": "Ney."
+      },
+      {
+       "id": "s-references-25-10",
+       "original": "Rwth asr systems for librispeech: Hybrid vs attention."
+      },
+      {
+       "id": "s-references-25-11",
+       "original": "In Interspeech 2019, 2019."
       }
      ]
     },
@@ -2978,31 +3938,31 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "[38] M."
+       "original": "[35] C."
       },
       {
        "id": "s-references-26-2",
-       "original": "Ott, S."
+       "original": "J."
       },
       {
        "id": "s-references-26-3",
-       "original": "Edunov, D."
+       "original": "Maddison, D."
       },
       {
        "id": "s-references-26-4",
-       "original": "Grangier, and M."
+       "original": "Tarlow, and T."
       },
       {
        "id": "s-references-26-5",
-       "original": "Auli."
+       "original": "Minka."
       },
       {
        "id": "s-references-26-6",
-       "original": "Scaling neural machine translation."
+       "original": "A* sampling."
       },
       {
        "id": "s-references-26-7",
-       "original": "In Proc. of WMT, 2018."
+       "original": "In Advances in Neural Information Processing Systems, pages 3086–3094, 2014."
       }
      ]
     },
@@ -3013,43 +3973,15 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "[39] M."
+       "original": "[36] I."
       },
       {
        "id": "s-references-27-2",
-       "original": "Ott, S."
+       "original": "Misra and L. van der Maaten."
       },
       {
        "id": "s-references-27-3",
-       "original": "Edunov, A."
-      },
-      {
-       "id": "s-references-27-4",
-       "original": "Baevski, A."
-      },
-      {
-       "id": "s-references-27-5",
-       "original": "Fan, S."
-      },
-      {
-       "id": "s-references-27-6",
-       "original": "Gross, N."
-      },
-      {
-       "id": "s-references-27-7",
-       "original": "Ng, D."
-      },
-      {
-       "id": "s-references-27-8",
-       "original": "Grangier, and M."
-      },
-      {
-       "id": "s-references-27-9",
-       "original": "Auli. fairseq: A fast, extensible toolkit for sequence modeling."
-      },
-      {
-       "id": "s-references-27-10",
-       "original": "In Proc. of NAACL System Demonstrations, 2019."
+       "original": "Self-supervised learning of pretext-invariant representations."
       }
      ]
     },
@@ -3060,35 +3992,7 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "[40] V."
-      },
-      {
-       "id": "s-references-28-2",
-       "original": "Panayotov, G."
-      },
-      {
-       "id": "s-references-28-3",
-       "original": "Chen, D."
-      },
-      {
-       "id": "s-references-28-4",
-       "original": "Povey, and S."
-      },
-      {
-       "id": "s-references-28-5",
-       "original": "Khudanpur."
-      },
-      {
-       "id": "s-references-28-6",
-       "original": "Librispeech: an asr corpus based on public domain audio books."
-      },
-      {
-       "id": "s-references-28-7",
-       "original": "In Proc. of ICASSP, pages 5206–5210."
-      },
-      {
-       "id": "s-references-28-8",
-       "original": "IEEE, 2015."
+       "original": "arXiv, 2019."
       }
      ]
     },
@@ -3099,680 +4003,918 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "[41] D."
+       "original": "[37] A."
       },
       {
        "id": "s-references-29-2",
-       "original": "S."
+       "original": "Mohamed, D."
       },
       {
        "id": "s-references-29-3",
-       "original": "Park, W."
+       "original": "Okhonko, and L."
       },
       {
        "id": "s-references-29-4",
-       "original": "Chan, Y."
+       "original": "Zettlemoyer."
       },
       {
        "id": "s-references-29-5",
-       "original": "Zhang, C.-C."
-      },
-      {
-       "id": "s-references-29-6",
-       "original": "Chiu, B."
-      },
-      {
-       "id": "s-references-29-7",
-       "original": "Zoph, E."
-      },
-      {
-       "id": "s-references-29-8",
-       "original": "D."
-      },
-      {
-       "id": "s-references-29-9",
-       "original": "Cubuk, and Q."
-      },
-      {
-       "id": "s-references-29-10",
-       "original": "V."
-      },
-      {
-       "id": "s-references-29-11",
-       "original": "Le."
-      },
-      {
-       "id": "s-references-29-12",
-       "original": "Specaugment: A simple data augmentation method for automatic speech recognition."
-      },
-      {
-       "id": "s-references-29-13",
-       "original": "In Proc. of Interspeech, 2019."
+       "original": "Transformers with convolutional context for ASR. arXiv, abs/1904.11660, 2019.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
       }
      ]
     },
     {
      "id": "p-references-30",
      "type": "paragraph",
-     "page": 11,
+     "page": 10,
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "[42] D."
+       "original": "[38] M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-30-2",
-       "original": "S."
+       "original": "Ott, S."
       },
       {
        "id": "s-references-30-3",
-       "original": "Park, Y."
+       "original": "Edunov, D."
       },
       {
        "id": "s-references-30-4",
-       "original": "Zhang, Y."
+       "original": "Grangier, and M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-30-5",
-       "original": "Jia, W."
+       "original": "Auli."
       },
       {
        "id": "s-references-30-6",
-       "original": "Han, C.-C."
+       "original": "Scaling neural machine translation."
       },
       {
        "id": "s-references-30-7",
-       "original": "Chiu, B."
-      },
-      {
-       "id": "s-references-30-8",
-       "original": "Li, Y."
-      },
-      {
-       "id": "s-references-30-9",
-       "original": "Wu, and Q."
-      },
-      {
-       "id": "s-references-30-10",
-       "original": "V."
-      },
-      {
-       "id": "s-references-30-11",
-       "original": "Le."
-      },
-      {
-       "id": "s-references-30-12",
-       "original": "Improved noisy student training for automatic speech recognition. arXiv, abs/2005.09629, 2020."
-      },
-      {
-       "id": "s-references-30-13",
-       "original": "[43] M."
-      },
-      {
-       "id": "s-references-30-14",
-       "original": "E."
-      },
-      {
-       "id": "s-references-30-15",
-       "original": "Peters, M."
-      },
-      {
-       "id": "s-references-30-16",
-       "original": "Neumann, M."
-      },
-      {
-       "id": "s-references-30-17",
-       "original": "Iyyer, M."
-      },
-      {
-       "id": "s-references-30-18",
-       "original": "Gardner, C."
-      },
-      {
-       "id": "s-references-30-19",
-       "original": "Clark, K."
-      },
-      {
-       "id": "s-references-30-20",
-       "original": "Lee, and L."
-      },
-      {
-       "id": "s-references-30-21",
-       "original": "Zettlemoyer."
-      },
-      {
-       "id": "s-references-30-22",
-       "original": "Deep contextualized word representations."
-      },
-      {
-       "id": "s-references-30-23",
-       "original": "In Proc. of ACL, 2018."
-      },
-      {
-       "id": "s-references-30-24",
-       "original": "[44] V."
-      },
-      {
-       "id": "s-references-30-25",
-       "original": "Pratap, A."
-      },
-      {
-       "id": "s-references-30-26",
-       "original": "Hannun, Q."
-      },
-      {
-       "id": "s-references-30-27",
-       "original": "Xu, J."
-      },
-      {
-       "id": "s-references-30-28",
-       "original": "Cai, J."
-      },
-      {
-       "id": "s-references-30-29",
-       "original": "Kahn, G."
-      },
-      {
-       "id": "s-references-30-30",
-       "original": "Synnaeve, V."
-      },
-      {
-       "id": "s-references-30-31",
-       "original": "Liptchinsky, and R."
-      },
-      {
-       "id": "s-references-30-32",
-       "original": "Collobert."
+       "original": "In Proc. of WMT, 2018."
       }
      ]
     },
     {
      "id": "p-references-31",
      "type": "paragraph",
-     "page": 11,
+     "page": 10,
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "Wav2letter++: A fast open-source speech recognition system."
+       "original": "[39] M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-31-2",
-       "original": "In Proc. of ICASSP, 2019."
+       "original": "Ott, S."
       },
       {
        "id": "s-references-31-3",
-       "original": "[45] A."
+       "original": "Edunov, A."
       },
       {
        "id": "s-references-31-4",
-       "original": "Radford, K."
+       "original": "Baevski, A."
       },
       {
        "id": "s-references-31-5",
-       "original": "Narasimhan, T."
+       "original": "Fan, S."
       },
       {
        "id": "s-references-31-6",
-       "original": "Salimans, and I."
+       "original": "Gross, N."
       },
       {
        "id": "s-references-31-7",
-       "original": "Sutskever."
+       "original": "Ng, D."
       },
       {
        "id": "s-references-31-8",
-       "original": "Improving language understanding by generative pre-training. https://s3-us-west-2.amazonaws.com/openai-assets/ research-covers/language-unsupervised/language_understanding_paper.pdf, 2018."
+       "original": "Grangier, and M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
        "id": "s-references-31-9",
-       "original": "[46] M."
+       "original": "Auli. fairseq: A fast, extensible toolkit for sequence modeling."
       },
       {
        "id": "s-references-31-10",
+       "original": "In Proc. of NAACL System Demonstrations,"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 10,
+     "original": "2019."
+    },
+    {
+     "id": "p-references-32",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-references-32-1",
+       "original": "[40] V."
+      },
+      {
+       "id": "s-references-32-2",
+       "original": "Panayotov, G."
+      },
+      {
+       "id": "s-references-32-3",
+       "original": "Chen, D."
+      },
+      {
+       "id": "s-references-32-4",
+       "original": "Povey, and S."
+      },
+      {
+       "id": "s-references-32-5",
+       "original": "Khudanpur."
+      },
+      {
+       "id": "s-references-32-6",
+       "original": "Librispeech: an asr corpus based on public domain audio books."
+      },
+      {
+       "id": "s-references-32-7",
+       "original": "In Proc. of ICASSP, pages 5206–5210."
+      },
+      {
+       "id": "s-references-32-8",
+       "original": "IEEE, 2015."
+      }
+     ]
+    },
+    {
+     "id": "p-references-33",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-references-33-1",
+       "original": "[41] D."
+      },
+      {
+       "id": "s-references-33-2",
+       "original": "S."
+      },
+      {
+       "id": "s-references-33-3",
+       "original": "Park, W."
+      },
+      {
+       "id": "s-references-33-4",
+       "original": "Chan, Y."
+      },
+      {
+       "id": "s-references-33-5",
+       "original": "Zhang, C.-C."
+      },
+      {
+       "id": "s-references-33-6",
+       "original": "Chiu, B."
+      },
+      {
+       "id": "s-references-33-7",
+       "original": "Zoph, E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
+      },
+      {
+       "id": "s-references-33-8",
+       "original": "D."
+      },
+      {
+       "id": "s-references-33-9",
+       "original": "Cubuk, and Q."
+      },
+      {
+       "id": "s-references-33-10",
+       "original": "V."
+      },
+      {
+       "id": "s-references-33-11",
+       "original": "Le."
+      },
+      {
+       "id": "s-references-33-12",
+       "original": "Specaugment: A simple data augmentation method for automatic speech recognition."
+      },
+      {
+       "id": "s-references-33-13",
+       "original": "In Proc. of Interspeech,"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 10,
+     "original": "2019."
+    },
+    {
+     "id": "p-references-34",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-references-34-1",
+       "original": "[42] D."
+      },
+      {
+       "id": "s-references-34-2",
+       "original": "S."
+      },
+      {
+       "id": "s-references-34-3",
+       "original": "Park, Y."
+      },
+      {
+       "id": "s-references-34-4",
+       "original": "Zhang, Y."
+      },
+      {
+       "id": "s-references-34-5",
+       "original": "Jia, W."
+      },
+      {
+       "id": "s-references-34-6",
+       "original": "Han, C.-C."
+      },
+      {
+       "id": "s-references-34-7",
+       "original": "Chiu, B."
+      },
+      {
+       "id": "s-references-34-8",
+       "original": "Li, Y."
+      },
+      {
+       "id": "s-references-34-9",
+       "original": "Wu, and Q."
+      },
+      {
+       "id": "s-references-34-10",
+       "original": "V."
+      },
+      {
+       "id": "s-references-34-11",
+       "original": "Le."
+      },
+      {
+       "id": "s-references-34-12",
+       "original": "Improved noisy student training for automatic speech recognition. arXiv, abs/2005.09629, 2020."
+      },
+      {
+       "id": "s-references-34-13",
+       "original": "[43] M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
+      },
+      {
+       "id": "s-references-34-14",
+       "original": "E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
+      },
+      {
+       "id": "s-references-34-15",
+       "original": "Peters, M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
+      },
+      {
+       "id": "s-references-34-16",
+       "original": "Neumann, M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
+      },
+      {
+       "id": "s-references-34-17",
+       "original": "Iyyer, M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
+      },
+      {
+       "id": "s-references-34-18",
+       "original": "Gardner, C."
+      },
+      {
+       "id": "s-references-34-19",
+       "original": "Clark, K."
+      },
+      {
+       "id": "s-references-34-20",
+       "original": "Lee, and L."
+      },
+      {
+       "id": "s-references-34-21",
+       "original": "Zettlemoyer."
+      },
+      {
+       "id": "s-references-34-22",
+       "original": "Deep contextualized word representations."
+      },
+      {
+       "id": "s-references-34-23",
+       "original": "In Proc. of ACL, 2018."
+      },
+      {
+       "id": "s-references-34-24",
+       "original": "[44] V."
+      },
+      {
+       "id": "s-references-34-25",
+       "original": "Pratap, A."
+      },
+      {
+       "id": "s-references-34-26",
+       "original": "Hannun, Q."
+      },
+      {
+       "id": "s-references-34-27",
+       "original": "Xu, J."
+      },
+      {
+       "id": "s-references-34-28",
+       "original": "Cai, J."
+      },
+      {
+       "id": "s-references-34-29",
+       "original": "Kahn, G."
+      },
+      {
+       "id": "s-references-34-30",
+       "original": "Synnaeve, V."
+      },
+      {
+       "id": "s-references-34-31",
+       "original": "Liptchinsky, and R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
+      },
+      {
+       "id": "s-references-34-32",
+       "original": "Collobert."
+      }
+     ]
+    },
+    {
+     "id": "p-references-35",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-references-35-1",
+       "original": "Wav2letter++: A fast open-source speech recognition system."
+      },
+      {
+       "id": "s-references-35-2",
+       "original": "In Proc. of ICASSP, 2019."
+      },
+      {
+       "id": "s-references-35-3",
+       "original": "[45] A."
+      },
+      {
+       "id": "s-references-35-4",
+       "original": "Radford, K."
+      },
+      {
+       "id": "s-references-35-5",
+       "original": "Narasimhan, T."
+      },
+      {
+       "id": "s-references-35-6",
+       "original": "Salimans, and I."
+      },
+      {
+       "id": "s-references-35-7",
+       "original": "Sutskever."
+      },
+      {
+       "id": "s-references-35-8",
+       "original": "Improving language understanding by generative pre-training. https://s3-us-west-2.amazonaws.com/openai-assets/ research-covers/language-unsupervised/language_understanding_paper.pdf,"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 11,
+     "original": "2018."
+    },
+    {
+     "id": "p-references-36",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-references-36-1",
+       "original": "[46] M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
+      },
+      {
+       "id": "s-references-36-2",
        "original": "Ravanelli, P."
       },
       {
-       "id": "s-references-31-11",
-       "original": "Brakel, M."
+       "id": "s-references-36-3",
+       "original": "Brakel, M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
-       "id": "s-references-31-12",
+       "id": "s-references-36-4",
        "original": "Omologo, and Y."
       },
       {
-       "id": "s-references-31-13",
+       "id": "s-references-36-5",
        "original": "Bengio."
       },
       {
-       "id": "s-references-31-14",
+       "id": "s-references-36-6",
        "original": "Light gated recurrent units for speech recognition."
       },
       {
-       "id": "s-references-31-15",
-       "original": "IEEE Transactions on Emerging Topics in Computational Intelligence, 2(2):92–102, 2018."
+       "id": "s-references-36-7",
+       "original": "IEEE Transactions on Emerging Topics in Computational Intelligence, 2(2):92–102,"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 11,
+     "original": "2018."
+    },
+    {
+     "id": "p-references-37",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-references-37-1",
+       "original": "[47] M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
-       "id": "s-references-31-16",
-       "original": "[47] M."
-      },
-      {
-       "id": "s-references-31-17",
+       "id": "s-references-37-2",
        "original": "Ravanelli, J."
       },
       {
-       "id": "s-references-31-18",
+       "id": "s-references-37-3",
        "original": "Zhong, S."
       },
       {
-       "id": "s-references-31-19",
+       "id": "s-references-37-4",
        "original": "Pascual, P."
       },
       {
-       "id": "s-references-31-20",
+       "id": "s-references-37-5",
        "original": "Swietojanski, J."
       },
       {
-       "id": "s-references-31-21",
+       "id": "s-references-37-6",
        "original": "Monteiro, J."
       },
       {
-       "id": "s-references-31-22",
+       "id": "s-references-37-7",
        "original": "Trmal, and Y."
       },
       {
-       "id": "s-references-31-23",
+       "id": "s-references-37-8",
        "original": "Bengio."
       }
      ]
     },
     {
-     "id": "p-references-32",
+     "id": "p-references-38",
      "type": "paragraph",
      "page": 11,
      "sentences": [
       {
-       "id": "s-references-32-1",
+       "id": "s-references-38-1",
        "original": "Multi-task self-supervised learning for robust speech recognition. arXiv, 2020."
       },
       {
-       "id": "s-references-32-2",
-       "original": "[48] M."
+       "id": "s-references-38-2",
+       "original": "[48] M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
-       "id": "s-references-32-3",
+       "id": "s-references-38-3",
        "original": "Rivière, A."
       },
       {
-       "id": "s-references-32-4",
-       "original": "Joulin, P.-E."
+       "id": "s-references-38-4",
+       "original": "Joulin, P.-E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
-       "id": "s-references-32-5",
-       "original": "Mazaré, and E."
+       "id": "s-references-38-5",
+       "original": "Mazaré, and E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
-       "id": "s-references-32-6",
+       "id": "s-references-38-6",
        "original": "Dupoux."
       },
       {
-       "id": "s-references-32-7",
+       "id": "s-references-38-7",
        "original": "Unsupervised pretraining transfers well across languages. arXiv, abs/2002.02848, 2020."
       },
       {
-       "id": "s-references-32-8",
+       "id": "s-references-38-8",
        "original": "[49] S."
       },
       {
-       "id": "s-references-32-9",
+       "id": "s-references-38-9",
        "original": "Schneider, A."
       },
       {
-       "id": "s-references-32-10",
-       "original": "Baevski, R."
+       "id": "s-references-38-10",
+       "original": "Baevski, R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
       },
       {
-       "id": "s-references-32-11",
-       "original": "Collobert, and M."
+       "id": "s-references-38-11",
+       "original": "Collobert, and M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
-       "id": "s-references-32-12",
+       "id": "s-references-38-12",
        "original": "Auli. wav2vec: Unsupervised pre-training for speech recognition."
       },
       {
-       "id": "s-references-32-13",
+       "id": "s-references-38-13",
        "original": "In Proc. of Interspeech, 2019."
       },
       {
-       "id": "s-references-32-14",
-       "original": "[50] M."
+       "id": "s-references-38-14",
+       "original": "[50] M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
-       "id": "s-references-32-15",
+       "id": "s-references-38-15",
        "original": "Schuster and K."
       },
       {
-       "id": "s-references-32-16",
+       "id": "s-references-38-16",
        "original": "Nakajima."
       },
       {
-       "id": "s-references-32-17",
+       "id": "s-references-38-17",
        "original": "Japanese and korean voice search."
       },
       {
-       "id": "s-references-32-18",
+       "id": "s-references-38-18",
        "original": "In Proc. of ICASSP, 2012."
       },
       {
-       "id": "s-references-32-19",
+       "id": "s-references-38-19",
        "original": "[51] G."
       },
       {
-       "id": "s-references-32-20",
+       "id": "s-references-38-20",
        "original": "Synnaeve, Q."
       },
       {
-       "id": "s-references-32-21",
+       "id": "s-references-38-21",
        "original": "Xu, J."
       },
       {
-       "id": "s-references-32-22",
+       "id": "s-references-38-22",
        "original": "Kahn, T."
       },
       {
-       "id": "s-references-32-23",
-       "original": "Likhomanenko, E."
+       "id": "s-references-38-23",
+       "original": "Likhomanenko, E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
-       "id": "s-references-32-24",
+       "id": "s-references-38-24",
        "original": "Grave, V."
       },
       {
-       "id": "s-references-32-25",
+       "id": "s-references-38-25",
        "original": "Pratap, A."
       },
       {
-       "id": "s-references-32-26",
+       "id": "s-references-38-26",
        "original": "Sriram, V."
       },
       {
-       "id": "s-references-32-27",
-       "original": "Liptchinsky, and R."
+       "id": "s-references-38-27",
+       "original": "Liptchinsky, and R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
       },
       {
-       "id": "s-references-32-28",
+       "id": "s-references-38-28",
        "original": "Collobert."
       },
       {
-       "id": "s-references-32-29",
+       "id": "s-references-38-29",
        "original": "End-to-end ASR: from Supervised to Semi-Supervised Learning with Modern Architectures. arXiv, abs/1911.08460, 2020."
       },
       {
-       "id": "s-references-32-30",
+       "id": "s-references-38-30",
        "original": "[52] A."
       },
       {
-       "id": "s-references-32-31",
+       "id": "s-references-38-31",
        "original": "Tjandra, B."
       },
       {
-       "id": "s-references-32-32",
-       "original": "Sisman, M."
+       "id": "s-references-38-32",
+       "original": "Sisman, M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
-       "id": "s-references-32-33",
+       "id": "s-references-38-33",
        "original": "Zhang, S."
       },
       {
-       "id": "s-references-32-34",
+       "id": "s-references-38-34",
        "original": "Sakti, H."
       },
       {
-       "id": "s-references-32-35",
+       "id": "s-references-38-35",
        "original": "Li, and S."
       },
       {
-       "id": "s-references-32-36",
+       "id": "s-references-38-36",
        "original": "Nakamura."
       },
       {
-       "id": "s-references-32-37",
-       "original": "Vqvae unsupervised unit discovery and multi-scale code2spec inverter for zerospeech challenge 2019. arXiv, 1905.11449, 2019."
-      },
+       "id": "s-references-38-37",
+       "original": "Vqvae unsupervised unit discovery and multi-scale code2spec inverter for zerospeech challenge 2019. arXiv, 1905.11449,"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 11,
+     "original": "2019."
+    },
+    {
+     "id": "p-references-39",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
       {
-       "id": "s-references-32-38",
+       "id": "s-references-39-1",
        "original": "[53] A. van den Oord, O."
       },
       {
-       "id": "s-references-32-39",
+       "id": "s-references-39-2",
        "original": "Vinyals, et al. Neural discrete representation learning."
       },
       {
-       "id": "s-references-32-40",
+       "id": "s-references-39-3",
        "original": "In Advances in Neural Information Processing Systems, pages 6306–6315, 2017."
       },
       {
-       "id": "s-references-32-41",
+       "id": "s-references-39-4",
        "original": "[54] A. van den Oord, Y."
       },
       {
-       "id": "s-references-32-42",
+       "id": "s-references-39-5",
        "original": "Li, and O."
       },
       {
-       "id": "s-references-32-43",
+       "id": "s-references-39-6",
        "original": "Vinyals."
       },
       {
-       "id": "s-references-32-44",
+       "id": "s-references-39-7",
        "original": "Representation learning with contrastive predictive coding. arXiv, abs/1807.03748, 2018."
       },
       {
-       "id": "s-references-32-45",
+       "id": "s-references-39-8",
        "original": "[55] A."
       },
       {
-       "id": "s-references-32-46",
+       "id": "s-references-39-9",
        "original": "Vaswani, N."
       },
       {
-       "id": "s-references-32-47",
+       "id": "s-references-39-10",
        "original": "Shazeer, N."
       },
       {
-       "id": "s-references-32-48",
+       "id": "s-references-39-11",
        "original": "Parmar, J."
       },
       {
-       "id": "s-references-32-49",
+       "id": "s-references-39-12",
        "original": "Uszkoreit, L."
       },
       {
-       "id": "s-references-32-50",
+       "id": "s-references-39-13",
        "original": "Jones, A."
       },
       {
-       "id": "s-references-32-51",
+       "id": "s-references-39-14",
        "original": "N."
       },
       {
-       "id": "s-references-32-52",
+       "id": "s-references-39-15",
        "original": "Gomez, L."
       },
       {
-       "id": "s-references-32-53",
+       "id": "s-references-39-16",
        "original": "Kaiser, and I."
       },
       {
-       "id": "s-references-32-54",
+       "id": "s-references-39-17",
        "original": "Polosukhin."
       },
       {
-       "id": "s-references-32-55",
+       "id": "s-references-39-18",
        "original": "Attention is all you need."
       },
       {
-       "id": "s-references-32-56",
+       "id": "s-references-39-19",
        "original": "In Proc. of NIPS, 2017."
       },
       {
-       "id": "s-references-32-57",
+       "id": "s-references-39-20",
        "original": "[56] W."
       },
       {
-       "id": "s-references-32-58",
+       "id": "s-references-39-21",
        "original": "Wang, Q."
       },
       {
-       "id": "s-references-32-59",
+       "id": "s-references-39-22",
        "original": "Tang, and K."
       },
       {
-       "id": "s-references-32-60",
+       "id": "s-references-39-23",
        "original": "Livescu."
       },
       {
-       "id": "s-references-32-61",
+       "id": "s-references-39-24",
        "original": "Unsupervised pre-training of bidirectional speech encoders via masked reconstruction. arXiv, 2020."
       },
       {
-       "id": "s-references-32-62",
+       "id": "s-references-39-25",
        "original": "[57] F."
       },
       {
-       "id": "s-references-32-63",
+       "id": "s-references-39-26",
        "original": "Wu, A."
       },
       {
-       "id": "s-references-32-64",
+       "id": "s-references-39-27",
        "original": "Fan, A."
       },
       {
-       "id": "s-references-32-65",
+       "id": "s-references-39-28",
        "original": "Baevski, Y."
       },
       {
-       "id": "s-references-32-66",
+       "id": "s-references-39-29",
        "original": "N."
       },
       {
-       "id": "s-references-32-67",
-       "original": "Dauphin, and M."
+       "id": "s-references-39-30",
+       "original": "Dauphin, and M.",
+       "zh": "测试集性能的测量使用 beam 1,500（n-gram LM）和 beam 500（Transformer LM）。"
       },
       {
-       "id": "s-references-32-68",
+       "id": "s-references-39-31",
        "original": "Auli."
       },
       {
-       "id": "s-references-32-69",
+       "id": "s-references-39-32",
        "original": "Pay less attention with lightweight and dynamic convolutions."
       },
       {
-       "id": "s-references-32-70",
+       "id": "s-references-39-33",
        "original": "In Proc. of ICLR, 2019."
       },
       {
-       "id": "s-references-32-71",
+       "id": "s-references-39-34",
        "original": "[58] Q."
       },
       {
-       "id": "s-references-32-72",
+       "id": "s-references-39-35",
        "original": "Xu, T."
       },
       {
-       "id": "s-references-32-73",
+       "id": "s-references-39-36",
        "original": "Likhomanenko, J."
       },
       {
-       "id": "s-references-32-74",
+       "id": "s-references-39-37",
        "original": "Kahn, A."
       },
       {
-       "id": "s-references-32-75",
+       "id": "s-references-39-38",
        "original": "Hannun, G."
       },
       {
-       "id": "s-references-32-76",
-       "original": "Synnaeve, and R."
+       "id": "s-references-39-39",
+       "original": "Synnaeve, and R.",
+       "zh": "只用 10 分钟标注数据、并在 53k 小时无标注数据上预训练，仍能取得 4.8/8.2 的 WER。"
       },
       {
-       "id": "s-references-32-77",
+       "id": "s-references-39-40",
        "original": "Collobert."
       },
       {
-       "id": "s-references-32-78",
+       "id": "s-references-39-41",
        "original": "Iterative pseudo-labeling for speech recognition. arXiv, 2020."
       },
       {
-       "id": "s-references-32-79",
+       "id": "s-references-39-42",
        "original": "[59] N."
       },
       {
-       "id": "s-references-32-80",
+       "id": "s-references-39-43",
        "original": "Zeghidour, N."
       },
       {
-       "id": "s-references-32-81",
+       "id": "s-references-39-44",
        "original": "Usunier, I."
       },
       {
-       "id": "s-references-32-82",
+       "id": "s-references-39-45",
        "original": "Kokkinos, T."
       },
       {
-       "id": "s-references-32-83",
+       "id": "s-references-39-46",
        "original": "Schaiz, G."
       },
       {
-       "id": "s-references-32-84",
-       "original": "Synnaeve, and E."
+       "id": "s-references-39-47",
+       "original": "Synnaeve, and E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
-       "id": "s-references-32-85",
+       "id": "s-references-39-48",
        "original": "Dupoux."
       },
       {
-       "id": "s-references-32-86",
+       "id": "s-references-39-49",
        "original": "Learning ﬁlterbanks from raw speech for phone recognition."
       },
       {
-       "id": "s-references-32-87",
+       "id": "s-references-39-50",
        "original": "In Proc. of ICASSP, 2018."
       },
       {
-       "id": "s-references-32-88",
+       "id": "s-references-39-51",
        "original": "[60] Q."
       },
       {
-       "id": "s-references-32-89",
+       "id": "s-references-39-52",
        "original": "Zhang, H."
       },
       {
-       "id": "s-references-32-90",
+       "id": "s-references-39-53",
        "original": "Lu, H."
       },
       {
-       "id": "s-references-32-91",
+       "id": "s-references-39-54",
        "original": "Sak, A."
       },
       {
-       "id": "s-references-32-92",
-       "original": "Tripathi, E."
+       "id": "s-references-39-55",
+       "original": "Tripathi, E.",
+       "zh": "码本条目大小为 d/G = 128（BASE）和 d/G = 384（LARGE）。"
       },
       {
-       "id": "s-references-32-93",
+       "id": "s-references-39-56",
        "original": "McDermott, S."
       },
       {
-       "id": "s-references-32-94",
+       "id": "s-references-39-57",
        "original": "Koo, and S."
       },
       {
-       "id": "s-references-32-95",
+       "id": "s-references-39-58",
        "original": "Kumar."
       },
       {
-       "id": "s-references-32-96",
+       "id": "s-references-39-59",
        "original": "Transformer transducer: A streamable speech recognition model with transformer encoders and rnn-t loss."
+      }
+     ]
+    },
+    {
+     "id": "p-references-40",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-references-40-1",
+       "original": "arXiv, 2020."
       }
      ]
     }
@@ -3844,16 +4986,34 @@ globalThis.PAPER_2006_11477 = {
      ]
     },
     {
-     "id": "p-A-3",
-     "type": "paragraph",
+     "id": "eq-A-1",
+     "type": "equation",
      "page": 12,
-     "sentences": [
-      {
-       "id": "s-A-3-1",
-       "original": "0.25 0.20 Percent of all spans 0.15 0.10 0.05 20 40 60 80 100 Span length 0.00",
-       "zh": "（Figure 2 坐标轴文字碎块）0.25 0.20（占全部片段的百分比）0.15 0.10 0.05；（横轴）20 40 60 80 100（片段长度）0.00。"
-      }
-     ]
+     "original": "0.25 0.20"
+    },
+    {
+     "id": "eq-A-2",
+     "type": "equation",
+     "page": 12,
+     "original": "Percent of all spans"
+    },
+    {
+     "id": "eq-A-3",
+     "type": "equation",
+     "page": 12,
+     "original": "0.15 0.10 0.05 20 40 60 80 100"
+    },
+    {
+     "id": "eq-A-4",
+     "type": "equation",
+     "page": 12,
+     "original": "Span length"
+    },
+    {
+     "id": "eq-A-5",
+     "type": "equation",
+     "page": 12,
+     "original": "0.00"
     },
     {
      "id": "fig-A-1",
@@ -3870,16 +5030,154 @@ globalThis.PAPER_2006_11477 = {
      "zh": "表 5：预训练掩码策略各项设置的消融。当采用无重叠掩码时，我们以 p = 0.037 选取起始时间步，使被掩码 token 总数与基线一致。"
     },
     {
-     "id": "p-A-4",
+     "id": "p-A-3",
      "type": "paragraph",
      "page": 12,
      "sentences": [
       {
-       "id": "s-A-4-1",
-       "original": "avg WER std Baseline (p = 0.075) 7.97 0.02 Mask length M = 8 8.33 0.05 Mask length M = 12 8.19 0.08 Mask length M = 15 8.43 0.19 Mask probability p = 0.065 7.95 0.08 Mask probability p = 0.06 8.14 0.22 Mask w/o overlap, uniform(1,31) 8.39 0.02 Mask w/o overlap, uniform(10,30) 9.17 0.05 Mask w/o overlap, poisson(15) 8.13 0.04 Mask w/o overlap, normal(15, 10) 8.37 0.03 Mask w/o overlap, length 10 9.15 0.02 Mask w/o overlap, length 15 9.43 0.26",
-       "zh": "（Table 5 数值碎块）平均 WER / 标准差：Baseline (p = 0.075) 7.97 0.02；掩码长度 M = 8：8.33 0.05；M = 12：8.19 0.08；M = 15：8.43 0.19；掩码概率 p = 0.065：7.95 0.08；p = 0.06：8.14 0.22；无重叠掩码 uniform(1,31)：8.39 0.02；uniform(10,30)：9.17 0.05；poisson(15)：8.13 0.04；normal(15, 10)：8.37 0.03；固定长度 10：9.15 0.02；固定长度 15：9.43 0.26。"
+       "id": "s-A-3-1",
+       "original": "avg WER std Baseline (p = 0.075)",
+       "zh": "表头：avg WER / std；Baseline（p = 0.075，掩码概率）。"
       }
      ]
+    },
+    {
+     "id": "eq-A-6",
+     "type": "equation",
+     "page": 12,
+     "original": "7.97 0.02"
+    },
+    {
+     "id": "eq-A-7",
+     "type": "equation",
+     "page": 12,
+     "original": "Mask length M = 8"
+    },
+    {
+     "id": "eq-A-8",
+     "type": "equation",
+     "page": 12,
+     "original": "8.33 0.05"
+    },
+    {
+     "id": "eq-A-9",
+     "type": "equation",
+     "page": 12,
+     "original": "Mask length M = 12"
+    },
+    {
+     "id": "eq-A-10",
+     "type": "equation",
+     "page": 12,
+     "original": "8.19 0.08"
+    },
+    {
+     "id": "eq-A-11",
+     "type": "equation",
+     "page": 12,
+     "original": "Mask length M = 15"
+    },
+    {
+     "id": "eq-A-12",
+     "type": "equation",
+     "page": 12,
+     "original": "8.43 0.19"
+    },
+    {
+     "id": "eq-A-13",
+     "type": "equation",
+     "page": 12,
+     "original": "Mask probability p = 0.065"
+    },
+    {
+     "id": "eq-A-14",
+     "type": "equation",
+     "page": 12,
+     "original": "7.95 0.08"
+    },
+    {
+     "id": "eq-A-15",
+     "type": "equation",
+     "page": 12,
+     "original": "Mask probability p = 0.06"
+    },
+    {
+     "id": "eq-A-16",
+     "type": "equation",
+     "page": 12,
+     "original": "8.14 0.22"
+    },
+    {
+     "id": "eq-A-17",
+     "type": "equation",
+     "page": 12,
+     "original": "Mask w/o overlap, uniform(1,31)"
+    },
+    {
+     "id": "eq-A-18",
+     "type": "equation",
+     "page": 12,
+     "original": "8.39 0.02"
+    },
+    {
+     "id": "eq-A-19",
+     "type": "equation",
+     "page": 12,
+     "original": "Mask w/o overlap, uniform(10,30)"
+    },
+    {
+     "id": "eq-A-20",
+     "type": "equation",
+     "page": 12,
+     "original": "9.17 0.05"
+    },
+    {
+     "id": "eq-A-21",
+     "type": "equation",
+     "page": 12,
+     "original": "Mask w/o overlap, poisson(15)"
+    },
+    {
+     "id": "eq-A-22",
+     "type": "equation",
+     "page": 12,
+     "original": "8.13 0.04"
+    },
+    {
+     "id": "eq-A-23",
+     "type": "equation",
+     "page": 12,
+     "original": "Mask w/o overlap, normal(15, 10)"
+    },
+    {
+     "id": "eq-A-24",
+     "type": "equation",
+     "page": 12,
+     "original": "8.37 0.03"
+    },
+    {
+     "id": "eq-A-25",
+     "type": "equation",
+     "page": 12,
+     "original": "Mask w/o overlap, length 10"
+    },
+    {
+     "id": "eq-A-26",
+     "type": "equation",
+     "page": 12,
+     "original": "9.15 0.02"
+    },
+    {
+     "id": "eq-A-27",
+     "type": "equation",
+     "page": 12,
+     "original": "Mask w/o overlap, length 15"
+    },
+    {
+     "id": "eq-A-28",
+     "type": "equation",
+     "page": 12,
+     "original": "9.43 0.26"
     }
    ]
   },
@@ -3941,8 +5239,86 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-B-2-1",
-       "original": "10 min 0.075 0.008 1 hour 0.075 0.004 0.065 0.004 0.05 0.008 0.05 0.0016 TIMIT 0.065 0.012",
-       "zh": "（Table 6 数值碎块）10 min：0.075 0.008；1 hour：0.075 0.004；0.065 0.004；0.05 0.008；0.05 0.0016；TIMIT：0.065 0.012。"
+       "original": "10 min",
+       "zh": "我们还证明了超低资源语音识别的可行性：只用 10 分钟标注数据，我们的方法在 Librispeech 的 clean/other 测试集上取得词错误率（WER）4.8/8.2。"
+      }
+     ]
+    },
+    {
+     "id": "eq-B-1",
+     "type": "equation",
+     "page": 13,
+     "original": "0.075 0.008"
+    },
+    {
+     "id": "eq-B-2",
+     "type": "equation",
+     "page": 13,
+     "original": "12k 1 hour"
+    },
+    {
+     "id": "eq-B-3",
+     "type": "equation",
+     "page": 13,
+     "original": "0.075 0.004"
+    },
+    {
+     "id": "eq-B-4",
+     "type": "equation",
+     "page": 13,
+     "original": "13k 10 hours"
+    },
+    {
+     "id": "eq-B-5",
+     "type": "equation",
+     "page": 13,
+     "original": "0.065 0.004"
+    },
+    {
+     "id": "eq-B-6",
+     "type": "equation",
+     "page": 13,
+     "original": "20k 100 hours"
+    },
+    {
+     "id": "eq-B-7",
+     "type": "equation",
+     "page": 13,
+     "original": "0.05 0.008"
+    },
+    {
+     "id": "eq-B-8",
+     "type": "equation",
+     "page": 13,
+     "original": "50k 960 hours"
+    },
+    {
+     "id": "eq-B-9",
+     "type": "equation",
+     "page": 13,
+     "original": "0.05 0.0016"
+    },
+    {
+     "id": "eq-B-10",
+     "type": "equation",
+     "page": 13,
+     "original": "320k TIMIT"
+    },
+    {
+     "id": "eq-B-11",
+     "type": "equation",
+     "page": 13,
+     "original": "0.065 0.012"
+    },
+    {
+     "id": "p-B-3",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-B-3-1",
+       "original": "40k",
+       "zh": "我们用一项消融来论证这一选择：为加快实验迭代，采用缩减版训练设置——在 LS-960 上以掩码概率 p = 0.075 预训练 BASE 共 250k 次更新，再在 train-10h 上用单张 GPU、每批 640k 个采样点（即 40 秒语音）微调 60k 次更新。"
       }
      ]
     },
@@ -3954,26 +5330,14 @@ globalThis.PAPER_2006_11477 = {
      "zh": "表 7：在 Librispeech 上预训练的模型，于 Librispeech 各子集上的解码参数。"
     },
     {
-     "id": "p-B-3",
-     "type": "paragraph",
-     "page": 13,
-     "sentences": [
-      {
-       "id": "s-B-3-1",
-       "original": "4gram LM weight 4gram word insert.",
-       "zh": "（Table 7 表头碎块）4gram LM 权重／4gram 词插入。"
-      }
-     ]
-    },
-    {
      "id": "p-B-4",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
        "id": "s-B-4-1",
-       "original": "TransLM weight TransLM word insert.",
-       "zh": "（Table 7 表头碎块）TransLM 权重／TransLM 词插入。"
+       "original": "4gram LM weight 4gram word insert.",
+       "zh": "（Table 8 表头碎块）4gram LM 权重／4gram 词插入。"
       }
      ]
     },
@@ -3984,10 +5348,76 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-B-5-1",
-       "original": "10 min 3.23 1.20 1 hour 2.90 1.15 2.46 1.06 2.15 0.87 1.74 0.52 0.92",
-       "zh": "（Table 7 数值碎块）10 min：3.23 1.20；1 hour：2.90 1.15；2.46 1.06；2.15 0.87；1.74 0.52；0.92。"
+       "original": "TransLM weight TransLM word insert.",
+       "zh": "（Table 8 表头碎块）TransLM 权重／TransLM 词插入。"
       }
      ]
+    },
+    {
+     "id": "p-B-6",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-B-6-1",
+       "original": "10 min",
+       "zh": "我们还证明了超低资源语音识别的可行性：只用 10 分钟标注数据，我们的方法在 Librispeech 的 clean/other 测试集上取得词错误率（WER）4.8/8.2。"
+      }
+     ]
+    },
+    {
+     "id": "eq-B-12",
+     "type": "equation",
+     "page": 13,
+     "original": "3.23 -0.26 1.20 -1.39"
+    },
+    {
+     "id": "eq-B-13",
+     "type": "equation",
+     "page": 13,
+     "original": "1 hour"
+    },
+    {
+     "id": "eq-B-14",
+     "type": "equation",
+     "page": 13,
+     "original": "2.90 -1.62 1.15 -2.08"
+    },
+    {
+     "id": "eq-B-15",
+     "type": "equation",
+     "page": 13,
+     "original": "10 hours"
+    },
+    {
+     "id": "eq-B-16",
+     "type": "equation",
+     "page": 13,
+     "original": "2.46 -0.59 1.06 -2.32"
+    },
+    {
+     "id": "eq-B-17",
+     "type": "equation",
+     "page": 13,
+     "original": "100 hours"
+    },
+    {
+     "id": "eq-B-18",
+     "type": "equation",
+     "page": 13,
+     "original": "2.15 -0.52 0.87 -1.00"
+    },
+    {
+     "id": "eq-B-19",
+     "type": "equation",
+     "page": 13,
+     "original": "960 hours"
+    },
+    {
+     "id": "eq-B-20",
+     "type": "equation",
+     "page": 13,
+     "original": "1.74 0.52 0.92 -0.86"
     },
     {
      "id": "tab-B-4",
@@ -3997,26 +5427,14 @@ globalThis.PAPER_2006_11477 = {
      "zh": "表 8：在 Librivox 上预训练的模型，于 Librispeech 各子集上的解码参数。"
     },
     {
-     "id": "p-B-6",
-     "type": "paragraph",
-     "page": 13,
-     "sentences": [
-      {
-       "id": "s-B-6-1",
-       "original": "4gram LM weight 4gram word insert.",
-       "zh": "（Table 8 表头碎块）4gram LM 权重／4gram 词插入。"
-      }
-     ]
-    },
-    {
      "id": "p-B-7",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
        "id": "s-B-7-1",
-       "original": "TransLM weight TransLM word insert.",
-       "zh": "（Table 8 表头碎块）TransLM 权重／TransLM 词插入。"
+       "original": "4gram LM weight 4gram word insert.",
+       "zh": "（Table 8 表头碎块）4gram LM 权重／4gram 词插入。"
       }
      ]
     },
@@ -4027,10 +5445,76 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-B-8-1",
-       "original": "10 min 3.86 1.47 1 hour 3.09 1.33 2.12 0.94 2.15 0.87 1.57 0.90",
-       "zh": "（Table 8 数值碎块）10 min：3.86 1.47；1 hour：3.09 1.33；2.12 0.94；2.15 0.87；1.57 0.90。"
+       "original": "TransLM weight TransLM word insert.",
+       "zh": "（Table 8 表头碎块）TransLM 权重／TransLM 词插入。"
       }
      ]
+    },
+    {
+     "id": "p-B-9",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-B-9-1",
+       "original": "10 min",
+       "zh": "我们还证明了超低资源语音识别的可行性：只用 10 分钟标注数据，我们的方法在 Librispeech 的 clean/other 测试集上取得词错误率（WER）4.8/8.2。"
+      }
+     ]
+    },
+    {
+     "id": "eq-B-21",
+     "type": "equation",
+     "page": 13,
+     "original": "3.86 -1.18 1.47 -2.82"
+    },
+    {
+     "id": "eq-B-22",
+     "type": "equation",
+     "page": 13,
+     "original": "1 hour"
+    },
+    {
+     "id": "eq-B-23",
+     "type": "equation",
+     "page": 13,
+     "original": "3.09 -2.33 1.33 -0.69"
+    },
+    {
+     "id": "eq-B-24",
+     "type": "equation",
+     "page": 13,
+     "original": "10 hours"
+    },
+    {
+     "id": "eq-B-25",
+     "type": "equation",
+     "page": 13,
+     "original": "2.12 -0.90 0.94 -1.05"
+    },
+    {
+     "id": "eq-B-26",
+     "type": "equation",
+     "page": 13,
+     "original": "100 hours"
+    },
+    {
+     "id": "eq-B-27",
+     "type": "equation",
+     "page": 13,
+     "original": "2.15 -0.52 0.87 -1.00"
+    },
+    {
+     "id": "eq-B-28",
+     "type": "equation",
+     "page": 13,
+     "original": "960 hours"
+    },
+    {
+     "id": "eq-B-29",
+     "type": "equation",
+     "page": 13,
+     "original": "1.57 -0.64 0.90 -0.31"
     }
    ]
   },
@@ -4050,6 +5534,18 @@ globalThis.PAPER_2006_11477 = {
      "page": 14,
      "original": "Table 9: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups (cf. Table 1).",
      "zh": "表 9：在 Libri-light 低资源标注数据设置上训练时，Librispeech dev/test 集上的 WER（参见 Table 1）。"
+    },
+    {
+     "id": "p-C-1",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-C-1-1",
+       "original": "Model Unlabeled LM dev test data clean other clean other",
+       "zh": "表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。"
+      }
+     ]
     }
    ]
   },
@@ -4070,29 +5566,755 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-10-2-1-1",
-       "original": "46.1 51.5 46.9 50.9 8.9 15.7 9.1 15.6 6.6 13.2 6.9 12.9 43.0 46.3 43.5 45.3 8.6 12.9 8.9 13.1 6.6 10.6 6.8 10.8 38.3 41.0 40.2 38.7 6.3 9.8 6.6 10.3 4.6 7.9 4.8 8.2 24.1 29.6 24.5 29.7 5.0 10.8 5.5 11.3 3.8 9.0 4.0 9.3 21.6 25.3 22.1 25.3 4.8 8.5 5.1 9.4 3.8 7.1 3.9 7.6 17.3 20.6 17.2 20.3 3.6 6.5 3.8 7.1 2.9 5.4 2.9 5.8 10.9 17.4 11.1 17.6 3.8 9.1 4.3 9.5 2.9 7.4 3.2 7.8 8.1 12.0 8.0 12.1 3.4 6.9 3.8 7.3 2.9 5.7 3.2 6.1 6.3 9.8 6.3 10.0 2.6 5.5 3.0 5.8 2.4 4.8 2.6 4.9 6.1 13.5 6.1 13.3 2.7 7.9 3.4 8.0 2.2 6.3 2.6 6.3 4.6 9.3 4.7 9.0 2.3 5.7 2.8 6.0 2.1 4.8 2.3 5.0 3.3 6.5 3.1 6.3 1.8 4.5 2.3 4.6 1.9 4.0 2.0 4.0",
-       "zh": "（Table 9 数值碎块，含无 LM 与各解码条件）46.1 51.5 46.9 50.9 8.9 15.7 9.1 15.6 6.6 13.2 6.9 12.9 43.0 46.3 43.5 45.3 8.6 12.9 8.9 13.1 6.6 10.6 6.8 10.8 38.3 41.0 40.2 38.7 6.3 9.8 6.6 10.3 4.6 7.9 4.8 8.2 24.1 29.6 24.5 29.7 5.0 10.8 5.5 11.3 3.8 9.0 4.0 9.3 21.6 25.3 22.1 25.3 4.8 8.5 5.1 9.4 3.8 7.1 3.9 7.6 17.3 20.6 17.2 20.3 3.6 6.5 3.8 7.1 2.9 5.4 2.9 5.8 10.9 17.4 11.1 17.6 3.8 9.1 4.3 9.5 2.9 7.4 3.2 7.8 8.1 12.0 8.0 12.1 3.4 6.9 3.8 7.3 2.9 5.7 3.2 6.1 6.3 9.8 6.3 10.0 2.6 5.5 3.0 5.8 2.4 4.8 2.6 4.9 6.1 13.5 6.1 13.3 2.7 7.9 3.4 8.0 2.2 6.3 2.6 6.3 4.6 9.3 4.7 9.0 2.3 5.7 2.8 6.0 2.1 4.8 2.3 5.0 3.3 6.5 3.1 6.3 1.8 4.5 2.3 4.6 1.9 4.0 2.0 4.0。"
+       "original": "BASE LS-960 None",
+       "zh": "（表格行）BASE｜LS-960｜None：46.1 51.5 46.9 50.9；4-gram：8.9 15.7 9.1 15.6｜Transf.。"
       }
      ]
     },
     {
-     "id": "tab-10-2-1",
+     "id": "eq-10-2-1",
+     "type": "equation",
+     "page": 14,
+     "original": "46.1 51.5 46.9 50.9"
+    },
+    {
+     "id": "eq-10-2-2",
+     "type": "equation",
+     "page": 14,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-10-2-3",
+     "type": "equation",
+     "page": 14,
+     "original": "8.9 15.7 9.1 15.6"
+    },
+    {
+     "id": "p-10-2-2",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-10-2-2-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10-2-4",
+     "type": "equation",
+     "page": 14,
+     "original": "6.6 13.2 6.9 12.9"
+    },
+    {
+     "id": "eq-10-2-5",
+     "type": "equation",
+     "page": 14,
+     "original": "LARGE LS-960 None"
+    },
+    {
+     "id": "eq-10-2-6",
+     "type": "equation",
+     "page": 14,
+     "original": "43.0 46.3 43.5 45.3"
+    },
+    {
+     "id": "eq-10-2-7",
+     "type": "equation",
+     "page": 14,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-10-2-8",
+     "type": "equation",
+     "page": 14,
+     "original": "8.6 12.9 8.9 13.1"
+    },
+    {
+     "id": "p-10-2-3",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-10-2-3-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10-2-9",
+     "type": "equation",
+     "page": 14,
+     "original": "6.6 10.6 6.8 10.8"
+    },
+    {
+     "id": "eq-10-2-10",
+     "type": "equation",
+     "page": 14,
+     "original": "LARGE LV-60k None"
+    },
+    {
+     "id": "eq-10-2-11",
+     "type": "equation",
+     "page": 14,
+     "original": "38.3 41.0 40.2 38.7"
+    },
+    {
+     "id": "eq-10-2-12",
+     "type": "equation",
+     "page": 14,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-10-2-13",
+     "type": "equation",
+     "page": 14,
+     "original": "6.3 9.8 6.6 10.3"
+    },
+    {
+     "id": "p-10-2-4",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-10-2-4-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10-2-14",
+     "type": "equation",
+     "page": 14,
+     "original": "4.6 7.9 4.8 8.2"
+    }
+   ]
+  },
+  {
+   "id": "sec-1h-labeled-2",
+   "num": null,
+   "level": 2,
+   "page": 14,
+   "title": {
+    "original": "1h labeled",
+    "zh": "1h labeled"
+   },
+   "blocks": [
+    {
+     "id": "p-1h-labeled-2-1",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-1h-labeled-2-1-1",
+       "original": "BASE LS-960 None",
+       "zh": "（表格行）BASE｜LS-960｜None：46.1 51.5 46.9 50.9；4-gram：8.9 15.7 9.1 15.6｜Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-1h-labeled-2-1",
+     "type": "equation",
+     "page": 14,
+     "original": "24.1 29.6 24.5 29.7"
+    },
+    {
+     "id": "eq-1h-labeled-2-2",
+     "type": "equation",
+     "page": 14,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-1h-labeled-2-3",
+     "type": "equation",
+     "page": 14,
+     "original": "5.0 10.8 5.5 11.3"
+    },
+    {
+     "id": "p-1h-labeled-2-2",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-1h-labeled-2-2-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-1h-labeled-2-4",
+     "type": "equation",
+     "page": 14,
+     "original": "3.8 9.0 4.0 9.3"
+    },
+    {
+     "id": "eq-1h-labeled-2-5",
+     "type": "equation",
+     "page": 14,
+     "original": "LARGE LS-960 None"
+    },
+    {
+     "id": "eq-1h-labeled-2-6",
+     "type": "equation",
+     "page": 14,
+     "original": "21.6 25.3 22.1 25.3"
+    },
+    {
+     "id": "eq-1h-labeled-2-7",
+     "type": "equation",
+     "page": 14,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-1h-labeled-2-8",
+     "type": "equation",
+     "page": 14,
+     "original": "4.8 8.5 5.1 9.4"
+    },
+    {
+     "id": "p-1h-labeled-2-3",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-1h-labeled-2-3-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-1h-labeled-2-9",
+     "type": "equation",
+     "page": 14,
+     "original": "3.8 7.1 3.9 7.6"
+    },
+    {
+     "id": "eq-1h-labeled-2-10",
+     "type": "equation",
+     "page": 14,
+     "original": "LARGE LV-60k None"
+    },
+    {
+     "id": "eq-1h-labeled-2-11",
+     "type": "equation",
+     "page": 14,
+     "original": "17.3 20.6 17.2 20.3"
+    },
+    {
+     "id": "eq-1h-labeled-2-12",
+     "type": "equation",
+     "page": 14,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-1h-labeled-2-13",
+     "type": "equation",
+     "page": 14,
+     "original": "3.6 6.5 3.8 7.1"
+    },
+    {
+     "id": "p-1h-labeled-2-4",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-1h-labeled-2-4-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-1h-labeled-2-14",
+     "type": "equation",
+     "page": 14,
+     "original": "2.9 5.4 2.9 5.8"
+    }
+   ]
+  },
+  {
+   "id": "sec-10h-labeled-2",
+   "num": null,
+   "level": 2,
+   "page": 14,
+   "title": {
+    "original": "10h labeled",
+    "zh": "10h labeled"
+   },
+   "blocks": [
+    {
+     "id": "p-10h-labeled-2-1",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-10h-labeled-2-1-1",
+       "original": "BASE LS-960 None",
+       "zh": "（表格行）BASE｜LS-960｜None：46.1 51.5 46.9 50.9；4-gram：8.9 15.7 9.1 15.6｜Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10h-labeled-2-1",
+     "type": "equation",
+     "page": 14,
+     "original": "10.9 17.4 11.1 17.6"
+    },
+    {
+     "id": "eq-10h-labeled-2-2",
+     "type": "equation",
+     "page": 14,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-10h-labeled-2-3",
+     "type": "equation",
+     "page": 14,
+     "original": "3.8 9.1 4.3 9.5"
+    },
+    {
+     "id": "p-10h-labeled-2-2",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-10h-labeled-2-2-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10h-labeled-2-4",
+     "type": "equation",
+     "page": 14,
+     "original": "2.9 7.4 3.2 7.8"
+    },
+    {
+     "id": "eq-10h-labeled-2-5",
+     "type": "equation",
+     "page": 14,
+     "original": "LARGE LS-960 None"
+    },
+    {
+     "id": "eq-10h-labeled-2-6",
+     "type": "equation",
+     "page": 14,
+     "original": "8.1 12.0 8.0 12.1"
+    },
+    {
+     "id": "eq-10h-labeled-2-7",
+     "type": "equation",
+     "page": 14,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-10h-labeled-2-8",
+     "type": "equation",
+     "page": 14,
+     "original": "3.4 6.9 3.8 7.3"
+    },
+    {
+     "id": "p-10h-labeled-2-3",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-10h-labeled-2-3-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10h-labeled-2-9",
+     "type": "equation",
+     "page": 14,
+     "original": "2.9 5.7 3.2 6.1"
+    },
+    {
+     "id": "eq-10h-labeled-2-10",
+     "type": "equation",
+     "page": 14,
+     "original": "LARGE LV-60k None"
+    },
+    {
+     "id": "eq-10h-labeled-2-11",
+     "type": "equation",
+     "page": 14,
+     "original": "6.3 9.8 6.3 10.0"
+    },
+    {
+     "id": "eq-10h-labeled-2-12",
+     "type": "equation",
+     "page": 14,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-10h-labeled-2-13",
+     "type": "equation",
+     "page": 14,
+     "original": "2.6 5.5 3.0 5.8"
+    },
+    {
+     "id": "p-10h-labeled-2-4",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-10h-labeled-2-4-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-10h-labeled-2-14",
+     "type": "equation",
+     "page": 14,
+     "original": "2.4 4.8 2.6 4.9"
+    }
+   ]
+  },
+  {
+   "id": "sec-100h-labeled-2",
+   "num": null,
+   "level": 2,
+   "page": 14,
+   "title": {
+    "original": "100h labeled",
+    "zh": "100h labeled"
+   },
+   "blocks": [
+    {
+     "id": "p-100h-labeled-2-1",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-2-1-1",
+       "original": "BASE LS-960 None",
+       "zh": "（表格行）BASE｜LS-960｜None：46.1 51.5 46.9 50.9；4-gram：8.9 15.7 9.1 15.6｜Transf.。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-2-1",
+     "type": "equation",
+     "page": 14,
+     "original": "6.1 13.5 6.1 13.3"
+    },
+    {
+     "id": "eq-100h-labeled-2-2",
+     "type": "equation",
+     "page": 14,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-100h-labeled-2-3",
+     "type": "equation",
+     "page": 14,
+     "original": "2.7 7.9 3.4 8.0"
+    },
+    {
+     "id": "p-100h-labeled-2-2",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-2-2-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-2-4",
+     "type": "equation",
+     "page": 14,
+     "original": "2.2 6.3 2.6 6.3"
+    },
+    {
+     "id": "eq-100h-labeled-2-5",
+     "type": "equation",
+     "page": 14,
+     "original": "LARGE LS-960 None"
+    },
+    {
+     "id": "eq-100h-labeled-2-6",
+     "type": "equation",
+     "page": 14,
+     "original": "4.6 9.3 4.7 9.0"
+    },
+    {
+     "id": "eq-100h-labeled-2-7",
+     "type": "equation",
+     "page": 14,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-100h-labeled-2-8",
+     "type": "equation",
+     "page": 14,
+     "original": "2.3 5.7 2.8 6.0"
+    },
+    {
+     "id": "p-100h-labeled-2-3",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-2-3-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-2-9",
+     "type": "equation",
+     "page": 14,
+     "original": "2.1 4.8 2.3 5.0"
+    },
+    {
+     "id": "eq-100h-labeled-2-10",
+     "type": "equation",
+     "page": 14,
+     "original": "LARGE LV-60k None"
+    },
+    {
+     "id": "eq-100h-labeled-2-11",
+     "type": "equation",
+     "page": 14,
+     "original": "3.3 6.5 3.1 6.3"
+    },
+    {
+     "id": "eq-100h-labeled-2-12",
+     "type": "equation",
+     "page": 14,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-100h-labeled-2-13",
+     "type": "equation",
+     "page": 14,
+     "original": "1.8 4.5 2.3 4.6"
+    },
+    {
+     "id": "p-100h-labeled-2-4",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-2-4-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-2-14",
+     "type": "equation",
+     "page": 14,
+     "original": "1.9 4.0 2.0 4.0"
+    },
+    {
+     "id": "tab-100h-labeled-2-1",
      "type": "table_caption",
      "page": 15,
      "original": "Table 10: WER on Librispeech when using all 960 hours of Librispeech as labeled data (cf. Table 2).",
      "zh": "表 10：使用 Librispeech 全部 960 小时作为标注数据时 Librispeech 上的 WER（参见 Table 2）。"
     },
     {
-     "id": "p-10-2-2",
+     "id": "p-100h-labeled-2-5",
      "type": "paragraph",
      "page": 15,
      "sentences": [
       {
-       "id": "s-10-2-2-1",
-       "original": "LARGE - from scratch 2.8 7.6 3.0 7.7 1.8 5.4 2.6 5.8 1.7 4.3 2.1 4.6 3.2 8.9 3.4 8.5 2.0 5.9 2.6 6.1 1.8 4.7 2.1 4.8 2.6 6.5 2.8 6.3 1.7 4.6 2.3 5.0 1.7 3.9 2.0 4.1 2.1 4.5 2.2 4.5 1.4 3.5 2.0 3.6 1.6 3.0 1.8 3.3",
-       "zh": "（Table 10 数值碎块）LARGE - from scratch（从头训练）：2.8 7.6 3.0 7.7 1.8 5.4 2.6 5.8 1.7 4.3 2.1 4.6 3.2 8.9 3.4 8.5 2.0 5.9 2.6 6.1 1.8 4.7 2.1 4.8 2.6 6.5 2.8 6.3 1.7 4.6 2.3 5.0 1.7 3.9 2.0 4.1 2.1 4.5 2.2 4.5 1.4 3.5 2.0 3.6 1.6 3.0 1.8 3.3。"
+       "id": "s-100h-labeled-2-5-1",
+       "original": "Model Unlabeled LM dev test data clean other clean other LARGE - from scratch",
+       "zh": "表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。"
       }
      ]
+    },
+    {
+     "id": "eq-100h-labeled-2-15",
+     "type": "equation",
+     "page": 15,
+     "original": "-"
+    },
+    {
+     "id": "eq-100h-labeled-2-16",
+     "type": "equation",
+     "page": 15,
+     "original": "None"
+    },
+    {
+     "id": "eq-100h-labeled-2-17",
+     "type": "equation",
+     "page": 15,
+     "original": "2.8 7.6 3.0 7.7 -"
+    },
+    {
+     "id": "eq-100h-labeled-2-18",
+     "type": "equation",
+     "page": 15,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-100h-labeled-2-19",
+     "type": "equation",
+     "page": 15,
+     "original": "1.8 5.4 2.6 5.8 -"
+    },
+    {
+     "id": "p-100h-labeled-2-6",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-2-6-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-2-20",
+     "type": "equation",
+     "page": 15,
+     "original": "1.7 4.3 2.1 4.6"
+    },
+    {
+     "id": "eq-100h-labeled-2-21",
+     "type": "equation",
+     "page": 15,
+     "original": "BASE LS-960 None"
+    },
+    {
+     "id": "eq-100h-labeled-2-22",
+     "type": "equation",
+     "page": 15,
+     "original": "3.2 8.9 3.4 8.5"
+    },
+    {
+     "id": "eq-100h-labeled-2-23",
+     "type": "equation",
+     "page": 15,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-100h-labeled-2-24",
+     "type": "equation",
+     "page": 15,
+     "original": "2.0 5.9 2.6 6.1"
+    },
+    {
+     "id": "p-100h-labeled-2-7",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-2-7-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-2-25",
+     "type": "equation",
+     "page": 15,
+     "original": "1.8 4.7 2.1 4.8"
+    },
+    {
+     "id": "eq-100h-labeled-2-26",
+     "type": "equation",
+     "page": 15,
+     "original": "LARGE LS-960 None"
+    },
+    {
+     "id": "eq-100h-labeled-2-27",
+     "type": "equation",
+     "page": 15,
+     "original": "2.6 6.5 2.8 6.3"
+    },
+    {
+     "id": "eq-100h-labeled-2-28",
+     "type": "equation",
+     "page": 15,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-100h-labeled-2-29",
+     "type": "equation",
+     "page": 15,
+     "original": "1.7 4.6 2.3 5.0"
+    },
+    {
+     "id": "p-100h-labeled-2-8",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-2-8-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-2-30",
+     "type": "equation",
+     "page": 15,
+     "original": "1.7 3.9 2.0 4.1"
+    },
+    {
+     "id": "eq-100h-labeled-2-31",
+     "type": "equation",
+     "page": 15,
+     "original": "LARGE LV-60k None"
+    },
+    {
+     "id": "eq-100h-labeled-2-32",
+     "type": "equation",
+     "page": 15,
+     "original": "2.1 4.5 2.2 4.5"
+    },
+    {
+     "id": "eq-100h-labeled-2-33",
+     "type": "equation",
+     "page": 15,
+     "original": "4-gram"
+    },
+    {
+     "id": "eq-100h-labeled-2-34",
+     "type": "equation",
+     "page": 15,
+     "original": "1.4 3.5 2.0 3.6"
+    },
+    {
+     "id": "p-100h-labeled-2-9",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-100h-labeled-2-9-1",
+       "original": "Transf.",
+       "zh": "模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-100h-labeled-2-35",
+     "type": "equation",
+     "page": 15,
+     "original": "1.6 3.0 1.8 3.3"
     }
    ]
   },
@@ -4293,20 +6515,14 @@ globalThis.PAPER_2006_11477 = {
      "zh": "表 11：分别在 10m、1h、10h、100h、960h 标注数据上训练、且不用语言模型与词表解码的模型，在 Librispeech dev-clean 子集上的最高频词错误（见 Table 9 与 Table 10 的 None 列）；括号内为各错误出现的总次数。"
     },
     {
-     "id": "eq-E-1",
-     "type": "equation",
-     "page": 17,
-     "original": "10m LARGE LV-60k all →al (181) too →to (26)"
-    },
-    {
      "id": "p-E-8",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
        "id": "s-E-8-1",
-       "original": "are →ar (115) until →untill (24) will →wil (100) new →knew (22) o →oh (10) you →yo (90) door →dor (18) one →on (89) says →sais (18) mode →mod (9) two →to (81) soul →sol (17) ursus →ersus (9) well →wel (80) bread →bred (16) tom →tome (8) been →ben (73) poor →pore (16) randal →randol (7) upon →apon (73) good →god (67) either →ither (13) color →colour (6) see →se (66) food →fud (13) ﬂour →ﬂower (6) we →whe (60) doubt →dout (12) phoebe →feeby (6) little →litle (54) earth →erth (12) an →and (5) great →grate (53) led →lead (12) cucumbers →cucombers (5) your →yor (53) sea →see (12) egg →eg (5) could →coud (51) thee →the (12) macklewain →macklewaine (5) here →hear (51) tom →tome (12) magpie →magpi (5) know →now (45) add →ad (11) milner →millner (5) there →ther (45) good →god (11) stacy →staci (5) three →thre (45) heaven →heven (11) trevelyan →trevellion (5) still →stil (42) mary →marry (11) verloc →verlock (5) off →of (40) randal →randel (11) ann →an (4) don’t →dont (37) answered →ansered (10) anyone →one (4) shall →shal (36) blood →blod (10) apartment →appartment (4) little →litl (35) bozzle →bosel (10) basin →bason (4) 960h LARGE from scratch macklewain →mackelwaine (7) o →oh (8) minnetaki →minnitaki (7) o →oh (6) in →an (8) randal →randall (7) bozzle →bosell (5) and →an (5) christie →cristy (6) criss →chris (5) clarke →clark (4) macklewain →mackelwane (6) bozzle →bosel (4) grethel →gretel (4) randal →randoll (6) clarke →clark (4) macklewain →mackelwaine (4) bozzle →bosall (5) colored →coloured (4) this →the (4) kaliko →calico (5) grethel →gretel (4) an →and (3) trevelyan →trevelian (5) lige →lyge (4) anyone →one (3) an →and (4) bozzle →basell (3) and →an (4) and →an (3) buns →bunds (3) anyone →one (4) ann →marianne (3) carrie →carry (3) bozzle →bozall (4) butte →bute (3) criss →chris (3) clarke →clark (4) color →colour (3) he’s →is (3) gryce →grice (4) deucalion →ducalion (3) his →is (3) i’m →am (4) forcemeat →meat (3) honor →honour (3) in →ind (4) gryce →grice (3) lattimer →latimer (3) letty →lettie (4) honor →honour (3) millet →mellet (3) phoebe →phebe (4) kearny →kirney (3) pyncheon →pension (3) nuova →noiva (3) tad →ted (3) ann →anne (3) thing →anything (3) thing →anything (3) awhile →while (3) this →the (3) trevelyan →trevelian (3)",
-       "zh": "（Table 11 数值碎块：各数据量模型最常见的词级错误，括号内为该错误出现总次数）10m LARGE LV-60k：all → al (181)、too → to (26)、are → ar (115)、until → untill (24)、will → wil (100)、new → knew (22)、o → oh (10)、you → yo (90)、door → dor (18)、one → on (89)、says → sais (18)、mode → mod (9)、two → to (81)、soul → sol (17)、ursus → ersus (9)、well → wel (80)、bread → bred (16)、tom → tome (8)、been → ben (73)、poor → pore (16)、randal → randol (7)、upon → apon (73)、good → god (67)、either → ither (13)、color → colour (6)、see → se (66)、food → fud (13)、ﬂour → ﬂower (6)、we → whe (60)、doubt → dout (12)、phoebe → feeby (6)、little → litle (54)、earth → erth (12)、an → and (5)、great → grate (53)、led → lead (12)、cucumbers → cucombers (5)、your → yor (53)、sea → see (12)、egg → eg (5)、could → coud (51)、thee → the (12)、macklewain → macklewaine (5)、here → hear (51)、tom → tome (12)、magpie → magpi (5)、know → now (45)、add → ad (11)、milner → millner (5)、there → ther (45)、good → god (11)、stacy → staci (5)、three → thre (45)、heaven → heven (11)、trevelyan → trevellion (5)、still → stil (42)、mary → marry (11)、verloc → verlock (5)、off → of (40)、randal → randel (11)、ann → an (4)、don’t → dont (37)、answered → ansered (10)、anyone → one (4)、shall → shal (36)、blood → blod (10)、apartment → appartment (4)、little → litl (35)、bozzle → bosel (10)、basin → bason (4)。960h LARGE from scratch：macklewain → mackelwaine (7)、o → oh (8)、minnetaki → minnitaki (7)、o → oh (6)、in → an (8)、randal → randall (7)、bozzle → bosell (5)、and → an (5)、christie → cristy (6)、criss → chris (5)、clarke → clark (4)、macklewain → mackelwane (6)、bozzle → bosel (4)、grethel → gretel (4)、randal → randoll (6)、clarke → clark (4)、macklewain → mackelwaine (4)、bozzle → bosall (5)、colored → coloured (4)、this → the (4)、kaliko → calico (5)、grethel → gretel (4)、an → and (3)、trevelyan → trevelian (5)、lige → lyge (4)、anyone → one (3)、an → and (4)、bozzle → basell (3)、and → an (4)、and → an (3)、buns → bunds (3)、anyone → one (4)、ann → marianne (3)、carrie → carry (3)、bozzle → bozall (4)、butte → bute (3)、criss → chris (3)、clarke → clark (4)、color → colour (3)、he’s → is (3)、gryce → grice (4)、deucalion → ducalion (3)、his → is (3)、i’m → am (4)、forcemeat → meat (3)、honor → honour (3)、in → ind (4)、gryce → grice (3)、lattimer → latimer (3)、letty → lettie (4)、honor → honour (3)、millet → mellet (3)、phoebe → phebe (4)、kearny → kirney (3)、pyncheon → pension (3)、nuova → noiva (3)、tad → ted (3)、ann → anne (3)、thing → anything (3)、thing → anything (3)、awhile → while (3)、this → the (3)、trevelyan → trevelian (3)。"
+       "original": "10m LARGE LV-60k 1h LARGE LV-60k 10h LARGE LV-60k all →al (181) too →to (26) in →and (15) are →ar (115) until →untill (24) a →the (11) will →wil (100) new →knew (22) o →oh (10) you →yo (90) door →dor (18) and →in (9) one →on (89) says →sais (18) mode →mod (9) two →to (81) soul →sol (17) ursus →ersus (9) well →wel (80) bread →bred (16) tom →tome (8) been →ben (73) poor →pore (16) randal →randol (7) upon →apon (73) a →the (13) the →a (7) good →god (67) either →ither (13) color →colour (6) see →se (66) food →fud (13) ﬂour →ﬂower (6) we →whe (60) doubt →dout (12) phoebe →feeby (6) little →litle (54) earth →erth (12) an →and (5) great →grate (53) led →lead (12) cucumbers →cucombers (5) your →yor (53) sea →see (12) egg →eg (5) could →coud (51) thee →the (12) macklewain →macklewaine (5) here →hear (51) tom →tome (12) magpie →magpi (5) know →now (45) add →ad (11) milner →millner (5) there →ther (45) good →god (11) stacy →staci (5) three →thre (45) heaven →heven (11) trevelyan →trevellion (5) still →stil (42) mary →marry (11) verloc →verlock (5) off →of (40) randal →randel (11) ann →an (4) don’t →dont (37) answered →ansered (10) anyone →one (4) shall →shal (36) blood →blod (10) apartment →appartment (4) little →litl (35) bozzle →bosel (10) basin →bason (4) 100h LARGE LV-60k 960h LARGE LV-60k 960h LARGE from scratch a →the (13) a →the (12) and →in (20) and →in (10) and →in (9) a →the (16) in →and (10) macklewain →mackelwaine (7) in →and (13) o →oh (8) in →and (6) the →a (10) minnetaki →minnitaki (7) o →oh (6) in →an (8) randal →randall (7) bozzle →bosell (5) and →an (5) christie →cristy (6) criss →chris (5) clarke →clark (4) macklewain →mackelwane (6) bozzle →bosel (4) grethel →gretel (4) randal →randoll (6) clarke →clark (4) macklewain →mackelwaine (4) bozzle →bosall (5) colored →coloured (4) this →the (4) kaliko →calico (5) grethel →gretel (4) an →and (3) trevelyan →trevelian (5) lige →lyge (4) anyone →one (3) an →and (4) the →a (4) bozzle →basell (3) and →an (4) and →an (3) buns →bunds (3) anyone →one (4) ann →marianne (3) carrie →carry (3) bozzle →bozall (4) butte →bute (3) criss →chris (3) clarke →clark (4) color →colour (3) he’s →is (3) gryce →grice (4) deucalion →ducalion (3) his →is (3) i’m →am (4) forcemeat →meat (3) honor →honour (3) in →ind (4) gryce →grice (3) lattimer →latimer (3) letty →lettie (4) honor →honour (3) millet →mellet (3) phoebe →phebe (4) kearny →kirney (3) pyncheon →pension (3) the →a (4) nuova →noiva (3) tad →ted (3) ann →anne (3) thing →anything (3) thing →anything (3) awhile →while (3) this →the (3) trevelyan →trevelian (3)",
+       "zh": "（附录 E 转写错误对照大表：10m/1h/10h/100h/960h 各配置下最常见替换错误，格式为「正确词 → 模型误词（次数）」。原始数据照录如下）\n（原始数据照录）\n10m LARGE LV-60k 1h LARGE LV-60k 10h LARGE LV-60k all →al (181) too →to (26) in →and (15) are →ar (115) until →untill (24) a →the (11) will →wil (100) new →knew (22) o →oh (10) you →yo (90) door →dor (18) and →in (9) one →on (89) says →sais (18) mode →mod (9) two →to (81) soul →sol (17) ursus →ersus (9) well →wel (80) bread →bred (16) tom →tome (8) been →ben (73) poor →pore (16) randal →randol (7) upon →apon (73) a →the (13) the →a (7) good →god (67) either →ither (13) color →colour (6) see →se (66) food →fud (13) ﬂour →ﬂower (6) we →whe (60) doubt →dout (12) phoebe →feeby (6) little →litle (54) earth →erth (12) an →and (5) great →grate (53) led →lead (12) cucumbers →cucombers (5) your →yor (53) sea →see (12) egg →eg (5) could →coud (51) thee →the (12) macklewain →macklewaine (5) here →hear (51) tom →tome (12) magpie →magpi (5) know →now (45) add →ad (11) milner →millner (5) there →ther (45) good →god (11) stacy →staci (5) three →thre (45) heaven →heven (11) trevelyan →trevellion (5) still →stil (42) mary →marry (11) verloc →verlock (5) off →of (40) randal →randel (11) ann →an (4) don’t →dont (37) answered →ansered (10) anyone →one (4) shall →shal (36) blood →blod (10) apartment →appartment (4) little →litl (35) bozzle →bosel (10) basin →bason (4) 100h LARGE LV-60k 960h LARGE LV-60k 960h LARGE from scratch a →the (13) a →the (12) and →in (20) and →in (10) and →in (9) a →the (16) in →and (10) macklewain →mackelwaine (7) in →and (13) o →oh (8) in →and (6) the →a (10) minnetaki →minnitaki (7) o →oh (6) in →an (8) randal →randall (7) bozzle →bosell (5) and →an (5) christie →cristy (6) criss →chris (5) clarke →clark (4) macklewain →mackelwane (6) bozzle →bosel (4) grethel →gretel (4) randal →randoll (6) clarke →clark (4) macklewain →mackelwaine (4) bozzle →bosall (5) colored →coloured (4) this →the (4) kaliko →calico (5) grethel →gretel (4) an →and (3) trevelyan →trevelian (5) lige →lyge (4) anyone →one (3) an →and (4) the →a (4) bozzle →basell (3) and →an (4) and →an (3) buns →bunds (3) anyone →one (4) ann →marianne (3) carrie →carry (3) bozzle →bozall (4) butte →bute (3) criss →chris (3) clarke →clark (4) color →colour (3) he’s →is (3) gryce →grice (4) deucalion →ducalion (3) his →is (3) i’m →am (4) forcemeat →meat (3) honor →honour (3) in →ind (4) gryce →grice (3) lattimer →latimer (3) letty →lettie (4) honor →honour (3) millet →mellet (3) phoebe →phebe (4) kearny →kirney (3) pyncheon →pension (3) the →a (4) nuova →noiva (3) tad →ted (3) ann →anne (3) thing →anything (3) thing →anything (3) awhile →while (3) this →the (3) trevelyan →trevelian (3)"
       }
      ]
     },
@@ -4324,8 +6540,8 @@ globalThis.PAPER_2006_11477 = {
      "sentences": [
       {
        "id": "s-E-9-1",
-       "original": "Transcription i’m mister christopher from london IM mister CRESTIFER FROME LUNDEN IM mister CRISTIFFHER from LOUNDEN i’m mister CHRYSTEPHER from london i’m mister christopher from london i’m mister christopher from london I MISSTER christopher from london il popolo e una bestia ILPOPULAR ONABESTIA O POPOLAONABASTIA U POPULAONABASTIAR O POPALOON A BASTYA YOU’LL POP A LAWYE ON A BAISTYE OL POPALOY ON ABESTIA he smelt the nutty aroma of the spirit he SMELTD the NUDY aroma of the spirit he SMELTD the NUDDY ARROMA of the spirit he smelt the NUDDY ERROMA of the spirit he smelt the NUDDY aroma of the spirit he smelt the NUTTIE aroma of the spirit he smelt the nutty EROMA of the spirit phoebe merely glanced at it and gave it back FEABY MEARLY glanced at it and gave it BAK FIEABY merely glanced at it and gave it back FEEBY merely glanced at it and gave it back BEBE merely glanced at it and gave it back phoebe merely glanced at it and gave it back phoebe merely glanced at it and gave it back sauterne is a white bordeaux a strong luscious wine the best known varieties being SULTERIN is a white BORDOE a strong LUCHOUS WIN the best NOWN VERIATYS being CLTEREN is a white BORDO a strong LUCHIOUS wine the best known VERIETIES being SOTERN is a white BOURDO a strong LUCIOUS wine the best known VORIETIES being SOTERN is a white BORDAUX a strong LUCIOUS wine the best known varieties being SOTERN is a white bordeaux a strong luscious wine the best known varieties being SOTERAN is a white bordeaux a strong luscious wine the best known varieties being i happen to have mac connell’s box for tonight or there’d be no chance of our getting places i HAPEND to have MECONALES BOXS for TONIT ORE THIRLD be no chance of OR GETING places i happen to have MACCONNEL’S BOCXS for tonight or TE’ELD be no chance of our getting places i HAPPENED to have MUKONNEL’S box for tonight or THERED be no chance of our getting places i HAPPENED to have MC CONNEL’S box for TO NIGHT or there’d be no chance of our getting places i happen to have MC CONALL’S box for TO NIGHT or there’d be no chance of our getting places i HAPPENE to have MACONEL’S box for TO NIGHT or there’d be no chance of our getting places",
-       "zh": "（Table 12 数值碎块：dev-clean 若干困难语音在不同模型下的转写示例，大写词表示错误）原文「i’m mister christopher from london」，各模型输出如 IM mister CRESTIFER FROME LUNDEN / IM mister CRISTIFFHER from LOUNDEN / i’m mister CHRYSTEPHER from london 等，最佳模型可正确输出 i’m mister christopher from london；意大利语「il popolo e una bestia」被写成 ILPOPULAR ONABESTIA、O POPOLAONABASTIA 等；「he smelt the nutty aroma of the spirit」被写成 he SMELTD the NUDY aroma of the spirit 等；「phoebe merely glanced at it and gave it back」被写成 FEABY MEARLY glanced at it and gave it BAK 等；「sauterne is a white bordeaux…」被写成 SULTERIN is a white BORDOE 等；「i happen to have mac connell’s box for tonight…」被写成 i HAPEND to have MECONALES BOXS for TONIT 等。错误集中在人名、外来词与词边界上。"
+       "original": "Model Transcription Reference i’m mister christopher from london 10m LV-60k IM mister CRESTIFER FROME LUNDEN 1h LV-60k IM mister CRISTIFFHER from LOUNDEN 10h LV-60k i’m mister CHRYSTEPHER from london 100h LV-60k i’m mister christopher from london 960h LV-60k i’m mister christopher from london 960h scratch I MISSTER christopher from london Reference il popolo e una bestia 10m LV-60k ILPOPULAR ONABESTIA 1h LV-60k O POPOLAONABASTIA 10h LV-60k U POPULAONABASTIAR 100h LV-60k O POPALOON A BASTYA 960h LV-60k YOU’LL POP A LAWYE ON A BAISTYE 960h scratch OL POPALOY ON ABESTIA Reference he smelt the nutty aroma of the spirit 10m LV-60k he SMELTD the NUDY aroma of the spirit 1h LV-60k he SMELTD the NUDDY ARROMA of the spirit 10h LV-60k he smelt the NUDDY ERROMA of the spirit 100h LV-60k he smelt the NUDDY aroma of the spirit 960h LV-60k he smelt the NUTTIE aroma of the spirit 960h scratch he smelt the nutty EROMA of the spirit Reference phoebe merely glanced at it and gave it back 10m LV-60k FEABY MEARLY glanced at it and gave it BAK 1h LV-60k FIEABY merely glanced at it and gave it back 10h LV-60k FEEBY merely glanced at it and gave it back 100h LV-60k BEBE merely glanced at it and gave it back 960h LV-60k phoebe merely glanced at it and gave it back 960h scratch phoebe merely glanced at it and gave it back Reference sauterne is a white bordeaux a strong luscious wine the best known varieties being 10m LV-60k SULTERIN is a white BORDOE a strong LUCHOUS WIN the best NOWN VERIATYS being 1h LV-60k CLTEREN is a white BORDO a strong LUCHIOUS wine the best known VERIETIES being 10h LV-60k SOTERN is a white BOURDO a strong LUCIOUS wine the best known VORIETIES being 100h LV-60k SOTERN is a white BORDAUX a strong LUCIOUS wine the best known varieties being 960h LV-60k SOTERN is a white bordeaux a strong luscious wine the best known varieties being 960h scratch SOTERAN is a white bordeaux a strong luscious wine the best known varieties being Reference i happen to have mac connell’s box for tonight or there’d be no chance of our getting places 10m LV-60k i HAPEND to have MECONALES BOXS for TONIT ORE THIRLD be no chance of OR GETING places 1h LV-60k i happen to have MACCONNEL’S BOCXS for tonight or TE’ELD be no chance of our getting places 10h LV-60k i HAPPENED to have MUKONNEL’S box for tonight or THERED be no chance of our getting places 100h LV-60k i HAPPENED to have MC CONNEL’S box for TO NIGHT or there’d be no chance of our getting places 960h LV-60k i happen to have MC CONALL’S box for TO NIGHT or there’d be no chance of our getting places 960h scratch i HAPPENE to have MACONEL’S box for TO NIGHT or there’d be no chance of our getting places",
+       "zh": "（附录 E 转写样例对照表：Reference 标准答案与各配置（10m/1h/10h/100h/960h/960h-scratch）模型转写对比，错误词以大写标出。原始数据照录如下）\n（原始数据照录）\nModel Transcription Reference i’m mister christopher from london 10m LV-60k IM mister CRESTIFER FROME LUNDEN 1h LV-60k IM mister CRISTIFFHER from LOUNDEN 10h LV-60k i’m mister CHRYSTEPHER from london 100h LV-60k i’m mister christopher from london 960h LV-60k i’m mister christopher from london 960h scratch I MISSTER christopher from london Reference il popolo e una bestia 10m LV-60k ILPOPULAR ONABESTIA 1h LV-60k O POPOLAONABASTIA 10h LV-60k U POPULAONABASTIAR 100h LV-60k O POPALOON A BASTYA 960h LV-60k YOU’LL POP A LAWYE ON A BAISTYE 960h scratch OL POPALOY ON ABESTIA Reference he smelt the nutty aroma of the spirit 10m LV-60k he SMELTD the NUDY aroma of the spirit 1h LV-60k he SMELTD the NUDDY ARROMA of the spirit 10h LV-60k he smelt the NUDDY ERROMA of the spirit 100h LV-60k he smelt the NUDDY aroma of the spirit 960h LV-60k he smelt the NUTTIE aroma of the spirit 960h scratch he smelt the nutty EROMA of the spirit Reference phoebe merely glanced at it and gave it back 10m LV-60k FEABY MEARLY glanced at it and gave it BAK 1h LV-60k FIEABY merely glanced at it and gave it back 10h LV-60k FEEBY merely glanced at it and gave it back 100h LV-60k BEBE merely glanced at it and gave it back 960h LV-60k phoebe merely glanced at it and gave it back 960h scratch phoebe merely glanced at it and gave it back Reference sauterne is a white bordeaux a strong luscious wine the best known varieties being 10m LV-60k SULTERIN is a white BORDOE a strong LUCHOUS WIN the best NOWN VERIATYS being 1h LV-60k CLTEREN is a white BORDO a strong LUCHIOUS wine the best known VERIETIES being 10h LV-60k SOTERN is a white BOURDO a strong LUCIOUS wine the best known VORIETIES being 100h LV-60k SOTERN is a white BORDAUX a strong LUCIOUS wine the best known varieties being 960h LV-60k SOTERN is a white bordeaux a strong luscious wine the best known varieties being 960h scratch SOTERAN is a white bordeaux a strong luscious wine the best known varieties being Reference i happen to have mac connell’s box for tonight or there’d be no chance of our getting places 10m LV-60k i HAPEND to have MECONALES BOXS for TONIT ORE THIRLD be no chance of OR GETING places 1h LV-60k i happen to have MACCONNEL’S BOCXS for tonight or TE’ELD be no chance of our getting places 10h LV-60k i HAPPENED to have MUKONNEL’S box for tonight or THERED be no chance of our getting places 100h LV-60k i HAPPENED to have MC CONNEL’S box for TO NIGHT or there’d be no chance of our getting places 960h LV-60k i happen to have MC CONALL’S box for TO NIGHT or there’d be no chance of our getting places 960h scratch i HAPPENE to have MACONEL’S box for TO NIGHT or there’d be no chance of our getting places"
       }
      ]
     }
@@ -4427,32 +6643,266 @@ globalThis.PAPER_2006_11477 = {
      ]
     },
     {
+     "id": "eq-F-1",
+     "type": "equation",
+     "page": 19,
+     "original": "Baseline (p = 0.075, α = 0.1) 7.97 0.02"
+    },
+    {
+     "id": "eq-F-2",
+     "type": "equation",
+     "page": 19,
+     "original": "Continuous inputs, continuous targets"
+    },
+    {
+     "id": "eq-F-3",
+     "type": "equation",
+     "page": 19,
+     "original": "8.58 0.08"
+    },
+    {
+     "id": "eq-F-4",
+     "type": "equation",
+     "page": 19,
+     "original": "+ MLP on targets"
+    },
+    {
+     "id": "eq-F-5",
+     "type": "equation",
+     "page": 19,
+     "original": "8.51 0.05"
+    },
+    {
+     "id": "eq-F-6",
+     "type": "equation",
+     "page": 19,
+     "original": "+ Separate encoders"
+    },
+    {
+     "id": "eq-F-7",
+     "type": "equation",
+     "page": 19,
+     "original": "8.90 0.01"
+    },
+    {
+     "id": "eq-F-8",
+     "type": "equation",
+     "page": 19,
+     "original": "receptive ﬁeld 30ms"
+    },
+    {
+     "id": "eq-F-9",
+     "type": "equation",
+     "page": 19,
+     "original": "7.99 0.06"
+    },
+    {
+     "id": "eq-F-10",
+     "type": "equation",
+     "page": 19,
+     "original": "diversity penalty"
+    },
+    {
+     "id": "eq-F-11",
+     "type": "equation",
+     "page": 19,
+     "original": "α = 0 8.48 0.08 α = 0.05 8.34 0.08 α = 0.2 8.58 0.45"
+    },
+    {
+     "id": "eq-F-12",
+     "type": "equation",
+     "page": 19,
+     "original": "Conv pos emb, kernel 256"
+    },
+    {
+     "id": "eq-F-13",
+     "type": "equation",
+     "page": 19,
+     "original": "8.14 0.05"
+    },
+    {
+     "id": "eq-F-14",
+     "type": "equation",
+     "page": 19,
+     "original": "No gradient to encoder from quantizer"
+    },
+    {
+     "id": "eq-F-15",
+     "type": "equation",
+     "page": 19,
+     "original": "8.41 0.08"
+    },
+    {
+     "id": "eq-F-16",
+     "type": "equation",
+     "page": 19,
+     "original": "Negatives K = 200 same utterance"
+    },
+    {
+     "id": "eq-F-17",
+     "type": "equation",
+     "page": 19,
+     "original": "8.12 0.05"
+    },
+    {
      "id": "p-F-4",
      "type": "paragraph",
      "page": 19,
      "sentences": [
       {
        "id": "s-F-4-1",
-       "original": "Baseline (p = 0.075, α = 0.1) 7.97 0.02 Continuous inputs, continuous targets 8.58 0.08 + MLP on targets 8.51 0.05 + Separate encoders 8.90 0.01 receptive ﬁeld 30ms 7.99 0.06 diversity penalty α = 0 8.48 0.08 α = 0.05 8.34 0.08 α = 0.2 8.58 0.45 Conv pos emb, kernel 256 8.14 0.05 No gradient to encoder from quantizer 8.41 0.08 Negatives K = 200 same utterance 8.12 0.05 K = 50 same utterance + K = 50 from batch 8.79 0.06 Sample negatives from any time step 8.07 0.02 No Gumbel noise 8.73 0.42 Codebook G=4, V=18 9.02 0.38 G=8, V=8 8.13 0.07 Predict exactly U time steps from edges 9.53 0.91 8.19 0.07 8.07 0.07 7.89 0.10 7.90 0.01 We also investigated predicting only time steps immediately next to the last unmasked time step for each span.",
-       "zh": "（Table 13 数值碎块）Baseline (p = 0.075, α = 0.1)：7.97 0.02；连续输入 + 连续目标：8.58 0.08；目标上加 MLP：8.51 0.05；分离编码器（Separate encoders）：8.90 0.01；感受野 30ms：7.99 0.06；多样性惩罚 α = 0：8.48 0.08；α = 0.05：8.34 0.08；α = 0.2：8.58 0.45；卷积位置嵌入 kernel 256：8.14 0.05；量化器到编码器无梯度：8.41 0.08；负例 K = 200 来自同一语音：8.12 0.05；K = 50 来自同一语音 + K = 50 来自批次：8.79 0.06；从任意时间步采样负例：8.07 0.02；无 Gumbel 噪声：8.73 0.42；码本 G=4、V=18：9.02 0.38；G=8、V=8：8.13 0.07；从边界起精确预测 U 个时间步：9.53 0.91、8.19 0.07、8.07 0.07、7.89 0.10、7.90 0.01。我们还考察了只对每个掩码片段紧邻最后一个未掩码时间步之后的时间步做预测。"
+       "original": "K = 50 same utterance + K = 50 from batch",
+       "zh": "（附录 F 消融结果表：连续输入+连续目标、目标端 MLP、独立编码器、感受野、diversity penalty、卷积位置嵌入、量化器梯度、负样本策略、Gumbel 噪声、码本规模、边界预测步数 U 等各项的 WER 数值。原始数据照录如下）\n（原始数据照录）\n7.97 0.02 Continuous inputs, continuous targets 8.58 0.08 + MLP on targets 8.51 0.05 + Separate encoders 8.90 0.01 receptive ﬁeld 30ms 7.99 0.06 diversity penalty α = 0 8.48 0.08 α = 0.05 8.34 0.08 α = 0.2 8.58 0.45 Conv pos emb, kernel 256 8.14 0.05 No gradient to encoder from quantizer 8.41 0.08 Negatives K = 200 same utterance 8.12 0.05 K = 50 same utterance + K = 50 from batch 8.79 0.06 Sample negatives from any time step 8.07 0.02 No Gumbel noise 8.73 0.42 Codebook G=4, V=18 9.02 0.38 G=8, V=8 8.13 0.07 Predict exactly U time steps from edges U = 1 9.53 0.91 U = 5 8.19 0.07 U = 10 8.07 0.07 U = 15 7.89 0.10 U = 20 7.90 0.01 We also investigated predicting only time steps immediately next to the last unmasked time step for each span."
+      }
+     ]
+    },
+    {
+     "id": "eq-F-18",
+     "type": "equation",
+     "page": 19,
+     "original": "8.79 0.06"
+    },
+    {
+     "id": "eq-F-19",
+     "type": "equation",
+     "page": 19,
+     "original": "Sample negatives from any time step"
+    },
+    {
+     "id": "eq-F-20",
+     "type": "equation",
+     "page": 19,
+     "original": "8.07 0.02"
+    },
+    {
+     "id": "eq-F-21",
+     "type": "equation",
+     "page": 19,
+     "original": "No Gumbel noise"
+    },
+    {
+     "id": "eq-F-22",
+     "type": "equation",
+     "page": 19,
+     "original": "8.73 0.42"
+    },
+    {
+     "id": "eq-F-23",
+     "type": "equation",
+     "page": 19,
+     "original": "Codebook G=4, V=18"
+    },
+    {
+     "id": "eq-F-24",
+     "type": "equation",
+     "page": 19,
+     "original": "9.02 0.38"
+    },
+    {
+     "id": "eq-F-25",
+     "type": "equation",
+     "page": 19,
+     "original": "G=8, V=8"
+    },
+    {
+     "id": "eq-F-26",
+     "type": "equation",
+     "page": 19,
+     "original": "8.13 0.07"
+    },
+    {
+     "id": "p-F-5",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-F-5-1",
+       "original": "Predict exactly U time steps from edges U = 1",
+       "zh": "（附录 F 消融结果表：连续输入+连续目标、目标端 MLP、独立编码器、感受野、diversity penalty、卷积位置嵌入、量化器梯度、负样本策略、Gumbel 噪声、码本规模、边界预测步数 U 等各项的 WER 数值。原始数据照录如下）\n（原始数据照录）\n7.97 0.02 Continuous inputs, continuous targets 8.58 0.08 + MLP on targets 8.51 0.05 + Separate encoders 8.90 0.01 receptive ﬁeld 30ms 7.99 0.06 diversity penalty α = 0 8.48 0.08 α = 0.05 8.34 0.08 α = 0.2 8.58 0.45 Conv pos emb, kernel 256 8.14 0.05 No gradient to encoder from quantizer 8.41 0.08 Negatives K = 200 same utterance 8.12 0.05 K = 50 same utterance + K = 50 from batch 8.79 0.06 Sample negatives from any time step 8.07 0.02 No Gumbel noise 8.73 0.42 Codebook G=4, V=18 9.02 0.38 G=8, V=8 8.13 0.07 Predict exactly U time steps from edges U = 1 9.53 0.91 U = 5 8.19 0.07 U = 10 8.07 0.07 U = 15 7.89 0.10 U = 20 7.90 0.01 We also investigated predicting only time steps immediately next to the last unmasked time step for each span."
+      }
+     ]
+    },
+    {
+     "id": "eq-F-27",
+     "type": "equation",
+     "page": 19,
+     "original": "9.53 0.91"
+    },
+    {
+     "id": "eq-F-28",
+     "type": "equation",
+     "page": 19,
+     "original": "U = 5"
+    },
+    {
+     "id": "eq-F-29",
+     "type": "equation",
+     "page": 19,
+     "original": "8.19 0.07"
+    },
+    {
+     "id": "eq-F-30",
+     "type": "equation",
+     "page": 19,
+     "original": "U = 10"
+    },
+    {
+     "id": "eq-F-31",
+     "type": "equation",
+     "page": 19,
+     "original": "8.07 0.07"
+    },
+    {
+     "id": "eq-F-32",
+     "type": "equation",
+     "page": 19,
+     "original": "U = 15"
+    },
+    {
+     "id": "eq-F-33",
+     "type": "equation",
+     "page": 19,
+     "original": "7.89 0.10"
+    },
+    {
+     "id": "eq-F-34",
+     "type": "equation",
+     "page": 19,
+     "original": "U = 20"
+    },
+    {
+     "id": "eq-F-35",
+     "type": "equation",
+     "page": 19,
+     "original": "7.90 0.01"
+    },
+    {
+     "id": "p-F-6",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-F-6-1",
+       "original": "We also investigated predicting only time steps immediately next to the last unmasked time step for each span.",
+       "zh": "（附录 F 消融结果表：连续输入+连续目标、目标端 MLP、独立编码器、感受野、diversity penalty、卷积位置嵌入、量化器梯度、负样本策略、Gumbel 噪声、码本规模、边界预测步数 U 等各项的 WER 数值。原始数据照录如下）\n（原始数据照录）\n7.97 0.02 Continuous inputs, continuous targets 8.58 0.08 + MLP on targets 8.51 0.05 + Separate encoders 8.90 0.01 receptive ﬁeld 30ms 7.99 0.06 diversity penalty α = 0 8.48 0.08 α = 0.05 8.34 0.08 α = 0.2 8.58 0.45 Conv pos emb, kernel 256 8.14 0.05 No gradient to encoder from quantizer 8.41 0.08 Negatives K = 200 same utterance 8.12 0.05 K = 50 same utterance + K = 50 from batch 8.79 0.06 Sample negatives from any time step 8.07 0.02 No Gumbel noise 8.73 0.42 Codebook G=4, V=18 9.02 0.38 G=8, V=8 8.13 0.07 Predict exactly U time steps from edges U = 1 9.53 0.91 U = 5 8.19 0.07 U = 10 8.07 0.07 U = 15 7.89 0.10 U = 20 7.90 0.01 We also investigated predicting only time steps immediately next to the last unmasked time step for each span."
       },
       {
-       "id": "s-F-4-2",
+       "id": "s-F-6-2",
        "original": "This enables to better control the difﬁculty of the pre-training task.",
        "zh": "这样可以更好地控制预训练任务的难度。"
       },
       {
-       "id": "s-F-4-3",
+       "id": "s-F-6-3",
        "original": "Given the leftmost or rightmost unmasked time step next to a masked span, we compute the contrastive loss only for the ﬁrst U masked time steps next to these unsmasked spans.",
        "zh": "给定紧邻掩码片段的最左或最右未掩码时间步，我们只对紧邻这些未掩码片段的前 U 个被掩码时间步计算对比损失。"
       },
       {
-       "id": "s-F-4-4",
+       "id": "s-F-6-4",
        "original": "Predicting only up to one time step performs poorly because there is little training signal from each utterance and predicting more time steps performs better but does not signiﬁcantly outperform predicting all masked time steps.",
        "zh": "只预测至多一个时间步的效果很差，因为每条语音能提供的训练信号太少；预测更多时间步效果更好，但也没有显著超过「预测全部被掩码时间步」。"
       },
       {
-       "id": "s-F-4-5",
+       "id": "s-F-6-5",
        "original": "Increasing the number of training updates helps but this increases training time.",
        "zh": "增加训练更新次数有帮助，但会增加训练时间。"
       }
@@ -4608,7 +7058,7 @@ globalThis.PAPER_2006_11477 = {
   {
    "id": "ann-014",
    "anchor": {
-    "sentence_id": "s-10-2-3",
+    "sentence_id": "s-100h-labeled-8-3",
     "quote": "their method achieves WER 4.2/8.6 on test-clean/other which compares to WER 2.3/5.0 with the LARGE model in a like for like setup, a relative WER reduction of 45%/42%"
    },
    "kind": "comparison",

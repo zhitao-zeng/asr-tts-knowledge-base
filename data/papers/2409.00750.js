@@ -257,7 +257,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-1-4-1",
-       "original": "Model Rep.",
+       "original": "System Model Rep.",
        "zh": "（表格残留）模型 / 表征。"
       }
      ]
@@ -308,50 +308,76 @@ globalThis.PAPER_2409_00750 = {
       },
       {
        "id": "s-1-7-2",
-       "original": "Tokens NaturalSpeech 2 Diffusion A.",
-       "zh": "token；NaturalSpeech 2：扩散，声学"
-      },
-      {
-       "id": "s-1-7-3",
-       "original": "Features VoiceBox Diffusion A.",
-       "zh": "特征；VoiceBox：扩散，声学"
-      },
-      {
-       "id": "s-1-7-4",
-       "original": "Features VoiceCraft Autoregressive A.",
-       "zh": "特征；VoiceCraft：自回归，声学"
-      },
-      {
-       "id": "s-1-7-5",
-       "original": "Tokens NaturalSpeech 3 Masked Generative F.",
-       "zh": "token；NaturalSpeech 3：掩码生成，分解式"
-      },
-      {
-       "id": "s-1-7-6",
-       "original": "Tokens Masked Generative S.&A.",
-       "zh": "token；掩码生成，语义与声学"
-      },
-      {
-       "id": "s-1-7-7",
-       "original": "Tokens Our experiments demonstrate that MaskGCT has achieved performance comparable to or superior to that of existing models in terms of speech quality, similarity, prosody, and intelligibility.",
-       "zh": "token。我们的实验表明，MaskGCT 在语音质量、相似度、韵律和可懂度方面达到了与现有模型相当或更优的性能。"
-      },
-      {
-       "id": "s-1-7-8",
-       "original": "Specifically, (1) It achieves comparable or better quality and naturalness than the ground truth speech across three benchmarks (LibriSpeech, SeedTTS test-en, and SeedTTS test-zh) in terms of CMOS.",
-       "zh": "具体来说：(1) 就 CMOS 而言，它在三个基准（LibriSpeech、SeedTTS test-en 和 SeedTTS test-zh）上取得了与真人语音相当甚至更好的质量与自然度。"
-      },
-      {
-       "id": "s-1-7-9",
-       "original": "(2) It achieves human-level similarity between the generated speech and the prompt speech, with improvements of +0.017, -0.002, and +0.027 in SIM-O and +0.28, +0.32 and +0.25 in SMOS for LibriSpeech, SeedTTS test-en, and SeedTTS test-zh, respectively.",
-       "zh": "(2) 它使生成语音与提示语音之间的相似度达到人类水平：在 LibriSpeech、SeedTTS test-en 和 SeedTTS test-zh 上，SIM-O 分别提升 +0.017、-0.002 和 +0.027，SMOS 分别提升 +0.28、+0.32 和 +0.25。"
-      },
-      {
-       "id": "s-1-7-10",
-       "original": "(3) It achieves comparable intelligibility in terms of WER across the three benchmarks and demonstrates stability within a reasonable range of speech duration, which also indicates the diversity and controllability of the generated speech.",
-       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。"
+       "original": "Tokens",
+       "zh": "（谱系表行：Tokens ✓ ✗ ✓ ✗ ✗ ✗；NaturalSpeech 2；Diffusion A.）"
       }
      ]
+    },
+    {
+     "id": "eq-1-1",
+     "type": "equation",
+     "page": 2,
+     "original": "✓ ✗ ✓ ✗ ✗ ✗"
+    },
+    {
+     "id": "eq-1-2",
+     "type": "equation",
+     "page": 2,
+     "original": "NaturalSpeech 2 Diffusion A. Features"
+    },
+    {
+     "id": "eq-1-3",
+     "type": "equation",
+     "page": 2,
+     "original": "✗ ✗ ✓ ✗ ✗ ✗"
+    },
+    {
+     "id": "eq-1-4",
+     "type": "equation",
+     "page": 2,
+     "original": "VoiceBox Diffusion A. Features"
+    },
+    {
+     "id": "eq-1-5",
+     "type": "equation",
+     "page": 2,
+     "original": "✓ ✗ ✓ ✓ ✗ ✓"
+    },
+    {
+     "id": "eq-1-6",
+     "type": "equation",
+     "page": 2,
+     "original": "VoiceCraft Autoregressive A. Tokens"
+    },
+    {
+     "id": "eq-1-7",
+     "type": "equation",
+     "page": 2,
+     "original": "✓ ✗ ✓ ✗ ✗ ✓"
+    },
+    {
+     "id": "eq-1-8",
+     "type": "equation",
+     "page": 2,
+     "original": "NaturalSpeech 3 Masked Generative F. Tokens"
+    },
+    {
+     "id": "eq-1-9",
+     "type": "equation",
+     "page": 2,
+     "original": "✗ ✗ ✓ ✗ ✗ ✓"
+    },
+    {
+     "id": "eq-1-10",
+     "type": "equation",
+     "page": 2,
+     "original": "MaskGCT Masked Generative S.&A. Tokens"
+    },
+    {
+     "id": "eq-1-11",
+     "type": "equation",
+     "page": 2,
+     "original": "✓ ✓ ✓ ✓ ✓ ✓"
     },
     {
      "id": "p-1-8",
@@ -360,21 +386,48 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-1-8-1",
+       "original": "Our experiments demonstrate that MaskGCT has achieved performance comparable to or superior to that of existing models in terms of speech quality, similarity, prosody, and intelligibility.",
+       "zh": "（谱系表行：Tokens ✓ ✓ ✓ ✓ ✓ ✓。）实验表明 MaskGCT 在语音质量、相似度、韵律与可懂度上达到与现有模型相当或更优的水平。"
+      },
+      {
+       "id": "s-1-8-2",
+       "original": "Specifically, (1) It achieves comparable or better quality and naturalness than the ground truth speech across three benchmarks (LibriSpeech, SeedTTS test-en, and SeedTTS test-zh) in terms of CMOS.",
+       "zh": "具体来说：(1) 就 CMOS 而言，它在三个基准（LibriSpeech、SeedTTS test-en 和 SeedTTS test-zh）上取得了与真人语音相当甚至更好的质量与自然度。"
+      },
+      {
+       "id": "s-1-8-3",
+       "original": "(2) It achieves human-level similarity between the generated speech and the prompt speech, with improvements of +0.017, -0.002, and +0.027 in SIM-O and +0.28, +0.32 and +0.25 in SMOS for LibriSpeech, SeedTTS test-en, and SeedTTS test-zh, respectively.",
+       "zh": "(2) 它使生成语音与提示语音之间的相似度达到人类水平：在 LibriSpeech、SeedTTS test-en 和 SeedTTS test-zh 上，SIM-O 分别提升 +0.017、-0.002 和 +0.027，SMOS 分别提升 +0.28、+0.32 和 +0.25。"
+      },
+      {
+       "id": "s-1-8-4",
+       "original": "(3) It achieves comparable intelligibility in terms of WER across the three benchmarks and demonstrates stability within a reasonable range of speech duration, which also indicates the diversity and controllability of the generated speech.",
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。"
+      }
+     ]
+    },
+    {
+     "id": "p-1-9",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-1-9-1",
        "original": "In summary, we propose a non-autoregressive zero-shot TTS system based on masked generative transformers and introduce a speech discrete semantic representation by training a VQ-VAE on speech self-supervised representations.",
        "zh": "总之，我们提出了一个基于掩码生成式 Transformer 的非自回归零样本 TTS 系统，并通过在语音自监督表征上训练 VQ-VAE 引入了一种语音离散语义表征。"
       },
       {
-       "id": "s-1-8-2",
+       "id": "s-1-9-2",
        "original": "Our system achieves human-level similarity, naturalness, and intelligibility by scaling data to 100K hours of in-the-wild speech, while also demonstrating high flexibility, diversity, and controllability.",
        "zh": "通过把数据规模扩大到 100K 小时真实场景语音，我们的系统在相似度、自然度和可懂度上达到人类水平，同时展现出高度的灵活性、多样性与可控性。"
       },
       {
-       "id": "s-1-8-3",
+       "id": "s-1-9-3",
        "original": "We investigate the scalability of our system across various tasks, including cross-lingual dubbing, voice conversion, emotion control, and speech content editing, utilizing zero-shot learning or post-training methods.",
        "zh": "我们考察了系统在多种任务上的可扩展性，包括跨语言配音、声音转换、情感控制和语音内容编辑，使用零样本学习或后训练方法。"
       },
       {
-       "id": "s-1-8-4",
+       "id": "s-1-9-4",
        "original": "This showcases the potential of our system as a foundational model for speech generation.",
        "zh": "这展示了我们的系统作为语音生成基础模型的潜力。"
       }
@@ -630,8 +683,8 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-3-1-2-1",
-       "original": "Prompt Semantic Tokens Semantic Tokens Acoustic Tokens Speech Semantic Codec Speech Acoustic Text-to-Semantic Semantic-to-Acoustic Codec Prompt Speech Text Generated Speech",
-       "zh": "（Figure 1 图内文字残留）提示语义 token、语义 token、声学 token；语音语义 codec、语音声学 codec；文本到语义、语义到声学；提示语音、文本、生成语音。"
+       "original": "Prompt Semantic Tokens Semantic Tokens Acoustic Tokens Speech Semantic Codec Speech Acoustic Text-to-Semantic Semantic-to-Acoustic Codec Prompt Speech MaskGCT Text MaskGCT Generated Speech",
+       "zh": "（图 2 架构标签：Prompt（语义 token + 声学 token 提示）→ Text-to-Semantic → Semantic-to-Acoustic → 语音；Speech Semantic Codec 与 Speech Acoustic Codec；MaskGCT Text / MaskGCT；生成语音。）"
       }
      ]
     },
@@ -1357,123 +1410,369 @@ globalThis.PAPER_2409_00750 = {
      "page": 7,
      "original": "Table 2: Evaluation results for MaskGCT and the baseline methods on LibriSpeech test-clean, SeedTTS test-en, SeedTTS test-zh. The boldface denotes the best result, the underline denotes the second best. gt length denotes the result obtained by using ground truth total speech length. The results in ‘()’ means the result is the best one selected from five random samples (rerank 5).",
      "zh": "表 2：MaskGCT 与基线方法在 LibriSpeech test-clean、SeedTTS test-en、SeedTTS test-zh 上的评估结果。粗体表示最优结果，下划线表示次优。gt length 表示使用真实语音总长度得到的结果。「()」中的结果表示从 5 个随机样本中选出的最佳结果（rerank 5）。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-system",
+   "num": null,
+   "level": 2,
+   "page": 7,
+   "title": {
+    "original": "System",
+    "zh": "System"
+   },
+   "blocks": [
     {
-     "id": "p-4-1-4",
+     "id": "p-system-1",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-4-1-4-1",
-       "original": "FSD ↓ SMOS ↑ CMOS ↑ LibriSpeech test-clean 0.68 1.94 0.00 VALL-E [2] 0.50 5.90 VoiceBox [9] 0.64 2.03 0.762 NaturalSpeech 3 [8] 0.67 1.94 0.786 VoiceCraft [5] 0.45 4.68 0.981 XTTS-v2 [52] 0.51 4.20 0.945 0.886 MaskGCT (gt length) 0.697 2.012 0.746 0.730 2.143 0.00 CosyVoice [53] 0.643 4.079 0.316 XTTS-v2 [52] 0.463 3.248 0.484 VoiceCraft [5] 0.470 7.556 0.226 0.188 MaskGCT (gt length) 0.728 2.466 0.159 0.750 1.254 0.00 CosyVoice [53] 0.750 4.089 0.276 XTTS-v2 [52] 0.635 2.876 0.413 0.106 MaskGCT (gt length) 0.777 2.183 0.101 details of each model can be found in Appendix D.",
-       "zh": "（Table 2 数值在抽取层错乱混排，译文如实保留）FSD ↓ SMOS ↑ CMOS ↑ LibriSpeech test-clean 0.68 1.94 0.00 VALL-E [2] 0.50 5.90 VoiceBox [9] 0.64 2.03 0.762 NaturalSpeech 3 [8] 0.67 1.94 0.786 VoiceCraft [5] 0.45 4.68 0.981 XTTS-v2 [52] 0.51 4.20 0.945 0.886 MaskGCT (gt length) 0.697 2.012 0.746 0.730 2.143 0.00 CosyVoice [53] 0.643 4.079 0.316 XTTS-v2 [52] 0.463 3.248 0.484 VoiceCraft [5] 0.470 7.556 0.226 0.188 MaskGCT (gt length) 0.728 2.466 0.159 0.750 1.254 0.00 CosyVoice [53] 0.750 4.089 0.276 XTTS-v2 [52] 0.635 2.876 0.413 0.106 MaskGCT (gt length) 0.777 2.183 0.101。各模型的详细信息见附录 D。"
-      },
-      {
-       "id": "s-4-1-4-2",
-       "original": "We also train an AR-based T2S model to replace the T2S part of MaskGCT, we term it as AR + SoundStorm.",
-       "zh": "我们还训练了一个基于 AR 的 T2S 模型来替换 MaskGCT 的 T2S 部分，称之为 AR + SoundStorm。"
+       "id": "s-system-1-1",
+       "original": "SIM-O ↑ WER ↓ FSD ↓ SMOS ↑ CMOS ↑ LibriSpeech test-clean Ground Truth",
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。"
       }
      ]
     },
     {
-     "id": "p-4-1-5",
+     "id": "eq-system-1",
+     "type": "equation",
+     "page": 7,
+     "original": "0.68 1.94 - 4.05±0.12 0.00"
+    },
+    {
+     "id": "eq-system-2",
+     "type": "equation",
+     "page": 7,
+     "original": "VALL-E [2]"
+    },
+    {
+     "id": "eq-system-3",
+     "type": "equation",
+     "page": 7,
+     "original": "0.50 5.90 - 3.47±0.26 -0.52±0.22"
+    },
+    {
+     "id": "eq-system-4",
+     "type": "equation",
+     "page": 7,
+     "original": "VoiceBox [9]"
+    },
+    {
+     "id": "eq-system-5",
+     "type": "equation",
+     "page": 7,
+     "original": "0.64 2.03 0.762 3.80±0.17 -0.41±0.13"
+    },
+    {
+     "id": "eq-system-6",
+     "type": "equation",
+     "page": 7,
+     "original": "NaturalSpeech 3 [8]"
+    },
+    {
+     "id": "eq-system-7",
+     "type": "equation",
+     "page": 7,
+     "original": "0.67 1.94 0.786 4.26±0.10 0.16±0.14"
+    },
+    {
+     "id": "eq-system-8",
+     "type": "equation",
+     "page": 7,
+     "original": "VoiceCraft [5]"
+    },
+    {
+     "id": "eq-system-9",
+     "type": "equation",
+     "page": 7,
+     "original": "0.45 4.68 0.981 3.52±0.21 -0.33±0.16"
+    },
+    {
+     "id": "eq-system-10",
+     "type": "equation",
+     "page": 7,
+     "original": "XTTS-v2 [52]"
+    },
+    {
+     "id": "eq-system-11",
+     "type": "equation",
+     "page": 7,
+     "original": "0.51 4.20 0.945 3.02±0.22 -0.98±0.19"
+    },
+    {
+     "id": "eq-system-12",
+     "type": "equation",
+     "page": 7,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-system-13",
+     "type": "equation",
+     "page": 7,
+     "original": "0.687(0.723) 2.634(1.976) 0.886 4.27±0.14 0.10±0.16"
+    },
+    {
+     "id": "eq-system-14",
+     "type": "equation",
+     "page": 7,
+     "original": "MaskGCT (gt length)"
+    },
+    {
+     "id": "eq-system-15",
+     "type": "equation",
+     "page": 7,
+     "original": "0.697 2.012 0.746 4.33±0.11 0.13±0.13"
+    },
+    {
+     "id": "eq-system-16",
+     "type": "equation",
+     "page": 7,
+     "original": "SeedTTS test-en Ground Truth"
+    },
+    {
+     "id": "eq-system-17",
+     "type": "equation",
+     "page": 7,
+     "original": "0.730 2.143 - 3.92±0.15 0.00"
+    },
+    {
+     "id": "eq-system-18",
+     "type": "equation",
+     "page": 7,
+     "original": "CosyVoice [53]"
+    },
+    {
+     "id": "eq-system-19",
+     "type": "equation",
+     "page": 7,
+     "original": "0.643 4.079 0.316 3.52±0.17 -0.41±0.18"
+    },
+    {
+     "id": "eq-system-20",
+     "type": "equation",
+     "page": 7,
+     "original": "XTTS-v2 [52]"
+    },
+    {
+     "id": "eq-system-21",
+     "type": "equation",
+     "page": 7,
+     "original": "0.463 3.248 0.484 3.15±0.22 -0.86±0.19"
+    },
+    {
+     "id": "eq-system-22",
+     "type": "equation",
+     "page": 7,
+     "original": "VoiceCraft [5]"
+    },
+    {
+     "id": "eq-system-23",
+     "type": "equation",
+     "page": 7,
+     "original": "0.470 7.556 0.226 3.18±0.20 -1.08±0.15"
+    },
+    {
+     "id": "eq-system-24",
+     "type": "equation",
+     "page": 7,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-system-25",
+     "type": "equation",
+     "page": 7,
+     "original": "0.717(0.760) 2.623(1.283) 0.188 4.24±0.12 0.03±0.14"
+    },
+    {
+     "id": "eq-system-26",
+     "type": "equation",
+     "page": 7,
+     "original": "MaskGCT (gt length)"
+    },
+    {
+     "id": "eq-system-27",
+     "type": "equation",
+     "page": 7,
+     "original": "0.728 2.466 0.159 4.13±0.17 0.12±0.15"
+    },
+    {
+     "id": "eq-system-28",
+     "type": "equation",
+     "page": 7,
+     "original": "SeedTTS test-zh Ground Truth"
+    },
+    {
+     "id": "eq-system-29",
+     "type": "equation",
+     "page": 7,
+     "original": "0.750 1.254 - 3.86±0.17 0.00"
+    },
+    {
+     "id": "eq-system-30",
+     "type": "equation",
+     "page": 7,
+     "original": "CosyVoice [53]"
+    },
+    {
+     "id": "eq-system-31",
+     "type": "equation",
+     "page": 7,
+     "original": "0.750 4.089 0.276 3.54±0.12 -0.45±0.15"
+    },
+    {
+     "id": "eq-system-32",
+     "type": "equation",
+     "page": 7,
+     "original": "XTTS-v2 [52]"
+    },
+    {
+     "id": "eq-system-33",
+     "type": "equation",
+     "page": 7,
+     "original": "0.635 2.876 0.413 2.95±0.18 -0.81±0.22"
+    },
+    {
+     "id": "eq-system-34",
+     "type": "equation",
+     "page": 7,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-system-35",
+     "type": "equation",
+     "page": 7,
+     "original": "0.774(0.805) 2.273(0.843) 0.106 4.09±0.12 0.05±0.17"
+    },
+    {
+     "id": "eq-system-36",
+     "type": "equation",
+     "page": 7,
+     "original": "MaskGCT (gt length)"
+    },
+    {
+     "id": "eq-system-37",
+     "type": "equation",
+     "page": 7,
+     "original": "0.777 2.183 0.101 4.11±0.12 0.08±0.18"
+    },
+    {
+     "id": "p-system-2",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-4-1-5-1",
+       "id": "s-system-2-1",
+       "original": "details of each model can be found in Appendix D.",
+       "zh": "（正文残句）各模型细节见附录 D。"
+      },
+      {
+       "id": "s-system-2-2",
+       "original": "We also train an AR-based T2S model to replace the T2S part of MaskGCT, we term it as AR + SoundStorm.",
+       "zh": "我们还训练了一个基于 AR 的 T2S 模型来替换 MaskGCT 的 T2S 部分，记为 AR + SoundStorm。"
+      }
+     ]
+    },
+    {
+     "id": "p-system-3",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-system-3-1",
        "original": "Training.",
        "zh": "训练。"
       },
       {
-       "id": "s-4-1-5-2",
+       "id": "s-system-3-2",
        "original": "We train all models on 8 NVIDIA A100 80GB GPUs.",
        "zh": "所有模型均在 8 张 NVIDIA A100 80GB GPU 上训练。"
       },
       {
-       "id": "s-4-1-5-3",
+       "id": "s-system-3-3",
        "original": "We train two T2S models of different sizes (denoted as T2S-Base and T2S-large).",
        "zh": "我们训练了两个不同规模的 T2S 模型（记为 T2S-Base 和 T2S-large）。"
       },
       {
-       "id": "s-4-1-5-4",
+       "id": "s-system-3-4",
        "original": "For more details about the model architecture, please refer to Appendix A.1.",
        "zh": "模型架构的更多细节见附录 A.1。"
       },
       {
-       "id": "s-4-1-5-5",
+       "id": "s-system-3-5",
        "original": "We report the metrics of T2S-large by default, and you can find a comparison of model sizes in Section 4.4.",
        "zh": "默认报告 T2S-large 的指标，模型规模对比见 Section 4.4。"
       },
       {
-       "id": "s-4-1-5-6",
+       "id": "s-system-3-6",
        "original": "We also compare two different methods of text tokenization: Grapheme-to-Phoneme (G2P) [54] and Byte Pair Encoding (BPE) [55].",
        "zh": "我们还对比了两种文本分词方法：字位转音素（G2P）[54] 和 BPE [55]。"
       },
       {
-       "id": "s-4-1-5-7",
+       "id": "s-system-3-7",
        "original": "See more details of the two methods in Appendix A.6.",
        "zh": "两种方法的更多细节见附录 A.6。"
       },
       {
-       "id": "s-4-1-5-8",
+       "id": "s-system-3-8",
        "original": "We report the metrics of G2P by default.",
        "zh": "默认报告 G2P 的指标。"
       },
       {
-       "id": "s-4-1-5-9",
+       "id": "s-system-3-9",
        "original": "We optimize these models with the AdamW [56] optimizer with a learning rate of 1e-4 and 32K warmup steps, following the inverse square root learning schedule.",
        "zh": "我们用 AdamW [56] 优化器优化这些模型，学习率为 1e-4，预热步数 32K，采用逆平方根学习率调度。"
       },
       {
-       "id": "s-4-1-5-10",
+       "id": "s-system-3-10",
        "original": "We use the classifier-free guidance [57], during training for both the T2S and S2A models, we drop the prompt with a probability of 0.15.",
        "zh": "我们使用无分类器引导（classifier-free guidance）[57]：训练 T2S 和 S2A 模型时，以 0.15 的概率丢弃提示。"
       },
       {
-       "id": "s-4-1-5-11",
+       "id": "s-system-3-11",
        "original": "See more details about classifier-free guidance and classifier-free guidance rescale in Appendix C.",
        "zh": "无分类器引导及其重缩放（rescale）的更多细节见附录 C。"
       }
      ]
     },
     {
-     "id": "p-4-1-6",
+     "id": "p-system-4",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-4-1-6-1",
+       "id": "s-system-4-1",
        "original": "Inference.",
        "zh": "推理。"
       },
       {
-       "id": "s-4-1-6-2",
+       "id": "s-system-4-2",
        "original": "For the T2S model, we use 50 steps as the default total inference steps.",
        "zh": "T2S 模型默认总推理步数为 50 步。"
       },
       {
-       "id": "s-4-1-6-3",
+       "id": "s-system-4-3",
        "original": "The classifier-free guidance scale and the classifier-free guidance rescale factor [58] are set to 2.5 and 0.75, respectively.",
        "zh": "无分类器引导系数与重缩放因子 [58] 分别设为 2.5 和 0.75。"
       },
       {
-       "id": "s-4-1-6-4",
+       "id": "s-system-4-4",
        "original": "For sampling, we use a top-k of 20, with the sampling temperature annealing from 1.5 to 0.",
        "zh": "采样时 top-k 取 20，采样温度从 1.5 退火到 0。"
       },
       {
-       "id": "s-4-1-6-5",
+       "id": "s-system-4-5",
        "original": "We add Gumbel noise to token confidences when determining the remasking process, following [11].",
        "zh": "沿用 [11]，确定重新掩蔽过程时，我们给 token 置信度加入 Gumbel 噪声。"
       },
       {
-       "id": "s-4-1-6-6",
+       "id": "s-system-4-6",
        "original": "For the S2A model, we use [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] steps for acoustic RVQ layers by default, we find the S2A model can also perform well with fewer inference steps of [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] (see Appendix A.3).",
        "zh": "S2A 模型默认对声学 RVQ 各层使用 [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 步；我们发现更少的推理步数 [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 也能表现良好（见附录 A.3）。"
       },
       {
-       "id": "s-4-1-6-7",
+       "id": "s-system-4-7",
        "original": "We use the same sampling strategy as the T2S model, except that we use greedy sampling instead of top-k sampling if the inference step is 1.",
        "zh": "我们采用与 T2S 模型相同的采样策略，只是当推理步数为 1 时用贪心采样代替 top-k 采样。"
       }
@@ -1573,18 +1872,96 @@ globalThis.PAPER_2409_00750 = {
      "page": 8,
      "original": "Table 3: Comparison results of the evaluation of MaskGCT and AR+SoundStorm. AR+SoundStorm can be regarded as replacing the T2S MaskGCT with the AR T2S model.",
      "zh": "表 3：MaskGCT 与 AR+SoundStorm 的评估对比结果。AR+SoundStorm 可视为把 MaskGCT 的 T2S 换成 AR T2S 模型。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-system-2",
+   "num": null,
+   "level": 2,
+   "page": 8,
+   "title": {
+    "original": "System",
+    "zh": "System"
+   },
+   "blocks": [
     {
-     "id": "p-4-2-1-2",
+     "id": "p-system-2-1",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
-       "id": "s-4-2-1-2-1",
-       "original": "FSD ↓ SMOS ↑ CMOS ↑ LibriSpeech test-clean AR + SoundStorm 0.672 3.267 0.998 0.687 2.634 0.886 AR + SoundStorm 0.683 2.846 0.323 0.717 2.623 0.188 AR + SoundStorm 0.747 3.865 0.238 0.774 2.273 0.106",
-       "zh": "（Table 3 数值在抽取层错乱混排，译文如实保留）FSD ↓ SMOS ↑ CMOS ↑ LibriSpeech test-clean AR + SoundStorm 0.672 3.267 0.998 0.687 2.634 0.886 AR + SoundStorm 0.683 2.846 0.323 0.717 2.623 0.188 AR + SoundStorm 0.747 3.865 0.238 0.774 2.273 0.106。"
+       "id": "s-system-2-1-1",
+       "original": "SIM-O ↑ WER ↓ FSD ↓ SMOS ↑ CMOS ↑ LibriSpeech test-clean AR + SoundStorm",
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。"
       }
      ]
+    },
+    {
+     "id": "eq-system-2-1",
+     "type": "equation",
+     "page": 8,
+     "original": "0.672 3.267 0.998 4.20±0.17 -0.02±0.20"
+    },
+    {
+     "id": "eq-system-2-2",
+     "type": "equation",
+     "page": 8,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-system-2-3",
+     "type": "equation",
+     "page": 8,
+     "original": "0.687 2.634 0.886 4.27±0.14 0.10±0.16"
+    },
+    {
+     "id": "eq-system-2-4",
+     "type": "equation",
+     "page": 8,
+     "original": "SeedTTS test-en AR + SoundStorm"
+    },
+    {
+     "id": "eq-system-2-5",
+     "type": "equation",
+     "page": 8,
+     "original": "0.683 2.846 0.323 4.03±0.23 -0.05±0.22"
+    },
+    {
+     "id": "eq-system-2-6",
+     "type": "equation",
+     "page": 8,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-system-2-7",
+     "type": "equation",
+     "page": 8,
+     "original": "0.717 2.623 0.188 4.24±0.12 0.03±0.14"
+    },
+    {
+     "id": "eq-system-2-8",
+     "type": "equation",
+     "page": 8,
+     "original": "SeedTTS test-zh AR + SoundStorm"
+    },
+    {
+     "id": "eq-system-2-9",
+     "type": "equation",
+     "page": 8,
+     "original": "0.747 3.865 0.238 3.78±0.23 -0.32±0.19"
+    },
+    {
+     "id": "eq-system-2-10",
+     "type": "equation",
+     "page": 8,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-system-2-11",
+     "type": "equation",
+     "page": 8,
+     "original": "0.774 2.273 0.106 4.09±0.12 0.05±0.17"
     }
    ]
   },
@@ -1691,10 +2068,34 @@ globalThis.PAPER_2409_00750 = {
      "original": "5"
     },
     {
+     "id": "p-4-2-3-2",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-2-3-2-1",
+       "original": "SeedTTS test-en SeedTTS test-zh",
+       "zh": "（图表横轴标签：SeedTTS test-en 与 SeedTTS test-zh 两个测试集。）"
+      }
+     ]
+    },
+    {
      "id": "eq-4-2-3-2",
      "type": "equation",
      "page": 8,
      "original": "4"
+    },
+    {
+     "id": "p-4-2-3-3",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-2-3-3-1",
+       "original": "WER",
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。"
+      }
+     ]
     },
     {
      "id": "eq-4-2-3-3",
@@ -1703,13 +2104,19 @@ globalThis.PAPER_2409_00750 = {
      "original": "3"
     },
     {
-     "id": "p-4-2-3-2",
+     "id": "eq-4-2-3-4",
+     "type": "equation",
+     "page": 8,
+     "original": "0.7 0.8 0.9 1 1.1 1.2 1.3"
+    },
+    {
+     "id": "p-4-2-3-4",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
-       "id": "s-4-2-3-2-1",
-       "original": "0.7 0.8 0.9 1 1.1 1.2 1.3 Total Duration Multiplier",
+       "id": "s-4-2-3-4-1",
+       "original": "Total Duration Multiplier",
        "zh": "（Figure 3 横轴残留）0.7 0.8 0.9 1 1.1 1.2 1.3 总时长系数"
       }
      ]
@@ -1722,27 +2129,27 @@ globalThis.PAPER_2409_00750 = {
      "zh": "图 3：WER 随总时长系数的变化。"
     },
     {
-     "id": "p-4-2-3-3",
+     "id": "p-4-2-3-5",
      "type": "paragraph",
      "page": 9,
      "sentences": [
       {
-       "id": "s-4-2-3-3-1",
+       "id": "s-4-2-3-5-1",
        "original": "indicating that the models perform best when the speech is played at its natural speed.",
        "zh": "说明模型在语音以自然语速播放时表现最好。"
       },
       {
-       "id": "s-4-2-3-3-2",
+       "id": "s-4-2-3-5-2",
        "original": "When the multiplier is 0.9 or 1.1, the model is still able to achieve a WER very close to the best.",
        "zh": "当系数为 0.9 或 1.1 时，模型仍能取得接近最优的 WER。"
       },
       {
-       "id": "s-4-2-3-3-3",
+       "id": "s-4-2-3-5-3",
        "original": "When the multiplier is 0.7 or 1.3, the WER is slightly higher but still within a reasonable range.",
        "zh": "当系数为 0.7 或 1.3 时，WER 略高，但仍在合理范围内。"
       },
       {
-       "id": "s-4-2-3-3-4",
+       "id": "s-4-2-3-5-4",
        "original": "This shows that our model can generate reasonable and accurate content at different speech tempos.",
        "zh": "这说明我们的模型能在不同语速下生成合理且准确的内容。"
       }
@@ -1858,20 +2265,15 @@ globalThis.PAPER_2409_00750 = {
      "id": "tab-4-3-1",
      "type": "table_caption",
      "page": 9,
-     "original": "Table 4: Evaluation results for MaskGCT and the baseline methods on accent imitation. Accent SIM ↑ CMOS ↑ SMOS ↑ Accent SMOS ↑ Accent Corpus L2-Arctit 0.747 10.903 0.633 0.00 VALL-E 0.403 10.721 0.485 CosyVoice 0.653 6.660 0.640 VoiceBox 0.475 6.181 0.575 VoiceCraft 0.438 10.072 0.517 0.717 6.382 0.645 Table 5: Evaluation results for MaskGCT and the baseline methods on emotion imitation. Emotion SIM ↑ CMOS ↑ SMOS ↑ Emotion SMOS ↑ Emotion Corpus ESD 0.673 11.792 0.936 0.00 VALL-E 0.396 15.731 0.735 CosyVoice 0.575 10.139 0.839 VoiceBox 0.451 12.647 0.811",
-     "zh": "表 4 / 表 5：MaskGCT 与基线方法在口音模仿（左）和情感模仿（右）上的评估结果——两个表格的标题与部分数值（L2-Arctit 0.747 10.903 0.633 0.00；VALL-E 0.403 10.721 0.485；CosyVoice 0.653 6.660 0.640；VoiceBox 0.475 6.181 0.575；VoiceCraft 0.438 10.072 0.517；0.717 6.382 0.645；ESD 0.673 11.792 0.936 0.00；VALL-E 0.396 15.731 0.735；CosyVoice 0.575 10.139 0.839；VoiceBox 0.451 12.647 0.811）在抽取层混排，译文如实保留。"
+     "original": "Table 4: Evaluation results for MaskGCT and the baseline methods on accent imitation. System SIM-O ↑ WER ↓ Accent SIM ↑ CMOS ↑ SMOS ↑ Accent SMOS ↑ Accent Corpus L2-Arctit Ground Truth 0.747 10.903 0.633 0.00 - - VALL-E 0.403 10.721 0.485 -1.04±0.50 3.12±0.41 2.77±0.45 CosyVoice 0.653 6.660 0.640 0.10±0.19 4.23±0.18 3.99±0.23 VoiceBox 0.475 6.181 0.575 -0.55±0.22 3.93±0.25 3.49±0.29 VoiceCraft 0.438 10.072 0.517 -0.39±0.22 3.51±0.33 3.29±0.28 MaskGCT 0.717 6.382 0.645 0.23±0.17 4.24±0.16 4.38±0.25",
+     "zh": "表 4：MaskGCT 与基线在口音模仿（accent imitation）上的评测结果。表头：System × SIM-O↑ × WER↓ × Accent SIM↑ × CMOS↑ × SMOS↑ × Accent SMOS↑——Accent Corpus L2-Arctic：Ground Truth 0.747/10.903/0.633/0.00/-/-；VALL-E 0.403/10.721/0.485/-1.04±0.50/3.12±0.41/2.77±0.45；CosyVoice 0.653/6.660/0.640/0.10±0.19/4.23±0.18/3.99±0.23；VoiceBox 0.475/6.181/0.575/-0.55±0.22/3.93±0.25/3.49±0.29；VoiceCraft 0.438/10.072/0.517/-0.39±0.22/3.51±0.33/3.29±0.28；MaskGCT 0.717/6.382/0.645/0.23±0.17/4.24±0.16/4.38±0.25。"
     },
     {
-     "id": "p-4-3-3",
-     "type": "paragraph",
+     "id": "tab-4-3-2",
+     "type": "table_caption",
      "page": 9,
-     "sentences": [
-      {
-       "id": "s-4-3-3-1",
-       "original": "VoiceCraft 0.345 16.042 0.788 0.600 12.502 0.822",
-       "zh": "（Table 5 数值残留，译文如实保留）VoiceCraft 0.345 16.042 0.788 0.600 12.502 0.822。"
-      }
-     ]
+     "original": "Table 5: Evaluation results for MaskGCT and the baseline methods on emotion imitation. System SIM-O ↑ WER ↓ Emotion SIM ↑ CMOS ↑ SMOS ↑ Emotion SMOS ↑ Emotion Corpus ESD Ground Truth 0.673 11.792 0.936 0.00 - - VALL-E 0.396 15.731 0.735 -1.43±0.33 2.52±0.38 2.63±0.36 CosyVoice 0.575 10.139 0.839 -0.45±0.18 3.98±0.19 3.66±0.19 VoiceBox 0.451 12.647 0.811 -0.65±0.20 3.81±0.16 3.61±0.19 VoiceCraft 0.345 16.042 0.788 -0.60±0.24 3.42±0.31 3.52±0.25 MaskGCT 0.600 12.502 0.822 -0.31±0.17 4.07±0.16 3.76±0.25",
+     "zh": "表 5：MaskGCT 与基线在情绪模仿（emotion imitation）上的评测结果。表头同上——Emotion Corpus ESD：Ground Truth 0.673/11.792/0.936/0.00/-/-；VALL-E 0.396/15.731/0.735/-1.43±0.33/2.52±0.38/2.63±0.36；CosyVoice 0.575/10.139/0.839/-0.45±0.18/3.98±0.19/3.66±0.19；VoiceBox 0.451/12.647/0.811/-0.65±0.20/3.81±0.16/3.61±0.19；VoiceCraft 0.345/16.042/0.788/-0.60±0.24/3.42±0.31/3.52±0.25；MaskGCT 0.600/12.502/0.822/-0.31±0.17/4.07±0.16/3.76±0.25。"
     }
    ]
   },
@@ -1922,68 +2324,81 @@ globalThis.PAPER_2409_00750 = {
       },
       {
        "id": "s-4-4-1-7",
-       "original": "For test-zh, 4https://huggingface.co/Jzuluaga/accent-id-commonaccent_ecapa 5https://github.com/ddlBoJack/emotion2vec it drops from 10.19 at 5 steps to 2.507 at 25 steps, and for test-en, from 8.096 to 2.346.",
+       "original": "For test-zh, 4https://huggingface.co/Jzuluaga/accent-id-commonaccent_ecapa 5https://github.com/ddlBoJack/emotion2vec",
        "zh": "test-zh 上，WER 从 5 步时的 10.19 降到 25 步时的 2.507；test-en 上，从 8.096 降到 2.346。（原文此处混入脚注链接残留：4https://huggingface.co/Jzuluaga/accent-id-commonaccent_ecapa 5https://github.com/ddlBoJack/emotion2vec）"
-      },
+      }
+     ]
+    },
+    {
+     "id": "eq-4-4-1",
+     "type": "equation",
+     "page": 9,
+     "original": "it drops from 10.19 at 5 steps to 2.507 at 25 steps, and for test-en, from 8.096 to 2.346. Both SIM"
+    },
+    {
+     "id": "p-4-4-2",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
       {
-       "id": "s-4-4-1-8",
-       "original": "Both SIM and WER show minimal changes beyond 25 steps.",
+       "id": "s-4-4-2-1",
+       "original": "and WER show minimal changes beyond 25 steps.",
        "zh": "超过 25 步后，SIM 和 WER 都几乎不再变化。"
       },
       {
-       "id": "s-4-4-1-9",
+       "id": "s-4-4-2-2",
        "original": "These findings suggest that SIM can be optimized with around 10 steps, while achieving the lowest WER requires approximately 25 steps.",
        "zh": "这些发现表明：SIM 大约 10 步即可优化到位，而要取得最低 WER 大约需要 25 步。"
       },
       {
-       "id": "s-4-4-1-10",
+       "id": "s-4-4-2-3",
        "original": "Beyond this, both metrics show minimal changes, indicating that further increases in steps do not yield substantial improvements.",
        "zh": "再往后，两项指标都几乎不变，说明继续增加步数不会带来实质提升。"
       },
       {
-       "id": "s-4-4-1-11",
+       "id": "s-4-4-2-4",
        "original": "Therefore, for practical applications, 25 inference steps may be considered optimal for balancing SIM and WER, ensuring efficient and effective performance.",
        "zh": "因此，实际应用中 25 步推理可视为平衡 SIM 与 WER 的最优选择，兼顾效率与效果。"
       },
       {
-       "id": "s-4-4-1-12",
+       "id": "s-4-4-2-5",
        "original": "See more details in Appendix A.2.",
        "zh": "更多细节见附录 A.2。"
       }
      ]
     },
     {
-     "id": "p-4-4-2",
+     "id": "p-4-4-3",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
-       "id": "s-4-4-2-1",
+       "id": "s-4-4-3-1",
        "original": "Model Size.",
        "zh": "模型规模。"
       },
       {
-       "id": "s-4-4-2-2",
+       "id": "s-4-4-3-2",
        "original": "We compare the performance differences of T2S models with varying model sizes.",
        "zh": "我们对比了不同规模 T2S 模型的性能差异。"
       },
       {
-       "id": "s-4-4-2-3",
+       "id": "s-4-4-3-3",
        "original": "The result is shown in Table 6.",
        "zh": "结果见 Table 6。"
       },
       {
-       "id": "s-4-4-2-4",
+       "id": "s-4-4-3-4",
        "original": "We observe that the large model outperforms the base model across all metrics, albeit not significantly.",
        "zh": "我们观察到，大模型在所有指标上都优于基础模型，但优势并不显著。"
       },
       {
-       "id": "s-4-4-2-5",
+       "id": "s-4-4-3-5",
        "original": "We suggest that our system can achieve good performance with just the setting of the base model when using 100K hours of data.",
        "zh": "我们认为，在 100K 小时数据的设定下，只用基础模型配置就能取得不错的性能。"
       },
       {
-       "id": "s-4-4-2-6",
+       "id": "s-4-4-3-6",
        "original": "In the future, we will explore more comprehensive scaling laws for both model size and data scaling.",
        "zh": "未来我们将探索关于模型规模与数据规模更全面的扩展规律（scaling law）。"
       }
@@ -1995,24 +2410,90 @@ globalThis.PAPER_2409_00750 = {
      "page": 10,
      "original": "Table 6: Comparison results between T2S-Large and T2S-Base.",
      "zh": "表 6：T2S-Large 与 T2S-Base 的对比结果。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-system-3",
+   "num": null,
+   "level": 2,
+   "page": 10,
+   "title": {
+    "original": "System",
+    "zh": "System"
+   },
+   "blocks": [
     {
-     "id": "p-4-4-3",
+     "id": "p-system-3-1",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
-       "id": "s-4-4-3-1",
-       "original": "FSD ↓ #Parameters T2S-Base 0.714 2.514 0.189 T2S-Large 0.728 2.466 0.159 T2S-Base 0.769 2.216 0.123 T2S-Large 0.777 2.183 0.101 Text Tokenizer.",
-       "zh": "（Table 6 数值残留，译文如实保留）FSD ↓ 参数量 T2S-Base 0.714 2.514 0.189 T2S-Large 0.728 2.466 0.159 T2S-Base 0.769 2.216 0.123 T2S-Large 0.777 2.183 0.101。文本分词器。"
+       "id": "s-system-3-1-1",
+       "original": "SIM-O ↑ WER ↓ FSD ↓ #Parameters SeedTTS test-en T2S-Base",
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。\n（原始数据照录）\nSIM-O ↑ WER ↓ FSD ↓ #Parameters SeedTTS test-en T2S-Base"
+      }
+     ]
+    },
+    {
+     "id": "eq-system-3-1",
+     "type": "equation",
+     "page": 10,
+     "original": "0.714 2.514 0.189"
+    },
+    {
+     "id": "eq-system-3-2",
+     "type": "equation",
+     "page": 10,
+     "original": "315M T2S-Large"
+    },
+    {
+     "id": "eq-system-3-3",
+     "type": "equation",
+     "page": 10,
+     "original": "0.728 2.466 0.159"
+    },
+    {
+     "id": "eq-system-3-4",
+     "type": "equation",
+     "page": 10,
+     "original": "695M SeedTTS test-zh T2S-Base"
+    },
+    {
+     "id": "eq-system-3-5",
+     "type": "equation",
+     "page": 10,
+     "original": "0.769 2.216 0.123"
+    },
+    {
+     "id": "eq-system-3-6",
+     "type": "equation",
+     "page": 10,
+     "original": "315M T2S-Large"
+    },
+    {
+     "id": "eq-system-3-7",
+     "type": "equation",
+     "page": 10,
+     "original": "0.777 2.183 0.101"
+    },
+    {
+     "id": "p-system-3-2",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-system-3-2-1",
+       "original": "695M Text Tokenizer.",
+       "zh": "（表：SIM-O↑/WER↓/FSD↓/#Parameters——SeedTTS test-en：T2S-Base 0.714/2.514/0.189/315M；T2S-Large 0.728/2.466/0.159/695M；SeedTTS test-zh：T2S-Base 0.769/2.216/0.123/315M；T2S-Large 0.777/2.183/0.101/695M。）Text Tokenizer。"
       },
       {
-       "id": "s-4-4-3-2",
+       "id": "s-system-3-2-2",
        "original": "We compare two text tokenization methods: Grapheme-to-Phoneme (G2P) and Byte Pair Encoding (BPE).",
        "zh": "我们对比了两种文本分词方法：字位转音素（G2P）和 BPE。"
       },
       {
-       "id": "s-4-4-3-3",
+       "id": "s-system-3-2-3",
        "original": "See more details in Appendix A.6.",
        "zh": "更多细节见附录 A.6。"
       }
@@ -2106,11 +2587,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-3-1",
-       "original": "[3] Mateusz Łajszczak, Guillermo Cámbara, Yang Li, Fatih Beyhan, Arent van Korlaar, Fan Yang, Arnaud Joly, Álvaro Martín-Cortinas, Ammar Abbas, Adam Michalski, et al. Base tts: Lessons from building a billion-parameter text-to-speech model on 100k hours of data. arXiv preprint [4] Jaehyeon Kim, Keon Lee, Seungjun Chung, and Jaewoong Cho."
-      },
-      {
-       "id": "s-references-3-2",
-       "original": "Clam-tts: Improving neural codec language model for zero-shot text-to-speech. arXiv preprint arXiv:2404.02781, 2024."
+       "original": "[3] Mateusz Łajszczak, Guillermo Cámbara, Yang Li, Fatih Beyhan, Arent van Korlaar, Fan Yang, Arnaud Joly, Álvaro Martín-Cortinas, Ammar Abbas, Adam Michalski, et al. Base tts: Lessons from building a billion-parameter text-to-speech model on 100k hours of data. arXiv preprint arXiv:2402.08093, 2024."
       }
      ]
     },
@@ -2121,11 +2598,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "[5] Puyuan Peng, Po-Yao Huang, Daniel Li, Abdelrahman Mohamed, and David Harwath."
+       "original": "[4] Jaehyeon Kim, Keon Lee, Seungjun Chung, and Jaewoong Cho."
       },
       {
        "id": "s-references-4-2",
-       "original": "Voicecraft: Zero-shot speech editing and text-to-speech in the wild. arXiv preprint arXiv:2403.16973, 2024."
+       "original": "Clam-tts: Improving neural codec language model for zero-shot text-to-speech. arXiv preprint arXiv:2404.02781, 2024."
       }
      ]
     },
@@ -2136,9 +2613,19 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "[6] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al. Seed-tts: A family of high-quality versatile speech generation models. arXiv preprint arXiv:2406.02430, 2024."
+       "original": "[5] Puyuan Peng, Po-Yao Huang, Daniel Li, Abdelrahman Mohamed, and David Harwath."
+      },
+      {
+       "id": "s-references-5-2",
+       "original": "Voicecraft: Zero-shot speech editing and text-to-speech in the wild. arXiv preprint arXiv:2403.16973,"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 11,
+     "original": "2024."
     },
     {
      "id": "p-references-6",
@@ -2147,11 +2634,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "[7] Kai Shen, Zeqian Ju, Xu Tan, Yanqing Liu, Yichong Leng, Lei He, Tao Qin, Sheng Zhao, and Jiang Bian."
-      },
-      {
-       "id": "s-references-6-2",
-       "original": "Naturalspeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers. arXiv preprint arXiv:2304.09116, 2023."
+       "original": "[6] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al. Seed-tts: A family of high-quality versatile speech generation models. arXiv preprint arXiv:2406.02430, 2024."
       }
      ]
     },
@@ -2162,7 +2645,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "[8] Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, Yichong Leng, Kaitao Song, Siliang Tang, et al. Naturalspeech 3: Zero-shot speech synthesis with factorized codec and diffusion models. arXiv preprint arXiv:2403.03100, 2024."
+       "original": "[7] Kai Shen, Zeqian Ju, Xu Tan, Yanqing Liu, Yichong Leng, Lei He, Tao Qin, Sheng Zhao, and Jiang Bian."
+      },
+      {
+       "id": "s-references-7-2",
+       "original": "Naturalspeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers. arXiv preprint arXiv:2304.09116, 2023."
       }
      ]
     },
@@ -2173,11 +2660,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "[9] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, et al. Voicebox: Text-guided multilingual universal speech generation at scale."
-      },
-      {
-       "id": "s-references-8-2",
-       "original": "Advances in neural information processing systems, 36, 2024."
+       "original": "[8] Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, Yichong Leng, Kaitao Song, Siliang Tang, et al. Naturalspeech 3: Zero-shot speech synthesis with factorized codec and diffusion models. arXiv preprint arXiv:2403.03100, 2024."
       }
      ]
     },
@@ -2188,9 +2671,19 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "[10] Ziyue Jiang, Jinglin Liu, Yi Ren, Jinzheng He, Chen Zhang, Zhenhui Ye, Pengfei Wei, Chunfeng Wang, Xiang Yin, Zejun Ma, et al. Mega-tts 2: Zero-shot text-to-speech with arbitrary length speech prompts. arXiv preprint arXiv:2307.07218, 2023."
+       "original": "[9] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, et al. Voicebox: Text-guided multilingual universal speech generation at scale."
+      },
+      {
+       "id": "s-references-9-2",
+       "original": "Advances in neural information processing systems,"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 11,
+     "original": "36, 2024."
     },
     {
      "id": "p-references-10",
@@ -2199,15 +2692,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "[11] Huiwen Chang, Han Zhang, Lu Jiang, Ce Liu, and William T Freeman."
-      },
-      {
-       "id": "s-references-10-2",
-       "original": "Maskgit: Masked generative image transformer."
-      },
-      {
-       "id": "s-references-10-3",
-       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 11315–11325, 2022."
+       "original": "[10] Ziyue Jiang, Jinglin Liu, Yi Ren, Jinzheng He, Chen Zhang, Zhenhui Ye, Pengfei Wei, Chunfeng Wang, Xiang Yin, Zejun Ma, et al. Mega-tts 2: Zero-shot text-to-speech with arbitrary length speech prompts. arXiv preprint arXiv:2307.07218, 2023."
       }
      ]
     },
@@ -2218,7 +2703,15 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "[12] Huiwen Chang, Han Zhang, Jarred Barber, AJ Maschinot, Jose Lezama, Lu Jiang, Ming-Hsuan Yang, Kevin Murphy, William T Freeman, Michael Rubinstein, et al. Muse: Text-to-image generation via masked generative transformers. arXiv preprint arXiv:2301.00704, 2023."
+       "original": "[11] Huiwen Chang, Han Zhang, Lu Jiang, Ce Liu, and William T Freeman."
+      },
+      {
+       "id": "s-references-11-2",
+       "original": "Maskgit: Masked generative image transformer."
+      },
+      {
+       "id": "s-references-11-3",
+       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 11315–11325, 2022."
       }
      ]
     },
@@ -2229,7 +2722,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "[13] Tianhong Li, Huiwen Chang, Shlok Mishra, Han Zhang, Dina Katabi, and Dilip Krishnan."
+       "original": "[12] Huiwen Chang, Han Zhang, Jarred Barber, AJ Maschinot, Jose Lezama, Lu Jiang, Ming-Hsuan Yang, Kevin Murphy, William T Freeman, Michael Rubinstein, et al. Muse: Text-to-image generation via masked generative transformers. arXiv preprint arXiv:2301.00704, 2023."
       }
      ]
     },
@@ -2240,11 +2733,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "Mage: Masked generative encoder to unify representation learning and image synthesis."
-      },
-      {
-       "id": "s-references-13-2",
-       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 2142–2152, 2023."
+       "original": "[13] Tianhong Li, Huiwen Chang, Shlok Mishra, Han Zhang, Dina Katabi, and Dilip Krishnan."
       }
      ]
     },
@@ -2255,22 +2744,32 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "[14] Lijun Yu, Yong Cheng, Kihyuk Sohn, José Lezama, Han Zhang, Huiwen Chang, Alexander G Hauptmann, Ming-Hsuan Yang, Yuan Hao, Irfan Essa, et al. Magvit: Masked generative video transformer."
+       "original": "Mage: Masked generative encoder to unify representation learning and image synthesis."
       },
       {
        "id": "s-references-14-2",
-       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 10459–10469, 2023."
+       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages"
       }
      ]
     },
     {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 11,
+     "original": "2142–2152, 2023."
+    },
+    {
      "id": "p-references-15",
      "type": "paragraph",
-     "page": 12,
+     "page": 11,
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "[15] Lijun Yu, José Lezama, Nitesh B Gundavarapu, Luca Versari, Kihyuk Sohn, David Minnen, Yong Cheng, Agrim Gupta, Xiuye Gu, Alexander G Hauptmann, et al. Language model beats diffusion–tokenizer is key to visual generation. arXiv preprint arXiv:2310.05737, 2023."
+       "original": "[14] Lijun Yu, Yong Cheng, Kihyuk Sohn, José Lezama, Han Zhang, Huiwen Chang, Alexander G Hauptmann, Ming-Hsuan Yang, Yuan Hao, Irfan Essa, et al. Magvit: Masked generative video transformer."
+      },
+      {
+       "id": "s-references-15-2",
+       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 10459–10469, 2023."
       }
      ]
     },
@@ -2281,11 +2780,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "[16] Hugo Flores Garcia, Prem Seetharaman, Rithesh Kumar, and Bryan Pardo."
-      },
-      {
-       "id": "s-references-16-2",
-       "original": "Vampnet: Music generation via masked acoustic token modeling. arXiv preprint arXiv:2307.04686, 2023."
+       "original": "[15] Lijun Yu, José Lezama, Nitesh B Gundavarapu, Luca Versari, Kihyuk Sohn, David Minnen, Yong Cheng, Agrim Gupta, Xiuye Gu, Alexander G Hauptmann, et al. Language model beats diffusion–tokenizer is key to visual generation. arXiv preprint arXiv:2310.05737, 2023."
       }
      ]
     },
@@ -2296,11 +2791,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "[17] Xu Li, Qirui Wang, and Xiaoyu Liu."
+       "original": "[16] Hugo Flores Garcia, Prem Seetharaman, Rithesh Kumar, and Bryan Pardo."
       },
       {
        "id": "s-references-17-2",
-       "original": "Masksr: Masked language model for full-band speech restoration. arXiv preprint arXiv:2406.02092, 2024."
+       "original": "Vampnet: Music generation via masked acoustic token modeling. arXiv preprint arXiv:2307.04686, 2023."
       }
      ]
     },
@@ -2311,11 +2806,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "[18] Alon Ziv, Itai Gat, Gael Le Lan, Tal Remez, Felix Kreuk, Alexandre Défossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
+       "original": "[17] Xu Li, Qirui Wang, and Xiaoyu Liu."
       },
       {
        "id": "s-references-18-2",
-       "original": "Masked audio generation using a single non-autoregressive transformer. arXiv preprint arXiv:2401.04577, 2024."
+       "original": "Masksr: Masked language model for full-band speech restoration. arXiv preprint arXiv:2406.02092, 2024."
       }
      ]
     },
@@ -2326,11 +2821,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "[19] Zalán Borsos, Matt Sharifi, Damien Vincent, Eugene Kharitonov, Neil Zeghidour, and Marco Tagliasacchi."
+       "original": "[18] Alon Ziv, Itai Gat, Gael Le Lan, Tal Remez, Felix Kreuk, Alexandre Défossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
       },
       {
        "id": "s-references-19-2",
-       "original": "Soundstorm: Efficient parallel audio generation. arXiv preprint arXiv:2305.09636, 2023."
+       "original": "Masked audio generation using a single non-autoregressive transformer. arXiv preprint arXiv:2401.04577, 2024."
       }
      ]
     },
@@ -2341,13 +2836,19 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "[20] Aaron Van Den Oord, Oriol Vinyals, et al. Neural discrete representation learning."
+       "original": "[19] Zalán Borsos, Matt Sharifi, Damien Vincent, Eugene Kharitonov, Neil Zeghidour, and Marco Tagliasacchi."
       },
       {
        "id": "s-references-20-2",
-       "original": "Advances in neural information processing systems, 30, 2017."
+       "original": "Soundstorm: Efficient parallel audio generation. arXiv preprint arXiv:2305.09636,"
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 12,
+     "original": "2023."
     },
     {
      "id": "p-references-21",
@@ -2356,11 +2857,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "[21] Yi Ren, Chenxu Hu, Xu Tan, Tao Qin, Sheng Zhao, Zhou Zhao, and Tie-Yan Liu."
+       "original": "[20] Aaron Van Den Oord, Oriol Vinyals, et al. Neural discrete representation learning."
       },
       {
        "id": "s-references-21-2",
-       "original": "Fastspeech 2: Fast and high-quality end-to-end text to speech. arXiv preprint arXiv:2006.04558, 2020."
+       "original": "Advances in neural information processing systems, 30, 2017."
       }
      ]
     },
@@ -2371,15 +2872,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "[22] Yi Ren, Yangjun Ruan, Xu Tan, Tao Qin, Sheng Zhao, Zhou Zhao, and Tie-Yan Liu."
+       "original": "[21] Yi Ren, Chenxu Hu, Xu Tan, Tao Qin, Sheng Zhao, Zhou Zhao, and Tie-Yan Liu."
       },
       {
        "id": "s-references-22-2",
-       "original": "Fastspeech: Fast, robust and controllable text to speech."
-      },
-      {
-       "id": "s-references-22-3",
-       "original": "Advances in neural information processing systems, 32, 2019."
+       "original": "Fastspeech 2: Fast and high-quality end-to-end text to speech. arXiv preprint arXiv:2006.04558, 2020."
       }
      ]
     },
@@ -2390,13 +2887,23 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "[23] Xu Tan, Jiawei Chen, Haohe Liu, Jian Cong, Chen Zhang, Yanqing Liu, Xi Wang, Yichong Leng, Yuanhao Yi, Lei He, et al. Naturalspeech: End-to-end text-to-speech synthesis with human-level quality."
+       "original": "[22] Yi Ren, Yangjun Ruan, Xu Tan, Tao Qin, Sheng Zhao, Zhou Zhao, and Tie-Yan Liu."
       },
       {
        "id": "s-references-23-2",
-       "original": "IEEE Transactions on Pattern Analysis and Machine Intelligence, 2024."
+       "original": "Fastspeech: Fast, robust and controllable text to speech."
+      },
+      {
+       "id": "s-references-23-3",
+       "original": "Advances in neural information processing systems,"
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 12,
+     "original": "32, 2019."
     },
     {
      "id": "p-references-24",
@@ -2405,7 +2912,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "[24] Yuxuan Wang, RJ Skerry-Ryan, Daisy Stanton, Yonghui Wu, Ron J Weiss, Navdeep Jaitly, Zongheng Yang, Ying Xiao, Zhifeng Chen, Samy Bengio, et al. Tacotron: Towards end-to-end speech synthesis. arXiv preprint arXiv:1703.10135, 2017."
+       "original": "[23] Xu Tan, Jiawei Chen, Haohe Liu, Jian Cong, Chen Zhang, Yanqing Liu, Xi Wang, Yichong Leng, Yuanhao Yi, Lei He, et al. Naturalspeech: End-to-end text-to-speech synthesis with human-level quality."
+      },
+      {
+       "id": "s-references-24-2",
+       "original": "IEEE Transactions on Pattern Analysis and Machine Intelligence, 2024."
       }
      ]
     },
@@ -2416,19 +2927,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "[25] Jaehyeon Kim, Jungil Kong, and Juhee Son."
-      },
-      {
-       "id": "s-references-25-2",
-       "original": "Conditional variational autoencoder with adversarial learning for end-to-end text-to-speech."
-      },
-      {
-       "id": "s-references-25-3",
-       "original": "In International Conference on Machine Learning, pages 5530–5540."
-      },
-      {
-       "id": "s-references-25-4",
-       "original": "PMLR, 2021."
+       "original": "[24] Yuxuan Wang, RJ Skerry-Ryan, Daisy Stanton, Yonghui Wu, Ron J Weiss, Navdeep Jaitly, Zongheng Yang, Ying Xiao, Zhifeng Chen, Samy Bengio, et al. Tacotron: Towards end-to-end speech synthesis. arXiv preprint arXiv:1703.10135, 2017."
       }
      ]
     },
@@ -2439,11 +2938,19 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "[26] Alexandre Défossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
+       "original": "[25] Jaehyeon Kim, Jungil Kong, and Juhee Son."
       },
       {
        "id": "s-references-26-2",
-       "original": "High fidelity neural audio compression. arXiv preprint arXiv:2210.13438, 2022."
+       "original": "Conditional variational autoencoder with adversarial learning for end-to-end text-to-speech."
+      },
+      {
+       "id": "s-references-26-3",
+       "original": "In International Conference on Machine Learning, pages 5530–5540."
+      },
+      {
+       "id": "s-references-26-4",
+       "original": "PMLR, 2021."
       }
      ]
     },
@@ -2454,15 +2961,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "[27] Jade Copet, Felix Kreuk, Itai Gat, Tal Remez, David Kant, Gabriel Synnaeve, Yossi Adi, and Alexandre Défossez."
+       "original": "[26] Alexandre Défossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
       },
       {
        "id": "s-references-27-2",
-       "original": "Simple and controllable music generation."
-      },
-      {
-       "id": "s-references-27-3",
-       "original": "Advances in Neural Information Processing Systems, 36, 2024."
+       "original": "High fidelity neural audio compression. arXiv preprint arXiv:2210.13438, 2022."
       }
      ]
     },
@@ -2473,7 +2976,15 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "[28] Neil Zeghidour, Alejandro Luebs, Ahmed Omran, Jan Skoglund, and Marco Tagliasacchi."
+       "original": "[27] Jade Copet, Felix Kreuk, Itai Gat, Tal Remez, David Kant, Gabriel Synnaeve, Yossi Adi, and Alexandre Défossez."
+      },
+      {
+       "id": "s-references-28-2",
+       "original": "Simple and controllable music generation."
+      },
+      {
+       "id": "s-references-28-3",
+       "original": "Advances in Neural Information Processing Systems, 36, 2024."
       }
      ]
     },
@@ -2484,11 +2995,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "Soundstream: An end-to-end neural audio codec."
-      },
-      {
-       "id": "s-references-29-2",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30:495–507, 2021."
+       "original": "[28] Neil Zeghidour, Alejandro Luebs, Ahmed Omran, Jan Skoglund, and Marco Tagliasacchi."
       }
      ]
     },
@@ -2499,7 +3006,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "[29] Dongchao Yang, Dingdong Wang, Haohan Guo, Xueyuan Chen, Xixin Wu, and Helen Meng."
+       "original": "Soundstream: An end-to-end neural audio codec."
+      },
+      {
+       "id": "s-references-30-2",
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30:495–507, 2021."
       }
      ]
     },
@@ -2510,7 +3021,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "Simplespeech: Towards simple and efficient text-to-speech with scalar latent transformer diffusion models. arXiv preprint arXiv:2406.02328, 2024."
+       "original": "[29] Dongchao Yang, Dingdong Wang, Haohan Guo, Xueyuan Chen, Xixin Wu, and Helen Meng."
       }
      ]
     },
@@ -2521,11 +3032,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "[30] Keon Lee, Dong Won Kim, Jaehyeon Kim, and Jaewoong Cho."
-      },
-      {
-       "id": "s-references-32-2",
-       "original": "Ditto-tts: Efficient and scalable zero-shot text-to-speech with diffusion transformer. arXiv preprint arXiv:2406.11427, 2024."
+       "original": "Simplespeech: Towards simple and efficient text-to-speech with scalar latent transformer diffusion models. arXiv preprint arXiv:2406.02328, 2024."
       }
      ]
     },
@@ -2536,7 +3043,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "[31] Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao, Hemin Yang, Zirun Zhu, Min Tang, Xu Tan, et al. E2 tts: Embarrassingly easy fully non-autoregressive zero-shot tts. arXiv preprint arXiv:2406.18009, 2024."
+       "original": "[30] Keon Lee, Dong Won Kim, Jaehyeon Kim, and Jaewoong Cho."
+      },
+      {
+       "id": "s-references-33-2",
+       "original": "Ditto-tts: Efficient and scalable zero-shot text-to-speech with diffusion transformer. arXiv preprint arXiv:2406.11427, 2024."
       }
      ]
     },
@@ -2547,42 +3058,30 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "[32] José Lezama, Huiwen Chang, Lu Jiang, and Irfan Essa."
-      },
-      {
-       "id": "s-references-34-2",
-       "original": "Improved masked image generation with token-critic."
-      },
-      {
-       "id": "s-references-34-3",
-       "original": "In European Conference on Computer Vision, pages 70–86."
-      },
-      {
-       "id": "s-references-34-4",
-       "original": "Springer, 2022."
+       "original": "[31] Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao, Hemin Yang, Zirun Zhu, Min Tang, Xu Tan, et al. E2 tts: Embarrassingly easy fully non-autoregressive zero-shot tts. arXiv preprint arXiv:2406.18009, 2024."
       }
      ]
     },
     {
      "id": "p-references-35",
      "type": "paragraph",
-     "page": 13,
+     "page": 12,
      "sentences": [
       {
        "id": "s-references-35-1",
-       "original": "[33] Yu-An Chung, Yu Zhang, Wei Han, Chung-Cheng Chiu, James Qin, Ruoming Pang, and Yonghui Wu."
+       "original": "[32] José Lezama, Huiwen Chang, Lu Jiang, and Irfan Essa."
       },
       {
        "id": "s-references-35-2",
-       "original": "W2v-bert: Combining contrastive learning and masked language modeling for self-supervised speech pre-training."
+       "original": "Improved masked image generation with token-critic."
       },
       {
        "id": "s-references-35-3",
-       "original": "In 2021 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 244–250."
+       "original": "In European Conference on Computer Vision, pages 70–86."
       },
       {
        "id": "s-references-35-4",
-       "original": "IEEE, 2021."
+       "original": "Springer, 2022."
       }
      ]
     },
@@ -2593,15 +3092,19 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "[34] Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed."
+       "original": "[33] Yu-An Chung, Yu Zhang, Wei Han, Chung-Cheng Chiu, James Qin, Ruoming Pang, and Yonghui Wu."
       },
       {
        "id": "s-references-36-2",
-       "original": "Hubert: Self-supervised speech representation learning by masked prediction of hidden units."
+       "original": "W2v-bert: Combining contrastive learning and masked language modeling for self-supervised speech pre-training."
       },
       {
        "id": "s-references-36-3",
-       "original": "IEEE/ACM transactions on audio, speech, and language processing, 29:3451–3460, 2021."
+       "original": "In 2021 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 244–250."
+      },
+      {
+       "id": "s-references-36-4",
+       "original": "IEEE, 2021."
       }
      ]
     },
@@ -2612,13 +3115,23 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "[35] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al. Wavlm: Large-scale self-supervised pretraining for full stack speech processing."
+       "original": "[34] Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed."
       },
       {
        "id": "s-references-37-2",
-       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6):1505–1518, 2022."
+       "original": "Hubert: Self-supervised speech representation learning by masked prediction of hidden units."
+      },
+      {
+       "id": "s-references-37-3",
+       "original": "IEEE/ACM transactions on audio, speech, and language processing,"
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 13,
+     "original": "29:3451–3460, 2021."
     },
     {
      "id": "p-references-38",
@@ -2627,17 +3140,19 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "[36] Rithesh Kumar, Prem Seetharaman, Alejandro Luebs, Ishaan Kumar, and Kundan Kumar."
+       "original": "[35] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al. Wavlm: Large-scale self-supervised pretraining for full stack speech processing."
       },
       {
        "id": "s-references-38-2",
-       "original": "Highfidelity audio compression with improved rvqgan."
-      },
-      {
-       "id": "s-references-38-3",
-       "original": "Advances in Neural Information Processing Systems, 36, 2024."
+       "original": "IEEE Journal of Selected Topics in Signal Processing,"
       }
      ]
+    },
+    {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 13,
+     "original": "16(6):1505–1518, 2022."
     },
     {
      "id": "p-references-39",
@@ -2646,11 +3161,15 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "[37] James Betker."
+       "original": "[36] Rithesh Kumar, Prem Seetharaman, Alejandro Luebs, Ishaan Kumar, and Kundan Kumar."
       },
       {
        "id": "s-references-39-2",
-       "original": "Better speech synthesis through scaling. arXiv preprint arXiv:2305.07243, 2023."
+       "original": "Highfidelity audio compression with improved rvqgan."
+      },
+      {
+       "id": "s-references-39-3",
+       "original": "Advances in Neural Information Processing Systems, 36, 2024."
       }
      ]
     },
@@ -2661,11 +3180,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-40-1",
-       "original": "[38] Zhichao Huang, Chutong Meng, and Tom Ko."
+       "original": "[37] James Betker."
       },
       {
        "id": "s-references-40-2",
-       "original": "Repcodec: A speech representation codec for speech tokenization. arXiv preprint arXiv:2309.00169, 2023."
+       "original": "Better speech synthesis through scaling. arXiv preprint arXiv:2305.07243, 2023."
       }
      ]
     },
@@ -2676,15 +3195,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-41-1",
-       "original": "[39] Zhuang Liu, Hanzi Mao, Chao-Yuan Wu, Christoph Feichtenhofer, Trevor Darrell, and Saining Xie."
+       "original": "[38] Zhichao Huang, Chutong Meng, and Tom Ko."
       },
       {
        "id": "s-references-41-2",
-       "original": "A convnet for the 2020s."
-      },
-      {
-       "id": "s-references-41-3",
-       "original": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 11976–11986, 2022."
+       "original": "Repcodec: A speech representation codec for speech tokenization. arXiv preprint arXiv:2309.00169, 2023."
       }
      ]
     },
@@ -2695,11 +3210,15 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "[40] Jiahui Yu, Xin Li, Jing Yu Koh, Han Zhang, Ruoming Pang, James Qin, Alexander Ku, Yuanzhong Xu, Jason Baldridge, and Yonghui Wu."
+       "original": "[39] Zhuang Liu, Hanzi Mao, Chao-Yuan Wu, Christoph Feichtenhofer, Trevor Darrell, and Saining Xie."
       },
       {
        "id": "s-references-42-2",
-       "original": "Vector-quantized image modeling with improved vqgan. arXiv preprint arXiv:2110.04627, 2021."
+       "original": "A convnet for the 2020s."
+      },
+      {
+       "id": "s-references-42-3",
+       "original": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 11976–11986, 2022."
       }
      ]
     },
@@ -2710,7 +3229,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-43-1",
-       "original": "[41] Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288, 2023."
+       "original": "[40] Jiahui Yu, Xin Li, Jing Yu Koh, Han Zhang, Ruoming Pang, James Qin, Alexander Ku, Yuanzhong Xu, Jason Baldridge, and Yonghui Wu."
+      },
+      {
+       "id": "s-references-43-2",
+       "original": "Vector-quantized image modeling with improved vqgan. arXiv preprint arXiv:2110.04627, 2021."
       }
      ]
     },
@@ -2721,7 +3244,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-44-1",
-       "original": "[42] Dan Hendrycks and Kevin Gimpel."
+       "original": "[41] Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, et al. Llama 2: Open foundation and fine-tuned chat models. arXiv preprint arXiv:2307.09288, 2023."
       }
      ]
     },
@@ -2732,7 +3255,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-45-1",
-       "original": "Gaussian error linear units (gelus)."
+       "original": "[42] Dan Hendrycks and Kevin Gimpel."
       }
      ]
     },
@@ -2743,15 +3266,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-46-1",
-       "original": "arXiv preprint [43] Jianlin Su, Murtadha Ahmed, Yu Lu, Shengfeng Pan, Wen Bo, and Yunfeng Liu."
-      },
-      {
-       "id": "s-references-46-2",
-       "original": "Roformer: Enhanced transformer with rotary position embedding."
-      },
-      {
-       "id": "s-references-46-3",
-       "original": "Neurocomputing, 568:127063, 2024."
+       "original": "Gaussian error linear units (gelus)."
       }
      ]
     },
@@ -2762,15 +3277,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-47-1",
-       "original": "[44] Biao Zhang and Rico Sennrich."
-      },
-      {
-       "id": "s-references-47-2",
-       "original": "Root mean square layer normalization."
-      },
-      {
-       "id": "s-references-47-3",
-       "original": "Advances in Neural Information Processing Systems, 32, 2019."
+       "original": "arXiv preprint arXiv:1606.08415, 2016."
       }
      ]
     },
@@ -2781,11 +3288,15 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-48-1",
-       "original": "[45] Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matt Le."
+       "original": "[43] Jianlin Su, Murtadha Ahmed, Yu Lu, Shengfeng Pan, Wen Bo, and Yunfeng Liu."
       },
       {
        "id": "s-references-48-2",
-       "original": "Flow matching for generative modeling. arXiv preprint arXiv:2210.02747, 2022."
+       "original": "Roformer: Enhanced transformer with rotary position embedding."
+      },
+      {
+       "id": "s-references-48-3",
+       "original": "Neurocomputing, 568:127063, 2024."
       }
      ]
     },
@@ -2796,11 +3307,15 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-49-1",
-       "original": "[46] Hubert Siuzdak."
+       "original": "[44] Biao Zhang and Rico Sennrich."
       },
       {
        "id": "s-references-49-2",
-       "original": "Vocos: Closing the gap between time-domain and fourier-based neural vocoders for high-quality audio synthesis. arXiv preprint arXiv:2306.00814, 2023."
+       "original": "Root mean square layer normalization."
+      },
+      {
+       "id": "s-references-49-3",
+       "original": "Advances in Neural Information Processing Systems, 32, 2019."
       }
      ]
     },
@@ -2811,7 +3326,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-50-1",
-       "original": "[47] Haorui He, Zengqiang Shang, Chaoren Wang, Xuyuan Li, Yicheng Gu, Hua Hua, Liwei Liu, Chen Yang, Jiaqi Li, Peiyang Shi, et al. Emilia: An extensive, multilingual, and diverse speech dataset for large-scale speech generation. arXiv preprint arXiv:2407.05361, 2024."
+       "original": "[45] Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matt Le."
+      },
+      {
+       "id": "s-references-50-2",
+       "original": "Flow matching for generative modeling. arXiv preprint arXiv:2210.02747, 2022."
       }
      ]
     },
@@ -2822,19 +3341,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-51-1",
-       "original": "[48] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur."
+       "original": "[46] Hubert Siuzdak."
       },
       {
        "id": "s-references-51-2",
-       "original": "Librispeech: an asr corpus based on public domain audio books."
-      },
-      {
-       "id": "s-references-51-3",
-       "original": "In 2015 IEEE international conference on acoustics, speech and signal processing (ICASSP), pages 5206–5210."
-      },
-      {
-       "id": "s-references-51-4",
-       "original": "IEEE, 2015."
+       "original": "Vocos: Closing the gap between time-domain and fourier-based neural vocoders for high-quality audio synthesis. arXiv preprint arXiv:2306.00814, 2023."
       }
      ]
     },
@@ -2845,41 +3356,45 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-52-1",
-       "original": "[49] Rosana Ardila, Megan Branson, Kelly Davis, Michael Henretty, Michael Kohler, Josh Meyer, Reuben Morais, Lindsay Saunders, Francis M Tyers, and Gregor Weber."
-      },
-      {
-       "id": "s-references-52-2",
-       "original": "Common voice: A massively-multilingual speech corpus. arXiv preprint arXiv:1912.06670, 2019."
+       "original": "[47] Haorui He, Zengqiang Shang, Chaoren Wang, Xuyuan Li, Yicheng Gu, Hua Hua, Liwei Liu, Chen Yang, Jiaqi Li, Peiyang Shi, et al. Emilia: An extensive, multilingual, and diverse speech dataset for large-scale speech generation. arXiv preprint arXiv:2407.05361, 2024."
       }
      ]
     },
     {
      "id": "p-references-53",
      "type": "paragraph",
-     "page": 14,
+     "page": 13,
      "sentences": [
       {
        "id": "s-references-53-1",
-       "original": "[50] Tingwei Guo, Cheng Wen, Dongwei Jiang, Ne Luo, Ruixiong Zhang, Shuaijiang Zhao, Wubo Li, Cheng Gong, Wei Zou, Kun Han, et al. Didispeech: A large scale mandarin speech corpus."
+       "original": "[48] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur."
       },
       {
        "id": "s-references-53-2",
-       "original": "In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6968–6972."
+       "original": "Librispeech: an asr corpus based on public domain audio books."
       },
       {
        "id": "s-references-53-3",
-       "original": "IEEE, 2021."
+       "original": "In 2015 IEEE international conference on acoustics, speech and signal processing (ICASSP), pages 5206–5210."
+      },
+      {
+       "id": "s-references-53-4",
+       "original": "IEEE, 2015."
       }
      ]
     },
     {
      "id": "p-references-54",
      "type": "paragraph",
-     "page": 14,
+     "page": 13,
      "sentences": [
       {
        "id": "s-references-54-1",
-       "original": "[51] Alexei Baevski, Yuhao Zhou, Abdelrahman Mohamed, and Michael Auli."
+       "original": "[49] Rosana Ardila, Megan Branson, Kelly Davis, Michael Henretty, Michael Kohler, Josh Meyer, Reuben Morais, Lindsay Saunders, Francis M Tyers, and Gregor Weber."
+      },
+      {
+       "id": "s-references-54-2",
+       "original": "Common voice: A massively-multilingual speech corpus. arXiv preprint arXiv:1912.06670, 2019."
       }
      ]
     },
@@ -2890,7 +3405,15 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-55-1",
-       "original": "wav2vec 2.0: A framework for self-supervised learning of speech representations."
+       "original": "[50] Tingwei Guo, Cheng Wen, Dongwei Jiang, Ne Luo, Ruixiong Zhang, Shuaijiang Zhao, Wubo Li, Cheng Gong, Wei Zou, Kun Han, et al. Didispeech: A large scale mandarin speech corpus."
+      },
+      {
+       "id": "s-references-55-2",
+       "original": "In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6968–6972."
+      },
+      {
+       "id": "s-references-55-3",
+       "original": "IEEE, 2021."
       }
      ]
     },
@@ -2901,7 +3424,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-56-1",
-       "original": "Advances in neural information processing systems, 33:12449–12460, 2020."
+       "original": "[51] Alexei Baevski, Yuhao Zhou, Abdelrahman Mohamed, and Michael Auli."
       }
      ]
     },
@@ -2912,7 +3435,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-57-1",
-       "original": "[52] Edresson Casanova, Kelly Davis, Eren Gölge, Görkem Göknar, Iulian Gulea, Logan Hart, Aya Aljafari, Joshua Meyer, Reuben Morais, Samuel Olayemi, et al. Xtts: a massively multilingual zero-shot text-to-speech model. arXiv preprint arXiv:2406.04904, 2024."
+       "original": "wav2vec 2.0: A framework for self-supervised learning of speech representations."
       }
      ]
     },
@@ -2923,7 +3446,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-58-1",
-       "original": "[53] Zhihao Du, Qian Chen, Shiliang Zhang, Kai Hu, Heng Lu, Yexin Yang, Hangrui Hu, Siqi Zheng, Yue Gu, Ziyang Ma, et al. Cosyvoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens. arXiv preprint arXiv:2407.05407, 2024."
+       "original": "Advances in neural information processing systems, 33:12449–12460, 2020."
       }
      ]
     },
@@ -2934,15 +3457,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-59-1",
-       "original": "[54] Mathieu Bernard and Hadrien Titeux."
-      },
-      {
-       "id": "s-references-59-2",
-       "original": "Phonemizer: Text to phones transcription for multiple languages in python."
-      },
-      {
-       "id": "s-references-59-3",
-       "original": "Journal of Open Source Software, 6(68):3958, 2021."
+       "original": "[52] Edresson Casanova, Kelly Davis, Eren Gölge, Görkem Göknar, Iulian Gulea, Logan Hart, Aya Aljafari, Joshua Meyer, Reuben Morais, Samuel Olayemi, et al. Xtts: a massively multilingual zero-shot text-to-speech model. arXiv preprint arXiv:2406.04904, 2024."
       }
      ]
     },
@@ -2953,15 +3468,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-60-1",
-       "original": "[55] Philip Gage."
-      },
-      {
-       "id": "s-references-60-2",
-       "original": "A new algorithm for data compression."
-      },
-      {
-       "id": "s-references-60-3",
-       "original": "The C Users Journal, 12(2):23–38, 1994."
+       "original": "[53] Zhihao Du, Qian Chen, Shiliang Zhang, Kai Hu, Heng Lu, Yexin Yang, Hangrui Hu, Siqi Zheng, Yue Gu, Ziyang Ma, et al. Cosyvoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens. arXiv preprint arXiv:2407.05407, 2024."
       }
      ]
     },
@@ -2972,11 +3479,15 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-61-1",
-       "original": "[56] Ilya Loshchilov and Frank Hutter."
+       "original": "[54] Mathieu Bernard and Hadrien Titeux."
       },
       {
        "id": "s-references-61-2",
-       "original": "Decoupled weight decay regularization. arXiv preprint [57] Jonathan Ho and Tim Salimans."
+       "original": "Phonemizer: Text to phones transcription for multiple languages in python."
+      },
+      {
+       "id": "s-references-61-3",
+       "original": "Journal of Open Source Software, 6(68):3958, 2021."
       }
      ]
     },
@@ -2987,7 +3498,15 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-62-1",
-       "original": "Classifier-free diffusion guidance."
+       "original": "[55] Philip Gage."
+      },
+      {
+       "id": "s-references-62-2",
+       "original": "A new algorithm for data compression."
+      },
+      {
+       "id": "s-references-62-3",
+       "original": "The C Users Journal, 12(2):23–38, 1994."
       }
      ]
     },
@@ -2998,15 +3517,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-63-1",
-       "original": "arXiv preprint [58] Shanchuan Lin, Bingchen Liu, Jiashi Li, and Xiao Yang."
+       "original": "[56] Ilya Loshchilov and Frank Hutter."
       },
       {
        "id": "s-references-63-2",
-       "original": "Common diffusion noise schedules and sample steps are flawed."
-      },
-      {
-       "id": "s-references-63-3",
-       "original": "In Proceedings of the IEEE/CVF winter conference on applications of computer vision, pages 5404–5411, 2024."
+       "original": "Decoupled weight decay regularization. arXiv preprint arXiv:1711.05101, 2017."
       }
      ]
     },
@@ -3017,11 +3532,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-64-1",
-       "original": "[59] Guanlong Zhao, Evgeny Chukharev-Hudilainen, Sinem Sonsaat, Alif Silpachai, Ivana Lucic, Ricardo Gutierrez-Osuna, and John Levis."
-      },
-      {
-       "id": "s-references-64-2",
-       "original": "L2-arctic: A non-native english speech corpus. 2018."
+       "original": "[57] Jonathan Ho and Tim Salimans."
       }
      ]
     },
@@ -3032,19 +3543,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-65-1",
-       "original": "[60] Kun Zhou, Berrak Sisman, Rui Liu, and Haizhou Li."
-      },
-      {
-       "id": "s-references-65-2",
-       "original": "Seen and unseen emotional style transfer for voice conversion with a new emotional speech dataset."
-      },
-      {
-       "id": "s-references-65-3",
-       "original": "In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 920–924."
-      },
-      {
-       "id": "s-references-65-4",
-       "original": "IEEE, 2021."
+       "original": "Classifier-free diffusion guidance."
       }
      ]
     },
@@ -3055,11 +3554,7 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-66-1",
-       "original": "[61] Huaying Xue, Xiulian Peng, Yan Lu, et al. Convert and speak: Zero-shot accent conversion with minimum supervision."
-      },
-      {
-       "id": "s-references-66-2",
-       "original": "In ACM Multimedia 2024."
+       "original": "arXiv preprint arXiv:2207.12598, 2022."
       }
      ]
     },
@@ -3070,19 +3565,15 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-67-1",
-       "original": "[62] Kaizhi Qian, Yang Zhang, Shiyu Chang, Xuesong Yang, and Mark Hasegawa-Johnson."
+       "original": "[58] Shanchuan Lin, Bingchen Liu, Jiashi Li, and Xiao Yang."
       },
       {
        "id": "s-references-67-2",
-       "original": "Autovc: Zero-shot voice style transfer with only autoencoder loss."
+       "original": "Common diffusion noise schedules and sample steps are flawed."
       },
       {
        "id": "s-references-67-3",
-       "original": "In International Conference on Machine Learning, pages 5210–5219."
-      },
-      {
-       "id": "s-references-67-4",
-       "original": "PMLR, 2019."
+       "original": "In Proceedings of the IEEE/CVF winter conference on applications of computer vision, pages 5404–5411, 2024."
       }
      ]
     },
@@ -3093,7 +3584,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-68-1",
-       "original": "[63] Ziyang Ma, Zhisheng Zheng, Jiaxin Ye, Jinchao Li, Zhifu Gao, Shiliang Zhang, and Xie Chen."
+       "original": "[59] Guanlong Zhao, Evgeny Chukharev-Hudilainen, Sinem Sonsaat, Alif Silpachai, Ivana Lucic, Ricardo Gutierrez-Osuna, and John Levis."
+      },
+      {
+       "id": "s-references-68-2",
+       "original": "L2-arctic: A non-native english speech corpus. 2018."
       }
      ]
     },
@@ -3104,11 +3599,19 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-69-1",
-       "original": "emotion2vec: Self-supervised pre-training for speech emotion representation. arXiv preprint [64] Sang-gil Lee, Wei Ping, Boris Ginsburg, Bryan Catanzaro, and Sungroh Yoon."
+       "original": "[60] Kun Zhou, Berrak Sisman, Rui Liu, and Haizhou Li."
       },
       {
        "id": "s-references-69-2",
-       "original": "Bigvgan: A universal neural vocoder with large-scale training. arXiv preprint arXiv:2206.04658, 2022."
+       "original": "Seen and unseen emotional style transfer for voice conversion with a new emotional speech dataset."
+      },
+      {
+       "id": "s-references-69-3",
+       "original": "In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 920–924."
+      },
+      {
+       "id": "s-references-69-4",
+       "original": "IEEE, 2021."
       }
      ]
     },
@@ -3119,11 +3622,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-70-1",
-       "original": "[65] Xingchao Liu, Chengyue Gong, and Qiang Liu."
+       "original": "[61] Huaying Xue, Xiulian Peng, Yan Lu, et al. Convert and speak: Zero-shot accent conversion with minimum supervision."
       },
       {
        "id": "s-references-70-2",
-       "original": "Flow straight and fast: Learning to generate and transfer data with rectified flow. arXiv preprint arXiv:2209.03003, 2022."
+       "original": "In ACM Multimedia 2024."
       }
      ]
     },
@@ -3134,15 +3637,19 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-71-1",
-       "original": "[66] Jaehyeon Kim, Sungwon Kim, Jungil Kong, and Sungroh Yoon."
+       "original": "[62] Kaizhi Qian, Yang Zhang, Shiyu Chang, Xuesong Yang, and Mark Hasegawa-Johnson."
       },
       {
        "id": "s-references-71-2",
-       "original": "Glow-tts: A generative flow for text-to-speech via monotonic alignment search."
+       "original": "Autovc: Zero-shot voice style transfer with only autoencoder loss."
       },
       {
        "id": "s-references-71-3",
-       "original": "Advances in Neural Information Processing Systems, 33:8067–8077, 2020."
+       "original": "In International Conference on Machine Learning, pages 5210–5219."
+      },
+      {
+       "id": "s-references-71-4",
+       "original": "PMLR, 2019."
       }
      ]
     },
@@ -3153,82 +3660,82 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-72-1",
-       "original": "[67] Zalán Borsos, Raphaël Marinier, Damien Vincent, Eugene Kharitonov, Olivier Pietquin, Matt Sharifi, Dominik Roblek, Olivier Teboul, David Grangier, Marco Tagliasacchi, et al. Audiolm: a language modeling approach to audio generation."
-      },
-      {
-       "id": "s-references-72-2",
-       "original": "IEEE/ACM transactions on audio, speech, and language processing, 31:2523–2533, 2023."
+       "original": "[63] Ziyang Ma, Zhisheng Zheng, Jiaxin Ye, Jinchao Li, Zhifu Gao, Shiliang Zhang, and Xie Chen."
       }
      ]
     },
     {
      "id": "p-references-73",
      "type": "paragraph",
-     "page": 15,
+     "page": 14,
      "sentences": [
       {
        "id": "s-references-73-1",
-       "original": "[68] Hao-Han Guo, Kun Liu, Fei-Yu Shen, Yi-Chen Wu, Feng-Long Xie, Kun Xie, and Kai-Tuo Xu."
-      },
-      {
-       "id": "s-references-73-2",
-       "original": "Fireredtts: A foundation text-to-speech framework for industry-level generative speech applications. arXiv preprint arXiv:2409.03283, 2024."
+       "original": "emotion2vec: Self-supervised pre-training for speech emotion representation. arXiv preprint arXiv:2312.15185, 2023."
       }
      ]
     },
     {
      "id": "p-references-74",
      "type": "paragraph",
-     "page": 15,
+     "page": 14,
      "sentences": [
       {
        "id": "s-references-74-1",
-       "original": "[69] Xin Zhang, Dong Zhang, Shimin Li, Yaqian Zhou, and Xipeng Qiu."
+       "original": "[64] Sang-gil Lee, Wei Ping, Boris Ginsburg, Bryan Catanzaro, and Sungroh Yoon."
       },
       {
        "id": "s-references-74-2",
-       "original": "Speechtokenizer: Unified speech tokenizer for speech large language models. arXiv preprint arXiv:2308.16692, 2023."
+       "original": "Bigvgan: A universal neural vocoder with large-scale training. arXiv preprint arXiv:2206.04658, 2022."
       }
      ]
     },
     {
      "id": "p-references-75",
      "type": "paragraph",
-     "page": 15,
+     "page": 14,
      "sentences": [
       {
        "id": "s-references-75-1",
-       "original": "[70] Xueyao Zhang, Liumeng Xue, Yuancheng Wang, Yicheng Gu, Xi Chen, Zihao Fang, Haopeng Chen, Lexiao Zou, Chaoren Wang, Jun Han, et al. Amphion: An open-source audio, music and speech generation toolkit. arXiv preprint arXiv:2312.09911, 2023."
+       "original": "[65] Xingchao Liu, Chengyue Gong, and Qiang Liu."
+      },
+      {
+       "id": "s-references-75-2",
+       "original": "Flow straight and fast: Learning to generate and transfer data with rectified flow. arXiv preprint arXiv:2209.03003, 2022."
       }
      ]
     },
     {
      "id": "p-references-76",
      "type": "paragraph",
-     "page": 15,
+     "page": 14,
      "sentences": [
       {
        "id": "s-references-76-1",
-       "original": "[71] Jacob Kahn, Morgane Riviere, Weiyi Zheng, Evgeny Kharitonov, Qiantong Xu, PierreEmmanuel Mazaré, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert, Christian Fuegen, et al. Libri-light: A benchmark for asr with limited or no supervision."
+       "original": "[66] Jaehyeon Kim, Sungwon Kim, Jungil Kong, and Sungroh Yoon."
       },
       {
        "id": "s-references-76-2",
-       "original": "In ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 7669–7673."
+       "original": "Glow-tts: A generative flow for text-to-speech via monotonic alignment search."
       },
       {
        "id": "s-references-76-3",
-       "original": "IEEE, 2020."
+       "original": "Advances in Neural Information Processing Systems, 33:8067–8077, 2020."
       }
      ]
     },
     {
      "id": "p-references-77",
      "type": "paragraph",
-     "page": 15,
+     "page": 14,
      "sentences": [
       {
        "id": "s-references-77-1",
-       "original": "[72] Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023."
+       "original": "[67] Zalán Borsos, Raphaël Marinier, Damien Vincent, Eugene Kharitonov, Olivier Pietquin, Matt Sharifi, Dominik Roblek, Olivier Teboul, David Grangier, Marco Tagliasacchi, et al. Audiolm: a language modeling approach to audio generation."
+      },
+      {
+       "id": "s-references-77-2",
+       "original": "IEEE/ACM transactions on audio, speech, and language processing, 31:2523–2533, 2023."
       }
      ]
     },
@@ -3239,15 +3746,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-78-1",
-       "original": "[73] Chenpeng Du, Yiwei Guo, Feiyu Shen, Zhijun Liu, Zheng Liang, Xie Chen, Shuai Wang, Hui Zhang, and Kai Yu."
+       "original": "[68] Hao-Han Guo, Kun Liu, Fei-Yu Shen, Yi-Chen Wu, Feng-Long Xie, Kun Xie, and Kai-Tuo Xu."
       },
       {
        "id": "s-references-78-2",
-       "original": "Unicats: A unified context-aware text-to-speech framework with contextual vq-diffusion and vocoding."
-      },
-      {
-       "id": "s-references-78-3",
-       "original": "In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 17924–17932, 2024."
+       "original": "Fireredtts: A foundation text-to-speech framework for industry-level generative speech applications. arXiv preprint arXiv:2409.03283, 2024."
       }
      ]
     },
@@ -3258,19 +3761,11 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-79-1",
-       "original": "[74] Jingyi Li, Weiping Tu, and Li Xiao."
+       "original": "[69] Xin Zhang, Dong Zhang, Shimin Li, Yaqian Zhou, and Xipeng Qiu."
       },
       {
        "id": "s-references-79-2",
-       "original": "Freevc: Towards high-quality text-free one-shot voice conversion."
-      },
-      {
-       "id": "s-references-79-3",
-       "original": "In ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1–5."
-      },
-      {
-       "id": "s-references-79-4",
-       "original": "IEEE, 2023."
+       "original": "Speechtokenizer: Unified speech tokenizer for speech large language models. arXiv preprint arXiv:2308.16692, 2023."
       }
      ]
     },
@@ -3281,10 +3776,93 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-references-80-1",
+       "original": "[70] Xueyao Zhang, Liumeng Xue, Yuancheng Wang, Yicheng Gu, Xi Chen, Zihao Fang, Haopeng Chen, Lexiao Zou, Chaoren Wang, Jun Han, et al. Amphion: An open-source audio, music and speech generation toolkit. arXiv preprint arXiv:2312.09911, 2023."
+      }
+     ]
+    },
+    {
+     "id": "p-references-81",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-81-1",
+       "original": "[71] Jacob Kahn, Morgane Riviere, Weiyi Zheng, Evgeny Kharitonov, Qiantong Xu, PierreEmmanuel Mazaré, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert, Christian Fuegen, et al. Libri-light: A benchmark for asr with limited or no supervision."
+      },
+      {
+       "id": "s-references-81-2",
+       "original": "In ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 7669–7673."
+      },
+      {
+       "id": "s-references-81-3",
+       "original": "IEEE, 2020."
+      }
+     ]
+    },
+    {
+     "id": "p-references-82",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-82-1",
+       "original": "[72] Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023."
+      }
+     ]
+    },
+    {
+     "id": "p-references-83",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-83-1",
+       "original": "[73] Chenpeng Du, Yiwei Guo, Feiyu Shen, Zhijun Liu, Zheng Liang, Xie Chen, Shuai Wang, Hui Zhang, and Kai Yu."
+      },
+      {
+       "id": "s-references-83-2",
+       "original": "Unicats: A unified context-aware text-to-speech framework with contextual vq-diffusion and vocoding."
+      },
+      {
+       "id": "s-references-83-3",
+       "original": "In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 17924–17932, 2024."
+      }
+     ]
+    },
+    {
+     "id": "p-references-84",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-84-1",
+       "original": "[74] Jingyi Li, Weiping Tu, and Li Xiao."
+      },
+      {
+       "id": "s-references-84-2",
+       "original": "Freevc: Towards high-quality text-free one-shot voice conversion."
+      },
+      {
+       "id": "s-references-84-3",
+       "original": "In ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1–5."
+      },
+      {
+       "id": "s-references-84-4",
+       "original": "IEEE, 2023."
+      }
+     ]
+    },
+    {
+     "id": "p-references-85",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-references-85-1",
        "original": "[75] Fabian Mentzer, David Minnen, Eirikur Agustsson, and Michael Tschannen."
       },
       {
-       "id": "s-references-80-2",
+       "id": "s-references-85-2",
        "original": "Finite scalar quantization: Vq-vae made simple. arXiv preprint arXiv:2309.15505, 2023."
       }
      ]
@@ -3297,34 +3875,45 @@ globalThis.PAPER_2409_00750 = {
    "level": 1,
    "page": 15,
    "title": {
-    "original": "Details of MaskGCT Model Architecture",
-    "zh": "MaskGCT 模型架构细节"
+    "original": "Details of MaskGCT",
+    "zh": "Details of MaskGCT"
+   },
+   "blocks": []
+  },
+  {
+   "id": "sec-A-1",
+   "num": "A.1",
+   "level": 2,
+   "page": 15,
+   "title": {
+    "original": "Model Architecture",
+    "zh": "Model Architecture"
    },
    "blocks": [
     {
-     "id": "p-A-1",
+     "id": "p-A-1-1",
      "type": "paragraph",
      "page": 15,
      "sentences": [
       {
-       "id": "s-A-1-1",
+       "id": "s-A-1-1-1",
        "original": "We use a Llama-style [41] Transformer architecture as the backbone of our model, incorporating gated linear units with GELU [42] activation (SwiGLU), rotation position encoding [43], etc., but replacing causal attention with bidirectional attention.",
        "zh": "我们使用 Llama 风格 [41] 的 Transformer 架构作为模型骨干，结合带 GELU [42] 激活（SwiGLU）的门控线性单元、旋转位置编码 [43] 等，但把因果注意力替换为双向注意力。"
       },
       {
-       "id": "s-A-1-2",
+       "id": "s-A-1-1-2",
        "original": "We also use adaptive RMSNorm [44], which accepts the time step t as the condition.",
        "zh": "我们还使用自适应 RMSNorm [44]，它接受时间步 t 作为条件。"
       },
       {
-       "id": "s-A-1-3",
+       "id": "s-A-1-1-3",
        "original": "Table 7 presents the key hyperparameters of the models.",
        "zh": "Table 7 列出了模型的关键超参数。"
       }
      ]
     },
     {
-     "id": "tab-A-1",
+     "id": "tab-A-1-1",
      "type": "table_caption",
      "page": 15,
      "original": "Table 7: Overview of the key hyperparameters of MaskGCT.",
@@ -3349,295 +3938,398 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-t2s-base-1-1",
-       "original": "T2S-Large S2A Layers 16 16 16 Model Dimension FFN Dimension Attention Heads 16 16 16 Attention Type Bidirectional Bidirectional Bidirectional Activation Function SwiGLU Positional Embeddings RoPE (θ = 10,000) Number of Parameters Inference Steps for the T2S model",
-       "zh": "（Table 7 内容残留混排，译文如实保留）T2S-Large S2A 层数 16 16 16；模型维度、FFN 维度、注意力头数 16 16 16；注意力类型：双向、双向、双向；激活函数 SwiGLU；位置编码 RoPE (θ = 10,000)；参数量；T2S 模型的推理步数。"
-      }
-     ]
-    },
-    {
-     "id": "fig-t2s-base-1",
-     "type": "figure_caption",
-     "page": 15,
-     "original": "Figure 4 shows the relationship between inference steps and metrics SIM and WER for SeedTTS test-zh (left) and test-en (right). Initially, SIM increases significantly, stabilizing after 25 steps. For test-zh, SIM rises from 0.761 at 5 steps to 0.771 at 75 steps, and for test-en, from 0.696 to 0.715. SIM reaches high values with just 10 steps but peaks around 25 steps. WER improves more dramatically,",
-     "zh": "图 4（文字在抽取层拆散到正文）展示了推理步数与指标 SIM、WER 的关系，左为 SeedTTS test-zh，右为 test-en：起初 SIM 显著上升并在 25 步后趋于稳定；test-zh 的 SIM 从 5 步时的 0.761 升到 75 步时的 0.771，test-en 从 0.696 升到 0.715；SIM 仅 10 步就能达到较高值并在 25 步左右达到峰值；WER 的改善更为显著——"
-    },
-    {
-     "id": "p-t2s-base-2",
-     "type": "paragraph",
-     "page": 16,
-     "sentences": [
-      {
-       "id": "s-t2s-base-2-1",
-       "original": "especially up to 25 steps.",
-       "zh": "尤其是 25 步以内（接上句：WER 的改善更为显著，）。"
-      },
-      {
-       "id": "s-t2s-base-2-2",
-       "original": "For test-zh, WER drops from 10.19 at 5 steps to 2.507 at 25 steps, and for test-en, from 8.096 to 2.346.",
-       "zh": "test-zh 上，WER 从 5 步时的 10.19 降到 25 步时的 2.507；test-en 上，从 8.096 降到 2.346。"
-      },
-      {
-       "id": "s-t2s-base-2-3",
-       "original": "Both SIM and WER show minimal changes beyond 25 steps.",
-       "zh": "超过 25 步后，SIM 和 WER 都几乎不再变化。"
-      },
-      {
-       "id": "s-t2s-base-2-4",
-       "original": "These findings indicate that while SIM metrics can be sufficiently optimized with around 10 inference steps, achieving the lowest WER values requires approximately 25 inference steps.",
-       "zh": "这些发现表明：SIM 指标大约 10 步推理即可充分优化，而要取得最低 WER 大约需要 25 步推理。"
-      },
-      {
-       "id": "s-t2s-base-2-5",
-       "original": "Beyond this threshold, both SIM and WER metrics exhibit minimal changes, implying that further increases in inference steps do not yield substantial improvements in these performance metrics.",
-       "zh": "超过这个阈值后，SIM 和 WER 都几乎不变，意味着继续增加推理步数不会在这些指标上带来实质提升。"
-      },
-      {
-       "id": "s-t2s-base-2-6",
-       "original": "Therefore, for practical applications, 25 inference steps may be considered optimal for balancing SIM and WER, ensuring efficient and effective performance.",
-       "zh": "因此，实际应用中 25 步推理可视为平衡 SIM 与 WER 的最优选择，兼顾效率与效果。"
+       "original": "T2S-Large S2A Layers",
+       "zh": "表头：T2S-Large / S2A / Layers（后续照原文）。"
       }
      ]
     },
     {
      "id": "eq-t2s-base-1",
      "type": "equation",
+     "page": 15,
+     "original": "16 16 16"
+    },
+    {
+     "id": "eq-t2s-base-2",
+     "type": "equation",
+     "page": 15,
+     "original": "Model Dimension"
+    },
+    {
+     "id": "eq-t2s-base-3",
+     "type": "equation",
+     "page": 15,
+     "original": "1,024 1,536 1,024"
+    },
+    {
+     "id": "eq-t2s-base-4",
+     "type": "equation",
+     "page": 15,
+     "original": "FFN Dimension"
+    },
+    {
+     "id": "eq-t2s-base-5",
+     "type": "equation",
+     "page": 15,
+     "original": "4,096 6,144 4,096"
+    },
+    {
+     "id": "eq-t2s-base-6",
+     "type": "equation",
+     "page": 15,
+     "original": "Attention Heads"
+    },
+    {
+     "id": "eq-t2s-base-7",
+     "type": "equation",
+     "page": 15,
+     "original": "16 16 16"
+    },
+    {
+     "id": "eq-t2s-base-8",
+     "type": "equation",
+     "page": 15,
+     "original": "Attention Type Bidirectional Bidirectional Bidirectional Activation Function SwiGLU"
+    },
+    {
+     "id": "eq-t2s-base-9",
+     "type": "equation",
+     "page": 15,
+     "original": "- -"
+    },
+    {
+     "id": "eq-t2s-base-10",
+     "type": "equation",
+     "page": 15,
+     "original": "Positional Embeddings"
+    },
+    {
+     "id": "eq-t2s-base-11",
+     "type": "equation",
+     "page": 15,
+     "original": "RoPE (θ = 10,000) - -"
+    },
+    {
+     "id": "p-t2s-base-2",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-t2s-base-2-1",
+       "original": "Number of Parameters 315M 695M 353M",
+       "zh": "（表格行）- / -；参数量（Number of Parameters）：315M / 695M / 353M。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-A-2",
+   "num": "A.2",
+   "level": 2,
+   "page": 15,
+   "title": {
+    "original": "Inference Steps for the T2S model",
+    "zh": "Inference Steps for the T2S model"
+   },
+   "blocks": [
+    {
+     "id": "fig-A-2-1",
+     "type": "figure_caption",
+     "page": 15,
+     "original": "Figure 4 shows the relationship between inference steps and metrics SIM and WER for SeedTTS test-zh (left) and test-en (right). Initially, SIM increases significantly, stabilizing after 25 steps. For test-zh, SIM rises from 0.761 at 5 steps to 0.771 at 75 steps, and for test-en, from 0.696 to 0.715. SIM reaches high values with just 10 steps but peaks around 25 steps. WER improves more dramatically,",
+     "zh": "图 4（文字在抽取层拆散到正文）展示了推理步数与指标 SIM、WER 的关系，左为 SeedTTS test-zh，右为 test-en：起初 SIM 显著上升并在 25 步后趋于稳定；test-zh 的 SIM 从 5 步时的 0.761 升到 75 步时的 0.771，test-en 从 0.696 升到 0.715；SIM 仅 10 步就能达到较高值并在 25 步左右达到峰值；WER 的改善更为显著——"
+    },
+    {
+     "id": "eq-A-2-1",
+     "type": "equation",
+     "page": 16,
+     "original": "especially up to 25 steps. For test-zh, WER drops from 10.19 at 5 steps to 2.507 at 25 steps, and for"
+    },
+    {
+     "id": "p-A-2-1",
+     "type": "paragraph",
+     "page": 16,
+     "sentences": [
+      {
+       "id": "s-A-2-1-1",
+       "original": "test-en, from 8.096 to 2.346.",
+       "zh": "test-zh 上，WER 从 5 步时的 10.19 降到 25 步时的 2.507；test-en 上，从 8.096 降到 2.346。（原文此处混入脚注链接残留：4https://huggingface.co/Jzuluaga/accent-id-commonaccent_ecapa 5https://github.com/ddlBoJack/emotion2vec）"
+      },
+      {
+       "id": "s-A-2-1-2",
+       "original": "Both SIM and WER show minimal changes beyond 25 steps.",
+       "zh": "超过 25 步后，SIM 和 WER 都几乎不再变化。"
+      },
+      {
+       "id": "s-A-2-1-3",
+       "original": "These findings indicate that while SIM metrics can be sufficiently optimized with around 10 inference steps, achieving the lowest WER values requires approximately 25 inference steps.",
+       "zh": "这些发现表明：SIM 指标大约 10 步推理即可充分优化，而要取得最低 WER 大约需要 25 步推理。"
+      },
+      {
+       "id": "s-A-2-1-4",
+       "original": "Beyond this threshold, both SIM and WER metrics exhibit minimal changes, implying that further increases in inference steps do not yield substantial improvements in these performance metrics.",
+       "zh": "超过这个阈值后，SIM 和 WER 都几乎不变，意味着继续增加推理步数不会在这些指标上带来实质提升。"
+      },
+      {
+       "id": "s-A-2-1-5",
+       "original": "Therefore, for practical applications, 25 inference steps may be considered optimal for balancing SIM and WER, ensuring efficient and effective performance.",
+       "zh": "因此，实际应用中 25 步推理可视为平衡 SIM 与 WER 的最优选择，兼顾效率与效果。"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-2-2",
+     "type": "equation",
      "page": 16,
      "original": "12"
     },
     {
-     "id": "eq-t2s-base-2",
+     "id": "eq-A-2-3",
      "type": "equation",
      "page": 16,
      "original": "0.8"
     },
     {
-     "id": "p-t2s-base-3",
+     "id": "p-A-2-2",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-t2s-base-3-1",
-       "original": "SIM",
+       "id": "s-A-2-2-1",
+       "original": "WER SIM",
        "zh": "SIM"
       }
      ]
     },
     {
-     "id": "eq-t2s-base-3",
+     "id": "eq-A-2-4",
      "type": "equation",
      "page": 16,
      "original": "10"
     },
     {
-     "id": "eq-t2s-base-4",
+     "id": "eq-A-2-5",
      "type": "equation",
      "page": 16,
      "original": "0.79"
     },
     {
-     "id": "eq-t2s-base-5",
+     "id": "eq-A-2-6",
      "type": "equation",
      "page": 16,
      "original": "8"
     },
     {
-     "id": "eq-t2s-base-6",
+     "id": "eq-A-2-7",
      "type": "equation",
      "page": 16,
      "original": "0.78"
     },
     {
-     "id": "p-t2s-base-4",
+     "id": "p-A-2-3",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-t2s-base-4-1",
-       "original": "SIM",
+       "id": "s-A-2-3-1",
+       "original": "WER SIM",
        "zh": "SIM"
       }
      ]
     },
     {
-     "id": "eq-t2s-base-7",
+     "id": "eq-A-2-8",
      "type": "equation",
      "page": 16,
      "original": "6"
     },
     {
-     "id": "eq-t2s-base-8",
+     "id": "eq-A-2-9",
      "type": "equation",
      "page": 16,
      "original": "0.77"
     },
     {
-     "id": "eq-t2s-base-9",
+     "id": "eq-A-2-10",
      "type": "equation",
      "page": 16,
      "original": "4"
     },
     {
-     "id": "eq-t2s-base-10",
+     "id": "eq-A-2-11",
      "type": "equation",
      "page": 16,
      "original": "0.76"
     },
     {
-     "id": "p-t2s-base-5",
-     "type": "paragraph",
+     "id": "eq-A-2-12",
+     "type": "equation",
      "page": 16,
-     "sentences": [
-      {
-       "id": "s-t2s-base-5-1",
-       "original": "5 10 25 50 75 0.75",
-       "zh": "（Figure 4 坐标轴残留）5 10 25 50 75 0.75"
-      }
-     ]
+     "original": "5 10 25 50 75 0.75"
     },
     {
-     "id": "eq-t2s-base-11",
+     "id": "eq-A-2-13",
      "type": "equation",
      "page": 16,
      "original": "2"
     },
     {
-     "id": "p-t2s-base-6",
+     "id": "p-A-2-4",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-t2s-base-6-1",
+       "id": "s-A-2-4-1",
        "original": "Inference Steps",
        "zh": "推理步数"
       }
      ]
     },
     {
-     "id": "eq-t2s-base-12",
+     "id": "eq-A-2-14",
      "type": "equation",
      "page": 16,
      "original": "0.74"
     },
     {
-     "id": "p-t2s-base-7",
+     "id": "p-A-2-5",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-t2s-base-7-1",
-       "original": "SIM",
+       "id": "s-A-2-5-1",
+       "original": "WER SIM",
        "zh": "SIM"
       }
      ]
     },
     {
-     "id": "eq-t2s-base-13",
+     "id": "eq-A-2-15",
      "type": "equation",
      "page": 16,
      "original": "8"
     },
     {
-     "id": "eq-t2s-base-14",
+     "id": "eq-A-2-16",
      "type": "equation",
      "page": 16,
      "original": "0.72"
     },
     {
-     "id": "eq-t2s-base-15",
+     "id": "p-A-2-6",
+     "type": "paragraph",
+     "page": 16,
+     "sentences": [
+      {
+       "id": "s-A-2-6-1",
+       "original": "WER",
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-2-17",
      "type": "equation",
      "page": 16,
      "original": "6"
     },
     {
-     "id": "p-t2s-base-8",
+     "id": "p-A-2-7",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-t2s-base-8-1",
+       "id": "s-A-2-7-1",
        "original": "SIM",
        "zh": "SIM"
       }
      ]
     },
     {
-     "id": "eq-t2s-base-16",
+     "id": "eq-A-2-18",
      "type": "equation",
      "page": 16,
      "original": "0.7"
     },
     {
-     "id": "eq-t2s-base-17",
+     "id": "eq-A-2-19",
      "type": "equation",
      "page": 16,
      "original": "4"
     },
     {
-     "id": "p-t2s-base-9",
-     "type": "paragraph",
+     "id": "eq-A-2-20",
+     "type": "equation",
      "page": 16,
-     "sentences": [
-      {
-       "id": "s-t2s-base-9-1",
-       "original": "5 10 25 50 75 0.68",
-       "zh": "（Figure 4 坐标轴残留）5 10 25 50 75 0.68"
-      }
-     ]
+     "original": "5 10 25 50 75 0.68"
     },
     {
-     "id": "eq-t2s-base-18",
+     "id": "eq-A-2-21",
      "type": "equation",
      "page": 16,
      "original": "2"
     },
     {
-     "id": "p-t2s-base-10",
+     "id": "p-A-2-8",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-t2s-base-10-1",
+       "id": "s-A-2-8-1",
        "original": "Inference Steps",
        "zh": "推理步数"
       }
      ]
     },
     {
-     "id": "fig-t2s-base-2",
+     "id": "fig-A-2-2",
      "type": "figure_caption",
      "page": 16,
      "original": "Figure 4: Inference Steps vs. SIM and WER. The results on the left are for SeedTTS test-zh, and the results on the right are for SeedTTS test-en. In this ablation study, we utilize the ground truth speech length.",
      "zh": "图 4：推理步数与 SIM、WER 的关系。左侧结果为 SeedTTS test-zh，右侧为 SeedTTS test-en。本消融实验使用真实语音长度。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-A-3",
+   "num": "A.3",
+   "level": 2,
+   "page": 16,
+   "title": {
+    "original": "Inference Steps for the S2A model",
+    "zh": "Inference Steps for the S2A model"
+   },
+   "blocks": [
     {
-     "id": "p-t2s-base-11",
+     "id": "p-A-3-1",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-t2s-base-11-1",
-       "original": "Inference Steps for the S2A model The S2A model generates tokens layer by layer during inference.",
+       "id": "s-A-3-1-1",
+       "original": "The S2A model generates tokens layer by layer during inference.",
        "zh": "S2A 模型的推理步数 S2A 模型在推理时逐层生成 token。"
       },
       {
-       "id": "s-t2s-base-11-2",
+       "id": "s-A-3-1-2",
        "original": "Since the acoustic codec follows an RVQ structure, we can view the S2A inference as a process from coarse to fine.",
        "zh": "由于声学 codec 采用 RVQ 结构，我们可以把 S2A 推理看作从粗到细的过程。"
       },
       {
-       "id": "s-t2s-base-11-3",
+       "id": "s-A-3-1-3",
        "original": "We also use more iterations in the initial layers, as the first few layers carry more information.",
        "zh": "我们在最初的若干层使用更多迭代步，因为前几层承载更多信息。"
       },
       {
-       "id": "s-t2s-base-11-4",
+       "id": "s-A-3-1-4",
        "original": "By default, we use inference steps of [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] for each layer, however, we find that the S2A model can also perform well with fewer steps, such as [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], with only a very slight performance loss.",
        "zh": "默认对各层使用推理步数 [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]；但我们发现 S2A 模型用更少的步数如 [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 也能表现良好，性能损失非常轻微。"
       }
      ]
     },
     {
-     "id": "tab-t2s-base-1",
+     "id": "tab-A-3-1",
      "type": "table_caption",
      "page": 16,
      "original": "Table 8: Evaluation results of different inference steps for the S2A model.",
@@ -3662,16 +4354,40 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-inference-steps-1-1",
-       "original": "FSD ↓ [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.709 2.796 0.164 [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.728 2.466 0.159 [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.766 2.268 0.111 [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.777 2.183",
-       "zh": "（Table 8 数值残留，译文如实保留）FSD ↓ [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.709 2.796 0.164；[40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.728 2.466 0.159；[10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.766 2.268 0.111；[40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.777 2.183。"
+       "original": "SIM-O ↑ WER ↓ FSD ↓ SeedTTS test-en",
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。"
       }
      ]
+    },
+    {
+     "id": "eq-inference-steps-1",
+     "type": "equation",
+     "page": 16,
+     "original": "[10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.709 2.796 0.164 [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.728 2.466"
     }
    ]
   },
   {
-   "id": "sec-0-101",
-   "num": "0.101",
+   "id": "sec-0-159",
+   "num": "0.159",
+   "level": 2,
+   "page": 16,
+   "title": {
+    "original": "SeedTTS test-zh",
+    "zh": "SeedTTS test-zh"
+   },
+   "blocks": [
+    {
+     "id": "eq-0-159-1",
+     "type": "equation",
+     "page": 16,
+     "original": "[10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.766 2.268 0.111 [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.777 2.183 0.101"
+    }
+   ]
+  },
+  {
+   "id": "sec-A-4",
+   "num": "A.4",
    "level": 2,
    "page": 16,
    "title": {
@@ -3680,54 +4396,54 @@ globalThis.PAPER_2409_00750 = {
    },
    "blocks": [
     {
-     "id": "p-0-101-1",
+     "id": "p-A-4-1",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-0-101-1-1",
+       "id": "s-A-4-1-1",
        "original": "For semantic codec, we train a VQ-VAE model using the hidden features from the 17th layer of W2v-BERT 2.0, incorporating factorized codec [32] technology.",
        "zh": "语义 codec 方面，我们训练一个 VQ-VAE 模型，使用 W2v-BERT 2.0 第 17 层的隐层特征，并结合分解式编码 [32] 技术。"
       },
       {
-       "id": "s-0-101-1-2",
+       "id": "s-A-4-1-2",
        "original": "The original hidden dimension of 1,024 is projected into a lower-dimensional space for quantization.",
        "zh": "原始 1,024 维的隐层维度被投影到更低维的空间进行量化。"
       },
       {
-       "id": "s-0-101-1-3",
+       "id": "s-A-4-1-3",
        "original": "The codebook size is set to 8,192, with a codebook dimension of 8.",
        "zh": "码本大小设为 8,192，码本维度为 8。"
       },
       {
-       "id": "s-0-101-1-4",
+       "id": "s-A-4-1-4",
        "original": "We employ only the L1 loss as the reconstruction target, optimizing the codebook with codebook loss and commitment loss.",
        "zh": "我们仅以 L1 损失作为重建目标，并用码本损失与承诺损失优化码本。"
       },
       {
-       "id": "s-0-101-1-5",
+       "id": "s-A-4-1-5",
        "original": "The input features are normalized to have a mean of 0 and a variance of 1, based on the statistics of the training dataset.",
        "zh": "输入特征按训练数据集的统计量归一化到均值 0、方差 1。"
       },
       {
-       "id": "s-0-101-1-6",
+       "id": "s-A-4-1-6",
        "original": "The encoder and the decoder are each composed of 12 mirrored ConvNext blocks, featuring a kernel size of 7 and a hidden size of 384.",
        "zh": "编码器与解码器各由 12 个镜像对称的 ConvNext 块组成，卷积核大小为 7，隐层维度为 384。"
       }
      ]
     },
     {
-     "id": "p-0-101-2",
+     "id": "p-A-4-2",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-0-101-2-1",
+       "id": "s-A-4-2-1",
        "original": "For acoustic codec, the basic architecture of the encoder follows [36] and the decoder follows [46].",
        "zh": "声学 codec 方面，编码器的基本架构沿用 [36]，解码器沿用 [46]。"
       },
       {
-       "id": "s-0-101-2-2",
+       "id": "s-A-4-2-2",
        "original": "The Vocos-based decoder can model amplitude and phase, enabling waveform generation through Semantic features",
        "zh": "基于 Vocos 的解码器能建模幅度与相位，从而通过（语义特征）"
       }
@@ -3894,40 +4610,88 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-semantic-codec-1-1",
-       "original": "Acoustic Codec Input W2v-BERT 2.0 hidden Waveform Sample Rate 16K 24K Hopsize 320 480 Number of (R)VQ Blocks 1 12 Codebook size Codebook Dimension 8 8 Decoder Hidden Dimension 384 512 Decoder Kernel Size 7 7 Number of Decoder Blocks 12 30 Number of Parameters inverse STFT transformation without requiring upsampling.",
-       "zh": "（Table 9 内容与正文混排，译文如实保留）声学 codec；输入：W2v-BERT 2.0 隐层特征 / 波形；采样率 16K / 24K；hop size 320 / 480；(R)VQ 块数 1 / 12；码本大小；码本维度 8 / 8；解码器隐层维度 384 / 512；解码器卷积核大小 7 / 7；解码器块数 12 / 30；参数量。基于 Vocos 的解码器通过逆 STFT 变换生成波形，无需上采样。"
-      },
-      {
-       "id": "s-semantic-codec-1-2",
-       "original": "The number of RVQ layers, codebook size, and codebook dimension are set to 12, 8,192, and 8, respectively.",
-       "zh": "RVQ 层数、码本大小与码本维度分别设为 12、8,192 和 8。"
-      },
-      {
-       "id": "s-semantic-codec-1-3",
-       "original": "We utilize the multi-scale mel-reconstruction loss [36] Lrec, for the adversarial loss Ladv, we employ both the multi-period discriminator (MPD) and the multi-band multi-scale STFT discriminator, as proposed by [36, 64].",
-       "zh": "我们采用多尺度 Mel 重建损失 [36] Lrec；对抗损失 Ladv 同时使用多周期判别器（MPD）与 [36, 64] 提出的多频带多尺度 STFT 判别器。"
-      },
-      {
-       "id": "s-semantic-codec-1-4",
-       "original": "Additionally, we incorporate the relative feature matching loss Lfeat.",
-       "zh": "此外，我们加入相对特征匹配损失 Lfeat。"
-      },
-      {
-       "id": "s-semantic-codec-1-5",
-       "original": "For codebook learning, we use the codebook loss Lcodebook and the commitment loss Lcommit from VQ-VAE.",
-       "zh": "码本学习方面，我们使用 VQ-VAE 的码本损失 Lcodebook 和承诺损失 Lcommit。"
-      },
-      {
-       "id": "s-semantic-codec-1-6",
-       "original": "We set λrec = 10.0, λadv = 2.0, λfeat = 2.0, λcodebook = 1.0, λcommit = 0.25 as coefficients for balancing each loss terms.",
-       "zh": "各损失项的平衡系数设为 λrec = 10.0、λadv = 2.0、λfeat = 2.0、λcodebook = 1.0、λcommit = 0.25。"
-      },
-      {
-       "id": "s-semantic-codec-1-7",
-       "original": "Figure 5 shows the overview of the semantic codec and acoustic codec, Table 9 presents the detailed model configurations of semantic codec and acoustic codec.",
-       "zh": "Figure 5 展示语义 codec 与声学 codec 的总览，Table 9 列出两者的详细模型配置。"
+       "original": "Acoustic Codec Input W2v-BERT 2.0 hidden Waveform Sample Rate 16K 24K Hopsize",
+       "zh": "（表：Acoustic Codec 对比——Input：W2v-BERT 2.0 hidden / Waveform；Sample Rate 16K/24K；Hopsize 320/480；(R)VQ Blocks 数 1/12；Codebook size 8,192/1,024；Codebook Dimension 8/8；Decoder Hidden Dimension 384/512；Decoder Kernel Size 7/7；Decoder Blocks 数 12/30；参数量 44M/170M。）无需上采样的逆 STFT 变换。"
       }
      ]
+    },
+    {
+     "id": "eq-semantic-codec-1",
+     "type": "equation",
+     "page": 17,
+     "original": "320 480"
+    },
+    {
+     "id": "eq-semantic-codec-2",
+     "type": "equation",
+     "page": 17,
+     "original": "Number of (R)VQ Blocks"
+    },
+    {
+     "id": "eq-semantic-codec-3",
+     "type": "equation",
+     "page": 17,
+     "original": "1 12"
+    },
+    {
+     "id": "eq-semantic-codec-4",
+     "type": "equation",
+     "page": 17,
+     "original": "Codebook size"
+    },
+    {
+     "id": "eq-semantic-codec-5",
+     "type": "equation",
+     "page": 17,
+     "original": "8,192 1,024"
+    },
+    {
+     "id": "eq-semantic-codec-6",
+     "type": "equation",
+     "page": 17,
+     "original": "Codebook Dimension"
+    },
+    {
+     "id": "eq-semantic-codec-7",
+     "type": "equation",
+     "page": 17,
+     "original": "8 8"
+    },
+    {
+     "id": "eq-semantic-codec-8",
+     "type": "equation",
+     "page": 17,
+     "original": "Decoder Hidden Dimension"
+    },
+    {
+     "id": "eq-semantic-codec-9",
+     "type": "equation",
+     "page": 17,
+     "original": "384 512"
+    },
+    {
+     "id": "eq-semantic-codec-10",
+     "type": "equation",
+     "page": 17,
+     "original": "Decoder Kernel Size"
+    },
+    {
+     "id": "eq-semantic-codec-11",
+     "type": "equation",
+     "page": 17,
+     "original": "7 7"
+    },
+    {
+     "id": "eq-semantic-codec-12",
+     "type": "equation",
+     "page": 17,
+     "original": "Number of Decoder Blocks"
+    },
+    {
+     "id": "eq-semantic-codec-13",
+     "type": "equation",
+     "page": 17,
+     "original": "12 30"
     },
     {
      "id": "p-semantic-codec-2",
@@ -3936,131 +4700,239 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-semantic-codec-2-1",
-       "original": "Details of Duration Predictor MaskGCT requires specifying the target speech duration during inference, so we train a flow matching [45, 65] based duration predictor to obtain the total duration of the target audio by summing the phone-level duration.",
-       "zh": "时长预测器的细节：MaskGCT 推理时需要指定目标语音时长，因此我们训练了一个基于流匹配 [45, 65] 的时长预测器，通过对音素级时长求和来得到目标音频的总时长。"
+       "original": "Number of Parameters 44M 170M inverse STFT transformation without requiring upsampling.",
+       "zh": "（表：Acoustic Codec 对比——Input：W2v-BERT 2.0 hidden / Waveform；Sample Rate 16K/24K；Hopsize 320/480；(R)VQ Blocks 数 1/12；Codebook size 8,192/1,024；Codebook Dimension 8/8；Decoder Hidden Dimension 384/512；Decoder Kernel Size 7/7；Decoder Blocks 数 12/30；参数量 44M/170M。）无需上采样的逆 STFT 变换。"
       },
       {
        "id": "s-semantic-codec-2-2",
+       "original": "The number of RVQ layers, codebook size, and codebook dimension are set to 12, 8,192, and 8, respectively.",
+       "zh": "RVQ 层数、码本大小与码本维度分别设为 12、8,192 和 8。"
+      },
+      {
+       "id": "s-semantic-codec-2-3",
+       "original": "We utilize the multi-scale mel-reconstruction loss [36] Lrec, for the adversarial loss Ladv, we employ both the multi-period discriminator (MPD) and the multi-band multi-scale STFT discriminator, as proposed by [36, 64].",
+       "zh": "我们采用多尺度 Mel 重建损失 [36] Lrec；对抗损失 Ladv 同时使用多周期判别器（MPD）与 [36, 64] 提出的多频带多尺度 STFT 判别器。"
+      },
+      {
+       "id": "s-semantic-codec-2-4",
+       "original": "Additionally, we incorporate the relative feature matching loss Lfeat.",
+       "zh": "此外，我们加入相对特征匹配损失 Lfeat。"
+      },
+      {
+       "id": "s-semantic-codec-2-5",
+       "original": "For codebook learning, we use the codebook loss Lcodebook and the commitment loss Lcommit from VQ-VAE.",
+       "zh": "码本学习方面，我们使用 VQ-VAE 的码本损失 Lcodebook 和承诺损失 Lcommit。"
+      },
+      {
+       "id": "s-semantic-codec-2-6",
+       "original": "We set λrec = 10.0, λadv = 2.0, λfeat = 2.0, λcodebook = 1.0, λcommit = 0.25 as coefficients for balancing each loss terms.",
+       "zh": "各损失项的平衡系数设为 λrec = 10.0、λadv = 2.0、λfeat = 2.0、λcodebook = 1.0、λcommit = 0.25。"
+      },
+      {
+       "id": "s-semantic-codec-2-7",
+       "original": "Figure 5 shows the overview of the semantic codec and acoustic codec, Table 9 presents the detailed model configurations of semantic codec and acoustic codec.",
+       "zh": "Figure 5 展示语义 codec 与声学 codec 的总览，Table 9 列出两者的详细模型配置。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-A-5",
+   "num": "A.5",
+   "level": 2,
+   "page": 17,
+   "title": {
+    "original": "Details of Duration Predictor",
+    "zh": "Details of Duration Predictor"
+   },
+   "blocks": [
+    {
+     "id": "p-A-5-1",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-A-5-1-1",
+       "original": "MaskGCT requires specifying the target speech duration during inference, so we train a flow matching [45, 65] based duration predictor to obtain the total duration of the target audio by summing the phone-level duration.",
+       "zh": "时长预测器的细节：MaskGCT 推理时需要指定目标语音时长，因此我们训练了一个基于流匹配 [45, 65] 的时长预测器，通过对音素级时长求和来得到目标音频的总时长。"
+      },
+      {
+       "id": "s-A-5-1-2",
        "original": "Note that we do not need to actually use the phone-level durations but only use them to make a reasonable estimate of the total duration, leaving other total duration predictor methods for future works to explore.",
        "zh": "注意，我们并不实际使用音素级时长，只用它们对总时长做合理估计；其他总时长预测方法留给未来工作探索。"
       },
       {
-       "id": "s-semantic-codec-2-3",
+       "id": "s-A-5-1-3",
        "original": "The duration predictor has a similar Transformer architecture to MaskGCT, with 12 layers, 12 attention heads, and a hidden size of 768.",
        "zh": "时长预测器的 Transformer 架构与 MaskGCT 类似，共 12 层、12 个注意力头，隐层维度 768。"
       },
       {
-       "id": "s-semantic-codec-2-4",
+       "id": "s-A-5-1-4",
        "original": "We also adapt in-context learning and classifier-free guidance for the duration predictor.",
        "zh": "时长预测器同样采用上下文学习与无分类器引导。"
       },
       {
-       "id": "s-semantic-codec-2-5",
+       "id": "s-A-5-1-5",
        "original": "During training, we randomly select a prefix segment of the phoneme sequence and its corresponding duration as a prompt, which is not added with noise.",
        "zh": "训练时，我们随机选取音素序列的一段前缀及其对应时长作为提示，提示部分不加噪声。"
       },
       {
-       "id": "s-semantic-codec-2-6",
+       "id": "s-A-5-1-6",
        "original": "At the same time, we use a probability of 0.15 to drop the prompt.",
        "zh": "同时以 0.15 的概率丢弃提示。"
       },
       {
-       "id": "s-semantic-codec-2-7",
+       "id": "s-A-5-1-7",
        "original": "We model the duration in the log domain using flow matching.",
        "zh": "我们在对数域用流匹配对时长建模。"
       },
       {
-       "id": "s-semantic-codec-2-8",
+       "id": "s-A-5-1-8",
        "original": "We denote x1 as a random variable of log(duration+1), x0 as a randomly sampled Gaussian noise, then vθ(xt, t) = xt = (1−t)x0 +tx1, where the timestep t ∈[0, 1].",
        "zh": "记 x1 为 log(duration+1) 的随机变量，x0 为随机采样的高斯噪声，则 vθ(xt, t) = xt = (1−t)x0 +tx1，其中时间步 t ∈[0, 1]。"
       },
       {
-       "id": "s-semantic-codec-2-9",
+       "id": "s-A-5-1-9",
        "original": "The loss function of the duration predictor is Et,x1(vθ(xt, t)−(x1−x0))2.",
        "zh": "时长预测器的损失函数为 Et,x1(vθ(xt, t)−(x1−x0))2。"
       },
       {
-       "id": "s-semantic-codec-2-10",
+       "id": "s-A-5-1-10",
        "original": "In the inference stage, we use a midpoint ODE solver to generate the target from randomly sampled Gaussian noise with a total of 4 steps.",
        "zh": "推理阶段，我们用中点 ODE 求解器从随机采样的高斯噪声出发生成目标，共 4 步。"
       },
       {
-       "id": "s-semantic-codec-2-11",
+       "id": "s-A-5-1-11",
        "original": "We pretrain a duration aligner (between phoneme and W2v-BERT 2.0 semantic feature) based on monotonic alignment search (MAS) [66] to get the ground truth duration for each phoneme.",
        "zh": "我们预训练了一个基于单调对齐搜索（MAS）[66] 的时长对齐器（音素与 W2v-BERT 2.0 语义特征之间），以得到每个音素的真实时长。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-A-6",
+   "num": "A.6",
+   "level": 2,
+   "page": 18,
+   "title": {
+    "original": "Text Tokenizer",
+    "zh": "Text Tokenizer"
+   },
+   "blocks": [
     {
-     "id": "p-semantic-codec-3",
+     "id": "p-A-6-1",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-semantic-codec-3-1",
-       "original": "Text Tokenizer We consider two text tokenization methods: Grapheme-to-Phoneme (G2P) and Byte Pair Encoding (BPE).",
+       "id": "s-A-6-1-1",
+       "original": "We consider two text tokenization methods: Grapheme-to-Phoneme (G2P) and Byte Pair Encoding (BPE).",
        "zh": "文本分词器：我们考虑两种文本分词方法——字位转音素（G2P）和 BPE。"
       },
       {
-       "id": "s-semantic-codec-3-2",
+       "id": "s-A-6-1-2",
        "original": "For G2P, we employ phonemize6 for English and a combination of jieba7 and pypinyin8 for Chinese.",
        "zh": "G2P 方面，英文用 phonemize6，中文用 jieba7 加 pypinyin8 的组合。"
       },
       {
-       "id": "s-semantic-codec-3-3",
+       "id": "s-A-6-1-3",
        "original": "For BPE, we utilize the BPE method and vocabulary from Whisper9, with a vocabulary size exceeding 30,000.",
        "zh": "BPE 方面，我们使用 Whisper9 的 BPE 方法与词表，词表规模超过 30,000。"
       },
       {
-       "id": "s-semantic-codec-3-4",
+       "id": "s-A-6-1-4",
        "original": "Table 10 shows the comparison results of MaskGCT using the two different text tokenization methods.",
        "zh": "Table 10 给出了 MaskGCT 使用两种文本分词方法的对比结果。"
       },
       {
-       "id": "s-semantic-codec-3-5",
+       "id": "s-A-6-1-5",
        "original": "The results indicate that G2P outperforms BPE in English with a higher SIM-O of 0.728 compared to 0.711 and a lower WER of 2.466 versus 4.036.",
        "zh": "结果表明，G2P 在英文上优于 BPE：SIM-O 更高（0.728 对 0.711），WER 更低（2.466 对 4.036）。"
       },
       {
-       "id": "s-semantic-codec-3-6",
+       "id": "s-A-6-1-6",
        "original": "Conversely, in Chinese, G2P maintains a slightly higher SIM-O (0.777 vs. 0.769) but BPE achieves a lower WER (1.921 vs. 2.338).",
        "zh": "相反，在中文上 G2P 的 SIM-O 略高（0.777 对 0.769），但 BPE 的 WER 更低（1.921 对 2.338）。"
       },
       {
-       "id": "s-semantic-codec-3-7",
+       "id": "s-A-6-1-7",
        "original": "These findings suggest that while G2P is superior in preserving text similarity and reducing errors in English, BPE is more effective in minimizing WER in Chinese.",
        "zh": "这些发现说明：G2P 在英文上更利于保持文本相似度并减少错误，而 BPE 在中文上更能降低 WER。"
       },
       {
-       "id": "s-semantic-codec-3-8",
+       "id": "s-A-6-1-8",
        "original": "We hypothesize that the reason might be that the Chinese G2P system we used still has deficiencies in handling polyphonic characters.",
        "zh": "我们推测，原因可能在于所使用的中文 G2P 系统在处理多音字方面仍有不足。"
       },
       {
-       "id": "s-semantic-codec-3-9",
+       "id": "s-A-6-1-9",
        "original": "In contrast, BPE can learn different pronunciations for the same character based on context.",
        "zh": "相比之下，BPE 能根据上下文为同一个汉字学到不同发音。"
       }
      ]
     },
     {
-     "id": "tab-semantic-codec-1",
+     "id": "tab-A-6-1",
      "type": "table_caption",
      "page": 18,
      "original": "Table 10: G2P vs. BPE.",
      "zh": "表 10：G2P 与 BPE 的对比。"
     },
     {
-     "id": "p-semantic-codec-4",
+     "id": "p-A-6-2",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-semantic-codec-4-1",
-       "original": "G2P 0.728 2.466 BPE 0.711 4.036 G2P 0.777 2.183 BPE 0.769 1.921",
-       "zh": "（Table 10 数值残留，译文如实保留）G2P 0.728 2.466 BPE 0.711 4.036 G2P 0.777 2.183 BPE 0.769 1.921。"
+       "id": "s-A-6-2-1",
+       "original": "SIM-O ↑ WER ↓ SeedTTS test-en G2P",
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。\n（原始数据照录）\nSIM-O ↑ WER ↓ SeedTTS test-en G2P"
       }
      ]
+    },
+    {
+     "id": "eq-A-6-1",
+     "type": "equation",
+     "page": 18,
+     "original": "0.728 2.466"
+    },
+    {
+     "id": "eq-A-6-2",
+     "type": "equation",
+     "page": 18,
+     "original": "BPE"
+    },
+    {
+     "id": "eq-A-6-3",
+     "type": "equation",
+     "page": 18,
+     "original": "0.711 4.036"
+    },
+    {
+     "id": "eq-A-6-4",
+     "type": "equation",
+     "page": 18,
+     "original": "SeedTTS test-zh G2P"
+    },
+    {
+     "id": "eq-A-6-5",
+     "type": "equation",
+     "page": 18,
+     "original": "0.777 2.183"
+    },
+    {
+     "id": "eq-A-6-6",
+     "type": "equation",
+     "page": 18,
+     "original": "BPE"
+    },
+    {
+     "id": "eq-A-6-7",
+     "type": "equation",
+     "page": 18,
+     "original": "0.769 1.921"
     }
    ]
   },
@@ -4170,11 +5042,47 @@ globalThis.PAPER_2409_00750 = {
       },
       {
        "id": "s-C-1-4",
-       "original": "During inference, we compute the output embedding gcfg θ (X|Xp) = 6https://github.com/bootphon/phonemizer 7https://github.com/fxsjy/jieba 8https://github.com/mozillazg/python-pinyin 9https://github.com/huggingface/transformers/blob/main/src/transformers/models/ whisper/tokenization_whisper.py gθ(X|Xp) + wcfg · (gθ(X|Xp) −gθ(X)) of the last layer of the model, where wcfg is the classifierfree guidance scale, then we compute the rescale embedding grescale θ (X|Xp) = gcfg θ (X|Xp) × std(gθ(X|Xp))/std(gcfg θ (X|Xp)), the final output embedding is computed as wrescale·grescale θ (X|Xp)+ (1 −wrescale) · gcfg θ (X|Xp).",
+       "original": "During inference, we compute the output embedding gcfg θ (X|Xp) = 6https://github.com/bootphon/phonemizer 7https://github.com/fxsjy/jieba 8https://github.com/mozillazg/python-pinyin 9https://github.com/huggingface/transformers/blob/main/src/transformers/models/ whisper/tokenization_whisper.py gθ(X|Xp) + wcfg · (gθ(X|Xp) −gθ(X)) of the last layer of the model, where wcfg is the classifierfree guidance scale, then we compute the rescale embedding grescale",
+       "zh": "推理时，我们计算模型最后一层的输出 embedding：gcfg θ (X|Xp) = gθ(X|Xp) + wcfg · (gθ(X|Xp) −gθ(X))，其中 wcfg 为无分类器引导系数；再计算重缩放 embedding：grescale θ (X|Xp) = gcfg θ (X|Xp) × std(gθ(X|Xp))/std(gcfg θ (X|Xp))；最终输出 embedding 为 wrescale·grescale θ (X|Xp)+ (1 −wrescale) · gcfg θ (X|Xp)。（原文此处混入脚注链接残留：6https://github.com/bootphon/phonemizer 7https://github.com/fxsjy/jieba 8https://github.com/mozillazg/python-pinyin 9https://github.com/huggingface/transformers/blob/main/src/transformers/models/ whisper/tokenization_whisper.py）"
+      }
+     ]
+    },
+    {
+     "id": "eq-C-1",
+     "type": "equation",
+     "page": 18,
+     "original": "θ"
+    },
+    {
+     "id": "p-C-2",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-C-2-1",
+       "original": "(X|Xp) = gcfg θ (X|Xp) × std(gθ(X|Xp))/std(gcfg θ (X|Xp)), the final output embedding is computed as wrescale·grescale",
+       "zh": "推理时，我们计算模型最后一层的输出 embedding：gcfg θ (X|Xp) = gθ(X|Xp) + wcfg · (gθ(X|Xp) −gθ(X))，其中 wcfg 为无分类器引导系数；再计算重缩放 embedding：grescale θ (X|Xp) = gcfg θ (X|Xp) × std(gθ(X|Xp))/std(gcfg θ (X|Xp))；最终输出 embedding 为 wrescale·grescale θ (X|Xp)+ (1 −wrescale) · gcfg θ (X|Xp)。（原文此处混入脚注链接残留：6https://github.com/bootphon/phonemizer 7https://github.com/fxsjy/jieba 8https://github.com/mozillazg/python-pinyin 9https://github.com/huggingface/transformers/blob/main/src/transformers/models/ whisper/tokenization_whisper.py）"
+      }
+     ]
+    },
+    {
+     "id": "eq-C-2",
+     "type": "equation",
+     "page": 18,
+     "original": "θ"
+    },
+    {
+     "id": "p-C-3",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-C-3-1",
+       "original": "(X|Xp)+ (1 −wrescale) · gcfg θ (X|Xp).",
        "zh": "推理时，我们计算模型最后一层的输出 embedding：gcfg θ (X|Xp) = gθ(X|Xp) + wcfg · (gθ(X|Xp) −gθ(X))，其中 wcfg 为无分类器引导系数；再计算重缩放 embedding：grescale θ (X|Xp) = gcfg θ (X|Xp) × std(gθ(X|Xp))/std(gcfg θ (X|Xp))；最终输出 embedding 为 wrescale·grescale θ (X|Xp)+ (1 −wrescale) · gcfg θ (X|Xp)。（原文此处混入脚注链接残留：6https://github.com/bootphon/phonemizer 7https://github.com/fxsjy/jieba 8https://github.com/mozillazg/python-pinyin 9https://github.com/huggingface/transformers/blob/main/src/transformers/models/ whisper/tokenization_whisper.py）"
       },
       {
-       "id": "s-C-1-5",
+       "id": "s-C-3-2",
        "original": "In our paper, wcfg and wrescale are set as 2.5 and 0.75 by default.",
        "zh": "本文中 wcfg 和 wrescale 默认分别设为 2.5 和 0.75。"
       }
@@ -4424,16 +5332,106 @@ globalThis.PAPER_2409_00750 = {
      "page": 19,
      "original": "Table 11: Evaluation results for MaskGCT and baseline methods on the test sets for Japanese, Korean, German, and French.",
      "zh": "表 11：MaskGCT 与基线方法在日语、韩语、德语、法语测试集上的评估结果。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-system-4",
+   "num": null,
+   "level": 2,
+   "page": 19,
+   "title": {
+    "original": "System",
+    "zh": "System"
+   },
+   "blocks": [
     {
-     "id": "p-E-2",
+     "id": "p-system-4-1",
      "type": "paragraph",
      "page": 19,
      "sentences": [
       {
-       "id": "s-E-2-1",
-       "original": "Ja Ko Fr De Emilia-AR 3.6 0.625 10.9 0.681 8.2 0.589 6.8 0.680 Emilia-NAR 10.8 0.562 15.2 0.608 17.5 0.550 13.3 0.633 XTTS-v2 2.981 0.579 12.45 0.617 6.898 0.531 9.168 0.569 3.903 0.678 9.417 0.732 5.598 0.667 5.126 0.745 10https://huggingface.co/coqui/XTTS-v2 11https://huggingface.co/pyp1/VoiceCraft/blob/main/830M_TTSEnhanced.pth 12https://huggingface.co/model-scope/CosyVoice-300M 13ttps://huggingface.co/openai/whisper-medium",
+       "id": "s-system-4-1-1",
+       "original": "Ja Ko Fr De",
        "zh": "（Table 11 数值与脚注残留，译文如实保留）Ja Ko Fr De Emilia-AR 3.6 0.625 10.9 0.681 8.2 0.589 6.8 0.680 Emilia-NAR 10.8 0.562 15.2 0.608 17.5 0.550 13.3 0.633 XTTS-v2 2.981 0.579 12.45 0.617 6.898 0.531 9.168 0.569 3.903 0.678 9.417 0.732 5.598 0.667 5.126 0.745 10https://huggingface.co/coqui/XTTS-v2 11https://huggingface.co/pyp1/VoiceCraft/blob/main/830M_TTSEnhanced.pth 12https://huggingface.co/model-scope/CosyVoice-300M 13ttps://huggingface.co/openai/whisper-medium。（脚注 10、11、12、13 为各模型与 tokenizer 的开源链接，其中 13 的链接在原文中误作 ttps:// 开头）"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-wer",
+   "num": null,
+   "level": 2,
+   "page": 19,
+   "title": {
+    "original": "WER",
+    "zh": "WER"
+   },
+   "blocks": [
+    {
+     "id": "p-wer-1",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-wer-1-1",
+       "original": "SIM-O WER SIM-O WER SIM-O WER SIM-O Emilia-AR",
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。"
+      }
+     ]
+    },
+    {
+     "id": "eq-wer-1",
+     "type": "equation",
+     "page": 19,
+     "original": "3.6 0.625 10.9 0.681 8.2 0.589 6.8 0.680"
+    },
+    {
+     "id": "eq-wer-2",
+     "type": "equation",
+     "page": 19,
+     "original": "Emilia-NAR"
+    },
+    {
+     "id": "eq-wer-3",
+     "type": "equation",
+     "page": 19,
+     "original": "10.8 0.562 15.2 0.608 17.5 0.550 13.3 0.633"
+    },
+    {
+     "id": "eq-wer-4",
+     "type": "equation",
+     "page": 19,
+     "original": "XTTS-v2"
+    },
+    {
+     "id": "eq-wer-5",
+     "type": "equation",
+     "page": 19,
+     "original": "2.981 0.579 12.45 0.617 6.898 0.531 9.168 0.569"
+    },
+    {
+     "id": "eq-wer-6",
+     "type": "equation",
+     "page": 19,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-wer-7",
+     "type": "equation",
+     "page": 19,
+     "original": "3.903 0.678 9.417 0.732 5.598 0.667 5.126 0.745"
+    },
+    {
+     "id": "p-wer-2",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-wer-2-1",
+       "original": "10https://huggingface.co/coqui/XTTS-v2 11https://huggingface.co/pyp1/VoiceCraft/blob/main/830M_TTSEnhanced.pth 12https://huggingface.co/model-scope/CosyVoice-300M 13ttps://huggingface.co/openai/whisper-medium",
+       "zh": "（脚注 10：https://huggingface.co/coqui/XTTS-v2；11：https://huggingface.co/pyp1/VoiceCraft/blob/main/830M_TTSEnhanced.pth；12：https://huggingface.co/model-scope/CosyVoice-300M；13：https://huggingface.co/openai/whisper-medium）"
       }
      ]
     }
@@ -4550,10 +5548,76 @@ globalThis.PAPER_2409_00750 = {
      "sentences": [
       {
        "id": "s-F-2-1",
-       "original": "Zh En Ja Ko De Fr Zh 7.466 0.678 7.864 0.720 9.751 0.736 25.54 0.724 16.21 0.687 En 7.411 0.535 5.870 0.544 12.18 0.543 12.43 0.579 17.48 0.590 Ja 13.93 0.647 7.387 0.642 10.98 0.703 12.85 0.649 14.61 0.645 Ko 31.30 0.734 14.61 0.697 12.79 0.749 26.58 0.722 33.96 0.712 De 19.54 0.714 5.148 0.740 6.072 0.678 12.02 0.667 14.53 0.672 Fr 32.84 0.672 12.17 0.682 6.076 0.640 12.07 0.582 21.65 0.682",
-       "zh": "（Table 12 数值残留，译文如实保留）Zh En Ja Ko De Fr Zh 7.466 0.678 7.864 0.720 9.751 0.736 25.54 0.724 16.21 0.687 En 7.411 0.535 5.870 0.544 12.18 0.543 12.43 0.579 17.48 0.590 Ja 13.93 0.647 7.387 0.642 10.98 0.703 12.85 0.649 14.61 0.645 Ko 31.30 0.734 14.61 0.697 12.79 0.749 26.58 0.722 33.96 0.712 De 19.54 0.714 5.148 0.740 6.072 0.678 12.02 0.667 14.53 0.672 Fr 32.84 0.672 12.17 0.682 6.076 0.640 12.07 0.582 21.65 0.682。"
+       "original": "Zh En Ja Ko De Fr WER SIM-O WER SIM-O WER SIM-O WER SIM-O WER SIM-O WER SIM-O Zh",
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。"
       }
      ]
+    },
+    {
+     "id": "eq-F-1",
+     "type": "equation",
+     "page": 20,
+     "original": "- - 7.466 0.678 7.864 0.720 9.751 0.736 25.54 0.724 16.21 0.687"
+    },
+    {
+     "id": "eq-F-2",
+     "type": "equation",
+     "page": 20,
+     "original": "En"
+    },
+    {
+     "id": "eq-F-3",
+     "type": "equation",
+     "page": 20,
+     "original": "7.411 0.535 - - 5.870 0.544 12.18 0.543 12.43 0.579 17.48 0.590"
+    },
+    {
+     "id": "eq-F-4",
+     "type": "equation",
+     "page": 20,
+     "original": "Ja"
+    },
+    {
+     "id": "eq-F-5",
+     "type": "equation",
+     "page": 20,
+     "original": "13.93 0.647 7.387 0.642 - - 10.98 0.703 12.85 0.649 14.61 0.645"
+    },
+    {
+     "id": "eq-F-6",
+     "type": "equation",
+     "page": 20,
+     "original": "Ko"
+    },
+    {
+     "id": "eq-F-7",
+     "type": "equation",
+     "page": 20,
+     "original": "31.30 0.734 14.61 0.697 12.79 0.749 - - 26.58 0.722 33.96 0.712"
+    },
+    {
+     "id": "eq-F-8",
+     "type": "equation",
+     "page": 20,
+     "original": "De"
+    },
+    {
+     "id": "eq-F-9",
+     "type": "equation",
+     "page": 20,
+     "original": "19.54 0.714 5.148 0.740 6.072 0.678 12.02 0.667 - - 14.53 0.672"
+    },
+    {
+     "id": "eq-F-10",
+     "type": "equation",
+     "page": 20,
+     "original": "Fr"
+    },
+    {
+     "id": "eq-F-11",
+     "type": "equation",
+     "page": 20,
+     "original": "32.84 0.672 12.17 0.682 6.076 0.640 12.07 0.582 21.65 0.682 - -"
     }
    ]
   },
@@ -4787,18 +5851,72 @@ globalThis.PAPER_2409_00750 = {
      "page": 21,
      "original": "Table 13: The evaluation results of MaskGCT and AR + SoundStorm on SeedTTS test-hard.",
      "zh": "表 13：MaskGCT 与 AR + SoundStorm 在 SeedTTS test-hard 上的评估结果。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-system-5",
+   "num": null,
+   "level": 2,
+   "page": 21,
+   "title": {
+    "original": "System",
+    "zh": "System"
+   },
+   "blocks": [
     {
-     "id": "p-J-2",
+     "id": "p-system-5-1",
      "type": "paragraph",
      "page": 21,
      "sentences": [
       {
-       "id": "s-J-2-1",
-       "original": "SeedTTS test-hard AR + SoundStorm 0.692 34.16 AR + SoundStorm (rank 5) 0.739 17.05 0.748 10.27 MaskGCT (rank 5) 0.776 6.258",
-       "zh": "（Table 13 数值残留，译文如实保留）SeedTTS test-hard AR + SoundStorm 0.692 34.16 AR + SoundStorm (rank 5) 0.739 17.05 0.748 10.27 MaskGCT (rank 5) 0.776 6.258。"
+       "id": "s-system-5-1-1",
+       "original": "SIM-O ↑ WER ↓ SeedTTS test-hard AR + SoundStorm",
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。"
       }
      ]
+    },
+    {
+     "id": "eq-system-5-1",
+     "type": "equation",
+     "page": 21,
+     "original": "0.692 34.16"
+    },
+    {
+     "id": "eq-system-5-2",
+     "type": "equation",
+     "page": 21,
+     "original": "AR + SoundStorm (rank 5)"
+    },
+    {
+     "id": "eq-system-5-3",
+     "type": "equation",
+     "page": 21,
+     "original": "0.739 17.05"
+    },
+    {
+     "id": "eq-system-5-4",
+     "type": "equation",
+     "page": 21,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-system-5-5",
+     "type": "equation",
+     "page": 21,
+     "original": "0.748 10.27"
+    },
+    {
+     "id": "eq-system-5-6",
+     "type": "equation",
+     "page": 21,
+     "original": "MaskGCT (rank 5)"
+    },
+    {
+     "id": "eq-system-5-7",
+     "type": "equation",
+     "page": 21,
+     "original": "0.776 6.258"
     }
    ]
   },
@@ -4998,7 +6116,7 @@ globalThis.PAPER_2409_00750 = {
   {
    "id": "ann-012",
    "anchor": {
-    "sentence_id": "s-4-4-1-9",
+    "sentence_id": "s-4-4-2-2",
     "quote": "SIM can be optimized with around 10 steps, while achieving the lowest WER requires approximately 25 steps"
    },
    "kind": "number",
@@ -5009,7 +6127,7 @@ globalThis.PAPER_2409_00750 = {
   {
    "id": "ann-013",
    "anchor": {
-    "sentence_id": "s-4-4-2-5",
+    "sentence_id": "s-4-4-3-5",
     "quote": "can achieve good performance with just the setting of the base model when using 100K hours of data"
    },
    "kind": "critique",
@@ -5020,7 +6138,7 @@ globalThis.PAPER_2409_00750 = {
   {
    "id": "ann-014",
    "anchor": {
-    "sentence_id": "s-semantic-codec-3-5",
+    "sentence_id": "s-A-6-1-5",
     "quote": "G2P outperforms BPE in English with a higher SIM-O of 0.728 compared to 0.711"
    },
    "kind": "comparison",
@@ -5082,7 +6200,7 @@ globalThis.PAPER_2409_00750 = {
   {
    "id": "ann-020",
    "anchor": {
-    "sentence_id": "s-4-1-6-4",
+    "sentence_id": "s-system-4-4",
     "quote": "we use a top-k of 20, with the sampling temperature annealing from 1.5 to 0"
    },
    "kind": "engineering",

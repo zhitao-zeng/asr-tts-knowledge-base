@@ -54,7 +54,41 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-front-2-1",
-       "original": "Code: github.com/microsoft/VibeVoice Demo: aka.ms/VibeVoice-ASR HuggingFace Models Transformers Release Microsoft Foundry DER (Diarization Error Rate) ↓ VibeVoice-ASR 50 46.23 43.04 45 38.75 40 32.96 35 31.6 30 23.54 23.79 22.03 25 20 16.29 15.32 11.92 13.43 15 10.92 6.77 10 3.42 5 0 AMI_IHM AMI_SDM MLC tcpWER (Time-Constrained Permutation WER)↓ VibeVoice-ASR 70 63.65 64.86 65.61 58.81 60 54.17 53.49 50 35.96 38.35 41.39 40 29.8 29.51 28.9 30 25.35 20.82 15.66 20 10 0 AMI_IHM AMI_SDM MLC"
+       "original": "Code: github.com/microsoft/VibeVoice Demo: aka.ms/VibeVoice-ASR HuggingFace Models Transformers Release Microsoft Foundry DER (Diarization Error Rate) ↓ VibeVoice-ASR Gemini-2.5-Pro Gemini-3-Pro"
+      }
+     ]
+    },
+    {
+     "id": "eq-front-1",
+     "type": "equation",
+     "page": 1,
+     "original": "50 46.23 43.04 45 38.75 40 32.96 35 31.6 30 23.54 23.79 22.03 25 20 16.29 15.32 11.92 13.43 15 10.92 6.77 10 3.42 5 0"
+    },
+    {
+     "id": "p-front-3",
+     "type": "paragraph",
+     "page": 1,
+     "sentences": [
+      {
+       "id": "s-front-3-1",
+       "original": "AISHELL4 AMI_IHM AMI_SDM AliMeeting MLC tcpWER (Time-Constrained Permutation WER)↓ VibeVoice-ASR Gemini-2.5-Pro Gemini-3-Pro"
+      }
+     ]
+    },
+    {
+     "id": "eq-front-2",
+     "type": "equation",
+     "page": 1,
+     "original": "70 63.65 64.86 65.61 58.81 60 54.17 53.49 50 35.96 38.35 41.39 40 29.8 29.51 28.9 30 25.35 20.82 15.66 20 10 0"
+    },
+    {
+     "id": "p-front-4",
+     "type": "paragraph",
+     "page": 1,
+     "sentences": [
+      {
+       "id": "s-front-4-1",
+       "original": "AISHELL4 AMI_IHM AMI_SDM AliMeeting MLC"
       }
      ]
     },
@@ -100,10 +134,16 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-1-2-1",
-       "original": "S Rich Transcription Who When What Welcome to Vibe…",
+       "original": "A S Rich Transcription Who When What Welcome to Vibe…",
        "zh": "S 富转录（Rich Transcription） 谁 何时 说了什么 欢迎来到 Vibe…"
       }
      ]
+    },
+    {
+     "id": "eq-1-1",
+     "type": "equation",
+     "page": 2,
+     "original": "Speaker 1, 0 ~ 10.25, Speaker 2, 10.3 ~ 33.33,"
     },
     {
      "id": "p-1-3",
@@ -112,10 +152,16 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-1-3-1",
-       "original": "Speaker 1, 0 ~ 10.25, Speaker 2, 10.3 ~ 33.33, Nice to meet…",
-       "zh": "说话人 1，0 ~ 10.25，说话人 2，10.3 ~ 33.33，很高兴见到…"
+       "original": "Nice to meet…",
+       "zh": "…"
       }
      ]
+    },
+    {
+     "id": "eq-1-2",
+     "type": "equation",
+     "page": 2,
+     "original": "…"
     },
     {
      "id": "p-1-4",
@@ -124,18 +170,6 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-1-4-1",
-       "original": "…",
-       "zh": "…"
-      }
-     ]
-    },
-    {
-     "id": "p-1-5",
-     "type": "paragraph",
-     "page": 2,
-     "sentences": [
-      {
-       "id": "s-1-5-1",
        "original": "Speaker N, 3575.5 ~ 3600, Let’s …",
        "zh": "说话人 N，3575.5 ~ 3600，让我们…"
       }
@@ -154,14 +188,20 @@ globalThis.PAPER_2601_18184 = {
    },
    "blocks": [
     {
+     "id": "eq-vibevoice-asr-1",
+     "type": "equation",
+     "page": 2,
+     "original": "+"
+    },
+    {
      "id": "p-vibevoice-asr-1",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
        "id": "s-vibevoice-asr-1-1",
-       "original": "+ S Optional Context 60-minute Long-form Audio <begin>",
-       "zh": "+ S 可选上下文（Optional Context） 60 分钟长音频 <begin>"
+       "original": "A S Optional Context 60-minute Long-form Audio <begin>",
+       "zh": "（图 1 标签：+ A / S；可选上下文（Optional Context）；60 分钟长音频（60-minute Long-form Audio）；<begin>。）"
       }
      ]
     },
@@ -497,8 +537,8 @@ globalThis.PAPER_2601_18184 = {
      "id": "tab-2-3-1-1",
      "type": "table_caption",
      "page": 4,
-     "original": "Table 1: DER and WER comparison across different data pipelines. Model AMI-IHM AMI-SDM WhisperX 14.55 29.69 18.27 24.12 23.05 39.65 35.53 36.62 Emilia",
-     "zh": "表 1：不同数据处理流水线的 DER 与 WER 对比。表格列出各流水线在 AMI-IHM、AMI-SDM 等数据集上的 DER 与 WER 数值（部分数字因 PDF 抽取错位，见正文段）。"
+     "original": "Table 1: DER and WER comparison across different data pipelines. Model AISHELL4 AMI-IHM AMI-SDM AliMeeting DER WER DER WER DER WER DER WER",
+     "zh": "表 1：不同数据管线下的 DER 与 WER 对比。表头：Model × AISHELL4（DER/WER）× AMI-IHM（DER/WER）× AMI-SDM（DER/WER）× AliMeeting（DER/WER）。"
     },
     {
      "id": "p-2-3-1-4",
@@ -507,8 +547,50 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-2-3-1-4-1",
-       "original": "16.58 49.40 35.44 47.85 46.55 61.70 25.57 54.27 Ours pipeline 16.93 18.99 15.46 23.22 17.78 28.40 25.34 30.82 We employed a curriculum learning strategy for the LLM input sequence length, progressively increasing from 8,192 to 65,536 tokens.",
-       "zh": "16.58 49.40 35.44 47.85 46.55 61.70 25.57 54.27 Ours pipeline 16.93 18.99 15.46 23.22 17.78 28.40 25.34 30.82（抽取注：此句前半为 Table 1 的表格数值残留，非正文；以下为正文部分）我们对 LLM 的输入序列长度采用课程学习策略，从 8,192 逐步增加到 65,536 token。"
+       "original": "WhisperX",
+       "zh": "为验证该数据处理流水线的有效性，我们把它与两条被广泛采用的音频处理流水线——WhisperX [BHHZ23] 和 Emilia [HSW+24]——做了对比研究。"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-3-1-1",
+     "type": "equation",
+     "page": 4,
+     "original": "14.55 29.69 18.27 24.12 23.05 39.65 35.53 36.62"
+    },
+    {
+     "id": "eq-2-3-1-2",
+     "type": "equation",
+     "page": 4,
+     "original": "Emilia"
+    },
+    {
+     "id": "eq-2-3-1-3",
+     "type": "equation",
+     "page": 4,
+     "original": "16.58 49.40 35.44 47.85 46.55 61.70 25.57 54.27"
+    },
+    {
+     "id": "eq-2-3-1-4",
+     "type": "equation",
+     "page": 4,
+     "original": "Ours pipeline"
+    },
+    {
+     "id": "eq-2-3-1-5",
+     "type": "equation",
+     "page": 4,
+     "original": "16.93 18.99 15.46 23.22 17.78 28.40 25.34 30.82"
+    },
+    {
+     "id": "p-2-3-1-5",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-3-1-5-1",
+       "original": "We employed a curriculum learning strategy for the LLM input sequence length, progressively increasing from 8,192 to 65,536 tokens.",
+       "zh": "我们对 LLM 输入序列长度采用课程学习策略，从 8,192 逐步增加到 65,536 个 token。"
       }
      ]
     }
@@ -704,10 +786,16 @@ globalThis.PAPER_2601_18184 = {
       },
       {
        "id": "s-long-form-transcription-restorat-3-2",
-       "original": "Specifically, the sampling weights for Standard Benchmarks, Music Data, Synthetic Data, and Refined Long-Form Data are set to 0.5 : 0.1 : 0.1 : 0.3, respectively.",
+       "original": "Specifically, the sampling weights for Standard Benchmarks, Music Data, Synthetic Data, and Refined Long-Form Data are set",
        "zh": "具体而言，标准基准、音乐数据、合成数据与精修长文本数据的采样权重分别设为 0.5 : 0.1 : 0.1 : 0.3。"
       }
      ]
+    },
+    {
+     "id": "eq-long-form-transcription-restorat-1",
+     "type": "equation",
+     "page": 4,
+     "original": "to 0.5 : 0.1 : 0.1 : 0.3, respectively."
     }
    ]
   },
@@ -822,23 +910,221 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-3-7-1",
-       "original": "VIBEVOICE-ASR Dataset Language AISHELL-4 15.32 31.59 35.96 22.42 22.03 27.43 54.17 22.75 6.77 24.99 25.35 21.40 AMI-IHM 23.54 29.57 38.35 18.48 46.23 22.34 63.65 17.61 11.92 20.41 20.82 18.81 AMI-SDM 23.79 34.78 41.39 22.35 43.04 26.91 64.86 22.09 13.43 28.82 29.80 24.65 31.60 41.64 53.49 27.43 38.75 32.84 65.61 26.75 10.92 29.33 29.51 27.40 MLC-Challenge 20.67 16.23 26.72 9.76 30.88 12.85 57.64 10.19 4.28 11.48 13.02 7.99 French 7.66 23.06 24.60 17.17 40.82 22.02 71.11 18.71 3.80 18.80 19.64 15.21 German 18.19 30.36 39.43 17.76 42.14 23.56 73.86 19.39 1.04 17.10 17.26 16.30 Italian 12.55 16.88 25.20 12.87 23.45 15.59 49.89 13.32 2.08 15.76 15.91 13.91 Japanese 20.40 30.41 37.36 16.58 59.68 21.96 81.41 18.47 0.82 15.33 15.41 14.69 Korean 17.57 19.23 29.81 10.18 39.28 19.39 57.33 11.21 4.52 15.35 16.07 9.65 Portuguese 20.86 30.03 40.20 20.15 39.17 23.29 85.44 20.10 7.98 29.91 31.65 21.54 Russian 5.35 14.26 16.59 10.74 22.76 13.05 51.89 10.31 0.90 12.94 12.98 12.40 Spanish 9.10 13.82 17.49 9.09 25.54 12.11 43.72 9.36 2.67 10.51 11.71 8.04 Thai 15.54 20.84 30.28 14.84 22.09 14.59 39.54 12.03 4.09 14.91 15.57 13.61 Vietnamese 14.65 16.71 27.28 12.33 32.24 13.15 60.43 11.53 0.16 14.57 14.57 14.43 AVERAGE 16.29 20.37 28.90 13.05 32.96 16.38 58.81 13.11 3.42 14.81 15.66 12.07 As shown in Table 2, VIBEVOICE-ASR consistently outperforms Gemini-2.5-Pro and Gemini3-Pro in terms of DER and tcpWER across all evaluated datasets, demonstrating substantially stronger speaker modeling and more accurate alignment of speaker turns over time.",
-       "zh": "如 Table 2 所示，VIBEVOICE-ASR 在所有评测数据集上的 DER 与 tcpWER 均持续优于 Gemini-2.5-Pro 与 Gemini-3-Pro，展现出强得多的说话人建模能力和更精确的说话人轮换时间对齐。（抽取注：该段前半为 Table 2 的表格主体，原文按行混排，以下原样保留各数据集/语言的数值以便核对）AISHELL-4 15.32 31.59 35.96 22.42 22.03 27.43 54.17 22.75 6.77 24.99 25.35 21.40；AMI-IHM 23.54 29.57 38.35 18.48 46.23 22.34 63.65 17.61 11.92 20.41 20.82 18.81；AMI-SDM 23.79 34.78 41.39 22.35 43.04 26.91 64.86 22.09 13.43 28.82 29.80 24.65 31.60 41.64 53.49 27.43 38.75 32.84 65.61 26.75 10.92 29.33 29.51 27.40；MLC-Challenge 20.67 16.23 26.72 9.76 30.88 12.85 57.64 10.19 4.28 11.48 13.02 7.99；French 7.66 23.06 24.60 17.17 40.82 22.02 71.11 18.71 3.80 18.80 19.64 15.21；German 18.19 30.36 39.43 17.76 42.14 23.56 73.86 19.39 1.04 17.10 17.26 16.30；Italian 12.55 16.88 25.20 12.87 23.45 15.59 49.89 13.32 2.08 15.76 15.91 13.91；Japanese 20.40 30.41 37.36 16.58 59.68 21.96 81.41 18.47 0.82 15.33 15.41 14.69；Korean 17.57 19.23 29.81 10.18 39.28 19.39 57.33 11.21 4.52 15.35 16.07 9.65；Portuguese 20.86 30.03 40.20 20.15 39.17 23.29 85.44 20.10 7.98 29.91 31.65 21.54；Russian 5.35 14.26 16.59 10.74 22.76 13.05 51.89 10.31 0.90 12.94 12.98 12.40；Spanish 9.10 13.82 17.49 9.09 25.54 12.11 43.72 9.36 2.67 10.51 11.71 8.04；Thai 15.54 20.84 30.28 14.84 22.09 14.59 39.54 12.03 4.09 14.91 15.57 13.61；Vietnamese 14.65 16.71 27.28 12.33 32.24 13.15 60.43 11.53 0.16 14.57 14.57 14.43；AVERAGE 16.29 20.37 28.90 13.05 32.96 16.38 58.81 13.11 3.42 14.81 15.66 12.07。"
+       "original": "Gemini-2.5-Pro Gemini-3-Pro VIBEVOICE-ASR Dataset Language DER cpWER tcpWER WER DER cpWER tcpWER WER DER cpWER tcpWER WER AISHELL-4 Chinese",
+       "zh": "（表 2 表头：Gemini-2.5-Pro / Gemini-3-Pro / VIBEVOICE-ASR × Dataset / Language × DER / cpWER / tcpWER / WER——AISHELL-4 Chinese，后续照原文。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-1",
+     "type": "equation",
+     "page": 5,
+     "original": "15.32 31.59 35.96 22.42 22.03 27.43 54.17 22.75 6.77 24.99 25.35 21.40"
+    },
+    {
+     "id": "eq-3-2",
+     "type": "equation",
+     "page": 5,
+     "original": "AMI-IHM English"
+    },
+    {
+     "id": "eq-3-3",
+     "type": "equation",
+     "page": 5,
+     "original": "23.54 29.57 38.35 18.48 46.23 22.34 63.65 17.61 11.92 20.41 20.82 18.81"
+    },
+    {
+     "id": "eq-3-4",
+     "type": "equation",
+     "page": 5,
+     "original": "AMI-SDM English"
+    },
+    {
+     "id": "eq-3-5",
+     "type": "equation",
+     "page": 5,
+     "original": "23.79 34.78 41.39 22.35 43.04 26.91 64.86 22.09 13.43 28.82 29.80 24.65"
+    },
+    {
+     "id": "eq-3-6",
+     "type": "equation",
+     "page": 5,
+     "original": "AliMeeting Chinese"
+    },
+    {
+     "id": "eq-3-7",
+     "type": "equation",
+     "page": 5,
+     "original": "31.60 41.64 53.49 27.43 38.75 32.84 65.61 26.75 10.92 29.33 29.51 27.40"
+    },
+    {
+     "id": "eq-3-8",
+     "type": "equation",
+     "page": 5,
+     "original": "MLC-Challenge English"
+    },
+    {
+     "id": "eq-3-9",
+     "type": "equation",
+     "page": 5,
+     "original": "20.67 16.23 26.72 9.76 30.88 12.85 57.64 10.19 4.28 11.48 13.02 7.99"
+    },
+    {
+     "id": "eq-3-10",
+     "type": "equation",
+     "page": 5,
+     "original": "French"
+    },
+    {
+     "id": "eq-3-11",
+     "type": "equation",
+     "page": 5,
+     "original": "7.66 23.06 24.60 17.17 40.82 22.02 71.11 18.71 3.80 18.80 19.64 15.21"
+    },
+    {
+     "id": "eq-3-12",
+     "type": "equation",
+     "page": 5,
+     "original": "German"
+    },
+    {
+     "id": "eq-3-13",
+     "type": "equation",
+     "page": 5,
+     "original": "18.19 30.36 39.43 17.76 42.14 23.56 73.86 19.39 1.04 17.10 17.26 16.30"
+    },
+    {
+     "id": "eq-3-14",
+     "type": "equation",
+     "page": 5,
+     "original": "Italian"
+    },
+    {
+     "id": "eq-3-15",
+     "type": "equation",
+     "page": 5,
+     "original": "12.55 16.88 25.20 12.87 23.45 15.59 49.89 13.32 2.08 15.76 15.91 13.91"
+    },
+    {
+     "id": "eq-3-16",
+     "type": "equation",
+     "page": 5,
+     "original": "Japanese"
+    },
+    {
+     "id": "eq-3-17",
+     "type": "equation",
+     "page": 5,
+     "original": "20.40 30.41 37.36 16.58 59.68 21.96 81.41 18.47 0.82 15.33 15.41 14.69"
+    },
+    {
+     "id": "eq-3-18",
+     "type": "equation",
+     "page": 5,
+     "original": "Korean"
+    },
+    {
+     "id": "eq-3-19",
+     "type": "equation",
+     "page": 5,
+     "original": "17.57 19.23 29.81 10.18 39.28 19.39 57.33 11.21 4.52 15.35 16.07 9.65"
+    },
+    {
+     "id": "eq-3-20",
+     "type": "equation",
+     "page": 5,
+     "original": "Portuguese"
+    },
+    {
+     "id": "eq-3-21",
+     "type": "equation",
+     "page": 5,
+     "original": "20.86 30.03 40.20 20.15 39.17 23.29 85.44 20.10 7.98 29.91 31.65 21.54"
+    },
+    {
+     "id": "eq-3-22",
+     "type": "equation",
+     "page": 5,
+     "original": "Russian"
+    },
+    {
+     "id": "eq-3-23",
+     "type": "equation",
+     "page": 5,
+     "original": "5.35 14.26 16.59 10.74 22.76 13.05 51.89 10.31 0.90 12.94 12.98 12.40"
+    },
+    {
+     "id": "eq-3-24",
+     "type": "equation",
+     "page": 5,
+     "original": "Spanish"
+    },
+    {
+     "id": "eq-3-25",
+     "type": "equation",
+     "page": 5,
+     "original": "9.10 13.82 17.49 9.09 25.54 12.11 43.72 9.36 2.67 10.51 11.71 8.04"
+    },
+    {
+     "id": "eq-3-26",
+     "type": "equation",
+     "page": 5,
+     "original": "Thai"
+    },
+    {
+     "id": "eq-3-27",
+     "type": "equation",
+     "page": 5,
+     "original": "15.54 20.84 30.28 14.84 22.09 14.59 39.54 12.03 4.09 14.91 15.57 13.61"
+    },
+    {
+     "id": "eq-3-28",
+     "type": "equation",
+     "page": 5,
+     "original": "Vietnamese"
+    },
+    {
+     "id": "eq-3-29",
+     "type": "equation",
+     "page": 5,
+     "original": "14.65 16.71 27.28 12.33 32.24 13.15 60.43 11.53 0.16 14.57 14.57 14.43"
+    },
+    {
+     "id": "eq-3-30",
+     "type": "equation",
+     "page": 5,
+     "original": "AVERAGE"
+    },
+    {
+     "id": "eq-3-31",
+     "type": "equation",
+     "page": 5,
+     "original": "16.29 20.37 28.90 13.05 32.96 16.38 58.81 13.11 3.42 14.81 15.66 12.07"
+    },
+    {
+     "id": "p-3-8",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-3-8-1",
+       "original": "As shown in Table 2, VIBEVOICE-ASR consistently outperforms Gemini-2.5-Pro and Gemini3-Pro in terms of DER and tcpWER across all evaluated datasets, demonstrating substantially stronger speaker modeling and more accurate alignment of speaker turns over time.",
+       "zh": "如表 2 所示，VIBEVOICE-ASR 在所有评测数据集上的 DER 与 tcpWER 均持续优于 Gemini-2.5-Pro 与 Gemini-3-Pro，展现出强得多的说话人建模能力和更精确的说话人轮换时间对齐。"
       },
       {
-       "id": "s-3-7-2",
+       "id": "s-3-8-2",
        "original": "On the cpWER metric, which more directly reflects the model’s ability to maintain speaker consistency, our model 3https://github.com/fgnt/meeteval achieves the best performance on 11 out of 16 evaluation settings, significantly outperforming both Gemini variants and indicating more reliable speaker differentiation in multi-speaker conditions.",
-       "zh": "在 cpWER 这一更直接反映模型保持说话人一致性能力的指标上，我们的模型 3https://github.com/fgnt/meeteval 在 16 个评测设置中的 11 个上取得最佳性能，显著优于两个 Gemini 变体，表明其在多说话人条件下的说话人区分更可靠。"
+       "zh": "在 cpWER 这一更直接反映模型保持说话人一致性能力的指标上，我们的模型（脚注 3：https://github.com/fgnt/meeteval）在 16 个评测设置中的 11 个上取得最佳性能，显著优于两个 Gemini 变体，说明其在多说话人条件下有更可靠的说话人区分能力。"
       },
       {
-       "id": "s-3-7-3",
+       "id": "s-3-8-3",
        "original": "Regarding WER, our model attains the lowest error rate on 8 out of 16 settings, while exhibiting only marginal degradation on the remaining datasets.",
-       "zh": "就 WER 而言，我们的模型在 16 个设置中的 8 个上取得最低错误率，在其余数据集上仅有轻微退化。"
+       "zh": "WER 方面，我们的模型在 16 个设置中的 8 个上取得最低错误率，在其余数据集上仅有轻微退化。"
       },
       {
-       "id": "s-3-7-4",
+       "id": "s-3-8-4",
        "original": "Overall, these results indicate that VIBEVOICE- ASR achieves a better balance between content recognition accuracy and robust speaker-aware transcription, with particularly strong advantages in speaker attribution, temporal consistency, and multilingual generalization.",
-       "zh": "总体而言，这些结果表明 VIBEVOICE-ASR 在内容识别精度与鲁棒的说话人感知转录之间取得了更好的平衡，在说话人归属、时间一致性与多语言泛化上优势尤为突出。"
+       "zh": "总体而言，这些结果表明 VIBEVOICE-ASR 在内容识别准确率与鲁棒的说话人感知转写之间取得了更好的平衡，在说话人归属、时间一致性与多语种泛化上优势尤其明显。"
       }
      ]
     }
@@ -1089,15 +1375,7 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "[FCL+21] Yihui Fu, Luyao Cheng, Shubo Lv, Yukai Jv, Yuxiang Kong, Zhuo Chen, Yanxin Hu, Lei Xie, Jian Wu, Hui Bu, et al. Aishell-4: An open source dataset for speech enhancement, separation, recognition and speaker diarization in conference scenario. arXiv preprint [HSW+24] Haorui He, Zengqiang Shang, Chaoren Wang, Xuyuan Li, Yicheng Gu, Hua Hua, Liwei Liu, Chen Yang, Jiaqi Li, Peiyang Shi, et al. Emilia: An extensive, multilingual, and diverse speech dataset for large-scale speech generation."
-      },
-      {
-       "id": "s-references-7-2",
-       "original": "In 2024 IEEE Spoken Language Technology Workshop (SLT), pages 885–890."
-      },
-      {
-       "id": "s-references-7-3",
-       "original": "IEEE, 2024."
+       "original": "[FCL+21] Yihui Fu, Luyao Cheng, Shubo Lv, Yukai Jv, Yuxiang Kong, Zhuo Chen, Yanxin Hu, Lei Xie, Jian Wu, Hui Bu, et al. Aishell-4: An open source dataset for speech enhancement, separation, recognition and speaker diarization in conference scenario. arXiv preprint arXiv:2104.03603, 2021."
       }
      ]
     },
@@ -1108,7 +1386,15 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "[HSZ26] Mingyue Huo, Yiwen Shao, and Yuheng Zhang."
+       "original": "[HSW+24] Haorui He, Zengqiang Shang, Chaoren Wang, Xuyuan Li, Yicheng Gu, Hua Hua, Liwei Liu, Chen Yang, Jiaqi Li, Peiyang Shi, et al. Emilia: An extensive, multilingual, and diverse speech dataset for large-scale speech generation."
+      },
+      {
+       "id": "s-references-8-2",
+       "original": "In 2024 IEEE Spoken Language Technology Workshop (SLT), pages 885–890."
+      },
+      {
+       "id": "s-references-8-3",
+       "original": "IEEE, 2024."
       }
      ]
     },
@@ -1119,7 +1405,7 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "Tagspeech: End-to-end multispeaker asr and diarization with fine-grained temporal grounding."
+       "original": "[HSZ26] Mingyue Huo, Yiwen Shao, and Yuheng Zhang."
       }
      ]
     },
@@ -1130,19 +1416,7 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "arXiv preprint [JCX+26] Changhao Jiang, Jiahao Chen, Zhenghao Xiang, Zhixiong Yang, Hanchen Wang, Jiabao Zhuang, Xinmeng Che, Jiajun Sun, Hui Li, Yifei Cao, et al. Muse: Towards reproducible long-form song generation with fine-grained style control. arXiv preprint [KLZ+23] Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph E."
-      },
-      {
-       "id": "s-references-10-2",
-       "original": "Gonzalez, Hao Zhang, and Ion Stoica."
-      },
-      {
-       "id": "s-references-10-3",
-       "original": "Efficient memory management for large language model serving with pagedattention."
-      },
-      {
-       "id": "s-references-10-4",
-       "original": "In Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles, 2023."
+       "original": "Tagspeech: End-to-end multispeaker asr and diarization with fine-grained temporal grounding."
       }
      ]
     },
@@ -1153,7 +1427,7 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "[MGS+25] Bingshen Mu, Pengcheng Guo, Zhaokai Sun, Shuai Wang, Hexin Liu, Mingchen Shao, Lei Xie, Eng Siong Chng, Longshuai Xiao, Qiangze Feng, et al. Summary on the multilingual conversational speech language model challenge: Datasets, tasks, baselines, and methods. arXiv preprint arXiv:2509.13785, 2025."
+       "original": "arXiv preprint arXiv:2601.06896, 2026."
       }
      ]
     },
@@ -1164,7 +1438,7 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "[PYW+25] Zhiliang Peng, Jianwei Yu, Wenhui Wang, Yaoyao Chang, Yutao Sun, Li Dong, Yi Zhu, Weijiang Xu, Hangbo Bao, Zehua Wang, et al. Vibevoice technical report. arXiv preprint arXiv:2508.19205, 2025."
+       "original": "[JCX+26] Changhao Jiang, Jiahao Chen, Zhenghao Xiang, Zhixiong Yang, Hanchen Wang, Jiabao Zhuang, Xinmeng Che, Jiajun Sun, Hui Li, Yifei Cao, et al. Muse: Towards reproducible long-form song generation with fine-grained style control. arXiv preprint arXiv:2601.03973, 2026."
       }
      ]
     },
@@ -1175,19 +1449,19 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "[RKX+23] Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
+       "original": "[KLZ+23] Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph E."
       },
       {
        "id": "s-references-13-2",
-       "original": "Robust speech recognition via large-scale weak supervision."
+       "original": "Gonzalez, Hao Zhang, and Ion Stoica."
       },
       {
        "id": "s-references-13-3",
-       "original": "In International conference on machine learning, pages 28492–28518."
+       "original": "Efficient memory management for large language model serving with pagedattention."
       },
       {
        "id": "s-references-13-4",
-       "original": "PMLR, 2023."
+       "original": "In Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles, 2023."
       }
      ]
     },
@@ -1198,11 +1472,7 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "[SBW+24] Yutao Sun, Hangbo Bao, Wenhui Wang, Zhiliang Peng, Li Dong, Shaohan Huang, Jianyong Wang, and Furu Wei."
-      },
-      {
-       "id": "s-references-14-2",
-       "original": "Multimodal latent language modeling with next-token diffusion. arXiv preprint arXiv:2412.08635, 2024."
+       "original": "[MGS+25] Bingshen Mu, Pengcheng Guo, Zhaokai Sun, Shuai Wang, Hexin Liu, Mingchen Shao, Lei Xie, Eng Siong Chng, Longshuai Xiao, Qiangze Feng, et al. Summary on the multilingual conversational speech language model challenge: Datasets, tasks, baselines, and methods. arXiv preprint arXiv:2509.13785, 2025."
       }
      ]
     },
@@ -1213,7 +1483,7 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "[SFP+25] Aaditya Singh, Adam Fry, Adam Perelman, Adam Tart, Adi Ganesh, Ahmed El-Kishky, Aidan McLaughlin, Aiden Low, AJ Ostrow, Akhila Ananthram, et al. Openai gpt-5 system card. arXiv preprint arXiv:2601.03267, 2025."
+       "original": "[PYW+25] Zhiliang Peng, Jianwei Yu, Wenhui Wang, Yaoyao Chang, Yutao Sun, Li Dong, Yi Zhu, Weijiang Xu, Hangbo Bao, Zehua Wang, et al. Vibevoice technical report. arXiv preprint arXiv:2508.19205, 2025."
       }
      ]
     },
@@ -1224,11 +1494,19 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "[SXF+25] Mohan Shi, Xiong Xiao, Ruchao Fan, Shaoshi Ling, and Jinyu Li."
+       "original": "[RKX+23] Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
       },
       {
        "id": "s-references-16-2",
-       "original": "Train short, infer long: Speech-llm enables zero-shot streamable joint asr and diarization on long audio."
+       "original": "Robust speech recognition via large-scale weak supervision."
+      },
+      {
+       "id": "s-references-16-3",
+       "original": "In International conference on machine learning, pages 28492–28518."
+      },
+      {
+       "id": "s-references-16-4",
+       "original": "PMLR, 2023."
       }
      ]
     },
@@ -1239,7 +1517,11 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "arXiv preprint arXiv:2511.16046, 2025."
+       "original": "[SBW+24] Yutao Sun, Hangbo Bao, Wenhui Wang, Zhiliang Peng, Li Dong, Shaohan Huang, Jianyong Wang, and Furu Wei."
+      },
+      {
+       "id": "s-references-17-2",
+       "original": "Multimodal latent language modeling with next-token diffusion. arXiv preprint arXiv:2412.08635, 2024."
       }
      ]
     },
@@ -1250,19 +1532,7 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "[WLW+23] Hongji Wang, Chengdong Liang, Shuai Wang, Zhengyang Chen, Binbin Zhang, Xu Xiang, Yanlei Deng, and Yanmin Qian."
-      },
-      {
-       "id": "s-references-18-2",
-       "original": "Wespeaker: A research and production oriented speaker embedding learning toolkit."
-      },
-      {
-       "id": "s-references-18-3",
-       "original": "In ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1–5."
-      },
-      {
-       "id": "s-references-18-4",
-       "original": "IEEE, 2023."
+       "original": "[SFP+25] Aaditya Singh, Adam Fry, Adam Perelman, Adam Tart, Adi Ganesh, Ahmed El-Kishky, Aidan McLaughlin, Aiden Low, AJ Ostrow, Akhila Ananthram, et al. Openai gpt-5 system card. arXiv preprint arXiv:2601.03267, 2025."
       }
      ]
     },
@@ -1273,68 +1543,68 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "[XJM+23] Hainan Xu, Fei Jia, Somshubra Majumdar, He Huang, Shinji Watanabe, and Boris Ginsburg."
+       "original": "[SXF+25] Mohan Shi, Xiong Xiao, Ruchao Fan, Shaoshi Ling, and Jinyu Li."
       },
       {
        "id": "s-references-19-2",
-       "original": "Efficient sequence transduction by jointly predicting tokens and durations."
-      },
-      {
-       "id": "s-references-19-3",
-       "original": "In International Conference on Machine Learning, pages 38462–38484."
-      },
-      {
-       "id": "s-references-19-4",
-       "original": "PMLR, 2023."
+       "original": "Train short, infer long: Speech-llm enables zero-shot streamable joint asr and diarization on long audio."
       }
      ]
     },
     {
      "id": "p-references-20",
      "type": "paragraph",
-     "page": 8,
+     "page": 7,
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "[YCB+24] Jianwei Yu, Hangting Chen, Yanyao Bian, Xiang Li, Yi Luo, Jinchuan Tian, Mengyang Liu, Jiayi Jiang, and Shuai Wang."
-      },
-      {
-       "id": "s-references-20-2",
-       "original": "Autoprep: An automatic preprocessing framework for in-the-wild speech data."
-      },
-      {
-       "id": "s-references-20-3",
-       "original": "In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1136–1140."
-      },
-      {
-       "id": "s-references-20-4",
-       "original": "IEEE, 2024."
+       "original": "arXiv preprint arXiv:2511.16046, 2025."
       }
      ]
     },
     {
      "id": "p-references-21",
      "type": "paragraph",
-     "page": 8,
+     "page": 7,
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "[YCD+25] Han Yin, Yafeng Chen, Chong Deng, Luyao Cheng, Hui Wang, Chao-Hong Tan, Qian Chen, Wen Wang, and Xiangang Li."
+       "original": "[WLW+23] Hongji Wang, Chengdong Liang, Shuai Wang, Zhengyang Chen, Binbin Zhang, Xu Xiang, Yanlei Deng, and Yanmin Qian."
       },
       {
        "id": "s-references-21-2",
-       "original": "Speakerlm: End-to-end versatile speaker diarization and recognition with multimodal large language models. arXiv preprint [YLY+26] Donghua Yu, Zhengyuan Lin, Chen Yang, Yiyang Zhang, Zhaoye Fei, Hanfu Chen, Jingqi Chen, Ke Chen, Qinyuan Cheng, Liwei Fan, et al. Moss transcribe diarize: Accurate transcription with speaker diarization. arXiv preprint arXiv:2601.01554, 2026."
+       "original": "Wespeaker: A research and production oriented speaker embedding learning toolkit."
+      },
+      {
+       "id": "s-references-21-3",
+       "original": "In ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1–5."
+      },
+      {
+       "id": "s-references-21-4",
+       "original": "IEEE, 2023."
       }
      ]
     },
     {
      "id": "p-references-22",
      "type": "paragraph",
-     "page": 8,
+     "page": 7,
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "[YYZ+24] An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, et al. Qwen2. 5 technical report. arXiv preprint arXiv:2412.15115, 2024."
+       "original": "[XJM+23] Hainan Xu, Fei Jia, Somshubra Majumdar, He Huang, Shinji Watanabe, and Boris Ginsburg."
+      },
+      {
+       "id": "s-references-22-2",
+       "original": "Efficient sequence transduction by jointly predicting tokens and durations."
+      },
+      {
+       "id": "s-references-22-3",
+       "original": "In International Conference on Machine Learning, pages 38462–38484."
+      },
+      {
+       "id": "s-references-22-4",
+       "original": "PMLR, 2023."
       }
      ]
     },
@@ -1345,11 +1615,19 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "[YZF+22] Fan Yu, Shiliang Zhang, Yihui Fu, Lei Xie, Siqi Zheng, Zhihao Du, Weilong Huang, Pengcheng Guo, Zhijie Yan, Bin Ma, et al. M2met: The icassp 2022 multi-channel multi-party meeting transcription challenge."
+       "original": "[YCB+24] Jianwei Yu, Hangting Chen, Yanyao Bian, Xiang Li, Yi Luo, Jinchuan Tian, Mengyang Liu, Jiayi Jiang, and Shuai Wang."
       },
       {
        "id": "s-references-23-2",
-       "original": "In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6167–6171."
+       "original": "Autoprep: An automatic preprocessing framework for in-the-wild speech data."
+      },
+      {
+       "id": "s-references-23-3",
+       "original": "In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1136–1140."
+      },
+      {
+       "id": "s-references-23-4",
+       "original": "IEEE, 2024."
       }
      ]
     },
@@ -1360,19 +1638,494 @@ globalThis.PAPER_2601_18184 = {
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "IEEE, 2022."
+       "original": "[YCD+25] Han Yin, Yafeng Chen, Chong Deng, Luyao Cheng, Hui Wang, Chao-Hong Tan, Qian Chen, Wen Wang, and Xiangang Li."
       },
       {
        "id": "s-references-24-2",
-       "original": "Language Distribution of Training Data Spanish Portuguese German Japanese Korean French Russian Indonesian Swedish Italian Hebrew Dutch Polish Norwegian Turkish Thai Arabic Hungarian Catalan Czech Danish Persian Afrikaans Hindi Finnish Estonian Afar Greek Romanian Vietnamese Bulgarian Icelandic Slovenian Slovak Lithuanian Swahili Ukrainian Kalaallisut Latvian Croatian Nepali Serbian Filipino Yiddish Malay Urdu Mongolian Armenian Javanese 10 2 10 1 100 101 102 Percentage (%)"
+       "original": "Speakerlm: End-to-end versatile speaker diarization and recognition with multimodal large language models. arXiv preprint arXiv:2508.06372, 2025."
       }
      ]
     },
     {
-     "id": "fig-references-1",
+     "id": "p-references-25",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-references-25-1",
+       "original": "[YLY+26] Donghua Yu, Zhengyuan Lin, Chen Yang, Yiyang Zhang, Zhaoye Fei, Hanfu Chen, Jingqi Chen, Ke Chen, Qinyuan Cheng, Liwei Fan, et al. Moss transcribe diarize: Accurate transcription with speaker diarization. arXiv preprint arXiv:2601.01554, 2026."
+      }
+     ]
+    },
+    {
+     "id": "p-references-26",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-references-26-1",
+       "original": "[YYZ+24] An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, et al. Qwen2. 5 technical report. arXiv preprint arXiv:2412.15115, 2024."
+      }
+     ]
+    },
+    {
+     "id": "p-references-27",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-references-27-1",
+       "original": "[YZF+22] Fan Yu, Shiliang Zhang, Yihui Fu, Lei Xie, Siqi Zheng, Zhihao Du, Weilong Huang, Pengcheng Guo, Zhijie Yan, Bin Ma, et al. M2met: The icassp 2022 multi-channel multi-party meeting transcription challenge."
+      },
+      {
+       "id": "s-references-27-2",
+       "original": "In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6167–6171."
+      }
+     ]
+    },
+    {
+     "id": "p-references-28",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-references-28-1",
+       "original": "IEEE, 2022."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-A",
+   "num": "A",
+   "level": 1,
+   "page": 9,
+   "title": {
+    "original": "Language Distribution of Training Data",
+    "zh": "Language Distribution of Training Data"
+   },
+   "blocks": [
+    {
+     "id": "p-A-1",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-A-1-1",
+       "original": "English Chinese Spanish Portuguese German Japanese Korean French Russian Indonesian Swedish Italian Hebrew Dutch Polish Norwegian Turkish Thai Arabic",
+       "zh": "（附录 A 语种清单：English / Chinese / Spanish / Portuguese / German / Japanese / Korean / French / Russian / Indonesian / Swedish / Italian / Hebrew / Dutch / Polish / Norwegian / Turkish / Thai / Arabic（占比降序，完整清单与数值见下表）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-1",
+     "type": "equation",
+     "page": 9,
+     "original": "0.181721%"
+    },
+    {
+     "id": "eq-A-2",
+     "type": "equation",
+     "page": 9,
+     "original": "Hungarian"
+    },
+    {
+     "id": "eq-A-3",
+     "type": "equation",
+     "page": 9,
+     "original": "0.175694%"
+    },
+    {
+     "id": "eq-A-4",
+     "type": "equation",
+     "page": 9,
+     "original": "Catalan"
+    },
+    {
+     "id": "eq-A-5",
+     "type": "equation",
+     "page": 9,
+     "original": "0.144024%"
+    },
+    {
+     "id": "eq-A-6",
+     "type": "equation",
+     "page": 9,
+     "original": "Czech"
+    },
+    {
+     "id": "eq-A-7",
+     "type": "equation",
+     "page": 9,
+     "original": "0.135779%"
+    },
+    {
+     "id": "eq-A-8",
+     "type": "equation",
+     "page": 9,
+     "original": "Danish"
+    },
+    {
+     "id": "eq-A-9",
+     "type": "equation",
+     "page": 9,
+     "original": "0.115226%"
+    },
+    {
+     "id": "eq-A-10",
+     "type": "equation",
+     "page": 9,
+     "original": "Persian"
+    },
+    {
+     "id": "eq-A-11",
+     "type": "equation",
+     "page": 9,
+     "original": "0.100209%"
+    },
+    {
+     "id": "eq-A-12",
+     "type": "equation",
+     "page": 9,
+     "original": "Afrikaans"
+    },
+    {
+     "id": "eq-A-13",
+     "type": "equation",
+     "page": 9,
+     "original": "0.098980%"
+    },
+    {
+     "id": "eq-A-14",
+     "type": "equation",
+     "page": 9,
+     "original": "Hindi"
+    },
+    {
+     "id": "eq-A-15",
+     "type": "equation",
+     "page": 9,
+     "original": "0.093302%"
+    },
+    {
+     "id": "eq-A-16",
+     "type": "equation",
+     "page": 9,
+     "original": "Finnish"
+    },
+    {
+     "id": "eq-A-17",
+     "type": "equation",
+     "page": 9,
+     "original": "0.065677%"
+    },
+    {
+     "id": "eq-A-18",
+     "type": "equation",
+     "page": 9,
+     "original": "Estonian"
+    },
+    {
+     "id": "eq-A-19",
+     "type": "equation",
+     "page": 9,
+     "original": "0.065011%"
+    },
+    {
+     "id": "eq-A-20",
+     "type": "equation",
+     "page": 9,
+     "original": "Afar"
+    },
+    {
+     "id": "eq-A-21",
+     "type": "equation",
+     "page": 9,
+     "original": "0.063801%"
+    },
+    {
+     "id": "eq-A-22",
+     "type": "equation",
+     "page": 9,
+     "original": "Greek"
+    },
+    {
+     "id": "eq-A-23",
+     "type": "equation",
+     "page": 9,
+     "original": "0.063136%"
+    },
+    {
+     "id": "eq-A-24",
+     "type": "equation",
+     "page": 9,
+     "original": "Romanian"
+    },
+    {
+     "id": "eq-A-25",
+     "type": "equation",
+     "page": 9,
+     "original": "0.056151%"
+    },
+    {
+     "id": "eq-A-26",
+     "type": "equation",
+     "page": 9,
+     "original": "Vietnamese"
+    },
+    {
+     "id": "eq-A-27",
+     "type": "equation",
+     "page": 9,
+     "original": "0.056144%"
+    },
+    {
+     "id": "eq-A-28",
+     "type": "equation",
+     "page": 9,
+     "original": "Bulgarian"
+    },
+    {
+     "id": "eq-A-29",
+     "type": "equation",
+     "page": 9,
+     "original": "0.044601%"
+    },
+    {
+     "id": "eq-A-30",
+     "type": "equation",
+     "page": 9,
+     "original": "Icelandic"
+    },
+    {
+     "id": "eq-A-31",
+     "type": "equation",
+     "page": 9,
+     "original": "0.042502%"
+    },
+    {
+     "id": "eq-A-32",
+     "type": "equation",
+     "page": 9,
+     "original": "Slovenian"
+    },
+    {
+     "id": "eq-A-33",
+     "type": "equation",
+     "page": 9,
+     "original": "0.040306%"
+    },
+    {
+     "id": "eq-A-34",
+     "type": "equation",
+     "page": 9,
+     "original": "Slovak"
+    },
+    {
+     "id": "eq-A-35",
+     "type": "equation",
+     "page": 9,
+     "original": "0.039944%"
+    },
+    {
+     "id": "eq-A-36",
+     "type": "equation",
+     "page": 9,
+     "original": "Lithuanian"
+    },
+    {
+     "id": "eq-A-37",
+     "type": "equation",
+     "page": 9,
+     "original": "0.025635%"
+    },
+    {
+     "id": "eq-A-38",
+     "type": "equation",
+     "page": 9,
+     "original": "Swahili"
+    },
+    {
+     "id": "eq-A-39",
+     "type": "equation",
+     "page": 9,
+     "original": "0.023807%"
+    },
+    {
+     "id": "eq-A-40",
+     "type": "equation",
+     "page": 9,
+     "original": "Ukrainian"
+    },
+    {
+     "id": "eq-A-41",
+     "type": "equation",
+     "page": 9,
+     "original": "0.015401%"
+    },
+    {
+     "id": "eq-A-42",
+     "type": "equation",
+     "page": 9,
+     "original": "Kalaallisut"
+    },
+    {
+     "id": "eq-A-43",
+     "type": "equation",
+     "page": 9,
+     "original": "0.012667%"
+    },
+    {
+     "id": "eq-A-44",
+     "type": "equation",
+     "page": 9,
+     "original": "Latvian"
+    },
+    {
+     "id": "eq-A-45",
+     "type": "equation",
+     "page": 9,
+     "original": "0.012208%"
+    },
+    {
+     "id": "eq-A-46",
+     "type": "equation",
+     "page": 9,
+     "original": "Croatian"
+    },
+    {
+     "id": "eq-A-47",
+     "type": "equation",
+     "page": 9,
+     "original": "0.011705%"
+    },
+    {
+     "id": "eq-A-48",
+     "type": "equation",
+     "page": 9,
+     "original": "Nepali"
+    },
+    {
+     "id": "eq-A-49",
+     "type": "equation",
+     "page": 9,
+     "original": "0.010376%"
+    },
+    {
+     "id": "eq-A-50",
+     "type": "equation",
+     "page": 9,
+     "original": "Serbian"
+    },
+    {
+     "id": "eq-A-51",
+     "type": "equation",
+     "page": 9,
+     "original": "0.009273%"
+    },
+    {
+     "id": "eq-A-52",
+     "type": "equation",
+     "page": 9,
+     "original": "Filipino"
+    },
+    {
+     "id": "eq-A-53",
+     "type": "equation",
+     "page": 9,
+     "original": "0.008435%"
+    },
+    {
+     "id": "eq-A-54",
+     "type": "equation",
+     "page": 9,
+     "original": "Yiddish"
+    },
+    {
+     "id": "eq-A-55",
+     "type": "equation",
+     "page": 9,
+     "original": "0.007840%"
+    },
+    {
+     "id": "eq-A-56",
+     "type": "equation",
+     "page": 9,
+     "original": "Malay"
+    },
+    {
+     "id": "eq-A-57",
+     "type": "equation",
+     "page": 9,
+     "original": "0.005445%"
+    },
+    {
+     "id": "eq-A-58",
+     "type": "equation",
+     "page": 9,
+     "original": "Urdu"
+    },
+    {
+     "id": "eq-A-59",
+     "type": "equation",
+     "page": 9,
+     "original": "0.004618%"
+    },
+    {
+     "id": "eq-A-60",
+     "type": "equation",
+     "page": 9,
+     "original": "Mongolian"
+    },
+    {
+     "id": "eq-A-61",
+     "type": "equation",
+     "page": 9,
+     "original": "0.003093%"
+    },
+    {
+     "id": "eq-A-62",
+     "type": "equation",
+     "page": 9,
+     "original": "Armenian"
+    },
+    {
+     "id": "eq-A-63",
+     "type": "equation",
+     "page": 9,
+     "original": "0.002467%"
+    },
+    {
+     "id": "eq-A-64",
+     "type": "equation",
+     "page": 9,
+     "original": "Javanese"
+    },
+    {
+     "id": "eq-A-65",
+     "type": "equation",
+     "page": 9,
+     "original": "66.651067% 14.388077% 6.281633% 2.377301% 1.852176% 0.953292% 0.912063% 0.898955% 0.691947% 0.575294% 0.508351% 0.447609% 0.391830% 0.275293% 0.254292% 0.210149% 0.206286% 0.197261% 0.191945% 10 2 10 1 100 101 102"
+    },
+    {
+     "id": "p-A-2",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-A-2-1",
+       "original": "Percentage (%)",
+       "zh": "（图 3 纵轴：占比 Percentage (%)。）"
+      }
+     ]
+    },
+    {
+     "id": "fig-A-1",
      "type": "figure_caption",
      "page": 9,
-     "original": "Figure 3: Language distribution in the training data."
+     "original": "Figure 3: Language distribution in the training data.",
+     "zh": "图 3：训练数据的语种分布。"
     }
    ]
   }
@@ -1489,17 +2242,6 @@ globalThis.PAPER_2601_18184 = {
    "featured": true
   },
   {
-   "id": "ann-011",
-   "anchor": {
-    "sentence_id": "s-2-3-1-4-1",
-    "quote": "progressively increasing from 8,192 to 65,536 tokens"
-   },
-   "kind": "engineering",
-   "title": "8K 到 65K 的课程学习",
-   "explanation": "LLM 输入长度从 8,192 逐步拉到 65,536 token，这是长上下文训练的标准省钱做法：先用短序列把任务学稳，再逐步拉长让位置编码与注意力适应。65,536 这个终点正好覆盖 60 分钟音频所需的约 27,000 声学 token，加上文本提示与输出流仍有富余。直接 65K 起步不仅显存开销翻倍以上，收敛也更不稳，课程式拉长是工程上的必然选择。",
-   "featured": false
-  },
-  {
    "id": "ann-012",
    "anchor": {
     "sentence_id": "s-context-aware-synthetic-data-pip-2-1",
@@ -1522,17 +2264,6 @@ globalThis.PAPER_2601_18184 = {
    "featured": true
   },
   {
-   "id": "ann-014",
-   "anchor": {
-    "sentence_id": "s-long-form-transcription-restorat-3-2",
-    "quote": "sampling weights for Standard Benchmarks, Music Data, Synthetic Data, and Refined Long-Form Data are set to 0.5 : 0.1 : 0.1 : 0.3"
-   },
-   "kind": "number",
-   "title": "0.5:0.1:0.1:0.3 的配比",
-   "explanation": "SFT 采样权重里精修长文本占 0.3，仅次于标准基准的 0.5，说明作者把长文本连贯性当作与基础识别几乎同等重要的能力来塑造。音乐与上下文合成数据各占 0.1 是锦上添花但不喧宾夺主。这个配比没有任何消融支撑，纯经验设定，但对复现者是最重要的超参之一——长文本比例过低，端到端 60 分钟优势立不住；过高则短音频精度受损。",
-   "featured": false
-  },
-  {
    "id": "ann-015",
    "anchor": {
     "sentence_id": "s-3-5-1",
@@ -1552,17 +2283,6 @@ globalThis.PAPER_2601_18184 = {
    "kind": "critique",
    "title": "基线被切 240 秒",
    "explanation": "作者观察到 Gemini 直接吃长音频会时间戳漂移、产生幻觉，于是把测试音频切成 240 秒片段再喂给基线，而自家模型单趟跑全程。这被描述为「公平且稳定」，但实质是把 Gemini 降级成一个分段模型再对比——恰恰复现了本文批判的级联病。DER 16.29% 对 3.42% 的悬殊差距里，有多少是模型能力、多少是评测协议造成的，读者需自行掂量。",
-   "featured": true
-  },
-  {
-   "id": "ann-017",
-   "anchor": {
-    "sentence_id": "s-3-7-2",
-    "quote": "achieves the best performance on 11 out of 16 evaluation settings"
-   },
-   "kind": "number",
-   "title": "16 项里赢 11 项",
-   "explanation": "cpWER 上 16 个设置拿下 11 个最优，WER 只拿 8 个，这个组合很说明问题：VIBEVOICE-ASR 的绝对优势在说话人一致性，而非纯转写精度。纯 WER 上与 Gemini 互有胜负，意味着如果任务只要文字不要说话人，这套方案未必划算。另外所有多语言测试集都是单语言会话，并没有专门构造的中英夹杂长会议基准来直接验证其主打的语码混合长音频场景，这是评测覆盖上的一个空档。",
    "featured": true
   },
   {

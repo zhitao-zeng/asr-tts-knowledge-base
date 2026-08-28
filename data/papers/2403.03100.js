@@ -139,8 +139,86 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-abstract-4-1",
-       "original": "Prosody Diffusion Duration Diffusion Codec Encoder Phoneme Encoder Speech 𝒙 Text 𝒚 (b) Data Scaling 0.76 4.0 Sim-O WER 0.72 3.5 Sim-O WER 0.68 3.0 0.64 2.5 0.60 2.0 Training hours Model Scaling 0.80 2.5 Sim-O WER 0.78 2.3 0.76 2.1 Sim-O WER 0.74 1.9 0.72 1.7 0.70 1.5 500M 1B Model sizes",
-       "zh": "（此为图 1(b) 的坐标轴标注抽取碎块）韵律扩散 时长扩散 Codec 编码器 音素编码器 语音 x 文本 y；(b) 数据缩放：横轴为训练小时数，Sim-O 轴刻度 0.60、0.64、0.68、0.72、0.76，WER 轴刻度 2.0、2.5、3.0、3.5、4.0；模型缩放：横轴为模型规模 500M 与 1B，Sim-O 轴刻度 0.70、0.72、0.74、0.76、0.78、0.80，WER 轴刻度 1.5、1.7、1.9、2.1、2.3、2.5。"
+       "original": "Prosody Diffusion Duration Diffusion Codec Encoder Phoneme Encoder Speech 𝒙 Text 𝒚 (b) Data Scaling",
+       "zh": "（图 1 标签：Prosody Diffusion / Duration Diffusion / Codec Encoder / Phoneme Encoder；输入 Speech 𝒙 与 Text 𝒚；(b) Data Scaling。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-abstract-4",
+     "type": "equation",
+     "page": 1,
+     "original": "0.76 4.0"
+    },
+    {
+     "id": "eq-abstract-5",
+     "type": "equation",
+     "page": 1,
+     "original": "Sim-O WER"
+    },
+    {
+     "id": "eq-abstract-6",
+     "type": "equation",
+     "page": 1,
+     "original": "0.72 3.5"
+    },
+    {
+     "id": "eq-abstract-7",
+     "type": "equation",
+     "page": 1,
+     "original": "Sim-O WER"
+    },
+    {
+     "id": "eq-abstract-8",
+     "type": "equation",
+     "page": 1,
+     "original": "0.68 3.0 0.64 2.5 0.60 2.0"
+    },
+    {
+     "id": "eq-abstract-9",
+     "type": "equation",
+     "page": 1,
+     "original": "1K 60K 200K Training hours Model Scaling"
+    },
+    {
+     "id": "eq-abstract-10",
+     "type": "equation",
+     "page": 1,
+     "original": "0.80 2.5"
+    },
+    {
+     "id": "eq-abstract-11",
+     "type": "equation",
+     "page": 1,
+     "original": "Sim-O WER"
+    },
+    {
+     "id": "eq-abstract-12",
+     "type": "equation",
+     "page": 1,
+     "original": "0.78 2.3 0.76 2.1"
+    },
+    {
+     "id": "eq-abstract-13",
+     "type": "equation",
+     "page": 1,
+     "original": "Sim-O WER"
+    },
+    {
+     "id": "eq-abstract-14",
+     "type": "equation",
+     "page": 1,
+     "original": "0.74 1.9 0.72 1.7 0.70 1.5"
+    },
+    {
+     "id": "p-abstract-5",
+     "type": "paragraph",
+     "page": 1,
+     "sentences": [
+      {
+       "id": "s-abstract-5-1",
+       "original": "500M 1B Model sizes",
+       "zh": "（图 1(b) 横轴：模型规模 500M / 1B。）"
       }
      ]
     },
@@ -152,22 +230,22 @@ globalThis.PAPER_2403_03100 = {
      "zh": "图 1：(a) 系统总览，包含用于语音属性分解的神经语音 codec 和一个分解扩散模型。(b) 系统的数据缩放与模型缩放。"
     },
     {
-     "id": "p-abstract-5",
+     "id": "p-abstract-6",
      "type": "paragraph",
      "page": 1,
      "sentences": [
       {
-       "id": "s-abstract-5-1",
+       "id": "s-abstract-6-1",
        "original": "∗The first four authors contributed equally to this work, and their names are listed in random order.",
        "zh": "∗前四位作者对本文贡献相同，姓名按随机顺序排列。"
       },
       {
-       "id": "s-abstract-5-2",
+       "id": "s-abstract-6-2",
        "original": "Corresponding author: Xu Tan, xuta@microsoft.com Preprint.",
        "zh": "通讯作者：Xu Tan，xuta@microsoft.com。预印本。"
       },
       {
-       "id": "s-abstract-5-3",
+       "id": "s-abstract-6-3",
        "original": "Work in progress.",
        "zh": "工作仍在进行中。"
       }
@@ -496,12 +574,12 @@ globalThis.PAPER_2403_03100 = {
   },
   {
    "id": "sec-3",
-   "num": null,
+   "num": "3",
    "level": 1,
    "page": 3,
    "title": {
-    "original": "3",
-    "zh": "NaturalSpeech 3 方法"
+    "original": "NaturalSpeech 3",
+    "zh": "NaturalSpeech 3"
    },
    "blocks": []
   },
@@ -628,7 +706,25 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-3-1-5-1",
-       "original": "Speaker Timbre Extractor 𝒉𝒕 Conditional Layer Norm",
+       "original": "Speaker Timbre Extractor",
+       "zh": "（此为图 2 的标注抽取碎块）：说话人音色提取器 音色嵌入 ht 条件层归一化（Conditional Layer Norm）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-1-4",
+     "type": "equation",
+     "page": 4,
+     "original": "𝒉𝒕"
+    },
+    {
+     "id": "p-3-1-6",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-3-1-6-1",
+       "original": "Conditional Layer Norm",
        "zh": "（此为图 2 的标注抽取碎块）：说话人音色提取器 音色嵌入 ht 条件层归一化（Conditional Layer Norm）。"
       }
      ]
@@ -829,8 +925,8 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-3-2-2-5-1",
-       "original": "Prompt Token IC In-Context Learning Prosody/Content/Detail Codes 𝒛𝒑/𝒄/𝒅 Unmask Token 𝒛𝒑 Conditioning Mask Token Factorized Diffusion IC Prosody Diffusion Duration Diffusion Phoneme Encoder Length Regulator Forward Text Reverse Reverse Prosody Target Duration Target Prosody Prompt Duration Prompt",
-       "zh": "（此为图 3 的标注抽取碎块）：提示 token、IC 上下文学习（In-Context Learning）、韵律/内容/细节编码 zp/c/d、Unmask token、zp 条件化、Mask token、分解扩散、IC、韵律扩散、时长扩散、音素编码器、长度调节器、前向、文本、反向、反向、韵律目标、时长目标、韵律提示、时长提示。"
+       "original": "Prompt Token IC In-Context Learning Prosody/Content/Detail Codes",
+       "zh": "韵律/内容/细节编码（Prosody/Content/Detail Codes）"
       }
      ]
     },
@@ -838,7 +934,19 @@ globalThis.PAPER_2403_03100 = {
      "id": "eq-3-2-2-1",
      "type": "equation",
      "page": 5,
-     "original": "𝒛𝒄 𝒛𝒅"
+     "original": "𝒛𝒑/𝒄/𝒅"
+    },
+    {
+     "id": "eq-3-2-2-2",
+     "type": "equation",
+     "page": 5,
+     "original": "Unmask Token"
+    },
+    {
+     "id": "eq-3-2-2-3",
+     "type": "equation",
+     "page": 5,
+     "original": "𝒛𝒑"
     },
     {
      "id": "p-3-2-2-6",
@@ -847,7 +955,127 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-3-2-2-6-1",
-       "original": "Detail Diffusion Content Diffusion Forward Forward Forward Reverse Reverse Detail Target Content Target Detail Prompt Content Prompt",
+       "original": "Conditioning cond Mask Token Factorized Diffusion IC Prosody Diffusion Duration Diffusion Phoneme Encoder Length Regulator cond cond",
+       "zh": "韵律/内容/细节编码（Prosody/Content/Detail Codes）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-2-4",
+     "type": "equation",
+     "page": 5,
+     "original": ". . . . . ."
+    },
+    {
+     "id": "eq-3-2-2-5",
+     "type": "equation",
+     "page": 5,
+     "original": ". . . . . ."
+    },
+    {
+     "id": "p-3-2-2-7",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-3-2-2-7-1",
+       "original": "Forward Text Reverse Reverse",
+       "zh": "（图内标签：Forward / Text / Reverse / Reverse。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-2-6",
+     "type": "equation",
+     "page": 5,
+     "original": ". . . . . ."
+    },
+    {
+     "id": "eq-3-2-2-7",
+     "type": "equation",
+     "page": 5,
+     "original": ". . . . . ."
+    },
+    {
+     "id": "p-3-2-2-8",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-3-2-2-8-1",
+       "original": "Prosody Target Duration Target Prosody Prompt Duration Prompt",
+       "zh": "（此为图 3 的标注抽取碎块）：提示 token、IC 上下文学习（In-Context Learning）、韵律/内容/细节编码 zp/c/d、Unmask token、zp 条件化、Mask token、分解扩散、IC、韵律扩散、时长扩散、音素编码器、长度调节器、前向、文本、反向、反向、韵律目标、时长目标、韵律提示、时长提示。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-2-8",
+     "type": "equation",
+     "page": 5,
+     "original": "𝒛𝒄 𝒛𝒅"
+    },
+    {
+     "id": "p-3-2-2-9",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-3-2-2-9-1",
+       "original": "Detail Diffusion Content Diffusion",
+       "zh": "音色嵌入 语音 x IC 分解扩散 Codec 解码器 细节扩散 内容扩散"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-2-9",
+     "type": "equation",
+     "page": 5,
+     "original": ". . . . . ."
+    },
+    {
+     "id": "eq-3-2-2-10",
+     "type": "equation",
+     "page": 5,
+     "original": "cond cond"
+    },
+    {
+     "id": "eq-3-2-2-11",
+     "type": "equation",
+     "page": 5,
+     "original": ". . . . . ."
+    },
+    {
+     "id": "p-3-2-2-10",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-3-2-2-10-1",
+       "original": "Forward Forward Forward Reverse Reverse",
+       "zh": "（图内标签：Forward / Forward / Forward / Reverse / Reverse。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-2-12",
+     "type": "equation",
+     "page": 5,
+     "original": ". . . . . ."
+    },
+    {
+     "id": "eq-3-2-2-13",
+     "type": "equation",
+     "page": 5,
+     "original": ". . . . . ."
+    },
+    {
+     "id": "p-3-2-2-11",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-3-2-2-11-1",
+       "original": "Detail Target Content Target Detail Prompt Content Prompt",
        "zh": "（此为图 3 的标注抽取碎块）：细节扩散、内容扩散、前向、前向、前向、反向、反向、细节目标、内容目标、细节提示、内容提示。"
       }
      ]
@@ -860,49 +1088,49 @@ globalThis.PAPER_2403_03100 = {
      "zh": "图 3：分解扩散模型的框架，包含：1）音素编码器；2）时长扩散与长度调节器；3）韵律扩散；4）内容扩散；5）细节（声学细节）扩散。注意模块 2–5 共享同一种扩散建模形式。"
     },
     {
-     "id": "p-3-2-2-7",
+     "id": "p-3-2-2-12",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-3-2-2-7-1",
+       "id": "s-3-2-2-12-1",
        "original": "(GRL) [48] to eliminate undesired information in latent space.",
        "zh": "（GRL）[48]，用以消除隐空间中不该存在的信息。"
       },
       {
-       "id": "s-3-2-2-7-2",
+       "id": "s-3-2-2-12-2",
        "original": "Specifically, for prosody, we apply phoneme-GRL (i.e., GRL layer by predicting phoneme labels) to eliminate content information; for content, since the pitch is an important aspect of prosody, we apply F0-GRL to reduce the prosody information for simplicity; for acoustic details, we apply both phoneme-GRL and F0-GRL to eliminate both content and prosody information.",
        "zh": "具体来说：对于韵律，我们施加音素 GRL（即通过预测音素标签的 GRL 层）来消除内容信息；对于内容，由于音高是韵律的重要方面，为简单起见我们施加 F0-GRL 来减少韵律信息；对于声学细节，我们同时施加音素 GRL 与 F0-GRL，以消除内容与韵律信息。"
       },
       {
-       "id": "s-3-2-2-7-3",
+       "id": "s-3-2-2-12-3",
        "original": "In addition, we apply speaker-GRL on the sum of zp, zc, zd to eliminate timbre.",
        "zh": "此外，我们在 zp、zc、zd 三者之和上施加说话人 GRL，以消除音色。"
       }
      ]
     },
     {
-     "id": "p-3-2-2-8",
+     "id": "p-3-2-2-13",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-3-2-2-8-1",
+       "id": "s-3-2-2-13-1",
        "original": "Detail Dropout.",
        "zh": "细节 dropout。"
       },
       {
-       "id": "s-3-2-2-8-2",
+       "id": "s-3-2-2-13-2",
        "original": "We have the following considerations: 1) empirically, we find that the codec tends to preserve undesired information (e.g., content, prosody) in acoustic details subspace since there is no supervision; 2) intuitively, without acoustic details, the decoder should reconstruct speech only with prosody, content and timbre, although in low-quality.",
        "zh": "我们有如下考虑：1）经验上，我们发现 codec 倾向于在声学细节子空间中保留不该有的信息（如内容、韵律），因为该子空间没有监督；2）直觉上，即使没有声学细节，解码器也应当仅凭韵律、内容和音色重构出语音——尽管质量较低。"
       },
       {
-       "id": "s-3-2-2-8-3",
+       "id": "s-3-2-2-13-3",
        "original": "Motivated by them, we design the detail dropout by randomly masking out zd during the training process with probability p.",
        "zh": "受此启发，我们设计了细节 dropout：训练时以概率 p 随机屏蔽 zd。"
       },
       {
-       "id": "s-3-2-2-8-4",
+       "id": "s-3-2-2-13-4",
        "original": "With detail dropout, we achieve the trade-off of disentanglement and reconstruction quality: 1) the codec can fully utilize the prosody, content and timbre information to reconstruct the speech to ensure the decouple ability, although in low-quality; 2) we can obtain high-quality speech when the acoustic details are given.",
        "zh": "借助细节 dropout，我们在解耦与重构质量之间取得折中：1）codec 能充分利用韵律、内容和音色信息来重构语音以保证解耦能力，尽管此时质量较低；2）当给定声学细节时，我们又能获得高质量语音。"
       }
@@ -1102,10 +1330,16 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-3-3-2-4-1",
-       "original": "Then we can get the reverse transition distribution: p(Xt−∆t|Xt, Xp, C) = E ˆ X0∼pθ(X0|Xt,Xp,C) q(Xt−∆t| ˆX0, Xt).",
+       "original": "Then we can get the reverse transition distribution: p(Xt−∆t|Xt, Xp, C) = E",
        "zh": "于是可以得到反向转移分布：p(Xt−∆t|Xt, Xp, C) = E ˆ X0∼pθ(X0|Xt,Xp,C) q(Xt−∆t| ˆX0, Xt)。"
       }
      ]
+    },
+    {
+     "id": "eq-3-3-2-3",
+     "type": "equation",
+     "page": 6,
+     "original": "ˆ"
     },
     {
      "id": "p-3-3-2-5",
@@ -1114,18 +1348,8 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-3-3-2-5-1",
-       "original": "Inference.",
-       "zh": "推理。"
-      },
-      {
-       "id": "s-3-3-2-5-2",
-       "original": "During inference, we progressively replace masked tokens, starting from the fully masked sequence XT , by iteratively sampling from p(Xt−∆t|Xt, Xp, C).",
-       "zh": "推理时，从完全遮盖的序列 XT 出发，通过迭代地从 p(Xt−∆t|Xt, Xp, C) 中采样，逐步替换被遮盖的 token。"
-      },
-      {
-       "id": "s-3-3-2-5-3",
-       "original": "Inspire by [50, 51, 52], we first sample ˆX0 from pθ(X0|Xt, Xp, C), and then sample Xt−∆t from q(Xt−∆t|ˆX0, Xt), which involves remask ⌊N · σ(t −∆t)⌋tokens in ˆX0 with the lowest confidence score, where we define the confidence score of ˆxi in ˆX0 to pθ(ˆxi|Xt, Xp, C) if mt,i = 1, otherwise, we set confidence score of xi to 1, which means that tokens already unmasked in Xt will not be remasked.",
-       "zh": "受 [50, 51, 52] 启发，我们先从 pθ(X0|Xt, Xp, C) 采样 ˆX0，再从 q(Xt−∆t|ˆX0, Xt) 采样 Xt−∆t——这一步会在 ˆX0 中重新遮盖置信度最低的 ⌊N · σ(t −∆t)⌋ 个 token；其中 ˆX0 中 ˆxi 的置信度定义为 pθ(ˆxi|Xt, Xp, C)（当 mt,i = 1），否则把 xi 的置信度置为 1，意味着在 Xt 中已被揭开的 token 不会被重新遮盖。"
+       "original": "X0∼pθ(X0|Xt,Xp,C) q(Xt−∆t| ˆX0, Xt).",
+       "zh": "于是可以得到反向转移分布：p(Xt−∆t|Xt, Xp, C) = E ˆ X0∼pθ(X0|Xt,Xp,C) q(Xt−∆t| ˆX0, Xt)。"
       }
      ]
     },
@@ -1136,26 +1360,48 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-3-3-2-6-1",
+       "original": "Inference.",
+       "zh": "推理。"
+      },
+      {
+       "id": "s-3-3-2-6-2",
+       "original": "During inference, we progressively replace masked tokens, starting from the fully masked sequence XT , by iteratively sampling from p(Xt−∆t|Xt, Xp, C).",
+       "zh": "推理时，从完全遮盖的序列 XT 出发，通过迭代地从 p(Xt−∆t|Xt, Xp, C) 中采样，逐步替换被遮盖的 token。"
+      },
+      {
+       "id": "s-3-3-2-6-3",
+       "original": "Inspire by [50, 51, 52], we first sample ˆX0 from pθ(X0|Xt, Xp, C), and then sample Xt−∆t from q(Xt−∆t|ˆX0, Xt), which involves remask ⌊N · σ(t −∆t)⌋tokens in ˆX0 with the lowest confidence score, where we define the confidence score of ˆxi in ˆX0 to pθ(ˆxi|Xt, Xp, C) if mt,i = 1, otherwise, we set confidence score of xi to 1, which means that tokens already unmasked in Xt will not be remasked.",
+       "zh": "受 [50, 51, 52] 启发，我们先从 pθ(X0|Xt, Xp, C) 采样 ˆX0，再从 q(Xt−∆t|ˆX0, Xt) 采样 Xt−∆t——这一步会在 ˆX0 中重新遮盖置信度最低的 ⌊N · σ(t −∆t)⌋ 个 token；其中 ˆX0 中 ˆxi 的置信度定义为 pθ(ˆxi|Xt, Xp, C)（当 mt,i = 1），否则把 xi 的置信度置为 1，意味着在 Xt 中已被揭开的 token 不会被重新遮盖。"
+      }
+     ]
+    },
+    {
+     "id": "p-3-3-2-7",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-3-2-7-1",
        "original": "Classifier-free Guidance.",
        "zh": "无分类器引导（classifier-free guidance）。"
       },
       {
-       "id": "s-3-3-2-6-2",
+       "id": "s-3-3-2-7-2",
        "original": "Moreover, we adapt the classifier-free guidance technique [53, 54].",
        "zh": "此外，我们采用了无分类器引导技术 [53, 54]。"
       },
       {
-       "id": "s-3-3-2-6-3",
+       "id": "s-3-3-2-7-3",
        "original": "Specifically, in training, we do not use the prompt with a probability of pcfg = 0.15.",
        "zh": "具体来说，训练时以概率 pcfg = 0.15 不使用提示。"
       },
       {
-       "id": "s-3-3-2-6-4",
+       "id": "s-3-3-2-7-4",
        "original": "In inference, we extrapolate the model output towards the conditional generation guided by the prompt gcond = g(X|Xp) and away from the unconditional generation guncond = g(X), i.e., gcfg = gcond +α·(gcond − guncond), with a guidance scale α selected based on experimental results.",
        "zh": "推理时，我们让模型输出朝由提示引导的条件生成 gcond = g(X|Xp) 方向外推、远离无条件生成 guncond = g(X)，即 gcfg = gcond +α·(gcond − guncond)，引导强度 α 依据实验结果选取。"
       },
       {
-       "id": "s-3-3-2-6-5",
+       "id": "s-3-3-2-7-5",
        "original": "We then rescale it through gfinal = std(gcond) × gcfg/std(gcfg), following [55].",
        "zh": "随后我们沿用 [55]，按 gfinal = std(gcond) × gcfg/std(gcfg) 对其进行重标定。"
       }
@@ -1343,15 +1589,16 @@ globalThis.PAPER_2403_03100 = {
       },
       {
        "id": "s-4-1-2-8",
-       "original": "This strategy results in 4 × 2 for phoneme-level prosody, 4 for duration, 4 × 2 for each token sequence of prosody, content, and acoustic details, totaling 60 forward passes due to the double computation with classifierfree guidance.",
+       "original": "This strategy",
        "zh": "该策略对应：音素级韵律为 4 × 2，时长为 4，韵律、内容和声学细节各 token 序列为 4 × 2；由于无分类器引导需要双倍计算，合计 60 次前向传播。"
-      },
-      {
-       "id": "s-4-1-2-9",
-       "original": "Please refer to Appendix B.1 for details of the FACodec and Appendix A.2 for more details of our factorization diffusion model.",
-       "zh": "FACodec 的细节见 Appendix B.1，分解扩散模型的更多细节见 Appendix A.2。"
       }
      ]
+    },
+    {
+     "id": "eq-4-1-1",
+     "type": "equation",
+     "page": 7,
+     "original": "results in 4 × 2 for phoneme-level prosody, 4 for duration, 4 × 2 for each token sequence of prosody,"
     },
     {
      "id": "p-4-1-3",
@@ -1360,38 +1607,13 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-4-1-3-1",
-       "original": "Evaluation Dataset.",
-       "zh": "评测数据集。"
+       "original": "content, and acoustic details, totaling 60 forward passes due to the double computation with classifierfree guidance.",
+       "zh": "该策略对应：音素级韵律为 4 × 2，时长为 4，韵律、内容和声学细节各 token 序列为 4 × 2；由于无分类器引导需要双倍计算，合计 60 次前向传播。"
       },
       {
        "id": "s-4-1-3-2",
-       "original": "We employ two benchmark datasets: 1) LibriSpeech [57] test-clean, a widelyused testset for zero-shot TTS task.",
-       "zh": "我们采用两个基准数据集：1）LibriSpeech [57] test-clean，零样本 TTS 任务广泛使用的测试集。"
-      },
-      {
-       "id": "s-4-1-3-3",
-       "original": "It contains 40 distinct speakers and 5.4-hour speech.",
-       "zh": "它包含 40 个不同说话人和 5.4 小时语音。"
-      },
-      {
-       "id": "s-4-1-3-4",
-       "original": "Following [5], we randomly select one sentence for each speaker for LibriSpeech test-clean benchmark.",
-       "zh": "沿用 [5]，我们为 LibriSpeech test-clean 基准的每个说话人随机选取一句话。"
-      },
-      {
-       "id": "s-4-1-3-5",
-       "original": "Specifically, we randomly select 3-second clips as prompts from the same speaker’s speech. 2) RAVDESS [58], an emotional TTS dataset featuring 24 professional actors (12 female, 12 male) across 8 emotions (neutral, calm, happy, sad, angry, fearful, surprise, and disgust) in 2 emotional intensity (normal and strong).",
-       "zh": "具体来说，我们从同一说话人的语音中随机选取 3 秒片段作为提示；2）RAVDESS [58]，一个情感 TTS 数据集，由 24 位专业演员（12 女 12 男）演绎 8 种情感（中性、平静、开心、悲伤、愤怒、恐惧、惊讶、厌恶），每种情感有 2 种强度（正常与强烈）。"
-      },
-      {
-       "id": "s-4-1-3-6",
-       "original": "We use strong-intensity samples for RAVDESS benchmark.",
-       "zh": "RAVDESS 基准使用强烈强度的样本。"
-      },
-      {
-       "id": "s-4-1-3-7",
-       "original": "We adopt this benchmark for prosody evaluation, considering 1) for the same speaker, speech with the same emotion shares similar prosody, while speech with different emotions displays varied prosodies; 2) the benchmark provides speech samples with the same text from the same speaker across eight different emotions.",
-       "zh": "我们采用该基准做韵律评测，因为：1）对同一说话人，相同情感的语音韵律相近，不同情感的语音韵律各异；2）该基准提供同一说话人、同一文本在 8 种不同情感下的语音样本。"
+       "original": "Please refer to Appendix B.1 for details of the FACodec and Appendix A.2 for more details of our factorization diffusion model.",
+       "zh": "FACodec 的细节见 Appendix B.1，分解扩散模型的更多细节见 Appendix A.2。"
       }
      ]
     },
@@ -1402,63 +1624,38 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-4-1-4-1",
-       "original": "Evaluation Metrics.",
-       "zh": "评测指标。"
+       "original": "Evaluation Dataset.",
+       "zh": "评测数据集。"
       },
       {
        "id": "s-4-1-4-2",
-       "original": "Objective Metrics: In the Librispeech test-clean benchmark, we evaluate speaker-similarity (SIM-O and SIM-R), speech quality (UTMOS), and robustness (WER).",
-       "zh": "客观指标：在 Librispeech test-clean 基准上，我们评测说话人相似度（SIM-O 与 SIM-R）、语音质量（UTMOS）和鲁棒性（WER）。"
+       "original": "We employ two benchmark datasets: 1) LibriSpeech [57] test-clean, a widelyused testset for zero-shot TTS task.",
+       "zh": "我们采用两个基准数据集：1）LibriSpeech [57] test-clean，零样本 TTS 任务广泛使用的测试集。"
       },
       {
        "id": "s-4-1-4-3",
-       "original": "In specific, 1) for SIM-O and SIM-R, we employ the WavLM-TDCNN4 speaker embedding model to assess speaker similarity between generated samples and the prompt.",
-       "zh": "具体来说：1）对于 SIM-O 和 SIM-R，我们使用 WavLM-TDCNN 说话人嵌入模型（脚注 4）评估生成样本与提示之间的说话人相似度。"
+       "original": "It contains 40 distinct speakers and 5.4-hour speech.",
+       "zh": "它包含 40 个不同说话人和 5.4 小时语音。"
       },
       {
        "id": "s-4-1-4-4",
-       "original": "Results are reported for both similarity to original prompt (SIM-O) and reconstructed prompt (SIM-R); 2) for speech quality, we employ UTMOS [59] which is a surrogate objective metric of MOS; 3) for Word Error Rate (WER), we use an ASR model5 to transcribe generated speech.",
-       "zh": "我们同时报告与原始提示的相似度（SIM-O）和与重构提示的相似度（SIM-R）；2）语音质量方面，我们使用 UTMOS [59]——MOS 的代理客观指标；3）词错误率（WER）方面，我们用 ASR 模型（脚注 5）转录生成的语音。"
+       "original": "Following [5], we randomly select one sentence for each speaker for LibriSpeech test-clean benchmark.",
+       "zh": "沿用 [5]，我们为 LibriSpeech test-clean 基准的每个说话人随机选取一句话。"
       },
       {
        "id": "s-4-1-4-5",
-       "original": "The model is a CTC-based HuBERT pre-trained on Librilight and fine-tuned on the 960 hours training set of LibriSpeech.",
-       "zh": "该模型是基于 CTC 的 HuBERT，在 Librilight 上预训练、在 LibriSpeech 的 960 小时训练集上微调。"
+       "original": "Specifically, we randomly select 3-second clips as prompts from the same speaker’s speech. 2) RAVDESS [58], an emotional TTS dataset featuring 24 professional actors (12 female, 12 male) across 8 emotions (neutral, calm, happy, sad, angry, fearful, surprise, and disgust) in 2 emotional intensity (normal and strong).",
+       "zh": "具体来说，我们从同一说话人的语音中随机选取 3 秒片段作为提示；2）RAVDESS [58]，一个情感 TTS 数据集，由 24 位专业演员（12 女 12 男）演绎 8 种情感（中性、平静、开心、悲伤、愤怒、恐惧、惊讶、厌恶），每种情感有 2 种强度（正常与强烈）。"
       },
       {
        "id": "s-4-1-4-6",
-       "original": "We also use an advanced ASR model based on transducer [60]6.",
-       "zh": "我们还使用一个基于 transducer [60] 的先进 ASR 模型（脚注 6）。"
+       "original": "We use strong-intensity samples for RAVDESS benchmark.",
+       "zh": "RAVDESS 基准使用强烈强度的样本。"
       },
       {
        "id": "s-4-1-4-7",
-       "original": "In the RAVDESS benchmark, we evaluate the prosody similarity (MCD and MCD-Acc).",
-       "zh": "在 RAVDESS 基准上，我们评测韵律相似度（MCD 与 MCD-Acc）。"
-      },
-      {
-       "id": "s-4-1-4-8",
-       "original": "In specific, 1) following [61], we adopt Mel-Ceptral Distortion (MCD) for prosody evaluation by measuring the differences between generated samples and ground truth samples.",
-       "zh": "具体来说：1）沿用 [61]，我们采用 Mel-倒谱失真（MCD）做韵律评测，衡量生成样本与真值样本之间的差异。"
-      },
-      {
-       "id": "s-4-1-4-9",
-       "original": "We report the results for eight emotions, along with the average result. 2) for MCD-Acc, we evaluate the top-1 emotion accuracy of the generated speech on the RAVDESS benchmark for prosodic similarity measures.",
-       "zh": "我们报告 8 种情感的结果以及平均结果；2）对于 MCD-Acc，我们评测生成语音在 RAVDESS 基准上的 top-1 情感准确率，作为韵律相似度的度量。"
-      },
-      {
-       "id": "s-4-1-4-10",
-       "original": "Specifically, we adopt a K-Nearest-Neighbors (KNN) model as emotion classifier.",
-       "zh": "具体来说，我们采用 K 近邻（KNN）模型作为情感分类器。"
-      },
-      {
-       "id": "s-4-1-4-11",
-       "original": "We compare MCD distances between the generated speech and the ground-truth speech from the same speaker, across eight different emotions.",
-       "zh": "我们比较生成语音与同一说话人在 8 种不同情感下真值语音之间的 MCD 距离。"
-      },
-      {
-       "id": "s-4-1-4-12",
-       "original": "Subjective Metrics: We employ comparative mean option score (CMOS) and similarity mean option score (SMOS) in both two benchmarks to evaluate naturalness and similarity, respectively.",
-       "zh": "主观指标：我们在两个基准上都使用对比平均意见分（CMOS）与相似度平均意见分（SMOS），分别评测自然度和相似度。"
+       "original": "We adopt this benchmark for prosody evaluation, considering 1) for the same speaker, speech with the same emotion shares similar prosody, while speech with different emotions displays varied prosodies; 2) the benchmark provides speech samples with the same text from the same speaker across eight different emotions.",
+       "zh": "我们采用该基准做韵律评测，因为：1）对同一说话人，相同情感的语音韵律相近，不同情感的语音韵律各异；2）该基准提供同一说话人、同一文本在 8 种不同情感下的语音样本。"
       }
      ]
     },
@@ -1469,6 +1666,73 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-4-1-5-1",
+       "original": "Evaluation Metrics.",
+       "zh": "评测指标。"
+      },
+      {
+       "id": "s-4-1-5-2",
+       "original": "Objective Metrics: In the Librispeech test-clean benchmark, we evaluate speaker-similarity (SIM-O and SIM-R), speech quality (UTMOS), and robustness (WER).",
+       "zh": "客观指标：在 Librispeech test-clean 基准上，我们评测说话人相似度（SIM-O 与 SIM-R）、语音质量（UTMOS）和鲁棒性（WER）。"
+      },
+      {
+       "id": "s-4-1-5-3",
+       "original": "In specific, 1) for SIM-O and SIM-R, we employ the WavLM-TDCNN4 speaker embedding model to assess speaker similarity between generated samples and the prompt.",
+       "zh": "具体来说：1）对于 SIM-O 和 SIM-R，我们使用 WavLM-TDCNN 说话人嵌入模型（脚注 4）评估生成样本与提示之间的说话人相似度。"
+      },
+      {
+       "id": "s-4-1-5-4",
+       "original": "Results are reported for both similarity to original prompt (SIM-O) and reconstructed prompt (SIM-R); 2) for speech quality, we employ UTMOS [59] which is a surrogate objective metric of MOS; 3) for Word Error Rate (WER), we use an ASR model5 to transcribe generated speech.",
+       "zh": "我们同时报告与原始提示的相似度（SIM-O）和与重构提示的相似度（SIM-R）；2）语音质量方面，我们使用 UTMOS [59]——MOS 的代理客观指标；3）词错误率（WER）方面，我们用 ASR 模型（脚注 5）转录生成的语音。"
+      },
+      {
+       "id": "s-4-1-5-5",
+       "original": "The model is a CTC-based HuBERT pre-trained on Librilight and fine-tuned on the 960 hours training set of LibriSpeech.",
+       "zh": "该模型是基于 CTC 的 HuBERT，在 Librilight 上预训练、在 LibriSpeech 的 960 小时训练集上微调。"
+      },
+      {
+       "id": "s-4-1-5-6",
+       "original": "We also use an advanced ASR model based on transducer [60]6.",
+       "zh": "我们还使用一个基于 transducer [60] 的先进 ASR 模型（脚注 6）。"
+      },
+      {
+       "id": "s-4-1-5-7",
+       "original": "In the RAVDESS benchmark, we evaluate the prosody similarity (MCD and MCD-Acc).",
+       "zh": "在 RAVDESS 基准上，我们评测韵律相似度（MCD 与 MCD-Acc）。"
+      },
+      {
+       "id": "s-4-1-5-8",
+       "original": "In specific, 1) following [61], we adopt Mel-Ceptral Distortion (MCD) for prosody evaluation by measuring the differences between generated samples and ground truth samples.",
+       "zh": "具体来说：1）沿用 [61]，我们采用 Mel-倒谱失真（MCD）做韵律评测，衡量生成样本与真值样本之间的差异。"
+      },
+      {
+       "id": "s-4-1-5-9",
+       "original": "We report the results for eight emotions, along with the average result. 2) for MCD-Acc, we evaluate the top-1 emotion accuracy of the generated speech on the RAVDESS benchmark for prosodic similarity measures.",
+       "zh": "我们报告 8 种情感的结果以及平均结果；2）对于 MCD-Acc，我们评测生成语音在 RAVDESS 基准上的 top-1 情感准确率，作为韵律相似度的度量。"
+      },
+      {
+       "id": "s-4-1-5-10",
+       "original": "Specifically, we adopt a K-Nearest-Neighbors (KNN) model as emotion classifier.",
+       "zh": "具体来说，我们采用 K 近邻（KNN）模型作为情感分类器。"
+      },
+      {
+       "id": "s-4-1-5-11",
+       "original": "We compare MCD distances between the generated speech and the ground-truth speech from the same speaker, across eight different emotions.",
+       "zh": "我们比较生成语音与同一说话人在 8 种不同情感下真值语音之间的 MCD 距离。"
+      },
+      {
+       "id": "s-4-1-5-12",
+       "original": "Subjective Metrics: We employ comparative mean option score (CMOS) and similarity mean option score (SMOS) in both two benchmarks to evaluate naturalness and similarity, respectively.",
+       "zh": "主观指标：我们在两个基准上都使用对比平均意见分（CMOS）与相似度平均意见分（SMOS），分别评测自然度和相似度。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-1-6",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-4-1-6-1",
        "original": "4https://github.com/microsoft/UniSpeech/tree/main/downstreams/speaker_ verification 5https://huggingface.co/facebook/hubert-large-ls960-ft 6https://huggingface.co/nvidia/stt_en_conformer_transducer_xlarge",
        "zh": "（脚注）4 https://github.com/microsoft/UniSpeech/tree/main/downstreams/speaker_verification；5 https://huggingface.co/facebook/hubert-large-ls960-ft；6 https://huggingface.co/nvidia/stt_en_conformer_transducer_xlarge"
       }
@@ -1482,22 +1746,184 @@ globalThis.PAPER_2403_03100 = {
      "zh": "表 1：NaturalSpeech 3 与各基线方法在 LibriSpeech test-clean 上的评测结果。♠表示结果来自作者；♥表示结果直接取自论文；♣表示结果由官方 checkpoint 推理得到；♦表示复现结果。缩写：LT（LibriTTS）、V（VCTK）、LJ（LJSpeech）、LL⋆（Librilight Small/Medium）、EX（Expresso）、MS（MSSS Kor）、NI（NIKL Kor）。更多结果见 Appendix A.4：1）由更先进 ASR 系统推理的 WER；2）MOS 的自动指标 UTMOS。"
     },
     {
-     "id": "p-4-1-6",
+     "id": "p-4-1-7",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
-       "id": "s-4-1-6-1",
-       "original": "Training Data Sim-R ↑ 0.68 1.94 +0.08 3.85 VALL-E ♥ 0.58 5.90 VALL-E ♦ 0.47 0.51 6.11 3.46 NaturalSpeech 2♠ 0.55 0.62 1.94 3.65 Voicebox♠ Self-Collected (60kh) 0.64 0.67 2.03 3.69 Voicebox♦ 0.48 0.50 2.14 3.52 Mega-TTS 2♠ 0.53 2.32 3.63 UniAudio♠ Mixed (165kh) 0.57 0.68 2.49 3.71 StyleTTS 2♣ LT + V + LJ 0.38 2.49 3.07 HierSpeech++♣ LT + LL⋆+ EX + MS + NI 0.51 6.33 3.50 0.67 0.76 1.81 0.00 4.01 Evaluation Baselines.",
-       "zh": "（此为 Table 1 的表格碎块抽取，列含训练数据、Sim-R↑ 等）数值依次为 0.68、1.94、+0.08、3.85；VALL-E♥ 0.58、5.90；VALL-E♦ 0.47、0.51、6.11、3.46；NaturalSpeech 2♠ 0.55、0.62、1.94、3.65；Voicebox♠（自收集 60kh）0.64、0.67、2.03、3.69；Voicebox♦ 0.48、0.50、2.14、3.52；Mega-TTS 2♠ 0.53、2.32、3.63；UniAudio♠（混合 165kh）0.57、0.68、2.49、3.71；StyleTTS 2♣（LT+V+LJ）0.38、2.49、3.07；HierSpeech++♣（LT+LL⋆+EX+MS+NI）0.51、6.33、3.50；末行（真值）0.67、0.76、1.81、0.00、4.01。"
+       "id": "s-4-1-7-1",
+       "original": "Training Data Sim-O ↑ Sim-R ↑ WER↓ CMOS↑ SMOS↑ Ground Truth",
+       "zh": "表头：Training Data / Sim-O ↑ / Sim-R ↑ / WER↓ / CMOS↑ / SMOS↑——Ground Truth（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-1-2",
+     "type": "equation",
+     "page": 8,
+     "original": "- 0.68 - 1.94 +0.08 3.85"
+    },
+    {
+     "id": "eq-4-1-3",
+     "type": "equation",
+     "page": 8,
+     "original": "VALL-E ♥ Librilight"
+    },
+    {
+     "id": "eq-4-1-4",
+     "type": "equation",
+     "page": 8,
+     "original": "- 0.58 5.90 - -"
+    },
+    {
+     "id": "eq-4-1-5",
+     "type": "equation",
+     "page": 8,
+     "original": "VALL-E ♦ Librilight"
+    },
+    {
+     "id": "eq-4-1-6",
+     "type": "equation",
+     "page": 8,
+     "original": "0.47 0.51 6.11 -0.60 3.46"
+    },
+    {
+     "id": "eq-4-1-7",
+     "type": "equation",
+     "page": 8,
+     "original": "NaturalSpeech 2♠ Librilight"
+    },
+    {
+     "id": "eq-4-1-8",
+     "type": "equation",
+     "page": 8,
+     "original": "0.55 0.62 1.94 -0.18 3.65"
+    },
+    {
+     "id": "eq-4-1-9",
+     "type": "equation",
+     "page": 8,
+     "original": "Voicebox♠ Self-Collected (60kh)"
+    },
+    {
+     "id": "eq-4-1-10",
+     "type": "equation",
+     "page": 8,
+     "original": "0.64 0.67 2.03 -0.23 3.69"
+    },
+    {
+     "id": "eq-4-1-11",
+     "type": "equation",
+     "page": 8,
+     "original": "Voicebox♦ Librilight"
+    },
+    {
+     "id": "eq-4-1-12",
+     "type": "equation",
+     "page": 8,
+     "original": "0.48 0.50 2.14 -0.32 3.52"
+    },
+    {
+     "id": "eq-4-1-13",
+     "type": "equation",
+     "page": 8,
+     "original": "Mega-TTS 2♠ Librilight"
+    },
+    {
+     "id": "eq-4-1-14",
+     "type": "equation",
+     "page": 8,
+     "original": "0.53 - 2.32 -0.20 3.63"
+    },
+    {
+     "id": "eq-4-1-15",
+     "type": "equation",
+     "page": 8,
+     "original": "UniAudio♠ Mixed (165kh)"
+    },
+    {
+     "id": "eq-4-1-16",
+     "type": "equation",
+     "page": 8,
+     "original": "0.57 0.68 2.49 -0.25 3.71"
+    },
+    {
+     "id": "eq-4-1-17",
+     "type": "equation",
+     "page": 8,
+     "original": "StyleTTS 2♣ LT + V + LJ"
+    },
+    {
+     "id": "eq-4-1-18",
+     "type": "equation",
+     "page": 8,
+     "original": "0.38 - 2.49 -0.21 3.07"
+    },
+    {
+     "id": "p-4-1-8",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-1-8-1",
+       "original": "HierSpeech++♣ LT + LL⋆+ EX + MS + NI",
+       "zh": "（表格行）HierSpeech++♣；配置 LT + LL⋆+ EX + MS + NI（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-1-19",
+     "type": "equation",
+     "page": 8,
+     "original": "0.51 - 6.33 -0.41 3.50"
+    },
+    {
+     "id": "eq-4-1-20",
+     "type": "equation",
+     "page": 8,
+     "original": "NaturalSpeech 3 Librilight"
+    },
+    {
+     "id": "eq-4-1-21",
+     "type": "equation",
+     "page": 8,
+     "original": "0.67 0.76 1.81 0.00 4.01"
+    },
+    {
+     "id": "p-4-1-9",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-1-9-1",
+       "original": "Evaluation Baselines.",
+       "zh": "（小标题：评测基线（Evaluation Baselines）。）"
       },
       {
-       "id": "s-4-1-6-2",
-       "original": "We compare NaturalSpeech 3 with baselines: 1) VALL-E [6]. 2) NaturalSpeech 2 [5]. 3) Voicebox [11]. 4) Mega-TTS 2 [62]. 5) UniAudio [35]. 6) StyleTTS 2 [24]. 7) HierSpeech++ [25].",
+       "id": "s-4-1-9-2",
+       "original": "We compare NaturalSpeech 3 with baselines: 1) VALL-E [6]. 2) Natural-",
+       "zh": "我们将 NaturalSpeech 3 与以下基线对比：1) VALL-E [6]；2) Natural-（后接原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-1-22",
+     "type": "equation",
+     "page": 8,
+     "original": "Speech 2 [5]. 3) Voicebox [11]. 4) Mega-TTS 2 [62]. 5) UniAudio [35]. 6) StyleTTS 2 [24]. 7)"
+    },
+    {
+     "id": "p-4-1-10",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-1-10-1",
+       "original": "HierSpeech++ [25].",
        "zh": "评测基线。我们将 NaturalSpeech 3 与以下基线比较：1）VALL-E [6]；2）NaturalSpeech 2 [5]；3）Voicebox [11]；4）Mega-TTS 2 [62]；5）UniAudio [35]；6）StyleTTS 2 [24]；7）HierSpeech++ [25]。"
       },
       {
-       "id": "s-4-1-6-3",
+       "id": "s-4-1-10-2",
        "original": "Please refer to Appendix A.3 for details.",
        "zh": "细节见 Appendix A.3。"
       }
@@ -1661,8 +2087,8 @@ globalThis.PAPER_2403_03100 = {
      "id": "tab-4-2-2-1",
      "type": "table_caption",
      "page": 9,
-     "original": "Table 2: The evaluation results for NaturalSpeech 3 and the baseline methods on RAVDESS. ♠means the results are obtained from the authors. ♣means the results are inferred from official checkpoints. ♦means the reproduced results. Abbreviation: Avg (average MCD), Acc (MCD-Acc). Avg↓ Acc↑ 0.00 1.00",
-     "zh": "表 2：NaturalSpeech 3 与各基线方法在 RAVDESS 上的评测结果。♠表示结果来自作者；♣表示结果由官方 checkpoint 推理得到；♦表示复现结果。缩写：Avg（平均 MCD）、Acc（MCD-Acc）；Avg↓、Acc↑；真值基准为 0.00、1.00。"
+     "original": "Table 2: The evaluation results for NaturalSpeech 3 and the baseline methods on RAVDESS. ♠means the results are obtained from the authors. ♣means the results are inferred from official checkpoints. ♦means the reproduced results. Abbreviation: Avg (average MCD), Acc (MCD-Acc). Avg↓ Acc↑ CMOS↑ SMOS↑",
+     "zh": "表 2：NaturalSpeech 3 与基线方法在 RAVDESS 上的评测结果。♠表示结果来自原作者；♣表示由官方 checkpoint 推理得到；♦表示复现结果。缩写：Avg（平均 MCD）、Acc（MCD-Acc）。表头：Avg↓ / Acc↑ / CMOS↑ / SMOS↑。"
     },
     {
      "id": "p-4-2-2-3",
@@ -1671,10 +2097,100 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-4-2-2-3-1",
-       "original": "+0.17 4.42 VALL-E ♦ 5.03 0.34 3.80 NaturalSpeech 2♠ 4.56 0.25 4.04 Voicebox♦ 4.88 0.34 3.92 Mega-TTS 2♠ 4.44 0.39 4.51 StyleTTS 2♣ 4.50 0.40 3.98 HierSpeech++♣ 6.08 0.30 3.87 4.28 0.52 0.00 4.72",
-       "zh": "（此为 Table 2 的表格碎块抽取）数值依次为 +0.17、4.42；VALL-E♦ 5.03、0.34、3.80；NaturalSpeech 2♠ 4.56、0.25、4.04；Voicebox♦ 4.88、0.34、3.92；Mega-TTS 2♠ 4.44、0.39、4.51；StyleTTS 2♣ 4.50、0.40、3.98；HierSpeech++♣ 6.08、0.30、3.87；末行 4.28、0.52、0.00、4.72。"
+       "original": "Ground Truth",
+       "zh": "我们在 Table 1 中将 NaturalSpeech 3 合成的语音与真人录音（Ground Truth）比较（更多结果见 Appendix A.4 的 Table 9）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-2-2-1",
+     "type": "equation",
+     "page": 9,
+     "original": "0.00 1.00 +0.17 4.42"
+    },
+    {
+     "id": "eq-4-2-2-2",
+     "type": "equation",
+     "page": 9,
+     "original": "VALL-E ♦"
+    },
+    {
+     "id": "eq-4-2-2-3",
+     "type": "equation",
+     "page": 9,
+     "original": "5.03 0.34 -0.55 3.80"
+    },
+    {
+     "id": "eq-4-2-2-4",
+     "type": "equation",
+     "page": 9,
+     "original": "NaturalSpeech 2♠"
+    },
+    {
+     "id": "eq-4-2-2-5",
+     "type": "equation",
+     "page": 9,
+     "original": "4.56 0.25 -0.22 4.04"
+    },
+    {
+     "id": "eq-4-2-2-6",
+     "type": "equation",
+     "page": 9,
+     "original": "Voicebox♦"
+    },
+    {
+     "id": "eq-4-2-2-7",
+     "type": "equation",
+     "page": 9,
+     "original": "4.88 0.34 -0.34 3.92"
+    },
+    {
+     "id": "eq-4-2-2-8",
+     "type": "equation",
+     "page": 9,
+     "original": "Mega-TTS 2♠"
+    },
+    {
+     "id": "eq-4-2-2-9",
+     "type": "equation",
+     "page": 9,
+     "original": "4.44 0.39 -0.20 4.51"
+    },
+    {
+     "id": "eq-4-2-2-10",
+     "type": "equation",
+     "page": 9,
+     "original": "StyleTTS 2♣"
+    },
+    {
+     "id": "eq-4-2-2-11",
+     "type": "equation",
+     "page": 9,
+     "original": "4.50 0.40 -0.25 3.98"
+    },
+    {
+     "id": "eq-4-2-2-12",
+     "type": "equation",
+     "page": 9,
+     "original": "HierSpeech++♣"
+    },
+    {
+     "id": "eq-4-2-2-13",
+     "type": "equation",
+     "page": 9,
+     "original": "6.08 0.30 -0.37 3.87"
+    },
+    {
+     "id": "eq-4-2-2-14",
+     "type": "equation",
+     "page": 9,
+     "original": "NaturalSpeech 3"
+    },
+    {
+     "id": "eq-4-2-2-15",
+     "type": "equation",
+     "page": 9,
+     "original": "4.28 0.52 0.00 4.72"
     }
    ]
   },
@@ -1806,15 +2322,16 @@ globalThis.PAPER_2403_03100 = {
       },
       {
        "id": "s-4-3-1-2-4",
-       "original": "As shown in Table 3, we could find a significant performance degradation without the factorization, a drop of 0.12 in Sim-O, 0.15 in Sim-R, 0.68 in WER, 0.25 in CMOS and 0.42 in SMOS.",
+       "original": "As shown in Table 3, we could find a significant performance degradation without",
        "zh": "如 Table 3 所示，去掉分解后性能显著退化：Sim-O 下降 0.12，Sim-R 下降 0.15，WER 下降 0.68，CMOS 下降 0.25，SMOS 下降 0.42。"
-      },
-      {
-       "id": "s-4-3-1-2-5",
-       "original": "This indicates the proposed factorized method can consistently improve the performance in terms of speaker similarity, robustness, and quality.",
-       "zh": "这说明所提分解方法能在说话人相似度、鲁棒性和质量上带来一致的提升。"
       }
      ]
+    },
+    {
+     "id": "eq-4-3-1-1",
+     "type": "equation",
+     "page": 9,
+     "original": "the factorization, a drop of 0.12 in Sim-O, 0.15 in Sim-R, 0.68 in WER, 0.25 in CMOS and 0.42 in"
     },
     {
      "id": "p-4-3-1-3",
@@ -1823,22 +2340,57 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-4-3-1-3-1",
+       "original": "SMOS.",
+       "zh": "此外，我们注意到 Sim-O 与 SMOS 之间存在一定偏差。"
+      },
+      {
+       "id": "s-4-3-1-3-2",
+       "original": "This indicates the proposed factorized method can consistently improve the performance in terms of speaker similarity, robustness, and quality.",
+       "zh": "这说明所提分解方法能在说话人相似度、鲁棒性和质量上带来一致的提升。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-3-1-4",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-4-3-1-4-1",
        "original": "Classier-Free Guidance.",
        "zh": "无分类器引导（cfg）。"
       },
       {
-       "id": "s-4-3-1-3-2",
+       "id": "s-4-3-1-4-2",
        "original": "We conduct an ablation study by dropping the classifier-free guidance in inference to validate its effectiveness.",
        "zh": "我们通过在推理时去掉无分类器引导来做消融，验证其有效性。"
       },
       {
-       "id": "s-4-3-1-3-3",
+       "id": "s-4-3-1-4-3",
        "original": "We double the iterations to ensure the same 60 forward passes for fair comparison.",
        "zh": "我们把迭代次数加倍，以保证公平比较所需的同样 60 次前向传播。"
       },
       {
-       "id": "s-4-3-1-3-4",
-       "original": "Table 3 illustrates a significant degradation without classifier-free guidance, a decrease of 0.03 in Sim-O, 0.04 in Sim-R, 0.06 in CMOS and 0.21 in SMOS, proving that classifierfree guidance can greatly help the speaker similarity and quality.",
+       "id": "s-4-3-1-4-4",
+       "original": "Table 3 illustrates a significant degradation without classifier-free guidance, a",
+       "zh": "Table 3 显示，去掉无分类器引导后性能显著退化：Sim-O 下降 0.03，Sim-R 下降 0.04，CMOS 下降 0.06，SMOS 下降 0.21，证明无分类器引导能大幅提升说话人相似度与质量。"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-3-1-2",
+     "type": "equation",
+     "page": 9,
+     "original": "decrease of 0.03 in Sim-O, 0.04 in Sim-R, 0.06 in CMOS and 0.21 in SMOS, proving that classifier-"
+    },
+    {
+     "id": "p-4-3-1-5",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-4-3-1-5-1",
+       "original": "free guidance can greatly help the speaker similarity and quality.",
        "zh": "Table 3 显示，去掉无分类器引导后性能显著退化：Sim-O 下降 0.03，Sim-R 下降 0.04，CMOS 下降 0.06，SMOS 下降 0.21，证明无分类器引导能大幅提升说话人相似度与质量。"
       }
      ]
@@ -1851,74 +2403,260 @@ globalThis.PAPER_2403_03100 = {
      "zh": "表 3：在 LibriSpeech test-clean 上关于分解与无分类器引导（cfg）的消融研究。"
     },
     {
-     "id": "p-4-3-1-4",
-     "type": "paragraph",
-     "page": 10,
-     "sentences": [
-      {
-       "id": "s-4-3-1-4-1",
-       "original": "Sim-O / Sim-R ↑ 1.81 0.00 4.01 - factorization 2.49 3.59 - cfg 1.81 3.80",
-       "zh": "（此为 Table 3 的表格碎块抽取，含 Sim-O / Sim-R↑ 列）数值依次为 1.81、0.00、4.01；- factorization 2.49、3.59；- cfg 1.81、3.80。"
-      }
-     ]
-    },
-    {
-     "id": "tab-4-3-1-2",
-     "type": "table_caption",
-     "page": 10,
-     "original": "Table 4: The ablation study of prosody representation on RAVDESS. Denote “Mel 20 Bins” using the first 20 bins in the mel-spectrogram as the prosody representation.",
-     "zh": "表 4：在 RAVDESS 上关于韵律表示的消融研究。其中「Mel 20 Bins」表示用 Mel 频谱图的前 20 个频带作为韵律表示。"
-    },
-    {
-     "id": "p-4-3-1-5",
-     "type": "paragraph",
-     "page": 10,
-     "sentences": [
-      {
-       "id": "s-4-3-1-5-1",
-       "original": "MCD Avg↓ MCD-Acc↑ 4.28 0.52 Mel 20 Bins 4.34 0.46 Prosody Representation.",
-       "zh": "（此为 Table 4 的表格碎块抽取，含 MCD Avg↓、MCD-Acc↑ 列）数值为 4.28、0.52；Mel 20 Bins 4.34、0.46。韵律表示。"
-      },
-      {
-       "id": "s-4-3-1-5-2",
-       "original": "We compare different prosody representations on zero-shot TTS task.",
-       "zh": "我们在零样本 TTS 任务上比较不同的韵律表示。"
-      },
-      {
-       "id": "s-4-3-1-5-3",
-       "original": "In specific, we select handcrafted prosody features (e.g., the first 20 bins of mel-spectrogram [7, 63, 64]) as the baseline.",
-       "zh": "具体来说，我们选取人工设计的韵律特征（如 Mel 频谱图的前 20 个频带 [7, 63, 64]）作为基线。"
-      },
-      {
-       "id": "s-4-3-1-5-4",
-       "original": "We drop the prosody FVQ module and directly quantize the first 20 bins of the mel-spectrogram, without the normalized F0 loss.",
-       "zh": "我们移除韵律 FVQ 模块，直接量化 Mel 频谱图的前 20 个频带，且不使用归一化 F0 损失。"
-      },
-      {
-       "id": "s-4-3-1-5-5",
-       "original": "Table 4 shows that using “Mel 20 Bins” as prosody representation demonstrates inferiority in terms of prosody similarity compared to the prosody representations learned from codec (4.34 vs 4.28 in average MCD, 0.46 vs 0.52 in MCD-Acc).",
-       "zh": "Table 4 显示，与 codec 学出的韵律表示相比，用「Mel 20 Bins」作为韵律表示在韵律相似度上更差（平均 MCD 4.34 对 4.28，MCD-Acc 0.46 对 0.52）。"
-      }
-     ]
-    },
-    {
-     "id": "tab-4-3-1-3",
-     "type": "table_caption",
-     "page": 10,
-     "original": "Table 5: The reconstruction quality evaluation of codecs. ♣means results are infered from offical checkpoints. ⋆means the reproduced checkpoint. ♦means the reproduced model following the original paper’s implementation and experimental setup. All models use a codebook size of 1024. Bold for the best result and underline for the second-best result. Abbreviation: H (Hop Size), N (Codebook Number).",
-     "zh": "表 5：codec 的重构质量评测。♣表示结果由官方 checkpoint 推理得到；⋆表示复现的 checkpoint；♦表示按原论文实现与实验设置复现的模型。所有模型的码本大小为 1024。加粗为最优、下划线为次优。缩写：H（Hop Size）、N（码本数量）。"
-    },
-    {
      "id": "p-4-3-1-6",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
        "id": "s-4-3-1-6-1",
-       "original": "Models Sampling Rate H N Bandwidth PESQ ↑ STOI ↑ MSTFT ↓ MCD ↓ EnCodec♣ 320 8 3.28 0.94 0.99 2.70 HiFi-Codec♣ 320 4 3.17 0.93 0.98 3.05 DAC♣ 320 9 3.52 0.95 0.97 2.65 SoundStream♦ 200 6 3.03 0.90 1.07 3.38 FACodec 200 6 3.47 0.95 0.93 2.59",
-       "zh": "（此为 Table 5 的表格碎块抽取，列含模型、采样率、H、N、带宽、PESQ↑、STOI↑、MSTFT↓、MCD↓）数值依次为：EnCodec♣ 320、8、3.28、0.94、0.99、2.70；HiFi-Codec♣ 320、4、3.17、0.93、0.98、3.05；DAC♣ 320、9、3.52、0.95、0.97、2.65；SoundStream♦ 200、6、3.03、0.90、1.07、3.38；FACodec 200、6、3.47、0.95、0.93、2.59。"
+       "original": "Sim-O / Sim-R ↑ WER↓ CMOS↑ SMOS↑ NaturalSpeech 3",
+       "zh": "表头：Sim-O / Sim-R ↑ / WER↓ / CMOS↑ / SMOS↑——NaturalSpeech 3（后续数值照原文）。"
       }
      ]
+    }
+   ]
+  },
+  {
+   "id": "sec-0-67",
+   "num": "0.67",
+   "level": 2,
+   "page": 10,
+   "title": {
+    "original": "/ 0.76",
+    "zh": "/ 0.76"
+   },
+   "blocks": [
+    {
+     "id": "eq-0-67-1",
+     "type": "equation",
+     "page": 10,
+     "original": "1.81 0.00 4.01"
+    },
+    {
+     "id": "eq-0-67-2",
+     "type": "equation",
+     "page": 10,
+     "original": "- factorization"
+    },
+    {
+     "id": "eq-0-67-3",
+     "type": "equation",
+     "page": 10,
+     "original": "0.55 / 0.61 2.49 -0.25 3.59"
+    },
+    {
+     "id": "eq-0-67-4",
+     "type": "equation",
+     "page": 10,
+     "original": "- cfg"
+    },
+    {
+     "id": "eq-0-67-5",
+     "type": "equation",
+     "page": 10,
+     "original": "0.64 / 0.72 1.81 -0.06 3.80"
+    },
+    {
+     "id": "tab-0-67-1",
+     "type": "table_caption",
+     "page": 10,
+     "original": "Table 4: The ablation study of prosody representation on RAVDESS. Denote “Mel 20 Bins” using the first 20 bins in the mel-spectrogram as the prosody representation.",
+     "zh": "表 4：在 RAVDESS 上关于韵律表示的消融研究。其中「Mel 20 Bins」表示用 Mel 频谱图的前 20 个频带作为韵律表示。"
+    },
+    {
+     "id": "p-0-67-1",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-0-67-1-1",
+       "original": "MCD Avg↓ MCD-Acc↑ NaturalSpeech 3",
+       "zh": "（表格行：MCD Avg↓ / MCD-Acc↑——NaturalSpeech 3 4.28/0.52；Mel 20 Bins 4.34/0.46。）韵律表示（Prosody Representation）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-0-67-6",
+     "type": "equation",
+     "page": 10,
+     "original": "4.28 0.52"
+    },
+    {
+     "id": "eq-0-67-7",
+     "type": "equation",
+     "page": 10,
+     "original": "Mel 20 Bins"
+    },
+    {
+     "id": "eq-0-67-8",
+     "type": "equation",
+     "page": 10,
+     "original": "4.34 0.46"
+    },
+    {
+     "id": "p-0-67-2",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-0-67-2-1",
+       "original": "Prosody Representation.",
+       "zh": "（表格行：MCD Avg↓ / MCD-Acc↑——NaturalSpeech 3 4.28/0.52；Mel 20 Bins 4.34/0.46。）韵律表示（Prosody Representation）。"
+      },
+      {
+       "id": "s-0-67-2-2",
+       "original": "We compare different prosody representations on zero-shot TTS task.",
+       "zh": "我们在零样本 TTS 任务上比较不同的韵律表示。"
+      },
+      {
+       "id": "s-0-67-2-3",
+       "original": "In specific, we select handcrafted prosody features (e.g., the first 20 bins of mel-spectrogram [7, 63, 64]) as the baseline.",
+       "zh": "具体来说，我们选取人工设计的韵律特征（如 Mel 频谱图的前 20 个频带 [7, 63, 64]）作为基线。"
+      },
+      {
+       "id": "s-0-67-2-4",
+       "original": "We drop the prosody FVQ module and directly quantize the first 20 bins of the mel-spectrogram, without the normalized F0 loss.",
+       "zh": "我们移除韵律 FVQ 模块，直接量化 Mel 频谱图的前 20 个频带，且不使用归一化 F0 损失。"
+      },
+      {
+       "id": "s-0-67-2-5",
+       "original": "Table 4 shows that using “Mel 20 Bins” as prosody representation demonstrates inferiority in terms of prosody similarity compared to the prosody representations learned from codec (4.34 vs 4.28 in average MCD, 0.46 vs 0.52 in MCD-Acc).",
+       "zh": "Table 4 显示，与 codec 学出的韵律表示相比，用「Mel 20 Bins」作为韵律表示在韵律相似度上更差（平均 MCD 4.34 对 4.28，MCD-Acc 0.46 对 0.52）。"
+      }
+     ]
+    },
+    {
+     "id": "tab-0-67-2",
+     "type": "table_caption",
+     "page": 10,
+     "original": "Table 5: The reconstruction quality evaluation of codecs. ♣means results are infered from offical checkpoints. ⋆means the reproduced checkpoint. ♦means the reproduced model following the original paper’s implementation and experimental setup. All models use a codebook size of 1024. Bold for the best result and underline for the second-best result. Abbreviation: H (Hop Size), N (Codebook Number).",
+     "zh": "表 5：codec 的重构质量评测。♣表示结果由官方 checkpoint 推理得到；⋆表示复现的 checkpoint；♦表示按原论文实现与实验设置复现的模型。所有模型的码本大小为 1024。加粗为最优、下划线为次优。缩写：H（Hop Size）、N（码本数量）。"
+    },
+    {
+     "id": "p-0-67-3",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-0-67-3-1",
+       "original": "Models Sampling Rate H N Bandwidth PESQ ↑ STOI ↑ MSTFT ↓ MCD ↓ EnCodec♣ 24kHz",
+       "zh": "表头：Models / Sampling Rate / H / N / Bandwidth / PESQ ↑ / STOI ↑ / MSTFT ↓ / MCD ↓——EnCodec♣ 24kHz（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-0-67-9",
+     "type": "equation",
+     "page": 10,
+     "original": "320 8"
+    },
+    {
+     "id": "eq-0-67-10",
+     "type": "equation",
+     "page": 10,
+     "original": "6.0 kbps"
+    },
+    {
+     "id": "eq-0-67-11",
+     "type": "equation",
+     "page": 10,
+     "original": "3.28 0.94 0.99 2.70"
+    },
+    {
+     "id": "eq-0-67-12",
+     "type": "equation",
+     "page": 10,
+     "original": "HiFi-Codec♣ 16kHz"
+    },
+    {
+     "id": "eq-0-67-13",
+     "type": "equation",
+     "page": 10,
+     "original": "320 4"
+    },
+    {
+     "id": "eq-0-67-14",
+     "type": "equation",
+     "page": 10,
+     "original": "2.0 kbps"
+    },
+    {
+     "id": "eq-0-67-15",
+     "type": "equation",
+     "page": 10,
+     "original": "3.17 0.93 0.98 3.05"
+    },
+    {
+     "id": "eq-0-67-16",
+     "type": "equation",
+     "page": 10,
+     "original": "DAC♣ 16kHz"
+    },
+    {
+     "id": "eq-0-67-17",
+     "type": "equation",
+     "page": 10,
+     "original": "320 9"
+    },
+    {
+     "id": "eq-0-67-18",
+     "type": "equation",
+     "page": 10,
+     "original": "4.5 kbps"
+    },
+    {
+     "id": "eq-0-67-19",
+     "type": "equation",
+     "page": 10,
+     "original": "3.52 0.95 0.97 2.65"
+    },
+    {
+     "id": "eq-0-67-20",
+     "type": "equation",
+     "page": 10,
+     "original": "SoundStream♦ 16kHz"
+    },
+    {
+     "id": "eq-0-67-21",
+     "type": "equation",
+     "page": 10,
+     "original": "200 6"
+    },
+    {
+     "id": "eq-0-67-22",
+     "type": "equation",
+     "page": 10,
+     "original": "4.8 kbps"
+    },
+    {
+     "id": "eq-0-67-23",
+     "type": "equation",
+     "page": 10,
+     "original": "3.03 0.90 1.07 3.38"
+    },
+    {
+     "id": "eq-0-67-24",
+     "type": "equation",
+     "page": 10,
+     "original": "FACodec 16kHz"
+    },
+    {
+     "id": "eq-0-67-25",
+     "type": "equation",
+     "page": 10,
+     "original": "200 6"
+    },
+    {
+     "id": "eq-0-67-26",
+     "type": "equation",
+     "page": 10,
+     "original": "4.8 kbps"
+    },
+    {
+     "id": "eq-0-67-27",
+     "type": "equation",
+     "page": 10,
+     "original": "3.47 0.95 0.93 2.59"
     }
    ]
   },
@@ -2042,10 +2780,16 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-4-3-2-4-1",
-       "original": "Sim-O / R ↑ VALL-E + FACodec",
-       "zh": "（此为 Table 6 的表格碎块抽取，含 Sim-O / R↑ 列）VALL-E + FACodec（后续数值见下一段）。"
+       "original": "Sim-O / R ↑ WER↓ CMOS↑ SMOS↑ VALL-E + FACodec",
+       "zh": "表头：Sim-O / R ↑ / WER↓ / CMOS↑ / SMOS↑——VALL-E + FACodec 0.57 / 0.65（后续数值照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-3-2-1",
+     "type": "equation",
+     "page": 11,
+     "original": "0.57 / 0.65"
     }
    ]
   },
@@ -2060,14 +2804,32 @@ globalThis.PAPER_2403_03100 = {
    },
    "blocks": [
     {
+     "id": "eq-5-60-1",
+     "type": "equation",
+     "page": 11,
+     "original": "3.61"
+    },
+    {
+     "id": "eq-5-60-2",
+     "type": "equation",
+     "page": 11,
+     "original": "VALL-E♦"
+    },
+    {
+     "id": "eq-5-60-3",
+     "type": "equation",
+     "page": 11,
+     "original": "0.47 / 0.51 6.11 0.00 3.46"
+    },
+    {
      "id": "p-5-60-1",
      "type": "paragraph",
      "page": 11,
      "sentences": [
       {
        "id": "s-5-60-1-1",
-       "original": "3.61 VALL-E♦ 6.11 0.00 3.46 in TTS, and the acoustic details do not carry semantic information.",
-       "zh": "（此段为 Table 6 数值与正文跨页混排的抽取碎块）数值 3.61；VALL-E♦ 6.11、0.00、3.46。（正文续上段）……在 TTS 中由文本决定，而声学细节不携带语义信息。"
+       "original": "in TTS, and the acoustic details do not carry semantic information.",
+       "zh": "（表格行）3.61；VALL-E♦ 0.47 / 0.51；6.11；0.00；3.46。在 TTS 中，声学细节不携带语义信息。"
       },
       {
        "id": "s-5-60-1-2",
@@ -2191,10 +2953,16 @@ globalThis.PAPER_2403_03100 = {
       },
       {
        "id": "s-4-4-2-4",
-       "original": "It shows that with the speech factorization, NaturalSpeech 3 can generate the speech effectively. 2) As we scale up training data from 1K hours to 60K hours, and then to 200K hours, NaturalSpeech 3 displays continuously enhanced performance, with an improvement of 0.08 and 0.09 in terms of Sim-O, and 0.91 and 1.83 in terms of WER, respectively, thus confirming the benefits of data scaling.",
+       "original": "It shows that with the speech factorization, NaturalSpeech 3 can generate the speech effectively. 2) As we scale up training data from 1K hours to 60K hours, and then to 200K hours, NaturalSpeech 3 displays continuously enhanced performance,",
        "zh": "这说明有了语音分解，NaturalSpeech 3 在小数据上也能有效生成语音；2）当训练数据从 1K 小时扩展到 60K 小时、再到 200K 小时时，NaturalSpeech 3 的性能持续增强，Sim-O 分别提升 0.08 与 0.09，WER 分别改善 0.91 与 1.83，从而确认了数据缩放的收益。"
       }
      ]
+    },
+    {
+     "id": "eq-4-4-1",
+     "type": "equation",
+     "page": 11,
+     "original": "with an improvement of 0.08 and 0.09 in terms of Sim-O, and 0.91 and 1.83 in terms of WER,"
     },
     {
      "id": "p-4-4-3",
@@ -2203,26 +2971,38 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-4-4-3-1",
+       "original": "respectively, thus confirming the benefits of data scaling.",
+       "zh": "（正文残句）……分别，从而证实了数据规模扩大的收益。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-4-4",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-4-4-4-1",
        "original": "Model Scaling.",
        "zh": "模型缩放。"
       },
       {
-       "id": "s-4-4-3-2",
+       "id": "s-4-4-4-2",
        "original": "We scale up the model size of the factorized diffusion model from 500M to 1B parameters with the internal 200K hours dataset.",
        "zh": "在内部 200K 小时数据集上，我们把分解扩散模型的规模从 500M 扩展到 1B 参数。"
       },
       {
-       "id": "s-4-4-3-3",
+       "id": "s-4-4-4-3",
        "original": "Specifically, we double the number of transformer layers from 12 to 24.",
        "zh": "具体来说，我们把 Transformer 层数从 12 层加倍到 24 层。"
       },
       {
-       "id": "s-4-4-3-4",
+       "id": "s-4-4-4-4",
        "original": "The results in Table 8 show a boost in both speaker similarity (0.05 in Sim-O) and robustness (0.40 in WER), validating the effectiveness of model scaling.",
        "zh": "Table 8 的结果显示，说话人相似度（Sim-O 提升 0.05）与鲁棒性（WER 改善 0.40）都有提升，验证了模型缩放的有效性。"
       },
       {
-       "id": "s-4-4-3-5",
+       "id": "s-4-4-4-5",
        "original": "In the future, we will scale up the model size even larger to achieve better results.",
        "zh": "未来我们会把模型规模进一步放大，以取得更好的结果。"
       }
@@ -2276,10 +3056,40 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-5-2-1",
-       "original": "Sim-O↑ 0.64 3.94 0.72 3.03 0.73 2.11",
-       "zh": "（此为 Table 7 的表格碎块抽取，含 Sim-O↑ 列）数值依次为 0.64、3.94；0.72、3.03；0.73、2.11。"
+       "original": "Sim-O↑ WER↓ 1K",
+       "zh": "（表格行：Sim-O↑ / WER↓——1K：0.64/3.94；60K：0.72/3.03；200K：0.73/2.11。）"
       }
      ]
+    },
+    {
+     "id": "eq-5-1",
+     "type": "equation",
+     "page": 12,
+     "original": "0.64 3.94"
+    },
+    {
+     "id": "eq-5-2",
+     "type": "equation",
+     "page": 12,
+     "original": "60K"
+    },
+    {
+     "id": "eq-5-3",
+     "type": "equation",
+     "page": 12,
+     "original": "0.72 3.03"
+    },
+    {
+     "id": "eq-5-4",
+     "type": "equation",
+     "page": 12,
+     "original": "200K"
+    },
+    {
+     "id": "eq-5-5",
+     "type": "equation",
+     "page": 12,
+     "original": "0.73 2.11"
     },
     {
      "id": "tab-5-2",
@@ -2295,16 +3105,46 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-5-3-1",
-       "original": "Sim-O↑ 500M 0.73 2.11 1B 0.78 1.71 that NaturalSpeech 3 can enable speech attribute manipulation, by customizing speech attribute prompts.",
-       "zh": "（此为 Table 8 的表格碎块抽取，含 Sim-O↑ 列）500M 对应 0.73、2.11；1B 对应 0.78、1.71。（正文续）……NaturalSpeech 3 可以通过定制语音属性提示来实现语音属性操控。"
+       "original": "Sim-O↑ WER↓ 500M",
+       "zh": "（表格行：Sim-O↑ / WER↓——500M：0.73/2.11；1B：0.78/1.71。）说明 NaturalSpeech 3 可以通过定制语音属性提示来做语音属性操控。"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-6",
+     "type": "equation",
+     "page": 12,
+     "original": "0.73 2.11"
+    },
+    {
+     "id": "eq-5-7",
+     "type": "equation",
+     "page": 12,
+     "original": "1B"
+    },
+    {
+     "id": "eq-5-8",
+     "type": "equation",
+     "page": 12,
+     "original": "0.78 1.71"
+    },
+    {
+     "id": "p-5-4",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-5-4-1",
+       "original": "that NaturalSpeech 3 can enable speech attribute manipulation, by customizing speech attribute prompts.",
+       "zh": "（表格行：Sim-O↑ / WER↓——500M：0.73/2.11；1B：0.78/1.71。）说明 NaturalSpeech 3 可以通过定制语音属性提示来做语音属性操控。"
       },
       {
-       "id": "s-5-3-2",
+       "id": "s-5-4-2",
        "original": "Furthermore, we demonstrate that NaturalSpeech 3 achieves human-level performance on the multi-speaker LibriSpeech dataset for the first time and better performance by scaling to 1B parameters and 200K hours of training data.",
        "zh": "此外，我们证明了 NaturalSpeech 3 首次在多说话人 LibriSpeech 数据集上达到人类水平的性能，并且通过扩展到 1B 参数和 200K 小时训练数据获得更好表现。"
       },
       {
-       "id": "s-5-3-3",
+       "id": "s-5-4-3",
        "original": "We list the limitations and future works in Appendix C.",
        "zh": "局限与未来工作列于 Appendix C。"
       }
@@ -2506,9 +3346,15 @@ globalThis.PAPER_2403_03100 = {
       },
       {
        "id": "s-references-10-2",
-       "original": "GradTTS: A diffusion probabilistic model for text-to-speech. arXiv preprint arXiv:2105.06337, 2021."
+       "original": "GradTTS: A diffusion probabilistic model for text-to-speech. arXiv preprint arXiv:2105.06337,"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 13,
+     "original": "2021."
     },
     {
      "id": "p-references-11",
@@ -2547,9 +3393,15 @@ globalThis.PAPER_2403_03100 = {
       },
       {
        "id": "s-references-13-2",
-       "original": "Soundstorm: Efficient parallel audio generation. arXiv preprint arXiv:2305.09636, 2023."
+       "original": "Soundstorm: Efficient parallel audio generation. arXiv preprint arXiv:2305.09636,"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 13,
+     "original": "2023."
     },
     {
      "id": "p-references-14",
@@ -2904,9 +3756,15 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "High-fidelity audio compression with improved rvqgan. arXiv preprint arXiv:2306.06546, 2023."
+       "original": "High-fidelity audio compression with improved rvqgan. arXiv preprint arXiv:2306.06546,"
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 14,
+     "original": "2023."
     },
     {
      "id": "p-references-37",
@@ -3253,9 +4111,15 @@ globalThis.PAPER_2403_03100 = {
       },
       {
        "id": "s-references-59-2",
-       "original": "Diffusion posterior sampling for general noisy inverse problems. arXiv preprint arXiv:2209.14687, 2022."
+       "original": "Diffusion posterior sampling for general noisy inverse problems. arXiv preprint arXiv:2209.14687,"
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 15,
+     "original": "2022."
     },
     {
      "id": "p-references-60",
@@ -3272,9 +4136,15 @@ globalThis.PAPER_2403_03100 = {
       },
       {
        "id": "s-references-60-3",
-       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 10696–10706, 2022."
+       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 10696–10706,"
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 15,
+     "original": "2022."
     },
     {
      "id": "p-references-61",
@@ -3682,9 +4552,15 @@ globalThis.PAPER_2403_03100 = {
       },
       {
        "id": "s-references-86-4",
-       "original": "PMLR, 2022."
+       "original": "PMLR,"
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 16,
+     "original": "2022."
     },
     {
      "id": "p-references-87",
@@ -3697,9 +4573,15 @@ globalThis.PAPER_2403_03100 = {
       },
       {
        "id": "s-references-87-2",
-       "original": "Lm-vc: Zero-shot voice conversion via speech generation based on language models. arXiv preprint arXiv:2306.10521, 2023."
+       "original": "Lm-vc: Zero-shot voice conversion via speech generation based on language models. arXiv preprint arXiv:2306.10521,"
       }
      ]
+    },
+    {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 16,
+     "original": "2023."
     }
    ]
   },
@@ -3709,480 +4591,917 @@ globalThis.PAPER_2403_03100 = {
    "level": 1,
    "page": 17,
    "title": {
-    "original": "Details of Factorization Diffusion Model Model Configuration",
-    "zh": "附录 A：分解扩散模型的细节"
+    "original": "Details of Factorization Diffusion Model",
+    "zh": "Details of Factorization Diffusion Model"
+   },
+   "blocks": []
+  },
+  {
+   "id": "sec-A-1",
+   "num": "A.1",
+   "level": 2,
+   "page": 17,
+   "title": {
+    "original": "Model Configuration",
+    "zh": "Model Configuration"
    },
    "blocks": [
     {
-     "id": "p-A-1",
+     "id": "p-A-1-1",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-1-1",
+       "id": "s-A-1-1-1",
        "original": "The phoneme encoder uses a similar architecture as [5] and comprises a 6-layer Transformer with 8 attention heads, 512 embedding dimensions, filter size 2048 and kernel size 9 for 1D convolution, and a dropout of 0.1.",
        "zh": "音素编码器采用与 [5] 类似的架构：6 层 Transformer，8 个注意力头，嵌入维度 512，1D 卷积的滤波器大小 2048、卷积核大小 9，dropout 为 0.1。"
       },
       {
-       "id": "s-A-1-2",
+       "id": "s-A-1-1-2",
        "original": "In prosody, content and acoustic details diffusion, we adopt a shared 12-layer Transformer, with 8 attention heads, 1024 embedding dimensions, filter size 2048 and kernel size 3 for 1D convolution, and a dropout of 0.1.",
        "zh": "在韵律、内容和声学细节扩散中，我们采用共享的 12 层 Transformer，8 个注意力头，嵌入维度 1024，1D 卷积的滤波器大小 2048、卷积核大小 3，dropout 为 0.1。"
       },
       {
-       "id": "s-A-1-3",
+       "id": "s-A-1-1-3",
        "original": "We additionally use conditional layer normalization in each Transformer block to support diffusion time input.",
        "zh": "我们在每个 Transformer 块中额外使用条件层归一化，以支持扩散时间步输入。"
       },
       {
-       "id": "s-A-1-4",
+       "id": "s-A-1-1-4",
        "original": "In phoneme-level prosody and duration diffusion, we adopt a 6-layer Transformer with 8 attention heads, 1024 embedding dimensions, filter size 2048 and kernel size 3 for 1D convolution, and a dropout of 0.1.",
        "zh": "在音素级韵律扩散与时长扩散中，我们采用 6 层 Transformer，8 个注意力头，嵌入维度 1024，1D 卷积的滤波器大小 2048、卷积核大小 3，dropout 为 0.1。"
       },
       {
-       "id": "s-A-1-5",
+       "id": "s-A-1-1-5",
        "original": "We also use conditional layer normalization in the model to support diffusion time input.",
        "zh": "我们同样在该模型中使用条件层归一化来支持扩散时间步输入。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-A-2",
+   "num": "A.2",
+   "level": 2,
+   "page": 17,
+   "title": {
+    "original": "Training and Inference Details",
+    "zh": "Training and Inference Details"
+   },
+   "blocks": [
     {
-     "id": "p-A-2",
+     "id": "p-A-2-1",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-2-1",
-       "original": "Training and Inference Details We use Librilight [56], which contains 60K hours of 16KHz unlabeled speech data and around 7000 distinct speakers from LibriVox audiobooks, as the training set.",
-       "zh": "训练与推理细节。我们使用 Librilight [56] 作为训练集，它包含 60K 小时 16KHz 无标注语音数据，来自 LibriVox 有声书，约 7000 个不同说话人。"
+       "id": "s-A-2-1-1",
+       "original": "We use Librilight [56], which contains 60K hours of 16KHz unlabeled speech data and around 7000 distinct speakers from LibriVox audiobooks, as the training set.",
+       "zh": "我们使用 Librilight [56] 作为训练集，它包含 60K 小时 16KHz 无标注语音数据，来自 LibriVox 有声书，约 7000 个不同说话人。"
       },
       {
-       "id": "s-A-2-2",
+       "id": "s-A-2-1-2",
        "original": "We transcribe using an internal ASR system, convert transcriptions to phonemes via grapheme-to-phoneme conversion [66], and obtain duration with an internal alignment tool.",
        "zh": "我们用内部 ASR 系统转写，通过字位-音素转换（grapheme-to-phoneme）[66] 把转写文本转为音素，并用内部对齐工具得到时长。"
       },
       {
-       "id": "s-A-2-3",
+       "id": "s-A-2-1-3",
        "original": "We use 8 A100 80GB GPUs with a batch size of 10K frames of latent vectors per GPU for 1M steps.",
        "zh": "我们使用 8 张 A100 80GB GPU 训练 1M 步，每张 GPU 的批大小为 10K 帧隐向量。"
       },
       {
-       "id": "s-A-2-4",
+       "id": "s-A-2-1-4",
        "original": "We use the AdamW optimizer with a learning rate of 1e −4, β1 = 0.9, and β2 = 0.98, 5K warmup steps following the inverse square root learning schedule.",
        "zh": "优化器为 AdamW，学习率 1e−4，β1 = 0.9，β2 = 0.98，5K 个 warmup 步，之后采用反平方根学习率衰减。"
       }
      ]
     },
     {
-     "id": "p-A-3",
+     "id": "p-A-2-2",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-3-1",
+       "id": "s-A-2-2-1",
        "original": "During inference, we perform 4 iterations in each diffusion process, including phoneme-level prosody, duration, prosody, content and acoustic details diffusion.",
        "zh": "推理时，我们在每个扩散过程（包括音素级韵律、时长、韵律、内容和声学细节扩散）执行 4 次迭代。"
       },
       {
-       "id": "s-A-3-2",
+       "id": "s-A-2-2-2",
        "original": "We generate duration without classifier-free guidance, and generate others with a classifier-free guidance scale of 1.0.",
        "zh": "时长生成不使用无分类器引导，其余生成的无分类器引导强度为 1.0。"
       },
       {
-       "id": "s-A-3-3",
-       "original": "This strategy results a 4 × 2 for phoneme-level prosody, 4 for duration, 4 × 2 for each token sequence of prosody, content and acoustic details, totaling 60 forward passes due to the double computation with classifier-free guidance.",
+       "id": "s-A-2-2-3",
+       "original": "This strategy results a",
        "zh": "该策略对应：音素级韵律 4 × 2，时长 4，韵律、内容和声学细节各 token 序列 4 × 2；由于无分类器引导的双倍计算，合计 60 次前向传播。"
-      },
-      {
-       "id": "s-A-3-4",
-       "original": "We use a top-k of 20, with sampling temperature annealing from 1.5 to 0.",
-       "zh": "我们使用 top-k 为 20 的采样，温度从 1.5 退火到 0。"
-      },
-      {
-       "id": "s-A-3-5",
-       "original": "Following [67], Gumbel noises are added to token confidences when determining which positions to re-mask in q(Xt−∆t|ˆX0, Xt), mentioned in Section 3.3.2.",
-       "zh": "沿用 [67]，在 Section 3.3.2 提到的 q(Xt−∆t|ˆX0, Xt) 中决定哪些位置要重新遮盖时，我们向 token 置信度加入 Gumbel 噪声。"
       }
      ]
     },
     {
-     "id": "p-A-4",
+     "id": "eq-A-2-1",
+     "type": "equation",
+     "page": 17,
+     "original": "4 × 2 for phoneme-level prosody, 4 for duration, 4 × 2 for each token sequence of prosody, content"
+    },
+    {
+     "id": "p-A-2-3",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-4-1",
-       "original": "Evaluation Baselines We compare NaturalSpeech 3 with following strong zero-shot TTS baselines:",
+       "id": "s-A-2-3-1",
+       "original": "and acoustic details, totaling 60 forward passes due to the double computation with classifier-free guidance.",
+       "zh": "该策略对应：音素级韵律 4 × 2，时长 4，韵律、内容和声学细节各 token 序列 4 × 2；由于无分类器引导的双倍计算，合计 60 次前向传播。"
+      },
+      {
+       "id": "s-A-2-3-2",
+       "original": "We use a top-k of 20, with sampling temperature annealing from 1.5 to 0.",
+       "zh": "我们使用 top-k 为 20 的采样，温度从 1.5 退火到 0。"
+      },
+      {
+       "id": "s-A-2-3-3",
+       "original": "Following [67], Gumbel noises are added to token confidences when determining which positions to re-mask in q(Xt−∆t|ˆX0, Xt), mentioned in Section 3.3.2.",
+       "zh": "沿用 [67]，在 Section 3.3.2 提到的 q(Xt−∆t|ˆX0, Xt) 中决定哪些位置要重新遮盖时，我们向 token 置信度加入 Gumbel 噪声。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-A-3",
+   "num": "A.3",
+   "level": 2,
+   "page": 17,
+   "title": {
+    "original": "Evaluation Baselines",
+    "zh": "Evaluation Baselines"
+   },
+   "blocks": [
+    {
+     "id": "p-A-3-1",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-A-3-1-1",
+       "original": "We compare NaturalSpeech 3 with following strong zero-shot TTS baselines:",
        "zh": "评测基线。我们将 NaturalSpeech 3 与以下强零样本 TTS 基线比较："
       }
      ]
     },
     {
-     "id": "p-A-5",
+     "id": "p-A-3-2",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-5-1",
+       "id": "s-A-3-2-1",
        "original": "• VALL-E [6].",
        "zh": "• VALL-E [6]。"
       },
       {
-       "id": "s-A-5-2",
+       "id": "s-A-3-2-2",
        "original": "It use an autoregressive and an additional non-autoregressive model for discrete token generation.",
        "zh": "它用一个自回归模型外加一个非自回归模型来生成离散 token。"
       },
       {
-       "id": "s-A-5-3",
+       "id": "s-A-3-2-3",
        "original": "We report the scores directly obtained from the paper.",
        "zh": "我们报告直接取自其论文的分数。"
       },
       {
-       "id": "s-A-5-4",
+       "id": "s-A-3-2-4",
        "original": "We additionally reproduce it using discrete tokens from SoundStream on Librilight.",
        "zh": "此外，我们用 Librilight 上的 SoundStream 离散 token 复现了它。"
       }
      ]
     },
     {
-     "id": "p-A-6",
+     "id": "p-A-3-3",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-6-1",
+       "id": "s-A-3-3-1",
        "original": "• NaturalSpeech 2 [5].",
        "zh": "• NaturalSpeech 2 [5]。"
       },
       {
-       "id": "s-A-6-2",
+       "id": "s-A-3-3-2",
        "original": "It use a non-autoregressive model for continuous vectors generation.",
        "zh": "它用非自回归模型生成连续向量。"
       }
      ]
     },
     {
-     "id": "p-A-7",
+     "id": "p-A-3-4",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-7-1",
+       "id": "s-A-3-4-1",
        "original": "We obtain samples through communication with the authors.",
        "zh": "我们通过与作者交流获得其样本。"
       }
      ]
     },
     {
-     "id": "p-A-8",
+     "id": "p-A-3-5",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-8-1",
+       "id": "s-A-3-5-1",
        "original": "• Voicebox [11].",
        "zh": "• Voicebox [11]。"
       },
       {
-       "id": "s-A-8-2",
+       "id": "s-A-3-5-2",
        "original": "It use a non-autoregressive model for continuous vectors generation.",
        "zh": "它用非自回归模型生成连续向量。"
       },
       {
-       "id": "s-A-8-3",
+       "id": "s-A-3-5-3",
        "original": "We obtain samples through communication with the authors.",
        "zh": "我们通过与作者交流获得其样本。"
       },
       {
-       "id": "s-A-8-4",
+       "id": "s-A-3-5-4",
        "original": "We additionally reproduce it using mel-spectrogram on Librilight.",
        "zh": "此外，我们用 Librilight 上的 Mel 频谱图复现了它。"
       }
      ]
     },
     {
-     "id": "p-A-9",
+     "id": "p-A-3-6",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-9-1",
+       "id": "s-A-3-6-1",
        "original": "• Mega-TTS 2 [62].",
        "zh": "• Mega-TTS 2 [62]。"
       },
       {
-       "id": "s-A-9-2",
+       "id": "s-A-3-6-2",
        "original": "It use a non-autoregressive model for continuous vectors generation.",
        "zh": "它用非自回归模型生成连续向量。"
       },
       {
-       "id": "s-A-9-3",
+       "id": "s-A-3-6-3",
        "original": "We obtain samples through communication with the authors.",
        "zh": "我们通过与作者交流获得其样本。"
       }
      ]
     },
     {
-     "id": "p-A-10",
+     "id": "p-A-3-7",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-10-1",
+       "id": "s-A-3-7-1",
        "original": "• UniAudio [35].",
        "zh": "• UniAudio [35]。"
       },
       {
-       "id": "s-A-10-2",
+       "id": "s-A-3-7-2",
        "original": "It use an autoregressive model for discrete token generation.",
        "zh": "它用自回归模型生成离散 token。"
       },
       {
-       "id": "s-A-10-3",
+       "id": "s-A-3-7-3",
        "original": "We obtain samples through communication with the authors.",
        "zh": "我们通过与作者交流获得其样本。"
       }
      ]
     },
     {
-     "id": "p-A-11",
+     "id": "p-A-3-8",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-11-1",
+       "id": "s-A-3-8-1",
        "original": "• StyleTTS 2 [24].",
        "zh": "• StyleTTS 2 [24]。"
       },
       {
-       "id": "s-A-11-2",
+       "id": "s-A-3-8-2",
        "original": "It use a non-autoregressive model for continuous vectors generation.",
        "zh": "它用非自回归模型生成连续向量。"
       },
       {
-       "id": "s-A-11-3",
+       "id": "s-A-3-8-3",
        "original": "We use official code and checkpoint8.",
        "zh": "我们使用其官方代码与 checkpoint（脚注 8）。"
       }
      ]
     },
     {
-     "id": "p-A-12",
+     "id": "p-A-3-9",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-12-1",
+       "id": "s-A-3-9-1",
        "original": "• HierSpeech++ [25].",
        "zh": "• HierSpeech++ [25]。"
       },
       {
-       "id": "s-A-12-2",
+       "id": "s-A-3-9-2",
        "original": "It use a non-autoregressive model for continuous vectors generation.",
        "zh": "它用非自回归模型生成连续向量。"
       }
      ]
     },
     {
-     "id": "p-A-13",
+     "id": "p-A-3-10",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-13-1",
+       "id": "s-A-3-10-1",
        "original": "We use official code and checkpoint9.",
        "zh": "我们使用其官方代码与 checkpoint（脚注 9）。"
       },
       {
-       "id": "s-A-13-2",
+       "id": "s-A-3-10-2",
        "original": "We do not use its super resolution model for fair comparison.",
        "zh": "为公平比较，我们不使用其超分辨率模型。"
       }
      ]
     },
     {
-     "id": "p-A-14",
+     "id": "p-A-3-11",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-14-1",
+       "id": "s-A-3-11-1",
        "original": "8https://github.com/yl4579/StyleTTS2 9https://github.com/sh-lee-prml/HierSpeechpp",
        "zh": "（脚注）8 https://github.com/yl4579/StyleTTS2；9 https://github.com/sh-lee-prml/HierSpeechpp"
       }
      ]
     },
     {
-     "id": "tab-A-1",
+     "id": "tab-A-3-1",
      "type": "table_caption",
      "page": 18,
      "original": "Table 9: The evaluation results for NaturalSpeech 3 and the baseline methods on LibriSpeech testclean. ♠means the results are obtained from the authors. ♥means the results directly obtained from the paper. ♣means the results are inferred from offical checkpoints. ♦means the reproduced results. WER⋆means the word error rate calculated by an advanced ASR system mentioned in A.4.",
      "zh": "表 9：NaturalSpeech 3 与各基线方法在 LibriSpeech test-clean 上的评测结果。♠表示结果来自作者；♥表示结果直接取自论文；♣表示结果由官方 checkpoint 推理得到；♦表示复现结果。WER⋆表示由 A.4 提到的更先进 ASR 系统计算的词错误率。"
     },
     {
-     "id": "p-A-15",
+     "id": "p-A-3-12",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-15-1",
-       "original": "Sim-R ↑ WER⋆↓ UTMOS ↑ 0.68 1.94 0.68 4.14 +0.08 3.85 VALL-E ♥ 0.58 5.90 VALL-E ♦ 0.47 0.51 6.11 4.87 3.68 3.46 NaturalSpeech 2♠ 0.55 0.62 1.94 1.24 3.88 3.65 Voicebox♠ 0.64 0.67 2.03 1.81 3.82 3.69 Voicebox♦ 0.48 0.50 2.14 1.24 3.73 3.52 Mega-TTS 2♠ 0.53 2.32 2.17 4.02 3.63 UniAudio♠ 0.57 0.68 2.49 1.81 3.79 3.71 StyleTTS 2♣ 0.38 2.49 1.58 3.94 3.07 HierSpeech++♣ 0.51 6.33 4.97 3.80 3.50 0.67 0.76 1.81 1.13 4.30 0.00 4.01",
-       "zh": "（此为 Table 9 的表格碎块抽取，列含 Sim-R↑、WER⋆↓、UTMOS↑）数值依次为 0.68、1.94、0.68、4.14、+0.08、3.85；VALL-E♥ 0.58、5.90；VALL-E♦ 0.47、0.51、6.11、4.87、3.68、3.46；NaturalSpeech 2♠ 0.55、0.62、1.94、1.24、3.88、3.65；Voicebox♠ 0.64、0.67、2.03、1.81、3.82、3.69；Voicebox♦ 0.48、0.50、2.14、1.24、3.73、3.52；Mega-TTS 2♠ 0.53、2.32、2.17、4.02、3.63；UniAudio♠ 0.57、0.68、2.49、1.81、3.79、3.71；StyleTTS 2♣ 0.38、2.49、1.58、3.94、3.07；HierSpeech++♣ 0.51、6.33、4.97、3.80、3.50；末行 0.67、0.76、1.81、1.13、4.30、0.00、4.01。"
+       "id": "s-A-3-12-1",
+       "original": "Sim-O ↑ Sim-R ↑ WER↓ WER⋆↓ UTMOS ↑ CMOS↑ SMOS↑ Ground Truth",
+       "zh": "表头：Sim-O ↑ / Sim-R ↑ / WER↓ / WER⋆↓ / UTMOS ↑ / CMOS↑ / SMOS↑——Ground Truth（后续照原文）。"
       }
      ]
     },
     {
-     "id": "tab-A-2",
+     "id": "eq-A-3-1",
+     "type": "equation",
+     "page": 18,
+     "original": "0.68 - 1.94 0.68 4.14 +0.08 3.85"
+    },
+    {
+     "id": "eq-A-3-2",
+     "type": "equation",
+     "page": 18,
+     "original": "VALL-E ♥"
+    },
+    {
+     "id": "eq-A-3-3",
+     "type": "equation",
+     "page": 18,
+     "original": "- 0.58 5.90 - - - -"
+    },
+    {
+     "id": "eq-A-3-4",
+     "type": "equation",
+     "page": 18,
+     "original": "VALL-E ♦"
+    },
+    {
+     "id": "eq-A-3-5",
+     "type": "equation",
+     "page": 18,
+     "original": "0.47 0.51 6.11 4.87 3.68 -0.60 3.46"
+    },
+    {
+     "id": "eq-A-3-6",
+     "type": "equation",
+     "page": 18,
+     "original": "NaturalSpeech 2♠"
+    },
+    {
+     "id": "eq-A-3-7",
+     "type": "equation",
+     "page": 18,
+     "original": "0.55 0.62 1.94 1.24 3.88 -0.18 3.65"
+    },
+    {
+     "id": "eq-A-3-8",
+     "type": "equation",
+     "page": 18,
+     "original": "Voicebox♠"
+    },
+    {
+     "id": "eq-A-3-9",
+     "type": "equation",
+     "page": 18,
+     "original": "0.64 0.67 2.03 1.81 3.82 -0.23 3.69"
+    },
+    {
+     "id": "eq-A-3-10",
+     "type": "equation",
+     "page": 18,
+     "original": "Voicebox♦"
+    },
+    {
+     "id": "eq-A-3-11",
+     "type": "equation",
+     "page": 18,
+     "original": "0.48 0.50 2.14 1.24 3.73 -0.32 3.52"
+    },
+    {
+     "id": "eq-A-3-12",
+     "type": "equation",
+     "page": 18,
+     "original": "Mega-TTS 2♠"
+    },
+    {
+     "id": "eq-A-3-13",
+     "type": "equation",
+     "page": 18,
+     "original": "0.53 - 2.32 2.17 4.02 -0.20 3.63"
+    },
+    {
+     "id": "eq-A-3-14",
+     "type": "equation",
+     "page": 18,
+     "original": "UniAudio♠"
+    },
+    {
+     "id": "eq-A-3-15",
+     "type": "equation",
+     "page": 18,
+     "original": "0.57 0.68 2.49 1.81 3.79 -0.25 3.71"
+    },
+    {
+     "id": "eq-A-3-16",
+     "type": "equation",
+     "page": 18,
+     "original": "StyleTTS 2♣"
+    },
+    {
+     "id": "eq-A-3-17",
+     "type": "equation",
+     "page": 18,
+     "original": "0.38 - 2.49 1.58 3.94 -0.21 3.07"
+    },
+    {
+     "id": "eq-A-3-18",
+     "type": "equation",
+     "page": 18,
+     "original": "HierSpeech++♣"
+    },
+    {
+     "id": "eq-A-3-19",
+     "type": "equation",
+     "page": 18,
+     "original": "0.51 - 6.33 4.97 3.80 -0.41 3.50"
+    },
+    {
+     "id": "eq-A-3-20",
+     "type": "equation",
+     "page": 18,
+     "original": "NaturalSpeech 3"
+    },
+    {
+     "id": "eq-A-3-21",
+     "type": "equation",
+     "page": 18,
+     "original": "0.67 0.76 1.81 1.13 4.30 0.00 4.01"
+    },
+    {
+     "id": "tab-A-3-2",
      "type": "table_caption",
      "page": 18,
      "original": "Table 10: The latency study on LibriSpeech test-clean. NaturalSpeech 3 one-step denotes using only 1 iteration in each diffusion process instead of original 4. Abbreviation: NFE (number of function evaluation).",
      "zh": "表 10：在 LibriSpeech test-clean 上的延迟研究。NaturalSpeech 3 one-step 表示每个扩散过程只用 1 次迭代，而非原来的 4 次。缩写：NFE（函数评估次数）。"
     },
     {
-     "id": "p-A-16",
+     "id": "p-A-3-13",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-16-1",
-       "original": "Models NFE RTF ↓ Sim-R ↑ UTMOS ↑ 150 0.366 0.55 0.62 3.87 VALL-E 4.520 0.47 0.51 3.67 60 0.296 0.67 0.76 4.30 NaturalSpeech 3 one-step 15 0.067 0.66 0.75 4.01 More Experimental Results on Zero-shot TTS In this section, we report more evaluation results for NaturalSpeech 3 and other baselines on: 1) WER, inferred by an advanced ASR system10; 2) UTMOS [59], which is a surrogate objective metric of MOS.",
+       "id": "s-A-3-13-1",
+       "original": "Models NFE RTF ↓ Sim-O ↑ Sim-R ↑ UTMOS ↑ NaturalSpeech 2",
+       "zh": "表头：Models / NFE / RTF ↓ / Sim-O ↑ / Sim-R ↑ / UTMOS ↑——NaturalSpeech 2（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-3-22",
+     "type": "equation",
+     "page": 18,
+     "original": "150 0.366 0.55 0.62 3.87"
+    },
+    {
+     "id": "eq-A-3-23",
+     "type": "equation",
+     "page": 18,
+     "original": "VALL-E"
+    },
+    {
+     "id": "eq-A-3-24",
+     "type": "equation",
+     "page": 18,
+     "original": "- 4.520 0.47 0.51 3.67"
+    },
+    {
+     "id": "eq-A-3-25",
+     "type": "equation",
+     "page": 18,
+     "original": "NaturalSpeech 3"
+    },
+    {
+     "id": "eq-A-3-26",
+     "type": "equation",
+     "page": 18,
+     "original": "60 0.296 0.67 0.76 4.30"
+    },
+    {
+     "id": "eq-A-3-27",
+     "type": "equation",
+     "page": 18,
+     "original": "NaturalSpeech 3 one-step"
+    },
+    {
+     "id": "eq-A-3-28",
+     "type": "equation",
+     "page": 18,
+     "original": "15 0.067 0.66 0.75 4.01"
+    }
+   ]
+  },
+  {
+   "id": "sec-A-4",
+   "num": "A.4",
+   "level": 2,
+   "page": 18,
+   "title": {
+    "original": "More Experimental Results on Zero-shot TTS",
+    "zh": "More Experimental Results on Zero-shot TTS"
+   },
+   "blocks": [
+    {
+     "id": "p-A-4-1",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-A-4-1-1",
+       "original": "In this section, we report more evaluation results for NaturalSpeech 3 and other baselines on: 1) WER, inferred by an advanced ASR system10; 2) UTMOS [59], which is a surrogate objective metric of MOS.",
        "zh": "（此为 Table 10 的表格碎块抽取，列含模型、NFE、RTF↓、Sim-R↑、UTMOS↑）数值依次为 150、0.366、0.55、0.62、3.87；VALL-E 4.520、0.47、0.51、3.67；60、0.296、0.67、0.76、4.30；NaturalSpeech 3 one-step 15、0.067、0.66、0.75、4.01。（正文）更多零样本 TTS 实验结果：本节报告 NaturalSpeech 3 与其他基线在以下指标上的更多评测：1）由更先进 ASR 系统（脚注 10）推理的 WER；2）UTMOS [59]——MOS 的代理客观指标。"
       },
       {
-       "id": "s-A-16-2",
+       "id": "s-A-4-1-2",
        "original": "The results are shown in Table 9.",
        "zh": "结果见 Table 9。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-A-5",
+   "num": "A.5",
+   "level": 2,
+   "page": 18,
+   "title": {
+    "original": "Latency Analysis",
+    "zh": "Latency Analysis"
+   },
+   "blocks": [
     {
-     "id": "p-A-17",
+     "id": "p-A-5-1",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-17-1",
-       "original": "Latency Analysis In this subsection, we compare the inference latency of NaturalSpeech 3 with an autoregressive method (VALL-E) and a non-autoregressive method (NaturalSpeech 2).",
+       "id": "s-A-5-1-1",
+       "original": "In this subsection, we compare the inference latency of NaturalSpeech 3 with an autoregressive method (VALL-E) and a non-autoregressive method (NaturalSpeech 2).",
        "zh": "延迟分析。本小节比较 NaturalSpeech 3 与一个自回归方法（VALL-E）、一个非自回归方法（NaturalSpeech 2）的推理延迟。"
       },
       {
-       "id": "s-A-17-2",
+       "id": "s-A-5-1-2",
        "original": "We also investigate the effect of reducing the number of iterations in each diffusion from 4 to 1, resulting in a total of 15 forward passes.",
        "zh": "我们还考察了把每个扩散过程的迭代次数从 4 降到 1 的影响，此时总前向传播次数为 15。"
       },
       {
-       "id": "s-A-17-3",
+       "id": "s-A-5-1-3",
        "original": "We call this variant NaturalSpeech 3 one-step.",
        "zh": "我们把这个变体称为 NaturalSpeech 3 one-step。"
       },
       {
-       "id": "s-A-17-4",
+       "id": "s-A-5-1-4",
        "original": "We evaluate the performance on Librispeech test-clean in terms of speaker similarity (Sim-O/Sim-R) and quality (UTMOS [59] 11, a surrogate objective metric of CMOS).",
        "zh": "我们在 Librispeech test-clean 上按说话人相似度（Sim-O/Sim-R）与质量（UTMOS [59]（脚注 11），CMOS 的代理客观指标）评估性能。"
       },
       {
-       "id": "s-A-17-5",
+       "id": "s-A-5-1-5",
        "original": "The latency tests are conducted on a server with E5-2690 Intel Xeon CPU, 512GB memory, and one NVIDIA V100 GPU.",
        "zh": "延迟测试在一台配有 E5-2690 Intel Xeon CPU、512GB 内存和一张 NVIDIA V100 GPU 的服务器上进行。"
       },
       {
-       "id": "s-A-17-6",
+       "id": "s-A-5-1-6",
        "original": "The results are shown in Table 10.",
        "zh": "结果见 Table 10。"
       },
       {
-       "id": "s-A-17-7",
+       "id": "s-A-5-1-7",
        "original": "From the results, we have several observations. 1) NaturalSpeech 3 achieves a 15.27× speedup over VALL-E and 1.24× speedup over NaturalSpeech 2, while consistently surpasses these baselines on all metrics.",
        "zh": "从结果中我们有几点观察：1）NaturalSpeech 3 相比 VALL-E 加速 15.27×、相比 NaturalSpeech 2 加速 1.24×，同时在所有指标上持续超过这些基线。"
       },
       {
-       "id": "s-A-17-8",
+       "id": "s-A-5-1-8",
        "original": "This demonstrate NaturalSpeech 3 is both effective and efficient. 2) when using fewer diffusion steps, NaturalSpeech 3 can still maintain robust performance (−0.01 in Sim-O, −0.01 in Sim-R, and −0.29 in UTMOS) with a 4.41× faster speed, proving the robustness of diffusion steps.",
        "zh": "这说明 NaturalSpeech 3 既有效又高效；2）使用更少的扩散步数时，NaturalSpeech 3 仍保持稳健性能（Sim-O 仅降 0.01，Sim-R 仅降 0.01，UTMOS 降 0.29），且速度再快 4.41×，证明了其对扩散步数的鲁棒性。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-A-6",
+   "num": "A.6",
+   "level": 2,
+   "page": 18,
+   "title": {
+    "original": "Ablation Study on Duration Diffusion Model",
+    "zh": "Ablation Study on Duration Diffusion Model"
+   },
+   "blocks": [
     {
-     "id": "p-A-18",
+     "id": "p-A-6-1",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-18-1",
-       "original": "Ablation Study on Duration Diffusion Model In this subsection, we conduct an ablation study to compare our duration discrete diffusion model with the traditional duration predictor, which regresses the duration in logarithmic domain.",
+       "id": "s-A-6-1-1",
+       "original": "In this subsection, we conduct an ablation study to compare our duration discrete diffusion model with the traditional duration predictor, which regresses the duration in logarithmic domain.",
        "zh": "时长扩散模型消融。本小节通过消融比较我们的时长离散扩散模型与传统时长预测器（在对数域回归时长）。"
       },
       {
-       "id": "s-A-18-2",
+       "id": "s-A-6-1-2",
        "original": "The 10https://huggingface.co/nvidia/stt_en_conformer_transducer_xlarge 11https://github.com/tarepan/SpeechMOS",
        "zh": "（此为抽取误切的脚注碎块）10 https://huggingface.co/nvidia/stt_en_conformer_transducer_xlarge；11 https://github.com/tarepan/SpeechMOS"
       }
      ]
     },
     {
-     "id": "tab-A-3",
+     "id": "tab-A-6-1",
      "type": "table_caption",
      "page": 19,
      "original": "Table 11: The ablation results of the design of the duration predictor on LibriSpeech test-clean.",
      "zh": "表 11：在 LibriSpeech test-clean 上关于时长预测器设计的消融结果。"
     },
     {
-     "id": "p-A-19",
+     "id": "p-A-6-2",
      "type": "paragraph",
      "page": 19,
      "sentences": [
       {
-       "id": "s-A-19-1",
-       "original": "Sim-R ↑ UTMOS↑ 0.67 0.76 1.94 4.30 Generation ablation 0.62 0.73 1.94 4.18 Objective ablation 0.62 0.72 2.38 4.13 Conditioning ablation 0.62 0.72 2.49 4.11 Prompting ablation 0.61 0.71 2.83 4.08",
-       "zh": "（此为 Table 11 的表格碎块抽取，列含 Sim-R↑、UTMOS↑）数值依次为 0.67、0.76、1.94、4.30；Generation 消融 0.62、0.73、1.94、4.18；Objective 消融 0.62、0.72、2.38、4.13；Conditioning 消融 0.62、0.72、2.49、4.11；Prompting 消融 0.61、0.71、2.83、4.08。"
+       "id": "s-A-6-2-1",
+       "original": "Sim-O ↑ Sim-R ↑ WER↓ UTMOS↑ NaturalSpeech 3",
+       "zh": "表头：Sim-O ↑ / Sim-R ↑ / WER↓ / UTMOS↑——NaturalSpeech 3（后续照原文）。"
       }
      ]
     },
     {
-     "id": "tab-A-4",
+     "id": "eq-A-6-1",
+     "type": "equation",
+     "page": 19,
+     "original": "0.67 0.76 1.94 4.30"
+    },
+    {
+     "id": "eq-A-6-2",
+     "type": "equation",
+     "page": 19,
+     "original": "Generation ablation"
+    },
+    {
+     "id": "eq-A-6-3",
+     "type": "equation",
+     "page": 19,
+     "original": "0.62 0.73 1.94 4.18"
+    },
+    {
+     "id": "eq-A-6-4",
+     "type": "equation",
+     "page": 19,
+     "original": "Objective ablation"
+    },
+    {
+     "id": "eq-A-6-5",
+     "type": "equation",
+     "page": 19,
+     "original": "0.62 0.72 2.38 4.13"
+    },
+    {
+     "id": "eq-A-6-6",
+     "type": "equation",
+     "page": 19,
+     "original": "Conditioning ablation"
+    },
+    {
+     "id": "eq-A-6-7",
+     "type": "equation",
+     "page": 19,
+     "original": "0.62 0.72 2.49 4.11"
+    },
+    {
+     "id": "eq-A-6-8",
+     "type": "equation",
+     "page": 19,
+     "original": "Prompting ablation"
+    },
+    {
+     "id": "eq-A-6-9",
+     "type": "equation",
+     "page": 19,
+     "original": "0.61 0.71 2.83 4.08"
+    },
+    {
+     "id": "tab-A-6-2",
      "type": "table_caption",
      "page": 19,
      "original": "Table 12: The MCD scores on 8 different emotions of NaturalSpeech 3 and the baseline methods on RAVDESS. ♠means the results are obtained from the authors. ♣means the results are inferred from official checkpoints. ♦means the reproduced results. We use bold to indicate the best result and underline to indicate the second-best result.",
      "zh": "表 12：NaturalSpeech 3 与各基线方法在 RAVDESS 上 8 种不同情感的 MCD 分数。♠表示结果来自作者；♣表示结果由官方 checkpoint 推理得到；♦表示复现结果。加粗为最优、下划线为次优。"
     },
     {
-     "id": "p-A-20",
+     "id": "p-A-6-3",
      "type": "paragraph",
      "page": 19,
      "sentences": [
       {
-       "id": "s-A-20-1",
-       "original": "MCD↓ neutral calm happy sad angry fearful disgust surprised 0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00 VALL-E ♦ 3.97 4.75 4.83 5.51 5.19 5.29 5.45 5.29 Voicebox♦ 3.93 4.90 4.96 4.93 5.01 5.03 5.34 4.89 NaturalSpeech 2♠ 2.77 3.51 4.85 4.88 5.42 5.23 5.31 4.52 Mega-TTS 2♠ 3.28 4.39 4.44 4.67 4.21 5.00 5.42 4.14 StyleTTS 2♣ 3.41 4.38 4.40 4.64 4.80 4.69 5.10 4.57 HierSpeech++♣ 5.54 6.55 5.78 5.84 6.37 6.17 6.74 5.62 3.23 4.32 4.26 4.41 4.64 4.25 4.80 4.45 ablation study focus on 1) Generation: multi-step generation vs. one-step generation. 2) Objective: classification-based cross-entropy loss vs. regression-based L2 loss. 3) Conditioning: with vs. without phoneme-level prosody conditioning. 4) Prompting: with vs. without duration prompting.",
-       "zh": "（此为 Table 12 的表格碎块抽取，列为 8 种情感的 MCD↓：neutral/calm/happy/sad/angry/fearful/disgust/surprised）真值全为 0.00；VALL-E♦ 3.97、4.75、4.83、5.51、5.19、5.29、5.45、5.29；Voicebox♦ 3.93、4.90、4.96、4.93、5.01、5.03、5.34、4.89；NaturalSpeech 2♠ 2.77、3.51、4.85、4.88、5.42、5.23、5.31、4.52；Mega-TTS 2♠ 3.28、4.39、4.44、4.67、4.21、5.00、5.42、4.14；StyleTTS 2♣ 3.41、4.38、4.40、4.64、4.80、4.69、5.10、4.57；HierSpeech++♣ 5.54、6.55、5.78、5.84、6.37、6.17、6.74、5.62；NaturalSpeech 3 为 3.23、4.32、4.26、4.41、4.64、4.25、4.80、4.45。（正文）消融聚焦四点：1）Generation：多步生成 vs 单步生成；2）Objective：基于分类的交叉熵损失 vs 基于回归的 L2 损失；3）Conditioning：有无音素级韵律条件；4）Prompting：有无时长提示。"
-      },
-      {
-       "id": "s-A-20-2",
-       "original": "We evaluate them on Librispeech test-clean in terms of speaker similarity (Sim-O/Sim-R), robustness (WER) and qualtiy (UTMOS).",
-       "zh": "我们在 Librispeech test-clean 上按说话人相似度（Sim-O/Sim-R）、鲁棒性（WER）与质量（UTMOS）评估这些变体。"
-      },
-      {
-       "id": "s-A-20-3",
-       "original": "As shown in Table 11, we can find that 1) without multi-step generation, there’s a significant drop in performance (-0.05 in Sim-O, -0.03 in Sim-R, and -0.12 in UTMOS). 2) replacing cross-entropy loss with l2 loss affects the performance, causing a decrease of -0.05 in Sim-O, -0.04 in Sim-R, 0.44 in WER and -0.17 in UTMOS. 3) dropping phoneme-level prosody conditioning will affect both speaker similarity (-0.05 in Sim-O and -0.04 in Sim-R), robustness (0.55 in WER) and quality (-0.19 in UTMOS) 4) the duration prompting mechanism is crucial for speaker similarity, robustness and quality, with changes of -0.06 in Sim-O, -0.05 in Sim-R, 0.89 in WER and -0.22 in UTMOS.",
-       "zh": "如 Table 11 所示：1）去掉多步生成后性能显著下降（Sim-O -0.05，Sim-R -0.03，UTMOS -0.12）；2）把交叉熵损失换成 L2 损失会损害性能（Sim-O -0.05，Sim-R -0.04，WER 恶化 0.44，UTMOS -0.17）；3）去掉音素级韵律条件会同时影响说话人相似度（Sim-O -0.05、Sim-R -0.04）、鲁棒性（WER 恶化 0.55）与质量（UTMOS -0.19）；4）时长提示机制对说话人相似度、鲁棒性与质量都至关重要（Sim-O -0.06，Sim-R -0.05，WER 恶化 0.89，UTMOS -0.22）。"
-      },
-      {
-       "id": "s-A-20-4",
-       "original": "These results confirm that each design aspect of our duration predictor contributes to performance improvement.",
-       "zh": "这些结果证实，我们时长预测器的每一项设计都对性能提升有贡献。"
+       "id": "s-A-6-3-1",
+       "original": "MCD↓ neutral calm happy sad angry fearful disgust surprised Ground Truth",
+       "zh": "（附录表：MCD↓ 在 neutral/calm/happy/sad/angry/fearful/disgust/surprised 八种情绪上的对比——Ground Truth 全 0.00；VALL-E♦ 3.97/4.75/4.83/5.51/5.19/5.29/5.45/5.29；Voicebox♦ 3.93/4.90/4.96/4.93/5.01/5.03/5.34/4.89；NaturalSpeech 2♠ 2.77/3.51/4.85/4.88/5.42/5.23/5.31/4.52；Mega-TTS 2♠ 3.28/4.39/4.44/4.67/4.21/5.00/5.42/4.14；StyleTTS 2♣ 3.41/4.38/4.40/4.64/4.80/4.69/5.10/4.57；HierSpeech++♣ 5.54/6.55/5.78/5.84/6.37/6.17/6.74/5.62；NaturalSpeech 3 3.23/4.32/4.26/4.41/4.64/4.25/4.80/4.45。）消融研究关注：1）生成方式：多步生成 vs 一步生成；2）目标：分类交叉熵损失 vs 回归 L2 损失；3）条件：有无音素级韵律条件；4）提示：有无时长提示。"
       }
      ]
     },
     {
-     "id": "p-A-21",
+     "id": "eq-A-6-10",
+     "type": "equation",
+     "page": 19,
+     "original": "0.00 0.00 0.00 0.00 0.00 0.00 0.00 0.00"
+    },
+    {
+     "id": "eq-A-6-11",
+     "type": "equation",
+     "page": 19,
+     "original": "VALL-E ♦"
+    },
+    {
+     "id": "eq-A-6-12",
+     "type": "equation",
+     "page": 19,
+     "original": "3.97 4.75 4.83 5.51 5.19 5.29 5.45 5.29"
+    },
+    {
+     "id": "eq-A-6-13",
+     "type": "equation",
+     "page": 19,
+     "original": "Voicebox♦"
+    },
+    {
+     "id": "eq-A-6-14",
+     "type": "equation",
+     "page": 19,
+     "original": "3.93 4.90 4.96 4.93 5.01 5.03 5.34 4.89"
+    },
+    {
+     "id": "eq-A-6-15",
+     "type": "equation",
+     "page": 19,
+     "original": "NaturalSpeech 2♠"
+    },
+    {
+     "id": "eq-A-6-16",
+     "type": "equation",
+     "page": 19,
+     "original": "2.77 3.51 4.85 4.88 5.42 5.23 5.31 4.52"
+    },
+    {
+     "id": "eq-A-6-17",
+     "type": "equation",
+     "page": 19,
+     "original": "Mega-TTS 2♠"
+    },
+    {
+     "id": "eq-A-6-18",
+     "type": "equation",
+     "page": 19,
+     "original": "3.28 4.39 4.44 4.67 4.21 5.00 5.42 4.14"
+    },
+    {
+     "id": "eq-A-6-19",
+     "type": "equation",
+     "page": 19,
+     "original": "StyleTTS 2♣"
+    },
+    {
+     "id": "eq-A-6-20",
+     "type": "equation",
+     "page": 19,
+     "original": "3.41 4.38 4.40 4.64 4.80 4.69 5.10 4.57"
+    },
+    {
+     "id": "eq-A-6-21",
+     "type": "equation",
+     "page": 19,
+     "original": "HierSpeech++♣"
+    },
+    {
+     "id": "eq-A-6-22",
+     "type": "equation",
+     "page": 19,
+     "original": "5.54 6.55 5.78 5.84 6.37 6.17 6.74 5.62"
+    },
+    {
+     "id": "eq-A-6-23",
+     "type": "equation",
+     "page": 19,
+     "original": "NaturalSpeech 3"
+    },
+    {
+     "id": "eq-A-6-24",
+     "type": "equation",
+     "page": 19,
+     "original": "3.23 4.32 4.26 4.41 4.64 4.25 4.80 4.45"
+    },
+    {
+     "id": "p-A-6-4",
      "type": "paragraph",
      "page": 19,
      "sentences": [
       {
-       "id": "s-A-21-1",
-       "original": "Details of Prosody Similarity Evaluation In Table 12, we present MCD on 8 different emotions, comparing NaturalSpeech 3 with the baseline methods on the RAVDESS benchmark.",
+       "id": "s-A-6-4-1",
+       "original": "ablation study focus on 1) Generation: multi-step generation vs. one-step generation. 2) Objective: classification-based cross-entropy loss vs. regression-based L2 loss. 3) Conditioning: with vs. without phoneme-level prosody conditioning. 4) Prompting: with vs. without duration prompting.",
+       "zh": "（附录表：MCD↓ 在 neutral/calm/happy/sad/angry/fearful/disgust/surprised 八种情绪上的对比——Ground Truth 全 0.00；VALL-E♦ 3.97/4.75/4.83/5.51/5.19/5.29/5.45/5.29；Voicebox♦ 3.93/4.90/4.96/4.93/5.01/5.03/5.34/4.89；NaturalSpeech 2♠ 2.77/3.51/4.85/4.88/5.42/5.23/5.31/4.52；Mega-TTS 2♠ 3.28/4.39/4.44/4.67/4.21/5.00/5.42/4.14；StyleTTS 2♣ 3.41/4.38/4.40/4.64/4.80/4.69/5.10/4.57；HierSpeech++♣ 5.54/6.55/5.78/5.84/6.37/6.17/6.74/5.62；NaturalSpeech 3 3.23/4.32/4.26/4.41/4.64/4.25/4.80/4.45。）消融研究关注：1）生成方式：多步生成 vs 一步生成；2）目标：分类交叉熵损失 vs 回归 L2 损失；3）条件：有无音素级韵律条件；4）提示：有无时长提示。"
+      },
+      {
+       "id": "s-A-6-4-2",
+       "original": "We evaluate them on Librispeech test-clean in terms of speaker similarity (Sim-O/Sim-R), robustness (WER) and qualtiy (UTMOS).",
+       "zh": "我们在 Librispeech test-clean 上按说话人相似度（Sim-O/Sim-R）、鲁棒性（WER）与质量（UTMOS）评估这些变体。"
+      },
+      {
+       "id": "s-A-6-4-3",
+       "original": "As shown in Table 11, we can find that 1) without multi-step generation, there’s a significant drop in performance (-0.05 in Sim-O, -0.03 in Sim-R, and -0.12 in UTMOS). 2) replacing cross-entropy loss with l2 loss affects the performance, causing a decrease of -0.05 in Sim-O, -0.04 in Sim-R, 0.44 in WER and -0.17 in UTMOS. 3) dropping phoneme-level prosody conditioning will affect both speaker similarity (-0.05 in Sim-O and -0.04 in Sim-R), robustness (0.55 in WER) and quality (-0.19 in UTMOS) 4) the duration prompting mechanism is crucial for speaker similarity, robustness and quality, with changes of -0.06 in Sim-O, -0.05 in Sim-R, 0.89 in WER and -0.22 in UTMOS.",
+       "zh": "如 Table 11 所示：1）去掉多步生成后性能显著下降（Sim-O -0.05，Sim-R -0.03，UTMOS -0.12）；2）把交叉熵损失换成 L2 损失会损害性能（Sim-O -0.05，Sim-R -0.04，WER 恶化 0.44，UTMOS -0.17）；3）去掉音素级韵律条件会同时影响说话人相似度（Sim-O -0.05、Sim-R -0.04）、鲁棒性（WER 恶化 0.55）与质量（UTMOS -0.19）；4）时长提示机制对说话人相似度、鲁棒性与质量都至关重要（Sim-O -0.06，Sim-R -0.05，WER 恶化 0.89，UTMOS -0.22）。"
+      },
+      {
+       "id": "s-A-6-4-4",
+       "original": "These results confirm that each design aspect of our duration predictor contributes to performance improvement.",
+       "zh": "这些结果证实，我们时长预测器的每一项设计都对性能提升有贡献。"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-A-7",
+   "num": "A.7",
+   "level": 2,
+   "page": 19,
+   "title": {
+    "original": "Details of Prosody Similarity Evaluation",
+    "zh": "Details of Prosody Similarity Evaluation"
+   },
+   "blocks": [
+    {
+     "id": "p-A-7-1",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-A-7-1-1",
+       "original": "In Table 12, we present MCD on 8 different emotions, comparing NaturalSpeech 3 with the baseline methods on the RAVDESS benchmark.",
        "zh": "韵律相似度评测细节。Table 12 给出了 NaturalSpeech 3 与各基线在 RAVDESS 基准上 8 种情感的 MCD。"
       },
       {
-       "id": "s-A-21-2",
+       "id": "s-A-7-1-2",
        "original": "NaturalSpeech 3 demonstrates robust performance across 8 emotions, verifying the effectiveness and robustness in terms of prosody similarity.",
        "zh": "NaturalSpeech 3 在 8 种情感上都表现稳健，验证了其在韵律相似度上的有效性与鲁棒性。"
       }
@@ -4280,10 +5599,16 @@ globalThis.PAPER_2403_03100 = {
       },
       {
        "id": "s-B-1-2-8",
-       "original": "In our paper, we set these coefficients as follows: λrec = 10.0, λadv = 2.0, λfeat = 2.0, λcodebook = 1.0, λcommit = 0.25, λf0 = 5.0, λph = 5.0, λgr-f0 = 5.0, λgr-ph = 5.0 and λgr-spk = 1.0.",
+       "original": "In our paper, we set these coefficients as follows: λrec = 10.0, λadv = 2.0, λfeat = 2.0,",
        "zh": "本文的系数设置为：λrec = 10.0，λadv = 2.0，λfeat = 2.0，λcodebook = 1.0，λcommit = 0.25，λf0 = 5.0，λph = 5.0，λgr-f0 = 5.0，λgr-ph = 5.0，λgr-spk = 1.0。"
       }
      ]
+    },
+    {
+     "id": "eq-B-1-1",
+     "type": "equation",
+     "page": 20,
+     "original": "λcodebook = 1.0, λcommit = 0.25, λf0 = 5.0, λph = 5.0, λgr-f0 = 5.0, λgr-ph = 5.0 and λgr-spk = 1.0."
     },
     {
      "id": "p-B-1-3",
@@ -4380,10 +5705,172 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-B-2-2-1",
-       "original": "Models Sampling Rate H N Bandwidth PESQ ↑ STOI ↑ MSTFT ↓ MCD ↓ EnCodec♣ 320 8 3.28 0.94 0.99 2.70 EnCodec⋆ 320 10 3.10 0.92 0.97 3.10 HiFi-Codec♣ 320 4 3.17 0.93 0.98 3.05 DAC♣ 320 9 3.52 0.95 0.97 2.65 SoundStream♦ 200 6 3.03 0.90 1.07 3.38 SoundStream♦ 200 12 3.45 0.94 0.92 2.76 FACodec 200 6 3.47 0.95 0.93 2.59",
-       "zh": "（此为 Table 13 的表格碎块抽取，列含模型、采样率、H、N、带宽、PESQ↑、STOI↑、MSTFT↓、MCD↓）数值依次为：EnCodec♣ 320、8、3.28、0.94、0.99、2.70；EnCodec⋆ 320、10、3.10、0.92、0.97、3.10；HiFi-Codec♣ 320、4、3.17、0.93、0.98、3.05；DAC♣ 320、9、3.52、0.95、0.97、2.65；SoundStream♦ 200、6、3.03、0.90、1.07、3.38；SoundStream♦ 200、12、3.45、0.94、0.92、2.76；FACodec 200、6、3.47、0.95、0.93、2.59。"
+       "original": "Models Sampling Rate H N Bandwidth PESQ ↑ STOI ↑ MSTFT ↓ MCD ↓ EnCodec♣ 24kHz",
+       "zh": "表头：Models / Sampling Rate / H / N / Bandwidth / PESQ ↑ / STOI ↑ / MSTFT ↓ / MCD ↓——EnCodec♣ 24kHz（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-B-2-1",
+     "type": "equation",
+     "page": 20,
+     "original": "320 8"
+    },
+    {
+     "id": "eq-B-2-2",
+     "type": "equation",
+     "page": 20,
+     "original": "6.0 kbps"
+    },
+    {
+     "id": "eq-B-2-3",
+     "type": "equation",
+     "page": 20,
+     "original": "3.28 0.94 0.99 2.70"
+    },
+    {
+     "id": "eq-B-2-4",
+     "type": "equation",
+     "page": 20,
+     "original": "EnCodec⋆ 16kHz"
+    },
+    {
+     "id": "eq-B-2-5",
+     "type": "equation",
+     "page": 20,
+     "original": "320 10"
+    },
+    {
+     "id": "eq-B-2-6",
+     "type": "equation",
+     "page": 20,
+     "original": "5.0 kbps"
+    },
+    {
+     "id": "eq-B-2-7",
+     "type": "equation",
+     "page": 20,
+     "original": "3.10 0.92 0.97 3.10"
+    },
+    {
+     "id": "eq-B-2-8",
+     "type": "equation",
+     "page": 20,
+     "original": "HiFi-Codec♣ 16kHz"
+    },
+    {
+     "id": "eq-B-2-9",
+     "type": "equation",
+     "page": 20,
+     "original": "320 4"
+    },
+    {
+     "id": "eq-B-2-10",
+     "type": "equation",
+     "page": 20,
+     "original": "2.0 kbps"
+    },
+    {
+     "id": "eq-B-2-11",
+     "type": "equation",
+     "page": 20,
+     "original": "3.17 0.93 0.98 3.05"
+    },
+    {
+     "id": "eq-B-2-12",
+     "type": "equation",
+     "page": 20,
+     "original": "DAC♣ 16kHz"
+    },
+    {
+     "id": "eq-B-2-13",
+     "type": "equation",
+     "page": 20,
+     "original": "320 9"
+    },
+    {
+     "id": "eq-B-2-14",
+     "type": "equation",
+     "page": 20,
+     "original": "4.5 kbps"
+    },
+    {
+     "id": "eq-B-2-15",
+     "type": "equation",
+     "page": 20,
+     "original": "3.52 0.95 0.97 2.65"
+    },
+    {
+     "id": "eq-B-2-16",
+     "type": "equation",
+     "page": 20,
+     "original": "SoundStream♦ 16kHz"
+    },
+    {
+     "id": "eq-B-2-17",
+     "type": "equation",
+     "page": 20,
+     "original": "200 6"
+    },
+    {
+     "id": "eq-B-2-18",
+     "type": "equation",
+     "page": 20,
+     "original": "4.8 kbps"
+    },
+    {
+     "id": "eq-B-2-19",
+     "type": "equation",
+     "page": 20,
+     "original": "3.03 0.90 1.07 3.38"
+    },
+    {
+     "id": "eq-B-2-20",
+     "type": "equation",
+     "page": 20,
+     "original": "SoundStream♦ 16kHz"
+    },
+    {
+     "id": "eq-B-2-21",
+     "type": "equation",
+     "page": 20,
+     "original": "200 12"
+    },
+    {
+     "id": "eq-B-2-22",
+     "type": "equation",
+     "page": 20,
+     "original": "9.6 kbps"
+    },
+    {
+     "id": "eq-B-2-23",
+     "type": "equation",
+     "page": 20,
+     "original": "3.45 0.94 0.92 2.76"
+    },
+    {
+     "id": "eq-B-2-24",
+     "type": "equation",
+     "page": 20,
+     "original": "FACodec 16kHz"
+    },
+    {
+     "id": "eq-B-2-25",
+     "type": "equation",
+     "page": 20,
+     "original": "200 6"
+    },
+    {
+     "id": "eq-B-2-26",
+     "type": "equation",
+     "page": 20,
+     "original": "4.8 kbps"
+    },
+    {
+     "id": "eq-B-2-27",
+     "type": "equation",
+     "page": 20,
+     "original": "3.47 0.95 0.93 2.59"
     }
    ]
   },
@@ -4463,10 +5950,76 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-B-3-2-1",
-       "original": "Models WER ↓ 3.25 YourTTS 0.72 10.1 Make-A-Voice (VC) 0.68 6.20 LM-VC 0.82 4.91 UniAudio 0.87 4.80 FACodec 0.86 3.46",
-       "zh": "（此为 Table 14 的表格碎块抽取，列含模型、Sim-O↑、WER↓）数值依次为：真值 WER 3.25；YourTTS 0.72、10.1；Make-A-Voice (VC) 0.68、6.20；LM-VC 0.82、4.91；UniAudio 0.87、4.80；FACodec 0.86、3.46。"
+       "original": "Models Sim-O ↑ WER ↓ Ground Truth",
+       "zh": "表头：Models / Sim-O ↑ / WER ↓——Ground Truth（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-B-3-1",
+     "type": "equation",
+     "page": 21,
+     "original": "- 3.25"
+    },
+    {
+     "id": "eq-B-3-2",
+     "type": "equation",
+     "page": 21,
+     "original": "YourTTS"
+    },
+    {
+     "id": "eq-B-3-3",
+     "type": "equation",
+     "page": 21,
+     "original": "0.72 10.1"
+    },
+    {
+     "id": "eq-B-3-4",
+     "type": "equation",
+     "page": 21,
+     "original": "Make-A-Voice (VC)"
+    },
+    {
+     "id": "eq-B-3-5",
+     "type": "equation",
+     "page": 21,
+     "original": "0.68 6.20"
+    },
+    {
+     "id": "eq-B-3-6",
+     "type": "equation",
+     "page": 21,
+     "original": "LM-VC"
+    },
+    {
+     "id": "eq-B-3-7",
+     "type": "equation",
+     "page": 21,
+     "original": "0.82 4.91"
+    },
+    {
+     "id": "eq-B-3-8",
+     "type": "equation",
+     "page": 21,
+     "original": "UniAudio"
+    },
+    {
+     "id": "eq-B-3-9",
+     "type": "equation",
+     "page": 21,
+     "original": "0.87 4.80"
+    },
+    {
+     "id": "eq-B-3-10",
+     "type": "equation",
+     "page": 21,
+     "original": "FACodec"
+    },
+    {
+     "id": "eq-B-3-11",
+     "type": "equation",
+     "page": 21,
+     "original": "0.86 3.46"
     }
    ]
   },
@@ -4550,10 +6103,28 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-information-bottleneck-for-disen-2-1",
-       "original": "w. information bottleneck 0.86 w.o. information bottleneck 0.73",
+       "original": "Sim-O ↑ w. information bottleneck",
        "zh": "（此为 Table 15 的表格碎块抽取）有信息瓶颈：0.86；无信息瓶颈：0.73。"
       }
      ]
+    },
+    {
+     "id": "eq-information-bottleneck-for-disen-1",
+     "type": "equation",
+     "page": 21,
+     "original": "0.86"
+    },
+    {
+     "id": "eq-information-bottleneck-for-disen-2",
+     "type": "equation",
+     "page": 21,
+     "original": "w.o. information bottleneck"
+    },
+    {
+     "id": "eq-information-bottleneck-for-disen-3",
+     "type": "equation",
+     "page": 21,
+     "original": "0.73"
     }
    ]
   },
@@ -4637,10 +6208,40 @@ globalThis.PAPER_2403_03100 = {
      "sentences": [
       {
        "id": "s-role-of-acoustic-details-quantiz-2-1",
-       "original": "Codebook Number PESQ ↑ STOI ↑ MSTFT ↓ MCD ↓ FACodec 6 3.47 0.95 0.93 2.59 - acoustic details quantizers 3 3.09 0.92 1.08 3.12 SoundStream 6 3.03 0.90 1.07 3.38",
-       "zh": "（此为 Table 16 的表格碎块抽取，列含码本个数、PESQ↑、STOI↑、MSTFT↓、MCD↓）数值依次为：FACodec 6 个码本对应 3.47、0.95、0.93、2.59；去掉声学细节量化器后 3 个码本对应 3.09、0.92、1.08、3.12；SoundStream 6 个码本对应 3.03、0.90、1.07、3.38。"
+       "original": "Codebook Number PESQ ↑ STOI ↑ MSTFT ↓ MCD ↓ FACodec",
+       "zh": "表头：Codebook Number / PESQ ↑ / STOI ↑ / MSTFT ↓ / MCD ↓——FACodec（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-role-of-acoustic-details-quantiz-1",
+     "type": "equation",
+     "page": 22,
+     "original": "6 3.47 0.95 0.93 2.59"
+    },
+    {
+     "id": "eq-role-of-acoustic-details-quantiz-2",
+     "type": "equation",
+     "page": 22,
+     "original": "- acoustic details quantizers"
+    },
+    {
+     "id": "eq-role-of-acoustic-details-quantiz-3",
+     "type": "equation",
+     "page": 22,
+     "original": "3 3.09 0.92 1.08 3.12"
+    },
+    {
+     "id": "eq-role-of-acoustic-details-quantiz-4",
+     "type": "equation",
+     "page": 22,
+     "original": "SoundStream"
+    },
+    {
+     "id": "eq-role-of-acoustic-details-quantiz-5",
+     "type": "equation",
+     "page": 22,
+     "original": "6 3.03 0.90 1.07 3.38"
     }
    ]
   },
@@ -4836,7 +6437,7 @@ globalThis.PAPER_2403_03100 = {
   {
    "id": "ann-008",
    "anchor": {
-    "sentence_id": "s-3-2-2-8-3",
+    "sentence_id": "s-3-2-2-13-3",
     "quote": "randomly masking out zd during the training process with probability p"
    },
    "kind": "engineering",
@@ -4858,7 +6459,7 @@ globalThis.PAPER_2403_03100 = {
   {
    "id": "ann-010",
    "anchor": {
-    "sentence_id": "s-3-3-2-6-3",
+    "sentence_id": "s-3-3-2-7-3",
     "quote": "we do not use the prompt with a probability of pcfg = 0.15"
    },
    "kind": "engineering",
@@ -4869,7 +6470,7 @@ globalThis.PAPER_2403_03100 = {
   {
    "id": "ann-011",
    "anchor": {
-    "sentence_id": "s-4-1-2-8",
+    "sentence_id": "s-4-1-3-1",
     "quote": "totaling 60 forward passes due to the double computation with classifierfree guidance"
    },
    "kind": "number",
@@ -4880,7 +6481,7 @@ globalThis.PAPER_2403_03100 = {
   {
    "id": "ann-012",
    "anchor": {
-    "sentence_id": "s-4-1-3-5",
+    "sentence_id": "s-4-1-4-5",
     "quote": "randomly select 3-second clips as prompts"
    },
    "kind": "critique",
@@ -4911,17 +6512,6 @@ globalThis.PAPER_2403_03100 = {
    "featured": true
   },
   {
-   "id": "ann-015",
-   "anchor": {
-    "sentence_id": "s-4-3-1-2-4",
-    "quote": "a drop of 0.12 in Sim-O, 0.15 in Sim-R, 0.68 in WER, 0.25 in CMOS and 0.42 in SMOS"
-   },
-   "kind": "number",
-   "title": "去掉分解会掉多少",
-   "explanation": "这是全文最有分量的消融：把 FVQ 分解换成普通单码本（等价于退回 NaturalSpeech 2 式单隐空间），五项指标全面下坠，其中 WER 恶化 0.68、SMOS 掉 0.42 最刺眼——说明属性纠缠直接伤害发音稳定性与听感。反过来说，本文相对前两代的几乎全部增益都可归因于「分解」这一个决策，而非扩散或规模。",
-   "featured": true
-  },
-  {
    "id": "ann-016",
    "anchor": {
     "sentence_id": "s-4-3-2-2-8",
@@ -4946,7 +6536,7 @@ globalThis.PAPER_2403_03100 = {
   {
    "id": "ann-018",
    "anchor": {
-    "sentence_id": "s-4-4-3-3",
+    "sentence_id": "s-4-4-4-3",
     "quote": "double the number of transformer layers from 12 to 24"
    },
    "kind": "engineering",
@@ -4957,7 +6547,7 @@ globalThis.PAPER_2403_03100 = {
   {
    "id": "ann-019",
    "anchor": {
-    "sentence_id": "s-A-17-7",
+    "sentence_id": "s-A-5-1-7",
     "quote": "achieves a 15.27× speedup over VALL-E"
    },
    "kind": "number",
@@ -4968,7 +6558,7 @@ globalThis.PAPER_2403_03100 = {
   {
    "id": "ann-020",
    "anchor": {
-    "sentence_id": "s-A-2-3",
+    "sentence_id": "s-A-2-1-3",
     "quote": "8 A100 80GB GPUs with a batch size of 10K frames of latent vectors per GPU for 1M steps"
    },
    "kind": "engineering",

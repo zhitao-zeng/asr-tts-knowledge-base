@@ -21,11 +21,16 @@ globalThis.PAPER_2603_08823 = {
    },
    "blocks": [
     {
-     "id": "tb-front-1",
-     "type": "table_body",
+     "id": "p-front-1",
+     "type": "paragraph",
      "page": 1,
-     "original": "Fish Audio Team\nhttps://github.com/fishaudio/fish-speech\nhttps://huggingface.co/fishaudio/s2-pro\nhttps://fish.audio",
-     "cells": 4
+     "sentences": [
+      {
+       "id": "s-front-1-1",
+       "original": "Fish Audio Team https://github.com/fishaudio/fish-speech https://huggingface.co/fishaudio/s2-pro https://fish.audio",
+       "zh": "/ T"
+      }
+     ]
     }
    ]
   },
@@ -124,20 +129,40 @@ globalThis.PAPER_2603_08823 = {
       },
       {
        "id": "s-1-2-2",
-       "original": "Recent efforts have introduced sophisticated pipelines for cleaning speech corpora and annotating",
-       "zh": "近期的工作引入了清洗语音语料和标注的复杂流水线，"
+       "original": "Recent efforts have introduced sophisticated pipelines for cleaning speech corpora and annotating © 2026 39 AI, Inc All rights reserved. paralinguistic features (Cheng et al., 2025; Yang et al., 2025).",
+       "zh": "近期的工作引入了用于清洗语音语料和标注副语言特征的复杂流水线（Cheng et al., 2025; Yang et al., 2025）。（页脚：© 2026 39 AI, Inc All rights reserved.）"
+      },
+      {
+       "id": "s-1-2-3",
+       "original": "However, generating fine-grained naturallanguage instructions for vocal features at scale remains a major bottleneck.",
+       "zh": "然而，大规模地为声音特征生成细粒度的自然语言指令，仍然是一个主要瓶颈。"
+      },
+      {
+       "id": "s-1-2-4",
+       "original": "From a training perspective, although reinforcement learning (RL) methods such as Direct Preference Optimization (DPO) (Rafailov et al., 2023), Proximal Policy Optimization (PPO) (Schulman et al., 2017) and Group Relative Policy Optimization (GRPO) (Shao et al., 2024) have become standard for improving model behavior in the large language model (LLM) domain (Guo et al., 2025; Agarwal et al., 2025), their adoption in TTS remains limited.",
+       "zh": "从训练角度看，尽管直接偏好优化（DPO）（Rafailov et al., 2023）、近端策略优化（PPO）（Schulman et al., 2017）和组相对策略优化（GRPO）（Shao et al., 2024）等强化学习（RL）方法在大语言模型（LLM）领域已成为改善模型行为的标准手段（Guo et al., 2025; Agarwal et al., 2025），它们在 TTS 中的应用仍然有限。"
       }
      ]
     },
     {
      "id": "p-1-3",
      "type": "paragraph",
-     "page": 1,
+     "page": 2,
      "sentences": [
       {
        "id": "s-1-3-1",
-       "original": "© 2026 39 AI, Inc All rights reserved.",
-       "zh": "© 2026 39 AI, Inc 保留所有权利。"
+       "original": "In this report, we present Fish Audio S2, which retains the decoder-only Transformer backbone and RVQ- based audio codec of Fish Audio S1 (Liao et al., 2024b).",
+       "zh": "在本报告中，我们提出 Fish Audio S2，它保留了 Fish Audio S1 的仅解码器 Transformer 主干和基于 RVQ 的音频 codec（Liao et al., 2024b）。"
+      },
+      {
+       "id": "s-1-3-2",
+       "original": "We extends it with a unified data curation and RL alignment framework to improve controllability, naturalness, and robustness in speech generation.",
+       "zh": "我们在此基础上扩展了一套统一的数据策展与 RL 对齐框架，以提升语音生成中的可控性、自然度和鲁棒性。"
+      },
+      {
+       "id": "s-1-3-3",
+       "original": "Specifically, we introduce two key technical innovations:",
+       "zh": "具体而言，我们引入两项关键技术创新："
       }
      ]
     },
@@ -148,18 +173,23 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-1-4-1",
-       "original": "paralinguistic features (Cheng et al., 2025; Yang et al., 2025).",
-       "zh": "用于标注副语言特征（Cheng et al., 2025; Yang et al., 2025）。"
+       "original": "• Multi-Purpose Data Pipeline.",
+       "zh": "• 多用途数据流水线。"
       },
       {
        "id": "s-1-4-2",
-       "original": "However, generating fine-grained naturallanguage instructions for vocal features at scale remains a major bottleneck.",
-       "zh": "然而，大规模地为声音特征生成细粒度的自然语言指令，仍然是一个主要瓶颈。"
+       "original": "We build a data pipeline with a speech quality assessment model and a rich-transcription ASR model to filter and annotate large-scale audio data for TTS pre-training.",
+       "zh": "我们构建了一条包含语音质量评估模型和富转录 ASR 模型的数据流水线，用于为 TTS 预训练过滤和标注大规模音频数据。"
       },
       {
        "id": "s-1-4-3",
-       "original": "From a training perspective, although reinforcement learning (RL) methods such as Direct Preference Optimization (DPO) (Rafailov et al., 2023), Proximal Policy Optimization (PPO) (Schulman et al., 2017) and Group Relative Policy Optimization (GRPO) (Shao et al., 2024) have become standard for improving model behavior in the large language model (LLM) domain (Guo et al., 2025; Agarwal et al., 2025), their adoption in TTS remains limited.",
-       "zh": "从训练角度看，尽管直接偏好优化（DPO）（Rafailov et al., 2023）、近端策略优化（PPO）（Schulman et al., 2017）和组相对策略优化（GRPO）（Shao et al., 2024）等强化学习（RL）方法在大语言模型（LLM）领域已成为改善模型行为的标准手段（Guo et al., 2025; Agarwal et al., 2025），它们在 TTS 中的应用仍然有限。"
+       "original": "The same models are then directly reused as reward signals for RL alignment, eliminating distribution mismatch between the two stages. • Multi-Reward RL Alignment.",
+       "zh": "同一批模型随后被直接复用为 RL 对齐的奖励信号，消除了两个阶段之间的分布失配。• 多奖励 RL 对齐。"
+      },
+      {
+       "id": "s-1-4-4",
+       "original": "We implement a variant of GRPO that jointly optimizes semantic accuracy, acoustic quality, and speaker similarity, ensuring a balance between expressiveness and robustness.",
+       "zh": "我们实现了一种 GRPO 变体，联合优化语义准确性、声学质量和说话人相似度，确保表现力与鲁棒性之间的平衡。"
       }
      ]
     },
@@ -170,18 +200,8 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-1-5-1",
-       "original": "In this report, we present Fish Audio S2, which retains the decoder-only Transformer backbone and RVQ- based audio codec of Fish Audio S1 (Liao et al., 2024b).",
-       "zh": "在本报告中，我们提出 Fish Audio S2，它保留了 Fish Audio S1 的仅解码器 Transformer 主干和基于 RVQ 的音频 codec（Liao et al., 2024b）。"
-      },
-      {
-       "id": "s-1-5-2",
-       "original": "We extends it with a unified data curation and RL alignment framework to improve controllability, naturalness, and robustness in speech generation.",
-       "zh": "我们在此基础上扩展了一套统一的数据策展与 RL 对齐框架，以提升语音生成中的可控性、自然度和鲁棒性。"
-      },
-      {
-       "id": "s-1-5-3",
-       "original": "Specifically, we introduce two key technical innovations:",
-       "zh": "具体而言，我们引入两项关键技术创新："
+       "original": "These innovations directly enable three major functional breakthroughs:",
+       "zh": "这些创新直接带来了三项主要功能突破："
       }
      ]
     },
@@ -192,23 +212,28 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-1-6-1",
-       "original": "• Multi-Purpose Data Pipeline.",
-       "zh": "• 多用途数据流水线。"
+       "original": "• Enhanced Instruction Following.",
+       "zh": "• 增强的指令跟随。"
       },
       {
        "id": "s-1-6-2",
-       "original": "We build a data pipeline with a speech quality assessment model and a rich-transcription ASR model to filter and annotate large-scale audio data for TTS pre-training.",
-       "zh": "我们构建了一条包含语音质量评估模型和富转录 ASR 模型的数据流水线，用于为 TTS 预训练过滤和标注大规模音频数据。"
+       "original": "Fish Audio S2 exhibits superior adherence to natural language instructions.",
+       "zh": "Fish Audio S2 对自然语言指令表现出更强的遵从能力。"
       },
       {
        "id": "s-1-6-3",
-       "original": "The same models are then directly reused as reward signals for RL alignment, eliminating distribution mismatch between the two stages. • Multi-Reward RL Alignment.",
-       "zh": "同一批模型随后被直接复用为 RL 对齐的奖励信号，消除了两个阶段之间的分布失配。• 多奖励 RL 对齐。"
+       "original": "It enables broad and fine-grained control over speech generation through free-form textual descriptions. • Native Multi-Speaker and Multi-Turn Generation.",
+       "zh": "它通过自由形式的文本描述，实现对语音生成的广泛而细粒度的控制。• 原生多说话人与多轮生成。"
       },
       {
        "id": "s-1-6-4",
-       "original": "We implement a variant of GRPO that jointly optimizes semantic accuracy, acoustic quality, and speaker similarity, ensuring a balance between expressiveness and robustness.",
-       "zh": "我们实现了一种 GRPO 变体，联合优化语义准确性、声学质量和说话人相似度，确保表现力与鲁棒性之间的平衡。"
+       "original": "The model can natively generate complex, interleaved dialogues involving multiple distinct speakers in a single pass, capturing the dynamics of natural conversation. • Stable Long-Form Synthesis.",
+       "zh": "模型可以在单次生成中原生地产生涉及多个不同说话人的复杂交错对话，捕捉自然对话的动态。• 稳定的长音频合成。"
+      },
+      {
+       "id": "s-1-6-5",
+       "original": "The system supports the generation of coherent and continuous audio, maintaining stability and consistency over extended durations.",
+       "zh": "系统支持生成连贯、连续的音频，在较长时长内保持稳定性和一致性。"
       }
      ]
     },
@@ -219,8 +244,43 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-1-7-1",
-       "original": "These innovations directly enable three major functional breakthroughs:",
-       "zh": "这些创新直接带来了三项主要功能突破："
+       "original": "To evaluate our model, we conduct extensive experiments along two complementary tracks: (i) objective evaluation and (ii) LLM-as-a-Judge assessments of higher-level capabilities.",
+       "zh": "为评估我们的模型，我们沿两条互补的路线开展了大量实验：（i）客观评测，以及（ii）针对高层能力的 LLM-as-a-Judge（大模型评审）评估。"
+      },
+      {
+       "id": "s-1-7-2",
+       "original": "For intelligibility, content accuracy, long-form, and multilingual performance, we report Word Error Rate (WER), Character Error Rate (CER), and speaker similarity on widely used benchmarks, including Seed-TTS-Eval (Anastassiou et al., 2024), MiniMax Multilingual Testset (Zhang et al., 2025), CosyVoice3-Eval (Du et al., 2025), Long-TTS-Eval (Wang et al., 2025a).",
+       "zh": "针对可懂度、内容准确性、长音频和多语言表现，我们在广泛使用的基准上报告词错误率（WER）、字错误率（CER）和说话人相似度，包括 Seed-TTS-Eval（Anastassiou et al., 2024）、MiniMax Multilingual Testset（Zhang et al., 2025）、CosyVoice3-Eval（Du et al., 2025）、Long-TTS-Eval（Wang et al., 2025a）。"
+      },
+      {
+       "id": "s-1-7-3",
+       "original": "Across public benchmarks, Fish Audio S2 shows consistently strong objective performance, achieving leading results on Seed-TTS benchmark while maintaining robust multilingual intelligibility and speaker similarity on both the MiniMax Multilingual Testset and CV3-Eval.",
+       "zh": "在公开基准上，Fish Audio S2 展现出持续强劲的客观性能，在 Seed-TTS 基准上取得领先结果，同时在 MiniMax Multilingual Testset 和 CV3-Eval 上保持了稳健的多语言可懂度和说话人相似度。"
+      },
+      {
+       "id": "s-1-7-4",
+       "original": "To assess higher-level capabilities such as instruction following and human-likeness, we further employ the Audio Turing Test (Wang et al., 2025b) and Emergent TTS Eval (Manku et al., 2025).",
+       "zh": "为评估指令跟随和拟人度等高层能力，我们进一步采用 Audio Turing Test（Wang et al., 2025b）和 Emergent TTS Eval（Manku et al., 2025）。"
+      },
+      {
+       "id": "s-1-7-5",
+       "original": "On the Audio Turing Test, Fish Audio S2 achieves a posterior mean of 0.483, which further improves to 0.515 with instruction rewriting.",
+       "zh": "在 Audio Turing Test 上，Fish Audio S2 取得 0.483 的后验均值，经指令改写后进一步提升到 0.515。"
+      },
+      {
+       "id": "s-1-7-6",
+       "original": "On Emergent TTS Eval, it reaches an overall win rate of 81.88% against the baseline, further supporting its strong instruction-following capability.",
+       "zh": "在 Emergent TTS Eval 上，它相对基线的总体胜率达到 81.88%，进一步支持其强大的指令跟随能力。"
+      },
+      {
+       "id": "s-1-7-7",
+       "original": "Furthermore, to address the lack of dedicated benchmarks for fine-grained control, we introduce a novel evaluation benchmark, the Fish Audio Instruction Benchmark, which systematically evaluates models’ inline tag-following performance across English and Chinese.",
+       "zh": "此外，针对细粒度控制缺乏专门基准的问题，我们提出了一个新的评测基准——Fish Audio Instruction Benchmark，系统地评估模型在英文和中文上的内联标签跟随表现。"
+      },
+      {
+       "id": "s-1-7-8",
+       "original": "On the Fish Audio Instruction Benchmark, Fish Audio S2 achieves an overall tag-activation rate of 93.3% and an overall quality score of 4.51/5.0 across English and Chinese, as evaluated by Gemini 3 Pro.",
+       "zh": "在 Fish Audio Instruction Benchmark 上，Fish Audio S2 取得 93.3% 的总体标签激活率和 4.51/5.0 的总体质量分（中英文合并），由 Gemini 3 Pro 评判。"
       }
      ]
     },
@@ -231,28 +291,13 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-1-8-1",
-       "original": "• Enhanced Instruction Following.",
-       "zh": "• 增强的指令跟随。"
+       "original": "To accelerate research and lower the barrier to high-quality TTS development, we publicly release our model weights, fine-tuning code, and the SGLang-based inference engine on GitHub and Hugging Face.",
+       "zh": "为加速研究并降低高质量 TTS 开发的门槛，我们在 GitHub 和 Hugging Face 上公开了模型权重、微调代码和基于 SGLang 的推理引擎。"
       },
       {
        "id": "s-1-8-2",
-       "original": "Fish Audio S2 exhibits superior adherence to natural language instructions.",
-       "zh": "Fish Audio S2 对自然语言指令表现出更强的遵从能力。"
-      },
-      {
-       "id": "s-1-8-3",
-       "original": "It enables broad and fine-grained control over speech generation through free-form textual descriptions. • Native Multi-Speaker and Multi-Turn Generation.",
-       "zh": "它通过自由形式的文本描述，实现对语音生成的广泛而细粒度的控制。• 原生多说话人与多轮生成。"
-      },
-      {
-       "id": "s-1-8-4",
-       "original": "The model can natively generate complex, interleaved dialogues involving multiple distinct speakers in a single pass, capturing the dynamics of natural conversation. • Stable Long-Form Synthesis.",
-       "zh": "模型可以在单次生成中原生地产生涉及多个不同说话人的复杂交错对话，捕捉自然对话的动态。• 稳定的长音频合成。"
-      },
-      {
-       "id": "s-1-8-5",
-       "original": "The system supports the generation of coherent and continuous audio, maintaining stability and consistency over extended durations.",
-       "zh": "系统支持生成连贯、连续的音频，在较长时长内保持稳定性和一致性。"
+       "original": "We also highly encourage readers to explore interactive demos at our official site https://fish.audio/.",
+       "zh": "我们也强烈建议读者到官方网站 https://fish.audio/ 体验交互式演示。"
       }
      ]
     },
@@ -263,70 +308,6 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-1-9-1",
-       "original": "To evaluate our model, we conduct extensive experiments along two complementary tracks: (i) objective evaluation and (ii) LLM-as-a-Judge assessments of higher-level capabilities.",
-       "zh": "为评估我们的模型，我们沿两条互补的路线开展了大量实验：（i）客观评测，以及（ii）针对高层能力的 LLM-as-a-Judge（大模型评审）评估。"
-      },
-      {
-       "id": "s-1-9-2",
-       "original": "For intelligibility, content accuracy, long-form, and multilingual performance, we report Word Error Rate (WER), Character Error Rate (CER), and speaker similarity on widely used benchmarks, including Seed-TTS-Eval (Anastassiou et al., 2024), MiniMax Multilingual Testset (Zhang et al., 2025), CosyVoice3-Eval (Du et al., 2025), Long-TTS-Eval (Wang et al., 2025a).",
-       "zh": "针对可懂度、内容准确性、长音频和多语言表现，我们在广泛使用的基准上报告词错误率（WER）、字错误率（CER）和说话人相似度，包括 Seed-TTS-Eval（Anastassiou et al., 2024）、MiniMax Multilingual Testset（Zhang et al., 2025）、CosyVoice3-Eval（Du et al., 2025）、Long-TTS-Eval（Wang et al., 2025a）。"
-      },
-      {
-       "id": "s-1-9-3",
-       "original": "Across public benchmarks, Fish Audio S2 shows consistently strong objective performance, achieving leading results on Seed-TTS benchmark while maintaining robust multilingual intelligibility and speaker similarity on both the MiniMax Multilingual Testset and CV3-Eval.",
-       "zh": "在公开基准上，Fish Audio S2 展现出持续强劲的客观性能，在 Seed-TTS 基准上取得领先结果，同时在 MiniMax Multilingual Testset 和 CV3-Eval 上保持了稳健的多语言可懂度和说话人相似度。"
-      },
-      {
-       "id": "s-1-9-4",
-       "original": "To assess higher-level capabilities such as instruction following and human-likeness, we further employ the Audio Turing Test (Wang et al., 2025b) and Emergent TTS Eval (Manku et al., 2025).",
-       "zh": "为评估指令跟随和拟人度等高层能力，我们进一步采用 Audio Turing Test（Wang et al., 2025b）和 Emergent TTS Eval（Manku et al., 2025）。"
-      },
-      {
-       "id": "s-1-9-5",
-       "original": "On the Audio Turing Test, Fish Audio S2 achieves a posterior mean of 0.483, which further improves to 0.515 with instruction rewriting.",
-       "zh": "在 Audio Turing Test 上，Fish Audio S2 取得 0.483 的后验均值，经指令改写后进一步提升到 0.515。"
-      },
-      {
-       "id": "s-1-9-6",
-       "original": "On Emergent TTS Eval, it reaches an overall win rate of 81.88% against the baseline, further supporting its strong instruction-following capability.",
-       "zh": "在 Emergent TTS Eval 上，它相对基线的总体胜率达到 81.88%，进一步支持其强大的指令跟随能力。"
-      },
-      {
-       "id": "s-1-9-7",
-       "original": "Furthermore, to address the lack of dedicated benchmarks for fine-grained control, we introduce a novel evaluation benchmark, the Fish Audio Instruction Benchmark, which systematically evaluates models’ inline tag-following performance across English and Chinese.",
-       "zh": "此外，针对细粒度控制缺乏专门基准的问题，我们提出了一个新的评测基准——Fish Audio Instruction Benchmark，系统地评估模型在英文和中文上的内联标签跟随表现。"
-      },
-      {
-       "id": "s-1-9-8",
-       "original": "On the Fish Audio Instruction Benchmark, Fish Audio S2 achieves an overall tag-activation rate of 93.3% and an overall quality score of 4.51/5.0 across English and Chinese, as evaluated by Gemini 3 Pro.",
-       "zh": "在 Fish Audio Instruction Benchmark 上，Fish Audio S2 取得 93.3% 的总体标签激活率和 4.51/5.0 的总体质量分（中英文合并），由 Gemini 3 Pro 评判。"
-      }
-     ]
-    },
-    {
-     "id": "p-1-10",
-     "type": "paragraph",
-     "page": 2,
-     "sentences": [
-      {
-       "id": "s-1-10-1",
-       "original": "To accelerate research and lower the barrier to high-quality TTS development, we publicly release our model weights, fine-tuning code, and the SGLang-based inference engine on GitHub and Hugging Face.",
-       "zh": "为加速研究并降低高质量 TTS 开发的门槛，我们在 GitHub 和 Hugging Face 上公开了模型权重、微调代码和基于 SGLang 的推理引擎。"
-      },
-      {
-       "id": "s-1-10-2",
-       "original": "We also highly encourage readers to explore interactive demos at our official site https://fish.audio/.",
-       "zh": "我们也强烈建议读者到官方网站 https://fish.audio/ 体验交互式演示。"
-      }
-     ]
-    },
-    {
-     "id": "p-1-11",
-     "type": "paragraph",
-     "page": 2,
-     "sentences": [
-      {
-       "id": "s-1-11-1",
        "original": "The remainder of this paper is organized as follows: Section 2 details the model architecture; Section 3 describes the data curation pipeline; Section 4 presents the pre-training and RL-based post-training; Section 5 instrodces our inference engine and its performance, Section 6 presents the experimental setup and comprehensive evaluation results; and finally, Section 7 concludes with a discussion on limitations and future directions.",
        "zh": "本文其余部分组织如下：第 2 节详述模型架构；第 3 节介绍数据策展流水线；第 4 节介绍预训练与基于 RL 的后训练；第 5 节介绍我们的推理引擎及其性能；第 6 节给出实验设置与全面评测结果；最后第 7 节总结并讨论局限与未来方向。"
       }
@@ -450,28 +431,16 @@ globalThis.PAPER_2603_08823 = {
       },
       {
        "id": "s-2-1-4-2",
-       "original": "To ensure that the first codebook captures rich linguistic and phonetic information,",
-       "zh": "为确保第一个码本捕捉到丰富的语言学和语音学信息，"
-      }
-     ]
-    },
-    {
-     "id": "p-2-1-5",
-     "type": "paragraph",
-     "page": 4,
-     "sentences": [
-      {
-       "id": "s-2-1-5-1",
-       "original": "we adopt semantic distillation following (D´efossez et al., 2024).",
-       "zh": "我们沿用（Défossez et al., 2024）的做法采用语义蒸馏。"
+       "original": "To ensure that the first codebook captures rich linguistic and phonetic information, we adopt semantic distillation following (D´efossez et al., 2024).",
+       "zh": "为确保第一个码本捕获丰富的语言学与语音学信息，我们采用沿袭 (Défossez et al., 2024) 的语义蒸馏。"
       },
       {
-       "id": "s-2-1-5-2",
+       "id": "s-2-1-4-3",
        "original": "During training, an auxiliary semantic prediction head is jointly optimized to regress the 16th-layer activations of a pre-trained w2v-BERT 2.0 model (Barrault et al., 2023).",
        "zh": "训练时，一个辅助语义预测头被联合优化，用于回归预训练 w2v-BERT 2.0 模型（Barrault et al., 2023）第 16 层的激活值。"
       },
       {
-       "id": "s-2-1-5-3",
+       "id": "s-2-1-4-4",
        "original": "By feeding the quantized features from the first codebook into this head, we encourage the bottleneck to retain rich semantic representations, thereby enabling more stable alignment in downstream TTS.",
        "zh": "通过把第一个码本的量化特征送入该预测头，我们促使瓶颈层保留丰富的语义表示，从而让下游 TTS 的对齐更加稳定。"
       }
@@ -528,8 +497,18 @@ globalThis.PAPER_2603_08823 = {
       },
       {
        "id": "s-2-2-2-3",
-       "original": "The Slow AR operates autoregressively over the full token sequence, which interleaves text tokens (e.g. system prompts, target text) with discrete",
+       "original": "The Slow AR operates autoregressively over the full token sequence, which interleaves text tokens (e.g. system prompts, target text) with discrete audio tokens.",
        "zh": "Slow AR 在完整 token 序列上自回归运行，该序列把文本 token（如系统提示、目标文本）与离散的"
+      },
+      {
+       "id": "s-2-2-2-4",
+       "original": "During audio generation, it predicts the semantic token q(0) t from the first RVQ codebook at each time step t.",
+       "zh": "音频生成时，它在每个时间步 t 从第一个 RVQ 码本预测语义 token q(0)_t。"
+      },
+      {
+       "id": "s-2-2-2-5",
+       "original": "Since this codebook undergoes semantic distillation during tokenizer training, the Slow AR can effectively plan linguistic content and coarse prosodic structure, analogous to standard text generation.",
+       "zh": "由于该码本在分词器训练中经过语义蒸馏，Slow AR 可以像标准文本生成一样，有效地规划语言内容和粗粒度韵律结构。"
       }
      ]
     },
@@ -540,20 +519,31 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-2-2-3-1",
-       "original": "audio tokens.",
-       "zh": "音频 token 交错排列。"
+       "original": "Fast AR.",
+       "zh": "Fast AR。"
       },
       {
        "id": "s-2-2-3-2",
-       "original": "During audio generation, it predicts the semantic token q(0) from the first RVQ codebook at each time step t.",
-       "zh": "在音频生成时，它在每个时间步 t 预测来自第一个 RVQ 码本的语义 token q(0)。"
+       "original": "Given the semantic tokens generated by the Slow AR, we introduce a lightweight Fast AR network— consisting of 4 Transformer layers with independent weights and embedding tables—to reconstruct the remaining fine-grained acoustic details.",
+       "zh": "在 Slow AR 生成语义 token 之后，我们引入一个轻量 Fast AR 网络——由 4 层权重和嵌入表均独立的 Transformer 组成——来重建剩余的细粒度声学细节。"
       },
       {
        "id": "s-2-2-3-3",
-       "original": "Since this codebook undergoes semantic distillation during tokenizer training, the Slow AR can effectively plan linguistic content and coarse prosodic structure, analogous to standard text generation.",
-       "zh": "由于该码本在分词器训练中经过语义蒸馏，Slow AR 可以像标准文本生成一样，有效地规划语言内容和粗粒度韵律结构。"
+       "original": "At each time step t, the Slow AR first samples the semantic token q(0) t and emits a hidden state hslow t .",
+       "zh": "在每个时间步 t，Slow AR 先采样语义 token q(0)_t 并发出隐藏状态 h^slow_t。"
+      },
+      {
+       "id": "s-2-2-3-4",
+       "original": "The Fast AR then generates the remaining N−1 acoustic tokens q(1) t",
+       "zh": "随后 Fast AR 生成其余 N−1 个声学 token"
       }
      ]
+    },
+    {
+     "id": "eq-2-2-1",
+     "type": "equation",
+     "page": 4,
+     "original": ", . . . , q(N−1)"
     },
     {
      "id": "p-2-2-4",
@@ -562,18 +552,33 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-2-2-4-1",
-       "original": "Fast AR.",
-       "zh": "Fast AR。"
+       "original": "t through a depth-wise autoregressive process.",
+       "zh": "（公式续行：……t，通过深度方向（depth-wise）的自回归过程生成。）"
       },
       {
        "id": "s-2-2-4-2",
-       "original": "Given the semantic tokens generated by the Slow AR, we introduce a lightweight Fast AR network— consisting of 4 Transformer layers with independent weights and embedding tables—to reconstruct the remaining fine-grained acoustic details.",
-       "zh": "在 Slow AR 生成语义 token 之后，我们引入一个轻量 Fast AR 网络——由 4 层权重和嵌入表均独立的 Transformer 组成——来重建剩余的细粒度声学细节。"
+       "original": "The hidden state hslow t is first linearly projected to the Fast AR’s dimension and placed at position 0 as a conditioning prefix, providing global context from the Slow AR.",
+       "zh": "隐藏状态 h^slow_t 先被线性投影到 Fast AR 的维度，并放在位置 0 作为条件前缀，提供来自 Slow AR 的全局上下文。"
       },
       {
        "id": "s-2-2-4-3",
-       "original": "At each time step t, the Slow AR first samples the semantic",
-       "zh": "在每个时间步 t，Slow AR 先采样语义"
+       "original": "The semantic token q(0) t , already determined by the Slow AR, is then embedded and placed at position 1 as the seed input.",
+       "zh": "已由 Slow AR 确定的语义 token q(0)_t 随后被嵌入并放在位置 1 作为种子输入。"
+      },
+      {
+       "id": "s-2-2-4-4",
+       "original": "The Fast AR then autoregressively generates q(1) t through q(N−1) t , where each step conditions on the conditioning prefix hslow t and all previously generated tokens.",
+       "zh": "随后 Fast AR 自回归地生成 q(1)_t 到 q(N−1)_t，每步都以条件前缀 h^slow_t 与此前已生成的全部 token 为条件。"
+      },
+      {
+       "id": "s-2-2-4-5",
+       "original": "All N codebook layers share a single embedding table within the Fast AR; the codebook layer identity is encoded through RoPE positional embeddings.",
+       "zh": "Fast AR 内部所有 N 个码本层共享同一个嵌入表；码本层的身份通过 RoPE 位置嵌入来编码。"
+      },
+      {
+       "id": "s-2-2-4-6",
+       "original": "This highly asymmetric design—a 4B-parameter model along the time axis and a 4-layer network along the codebook depth axis—ensures high inference efficiency.",
+       "zh": "这种高度非对称的设计——时间轴上是 4B 参数的模型，码本深度轴上是 4 层网络——保证了高推理效率。"
       }
      ]
     },
@@ -584,15 +589,55 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-2-2-5-1",
-       "original": "token q(0) and emits a hidden state hslow .",
-       "zh": "token q(0) 并输出隐状态 hslow。"
+       "original": "Multi-Codebook Fusion (MCF).",
+       "zh": "多码本融合（MCF）。"
       },
       {
        "id": "s-2-2-5-2",
-       "original": "The Fast AR then generates the remaining N−1 acoustic tokens",
-       "zh": "随后 Fast AR 生成其余 N−1 个声学 token"
+       "original": "After all N codebook tokens for time step t have been generated, they are aggregated into a single continuous vector xt+1 to serve as the Slow AR’s input embedding for the next time step t + 1.",
+       "zh": "当时间步 t 的全部 N 个码本 token 生成完毕后，它们被聚合为单个连续向量 xt+1，作为 Slow AR 在下一个时间"
+      },
+      {
+       "id": "s-2-2-5-3",
+       "original": "Each token q(k) t (k ∈{0, 1, . . . , N −1}) is embedded via a dedicated embedding layer E(k) that maps codebook indices into the Slow AR’s embedding space.",
+       "zh": "每个 token q(k)_t（k ∈ {0, 1, …, N−1}）由专属嵌入层 E(k) 映射到 Slow AR 的嵌入空间。"
+      },
+      {
+       "id": "s-2-2-5-4",
+       "original": "These N codebook embeddings, together with the Slow AR’s own token embedding eLM t for the semantic token q(0) t , are summed: xt+1 = eLM t",
+       "zh": "这 N 个码本嵌入连同 Slow AR 自己对语义 token q(0)_t 的 token 嵌入 eLM_t 求和：x_{t+1} = eLM_t + Σ_{k=0..N−1} E(k)[q(k)_t]（式 1），其中 N = 10 为码本总数。"
       }
      ]
+    },
+    {
+     "id": "eq-2-2-2",
+     "type": "equation",
+     "page": 4,
+     "original": "+"
+    },
+    {
+     "id": "eq-2-2-3",
+     "type": "equation",
+     "page": 4,
+     "original": "N−1"
+    },
+    {
+     "id": "eq-2-2-4",
+     "type": "equation",
+     "page": 4,
+     "original": "∑"
+    },
+    {
+     "id": "eq-2-2-5",
+     "type": "equation",
+     "page": 4,
+     "original": "k=0 E(k) q(k) t"
+    },
+    {
+     "id": "eq-2-2-6",
+     "type": "equation",
+     "page": 4,
+     "original": ", (1)"
     },
     {
      "id": "p-2-2-6",
@@ -601,136 +646,16 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-2-2-6-1",
-       "original": "q(1) , . . . , q(N−1) through a depth-wise autoregressive process.",
-       "zh": "q(1), …, q(N−1)，这一过程沿深度方向自回归进行。"
+       "original": "where N = 10 is the total number of codebooks.",
+       "zh": "这 N 个码本嵌入连同 Slow AR 自己对语义 token q(0)_t 的 token 嵌入 eLM_t 求和：x_{t+1} = eLM_t + Σ_{k=0..N−1} E(k)[q(k)_t]（式 1），其中 N = 10 为码本总数。"
       },
       {
        "id": "s-2-2-6-2",
-       "original": "The hidden state hslow is first linearly projected to the Fast AR’s dimension and placed at position 0 as a conditioning prefix, providing global context from",
-       "zh": "隐状态 hslow 先被线性投影到 Fast AR 的维度，并放在位置 0 作为条件前缀，提供来自"
-      }
-     ]
-    },
-    {
-     "id": "eq-2-2-1",
-     "type": "equation",
-     "page": 4,
-     "original": "the Slow AR. The semantic token q(0) , already determined by the Slow AR, is then embedded and placed at position 1 as the seed input. The Fast AR then autoregressively generates q(1)"
-    },
-    {
-     "id": "p-2-2-7",
-     "type": "paragraph",
-     "page": 4,
-     "sentences": [
-      {
-       "id": "s-2-2-7-1",
-       "original": "through q(N−1) , where each step conditions on the conditioning prefix hslow and all previously generated tokens.",
-       "zh": "直至 q(N−1)，每一步都以条件前缀 hslow 和此前生成的全部 token 为条件。"
+       "original": "Note that the semantic token q(0) t contributes two distinct representations: eLM t from the Slow AR’s token embedding layer, and E(0)[q(0) t ] from the codebook embedding layer.",
+       "zh": "注意语义 token q(0)_t 贡献两种不同的表示：来自 Slow AR token 嵌入层的 eLM_t，与来自码本嵌入层的 E(0)[q(0)_t]。"
       },
       {
-       "id": "s-2-2-7-2",
-       "original": "All N codebook layers share a single embedding table within the Fast AR; the codebook layer identity is encoded through RoPE positional embeddings.",
-       "zh": "Fast AR 内部所有 N 个码本层共享同一个嵌入表；码本层的身份通过 RoPE 位置嵌入来编码。"
-      },
-      {
-       "id": "s-2-2-7-3",
-       "original": "This highly asymmetric design—a 4B-parameter model along the time axis and a 4-layer network along the codebook depth axis—ensures high inference efficiency.",
-       "zh": "这种高度非对称的设计——时间轴上是 4B 参数的模型，码本深度轴上是 4 层网络——保证了高推理效率。"
-      }
-     ]
-    },
-    {
-     "id": "p-2-2-8",
-     "type": "paragraph",
-     "page": 4,
-     "sentences": [
-      {
-       "id": "s-2-2-8-1",
-       "original": "Multi-Codebook Fusion (MCF).",
-       "zh": "多码本融合（MCF）。"
-      },
-      {
-       "id": "s-2-2-8-2",
-       "original": "After all N codebook tokens for time step t have been generated, they are aggregated into a single continuous vector xt+1 to serve as the Slow AR’s input embedding for the next time",
-       "zh": "当时间步 t 的全部 N 个码本 token 生成完毕后，它们被聚合为单个连续向量 xt+1，作为 Slow AR 在下一个时间"
-      }
-     ]
-    },
-    {
-     "id": "p-2-2-9",
-     "type": "paragraph",
-     "page": 4,
-     "sentences": [
-      {
-       "id": "s-2-2-9-1",
-       "original": "step t + 1.",
-       "zh": "步 t + 1 的输入嵌入。"
-      },
-      {
-       "id": "s-2-2-9-2",
-       "original": "Each token q(k) (k ∈{0, 1, . . . , N −1}) is embedded via a dedicated embedding layer E(k) that maps codebook indices into the Slow AR’s embedding space.",
-       "zh": "每个 token q(k)（k ∈ {0, 1, …, N −1}）都经由一个专门的嵌入层 E(k) 嵌入，把码本索引映射到 Slow AR 的嵌入空间。"
-      },
-      {
-       "id": "s-2-2-9-3",
-       "original": "These N codebook embeddings, together with",
-       "zh": "这 N 个码本嵌入，连同"
-      }
-     ]
-    },
-    {
-     "id": "p-2-2-10",
-     "type": "paragraph",
-     "page": 4,
-     "sentences": [
-      {
-       "id": "s-2-2-10-1",
-       "original": "the Slow AR’s own token embedding eLM for the semantic token q(0) , are summed:",
-       "zh": "Slow AR 自身针对语义 token q(0) 的 token 嵌入 eLM，被求和："
-      }
-     ]
-    },
-    {
-     "id": "p-2-2-11",
-     "type": "paragraph",
-     "page": 4,
-     "sentences": [
-      {
-       "id": "s-2-2-11-1",
-       "original": "xt+1 = eLM + N−1 k=0 E(k)\u0002 q(k) \u0003 ,",
-       "zh": "xt+1 = eLM + Σ_{k=0}^{N−1} E(k)[q(k)]，"
-      }
-     ]
-    },
-    {
-     "id": "p-2-2-12",
-     "type": "paragraph",
-     "page": 4,
-     "sentences": [
-      {
-       "id": "s-2-2-12-1",
-       "original": "where N = 10 is the total number of codebooks.",
-       "zh": "其中 N = 10 是码本总数。"
-      },
-      {
-       "id": "s-2-2-12-2",
-       "original": "Note that the semantic token q(0) contributes two",
-       "zh": "注意语义 token q(0) 贡献了两"
-      }
-     ]
-    },
-    {
-     "id": "p-2-2-13",
-     "type": "paragraph",
-     "page": 4,
-     "sentences": [
-      {
-       "id": "s-2-2-13-1",
-       "original": "distinct representations: eLM from the Slow AR’s token embedding layer, and E(0)[q(0) t ] from the codebook embedding layer.",
-       "zh": "种不同的表示：来自 Slow AR token 嵌入层的 eLM，以及来自码本嵌入层的 E(0)[q(0)_t]。"
-      },
-      {
-       "id": "s-2-2-13-2",
+       "id": "s-2-2-6-3",
        "original": "These two embedding tables are independently parameterized and capture complementary aspects of the same token.",
        "zh": "这两个嵌入表独立参数化，捕捉同一 token 的互补侧面。"
       }
@@ -1129,8 +1054,18 @@ globalThis.PAPER_2603_08823 = {
       },
       {
        "id": "s-4-2-3-3",
-       "original": "For fine-grained acoustic control, rather than relying on lengthy global prompts, we inject",
+       "original": "For fine-grained acoustic control, rather than relying on lengthy global prompts, we inject descriptive instructions at specific word or phrase positions within the dialogue context, enabling precise localized control over acoustic details.",
        "zh": "为实现细粒度声学控制，我们不依赖冗长的全局提示，而是把"
+      },
+      {
+       "id": "s-4-2-3-4",
+       "original": "These instructions take the form of natural language—such as whisper, angry, and laugh—embedded directly in the token sequence.",
+       "zh": "这些指令以自然语言形式出现——如 whisper、angry 和 laugh——直接嵌入 token 序列。"
+      },
+      {
+       "id": "s-4-2-3-5",
+       "original": "Through autoregressive training on large-scale data, the model naturally internalizes the mapping between these textual cues and localized acoustic variations without requiring dedicated control tokens.",
+       "zh": "通过在大规模数据上的自回归训练，模型自然地内化了这些文本线索与局部声学变化之间的映射，而不需要专门的控制 token。"
       }
      ]
     },
@@ -1141,18 +1076,13 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-2-4-1",
-       "original": "descriptive instructions at specific word or phrase positions within the dialogue context, enabling precise localized control over acoustic details.",
-       "zh": "描述性指令注入对话上下文中的特定词或短语位置，实现对声学细节的精确局部控制。"
+       "original": "The training objective follows standard autoregressive language modeling, adapted for the Dual-AR architecture with a separate loss for each component.",
+       "zh": "训练目标遵循标准自回归语言建模，并针对 Dual-AR 架构为每个组件设置单独的损失。"
       },
       {
        "id": "s-4-2-4-2",
-       "original": "These instructions take the form of natural language—such as whisper, angry, and laugh—embedded directly in the token sequence.",
-       "zh": "这些指令以自然语言形式出现——如 whisper、angry 和 laugh——直接嵌入 token 序列。"
-      },
-      {
-       "id": "s-4-2-4-3",
-       "original": "Through autoregressive training on large-scale data, the model naturally internalizes the mapping between these textual cues and localized acoustic variations without requiring dedicated control tokens.",
-       "zh": "通过在大规模数据上的自回归训练，模型自然地内化了这些文本线索与局部声学变化之间的映射，而不需要专门的控制 token。"
+       "original": "For the Slow AR, the training objective is defined as:",
+       "zh": "对 Slow AR，训练目标定义为："
       }
      ]
     },
@@ -1163,15 +1093,28 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-2-5-1",
-       "original": "The training objective follows standard autoregressive language modeling, adapted for the Dual-AR architecture with a separate loss for each component.",
-       "zh": "训练目标遵循标准自回归语言建模，并针对 Dual-AR 架构为每个组件设置单独的损失。"
-      },
-      {
-       "id": "s-4-2-5-2",
-       "original": "For the Slow AR, the training objective is defined as:",
-       "zh": "对 Slow AR，训练目标定义为："
+       "original": "Lslow = − T−1",
+       "zh": "（公式：L_slow = −Σ_{t=0..T−1} m_t·λ_t·log P(x_t | x_{<t})（式 2），其中 m_t ∈ {0, 1} 为参考掩码（系统提示与参考音频 token 处 m_t = 0，其余为 1）。）"
       }
      ]
+    },
+    {
+     "id": "eq-4-2-1",
+     "type": "equation",
+     "page": 7,
+     "original": "∑"
+    },
+    {
+     "id": "eq-4-2-2",
+     "type": "equation",
+     "page": 7,
+     "original": "t=0 mt λt log P(xt | x<t),"
+    },
+    {
+     "id": "eq-4-2-3",
+     "type": "equation",
+     "page": 7,
+     "original": "(2)"
     },
     {
      "id": "p-4-2-6",
@@ -1180,10 +1123,33 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-2-6-1",
-       "original": "Lslow = − T−1 t=0 mt λt log P(xt | x<t),",
-       "zh": "Lslow = − Σ_{t=0}^{T−1} mt λt log P(xt | x<t)，"
+       "original": "where mt ∈{0, 1} is the reference mask (mt = 0 for system prompt and reference audio tokens, mt = 1 otherwise).",
+       "zh": "（公式：L_slow = −Σ_{t=0..T−1} m_t·λ_t·log P(x_t | x_{<t})（式 2），其中 m_t ∈ {0, 1} 为参考掩码（系统提示与参考音频 token 处 m_t = 0，其余为 1）。）"
+      },
+      {
+       "id": "s-4-2-6-2",
+       "original": "The Fast AR loss Lfast supervises the depth-wise generation of audio tokens q(0) t",
+       "zh": "Fast AR 损失 L_fast 监督音频 token q(0)_t 的深度方向生成（公式见下）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-2-4",
+     "type": "equation",
+     "page": 7,
+     "original": ", . . . , q(N−1)"
+    },
+    {
+     "id": "eq-4-2-5",
+     "type": "equation",
+     "page": 7,
+     "original": "t"
+    },
+    {
+     "id": "eq-4-2-6",
+     "type": "equation",
+     "page": 7,
+     "original": ","
     },
     {
      "id": "p-4-2-7",
@@ -1192,10 +1158,16 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-2-7-1",
-       "original": "where mt ∈{0, 1} is the reference mask (mt = 0 for system prompt and reference audio tokens, mt = 1",
-       "zh": "其中 mt ∈ {0, 1} 是参考掩码（系统提示和参考音频 token 取 mt = 0，其余取 mt = 1"
+       "original": "conditioned on the Slow AR hidden state hslow t",
+       "zh": "（公式续行：……_t，以 Slow AR 隐藏状态 h^slow_t 为条件：）"
       }
      ]
+    },
+    {
+     "id": "eq-4-2-7",
+     "type": "equation",
+     "page": 7,
+     "original": ":"
     },
     {
      "id": "p-4-2-8",
@@ -1204,15 +1176,40 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-2-8-1",
-       "original": "otherwise).",
-       "zh": "）。"
-      },
-      {
-       "id": "s-4-2-8-2",
-       "original": "The Fast AR loss Lfast supervises the depth-wise generation of audio tokens q(0) , . . . , q(N−1) , conditioned on the Slow AR hidden state hslow :",
-       "zh": "Fast AR 损失 Lfast 以 Slow AR 隐状态 hslow 为条件，监督音频 token q(0), …, q(N−1) 的深度方向生成："
+       "original": "Lfast = −",
+       "zh": "（公式：L_fast = −[1/Σ_{k=0..N−1} w(k)] · Σ_{k=0..N−1} w(k)·log P(q(k)_t | h^slow_t, q(<k)_t)（式 3），其中 w(k) 为第 k 个声学 token 的权重。）"
       }
      ]
+    },
+    {
+     "id": "eq-4-2-8",
+     "type": "equation",
+     "page": 7,
+     "original": "1"
+    },
+    {
+     "id": "eq-4-2-9",
+     "type": "equation",
+     "page": 7,
+     "original": "∑N−1"
+    },
+    {
+     "id": "eq-4-2-10",
+     "type": "equation",
+     "page": 7,
+     "original": "1"
+    },
+    {
+     "id": "eq-4-2-11",
+     "type": "equation",
+     "page": 7,
+     "original": "w(k) N−1"
+    },
+    {
+     "id": "eq-4-2-12",
+     "type": "equation",
+     "page": 7,
+     "original": "∑"
     },
     {
      "id": "p-4-2-9",
@@ -1221,10 +1218,16 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-2-9-1",
-       "original": "Lfast = − 1",
-       "zh": "Lfast = − 1"
+       "original": "k=0 w(k) log P(q(k) t | hslow t , q(<k) t",
+       "zh": "（公式：L_fast = −[1/Σ_{k=0..N−1} w(k)] · Σ_{k=0..N−1} w(k)·log P(q(k)_t | h^slow_t, q(<k)_t)（式 3），其中 w(k) 为第 k 个声学 token 的权重。）"
       }
      ]
+    },
+    {
+     "id": "eq-4-2-13",
+     "type": "equation",
+     "page": 7,
+     "original": "), (3)"
     },
     {
      "id": "p-4-2-10",
@@ -1233,10 +1236,31 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-2-10-1",
-       "original": "∑N−1 1 w(k)",
-       "zh": "/ ∑_{k=0}^{N−1} w(k) ·"
+       "original": "where w(k) is the weight for the k-th acoutic token.",
+       "zh": "（公式：L_fast = −[1/Σ_{k=0..N−1} w(k)] · Σ_{k=0..N−1} w(k)·log P(q(k)_t | h^slow_t, q(<k)_t)（式 3），其中 w(k) 为第 k 个声学 token 的权重。）"
+      },
+      {
+       "id": "s-4-2-10-2",
+       "original": "During pre-training, w(k) = 1 uniformly for all codebook layers including k = 0, where predicting the semantic token serves as an auxiliary objective that helps the Fast AR learn to extract information from the Slow AR’s projected hidden state.",
+       "zh": "预训练期间，包括 k = 0 在内的所有码本层统一取 w(k) = 1，此时预测语义 token 是一个辅助目标，帮助 Fast AR 学会从 Slow AR 投影来的隐状态中提取信息。"
+      },
+      {
+       "id": "s-4-2-10-3",
+       "original": "During SFT, we remove the semantic token prediction and apply a progressively decayed weighting strategy over the remaining codebooks to better align training with the inference setting, where the semantic token q(0) t is sampled from the Slow AR, while concentrating model capacity on the coarse-grained acoustic codebooks that contribute most to perceptual quality.",
+       "zh": "SFT 阶段我们移除语义 token 预测，并对剩余码本采用渐进衰减的加权策略：推理时语义 token q(0)_t 由 Slow AR 采样，此举让训练与推理设置对齐，同时把模型容量集中到对感知质量贡献最大的粗粒度声学码本上。"
+      },
+      {
+       "id": "s-4-2-10-4",
+       "original": "The total loss combines both components:",
+       "zh": "总损失组合两个组件："
       }
      ]
+    },
+    {
+     "id": "eq-4-2-14",
+     "type": "equation",
+     "page": 7,
+     "original": "Ltotal = λslow Lslow + λfast Lfast. (4)"
     },
     {
      "id": "p-4-2-11",
@@ -1245,74 +1269,11 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-2-11-1",
-       "original": "N−1 k=0 w(k) log P(q(k) | hslow , q(<k) ),",
-       "zh": "Σ_{k=0}^{N−1} w(k) log P(q(k) | hslow, q(<k))，"
-      }
-     ]
-    },
-    {
-     "id": "p-4-2-12",
-     "type": "paragraph",
-     "page": 7,
-     "sentences": [
-      {
-       "id": "s-4-2-12-1",
-       "original": "where w(k) is the weight for the k-th acoutic token.",
-       "zh": "其中 w(k) 是第 k 个声学 token 的权重。"
-      },
-      {
-       "id": "s-4-2-12-2",
-       "original": "During pre-training, w(k) = 1 uniformly for all codebook layers including k = 0, where predicting the semantic token serves as an auxiliary objective that helps the Fast AR learn to extract information from the Slow AR’s projected hidden state.",
-       "zh": "预训练期间，包括 k = 0 在内的所有码本层统一取 w(k) = 1，此时预测语义 token 是一个辅助目标，帮助 Fast AR 学会从 Slow AR 投影来的隐状态中提取信息。"
-      },
-      {
-       "id": "s-4-2-12-3",
-       "original": "During SFT, we remove the semantic token prediction and apply a progressively decayed weighting strategy over the remaining",
-       "zh": "在 SFT 期间，我们移除语义 token 预测，并对剩余"
-      }
-     ]
-    },
-    {
-     "id": "p-4-2-13",
-     "type": "paragraph",
-     "page": 7,
-     "sentences": [
-      {
-       "id": "s-4-2-13-1",
-       "original": "codebooks to better align training with the inference setting, where the semantic token q(0) is sampled from the Slow AR, while concentrating model capacity on the coarse-grained acoustic codebooks that contribute most to perceptual quality.",
-       "zh": "码本施加逐步衰减的加权策略，使训练与推理设定更好地对齐——推理时语义 token q(0) 由 Slow AR 采样——同时把模型容量集中到对感知质量贡献最大的粗粒度声学码本上。"
-      },
-      {
-       "id": "s-4-2-13-2",
-       "original": "The total loss combines both components:",
-       "zh": "总损失组合两个组件："
-      }
-     ]
-    },
-    {
-     "id": "p-4-2-14",
-     "type": "paragraph",
-     "page": 7,
-     "sentences": [
-      {
-       "id": "s-4-2-14-1",
-       "original": "Ltotal = λslow Lslow + λfast Lfast.",
-       "zh": "Ltotal = λslow Lslow + λfast Lfast。"
-      }
-     ]
-    },
-    {
-     "id": "p-4-2-15",
-     "type": "paragraph",
-     "page": 7,
-     "sentences": [
-      {
-       "id": "s-4-2-15-1",
        "original": "The entire pre-training framework is built upon Fully Sharded Data Parallel (FSDP), with a differential learning rate strategy that applies a reduced learning rate to the text foundation parameters while using a higher learning rate for the audio modules.",
        "zh": "整个预训练框架基于 Fully Sharded Data Parallel（FSDP）构建，采用差异化学习率策略：文本基础参数用较低学习率，音频模块用较高学习率。"
       },
       {
-       "id": "s-4-2-15-2",
+       "id": "s-4-2-11-2",
        "original": "Combined with a Warmup-Stable-Decay (WSD) scheduling strategy (Hu et al., 2024), this ensures stable training at scale with high throughput.",
        "zh": "结合 Warmup-Stable-Decay（WSD）调度策略（Hu et al., 2024），这保证了大规模训练在高吞吐下保持稳定。"
       }
@@ -1358,14 +1319,35 @@ globalThis.PAPER_2603_08823 = {
      ]
     },
     {
+     "id": "eq-4-3-1",
+     "type": "equation",
+     "page": 7,
+     "original": "Ai = Ri −¯R, i ∈{1, . . . , G}, (5)"
+    },
+    {
      "id": "p-4-3-2",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
        "id": "s-4-3-2-1",
-       "original": "Ai = Ri −¯R, i ∈{1, . . . , G},",
-       "zh": "Ai = Ri − R̄，i ∈ {1, …, G}，"
+       "original": "where Ri is the reward for the i-th candidate, ¯R is the intra-group mean.",
+       "zh": "其中 Ri 是第 i 个候选的奖励，R̄ 是组内均值。"
+      },
+      {
+       "id": "s-4-3-2-2",
+       "original": "Following Dr.GRPO, we remove normalization by the intra-group standard deviation to avoid sample-level difficulty bias, where samples with low reward variance receive disproportionately large gradient updates.",
+       "zh": "沿用 Dr.GRPO，我们去掉组内标准差归一化，以避免样本级难度偏置——即奖励方差小的样本会获得不成比例的大梯度更新。"
+      },
+      {
+       "id": "s-4-3-2-3",
+       "original": "These advantages are then used to optimize both components of the Dual-AR architecture.",
+       "zh": "这些优势随后被用于优化 Dual-AR 架构的两个组件。"
+      },
+      {
+       "id": "s-4-3-2-4",
+       "original": "The Slow AR policy loss is defined as:",
+       "zh": "Slow AR 的策略损失定义为："
       }
      ]
     },
@@ -1376,25 +1358,16 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-3-3-1",
-       "original": "where Ri is the reward for the i-th candidate, ¯R is the intra-group mean.",
-       "zh": "其中 Ri 是第 i 个候选的奖励，R̄ 是组内均值。"
-      },
-      {
-       "id": "s-4-3-3-2",
-       "original": "Following Dr.GRPO, we remove normalization by the intra-group standard deviation to avoid sample-level difficulty bias, where samples with low reward variance receive disproportionately large gradient updates.",
-       "zh": "沿用 Dr.GRPO，我们去掉组内标准差归一化，以避免样本级难度偏置——即奖励方差小的样本会获得不成比例的大梯度更新。"
-      },
-      {
-       "id": "s-4-3-3-3",
-       "original": "These advantages are then used to optimize both components of the Dual-AR architecture.",
-       "zh": "这些优势随后被用于优化 Dual-AR 架构的两个组件。"
-      },
-      {
-       "id": "s-4-3-3-4",
-       "original": "The Slow AR policy loss is defined as:",
-       "zh": "Slow AR 的策略损失定义为："
+       "original": "|T|",
+       "zh": "（公式片段：L^RL_slow = −(1/|T|)·Σ_{t=1..|T|} A_i·log π_θ(x_t | x_{<t}) + β·D_KL(t)（式 6）。）"
       }
      ]
+    },
+    {
+     "id": "eq-4-3-2",
+     "type": "equation",
+     "page": 7,
+     "original": "∑"
     },
     {
      "id": "p-4-3-4",
@@ -1403,10 +1376,16 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-3-4-1",
-       "original": "LRL slow = −1",
-       "zh": "LRL_slow = −1"
+       "original": "t=1 Ai log πθ(xt | x<t) + β D(t) KL,",
+       "zh": "（公式片段：L^RL_slow = −(1/|T|)·Σ_{t=1..|T|} A_i·log π_θ(x_t | x_{<t}) + β·D_KL(t)（式 6）。）"
       }
      ]
+    },
+    {
+     "id": "eq-4-3-3",
+     "type": "equation",
+     "page": 7,
+     "original": "(6)"
     },
     {
      "id": "p-4-3-5",
@@ -1415,20 +1394,8 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-3-5-1",
-       "original": "T",
-       "zh": "/ T"
-      }
-     ]
-    },
-    {
-     "id": "p-4-3-6",
-     "type": "paragraph",
-     "page": 7,
-     "sentences": [
-      {
-       "id": "s-4-3-6-1",
-       "original": "|T| t=1 Ai log πθ(xt | x<t) + β D(t) KL,",
-       "zh": "· Σ_{|T|, t=1} Ai log πθ(xt | x<t) + β D(t)_KL，"
+       "original": "LRL slow = −1 T",
+       "zh": "（公式片段：L^RL_slow = −(1/|T|)·Σ_{t=1..|T|} A_i·log π_θ(x_t | x_{<t}) + β·D_KL(t)（式 6）。）"
       }
      ]
     },
@@ -1440,21 +1407,51 @@ globalThis.PAPER_2603_08823 = {
      "zh": "图 5：基于 RL 的后训练期间的训练奖励曲线。"
     },
     {
+     "id": "p-4-3-6",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-3-6-1",
+       "original": "where D(t) KL is the per-token KL divergence between the current policy and the reference policy, computed via the Schulman estimator.",
+       "zh": "其中 D(t)_KL 是当前策略与参考策略之间的逐 token KL 散度，用 Schulman 估计量计算。"
+      },
+      {
+       "id": "s-4-3-6-2",
+       "original": "The Fast AR loss follows the same formulation but operates independently over each audio token q(k) t , sharing the same advantage signal:",
+       "zh": "/ T"
+      }
+     ]
+    },
+    {
      "id": "p-4-3-7",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
        "id": "s-4-3-7-1",
-       "original": "where D(t) KL is the per-token KL divergence between the current policy and the reference policy, computed via the Schulman estimator.",
-       "zh": "其中 D(t)_KL 是当前策略与参考策略之间的逐 token KL 散度，用 Schulman 估计量计算。"
-      },
-      {
-       "id": "s-4-3-7-2",
-       "original": "The Fast AR loss follows the same formulation but operates independently over",
-       "zh": "Fast AR 损失采用相同的形式，但独立地作用于"
+       "original": "C(k) ∑ t,k Ai log πFA θ (q(k) t | q(<k) t",
+       "zh": "（公式片段：C(k) Σ_{t,k} A_i log π^FA_θ(q(k)_t | q(<k)_t …，见原文。）"
       }
      ]
+    },
+    {
+     "id": "eq-4-3-4",
+     "type": "equation",
+     "page": 8,
+     "original": ") + β D(t,k)"
+    },
+    {
+     "id": "eq-4-3-5",
+     "type": "equation",
+     "page": 8,
+     "original": "KL ,"
+    },
+    {
+     "id": "eq-4-3-6",
+     "type": "equation",
+     "page": 8,
+     "original": "(7)"
     },
     {
      "id": "p-4-3-8",
@@ -1463,10 +1460,21 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-3-8-1",
-       "original": "each audio token q(k) t , sharing the same advantage signal:",
-       "zh": "每个音频 token q(k)_t，并共享同一个优势信号："
+       "original": "LRL fast = −1 where C(k) is the k-th codebook size.",
+       "zh": "（公式片段：L^RL_fast = −1·…·KL（式 7），其中 C(k) 为第 k 个码本的大小。）"
+      },
+      {
+       "id": "s-4-3-8-2",
+       "original": "The total RL loss combines both components:",
+       "zh": "总 RL 损失组合两个组件："
       }
      ]
+    },
+    {
+     "id": "eq-4-3-7",
+     "type": "equation",
+     "page": 8,
+     "original": "LRL = LRL slow + γ LRL fast. (8)"
     },
     {
      "id": "p-4-3-9",
@@ -1475,10 +1483,21 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-3-9-1",
-       "original": "LRL fast = −1",
-       "zh": "LRL_fast = −1"
+       "original": "As speech generation quality spans multiple perceptual dimensions, we constructed a multi-dimensional, orthogonal, and anti-hacking reward system.",
+       "zh": "由于语音生成质量横跨多个感知维度，我们构建了一个多维度、相互正交且防刷分（anti-hacking）的奖励系统。"
+      },
+      {
+       "id": "s-4-3-9-2",
+       "original": "The final composite reward signal Rtotal is a weighted fusion of feedback from three distinct dimensions:",
+       "zh": "最终的复合奖励信号 Rtotal 是来自三个不同维度反馈的加权融合："
       }
      ]
+    },
+    {
+     "id": "eq-4-3-8",
+     "type": "equation",
+     "page": 8,
+     "original": "Rtotal = λSTT · RSTT + λPref · RPref + λSIM · RSIM. (9)"
     },
     {
      "id": "p-4-3-10",
@@ -1487,8 +1506,28 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-3-10-1",
-       "original": "C(k) ∑ t,k Ai log πFA θ (q(k) | q(<k) ) + β D(t,k) KL ,",
-       "zh": "/ C(k) · Σ_{t,k} Ai log πFA_θ(q(k) | q(<k)) + β D(t,k)_KL，"
+       "original": "The semantic accuracy reward RSTT utilizes the ASR caption model from the data pipeline (Section 3) that extracts per-token confidences as continuous signals.",
+       "zh": "语义准确性奖励 RSTT 利用数据流水线中的 ASR 字幕模型（第 3 节），提取逐 token 置信度作为连续信号。"
+      },
+      {
+       "id": "s-4-3-10-2",
+       "original": "To enforce strict instruction following, we implemented a token-weighted mask that applies substantially stronger penalties to incorrect speaker ID tags and additional penalties to missed vocal instructions.",
+       "zh": "为强制执行严格的指令跟随，我们实现了按 token 加权的掩码：对错误的说话人 ID 标签施加显著更强的惩罚，对遗漏的声音指令施加额外惩罚。"
+      },
+      {
+       "id": "s-4-3-10-3",
+       "original": "The acoustic preference reward RPref is scored by the speech quality model from the data pipeline (Section 3).",
+       "zh": "声学偏好奖励 RPref 由数据流水线中的语音质量模型（第 3 节）打分。"
+      },
+      {
+       "id": "s-4-3-10-4",
+       "original": "The timbre similarity reward RSIM utilizes an external voiceprint model to extract features and compute cosine similarity.",
+       "zh": "音色相似度奖励 RSIM 使用外部声纹模型提取特征并计算余弦相似度。"
+      },
+      {
+       "id": "s-4-3-10-5",
+       "original": "Figure 5 shows that the total reward Rtotal (per-step mean over the batch) rises consistently before convergence, demonstrating the effectiveness of our multi-dimensional reward design in providing stable and coherent training signal throughout RL post-training.",
+       "zh": "图 5 显示，总奖励 Rtotal（batch 内逐步均值）在收敛前持续上升，证明我们的多维奖励设计能在整个 RL 后训练过程中提供稳定、连贯的训练信号。"
       }
      ]
     },
@@ -1499,111 +1538,21 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-4-3-11-1",
-       "original": "where C(k) is the k-th codebook size.",
-       "zh": "其中 C(k) 是第 k 个码本的大小。"
-      },
-      {
-       "id": "s-4-3-11-2",
-       "original": "The total RL loss combines both components:",
-       "zh": "总 RL 损失组合两个组件："
-      }
-     ]
-    },
-    {
-     "id": "p-4-3-12",
-     "type": "paragraph",
-     "page": 8,
-     "sentences": [
-      {
-       "id": "s-4-3-12-1",
-       "original": "LRL = LRL slow + γ LRL fast.",
-       "zh": "LRL = LRL_slow + γ LRL_fast。"
-      }
-     ]
-    },
-    {
-     "id": "p-4-3-13",
-     "type": "paragraph",
-     "page": 8,
-     "sentences": [
-      {
-       "id": "s-4-3-13-1",
-       "original": "As speech generation quality spans multiple perceptual dimensions, we constructed a multi-dimensional, orthogonal, and anti-hacking reward system.",
-       "zh": "由于语音生成质量横跨多个感知维度，我们构建了一个多维度、相互正交且防刷分（anti-hacking）的奖励系统。"
-      },
-      {
-       "id": "s-4-3-13-2",
-       "original": "The final composite reward signal Rtotal is a weighted fusion of feedback from three distinct dimensions:",
-       "zh": "最终的复合奖励信号 Rtotal 是来自三个不同维度反馈的加权融合："
-      }
-     ]
-    },
-    {
-     "id": "p-4-3-14",
-     "type": "paragraph",
-     "page": 8,
-     "sentences": [
-      {
-       "id": "s-4-3-14-1",
-       "original": "Rtotal = λSTT · RSTT + λPref · RPref + λSIM · RSIM.",
-       "zh": "Rtotal = λSTT · RSTT + λPref · RPref + λSIM · RSIM。"
-      }
-     ]
-    },
-    {
-     "id": "p-4-3-15",
-     "type": "paragraph",
-     "page": 8,
-     "sentences": [
-      {
-       "id": "s-4-3-15-1",
-       "original": "The semantic accuracy reward RSTT utilizes the ASR caption model from the data pipeline (Section 3) that extracts per-token confidences as continuous signals.",
-       "zh": "语义准确性奖励 RSTT 利用数据流水线中的 ASR 字幕模型（第 3 节），提取逐 token 置信度作为连续信号。"
-      },
-      {
-       "id": "s-4-3-15-2",
-       "original": "To enforce strict instruction following, we implemented a token-weighted mask that applies substantially stronger penalties to incorrect speaker ID tags and additional penalties to missed vocal instructions.",
-       "zh": "为强制执行严格的指令跟随，我们实现了按 token 加权的掩码：对错误的说话人 ID 标签施加显著更强的惩罚，对遗漏的声音指令施加额外惩罚。"
-      },
-      {
-       "id": "s-4-3-15-3",
-       "original": "The acoustic preference reward RPref is scored by the speech quality model from the data pipeline (Section 3).",
-       "zh": "声学偏好奖励 RPref 由数据流水线中的语音质量模型（第 3 节）打分。"
-      },
-      {
-       "id": "s-4-3-15-4",
-       "original": "The timbre similarity reward RSIM utilizes an external voiceprint model to extract features and compute cosine similarity.",
-       "zh": "音色相似度奖励 RSIM 使用外部声纹模型提取特征并计算余弦相似度。"
-      },
-      {
-       "id": "s-4-3-15-5",
-       "original": "Figure 5 shows that the total reward Rtotal (per-step mean over the batch) rises consistently before convergence, demonstrating the effectiveness of our multi-dimensional reward design in providing stable and coherent training signal throughout RL post-training.",
-       "zh": "图 5 显示，总奖励 Rtotal（batch 内逐步均值）在收敛前持续上升，证明我们的多维奖励设计能在整个 RL 后训练过程中提供稳定、连贯的训练信号。"
-      }
-     ]
-    },
-    {
-     "id": "p-4-3-16",
-     "type": "paragraph",
-     "page": 8,
-     "sentences": [
-      {
-       "id": "s-4-3-16-1",
        "original": "In terms of system and optimization dynamics, to prevent computationally heavy scoring models from idling the primary node, we abstracted the entire scoring system into an asynchronous, decoupled architecture.",
        "zh": "在系统与优化动态方面，为防止计算量大的打分模型让主节点空转，我们把整个打分系统抽象为异步、解耦的架构。"
       },
       {
-       "id": "s-4-3-16-2",
+       "id": "s-4-3-11-2",
        "original": "Combined with a centralized waveform cache, this maximizes the rollout throughput during the RL-based post-training phase.",
        "zh": "结合集中式波形缓存，这最大化了 RL 后训练阶段的 rollout 吞吐。"
       },
       {
-       "id": "s-4-3-16-3",
+       "id": "s-4-3-11-3",
        "original": "To efficiently compute the KL divergence penalty in the policy loss without perpetually hosting a redundant full reference model in VRAM, we design a LoRA weight-swap mechanism: the reference policy is maintained as a LoRA weight backup in CPU memory and dynamically swapped in for gradient-free forward passes during divergence computation, significantly reducing peak memory footprint.",
        "zh": "为高效计算策略损失中的 KL 散度惩罚，同时不必在显存中常驻一个冗余的完整参考模型，我们设计了 LoRA 权重交换机制：参考策略以 LoRA 权重备份的形式保存在 CPU 内存中，在计算散度时动态换入做无梯度前向，显著降低了峰值显存占用。"
       },
       {
-       "id": "s-4-3-16-4",
+       "id": "s-4-3-11-4",
        "original": "We employ rank-stabilized LoRA (rsLoRA, r = 16, α = 64) (Kalajdzievski, 2023), updating exclusively the MLP layers.",
        "zh": "我们采用 rank-stabilized LoRA（rsLoRA，r = 16，α = 64）（Kalajdzievski, 2023），只更新 MLP 层。"
       }
@@ -1857,10 +1806,100 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-6-1-1-1-1",
-       "original": "test-zh | test-en | zh-hard CosyVoice 3-1.5B (Du et al., 2025) Qwen3-TTS (Hu et al., 2026) Qwen3-Omni (Xu et al., 2025b) FireRedTTS-2 (Xie et al., 2025) Seed-TTS (Anastassiou et al., 2024) Minimax Speech-02 (Zhang et al., 2025)",
-       "zh": "（表格碎片，按原文保留）test-zh | test-en | zh-hard CosyVoice 3-1.5B (Du et al., 2025) Qwen3-TTS (Hu et al., 2026) Qwen3-Omni (Xu et al., 2025b) FireRedTTS-2 (Xie et al., 2025) Seed-TTS (Anastassiou et al., 2024) Minimax Speech-02 (Zhang et al., 2025)。"
+       "original": "Model WER (%) ↓ test-zh | test-en | zh-hard Fish Audio S2",
+       "zh": "表头：Model × WER (%)↓（test-zh | test-en | zh-hard）——Fish Audio S2（后续数值照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-6-1-1-1",
+     "type": "equation",
+     "page": 10,
+     "original": "0.54 | 0.99 | 5.99"
+    },
+    {
+     "id": "eq-6-1-1-2",
+     "type": "equation",
+     "page": 10,
+     "original": "Fish Audio S1"
+    },
+    {
+     "id": "eq-6-1-1-3",
+     "type": "equation",
+     "page": 10,
+     "original": "0.54 | 1.07 | 17.00"
+    },
+    {
+     "id": "eq-6-1-1-4",
+     "type": "equation",
+     "page": 10,
+     "original": "CosyVoice 3-1.5B (Du et al., 2025)"
+    },
+    {
+     "id": "eq-6-1-1-5",
+     "type": "equation",
+     "page": 10,
+     "original": "1.12 | 2.21 | 5.83"
+    },
+    {
+     "id": "eq-6-1-1-6",
+     "type": "equation",
+     "page": 10,
+     "original": "Qwen3-TTS (Hu et al., 2026)"
+    },
+    {
+     "id": "eq-6-1-1-7",
+     "type": "equation",
+     "page": 10,
+     "original": "0.77 | 1.24 | –"
+    },
+    {
+     "id": "eq-6-1-1-8",
+     "type": "equation",
+     "page": 10,
+     "original": "Qwen3-Omni (Xu et al., 2025b)"
+    },
+    {
+     "id": "eq-6-1-1-9",
+     "type": "equation",
+     "page": 10,
+     "original": "1.07 | 1.39 | –"
+    },
+    {
+     "id": "eq-6-1-1-10",
+     "type": "equation",
+     "page": 10,
+     "original": "FireRedTTS-2 (Xie et al., 2025)"
+    },
+    {
+     "id": "eq-6-1-1-11",
+     "type": "equation",
+     "page": 10,
+     "original": "1.14 | 1.95 | –"
+    },
+    {
+     "id": "eq-6-1-1-12",
+     "type": "equation",
+     "page": 10,
+     "original": "Seed-TTS (Anastassiou et al., 2024)"
+    },
+    {
+     "id": "eq-6-1-1-13",
+     "type": "equation",
+     "page": 10,
+     "original": "1.12 | 2.25 | 7.59"
+    },
+    {
+     "id": "eq-6-1-1-14",
+     "type": "equation",
+     "page": 10,
+     "original": "Minimax Speech-02 (Zhang et al., 2025)"
+    },
+    {
+     "id": "eq-6-1-1-15",
+     "type": "equation",
+     "page": 10,
+     "original": "0.99 | 1.90 | –"
     },
     {
      "id": "p-6-1-1-2",
@@ -1870,7 +1909,7 @@ globalThis.PAPER_2603_08823 = {
       {
        "id": "s-6-1-1-2-1",
        "original": "We assess voice-cloning intelligibility on Seed-TTS-Eval using WER over the test-zh, test-en, and ZH-hard splits.",
-       "zh": "我们在 Seed-TTS-Eval 的 test-zh、test-en 和 ZH-hard 划分上，用 WER 评估声音克隆的可懂度。"
+       "zh": "/ T"
       },
       {
        "id": "s-6-1-1-2-2",
@@ -1976,10 +2015,64 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-6-1-2-3-1",
-       "original": "zh en ja ko de es fr it ru hard-zh hard-en 2.65 2.43 3.96 2.76 2.22 2.00 6.26 2.04 2.78 9.10 4.40 2.98 3.00 4.54 3.19 2.78 2.84 8.15 2.94 5.18 9.72 7.26 CosyVoice2 + DiffRO 3.00 4.72 6.36 5.14 10.66 10.25 CosyVoice3-0.5B + DiffRO 2.89 3.68 5.15 4.02 4.51 2.99 8.56 2.94 3.79 8.26 7.60 CosyVoice3-1.5B + DiffRO 3.01 3.71 5.27 4.01 3.93 3.26 8.09 2.72 4.11 9.06 7.56",
-       "zh": "（表格碎片，数值按原文保留）zh en ja ko de es fr it ru hard-zh hard-en 2.65 2.43 3.96 2.76 2.22 2.00 6.26 2.04 2.78 9.10 4.40 2.98 3.00 4.54 3.19 2.78 2.84 8.15 2.94 5.18 9.72 7.26 CosyVoice2 + DiffRO 3.00 4.72 6.36 5.14 10.66 10.25 CosyVoice3-0.5B + DiffRO 2.89 3.68 5.15 4.02 4.51 2.99 8.56 2.94 3.79 8.26 7.60 CosyVoice3-1.5B + DiffRO 3.01 3.71 5.27 4.01 3.93 3.26 8.09 2.72 4.11 9.06 7.56。"
+       "original": "Model WER (%) ↓ zh en ja ko de es fr it ru hard-zh hard-en Fish Audio S2",
+       "zh": "表头：Model / WER (%) ↓（zh / en / ja / ko / de / es / fr / it / ru / hard-zh / hard-en）——Fish Audio S2（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-6-1-2-1",
+     "type": "equation",
+     "page": 10,
+     "original": "2.65 2.43 3.96 2.76 2.22 2.00 6.26 2.04 2.78 9.10 4.40"
+    },
+    {
+     "id": "eq-6-1-2-2",
+     "type": "equation",
+     "page": 10,
+     "original": "Fish Audio S1"
+    },
+    {
+     "id": "eq-6-1-2-3",
+     "type": "equation",
+     "page": 10,
+     "original": "2.98 3.00 4.54 3.19 2.78 2.84 8.15 2.94 5.18 9.72 7.26"
+    },
+    {
+     "id": "eq-6-1-2-4",
+     "type": "equation",
+     "page": 10,
+     "original": "CosyVoice2 + DiffRO"
+    },
+    {
+     "id": "eq-6-1-2-5",
+     "type": "equation",
+     "page": 10,
+     "original": "3.00 4.72 6.36 5.14 – – – – – 10.66 10.25"
+    },
+    {
+     "id": "eq-6-1-2-6",
+     "type": "equation",
+     "page": 10,
+     "original": "CosyVoice3-0.5B + DiffRO"
+    },
+    {
+     "id": "eq-6-1-2-7",
+     "type": "equation",
+     "page": 10,
+     "original": "2.89 3.68 5.15 4.02 4.51 2.99 8.56 2.94 3.79 8.26 7.60"
+    },
+    {
+     "id": "eq-6-1-2-8",
+     "type": "equation",
+     "page": 10,
+     "original": "CosyVoice3-1.5B + DiffRO"
+    },
+    {
+     "id": "eq-6-1-2-9",
+     "type": "equation",
+     "page": 10,
+     "original": "3.01 3.71 5.27 4.01 3.93 3.26 8.09 2.72 4.11 9.06 7.56"
     },
     {
      "id": "tab-6-1-2-2",
@@ -1995,34 +2088,292 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-6-1-2-4-1",
-       "original": "Language SIM ↑",
-       "zh": "（表格碎片）语言 SIM ↑。"
+       "original": "Language WER (%) ↓ SIM ↑ MiniMax ElevenLabs Fish Audio S2 Fish Audio S1 MiniMax ElevenLabs Fish Audio S2 Fish Audio S1 Arabic",
+       "zh": "表头：Language × WER (%) ↓ / SIM ↑（MiniMax / ElevenLabs / Fish Audio S2 / Fish Audio S1 两组）——Arabic（后续照原文）。"
       }
      ]
     },
     {
-     "id": "p-6-1-2-5",
-     "type": "paragraph",
+     "id": "eq-6-1-2-10",
+     "type": "equation",
      "page": 11,
-     "sentences": [
-      {
-       "id": "s-6-1-2-5-1",
-       "original": "MiniMax ElevenLabs Fish Audio S2 Fish Audio S1 MiniMax ElevenLabs",
-       "zh": "（表格碎片，模型名列）MiniMax、ElevenLabs、Fish Audio S2、Fish Audio S1、MiniMax、ElevenLabs。"
-      }
-     ]
+     "original": "1.665 1.666 3.500 6.420 0.736 0.706 0.750 0.713"
     },
     {
-     "id": "p-6-1-2-6",
-     "type": "paragraph",
+     "id": "eq-6-1-2-11",
+     "type": "equation",
      "page": 11,
-     "sentences": [
-      {
-       "id": "s-6-1-2-6-1",
-       "original": "Arabic 1.665 1.666 3.500 6.420 0.736 0.706 0.750 0.713 Cantonese 34.111 51.513 30.670 48.800 0.778 0.670 0.805 0.773 Chinese 2.252 16.026 0.730 0.980 0.780 0.677 0.816 0.777 Czech 3.875 2.108 2.840 18.020 0.796 0.685 0.798 0.733 Dutch 1.143 0.803 0.990 2.270 0.738 0.680 0.730 0.701 English 2.164 2.339 1.620 2.370 0.756 0.613 0.797 0.785 Finnish 4.666 2.964 3.330 10.000 0.835 0.759 0.819 0.780 French 4.099 5.216 3.050 5.700 0.628 0.535 0.698 0.602 German 1.906 0.572 0.550 0.650 0.733 0.614 0.767 0.719 Greek 2.016 0.991 5.740 19.840 0.826 0.733 0.795 0.746 Hindi 6.962 5.827 14.640 32.280 0.818 0.730 0.821 0.792 Indonesian 1.237 1.059 1.460 8.000 0.729 0.660 0.763 0.696 Italian 1.543 1.743 1.270 1.870 0.699 0.579 0.747 0.714 Japanese 3.519 10.646 2.760 3.450 0.776 0.738 0.796 0.780 Korean 1.747 1.865 1.180 1.990 0.776 0.700 0.817 0.747 Polish 1.415 0.766 1.260 3.410 0.802 0.729 0.819 0.794 Portuguese 1.877 1.331 1.140 1.940 0.805 0.711 0.781 0.756 Romanian 2.878 1.347 10.740 19.490 0.809 0.699 0.733 0.739 Russian 4.281 3.878 2.400 5.250 0.761 0.676 0.790 0.764 Spanish 1.029 1.084 0.910 1.780 0.762 0.615 0.776 0.753 Thai 2.701 73.936 4.230 96.750 0.800 0.588 0.786 0.691 Turkish 1.520 0.699 0.870 2.260 0.779 0.596 0.835 0.786 Ukrainian 1.082 0.997 2.300 14.490 0.730 0.647 0.747 0.653 Vietnamese 0.880 73.415 7.410 78.130 0.743 0.369 0.740 0.664",
-       "zh": "（表格碎片，数值按原文保留）Arabic 1.665 1.666 3.500 6.420 0.736 0.706 0.750 0.713 Cantonese 34.111 51.513 30.670 48.800 0.778 0.670 0.805 0.773 Chinese 2.252 16.026 0.730 0.980 0.780 0.677 0.816 0.777 Czech 3.875 2.108 2.840 18.020 0.796 0.685 0.798 0.733 Dutch 1.143 0.803 0.990 2.270 0.738 0.680 0.730 0.701 English 2.164 2.339 1.620 2.370 0.756 0.613 0.797 0.785 Finnish 4.666 2.964 3.330 10.000 0.835 0.759 0.819 0.780 French 4.099 5.216 3.050 5.700 0.628 0.535 0.698 0.602 German 1.906 0.572 0.550 0.650 0.733 0.614 0.767 0.719 Greek 2.016 0.991 5.740 19.840 0.826 0.733 0.795 0.746 Hindi 6.962 5.827 14.640 32.280 0.818 0.730 0.821 0.792 Indonesian 1.237 1.059 1.460 8.000 0.729 0.660 0.763 0.696 Italian 1.543 1.743 1.270 1.870 0.699 0.579 0.747 0.714 Japanese 3.519 10.646 2.760 3.450 0.776 0.738 0.796 0.780 Korean 1.747 1.865 1.180 1.990 0.776 0.700 0.817 0.747 Polish 1.415 0.766 1.260 3.410 0.802 0.729 0.819 0.794 Portuguese 1.877 1.331 1.140 1.940 0.805 0.711 0.781 0.756 Romanian 2.878 1.347 10.740 19.490 0.809 0.699 0.733 0.739 Russian 4.281 3.878 2.400 5.250 0.761 0.676 0.790 0.764 Spanish 1.029 1.084 0.910 1.780 0.762 0.615 0.776 0.753 Thai 2.701 73.936 4.230 96.750 0.800 0.588 0.786 0.691 Turkish 1.520 0.699 0.870 2.260 0.779 0.596 0.835 0.786 Ukrainian 1.082 0.997 2.300 14.490 0.730 0.647 0.747 0.653 Vietnamese 0.880 73.415 7.410 78.130 0.743 0.369 0.740 0.664。"
-      }
-     ]
+     "original": "Cantonese"
+    },
+    {
+     "id": "eq-6-1-2-12",
+     "type": "equation",
+     "page": 11,
+     "original": "34.111 51.513 30.670 48.800 0.778 0.670 0.805 0.773"
+    },
+    {
+     "id": "eq-6-1-2-13",
+     "type": "equation",
+     "page": 11,
+     "original": "Chinese"
+    },
+    {
+     "id": "eq-6-1-2-14",
+     "type": "equation",
+     "page": 11,
+     "original": "2.252 16.026 0.730 0.980 0.780 0.677 0.816 0.777"
+    },
+    {
+     "id": "eq-6-1-2-15",
+     "type": "equation",
+     "page": 11,
+     "original": "Czech"
+    },
+    {
+     "id": "eq-6-1-2-16",
+     "type": "equation",
+     "page": 11,
+     "original": "3.875 2.108 2.840 18.020 0.796 0.685 0.798 0.733"
+    },
+    {
+     "id": "eq-6-1-2-17",
+     "type": "equation",
+     "page": 11,
+     "original": "Dutch"
+    },
+    {
+     "id": "eq-6-1-2-18",
+     "type": "equation",
+     "page": 11,
+     "original": "1.143 0.803 0.990 2.270 0.738 0.680 0.730 0.701"
+    },
+    {
+     "id": "eq-6-1-2-19",
+     "type": "equation",
+     "page": 11,
+     "original": "English"
+    },
+    {
+     "id": "eq-6-1-2-20",
+     "type": "equation",
+     "page": 11,
+     "original": "2.164 2.339 1.620 2.370 0.756 0.613 0.797 0.785"
+    },
+    {
+     "id": "eq-6-1-2-21",
+     "type": "equation",
+     "page": 11,
+     "original": "Finnish"
+    },
+    {
+     "id": "eq-6-1-2-22",
+     "type": "equation",
+     "page": 11,
+     "original": "4.666 2.964 3.330 10.000 0.835 0.759 0.819 0.780"
+    },
+    {
+     "id": "eq-6-1-2-23",
+     "type": "equation",
+     "page": 11,
+     "original": "French"
+    },
+    {
+     "id": "eq-6-1-2-24",
+     "type": "equation",
+     "page": 11,
+     "original": "4.099 5.216 3.050 5.700 0.628 0.535 0.698 0.602"
+    },
+    {
+     "id": "eq-6-1-2-25",
+     "type": "equation",
+     "page": 11,
+     "original": "German"
+    },
+    {
+     "id": "eq-6-1-2-26",
+     "type": "equation",
+     "page": 11,
+     "original": "1.906 0.572 0.550 0.650 0.733 0.614 0.767 0.719"
+    },
+    {
+     "id": "eq-6-1-2-27",
+     "type": "equation",
+     "page": 11,
+     "original": "Greek"
+    },
+    {
+     "id": "eq-6-1-2-28",
+     "type": "equation",
+     "page": 11,
+     "original": "2.016 0.991 5.740 19.840 0.826 0.733 0.795 0.746"
+    },
+    {
+     "id": "eq-6-1-2-29",
+     "type": "equation",
+     "page": 11,
+     "original": "Hindi"
+    },
+    {
+     "id": "eq-6-1-2-30",
+     "type": "equation",
+     "page": 11,
+     "original": "6.962 5.827 14.640 32.280 0.818 0.730 0.821 0.792"
+    },
+    {
+     "id": "eq-6-1-2-31",
+     "type": "equation",
+     "page": 11,
+     "original": "Indonesian"
+    },
+    {
+     "id": "eq-6-1-2-32",
+     "type": "equation",
+     "page": 11,
+     "original": "1.237 1.059 1.460 8.000 0.729 0.660 0.763 0.696"
+    },
+    {
+     "id": "eq-6-1-2-33",
+     "type": "equation",
+     "page": 11,
+     "original": "Italian"
+    },
+    {
+     "id": "eq-6-1-2-34",
+     "type": "equation",
+     "page": 11,
+     "original": "1.543 1.743 1.270 1.870 0.699 0.579 0.747 0.714"
+    },
+    {
+     "id": "eq-6-1-2-35",
+     "type": "equation",
+     "page": 11,
+     "original": "Japanese"
+    },
+    {
+     "id": "eq-6-1-2-36",
+     "type": "equation",
+     "page": 11,
+     "original": "3.519 10.646 2.760 3.450 0.776 0.738 0.796 0.780"
+    },
+    {
+     "id": "eq-6-1-2-37",
+     "type": "equation",
+     "page": 11,
+     "original": "Korean"
+    },
+    {
+     "id": "eq-6-1-2-38",
+     "type": "equation",
+     "page": 11,
+     "original": "1.747 1.865 1.180 1.990 0.776 0.700 0.817 0.747"
+    },
+    {
+     "id": "eq-6-1-2-39",
+     "type": "equation",
+     "page": 11,
+     "original": "Polish"
+    },
+    {
+     "id": "eq-6-1-2-40",
+     "type": "equation",
+     "page": 11,
+     "original": "1.415 0.766 1.260 3.410 0.802 0.729 0.819 0.794"
+    },
+    {
+     "id": "eq-6-1-2-41",
+     "type": "equation",
+     "page": 11,
+     "original": "Portuguese"
+    },
+    {
+     "id": "eq-6-1-2-42",
+     "type": "equation",
+     "page": 11,
+     "original": "1.877 1.331 1.140 1.940 0.805 0.711 0.781 0.756"
+    },
+    {
+     "id": "eq-6-1-2-43",
+     "type": "equation",
+     "page": 11,
+     "original": "Romanian"
+    },
+    {
+     "id": "eq-6-1-2-44",
+     "type": "equation",
+     "page": 11,
+     "original": "2.878 1.347 10.740 19.490 0.809 0.699 0.733 0.739"
+    },
+    {
+     "id": "eq-6-1-2-45",
+     "type": "equation",
+     "page": 11,
+     "original": "Russian"
+    },
+    {
+     "id": "eq-6-1-2-46",
+     "type": "equation",
+     "page": 11,
+     "original": "4.281 3.878 2.400 5.250 0.761 0.676 0.790 0.764"
+    },
+    {
+     "id": "eq-6-1-2-47",
+     "type": "equation",
+     "page": 11,
+     "original": "Spanish"
+    },
+    {
+     "id": "eq-6-1-2-48",
+     "type": "equation",
+     "page": 11,
+     "original": "1.029 1.084 0.910 1.780 0.762 0.615 0.776 0.753"
+    },
+    {
+     "id": "eq-6-1-2-49",
+     "type": "equation",
+     "page": 11,
+     "original": "Thai"
+    },
+    {
+     "id": "eq-6-1-2-50",
+     "type": "equation",
+     "page": 11,
+     "original": "2.701 73.936 4.230 96.750 0.800 0.588 0.786 0.691"
+    },
+    {
+     "id": "eq-6-1-2-51",
+     "type": "equation",
+     "page": 11,
+     "original": "Turkish"
+    },
+    {
+     "id": "eq-6-1-2-52",
+     "type": "equation",
+     "page": 11,
+     "original": "1.520 0.699 0.870 2.260 0.779 0.596 0.835 0.786"
+    },
+    {
+     "id": "eq-6-1-2-53",
+     "type": "equation",
+     "page": 11,
+     "original": "Ukrainian"
+    },
+    {
+     "id": "eq-6-1-2-54",
+     "type": "equation",
+     "page": 11,
+     "original": "1.082 0.997 2.300 14.490 0.730 0.647 0.747 0.653"
+    },
+    {
+     "id": "eq-6-1-2-55",
+     "type": "equation",
+     "page": 11,
+     "original": "Vietnamese"
+    },
+    {
+     "id": "eq-6-1-2-56",
+     "type": "equation",
+     "page": 11,
+     "original": "0.880 73.415 7.410 78.130 0.743 0.369 0.740 0.664"
     }
    ]
   },
@@ -2153,10 +2504,52 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-6-2-2-1",
-       "original": "English Chinese SIM-Mean ↑ SIM-Std ↓ CER (%) ↓ SIM-Mean ↑ SIM-Std ↓ 4.38 0.523 0.0761 5.95 0.557 0.0923 6.26 0.436 0.108 6.44 0.505 0.108 Qwen3-TTS (Hu et al., 2026) 7.69 0.390 0.0737 8.09 0.574 0.0614 VibeVoice (Peng et al., 2025) 28.0 0.530 0.0572 26.2 0.609 0.0537",
-       "zh": "（表格碎片，数值按原文保留）English Chinese SIM-Mean ↑ SIM-Std ↓ CER (%) ↓ SIM-Mean ↑ SIM-Std ↓ 4.38 0.523 0.0761 5.95 0.557 0.0923 6.26 0.436 0.108 6.44 0.505 0.108 Qwen3-TTS (Hu et al., 2026) 7.69 0.390 0.0737 8.09 0.574 0.0614 VibeVoice (Peng et al., 2025) 28.0 0.530 0.0572 26.2 0.609 0.0537。"
+       "original": "Model English Chinese WER (%) ↓ SIM-Mean ↑ SIM-Std ↓ CER (%) ↓ SIM-Mean ↑ SIM-Std ↓ Fish Audio S2",
+       "zh": "（表格：Model × English（WER(%)↓/SIM-Mean↑/SIM-Std↓）× Chinese（CER(%)↓/SIM-Mean↑/SIM-Std↓）——Fish Audio S2 4.38/0.523/0.0761、5.95/0.557/0.0923；Fish Audio S1 6.26/0.436/0.108、6.44/0.505/0.108；Qwen3-TTS (Hu et al., 2026) 7.69/0.390/0.0737、8.09/0.574/0.0614；VibeVoice (Peng et al., 2025) 28.0/0.530/0.0572、26.2/0.609/0.0537。）系统地在三个不同基准上评估模型的生成能力：(1) Audio Turing Test 的人级不可区分性；(2) Emergent TTS Eval 的高级合成行为；(3) Fish-Instruction-Benchmark 的细粒度指令遵循与可控性。"
       }
      ]
+    },
+    {
+     "id": "eq-6-2-1",
+     "type": "equation",
+     "page": 12,
+     "original": "4.38 0.523 0.0761 5.95 0.557 0.0923"
+    },
+    {
+     "id": "eq-6-2-2",
+     "type": "equation",
+     "page": 12,
+     "original": "Fish Audio S1"
+    },
+    {
+     "id": "eq-6-2-3",
+     "type": "equation",
+     "page": 12,
+     "original": "6.26 0.436 0.108 6.44 0.505 0.108"
+    },
+    {
+     "id": "eq-6-2-4",
+     "type": "equation",
+     "page": 12,
+     "original": "Qwen3-TTS (Hu et al., 2026)"
+    },
+    {
+     "id": "eq-6-2-5",
+     "type": "equation",
+     "page": 12,
+     "original": "7.69 0.390 0.0737 8.09 0.574 0.0614"
+    },
+    {
+     "id": "eq-6-2-6",
+     "type": "equation",
+     "page": 12,
+     "original": "VibeVoice (Peng et al., 2025)"
+    },
+    {
+     "id": "eq-6-2-7",
+     "type": "equation",
+     "page": 12,
+     "original": "28.0 0.530 0.0572 26.2 0.609 0.0537"
     },
     {
      "id": "p-6-2-3",
@@ -2166,7 +2559,7 @@ globalThis.PAPER_2603_08823 = {
       {
        "id": "s-6-2-3-1",
        "original": "tematically assess the model’s generative capabilities across three distinct benchmarks: (1) human-level indistinguishability on the Audio Turing Test; (2) advanced synthesis behaviors on the Emergent TTS Eval; and (3) fine-grained instruction following and controllability on our Fish-Instruction-Benchmark.",
-       "zh": "性地在三个不同基准上评估模型的生成能力：（1）Audio Turing Test 上的人类级不可区分性；（2）Emergent TTS Eval 上的高阶合成行为；（3）我们的 Fish-Instruction-Benchmark 上的细粒度指令跟随与可控性。"
+       "zh": "（表格：Model × English（WER(%)↓/SIM-Mean↑/SIM-Std↓）× Chinese（CER(%)↓/SIM-Mean↑/SIM-Std↓）——Fish Audio S2 4.38/0.523/0.0761、5.95/0.557/0.0923；Fish Audio S1 6.26/0.436/0.108、6.44/0.505/0.108；Qwen3-TTS (Hu et al., 2026) 7.69/0.390/0.0737、8.09/0.574/0.0614；VibeVoice (Peng et al., 2025) 28.0/0.530/0.0572、26.2/0.609/0.0537。）系统地在三个不同基准上评估模型的生成能力：(1) Audio Turing Test 的人级不可区分性；(2) Emergent TTS Eval 的高级合成行为；(3) Fish-Instruction-Benchmark 的细粒度指令遵循与可控性。"
       },
       {
        "id": "s-6-2-3-2",
@@ -2292,10 +2685,100 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-6-2-1-4-1",
-       "original": "Mean (Std) 95% HDI Fish Audio S2 (w/ instruction) Seed-TTS (Anastassiou et al., 2024) MiniMax-Speech (Zhang et al., 2025) Step-Audio (Huang et al., 2025) CosyVoice (Du et al., 2024) GPT-4o",
-       "zh": "（表格碎片，按原文保留）Mean (Std) 95% HDI Fish Audio S2 (w/ instruction) Seed-TTS (Anastassiou et al., 2024) MiniMax-Speech (Zhang et al., 2025) Step-Audio (Huang et al., 2025) CosyVoice (Du et al., 2024) GPT-4o。"
+       "original": "Model Mean (Std) 95% HDI Fish Audio S2",
+       "zh": "（表格：Model × Mean (Std) × 95% HDI——Fish Audio S2 0.483 (0.068) [0.477, 0.489]；Fish Audio S2 (w/ instruction) 0.515 (0.061) [0.510, 0.521]；Fish Audio S1 0.479 (0.087) [0.471, 0.486]；Seed-TTS (Anastassiou et al., 2024) 0.417 (0.011) [0.398, 0.438]；MiniMax-Speech (Zhang et al., 2025) 0.387 (0.011) [0.368, 0.407]；Step-Audio (Huang et al., 2025) 0.286 (0.011) [0.266, 0.307]；CosyVoice (Du et al., 2024) 0.234 (0.010) [0.214, 0.254]；GPT-4o 0.138 (0.011) [0.118, 0.158]。）"
       }
      ]
+    },
+    {
+     "id": "eq-6-2-1-1",
+     "type": "equation",
+     "page": 12,
+     "original": "0.483 (0.068) [0.477, 0.489]"
+    },
+    {
+     "id": "eq-6-2-1-2",
+     "type": "equation",
+     "page": 12,
+     "original": "Fish Audio S2 (w/ instruction)"
+    },
+    {
+     "id": "eq-6-2-1-3",
+     "type": "equation",
+     "page": 12,
+     "original": "0.515 (0.061) [0.510, 0.521]"
+    },
+    {
+     "id": "eq-6-2-1-4",
+     "type": "equation",
+     "page": 12,
+     "original": "Fish Audio S1"
+    },
+    {
+     "id": "eq-6-2-1-5",
+     "type": "equation",
+     "page": 12,
+     "original": "0.479 (0.087) [0.471, 0.486]"
+    },
+    {
+     "id": "eq-6-2-1-6",
+     "type": "equation",
+     "page": 12,
+     "original": "Seed-TTS (Anastassiou et al., 2024)"
+    },
+    {
+     "id": "eq-6-2-1-7",
+     "type": "equation",
+     "page": 12,
+     "original": "0.417 (0.011) [0.398, 0.438]"
+    },
+    {
+     "id": "eq-6-2-1-8",
+     "type": "equation",
+     "page": 12,
+     "original": "MiniMax-Speech (Zhang et al., 2025)"
+    },
+    {
+     "id": "eq-6-2-1-9",
+     "type": "equation",
+     "page": 12,
+     "original": "0.387 (0.011) [0.368, 0.407]"
+    },
+    {
+     "id": "eq-6-2-1-10",
+     "type": "equation",
+     "page": 12,
+     "original": "Step-Audio (Huang et al., 2025)"
+    },
+    {
+     "id": "eq-6-2-1-11",
+     "type": "equation",
+     "page": 12,
+     "original": "0.286 (0.011) [0.266, 0.307]"
+    },
+    {
+     "id": "eq-6-2-1-12",
+     "type": "equation",
+     "page": 12,
+     "original": "CosyVoice (Du et al., 2024)"
+    },
+    {
+     "id": "eq-6-2-1-13",
+     "type": "equation",
+     "page": 12,
+     "original": "0.234 (0.010) [0.214, 0.254]"
+    },
+    {
+     "id": "eq-6-2-1-14",
+     "type": "equation",
+     "page": 12,
+     "original": "GPT-4o"
+    },
+    {
+     "id": "eq-6-2-1-15",
+     "type": "equation",
+     "page": 12,
+     "original": "0.138 (0.011) [0.118, 0.158]"
     },
     {
      "id": "tab-6-2-1-2",
@@ -2311,58 +2794,311 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-6-2-1-5-1",
-       "original": "Overall Emotions Foreign Words Paralinguistics Questions Syntactic Comp.",
+       "original": "Model Overall Emotions Foreign Words Paralinguistics Questions Syntactic Comp.",
        "zh": "（表格碎片）Overall、Emotions、Foreign Words、Paralinguistics、Questions、Syntactic Comp.（各维度列名）。"
       }
      ]
     },
     {
      "id": "p-6-2-1-6",
-     "type": "paragraph",
+     "type": "table_body",
      "page": 13,
-     "sentences": [
-      {
-       "id": "s-6-2-1-6-1",
-       "original": "Fish Audio S2 ⋆ 8.15 81.88 0.52 86.61 14.74 63.39 24.58 91.61 0.38 84.41 0.51 83.39 7.60 36.88 0.75 24.82 15.77 53.75 20.02 37.68 0.72 43.55 0.74 24.64",
-       "zh": "（表格碎片，数值按原文保留）Fish Audio S2 ⋆ 8.15 81.88 0.52 86.61 14.74 63.39 24.58 91.61 0.38 84.41 0.51 83.39 7.60 36.88 0.75 24.82 15.77 53.75 20.02 37.68 0.72 43.55 0.74 24.64。"
-      }
-     ]
+     "original": "WER (%) ↓ Win (%) ↑ WER (%) ↓ Win (%) ↑ WER (%) ↓ Win (%) ↑ WER (%) ↓ Win (%) ↑ WER (%) ↓ Win (%) ↑ WER (%) ↓ Win (%) ↑ Fish Audio S2 ⋆",
+     "cells": 40
     },
     {
-     "id": "p-6-2-1-7",
-     "type": "paragraph",
+     "id": "eq-6-2-1-16",
+     "type": "equation",
      "page": 13,
-     "sentences": [
-      {
-       "id": "s-6-2-1-7-1",
-       "original": "Gemini-2.5-Flash-Preview-TTS ⋆ 6.35 79.10 0.71 97.32 11.80 65.56 18.38 91.25 0.40 74.82 0.50 67.14 Gemini-2.5-Flash-Preview-TTS 6.59 78.00 0.60 95.00 12.99 63.03 18.25 89.10 0.36 74.82 0.73 68.03 gpt-4o-audio-preview ⋆ 7.75 77.36 1.82 96.96 13.30 70.00 21.15 89.46 1.38 62.50 1.16 68.39 Gemini-2.5-Pro-Preview-TTS ⋆ 7.91 73.00 0.87 92.14 16.22 63.44 20.87 84.28 0.72 65.71 0.87 60.00 gpt-4o-mini-audio-preview ⋆ 8.86 66.27 9.34 74.10 12.70 73.39 20.92 68.03 0.74 55.53 0.72 60.35 gpt-4o-audio-preview ⋆ 7.64 64.90 0.93 67.14 13.75 71.60 20.56 77.32 1.72 49.64 1.26 58.92 gpt-4o-mini-tts ⋆ 7.11 61.98 0.71 67.32 12.07 63.03 21.33 63.39 0.66 54.28 0.84 61.96 gpt-4o-audio-preview 8.27 60.53 1.03 56.78 14.72 68.75 23.16 71.60 1.19 48.75 1.25 56.78 gpt-4o-mini-audio-preview 7.18 55.15 0.95 62.90 14.48 64.82 19.04 52.14 0.55 45.71 0.88 50.17",
-       "zh": "（表格碎片，数值按原文保留）Gemini-2.5-Flash-Preview-TTS ⋆ 6.35 79.10 0.71 97.32 11.80 65.56 18.38 91.25 0.40 74.82 0.50 67.14 Gemini-2.5-Flash-Preview-TTS 6.59 78.00 0.60 95.00 12.99 63.03 18.25 89.10 0.36 74.82 0.73 68.03 gpt-4o-audio-preview ⋆ 7.75 77.36 1.82 96.96 13.30 70.00 21.15 89.46 1.38 62.50 1.16 68.39 Gemini-2.5-Pro-Preview-TTS ⋆ 7.91 73.00 0.87 92.14 16.22 63.44 20.87 84.28 0.72 65.71 0.87 60.00 gpt-4o-mini-audio-preview ⋆ 8.86 66.27 9.34 74.10 12.70 73.39 20.92 68.03 0.74 55.53 0.72 60.35 gpt-4o-audio-preview ⋆ 7.64 64.90 0.93 67.14 13.75 71.60 20.56 77.32 1.72 49.64 1.26 58.92 gpt-4o-mini-tts ⋆ 7.11 61.98 0.71 67.32 12.07 63.03 21.33 63.39 0.66 54.28 0.84 61.96 gpt-4o-audio-preview 8.27 60.53 1.03 56.78 14.72 68.75 23.16 71.60 1.19 48.75 1.25 56.78 gpt-4o-mini-audio-preview 7.18 55.15 0.95 62.90 14.48 64.82 19.04 52.14 0.55 45.71 0.88 50.17。"
-      }
-     ]
+     "original": "8.15 81.88 0.52 86.61 14.74 63.39 24.58 91.61 0.38 84.41 0.51 83.39"
     },
     {
-     "id": "p-6-2-1-8",
-     "type": "paragraph",
+     "id": "eq-6-2-1-17",
+     "type": "equation",
      "page": 13,
-     "sentences": [
-      {
-       "id": "s-6-2-1-8-1",
-       "original": "Baseline gpt-4o-mini-tts 7.23 50.00 0.72 13.45 20.55 0.42 1.04",
-       "zh": "（表格碎片，数值按原文保留）Baseline gpt-4o-mini-tts 7.23 50.00 0.72 13.45 20.55 0.42 1.04。"
-      }
-     ]
+     "original": "Fish Audio S1"
     },
     {
-     "id": "p-6-2-1-9",
-     "type": "paragraph",
+     "id": "eq-6-2-1-18",
+     "type": "equation",
      "page": 13,
-     "sentences": [
-      {
-       "id": "s-6-2-1-9-1",
-       "original": "HumeAI ⋆ 8.62 49.12 0.83 71.78 21.05 41.25 19.84 42.14 0.38 42.14 0.93 48.57 Higgs Audio V2 (Boson AI, 2025) 11.82 44.64 0.97 69.28 22.26 21.42 31.34 45.53 3.23 45.35 1.29 41.60 minimax/speech-02-hd (Zhang et al., 2025) 6.79 40.96 0.57 41.60 14.58 31.96 17.69 33.57 0.27 52.14 0.84 45.53 11Labs eleven multilingual v2 7.64 36.96 0.63 35.35 14.44 36.60 21.51 52.14 0.49 28.21 1.15 32.50 Qwen 2.5 Omni (Xu et al., 2025a) ⋆ 18.34 32.94 2.41 46.60 26.77 14.46 58.44 21.25 0.87 48.92 3.47 33.75 Orpheus TTS 13.63 32.56 1.81 39.06 22.31 14.64 40.94 48.57 1.48 31.07 1.63 29.46 Qwen 2.5 Omni 20.02 30.25 1.22 41.07 26.98 12.50 57.48 20.89 12.77 49.10 1.66 27.67 ResembleAI Chatterbox (Resemble AI, 2025) 8.20 27.39 1.18 28.03 17.59 24.64 20.64 17.32 0.65 51.07 0.96 15.89 Kokoro-82M 10.49 25.46 0.71 18.03 22.17 13.21 28.37 5.89 0.56 43.39 0.65 46.78 DeepGram Aura-2 10.24 25.21 3.45 17.50 21.41 15.89 23.73 20.89 1.24 43.03 1.36 28.75 KyutAI-TTS (Zeghidour et al., 2025) 9.10 24.28 0.83 31.78 16.47 13.39 26.41 24.28 0.61 35.17 1.19 16.78 MiniCPM-o (Yao et al., 2024) 22.52 19.75 12.36 22.85 33.46 5.89 58.48 21.60 5.21 22.14 3.08 26.25 F5TTS (Chen et al., 2025) 11.93 19.43 0.70 29.64 23.51 3.21 31.66 19.82 1.62 19.46 2.14 25.00",
-       "zh": "（表格碎片，数值按原文保留）HumeAI ⋆ 8.62 49.12 0.83 71.78 21.05 41.25 19.84 42.14 0.38 42.14 0.93 48.57 Higgs Audio V2 (Boson AI, 2025) 11.82 44.64 0.97 69.28 22.26 21.42 31.34 45.53 3.23 45.35 1.29 41.60 minimax/speech-02-hd (Zhang et al., 2025) 6.79 40.96 0.57 41.60 14.58 31.96 17.69 33.57 0.27 52.14 0.84 45.53 11Labs eleven multilingual v2 7.64 36.96 0.63 35.35 14.44 36.60 21.51 52.14 0.49 28.21 1.15 32.50 Qwen 2.5 Omni (Xu et al., 2025a) ⋆ 18.34 32.94 2.41 46.60 26.77 14.46 58.44 21.25 0.87 48.92 3.47 33.75 Orpheus TTS 13.63 32.56 1.81 39.06 22.31 14.64 40.94 48.57 1.48 31.07 1.63 29.46 Qwen 2.5 Omni 20.02 30.25 1.22 41.07 26.98 12.50 57.48 20.89 12.77 49.10 1.66 27.67 ResembleAI Chatterbox (Resemble AI, 2025) 8.20 27.39 1.18 28.03 17.59 24.64 20.64 17.32 0.65 51.07 0.96 15.89 Kokoro-82M 10.49 25.46 0.71 18.03 22.17 13.21 28.37 5.89 0.56 43.39 0.65 46.78 DeepGram Aura-2 10.24 25.21 3.45 17.50 21.41 15.89 23.73 20.89 1.24 43.03 1.36 28.75 KyutAI-TTS (Zeghidour et al., 2025) 9.10 24.28 0.83 31.78 16.47 13.39 26.41 24.28 0.61 35.17 1.19 16.78 MiniCPM-o (Yao et al., 2024) 22.52 19.75 12.36 22.85 33.46 5.89 58.48 21.60 5.21 22.14 3.08 26.25 F5TTS (Chen et al., 2025) 11.93 19.43 0.70 29.64 23.51 3.21 31.66 19.82 1.62 19.46 2.14 25.00。"
-      }
-     ]
+     "original": "7.60 36.88 0.75 24.82 15.77 53.75 20.02 37.68 0.72 43.55 0.74 24.64"
+    },
+    {
+     "id": "eq-6-2-1-19",
+     "type": "equation",
+     "page": 13,
+     "original": "Gemini-2.5-Flash-Preview-TTS ⋆"
+    },
+    {
+     "id": "eq-6-2-1-20",
+     "type": "equation",
+     "page": 13,
+     "original": "6.35 79.10 0.71 97.32 11.80 65.56 18.38 91.25 0.40 74.82 0.50 67.14"
+    },
+    {
+     "id": "eq-6-2-1-21",
+     "type": "equation",
+     "page": 13,
+     "original": "Gemini-2.5-Flash-Preview-TTS"
+    },
+    {
+     "id": "eq-6-2-1-22",
+     "type": "equation",
+     "page": 13,
+     "original": "6.59 78.00 0.60 95.00 12.99 63.03 18.25 89.10 0.36 74.82 0.73 68.03"
+    },
+    {
+     "id": "eq-6-2-1-23",
+     "type": "equation",
+     "page": 13,
+     "original": "gpt-4o-audio-preview ⋆"
+    },
+    {
+     "id": "eq-6-2-1-24",
+     "type": "equation",
+     "page": 13,
+     "original": "7.75 77.36 1.82 96.96 13.30 70.00 21.15 89.46 1.38 62.50 1.16 68.39"
+    },
+    {
+     "id": "eq-6-2-1-25",
+     "type": "equation",
+     "page": 13,
+     "original": "Gemini-2.5-Pro-Preview-TTS ⋆"
+    },
+    {
+     "id": "eq-6-2-1-26",
+     "type": "equation",
+     "page": 13,
+     "original": "7.91 73.00 0.87 92.14 16.22 63.44 20.87 84.28 0.72 65.71 0.87 60.00"
+    },
+    {
+     "id": "eq-6-2-1-27",
+     "type": "equation",
+     "page": 13,
+     "original": "gpt-4o-mini-audio-preview ⋆"
+    },
+    {
+     "id": "eq-6-2-1-28",
+     "type": "equation",
+     "page": 13,
+     "original": "8.86 66.27 9.34 74.10 12.70 73.39 20.92 68.03 0.74 55.53 0.72 60.35"
+    },
+    {
+     "id": "eq-6-2-1-29",
+     "type": "equation",
+     "page": 13,
+     "original": "gpt-4o-audio-preview ⋆"
+    },
+    {
+     "id": "eq-6-2-1-30",
+     "type": "equation",
+     "page": 13,
+     "original": "7.64 64.90 0.93 67.14 13.75 71.60 20.56 77.32 1.72 49.64 1.26 58.92"
+    },
+    {
+     "id": "eq-6-2-1-31",
+     "type": "equation",
+     "page": 13,
+     "original": "gpt-4o-mini-tts ⋆"
+    },
+    {
+     "id": "eq-6-2-1-32",
+     "type": "equation",
+     "page": 13,
+     "original": "7.11 61.98 0.71 67.32 12.07 63.03 21.33 63.39 0.66 54.28 0.84 61.96"
+    },
+    {
+     "id": "eq-6-2-1-33",
+     "type": "equation",
+     "page": 13,
+     "original": "gpt-4o-audio-preview"
+    },
+    {
+     "id": "eq-6-2-1-34",
+     "type": "equation",
+     "page": 13,
+     "original": "8.27 60.53 1.03 56.78 14.72 68.75 23.16 71.60 1.19 48.75 1.25 56.78"
+    },
+    {
+     "id": "eq-6-2-1-35",
+     "type": "equation",
+     "page": 13,
+     "original": "gpt-4o-mini-audio-preview"
+    },
+    {
+     "id": "eq-6-2-1-36",
+     "type": "equation",
+     "page": 13,
+     "original": "7.18 55.15 0.95 62.90 14.48 64.82 19.04 52.14 0.55 45.71 0.88 50.17"
+    },
+    {
+     "id": "eq-6-2-1-37",
+     "type": "equation",
+     "page": 13,
+     "original": "Baseline gpt-4o-mini-tts"
+    },
+    {
+     "id": "eq-6-2-1-38",
+     "type": "equation",
+     "page": 13,
+     "original": "7.23 50.00 0.72 – 13.45 – 20.55 – 0.42 – 1.04 –"
+    },
+    {
+     "id": "eq-6-2-1-39",
+     "type": "equation",
+     "page": 13,
+     "original": "HumeAI ⋆"
+    },
+    {
+     "id": "eq-6-2-1-40",
+     "type": "equation",
+     "page": 13,
+     "original": "8.62 49.12 0.83 71.78 21.05 41.25 19.84 42.14 0.38 42.14 0.93 48.57"
+    },
+    {
+     "id": "eq-6-2-1-41",
+     "type": "equation",
+     "page": 13,
+     "original": "Higgs Audio V2 (Boson AI, 2025)"
+    },
+    {
+     "id": "eq-6-2-1-42",
+     "type": "equation",
+     "page": 13,
+     "original": "11.82 44.64 0.97 69.28 22.26 21.42 31.34 45.53 3.23 45.35 1.29 41.60"
+    },
+    {
+     "id": "eq-6-2-1-43",
+     "type": "equation",
+     "page": 13,
+     "original": "minimax/speech-02-hd (Zhang et al., 2025)"
+    },
+    {
+     "id": "eq-6-2-1-44",
+     "type": "equation",
+     "page": 13,
+     "original": "6.79 40.96 0.57 41.60 14.58 31.96 17.69 33.57 0.27 52.14 0.84 45.53"
+    },
+    {
+     "id": "eq-6-2-1-45",
+     "type": "equation",
+     "page": 13,
+     "original": "11Labs eleven multilingual v2"
+    },
+    {
+     "id": "eq-6-2-1-46",
+     "type": "equation",
+     "page": 13,
+     "original": "7.64 36.96 0.63 35.35 14.44 36.60 21.51 52.14 0.49 28.21 1.15 32.50"
+    },
+    {
+     "id": "eq-6-2-1-47",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen 2.5 Omni (Xu et al., 2025a) ⋆"
+    },
+    {
+     "id": "eq-6-2-1-48",
+     "type": "equation",
+     "page": 13,
+     "original": "18.34 32.94 2.41 46.60 26.77 14.46 58.44 21.25 0.87 48.92 3.47 33.75"
+    },
+    {
+     "id": "eq-6-2-1-49",
+     "type": "equation",
+     "page": 13,
+     "original": "Orpheus TTS"
+    },
+    {
+     "id": "eq-6-2-1-50",
+     "type": "equation",
+     "page": 13,
+     "original": "13.63 32.56 1.81 39.06 22.31 14.64 40.94 48.57 1.48 31.07 1.63 29.46"
+    },
+    {
+     "id": "eq-6-2-1-51",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen 2.5 Omni"
+    },
+    {
+     "id": "eq-6-2-1-52",
+     "type": "equation",
+     "page": 13,
+     "original": "20.02 30.25 1.22 41.07 26.98 12.50 57.48 20.89 12.77 49.10 1.66 27.67"
+    },
+    {
+     "id": "eq-6-2-1-53",
+     "type": "equation",
+     "page": 13,
+     "original": "ResembleAI Chatterbox (Resemble AI, 2025)"
+    },
+    {
+     "id": "eq-6-2-1-54",
+     "type": "equation",
+     "page": 13,
+     "original": "8.20 27.39 1.18 28.03 17.59 24.64 20.64 17.32 0.65 51.07 0.96 15.89"
+    },
+    {
+     "id": "eq-6-2-1-55",
+     "type": "equation",
+     "page": 13,
+     "original": "Kokoro-82M"
+    },
+    {
+     "id": "eq-6-2-1-56",
+     "type": "equation",
+     "page": 13,
+     "original": "10.49 25.46 0.71 18.03 22.17 13.21 28.37 5.89 0.56 43.39 0.65 46.78"
+    },
+    {
+     "id": "eq-6-2-1-57",
+     "type": "equation",
+     "page": 13,
+     "original": "DeepGram Aura-2"
+    },
+    {
+     "id": "eq-6-2-1-58",
+     "type": "equation",
+     "page": 13,
+     "original": "10.24 25.21 3.45 17.50 21.41 15.89 23.73 20.89 1.24 43.03 1.36 28.75"
+    },
+    {
+     "id": "eq-6-2-1-59",
+     "type": "equation",
+     "page": 13,
+     "original": "KyutAI-TTS (Zeghidour et al., 2025)"
+    },
+    {
+     "id": "eq-6-2-1-60",
+     "type": "equation",
+     "page": 13,
+     "original": "9.10 24.28 0.83 31.78 16.47 13.39 26.41 24.28 0.61 35.17 1.19 16.78"
+    },
+    {
+     "id": "eq-6-2-1-61",
+     "type": "equation",
+     "page": 13,
+     "original": "MiniCPM-o (Yao et al., 2024)"
+    },
+    {
+     "id": "eq-6-2-1-62",
+     "type": "equation",
+     "page": 13,
+     "original": "22.52 19.75 12.36 22.85 33.46 5.89 58.48 21.60 5.21 22.14 3.08 26.25"
+    },
+    {
+     "id": "eq-6-2-1-63",
+     "type": "equation",
+     "page": 13,
+     "original": "F5TTS (Chen et al., 2025)"
+    },
+    {
+     "id": "eq-6-2-1-64",
+     "type": "equation",
+     "page": 13,
+     "original": "11.93 19.43 0.70 29.64 23.51 3.21 31.66 19.82 1.62 19.46 2.14 25.00"
     }
    ]
   },
@@ -2441,7 +3177,7 @@ globalThis.PAPER_2603_08823 = {
    "page": 13,
    "title": {
     "original": "Fish Audio Instruction Benchmark",
-    "zh": "6.3 Fish Audio 指令基准"
+    "zh": "附录 A Fish Audio 指令基准"
    },
    "blocks": [
     {
@@ -2485,10 +3221,76 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-6-3-2-1",
-       "original": "Dataset Metric",
-       "zh": "（表格碎片）数据集、指标列。"
+       "original": "Dataset Metric Fish Audio S2 Fish Audio S1 Chinese TAR ↑",
+       "zh": "（表格：Dataset × Metric × Fish Audio S2 × Fish Audio S1——Chinese：TAR↑ 0.984/0.942；Naturalness↑ 4.40/4.15；Expressiveness↑ 4.94/4.65；English：TAR↑ 0.881/0.626；Naturalness↑ 4.21/3.71；Expressiveness↑ 4.50/3.93。）如表 7 所示，Fish Audio S2 在中英两组设置的所有指令遵循指标上持续优于 Fish Audio S1。"
       }
      ]
+    },
+    {
+     "id": "eq-6-3-1",
+     "type": "equation",
+     "page": 13,
+     "original": "0.984 0.942"
+    },
+    {
+     "id": "eq-6-3-2",
+     "type": "equation",
+     "page": 13,
+     "original": "Naturalness ↑"
+    },
+    {
+     "id": "eq-6-3-3",
+     "type": "equation",
+     "page": 13,
+     "original": "4.40 4.15"
+    },
+    {
+     "id": "eq-6-3-4",
+     "type": "equation",
+     "page": 13,
+     "original": "Expressiveness ↑"
+    },
+    {
+     "id": "eq-6-3-5",
+     "type": "equation",
+     "page": 13,
+     "original": "4.94 4.65"
+    },
+    {
+     "id": "eq-6-3-6",
+     "type": "equation",
+     "page": 13,
+     "original": "English TAR ↑"
+    },
+    {
+     "id": "eq-6-3-7",
+     "type": "equation",
+     "page": 13,
+     "original": "0.881 0.626"
+    },
+    {
+     "id": "eq-6-3-8",
+     "type": "equation",
+     "page": 13,
+     "original": "Naturalness ↑"
+    },
+    {
+     "id": "eq-6-3-9",
+     "type": "equation",
+     "page": 13,
+     "original": "4.21 3.71"
+    },
+    {
+     "id": "eq-6-3-10",
+     "type": "equation",
+     "page": 13,
+     "original": "Expressiveness ↑"
+    },
+    {
+     "id": "eq-6-3-11",
+     "type": "equation",
+     "page": 13,
+     "original": "4.50 3.93"
     },
     {
      "id": "p-6-3-3",
@@ -2497,45 +3299,21 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-6-3-3-1",
-       "original": "Chinese TAR ↑ 0.984 0.942 Naturalness ↑ 4.40 4.15 Expressiveness ↑ 4.94 4.65",
-       "zh": "（表格碎片，数值按原文保留）Chinese TAR ↑ 0.984 0.942 Naturalness ↑ 4.40 4.15 Expressiveness ↑ 4.94 4.65。"
-      }
-     ]
-    },
-    {
-     "id": "p-6-3-4",
-     "type": "paragraph",
-     "page": 13,
-     "sentences": [
-      {
-       "id": "s-6-3-4-1",
-       "original": "English TAR ↑ 0.881 0.626 Naturalness ↑ 4.21 3.71 Expressiveness ↑ 4.50 3.93",
-       "zh": "（表格碎片，数值按原文保留）English TAR ↑ 0.881 0.626 Naturalness ↑ 4.21 3.71 Expressiveness ↑ 4.50 3.93。"
-      }
-     ]
-    },
-    {
-     "id": "p-6-3-5",
-     "type": "paragraph",
-     "page": 14,
-     "sentences": [
-      {
-       "id": "s-6-3-5-1",
        "original": "As shown in Table 7, Fish Audio S2 consistently outperforms Fish Audio S1 across all reported instructionfollowing metrics in both Chinese and English settings.",
-       "zh": "如表 7 所示，Fish Audio S2 在中文和英文设定下、所有报告的指令跟随指标上持续优于 Fish Audio S1。"
+       "zh": "（表格：Dataset × Metric × Fish Audio S2 × Fish Audio S1——Chinese：TAR↑ 0.984/0.942；Naturalness↑ 4.40/4.15；Expressiveness↑ 4.94/4.65；English：TAR↑ 0.881/0.626；Naturalness↑ 4.21/3.71；Expressiveness↑ 4.50/3.93。）如表 7 所示，Fish Audio S2 在中英两组设置的所有指令遵循指标上持续优于 Fish Audio S1。"
       },
       {
-       "id": "s-6-3-5-2",
+       "id": "s-6-3-3-2",
        "original": "On the Chinese set, TAR, Naturalness, and Expressiveness improve from 0.942/4.15/4.65 to 0.984/4.40/4.94.",
        "zh": "在中文集上，TAR、Naturalness 和 Expressiveness 从 0.942/4.15/4.65 提升到 0.984/4.40/4.94。"
       },
       {
-       "id": "s-6-3-5-3",
+       "id": "s-6-3-3-3",
        "original": "On the English set, the improvements are larger, increasing from 0.626/3.71/3.93 to 0.881/4.21/4.50.",
        "zh": "在英文集上提升更大，从 0.626/3.71/3.93 提升到 0.881/4.21/4.50。"
       },
       {
-       "id": "s-6-3-5-4",
+       "id": "s-6-3-3-4",
        "original": "These results suggest that Fish Audio S2 provides more reliable tag activation and more natural, expressive vocal tag rendering under zero-shot instruction following.",
        "zh": "这些结果表明，Fish Audio S2 在零样本指令跟随下能更可靠地激活标签，并更自然、更有表现力地呈现声音标签。"
       }
@@ -2625,52 +3403,40 @@ globalThis.PAPER_2603_08823 = {
        "zh": "Shijia Liao、Yuxuan Wang、Songting Liu、Yifan Cheng。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-contributors",
+   "num": null,
+   "level": 2,
+   "page": 14,
+   "title": {
+    "original": "Contributors",
+    "zh": "Contributors"
+   },
+   "blocks": [
     {
-     "id": "p-8-3",
+     "id": "p-contributors-1",
      "type": "paragraph",
      "page": 14,
      "sentences": [
       {
-       "id": "s-8-3-1",
-       "original": "Contributors",
-       "zh": "贡献者。"
-      }
-     ]
-    },
-    {
-     "id": "p-8-4",
-     "type": "paragraph",
-     "page": 14,
-     "sentences": [
-      {
-       "id": "s-8-4-1",
+       "id": "s-contributors-1-1",
        "original": "All other contributors are sorted by last name and shuffled using Python 3.12 with random seed 42:",
        "zh": "其余所有贡献者按姓氏排序，并用 Python 3.12 以随机种子 42 打乱："
       }
      ]
     },
     {
-     "id": "p-8-5",
+     "id": "p-contributors-2",
      "type": "paragraph",
      "page": 14,
      "sentences": [
       {
-       "id": "s-8-5-1",
-       "original": "Ruoyi Zhang, Tianyu Li, Shidong Li, Yisheng Zheng, Xingwei Liu, Qingzheng Wang, Zhizhuo Zhou, Jiahua Liu, Xin Chen, Dawei Han",
-       "zh": "Ruoyi Zhang、Tianyu Li、Shidong Li、Yisheng Zheng、Xingwei Liu、Qingzheng Wang、Zhizhuo Zhou、Jiahua Liu、Xin Chen、Dawei Han。"
-      }
-     ]
-    },
-    {
-     "id": "p-8-6",
-     "type": "paragraph",
-     "page": 14,
-     "sentences": [
-      {
-       "id": "s-8-6-1",
-       "original": "For correspondence, please contact oss@fish.audio.",
-       "zh": "通信请联系 oss@fish.audio。"
+       "id": "s-contributors-2-1",
+       "original": "Ruoyi Zhang, Tianyu Li, Shidong Li, Yisheng Zheng, Xingwei Liu, Qingzheng Wang, Zhizhuo Zhou, Jiahua Liu, Xin Chen, Dawei Han For correspondence, please contact oss@fish.audio.",
+       "zh": "/ T"
       }
      ]
     }
@@ -2693,7 +3459,7 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-1-1",
-       "original": "Sandhini Agarwal, Lama Ahmad, Jason Ai, Sam Altman, Andy Applebaum, Edwin Arbus, Rahul K Arora, Yu Bai, Bowen Baker, Haiming Bao, et al. gpt-oss-120b & gpt-oss-20b model card. arXiv preprint"
+       "original": "Sandhini Agarwal, Lama Ahmad, Jason Ai, Sam Altman, Andy Applebaum, Edwin Arbus, Rahul K Arora, Yu Bai, Bowen Baker, Haiming Bao, et al. gpt-oss-120b & gpt-oss-20b model card. arXiv preprint arXiv:2508.10925, 2025."
       }
      ]
     },
@@ -2735,18 +3501,6 @@ globalThis.PAPER_2603_08823 = {
       {
        "id": "s-references-4-1",
        "original": "Boson AI."
-      },
-      {
-       "id": "s-references-4-2",
-       "original": "Higgs Audio V2: Redefining Expressiveness in Audio Generation. https://github.com/ boson-ai/higgs-audio, 2025."
-      },
-      {
-       "id": "s-references-4-3",
-       "original": "GitHub repository."
-      },
-      {
-       "id": "s-references-4-4",
-       "original": "Release blog available at https://www.boson.ai/blog/ higgs-audio-v2."
       }
      ]
     },
@@ -2757,11 +3511,7 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al. Wavlm: Large-scale self-supervised pre-training for full stack speech processing."
-      },
-      {
-       "id": "s-references-5-2",
-       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6):1505–1518, 2022."
+       "original": "Higgs Audio V2: Redefining Expressiveness in Audio Generation."
       }
      ]
     },
@@ -2772,15 +3522,15 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "Yushen Chen, Zhikang Niu, Ziyang Ma, Keqi Deng, Chunhui Wang, JianZhao JianZhao, Kai Yu, and Xie Chen."
+       "original": "https://github.com/ boson-ai/higgs-audio, 2025."
       },
       {
        "id": "s-references-6-2",
-       "original": "F5-tts: A fairytaler that fakes fluent and faithful speech with flow matching."
+       "original": "GitHub repository."
       },
       {
        "id": "s-references-6-3",
-       "original": "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 6255–6271, 2025."
+       "original": "Release blog available at https://www.boson.ai/blog/ higgs-audio-v2."
       }
      ]
     },
@@ -2791,23 +3541,13 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "Yifan Cheng, Ruoyi Zhang, and Jiatong Shi."
+       "original": "Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al. Wavlm: Large-scale self-supervised pre-training for full stack speech processing.",
+       "zh": "/ T"
       },
       {
        "id": "s-references-7-2",
-       "original": "Miku-pal: An automated and standardized multimodal method for speech paralinguistic and affect labeling."
-      },
-      {
-       "id": "s-references-7-3",
-       "original": "In Interspeech 2025, pp. 4308–4312."
-      },
-      {
-       "id": "s-references-7-4",
-       "original": "ISCA, August 2025. doi: 10.21437/Interspeech.2025-648."
-      },
-      {
-       "id": "s-references-7-5",
-       "original": "URL https://doi.org/10.21437/Interspeech.2025-648."
+       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6):1505–1518, 2022.",
+       "zh": "/ T"
       }
      ]
     },
@@ -2818,13 +3558,23 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "Alexandre D´efossez, Laurent Mazar´e, Manu Orsini, Am´elie Royer, Patrick P´erez, Herv´e J´egou, Edouard Grave, and Neil Zeghidour."
+       "original": "Yushen Chen, Zhikang Niu, Ziyang Ma, Keqi Deng, Chunhui Wang, JianZhao JianZhao, Kai Yu, and Xie Chen."
       },
       {
        "id": "s-references-8-2",
-       "original": "Moshi: a speech-text foundation model for real-time dialogue. arXiv preprint"
+       "original": "F5-tts: A fairytaler that fakes fluent and faithful speech with flow matching."
+      },
+      {
+       "id": "s-references-8-3",
+       "original": "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 6255–6271,"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 15,
+     "original": "2025."
     },
     {
      "id": "p-references-9",
@@ -2833,7 +3583,23 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "Zhihao Du, Qian Chen, Shiliang Zhang, Kai Hu, Heng Lu, Yexin Yang, Hangrui Hu, Siqi Zheng, Yue Gu, Ziyang Ma, et al. Cosyvoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens. arXiv preprint arXiv:2407.05407, 2024."
+       "original": "Yifan Cheng, Ruoyi Zhang, and Jiatong Shi."
+      },
+      {
+       "id": "s-references-9-2",
+       "original": "Miku-pal: An automated and standardized multimodal method for speech paralinguistic and affect labeling."
+      },
+      {
+       "id": "s-references-9-3",
+       "original": "In Interspeech 2025, pp. 4308–4312."
+      },
+      {
+       "id": "s-references-9-4",
+       "original": "ISCA, August 2025. doi: 10.21437/Interspeech.2025-648."
+      },
+      {
+       "id": "s-references-9-5",
+       "original": "URL https://doi.org/10.21437/Interspeech.2025-648."
       }
      ]
     },
@@ -2844,15 +3610,11 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "Zhihao Du, Changfeng Gao, Yuxuan Wang, Fan Yu, Tianyu Zhao, Hao Wang, Xiang Lv, Hui Wang, Chongjia Ni, Xian Shi, Keyu An, Guanrou Yang, Yabin Li, Yanni Chen, Zhifu Gao, Qian Chen, Yue Gu, Mengzhe Chen, Yafeng Chen, Shiliang Zhang, Wen Wang, and Jieping Ye."
+       "original": "Alexandre D´efossez, Laurent Mazar´e, Manu Orsini, Am´elie Royer, Patrick P´erez, Herv´e J´egou, Edouard Grave, and Neil Zeghidour."
       },
       {
        "id": "s-references-10-2",
-       "original": "Cosyvoice 3: Towards in-the-wild speech generation via scaling-up and post-training, 2025."
-      },
-      {
-       "id": "s-references-10-3",
-       "original": "URL https://arxiv.org/abs/2505.17589."
+       "original": "Moshi: a speech-text foundation model for real-time dialogue. arXiv preprint arXiv:2410.00037, 2024."
       }
      ]
     },
@@ -2863,15 +3625,7 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "Alexandre D´efossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
-      },
-      {
-       "id": "s-references-11-2",
-       "original": "High fidelity neural audio compression, 2022."
-      },
-      {
-       "id": "s-references-11-3",
-       "original": "URL https://arxiv.org/abs/2210.13438."
+       "original": "Zhihao Du, Qian Chen, Shiliang Zhang, Kai Hu, Heng Lu, Yexin Yang, Hangrui Hu, Siqi Zheng, Yue Gu, Ziyang Ma, et al. Cosyvoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens. arXiv preprint arXiv:2407.05407, 2024."
       }
      ]
     },
@@ -2882,7 +3636,17 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "Zhifu Gao, Zerui Li, Jiaming Wang, Haoneng Luo, Xian Shi, Mengzhe Chen, Yabin Li, Lingyun Zuo, Zhihao Du, Zhangyu Xiao, et al. Funasr: A fundamental end-to-end speech recognition toolkit. arXiv preprint"
+       "original": "Zhihao Du, Changfeng Gao, Yuxuan Wang, Fan Yu, Tianyu Zhao, Hao Wang, Xiang Lv, Hui Wang, Chongjia Ni, Xian Shi, Keyu An, Guanrou Yang, Yabin Li, Yanni Chen, Zhifu Gao, Qian Chen, Yue Gu, Mengzhe Chen, Yafeng Chen, Shiliang Zhang, Wen Wang, and Jieping Ye.",
+       "zh": "/ T"
+      },
+      {
+       "id": "s-references-12-2",
+       "original": "Cosyvoice 3: Towards in-the-wild speech generation via scaling-up and post-training, 2025.",
+       "zh": "/ T"
+      },
+      {
+       "id": "s-references-12-3",
+       "original": "URL https://arxiv.org/abs/2505.17589."
       }
      ]
     },
@@ -2893,7 +3657,15 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Peiyi Wang, Qihao Zhu, Runxin Xu, Ruoyu Zhang, Shirong Ma, Xiao Bi, et al. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning. arXiv preprint arXiv:2501.12948, 2025."
+       "original": "Alexandre D´efossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
+      },
+      {
+       "id": "s-references-13-2",
+       "original": "High fidelity neural audio compression, 2022."
+      },
+      {
+       "id": "s-references-13-3",
+       "original": "URL https://arxiv.org/abs/2210.13438."
       }
      ]
     },
@@ -2904,60 +3676,45 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "Hangrui Hu, Xinfa Zhu, Ting He, Dake Guo, Bin Zhang, Xiong Wang, Zhifang Guo, Ziyue Jiang, Hongkun Hao, Zishan Guo, Xinyu Zhang, Pei Zhang, Baosong Yang, Jin Xu, Jingren Zhou, and Junyang Lin."
-      },
-      {
-       "id": "s-references-14-2",
-       "original": "Qwen3-tts technical report, 2026."
-      },
-      {
-       "id": "s-references-14-3",
-       "original": "URL https://arxiv.org/abs/2601.15621."
+       "original": "Zhifu Gao, Zerui Li, Jiaming Wang, Haoneng Luo, Xian Shi, Mengzhe Chen, Yabin Li, Lingyun Zuo, Zhihao Du, Zhangyu Xiao, et al. Funasr: A fundamental end-to-end speech recognition toolkit. arXiv preprint arXiv:2305.11013, 2023."
       }
      ]
     },
     {
      "id": "p-references-15",
      "type": "paragraph",
-     "page": 16,
+     "page": 15,
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "Shengding Hu, Yuge Tu, Xu Han, Chaoqun He, Ganqu Cui, Xiang Long, Zhi Zheng, Yewei Fang, Yuxiang Huang, Weilin Zhao, et al. Minicpm: Unveiling the potential of small language models with scalable training strategies. arXiv preprint arXiv:2404.06395, 2024."
+       "original": "Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Peiyi Wang, Qihao Zhu, Runxin Xu, Ruoyu Zhang, Shirong Ma, Xiao Bi, et al. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning. arXiv preprint arXiv:2501.12948, 2025."
       }
      ]
     },
     {
      "id": "p-references-16",
      "type": "paragraph",
-     "page": 16,
+     "page": 15,
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "Ailin Huang, Boyong Wu, Bruce Wang, Chao Yan, Chen Hu, Chengli Feng, Fei Tian, Feiyu Shen, Jingbei Li, Mingrui Chen, Peng Liu, Ruihang Miao, Wang You, Xi Chen, Xuerui Yang, Yechang Huang, Yuxiang Zhang, Zheng Gong, Zixin Zhang, Hongyu Zhou, Jianjian Sun, Brian Li, Chengting Feng, Changyi Wan, Hanpeng Hu, Jianchang Wu, Jiangjie Zhen, Ranchen Ming, Song Yuan, Xuelin Zhang, Yu Zhou, Bingxin Li, Buyun Ma, Hongyuan Wang, Kang An, Wei Ji, Wen Li, Xuan Wen, Xiangwen Kong, Yuankai Ma, Yuanwei Liang, Yun Mou, Bahtiyar Ahmidi, Bin Wang, Bo Li, Changxin Miao, Chen Xu, Chenrun Wang, Dapeng Shi, Deshan Sun, Dingyuan Hu, Dula Sai, Enle Liu, Guanzhe Huang, Gulin Yan, Heng Wang, Haonan Jia, Haoyang Zhang, Jiahao Gong, Junjing Guo, Jiashuai Liu, Jiahong Liu, Jie Feng, Jie Wu, Jiaoren Wu, Jie Yang, Jinguo Wang, Jingyang Zhang, Junzhe Lin, Kaixiang Li, Lei Xia, Li Zhou, Liang Zhao, Longlong Gu, Mei Chen, Menglin Wu, Ming Li, Mingxiao Li, Mingliang Li, Mingyao Liang, Na Wang, Nie Hao, Qiling Wu, Qinyuan Tan, Ran Sun, Shuai Shuai, Shaoliang Pang, Shiliang Yang, Shuli Gao, Shanshan Yuan, Siqi Liu, Shihong Deng, Shilei Jiang, Sitong Liu, Tiancheng Cao, Tianyu Wang, Wenjin Deng, Wuxun Xie, Weipeng Ming, Wenqing He, Wen Sun, Xin Han, Xin Huang, Xiaomin Deng, Xiaojia Liu, Xin Wu, Xu Zhao, Yanan Wei, Yanbo Yu, Yang Cao, Yangguang Li, Yangzhen Ma, Yanming Xu, Yaoyu Wang, Yaqiang Shi, Yilei Wang, Yizhuang Zhou, Yinmin Zhong, Yang Zhang, Yaoben Wei, Yu Luo, Yuanwei Lu, Yuhe Yin, Yuchu Luo, Yuanhao Ding, Yuting Yan, Yaqi Dai, Yuxiang Yang, Zhe Xie, Zheng Ge, Zheng Sun, Zhewei Huang, Zhichao Chang, Zhisheng Guan, Zidong Yang, Zili Zhang, Binxing Jiao, Daxin Jiang, Heung-Yeung Shum, Jiansheng Chen, Jing Li, Shuchang Zhou, Xiangyu Zhang, Xinhao Zhang, and Yibo Zhu."
-      },
-      {
-       "id": "s-references-16-2",
-       "original": "Step-audio: Unified understanding and generation in intelligent speech interaction, 2025."
-      },
-      {
-       "id": "s-references-16-3",
-       "original": "URL"
+       "original": "Hangrui Hu, Xinfa Zhu, Ting He, Dake Guo, Bin Zhang, Xiong Wang, Zhifang Guo, Ziyue Jiang, Hongkun Hao, Zishan Guo, Xinyu Zhang, Pei Zhang, Baosong Yang, Jin Xu, Jingren Zhou, and Junyang Lin.",
+       "zh": "/ T"
       }
      ]
     },
     {
      "id": "p-references-17",
      "type": "paragraph",
-     "page": 16,
+     "page": 15,
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "Damjan Kalajdzievski."
+       "original": "Qwen3-tts technical report, 2026."
       },
       {
        "id": "s-references-17-2",
-       "original": "A rank stabilization scaling factor for fine-tuning with lora. arXiv preprint"
+       "original": "URL https://arxiv.org/abs/2601.15621."
       }
      ]
     },
@@ -2968,15 +3725,8 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae."
-      },
-      {
-       "id": "s-references-18-2",
-       "original": "Hifi-gan: Generative adversarial networks for efficient and high fidelity speech synthesis."
-      },
-      {
-       "id": "s-references-18-3",
-       "original": "Advances in neural information processing systems, 33:17022–17033, 2020."
+       "original": "Shengding Hu, Yuge Tu, Xu Han, Chaoqun He, Ganqu Cui, Xiang Long, Zhi Zheng, Yewei Fang, Yuxiang Huang, Weilin Zhao, et al. Minicpm: Unveiling the potential of small language models with scalable training strategies. arXiv preprint arXiv:2404.06395, 2024.",
+       "zh": "/ T"
       }
      ]
     },
@@ -2987,15 +3737,16 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "Rithesh Kumar, Prem Seetharaman, Alejandro Luebs, Ishaan Kumar, and Kundan Kumar."
+       "original": "Ailin Huang, Boyong Wu, Bruce Wang, Chao Yan, Chen Hu, Chengli Feng, Fei Tian, Feiyu Shen, Jingbei Li, Mingrui Chen, Peng Liu, Ruihang Miao, Wang You, Xi Chen, Xuerui Yang, Yechang Huang, Yuxiang Zhang, Zheng Gong, Zixin Zhang, Hongyu Zhou, Jianjian Sun, Brian Li, Chengting Feng, Changyi Wan, Hanpeng Hu, Jianchang Wu, Jiangjie Zhen, Ranchen Ming, Song Yuan, Xuelin Zhang, Yu Zhou, Bingxin Li, Buyun Ma, Hongyuan Wang, Kang An, Wei Ji, Wen Li, Xuan Wen, Xiangwen Kong, Yuankai Ma, Yuanwei Liang, Yun Mou, Bahtiyar Ahmidi, Bin Wang, Bo Li, Changxin Miao, Chen Xu, Chenrun Wang, Dapeng Shi, Deshan Sun, Dingyuan Hu, Dula Sai, Enle Liu, Guanzhe Huang, Gulin Yan, Heng Wang, Haonan Jia, Haoyang Zhang, Jiahao Gong, Junjing Guo, Jiashuai Liu, Jiahong Liu, Jie Feng, Jie Wu, Jiaoren Wu, Jie Yang, Jinguo Wang, Jingyang Zhang, Junzhe Lin, Kaixiang Li, Lei Xia, Li Zhou, Liang Zhao, Longlong Gu, Mei Chen, Menglin Wu, Ming Li, Mingxiao Li, Mingliang Li, Mingyao Liang, Na Wang, Nie Hao, Qiling Wu, Qinyuan Tan, Ran Sun, Shuai Shuai, Shaoliang Pang, Shiliang Yang, Shuli Gao, Shanshan Yuan, Siqi Liu, Shihong Deng, Shilei Jiang, Sitong Liu, Tiancheng Cao, Tianyu Wang, Wenjin Deng, Wuxun Xie, Weipeng Ming, Wenqing He, Wen Sun, Xin Han, Xin Huang, Xiaomin Deng, Xiaojia Liu, Xin Wu, Xu Zhao, Yanan Wei, Yanbo Yu, Yang Cao, Yangguang Li, Yangzhen Ma, Yanming Xu, Yaoyu Wang, Yaqiang Shi, Yilei Wang, Yizhuang Zhou, Yinmin Zhong, Yang Zhang, Yaoben Wei, Yu Luo, Yuanwei Lu, Yuhe Yin, Yuchu Luo, Yuanhao Ding, Yuting Yan, Yaqi Dai, Yuxiang Yang, Zhe Xie, Zheng Ge, Zheng Sun, Zhewei Huang, Zhichao Chang, Zhisheng Guan, Zidong Yang, Zili Zhang, Binxing Jiao, Daxin Jiang, Heung-Yeung Shum, Jiansheng Chen, Jing Li, Shuchang Zhou, Xiangyu Zhang, Xinhao Zhang, and Yibo Zhu.",
+       "zh": "/ T"
       },
       {
        "id": "s-references-19-2",
-       "original": "High-fidelity audio compression with improved rvqgan."
+       "original": "Step-audio: Unified understanding and generation in intelligent speech interaction, 2025."
       },
       {
        "id": "s-references-19-3",
-       "original": "Advances in Neural Information Processing Systems, 36:27980–27993, 2023."
+       "original": "URL https://arxiv.org/abs/2502.11946."
       }
      ]
     },
@@ -3006,15 +3757,7 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "Yunpei Li, Xun Zhou, Jinchao Wang, Lu Wang, Yong Wu, Siyi Zhou, Yiquan Zhou, and Jingchen Shu."
-      },
-      {
-       "id": "s-references-20-2",
-       "original": "Indextts 2.5 technical report, 2026."
-      },
-      {
-       "id": "s-references-20-3",
-       "original": "URL https://arxiv.org/abs/2601.03888."
+       "original": "Damjan Kalajdzievski."
       }
      ]
     },
@@ -3025,11 +3768,7 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "Shijia Liao, Shiyi Lan, and Arun George Zachariah."
-      },
-      {
-       "id": "s-references-21-2",
-       "original": "Eva-gan: Enhanced various audio generation via scalable generative adversarial networks. arXiv preprint arXiv:2402.00892, 2024a."
+       "original": "A rank stabilization scaling factor for fine-tuning with lora."
       }
      ]
     },
@@ -3040,15 +3779,7 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "Shijia Liao, Yuxuan Wang, Tianyu Li, Yifan Cheng, Ruoyi Zhang, Rongzhi Zhou, and Yijin Xing."
-      },
-      {
-       "id": "s-references-22-2",
-       "original": "Fishspeech: Leveraging large language models for advanced multilingual text-to-speech synthesis, 2024b."
-      },
-      {
-       "id": "s-references-22-3",
-       "original": "URL https://arxiv.org/abs/2411.01156."
+       "original": "arXiv preprint arXiv:2312.03732, 2023."
       }
      ]
     },
@@ -3059,15 +3790,15 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Doll´ar."
+       "original": "Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae."
       },
       {
        "id": "s-references-23-2",
-       "original": "Focal loss for dense object detection."
+       "original": "Hifi-gan: Generative adversarial networks for efficient and high fidelity speech synthesis."
       },
       {
        "id": "s-references-23-3",
-       "original": "In Proceedings of the IEEE international conference on computer vision, pp. 2980–2988, 2017."
+       "original": "Advances in neural information processing systems, 33:17022–17033, 2020."
       }
      ]
     },
@@ -3078,13 +3809,23 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "Zichen Liu, Changyu Chen, Wenjun Li, Penghui Qi, Tianyu Pang, Chao Du, Wee Sun Lee, and Min Lin."
+       "original": "Rithesh Kumar, Prem Seetharaman, Alejandro Luebs, Ishaan Kumar, and Kundan Kumar."
       },
       {
        "id": "s-references-24-2",
-       "original": "Understanding r1-zero-like training: A critical perspective. arXiv preprint arXiv:2503.20783, 2025."
+       "original": "High-fidelity audio compression with improved rvqgan."
+      },
+      {
+       "id": "s-references-24-3",
+       "original": "Advances in Neural Information Processing Systems, 36:27980–27993,"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 16,
+     "original": "2023."
     },
     {
      "id": "p-references-25",
@@ -3093,11 +3834,15 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "Ruskin Raj Manku, Yuzhi Tang, Xingjian Shi, Mu Li, and Alex Smola."
+       "original": "Yunpei Li, Xun Zhou, Jinchao Wang, Lu Wang, Yong Wu, Siyi Zhou, Yiquan Zhou, and Jingchen Shu."
       },
       {
        "id": "s-references-25-2",
-       "original": "Emergenttts-eval: Evaluating tts models on complex prosodic, expressiveness, and linguistic challenges using model-as-a-judge. arXiv preprint arXiv:2505.23009, 2025."
+       "original": "Indextts 2.5 technical report, 2026."
+      },
+      {
+       "id": "s-references-25-3",
+       "original": "URL https://arxiv.org/abs/2601.03888."
       }
      ]
     },
@@ -3108,151 +3853,123 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "Zhiliang Peng, Jianwei Yu, Wenhui Wang, Yaoyao Chang, Yutao Sun, Li Dong, Yi Zhu, Weijiang Xu, Hangbo Bao, Zehua Wang, Shaohan Huang, Yan Xia, and Furu Wei."
+       "original": "Shijia Liao, Shiyi Lan, and Arun George Zachariah."
       },
       {
        "id": "s-references-26-2",
-       "original": "Vibevoice technical report, 2025."
-      },
-      {
-       "id": "s-references-26-3",
-       "original": "URL"
+       "original": "Eva-gan: Enhanced various audio generation via scalable generative adversarial networks. arXiv preprint arXiv:2402.00892, 2024a."
       }
      ]
     },
     {
      "id": "p-references-27",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "Soujanya Poria, Devamanyu Hazarika, Navonil Majumder, Gautam Naik, Erik Cambria, and Rada Mihalcea."
+       "original": "Shijia Liao, Yuxuan Wang, Tianyu Li, Yifan Cheng, Ruoyi Zhang, Rongzhi Zhou, and Yijin Xing.",
+       "zh": "/ T"
       },
       {
        "id": "s-references-27-2",
-       "original": "Meld: A multimodal multi-party dataset for emotion recognition in conversations."
-      },
-      {
-       "id": "s-references-27-3",
-       "original": "In Proceedings of the 57th annual meeting of the association for computational linguistics, pp. 527–536, 2019."
+       "original": "Fishspeech: Leveraging large language models for advanced multilingual text-to-speech synthesis, 2024b."
       }
      ]
     },
     {
      "id": "p-references-28",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
-      },
-      {
-       "id": "s-references-28-2",
-       "original": "Robust speech recognition via large-scale weak supervision."
-      },
-      {
-       "id": "s-references-28-3",
-       "original": "In International Conference on Machine Learning, pp. 28492–28518."
-      },
-      {
-       "id": "s-references-28-4",
-       "original": "PMLR, 2023."
+       "original": "URL https://arxiv.org/abs/2411.01156."
       }
      ]
     },
     {
      "id": "p-references-29",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn."
+       "original": "Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Doll´ar.",
+       "zh": "/ T"
       },
       {
        "id": "s-references-29-2",
-       "original": "Direct preference optimization: Your language model is secretly a reward model."
-      },
-      {
-       "id": "s-references-29-3",
-       "original": "Advances in neural information processing systems, 36:53728–53741, 2023."
+       "original": "Focal loss for dense object detection."
       }
      ]
     },
     {
      "id": "p-references-30",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "Resemble AI."
-      },
-      {
-       "id": "s-references-30-2",
-       "original": "Chatterbox-TTS. https://github.com/resemble-ai/chatterbox, 2025."
-      },
-      {
-       "id": "s-references-30-3",
-       "original": "GitHub repository."
+       "original": "In Proceedings of the IEEE international conference on computer vision, pp. 2980–2988, 2017."
       }
      ]
     },
     {
      "id": "p-references-31",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov."
-      },
-      {
-       "id": "s-references-31-2",
-       "original": "Proximal policy optimization algorithms. arXiv preprint arXiv:1707.06347, 2017."
+       "original": "Zichen Liu, Changyu Chen, Wenjun Li, Penghui Qi, Tianyu Pang, Chao Du, Wee Sun Lee, and Min Lin.",
+       "zh": "/ T"
       }
      ]
     },
     {
      "id": "p-references-32",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei Zhang, Mingchuan Zhang, YK Li, Yang Wu, et al. DeepSeekMath: Pushing the limits of mathematical reasoning in open language models. arXiv preprint arXiv:2402.03300, 2024."
+       "original": "Understanding r1-zero-like training: A critical perspective. arXiv preprint arXiv:2503.20783, 2025."
       }
      ]
     },
     {
      "id": "p-references-33",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "Jiatong Shi, Hye-Jin Shim, and Shinji Watanabe."
+       "original": "Ruskin Raj Manku, Yuzhi Tang, Xingjian Shi, Mu Li, and Alex Smola.",
+       "zh": "/ T"
       },
       {
        "id": "s-references-33-2",
-       "original": "Uni-versa: Versatile speech assessment with a unified network. arXiv preprint arXiv:2505.20741, 2025."
+       "original": "Emergenttts-eval: Evaluating tts models on complex prosodic, expressiveness, and linguistic challenges using model-as-a-judge. arXiv preprint arXiv:2505.23009, 2025."
       }
      ]
     },
     {
      "id": "p-references-34",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "Chengyao Wang, Zhisheng Zhong, Bohao Peng, Senqiao Yang, Yuqi Liu, Haokun Gui, Bin Xia, Jingyao Li, Bei Yu, and Jiaya Jia."
+       "original": "Zhiliang Peng, Jianwei Yu, Wenhui Wang, Yaoyao Chang, Yutao Sun, Li Dong, Yi Zhu, Weijiang Xu, Hangbo Bao, Zehua Wang, Shaohan Huang, Yan Xia, and Furu Wei."
       },
       {
        "id": "s-references-34-2",
-       "original": "Mgm-omni: Scaling omni llms to personalized long-horizon speech. arXiv preprint arXiv:2509.25131, 2025a."
+       "original": "Vibevoice technical report, 2025."
+      },
+      {
+       "id": "s-references-34-3",
+       "original": "URL https://arxiv.org/abs/2508.19205."
       }
      ]
     },
@@ -3263,15 +3980,7 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-35-1",
-       "original": "Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, and Furu Wei."
-      },
-      {
-       "id": "s-references-35-2",
-       "original": "Neural codec language models are zero-shot text to speech synthesizers, 2023."
-      },
-      {
-       "id": "s-references-35-3",
-       "original": "URL https://arxiv.org/abs/2301.02111."
+       "original": "Soujanya Poria, Devamanyu Hazarika, Navonil Majumder, Gautam Naik, Erik Cambria, and Rada Mihalcea."
       }
      ]
     },
@@ -3282,7 +3991,11 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "Xihuai Wang, Ziyi Zhao, Siyu Ren, Shao Zhang, Song Li, Xiaoyu Li, Ziwen Wang, Lin Qiu, Guanglu Wan, Xuezhi Cao, et al. Audio turing test: benchmarking the human-likeness of large language model-based text-to-speech systems in chinese. arXiv preprint arXiv:2505.11200, 2025b."
+       "original": "Meld: A multimodal multi-party dataset for emotion recognition in conversations."
+      },
+      {
+       "id": "s-references-36-2",
+       "original": "In Proceedings of the 57th annual meeting of the association for computational linguistics, pp. 527–536, 2019."
       }
      ]
     },
@@ -3293,15 +4006,16 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "Sanghyun Woo, Shoubhik Debnath, Ronghang Hu, Xinlei Chen, Zhuang Liu, In So Kweon, and Saining Xie."
+       "original": "Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever.",
+       "zh": "/ T"
       },
       {
        "id": "s-references-37-2",
-       "original": "ConvNeXt V2: Co-designing and scaling ConvNets with masked autoencoders."
+       "original": "Robust speech recognition via large-scale weak supervision."
       },
       {
        "id": "s-references-37-3",
-       "original": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pp. 16133–16142, 2023."
+       "original": "In International Conference on Machine Learning, pp."
       }
      ]
     },
@@ -3312,15 +4026,11 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "Kun Xie, Feiyu Shen, Junjie Li, Fenglong Xie, Xu Tang, and Yao Hu."
+       "original": "28492–28518."
       },
       {
        "id": "s-references-38-2",
-       "original": "Fireredtts-2: Towards long conversational speech generation for podcast and chatbot, 2025."
-      },
-      {
-       "id": "s-references-38-3",
-       "original": "URL https://arxiv.org/abs/2509.02020."
+       "original": "PMLR, 2023."
       }
      ]
     },
@@ -3331,15 +4041,7 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang, Bin Zhang, Xiong Wang, Yunfei Chu, and Junyang Lin."
-      },
-      {
-       "id": "s-references-39-2",
-       "original": "Qwen2.5-omni technical report, 2025a."
-      },
-      {
-       "id": "s-references-39-3",
-       "original": "URL"
+       "original": "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D Manning, Stefano Ermon, and Chelsea Finn."
       }
      ]
     },
@@ -3350,15 +4052,11 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-40-1",
-       "original": "Jin Xu, Zhifang Guo, Hangrui Hu, Yunfei Chu, Xiong Wang, Jinzheng He, Yuxuan Wang, Xian Shi, Ting He, Xinfa Zhu, Yuanjun Lv, Yongqi Wang, Dake Guo, He Wang, Linhan Ma, Pei Zhang, Xinyu Zhang, Hongkun Hao, Zishan Guo, Baosong Yang, Bin Zhang, Ziyang Ma, Xipin Wei, Shuai Bai, Keqin Chen, Xuejing Liu, Peng Wang, Mingkun Yang, Dayiheng Liu, Xingzhang Ren, Bo Zheng, Rui Men, Fan Zhou, Bowen Yu, Jianxin Yang, Le Yu, Jingren Zhou, and Junyang Lin."
+       "original": "Direct preference optimization: Your language model is secretly a reward model."
       },
       {
        "id": "s-references-40-2",
-       "original": "Qwen3-omni technical report, 2025b."
-      },
-      {
-       "id": "s-references-40-3",
-       "original": "URL"
+       "original": "Advances in neural information processing systems, 36:53728–53741, 2023."
       }
      ]
     },
@@ -3369,11 +4067,16 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-41-1",
-       "original": "Yifan Yang, Zheshu Song, Jianheng Zhuo, Mingyu Cui, Jinpeng Li, Bo Yang, Yexing Du, Ziyang Ma, Xunying Liu, Ziyuan Wang, et al. Gigaspeech 2: An evolving, large-scale and multi-domain asr corpus for lowresource languages with automated crawling, transcription and refinement."
+       "original": "Resemble AI."
       },
       {
        "id": "s-references-41-2",
-       "original": "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 2673–2686, 2025."
+       "original": "Chatterbox-TTS. https://github.com/resemble-ai/chatterbox, 2025.",
+       "zh": "/ T"
+      },
+      {
+       "id": "s-references-41-3",
+       "original": "GitHub repository."
       }
      ]
     },
@@ -3384,63 +4087,245 @@ globalThis.PAPER_2603_08823 = {
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "Yuan Yao, Tianyu Yu, Ao Zhang, Chongyi Wang, Junbo Cui, Hongji Zhu, Tianchi Cai, Haoyu Li, Weilin Zhao, Zhihui He, et al. Minicpm-v: A gpt-4v level mllm on your phone. arXiv preprint arXiv:2408.01800, 2024."
+       "original": "John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov."
+      },
+      {
+       "id": "s-references-42-2",
+       "original": "Proximal policy optimization algorithms. arXiv preprint arXiv:1707.06347, 2017."
       }
      ]
     },
     {
      "id": "p-references-43",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-43-1",
-       "original": "Neil Zeghidour, Eugene Kharitonov, Manu Orsini, V’aclav Volhejn, Gabriel de Marmiesse, Edouard Grave, Patrick P’erez, Laurent Mazar’e, and Alexandre D’efossez."
-      },
-      {
-       "id": "s-references-43-2",
-       "original": "Streaming sequence-to-sequence learning with delayed streams modeling. arXiv preprint arXiv:2509.08753, 2025."
+       "original": "Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei Zhang, Mingchuan Zhang, YK Li, Yang Wu, et al. DeepSeekMath: Pushing the limits of mathematical reasoning in open language models. arXiv preprint arXiv:2402.03300, 2024."
       }
      ]
     },
     {
      "id": "p-references-44",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-44-1",
-       "original": "Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, Peikai Huang, Ruiyang Jin, Sitan Jiang, Weihua Cheng, Yawei Li, Yichen Xiao, Yiying Zhou, Yongmao Zhang, Yuan Lu, and Yucen He."
+       "original": "Jiatong Shi, Hye-Jin Shim, and Shinji Watanabe."
       },
       {
        "id": "s-references-44-2",
-       "original": "Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder, 2025."
-      },
-      {
-       "id": "s-references-44-3",
-       "original": "URL https://arxiv.org/abs/2505.07916."
+       "original": "Uni-versa: Versatile speech assessment with a unified network. arXiv preprint arXiv:2505.20741, 2025."
       }
      ]
     },
     {
      "id": "p-references-45",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-45-1",
-       "original": "Lianmin Zheng, Liangsheng Yin, Zhiqiang Xie, Chuyue Sun, Jeff Huang, Cody Hao Yu, Shiyi Cao, Christos Kozyrakis, Ion Stoica, Joseph E."
+       "original": "Chengyao Wang, Zhisheng Zhong, Bohao Peng, Senqiao Yang, Yuqi Liu, Haokun Gui, Bin Xia, Jingyao Li, Bei Yu, and Jiaya Jia."
       },
       {
        "id": "s-references-45-2",
+       "original": "Mgm-omni: Scaling omni llms to personalized long-horizon speech. arXiv preprint arXiv:2509.25131, 2025a."
+      }
+     ]
+    },
+    {
+     "id": "p-references-46",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-46-1",
+       "original": "Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, and Furu Wei."
+      },
+      {
+       "id": "s-references-46-2",
+       "original": "Neural codec language models are zero-shot text to speech synthesizers, 2023."
+      },
+      {
+       "id": "s-references-46-3",
+       "original": "URL https://arxiv.org/abs/2301.02111."
+      }
+     ]
+    },
+    {
+     "id": "p-references-47",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-47-1",
+       "original": "Xihuai Wang, Ziyi Zhao, Siyu Ren, Shao Zhang, Song Li, Xiaoyu Li, Ziwen Wang, Lin Qiu, Guanglu Wan, Xuezhi Cao, et al. Audio turing test: benchmarking the human-likeness of large language model-based text-to-speech systems in chinese. arXiv preprint arXiv:2505.11200, 2025b."
+      }
+     ]
+    },
+    {
+     "id": "p-references-48",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-48-1",
+       "original": "Sanghyun Woo, Shoubhik Debnath, Ronghang Hu, Xinlei Chen, Zhuang Liu, In So Kweon, and Saining Xie."
+      },
+      {
+       "id": "s-references-48-2",
+       "original": "ConvNeXt V2: Co-designing and scaling ConvNets with masked autoencoders."
+      },
+      {
+       "id": "s-references-48-3",
+       "original": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pp. 16133–16142, 2023."
+      }
+     ]
+    },
+    {
+     "id": "p-references-49",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-49-1",
+       "original": "Kun Xie, Feiyu Shen, Junjie Li, Fenglong Xie, Xu Tang, and Yao Hu.",
+       "zh": "/ T"
+      },
+      {
+       "id": "s-references-49-2",
+       "original": "Fireredtts-2: Towards long conversational speech generation for podcast and chatbot, 2025.",
+       "zh": "/ T"
+      },
+      {
+       "id": "s-references-49-3",
+       "original": "URL https://arxiv.org/abs/2509.02020."
+      }
+     ]
+    },
+    {
+     "id": "p-references-50",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-50-1",
+       "original": "Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang, Bin Zhang, Xiong Wang, Yunfei Chu, and Junyang Lin.",
+       "zh": "/ T"
+      },
+      {
+       "id": "s-references-50-2",
+       "original": "Qwen2.5-omni technical report, 2025a."
+      },
+      {
+       "id": "s-references-50-3",
+       "original": "URL https://arxiv.org/abs/2503.20215."
+      }
+     ]
+    },
+    {
+     "id": "p-references-51",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-51-1",
+       "original": "Jin Xu, Zhifang Guo, Hangrui Hu, Yunfei Chu, Xiong Wang, Jinzheng He, Yuxuan Wang, Xian Shi, Ting He, Xinfa Zhu, Yuanjun Lv, Yongqi Wang, Dake Guo, He Wang, Linhan Ma, Pei Zhang, Xinyu Zhang, Hongkun Hao, Zishan Guo, Baosong Yang, Bin Zhang, Ziyang Ma, Xipin Wei, Shuai Bai, Keqin Chen, Xuejing Liu, Peng Wang, Mingkun Yang, Dayiheng Liu, Xingzhang Ren, Bo Zheng, Rui Men, Fan Zhou, Bowen Yu, Jianxin Yang, Le Yu, Jingren Zhou, and Junyang Lin.",
+       "zh": "/ T"
+      },
+      {
+       "id": "s-references-51-2",
+       "original": "Qwen3-omni technical report, 2025b."
+      },
+      {
+       "id": "s-references-51-3",
+       "original": "URL https://arxiv.org/abs/2509.17765."
+      }
+     ]
+    },
+    {
+     "id": "p-references-52",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-52-1",
+       "original": "Yifan Yang, Zheshu Song, Jianheng Zhuo, Mingyu Cui, Jinpeng Li, Bo Yang, Yexing Du, Ziyang Ma, Xunying Liu, Ziyuan Wang, et al. Gigaspeech 2: An evolving, large-scale and multi-domain asr corpus for lowresource languages with automated crawling, transcription and refinement."
+      },
+      {
+       "id": "s-references-52-2",
+       "original": "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 2673–2686, 2025."
+      }
+     ]
+    },
+    {
+     "id": "p-references-53",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-53-1",
+       "original": "Yuan Yao, Tianyu Yu, Ao Zhang, Chongyi Wang, Junbo Cui, Hongji Zhu, Tianchi Cai, Haoyu Li, Weilin Zhao, Zhihui He, et al. Minicpm-v: A gpt-4v level mllm on your phone. arXiv preprint arXiv:2408.01800, 2024.",
+       "zh": "/ T"
+      }
+     ]
+    },
+    {
+     "id": "p-references-54",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-54-1",
+       "original": "Neil Zeghidour, Eugene Kharitonov, Manu Orsini, V’aclav Volhejn, Gabriel de Marmiesse, Edouard Grave, Patrick P’erez, Laurent Mazar’e, and Alexandre D’efossez."
+      },
+      {
+       "id": "s-references-54-2",
+       "original": "Streaming sequence-to-sequence learning with delayed streams modeling. arXiv preprint arXiv:2509.08753, 2025."
+      }
+     ]
+    },
+    {
+     "id": "p-references-55",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-55-1",
+       "original": "Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, Peikai Huang, Ruiyang Jin, Sitan Jiang, Weihua Cheng, Yawei Li, Yichen Xiao, Yiying Zhou, Yongmao Zhang, Yuan Lu, and Yucen He."
+      },
+      {
+       "id": "s-references-55-2",
+       "original": "Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder, 2025."
+      },
+      {
+       "id": "s-references-55-3",
+       "original": "URL https://arxiv.org/abs/2505.07916."
+      }
+     ]
+    },
+    {
+     "id": "p-references-56",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-56-1",
+       "original": "Lianmin Zheng, Liangsheng Yin, Zhiqiang Xie, Chuyue Sun, Jeff Huang, Cody Hao Yu, Shiyi Cao, Christos Kozyrakis, Ion Stoica, Joseph E."
+      },
+      {
+       "id": "s-references-56-2",
        "original": "Gonzalez, Clark Barrett, and Ying Sheng."
       },
       {
-       "id": "s-references-45-3",
+       "id": "s-references-56-3",
        "original": "Sglang: Efficient execution of structured language model programs, 2024."
       },
       {
-       "id": "s-references-45-4",
+       "id": "s-references-56-4",
        "original": "URL https://arxiv.org/abs/2312.07104."
       }
      ]
@@ -3481,225 +4366,253 @@ globalThis.PAPER_2603_08823 = {
        "id": "s-A-1-4",
        "original": "To systematically quantify this capability, we propose the Fish Audio Instruction Benchmark, which aims to evaluate the zero-shot instruction-following abilities of models regarding inline vocol feature tags.",
        "zh": "为系统化量化这一能力，我们提出 Fish Audio Instruction Benchmark，旨在评估模型对内联声音特征标签的零样本指令跟随能力。"
-      },
-      {
-       "id": "s-A-1-5",
-       "original": "Benchmark Design",
-       "zh": "基准设计。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-A-1",
+   "num": "A.1",
+   "level": 2,
+   "page": 18,
+   "title": {
+    "original": "Benchmark Design",
+    "zh": "Benchmark Design"
+   },
+   "blocks": [
     {
-     "id": "p-A-2",
+     "id": "p-A-1-1",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-2-1",
+       "id": "s-A-1-1-1",
        "original": "In contrast to traditional datasets that rely on global emotion prompts (e.g., “read in a sad tone”), our benchmark embeds precise, word-level acoustic event tags directly into the transcriptions.",
        "zh": "与依赖全局情绪提示（如「用悲伤的语气读」）的传统数据集不同，我们的基准把精确的词级声学事件标签直接嵌入转写文本。"
       },
       {
-       "id": "s-A-2-2",
+       "id": "s-A-1-1-2",
        "original": "The dataset is constructed from utterance segments extracted from multi-turn dialogues and monologues.",
        "zh": "数据集由多轮对话和独白中抽取的语句片段构成。"
       },
       {
-       "id": "s-A-2-3",
+       "id": "s-A-1-1-3",
        "original": "Each sample retains the necessary contextual information and annotates designated text positions with target acousticevent tags, such as [laugh], [whispers], [inhale], [exhale], and [emphasis].",
        "zh": "每个样本保留必要的上下文信息，并在指定文本位置标注目标声学事件标签，如 [laugh]、[whispers]、[inhale]、[exhale] 和 [emphasis]。"
       },
       {
-       "id": "s-A-2-4",
+       "id": "s-A-1-1-4",
        "original": "Models are required to infer these events from the semantic and conversational context and realize them at the corresponding positions during speech generation.",
        "zh": "模型需要从语义和对话上下文中推断这些事件，并在语音生成时于对应位置实现它们。"
       },
       {
-       "id": "s-A-2-5",
+       "id": "s-A-1-1-5",
        "original": "A representative test example in this format is shown in Figure 4.",
        "zh": "该格式的代表性测试样例见图 4。"
       }
      ]
     },
     {
-     "id": "p-A-3",
+     "id": "p-A-1-2",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-3-1",
+       "id": "s-A-1-2-1",
        "original": "We construct our benchmark using two datasets, MELD (Poria et al., 2019) and the game character voice dataset, to represent the English and Chinese settings, respectively.",
        "zh": "我们用两个数据集构建基准：MELD（Poria et al., 2019）和游戏角色语音数据集，分别代表英文和中文设定。"
       },
       {
-       "id": "s-A-3-2",
+       "id": "s-A-1-2-2",
        "original": "MELD is a speech emotion dialogue corpus curated from the American TV series Friends, while the Chinese subset is drawn from a communitycurated corpus of game character voice lines.",
        "zh": "MELD 是取自美剧《老友记》（Friends）的语音情绪对话语料，中文子集则来自社区策展的游戏角色语音台词库。"
       },
       {
-       "id": "s-A-3-3",
+       "id": "s-A-1-2-3",
        "original": "For MELD, we randomly sample dialogues from the test split with lengths near the median, so as to avoid extremely short or overly long conversations.",
        "zh": "对 MELD，我们从测试划分中随机采样长度接近中位数的对话，以避免过短或过长的会话。"
       },
       {
-       "id": "s-A-3-4",
+       "id": "s-A-1-2-4",
        "original": "For the chinese dataset, we randomly sample utterances from character story dialogues.",
        "zh": "对中文数据集，我们从角色剧情对话中随机采样语句。"
       },
       {
-       "id": "s-A-3-5",
+       "id": "s-A-1-2-5",
        "original": "Both subsets contain approximately 500 utterances.",
        "zh": "两个子集各含约 500 条语句。"
       },
       {
-       "id": "s-A-3-6",
+       "id": "s-A-1-2-6",
        "original": "We then apply the data pipeline described in Section 3 to obtain coarse annotations, followed by expert human verification and fine-grained refinement to filter out audio noise, correct alignment errors, and ensure that inline tags are placed precisely and are semantically appropriate.",
        "zh": "随后我们应用第 3 节描述的数据流水线得到粗标注，再由专家人工核验与细粒度修正，过滤音频噪声、纠正对齐错误，并确保内联标签位置精确、语义恰当。"
-      },
-      {
-       "id": "s-A-3-7",
-       "original": "Evaluation Method",
-       "zh": "评测方法。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-A-2",
+   "num": "A.2",
+   "level": 2,
+   "page": 18,
+   "title": {
+    "original": "Evaluation Method",
+    "zh": "Evaluation Method"
+   },
+   "blocks": [
     {
-     "id": "p-A-4",
+     "id": "p-A-2-1",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-4-1",
+       "id": "s-A-2-1-1",
        "original": "We adopt Gemini 3 Pro as an LLM-as-a-Judge to systematically evaluate fine-grained instruction-following ability from both local and global perspectives.",
        "zh": "我们采用 Gemini 3 Pro 作为 LLM-as-a-Judge，从局部和全局两个视角系统评估细粒度指令跟随能力。"
       },
       {
-       "id": "s-A-4-2",
+       "id": "s-A-2-1-2",
        "original": "Specifically, we define three metrics:",
        "zh": "具体来说，我们定义三个指标："
       }
      ]
     },
     {
-     "id": "p-A-5",
+     "id": "p-A-2-2",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-5-1",
+       "id": "s-A-2-2-1",
        "original": "• Tag Activation Rate (TAR): the proportion of inline tags (e.g., [laugh], [inhale]) for which the model successfully triggers the target event at the exact specified position, reported as a percentage. • Acoustic Naturalness (1–5): a subjective realism metric that assesses whether the triggered vocal events sound natural and human-like, or exhibit noticeable synthetic artifacts (e.g., robotic timbre, distortion, or abrupt insertions). • Global Expressiveness (1–5): a holistic expressiveness metric that evaluates whether the overall prosody and affective tone of an utterance align with the semantic content and contextual cues implied by the text and tags (e.g., utterances containing [whispers] should not be delivered in a broadcast-like style or with overly projected voice).",
        "zh": "• 标签激活率（TAR）：模型在精确指定位置成功触发目标事件的内联标签（如 [laugh]、[inhale]）所占比例，以百分比报告。• 声学自然度（1–5）：一个主观真实感指标，评估被触发的声音事件听起来是否自然拟人，或有明显合成伪影（如机械音色、失真或生硬插入）。• 全局表现力（1–5）：一个整体表现力指标，评估语句整体韵律与情感基调是否符合文本和标签隐含的语义内容与上下文线索（如含 [whispers] 的语句不应以播音腔或过度投射的嗓音呈现）。"
       }
      ]
     },
     {
-     "id": "p-A-6",
+     "id": "p-A-2-3",
      "type": "paragraph",
      "page": 19,
      "sentences": [
       {
-       "id": "s-A-6-1",
+       "id": "s-A-2-3-1",
        "original": "The evaluation procedure consists of two steps.",
        "zh": "评测流程分两步。"
       },
       {
-       "id": "s-A-6-2",
+       "id": "s-A-2-3-2",
        "original": "We first synthesize speech for each benchmark sample using the target TTS model; we then feed the generated audio, along with its corresponding text and inline tags, into Gemini 3 Pro to obtain decisions/scores for the three dimensions above.",
        "zh": "我们先用目标 TTS 模型为每条基准样本合成语音；然后把生成音频连同对应文本和内联标签送入 Gemini 3 Pro，得到上述三个维度的判定/分数。"
       },
       {
-       "id": "s-A-6-3",
+       "id": "s-A-2-3-3",
        "original": "Finally, we aggregate the results across all samples to quantify overall performance under different languages and scenarios.",
        "zh": "最后，我们聚合所有样本的结果，量化不同语言和场景下的总体表现。"
-      },
-      {
-       "id": "s-A-6-4",
-       "original": "Human-Model Alignment Validation",
-       "zh": "人类-模型对齐验证。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-A-3",
+   "num": "A.3",
+   "level": 2,
+   "page": 19,
+   "title": {
+    "original": "Human-Model Alignment Validation",
+    "zh": "Human-Model Alignment Validation"
+   },
+   "blocks": [
     {
-     "id": "p-A-7",
+     "id": "p-A-3-1",
      "type": "paragraph",
      "page": 19,
      "sentences": [
       {
-       "id": "s-A-7-1",
+       "id": "s-A-3-1-1",
        "original": "Before using Gemini 3 Pro for large-scale automated evaluation, we assess whether its scoring behavior is aligned with human auditory judgment.",
        "zh": "在用 Gemini 3 Pro 做大规模自动评测之前，我们评估其打分行为是否与人类听觉判断一致。"
       },
       {
-       "id": "s-A-7-2",
+       "id": "s-A-3-1-2",
        "original": "We perform stratified random sampling and select 200 audio clips with diverse acoustic-event tags from baseline model outputs.",
        "zh": "我们做分层随机抽样，从基线模型输出中选取 200 条带多样声学事件标签的音频片段。"
       },
       {
-       "id": "s-A-7-3",
+       "id": "s-A-3-1-3",
        "original": "A professional annotation team then evaluates these clips under double-blind conditions using the same rubric as the Gemini 3 Pro.",
        "zh": "随后一个专业标注团队在双盲条件下、用与 Gemini 3 Pro 相同的评分细则评估这些片段。"
       }
      ]
     },
     {
-     "id": "p-A-8",
+     "id": "p-A-3-2",
      "type": "paragraph",
      "page": 19,
      "sentences": [
       {
-       "id": "s-A-8-1",
+       "id": "s-A-3-2-1",
        "original": "We quantify agreement for both objective event detection and subjective perceptual ratings.",
        "zh": "我们对客观事件检测和主观感知打分分别量化一致性。"
       },
       {
-       "id": "s-A-8-2",
+       "id": "s-A-3-2-2",
        "original": "For objective acoustic-event detection, the absolute agreement accuracy between Gemini 3 Pro and human experts reaches 76.2%, with Cohen’s kappa (κ) of 0.47.",
        "zh": "对客观声学事件检测，Gemini 3 Pro 与人类专家之间的绝对一致准确率达到 76.2%，Cohen's kappa（κ）为 0.47。"
       },
       {
-       "id": "s-A-8-3",
+       "id": "s-A-3-2-3",
        "original": "This indicates moderate agreement, suggesting that the model provides a reasonable approximation of human judgment for basic event detection.",
        "zh": "这属于中等一致性，说明该模型对基础事件检测提供了合理的人类判断近似。"
       },
       {
-       "id": "s-A-8-4",
+       "id": "s-A-3-2-4",
        "original": "For 1–5 Likert-scale subjective ratings, Pearson correlations (r) for Naturalness and Expressiveness are 0.55 and 0.42, while the corresponding Quadratic Weighted Kappa (QWK) scores are 0.36 and 0.47.",
        "zh": "对 1–5 级 Likert 主观打分，Naturalness 和 Expressiveness 的 Pearson 相关系数（r）分别为 0.55 和 0.42，对应的二次加权 Kappa（QWK）分别为 0.36 和 0.47。"
       },
       {
-       "id": "s-A-8-5",
+       "id": "s-A-3-2-5",
        "original": "Given the inherent subjectivity of expressive-speech assessment, these results indicate a clear positive alignment trend between model judgments and human perception.",
        "zh": "考虑到表现力语音评估固有的主观性，这些结果表明模型判断与人类感知之间存在明确的正向对齐趋势。"
       },
       {
-       "id": "s-A-8-6",
+       "id": "s-A-3-2-6",
        "original": "Although a gap remains in fine-grained absolute scoring, the observed ranking consistency supports the use of Gemini 3 Pro as a practical tool for large-scale preliminary screening and relative quality assessment.",
        "zh": "尽管细粒度绝对打分上仍有差距，观察到的排序一致性支持把 Gemini 3 Pro 用作大规模初筛和相对质量评估的实用工具。"
-      },
-      {
-       "id": "s-A-8-7",
-       "original": "Conclusion, limitations and future work",
-       "zh": "结论、局限与未来工作。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-A-4",
+   "num": "A.4",
+   "level": 2,
+   "page": 19,
+   "title": {
+    "original": "Conclusion, limitations and future work",
+    "zh": "Conclusion, limitations and future work"
+   },
+   "blocks": [
     {
-     "id": "p-A-9",
+     "id": "p-A-4-1",
      "type": "paragraph",
      "page": 19,
      "sentences": [
       {
-       "id": "s-A-9-1",
+       "id": "s-A-4-1-1",
        "original": "The Fish Audio Instruction Benchmark addresses an important gap in TTS evaluation by providing a dedicated testbed for fine-grained instruction following.",
        "zh": "Fish Audio Instruction Benchmark 通过为细粒度指令跟随提供专门试验场，填补了 TTS 评测的一个重要空白。"
       },
       {
-       "id": "s-A-9-2",
+       "id": "s-A-4-1-2",
        "original": "As a first release, it still has limitations, including limited data diversity, imbalanced acoustic-tag distributions, and early-stage human–model alignment analysis.",
        "zh": "作为首个版本，它仍有局限，包括数据多样性有限、声学标签分布不均衡，以及人类-模型对齐分析尚处早期。"
       },
       {
-       "id": "s-A-9-3",
+       "id": "s-A-4-1-3",
        "original": "In future versions, we will expand the dataset and improve the automated evaluation pipeline to provide a more comprehensive and reliable standard.",
        "zh": "在未来版本中，我们将扩充数据集并改进自动评测流水线，提供更全面、更可靠的标准。"
       }
@@ -3734,7 +4647,7 @@ globalThis.PAPER_2603_08823 = {
   {
    "id": "ann-003",
    "anchor": {
-    "sentence_id": "s-2-1-5-2",
+    "sentence_id": "s-2-1-4-3",
     "quote": "regress the 16th-layer activations of a pre-trained w2v-BERT 2.0 model"
    },
    "kind": "concept",
@@ -3755,7 +4668,7 @@ globalThis.PAPER_2603_08823 = {
   {
    "id": "ann-005",
    "anchor": {
-    "sentence_id": "s-2-2-7-3",
+    "sentence_id": "s-2-2-4-6",
     "quote": "a 4B-parameter model along the time axis and a 4-layer network along the codebook depth axis"
    },
    "kind": "comparison",
@@ -3808,7 +4721,7 @@ globalThis.PAPER_2603_08823 = {
   {
    "id": "ann-010",
    "anchor": {
-    "sentence_id": "s-4-2-4-3",
+    "sentence_id": "s-4-2-3-5",
     "quote": "without requiring dedicated control tokens"
    },
    "kind": "comparison",
@@ -3828,7 +4741,7 @@ globalThis.PAPER_2603_08823 = {
   {
    "id": "ann-012",
    "anchor": {
-    "sentence_id": "s-4-3-3-2",
+    "sentence_id": "s-4-3-2-2",
     "quote": "samples with low reward variance receive disproportionately large gradient updates"
    },
    "kind": "concept",
@@ -3839,7 +4752,7 @@ globalThis.PAPER_2603_08823 = {
   {
    "id": "ann-013",
    "anchor": {
-    "sentence_id": "s-4-3-13-1",
+    "sentence_id": "s-4-3-9-1",
     "quote": "multi-dimensional, orthogonal, and anti-hacking reward system"
    },
    "kind": "concept",
@@ -3849,7 +4762,7 @@ globalThis.PAPER_2603_08823 = {
   {
    "id": "ann-014",
    "anchor": {
-    "sentence_id": "s-4-3-15-2",
+    "sentence_id": "s-4-3-10-2",
     "quote": "applies substantially stronger penalties to incorrect speaker ID tags"
    },
    "kind": "engineering",
@@ -3859,7 +4772,7 @@ globalThis.PAPER_2603_08823 = {
   {
    "id": "ann-015",
    "anchor": {
-    "sentence_id": "s-4-3-16-3",
+    "sentence_id": "s-4-3-11-3",
     "quote": "the reference policy is maintained as a LoRA weight backup in CPU memory and dynamically swapped in"
    },
    "kind": "engineering",
@@ -3870,7 +4783,7 @@ globalThis.PAPER_2603_08823 = {
   {
    "id": "ann-016",
    "anchor": {
-    "sentence_id": "s-4-3-16-4",
+    "sentence_id": "s-4-3-11-4",
     "quote": "updating exclusively the MLP layers"
    },
    "kind": "critique",
@@ -3953,7 +4866,7 @@ globalThis.PAPER_2603_08823 = {
   {
    "id": "ann-024",
    "anchor": {
-    "sentence_id": "s-A-8-2",
+    "sentence_id": "s-A-3-2-2",
     "quote": "the absolute agreement accuracy between Gemini 3 Pro and human experts reaches 76.2%"
    },
    "kind": "critique",

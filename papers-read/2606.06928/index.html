@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VoxCPM2 技术报告 · 全文双语精读 | ASR/TTS 知识库</title>
-<meta name="description" content="VoxCPM2 技术报告（VoxCPM2 Technical Report）全文中文翻译 + 24 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta name="description" content="VoxCPM2 技术报告（VoxCPM2 Technical Report）全文中文翻译 + 23 条句子级讲解 · ASR/TTS 知识库论文精读">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2606.06928/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VoxCPM2 技术报告 · 全文双语精读">
-<meta property="og:description" content="VoxCPM2 技术报告（VoxCPM2 Technical Report）全文中文翻译 + 24 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta property="og:description" content="VoxCPM2 技术报告（VoxCPM2 Technical Report）全文中文翻译 + 23 条句子级讲解 · ASR/TTS 知识库论文精读">
 <meta property="og:url" content="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2606.06928/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"VoxCPM2 Technical Report","alternateName":"VoxCPM2 技术报告","url":"https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2606.06928/","isBasedOn":"https://arxiv.org/abs/2606.06928","inLanguage":["en","zh-CN"],"isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Zhitao Zeng"}}</script>
 <style>
@@ -134,7 +134,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
     <div class="en-title">VoxCPM2 Technical Report</div>
     <div class="meta">
       关联模型：<a href="../../index.html#/model/voxcpm2">VoxCPM2</a>（OpenBMB · 2026-06） ·
-      全文 275 个语块 · 讲解 24 条（精选 12 条）
+      全文 606 个语块 · 讲解 23 条（精选 12 条）
     </div>
   </div>
   <div class="controls">
@@ -166,7 +166,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div>
     <p class="muted" style="font-size:12.5px">以上为论文级三条摘要；下面进入全文双语精读，讲解锚定在具体句子旁。</p>
   </section>
-  <nav class="toc"><a class="lv1" href="#sec-voxcpm-team">VoxCPM 团队</a><a class="lv1" href="#sec-abstract">摘要</a><a class="lv1" href="#sec-2">2 2 相关工作</a><a class="lv1" href="#sec-3">3 3 方法</a><a class="lv1" href="#sec-4">4 4 实验与结果</a><a class="lv1" href="#sec-5">5 5 结论与未来工作</a><a class="lv1" href="#sec-6">6 6 贡献者</a><a class="lv1" href="#sec-1">1 1 引言</a><a class="lv2" href="#sec-1-1">1.1 1.1 背景与 VoxCPM 基础</a><a class="lv2" href="#sec-1-2">1.2 1.2 VoxCPM2：从基础模型到全功能系统</a><a class="lv2" href="#sec-1-3">1.3 1.3 论文结构</a><a class="lv1" href="#sec-2-2">2 2 相关工作</a><a class="lv2" href="#sec-2-1">2.1 2.1 大规模 TTS 基础模型</a><a class="lv2" href="#sec-discrete-token-language-modeling">神经 codec 上的离散 token 语言建模</a><a class="lv2" href="#sec-continuous-latent-and-diffusion-">连续隐空间与扩散-自回归生成</a><a class="lv2" href="#sec-hierarchical-semantic-acoustic-d">分层语义-声学分解</a><a class="lv2" href="#sec-2-2-2">2.2 2.2 可控与富有表现力的语音生成</a><a class="lv1" href="#sec-3-2">3 3 方法（架构图页：离散文本 token、连续语音隐 token、文本隐状态、待生成目标音频、patch 级隐变量生成）</a><a class="lv2" href="#sec-3-1">3.1 3.1 系统概览</a><a class="lv2" href="#sec-3-2-2">3.2 3.2 AudioVAE V2</a><a class="lv2" href="#sec-3-3">3.3 3.3 主干改进与规模化</a><a class="lv2" href="#sec-3-3-1">3.3.1 3.3.1 内部架构改进（RALM 前的拼接-投影融合）</a><a class="lv2" href="#sec-multi-token-conditioning-prefix-">LocDiT 中的多 token 条件前缀</a><a class="lv2" href="#sec-wider-fsq-bottleneck">更宽的 FSQ 瓶颈</a><a class="lv2" href="#sec-removing-positional-encoding-fro">移除 RALM 中的位置编码</a><a class="lv2" href="#sec-3-3-2">3.3.2 3.3.2 参考音频通路</a><a class="lv2" href="#sec-3-3-3">3.3.3 3.3.3 配置规模化</a><a class="lv2" href="#sec-3-4">3.4 3.4 统一序列组织</a><a class="lv2" href="#sec-mode">模式（五种配置的序列布局）</a><a class="lv2" href="#sec-3-5">3.5 3.5 训练策略（训练目标）</a><a class="lv2" href="#sec-three-stage-progressive-curricul">三阶段渐进式课程</a><a class="lv2" href="#sec-3-6">3.6 3.6 面向可控性的数据构建与标注</a><a class="lv2" href="#sec-selecting-expressive-audio-worth">筛选值得标注的表现力音频</a><a class="lv2" href="#sec-multi-dimensional-natural-langua">多维度自然语言标注</a><a class="lv2" href="#sec-mining-same-speaker-references-f">为克隆挖掘同说话人参考片段</a><a class="lv2" href="#sec-decoupling-style-from-content-vi">通过克隆合成解耦风格与内容</a><a class="lv2" href="#sec-3-7">3.7 3.7 推理</a><a class="lv2" href="#sec-classifier-free-guidance-cfg">无分类器引导（CFG）</a><a class="lv2" href="#sec-sway-sampling-and-cfg-zero">摇摆采样（sway sampling）与 CFG-Zero*</a><a class="lv2" href="#sec-streaming">流式合成</a><a class="lv1" href="#sec-4-2">4 4 实验与结果</a><a class="lv2" href="#sec-4-1">4.1 4.1 实验设置——基准</a><a class="lv2" href="#sec-model">模型（Seed-TTS-Eval 结果表行）</a><a class="lv2" href="#sec-comparison-systems">对比系统</a><a class="lv2" href="#sec-metrics">评测指标</a><a class="lv2" href="#sec-4-2-2">4.2 4.2.2 Seed-TTS-Eval 上的零样本语音克隆</a><a class="lv2" href="#sec-inference-recipe">推理配方（结果表行）</a><a class="lv2" href="#sec-model-2">模型（CV3-Eval 结果表行）</a><a class="lv2" href="#sec-inference-recipes">推理配方</a><a class="lv2" href="#sec-4-3">4.3 4.3 多语言能力</a><a class="lv2" href="#sec-cv3-eval-in-the-wild-multilingua">CV3-Eval：野外多语言克隆</a><a class="lv2" href="#sec-language">语言（MiniMax-MLS-Test WER 表行）</a><a class="lv2" href="#sec-minimax-mls-test-24-language-int">MiniMax-MLS-Test：24 语言可懂度与说话人相似度</a><a class="lv2" href="#sec-internal-30-language-benchmark">内部 30 语言基准</a><a class="lv2" href="#sec-language-2">语言（MiniMax-MLS-Test SIM 表行）</a><a class="lv2" href="#sec-lang">语言（内部 30 语言基准表行）</a><a class="lv2" href="#sec-average-across-30-languages">30 种语言平均</a><a class="lv2" href="#sec-4-4">4.4 4.4 声音设计与可控生成</a><a class="lv2" href="#sec-model-3">模型（InstructTTSEval 结果表行）</a><a class="lv2" href="#sec-vae">VAE（表头残留）</a><a class="lv2" href="#sec-input">输入/输出（VAE 重建表行）</a><a class="lv2" href="#sec-4-5">4.5 4.5 AudioVAE V2 重建质量</a><a class="lv2" href="#sec-inference-path">推理路径（效率表行）</a><a class="lv2" href="#sec-system">系统（主观评测表行残留）</a><a class="lv2" href="#sec-4-6">4.6 4.6 推理效率与部署</a><a class="lv2" href="#sec-latency-and-memory">延迟与显存</a><a class="lv2" href="#sec-streaming-and-production-serving">流式与生产环境服务</a><a class="lv2" href="#sec-4-7">4.7 4.7 主观听测</a><a class="lv2" href="#sec-system-2">系统（多语言主观表头残留）</a><a class="lv2" href="#sec-system-3">系统（可控生成主观表头残留）</a><a class="lv2" href="#sec-setup">实验设置</a><a class="lv2" href="#sec-results-and-analysis">结果与分析</a><a class="lv1" href="#sec-5-2">5 5 结论与未来工作</a><a class="lv1" href="#sec-6-2">6 6 贡献者</a><a class="lv2" href="#sec-core-contributors">核心贡献者</a><a class="lv2" href="#sec-other-contributors-alphabetical-">其他贡献者（按字母序）</a><a class="lv1" href="#sec-references">References</a></nav>
+  <nav class="toc"><a class="lv1" href="#sec-voxcpm-team">VoxCPM 团队</a><a class="lv1" href="#sec-abstract">摘要</a><a class="lv1" href="#sec-2">2 2 相关工作</a><a class="lv1" href="#sec-3">3 3 方法</a><a class="lv1" href="#sec-4">4 4 实验与结果</a><a class="lv1" href="#sec-5">5 5 结论与未来工作</a><a class="lv1" href="#sec-6">6 6 贡献者</a><a class="lv1" href="#sec-1">1 1 引言</a><a class="lv2" href="#sec-1-1">1.1 1.1 背景与 VoxCPM 基础</a><a class="lv2" href="#sec-1-2">1.2 1.2 VoxCPM2：从基础模型到全功能系统</a><a class="lv2" href="#sec-1-3">1.3 1.3 论文结构</a><a class="lv1" href="#sec-2-2">2 2 相关工作</a><a class="lv2" href="#sec-2-1">2.1 2.1 大规模 TTS 基础模型</a><a class="lv2" href="#sec-discrete-token-language-modeling">神经 codec 上的离散 token 语言建模</a><a class="lv2" href="#sec-continuous-latent-and-diffusion-">连续隐空间与扩散-自回归生成</a><a class="lv2" href="#sec-hierarchical-semantic-acoustic-d">分层语义-声学分解</a><a class="lv2" href="#sec-2-2-2">2.2 2.2 可控与富有表现力的语音生成</a><a class="lv1" href="#sec-3-2">3 Methodology T Discrete Text Tokens: Continuous Speech Latent Tokens: Text Hidden States: Target Audio (to be generated) Patch-level Latents Generation</a><a class="lv2" href="#sec-3-1">3.1 3.1 系统概览</a><a class="lv2" href="#sec-3-2-2">3.2 3.2 AudioVAE V2</a><a class="lv2" href="#sec-3-3">3.3 3.3 主干改进与规模化</a><a class="lv2" href="#sec-3-3-1">3.3.1 3.3.1 内部架构改进（RALM 前的拼接-投影融合）</a><a class="lv2" href="#sec-multi-token-conditioning-prefix-">LocDiT 中的多 token 条件前缀</a><a class="lv2" href="#sec-wider-fsq-bottleneck">更宽的 FSQ 瓶颈</a><a class="lv2" href="#sec-removing-positional-encoding-fro">移除 RALM 中的位置编码</a><a class="lv2" href="#sec-3-3-2">3.3.2 3.3.2 参考音频通路</a><a class="lv2" href="#sec-3-3-3">3.3.3 3.3.3 配置规模化</a><a class="lv2" href="#sec-3-4">3.4 3.4 统一序列组织</a><a class="lv2" href="#sec-mode">模式（五种配置的序列布局）</a><a class="lv2" href="#sec-3-5">3.5 3.5 训练策略（训练目标）</a><a class="lv2" href="#sec-three-stage-progressive-curricul">三阶段渐进式课程</a><a class="lv2" href="#sec-3-6">3.6 3.6 面向可控性的数据构建与标注</a><a class="lv2" href="#sec-selecting-expressive-audio-worth">筛选值得标注的表现力音频</a><a class="lv2" href="#sec-multi-dimensional-natural-langua">多维度自然语言标注</a><a class="lv2" href="#sec-mining-same-speaker-references-f">为克隆挖掘同说话人参考片段</a><a class="lv2" href="#sec-decoupling-style-from-content-vi">通过克隆合成解耦风格与内容</a><a class="lv2" href="#sec-3-7">3.7 3.7 推理</a><a class="lv2" href="#sec-classifier-free-guidance-cfg">无分类器引导（CFG）</a><a class="lv2" href="#sec-sway-sampling-and-cfg-zero">摇摆采样（sway sampling）与 CFG-Zero*</a><a class="lv2" href="#sec-streaming">流式合成</a><a class="lv1" href="#sec-4-2">4 4 实验与结果</a><a class="lv2" href="#sec-4-1">4.1 4.1 实验设置——基准</a><a class="lv2" href="#sec-model">模型（InstructTTSEval 结果表行）</a><a class="lv2" href="#sec-comparison-systems">对比系统</a><a class="lv2" href="#sec-metrics">评测指标</a><a class="lv2" href="#sec-4-2-2">4.2 4.2.2 Seed-TTS-Eval 上的零样本语音克隆</a><a class="lv2" href="#sec-inference-recipe">推理配方（结果表行）</a><a class="lv2" href="#sec-model-2">模型（InstructTTSEval 结果表行）</a><a class="lv2" href="#sec-inference-recipes">推理配方</a><a class="lv2" href="#sec-4-3">4.3 4.3 多语言能力</a><a class="lv2" href="#sec-cv3-eval-in-the-wild-multilingua">CV3-Eval：野外多语言克隆</a><a class="lv2" href="#sec-language">语言（MiniMax-MLS-Test SIM 表行）</a><a class="lv2" href="#sec-minimax-mls-test-24-language-int">MiniMax-MLS-Test：24 语言可懂度与说话人相似度</a><a class="lv2" href="#sec-internal-30-language-benchmark">内部 30 语言基准</a><a class="lv2" href="#sec-language-2">语言（MiniMax-MLS-Test SIM 表行）</a><a class="lv2" href="#sec-lang">语言（内部 30 语言基准表行）</a><a class="lv2" href="#sec-average-across-30-languages">30 种语言平均</a><a class="lv2" href="#sec-4-4">4.4 4.4 声音设计与可控生成</a><a class="lv2" href="#sec-model-3">模型（InstructTTSEval 结果表行）</a><a class="lv2" href="#sec-vae">VAE（表头残留）</a><a class="lv2" href="#sec-input">输入/输出（VAE 重建表行）</a><a class="lv2" href="#sec-4-5">4.5 4.5 AudioVAE V2 重建质量</a><a class="lv2" href="#sec-inference-path">推理路径（效率表行）</a><a class="lv2" href="#sec-system">系统（可控生成主观表头残留）</a><a class="lv2" href="#sec-4-6">4.6 4.6 推理效率与部署</a><a class="lv2" href="#sec-latency-and-memory">延迟与显存</a><a class="lv2" href="#sec-streaming-and-production-serving">流式与生产环境服务</a><a class="lv2" href="#sec-4-7">4.7 4.7 主观听测</a><a class="lv2" href="#sec-system-2">系统（可控生成主观表头残留）</a><a class="lv2" href="#sec-system-3">系统（可控生成主观表头残留）</a><a class="lv2" href="#sec-setup">实验设置</a><a class="lv2" href="#sec-results-and-analysis">结果与分析</a><a class="lv1" href="#sec-5-2">5 5 结论与未来工作</a><a class="lv1" href="#sec-6-2">6 6 贡献者</a><a class="lv2" href="#sec-core-contributors">核心贡献者</a><a class="lv2" href="#sec-other-contributors-alphabetical-">其他贡献者（按字母序）</a><a class="lv1" href="#sec-references">References</a></nav>
   <article class="reader"><section>
       <h2 class="sech lv1" id="sec-voxcpm-team"><span class="t-zh">VoxCPM 团队</span><span class="t-en">VoxCPM Team</span></h2><div class="pblk" id="p-voxcpm-team-1">
           <p class="en-lines"><span class="sent" data-sid="s-voxcpm-team-1-1"><span class="en">Project: https://github.com/OpenBMB/VoxCPM/ Model: https://huggingface.co/openbmb/VoxCPM2 Demo: https://huggingface.co/spaces/openbmb/VoxCPM-Demo Samples: https://openbmb.github.io/voxcpm2-demopage/</span></span></p>
@@ -175,8 +175,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div></section>
 <section>
       <h2 class="sech lv1" id="sec-abstract"><span class="t-zh">摘要</span><span class="t-en">Abstract</span></h2><div class="pblk" id="p-abstract-1">
-          <p class="en-lines"><span class="sent" data-sid="s-abstract-1-1"><span class="en">We present VoxCPM2, a fully open-source multilingual and controllable speech generation foundation model that extends the hierarchical diffusion-autoregressive modeling paradigm of VoxCPM.</span></span> <span class="sent" data-sid="s-abstract-1-2"><span class="en">VoxCPM2 advances the framework in three key dimensions: (i) capability, by unifying 30 languages, 9 Chinese dialects, natural-language voice design, style-controllable voice cloning, and high-fidelity continuation cloning within a single backbone; (ii) quality, through an asymmetric AudioVAE that encodes at 16 kHz and reconstructs at 48 kHz, enabling implicit super-resolution with high encoding efficiency; and (iii) scale, by jointly scaling the model to 2B parameters and the training data to over 2 million hours of multilingual speech.</span><button class="mk feat" data-sid="s-abstract-1-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-abstract-1-3"><span class="en">To support these diverse capabilities within one model, we introduce a unified sequence organization that expresses all generation modes through different arrangements of the same input building blocks, allowing joint training under a single set of parameters and objective.</span></span> <span class="sent" data-sid="s-abstract-1-4"><span class="en">VoxCPM2 achieves state-of-the-art or competitive performance on public zero-shot and instruction-following TTS benchmarks.</span></span> <span class="sent" data-sid="s-abstract-1-5"><span class="en">On our internal 30- language evaluation set, it attains an average WER of 1.68%.</span><button class="mk" data-sid="s-abstract-1-5" title="查看讲解">解</button></span> <span class="sent" data-sid="s-abstract-1-6"><span class="en">These results demonstrate that hierarchical continuous-latent modeling, without relying on any external discrete speech tokenizer, offers a viable and powerful foundation for large-scale multilingual and controllable speech generation.</span></span> <span class="sent" data-sid="s-abstract-1-7"><span class="en">The model weights, fine-tuning code, and inference tools are publicly released under the Apache 2.0 license to foster community research and development.</span></span> <span class="sent" data-sid="s-abstract-1-8"><span class="en">Background and VoxCPM Foundation . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-abstract-1-1"><span class="zh">我们提出 VoxCPM2，这是一个完全开源的多语言、可控语音生成基础模型，它扩展了 VoxCPM 的分层扩散-自回归建模范式。</span></span><span class="sent" data-sid="s-abstract-1-2"><span class="zh">VoxCPM2 在三个关键维度上推进了该框架：(i) 能力——在单一主干内统一了 30 种语言、9 种中文方言、自然语言声音设计、风格可控的声音克隆和高保真续写克隆；(ii) 质量——通过非对称 AudioVAE 以 16 kHz 编码、以 48 kHz 重建，在保持高编码效率的同时实现隐式超分；(iii) 规模——将模型扩展到 2B 参数，并把训练数据扩展到超过 200 万小时的多语言语音。</span><button class="mk feat" data-sid="s-abstract-1-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-abstract-1-3"><span class="zh">为在单个模型内支撑这些多样的能力，我们引入了统一序列组织（unified sequence organization），把全部生成模式表达为同一组输入构件的不同排布，从而可以在单一参数集与单一目标下联合训练。</span></span><span class="sent" data-sid="s-abstract-1-4"><span class="zh">VoxCPM2 在公开的零样本与指令跟随 TTS 基准上达到了最优或具有竞争力的性能。</span></span><span class="sent" data-sid="s-abstract-1-5"><span class="zh">在我们内部的 30 语言评测集上，它的平均词错误率（WER）为 1.68%。</span><button class="mk" data-sid="s-abstract-1-5" title="查看讲解">解</button></span><span class="sent" data-sid="s-abstract-1-6"><span class="zh">这些结果表明：不依赖任何外部离散语音 tokenizer 的分层连续隐空间建模，能够为大规模多语言、可控语音生成提供一条可行且强大的基础路线。</span></span><span class="sent" data-sid="s-abstract-1-7"><span class="zh">模型权重、微调代码与推理工具均以 Apache 2.0 许可证公开发布，以促进社区的研究与开发。</span></span><span class="sent" data-sid="s-abstract-1-8"><span class="zh">……背景与 VoxCPM 基础（目录残留行，页码指引略）……</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-abstract-1-1"><span class="en">We present VoxCPM2, a fully open-source multilingual and controllable speech generation foundation model that extends the hierarchical diffusion-autoregressive modeling paradigm of VoxCPM.</span></span> <span class="sent" data-sid="s-abstract-1-2"><span class="en">VoxCPM2 advances the framework in three key dimensions: (i) capability, by unifying 30 languages, 9 Chinese dialects, natural-language voice design, style-controllable voice cloning, and high-fidelity continuation cloning within a single backbone; (ii) quality, through an asymmetric AudioVAE that encodes at 16 kHz and reconstructs at 48 kHz, enabling implicit super-resolution with high encoding efficiency; and (iii) scale, by jointly scaling the model to 2B parameters and the training data to over 2 million hours of multilingual speech.</span><button class="mk feat" data-sid="s-abstract-1-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-abstract-1-3"><span class="en">To support these diverse capabilities within one model, we introduce a unified sequence organization that expresses all generation modes through different arrangements of the same input building blocks, allowing joint training under a single set of parameters and objective.</span></span> <span class="sent" data-sid="s-abstract-1-4"><span class="en">VoxCPM2 achieves state-of-the-art or competitive performance on public zero-shot and instruction-following TTS benchmarks.</span></span> <span class="sent" data-sid="s-abstract-1-5"><span class="en">On our internal 30- language evaluation set, it attains an average WER of 1.68%.</span><button class="mk" data-sid="s-abstract-1-5" title="查看讲解">解</button></span> <span class="sent" data-sid="s-abstract-1-6"><span class="en">These results demonstrate that hierarchical continuous-latent modeling, without relying on any external discrete speech tokenizer, offers a viable and powerful foundation for large-scale multilingual and controllable speech generation.</span></span> <span class="sent" data-sid="s-abstract-1-7"><span class="en">The model weights, fine-tuning code, and inference tools are publicly released under the Apache 2.0 license to foster community research and development.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-abstract-1-1"><span class="zh">我们提出 VoxCPM2，这是一个完全开源的多语言、可控语音生成基础模型，它扩展了 VoxCPM 的分层扩散-自回归建模范式。</span></span><span class="sent" data-sid="s-abstract-1-2"><span class="zh">VoxCPM2 在三个关键维度上推进了该框架：(i) 能力——在单一主干内统一了 30 种语言、9 种中文方言、自然语言声音设计、风格可控的声音克隆和高保真续写克隆；(ii) 质量——通过非对称 AudioVAE 以 16 kHz 编码、以 48 kHz 重建，在保持高编码效率的同时实现隐式超分；(iii) 规模——将模型扩展到 2B 参数，并把训练数据扩展到超过 200 万小时的多语言语音。</span><button class="mk feat" data-sid="s-abstract-1-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-abstract-1-3"><span class="zh">为在单个模型内支撑这些多样的能力，我们引入了统一序列组织（unified sequence organization），把全部生成模式表达为同一组输入构件的不同排布，从而可以在单一参数集与单一目标下联合训练。</span></span><span class="sent" data-sid="s-abstract-1-4"><span class="zh">VoxCPM2 在公开的零样本与指令跟随 TTS 基准上达到了最优或具有竞争力的性能。</span></span><span class="sent" data-sid="s-abstract-1-5"><span class="zh">在我们内部的 30 语言评测集上，它的平均词错误率（WER）为 1.68%。</span><button class="mk" data-sid="s-abstract-1-5" title="查看讲解">解</button></span><span class="sent" data-sid="s-abstract-1-6"><span class="zh">这些结果表明：不依赖任何外部离散语音 tokenizer 的分层连续隐空间建模，能够为大规模多语言、可控语音生成提供一条可行且强大的基础路线。</span></span><span class="sent" data-sid="s-abstract-1-7"><span class="zh">模型权重、微调代码与推理工具均以 Apache 2.0 许可证公开发布，以促进社区的研究与开发。</span></span></p>
           <div class="ann-zone"><div class="ann-panel" data-sid="s-abstract-1-2">
       <div class="ann-card kind-concept">
         <div class="ann-kind">概念</div>
@@ -193,146 +193,47 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-abstract-2">
-          <p class="en-lines"><span class="sent" data-sid="s-abstract-2-1"><span class="en">3 1.2 VoxCPM2: From Foundation to Full-Featured System . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-abstract-2-1"><span class="zh">……1.2 VoxCPM2：从基础模型到全功能系统（目录残留行，起始页码 3）……</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-abstract-3">
-          <p class="en-lines"><span class="sent" data-sid="s-abstract-3-1"><span class="en">3 1.3 Paper Organization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-abstract-3-1"><span class="zh">……1.3 论文结构（目录残留行，起始页码 3）……</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-abstract-4">
-          <p class="en-lines"><span class="sent" data-sid="s-abstract-4-1"><span class="en">4</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-abstract-4-1"><span class="zh">（目录残留页码 4。）</span></span></p>
-          
-        </div></section>
+<div class="eq" id="eq-abstract-1"><code>Background and VoxCPM Foundation . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-abstract-2"><code>3 1.2 VoxCPM2: From Foundation to Full-Featured System . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-abstract-3"><code>3 1.3 Paper Organization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-abstract-4"><code>4</code></div></section>
 <section>
-      <h2 class="sech lv1" id="sec-2"><span class="secnum">2</span> <span class="t-zh">2 相关工作</span><span class="t-en">Related Work</span></h2><div class="pblk" id="p-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-2-1-1"><span class="en">4 2.1 Large-Scale TTS Foundation Models . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-1-1"><span class="zh">（目录残留行：2.1 大规模 TTS 基础模型，起始页码 4。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-1"><span class="en">4 2.2 Controllable and Expressive Speech Generation . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-1"><span class="zh">（目录残留行：2.2 可控与富有表现力的语音生成，起始页码 4。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-1"><span class="en">6</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-1"><span class="zh">（目录残留页码 6。）</span></span></p>
-          
-        </div></section>
+      <h2 class="sech lv1" id="sec-2"><span class="secnum">2</span> <span class="t-zh">2 相关工作</span><span class="t-en">Related Work</span></h2><div class="eq" id="eq-2-1"><code>4 2.1 Large-Scale TTS Foundation Models . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-2-2"><code>4 2.2 Controllable and Expressive Speech Generation . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-2-3"><code>6</code></div></section>
 <section>
-      <h2 class="sech lv1" id="sec-3"><span class="secnum">3</span> <span class="t-zh">3 方法</span><span class="t-en">Methodology</span></h2><div class="pblk" id="p-3-1">
-          <p class="en-lines"><span class="sent" data-sid="s-3-1-1"><span class="en">6 3.1 Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-1-1"><span class="zh">（目录残留行：3.1 系统概览，起始页码 6。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-1"><span class="en">7 3.2 AudioVAE V2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-1"><span class="zh">（目录残留行：3.2 AudioVAE V2，起始页码 7。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-1"><span class="en">8 3.3 Backbone Refinements and Scaling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-1"><span class="zh">（目录残留行：3.3 主干改进与规模化，起始页码 8。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-1"><span class="en">8 3.3.1 Internal Architecture Refinements . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-1"><span class="zh">（目录残留行：3.3.1 内部架构改进，起始页码 8。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-5-1"><span class="en">8 3.3.2 Reference Audio Pathway . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-5-1"><span class="zh">（目录残留行：3.3.2 参考音频通路，起始页码 8。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-6">
-          <p class="en-lines"><span class="sent" data-sid="s-3-6-1"><span class="en">9 3.3.3 Configuration Scaling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-6-1"><span class="zh">（目录残留行：3.3.3 配置规模化，起始页码 9。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-7">
-          <p class="en-lines"><span class="sent" data-sid="s-3-7-1"><span class="en">9 3.4 Unified Sequence Organization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-7-1"><span class="zh">（目录残留行：3.4 统一序列组织，起始页码 9。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-8">
-          <p class="en-lines"><span class="sent" data-sid="s-3-8-1"><span class="en">9 3.5 Training Strategy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-8-1"><span class="zh">（目录残留行：3.5 训练策略，起始页码 9。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-9">
-          <p class="en-lines"><span class="sent" data-sid="s-3-9-1"><span class="en">10 3.6 Data Construction and Annotation for Controllability . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-9-1"><span class="zh">（目录残留行：3.6 面向可控性的数据构建与标注，起始页码 10。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-10">
-          <p class="en-lines"><span class="sent" data-sid="s-3-10-1"><span class="en">11 3.7 Inference . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-10-1"><span class="zh">（目录残留行：3.7 推理，起始页码 11。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-11">
-          <p class="en-lines"><span class="sent" data-sid="s-3-11-1"><span class="en">12</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-11-1"><span class="zh">（目录残留页码 12。）</span></span></p>
-          
-        </div></section>
+      <h2 class="sech lv1" id="sec-3"><span class="secnum">3</span> <span class="t-zh">3 方法</span><span class="t-en">Methodology</span></h2><div class="eq" id="eq-3-1"><code>6 3.1 Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-3-2"><code>7 3.2 AudioVAE V2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-3-3"><code>8 3.3 Backbone Refinements and Scaling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-3-4"><code>8 3.3.1 Internal Architecture Refinements . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-3-5"><code>8 3.3.2 Reference Audio Pathway . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-3-6"><code>9 3.3.3</code></div>
+<div class="eq" id="eq-3-7"><code>Configuration Scaling</code></div>
+<div class="eq" id="eq-3-8"><code>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-3-9"><code>9 3.4 Unified Sequence Organization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-3-10"><code>9 3.5 Training Strategy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-3-11"><code>10 3.6 Data Construction and Annotation for Controllability . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-3-12"><code>11 3.7</code></div>
+<div class="eq" id="eq-3-13"><code>Inference</code></div>
+<div class="eq" id="eq-3-14"><code>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-3-15"><code>12</code></div></section>
 <section>
-      <h2 class="sech lv1" id="sec-4"><span class="secnum">4</span> <span class="t-zh">4 实验与结果</span><span class="t-en">Experiments and Results</span></h2><div class="pblk" id="p-4-1">
-          <p class="en-lines"><span class="sent" data-sid="s-4-1-1"><span class="en">12 4.1 Experimental Setup . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-1-1"><span class="zh">（目录残留行：4.1 实验设置，起始页码 12。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-1"><span class="en">12 4.2 Zero-Shot Voice Cloning on Seed-TTS-Eval . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-1"><span class="zh">（目录残留行：4.2 Seed-TTS-Eval 上的零样本声音克隆，起始页码 12。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-3">
-          <p class="en-lines"><span class="sent" data-sid="s-4-3-1"><span class="en">13 4.3 Multilingual Capability . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-3-1"><span class="zh">（目录残留行：4.3 多语言能力，起始页码 13。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-4">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-1"><span class="en">14 4.4 Voice Design and Controllable Generation . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-1"><span class="zh">（目录残留行：4.4 声音设计与可控生成，起始页码 14。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-5">
-          <p class="en-lines"><span class="sent" data-sid="s-4-5-1"><span class="en">16 4.5 AudioVAE V2 Reconstruction Quality . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-5-1"><span class="zh">（目录残留行：4.5 AudioVAE V2 重建质量，起始页码 16。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-6">
-          <p class="en-lines"><span class="sent" data-sid="s-4-6-1"><span class="en">17 4.6 Inference Efficiency and Deployment . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-6-1"><span class="zh">（目录残留行：4.6 推理效率与部署，起始页码 17。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-7">
-          <p class="en-lines"><span class="sent" data-sid="s-4-7-1"><span class="en">18 4.7 Subjective Listening Tests . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-7-1"><span class="zh">（目录残留行：4.7 主观听测，起始页码 18。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-8">
-          <p class="en-lines"><span class="sent" data-sid="s-4-8-1"><span class="en">18</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-8-1"><span class="zh">（目录残留页码 18。）</span></span></p>
-          
-        </div></section>
+      <h2 class="sech lv1" id="sec-4"><span class="secnum">4</span> <span class="t-zh">4 实验与结果</span><span class="t-en">Experiments and Results</span></h2><div class="eq" id="eq-4-1"><code>12 4.1 Experimental Setup . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-4-2"><code>12 4.2 Zero-Shot Voice Cloning on Seed-TTS-Eval . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-4-3"><code>13 4.3 Multilingual Capability . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-4-4"><code>14 4.4 Voice Design and Controllable Generation . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-4-5"><code>16 4.5 AudioVAE V2 Reconstruction Quality . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-4-6"><code>17 4.6</code></div>
+<div class="eq" id="eq-4-7"><code>Inference Efficiency and Deployment</code></div>
+<div class="eq" id="eq-4-8"><code>. . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-4-9"><code>18 4.7</code></div>
+<div class="eq" id="eq-4-10"><code>Subjective Listening Tests</code></div>
+<div class="eq" id="eq-4-11"><code>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</code></div>
+<div class="eq" id="eq-4-12"><code>18</code></div></section>
 <section>
-      <h2 class="sech lv1" id="sec-5"><span class="secnum">5</span> <span class="t-zh">5 结论与未来工作</span><span class="t-en">Conclusion and Future Work</span></h2><div class="pblk" id="p-5-1">
-          <p class="en-lines"><span class="sent" data-sid="s-5-1-1"><span class="en">19</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-1-1"><span class="zh">（目录残留页码 19。）</span></span></p>
-          
-        </div></section>
+      <h2 class="sech lv1" id="sec-5"><span class="secnum">5</span> <span class="t-zh">5 结论与未来工作</span><span class="t-en">Conclusion and Future Work</span></h2><div class="eq" id="eq-5-1"><code>19</code></div></section>
 <section>
-      <h2 class="sech lv1" id="sec-6"><span class="secnum">6</span> <span class="t-zh">6 贡献者</span><span class="t-en">Contributors</span></h2><div class="pblk" id="p-6-1">
-          <p class="en-lines"><span class="sent" data-sid="s-6-1-1"><span class="en">20</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-6-1-1"><span class="zh">（目录残留页码 20。）</span></span></p>
-          
-        </div></section>
+      <h2 class="sech lv1" id="sec-6"><span class="secnum">6</span> <span class="t-zh">6 贡献者</span><span class="t-en">Contributors</span></h2><div class="eq" id="eq-6-1"><code>20</code></div></section>
 <section>
       <h2 class="sech lv1" id="sec-1"><span class="secnum">1</span> <span class="t-zh">1 引言</span><span class="t-en">Introduction</span></h2></section>
 <section>
@@ -461,10 +362,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-discrete-token-language-modeling-4">
-          <p class="en-lines"><span class="sent" data-sid="s-discrete-token-language-modeling-4-1"><span class="en">Multi-stage hybrid systems pair an autoregressive LM for semantic or coarse-acoustic tokens with a separate diffusion or flow-matching decoder for waveform rendering.</span></span> <span class="sent" data-sid="s-discrete-token-language-modeling-4-2"><span class="en">This design has become prevalent for high perceptual quality.</span></span> <span class="sent" data-sid="s-discrete-token-language-modeling-4-3"><span class="en">Early systems such as XTTS (Casanova et al., 2024) use a token-prediction LM conditioned on a speaker embedding with a HiFi-GAN-style vocoder; the CosyVoice series (Du et al., 2024a,b, 2025) replaces the acoustic side with a flow-matching decoder conditioned on supervised semantic tokens; and the FireRedTTS series (Guo et al., 2024; Xie et al., 2025a) extends this two-stage layout toward industrial-scale long-form dialogue.</span></span> <span class="sent" data-sid="s-discrete-token-language-modeling-4-4"><span class="en">Subsequent work refines the framework for more capability or better performance: IndexTTS2 (Zhou et al., 2026a) introduces explicit emotion and duration control, MiniMax-Speech (Zhang et al., 2025a) learns an intrinsic speaker encoder that extracts timbre features from a reference audio without requiring its transcription, and Voxtral TTS (Liu et al., 2026) explores a hybrid VQ–FSQ codec interface that combines discrete semantic indices with continuous-valued acoustic codes.</span></span> <span class="sent" data-sid="s-discrete-token-language-modeling-4-5"><span class="en">The same LM-plus-flow-matching pipeline has also been adopted as the speech-generation component of broader audio foundation models, including GLM-4-Voice (Zeng et al., 2024), Step-Audio (Huang et al., 2025a) and Kimi-Audio (Kimi Team, 2025).</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-discrete-token-language-modeling-4-1"><span class="zh">多阶段混合系统把负责语义或粗粒度声学 token 的自回归 LM，与负责波形渲染的独立扩散或流匹配解码器搭配使用。</span></span><span class="sent" data-sid="s-discrete-token-language-modeling-4-2"><span class="zh">这种设计已成为追求高感知质量的主流做法。</span></span><span class="sent" data-sid="s-discrete-token-language-modeling-4-3"><span class="zh">XTTS（Casanova et al., 2024）等早期系统用以说话人嵌入为条件的 token 预测 LM 加 HiFi-GAN 式声码器；CosyVoice 系列（Du et al., 2024a,b, 2025）把声学侧换成了以监督语义 token 为条件的流匹配解码器；FireRedTTS 系列（Guo et al., 2024; Xie et al., 2025a）则把这种两阶段布局推向工业级长对话场景。</span></span><span class="sent" data-sid="s-discrete-token-language-modeling-4-4"><span class="zh">后续工作从能力或性能上继续完善这一框架：IndexTTS2（Zhou et al., 2026a）引入显式的情感与时长控制；MiniMax-Speech（Zhang et al., 2025a）学习了一个内禀说话人编码器，无需参考音频的转录即可提取音色特征；Voxtral TTS（Liu et al., 2026）探索了 VQ-FSQ 混合 codec 接口，把离散语义索引与连续值声学码结合起来。</span></span><span class="sent" data-sid="s-discrete-token-language-modeling-4-5"><span class="zh">同样的「LM + 流匹配」流水线也被更广义音频基础模型用作语音生成组件，包括 GLM-4-Voice（Zeng et al., 2024）、Step-Audio（Huang et al., 2025a）和 Kimi-Audio（Kimi Team, 2025）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-discrete-token-language-modeling-4-1"><span class="en">Multi-stage hybrid systems pair an autoregressive LM for semantic or coarse-acoustic tokens with a separate diffusion or flow-matching decoder for waveform rendering.</span></span> <span class="sent" data-sid="s-discrete-token-language-modeling-4-2"><span class="en">This design has become prevalent for high perceptual quality.</span></span> <span class="sent" data-sid="s-discrete-token-language-modeling-4-3"><span class="en">Early systems such as XTTS (Casanova et al., 2024) use a token-prediction LM conditioned on a speaker embedding with a HiFi-GAN-style vocoder; the CosyVoice series (Du et al., 2024a,b, 2025) replaces the acoustic side with a flow-matching decoder conditioned on supervised semantic tokens; and the FireRedTTS series (Guo et al., 2024; Xie et al., 2025a) extends this two-stage layout toward industrial-scale long-form dialogue.</span></span> <span class="sent" data-sid="s-discrete-token-language-modeling-4-4"><span class="en">Subsequent work refines the framework for more capability or better performance: IndexTTS2 (Zhou et al., 2026a) introduces explicit emotion and duration control, MiniMax-Speech (Zhang et al., 2025a) learns an intrinsic speaker encoder that extracts timbre features from a reference audio without requiring its transcription, and Voxtral TTS (Liu et al., 2026) explores a hybrid VQ–FSQ codec interface that combines discrete semantic indices with continuous-valued acoustic codes.</span></span> <span class="sent" data-sid="s-discrete-token-language-modeling-4-5"><span class="en">The same LM-plus-flow-matching pipeline has also been adopted as the speech-generation component of broader audio foundation models, including GLM-4-Voice (Zeng et al., 2024), Step-Audio (Huang et al., 2025a) and Kimi-Audio (Kimi Team,</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-discrete-token-language-modeling-4-1"><span class="zh">多阶段混合系统把负责语义或粗粒度声学 token 的自回归 LM，与负责波形渲染的独立扩散或流匹配解码器搭配使用。</span></span><span class="sent" data-sid="s-discrete-token-language-modeling-4-2"><span class="zh">这种设计已成为追求高感知质量的主流做法。</span></span><span class="sent" data-sid="s-discrete-token-language-modeling-4-3"><span class="zh">XTTS（Casanova et al., 2024）等早期系统用以说话人嵌入为条件的 token 预测 LM 加 HiFi-GAN 式声码器；CosyVoice 系列（Du et al., 2024a,b, 2025）把声学侧换成了以监督语义 token 为条件的流匹配解码器；FireRedTTS 系列（Guo et al., 2024; Xie et al., 2025a）则把这种两阶段布局推向工业级长对话场景。</span></span><span class="sent" data-sid="s-discrete-token-language-modeling-4-4"><span class="zh">后续工作从能力或性能上继续完善这一框架：IndexTTS2（Zhou et al., 2026a）引入显式的情感与时长控制；MiniMax-Speech（Zhang et al., 2025a）学习了一个内禀说话人编码器，无需参考音频的转录即可提取音色特征；Voxtral TTS（Liu et al., 2026）探索了 VQ-FSQ 混合 codec 接口，把离散语义索引与连续值声学码结合起来。</span></span><span class="sent" data-sid="s-discrete-token-language-modeling-4-5"><span class="zh">（目录残留页码 4。）
+（原始数据照录）
+The same LM-plus-flow-matching pipeline has also been adopted as the speech-generation component of broader audio foundation models, including GLM-4-Voice (Zeng et al., 2024), Step-Audio (Huang et al., 2025a) and Kimi-Audio (Kimi Team,</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-discrete-token-language-modeling-1"><code>2025).</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-continuous-latent-and-diffusion-"><span class="t-zh">连续隐空间与扩散-自回归生成</span><span class="t-en">Continuous-latent and diffusion-autoregressive generation.</span></h3><div class="pblk" id="p-continuous-latent-and-diffusion--1">
           <p class="en-lines"><span class="sent" data-sid="s-continuous-latent-and-diffusion--1-1"><span class="en">A parallel line of research models continuous speech representations directly to preserve fine acoustic details lost during quantization.</span></span> <span class="sent" data-sid="s-continuous-latent-and-diffusion--1-2"><span class="en">Building upon early autoregressive mel-spectrogram models (Shen et al., 2018; Meng et al., 2025), recent methods employ denoising or flow-matching objectives over continuous latents.</span></span> <span class="sent" data-sid="s-continuous-latent-and-diffusion--1-3"><span class="en">Non-autoregressive models such as NaturalSpeech 2 (Shen et al., 2023) and Voicebox (Le et al., 2023) achieve high naturalness with competitive inference speed.</span></span> <span class="sent" data-sid="s-continuous-latent-and-diffusion--1-4"><span class="en">MegaTTS 3 (Jiang et al., 2025) introduces sparse alignment to guide a latent diffusion transformer for improved handling of difficult sentences and accents.</span></span> <span class="sent" data-sid="s-continuous-latent-and-diffusion--1-5"><span class="en">More end-to-end approaches include E2 TTS (Eskimez et al., 2024) and F5-TTS (Chen et al., 2025b), which remove explicit alignment and duration modules, as well as LongCat-AudioDiT (Meituan LongCat Team, 2026), which operates directly in waveform latent space using a Wav-VAE.</span></span> <span class="sent" data-sid="s-continuous-latent-and-diffusion--1-6"><span class="en">Diffusion-autoregressive hybrids instead couple a language model for long-range planning with a local diffusion module for fine acoustic synthesis, which offers higher expressiveness and inherits several key modeling advantages from large language models.</span></span> <span class="sent" data-sid="s-continuous-latent-and-diffusion--1-7"><span class="en">Notable examples include ARDiT (Li et al., 2024), which predicts continuous mel-spectrogram frames autoregressively using a decoder-only diffusion transformer, and DiTAR (Jia et al., 2025), which introduces a Local Diffusion Transformer (LocDiT) over patch-wise continuous latents conditioned on LM context—a foundational component reused in our work.</span></span> <span class="sent" data-sid="s-continuous-latent-and-diffusion--1-8"><span class="en">A series of follow-up works further extend this design (An et al., 2026; Wang et al., 2025b; Turetzky et al., 2025; Wu et al., 2025; Peng et al., 2025).</span></span></p>
@@ -499,49 +403,67 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-3-2"><span class="secnum">3</span> <span class="t-zh">3 方法（架构图页：离散文本 token、连续语音隐 token、文本隐状态、待生成目标音频、patch 级隐变量生成）</span><span class="t-en">Methodology Discrete Text Tokens: Continuous Speech Latent Tokens: Text Hidden States: Target Audio (to be generated) Patch-level Latents Generation</span></h2><div class="pblk" id="p-3-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-1-1"><span class="en">Current patch . . .</span></span></p>
+      <h2 class="sech lv1" id="sec-3-2"><span class="secnum">3</span> <span class="t-zh">Methodology T Discrete Text Tokens: Continuous Speech Latent Tokens: Text Hidden States: Target Audio (to be generated) Patch-level Latents Generation</span><span class="t-en">Methodology T Discrete Text Tokens: Continuous Speech Latent Tokens: Text Hidden States: Target Audio (to be generated) Patch-level Latents Generation</span></h2><div class="pblk" id="p-3-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-1-1"><span class="en">Current patch</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-1-1"><span class="zh">当前 patch……（图中文字残留，以下同）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-3-2-1"><code>. . .</code></div>
 <div class="pblk" id="p-3-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="en">LocDiT (flow matching) × N Steps LocDiT LocDiT t Prev. patch Noisy patch Residual Acoustic Language Model (RALM) Acoustic Embeddings:</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="zh">LocDiT（流匹配）× N 步；LocDiT；LocDiT；t；前一 patch；含噪 patch；残差声学语言模型（RALM）；声学嵌入：（图中文字残留）。</span></span></p>
           
         </div>
-<div class="tbwrap" id="tb-3-2-3"><p class="zh tb-note">图中文字残留块：标量语义隐状态（Scalar Semantic Hidden）、残差声学隐状态（Residual Acoustic Hidden）等图例标签。</p>
-          <details class="tb"><summary>原始表格文本（4 个单元格，PDF 抽取顺序，数字与原文一致；精确排版见原文 PDF）</summary><pre>Scalar Semantic Hidden:
-Residual Acoustic Hidden:
-...
-...</pre></details></div>
+<div class="pblk" id="p-3-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="en">Scalar Semantic Hidden:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="zh">（图内标签：Scalar Semantic Hidden（标量语义隐藏态）：）</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-2-4">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-4-1"><span class="en">Residual Acoustic Hidden:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-4-1"><span class="zh">（图内标签：Residual Acoustic Hidden（残差声学隐藏态）：）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-2-2"><code>...</code></div>
+<div class="eq" id="eq-3-2-3"><code>...</code></div>
+<div class="pblk" id="p-3-2-5">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-5-1"><span class="en">FSQ Unified Sequence Organization Basic TTS Continue / Stop (EOS decision) Stop Predictor</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-5-1"><span class="zh">FSQ；统一序列组织；基础 TTS；继续/停止（EOS 判定）；停止预测器……（图中文字残留）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-2-4"><code>. . .</code></div>
+<div class="pblk" id="p-3-2-6">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-6-1"><span class="en">FSQ FSQ Text-Semantic Language Model (TSLM) text tgt audio Voice Design tgt audio voice desc text</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-6-1"><span class="zh">FSQ；FSQ；文本-语义语言模型（TSLM）；text；tgt audio；声音设计（Voice Design）；tgt audio；voice desc；text……（图中文字残留）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-2-5"><code>. . .</code></div>
 <div class="pblk" id="p-3-2-7">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-7-1"><span class="en">FSQ Unified Sequence Organization Basic TTS Continue / Stop (EOS decision) Stop Predictor . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-7-1"><span class="zh">FSQ；统一序列组织；基础 TTS；继续/停止（EOS 判定）；停止预测器……（图中文字残留）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-7-1"><span class="en">T T T</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-7-1"><span class="zh">……（图中省略号残留）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-3-2-6"><code>...</code></div>
 <div class="pblk" id="p-3-2-8">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-8-1"><span class="en">FSQ FSQ Text-Semantic Language Model (TSLM) text tgt audio Voice Design tgt audio voice desc text . . .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-8-1"><span class="zh">FSQ；FSQ；文本-语义语言模型（TSLM）；text；tgt audio；声音设计（Voice Design）；tgt audio；voice desc；text……（图中文字残留）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-8-1"><span class="en">T T</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-8-1"><span class="zh">……（图中省略号残留）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-3-2-7"><code>...</code></div>
 <div class="pblk" id="p-3-2-9">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-9-1"><span class="en">...</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-9-1"><span class="zh">……（图中省略号残留）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-9-1"><span class="en">Controllable Cloning &lt;Ref_Start&gt; &lt;Ref_End&gt; LocEnc LocEnc LocEnc ref audio tgt audio style desc text BPE Tokenization Continuation Cloning</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-9-1"><span class="zh">可控克隆（Controllable Cloning）；&lt;Ref_Start&gt;；&lt;Ref_End&gt;；LocEnc；LocEnc；LocEnc；ref audio；tgt audio；style desc；text；BPE 分词；续写克隆（Continuation Cloning）……prompt_text | text；tgt audio；prompt audio；&quot;(A happy young man)VoxCPM is a TTS model...&quot;（图中文字残留）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-3-2-8"><code>. . .</code></div>
 <div class="pblk" id="p-3-2-10">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-10-1"><span class="en">...</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-10-1"><span class="zh">……（图中省略号残留）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-10-1"><span class="en">prompt_text | text tgt audio prompt audio &quot;(A happy young man)VoxCPM is a TTS model...&quot;</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-10-1"><span class="zh">可控克隆（Controllable Cloning）；&lt;Ref_Start&gt;；&lt;Ref_End&gt;；LocEnc；LocEnc；LocEnc；ref audio；tgt audio；style desc；text；BPE 分词；续写克隆（Continuation Cloning）……prompt_text | text；tgt audio；prompt audio；&quot;(A happy young man)VoxCPM is a TTS model...&quot;（图中文字残留）。</span></span></p>
           
         </div>
 <div class="pblk" id="p-3-2-11">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-11-1"><span class="en">Controllable Cloning &lt;Ref_Start&gt; &lt;Ref_End&gt; LocEnc LocEnc LocEnc ref audio tgt audio style desc text BPE Tokenization Continuation Cloning . . . prompt_text | text tgt audio prompt audio &quot;(A happy young man)VoxCPM is a TTS model...&quot;</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-11-1"><span class="zh">可控克隆（Controllable Cloning）；&lt;Ref_Start&gt;；&lt;Ref_End&gt;；LocEnc；LocEnc；LocEnc；ref audio；tgt audio；style desc；text；BPE 分词；续写克隆（Continuation Cloning）……prompt_text | text；tgt audio；prompt audio；&quot;(A happy young man)VoxCPM is a TTS model...&quot;（图中文字残留）。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-2-12">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-12-1"><span class="en">Text (w/ description) Reference Audio (optional) Prompt Audio (optional)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-12-1"><span class="zh">文本（可选附描述）；参考音频（可选）；提示音频（可选）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-11-1"><span class="en">Text (w/ description) Reference Audio (optional) Prompt Audio (optional)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-11-1"><span class="zh">文本（可选附描述）；参考音频（可选）；提示音频（可选）。</span></span></p>
           
         </div>
 <div class="cap" id="fig-3-2-1"><span class="cap-k">图</span><p class="en">Figure 1: Overall architecture of VoxCPM2.</p><p class="zh">图 1：VoxCPM2 的整体架构。</p></div></section>
@@ -559,28 +481,50 @@ Residual Acoustic Hidden:
       </div></div></div>
         </div>
 <div class="pblk" id="p-3-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-1-2-1"><span class="en">The autoregressive backbone consists of a Local Encoder (LocEnc), a Text-Semantic Language Model (TSLM), a Residual Acoustic Language Model (RALM), and a Local Diffusion Transformer (LocDiT), which together predict the next continuous latent patch step by step.</span></span> <span class="sent" data-sid="s-3-1-2-2"><span class="en">Following the formulation in VoxCPM, the generation at the i-th patch is expressed as: zi ∼LocDiT hFSQ , hresidual , zi−1; t , hFSQ = FSQ TSLM(T, E&lt;i) , hresidual = RALM HTSLM text , HFSQ ≤i ⊕E&lt;i , (1) where T denotes the input text tokens, E&lt;i = LocEnc(z&lt;i) is the patch-level acoustic history aggregated by the Local Encoder, and t is the diffusion timestep.</span></span> <span class="sent" data-sid="s-3-1-2-3"><span class="en">The FSQ layer applies per-dimension scalar quantization to the TSLM hidden states to produce the semi-discrete semantic skeleton hFSQ .</span></span> <span class="sent" data-sid="s-3-1-2-4"><span class="en">The RALM then recovers fine-grained acoustic details into hresidual by conditioning on the TSLM text-side hidden states HTSLM text together with a fusion (⊕) of the FSQ-quantized audio-side history HFSQ ≤i and the Local Encoder embeddings E&lt;i, granting causal access to the full sequence history.</span></span> <span class="sent" data-sid="s-3-1-2-5"><span class="en">A stop predictor on top of the TSLM-FSQ hidden states determines generation termination, and the entire pipeline is trained end-to-end.</span></span> <span class="sent" data-sid="s-3-1-2-6"><span class="en">We refer readers to the formal conference version of VoxCPM (Zhou et al., 2026b) for the full derivation.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-1-2-1"><span class="zh">自回归主干由局部编码器（LocEnc）、文本-语义语言模型（TSLM）、残差声学语言模型（RALM）和局部扩散 Transformer（LocDiT）组成，它们协同一步一步地预测下一个连续隐变量 patch。</span></span><span class="sent" data-sid="s-3-1-2-2"><span class="zh">沿用 VoxCPM 的形式化，第 i 个 patch 的生成可写为：zi ∼ LocDiT(hFSQ, hresidual, zi−1; t)，其中 hFSQ = FSQ(TSLM(T, E&lt;i))，hresidual = RALM(HTSLM_text, HFSQ_≤i ⊕ E&lt;i)（式 (1)）；T 表示输入文本 token，E&lt;i = LocEnc(z&lt;i) 是局部编码器聚合的 patch 级声学历史，t 是扩散步。</span></span><span class="sent" data-sid="s-3-1-2-3"><span class="zh">FSQ 层对 TSLM 隐状态做逐维标量量化，产出半离散的语义骨架 hFSQ。</span></span><span class="sent" data-sid="s-3-1-2-4"><span class="zh">随后 RALM 以 TSLM 文本侧隐状态 HTSLM_text，以及 FSQ 量化后的音频侧历史 HFSQ_≤i 与局部编码器嵌入 E&lt;i 的融合（⊕）为条件，把细粒度声学细节恢复进 hresidual，从而以因果方式访问完整序列历史。</span></span><span class="sent" data-sid="s-3-1-2-5"><span class="zh">TSLM-FSQ 隐状态之上的一个停止预测器决定生成何时终止，整条流水线端到端训练。</span></span><span class="sent" data-sid="s-3-1-2-6"><span class="zh">完整推导请读者参阅 VoxCPM 的正式会议版本（Zhou et al., 2026b）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-1-2-1"><span class="en">The autoregressive backbone consists of a Local Encoder (LocEnc), a Text-Semantic Language Model (TSLM), a Residual Acoustic Language Model (RALM), and a Local Diffusion Transformer (LocDiT), which together predict the next continuous latent patch step by step.</span></span> <span class="sent" data-sid="s-3-1-2-2"><span class="en">Following the formulation in VoxCPM, the generation at the i-th patch is expressed as: zi ∼LocDiT hFSQ i , hresidual i , zi−1; t</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-1-2-1"><span class="zh">自回归主干由局部编码器（LocEnc）、文本-语义语言模型（TSLM）、残差声学语言模型（RALM）和局部扩散 Transformer（LocDiT）组成，它们协同一步一步地预测下一个连续隐变量 patch。</span></span><span class="sent" data-sid="s-3-1-2-2"><span class="zh">沿用 VoxCPM 的表述，第 i 个 patch 的生成为：z_i ~ LocDiT(h^FSQ_i, h^residual_i, z_{i−1}; t)，h^FSQ_i = FSQ(TSLM(T, E_{&lt;i}))，h^residual_i = RALM(H^TSLM_text, H^FSQ_{≤i} ⊕ E_{&lt;i})（式 1），其中 T 为输入文本 token，E_{&lt;i} = LocEnc(z_{&lt;i}) 为 Local Encoder 聚合的 patch 级声学历史，t 为扩散时间步。</span></span></p>
           
         </div>
+<div class="eq" id="eq-3-1-1"><code>,</code></div>
+<div class="eq" id="eq-3-1-2"><code>hFSQ i = FSQ TSLM(T, E&lt;i)</code></div>
+<div class="eq" id="eq-3-1-3"><code>,</code></div>
 <div class="pblk" id="p-3-1-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-1-3-1"><span class="en">Eq. (1) already reflects two VoxCPM2-specific modifications relative to VoxCPM: (i) the LocDiT receives hFSQ and hresidual as separate conditioning tokens rather than a single summed vector hfinal = hFSQ + hresidual , and (ii) the fusion operator ⊕before the RALM is replaced by a learnable concatenation-projection (detailed in Section 3.3.1).</span></span> <span class="sent" data-sid="s-3-1-3-2"><span class="en">Three additional groups of changes transform VoxCPM into a high-fidelity, multilingual, and controllable system:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-1-3-1"><span class="zh">相对于 VoxCPM，式 (1) 已经体现了 VoxCPM2 特有的两处修改：(i) LocDiT 以独立的条件 token 接收 hFSQ 与 hresidual，而不是单个求和向量 hfinal = hFSQ + hresidual；(ii) RALM 之前的融合算子 ⊕ 被替换为可学习的拼接-投影（详见第 3.3.1 节）。</span></span><span class="sent" data-sid="s-3-1-3-2"><span class="zh">另外三组改动把 VoxCPM 塑造成一个高保真、多语言、可控的系统：</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-1-3-1"><span class="en">hresidual i = RALM HTSLM text , HFSQ ≤i ⊕E&lt;i</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-1-3-1"><span class="zh">沿用 VoxCPM 的表述，第 i 个 patch 的生成为：z_i ~ LocDiT(h^FSQ_i, h^residual_i, z_{i−1}; t)，h^FSQ_i = FSQ(TSLM(T, E_{&lt;i}))，h^residual_i = RALM(H^TSLM_text, H^FSQ_{≤i} ⊕ E_{&lt;i})（式 1），其中 T 为输入文本 token，E_{&lt;i} = LocEnc(z_{&lt;i}) 为 Local Encoder 聚合的 patch 级声学历史，t 为扩散时间步。</span></span></p>
           
         </div>
+<div class="eq" id="eq-3-1-4"><code>, (1)</code></div>
 <div class="pblk" id="p-3-1-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-1-4-1"><span class="en">• A redesigned latent codec, AudioVAE V2, that lifts the output sample rate to 48 kHz without lengthening the autoregressive sequence (Section 3.2).</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-1-4-1"><span class="zh">• 重新设计的隐空间 codec——AudioVAE V2，在不拉长自回归序列的前提下把输出采样率提升到 48 kHz（第 3.2 节）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-1-4-1"><span class="en">where T denotes the input text tokens, E&lt;i = LocEnc(z&lt;i) is the patch-level acoustic history aggregated by the Local Encoder, and t is the diffusion timestep.</span></span> <span class="sent" data-sid="s-3-1-4-2"><span class="en">The FSQ layer applies per-dimension scalar quantization to the TSLM hidden states to produce the semi-discrete semantic skeleton hFSQ i .</span></span> <span class="sent" data-sid="s-3-1-4-3"><span class="en">The RALM then recovers fine-grained acoustic details into hresidual i by conditioning on the TSLM text-side hidden states HTSLM text together with a fusion (⊕) of the FSQ-quantized audio-side history HFSQ ≤i and the Local Encoder embeddings E&lt;i, granting causal access to the full sequence history.</span></span> <span class="sent" data-sid="s-3-1-4-4"><span class="en">A stop predictor on top of the TSLM-FSQ hidden states determines generation termination, and the entire pipeline is trained end-to-end.</span></span> <span class="sent" data-sid="s-3-1-4-5"><span class="en">We refer readers to the formal conference version of VoxCPM (Zhou et al., 2026b) for the full derivation.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-1-4-1"><span class="zh">沿用 VoxCPM 的表述，第 i 个 patch 的生成为：z_i ~ LocDiT(h^FSQ_i, h^residual_i, z_{i−1}; t)，h^FSQ_i = FSQ(TSLM(T, E_{&lt;i}))，h^residual_i = RALM(H^TSLM_text, H^FSQ_{≤i} ⊕ E_{&lt;i})（式 1），其中 T 为输入文本 token，E_{&lt;i} = LocEnc(z_{&lt;i}) 为 Local Encoder 聚合的 patch 级声学历史，t 为扩散时间步。</span></span><span class="sent" data-sid="s-3-1-4-2"><span class="zh">FSQ 层对 TSLM 隐藏态做逐维标量量化，得到半离散的语义骨架 h^FSQ_i。</span></span><span class="sent" data-sid="s-3-1-4-3"><span class="zh">随后 RALM 以 TSLM 文本侧隐藏态 H^TSLM_text 与 FSQ 量化的音频侧历史 H^FSQ_{≤i} 及 Local Encoder 嵌入 E_{&lt;i} 的融合（⊕）为条件，把细粒度声学细节恢复为 h^residual_i，从而可以因果地访问完整序列历史。</span></span><span class="sent" data-sid="s-3-1-4-4"><span class="zh">TSLM-FSQ 隐状态之上的一个停止预测器决定生成何时终止，整条流水线端到端训练。</span></span><span class="sent" data-sid="s-3-1-4-5"><span class="zh">完整推导请读者参阅 VoxCPM 的正式会议版本（Zhou et al., 2026b）。</span></span></p>
           
         </div>
 <div class="pblk" id="p-3-1-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-1-5-1"><span class="en">• A refined backbone with wider information pathways, a new isolated reference-audio input, and substantially scaled capacity (Section 3.3). • A unified sequence organization that expresses basic TTS, voice design, reference cloning, controllable cloning, and continuation cloning as different input layouts over the same backbone (Section 3.4).</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-1-5-1"><span class="zh">• 改进的主干：更宽的信息通路、新增的独立参考音频输入，以及大幅扩展的容量（第 3.3 节）。• 统一序列组织，把基础 TTS、声音设计、参考克隆、可控克隆与续写克隆表达为同一主干上的不同输入布局（第 3.4 节）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-1-5-1"><span class="en">Eq. (1) already reflects two VoxCPM2-specific modifications relative to VoxCPM: (i) the LocDiT receives hFSQ i and hresidual i as separate conditioning tokens rather than a single summed vector hfinal i = hFSQ i + hresidual i</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-1-5-1"><span class="zh">式 (1) 已体现 VoxCPM2 相对 VoxCPM 的两处修改：(i) LocDiT 以 h^FSQ_i 与 h^residual_i 作为两个独立条件 token，而非单个求和向量 h^final_i = h^FSQ_i + h^residual_i；(ii) RALM 前的融合算子 ⊕ 被替换为可学习的拼接-投影（详见 3.3.1 节）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-3-1-5"><code>,</code></div>
 <div class="pblk" id="p-3-1-6">
-          <p class="en-lines"><span class="sent" data-sid="s-3-1-6-1"><span class="en">The training strategy, data construction pipeline, and inference recipe are described in Sections 3.5–3.7.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-1-6-1"><span class="zh">训练策略、数据构建流水线与推理方案见第 3.5–3.7 节。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-1-6-1"><span class="en">and (ii) the fusion operator ⊕before the RALM is replaced by a learnable concatenation-projection (detailed in Section 3.3.1).</span></span> <span class="sent" data-sid="s-3-1-6-2"><span class="en">Three additional groups of changes transform VoxCPM into a high-fidelity, multilingual, and controllable system:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-1-6-1"><span class="zh">3.
+（原始数据照录）
+and (ii) the fusion operator ⊕before the RALM is replaced by a learnable concatenation-projection (detailed in Section 3.3.1).</span></span><span class="sent" data-sid="s-3-1-6-2"><span class="zh">另外三组改动把 VoxCPM 塑造成一个高保真、多语言、可控的系统：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-1-7">
+          <p class="en-lines"><span class="sent" data-sid="s-3-1-7-1"><span class="en">• A redesigned latent codec, AudioVAE V2, that lifts the output sample rate to 48 kHz without lengthening the autoregressive sequence (Section 3.2).</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-1-7-1"><span class="zh">• 重新设计的隐空间 codec——AudioVAE V2，在不拉长自回归序列的前提下把输出采样率提升到 48 kHz（第 3.2 节）。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-1-8">
+          <p class="en-lines"><span class="sent" data-sid="s-3-1-8-1"><span class="en">• A refined backbone with wider information pathways, a new isolated reference-audio input, and substantially scaled capacity (Section 3.3). • A unified sequence organization that expresses basic TTS, voice design, reference cloning, controllable cloning, and continuation cloning as different input layouts over the same backbone (Section 3.4).</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-1-8-1"><span class="zh">• 改进的主干：更宽的信息通路、新增的独立参考音频输入，以及大幅扩展的容量（第 3.3 节）。• 统一序列组织，把基础 TTS、声音设计、参考克隆、可控克隆与续写克隆表达为同一主干上的不同输入布局（第 3.4 节）。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-3-1-9">
+          <p class="en-lines"><span class="sent" data-sid="s-3-1-9-1"><span class="en">The training strategy, data construction pipeline, and inference recipe are described in Sections 3.5–3.7.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-1-9-1"><span class="zh">训练策略、数据构建流水线与推理方案见第 3.5–3.7 节。</span></span></p>
           
         </div></section>
 <section>
@@ -609,13 +553,19 @@ Residual Acoustic Hidden:
         </div></section>
 <section>
       <h3 class="sech lv2" id="sec-3-3-1"><span class="secnum">3.3.1</span> <span class="t-zh">3.3.1 内部架构改进（RALM 前的拼接-投影融合）</span><span class="t-en">Internal Architecture Refinements Concatenation-projection fusion before RALM.</span></h3><div class="pblk" id="p-3-3-1-1">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-1-1-1"><span class="en">In VoxCPM, the FSQ-quantized semantic state hFSQ and the Local Encoder embedding Ei ∈E&lt;i were merged by element-wise summation before entering the RALM.</span></span> <span class="sent" data-sid="s-3-3-1-1-2"><span class="en">VoxCPM2 replaces this with a learnable concatenation-projection, hres_in = Wfuse hFSQ ∥Ei , (2) where [ · ∥· ] denotes channel-wise concatenation.</span></span> <span class="sent" data-sid="s-3-3-1-1-3"><span class="en">This preserves richer information from both streams and allows the model to learn optimal combination weights.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-1-1-1"><span class="zh">在 VoxCPM 中，FSQ 量化后的语义状态 hFSQ 与局部编码器嵌入 Ei ∈ E&lt;i 在进入 RALM 之前以逐元素相加的方式合并。</span></span><span class="sent" data-sid="s-3-3-1-1-2"><span class="zh">VoxCPM2 把它替换为可学习的拼接-投影：hres_in = Wfuse [hFSQ ∥ Ei]（式 (2)），其中 [· ∥ ·] 表示按通道拼接。</span></span><span class="sent" data-sid="s-3-3-1-1-3"><span class="zh">这保留了两路信息流中更丰富的内容，也让模型能够学习到最优的组合权重。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-3-1-1-1"><span class="en">In VoxCPM, the FSQ-quantized semantic state hFSQ i and the Local Encoder embedding Ei ∈E&lt;i were merged by element-wise summation before entering the RALM.</span></span> <span class="sent" data-sid="s-3-3-1-1-2"><span class="en">VoxCPM2 replaces this with a learnable concatenation-projection, hres_in i = Wfuse hFSQ i ∥Ei</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-3-1-1-1"><span class="zh">在 VoxCPM 中，FSQ 量化的语义状态 h^FSQ_i 与 Local Encoder 嵌入 E_i ∈ E_{&lt;i} 经逐元素求和合并后送入 RALM。</span></span><span class="sent" data-sid="s-3-3-1-1-2"><span class="zh">VoxCPM2 将其替换为可学习的拼接-投影：h^res_in_i = W_fuse·[h^FSQ_i ∥ E_i]（式 2），其中 [·∥·] 表示通道维拼接。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-3-1-1"><code>, (2)</code></div>
+<div class="pblk" id="p-3-3-1-2">
+          <p class="en-lines"><span class="sent" data-sid="s-3-3-1-2-1"><span class="en">where [ · ∥· ] denotes channel-wise concatenation.</span></span> <span class="sent" data-sid="s-3-3-1-2-2"><span class="en">This preserves richer information from both streams and allows the model to learn optimal combination weights.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-3-1-2-1"><span class="zh">VoxCPM2 将其替换为可学习的拼接-投影：h^res_in_i = W_fuse·[h^FSQ_i ∥ E_i]（式 2），其中 [·∥·] 表示通道维拼接。</span></span><span class="sent" data-sid="s-3-3-1-2-2"><span class="zh">这保留了两路信息流中更丰富的内容，也让模型能够学习到最优的组合权重。</span></span></p>
           
         </div></section>
 <section>
       <h3 class="sech lv2" id="sec-multi-token-conditioning-prefix-"><span class="t-zh">LocDiT 中的多 token 条件前缀</span><span class="t-en">Multi-token conditioning prefix in LocDiT.</span></h3><div class="pblk" id="p-multi-token-conditioning-prefix--1">
-          <p class="en-lines"><span class="sent" data-sid="s-multi-token-conditioning-prefix--1-1"><span class="en">In VoxCPM, the semantic state, the residual state, and the timestep embedding were summed into a single conditioning token.</span></span> <span class="sent" data-sid="s-multi-token-conditioning-prefix--1-2"><span class="en">VoxCPM2 instead projects the three signals separately and feeds them as distinct prefix tokens to the LocDiT.</span></span> <span class="sent" data-sid="s-multi-token-conditioning-prefix--1-3"><span class="en">This avoids early information collapse and provides higher-bandwidth conditioning from the language model to the diffusion decoder.</span><button class="mk feat" data-sid="s-multi-token-conditioning-prefix--1-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-multi-token-conditioning-prefix--1-4"><span class="en">The process is: [ µsem, µres, µt, z(1) i−1, . . . , z(P ) i−1, ˜z(1) , . . . , ˜z(P ) ], where µsem, µres, µt are the projections of hFSQ , hresidual , and the diffusion timestep t, respectively, and z(1...P ) denotes the P latent frames inside one patch (the previous clean patch and the current noisy patch).</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-multi-token-conditioning-prefix--1-1"><span class="en">In VoxCPM, the semantic state, the residual state, and the timestep embedding were summed into a single conditioning token.</span></span> <span class="sent" data-sid="s-multi-token-conditioning-prefix--1-2"><span class="en">VoxCPM2 instead projects the three signals separately and feeds them as distinct prefix tokens to the LocDiT.</span></span> <span class="sent" data-sid="s-multi-token-conditioning-prefix--1-3"><span class="en">This avoids early information collapse and provides higher-bandwidth conditioning from the language model to the diffusion decoder.</span><button class="mk feat" data-sid="s-multi-token-conditioning-prefix--1-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-multi-token-conditioning-prefix--1-4"><span class="en">The process is: [ µsem, µres, µt, z(1)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-multi-token-conditioning-prefix--1-1"><span class="zh">在 VoxCPM 中，语义状态、残差状态与扩散步嵌入被求和为单个条件 token。</span></span><span class="sent" data-sid="s-multi-token-conditioning-prefix--1-2"><span class="zh">VoxCPM2 则将三路信号分别投影，作为不同的前缀 token 送入 LocDiT。</span></span><span class="sent" data-sid="s-multi-token-conditioning-prefix--1-3"><span class="zh">这避免了信息在进入扩散解码器之前过早坍缩，为从语言模型到扩散解码器提供了更高带宽的条件通道。</span><button class="mk feat" data-sid="s-multi-token-conditioning-prefix--1-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-multi-token-conditioning-prefix--1-4"><span class="zh">具体序列为：[µsem, µres, µt, z(1)_i−1, …, z(P)_i−1, ẑ(1), …, ẑ(P)]，其中 µsem、µres、µt 分别是 hFSQ、hresidual 与扩散步 t 的投影，z(1...P) 表示一个 patch 内的 P 个隐帧（即前一干净 patch 与当前含噪 patch）。</span></span></p>
           <div class="ann-zone"><div class="ann-panel" data-sid="s-multi-token-conditioning-prefix--1-3">
       <div class="ann-card kind-concept">
@@ -626,9 +576,19 @@ Residual Acoustic Hidden:
         
       </div></div></div>
         </div>
+<div class="eq" id="eq-multi-token-conditioning-prefix--1"><code>i−1, . . . , z(P )</code></div>
+<div class="eq" id="eq-multi-token-conditioning-prefix--2"><code>i−1, ˜z(1) i</code></div>
+<div class="eq" id="eq-multi-token-conditioning-prefix--3"><code>, . . . , ˜z(P )</code></div>
+<div class="eq" id="eq-multi-token-conditioning-prefix--4"><code>i</code></div>
+<div class="eq" id="eq-multi-token-conditioning-prefix--5"><code>],</code></div>
 <div class="pblk" id="p-multi-token-conditioning-prefix--2">
-          <p class="en-lines"><span class="sent" data-sid="s-multi-token-conditioning-prefix--2-1"><span class="en">The LocDiT attends over this sequence with full attention and predicts the velocity field at the noisy-patch positions.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-multi-token-conditioning-prefix--2-1"><span class="zh">LocDiT 以全注意力机制处理这一序列，并在含噪 patch 的位置上预测速度场（velocity field）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-multi-token-conditioning-prefix--2-1"><span class="en">where µsem, µres, µt are the projections of hFSQ i , hresidual i , and the diffusion timestep t, respectively, and z(1...P ) denotes the P latent frames inside one patch (the previous clean patch and the current noisy patch).</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-multi-token-conditioning-prefix--2-1"><span class="zh">1.</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-multi-token-conditioning-prefix--3">
+          <p class="en-lines"><span class="sent" data-sid="s-multi-token-conditioning-prefix--3-1"><span class="en">The LocDiT attends over this sequence with full attention and predicts the velocity field at the noisy-patch positions.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-multi-token-conditioning-prefix--3-1"><span class="zh">LocDiT 以全注意力机制处理这一序列，并在含噪 patch 的位置上预测速度场（velocity field）。</span></span></p>
           
         </div></section>
 <section>
@@ -678,10 +638,31 @@ Residual Acoustic Hidden:
         </div>
 <div class="cap" id="tab-3-3-3-1"><span class="cap-k">表</span><p class="en">Table 1: Configuration comparison across the VoxCPM family.</p><p class="zh">表 1：VoxCPM 家族各版本的配置对比。</p></div>
 <div class="pblk" id="p-3-3-3-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-3-2-1"><span class="en">Component VoxCPM VoxCPM1.5 Backbone parameters ∼0.6B ∼0.8B ∼2B LocEnc TSLM MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-1B (28L, H=2048) FSQ latent dim 256 256 512 RALM LocDiT Patch size P 2 4 4 LM-side token rate 12.5 Hz 6.25 Hz 6.25 Hz Max sequence length 4096 4096 8192 Input sample rate 16 kHz 44.1 kHz 16 kHz Output sample rate 16 kHz 44.1 kHz 48 kHz</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-3-2-1"><span class="zh">（Table 1 数值行残留，各列依次为：组件 | VoxCPM | VoxCPM1.5；主干参数约 0.6B、约 0.8B、约 2B；LocEnc 与 TSLM 依次采用 MiniCPM-4-0.5B（24 层，H=1024）、MiniCPM-4-0.5B（24 层，H=1024）、MiniCPM-4-1B（28 层，H=2048）；FSQ 隐维度 256、256、512；RALM 与 LocDiT；patch 大小 P 为 2、4、4；LM 侧 token 率 12.5 Hz、6.25 Hz、6.25 Hz；最大序列长度 4096、4096、8192；输入采样率 16 kHz、44.1 kHz、16 kHz；输出采样率 16 kHz、44.1 kHz、48 kHz。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-3-3-2-1"><span class="en">Component VoxCPM VoxCPM1.5 VoxCPM2 Backbone parameters ∼0.6B ∼0.8B ∼2B LocEnc 4L, H=1024 8L, H=1024 12L, H=1024 TSLM MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-1B (28L, H=2048) FSQ latent dim</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-3-3-2-1"><span class="zh">（目录残留页码 4。）
+（原始数据照录）
+Component VoxCPM VoxCPM1.5 VoxCPM2 Backbone parameters ∼0.6B ∼0.8B ∼2B LocEnc 4L, H=1024 8L, H=1024 12L, H=1024 TSLM MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-1B (28L, H=2048) FSQ latent dim</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-3-3-3-1"><code>256 256 512</code></div>
+<div class="pblk" id="p-3-3-3-3">
+          <p class="en-lines"><span class="sent" data-sid="s-3-3-3-3-1"><span class="en">RALM 6L, H=1024 8L, H=1024 8L, H=2048 LocDiT 4L, H=1024 8L, H=1024 12L, H=1024 Patch size P</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-3-3-3-1"><span class="zh">（目录残留页码 4。）
+（原始数据照录）
+RALM 6L, H=1024 8L, H=1024 8L, H=2048 LocDiT 4L, H=1024 8L, H=1024 12L, H=1024 Patch size P</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-3-3-2"><code>2 4 4</code></div>
+<div class="pblk" id="p-3-3-3-4">
+          <p class="en-lines"><span class="sent" data-sid="s-3-3-3-4-1"><span class="en">LM-side token rate 12.5 Hz 6.25 Hz 6.25 Hz Max sequence length</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-3-3-4-1"><span class="zh">（目录残留页码 6。）
+（原始数据照录）
+LM-side token rate 12.5 Hz 6.25 Hz 6.25 Hz Max sequence length</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-3-3-3"><code>4096 4096 8192</code></div>
+<div class="tbwrap" id="p-3-3-3-5"><p class="zh tb-note">（目录残留页码 4。）</p>
+          <details class="tb"><summary>原始表格文本（18 个单元格，PDF 抽取顺序，数字与原文一致；精确排版见原文 PDF）</summary><pre>Input sample rate 16 kHz 44.1 kHz 16 kHz Output sample rate 16 kHz 44.1 kHz 48 kHz</pre></details></div></section>
 <section>
       <h3 class="sech lv2" id="sec-3-4"><span class="secnum">3.4</span> <span class="t-zh">3.4 统一序列组织</span><span class="t-en">Unified Sequence Organization</span></h3><div class="pblk" id="p-3-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-1-1"><span class="en">VoxCPM2 supports five generation configurations through a single unified sequence organization rather than mode-specific modules.</span></span> <span class="sent" data-sid="s-3-4-1-2"><span class="en">These configurations are built upon the same set of input building blocks, allowing the model to infer the intended behavior directly from the input layout.</span></span> <span class="sent" data-sid="s-3-4-1-3"><span class="en">Although we refer to five configurations for completeness, they can be grouped into four primary capabilities: basic TTS, voice design, reference-based cloning (with or without additional style control), and continuation cloning.</span></span></p>
@@ -730,16 +711,15 @@ Residual Acoustic Hidden:
           
         </div>
 <div class="pblk" id="p-three-stage-progressive-curricul-2">
-          <p class="en-lines"><span class="sent" data-sid="s-three-stage-progressive-curricul-2-1"><span class="en">1.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-2"><span class="en">Multilingual TTS pretraining.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-3"><span class="en">The backbone is trained on large-scale multilingual &lt;transcription, audio&gt; pairs for basic TTS and continuation cloning.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-4"><span class="en">Audio segments are limited to 60 s and the maximum LM sequence length is set to 4096 to ensure stable and fast optimization.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-5"><span class="en">This stage establishes solid pronunciation and prosody across all 30 target languages. 2.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-6"><span class="en">Joint TTS and controllable TTS pretraining.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-7"><span class="en">Building upon stage 1, we retain a large proportion of plain TTS data to preserve base synthesis quality, while gradually introducing controllable data at an increasing ratio.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-8"><span class="en">This includes (i) speech annotated with natural-language voice and style descriptions to supervise voice design, and (ii) &lt;reference audio, transcription, target audio&gt; triplets to train both reference-based and controllable cloning.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-9"><span class="en">We extend the maximum sequence length to 8192 and audio duration to up to 3 minutes.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-10"><span class="en">Stages 1 and 2 together account for the majority of training compute. 3.</span><button class="mk" data-sid="s-three-stage-progressive-curricul-2-10" title="查看讲解">解</button></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-11"><span class="en">High-quality annealing SFT.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-12"><span class="en">The final stage uses a curated high-quality subset with more expressive speech and precisely annotated controllable data.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-13"><span class="en">Controllable samples occupy a significantly larger proportion than in Stage 2, including a higher ratio of reference-audio-based controllable cloning examples.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-14"><span class="en">We maintain the 8192-token context, utilize diverse samples ranging from 2 sec to 5 min, adopt a balanced language-level sampling ratio, and apply learning-rate annealing to further refine performance.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-three-stage-progressive-curricul-2-1"><span class="zh">1.</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-2"><span class="zh">多语言 TTS 预训练。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-3"><span class="zh">主干在大规模多语言 ⟨transcription, audio⟩ 对上训练基础 TTS 与续写克隆。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-4"><span class="zh">音频片段限制在 60 s 以内，LM 最大序列长度设为 4096，以保证优化稳定且高效。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-5"><span class="zh">这一阶段在全部 30 种目标语言上建立可靠的发音与韵律基础。2.</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-6"><span class="zh">TTS 与可控 TTS 联合预训练。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-7"><span class="zh">在第 1 阶段的基础上，我们保留较大比例的普通 TTS 数据以守住基础合成质量，同时按逐渐提高的比例引入可控数据。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-8"><span class="zh">这包括：(i) 带自然语言音色与风格描述标注的语音，用于监督声音设计；(ii) ⟨reference audio, transcription, target audio⟩ 三元组，用于训练参考克隆与可控克隆。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-9"><span class="zh">我们把最大序列长度扩展到 8192，音频时长放宽到最长 3 分钟。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-10"><span class="zh">第 1、2 阶段合计占训练算力的大头。3.</span><button class="mk" data-sid="s-three-stage-progressive-curricul-2-10" title="查看讲解">解</button></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-11"><span class="zh">高质量退火 SFT（监督微调）。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-12"><span class="zh">最后阶段使用精选的高质量子集，其中包含更具表现力的语音与精确标注的可控数据。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-13"><span class="zh">可控样本的占比显著高于第 2 阶段，其中基于参考音频的可控克隆样本比例也更高。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-14"><span class="zh">我们保持 8192 token 的上下文，使用时长从 2 秒到 5 分钟的多样样本，采用各语言均衡的采样比例，并施加学习率退火以进一步打磨性能。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-three-stage-progressive-curricul-2-10">
-      <div class="ann-card kind-number">
-        <div class="ann-kind">数字怎么理解</div>
-        <div class="ann-title">算力大头在前两阶段</div>
-        <div class="ann-quote">Stages 1 and 2 together account for the majority of training compute</div>
-        <div class="exp exp-tech">三阶段课程里，算力大头在前两个阶段（多语言预训练 + 可控联合预训练），第 3 阶段的高质量退火 SFT 只是「精修」。这个配比符合直觉：基础发音与韵律需要海量数据暴力覆盖，而风格可控性可以靠几千小时精选标注数据在后期注入——和 LLM 领域「预训练决定上限、SFT 决定对齐」的经验一致。</div>
-        
-      </div></div></div>
+          <p class="en-lines"><span class="sent" data-sid="s-three-stage-progressive-curricul-2-1"><span class="en">1.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-2"><span class="en">Multilingual TTS pretraining.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-3"><span class="en">The backbone is trained on large-scale multilingual &lt;transcription, audio&gt; pairs for basic TTS and continuation cloning.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-4"><span class="en">Audio segments are limited to 60 s and the maximum LM sequence length is set to 4096 to ensure stable and fast optimization.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-5"><span class="en">This stage establishes solid pronunciation and prosody across all 30 target languages. 2.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-6"><span class="en">Joint TTS and controllable TTS pretraining.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-7"><span class="en">Building upon stage 1, we retain a large proportion of plain TTS data to preserve base synthesis quality, while gradually introducing controllable data at an increasing ratio.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-8"><span class="en">This includes (i) speech annotated with natural-language voice and style descriptions to supervise voice design, and (ii) &lt;reference audio, transcription, target audio&gt; triplets to train both reference-based and controllable cloning.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-2-9"><span class="en">We extend the maximum sequence length</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-three-stage-progressive-curricul-2-1"><span class="zh">1.</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-2"><span class="zh">多语言 TTS 预训练。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-3"><span class="zh">主干在大规模多语言 ⟨transcription, audio⟩ 对上训练基础 TTS 与续写克隆。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-4"><span class="zh">音频片段限制在 60 s 以内，LM 最大序列长度设为 4096，以保证优化稳定且高效。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-5"><span class="zh">这一阶段在全部 30 种目标语言上建立可靠的发音与韵律基础。2.</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-6"><span class="zh">TTS 与可控 TTS 联合预训练。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-7"><span class="zh">在第 1 阶段的基础上，我们保留较大比例的普通 TTS 数据以守住基础合成质量，同时按逐渐提高的比例引入可控数据。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-8"><span class="zh">这包括：(i) 带自然语言音色与风格描述标注的语音，用于监督声音设计；(ii) ⟨reference audio, transcription, target audio⟩ 三元组，用于训练参考克隆与可控克隆。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-2-9"><span class="zh">我们把最大序列长度扩展到 8192，音频时长放宽到最长 3 分钟。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-three-stage-progressive-curricul-1"><code>to 8192 and audio duration to up to 3 minutes. Stages 1 and 2 together account for the majority of</code></div>
+<div class="pblk" id="p-three-stage-progressive-curricul-3">
+          <p class="en-lines"><span class="sent" data-sid="s-three-stage-progressive-curricul-3-1"><span class="en">training compute. 3.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-3-2"><span class="en">High-quality annealing SFT.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-3-3"><span class="en">The final stage uses a curated high-quality subset with more expressive speech and precisely annotated controllable data.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-3-4"><span class="en">Controllable samples occupy a significantly larger proportion than in Stage 2, including a higher ratio of reference-audio-based controllable cloning examples.</span></span> <span class="sent" data-sid="s-three-stage-progressive-curricul-3-5"><span class="en">We maintain the 8192-token context, utilize diverse samples ranging from 2 sec to 5 min, adopt a balanced language-level sampling ratio, and apply learning-rate annealing to further refine performance.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-three-stage-progressive-curricul-3-1"><span class="zh">3.</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-3-2"><span class="zh">高质量退火 SFT（监督微调）。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-3-3"><span class="zh">最后阶段使用精选的高质量子集，其中包含更具表现力的语音与精确标注的可控数据。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-3-4"><span class="zh">可控样本的占比显著高于第 2 阶段，其中基于参考音频的可控克隆样本比例也更高。</span></span><span class="sent" data-sid="s-three-stage-progressive-curricul-3-5"><span class="zh">我们保持 8192 token 的上下文，使用时长从 2 秒到 5 分钟的多样样本，采用各语言均衡的采样比例，并施加学习率退火以进一步打磨性能。</span></span></p>
+          
         </div></section>
 <section>
       <h3 class="sech lv2" id="sec-3-6"><span class="secnum">3.6</span> <span class="t-zh">3.6 面向可控性的数据构建与标注</span><span class="t-en">Data Construction and Annotation for Controllability</span></h3><div class="pblk" id="p-3-6-1">
@@ -840,11 +820,70 @@ Residual Acoustic Hidden:
         </div>
 <div class="cap" id="tab-4-1-1"><span class="cap-k">表</span><p class="en">Table 3: Zero-shot voice cloning on Seed-TTS-Eval. WER (English) / CER (Chinese, Hard) reported in %; SIM in %. Bold marks the strongest open-source result per column; italic marks the strongest closed-source result per column. “–” indicates the result is not reported in the source publication or is unavailable.</p><p class="zh">表 3：Seed-TTS-Eval 上的零样本语音克隆。WER（英文）/ CER（中文、困难子集）以 % 报告；SIM 以 % 报告。加粗表示该列最强开源结果；斜体表示该列最强闭源结果；「–」表示源文献未报告或不可得。</p></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-model"><span class="t-zh">模型（Seed-TTS-Eval 结果表行）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-1">
-          <p class="en-lines"><span class="sent" data-sid="s-model-1-1"><span class="en">Params OS test-EN test-ZH test-ZH-Hard WER↓ CER↓ CER↓ Closed-source MegaTTS3 (Jiang et al., 2025) 2.79 77.1 1.52 79.0 DiTAR (Jia et al., 2025) 1.69 73.5 1.02 75.3 CosyVoice 3 (Du et al., 2025) 2.22 72.0 1.12 78.1 5.83 75.8 Seed-TTS (Anastassiou et al., 2024) 2.25 76.2 1.12 79.6 7.59 77.6 MiniMax-Speech (Zhang et al., 2025a) 1.65 69.2 0.83 78.3 CosyVoice3.5 1.57 73.8 0.87 79.7 5.71 78.6 Open-source F5-TTS (Chen et al., 2025b) 2.00 67.0 1.53 76.0 8.67 71.3 MaskGCT (Wang et al., 2025d) 2.62 71.7 2.27 77.4 CosyVoice (Du et al., 2024a) 4.29 60.9 3.63 72.3 11.75 70.9 CosyVoice 2 (Du et al., 2024b) 3.09 65.9 1.38 75.7 6.83 72.4 CosyVoice 3 (Du et al., 2025) 2.02 71.8 1.16 78.0 6.08 75.8 Spark-TTS (Wang et al., 2025c) 3.14 57.3 1.54 66.0 FireRedTTS (Guo et al., 2024) 3.82 46.0 1.51 63.5 17.45 62.1 FireRedTTS-2 (Xie et al., 2025a) 1.95 66.5 1.14 73.6 Qwen2.5-Omni (Xu et al., 2025a) 2.72 63.2 1.70 75.2 7.97 74.7 Qwen3-Omni (Xu et al., 2025b) 30B-A3B 1.39 1.07 OpenAudio-s1-mini (OpenAudio, 2024) 1.94 55.0 1.18 68.5 23.37 64.3 IndexTTS2 (Zhou et al., 2026a) 2.23 70.6 1.03 76.5 7.12 75.5 VibeVoice (Peng et al., 2025) 3.04 68.9 1.16 74.4 HiggsAudio-v2 (Boson AI, 2025) 2.44 67.7 1.50 74.0 55.07 65.6 ZipVoice (Zhu et al., 2025) 1.64 66.8 1.40 75.1 MOSS-TTS (Gong et al., 2026) 1.85 73.4 1.20 78.8 Qwen3-TTS (Hu et al., 2026a) 1.23 71.7 1.22 77.0 6.76 74.8 Fish Audio S2 (Liao et al., 2026) 0.99 0.54 5.99 OmniVoice (Zhu et al., 2026) 1.60 74.1 0.84 77.7 LongCat-Audio-DiT (Xin et al., 2026) 1.50 78.6 1.09 81.8 6.04 79.7 VoxCPM 1.85 72.9 0.93 77.2 8.87 73.0 VoxCPM1.5 2.12 71.4 1.18 77.0 7.74 73.1 1.84 75.3 0.97 79.5 8.13 75.3</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-model-1-1"><span class="zh">（Table 3 内容残留）列依次为：模型 | 参数量 | test-EN WER↓ SIM | test-ZH CER↓ SIM | test-ZH-Hard CER↓ SIM。闭源：MegaTTS3（Jiang et al., 2025）2.79 77.1 1.52 79.0；DiTAR（Jia et al., 2025）1.69 73.5 1.02 75.3；CosyVoice 3（Du et al., 2025）2.22 72.0 1.12 78.1 5.83 75.8；Seed-TTS（Anastassiou et al., 2024）2.25 76.2 1.12 79.6 7.59 77.6；MiniMax-Speech（Zhang et al., 2025a）1.65 69.2 0.83 78.3；CosyVoice3.5 1.57 73.8 0.87 79.7 5.71 78.6。开源：F5-TTS（Chen et al., 2025b）2.00 67.0 1.53 76.0 8.67 71.3；MaskGCT（Wang et al., 2025d）2.62 71.7 2.27 77.4；CosyVoice（Du et al., 2024a）4.29 60.9 3.63 72.3 11.75 70.9；CosyVoice 2（Du et al., 2024b）3.09 65.9 1.38 75.7 6.83 72.4；CosyVoice 3（Du et al., 2025）2.02 71.8 1.16 78.0 6.08 75.8；Spark-TTS（Wang et al., 2025c）3.14 57.3 1.54 66.0；FireRedTTS（Guo et al., 2024）3.82 46.0 1.51 63.5 17.45 62.1；FireRedTTS-2（Xie et al., 2025a）1.95 66.5 1.14 73.6；Qwen2.5-Omni（Xu et al., 2025a）2.72 63.2 1.70 75.2 7.97 74.7；Qwen3-Omni（Xu et al., 2025b）30B-A3B 1.39 1.07；OpenAudio-s1-mini（OpenAudio, 2024）1.94 55.0 1.18 68.5 23.37 64.3；IndexTTS2（Zhou et al., 2026a）2.23 70.6 1.03 76.5 7.12 75.5；VibeVoice（Peng et al., 2025）3.04 68.9 1.16 74.4；HiggsAudio-v2（Boson AI, 2025）2.44 67.7 1.50 74.0 55.07 65.6；ZipVoice（Zhu et al., 2025）1.64 66.8 1.40 75.1；MOSS-TTS（Gong et al., 2026）1.85 73.4 1.20 78.8；Qwen3-TTS（Hu et al., 2026a）1.23 71.7 1.22 77.0 6.76 74.8；Fish Audio S2（Liao et al., 2026）0.99 0.54 5.99；OmniVoice（Zhu et al., 2026）1.60 74.1 0.84 77.7；LongCat-Audio-DiT（Xin et al., 2026）1.50 78.6 1.09 81.8 6.04 79.7；VoxCPM 1.85 72.9 0.93 77.2 8.87 73.0；VoxCPM1.5 2.12 71.4 1.18 77.0 7.74 73.1；VoxCPM2 1.84 75.3 0.97 79.5 8.13 75.3。</span></span></p>
+      <h3 class="sech lv2" id="sec-model"><span class="t-zh">模型（InstructTTSEval 结果表行）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-1">
+          <p class="en-lines"><span class="sent" data-sid="s-model-1-1"><span class="en">Params OS test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Closed-source MegaTTS3 (Jiang et al., 2025) 0.5B</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-model-1-1"><span class="zh">（目录残留页码 20。）
+（原始数据照录）
+Params OS test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Closed-source MegaTTS3 (Jiang et al., 2025) 0.5B</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-model-1"><code>✗ 2.79 77.1 1.52 79.0 – –</code></div>
+<div class="eq" id="eq-model-2"><code>DiTAR (Jia et al., 2025) 0.6B</code></div>
+<div class="eq" id="eq-model-3"><code>✗ 1.69 73.5 1.02 75.3 – –</code></div>
+<div class="eq" id="eq-model-4"><code>CosyVoice 3 (Du et al., 2025) 1.5B</code></div>
+<div class="eq" id="eq-model-5"><code>✗ 2.22 72.0 1.12 78.1 5.83 75.8</code></div>
+<div class="eq" id="eq-model-6"><code>Seed-TTS (Anastassiou et al., 2024)</code></div>
+<div class="eq" id="eq-model-7"><code>– ✗ 2.25 76.2 1.12 79.6 7.59 77.6</code></div>
+<div class="eq" id="eq-model-8"><code>MiniMax-Speech (Zhang et al., 2025a)</code></div>
+<div class="eq" id="eq-model-9"><code>– ✗ 1.65 69.2 0.83 78.3 – –</code></div>
+<div class="eq" id="eq-model-10"><code>CosyVoice3.5</code></div>
+<div class="eq" id="eq-model-11"><code>– ✗ 1.57 73.8 0.87 79.7 5.71 78.6</code></div>
+<div class="eq" id="eq-model-12"><code>Open-source F5-TTS (Chen et al., 2025b) 0.3B</code></div>
+<div class="eq" id="eq-model-13"><code>✓ 2.00 67.0 1.53 76.0 8.67 71.3</code></div>
+<div class="eq" id="eq-model-14"><code>MaskGCT (Wang et al., 2025d) 1B</code></div>
+<div class="eq" id="eq-model-15"><code>✓ 2.62 71.7 2.27 77.4 – –</code></div>
+<div class="eq" id="eq-model-16"><code>CosyVoice (Du et al., 2024a) 0.3B</code></div>
+<div class="eq" id="eq-model-17"><code>✓ 4.29 60.9 3.63 72.3 11.75 70.9</code></div>
+<div class="eq" id="eq-model-18"><code>CosyVoice 2 (Du et al., 2024b) 0.5B</code></div>
+<div class="eq" id="eq-model-19"><code>✓ 3.09 65.9 1.38 75.7 6.83 72.4</code></div>
+<div class="eq" id="eq-model-20"><code>CosyVoice 3 (Du et al., 2025) 0.5B</code></div>
+<div class="eq" id="eq-model-21"><code>✓ 2.02 71.8 1.16 78.0 6.08 75.8</code></div>
+<div class="eq" id="eq-model-22"><code>Spark-TTS (Wang et al., 2025c) 0.5B</code></div>
+<div class="eq" id="eq-model-23"><code>✓ 3.14 57.3 1.54 66.0 – –</code></div>
+<div class="eq" id="eq-model-24"><code>FireRedTTS (Guo et al., 2024) 0.5B</code></div>
+<div class="eq" id="eq-model-25"><code>✓ 3.82 46.0 1.51 63.5 17.45 62.1</code></div>
+<div class="eq" id="eq-model-26"><code>FireRedTTS-2 (Xie et al., 2025a) 1.5B</code></div>
+<div class="eq" id="eq-model-27"><code>✓ 1.95 66.5 1.14 73.6 – –</code></div>
+<div class="eq" id="eq-model-28"><code>Qwen2.5-Omni (Xu et al., 2025a) 7B</code></div>
+<div class="eq" id="eq-model-29"><code>✓ 2.72 63.2 1.70 75.2 7.97 74.7</code></div>
+<div class="eq" id="eq-model-30"><code>Qwen3-Omni (Xu et al., 2025b) 30B-A3B</code></div>
+<div class="eq" id="eq-model-31"><code>✓ 1.39 – 1.07 – – –</code></div>
+<div class="eq" id="eq-model-32"><code>OpenAudio-s1-mini (OpenAudio, 2024) 0.5B</code></div>
+<div class="eq" id="eq-model-33"><code>✓ 1.94 55.0 1.18 68.5 23.37 64.3</code></div>
+<div class="eq" id="eq-model-34"><code>IndexTTS2 (Zhou et al., 2026a) 1.5B</code></div>
+<div class="eq" id="eq-model-35"><code>✓ 2.23 70.6 1.03 76.5 7.12 75.5</code></div>
+<div class="eq" id="eq-model-36"><code>VibeVoice (Peng et al., 2025) 1.5B</code></div>
+<div class="eq" id="eq-model-37"><code>✓ 3.04 68.9 1.16 74.4 – –</code></div>
+<div class="eq" id="eq-model-38"><code>HiggsAudio-v2 (Boson AI, 2025) 3B</code></div>
+<div class="eq" id="eq-model-39"><code>✓ 2.44 67.7 1.50 74.0 55.07 65.6</code></div>
+<div class="eq" id="eq-model-40"><code>ZipVoice (Zhu et al., 2025) 0.1B</code></div>
+<div class="eq" id="eq-model-41"><code>✓ 1.64 66.8 1.40 75.1 – –</code></div>
+<div class="eq" id="eq-model-42"><code>MOSS-TTS (Gong et al., 2026) 8B</code></div>
+<div class="eq" id="eq-model-43"><code>✓ 1.85 73.4 1.20 78.8 – –</code></div>
+<div class="eq" id="eq-model-44"><code>Qwen3-TTS (Hu et al., 2026a) 1.7B</code></div>
+<div class="eq" id="eq-model-45"><code>✓ 1.23 71.7 1.22 77.0 6.76 74.8</code></div>
+<div class="eq" id="eq-model-46"><code>Fish Audio S2 (Liao et al., 2026) 4B</code></div>
+<div class="eq" id="eq-model-47"><code>✓ 0.99 – 0.54 – 5.99 –</code></div>
+<div class="eq" id="eq-model-48"><code>OmniVoice (Zhu et al., 2026) 0.8B</code></div>
+<div class="eq" id="eq-model-49"><code>✓ 1.60 74.1 0.84 77.7 – –</code></div>
+<div class="eq" id="eq-model-50"><code>LongCat-Audio-DiT (Xin et al., 2026) 3.5B</code></div>
+<div class="eq" id="eq-model-51"><code>✓ 1.50 78.6 1.09 81.8 6.04 79.7</code></div>
+<div class="eq" id="eq-model-52"><code>VoxCPM 0.6B</code></div>
+<div class="eq" id="eq-model-53"><code>✓ 1.85 72.9 0.93 77.2 8.87 73.0</code></div>
+<div class="eq" id="eq-model-54"><code>VoxCPM1.5 0.8B</code></div>
+<div class="eq" id="eq-model-55"><code>✓ 2.12 71.4 1.18 77.0 7.74 73.1</code></div>
+<div class="eq" id="eq-model-56"><code>VoxCPM2 2B</code></div>
+<div class="eq" id="eq-model-57"><code>✓ 1.84 75.3 0.97 79.5 8.13 75.3</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-comparison-systems"><span class="t-zh">对比系统</span><span class="t-en">Comparison Systems.</span></h3><div class="pblk" id="p-comparison-systems-1">
           <p class="en-lines"><span class="sent" data-sid="s-comparison-systems-1-1"><span class="en">We compare VoxCPM2 against a diverse set of representative systems, including strong open-source baselines and recent state-of-the-art models (CosyVoice family, MaskGCT, Spark-TTS, FireRedTTS series, F5-TTS, Qwen3-TTS, IndexTTS2, VibeVoice, HiggsAudio-v2, MOSS-TTS, Fish Audio S2, LongCat-Audio-DiT, as well as closed-source systems such as MegaTTS3, DiTAR, Seed-TTS, MiniMaxSpeech, ElevenLabs, and Hume).</span></span> <span class="sent" data-sid="s-comparison-systems-1-2"><span class="en">Earlier VoxCPM versions (VoxCPM and VoxCPM1.5) are included as internal references.</span></span></p>
@@ -862,20 +901,37 @@ Residual Acoustic Hidden:
 <div class="cap" id="tab-4-2-2-2"><span class="cap-k">表</span><p class="en">Table 4: Effect of different inference recipes on VoxCPM2 zero-shot voice cloning performance (Seed-TTS- Eval).</p><p class="zh">表 4：不同推理配方对 VoxCPM2 零样本语音克隆性能的影响（Seed-TTS-Eval）。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-inference-recipe"><span class="t-zh">推理配方（结果表行）</span><span class="t-en">Inference recipe</span></h3><div class="pblk" id="p-inference-recipe-1">
-          <p class="en-lines"><span class="sent" data-sid="s-inference-recipe-1-1"><span class="en">Sequence layout (Sec. 3.4) test-EN test-ZH test-ZH-Hard WER↓ CER↓ CER↓ Continuation only ⟨text | prompt⟩→⟨target⟩ 1.01 77.7 1.97 72.6 8.16 72.4 Reference only ⟨ref⟩| ⟨text⟩→⟨target⟩ 1.10 75.3 1.81 67.0 6.85 70.0 Reference + Continuation ⟨ref⟩| ⟨text | prompt⟩→⟨target⟩ 0.99 79.5 1.94 75.2 7.44 74.9</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-inference-recipe-1-1"><span class="zh">（Table 4 内容残留）序列布局（见第 3.4 节）| test-EN WER↓ SIM | test-ZH CER↓ SIM | test-ZH-Hard CER↓ SIM。仅续写 ⟨text | prompt⟩→⟨target⟩：1.01 77.7 1.97 72.6 8.16 72.4；仅参考 ⟨ref⟩|⟨text⟩→⟨target⟩：1.10 75.3 1.81 67.0 6.85 70.0；参考 + 续写 ⟨ref⟩|⟨text | prompt⟩→⟨target⟩：0.99 79.5 1.94 75.2 7.44 74.9。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-inference-recipe-1-1"><span class="en">Sequence layout (Sec. 3.4) test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Continuation only ⟨text | prompt⟩→⟨target⟩</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-inference-recipe-1-1"><span class="zh">（目录残留页码 4。）
+（原始数据照录）
+Sequence layout (Sec. 3.4) test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Continuation only ⟨text | prompt⟩→⟨target⟩</span></span></p>
           
         </div>
+<div class="eq" id="eq-inference-recipe-1"><code>1.01 77.7 1.97 72.6 8.16 72.4</code></div>
+<div class="eq" id="eq-inference-recipe-2"><code>Reference only ⟨ref⟩| ⟨text⟩→⟨target⟩</code></div>
+<div class="eq" id="eq-inference-recipe-3"><code>1.10 75.3 1.81 67.0 6.85 70.0</code></div>
+<div class="eq" id="eq-inference-recipe-4"><code>Reference + Continuation ⟨ref⟩| ⟨text | prompt⟩→⟨target⟩</code></div>
+<div class="eq" id="eq-inference-recipe-5"><code>0.99 79.5 1.94 75.2 7.44 74.9</code></div>
 <div class="cap" id="tab-inference-recipe-1"><span class="cap-k">表</span><p class="en">Table 5: CV3-Eval multilingual zero-shot cloning. WER/CER (%, lower is better). Bold marks the best result per column. “–” indicates the result is not reported in the source publication.</p><p class="zh">表 5：CV3-Eval 多语言零样本克隆。WER/CER（%，越低越好）。加粗表示该列最优结果；「–」表示源文献未报告该结果。</p></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-model-2"><span class="t-zh">模型（CV3-Eval 结果表行）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="en">zh en hard-zh hard-en ja ko de es fr it ru CosyVoice 2 12.58 11.96 CosyVoice 3-1.5B 3.91 4.99 9.77 10.55 7.57 5.69 6.43 4.47 11.80 10.50 6.64 9.10 4.40 3.96 2.76 6.26 2.04 2.78 8.55 8.48 5.96 5.69 9.85 4.25 5.21 gibility.</span></span> <span class="sent" data-sid="s-model-2-1-2"><span class="en">It outperforms most token-based autoregressive systems in similarity and achieving comparable or better WER/CER than many non-autoregressive models.</span></span> <span class="sent" data-sid="s-model-2-1-3"><span class="en">Subjective listening tests further confirm that its cloning performance is superior in terms of naturalness and prosody.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="zh">（Table 5 内容残留）列依次为：模型 | zh | en | hard-zh | hard-en | ja | ko | de | es | fr | it | ru。CosyVoice 2：12.58 11.96；CosyVoice 3-1.5B：3.91 4.99 9.77 10.55 7.57 5.69 6.43 4.47 11.80 10.50 6.64 9.10；Fish Audio S2：4.40 3.96 2.76 6.26 2.04 2.78 8.55 8.48 5.96 5.69 9.85 4.25 5.21（抽取顺序可能有错位，以原表为准）。gibility（「intelligibility」跨页断词残留）。</span></span><span class="sent" data-sid="s-model-2-1-2"><span class="zh">它在相似度上超过大多数基于 token 的自回归系统，并在 WER/CER 上与许多非自回归模型相当或更优。</span></span><span class="sent" data-sid="s-model-2-1-3"><span class="zh">主观听测进一步证实，其克隆性能在自然度与韵律方面更为出色。</span></span></p>
+      <h3 class="sech lv2" id="sec-model-2"><span class="t-zh">模型（InstructTTSEval 结果表行）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="en">zh en hard-zh hard-en ja ko de es fr it ru CosyVoice 2</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="zh">（表格行：语种列 zh / en / hard-zh / hard-en / ja / ko / de / es / fr / it / ru——CosyVoice 2，后续照原文。）</span></span></p>
           
         </div>
+<div class="eq" id="eq-model-2-1"><code>4.08 6.32 12.58 11.96 9.13 19.70 – – – – – CosyVoice 3-1.5B 3.91 4.99 9.77 10.55 7.57 5.69 6.43 4.47 11.80 10.50 6.64</code></div>
+<div class="eq" id="eq-model-2-2"><code>Fish Audio S2</code></div>
+<div class="eq" id="eq-model-2-3"><code>2.65 2.43 9.10 4.40 3.96 2.76 2.22 2.00 6.26 2.04 2.78</code></div>
+<div class="eq" id="eq-model-2-4"><code>VoxCPM2</code></div>
+<div class="eq" id="eq-model-2-5"><code>3.65 5.00 8.55 8.48 5.96 5.69 4.77 3.80 9.85 4.25 5.21</code></div>
 <div class="pblk" id="p-model-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-model-2-2-1"><span class="en">Despite the significant increase in capabilities and language coverage, the architectural refinements and parameter scaling allow VoxCPM2 to maintain the strong zero-shot cloning ability of previous VoxCPM versions while further improving speaker similarity.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-model-2-2-1"><span class="zh">尽管能力与语言覆盖大幅提升，架构改进与参数扩展使 VoxCPM2 保持了历代 VoxCPM 强大的零样本克隆能力，并进一步提高了说话人相似度。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-model-2-2-1"><span class="en">gibility.</span></span> <span class="sent" data-sid="s-model-2-2-2"><span class="en">It outperforms most token-based autoregressive systems in similarity and achieving comparable or better WER/CER than many non-autoregressive models.</span></span> <span class="sent" data-sid="s-model-2-2-3"><span class="en">Subjective listening tests further confirm that its cloning performance is superior in terms of naturalness and prosody.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-model-2-2-1"><span class="zh">总的来看，VoxCPM 证明了分层连续隐空间建模可以在不牺牲声学丰富度或语义可懂度的前提下达到有竞争力的性能。</span></span><span class="sent" data-sid="s-model-2-2-2"><span class="zh">它在相似度上超过大多数基于 token 的自回归系统，WER/CER 与许多非自回归模型相当或更好。</span></span><span class="sent" data-sid="s-model-2-2-3"><span class="zh">主观试听进一步确认其克隆性能在自然度与韵律上更优。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-model-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-model-2-3-1"><span class="en">Despite the significant increase in capabilities and language coverage, the architectural refinements and parameter scaling allow VoxCPM2 to maintain the strong zero-shot cloning ability of previous VoxCPM versions while further improving speaker similarity.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-model-2-3-1"><span class="zh">尽管能力与语言覆盖大幅提升，架构改进与参数扩展使 VoxCPM2 保持了历代 VoxCPM 强大的零样本克隆能力，并进一步提高了说话人相似度。</span></span></p>
           
         </div></section>
 <section>
@@ -912,11 +968,58 @@ Residual Acoustic Hidden:
         </div>
 <div class="cap" id="tab-cv3-eval-in-the-wild-multilingua-1"><span class="cap-k">表</span><p class="en">Table 6: Intelligibility on MiniMax-MLS-Test (24 languages, WER %, lower is better). Bold marks the best result per language; “–” indicates the system does not report a result for the language.</p><p class="zh">表 6：MiniMax-MLS-Test 上的可懂度（24 种语言，WER %，越低越好）。加粗表示该语言最优结果；「–」表示该系统未报告该语言的结果。</p></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-language"><span class="t-zh">语言（MiniMax-MLS-Test WER 表行）</span><span class="t-en">Language</span></h3><div class="pblk" id="p-language-1">
-          <p class="en-lines"><span class="sent" data-sid="s-language-1-1"><span class="en">Minimax ElevenLabs Qwen3-TTS Arabic 1.67 1.67 3.50 13.05 Cantonese 34.11 51.51 30.67 38.58 Chinese 2.25 16.03 0.93 0.73 1.14 Czech 3.88 2.11 2.84 24.13 Dutch 1.14 0.80 0.99 0.91 English 2.16 2.34 0.93 1.62 2.29 Finnish 4.67 2.96 3.33 2.63 French 4.10 5.22 2.86 3.05 4.53 German 1.91 0.57 1.24 0.55 0.68 Greek 2.02 0.99 5.74 2.84 Hindi 6.96 5.83 14.64 19.70 Indonesian 1.24 1.06 1.46 1.08 Italian 1.54 1.74 0.95 1.27 1.56 Japanese 3.52 10.65 3.82 2.76 4.63 Korean 1.75 1.87 1.76 1.18 1.96 Polish 1.42 0.77 1.26 1.14 Portuguese 1.88 1.33 1.53 1.14 1.94 Romanian 2.88 1.35 10.74 21.58 Russian 4.28 3.88 3.21 2.40 3.63 Spanish 1.03 1.08 1.13 0.91 1.44 Thai 2.70 73.94 4.23 2.96 Turkish 1.52 0.70 0.87 0.82 Ukrainian 1.08 1.00 2.30 6.32 Vietnamese 0.88 73.42 7.41 3.31</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-language-1-1"><span class="zh">（Table 6 内容残留）列为各系统的 WER（%）：MiniMax-Speech、ElevenLabs、Qwen3-TTS、Fish Audio S2、VoxCPM2（抽取未给出完整表头，列归属以原表为准）。阿拉伯语 1.67 1.67 3.50 13.05；粤语 34.11 51.51 30.67 38.58；中文 2.25 16.03 0.93 0.73 1.14；捷克语 3.88 2.11 2.84 24.13；荷兰语 1.14 0.80 0.99 0.91；英语 2.16 2.34 0.93 1.62 2.29；芬兰语 4.67 2.96 3.33 2.63；法语 4.10 5.22 2.86 3.05 4.53；德语 1.91 0.57 1.24 0.55 0.68；希腊语 2.02 0.99 5.74 2.84；印地语 6.96 5.83 14.64 19.70；印尼语 1.24 1.06 1.46 1.08；意大利语 1.54 1.74 0.95 1.27 1.56；日语 3.52 10.65 3.82 2.76 4.63；韩语 1.75 1.87 1.76 1.18 1.96；波兰语 1.42 0.77 1.26 1.14；葡萄牙语 1.88 1.33 1.53 1.14 1.94；罗马尼亚语 2.88 1.35 10.74 21.58；俄语 4.28 3.88 3.21 2.40 3.63；西班牙语 1.03 1.08 1.13 0.91 1.44；泰语 2.70 73.94 4.23 2.96；土耳其语 1.52 0.70 0.87 0.82；乌克兰语 1.08 1.00 2.30 6.32；越南语 0.88 73.42 7.41 3.31。</span></span></p>
+      <h3 class="sech lv2" id="sec-language"><span class="t-zh">语言（MiniMax-MLS-Test SIM 表行）</span><span class="t-en">Language</span></h3><div class="pblk" id="p-language-1">
+          <p class="en-lines"><span class="sent" data-sid="s-language-1-1"><span class="en">Minimax ElevenLabs Qwen3-TTS Fish Audio S2 VoxCPM2 Arabic</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-language-1-1"><span class="zh">（表头：Minimax / ElevenLabs / Qwen3-TTS / Fish Audio S2 / VoxCPM2——Arabic，后续照原文。）</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-language-1"><code>1.67 1.67 – 3.50 13.05</code></div>
+<div class="eq" id="eq-language-2"><code>Cantonese</code></div>
+<div class="eq" id="eq-language-3"><code>34.11 51.51 – 30.67 38.58</code></div>
+<div class="eq" id="eq-language-4"><code>Chinese</code></div>
+<div class="eq" id="eq-language-5"><code>2.25 16.03 0.93 0.73 1.14</code></div>
+<div class="eq" id="eq-language-6"><code>Czech</code></div>
+<div class="eq" id="eq-language-7"><code>3.88 2.11 – 2.84 24.13</code></div>
+<div class="eq" id="eq-language-8"><code>Dutch</code></div>
+<div class="eq" id="eq-language-9"><code>1.14 0.80 – 0.99 0.91</code></div>
+<div class="eq" id="eq-language-10"><code>English</code></div>
+<div class="eq" id="eq-language-11"><code>2.16 2.34 0.93 1.62 2.29</code></div>
+<div class="eq" id="eq-language-12"><code>Finnish</code></div>
+<div class="eq" id="eq-language-13"><code>4.67 2.96 – 3.33 2.63</code></div>
+<div class="eq" id="eq-language-14"><code>French</code></div>
+<div class="eq" id="eq-language-15"><code>4.10 5.22 2.86 3.05 4.53</code></div>
+<div class="eq" id="eq-language-16"><code>German</code></div>
+<div class="eq" id="eq-language-17"><code>1.91 0.57 1.24 0.55 0.68</code></div>
+<div class="eq" id="eq-language-18"><code>Greek</code></div>
+<div class="eq" id="eq-language-19"><code>2.02 0.99 – 5.74 2.84</code></div>
+<div class="eq" id="eq-language-20"><code>Hindi</code></div>
+<div class="eq" id="eq-language-21"><code>6.96 5.83 – 14.64 19.70</code></div>
+<div class="eq" id="eq-language-22"><code>Indonesian</code></div>
+<div class="eq" id="eq-language-23"><code>1.24 1.06 – 1.46 1.08</code></div>
+<div class="eq" id="eq-language-24"><code>Italian</code></div>
+<div class="eq" id="eq-language-25"><code>1.54 1.74 0.95 1.27 1.56</code></div>
+<div class="eq" id="eq-language-26"><code>Japanese</code></div>
+<div class="eq" id="eq-language-27"><code>3.52 10.65 3.82 2.76 4.63</code></div>
+<div class="eq" id="eq-language-28"><code>Korean</code></div>
+<div class="eq" id="eq-language-29"><code>1.75 1.87 1.76 1.18 1.96</code></div>
+<div class="eq" id="eq-language-30"><code>Polish</code></div>
+<div class="eq" id="eq-language-31"><code>1.42 0.77 – 1.26 1.14</code></div>
+<div class="eq" id="eq-language-32"><code>Portuguese</code></div>
+<div class="eq" id="eq-language-33"><code>1.88 1.33 1.53 1.14 1.94</code></div>
+<div class="eq" id="eq-language-34"><code>Romanian</code></div>
+<div class="eq" id="eq-language-35"><code>2.88 1.35 – 10.74 21.58</code></div>
+<div class="eq" id="eq-language-36"><code>Russian</code></div>
+<div class="eq" id="eq-language-37"><code>4.28 3.88 3.21 2.40 3.63</code></div>
+<div class="eq" id="eq-language-38"><code>Spanish</code></div>
+<div class="eq" id="eq-language-39"><code>1.03 1.08 1.13 0.91 1.44</code></div>
+<div class="eq" id="eq-language-40"><code>Thai</code></div>
+<div class="eq" id="eq-language-41"><code>2.70 73.94 – 4.23 2.96</code></div>
+<div class="eq" id="eq-language-42"><code>Turkish</code></div>
+<div class="eq" id="eq-language-43"><code>1.52 0.70 – 0.87 0.82</code></div>
+<div class="eq" id="eq-language-44"><code>Ukrainian</code></div>
+<div class="eq" id="eq-language-45"><code>1.08 1.00 – 2.30 6.32</code></div>
+<div class="eq" id="eq-language-46"><code>Vietnamese</code></div>
+<div class="eq" id="eq-language-47"><code>0.88 73.42 – 7.41 3.31</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-minimax-mls-test-24-language-int"><span class="t-zh">MiniMax-MLS-Test：24 语言可懂度与说话人相似度</span><span class="t-en">MiniMax-MLS-Test: 24-language Intelligibility and Speaker Similarity.</span></h3><div class="pblk" id="p-minimax-mls-test-24-language-int-1">
           <p class="en-lines"><span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-1"><span class="en">On speaker similarity (Table 7), VoxCPM2 achieves the highest SIM on 22 out of 24 languages, demonstrating strong and consistent voice preservation across diverse language families.</span><button class="mk feat" data-sid="s-minimax-mls-test-24-language-int-1-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-2"><span class="en">Even on Czech and Romanian—languages not explicitly seen during training—VoxCPM2 shows promising speaker preservation, falling within only 1.5–2 SIM points of the best system.</span></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-3"><span class="en">This advantage is largely attributed to the hierarchical continuous-latent modeling paradigm, which enables richer speaker representation compared to discrete-token approaches.</span></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-4"><span class="en">Additionally, large-scale multilingual pretraining appears to endow the model with a certain degree of emergent zero-shot synthesis capability on languages within similar families.</span></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-5"><span class="en">On intelligibility (Table 6), VoxCPM2 delivers strong results on most languages, particularly Chinese (1.14), Dutch (0.91), Finnish (2.63), German (0.68), and Turkish (0.82).</span></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-6"><span class="en">The main weaknesses appear in Arabic and Hindi.</span></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-7"><span class="en">These languages are included in the training set but with relatively limited data volume.</span></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-8"><span class="en">Moreover, since we use Whisper-large-v3 for ASR evaluation on this benchmark, part of the higher WER may stem from the recognizer’s limited accuracy on these languages rather than purely from synthesis quality.</span><button class="mk" data-sid="s-minimax-mls-test-24-language-int-1-8" title="查看讲解">解</button></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-9"><span class="en">For completely unseen languages such as Czech and Romanian, the model still produces partially intelligible speech, indicating partial zero-shot transfer and suggesting room for rapid adaptation through few-shot fine-tuning</span></span></p>
@@ -953,28 +1056,130 @@ Residual Acoustic Hidden:
 <div class="cap" id="tab-internal-30-language-benchmark-1"><span class="cap-k">表</span><p class="en">Table 7: Speaker similarity on MiniMax-MLS-Test (24 languages, SIM %, higher is better). Bold marks the best result per language.</p><p class="zh">表 7：MiniMax-MLS-Test 上的说话人相似度（24 种语言，SIM %，越高越好）。加粗表示该语言最优结果。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-language-2"><span class="t-zh">语言（MiniMax-MLS-Test SIM 表行）</span><span class="t-en">Language</span></h3><div class="pblk" id="p-language-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-language-2-1-1"><span class="en">Minimax ElevenLabs Qwen3-TTS Arabic 73.6 70.6 75.0 79.1 Cantonese 77.8 67.0 80.5 83.5 Chinese 78.0 67.7 79.9 81.6 82.5 Czech 79.6 68.5 79.8 78.3 Dutch 73.8 68.0 73.0 80.8 English 75.6 61.3 77.5 79.7 85.4 Finnish 83.5 75.9 81.9 89.0 French 62.8 53.5 62.8 69.8 73.5 German 73.3 61.4 77.5 76.7 80.3 Greek 82.6 73.3 79.5 86.0 Hindi 81.8 73.0 82.1 85.6 Indonesian 72.9 66.0 76.3 80.0 Italian 69.9 57.9 81.7 74.7 78.0 Japanese 77.6 73.8 78.8 79.6 82.8 Korean 77.6 70.0 79.9 81.7 83.3 Polish 80.2 72.9 81.9 88.4 Portuguese 80.5 71.1 81.7 78.1 83.7 Romanian 80.9 69.9 73.3 79.7 Russian 76.1 67.6 79.2 79.0 81.1 Spanish 76.2 61.5 81.4 77.6 83.1 Thai 80.0 58.8 78.6 84.0 Turkish 77.9 59.6 83.5 87.1 Ukrainian 73.0 64.7 74.7 79.8 Vietnamese 74.3 36.9 74.0 80.6</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-language-2-1-1"><span class="zh">（Table 7 内容残留）列为各系统的 SIM（%）：MiniMax-Speech、ElevenLabs、Qwen3-TTS、Fish Audio S2、VoxCPM2（抽取未给出完整表头，列归属以原表为准）。阿拉伯语 73.6 70.6 75.0 79.1；粤语 77.8 67.0 80.5 83.5；中文 78.0 67.7 79.9 81.6 82.5；捷克语 79.6 68.5 79.8 78.3；荷兰语 73.8 68.0 73.0 80.8；英语 75.6 61.3 77.5 79.7 85.4；芬兰语 83.5 75.9 81.9 89.0；法语 62.8 53.5 62.8 69.8 73.5；德语 73.3 61.4 77.5 76.7 80.3；希腊语 82.6 73.3 79.5 86.0；印地语 81.8 73.0 82.1 85.6；印尼语 72.9 66.0 76.3 80.0；意大利语 69.9 57.9 81.7 74.7 78.0；日语 77.6 73.8 78.8 79.6 82.8；韩语 77.6 70.0 79.9 81.7 83.3；波兰语 80.2 72.9 81.9 88.4；葡萄牙语 80.5 71.1 81.7 78.1 83.7；罗马尼亚语 80.9 69.9 73.3 79.7；俄语 76.1 67.6 79.2 79.0 81.1；西班牙语 76.2 61.5 81.4 77.6 83.1；泰语 80.0 58.8 78.6 84.0；土耳其语 77.9 59.6 83.5 87.1；乌克兰语 73.0 64.7 74.7 79.8；越南语 74.3 36.9 74.0 80.6。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-language-2-1-1"><span class="en">Minimax ElevenLabs Qwen3-TTS Fish Audio S2 VoxCPM2 Arabic</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-language-2-1-1"><span class="zh">（表头：Minimax / ElevenLabs / Qwen3-TTS / Fish Audio S2 / VoxCPM2——Arabic，后续照原文。）</span></span></p>
           
         </div>
+<div class="eq" id="eq-language-2-1"><code>73.6 70.6 – 75.0 79.1</code></div>
+<div class="eq" id="eq-language-2-2"><code>Cantonese</code></div>
+<div class="eq" id="eq-language-2-3"><code>77.8 67.0 – 80.5 83.5</code></div>
+<div class="eq" id="eq-language-2-4"><code>Chinese</code></div>
+<div class="eq" id="eq-language-2-5"><code>78.0 67.7 79.9 81.6 82.5</code></div>
+<div class="eq" id="eq-language-2-6"><code>Czech</code></div>
+<div class="eq" id="eq-language-2-7"><code>79.6 68.5 – 79.8 78.3</code></div>
+<div class="eq" id="eq-language-2-8"><code>Dutch</code></div>
+<div class="eq" id="eq-language-2-9"><code>73.8 68.0 – 73.0 80.8</code></div>
+<div class="eq" id="eq-language-2-10"><code>English</code></div>
+<div class="eq" id="eq-language-2-11"><code>75.6 61.3 77.5 79.7 85.4</code></div>
+<div class="eq" id="eq-language-2-12"><code>Finnish</code></div>
+<div class="eq" id="eq-language-2-13"><code>83.5 75.9 – 81.9 89.0</code></div>
+<div class="eq" id="eq-language-2-14"><code>French</code></div>
+<div class="eq" id="eq-language-2-15"><code>62.8 53.5 62.8 69.8 73.5</code></div>
+<div class="eq" id="eq-language-2-16"><code>German</code></div>
+<div class="eq" id="eq-language-2-17"><code>73.3 61.4 77.5 76.7 80.3</code></div>
+<div class="eq" id="eq-language-2-18"><code>Greek</code></div>
+<div class="eq" id="eq-language-2-19"><code>82.6 73.3 – 79.5 86.0</code></div>
+<div class="eq" id="eq-language-2-20"><code>Hindi</code></div>
+<div class="eq" id="eq-language-2-21"><code>81.8 73.0 – 82.1 85.6</code></div>
+<div class="eq" id="eq-language-2-22"><code>Indonesian</code></div>
+<div class="eq" id="eq-language-2-23"><code>72.9 66.0 – 76.3 80.0</code></div>
+<div class="eq" id="eq-language-2-24"><code>Italian</code></div>
+<div class="eq" id="eq-language-2-25"><code>69.9 57.9 81.7 74.7 78.0</code></div>
+<div class="eq" id="eq-language-2-26"><code>Japanese</code></div>
+<div class="eq" id="eq-language-2-27"><code>77.6 73.8 78.8 79.6 82.8</code></div>
+<div class="eq" id="eq-language-2-28"><code>Korean</code></div>
+<div class="eq" id="eq-language-2-29"><code>77.6 70.0 79.9 81.7 83.3</code></div>
+<div class="eq" id="eq-language-2-30"><code>Polish</code></div>
+<div class="eq" id="eq-language-2-31"><code>80.2 72.9 – 81.9 88.4</code></div>
+<div class="eq" id="eq-language-2-32"><code>Portuguese</code></div>
+<div class="eq" id="eq-language-2-33"><code>80.5 71.1 81.7 78.1 83.7</code></div>
+<div class="eq" id="eq-language-2-34"><code>Romanian</code></div>
+<div class="eq" id="eq-language-2-35"><code>80.9 69.9 – 73.3 79.7</code></div>
+<div class="eq" id="eq-language-2-36"><code>Russian</code></div>
+<div class="eq" id="eq-language-2-37"><code>76.1 67.6 79.2 79.0 81.1</code></div>
+<div class="eq" id="eq-language-2-38"><code>Spanish</code></div>
+<div class="eq" id="eq-language-2-39"><code>76.2 61.5 81.4 77.6 83.1</code></div>
+<div class="eq" id="eq-language-2-40"><code>Thai</code></div>
+<div class="eq" id="eq-language-2-41"><code>80.0 58.8 – 78.6 84.0</code></div>
+<div class="eq" id="eq-language-2-42"><code>Turkish</code></div>
+<div class="eq" id="eq-language-2-43"><code>77.9 59.6 – 83.5 87.1</code></div>
+<div class="eq" id="eq-language-2-44"><code>Ukrainian</code></div>
+<div class="eq" id="eq-language-2-45"><code>73.0 64.7 – 74.7 79.8</code></div>
+<div class="eq" id="eq-language-2-46"><code>Vietnamese</code></div>
+<div class="eq" id="eq-language-2-47"><code>74.3 36.9 – 74.0 80.6</code></div>
 <div class="cap" id="tab-language-2-1"><span class="cap-k">表</span><p class="en">Table 8: Internal 30-language intelligibility benchmark (500 utterances per language; ASR by Gemini 3.1 Flash Lite). WER % for word-segmented languages; CER % for logographic or non-segmented scripts.</p><p class="zh">表 8：内部 30 语言可懂度基准（每种语言 500 条语句；ASR 由 Gemini 3.1 Flash Lite 完成）。按词切分的语言报告 WER %，语素文字或不切分文字报告 CER %。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-lang"><span class="t-zh">语言（内部 30 语言基准表行）</span><span class="t-en">Lang.</span></h3><div class="pblk" id="p-lang-1">
-          <p class="en-lines"><span class="sent" data-sid="s-lang-1-1"><span class="en">Metric Lang.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-lang-1-1"><span class="zh">（Table 8 表头残留）指标 | 语言。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-lang-1-1"><span class="en">Metric VoxCPM2 Fish Audio S2 Lang.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-lang-1-1"><span class="zh">表头：Metric × VoxCPM2 × Fish Audio S2 × Lang.（语种，后同）。</span></span></p>
           
         </div>
 <div class="pblk" id="p-lang-2">
-          <p class="en-lines"><span class="sent" data-sid="s-lang-2-1"><span class="en">Metric ar (Arabic) 1.23 0.30 lo (Lao) 1.90 87.40 da (Danish) 2.70 3.52 ms (Malay) 1.75 1.41 de (German) 0.96 0.64 my (Burmese) 1.42 85.27 el (Greek) 3.17 4.61 nl (Dutch) 1.25 1.68 en (English) 0.42 1.03 no (Norwegian) 2.49 3.76 es (Spanish) 1.33 0.64 pl (Polish) 1.90 1.65 fi (Finnish) 2.24 2.80 pt (Portuguese) 1.48 1.49 fr (French) 2.16 2.34 ru (Russian) 0.90 0.86 he (Hebrew) 2.98 15.27 sv (Swedish) 2.22 2.63 hi (Hindi) 0.79 0.91 sw (Swahili) 1.07 2.02 id (Indonesian) 1.36 1.68 th (Thai) 0.94 1.92 it (Italian) 1.65 1.08 tl (Tagalog) 2.63 4.00 ja (Japanese) 2.40 1.82 tr (Turkish) 1.65 1.65 km (Khmer) 2.05 75.15 vi (Vietnamese) 1.56 5.56 ko (Korean) 0.95 0.29 zh (Chinese) 0.92 1.02</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-lang-2-1"><span class="zh">（Table 8 内容残留，每行为：语言 指标1 指标2，两列指标分别为 WER/CER（%）与 SIM，列归属以原表为准）ar（阿拉伯语）1.23 0.30；lo（老挝语）1.90 87.40；da（丹麦语）2.70 3.52；ms（马来语）1.75 1.41；de（德语）0.96 0.64；my（缅甸语）1.42 85.27；el（希腊语）3.17 4.61；nl（荷兰语）1.25 1.68；en（英语）0.42 1.03；no（挪威语）2.49 3.76；es（西班牙语）1.33 0.64；pl（波兰语）1.90 1.65；fi（芬兰语）2.24 2.80；pt（葡萄牙语）1.48 1.49；fr（法语）2.16 2.34；ru（俄语）0.90 0.86；he（希伯来语）2.98 15.27；sv（瑞典语）2.22 2.63；hi（印地语）0.79 0.91；sw（斯瓦希里语）1.07 2.02；id（印尼语）1.36 1.68；th（泰语）0.94 1.92；it（意大利语）1.65 1.08；tl（菲律宾语）2.63 4.00；ja（日语）2.40 1.82；tr（土耳其语）1.65 1.65；km（高棉语）2.05 75.15；vi（越南语）1.56 5.56；ko（韩语）0.95 0.29；zh（中文）0.92 1.02。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-lang-2-1"><span class="en">Metric VoxCPM2 Fish Audio S2 ar (Arabic) CER</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-lang-2-1"><span class="zh">表头：Metric × VoxCPM2 / Fish Audio S2——ar (Arabic) CER（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-lang-1"><code>1.23 0.30</code></div>
+<div class="eq" id="eq-lang-2"><code>lo (Lao) CER</code></div>
+<div class="eq" id="eq-lang-3"><code>1.90 87.40</code></div>
+<div class="eq" id="eq-lang-4"><code>da (Danish) WER</code></div>
+<div class="eq" id="eq-lang-5"><code>2.70 3.52</code></div>
+<div class="eq" id="eq-lang-6"><code>ms (Malay) WER</code></div>
+<div class="eq" id="eq-lang-7"><code>1.75 1.41</code></div>
+<div class="eq" id="eq-lang-8"><code>de (German) WER</code></div>
+<div class="eq" id="eq-lang-9"><code>0.96 0.64</code></div>
+<div class="eq" id="eq-lang-10"><code>my (Burmese) CER</code></div>
+<div class="eq" id="eq-lang-11"><code>1.42 85.27</code></div>
+<div class="eq" id="eq-lang-12"><code>el (Greek) WER</code></div>
+<div class="eq" id="eq-lang-13"><code>3.17 4.61</code></div>
+<div class="eq" id="eq-lang-14"><code>nl (Dutch) WER</code></div>
+<div class="eq" id="eq-lang-15"><code>1.25 1.68</code></div>
+<div class="eq" id="eq-lang-16"><code>en (English) WER</code></div>
+<div class="eq" id="eq-lang-17"><code>0.42 1.03</code></div>
+<div class="eq" id="eq-lang-18"><code>no (Norwegian) WER</code></div>
+<div class="eq" id="eq-lang-19"><code>2.49 3.76</code></div>
+<div class="eq" id="eq-lang-20"><code>es (Spanish) WER</code></div>
+<div class="eq" id="eq-lang-21"><code>1.33 0.64</code></div>
+<div class="eq" id="eq-lang-22"><code>pl (Polish) WER</code></div>
+<div class="eq" id="eq-lang-23"><code>1.90 1.65</code></div>
+<div class="eq" id="eq-lang-24"><code>fi (Finnish) WER</code></div>
+<div class="eq" id="eq-lang-25"><code>2.24 2.80</code></div>
+<div class="eq" id="eq-lang-26"><code>pt (Portuguese) WER</code></div>
+<div class="eq" id="eq-lang-27"><code>1.48 1.49</code></div>
+<div class="eq" id="eq-lang-28"><code>fr (French) WER</code></div>
+<div class="eq" id="eq-lang-29"><code>2.16 2.34</code></div>
+<div class="eq" id="eq-lang-30"><code>ru (Russian) WER</code></div>
+<div class="eq" id="eq-lang-31"><code>0.90 0.86</code></div>
+<div class="eq" id="eq-lang-32"><code>he (Hebrew) CER</code></div>
+<div class="eq" id="eq-lang-33"><code>2.98 15.27</code></div>
+<div class="eq" id="eq-lang-34"><code>sv (Swedish) WER</code></div>
+<div class="eq" id="eq-lang-35"><code>2.22 2.63</code></div>
+<div class="eq" id="eq-lang-36"><code>hi (Hindi) CER</code></div>
+<div class="eq" id="eq-lang-37"><code>0.79 0.91</code></div>
+<div class="eq" id="eq-lang-38"><code>sw (Swahili) CER</code></div>
+<div class="eq" id="eq-lang-39"><code>1.07 2.02</code></div>
+<div class="eq" id="eq-lang-40"><code>id (Indonesian) WER</code></div>
+<div class="eq" id="eq-lang-41"><code>1.36 1.68</code></div>
+<div class="eq" id="eq-lang-42"><code>th (Thai) CER</code></div>
+<div class="eq" id="eq-lang-43"><code>0.94 1.92</code></div>
+<div class="eq" id="eq-lang-44"><code>it (Italian) WER</code></div>
+<div class="eq" id="eq-lang-45"><code>1.65 1.08</code></div>
+<div class="eq" id="eq-lang-46"><code>tl (Tagalog) WER</code></div>
+<div class="eq" id="eq-lang-47"><code>2.63 4.00</code></div>
+<div class="eq" id="eq-lang-48"><code>ja (Japanese) CER</code></div>
+<div class="eq" id="eq-lang-49"><code>2.40 1.82</code></div>
+<div class="eq" id="eq-lang-50"><code>tr (Turkish) WER</code></div>
+<div class="eq" id="eq-lang-51"><code>1.65 1.65</code></div>
+<div class="eq" id="eq-lang-52"><code>km (Khmer) CER</code></div>
+<div class="eq" id="eq-lang-53"><code>2.05 75.15</code></div>
+<div class="eq" id="eq-lang-54"><code>vi (Vietnamese) WER</code></div>
+<div class="eq" id="eq-lang-55"><code>1.56 5.56</code></div>
+<div class="eq" id="eq-lang-56"><code>ko (Korean) CER</code></div>
+<div class="eq" id="eq-lang-57"><code>0.95 0.29</code></div>
+<div class="eq" id="eq-lang-58"><code>zh (Chinese) CER</code></div>
+<div class="eq" id="eq-lang-59"><code>0.92 1.02</code></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-average-across-30-languages"><span class="t-zh">30 种语言平均</span><span class="t-en">Average across 30 languages</span></h3><div class="pblk" id="p-average-across-30-languages-1">
-          <p class="en-lines"><span class="sent" data-sid="s-average-across-30-languages-1-1"><span class="en">1.68</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-average-across-30-languages-1-1"><span class="zh">（Table 8 平均值行残留）30 种语言平均：1.68。</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-average-across-30-languages"><span class="t-zh">30 种语言平均</span><span class="t-en">Average across 30 languages</span></h3><div class="eq" id="eq-average-across-30-languages-1"><code>1.68 –</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-4"><span class="secnum">4.4</span> <span class="t-zh">4.4 声音设计与可控生成</span><span class="t-en">Voice Design and Controllable Generation</span></h3><div class="pblk" id="p-4-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-4-1-1"><span class="en">Beyond zero-shot voice cloning, VoxCPM2 additionally supports voice design, which synthesizes a new voice from a natural-language description without any reference audio, and controllable cloning, which clones a speaker from a reference clip while following style instructions.</span></span> <span class="sent" data-sid="s-4-4-1-2"><span class="en">Both capabilities are implemented through the same unified sequence organization (Section 3.4), without any dedicated control heads or style encoders.</span></span></p>
@@ -989,10 +1194,33 @@ Residual Acoustic Hidden:
 <div class="cap" id="tab-4-4-1"><span class="cap-k">表</span><p class="en">Table 9: Instruction-following on InstructTTSEval (%, higher is better). APS = acoustic-parameter specification, DSD = descriptive-style directive, RP = role-play.</p><p class="zh">表 9：InstructTTSEval 上的指令遵循（%，越高越好）。APS = 声学参数指定，DSD = 描述式风格指令，RP = 角色扮演。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-3"><span class="t-zh">模型（InstructTTSEval 结果表行）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-3-1">
-          <p class="en-lines"><span class="sent" data-sid="s-model-3-1-1"><span class="en">InstructTTSEval-ZH InstructTTSEval-EN APS↑ DSD↑ RP↑ APS↑ DSD↑ RP↑ Hume 83.0 75.3 54.3 GPT-4o-mini-TTS 54.9 52.3 46.0 76.4 74.3 54.8 Gemini-TTS-Pro 89.0 90.1 75.5 87.6 86.0 67.2 PromptTTS (Guo et al., 2023) 64.3 47.2 31.4 PromptStyle (Liu et al., 2023) 57.4 46.4 30.9 Parler-TTS-large (Lyth &amp; King, 2024) 60.0 45.9 31.2 VoxInstruct (Zhou et al., 2024) 47.5 52.3 42.6 54.9 57.0 39.3 VoiceSculptor (Hu et al., 2026b) 75.7 64.7 61.5 Mimo-Audio-7B-Instruct (Zhang et al., 2025b) 75.7 74.3 61.5 80.6 77.6 59.5 Qwen3-TTS-12Hz-1.7B-VD (Hu et al., 2026a) 85.2 81.1 65.1 82.9 82.4 68.4 MOSS-VoiceGenerator (Huang et al., 2026) 78.0 80.0 74.0 68.2 82.0 68.7 85.2 71.5 60.8 84.2 83.2 71.4</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-model-3-1-1"><span class="zh">（Table 9 内容残留）列依次为：模型 | InstructTTSEval-ZH APS↑ DSD↑ RP↑ | InstructTTSEval-EN APS↑ DSD↑ RP↑。Hume 83.0 75.3 54.3；GPT-4o-mini-TTS 54.9 52.3 46.0 76.4 74.3 54.8；Gemini-TTS-Pro 89.0 90.1 75.5 87.6 86.0 67.2；PromptTTS（Guo et al., 2023）64.3 47.2 31.4；PromptStyle（Liu et al., 2023）57.4 46.4 30.9；Parler-TTS-large（Lyth &amp; King, 2024）60.0 45.9 31.2；VoxInstruct（Zhou et al., 2024）47.5 52.3 42.6 54.9 57.0 39.3；VoiceSculptor（Hu et al., 2026b）75.7 64.7 61.5；Mimo-Audio-7B-Instruct（Zhang et al., 2025b）75.7 74.3 61.5 80.6 77.6 59.5；Qwen3-TTS-12Hz-1.7B-VD（Hu et al., 2026a）85.2 81.1 65.1 82.9 82.4 68.4；MOSS-VoiceGenerator（Huang et al., 2026）78.0 80.0 74.0 68.2 82.0 68.7；VoxCPM2 85.2 71.5 60.8 84.2 83.2 71.4。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-model-3-1-1"><span class="en">InstructTTSEval-ZH InstructTTSEval-EN APS↑ DSD↑ RP↑ APS↑ DSD↑ RP↑ Hume</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-model-3-1-1"><span class="zh">表头：InstructTTSEval-ZH / InstructTTSEval-EN × APS↑ / DSD↑ / RP↑——Hume（后续照原文）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-model-3-1"><code>– – – 83.0 75.3 54.3</code></div>
+<div class="eq" id="eq-model-3-2"><code>GPT-4o-mini-TTS</code></div>
+<div class="eq" id="eq-model-3-3"><code>54.9 52.3 46.0 76.4 74.3 54.8</code></div>
+<div class="eq" id="eq-model-3-4"><code>Gemini-TTS-Pro</code></div>
+<div class="eq" id="eq-model-3-5"><code>89.0 90.1 75.5 87.6 86.0 67.2</code></div>
+<div class="eq" id="eq-model-3-6"><code>PromptTTS (Guo et al., 2023)</code></div>
+<div class="eq" id="eq-model-3-7"><code>– – – 64.3 47.2 31.4</code></div>
+<div class="eq" id="eq-model-3-8"><code>PromptStyle (Liu et al., 2023)</code></div>
+<div class="eq" id="eq-model-3-9"><code>– – – 57.4 46.4 30.9</code></div>
+<div class="eq" id="eq-model-3-10"><code>Parler-TTS-large (Lyth &amp; King, 2024)</code></div>
+<div class="eq" id="eq-model-3-11"><code>– – – 60.0 45.9 31.2</code></div>
+<div class="eq" id="eq-model-3-12"><code>VoxInstruct (Zhou et al., 2024)</code></div>
+<div class="eq" id="eq-model-3-13"><code>47.5 52.3 42.6 54.9 57.0 39.3</code></div>
+<div class="eq" id="eq-model-3-14"><code>VoiceSculptor (Hu et al., 2026b)</code></div>
+<div class="eq" id="eq-model-3-15"><code>75.7 64.7 61.5 – – –</code></div>
+<div class="eq" id="eq-model-3-16"><code>Mimo-Audio-7B-Instruct (Zhang et al., 2025b)</code></div>
+<div class="eq" id="eq-model-3-17"><code>75.7 74.3 61.5 80.6 77.6 59.5</code></div>
+<div class="eq" id="eq-model-3-18"><code>Qwen3-TTS-12Hz-1.7B-VD (Hu et al., 2026a)</code></div>
+<div class="eq" id="eq-model-3-19"><code>85.2 81.1 65.1 82.9 82.4 68.4</code></div>
+<div class="eq" id="eq-model-3-20"><code>MOSS-VoiceGenerator (Huang et al., 2026)</code></div>
+<div class="eq" id="eq-model-3-21"><code>78.0 80.0 74.0 68.2 82.0 68.7</code></div>
+<div class="eq" id="eq-model-3-22"><code>VoxCPM2</code></div>
+<div class="eq" id="eq-model-3-23"><code>85.2 71.5 60.8 84.2 83.2 71.4</code></div>
 <div class="cap" id="tab-model-3-1"><span class="cap-k">表</span><p class="en">Table 10: Reconstruction quality of the Audio VAE used in VoxCPM, VoxCPM1.5, and VoxCPM2. Evaluation metrics: MelD-48k: Mel-distance at 48kHz; MelD-16k: Mel-distance at 16kHz; PESQ-16k: Perceptual Speech Quality (Evaluated at 16kHz); STOI-16k: Short-Time Objective Intelligibility (Evaluated at 16kHz).</p><p class="zh">表 10：VoxCPM、VoxCPM1.5 与 VoxCPM2 所用 Audio VAE 的重建质量。评测指标：MelD-48k：48 kHz 下梅尔距离；MelD-16k：16 kHz 下梅尔距离；PESQ-16k：感知语音质量（16 kHz 评测）；STOI-16k：短时客观可懂度（16 kHz 评测）。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-vae"><span class="t-zh">VAE（表头残留）</span><span class="t-en">VAE</span></h3><div class="pblk" id="p-vae-1">
@@ -1002,14 +1230,28 @@ Residual Acoustic Hidden:
         </div></section>
 <section>
       <h3 class="sech lv2" id="sec-input"><span class="t-zh">输入/输出（VAE 重建表行）</span><span class="t-en">Input</span></h3><div class="pblk" id="p-input-1">
-          <p class="en-lines"><span class="sent" data-sid="s-input-1-1"><span class="en">Output MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ MelD-48k↓ MelD-16k↓ VoxCPM 1.787 0.801 0.911 3.940 2.371 1.246 VoxCPM1.5 1.139 0.926 0.836 3.148 1.267 1.311 1.335 0.813 0.907 3.906 1.334 1.133 / 71.4 on APS, DSD, and RP respectively, outperforming all compared systems.</span></span> <span class="sent" data-sid="s-input-1-2"><span class="en">On the Chinese subset, it matches the top APS score (85.2, tied with Qwen3-TTS) and remains competitive on DSD (71.5) and RP (60.8), though it trails slightly on the more abstract tasks.</span></span> <span class="sent" data-sid="s-input-1-3"><span class="en">The gap on the more abstract Chinese tasks may be attributed to current limitations in annotation diversity for higher-level stylistic and persona descriptions.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-input-1-1"><span class="zh">（Table 10 内容残留+跨句残留）列依次为：模型 输入/输出采样率 | VCTK MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ | Song Describer MelD-48k↓ MelD-16k↓。VoxCPM 1.787 0.801 0.911 3.940 2.371 1.246；VoxCPM1.5 1.139 0.926 0.836 3.148 1.267 1.311；VoxCPM2（AudioVAE V2）1.335 0.813 0.907 3.906 1.334 1.133。（接上文 s-4-4-2-4）/ 71.4，即英文子集 APS / DSD / RP 分别为 84.2 / 83.2 / 71.4，超过所有对比系统。</span></span><span class="sent" data-sid="s-input-1-2"><span class="zh">在中文子集上，它取得并列最优的 APS 分数（85.2，与 Qwen3-TTS 持平），并在 DSD（71.5）与 RP（60.8）上保持竞争力，尽管在更抽象的任务上略有落后。</span></span><span class="sent" data-sid="s-input-1-3"><span class="zh">在更抽象的中文任务上的差距，可能归因于当前在更高层级的风格与人设描述方面标注多样性的不足。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-input-1-1"><span class="en">Output MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ MelD-48k↓ MelD-16k↓ VoxCPM 16kHz 16kHz</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-input-1-1"><span class="zh">（目录残留页码 4。）
+（原始数据照录）
+Output MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ MelD-48k↓ MelD-16k↓ VoxCPM 16kHz 16kHz</span></span></p>
           
         </div>
+<div class="eq" id="eq-input-1"><code>1.787 0.801 0.911 3.940 2.371 1.246</code></div>
+<div class="eq" id="eq-input-2"><code>VoxCPM1.5 44kHz 44kHz</code></div>
+<div class="eq" id="eq-input-3"><code>1.139 0.926 0.836 3.148 1.267 1.311</code></div>
+<div class="eq" id="eq-input-4"><code>VoxCPM2 16kHz 48kHz</code></div>
+<div class="eq" id="eq-input-5"><code>1.335 0.813 0.907 3.906 1.334 1.133</code></div>
 <div class="pblk" id="p-input-2">
-          <p class="en-lines"><span class="sent" data-sid="s-input-2-1"><span class="en">The controllable generation capability of VoxCPM2 extends well beyond the InstructTTSEval benchmark.</span></span> <span class="sent" data-sid="s-input-2-2"><span class="en">The model supports a wide variety of natural-language descriptions for voice design and style control, and can generate speech in all 30 supported languages as well as 9 Chinese dialects.</span></span> <span class="sent" data-sid="s-input-2-3"><span class="en">More diverse examples and interactive demonstrations are available on the project demo page.</span></span> <span class="sent" data-sid="s-input-2-4"><span class="en">Additionally, thanks to the inclusion of song-style annotated data during training, VoxCPM2 also exhibits preliminary singing voice generation ability, although singing quality remains an area for further improvement.</span><button class="mk" data-sid="s-input-2-4" title="查看讲解">解</button></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-input-2-1"><span class="zh">VoxCPM2 的可控生成能力远不止 InstructTTSEval 基准所覆盖的范围。</span></span><span class="sent" data-sid="s-input-2-2"><span class="zh">模型支持多种多样的声音设计与风格控制自然语言描述，能以全部 30 种受支持语言及 9 种中文方言生成语音。</span></span><span class="sent" data-sid="s-input-2-3"><span class="zh">更多样的示例与交互演示见项目演示页。</span></span><span class="sent" data-sid="s-input-2-4"><span class="zh">此外，得益于训练中纳入的歌唱风格标注数据，VoxCPM2 还展现出初步的歌声生成能力，尽管歌声质量仍有待进一步提升。</span><button class="mk" data-sid="s-input-2-4" title="查看讲解">解</button></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-input-2-4">
+          <p class="en-lines"><span class="sent" data-sid="s-input-2-1"><span class="en">/ 71.4 on APS, DSD, and RP respectively, outperforming all compared systems.</span></span> <span class="sent" data-sid="s-input-2-2"><span class="en">On the Chinese subset, it matches the top APS score (85.2, tied with Qwen3-TTS) and remains competitive on DSD (71.5) and RP (60.8), though it trails slightly on the more abstract tasks.</span></span> <span class="sent" data-sid="s-input-2-3"><span class="en">The gap on the more abstract Chinese tasks may be attributed to current limitations in annotation diversity for higher-level stylistic and persona descriptions.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-input-2-1"><span class="zh">（目录残留页码 4。）
+（原始数据照录）
+/ 71.4 on APS, DSD, and RP respectively, outperforming all compared systems.</span></span><span class="sent" data-sid="s-input-2-2"><span class="zh">在中文子集上，它取得并列最优的 APS 分数（85.2，与 Qwen3-TTS 持平），并在 DSD（71.5）与 RP（60.8）上保持竞争力，尽管在更抽象的任务上略有落后。</span></span><span class="sent" data-sid="s-input-2-3"><span class="zh">在更抽象的中文任务上的差距，可能归因于当前在更高层级的风格与人设描述方面标注多样性的不足。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-input-3">
+          <p class="en-lines"><span class="sent" data-sid="s-input-3-1"><span class="en">The controllable generation capability of VoxCPM2 extends well beyond the InstructTTSEval benchmark.</span></span> <span class="sent" data-sid="s-input-3-2"><span class="en">The model supports a wide variety of natural-language descriptions for voice design and style control, and can generate speech in all 30 supported languages as well as 9 Chinese dialects.</span></span> <span class="sent" data-sid="s-input-3-3"><span class="en">More diverse examples and interactive demonstrations are available on the project demo page.</span></span> <span class="sent" data-sid="s-input-3-4"><span class="en">Additionally, thanks to the inclusion of song-style annotated data during training, VoxCPM2 also exhibits preliminary singing voice generation ability, although singing quality remains an area for further improvement.</span><button class="mk" data-sid="s-input-3-4" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-input-3-1"><span class="zh">VoxCPM2 的可控生成能力远不止 InstructTTSEval 基准所覆盖的范围。</span></span><span class="sent" data-sid="s-input-3-2"><span class="zh">模型支持多种多样的声音设计与风格控制自然语言描述，能以全部 30 种受支持语言及 9 种中文方言生成语音。</span></span><span class="sent" data-sid="s-input-3-3"><span class="zh">更多样的示例与交互演示见项目演示页。</span></span><span class="sent" data-sid="s-input-3-4"><span class="zh">此外，得益于训练中纳入的歌唱风格标注数据，VoxCPM2 还展现出初步的歌声生成能力，尽管歌声质量仍有待进一步提升。</span><button class="mk" data-sid="s-input-3-4" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-input-3-4">
       <div class="ann-card kind-concept">
         <div class="ann-kind">概念</div>
         <div class="ann-title">歌声生成是可控数据的意外涌现</div>
@@ -1033,15 +1275,43 @@ Residual Acoustic Hidden:
 <div class="cap" id="tab-4-5-2"><span class="cap-k">表</span><p class="en">Table 11: Inference efficiency of VoxCPM2 on a single NVIDIA RTX 4090 (24 GB). RTF (real-time factor) is wall-clock generation time divided by output-audio duration; values &lt;1 indicate faster-than-real-time generation.</p><p class="zh">表 11：VoxCPM2 在单张 NVIDIA RTX 4090（24 GB）上的推理效率。RTF（实时因子）为实际生成耗时除以输出音频时长；小于 1 表示快于实时。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-inference-path"><span class="t-zh">推理路径（效率表行）</span><span class="t-en">Inference path</span></h3><div class="pblk" id="p-inference-path-1">
-          <p class="en-lines"><span class="sent" data-sid="s-inference-path-1-1"><span class="en">Params RTF ↓ VRAM VoxCPM2 (PyTorch) 0.30 ∼8 GB VoxCPM2 (Nano-vLLM) 0.13 ∼8 GB VoxCPM1.5 (PyTorch) 0.15 ∼6 GB VoxCPM (PyTorch) 0.17 ∼5 GB</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-inference-path-1-1"><span class="zh">（Table 11 内容残留）模型 | 参数量 | RTF↓ | 显存。VoxCPM2（PyTorch）0.30 ∼8 GB；VoxCPM2（Nano-vLLM）0.13 ∼8 GB；VoxCPM1.5（PyTorch）0.15 ∼6 GB；VoxCPM（PyTorch）0.17 ∼5 GB。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-inference-path-1-1"><span class="en">Params RTF ↓ VRAM VoxCPM2 (PyTorch) 2B</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-inference-path-1-1"><span class="zh">（表：推理路径 × Params × RTF↓ × VRAM——VoxCPM2 (PyTorch) 2B/0.30/约 8 GB；VoxCPM2 (Nano-vLLM) 2B/0.13/约 8 GB；VoxCPM1.5 (PyTorch) 0.8B/0.15/约 6 GB；VoxCPM (PyTorch) 0.6B/0.17/约 5 GB。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-inference-path-1"><code>0.30</code></div>
+<div class="eq" id="eq-inference-path-2"><code>∼8 GB VoxCPM2 (Nano-vLLM) 2B</code></div>
+<div class="eq" id="eq-inference-path-3"><code>0.13</code></div>
+<div class="eq" id="eq-inference-path-4"><code>∼8 GB VoxCPM1.5 (PyTorch) 0.8B</code></div>
+<div class="eq" id="eq-inference-path-5"><code>0.15</code></div>
+<div class="eq" id="eq-inference-path-6"><code>∼6 GB VoxCPM (PyTorch) 0.6B</code></div>
+<div class="eq" id="eq-inference-path-7"><code>0.17</code></div>
+<div class="pblk" id="p-inference-path-2">
+          <p class="en-lines"><span class="sent" data-sid="s-inference-path-2-1"><span class="en">∼5 GB</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-inference-path-2-1"><span class="zh">（表：推理路径 × Params × RTF↓ × VRAM——VoxCPM2 (PyTorch) 2B/0.30/约 8 GB；VoxCPM2 (Nano-vLLM) 2B/0.13/约 8 GB；VoxCPM1.5 (PyTorch) 0.8B/0.15/约 6 GB；VoxCPM (PyTorch) 0.6B/0.17/约 5 GB。）</span></span></p>
           
         </div>
 <div class="cap" id="tab-inference-path-1"><span class="cap-k">表</span><p class="en">Table 12: Subjective evaluation on zero-shot voice cloning. N-MOS and S-MOS are reported with 95% confidence intervals.</p><p class="zh">表 12：零样本语音克隆的主观评测。N-MOS 与 S-MOS 均报告 95% 置信区间。</p></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-system"><span class="t-zh">系统（主观评测表行残留）</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-1">
-          <p class="en-lines"><span class="sent" data-sid="s-system-1-1"><span class="en">N-MOS↑ S-MOS↑ IndexTTS2 Qwen3-TTS LongCat-Audio-DiT challenging super-resolution setting: it encodes 16 kHz audio but reconstructs at 48 kHz.</span></span> <span class="sent" data-sid="s-system-1-2"><span class="en">This result supports the asymmetric codec design introduced in Section 3.2, which gives VoxCPM2 greater flexibility by keeping the autoregressive backbone in a compact low-rate latent space while still enabling high-sample-rate waveform generation.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-system-1-1"><span class="zh">（Table 12 表头及部分行残留）系统 | N-MOS↑ | S-MOS↑：IndexTTS2、Qwen3-TTS、LongCat-Audio-DiT……（接上句 s-4-5-2-3）设定：它以 16 kHz 音频为输入，却重建出 48 kHz 音频。</span></span><span class="sent" data-sid="s-system-1-2"><span class="zh">这一结果支持了第 3.2 节引入的非对称 codec 设计：让自回归主干保持在紧凑的低速率隐空间，同时仍能生成高采样率波形，从而给 VoxCPM2 带来更大的灵活性。</span></span></p>
+      <h3 class="sech lv2" id="sec-system"><span class="t-zh">系统（可控生成主观表头残留）</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-1">
+          <p class="en-lines"><span class="sent" data-sid="s-system-1-1"><span class="en">N-MOS↑ S-MOS↑ IndexTTS2</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-system-1-1"><span class="zh">（表：N-MOS↑/S-MOS↑——IndexTTS2 4.78±0.02/4.71±0.03；Qwen3-TTS 4.80±0.02/4.69±0.03；Fish Audio S2 4.77±0.02/4.69±0.03；LongCat-Audio-DiT 4.63±0.03/4.65±0.03；VoxCPM2 4.78±0.02/4.74±0.03。）这是颇具挑战的超分辨率设置：编码 16 kHz 音频但以 48 kHz 重建。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-system-1"><code>4.78 ± 0.02 4.71 ± 0.03</code></div>
+<div class="eq" id="eq-system-2"><code>Qwen3-TTS</code></div>
+<div class="eq" id="eq-system-3"><code>4.80 ± 0.02 4.69 ± 0.03</code></div>
+<div class="eq" id="eq-system-4"><code>Fish Audio S2</code></div>
+<div class="eq" id="eq-system-5"><code>4.77 ± 0.02 4.69 ± 0.03</code></div>
+<div class="eq" id="eq-system-6"><code>LongCat-Audio-DiT</code></div>
+<div class="eq" id="eq-system-7"><code>4.63 ± 0.03 4.65 ± 0.03</code></div>
+<div class="eq" id="eq-system-8"><code>VoxCPM2</code></div>
+<div class="eq" id="eq-system-9"><code>4.78 ± 0.02 4.74 ± 0.03</code></div>
+<div class="pblk" id="p-system-2">
+          <p class="en-lines"><span class="sent" data-sid="s-system-2-1"><span class="en">challenging super-resolution setting: it encodes 16 kHz audio but reconstructs at 48 kHz.</span></span> <span class="sent" data-sid="s-system-2-2"><span class="en">This result supports the asymmetric codec design introduced in Section 3.2, which gives VoxCPM2 greater flexibility by keeping the autoregressive backbone in a compact low-rate latent space while still enabling high-sample-rate waveform generation.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-system-2-1"><span class="zh">（目录残留页码 4。）
+（原始数据照录）
+challenging super-resolution setting: it encodes 16 kHz audio but reconstructs at 48 kHz.</span></span><span class="sent" data-sid="s-system-2-2"><span class="zh">这一结果支持了第 3.2 节引入的非对称 codec 设计：让自回归主干保持在紧凑的低速率隐空间，同时仍能生成高采样率波形，从而给 VoxCPM2 带来更大的灵活性。</span></span></p>
           
         </div></section>
 <section>
@@ -1082,18 +1352,32 @@ Residual Acoustic Hidden:
         </div>
 <div class="cap" id="tab-4-7-1"><span class="cap-k">表</span><p class="en">Table 13: Subjective evaluation on multilingual synthesis. N-MOS averaged across eight languages which all systems support (de, en, es, fr, ja, ko, ru, zh) from MiniMax-MLS-Test.</p><p class="zh">表 13：多语言合成的主观评测。N-MOS 在所有系统均支持的八种语言（de、en、es、fr、ja、ko、ru、zh，取自 MiniMax-MLS-Test）上取平均。</p></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-system-2"><span class="t-zh">系统（多语言主观表头残留）</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-system-2-1-1"><span class="en">N-MOS↑ S-MOS↑ OmniVoice Qwen3-TTS</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-system-2-1-1"><span class="zh">（Table 13 表头及部分行残留）系统 | N-MOS↑ | S-MOS↑：OmniVoice、Qwen3-TTS……（行数据抽取不完整，以原表为准）。</span></span></p>
+      <h3 class="sech lv2" id="sec-system-2"><span class="t-zh">系统（可控生成主观表头残留）</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-system-2-1-1"><span class="en">N-MOS↑ S-MOS↑ OmniVoice</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-system-2-1-1"><span class="zh">表头：N-MOS↑ / S-MOS↑——OmniVoice（后续照原文）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-system-2-1"><code>4.76 ± 0.02 4.72 ± 0.02</code></div>
+<div class="eq" id="eq-system-2-2"><code>Qwen3-TTS</code></div>
+<div class="eq" id="eq-system-2-3"><code>4.77 ± 0.02 4.60 ± 0.03</code></div>
+<div class="eq" id="eq-system-2-4"><code>Fish Audio S2</code></div>
+<div class="eq" id="eq-system-2-5"><code>4.76 ± 0.02 4.70 ± 0.03</code></div>
+<div class="eq" id="eq-system-2-6"><code>VoxCPM2</code></div>
+<div class="eq" id="eq-system-2-7"><code>4.78 ± 0.02 4.66 ± 0.03</code></div>
 <div class="cap" id="tab-system-2-1"><span class="cap-k">表</span><p class="en">Table 14: Subjective results on controllable generation. I-MOS rates how well the speech follows the textbased voice design instructions.</p><p class="zh">表 14：可控生成的主观结果。I-MOS 评估语音对基于文本的声音设计指令的遵循程度。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-system-3"><span class="t-zh">系统（可控生成主观表头残留）</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-3-1">
-          <p class="en-lines"><span class="sent" data-sid="s-system-3-1-1"><span class="en">N-MOS↑ I-MOS↑ VoiceSculptor Qwen3-TTS-VD MOSS-VoiceGenerator</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-system-3-1-1"><span class="zh">（Table 14 表头及部分行残留）系统 | N-MOS↑ | I-MOS↑：VoiceSculptor、Qwen3-TTS-VD、MOSS-VoiceGenerator……（行数据抽取不完整，以原表为准）。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-system-3-1-1"><span class="en">N-MOS↑ I-MOS↑ VoiceSculptor</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-system-3-1-1"><span class="zh">表头：N-MOS↑ / I-MOS↑——VoiceSculptor（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-system-3-1"><code>3.69 ± 0.07 3.56 ± 0.07</code></div>
+<div class="eq" id="eq-system-3-2"><code>Qwen3-TTS-VD</code></div>
+<div class="eq" id="eq-system-3-3"><code>4.61 ± 0.03 4.41 ± 0.04</code></div>
+<div class="eq" id="eq-system-3-4"><code>MOSS-VoiceGenerator</code></div>
+<div class="eq" id="eq-system-3-5"><code>4.31 ± 0.05 4.15 ± 0.05</code></div>
+<div class="eq" id="eq-system-3-6"><code>VoxCPM2</code></div>
+<div class="eq" id="eq-system-3-7"><code>4.48 ± 0.04 4.50 ± 0.03</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-setup"><span class="t-zh">实验设置</span><span class="t-en">Setup.</span></h3><div class="pblk" id="p-setup-1">
           <p class="en-lines"><span class="sent" data-sid="s-setup-1-1"><span class="en">We prepare about 100 audio samples covering zero-shot voice cloning (English and Chinese from Seed-TTS-Eval), multilingual synthesis (8 languages from MiniMax-MLS-Test), and controllable generation with diverse natural-language instructions (written by LLM).</span></span> <span class="sent" data-sid="s-setup-1-2"><span class="en">We compare VoxCPM2 against representative open-source baselines drawn from Sections 4.2–4.4.</span></span> <span class="sent" data-sid="s-setup-1-3"><span class="en">A total of 50 listeners participated in a randomized, double-blind evaluation, and the three scoring metrics are defined as follows:</span></span></p>
@@ -1215,14 +1499,17 @@ Residual Acoustic Hidden:
 <div class="pblk plain" id="p-references-43"><p class="refline">Amirhossein Kazemnejad, Inkit Padhi, Karthikeyan Natesan Ramamurthy, Payel Das, and Siva Reddy. The impact of positional encoding on length generalization in transformers. Advances in Neural Information Processing Systems, 36:24892–24928, 2023.</p></div>
 <div class="pblk plain" id="p-references-44"><p class="refline">Eugene Kharitonov, Damien Vincent, Zalán Borsos, Raphaël Marinier, Sertan Girgin, Olivier Pietquin, Matt Sharifi, Marco Tagliasacchi, and Neil Zeghidour. Speak, read and prompt: High-fidelity text-to-speech with minimal supervision. Transactions of the Association for Computational Linguistics, 11:1703–1718, 2023.</p></div>
 <div class="pblk plain" id="p-references-45"><p class="refline">Kimi Team. Kimi-Audio technical report. arXiv preprint arXiv:2504.18425, 2025.</p></div>
-<div class="pblk plain" id="p-references-46"><p class="refline">Rithesh Kumar, Prem Seetharaman, Alejandro Luebs, Ishaan Kumar, and Kundan Kumar. High-fidelity audio compression with improved rvqgan. Advances in Neural Information Processing Systems, 36:27980–27993, 2023.</p></div>
+<div class="pblk plain" id="p-references-46"><p class="refline">Rithesh Kumar, Prem Seetharaman, Alejandro Luebs, Ishaan Kumar, and Kundan Kumar. High-fidelity audio compression with improved rvqgan. Advances in Neural Information Processing Systems, 36:27980–27993,</p></div>
+<div class="eq" id="eq-references-1"><code>2023.</code></div>
 <div class="pblk plain" id="p-references-47"><p class="refline">Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, et al. Voicebox: Text-guided multilingual universal speech generation at scale. Advances in neural information processing systems, 36:14005–14034, 2023.</p></div>
 <div class="pblk plain" id="p-references-48"><p class="refline">Sang-Hoon Lee, Ha-Yeong Choi, Seung-Bin Kim, and Seong-Whan Lee. HierSpeech++: Bridging the gap between semantic and acoustic representation of speech by hierarchical variational inference for zero-shot speech synthesis. IEEE Transactions on Neural Networks and Learning Systems, 2025.</p></div>
-<div class="pblk plain" id="p-references-49"><p class="refline">Yeonghyeon Lee, Inmo Yeon, Juhan Nam, and Joon Son Chung. VoiceLDM: Text-to-speech with environmental context. In IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2024.</p></div>
+<div class="pblk plain" id="p-references-49"><p class="refline">Yeonghyeon Lee, Inmo Yeon, Juhan Nam, and Joon Son Chung. VoiceLDM: Text-to-speech with environmental context. In IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),</p></div>
+<div class="eq" id="eq-references-2"><code>2024.</code></div>
 <div class="pblk plain" id="p-references-50"><p class="refline">Yichong Leng, Zhifang Guo, Kai Shen, Zeqian Ju, Xu Tan, Eric Liu, Yufei Liu, Dongchao Yang, Kaitao Song, Lei He, et al. Prompttts 2: Describing and generating voices with text prompt. In International Conference on Learning Representations, volume 2024, pp. 57672–57688, 2024.</p></div>
 <div class="pblk plain" id="p-references-51"><p class="refline">Naihan Li, Shujie Liu, Yanqing Liu, Sheng Zhao, and Ming Liu. Neural speech synthesis with transformer network. In Proceedings of the AAAI conference on artificial intelligence, volume 33, pp. 6706–6713, 2019.</p></div>
 <div class="pblk plain" id="p-references-52"><p class="refline">Tianhong Li, Yonglong Tian, He Li, Mingyang Deng, and Kaiming He. Autoregressive image generation without vector quantization. Advances in Neural Information Processing Systems, 37:56424–56445, 2024.</p></div>
-<div class="pblk plain" id="p-references-53"><p class="refline">Shijia Liao, Yuxuan Wang, Songting Liu, Yifan Cheng, Ruoyi Zhang, Tianyu Li, Shidong Li, Yisheng Zheng, Xingwei Liu, Qingzheng Wang, et al. Fish audio s2 technical report. arXiv preprint arXiv:2603.08823, 2026.</p></div>
+<div class="pblk plain" id="p-references-53"><p class="refline">Shijia Liao, Yuxuan Wang, Songting Liu, Yifan Cheng, Ruoyi Zhang, Tianyu Li, Shidong Li, Yisheng Zheng, Xingwei Liu, Qingzheng Wang, et al. Fish audio s2 technical report. arXiv preprint arXiv:2603.08823,</p></div>
+<div class="eq" id="eq-references-3"><code>2026.</code></div>
 <div class="pblk plain" id="p-references-54"><p class="refline">Alexander H Liu, Alexis Tacnet, Andy Ehrenberg, Andy Lo, Chen-Yo Sun, Guillaume Lample, Henry Lagarde, Jean-Malo Delignon, Jaeyoung Kim, John Harvill, et al. Voxtral tts. arXiv preprint arXiv:2603.25551, 2026.</p></div>
 <div class="pblk plain" id="p-references-55"><p class="refline">Guanghou Liu, Yongmao Zhang, Yi Lei, Yunlin Chen, Rui Wang, Lei Xie, and Zhifei Li. Promptstyle: Controllable style transfer for text-to-speech with natural language descriptions. In Proc. Interspeech 2023, pp. 4888–4892, 2023.</p></div>
 <div class="pblk plain" id="p-references-56"><p class="refline">Dan Lyth and Simon King. Natural language guidance of high-fidelity text-to-speech with synthetic annotations.</p></div>
@@ -1231,55 +1518,57 @@ Residual Acoustic Hidden:
 <div class="pblk plain" id="p-references-59"><p class="refline">Ruskin Raj Manku, Yuzhi Tang, Xingjian Shi, Mu Li, and Alexander Smola. Emergenttts-eval: Evaluating tts models on complex prosodic, expressiveness, and linguistic challenges using model-as-a-judge. Advances in Neural Information Processing Systems, 38, 2026.</p></div>
 <div class="pblk plain" id="p-references-60"><p class="refline">Meituan LongCat Team. LongCat-AudioDiT: High-fidelity diffusion text-to-speech in the waveform latent space. arXiv preprint arXiv:2603.29339, 2026.</p></div>
 <div class="pblk plain" id="p-references-61"><p class="refline">Lingwei Meng, Long Zhou, Shujie Liu, Sanyuan Chen, Bing Han, Shujie Hu, Yanqing Liu, Jinyu Li, Sheng Zhao, Xixin Wu, et al. Autoregressive speech synthesis without vector quantization. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp.</p></div>
-<div class="pblk plain" id="p-references-62"><p class="refline">1287–1300, 2025.</p></div>
-<div class="pblk plain" id="p-references-63"><p class="refline">Fabian Mentzer, David Minnen, Eirikur Agustsson, and Michael Tschannen. Finite scalar quantization: Vq-vae made simple. In The Twelfth International Conference on Learning Representations, 2024.</p></div>
-<div class="pblk plain" id="p-references-64"><p class="refline">Christoph Minixhofer, Ondˇrej Klejch, and Peter Bell. TTSDS—text-to-speech distribution score. In IEEE Spoken Language Technology Workshop (SLT), 2024.</p></div>
-<div class="pblk plain" id="p-references-65"><p class="refline">Yuto Nishimura, Takumi Hirose, Masanari Ohi, Hideki Nakayama, and Nakamasa Inoue. HALL-E: Hierarchical neural codec language model for minute-long zero-shot text-to-speech synthesis. In International Conference on Learning Representations (ICLR), 2025.</p></div>
-<div class="pblk plain" id="p-references-66"><p class="refline">OpenAudio.</p></div>
-<div class="pblk plain" id="p-references-67"><p class="refline">Openaudio s1: a cutting-edge text-to-speech model that performs like voice actors. https://openaudio.com/blogs/s1, 2024.</p></div>
-<div class="pblk plain" id="p-references-68"><p class="refline">Puyuan Peng, Po-Yao Huang, Shang-Wen Li, Abdelrahman Mohamed, and David Harwath. Voicecraft: Zero-shot speech editing and text-to-speech in the wild. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 12442–12462, 2024.</p></div>
-<div class="pblk plain" id="p-references-69"><p class="refline">Zhiliang Peng, Jianwei Yu, Wenhui Wang, Yaoyao Chang, Yutao Sun, Li Dong, Yi Zhu, Weijiang Xu, Hangbo Bao, Zehua Wang, et al. Vibevoice technical report. arXiv preprint arXiv:2508.19205, 2025.</p></div>
-<div class="pblk plain" id="p-references-70"><p class="refline">Wei Ping, Kainan Peng, Andrew Gibiansky, Sercan O Arik, Ajay Kannan, Sharan Narang, Jonathan Raiman, and John Miller. Deep voice 3: Scaling text-to-speech with convolutional sequence learning. In International Conference on Learning Representations, 2018.</p></div>
-<div class="pblk plain" id="p-references-71"><p class="refline">Yi Ren, Chenxu Hu, Xu Tan, Tao Qin, Sheng Zhao, Zhou Zhao, and Tie-Yan Liu. Fastspeech 2: Fast and high-quality end-to-end text to speech. In International Conference on Learning Representations, 2020.</p></div>
-<div class="pblk plain" id="p-references-72"><p class="refline">Yong Ren, Jiangyan Yi, Jianhua Tao, Haiyang Sun, Zhengqi Wen, Hao Gu, Le Xu, and Ye Bai. Ov-instructtts: Towards open-vocabulary instruct text-to-speech. arXiv preprint arXiv:2601.01459, 2026.</p></div>
-<div class="pblk plain" id="p-references-73"><p class="refline">Jonathan Shen, Ruoming Pang, Ron J Weiss, Mike Schuster, Navdeep Jaitly, Zongheng Yang, Zhifeng Chen, Yu Zhang, Yuxuan Wang, Rj Skerrv-Ryan, et al. Natural tts synthesis by conditioning wavenet on mel spectrogram predictions. In 2018 IEEE international conference on acoustics, speech and signal processing (ICASSP), pp. 4779–4783. IEEE, 2018.</p></div>
-<div class="pblk plain" id="p-references-74"><p class="refline">Kai Shen, Zeqian Ju, Xu Tan, Eric Liu, Yichong Leng, Lei He, Tao Qin, Jiang Bian, et al. Naturalspeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers. In The Twelfth International Conference on Learning Representations, 2023.</p></div>
-<div class="pblk plain" id="p-references-75"><p class="refline">Jianlin Su, Murtadha Ahmed, Yu Lu, Shengfeng Pan, Wen Bo, and Yunfeng Liu. Roformer: Enhanced transformer with rotary position embedding. Neurocomputing, 568:127063, 2024.</p></div>
-<div class="pblk plain" id="p-references-76"><p class="refline">MiniCPM Team, Chaojun Xiao, Yuxuan Li, Xu Han, Yuzhuo Bai, Jie Cai, Haotian Chen, Wentong Chen, Xin Cong, Ganqu Cui, et al. Minicpm4: Ultra-efficient llms on end devices. arXiv preprint arXiv:2506.07900, 2025.</p></div>
-<div class="pblk plain" id="p-references-77"><p class="refline">Fei Tian, Xiangyu Tony Zhang, Yuxin Zhang, Haoyang Zhang, Yuxin Li, Daijiao Liu, Yayue Deng, Donghang Wu, Jun Chen, Liang Zhao, et al. Step-audio-r1 technical report. arXiv preprint arXiv:2511.15848, 2025.</p></div>
-<div class="pblk plain" id="p-references-78"><p class="refline">Arnon Turetzky, Avihu Dekel, Nimrod Shabtay, Slava Shechtman, David Haws, Hagai Aronowitz, Ron Hoory, and Yossi Adi. Speech synthesis from continuous features using per-token latent diffusion. In 2025 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pp. 1–8. IEEE, 2025.</p></div>
-<div class="pblk plain" id="p-references-79"><p class="refline">Apoorv Vyas, Bowen Shi, Matthew Le, Andros Tjandra, Yi-Chiao Wu, Baishan Guo, Jiemin Zhang, Xinyue Zhang, Robert Adkins, William Ngan, et al. Audiobox: Unified audio generation with natural language prompts. arXiv preprint arXiv:2312.15821, 2024.</p></div>
-<div class="pblk plain" id="p-references-80"><p class="refline">Helin Wang, Jiarui Hai, Dading Chong, Karan Thakkar, Tiantian Feng, Dongchao Yang, Junhyeok Lee, Thomas Thebaud, Laureano Moro Velazquez, Jesus Villalba, et al. Capspeech: Enabling downstream applications in style-captioned text-to-speech. arXiv preprint arXiv:2506.02863, 2025a.</p></div>
-<div class="pblk plain" id="p-references-81"><p class="refline">Hui Wang, Shujie Liu, Lingwei Meng, Jinyu Li, Yifan Yang, Shiwan Zhao, Haiyang Sun, Yanqing Liu, Haoqin Sun, Jiaming Zhou, et al. Felle: Autoregressive speech synthesis with token-wise coarse-to-fine flow matching. In Proceedings of the 33rd ACM International Conference on Multimedia, pp. 10229–10238, 2025b.</p></div>
-<div class="pblk plain" id="p-references-82"><p class="refline">Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, Zheng Liang, Qixi Zheng, Rui Wang, Xiaoqin Feng, et al. Spark-tts: An efficient llm-based text-to-speech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710, 2025c.</p></div>
-<div class="pblk plain" id="p-references-83"><p class="refline">Yuancheng Wang, Haoyue Zhan, Liwei Liu, Ruihong Zeng, Haotian Guo, Jiachen Zheng, Qiang Zhang, Xueyao Zhang, Shunsi Zhang, and Zhizheng Wu. Maskgct: Zero-shot text-to-speech with masked generative codec transformer. In The Thirteenth International Conference on Learning Representations, 2025d.</p></div>
-<div class="pblk plain" id="p-references-84"><p class="refline">Yuxuan Wang, Daisy Stanton, Yu Zhang, RJ-Skerry Ryan, Eric Battenberg, Joel Shor, Ying Xiao, Ye Jia, Fei Ren, and Rif A Saurous. Style tokens: Unsupervised style modeling, control and transfer in end-to-end speech synthesis. In International conference on machine learning, pp. 5180–5189. PMLR, 2018.</p></div>
-<div class="pblk plain" id="p-references-85"><p class="refline">Chun Yat Wu, Jiajun Deng, Guinan Li, Qiuqiang Kong, and Simon Lui. Clear: Continuous latent autoregressive modeling for high-quality and low-latency speech synthesis. arXiv preprint arXiv:2508.19098, 2025.</p></div>
-<div class="pblk plain" id="p-references-86"><p class="refline">Chaojun Xiao, Jie Cai, Weilin Zhao, Biyuan Lin, Guoyang Zeng, Jie Zhou, Zhi Zheng, Xu Han, Zhiyuan Liu, and Maosong Sun. Densing law of llms. Nature Machine Intelligence, pp. 1–11, 2025.</p></div>
-<div class="pblk plain" id="p-references-87"><p class="refline">Kun Xie, Feiyu Shen, Junjie Li, Fenglong Xie, Xu Tang, and Yao Hu. Fireredtts-2: Towards long conversational speech generation for podcast and chatbot. arXiv preprint arXiv:2509.02020, 2025a.</p></div>
-<div class="pblk plain" id="p-references-88"><p class="refline">Tianxin Xie, Yan Rong, Pengfei Zhang, Wenwu Wang, and Li Liu. Towards controllable speech synthesis in the era of large language models: A systematic survey. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pp. 764–791, 2025b.</p></div>
-<div class="pblk plain" id="p-references-89"><p class="refline">Detai Xin, Xu Tan, Shinnosuke Takamichi, and Hiroshi Saruwatari. Bigcodec: Pushing the limits of low-bitrate neural speech codec. arXiv preprint arXiv:2409.05377, 2024.</p></div>
-<div class="pblk plain" id="p-references-90"><p class="refline">Detai Xin, Shujie Hu, Chengzuo Yang, Chen Huang, Guoqiao Yu, Guanglu Wan, and Xunliang Cai.</p></div>
-<div class="pblk plain" id="p-references-91"><p class="refline">Longcat-audiodit: High-fidelity diffusion text-to-speech in the waveform latent space. arXiv preprint arXiv:2603.29339, 2026.</p></div>
-<div class="pblk plain" id="p-references-92"><p class="refline">Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang, et al. Qwen2. 5-omni technical report. arXiv preprint arXiv:2503.20215, 2025a.</p></div>
-<div class="pblk plain" id="p-references-93"><p class="refline">Jin Xu, Zhifang Guo, Hangrui Hu, Yunfei Chu, Xiong Wang, Jinzheng He, Yuxuan Wang, Xian Shi, Ting He, Xinfa Zhu, et al. Qwen3-omni technical report. arXiv preprint arXiv:2509.17765, 2025b.</p></div>
-<div class="pblk plain" id="p-references-94"><p class="refline">Dongchao Yang, Songxiang Liu, Rongjie Huang, Chao Weng, and Helen Meng. Instructtts: Modelling expressive tts in discrete latent space with natural language style prompt. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 32:2913–2925, 2024.</p></div>
-<div class="pblk plain" id="p-references-95"><p class="refline">Guanrou Yang, Chen Yang, Qian Chen, Ziyang Ma, Wenxi Chen, Wen Wang, Tianrui Wang, Yifan Yang, Zhikang Niu, Wenrui Liu, et al. Emovoice: Llm-based emotional text-to-speech model with freestyle text prompting. In Proceedings of the 33rd ACM International Conference on Multimedia, pp. 10748–10757, 2025.</p></div>
-<div class="pblk plain" id="p-references-96"><p class="refline">Zhen Ye, Peiwen Sun, Jiahe Lei, Hongzhan Lin, Xu Tan, Zheqi Dai, Qiuqiang Kong, Jianyi Chen, Jiahao Pan, Qifeng Liu, et al. Codec does matter: Exploring the semantic shortcoming of codec for audio language model. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 39, pp. 25697–25705, 2025a.</p></div>
-<div class="pblk plain" id="p-references-97"><p class="refline">Zhen Ye, Xinfa Zhu, Chi-Min Chan, Xinsheng Wang, Xu Tan, Jiahe Lei, Yi Peng, Haohe Liu, Yizhu Jin, Zheqi Dai, et al. Llasa: Scaling train-time and inference-time compute for llama-based speech synthesis. arXiv preprint arXiv:2502.04128, 2025b.</p></div>
-<div class="pblk plain" id="p-references-98"><p class="refline">Aohan Zeng, Zhengxiao Du, Mingdao Liu, Kedong Wang, Shengmin Jiang, Lei Zhao, Yuxiao Dong, and Jie Tang. GLM-4-Voice: Towards intelligent and human-like end-to-end spoken chatbot. arXiv preprint arXiv:2412.02612, 2024.</p></div>
-<div class="pblk plain" id="p-references-99"><p class="refline">Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, et al. Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder. arXiv preprint arXiv:2505.07916, 2025a.</p></div>
-<div class="pblk plain" id="p-references-100"><p class="refline">Dong Zhang, Gang Wang, Jinlong Xue, Kai Fang, Liang Zhao, Rui Ma, Shuhuai Ren, Shuo Liu, Tao Guo, Weiji Zhuang, et al. Mimo-audio: Audio language models are few-shot learners. arXiv preprint arXiv:2512.23808, 2025b.</p></div>
-<div class="pblk plain" id="p-references-101"><p class="refline">Xin Zhang, Dong Zhang, Shimin Li, Yaqian Zhou, and Xipeng Qiu. Speechtokenizer: Unified speech tokenizer for speech language models. In International Conference on Learning Representations, volume 2024, pp.</p></div>
-<div class="pblk plain" id="p-references-102"><p class="refline">31798–31818, 2024.</p></div>
-<div class="pblk plain" id="p-references-103"><p class="refline">Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu. Indextts2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 40, pp. 35139–35148, 2026a.</p></div>
-<div class="pblk plain" id="p-references-104"><p class="refline">Yixuan Zhou, Xiaoyu Qin, Zeyu Jin, Shuoyi Zhou, Shun Lei, Songtao Zhou, Zhiyong Wu, and Jia Jia.</p></div>
-<div class="pblk plain" id="p-references-105"><p class="refline">Voxinstruct: Expressive human instruction-to-speech generation with unified multilingual codec language modelling. In Proceedings of the 32nd ACM International Conference on Multimedia, pp. 554–563, 2024.</p></div>
-<div class="pblk plain" id="p-references-106"><p class="refline">Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, et al. Voxcpm: Tokenizer-free tts for context-aware speech generation and true-to-life voice cloning. arXiv preprint arXiv:2509.24650, 2025.</p></div>
-<div class="pblk plain" id="p-references-107"><p class="refline">Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, et al.</p></div>
-<div class="pblk plain" id="p-references-108"><p class="refline">Hierarchical semantic-acoustic modeling via semi-discrete residual representations for expressive end-to-end speech synthesis. In The Fourteenth International Conference on Learning Representations, 2026b.</p></div>
-<div class="pblk plain" id="p-references-109"><p class="refline">Han Zhu, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang, Zhaoqing Li, Weiji Zhuang, Long Lin, and Daniel Povey. Zipvoice: Fast and high-quality zero-shot text-to-speech with flow matching. arXiv preprint arXiv:2506.13053, 2025.</p></div>
-<div class="pblk plain" id="p-references-110"><p class="refline">Han Zhu, Lingxuan Ye, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang, Zhifeng Han, Weiji Zhuang, Long Lin, and Daniel Povey. Omnivoice: Towards omnilingual zero-shot text-to-speech with diffusion language models. arXiv preprint arXiv:2604.00688, 2026.</p></div></section></article>
+<div class="eq" id="eq-references-4"><code>1287–1300, 2025.</code></div>
+<div class="pblk plain" id="p-references-62"><p class="refline">Fabian Mentzer, David Minnen, Eirikur Agustsson, and Michael Tschannen. Finite scalar quantization: Vq-vae made simple. In The Twelfth International Conference on Learning Representations, 2024.</p></div>
+<div class="pblk plain" id="p-references-63"><p class="refline">Christoph Minixhofer, Ondˇrej Klejch, and Peter Bell. TTSDS—text-to-speech distribution score. In IEEE Spoken Language Technology Workshop (SLT), 2024.</p></div>
+<div class="pblk plain" id="p-references-64"><p class="refline">Yuto Nishimura, Takumi Hirose, Masanari Ohi, Hideki Nakayama, and Nakamasa Inoue. HALL-E: Hierarchical neural codec language model for minute-long zero-shot text-to-speech synthesis. In International Conference on Learning Representations (ICLR), 2025.</p></div>
+<div class="pblk plain" id="p-references-65"><p class="refline">OpenAudio.</p></div>
+<div class="pblk plain" id="p-references-66"><p class="refline">Openaudio s1: a cutting-edge text-to-speech model that performs like voice actors. https://openaudio.com/blogs/s1, 2024.</p></div>
+<div class="pblk plain" id="p-references-67"><p class="refline">Puyuan Peng, Po-Yao Huang, Shang-Wen Li, Abdelrahman Mohamed, and David Harwath. Voicecraft: Zero-shot speech editing and text-to-speech in the wild. In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 12442–12462, 2024.</p></div>
+<div class="pblk plain" id="p-references-68"><p class="refline">Zhiliang Peng, Jianwei Yu, Wenhui Wang, Yaoyao Chang, Yutao Sun, Li Dong, Yi Zhu, Weijiang Xu, Hangbo Bao, Zehua Wang, et al. Vibevoice technical report. arXiv preprint arXiv:2508.19205, 2025.</p></div>
+<div class="pblk plain" id="p-references-69"><p class="refline">Wei Ping, Kainan Peng, Andrew Gibiansky, Sercan O Arik, Ajay Kannan, Sharan Narang, Jonathan Raiman, and John Miller. Deep voice 3: Scaling text-to-speech with convolutional sequence learning. In International Conference on Learning Representations, 2018.</p></div>
+<div class="pblk plain" id="p-references-70"><p class="refline">Yi Ren, Chenxu Hu, Xu Tan, Tao Qin, Sheng Zhao, Zhou Zhao, and Tie-Yan Liu. Fastspeech 2: Fast and high-quality end-to-end text to speech. In International Conference on Learning Representations, 2020.</p></div>
+<div class="pblk plain" id="p-references-71"><p class="refline">Yong Ren, Jiangyan Yi, Jianhua Tao, Haiyang Sun, Zhengqi Wen, Hao Gu, Le Xu, and Ye Bai. Ov-instructtts: Towards open-vocabulary instruct text-to-speech. arXiv preprint arXiv:2601.01459, 2026.</p></div>
+<div class="pblk plain" id="p-references-72"><p class="refline">Jonathan Shen, Ruoming Pang, Ron J Weiss, Mike Schuster, Navdeep Jaitly, Zongheng Yang, Zhifeng Chen, Yu Zhang, Yuxuan Wang, Rj Skerrv-Ryan, et al. Natural tts synthesis by conditioning wavenet on mel spectrogram predictions. In 2018 IEEE international conference on acoustics, speech and signal processing (ICASSP), pp. 4779–4783. IEEE, 2018.</p></div>
+<div class="pblk plain" id="p-references-73"><p class="refline">Kai Shen, Zeqian Ju, Xu Tan, Eric Liu, Yichong Leng, Lei He, Tao Qin, Jiang Bian, et al. Naturalspeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers. In The Twelfth International Conference on Learning Representations, 2023.</p></div>
+<div class="pblk plain" id="p-references-74"><p class="refline">Jianlin Su, Murtadha Ahmed, Yu Lu, Shengfeng Pan, Wen Bo, and Yunfeng Liu. Roformer: Enhanced transformer with rotary position embedding. Neurocomputing, 568:127063, 2024.</p></div>
+<div class="pblk plain" id="p-references-75"><p class="refline">MiniCPM Team, Chaojun Xiao, Yuxuan Li, Xu Han, Yuzhuo Bai, Jie Cai, Haotian Chen, Wentong Chen, Xin Cong, Ganqu Cui, et al. Minicpm4: Ultra-efficient llms on end devices. arXiv preprint arXiv:2506.07900,</p></div>
+<div class="eq" id="eq-references-5"><code>2025.</code></div>
+<div class="pblk plain" id="p-references-76"><p class="refline">Fei Tian, Xiangyu Tony Zhang, Yuxin Zhang, Haoyang Zhang, Yuxin Li, Daijiao Liu, Yayue Deng, Donghang Wu, Jun Chen, Liang Zhao, et al. Step-audio-r1 technical report. arXiv preprint arXiv:2511.15848, 2025.</p></div>
+<div class="pblk plain" id="p-references-77"><p class="refline">Arnon Turetzky, Avihu Dekel, Nimrod Shabtay, Slava Shechtman, David Haws, Hagai Aronowitz, Ron Hoory, and Yossi Adi. Speech synthesis from continuous features using per-token latent diffusion. In 2025 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pp. 1–8. IEEE, 2025.</p></div>
+<div class="pblk plain" id="p-references-78"><p class="refline">Apoorv Vyas, Bowen Shi, Matthew Le, Andros Tjandra, Yi-Chiao Wu, Baishan Guo, Jiemin Zhang, Xinyue Zhang, Robert Adkins, William Ngan, et al. Audiobox: Unified audio generation with natural language prompts. arXiv preprint arXiv:2312.15821, 2024.</p></div>
+<div class="pblk plain" id="p-references-79"><p class="refline">Helin Wang, Jiarui Hai, Dading Chong, Karan Thakkar, Tiantian Feng, Dongchao Yang, Junhyeok Lee, Thomas Thebaud, Laureano Moro Velazquez, Jesus Villalba, et al. Capspeech: Enabling downstream applications in style-captioned text-to-speech. arXiv preprint arXiv:2506.02863, 2025a.</p></div>
+<div class="pblk plain" id="p-references-80"><p class="refline">Hui Wang, Shujie Liu, Lingwei Meng, Jinyu Li, Yifan Yang, Shiwan Zhao, Haiyang Sun, Yanqing Liu, Haoqin Sun, Jiaming Zhou, et al. Felle: Autoregressive speech synthesis with token-wise coarse-to-fine flow matching. In Proceedings of the 33rd ACM International Conference on Multimedia, pp. 10229–10238, 2025b.</p></div>
+<div class="pblk plain" id="p-references-81"><p class="refline">Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, Zheng Liang, Qixi Zheng, Rui Wang, Xiaoqin Feng, et al. Spark-tts: An efficient llm-based text-to-speech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710, 2025c.</p></div>
+<div class="pblk plain" id="p-references-82"><p class="refline">Yuancheng Wang, Haoyue Zhan, Liwei Liu, Ruihong Zeng, Haotian Guo, Jiachen Zheng, Qiang Zhang, Xueyao Zhang, Shunsi Zhang, and Zhizheng Wu. Maskgct: Zero-shot text-to-speech with masked generative codec transformer. In The Thirteenth International Conference on Learning Representations, 2025d.</p></div>
+<div class="pblk plain" id="p-references-83"><p class="refline">Yuxuan Wang, Daisy Stanton, Yu Zhang, RJ-Skerry Ryan, Eric Battenberg, Joel Shor, Ying Xiao, Ye Jia, Fei Ren, and Rif A Saurous. Style tokens: Unsupervised style modeling, control and transfer in end-to-end speech synthesis. In International conference on machine learning, pp. 5180–5189. PMLR, 2018.</p></div>
+<div class="pblk plain" id="p-references-84"><p class="refline">Chun Yat Wu, Jiajun Deng, Guinan Li, Qiuqiang Kong, and Simon Lui. Clear: Continuous latent autoregressive modeling for high-quality and low-latency speech synthesis. arXiv preprint arXiv:2508.19098, 2025.</p></div>
+<div class="pblk plain" id="p-references-85"><p class="refline">Chaojun Xiao, Jie Cai, Weilin Zhao, Biyuan Lin, Guoyang Zeng, Jie Zhou, Zhi Zheng, Xu Han, Zhiyuan Liu, and Maosong Sun. Densing law of llms. Nature Machine Intelligence, pp. 1–11, 2025.</p></div>
+<div class="pblk plain" id="p-references-86"><p class="refline">Kun Xie, Feiyu Shen, Junjie Li, Fenglong Xie, Xu Tang, and Yao Hu. Fireredtts-2: Towards long conversational speech generation for podcast and chatbot. arXiv preprint arXiv:2509.02020, 2025a.</p></div>
+<div class="pblk plain" id="p-references-87"><p class="refline">Tianxin Xie, Yan Rong, Pengfei Zhang, Wenwu Wang, and Li Liu. Towards controllable speech synthesis in the era of large language models: A systematic survey. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pp. 764–791, 2025b.</p></div>
+<div class="pblk plain" id="p-references-88"><p class="refline">Detai Xin, Xu Tan, Shinnosuke Takamichi, and Hiroshi Saruwatari. Bigcodec: Pushing the limits of low-bitrate neural speech codec. arXiv preprint arXiv:2409.05377, 2024.</p></div>
+<div class="pblk plain" id="p-references-89"><p class="refline">Detai Xin, Shujie Hu, Chengzuo Yang, Chen Huang, Guoqiao Yu, Guanglu Wan, and Xunliang Cai.</p></div>
+<div class="pblk plain" id="p-references-90"><p class="refline">Longcat-audiodit: High-fidelity diffusion text-to-speech in the waveform latent space. arXiv preprint arXiv:2603.29339, 2026.</p></div>
+<div class="pblk plain" id="p-references-91"><p class="refline">Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang, et al. Qwen2. 5-omni technical report. arXiv preprint arXiv:2503.20215, 2025a.</p></div>
+<div class="pblk plain" id="p-references-92"><p class="refline">Jin Xu, Zhifang Guo, Hangrui Hu, Yunfei Chu, Xiong Wang, Jinzheng He, Yuxuan Wang, Xian Shi, Ting He, Xinfa Zhu, et al. Qwen3-omni technical report. arXiv preprint arXiv:2509.17765, 2025b.</p></div>
+<div class="pblk plain" id="p-references-93"><p class="refline">Dongchao Yang, Songxiang Liu, Rongjie Huang, Chao Weng, and Helen Meng. Instructtts: Modelling expressive tts in discrete latent space with natural language style prompt. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 32:2913–2925, 2024.</p></div>
+<div class="pblk plain" id="p-references-94"><p class="refline">Guanrou Yang, Chen Yang, Qian Chen, Ziyang Ma, Wenxi Chen, Wen Wang, Tianrui Wang, Yifan Yang, Zhikang Niu, Wenrui Liu, et al. Emovoice: Llm-based emotional text-to-speech model with freestyle text prompting. In Proceedings of the 33rd ACM International Conference on Multimedia, pp. 10748–10757,</p></div>
+<div class="eq" id="eq-references-6"><code>2025.</code></div>
+<div class="pblk plain" id="p-references-95"><p class="refline">Zhen Ye, Peiwen Sun, Jiahe Lei, Hongzhan Lin, Xu Tan, Zheqi Dai, Qiuqiang Kong, Jianyi Chen, Jiahao Pan, Qifeng Liu, et al. Codec does matter: Exploring the semantic shortcoming of codec for audio language model. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 39, pp. 25697–25705, 2025a.</p></div>
+<div class="pblk plain" id="p-references-96"><p class="refline">Zhen Ye, Xinfa Zhu, Chi-Min Chan, Xinsheng Wang, Xu Tan, Jiahe Lei, Yi Peng, Haohe Liu, Yizhu Jin, Zheqi Dai, et al. Llasa: Scaling train-time and inference-time compute for llama-based speech synthesis. arXiv preprint arXiv:2502.04128, 2025b.</p></div>
+<div class="pblk plain" id="p-references-97"><p class="refline">Aohan Zeng, Zhengxiao Du, Mingdao Liu, Kedong Wang, Shengmin Jiang, Lei Zhao, Yuxiao Dong, and Jie Tang. GLM-4-Voice: Towards intelligent and human-like end-to-end spoken chatbot. arXiv preprint arXiv:2412.02612, 2024.</p></div>
+<div class="pblk plain" id="p-references-98"><p class="refline">Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, et al. Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder. arXiv preprint arXiv:2505.07916, 2025a.</p></div>
+<div class="pblk plain" id="p-references-99"><p class="refline">Dong Zhang, Gang Wang, Jinlong Xue, Kai Fang, Liang Zhao, Rui Ma, Shuhuai Ren, Shuo Liu, Tao Guo, Weiji Zhuang, et al. Mimo-audio: Audio language models are few-shot learners. arXiv preprint arXiv:2512.23808, 2025b.</p></div>
+<div class="pblk plain" id="p-references-100"><p class="refline">Xin Zhang, Dong Zhang, Shimin Li, Yaqian Zhou, and Xipeng Qiu. Speechtokenizer: Unified speech tokenizer for speech language models. In International Conference on Learning Representations, volume 2024, pp.</p></div>
+<div class="eq" id="eq-references-7"><code>31798–31818, 2024.</code></div>
+<div class="pblk plain" id="p-references-101"><p class="refline">Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu. Indextts2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 40, pp. 35139–35148, 2026a.</p></div>
+<div class="pblk plain" id="p-references-102"><p class="refline">Yixuan Zhou, Xiaoyu Qin, Zeyu Jin, Shuoyi Zhou, Shun Lei, Songtao Zhou, Zhiyong Wu, and Jia Jia.</p></div>
+<div class="pblk plain" id="p-references-103"><p class="refline">Voxinstruct: Expressive human instruction-to-speech generation with unified multilingual codec language modelling. In Proceedings of the 32nd ACM International Conference on Multimedia, pp. 554–563, 2024.</p></div>
+<div class="pblk plain" id="p-references-104"><p class="refline">Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, et al. Voxcpm: Tokenizer-free tts for context-aware speech generation and true-to-life voice cloning. arXiv preprint arXiv:2509.24650, 2025.</p></div>
+<div class="pblk plain" id="p-references-105"><p class="refline">Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, et al.</p></div>
+<div class="pblk plain" id="p-references-106"><p class="refline">Hierarchical semantic-acoustic modeling via semi-discrete residual representations for expressive end-to-end speech synthesis. In The Fourteenth International Conference on Learning Representations, 2026b.</p></div>
+<div class="pblk plain" id="p-references-107"><p class="refline">Han Zhu, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang, Zhaoqing Li, Weiji Zhuang, Long Lin, and Daniel Povey. Zipvoice: Fast and high-quality zero-shot text-to-speech with flow matching. arXiv preprint arXiv:2506.13053, 2025.</p></div>
+<div class="pblk plain" id="p-references-108"><p class="refline">Han Zhu, Lingxuan Ye, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang, Zhifeng Han, Weiji Zhuang, Long Lin, and Daniel Povey. Omnivoice: Towards omnilingual zero-shot text-to-speech with diffusion language models. arXiv preprint arXiv:2604.00688, 2026.</p></div></section></article>
   <footer class="foot">
     原文来自 arXiv:2606.06928（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。
     本地 PDF：<a href="../../papers/2606.06928.pdf">papers/2606.06928.pdf</a>。

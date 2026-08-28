@@ -620,10 +620,16 @@ globalThis.PAPER_2603_29339 = {
       },
       {
        "id": "s-3-1-2-2",
-       "original": "A residual unit updates the hidden representation h as follows: h ←h + Conv1×1 σ(Convk,d(σ(h))) , where Convk,d denotes a weight-normalized 1D convolution with kernel size k and dilation rate d, and σ represents the Snake activation function [Ziyin et al., 2020].",
-       "zh": "一个残差单元按如下方式更新隐表征 h：h ←h + Conv1×1 σ(Convk,d(σ(h))) ，其中 Convk,d 表示卷积核大小为 k、空洞率为 d 的权重归一化 1 维卷积，σ 为 Snake 激活函数 [Ziyin et al., 2020]。"
+       "original": "A residual unit updates the hidden representation h as follows: h ←h + Conv1×1 σ(Convk,d(σ(h)))",
+       "zh": "残差单元按下式更新隐藏表示 h：h ← h + Conv1×1(σ(Conv_{k,d}(σ(h))))（式 1），其中 Conv_{k,d} 为权重归一化、卷积核 k、膨胀率 d 的一维卷积，σ 为 Snake 激活函数 [Ziyin et al., 2020]。"
       }
      ]
+    },
+    {
+     "id": "eq-3-1-1",
+     "type": "equation",
+     "page": 4,
+     "original": ", (1)"
     },
     {
      "id": "p-3-1-3",
@@ -632,28 +638,8 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-3-1-3-1",
-       "original": "Following Wu et al. [2025], to stabilize the training process under aggressive downsampling, each encoder block incorporates a non-parametric shortcut path.",
-       "zh": "跟随 Wu et al. [2025] 的做法，为了在激进下采样下稳定训练过程，每个编码器模块都加入一条无参数的捷径（shortcut）通路。"
-      },
-      {
-       "id": "s-3-1-3-2",
-       "original": "Specifically, let the input to the i-th block be a tensor of shape [B, Ci, T] with a target stride of si.",
-       "zh": "具体而言，设第 i 个模块的输入是形状为 [B, Ci, T] 的张量，目标步幅为 si。"
-      },
-      {
-       "id": "s-3-1-3-3",
-       "original": "A space-to-channel reshape operation first folds the temporal dimension into the channel axis, transforming the tensor to [B, Ci · si, T/si], thereby matching the desired downsampled temporal resolution.",
-       "zh": "首先用「空间到通道」的重排操作把时间维折叠到通道轴上，将张量变换为 [B, Ci · si, T/si]，从而匹配目标的下采样时间分辨率。"
-      },
-      {
-       "id": "s-3-1-3-4",
-       "original": "Next, a channel-wise averaging operation groups adjacent channels to reduce the dimension to Ci+1, yielding a tensor of shape [B, Ci+1, T/si].",
-       "zh": "接着按通道分组做平均，把通道维度降到 Ci+1，得到形状为 [B, Ci+1, T/si] 的张量。"
-      },
-      {
-       "id": "s-3-1-3-5",
-       "original": "This parameter-free branch establishes a linear residual pathway that bypasses the nonlinear transformations of the main block, and its output is combined with the block’s main output via element-wise addition.",
-       "zh": "这条无参数分支建立了一条绕过主模块非线性变换的线性残差通路，其输出与模块的主输出按元素相加。"
+       "original": "where Convk,d denotes a weight-normalized 1D convolution with kernel size k and dilation rate d, and σ represents the Snake activation function [Ziyin et al., 2020].",
+       "zh": "残差单元按下式更新隐藏表示 h：h ← h + Conv1×1(σ(Conv_{k,d}(σ(h))))（式 1），其中 Conv_{k,d} 为权重归一化、卷积核 k、膨胀率 d 的一维卷积，σ 为 Snake 激活函数 [Ziyin et al., 2020]。"
       }
      ]
     },
@@ -664,18 +650,28 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-3-1-4-1",
-       "original": "Finally, a convolutional projection layer—also equipped with an analogous shortcut mechanism—is applied to map the deepest features to the target latent dimension D.",
-       "zh": "最后，用一个卷积投影层——同样配备类似的捷径机制——把最深层特征映射到目标潜维度 D。"
+       "original": "Following Wu et al. [2025], to stabilize the training process under aggressive downsampling, each encoder block incorporates a non-parametric shortcut path.",
+       "zh": "跟随 Wu et al. [2025] 的做法，为了在激进下采样下稳定训练过程，每个编码器模块都加入一条无参数的捷径（shortcut）通路。"
       },
       {
        "id": "s-3-1-4-2",
-       "original": "A VAE bottleneck is then applied to the encoder’s output, generating the mean µ and log-variance log σ2.",
-       "zh": "随后在编码器输出上施加 VAE 瓶颈，生成均值 μ 和对数方差 log σ2。"
+       "original": "Specifically, let the input to the i-th block be a tensor of shape [B, Ci, T] with a target stride of si.",
+       "zh": "具体而言，设第 i 个模块的输入是形状为 [B, Ci, T] 的张量，目标步幅为 si。"
       },
       {
        "id": "s-3-1-4-3",
-       "original": "The continuous latent representation is sampled using the reparameterization trick: z = µ + σ ⊙ϵ, where ϵ ∼N(0, I).",
-       "zh": "连续潜表征用重参数化技巧采样：z = μ + σ ⊙ε，其中 ε ∼N(0, I)。"
+       "original": "A space-to-channel reshape operation first folds the temporal dimension into the channel axis, transforming the tensor to [B, Ci · si, T/si], thereby matching the desired downsampled temporal resolution.",
+       "zh": "首先用「空间到通道」的重排操作把时间维折叠到通道轴上，将张量变换为 [B, Ci · si, T/si]，从而匹配目标的下采样时间分辨率。"
+      },
+      {
+       "id": "s-3-1-4-4",
+       "original": "Next, a channel-wise averaging operation groups adjacent channels to reduce the dimension to Ci+1, yielding a tensor of shape [B, Ci+1, T/si].",
+       "zh": "接着按通道分组做平均，把通道维度降到 Ci+1，得到形状为 [B, Ci+1, T/si] 的张量。"
+      },
+      {
+       "id": "s-3-1-4-5",
+       "original": "This parameter-free branch establishes a linear residual pathway that bypasses the nonlinear transformations of the main block, and its output is combined with the block’s main output via element-wise addition.",
+       "zh": "这条无参数分支建立了一条绕过主模块非线性变换的线性残差通路，其输出与模块的主输出按元素相加。"
       }
      ]
     },
@@ -686,23 +682,18 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-3-1-5-1",
-       "original": "Decoder.",
-       "zh": "解码器。"
+       "original": "Finally, a convolutional projection layer—also equipped with an analogous shortcut mechanism—is applied to map the deepest features to the target latent dimension D.",
+       "zh": "最后，用一个卷积投影层——同样配备类似的捷径机制——把最深层特征映射到目标潜维度 D。"
       },
       {
        "id": "s-3-1-5-2",
-       "original": "The decoder architecture closely mirrors that of the encoder in reverse.",
-       "zh": "解码器架构基本是编码器的镜像反转。"
+       "original": "A VAE bottleneck is then applied to the encoder’s output, generating the mean µ and log-variance log σ2.",
+       "zh": "随后在编码器输出上施加 VAE 瓶颈，生成均值 μ 和对数方差 log σ2。"
       },
       {
        "id": "s-3-1-5-3",
-       "original": "The sampled latent sequence z is initially projected into a high-dimensional feature space via a weight-normalized 1D convolution, and then progressively upsampled through N cascaded decoder blocks.",
-       "zh": "采样得到的潜序列 z 先经一个权重归一化的 1 维卷积投影到高维特征空间，再由 N 个级联的解码器模块逐级上采样。"
-      },
-      {
-       "id": "s-3-1-5-4",
-       "original": "Following each upsampling step, the same stack of dilated residual units used in the encoder is applied to model multi-scale temporal dependencies.",
-       "zh": "每步上采样之后，应用与编码器相同的一叠空洞残差单元来建模多尺度时间依赖。"
+       "original": "The continuous latent representation is sampled using the reparameterization trick: z = µ + σ ⊙ϵ, where ϵ ∼N(0, I).",
+       "zh": "连续潜表征用重参数化技巧采样：z = μ + σ ⊙ε，其中 ε ∼N(0, I)。"
       }
      ]
     },
@@ -713,48 +704,57 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-3-1-6-1",
-       "original": "Furthermore, each decoder block incorporates a non-parametric shortcut branch symmetric to its encoder counterpart.",
-       "zh": "此外，每个解码器模块都包含一条与编码器对应部分对称的无参数捷径分支。"
+       "original": "Decoder.",
+       "zh": "解码器。"
       },
       {
        "id": "s-3-1-6-2",
-       "original": "For an input tensor of shape [B, Ci+1, T/si], a channel-to-space rearrangement first restores the temporal resolution to T.",
-       "zh": "对于形状为 [B, Ci+1, T/si] 的输入张量，先用「通道到空间」的重排把时间分辨率恢复为 T。"
+       "original": "The decoder architecture closely mirrors that of the encoder in reverse.",
+       "zh": "解码器架构基本是编码器的镜像反转。"
       },
       {
        "id": "s-3-1-6-3",
-       "original": "This is followed by a channel replication step to match the main branch’s output shape of [B, Ci, T].",
-       "zh": "随后通过通道复制，把形状对齐到主分支的输出 [B, Ci, T]。"
+       "original": "The sampled latent sequence z is initially projected into a high-dimensional feature space via a weight-normalized 1D convolution, and then progressively upsampled through N cascaded decoder blocks.",
+       "zh": "采样得到的潜序列 z 先经一个权重归一化的 1 维卷积投影到高维特征空间，再由 N 个级联的解码器模块逐级上采样。"
       },
       {
        "id": "s-3-1-6-4",
-       "original": "The shortcut and main branch outputs are then fused via element-wise addition.",
-       "zh": "捷径与主分支的输出再按元素相加融合。"
-      },
-      {
-       "id": "s-3-1-6-5",
-       "original": "A final convolutional projection layer maps the reconstructed features back to the time-domain waveform ˆx.",
-       "zh": "最后一个卷积投影层把重建特征映射回时域波形 ˆx。"
+       "original": "Following each upsampling step, the same stack of dilated residual units used in the encoder is applied to model multi-scale temporal dependencies.",
+       "zh": "每步上采样之后，应用与编码器相同的一叠空洞残差单元来建模多尺度时间依赖。"
       }
      ]
     },
     {
      "id": "p-3-1-7",
      "type": "paragraph",
-     "page": 5,
+     "page": 4,
      "sentences": [
       {
        "id": "s-3-1-7-1",
-       "original": "Scale MLP AdaLN Masked Compute gradient Text Emb Predicted Velocity ConvNeXt v2 Final Projection Blocks DiT Block Layer Norm Embedder Multi-head Cross-Attention Layer Norm Text Emb Scale Multi-head Self-Attention AdaLN MLP Time",
-       "zh": "（此处为图 2 的抽取残留文字，无完整句子语义，按图内标签如实译出：）Scale、MLP、AdaLN、掩码、计算梯度、文本嵌入、预测速度、ConvNeXt v2、最终投影、模块、DiT 模块、Layer Norm、嵌入器、多头交叉注意力、Layer Norm、文本嵌入、Scale、多头自注意力、AdaLN、MLP、时间。"
+       "original": "Furthermore, each decoder block incorporates a non-parametric shortcut branch symmetric to its encoder counterpart.",
+       "zh": "此外，每个解码器模块都包含一条与编码器对应部分对称的无参数捷径分支。"
+      },
+      {
+       "id": "s-3-1-7-2",
+       "original": "For an input tensor of shape [B, Ci+1, T/si], a channel-to-space rearrangement first restores the temporal resolution to T.",
+       "zh": "对于形状为 [B, Ci+1, T/si] 的输入张量，先用「通道到空间」的重排把时间分辨率恢复为 T。"
+      },
+      {
+       "id": "s-3-1-7-3",
+       "original": "This is followed by a channel replication step to match the main branch’s output shape of [B, Ci, T].",
+       "zh": "随后通过通道复制，把形状对齐到主分支的输出 [B, Ci, T]。"
+      },
+      {
+       "id": "s-3-1-7-4",
+       "original": "The shortcut and main branch outputs are then fused via element-wise addition.",
+       "zh": "捷径与主分支的输出再按元素相加融合。"
+      },
+      {
+       "id": "s-3-1-7-5",
+       "original": "A final convolutional projection layer maps the reconstructed features back to the time-domain waveform ˆx.",
+       "zh": "最后一个卷积投影层把重建特征映射回时域波形 ˆx。"
       }
      ]
-    },
-    {
-     "id": "eq-3-1-1",
-     "type": "equation",
-     "page": 5,
-     "original": "×𝑁"
     },
     {
      "id": "p-3-1-8",
@@ -763,6 +763,24 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-3-1-8-1",
+       "original": "Scale MLP AdaLN Masked Compute gradient Text Emb Predicted Velocity ConvNeXt v2 Final Projection Blocks DiT Block Layer Norm Embedder Multi-head Cross-Attention Layer Norm Text Emb Scale Multi-head Self-Attention AdaLN MLP Time",
+       "zh": "（此处为图 2 的抽取残留文字，无完整句子语义，按图内标签如实译出：）Scale、MLP、AdaLN、掩码、计算梯度、文本嵌入、预测速度、ConvNeXt v2、最终投影、模块、DiT 模块、Layer Norm、嵌入器、多头交叉注意力、Layer Norm、文本嵌入、Scale、多头自注意力、AdaLN、MLP、时间。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-1-2",
+     "type": "equation",
+     "page": 5,
+     "original": "×𝑁"
+    },
+    {
+     "id": "p-3-1-9",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-3-1-9-1",
        "original": "Layer Norm Layer Norm Prompt Masked Raw Word Emb Clean Latent UMT5 Text For prediction Noisy Prompt Noisy Latent",
        "zh": "（此处为图 2 右侧文本编码器部分的抽取残留，按图内标签如实译出：）Layer Norm、Layer Norm、提示、掩码、原始词嵌入、干净潜变量、UMT5、文本、用于预测、加噪提示、加噪潜变量。"
       }
@@ -805,14 +823,20 @@ globalThis.PAPER_2603_29339 = {
      ]
     },
     {
+     "id": "eq-3-2-1",
+     "type": "equation",
+     "page": 5,
+     "original": "Lgen = λspecLspec + λmelLmel + λtimeLtime + λKLLKL + λadvLadv + λfmLfm. (2)"
+    },
+    {
      "id": "p-3-2-2",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
        "id": "s-3-2-2-1",
-       "original": "Lgen = λspecLspec + λmelLmel + λtimeLtime + λKLLKL + λadvLadv + λfmLfm.",
-       "zh": "Lgen = λspecLspec + λmelLmel + λtimeLtime + λKLLKL + λadvLadv + λfmLfm。"
+       "original": "The individual components of this objective are defined as follows:",
+       "zh": "该目标的各个分量定义如下："
       }
      ]
     },
@@ -823,8 +847,8 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-3-2-3-1",
-       "original": "The individual components of this objective are defined as follows:",
-       "zh": "该目标的各个分量定义如下："
+       "original": "• Lspec (Multi-resolution STFT loss [Zeghidour et al., 2021]): Incorporates perceptual weighting to encourage faithful reproduction of the time-frequency structure across various scales. • Lmel (Multi-scale mel-spectrogram loss [Kumar et al., 2023]): Reduces spectral discrepancies across multiple FFT resolutions, ensuring perceptually natural synthesis. • Ltime (L1 time-domain loss): Directly minimizes the sample-level absolute error between the input and the reconstructed waveforms. • LKL (KL divergence loss): Regularizes the learned latent distribution towards a standard Gaussian prior, ensuring a smooth, continuous, and well-structured latent space suitable for the diffusion model.",
+       "zh": "• Lspec（多分辨率 STFT 损失 [Zeghidour et al., 2021]）：加入感知加权，促使模型在多种尺度上忠实地复现时频结构。• Lmel（多尺度梅尔频谱图损失 [Kumar et al., 2023]）：在多个 FFT 分辨率上减小频谱差异，保证感知上自然的合成。• Ltime（L1 时域损失）：直接最小化输入波形与重建波形之间逐样本的绝对误差。• LKL（KL 散度损失）：把学到的潜分布向标准高斯先验正则化，确保潜空间平滑、连续且结构良好，适合扩散模型使用。"
       }
      ]
     },
@@ -835,8 +859,18 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-3-2-4-1",
-       "original": "• Lspec (Multi-resolution STFT loss [Zeghidour et al., 2021]): Incorporates perceptual weighting to encourage faithful reproduction of the time-frequency structure across various scales. • Lmel (Multi-scale mel-spectrogram loss [Kumar et al., 2023]): Reduces spectral discrepancies across multiple FFT resolutions, ensuring perceptually natural synthesis. • Ltime (L1 time-domain loss): Directly minimizes the sample-level absolute error between the input and the reconstructed waveforms. • LKL (KL divergence loss): Regularizes the learned latent distribution towards a standard Gaussian prior, ensuring a smooth, continuous, and well-structured latent space suitable for the diffusion model.",
-       "zh": "• Lspec（多分辨率 STFT 损失 [Zeghidour et al., 2021]）：加入感知加权，促使模型在多种尺度上忠实地复现时频结构。• Lmel（多尺度梅尔频谱图损失 [Kumar et al., 2023]）：在多个 FFT 分辨率上减小频谱差异，保证感知上自然的合成。• Ltime（L1 时域损失）：直接最小化输入波形与重建波形之间逐样本的绝对误差。• LKL（KL 散度损失）：把学到的潜分布向标准高斯先验正则化，确保潜空间平滑、连续且结构良好，适合扩散模型使用。"
+       "original": "The remaining two terms are derived from a multi-scale STFT discriminator, which is trained in parallel using a standard adversarial objective.",
+       "zh": "其余两项来自一个多尺度 STFT 判别器，它以标准的对抗目标并行训练。"
+      },
+      {
+       "id": "s-3-2-4-2",
+       "original": "Specifically, the adversarial loss Ladv encourages the generator to synthesize waveforms that are perceptually indistinguishable from real audio.",
+       "zh": "具体而言，对抗损失 Ladv 促使生成器合成在感知上与真实音频难以区分的波形。"
+      },
+      {
+       "id": "s-3-2-4-3",
+       "original": "Meanwhile, the feature matching loss [Kong et al., 2020] Lfm minimizes the L1 distance between the intermediate feature maps extracted by the discriminator for both real and reconstructed audio.",
+       "zh": "同时，特征匹配损失 [Kong et al., 2020] Lfm 最小化判别器对真实音频与重建音频所提取中间特征图之间的 L1 距离。"
       }
      ]
     },
@@ -847,38 +881,16 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-3-2-5-1",
-       "original": "The remaining two terms are derived from a multi-scale STFT discriminator, which is trained in parallel using a standard adversarial objective.",
-       "zh": "其余两项来自一个多尺度 STFT 判别器，它以标准的对抗目标并行训练。"
-      },
-      {
-       "id": "s-3-2-5-2",
-       "original": "Specifically, the adversarial loss Ladv encourages the generator to synthesize waveforms that are perceptually indistinguishable from real audio.",
-       "zh": "具体而言，对抗损失 Ladv 促使生成器合成在感知上与真实音频难以区分的波形。"
-      },
-      {
-       "id": "s-3-2-5-3",
-       "original": "Meanwhile, the feature matching loss [Kong et al., 2020] Lfm minimizes the L1 distance between the intermediate feature maps extracted by the discriminator for both real and reconstructed audio.",
-       "zh": "同时，特征匹配损失 [Kong et al., 2020] Lfm 最小化判别器对真实音频与重建音频所提取中间特征图之间的 L1 距离。"
-      }
-     ]
-    },
-    {
-     "id": "p-3-2-6",
-     "type": "paragraph",
-     "page": 5,
-     "sentences": [
-      {
-       "id": "s-3-2-6-1",
        "original": "To ensure training stability, we employ an initial warmup phase.",
        "zh": "为保证训练稳定，我们采用一个初始的预热（warmup）阶段。"
       },
       {
-       "id": "s-3-2-6-2",
+       "id": "s-3-2-5-2",
        "original": "During this period, the adversarial and feature matching terms (Ladv and Lfm) are disabled.",
        "zh": "在此期间，对抗项与特征匹配项（Ladv 和 Lfm）被禁用。"
       },
       {
-       "id": "s-3-2-6-3",
+       "id": "s-3-2-5-3",
        "original": "This strategy allows the autoencoder to establish a stable and accurate reconstruction mapping before being subjected to the more challenging adversarial gradients.",
        "zh": "这一策略让自编码器先建立一个稳定而准确的重建映射，之后再接受更具挑战性的对抗梯度。"
       }
@@ -919,10 +931,16 @@ globalThis.PAPER_2603_29339 = {
       },
       {
        "id": "s-4-1-1-2",
-       "original": "Following the rectified flow formulation [Liu et al., 2022a], we construct the noisy latent zt via linear interpolation between the clean latent and the noise prior: zt = (1 −t)z0 + tz1.",
+       "original": "Following the rectified flow formulation [Liu et al., 2022a], we construct the noisy latent zt via linear interpolation between the clean latent and the noise prior:",
        "zh": "遵循 rectified flow 的表述 [Liu et al., 2022a]，我们通过在干净潜变量与噪声先验之间做线性插值来构造加噪潜变量 zt：zt = (1 −t)z0 + tz1。"
       }
      ]
+    },
+    {
+     "id": "eq-4-1-1",
+     "type": "equation",
+     "page": 6,
+     "original": "zt = (1 −t)z0 + tz1. (3)"
     },
     {
      "id": "p-4-1-2",
@@ -953,15 +971,16 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-1-3-1",
-       "original": "LCFM = Et,m,z0,z1 h\r\r(1 −m) ⊙ (z1 −z0) −v(zt, t, zctx, q; θCFM) 2i , where m denotes the random binary mask used to generate zctx.",
-       "zh": "LCFM = Et,m,z0,z1 h(1 −m) ⊙ (z1 −z0) −v(zt, t, zctx, q; θCFM) 2i ，其中 m 表示用于生成 zctx 的随机二值掩码。"
-      },
-      {
-       "id": "s-4-1-3-2",
-       "original": "Furthermore, to facilitate classifier-free guidance (CFG) [Ho and Salimans, 2021] during inference, we jointly drop the audio context zctx and the text condition q with a probability of 10% during training, thereby enabling the model to learn an unconditional distribution.",
-       "zh": "此外，为在推理期支持无分类器引导（CFG）[Ho and Salimans, 2021]，训练时我们以 10% 的概率同时丢弃音频上下文 zctx 和文本条件 q，从而让模型学到无条件分布。"
+       "original": "LCFM = Et,m,z0,z1 h\r\r(1 −m) ⊙ (z1 −z0) −v(zt, t, zctx, q; θCFM) 2i",
+       "zh": "L_CFM = E_{t,m,z0,z1}[‖(1 −m) ⊙ (z1 −z0) − v(z_t, t, z_ctx, q; θ_CFM)‖^2]（式 4），其中 m 为生成 z_ctx 所用的随机二值掩码。"
       }
      ]
+    },
+    {
+     "id": "eq-4-1-2",
+     "type": "equation",
+     "page": 6,
+     "original": ", (4)"
     },
     {
      "id": "p-4-1-4",
@@ -970,28 +989,13 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-1-4-1",
-       "original": "The overall architecture of our CFM network, illustrated in Fig. 2, is built upon the Diffusion Transformer (DiT) paradigm [Peebles and Xie, 2023].",
-       "zh": "我们的 CFM 网络整体架构如图 2 所示，建立在扩散 Transformer（DiT）范式之上 [Peebles and Xie, 2023]。"
+       "original": "where m denotes the random binary mask used to generate zctx.",
+       "zh": "L_CFM = E_{t,m,z0,z1}[‖(1 −m) ⊙ (z1 −z0) − v(z_t, t, z_ctx, q; θ_CFM)‖^2]（式 4），其中 m 为生成 z_ctx 所用的随机二值掩码。"
       },
       {
        "id": "s-4-1-4-2",
-       "original": "It leverages a standard Transformer [Vaswani et al., 2017] backbone and employs Adaptive Layer Normalization (AdaLN) [Perez et al., 2018] to inject the timestep condition t.",
-       "zh": "它使用标准的 Transformer [Vaswani et al., 2017] 主干，并用自适应层归一化（AdaLN）[Perez et al., 2018] 注入时间步条件 t。"
-      },
-      {
-       "id": "s-4-1-4-3",
-       "original": "To stabilize the training dynamics, we incorporate QK-Norm [Henry et al., 2020] within the attention modules.",
-       "zh": "为稳定训练动态，我们在注意力模块中加入 QK-Norm [Henry et al., 2020]。"
-      },
-      {
-       "id": "s-4-1-4-4",
-       "original": "While standard LayerNorm [Ba et al., 2016] is utilized throughout the network, RMSNorm [Zhang and Sennrich, 2019] is specifically applied for the QK-Norm operations.",
-       "zh": "网络各处使用标准 LayerNorm [Ba et al., 2016]，而 QK-Norm 操作则专门使用 RMSNorm [Zhang and Sennrich, 2019]。"
-      },
-      {
-       "id": "s-4-1-4-5",
-       "original": "Following DiTTo-TTS [Lee et al., 2024], we utilize cross-attention mechanisms to implicitly learn the text-to-speech alignment, and apply Rotary Positional Embedding (RoPE) [Su et al., 2024] across all attention layers to capture relative positional dependencies.",
-       "zh": "跟随 DiTTo-TTS [Lee et al., 2024]，我们用交叉注意力机制隐式学习文本-语音对齐，并在所有注意力层上应用旋转位置编码（RoPE）[Su et al., 2024] 以捕捉相对位置依赖。"
+       "original": "Furthermore, to facilitate classifier-free guidance (CFG) [Ho and Salimans, 2021] during inference, we jointly drop the audio context zctx and the text condition q with a probability of 10% during training, thereby enabling the model to learn an unconditional distribution.",
+       "zh": "此外，为在推理期支持无分类器引导（CFG）[Ho and Salimans, 2021]，训练时我们以 10% 的概率同时丢弃音频上下文 zctx 和文本条件 q，从而让模型学到无条件分布。"
       }
      ]
     },
@@ -1002,23 +1006,28 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-1-5-1",
-       "original": "We also integrate two structural optimizations from DiTTo-TTS: long-skip connections and a global AdaLN formulation.",
-       "zh": "我们还整合了 DiTTo-TTS 的两项结构优化：长跳跃连接（long-skip connection）和全局 AdaLN 形式。"
+       "original": "The overall architecture of our CFM network, illustrated in Fig. 2, is built upon the Diffusion Transformer (DiT) paradigm [Peebles and Xie, 2023].",
+       "zh": "我们的 CFM 网络整体架构如图 2 所示，建立在扩散 Transformer（DiT）范式之上 [Peebles and Xie, 2023]。"
       },
       {
        "id": "s-4-1-5-2",
-       "original": "The long-skip connection directly adds the network’s input to the final-layer hidden state, a modification that yielded slight but consistent improvements in our preliminary experiments.",
-       "zh": "长跳跃连接把网络输入直接加到最后一层的隐状态上；在我们的初步实验中，这一改动带来了微小但一致的提升。"
+       "original": "It leverages a standard Transformer [Vaswani et al., 2017] backbone and employs Adaptive Layer Normalization (AdaLN) [Perez et al., 2018] to inject the timestep condition t.",
+       "zh": "它使用标准的 Transformer [Vaswani et al., 2017] 主干，并用自适应层归一化（AdaLN）[Perez et al., 2018] 注入时间步条件 t。"
       },
       {
        "id": "s-4-1-5-3",
-       "original": "The global AdaLN mechanism, originally proposed in Gentron [Chen et al., 2024b], replaces individual AdaLN projections with a shared, global block for all DiT layers.",
-       "zh": "全局 AdaLN 机制最初在 Gentron [Chen et al., 2024b] 中提出，它用一个所有 DiT 层共享的全局模块替代逐层独立的 AdaLN 投影。"
+       "original": "To stabilize the training dynamics, we incorporate QK-Norm [Henry et al., 2020] within the attention modules.",
+       "zh": "为稳定训练动态，我们在注意力模块中加入 QK-Norm [Henry et al., 2020]。"
       },
       {
        "id": "s-4-1-5-4",
-       "original": "We observe that this design significantly reduces the overall parameter count without degrading generation performance.",
-       "zh": "我们观察到，这一设计在不损害生成性能的前提下显著减少了总参数量。"
+       "original": "While standard LayerNorm [Ba et al., 2016] is utilized throughout the network, RMSNorm [Zhang and Sennrich, 2019] is specifically applied for the QK-Norm operations.",
+       "zh": "网络各处使用标准 LayerNorm [Ba et al., 2016]，而 QK-Norm 操作则专门使用 RMSNorm [Zhang and Sennrich, 2019]。"
+      },
+      {
+       "id": "s-4-1-5-5",
+       "original": "Following DiTTo-TTS [Lee et al., 2024], we utilize cross-attention mechanisms to implicitly learn the text-to-speech alignment, and apply Rotary Positional Embedding (RoPE) [Su et al., 2024] across all attention layers to capture relative positional dependencies.",
+       "zh": "跟随 DiTTo-TTS [Lee et al., 2024]，我们用交叉注意力机制隐式学习文本-语音对齐，并在所有注意力层上应用旋转位置编码（RoPE）[Su et al., 2024] 以捕捉相对位置依赖。"
       }
      ]
     },
@@ -1029,18 +1038,23 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-1-6-1",
-       "original": "Additionally, we adopt Representation Alignment (REPA) [Yu et al., 2024] to ground the internal representations of the DiT to a robust, self-supervised semantic space.",
-       "zh": "此外，我们采用表征对齐（REPA）[Yu et al., 2024]，把 DiT 的内部表征锚定到一个鲁棒的自监督语义空间。"
+       "original": "We also integrate two structural optimizations from DiTTo-TTS: long-skip connections and a global AdaLN formulation.",
+       "zh": "我们还整合了 DiTTo-TTS 的两项结构优化：长跳跃连接（long-skip connection）和全局 AdaLN 形式。"
       },
       {
        "id": "s-4-1-6-2",
-       "original": "Specifically, we employ a pretrained mHuBERT model [Boito et al., 2024] and minimize the L1 distance between the outputs of the 8-th DiT layer and the corresponding mHuBERT features for the identical input speech.",
-       "zh": "具体而言，我们使用预训练的 mHuBERT 模型 [Boito et al., 2024]，并最小化第 8 层 DiT 输出与同一段输入语音对应 mHuBERT 特征之间的 L1 距离。"
+       "original": "The long-skip connection directly adds the network’s input to the final-layer hidden state, a modification that yielded slight but consistent improvements in our preliminary experiments.",
+       "zh": "长跳跃连接把网络输入直接加到最后一层的隐状态上；在我们的初步实验中，这一改动带来了微小但一致的提升。"
       },
       {
        "id": "s-4-1-6-3",
-       "original": "Our preliminary findings indicate that while REPA does not enhance the generation quality, it substantially accelerates the convergence during training.",
-       "zh": "我们的初步结论是：REPA 虽不提升生成质量，但能显著加快训练收敛。"
+       "original": "The global AdaLN mechanism, originally proposed in Gentron [Chen et al., 2024b], replaces individual AdaLN projections with a shared, global block for all DiT layers.",
+       "zh": "全局 AdaLN 机制最初在 Gentron [Chen et al., 2024b] 中提出，它用一个所有 DiT 层共享的全局模块替代逐层独立的 AdaLN 投影。"
+      },
+      {
+       "id": "s-4-1-6-4",
+       "original": "We observe that this design significantly reduces the overall parameter count without degrading generation performance.",
+       "zh": "我们观察到，这一设计在不损害生成性能的前提下显著减少了总参数量。"
       }
      ]
     },
@@ -1051,6 +1065,28 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-1-7-1",
+       "original": "Additionally, we adopt Representation Alignment (REPA) [Yu et al., 2024] to ground the internal representations of the DiT to a robust, self-supervised semantic space.",
+       "zh": "此外，我们采用表征对齐（REPA）[Yu et al., 2024]，把 DiT 的内部表征锚定到一个鲁棒的自监督语义空间。"
+      },
+      {
+       "id": "s-4-1-7-2",
+       "original": "Specifically, we employ a pretrained mHuBERT model [Boito et al., 2024] and minimize the L1 distance between the outputs of the 8-th DiT layer and the corresponding mHuBERT features for the identical input speech.",
+       "zh": "具体而言，我们使用预训练的 mHuBERT 模型 [Boito et al., 2024]，并最小化第 8 层 DiT 输出与同一段输入语音对应 mHuBERT 特征之间的 L1 距离。"
+      },
+      {
+       "id": "s-4-1-7-3",
+       "original": "Our preliminary findings indicate that while REPA does not enhance the generation quality, it substantially accelerates the convergence during training.",
+       "zh": "我们的初步结论是：REPA 虽不提升生成质量，但能显著加快训练收敛。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-1-8",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-4-1-8-1",
        "original": "In the next section, we detail our text encoder that supports multiple languages.",
        "zh": "在下一节中，我们详细介绍支持多语言的文本编码器。"
       }
@@ -1125,10 +1161,16 @@ globalThis.PAPER_2603_29339 = {
       },
       {
        "id": "s-4-2-1-11",
-       "original": "The resulting text representation q for LongCat-AudioDiT is formulated as: q = LayerNorm(last_hidden_state) + LayerNorm(raw_word_embedding).",
+       "original": "The resulting text representation q for LongCat-AudioDiT is formulated as:",
        "zh": "LongCat-AudioDiT 的文本表征 q 由此定义为：q = LayerNorm(last_hidden_state) + LayerNorm(raw_word_embedding)。"
       }
      ]
+    },
+    {
+     "id": "eq-4-2-1",
+     "type": "equation",
+     "page": 6,
+     "original": "q = LayerNorm(last_hidden_state) + LayerNorm(raw_word_embedding). (5)"
     },
     {
      "id": "p-4-2-2",
@@ -1210,10 +1252,16 @@ globalThis.PAPER_2603_29339 = {
       },
       {
        "id": "s-4-3-1-3",
-       "original": "Initializing the process with randomly sampled Gaussian noise z0, we iteratively update the latent zt at each step as follows: zt+∆t = zt + v(zt, t, zctx, q; θCFM)∆t, where ∆t is the predefined integration step size.",
-       "zh": "以随机采样的高斯噪声 z0 初始化后，我们在每一步按下式迭代更新潜变量 zt：zt+∆t = zt + v(zt, t, zctx, q; θCFM)∆t，其中 ∆t 是预定义的积分步长。"
+       "original": "Initializing the process with randomly sampled Gaussian noise z0, we iteratively update the latent zt at each step as follows: zt+∆t = zt + v(zt, t, zctx, q; θCFM)∆t,",
+       "zh": "以随机采样高斯噪声 z0 初始化该过程，每步按下式迭代更新潜变量：z_{t+∆t} = z_t + v(z_t, t, z_ctx, q; θ_CFM)·∆t（式 6），其中 ∆t 为预定义积分步长。"
       }
      ]
+    },
+    {
+     "id": "eq-4-3-1",
+     "type": "equation",
+     "page": 7,
+     "original": "(6)"
     },
     {
      "id": "p-4-3-2",
@@ -1222,13 +1270,8 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-3-2-1",
-       "original": "By revisiting this sequential inference process, we identify a critical training-inference mismatch regarding the state of the noisy latent zt.",
-       "zh": "重新审视这个逐步推理过程，我们发现了一个关于加噪潜变量 zt 状态的关键训练-推理不一致。"
-      },
-      {
-       "id": "s-4-3-2-2",
-       "original": "For clarity, we conceptually partition zt along the temporal axis into two segments: zctx = zt[: Tctx] corresponding to the conditioning prompt, and zgen = zt[Tctx :] corresponding to the target generation region, where Tctx denotes the duration of the prompt latent zctx.",
-       "zh": "为清晰起见，我们在概念上把 zt 沿时间轴分为两段：zctx = zt[: Tctx] 对应条件提示，zgen = zt[Tctx :] 对应目标生成区域，其中 Tctx 表示提示潜变量 zctx 的时长。"
+       "original": "where ∆t is the predefined integration step size.",
+       "zh": "以随机采样高斯噪声 z0 初始化该过程，每步按下式迭代更新潜变量：z_{t+∆t} = z_t + v(z_t, t, z_ctx, q; θ_CFM)·∆t（式 6），其中 ∆t 为预定义积分步长。"
       }
      ]
     },
@@ -1239,33 +1282,13 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-3-3-1",
-       "original": "Recall that during training, the exact trajectory of the entire zt is constructed via linear interpolation (Eq. 3), acting as the ground truth (GT) noisy latent.",
-       "zh": "回忆一下：训练时，整段 zt 的精确轨迹由线性插值构造（式 3），充当真值（GT）加噪潜变量。"
+       "original": "By revisiting this sequential inference process, we identify a critical training-inference mismatch regarding the state of the noisy latent zt.",
+       "zh": "重新审视这个逐步推理过程，我们发现了一个关于加噪潜变量 zt 状态的关键训练-推理不一致。"
       },
       {
        "id": "s-4-3-3-2",
-       "original": "During inference, however, an asymmetry emerges.",
-       "zh": "然而在推理时，一种不对称性出现了。"
-      },
-      {
-       "id": "s-4-3-3-3",
-       "original": "Because the flow matching objective (Eq. 4) penalizes velocity prediction errors only on the masked target region (vgen), the iterative update successfully yields a valid approximation of the GT trajectory for zgen .",
-       "zh": "由于流匹配目标（式 4）只对被掩码的目标区域（vgen）惩罚速度预测误差，迭代更新能成功得到 zgen 的 GT 轨迹的有效近似。"
-      },
-      {
-       "id": "s-4-3-3-4",
-       "original": "Conversely, because no loss is computed over the prompt region, the model’s velocity predictions for zctx are essentially unconstrained and arbitrary.",
-       "zh": "反过来，由于提示区域上没有计算任何损失，模型对 zctx 的速度预测本质上是不受约束的、任意的。"
-      },
-      {
-       "id": "s-4-3-3-5",
-       "original": "Consequently, accumulating these unconstrained updates causes zctx to drift away from its theoretical GT trajectory, thus introducing a training-inference mismatch that has been overlooked in prior work [Le et al., 2024, Chen et al., 2024a].",
-       "zh": "于是，这些不受约束的更新逐步累积，使 zctx 偏离其理论上的 GT 轨迹，由此引入了一个以往工作 [Le et al., 2024, Chen et al., 2024a] 一直忽视的训练-推理不一致。"
-      },
-      {
-       "id": "s-4-3-3-6",
-       "original": "We resolve this discrepancy by forcibly overwriting zctx with its GT value at every inference step: zctx ←tzctx + (1 −t)zctx 0 , where zctx 0 is the initial Gaussian noise of the prompt part.",
-       "zh": "我们通过在每个推理步把 zctx 强制覆写为其 GT 值来解决这一偏差：zctx ←tzctx + (1 −t)zctx 0 ，其中 zctx 0 是提示部分的初始高斯噪声。"
+       "original": "For clarity, we conceptually partition zt along the temporal axis into two segments: zctx t = zt[: Tctx] corresponding to the conditioning prompt, and zgen t = zt[Tctx :] corresponding to the target generation region, where Tctx denotes the duration of the prompt latent zctx.",
+       "zh": "为清晰起见，把 z_t 沿时间轴概念性地分为两段：z^ctx_t = z_t[: T_ctx] 对应条件提示段，z^gen_t = z_t[T_ctx :] 对应目标生成段，其中 T_ctx 为提示潜变量 z_ctx 的时长。"
       }
      ]
     },
@@ -1276,15 +1299,53 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-3-4-1",
-       "original": "Furthermore, on the basis of this problem, we propose a corollary for CFG.",
-       "zh": "此外，在这个问题的基础上，我们为 CFG 提出一个推论。"
+       "original": "Recall that during training, the exact trajectory of the entire zt is constructed via linear interpolation (Eq. 3), acting as the ground truth (GT) noisy latent.",
+       "zh": "回忆一下：训练时，整段 zt 的精确轨迹由线性插值构造（式 3），充当真值（GT）加噪潜变量。"
       },
       {
        "id": "s-4-3-4-2",
-       "original": "To obtain a truly unconditional velocity estimate, it is insufficient to merely drop zctx; the explicitly constructed noisy prompt latent zctx must also be dropped, as it inherently leaks acoustic information about the prompt.",
-       "zh": "要获得真正无条件的速度估计，仅仅丢弃 zctx 是不够的——显式构造的加噪提示潜变量 zctx 也必须被丢弃，因为它本身就泄漏了提示的声学信息。"
+       "original": "During inference, however, an asymmetry emerges.",
+       "zh": "然而在推理时，一种不对称性出现了。"
+      },
+      {
+       "id": "s-4-3-4-3",
+       "original": "Because the flow matching objective (Eq. 4) penalizes velocity prediction errors only on the masked target region (vgen), the iterative update successfully yields a valid approximation of the GT trajectory for zgen t .",
+       "zh": "由于流匹配目标（式 4）只对被掩码的目标区域（v^gen）惩罚速度预测误差，迭代更新可成功得到 z^gen_t 对 GT 轨迹的有效近似。"
+      },
+      {
+       "id": "s-4-3-4-4",
+       "original": "Conversely, because no loss is computed over the prompt region, the model’s velocity predictions for zctx t are essentially unconstrained and arbitrary.",
+       "zh": "相反，由于提示区域不计算损失，模型对 z^ctx_t 的速度预测基本不受约束、可以是任意的。"
+      },
+      {
+       "id": "s-4-3-4-5",
+       "original": "Consequently, accumulating these unconstrained updates causes zctx t to drift away from its theoretical GT trajectory, thus introducing a training-inference mismatch that has been overlooked in prior work [Le et al., 2024, Chen et al., 2024a].",
+       "zh": "于是累积这些无约束更新会使 z^ctx_t 漂离其理论 GT 轨迹，引入此前工作 [Le et al., 2024, Chen et al., 2024a] 忽视的训练-推理失配。"
+      },
+      {
+       "id": "s-4-3-4-6",
+       "original": "We resolve this discrepancy by forcibly overwriting zctx t with its GT value at every inference step: zctx t ←tzctx + (1 −t)zctx",
+       "zh": "我们通过在每个推理步强制把 z^ctx_t 覆写为其 GT 值来消除这一差异：z^ctx_t ← t·z^ctx + (1 −t)·z^ctx_0（式 7），其中 z^ctx_0 为提示部分的初始高斯噪声。"
       }
      ]
+    },
+    {
+     "id": "eq-4-3-2",
+     "type": "equation",
+     "page": 7,
+     "original": "0 , (7)"
+    },
+    {
+     "id": "eq-4-3-3",
+     "type": "equation",
+     "page": 7,
+     "original": "where zctx"
+    },
+    {
+     "id": "eq-4-3-4",
+     "type": "equation",
+     "page": 7,
+     "original": "0"
     },
     {
      "id": "p-4-3-5",
@@ -1293,6 +1354,35 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-3-5-1",
+       "original": "is the initial Gaussian noise of the prompt part.",
+       "zh": "我们通过在每个推理步强制把 z^ctx_t 覆写为其 GT 值来消除这一差异：z^ctx_t ← t·z^ctx + (1 −t)·z^ctx_0（式 7），其中 z^ctx_0 为提示部分的初始高斯噪声。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-3-6",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-4-3-6-1",
+       "original": "Furthermore, on the basis of this problem, we propose a corollary for CFG.",
+       "zh": "此外，在这个问题的基础上，我们为 CFG 提出一个推论。"
+      },
+      {
+       "id": "s-4-3-6-2",
+       "original": "To obtain a truly unconditional velocity estimate, it is insufficient to merely drop zctx; the explicitly constructed noisy prompt latent zctx t must also be dropped, as it inherently leaks acoustic information about the prompt.",
+       "zh": "要获得真正无条件的速度估计，仅丢弃 z_ctx 还不够；显式构造的带噪提示潜变量 z^ctx_t 也必须丢弃，因为它本身会泄漏提示的声学信息。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-3-7",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-4-3-7-1",
        "original": "In Section 5.3.3, we empirically demonstrate that mitigating this mismatch and isolating the conditional information yields substantial improvements in overall synthesis performance.",
        "zh": "在第 5.3.3 节中，我们通过实验证明：缓解这种不一致并隔离条件信息，能为整体合成性能带来实质提升。"
       }
@@ -1317,20 +1407,16 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-4-1-1",
-       "original": "Following standard practice, we first utilize classifier-free guidance (CFG) [Ho and Salimans, 2021] to steer the predicted velocity at each integration step: vCFG = vt + α(vt −vu t ), where vu t = v(zu t , t, ∅, ∅; θCFM) represents the unconditional velocity; α denotes the CFG scale.",
-       "zh": "遵循标准做法，我们首先利用无分类器引导（CFG）[Ho and Salimans, 2021] 在每个积分步调整预测速度：vCFG = vt + α(vt − vu t)，其中 vu t = v(zu t, t, ∅, ∅; θCFM) 表示无条件速度，α 为 CFG 引导尺度。"
-      },
-      {
-       "id": "s-4-4-1-2",
-       "original": "By default, we set α = 4.0.",
-       "zh": "默认情况下，我们设 α = 4.0。"
-      },
-      {
-       "id": "s-4-4-1-3",
-       "original": "As established in Section 4.3, to accurately compute the unconditional velocity, we compute the noisy latent zu t by dropping the prompt part zctx to avoid information leakage, i.e., zu t = concat(∅, zgen ).",
-       "zh": "如第 4.3 节所述，为准确计算无条件速度，我们通过丢弃提示部分 zctx 来构造加噪潜变量 zu t，以避免信息泄漏，即 zu t = concat(∅, zgen)。"
+       "original": "Following standard practice, we first utilize classifier-free guidance (CFG) [Ho and Salimans, 2021] to steer the predicted velocity at each integration step: vCFG t = vt + α(vt −vu t ),",
+       "zh": "按标准做法，先用 classifier-free guidance（CFG）[Ho and Salimans, 2021] 在每个积分步引导预测速度：v^CFG_t = v_t + α(v_t − v^u_t)（式 8），其中 v^u_t = v(z^u_t, t, ∅, ∅; θ_CFM) 为无条件速度，α 为 CFG 强度。"
       }
      ]
+    },
+    {
+     "id": "eq-4-4-1",
+     "type": "equation",
+     "page": 7,
+     "original": "(8)"
     },
     {
      "id": "p-4-4-2",
@@ -1339,55 +1425,56 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-4-2-1",
-       "original": "In our preliminary experiments, while standard CFG effectively improved synthesis quality, it occasionally introduced audible artifacts, and increasing the guidance scale α further exacerbated the degradation.",
-       "zh": "在我们的初步实验中，标准 CFG 虽然有效提升了合成质量，但偶尔会引入可听见的伪影（artifacts），而进一步增大引导尺度 α 会加剧这种劣化。"
+       "original": "where vu t = v(zu t , t, ∅, ∅; θCFM) represents the unconditional velocity; α denotes the CFG scale.",
+       "zh": "按标准做法，先用 classifier-free guidance（CFG）[Ho and Salimans, 2021] 在每个积分步引导预测速度：v^CFG_t = v_t + α(v_t − v^u_t)（式 8），其中 v^u_t = v(z^u_t, t, ∅, ∅; θ_CFM) 为无条件速度，α 为 CFG 强度。"
       },
       {
        "id": "s-4-4-2-2",
-       "original": "We hypothesize that a large CFG scale induces an oversaturation phenomenon, a widely recognized issue in diffusion-based image generation [Kynkäänniemi et al., 2024].",
-       "zh": "我们假设，过大的 CFG 尺度会引发过饱和（oversaturation）现象——这是基于扩散的图像生成中一个广为人知的问题 [Kynkäänniemi et al., 2024]。"
+       "original": "By default, we set α = 4.0.",
+       "zh": "默认情况下，我们设 α = 4.0。"
       },
       {
        "id": "s-4-4-2-3",
-       "original": "To alleviate this problem, we incorporate Adaptive Projection Guidance (APG) [Sadat et al., 2024].",
-       "zh": "为缓解该问题，我们引入自适应投影引导（APG）[Sadat et al., 2024]。"
-      },
-      {
-       "id": "s-4-4-2-4",
-       "original": "The core intuition of APG is to decompose the guidance residual, vt −vu t , into two geometrically orthogonal components: one parallel to the conditional 1https://huggingface.co/google/umt5-base prediction vt and the other orthogonal to it.",
-       "zh": "APG 的核心直觉是把引导残差 vt − vu t 分解为两个几何上正交的分量：一个与条件预测 vt 平行，另一个与之正交。（此处串入脚注 1 的 URL 抽取残留：https://huggingface.co/google/umt5-base）"
-      },
-      {
-       "id": "s-4-4-2-5",
-       "original": "APG theorizes that the parallel component is the primary cause behind oversaturation; thus, the issue can be resolved by selectively dampening this term.",
-       "zh": "APG 的理论认为，平行分量是过饱和的主因；因此，选择性地阻尼该分量即可解决问题。"
+       "original": "As established in Section 4.3, to accurately compute the unconditional velocity, we compute the noisy latent zu t by dropping the prompt part zctx t to avoid information leakage, i.e., zu t = concat(∅, zgen t",
+       "zh": "如 4.3 节所述，为准确计算无条件速度，需通过丢弃提示段 z^ctx_t 来构造带噪潜变量 z^u_t 以避免信息泄漏，即 z^u_t = concat(∅, z^gen_t)。"
       }
      ]
     },
     {
+     "id": "eq-4-4-2",
+     "type": "equation",
+     "page": 7,
+     "original": ")."
+    },
+    {
      "id": "p-4-4-3",
      "type": "paragraph",
-     "page": 8,
+     "page": 7,
      "sentences": [
       {
        "id": "s-4-4-3-1",
-       "original": "To integrate APG into our flow matching framework, we first project the model’s output from the velocity domain into the data sample domain (i.e., predicting z1), as suggested by Sadat et al. [2024]: µt = zt+(1−t)vt.",
-       "zh": "为了把 APG 整合进我们的流匹配框架，我们按照 Sadat et al. [2024] 的建议，先把模型输出从速度域投影到数据样本域（即预测 z1）：μt = zt + (1−t)vt。"
+       "original": "In our preliminary experiments, while standard CFG effectively improved synthesis quality, it occasionally introduced audible artifacts, and increasing the guidance scale α further exacerbated the degradation.",
+       "zh": "在我们的初步实验中，标准 CFG 虽然有效提升了合成质量，但偶尔会引入可听见的伪影（artifacts），而进一步增大引导尺度 α 会加剧这种劣化。"
       },
       {
        "id": "s-4-4-3-2",
-       "original": "Let the guidance term in this sample domain be denoted as ∆µt = µt −µu t .",
-       "zh": "记该样本域中的引导项为 ∆μt = μt − μu t。"
+       "original": "We hypothesize that a large CFG scale induces an oversaturation phenomenon, a widely recognized issue in diffusion-based image generation [Kynkäänniemi et al., 2024].",
+       "zh": "我们假设，过大的 CFG 尺度会引发过饱和（oversaturation）现象——这是基于扩散的图像生成中一个广为人知的问题 [Kynkäänniemi et al., 2024]。"
       },
       {
        "id": "s-4-4-3-3",
-       "original": "The parallel component ∆µ∥ t with respect to µt is calculated as: ∆µ∥ t = ⟨∆µt,µt⟩ ⟨µt,µt⟩µt, and the corresponding orthogonal term is ∆µ⊥ t = ∆µt −∆µ∥ t .",
-       "zh": "∆μt 相对于 μt 的平行分量 ∆μ∥ t 计算为：∆μ∥ t = (⟨∆μt, μt⟩ / ⟨μt, μt⟩) μt，相应的正交项为 ∆μ⊥ t = ∆μt − ∆μ∥ t。"
+       "original": "To alleviate this problem, we incorporate Adaptive Projection Guidance (APG) [Sadat et al., 2024].",
+       "zh": "为缓解该问题，我们引入自适应投影引导（APG）[Sadat et al., 2024]。"
       },
       {
        "id": "s-4-4-3-4",
-       "original": "The APG-adjusted prediction in the sample domain is then formulated as:",
-       "zh": "于是，APG 调整后的样本域预测表示为："
+       "original": "The core intuition of APG is to decompose the guidance residual, vt −vu t , into two geometrically orthogonal components: one parallel to the conditional 1https://huggingface.co/google/umt5-base prediction vt and the other orthogonal to it.",
+       "zh": "APG 的核心直觉是把引导残差 vt − vu t 分解为两个几何上正交的分量：一个与条件预测 vt 平行，另一个与之正交。（此处串入脚注 1 的 URL 抽取残留：https://huggingface.co/google/umt5-base）"
+      },
+      {
+       "id": "s-4-4-3-5",
+       "original": "APG theorizes that the parallel component is the primary cause behind oversaturation; thus, the issue can be resolved by selectively dampening this term.",
+       "zh": "APG 的理论认为，平行分量是过饱和的主因；因此，选择性地阻尼该分量即可解决问题。"
       }
      ]
     },
@@ -1398,13 +1485,23 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-4-4-1",
-       "original": "µAPG = µt + α∆µ⊥ t + η∆µ∥ t , where η acts as a dampening factor for the parallel component and is set to 0.5 by default.",
-       "zh": "μAPG = μt + α∆μ⊥ t + η∆μ∥ t，其中 η 是平行分量的阻尼因子，默认设为 0.5。"
+       "original": "To integrate APG into our flow matching framework, we first project the model’s output from the velocity domain into the data sample domain (i.e., predicting z1), as suggested by Sadat et al. [2024]: µt = zt+(1−t)vt.",
+       "zh": "为了把 APG 整合进我们的流匹配框架，我们按照 Sadat et al. [2024] 的建议，先把模型输出从速度域投影到数据样本域（即预测 z1）：μt = zt + (1−t)vt。"
       },
       {
        "id": "s-4-4-4-2",
-       "original": "Subsequently, we map the adjusted sample prediction back to the velocity domain to proceed with the ODE solver: vAPG = µAPG −zt 1 −t .",
-       "zh": "随后，我们把调整后的样本预测映射回速度域，以继续 ODE 求解：vAPG = (μAPG − zt) / (1 − t)。"
+       "original": "Let the guidance term in this sample domain be denoted as ∆µt = µt −µu t .",
+       "zh": "记该样本域中的引导项为 ∆μt = μt − μu t。"
+      },
+      {
+       "id": "s-4-4-4-3",
+       "original": "The parallel component ∆µ∥ t with respect to µt is calculated as: ∆µ∥ t = ⟨∆µt,µt⟩ ⟨µt,µt⟩µt, and the corresponding orthogonal term is ∆µ⊥ t = ∆µt −∆µ∥ t .",
+       "zh": "∆μt 相对于 μt 的平行分量 ∆μ∥ t 计算为：∆μ∥ t = (⟨∆μt, μt⟩ / ⟨μt, μt⟩) μt，相应的正交项为 ∆μ⊥ t = ∆μt − ∆μ∥ t。"
+      },
+      {
+       "id": "s-4-4-4-4",
+       "original": "The APG-adjusted prediction in the sample domain is then formulated as:",
+       "zh": "于是，APG 调整后的样本域预测表示为："
       }
      ]
     },
@@ -1415,20 +1512,28 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-4-5-1",
-       "original": "Furthermore, we adopt the reverse momentum trick proposed in APG [Sadat et al., 2024], which maintains a moving average ∆µt ←∆µt + β∆µt.",
-       "zh": "此外，我们采用 APG [Sadat et al., 2024] 提出的反动量（reverse momentum）技巧，即维护一个滑动平均 ∆μt ← ∆μt + β∆μt。"
-      },
-      {
-       "id": "s-4-4-5-2",
-       "original": "Applying a negative momentum (β < 0) forces the guidance to focus more on the current update direction rather than accumulating past momentum.",
-       "zh": "施加负动量（β < 0）会迫使引导更关注当前的更新方向，而不是累积过去的动量。"
-      },
-      {
-       "id": "s-4-4-5-3",
-       "original": "By default, we set β = −0.3.",
-       "zh": "默认情况下，我们设 β = −0.3。"
+       "original": "µAPG t",
+       "zh": "随后把调整后的样本预测映射回速度域以继续 ODE 求解：v^APG_t = (µ^APG_t − z_t)/(1 −t)。"
       }
      ]
+    },
+    {
+     "id": "eq-4-4-3",
+     "type": "equation",
+     "page": 8,
+     "original": "= µt + α∆µ⊥"
+    },
+    {
+     "id": "eq-4-4-4",
+     "type": "equation",
+     "page": 8,
+     "original": "t + η∆µ∥ t ,"
+    },
+    {
+     "id": "eq-4-4-5",
+     "type": "equation",
+     "page": 8,
+     "original": "(9)"
     },
     {
      "id": "p-4-4-6",
@@ -1437,6 +1542,57 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-4-4-6-1",
+       "original": "where η acts as a dampening factor for the parallel component and is set to 0.5 by default.",
+       "zh": "（公式片段：……t + η∆µ^∥_t（式 9），其中 η 为平行分量的阻尼系数，默认取 0.5。）"
+      },
+      {
+       "id": "s-4-4-6-2",
+       "original": "Subsequently, we map the adjusted sample prediction back to the velocity domain to proceed with the ODE solver: vAPG t = µAPG t −zt 1 −t",
+       "zh": "随后把调整后的样本预测映射回速度域以继续 ODE 求解：v^APG_t = (µ^APG_t − z_t)/(1 −t)。"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-4-6",
+     "type": "equation",
+     "page": 8,
+     "original": "."
+    },
+    {
+     "id": "eq-4-4-7",
+     "type": "equation",
+     "page": 8,
+     "original": "(10)"
+    },
+    {
+     "id": "p-4-4-7",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-4-7-1",
+       "original": "Furthermore, we adopt the reverse momentum trick proposed in APG [Sadat et al., 2024], which maintains a moving average ∆µt ←∆µt + β∆µt.",
+       "zh": "（式 10）此外采用 APG [Sadat et al., 2024] 提出的反向动量技巧，维护滑动平均 ∆µ_t ← ∆µ_t + β·∆µ_t。"
+      },
+      {
+       "id": "s-4-4-7-2",
+       "original": "Applying a negative momentum (β < 0) forces the guidance to focus more on the current update direction rather than accumulating past momentum.",
+       "zh": "施加负动量（β < 0）会迫使引导更关注当前的更新方向，而不是累积过去的动量。"
+      },
+      {
+       "id": "s-4-4-7-3",
+       "original": "By default, we set β = −0.3.",
+       "zh": "默认情况下，我们设 β = −0.3。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-4-8",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-4-4-8-1",
        "original": "As demonstrated in Section 5.3.3, APG effectively eliminates artifacts and significantly elevates synthesis quality.",
        "zh": "如第 5.3.3 节所示，APG 有效地消除了伪影，并显著提升了合成质量。"
       }
@@ -1661,7 +1817,7 @@ globalThis.PAPER_2603_29339 = {
    "page": 9,
    "title": {
     "original": "Model",
-    "zh": "模型（表 1 表头与 GT 行抽取残留）"
+    "zh": "模型（表 2 表头与 GT 行抽取残留）"
    },
    "blocks": [
     {
@@ -1671,10 +1827,16 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-model-1-1",
-       "original": "ZH EN ZH-Hard WER (%) ↓ GT 1.26 0.755 2.14 0.734",
-       "zh": "（此处为表 1 的表头与首行抽取残留，按原样译出并保留全部数字：）ZH（中文）、EN（英文）、ZH-Hard（中文困难集）；WER (%) ↓；GT（真值）1.26、0.755、2.14、0.734。"
+       "original": "ZH EN ZH-Hard CER (%) ↓ SIM ↑ WER (%) ↓ SIM ↑ CER (%) ↓ SIM ↑ GT",
+       "zh": "表头：ZH / EN / ZH-Hard × CER (%) ↓ / SIM ↑ / WER (%) ↓ / SIM ↑——GT（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-model-1",
+     "type": "equation",
+     "page": 9,
+     "original": "1.26 0.755 2.14 0.734 - -"
     }
    ]
   },
@@ -1695,10 +1857,76 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-nar-models-1-1",
-       "original": "Seed-DiT [Anastassiou et al., 2024] 1.18 0.809 1.73 0.790 MaskGCT [Wang et al., 2024] 2.27 0.774 2.62 0.714 10.27 0.748 E2 TTS [Eskimez et al., 2024b] 1.97 0.730 2.19 0.710 F5 TTS [Chen et al., 2024a] 1.56 0.741 1.83 0.647 8.67 0.713 F5R-TTS [Sun et al., 2025] 1.37 0.754 8.79 0.718 ZipVoice [Zhu et al., 2025] 1.40 0.751 1.64 0.668",
-       "zh": "（此处为表 1 中非自回归（NAR）模型各行的抽取残留，按模型逐一译出并保留全部数字，各列依次为 ZH WER、ZH SIM、EN WER、EN SIM、ZH-Hard WER、ZH-Hard SIM，缺失项为原文未报：）Seed-DiT [Anastassiou et al., 2024]：1.18、0.809、1.73、0.790；MaskGCT [Wang et al., 2024]：2.27、0.774、2.62、0.714、10.27、0.748；E2 TTS [Eskimez et al., 2024b]：1.97、0.730、2.19、0.710；F5 TTS [Chen et al., 2024a]：1.56、0.741、1.83、0.647、8.67、0.713；F5R-TTS [Sun et al., 2025]：1.37、0.754、8.79、0.718；ZipVoice [Zhu et al., 2025]：1.40、0.751、1.64、0.668。"
+       "original": "Seed-DiT [Anastassiou et al., 2024]",
+       "zh": "（表格行）Seed-DiT [Anastassiou et al., 2024]。"
       }
      ]
+    },
+    {
+     "id": "eq-nar-models-1",
+     "type": "equation",
+     "page": 9,
+     "original": "1.18 0.809 1.73 0.790 - -"
+    },
+    {
+     "id": "eq-nar-models-2",
+     "type": "equation",
+     "page": 9,
+     "original": "MaskGCT [Wang et al., 2024]"
+    },
+    {
+     "id": "eq-nar-models-3",
+     "type": "equation",
+     "page": 9,
+     "original": "2.27 0.774 2.62 0.714 10.27 0.748"
+    },
+    {
+     "id": "eq-nar-models-4",
+     "type": "equation",
+     "page": 9,
+     "original": "E2 TTS [Eskimez et al., 2024b]"
+    },
+    {
+     "id": "eq-nar-models-5",
+     "type": "equation",
+     "page": 9,
+     "original": "1.97 0.730 2.19 0.710 - -"
+    },
+    {
+     "id": "eq-nar-models-6",
+     "type": "equation",
+     "page": 9,
+     "original": "F5 TTS [Chen et al., 2024a]"
+    },
+    {
+     "id": "eq-nar-models-7",
+     "type": "equation",
+     "page": 9,
+     "original": "1.56 0.741 1.83 0.647 8.67 0.713"
+    },
+    {
+     "id": "eq-nar-models-8",
+     "type": "equation",
+     "page": 9,
+     "original": "F5R-TTS [Sun et al., 2025]"
+    },
+    {
+     "id": "eq-nar-models-9",
+     "type": "equation",
+     "page": 9,
+     "original": "1.37 0.754 - - 8.79 0.718"
+    },
+    {
+     "id": "eq-nar-models-10",
+     "type": "equation",
+     "page": 9,
+     "original": "ZipVoice [Zhu et al., 2025]"
+    },
+    {
+     "id": "eq-nar-models-11",
+     "type": "equation",
+     "page": 9,
+     "original": "1.40 0.751 1.64 0.668 - -"
     }
    ]
   },
@@ -1719,10 +1947,196 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-ar-hybrid-models-1-1",
-       "original": "Seed-ICL [Anastassiou et al., 2024] 1.12 0.796 2.25 0.762 7.59 0.776 SparkTTS [Wang et al., 2025] 1.20 0.672 1.98 0.584 Qwen2.5-Omni [Xu et al., 2025] 1.70 0.752 2.72 0.632 7.97 0.747 CosyVoice [Du et al., 2024a] 3.63 0.723 4.29 0.609 11.75 0.709 CosyVoice2 [Du et al., 2024b] 1.45 0.748 2.57 0.652 6.83 0.724 FireRedTTS-1S [Guo et al., 2025] 1.05 0.750 2.17 0.660 7.63 0.748 CosyVoice3-1.5B [Du et al., 2025] 1.12 0.781 2.21 0.720 5.83 0.758 IndexTTS2 [Zhou et al., 2025a] 1.03 0.765 2.23 0.706 7.12 0.755 DiTAR [Jia et al., 2025] 1.02 0.753 1.69 0.735 MiniMax-Speech [Zhang et al., 2025] 0.99 0.799 1.90 0.738 VoxCPM [Zhou et al., 2025b] 0.93 0.772 1.85 0.729 8.87 0.730 MOSS-TTS [SII-OpenMOSS, 2026] 1.20 0.788 1.85 0.734 Qwen3-TTS [Hu et al., 2026] 1.22 0.770 1.23 0.717 6.76 0.748 CosyVoice3.5 0.87 0.797 1.57 0.738 5.71 0.786 LongCat-AudioDiT-1B 1.18 0.812 1.78 0.762 6.33 0.787 LongCat-AudioDiT-3.5B 1.09 0.818 1.50 0.786 6.04 0.797 et al., 2024], we utilize a fine-tuned WavLM [Chen et al., 2022] (wavlm_large_finetune2) to extract the robust speaker embeddings. • UTMOS [Saeki et al., 2022]: A highly correlated neural objective metric used to approximate human Mean Opinion Scores (MOS) regarding speech naturalness. • DNSMOS [Reddy et al., 2021]: A widely adopted objective metric designed to evaluate the overall perceptual acoustic quality of the synthesized audio.",
-       "zh": "（此处为表 1 中自回归（AR）/混合模型各行的抽取残留，按模型逐一译出并保留全部数字，各列含义同上；句末的「et al., 2024]」实为前文 s-evaluation-metrics-4-3 的 Seed-TTS [Anastassiou et al., 2024] 引用错位残留，与该处相邻的 WavLM [Chen et al., 2022]、UTMOS [Saeki et al., 2022]、DNSMOS [Reddy et al., 2021] 三个指标文献年份 2022、2022、2021 一并保留于此：）Seed-ICL [Anastassiou et al., 2024]：1.12、0.796、2.25、0.762、7.59、0.776；SparkTTS [Wang et al., 2025]：1.20、0.672、1.98、0.584；Qwen2.5-Omni [Xu et al., 2025]：1.70、0.752、2.72、0.632、7.97、0.747；CosyVoice [Du et al., 2024a]：3.63、0.723、4.29、0.609、11.75、0.709；CosyVoice2 [Du et al., 2024b]：1.45、0.748、2.57、0.652、6.83、0.724；FireRedTTS-1S [Guo et al., 2025]：1.05、0.750、2.17、0.660、7.63、0.748；CosyVoice3-1.5B [Du et al., 2025]：1.12、0.781、2.21、0.720、5.83、0.758；IndexTTS2 [Zhou et al., 2025a]：1.03、0.765、2.23、0.706、7.12、0.755；DiTAR [Jia et al., 2025]：1.02、0.753、1.69、0.735；MiniMax-Speech [Zhang et al., 2025]：0.99、0.799、1.90、0.738；VoxCPM [Zhou et al., 2025b]：0.93、0.772、1.85、0.729、8.87、0.730；MOSS-TTS [SII-OpenMOSS, 2026]：1.20、0.788、1.85、0.734；Qwen3-TTS [Hu et al., 2026]：1.22、0.770、1.23、0.717、6.76、0.748；CosyVoice3.5：0.87、0.797、1.57、0.738、5.71、0.786；LongCat-AudioDiT-1B：1.18、0.812、1.78、0.762、6.33、0.787；LongCat-AudioDiT-3.5B：1.09、0.818、1.50、0.786、6.04、0.797。"
+       "original": "Seed-ICL [Anastassiou et al., 2024]",
+       "zh": "（表格行）Seed-ICL [Anastassiou et al., 2024]。"
       }
      ]
+    },
+    {
+     "id": "eq-ar-hybrid-models-1",
+     "type": "equation",
+     "page": 9,
+     "original": "1.12 0.796 2.25 0.762 7.59 0.776"
+    },
+    {
+     "id": "eq-ar-hybrid-models-2",
+     "type": "equation",
+     "page": 9,
+     "original": "SparkTTS [Wang et al., 2025]"
+    },
+    {
+     "id": "eq-ar-hybrid-models-3",
+     "type": "equation",
+     "page": 9,
+     "original": "1.20 0.672 1.98 0.584 - -"
+    },
+    {
+     "id": "eq-ar-hybrid-models-4",
+     "type": "equation",
+     "page": 9,
+     "original": "Qwen2.5-Omni [Xu et al., 2025]"
+    },
+    {
+     "id": "eq-ar-hybrid-models-5",
+     "type": "equation",
+     "page": 9,
+     "original": "1.70 0.752 2.72 0.632 7.97 0.747"
+    },
+    {
+     "id": "eq-ar-hybrid-models-6",
+     "type": "equation",
+     "page": 9,
+     "original": "CosyVoice [Du et al., 2024a]"
+    },
+    {
+     "id": "eq-ar-hybrid-models-7",
+     "type": "equation",
+     "page": 9,
+     "original": "3.63 0.723 4.29 0.609 11.75 0.709"
+    },
+    {
+     "id": "eq-ar-hybrid-models-8",
+     "type": "equation",
+     "page": 9,
+     "original": "CosyVoice2 [Du et al., 2024b]"
+    },
+    {
+     "id": "eq-ar-hybrid-models-9",
+     "type": "equation",
+     "page": 9,
+     "original": "1.45 0.748 2.57 0.652 6.83 0.724"
+    },
+    {
+     "id": "eq-ar-hybrid-models-10",
+     "type": "equation",
+     "page": 9,
+     "original": "FireRedTTS-1S [Guo et al., 2025]"
+    },
+    {
+     "id": "eq-ar-hybrid-models-11",
+     "type": "equation",
+     "page": 9,
+     "original": "1.05 0.750 2.17 0.660 7.63 0.748"
+    },
+    {
+     "id": "eq-ar-hybrid-models-12",
+     "type": "equation",
+     "page": 9,
+     "original": "CosyVoice3-1.5B [Du et al., 2025]"
+    },
+    {
+     "id": "eq-ar-hybrid-models-13",
+     "type": "equation",
+     "page": 9,
+     "original": "1.12 0.781 2.21 0.720 5.83 0.758"
+    },
+    {
+     "id": "eq-ar-hybrid-models-14",
+     "type": "equation",
+     "page": 9,
+     "original": "IndexTTS2 [Zhou et al., 2025a]"
+    },
+    {
+     "id": "eq-ar-hybrid-models-15",
+     "type": "equation",
+     "page": 9,
+     "original": "1.03 0.765 2.23 0.706 7.12 0.755"
+    },
+    {
+     "id": "eq-ar-hybrid-models-16",
+     "type": "equation",
+     "page": 9,
+     "original": "DiTAR [Jia et al., 2025]"
+    },
+    {
+     "id": "eq-ar-hybrid-models-17",
+     "type": "equation",
+     "page": 9,
+     "original": "1.02 0.753 1.69 0.735 - -"
+    },
+    {
+     "id": "eq-ar-hybrid-models-18",
+     "type": "equation",
+     "page": 9,
+     "original": "MiniMax-Speech [Zhang et al., 2025]"
+    },
+    {
+     "id": "eq-ar-hybrid-models-19",
+     "type": "equation",
+     "page": 9,
+     "original": "0.99 0.799 1.90 0.738 - -"
+    },
+    {
+     "id": "eq-ar-hybrid-models-20",
+     "type": "equation",
+     "page": 9,
+     "original": "VoxCPM [Zhou et al., 2025b]"
+    },
+    {
+     "id": "eq-ar-hybrid-models-21",
+     "type": "equation",
+     "page": 9,
+     "original": "0.93 0.772 1.85 0.729 8.87 0.730"
+    },
+    {
+     "id": "eq-ar-hybrid-models-22",
+     "type": "equation",
+     "page": 9,
+     "original": "MOSS-TTS [SII-OpenMOSS, 2026]"
+    },
+    {
+     "id": "eq-ar-hybrid-models-23",
+     "type": "equation",
+     "page": 9,
+     "original": "1.20 0.788 1.85 0.734 - -"
+    },
+    {
+     "id": "eq-ar-hybrid-models-24",
+     "type": "equation",
+     "page": 9,
+     "original": "Qwen3-TTS [Hu et al., 2026]"
+    },
+    {
+     "id": "eq-ar-hybrid-models-25",
+     "type": "equation",
+     "page": 9,
+     "original": "1.22 0.770 1.23 0.717 6.76 0.748"
+    },
+    {
+     "id": "eq-ar-hybrid-models-26",
+     "type": "equation",
+     "page": 9,
+     "original": "CosyVoice3.5"
+    },
+    {
+     "id": "eq-ar-hybrid-models-27",
+     "type": "equation",
+     "page": 9,
+     "original": "0.87 0.797 1.57 0.738 5.71 0.786"
+    },
+    {
+     "id": "eq-ar-hybrid-models-28",
+     "type": "equation",
+     "page": 9,
+     "original": "LongCat-AudioDiT-1B"
+    },
+    {
+     "id": "eq-ar-hybrid-models-29",
+     "type": "equation",
+     "page": 9,
+     "original": "1.18 0.812 1.78 0.762 6.33 0.787"
+    },
+    {
+     "id": "eq-ar-hybrid-models-30",
+     "type": "equation",
+     "page": 9,
+     "original": "LongCat-AudioDiT-3.5B"
+    },
+    {
+     "id": "eq-ar-hybrid-models-31",
+     "type": "equation",
+     "page": 9,
+     "original": "1.09 0.818 1.50 0.786 6.04 0.797"
     },
     {
      "id": "p-ar-hybrid-models-2",
@@ -1731,8 +2145,8 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-ar-hybrid-models-2-1",
-       "original": "Note that a subset of these TTS metrics is also applied to evaluate the Wav-VAE reconstructions, allowing us to comparatively analyze the inherent gap between representation reconstruction (Wav-VAE) and generation (TTS).",
-       "zh": "注意，这些 TTS 指标中的一个子集也被用于评估 Wav-VAE 的重建结果，使我们能够对比分析表征重建（Wav-VAE）与生成（TTS）之间的固有差距。"
+       "original": "et al., 2024], we utilize a fine-tuned WavLM [Chen et al., 2022] (wavlm_large_finetune2) to extract the robust speaker embeddings. • UTMOS [Saeki et al., 2022]: A highly correlated neural objective metric used to approximate human Mean Opinion Scores (MOS) regarding speech naturalness. • DNSMOS [Reddy et al., 2021]: A widely adopted objective metric designed to evaluate the overall perceptual acoustic quality of the synthesized audio.",
+       "zh": "et al., 2024]，我们使用微调过的 WavLM [Chen et al., 2022]（wavlm_large_finetune2）提取鲁棒说话人嵌入。• UTMOS [Saeki et al., 2022]：与人评 MOS 高度相关的神经客观指标，用于近似语音自然度。• DNSMOS [Reddy et al., 2021]：广泛采用的客观指标，评估合成音频的整体感知声学质量。"
       }
      ]
     },
@@ -1743,6 +2157,18 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-ar-hybrid-models-3-1",
+       "original": "Note that a subset of these TTS metrics is also applied to evaluate the Wav-VAE reconstructions, allowing us to comparatively analyze the inherent gap between representation reconstruction (Wav-VAE) and generation (TTS).",
+       "zh": "注意，这些 TTS 指标中的一个子集也被用于评估 Wav-VAE 的重建结果，使我们能够对比分析表征重建（Wav-VAE）与生成（TTS）之间的固有差距。"
+      }
+     ]
+    },
+    {
+     "id": "p-ar-hybrid-models-4",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-ar-hybrid-models-4-1",
        "original": "Finally, we benchmark LongCat-AudioDiT against strong prior work, encompassing purely NAR diffusion models, AR models, and state-of-the-art hybrid TTS architectures.",
        "zh": "最后，我们把 LongCat-AudioDiT 与一系列强基线做基准对比，涵盖纯 NAR 扩散模型、AR 模型以及最先进的混合 TTS 架构。"
       }
@@ -1832,10 +2258,16 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-model-2-1-1",
-       "original": "Nq FPS PESQ ↑ STOI ↑ UTMOS ↑ GT – – 4.644 1.0 4.056",
+       "original": "Nq FPS PESQ ↑ STOI ↑ UTMOS ↑ GT",
        "zh": "（此处为表 2 的表头与首行抽取残留，按原样译出并保留全部数字：）Nq（码本数）、FPS（帧率）、PESQ ↑、STOI ↑、UTMOS ↑；GT（真值）：–、–、4.644、1.0、4.056。"
       }
      ]
+    },
+    {
+     "id": "eq-model-2-1",
+     "type": "equation",
+     "page": 10,
+     "original": "– – 4.644 1.0 4.056"
     }
    ]
   },
@@ -1856,10 +2288,64 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-discrete-codecs-1-1",
-       "original": "DAC [Kumar et al., 2023] 9 900 3.908 0.970 3.910 Encodec [Défossez et al., 2022] 8 600 2.720 0.939 3.040 Vocos [Siuzdak, 2023] 8 600 2.807 0.943 3.695 WavTokenizer [Ji et al., 2024] 1 75 2.373 0.914 4.049 BigCodec [Xin et al., 2024] 1 80 2.697 0.939 4.097",
-       "zh": "（此处为表 2 中离散编解码器各行的抽取残留，各列依次为 Nq、FPS、PESQ、STOI、UTMOS，按模型逐一译出并保留全部数字：）DAC [Kumar et al., 2023]：9、900、3.908、0.970、3.910；Encodec [Défossez et al., 2022]：8、600、2.720、0.939、3.040；Vocos [Siuzdak, 2023]：8、600、2.807、0.943、3.695；WavTokenizer [Ji et al., 2024]：1、75、2.373、0.914、4.049；BigCodec [Xin et al., 2024]：1、80、2.697、0.939、4.097。"
+       "original": "DAC [Kumar et al., 2023]",
+       "zh": "（表格行）DAC [Kumar et al., 2023]。"
       }
      ]
+    },
+    {
+     "id": "eq-discrete-codecs-1",
+     "type": "equation",
+     "page": 10,
+     "original": "9 900 3.908 0.970 3.910"
+    },
+    {
+     "id": "eq-discrete-codecs-2",
+     "type": "equation",
+     "page": 10,
+     "original": "Encodec [Défossez et al., 2022]"
+    },
+    {
+     "id": "eq-discrete-codecs-3",
+     "type": "equation",
+     "page": 10,
+     "original": "8 600 2.720 0.939 3.040"
+    },
+    {
+     "id": "eq-discrete-codecs-4",
+     "type": "equation",
+     "page": 10,
+     "original": "Vocos [Siuzdak, 2023]"
+    },
+    {
+     "id": "eq-discrete-codecs-5",
+     "type": "equation",
+     "page": 10,
+     "original": "8 600 2.807 0.943 3.695"
+    },
+    {
+     "id": "eq-discrete-codecs-6",
+     "type": "equation",
+     "page": 10,
+     "original": "WavTokenizer [Ji et al., 2024]"
+    },
+    {
+     "id": "eq-discrete-codecs-7",
+     "type": "equation",
+     "page": 10,
+     "original": "1 75 2.373 0.914 4.049"
+    },
+    {
+     "id": "eq-discrete-codecs-8",
+     "type": "equation",
+     "page": 10,
+     "original": "BigCodec [Xin et al., 2024]"
+    },
+    {
+     "id": "eq-discrete-codecs-9",
+     "type": "equation",
+     "page": 10,
+     "original": "1 80 2.697 0.939 4.097"
     }
    ]
   },
@@ -1880,15 +2366,40 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-continuous-vaes-1-1",
-       "original": "VibeVoice [Peng et al., 2025] 1 7.50 3.068 0.828 4.181 Ours Wav-VAE 1 7.81 3.089 0.963 4.116 Ours Wav-VAE 1 11.72 3.237 0.967 4.013 as generation targets.",
+       "original": "VibeVoice [Peng et al., 2025]",
        "zh": "（此处为表 2 中连续 VAE 各行的抽取残留，各列依次为 Nq、FPS、PESQ、STOI、UTMOS，按模型逐一译出并保留全部数字：）VibeVoice [Peng et al., 2025]：1、7.50、3.068、0.828、4.181；Ours Wav-VAE（我们的 Wav-VAE）：1、7.81、3.089、0.963、4.116；Ours Wav-VAE：1、11.72、3.237、0.967、4.013。句末“as generation targets”实为前文 s-tts-synthesis-performance-1-3 尾部的错位残留，意为“作为生成目标”。"
-      },
-      {
-       "id": "s-continuous-vaes-1-2",
-       "original": "This substantial margin strongly validates our core hypothesis: operating directly within the waveform latent space effectively circumvents compounding errors and yields superior voice cloning fidelity.",
-       "zh": "这一巨大优势有力地验证了我们的核心假设：直接在波形潜空间中建模能有效规避误差累积，并带来更优的声音克隆保真度。"
       }
      ]
+    },
+    {
+     "id": "eq-continuous-vaes-1",
+     "type": "equation",
+     "page": 10,
+     "original": "1 7.50 3.068 0.828 4.181"
+    },
+    {
+     "id": "eq-continuous-vaes-2",
+     "type": "equation",
+     "page": 10,
+     "original": "Ours Wav-VAE"
+    },
+    {
+     "id": "eq-continuous-vaes-3",
+     "type": "equation",
+     "page": 10,
+     "original": "1 7.81 3.089 0.963 4.116"
+    },
+    {
+     "id": "eq-continuous-vaes-4",
+     "type": "equation",
+     "page": 10,
+     "original": "Ours Wav-VAE"
+    },
+    {
+     "id": "eq-continuous-vaes-5",
+     "type": "equation",
+     "page": 10,
+     "original": "1 11.72 3.237 0.967 4.013"
     },
     {
      "id": "p-continuous-vaes-2",
@@ -1897,16 +2408,33 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-continuous-vaes-2-1",
+       "original": "as generation targets.",
+       "zh": "（此处为表 2 中连续 VAE 各行的抽取残留，各列依次为 Nq、FPS、PESQ、STOI、UTMOS，按模型逐一译出并保留全部数字：）VibeVoice [Peng et al., 2025]：1、7.50、3.068、0.828、4.181；Ours Wav-VAE（我们的 Wav-VAE）：1、7.81、3.089、0.963、4.116；Ours Wav-VAE：1、11.72、3.237、0.967、4.013。句末“as generation targets”实为前文 s-tts-synthesis-performance-1-3 尾部的错位残留，意为“作为生成目标”。"
+      },
+      {
+       "id": "s-continuous-vaes-2-2",
+       "original": "This substantial margin strongly validates our core hypothesis: operating directly within the waveform latent space effectively circumvents compounding errors and yields superior voice cloning fidelity.",
+       "zh": "这一巨大优势有力地验证了我们的核心假设：直接在波形潜空间中建模能有效规避误差累积，并带来更优的声音克隆保真度。"
+      }
+     ]
+    },
+    {
+     "id": "p-continuous-vaes-3",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-continuous-vaes-3-1",
        "original": "Regarding intelligibility (WER/CER), LongCat-AudioDiT achieves highly competitive performance relative to existing open-source baselines.",
        "zh": "在可懂度（WER/CER）方面，LongCat-AudioDiT 相对现有开源基线取得了高度有竞争力的表现。"
       },
       {
-       "id": "s-continuous-vaes-2-2",
+       "id": "s-continuous-vaes-3-2",
        "original": "While our error rates slightly trail heavily engineered proprietary systems like Qwen3-TTS [Hu et al., 2026] and CosyVoice3.5, it is crucial to emphasize that those models rely on complex multi-stage training pipelines and massive amounts of high-quality, human-annotated data.",
        "zh": "尽管我们的错误率略逊于 Qwen3-TTS [Hu et al., 2026] 与 CosyVoice3.5 这类重度工程化的专有系统，但必须强调：那些模型依赖复杂的多阶段训练流水线以及海量的高质量人工标注数据。"
       },
       {
-       "id": "s-continuous-vaes-2-3",
+       "id": "s-continuous-vaes-3-3",
        "original": "In contrast, LongCat-AudioDiT attains its performance with a remarkably simplified end-to-end architecture and a single training stage.",
        "zh": "相比之下，LongCat-AudioDiT 以极为简化的端到端架构与单一训练阶段就达到了这一性能。"
       }
@@ -2033,8 +2561,122 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-5-3-1-2-1",
-       "original": "Intelligibility 0.990 1.25 1.50 0.985 WER-TTS 1.75 STOI-VAE 0.980 2.00 0.975 2.25 2.50 0.970 2.75 64 128 256 0.965 Naturalness 3.2 4.04 3.1 4.02 UTMOS-VAE UTMOS-TTS 3.0 4.00 3.98 2.9 3.96 2.8 3.94 2.7 3.92 2.6 64 128 256 Latent dim Similarity 0.975 0.820 0.970 0.815 0.965 SIM-VAE SIM-TTS 0.810 0.960 0.805 0.955 0.800 0.950 64 128 256 0.945 0.795 Quality 3.40 4.0 3.38 DNSMOS-TTS PESQ-VAE 3.36 3.8 3.34 3.6 3.32 3.30 3.4 3.28 3.2 3.26 64 128 256 Latent dim",
-       "zh": "（此处为图 3 的坐标轴与刻度抽取残留，按原样译出并保留全部数字：）可懂度：0.990、1.25、1.50、0.985、WER-TTS、1.75、STOI-VAE、0.980、2.00、0.975、2.25、2.50、0.970、2.75、64、128、256、0.965；自然度：3.2、4.04、3.1、4.02、UTMOS-VAE、UTMOS-TTS、3.0、4.00、3.98、2.9、3.96、2.8、3.94、2.7、3.92、2.6、64、128、256、潜变量维度；相似度：0.975、0.820、0.970、0.815、0.965、SIM-VAE、SIM-TTS、0.810、0.960、0.805、0.955、0.800、0.950、64、128、256、0.945、0.795；质量：3.40、4.0、3.38、DNSMOS-TTS、PESQ-VAE、3.36、3.8、3.34、3.6、3.32、3.30、3.4、3.28、3.2、3.26、64、128、256、潜变量维度。"
+       "original": "Intelligibility",
+       "zh": "（图纵轴：Intelligibility（可懂度）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-3-1-1",
+     "type": "equation",
+     "page": 11,
+     "original": "0.990 1.25 1.50 0.985"
+    },
+    {
+     "id": "eq-5-3-1-2",
+     "type": "equation",
+     "page": 11,
+     "original": "WER-TTS"
+    },
+    {
+     "id": "eq-5-3-1-3",
+     "type": "equation",
+     "page": 11,
+     "original": "1.75"
+    },
+    {
+     "id": "eq-5-3-1-4",
+     "type": "equation",
+     "page": 11,
+     "original": "STOI-VAE"
+    },
+    {
+     "id": "eq-5-3-1-5",
+     "type": "equation",
+     "page": 11,
+     "original": "0.980 2.00 0.975 2.25 2.50 0.970 2.75 64 128 256 0.965"
+    },
+    {
+     "id": "eq-5-3-1-6",
+     "type": "equation",
+     "page": 11,
+     "original": "Naturalness"
+    },
+    {
+     "id": "eq-5-3-1-7",
+     "type": "equation",
+     "page": 11,
+     "original": "3.2 4.04 3.1 4.02"
+    },
+    {
+     "id": "eq-5-3-1-8",
+     "type": "equation",
+     "page": 11,
+     "original": "UTMOS-VAE UTMOS-TTS"
+    },
+    {
+     "id": "eq-5-3-1-9",
+     "type": "equation",
+     "page": 11,
+     "original": "3.0 4.00 3.98 2.9 3.96 2.8 3.94 2.7 3.92 2.6 64 128 256"
+    },
+    {
+     "id": "eq-5-3-1-10",
+     "type": "equation",
+     "page": 11,
+     "original": "Latent dim Similarity"
+    },
+    {
+     "id": "eq-5-3-1-11",
+     "type": "equation",
+     "page": 11,
+     "original": "0.975 0.820 0.970 0.815 0.965"
+    },
+    {
+     "id": "eq-5-3-1-12",
+     "type": "equation",
+     "page": 11,
+     "original": "SIM-VAE SIM-TTS"
+    },
+    {
+     "id": "eq-5-3-1-13",
+     "type": "equation",
+     "page": 11,
+     "original": "0.810 0.960 0.805 0.955 0.800 0.950 64 128 256 0.945 0.795"
+    },
+    {
+     "id": "eq-5-3-1-14",
+     "type": "equation",
+     "page": 11,
+     "original": "Quality"
+    },
+    {
+     "id": "eq-5-3-1-15",
+     "type": "equation",
+     "page": 11,
+     "original": "3.40 4.0 3.38"
+    },
+    {
+     "id": "eq-5-3-1-16",
+     "type": "equation",
+     "page": 11,
+     "original": "DNSMOS-TTS PESQ-VAE"
+    },
+    {
+     "id": "eq-5-3-1-17",
+     "type": "equation",
+     "page": 11,
+     "original": "3.36 3.8 3.34 3.6 3.32 3.30 3.4 3.28 3.2 3.26 64 128 256"
+    },
+    {
+     "id": "p-5-3-1-3",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-5-3-1-3-1",
+       "original": "Latent dim",
+       "zh": "（图横轴：Latent dim（潜变量维度）。）"
       }
      ]
     },
@@ -2071,25 +2713,28 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-tts-latent-model-1-1",
-       "original": "ZH EN ZH-Hard WER (%) ↓ Mel-VAE 1.29 0.706 2.20 0.714 7.70 0.696 Wav-VAE 1.18 0.812 1.78 0.762 6.33 0.787 For this experiment, we adopt the open-source Mel-VAE introduced in ACE-Step [Gong et al., 2025].",
-       "zh": "（此处为表 3 各行的抽取残留，各列依次为 ZH-WER、ZH-SIM、EN-WER、EN-SIM、ZH-Hard-WER、ZH-Hard-SIM，按行译出并保留全部数字：）ZH、EN、ZH-Hard；WER (%) ↓；Mel-VAE：1.29、0.706、2.20、0.714、7.70、0.696；Wav-VAE：1.18、0.812、1.78、0.762、6.33、0.787。）本实验采用 ACE-Step [Gong et al., 2025] 引入的开源 Mel-VAE。"
-      },
-      {
-       "id": "s-tts-latent-model-1-2",
-       "original": "Although originally designed for music generation, we empirically verify that this Mel-VAE yields high-fidelity speech reconstruction at a similar frame rate to our proposed Wav-VAE.",
-       "zh": "尽管该 Mel-VAE 最初是为音乐生成设计的，我们从实证上验证了它能在与我们所提 Wav-VAE 相近的帧率下产生高保真的语音重建。"
-      },
-      {
-       "id": "s-tts-latent-model-1-3",
-       "original": "We train a baseline 1B parameter TTS model using this Mel-VAE as the modeling target.",
-       "zh": "我们以该 Mel-VAE 为建模目标，训练了一个 1B 参数的基线 TTS 模型。"
-      },
-      {
-       "id": "s-tts-latent-model-1-4",
-       "original": "During inference, the generated latents are decoded into mel-spectrograms, which are subsequently inverted into time-domain waveforms using the officially provided high-quality vocoder3.",
-       "zh": "推理时，生成的潜变量被解码为梅尔频谱图，随后用官方提供的高质量声码器（脚注 3）逆变换为时域波形。"
+       "original": "ZH EN ZH-Hard CER (%) ↓ SIM ↑ WER (%) ↓ SIM ↑ CER (%) ↓ SIM ↑ Mel-VAE",
+       "zh": "（表：ZH/EN/ZH-Hard 三组的 CER(%)↓/SIM↑ 与 WER(%)↓/SIM↑——Mel-VAE 1.29/0.706、2.20/0.714、7.70/0.696；Wav-VAE 1.18/0.812、1.78/0.762、6.33/0.787。）本实验采用 ACE-Step [Gong et al., 2025] 引入的开源 Mel-VAE。"
       }
      ]
+    },
+    {
+     "id": "eq-tts-latent-model-1",
+     "type": "equation",
+     "page": 11,
+     "original": "1.29 0.706 2.20 0.714 7.70 0.696"
+    },
+    {
+     "id": "eq-tts-latent-model-2",
+     "type": "equation",
+     "page": 11,
+     "original": "Wav-VAE"
+    },
+    {
+     "id": "eq-tts-latent-model-3",
+     "type": "equation",
+     "page": 11,
+     "original": "1.18 0.812 1.78 0.762 6.33 0.787"
     },
     {
      "id": "p-tts-latent-model-2",
@@ -2098,21 +2743,48 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-tts-latent-model-2-1",
+       "original": "For this experiment, we adopt the open-source Mel-VAE introduced in ACE-Step [Gong et al., 2025].",
+       "zh": "（表：ZH/EN/ZH-Hard 三组的 CER(%)↓/SIM↑ 与 WER(%)↓/SIM↑——Mel-VAE 1.29/0.706、2.20/0.714、7.70/0.696；Wav-VAE 1.18/0.812、1.78/0.762、6.33/0.787。）本实验采用 ACE-Step [Gong et al., 2025] 引入的开源 Mel-VAE。"
+      },
+      {
+       "id": "s-tts-latent-model-2-2",
+       "original": "Although originally designed for music generation, we empirically verify that this Mel-VAE yields high-fidelity speech reconstruction at a similar frame rate to our proposed Wav-VAE.",
+       "zh": "尽管该 Mel-VAE 最初是为音乐生成设计的，我们从实证上验证了它能在与我们所提 Wav-VAE 相近的帧率下产生高保真的语音重建。"
+      },
+      {
+       "id": "s-tts-latent-model-2-3",
+       "original": "We train a baseline 1B parameter TTS model using this Mel-VAE as the modeling target.",
+       "zh": "我们以该 Mel-VAE 为建模目标，训练了一个 1B 参数的基线 TTS 模型。"
+      },
+      {
+       "id": "s-tts-latent-model-2-4",
+       "original": "During inference, the generated latents are decoded into mel-spectrograms, which are subsequently inverted into time-domain waveforms using the officially provided high-quality vocoder3.",
+       "zh": "推理时，生成的潜变量被解码为梅尔频谱图，随后用官方提供的高质量声码器（脚注 3）逆变换为时域波形。"
+      }
+     ]
+    },
+    {
+     "id": "p-tts-latent-model-3",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-tts-latent-model-3-1",
        "original": "The comparative evaluation results are presented in Table 3.",
        "zh": "对比评测结果见表 3。"
       },
       {
-       "id": "s-tts-latent-model-2-2",
+       "id": "s-tts-latent-model-3-2",
        "original": "As observed, the LongCat-AudioDiT model built upon the Wav-VAE consistently and significantly outperforms the Mel-VAE-based baseline across all metrics, validating our core assumption.",
        "zh": "可以看到，建立在 Wav-VAE 之上的 LongCat-AudioDiT 模型在所有指标上一致且显著地优于基于 Mel-VAE 的基线，验证了我们的核心假设。"
       },
       {
-       "id": "s-tts-latent-model-2-3",
+       "id": "s-tts-latent-model-3-3",
        "original": "Remarkably, while improvements in intelligibility (WER/CER) are solid, the Wav-VAE yields a drastic boost in the speaker similarity (SIM) metric.",
        "zh": "值得注意的是，尽管可懂度（WER/CER）的提升是扎实的，Wav-VAE 在说话人相似度（SIM）指标上带来了巨大的跃升。"
       },
       {
-       "id": "s-tts-latent-model-2-4",
+       "id": "s-tts-latent-model-3-4",
        "original": "This targeted improvement elegantly corroborates our hypothesis: fine-grained, high-frequency acoustic details—which are essential for zero-shot voice cloning—are intrinsically fragile and easily lost during the cascading conversions (latent → mel-spectrogram →waveform) inherent to the Mel-VAE pipeline.",
        "zh": "这一有针对性的改进优雅地印证了我们的假设：细粒度的高频声学细节——零样本声音克隆的关键——本质上是脆弱的，容易在 Mel-VAE 流水线固有的级联转换（潜变量 → 梅尔频谱图 → 波形）中丢失。"
       }
@@ -2143,17 +2815,143 @@ globalThis.PAPER_2603_29339 = {
       {
        "id": "s-5-3-2-1-2",
        "original": "A naive assumption is that a superior Wav-VAE guarantees better TTS performance, given that the VAE’s reconstruction fidelity inherently defines the upper bound for the generative model.",
-       "zh": "一个朴素的假设是：既然 VAE 的重建保真度本质上定义了生成模型的上限，更好的 Wav-VAE 就应该保证更好的 TTS 性能。"
+       "zh": "一个朴素假设是：更好的 Wav-VAE 必然带来更好的 TTS 性能，因为 VAE 的重建保真度本身就决定了生成模型的上限。"
       },
       {
        "id": "s-5-3-2-1-3",
        "original": "To test this hypothesis, we train multiple Wav-VAEs with varying latent dimensionalities and temporal frame rates (FPS), subsequently training a corresponding TTS backbone for each VAE variant.",
-       "zh": "为检验该假设，我们训练了多个具有不同潜变量维度与时间帧率（FPS）的 Wav-VAE，并为每个 VAE 变体训练了对应的 TTS 主干。"
+       "zh": "为验证该假设，我们训练了多个不同潜变量维度与时间帧率（FPS）的 Wav-VAE，并为每个 VAE 变体训练对应的 TTS 主干。"
       },
       {
        "id": "s-5-3-2-1-4",
-       "original": "Specifically, 3https://github.com/ace-step/ACE-Step Intelligibility 0.970 1.1 1.2 0.968 WER-TTS 1.3 STOI-VAE 0.966 1.4 0.964 1.5 1.6 0.962 1.7 7.81 11.72 23.44 0.960 Naturalness 4.20 3.35 4.15 3.30 4.10 3.25 UTMOS-VAE UTMOS-TTS 4.05 3.20 4.00 3.15 3.95 3.10 3.90 3.05 3.85 3.00 3.80 2.95 7.81 11.72 23.44 Latent FPS Similarity 0.955 0.815 0.950 0.810 0.945 SIM-VAE SIM-TTS 0.805 0.940 0.800 0.935 0.795 0.930 7.81 11.72 23.44 0.925 0.790 Quality 3.45 3.44 3.40 3.42 DNSMOS-TTS 3.35 PESQ-VAE 3.40 3.30 3.38 3.25 3.36 3.20 3.34 3.15 3.32 3.10 3.30 7.81 11.72 23.44 Latent FPS",
-       "zh": "具体而言，（此处串入脚注 3 的 URL 抽取残留：https://github.com/ace-step/ACE-Step，并穿插图 4 的坐标轴与刻度抽取残留，按原样译出并保留全部数字：）可懂度：0.970、1.1、1.2、0.968、WER-TTS、1.3、STOI-VAE、0.966、1.4、0.964、1.5、1.6、0.962、1.7、7.81、11.72、23.44、0.960；自然度：4.20、3.35、4.15、3.30、4.10、3.25、UTMOS-VAE、UTMOS-TTS、4.05、3.20、4.00、3.15、3.95、3.10、3.90、3.05、3.85、3.00、3.80、2.95、7.81、11.72、23.44、潜变量 FPS；相似度：0.955、0.815、0.950、0.810、0.945、SIM-VAE、SIM-TTS、0.805、0.940、0.800、0.935、0.795、0.930、7.81、11.72、23.44、0.925、0.790；质量：3.45、3.44、3.40、3.42、DNSMOS-TTS、3.35、PESQ-VAE、3.40、3.30、3.38、3.25、3.36、3.20、3.34、3.15、3.32、3.10、3.30、7.81、11.72、23.44、潜变量 FPS。"
+       "original": "Specifically, 3https://github.com/ace-step/ACE-Step Intelligibility",
+       "zh": "具体地（脚注 3：https://github.com/ace-step/ACE-Step；图纵轴：Intelligibility。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-3-2-1",
+     "type": "equation",
+     "page": 11,
+     "original": "0.970 1.1 1.2 0.968"
+    },
+    {
+     "id": "eq-5-3-2-2",
+     "type": "equation",
+     "page": 11,
+     "original": "WER-TTS"
+    },
+    {
+     "id": "eq-5-3-2-3",
+     "type": "equation",
+     "page": 11,
+     "original": "1.3"
+    },
+    {
+     "id": "eq-5-3-2-4",
+     "type": "equation",
+     "page": 11,
+     "original": "STOI-VAE"
+    },
+    {
+     "id": "eq-5-3-2-5",
+     "type": "equation",
+     "page": 11,
+     "original": "0.966 1.4 0.964 1.5 1.6 0.962 1.7 7.81 11.72 23.44 0.960"
+    },
+    {
+     "id": "eq-5-3-2-6",
+     "type": "equation",
+     "page": 11,
+     "original": "Naturalness"
+    },
+    {
+     "id": "eq-5-3-2-7",
+     "type": "equation",
+     "page": 11,
+     "original": "4.20 3.35 4.15 3.30 4.10 3.25"
+    },
+    {
+     "id": "eq-5-3-2-8",
+     "type": "equation",
+     "page": 11,
+     "original": "UTMOS-VAE UTMOS-TTS"
+    },
+    {
+     "id": "eq-5-3-2-9",
+     "type": "equation",
+     "page": 11,
+     "original": "4.05 3.20 4.00 3.15 3.95 3.10 3.90 3.05 3.85 3.00 3.80 2.95 7.81 11.72 23.44"
+    },
+    {
+     "id": "eq-5-3-2-10",
+     "type": "equation",
+     "page": 11,
+     "original": "Latent FPS Similarity"
+    },
+    {
+     "id": "eq-5-3-2-11",
+     "type": "equation",
+     "page": 11,
+     "original": "0.955 0.815 0.950 0.810 0.945"
+    },
+    {
+     "id": "eq-5-3-2-12",
+     "type": "equation",
+     "page": 11,
+     "original": "SIM-VAE SIM-TTS"
+    },
+    {
+     "id": "eq-5-3-2-13",
+     "type": "equation",
+     "page": 11,
+     "original": "0.805 0.940 0.800 0.935 0.795 0.930 7.81 11.72 23.44 0.925 0.790"
+    },
+    {
+     "id": "eq-5-3-2-14",
+     "type": "equation",
+     "page": 11,
+     "original": "Quality"
+    },
+    {
+     "id": "eq-5-3-2-15",
+     "type": "equation",
+     "page": 11,
+     "original": "3.45 3.44 3.40 3.42"
+    },
+    {
+     "id": "eq-5-3-2-16",
+     "type": "equation",
+     "page": 11,
+     "original": "DNSMOS-TTS"
+    },
+    {
+     "id": "eq-5-3-2-17",
+     "type": "equation",
+     "page": 11,
+     "original": "3.35"
+    },
+    {
+     "id": "eq-5-3-2-18",
+     "type": "equation",
+     "page": 11,
+     "original": "PESQ-VAE"
+    },
+    {
+     "id": "eq-5-3-2-19",
+     "type": "equation",
+     "page": 11,
+     "original": "3.40 3.30 3.38 3.25 3.36 3.20 3.34 3.15 3.32 3.10 3.30 7.81 11.72 23.44"
+    },
+    {
+     "id": "p-5-3-2-2",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-5-3-2-2-1",
+       "original": "Latent FPS",
+       "zh": "（图横轴：Latent FPS（潜变量帧率）。）"
       }
      ]
     },
@@ -2165,46 +2963,24 @@ globalThis.PAPER_2603_29339 = {
      "zh": "图 4 ｜ 不同潜变量帧率（FPS）下 Wav-VAE 重建与 TTS 合成的客观评测结果。为便于阅读，我们对 WER-TTS 取了负号。"
     },
     {
-     "id": "p-5-3-2-2",
-     "type": "paragraph",
-     "page": 12,
-     "sentences": [
-      {
-       "id": "s-5-3-2-2-1",
-       "original": "we select latent dimensions from the set {64, 128, 256} and frame rates from {7.81, 11.72, 23.44}, yielding a total of 6 unique Wav-VAE models and 6 paired TTS models.",
-       "zh": "我们从集合 {64, 128, 256} 中选取潜变量维度，从 {7.81, 11.72, 23.44} 中选取帧率，共得到 6 个独特的 Wav-VAE 模型与 6 个配对的 TTS 模型。"
-      },
-      {
-       "id": "s-5-3-2-2-2",
-       "original": "For the dimension ablation (3 models), we fix the frame rate at 20 Hz; conversely, for the frame rate ablation (3 models), we fix the latent dimension at 64.",
-       "zh": "在维度消融（3 个模型）中，我们把帧率固定为 20 Hz；反之，在帧率消融（3 个模型）中，我们把潜变量维度固定为 64。"
-      },
-      {
-       "id": "s-5-3-2-2-3",
-       "original": "All TTS models in this ablation are trained using the exact configurations as the LongCat-AudioDiT-1B baseline.",
-       "zh": "本消融中的所有 TTS 模型均采用与 LongCat-AudioDiT-1B 基线完全相同的配置训练。"
-      }
-     ]
-    },
-    {
      "id": "p-5-3-2-3",
      "type": "paragraph",
      "page": 12,
      "sentences": [
       {
        "id": "s-5-3-2-3-1",
-       "original": "The comprehensive evaluation results are visualized in Fig. 3 and Fig. 4.",
-       "zh": "完整的评测结果可视化于图 3 与图 4。"
+       "original": "we select latent dimensions from the set {64, 128, 256} and frame rates from {7.81, 11.72, 23.44}, yielding a total of 6 unique Wav-VAE models and 6 paired TTS models.",
+       "zh": "我们从集合 {64, 128, 256} 中选取潜变量维度，从 {7.81, 11.72, 23.44} 中选取帧率，共得到 6 个独特的 Wav-VAE 模型与 6 个配对的 TTS 模型。"
       },
       {
        "id": "s-5-3-2-3-2",
-       "original": "To facilitate a clear comparison across domains, we categorize the metrics into four analogous groups: intelligibility (STOI-VAE & WER-TTS), speaker similarity (SIM-VAE & SIM-TTS), naturalness (UTMOS-VAE & UTMOS-TTS), and overall acoustic quality (PESQ-VAE & DNSMOS-TTS).",
-       "zh": "为便于跨域清晰比较，我们把指标归为四个对应的组别：可懂度（STOI-VAE 与 WER-TTS）、说话人相似度（SIM-VAE 与 SIM-TTS）、自然度（UTMOS-VAE 与 UTMOS-TTS）、整体声学质量（PESQ-VAE 与 DNSMOS-TTS）。"
+       "original": "For the dimension ablation (3 models), we fix the frame rate at 20 Hz; conversely, for the frame rate ablation (3 models), we fix the latent dimension at 64.",
+       "zh": "在维度消融（3 个模型）中，我们把帧率固定为 20 Hz；反之，在帧率消融（3 个模型）中，我们把潜变量维度固定为 64。"
       },
       {
        "id": "s-5-3-2-3-3",
-       "original": "Note that the VAE similarity (SIM-VAE) is calculated by comparing the ground truth (GT) utterance against its direct reconstruction.",
-       "zh": "注意，VAE 相似度（SIM-VAE）是通过比较真值（GT）语音与其直接重建结果来计算的。"
+       "original": "All TTS models in this ablation are trained using the exact configurations as the LongCat-AudioDiT-1B baseline.",
+       "zh": "本消融中的所有 TTS 模型均采用与 LongCat-AudioDiT-1B 基线完全相同的配置训练。"
       }
      ]
     },
@@ -2215,33 +2991,18 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-5-3-2-4-1",
-       "original": "Observation 1: The Dimension-Capacity Trade-off.",
-       "zh": "观察 1：维度-容量权衡。"
+       "original": "The comprehensive evaluation results are visualized in Fig. 3 and Fig. 4.",
+       "zh": "完整的评测结果可视化于图 3 与图 4。"
       },
       {
        "id": "s-5-3-2-4-2",
-       "original": "Under a fixed TTS parameter budget, increasing the latent dimension consistently improves the Wav-VAE’s reconstruction fidelity but simultaneously degrades the TTS generation quality (see Fig. 3).",
-       "zh": "在固定的 TTS 参数预算下，增大潜变量维度的确能持续提升 Wav-VAE 的重建保真度，但同时会劣化 TTS 生成质量（见图 3）。"
+       "original": "To facilitate a clear comparison across domains, we categorize the metrics into four analogous groups: intelligibility (STOI-VAE & WER-TTS), speaker similarity (SIM-VAE & SIM-TTS), naturalness (UTMOS-VAE & UTMOS-TTS), and overall acoustic quality (PESQ-VAE & DNSMOS-TTS).",
+       "zh": "为便于跨域清晰比较，我们把指标归为四个对应的组别：可懂度（STOI-VAE 与 WER-TTS）、说话人相似度（SIM-VAE 与 SIM-TTS）、自然度（UTMOS-VAE 与 UTMOS-TTS）、整体声学质量（PESQ-VAE 与 DNSMOS-TTS）。"
       },
       {
        "id": "s-5-3-2-4-3",
-       "original": "This finding directly contradicts the naive assumption.",
-       "zh": "这一发现直接推翻了朴素假设。"
-      },
-      {
-       "id": "s-5-3-2-4-4",
-       "original": "We initially hypothesized that increasing the TTS model capacity might resolve this mismatch; thus, we scaled up the TTS backbone to 3.5B parameters, conditioned on the 128-dimensional Wav-VAE.",
-       "zh": "我们最初假设增大 TTS 模型容量或许能消解这一矛盾；于是，在 128 维 Wav-VAE 条件下，我们把 TTS 主干扩展到 3.5B 参数。"
-      },
-      {
-       "id": "s-5-3-2-4-5",
-       "original": "However, while this larger variant achieved a marginal gain in SIM score, its overall performance remained inferior to the 3.5B model conditioned on the 64-dimensional Wav-VAE (as reported in Table 1).",
-       "zh": "然而，尽管这个更大的变体在 SIM 上略有提升，其整体性能仍不及以 64 维 Wav-VAE 为条件的 3.5B 模型（如表 1 所报告）。"
-      },
-      {
-       "id": "s-5-3-2-4-6",
-       "original": "This suggests that excessively high-dimensional continuous latents impose a severe modeling burden on the diffusion backbone that cannot be easily overcome merely by scaling up parameters.",
-       "zh": "这表明，过高维度的连续潜变量会给扩散主干施加严重的建模负担，而这种负担无法仅靠扩大参数量轻易克服。"
+       "original": "Note that the VAE similarity (SIM-VAE) is calculated by comparing the ground truth (GT) utterance against its direct reconstruction.",
+       "zh": "注意，VAE 相似度（SIM-VAE）是通过比较真值（GT）语音与其直接重建结果来计算的。"
       }
      ]
     },
@@ -2252,33 +3013,33 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-5-3-2-5-1",
-       "original": "Observation 2: The Frame Rate Sweet Spot.",
-       "zh": "观察 2：帧率甜点。"
+       "original": "Observation 1: The Dimension-Capacity Trade-off.",
+       "zh": "观察 1：维度-容量权衡。"
       },
       {
        "id": "s-5-3-2-5-2",
-       "original": "There exists an optimal temporal frame rate (FPS) that balances VAE and TTS performance, though this sweet spot is not necessarily identical for both tasks (see Fig. 4).",
-       "zh": "存在一个能平衡 VAE 与 TTS 性能的最优时间帧率（FPS），但两个任务的甜点未必相同（见图 4）。"
+       "original": "Under a fixed TTS parameter budget, increasing the latent dimension consistently improves the Wav-VAE’s reconstruction fidelity but simultaneously degrades the TTS generation quality (see Fig. 3).",
+       "zh": "在固定的 TTS 参数预算下，增大潜变量维度的确能持续提升 Wav-VAE 的重建保真度，但同时会劣化 TTS 生成质量（见图 3）。"
       },
       {
        "id": "s-5-3-2-5-3",
-       "original": "For the Wav-VAE, a lower FPS surprisingly yields better intelligibility and naturalness, but penalizes similarity and overall acoustic quality.",
-       "zh": "对 Wav-VAE 而言，更低的 FPS 出人意料地带来更好的可懂度与自然度，却损害相似度与整体声学质量。"
+       "original": "This finding directly contradicts the naive assumption.",
+       "zh": "这一发现直接推翻了朴素假设。"
       },
       {
        "id": "s-5-3-2-5-4",
-       "original": "This behavior is intuitive: an aggressively downsampled (lower FPS) latent forces the autoencoder to discard fine-grained, high-frequency acoustic details (hurting SIM and PESQ) while preserving global phonetic structures (aiding STOI).",
-       "zh": "这种行为很直观：激进下采样（更低 FPS）的潜变量迫使自编码器丢弃细粒度的高频声学细节（伤害 SIM 与 PESQ），同时保留全局音素结构（有利 STOI）。"
+       "original": "We initially hypothesized that increasing the TTS model capacity might resolve this mismatch; thus, we scaled up the TTS backbone to 3.5B parameters, conditioned on the 128-dimensional Wav-VAE.",
+       "zh": "我们最初假设增大 TTS 模型容量或许能消解这一矛盾；于是，在 128 维 Wav-VAE 条件下，我们把 TTS 主干扩展到 3.5B 参数。"
       },
       {
        "id": "s-5-3-2-5-5",
-       "original": "Conversely, for the generative TTS model, a lower FPS substantially boosts the overall synthesis quality.",
-       "zh": "反过来，对生成式 TTS 模型而言，更低的 FPS 大幅提升了整体合成质量。"
+       "original": "However, while this larger variant achieved a marginal gain in SIM score, its overall performance remained inferior to the 3.5B model conditioned on the 64-dimensional Wav-VAE (as reported in Table 1).",
+       "zh": "然而，尽管这个更大的变体在 SIM 上略有提升，其整体性能仍不及以 64 维 Wav-VAE 为条件的 3.5B 模型（如表 1 所报告）。"
       },
       {
        "id": "s-5-3-2-5-6",
-       "original": "We observe that the diffusion backbone struggles to accurately model the complex, highly correlated temporal dynamics of high-FPS latents, leading to unstable generation.",
-       "zh": "我们观察到，扩散主干难以准确建模高 FPS 潜变量那种复杂且高度相关的时间动态，从而导致生成不稳定。"
+       "original": "This suggests that excessively high-dimensional continuous latents impose a severe modeling burden on the diffusion backbone that cannot be easily overcome merely by scaling up parameters.",
+       "zh": "这表明，过高维度的连续潜变量会给扩散主干施加严重的建模负担，而这种负担无法仅靠扩大参数量轻易克服。"
       }
      ]
     },
@@ -2289,6 +3050,43 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-5-3-2-6-1",
+       "original": "Observation 2: The Frame Rate Sweet Spot.",
+       "zh": "观察 2：帧率甜点。"
+      },
+      {
+       "id": "s-5-3-2-6-2",
+       "original": "There exists an optimal temporal frame rate (FPS) that balances VAE and TTS performance, though this sweet spot is not necessarily identical for both tasks (see Fig. 4).",
+       "zh": "存在一个能平衡 VAE 与 TTS 性能的最优时间帧率（FPS），但两个任务的甜点未必相同（见图 4）。"
+      },
+      {
+       "id": "s-5-3-2-6-3",
+       "original": "For the Wav-VAE, a lower FPS surprisingly yields better intelligibility and naturalness, but penalizes similarity and overall acoustic quality.",
+       "zh": "对 Wav-VAE 而言，更低的 FPS 出人意料地带来更好的可懂度与自然度，却损害相似度与整体声学质量。"
+      },
+      {
+       "id": "s-5-3-2-6-4",
+       "original": "This behavior is intuitive: an aggressively downsampled (lower FPS) latent forces the autoencoder to discard fine-grained, high-frequency acoustic details (hurting SIM and PESQ) while preserving global phonetic structures (aiding STOI).",
+       "zh": "这种行为很直观：激进下采样（更低 FPS）的潜变量迫使自编码器丢弃细粒度的高频声学细节（伤害 SIM 与 PESQ），同时保留全局音素结构（有利 STOI）。"
+      },
+      {
+       "id": "s-5-3-2-6-5",
+       "original": "Conversely, for the generative TTS model, a lower FPS substantially boosts the overall synthesis quality.",
+       "zh": "反过来，对生成式 TTS 模型而言，更低的 FPS 大幅提升了整体合成质量。"
+      },
+      {
+       "id": "s-5-3-2-6-6",
+       "original": "We observe that the diffusion backbone struggles to accurately model the complex, highly correlated temporal dynamics of high-FPS latents, leading to unstable generation.",
+       "zh": "我们观察到，扩散主干难以准确建模高 FPS 潜变量那种复杂且高度相关的时间动态，从而导致生成不稳定。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-3-2-7",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-5-3-2-7-1",
        "original": "Synthesizing these two critical observations, we empirically identify the 64-dimensional, 11.72-Hz Wav-VAE as the optimal representation target, and adopt it as the default configuration for all LongCat-AudioDiT models.",
        "zh": "综合这两项关键观察，我们从实证上认定 64 维、11.72 Hz 的 Wav-VAE 为最优的表征目标，并将其作为所有 LongCat-AudioDiT 模型的默认配置。"
       }
@@ -2320,10 +3118,40 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-experiment-1-1",
-       "original": "UTMOS ↑ DNSMOS ↑ LongCat-AudioDiT-1B 1.18 0.812 3.16 3.40 training-inference mismatch 1.21 0.769 2.83 3.34 w/o APG 1.18 0.812 3.06 3.38",
-       "zh": "（此处为表 4 各行的抽取残留，各列依次为 ZH-CER、ZH-SIM、UTMOS、DNSMOS，按行译出并保留全部数字：）LongCat-AudioDiT-1B：1.18、0.812、3.16、3.40；training-inference mismatch（不解决训练-推理不一致）：1.21、0.769、2.83、3.34；w/o APG（去掉 APG）：1.18、0.812、3.06、3.38。"
+       "original": "CER (%) ↓ SIM ↑ UTMOS ↑ DNSMOS ↑ LongCat-AudioDiT-1B",
+       "zh": "表头：CER (%) ↓ / SIM ↑ / UTMOS ↑ / DNSMOS ↑——LongCat-AudioDiT-1B（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-experiment-1",
+     "type": "equation",
+     "page": 13,
+     "original": "1.18 0.812 3.16 3.40"
+    },
+    {
+     "id": "eq-experiment-2",
+     "type": "equation",
+     "page": 13,
+     "original": "training-inference mismatch"
+    },
+    {
+     "id": "eq-experiment-3",
+     "type": "equation",
+     "page": 13,
+     "original": "1.21 0.769 2.83 3.34"
+    },
+    {
+     "id": "eq-experiment-4",
+     "type": "equation",
+     "page": 13,
+     "original": "w/o APG"
+    },
+    {
+     "id": "eq-experiment-5",
+     "type": "equation",
+     "page": 13,
+     "original": "1.18 0.812 3.06 3.38"
     }
    ]
   },
@@ -2354,13 +3182,13 @@ globalThis.PAPER_2603_29339 = {
       },
       {
        "id": "s-5-3-3-1-3",
-       "original": "In the first configuration (training-inference mismatch), we keep zctx as the model prediction and do not overwrite it with the GT noisy latent for inference.",
-       "zh": "在第一组配置（training-inference mismatch）中，我们保留模型对 zctx 的预测，推理时不用 GT 加噪潜变量覆写它。"
+       "original": "In the first configuration (training-inference mismatch), we keep zctx t as the model prediction and do not overwrite it with the GT noisy latent for inference.",
+       "zh": "第一种配置（训练-推理失配）：保留 z^ctx_t 为模型预测值，推理时不用 GT 带噪潜变量覆写。"
       },
       {
        "id": "s-5-3-3-1-4",
-       "original": "We also retain zctx to compute the unconditional velocity.",
-       "zh": "同时保留 zctx 用于计算无条件速度。"
+       "original": "We also retain zctx t to compute the unconditional velocity.",
+       "zh": "同时保留 z^ctx_t 用于计算无条件速度。"
       },
       {
        "id": "s-5-3-3-1-5",
@@ -2645,7 +3473,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al. Seed-tts: A family of high-quality versatile speech generation models. arXiv Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, Yichong Leng, Kaitao Song, Siliang Tang, et al. Naturalspeech 3: Zero-shot speech synthesis with factorized codec and diffusion models. arXiv preprint arXiv:2403.03100, 2024."
+       "original": "Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al. Seed-tts: A family of high-quality versatile speech generation models. arXiv preprint arXiv:2406.02430, 2024."
       }
      ]
     },
@@ -2656,7 +3484,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "Zhihao Du, Changfeng Gao, Yuxuan Wang, Fan Yu, Tianyu Zhao, Hao Wang, Xiang Lv, Hui Wang, Chongjia Ni, Xian Shi, et al. Cosyvoice 3: Towards in-the-wild speech generation via scaling-up and post-training. arXiv Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, et al. Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder. arXiv preprint arXiv:2505.07916, 2025."
+       "original": "Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, Yichong Leng, Kaitao Song, Siliang Tang, et al. Naturalspeech 3: Zero-shot speech synthesis with factorized codec and diffusion models. arXiv preprint arXiv:2403.03100, 2024."
       }
      ]
     },
@@ -2667,19 +3495,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "Yi Ren, Yangjun Ruan, Xu Tan, Tao Qin, Sheng Zhao, Zhou Zhao, and Tie-Yan Liu."
-      },
-      {
-       "id": "s-references-7-2",
-       "original": "Fastspeech: Fast, robust and controllable text to speech."
-      },
-      {
-       "id": "s-references-7-3",
-       "original": "Proc."
-      },
-      {
-       "id": "s-references-7-4",
-       "original": "NeurIPS, 32, 2019."
+       "original": "Zhihao Du, Changfeng Gao, Yuxuan Wang, Fan Yu, Tianyu Zhao, Hao Wang, Xiang Lv, Hui Wang, Chongjia Ni, Xian Shi, et al. Cosyvoice 3: Towards in-the-wild speech generation via scaling-up and post-training. arXiv preprint arXiv:2505.17589, 2025."
       }
      ]
     },
@@ -2690,15 +3506,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao, Hemin Yang, Zirun Zhu, Min Tang, Xu Tan, et al. E2 tts: Embarrassingly easy fully non-autoregressive zero-shot tts."
-      },
-      {
-       "id": "s-references-8-2",
-       "original": "In 2024 IEEE spoken language technology workshop (SLT), pages 682–689."
-      },
-      {
-       "id": "s-references-8-3",
-       "original": "IEEE, 2024a."
+       "original": "Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, et al. Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder. arXiv preprint arXiv:2505.07916, 2025."
       }
      ]
     },
@@ -2709,11 +3517,19 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "Yushen Chen, Zhikang Niu, Ziyang Ma, Keqi Deng, Chunhui Wang, Jian Zhao, Kai Yu, and Xie Chen."
+       "original": "Yi Ren, Yangjun Ruan, Xu Tan, Tao Qin, Sheng Zhao, Zhou Zhao, and Tie-Yan Liu."
       },
       {
        "id": "s-references-9-2",
-       "original": "F5-tts: A fairytaler that fakes fluent and faithful speech with flow matching. arXiv preprint arXiv:2410.06885, 2024a."
+       "original": "Fastspeech: Fast, robust and controllable text to speech."
+      },
+      {
+       "id": "s-references-9-3",
+       "original": "Proc."
+      },
+      {
+       "id": "s-references-9-4",
+       "original": "NeurIPS, 32, 2019."
       }
      ]
     },
@@ -2724,11 +3540,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "Keon Lee, Dong Won Kim, Jaehyeon Kim, Seungjun Chung, and Jaewoong Cho."
+       "original": "Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao, Hemin Yang, Zirun Zhu, Min Tang, Xu Tan, et al. E2 tts: Embarrassingly easy fully non-autoregressive zero-shot tts."
       },
       {
        "id": "s-references-10-2",
-       "original": "Ditto-tts: Diffusion transformers for scalable text-to-speech without domain-specific factors. arXiv preprint arXiv:2406.11427, 2024."
+       "original": "In 2024 IEEE spoken language technology workshop (SLT), pages 682–689."
+      },
+      {
+       "id": "s-references-10-3",
+       "original": "IEEE, 2024a."
       }
      ]
     },
@@ -2739,11 +3559,11 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "James Betker."
+       "original": "Yushen Chen, Zhikang Niu, Ziyang Ma, Keqi Deng, Chunhui Wang, Jian Zhao, Kai Yu, and Xie Chen."
       },
       {
        "id": "s-references-11-2",
-       "original": "Better speech synthesis through scaling. arXiv preprint arXiv:2305.07243, 2023."
+       "original": "F5-tts: A fairytaler that fakes fluent and faithful speech with flow matching. arXiv preprint arXiv:2410.06885, 2024a."
       }
      ]
     },
@@ -2754,7 +3574,11 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "Zhihao Du, Qian Chen, Shiliang Zhang, Kai Hu, Heng Lu, Yexin Yang, Hangrui Hu, Siqi Zheng, Yue Gu, Ziyang Ma, et al. Cosyvoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens. arXiv preprint arXiv:2407.05407, 2024a."
+       "original": "Keon Lee, Dong Won Kim, Jaehyeon Kim, Seungjun Chung, and Jaewoong Cho."
+      },
+      {
+       "id": "s-references-12-2",
+       "original": "Ditto-tts: Diffusion transformers for scalable text-to-speech without domain-specific factors. arXiv preprint arXiv:2406.11427, 2024."
       }
      ]
     },
@@ -2765,11 +3589,11 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "Diederik P Kingma and Max Welling."
+       "original": "James Betker."
       },
       {
        "id": "s-references-13-2",
-       "original": "Auto-encoding variational bayes. arXiv preprint arXiv:1312.6114, 2013."
+       "original": "Better speech synthesis through scaling. arXiv preprint arXiv:2305.07243, 2023."
       }
      ]
     },
@@ -2780,53 +3604,41 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin."
-      },
-      {
-       "id": "s-references-14-2",
-       "original": "Attention is all you need."
-      },
-      {
-       "id": "s-references-14-3",
-       "original": "Advances in neural information processing systems, 30, 2017."
+       "original": "Zhihao Du, Qian Chen, Shiliang Zhang, Kai Hu, Heng Lu, Yexin Yang, Hangrui Hu, Siqi Zheng, Yue Gu, Ziyang Ma, et al. Cosyvoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens. arXiv preprint arXiv:2407.05407, 2024a."
       }
      ]
     },
     {
      "id": "p-references-15",
      "type": "paragraph",
-     "page": 15,
+     "page": 14,
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "William Peebles and Saining Xie."
+       "original": "Diederik P Kingma and Max Welling."
       },
       {
        "id": "s-references-15-2",
-       "original": "Scalable diffusion models with transformers."
-      },
-      {
-       "id": "s-references-15-3",
-       "original": "In Proceedings of the IEEE/CVF international conference on computer vision, pages 4195–4205, 2023."
+       "original": "Auto-encoding variational bayes. arXiv preprint arXiv:1312.6114, 2013."
       }
      ]
     },
     {
      "id": "p-references-16",
      "type": "paragraph",
-     "page": 15,
+     "page": 14,
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "Vadim Popov, Ivan Vovk, Vladimir Gogoryan, Tasnima Sadekova, and Mikhail Kudinov."
+       "original": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin."
       },
       {
        "id": "s-references-16-2",
-       "original": "Grad-tts: A diffusion probabilistic model for text-to-speech."
+       "original": "Attention is all you need."
       },
       {
        "id": "s-references-16-3",
-       "original": "In International Conference on Machine Learning, pages 8599–8608."
+       "original": "Advances in neural information processing systems, 30, 2017."
       }
      ]
     },
@@ -2837,7 +3649,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "PMLR, 2021."
+       "original": "William Peebles and Saining Xie."
+      },
+      {
+       "id": "s-references-17-2",
+       "original": "Scalable diffusion models with transformers."
+      },
+      {
+       "id": "s-references-17-3",
+       "original": "In Proceedings of the IEEE/CVF international conference on computer vision, pages 4195–4205, 2023."
       }
      ]
     },
@@ -2848,11 +3668,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "Myeonghun Jeong, Hyeongju Kim, Sung Jun Cheon, Byoung Jin Choi, and Nam Soo Kim."
+       "original": "Vadim Popov, Ivan Vovk, Vladimir Gogoryan, Tasnima Sadekova, and Mikhail Kudinov."
       },
       {
        "id": "s-references-18-2",
-       "original": "Diff-tts: A denoising diffusion model for text-to-speech. arXiv preprint arXiv:2104.01409, 2021."
+       "original": "Grad-tts: A diffusion probabilistic model for text-to-speech."
+      },
+      {
+       "id": "s-references-18-3",
+       "original": "In International Conference on Machine Learning, pages 8599–8608."
       }
      ]
     },
@@ -2863,15 +3687,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "Jascha Sohl-Dickstein, Eric Weiss, Niru Maheswaranathan, and Surya Ganguli."
-      },
-      {
-       "id": "s-references-19-2",
-       "original": "Deep unsupervised learning using nonequilibrium thermodynamics."
-      },
-      {
-       "id": "s-references-19-3",
-       "original": "In International conference on machine learning, pages 2256–2265."
+       "original": "PMLR, 2021."
       }
      ]
     },
@@ -2882,7 +3698,11 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "pmlr, 2015."
+       "original": "Myeonghun Jeong, Hyeongju Kim, Sung Jun Cheon, Byoung Jin Choi, and Nam Soo Kim."
+      },
+      {
+       "id": "s-references-20-2",
+       "original": "Diff-tts: A denoising diffusion model for text-to-speech. arXiv preprint arXiv:2104.01409, 2021."
       }
      ]
     },
@@ -2893,7 +3713,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole."
+       "original": "Jascha Sohl-Dickstein, Eric Weiss, Niru Maheswaranathan, and Surya Ganguli."
+      },
+      {
+       "id": "s-references-21-2",
+       "original": "Deep unsupervised learning using nonequilibrium thermodynamics."
+      },
+      {
+       "id": "s-references-21-3",
+       "original": "In International conference on machine learning, pages 2256–2265."
       }
      ]
     },
@@ -2904,7 +3732,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "Score-based generative modeling through stochastic differential equations. arXiv preprint arXiv:2011.13456, 2020."
+       "original": "pmlr, 2015."
       }
      ]
     },
@@ -2915,15 +3743,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "Jonathan Ho, Ajay Jain, and Pieter Abbeel."
-      },
-      {
-       "id": "s-references-23-2",
-       "original": "Denoising diffusion probabilistic models."
-      },
-      {
-       "id": "s-references-23-3",
-       "original": "Advances in neural information processing systems, 33:6840–6851, 2020."
+       "original": "Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole."
       }
      ]
     },
@@ -2934,17 +3754,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matthew Le."
-      },
-      {
-       "id": "s-references-24-2",
-       "original": "Flow matching for generative modeling."
-      },
-      {
-       "id": "s-references-24-3",
-       "original": "In The Eleventh International Conference on Learning Representations, 2022."
+       "original": "Score-based generative modeling through stochastic differential equations. arXiv preprint arXiv:2011.13456,"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 15,
+     "original": "2020."
     },
     {
      "id": "p-references-25",
@@ -2953,19 +3771,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "Ricky T."
+       "original": "Jonathan Ho, Ajay Jain, and Pieter Abbeel."
       },
       {
        "id": "s-references-25-2",
-       "original": "Q."
+       "original": "Denoising diffusion probabilistic models."
       },
       {
        "id": "s-references-25-3",
-       "original": "Chen. torchdiffeq, 2018."
-      },
-      {
-       "id": "s-references-25-4",
-       "original": "URL https://github.com/rtqichen/torchdiffeq."
+       "original": "Advances in neural information processing systems, 33:6840–6851, 2020."
       }
      ]
     },
@@ -2976,19 +3790,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "Shivam Mehta, Ruibo Tu, Jonas Beskow, Éva Székely, and Gustav Eje Henter."
+       "original": "Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matthew Le."
       },
       {
        "id": "s-references-26-2",
-       "original": "Matcha-tts: A fast tts architecture with conditional flow matching."
+       "original": "Flow matching for generative modeling."
       },
       {
        "id": "s-references-26-3",
-       "original": "In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 11341–11345."
-      },
-      {
-       "id": "s-references-26-4",
-       "original": "IEEE, 2024."
+       "original": "In The Eleventh International Conference on Learning Representations, 2022."
       }
      ]
     },
@@ -2999,15 +3809,19 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao, Hemin Yang, Zirun Zhu, Min Tang, Xu Tan, et al. E2 tts: Embarrassingly easy fully non-autoregressive zero-shot tts."
+       "original": "Ricky T."
       },
       {
        "id": "s-references-27-2",
-       "original": "In 2024 IEEE Spoken Language Technology Workshop (SLT), pages 682–689."
+       "original": "Q."
       },
       {
        "id": "s-references-27-3",
-       "original": "IEEE, 2024b."
+       "original": "Chen. torchdiffeq, 2018."
+      },
+      {
+       "id": "s-references-27-4",
+       "original": "URL https://github.com/rtqichen/torchdiffeq."
       }
      ]
     },
@@ -3018,15 +3832,19 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "Michael Albergo, Nicholas M Boffi, and Eric Vanden-Eijnden."
+       "original": "Shivam Mehta, Ruibo Tu, Jonas Beskow, Éva Székely, and Gustav Eje Henter."
       },
       {
        "id": "s-references-28-2",
-       "original": "Stochastic interpolants: A unifying framework for flows and diffusions."
+       "original": "Matcha-tts: A fast tts architecture with conditional flow matching."
       },
       {
        "id": "s-references-28-3",
-       "original": "Journal of Machine Learning Research, 26(209):1–80, 2025."
+       "original": "In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 11341–11345."
+      },
+      {
+       "id": "s-references-28-4",
+       "original": "IEEE, 2024."
       }
      ]
     },
@@ -3037,11 +3855,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "Xingchao Liu, Chengyue Gong, and Qiang Liu."
+       "original": "Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao, Hemin Yang, Zirun Zhu, Min Tang, Xu Tan, et al. E2 tts: Embarrassingly easy fully non-autoregressive zero-shot tts."
       },
       {
        "id": "s-references-29-2",
-       "original": "Flow straight and fast: Learning to generate and transfer data with rectified flow. arXiv preprint arXiv:2209.03003, 2022a."
+       "original": "In 2024 IEEE Spoken Language Technology Workshop (SLT), pages 682–689."
+      },
+      {
+       "id": "s-references-29-3",
+       "original": "IEEE, 2024b."
       }
      ]
     },
@@ -3052,7 +3874,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "Kai Shen, Zeqian Ju, Xu Tan, Yanqing Liu, Yichong Leng, Lei He, Tao Qin, Sheng Zhao, and Jiang Bian."
+       "original": "Michael Albergo, Nicholas M Boffi, and Eric Vanden-Eijnden."
+      },
+      {
+       "id": "s-references-30-2",
+       "original": "Stochastic interpolants: A unifying framework for flows and diffusions."
+      },
+      {
+       "id": "s-references-30-3",
+       "original": "Journal of Machine Learning Research, 26(209):1–80, 2025."
       }
      ]
     },
@@ -3063,11 +3893,11 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "Naturalspeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers. arXiv Han Zhu, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang, Zhaoqing Li, Weiji Zhuang, Long Lin, and Daniel Povey."
+       "original": "Xingchao Liu, Chengyue Gong, and Qiang Liu."
       },
       {
        "id": "s-references-31-2",
-       "original": "Zipvoice: Fast and high-quality zero-shot text-to-speech with flow matching. arXiv preprint arXiv:2506.13053, 2025."
+       "original": "Flow straight and fast: Learning to generate and transfer data with rectified flow. arXiv preprint arXiv:2209.03003, 2022a."
       }
      ]
     },
@@ -3078,19 +3908,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "Yuan Gao, Nobuyuki Morioka, Yu Zhang, and Nanxin Chen."
-      },
-      {
-       "id": "s-references-32-2",
-       "original": "E3 tts: Easy end-to-end diffusion-based text to speech."
-      },
-      {
-       "id": "s-references-32-3",
-       "original": "In 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 1–8."
-      },
-      {
-       "id": "s-references-32-4",
-       "original": "IEEE, 2023a."
+       "original": "Kai Shen, Zeqian Ju, Xu Tan, Yanqing Liu, Yichong Leng, Lei He, Tao Qin, Sheng Zhao, and Jiang Bian."
       }
      ]
     },
@@ -3101,15 +3919,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer."
-      },
-      {
-       "id": "s-references-33-2",
-       "original": "High-resolution image synthesis with latent diffusion models."
-      },
-      {
-       "id": "s-references-33-3",
-       "original": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 10684–10695, 2022."
+       "original": "Naturalspeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers. arXiv preprint arXiv:2304.09116, 2023."
       }
      ]
     },
@@ -3120,19 +3930,11 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "Yanqing Liu, Ruiqing Xue, Lei He, Xu Tan, and Sheng Zhao."
+       "original": "Han Zhu, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang, Zhaoqing Li, Weiji Zhuang, Long Lin, and Daniel Povey."
       },
       {
        "id": "s-references-34-2",
-       "original": "Delightfultts 2: End-to-end speech synthesis with adversarial vector-quantized auto-encoders."
-      },
-      {
-       "id": "s-references-34-3",
-       "original": "In Proc."
-      },
-      {
-       "id": "s-references-34-4",
-       "original": "Interspeech, 2022b."
+       "original": "Zipvoice: Fast and high-quality zero-shot text-to-speech with flow matching. arXiv preprint arXiv:2506.13053, 2025."
       }
      ]
     },
@@ -3143,19 +3945,19 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-35-1",
-       "original": "Yongjoon Lee and Chanwoo Kim."
+       "original": "Yuan Gao, Nobuyuki Morioka, Yu Zhang, and Nanxin Chen."
       },
       {
        "id": "s-references-35-2",
-       "original": "Wave-u-mamba: an end-to-end framework for high-quality and efficient speech super resolution."
+       "original": "E3 tts: Easy end-to-end diffusion-based text to speech."
       },
       {
        "id": "s-references-35-3",
-       "original": "In Proc."
+       "original": "In 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pages 1–8."
       },
       {
        "id": "s-references-35-4",
-       "original": "ICASSP, 2025."
+       "original": "IEEE, 2023a."
       }
      ]
     },
@@ -3166,15 +3968,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "Chunyu Qiang, Hao Li, Yixin Tian, Yi Zhao, et al. High-fidelity speech synthesis with minimal supervision: All using diffusion models."
+       "original": "Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn Ommer."
       },
       {
        "id": "s-references-36-2",
-       "original": "In Proc."
+       "original": "High-resolution image synthesis with latent diffusion models."
       },
       {
        "id": "s-references-36-3",
-       "original": "ICASSP, 2024."
+       "original": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 10684–10695, 2022."
       }
      ]
     },
@@ -3185,7 +3987,19 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "Zhikang Niu, Shujie Hu, Jeongsoo Choi, Yushen Chen, Peining Chen, Pengcheng Zhu, Yunting Yang, Bowen Zhang, Jian Zhao, Chunhui Wang, et al. Semantic-vae: Semantic-alignment latent representation for better speech synthesis. arXiv preprint arXiv:2509.22167, 2025."
+       "original": "Yanqing Liu, Ruiqing Xue, Lei He, Xu Tan, and Sheng Zhao."
+      },
+      {
+       "id": "s-references-37-2",
+       "original": "Delightfultts 2: End-to-end speech synthesis with adversarial vector-quantized auto-encoders."
+      },
+      {
+       "id": "s-references-37-3",
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-37-4",
+       "original": "Interspeech, 2022b."
       }
      ]
     },
@@ -3196,200 +4010,68 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "Zach Evans, CJ Carr, Josiah Taylor, Scott H Hawley, and Jordi Pons."
+       "original": "Yongjoon Lee and Chanwoo Kim."
       },
       {
        "id": "s-references-38-2",
-       "original": "Fast timing-conditioned latent audio diffusion."
+       "original": "Wave-u-mamba: an end-to-end framework for high-quality and efficient speech super resolution."
       },
       {
        "id": "s-references-38-3",
-       "original": "In Forty-first International Conference on Machine Learning, 2024."
+       "original": "In Proc."
+      },
+      {
+       "id": "s-references-38-4",
+       "original": "ICASSP, 2025."
       }
      ]
     },
     {
      "id": "p-references-39",
      "type": "paragraph",
-     "page": 16,
+     "page": 15,
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "Liu Ziyin, Tilman Hartwig, and Masahito Ueda."
+       "original": "Chunyu Qiang, Hao Li, Yixin Tian, Yi Zhao, et al. High-fidelity speech synthesis with minimal supervision: All using diffusion models."
       },
       {
        "id": "s-references-39-2",
-       "original": "Neural networks fail to learn periodic functions and how to fix it."
+       "original": "In Proc."
       },
       {
        "id": "s-references-39-3",
-       "original": "Advances in Neural Information Processing Systems, 33:1583–1594, 2020."
-      },
-      {
-       "id": "s-references-39-4",
-       "original": "Chun Yat Wu, Jiajun Deng, Guinan Li, Qiuqiang Kong, and Simon Lui."
-      },
-      {
-       "id": "s-references-39-5",
-       "original": "Clear: Continuous latent autoregressive modeling for high-quality and low-latency speech synthesis. arXiv preprint arXiv:2508.19098, 2025."
-      },
-      {
-       "id": "s-references-39-6",
-       "original": "Neil Zeghidour, Alejandro Luebs, Ahmed Omran, Jan Skoglund, and Marco Tagliasacchi."
-      },
-      {
-       "id": "s-references-39-7",
-       "original": "Soundstream: An end-to-end neural audio codec."
-      },
-      {
-       "id": "s-references-39-8",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30: 495–507, 2021."
-      },
-      {
-       "id": "s-references-39-9",
-       "original": "Rithesh Kumar, Prem Seetharaman, Alejandro Luebs, Ishaan Kumar, and Kundan Kumar."
-      },
-      {
-       "id": "s-references-39-10",
-       "original": "High-fidelity audio compression with improved rvqgan."
-      },
-      {
-       "id": "s-references-39-11",
-       "original": "Advances in Neural Information Processing Systems, 36:27980–27993, 2023."
-      },
-      {
-       "id": "s-references-39-12",
-       "original": "Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae."
-      },
-      {
-       "id": "s-references-39-13",
-       "original": "Hifi-gan: Generative adversarial networks for efficient and high fidelity speech synthesis."
-      },
-      {
-       "id": "s-references-39-14",
-       "original": "In Advances in Neural Information Processing Systems, volume 33, pages 17022–17033."
-      },
-      {
-       "id": "s-references-39-15",
-       "original": "Curran Associates, Inc., 2020."
-      },
-      {
-       "id": "s-references-39-16",
-       "original": "Jonathan Ho and Tim Salimans."
-      },
-      {
-       "id": "s-references-39-17",
-       "original": "Classifier-free diffusion guidance."
-      },
-      {
-       "id": "s-references-39-18",
-       "original": "In NeurIPS 2021 Workshop on Deep Generative Models and Downstream Applications, 2021."
-      },
-      {
-       "id": "s-references-39-19",
-       "original": "Ethan Perez, Florian Strub, Harm De Vries, Vincent Dumoulin, and Aaron Courville."
-      },
-      {
-       "id": "s-references-39-20",
-       "original": "Film: Visual reasoning with a general conditioning layer."
-      },
-      {
-       "id": "s-references-39-21",
-       "original": "In Proceedings of the AAAI conference on artificial intelligence, volume 32, 2018."
-      },
-      {
-       "id": "s-references-39-22",
-       "original": "Alex Henry, Prudhvi Raj Dachapally, Shubham Shantaram Pawar, and Yuxuan Chen."
-      },
-      {
-       "id": "s-references-39-23",
-       "original": "Query-key normalization for transformers."
-      },
-      {
-       "id": "s-references-39-24",
-       "original": "In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 4246–4253, 2020."
-      },
-      {
-       "id": "s-references-39-25",
-       "original": "Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E Hinton."
-      },
-      {
-       "id": "s-references-39-26",
-       "original": "Layer normalization. arXiv preprint arXiv:1607.06450, 2016."
-      },
-      {
-       "id": "s-references-39-27",
-       "original": "Biao Zhang and Rico Sennrich."
-      },
-      {
-       "id": "s-references-39-28",
-       "original": "Root mean square layer normalization."
-      },
-      {
-       "id": "s-references-39-29",
-       "original": "Advances in neural information processing systems, 32, 2019."
-      },
-      {
-       "id": "s-references-39-30",
-       "original": "Jianlin Su, Murtadha Ahmed, Yu Lu, Shengfeng Pan, Wen Bo, and Yunfeng Liu."
+       "original": "ICASSP, 2024."
       }
      ]
     },
     {
      "id": "p-references-40",
      "type": "paragraph",
-     "page": 16,
+     "page": 15,
      "sentences": [
       {
        "id": "s-references-40-1",
-       "original": "Roformer: Enhanced transformer with rotary position embedding."
-      },
-      {
-       "id": "s-references-40-2",
-       "original": "Neurocomputing, 568:127063, 2024."
-      },
-      {
-       "id": "s-references-40-3",
-       "original": "Shoufa Chen, Mengmeng Xu, Jiawei Ren, Yuren Cong, Sen He, Yanping Xie, Animesh Sinha, Ping Luo, Tao Xiang, and Juan-Manuel Perez-Rua."
-      },
-      {
-       "id": "s-references-40-4",
-       "original": "Gentron: Diffusion transformers for image and video generation."
-      },
-      {
-       "id": "s-references-40-5",
-       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 6441–6451, 2024b."
-      },
-      {
-       "id": "s-references-40-6",
-       "original": "Sihyun Yu, Sangkyung Kwak, Huiwon Jang, Jongheon Jeong, Jonathan Huang, Jinwoo Shin, and Saining Xie."
+       "original": "Zhikang Niu, Shujie Hu, Jeongsoo Choi, Yushen Chen, Peining Chen, Pengcheng Zhu, Yunting Yang, Bowen Zhang, Jian Zhao, Chunhui Wang, et al. Semantic-vae: Semantic-alignment latent representation for better speech synthesis. arXiv preprint arXiv:2509.22167, 2025."
       }
      ]
     },
     {
      "id": "p-references-41",
      "type": "paragraph",
-     "page": 16,
+     "page": 15,
      "sentences": [
       {
        "id": "s-references-41-1",
-       "original": "Representation alignment for generation: Training diffusion transformers is easier than you think. arXiv Marcely Zanon Boito, Vivek Iyer, Nikolaos Lagos, Laurent Besacier, and Ioan Calapodescu. mhubert-147: A compact multilingual hubert model. arXiv preprint arXiv:2406.06371, 2024."
+       "original": "Zach Evans, CJ Carr, Josiah Taylor, Scott H Hawley, and Jordi Pons."
       },
       {
        "id": "s-references-41-2",
-       "original": "Linting Xue, Aditya Barua, Noah Constant, Rami Al-Rfou, Sharan Narang, Mihir Kale, Adam Roberts, and Colin Raffel."
+       "original": "Fast timing-conditioned latent audio diffusion."
       },
       {
        "id": "s-references-41-3",
-       "original": "Byt5: Towards a token-free future with pre-trained byte-to-byte models."
-      },
-      {
-       "id": "s-references-41-4",
-       "original": "Transactions of the Association for Computational Linguistics, 10:291–306, 2022."
-      },
-      {
-       "id": "s-references-41-5",
-       "original": "Hyung Won Chung, Noah Constant, Xavier Garcia, Adam Roberts, Yi Tay, Sharan Narang, and Orhan Firat."
+       "original": "In Forty-first International Conference on Machine Learning, 2024."
       }
      ]
     },
@@ -3400,13 +4082,43 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "Unimax: Fairer and more effective language sampling for large-scale multilingual pretraining. arXiv preprint arXiv:2304.09151, 2023."
+       "original": "Liu Ziyin, Tilman Hartwig, and Masahito Ueda."
       },
       {
        "id": "s-references-42-2",
-       "original": "Sanghyun Woo, Shoubhik Debnath, Ronghang Hu, Xinlei Chen, Zhuang Liu, In So Kweon, and Saining Xie."
+       "original": "Neural networks fail to learn periodic functions and how to fix it."
+      },
+      {
+       "id": "s-references-42-3",
+       "original": "Advances in Neural Information Processing Systems, 33:1583–1594, 2020."
+      },
+      {
+       "id": "s-references-42-4",
+       "original": "Chun Yat Wu, Jiajun Deng, Guinan Li, Qiuqiang Kong, and Simon Lui."
+      },
+      {
+       "id": "s-references-42-5",
+       "original": "Clear: Continuous latent autoregressive modeling for high-quality and low-latency speech synthesis. arXiv preprint arXiv:2508.19098, 2025."
+      },
+      {
+       "id": "s-references-42-6",
+       "original": "Neil Zeghidour, Alejandro Luebs, Ahmed Omran, Jan Skoglund, and Marco Tagliasacchi."
+      },
+      {
+       "id": "s-references-42-7",
+       "original": "Soundstream: An end-to-end neural audio codec."
+      },
+      {
+       "id": "s-references-42-8",
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30:"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 16,
+     "original": "495–507, 2021."
     },
     {
      "id": "p-references-43",
@@ -3415,222 +4127,304 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-43-1",
-       "original": "Convnext v2: Co-designing and scaling convnets with masked autoencoders."
+       "original": "Rithesh Kumar, Prem Seetharaman, Alejandro Luebs, Ishaan Kumar, and Kundan Kumar."
       },
       {
        "id": "s-references-43-2",
-       "original": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 16133–16142, 2023."
+       "original": "High-fidelity audio compression with improved rvqgan."
       },
       {
        "id": "s-references-43-3",
-       "original": "Tuomas Kynkäänniemi, Miika Aittala, Tero Karras, Samuli Laine, Timo Aila, and Jaakko Lehtinen."
-      },
-      {
-       "id": "s-references-43-4",
-       "original": "Applying guidance in a limited interval improves sample and distribution quality in diffusion models."
-      },
-      {
-       "id": "s-references-43-5",
-       "original": "Advances in Neural Information Processing Systems, 37:122458–122483, 2024."
-      },
-      {
-       "id": "s-references-43-6",
-       "original": "Seyedmorteza Sadat, Otmar Hilliges, and Romann M Weber."
-      },
-      {
-       "id": "s-references-43-7",
-       "original": "Eliminating oversaturation and artifacts of high guidance scales in diffusion models."
-      },
-      {
-       "id": "s-references-43-8",
-       "original": "In The Thirteenth International Conference on Learning Representations, 2024."
-      },
-      {
-       "id": "s-references-43-9",
-       "original": "Ilya Loshchilov and Frank Hutter."
-      },
-      {
-       "id": "s-references-43-10",
-       "original": "Decoupled weight decay regularization."
-      },
-      {
-       "id": "s-references-43-11",
-       "original": "In Proc."
-      },
-      {
-       "id": "s-references-43-12",
-       "original": "ICLR, 2018."
-      },
-      {
-       "id": "s-references-43-13",
-       "original": "Heiga Zen, Viet Dang, Rob Clark, Yu Zhang, Ron J Weiss, Ye Jia, Zhifeng Chen, and Yonghui Wu."
-      },
-      {
-       "id": "s-references-43-14",
-       "original": "Libritts: A corpus derived from librispeech for text-to-speech."
-      },
-      {
-       "id": "s-references-43-15",
-       "original": "Proc."
-      },
-      {
-       "id": "s-references-43-16",
-       "original": "Interspeech, 2019."
+       "original": "Advances in Neural Information Processing Systems, 36:27980–27993,"
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 16,
+     "original": "2023."
     },
     {
      "id": "p-references-44",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-44-1",
-       "original": "Antony W Rix, John G Beerends, Michael P Hollier, and Andries P Hekstra."
+       "original": "Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae."
       },
       {
        "id": "s-references-44-2",
-       "original": "Perceptual evaluation of speech quality (pesq)-a new method for speech quality assessment of telephone networks and codecs."
+       "original": "Hifi-gan: Generative adversarial networks for efficient and high fidelity speech synthesis."
       },
       {
        "id": "s-references-44-3",
-       "original": "In Proc."
+       "original": "In Advances in Neural Information Processing Systems, volume 33, pages 17022–17033."
+      },
+      {
+       "id": "s-references-44-4",
+       "original": "Curran Associates, Inc., 2020."
+      },
+      {
+       "id": "s-references-44-5",
+       "original": "Jonathan Ho and Tim Salimans."
+      },
+      {
+       "id": "s-references-44-6",
+       "original": "Classifier-free diffusion guidance."
+      },
+      {
+       "id": "s-references-44-7",
+       "original": "In NeurIPS 2021 Workshop on Deep Generative Models and Downstream Applications, 2021."
+      },
+      {
+       "id": "s-references-44-8",
+       "original": "Ethan Perez, Florian Strub, Harm De Vries, Vincent Dumoulin, and Aaron Courville."
+      },
+      {
+       "id": "s-references-44-9",
+       "original": "Film: Visual reasoning with a general conditioning layer."
+      },
+      {
+       "id": "s-references-44-10",
+       "original": "In Proceedings of the AAAI conference on artificial intelligence, volume 32,"
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 16,
+     "original": "2018."
     },
     {
      "id": "p-references-45",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-45-1",
-       "original": "ICASSP, volume 2, pages 749–752."
+       "original": "Alex Henry, Prudhvi Raj Dachapally, Shubham Shantaram Pawar, and Yuxuan Chen."
       },
       {
        "id": "s-references-45-2",
-       "original": "IEEE, 2001."
+       "original": "Query-key normalization for transformers."
+      },
+      {
+       "id": "s-references-45-3",
+       "original": "In Findings of the Association for Computational Linguistics: EMNLP 2020, pages 4246–4253,"
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 16,
+     "original": "2020."
     },
     {
      "id": "p-references-46",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-46-1",
-       "original": "Cees H Taal, Richard C Hendriks, Richard Heusdens, and Jesper Jensen."
+       "original": "Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey E Hinton."
       },
       {
        "id": "s-references-46-2",
-       "original": "An algorithm for intelligibility prediction of time–frequency weighted noisy speech."
-      },
-      {
-       "id": "s-references-46-3",
-       "original": "IEEE Transactions on audio, speech, and language processing, 19(7):2125–2136, 2011."
+       "original": "Layer normalization. arXiv preprint arXiv:1607.06450,"
       }
      ]
     },
     {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 16,
+     "original": "2016."
+    },
+    {
      "id": "p-references-47",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-47-1",
-       "original": "Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
+       "original": "Biao Zhang and Rico Sennrich."
       },
       {
        "id": "s-references-47-2",
-       "original": "Robust speech recognition via large-scale weak supervision."
+       "original": "Root mean square layer normalization."
       },
       {
        "id": "s-references-47-3",
-       "original": "In International conference on machine learning, pages 28492–28518."
+       "original": "Advances in neural information processing systems, 32, 2019."
       },
       {
        "id": "s-references-47-4",
-       "original": "PMLR, 2023."
+       "original": "Jianlin Su, Murtadha Ahmed, Yu Lu, Shengfeng Pan, Wen Bo, and Yunfeng Liu."
       }
      ]
     },
     {
      "id": "p-references-48",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-48-1",
-       "original": "Zhifu Gao, Zerui Li, Jiaming Wang, Haoneng Luo, Xian Shi, Mengzhe Chen, Yabin Li, Lingyun Zuo, Zhihao Du, and Shiliang Zhang."
+       "original": "Roformer: Enhanced transformer with rotary position embedding."
       },
       {
        "id": "s-references-48-2",
-       "original": "Funasr: A fundamental end-to-end speech recognition toolkit."
+       "original": "Neurocomputing, 568:127063, 2024."
       },
       {
        "id": "s-references-48-3",
-       "original": "In Interspeech 2023, pages 1593–1597, 2023b. doi:10.21437/Interspeech.2023-1428."
+       "original": "Shoufa Chen, Mengmeng Xu, Jiawei Ren, Yuren Cong, Sen He, Yanping Xie, Animesh Sinha, Ping Luo, Tao Xiang, and Juan-Manuel Perez-Rua."
+      },
+      {
+       "id": "s-references-48-4",
+       "original": "Gentron: Diffusion transformers for image and video generation."
+      },
+      {
+       "id": "s-references-48-5",
+       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pages 6441–6451, 2024b."
+      },
+      {
+       "id": "s-references-48-6",
+       "original": "Sihyun Yu, Sangkyung Kwak, Huiwon Jang, Jongheon Jeong, Jonathan Huang, Jinwoo Shin, and Saining Xie."
       }
      ]
     },
     {
      "id": "p-references-49",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-49-1",
-       "original": "Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al. Wavlm: Large-scale self-supervised pre-training for full stack speech processing."
+       "original": "Representation alignment for generation: Training diffusion transformers is easier than you think. arXiv preprint arXiv:2410.06940, 2024."
       },
       {
        "id": "s-references-49-2",
-       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6):1505–1518, 2022."
+       "original": "Marcely Zanon Boito, Vivek Iyer, Nikolaos Lagos, Laurent Besacier, and Ioan Calapodescu. mhubert-147: A compact multilingual hubert model. arXiv preprint arXiv:2406.06371, 2024."
+      },
+      {
+       "id": "s-references-49-3",
+       "original": "Linting Xue, Aditya Barua, Noah Constant, Rami Al-Rfou, Sharan Narang, Mihir Kale, Adam Roberts, and Colin Raffel."
+      },
+      {
+       "id": "s-references-49-4",
+       "original": "Byt5: Towards a token-free future with pre-trained byte-to-byte models."
+      },
+      {
+       "id": "s-references-49-5",
+       "original": "Transactions of the Association for Computational Linguistics, 10:291–306, 2022."
+      },
+      {
+       "id": "s-references-49-6",
+       "original": "Hyung Won Chung, Noah Constant, Xavier Garcia, Adam Roberts, Yi Tay, Sharan Narang, and Orhan Firat."
       }
      ]
     },
     {
      "id": "p-references-50",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-50-1",
-       "original": "Takaaki Saeki, Detai Xin, Wataru Nakata, Tomoki Koriyama, Shinnosuke Takamichi, and Hiroshi Saruwatari."
+       "original": "Unimax: Fairer and more effective language sampling for large-scale multilingual pretraining. arXiv preprint arXiv:2304.09151, 2023."
+      },
+      {
+       "id": "s-references-50-2",
+       "original": "Sanghyun Woo, Shoubhik Debnath, Ronghang Hu, Xinlei Chen, Zhuang Liu, In So Kweon, and Saining Xie."
       }
      ]
     },
     {
      "id": "p-references-51",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-51-1",
-       "original": "Utmos: Utokyo-sarulab system for voicemos challenge 2022. arXiv preprint arXiv:2204.02152, 2022."
+       "original": "Convnext v2: Co-designing and scaling convnets with masked autoencoders."
+      },
+      {
+       "id": "s-references-51-2",
+       "original": "In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, pages 16133–16142, 2023."
+      },
+      {
+       "id": "s-references-51-3",
+       "original": "Tuomas Kynkäänniemi, Miika Aittala, Tero Karras, Samuli Laine, Timo Aila, and Jaakko Lehtinen."
+      },
+      {
+       "id": "s-references-51-4",
+       "original": "Applying guidance in a limited interval improves sample and distribution quality in diffusion models."
+      },
+      {
+       "id": "s-references-51-5",
+       "original": "Advances in Neural Information Processing Systems, 37:122458–122483, 2024."
+      },
+      {
+       "id": "s-references-51-6",
+       "original": "Seyedmorteza Sadat, Otmar Hilliges, and Romann M Weber."
+      },
+      {
+       "id": "s-references-51-7",
+       "original": "Eliminating oversaturation and artifacts of high guidance scales in diffusion models."
+      },
+      {
+       "id": "s-references-51-8",
+       "original": "In The Thirteenth International Conference on Learning Representations,"
       }
      ]
     },
     {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 16,
+     "original": "2024."
+    },
+    {
      "id": "p-references-52",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-52-1",
-       "original": "Chandan KA Reddy, Vishak Gopal, and Ross Cutler."
+       "original": "Ilya Loshchilov and Frank Hutter."
       },
       {
        "id": "s-references-52-2",
-       "original": "Dnsmos: A non-intrusive perceptual objective speech quality metric to evaluate noise suppressors."
+       "original": "Decoupled weight decay regularization."
       },
       {
        "id": "s-references-52-3",
-       "original": "In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6493–6497."
+       "original": "In Proc."
       },
       {
        "id": "s-references-52-4",
-       "original": "IEEE, 2021."
+       "original": "ICLR, 2018."
+      },
+      {
+       "id": "s-references-52-5",
+       "original": "Heiga Zen, Viet Dang, Rob Clark, Yu Zhang, Ron J Weiss, Ye Jia, Zhifeng Chen, and Yonghui Wu."
+      },
+      {
+       "id": "s-references-52-6",
+       "original": "Libritts: A corpus derived from librispeech for text-to-speech."
+      },
+      {
+       "id": "s-references-52-7",
+       "original": "Proc."
+      },
+      {
+       "id": "s-references-52-8",
+       "original": "Interspeech, 2019."
       }
      ]
     },
@@ -3641,11 +4435,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-53-1",
-       "original": "Yuancheng Wang, Haoyue Zhan, Liwei Liu, Ruihong Zeng, Haotian Guo, Jiachen Zheng, Qiang Zhang, Xueyao Zhang, Shunsi Zhang, and Zhizheng Wu."
+       "original": "Antony W Rix, John G Beerends, Michael P Hollier, and Andries P Hekstra."
       },
       {
        "id": "s-references-53-2",
-       "original": "Maskgct: Zero-shot text-to-speech with masked generative codec transformer. arXiv preprint arXiv:2409.00750, 2024."
+       "original": "Perceptual evaluation of speech quality (pesq)-a new method for speech quality assessment of telephone networks and codecs."
+      },
+      {
+       "id": "s-references-53-3",
+       "original": "In Proc."
       }
      ]
     },
@@ -3656,11 +4454,11 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-54-1",
-       "original": "Xiaohui Sun, Ruitong Xiao, Jianye Mo, Bowen Wu, Qun Yu, and Baoxun Wang."
+       "original": "ICASSP, volume 2, pages 749–752."
       },
       {
        "id": "s-references-54-2",
-       "original": "F5r-tts: Improving flowmatching based text-to-speech with group relative policy optimization. arXiv preprint arXiv:2504.02407, 2025."
+       "original": "IEEE, 2001."
       }
      ]
     },
@@ -3671,7 +4469,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-55-1",
-       "original": "Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, Zheng Liang, Qixi Zheng, Rui Wang, Xiaoqin Feng, et al. Spark-tts: An efficient llm-based text-to-speech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710, 2025."
+       "original": "Cees H Taal, Richard C Hendriks, Richard Heusdens, and Jesper Jensen."
+      },
+      {
+       "id": "s-references-55-2",
+       "original": "An algorithm for intelligibility prediction of time–frequency weighted noisy speech."
+      },
+      {
+       "id": "s-references-55-3",
+       "original": "IEEE Transactions on audio, speech, and language processing, 19(7):2125–2136, 2011."
       }
      ]
     },
@@ -3682,7 +4488,19 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-56-1",
-       "original": "Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang, et al. Qwen2. 5-omni technical report. arXiv preprint arXiv:2503.20215, 2025."
+       "original": "Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
+      },
+      {
+       "id": "s-references-56-2",
+       "original": "Robust speech recognition via large-scale weak supervision."
+      },
+      {
+       "id": "s-references-56-3",
+       "original": "In International conference on machine learning, pages 28492–28518."
+      },
+      {
+       "id": "s-references-56-4",
+       "original": "PMLR, 2023."
       }
      ]
     },
@@ -3693,7 +4511,15 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-57-1",
-       "original": "Zhihao Du, Yuxuan Wang, Qian Chen, Xian Shi, Xiang Lv, Tianyu Zhao, Zhifu Gao, Yexin Yang, Changfeng Gao, Hui Wang, et al. Cosyvoice 2: Scalable streaming speech synthesis with large language models. arXiv preprint arXiv:2412.10117, 2024b."
+       "original": "Zhifu Gao, Zerui Li, Jiaming Wang, Haoneng Luo, Xian Shi, Mengzhe Chen, Yabin Li, Lingyun Zuo, Zhihao Du, and Shiliang Zhang."
+      },
+      {
+       "id": "s-references-57-2",
+       "original": "Funasr: A fundamental end-to-end speech recognition toolkit."
+      },
+      {
+       "id": "s-references-57-3",
+       "original": "In Interspeech 2023, pages 1593–1597, 2023b. doi:10.21437/Interspeech.2023-1428."
       }
      ]
     },
@@ -3704,11 +4530,11 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-58-1",
-       "original": "Hao-Han Guo, Yao Hu, Fei-Yu Shen, Xu Tang, Yi-Chen Wu, Feng-Long Xie, and Kun Xie."
+       "original": "Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al. Wavlm: Large-scale self-supervised pre-training for full stack speech processing."
       },
       {
        "id": "s-references-58-2",
-       "original": "Fireredtts-1s: An upgraded streamable foundation text-to-speech system. arXiv preprint arXiv:2503.20499, 2025."
+       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6):1505–1518, 2022."
       }
      ]
     },
@@ -3719,11 +4545,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-59-1",
-       "original": "Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu."
-      },
-      {
-       "id": "s-references-59-2",
-       "original": "Indextts2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech."
+       "original": "Takaaki Saeki, Detai Xin, Wataru Nakata, Tomoki Koriyama, Shinnosuke Takamichi, and Hiroshi Saruwatari."
       }
      ]
     },
@@ -3734,7 +4556,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-60-1",
-       "original": "arXiv preprint arXiv:2506.21619, 2025a."
+       "original": "Utmos: Utokyo-sarulab system for voicemos challenge 2022. arXiv preprint arXiv:2204.02152, 2022."
       }
      ]
     },
@@ -3745,7 +4567,19 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-61-1",
-       "original": "Dongya Jia, Zhuo Chen, Jiawei Chen, Chenpeng Du, Jian Wu, Jian Cong, Xiaobin Zhuang, Chumin Li, Zhen Wei, Yuping Wang, et al. Ditar: Diffusion transformer autoregressive modeling for speech generation. arXiv Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, et al. Voxcpm: Tokenizer-free tts for context-aware speech generation and true-to-life voice cloning. arXiv preprint arXiv:2509.24650, 2025b."
+       "original": "Chandan KA Reddy, Vishak Gopal, and Ross Cutler."
+      },
+      {
+       "id": "s-references-61-2",
+       "original": "Dnsmos: A non-intrusive perceptual objective speech quality metric to evaluate noise suppressors."
+      },
+      {
+       "id": "s-references-61-3",
+       "original": "In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6493–6497."
+      },
+      {
+       "id": "s-references-61-4",
+       "original": "IEEE, 2021."
       }
      ]
     },
@@ -3756,11 +4590,11 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-62-1",
-       "original": "SII-OpenMOSS."
+       "original": "Yuancheng Wang, Haoyue Zhan, Liwei Liu, Ruihong Zeng, Haotian Guo, Jiachen Zheng, Qiang Zhang, Xueyao Zhang, Shunsi Zhang, and Zhizheng Wu."
       },
       {
        "id": "s-references-62-2",
-       "original": "Moss-tts technical report. arXiv preprint arXiv:2603.18090, 2026."
+       "original": "Maskgct: Zero-shot text-to-speech with masked generative codec transformer. arXiv preprint arXiv:2409.00750, 2024."
       }
      ]
     },
@@ -3771,9 +4605,19 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-63-1",
-       "original": "Hangrui Hu, Xinfa Zhu, Ting He, Dake Guo, Bin Zhang, Xiong Wang, Zhifang Guo, Ziyue Jiang, Hongkun Hao, Zishan Guo, et al. Qwen3-tts technical report. arXiv preprint arXiv:2601.15621, 2026."
+       "original": "Xiaohui Sun, Ruitong Xiao, Jianye Mo, Bowen Wu, Qun Yu, and Baoxun Wang."
+      },
+      {
+       "id": "s-references-63-2",
+       "original": "F5r-tts: Improving flowmatching based text-to-speech with group relative policy optimization. arXiv preprint arXiv:2504.02407,"
       }
      ]
+    },
+    {
+     "id": "eq-references-8",
+     "type": "equation",
+     "page": 17,
+     "original": "2025."
     },
     {
      "id": "p-references-64",
@@ -3782,11 +4626,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-64-1",
-       "original": "Alexandre Défossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
-      },
-      {
-       "id": "s-references-64-2",
-       "original": "High fidelity neural audio compression."
+       "original": "Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, Zheng Liang, Qixi Zheng, Rui Wang, Xiaoqin Feng, et al. Spark-tts: An efficient llm-based text-to-speech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710, 2025."
       }
      ]
     },
@@ -3797,7 +4637,7 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-65-1",
-       "original": "arXiv preprint arXiv:2210.13438, 2022."
+       "original": "Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang, et al. Qwen2. 5-omni technical report. arXiv preprint arXiv:2503.20215, 2025."
       }
      ]
     },
@@ -3808,55 +4648,181 @@ globalThis.PAPER_2603_29339 = {
      "sentences": [
       {
        "id": "s-references-66-1",
-       "original": "Hubert Siuzdak."
-      },
-      {
-       "id": "s-references-66-2",
-       "original": "Vocos: Closing the gap between time-domain and fourier-based neural vocoders for highquality audio synthesis. arXiv preprint arXiv:2306.00814, 2023."
+       "original": "Zhihao Du, Yuxuan Wang, Qian Chen, Xian Shi, Xiang Lv, Tianyu Zhao, Zhifu Gao, Yexin Yang, Changfeng Gao, Hui Wang, et al. Cosyvoice 2: Scalable streaming speech synthesis with large language models. arXiv preprint arXiv:2412.10117, 2024b."
       }
      ]
     },
     {
      "id": "p-references-67",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-67-1",
-       "original": "Shengpeng Ji, Ziyue Jiang, Wen Wang, Yifu Chen, Minghui Fang, Jialong Zuo, Qian Yang, Xize Cheng, Zehan Wang, Ruiqi Li, et al. Wavtokenizer: an efficient acoustic discrete codec tokenizer for audio language modeling. arXiv preprint arXiv:2408.16532, 2024."
+       "original": "Hao-Han Guo, Yao Hu, Fei-Yu Shen, Xu Tang, Yi-Chen Wu, Feng-Long Xie, and Kun Xie."
+      },
+      {
+       "id": "s-references-67-2",
+       "original": "Fireredtts-1s: An upgraded streamable foundation text-to-speech system. arXiv preprint arXiv:2503.20499, 2025."
       }
      ]
     },
     {
      "id": "p-references-68",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-68-1",
-       "original": "Detai Xin, Xu Tan, Shinnosuke Takamichi, and Hiroshi Saruwatari."
+       "original": "Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu."
       },
       {
        "id": "s-references-68-2",
-       "original": "Bigcodec: Pushing the limits of low-bitrate neural speech codec. arXiv preprint arXiv:2409.05377, 2024."
-      },
-      {
-       "id": "s-references-68-3",
-       "original": "Zhiliang Peng, Jianwei Yu, Wenhui Wang, Yaoyao Chang, Yutao Sun, Li Dong, Yi Zhu, Weijiang Xu, Hangbo Bao, Zehua Wang, et al. Vibevoice technical report. arXiv preprint arXiv:2508.19205, 2025."
+       "original": "Indextts2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech."
       }
      ]
     },
     {
      "id": "p-references-69",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-69-1",
+       "original": "arXiv preprint arXiv:2506.21619, 2025a."
+      }
+     ]
+    },
+    {
+     "id": "p-references-70",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-70-1",
+       "original": "Dongya Jia, Zhuo Chen, Jiawei Chen, Chenpeng Du, Jian Wu, Jian Cong, Xiaobin Zhuang, Chumin Li, Zhen Wei, Yuping Wang, et al. Ditar: Diffusion transformer autoregressive modeling for speech generation. arXiv preprint arXiv:2502.03930, 2025."
+      }
+     ]
+    },
+    {
+     "id": "p-references-71",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-71-1",
+       "original": "Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, et al. Voxcpm: Tokenizer-free tts for context-aware speech generation and true-to-life voice cloning. arXiv preprint arXiv:2509.24650, 2025b."
+      }
+     ]
+    },
+    {
+     "id": "p-references-72",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-72-1",
+       "original": "SII-OpenMOSS."
+      },
+      {
+       "id": "s-references-72-2",
+       "original": "Moss-tts technical report. arXiv preprint arXiv:2603.18090, 2026."
+      }
+     ]
+    },
+    {
+     "id": "p-references-73",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-73-1",
+       "original": "Hangrui Hu, Xinfa Zhu, Ting He, Dake Guo, Bin Zhang, Xiong Wang, Zhifang Guo, Ziyue Jiang, Hongkun Hao, Zishan Guo, et al. Qwen3-tts technical report. arXiv preprint arXiv:2601.15621, 2026."
+      }
+     ]
+    },
+    {
+     "id": "p-references-74",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-74-1",
+       "original": "Alexandre Défossez, Jade Copet, Gabriel Synnaeve, and Yossi Adi."
+      },
+      {
+       "id": "s-references-74-2",
+       "original": "High fidelity neural audio compression."
+      }
+     ]
+    },
+    {
+     "id": "p-references-75",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-75-1",
+       "original": "arXiv preprint arXiv:2210.13438, 2022."
+      }
+     ]
+    },
+    {
+     "id": "p-references-76",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-76-1",
+       "original": "Hubert Siuzdak."
+      },
+      {
+       "id": "s-references-76-2",
+       "original": "Vocos: Closing the gap between time-domain and fourier-based neural vocoders for highquality audio synthesis. arXiv preprint arXiv:2306.00814, 2023."
+      }
+     ]
+    },
+    {
+     "id": "p-references-77",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-77-1",
+       "original": "Shengpeng Ji, Ziyue Jiang, Wen Wang, Yifu Chen, Minghui Fang, Jialong Zuo, Qian Yang, Xize Cheng, Zehan Wang, Ruiqi Li, et al. Wavtokenizer: an efficient acoustic discrete codec tokenizer for audio language modeling. arXiv preprint arXiv:2408.16532, 2024."
+      }
+     ]
+    },
+    {
+     "id": "p-references-78",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-78-1",
+       "original": "Detai Xin, Xu Tan, Shinnosuke Takamichi, and Hiroshi Saruwatari."
+      },
+      {
+       "id": "s-references-78-2",
+       "original": "Bigcodec: Pushing the limits of low-bitrate neural speech codec. arXiv preprint arXiv:2409.05377, 2024."
+      },
+      {
+       "id": "s-references-78-3",
+       "original": "Zhiliang Peng, Jianwei Yu, Wenhui Wang, Yaoyao Chang, Yutao Sun, Li Dong, Yi Zhu, Weijiang Xu, Hangbo Bao, Zehua Wang, et al. Vibevoice technical report. arXiv preprint arXiv:2508.19205, 2025."
+      }
+     ]
+    },
+    {
+     "id": "p-references-79",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-79-1",
        "original": "Junmin Gong, Sean Zhao, Sen Wang, Shengyuan Xu, and Joe Guo."
       },
       {
-       "id": "s-references-69-2",
+       "id": "s-references-79-2",
        "original": "Ace-step: A step towards music generation foundation model. arXiv preprint arXiv:2506.00045, 2025."
       }
      ]
@@ -3890,7 +4856,7 @@ globalThis.PAPER_2603_29339 = {
   {
    "id": "ann-003",
    "anchor": {
-    "sentence_id": "s-3-1-6-1",
+    "sentence_id": "s-3-1-4-1",
     "quote": "shortcut"
    },
    "kind": "engineering",
@@ -3901,7 +4867,7 @@ globalThis.PAPER_2603_29339 = {
   {
    "id": "ann-004",
    "anchor": {
-    "sentence_id": "s-3-2-6-1",
+    "sentence_id": "s-3-2-5-1",
     "quote": "warmup"
    },
    "kind": "engineering",
@@ -3923,7 +4889,7 @@ globalThis.PAPER_2603_29339 = {
   {
    "id": "ann-006",
    "anchor": {
-    "sentence_id": "s-4-1-6-1",
+    "sentence_id": "s-4-1-7-1",
     "quote": "REPA"
    },
    "kind": "engineering",
@@ -3956,7 +4922,7 @@ globalThis.PAPER_2603_29339 = {
   {
    "id": "ann-009",
    "anchor": {
-    "sentence_id": "s-4-3-3-5",
+    "sentence_id": "s-abstract-1-4",
     "quote": "training-inference mismatch"
    },
    "kind": "concept",
@@ -3967,7 +4933,7 @@ globalThis.PAPER_2603_29339 = {
   {
    "id": "ann-010",
    "anchor": {
-    "sentence_id": "s-4-3-3-6",
+    "sentence_id": "s-4-3-4-6",
     "quote": "overwriting"
    },
    "kind": "engineering",
@@ -3978,7 +4944,7 @@ globalThis.PAPER_2603_29339 = {
   {
    "id": "ann-011",
    "anchor": {
-    "sentence_id": "s-4-3-4-2",
+    "sentence_id": "s-4-3-6-2",
     "quote": "leak"
    },
    "kind": "critique",
@@ -3989,7 +4955,7 @@ globalThis.PAPER_2603_29339 = {
   {
    "id": "ann-012",
    "anchor": {
-    "sentence_id": "s-4-4-2-4",
+    "sentence_id": "s-1-1-6",
     "quote": "parallel"
    },
    "kind": "concept",
@@ -4022,7 +4988,7 @@ globalThis.PAPER_2603_29339 = {
   {
    "id": "ann-015",
    "anchor": {
-    "sentence_id": "s-continuous-vaes-2-2",
+    "sentence_id": "s-continuous-vaes-3-2",
     "quote": "Qwen3-TTS"
    },
    "kind": "critique",
@@ -4033,7 +4999,7 @@ globalThis.PAPER_2603_29339 = {
   {
    "id": "ann-016",
    "anchor": {
-    "sentence_id": "s-tts-latent-model-2-3",
+    "sentence_id": "s-abstract-1-6",
     "quote": "speaker similarity"
    },
    "kind": "number",
@@ -4044,7 +5010,7 @@ globalThis.PAPER_2603_29339 = {
   {
    "id": "ann-017",
    "anchor": {
-    "sentence_id": "s-5-3-2-4-2",
+    "sentence_id": "s-5-3-2-5-2",
     "quote": "degrades the TTS generation quality"
    },
    "kind": "critique",
@@ -4055,7 +5021,7 @@ globalThis.PAPER_2603_29339 = {
   {
    "id": "ann-018",
    "anchor": {
-    "sentence_id": "s-5-3-2-5-3",
+    "sentence_id": "s-5-3-2-6-3",
     "quote": "lower FPS"
    },
    "kind": "connection",
@@ -4066,7 +5032,7 @@ globalThis.PAPER_2603_29339 = {
   {
    "id": "ann-019",
    "anchor": {
-    "sentence_id": "s-5-3-2-6-1",
+    "sentence_id": "s-training-details-1-2",
     "quote": "11.72"
    },
    "kind": "number",

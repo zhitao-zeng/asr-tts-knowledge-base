@@ -407,8 +407,8 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-2-1-3-1",
-       "original": "Speech embeddings Speech adaptor “Give me your top picks for delicious lattes at NIO House” Speech Encoder NIO House Retrieval Phoneme hypos Phoneme head Hotword database Encoder representations",
-       "zh": "（图示意）原始语音进入语音编码器得到编码器表征；一路经语音适配器产出语音嵌入注入 LLM，另一路经音素头产出生成的音素假设，再从热词库中检索出「NIO House」，作为上下文提示拼入 LLM 的 prompt。"
+       "original": "Speech embeddings Speech adaptor “Give me your top picks for delicious lattes at NIO House” Streaming Speech Encoder NIO House Retrieval Phoneme hypos Phoneme head Hotword database Encoder representations",
+       "zh": "（图 1 架构标签：语音嵌入 → 语音适配器；示例请求「Give me your top picks for delicious lattes at NIO House」；流式语音编码器；NIO House 检索；音素假设（Phoneme hypos）；音素头；热词库；编码器表示。）"
       }
      ]
     },
@@ -573,8 +573,8 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-2-2-2-1",
-       "original": "Conventional LLM-based ASR Stage 2: Alignment Stage 1: Pre-training ❄ LLM 🔥 Decoder Stage 3: SFT 🔥  EncoderFinal 🔥 Encoder ❄/ 🔥 EncoderFinal",
-       "zh": "（图中示意）传统 LLM 语音模型：Stage 1 预训练（冻结/微调 LLM 解码器）→ Stage 2 对齐 → Stage 3 SFT（编码器与 LLM 一起微调）。"
+       "original": "Conventional LLM-based ASR Stage 2: Alignment Stage 1: Pre-training ❄ LLM 🔥 Decoder 🔥 Adaptor Stage 3: SFT 🔥 LLM 🔥 Adaptor 🔥  EncoderFinal 🔥 Encoder",
+       "zh": "（图 2 上：传统 LLM-based ASR 三阶段——Stage 2 Alignment：❄LLM、🔥Decoder、🔥Adaptor；Stage 1 Pre-training；Stage 3 SFT：🔥LLM、🔥Adaptor、🔥Encoder_Final；🔥Encoder；❄/Initialize；🔥Encoder_Final。❄=冻结，🔥=可训练。）"
       }
      ]
     },
@@ -582,7 +582,7 @@ globalThis.PAPER_2604_18105 = {
      "id": "eq-2-2-1",
      "type": "equation",
      "page": 4,
-     "original": "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+     "original": "❄/"
     },
     {
      "id": "p-2-2-3",
@@ -591,8 +591,26 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-2-2-3-1",
-       "original": "NIM4-ASR Stage 2: Alignment ❄ LLM ❄ Frozen 🔥 Trainable ❄ Encoderinit ❄ Encoderinit Stage 3: IA-SFT w/ iterative updates Stage 4: Late joint SFT 🔥 EncoderFinal ❄ Encodermid ❄ EncoderFinal Update Stage 1: Pre-training Update Fine-tune for RAG module 🔥 Phoneme head CKA-Triggered Final update CKA-Triggered 🔥 Encoder 🔥 Encoderinit 🔥 Encodermid 🔥 EncoderFinal ❄ Encoder",
-       "zh": "（图中示意）NIM4-ASR：Stage 1 预训练；Stage 2 对齐（LLM 与 Encoder 均冻结，仅训练适配器）；Stage 3 伴随异步预训练的 IA-SFT，由 CKA 触发周期性热替换编码器快照；Stage 4 后期联合 SFT（编码器/适配器/LLM 一起微调）；最后为 RAG 模块单独微调音素头。图例：❄ 表示冻结，🔥 表示可训练。"
+       "original": "Initialize 🔥 EncoderFinal",
+       "zh": "（图 2 上：传统 LLM-based ASR 三阶段——Stage 2 Alignment：❄LLM、🔥Decoder、🔥Adaptor；Stage 1 Pre-training；Stage 3 SFT：🔥LLM、🔥Adaptor、🔥Encoder_Final；🔥Encoder；❄/Initialize；🔥Encoder_Final。❄=冻结，🔥=可训练。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-2-2",
+     "type": "equation",
+     "page": 4,
+     "original": "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+    },
+    {
+     "id": "p-2-2-4",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-2-4-1",
+       "original": "NIM4-ASR Stage 2: Alignment 🔥 LLM ❄ LLM ❄ Frozen 🔥 Adaptor 🔥 Adaptor 🔥 Trainable ❄ Encoderinit ❄ Encoderinit Stage 3: IA-SFT w/ iterative updates Stage 4: Late joint SFT 🔥 LLM 🔥 LLM 🔥 LLM 🔥 Adaptor 🔥 Adaptor 🔥 Adaptor 🔥 EncoderFinal ❄ Encodermid ❄ EncoderFinal Initialize Initialize Update Stage 1: Pre-training 🔥 CTC head 🔥 CTC head Update Fine-tune for RAG module 🔥 CTC head 🔥 CTC head 🔥 Phoneme head CKA-Triggered Final update CKA-Triggered 🔥 Encoder 🔥 Encoderinit Initialize 🔥 Encodermid 🔥 EncoderFinal ❄ Encoder",
+       "zh": "（图 2 下：NIM4-ASR 六阶段——Stage 2 Alignment：🔥LLM 后 ❄LLM（Frozen）；🔥Adaptor；❄Encoder_init；Stage 3 IA-SFT（迭代更新）；Stage 4 Late joint SFT：🔥LLM/🔥Adaptor/🔥Encoder_Final；❄Encoder_mid；Initialize/Update；Stage 1 Pre-training：🔥CTC head；RAG 模块微调：🔥Phoneme head；CKA-Triggered 触发最终更新。）"
       }
      ]
     },
@@ -727,13 +745,19 @@ globalThis.PAPER_2604_18105 = {
      "original": "CKA(E(a), E(b)) = ⟨˜K(a), ˜K(b)⟩F q"
     },
     {
+     "id": "eq-2-2-2-2",
+     "type": "equation",
+     "page": 5,
+     "original": "⟨˜K(a), ˜K(a)⟩F · ⟨˜K(b), ˜K(b)⟩F , (1)"
+    },
+    {
      "id": "p-2-2-2-2",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
        "id": "s-2-2-2-2-1",
-       "original": "⟨˜K(a), ˜K(a)⟩F · ⟨˜K(b), ˜K(b)⟩F , where ˜K(a) and ˜K(b) are centered Gram matrices calculated via ˜K(x) = CE(x)E(x)⊤C.",
+       "original": "where ˜K(a) and ˜K(b) are centered Gram matrices calculated via ˜K(x) = CE(x)E(x)⊤C.",
        "zh": "⟨K̃(a), K̃(a)⟩F · ⟨K̃(b), K̃(b)⟩F，其中 K̃(a) 与 K̃(b) 是由 K̃(x) = C E(x) E(x)ᵀ C 计算得到的中心化 Gram 矩阵。"
       },
       {
@@ -1177,16 +1201,10 @@ globalThis.PAPER_2604_18105 = {
      ]
     },
     {
-     "id": "p-2-2-5-7",
-     "type": "paragraph",
+     "id": "eq-2-2-5-1",
+     "type": "equation",
      "page": 7,
-     "sentences": [
-      {
-       "id": "s-2-2-5-7-1",
-       "original": "R(τ, y) = Racc(τ, y) + 0.5Rhallu(τ, y) + 0.5Rcontext(τ, y).",
-       "zh": "R(τ, y) = R_acc(τ, y) + 0.5·R_hallu(τ, y) + 0.5·R_context(τ, y)。"
-      }
-     ]
+     "original": "R(τ, y) = Racc(τ, y) + 0.5Rhallu(τ, y) + 0.5Rcontext(τ, y). (2)"
     }
    ]
   },
@@ -1207,18 +1225,8 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-reinforcement-learning-algorithm-1-1",
-       "original": "Following GRPO, we compute the group-normalized advantage ˆAi,t = R(τi, y) −mean({R(τj, y)}K j=1) std({R(τj, y)}K j=1) + ϵ . where ϵ is a small constant for numerical stability.",
+       "original": "Following GRPO, we compute the group-normalized advantage ˆAi,t = R(τi, y) −mean({R(τj, y)}K j=1) std({R(τj, y)}K j=1) + ϵ",
        "zh": "沿用 GRPO，我们计算组内归一化优势 Â_{i,t} = (R(τ_i, y) − mean({R(τ_j, y)}^K_{j=1})) / (std({R(τ_j, y)}^K_{j=1}) + ε)，其中 ε 是用于数值稳定的小常数。"
-      },
-      {
-       "id": "s-reinforcement-learning-algorithm-1-2",
-       "original": "Denote θold as the policy parameters at the beginning of each optimization step, ε as the clipping range, and β as the KL penalty coefficient.",
-       "zh": "记 θ_old 为每个优化步开始时的策略参数，ε_clip 为裁剪范围，β 为 KL 惩罚系数。"
-      },
-      {
-       "id": "s-reinforcement-learning-algorithm-1-3",
-       "original": "The GRPO objective is defined as",
-       "zh": "GRPO 的目标函数定义为："
       }
      ]
     },
@@ -1226,37 +1234,13 @@ globalThis.PAPER_2604_18105 = {
      "id": "eq-reinforcement-learning-algorithm-1",
      "type": "equation",
      "page": 7,
-     "original": "JGRPO = 1"
+     "original": "."
     },
     {
      "id": "eq-reinforcement-learning-algorithm-2",
      "type": "equation",
      "page": 7,
-     "original": "K"
-    },
-    {
-     "id": "eq-reinforcement-learning-algorithm-3",
-     "type": "equation",
-     "page": 7,
-     "original": "K X"
-    },
-    {
-     "id": "eq-reinforcement-learning-algorithm-4",
-     "type": "equation",
-     "page": 7,
-     "original": "i=1"
-    },
-    {
-     "id": "eq-reinforcement-learning-algorithm-5",
-     "type": "equation",
-     "page": 7,
-     "original": "1 |τi|"
-    },
-    {
-     "id": "eq-reinforcement-learning-algorithm-6",
-     "type": "equation",
-     "page": 7,
-     "original": "|τi| X"
+     "original": "(3)"
     },
     {
      "id": "p-reinforcement-learning-algorithm-2",
@@ -1265,10 +1249,104 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-reinforcement-learning-algorithm-2-1",
-       "original": "t=1 min ri,t(θ) ˆAi,t, clip ri,t(θ), 1 −ε, 1 + ε ˆAi,t −β DKL(πθ∥πref), where ri,t(θ) = πθ(τi,t | q, τi,<t) πθold(τi,t | q, τi,<t).",
-       "zh": "（公式见原文）对每个 token t 取 min{r_{i,t}(θ)·Â_{i,t}, clip(r_{i,t}(θ), 1−ε, 1+ε)·Â_{i,t}}，再减去 β·D_KL(π_θ ∥ π_ref)，其中 r_{i,t}(θ) = π_θ(τ_{i,t} | q, τ_{i,<t}) / π_θ_old(τ_{i,t} | q, τ_{i,<t})。"
+       "original": "where ϵ is a small constant for numerical stability.",
+       "zh": "（公式片段，式 3：……其中 ϵ 为保证数值稳定的小常数。）"
+      },
+      {
+       "id": "s-reinforcement-learning-algorithm-2-2",
+       "original": "Denote θold as the policy parameters at the beginning of each optimization step, ε as the clipping range, and β as the KL penalty coefficient.",
+       "zh": "记 θ_old 为每个优化步开始时的策略参数，ε_clip 为裁剪范围，β 为 KL 惩罚系数。"
+      },
+      {
+       "id": "s-reinforcement-learning-algorithm-2-3",
+       "original": "The GRPO objective is defined as",
+       "zh": "GRPO 的目标函数定义为："
       }
      ]
+    },
+    {
+     "id": "eq-reinforcement-learning-algorithm-3",
+     "type": "equation",
+     "page": 7,
+     "original": "JGRPO = 1"
+    },
+    {
+     "id": "eq-reinforcement-learning-algorithm-4",
+     "type": "equation",
+     "page": 7,
+     "original": "K"
+    },
+    {
+     "id": "eq-reinforcement-learning-algorithm-5",
+     "type": "equation",
+     "page": 7,
+     "original": "K X"
+    },
+    {
+     "id": "eq-reinforcement-learning-algorithm-6",
+     "type": "equation",
+     "page": 7,
+     "original": "i=1"
+    },
+    {
+     "id": "eq-reinforcement-learning-algorithm-7",
+     "type": "equation",
+     "page": 7,
+     "original": "1 |τi|"
+    },
+    {
+     "id": "eq-reinforcement-learning-algorithm-8",
+     "type": "equation",
+     "page": 7,
+     "original": "|τi| X"
+    },
+    {
+     "id": "p-reinforcement-learning-algorithm-3",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-reinforcement-learning-algorithm-3-1",
+       "original": "t=1 min ri,t(θ) ˆAi,t, clip",
+       "zh": "（公式片段：Σ_{t=1} min(r_{i,t}(θ)·Â_{i,t}, clip(…))（PPO 裁剪目标，见原文）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-reinforcement-learning-algorithm-9",
+     "type": "equation",
+     "page": 7,
+     "original": "ri,t(θ), 1 −ε, 1 + ε"
+    },
+    {
+     "id": "eq-reinforcement-learning-algorithm-10",
+     "type": "equation",
+     "page": 7,
+     "original": "ˆAi,t −β DKL(πθ∥πref),"
+    },
+    {
+     "id": "eq-reinforcement-learning-algorithm-11",
+     "type": "equation",
+     "page": 7,
+     "original": "(4)"
+    },
+    {
+     "id": "p-reinforcement-learning-algorithm-4",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-reinforcement-learning-algorithm-4-1",
+       "original": "where",
+       "zh": "具体来说，编码器在片段级流式约束下处理整句语音：每个 batch 的片段大小与可见的左侧上下文片段数都动态采样。"
+      }
+     ]
+    },
+    {
+     "id": "eq-reinforcement-learning-algorithm-12",
+     "type": "equation",
+     "page": 7,
+     "original": "ri,t(θ) = πθ(τi,t | q, τi,<t) πθold(τi,t | q, τi,<t). (5)"
     }
    ]
   },
@@ -1526,10 +1604,76 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-stage-1-1",
-       "original": "Training Data Maximum Learning Rate Stage 1 Encoder pretraining Stage 2 Alignment Stage 3 IA-SFT Stage 4 Late joint SFT Stage 5 Context SFT Stage 6 RL 20k samples",
-       "zh": "Table 1 的表体（抽取为文本碎块）：各阶段的训练数据与最大学习率——Stage 1 编码器预训练、Stage 2 对齐、Stage 3 IA-SFT、Stage 4 后期联合 SFT、Stage 5 上下文 SFT、Stage 6 RL（20k 样本）。"
+       "original": "Training Data Maximum Learning Rate Stage 1 Encoder pretraining 560k hours",
+       "zh": "表头：Training Data / Maximum Learning Rate——Stage 1 Encoder pretraining：560k 小时（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-stage-1",
+     "type": "equation",
+     "page": 8,
+     "original": "5 × 10−4"
+    },
+    {
+     "id": "eq-stage-2",
+     "type": "equation",
+     "page": 8,
+     "original": "Stage 2 Alignment 50k hours"
+    },
+    {
+     "id": "eq-stage-3",
+     "type": "equation",
+     "page": 8,
+     "original": "1 × 10−3"
+    },
+    {
+     "id": "eq-stage-4",
+     "type": "equation",
+     "page": 8,
+     "original": "Stage 3 IA-SFT 560k hours"
+    },
+    {
+     "id": "eq-stage-5",
+     "type": "equation",
+     "page": 8,
+     "original": "1 × 10−5"
+    },
+    {
+     "id": "eq-stage-6",
+     "type": "equation",
+     "page": 8,
+     "original": "Stage 4 Late joint SFT 560k hours"
+    },
+    {
+     "id": "eq-stage-7",
+     "type": "equation",
+     "page": 8,
+     "original": "1 × 10−5"
+    },
+    {
+     "id": "eq-stage-8",
+     "type": "equation",
+     "page": 8,
+     "original": "Stage 5 Context SFT 50k hours"
+    },
+    {
+     "id": "eq-stage-9",
+     "type": "equation",
+     "page": 8,
+     "original": "1 × 10−6"
+    },
+    {
+     "id": "eq-stage-10",
+     "type": "equation",
+     "page": 8,
+     "original": "Stage 6 RL 20k samples"
+    },
+    {
+     "id": "eq-stage-11",
+     "type": "equation",
+     "page": 8,
+     "original": "2 × 10−6"
     }
    ]
   },
@@ -2157,10 +2301,208 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-3-2-2-2-1",
-       "original": "Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR LLM Mini Instruct Stream Model Size 30B-A3B Mandarin AISHELL-1 dev | test AISHELL-2-ios dev | test AISHELL-2021-Eval A | C | D WeNetSpeech meeting | net SpeechIO 2.78 3.17 2.55 2.20 3.41 2.33 2.61 2.84 Chinese Dialect WeNetSpeech-Chuan easy | hard WeNetSpeech-Yue short | long KeSpeech 7.18 9.59 4.98 3.05 3.98 6.00 4.40 5.08 English LibriSpeech-dev clean | other LibriSpeech-test clean | other VoxPopuli dev | test MLS-English 6.80 5.32 4.93 4.71 4.37 4.04 4.77 5.04 Mandarin-English Code-switch CS-Dialogue 5.37 6.15 5.44 4.63 9.46 8.51 4.70 4.91 ASCEND 11.91 12.29 10.87 10.22 13.50 18.68 11.46 11.85 Lyrics M4Singer 5.25 18.45 5.72 N/A 9.68 8.40 6.39 6.94 NIM4-ASR offline vs. Baselines Win : Lose - -",
-       "zh": "（Table 2 数据碎块，列依次为 Fun-ASR、GLM-ASR、Qwen3-ASR、FireRedASR2S、Step-Audio2-Mini、Qwen3-Omni-Instruct 与 NIM4-ASR；模型规模一栏含 30B-A3B。）普通话：AISHELL-1 dev|test、AISHELL-2-ios dev|test、AISHELL-2021-Eval A|C|D、WeNetSpeech meeting|net、SpeechIO 各列数值为 2.78、3.17、2.55、2.20、3.41、2.33、2.61、2.84；中文方言：WeNetSpeech-Chuan easy|hard、WeNetSpeech-Yue short|long、KeSpeech 为 7.18、9.59、4.98、3.05、3.98、6.00、4.40、5.08；英文：LibriSpeech-dev clean|other、LibriSpeech-test clean|other、VoxPopuli dev|test、MLS-English 为 6.80、5.32、4.93、4.71、4.37、4.04、4.77、5.04；中英混合：CS-Dialogue 为 5.37、6.15、5.44、4.63、9.46、8.51、4.70、4.91，ASCEND 为 11.91、12.29、10.87、10.22、13.50、18.68、11.46、11.85；歌词：M4Singer 为 5.25、18.45、5.72、N/A、9.68、8.40、6.39、6.94；表末为 NIM4-ASR 离线模式相对各基线的 Win : Lose 统计（- -）。"
+       "original": "Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Mandarin AISHELL-1 dev | test",
+       "zh": "1.\n（原始数据照录）\nFun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Mandarin AISHELL-1 dev | test"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-2-1",
+     "type": "equation",
+     "page": 12,
+     "original": "1.59 | 1.81 2.40 | 2.41 1.40 | 1.51 0.60 | 0.64 0.76 | 0.81 0.86 | 0.92 0.43 | 0.57 0.43 | 0.60"
+    },
+    {
+     "id": "eq-3-2-2-2",
+     "type": "equation",
+     "page": 12,
+     "original": "AISHELL-2-ios dev | test"
+    },
+    {
+     "id": "eq-3-2-2-3",
+     "type": "equation",
+     "page": 12,
+     "original": "2.62 | 2.73 3.21 | 3.45 2.41 | 2.60 2.07 | 2.08 2.24 | 2.29 2.11 | 2.31 2.28 | 2.43 2.33 | 2.49"
+    },
+    {
+     "id": "eq-3-2-2-4",
+     "type": "equation",
+     "page": 12,
+     "original": "AISHELL-2021-Eval A | C | D"
+    },
+    {
+     "id": "eq-3-2-2-5",
+     "type": "equation",
+     "page": 12,
+     "original": "4.75 | 4.29 | 2.33 7.25 | 9.48 | 3.40 4.22 | 3.51 | 1.82 13.40 | 3.92 | 4.68 4.54 | 3.69 | 2.34 5.19 | 3.34 | 1.66 3.12 | 1.51 | 1.81 3.28 | 1.63 | 2.22"
+    },
+    {
+     "id": "eq-3-2-2-6",
+     "type": "equation",
+     "page": 12,
+     "original": "WeNetSpeech meeting | net"
+    },
+    {
+     "id": "eq-3-2-2-7",
+     "type": "equation",
+     "page": 12,
+     "original": "4.68 | 5.22 6.87 | 5.72 4.00 | 4.13 3.36 | 3.52 4.23 | 4.63 3.92 | 3.85 4.91 | 4.72 5.71 | 5.00"
+    },
+    {
+     "id": "eq-3-2-2-8",
+     "type": "equation",
+     "page": 12,
+     "original": "SpeechIO"
+    },
+    {
+     "id": "eq-3-2-2-9",
+     "type": "equation",
+     "page": 12,
+     "original": "2.78 3.17 2.55 2.20 3.41 2.33 2.61 2.84"
+    },
+    {
+     "id": "eq-3-2-2-10",
+     "type": "equation",
+     "page": 12,
+     "original": "Chinese Dialect WeNetSpeech-Chuan easy | hard"
+    },
+    {
+     "id": "eq-3-2-2-11",
+     "type": "equation",
+     "page": 12,
+     "original": "13.21 | 23.76 20.95 | 33.61 11.18 | 20.35 10.36 | 20.07 13.99 | 25.35 14.13 | 25.16 10.51 | 20.58 11.22 | 20.37"
+    },
+    {
+     "id": "eq-3-2-2-12",
+     "type": "equation",
+     "page": 12,
+     "original": "WeNetSpeech-Yue short | long"
+    },
+    {
+     "id": "eq-3-2-2-13",
+     "type": "equation",
+     "page": 12,
+     "original": "7.31 | 10.02 16.78 | 13.97 5.79 | 8.00 5.05 | 10.45 7.78 | 8.44 6.97 | 8.60 5.12 | 8.58 5.39 | 9.62"
+    },
+    {
+     "id": "eq-3-2-2-14",
+     "type": "equation",
+     "page": 12,
+     "original": "KeSpeech"
+    },
+    {
+     "id": "eq-3-2-2-15",
+     "type": "equation",
+     "page": 12,
+     "original": "7.18 9.59 4.98 3.05 3.98 6.00 4.40 5.08"
+    },
+    {
+     "id": "eq-3-2-2-16",
+     "type": "equation",
+     "page": 12,
+     "original": "English LibriSpeech-dev clean | other"
+    },
+    {
+     "id": "eq-3-2-2-17",
+     "type": "equation",
+     "page": 12,
+     "original": "1.63 | 4.06 1.82 | 3.93 1.54 | 3.14 1.27 | 2.63 1.06 | 2.48 1.08 | 2.10 1.13 | 2.45 1.18 | 2.86"
+    },
+    {
+     "id": "eq-3-2-2-18",
+     "type": "equation",
+     "page": 12,
+     "original": "LibriSpeech-test clean | other"
+    },
+    {
+     "id": "eq-3-2-2-19",
+     "type": "equation",
+     "page": 12,
+     "original": "1.63 | 4.35 1.96 | 4.29 1.56 | 3.49 1.29 | 2.97 1.22 | 2.61 1.15 | 2.38 1.19 | 2.53 1.29 | 2.92"
+    },
+    {
+     "id": "eq-3-2-2-20",
+     "type": "equation",
+     "page": 12,
+     "original": "VoxPopuli dev | test"
+    },
+    {
+     "id": "eq-3-2-2-21",
+     "type": "equation",
+     "page": 12,
+     "original": "7.86 | 7.70 8.78 | 8.52 7.58 | 7.42 9.38 | 9.24 8.86 | 8.37 6.86 | 6.75 6.18 | 6.08 6.26 | 6.22"
+    },
+    {
+     "id": "eq-3-2-2-22",
+     "type": "equation",
+     "page": 12,
+     "original": "MLS-English"
+    },
+    {
+     "id": "eq-3-2-2-23",
+     "type": "equation",
+     "page": 12,
+     "original": "6.80 5.32 4.93 4.71 4.37 4.04 4.77 5.04"
+    },
+    {
+     "id": "eq-3-2-2-24",
+     "type": "equation",
+     "page": 12,
+     "original": "Mandarin-English Code-switch CS-Dialogue"
+    },
+    {
+     "id": "eq-3-2-2-25",
+     "type": "equation",
+     "page": 12,
+     "original": "5.37 6.15 5.44 4.63 9.46 8.51 4.70 4.91"
+    },
+    {
+     "id": "eq-3-2-2-26",
+     "type": "equation",
+     "page": 12,
+     "original": "ASCEND"
+    },
+    {
+     "id": "eq-3-2-2-27",
+     "type": "equation",
+     "page": 12,
+     "original": "11.91 12.29 10.87 10.22 13.50 18.68 11.46 11.85"
+    },
+    {
+     "id": "eq-3-2-2-28",
+     "type": "equation",
+     "page": 12,
+     "original": "Lyrics M4Singer"
+    },
+    {
+     "id": "eq-3-2-2-29",
+     "type": "equation",
+     "page": 12,
+     "original": "5.25 18.45 5.72"
+    },
+    {
+     "id": "eq-3-2-2-30",
+     "type": "equation",
+     "page": 12,
+     "original": "N/A"
+    },
+    {
+     "id": "eq-3-2-2-31",
+     "type": "equation",
+     "page": 12,
+     "original": "9.68 8.40 6.39 6.94"
+    },
+    {
+     "id": "eq-3-2-2-32",
+     "type": "equation",
+     "page": 12,
+     "original": "NIM4-ASR offline vs. Baselines Win : Lose"
+    },
+    {
+     "id": "eq-3-2-2-33",
+     "type": "equation",
+     "page": 12,
+     "original": "23:2 25:0 18:7 12:12 17:8 14:11 - -"
     },
     {
      "id": "tab-3-2-2-3",
@@ -2176,10 +2518,124 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-3-2-2-3-1",
-       "original": "Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR LLM Mini Instruct Stream Model Size 30B-A3B Point of Interest (POI) City A 7.07 14.68 9.14 8.54 9.41 9.67 3.86 3.85 City B 8.50 15.75 10.59 10.43 11.67 11.73 4.86 4.94 City C 7.60 17.55 10.01 10.17 11.35 12.18 3.77 3.81 City D 7.42 17.91 9.77 9.51 11.55 10.86 4.10 4.17 Media Music 12.60 24.25 12.67 12.13 14.94 15.89 5.75 5.78 Video 8.27 20.35 9.69 9.38 12.30 15.33 2.99 3.03 Radio 13.69 19.82 10.51 11.84 14.21 17.91 1.21 1.17 Device Control Vehicle control 4.74 8.78 5.31 4.52 4.97 4.18 1.88 1.78 Conversational Vehicle-domain chat easy | hard Multi-domain chat 1.65 1.89 1.33 1.27 1.49 5.34 1.55 1.75 training strategy effectively preserves both the encoder’s fine-grained acoustic discriminability and the LLM’s capacity for context-driven entity resolution.",
-       "zh": "（Table 3 数据碎块，列依次为 Fun-ASR、GLM-ASR、Qwen3-ASR、FireRedASR2S、Step-Audio2-Mini、Qwen3-Omni-Instruct 与 NIM4-ASR；模型规模一栏含 30B-A3B。）POI：City A 为 7.07、14.68、9.14、8.54、9.41、9.67、3.86、3.85，City B 为 8.50、15.75、10.59、10.43、11.67、11.73、4.86、4.94，City C 为 7.60、17.55、10.01、10.17、11.35、12.18、3.77、3.81，City D 为 7.42、17.91、9.77、9.51、11.55、10.86、4.10、4.17；Media：Music 为 12.60、24.25、12.67、12.13、14.94、15.89、5.75、5.78，Video 为 8.27、20.35、9.69、9.38、12.30、15.33、2.99、3.03（碎块中混入了正文残句「……有效保持了编码器的细粒度声学判别……」），Radio 为 13.69、19.82、10.51、11.84、14.21、17.91、1.21、1.17；Device Control：车控为 4.74、8.78、5.31、4.52、4.97、4.18、1.88、1.78；Conversational：车域闲聊 easy|hard 与多域闲聊为 1.65、1.89、1.33、1.27、1.49、5.34、1.55、1.75。上述训练策略有效保住了编码器的细粒度声学判别能力和 LLM 的上下文实体消解能力。"
+       "original": "Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Point of Interest (POI) City A",
+       "zh": "1.\n（原始数据照录）\nFun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Point of Interest (POI) City A"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-2-34",
+     "type": "equation",
+     "page": 12,
+     "original": "7.07 14.68 9.14 8.54 9.41 9.67 3.86 3.85"
+    },
+    {
+     "id": "eq-3-2-2-35",
+     "type": "equation",
+     "page": 12,
+     "original": "City B"
+    },
+    {
+     "id": "eq-3-2-2-36",
+     "type": "equation",
+     "page": 12,
+     "original": "8.50 15.75 10.59 10.43 11.67 11.73 4.86 4.94"
+    },
+    {
+     "id": "eq-3-2-2-37",
+     "type": "equation",
+     "page": 12,
+     "original": "City C"
+    },
+    {
+     "id": "eq-3-2-2-38",
+     "type": "equation",
+     "page": 12,
+     "original": "7.60 17.55 10.01 10.17 11.35 12.18 3.77 3.81"
+    },
+    {
+     "id": "eq-3-2-2-39",
+     "type": "equation",
+     "page": 12,
+     "original": "City D"
+    },
+    {
+     "id": "eq-3-2-2-40",
+     "type": "equation",
+     "page": 12,
+     "original": "7.42 17.91 9.77 9.51 11.55 10.86 4.10 4.17"
+    },
+    {
+     "id": "eq-3-2-2-41",
+     "type": "equation",
+     "page": 12,
+     "original": "Media Music"
+    },
+    {
+     "id": "eq-3-2-2-42",
+     "type": "equation",
+     "page": 12,
+     "original": "12.60 24.25 12.67 12.13 14.94 15.89 5.75 5.78"
+    },
+    {
+     "id": "eq-3-2-2-43",
+     "type": "equation",
+     "page": 12,
+     "original": "Video"
+    },
+    {
+     "id": "eq-3-2-2-44",
+     "type": "equation",
+     "page": 12,
+     "original": "8.27 20.35 9.69 9.38 12.30 15.33 2.99 3.03"
+    },
+    {
+     "id": "eq-3-2-2-45",
+     "type": "equation",
+     "page": 12,
+     "original": "Radio"
+    },
+    {
+     "id": "eq-3-2-2-46",
+     "type": "equation",
+     "page": 12,
+     "original": "13.69 19.82 10.51 11.84 14.21 17.91 1.21 1.17"
+    },
+    {
+     "id": "eq-3-2-2-47",
+     "type": "equation",
+     "page": 12,
+     "original": "Device Control Vehicle control"
+    },
+    {
+     "id": "eq-3-2-2-48",
+     "type": "equation",
+     "page": 12,
+     "original": "4.74 8.78 5.31 4.52 4.97 4.18 1.88 1.78"
+    },
+    {
+     "id": "eq-3-2-2-49",
+     "type": "equation",
+     "page": 12,
+     "original": "Conversational Vehicle-domain chat easy | hard"
+    },
+    {
+     "id": "eq-3-2-2-50",
+     "type": "equation",
+     "page": 12,
+     "original": "3.75 | 5.92 5.63 | 10.12 3.31 | 5.96 2.93 | 5.61 2.35 | 7.63 5.98 | 6.60 2.70 | 4.88 2.76 | 4.83"
+    },
+    {
+     "id": "eq-3-2-2-51",
+     "type": "equation",
+     "page": 12,
+     "original": "Multi-domain chat"
+    },
+    {
+     "id": "eq-3-2-2-52",
+     "type": "equation",
+     "page": 12,
+     "original": "1.65 1.89 1.33 1.27 1.49 5.34 1.55 1.75"
     },
     {
      "id": "p-3-2-2-4",
@@ -2188,26 +2644,38 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-3-2-2-4-1",
+       "original": "training strategy effectively preserves both the encoder’s fine-grained acoustic discriminability and the LLM’s capacity for context-driven entity resolution.",
+       "zh": "（正文残句）……该训练策略同时保住了编码器的细粒度声学判别力与 LLM 的上下文驱动实体消歧能力。"
+      }
+     ]
+    },
+    {
+     "id": "p-3-2-2-5",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-3-2-2-5-1",
        "original": "Furthermore, NIM4-ASR also delivers clear improvements on both the vehicle control and vehicledomain chat benchmarks.",
        "zh": "此外，NIM4-ASR 在车控与车域闲聊两个基准上也都带来了显著提升。"
       },
       {
-       "id": "s-3-2-2-4-2",
+       "id": "s-3-2-2-5-2",
        "original": "We attribute this gap primarily to the long-tailed nature of domain knowledge and terminology in general-purpose foundation models.",
        "zh": "我们认为这一差距主要来自通用基础模型在领域知识和术语上的长尾短板。"
       },
       {
-       "id": "s-3-2-2-4-3",
+       "id": "s-3-2-2-5-3",
        "original": "By substantially increasing indomain data coverage, NIM4-ASR achieves more reliable recognition of vehicle control commands and in-car assistant knowledge, thereby delivering a superior interaction experience within the vehicle cockpit.",
        "zh": "通过显著提升 in-domain 数据覆盖，NIM4-ASR 在车控指令和车载助手知识上做到了更可靠的识别，进而在座舱交互中提供更优体验。"
       },
       {
-       "id": "s-3-2-2-4-4",
+       "id": "s-3-2-2-5-4",
        "original": "By contrast, on the multi-domain chat benchmark, spanning open-domain topics without vehicle-specific content, NIM4-ASR no longer leads but remains competitive.",
        "zh": "相比之下，在跨开放领域、无车控内容的多领域闲聊基准上，NIM4-ASR 不再领先，但仍保持竞争力。"
       },
       {
-       "id": "s-3-2-2-4-5",
+       "id": "s-3-2-2-5-5",
        "original": "This demonstrates the model’s strong generalization ability: despite limited training data coverage in domains such as sports, healthcare, and finance, NIM4-ASR still maintains robust performance, indicating that its gains are not solely driven by domain-specific data expansion.",
        "zh": "这反映了模型较强的泛化能力：尽管在体育、医疗、金融等领域训练数据覆盖有限，NIM4-ASR 仍保持了稳健表现——说明它的收益并非单纯来自领域数据扩充。"
       }
@@ -2231,51 +2699,93 @@ globalThis.PAPER_2604_18105 = {
      "page": 13,
      "original": "Table 4: Effectiveness of phoneme-based hotword RAG on internal entity-intensive POI benchmarks. Recall here refers to the proportion of POI entities correctly recognized in the transcription output.",
      "zh": "Table 4：基于音素的热词 RAG 在内部实体密集型 POI 基准上的有效性。Recall 指转写输出中被正确识别的 POI 实体所占比例。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-streaming",
+   "num": null,
+   "level": 2,
+   "page": 13,
+   "title": {
+    "original": "Streaming",
+    "zh": "Streaming"
+   },
+   "blocks": [
     {
-     "id": "p-3-2-3-1",
+     "id": "p-streaming-1",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
-       "id": "s-3-2-3-1-1",
-       "original": "Streaming+RAG CER / Recall CER / Recall City A POI City B POI Beyond its strong fundamental recognition capability, NIM4-ASR also provides an effective hotword customization mechanism.",
-       "zh": "（Table 4 数据碎块）流式 + RAG 设置在 City A 与 City B 内部 POI 基准上的 CER / Recall 对比。除了强大的基础识别能力之外，NIM4-ASR 还提供了一套有效的热词定制机制。"
+       "id": "s-streaming-1-1",
+       "original": "Streaming+RAG CER / Recall CER / Recall City A POI",
+       "zh": "（表：Streaming+RAG 的 CER / Recall——City A POI：3.85/82.63 → 3.33/88.07；City B POI：4.94/77.48 → 4.31/83.60。）除强大的基础识别能力外，NIM4-ASR 还提供有效的热词定制机制。"
+      }
+     ]
+    },
+    {
+     "id": "eq-streaming-1",
+     "type": "equation",
+     "page": 13,
+     "original": "3.85 / 82.63 3.33 / 88.07"
+    },
+    {
+     "id": "eq-streaming-2",
+     "type": "equation",
+     "page": 13,
+     "original": "City B POI"
+    },
+    {
+     "id": "eq-streaming-3",
+     "type": "equation",
+     "page": 13,
+     "original": "4.94 / 77.48 4.31 / 83.60"
+    },
+    {
+     "id": "p-streaming-2",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-streaming-2-1",
+       "original": "Beyond its strong fundamental recognition capability, NIM4-ASR also provides an effective hotword customization mechanism.",
+       "zh": "（表：Streaming+RAG 的 CER / Recall——City A POI：3.85/82.63 → 3.33/88.07；City B POI：4.94/77.48 → 4.31/83.60。）除强大的基础识别能力外，NIM4-ASR 还提供有效的热词定制机制。"
       },
       {
-       "id": "s-3-2-3-1-2",
+       "id": "s-streaming-2-2",
        "original": "Through contextual hotword conditioning, NIM4-ASR can improve recognition accuracy for acoustically similar entity names, domain-specific terminology, and newly emerging expressions.",
        "zh": "通过上下文热词条件化，NIM4-ASR 能提升对「声学相近的实体名、领域术语、新兴表达」的识别准确率。"
       },
       {
-       "id": "s-3-2-3-1-3",
+       "id": "s-streaming-2-3",
        "original": "To evaluate the effectiveness of the proposed hotword RAG mechanism, we focus on entity-intensive POI recognition scenarios, selecting benchmarks from two major cities and constructing city-specific retrieval databases, each comprising millions of location name–phoneme pairs.",
        "zh": "为评估所提热词 RAG 机制的有效性，我们选择实体密集的 POI 识别场景：从两个主要城市抽取基准，并为每个城市构建各自的城市级检索库——每个库包含数百万条「地名–音素」对。"
       },
       {
-       "id": "s-3-2-3-1-4",
+       "id": "s-streaming-2-4",
        "original": "As shown in Table 4, incorporating hotword context consistently improves streaming performance, demonstrating the effectiveness of our phoneme-based RAG retrieval mechanism and its practical benefit in entity-intensive recognition scenarios.",
        "zh": "如 Table 4 所示，引入热词上下文能稳定提升流式性能，验证了基于音素的 RAG 检索机制的有效性，及其在实体密集识别场景中的实际价值。"
       }
      ]
     },
     {
-     "id": "p-3-2-3-2",
+     "id": "p-streaming-3",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
-       "id": "s-3-2-3-2-1",
+       "id": "s-streaming-3-1",
        "original": "It is worth noting that, unlike previous work, we adopt exact matching rather than edit distance for retrieval.",
        "zh": "值得注意的是，与先前工作不同，我们在检索时采用完全匹配而非编辑距离。"
       },
       {
-       "id": "s-3-2-3-2-2",
+       "id": "s-streaming-3-2",
        "original": "We argue that for the RAG module in LLM-based ASR systems, retrieval precision is more critical than recall, as the model’s strong inherent recognition capability already serves as a reliable fallback when no hotword is retrieved.",
        "zh": "我们认为，对 LLM 语音模型中的 RAG 模块而言，检索精度比召回更关键——因为在没有热词命中时，模型本身的强识别能力足以作为可靠的兜底。"
       },
       {
-       "id": "s-3-2-3-2-3",
+       "id": "s-streaming-3-3",
        "original": "Moreover, pairing exact matching with the Aho-Corasick algorithm allows the hotword database to scale to millions of entries without additional retrieval overhead, avoiding the latency and precision degradation that typically follows vocabulary expansion.",
        "zh": "此外，将完全匹配与 Aho-Corasick 算法结合，可以让热词库扩展到百万级而不引入额外检索开销，避免词表扩张通常带来的延迟上升与精度下降。"
       }
@@ -2307,25 +2817,100 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-3-2-4-1-1",
-       "original": "Model Mandarin Dialect English Code-switch Lyrics Fun-ASR-nano GLM-ASR-nano Qwen3-ASR-1.7B FireRedASR2S-LLM Step-Audio2-mini Qwen3-Omni-Inst NIM4-ASR (offline w/o RL) NIM4-ASR (offline w/ RL) Beyond recognition performance, NIM4-ASR demonstrates strong hallucination suppression.",
-       "zh": "（Table 5 数据碎块）按行分别给出 Fun-ASR-nano、GLM-ASR-nano、Qwen3-ASR-1.7B、FireRedASR2S-LLM、Step-Audio2-mini、Qwen3-Omni-Inst、NIM4-ASR（offline w/o RL）、NIM4-ASR（offline w/ RL）在普通话、方言、英文、中英混合、歌词五个场景上的幻觉率。除识别性能之外，NIM4-ASR 也展现出很强的幻觉抑制能力。"
-      },
-      {
-       "id": "s-3-2-4-1-2",
-       "original": "We compare all baseline models and NIM4-ASR in terms of hallucination rate across five distinct scenarios, where the rate for each scenario is defined as the ratio of hallucinated samples to total samples aggregated over all benchmarks within that scenario.",
-       "zh": "我们在五个不同场景下比较了所有基线模型和 NIM4-ASR 的幻觉率；每个场景的幻觉率定义为该场景下所有基准中「幻觉样本数 / 总样本数」的比值。"
-      },
-      {
-       "id": "s-3-2-4-1-3",
-       "original": "Specifically, a sample is classified as hallucinated if its transcription exceeds the ground-truth length by over 50% with negligible lexical overlap.",
-       "zh": "具体来说，一个样本若转写长度超过参考文本 50% 以上且几乎没有词面重叠，就被判定为幻觉样本。"
-      },
-      {
-       "id": "s-3-2-4-1-4",
-       "original": "Notably, we exclude three benchmarks: WeNetSpeech Meeting, SpeechIO, and MLS-English from this evaluation, as no hallucinated samples are observed across any model; we additionally exclude WeNetSpeech Net, as its prevalence of unreliably annotated short samples inflates hallucination rates across all models.",
-       "zh": "值得一提的是，我们剔除了三个基准：WeNetSpeech Meeting、SpeechIO 和 MLS-English——因为所有模型在这三个基准上都没有出现幻觉样本；此外我们还剔除了 WeNetSpeech Net，因为其中大量短样本的标注不可靠，会让所有模型的幻觉率被普遍抬高。"
+       "original": "Model Mandarin Dialect English Code-switch Lyrics Fun-ASR-nano",
+       "zh": "（表：幻觉率对比（Mandarin/Dialect/English/Code-switch/Lyrics）——Fun-ASR-nano 0.018%/0.217%/0.014%/0.397%/0.153%；GLM-ASR-nano 0.030%/0.201%/0.014%/0.315%/0.580%；Qwen3-ASR-1.7B 0.018%/0.120%/0.014%/0.345%/0.249%；FireRedASR2S-LLM 0.165%/0.298%/0.014%/0.335%/1.775%；Step-Audio2-mini 0.020%/0.194%/0.014%/1.255%/0.390%；Qwen3-Omni-Inst 0.013%/0.370%/0.007%/1.778%/0.129%；NIM4-ASR（offline w/o RL）0.003%/0.122%/0.007%/0.261%/0.215%；NIM4-ASR（offline w/ RL）0.002%/0.117%/0.007%/0.261%/0.081%。）除识别性能外，NIM4-ASR 还展现出很强的幻觉抑制能力。"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-4-1",
+     "type": "equation",
+     "page": 13,
+     "original": "0.018% 0.217% 0.014% 0.397% 0.153%"
+    },
+    {
+     "id": "eq-3-2-4-2",
+     "type": "equation",
+     "page": 13,
+     "original": "GLM-ASR-nano"
+    },
+    {
+     "id": "eq-3-2-4-3",
+     "type": "equation",
+     "page": 13,
+     "original": "0.030% 0.201% 0.014% 0.315% 0.580%"
+    },
+    {
+     "id": "eq-3-2-4-4",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen3-ASR-1.7B"
+    },
+    {
+     "id": "eq-3-2-4-5",
+     "type": "equation",
+     "page": 13,
+     "original": "0.018% 0.120% 0.014% 0.345% 0.249%"
+    },
+    {
+     "id": "eq-3-2-4-6",
+     "type": "equation",
+     "page": 13,
+     "original": "FireRedASR2S-LLM"
+    },
+    {
+     "id": "eq-3-2-4-7",
+     "type": "equation",
+     "page": 13,
+     "original": "0.165% 0.298% 0.014% 0.335% 1.775%"
+    },
+    {
+     "id": "eq-3-2-4-8",
+     "type": "equation",
+     "page": 13,
+     "original": "Step-Audio2-mini"
+    },
+    {
+     "id": "eq-3-2-4-9",
+     "type": "equation",
+     "page": 13,
+     "original": "0.020% 0.194% 0.014% 1.255% 0.390%"
+    },
+    {
+     "id": "eq-3-2-4-10",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen3-Omni-Inst"
+    },
+    {
+     "id": "eq-3-2-4-11",
+     "type": "equation",
+     "page": 13,
+     "original": "0.013% 0.370% 0.007% 1.778% 0.129%"
+    },
+    {
+     "id": "eq-3-2-4-12",
+     "type": "equation",
+     "page": 13,
+     "original": "NIM4-ASR (offline w/o RL)"
+    },
+    {
+     "id": "eq-3-2-4-13",
+     "type": "equation",
+     "page": 13,
+     "original": "0.003% 0.122% 0.007% 0.261% 0.215%"
+    },
+    {
+     "id": "eq-3-2-4-14",
+     "type": "equation",
+     "page": 13,
+     "original": "NIM4-ASR (offline w/ RL)"
+    },
+    {
+     "id": "eq-3-2-4-15",
+     "type": "equation",
+     "page": 13,
+     "original": "0.002% 0.117% 0.007% 0.261% 0.081%"
     },
     {
      "id": "p-3-2-4-2",
@@ -2334,16 +2919,43 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-3-2-4-2-1",
+       "original": "Beyond recognition performance, NIM4-ASR demonstrates strong hallucination suppression.",
+       "zh": "（表：幻觉率对比（Mandarin/Dialect/English/Code-switch/Lyrics）——Fun-ASR-nano 0.018%/0.217%/0.014%/0.397%/0.153%；GLM-ASR-nano 0.030%/0.201%/0.014%/0.315%/0.580%；Qwen3-ASR-1.7B 0.018%/0.120%/0.014%/0.345%/0.249%；FireRedASR2S-LLM 0.165%/0.298%/0.014%/0.335%/1.775%；Step-Audio2-mini 0.020%/0.194%/0.014%/1.255%/0.390%；Qwen3-Omni-Inst 0.013%/0.370%/0.007%/1.778%/0.129%；NIM4-ASR（offline w/o RL）0.003%/0.122%/0.007%/0.261%/0.215%；NIM4-ASR（offline w/ RL）0.002%/0.117%/0.007%/0.261%/0.081%。）除识别性能外，NIM4-ASR 还展现出很强的幻觉抑制能力。"
+      },
+      {
+       "id": "s-3-2-4-2-2",
+       "original": "We compare all baseline models and NIM4-ASR in terms of hallucination rate across five distinct scenarios, where the rate for each scenario is defined as the ratio of hallucinated samples to total samples aggregated over all benchmarks within that scenario.",
+       "zh": "我们在五个不同场景下比较了所有基线模型和 NIM4-ASR 的幻觉率；每个场景的幻觉率定义为该场景下所有基准中「幻觉样本数 / 总样本数」的比值。"
+      },
+      {
+       "id": "s-3-2-4-2-3",
+       "original": "Specifically, a sample is classified as hallucinated if its transcription exceeds the ground-truth length by over 50% with negligible lexical overlap.",
+       "zh": "具体来说，一个样本若转写长度超过参考文本 50% 以上且几乎没有词面重叠，就被判定为幻觉样本。"
+      },
+      {
+       "id": "s-3-2-4-2-4",
+       "original": "Notably, we exclude three benchmarks: WeNetSpeech Meeting, SpeechIO, and MLS-English from this evaluation, as no hallucinated samples are observed across any model; we additionally exclude WeNetSpeech Net, as its prevalence of unreliably annotated short samples inflates hallucination rates across all models.",
+       "zh": "值得一提的是，我们剔除了三个基准：WeNetSpeech Meeting、SpeechIO 和 MLS-English——因为所有模型在这三个基准上都没有出现幻觉样本；此外我们还剔除了 WeNetSpeech Net，因为其中大量短样本的标注不可靠，会让所有模型的幻觉率被普遍抬高。"
+      }
+     ]
+    },
+    {
+     "id": "p-3-2-4-3",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-3-2-4-3-1",
        "original": "As shown in Table 5, NIM4-ASR achieves substantially lower hallucination rates compared to all baseline models.",
        "zh": "如 Table 5 所示，与所有基线模型相比，NIM4-ASR 的幻觉率明显更低。"
       },
       {
-       "id": "s-3-2-4-2-2",
+       "id": "s-3-2-4-3-2",
        "original": "Attributed to our training paradigm design and noise data augmentation, the model after joint SFT already exhibits a low hallucination rate: only marginally above the bestperforming baseline on Dialect and Lyrics benchmarks.",
        "zh": "得益于我们的训练范式设计与噪声数据增强，仅经过联合 SFT 的模型幻觉率就已经很低：在方言和歌词基准上仅略高于表现最好的基线。"
       },
       {
-       "id": "s-3-2-4-2-3",
+       "id": "s-3-2-4-3-3",
        "original": "After the RL stage, the hallucination rate is further reduced, achieving the lowest average across all five scenarios; most notably, on Mandarin benchmarks, NIM4-ASR attains a hallucination rate of 0.002%, substantially below all baselines.",
        "zh": "经过 RL 阶段后，幻觉率进一步下降，在五个场景的平均值最低；最值得注意的是，在普通话基准上 NIM4-ASR 的幻觉率达到 0.002%，远低于所有基线。"
       }
@@ -2375,10 +2987,16 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-3-2-5-1-1",
-       "original": "w/o RL w/ RL RL Gain (+/-) Open-source Mandarin Avg.",
-       "zh": "（Table 6 列头）w/o RL、w/ RL、RL Gain (+/-)；开源普通话平均。"
+       "original": "w/o RL w/ RL RL Gain (+/-) Offline Streaming Offline Streaming Offline Streaming Open-source Mandarin Avg.",
+       "zh": "表头：w/o RL（无 RL）｜w/ RL（有 RL）｜RL Gain（RL 增益 +/-）——Offline/Streaming 两列；开源普通话题材 Avg.。"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-5-1",
+     "type": "equation",
+     "page": 14,
+     "original": "2.71 2.80 2.44 2.65 -0.27 -0.15"
     },
     {
      "id": "p-3-2-5-2",
@@ -2387,10 +3005,16 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-3-2-5-2-1",
-       "original": "2.71 2.80 2.44 2.65 Open-source English Avg.",
-       "zh": "开源英文平均：w/o RL 2.71 / w/ RL 2.80（离线），2.44 / 2.65（流式）等数值（见 Table 6）。"
+       "original": "Open-source English Avg.",
+       "zh": "（表格行）2.71/2.80/2.44/2.65/-0.27/-0.15；开源英语 Avg.（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-5-2",
+     "type": "equation",
+     "page": 14,
+     "original": "3.55 3.76 3.48 3.68 -0.07 -0.08"
     },
     {
      "id": "p-3-2-5-3",
@@ -2399,10 +3023,16 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-3-2-5-3-1",
-       "original": "3.55 3.76 3.48 3.68 Mandarin–English Code-switch Avg.",
-       "zh": "中英混合平均：3.55 / 3.76（离线），3.48 / 3.68（流式）等（见 Table 6）。"
+       "original": "Mandarin–English Code-switch Avg.",
+       "zh": "（表格行）3.55/3.76/3.48/3.68/-0.07/-0.08；中英语码混合 Avg.（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-5-3",
+     "type": "equation",
+     "page": 14,
+     "original": "8.39 8.62 8.08 8.38 -0.31 -0.24"
     },
     {
      "id": "p-3-2-5-4",
@@ -2411,10 +3041,16 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-3-2-5-4-1",
-       "original": "8.39 8.62 8.08 8.38 Internal Mandarin Avg.",
-       "zh": "内部普通话平均：8.39 / 8.62（一类），8.08 / 8.38（另一类）（见 Table 6）。"
+       "original": "Internal Mandarin Avg.",
+       "zh": "（表格行）8.39/8.62/8.08/8.38/-0.31/-0.24；内部普通话题材 Avg.（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-5-4",
+     "type": "equation",
+     "page": 14,
+     "original": "3.57 3.69 3.41 3.44 -0.16 -0.25"
     },
     {
      "id": "p-3-2-5-5",
@@ -2423,8 +3059,8 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-3-2-5-5-1",
-       "original": "3.57 3.69 3.41 3.44 We further ablate the RL stage to assess its contribution.",
-       "zh": "3.57 / 3.69 / 3.41 / 3.44。我们还对 RL 阶段做了消融，以评估它的贡献。"
+       "original": "We further ablate the RL stage to assess its contribution.",
+       "zh": "（表格行）3.57/3.69/3.41/3.44/-0.16/-0.25。我们进一步消融 RL 阶段以评估其贡献。"
       },
       {
        "id": "s-3-2-5-5-2",
@@ -2596,7 +3232,8 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-references-2-1",
-       "original": "PMLR, 2023."
+       "original": "PMLR, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -2802,7 +3439,8 @@ globalThis.PAPER_2604_18105 = {
       },
       {
        "id": "s-references-16-2",
-       "original": "Downscaling intelligence: Exploring perception and reasoning bottlenecks in small multimodal models. arXiv preprint arXiv:2511.17487, 2025."
+       "original": "Downscaling intelligence: Exploring perception and reasoning bottlenecks in small multimodal models. arXiv preprint arXiv:2511.17487, 2025.",
+       "zh": "1."
       }
      ]
     },
@@ -2836,9 +3474,16 @@ globalThis.PAPER_2604_18105 = {
       },
       {
        "id": "s-references-18-2",
-       "original": "Sequence transduction with recurrent neural networks. arXiv preprint arXiv:1211.3711, 2012."
+       "original": "Sequence transduction with recurrent neural networks. arXiv preprint arXiv:1211.3711,",
+       "zh": "1."
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 16,
+     "original": "2012."
     },
     {
      "id": "p-references-19",
@@ -2907,9 +3552,16 @@ globalThis.PAPER_2604_18105 = {
       },
       {
        "id": "s-references-23-2",
-       "original": "Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980, 2014."
+       "original": "Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980,",
+       "zh": "2."
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 16,
+     "original": "2014."
     },
     {
      "id": "p-references-24",
@@ -2953,7 +3605,8 @@ globalThis.PAPER_2604_18105 = {
       },
       {
        "id": "s-references-25-4",
-       "original": "IEEE, 2022."
+       "original": "IEEE, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -2972,7 +3625,8 @@ globalThis.PAPER_2604_18105 = {
       },
       {
        "id": "s-references-26-3",
-       "original": "In Proceedings of the 29th symposium on operating systems principles, pages 611–626, 2023."
+       "original": "In Proceedings of the 29th symposium on operating systems principles, pages 611–626, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -3032,7 +3686,8 @@ globalThis.PAPER_2604_18105 = {
       },
       {
        "id": "s-references-30-2",
-       "original": "In Proceedings of the 13th Language Resources and Evaluation Conference (LREC), 2022."
+       "original": "In Proceedings of the 13th Language Resources and Evaluation Conference (LREC), 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -3134,7 +3789,8 @@ globalThis.PAPER_2604_18105 = {
       },
       {
        "id": "s-references-36-2",
-       "original": "Mls: A large-scale multilingual dataset for speech research. arXiv preprint arXiv:2012.03411, 2020."
+       "original": "Mls: A large-scale multilingual dataset for speech research. arXiv preprint arXiv:2012.03411, 2020.",
+       "zh": "2."
       }
      ]
     },
@@ -3168,7 +3824,8 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei Zhang, Mingchuan Zhang, YK Li, Yang Wu, et al. Deepseekmath: Pushing the limits of mathematical reasoning in open language models. arXiv preprint arXiv:2402.03300, 2024."
+       "original": "Zhihong Shao, Peiyi Wang, Qihao Zhu, Runxin Xu, Junxiao Song, Xiao Bi, Haowei Zhang, Mingchuan Zhang, YK Li, Yang Wu, et al. Deepseekmath: Pushing the limits of mathematical reasoning in open language models. arXiv preprint arXiv:2402.03300, 2024.",
+       "zh": "2."
       }
      ]
     },
@@ -3179,9 +3836,16 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "Xian Shi, Xiong Wang, Zhifang Guo, Yongqi Wang, Pei Zhang, Xinyu Zhang, Zishan Guo, Hongkun Hao, Yu Xi, Baosong Yang, et al. Qwen3-asr technical report. arXiv preprint arXiv:2601.21337, 2026."
+       "original": "Xian Shi, Xiong Wang, Zhifang Guo, Yongqi Wang, Pei Zhang, Xinyu Zhang, Zishan Guo, Hongkun Hao, Yu Xi, Baosong Yang, et al. Qwen3-asr technical report. arXiv preprint arXiv:2601.21337,",
+       "zh": "1."
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 17,
+     "original": "2026."
     },
     {
      "id": "p-references-40",
@@ -3220,7 +3884,8 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "arXiv preprint arXiv:2601.00890, 2025."
+       "original": "arXiv preprint arXiv:2601.00890, 2025.",
+       "zh": "1."
       }
      ]
     },
@@ -3235,7 +3900,8 @@ globalThis.PAPER_2604_18105 = {
       },
       {
        "id": "s-references-43-2",
-       "original": "In Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2), 2021."
+       "original": "In Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2), 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -3246,7 +3912,8 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-references-44-1",
-       "original": "Geeyang Tay, Wentao Ma, Jaewon Lee, Yuzhi Tang, Daniel Lee, Weisu Yin, Dongming Shen, Silin Meng, Yi Zhu, Mu Li, et al. Back to basics: Revisiting asr in the age of voice agents. arXiv preprint arXiv:2603.25727, 2026."
+       "original": "Geeyang Tay, Wentao Ma, Jaewon Lee, Yuzhi Tang, Daniel Lee, Weisu Yin, Dongming Shen, Silin Meng, Yi Zhu, Mu Li, et al. Back to basics: Revisiting asr in the age of voice agents. arXiv preprint arXiv:2603.25727, 2026.",
+       "zh": "3."
       }
      ]
     },
@@ -3265,9 +3932,16 @@ globalThis.PAPER_2604_18105 = {
       },
       {
        "id": "s-references-45-3",
-       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 993–1003, 2021."
+       "original": "In Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers), pages 993–1003,",
+       "zh": "1."
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 17,
+     "original": "2021."
     },
     {
      "id": "p-references-46",
@@ -3332,7 +4006,8 @@ globalThis.PAPER_2604_18105 = {
       },
       {
        "id": "s-references-50-2",
-       "original": "Fireredasr: Open-source industrial-grade mandarin speech recognition models from encoder-decoder to llm integration. arXiv preprint arXiv:2501.14350, 2025b."
+       "original": "Fireredasr: Open-source industrial-grade mandarin speech recognition models from encoder-decoder to llm integration. arXiv preprint arXiv:2501.14350, 2025b.",
+       "zh": "1."
       }
      ]
     },
@@ -3347,7 +4022,8 @@ globalThis.PAPER_2604_18105 = {
       },
       {
        "id": "s-references-51-2",
-       "original": "Fireredasr2s: A state-of-the-art industrial-grade all-in-one automatic speech recognition system. arXiv preprint arXiv:2603.10420, 2026."
+       "original": "Fireredasr2s: A state-of-the-art industrial-grade all-in-one automatic speech recognition system. arXiv preprint arXiv:2603.10420, 2026.",
+       "zh": "3."
       }
      ]
     },
@@ -3358,9 +4034,15 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-references-52-1",
-       "original": "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, et al. Qwen3 technical report. arXiv preprint arXiv:2505.09388, 2025."
+       "original": "An Yang, Anfeng Li, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Gao, Chengen Huang, Chenxu Lv, et al. Qwen3 technical report. arXiv preprint arXiv:2505.09388,"
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 18,
+     "original": "2025."
     },
     {
      "id": "p-references-53",
@@ -3407,7 +4089,8 @@ globalThis.PAPER_2604_18105 = {
       },
       {
        "id": "s-references-55-2",
-       "original": "Unified streaming and non-streaming two-pass end-to-end model for speech recognition. arXiv preprint arXiv:2012.05481, 2020."
+       "original": "Unified streaming and non-streaming two-pass end-to-end model for speech recognition. arXiv preprint arXiv:2012.05481, 2020.",
+       "zh": "2."
       }
      ]
     },
@@ -3491,9 +4174,16 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-references-59-1",
-       "original": "Yu Zhang, Mufan Xu, Xuefeng Bai, Pengfei Zhang, Yang Xiang, Min Zhang, et al. Instruction anchors: Dissecting the causal dynamics of modality arbitration. arXiv preprint arXiv:2602.03677, 2026."
+       "original": "Yu Zhang, Mufan Xu, Xuefeng Bai, Pengfei Zhang, Yang Xiang, Min Zhang, et al. Instruction anchors: Dissecting the causal dynamics of modality arbitration. arXiv preprint arXiv:2602.03677,",
+       "zh": "2."
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 18,
+     "original": "2026."
     },
     {
      "id": "p-references-60",
@@ -3528,7 +4218,8 @@ globalThis.PAPER_2604_18105 = {
      "sentences": [
       {
        "id": "s-references-62-1",
-       "original": "Jiaming Zhou, Yujie Guo, Shiwan Zhao, Haoqin Sun, Hui Wang, Jiabei He, Aobo Kong, Shiyao Wang, Xi Yang, Yequan Wang, et al. Cs-dialogue: A 104-hour dataset of spontaneous mandarin-english code-switching dialogues for speech recognition. arXiv preprint arXiv:2502.18913, 2025."
+       "original": "Jiaming Zhou, Yujie Guo, Shiwan Zhao, Haoqin Sun, Hui Wang, Jiabei He, Aobo Kong, Shiyao Wang, Xi Yang, Yequan Wang, et al. Cs-dialogue: A 104-hour dataset of spontaneous mandarin-english code-switching dialogues for speech recognition. arXiv preprint arXiv:2502.18913, 2025.",
+       "zh": "2."
       }
      ]
     }
@@ -3737,7 +4428,7 @@ globalThis.PAPER_2604_18105 = {
   {
    "id": "ann-019",
    "anchor": {
-    "sentence_id": "s-3-2-2-4-3",
+    "sentence_id": "s-3-2-2-5-3",
     "quote": "By substantially increasing indomain data coverage, NIM4-ASR achieves more reliable recognition of vehicle control commands and in-car assistant knowledge"
    },
    "kind": "critique",
@@ -3748,7 +4439,7 @@ globalThis.PAPER_2604_18105 = {
   {
    "id": "ann-020",
    "anchor": {
-    "sentence_id": "s-3-2-4-2-3",
+    "sentence_id": "s-3-2-4-3-3",
     "quote": "on Mandarin benchmarks, NIM4-ASR attains a hallucination rate of 0.002%, substantially below all baselines"
    },
    "kind": "number",

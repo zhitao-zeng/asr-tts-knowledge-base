@@ -655,10 +655,16 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-3-5-1",
-       "original": "FLEURS M-AILABS 10 100 # languages (a) Labeled Datasets.",
+       "original": "FLEURS M-AILABS",
        "zh": "FLEURS M-AILABS 10 100 # 语言数 (a) 标注数据集。"
       }
      ]
+    },
+    {
+     "id": "eq-3-5",
+     "type": "equation",
+     "page": 4,
+     "original": "10 100 1,000 10,000"
     },
     {
      "id": "p-3-6",
@@ -667,16 +673,16 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-3-6-1",
-       "original": "106 VoxPopuli",
-       "zh": "106 VoxPopuli"
+       "original": "# languages (a) Labeled Datasets.",
+       "zh": "FLEURS M-AILABS 10 100 # 语言数 (a) 标注数据集。"
       }
      ]
     },
     {
-     "id": "eq-3-5",
+     "id": "eq-3-6",
      "type": "equation",
      "page": 4,
-     "original": "105"
+     "original": "106"
     },
     {
      "id": "p-3-7",
@@ -685,16 +691,16 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-3-7-1",
-       "original": "MMS-lab-U # hours Dhwani MMS-unlab",
-       "zh": "MMS-lab-U # 小时 Dhwani MMS-unlab"
+       "original": "VoxPopuli",
+       "zh": "无转写的多语言数据集包括覆盖 107 种语言的 VoxLingua107 [Valk and Alumäe, 2020]，以及包含大量欧洲语言无标注数据的 VoxPopuli [Wang et al., 2021]。"
       }
      ]
     },
     {
-     "id": "eq-3-6",
+     "id": "eq-3-7",
      "type": "equation",
      "page": 4,
-     "original": "104"
+     "original": "105"
     },
     {
      "id": "p-3-8",
@@ -703,16 +709,16 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-3-8-1",
-       "original": "VoxLingua107",
-       "zh": "VoxLingua107"
+       "original": "MMS-lab-U # hours Dhwani MMS-unlab",
+       "zh": "MMS-lab-U # 小时 Dhwani MMS-unlab"
       }
      ]
     },
     {
-     "id": "eq-3-7",
+     "id": "eq-3-8",
      "type": "equation",
      "page": 4,
-     "original": "103"
+     "original": "104"
     },
     {
      "id": "p-3-9",
@@ -721,7 +727,31 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-3-9-1",
-       "original": "10 100 # languages (b) Unlabeled Datasets.",
+       "original": "VoxLingua107",
+       "zh": "VoxLingua107"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-9",
+     "type": "equation",
+     "page": 4,
+     "original": "103"
+    },
+    {
+     "id": "eq-3-10",
+     "type": "equation",
+     "page": 4,
+     "original": "10 100 1,000 10,000"
+    },
+    {
+     "id": "p-3-10",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-3-10-1",
+       "original": "# languages (b) Unlabeled Datasets.",
        "zh": "10 100 # 语言数 (b) 无标注数据集。"
       }
      ]
@@ -734,12 +764,12 @@ globalThis.PAPER_2305_13516 = {
      "zh": "图 2：数据集概览。MMS-lab、MMS-lab-U 和 MMS-unlab 与现有多语言语音语料库在支持语言数和数据规模上的对比。对比对象包括 BABEL [Gales et al., 2014]、CMU Wilderness [Black, 2019]、CommonVoice [Ardila et al., 2020]、Dhwani [Javed et al., 2022]、FLEURS [Conneau et al., 2022]、M-AILABS [M-AILABS, 2018]、MLS [Pratap et al., 2020c]、VoxLingua107 [Valk and Alumäe, 2020] 和 VoxPopuli [Wang et al., 2021]。"
     },
     {
-     "id": "p-3-10",
+     "id": "p-3-11",
      "type": "paragraph",
      "page": 4,
      "sentences": [
       {
-       "id": "s-3-10-1",
+       "id": "s-3-11-1",
        "original": "languages supported is available at https://github.com/facebookresearch/fairseq/tree/ main/examples/mms.",
        "zh": "https://github.com/facebookresearch/fairseq/tree/ main/examples/mms。"
       }
@@ -1511,7 +1541,8 @@ globalThis.PAPER_2305_13516 = {
      "id": "eq-efficient-forced-alignment-on-gp-5",
      "type": "equation",
      "page": 7,
-     "original": "20"
+     "original": "20",
+     "zh": "20"
     },
     {
      "id": "p-efficient-forced-alignment-on-gp-3",
@@ -1520,8 +1551,26 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-efficient-forced-alignment-on-gp-3-1",
-       "original": "ctc-seg (CPU) Flashlight (CPU) MMS (GPU) 0 100 500 0 Input audio length (sec)",
-       "zh": "ctc-seg (CPU) Flashlight (CPU) MMS (GPU) 0 100 500 0 输入音频长度（秒）"
+       "original": "ctc-seg (CPU) Flashlight (CPU) MMS (GPU)",
+       "zh": "（图例：ctc-seg (CPU) / Flashlight (CPU) / MMS (GPU)。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-efficient-forced-alignment-on-gp-6",
+     "type": "equation",
+     "page": 7,
+     "original": "0 100 500 1,000 2,000 0"
+    },
+    {
+     "id": "p-efficient-forced-alignment-on-gp-4",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-efficient-forced-alignment-on-gp-4-1",
+       "original": "Input audio length (sec)",
+       "zh": "（图横轴：输入音频长度 Input audio length (sec)。）"
       }
      ]
     },
@@ -1533,12 +1582,12 @@ globalThis.PAPER_2305_13516 = {
      "zh": "图 4：强制对齐实现的效率。MMS 的实现在 GPU 上运行，相比 CPU 替代方案，能在合理时间内处理长音频序列。"
     },
     {
-     "id": "p-efficient-forced-alignment-on-gp-4",
+     "id": "p-efficient-forced-alignment-on-gp-5",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-efficient-forced-alignment-on-gp-4-1",
+       "id": "s-efficient-forced-alignment-on-gp-5-1",
        "original": "some respectable house provided text i shall rent a room in some respectable house some respectable house i shall rent a room in some respectable house",
        "zh": "some respectable house provided text i shall rent a room in some respectable house some respectable house i shall rent a room in some respectable house"
       }
@@ -1552,17 +1601,17 @@ globalThis.PAPER_2305_13516 = {
      "zh": "图 5：强制对齐中 ⟨∗⟩ token 的示意图。顶部展示我们希望对齐音频的目标文本，底部斜体展示实际朗读的内容。左：当所给文本不完整时的错误对齐——单词 some 被错误对齐。右：在开头使用 ⟨∗⟩ token 使所给文本得以正确对齐。"
     },
     {
-     "id": "p-efficient-forced-alignment-on-gp-5",
+     "id": "p-efficient-forced-alignment-on-gp-6",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-efficient-forced-alignment-on-gp-5-1",
+       "id": "s-efficient-forced-alignment-on-gp-6-1",
        "original": "sequences at high speed.",
        "zh": "序列，且速度很快。"
       },
       {
-       "id": "s-efficient-forced-alignment-on-gp-5-2",
+       "id": "s-efficient-forced-alignment-on-gp-6-2",
        "original": "Appendix A illustrates the algorithm and an implementation is available as part of TorchAudio [Yang et al., 2021].11",
        "zh": "附录 A 演示了该算法，其实现已作为 TorchAudio [Yang et al., 2021] 的一部分提供。11"
       }
@@ -1660,7 +1709,43 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-robust-alignment-for-noisy-trans-4-1",
-       "original": "Text Language 你叫什么名字 Mandarin Chinese आप कैसे ह( Hindi Qué música te gusta Spanish French Je suis ravi de vous rencontrer Arabic ﻣﻨﺪواﻋﻲ ﺳﺮوري ﻣﻘﺎﺑﻠﺘﻚ uroman nijiaoshenmemingzi aap kaise haim Que musica te gusta Je suis ravi de vous rencontrer mndwa'y srwry mqabltk",
+       "original": "Text Language 你叫什么名字 Mandarin Chinese",
+       "zh": "文本 语言 你叫什么名字 中文普通话 आप कैसे ह( 印地语 Qué música te gusta 西班牙语 法语 Je suis ravi de vous rencontrer 阿拉伯语 ﻣﻨﺪواﻋﻲ ﺳﺮوري ﻣﻘﺎﺑﻠﺘﻚ uroman nijiaoshenmemingzi aap kaise haim Que musica te gusta Je suis ravi de vous rencontrer mndwa'y srwry mqabltk"
+      }
+     ]
+    },
+    {
+     "id": "eq-robust-alignment-for-noisy-trans-1",
+     "type": "equation",
+     "page": 8,
+     "original": "आप कैसे ह("
+    },
+    {
+     "id": "p-robust-alignment-for-noisy-trans-5",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-robust-alignment-for-noisy-trans-5-1",
+       "original": "Hindi Qué música te gusta Spanish French Je suis ravi de vous rencontrer Arabic",
+       "zh": "文本 语言 你叫什么名字 中文普通话 आप कैसे ह( 印地语 Qué música te gusta 西班牙语 法语 Je suis ravi de vous rencontrer 阿拉伯语 ﻣﻨﺪواﻋﻲ ﺳﺮوري ﻣﻘﺎﺑﻠﺘﻚ uroman nijiaoshenmemingzi aap kaise haim Que musica te gusta Je suis ravi de vous rencontrer mndwa'y srwry mqabltk"
+      }
+     ]
+    },
+    {
+     "id": "eq-robust-alignment-for-noisy-trans-2",
+     "type": "equation",
+     "page": 8,
+     "original": "ﻣﻨﺪواﻋﻲ ﺳﺮوري ﻣﻘﺎﺑﻠﺘﻚ"
+    },
+    {
+     "id": "p-robust-alignment-for-noisy-trans-6",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-robust-alignment-for-noisy-trans-6-1",
+       "original": "uroman nijiaoshenmemingzi aap kaise haim Que musica te gusta Je suis ravi de vous rencontrer mndwa'y srwry mqabltk",
        "zh": "文本 语言 你叫什么名字 中文普通话 आप कैसे ह( 印地语 Qué música te gusta 西班牙语 法语 Je suis ravi de vous rencontrer 阿拉伯语 ﻣﻨﺪواﻋﻲ ﺳﺮوري ﻣﻘﺎﺑﻠﺘﻚ uroman nijiaoshenmemingzi aap kaise haim Que musica te gusta Je suis ravi de vous rencontrer mndwa'y srwry mqabltk"
       }
      ]
@@ -1858,8 +1943,86 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-3-1-5-4-1",
-       "original": "15This model is available at https://github.com/facebookresearch/fairseq/tree/main/ examples/mms 200 Ruching Palaung Lampung Api 150 Number of hours Nyankole Taabwa Kumyk Timne Ikwo Akha Fijian 100 Gilaki 50 0 Makhuwa-Meetto Tagalog Mbandja Hindi Nyole Yemba Naxi Rejang Bashkir Avaric Hebrew Welsh Kamwe 0 200 400 600 800 1000 Languages",
-       "zh": "15该模型见 https://github.com/facebookresearch/fairseq/tree/main/ examples/mms 200 Ruching Palaung Lampung Api 150 小时数 Nyankole Taabwa Kumyk Timne Ikwo Akha Fijian 100 Gilaki 50 0 Makhuwa-Meetto Tagalog Mbandja Hindi Nyole Yemba Naxi Rejang Bashkir Avaric Hebrew Welsh Kamwe 0 200 400 600 800 1000 语言"
+       "original": "15This model is available at https://github.com/facebookresearch/fairseq/tree/main/ examples/mms",
+       "zh": "（脚注 15：该模型开源于 https://github.com/facebookresearch/fairseq/tree/main/examples/mms）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-1-5-2",
+     "type": "equation",
+     "page": 8,
+     "original": "200"
+    },
+    {
+     "id": "eq-3-1-5-3",
+     "type": "equation",
+     "page": 8,
+     "original": "Ruching Palaung Lampung Api"
+    },
+    {
+     "id": "eq-3-1-5-4",
+     "type": "equation",
+     "page": 8,
+     "original": "150"
+    },
+    {
+     "id": "p-3-1-5-5",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-3-1-5-5-1",
+       "original": "Number of hours Nyankole Taabwa Kumyk Timne Ikwo Akha Fijian",
+       "zh": "（图表纵轴：小时数；语种：Nyankole / Taabwa / Kumyk / Timne / Ikwo / Akha / Fijian。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-1-5-5",
+     "type": "equation",
+     "page": 8,
+     "original": "100"
+    },
+    {
+     "id": "eq-3-1-5-6",
+     "type": "equation",
+     "page": 8,
+     "original": "Gilaki"
+    },
+    {
+     "id": "eq-3-1-5-7",
+     "type": "equation",
+     "page": 8,
+     "original": "50 0"
+    },
+    {
+     "id": "p-3-1-5-6",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-3-1-5-6-1",
+       "original": "Makhuwa-Meetto Tagalog Mbandja Hindi Nyole Yemba Naxi Rejang Bashkir Avaric Hebrew Welsh Kamwe",
+       "zh": "（语种续：Makhuwa-Meetto / Tagalog / Mbandja / Hindi / Nyole / Yemba / Naxi / Rejang / Bashkir / Avaric / Hebrew / Welsh / Kamwe。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-1-5-8",
+     "type": "equation",
+     "page": 8,
+     "original": "0 200 400 600 800 1000"
+    },
+    {
+     "id": "p-3-1-5-7",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-3-1-5-7-1",
+       "original": "Languages",
+       "zh": "61 128 256 512 模型支持的语言数量"
       }
      ]
     },
@@ -2044,14 +2207,80 @@ globalThis.PAPER_2305_13516 = {
      ]
     },
     {
+     "id": "eq-3-1-7-1",
+     "type": "equation",
+     "page": 10,
+     "original": "128 64"
+    },
+    {
+     "id": "eq-3-1-7-2",
+     "type": "equation",
+     "page": 10,
+     "original": "Luxembourgish North Ndebele"
+    },
+    {
+     "id": "eq-3-1-7-3",
+     "type": "equation",
+     "page": 10,
+     "original": "32"
+    },
+    {
+     "id": "eq-3-1-7-4",
+     "type": "equation",
+     "page": 10,
+     "original": "Pampanga Kimbundu Shambala"
+    },
+    {
+     "id": "eq-3-1-7-5",
+     "type": "equation",
+     "page": 10,
+     "original": "16"
+    },
+    {
      "id": "p-3-1-7-5",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
        "id": "s-3-1-7-5-1",
-       "original": "128 64 Luxembourgish North Ndebele 32 Pampanga Kimbundu Shambala 16 Number of hours Taabwa Urhobo Finnish Danish Fuliiru Welsh Igala 8 4 2 1 0.5 0.25 Minangkabau Ngambay Slovenian Sena Japanese Dhundari Tamil Czech Bakhtiari Ghomálá' Italian Morisyen Maranao Kirghiz Nyanja Gofa Tulu Halbi 0 500 1000 1500 2000 2500 3000 3500 Languages",
-       "zh": "128 64 Luxembourgish North Ndebele 32 Pampanga Kimbundu Shambala 16 小时数 Taabwa Urhobo Finnish Danish Fuliiru Welsh Igala 8 4 2 1 0.5 0.25 Minangkabau Ngambay Slovenian Sena Japanese Dhundari Tamil Czech Bakhtiari Ghomálá' Italian Morisyen Maranao Kirghiz Nyanja Gofa Tulu Halbi 0 500 1000 1500 2000 2500 3000 3500 语言"
+       "original": "Number of hours Taabwa Urhobo Finnish Danish Fuliiru Welsh Igala",
+       "zh": "（图表纵轴：小时数；语种：Taabwa / Urhobo / Finnish / Danish / Fuliiru / Welsh / Igala。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-1-7-6",
+     "type": "equation",
+     "page": 10,
+     "original": "8 4 2 1 0.5 0.25"
+    },
+    {
+     "id": "p-3-1-7-6",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-3-1-7-6-1",
+       "original": "Minangkabau Ngambay Slovenian Sena Japanese Dhundari Tamil Czech Bakhtiari Ghomálá' Italian Morisyen Maranao Kirghiz Nyanja Gofa Tulu Halbi",
+       "zh": "（语种续：Minangkabau / Ngambay / Slovenian / Sena / Japanese / Dhundari / Tamil / Czech / Bakhtiari / Ghomálá' / Italian / Morisyen / Maranao / Kirghiz / Nyanja / Gofa / Tulu / Halbi。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-1-7-7",
+     "type": "equation",
+     "page": 10,
+     "original": "0 500 1000 1500 2000 2500 3000 3500"
+    },
+    {
+     "id": "p-3-1-7-7",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-3-1-7-7-1",
+       "original": "Languages",
+       "zh": "61 128 256 512 模型支持的语言数量"
       }
      ]
     },
@@ -2230,10 +2459,16 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-3-3-1-3",
-       "original": "Finally, we assess the viability of the new data for building machine learning models by comparing the performance of ASR models trained on MMS-lab to models trained on an existing dataset in an out-of-domain setting (§3.3.3).",
+       "original": "Finally, we assess the viability of the new data for building machine learning models by comparing the performance of ASR models trained on MMS-lab to models trained on an existing dataset in an out-of-domain setting",
        "zh": "最后，我们在分布外（OOD）设置下，将在 MMS-lab 上训练的 ASR 模型与在现有数据集上训练的模型进行性能对比，以评估新数据用于构建机器学习模型的可行性（§3.3.3）。"
       }
      ]
+    },
+    {
+     "id": "eq-3-3-1",
+     "type": "equation",
+     "page": 10,
+     "original": "(§3.3.3)."
     },
     {
      "id": "p-3-3-2",
@@ -2248,10 +2483,11 @@ globalThis.PAPER_2305_13516 = {
      ]
     },
     {
-     "id": "eq-3-3-1",
+     "id": "eq-3-3-2",
      "type": "equation",
      "page": 11,
-     "original": "20"
+     "original": "20",
+     "zh": "20"
     },
     {
      "id": "p-3-3-3",
@@ -2266,10 +2502,11 @@ globalThis.PAPER_2305_13516 = {
      ]
     },
     {
-     "id": "eq-3-3-2",
+     "id": "eq-3-3-3",
      "type": "equation",
      "page": 11,
-     "original": "15"
+     "original": "15",
+     "zh": "15"
     },
     {
      "id": "p-3-3-4",
@@ -2284,16 +2521,18 @@ globalThis.PAPER_2305_13516 = {
      ]
     },
     {
-     "id": "eq-3-3-3",
-     "type": "equation",
-     "page": 11,
-     "original": "10"
-    },
-    {
      "id": "eq-3-3-4",
      "type": "equation",
      "page": 11,
-     "original": "5"
+     "original": "10",
+     "zh": "10"
+    },
+    {
+     "id": "eq-3-3-5",
+     "type": "equation",
+     "page": 11,
+     "original": "5",
+     "zh": "5"
     },
     {
      "id": "p-3-3-5",
@@ -2342,19 +2581,22 @@ globalThis.PAPER_2305_13516 = {
      "id": "eq-3-3-1-1",
      "type": "equation",
      "page": 11,
-     "original": "20"
+     "original": "20",
+     "zh": "20"
     },
     {
      "id": "eq-3-3-1-2",
      "type": "equation",
      "page": 11,
-     "original": "10"
+     "original": "10",
+     "zh": "10"
     },
     {
      "id": "eq-3-3-1-3",
      "type": "equation",
      "page": 11,
-     "original": "0"
+     "original": "0",
+     "zh": "0"
     },
     {
      "id": "p-3-3-1-2",
@@ -2606,10 +2848,16 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-4-1-1-3",
-       "original": "The resulting models can then be used to solve downstream speech tasks by fine-tuning them on labeled data or by tackling these tasks without labeled data using unsupervised learning [Baevski et al., 2021, Liu et al., 2022].",
+       "original": "The resulting models can then be used to solve downstream speech tasks by fine-tuning them on labeled data or by tackling these tasks without labeled data using unsupervised learning [Baevski et al., 2021, Liu et al.,",
        "zh": "所得模型随后可用于解决下游语音任务：在标注数据上微调，或使用无监督学习在无标注数据下处理这些任务 [Baevski et al., 2021, Liu et al., 2022]。"
       }
      ]
+    },
+    {
+     "id": "eq-4-1-1",
+     "type": "equation",
+     "page": 12,
+     "original": "2022]."
     },
     {
      "id": "p-4-1-2",
@@ -2696,8 +2944,158 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-4-1-6-1",
-       "original": "Model #langs Datasets B M F A #params Prior work XLSR-53 53 MLS, CV, BBL 24 1024 4096 16 VP-100K 23 VP-100K 24 1024 4096 16 XLS-R (0.3B) 128 VP-400K, MLS, CV, VL, BBL 24 1024 4096 16 XLS-R (1B) 128 VP-400K, MLS, CV, VL, BBL 48 1024 4096 16 MMS (0.3B) MMS-lab, FL, VP-400K, MLS, CV, VL, BBL 24 1024 4096 16 MMS (1B) MMS-lab, FL, VP-400K, MLS, CV, VL, BBL 48 1024 4096 16",
-       "zh": "模型 #语言数 数据集 B M F A #参数量 先前工作 XLSR-53 53 MLS, CV, BBL 24 1024 4096 16 VP-100K 23 VP-100K 24 1024 4096 16 XLS-R (0.3B) 128 VP-400K, MLS, CV, VL, BBL 24 1024 4096 16 XLS-R (1B) 128 VP-400K, MLS, CV, VL, BBL 48 1024 4096 16 MMS (0.3B) MMS-lab, FL, VP-400K, MLS, CV, VL, BBL 24 1024 4096 16 MMS (1B) MMS-lab, FL, VP-400K, MLS, CV, VL, BBL 48 1024 4096 16"
+       "original": "Model #langs Datasets B M F A #params Prior work XLSR-53",
+       "zh": "表头：Model / #langs / Datasets（B/M/F/A）/ #params——Prior work：XLSR-53（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-1-2",
+     "type": "equation",
+     "page": 13,
+     "original": "53"
+    },
+    {
+     "id": "eq-4-1-3",
+     "type": "equation",
+     "page": 13,
+     "original": "MLS, CV, BBL"
+    },
+    {
+     "id": "eq-4-1-4",
+     "type": "equation",
+     "page": 13,
+     "original": "24 1024 4096 16"
+    },
+    {
+     "id": "eq-4-1-5",
+     "type": "equation",
+     "page": 13,
+     "original": "317M VP-100K"
+    },
+    {
+     "id": "eq-4-1-6",
+     "type": "equation",
+     "page": 13,
+     "original": "23"
+    },
+    {
+     "id": "eq-4-1-7",
+     "type": "equation",
+     "page": 13,
+     "original": "VP-100K"
+    },
+    {
+     "id": "eq-4-1-8",
+     "type": "equation",
+     "page": 13,
+     "original": "24 1024 4096 16"
+    },
+    {
+     "id": "eq-4-1-9",
+     "type": "equation",
+     "page": 13,
+     "original": "317M XLS-R (0.3B)"
+    },
+    {
+     "id": "eq-4-1-10",
+     "type": "equation",
+     "page": 13,
+     "original": "128"
+    },
+    {
+     "id": "eq-4-1-11",
+     "type": "equation",
+     "page": 13,
+     "original": "VP-400K, MLS, CV, VL, BBL"
+    },
+    {
+     "id": "eq-4-1-12",
+     "type": "equation",
+     "page": 13,
+     "original": "24 1024 4096 16"
+    },
+    {
+     "id": "eq-4-1-13",
+     "type": "equation",
+     "page": 13,
+     "original": "317M XLS-R (1B)"
+    },
+    {
+     "id": "eq-4-1-14",
+     "type": "equation",
+     "page": 13,
+     "original": "128"
+    },
+    {
+     "id": "eq-4-1-15",
+     "type": "equation",
+     "page": 13,
+     "original": "VP-400K, MLS, CV, VL, BBL"
+    },
+    {
+     "id": "eq-4-1-16",
+     "type": "equation",
+     "page": 13,
+     "original": "48 1024 4096 16"
+    },
+    {
+     "id": "eq-4-1-17",
+     "type": "equation",
+     "page": 13,
+     "original": "965M MMS (0.3B)"
+    },
+    {
+     "id": "eq-4-1-18",
+     "type": "equation",
+     "page": 13,
+     "original": "1,406"
+    },
+    {
+     "id": "eq-4-1-19",
+     "type": "equation",
+     "page": 13,
+     "original": "MMS-lab, FL, VP-400K, MLS, CV, VL, BBL"
+    },
+    {
+     "id": "eq-4-1-20",
+     "type": "equation",
+     "page": 13,
+     "original": "24 1024 4096 16"
+    },
+    {
+     "id": "eq-4-1-21",
+     "type": "equation",
+     "page": 13,
+     "original": "317M MMS (1B)"
+    },
+    {
+     "id": "eq-4-1-22",
+     "type": "equation",
+     "page": 13,
+     "original": "1,406"
+    },
+    {
+     "id": "eq-4-1-23",
+     "type": "equation",
+     "page": 13,
+     "original": "MMS-lab, FL, VP-400K, MLS, CV, VL, BBL"
+    },
+    {
+     "id": "eq-4-1-24",
+     "type": "equation",
+     "page": 13,
+     "original": "48 1024 4096 16"
+    },
+    {
+     "id": "p-4-1-7",
+     "type": "paragraph",
+     "page": 13,
+     "sentences": [
+      {
+       "id": "s-4-1-7-1",
+       "original": "965M",
+       "zh": "（表 A2 对比 Whisper：#lang × lbld data (h) × train (M) × FLEURS-54 dev/test——Whisper medium 99/680K/769M/-/50.1；Whisper large-v2 99/1,550M/-/44.3；MMS 61/3K/965M 33.6/33.3，+ CC LM 20.9/20.7；MMS (LSAH) 61/3K/1,096M 31.4/31.0，+ CC LM 19.1/19.0；MMS 1,107/45K/965M 44.7/44.2，+ CC LM 24.8/24.8；MMS (LSAH) 1,107/45K/3,346M 32.8/32.5，+ CC LM 18.7/18.7。）表 A2：与 Whisper 的对比。"
       }
      ]
     },
@@ -2709,27 +3107,27 @@ globalThis.PAPER_2305_13516 = {
      "zh": "表 2：自监督模型。我们模型的细节及先前工作：XLSR-53 [Conneau et al., 2020a]、VP-100K [Wang et al., 2021]、XLS-R [Babu et al., 2022] 和 MMS 模型：语言数量（#langs）、预训练数据（Datasets）、Transformer 块数（B）、隐状态维度（M）、前馈块内层维度（F）、注意力头数（A）和总参数量（#params）。"
     },
     {
-     "id": "p-4-1-7",
+     "id": "p-4-1-8",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
-       "id": "s-4-1-7-1",
+       "id": "s-4-1-8-1",
        "original": "XLSR and XLS-R train wav2vec 2.0 on many different languages from several datasets to obtain cross-lingual representations [Conneau et al., 2020a, Babu et al., 2022].",
        "zh": "XLSR 和 XLS-R 在来自多个数据集的不同语言上训练 wav2vec 2.0，以获得跨语言表示 [Conneau et al., 2020a, Babu et al., 2022]。"
       },
       {
-       "id": "s-4-1-7-2",
+       "id": "s-4-1-8-2",
        "original": "In order to balance the training data, two data sampling steps are performed.",
        "zh": "为平衡训练数据，执行两步数据采样。"
       },
       {
-       "id": "s-4-1-7-3",
+       "id": "s-4-1-8-3",
        "original": "First, for each dataset, we sample the data for the different languages L from a distribution pl ∼ nl N βL where l = 1, . . . , L, nl is the amount of unlabeled data for each language in the dataset, N is the total amount of training in the dataset, and βL is the upsampling factor which controls the trade-off between high- and low-resource languages during pretraining.",
        "zh": "首先，对每个数据集，我们从分布 pl ∼ nl N βL 中为不同语言 L 采样数据，其中 l = 1, . . . , L，nl 是数据集中每种语言的无标注数据量，N 是数据集中的训练数据总量，βL 是上采样因子，控制预训练期间高资源与低资源语言之间的权衡。"
       },
       {
-       "id": "s-4-1-7-4",
+       "id": "s-4-1-8-4",
        "original": "Second, we balance the different datasets by treating each dataset as a language in the above sampling scheme with a sampling parameter βD.",
        "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       }
@@ -2810,10 +3208,16 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-data-1-2",
-       "original": "This data is drawn from six training corpora with different characteristics, including the corpora used in XLS-R [Babu et al., 2022]:",
+       "original": "This data is drawn from six training corpora with different characteristics, including the corpora used in XLS-R [Babu et al.,",
        "zh": "这些数据来自六个特征各异的训练语料，包括 XLS-R [Babu et al., 2022] 所用的语料："
       }
      ]
+    },
+    {
+     "id": "eq-data-1",
+     "type": "equation",
+     "page": 13,
+     "original": "2022]:"
     },
     {
      "id": "p-data-2",
@@ -2840,13 +3244,13 @@ globalThis.PAPER_2305_13516 = {
      ]
     },
     {
-     "id": "eq-data-1",
+     "id": "eq-data-2",
      "type": "equation",
      "page": 14,
      "original": "18"
     },
     {
-     "id": "eq-data-2",
+     "id": "eq-data-3",
      "type": "equation",
      "page": 14,
      "original": "16"
@@ -2864,7 +3268,7 @@ globalThis.PAPER_2305_13516 = {
      ]
     },
     {
-     "id": "eq-data-3",
+     "id": "eq-data-4",
      "type": "equation",
      "page": 14,
      "original": "14"
@@ -2876,10 +3280,16 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-data-5-1",
-       "original": "XLS-R 1B 12",
-       "zh": "XLS-R 1B 12"
+       "original": "XLS-R MMS 300M 1B",
+       "zh": "（图内标签：XLS-R 与 MMS 的 300M/1B 参数档对比，12 为图内刻度。）"
       }
      ]
+    },
+    {
+     "id": "eq-data-5",
+     "type": "equation",
+     "page": 14,
+     "original": "12"
     },
     {
      "id": "fig-data-1",
@@ -2889,10 +3299,11 @@ globalThis.PAPER_2305_13516 = {
      "zh": "图 10：MMS 与 XLS-R 对比。在 MMS-lab 数据上微调多语言 ASR 模型时，61 种 FLEURS 语言上的字错误率（CER）。我们报告在 FLEURS 开发数据上的平均性能。"
     },
     {
-     "id": "eq-data-4",
+     "id": "eq-data-6",
      "type": "equation",
      "page": 14,
-     "original": "10"
+     "original": "10",
+     "zh": "10"
     },
     {
      "id": "p-data-6",
@@ -2907,19 +3318,21 @@ globalThis.PAPER_2305_13516 = {
      ]
     },
     {
-     "id": "eq-data-5",
-     "type": "equation",
-     "page": 14,
-     "original": "5"
-    },
-    {
-     "id": "eq-data-6",
-     "type": "equation",
-     "page": 14,
-     "original": "0"
-    },
-    {
      "id": "eq-data-7",
+     "type": "equation",
+     "page": 14,
+     "original": "5",
+     "zh": "5"
+    },
+    {
+     "id": "eq-data-8",
+     "type": "equation",
+     "page": 14,
+     "original": "0",
+     "zh": "0"
+    },
+    {
+     "id": "eq-data-9",
      "type": "equation",
      "page": 14,
      "original": "−5"
@@ -3110,16 +3523,29 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-optimization-1-1",
-       "original": "We use Adam [Kingma and Ba, 2015] with exponential decay rates β1 = 0.9, β2 = 0.98 to train model weights using a tri-stage schedule where the learning rate is warmed up for the first 10% of updates, held constant for the next 40% updates, and then decayed in the final 50% updates.",
+       "original": "We use Adam [Kingma and Ba, 2015] with exponential decay rates β1 = 0.9, β2 = 0.98 to train model weights using a tri-stage schedule where the learning rate is warmed up for the first 10% of updates, held constant for the next 40% updates, and then decayed in the final 50%",
        "zh": "我们使用 Adam [Kingma and Ba, 2015]（指数衰减率 β1 = 0.9，β2 = 0.98）训练模型权重，采用三阶段调度：学习率在前 10% 的更新中预热，在接下来 40% 的更新中保持恒定，在最后 50% 的更新中衰减。"
-      },
+      }
+     ]
+    },
+    {
+     "id": "eq-optimization-1",
+     "type": "equation",
+     "page": 15,
+     "original": "updates. We experimented with different learning rates (1 × 10−4, 7 × 10−4, 3 × 10−4 1 × 10−5,"
+    },
+    {
+     "id": "p-optimization-2",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
       {
-       "id": "s-optimization-1-2",
-       "original": "We experimented with different learning rates (1 × 10−4, 7 × 10−4, 3 × 10−4 1 × 10−5, 7 × 10−6, 3 × 10−6, 1 × 10−6) and number of updates (50K, 100K, 200K, 300K).",
+       "id": "s-optimization-2-1",
+       "original": "7 × 10−6, 3 × 10−6, 1 × 10−6) and number of updates (50K, 100K, 200K, 300K).",
        "zh": "我们尝试了不同的学习率（1 × 10−4, 7 × 10−4, 3 × 10−4 1 × 10−5, 7 × 10−6, 3 × 10−6, 1 × 10−6）和更新次数（50K, 100K, 200K, 300K）。"
       },
       {
-       "id": "s-optimization-1-3",
+       "id": "s-optimization-2-2",
        "original": "Unless otherwise mentioned, we fine-tune models for a total of 50K updates with a batch size of 0.8 hours of data using 16 A100 GPUs with 80GB of memory.",
        "zh": "除非另有说明，我们在 16 块 80GB 显存的 A100 GPU 上，以 0.8 小时数据的批大小对模型共微调 50K 次更新。"
       }
@@ -3226,7 +3652,8 @@ globalThis.PAPER_2305_13516 = {
      "id": "eq-5-2-1",
      "type": "equation",
      "page": 16,
-     "original": "20"
+     "original": "20",
+     "zh": "20"
     },
     {
      "id": "p-5-2-2",
@@ -3244,13 +3671,21 @@ globalThis.PAPER_2305_13516 = {
      "id": "eq-5-2-2",
      "type": "equation",
      "page": 16,
-     "original": "15"
+     "original": "15",
+     "zh": "15"
     },
     {
      "id": "eq-5-2-3",
      "type": "equation",
      "page": 16,
-     "original": "10"
+     "original": "10",
+     "zh": "10"
+    },
+    {
+     "id": "eq-5-2-4",
+     "type": "equation",
+     "page": 16,
+     "original": "61 128 256 512 1,107"
     },
     {
      "id": "p-5-2-3",
@@ -3259,7 +3694,7 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-5-2-3-1",
-       "original": "61 128 256 512 Number of Languages supported by Model",
+       "original": "Number of Languages supported by Model",
        "zh": "61 128 256 512 模型支持的语言数量"
       }
      ]
@@ -3278,10 +3713,148 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-5-2-4-1",
-       "original": "#lang labeled train FLEURS-54 data (h) dev test Prior Work Whisper medium 99 50.1 Whisper large-v2 99 44.3 This Work 61 20.9 20.7 MMS (LSAH) 61 19.0 19.1 24.8 24.8 MMS (LSAH) 18.7 18.7",
-       "zh": "#语言数 标注训练 FLEURS-54 数据 (h) dev test 先前工作 Whisper medium 99 50.1 Whisper large-v2 99 44.3 本工作 61 20.9 20.7 MMS (LSAH) 61 19.0 19.1 24.8 24.8 MMS (LSAH) 18.7 18.7"
+       "original": "#lang labeled train FLEURS-54 data (h) dev test Prior Work Whisper medium",
+       "zh": "表头：#lang / labeled data (h) / train / FLEURS-54 dev / test——Prior Work：Whisper medium（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-5-2-5",
+     "type": "equation",
+     "page": 16,
+     "original": "99"
+    },
+    {
+     "id": "eq-5-2-6",
+     "type": "equation",
+     "page": 16,
+     "original": "680K"
+    },
+    {
+     "id": "eq-5-2-7",
+     "type": "equation",
+     "page": 16,
+     "original": "- 50.1"
+    },
+    {
+     "id": "eq-5-2-8",
+     "type": "equation",
+     "page": 16,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-5-2-9",
+     "type": "equation",
+     "page": 16,
+     "original": "99"
+    },
+    {
+     "id": "eq-5-2-10",
+     "type": "equation",
+     "page": 16,
+     "original": "680K"
+    },
+    {
+     "id": "eq-5-2-11",
+     "type": "equation",
+     "page": 16,
+     "original": "- 44.3"
+    },
+    {
+     "id": "eq-5-2-12",
+     "type": "equation",
+     "page": 16,
+     "original": "This Work MMS"
+    },
+    {
+     "id": "eq-5-2-13",
+     "type": "equation",
+     "page": 16,
+     "original": "61"
+    },
+    {
+     "id": "eq-5-2-14",
+     "type": "equation",
+     "page": 16,
+     "original": "3K"
+    },
+    {
+     "id": "eq-5-2-15",
+     "type": "equation",
+     "page": 16,
+     "original": "20.9 20.7"
+    },
+    {
+     "id": "eq-5-2-16",
+     "type": "equation",
+     "page": 16,
+     "original": "MMS (LSAH)"
+    },
+    {
+     "id": "eq-5-2-17",
+     "type": "equation",
+     "page": 16,
+     "original": "61"
+    },
+    {
+     "id": "eq-5-2-18",
+     "type": "equation",
+     "page": 16,
+     "original": "3K"
+    },
+    {
+     "id": "eq-5-2-19",
+     "type": "equation",
+     "page": 16,
+     "original": "19.0 19.1"
+    },
+    {
+     "id": "eq-5-2-20",
+     "type": "equation",
+     "page": 16,
+     "original": "MMS"
+    },
+    {
+     "id": "eq-5-2-21",
+     "type": "equation",
+     "page": 16,
+     "original": "1,107"
+    },
+    {
+     "id": "eq-5-2-22",
+     "type": "equation",
+     "page": 16,
+     "original": "45K"
+    },
+    {
+     "id": "eq-5-2-23",
+     "type": "equation",
+     "page": 16,
+     "original": "24.8 24.8"
+    },
+    {
+     "id": "eq-5-2-24",
+     "type": "equation",
+     "page": 16,
+     "original": "MMS (LSAH)"
+    },
+    {
+     "id": "eq-5-2-25",
+     "type": "equation",
+     "page": 16,
+     "original": "1,107"
+    },
+    {
+     "id": "eq-5-2-26",
+     "type": "equation",
+     "page": 16,
+     "original": "45K"
+    },
+    {
+     "id": "eq-5-2-27",
+     "type": "equation",
+     "page": 16,
+     "original": "18.7 18.7"
     },
     {
      "id": "tab-5-2-1",
@@ -3367,10 +3940,76 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-5-3-1-2-1",
-       "original": "FLEURS-102 dev test Prior Work w2v-BERT [Chen et al., 2022] 12.3 Maestro-U [Chen et al., 2022] 8.7 USM [Zhang et al., 2023a] 6.9 USM-M [Zhang et al., 2023a] 6.5 USM-M-adapter [Zhang et al., 2023a] 6.7 This Work MMS FL-102 (LSFT) + LM 6.3 6.3",
-       "zh": "FLEURS-102 dev test 先前工作 w2v-BERT [Chen et al., 2022] 12.3 Maestro-U [Chen et al., 2022] 8.7 USM [Zhang et al., 2023a] 6.9 USM-M [Zhang et al., 2023a] 6.5 USM-M-adapter [Zhang et al., 2023a] 6.7 本工作 MMS FL-102 (LSFT) + LM 6.3 6.3"
+       "original": "FLEURS-102 dev test Prior Work w2v-BERT [Chen et al., 2022]",
+       "zh": "（表格：FLEURS-102 dev/test——Prior Work：w2v-BERT [Chen et al., 2022] -/12.3；Maestro-U [Chen et al., 2022] -/8.7；USM [Zhang et al., 2023a] -/6.9；USM-M [Zhang et al., 2023a] -/6.5；USM-M-adapter [Zhang et al., 2023a] -/6.7；This Work：MMS FL-102 (LSFT) + LM 6.3/6.3。）"
       }
      ]
+    },
+    {
+     "id": "eq-5-3-1-1",
+     "type": "equation",
+     "page": 17,
+     "original": "- 12.3"
+    },
+    {
+     "id": "eq-5-3-1-2",
+     "type": "equation",
+     "page": 17,
+     "original": "Maestro-U [Chen et al., 2022]"
+    },
+    {
+     "id": "eq-5-3-1-3",
+     "type": "equation",
+     "page": 17,
+     "original": "- 8.7"
+    },
+    {
+     "id": "eq-5-3-1-4",
+     "type": "equation",
+     "page": 17,
+     "original": "USM [Zhang et al., 2023a]"
+    },
+    {
+     "id": "eq-5-3-1-5",
+     "type": "equation",
+     "page": 17,
+     "original": "- 6.9"
+    },
+    {
+     "id": "eq-5-3-1-6",
+     "type": "equation",
+     "page": 17,
+     "original": "USM-M [Zhang et al., 2023a]"
+    },
+    {
+     "id": "eq-5-3-1-7",
+     "type": "equation",
+     "page": 17,
+     "original": "- 6.5"
+    },
+    {
+     "id": "eq-5-3-1-8",
+     "type": "equation",
+     "page": 17,
+     "original": "USM-M-adapter [Zhang et al., 2023a]"
+    },
+    {
+     "id": "eq-5-3-1-9",
+     "type": "equation",
+     "page": 17,
+     "original": "- 6.7"
+    },
+    {
+     "id": "eq-5-3-1-10",
+     "type": "equation",
+     "page": 17,
+     "original": "This Work MMS FL-102 (LSFT) + LM"
+    },
+    {
+     "id": "eq-5-3-1-11",
+     "type": "equation",
+     "page": 17,
+     "original": "6.3 6.3"
     },
     {
      "id": "tab-5-3-1-1",
@@ -3527,10 +4166,136 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-5-3-2-7-1",
-       "original": "#lang FLEURS CV VP MLS Prior Work VoxPopuli [Wang et al., 2021] 1 15.3 Maestro [Chen et al., 2022] 14 8.1 RNN-T 1B [Li et al., 2021] 15 7.9 Whisper [Radford et al., 2022] 99 13.6∗ 7.3* ML-IO [Tjandra et al., 2022b] 70 7.5 USM-M [Zhang et al., 2023a] 102 6.5 This Work - Single-Domain training FL 102 6.4 CV 76 19.7 VP 14 10.3 MLS 8 8.7 This Work - Multi-Domain training MMS-lab+FL+CV+VP+MLS 6.2 19.6 10.6 9.0",
-       "zh": "#语言数 FLEURS CV VP MLS 先前工作 VoxPopuli [Wang et al., 2021] 1 15.3 Maestro [Chen et al., 2022] 14 8.1 RNN-T 1B [Li et al., 2021] 15 7.9 Whisper [Radford et al., 2022] 99 13.6∗ 7.3* ML-IO [Tjandra et al., 2022b] 70 7.5 USM-M [Zhang et al., 2023a] 102 6.5 本工作 - 单域训练 FL 102 6.4 CV 76 19.7 VP 14 10.3 MLS 8 8.7 本工作 - 多域训练 MMS-lab+FL+CV+VP+MLS 6.2 19.6 10.6 9.0"
+       "original": "#lang FLEURS CV VP MLS Prior Work VoxPopuli [Wang et al., 2021]",
+       "zh": "表头：#lang × FLEURS / CV / VP / MLS——Prior Work：VoxPopuli [Wang et al., 2021]（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-5-3-2-1",
+     "type": "equation",
+     "page": 18,
+     "original": "1 15.3"
+    },
+    {
+     "id": "eq-5-3-2-2",
+     "type": "equation",
+     "page": 18,
+     "original": "Maestro [Chen et al., 2022]"
+    },
+    {
+     "id": "eq-5-3-2-3",
+     "type": "equation",
+     "page": 18,
+     "original": "14 8.1"
+    },
+    {
+     "id": "eq-5-3-2-4",
+     "type": "equation",
+     "page": 18,
+     "original": "RNN-T 1B [Li et al., 2021]"
+    },
+    {
+     "id": "eq-5-3-2-5",
+     "type": "equation",
+     "page": 18,
+     "original": "15 7.9"
+    },
+    {
+     "id": "eq-5-3-2-6",
+     "type": "equation",
+     "page": 18,
+     "original": "Whisper [Radford et al., 2022]"
+    },
+    {
+     "id": "eq-5-3-2-7",
+     "type": "equation",
+     "page": 18,
+     "original": "99 13.6∗ 7.3*"
+    },
+    {
+     "id": "eq-5-3-2-8",
+     "type": "equation",
+     "page": 18,
+     "original": "ML-IO [Tjandra et al., 2022b]"
+    },
+    {
+     "id": "eq-5-3-2-9",
+     "type": "equation",
+     "page": 18,
+     "original": "70 7.5"
+    },
+    {
+     "id": "eq-5-3-2-10",
+     "type": "equation",
+     "page": 18,
+     "original": "USM-M [Zhang et al., 2023a]"
+    },
+    {
+     "id": "eq-5-3-2-11",
+     "type": "equation",
+     "page": 18,
+     "original": "102 6.5"
+    },
+    {
+     "id": "eq-5-3-2-12",
+     "type": "equation",
+     "page": 18,
+     "original": "This Work - Single-Domain training FL"
+    },
+    {
+     "id": "eq-5-3-2-13",
+     "type": "equation",
+     "page": 18,
+     "original": "102 6.4"
+    },
+    {
+     "id": "eq-5-3-2-14",
+     "type": "equation",
+     "page": 18,
+     "original": "CV"
+    },
+    {
+     "id": "eq-5-3-2-15",
+     "type": "equation",
+     "page": 18,
+     "original": "76 19.7"
+    },
+    {
+     "id": "eq-5-3-2-16",
+     "type": "equation",
+     "page": 18,
+     "original": "VP"
+    },
+    {
+     "id": "eq-5-3-2-17",
+     "type": "equation",
+     "page": 18,
+     "original": "14 10.3"
+    },
+    {
+     "id": "eq-5-3-2-18",
+     "type": "equation",
+     "page": 18,
+     "original": "MLS"
+    },
+    {
+     "id": "eq-5-3-2-19",
+     "type": "equation",
+     "page": 18,
+     "original": "8 8.7"
+    },
+    {
+     "id": "eq-5-3-2-20",
+     "type": "equation",
+     "page": 18,
+     "original": "This Work - Multi-Domain training MMS-lab+FL+CV+VP+MLS"
+    },
+    {
+     "id": "eq-5-3-2-21",
+     "type": "equation",
+     "page": 18,
+     "original": "1,162 6.2 19.6 10.6 9.0"
     },
     {
      "id": "tab-5-3-2-1",
@@ -3650,10 +4415,88 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-5-4-4-1",
-       "original": "#lang CER CER ≤5 % Asia 335 330 South America 136 132 North America 144 139 Europe 41 40 Africa 363 331 Pacific 88 87",
-       "zh": "#语言数 CER CER ≤5 % 亚洲 335 330 南美洲 136 132 北美洲 144 139 欧洲 41 40 非洲 363 331 太平洋 88 87"
+       "original": "#lang CER CER ≤5",
+       "zh": "CER CER\n（原始数据照录）\n#lang CER CER ≤5"
       }
      ]
+    },
+    {
+     "id": "eq-5-4-1",
+     "type": "equation",
+     "page": 19,
+     "original": "%"
+    },
+    {
+     "id": "eq-5-4-2",
+     "type": "equation",
+     "page": 19,
+     "original": "Asia"
+    },
+    {
+     "id": "eq-5-4-3",
+     "type": "equation",
+     "page": 19,
+     "original": "335 1.6 ± 0.1 330 99%"
+    },
+    {
+     "id": "eq-5-4-4",
+     "type": "equation",
+     "page": 19,
+     "original": "South America"
+    },
+    {
+     "id": "eq-5-4-5",
+     "type": "equation",
+     "page": 19,
+     "original": "136 1.5 ± 0.2 132 97%"
+    },
+    {
+     "id": "eq-5-4-6",
+     "type": "equation",
+     "page": 19,
+     "original": "North America"
+    },
+    {
+     "id": "eq-5-4-7",
+     "type": "equation",
+     "page": 19,
+     "original": "144 2.2 ± 0.2 139 97%"
+    },
+    {
+     "id": "eq-5-4-8",
+     "type": "equation",
+     "page": 19,
+     "original": "Europe"
+    },
+    {
+     "id": "eq-5-4-9",
+     "type": "equation",
+     "page": 19,
+     "original": "41 1.7 ± 0.4 40 98%"
+    },
+    {
+     "id": "eq-5-4-10",
+     "type": "equation",
+     "page": 19,
+     "original": "Africa"
+    },
+    {
+     "id": "eq-5-4-11",
+     "type": "equation",
+     "page": 19,
+     "original": "363 2.9 ± 0.2 331 91%"
+    },
+    {
+     "id": "eq-5-4-12",
+     "type": "equation",
+     "page": 19,
+     "original": "Pacific"
+    },
+    {
+     "id": "eq-5-4-13",
+     "type": "equation",
+     "page": 19,
+     "original": "88 1.7 ± 0.5 87 99% 1,107 2.1 ± 0.1 1,059 96%"
     },
     {
      "id": "tab-5-4-2",
@@ -3798,25 +4641,31 @@ globalThis.PAPER_2305_13516 = {
      "original": "100"
     },
     {
+     "id": "eq-6-2",
+     "type": "equation",
+     "page": 20,
+     "original": "-2.1%"
+    },
+    {
      "id": "p-6-3",
      "type": "paragraph",
      "page": 20,
      "sentences": [
       {
        "id": "s-6-3-1",
-       "original": "-2.1% Dev Accuracy",
+       "original": "Dev Accuracy",
        "zh": "-2.1% 开发集准确率"
       }
      ]
     },
     {
-     "id": "eq-6-2",
+     "id": "eq-6-3",
      "type": "equation",
      "page": 20,
      "original": "90"
     },
     {
-     "id": "eq-6-3",
+     "id": "eq-6-4",
      "type": "equation",
      "page": 20,
      "original": "80"
@@ -3828,7 +4677,37 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-6-4-1",
-       "original": "Model Trained on FLEURS VoxLingua-107 MMS-lab-U MMS-unlab MMS-lab-U+unlab -1.6% FLEURS VoxLingua-107 70 Evaluation Set",
+       "original": "Model Trained on FLEURS VoxLingua-107 MMS-lab-U MMS-unlab MMS-lab-U+unlab",
+       "zh": "模型训练数据 FLEURS VoxLingua-107 MMS-lab-U MMS-unlab MMS-lab-U+unlab -1.6% FLEURS VoxLingua-107 70 评估集"
+      }
+     ]
+    },
+    {
+     "id": "eq-6-5",
+     "type": "equation",
+     "page": 20,
+     "original": "-1.6%"
+    },
+    {
+     "id": "eq-6-6",
+     "type": "equation",
+     "page": 20,
+     "original": "FLEURS VoxLingua-107"
+    },
+    {
+     "id": "eq-6-7",
+     "type": "equation",
+     "page": 20,
+     "original": "70"
+    },
+    {
+     "id": "p-6-5",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-6-5-1",
+       "original": "Evaluation Set",
        "zh": "模型训练数据 FLEURS VoxLingua-107 MMS-lab-U MMS-unlab MMS-lab-U+unlab -1.6% FLEURS VoxLingua-107 70 评估集"
       }
      ]
@@ -3841,12 +4720,12 @@ globalThis.PAPER_2305_13516 = {
      "zh": "图 13：不同训练数据集下的 LID 性能。在分布外评估时，在 MMS-labU+unlab 上训练的模型与在现有数据（FLEURS、VoxLingua-107）上训练的模型相比非常有竞争力（虚线部分为对比）。我们在 72 种语言的公共子集上，用来自 MMS-lab-U、MMS-unlab、FLEURS 和 VoxLingua-107 的数据训练模型，并在 FLEURS 和 VoxLingua-107 上评估。"
     },
     {
-     "id": "p-6-5",
+     "id": "p-6-6",
      "type": "paragraph",
      "page": 20,
      "sentences": [
       {
-       "id": "s-6-5-1",
+       "id": "s-6-6-1",
        "original": "existing corpora (§6.2) and then build LID models with 40x more languages compared to existing systems (§6.3).27",
        "zh": "现有语料库的数据进行对比（§6.2）；然后构建语言数量是现有系统 40 倍的 LID 模型（§6.3）。27"
       }
@@ -3898,15 +4777,16 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-6-1-2-3",
-       "original": "We experiment with different learning rates (1 × 10−5, 3 × 10−5, 3 × 10−6, 5 × 10−6, 7 × 10−6), training updates (10K, 20K, 30K, 40K, 50K) and batch sizes (1.5min, 3min, 6min).",
+       "original": "We experiment with different learning rates (1 × 10−5,",
        "zh": "我们尝试了不同的学习率（1 × 10−5, 3 × 10−5, 3 × 10−6, 5 × 10−6, 7 × 10−6）、训练更新次数（10K, 20K, 30K, 40K, 50K）和批大小（1.5min, 3min, 6min）。"
-      },
-      {
-       "id": "s-6-1-2-4",
-       "original": "We train models on 16 GPUs.",
-       "zh": "我们在 16 块 GPU 上训练模型。"
       }
      ]
+    },
+    {
+     "id": "eq-6-1-1",
+     "type": "equation",
+     "page": 20,
+     "original": "3 × 10−5, 3 × 10−6, 5 × 10−6, 7 × 10−6), training updates (10K, 20K, 30K, 40K, 50K) and batch"
     },
     {
      "id": "p-6-1-3",
@@ -3915,18 +4795,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-6-1-3-1",
-       "original": "To balance the different languages and corpora during training, we first balance the data of every language in the different corpora, using sampling parameter βL.",
-       "zh": "为在训练期间平衡不同语言和语料库，我们首先使用采样参数 βL 平衡不同语料库中每种语言的数据。"
+       "original": "sizes (1.5min, 3min, 6min).",
+       "zh": "（时长分档：1.5min、3min、6min。）"
       },
       {
        "id": "s-6-1-3-2",
-       "original": "This is followed by balancing each language using the resampled data of the first step, using sampling parameter βD with the sampling distribution outlined in §4.1.",
-       "zh": "然后，使用第一步重采样得到的数据，按 §4.1 所述的采样分布，用采样参数 βD 平衡每种语言。"
-      },
-      {
-       "id": "s-6-1-3-3",
-       "original": "We experiment with βL and βD settings 0, 0.3, 0.5, 0.7 and 1.",
-       "zh": "我们对 βL 和 βD 尝试了 0, 0.3, 0.5, 0.7 和 1 这些设置。"
+       "original": "We train models on 16 GPUs.",
+       "zh": "我们在 16 块 GPU 上训练模型。"
       }
      ]
     },
@@ -3937,11 +4812,33 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-6-1-4-1",
+       "original": "To balance the different languages and corpora during training, we first balance the data of every language in the different corpora, using sampling parameter βL.",
+       "zh": "为在训练期间平衡不同语言和语料库，我们首先使用采样参数 βL 平衡不同语料库中每种语言的数据。"
+      },
+      {
+       "id": "s-6-1-4-2",
+       "original": "This is followed by balancing each language using the resampled data of the first step, using sampling parameter βD with the sampling distribution outlined in §4.1.",
+       "zh": "然后，使用第一步重采样得到的数据，按 §4.1 所述的采样分布，用采样参数 βD 平衡每种语言。"
+      },
+      {
+       "id": "s-6-1-4-3",
+       "original": "We experiment with βL and βD settings 0, 0.3, 0.5, 0.7 and 1.",
+       "zh": "我们对 βL 和 βD 尝试了 0, 0.3, 0.5, 0.7 和 1 这些设置。"
+      }
+     ]
+    },
+    {
+     "id": "p-6-1-5",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-6-1-5-1",
        "original": "When we train models on multiple datasets, then we use a development set containing up to 30 minutes of data for each language and we sample an equal amount of data from each corpus.",
        "zh": "当我们在多个数据集上训练模型时，我们使用每种语言至多 30 分钟数据的开发集，并从每个语料库中采样等量数据。"
       },
       {
-       "id": "s-6-1-4-2",
+       "id": "s-6-1-5-2",
        "original": "For models supporting 1K, 2K or 4K languages, we reduce the amount of data per language to 15 min, 7min and 3min to enable faster development.",
        "zh": "对于支持 1K、2K 或 4K 语言的模型，我们将每种语言的数据量分别降至 15 min、7min 和 3min，以加快开发速度。"
       }
@@ -4006,52 +4903,126 @@ globalThis.PAPER_2305_13516 = {
      ]
     },
     {
-     "id": "p-6-2-4",
-     "type": "paragraph",
+     "id": "tb-6-2-4",
+     "type": "table_body",
      "page": 21,
-     "sentences": [
-      {
-       "id": "s-6-2-4-1",
-       "original": "(33 lang.)",
-       "zh": "（33 种语言）"
-      }
-     ]
+     "original": "(33 lang.)\n(23 lang.)\n(25 lang.)\nPrior Work mSLAM [Bapna et al., 2022b]",
+     "cells": 4,
+     "zh": "（33 种语言）"
     },
     {
-     "id": "p-6-2-5",
-     "type": "paragraph",
+     "id": "eq-6-2-1",
+     "type": "equation",
      "page": 21,
-     "sentences": [
-      {
-       "id": "s-6-2-5-1",
-       "original": "(23 lang.)",
-       "zh": "（23 种语言）"
-      }
-     ]
+     "original": "102 77.7 - - -"
     },
     {
-     "id": "p-6-2-6",
-     "type": "paragraph",
+     "id": "eq-6-2-2",
+     "type": "equation",
      "page": 21,
-     "sentences": [
-      {
-       "id": "s-6-2-6-1",
-       "original": "(25 lang.)",
-       "zh": "（25 种语言）"
-      }
-     ]
+     "original": "Whisper [Radford et al., 2022]"
     },
     {
-     "id": "p-6-2-7",
-     "type": "paragraph",
+     "id": "eq-6-2-3",
+     "type": "equation",
      "page": 21,
-     "sentences": [
-      {
-       "id": "s-6-2-7-1",
-       "original": "Prior Work mSLAM [Bapna et al., 2022b] 102 77.7 Whisper [Radford et al., 2022] 82 64.5 ASRL [Chen et al., 2023] 102 95.9 XLS-R [Babu et al., 2022] 107 94.3 SpeechBrain [Ravanelli et al., 2021] 107 93.3 AmberNet [Jia et al., 2022] 107 95.3 Our Baselines (based on existing datasets) MMS (FL) 102 96.2 MMS (VL) 107 94.7 MMS (FL + VL) 126 97.4 94.3 78 87.8 This Work MMS (MMS-lab-U+unlab+FL+VL) 126 97.5 93.9 84.1 87.3 256 97.2 93.4 80.1 87.6 512 96.8 92.9 81.6 85.6 97 92.8 80.5 86.2 97.3 92.8 81.5 86.6 97.2 93.9 80.5 87.1",
-       "zh": "先前工作 mSLAM [Bapna et al., 2022b] 102 77.7 Whisper [Radford et al., 2022] 82 64.5 ASRL [Chen et al., 2023] 102 95.9 XLS-R [Babu et al., 2022] 107 94.3 SpeechBrain [Ravanelli et al., 2021] 107 93.3 AmberNet [Jia et al., 2022] 107 95.3 我们的基线（基于现有数据集）MMS (FL) 102 96.2 MMS (VL) 107 94.7 MMS (FL + VL) 126 97.4 94.3 78 87.8 本工作 MMS (MMS-lab-U+unlab+FL+VL) 126 97.5 93.9 84.1 87.3 256 97.2 93.4 80.1 87.6 512 96.8 92.9 81.6 85.6 97 92.8 80.5 86.2 97.3 92.8 81.5 86.6 97.2 93.9 80.5 87.1"
-      }
-     ]
+     "original": "82 64.5 - - -"
+    },
+    {
+     "id": "eq-6-2-4",
+     "type": "equation",
+     "page": 21,
+     "original": "ASRL [Chen et al., 2023]"
+    },
+    {
+     "id": "eq-6-2-5",
+     "type": "equation",
+     "page": 21,
+     "original": "102 95.9 - - -"
+    },
+    {
+     "id": "eq-6-2-6",
+     "type": "equation",
+     "page": 21,
+     "original": "XLS-R [Babu et al., 2022]"
+    },
+    {
+     "id": "eq-6-2-7",
+     "type": "equation",
+     "page": 21,
+     "original": "107 - 94.3 - -"
+    },
+    {
+     "id": "eq-6-2-8",
+     "type": "equation",
+     "page": 21,
+     "original": "SpeechBrain [Ravanelli et al., 2021]"
+    },
+    {
+     "id": "eq-6-2-9",
+     "type": "equation",
+     "page": 21,
+     "original": "107 - 93.3 - -"
+    },
+    {
+     "id": "eq-6-2-10",
+     "type": "equation",
+     "page": 21,
+     "original": "AmberNet [Jia et al., 2022]"
+    },
+    {
+     "id": "eq-6-2-11",
+     "type": "equation",
+     "page": 21,
+     "original": "107 - 95.3 - -"
+    },
+    {
+     "id": "eq-6-2-12",
+     "type": "equation",
+     "page": 21,
+     "original": "Our Baselines (based on existing datasets) MMS (FL)"
+    },
+    {
+     "id": "eq-6-2-13",
+     "type": "equation",
+     "page": 21,
+     "original": "102 96.2 - - -"
+    },
+    {
+     "id": "eq-6-2-14",
+     "type": "equation",
+     "page": 21,
+     "original": "MMS (VL)"
+    },
+    {
+     "id": "eq-6-2-15",
+     "type": "equation",
+     "page": 21,
+     "original": "107 - 94.7 - -"
+    },
+    {
+     "id": "eq-6-2-16",
+     "type": "equation",
+     "page": 21,
+     "original": "MMS (FL + VL)"
+    },
+    {
+     "id": "eq-6-2-17",
+     "type": "equation",
+     "page": 21,
+     "original": "126 97.4 94.3 78 87.8"
+    },
+    {
+     "id": "eq-6-2-18",
+     "type": "equation",
+     "page": 21,
+     "original": "This Work MMS (MMS-lab-U+unlab+FL+VL)"
+    },
+    {
+     "id": "eq-6-2-19",
+     "type": "equation",
+     "page": 21,
+     "original": "126 97.5 93.9 84.1 87.3 256 97.2 93.4 80.1 87.6 512 96.8 92.9 81.6 85.6 1,024 97 92.8 80.5 86.2 2,048 97.3 92.8 81.5 86.6 4,017 97.2 93.9 80.5 87.1"
     },
     {
      "id": "tab-6-2-1",
@@ -4629,10 +5600,16 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-mean-opinion-score-mos-2-1",
-       "original": "MMS-lab LJS FLEURS MMS-lab LJS FLEURS Natural speech 4.4 4.3 9.3 LJS phon.",
-       "zh": "MMS-lab LJS FLEURS MMS-lab LJS FLEURS 自然语音 4.4 4.3 9.3 LJS 音素"
+       "original": "MMS-lab LJS FLEURS MMS-lab LJS FLEURS Natural speech",
+       "zh": "（表头：MMS-lab / LJS / FLEURS × MMS-lab / LJS / FLEURS——Natural speech（后续照原文）。）"
       }
      ]
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-1",
+     "type": "equation",
+     "page": 24,
+     "original": "4.4 4.3 9.3 3.89 ± 0.06 3.96 ± 0.06 3.37 ± 0.07"
     },
     {
      "id": "p-mean-opinion-score-mos-3",
@@ -4641,10 +5618,16 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-mean-opinion-score-mos-3-1",
-       "original": "5.5 4.9 5.9 LJS phon.",
-       "zh": "5.5 4.9 5.9 LJS 音素"
+       "original": "800K LJS phon.",
+       "zh": "（表格行）800K LJS phon.（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-2",
+     "type": "equation",
+     "page": 24,
+     "original": "5.5 4.9 5.9 3.87 ± 0.08 3.82 ± 0.06 3.73 ± 0.07"
     },
     {
      "id": "p-mean-opinion-score-mos-4",
@@ -4653,10 +5636,16 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-mean-opinion-score-mos-4-1",
-       "original": "6.3 4.9 6.3 MMS-lab phon.",
-       "zh": "6.3 4.9 6.3 MMS-lab 音素"
+       "original": "100K LJS phon.",
+       "zh": "（表格行）5.5/4.9/5.9；3.87 ± 0.08 / 3.82 ± 0.06 / 3.73 ± 0.07；100K LJS phon.（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-3",
+     "type": "equation",
+     "page": 24,
+     "original": "6.3 4.9 6.3 3.64 ± 0.09 3.74 ± 0.07 3.66 ± 0.07"
     },
     {
      "id": "p-mean-opinion-score-mos-5",
@@ -4665,10 +5654,28 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-mean-opinion-score-mos-5-1",
-       "original": "7.2 6.8 7.9 MMS-lab chars 7.2 9.2 10.0",
-       "zh": "7.2 6.8 7.9 MMS-lab 字符 7.2 9.2 10.0"
+       "original": "100K MMS-lab phon.",
+       "zh": "（表格行）6.3/4.9/6.3；3.64 ± 0.09 / 3.74 ± 0.07 / 3.66 ± 0.07；100K MMS-lab phon.（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-4",
+     "type": "equation",
+     "page": 24,
+     "original": "7.2 6.8 7.9 3.68 ± 0.07 3.51 ± 0.08 3.54 ± 0.07"
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-5",
+     "type": "equation",
+     "page": 24,
+     "original": "100K MMS-lab chars"
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-6",
+     "type": "equation",
+     "page": 24,
+     "original": "7.2 9.2 10.0 3.58 ± 0.08 3.45 ± 0.08 3.34 ± 0.09"
     },
     {
      "id": "tab-mean-opinion-score-mos-1",
@@ -4684,10 +5691,64 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-mean-opinion-score-mos-6-1",
-       "original": "ASR (CER) MOS MMS-lab LJS FLEURS MMS-lab LJS FLEURS Natural speech 4.4 4.3 9.3 no background music 7.2 9.2 10.0 background music 11.8 15.6 16.1 + denoise 10.8 13.2 14.4 + denoise + filter 7.8 10.8 11.9",
-       "zh": "ASR (CER) MOS MMS-lab LJS FLEURS MMS-lab LJS FLEURS 自然语音 4.4 4.3 9.3 无背景音乐 7.2 9.2 10.0 有背景音乐 11.8 15.6 16.1 + 降噪 10.8 13.2 14.4 + 降噪 + 过滤 7.8 10.8 11.9"
+       "original": "ASR (CER) MOS MMS-lab LJS FLEURS MMS-lab LJS FLEURS Natural speech",
+       "zh": "CER"
       }
      ]
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-7",
+     "type": "equation",
+     "page": 24,
+     "original": "4.4 4.3 9.3 3.89 ± 0.06 3.96 ± 0.06 3.37 ± 0.07"
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-8",
+     "type": "equation",
+     "page": 24,
+     "original": "no background music"
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-9",
+     "type": "equation",
+     "page": 24,
+     "original": "7.2 9.2 10.0 3.51 ± 0.07 3.52 ± 0.08 3.41 ± 0.09"
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-10",
+     "type": "equation",
+     "page": 24,
+     "original": "background music"
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-11",
+     "type": "equation",
+     "page": 24,
+     "original": "11.8 15.6 16.1 3.24 ± 0.08 2.98 ± 0.08 3.01 ± 0.08"
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-12",
+     "type": "equation",
+     "page": 24,
+     "original": "+ denoise"
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-13",
+     "type": "equation",
+     "page": 24,
+     "original": "10.8 13.2 14.4 3.32 ± 0.08 3.18 ± 0.07 3.16 ± 0.08"
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-14",
+     "type": "equation",
+     "page": 24,
+     "original": "+ denoise + filter"
+    },
+    {
+     "id": "eq-mean-opinion-score-mos-15",
+     "type": "equation",
+     "page": 24,
+     "original": "7.8 10.8 11.9 3.47 ± 0.07 3.32 ± 0.08 3.12 ± 0.07"
     },
     {
      "id": "tab-mean-opinion-score-mos-2",
@@ -4787,10 +5848,28 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-7-4-1-3-1",
-       "original": "ASR (CER) MOS TTS ref TTS ref In-domain 11.1 9.2 Out-of-domain 11.3 8.8 3.33 ± 0.12∗",
-       "zh": "ASR (CER) MOS TTS ref TTS ref 域内 11.1 9.2 域外 11.3 8.8 3.33 ± 0.12∗"
+       "original": "ASR (CER) MOS TTS ref TTS ref In-domain",
+       "zh": "CER"
       }
      ]
+    },
+    {
+     "id": "eq-7-4-1-1",
+     "type": "equation",
+     "page": 25,
+     "original": "11.1 9.2 3.51 ± 0.11 3.61 ± 0.11"
+    },
+    {
+     "id": "eq-7-4-1-2",
+     "type": "equation",
+     "page": 25,
+     "original": "Out-of-domain"
+    },
+    {
+     "id": "eq-7-4-1-3",
+     "type": "equation",
+     "page": 25,
+     "original": "11.3 8.8 3.52 ± 0.11 3.33 ± 0.12∗"
     },
     {
      "id": "tab-7-4-1-1",
@@ -4949,10 +6028,100 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-7-5-2-1",
-       "original": "#lang MCD ASR (CER) TTS CER % TTS ref ≤5 Asia 335 296 South America 136 129 North America 144 125 Europe 41 39 Africa 363 277 Pacific 88 79 945",
-       "zh": "#语言数 MCD ASR (CER) TTS CER % TTS ref ≤5 亚洲 335 296 南美洲 136 129 北美洲 144 125 欧洲 41 39 非洲 363 277 太平洋 88 79 945"
+       "original": "#lang MCD ASR (CER) TTS CER",
+       "zh": "CER"
       }
      ]
+    },
+    {
+     "id": "eq-7-5-1",
+     "type": "equation",
+     "page": 26,
+     "original": "%"
+    },
+    {
+     "id": "eq-7-5-2",
+     "type": "equation",
+     "page": 26,
+     "original": "TTS ref"
+    },
+    {
+     "id": "eq-7-5-3",
+     "type": "equation",
+     "page": 26,
+     "original": "≤5"
+    },
+    {
+     "id": "eq-7-5-4",
+     "type": "equation",
+     "page": 26,
+     "original": "Asia"
+    },
+    {
+     "id": "eq-7-5-5",
+     "type": "equation",
+     "page": 26,
+     "original": "335 4.30 ± 0.1 3.1 ± 0.2 1.9 ± 0.1 296 88%"
+    },
+    {
+     "id": "eq-7-5-6",
+     "type": "equation",
+     "page": 26,
+     "original": "South America"
+    },
+    {
+     "id": "eq-7-5-7",
+     "type": "equation",
+     "page": 26,
+     "original": "136 4.10 ± 0.1 2.6 ± 0.2 1.8 ± 0.1 129 95%"
+    },
+    {
+     "id": "eq-7-5-8",
+     "type": "equation",
+     "page": 26,
+     "original": "North America"
+    },
+    {
+     "id": "eq-7-5-9",
+     "type": "equation",
+     "page": 26,
+     "original": "144 4.12 ± 0.1 3.8 ± 0.8 2.4 ± 0.2 125 87%"
+    },
+    {
+     "id": "eq-7-5-10",
+     "type": "equation",
+     "page": 26,
+     "original": "Europe"
+    },
+    {
+     "id": "eq-7-5-11",
+     "type": "equation",
+     "page": 26,
+     "original": "41 4.33 ± 0.2 3.0 ± 0.3 1.9 ± 0.2 39 95%"
+    },
+    {
+     "id": "eq-7-5-12",
+     "type": "equation",
+     "page": 26,
+     "original": "Africa"
+    },
+    {
+     "id": "eq-7-5-13",
+     "type": "equation",
+     "page": 26,
+     "original": "363 4.34 ± 0.1 4.1 ± 0.2 2.6 ± 0.1 277 76%"
+    },
+    {
+     "id": "eq-7-5-14",
+     "type": "equation",
+     "page": 26,
+     "original": "Pacific"
+    },
+    {
+     "id": "eq-7-5-15",
+     "type": "equation",
+     "page": 26,
+     "original": "88 4.72 ± 0.2 3.4 ± 1.3 1.8 ± 0.2 79 90% 1,107 4.30 ± 0.0 3.5 ± 0.2 2.2 ± 0.1 945 85%"
     },
     {
      "id": "tab-7-5-2",
@@ -5183,10 +6352,17 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-8-1-4-1",
-       "original": "Overall Female Male 0",
+       "original": "Overall Female Male",
        "zh": "总体 女性 男性 0"
       }
      ]
+    },
+    {
+     "id": "eq-8-1-4",
+     "type": "equation",
+     "page": 27,
+     "original": "0",
+     "zh": "0"
     },
     {
      "id": "fig-8-1-1",
@@ -5703,7 +6879,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-1-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-1-2",
@@ -5727,11 +6904,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-1-7",
-       "original": "Meyer, R."
+       "original": "Meyer, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-1-8",
-       "original": "Morais, L."
+       "original": "Morais, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-1-9",
@@ -5762,9 +6941,16 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-2-4",
-       "original": "Proc. of LREC, 2020."
+       "original": "Proc. of LREC,",
+       "zh": "5."
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 29,
+     "original": "2020."
     },
     {
      "id": "p-references-3",
@@ -5777,7 +6963,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-3-2",
-       "original": "L."
+       "original": "L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-3-3",
@@ -5785,7 +6972,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-3-4",
-       "original": "R."
+       "original": "R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-3-5",
@@ -5801,7 +6989,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-3-8",
-       "original": "Layer normalization. arXiv, 2016."
+       "original": "Layer normalization. arXiv, 2016.",
+       "zh": "6."
       }
      ]
     },
@@ -5812,7 +7001,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-4-2",
@@ -5860,7 +7050,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-4-13",
-       "original": "Auli."
+       "original": "Auli.",
+       "zh": "2."
       },
       {
        "id": "s-references-4-14",
@@ -5868,11 +7059,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-4-15",
-       "original": "In Proc."
+       "original": "In Proc.",
+       "zh": "3."
       },
       {
        "id": "s-references-4-16",
-       "original": "Interspeech 2022, pages 2278–2282, 2022. doi: 10.21437/Interspeech.2022-143."
+       "original": "Interspeech 2022, pages 2278–2282, 2022. doi: 10.21437/Interspeech.2022-143.",
+       "zh": "2."
       }
      ]
     },
@@ -5883,11 +7076,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-5-2",
-       "original": "Baevski, S."
+       "original": "Baevski, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-5-3",
@@ -5895,11 +7090,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-5-4",
-       "original": "Auli. vq-wav2vec: Self-supervised learning of discrete speech representations."
+       "original": "Auli. vq-wav2vec: Self-supervised learning of discrete speech representations.",
+       "zh": "2."
       },
       {
        "id": "s-references-5-5",
-       "original": "In Proc. of ICLR, 2020a."
+       "original": "In Proc. of ICLR, 2020a.",
+       "zh": "3."
       }
      ]
     },
@@ -5910,7 +7107,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-6-2",
@@ -5926,11 +7124,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-6-5",
-       "original": "Auli. wav2vec 2.0: A framework for self-supervised learning of speech representations."
+       "original": "Auli. wav2vec 2.0: A framework for self-supervised learning of speech representations.",
+       "zh": "2."
       },
       {
        "id": "s-references-6-6",
-       "original": "In Proc. of NeurIPS, 2020b."
+       "original": "In Proc. of NeurIPS, 2020b.",
+       "zh": "3."
       }
      ]
     },
@@ -5941,7 +7141,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-7-2",
@@ -5957,7 +7158,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-7-5",
-       "original": "Auli."
+       "original": "Auli.",
+       "zh": "2."
       },
       {
        "id": "s-references-7-6",
@@ -5981,11 +7183,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-7-11",
-       "original": "W."
+       "original": "W.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-7-12",
-       "original": "Vaughan, editors, Advances in Neural Information Processing Systems, 2021."
+       "original": "Vaughan, editors, Advances in Neural Information Processing Systems, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6000,7 +7204,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-8-2",
-       "original": "Baines, S."
+       "original": "Baines, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-8-3",
@@ -6012,7 +7217,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-8-5",
-       "original": "Goyal, S."
+       "original": "Goyal, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-8-6",
@@ -6020,7 +7226,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-8-7",
-       "original": "Ott, B."
+       "original": "Ott, B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-8-8",
@@ -6032,7 +7239,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-8-10",
-       "original": "Rabbat, S."
+       "original": "Rabbat, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-8-11",
@@ -6048,7 +7256,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-8-14",
-       "original": "Fairscale: A general purpose modular pytorch library for high performance and large scale training. https://github.com/facebookresearch/ fairscale, 2021."
+       "original": "Fairscale: A general purpose modular pytorch library for high performance and large scale training. https://github.com/facebookresearch/ fairscale, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6059,11 +7268,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-9-2",
-       "original": "Bapna, I."
+       "original": "Bapna, I.",
+       "zh": "在 Meta AI 工作期间完成。"
       },
       {
        "id": "s-references-9-3",
@@ -6075,7 +7286,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-9-5",
-       "original": "Firat, D. van Esch, A."
+       "original": "Firat, D. van Esch, A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-9-6",
@@ -6095,7 +7307,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-9-10",
-       "original": "Macherey, T."
+       "original": "Macherey, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-9-11",
@@ -6159,7 +7372,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-9-26",
-       "original": "Building machine translation systems for the next thousand languages. arXiv, abs/2205.03983, 2022a."
+       "original": "Building machine translation systems for the next thousand languages. arXiv, abs/2205.03983, 2022a.",
+       "zh": "5."
       }
      ]
     },
@@ -6170,7 +7384,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-10-2",
@@ -6194,7 +7409,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-10-7",
-       "original": "Cheng, S."
+       "original": "Cheng, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-10-8",
@@ -6221,7 +7437,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-11-2",
-       "original": "ArXiv, abs/2202.01374, 2022b."
+       "original": "ArXiv, abs/2202.01374, 2022b.",
+       "zh": "2."
       }
      ]
     },
@@ -6232,11 +7449,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-12-2",
-       "original": "W."
+       "original": "W.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-12-3",
@@ -6248,7 +7467,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-12-5",
-       "original": "In Proc. of ICASSP, 2019."
+       "original": "In Proc. of ICASSP, 2019.",
+       "zh": "3."
       }
      ]
     },
@@ -6271,7 +7491,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-13-4",
-       "original": "Sadhana, 2011."
+       "original": "Sadhana, 2011.",
+       "zh": "1."
       }
      ]
     },
@@ -6282,11 +7503,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "L."
+       "original": "L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-14-2",
-       "original": "Bromham, R."
+       "original": "Bromham, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-14-3",
@@ -6306,7 +7529,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-14-7",
-       "original": "Meakins, S."
+       "original": "Meakins, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-14-8",
@@ -6329,7 +7553,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-15-2",
-       "original": "Nature Ecology and Evolution, 2021."
+       "original": "Nature Ecology and Evolution, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6340,7 +7565,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "L."
+       "original": "L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-16-2",
@@ -6352,7 +7578,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-16-4",
-       "original": "In Proc. of ICASSP, 2010."
+       "original": "In Proc. of ICASSP, 2010.",
+       "zh": "3."
       }
      ]
     },
@@ -6395,7 +7622,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-17-9",
-       "original": "In International Conference on Learning Representations, 2022."
+       "original": "In International Conference on Learning Representations, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -6429,7 +7657,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-19-4",
-       "original": "D."
+       "original": "D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-19-5",
@@ -6449,7 +7678,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-19-9",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-19-10",
@@ -6465,7 +7695,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-19-13",
-       "original": "PMLR, 2022."
+       "original": "PMLR, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -6476,7 +7707,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "W."
+       "original": "W.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-20-2",
@@ -6500,7 +7732,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-20-7",
-       "original": "Listen, attend and spell. arXiv, 2015."
+       "original": "Listen, attend and spell. arXiv, 2015.",
+       "zh": "5."
       }
      ]
     },
@@ -6511,11 +7744,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "W."
+       "original": "W.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-21-2",
-       "original": "Chan, D."
+       "original": "Chan, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-21-3",
@@ -6539,7 +7774,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-21-8",
-       "original": "Speechstew: Simply mix all available speech recognition data to train one large neural network. arXiv, abs/2104.02133, 2021."
+       "original": "Speechstew: Simply mix all available speech recognition data to train one large neural network. arXiv, abs/2104.02133, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6550,11 +7786,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "T."
+       "original": "T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-22-2",
-       "original": "Chen, B."
+       "original": "Chen, B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-22-3",
@@ -6570,7 +7808,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-22-6",
-       "original": "Training deep nets with sublinear memory cost. arXiv, abs/1604.06174, 2016."
+       "original": "Training deep nets with sublinear memory cost. arXiv, abs/1604.06174, 2016.",
+       "zh": "4."
       }
      ]
     },
@@ -6581,11 +7820,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "W."
+       "original": "W.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-23-2",
-       "original": "Chen, B."
+       "original": "Chen, B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-23-3",
@@ -6597,11 +7838,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-23-5",
-       "original": "Peng, S."
+       "original": "Peng, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-23-6",
-       "original": "Maiti, and S."
+       "original": "Maiti, and S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-23-7",
@@ -6613,7 +7856,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-23-9",
-       "original": "In Proc. of ICASSP, 2023."
+       "original": "In Proc. of ICASSP, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -6636,7 +7880,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-24-4",
-       "original": "Rosenberg, B."
+       "original": "Rosenberg, B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-24-5",
@@ -6656,7 +7901,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-24-9",
-       "original": "Maestro: Matched speech text representations through modality matching. arXiv, abs/2204.03409, 2022."
+       "original": "Maestro: Matched speech text representations through modality matching. arXiv, abs/2204.03409, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -6683,7 +7929,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-25-5",
-       "original": "In Proc. of IEEE SLT, 2018."
+       "original": "In Proc. of IEEE SLT, 2018.",
+       "zh": "3."
       }
      ]
     },
@@ -6717,7 +7964,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "In Proc. of LREC, 2015."
+       "original": "In Proc. of LREC, 2015.",
+       "zh": "5."
       }
      ]
     },
@@ -6728,7 +7976,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-28-2",
@@ -6744,7 +7993,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-28-5",
-       "original": "Wav2letter: an end-to-end convnet-based speech recognition system. arXiv, abs/1609.03193, 2016."
+       "original": "Wav2letter: an end-to-end convnet-based speech recognition system. arXiv, abs/1609.03193, 2016.",
+       "zh": "6."
       }
      ]
     },
@@ -6755,7 +8005,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-29-2",
@@ -6782,7 +8033,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-30-2",
@@ -6790,7 +8042,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-30-3",
-       "original": "Baevski, R."
+       "original": "Baevski, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-30-4",
@@ -6802,11 +8055,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-30-6",
-       "original": "Auli."
+       "original": "Auli.",
+       "zh": "2."
       },
       {
        "id": "s-references-30-7",
-       "original": "Unsupervised cross-lingual representation learning for speech recognition. arXiv, abs/2006.13979, 2020a."
+       "original": "Unsupervised cross-lingual representation learning for speech recognition. arXiv, abs/2006.13979, 2020a.",
+       "zh": "6."
       }
      ]
     },
@@ -6817,7 +8072,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-31-2",
@@ -6849,7 +8105,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-31-9",
-       "original": "Ott, L."
+       "original": "Ott, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-31-10",
@@ -6865,7 +8122,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-31-13",
-       "original": "In Proc. of ACL, 2020b."
+       "original": "In Proc. of ACL, 2020b.",
+       "zh": "3."
       }
      ]
     },
@@ -6876,7 +8134,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-32-2",
@@ -6884,7 +8143,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-32-3",
-       "original": "Ma, S."
+       "original": "Ma, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-32-4",
@@ -6896,7 +8156,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-32-6",
-       "original": "Axelrod, S."
+       "original": "Axelrod, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-32-7",
@@ -6923,7 +8184,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "Fleurs: Few-shot learning evaluation of universal representations of speech. arXiv, 2022."
+       "original": "Fleurs: Few-shot learning evaluation of universal representations of speech. arXiv, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -6934,7 +8196,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-34-2",
@@ -7007,7 +8270,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "S."
+       "original": "S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-37-2",
@@ -7034,7 +8298,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "L."
+       "original": "L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-38-2",
@@ -7042,7 +8307,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-38-3",
-       "original": "Sohl-Dickstein, and S."
+       "original": "Sohl-Dickstein, and S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-38-4",
@@ -7054,7 +8320,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-38-6",
-       "original": "In ICLR."
+       "original": "In ICLR.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-38-7",
@@ -7069,7 +8336,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-39-2",
@@ -7093,7 +8361,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-39-7",
-       "original": "In Proc. of MIREX, 2018."
+       "original": "In Proc. of MIREX, 2018.",
+       "zh": "3."
       }
      ]
     },
@@ -7112,11 +8381,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-40-3",
-       "original": "Li, S."
+       "original": "Li, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-40-4",
-       "original": "Zhou, and B."
+       "original": "Zhou, and B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-40-5",
@@ -7124,7 +8395,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-40-6",
-       "original": "Exploring wav2vec 2.0 on speaker verification and language identification. arXiv, 2021."
+       "original": "Exploring wav2vec 2.0 on speaker verification and language identification. arXiv, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -7159,7 +8431,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-41-7",
-       "original": "Ragni, and S."
+       "original": "Ragni, and S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-41-8",
@@ -7175,7 +8448,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-41-11",
-       "original": "In Spoken Language Technologies for Under-Resourced Languages, 2014."
+       "original": "In Spoken Language Technologies for Under-Resourced Languages, 2014.",
+       "zh": "4."
       }
      ]
     },
@@ -7186,11 +8460,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-42-2",
-       "original": "Graves, S."
+       "original": "Graves, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-42-3",
@@ -7206,7 +8482,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-42-6",
-       "original": "In Proc. of ICML, 2006."
+       "original": "In Proc. of ICML, 2006.",
+       "zh": "6."
       }
      ]
     },
@@ -7225,7 +8502,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-43-3",
-       "original": "Yang, L."
+       "original": "Yang, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-43-4",
@@ -7241,7 +8519,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-43-7",
-       "original": "Multilingual byte2speech models for scalable low-resource speech synthesis. arXiv, abs/arXiv:2103.03541, 2021."
+       "original": "Multilingual byte2speech models for scalable low-resource speech synthesis. arXiv, abs/arXiv:2103.03541, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -7264,7 +8543,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-44-4",
-       "original": "In Proceedings of the Sixth Workshop on Statistical Machine Translation, pages 187–197, Edinburgh, Scotland, July 2011."
+       "original": "In Proceedings of the Sixth Workshop on Statistical Machine Translation, pages 187–197, Edinburgh, Scotland, July 2011.",
+       "zh": "1."
       }
      ]
     },
@@ -7275,7 +8555,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-45-1",
-       "original": "Association for Computational Linguistics."
+       "original": "Association for Computational Linguistics.",
+       "zh": "3."
       }
      ]
     },
@@ -7322,7 +8603,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-46-10",
-       "original": "In Proc. of ICASSP, 2013."
+       "original": "In Proc. of ICASSP, 2013.",
+       "zh": "3."
       }
      ]
     },
@@ -7333,7 +8615,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-47-1",
-       "original": "U."
+       "original": "U.",
+       "zh": "我们的大多数超参数与在 LJSpeech 上训练的 VITS 模型相同 [Ito and Johnson, 2017, Kim et al., 2021]，但有以下不同：我们不是训练模型 800K 步，而是每个模型训练 100K 步，使用 8 块 V100 GPU，每块 GPU 批大小为 64。"
       },
       {
        "id": "s-references-47-2",
@@ -7357,11 +8640,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-47-7",
-       "original": "Association for Computational Linguistics. doi: 10.18653/v1/P18-4003."
+       "original": "Association for Computational Linguistics. doi: 10.18653/v1/P18-4003.",
+       "zh": "3."
       },
       {
        "id": "s-references-47-8",
-       "original": "URL https: //aclanthology.org/P18-4003."
+       "original": "URL https: //aclanthology.org/P18-4003.",
+       "zh": "3."
       }
      ]
     },
@@ -7376,7 +8661,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-48-2",
-       "original": "L."
+       "original": "L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-48-3",
@@ -7388,7 +8674,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-48-5",
-       "original": "JIPA, 23:72, 1993."
+       "original": "JIPA, 23:72, 1993.",
+       "zh": "3."
       }
      ]
     },
@@ -7407,11 +8694,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-49-3",
-       "original": "Giurgiu, S."
+       "original": "Giurgiu, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-49-4",
-       "original": "Jastrzebski, B."
+       "original": "Jastrzebski, B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-49-5",
@@ -7427,7 +8716,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-49-8",
-       "original": "Attariyan, and S."
+       "original": "Attariyan, and S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-49-9",
@@ -7466,7 +8756,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-50-4",
-       "original": "Baevski, T."
+       "original": "Baevski, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-50-5",
@@ -7486,7 +8777,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-50-9",
-       "original": "Lee, R."
+       "original": "Lee, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-50-10",
@@ -7494,7 +8786,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-50-11",
-       "original": "Synnaeve, et al. Robust wav2vec 2.0: Analyzing domain shift in self-supervised pre-training."
+       "original": "Synnaeve, et al. Robust wav2vec 2.0: Analyzing domain shift in self-supervised pre-training.",
+       "zh": "2."
       }
      ]
     },
@@ -7505,7 +8798,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-51-1",
-       "original": "arXiv preprint arXiv:2104.01027, 2021."
+       "original": "arXiv preprint arXiv:2104.01027, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -7520,7 +8814,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-52-2",
-       "original": "Ito and L."
+       "original": "Ito and L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-52-3",
@@ -7528,9 +8823,15 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-52-4",
-       "original": "The lj speech dataset. https://keithito.com/LJ-Speech-Dataset/, 2017."
+       "original": "The lj speech dataset. https://keithito.com/LJ-Speech-Dataset/,"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 31,
+     "original": "2017."
     },
     {
      "id": "p-references-53",
@@ -7543,11 +8844,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-53-2",
-       "original": "Jang, S."
+       "original": "Jang, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-53-3",
-       "original": "Gu, and B."
+       "original": "Gu, and B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-53-4",
@@ -7559,9 +8862,16 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-53-6",
-       "original": "Proc. of ICLR, 2016."
+       "original": "Proc. of ICLR,",
+       "zh": "6."
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 31,
+     "original": "2016."
     },
     {
      "id": "p-references-54",
@@ -7570,11 +8880,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-54-1",
-       "original": "T."
+       "original": "T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-54-2",
-       "original": "Javed, S."
+       "original": "Javed, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-54-3",
@@ -7586,7 +8898,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-54-5",
-       "original": "S."
+       "original": "S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-54-6",
@@ -7618,9 +8931,16 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-54-13",
-       "original": "In Proc. of AAAI CAI, 2022."
+       "original": "In Proc. of AAAI CAI,",
+       "zh": "3."
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 31,
+     "original": "2022."
     },
     {
      "id": "p-references-55",
@@ -7668,7 +8988,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-56-3",
-       "original": "Intell., 33(1):117–128, Jan. 2011."
+       "original": "Intell., 33(1):117–128, Jan. 2011.",
+       "zh": "1."
       }
      ]
     },
@@ -7687,7 +9008,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-57-3",
-       "original": "R."
+       "original": "R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-57-4",
@@ -7695,7 +9017,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-57-5",
-       "original": "Balam, and B."
+       "original": "Balam, and B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-57-6",
@@ -7703,7 +9026,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-57-7",
-       "original": "Ambernet: A compact end-to-end model for spoken language identification. arXiv, abs/2210.15781, 2022."
+       "original": "Ambernet: A compact end-to-end model for spoken language identification. arXiv, abs/2210.15781, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -7718,7 +9042,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-58-2",
-       "original": "D."
+       "original": "D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-58-3",
@@ -7726,7 +9051,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-58-4",
-       "original": "Pratap, T."
+       "original": "Pratap, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-58-5",
@@ -7762,11 +9088,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-58-13",
-       "original": "In International Conference on Machine Learning, pages 10557–10574."
+       "original": "In International Conference on Machine Learning, pages 10557–10574.",
+       "zh": "4."
       },
       {
        "id": "s-references-58-14",
-       "original": "PMLR, 2022."
+       "original": "PMLR, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -7777,7 +9105,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-59-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-59-2",
@@ -7789,7 +9118,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-59-4",
-       "original": "In Proc. of Interspeech, 2019."
+       "original": "In Proc. of Interspeech, 2019.",
+       "zh": "3."
       }
      ]
     },
@@ -7820,7 +9150,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-60-6",
-       "original": "In Proc. of ICML, 2021."
+       "original": "In Proc. of ICML, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -7831,7 +9162,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-61-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-61-2",
@@ -7851,7 +9183,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-61-6",
-       "original": "In Proc. of ICLR, 2015."
+       "original": "In Proc. of ICLR, 2015.",
+       "zh": "5."
       }
      ]
     },
@@ -7862,7 +9195,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-62-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-62-2",
@@ -7882,7 +9216,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-62-6",
-       "original": "CoRR, abs/1312.6114, 2013."
+       "original": "CoRR, abs/1312.6114, 2013.",
+       "zh": "2."
       }
      ]
     },
@@ -7893,7 +9228,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-63-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-63-2",
@@ -7925,15 +9261,18 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-63-9",
-       "original": "R."
+       "original": "R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-63-10",
-       "original": "Rickford, D."
+       "original": "Rickford, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-63-11",
-       "original": "Jurafsky, and S."
+       "original": "Jurafsky, and S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-63-12",
@@ -7987,19 +9326,23 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-65-1",
-       "original": "L."
+       "original": "L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-65-2",
-       "original": "Kürzinger, D."
+       "original": "Kürzinger, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-65-3",
-       "original": "Winkelbauer, L."
+       "original": "Winkelbauer, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-65-4",
-       "original": "Li, T."
+       "original": "Li, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-65-5",
@@ -8019,7 +9362,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-65-9",
-       "original": "Karpov and R."
+       "original": "Karpov and R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-65-10",
@@ -8058,7 +9402,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-66-6",
-       "original": "Owodunni, and D."
+       "original": "Owodunni, and D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-66-7",
@@ -8070,9 +9415,16 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-66-9",
-       "original": "In Proc. of EMNLP, 2022."
+       "original": "In Proc. of EMNLP,",
+       "zh": "3."
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 32,
+     "original": "2022."
     },
     {
      "id": "p-references-67",
@@ -8101,7 +9453,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-67-6",
-       "original": "D."
+       "original": "D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-67-7",
@@ -8120,7 +9473,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-68-1",
-       "original": "Online version: http://www.ethnologue.com, 2016."
+       "original": "Online version: http://www.ethnologue.com, 2016.",
+       "zh": "6."
       }
      ]
     },
@@ -8131,7 +9485,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-69-1",
-       "original": "B."
+       "original": "B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-69-2",
@@ -8139,7 +9494,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-69-3",
-       "original": "Zhang, T."
+       "original": "Zhang, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-69-4",
@@ -8159,7 +9515,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-69-8",
-       "original": "In Proc. of ICASSP, 2019."
+       "original": "In Proc. of ICASSP, 2019.",
+       "zh": "3."
       }
      ]
     },
@@ -8170,15 +9527,18 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-70-1",
-       "original": "B."
+       "original": "B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-70-2",
-       "original": "Li, R."
+       "original": "Li, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-70-3",
-       "original": "Pang, T."
+       "original": "Pang, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-70-4",
@@ -8206,7 +9566,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-70-10",
-       "original": "R."
+       "original": "R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-70-11",
@@ -8226,7 +9587,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-70-15",
-       "original": "In Proc. of ASRU, 2021."
+       "original": "In Proc. of ASRU, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -8245,11 +9607,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-71-3",
-       "original": "Metze, D."
+       "original": "Metze, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-71-4",
-       "original": "R."
+       "original": "R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-71-5",
@@ -8257,11 +9621,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-71-6",
-       "original": "W."
+       "original": "W.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-71-7",
-       "original": "Black, and S."
+       "original": "Black, and S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-71-8",
@@ -8269,7 +9635,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-71-9",
-       "original": "Asr2k: Speech recognition for around 2000 languages without audio. arXiv preprint arXiv:2209.02842, 2022."
+       "original": "Asr2k: Speech recognition for around 2000 languages without audio. arXiv preprint arXiv:2209.02842, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -8280,7 +9647,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-72-1",
-       "original": "T."
+       "original": "T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-72-2",
@@ -8288,7 +9656,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-72-3",
-       "original": "Synnaeve, and R."
+       "original": "Synnaeve, and R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-72-4",
@@ -8307,7 +9676,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-73-1",
-       "original": "In Proc. of Interspeech, 2019."
+       "original": "In Proc. of Interspeech, 2019.",
+       "zh": "3."
       }
      ]
     },
@@ -8318,7 +9688,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-74-1",
-       "original": "T."
+       "original": "T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-74-2",
@@ -8342,7 +9713,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-74-7",
-       "original": "Avidov, R."
+       "original": "Avidov, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-74-8",
@@ -8365,7 +9737,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-75-2",
-       "original": "In Proc. of Interspeech, 2020."
+       "original": "In Proc. of Interspeech, 2020.",
+       "zh": "3."
       }
      ]
     },
@@ -8380,11 +9753,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-76-2",
-       "original": "Lin, L."
+       "original": "Lin, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-76-3",
-       "original": "Deng, D."
+       "original": "Deng, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-76-4",
@@ -8408,7 +9783,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-76-9",
-       "original": "In Proc. of ICASSP, 2009."
+       "original": "In Proc. of ICASSP, 2009.",
+       "zh": "3."
       }
      ]
     },
@@ -8419,7 +9795,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-77-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-77-2",
@@ -8454,7 +9831,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-78-1",
-       "original": "arXiv, 2022."
+       "original": "arXiv, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -8465,7 +9843,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-79-1",
-       "original": "Y."
+       "original": "Y.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-79-2",
@@ -8481,7 +9860,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-79-5",
-       "original": "Li, S."
+       "original": "Li, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-79-6",
@@ -8493,7 +9873,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-79-8",
-       "original": "Lewis, and L."
+       "original": "Lewis, and L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-79-9",
@@ -8508,7 +9889,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-80-1",
-       "original": "Multilingual denoising pre-training for neural machine translation. arXiv, abs/2001.08210, 2020."
+       "original": "Multilingual denoising pre-training for neural machine translation. arXiv, abs/2001.08210, 2020.",
+       "zh": "1."
       }
      ]
     },
@@ -8519,11 +9901,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-81-1",
-       "original": "L."
+       "original": "L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-81-2",
-       "original": "Lugosch, T."
+       "original": "Lugosch, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-81-3",
@@ -8531,7 +9915,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-81-4",
-       "original": "Synnaeve, and R."
+       "original": "Synnaeve, and R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-81-5",
@@ -8543,7 +9928,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-81-7",
-       "original": "In Proc. of ICASSP, 2022."
+       "original": "In Proc. of ICASSP, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -8554,7 +9940,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-82-1",
-       "original": "M-AILABS."
+       "original": "M-AILABS.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-82-2",
@@ -8577,7 +9964,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-83-2",
-       "original": "Mauch and S."
+       "original": "Mauch and S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-83-3",
@@ -8585,7 +9973,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-83-4",
-       "original": "Pyin: A fundamental frequency estimator using probabilistic threshold distributions. 2014 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 659–663, 2014."
+       "original": "Pyin: A fundamental frequency estimator using probabilistic threshold distributions. 2014 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 659–663, 2014.",
+       "zh": "4."
       }
      ]
     },
@@ -8596,15 +9985,18 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-84-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-84-2",
-       "original": "McCarthy, R."
+       "original": "McCarthy, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-84-3",
-       "original": "Wicks, D."
+       "original": "Wicks, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-84-4",
@@ -8628,7 +10020,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-84-9",
-       "original": "Post, and D."
+       "original": "Post, and D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-84-10",
@@ -8647,7 +10040,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-85-1",
-       "original": "In Proc. of LREC, 2020."
+       "original": "In Proc. of LREC, 2020.",
+       "zh": "3."
       }
      ]
     },
@@ -8662,11 +10056,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-86-2",
-       "original": "Meyer, D."
+       "original": "Meyer, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-86-3",
-       "original": "I."
+       "original": "I.",
+       "zh": "在 Meta AI 工作期间完成。"
       },
       {
        "id": "s-references-86-4",
@@ -8674,11 +10070,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-86-5",
-       "original": "Casanova, A. Öktem, D."
+       "original": "Casanova, A. Öktem, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-86-6",
-       "original": "W."
+       "original": "W.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-86-7",
@@ -8686,7 +10084,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-86-8",
-       "original": "Weber, S."
+       "original": "Weber, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-86-9",
@@ -8694,7 +10093,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-86-10",
-       "original": "Salesky, I."
+       "original": "Salesky, I.",
+       "zh": "在 Meta AI 工作期间完成。"
       },
       {
        "id": "s-references-86-11",
@@ -8714,7 +10114,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-86-15",
-       "original": "Mukiibi, S."
+       "original": "Mukiibi, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-86-16",
@@ -8726,11 +10127,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-86-18",
-       "original": "Akinode, B."
+       "original": "Akinode, B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-86-19",
-       "original": "Opoku, S."
+       "original": "Opoku, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-86-20",
@@ -8738,7 +10141,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-86-21",
-       "original": "Alabi, and S."
+       "original": "Alabi, and S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-86-22",
@@ -8746,7 +10150,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-86-23",
-       "original": "Bibletts: a large, high-fidelity, multilingual, and uniquely african speech corpus. arXiv, abs/2207.03546, 2022."
+       "original": "Bibletts: a large, high-fidelity, multilingual, and uniquely african speech corpus. arXiv, abs/2207.03546, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -8757,7 +10162,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-87-1",
-       "original": "T."
+       "original": "T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-87-2",
@@ -8788,7 +10194,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-88-2",
-       "original": "R."
+       "original": "R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-88-3",
@@ -8816,7 +10223,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-88-9",
-       "original": "Lam, D."
+       "original": "Lam, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-88-10",
@@ -8828,7 +10236,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-88-12",
-       "original": "Sun, S."
+       "original": "Sun, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-88-13",
@@ -8840,11 +10249,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-88-15",
-       "original": "Youngblood, B."
+       "original": "Youngblood, B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-88-16",
-       "original": "Akula, L."
+       "original": "Akula, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-88-17",
@@ -8864,7 +10275,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-88-21",
-       "original": "Hoffman, S."
+       "original": "Hoffman, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-88-22",
@@ -8872,15 +10284,18 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-88-23",
-       "original": "R."
+       "original": "R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-88-24",
-       "original": "Sadagopan, D."
+       "original": "Sadagopan, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-88-25",
-       "original": "Rowe, S."
+       "original": "Rowe, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-88-26",
@@ -8900,11 +10315,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-88-30",
-       "original": "Ayan, S."
+       "original": "Ayan, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-88-31",
-       "original": "Bhosale, S."
+       "original": "Bhosale, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-88-32",
@@ -8936,7 +10353,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-88-39",
-       "original": "Ropers, S."
+       "original": "Ropers, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-88-40",
@@ -8952,7 +10370,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-88-43",
-       "original": "No language left behind: Scaling human-centered machine translation, 2022."
+       "original": "No language left behind: Scaling human-centered machine translation, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -8967,7 +10386,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-89-2",
-       "original": "Ott, S."
+       "original": "Ott, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-89-3",
@@ -8979,7 +10399,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-89-5",
-       "original": "Fan, S."
+       "original": "Fan, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-89-6",
@@ -8987,7 +10408,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-89-7",
-       "original": "Ng, D."
+       "original": "Ng, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-89-8",
@@ -8995,11 +10417,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-89-9",
-       "original": "Auli. fairseq: A fast, extensible toolkit for sequence modeling."
+       "original": "Auli. fairseq: A fast, extensible toolkit for sequence modeling.",
+       "zh": "2."
       },
       {
        "id": "s-references-89-10",
-       "original": "In Proc. of NAACL System Demonstrations, 2019."
+       "original": "In Proc. of NAACL System Demonstrations, 2019.",
+       "zh": "3."
       }
      ]
     },
@@ -9029,7 +10453,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-91-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-91-2",
@@ -9041,7 +10466,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-91-4",
-       "original": "Boulianne, L."
+       "original": "Boulianne, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-91-5",
@@ -9096,7 +10522,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-92-1",
-       "original": "In Proc. of ASRU, 2011."
+       "original": "In Proc. of ASRU, 2011.",
+       "zh": "1."
       }
      ]
     },
@@ -9135,7 +10562,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-93-8",
-       "original": "Liptchinsky, and R."
+       "original": "Liptchinsky, and R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-93-9",
@@ -9154,7 +10582,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-94-2",
-       "original": "In Proc. of ICASSP, 2019."
+       "original": "In Proc. of ICASSP, 2019.",
+       "zh": "3."
       }
      ]
     },
@@ -9189,7 +10618,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-95-7",
-       "original": "Synnaeve, and R."
+       "original": "Synnaeve, and R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-95-8",
@@ -9208,7 +10638,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-96-2",
-       "original": "In Proc. of Interspeech 2020, 2020a."
+       "original": "In Proc. of Interspeech 2020, 2020a.",
+       "zh": "3."
       }
      ]
     },
@@ -9265,7 +10696,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-99-5",
-       "original": "Synnaeve, and R."
+       "original": "Synnaeve, and R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-99-6",
@@ -9277,7 +10709,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-99-8",
-       "original": "In Proc. of Interspeech, 2020c."
+       "original": "In Proc. of Interspeech, 2020c.",
+       "zh": "3."
       }
      ]
     },
@@ -9300,7 +10733,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-100-4",
-       "original": "Synnaeve, and R."
+       "original": "Synnaeve, and R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-100-5",
@@ -9324,7 +10758,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-100-10",
-       "original": "Agarwal, D."
+       "original": "Agarwal, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-100-11",
@@ -9332,7 +10767,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-100-12",
-       "original": "Cho, editors, Advances in Neural Information Processing Systems, 2022."
+       "original": "Cho, editors, Advances in Neural Information Processing Systems, 2022.",
+       "zh": "2."
       },
       {
        "id": "s-references-100-13",
@@ -9347,7 +10783,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-101-1",
-       "original": "T."
+       "original": "T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-101-2",
@@ -9355,7 +10792,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-101-3",
-       "original": "Hollingshead, S.-y."
+       "original": "Hollingshead, S.-y.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-101-4",
@@ -9363,7 +10801,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-101-5",
-       "original": "Kim, and R."
+       "original": "Kim, and R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-101-6",
@@ -9375,7 +10814,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-101-8",
-       "original": "In Proc. of LREC, 2010."
+       "original": "In Proc. of LREC, 2010.",
+       "zh": "3."
       }
      ]
     },
@@ -9386,7 +10826,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-102-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-102-2",
@@ -9394,11 +10835,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-102-3",
-       "original": "W."
+       "original": "W.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-102-4",
-       "original": "Kim, T."
+       "original": "Kim, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-102-5",
@@ -9410,7 +10853,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-102-7",
-       "original": "McLeavey, and I."
+       "original": "McLeavey, and I.",
+       "zh": "在 Meta AI 工作期间完成。"
       },
       {
        "id": "s-references-102-8",
@@ -9418,7 +10862,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-102-9",
-       "original": "Robust speech recognition via large-scale weak supervision. arXiv, 2022."
+       "original": "Robust speech recognition via large-scale weak supervision. arXiv, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -9429,7 +10874,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-103-1",
-       "original": "S."
+       "original": "S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-103-2",
@@ -9441,7 +10887,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-103-4",
-       "original": "Rasley, S."
+       "original": "Rasley, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-103-5",
@@ -9453,7 +10900,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-103-7",
-       "original": "Zero-infinity: Breaking the GPU memory wall for extreme scale deep learning. arXiv, abs/2104.07857, 2021."
+       "original": "Zero-infinity: Breaking the GPU memory wall for extreme scale deep learning. arXiv, abs/2104.07857, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -9468,7 +10916,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-104-2",
-       "original": "Ravanelli, T."
+       "original": "Ravanelli, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-104-3",
@@ -9480,11 +10929,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-104-5",
-       "original": "Rouhe, S."
+       "original": "Rouhe, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-104-6",
-       "original": "Cornell, L."
+       "original": "Cornell, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-104-7",
@@ -9508,11 +10959,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-104-12",
-       "original": "Chou, S.-L."
+       "original": "Chou, S.-L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-104-13",
-       "original": "Yeh, S.-W."
+       "original": "Yeh, S.-W.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-104-14",
@@ -9540,11 +10993,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-104-20",
-       "original": "Gao, R."
+       "original": "Gao, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-104-21",
-       "original": "D."
+       "original": "D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-104-22",
@@ -9556,7 +11011,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-104-24",
-       "original": "SpeechBrain: A general-purpose speech toolkit, 2021. arXiv:2106.04624."
+       "original": "SpeechBrain: A general-purpose speech toolkit, 2021. arXiv:2106.04624.",
+       "zh": "1."
       }
      ]
     },
@@ -9571,7 +11027,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-105-2",
-       "original": "Ribeiro, D."
+       "original": "Ribeiro, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-105-3",
@@ -9595,7 +11052,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-105-8",
-       "original": "IEEE, 2011."
+       "original": "IEEE, 2011.",
+       "zh": "1."
       }
      ]
     },
@@ -9606,11 +11064,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-106-1",
-       "original": "T."
+       "original": "T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-106-2",
-       "original": "Saeki, S."
+       "original": "Saeki, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-106-3",
@@ -9618,11 +11078,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-106-4",
-       "original": "Li, S."
+       "original": "Li, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-106-5",
-       "original": "Watanabe, S."
+       "original": "Watanabe, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-106-6",
@@ -9634,7 +11096,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-106-8",
-       "original": "Learning to speak from text: Zero-shot multilingual text-to-speech with unsupervised text pretraining. arXiv, abs/2301.12596, 2023a."
+       "original": "Learning to speak from text: Zero-shot multilingual text-to-speech with unsupervised text pretraining. arXiv, abs/2301.12596, 2023a.",
+       "zh": "1."
       }
      ]
     },
@@ -9645,7 +11108,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-107-1",
-       "original": "T."
+       "original": "T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-107-2",
@@ -9677,7 +11141,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-107-9",
-       "original": "Rosenberg, and B."
+       "original": "Rosenberg, and B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-107-10",
@@ -9689,7 +11154,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-107-12",
-       "original": "In Proc. of ICASSP, 2023b."
+       "original": "In Proc. of ICASSP, 2023b.",
+       "zh": "3."
       }
      ]
     },
@@ -9700,7 +11166,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-108-1",
-       "original": "S."
+       "original": "S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-108-2",
@@ -9708,7 +11175,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-108-3",
-       "original": "Baevski, R."
+       "original": "Baevski, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-108-4",
@@ -9716,11 +11184,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-108-5",
-       "original": "Auli. wav2vec: Unsupervised pre-training for speech recognition."
+       "original": "Auli. wav2vec: Unsupervised pre-training for speech recognition.",
+       "zh": "2."
       },
       {
        "id": "s-references-108-6",
-       "original": "In Proc. of Interspeech, 2019."
+       "original": "In Proc. of Interspeech, 2019.",
+       "zh": "3."
       }
      ]
     },
@@ -9735,7 +11205,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-109-2",
-       "original": "Staib, T."
+       "original": "Staib, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-109-3",
@@ -9747,23 +11218,28 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-109-5",
-       "original": "Torresquintero, D."
+       "original": "Torresquintero, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-109-6",
-       "original": "S."
+       "original": "S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-109-7",
-       "original": "R."
+       "original": "R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-109-8",
-       "original": "Mohan, L."
+       "original": "Mohan, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-109-9",
-       "original": "Foglianti, R."
+       "original": "Foglianti, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-109-10",
@@ -9797,7 +11273,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-111-1",
-       "original": "I."
+       "original": "I.",
+       "zh": "在 Meta AI 工作期间完成。"
       },
       {
        "id": "s-references-111-2",
@@ -9821,7 +11298,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-111-7",
-       "original": "Proc. of NIPS, 2014."
+       "original": "Proc. of NIPS, 2014.",
+       "zh": "4."
       }
      ]
     },
@@ -9836,7 +11314,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-112-2",
-       "original": "Tan, T."
+       "original": "Tan, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-112-3",
@@ -9844,7 +11323,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-112-4",
-       "original": "Soong, and T.-Y."
+       "original": "Soong, and T.-Y.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-112-5",
@@ -9852,7 +11332,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-112-6",
-       "original": "A survey on neural speech synthesis. arXiv preprint arXiv:2106.15561, 2021."
+       "original": "A survey on neural speech synthesis. arXiv preprint arXiv:2106.15561, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -9863,11 +11344,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-113-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-113-2",
-       "original": "Tjandra, D."
+       "original": "Tjandra, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-113-3",
@@ -9903,7 +11386,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-113-11",
-       "original": "Auli."
+       "original": "Auli.",
+       "zh": "2."
       },
       {
        "id": "s-references-113-12",
@@ -9911,7 +11395,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-113-13",
-       "original": "In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6877–6881."
+       "original": "In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6877–6881.",
+       "zh": "1."
       },
       {
        "id": "s-references-113-14",
@@ -9926,7 +11411,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-114-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-114-2",
@@ -9934,7 +11420,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-114-3",
-       "original": "Singhal, D."
+       "original": "Singhal, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-114-4",
@@ -9946,7 +11433,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-114-6",
-       "original": "Mohamed, D."
+       "original": "Mohamed, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-114-7",
@@ -9954,7 +11442,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-114-8",
-       "original": "L."
+       "original": "L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-114-9",
@@ -9962,7 +11451,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-114-10",
-       "original": "Massively multilingual asr on 70 languages: Tokenization, architecture, and generalization capabilities. arXiv, abs/2211.05756, 2022b."
+       "original": "Massively multilingual asr on 70 languages: Tokenization, architecture, and generalization capabilities. arXiv, abs/2211.05756, 2022b.",
+       "zh": "1."
       }
      ]
     },
@@ -9973,11 +11463,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-115-1",
-       "original": "S."
+       "original": "S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-115-2",
-       "original": "Toshniwal, T."
+       "original": "Toshniwal, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-115-3",
@@ -9985,7 +11477,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-115-4",
-       "original": "Sainath, R."
+       "original": "Sainath, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-115-5",
@@ -9993,7 +11486,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-115-6",
-       "original": "Weiss, B."
+       "original": "Weiss, B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-115-7",
@@ -10017,7 +11511,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-115-12",
-       "original": "In Proc. of ICASSP, 2018."
+       "original": "In Proc. of ICASSP, 2018.",
+       "zh": "3."
       }
      ]
     },
@@ -10032,7 +11527,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-116-2",
-       "original": "Valk and T."
+       "original": "Valk and T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-116-3",
@@ -10044,9 +11540,16 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-116-5",
-       "original": "In Proc. of SLT, 2020."
+       "original": "In Proc. of SLT,",
+       "zh": "3."
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 34,
+     "original": "2020."
     },
     {
      "id": "p-references-117",
@@ -10089,7 +11592,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-119-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-119-2",
@@ -10105,7 +11609,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-119-5",
-       "original": "Uszkoreit, L."
+       "original": "Uszkoreit, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-119-6",
@@ -10117,11 +11622,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-119-8",
-       "original": "Gomez, L."
+       "original": "Gomez, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-119-9",
-       "original": "Kaiser, and I."
+       "original": "Kaiser, and I.",
+       "zh": "在 Meta AI 工作期间完成。"
       },
       {
        "id": "s-references-119-10",
@@ -10140,7 +11647,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-120-2",
-       "original": "In Proc. of NIPS, 2017."
+       "original": "In Proc. of NIPS, 2017.",
+       "zh": "3."
       }
      ]
     },
@@ -10171,7 +11679,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-121-6",
-       "original": "Talnikar, D."
+       "original": "Talnikar, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-121-7",
@@ -10202,7 +11711,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-122-2",
-       "original": "In Proc. of ACL, 2021."
+       "original": "In Proc. of ACL, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -10213,19 +11723,23 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-123-1",
-       "original": "S."
+       "original": "S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-123-2",
-       "original": "Watanabe, T."
+       "original": "Watanabe, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-123-3",
-       "original": "Hori, S."
+       "original": "Hori, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-123-4",
-       "original": "Karita, T."
+       "original": "Karita, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-123-5",
@@ -10257,7 +11771,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-123-12",
-       "original": "Renduchintala, and T."
+       "original": "Renduchintala, and T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-123-13",
@@ -10269,11 +11784,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-123-15",
-       "original": "In Proceedings of Interspeech, pages 2207–2211, 2018. doi: 10.21437/ Interspeech.2018-1456."
+       "original": "In Proceedings of Interspeech, pages 2207–2211, 2018. doi: 10.21437/ Interspeech.2018-1456.",
+       "zh": "6."
       },
       {
        "id": "s-references-123-16",
-       "original": "URL http://dx.doi.org/10.21437/Interspeech.2018-1456."
+       "original": "URL http://dx.doi.org/10.21437/Interspeech.2018-1456.",
+       "zh": "6."
       }
      ]
     },
@@ -10292,7 +11809,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-124-3",
-       "original": "Computer-coding the ipa: a proposed extension of sampa, 1995."
+       "original": "Computer-coding the ipa: a proposed extension of sampa, 1995.",
+       "zh": "5."
       },
       {
        "id": "s-references-124-4",
@@ -10350,15 +11868,18 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-126-9",
-       "original": "Puhrsch, D."
+       "original": "Puhrsch, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-126-10",
-       "original": "Pollack, D."
+       "original": "Pollack, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-126-11",
-       "original": "Genzel, D."
+       "original": "Genzel, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-126-12",
@@ -10394,15 +11915,18 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-126-20",
-       "original": "Roy, S."
+       "original": "Roy, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-126-21",
-       "original": "Narenthiran, S."
+       "original": "Narenthiran, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-126-22",
-       "original": "Watanabe, S."
+       "original": "Watanabe, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-126-23",
@@ -10418,7 +11942,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-126-26",
-       "original": "Torchaudio: Building blocks for audio and speech processing. arXiv preprint arXiv:2110.15018, 2021."
+       "original": "Torchaudio: Building blocks for audio and speech processing. arXiv preprint arXiv:2110.15018, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -10429,7 +11954,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-127-1",
-       "original": "S.-Y."
+       "original": "S.-Y.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-127-2",
@@ -10437,7 +11963,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-127-3",
-       "original": "Kim, and R."
+       "original": "Kim, and R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-127-4",
@@ -10449,7 +11976,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-127-6",
-       "original": "In Proc. of ACL, 2007."
+       "original": "In Proc. of ACL, 2007.",
+       "zh": "3."
       }
      ]
     },
@@ -10460,11 +11988,13 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-128-1",
-       "original": "Y."
+       "original": "Y.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-128-2",
-       "original": "Zhang, R."
+       "original": "Zhang, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-128-3",
@@ -10484,7 +12014,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-128-7",
-       "original": "Chen, R."
+       "original": "Chen, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-128-8",
@@ -10496,7 +12027,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-128-10",
-       "original": "Rosenberg, and B."
+       "original": "Rosenberg, and B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-128-11",
@@ -10519,7 +12051,8 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-references-129-1",
-       "original": "Y."
+       "original": "Y.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-129-2",
@@ -10547,7 +12080,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-129-8",
-       "original": "Chen, B."
+       "original": "Chen, B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-129-9",
@@ -10571,15 +12105,18 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-129-14",
-       "original": "Rosenberg, R."
+       "original": "Rosenberg, R.",
+       "zh": "我们使用收集的标注数据集（§3.1）来微调预训练模型（§4）以进行 ASR。"
       },
       {
        "id": "s-references-129-15",
-       "original": "Prabhavalkar, D."
+       "original": "Prabhavalkar, D.",
+       "zh": "其次，我们将每个数据集视为上述采样方案中的一种语言，使用采样参数 βD 来平衡不同数据集。"
       },
       {
        "id": "s-references-129-16",
-       "original": "S."
+       "original": "S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-129-17",
@@ -10599,15 +12136,18 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-129-21",
-       "original": "Soltau, T."
+       "original": "Soltau, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-129-22",
-       "original": "Strohman, B."
+       "original": "Strohman, B.",
+       "zh": "对字符级模型，我们将训练数据限制为 6GB。"
       },
       {
        "id": "s-references-129-23",
-       "original": "Ramabhadran, T."
+       "original": "Ramabhadran, T.",
+       "zh": "这些后验概率需要 O(T × L) 的内存，且路径长度为 T。"
       },
       {
        "id": "s-references-129-24",
@@ -10650,7 +12190,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-130-2",
-       "original": "Zhang, L."
+       "original": "Zhang, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-130-3",
@@ -10658,7 +12199,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-130-4",
-       "original": "Wang, S."
+       "original": "Wang, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-130-5",
@@ -10666,7 +12208,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-130-6",
-       "original": "Wu, S."
+       "original": "Wu, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-130-7",
@@ -10686,11 +12229,13 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-130-11",
-       "original": "Li, L."
+       "original": "Li, L.",
+       "zh": "接下来，我们执行强制对齐：给定长度为 T 的输入音频序列和长度为 L 的文本转写，在后验概率中寻找最可能的路径。"
       },
       {
        "id": "s-references-130-12",
-       "original": "He, S."
+       "original": "He, S.",
+       "zh": "我们在 FLEURS、CommonVoice、VoxPopuli 和 MLS 上评估这个单一模型。"
       },
       {
        "id": "s-references-130-13",
@@ -10702,7 +12247,8 @@ globalThis.PAPER_2305_13516 = {
       },
       {
        "id": "s-references-130-15",
-       "original": "Speak foreign languages with your own voice: Cross-lingual neural codec language modeling. arXiv, abs/2303.03926, 2023b."
+       "original": "Speak foreign languages with your own voice: Cross-lingual neural codec language modeling. arXiv, abs/2303.03926, 2023b.",
+       "zh": "3."
       }
      ]
     }
@@ -10851,7 +12397,139 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-A-5-1",
-       "original": "Algorithm 1 Pseudo code of our CTC Forced Alignment algorithm on GPU Input: Posterior probabilities y, target label L Output: Alignment path π 1: S ←2 × |L| + 1 2: Create GPU matrices αodd, αeven of size S each to store the maximum log probability of aligning the target upto the given node 3: B ←100; # buffer size for data copy from GPU to CPU 4: Create CPU matrix β of size T × S for saving the label indices from previous time step used to compute αodd/αeven 5: Create GPU matrix βbuffer of size B × S, where B is the buffer size, to store the values of β temporarily in a buffer before being copied to CPU. 6: for t = 1, . . . , T do 7: for all l = 1, . . . , S do in parallel 8: If t is odd, update αodd[l] based on αeven, yt using dynamic programming and vice-versa 9: Store the index l′ from previous time step used to update αodd/αeven in βbuffer 10: end for 11: if t % B == 0 or t == T then 12: Copy βbuffer to CPU matrix β asynchronously 13: end if 14: end for 15: Backtrack and compute π from αodd, αeven and β",
+       "original": "Algorithm 1 Pseudo code of our CTC Forced Alignment algorithm on GPU Input: Posterior probabilities y, target label L Output: Alignment path π",
+       "zh": "算法 1 我们在 GPU 上的 CTC 强制对齐算法伪代码 输入：后验概率 y，目标标签 L 输出：对齐路径 π 1: S ← 2 × |L| + 1 2: 创建大小各为 S 的 GPU 矩阵 αodd、αeven，用于存储将目标对齐到给定节点的最大对数概率 3: B ← 100；# 从 GPU 拷贝数据到 CPU 的缓冲区大小 4: 创建大小为 T × S 的 CPU 矩阵 β，用于保存上一步用于计算 αodd/αeven 的标签索引 5: 创建大小为 B × S 的 GPU 矩阵 βbuffer，其中 B 为缓冲区大小，用于在拷贝到 CPU 之前将 β 的值暂存于缓冲区。6: for t = 1, . . . , T do 7: 对所有 l = 1, . . . , S 并行执行 8: 若 t 为奇数，则基于 αeven、yt 用动态规划更新 αodd[l]，反之亦然 9: 将上一步用于更新 αodd/αeven 的索引 l′ 存入 βbuffer 10: end for 11: if t % B == 0 或 t == T then 12: 将 βbuffer 异步拷贝到 CPU 矩阵 β 13: end if 14: end for 15: 回溯并从 αodd、αeven 和 β 计算 π"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-7",
+     "type": "equation",
+     "page": 36,
+     "original": "1: S ←2 × |L| + 1"
+    },
+    {
+     "id": "p-A-6",
+     "type": "paragraph",
+     "page": 36,
+     "sentences": [
+      {
+       "id": "s-A-6-1",
+       "original": "2: Create GPU matrices αodd, αeven of size S each to store the maximum log probability of aligning the target upto the given node 3: B ←100; # buffer size for data copy from GPU to CPU 4: Create CPU matrix β of size T × S for saving the label indices from previous time step used to compute αodd/αeven 5: Create GPU matrix βbuffer of size B × S, where B is the buffer size, to store the values of β temporarily in a buffer before being copied to CPU.",
+       "zh": "算法 1 我们在 GPU 上的 CTC 强制对齐算法伪代码 输入：后验概率 y，目标标签 L 输出：对齐路径 π 1: S ← 2 × |L| + 1 2: 创建大小各为 S 的 GPU 矩阵 αodd、αeven，用于存储将目标对齐到给定节点的最大对数概率 3: B ← 100；# 从 GPU 拷贝数据到 CPU 的缓冲区大小 4: 创建大小为 T × S 的 CPU 矩阵 β，用于保存上一步用于计算 αodd/αeven 的标签索引 5: 创建大小为 B × S 的 GPU 矩阵 βbuffer，其中 B 为缓冲区大小，用于在拷贝到 CPU 之前将 β 的值暂存于缓冲区。6: for t = 1, . . . , T do 7: 对所有 l = 1, . . . , S 并行执行 8: 若 t 为奇数，则基于 αeven、yt 用动态规划更新 αodd[l]，反之亦然 9: 将上一步用于更新 αodd/αeven 的索引 l′ 存入 βbuffer 10: end for 11: if t % B == 0 或 t == T then 12: 将 βbuffer 异步拷贝到 CPU 矩阵 β 13: end if 14: end for 15: 回溯并从 αodd、αeven 和 β 计算 π"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-8",
+     "type": "equation",
+     "page": 36,
+     "original": "6: for t = 1, . . . , T do 7:"
+    },
+    {
+     "id": "p-A-7",
+     "type": "paragraph",
+     "page": 36,
+     "sentences": [
+      {
+       "id": "s-A-7-1",
+       "original": "for all l = 1, . . . , S do in parallel",
+       "zh": "算法 1 我们在 GPU 上的 CTC 强制对齐算法伪代码 输入：后验概率 y，目标标签 L 输出：对齐路径 π 1: S ← 2 × |L| + 1 2: 创建大小各为 S 的 GPU 矩阵 αodd、αeven，用于存储将目标对齐到给定节点的最大对数概率 3: B ← 100；# 从 GPU 拷贝数据到 CPU 的缓冲区大小 4: 创建大小为 T × S 的 CPU 矩阵 β，用于保存上一步用于计算 αodd/αeven 的标签索引 5: 创建大小为 B × S 的 GPU 矩阵 βbuffer，其中 B 为缓冲区大小，用于在拷贝到 CPU 之前将 β 的值暂存于缓冲区。6: for t = 1, . . . , T do 7: 对所有 l = 1, . . . , S 并行执行 8: 若 t 为奇数，则基于 αeven、yt 用动态规划更新 αodd[l]，反之亦然 9: 将上一步用于更新 αodd/αeven 的索引 l′ 存入 βbuffer 10: end for 11: if t % B == 0 或 t == T then 12: 将 βbuffer 异步拷贝到 CPU 矩阵 β 13: end if 14: end for 15: 回溯并从 αodd、αeven 和 β 计算 π"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-9",
+     "type": "equation",
+     "page": 36,
+     "original": "8:"
+    },
+    {
+     "id": "p-A-8",
+     "type": "paragraph",
+     "page": 36,
+     "sentences": [
+      {
+       "id": "s-A-8-1",
+       "original": "If t is odd, update αodd[l] based on αeven, yt using dynamic programming and vice-versa",
+       "zh": "算法 1 我们在 GPU 上的 CTC 强制对齐算法伪代码 输入：后验概率 y，目标标签 L 输出：对齐路径 π 1: S ← 2 × |L| + 1 2: 创建大小各为 S 的 GPU 矩阵 αodd、αeven，用于存储将目标对齐到给定节点的最大对数概率 3: B ← 100；# 从 GPU 拷贝数据到 CPU 的缓冲区大小 4: 创建大小为 T × S 的 CPU 矩阵 β，用于保存上一步用于计算 αodd/αeven 的标签索引 5: 创建大小为 B × S 的 GPU 矩阵 βbuffer，其中 B 为缓冲区大小，用于在拷贝到 CPU 之前将 β 的值暂存于缓冲区。6: for t = 1, . . . , T do 7: 对所有 l = 1, . . . , S 并行执行 8: 若 t 为奇数，则基于 αeven、yt 用动态规划更新 αodd[l]，反之亦然 9: 将上一步用于更新 αodd/αeven 的索引 l′ 存入 βbuffer 10: end for 11: if t % B == 0 或 t == T then 12: 将 βbuffer 异步拷贝到 CPU 矩阵 β 13: end if 14: end for 15: 回溯并从 αodd、αeven 和 β 计算 π"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-10",
+     "type": "equation",
+     "page": 36,
+     "original": "9:"
+    },
+    {
+     "id": "p-A-9",
+     "type": "paragraph",
+     "page": 36,
+     "sentences": [
+      {
+       "id": "s-A-9-1",
+       "original": "Store the index l′ from previous time step used to update αodd/αeven in βbuffer",
+       "zh": "算法 1 我们在 GPU 上的 CTC 强制对齐算法伪代码 输入：后验概率 y，目标标签 L 输出：对齐路径 π 1: S ← 2 × |L| + 1 2: 创建大小各为 S 的 GPU 矩阵 αodd、αeven，用于存储将目标对齐到给定节点的最大对数概率 3: B ← 100；# 从 GPU 拷贝数据到 CPU 的缓冲区大小 4: 创建大小为 T × S 的 CPU 矩阵 β，用于保存上一步用于计算 αodd/αeven 的标签索引 5: 创建大小为 B × S 的 GPU 矩阵 βbuffer，其中 B 为缓冲区大小，用于在拷贝到 CPU 之前将 β 的值暂存于缓冲区。6: for t = 1, . . . , T do 7: 对所有 l = 1, . . . , S 并行执行 8: 若 t 为奇数，则基于 αeven、yt 用动态规划更新 αodd[l]，反之亦然 9: 将上一步用于更新 αodd/αeven 的索引 l′ 存入 βbuffer 10: end for 11: if t % B == 0 或 t == T then 12: 将 βbuffer 异步拷贝到 CPU 矩阵 β 13: end if 14: end for 15: 回溯并从 αodd、αeven 和 β 计算 π"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-11",
+     "type": "equation",
+     "page": 36,
+     "original": "10:"
+    },
+    {
+     "id": "eq-A-12",
+     "type": "equation",
+     "page": 36,
+     "original": "end for"
+    },
+    {
+     "id": "eq-A-13",
+     "type": "equation",
+     "page": 36,
+     "original": "11:"
+    },
+    {
+     "id": "p-A-10",
+     "type": "paragraph",
+     "page": 36,
+     "sentences": [
+      {
+       "id": "s-A-10-1",
+       "original": "if t % B == 0 or t == T then",
+       "zh": "算法 1 我们在 GPU 上的 CTC 强制对齐算法伪代码 输入：后验概率 y，目标标签 L 输出：对齐路径 π 1: S ← 2 × |L| + 1 2: 创建大小各为 S 的 GPU 矩阵 αodd、αeven，用于存储将目标对齐到给定节点的最大对数概率 3: B ← 100；# 从 GPU 拷贝数据到 CPU 的缓冲区大小 4: 创建大小为 T × S 的 CPU 矩阵 β，用于保存上一步用于计算 αodd/αeven 的标签索引 5: 创建大小为 B × S 的 GPU 矩阵 βbuffer，其中 B 为缓冲区大小，用于在拷贝到 CPU 之前将 β 的值暂存于缓冲区。6: for t = 1, . . . , T do 7: 对所有 l = 1, . . . , S 并行执行 8: 若 t 为奇数，则基于 αeven、yt 用动态规划更新 αodd[l]，反之亦然 9: 将上一步用于更新 αodd/αeven 的索引 l′ 存入 βbuffer 10: end for 11: if t % B == 0 或 t == T then 12: 将 βbuffer 异步拷贝到 CPU 矩阵 β 13: end if 14: end for 15: 回溯并从 αodd、αeven 和 β 计算 π"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-14",
+     "type": "equation",
+     "page": 36,
+     "original": "12:"
+    },
+    {
+     "id": "eq-A-15",
+     "type": "equation",
+     "page": 36,
+     "original": "Copy βbuffer to CPU matrix β asynchronously"
+    },
+    {
+     "id": "eq-A-16",
+     "type": "equation",
+     "page": 36,
+     "original": "13:"
+    },
+    {
+     "id": "p-A-11",
+     "type": "paragraph",
+     "page": 36,
+     "sentences": [
+      {
+       "id": "s-A-11-1",
+       "original": "end if 14: end for 15: Backtrack and compute π from αodd, αeven and β",
        "zh": "算法 1 我们在 GPU 上的 CTC 强制对齐算法伪代码 输入：后验概率 y，目标标签 L 输出：对齐路径 π 1: S ← 2 × |L| + 1 2: 创建大小各为 S 的 GPU 矩阵 αodd、αeven，用于存储将目标对齐到给定节点的最大对数概率 3: B ← 100；# 从 GPU 拷贝数据到 CPU 的缓冲区大小 4: 创建大小为 T × S 的 CPU 矩阵 β，用于保存上一步用于计算 αodd/αeven 的标签索引 5: 创建大小为 B × S 的 GPU 矩阵 βbuffer，其中 B 为缓冲区大小，用于在拷贝到 CPU 之前将 β 的值暂存于缓冲区。6: for t = 1, . . . , T do 7: 对所有 l = 1, . . . , S 并行执行 8: 若 t 为奇数，则基于 αeven、yt 用动态规划更新 αodd[l]，反之亦然 9: 将上一步用于更新 αodd/αeven 的索引 l′ 存入 βbuffer 10: end for 11: if t % B == 0 或 t == T then 12: 将 βbuffer 异步拷贝到 CPU 矩阵 β 13: end if 14: end for 15: 回溯并从 αodd、αeven 和 β 计算 π"
       }
      ]
@@ -10970,15 +12648,16 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-B-3-1",
-       "original": "# word-level LM > kenlm/build/bin/lmplz –prune 1 2 3 4 5 -o 5 –limit_vocab_file vocab.txt -S 90% -T /tmp/ < input.txt > output.arpa 34 # character-level LM > kenlm/build/bin/lmplz –prune 0 0 0 0 0 1 1 1 2 3 -o 20 trie -S 90% -T /tmp/ < input.txt > output.arpa For n-gram models trained on the FLEURS training data transcriptions, we build 15-gram character level language models without any pruning on all languages in FLEURS.",
-       "zh": "# 词级语言模型 > kenlm/build/bin/lmplz –prune 1 2 3 4 5 -o 5 –limit_vocab_file vocab.txt -S 90% -T /tmp/ < input.txt > output.arpa 34 # 字符级语言模型 > kenlm/build/bin/lmplz –prune 0 0 0 0 0 1 1 1 2 3 -o 20 trie -S 90% -T /tmp/ < input.txt > output.arpa 对在 FLEURS 训练数据转写上训练的 n 元模型，我们在 FLEURS 的所有语言上构建不做任何剪枝的 15 元字符级语言模型。"
-      },
-      {
-       "id": "s-B-3-2",
-       "original": "For the comparison with Whisper, we only use the Common Crawl language models.",
-       "zh": "在与 Whisper 的对比中，我们只使用 Common Crawl 语言模型。"
+       "original": "# word-level LM",
+       "zh": "表头：# word-level LM（词级语言模型数）。"
       }
      ]
+    },
+    {
+     "id": "eq-B-1",
+     "type": "equation",
+     "page": 37,
+     "original": "> kenlm/build/bin/lmplz –prune 1 2 3 4 5 -o 5 –limit_vocab_file vocab.txt -S 90% -T"
     },
     {
      "id": "p-B-4",
@@ -10987,20 +12666,16 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-B-4-1",
-       "original": "We use the CTC beam-search decoder from the Flashlight [Kahn et al., 2022] library for decoding our models.",
-       "zh": "我们使用 Flashlight [Kahn et al., 2022] 库中的 CTC 束搜索解码器来解码我们的模型。"
-      },
-      {
-       "id": "s-B-4-2",
-       "original": "For decoding with word-level LMs, we use the lexicon-based decoder of Collobert et al. [2016], Pratap et al. [2019] and for character-level LMs, we use the lexicon-free beam-search decoder of Likhomanenko et al. [2019].",
-       "zh": "使用词级语言模型解码时，我们使用 Collobert et al. [2016], Pratap et al. [2019] 的基于词典的解码器；使用字符级语言模型时，我们使用 Likhomanenko et al. [2019] 的无词典束搜索解码器。"
-      },
-      {
-       "id": "s-B-4-3",
-       "original": "We tune the language model weight and word insertion penalty on the validation set to select the best hyperparameters for decoding the test set.",
-       "zh": "我们在验证集上调优语言模型权重和词插入惩罚，以选择解码测试集的最佳超参数。"
+       "original": "/tmp/ < input.txt > output.arpa 34 # character-level LM",
+       "zh": "# 词级语言模型 > kenlm/build/bin/lmplz –prune 1 2 3 4 5 -o 5 –limit_vocab_file vocab.txt -S 90% -T /tmp/ < input.txt > output.arpa 34 # 字符级语言模型 > kenlm/build/bin/lmplz –prune 0 0 0 0 0 1 1 1 2 3 -o 20 trie -S 90% -T /tmp/ < input.txt > output.arpa 对在 FLEURS 训练数据转写上训练的 n 元模型，我们在 FLEURS 的所有语言上构建不做任何剪枝的 15 元字符级语言模型。"
       }
      ]
+    },
+    {
+     "id": "eq-B-2",
+     "type": "equation",
+     "page": 37,
+     "original": "> kenlm/build/bin/lmplz –prune 0 0 0 0 0 1 1 1 2 3 -o 20 trie -S 90% -T /tmp/ <"
     },
     {
      "id": "p-B-5",
@@ -11009,8 +12684,65 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-B-5-1",
-       "original": "33https://stackoverflow.com/a/33417311 34We use –prune 1 1 2 3 4 if data size < 5GB and additionally use –discount_fallback if data size < 1GB",
-       "zh": "33https://stackoverflow.com/a/33417311 34若数据大小 < 5GB 我们使用 –prune 1 1 2 3 4，若数据大小 < 1GB 还额外使用 –discount_fallback"
+       "original": "input.txt > output.arpa For n-gram models trained on the FLEURS training data transcriptions, we build 15-gram character level language models without any pruning on all languages in FLEURS.",
+       "zh": "# 词级语言模型 > kenlm/build/bin/lmplz –prune 1 2 3 4 5 -o 5 –limit_vocab_file vocab.txt -S 90% -T /tmp/ < input.txt > output.arpa 34 # 字符级语言模型 > kenlm/build/bin/lmplz –prune 0 0 0 0 0 1 1 1 2 3 -o 20 trie -S 90% -T /tmp/ < input.txt > output.arpa 对在 FLEURS 训练数据转写上训练的 n 元模型，我们在 FLEURS 的所有语言上构建不做任何剪枝的 15 元字符级语言模型。"
+      },
+      {
+       "id": "s-B-5-2",
+       "original": "For the comparison with Whisper, we only use the Common Crawl language models.",
+       "zh": "在与 Whisper 的对比中，我们只使用 Common Crawl 语言模型。"
+      }
+     ]
+    },
+    {
+     "id": "p-B-6",
+     "type": "paragraph",
+     "page": 37,
+     "sentences": [
+      {
+       "id": "s-B-6-1",
+       "original": "We use the CTC beam-search decoder from the Flashlight [Kahn et al., 2022] library for decoding our models.",
+       "zh": "我们使用 Flashlight [Kahn et al., 2022] 库中的 CTC 束搜索解码器来解码我们的模型。"
+      },
+      {
+       "id": "s-B-6-2",
+       "original": "For decoding with word-level LMs, we use the lexicon-based decoder of Collobert et al. [2016], Pratap et al. [2019] and for character-level LMs, we use the lexicon-free beam-search decoder of Likhomanenko et al. [2019].",
+       "zh": "使用词级语言模型解码时，我们使用 Collobert et al. [2016], Pratap et al. [2019] 的基于词典的解码器；使用字符级语言模型时，我们使用 Likhomanenko et al. [2019] 的无词典束搜索解码器。"
+      },
+      {
+       "id": "s-B-6-3",
+       "original": "We tune the language model weight and word insertion penalty on the validation set to select the best hyperparameters for decoding the test set.",
+       "zh": "我们在验证集上调优语言模型权重和词插入惩罚，以选择解码测试集的最佳超参数。"
+      }
+     ]
+    },
+    {
+     "id": "p-B-7",
+     "type": "paragraph",
+     "page": 37,
+     "sentences": [
+      {
+       "id": "s-B-7-1",
+       "original": "33https://stackoverflow.com/a/33417311",
+       "zh": "（脚注 33：https://stackoverflow.com/a/33417311）"
+      }
+     ]
+    },
+    {
+     "id": "eq-B-3",
+     "type": "equation",
+     "page": 37,
+     "original": "34We use –prune 1 1 2 3 4 if data size < 5GB and additionally use –discount_fallback if data size <"
+    },
+    {
+     "id": "p-B-8",
+     "type": "paragraph",
+     "page": 37,
+     "sentences": [
+      {
+       "id": "s-B-8-1",
+       "original": "1GB",
+       "zh": "（单位行）1GB。"
       }
      ]
     }
@@ -11045,38 +12777,938 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-C-2-1",
-       "original": "Whisper Whisper medium large-v2 L-61 L-61 L-61 L-61 L-1107 L-1107 L-1107 L-1107 noLM noLM noLM noLM LSAH LSAH LSAH LSAH Amharic 229.3 140.3 48.7 30.7 52.4 32.5 52.9 30.1 53.3 31.1 Arabic 20.4 16.0 34.9 19.6 35.8 19.9 44.0 23.4 41.3 21.0 Assamese 102.3 106.2 29.5 18.8 28.4 18.6 37.6 21.2 30.5 19.2 Azerbaijani 33.1 23.4 40.7 21.3 38.3 19.8 45.0 21.2 40.1 19.1 Bengali 100.6 104.1 19.7 11.6 20.0 12.1 25.0 12.5 23.5 12.1 Bulgarian 21.4 14.6 23.4 13.1 23.9 13.3 27.9 12.9 25.5 13.5 Burmese 123.0 115.7 22.2 14.2 22.3 14.5 29.2 20.2 24.5 16.0 Catalan 9.6 7.3 18.1 11.0 18.1 11.0 25.9 11.5 20.1 10.8 Dutch 9.9 6.7 26.9 13.7 26.4 14.3 38.1 14.9 27.6 14.5 English 4.4 4.2 23.8 10.7 24.8 11.8 38.8 12.2 27.8 12.3 Filipino 19.1 13.8 19.3 11.9 19.4 12.2 26.2 13.5 20.2 12.4 Finnish 13.9 9.7 26.4 22.5 26.9 23.1 32.3 22.2 28.8 23.1 French 8.7 8.3 24.3 13.7 24.5 14.1 35.8 15.4 29.3 15.0 German 6.5 4.5 22.5 13.2 22.3 13.7 38.4 13.1 22.5 13.3 Greek 19.0 12.5 40.8 14.0 40.5 13.6 57.5 13.0 40.1 13.6 Gujarati 104.8 102.7 23.0 13.0 22.7 12.8 73.9 56.4 24.0 12.8 Hausa 106.6 88.9 35.9 26.7 36.3 27.3 40.4 26.7 38.3 26.4 Hebrew 33.1 27.1 68.5 44.8 66.6 41.5 78.7 50.9 67.1 40.0 Hindi 26.8 21.5 65.0 44.4 28.8 16.0 70.7 45.7 21.2 10.6 Hungarian 24.3 17.0 31.2 18.1 30.7 18.4 40.3 18.3 30.7 18.0 Icelandic 49.9 38.2 42.9 18.3 42.3 19.9 53.6 20.5 45.3 18.6 Indonesian 10.2 7.1 25.5 11.7 23.8 12.1 31.9 11.6 23.4 11.8 Javanese 67.9 68.5 32.8 19.6 32.8 20.0 58.8 27.2 34.2 19.5 Kannada 77.7 37.0 18.8 14.4 15.8 12.9 41.3 25.2 17.7 13.3 Kazakh 48.8 37.7 30.2 17.4 30.2 17.7 63.8 19.5 31.6 17.4 Khmer 103.8 128.9 26.0 19.9 25.7 19.8 70.7 52.4 26.7 19.7 Korean 16.4 14.3 58.7 37.5 59.9 37.3 82.1 58.2 68.3 40.1 Lao 101.4 101.5 48.9 45.4 24.2 22.8 62.1 56.6 22.6 16.9 Latvian 32.0 23.1 20.8 12.0 20.9 12.1 24.5 11.9 21.8 12.1 Malay 12.2 8.7 25.3 12.3 25.9 13.2 32.4 12.1 26.1 12.5 Malayalam 101.1 100.7 23.7 19.1 19.5 16.6 39.1 25.6 20.4 15.3 Marathi 63.2 38.3 32.5 19.0 19.2 13.5 28.0 14.9 20.9 13.4 Mongolian 103.7 110.5 55.7 29.3 54.9 32.9 67.7 28.7 55.3 32.3 Persian 41.0 32.9 39.7 22.9 39.9 22.5 44.4 21.3 42.9 22.0 Polish 8.0 5.4 21.5 11.4 20.8 11.6 33.0 11.0 25.1 11.3 Portuguese 5.0 4.3 16.1 10.8 16.3 10.8 19.3 10.2 17.7 10.5 Punjabi 102.0 102.4 41.4 29.9 30.4 20.7 99.0 91.0 31.0 19.8 Romanian 20.0 14.4 27.9 18.8 28.4 19.1 31.3 17.8 27.4 18.3 Russian 7.2 5.6 30.3 14.6 30.4 14.3 38.8 14.7 35.0 15.0 Shona 143.9 121.0 38.1 30.4 37.7 30.1 43.0 29.9 37.8 29.6 Somali 104.0 102.9 51.8 42.8 52.5 43.0 54.5 42.9 53.8 42.8 Spanish 3.6 3.0 12.2 7.8 12.4 8.2 14.0 7.8 14.0 8.7 Swahili 52.8 39.3 22.9 16.0 23.3 15.6 29.6 16.8 23.7 16.0 Swedish 11.2 8.5 29.9 17.4 30.5 17.5 38.2 17.2 33.5 17.4 Tajik 74.0 85.8 59.8 46.6 33.9 19.2 59.0 39.5 25.7 15.7 Tamil 23.1 17.5 24.2 18.3 21.9 16.3 25.3 17.3 23.9 16.3 Telugu 82.8 99.0 19.4 13.7 19.6 13.7 24.5 15.8 22.1 13.6 Thai 15.4 11.5 18.2 13.6 18.1 13.6 27.6 18.8 20.7 14.3 Turkish 10.4 8.4 28.6 17.3 28.7 17.5 31.2 16.1 30.9 16.9 Ukrainian 11.6 8.6 31.1 13.6 31.7 13.5 39.2 13.3 33.3 13.6 Urdu 28.2 22.6 42.3 22.7 33.1 20.1 46.4 25.1 36.9 20.5 Vietnamese 12.7 10.3 44.5 18.6 47.5 20.7 56.6 21.0 52.9 19.8 Welsh 40.8 33.0 48.9 20.8 49.0 20.8 54.9 21.4 51.4 20.9 Yoruba 105.1 94.8 61.2 49.7 61.9 49.4 62.7 50.2 64.2 49.4 50.1 44.3 33.3 20.7 31.0 19.1 44.2 24.8 32.5 18.7 Table A1: Comparison to Whisper on the FLEURS test set.",
-       "zh": "Whisper Whisper medium large-v2 L-61 L-61 L-61 L-61 L-1107 L-1107 L-1107 L-1107 noLM noLM noLM noLM LSAH LSAH LSAH LSAH 阿姆哈拉语 229.3 140.3 48.7 30.7 52.4 32.5 52.9 30.1 53.3 31.1 阿拉伯语 20.4 16.0 34.9 19.6 35.8 19.9 44.0 23.4 41.3 21.0 阿萨姆语 102.3 106.2 29.5 18.8 28.4 18.6 37.6 21.2 30.5 19.2 阿塞拜疆语 33.1 23.4 40.7 21.3 38.3 19.8 45.0 21.2 40.1 19.1 孟加拉语 100.6 104.1 19.7 11.6 20.0 12.1 25.0 12.5 23.5 12.1 保加利亚语 21.4 14.6 23.4 13.1 23.9 13.3 27.9 12.9 25.5 13.5 缅甸语 123.0 115.7 22.2 14.2 22.3 14.5 29.2 20.2 24.5 16.0 加泰罗尼亚语 9.6 7.3 18.1 11.0 18.1 11.0 25.9 11.5 20.1 10.8 荷兰语 9.9 6.7 26.9 13.7 26.4 14.3 38.1 14.9 27.6 14.5 英语 4.4 4.2 23.8 10.7 24.8 11.8 38.8 12.2 27.8 12.3 菲律宾语 19.1 13.8 19.3 11.9 19.4 12.2 26.2 13.5 20.2 12.4 芬兰语 13.9 9.7 26.4 22.5 26.9 23.1 32.3 22.2 28.8 23.1 法语 8.7 8.3 24.3 13.7 24.5 14.1 35.8 15.4 29.3 15.0 德语 6.5 4.5 22.5 13.2 22.3 13.7 38.4 13.1 22.5 13.3 希腊语 19.0 12.5 40.8 14.0 40.5 13.6 57.5 13.0 40.1 13.6 古吉拉特语 104.8 102.7 23.0 13.0 22.7 12.8 73.9 56.4 24.0 12.8 豪萨语 106.6 88.9 35.9 26.7 36.3 27.3 40.4 26.7 38.3 26.4 希伯来语 33.1 27.1 68.5 44.8 66.6 41.5 78.7 50.9 67.1 40.0 印地语 26.8 21.5 65.0 44.4 28.8 16.0 70.7 45.7 21.2 10.6 匈牙利语 24.3 17.0 31.2 18.1 30.7 18.4 40.3 18.3 30.7 18.0 冰岛语 49.9 38.2 42.9 18.3 42.3 19.9 53.6 20.5 45.3 18.6 印尼语 10.2 7.1 25.5 11.7 23.8 12.1 31.9 11.6 23.4 11.8 爪哇语 67.9 68.5 32.8 19.6 32.8 20.0 58.8 27.2 34.2 19.5 卡纳达语 77.7 37.0 18.8 14.4 15.8 12.9 41.3 25.2 17.7 13.3 哈萨克语 48.8 37.7 30.2 17.4 30.2 17.7 63.8 19.5 31.6 17.4 高棉语 103.8 128.9 26.0 19.9 25.7 19.8 70.7 52.4 26.7 19.7 韩语 16.4 14.3 58.7 37.5 59.9 37.3 82.1 58.2 68.3 40.1 老挝语 101.4 101.5 48.9 45.4 24.2 22.8 62.1 56.6 22.6 16.9 拉脱维亚语 32.0 23.1 20.8 12.0 20.9 12.1 24.5 11.9 21.8 12.1 马来语 12.2 8.7 25.3 12.3 25.9 13.2 32.4 12.1 26.1 12.5 马拉雅拉姆语 101.1 100.7 23.7 19.1 19.5 16.6 39.1 25.6 20.4 15.3 马拉地语 63.2 38.3 32.5 19.0 19.2 13.5 28.0 14.9 20.9 13.4 蒙古语 103.7 110.5 55.7 29.3 54.9 32.9 67.7 28.7 55.3 32.3 波斯语 41.0 32.9 39.7 22.9 39.9 22.5 44.4 21.3 42.9 22.0 波兰语 8.0 5.4 21.5 11.4 20.8 11.6 33.0 11.0 25.1 11.3 葡萄牙语 5.0 4.3 16.1 10.8 16.3 10.8 19.3 10.2 17.7 10.5 旁遮普语 102.0 102.4 41.4 29.9 30.4 20.7 99.0 91.0 31.0 19.8 罗马尼亚语 20.0 14.4 27.9 18.8 28.4 19.1 31.3 17.8 27.4 18.3 俄语 7.2 5.6 30.3 14.6 30.4 14.3 38.8 14.7 35.0 15.0 绍纳语 143.9 121.0 38.1 30.4 37.7 30.1 43.0 29.9 37.8 29.6 索马里语 104.0 102.9 51.8 42.8 52.5 43.0 54.5 42.9 53.8 42.8 西班牙语 3.6 3.0 12.2 7.8 12.4 8.2 14.0 7.8 14.0 8.7 斯瓦希里语 52.8 39.3 22.9 16.0 23.3 15.6 29.6 16.8 23.7 16.0 瑞典语 11.2 8.5 29.9 17.4 30.5 17.5 38.2 17.2 33.5 17.4 塔吉克语 74.0 85.8 59.8 46.6 33.9 19.2 59.0 39.5 25.7 15.7 泰米尔语 23.1 17.5 24.2 18.3 21.9 16.3 25.3 17.3 23.9 16.3 泰卢固语 82.8 99.0 19.4 13.7 19.6 13.7 24.5 15.8 22.1 13.6 泰语 15.4 11.5 18.2 13.6 18.1 13.6 27.6 18.8 20.7 14.3 土耳其语 10.4 8.4 28.6 17.3 28.7 17.5 31.2 16.1 30.9 16.9 乌克兰语 11.6 8.6 31.1 13.6 31.7 13.5 39.2 13.3 33.3 13.6 乌尔都语 28.2 22.6 42.3 22.7 33.1 20.1 46.4 25.1 36.9 20.5 越南语 12.7 10.3 44.5 18.6 47.5 20.7 56.6 21.0 52.9 19.8 威尔士语 40.8 33.0 48.9 20.8 49.0 20.8 54.9 21.4 51.4 20.9 约鲁巴语 105.1 94.8 61.2 49.7 61.9 49.4 62.7 50.2 64.2 49.4 50.1 44.3 33.3 20.7 31.0 19.1 44.2 24.8 32.5 18.7 表 A1：在 FLEURS 测试集上与 Whisper 的对比。"
-      },
-      {
-       "id": "s-C-2-2",
-       "original": "We report WER for each of the 54 languages supported by both MMS and Whisper, except for Thai (tha), Lao (lao), Burmese (mya) and Khmer (khm) where we report CER.",
-       "zh": "我们对 MMS 和 Whisper 共同支持的 54 种语言逐一报告 WER，但泰语（tha）、老挝语（lao）、缅甸语（mya）和高棉语（khm）除外，对这些语言我们报告 CER。"
-      },
-      {
-       "id": "s-C-2-3",
-       "original": "We apply Whisper normalization for both reference and hypothesis for measuring CER/WER.",
-       "zh": "在测量 CER/WER 时，我们对参考和假设都应用 Whisper 归一化。"
+       "original": "Whisper Whisper MMS MMS MMS MMS MMS MMS MMS MMS medium large-v2 L-61 L-61 L-61 L-61 L-1107 L-1107 L-1107 L-1107 noLM CC LM noLM CC LM noLM CC LM noLM CC LM LSAH LSAH LSAH LSAH Amharic",
+       "zh": "（表 A1 列头：Whisper medium / Whisper large-v2 / MMS L-61（noLM/CC LM/LSAH）/ MMS L-1107（noLM/CC LM/LSAH）——语种行首：Amharic（后续照原文）。）"
       }
      ]
     },
     {
+     "id": "eq-C-1",
+     "type": "equation",
+     "page": 38,
+     "original": "229.3 140.3 48.7 30.7 52.4 32.5 52.9 30.1 53.3 31.1"
+    },
+    {
+     "id": "eq-C-2",
+     "type": "equation",
+     "page": 38,
+     "original": "Arabic"
+    },
+    {
+     "id": "eq-C-3",
+     "type": "equation",
+     "page": 38,
+     "original": "20.4 16.0 34.9 19.6 35.8 19.9 44.0 23.4 41.3 21.0"
+    },
+    {
+     "id": "eq-C-4",
+     "type": "equation",
+     "page": 38,
+     "original": "Assamese"
+    },
+    {
+     "id": "eq-C-5",
+     "type": "equation",
+     "page": 38,
+     "original": "102.3 106.2 29.5 18.8 28.4 18.6 37.6 21.2 30.5 19.2"
+    },
+    {
+     "id": "eq-C-6",
+     "type": "equation",
+     "page": 38,
+     "original": "Azerbaijani"
+    },
+    {
+     "id": "eq-C-7",
+     "type": "equation",
+     "page": 38,
+     "original": "33.1 23.4 40.7 21.3 38.3 19.8 45.0 21.2 40.1 19.1"
+    },
+    {
+     "id": "eq-C-8",
+     "type": "equation",
+     "page": 38,
+     "original": "Bengali"
+    },
+    {
+     "id": "eq-C-9",
+     "type": "equation",
+     "page": 38,
+     "original": "100.6 104.1 19.7 11.6 20.0 12.1 25.0 12.5 23.5 12.1"
+    },
+    {
+     "id": "eq-C-10",
+     "type": "equation",
+     "page": 38,
+     "original": "Bulgarian"
+    },
+    {
+     "id": "eq-C-11",
+     "type": "equation",
+     "page": 38,
+     "original": "21.4 14.6 23.4 13.1 23.9 13.3 27.9 12.9 25.5 13.5"
+    },
+    {
+     "id": "eq-C-12",
+     "type": "equation",
+     "page": 38,
+     "original": "Burmese"
+    },
+    {
+     "id": "eq-C-13",
+     "type": "equation",
+     "page": 38,
+     "original": "123.0 115.7 22.2 14.2 22.3 14.5 29.2 20.2 24.5 16.0"
+    },
+    {
+     "id": "eq-C-14",
+     "type": "equation",
+     "page": 38,
+     "original": "Catalan"
+    },
+    {
+     "id": "eq-C-15",
+     "type": "equation",
+     "page": 38,
+     "original": "9.6 7.3 18.1 11.0 18.1 11.0 25.9 11.5 20.1 10.8"
+    },
+    {
+     "id": "eq-C-16",
+     "type": "equation",
+     "page": 38,
+     "original": "Dutch"
+    },
+    {
+     "id": "eq-C-17",
+     "type": "equation",
+     "page": 38,
+     "original": "9.9 6.7 26.9 13.7 26.4 14.3 38.1 14.9 27.6 14.5"
+    },
+    {
+     "id": "eq-C-18",
+     "type": "equation",
+     "page": 38,
+     "original": "English"
+    },
+    {
+     "id": "eq-C-19",
+     "type": "equation",
+     "page": 38,
+     "original": "4.4 4.2 23.8 10.7 24.8 11.8 38.8 12.2 27.8 12.3"
+    },
+    {
+     "id": "eq-C-20",
+     "type": "equation",
+     "page": 38,
+     "original": "Filipino"
+    },
+    {
+     "id": "eq-C-21",
+     "type": "equation",
+     "page": 38,
+     "original": "19.1 13.8 19.3 11.9 19.4 12.2 26.2 13.5 20.2 12.4"
+    },
+    {
+     "id": "eq-C-22",
+     "type": "equation",
+     "page": 38,
+     "original": "Finnish"
+    },
+    {
+     "id": "eq-C-23",
+     "type": "equation",
+     "page": 38,
+     "original": "13.9 9.7 26.4 22.5 26.9 23.1 32.3 22.2 28.8 23.1"
+    },
+    {
+     "id": "eq-C-24",
+     "type": "equation",
+     "page": 38,
+     "original": "French"
+    },
+    {
+     "id": "eq-C-25",
+     "type": "equation",
+     "page": 38,
+     "original": "8.7 8.3 24.3 13.7 24.5 14.1 35.8 15.4 29.3 15.0"
+    },
+    {
+     "id": "eq-C-26",
+     "type": "equation",
+     "page": 38,
+     "original": "German"
+    },
+    {
+     "id": "eq-C-27",
+     "type": "equation",
+     "page": 38,
+     "original": "6.5 4.5 22.5 13.2 22.3 13.7 38.4 13.1 22.5 13.3"
+    },
+    {
+     "id": "eq-C-28",
+     "type": "equation",
+     "page": 38,
+     "original": "Greek"
+    },
+    {
+     "id": "eq-C-29",
+     "type": "equation",
+     "page": 38,
+     "original": "19.0 12.5 40.8 14.0 40.5 13.6 57.5 13.0 40.1 13.6"
+    },
+    {
+     "id": "eq-C-30",
+     "type": "equation",
+     "page": 38,
+     "original": "Gujarati"
+    },
+    {
+     "id": "eq-C-31",
+     "type": "equation",
+     "page": 38,
+     "original": "104.8 102.7 23.0 13.0 22.7 12.8 73.9 56.4 24.0 12.8"
+    },
+    {
+     "id": "eq-C-32",
+     "type": "equation",
+     "page": 38,
+     "original": "Hausa"
+    },
+    {
+     "id": "eq-C-33",
+     "type": "equation",
+     "page": 38,
+     "original": "106.6 88.9 35.9 26.7 36.3 27.3 40.4 26.7 38.3 26.4"
+    },
+    {
+     "id": "eq-C-34",
+     "type": "equation",
+     "page": 38,
+     "original": "Hebrew"
+    },
+    {
+     "id": "eq-C-35",
+     "type": "equation",
+     "page": 38,
+     "original": "33.1 27.1 68.5 44.8 66.6 41.5 78.7 50.9 67.1 40.0"
+    },
+    {
+     "id": "eq-C-36",
+     "type": "equation",
+     "page": 38,
+     "original": "Hindi"
+    },
+    {
+     "id": "eq-C-37",
+     "type": "equation",
+     "page": 38,
+     "original": "26.8 21.5 65.0 44.4 28.8 16.0 70.7 45.7 21.2 10.6"
+    },
+    {
+     "id": "eq-C-38",
+     "type": "equation",
+     "page": 38,
+     "original": "Hungarian"
+    },
+    {
+     "id": "eq-C-39",
+     "type": "equation",
+     "page": 38,
+     "original": "24.3 17.0 31.2 18.1 30.7 18.4 40.3 18.3 30.7 18.0"
+    },
+    {
+     "id": "eq-C-40",
+     "type": "equation",
+     "page": 38,
+     "original": "Icelandic"
+    },
+    {
+     "id": "eq-C-41",
+     "type": "equation",
+     "page": 38,
+     "original": "49.9 38.2 42.9 18.3 42.3 19.9 53.6 20.5 45.3 18.6"
+    },
+    {
+     "id": "eq-C-42",
+     "type": "equation",
+     "page": 38,
+     "original": "Indonesian"
+    },
+    {
+     "id": "eq-C-43",
+     "type": "equation",
+     "page": 38,
+     "original": "10.2 7.1 25.5 11.7 23.8 12.1 31.9 11.6 23.4 11.8"
+    },
+    {
+     "id": "eq-C-44",
+     "type": "equation",
+     "page": 38,
+     "original": "Javanese"
+    },
+    {
+     "id": "eq-C-45",
+     "type": "equation",
+     "page": 38,
+     "original": "67.9 68.5 32.8 19.6 32.8 20.0 58.8 27.2 34.2 19.5"
+    },
+    {
+     "id": "eq-C-46",
+     "type": "equation",
+     "page": 38,
+     "original": "Kannada"
+    },
+    {
+     "id": "eq-C-47",
+     "type": "equation",
+     "page": 38,
+     "original": "77.7 37.0 18.8 14.4 15.8 12.9 41.3 25.2 17.7 13.3"
+    },
+    {
+     "id": "eq-C-48",
+     "type": "equation",
+     "page": 38,
+     "original": "Kazakh"
+    },
+    {
+     "id": "eq-C-49",
+     "type": "equation",
+     "page": 38,
+     "original": "48.8 37.7 30.2 17.4 30.2 17.7 63.8 19.5 31.6 17.4"
+    },
+    {
+     "id": "eq-C-50",
+     "type": "equation",
+     "page": 38,
+     "original": "Khmer"
+    },
+    {
+     "id": "eq-C-51",
+     "type": "equation",
+     "page": 38,
+     "original": "103.8 128.9 26.0 19.9 25.7 19.8 70.7 52.4 26.7 19.7"
+    },
+    {
+     "id": "eq-C-52",
+     "type": "equation",
+     "page": 38,
+     "original": "Korean"
+    },
+    {
+     "id": "eq-C-53",
+     "type": "equation",
+     "page": 38,
+     "original": "16.4 14.3 58.7 37.5 59.9 37.3 82.1 58.2 68.3 40.1"
+    },
+    {
+     "id": "eq-C-54",
+     "type": "equation",
+     "page": 38,
+     "original": "Lao"
+    },
+    {
+     "id": "eq-C-55",
+     "type": "equation",
+     "page": 38,
+     "original": "101.4 101.5 48.9 45.4 24.2 22.8 62.1 56.6 22.6 16.9"
+    },
+    {
+     "id": "eq-C-56",
+     "type": "equation",
+     "page": 38,
+     "original": "Latvian"
+    },
+    {
+     "id": "eq-C-57",
+     "type": "equation",
+     "page": 38,
+     "original": "32.0 23.1 20.8 12.0 20.9 12.1 24.5 11.9 21.8 12.1"
+    },
+    {
+     "id": "eq-C-58",
+     "type": "equation",
+     "page": 38,
+     "original": "Malay"
+    },
+    {
+     "id": "eq-C-59",
+     "type": "equation",
+     "page": 38,
+     "original": "12.2 8.7 25.3 12.3 25.9 13.2 32.4 12.1 26.1 12.5"
+    },
+    {
+     "id": "eq-C-60",
+     "type": "equation",
+     "page": 38,
+     "original": "Malayalam"
+    },
+    {
+     "id": "eq-C-61",
+     "type": "equation",
+     "page": 38,
+     "original": "101.1 100.7 23.7 19.1 19.5 16.6 39.1 25.6 20.4 15.3"
+    },
+    {
+     "id": "eq-C-62",
+     "type": "equation",
+     "page": 38,
+     "original": "Marathi"
+    },
+    {
+     "id": "eq-C-63",
+     "type": "equation",
+     "page": 38,
+     "original": "63.2 38.3 32.5 19.0 19.2 13.5 28.0 14.9 20.9 13.4"
+    },
+    {
+     "id": "eq-C-64",
+     "type": "equation",
+     "page": 38,
+     "original": "Mongolian"
+    },
+    {
+     "id": "eq-C-65",
+     "type": "equation",
+     "page": 38,
+     "original": "103.7 110.5 55.7 29.3 54.9 32.9 67.7 28.7 55.3 32.3"
+    },
+    {
+     "id": "eq-C-66",
+     "type": "equation",
+     "page": 38,
+     "original": "Persian"
+    },
+    {
+     "id": "eq-C-67",
+     "type": "equation",
+     "page": 38,
+     "original": "41.0 32.9 39.7 22.9 39.9 22.5 44.4 21.3 42.9 22.0"
+    },
+    {
+     "id": "eq-C-68",
+     "type": "equation",
+     "page": 38,
+     "original": "Polish"
+    },
+    {
+     "id": "eq-C-69",
+     "type": "equation",
+     "page": 38,
+     "original": "8.0 5.4 21.5 11.4 20.8 11.6 33.0 11.0 25.1 11.3"
+    },
+    {
+     "id": "eq-C-70",
+     "type": "equation",
+     "page": 38,
+     "original": "Portuguese"
+    },
+    {
+     "id": "eq-C-71",
+     "type": "equation",
+     "page": 38,
+     "original": "5.0 4.3 16.1 10.8 16.3 10.8 19.3 10.2 17.7 10.5"
+    },
+    {
+     "id": "eq-C-72",
+     "type": "equation",
+     "page": 38,
+     "original": "Punjabi"
+    },
+    {
+     "id": "eq-C-73",
+     "type": "equation",
+     "page": 38,
+     "original": "102.0 102.4 41.4 29.9 30.4 20.7 99.0 91.0 31.0 19.8"
+    },
+    {
+     "id": "eq-C-74",
+     "type": "equation",
+     "page": 38,
+     "original": "Romanian"
+    },
+    {
+     "id": "eq-C-75",
+     "type": "equation",
+     "page": 38,
+     "original": "20.0 14.4 27.9 18.8 28.4 19.1 31.3 17.8 27.4 18.3"
+    },
+    {
+     "id": "eq-C-76",
+     "type": "equation",
+     "page": 38,
+     "original": "Russian"
+    },
+    {
+     "id": "eq-C-77",
+     "type": "equation",
+     "page": 38,
+     "original": "7.2 5.6 30.3 14.6 30.4 14.3 38.8 14.7 35.0 15.0"
+    },
+    {
+     "id": "eq-C-78",
+     "type": "equation",
+     "page": 38,
+     "original": "Shona"
+    },
+    {
+     "id": "eq-C-79",
+     "type": "equation",
+     "page": 38,
+     "original": "143.9 121.0 38.1 30.4 37.7 30.1 43.0 29.9 37.8 29.6"
+    },
+    {
+     "id": "eq-C-80",
+     "type": "equation",
+     "page": 38,
+     "original": "Somali"
+    },
+    {
+     "id": "eq-C-81",
+     "type": "equation",
+     "page": 38,
+     "original": "104.0 102.9 51.8 42.8 52.5 43.0 54.5 42.9 53.8 42.8"
+    },
+    {
+     "id": "eq-C-82",
+     "type": "equation",
+     "page": 38,
+     "original": "Spanish"
+    },
+    {
+     "id": "eq-C-83",
+     "type": "equation",
+     "page": 38,
+     "original": "3.6 3.0 12.2 7.8 12.4 8.2 14.0 7.8 14.0 8.7"
+    },
+    {
+     "id": "eq-C-84",
+     "type": "equation",
+     "page": 38,
+     "original": "Swahili"
+    },
+    {
+     "id": "eq-C-85",
+     "type": "equation",
+     "page": 38,
+     "original": "52.8 39.3 22.9 16.0 23.3 15.6 29.6 16.8 23.7 16.0"
+    },
+    {
+     "id": "eq-C-86",
+     "type": "equation",
+     "page": 38,
+     "original": "Swedish"
+    },
+    {
+     "id": "eq-C-87",
+     "type": "equation",
+     "page": 38,
+     "original": "11.2 8.5 29.9 17.4 30.5 17.5 38.2 17.2 33.5 17.4"
+    },
+    {
+     "id": "eq-C-88",
+     "type": "equation",
+     "page": 38,
+     "original": "Tajik"
+    },
+    {
+     "id": "eq-C-89",
+     "type": "equation",
+     "page": 38,
+     "original": "74.0 85.8 59.8 46.6 33.9 19.2 59.0 39.5 25.7 15.7"
+    },
+    {
+     "id": "eq-C-90",
+     "type": "equation",
+     "page": 38,
+     "original": "Tamil"
+    },
+    {
+     "id": "eq-C-91",
+     "type": "equation",
+     "page": 38,
+     "original": "23.1 17.5 24.2 18.3 21.9 16.3 25.3 17.3 23.9 16.3"
+    },
+    {
+     "id": "eq-C-92",
+     "type": "equation",
+     "page": 38,
+     "original": "Telugu"
+    },
+    {
+     "id": "eq-C-93",
+     "type": "equation",
+     "page": 38,
+     "original": "82.8 99.0 19.4 13.7 19.6 13.7 24.5 15.8 22.1 13.6"
+    },
+    {
+     "id": "eq-C-94",
+     "type": "equation",
+     "page": 38,
+     "original": "Thai"
+    },
+    {
+     "id": "eq-C-95",
+     "type": "equation",
+     "page": 38,
+     "original": "15.4 11.5 18.2 13.6 18.1 13.6 27.6 18.8 20.7 14.3"
+    },
+    {
+     "id": "eq-C-96",
+     "type": "equation",
+     "page": 38,
+     "original": "Turkish"
+    },
+    {
+     "id": "eq-C-97",
+     "type": "equation",
+     "page": 38,
+     "original": "10.4 8.4 28.6 17.3 28.7 17.5 31.2 16.1 30.9 16.9"
+    },
+    {
+     "id": "eq-C-98",
+     "type": "equation",
+     "page": 38,
+     "original": "Ukrainian"
+    },
+    {
+     "id": "eq-C-99",
+     "type": "equation",
+     "page": 38,
+     "original": "11.6 8.6 31.1 13.6 31.7 13.5 39.2 13.3 33.3 13.6"
+    },
+    {
+     "id": "eq-C-100",
+     "type": "equation",
+     "page": 38,
+     "original": "Urdu"
+    },
+    {
+     "id": "eq-C-101",
+     "type": "equation",
+     "page": 38,
+     "original": "28.2 22.6 42.3 22.7 33.1 20.1 46.4 25.1 36.9 20.5"
+    },
+    {
+     "id": "eq-C-102",
+     "type": "equation",
+     "page": 38,
+     "original": "Vietnamese"
+    },
+    {
+     "id": "eq-C-103",
+     "type": "equation",
+     "page": 38,
+     "original": "12.7 10.3 44.5 18.6 47.5 20.7 56.6 21.0 52.9 19.8"
+    },
+    {
+     "id": "eq-C-104",
+     "type": "equation",
+     "page": 38,
+     "original": "Welsh"
+    },
+    {
+     "id": "eq-C-105",
+     "type": "equation",
+     "page": 38,
+     "original": "40.8 33.0 48.9 20.8 49.0 20.8 54.9 21.4 51.4 20.9"
+    },
+    {
+     "id": "eq-C-106",
+     "type": "equation",
+     "page": 38,
+     "original": "Yoruba"
+    },
+    {
+     "id": "eq-C-107",
+     "type": "equation",
+     "page": 38,
+     "original": "105.1 94.8 61.2 49.7 61.9 49.4 62.7 50.2 64.2 49.4 50.1 44.3 33.3 20.7 31.0 19.1 44.2 24.8 32.5 18.7"
+    },
+    {
      "id": "p-C-3",
+     "type": "paragraph",
+     "page": 38,
+     "sentences": [
+      {
+       "id": "s-C-3-1",
+       "original": "Table A1: Comparison to Whisper on the FLEURS test set.",
+       "zh": "表 A1：在 FLEURS 测试集上与 Whisper 的对比。"
+      },
+      {
+       "id": "s-C-3-2",
+       "original": "We report WER for each of the 54 languages supported by both MMS and Whisper, except for Thai (tha), Lao (lao), Burmese (mya) and Khmer (khm) where we report CER.",
+       "zh": "CER\n（原始数据照录）\nWe report WER for each of the 54 languages supported by both MMS and Whisper, except for Thai (tha), Lao (lao), Burmese (mya) and Khmer (khm) where we report CER."
+      },
+      {
+       "id": "s-C-3-3",
+       "original": "We apply Whisper normalization for both reference and hypothesis for measuring CER/WER.",
+       "zh": "CER"
+      }
+     ]
+    },
+    {
+     "id": "p-C-4",
      "type": "paragraph",
      "page": 39,
      "sentences": [
       {
-       "id": "s-C-3-1",
-       "original": "#lang lbld train FLEURS-54 data (h) (M) dev test Prior Work Whisper medium 99 50.1 Whisper large-v2 99 1,550M 44.3 This Work 61 33.6 33.3 + CC LM 61 20.9 20.7 MMS (LSAH) 61 1,096M 31.4 31.0 + CC LM 61 1,096M 19.1 19.0 44.7 44.2 + CC LM 24.8 24.8 MMS (LSAH) 3,346M 32.8 32.5 + CC LM 3,346M 18.7 18.7 Table A2: Comparison to Whisper.",
-       "zh": "#语言数 标注 训练 FLEURS-54 数据 (h) (M) 开发集 测试集 先前工作 Whisper medium 99 50.1 Whisper large-v2 99 1,550M 44.3 本工作 61 33.6 33.3 + CC LM 61 20.9 20.7 MMS (LSAH) 61 1,096M 31.4 31.0 + CC LM 61 1,096M 19.1 19.0 44.7 44.2 + CC LM 24.8 24.8 MMS (LSAH) 3,346M 32.8 32.5 + CC LM 3,346M 18.7 18.7 表 A2：与 Whisper 的对比。"
+       "id": "s-C-4-1",
+       "original": "#lang lbld train FLEURS-54 data (h) (M) dev test Prior Work Whisper medium",
+       "zh": "（表 A2 对比 Whisper：#lang × lbld data (h) × train (M) × FLEURS-54 dev/test——Whisper medium 99/680K/769M/-/50.1；Whisper large-v2 99/1,550M/-/44.3；MMS 61/3K/965M 33.6/33.3，+ CC LM 20.9/20.7；MMS (LSAH) 61/3K/1,096M 31.4/31.0，+ CC LM 19.1/19.0；MMS 1,107/45K/965M 44.7/44.2，+ CC LM 24.8/24.8；MMS (LSAH) 1,107/45K/3,346M 32.8/32.5，+ CC LM 18.7/18.7。）表 A2：与 Whisper 的对比。"
+      }
+     ]
+    },
+    {
+     "id": "eq-C-108",
+     "type": "equation",
+     "page": 39,
+     "original": "99"
+    },
+    {
+     "id": "eq-C-109",
+     "type": "equation",
+     "page": 39,
+     "original": "680K 769M"
+    },
+    {
+     "id": "eq-C-110",
+     "type": "equation",
+     "page": 39,
+     "original": "- 50.1"
+    },
+    {
+     "id": "eq-C-111",
+     "type": "equation",
+     "page": 39,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-C-112",
+     "type": "equation",
+     "page": 39,
+     "original": "99"
+    },
+    {
+     "id": "eq-C-113",
+     "type": "equation",
+     "page": 39,
+     "original": "1,550M"
+    },
+    {
+     "id": "eq-C-114",
+     "type": "equation",
+     "page": 39,
+     "original": "- 44.3"
+    },
+    {
+     "id": "eq-C-115",
+     "type": "equation",
+     "page": 39,
+     "original": "This Work MMS"
+    },
+    {
+     "id": "eq-C-116",
+     "type": "equation",
+     "page": 39,
+     "original": "61"
+    },
+    {
+     "id": "eq-C-117",
+     "type": "equation",
+     "page": 39,
+     "original": "3K 965M"
+    },
+    {
+     "id": "eq-C-118",
+     "type": "equation",
+     "page": 39,
+     "original": "33.6 33.3"
+    },
+    {
+     "id": "eq-C-119",
+     "type": "equation",
+     "page": 39,
+     "original": "+ CC LM"
+    },
+    {
+     "id": "eq-C-120",
+     "type": "equation",
+     "page": 39,
+     "original": "61"
+    },
+    {
+     "id": "eq-C-121",
+     "type": "equation",
+     "page": 39,
+     "original": "3K 965M"
+    },
+    {
+     "id": "eq-C-122",
+     "type": "equation",
+     "page": 39,
+     "original": "20.9 20.7"
+    },
+    {
+     "id": "eq-C-123",
+     "type": "equation",
+     "page": 39,
+     "original": "MMS (LSAH)"
+    },
+    {
+     "id": "eq-C-124",
+     "type": "equation",
+     "page": 39,
+     "original": "61"
+    },
+    {
+     "id": "eq-C-125",
+     "type": "equation",
+     "page": 39,
+     "original": "3K 1,096M"
+    },
+    {
+     "id": "eq-C-126",
+     "type": "equation",
+     "page": 39,
+     "original": "31.4 31.0"
+    },
+    {
+     "id": "eq-C-127",
+     "type": "equation",
+     "page": 39,
+     "original": "+ CC LM"
+    },
+    {
+     "id": "eq-C-128",
+     "type": "equation",
+     "page": 39,
+     "original": "61"
+    },
+    {
+     "id": "eq-C-129",
+     "type": "equation",
+     "page": 39,
+     "original": "3K 1,096M"
+    },
+    {
+     "id": "eq-C-130",
+     "type": "equation",
+     "page": 39,
+     "original": "19.1 19.0"
+    },
+    {
+     "id": "eq-C-131",
+     "type": "equation",
+     "page": 39,
+     "original": "MMS"
+    },
+    {
+     "id": "eq-C-132",
+     "type": "equation",
+     "page": 39,
+     "original": "1,107"
+    },
+    {
+     "id": "eq-C-133",
+     "type": "equation",
+     "page": 39,
+     "original": "45K 965M"
+    },
+    {
+     "id": "eq-C-134",
+     "type": "equation",
+     "page": 39,
+     "original": "44.7 44.2"
+    },
+    {
+     "id": "eq-C-135",
+     "type": "equation",
+     "page": 39,
+     "original": "+ CC LM"
+    },
+    {
+     "id": "eq-C-136",
+     "type": "equation",
+     "page": 39,
+     "original": "1,107"
+    },
+    {
+     "id": "eq-C-137",
+     "type": "equation",
+     "page": 39,
+     "original": "45K 965M"
+    },
+    {
+     "id": "eq-C-138",
+     "type": "equation",
+     "page": 39,
+     "original": "24.8 24.8"
+    },
+    {
+     "id": "eq-C-139",
+     "type": "equation",
+     "page": 39,
+     "original": "MMS (LSAH)"
+    },
+    {
+     "id": "eq-C-140",
+     "type": "equation",
+     "page": 39,
+     "original": "1,107"
+    },
+    {
+     "id": "eq-C-141",
+     "type": "equation",
+     "page": 39,
+     "original": "45K 3,346M"
+    },
+    {
+     "id": "eq-C-142",
+     "type": "equation",
+     "page": 39,
+     "original": "32.8 32.5"
+    },
+    {
+     "id": "eq-C-143",
+     "type": "equation",
+     "page": 39,
+     "original": "+ CC LM"
+    },
+    {
+     "id": "eq-C-144",
+     "type": "equation",
+     "page": 39,
+     "original": "1,107"
+    },
+    {
+     "id": "eq-C-145",
+     "type": "equation",
+     "page": 39,
+     "original": "45K 3,346M"
+    },
+    {
+     "id": "eq-C-146",
+     "type": "equation",
+     "page": 39,
+     "original": "18.7 18.7"
+    },
+    {
+     "id": "p-C-5",
+     "type": "paragraph",
+     "page": 39,
+     "sentences": [
+      {
+       "id": "s-C-5-1",
+       "original": "Table A2: Comparison to Whisper.",
+       "zh": "（表 A2 对比 Whisper：#lang × lbld data (h) × train (M) × FLEURS-54 dev/test——Whisper medium 99/680K/769M/-/50.1；Whisper large-v2 99/1,550M/-/44.3；MMS 61/3K/965M 33.6/33.3，+ CC LM 20.9/20.7；MMS (LSAH) 61/3K/1,096M 31.4/31.0，+ CC LM 19.1/19.0；MMS 1,107/45K/965M 44.7/44.2，+ CC LM 24.8/24.8；MMS (LSAH) 1,107/45K/3,346M 32.8/32.5，+ CC LM 18.7/18.7。）表 A2：与 Whisper 的对比。"
       },
       {
-       "id": "s-C-3-2",
+       "id": "s-C-5-2",
        "original": "We report average WER on the 54 languages of the FLEURS benchmark supported by both Whisper and MMS (FLEURS-54).",
        "zh": "我们在 Whisper 和 MMS 共同支持的 FLEURS 基准的 54 种语言（FLEURS-54）上报告平均 WER。"
       },
       {
-       "id": "s-C-3-3",
+       "id": "s-C-5-3",
        "original": "MMS is a CTC-based model and to enable a fairer comparison we use n-gram models trained on web data when comparing to Whisper whose decoder is a neural sequence-model and serves as a language model that was trained on billions of web tokens.",
        "zh": "MMS 是基于 CTC 的模型，为实现更公平的对比，我们在与 Whisper 对比时使用了在网络数据上训练的 n 元模型，因为 Whisper 的解码器是一个神经序列模型，相当于一个在数十亿网络词元上训练的语言模型。"
       }
@@ -11101,21 +13733,1263 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-D-1-1",
-       "original": "Dev Test LM CER CER Afrikaans 6.3 6.3 Amharic 6.8 7.0 Arabic 4.3 4.9 Assamese 7.3 7.7 Asturian 5.2 5.1 Azerbaijani 4.2 3.9 Belarusian 3.8 3.8 Bengali 5.1 5.3 Bosnian 3.8 3.4 Bulgarian 3.0 3.2 Catalan 2.8 2.9 Cebuano 3.6 4.4 Czech 3.3 3.0 Sorani 6.5 7.4 Mandarin 14.8 14.9 Welsh 5.7 5.9 Danish 5.5 5.7 German 3.0 2.7 Greek 4.0 3.7 English 4.6 4.3 Estonian 2.9 2.7 Persian 4.0 4.1 Finnish 2.6 2.4 French 4.1 4.1 Fula 13.9 13.8 Irish 19.3 19.5 Galician 2.8 2.7 Gujarati 5.2 5.1 Hausa 5.5 5.9 Hebrew 15.5 12.9 Hindi 5.4 4.7 Croatian 3.5 3.2 Hungarian 4.1 4.2 Armenian 3.2 3.2 Igbo 10.7 11.1 Indonesian 2.3 2.1 Icelandic 5.2 4.1 Italian 1.5 1.4 Javanese 4.3 3.8 Japanese 14.5 14.6 Kamba 12.5 11.3 Kannada 4.6 4.4 Georgian 3.4 3.6 Kazakh 2.9 3.1 Kabuverdianu 4.3 4.3 Khmer 9.9 10.3 Kyrgyz 4.1 3.6 Korean 11.4 11.8 Lao 26.5 24.1 Latvian 2.8 2.2 Lingala 4.0 4.3 Lithuanian 4.3 3.7 Dev Test LM CER CER Luxembourgish 8.0 7.5 Ganda 8.0 8.4 Luo 4.9 5.0 Malayalam 4.4 4.2 Marathi 7.2 6.6 Macedonian 2.0 1.9 Maltese 3.7 3.7 Mongolian 5.6 5.9 Maori 5.9 6.9 Burmese 8.9 9.2 Dutch 3.7 3.1 Norwegian 3.7 4.1 Nepali 8.3 7.7 Northern 6.8 6.1 Nyanja 6.3 6.7 Occitan 7.8 8.2 Oromo 15.7 16.2 Oriya 6.3 7.1 Punjabi 7.4 7.0 Polish 2.6 2.7 Portuguese 2.8 2.8 Pashto 13.1 14.1 Romanian 3.7 3.1 Russian 3.1 3.0 Slovak 2.7 2.5 Slovenian 4.0 3.7 Shona 3.8 4.1 Sindhi 7.2 7.2 Somali 12.8 13.0 Spanish 1.8 2.1 Serbian 10.3 12.7 Swedish 4.7 4.6 Swahili 3.3 3.4 Tamil 8.2 9.0 Telugu 6.6 6.9 Tajik 4.0 4.5 Filipino 3.1 3.1 Thai 7.6 8.3 Turkish 3.5 3.1 Ukrainian 3.3 2.9 Umbundu 10.7 10.2 Urdu 9.8 8.1 Uzbek 4.7 5.0 Vietnamese 5.9 6.1 Wolof 11.2 11.5 Xhosa 6.0 6.1 Yoruba 17.0 16.1 Cantonese 12.9 12.4 Malay 2.8 2.6 Zulu 5.2 5.5 Average 6.3 6.3 Table A3: Results on FLEURS-102.",
-       "zh": "开发集 测试集 语言模型 CER CER 南非荷兰语 6.3 6.3 阿姆哈拉语 6.8 7.0 阿拉伯语 4.3 4.9 阿萨姆语 7.3 7.7 阿斯图里亚斯语 5.2 5.1 阿塞拜疆语 4.2 3.9 白俄罗斯语 3.8 3.8 孟加拉语 5.1 5.3 波斯尼亚语 3.8 3.4 保加利亚语 3.0 3.2 加泰罗尼亚语 2.8 2.9 宿务语 3.6 4.4 捷克语 3.3 3.0 索拉尼库尔德语 6.5 7.4 汉语普通话 14.8 14.9 威尔士语 5.7 5.9 丹麦语 5.5 5.7 德语 3.0 2.7 希腊语 4.0 3.7 英语 4.6 4.3 爱沙尼亚语 2.9 2.7 波斯语 4.0 4.1 芬兰语 2.6 2.4 法语 4.1 4.1 富拉语 13.9 13.8 爱尔兰语 19.3 19.5 加利西亚语 2.8 2.7 古吉拉特语 5.2 5.1 豪萨语 5.5 5.9 希伯来语 15.5 12.9 印地语 5.4 4.7 克罗地亚语 3.5 3.2 匈牙利语 4.1 4.2 亚美尼亚语 3.2 3.2 伊博语 10.7 11.1 印尼语 2.3 2.1 冰岛语 5.2 4.1 意大利语 1.5 1.4 爪哇语 4.3 3.8 日语 14.5 14.6 卡姆巴语 12.5 11.3 卡纳达语 4.6 4.4 格鲁吉亚语 3.4 3.6 哈萨克语 2.9 3.1 卡布韦迪亚努语 4.3 4.3 高棉语 9.9 10.3 吉尔吉斯语 4.1 3.6 韩语 11.4 11.8 老挝语 26.5 24.1 拉脱维亚语 2.8 2.2 林加拉语 4.0 4.3 立陶宛语 4.3 3.7 开发集 测试集 语言模型 CER CER 卢森堡语 8.0 7.5 干达语 8.0 8.4 卢奥语 4.9 5.0 马拉雅拉姆语 4.4 4.2 马拉地语 7.2 6.6 马其顿语 2.0 1.9 马耳他语 3.7 3.7 蒙古语 5.6 5.9 毛利语 5.9 6.9 缅甸语 8.9 9.2 荷兰语 3.7 3.1 挪威语 3.7 4.1 尼泊尔语 8.3 7.7 北索托语 6.8 6.1 尼扬贾语 6.3 6.7 奥克语 7.8 8.2 奥罗莫语 15.7 16.2 奥里亚语 6.3 7.1 旁遮普语 7.4 7.0 波兰语 2.6 2.7 葡萄牙语 2.8 2.8 普什图语 13.1 14.1 罗马尼亚语 3.7 3.1 俄语 3.1 3.0 斯洛伐克语 2.7 2.5 斯洛文尼亚语 4.0 3.7 绍纳语 3.8 4.1 信德语 7.2 7.2 索马里语 12.8 13.0 西班牙语 1.8 2.1 塞尔维亚语 10.3 12.7 瑞典语 4.7 4.6 斯瓦希里语 3.3 3.4 泰米尔语 8.2 9.0 泰卢固语 6.6 6.9 塔吉克语 4.0 4.5 菲律宾语 3.1 3.1 泰语 7.6 8.3 土耳其语 3.5 3.1 乌克兰语 3.3 2.9 Umbundu 10.7 10.2 乌尔都语 9.8 8.1 乌兹别克语 4.7 5.0 越南语 5.9 6.1 沃洛夫语 11.2 11.5 科萨语 6.0 6.1 约鲁巴语 17.0 16.1 粤语 12.9 12.4 马来语 2.8 2.6 祖鲁语 5.2 5.5 平均 6.3 6.3 表 A3：FLEURS-102 上的结果。"
+       "original": "Dev Test LM CER CER Afrikaans",
+       "zh": "CER CER"
+      }
+     ]
+    },
+    {
+     "id": "eq-D-1",
+     "type": "equation",
+     "page": 40,
+     "original": "6.3 6.3"
+    },
+    {
+     "id": "eq-D-2",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Amharic"
+    },
+    {
+     "id": "eq-D-3",
+     "type": "equation",
+     "page": 40,
+     "original": "6.8 7.0"
+    },
+    {
+     "id": "eq-D-4",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Arabic"
+    },
+    {
+     "id": "eq-D-5",
+     "type": "equation",
+     "page": 40,
+     "original": "4.3 4.9"
+    },
+    {
+     "id": "eq-D-6",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Assamese"
+    },
+    {
+     "id": "eq-D-7",
+     "type": "equation",
+     "page": 40,
+     "original": "7.3 7.7"
+    },
+    {
+     "id": "eq-D-8",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Asturian"
+    },
+    {
+     "id": "eq-D-9",
+     "type": "equation",
+     "page": 40,
+     "original": "5.2 5.1"
+    },
+    {
+     "id": "eq-D-10",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Azerbaijani"
+    },
+    {
+     "id": "eq-D-11",
+     "type": "equation",
+     "page": 40,
+     "original": "4.2 3.9"
+    },
+    {
+     "id": "eq-D-12",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Belarusian"
+    },
+    {
+     "id": "eq-D-13",
+     "type": "equation",
+     "page": 40,
+     "original": "3.8 3.8"
+    },
+    {
+     "id": "eq-D-14",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Bengali"
+    },
+    {
+     "id": "eq-D-15",
+     "type": "equation",
+     "page": 40,
+     "original": "5.1 5.3"
+    },
+    {
+     "id": "eq-D-16",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Bosnian"
+    },
+    {
+     "id": "eq-D-17",
+     "type": "equation",
+     "page": 40,
+     "original": "3.8 3.4"
+    },
+    {
+     "id": "eq-D-18",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Bulgarian"
+    },
+    {
+     "id": "eq-D-19",
+     "type": "equation",
+     "page": 40,
+     "original": "3.0 3.2"
+    },
+    {
+     "id": "eq-D-20",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Catalan"
+    },
+    {
+     "id": "eq-D-21",
+     "type": "equation",
+     "page": 40,
+     "original": "2.8 2.9"
+    },
+    {
+     "id": "eq-D-22",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Cebuano"
+    },
+    {
+     "id": "eq-D-23",
+     "type": "equation",
+     "page": 40,
+     "original": "3.6 4.4"
+    },
+    {
+     "id": "eq-D-24",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Czech"
+    },
+    {
+     "id": "eq-D-25",
+     "type": "equation",
+     "page": 40,
+     "original": "3.3 3.0"
+    },
+    {
+     "id": "eq-D-26",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Sorani"
+    },
+    {
+     "id": "eq-D-27",
+     "type": "equation",
+     "page": 40,
+     "original": "6.5 7.4"
+    },
+    {
+     "id": "eq-D-28",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Mandarin"
+    },
+    {
+     "id": "eq-D-29",
+     "type": "equation",
+     "page": 40,
+     "original": "14.8 14.9"
+    },
+    {
+     "id": "eq-D-30",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Welsh"
+    },
+    {
+     "id": "eq-D-31",
+     "type": "equation",
+     "page": 40,
+     "original": "5.7 5.9"
+    },
+    {
+     "id": "eq-D-32",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Danish"
+    },
+    {
+     "id": "eq-D-33",
+     "type": "equation",
+     "page": 40,
+     "original": "5.5 5.7"
+    },
+    {
+     "id": "eq-D-34",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM German"
+    },
+    {
+     "id": "eq-D-35",
+     "type": "equation",
+     "page": 40,
+     "original": "3.0 2.7"
+    },
+    {
+     "id": "eq-D-36",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Greek"
+    },
+    {
+     "id": "eq-D-37",
+     "type": "equation",
+     "page": 40,
+     "original": "4.0 3.7"
+    },
+    {
+     "id": "eq-D-38",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM English"
+    },
+    {
+     "id": "eq-D-39",
+     "type": "equation",
+     "page": 40,
+     "original": "4.6 4.3"
+    },
+    {
+     "id": "eq-D-40",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Estonian"
+    },
+    {
+     "id": "eq-D-41",
+     "type": "equation",
+     "page": 40,
+     "original": "2.9 2.7"
+    },
+    {
+     "id": "eq-D-42",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Persian"
+    },
+    {
+     "id": "eq-D-43",
+     "type": "equation",
+     "page": 40,
+     "original": "4.0 4.1"
+    },
+    {
+     "id": "eq-D-44",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Finnish"
+    },
+    {
+     "id": "eq-D-45",
+     "type": "equation",
+     "page": 40,
+     "original": "2.6 2.4"
+    },
+    {
+     "id": "eq-D-46",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM French"
+    },
+    {
+     "id": "eq-D-47",
+     "type": "equation",
+     "page": 40,
+     "original": "4.1 4.1"
+    },
+    {
+     "id": "eq-D-48",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Fula"
+    },
+    {
+     "id": "eq-D-49",
+     "type": "equation",
+     "page": 40,
+     "original": "13.9 13.8"
+    },
+    {
+     "id": "eq-D-50",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Irish"
+    },
+    {
+     "id": "eq-D-51",
+     "type": "equation",
+     "page": 40,
+     "original": "19.3 19.5"
+    },
+    {
+     "id": "eq-D-52",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Galician"
+    },
+    {
+     "id": "eq-D-53",
+     "type": "equation",
+     "page": 40,
+     "original": "2.8 2.7"
+    },
+    {
+     "id": "eq-D-54",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Gujarati"
+    },
+    {
+     "id": "eq-D-55",
+     "type": "equation",
+     "page": 40,
+     "original": "5.2 5.1"
+    },
+    {
+     "id": "eq-D-56",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Hausa"
+    },
+    {
+     "id": "eq-D-57",
+     "type": "equation",
+     "page": 40,
+     "original": "5.5 5.9"
+    },
+    {
+     "id": "eq-D-58",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Hebrew"
+    },
+    {
+     "id": "eq-D-59",
+     "type": "equation",
+     "page": 40,
+     "original": "15.5 12.9"
+    },
+    {
+     "id": "eq-D-60",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Hindi"
+    },
+    {
+     "id": "eq-D-61",
+     "type": "equation",
+     "page": 40,
+     "original": "5.4 4.7"
+    },
+    {
+     "id": "eq-D-62",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Croatian"
+    },
+    {
+     "id": "eq-D-63",
+     "type": "equation",
+     "page": 40,
+     "original": "3.5 3.2"
+    },
+    {
+     "id": "eq-D-64",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Hungarian"
+    },
+    {
+     "id": "eq-D-65",
+     "type": "equation",
+     "page": 40,
+     "original": "4.1 4.2"
+    },
+    {
+     "id": "eq-D-66",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Armenian"
+    },
+    {
+     "id": "eq-D-67",
+     "type": "equation",
+     "page": 40,
+     "original": "3.2 3.2"
+    },
+    {
+     "id": "eq-D-68",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Igbo"
+    },
+    {
+     "id": "eq-D-69",
+     "type": "equation",
+     "page": 40,
+     "original": "10.7 11.1"
+    },
+    {
+     "id": "eq-D-70",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Indonesian"
+    },
+    {
+     "id": "eq-D-71",
+     "type": "equation",
+     "page": 40,
+     "original": "2.3 2.1"
+    },
+    {
+     "id": "eq-D-72",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Icelandic"
+    },
+    {
+     "id": "eq-D-73",
+     "type": "equation",
+     "page": 40,
+     "original": "5.2 4.1"
+    },
+    {
+     "id": "eq-D-74",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Italian"
+    },
+    {
+     "id": "eq-D-75",
+     "type": "equation",
+     "page": 40,
+     "original": "1.5 1.4"
+    },
+    {
+     "id": "eq-D-76",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Javanese"
+    },
+    {
+     "id": "eq-D-77",
+     "type": "equation",
+     "page": 40,
+     "original": "4.3 3.8"
+    },
+    {
+     "id": "eq-D-78",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Japanese"
+    },
+    {
+     "id": "eq-D-79",
+     "type": "equation",
+     "page": 40,
+     "original": "14.5 14.6"
+    },
+    {
+     "id": "eq-D-80",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Kamba"
+    },
+    {
+     "id": "eq-D-81",
+     "type": "equation",
+     "page": 40,
+     "original": "12.5 11.3"
+    },
+    {
+     "id": "eq-D-82",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Kannada"
+    },
+    {
+     "id": "eq-D-83",
+     "type": "equation",
+     "page": 40,
+     "original": "4.6 4.4"
+    },
+    {
+     "id": "eq-D-84",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Georgian"
+    },
+    {
+     "id": "eq-D-85",
+     "type": "equation",
+     "page": 40,
+     "original": "3.4 3.6"
+    },
+    {
+     "id": "eq-D-86",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Kazakh"
+    },
+    {
+     "id": "eq-D-87",
+     "type": "equation",
+     "page": 40,
+     "original": "2.9 3.1"
+    },
+    {
+     "id": "eq-D-88",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Kabuverdianu"
+    },
+    {
+     "id": "eq-D-89",
+     "type": "equation",
+     "page": 40,
+     "original": "4.3 4.3"
+    },
+    {
+     "id": "eq-D-90",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Khmer"
+    },
+    {
+     "id": "eq-D-91",
+     "type": "equation",
+     "page": 40,
+     "original": "9.9 10.3"
+    },
+    {
+     "id": "eq-D-92",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Kyrgyz"
+    },
+    {
+     "id": "eq-D-93",
+     "type": "equation",
+     "page": 40,
+     "original": "4.1 3.6"
+    },
+    {
+     "id": "eq-D-94",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Korean"
+    },
+    {
+     "id": "eq-D-95",
+     "type": "equation",
+     "page": 40,
+     "original": "11.4 11.8"
+    },
+    {
+     "id": "eq-D-96",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Lao"
+    },
+    {
+     "id": "eq-D-97",
+     "type": "equation",
+     "page": 40,
+     "original": "26.5 24.1"
+    },
+    {
+     "id": "eq-D-98",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Latvian"
+    },
+    {
+     "id": "eq-D-99",
+     "type": "equation",
+     "page": 40,
+     "original": "2.8 2.2"
+    },
+    {
+     "id": "eq-D-100",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Lingala"
+    },
+    {
+     "id": "eq-D-101",
+     "type": "equation",
+     "page": 40,
+     "original": "4.0 4.3"
+    },
+    {
+     "id": "eq-D-102",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Lithuanian"
+    },
+    {
+     "id": "eq-D-103",
+     "type": "equation",
+     "page": 40,
+     "original": "4.3 3.7"
+    },
+    {
+     "id": "eq-D-104",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Dev Test LM CER CER Luxembourgish"
+    },
+    {
+     "id": "eq-D-105",
+     "type": "equation",
+     "page": 40,
+     "original": "8.0 7.5"
+    },
+    {
+     "id": "eq-D-106",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Ganda"
+    },
+    {
+     "id": "eq-D-107",
+     "type": "equation",
+     "page": 40,
+     "original": "8.0 8.4"
+    },
+    {
+     "id": "eq-D-108",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Luo"
+    },
+    {
+     "id": "eq-D-109",
+     "type": "equation",
+     "page": 40,
+     "original": "4.9 5.0"
+    },
+    {
+     "id": "eq-D-110",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Malayalam"
+    },
+    {
+     "id": "eq-D-111",
+     "type": "equation",
+     "page": 40,
+     "original": "4.4 4.2"
+    },
+    {
+     "id": "eq-D-112",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Marathi"
+    },
+    {
+     "id": "eq-D-113",
+     "type": "equation",
+     "page": 40,
+     "original": "7.2 6.6"
+    },
+    {
+     "id": "eq-D-114",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Macedonian"
+    },
+    {
+     "id": "eq-D-115",
+     "type": "equation",
+     "page": 40,
+     "original": "2.0 1.9"
+    },
+    {
+     "id": "eq-D-116",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Maltese"
+    },
+    {
+     "id": "eq-D-117",
+     "type": "equation",
+     "page": 40,
+     "original": "3.7 3.7"
+    },
+    {
+     "id": "eq-D-118",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Mongolian"
+    },
+    {
+     "id": "eq-D-119",
+     "type": "equation",
+     "page": 40,
+     "original": "5.6 5.9"
+    },
+    {
+     "id": "eq-D-120",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Maori"
+    },
+    {
+     "id": "eq-D-121",
+     "type": "equation",
+     "page": 40,
+     "original": "5.9 6.9"
+    },
+    {
+     "id": "eq-D-122",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Burmese"
+    },
+    {
+     "id": "eq-D-123",
+     "type": "equation",
+     "page": 40,
+     "original": "8.9 9.2"
+    },
+    {
+     "id": "eq-D-124",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Dutch"
+    },
+    {
+     "id": "eq-D-125",
+     "type": "equation",
+     "page": 40,
+     "original": "3.7 3.1"
+    },
+    {
+     "id": "eq-D-126",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Norwegian"
+    },
+    {
+     "id": "eq-D-127",
+     "type": "equation",
+     "page": 40,
+     "original": "3.7 4.1"
+    },
+    {
+     "id": "eq-D-128",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Nepali"
+    },
+    {
+     "id": "eq-D-129",
+     "type": "equation",
+     "page": 40,
+     "original": "8.3 7.7"
+    },
+    {
+     "id": "eq-D-130",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Northern"
+    },
+    {
+     "id": "eq-D-131",
+     "type": "equation",
+     "page": 40,
+     "original": "6.8 6.1"
+    },
+    {
+     "id": "eq-D-132",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Nyanja"
+    },
+    {
+     "id": "eq-D-133",
+     "type": "equation",
+     "page": 40,
+     "original": "6.3 6.7"
+    },
+    {
+     "id": "eq-D-134",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Occitan"
+    },
+    {
+     "id": "eq-D-135",
+     "type": "equation",
+     "page": 40,
+     "original": "7.8 8.2"
+    },
+    {
+     "id": "eq-D-136",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Oromo"
+    },
+    {
+     "id": "eq-D-137",
+     "type": "equation",
+     "page": 40,
+     "original": "15.7 16.2"
+    },
+    {
+     "id": "eq-D-138",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Oriya"
+    },
+    {
+     "id": "eq-D-139",
+     "type": "equation",
+     "page": 40,
+     "original": "6.3 7.1"
+    },
+    {
+     "id": "eq-D-140",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Punjabi"
+    },
+    {
+     "id": "eq-D-141",
+     "type": "equation",
+     "page": 40,
+     "original": "7.4 7.0"
+    },
+    {
+     "id": "eq-D-142",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Polish"
+    },
+    {
+     "id": "eq-D-143",
+     "type": "equation",
+     "page": 40,
+     "original": "2.6 2.7"
+    },
+    {
+     "id": "eq-D-144",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Portuguese"
+    },
+    {
+     "id": "eq-D-145",
+     "type": "equation",
+     "page": 40,
+     "original": "2.8 2.8"
+    },
+    {
+     "id": "eq-D-146",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Pashto"
+    },
+    {
+     "id": "eq-D-147",
+     "type": "equation",
+     "page": 40,
+     "original": "13.1 14.1"
+    },
+    {
+     "id": "eq-D-148",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Romanian"
+    },
+    {
+     "id": "eq-D-149",
+     "type": "equation",
+     "page": 40,
+     "original": "3.7 3.1"
+    },
+    {
+     "id": "eq-D-150",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Russian"
+    },
+    {
+     "id": "eq-D-151",
+     "type": "equation",
+     "page": 40,
+     "original": "3.1 3.0"
+    },
+    {
+     "id": "eq-D-152",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Slovak"
+    },
+    {
+     "id": "eq-D-153",
+     "type": "equation",
+     "page": 40,
+     "original": "2.7 2.5"
+    },
+    {
+     "id": "eq-D-154",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Slovenian"
+    },
+    {
+     "id": "eq-D-155",
+     "type": "equation",
+     "page": 40,
+     "original": "4.0 3.7"
+    },
+    {
+     "id": "eq-D-156",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Shona"
+    },
+    {
+     "id": "eq-D-157",
+     "type": "equation",
+     "page": 40,
+     "original": "3.8 4.1"
+    },
+    {
+     "id": "eq-D-158",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Sindhi"
+    },
+    {
+     "id": "eq-D-159",
+     "type": "equation",
+     "page": 40,
+     "original": "7.2 7.2"
+    },
+    {
+     "id": "eq-D-160",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Somali"
+    },
+    {
+     "id": "eq-D-161",
+     "type": "equation",
+     "page": 40,
+     "original": "12.8 13.0"
+    },
+    {
+     "id": "eq-D-162",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Spanish"
+    },
+    {
+     "id": "eq-D-163",
+     "type": "equation",
+     "page": 40,
+     "original": "1.8 2.1"
+    },
+    {
+     "id": "eq-D-164",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Serbian"
+    },
+    {
+     "id": "eq-D-165",
+     "type": "equation",
+     "page": 40,
+     "original": "10.3 12.7"
+    },
+    {
+     "id": "eq-D-166",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Swedish"
+    },
+    {
+     "id": "eq-D-167",
+     "type": "equation",
+     "page": 40,
+     "original": "4.7 4.6"
+    },
+    {
+     "id": "eq-D-168",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Swahili"
+    },
+    {
+     "id": "eq-D-169",
+     "type": "equation",
+     "page": 40,
+     "original": "3.3 3.4"
+    },
+    {
+     "id": "eq-D-170",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Tamil"
+    },
+    {
+     "id": "eq-D-171",
+     "type": "equation",
+     "page": 40,
+     "original": "8.2 9.0"
+    },
+    {
+     "id": "eq-D-172",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Telugu"
+    },
+    {
+     "id": "eq-D-173",
+     "type": "equation",
+     "page": 40,
+     "original": "6.6 6.9"
+    },
+    {
+     "id": "eq-D-174",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Tajik"
+    },
+    {
+     "id": "eq-D-175",
+     "type": "equation",
+     "page": 40,
+     "original": "4.0 4.5"
+    },
+    {
+     "id": "eq-D-176",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Filipino"
+    },
+    {
+     "id": "eq-D-177",
+     "type": "equation",
+     "page": 40,
+     "original": "3.1 3.1"
+    },
+    {
+     "id": "eq-D-178",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Thai"
+    },
+    {
+     "id": "eq-D-179",
+     "type": "equation",
+     "page": 40,
+     "original": "7.6 8.3"
+    },
+    {
+     "id": "eq-D-180",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Turkish"
+    },
+    {
+     "id": "eq-D-181",
+     "type": "equation",
+     "page": 40,
+     "original": "3.5 3.1"
+    },
+    {
+     "id": "eq-D-182",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Ukrainian"
+    },
+    {
+     "id": "eq-D-183",
+     "type": "equation",
+     "page": 40,
+     "original": "3.3 2.9"
+    },
+    {
+     "id": "eq-D-184",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Umbundu"
+    },
+    {
+     "id": "eq-D-185",
+     "type": "equation",
+     "page": 40,
+     "original": "10.7 10.2"
+    },
+    {
+     "id": "eq-D-186",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Urdu"
+    },
+    {
+     "id": "eq-D-187",
+     "type": "equation",
+     "page": 40,
+     "original": "9.8 8.1"
+    },
+    {
+     "id": "eq-D-188",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Uzbek"
+    },
+    {
+     "id": "eq-D-189",
+     "type": "equation",
+     "page": 40,
+     "original": "4.7 5.0"
+    },
+    {
+     "id": "eq-D-190",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Vietnamese"
+    },
+    {
+     "id": "eq-D-191",
+     "type": "equation",
+     "page": 40,
+     "original": "5.9 6.1"
+    },
+    {
+     "id": "eq-D-192",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Wolof"
+    },
+    {
+     "id": "eq-D-193",
+     "type": "equation",
+     "page": 40,
+     "original": "11.2 11.5"
+    },
+    {
+     "id": "eq-D-194",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Xhosa"
+    },
+    {
+     "id": "eq-D-195",
+     "type": "equation",
+     "page": 40,
+     "original": "6.0 6.1"
+    },
+    {
+     "id": "eq-D-196",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Yoruba"
+    },
+    {
+     "id": "eq-D-197",
+     "type": "equation",
+     "page": 40,
+     "original": "17.0 16.1"
+    },
+    {
+     "id": "eq-D-198",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Cantonese"
+    },
+    {
+     "id": "eq-D-199",
+     "type": "equation",
+     "page": 40,
+     "original": "12.9 12.4"
+    },
+    {
+     "id": "eq-D-200",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Malay"
+    },
+    {
+     "id": "eq-D-201",
+     "type": "equation",
+     "page": 40,
+     "original": "2.8 2.6"
+    },
+    {
+     "id": "eq-D-202",
+     "type": "equation",
+     "page": 40,
+     "original": "CC LM Zulu"
+    },
+    {
+     "id": "eq-D-203",
+     "type": "equation",
+     "page": 40,
+     "original": "5.2 5.5"
+    },
+    {
+     "id": "eq-D-204",
+     "type": "equation",
+     "page": 40,
+     "original": "FL LM Average"
+    },
+    {
+     "id": "eq-D-205",
+     "type": "equation",
+     "page": 40,
+     "original": "6.3 6.3"
+    },
+    {
+     "id": "p-D-2",
+     "type": "paragraph",
+     "page": 40,
+     "sentences": [
+      {
+       "id": "s-D-2-1",
+       "original": "Table A3: Results on FLEURS-102.",
+       "zh": "2.\n（原始数据照录）\nTable A3: Results on FLEURS-102."
       },
       {
-       "id": "s-D-1-2",
+       "id": "s-D-2-2",
        "original": "We show character error rate on the dev and test sets of all 102 FLEURS languages for MMS when fine-tuned on the labeled data of FLEURS.",
        "zh": "我们展示了 MMS 在 FLEURS 标注数据上微调后，在全部 102 种 FLEURS 语言的开发集和测试集上的字错误率。"
       },
       {
-       "id": "s-D-1-3",
+       "id": "s-D-2-3",
        "original": "We use language-specific adapters and heads.",
        "zh": "我们使用语言特定的适配器和头部。"
       },
       {
-       "id": "s-D-1-4",
+       "id": "s-D-2-4",
        "original": "For inference we choose between two n-gram language models (LM) based on dev set accuracy: a word-based model trained on Common Crawl (CC LM) or a character-based model trained on the FLEURS training transcriptions (FL LM).",
        "zh": "推理时，我们根据开发集准确率在两个 n 元语言模型（LM）之间选择：在 Common Crawl 上训练的词级模型（CC LM）或在 FLEURS 训练转写上训练的字符级模型（FL LM）。"
       }
@@ -11140,18 +15014,360 @@ globalThis.PAPER_2305_13516 = {
      "sentences": [
       {
        "id": "s-E-1-1",
-       "original": "Num Samples MMS ASR CER ↓ FLEURS ASR CER ↓ Female Male Female Male Overall Female Male Overall Assamese 139 279 15.3 15.1 15.4 8.6 8.0 8.9 Bulgarian 189 206 9.0 10.2 7.9 3.6 3.5 3.6 Welsh 150 296 15.8 19.4 14.1 8.4 11.5 6.9 Greek 125 146 11.4 9.3 13.1 5.4 4.0 6.6 English 245 149 10.8 10.7 10.9 6.0 5.5 6.8 Spanish 130 278 5.2 5.8 5.0 2.3 2.9 2.0 Fula 107 166 27.2 29.0 26.2 14.8 21.4 11.0 Finnish 352 63 7.6 7.1 10.2 2.7 2.6 3.8 French 62 227 9.1 10.0 8.8 5.4 6.4 5.2 Gujarati 149 283 13.3 12.7 13.7 6.2 6.2 6.2 Hindi 120 119 15.1 15.5 14.7 6.6 8.3 5.1 Kazakh 136 232 7.8 7.4 8.0 3.1 2.4 3.6 Khmer 98 228 26.1 22.8 27.6 14.1 11.2 15.4 Kannada 245 123 10.0 10.4 9.3 5.2 5.2 5.1 Korean 93 133 24.3 26.0 22.9 13.5 14.0 13.1 Kyrgyz 273 149 10.6 12.1 7.9 4.5 5.7 2.1 Ganda 228 78 13.4 13.3 13.6 8.2 7.9 9.0 Latvian 177 179 7.0 6.6 7.3 3.0 2.7 3.3 Marathi 148 295 13.2 9.3 15.0 8.2 4.8 9.9 Polish 95 243 6.6 7.2 6.3 3.3 3.8 3.1 Russian 203 153 8.0 7.4 8.9 4.0 3.7 4.6 Shona 118 275 10.5 8.6 11.4 4.1 2.2 5.1 Swedish 64 266 10.1 8.5 10.5 5.6 4.6 5.9 Swahili 59 152 7.7 11.1 6.5 3.7 3.9 3.6 Tamil 214 163 15.3 17.0 13.2 8.9 10.1 7.4 Telugu 76 235 12.7 11.3 13.1 7.9 8.2 7.8 Tajik 116 123 11.1 12.5 9.9 4.3 4.9 3.7 Average 12.4 12.3 12.4 6.5 6.2 6.4 Table A4: Analysis of Gender Bias.",
-       "zh": "样本数量 MMS ASR CER ↓ FLEURS ASR CER ↓ 女性 男性 女性 男性 总体 女性 男性 总体 阿萨姆语 139 279 15.3 15.1 15.4 8.6 8.0 8.9 保加利亚语 189 206 9.0 10.2 7.9 3.6 3.5 3.6 威尔士语 150 296 15.8 19.4 14.1 8.4 11.5 6.9 希腊语 125 146 11.4 9.3 13.1 5.4 4.0 6.6 英语 245 149 10.8 10.7 10.9 6.0 5.5 6.8 西班牙语 130 278 5.2 5.8 5.0 2.3 2.9 2.0 富拉语 107 166 27.2 29.0 26.2 14.8 21.4 11.0 芬兰语 352 63 7.6 7.1 10.2 2.7 2.6 3.8 法语 62 227 9.1 10.0 8.8 5.4 6.4 5.2 古吉拉特语 149 283 13.3 12.7 13.7 6.2 6.2 6.2 印地语 120 119 15.1 15.5 14.7 6.6 8.3 5.1 哈萨克语 136 232 7.8 7.4 8.0 3.1 2.4 3.6 高棉语 98 228 26.1 22.8 27.6 14.1 11.2 15.4 卡纳达语 245 123 10.0 10.4 9.3 5.2 5.2 5.1 韩语 93 133 24.3 26.0 22.9 13.5 14.0 13.1 吉尔吉斯语 273 149 10.6 12.1 7.9 4.5 5.7 2.1 干达语 228 78 13.4 13.3 13.6 8.2 7.9 9.0 拉脱维亚语 177 179 7.0 6.6 7.3 3.0 2.7 3.3 马拉地语 148 295 13.2 9.3 15.0 8.2 4.8 9.9 波兰语 95 243 6.6 7.2 6.3 3.3 3.8 3.1 俄语 203 153 8.0 7.4 8.9 4.0 3.7 4.6 绍纳语 118 275 10.5 8.6 11.4 4.1 2.2 5.1 瑞典语 64 266 10.1 8.5 10.5 5.6 4.6 5.9 斯瓦希里语 59 152 7.7 11.1 6.5 3.7 3.9 3.6 泰米尔语 214 163 15.3 17.0 13.2 8.9 10.1 7.4 泰卢固语 76 235 12.7 11.3 13.1 7.9 8.2 7.8 塔吉克语 116 123 11.1 12.5 9.9 4.3 4.9 3.7 平均 12.4 12.3 12.4 6.5 6.2 6.4 表 A4：性别偏见分析。"
+       "original": "Num Samples MMS ASR CER ↓ FLEURS ASR CER ↓ Female Male Female Male Overall Female Male Overall Assamese",
+       "zh": "CER"
+      }
+     ]
+    },
+    {
+     "id": "eq-E-1",
+     "type": "equation",
+     "page": 41,
+     "original": "139 279 15.3 15.1 15.4 8.6 8.0 8.9"
+    },
+    {
+     "id": "eq-E-2",
+     "type": "equation",
+     "page": 41,
+     "original": "Bulgarian"
+    },
+    {
+     "id": "eq-E-3",
+     "type": "equation",
+     "page": 41,
+     "original": "189 206 9.0 10.2 7.9 3.6 3.5 3.6"
+    },
+    {
+     "id": "eq-E-4",
+     "type": "equation",
+     "page": 41,
+     "original": "Welsh"
+    },
+    {
+     "id": "eq-E-5",
+     "type": "equation",
+     "page": 41,
+     "original": "150 296 15.8 19.4 14.1 8.4 11.5 6.9"
+    },
+    {
+     "id": "eq-E-6",
+     "type": "equation",
+     "page": 41,
+     "original": "Greek"
+    },
+    {
+     "id": "eq-E-7",
+     "type": "equation",
+     "page": 41,
+     "original": "125 146 11.4 9.3 13.1 5.4 4.0 6.6"
+    },
+    {
+     "id": "eq-E-8",
+     "type": "equation",
+     "page": 41,
+     "original": "English"
+    },
+    {
+     "id": "eq-E-9",
+     "type": "equation",
+     "page": 41,
+     "original": "245 149 10.8 10.7 10.9 6.0 5.5 6.8"
+    },
+    {
+     "id": "eq-E-10",
+     "type": "equation",
+     "page": 41,
+     "original": "Spanish"
+    },
+    {
+     "id": "eq-E-11",
+     "type": "equation",
+     "page": 41,
+     "original": "130 278 5.2 5.8 5.0 2.3 2.9 2.0"
+    },
+    {
+     "id": "eq-E-12",
+     "type": "equation",
+     "page": 41,
+     "original": "Fula"
+    },
+    {
+     "id": "eq-E-13",
+     "type": "equation",
+     "page": 41,
+     "original": "107 166 27.2 29.0 26.2 14.8 21.4 11.0"
+    },
+    {
+     "id": "eq-E-14",
+     "type": "equation",
+     "page": 41,
+     "original": "Finnish"
+    },
+    {
+     "id": "eq-E-15",
+     "type": "equation",
+     "page": 41,
+     "original": "352 63 7.6 7.1 10.2 2.7 2.6 3.8"
+    },
+    {
+     "id": "eq-E-16",
+     "type": "equation",
+     "page": 41,
+     "original": "French"
+    },
+    {
+     "id": "eq-E-17",
+     "type": "equation",
+     "page": 41,
+     "original": "62 227 9.1 10.0 8.8 5.4 6.4 5.2"
+    },
+    {
+     "id": "eq-E-18",
+     "type": "equation",
+     "page": 41,
+     "original": "Gujarati"
+    },
+    {
+     "id": "eq-E-19",
+     "type": "equation",
+     "page": 41,
+     "original": "149 283 13.3 12.7 13.7 6.2 6.2 6.2"
+    },
+    {
+     "id": "eq-E-20",
+     "type": "equation",
+     "page": 41,
+     "original": "Hindi"
+    },
+    {
+     "id": "eq-E-21",
+     "type": "equation",
+     "page": 41,
+     "original": "120 119 15.1 15.5 14.7 6.6 8.3 5.1"
+    },
+    {
+     "id": "eq-E-22",
+     "type": "equation",
+     "page": 41,
+     "original": "Kazakh"
+    },
+    {
+     "id": "eq-E-23",
+     "type": "equation",
+     "page": 41,
+     "original": "136 232 7.8 7.4 8.0 3.1 2.4 3.6"
+    },
+    {
+     "id": "eq-E-24",
+     "type": "equation",
+     "page": 41,
+     "original": "Khmer"
+    },
+    {
+     "id": "eq-E-25",
+     "type": "equation",
+     "page": 41,
+     "original": "98 228 26.1 22.8 27.6 14.1 11.2 15.4"
+    },
+    {
+     "id": "eq-E-26",
+     "type": "equation",
+     "page": 41,
+     "original": "Kannada"
+    },
+    {
+     "id": "eq-E-27",
+     "type": "equation",
+     "page": 41,
+     "original": "245 123 10.0 10.4 9.3 5.2 5.2 5.1"
+    },
+    {
+     "id": "eq-E-28",
+     "type": "equation",
+     "page": 41,
+     "original": "Korean"
+    },
+    {
+     "id": "eq-E-29",
+     "type": "equation",
+     "page": 41,
+     "original": "93 133 24.3 26.0 22.9 13.5 14.0 13.1"
+    },
+    {
+     "id": "eq-E-30",
+     "type": "equation",
+     "page": 41,
+     "original": "Kyrgyz"
+    },
+    {
+     "id": "eq-E-31",
+     "type": "equation",
+     "page": 41,
+     "original": "273 149 10.6 12.1 7.9 4.5 5.7 2.1"
+    },
+    {
+     "id": "eq-E-32",
+     "type": "equation",
+     "page": 41,
+     "original": "Ganda"
+    },
+    {
+     "id": "eq-E-33",
+     "type": "equation",
+     "page": 41,
+     "original": "228 78 13.4 13.3 13.6 8.2 7.9 9.0"
+    },
+    {
+     "id": "eq-E-34",
+     "type": "equation",
+     "page": 41,
+     "original": "Latvian"
+    },
+    {
+     "id": "eq-E-35",
+     "type": "equation",
+     "page": 41,
+     "original": "177 179 7.0 6.6 7.3 3.0 2.7 3.3"
+    },
+    {
+     "id": "eq-E-36",
+     "type": "equation",
+     "page": 41,
+     "original": "Marathi"
+    },
+    {
+     "id": "eq-E-37",
+     "type": "equation",
+     "page": 41,
+     "original": "148 295 13.2 9.3 15.0 8.2 4.8 9.9"
+    },
+    {
+     "id": "eq-E-38",
+     "type": "equation",
+     "page": 41,
+     "original": "Polish"
+    },
+    {
+     "id": "eq-E-39",
+     "type": "equation",
+     "page": 41,
+     "original": "95 243 6.6 7.2 6.3 3.3 3.8 3.1"
+    },
+    {
+     "id": "eq-E-40",
+     "type": "equation",
+     "page": 41,
+     "original": "Russian"
+    },
+    {
+     "id": "eq-E-41",
+     "type": "equation",
+     "page": 41,
+     "original": "203 153 8.0 7.4 8.9 4.0 3.7 4.6"
+    },
+    {
+     "id": "eq-E-42",
+     "type": "equation",
+     "page": 41,
+     "original": "Shona"
+    },
+    {
+     "id": "eq-E-43",
+     "type": "equation",
+     "page": 41,
+     "original": "118 275 10.5 8.6 11.4 4.1 2.2 5.1"
+    },
+    {
+     "id": "eq-E-44",
+     "type": "equation",
+     "page": 41,
+     "original": "Swedish"
+    },
+    {
+     "id": "eq-E-45",
+     "type": "equation",
+     "page": 41,
+     "original": "64 266 10.1 8.5 10.5 5.6 4.6 5.9"
+    },
+    {
+     "id": "eq-E-46",
+     "type": "equation",
+     "page": 41,
+     "original": "Swahili"
+    },
+    {
+     "id": "eq-E-47",
+     "type": "equation",
+     "page": 41,
+     "original": "59 152 7.7 11.1 6.5 3.7 3.9 3.6"
+    },
+    {
+     "id": "eq-E-48",
+     "type": "equation",
+     "page": 41,
+     "original": "Tamil"
+    },
+    {
+     "id": "eq-E-49",
+     "type": "equation",
+     "page": 41,
+     "original": "214 163 15.3 17.0 13.2 8.9 10.1 7.4"
+    },
+    {
+     "id": "eq-E-50",
+     "type": "equation",
+     "page": 41,
+     "original": "Telugu"
+    },
+    {
+     "id": "eq-E-51",
+     "type": "equation",
+     "page": 41,
+     "original": "76 235 12.7 11.3 13.1 7.9 8.2 7.8"
+    },
+    {
+     "id": "eq-E-52",
+     "type": "equation",
+     "page": 41,
+     "original": "Tajik"
+    },
+    {
+     "id": "eq-E-53",
+     "type": "equation",
+     "page": 41,
+     "original": "116 123 11.1 12.5 9.9 4.3 4.9 3.7"
+    },
+    {
+     "id": "eq-E-54",
+     "type": "equation",
+     "page": 41,
+     "original": "Average"
+    },
+    {
+     "id": "eq-E-55",
+     "type": "equation",
+     "page": 41,
+     "original": "- - 12.4 12.3 12.4 6.5 6.2 6.4"
+    },
+    {
+     "id": "p-E-2",
+     "type": "paragraph",
+     "page": 41,
+     "sentences": [
+      {
+       "id": "s-E-2-1",
+       "original": "Table A4: Analysis of Gender Bias.",
+       "zh": "表 A4：性别偏差（Gender Bias）分析。"
       },
       {
-       "id": "s-E-1-2",
+       "id": "s-E-2-2",
        "original": "We compare ASR models trained on MMS-lab data and FLEURS data.",
-       "zh": "我们比较了在 MMS-lab 数据和在 FLEURS 数据上训练的 ASR 模型。"
+       "zh": "我们对比了在 MMS-lab 数据与 FLEURS 数据上训练的 ASR 模型。"
       },
       {
-       "id": "s-E-1-3",
+       "id": "s-E-2-3",
        "original": "We report dev CER per gender of the speakers for 27 languages of FLEURS for which MMS-lab provides data and for which there are at least 50 samples for each gender.",
-       "zh": "我们报告了 FLEURS 中 MMS-lab 提供数据且每种性别至少有 50 个样本的 27 种语言按说话人性别划分的开发集 CER。"
+       "zh": "CER\n（原始数据照录）\nWe report dev CER per gender of the speakers for 27 languages of FLEURS for which MMS-lab provides data and for which there are at least 50 samples for each gender."
       }
      ]
     }
@@ -11253,7 +15469,7 @@ globalThis.PAPER_2305_13516 = {
    "title": "与 Whisper 比公平吗：CTC 模型外挂 n 元 LM 的辩护",
    "featured": false,
    "anchor": {
-    "sentence_id": "s-C-3-3",
+    "sentence_id": "s-C-5-3",
     "quote": "Whisper whose decoder is a neural sequence-model and serves as a language model"
    },
    "explanation": "作者主动承认一个方法论软肋：MMS 是 CTC 模型，本身没有语言建模能力，而 Whisper 的解码器自带语言模型。为公平起见，MMS 侧外挂 Common Crawl n 元 LM。这提示读者：对比数字背后两边\"系统组成\"并不对称，58% 的相对提升既有数据功劳，也有评测口径上的补偿设计。"

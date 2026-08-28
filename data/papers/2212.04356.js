@@ -21,15 +21,10 @@ globalThis.PAPER_2212_04356 = {
    },
    "blocks": [
     {
-     "id": "p-front-1",
-     "type": "paragraph",
+     "id": "eq-front-1",
+     "type": "equation",
      "page": 1,
-     "sentences": [
-      {
-       "id": "s-front-1-1",
-       "original": "Alec Radford * 1 Jong Wook Kim * 1 Tao Xu 1 Greg Brockman 1 Christine McLeavey 1 Ilya Sutskever 1"
-      }
-     ]
+     "original": "Alec Radford * 1 Jong Wook Kim * 1 Tao Xu 1 Greg Brockman 1 Christine McLeavey 1 Ilya Sutskever 1"
     }
    ]
   },
@@ -126,8 +121,13 @@ globalThis.PAPER_2212_04356 = {
       },
       {
        "id": "s-1-2-4",
-       "original": "Machine learning",
-       "zh": "机器学习"
+       "original": "Machine learning *Equal contribution 1OpenAI, San Francisco, CA 94110, USA.",
+       "zh": "（作者单位行）Machine learning *Equal contribution 1OpenAI, San Francisco, CA 94110, USA."
+      },
+      {
+       "id": "s-1-2-5",
+       "original": "Correspondence to: Alec Radford <alec@openai.com>, Jong Wook Kim <jongwook@openai.com>.",
+       "zh": "通讯作者：Alec Radford <alec@openai.com>，Jong Wook Kim <jongwook@openai.com>。"
       }
      ]
     },
@@ -138,13 +138,23 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-1-3-1",
-       "original": "*Equal contribution 1OpenAI, San Francisco, CA 94110, USA.",
-       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+       "original": "1Baevski et al. (2021) is an exciting exception - having developed a fully unsupervised speech recognition system methods are exceedingly adept at ﬁnding patterns within a training dataset which boost performance on held-out data from the same dataset.",
+       "zh": "1Baevski et al. (2021) 是一个令人振奋的例外——他们开发了一套完全无监督的语音识别系统。"
       },
       {
        "id": "s-1-3-2",
-       "original": "Correspondence to: Alec Radford <alec@openai.com>, Jong Wook Kim <jongwook@openai.com>.",
-       "zh": "通讯作者：Alec Radford <alec@openai.com>，Jong Wook Kim <jongwook@openai.com>。"
+       "original": "However, some of these patterns are brittle and spurious and don’t generalize to other datasets and distributions.",
+       "zh": "然而，其中一些模式是脆弱且虚假的，无法泛化到其他数据集和其他分布。"
+      },
+      {
+       "id": "s-1-3-3",
+       "original": "In a particularly disturbing example, Radford et al. (2021) documented a 9.2% increase in object classiﬁcation accuracy when ﬁne-tuning a computer vision model on the ImageNet dataset (Russakovsky et al., 2015) without observing any improvement in average accuracy when classifying the same objects on seven other natural image datasets.",
+       "zh": "一个尤其令人不安的例子是：Radford et al. (2021) 记录到，在 ImageNet 数据集（Russakovsky et al., 2015）上微调一个计算机视觉模型可以让目标分类准确率提高 9.2%，但在另外七个自然图像数据集上分类同样的物体时，平均准确率却没有任何提升。"
+      },
+      {
+       "id": "s-1-3-4",
+       "original": "A model that achieves “superhuman” performance when trained on a dataset can still make many basic errors when evaluated on another, possibly precisely because it is exploiting those dataset-speciﬁc quirks that humans are oblivious to (Geirhos et al., 2020).",
+       "zh": "一个在某个数据集上训练后达到「超人」水平的模型，换到另一个数据集上评测时仍可能犯下许多低级错误——原因可能恰恰在于它利用了那些人类根本察觉不到的、数据集特有的怪癖（Geirhos et al., 2020）。"
       }
      ]
     },
@@ -155,8 +165,13 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-1-4-1",
-       "original": "1Baevski et al. (2021) is an exciting exception - having developed a fully unsupervised speech recognition system",
-       "zh": "1Baevski et al. (2021) 是一个令人振奋的例外——他们开发了一套完全无监督的语音识别系统。"
+       "original": "This suggests that while unsupervised pre-training has improved the quality of audio encoders dramatically, the lack of an equivalently high-quality pre-trained decoder, combined with a recommended protocol of dataset-speciﬁc ﬁnetuning, is a crucial weakness which limits their usefulness and robustness.",
+       "zh": "这表明，尽管无监督预训练大幅提升了音频编码器的质量，但缺少同等高质量的预训练解码器、再加上按数据集分别微调的主流做法，构成一个关键弱点，限制了这类方法的实用性和鲁棒性。"
+      },
+      {
+       "id": "s-1-4-2",
+       "original": "The goal of a speech recognition system should be to work reliably “out of the box” in a broad range of environments without requiring supervised ﬁne-tuning of a decoder for every deployment distribution.",
+       "zh": "语音识别系统的目标应当是「开箱即用」，在广泛的环境中可靠工作，而不需要针对每个部署分布都对解码器做监督微调。"
       }
      ]
     },
@@ -167,23 +182,28 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-1-5-1",
-       "original": "methods are exceedingly adept at ﬁnding patterns within a training dataset which boost performance on held-out data from the same dataset.",
-       "zh": "方法极其擅长在训练数据集中找到各种模式，用来提升在同一数据集留出数据上的性能。"
+       "original": "As demonstrated by Narayanan et al. (2018), Likhomanenko et al. (2020), and Chan et al. (2021) speech recognition systems that are pre-trained in a supervised fashion across many datasets/domains exhibit higher robustness and generalize much more effectively to held-out datasets than models trained on a single source.",
+       "zh": "正如 Narayanan et al. (2018)、Likhomanenko et al. (2020) 和 Chan et al. (2021) 所展示的，在多个数据集/领域上以监督方式预训练的语音识别系统表现出更高的鲁棒性，对留出数据集的泛化也远优于在单一数据源上训练的模型。"
       },
       {
        "id": "s-1-5-2",
-       "original": "However, some of these patterns are brittle and spurious and don’t generalize to other datasets and distributions.",
-       "zh": "然而，其中一些模式是脆弱且虚假的，无法泛化到其他数据集和其他分布。"
+       "original": "These works achieve this by combining as many existing high-quality speech recognition datasets as possible.",
+       "zh": "这些工作的做法是尽可能多地把现有的高质量语音识别数据集合并起来。"
       },
       {
        "id": "s-1-5-3",
-       "original": "In a particularly disturbing example, Radford et al. (2021) documented a 9.2% increase in object classiﬁcation accuracy when ﬁne-tuning a computer vision model on the ImageNet dataset (Russakovsky et al., 2015) without observing any improvement in average accuracy when classifying the same objects on seven other natural image datasets.",
-       "zh": "一个尤其令人不安的例子是：Radford et al. (2021) 记录到，在 ImageNet 数据集（Russakovsky et al., 2015）上微调一个计算机视觉模型可以让目标分类准确率提高 9.2%，但在另外七个自然图像数据集上分类同样的物体时，平均准确率却没有任何提升。"
+       "original": "However, there is still only a moderate amount of this data easily available.",
+       "zh": "然而，这类容易获得的数据总量仍然有限。"
       },
       {
        "id": "s-1-5-4",
-       "original": "A model that achieves “superhuman” performance when trained on a dataset can still make many basic errors when evaluated on another, possibly precisely because it is exploiting those dataset-speciﬁc quirks that humans are oblivious to (Geirhos et al., 2020).",
-       "zh": "一个在某个数据集上训练后达到「超人」水平的模型，换到另一个数据集上评测时仍可能犯下许多低级错误——原因可能恰恰在于它利用了那些人类根本察觉不到的、数据集特有的怪癖（Geirhos et al., 2020）。"
+       "original": "SpeechStew (Chan et al., 2021) mixes together 7 pre-existing datasets totalling 5,140 hours of supervision.",
+       "zh": "SpeechStew（Chan et al., 2021）混合了 7 个既有数据集，总计 5,140 小时的监督数据。"
+      },
+      {
+       "id": "s-1-5-5",
+       "original": "While not insigniﬁ- cant, this is still tiny compared to the previously mentioned 1,000,000 hours of unlabeled speech data utilized in Zhang et al. (2021).",
+       "zh": "这个量级不算小，但与前面提到的 Zhang et al. (2021) 所用的 1,000,000 小时无标注语音数据相比，仍然微不足道。"
       }
      ]
     },
@@ -194,62 +214,77 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-1-6-1",
-       "original": "This suggests that while unsupervised pre-training has improved the quality of audio encoders dramatically, the lack of an equivalently high-quality pre-trained decoder, combined with a recommended protocol of dataset-speciﬁc ﬁnetuning, is a crucial weakness which limits their usefulness and robustness.",
-       "zh": "这表明，尽管无监督预训练大幅提升了音频编码器的质量，但缺少同等高质量的预训练解码器、再加上按数据集分别微调的主流做法，构成一个关键弱点，限制了这类方法的实用性和鲁棒性。"
+       "original": "Recognizing the limiting size of existing high-quality supervised datasets, recent efforts have created larger datasets for speech recognition.",
+       "zh": "认识到现有高质量监督数据集规模的局限，近期一些工作着手构建更大的语音识别数据集。"
       },
       {
        "id": "s-1-6-2",
-       "original": "The goal of a speech recognition system should be to work reliably “out of the box” in a broad range of environments without requiring supervised ﬁne-tuning of a decoder for every deployment distribution.",
-       "zh": "语音识别系统的目标应当是「开箱即用」，在广泛的环境中可靠工作，而不需要针对每个部署分布都对解码器做监督微调。"
+       "original": "By relaxing the requirement of goldstandard human-validated transcripts, Chen et al. (2021) and Galvez et al. (2021) make use of sophisticated automated pipelines to scale weakly supervised speech recognition to 10,000 and 30,000 hours of noisier training data.",
+       "zh": "通过放宽对金标准人工核验转写的要求，Chen et al. (2021) 与 Galvez et al. (2021) 利用精细的自动化流水线，把弱监督语音识别扩展到 10,000 与 30,000 小时的带噪声训练数据。"
+      },
+      {
+       "id": "s-1-6-3",
+       "original": "This trade-off between quality and quantity is often the right call.",
+       "zh": "这种质量与数量之间的权衡通常是正确的选择。"
+      },
+      {
+       "id": "s-1-6-4",
+       "original": "Although understudied so far for speech recognition, recent work in computer vision has demonstrated that moving beyond gold-standard crowdsourced datasets such as ImageNet (Russakovsky et al., 2015) to much larger but weakly supervised datasets signiﬁcantly improves the robustness and generalization of models (Mahajan et al., 2018; Kolesnikov et al., 2020).",
+       "zh": "尽管这一思路在语音识别领域还研究不多，但计算机视觉的近期工作已经证明：从 ImageNet（Russakovsky et al., 2015）这类金标准众包数据集，转向规模大得多但弱监督的数据集，能显著提升模型的鲁棒性和泛化能力（Mahajan et al., 2018; Kolesnikov et al., 2020）。"
       }
      ]
     },
     {
      "id": "p-1-7",
      "type": "paragraph",
-     "page": 1,
+     "page": 2,
      "sentences": [
       {
        "id": "s-1-7-1",
-       "original": "As demonstrated by Narayanan et al. (2018), Likhomanenko et al. (2020), and Chan et al. (2021) speech recognition systems that are pre-trained in a supervised fashion across many datasets/domains exhibit higher robustness and generalize much more effectively to held-out datasets than models trained on a single source.",
-       "zh": "正如 Narayanan et al. (2018)、Likhomanenko et al. (2020) 和 Chan et al. (2021) 所展示的，在多个数据集/领域上以监督方式预训练的语音识别系统表现出更高的鲁棒性，对留出数据集的泛化也远优于在单一数据源上训练的模型。"
+       "original": "Yet these new datasets are only a few times larger than the sum of existing high-quality datasets and still much smaller than prior unsupervised work.",
+       "zh": "然而，这些新数据集只比现有高质量数据集的总和大几倍，仍远小于此前无监督工作的数据规模。"
       },
       {
        "id": "s-1-7-2",
-       "original": "These works achieve this by combining as many existing high-quality speech recognition datasets as possible.",
-       "zh": "这些工作的做法是尽可能多地把现有的高质量语音识别数据集合并起来。"
+       "original": "In this work we close that gap, scaling weakly supervised speech recognition the next order of magnitude to 680,000 hours of labeled audio data.",
+       "zh": "在本工作中，我们弥合了这一差距，把弱监督语音识别再扩大一个数量级，达到 680,000 小时的标注音频数据。"
       },
       {
        "id": "s-1-7-3",
-       "original": "However, there is still only a moderate amount of this data easily available.",
-       "zh": "然而，这类容易获得的数据总量仍然有限。"
+       "original": "We call our approach Whisper2.",
+       "zh": "我们将这一方法称为 Whisper（注 2）。"
       },
       {
        "id": "s-1-7-4",
-       "original": "SpeechStew (Chan et al., 2021) mixes together 7 pre-existing datasets totalling 5,140 hours of supervision.",
-       "zh": "SpeechStew（Chan et al., 2021）混合了 7 个既有数据集，总计 5,140 小时的监督数据。"
-      },
-      {
-       "id": "s-1-7-5",
-       "original": "While not insigniﬁ- cant, this is still tiny compared to the previously mentioned 1,000,000 hours of unlabeled speech data utilized in Zhang et al. (2021).",
-       "zh": "这个量级不算小，但与前面提到的 Zhang et al. (2021) 所用的 1,000,000 小时无标注语音数据相比，仍然微不足道。"
+       "original": "We demonstrate models trained at this scale transfer well to existing datasets zeroshot, removing the need for any dataset-speciﬁc ﬁne-tuning to achieve high-quality results.",
+       "zh": "我们证明了在这一规模下训练的模型可以零样本（zero-shot）迁移到现有数据集上，无需任何针对特定数据集的微调就能获得高质量结果。"
       }
      ]
     },
     {
      "id": "p-1-8",
      "type": "paragraph",
-     "page": 1,
+     "page": 2,
      "sentences": [
       {
        "id": "s-1-8-1",
-       "original": "Recognizing the limiting size of existing high-quality supervised datasets, recent efforts have created larger datasets for speech recognition.",
-       "zh": "认识到现有高质量监督数据集规模的局限，近期一些工作着手构建更大的语音识别数据集。"
+       "original": "In addition to scale, our work also focuses on broadening the scope of weakly supervised pre-training beyond English-only speech recognition to be both multilingual and multitask.",
+       "zh": "除了规模之外，我们的工作还着眼于拓宽弱监督预训练的范围：从纯英语语音识别扩展到多语言和多任务。"
       },
       {
        "id": "s-1-8-2",
-       "original": "By relaxing the requirement of goldstandard human-validated transcripts, Chen et al. (2021) and Galvez et al. (2021) make use of sophisticated automated",
-       "zh": "通过放宽对金标准人工校验转录的要求，Chen et al. (2021) 和 Galvez et al. (2021) 利用精心设计的自动化"
+       "original": "Of those 680,000 hours of audio, 117,000 hours cover 96 other languages.",
+       "zh": "在这 680,000 小时音频中，有 117,000 小时覆盖英语之外的 96 种语言。"
+      },
+      {
+       "id": "s-1-8-3",
+       "original": "The dataset also includes 125,000 hours of X→en translation data.",
+       "zh": "数据集还包含 125,000 小时的 X→en（任意语言到英语）翻译数据。"
+      },
+      {
+       "id": "s-1-8-4",
+       "original": "We ﬁnd that for sufﬁciently large models there is no drawback and even beneﬁts to joint multilingual and multitask training.",
+       "zh": "我们发现，对于足够大的模型，多语言多任务联合训练不仅没有坏处，反而还有收益。"
       }
      ]
     },
@@ -260,92 +295,16 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-1-9-1",
-       "original": "pipelines to scale weakly supervised speech recognition to 10,000 and 30,000 hours of noisier training data.",
-       "zh": "流水线，把弱监督语音识别扩展到 10,000 小时和 30,000 小时噪声更大的训练数据。"
-      },
-      {
-       "id": "s-1-9-2",
-       "original": "This trade-off between quality and quantity is often the right call.",
-       "zh": "这种质量与数量之间的权衡通常是正确的选择。"
-      },
-      {
-       "id": "s-1-9-3",
-       "original": "Although understudied so far for speech recognition, recent work in computer vision has demonstrated that moving beyond gold-standard crowdsourced datasets such as ImageNet (Russakovsky et al., 2015) to much larger but weakly supervised datasets signiﬁcantly improves the robustness and generalization of models (Mahajan et al., 2018; Kolesnikov et al., 2020).",
-       "zh": "尽管这一思路在语音识别领域还研究不多，但计算机视觉的近期工作已经证明：从 ImageNet（Russakovsky et al., 2015）这类金标准众包数据集，转向规模大得多但弱监督的数据集，能显著提升模型的鲁棒性和泛化能力（Mahajan et al., 2018; Kolesnikov et al., 2020）。"
-      }
-     ]
-    },
-    {
-     "id": "p-1-10",
-     "type": "paragraph",
-     "page": 2,
-     "sentences": [
-      {
-       "id": "s-1-10-1",
-       "original": "Yet these new datasets are only a few times larger than the sum of existing high-quality datasets and still much smaller than prior unsupervised work.",
-       "zh": "然而，这些新数据集只比现有高质量数据集的总和大几倍，仍远小于此前无监督工作的数据规模。"
-      },
-      {
-       "id": "s-1-10-2",
-       "original": "In this work we close that gap, scaling weakly supervised speech recognition the next order of magnitude to 680,000 hours of labeled audio data.",
-       "zh": "在本工作中，我们弥合了这一差距，把弱监督语音识别再扩大一个数量级，达到 680,000 小时的标注音频数据。"
-      },
-      {
-       "id": "s-1-10-3",
-       "original": "We call our approach Whisper2.",
-       "zh": "我们将这一方法称为 Whisper（注 2）。"
-      },
-      {
-       "id": "s-1-10-4",
-       "original": "We demonstrate models trained at this scale transfer well to existing datasets zeroshot, removing the need for any dataset-speciﬁc ﬁne-tuning to achieve high-quality results.",
-       "zh": "我们证明了在这一规模下训练的模型可以零样本（zero-shot）迁移到现有数据集上，无需任何针对特定数据集的微调就能获得高质量结果。"
-      }
-     ]
-    },
-    {
-     "id": "p-1-11",
-     "type": "paragraph",
-     "page": 2,
-     "sentences": [
-      {
-       "id": "s-1-11-1",
-       "original": "In addition to scale, our work also focuses on broadening the scope of weakly supervised pre-training beyond English-only speech recognition to be both multilingual and multitask.",
-       "zh": "除了规模之外，我们的工作还着眼于拓宽弱监督预训练的范围：从纯英语语音识别扩展到多语言和多任务。"
-      },
-      {
-       "id": "s-1-11-2",
-       "original": "Of those 680,000 hours of audio, 117,000 hours cover 96 other languages.",
-       "zh": "在这 680,000 小时音频中，有 117,000 小时覆盖英语之外的 96 种语言。"
-      },
-      {
-       "id": "s-1-11-3",
-       "original": "The dataset also includes 125,000 hours of X→en translation data.",
-       "zh": "数据集还包含 125,000 小时的 X→en（任意语言到英语）翻译数据。"
-      },
-      {
-       "id": "s-1-11-4",
-       "original": "We ﬁnd that for sufﬁciently large models there is no drawback and even beneﬁts to joint multilingual and multitask training.",
-       "zh": "我们发现，对于足够大的模型，多语言多任务联合训练不仅没有坏处，反而还有收益。"
-      }
-     ]
-    },
-    {
-     "id": "p-1-12",
-     "type": "paragraph",
-     "page": 2,
-     "sentences": [
-      {
-       "id": "s-1-12-1",
        "original": "Our work suggests that simple scaling of weakly supervised pre-training has been underappreciated so far for speech recognition.",
        "zh": "我们的工作表明，在语音识别领域，简单扩大弱监督预训练的规模这一点一直被低估。"
       },
       {
-       "id": "s-1-12-2",
+       "id": "s-1-9-2",
        "original": "We achieve these results without the need for the self-supervision or self-training techniques that have been a mainstay of recent large-scale speech recognition work.",
        "zh": "取得这些结果并不需要自监督或自训练技术——而它们是近期大规模语音识别工作的主流支柱。"
       },
       {
-       "id": "s-1-12-3",
+       "id": "s-1-9-3",
        "original": "To serve as a foundation for further research on robust speech recognition, we release inference code and models at the following URL: https://github.com/openai/ whisper.",
        "zh": "为了作为鲁棒语音识别后续研究的基础，我们在以下网址发布推理代码和模型：https://github.com/openai/ whisper。"
       }
@@ -391,8 +350,8 @@ globalThis.PAPER_2212_04356 = {
       },
       {
        "id": "s-2-1-1-3",
-       "original": "This simpliﬁes",
-       "zh": "这简化了"
+       "original": "This simpliﬁes 2If an acronym or basis for the name is desired, WSPSR standing for Web-scale Supervised Pretraining for Speech Recognition can be used. the speech recognition pipeline since it removes the need for a separate inverse text normalization step in order to produce naturalistic transcriptions.",
+       "zh": "这简化了语音识别流水线，因为不再需要单独的逆文本规范化步骤就能得到自然的转写。（脚注 2：如需为该方法的名称找一个缩写，可用 WSPSR，即 Web-scale Supervised Pretraining for Speech Recognition。）"
       }
      ]
     },
@@ -403,8 +362,28 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-2-1-2-1",
-       "original": "2If an acronym or basis for the name is desired, WSPSR standing for Web-scale Supervised Pretraining for Speech Recognition can be used.",
-       "zh": "2如果希望这个名字有个缩写或来历，可以用 WSPSR，即 Web-scale Supervised Pretraining for Speech Recognition（面向语音识别的网络规模监督预训练）。"
+       "original": "We construct the dataset from audio that is paired with transcripts on the Internet.",
+       "zh": "我们的数据集由互联网上音频与其转录文本配对而成。"
+      },
+      {
+       "id": "s-2-1-2-2",
+       "original": "This results in a very diverse dataset covering a broad distribution of audio from many different environments, recording setups, speakers, and languages.",
+       "zh": "这样得到的数据集非常多样，覆盖了来自各种不同环境、录音设备、说话人和语言的音频分布。"
+      },
+      {
+       "id": "s-2-1-2-3",
+       "original": "While diversity in audio quality can help train a model to be robust, diversity in transcript quality is not similarly beneﬁcial.",
+       "zh": "音频质量的多样性有助于训练出鲁棒的模型，但转录质量的多样性却没有类似的好处。"
+      },
+      {
+       "id": "s-2-1-2-4",
+       "original": "Initial inspection showed a large amount of subpar transcripts in the raw dataset.",
+       "zh": "初步检查发现，原始数据集中存在大量质量欠佳的转录。"
+      },
+      {
+       "id": "s-2-1-2-5",
+       "original": "To address this, we developed several automated ﬁltering methods to improve transcript quality.",
+       "zh": "为解决这个问题，我们开发了若干自动化过滤方法来提升转录质量。"
       }
      ]
     },
@@ -415,8 +394,33 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-2-1-3-1",
-       "original": "the speech recognition pipeline since it removes the need for a separate inverse text normalization step in order to produce naturalistic transcriptions.",
-       "zh": "语音识别流水线，因为它不再需要单独的逆文本规范化步骤，就能产出自然的转录文本。"
+       "original": "Many transcripts on the internet are not actually humangenerated but the output of existing ASR systems.",
+       "zh": "互联网上的许多转录其实并不是人生成的，而是现有 ASR 系统的输出。"
+      },
+      {
+       "id": "s-2-1-3-2",
+       "original": "Recent research has shown that training on datasets of mixed human and machine-generated data can signiﬁcantly impair the performance of translation systems (Ghorbani et al., 2021).",
+       "zh": "近期研究表明，在混合了人工数据与机器生成数据的数据集上训练，会显著损害翻译系统的性能（Ghorbani et al., 2021）。"
+      },
+      {
+       "id": "s-2-1-3-3",
+       "original": "In order to avoid learning “transcript-ese”, we developed many heuristics to detect and remove machine-generated transcripts from the training dataset.",
+       "zh": "为了避免学到「转录腔」（transcript-ese），我们开发了许多启发式规则，从训练数据集中检测并移除机器生成的转录。"
+      },
+      {
+       "id": "s-2-1-3-4",
+       "original": "Many existing ASR systems output only a limited subset of written language which removes or normalizes away aspects that are difﬁcult to predict from only audio signals such as complex punctuation (exclamation points, commas, and question marks), formatting whitespace such as paragraphs, or stylistic aspects such as capitalization.",
+       "zh": "许多现有 ASR 系统只输出书面语言的一个有限子集，会删掉或规范化掉那些仅从音频信号难以预测的方面，例如复杂标点（感叹号、逗号和问号）、段落等格式空白，以及大小写等文体特征。"
+      },
+      {
+       "id": "s-2-1-3-5",
+       "original": "An all-uppercase or all-lowercase transcript is very unlikely to be human generated.",
+       "zh": "一份全大写或全小写的转录几乎不可能是人生成的。"
+      },
+      {
+       "id": "s-2-1-3-6",
+       "original": "While many ASR systems include some level of inverse text normalization, it is often simple or rule-based and still detectable from other unhandled aspects such as never including commas.",
+       "zh": "虽然许多 ASR 系统带有一定程度的逆文本规范化，但往往很简单或基于规则，仍可从其他未处理的方面被识别出来，比如从不包含逗号。"
       }
      ]
     },
@@ -427,28 +431,23 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-2-1-4-1",
-       "original": "We construct the dataset from audio that is paired with transcripts on the Internet.",
-       "zh": "我们的数据集由互联网上音频与其转录文本配对而成。"
+       "original": "We also use an audio language detector, which was created by ﬁne-tuning a prototype model trained on a prototype version of the dataset on VoxLingua107 (Valk & Alum¨ae, 2021) to ensure that the spoken language matches the language of the transcript according to CLD2.",
+       "zh": "我们还使用了一个音频语种检测器：先把一个在原型数据集上训练的原型模型在 VoxLingua107（Valk & Alumäe, 2021）上微调得到，用它确保语音所说的语言与 CLD2 判定的转录文本语言一致。"
       },
       {
        "id": "s-2-1-4-2",
-       "original": "This results in a very diverse dataset covering a broad distribution of audio from many different environments, recording setups, speakers, and languages.",
-       "zh": "这样得到的数据集非常多样，覆盖了来自各种不同环境、录音设备、说话人和语言的音频分布。"
+       "original": "If the two do not match, we don’t include the (audio, transcript) pair as a speech recognition training example in the dataset.",
+       "zh": "如果两者不一致，我们就不把这对（音频，转录）作为语音识别训练样本纳入数据集。"
       },
       {
        "id": "s-2-1-4-3",
-       "original": "While diversity in audio quality can help train a model to be robust, diversity in transcript quality is not similarly beneﬁcial.",
-       "zh": "音频质量的多样性有助于训练出鲁棒的模型，但转录质量的多样性却没有类似的好处。"
+       "original": "We make an exception if the transcript language is English and add these pairs to the dataset as X→en speech translation training examples instead.",
+       "zh": "有一种例外：如果转录语言是英语，我们就把这些样本对作为 X→en 语音翻译训练样本加入数据集。"
       },
       {
        "id": "s-2-1-4-4",
-       "original": "Initial inspection showed a large amount of subpar transcripts in the raw dataset.",
-       "zh": "初步检查发现，原始数据集中存在大量质量欠佳的转录。"
-      },
-      {
-       "id": "s-2-1-4-5",
-       "original": "To address this, we developed several automated ﬁltering methods to improve transcript quality.",
-       "zh": "为解决这个问题，我们开发了若干自动化过滤方法来提升转录质量。"
+       "original": "We use fuzzy de-duping of transcript texts to reduce the amount of duplication and automatically generated content in the training dataset.",
+       "zh": "我们还对转录文本做了模糊去重，以减少训练数据中的重复和自动生成内容。"
       }
      ]
     },
@@ -459,33 +458,13 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-2-1-5-1",
-       "original": "Many transcripts on the internet are not actually humangenerated but the output of existing ASR systems.",
-       "zh": "互联网上的许多转录其实并不是人生成的，而是现有 ASR 系统的输出。"
+       "original": "We break audio ﬁles into 30-second segments paired with the subset of the transcript that occurs within that time segment.",
+       "zh": "我们把音频文件切成 30 秒的片段，每段配上该时间段内出现的那部分转录文本。"
       },
       {
        "id": "s-2-1-5-2",
-       "original": "Recent research has shown that training on datasets of mixed human and machine-generated data can signiﬁcantly impair the performance of translation systems (Ghorbani et al., 2021).",
-       "zh": "近期研究表明，在混合了人工数据与机器生成数据的数据集上训练，会显著损害翻译系统的性能（Ghorbani et al., 2021）。"
-      },
-      {
-       "id": "s-2-1-5-3",
-       "original": "In order to avoid learning “transcript-ese”, we developed many heuristics to detect and remove machine-generated transcripts from the training dataset.",
-       "zh": "为了避免学到「转录腔」（transcript-ese），我们开发了许多启发式规则，从训练数据集中检测并移除机器生成的转录。"
-      },
-      {
-       "id": "s-2-1-5-4",
-       "original": "Many existing ASR systems output only a limited subset of written language which removes or normalizes away aspects that are difﬁcult to predict from only audio signals such as complex punctuation (exclamation points, commas, and question marks), formatting whitespace such as paragraphs, or stylistic aspects such as capitalization.",
-       "zh": "许多现有 ASR 系统只输出书面语言的一个有限子集，会删掉或规范化掉那些仅从音频信号难以预测的方面，例如复杂标点（感叹号、逗号和问号）、段落等格式空白，以及大小写等文体特征。"
-      },
-      {
-       "id": "s-2-1-5-5",
-       "original": "An all-uppercase or all-lowercase transcript is very unlikely to be human generated.",
-       "zh": "一份全大写或全小写的转录几乎不可能是人生成的。"
-      },
-      {
-       "id": "s-2-1-5-6",
-       "original": "While many ASR systems include some level of inverse text normalization, it is often simple or rule-based and still detectable from other unhandled aspects such as never including commas.",
-       "zh": "虽然许多 ASR 系统带有一定程度的逆文本规范化，但往往很简单或基于规则，仍可从其他未处理的方面被识别出来，比如从不包含逗号。"
+       "original": "We train on all audio, including segments where there is no speech (though with sub-sampled probability) and use these segments as training data for voice activity detection.",
+       "zh": "我们在全部音频上训练，包括没有语音的片段（但以降采样的概率使用），并把这些片段用作语音活动检测（VAD）的训练数据。"
       }
      ]
     },
@@ -496,79 +475,23 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-2-1-6-1",
-       "original": "We also use an audio language detector, which was created by ﬁne-tuning a prototype model trained on a prototype version of the dataset on VoxLingua107 (Valk & Alum¨ae, 2021) to ensure that the spoken language matches the language of the transcript according to CLD2.",
-       "zh": "我们还使用了一个音频语种检测器：先把一个在原型数据集上训练的原型模型在 VoxLingua107（Valk & Alumäe, 2021）上微调得到，用它确保语音所说的语言与 CLD2 判定的转录文本语言一致。"
+       "original": "For an additional ﬁltering pass, after training an initial model we aggregated information about its error rate on training data sources and performed manual inspection of these data sources sorting by a combination of both high error rate and data source size in order to identify and remove low-quality ones efﬁciently.",
+       "zh": "作为额外的一轮过滤，在训练出一个初始模型之后，我们汇总了它在各训练"
       },
       {
        "id": "s-2-1-6-2",
-       "original": "If the two do not match, we don’t include the (audio, transcript) pair as a speech recognition training example in the dataset.",
-       "zh": "如果两者不一致，我们就不把这对（音频，转录）作为语音识别训练样本纳入数据集。"
-      },
-      {
-       "id": "s-2-1-6-3",
-       "original": "We make an exception if the transcript language is English and add these pairs to the dataset as X→en speech translation training examples instead.",
-       "zh": "有一种例外：如果转录语言是英语，我们就把这些样本对作为 X→en 语音翻译训练样本加入数据集。"
-      },
-      {
-       "id": "s-2-1-6-4",
-       "original": "We use fuzzy de-duping of transcript texts to reduce the amount of duplication and automatically generated content in the training dataset.",
-       "zh": "我们还对转录文本做了模糊去重，以减少训练数据中的重复和自动生成内容。"
-      }
-     ]
-    },
-    {
-     "id": "p-2-1-7",
-     "type": "paragraph",
-     "page": 2,
-     "sentences": [
-      {
-       "id": "s-2-1-7-1",
-       "original": "We break audio ﬁles into 30-second segments paired with the subset of the transcript that occurs within that time segment.",
-       "zh": "我们把音频文件切成 30 秒的片段，每段配上该时间段内出现的那部分转录文本。"
-      },
-      {
-       "id": "s-2-1-7-2",
-       "original": "We train on all audio, including segments where there is no speech (though with sub-sampled probability) and use these segments as training data for voice activity detection.",
-       "zh": "我们在全部音频上训练，包括没有语音的片段（但以降采样的概率使用），并把这些片段用作语音活动检测（VAD）的训练数据。"
-      }
-     ]
-    },
-    {
-     "id": "p-2-1-8",
-     "type": "paragraph",
-     "page": 2,
-     "sentences": [
-      {
-       "id": "s-2-1-8-1",
-       "original": "For an additional ﬁltering pass, after training an initial model we aggregated information about its error rate on training",
-       "zh": "作为额外的一轮过滤，在训练出一个初始模型之后，我们汇总了它在各训练"
-      }
-     ]
-    },
-    {
-     "id": "p-2-1-9",
-     "type": "paragraph",
-     "page": 3,
-     "sentences": [
-      {
-       "id": "s-2-1-9-1",
-       "original": "data sources and performed manual inspection of these data sources sorting by a combination of both high error rate and data source size in order to identify and remove low-quality ones efﬁciently.",
-       "zh": "数据源上的错误率信息，按错误率高和数据源规模大的组合排序，对这些数据源进行人工检查，以便高效地识别并移除低质量来源。"
-      },
-      {
-       "id": "s-2-1-9-2",
        "original": "This inspection showed a large amount of only partially transcribed or poorly aligned/misaligned transcripts as well as remaining low-quality machine-generated captions that ﬁltering heuristics did not detect.",
        "zh": "这轮检查发现了大量只转录了一部分、对齐很差或完全错位的转录，以及过滤启发式未能检出的残留低质量机器生成字幕。"
       }
      ]
     },
     {
-     "id": "p-2-1-10",
+     "id": "p-2-1-7",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-2-1-10-1",
+       "id": "s-2-1-7-1",
        "original": "To avoid contamination, we perform de-duplication at a transcript level between the training dataset and the evaluation datasets we thought were at higher risk of overlap, namely TED-LIUM 3 (Hernandez et al., 2018).",
        "zh": "为避免数据污染，我们在训练数据集与我们认为重叠风险较高的评测数据集（即 TED-LIUM 3（Hernandez et al., 2018））之间做了转录级别的去重。"
       }
@@ -679,8 +602,23 @@ globalThis.PAPER_2212_04356 = {
       },
       {
        "id": "s-2-3-1-2",
-       "original": "A fully featured speech recognition system can involve many additional components such as voice activity detection, speaker diarization, and inverse text normal-",
-       "zh": "一个功能完整的语音识别系统可能涉及许多额外组件，例如语音活动检测（VAD）、说话人分离（diarization）和逆文本规范"
+       "original": "A fully featured speech recognition system can involve many additional components such as voice activity detection, speaker diarization, and inverse text normalization.",
+       "zh": "化。"
+      },
+      {
+       "id": "s-2-3-1-3",
+       "original": "These components are often handled separately, resulting in a relatively complex system around the core speech recognition model.",
+       "zh": "这些组件通常各自独立处理，导致核心语音识别模型外围挂着一个相对复杂的系统。"
+      },
+      {
+       "id": "s-2-3-1-4",
+       "original": "To reduce this complexity, we would like to have a single model perform the entire speech processing pipeline, not just the core recognition part.",
+       "zh": "为了降低这种复杂性，我们希望用单一模型完成整个语音处理流水线，而不仅仅是核心识别部分。"
+      },
+      {
+       "id": "s-2-3-1-5",
+       "original": "An important consideration here is the interface for the model.",
+       "zh": "这里一个重要的考量是模型的接口。"
       }
      ]
     },
@@ -691,26 +629,6 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-2-3-2-1",
-       "original": "ization.",
-       "zh": "化。"
-      },
-      {
-       "id": "s-2-3-2-2",
-       "original": "These components are often handled separately, resulting in a relatively complex system around the core speech recognition model.",
-       "zh": "这些组件通常各自独立处理，导致核心语音识别模型外围挂着一个相对复杂的系统。"
-      },
-      {
-       "id": "s-2-3-2-3",
-       "original": "To reduce this complexity, we would like to have a single model perform the entire speech processing pipeline, not just the core recognition part.",
-       "zh": "为了降低这种复杂性，我们希望用单一模型完成整个语音处理流水线，而不仅仅是核心识别部分。"
-      },
-      {
-       "id": "s-2-3-2-4",
-       "original": "An important consideration here is the interface for the model.",
-       "zh": "这里一个重要的考量是模型的接口。"
-      },
-      {
-       "id": "s-2-3-2-5",
        "original": "There are many different tasks that can be performed on the same input audio signal: transcription, translation, voice activity detection, alignment, and language identiﬁcation are some examples.",
        "zh": "同一段输入音频信号上可以执行许多不同的任务：转录、翻译、语音活动检测、对齐和语种识别（LID）都是例子。"
       }
@@ -809,116 +727,166 @@ globalThis.PAPER_2212_04356 = {
      ]
     },
     {
-     "id": "tb-2-3-4",
-     "type": "table_body",
-     "page": 4,
-     "original": "⋯\n⋯\n2 × Conv1D + GELU\n⋮\ncross attention\nLog-Mel Spectrogram\n~\nSOT EN\nTRANS-\nCRIBE 0.0 The quick\nTokens in Multitask Training Format",
-     "cells": 11,
-     "zh": "图内结构碎片：2 层 Conv1D + GELU、cross attention、Log-Mel 频谱图，以及多任务训练格式的 token 序列示意（SOT EN TRANSCRIBE 0.0 The quick …）。"
-    },
-    {
-     "id": "p-2-3-15",
+     "id": "p-2-3-4",
      "type": "paragraph",
      "page": 4,
      "sentences": [
       {
-       "id": "s-2-3-15-1",
-       "original": "Transformer Encoder Blocks Transformer Decoder Blocks",
-       "zh": "Transformer 编码器块；Transformer 解码器块。"
-      }
-     ]
-    },
-    {
-     "id": "tb-2-3-16",
-     "type": "table_body",
-     "page": 4,
-     "original": "EN 0.0 The quick brown\n⋮ ⋮\nnext-token prediction\nSinusoidal\nPositional Encoding\nLearned Positional Encoding",
-     "cells": 6,
-     "zh": "图内结构碎片：正弦位置编码（编码器侧）与学习式位置编码（解码器侧）、next-token prediction 标注。"
-    },
-    {
-     "id": "p-2-3-22",
-     "type": "paragraph",
-     "page": 4,
-     "sentences": [
-      {
-       "id": "s-2-3-22-1",
-       "original": "Multitask training data (680k hours) Sequence-to-sequence learning",
+       "id": "s-2-3-4-1",
+       "original": "Multitask training data (680k hours) Sequence-to-sequence learning English transcription 🗣️  “Ask not what your country can do for ⋯” 📝  Ask not what your country can do for ⋯ Any-to-English speech translation TRANS-",
        "zh": "多任务训练数据（680k 小时）；序列到序列学习。"
       }
      ]
     },
     {
-     "id": "tb-2-3-23",
-     "type": "table_body",
+     "id": "eq-2-3-1",
+     "type": "equation",
      "page": 4,
-     "original": "Multitask training format\nEnglish transcription\nAny-to-English speech translation\nNon-English transcription\nNo speech",
-     "cells": 5,
-     "zh": "图内任务列表：多任务训练格式涵盖英语转录、任意语言到英语的语音翻译、非英语转录、无语音四类。"
+     "original": "⋯"
     },
     {
-     "id": "p-2-3-28",
+     "id": "p-2-3-5",
      "type": "paragraph",
      "page": 4,
      "sentences": [
       {
-       "id": "s-2-3-28-1",
-       "original": "🗣️  “Ask not what your country can do for ⋯” 📝  Ask not what your country can do for ⋯",
-       "zh": "🗣️ 「Ask not what your country can do for ⋯」 📝 Ask not what your country can do for ⋯"
+       "id": "s-2-3-5-1",
+       "original": "EN",
+       "zh": "（图 1 标签：EN 0.0；The quick brown CRIBE；next-token prediction；MLP / cross attention / self attention；Transformer Encoder Blocks / Transformer Decoder Blocks；西语示例「El rápido zorro marrón salta sobre ⋯」；「The quick brown fox jumps over ⋯」；Non-English transcription。）"
       }
      ]
     },
     {
-     "id": "p-2-3-29",
+     "id": "eq-2-3-2",
+     "type": "equation",
+     "page": 4,
+     "original": "0.0"
+    },
+    {
+     "id": "p-2-3-6",
      "type": "paragraph",
      "page": 4,
      "sentences": [
       {
-       "id": "s-2-3-29-1",
-       "original": "🗣️  “El rápido zorro marrón salta sobre ⋯” 📝  The quick brown fox jumps over ⋯",
-       "zh": "🗣️ 「El rápido zorro marrón salta sobre ⋯」 📝 The quick brown fox jumps over ⋯"
+       "id": "s-2-3-6-1",
+       "original": "The quick brown CRIBE next-token prediction MLP MLP cross attention self attention self attention Transformer Encoder Blocks Transformer Decoder Blocks 🗣️  “El rápido zorro marrón salta sobre ⋯” 📝  The quick brown fox jumps over ⋯ Non-English transcription",
+       "zh": "（图 1 标签：EN 0.0；The quick brown CRIBE；next-token prediction；MLP / cross attention / self attention；Transformer Encoder Blocks / Transformer Decoder Blocks；西语示例「El rápido zorro marrón salta sobre ⋯」；「The quick brown fox jumps over ⋯」；Non-English transcription。）"
       }
      ]
     },
     {
-     "id": "p-2-3-30",
+     "id": "eq-2-3-3",
+     "type": "equation",
+     "page": 4,
+     "original": "🗣️ “언덕 위에 올라 내려다보면 너무나 넓고 넓은 ⋯” 📝  언덕 위에 올라 내려다보면 너무나 넓고 넓은 ⋯ ~"
+    },
+    {
+     "id": "p-2-3-7",
      "type": "paragraph",
      "page": 4,
      "sentences": [
       {
-       "id": "s-2-3-30-1",
-       "original": "🗣️ “언덕 위에 올라 내려다보면 너무나 넓고 넓은 ⋯” 📝  언덕 위에 올라 내려다보면 너무나 넓고 넓은 ⋯",
-       "zh": "🗣️（韩语音频：一段韩文语句） 📝 输出与输入同语种的韩文转录（内容照录原文，此处从略）。"
+       "id": "s-2-3-7-1",
+       "original": "Sinusoidal Positional Encoding No speech 🔊 (background music playing)",
+       "zh": "English（英语）行。"
       }
      ]
     },
     {
-     "id": "tb-2-3-31",
-     "type": "table_body",
+     "id": "eq-2-3-4",
+     "type": "equation",
      "page": 4,
-     "original": "🔊 (background music playing) 📝  ∅\nPREV\nspecial tokens\ntext tokens\ntimestamp\ntokens\nSTART OF TRANSCRIPT\nLANGUAGE\nTAG\nNO SPEECH\nEOT\nTRANSCRIBE\nTRANSLATE\nbegin\ntime\nNO TIMESTAMPS\n⋯ end time text tokens begin\ntime\nend time text tokens\ntext tokens\nVoice activity\ndetection\n(VAD)\nCustom vocabulary /\nprompting\nTime-aligned transcription",
-     "cells": 26,
-     "zh": "图内 token 序列图例：special tokens / text tokens / timestamp tokens，含 START OF TRANSCRIPT、LANGUAGE TAG、NO SPEECH、TRANSCRIBE、TRANSLATE、NO TIMESTAMPS、EOT，以及 begin/end time 与 text tokens 的交错排列；并标出 VAD、自定义词表/提示（prompting）、时间对齐转录等能力。"
+     "original": "📝  ∅"
     },
     {
-     "id": "p-2-3-57",
+     "id": "p-2-3-8",
      "type": "paragraph",
      "page": 4,
      "sentences": [
       {
-       "id": "s-2-3-57-1",
-       "original": "Text-only transcription (allows dataset-specific fine-tuning)",
-       "zh": "纯文本转录（允许针对特定数据集微调）。"
+       "id": "s-2-3-8-1",
+       "original": "Multitask training format X → X Transcription Language identification LANGUAGE TRANSCRIBE TAG START OF TRANSCRIPT previous text tokens PREV NO SPEECH TRANSLATE Custom vocabulary / prompting Voice activity X → English detection Translation special tokens text tokens timestamp (VAD) tokens cross attention",
+       "zh": "English（英语）行。"
       }
      ]
     },
     {
-     "id": "tb-2-3-58",
-     "type": "table_body",
+     "id": "eq-2-3-5",
+     "type": "equation",
      "page": 4,
-     "original": "X → English\nTranslation\nprevious text tokens\nX → X Transcription Language identification\nMLP\nself attention\nMLP\nself attention\nMLP\nself attention\nMLP\ncross attention\nself attention\nMLP\ncross attention\nself attention\nMLP\ncross attention\nself attention\nTRANS-\nCRIBE",
-     "cells": 21,
-     "zh": "图内结构碎片：X→English 翻译、X→X 转录、语种识别，以及解码器内部 MLP / self attention / cross attention 堆叠示意。"
+     "original": "⋮ ⋮"
+    },
+    {
+     "id": "eq-2-3-6",
+     "type": "equation",
+     "page": 4,
+     "original": "⋮"
+    },
+    {
+     "id": "p-2-3-9",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-3-9-1",
+       "original": "MLP MLP self attention cross attention self attention MLP self attention MLP cross attention self attention Learned Positional Encoding 2 × Conv1D + GELU TRANS-",
+       "zh": "（图 1 架构图内部标签：编码器堆叠 MLP / self attention，解码器堆叠 MLP / cross attention / self attention，学习式位置编码（Learned Positional Encoding），输入经 2 × Conv1D + GELU。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-3-7",
+     "type": "equation",
+     "page": 4,
+     "original": "⋯"
+    },
+    {
+     "id": "p-2-3-10",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-3-10-1",
+       "original": "SOT EN CRIBE",
+       "zh": "（图 2 多任务格式标签：SOT EN CRIBE 0.0；The quick；Log-Mel Spectrogram；Tokens in Multitask Training Format；Time-aligned transcription（begin ⋯ end time text tokens，time 对齐）；EOT；NO TIMESTAMPS text tokens；Text-only transcription（允许按数据集微调）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-3-8",
+     "type": "equation",
+     "page": 4,
+     "original": "0.0"
+    },
+    {
+     "id": "p-2-3-11",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-3-11-1",
+       "original": "The quick Log-Mel Spectrogram Tokens in Multitask Training Format Time-aligned transcription begin",
+       "zh": "（图 2 多任务格式标签：SOT EN CRIBE 0.0；The quick；Log-Mel Spectrogram；Tokens in Multitask Training Format；Time-aligned transcription（begin ⋯ end time text tokens，time 对齐）；EOT；NO TIMESTAMPS text tokens；Text-only transcription（允许按数据集微调）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-3-9",
+     "type": "equation",
+     "page": 4,
+     "original": "⋯"
+    },
+    {
+     "id": "p-2-3-12",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-3-12-1",
+       "original": "end time text tokens begin end time text tokens time time EOT NO TIMESTAMPS text tokens Text-only transcription (allows dataset-specific fine-tuning)",
+       "zh": "（图 2 多任务格式标签：SOT EN CRIBE 0.0；The quick；Log-Mel Spectrogram；Tokens in Multitask Training Format；Time-aligned transcription（begin ⋯ end time text tokens，time 对齐）；EOT；NO TIMESTAMPS text tokens；Text-only transcription（允许按数据集微调）。）"
+      }
+     ]
     },
     {
      "id": "fig-2-3-1",
@@ -971,7 +939,7 @@ globalThis.PAPER_2212_04356 = {
       },
       {
        "id": "s-2-4-1-6",
-       "original": "Due to only training for a few epochs, over-ﬁtting is not a large concern, and we do not use any data augmentation or regularization and instead rely on the diversity contained within such a",
+       "original": "Due to only training for a few epochs, over-ﬁtting is not a large concern, and we do not use any data augmentation or regularization and instead rely on the diversity contained within such a large dataset to encourage generalization and robustness.",
        "zh": "由于只训练了几个 epoch，过拟合不是大问题，我们不使用任何数据增强或正则化，而是依靠如此"
       }
      ]
@@ -983,64 +951,96 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-2-4-2-1",
-       "original": "large dataset to encourage generalization and robustness.",
-       "zh": "大规模数据集内部蕴含的多样性来促进泛化和鲁棒性。"
+       "original": "Please see Appendix F for full training hyperparameters.3 During early development and evaluation we observed that Whisper models had a tendency to transcribe plausible but almost always incorrect guesses for the names of speakers.",
+       "zh": "完整的训练超参数请见 Appendix F（脚注 3）。"
       },
       {
        "id": "s-2-4-2-2",
-       "original": "Please see Appendix F for full training hyperparameters.3",
-       "zh": "完整的训练超参数请见 Appendix F（脚注 3）。"
+       "original": "This happens because many transcripts in the pre-training dataset include the name of the person who is speaking, encouraging the model to try to predict them, but this information is only rarely inferable from only the most recent 30 3After the original release of Whisper, we trained an additional Large model (denoted V2) for 2.5X more epochs while adding SpecAugment (Park et al., 2019), Stochastic Depth (Huang et al., 2016), and BPE Dropout (Provilkov et al., 2019) for regularization.",
+       "zh": "这是因为预训练数据里很多转写包含说话人姓名，诱使模型尝试预测它们，但这些信息很少能从最近 30 秒的音频里推断出来。（脚注 3：Whisper 初版发布后，我们又训练了一个额外的 Large 模型（记为 V2），多训 2.5X 轮次，并加入 SpecAugment（Park et al., 2019）、Stochastic Depth（Huang et al., 2016）与 BPE Dropout（Provilkov et al., 2019）做正则化。）"
+      },
+      {
+       "id": "s-2-4-2-3",
+       "original": "Reported results have been updated to this improved model unless otherwise speciﬁed.",
+       "zh": "除非另有说明，论文报告的结果均已更新为这个改进后的模型。"
       }
      ]
     },
     {
      "id": "p-2-4-3",
      "type": "paragraph",
-     "page": 4,
+     "page": 5,
      "sentences": [
       {
        "id": "s-2-4-3-1",
-       "original": "During early development and evaluation we observed that Whisper models had a tendency to transcribe plausible but almost always incorrect guesses for the names of speakers.",
-       "zh": "在早期的开发和评测中，我们观察到 Whisper 模型倾向于转录出看似合理但几乎总是错误的说话人姓名。"
-      },
-      {
-       "id": "s-2-4-3-2",
-       "original": "This happens because many transcripts in the pre-training dataset include the name of the person who is speaking, encouraging the model to try to predict them, but this information is only rarely inferable from only the most recent 30",
-       "zh": "这是因为预训练数据集中的许多转录包含说话人的名字，鼓励模型去尝试预测它们，但这些信息仅根据最近 30"
+       "original": "Model Layers Width Heads Parameters Tiny",
+       "zh": "表头：Model / Layers / Width / Heads / Parameters——Tiny（后续各档照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-2-4-1",
+     "type": "equation",
+     "page": 5,
+     "original": "4 384 6"
+    },
+    {
+     "id": "eq-2-4-2",
+     "type": "equation",
+     "page": 5,
+     "original": "39M Base"
+    },
+    {
+     "id": "eq-2-4-3",
+     "type": "equation",
+     "page": 5,
+     "original": "6 512 8"
+    },
+    {
+     "id": "eq-2-4-4",
+     "type": "equation",
+     "page": 5,
+     "original": "74M Small"
+    },
+    {
+     "id": "eq-2-4-5",
+     "type": "equation",
+     "page": 5,
+     "original": "12 768 12"
+    },
+    {
+     "id": "eq-2-4-6",
+     "type": "equation",
+     "page": 5,
+     "original": "244M Medium"
+    },
+    {
+     "id": "eq-2-4-7",
+     "type": "equation",
+     "page": 5,
+     "original": "24 1024 16"
+    },
+    {
+     "id": "eq-2-4-8",
+     "type": "equation",
+     "page": 5,
+     "original": "769M Large"
+    },
+    {
+     "id": "eq-2-4-9",
+     "type": "equation",
+     "page": 5,
+     "original": "32 1280 20"
     },
     {
      "id": "p-2-4-4",
      "type": "paragraph",
-     "page": 4,
-     "sentences": [
-      {
-       "id": "s-2-4-4-1",
-       "original": "3After the original release of Whisper, we trained an additional Large model (denoted V2) for 2.5X more epochs while adding SpecAugment (Park et al., 2019), Stochastic Depth (Huang et al., 2016), and BPE Dropout (Provilkov et al., 2019) for regularization.",
-       "zh": "3Whisper 最初发布之后，我们又额外训练了一个 Large 模型（记为 V2），训练轮数增加到原来的 2.5 倍，并加入 SpecAugment（Park et al., 2019）、Stochastic Depth（Huang et al., 2016）和 BPE Dropout（Provilkov et al., 2019）作为正则化。"
-      },
-      {
-       "id": "s-2-4-4-2",
-       "original": "Reported results have been updated to this improved model unless otherwise speciﬁed.",
-       "zh": "除非另有说明，论文报告的结果均已更新为这个改进后的模型。"
-      },
-      {
-       "id": "s-2-4-4-3",
-       "original": "Layers Width Heads Parameters",
-       "zh": "层数、宽度、注意力头数、参数量。"
-      }
-     ]
-    },
-    {
-     "id": "p-2-4-5",
-     "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-2-4-5-1",
-       "original": "Tiny 4 384 6 Base 6 512 8 Small 12 768 12 Medium 24 1024 16 Large 32 1280 20",
-       "zh": "Tiny：4 层、宽 384、6 头；Base：6 层、宽 512、8 头；Small：12 层、宽 768、12 头；Medium：24 层、宽 1024、16 头；Large：32 层、宽 1280、20 头。"
+       "id": "s-2-4-4-1",
+       "original": "1550M",
+       "zh": "（表格单元）1550M（Large-v2 参数量）。"
       }
      ]
     },
@@ -1052,17 +1052,17 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 1. Whisper 模型家族的架构细节。"
     },
     {
-     "id": "p-2-4-6",
+     "id": "p-2-4-5",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-2-4-6-1",
+       "id": "s-2-4-5-1",
        "original": "seconds of audio context.",
        "zh": "秒的音频上下文几乎无法推断出来。"
       },
       {
-       "id": "s-2-4-6-2",
+       "id": "s-2-4-5-2",
        "original": "To avoid this, we ﬁne-tune Whisper models brieﬂy on the subset of transcripts that do not include speaker annotations which removes this behavior.",
        "zh": "为避免这种情况，我们在不包含说话人标注的转录子集上对 Whisper 模型做了短暂微调，从而消除了这一行为。"
       }
@@ -1179,28 +1179,16 @@ globalThis.PAPER_2212_04356 = {
       },
       {
        "id": "s-3-2-2-5",
-       "original": "For several datasets, we observe WER drops of up to 50 percent usually due to a",
+       "original": "For several datasets, we observe WER drops of up to 50 percent usually due to a quirk such as a dataset’s reference transcripts seperating contractions from words with whitespace.",
        "zh": "在好几个数据集上，我们观察到 WER 最多下降了 50 个百分点，通常是因为某个"
-      }
-     ]
-    },
-    {
-     "id": "p-3-2-3",
-     "type": "paragraph",
-     "page": 5,
-     "sentences": [
-      {
-       "id": "s-3-2-3-1",
-       "original": "quirk such as a dataset’s reference transcripts seperating contractions from words with whitespace.",
-       "zh": "小怪癖，例如数据集的参考转录用空格把缩略形式和单词分开。"
       },
       {
-       "id": "s-3-2-3-2",
+       "id": "s-3-2-2-6",
        "original": "We caution this development procedure comes at a risk of overﬁtting to the transcription style of Whisper models which we investigate in Section 4.4.",
        "zh": "我们要提醒：这种开发流程存在过拟合到 Whisper 模型转录风格的风险，我们在 Section 4.4 中对此做了研究。"
       },
       {
-       "id": "s-3-2-3-3",
+       "id": "s-3-2-2-7",
        "original": "We are releasing the code for our text normalizer to allow for easy comparison and to help others study the performance of speech recognition systems in out-of-distribution settings.",
        "zh": "我们将发布文本标准化器的代码，以便于比较，并帮助其他人在分布外（OOD）设定下研究语音识别系统的性能。"
       }
@@ -1305,34 +1293,50 @@ globalThis.PAPER_2212_04356 = {
      ]
     },
     {
-     "id": "tb-3-3-4",
-     "type": "table_body",
-     "page": 6,
-     "original": "0 1 2 3 4 5 6 7 8 WER on LibriSpeech dev-clean (%)\n0\n10\n20\n30\n40",
-     "cells": 6,
-     "zh": "图 2 坐标轴碎片：x 轴为 LibriSpeech dev-clean 上的 WER（%，0–8），y 轴为 0–40。"
-    },
-    {
-     "id": "p-3-3-10",
+     "id": "p-3-3-4",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
-       "id": "s-3-3-10-1",
+       "id": "s-3-3-4-1",
        "original": "Average WER on [Common Voice, CHiME-6, TED-LIUM] (%)",
-       "zh": "在 [Common Voice, CHiME-6, TED-LIUM] 上的平均 WER（%）。"
+       "zh": "（图 2 纵轴：在 [Common Voice, CHiME-6, TED-LIUM] 上的平均 WER (%)。）"
       }
      ]
     },
     {
-     "id": "p-3-3-11",
+     "id": "eq-3-3-1",
+     "type": "equation",
+     "page": 6,
+     "original": "40"
+    },
+    {
+     "id": "p-3-3-5",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
-       "id": "s-3-3-11-1",
+       "id": "s-3-3-5-1",
        "original": "Supervised LibriSpeech models Zero-shot Whisper models Zero-shot Human (Alec) Ideal robustness (y = x)",
-       "zh": "图例：LibriSpeech 监督模型；零样本 Whisper 模型；零样本人类（Alec）；理想鲁棒性（y = x）。"
+       "zh": "（图 2 图例：LibriSpeech 监督模型 / 零样本 Whisper 模型 / 零样本人类（Alec）/ 理想鲁棒性（y = x）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-3-2",
+     "type": "equation",
+     "page": 6,
+     "original": "30 20 10 0 0 1 2 3 4 5 6 7 8"
+    },
+    {
+     "id": "p-3-3-6",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-3-6-1",
+       "original": "WER on LibriSpeech dev-clean (%)",
+       "zh": "（图 2 横轴：LibriSpeech dev-clean 上的 WER (%)。）"
       }
      ]
     },
@@ -1344,106 +1348,244 @@ globalThis.PAPER_2212_04356 = {
      "zh": "图 2. 零样本 Whisper 模型缩小了与人类鲁棒性的差距。尽管在 LibriSpeech dev-clean 上达到或超过人类，LibriSpeech 监督模型在其他数据集上的错误数大约是人的两倍，暴露出它们的脆弱和缺乏鲁棒性。而零样本 Whisper 模型的估计鲁棒性前沿，已经覆盖了这一位人类的 95% 置信区间。"
     },
     {
-     "id": "p-3-3-12",
+     "id": "p-3-3-7",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
-       "id": "s-3-3-12-1",
+       "id": "s-3-3-7-1",
        "original": "To quantify this difference, we examine both overall robustness, that is average performance across many distributions/datasets, and effective robustness, introduced by Taori et al. (2020), which measures the difference in expected performance between a reference dataset, which is usually in-distribution, and one or more out-of-distribution datasets.",
        "zh": "为量化这种差异，我们同时考察整体鲁棒性（即在多个分布/数据集上的平均表现）和有效鲁棒性（effective robustness，Taori et al. (2020) 提出）：后者度量模型在参考数据集（通常是分布内）与一个或多个分布外数据集之间期望表现的差值。"
       },
       {
-       "id": "s-3-3-12-2",
+       "id": "s-3-3-7-2",
        "original": "A model with high effective robustness does better than expected on out-of-distribution datasets as a function of its performance on the reference dataset and approaches the ideal of equal performance on all datasets.",
        "zh": "有效鲁棒性高的模型，以其在参考数据集上的表现为基准，在分布外数据集上的表现会超出预期，逼近在所有数据集上表现一致的理想状态。"
       },
       {
-       "id": "s-3-3-12-3",
+       "id": "s-3-3-7-3",
        "original": "For our analysis, we use LibriSpeech as the reference dataset due to its central role in modern speech recognition research and the availability of many released models trained on it, which allows for characterizing robustness behaviors.",
        "zh": "在我们的分析中，参考数据集选用 LibriSpeech，因为它在现代语音识别研究中处于核心地位，且有许多基于它训练的已发布模型，便于刻画鲁棒性行为。"
       },
       {
-       "id": "s-3-3-12-4",
+       "id": "s-3-3-7-4",
        "original": "We use a suite of 12 other academic speech recognition datasets to study out-of-distribution behaviors.",
        "zh": "我们用另外 12 个学术语音识别数据集来研究分布外行为。"
       },
       {
-       "id": "s-3-3-12-5",
+       "id": "s-3-3-7-5",
        "original": "Full details about these datasets can be found in Appendix A.",
        "zh": "这些数据集的完整细节见 Appendix A。"
       }
      ]
     },
     {
-     "id": "p-3-3-13",
+     "id": "p-3-3-8",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
-       "id": "s-3-3-13-1",
+       "id": "s-3-3-8-1",
        "original": "Our main ﬁndings are summarized in Figure 2 and Table 2.",
-       "zh": "我们的主要发现概括在 Figure 2 和 Table 2 中。"
+       "zh": "我们的主要发现汇总于图 2 与表 2。"
       },
       {
-       "id": "s-3-3-13-2",
+       "id": "s-3-3-8-2",
        "original": "Although the best zero-shot Whisper model has a relatively unremarkable LibriSpeech clean-test WER of 2.5, which is roughly the performance of modern supervised baseline or the mid-2019 state of the art, zero-shot Whisper models have very different robustness properties than supervised LibriSpeech models and out-perform all benchmarked LibriSpeech models by large amounts on other datasets.",
-       "zh": "虽然最好的零样本 Whisper 模型在 LibriSpeech clean-test 上的 WER 为 2.5，只能算平平——大致相当于现代监督基线或 2019 年中的 SOTA——但零样本 Whisper 模型的鲁棒性特性与 LibriSpeech 监督模型截然不同，在其他数据集上大幅超过所有参评的 LibriSpeech 模型。"
+       "zh": "尽管最好的零样本 Whisper 模型 LibriSpeech clean-test WER 为 2.5，只相当于现代监督基线或 2019 年中期的 SOTA 水平，但零样本 Whisper 模型与 LibriSpeech 监督模型的鲁棒性特性截然不同，且在其他数据集上大幅超过所有参评的 LibriSpeech 模型。"
       },
       {
-       "id": "s-3-3-13-3",
-       "original": "Even",
-       "zh": "即使"
+       "id": "s-3-3-8-3",
+       "original": "Even wav2vec 2.0 Whisper RER Dataset Large (no LM) Large V2",
+       "zh": "（表格表头：Even wav2vec 2.0 / Whisper；RER Dataset × Large (no LM) / Large V2。）"
       }
      ]
     },
     {
-     "id": "p-3-3-14",
-     "type": "paragraph",
+     "id": "eq-3-3-3",
+     "type": "equation",
      "page": 6,
-     "sentences": [
-      {
-       "id": "s-3-3-14-1",
-       "original": "wav2vec 2.0 Whisper RER Dataset Large (no LM) Large V2 (%)",
-       "zh": "表头：数据集；wav2vec 2.0 Large（no LM）；Whisper Large V2；RER（%）。"
-      }
-     ]
+     "original": "(%)"
     },
     {
-     "id": "p-3-3-15",
-     "type": "paragraph",
+     "id": "eq-3-3-4",
+     "type": "equation",
      "page": 6,
-     "sentences": [
-      {
-       "id": "s-3-3-15-1",
-       "original": "LibriSpeech Clean 2.7 2.7 0.0",
-       "zh": "LibriSpeech Clean：2.7、2.7、0.0。"
-      }
-     ]
+     "original": "LibriSpeech Clean"
     },
     {
-     "id": "p-3-3-16",
-     "type": "paragraph",
+     "id": "eq-3-3-5",
+     "type": "equation",
      "page": 6,
-     "sentences": [
-      {
-       "id": "s-3-3-16-1",
-       "original": "Artie 24.5 6.2 74.7 Common Voice 29.9 9.0 69.9 Fleurs En 14.6 4.4 69.9 Tedlium 10.5 4.0 61.9 CHiME6 65.8 25.5 61.2 VoxPopuli En 17.9 7.3 59.2 35.6 16.2 54.5 AMI IHM 37.0 16.9 54.3 Switchboard 28.3 13.8 51.2 CallHome 34.8 17.6 49.4 WSJ 7.7 3.9 49.4 AMI SDM1 67.6 36.4 46.2 LibriSpeech Other 6.2 5.2 16.1",
-       "zh": "Artie 24.5 6.2 74.7；Common Voice 29.9 9.0 69.9；Fleurs En 14.6 4.4 69.9；Tedlium 10.5 4.0 61.9；CHiME6 65.8 25.5 61.2；VoxPopuli En 17.9 7.3 59.2；（抽取丢失数据集名的一行）35.6 16.2 54.5；AMI IHM 37.0 16.9 54.3；Switchboard 28.3 13.8 51.2；CallHome 34.8 17.6 49.4；WSJ 7.7 3.9 49.4；AMI SDM1 67.6 36.4 46.2；LibriSpeech Other 6.2 5.2 16.1。"
-      }
-     ]
+     "original": "2.7 2.7 0.0"
     },
     {
-     "id": "p-3-3-17",
-     "type": "paragraph",
+     "id": "eq-3-3-6",
+     "type": "equation",
      "page": 6,
-     "sentences": [
-      {
-       "id": "s-3-3-17-1",
-       "original": "Average 29.3 12.8 55.2",
-       "zh": "Average（平均）：29.3、12.8、55.2。"
-      }
-     ]
+     "original": "Artie"
+    },
+    {
+     "id": "eq-3-3-7",
+     "type": "equation",
+     "page": 6,
+     "original": "24.5 6.2 74.7"
+    },
+    {
+     "id": "eq-3-3-8",
+     "type": "equation",
+     "page": 6,
+     "original": "Common Voice"
+    },
+    {
+     "id": "eq-3-3-9",
+     "type": "equation",
+     "page": 6,
+     "original": "29.9 9.0 69.9"
+    },
+    {
+     "id": "eq-3-3-10",
+     "type": "equation",
+     "page": 6,
+     "original": "Fleurs En"
+    },
+    {
+     "id": "eq-3-3-11",
+     "type": "equation",
+     "page": 6,
+     "original": "14.6 4.4 69.9"
+    },
+    {
+     "id": "eq-3-3-12",
+     "type": "equation",
+     "page": 6,
+     "original": "Tedlium"
+    },
+    {
+     "id": "eq-3-3-13",
+     "type": "equation",
+     "page": 6,
+     "original": "10.5 4.0 61.9"
+    },
+    {
+     "id": "eq-3-3-14",
+     "type": "equation",
+     "page": 6,
+     "original": "CHiME6"
+    },
+    {
+     "id": "eq-3-3-15",
+     "type": "equation",
+     "page": 6,
+     "original": "65.8 25.5 61.2"
+    },
+    {
+     "id": "eq-3-3-16",
+     "type": "equation",
+     "page": 6,
+     "original": "VoxPopuli En"
+    },
+    {
+     "id": "eq-3-3-17",
+     "type": "equation",
+     "page": 6,
+     "original": "17.9 7.3 59.2"
+    },
+    {
+     "id": "eq-3-3-18",
+     "type": "equation",
+     "page": 6,
+     "original": "CORAAL"
+    },
+    {
+     "id": "eq-3-3-19",
+     "type": "equation",
+     "page": 6,
+     "original": "35.6 16.2 54.5"
+    },
+    {
+     "id": "eq-3-3-20",
+     "type": "equation",
+     "page": 6,
+     "original": "AMI IHM"
+    },
+    {
+     "id": "eq-3-3-21",
+     "type": "equation",
+     "page": 6,
+     "original": "37.0 16.9 54.3"
+    },
+    {
+     "id": "eq-3-3-22",
+     "type": "equation",
+     "page": 6,
+     "original": "Switchboard"
+    },
+    {
+     "id": "eq-3-3-23",
+     "type": "equation",
+     "page": 6,
+     "original": "28.3 13.8 51.2"
+    },
+    {
+     "id": "eq-3-3-24",
+     "type": "equation",
+     "page": 6,
+     "original": "CallHome"
+    },
+    {
+     "id": "eq-3-3-25",
+     "type": "equation",
+     "page": 6,
+     "original": "34.8 17.6 49.4"
+    },
+    {
+     "id": "eq-3-3-26",
+     "type": "equation",
+     "page": 6,
+     "original": "WSJ"
+    },
+    {
+     "id": "eq-3-3-27",
+     "type": "equation",
+     "page": 6,
+     "original": "7.7 3.9 49.4"
+    },
+    {
+     "id": "eq-3-3-28",
+     "type": "equation",
+     "page": 6,
+     "original": "AMI SDM1"
+    },
+    {
+     "id": "eq-3-3-29",
+     "type": "equation",
+     "page": 6,
+     "original": "67.6 36.4 46.2"
+    },
+    {
+     "id": "eq-3-3-30",
+     "type": "equation",
+     "page": 6,
+     "original": "LibriSpeech Other"
+    },
+    {
+     "id": "eq-3-3-31",
+     "type": "equation",
+     "page": 6,
+     "original": "6.2 5.2 16.1"
+    },
+    {
+     "id": "eq-3-3-32",
+     "type": "equation",
+     "page": 6,
+     "original": "Average"
+    },
+    {
+     "id": "eq-3-3-33",
+     "type": "equation",
+     "page": 6,
+     "original": "29.3 12.8 55.2"
     },
     {
      "id": "tab-3-3-1",
@@ -1453,39 +1595,39 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 2. 各数据集上有效鲁棒性的详细对比。尽管两个模型在 LibriSpeech 上的表现相差不到 0.1%，零样本 Whisper 模型在其他数据集上的表现远超按其 LibriSpeech 表现预期的水平，平均错误减少 55.2%。两个模型报告的都是应用本文文本标准化器后的词错误率（WER）。"
     },
     {
-     "id": "p-3-3-18",
+     "id": "p-3-3-9",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
-       "id": "s-3-3-18-1",
+       "id": "s-3-3-9-1",
        "original": "the smallest zero-shot Whisper model, which has only 39 million parameters and a 6.7 WER on LibriSpeech test-clean is roughly competitive with the best supervised LibriSpeech model when evaluated on other datasets.",
        "zh": "即使是最小的零样本 Whisper 模型——只有 39 million（3900 万）参数、LibriSpeech test-clean WER 为 6.7——在其他数据集上评测时也大致能与最好的 LibriSpeech 监督模型竞争。"
       },
       {
-       "id": "s-3-3-18-2",
+       "id": "s-3-3-9-2",
        "original": "When compared to a human in Figure 2, the best zero-shot Whisper models roughly match their accuracy and robustness.",
        "zh": "在 Figure 2 中与人类对比时，最好的零样本 Whisper 模型大致达到了人类的准确率和鲁棒性。"
       },
       {
-       "id": "s-3-3-18-3",
+       "id": "s-3-3-9-3",
        "original": "For a detailed breakdown of this large improvement in robustness, Table 2 compares the performance of the best zero-shot Whisper model with a supervised LibriSpeech model that has the closest performance to it on LibriSpeech test-clean.",
        "zh": "为详细拆解鲁棒性上的巨大提升，Table 2 把最好的零样本 Whisper 模型与在 LibriSpeech test-clean 上表现最接近它的 LibriSpeech 监督模型做了对比。"
       },
       {
-       "id": "s-3-3-18-4",
+       "id": "s-3-3-9-4",
        "original": "Despite their very close performance on the reference distribution, the zero-shot Whisper model achieves an average relative error reduction of 55.2% when evaluated on other speech recognition datasets.",
        "zh": "尽管两者在参考分布上的表现非常接近，零样本 Whisper 模型在其他语音识别数据集上评测时取得了平均 55.2% 的相对错误率下降。"
       }
      ]
     },
     {
-     "id": "p-3-3-19",
+     "id": "p-3-3-10",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
-       "id": "s-3-3-19-1",
+       "id": "s-3-3-10-1",
        "original": "This ﬁnding suggests emphasizing zero-shot and out-ofdistribution evaluations of models, particularly when attempting to compare to human performance, to avoid overstating the capabilities of machine learning systems due to misleading comparisons.",
        "zh": "这一发现提示我们应强调模型的零样本和分布外评测——尤其是在试图与人类表现比较时——以避免因误导性比较而夸大机器学习系统的能力。"
       }
@@ -1522,18 +1664,106 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-3-4-2-1",
-       "original": "Whisper performs well on Multilingual LibriSpeech, outperforming XLS-R (Babu et al., 2021), mSLAM (Bapna",
-       "zh": "Whisper 在 Multilingual LibriSpeech 上表现良好，在零样本设定下超过了 XLS-R（Babu et al., 2021）、mSLAM（Bapna"
+       "original": "Whisper performs well on Multilingual LibriSpeech, outperforming XLS-R (Babu et al., 2021), mSLAM (Bapna MY KA BN GU PA LO TE ML KM UZ",
+       "zh": "Whisper 在 Multilingual LibriSpeech 上表现良好，超过 XLS-R (Babu et al., 2021)、mSLAM (Bapna et al., 2022)。（图表：各语种 WER（刻度 2.5/5/10/20/40/80）随预训练转写音频小时数（0.1/1/10/100/1K/10K/100K/1M）变化的散点，r2 = 0.83；语种代码 MY/KA/BN/GU/PA/LO/TE/ML/KM/UZ/TG/MT/NE/BE/HY/SW/MR/IS/KN/KK/SR/AF/CY/FA/LT/HE/AZ/LV/UR/SL/HI/ET/TA/HU/MK/AR/RO/GL/ZH/BG/FIL/BS/KO/DA/EL/HR/CS/SK/TH/VI/FI/NB/MS/UK/SV/TR/FR/CA/ID/NL/RU/PL/JA/DE/PT/EN/IT/ES。）"
       }
      ]
     },
     {
-     "id": "tb-3-4-3",
-     "type": "table_body",
-     "page": 7,
-     "original": "0.1 1 10 100 Hours of transcribed audio\n2.5\n5\n10\n20\n40\n80\nWord Error Rate (WER)\nr2 = 0.83\nSW\nPT\nJA\nFI\nML\nFR\nRO GL\nKO\nUK\nNE\nLO\nAZ\nMK\nLT\nNL\nMS\nGU\nIS\nMY\nCA\nTE\nTR\nCS\nNB\nAR\nAF\nHR\nUZ\nDE\nVI\nLV\nID\nPL\nSV\nTA\nFA\nHY\nTH\nBN\nKM\nEN\nHU\nUR\nBS\nKA\nZH\nSL\nSK\nCY\nRU\nBG FIL\nEL\nHI\nKN\nMT\nBE\nHE\nIT\nMR\nPA\nDA\nES\nKK\nTG\nET\nSR",
-     "cells": 75,
-     "zh": "图 3 坐标轴与散点碎片：x 轴为转录音频小时数（0.1–100），y 轴为 WER（2.5–80），r2 = 0.83，散点为各语言代码（SW、PT、JA、FI …）。"
+     "id": "eq-3-4-1",
+     "type": "equation",
+     "page": 6,
+     "original": "80"
+    },
+    {
+     "id": "eq-3-4-2",
+     "type": "equation",
+     "page": 6,
+     "original": "TG MT NE BE HY"
+    },
+    {
+     "id": "eq-3-4-3",
+     "type": "equation",
+     "page": 6,
+     "original": "40"
+    },
+    {
+     "id": "p-3-4-3",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-4-3-1",
+       "original": "SW MR IS KN Word Error Rate (WER) KK SR AF CY FA LT HE AZ LV UR SL HI ET",
+       "zh": "Whisper 在 Multilingual LibriSpeech 上表现良好，超过 XLS-R (Babu et al., 2021)、mSLAM (Bapna et al., 2022)。（图表：各语种 WER（刻度 2.5/5/10/20/40/80）随预训练转写音频小时数（0.1/1/10/100/1K/10K/100K/1M）变化的散点，r2 = 0.83；语种代码 MY/KA/BN/GU/PA/LO/TE/ML/KM/UZ/TG/MT/NE/BE/HY/SW/MR/IS/KN/KK/SR/AF/CY/FA/LT/HE/AZ/LV/UR/SL/HI/ET/TA/HU/MK/AR/RO/GL/ZH/BG/FIL/BS/KO/DA/EL/HR/CS/SK/TH/VI/FI/NB/MS/UK/SV/TR/FR/CA/ID/NL/RU/PL/JA/DE/PT/EN/IT/ES。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-4-4",
+     "type": "equation",
+     "page": 6,
+     "original": "20"
+    },
+    {
+     "id": "p-3-4-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-4-4-1",
+       "original": "TA HU MK AR RO GL ZH BG FIL BS KO DA EL HR CS SK TH VI",
+       "zh": "Whisper 在 Multilingual LibriSpeech 上表现良好，超过 XLS-R (Babu et al., 2021)、mSLAM (Bapna et al., 2022)。（图表：各语种 WER（刻度 2.5/5/10/20/40/80）随预训练转写音频小时数（0.1/1/10/100/1K/10K/100K/1M）变化的散点，r2 = 0.83；语种代码 MY/KA/BN/GU/PA/LO/TE/ML/KM/UZ/TG/MT/NE/BE/HY/SW/MR/IS/KN/KK/SR/AF/CY/FA/LT/HE/AZ/LV/UR/SL/HI/ET/TA/HU/MK/AR/RO/GL/ZH/BG/FIL/BS/KO/DA/EL/HR/CS/SK/TH/VI/FI/NB/MS/UK/SV/TR/FR/CA/ID/NL/RU/PL/JA/DE/PT/EN/IT/ES。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-4-5",
+     "type": "equation",
+     "page": 6,
+     "original": "10"
+    },
+    {
+     "id": "p-3-4-5",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-4-5-1",
+       "original": "FI NB MS UK SV TR FR CA ID NL RU PL JA",
+       "zh": "Whisper 在 Multilingual LibriSpeech 上表现良好，超过 XLS-R (Babu et al., 2021)、mSLAM (Bapna et al., 2022)。（图表：各语种 WER（刻度 2.5/5/10/20/40/80）随预训练转写音频小时数（0.1/1/10/100/1K/10K/100K/1M）变化的散点，r2 = 0.83；语种代码 MY/KA/BN/GU/PA/LO/TE/ML/KM/UZ/TG/MT/NE/BE/HY/SW/MR/IS/KN/KK/SR/AF/CY/FA/LT/HE/AZ/LV/UR/SL/HI/ET/TA/HU/MK/AR/RO/GL/ZH/BG/FIL/BS/KO/DA/EL/HR/CS/SK/TH/VI/FI/NB/MS/UK/SV/TR/FR/CA/ID/NL/RU/PL/JA/DE/PT/EN/IT/ES。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-4-6",
+     "type": "equation",
+     "page": 6,
+     "original": "5"
+    },
+    {
+     "id": "eq-3-4-7",
+     "type": "equation",
+     "page": 6,
+     "original": "DE PT EN IT r2 = 0.83 ES"
+    },
+    {
+     "id": "eq-3-4-8",
+     "type": "equation",
+     "page": 6,
+     "original": "2.5 0.1 1 10 100"
+    },
+    {
+     "id": "p-3-4-6",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-3-4-6-1",
+       "original": "1K 10K 100K 1M Hours of transcribed audio",
+       "zh": "Whisper 在 Multilingual LibriSpeech 上表现良好，超过 XLS-R (Babu et al., 2021)、mSLAM (Bapna et al., 2022)。（图表：各语种 WER（刻度 2.5/5/10/20/40/80）随预训练转写音频小时数（0.1/1/10/100/1K/10K/100K/1M）变化的散点，r2 = 0.83；语种代码 MY/KA/BN/GU/PA/LO/TE/ML/KM/UZ/TG/MT/NE/BE/HY/SW/MR/IS/KN/KK/SR/AF/CY/FA/LT/HE/AZ/LV/UR/SL/HI/ET/TA/HU/MK/AR/RO/GL/ZH/BG/FIL/BS/KO/DA/EL/HR/CS/SK/TH/VI/FI/NB/MS/UK/SV/TR/FR/CA/ID/NL/RU/PL/JA/DE/PT/EN/IT/ES。）"
+      }
+     ]
     },
     {
      "id": "fig-3-4-1",
@@ -1543,40 +1773,70 @@ globalThis.PAPER_2212_04356 = {
      "zh": "图 3. 预训练监督数据量与下游语音识别性能的相关性。某种语言的预训练语音识别数据量，能很好地预测该语言在 Fleurs 上的零样本表现。"
     },
     {
-     "id": "p-3-4-78",
+     "id": "p-3-4-7",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-3-4-78-1",
-       "original": "MLS VoxPopuli",
-       "zh": "表头：MLS；VoxPopuli。"
+       "id": "s-3-4-7-1",
+       "original": "Model MLS VoxPopuli VP-10K + FT",
+       "zh": "（表头：Model × MLS / VoxPopuli / VP-10K + FT。）"
       }
      ]
     },
     {
-     "id": "p-3-4-79",
-     "type": "paragraph",
+     "id": "eq-3-4-9",
+     "type": "equation",
      "page": 7,
-     "sentences": [
-      {
-       "id": "s-3-4-79-1",
-       "original": "VP-10K + FT - 15.3 XLS-R (1B) 10.9 10.6 mSLAM-CTC (2B) 9.7 9.1 Maestro - 8.1",
-       "zh": "VP-10K + FT：—、15.3；XLS-R (1B)：10.9、10.6；mSLAM-CTC (2B)：9.7、9.1；Maestro：—、8.1。"
-      }
-     ]
+     "original": "- 15.3"
     },
     {
-     "id": "p-3-4-80",
-     "type": "paragraph",
+     "id": "eq-3-4-10",
+     "type": "equation",
      "page": 7,
-     "sentences": [
-      {
-       "id": "s-3-4-80-1",
-       "original": "Zero-Shot Whisper 7.3 13.6",
-       "zh": "Zero-Shot Whisper：7.3、13.6。"
-      }
-     ]
+     "original": "XLS-R (1B)"
+    },
+    {
+     "id": "eq-3-4-11",
+     "type": "equation",
+     "page": 7,
+     "original": "10.9 10.6"
+    },
+    {
+     "id": "eq-3-4-12",
+     "type": "equation",
+     "page": 7,
+     "original": "mSLAM-CTC (2B)"
+    },
+    {
+     "id": "eq-3-4-13",
+     "type": "equation",
+     "page": 7,
+     "original": "9.7 9.1"
+    },
+    {
+     "id": "eq-3-4-14",
+     "type": "equation",
+     "page": 7,
+     "original": "Maestro"
+    },
+    {
+     "id": "eq-3-4-15",
+     "type": "equation",
+     "page": 7,
+     "original": "- 8.1"
+    },
+    {
+     "id": "eq-3-4-16",
+     "type": "equation",
+     "page": 7,
+     "original": "Zero-Shot Whisper"
+    },
+    {
+     "id": "eq-3-4-17",
+     "type": "equation",
+     "page": 7,
+     "original": "7.3 13.6"
     },
     {
      "id": "tab-3-4-1",
@@ -1586,56 +1846,198 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 3. 多语言语音识别性能。零样本 Whisper 在 Multilingual LibriSpeech（MLS）上提升了性能，但在 VoxPopuli 上仍显著落后于 Maestro、XLS-R 和 mSLAM。"
     },
     {
-     "id": "p-3-4-81",
+     "id": "p-3-4-8",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-3-4-81-1",
+       "id": "s-3-4-8-1",
        "original": "et al., 2022), and Maestro (Chen et al., 2022b) in a zero-shot setting.",
        "zh": "et al., 2022）和 Maestro（Chen et al., 2022b）。"
       },
       {
-       "id": "s-3-4-81-2",
+       "id": "s-3-4-8-2",
        "original": "We caution that we do use a simple text standardizer for this result which prevents direct comparison or claims of SOTA performance.",
        "zh": "需要提醒的是，这个结果使用了我们简单的文本标准化器，因此不能直接与其他工作比较，也不能宣称 SOTA。"
       },
       {
-       "id": "s-3-4-81-3",
+       "id": "s-3-4-8-3",
        "original": "On VoxPopuli, however, Whisper signiﬁcantly underperforms prior work and only beats the VP-10K+FT baseline from the original paper.",
        "zh": "然而在 VoxPopuli 上，Whisper 明显落后于此前工作，只超过了原论文中的 VP-10K+FT 基线。"
       },
       {
-       "id": "s-3-4-81-4",
+       "id": "s-3-4-8-4",
        "original": "We suspect the underperformance of Whisper models on VoxPopuli could be due to other models including this distribution as a major source for their unsupervised pre-training data and the dataset having signiﬁcantly more supervised data, which beneﬁts ﬁne-tuning.",
        "zh": "我们怀疑 Whisper 在 VoxPopuli 上的落后可能是因为：其他模型把这一分布作为其无监督预训练数据的主要来源，而且该数据集的监督数据量明显更大，这有利于微调。"
       },
       {
-       "id": "s-3-4-81-5",
+       "id": "s-3-4-8-5",
        "original": "While MLS has 10 hours of training data per language, the average amount of training data per language is roughly 10× higher for VoxPopuli.",
        "zh": "MLS 每种语言只有 10 小时训练数据，而 VoxPopuli 每种语言的平均训练数据量约为其 10 倍。"
       }
      ]
     },
     {
-     "id": "p-3-4-82",
+     "id": "p-3-4-9",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-3-4-82-1",
+       "id": "s-3-4-9-1",
        "original": "These two benchmarks are somewhat narrow since they only include 15 unique languages, almost all of which are in",
-       "zh": "这两个基准覆盖范围偏窄，只包含 15 种不同语言，而且几乎全部属于"
+       "zh": "这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）"
       }
      ]
     },
     {
-     "id": "tb-3-4-83",
-     "type": "table_body",
+     "id": "eq-3-4-18",
+     "type": "equation",
      "page": 7,
-     "original": "1 10 100 Hours of translated audio\n0\n5\n10\n15\n20\n25\n30\n35\n40\nBLEU\nr2 = 0.24\nHR\nAM\nNL\nMY\nSW\nEL\nNE\nTH\nKN\nPA\nDA\nAR\nMI\nBG\nML\nMR\nTE\nSV\nIT\nFIL\nGL\nRO\nUK\nFA\nUZ\nBE\nKM\nTG\nAS\nET\nOC\nCA\nIS\nKK\nHE\nFR AF\nVI\nHA\nMT\nLO\nBN\nPT\nHU\nFI\nKO\nSD\nID\nUR\nLN\nLV\nAZ\nYO\nLB\nCY\nHY\nPL\nLT\nDE\nKA\nRU\nMK MS\nSR\nES\nZH\nJA\nNB BS\nMN SN\nTR\nPS\nSK\nSO\nCS\nSL\nHI\nGU\nTA",
-     "cells": 88,
-     "zh": "图 4 坐标轴与散点碎片：x 轴为翻译音频小时数（1–100），y 轴为 BLEU（0–40），r2 = 0.24，散点为各语言代码（HR、AM、NL …）。"
+     "original": "40"
+    },
+    {
+     "id": "eq-3-4-19",
+     "type": "equation",
+     "page": 7,
+     "original": "PT CA DE SV"
+    },
+    {
+     "id": "eq-3-4-20",
+     "type": "equation",
+     "page": 7,
+     "original": "35"
+    },
+    {
+     "id": "eq-3-4-21",
+     "type": "equation",
+     "page": 7,
+     "original": "FR AF DA SR RO"
+    },
+    {
+     "id": "eq-3-4-22",
+     "type": "equation",
+     "page": 7,
+     "original": "30"
+    },
+    {
+     "id": "p-3-4-10",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-4-10-1",
+       "original": "NB BS GL RU HR SK UK CS ID BG MK MS IT",
+       "zh": "这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-4-23",
+     "type": "equation",
+     "page": 7,
+     "original": "25"
+    },
+    {
+     "id": "p-3-4-11",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-4-11-1",
+       "original": "TR EL AR ES PL FIL FI OC NL HE KO HI HU BLEU VI",
+       "zh": "这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-4-24",
+     "type": "equation",
+     "page": 7,
+     "original": "20"
+    },
+    {
+     "id": "p-3-4-12",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-4-12-1",
+       "original": "FA ET ZH SL ML HY UR TH GU JA LB LV",
+       "zh": "这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-4-25",
+     "type": "equation",
+     "page": 7,
+     "original": "15"
+    },
+    {
+     "id": "p-3-4-13",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-4-13-1",
+       "original": "NE PA TE BN LT TG CY MR MT KN BE AZ",
+       "zh": "这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-4-26",
+     "type": "equation",
+     "page": 7,
+     "original": "10"
+    },
+    {
+     "id": "p-3-4-14",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-4-14-1",
+       "original": "TA MI LO IS SW SD UZ KM AS",
+       "zh": "这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-4-27",
+     "type": "equation",
+     "page": 7,
+     "original": "5"
+    },
+    {
+     "id": "p-3-4-15",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-4-15-1",
+       "original": "KK KA PS r2 = 0.24 MN SN LN AM YO SO MY HA",
+       "zh": "这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-4-28",
+     "type": "equation",
+     "page": 7,
+     "original": "0 1 10 100"
+    },
+    {
+     "id": "p-3-4-16",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-4-16-1",
+       "original": "1K 10K 100K Hours of translated audio",
+       "zh": "这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）"
+      }
+     ]
     },
     {
      "id": "fig-3-4-2",
@@ -1645,92 +2047,122 @@ globalThis.PAPER_2212_04356 = {
      "zh": "图 4. 预训练监督数据量与下游翻译性能的相关性。某种语言的预训练翻译数据量，对 Whisper 在该语言 Fleurs 上的零样本表现只有中等程度的预测力。"
     },
     {
-     "id": "p-3-4-171",
+     "id": "p-3-4-17",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-3-4-171-1",
+       "id": "s-3-4-17-1",
        "original": "the Indo-European language family and many of which are high-resource languages.",
        "zh": "印欧语系，其中许多还是高资源语言。"
       },
       {
-       "id": "s-3-4-171-2",
+       "id": "s-3-4-17-2",
        "original": "These benchmarks only provide limited coverage and room to study Whisper models multilingual capabilities which include training data for speech recognition in 75 languages.",
        "zh": "这些基准提供的覆盖面和研究空间有限，不足以考察 Whisper 模型的多语言能力——其训练数据覆盖 75 种语言的语音识别。"
       },
       {
-       "id": "s-3-4-171-3",
+       "id": "s-3-4-17-3",
        "original": "To study the performance of Whisper more broadly we also report performance on the Fleurs dataset (Conneau et al., 2022).",
        "zh": "为了更广泛地研究 Whisper 的表现，我们还报告了在 Fleurs 数据集（Conneau et al., 2022）上的结果。"
       },
       {
-       "id": "s-3-4-171-4",
+       "id": "s-3-4-17-4",
        "original": "In particular, we were interested in studying the relationship between the amount of training data we have for a given language and the resulting downstream zero-shot performance for that language.",
        "zh": "我们特别感兴趣的是：某种语言的训练数据量与该语言最终零样本表现之间的关系。"
       },
       {
-       "id": "s-3-4-171-5",
+       "id": "s-3-4-17-5",
        "original": "We visualize this relation in Figure 3.",
        "zh": "我们在 Figure 3 中可视化了这种关系。"
       },
       {
-       "id": "s-3-4-171-6",
+       "id": "s-3-4-17-6",
        "original": "We ﬁnd a strong squared correlation coefﬁcient of 0.83 between the log of the word error rate and the log of the amount of training data per language.",
        "zh": "我们发现，词错误率的对数与每种语言训练数据量的对数之间存在很强的相关性，平方相关系数达 0.83。"
       },
       {
-       "id": "s-3-4-171-7",
+       "id": "s-3-4-17-7",
        "original": "Checking the regression coefﬁcient for a linear ﬁt to these log-log values results in an estimate that WER halves for every 16× increase in training data.",
        "zh": "对这些双对数值做线性拟合并检查回归系数，估计结果是：训练数据每增加 16 倍，WER 减半。"
       },
       {
-       "id": "s-3-4-171-8",
+       "id": "s-3-4-17-8",
        "original": "We also observed that many of the largest outliers in terms of worse than expected performance according to this trend are languages that have unique scripts and are more distantly related to the Indo-European languages making up the majority of the training dataset such as Hebrew (HE), Telugu (TE), Chinese (ZH), and Korean (KO).",
        "zh": "我们还观察到，按这一趋势表现差于预期的最大离群点，许多是拥有独特文字系统、与训练数据中占多数的印欧语言亲缘较远的语言，例如希伯来语（HE）、泰卢固语（TE）、汉语（ZH）和韩语（KO）。"
       },
       {
-       "id": "s-3-4-171-9",
+       "id": "s-3-4-17-9",
        "original": "These differences could be due to a lack of transfer due to linguistic distance, our byte level BPE tokenizer being a poor match for these languages, or variations in data quality.",
        "zh": "这些差异可能源于语言距离导致迁移不足、我们的字节级 BPE 分词器与这些语言不匹配，或数据质量的差异。"
       }
      ]
     },
     {
-     "id": "p-3-4-172",
+     "id": "p-3-4-18",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
-       "id": "s-3-4-172-1",
-       "original": "X →English High Mid Low All",
-       "zh": "表头：X→English；High（高资源）；Mid（中资源）；Low（低资源）；All（全部）。"
+       "id": "s-3-4-18-1",
+       "original": "X →English High Mid Low All XMEF-X",
+       "zh": "（表头：X →English × High / Mid / Low / All；XMEF-X。）"
       }
      ]
     },
     {
-     "id": "p-3-4-173",
-     "type": "paragraph",
+     "id": "eq-3-4-29",
+     "type": "equation",
      "page": 8,
-     "sentences": [
-      {
-       "id": "s-3-4-173-1",
-       "original": "XMEF-X 34.2 20.2 5.9 14.7 XLS-R (2B) 36.1 27.7 15.1 22.1 mSLAM-CTC (2B) 37.8 29.6 18.5 24.8 Maestro 38.2 31.3 18.4 25.2",
-       "zh": "XMEF-X：34.2、20.2、5.9、14.7；XLS-R (2B)：36.1、27.7、15.1、22.1；mSLAM-CTC (2B)：37.8、29.6、18.5、24.8；Maestro：38.2、31.3、18.4、25.2。"
-      }
-     ]
+     "original": "34.2 20.2 5.9 14.7"
     },
     {
-     "id": "p-3-4-174",
-     "type": "paragraph",
+     "id": "eq-3-4-30",
+     "type": "equation",
      "page": 8,
-     "sentences": [
-      {
-       "id": "s-3-4-174-1",
-       "original": "Zero-Shot Whisper 36.2 32.6 25.2 29.1",
-       "zh": "Zero-Shot Whisper：36.2、32.6、25.2、29.1。"
-      }
-     ]
+     "original": "XLS-R (2B)"
+    },
+    {
+     "id": "eq-3-4-31",
+     "type": "equation",
+     "page": 8,
+     "original": "36.1 27.7 15.1 22.1"
+    },
+    {
+     "id": "eq-3-4-32",
+     "type": "equation",
+     "page": 8,
+     "original": "mSLAM-CTC (2B)"
+    },
+    {
+     "id": "eq-3-4-33",
+     "type": "equation",
+     "page": 8,
+     "original": "37.8 29.6 18.5 24.8"
+    },
+    {
+     "id": "eq-3-4-34",
+     "type": "equation",
+     "page": 8,
+     "original": "Maestro"
+    },
+    {
+     "id": "eq-3-4-35",
+     "type": "equation",
+     "page": 8,
+     "original": "38.2 31.3 18.4 25.2"
+    },
+    {
+     "id": "eq-3-4-36",
+     "type": "equation",
+     "page": 8,
+     "original": "Zero-Shot Whisper"
+    },
+    {
+     "id": "eq-3-4-37",
+     "type": "equation",
+     "page": 8,
+     "original": "36.2 32.6 25.2 29.1"
     },
     {
      "id": "tab-3-4-2",
@@ -1740,40 +2172,46 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 4. X→en 语音翻译性能。零样本 Whisper 在 CoVoST2 的总体、中资源和低资源设定上超过现有模型，但在高资源语言上仍适度落后于此前直接监督的工作。"
     },
     {
-     "id": "p-3-4-175",
+     "id": "p-3-4-19",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
-       "id": "s-3-4-175-1",
-       "original": "Language ID Fleurs",
-       "zh": "表头：Language ID；Fleurs。"
+       "id": "s-3-4-19-1",
+       "original": "Language ID Fleurs w2v-bert-51 (0.6B)",
+       "zh": "（表格行：Language ID × Fleurs——w2v-bert-51 (0.6B) 71.4；mSLAM-CTC (2B) 77.7；Zero-shot Whisper 64.5。）"
       }
      ]
     },
     {
-     "id": "p-3-4-176",
-     "type": "paragraph",
+     "id": "eq-3-4-38",
+     "type": "equation",
      "page": 8,
-     "sentences": [
-      {
-       "id": "s-3-4-176-1",
-       "original": "w2v-bert-51 (0.6B) 71.4 mSLAM-CTC (2B) 77.7",
-       "zh": "w2v-bert-51 (0.6B)：71.4；mSLAM-CTC (2B)：77.7。"
-      }
-     ]
+     "original": "71.4"
     },
     {
-     "id": "p-3-4-177",
-     "type": "paragraph",
+     "id": "eq-3-4-39",
+     "type": "equation",
      "page": 8,
-     "sentences": [
-      {
-       "id": "s-3-4-177-1",
-       "original": "Zero-shot Whisper 64.5",
-       "zh": "Zero-shot Whisper：64.5。"
-      }
-     ]
+     "original": "mSLAM-CTC (2B)"
+    },
+    {
+     "id": "eq-3-4-40",
+     "type": "equation",
+     "page": 8,
+     "original": "77.7"
+    },
+    {
+     "id": "eq-3-4-41",
+     "type": "equation",
+     "page": 8,
+     "original": "Zero-shot Whisper"
+    },
+    {
+     "id": "eq-3-4-42",
+     "type": "equation",
+     "page": 8,
+     "original": "64.5"
     },
     {
      "id": "tab-3-4-3",
@@ -1853,40 +2291,50 @@ globalThis.PAPER_2212_04356 = {
       },
       {
        "id": "s-3-5-2-4",
-       "original": "While there is a clear trend of improvement with increasing training data, the squared correlation coefﬁcient is much lower than the 0.83 observed for speech recognition",
-       "zh": "虽然随训练数据增多存在明确的提升趋势，但平方相关系数远低于语音识别所观察到的 0.83，"
+       "original": "While there is a clear trend of improvement with increasing training data, the squared correlation coefﬁcient is much lower than the 0.83 observed for speech recognition white noise pub noise",
+       "zh": "虽然随训练数据增加有明显改进趋势，但平方相关系数远低于语音识别上观察到的 0.83。（图 5：白噪声与 pub 噪声下 LibriSpeech test-clean WER（刻度 1/2/5/10/20/50/100）随信噪比（-10/0/10/20/30/40 dB）变化，对比 unispeech-sat-base-100h-libri-ft、wav2vec2-base-100h、wav2vec2-base-960h、wav2vec2-large-960h、wav2vec2-large-robust-ft-libri-960h、wav2vec2-large-960h-lv60-self、asr-crdnn-rnnlm-librispeech、asr-transformer-transformerlm-librispeech、hubert-large-ls960-ft、hubert-xlarge-ls960-ft、s2t-medium/large-librispeech-asr、stt_en_conformer_ctc_large、stt_en_conformer_transducer_xlarge 与 Whisper。）"
       }
      ]
     },
     {
-     "id": "tb-3-5-3",
-     "type": "table_body",
+     "id": "eq-3-5-1",
+     "type": "equation",
      "page": 8,
-     "original": "40 30 20 10 0 -10 signal-to-noise ratio (dB)\n1\n2\n5\n10\n20\n50\n100\nWER on LibriSpeech test-clean (%)\nwhite noise\n40 30 20 10 0 -10 signal-to-noise ratio (dB)\npub noise",
-     "cells": 12,
-     "zh": "图 5 坐标轴碎片：x 轴为信噪比（dB，40 到 -10），y 轴为 LibriSpeech test-clean 上的 WER（%，1–100，对数刻度）；左图为白噪声，右图为酒吧噪声（pub noise）。"
+     "original": "100"
     },
     {
-     "id": "p-3-5-15",
+     "id": "eq-3-5-2",
+     "type": "equation",
+     "page": 8,
+     "original": "WER on LibriSpeech test-clean (%)"
+    },
+    {
+     "id": "eq-3-5-3",
+     "type": "equation",
+     "page": 8,
+     "original": "50 20 10 5 2 1 40 30 20 10 0 -10"
+    },
+    {
+     "id": "eq-3-5-4",
+     "type": "equation",
+     "page": 8,
+     "original": "signal-to-noise ratio (dB)"
+    },
+    {
+     "id": "eq-3-5-5",
+     "type": "equation",
+     "page": 8,
+     "original": "40 30 20 10 0 -10"
+    },
+    {
+     "id": "p-3-5-3",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
-       "id": "s-3-5-15-1",
-       "original": "unispeech-sat-base-100h-libri-ft wav2vec2-base-100h wav2vec2-base-960h wav2vec2-large-960h wav2vec2-large-robust-ft-libri-960h wav2vec2-large-960h-lv60-self asr-crdnn-rnnlm-librispeech asr-transformer-transformerlm-librispeech",
-       "zh": "对比模型列表：unispeech-sat-base-100h-libri-ft、wav2vec2-base-100h、wav2vec2-base-960h、wav2vec2-large-960h、wav2vec2-large-robust-ft-libri-960h、wav2vec2-large-960h-lv60-self、asr-crdnn-rnnlm-librispeech、asr-transformer-transformerlm-librispeech。"
-      }
-     ]
-    },
-    {
-     "id": "p-3-5-16",
-     "type": "paragraph",
-     "page": 8,
-     "sentences": [
-      {
-       "id": "s-3-5-16-1",
-       "original": "hubert-large-ls960-ft hubert-xlarge-ls960-ft s2t-medium-librispeech-asr s2t-large-librispeech-asr stt_en_conformer_ctc_large stt_en_conformer_transducer_xlarge Whisper",
-       "zh": "对比模型列表（续）：hubert-large-ls960-ft、hubert-xlarge-ls960-ft、s2t-medium-librispeech-asr、s2t-large-librispeech-asr、stt_en_conformer_ctc_large、stt_en_conformer_transducer_xlarge、Whisper。"
+       "id": "s-3-5-3-1",
+       "original": "signal-to-noise ratio (dB) unispeech-sat-base-100h-libri-ft wav2vec2-base-100h wav2vec2-base-960h wav2vec2-large-960h wav2vec2-large-robust-ft-libri-960h wav2vec2-large-960h-lv60-self asr-crdnn-rnnlm-librispeech asr-transformer-transformerlm-librispeech hubert-large-ls960-ft hubert-xlarge-ls960-ft s2t-medium-librispeech-asr s2t-large-librispeech-asr stt_en_conformer_ctc_large stt_en_conformer_transducer_xlarge Whisper",
+       "zh": "虽然随训练数据增加有明显改进趋势，但平方相关系数远低于语音识别上观察到的 0.83。（图 5：白噪声与 pub 噪声下 LibriSpeech test-clean WER（刻度 1/2/5/10/20/50/100）随信噪比（-10/0/10/20/30/40 dB）变化，对比 unispeech-sat-base-100h-libri-ft、wav2vec2-base-100h、wav2vec2-base-960h、wav2vec2-large-960h、wav2vec2-large-robust-ft-libri-960h、wav2vec2-large-960h-lv60-self、asr-crdnn-rnnlm-librispeech、asr-transformer-transformerlm-librispeech、hubert-large-ls960-ft、hubert-xlarge-ls960-ft、s2t-medium/large-librispeech-asr、stt_en_conformer_ctc_large、stt_en_conformer_transducer_xlarge 与 Whisper。）"
       }
      ]
     },
@@ -1898,32 +2346,32 @@ globalThis.PAPER_2212_04356 = {
      "zh": "图 5. 加性白噪声（左）和酒吧噪声（右）下，LibriSpeech test-clean 上 WER 随信噪比（SNR）的变化。LibriSpeech 训练模型的准确率比最好的 Whisper 模型（⋆）退化得更快。NVIDIA STT 模型（•）在低噪声下表现最好，但在高噪声（SNR < 10 dB）下被 Whisper 超过。低噪声下第二好的模型（▼）仅在 LibriSpeech 上微调，退化得更快。"
     },
     {
-     "id": "p-3-5-17",
+     "id": "p-3-5-4",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
-       "id": "s-3-5-17-1",
+       "id": "s-3-5-4-1",
        "original": "and only 0.24.",
        "zh": "只有 0.24。"
       },
       {
-       "id": "s-3-5-17-2",
+       "id": "s-3-5-4-2",
        "original": "We suspect this is partly caused by the noisier training data due to errors in audio language identiﬁcation.",
        "zh": "我们怀疑这部分是音频语种识别错误导致训练数据噪声更大所致。"
       },
       {
-       "id": "s-3-5-17-3",
+       "id": "s-3-5-4-3",
        "original": "As an example, Welsh (CY) is an outlier with much worse than expected performance at only 13 BLEU despite supposedly having 9,000 hours of translation data.",
        "zh": "一个例子是威尔士语（CY）：尽管号称有 9,000 小时翻译数据，表现却远差于预期，只有 13 BLEU。"
       },
       {
-       "id": "s-3-5-17-4",
+       "id": "s-3-5-4-4",
        "original": "This large amount of Welsh translation data is surprising, ranking 4th overall for translation data and ahead of some of the most spoken languages in the world like French, Spanish, and Russian.",
        "zh": "威尔士语有如此大量的翻译数据本身就很反常——在全部翻译数据中排第 4，甚至超过了法语、西班牙语、俄语这些世界上使用人数最多的语言。"
       },
       {
-       "id": "s-3-5-17-5",
+       "id": "s-3-5-4-5",
        "original": "Inspection shows the majority of supposedly Welsh translation data is actually English audio with English captions where the English audio was mis-classiﬁed as Welsh by the language identiﬁcation system, resulting in it being included as translation training data rather transcription data according to our dataset creation rules.",
        "zh": "检查表明，所谓威尔士语翻译数据的大多数其实是配英语字幕的英语音频：英语音频被语种识别系统误判为威尔士语，于是按我们的数据集构建规则被当作翻译训练数据而非转录训练数据收了进来。"
       }
@@ -2047,9 +2495,27 @@ globalThis.PAPER_2212_04356 = {
       {
        "id": "s-3-8-1-2",
        "original": "This is not a",
-       "zh": "这对大多数由短句构成的学术数据集而言不是"
+       "zh": "这并非新发现；开发与人类判断更一致的评测指标是一个活跃的研究方向，虽然已有一些有前景的方法，但都还没有在语音识别领域被广泛采用。"
       }
      ]
+    },
+    {
+     "id": "eq-3-8-1",
+     "type": "equation",
+     "page": 9,
+     "original": "40 35 30"
+    },
+    {
+     "id": "eq-3-8-2",
+     "type": "equation",
+     "page": 9,
+     "original": "Word Error Rate (%)"
+    },
+    {
+     "id": "eq-3-8-3",
+     "type": "equation",
+     "page": 9,
+     "original": "25 20 15 10 5"
     },
     {
      "id": "p-3-8-2",
@@ -2059,7 +2525,7 @@ globalThis.PAPER_2212_04356 = {
       {
        "id": "s-3-8-2-1",
        "original": "problem with most academic datasets comprised of short utterances but presents challenges in real-world applications which often require transcribing minutes- or hours-long audio.",
-       "zh": "问题，但在实际应用中构成挑战，因为实际应用经常需要转录几分钟甚至几小时长的音频。"
+       "zh": "这不是一个（图 6 坐标：WER (%) 5/10/15/20/25/30/35/40）大多数由短句组成的学术数据集的问题，但在真实应用中构成挑战——那里常常需要转录几分钟到几小时的音频。"
       },
       {
        "id": "s-3-8-2-2",
@@ -2070,11 +2536,6 @@ globalThis.PAPER_2212_04356 = {
        "id": "s-3-8-2-3",
        "original": "We observed that it is crucial to have beam search and temperature scheduling based on the repetitiveness and the log probability of the model predictions in order to reliably transcribe long audio.",
        "zh": "我们观察到，要可靠地转录长音频，束搜索（beam search）和基于模型预测的重复程度与对数概率的温度调度是至关重要的。"
-      },
-      {
-       "id": "s-3-8-2-4",
-       "original": "The full procedure is described in Section 4.5.",
-       "zh": "完整流程见 Section 4.5。"
       }
      ]
     },
@@ -2085,18 +2546,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-3-8-3-1",
-       "original": "We evaluate the long-form transcription performance on seven datasets consisting of speech recordings of various lengths and recording conditions, to cover as diverse a data distribution as possible.",
-       "zh": "我们在 7 个数据集上评测长音频转录性能，这些数据集包含不同长度和录音条件的语音，以覆盖尽可能多样的数据分布。"
-      },
-      {
-       "id": "s-3-8-3-2",
-       "original": "These include a long-form adaptation of TED-LIUM3 (Hernandez et al., 2018) concatenated so that each example is a full-length TED talk, a collection of jargon-laden segments taken from The Late Show with Stephen Colbert (Meanwhile), sets of videos/podcasts that has been used as ASR benchmarks in online blogs (Rev16 and Kincaid46), recordings of earnings calls (Del Rio et al., 2021), and the full-length interviews from the Corpus of Regional African American Language (CORAAL) (Gunter et al., 2021).",
-       "zh": "包括：TED-LIUM3（Hernandez et al., 2018）的长音频改造版（拼接成每个样本都是一期完整 TED 演讲）；从 The Late Show with Stephen Colbert 中截取的术语密集片段集（Meanwhile）；曾在网上博客中被用作 ASR 基准的视频/播客集合（Rev16 和 Kincaid46）；财报电话会议录音（Del Rio et al., 2021）；以及 Corpus of Regional African American Language（CORAAL）（Gunter et al., 2021）的完整访谈。"
-      },
-      {
-       "id": "s-3-8-3-3",
-       "original": "Full details about the long-form datasets can be found in Appendix A.",
-       "zh": "长音频数据集的完整细节见 Appendix A。"
+       "original": "The full procedure is described in Section 4.5.",
+       "zh": "完整流程见 Section 4.5。"
       }
      ]
     },
@@ -2107,13 +2558,18 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-3-8-4-1",
-       "original": "We compare the performance with open-source models as well as 4 commercial ASR services.",
-       "zh": "我们与开源模型以及 4 家商业 ASR 服务做了性能比较。"
+       "original": "We evaluate the long-form transcription performance on seven datasets consisting of speech recordings of various lengths and recording conditions, to cover as diverse a data distribution as possible.",
+       "zh": "我们在 7 个数据集上评测长音频转录性能，这些数据集包含不同长度和录音条件的语音，以覆盖尽可能多样的数据分布。"
       },
       {
        "id": "s-3-8-4-2",
-       "original": "The results are summarized in Figure 6, showing the distribution of word error rates from Whisper and the 4 commercial ASR services,",
-       "zh": "结果概括在 Figure 6 中，展示了 Whisper 与 4 家商业 ASR 服务的词错误率分布，"
+       "original": "These include a long-form adaptation of TED-LIUM3 (Hernandez et al., 2018) concatenated so that each example is a full-length TED talk, a collection of jargon-laden segments taken from The Late Show with Stephen Colbert (Meanwhile), sets of videos/podcasts that has been used as ASR benchmarks in online blogs (Rev16 and Kincaid46), recordings of earnings calls (Del Rio et al., 2021), and the full-length interviews from the Corpus of Regional African American Language (CORAAL) (Gunter et al., 2021).",
+       "zh": "包括：TED-LIUM3（Hernandez et al., 2018）的长音频改造版（拼接成每个样本都是一期完整 TED 演讲）；从 The Late Show with Stephen Colbert 中截取的术语密集片段集（Meanwhile）；曾在网上博客中被用作 ASR 基准的视频/播客集合（Rev16 和 Kincaid46）；财报电话会议录音（Del Rio et al., 2021）；以及 Corpus of Regional African American Language（CORAAL）（Gunter et al., 2021）的完整访谈。"
+      },
+      {
+       "id": "s-3-8-4-3",
+       "original": "Full details about the long-form datasets can be found in Appendix A.",
+       "zh": "长音频数据集的完整细节见 Appendix A。"
       }
      ]
     },
@@ -2124,28 +2580,31 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-3-8-5-1",
-       "original": "TED-LIUM3 Meanwhile Kincaid46 Rev16 Earnings-21 Earnings-22 0",
-       "zh": "数据集：TED-LIUM3、Meanwhile、Kincaid46、Rev16、Earnings-21、Earnings-22；0"
+       "original": "We compare the performance with open-source models as well as 4 commercial ASR services.",
+       "zh": "我们与开源模型以及 4 家商业 ASR 服务做了性能比较。"
+      },
+      {
+       "id": "s-3-8-5-2",
+       "original": "The results are summarized in Figure 6, showing the distribution of word error rates from Whisper and the 4 commercial ASR services, TED-LIUM3 Meanwhile Kincaid46 Rev16 Earnings-21 Earnings-22 CORAAL",
+       "zh": "结果汇总于图 6：Whisper 与 4 家商业 ASR 服务的 WER 分布（横轴 WER 刻度 0 起；数据集：TED-LIUM3、Meanwhile、Kincaid46、Rev16、Earnings-21、Earnings-22、CORAAL；对比系统：Company A/B/C/D 与 NVIDIA STT (CTC large)。）"
       }
      ]
     },
     {
-     "id": "tb-3-8-6",
-     "type": "table_body",
+     "id": "eq-3-8-4",
+     "type": "equation",
      "page": 9,
-     "original": "5\n10\n15\n20\n25\n30\n35\n40\nWord Error Rate (%)",
-     "cells": 9,
-     "zh": "图 6 坐标轴碎片：词错误率（%）刻度 5–40。"
+     "original": "0"
     },
     {
-     "id": "p-3-8-15",
+     "id": "p-3-8-6",
      "type": "paragraph",
      "page": 9,
      "sentences": [
       {
-       "id": "s-3-8-15-1",
+       "id": "s-3-8-6-1",
        "original": "Whisper Company A Company B Company C Company D NVIDIA STT (CTC large)",
-       "zh": "图例：Whisper、Company A、Company B、Company C、Company D、NVIDIA STT (CTC large)。"
+       "zh": "结果汇总于图 6：Whisper 与 4 家商业 ASR 服务的 WER 分布（横轴 WER 刻度 0 起；数据集：TED-LIUM3、Meanwhile、Kincaid46、Rev16、Earnings-21、Earnings-22、CORAAL；对比系统：Company A/B/C/D 与 NVIDIA STT (CTC large)。）"
       }
      ]
     },
@@ -2157,27 +2616,27 @@ globalThis.PAPER_2212_04356 = {
      "zh": "图 6. Whisper 在长音频转录上可与最先进的商业和开源 ASR 系统竞争。图中比较了 6 个 ASR 系统在 7 个长音频数据集上的词错误率分布，输入长度从几分钟到几小时不等。箱线图展示逐样本 WER 的四分位数，每个箱上标注了按数据集聚合的 WER。我们的模型在所有数据集上超过最好的开源模型（NVIDIA STT），并且在多数情况下也超过商业 ASR 系统。"
     },
     {
-     "id": "p-3-8-16",
+     "id": "p-3-8-7",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
-       "id": "s-3-8-16-1",
+       "id": "s-3-8-7-1",
        "original": "as well as the NVIDIA STT Conformer-CTC Large model from the NeMo toolkit (Kuchaiev et al., 2019) which performed the best among the open-source models.",
        "zh": "以及 NeMo 工具包（Kuchaiev et al., 2019）中的 NVIDIA STT Conformer-CTC Large 模型，它是开源模型中表现最好的。"
       },
       {
-       "id": "s-3-8-16-2",
+       "id": "s-3-8-7-2",
        "original": "All commercial ASR services are queried using their default English transcription settings as of September 1st, 2022, and for the NVIDIA STT model we used their buffered inference implementation in the FrameBatchASR class to enable long-form transcription.",
        "zh": "所有商业 ASR 服务均按其 2022 年 9 月 1 日的默认英语转录设置调用；NVIDIA STT 模型则使用其 FrameBatchASR 类中的缓冲推理实现来支持长音频转录。"
       },
       {
-       "id": "s-3-8-16-3",
+       "id": "s-3-8-7-3",
        "original": "The results show that Whisper performs better than the compared models on most datasets, especially on the Meanwhile dataset which is heavy with uncommon words.",
        "zh": "结果显示，Whisper 在大多数数据集上优于所比较的模型，尤其是在充满罕见词的 Meanwhile 数据集上。"
       },
       {
-       "id": "s-3-8-16-4",
+       "id": "s-3-8-7-4",
        "original": "Additionally, we note the possibility that some of the commercial ASR systems have been trained on some of these publicly available datasets, and therefore these results may not be accurately reﬂecting the relative robustness of the systems.",
        "zh": "此外我们指出一种可能：某些商业 ASR 系统可能在其中一些公开数据集上训练过，因此这些结果未必准确反映了各系统的相对鲁棒性。"
       }
@@ -2273,17 +2732,39 @@ globalThis.PAPER_2212_04356 = {
       {
        "id": "s-4-1-1-4",
        "original": "A related concern is that as capacity and compute spent training on the dataset increases, models may learn to exploit the",
-       "zh": "另一个相关隐忧是：随着模型容量和训练算力增加，模型可能学会利用数据集的"
+       "zh": "一个相关担忧是：随着容量与训练算力增加，模型可能学会利用（图 7 坐标：WER (%) 0/5/10/15/20/25；Whisper、A/B/C/D/E/F/G/H/I 各 ASR 系统、human transcription、computer-assisted。）"
       }
      ]
     },
     {
-     "id": "tb-4-1-2",
-     "type": "table_body",
+     "id": "eq-4-1-1",
+     "type": "equation",
      "page": 10,
-     "original": "Whisper A B C D E F G H I\nASR human transcription\ncomputer-assisted\n0\n5\n10\n15\n20\n25\nWord Error Rate (%)",
-     "cells": 10,
-     "zh": "图 7 图例碎片：Whisper、A–I 各服务（ASR、human transcription、computer-assisted），x 轴为词错误率（%，0–25）。"
+     "original": "25"
+    },
+    {
+     "id": "eq-4-1-2",
+     "type": "equation",
+     "page": 10,
+     "original": "Word Error Rate (%)"
+    },
+    {
+     "id": "eq-4-1-3",
+     "type": "equation",
+     "page": 10,
+     "original": "20 15 10 5 0"
+    },
+    {
+     "id": "p-4-1-2",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-4-1-2-1",
+       "original": "Whisper A B C D E F G H I ASR human transcription computer-assisted",
+       "zh": "一个相关担忧是：随着容量与训练算力增加，模型可能学会利用（图 7 坐标：WER (%) 0/5/10/15/20/25；Whisper、A/B/C/D/E/F/G/H/I 各 ASR 系统、human transcription、computer-assisted。）"
+      }
+     ]
     },
     {
      "id": "fig-4-1-1",
@@ -2293,39 +2774,39 @@ globalThis.PAPER_2212_04356 = {
      "zh": "图 7. Whisper 的表现接近专业人工转写员。图中展示了 Kincaid46 数据集 25 段录音的 WER 分布：Whisper、Figure 6 中同 4 家商业 ASR 系统（A–D）、1 种计算机辅助人工转写服务（E）和 4 种人工转写服务（F–I）。箱线图上叠加了各录音的 WER 散点，每个箱上标注了 25 段录音的聚合 WER。"
     },
     {
-     "id": "p-4-1-12",
+     "id": "p-4-1-3",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
-       "id": "s-4-1-12-1",
+       "id": "s-4-1-3-1",
        "original": "idiosyncrasies of the dataset, and their ability to generalize robustly to out-of-distribution data could even degrade.",
        "zh": "特异性（idiosyncrasies），其鲁棒泛化到分布外数据的能力反而可能退化。"
       }
      ]
     },
     {
-     "id": "p-4-1-13",
+     "id": "p-4-1-4",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
-       "id": "s-4-1-13-1",
+       "id": "s-4-1-4-1",
        "original": "To check whether this is the case, we study the zero-shot generalization of Whisper models as a function of the model size.",
        "zh": "为检验是否如此，我们研究了 Whisper 模型的零样本泛化如何随模型尺寸变化。"
       },
       {
-       "id": "s-4-1-13-2",
+       "id": "s-4-1-4-2",
        "original": "Our analysis is summarized in Figure 8.",
        "zh": "分析结果概括在 Figure 8 中。"
       },
       {
-       "id": "s-4-1-13-3",
+       "id": "s-4-1-4-3",
        "original": "With the exception of English speech recognition, performance continues to increase with model size across multilingual speech recognition, speech translation, and language identiﬁcation.",
        "zh": "除英语语音识别外，多语言语音识别、语音翻译和语种识别的性能都随模型尺寸持续提高。"
       },
       {
-       "id": "s-4-1-13-4",
+       "id": "s-4-1-4-4",
        "original": "The diminishing returns for English speech recognition could be due to saturation effects from approaching humanlevel performance as analysis in Section 3.9 suggests.",
        "zh": "英语语音识别的收益递减，可能是接近人类水平带来的饱和效应，正如 Section 3.9 的分析所提示的。"
       }
@@ -2377,21 +2858,110 @@ globalThis.PAPER_2212_04356 = {
        "id": "s-4-2-1-6",
        "original": "Performance on English and multilingual speech recognition and X→en translation is reported in Table 6.",
        "zh": "英语语音识别、多语言语音识别和 X→en 翻译的性能报告在 Table 6 中。"
-      },
-      {
-       "id": "s-4-2-1-7",
-       "original": "Model parameters",
-       "zh": "横轴：模型参数量。"
       }
      ]
     },
     {
-     "id": "tb-4-2-2",
-     "type": "table_body",
+     "id": "p-4-2-2",
+     "type": "paragraph",
      "page": 11,
-     "original": "0.0\n2.5\n5.0\n7.5\n10.0\n12.5\n15.0\n17.5\n20.0\nWER on 12 datasets (%)\nEnglish Speech Recognition\nAverage Large V2 Model parameters\n0\n20\n40\n60\n80\n100\nWER on 67 languages (%)\nMultilingual Speech Recognition (Fleurs)\nAverage Large V2 Model parameters\n0\n10\n20\n30\n40\n50\nBLEU on 21 languages\nX->En Translation (CoVoST2)\nAverage Large V2 Model parameters\n30\n40\n50\n60\n70\n80\nAccuracy on 102 languages (%)\nLanguage Identification (Fleurs)\nAverage Large V2",
-     "cells": 39,
-     "zh": "图 8 坐标轴碎片：四个子图分别为英语语音识别（12 个数据集平均 WER，0–20）、多语言语音识别（Fleurs 67 种语言平均 WER，0–100）、X→En 翻译（CoVoST2 21 种语言 BLEU，0–50）、语种识别（Fleurs 102 种语言准确率，30–80%）；横轴均为模型参数量，并标出 Large V2 位置。"
+     "sentences": [
+      {
+       "id": "s-4-2-2-1",
+       "original": "English Speech Recognition Multilingual Speech Recognition (Fleurs)",
+       "zh": "（图 8 标题：English Speech Recognition 与 Multilingual Speech Recognition (Fleurs)。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-2-1",
+     "type": "equation",
+     "page": 11,
+     "original": "20.0 100"
+    },
+    {
+     "id": "eq-4-2-2",
+     "type": "equation",
+     "page": 11,
+     "original": "Average Large V2 Average Large V2"
+    },
+    {
+     "id": "eq-4-2-3",
+     "type": "equation",
+     "page": 11,
+     "original": "17.5 80 15.0"
+    },
+    {
+     "id": "p-4-2-3",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-4-2-3-1",
+       "original": "WER on 67 languages (%) WER on 12 datasets (%) BLEU on 21 languages",
+       "zh": "（图 8 纵轴：67 种语言上的 WER (%) / 12 个数据集上的 WER (%) / 21 种语言上的 BLEU。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-2-4",
+     "type": "equation",
+     "page": 11,
+     "original": "12.5 60 10.0 40 7.5 5.0 20 2.5 0.0 0"
+    },
+    {
+     "id": "p-4-2-4",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-4-2-4-1",
+       "original": "38M 73M 244M 768M 1549M 1549M Model parameters 38M 73M 244M 768M 1549M 1549M Model parameters X->En Translation (CoVoST2) Language Identification (Fleurs)",
+       "zh": "（图 8 横轴：模型参数量 38M / 73M / 244M / 768M / 1549M / 1549M；子图 X->En Translation (CoVoST2) 与 Language Identification (Fleurs)。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-2-5",
+     "type": "equation",
+     "page": 11,
+     "original": "50 80"
+    },
+    {
+     "id": "eq-4-2-6",
+     "type": "equation",
+     "page": 11,
+     "original": "Average Large V2 Average Large V2"
+    },
+    {
+     "id": "eq-4-2-7",
+     "type": "equation",
+     "page": 11,
+     "original": "40 70"
+    },
+    {
+     "id": "eq-4-2-8",
+     "type": "equation",
+     "page": 11,
+     "original": "Accuracy on 102 languages (%)"
+    },
+    {
+     "id": "eq-4-2-9",
+     "type": "equation",
+     "page": 11,
+     "original": "30 60 20 50 10 40 0 30"
+    },
+    {
+     "id": "p-4-2-5",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-4-2-5-1",
+       "original": "38M 73M 244M 768M 1549M 1549M Model parameters 38M 73M 244M 768M 1549M 1549M Model parameters",
+       "zh": "（图 8 横轴：模型参数量 38M / 73M / 244M / 768M / 1549M / 1549M。）"
+      }
+     ]
     },
     {
      "id": "fig-4-2-1",
@@ -2401,28 +2971,22 @@ globalThis.PAPER_2212_04356 = {
      "zh": "图 8. 随模型尺寸增大，零样本 Whisper 的性能跨任务、跨语言可靠地扩展。浅色细线代表单个数据集或语言，显示个体表现的波动比聚合趋势的平滑曲线更大。Large V2 用橙色虚线单独标出，因为它包含本分析中小模型所没有的若干改动。"
     },
     {
-     "id": "p-4-2-41",
+     "id": "p-4-2-6",
      "type": "paragraph",
      "page": 11,
      "sentences": [
       {
-       "id": "s-4-2-41-1",
+       "id": "s-4-2-6-1",
        "original": "Dataset English Multilingual X→En size WER (↓) WER (↓) BLEU (↑)",
-       "zh": "表头：数据集规模；英语 WER（↓）；多语言 WER（↓）；X→En BLEU（↑）。"
+       "zh": "（表 2 表头：Dataset × English / Multilingual / X→En；size × WER (↓) / WER (↓) / BLEU (↑)。）"
       }
      ]
     },
     {
-     "id": "p-4-2-42",
-     "type": "paragraph",
+     "id": "eq-4-2-10",
+     "type": "equation",
      "page": 11,
-     "sentences": [
-      {
-       "id": "s-4-2-42-1",
-       "original": "3405 30.5 92.4 0.2 6811 19.6 72.7 1.7 13621 14.4 56.6 7.9 27243 12.3 45.0 13.9 54486 10.9 36.4 19.2 681070 9.9 29.2 24.8",
-       "zh": "3405 小时：30.5、92.4、0.2；6811 小时：19.6、72.7、1.7；13621 小时：14.4、56.6、7.9；27243 小时：12.3、45.0、13.9；54486 小时：10.9、36.4、19.2；681070 小时：9.9、29.2、24.8。"
-      }
-     ]
+     "original": "3405 30.5 92.4 0.2 6811 19.6 72.7 1.7 13621 14.4 56.6 7.9 27243 12.3 45.0 13.9 54486 10.9 36.4 19.2 681070 9.9 29.2 24.8"
     },
     {
      "id": "tab-4-2-1",
@@ -2432,78 +2996,66 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 6. 性能随数据集规模增大而提升。英语语音识别为 12 个数据集的平均；多语言语音识别报告 Fleurs 中有覆盖语言子集的表现；X→en 翻译报告 CoVoST2 上的平均 BLEU。数据集规模以小时计。"
     },
     {
-     "id": "p-4-2-43",
+     "id": "p-4-2-7",
      "type": "paragraph",
      "page": 11,
      "sentences": [
       {
-       "id": "s-4-2-43-1",
+       "id": "s-4-2-7-1",
        "original": "All increases in the dataset size result in improved performance on all tasks, although we see signiﬁcant variability in improvement rates across tasks and sizes.",
        "zh": "数据集规模的每一次增大都带来了所有任务上的性能提升，尽管不同任务和规模段的提升速率差异明显。"
       },
       {
-       "id": "s-4-2-43-2",
+       "id": "s-4-2-7-2",
        "original": "Performance improves rapidly on English speech recognition from 3,000 to 13,000 hours and then slows down noticeably between 13,000 and 54,000 hours.",
        "zh": "英语语音识别性能从 3,000 到 13,000 小时快速提升，随后在 13,000 到 54,000 小时之间明显放缓。"
       },
       {
-       "id": "s-4-2-43-3",
+       "id": "s-4-2-7-3",
        "original": "Using the full dataset, which corresponds to another 12.5× increase in size results in only a further 1 point drop in WER.",
        "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       },
       {
-       "id": "s-4-2-43-4",
+       "id": "s-4-2-7-4",
        "original": "This mirrors the diminishing returns observed with model size scaling for English speech recognition and could similarly be explained by saturation effects when approaching human-level performance.",
        "zh": "这与英语语音识别在模型规模缩放中观察到的收益递减相呼应，同样可以用接近人类水平时的饱和效应来解释。"
       }
      ]
     },
     {
-     "id": "p-4-2-44",
+     "id": "p-4-2-8",
      "type": "paragraph",
      "page": 11,
      "sentences": [
       {
-       "id": "s-4-2-44-1",
+       "id": "s-4-2-8-1",
        "original": "Improvements in WER follow a power-law trend for multilingual speech recognition till 54,000 hours and then deviate from this trend, improving only a further 7 points when increasing to the full dataset size.",
        "zh": "多语言语音识别的 WER 改善在 54,000 小时之前遵循幂律趋势，之后偏离该趋势：增到完整数据集规模只再提升了 7 个点。"
       },
       {
-       "id": "s-4-2-44-2",
-       "original": "For X→en translation, performance is practically zero when training on 7,000 hours of audio or less, and then follows a roughly log-linear improvement trend till 54,000 hours before also showing",
+       "id": "s-4-2-8-2",
+       "original": "For X→en translation, performance is practically zero when training on 7,000 hours of audio or less, and then follows a roughly log-linear improvement trend till 54,000 hours before also showing diminishing returns when further scaling to the full dataset size.",
        "zh": "X→en 翻译方面，训练数据在 7,000 小时或以下时性能几乎为零，随后到 54,000 小时呈近似对数线性的提升趋势，再往后也表现出"
       }
      ]
     },
     {
-     "id": "p-4-2-45",
+     "id": "p-4-2-9",
      "type": "paragraph",
      "page": 11,
      "sentences": [
       {
-       "id": "s-4-2-45-1",
-       "original": "diminishing returns when further scaling to the full dataset size.",
-       "zh": "继续扩展到完整数据集规模时的收益递减。"
-      }
-     ]
-    },
-    {
-     "id": "p-4-2-46",
-     "type": "paragraph",
-     "page": 11,
-     "sentences": [
-      {
-       "id": "s-4-2-46-1",
+       "id": "s-4-2-9-1",
        "original": "The general trend across tasks of diminishing returns when moving from 54,000 hours to our full dataset size of 680,000 hours could suggest that the current best Whisper models are under-trained relative to dataset size and performance could be further improved by a combination of longer training and larger models.",
        "zh": "各任务从 54,000 小时到我们完整的 680,000 小时数据集普遍出现收益递减，这可能意味着当前最好的 Whisper 模型相对于数据集规模训练不足，通过更长的训练与更大的模型组合，性能还能进一步提升。"
       },
       {
-       "id": "s-4-2-46-2",
+       "id": "s-4-2-9-2",
        "original": "It could also suggest that we are nearing the end of performance improvements from dataset size scaling for speech recognition.",
        "zh": "它也可能意味着，靠扩大数据集规模来改进语音识别的空间已接近尽头。"
       },
       {
-       "id": "s-4-2-46-3",
+       "id": "s-4-2-9-3",
        "original": "Further analysis is needed to characterize “scaling laws” for speech recognition in order to decided between these explanations.",
        "zh": "需要进一步分析来刻画语音识别的「缩放定律」（scaling laws），才能在这两种解释之间做出判断。"
       }
@@ -2555,52 +3107,26 @@ globalThis.PAPER_2212_04356 = {
       },
       {
        "id": "s-4-3-2-2",
-       "original": "However, multitask and multilingual",
-       "zh": "然而，多任务多语言"
+       "original": "However, multitask and multilingual English Only Multilingual and Multitask Average WER on 11 english speech recognition datasets",
+       "zh": "然而多任务多语种（图 8：English Only vs Multilingual and Multitask；11 个英文识别集平均 WER（8/10/12/14/16/18）随训练 FLOPs（10e+19/10e+20/10e+21/10e+22）变化。）"
       }
      ]
+    },
+    {
+     "id": "eq-4-3-1",
+     "type": "equation",
+     "page": 11,
+     "original": "18 16 14 12 10 8"
     },
     {
      "id": "p-4-3-3",
      "type": "paragraph",
-     "page": 12,
+     "page": 11,
      "sentences": [
       {
        "id": "s-4-3-3-1",
        "original": "10e+19 10e+20 10e+21 10e+22 FLOPs training on english speech recognition",
-       "zh": "横轴：用于英语语音识别训练的 FLOPs（10e+19、10e+20、10e+21、10e+22）。"
-      }
-     ]
-    },
-    {
-     "id": "tb-4-3-4",
-     "type": "table_body",
-     "page": 12,
-     "original": "8\n10\n12\n14\n16\n18",
-     "cells": 6,
-     "zh": "图 9 纵轴刻度碎片：8–18。"
-    },
-    {
-     "id": "p-4-3-10",
-     "type": "paragraph",
-     "page": 12,
-     "sentences": [
-      {
-       "id": "s-4-3-10-1",
-       "original": "Average WER on 11 english speech recognition datasets",
-       "zh": "纵轴：11 个英语语音识别数据集上的平均 WER。"
-      }
-     ]
-    },
-    {
-     "id": "p-4-3-11",
-     "type": "paragraph",
-     "page": 12,
-     "sentences": [
-      {
-       "id": "s-4-3-11-1",
-       "original": "English Only Multilingual and Multitask",
-       "zh": "图例：纯英语（English Only）；多语言多任务（Multilingual and Multitask）。"
+       "zh": "然而多任务多语种（图 8：English Only vs Multilingual and Multitask；11 个英文识别集平均 WER（8/10/12/14/16/18）随训练 FLOPs（10e+19/10e+20/10e+21/10e+22）变化。）"
       }
      ]
     },
@@ -2612,17 +3138,17 @@ globalThis.PAPER_2212_04356 = {
      "zh": "图 9. 多任务与多语言迁移随规模改善。对小模型而言，多任务多语言联合训练会损害英语语音识别性能；但多语言多任务模型从规模中获益更多，最终超过只用英语数据训练的模型。图中给出 95% bootstrap 估计置信区间。"
     },
     {
-     "id": "p-4-3-12",
+     "id": "p-4-3-4",
      "type": "paragraph",
      "page": 12,
      "sentences": [
       {
-       "id": "s-4-3-12-1",
+       "id": "s-4-3-4-1",
        "original": "models scale better and for our largest experiments outperform their English-only counterparts demonstrating positive transfer from other tasks.",
        "zh": "模型的缩放性更好，在我们最大规模的实验中超过了纯英语模型，展现出来自其他任务的正迁移。"
       },
       {
-       "id": "s-4-3-12-2",
+       "id": "s-4-3-4-2",
        "original": "For our largest experiments, joint models also slightly outperform English-only models even when not adjusting for compute spent per task.",
        "zh": "在最大规模的实验中，即使不校正每个任务上花费的算力，联合模型也略优于纯英语模型。"
       }
@@ -2672,10 +3198,16 @@ globalThis.PAPER_2212_04356 = {
       },
       {
        "id": "s-4-4-1-6",
-       "original": "For example, in CallHome and Switchboard, our standardizer did not penalize differences in common English contractions such as “you’re” versus “you are”, and in WSJ, our normalizer standardized the written and spo-",
-       "zh": "例如，在 CallHome 和 Switchboard 中，我们的标准化器不惩罚常见英语缩略形式的差异，如「you're」与「you are」；在 WSJ 中，我们的标准化器统一了数字与货币表达的书面形式和口"
+       "original": "For example, in CallHome and Switchboard, our standardizer did not penalize differences in common English contractions such as “you’re” versus “you are”, and in WSJ, our normalizer standardized the written and spoCORAAL Open-source models Whisper models CommonVoice9.en AMI-SDM1 CommonVoice5.1 Fleurs.en_us AMI-IHM Artie LibriSpeech TED-LIUM3 VoxPopuli.en WSJ CallHome Switchboard",
+       "zh": "例如在 CallHome 与 Switchboard 上，我们的标准化器不惩罚「you're」与「you are」这类常见英语缩写差异；在 WSJ 上，我们的标准化器统一了书面与（图表：相对 FairSpeech 标准化器的相对 WER 降低（刻度 0/10/20/30/40/50%）：开源模型 vs Whisper 模型；数据集 CORAAL、CommonVoice9.en、AMI-SDM1、CommonVoice5.1、Fleurs.en_us、AMI-IHM、Artie、LibriSpeech、TED-LIUM3、VoxPopuli.en、WSJ、CallHome、Switchboard。）"
       }
      ]
+    },
+    {
+     "id": "eq-4-4-1",
+     "type": "equation",
+     "page": 12,
+     "original": "0 10 20 30 40 50"
     },
     {
      "id": "p-4-4-2",
@@ -2684,30 +3216,10 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-4-4-2-1",
-       "original": "0 10 20 30 40 50",
-       "zh": "横轴刻度：0 10 20 30 40 50。"
-      }
-     ]
-    },
-    {
-     "id": "p-4-4-3",
-     "type": "paragraph",
-     "page": 12,
-     "sentences": [
-      {
-       "id": "s-4-4-3-1",
        "original": "Relative WER reduction compared to FairSpeech's normalizer (%)",
-       "zh": "纵轴：相对 FairSpeech 标准化器的 WER 相对降幅（%）。"
+       "zh": "例如在 CallHome 与 Switchboard 上，我们的标准化器不惩罚「you're」与「you are」这类常见英语缩写差异；在 WSJ 上，我们的标准化器统一了书面与（图表：相对 FairSpeech 标准化器的相对 WER 降低（刻度 0/10/20/30/40/50%）：开源模型 vs Whisper 模型；数据集 CORAAL、CommonVoice9.en、AMI-SDM1、CommonVoice5.1、Fleurs.en_us、AMI-IHM、Artie、LibriSpeech、TED-LIUM3、VoxPopuli.en、WSJ、CallHome、Switchboard。）"
       }
      ]
-    },
-    {
-     "id": "tb-4-4-4",
-     "type": "table_body",
-     "page": 12,
-     "original": "CommonVoice9.en\nAMI-SDM1\nCommonVoice5.1\nFleurs.en_us\nAMI-IHM\nArtie\nLibriSpeech\nTED-LIUM3\nVoxPopuli.en\nWSJ\nCallHome\nSwitchboard\nOpen-source models Whisper models",
-     "cells": 13,
-     "zh": "图 10 数据标签碎片：CommonVoice9.en、AMI-SDM1、CommonVoice5.1、Fleurs.en_us、AMI-IHM、Artie、LibriSpeech、TED-LIUM3、VoxPopuli.en、WSJ、CallHome、Switchboard；图例为开源模型与 Whisper 模型。"
     },
     {
      "id": "fig-4-4-1",
@@ -2717,12 +3229,12 @@ globalThis.PAPER_2212_04356 = {
      "zh": "图 10. 在大多数数据集上，与 FairSpeech 的标准化器相比，我们的文本标准化器对 Whisper 模型和其他开源模型的 WER 降幅作用相近。对每个数据集，箱线图展示了我们评测套件中不同模型的相对 WER 降幅分布，总体看我们的标准化器带来的 WER 低于 FairSpeech 的。在少数数据集上（如真值含大量缩略形式的 CallHome 和 Switchboard，以及含大量数字表达的 WSJ），我们的标准化器显著降低 WER，且对 Whisper 模型降得更多。"
     },
     {
-     "id": "p-4-4-17",
+     "id": "p-4-4-3",
      "type": "paragraph",
      "page": 12,
      "sentences": [
       {
-       "id": "s-4-4-17-1",
+       "id": "s-4-4-3-1",
        "original": "ken forms of numerical and monetary expressions, such as “sixty-eight million dollars” versus “$68 million”.",
        "zh": "语形式，例如「sixty-eight million dollars」与「$68 million」。"
       }
@@ -2772,30 +3284,76 @@ globalThis.PAPER_2212_04356 = {
       },
       {
        "id": "s-4-5-1-6",
-       "original": "We found that the probability of the <|nospeech|> token alone is not sufﬁcient",
-       "zh": "我们发现，仅靠 <|nospeech|> token 的概率不足以"
+       "original": "We found that the probability of the <|nospeech|> token alone is not sufﬁcient TED-LIUM3 Earnings-22 Earnings-21 Meanwhile Kincaid46 CORAAL Average Rev16 Greedy decoding only",
+       "zh": "我们发现仅靠 <|nospeech|> token 的概率不足以（图：TED-LIUM3、Earnings-22、Earnings-21、Meanwhile、Kincaid46、CORAAL、Average、Rev16 各集，仅贪心解码（Greedy decoding only）。）"
       }
      ]
     },
     {
-     "id": "tb-4-5-2",
-     "type": "table_body",
-     "page": 13,
-     "original": "TED-LIUM3\nMeanwhile\nKincaid46\nRev16\nEarnings-21\nEarnings-22\nAverage",
-     "cells": 7,
-     "zh": "表 7 列名碎片：TED-LIUM3、Meanwhile、Kincaid46、Rev16、Earnings-21、Earnings-22、Average（平均）。"
+     "id": "eq-4-5-1",
+     "type": "equation",
+     "page": 12,
+     "original": "3.95 5.16 9.69 11.7 10.7 14.0 22.0 11.0"
     },
     {
-     "id": "p-4-5-9",
-     "type": "paragraph",
-     "page": 13,
-     "sentences": [
-      {
-       "id": "s-4-5-9-1",
-       "original": "Greedy decoding only 3.95 5.16 9.69 11.7 10.7 14.0 22.0 11.0 + Beam search 4.16 5.71 9.42 11.5 10.2 13.4 20.0 10.6 + Temperature fallback 4.16 5.71 9.42 11.5 10.2 13.4 20.0 10.6 + Voice activity detection 3.56 4.61 9.45 11.4 10.1 13.2 19.4 10.2 + Previous text conditioning 3.42 6.16 8.72 11.0 9.63 13.3 18.1 10.0 + Initial timestamp constraint 3.51 5.26 8.41 11.5 9.73 12.6 19.1 10.0",
-       "zh": "Greedy decoding only（仅贪心解码）：3.95、5.16、9.69、11.7、10.7、14.0、22.0、11.0；+ Beam search（加束搜索）：4.16、5.71、9.42、11.5、10.2、13.4、20.0、10.6；+ Temperature fallback（加温度回退）：4.16、5.71、9.42、11.5、10.2、13.4、20.0、10.6；+ Voice activity detection（加语音活动检测）：3.56、4.61、9.45、11.4、10.1、13.2、19.4、10.2；+ Previous text conditioning（加前文条件）：3.42、6.16、8.72、11.0、9.63、13.3、18.1、10.0；+ Initial timestamp constraint（加初始时间戳约束）：3.51、5.26、8.41、11.5、9.73、12.6、19.1、10.0。"
-      }
-     ]
+     "id": "eq-4-5-2",
+     "type": "equation",
+     "page": 12,
+     "original": "+ Beam search"
+    },
+    {
+     "id": "eq-4-5-3",
+     "type": "equation",
+     "page": 12,
+     "original": "4.16 5.71 9.42 11.5 10.2 13.4 20.0 10.6"
+    },
+    {
+     "id": "eq-4-5-4",
+     "type": "equation",
+     "page": 12,
+     "original": "+ Temperature fallback"
+    },
+    {
+     "id": "eq-4-5-5",
+     "type": "equation",
+     "page": 12,
+     "original": "4.16 5.71 9.42 11.5 10.2 13.4 20.0 10.6"
+    },
+    {
+     "id": "eq-4-5-6",
+     "type": "equation",
+     "page": 12,
+     "original": "+ Voice activity detection"
+    },
+    {
+     "id": "eq-4-5-7",
+     "type": "equation",
+     "page": 12,
+     "original": "3.56 4.61 9.45 11.4 10.1 13.2 19.4 10.2"
+    },
+    {
+     "id": "eq-4-5-8",
+     "type": "equation",
+     "page": 12,
+     "original": "+ Previous text conditioning"
+    },
+    {
+     "id": "eq-4-5-9",
+     "type": "equation",
+     "page": 12,
+     "original": "3.42 6.16 8.72 11.0 9.63 13.3 18.1 10.0"
+    },
+    {
+     "id": "eq-4-5-10",
+     "type": "equation",
+     "page": 12,
+     "original": "+ Initial timestamp constraint"
+    },
+    {
+     "id": "eq-4-5-11",
+     "type": "equation",
+     "page": 12,
+     "original": "3.51 5.26 8.41 11.5 9.73 12.6 19.1 10.0"
     },
     {
      "id": "tab-4-5-1",
@@ -2805,27 +3363,27 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 7. 随着更多解码启发式的加入，长音频转录性能逐步提升。每项干预的细节见 Section 4.5。"
     },
     {
-     "id": "p-4-5-10",
+     "id": "p-4-5-2",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
-       "id": "s-4-5-10-1",
+       "id": "s-4-5-2-1",
        "original": "to distinguish a segment with no speech, but combining the no-speech probability threshold of 0.6 and the average log-probability threshold of −1 makes the voice activity detection of Whisper more reliable.",
        "zh": "判定一个片段没有语音；但把无语音概率阈值 0.6 与平均对数概率阈值 −1 结合起来，可以让 Whisper 的语音活动检测（VAD）更可靠。"
       },
       {
-       "id": "s-4-5-10-2",
+       "id": "s-4-5-2-2",
        "original": "Finally, to avoid a failure mode where the model ignores the ﬁrst few words in the input, we constrained the initial timestamp token to be between 0.0 and 1.0 second.",
        "zh": "最后，为避免模型忽略输入开头几个词的失败模式，我们把初始时间戳 token 约束在 0.0 到 1.0 秒之间。"
       },
       {
-       "id": "s-4-5-10-3",
+       "id": "s-4-5-2-3",
        "original": "Table 7 shows that adding each of the interventions above incrementally reduces the WER overall, but not evenly across the dataset.",
        "zh": "Table 7 显示，逐条加入上述干预措施，整体 WER 逐步下降，但在各数据集上的改善并不均匀。"
       },
       {
-       "id": "s-4-5-10-4",
+       "id": "s-4-5-2-4",
        "original": "These heuristics serve as a workaround for the noisy predictions of the model, and more research would be needed to further improve the reliability of long-form decoding.",
        "zh": "这些启发式只是对模型噪声预测的变通处理，要进一步提高长音频解码的可靠性还需要更多研究。"
       }
@@ -2842,144 +3400,173 @@ globalThis.PAPER_2212_04356 = {
     "original": "Related Work",
     "zh": "相关工作"
    },
+   "blocks": []
+  },
+  {
+   "id": "sec-scaling-speech-recognition",
+   "num": null,
+   "level": 2,
+   "page": 13,
+   "title": {
+    "original": "Scaling Speech Recognition",
+    "zh": "Scaling Speech Recognition"
+   },
    "blocks": [
     {
-     "id": "p-5-1",
+     "id": "p-scaling-speech-recognition-1",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
-       "id": "s-5-1-1",
-       "original": "Scaling Speech Recognition A consistent theme across speech recognition research has been documenting the beneﬁts of scaling compute, models, and datasets.",
+       "id": "s-scaling-speech-recognition-1-1",
+       "original": "A consistent theme across speech recognition research has been documenting the beneﬁts of scaling compute, models, and datasets.",
        "zh": "语音识别的规模化：语音识别研究一以贯之的主题，是记录扩大算力、模型和数据集规模带来的收益。"
       },
       {
-       "id": "s-5-1-2",
+       "id": "s-scaling-speech-recognition-1-2",
        "original": "Early work applying deep learning to speech recognition found improved performance with model depth and size and leveraged GPU acceleration to make training these larger models tractable (Mohamed et al., 2009).",
        "zh": "早期把深度学习应用于语音识别的工作发现，性能随模型深度和规模提升，并利用 GPU 加速使训练这些更大的模型变得可行（Mohamed et al., 2009）。"
       },
       {
-       "id": "s-5-1-3",
+       "id": "s-scaling-speech-recognition-1-3",
        "original": "Further research demonstrated that the beneﬁt of deep learning approaches to speech recognition increased with dataset size, improving from being only competitive with prior GMM-HMM systems when using just 3 hours of TIMIT training data for phone recognition to achieving a 30% word error rate reduction when trained on the 2,000 hour Switchboard dataset (Seide et al., 2011).",
        "zh": "后续研究表明，深度学习方法对语音识别的收益随数据集规模增大：只用 3 小时 TIMIT 训练数据做音素识别时仅与此前 GMM-HMM 系统相当，而在 2,000 小时的 Switchboard 数据集上训练时词错误率降低了 30%（Seide et al., 2011）。"
       },
       {
-       "id": "s-5-1-4",
+       "id": "s-scaling-speech-recognition-1-4",
        "original": "Liao et al. (2013) is an early example of leveraging weakly supervised learning to increase the size of a deep learning based speech recognition dataset by over 1,000 hours.",
        "zh": "Liao et al. (2013) 是利用弱监督学习扩大深度学习语音识别数据集规模的早期例子，增量超过 1,000 小时。"
       },
       {
-       "id": "s-5-1-5",
+       "id": "s-scaling-speech-recognition-1-5",
        "original": "These trends continued with Deep Speech 2 (Amodei et al., 2015) being a notable system developing high-throughput distributed training across 16 GPUs and scaling to 12,000 hours of training data while demonstrating continuing improvements at that scale.",
        "zh": "这一趋势延续下去：Deep Speech 2（Amodei et al., 2015）是一个代表性系统，开发了跨 16 块 GPU 的高吞吐分布式训练，把训练数据扩展到 12,000 小时，并展示了该规模下的持续提升。"
       },
       {
-       "id": "s-5-1-6",
+       "id": "s-scaling-speech-recognition-1-6",
        "original": "By leveraging semi-supervised pre-training, Narayanan et al. (2018) were able to grow dataset size much further and study training on 162,000 hours of labeled audio.",
        "zh": "借助半监督预训练，Narayanan et al. (2018) 得以把数据集规模扩得更大，研究了在 162,000 小时标注音频上的训练。"
       },
       {
-       "id": "s-5-1-7",
-       "original": "More recent work has explored",
-       "zh": "更近期的工作探索了"
+       "id": "s-scaling-speech-recognition-1-7",
+       "original": "More recent work has explored billion-parameter models (Zhang et al., 2020) and using up to 1,000,000 hours of training data (Zhang et al., 2021).",
+       "zh": "更近的工作探索了十亿参数级模型（Zhang et al., 2020）以及高达 1,000,000 小时的训练数据（Zhang et al., 2021）。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-multitask-learning",
+   "num": null,
+   "level": 2,
+   "page": 13,
+   "title": {
+    "original": "Multitask Learning",
+    "zh": "Multitask Learning"
+   },
+   "blocks": [
     {
-     "id": "p-5-2",
+     "id": "p-multitask-learning-1",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
-       "id": "s-5-2-1",
-       "original": "billion-parameter models (Zhang et al., 2020) and using up to 1,000,000 hours of training data (Zhang et al., 2021).",
-       "zh": "更近期的工作探索了十亿参数级模型（Zhang et al., 2020），以及多达 1,000,000 小时的训练数据（Zhang et al., 2021）。"
-      }
-     ]
-    },
-    {
-     "id": "p-5-3",
-     "type": "paragraph",
-     "page": 13,
-     "sentences": [
-      {
-       "id": "s-5-3-1",
-       "original": "Multitask Learning Multitask learning (Caruana, 1997) has been studied for a long time.",
+       "id": "s-multitask-learning-1-1",
+       "original": "Multitask learning (Caruana, 1997) has been studied for a long time.",
        "zh": "多任务学习：多任务学习（Caruana, 1997）已被研究了很长时间。"
       },
       {
-       "id": "s-5-3-2",
+       "id": "s-multitask-learning-1-2",
        "original": "In speech recognition, multi-lingual models have been explored for well over a decade (Schultz & Kirchhoff, 2006).",
        "zh": "在语音识别领域，多语言模型的探索已有十几年历史（Schultz & Kirchhoff, 2006）。"
       },
       {
-       "id": "s-5-3-3",
+       "id": "s-multitask-learning-1-3",
        "original": "An inspirational and foundational work in NLP exploring multi-task learning with a single model is Collobert et al. (2011).",
        "zh": "NLP 中用单一模型探索多任务学习的一项开创性基础工作是 Collobert et al. (2011)。"
       },
       {
-       "id": "s-5-3-4",
+       "id": "s-multitask-learning-1-4",
        "original": "Multitask learning in the sequence-to-sequence framework (Sutskever et al., 2014) using multiple encoders and decoders was investigated in Luong et al. (2015).",
        "zh": "Luong et al. (2015) 研究了在序列到序列框架（Sutskever et al., 2014）下使用多个编码器和解码器的多任务学习。"
       },
       {
-       "id": "s-5-3-5",
+       "id": "s-multitask-learning-1-5",
        "original": "The use of language codes with a shared encoder/decoder architecture was ﬁrst demonstrated for machine translation by Johnson et al. (2017), removing the need for separate encoders and decoders.",
        "zh": "Johnson et al. (2017) 首先在机器翻译中展示了共享编码器/解码器架构加语言代码的做法，去掉了对独立编码器和解码器的需求。"
       },
       {
-       "id": "s-5-3-6",
+       "id": "s-multitask-learning-1-6",
        "original": "This approach was simpliﬁed further into the “text-to-text” framework of McCann et al. (2018) and popularized by its success with large transformer language models in the work of Radford et al. (2019) and Raffel et al. (2020).",
        "zh": "这一思路被进一步简化为 McCann et al. (2018) 的「文本到文本」（text-to-text）框架，并随 Radford et al. (2019) 和 Raffel et al. (2020) 中大型 Transformer 语言模型的成功而流行开来。"
       },
       {
-       "id": "s-5-3-7",
+       "id": "s-multitask-learning-1-7",
        "original": "Toshniwal et al. (2018) demonstrated jointly training a modern deep learning speech recognition system on several languages with a single model, and Pratap et al. (2020a) scaled this line of work signiﬁcantly to 50 languages with a billion-parameter model.",
        "zh": "Toshniwal et al. (2018) 展示了用单一模型在多种语言上联合训练现代深度学习语音识别系统，Pratap et al. (2020a) 则用十亿参数模型把这一路线大幅扩展到 50 种语言。"
       },
       {
-       "id": "s-5-3-8",
+       "id": "s-multitask-learning-1-8",
        "original": "MUTE (Wang et al., 2020c) and mSLAM (Bapna et al., 2022) studied joint training over both text and speech language tasks, demonstrating transfer between them.",
        "zh": "MUTE（Wang et al., 2020c）和 mSLAM（Bapna et al., 2022）研究了在文本和语音两类语言任务上的联合训练，展示了两者之间的迁移。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-robustness",
+   "num": null,
+   "level": 2,
+   "page": 13,
+   "title": {
+    "original": "Robustness",
+    "zh": "Robustness"
+   },
+   "blocks": [
     {
-     "id": "p-5-4",
+     "id": "p-robustness-1",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
-       "id": "s-5-4-1",
-       "original": "Robustness The question of how effectively models transfer and how robust they are to distribution shift and other types of perturbations has long been studied and is actively being researched across many ﬁelds of machine learning.",
+       "id": "s-robustness-1-1",
+       "original": "The question of how effectively models transfer and how robust they are to distribution shift and other types of perturbations has long been studied and is actively being researched across many ﬁelds of machine learning.",
        "zh": "鲁棒性：模型的迁移效果如何、对分布漂移和其他扰动的鲁棒性如何，这一问题长期被研究，至今仍是机器学习多个领域的活跃方向。"
       },
       {
-       "id": "s-5-4-2",
+       "id": "s-robustness-1-2",
        "original": "Torralba & Efros (2011) highlighted the lack of generalization of machine learning models between datasets over a decade ago.",
        "zh": "Torralba & Efros (2011) 十多年前就指出了机器学习模型在数据集之间缺乏泛化的问题。"
       },
       {
-       "id": "s-5-4-3",
+       "id": "s-robustness-1-3",
        "original": "Many other works have shown and continually reiterated how despite high performance on IID test sets, machine learning models can still make many mistakes when evaluated in even slightly different settings (Lake et al., 2017; Jia & Liang, 2017; Alcorn et al., 2019; Barbu et al., 2019; Recht et al., 2019).",
        "zh": "许多其他工作也不断表明并重申：尽管在 IID 测试集上性能很高，机器学习模型在哪怕略有不同的设定下评测时仍会犯许多错误（Lake et al., 2017; Jia & Liang, 2017; Alcorn et al., 2019; Barbu et al., 2019; Recht et al., 2019）。"
       },
       {
-       "id": "s-5-4-4",
+       "id": "s-robustness-1-4",
        "original": "More recently, Taori et al. (2020) studied the robustness of image classiﬁcation models, and Miller et al. (2020) investigated this for question-answering models.",
        "zh": "更近的工作中，Taori et al. (2020) 研究了图像分类模型的鲁棒性，Miller et al. (2020) 则针对问答模型做了研究。"
       },
       {
-       "id": "s-5-4-5",
+       "id": "s-robustness-1-5",
        "original": "A key ﬁnding has been that multi-domain training increases robustness and generalization as discussed in the Introduction.",
        "zh": "一个关键发现是：多领域训练能提升鲁棒性和泛化，正如引言中所讨论的。"
       },
       {
-       "id": "s-5-4-6",
-       "original": "This ﬁnding has been replicated across many ﬁelds in addition to speech recognition including NLP (Hendrycks et al., 2020) and computer vision (Radford et al., 2021).",
+       "id": "s-robustness-1-6",
+       "original": "This ﬁnding has been replicated across many ﬁelds in addition to speech recognition including NLP (Hendrycks et al., 2020) and computer vision (Radford et al.,",
        "zh": "除语音识别外，这一发现还在包括 NLP（Hendrycks et al., 2020）和计算机视觉（Radford et al., 2021）在内的许多领域得到了复现。"
       }
      ]
+    },
+    {
+     "id": "eq-robustness-1",
+     "type": "equation",
+     "page": 13,
+     "original": "2021)."
     }
    ]
   },
@@ -3004,134 +3591,177 @@ globalThis.PAPER_2212_04356 = {
        "zh": "从实验结果、分析和消融中，我们总结出以下几点局限和未来工作方向。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-improved-decoding-strategies",
+   "num": null,
+   "level": 2,
+   "page": 14,
+   "title": {
+    "original": "Improved decoding strategies.",
+    "zh": "Improved decoding strategies."
+   },
+   "blocks": [
     {
-     "id": "p-6-2",
+     "id": "p-improved-decoding-strategies-1",
      "type": "paragraph",
      "page": 14,
      "sentences": [
       {
-       "id": "s-6-2-1",
-       "original": "Improved decoding strategies.",
-       "zh": "改进解码策略。"
-      },
-      {
-       "id": "s-6-2-2",
+       "id": "s-improved-decoding-strategies-1-1",
        "original": "As we have scaled Whisper, we have observed that larger models have made steady and reliable progress on reducing perception-related errors such as confusing similar-sounding words.",
        "zh": "随着 Whisper 规模扩大，我们观察到更大的模型在减少感知类错误（如混淆发音相近的词）上持续而稳定地进步。"
       },
       {
-       "id": "s-6-2-3",
+       "id": "s-improved-decoding-strategies-1-2",
        "original": "Many remaining errors, particularly in long-form transcription seem more stubborn in nature and decidedly non-human/perceptual.",
        "zh": "剩余的许多错误——尤其是在长音频转录中——性质上更顽固，且明显不是人类那种感知性错误。"
       },
       {
-       "id": "s-6-2-4",
+       "id": "s-improved-decoding-strategies-1-3",
        "original": "They are a combination of failure modes of seq2seq models, language models, and text-audio alignment and include problems such as getting stuck in repeat loops, not transcribing the ﬁrst or last few words of an audio segment, or complete hallucination where the model will output a transcript entirely unrelated to the actual audio.",
        "zh": "它们是 seq2seq 模型、语言模型和文本-音频对齐的多种失败模式的组合，包括陷入重复循环、漏掉音频片段开头或结尾的几个词，以及完全幻觉（hallucination）——模型输出与实际音频毫不相干的转录。"
       },
       {
-       "id": "s-6-2-5",
+       "id": "s-improved-decoding-strategies-1-4",
        "original": "Although the decoding details discussed in Section 4.5 help signiﬁcantly, we suspect ﬁne-tuning Whisper models on a high-quality supervised dataset and/or using reinforcement learning to more directly optimize for decoding performance could help further reduce these errors.",
        "zh": "虽然 Section 4.5 讨论的解码细节有显著帮助，但我们怀疑，在高质量监督数据集上微调 Whisper 模型，和/或用强化学习更直接地优化解码表现，可能进一步减少这些错误。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-increase-training-data-for-lower",
+   "num": null,
+   "level": 2,
+   "page": 14,
+   "title": {
+    "original": "Increase Training Data For Lower-Resource Languages",
+    "zh": "Increase Training Data For Lower-Resource Languages"
+   },
+   "blocks": [
     {
-     "id": "p-6-3",
+     "id": "p-increase-training-data-for-lower-1",
      "type": "paragraph",
      "page": 14,
      "sentences": [
       {
-       "id": "s-6-3-1",
-       "original": "Increase Training Data For Lower-Resource Languages As Figure 3 shows, Whisper’s speech recognition performance is still quite poor on many languages.",
+       "id": "s-increase-training-data-for-lower-1-1",
+       "original": "As Figure 3 shows, Whisper’s speech recognition performance is still quite poor on many languages.",
        "zh": "为低资源语言增加训练数据：如 Figure 3 所示，Whisper 的语音识别性能在许多语言上仍然相当差。"
       },
       {
-       "id": "s-6-3-2",
+       "id": "s-increase-training-data-for-lower-1-2",
        "original": "The same analysis suggests a clear route for improvement since performance on a language is very well predicted by the amount of training data for the language.",
        "zh": "同一分析也指出了明确的改进路线：一种语言的性能可以被该语言的训练数据量很好地预测。"
       },
       {
-       "id": "s-6-3-3",
+       "id": "s-increase-training-data-for-lower-1-3",
        "original": "Since our pre-training dataset is currently very English-heavy due to biases of our data collection pipeline, which sourced primarily from English-centric parts of the internet, most languages have less than 1000 hours of training data.",
        "zh": "由于我们的数据采集流水线主要从以英语为中心的互联网部分获取数据，预训练数据集目前严重偏向英语，大多数语言的训练数据不足 1000 小时。"
       },
       {
-       "id": "s-6-3-4",
+       "id": "s-increase-training-data-for-lower-1-4",
        "original": "A targeted effort at increasing the amount of data for these rarer languages could result in a large improvement to average speech recognition performance even with only a small increase in our overall training dataset size.",
        "zh": "有针对性地增加这些稀有语言的数据量，即使整体训练数据集规模只小幅增大，也可能带来平均语音识别性能的大幅提升。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-studying-ne-tuning",
+   "num": null,
+   "level": 2,
+   "page": 14,
+   "title": {
+    "original": "Studying ﬁne-tuning",
+    "zh": "Studying ﬁne-tuning"
+   },
+   "blocks": [
     {
-     "id": "p-6-4",
+     "id": "p-studying-ne-tuning-1",
      "type": "paragraph",
      "page": 14,
      "sentences": [
       {
-       "id": "s-6-4-1",
-       "original": "Studying ﬁne-tuning In this work, we have focused on the robustness properties of speech processing systems and as a result only studied the zero-shot transfer performance of Whisper.",
+       "id": "s-studying-ne-tuning-1-1",
+       "original": "In this work, we have focused on the robustness properties of speech processing systems and as a result only studied the zero-shot transfer performance of Whisper.",
        "zh": "研究微调：本文聚焦于语音处理系统的鲁棒性，因此只研究了 Whisper 的零样本迁移性能。"
       },
       {
-       "id": "s-6-4-2",
+       "id": "s-studying-ne-tuning-1-2",
        "original": "While this is a crucial setting to study due to it being representative of general reliability, for many domains where high-quality supervised speech data does exist, it is likely that results can be improved further by ﬁne-tuning.",
        "zh": "零样本是至关重要的设定，因为它代表普遍的可靠性；但对于许多确实存在高质量监督语音数据的领域，微调很可能进一步提升结果。"
       },
       {
-       "id": "s-6-4-3",
+       "id": "s-studying-ne-tuning-1-3",
        "original": "An additional beneﬁt of studying ﬁne-tuning is that it allows for direct comparisons with prior work since it is a much more common evaluation setting.",
        "zh": "研究微调还有一个额外好处：能与此前工作直接比较，因为微调是更常见的评测设定。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-studying-the-impact-of-language-",
+   "num": null,
+   "level": 2,
+   "page": 14,
+   "title": {
+    "original": "Studying the impact of Language Models on Robustness",
+    "zh": "Studying the impact of Language Models on Robustness"
+   },
+   "blocks": [
     {
-     "id": "p-6-5",
+     "id": "p-studying-the-impact-of-language--1",
      "type": "paragraph",
      "page": 14,
      "sentences": [
       {
-       "id": "s-6-5-1",
-       "original": "Studying the impact of Language Models on Robustness As argued in the introduction, we suspect that Whisper’s robustness is partially due to its strong decoder, which is an audio conditional language model.",
+       "id": "s-studying-the-impact-of-language--1-1",
+       "original": "As argued in the introduction, we suspect that Whisper’s robustness is partially due to its strong decoder, which is an audio conditional language model.",
        "zh": "研究语言模型对鲁棒性的影响：如引言所述，我们怀疑 Whisper 的鲁棒性部分来自其强大的解码器——一个以音频为条件的语言模型。"
       },
       {
-       "id": "s-6-5-2",
+       "id": "s-studying-the-impact-of-language--1-2",
        "original": "It’s currently unclear to what degree the beneﬁts of Whisper stem from training its encoder, decoder, or both.",
        "zh": "目前尚不清楚 Whisper 的收益在多大程度上来自编码器的训练、解码器的训练，还是两者兼有。"
       },
       {
-       "id": "s-6-5-3",
-       "original": "This could be studied by either ablating various design components of Whisper, such as training a decoder-less CTC model, or by studying how the performance of existing speech recognition encoders such",
-       "zh": "研究方式可以是消融 Whisper 的各个设计组件（例如训练一个无解码器的 CTC 模型），也可以是研究现有语音识别编码器（如"
+       "id": "s-studying-the-impact-of-language--1-3",
+       "original": "This could be studied by either ablating various design components of Whisper, such as training a decoder-less CTC model, or by studying how the performance of existing speech recognition encoders such as wav2vec 2.0 change when used together with a language model.",
+       "zh": "可以通过两种路径研究：或者消融 Whisper 的各个设计组件（例如训练无解码器的 CTC 模型），或者研究现有语音识别编码器（如 wav2vec 2.0）与语言模型联用时性能如何变化。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-adding-auxiliary-training-object",
+   "num": null,
+   "level": 2,
+   "page": 14,
+   "title": {
+    "original": "Adding Auxiliary Training Objectives",
+    "zh": "Adding Auxiliary Training Objectives"
+   },
+   "blocks": [
     {
-     "id": "p-6-6",
+     "id": "p-adding-auxiliary-training-object-1",
      "type": "paragraph",
      "page": 14,
      "sentences": [
       {
-       "id": "s-6-6-1",
-       "original": "as wav2vec 2.0 change when used together with a language model.",
-       "zh": "wav2vec 2.0）与语言模型组合使用时性能会如何变化。"
-      }
-     ]
-    },
-    {
-     "id": "p-6-7",
-     "type": "paragraph",
-     "page": 14,
-     "sentences": [
-      {
-       "id": "s-6-7-1",
-       "original": "Adding Auxiliary Training Objectives Whisper departs noticeably from most recent state-of-the-art speech recognition systems due to the lack of unsupervised pre-training or self-teaching methods.",
+       "id": "s-adding-auxiliary-training-object-1-1",
+       "original": "Whisper departs noticeably from most recent state-of-the-art speech recognition systems due to the lack of unsupervised pre-training or self-teaching methods.",
        "zh": "加入辅助训练目标：Whisper 与近期大多数 SOTA 语音识别系统的一个明显不同，在于它没有用无监督预训练或自训练方法。"
       },
       {
-       "id": "s-6-7-2",
+       "id": "s-adding-auxiliary-training-object-1-2",
        "original": "While we have not found them necessary to achieve good performance, it is possible that the results could be further improved by incorporating this.",
        "zh": "虽然我们发现取得好性能并不需要它们，但加入这些方法可能进一步提升结果。"
       }
@@ -3173,38 +3803,26 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-7-2-1",
-       "original": "ACKNOWLEDGMENTS",
+       "original": "ACKNOWLEDGMENTS We’d like to thank the millions of people who were involved in creating the data used by Whisper.",
        "zh": "致谢"
-      }
-     ]
-    },
-    {
-     "id": "p-7-3",
-     "type": "paragraph",
-     "page": 14,
-     "sentences": [
-      {
-       "id": "s-7-3-1",
-       "original": "We’d like to thank the millions of people who were involved in creating the data used by Whisper.",
-       "zh": "我们要感谢数以百万计参与创造了 Whisper 所用数据的人。"
       },
       {
-       "id": "s-7-3-2",
+       "id": "s-7-2-2",
        "original": "We’d also like to thank Nick Ryder, Will Zhuk, and Andrew Carr for the conversation on the waterfall hike that inspired this project.",
        "zh": "我们还要感谢 Nick Ryder、Will Zhuk 和 Andrew Carr——在那次瀑布徒步中的谈话启发了这个项目。"
       },
       {
-       "id": "s-7-3-3",
+       "id": "s-7-2-3",
        "original": "We are also grateful to the Acceleration and Supercomputing teams at OpenAI for their critical work on software and hardware infrastructure this project used.",
        "zh": "我们也感谢 OpenAI 的 Acceleration 和 Supercomputing 团队，他们在本项目所用的软件和硬件基础设施上做了关键工作。"
       },
       {
-       "id": "s-7-3-4",
+       "id": "s-7-2-4",
        "original": "We’d also like to thank Pamela Mishkin for advising the project from a policy perspective.",
        "zh": "我们还要感谢 Pamela Mishkin 从政策角度为项目提供的建议。"
       },
       {
-       "id": "s-7-3-5",
+       "id": "s-7-2-5",
        "original": "Finally, we are grateful to the developers of the many software packages used throughout this project including, but not limited, to Numpy (Harris et al., 2020), SciPy (Virtanen et al., 2020), ftfy (Speer, 2019), PyTorch (Paszke et al., 2019), pandas (pandas development team, 2020), and scikit-learn (Pedregosa et al., 2011).",
        "zh": "最后，我们感谢本项目用到的众多软件包的开发者，包括但不限于 Numpy（Harris et al., 2020）、SciPy（Virtanen et al., 2020）、ftfy（Speer, 2019）、PyTorch（Paszke et al., 2019）、pandas（pandas development team, 2020）和 scikit-learn（Pedregosa et al., 2011）。"
       }
@@ -3229,11 +3847,13 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-1-1",
-       "original": "Alcorn, M."
+       "original": "Alcorn, M.",
+       "zh": "5."
       },
       {
        "id": "s-references-1-2",
-       "original": "A., Li, Q., Gong, Z., Wang, C., Mai, L., Ku, W.- S., and Nguyen, A."
+       "original": "A., Li, Q., Gong, Z., Wang, C., Mai, L., Ku, W.- S., and Nguyen, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-1-3",
@@ -3241,7 +3861,8 @@ globalThis.PAPER_2212_04356 = {
       },
       {
        "id": "s-references-1-4",
-       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 4845–4854, 2019."
+       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, pp. 4845–4854, 2019.",
+       "zh": "9."
       }
      ]
     },
@@ -3252,7 +3873,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-2-1",
-       "original": "Amodei, D., Anubhai, R., Battenberg, E., Case, C., Casper, J., Catanzaro, B., Chen, J., Chrzanowski, M., Coates, A., Diamos, G., et al. Deep speech 2: end-to-end speech recognition in english and mandarin. arxiv. arXiv preprint"
+       "original": "Amodei, D., Anubhai, R., Battenberg, E., Case, C., Casper, J., Catanzaro, B., Chen, J., Chrzanowski, M., Coates, A., Diamos, G., et al. Deep speech 2: end-to-end speech recognition in english and mandarin. arxiv. arXiv preprint arXiv:1512.02595, 2015.",
+       "zh": "5."
       }
      ]
     },
@@ -3263,11 +3885,18 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-3-1",
-       "original": "Ardila, R., Branson, M., Davis, K., Henretty, M., Kohler, M., Meyer, J., Morais, R., Saunders, L., Tyers, F."
+       "original": "Ardila, R., Branson, M., Davis, K., Henretty, M., Kohler, M., Meyer, J., Morais, R., Saunders, L., Tyers, F.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       },
       {
        "id": "s-references-3-2",
-       "original": "M.,"
+       "original": "M., and Weber, G.",
+       "zh": "5."
+      },
+      {
+       "id": "s-references-3-3",
+       "original": "Common voice: A massively-multilingual speech corpus. arXiv preprint arXiv:1912.06670, 2019.",
+       "zh": "9."
       }
      ]
     },
@@ -3278,11 +3907,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "and Weber, G."
-      },
-      {
-       "id": "s-references-4-2",
-       "original": "Common voice: A massively-multilingual speech corpus. arXiv preprint arXiv:1912.06670, 2019."
+       "original": "Babu, A., Wang, C., Tjandra, A., Lakhotia, K., Xu, Q., Goyal, N., Singh, K., von Platen, P., Saraf, Y., Pino, J., et al.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       }
      ]
     },
@@ -3293,7 +3919,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "Babu, A., Wang, C., Tjandra, A., Lakhotia, K., Xu, Q., Goyal, N., Singh, K., von Platen, P., Saraf, Y., Pino, J., et al. XLS-R: Self-supervised cross-lingual speech representation learning at scale. arXiv preprint"
+       "original": "XLS-R: Self-supervised cross-lingual speech representation learning at scale. arXiv preprint arXiv:2111.09296, 2021.",
+       "zh": "11."
       }
      ]
     },
@@ -3304,7 +3931,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "Baevski, A., Zhou, H., Mohamed, A., and Auli, M. wav2vec 2.0: A framework for self-supervised learning of speech representations. arXiv preprint arXiv:2006.11477, 2020."
+       "original": "Baevski, A., Zhou, H., Mohamed, A., and Auli, M. wav2vec 2.0: A framework for self-supervised learning of speech representations. arXiv preprint arXiv:2006.11477, 2020.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       }
      ]
     },
@@ -3315,7 +3943,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "Baevski, A., Hsu, W.-N., Conneau, A., and Auli, M."
+       "original": "Baevski, A., Hsu, W.-N., Conneau, A., and Auli, M.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-7-2",
@@ -3334,7 +3963,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "Bapna, A., Cherry, C., Zhang, Y., Jia, Y., Johnson, M., Cheng, Y., Khanuja, S., Riesa, J., and Conneau, A. mslam: Massively multilingual joint pre-training for speech and text. arXiv preprint arXiv:2202.01374, 2022."
+       "original": "Bapna, A., Cherry, C., Zhang, Y., Jia, Y., Johnson, M., Cheng, Y., Khanuja, S., Riesa, J., and Conneau, A. mslam: Massively multilingual joint pre-training for speech and text. arXiv preprint arXiv:2202.01374, 2022.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       }
      ]
     },
@@ -3345,7 +3975,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "Barbu, A., Mayo, D., Alverio, J., Luo, W., Wang, C., Gutfreund, D., Tenenbaum, J., and Katz, B."
+       "original": "Barbu, A., Mayo, D., Alverio, J., Luo, W., Wang, C., Gutfreund, D., Tenenbaum, J., and Katz, B.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-9-2",
@@ -3353,7 +3984,8 @@ globalThis.PAPER_2212_04356 = {
       },
       {
        "id": "s-references-9-3",
-       "original": "Advances in neural information processing systems, 32, 2019."
+       "original": "Advances in neural information processing systems, 32, 2019.",
+       "zh": "9."
       }
      ]
     },
@@ -3364,7 +3996,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "Caruana, R."
+       "original": "Caruana, R.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       },
       {
        "id": "s-references-10-2",
@@ -3372,9 +4005,16 @@ globalThis.PAPER_2212_04356 = {
       },
       {
        "id": "s-references-10-3",
-       "original": "Machine learning, 28(1): 41–75, 1997."
+       "original": "Machine learning, 28(1):",
+       "zh": "机器学习"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 15,
+     "original": "41–75, 1997."
     },
     {
      "id": "p-references-11",
@@ -3383,11 +4023,12 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "Chan, W., Park, D., Lee, C., Zhang, Y., Le, Q., and Norouzi, M."
+       "original": "Chan, W., Park, D., Lee, C., Zhang, Y., Le, Q., and Norouzi, M.",
+       "zh": "5."
       },
       {
        "id": "s-references-11-2",
-       "original": "SpeechStew: Simply mix all available speech recognition data to train one large neural network. arXiv preprint"
+       "original": "SpeechStew: Simply mix all available speech recognition data to train one large neural network. arXiv preprint arXiv:2104.02133, 2021."
       }
      ]
     },
@@ -3398,7 +4039,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "Chen, G., Chai, S., Wang, G., Du, J., Zhang, W.-Q., Weng, C., Su, D., Povey, D., Trmal, J., Zhang, J., et al. Gigaspeech: An evolving, multi-domain asr corpus with 10,000 hours of transcribed audio. arXiv preprint"
+       "original": "Chen, G., Chai, S., Wang, G., Du, J., Zhang, W.-Q., Weng, C., Su, D., Povey, D., Trmal, J., Zhang, J., et al. Gigaspeech: An evolving, multi-domain asr corpus with 10,000 hours of transcribed audio. arXiv preprint arXiv:2106.06909, 2021.",
+       "zh": "5."
       }
      ]
     },
@@ -3409,7 +4051,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "Chen, S., Wu, Y., Wang, C., Chen, Z., Chen, Z., Liu, S., Wu, J., Qian, Y., Wei, F., Li, J., et al. Unispeech-sat: Universal speech representation learning with speaker aware pre-training."
+       "original": "Chen, S., Wu, Y., Wang, C., Chen, Z., Chen, Z., Liu, S., Wu, J., Qian, Y., Wei, F., Li, J., et al. Unispeech-sat: Universal speech representation learning with speaker aware pre-training.",
+       "zh": "5."
       },
       {
        "id": "s-references-13-2",
@@ -3428,11 +4071,12 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "Chen, T., Xu, B., Zhang, C., and Guestrin, C."
+       "original": "Chen, T., Xu, B., Zhang, C., and Guestrin, C.",
+       "zh": "在低噪声（40 dB SNR）下有许多模型超过我们的零样本表现——考虑到那些模型主要在 LibriSpeech 上训练，这并不意外——但随着噪声增强，所有模型都迅速退化，在 SNR 低于 10 dB 的加性酒吧噪声下全部比 Whisper 模型更差。"
       },
       {
        "id": "s-references-14-2",
-       "original": "Training deep nets with sublinear memory cost. arXiv preprint"
+       "original": "Training deep nets with sublinear memory cost. arXiv preprint arXiv:1604.06174, 2016."
       }
      ]
     },
@@ -3443,11 +4087,12 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "Chen, Z., Zhang, Y., Rosenberg, A., Ramabhadran, B., Moreno, P., Bapna, A., and Zen, H."
+       "original": "Chen, Z., Zhang, Y., Rosenberg, A., Ramabhadran, B., Moreno, P., Bapna, A., and Zen, H.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-15-2",
-       "original": "Maestro: Matched speech text representations through modality matching. arXiv preprint arXiv:2204.03409, 2022b."
+       "original": "Maestro: Matched speech text representations through modality matching."
       }
      ]
     },
@@ -3458,11 +4103,7 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "Child, R., Gray, S., Radford, A., and Sutskever, I."
-      },
-      {
-       "id": "s-references-16-2",
-       "original": "Generating long sequences with sparse transformers. arXiv preprint arXiv:1904.10509, 2019."
+       "original": "arXiv preprint arXiv:2204.03409, 2022b."
       }
      ]
     },
@@ -3473,15 +4114,13 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "Collobert, R., Weston, J., Bottou, L., Karlen, M., Kavukcuoglu, K., and Kuksa, P."
+       "original": "Child, R., Gray, S., Radford, A., and Sutskever, I.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-17-2",
-       "original": "Natural language processing (almost) from scratch."
-      },
-      {
-       "id": "s-references-17-3",
-       "original": "Journal of machine learning research, 12(ARTICLE):2493–2537, 2011."
+       "original": "Generating long sequences with sparse transformers. arXiv preprint arXiv:1904.10509, 2019.",
+       "zh": "9."
       }
      ]
     },
@@ -3492,11 +4131,17 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "Conneau, A., Ma, M., Khanuja, S., Zhang, Y., Axelrod, V., Dalmia, S., Riesa, J., Rivera, C., and Bapna, A."
+       "original": "Collobert, R., Weston, J., Bottou, L., Karlen, M., Kavukcuoglu, K., and Kuksa, P.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       },
       {
        "id": "s-references-18-2",
-       "original": "Fleurs: Few-shot learning evaluation of universal representations of speech. arXiv preprint arXiv:2205.12446, 2022."
+       "original": "Natural language processing (almost) from scratch."
+      },
+      {
+       "id": "s-references-18-3",
+       "original": "Journal of machine learning research, 12(ARTICLE):2493–2537, 2011.",
+       "zh": "11."
       }
      ]
     },
@@ -3507,11 +4152,13 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "Del Rio, M., Delworth, N., Westerman, R., Huang, M., Bhandari, N., Palakapilly, J., McNamara, Q., Dong, J., Zelasko, P., and Jett´e, M."
+       "original": "Conneau, A., Ma, M., Khanuja, S., Zhang, Y., Axelrod, V., Dalmia, S., Riesa, J., Rivera, C., and Bapna, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-19-2",
-       "original": "Earnings-21: a practical benchmark for asr in the wild. arXiv preprint arXiv:2104.11348, 2021."
+       "original": "Fleurs: Few-shot learning evaluation of universal representations of speech. arXiv preprint arXiv:2205.12446, 2022.",
+       "zh": "5."
       }
      ]
     },
@@ -3522,25 +4169,20 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "Galvez, D., Diamos, G., Torres, J."
+       "original": "Del Rio, M., Delworth, N., Westerman, R., Huang, M., Bhandari, N., Palakapilly, J., McNamara, Q., Dong, J., Zelasko, P., and Jett´e, M.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       },
       {
        "id": "s-references-20-2",
-       "original": "M."
-      },
-      {
-       "id": "s-references-20-3",
-       "original": "C., Achorn, K., Gopi, A., Kanter, D., Lam, M., Mazumder, M., and Reddi, V."
-      },
-      {
-       "id": "s-references-20-4",
-       "original": "J."
-      },
-      {
-       "id": "s-references-20-5",
-       "original": "The people’s speech: A large-scale diverse english speech recognition dataset for commercial usage. arXiv preprint"
+       "original": "Earnings-21: a practical benchmark for asr in the wild. arXiv preprint arXiv:2104.11348,"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 15,
+     "original": "2021."
     },
     {
      "id": "p-references-21",
@@ -3549,19 +4191,23 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "Geirhos, R., Jacobsen, J.-H., Michaelis, C., Zemel, R., Brendel, W., Bethge, M., and Wichmann, F."
+       "original": "Galvez, D., Diamos, G., Torres, J.",
+       "zh": "5."
       },
       {
        "id": "s-references-21-2",
-       "original": "A."
+       "original": "M.",
+       "zh": "5."
       },
       {
        "id": "s-references-21-3",
-       "original": "Shortcut learning in deep neural networks."
+       "original": "C., Achorn, K., Gopi, A., Kanter, D., Lam, M., Mazumder, M., and Reddi, V.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-21-4",
-       "original": "Nature Machine Intelligence, 2(11):665–673, 2020."
+       "original": "J.",
+       "zh": "5."
       }
      ]
     },
@@ -3572,11 +4218,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "Ghorbani, B., Firat, O., Freitag, M., Bapna, A., Krikun, M., Garcia, X., Chelba, C., and Cherry, C."
-      },
-      {
-       "id": "s-references-22-2",
-       "original": "Scaling laws for neural machine translation. arXiv preprint"
+       "original": "The people’s speech: A large-scale diverse english speech recognition dataset for commercial usage. arXiv preprint arXiv:2111.09344, 2021.",
+       "zh": "11."
       }
      ]
     },
@@ -3587,17 +4230,29 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "Griewank, A. and Walther, A."
+       "original": "Geirhos, R., Jacobsen, J.-H., Michaelis, C., Zemel, R., Brendel, W., Bethge, M., and Wichmann, F.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       },
       {
        "id": "s-references-23-2",
-       "original": "Algorithm 799: revolve: an implementation of checkpointing for the reverse or adjoint mode of computational differentiation."
+       "original": "A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-23-3",
-       "original": "ACM Transactions on Mathematical Software (TOMS), 26(1):19–45, 2000."
+       "original": "Shortcut learning in deep neural networks."
+      },
+      {
+       "id": "s-references-23-4",
+       "original": "Nature Machine Intelligence,"
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 15,
+     "original": "2(11):665–673, 2020."
     },
     {
      "id": "p-references-24",
@@ -3606,15 +4261,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "Gunter, K., Vaughn, C., and Kendall, T."
-      },
-      {
-       "id": "s-references-24-2",
-       "original": "Contextualizing/s/retraction: Sibilant variation and change in washington dc african american language."
-      },
-      {
-       "id": "s-references-24-3",
-       "original": "Language Variation and Change, 33(3):331–357, 2021."
+       "original": "Ghorbani, B., Firat, O., Freitag, M., Bapna, A., Krikun, M., Garcia, X., Chelba, C., and Cherry, C.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       }
      ]
     },
@@ -3625,126 +4273,122 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "Harris, C."
-      },
-      {
-       "id": "s-references-25-2",
-       "original": "R., Millman, K."
-      },
-      {
-       "id": "s-references-25-3",
-       "original": "J., van der Walt, S."
-      },
-      {
-       "id": "s-references-25-4",
-       "original": "J., Gommers, R., Virtanen, P., Cournapeau, D., Wieser, E., Taylor, J., Berg, S., Smith, N."
-      },
-      {
-       "id": "s-references-25-5",
-       "original": "J., Kern, R., Picus, M., Hoyer, S., van Kerkwijk, M."
-      },
-      {
-       "id": "s-references-25-6",
-       "original": "H., Brett, M., Haldane, A., Fern´andez del R´ıo, J., Wiebe, M., Peterson, P., G´erard-Marchant, P., Sheppard, K., Reddy, T., Weckesser, W., Abbasi, H., Gohlke, C., and Oliphant, T."
-      },
-      {
-       "id": "s-references-25-7",
-       "original": "E."
-      },
-      {
-       "id": "s-references-25-8",
-       "original": "Array programming with NumPy."
-      },
-      {
-       "id": "s-references-25-9",
-       "original": "Nature, 585:357–362, 2020. doi: 10.1038/ s41586-020-2649-2."
+       "original": "Scaling laws for neural machine translation."
       }
      ]
     },
     {
      "id": "p-references-26",
      "type": "paragraph",
-     "page": 16,
+     "page": 15,
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "Hendrycks, D. and Gimpel, K."
-      },
-      {
-       "id": "s-references-26-2",
-       "original": "Gaussian error linear units (gelus). arXiv preprint arXiv:1606.08415, 2016."
+       "original": "arXiv preprint arXiv:2109.07740, 2021.",
+       "zh": "9."
       }
      ]
     },
     {
      "id": "p-references-27",
      "type": "paragraph",
-     "page": 16,
+     "page": 15,
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "Hendrycks, D., Liu, X., Wallace, E., Dziedzic, A., Krishnan, R., and Song, D."
+       "original": "Griewank, A. and Walther, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-27-2",
-       "original": "Pretrained transformers improve out-ofdistribution robustness. arXiv preprint arXiv:2004.06100, 2020."
+       "original": "Algorithm 799: revolve: an implementation of checkpointing for the reverse or adjoint mode of computational differentiation."
+      },
+      {
+       "id": "s-references-27-3",
+       "original": "ACM Transactions on Mathematical Software (TOMS), 26(1):19–45,"
       }
      ]
     },
     {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 15,
+     "original": "2000."
+    },
+    {
      "id": "p-references-28",
      "type": "paragraph",
-     "page": 16,
+     "page": 15,
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "Hernandez, F., Nguyen, V., Ghannay, S., Tomashenko, N."
-      },
-      {
-       "id": "s-references-28-2",
-       "original": "A., and Est`eve, Y."
-      },
-      {
-       "id": "s-references-28-3",
-       "original": "Ted-lium 3: twice as much data and corpus repartition for experiments on speaker adaptation."
-      },
-      {
-       "id": "s-references-28-4",
-       "original": "In SPECOM, 2018."
+       "original": "Gunter, K., Vaughn, C., and Kendall, T."
       }
      ]
     },
     {
      "id": "p-references-29",
      "type": "paragraph",
-     "page": 16,
+     "page": 15,
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "Hsu, W.-N., Bolte, B., Tsai, Y.-H."
+       "original": "Contextualizing/s/retraction: Sibilant variation and change in washington dc african american language."
       },
       {
        "id": "s-references-29-2",
-       "original": "H., Lakhotia, K., Salakhutdinov, R., and Mohamed, A."
-      },
-      {
-       "id": "s-references-29-3",
-       "original": "Hubert: Selfsupervised speech representation learning by masked prediction of hidden units."
-      },
-      {
-       "id": "s-references-29-4",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 29:3451–3460, 2021a."
+       "original": "Language Variation and Change, 33(3):331–357, 2021."
       }
      ]
     },
     {
      "id": "p-references-30",
      "type": "paragraph",
-     "page": 16,
+     "page": 15,
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "Hsu, W.-N., Sriram, A., Baevski, A., Likhomanenko, T., Xu, Q., Pratap, V., Kahn, J., Lee, A., Collobert, R., Synnaeve, G., et al. Robust wav2vec 2.0: Analyzing domain shift in self-supervised pre-training. arXiv preprint arXiv:2104.01027, 2021b."
+       "original": "Harris, C.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-30-2",
+       "original": "R., Millman, K.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
+      },
+      {
+       "id": "s-references-30-3",
+       "original": "J., van der Walt, S.",
+       "zh": "5."
+      },
+      {
+       "id": "s-references-30-4",
+       "original": "J., Gommers, R., Virtanen, P., Cournapeau, D., Wieser, E., Taylor, J., Berg, S., Smith, N.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
+      },
+      {
+       "id": "s-references-30-5",
+       "original": "J., Kern, R., Picus, M., Hoyer, S., van Kerkwijk, M.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
+      },
+      {
+       "id": "s-references-30-6",
+       "original": "H., Brett, M., Haldane, A., Fern´andez del R´ıo, J., Wiebe, M., Peterson, P., G´erard-Marchant, P., Sheppard, K., Reddy, T., Weckesser, W., Abbasi, H., Gohlke, C., and Oliphant, T.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-30-7",
+       "original": "E.",
+       "zh": "5."
+      },
+      {
+       "id": "s-references-30-8",
+       "original": "Array programming with NumPy."
+      },
+      {
+       "id": "s-references-30-9",
+       "original": "Nature, 585:357–362, 2020. doi: 10.1038/ s41586-020-2649-2.",
+       "zh": "10."
       }
      ]
     },
@@ -3755,23 +4399,11 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "Huang, G., Sun, Y., Liu, Z., Sedra, D., and Weinberger, K."
+       "original": "Hendrycks, D. and Gimpel, K."
       },
       {
        "id": "s-references-31-2",
-       "original": "Q."
-      },
-      {
-       "id": "s-references-31-3",
-       "original": "Deep networks with stochastic depth."
-      },
-      {
-       "id": "s-references-31-4",
-       "original": "In European conference on computer vision, pp. 646–661."
-      },
-      {
-       "id": "s-references-31-5",
-       "original": "Springer, 2016."
+       "original": "Gaussian error linear units (gelus). arXiv preprint arXiv:1606.08415, 2016."
       }
      ]
     },
@@ -3782,13 +4414,20 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "Jia, R. and Liang, P."
+       "original": "Hendrycks, D., Liu, X., Wallace, E., Dziedzic, A., Krishnan, R., and Song, D.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-32-2",
-       "original": "Adversarial examples for evaluating reading comprehension systems. arXiv preprint"
+       "original": "Pretrained transformers improve out-ofdistribution robustness. arXiv preprint arXiv:2004.06100,"
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 16,
+     "original": "2020."
     },
     {
      "id": "p-references-33",
@@ -3797,15 +4436,22 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "Johnson, M., Schuster, M., Le, Q."
+       "original": "Hernandez, F., Nguyen, V., Ghannay, S., Tomashenko, N.",
+       "zh": "9."
       },
       {
        "id": "s-references-33-2",
-       "original": "V., Krikun, M., Wu, Y., Chen, Z., Thorat, N., Vi´egas, F., Wattenberg, M., Corrado, G., et al. Google’s multilingual neural machine translation system: Enabling zero-shot translation."
+       "original": "A., and Est`eve, Y.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-33-3",
-       "original": "Transactions of the Association for Computational Linguistics, 5:339– 351, 2017."
+       "original": "Ted-lium 3: twice as much data and corpus repartition for experiments on speaker adaptation."
+      },
+      {
+       "id": "s-references-33-4",
+       "original": "In SPECOM, 2018.",
+       "zh": "8."
       }
      ]
     },
@@ -3816,23 +4462,13 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "Kendall, T. and Farrington, C."
+       "original": "Hsu, W.-N., Bolte, B., Tsai, Y.-H.",
+       "zh": "在低噪声（40 dB SNR）下有许多模型超过我们的零样本表现——考虑到那些模型主要在 LibriSpeech 上训练，这并不意外——但随着噪声增强，所有模型都迅速退化，在 SNR 低于 10 dB 的加性酒吧噪声下全部比 Whisper 模型更差。"
       },
       {
        "id": "s-references-34-2",
-       "original": "The corpus of regional african american language."
-      },
-      {
-       "id": "s-references-34-3",
-       "original": "Version 2021.07."
-      },
-      {
-       "id": "s-references-34-4",
-       "original": "Eugene, OR: The Online Resources for African American Language Project. http://oraal.uoregon.edu/coraal, 2021."
-      },
-      {
-       "id": "s-references-34-5",
-       "original": "Accessed: 2022-09-01."
+       "original": "H., Lakhotia, K., Salakhutdinov, R., and Mohamed, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       }
      ]
     },
@@ -3843,19 +4479,11 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-35-1",
-       "original": "Koenecke, A., Nam, A., Lake, E., Nudell, J., Quartey, M., Mengesha, Z., Toups, C., Rickford, J."
+       "original": "Hubert: Selfsupervised speech representation learning by masked prediction of hidden units."
       },
       {
        "id": "s-references-35-2",
-       "original": "R., Jurafsky, D., and Goel, S."
-      },
-      {
-       "id": "s-references-35-3",
-       "original": "Racial disparities in automated speech recognition."
-      },
-      {
-       "id": "s-references-35-4",
-       "original": "Proceedings of the National Academy of Sciences, 117(14):7684–7689, 2020."
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 29:3451–3460, 2021a."
       }
      ]
     },
@@ -3866,19 +4494,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "Kolesnikov, A., Beyer, L., Zhai, X., Puigcerver, J., Yung, J., Gelly, S., and Houlsby, N."
-      },
-      {
-       "id": "s-references-36-2",
-       "original": "Big transfer (bit): General visual representation learning."
-      },
-      {
-       "id": "s-references-36-3",
-       "original": "In European conference on computer vision, pp. 491–507."
-      },
-      {
-       "id": "s-references-36-4",
-       "original": "Springer, 2020."
+       "original": "Hsu, W.-N., Sriram, A., Baevski, A., Likhomanenko, T., Xu, Q., Pratap, V., Kahn, J., Lee, A., Collobert, R., Synnaeve, G., et al. Robust wav2vec 2.0: Analyzing domain shift in self-supervised pre-training. arXiv preprint arXiv:2104.01027, 2021b.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       }
      ]
     },
@@ -3889,9 +4506,32 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "Kuchaiev, O., Li, J., Nguyen, H., Hrinchuk, O., Leary, R., Ginsburg, B., Kriman, S., Beliaev, S., Lavrukhin, V., Cook, J., et al. Nemo: a toolkit for building ai applications using neural modules. arXiv preprint arXiv:1909.09577, 2019."
+       "original": "Huang, G., Sun, Y., Liu, Z., Sedra, D., and Weinberger, K."
+      },
+      {
+       "id": "s-references-37-2",
+       "original": "Q.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-37-3",
+       "original": "Deep networks with stochastic depth."
+      },
+      {
+       "id": "s-references-37-4",
+       "original": "In European conference on computer vision, pp. 646–661."
+      },
+      {
+       "id": "s-references-37-5",
+       "original": "Springer,"
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 16,
+     "original": "2016."
     },
     {
      "id": "p-references-38",
@@ -3900,31 +4540,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "Lake, B."
-      },
-      {
-       "id": "s-references-38-2",
-       "original": "M., Ullman, T."
-      },
-      {
-       "id": "s-references-38-3",
-       "original": "D., Tenenbaum, J."
-      },
-      {
-       "id": "s-references-38-4",
-       "original": "B., and Gershman, S."
-      },
-      {
-       "id": "s-references-38-5",
-       "original": "J."
-      },
-      {
-       "id": "s-references-38-6",
-       "original": "Building machines that learn and think like people."
-      },
-      {
-       "id": "s-references-38-7",
-       "original": "Behavioral and brain sciences, 40, 2017."
+       "original": "Jia, R. and Liang, P.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       }
      ]
     },
@@ -3935,19 +4552,7 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "Liao, H., McDermott, E., and Senior, A."
-      },
-      {
-       "id": "s-references-39-2",
-       "original": "Large scale deep neural network acoustic modeling with semi-supervised training data for youtube video transcription."
-      },
-      {
-       "id": "s-references-39-3",
-       "original": "In 2013 IEEE Workshop on Automatic Speech Recognition and Understanding, pp. 368–373."
-      },
-      {
-       "id": "s-references-39-4",
-       "original": "IEEE, 2013."
+       "original": "Adversarial examples for evaluating reading comprehension systems. arXiv preprint arXiv:1707.07328, 2017."
       }
      ]
     },
@@ -3958,13 +4563,25 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-40-1",
-       "original": "Likhomanenko, T., Xu, Q., Pratap, V., Tomasello, P., Kahn, J., Avidov, G., Collobert, R., and Synnaeve, G."
+       "original": "Johnson, M., Schuster, M., Le, Q.",
+       "zh": "5."
       },
       {
        "id": "s-references-40-2",
-       "original": "Rethinking evaluation in asr: Are our models robust enough? arXiv preprint arXiv:2010.11745, 2020."
+       "original": "V., Krikun, M., Wu, Y., Chen, Z., Thorat, N., Vi´egas, F., Wattenberg, M., Corrado, G., et al. Google’s multilingual neural machine translation system: Enabling zero-shot translation.",
+       "zh": "5."
+      },
+      {
+       "id": "s-references-40-3",
+       "original": "Transactions of the Association for Computational Linguistics, 5:339–"
       }
      ]
+    },
+    {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 16,
+     "original": "351, 2017."
     },
     {
      "id": "p-references-41",
@@ -3973,11 +4590,7 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-41-1",
-       "original": "Loshchilov, I. and Hutter, F."
-      },
-      {
-       "id": "s-references-41-2",
-       "original": "Decoupled weight decay regularization. arXiv preprint arXiv:1711.05101, 2017."
+       "original": "Kendall, T. and Farrington, C."
       }
      ]
     },
@@ -3988,15 +4601,19 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "Luong, M.-T., Le, Q."
+       "original": "The corpus of regional african american language."
       },
       {
        "id": "s-references-42-2",
-       "original": "V., Sutskever, I., Vinyals, O., and Kaiser, L."
+       "original": "Version 2021.07."
       },
       {
        "id": "s-references-42-3",
-       "original": "Multi-task sequence to sequence learning. arXiv preprint arXiv:1511.06114, 2015."
+       "original": "Eugene, OR: The Online Resources for African American Language Project. http://oraal.uoregon.edu/coraal, 2021."
+      },
+      {
+       "id": "s-references-42-4",
+       "original": "Accessed: 2022-09-01."
       }
      ]
     },
@@ -4007,17 +4624,29 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-43-1",
-       "original": "Mahajan, D., Girshick, R., Ramanathan, V., He, K., Paluri, M., Li, Y., Bharambe, A., and Van Der Maaten, L."
+       "original": "Koenecke, A., Nam, A., Lake, E., Nudell, J., Quartey, M., Mengesha, Z., Toups, C., Rickford, J.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-43-2",
-       "original": "Exploring the limits of weakly supervised pretraining."
+       "original": "R., Jurafsky, D., and Goel, S.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       },
       {
        "id": "s-references-43-3",
-       "original": "In Proceedings of the European conference on computer vision (ECCV), pp. 181–196, 2018."
+       "original": "Racial disparities in automated speech recognition."
+      },
+      {
+       "id": "s-references-43-4",
+       "original": "Proceedings of the National Academy of Sciences,"
       }
      ]
+    },
+    {
+     "id": "eq-references-8",
+     "type": "equation",
+     "page": 16,
+     "original": "117(14):7684–7689, 2020."
     },
     {
      "id": "p-references-44",
@@ -4026,15 +4655,20 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-44-1",
-       "original": "Mauch, M. and Ewert, S."
+       "original": "Kolesnikov, A., Beyer, L., Zhai, X., Puigcerver, J., Yung, J., Gelly, S., and Houlsby, N.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-44-2",
-       "original": "The audio degradation toolbox and its application to robustness evaluation."
+       "original": "Big transfer (bit): General visual representation learning."
       },
       {
        "id": "s-references-44-3",
-       "original": "In Proceedings of the 14th International Society for Music Information Retrieval Conference (ISMIR 2013), Curitiba, Brazil, 2013. accepted."
+       "original": "In European conference on computer vision, pp. 491–507."
+      },
+      {
+       "id": "s-references-44-4",
+       "original": "Springer, 2020."
       }
      ]
     },
@@ -4045,17 +4679,16 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-45-1",
-       "original": "McCann, B., Keskar, N."
-      },
-      {
-       "id": "s-references-45-2",
-       "original": "S., Xiong, C., and Socher, R."
-      },
-      {
-       "id": "s-references-45-3",
-       "original": "The natural language decathlon: Multitask learning as question answering. arXiv preprint arXiv:1806.08730, 2018."
+       "original": "Kuchaiev, O., Li, J., Nguyen, H., Hrinchuk, O., Leary, R., Ginsburg, B., Kriman, S., Beliaev, S., Lavrukhin, V., Cook, J., et al. Nemo: a toolkit for building ai applications using neural modules. arXiv preprint arXiv:1909.09577,",
+       "zh": "5."
       }
      ]
+    },
+    {
+     "id": "eq-references-9",
+     "type": "equation",
+     "page": 16,
+     "original": "2019."
     },
     {
      "id": "p-references-46",
@@ -4064,31 +4697,36 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-46-1",
-       "original": "Meyer, J., Rauchenstein, L., Eisenberg, J."
+       "original": "Lake, B.",
+       "zh": "在低噪声（40 dB SNR）下有许多模型超过我们的零样本表现——考虑到那些模型主要在 LibriSpeech 上训练，这并不意外——但随着噪声增强，所有模型都迅速退化，在 SNR 低于 10 dB 的加性酒吧噪声下全部比 Whisper 模型更差。"
       },
       {
        "id": "s-references-46-2",
-       "original": "D., and Howell, N."
+       "original": "M., Ullman, T.",
+       "zh": "5."
       },
       {
        "id": "s-references-46-3",
-       "original": "Artie bias corpus: An open dataset for detecting demographic bias in speech applications."
+       "original": "D., Tenenbaum, J.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-46-4",
-       "original": "In Proceedings of the 12th Language Resources and Evaluation Conference, pp. 6462–6468, Marseille, France, May 2020."
+       "original": "B., and Gershman, S.",
+       "zh": "在低噪声（40 dB SNR）下有许多模型超过我们的零样本表现——考虑到那些模型主要在 LibriSpeech 上训练，这并不意外——但随着噪声增强，所有模型都迅速退化，在 SNR 低于 10 dB 的加性酒吧噪声下全部比 Whisper 模型更差。"
       },
       {
        "id": "s-references-46-5",
-       "original": "European Language Resources Association."
+       "original": "J.",
+       "zh": "5."
       },
       {
        "id": "s-references-46-6",
-       "original": "ISBN 979-10-95546- 34-4."
+       "original": "Building machines that learn and think like people."
       },
       {
        "id": "s-references-46-7",
-       "original": "URL https://aclanthology.org/2020. lrec-1.796."
+       "original": "Behavioral and brain sciences, 40, 2017."
       }
      ]
     },
@@ -4099,290 +4737,248 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-47-1",
-       "original": "Miller, J., Krauth, K., Recht, B., and Schmidt, L."
+       "original": "Liao, H., McDermott, E., and Senior, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-47-2",
-       "original": "The effect of natural distribution shift on question answering models."
+       "original": "Large scale deep neural network acoustic modeling with semi-supervised training data for youtube video transcription."
       },
       {
        "id": "s-references-47-3",
-       "original": "In ICML, 2020."
+       "original": "In 2013 IEEE Workshop on Automatic Speech Recognition and Understanding, pp. 368–373.",
+       "zh": "3."
+      },
+      {
+       "id": "s-references-47-4",
+       "original": "IEEE, 2013.",
+       "zh": "3."
       }
      ]
     },
     {
      "id": "p-references-48",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-48-1",
-       "original": "Mohamed, A.-r., Dahl, G., Hinton, G., et al. Deep belief networks for phone recognition."
+       "original": "Likhomanenko, T., Xu, Q., Pratap, V., Tomasello, P., Kahn, J., Avidov, G., Collobert, R., and Synnaeve, G.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       },
       {
        "id": "s-references-48-2",
-       "original": "In Nips workshop on deep learning for speech recognition and related applications, volume 1, pp. 39, 2009."
+       "original": "Rethinking evaluation in asr: Are our models robust enough?"
       }
      ]
     },
     {
      "id": "p-references-49",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-49-1",
-       "original": "Narayanan, A., Misra, A., Sim, K."
-      },
-      {
-       "id": "s-references-49-2",
-       "original": "C., Pundak, G., Tripathi, A., Elfeky, M., Haghani, P., Strohman, T., and Bacchiani, M."
-      },
-      {
-       "id": "s-references-49-3",
-       "original": "Toward domain-invariant speech recognition via large scale training."
-      },
-      {
-       "id": "s-references-49-4",
-       "original": "In 2018 IEEE Spoken Language Technology Workshop (SLT), pp. 441–447."
-      },
-      {
-       "id": "s-references-49-5",
-       "original": "IEEE, 2018."
+       "original": "arXiv preprint arXiv:2010.11745, 2020.",
+       "zh": "10."
       }
      ]
     },
     {
      "id": "p-references-50",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-50-1",
-       "original": "Panayotov, V., Chen, G., Povey, D., and Khudanpur, S."
+       "original": "Loshchilov, I. and Hutter, F."
       },
       {
        "id": "s-references-50-2",
-       "original": "Librispeech: an asr corpus based on public domain audio books."
-      },
-      {
-       "id": "s-references-50-3",
-       "original": "In 2015 IEEE international conference on acoustics, speech and signal processing (ICASSP), pp. 5206–5210."
-      },
-      {
-       "id": "s-references-50-4",
-       "original": "IEEE, 2015."
+       "original": "Decoupled weight decay regularization. arXiv preprint arXiv:1711.05101, 2017.",
+       "zh": "化。"
       }
      ]
     },
     {
      "id": "p-references-51",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-51-1",
-       "original": "pandas development team, T. pandas-dev/pandas: Pandas, February 2020."
+       "original": "Luong, M.-T., Le, Q.",
+       "zh": "5."
       },
       {
        "id": "s-references-51-2",
-       "original": "URL https://doi.org/10. 5281/zenodo.3509134."
+       "original": "V., Sutskever, I., Vinyals, O., and Kaiser, L.",
+       "zh": "9."
+      },
+      {
+       "id": "s-references-51-3",
+       "original": "Multi-task sequence to sequence learning."
       }
      ]
     },
     {
      "id": "p-references-52",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-52-1",
-       "original": "Park, D."
-      },
-      {
-       "id": "s-references-52-2",
-       "original": "S., Chan, W., Zhang, Y., Chiu, C.-C., Zoph, B., Cubuk, E."
-      },
-      {
-       "id": "s-references-52-3",
-       "original": "D., and Le, Q."
-      },
-      {
-       "id": "s-references-52-4",
-       "original": "V."
-      },
-      {
-       "id": "s-references-52-5",
-       "original": "SpecAugment: A simple data augmentation method for automatic speech recognition. arXiv preprint arXiv:1904.08779, 2019."
+       "original": "arXiv preprint arXiv:1511.06114, 2015.",
+       "zh": "5."
       }
      ]
     },
     {
      "id": "p-references-53",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-53-1",
-       "original": "Pascanu, R., Mikolov, T., and Bengio, Y."
+       "original": "Mahajan, D., Girshick, R., Ramanathan, V., He, K., Paluri, M., Li, Y., Bharambe, A., and Van Der Maaten, L.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-53-2",
-       "original": "On the difﬁculty of training recurrent neural networks."
+       "original": "Exploring the limits of weakly supervised pretraining."
       },
       {
        "id": "s-references-53-3",
-       "original": "In International conference on machine learning, pp. 1310–1318."
-      },
-      {
-       "id": "s-references-53-4",
-       "original": "PMLR, 2013."
+       "original": "In Proceedings of the European conference on computer vision (ECCV), pp. 181–196, 2018.",
+       "zh": "8."
       }
      ]
     },
     {
      "id": "p-references-54",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-54-1",
-       "original": "Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L., Desmaison, A., Kopf, A., Yang, E., DeVito, Z., Raison, M., Tejani, A., Chilamkurthy, S., Steiner, B., Fang, L., Bai, J., and Chintala, S."
+       "original": "Mauch, M. and Ewert, S.",
+       "zh": "5."
       },
       {
        "id": "s-references-54-2",
-       "original": "Pytorch: An imperative style, high-performance deep learning library."
+       "original": "The audio degradation toolbox and its application to robustness evaluation."
       },
       {
        "id": "s-references-54-3",
-       "original": "In Advances in Neural Information Processing Systems 32, pp. 8024– 8035, 2019."
+       "original": "In Proceedings of the 14th International Society for Music Information Retrieval Conference (ISMIR 2013), Curitiba, Brazil, 2013.",
+       "zh": "3."
       }
      ]
     },
     {
      "id": "p-references-55",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-55-1",
-       "original": "Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., Vanderplas, J., Passos, A., Cournapeau, D., Brucher, M., Perrot, M., and Duchesnay, E."
-      },
-      {
-       "id": "s-references-55-2",
-       "original": "Scikit-learn: Machine learning in Python."
-      },
-      {
-       "id": "s-references-55-3",
-       "original": "Journal of Machine Learning Research, 12:2825–2830, 2011."
+       "original": "accepted."
       }
      ]
     },
     {
      "id": "p-references-56",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-56-1",
-       "original": "Polyak, B."
+       "original": "McCann, B., Keskar, N.",
+       "zh": "在低噪声（40 dB SNR）下有许多模型超过我们的零样本表现——考虑到那些模型主要在 LibriSpeech 上训练，这并不意外——但随着噪声增强，所有模型都迅速退化，在 SNR 低于 10 dB 的加性酒吧噪声下全部比 Whisper 模型更差。"
       },
       {
        "id": "s-references-56-2",
-       "original": "T. and Juditsky, A."
+       "original": "S., Xiong, C., and Socher, R.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       },
       {
        "id": "s-references-56-3",
-       "original": "B."
-      },
-      {
-       "id": "s-references-56-4",
-       "original": "Acceleration of stochastic approximation by averaging."
-      },
-      {
-       "id": "s-references-56-5",
-       "original": "SIAM journal on control and optimization, 30(4):838–855, 1992."
+       "original": "The natural language decathlon: Multitask learning as question answering. arXiv preprint arXiv:1806.08730, 2018.",
+       "zh": "8."
       }
      ]
     },
     {
      "id": "p-references-57",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-57-1",
-       "original": "Pratap, V., Sriram, A., Tomasello, P., Hannun, A."
+       "original": "Meyer, J., Rauchenstein, L., Eisenberg, J.",
+       "zh": "5."
       },
       {
        "id": "s-references-57-2",
-       "original": "Y., Liptchinsky, V., Synnaeve, G., and Collobert, R."
+       "original": "D., and Howell, N."
       },
       {
        "id": "s-references-57-3",
-       "original": "Massively multilingual asr: 50 languages, 1 model, 1 billion parameters."
+       "original": "Artie bias corpus: An open dataset for detecting demographic bias in speech applications."
       },
       {
        "id": "s-references-57-4",
-       "original": "ArXiv, abs/2007.03001, 2020a."
+       "original": "In Proceedings of the 12th Language Resources and Evaluation Conference, pp. 6462–6468, Marseille, France, May 2020."
+      },
+      {
+       "id": "s-references-57-5",
+       "original": "European Language Resources Association."
+      },
+      {
+       "id": "s-references-57-6",
+       "original": "ISBN 979-10-95546- 34-4."
+      },
+      {
+       "id": "s-references-57-7",
+       "original": "URL https://aclanthology.org/2020."
       }
      ]
     },
     {
      "id": "p-references-58",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-58-1",
-       "original": "Pratap, V., Xu, Q., Sriram, A., Synnaeve, G., and Collobert, R."
-      },
-      {
-       "id": "s-references-58-2",
-       "original": "Mls: A large-scale multilingual dataset for speech research. arXiv preprint arXiv:2012.03411, 2020b."
+       "original": "lrec-1.796."
       }
      ]
     },
     {
      "id": "p-references-59",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-59-1",
-       "original": "Press, O. and Wolf, L."
+       "original": "Miller, J., Krauth, K., Recht, B., and Schmidt, L.",
+       "zh": "在低噪声（40 dB SNR）下有许多模型超过我们的零样本表现——考虑到那些模型主要在 LibriSpeech 上训练，这并不意外——但随着噪声增强，所有模型都迅速退化，在 SNR 低于 10 dB 的加性酒吧噪声下全部比 Whisper 模型更差。"
       },
       {
        "id": "s-references-59-2",
-       "original": "Using the output embedding to improve language models."
-      },
-      {
-       "id": "s-references-59-3",
-       "original": "In Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics: Volume 2, Short Papers, pp. 157–163, Valencia, Spain, April 2017."
-      },
-      {
-       "id": "s-references-59-4",
-       "original": "Association for Computational Linguistics."
-      },
-      {
-       "id": "s-references-59-5",
-       "original": "URL https: //aclanthology.org/E17-2025."
+       "original": "The effect of natural distribution shift on question answering models."
       }
      ]
     },
     {
      "id": "p-references-60",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-references-60-1",
-       "original": "Provilkov, I., Emelianenko, D., and Voita, E."
-      },
-      {
-       "id": "s-references-60-2",
-       "original": "Bpe-dropout: Simple and effective subword regularization. arXiv preprint arXiv:1910.13267, 2019."
+       "original": "In ICML, 2020."
       }
      ]
     },
@@ -4393,11 +4989,13 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-61-1",
-       "original": "Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., and Sutskever, I."
+       "original": "Mohamed, A.-r., Dahl, G., Hinton, G., et al. Deep belief networks for phone recognition.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-61-2",
-       "original": "Language models are unsupervised multitask learners. 2019."
+       "original": "In Nips workshop on deep learning for speech recognition and related applications, volume 1, pp. 39, 2009.",
+       "zh": "9."
       }
      ]
     },
@@ -4408,15 +5006,26 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-62-1",
-       "original": "Radford, A., Kim, J."
+       "original": "Narayanan, A., Misra, A., Sim, K.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-62-2",
-       "original": "W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J., Krueger, G., and Sutskever, I."
+       "original": "C., Pundak, G., Tripathi, A., Elfeky, M., Haghani, P., Strohman, T., and Bacchiani, M.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-62-3",
-       "original": "Learning transferable visual models from natural language supervision. arXiv preprint arXiv:2103.00020, 2021."
+       "original": "Toward domain-invariant speech recognition via large scale training."
+      },
+      {
+       "id": "s-references-62-4",
+       "original": "In 2018 IEEE Spoken Language Technology Workshop (SLT), pp. 441–447."
+      },
+      {
+       "id": "s-references-62-5",
+       "original": "IEEE, 2018.",
+       "zh": "8."
       }
      ]
     },
@@ -4427,27 +5036,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-63-1",
-       "original": "Raffel, C., Shazeer, N., Roberts, A., Lee, K., Narang, S., Matena, M., Zhou, Y., Li, W., Liu, P."
-      },
-      {
-       "id": "s-references-63-2",
-       "original": "J., et al. Exploring the limits of transfer learning with a uniﬁed text-to-text transformer."
-      },
-      {
-       "id": "s-references-63-3",
-       "original": "J."
-      },
-      {
-       "id": "s-references-63-4",
-       "original": "Mach."
-      },
-      {
-       "id": "s-references-63-5",
-       "original": "Learn."
-      },
-      {
-       "id": "s-references-63-6",
-       "original": "Res., 21(140):1–67, 2020."
+       "original": "Panayotov, V., Chen, G., Povey, D., and Khudanpur, S.",
+       "zh": "9."
       }
      ]
     },
@@ -4458,15 +5048,17 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-64-1",
-       "original": "Ravanelli, M., Parcollet, T., Plantinga, P., Rouhe, A., Cornell, S., Lugosch, L., Subakan, C., Dawalatabad, N., Heba, A., Zhong, J., Chou, J.-C., Yeh, S.-L., Fu, S.-W., Liao, C.-F., Rastorgueva, E., Grondin, F., Aris, W., Na, H., Gao, Y., Mori, R."
+       "original": "Librispeech: an asr corpus based on public domain audio books."
       },
       {
        "id": "s-references-64-2",
-       "original": "D., and Bengio, Y."
+       "original": "In 2015 IEEE international conference on acoustics, speech and signal processing (ICASSP), pp. 5206–5210.",
+       "zh": "10."
       },
       {
        "id": "s-references-64-3",
-       "original": "SpeechBrain: A general-purpose speech toolkit, 2021. arXiv:2106.04624."
+       "original": "IEEE, 2015. pandas development team, T.",
+       "zh": "5."
       }
      ]
     },
@@ -4477,27 +5069,12 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-65-1",
-       "original": "Recht, B., Roelofs, R., Schmidt, L., and Shankar, V."
+       "original": "pandas-dev/pandas: Pandas, February 2020."
       },
       {
        "id": "s-references-65-2",
-       "original": "Do ImageNet classiﬁers generalize to ImageNet?"
-      },
-      {
-       "id": "s-references-65-3",
-       "original": "In Chaudhuri, K. and Salakhutdinov, R."
-      },
-      {
-       "id": "s-references-65-4",
-       "original": "(eds.), Proceedings of the 36th International Conference on Machine Learning, volume 97 of Proceedings of Machine Learning Research, pp. 5389–5400."
-      },
-      {
-       "id": "s-references-65-5",
-       "original": "PMLR, 09–15 Jun 2019."
-      },
-      {
-       "id": "s-references-65-6",
-       "original": "URL https://proceedings.mlr.press/v97/ recht19a.html."
+       "original": "URL https://doi.org/10. 5281/zenodo.3509134.",
+       "zh": "10."
       }
      ]
     },
@@ -4508,11 +5085,25 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-66-1",
-       "original": "Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z., Karpathy, A., Khosla, A., Bernstein, M., et al. Imagenet large scale visual recognition challenge."
+       "original": "Park, D."
       },
       {
        "id": "s-references-66-2",
-       "original": "International journal of computer vision, 115(3): 211–252, 2015."
+       "original": "S., Chan, W., Zhang, Y., Chiu, C.-C., Zoph, B., Cubuk, E.",
+       "zh": "在低噪声（40 dB SNR）下有许多模型超过我们的零样本表现——考虑到那些模型主要在 LibriSpeech 上训练，这并不意外——但随着噪声增强，所有模型都迅速退化，在 SNR 低于 10 dB 的加性酒吧噪声下全部比 Whisper 模型更差。"
+      },
+      {
+       "id": "s-references-66-3",
+       "original": "D., and Le, Q."
+      },
+      {
+       "id": "s-references-66-4",
+       "original": "V.",
+       "zh": "9."
+      },
+      {
+       "id": "s-references-66-5",
+       "original": "SpecAugment: A simple data augmentation method for automatic speech recognition."
       }
      ]
     },
@@ -4523,15 +5114,8 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-67-1",
-       "original": "Schultz, T. and Kirchhoff, K."
-      },
-      {
-       "id": "s-references-67-2",
-       "original": "Multilingual speech processing."
-      },
-      {
-       "id": "s-references-67-3",
-       "original": "Elsevier, 2006."
+       "original": "arXiv preprint arXiv:1904.08779, 2019.",
+       "zh": "9."
       }
      ]
     },
@@ -4542,389 +5126,909 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-references-68-1",
-       "original": "Seide, F., Li, G., Chen, X., and Yu, D."
+       "original": "Pascanu, R., Mikolov, T., and Bengio, Y.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       },
       {
        "id": "s-references-68-2",
-       "original": "Feature engineering in context-dependent deep neural networks for conversational speech transcription."
+       "original": "On the difﬁculty of training recurrent neural networks."
       },
       {
        "id": "s-references-68-3",
-       "original": "In 2011 IEEE Workshop on Automatic Speech Recognition & Understanding, pp. 24–29."
+       "original": "In International conference on machine learning, pp. 1310–1318.",
+       "zh": "8."
       },
       {
        "id": "s-references-68-4",
-       "original": "IEEE, 2011."
+       "original": "PMLR,",
+       "zh": "3."
       }
      ]
+    },
+    {
+     "id": "eq-references-10",
+     "type": "equation",
+     "page": 17,
+     "original": "2013."
     },
     {
      "id": "p-references-69",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-69-1",
-       "original": "Sennrich, R., Haddow, B., and Birch, A."
+       "original": "Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L., Desmaison, A., Kopf, A., Yang, E., DeVito, Z., Raison, M., Tejani, A., Chilamkurthy, S., Steiner, B., Fang, L., Bai, J., and Chintala, S.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-69-2",
-       "original": "Neural machine translation of rare words with subword units. arXiv preprint arXiv:1508.07909, 2015."
+       "original": "Pytorch: An imperative style, high-performance deep learning library."
+      },
+      {
+       "id": "s-references-69-3",
+       "original": "In Advances in Neural Information Processing Systems 32, pp. 8024–",
+       "zh": "9."
       }
      ]
     },
     {
-     "id": "eq-references-1",
+     "id": "eq-references-11",
      "type": "equation",
-     "page": 18,
-     "original": "Speer, R. ftfy. Zenodo, 2019. URL https://doi.org/ 10.5281/zenodo.2591652. Version 5.5."
+     "page": 17,
+     "original": "8035, 2019."
     },
     {
      "id": "p-references-70",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-70-1",
-       "original": "Sutskever, I., Vinyals, O., and Le, Q."
-      },
-      {
-       "id": "s-references-70-2",
-       "original": "V."
-      },
-      {
-       "id": "s-references-70-3",
-       "original": "Sequence to sequence learning with neural networks."
-      },
-      {
-       "id": "s-references-70-4",
-       "original": "Advances in neural information processing systems, 27, 2014."
+       "original": "Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., Vanderplas, J., Passos, A., Cournapeau, D., Brucher, M., Perrot, M., and Duchesnay, E.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       }
      ]
     },
     {
      "id": "p-references-71",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-71-1",
-       "original": "Taori, R., Dave, A., Shankar, V., Carlini, N., Recht, B., and Schmidt, L."
+       "original": "Scikit-learn: Machine learning in Python.",
+       "zh": "机器学习"
       },
       {
        "id": "s-references-71-2",
-       "original": "Measuring robustness to natural distribution shifts in image classiﬁcation."
-      },
-      {
-       "id": "s-references-71-3",
-       "original": "In Larochelle, H., Ranzato, M., Hadsell, R., Balcan, M., and Lin, H."
-      },
-      {
-       "id": "s-references-71-4",
-       "original": "(eds.), Advances in Neural Information Processing Systems, volume 33, pp. 18583–18599."
-      },
-      {
-       "id": "s-references-71-5",
-       "original": "Curran Associates, Inc., 2020."
-      },
-      {
-       "id": "s-references-71-6",
-       "original": "URL https://proceedings. neurips.cc/paper/2020/file/ d8330f857a17c53d217014ee776bfd50-Paper. pdf."
+       "original": "Journal of Machine Learning Research, 12:2825–2830, 2011.",
+       "zh": "11."
       }
      ]
     },
     {
      "id": "p-references-72",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-72-1",
-       "original": "Torralba, A. and Efros, A."
+       "original": "Polyak, B.",
+       "zh": "在低噪声（40 dB SNR）下有许多模型超过我们的零样本表现——考虑到那些模型主要在 LibriSpeech 上训练，这并不意外——但随着噪声增强，所有模型都迅速退化，在 SNR 低于 10 dB 的加性酒吧噪声下全部比 Whisper 模型更差。"
       },
       {
        "id": "s-references-72-2",
-       "original": "A."
+       "original": "T. and Juditsky, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-72-3",
-       "original": "Unbiased look at dataset bias."
+       "original": "B.",
+       "zh": "在低噪声（40 dB SNR）下有许多模型超过我们的零样本表现——考虑到那些模型主要在 LibriSpeech 上训练，这并不意外——但随着噪声增强，所有模型都迅速退化，在 SNR 低于 10 dB 的加性酒吧噪声下全部比 Whisper 模型更差。"
       },
       {
        "id": "s-references-72-4",
-       "original": "CVPR 2011, pp. 1521–1528, 2011."
+       "original": "Acceleration of stochastic approximation by averaging."
+      },
+      {
+       "id": "s-references-72-5",
+       "original": "SIAM journal on control and optimization, 30(4):838–855, 1992."
       }
      ]
     },
     {
      "id": "p-references-73",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-73-1",
-       "original": "Toshniwal, S., Sainath, T."
+       "original": "Pratap, V., Sriram, A., Tomasello, P., Hannun, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-73-2",
-       "original": "N., Weiss, R."
+       "original": "Y., Liptchinsky, V., Synnaeve, G., and Collobert, R.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       },
       {
        "id": "s-references-73-3",
-       "original": "J., Li, B., Moreno, P."
+       "original": "Massively multilingual asr: 50 languages, 1 model, 1 billion parameters."
       },
       {
        "id": "s-references-73-4",
-       "original": "J., Weinstein, E., and Rao, K."
-      },
-      {
-       "id": "s-references-73-5",
-       "original": "Multilingual speech recognition with a single end-to-end model. 2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 4904–4908, 2018."
+       "original": "ArXiv, abs/2007.03001, 2020a."
       }
      ]
     },
     {
      "id": "p-references-74",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-74-1",
-       "original": "Valk, J. and Alum¨ae, T."
+       "original": "Pratap, V., Xu, Q., Sriram, A., Synnaeve, G., and Collobert, R.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-74-2",
-       "original": "Voxlingua107: a dataset for spoken language recognition."
-      },
-      {
-       "id": "s-references-74-3",
-       "original": "In 2021 IEEE Spoken Language Technology Workshop (SLT), pp. 652–658."
-      },
-      {
-       "id": "s-references-74-4",
-       "original": "IEEE, 2021."
+       "original": "Mls: A large-scale multilingual dataset for speech research. arXiv preprint arXiv:2012.03411, 2020b.",
+       "zh": "12."
       }
      ]
     },
     {
      "id": "p-references-75",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-75-1",
-       "original": "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A."
+       "original": "Press, O. and Wolf, L."
       },
       {
        "id": "s-references-75-2",
-       "original": "N., Kaiser, Ł., and Polosukhin, I."
+       "original": "Using the output embedding to improve language models."
       },
       {
        "id": "s-references-75-3",
-       "original": "Attention is all you need."
+       "original": "In Proceedings of the 15th Conference of the European Chapter of the Association for Computational Linguistics: Volume 2, Short Papers, pp. 157–163, Valencia, Spain, April 2017."
       },
       {
        "id": "s-references-75-4",
-       "original": "In Advances in neural information processing systems, pp. 5998–6008, 2017."
+       "original": "Association for Computational Linguistics."
+      },
+      {
+       "id": "s-references-75-5",
+       "original": "URL https: //aclanthology.org/E17-2025.",
+       "zh": "5."
       }
      ]
     },
     {
      "id": "p-references-76",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-76-1",
-       "original": "Virtanen, P., Gommers, R., Oliphant, T."
+       "original": "Provilkov, I., Emelianenko, D., and Voita, E.",
+       "zh": "5."
       },
       {
        "id": "s-references-76-2",
-       "original": "E., Haberland, M., Reddy, T., Cournapeau, D., Burovski, E., Peterson, P., Weckesser, W., Bright, J., van der Walt, S."
-      },
-      {
-       "id": "s-references-76-3",
-       "original": "J., Brett, M., Wilson, J., Millman, K."
-      },
-      {
-       "id": "s-references-76-4",
-       "original": "J., Mayorov, N., Nelson, A."
-      },
-      {
-       "id": "s-references-76-5",
-       "original": "R."
-      },
-      {
-       "id": "s-references-76-6",
-       "original": "J., Jones, E., Kern, R., Larson, E., Carey, C."
-      },
-      {
-       "id": "s-references-76-7",
-       "original": "J., Polat, ˙I., Feng, Y., Moore, E."
-      },
-      {
-       "id": "s-references-76-8",
-       "original": "W., VanderPlas, J., Laxalde, D., Perktold, J., Cimrman, R., Henriksen, I., Quintero, E."
-      },
-      {
-       "id": "s-references-76-9",
-       "original": "A., Harris, C."
-      },
-      {
-       "id": "s-references-76-10",
-       "original": "R., Archibald, A."
-      },
-      {
-       "id": "s-references-76-11",
-       "original": "M., Ribeiro, A."
-      },
-      {
-       "id": "s-references-76-12",
-       "original": "H., Pedregosa, F., van Mulbregt, P., and SciPy 1.0 Contributors."
-      },
-      {
-       "id": "s-references-76-13",
-       "original": "SciPy 1.0: Fundamental Algorithms for Scientiﬁc Computing in Python."
-      },
-      {
-       "id": "s-references-76-14",
-       "original": "Nature Methods, 17:261–272, 2020. doi: 10.1038/s41592-019-0686-2."
+       "original": "Bpe-dropout: Simple and effective subword regularization.",
+       "zh": "化。"
       }
      ]
     },
     {
      "id": "p-references-77",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-77-1",
-       "original": "Wang, C., Tang, Y., Ma, X., Wu, A., Okhonko, D., and Pino, J. fairseq s2t: Fast speech-to-text modeling with fairseq. arXiv preprint arXiv:2010.05171, 2020a."
+       "original": "arXiv preprint arXiv:1910.13267, 2019.",
+       "zh": "9."
       }
      ]
     },
     {
      "id": "p-references-78",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-78-1",
-       "original": "Wang, C., Wu, A., and Pino, J."
+       "original": "Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., and Sutskever, I.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-78-2",
-       "original": "Covost 2 and massively multilingual speech-to-text translation. arXiv preprint arXiv:2007.10310, 2020b."
+       "original": "Language models are unsupervised multitask learners. 2019.",
+       "zh": "9."
       }
      ]
     },
     {
      "id": "p-references-79",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-79-1",
-       "original": "Wang, C., Riviere, M., Lee, A., Wu, A., Talnikar, C., Haziza, D., Williamson, M., Pino, J., and Dupoux, E."
+       "original": "Radford, A., Kim, J.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-79-2",
-       "original": "Voxpopuli: A large-scale multilingual speech corpus for representation learning, semi-supervised learning and interpretation. arXiv preprint arXiv:2101.00390, 2021."
+       "original": "W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J., Krueger, G., and Sutskever, I.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-79-3",
+       "original": "Learning transferable visual models from natural language supervision. arXiv preprint arXiv:2103.00020, 2021.",
+       "zh": "3."
       }
      ]
     },
     {
      "id": "p-references-80",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-80-1",
-       "original": "Wang, P., Sainath, T."
+       "original": "Raffel, C., Shazeer, N., Roberts, A., Lee, K., Narang, S., Matena, M., Zhou, Y., Li, W., Liu, P.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
       },
       {
        "id": "s-references-80-2",
-       "original": "N., and Weiss, R."
+       "original": "J., et al. Exploring the limits of transfer learning with a uniﬁed text-to-text transformer.",
+       "zh": "5."
       },
       {
        "id": "s-references-80-3",
-       "original": "J."
+       "original": "J.",
+       "zh": "5."
       },
       {
        "id": "s-references-80-4",
-       "original": "Multitask training with text data for end-to-end speech recognition. arXiv preprint arXiv:2010.14318, 2020c."
+       "original": "Mach."
+      },
+      {
+       "id": "s-references-80-5",
+       "original": "Learn."
+      },
+      {
+       "id": "s-references-80-6",
+       "original": "Res., 21(140):1–67, 2020."
       }
      ]
     },
     {
      "id": "p-references-81",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-81-1",
-       "original": "Watanabe, S., Mandel, M., Barker, J., Vincent, E., Arora, A., Chang, X., Khudanpur, S., Manohar, V., Povey, D., Raj, D., et al. Chime-6 challenge: Tackling multispeaker speech recognition for unsegmented recordings. arXiv preprint arXiv:2004.09249, 2020."
+       "original": "Ravanelli, M., Parcollet, T., Plantinga, P., Rouhe, A., Cornell, S., Lugosch, L., Subakan, C., Dawalatabad, N., Heba, A., Zhong, J., Chou, J.-C., Yeh, S.-L., Fu, S.-W., Liao, C.-F., Rastorgueva, E., Grondin, F., Aris, W., Na, H., Gao, Y., Mori, R.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-81-2",
+       "original": "D., and Bengio, Y."
+      },
+      {
+       "id": "s-references-81-3",
+       "original": "SpeechBrain: A general-purpose speech toolkit, 2021. arXiv:2106.04624."
       }
      ]
     },
     {
      "id": "p-references-82",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-82-1",
-       "original": "Xu, Q., Baevski, A., Likhomanenko, T., Tomasello, P., Conneau, A., Collobert, R., Synnaeve, G., and Auli, M."
-      },
-      {
-       "id": "s-references-82-2",
-       "original": "Selftraining and pre-training are complementary for speech recognition."
-      },
-      {
-       "id": "s-references-82-3",
-       "original": "In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 3030–3034."
-      },
-      {
-       "id": "s-references-82-4",
-       "original": "IEEE, 2021."
+       "original": "Recht, B., Roelofs, R., Schmidt, L., and Shankar, V.",
+       "zh": "在低噪声（40 dB SNR）下有许多模型超过我们的零样本表现——考虑到那些模型主要在 LibriSpeech 上训练，这并不意外——但随着噪声增强，所有模型都迅速退化，在 SNR 低于 10 dB 的加性酒吧噪声下全部比 Whisper 模型更差。"
       }
      ]
     },
     {
      "id": "p-references-83",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-83-1",
-       "original": "Zhang, Y., Qin, J., Park, D."
-      },
-      {
-       "id": "s-references-83-2",
-       "original": "S., Han, W., Chiu, C.-C., Pang, R., Le, Q."
-      },
-      {
-       "id": "s-references-83-3",
-       "original": "V., and Wu, Y."
-      },
-      {
-       "id": "s-references-83-4",
-       "original": "Pushing the limits of semisupervised learning for automatic speech recognition. arXiv preprint arXiv:2010.10504, 2020."
+       "original": "Do ImageNet classiﬁers generalize to ImageNet?"
       }
      ]
     },
     {
      "id": "p-references-84",
      "type": "paragraph",
-     "page": 18,
+     "page": 17,
      "sentences": [
       {
        "id": "s-references-84-1",
-       "original": "Zhang, Y., Park, D."
+       "original": "In Chaudhuri, K. and Salakhutdinov, R.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
       },
       {
        "id": "s-references-84-2",
-       "original": "S., Han, W., Qin, J., Gulati, A., Shor, J., Jansen, A., Xu, Y., Huang, Y., Wang, S., et al. BigSSL: Exploring the frontier of large-scale semi-supervised learning for automatic speech recognition. arXiv preprint"
+       "original": "(eds.), Proceedings of the 36th International Conference on Machine Learning, volume 97 of Proceedings of Machine Learning Research, pp. 5389–5400."
+      },
+      {
+       "id": "s-references-84-3",
+       "original": "PMLR, 09–15 Jun 2019.",
+       "zh": "9."
+      },
+      {
+       "id": "s-references-84-4",
+       "original": "URL https://proceedings.mlr.press/v97/ recht19a.html."
+      }
+     ]
+    },
+    {
+     "id": "p-references-85",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-85-1",
+       "original": "Russakovsky, O., Deng, J., Su, H., Krause, J., Satheesh, S., Ma, S., Huang, Z., Karpathy, A., Khosla, A., Bernstein, M., et al. Imagenet large scale visual recognition challenge.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-85-2",
+       "original": "International journal of computer vision, 115(3):",
+       "zh": "5."
+      }
+     ]
+    },
+    {
+     "id": "eq-references-12",
+     "type": "equation",
+     "page": 17,
+     "original": "211–252, 2015."
+    },
+    {
+     "id": "p-references-86",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-86-1",
+       "original": "Schultz, T. and Kirchhoff, K."
+      },
+      {
+       "id": "s-references-86-2",
+       "original": "Multilingual speech processing."
+      },
+      {
+       "id": "s-references-86-3",
+       "original": "Elsevier, 2006."
+      }
+     ]
+    },
+    {
+     "id": "p-references-87",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-87-1",
+       "original": "Seide, F., Li, G., Chen, X., and Yu, D."
+      },
+      {
+       "id": "s-references-87-2",
+       "original": "Feature engineering in context-dependent deep neural networks for conversational speech transcription."
+      },
+      {
+       "id": "s-references-87-3",
+       "original": "In 2011 IEEE Workshop on Automatic Speech Recognition & Understanding, pp."
+      }
+     ]
+    },
+    {
+     "id": "p-references-88",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-references-88-1",
+       "original": "24–29.",
+       "zh": "9."
+      },
+      {
+       "id": "s-references-88-2",
+       "original": "IEEE, 2011.",
+       "zh": "11."
+      }
+     ]
+    },
+    {
+     "id": "p-references-89",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-89-1",
+       "original": "Sennrich, R., Haddow, B., and Birch, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-89-2",
+       "original": "Neural machine translation of rare words with subword units."
+      }
+     ]
+    },
+    {
+     "id": "p-references-90",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-90-1",
+       "original": "arXiv preprint arXiv:1508.07909, 2015.",
+       "zh": "5."
+      }
+     ]
+    },
+    {
+     "id": "eq-references-13",
+     "type": "equation",
+     "page": 18,
+     "original": "Speer, R. ftfy. Zenodo, 2019. URL https://doi.org/ 10.5281/zenodo.2591652. Version 5.5."
+    },
+    {
+     "id": "p-references-91",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-91-1",
+       "original": "Sutskever, I., Vinyals, O., and Le, Q."
+      },
+      {
+       "id": "s-references-91-2",
+       "original": "V.",
+       "zh": "9."
+      },
+      {
+       "id": "s-references-91-3",
+       "original": "Sequence to sequence learning with neural networks."
+      },
+      {
+       "id": "s-references-91-4",
+       "original": "Advances in neural information processing systems, 27, 2014."
+      }
+     ]
+    },
+    {
+     "id": "p-references-92",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-92-1",
+       "original": "Taori, R., Dave, A., Shankar, V., Carlini, N., Recht, B., and Schmidt, L.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      }
+     ]
+    },
+    {
+     "id": "p-references-93",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-93-1",
+       "original": "Measuring robustness to natural distribution shifts in image classiﬁcation."
+      },
+      {
+       "id": "s-references-93-2",
+       "original": "In Larochelle, H., Ranzato, M., Hadsell, R., Balcan, M., and Lin, H.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
+      },
+      {
+       "id": "s-references-93-3",
+       "original": "(eds.), Advances in Neural Information Processing Systems, volume 33, pp. 18583–18599.",
+       "zh": "9."
+      },
+      {
+       "id": "s-references-93-4",
+       "original": "Curran Associates, Inc., 2020."
+      }
+     ]
+    },
+    {
+     "id": "p-references-94",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-94-1",
+       "original": "URL https://proceedings. neurips.cc/paper/2020/file/ d8330f857a17c53d217014ee776bfd50-Paper. pdf."
+      }
+     ]
+    },
+    {
+     "id": "p-references-95",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-95-1",
+       "original": "Torralba, A. and Efros, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-95-2",
+       "original": "A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-95-3",
+       "original": "Unbiased look at dataset bias."
+      }
+     ]
+    },
+    {
+     "id": "p-references-96",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-96-1",
+       "original": "CVPR 2011, pp. 1521–1528, 2011.",
+       "zh": "11."
+      }
+     ]
+    },
+    {
+     "id": "p-references-97",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-97-1",
+       "original": "Toshniwal, S., Sainath, T."
+      },
+      {
+       "id": "s-references-97-2",
+       "original": "N., Weiss, R.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
+      },
+      {
+       "id": "s-references-97-3",
+       "original": "J., Li, B., Moreno, P.",
+       "zh": "在低噪声（40 dB SNR）下有许多模型超过我们的零样本表现——考虑到那些模型主要在 LibriSpeech 上训练，这并不意外——但随着噪声增强，所有模型都迅速退化，在 SNR 低于 10 dB 的加性酒吧噪声下全部比 Whisper 模型更差。"
+      },
+      {
+       "id": "s-references-97-4",
+       "original": "J., Weinstein, E., and Rao, K.",
+       "zh": "5."
+      },
+      {
+       "id": "s-references-97-5",
+       "original": "Multilingual speech recognition with a single end-to-end model. 2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 4904–4908, 2018.",
+       "zh": "8."
+      }
+     ]
+    },
+    {
+     "id": "p-references-98",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-98-1",
+       "original": "Valk, J. and Alum¨ae, T.",
+       "zh": "5."
+      },
+      {
+       "id": "s-references-98-2",
+       "original": "Voxlingua107: a dataset for spoken language recognition."
+      },
+      {
+       "id": "s-references-98-3",
+       "original": "In 2021 IEEE Spoken Language Technology Workshop (SLT), pp. 652–658.",
+       "zh": "8."
+      },
+      {
+       "id": "s-references-98-4",
+       "original": "IEEE, 2021."
+      }
+     ]
+    },
+    {
+     "id": "p-references-99",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-99-1",
+       "original": "Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-99-2",
+       "original": "N., Kaiser, Ł., and Polosukhin, I."
+      },
+      {
+       "id": "s-references-99-3",
+       "original": "Attention is all you need."
+      },
+      {
+       "id": "s-references-99-4",
+       "original": "In Advances in neural information processing systems, pp. 5998–6008, 2017."
+      }
+     ]
+    },
+    {
+     "id": "p-references-100",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-100-1",
+       "original": "Virtanen, P., Gommers, R., Oliphant, T.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
+      },
+      {
+       "id": "s-references-100-2",
+       "original": "E., Haberland, M., Reddy, T., Cournapeau, D., Burovski, E., Peterson, P., Weckesser, W., Bright, J., van der Walt, S.",
+       "zh": "5."
+      },
+      {
+       "id": "s-references-100-3",
+       "original": "J., Brett, M., Wilson, J., Millman, K.",
+       "zh": "5."
+      },
+      {
+       "id": "s-references-100-4",
+       "original": "J., Mayorov, N., Nelson, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-100-5",
+       "original": "R.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
+      },
+      {
+       "id": "s-references-100-6",
+       "original": "J., Jones, E., Kern, R., Larson, E., Carey, C.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
+      },
+      {
+       "id": "s-references-100-7",
+       "original": "J., Polat, ˙I., Feng, Y., Moore, E.",
+       "zh": "5."
+      },
+      {
+       "id": "s-references-100-8",
+       "original": "W., VanderPlas, J., Laxalde, D., Perktold, J., Cimrman, R., Henriksen, I., Quintero, E.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
+      },
+      {
+       "id": "s-references-100-9",
+       "original": "A., Harris, C.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-100-10",
+       "original": "R., Archibald, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-100-11",
+       "original": "M., Ribeiro, A.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-100-12",
+       "original": "H., Pedregosa, F., van Mulbregt, P., and SciPy 1.0 Contributors."
+      },
+      {
+       "id": "s-references-100-13",
+       "original": "SciPy 1.0: Fundamental Algorithms for Scientiﬁc Computing in Python."
+      },
+      {
+       "id": "s-references-100-14",
+       "original": "Nature Methods, 17:261–272, 2020. doi: 10.1038/s41592-019-0686-2.",
+       "zh": "10."
+      }
+     ]
+    },
+    {
+     "id": "p-references-101",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-101-1",
+       "original": "Wang, C., Tang, Y., Ma, X., Wu, A., Okhonko, D., and Pino, J. fairseq s2t: Fast speech-to-text modeling with fairseq.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      }
+     ]
+    },
+    {
+     "id": "p-references-102",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-102-1",
+       "original": "arXiv preprint arXiv:2010.05171, 2020a.",
+       "zh": "10."
+      }
+     ]
+    },
+    {
+     "id": "p-references-103",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-103-1",
+       "original": "Wang, C., Wu, A., and Pino, J.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-103-2",
+       "original": "Covost 2 and massively multilingual speech-to-text translation. arXiv preprint arXiv:2007.10310, 2020b."
+      }
+     ]
+    },
+    {
+     "id": "p-references-104",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-104-1",
+       "original": "Wang, C., Riviere, M., Lee, A., Wu, A., Talnikar, C., Haziza, D., Williamson, M., Pino, J., and Dupoux, E.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-104-2",
+       "original": "Voxpopuli: A large-scale multilingual speech corpus for representation learning, semi-supervised learning and interpretation."
+      }
+     ]
+    },
+    {
+     "id": "p-references-105",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-105-1",
+       "original": "arXiv preprint arXiv:2101.00390, 2021."
+      }
+     ]
+    },
+    {
+     "id": "p-references-106",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-106-1",
+       "original": "Wang, P., Sainath, T."
+      },
+      {
+       "id": "s-references-106-2",
+       "original": "N., and Weiss, R.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
+      },
+      {
+       "id": "s-references-106-3",
+       "original": "J.",
+       "zh": "5."
+      },
+      {
+       "id": "s-references-106-4",
+       "original": "Multitask training with text data for end-to-end speech recognition. arXiv preprint arXiv:2010.14318, 2020c.",
+       "zh": "10."
+      }
+     ]
+    },
+    {
+     "id": "p-references-107",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-107-1",
+       "original": "Watanabe, S., Mandel, M., Barker, J., Vincent, E., Arora, A., Chang, X., Khudanpur, S., Manohar, V., Povey, D., Raj, D., et al. Chime-6 challenge: Tackling multispeaker speech recognition for unsegmented recordings. arXiv preprint arXiv:2004.09249, 2020.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      }
+     ]
+    },
+    {
+     "id": "p-references-108",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-108-1",
+       "original": "Xu, Q., Baevski, A., Likhomanenko, T., Tomasello, P., Conneau, A., Collobert, R., Synnaeve, G., and Auli, M.",
+       "zh": "＊同等贡献 1OpenAI，美国加州旧金山，邮编 94110。"
+      },
+      {
+       "id": "s-references-108-2",
+       "original": "Selftraining and pre-training are complementary for speech recognition."
+      },
+      {
+       "id": "s-references-108-3",
+       "original": "In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 3030–3034."
+      },
+      {
+       "id": "s-references-108-4",
+       "original": "IEEE, 2021."
+      }
+     ]
+    },
+    {
+     "id": "p-references-109",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-109-1",
+       "original": "Zhang, Y., Qin, J., Park, D.",
+       "zh": "5."
+      },
+      {
+       "id": "s-references-109-2",
+       "original": "S., Han, W., Chiu, C.-C., Pang, R., Le, Q.",
+       "zh": "使用完整数据集——规模再增 12.5 倍——WER 只再降了 1 个点。"
+      },
+      {
+       "id": "s-references-109-3",
+       "original": "V., and Wu, Y.",
+       "zh": "9."
+      },
+      {
+       "id": "s-references-109-4",
+       "original": "Pushing the limits of semisupervised learning for automatic speech recognition."
+      }
+     ]
+    },
+    {
+     "id": "p-references-110",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-110-1",
+       "original": "arXiv preprint arXiv:2010.10504, 2020.",
+       "zh": "10."
+      }
+     ]
+    },
+    {
+     "id": "p-references-111",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-references-111-1",
+       "original": "Zhang, Y., Park, D."
+      },
+      {
+       "id": "s-references-111-2",
+       "original": "S., Han, W., Qin, J., Gulati, A., Shor, J., Jansen, A., Xu, Y., Huang, Y., Wang, S., et al. BigSSL: Exploring the frontier of large-scale semi-supervised learning for automatic speech recognition. arXiv preprint arXiv:2109.13226, 2021.",
+       "zh": "9."
       }
      ]
     }
@@ -5676,36 +6780,303 @@ globalThis.PAPER_2212_04356 = {
    },
    "blocks": [
     {
-     "id": "tb-D-1-1",
-     "type": "table_body",
-     "page": 22,
-     "original": "D.1.1. GREEDY DECODING\nLibriSpeech.test-clean\nLibriSpeech.test-other\nTED-LIUM3\nWSJ\nCallHome\nSwitchboard\nCommonVoice5.1\nArtie\nCHiME6\nAMI-IHM\nAMI-SDM1\nVoxPopuli.en\nFleurs.en us",
-     "cells": 14,
-     "zh": "D.1.1 贪心解码表的列名：LibriSpeech.test-clean、LibriSpeech.test-other、TED-LIUM3、WSJ、CallHome、Switchboard、CommonVoice5.1、Artie、CHiME6、AMI-IHM、AMI-SDM1、VoxPopuli.en、Fleurs.en_us。"
-    },
-    {
-     "id": "p-D-1-15",
+     "id": "p-D-1-1",
      "type": "paragraph",
      "page": 22,
      "sentences": [
       {
-       "id": "s-D-1-15-1",
-       "original": "Whisper tiny.en 5.6 14.6 6.0 5.0 24.1 17.8 26.3 20.0 23.9 41.3 23.7 50.3 11.7 11.6 7.6 16.9 7.0 6.7 30.0 22.8 29.6 23.9 31.0 49.6 27.6 58.1 12.7 13.7 Whisper base.en 4.2 10.2 4.9 4.6 20.9 15.2 19.0 13.4 22.6 36.4 20.5 46.7 10.0 7.6 5.0 12.4 5.5 5.1 23.0 16.8 21.6 16.9 26.0 40.2 22.0 49.9 10.0 10.1 Whisper small.en 3.1 7.4 4.0 3.3 18.2 15.7 13.1 9.7 20.2 27.6 17.5 38.0 8.1 6.0 3.4 7.6 4.3 4.0 17.5 14.5 13.5 10.3 18.1 29.3 19.0 39.6 8.3 6.6 Whisper medium.en 3.1 6.3 4.1 3.3 16.2 14.1 10.6 7.6 17.5 25.3 16.4 37.2 7.4 5.0 2.9 5.9 3.8 2.9 16.4 14.0 10.3 7.2 16.6 26.4 16.6 36.0 7.4 5.4 2.7 5.6 4.0 3.1 15.8 13.1 9.5 6.7 19.4 25.6 16.4 36.9 7.3 4.6 2.7 5.2 4.0 3.9 17.6 13.8 9.0 6.2 16.2 25.5 16.9 36.4 7.3 4.4",
-       "zh": "Whisper 各模型逐数据集 WER 数值行（贪心解码，tiny.en / base.en / small.en / medium.en，原文数字照录）：Whisper tiny.en 5.6 14.6 6.0 5.0 24.1 17.8 26.3 20.0 23.9 41.3 23.7 50.3 11.7 11.6 7.6 16.9 7.0 6.7 30.0 22.8 29.6 23.9 31.0 49.6 27.6 58.1 12.7 13.7 Whisper base.en 4.2 10.2 4.9 4.6 20.9 15.2 19.0 13.4 22.6 36.4 20.5 46.7 10.0 7.6 5.0 12.4 5.5 5.1 23.0 16.8 21.6 16.9 26.0 40.2 22.0 49.9 10.0 10.1 Whisper small.en 3.1 7.4 4.0 3.3 18.2 15.7 13.1 9.7 20.2 27.6 17.5 38.0 8.1 6.0 3.4 7.6 4.3 4.0 17.5 14.5 13.5 10.3 18.1 29.3 19.0 39.6 8.3 6.6 Whisper medium.en 3.1 6.3 4.1 3.3 16.2 14.1 10.6 7.6 17.5 25.3 16.4 37.2 7.4 5.0 2.9 5.9 3.8 2.9 16.4 14.0 10.3 7.2 16.6 26.4 16.6 36.0 7.4 5.4 2.7 5.6 4.0 3.1 15.8 13.1 9.5 6.7 19.4 25.6 16.4 36.9 7.3 4.6 2.7 5.2 4.0 3.9 17.6 13.8 9.0 6.2 16.2 25.5 16.9 36.4 7.3 4.4"
+       "id": "s-D-1-1-1",
+       "original": "D.1.1.",
+       "zh": "（附录小节号：D.1.1.）"
+      },
+      {
+       "id": "s-D-1-1-2",
+       "original": "GREEDY DECODING LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 CallHome WSJ Model CommonVoice5.1 VoxPopuli.en Switchboard Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en",
+       "zh": "5.\n（原始数据照录）\nGREEDY DECODING LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 CallHome WSJ Model CommonVoice5.1 VoxPopuli.en Switchboard Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en"
       }
      ]
     },
     {
-     "id": "p-D-1-16",
-     "type": "paragraph",
+     "id": "eq-D-1-1",
+     "type": "equation",
      "page": 22,
-     "sentences": [
-      {
-       "id": "s-D-1-16-1",
-       "original": "wav2vec2-base-100h 6.0 13.4 17.8 13.9 46.9 40.2 47.4 40.8 47.0 79.9 48.1 81.2 28.9 23.1 wav2vec2-base-960h 3.3 8.5 12.8 8.9 40.6 32.9 36.4 30.9 39.9 68.5 40.2 71.9 21.4 17.4 wav2vec2-large-960h-lv60-self 1.8 3.8 7.4 4.4 29.1 22.2 19.9 15.8 29.2 56.3 30.8 57.0 13.0 10.2 wav2vec2-large-960h 2.7 6.2 10.5 7.7 34.8 28.3 29.9 24.5 35.6 65.8 37.0 67.6 17.9 14.6 wav2vec2-large-robust-ft-libri-960h 2.6 5.3 9.2 6.1 23.4 19.8 20.3 16.2 29.4 58.1 31.7 61.6 15.1 11.8 asr-crdnn-rnnlm-librispeech 3.0 9.7 17.7 10.7 59.7 56.1 43.7 33.3 83.8 81.0 57.2 85.8 30.6 32.4 asr-transformer-transformerlm-librispeech 2.1 5.4 11.9 7.4 38.9 33.0 30.6 23.5 44.9 79.5 44.5 75.4 17.8 17.0 hubert-large-ls960-ft 2.0 4.1 8.4 5.4 29.6 22.8 20.8 16.0 32.0 60.0 33.7 59.1 14.4 10.9 hubert-xlarge-ls960-ft 1.9 3.5 8.3 5.4 29.3 22.2 19.8 14.8 31.5 58.5 33.3 58.9 14.2 10.5 s2t-large-librispeech-asr 3.3 8.1 14.9 9.4 54.5 40.3 38.1 30.7 50.2 79.2 53.4 79.5 21.6 18.0 s2t-medium-librispeech-asr 3.6 8.2 15.7 9.7 58.1 42.4 39.3 31.3 52.6 79.8 60.3 85.3 22.9 19.7 stt en conformer ctc large 2.1 4.2 4.4 2.1 11.3 8.2 7.4 4.0 13.5 30.5 15.9 39.9 6.7 8.2 stt en conformer transducer xlarge 1.5 2.8 4.3 1.2 12.0 7.4 4.3 1.5 19.9 36.8 20.5 48.6 6.0 6.3 unispeech-sat-base-100h-libri-ft 5.7 13.8 17.7 13.6 46.5 40.0 45.3 38.6 44.7 74.8 47.8 77.7 29.8 22.4",
-       "zh": "对比模型逐数据集 WER 数值行（原文数字照录）：wav2vec2-base-100h 6.0 13.4 17.8 13.9 46.9 40.2 47.4 40.8 47.0 79.9 48.1 81.2 28.9 23.1 wav2vec2-base-960h 3.3 8.5 12.8 8.9 40.6 32.9 36.4 30.9 39.9 68.5 40.2 71.9 21.4 17.4 wav2vec2-large-960h-lv60-self 1.8 3.8 7.4 4.4 29.1 22.2 19.9 15.8 29.2 56.3 30.8 57.0 13.0 10.2 wav2vec2-large-960h 2.7 6.2 10.5 7.7 34.8 28.3 29.9 24.5 35.6 65.8 37.0 67.6 17.9 14.6 wav2vec2-large-robust-ft-libri-960h 2.6 5.3 9.2 6.1 23.4 19.8 20.3 16.2 29.4 58.1 31.7 61.6 15.1 11.8 asr-crdnn-rnnlm-librispeech 3.0 9.7 17.7 10.7 59.7 56.1 43.7 33.3 83.8 81.0 57.2 85.8 30.6 32.4 asr-transformer-transformerlm-librispeech 2.1 5.4 11.9 7.4 38.9 33.0 30.6 23.5 44.9 79.5 44.5 75.4 17.8 17.0 hubert-large-ls960-ft 2.0 4.1 8.4 5.4 29.6 22.8 20.8 16.0 32.0 60.0 33.7 59.1 14.4 10.9 hubert-xlarge-ls960-ft 1.9 3.5 8.3 5.4 29.3 22.2 19.8 14.8 31.5 58.5 33.3 58.9 14.2 10.5 s2t-large-librispeech-asr 3.3 8.1 14.9 9.4 54.5 40.3 38.1 30.7 50.2 79.2 53.4 79.5 21.6 18.0 s2t-medium-librispeech-asr 3.6 8.2 15.7 9.7 58.1 42.4 39.3 31.3 52.6 79.8 60.3 85.3 22.9 19.7 stt en conformer ctc large 2.1 4.2 4.4 2.1 11.3 8.2 7.4 4.0 13.5 30.5 15.9 39.9 6.7 8.2 stt en conformer transducer xlarge 1.5 2.8 4.3 1.2 12.0 7.4 4.3 1.5 19.9 36.8 20.5 48.6 6.0 6.3 unispeech-sat-base-100h-libri-ft 5.7 13.8 17.7 13.6 46.5 40.0 45.3 38.6 44.7 74.8 47.8 77.7 29.8 22.4"
-      }
-     ]
+     "original": "5.6 14.6 6.0 5.0 24.1 17.8 26.3 20.0 23.9 41.3 23.7 50.3 11.7 11.6"
+    },
+    {
+     "id": "eq-D-1-2",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper tiny"
+    },
+    {
+     "id": "eq-D-1-3",
+     "type": "equation",
+     "page": 22,
+     "original": "7.6 16.9 7.0 6.7 30.0 22.8 29.6 23.9 31.0 49.6 27.6 58.1 12.7 13.7"
+    },
+    {
+     "id": "eq-D-1-4",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper base.en"
+    },
+    {
+     "id": "eq-D-1-5",
+     "type": "equation",
+     "page": 22,
+     "original": "4.2 10.2 4.9 4.6 20.9 15.2 19.0 13.4 22.6 36.4 20.5 46.7 10.0 7.6"
+    },
+    {
+     "id": "eq-D-1-6",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-1-7",
+     "type": "equation",
+     "page": 22,
+     "original": "5.0 12.4 5.5 5.1 23.0 16.8 21.6 16.9 26.0 40.2 22.0 49.9 10.0 10.1"
+    },
+    {
+     "id": "eq-D-1-8",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper small.en"
+    },
+    {
+     "id": "eq-D-1-9",
+     "type": "equation",
+     "page": 22,
+     "original": "3.1 7.4 4.0 3.3 18.2 15.7 13.1 9.7 20.2 27.6 17.5 38.0 8.1 6.0"
+    },
+    {
+     "id": "eq-D-1-10",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-1-11",
+     "type": "equation",
+     "page": 22,
+     "original": "3.4 7.6 4.3 4.0 17.5 14.5 13.5 10.3 18.1 29.3 19.0 39.6 8.3 6.6"
+    },
+    {
+     "id": "eq-D-1-12",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper medium.en"
+    },
+    {
+     "id": "eq-D-1-13",
+     "type": "equation",
+     "page": 22,
+     "original": "3.1 6.3 4.1 3.3 16.2 14.1 10.6 7.6 17.5 25.3 16.4 37.2 7.4 5.0"
+    },
+    {
+     "id": "eq-D-1-14",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-1-15",
+     "type": "equation",
+     "page": 22,
+     "original": "2.9 5.9 3.8 2.9 16.4 14.0 10.3 7.2 16.6 26.4 16.6 36.0 7.4 5.4"
+    },
+    {
+     "id": "eq-D-1-16",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-1-17",
+     "type": "equation",
+     "page": 22,
+     "original": "2.7 5.6 4.0 3.1 15.8 13.1 9.5 6.7 19.4 25.6 16.4 36.9 7.3 4.6"
+    },
+    {
+     "id": "eq-D-1-18",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-1-19",
+     "type": "equation",
+     "page": 22,
+     "original": "2.7 5.2 4.0 3.9 17.6 13.8 9.0 6.2 16.2 25.5 16.9 36.4 7.3 4.4"
+    },
+    {
+     "id": "eq-D-1-20",
+     "type": "equation",
+     "page": 22,
+     "original": "wav2vec2-base-100h"
+    },
+    {
+     "id": "eq-D-1-21",
+     "type": "equation",
+     "page": 22,
+     "original": "6.0 13.4 17.8 13.9 46.9 40.2 47.4 40.8 47.0 79.9 48.1 81.2 28.9 23.1"
+    },
+    {
+     "id": "eq-D-1-22",
+     "type": "equation",
+     "page": 22,
+     "original": "wav2vec2-base-960h"
+    },
+    {
+     "id": "eq-D-1-23",
+     "type": "equation",
+     "page": 22,
+     "original": "3.3 8.5 12.8 8.9 40.6 32.9 36.4 30.9 39.9 68.5 40.2 71.9 21.4 17.4"
+    },
+    {
+     "id": "eq-D-1-24",
+     "type": "equation",
+     "page": 22,
+     "original": "wav2vec2-large-960h-lv60-self"
+    },
+    {
+     "id": "eq-D-1-25",
+     "type": "equation",
+     "page": 22,
+     "original": "1.8 3.8 7.4 4.4 29.1 22.2 19.9 15.8 29.2 56.3 30.8 57.0 13.0 10.2"
+    },
+    {
+     "id": "eq-D-1-26",
+     "type": "equation",
+     "page": 22,
+     "original": "wav2vec2-large-960h"
+    },
+    {
+     "id": "eq-D-1-27",
+     "type": "equation",
+     "page": 22,
+     "original": "2.7 6.2 10.5 7.7 34.8 28.3 29.9 24.5 35.6 65.8 37.0 67.6 17.9 14.6"
+    },
+    {
+     "id": "eq-D-1-28",
+     "type": "equation",
+     "page": 22,
+     "original": "wav2vec2-large-robust-ft-libri-960h"
+    },
+    {
+     "id": "eq-D-1-29",
+     "type": "equation",
+     "page": 22,
+     "original": "2.6 5.3 9.2 6.1 23.4 19.8 20.3 16.2 29.4 58.1 31.7 61.6 15.1 11.8"
+    },
+    {
+     "id": "eq-D-1-30",
+     "type": "equation",
+     "page": 22,
+     "original": "asr-crdnn-rnnlm-librispeech"
+    },
+    {
+     "id": "eq-D-1-31",
+     "type": "equation",
+     "page": 22,
+     "original": "3.0 9.7 17.7 10.7 59.7 56.1 43.7 33.3 83.8 81.0 57.2 85.8 30.6 32.4"
+    },
+    {
+     "id": "eq-D-1-32",
+     "type": "equation",
+     "page": 22,
+     "original": "asr-transformer-transformerlm-librispeech"
+    },
+    {
+     "id": "eq-D-1-33",
+     "type": "equation",
+     "page": 22,
+     "original": "2.1 5.4 11.9 7.4 38.9 33.0 30.6 23.5 44.9 79.5 44.5 75.4 17.8 17.0"
+    },
+    {
+     "id": "eq-D-1-34",
+     "type": "equation",
+     "page": 22,
+     "original": "hubert-large-ls960-ft"
+    },
+    {
+     "id": "eq-D-1-35",
+     "type": "equation",
+     "page": 22,
+     "original": "2.0 4.1 8.4 5.4 29.6 22.8 20.8 16.0 32.0 60.0 33.7 59.1 14.4 10.9"
+    },
+    {
+     "id": "eq-D-1-36",
+     "type": "equation",
+     "page": 22,
+     "original": "hubert-xlarge-ls960-ft"
+    },
+    {
+     "id": "eq-D-1-37",
+     "type": "equation",
+     "page": 22,
+     "original": "1.9 3.5 8.3 5.4 29.3 22.2 19.8 14.8 31.5 58.5 33.3 58.9 14.2 10.5"
+    },
+    {
+     "id": "eq-D-1-38",
+     "type": "equation",
+     "page": 22,
+     "original": "s2t-large-librispeech-asr"
+    },
+    {
+     "id": "eq-D-1-39",
+     "type": "equation",
+     "page": 22,
+     "original": "3.3 8.1 14.9 9.4 54.5 40.3 38.1 30.7 50.2 79.2 53.4 79.5 21.6 18.0"
+    },
+    {
+     "id": "eq-D-1-40",
+     "type": "equation",
+     "page": 22,
+     "original": "s2t-medium-librispeech-asr"
+    },
+    {
+     "id": "eq-D-1-41",
+     "type": "equation",
+     "page": 22,
+     "original": "3.6 8.2 15.7 9.7 58.1 42.4 39.3 31.3 52.6 79.8 60.3 85.3 22.9 19.7"
+    },
+    {
+     "id": "eq-D-1-42",
+     "type": "equation",
+     "page": 22,
+     "original": "stt en conformer ctc large"
+    },
+    {
+     "id": "eq-D-1-43",
+     "type": "equation",
+     "page": 22,
+     "original": "2.1 4.2 4.4 2.1 11.3 8.2 7.4 4.0 13.5 30.5 15.9 39.9 6.7 8.2"
+    },
+    {
+     "id": "eq-D-1-44",
+     "type": "equation",
+     "page": 22,
+     "original": "stt en conformer transducer xlarge"
+    },
+    {
+     "id": "eq-D-1-45",
+     "type": "equation",
+     "page": 22,
+     "original": "1.5 2.8 4.3 1.2 12.0 7.4 4.3 1.5 19.9 36.8 20.5 48.6 6.0 6.3"
+    },
+    {
+     "id": "eq-D-1-46",
+     "type": "equation",
+     "page": 22,
+     "original": "unispeech-sat-base-100h-libri-ft"
+    },
+    {
+     "id": "eq-D-1-47",
+     "type": "equation",
+     "page": 22,
+     "original": "5.7 13.8 17.7 13.6 46.5 40.0 45.3 38.6 44.7 74.8 47.8 77.7 29.8 22.4"
     },
     {
      "id": "tab-D-1-1",
@@ -5715,24 +7086,135 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 8. 贪心解码下的英语转录 WER（%）。"
     },
     {
-     "id": "tb-D-1-17",
-     "type": "table_body",
-     "page": 22,
-     "original": "D.1.2. BEAM SEARCH WITH TEMPERATURE FALLBACK\nLibriSpeech.test-clean\nLibriSpeech.test-other\nTED-LIUM3\nWSJ\nCallHome\nSwitchboard\nCommonVoice5.1\nArtie\nCHiME6\nAMI-IHM\nAMI-SDM1\nVoxPopuli.en\nFleurs.en us",
-     "cells": 14,
-     "zh": "D.1.2 束搜索 + 温度回退表的列名，与 D.1.1 相同。"
-    },
-    {
-     "id": "p-D-1-31",
+     "id": "p-D-1-2",
      "type": "paragraph",
      "page": 22,
      "sentences": [
       {
-       "id": "s-D-1-31-1",
-       "original": "Whisper tiny.en 5.4 12.8 5.4 4.6 21.4 16.0 23.5 18.4 21.4 42.0 22.7 54.2 10.9 10.0 6.7 15.0 6.3 5.9 24.8 18.3 26.1 20.8 25.1 48.0 25.6 57.3 11.6 12.4 Whisper base.en 4.1 9.6 4.6 4.0 18.3 14.2 17.5 13.2 18.5 35.2 21.1 49.0 9.3 7.1 4.9 11.0 5.0 4.4 20.5 15.6 19.4 15.3 20.5 40.0 21.5 50.0 9.5 8.9 Whisper small.en 3.2 6.7 4.3 3.0 17.2 13.4 12.6 9.2 17.5 29.5 17.9 42.5 8.1 5.3 3.3 7.2 4.3 3.9 17.1 13.3 12.8 9.3 16.4 30.9 19.2 43.5 8.2 6.1 Whisper medium.en 3.0 5.7 4.3 2.8 14.7 12.4 10.3 7.4 15.3 27.0 17.1 39.4 7.8 4.5 2.7 5.6 4.0 2.7 15.3 13.2 9.7 6.7 14.9 27.6 17.6 43.0 7.6 4.4 2.8 5.7 4.3 3.5 16.2 14.2 8.9 6.4 15.1 25.2 17.6 37.1 7.2 4.5 2.5 4.9 3.7 2.6 16.4 13.6 8.2 5.7 14.2 24.9 17.4 39.9 7.0 4.2",
-       "zh": "Whisper 各模型逐数据集 WER 数值行（束搜索 + 温度回退，原文数字照录）：Whisper tiny.en 5.4 12.8 5.4 4.6 21.4 16.0 23.5 18.4 21.4 42.0 22.7 54.2 10.9 10.0 6.7 15.0 6.3 5.9 24.8 18.3 26.1 20.8 25.1 48.0 25.6 57.3 11.6 12.4 Whisper base.en 4.1 9.6 4.6 4.0 18.3 14.2 17.5 13.2 18.5 35.2 21.1 49.0 9.3 7.1 4.9 11.0 5.0 4.4 20.5 15.6 19.4 15.3 20.5 40.0 21.5 50.0 9.5 8.9 Whisper small.en 3.2 6.7 4.3 3.0 17.2 13.4 12.6 9.2 17.5 29.5 17.9 42.5 8.1 5.3 3.3 7.2 4.3 3.9 17.1 13.3 12.8 9.3 16.4 30.9 19.2 43.5 8.2 6.1 Whisper medium.en 3.0 5.7 4.3 2.8 14.7 12.4 10.3 7.4 15.3 27.0 17.1 39.4 7.8 4.5 2.7 5.6 4.0 2.7 15.3 13.2 9.7 6.7 14.9 27.6 17.6 43.0 7.6 4.4 2.8 5.7 4.3 3.5 16.2 14.2 8.9 6.4 15.1 25.2 17.6 37.1 7.2 4.5 2.5 4.9 3.7 2.6 16.4 13.6 8.2 5.7 14.2 24.9 17.4 39.9 7.0 4.2"
+       "id": "s-D-1-2-1",
+       "original": "D.1.2.",
+       "zh": "（附录小节号：D.1.2.）"
+      },
+      {
+       "id": "s-D-1-2-2",
+       "original": "BEAM SEARCH WITH TEMPERATURE FALLBACK LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 Switchboard CallHome WSJ Model CommonVoice5.1 VoxPopuli.en Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en",
+       "zh": "5.\n（原始数据照录）\nBEAM SEARCH WITH TEMPERATURE FALLBACK LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 Switchboard CallHome WSJ Model CommonVoice5.1 VoxPopuli.en Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en"
       }
      ]
+    },
+    {
+     "id": "eq-D-1-48",
+     "type": "equation",
+     "page": 22,
+     "original": "5.4 12.8 5.4 4.6 21.4 16.0 23.5 18.4 21.4 42.0 22.7 54.2 10.9 10.0"
+    },
+    {
+     "id": "eq-D-1-49",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper tiny"
+    },
+    {
+     "id": "eq-D-1-50",
+     "type": "equation",
+     "page": 22,
+     "original": "6.7 15.0 6.3 5.9 24.8 18.3 26.1 20.8 25.1 48.0 25.6 57.3 11.6 12.4"
+    },
+    {
+     "id": "eq-D-1-51",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper base.en"
+    },
+    {
+     "id": "eq-D-1-52",
+     "type": "equation",
+     "page": 22,
+     "original": "4.1 9.6 4.6 4.0 18.3 14.2 17.5 13.2 18.5 35.2 21.1 49.0 9.3 7.1"
+    },
+    {
+     "id": "eq-D-1-53",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-1-54",
+     "type": "equation",
+     "page": 22,
+     "original": "4.9 11.0 5.0 4.4 20.5 15.6 19.4 15.3 20.5 40.0 21.5 50.0 9.5 8.9"
+    },
+    {
+     "id": "eq-D-1-55",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper small.en"
+    },
+    {
+     "id": "eq-D-1-56",
+     "type": "equation",
+     "page": 22,
+     "original": "3.2 6.7 4.3 3.0 17.2 13.4 12.6 9.2 17.5 29.5 17.9 42.5 8.1 5.3"
+    },
+    {
+     "id": "eq-D-1-57",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-1-58",
+     "type": "equation",
+     "page": 22,
+     "original": "3.3 7.2 4.3 3.9 17.1 13.3 12.8 9.3 16.4 30.9 19.2 43.5 8.2 6.1"
+    },
+    {
+     "id": "eq-D-1-59",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper medium.en"
+    },
+    {
+     "id": "eq-D-1-60",
+     "type": "equation",
+     "page": 22,
+     "original": "3.0 5.7 4.3 2.8 14.7 12.4 10.3 7.4 15.3 27.0 17.1 39.4 7.8 4.5"
+    },
+    {
+     "id": "eq-D-1-61",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-1-62",
+     "type": "equation",
+     "page": 22,
+     "original": "2.7 5.6 4.0 2.7 15.3 13.2 9.7 6.7 14.9 27.6 17.6 43.0 7.6 4.4"
+    },
+    {
+     "id": "eq-D-1-63",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-1-64",
+     "type": "equation",
+     "page": 22,
+     "original": "2.8 5.7 4.3 3.5 16.2 14.2 8.9 6.4 15.1 25.2 17.6 37.1 7.2 4.5"
+    },
+    {
+     "id": "eq-D-1-65",
+     "type": "equation",
+     "page": 22,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-1-66",
+     "type": "equation",
+     "page": 22,
+     "original": "2.5 4.9 3.7 2.6 16.4 13.6 8.2 5.7 14.2 24.9 17.4 39.9 7.0 4.2"
     },
     {
      "id": "tab-D-1-2",
@@ -5761,26 +7243,80 @@ globalThis.PAPER_2212_04356 = {
       {
        "id": "s-D-2-1-1",
        "original": "D.2.1.",
-       "zh": "D.2.1."
+       "zh": "（附录小节号：D.2.1.）"
       },
       {
        "id": "s-D-2-1-2",
-       "original": "MULTILINGUAL LIBRISPEECH",
-       "zh": "MULTILINGUAL LIBRISPEECH（MLS）。"
+       "original": "MULTILINGUAL LIBRISPEECH English French Dutch Model Portuguese German Spanish Italian Polish Whisper tiny",
+       "zh": "（表 D.2.1 列头：MULTILINGUAL LIBRISPEECH；English / French / Dutch / Model / Portuguese / German / Spanish / Italian / Polish / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "p-D-2-2",
-     "type": "paragraph",
+     "id": "eq-D-2-1",
+     "type": "equation",
      "page": 23,
-     "sentences": [
-      {
-       "id": "s-D-2-2-1",
-       "original": "English 39.4 15.7 36.8 24.9 41.7 34.2 31.3 19.2 28.4 11.7 26.6 17.7 31.1 22.8 21.9 12.8 17.2 8.3 16.2 10.5 21.4 11.2 13.0 7.8 11.7 6.8 8.9 7.4 16.0 6.5 9.0 5.3 10.2 6.3 8.9 6.6 14.3 6.6 9.2 5.4 9.3 6.2 7.3 5.5 13.8 5.0 6.8 4.2",
-       "zh": "MLS 各语言逐模型 WER 数值行（English 行起，原文数字照录）：English 39.4 15.7 36.8 24.9 41.7 34.2 31.3 19.2 28.4 11.7 26.6 17.7 31.1 22.8 21.9 12.8 17.2 8.3 16.2 10.5 21.4 11.2 13.0 7.8 11.7 6.8 8.9 7.4 16.0 6.5 9.0 5.3 10.2 6.3 8.9 6.6 14.3 6.6 9.2 5.4 9.3 6.2 7.3 5.5 13.8 5.0 6.8 4.2"
-      }
-     ]
+     "original": "39.4 15.7 36.8 24.9 41.7 34.2 31.3 19.2"
+    },
+    {
+     "id": "eq-D-2-2",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-2-3",
+     "type": "equation",
+     "page": 23,
+     "original": "28.4 11.7 26.6 17.7 31.1 22.8 21.9 12.8"
+    },
+    {
+     "id": "eq-D-2-4",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-2-5",
+     "type": "equation",
+     "page": 23,
+     "original": "17.2 8.3 16.2 10.5 21.4 11.2 13.0 7.8"
+    },
+    {
+     "id": "eq-D-2-6",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-2-7",
+     "type": "equation",
+     "page": 23,
+     "original": "11.7 6.8 8.9 7.4 16.0 6.5 9.0 5.3"
+    },
+    {
+     "id": "eq-D-2-8",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-2-9",
+     "type": "equation",
+     "page": 23,
+     "original": "10.2 6.3 8.9 6.6 14.3 6.6 9.2 5.4"
+    },
+    {
+     "id": "eq-D-2-10",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-2-11",
+     "type": "equation",
+     "page": 23,
+     "original": "9.3 6.2 7.3 5.5 13.8 5.0 6.8 4.2"
     },
     {
      "id": "tab-D-2-1",
@@ -5790,64 +7326,243 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 10. MLS 上的 WER（%）。"
     },
     {
-     "id": "tb-D-2-3",
-     "type": "table_body",
-     "page": 23,
-     "original": "D.2.2. COMMON VOICE 9\nArabic\nBulgarian\nBengali\nCatalan\nCzech\nWelsh\nDanish\nGreek\nEnglish",
-     "cells": 10,
-     "zh": "D.2.2 Common Voice 9 表的语种列名碎片：Arabic、Bulgarian、Bengali、Catalan、Czech、Welsh、Danish、Greek、English。"
-    },
-    {
-     "id": "p-D-2-13",
+     "id": "p-D-2-2",
      "type": "paragraph",
      "page": 23,
      "sentences": [
       {
-       "id": "s-D-2-13-1",
-       "original": "Persian 90.9 79.3 104.1 51.0 79.7 101.8 77.2 34.5 61.9 28.8 30.3 102.1 120.3 84.4 68.1 103.7 39.9 63.1 93.8 57.5 24.5 51.5 21.9 19.6 88.1 99.0 66.4 44.8 118.6 23.8 34.1 65.4 32.1 13.0 31.7 14.5 10.3 67.2 71.9 60.3 26.7 124.7 16.4 18.8 43.6 19.3 8.5 20.0 11.2 6.9 45.6 49.9 56.0 24.1 106.0 15.3 17.1 40.3 18.3 7.7 18.3 10.1 6.4 41.4 44.8 53.8 19.9 103.4 14.1 13.5 34.2 14.4 6.4 16.0 9.4 5.6 35.1 39.4",
-       "zh": "Common Voice 9 各语言逐模型 WER 数值行（Persian 行起，原文数字照录）：Persian 90.9 79.3 104.1 51.0 79.7 101.8 77.2 34.5 61.9 28.8 30.3 102.1 120.3 84.4 68.1 103.7 39.9 63.1 93.8 57.5 24.5 51.5 21.9 19.6 88.1 99.0 66.4 44.8 118.6 23.8 34.1 65.4 32.1 13.0 31.7 14.5 10.3 67.2 71.9 60.3 26.7 124.7 16.4 18.8 43.6 19.3 8.5 20.0 11.2 6.9 45.6 49.9 56.0 24.1 106.0 15.3 17.1 40.3 18.3 7.7 18.3 10.1 6.4 41.4 44.8 53.8 19.9 103.4 14.1 13.5 34.2 14.4 6.4 16.0 9.4 5.6 35.1 39.4"
+       "id": "s-D-2-2-1",
+       "original": "D.2.2.",
+       "zh": "（附录小节号：D.2.2.）"
+      },
+      {
+       "id": "s-D-2-2-2",
+       "original": "COMMON VOICE 9 Bulgarian Catalan Bengali Arabic Czech Welsh Model Estonian German Spanish English Persian Danish Greek Whisper tiny",
+       "zh": "（表 D.2.2 列头：COMMON VOICE 9；Bulgarian / Catalan / Bengali / Arabic / Czech / Welsh / Model / Estonian / German / Spanish / English / Persian / Danish / Greek / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-2-14",
-     "type": "table_body",
+     "id": "eq-D-2-12",
+     "type": "equation",
      "page": 23,
-     "original": "Finnish\nHindi\nHungarian\nIndonesian\nJapanese\nLithuanian\nLatvian\nMalayalam",
-     "cells": 8,
-     "zh": "语种列名碎片：Finnish、Hindi、Hungarian、Indonesian、Japanese、Lithuanian、Latvian、Malayalam。"
+     "original": "90.9 79.3 104.1 51.0 79.7 101.8 77.2 34.5 61.9 28.8 30.3 102.1 120.3"
     },
     {
-     "id": "p-D-2-22",
+     "id": "eq-D-2-13",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-2-14",
+     "type": "equation",
+     "page": 23,
+     "original": "84.4 68.1 103.7 39.9 63.1 93.8 57.5 24.5 51.5 21.9 19.6 88.1 99.0"
+    },
+    {
+     "id": "eq-D-2-15",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-2-16",
+     "type": "equation",
+     "page": 23,
+     "original": "66.4 44.8 118.6 23.8 34.1 65.4 32.1 13.0 31.7 14.5 10.3 67.2 71.9"
+    },
+    {
+     "id": "eq-D-2-17",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-2-18",
+     "type": "equation",
+     "page": 23,
+     "original": "60.3 26.7 124.7 16.4 18.8 43.6 19.3 8.5 20.0 11.2 6.9 45.6 49.9"
+    },
+    {
+     "id": "eq-D-2-19",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-2-20",
+     "type": "equation",
+     "page": 23,
+     "original": "56.0 24.1 106.0 15.3 17.1 40.3 18.3 7.7 18.3 10.1 6.4 41.4 44.8"
+    },
+    {
+     "id": "eq-D-2-21",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-2-22",
+     "type": "equation",
+     "page": 23,
+     "original": "53.8 19.9 103.4 14.1 13.5 34.2 14.4 6.4 16.0 9.4 5.6 35.1 39.4"
+    },
+    {
+     "id": "p-D-2-3",
      "type": "paragraph",
      "page": 23,
      "sentences": [
       {
-       "id": "s-D-2-22-1",
-       "original": "Mongolian 68.5 49.7 108.3 87.0 49.6 44.5 36.1 103.5 87.8 102.7 123.0 43.6 45.3 52.9 37.3 106.5 71.9 36.1 30.5 24.2 91.3 78.0 122.9 137.0 29.5 32.8 30.5 22.7 43.6 44.4 18.4 16.0 14.0 72.8 54.6 104.8 225.8 14.2 16.9 18.8 16.0 31.5 26.9 11.6 9.4 10.5 49.4 37.2 137.8 113.4 8.0 10.1 17.0 14.7 25.0 23.5 10.6 8.1 9.4 43.9 34.8 107.1 117.4 7.1 9.0 14.4 13.9 21.9 19.7 8.5 7.1 9.1 35.2 25.5 103.2 128.4 5.8 7.6",
-       "zh": "Common Voice 9 数值行续（Mongolian 行起，原文数字照录）：Mongolian 68.5 49.7 108.3 87.0 49.6 44.5 36.1 103.5 87.8 102.7 123.0 43.6 45.3 52.9 37.3 106.5 71.9 36.1 30.5 24.2 91.3 78.0 122.9 137.0 29.5 32.8 30.5 22.7 43.6 44.4 18.4 16.0 14.0 72.8 54.6 104.8 225.8 14.2 16.9 18.8 16.0 31.5 26.9 11.6 9.4 10.5 49.4 37.2 137.8 113.4 8.0 10.1 17.0 14.7 25.0 23.5 10.6 8.1 9.4 43.9 34.8 107.1 117.4 7.1 9.0 14.4 13.9 21.9 19.7 8.5 7.1 9.1 35.2 25.5 103.2 128.4 5.8 7.6"
+       "id": "s-D-2-3-1",
+       "original": "Indonesian Hungarian Finnish French Italian Hindi Model Malayalam Lithuanian Mongolian Japanese Latvian Polish Dutch Whisper tiny",
+       "zh": "（表列头续：Indonesian / Hungarian / Finnish / French / Italian / Hindi / Model / Malayalam / Lithuanian / Mongolian / Japanese / Latvian / Polish / Dutch / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-2-23",
-     "type": "table_body",
+     "id": "eq-D-2-23",
+     "type": "equation",
      "page": 23,
-     "original": "Romanian\nRussian\nSlovak\nSerbian\nSwedish\nTamil\nThai\nTurkish\nUrdu\nVietnamese",
-     "cells": 10,
-     "zh": "语种列名碎片：Romanian、Russian、Slovak、Serbian、Swedish、Tamil、Thai、Turkish、Urdu、Vietnamese。"
+     "original": "68.5 49.7 108.3 87.0 49.6 44.5 36.1 103.5 87.8 102.7 123.0 43.6 45.3"
     },
     {
-     "id": "p-D-2-33",
+     "id": "eq-D-2-24",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-2-25",
+     "type": "equation",
+     "page": 23,
+     "original": "52.9 37.3 106.5 71.9 36.1 30.5 24.2 91.3 78.0 122.9 137.0 29.5 32.8"
+    },
+    {
+     "id": "eq-D-2-26",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-2-27",
+     "type": "equation",
+     "page": 23,
+     "original": "30.5 22.7 43.6 44.4 18.4 16.0 14.0 72.8 54.6 104.8 225.8 14.2 16.9"
+    },
+    {
+     "id": "eq-D-2-28",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-2-29",
+     "type": "equation",
+     "page": 23,
+     "original": "18.8 16.0 31.5 26.9 11.6 9.4 10.5 49.4 37.2 137.8 113.4 8.0 10.1"
+    },
+    {
+     "id": "eq-D-2-30",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-2-31",
+     "type": "equation",
+     "page": 23,
+     "original": "17.0 14.7 25.0 23.5 10.6 8.1 9.4 43.9 34.8 107.1 117.4 7.1 9.0"
+    },
+    {
+     "id": "eq-D-2-32",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-2-33",
+     "type": "equation",
+     "page": 23,
+     "original": "14.4 13.9 21.9 19.7 8.5 7.1 9.1 35.2 25.5 103.2 128.4 5.8 7.6"
+    },
+    {
+     "id": "p-D-2-4",
      "type": "paragraph",
      "page": 23,
      "sentences": [
       {
-       "id": "s-D-2-33-1",
-       "original": "Chinese 35.2 68.2 40.6 104.0 82.0 106.1 58.2 105.7 55.9 53.6 74.7 69.3 52.4 23.7 55.9 28.8 87.2 70.3 103.0 42.4 49.5 32.1 38.6 58.6 51.6 44.9 12.5 33.2 15.0 60.4 45.5 101.3 22.1 28.7 18.1 23.7 39.1 33.3 29.4 8.1 21.5 9.3 42.0 29.8 85.6 13.7 19.6 10.5 17.7 29.9 24.4 23.2 7.1 19.8 8.2 37.9 25.1 87.4 12.4 17.6 8.8 16.6 28.1 19.9 29.1 6.3 15.8 7.1 31.9 20.6 70.5 10.6 16.1 8.0 14.5 24.2 18.2 26.8",
-       "zh": "Common Voice 9 数值行续（Chinese 行起，原文数字照录）：Chinese 35.2 68.2 40.6 104.0 82.0 106.1 58.2 105.7 55.9 53.6 74.7 69.3 52.4 23.7 55.9 28.8 87.2 70.3 103.0 42.4 49.5 32.1 38.6 58.6 51.6 44.9 12.5 33.2 15.0 60.4 45.5 101.3 22.1 28.7 18.1 23.7 39.1 33.3 29.4 8.1 21.5 9.3 42.0 29.8 85.6 13.7 19.6 10.5 17.7 29.9 24.4 23.2 7.1 19.8 8.2 37.9 25.1 87.4 12.4 17.6 8.8 16.6 28.1 19.9 29.1 6.3 15.8 7.1 31.9 20.6 70.5 10.6 16.1 8.0 14.5 24.2 18.2 26.8"
+       "id": "s-D-2-4-1",
+       "original": "Portuguese Romanian Slovenian Russian Serbian Slovak Model Vietnamese Swedish Chinese Turkish Tamil Urdu Thai Whisper tiny",
+       "zh": "（表列头续：Portuguese / Romanian / Slovenian / Russian / Serbian / Slovak / Model / Vietnamese / Swedish / Chinese / Turkish / Tamil / Urdu / Thai / Whisper tiny。）"
       }
      ]
+    },
+    {
+     "id": "eq-D-2-34",
+     "type": "equation",
+     "page": 23,
+     "original": "35.2 68.2 40.6 104.0 82.0 106.1 58.2 105.7 55.9 53.6 74.7 69.3 52.4"
+    },
+    {
+     "id": "eq-D-2-35",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-2-36",
+     "type": "equation",
+     "page": 23,
+     "original": "23.7 55.9 28.8 87.2 70.3 103.0 42.4 49.5 32.1 38.6 58.6 51.6 44.9"
+    },
+    {
+     "id": "eq-D-2-37",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-2-38",
+     "type": "equation",
+     "page": 23,
+     "original": "12.5 33.2 15.0 60.4 45.5 101.3 22.1 28.7 18.1 23.7 39.1 33.3 29.4"
+    },
+    {
+     "id": "eq-D-2-39",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-2-40",
+     "type": "equation",
+     "page": 23,
+     "original": "8.1 21.5 9.3 42.0 29.8 85.6 13.7 19.6 10.5 17.7 29.9 24.4 23.2"
+    },
+    {
+     "id": "eq-D-2-41",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-2-42",
+     "type": "equation",
+     "page": 23,
+     "original": "7.1 19.8 8.2 37.9 25.1 87.4 12.4 17.6 8.8 16.6 28.1 19.9 29.1"
+    },
+    {
+     "id": "eq-D-2-43",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-2-44",
+     "type": "equation",
+     "page": 23,
+     "original": "6.3 15.8 7.1 31.9 20.6 70.5 10.6 16.1 8.0 14.5 24.2 18.2 26.8"
     },
     {
      "id": "tab-D-2-2",
@@ -5857,71 +7572,105 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 11. CommonVoice9 上的 WER（%）。"
     },
     {
-     "id": "p-D-2-34",
+     "id": "p-D-2-5",
      "type": "paragraph",
      "page": 23,
      "sentences": [
       {
-       "id": "s-D-2-34-1",
+       "id": "s-D-2-5-1",
        "original": "D.2.3.",
        "zh": "D.2.3."
       },
       {
-       "id": "s-D-2-34-2",
+       "id": "s-D-2-5-2",
        "original": "VOXPOPULI",
        "zh": "VOXPOPULI。"
       }
      ]
     },
     {
-     "id": "p-D-2-35",
-     "type": "paragraph",
-     "page": 23,
-     "sentences": [
-      {
-       "id": "s-D-2-35-1",
-       "original": "Czech",
-       "zh": "Czech（捷克语）行。"
-      }
-     ]
-    },
-    {
-     "id": "p-D-2-36",
-     "type": "paragraph",
-     "page": 23,
-     "sentences": [
-      {
-       "id": "s-D-2-36-1",
-       "original": "English",
-       "zh": "English（英语）行。"
-      }
-     ]
-    },
-    {
-     "id": "eq-D-2-1",
+     "id": "eq-D-2-45",
      "type": "equation",
      "page": 23,
      "original": "en accented"
     },
     {
-     "id": "tb-D-2-37",
-     "type": "table_body",
-     "page": 23,
-     "original": "Finnish\nCroatian\nHungarian\nLithuanian\nRomanian",
-     "cells": 5,
-     "zh": "VoxPopuli 语种列名碎片：Finnish、Croatian、Hungarian、Lithuanian、Romanian。"
-    },
-    {
-     "id": "p-D-2-42",
+     "id": "p-D-2-6",
      "type": "paragraph",
      "page": 23,
      "sentences": [
       {
-       "id": "s-D-2-42-1",
-       "original": "Slovak 73.5 27.4 11.6 18.8 19.7 99.2 54.1 32.9 72.4 74.5 40.5 93.1 41.9 31.4 65.9 78.7 81.9 54.7 20.6 9.5 17.5 14.4 83.0 39.7 24.9 53.6 52.6 30.8 82.1 29.4 22.1 49.3 63.7 70.5 28.8 14.8 8.2 19.2 11.1 59.2 24.9 15.7 33.7 31.3 22.9 60.1 18.8 13.3 28.6 37.3 50.8 18.4 12.4 7.6 19.1 9.6 38.2 16.6 12.2 23.9 19.3 19.7 39.3 14.9 10.1 18.4 23.0 36.3 15.9 11.9 7.2 20.8 8.8 33.3 15.5 11.0 19.0 16.8 18.4 35.0 14.0 9.0 17.0 19.1 31.3 12.6 11.2 7.0 18.6 8.2 28.7 12.4 11.4 16.1 13.8 19.0 33.2 12.9 7.8 14.4 15.4 27.9",
-       "zh": "VoxPopuli 各语言逐模型 WER 数值行（Slovak 行起，原文数字照录）：Slovak 73.5 27.4 11.6 18.8 19.7 99.2 54.1 32.9 72.4 74.5 40.5 93.1 41.9 31.4 65.9 78.7 81.9 54.7 20.6 9.5 17.5 14.4 83.0 39.7 24.9 53.6 52.6 30.8 82.1 29.4 22.1 49.3 63.7 70.5 28.8 14.8 8.2 19.2 11.1 59.2 24.9 15.7 33.7 31.3 22.9 60.1 18.8 13.3 28.6 37.3 50.8 18.4 12.4 7.6 19.1 9.6 38.2 16.6 12.2 23.9 19.3 19.7 39.3 14.9 10.1 18.4 23.0 36.3 15.9 11.9 7.2 20.8 8.8 33.3 15.5 11.0 19.0 16.8 18.4 35.0 14.0 9.0 17.0 19.1 31.3 12.6 11.2 7.0 18.6 8.2 28.7 12.4 11.4 16.1 13.8 19.0 33.2 12.9 7.8 14.4 15.4 27.9"
+       "id": "s-D-2-6-1",
+       "original": "Estonian German Spanish Finnish English French Czech Model Lithuanian Hungarian Romanian Slovenian Croatian Slovak Italian Polish Dutch Whisper tiny",
+       "zh": "（表列头续：Estonian / German / Spanish / Finnish / English / French / Czech / Model / Lithuanian / Hungarian / Romanian / Slovenian / Croatian / Slovak / Italian / Polish / Dutch / Whisper tiny。）"
       }
      ]
+    },
+    {
+     "id": "eq-D-2-46",
+     "type": "equation",
+     "page": 23,
+     "original": "73.5 27.4 11.6 18.8 19.7 99.2 54.1 32.9 72.4 74.5 40.5 93.1 41.9 31.4 65.9 78.7 81.9"
+    },
+    {
+     "id": "eq-D-2-47",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-2-48",
+     "type": "equation",
+     "page": 23,
+     "original": "54.7 20.6 9.5 17.5 14.4 83.0 39.7 24.9 53.6 52.6 30.8 82.1 29.4 22.1 49.3 63.7 70.5"
+    },
+    {
+     "id": "eq-D-2-49",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-2-50",
+     "type": "equation",
+     "page": 23,
+     "original": "28.8 14.8 8.2 19.2 11.1 59.2 24.9 15.7 33.7 31.3 22.9 60.1 18.8 13.3 28.6 37.3 50.8"
+    },
+    {
+     "id": "eq-D-2-51",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-2-52",
+     "type": "equation",
+     "page": 23,
+     "original": "18.4 12.4 7.6 19.1 9.6 38.2 16.6 12.2 23.9 19.3 19.7 39.3 14.9 10.1 18.4 23.0 36.3"
+    },
+    {
+     "id": "eq-D-2-53",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-2-54",
+     "type": "equation",
+     "page": 23,
+     "original": "15.9 11.9 7.2 20.8 8.8 33.3 15.5 11.0 19.0 16.8 18.4 35.0 14.0 9.0 17.0 19.1 31.3"
+    },
+    {
+     "id": "eq-D-2-55",
+     "type": "equation",
+     "page": 23,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-2-56",
+     "type": "equation",
+     "page": 23,
+     "original": "12.6 11.2 7.0 18.6 8.2 28.7 12.4 11.4 16.1 13.8 19.0 33.2 12.9 7.8 14.4 15.4 27.9"
     },
     {
      "id": "tab-D-2-3",
@@ -5931,124 +7680,489 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 12. VoxPopuli 上的 WER（%）。"
     },
     {
-     "id": "tb-D-2-43",
-     "type": "table_body",
-     "page": 24,
-     "original": "D.2.4. FLEURS\nAfrikaans\nAmharic\nArabic\nAssamese\nAzerbaijani\nBelarusian\nBulgarian\nBengali\nBosnian\nCatalan\nChinese\nCzech\nWelsh",
-     "cells": 14,
-     "zh": "D.2.4 Fleurs 表的语种列名碎片：Afrikaans、Amharic、Arabic、Assamese、Azerbaijani、Belarusian、Bulgarian、Bengali、Bosnian、Catalan、Chinese、Czech、Welsh。"
-    },
-    {
-     "id": "p-D-2-57",
+     "id": "p-D-2-7",
      "type": "paragraph",
      "page": 24,
      "sentences": [
       {
-       "id": "s-D-2-57-1",
-       "original": "Danish 91.2 122.9 63.4 102.0 93.1 94.0 81.0 101.6 82.1 42.8 40.5 82.8 101.3 82.0 81.5 196.8 48.8 102.0 76.4 91.3 65.1 100.6 66.7 29.0 34.1 66.0 85.3 57.6 61.1 120.2 30.6 108.0 49.1 75.1 37.3 104.4 39.4 16.2 20.8 37.6 59.3 32.8 44.9 229.3 20.4 102.3 33.1 60.4 21.4 100.6 23.9 9.6 12.1 21.3 40.8 19.5 42.6 129.3 18.1 105.6 28.7 56.6 18.4 104.9 20.7 8.0 19.6 17.4 36.6 16.8 36.7 140.3 16.0 106.2 23.4 45.4 14.6 104.1 15.7 7.3 14.7 13.3 33.0 13.8",
-       "zh": "Fleurs 各语言逐模型 WER 数值行（Danish 行起，原文数字照录）：Danish 91.2 122.9 63.4 102.0 93.1 94.0 81.0 101.6 82.1 42.8 40.5 82.8 101.3 82.0 81.5 196.8 48.8 102.0 76.4 91.3 65.1 100.6 66.7 29.0 34.1 66.0 85.3 57.6 61.1 120.2 30.6 108.0 49.1 75.1 37.3 104.4 39.4 16.2 20.8 37.6 59.3 32.8 44.9 229.3 20.4 102.3 33.1 60.4 21.4 100.6 23.9 9.6 12.1 21.3 40.8 19.5 42.6 129.3 18.1 105.6 28.7 56.6 18.4 104.9 20.7 8.0 19.6 17.4 36.6 16.8 36.7 140.3 16.0 106.2 23.4 45.4 14.6 104.1 15.7 7.3 14.7 13.3 33.0 13.8"
+       "id": "s-D-2-7-1",
+       "original": "D.2.4.",
+       "zh": "（附录小节号：D.2.4.）"
+      },
+      {
+       "id": "s-D-2-7-2",
+       "original": "FLEURS Azerbaijani Belarusian Assamese Afrikaans Amharic Arabic Model Bulgarian Bosnian Chinese Catalan Bengali Danish Czech Welsh Whisper tiny",
+       "zh": "（表 D.2.4 列头：FLEURS；Azerbaijani / Belarusian / Assamese / Afrikaans / Amharic / Arabic / Model / Bulgarian / Bosnian / Chinese / Catalan / Bengali / Danish / Czech / Welsh / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-2-58",
-     "type": "table_body",
+     "id": "eq-D-2-57",
+     "type": "equation",
      "page": 24,
-     "original": "Greek\nEnglish\nPersian\nFinnish\nTagalog\nGalician\nGujarati\nHausa\nHebrew",
-     "cells": 9,
-     "zh": "Fleurs 语种列名碎片：Greek、English、Persian、Finnish、Tagalog、Galician、Gujarati、Hausa、Hebrew。"
+     "original": "91.2 122.9 63.4 102.0 93.1 94.0 81.0 101.6 82.1 42.8 40.5 82.8 101.3 82.0"
     },
     {
-     "id": "p-D-2-67",
+     "id": "eq-D-2-58",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-2-59",
+     "type": "equation",
+     "page": 24,
+     "original": "81.5 196.8 48.8 102.0 76.4 91.3 65.1 100.6 66.7 29.0 34.1 66.0 85.3 57.6"
+    },
+    {
+     "id": "eq-D-2-60",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-2-61",
+     "type": "equation",
+     "page": 24,
+     "original": "61.1 120.2 30.6 108.0 49.1 75.1 37.3 104.4 39.4 16.2 20.8 37.6 59.3 32.8"
+    },
+    {
+     "id": "eq-D-2-62",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-2-63",
+     "type": "equation",
+     "page": 24,
+     "original": "44.9 229.3 20.4 102.3 33.1 60.4 21.4 100.6 23.9 9.6 12.1 21.3 40.8 19.5"
+    },
+    {
+     "id": "eq-D-2-64",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-2-65",
+     "type": "equation",
+     "page": 24,
+     "original": "42.6 129.3 18.1 105.6 28.7 56.6 18.4 104.9 20.7 8.0 19.6 17.4 36.6 16.8"
+    },
+    {
+     "id": "eq-D-2-66",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-2-67",
+     "type": "equation",
+     "page": 24,
+     "original": "36.7 140.3 16.0 106.2 23.4 45.4 14.6 104.1 15.7 7.3 14.7 13.3 33.0 13.8"
+    },
+    {
+     "id": "p-D-2-8",
      "type": "paragraph",
      "page": 24,
      "sentences": [
       {
-       "id": "s-D-2-67-1",
-       "original": "Hindi 27.8 67.4 12.4 15.9 94.8 101.8 59.5 65.6 41.4 54.8 101.2 100.2 71.6 102.3 17.9 53.5 8.9 9.9 77.9 86.1 43.1 45.8 28.5 47.4 101.4 98.6 61.7 101.1 10.2 30.8 6.1 5.6 51.3 55.8 24.0 27.7 15.0 30.2 106.4 90.1 44.4 38.4 6.5 19.0 4.4 3.6 29.8 41.0 13.9 19.1 8.7 21.2 104.8 106.6 33.1 26.8 5.5 18.7 4.5 3.5 25.5 36.1 12.2 15.8 7.7 19.0 103.9 87.0 30.2 26.9 4.5 12.5 4.2 3.0 21.9 32.9 9.7 13.8 8.3 15.4 102.7 88.9 27.1 21.5",
-       "zh": "Fleurs 数值行续（Hindi 行起，原文数字照录）：Hindi 27.8 67.4 12.4 15.9 94.8 101.8 59.5 65.6 41.4 54.8 101.2 100.2 71.6 102.3 17.9 53.5 8.9 9.9 77.9 86.1 43.1 45.8 28.5 47.4 101.4 98.6 61.7 101.1 10.2 30.8 6.1 5.6 51.3 55.8 24.0 27.7 15.0 30.2 106.4 90.1 44.4 38.4 6.5 19.0 4.4 3.6 29.8 41.0 13.9 19.1 8.7 21.2 104.8 106.6 33.1 26.8 5.5 18.7 4.5 3.5 25.5 36.1 12.2 15.8 7.7 19.0 103.9 87.0 30.2 26.9 4.5 12.5 4.2 3.0 21.9 32.9 9.7 13.8 8.3 15.4 102.7 88.9 27.1 21.5"
+       "id": "s-D-2-8-1",
+       "original": "Estonian German Spanish English Persian Greek Model Galician Gujarati Hebrew Tagalog Finnish French Hausa Hindi Whisper tiny",
+       "zh": "（表列头续：Estonian / German / Spanish / English / Persian / Greek / Model / Galician / Gujarati / Hebrew / Tagalog / Finnish / French / Hausa / Hindi / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-2-68",
-     "type": "table_body",
+     "id": "eq-D-2-68",
+     "type": "equation",
      "page": 24,
-     "original": "Croatian\nHungarian\nArmenian\nIndonesian\nIcelandic\nJapanese\nJavanese\nGeorgian\nKazakh\nKhmer\nKannada\nKorean",
-     "cells": 12,
-     "zh": "Fleurs 语种列名碎片：Croatian、Hungarian、Armenian、Indonesian、Icelandic、Japanese、Javanese、Georgian、Kazakh、Khmer、Kannada、Korean。"
+     "original": "27.8 67.4 12.4 15.9 94.8 101.8 59.5 65.6 41.4 54.8 101.2 100.2 71.6 102.3"
     },
     {
-     "id": "p-D-2-80",
+     "id": "eq-D-2-69",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-2-70",
+     "type": "equation",
+     "page": 24,
+     "original": "17.9 53.5 8.9 9.9 77.9 86.1 43.1 45.8 28.5 47.4 101.4 98.6 61.7 101.1"
+    },
+    {
+     "id": "eq-D-2-71",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-2-72",
+     "type": "equation",
+     "page": 24,
+     "original": "10.2 30.8 6.1 5.6 51.3 55.8 24.0 27.7 15.0 30.2 106.4 90.1 44.4 38.4"
+    },
+    {
+     "id": "eq-D-2-73",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-2-74",
+     "type": "equation",
+     "page": 24,
+     "original": "6.5 19.0 4.4 3.6 29.8 41.0 13.9 19.1 8.7 21.2 104.8 106.6 33.1 26.8"
+    },
+    {
+     "id": "eq-D-2-75",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-2-76",
+     "type": "equation",
+     "page": 24,
+     "original": "5.5 18.7 4.5 3.5 25.5 36.1 12.2 15.8 7.7 19.0 103.9 87.0 30.2 26.9"
+    },
+    {
+     "id": "eq-D-2-77",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-2-78",
+     "type": "equation",
+     "page": 24,
+     "original": "4.5 12.5 4.2 3.0 21.9 32.9 9.7 13.8 8.3 15.4 102.7 88.9 27.1 21.5"
+    },
+    {
+     "id": "p-D-2-9",
      "type": "paragraph",
      "page": 24,
      "sentences": [
       {
-       "id": "s-D-2-80-1",
-       "original": "Luxembourgish 79.0 83.8 118.6 51.7 113.3 29.8 37.0 107.3 123.0 165.2 100.6 100.7 36.1 99.1 59.1 65.0 126.3 33.1 95.5 17.9 22.8 89.5 114.7 109.2 101.6 107.2 27.8 100.7 33.4 38.9 86.6 16.3 72.6 9.8 12.0 88.6 118.3 70.3 104.4 100.4 19.6 100.1 19.3 24.3 60.1 10.2 49.9 5.2 7.1 67.9 117.3 48.8 98.9 77.7 16.4 90.0 16.7 21.0 53.7 8.5 43.0 4.2 6.4 87.0 100.5 43.8 96.0 69.8 15.2 86.5 13.4 17.0 44.6 7.1 38.2 4.0 5.3 nan 105.0 37.7 99.7 37.0 14.3 88.0",
-       "zh": "Fleurs 数值行续（Luxembourgish 行起，原文数字照录）：Luxembourgish 79.0 83.8 118.6 51.7 113.3 29.8 37.0 107.3 123.0 165.2 100.6 100.7 36.1 99.1 59.1 65.0 126.3 33.1 95.5 17.9 22.8 89.5 114.7 109.2 101.6 107.2 27.8 100.7 33.4 38.9 86.6 16.3 72.6 9.8 12.0 88.6 118.3 70.3 104.4 100.4 19.6 100.1 19.3 24.3 60.1 10.2 49.9 5.2 7.1 67.9 117.3 48.8 98.9 77.7 16.4 90.0 16.7 21.0 53.7 8.5 43.0 4.2 6.4 87.0 100.5 43.8 96.0 69.8 15.2 86.5 13.4 17.0 44.6 7.1 38.2 4.0 5.3 nan 105.0 37.7 99.7 37.0 14.3 88.0"
+       "id": "s-D-2-9-1",
+       "original": "Indonesian Hungarian Armenian Icelandic Croatian Italian Model Luxembourgish Georgian Kannada Javanese Japanese Kazakh Korean Khmer Whisper tiny",
+       "zh": "（表列头续：Indonesian / Hungarian / Armenian / Icelandic / Croatian / Italian / Model / Luxembourgish / Georgian / Kannada / Javanese / Japanese / Kazakh / Korean / Khmer / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-2-81",
-     "type": "table_body",
+     "id": "eq-D-2-79",
+     "type": "equation",
      "page": 24,
-     "original": "Lingala\nLao\nLithuanian\nLatvian\nMaori\nMacedonian\nMalayalam\nMongolian\nMarathi\nMalay\nMaltese\nMyanmar\nNorwegian",
-     "cells": 13,
-     "zh": "Fleurs 语种列名碎片：Lingala、Lao、Lithuanian、Latvian、Maori、Macedonian、Malayalam、Mongolian、Marathi、Malay、Maltese、Myanmar、Norwegian。"
+     "original": "79.0 83.8 118.6 51.7 113.3 29.8 37.0 107.3 123.0 165.2 100.6 100.7 36.1 99.1"
     },
     {
-     "id": "p-D-2-94",
+     "id": "eq-D-2-80",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-2-81",
+     "type": "equation",
+     "page": 24,
+     "original": "59.1 65.0 126.3 33.1 95.5 17.9 22.8 89.5 114.7 109.2 101.6 107.2 27.8 100.7"
+    },
+    {
+     "id": "eq-D-2-82",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-2-83",
+     "type": "equation",
+     "page": 24,
+     "original": "33.4 38.9 86.6 16.3 72.6 9.8 12.0 88.6 118.3 70.3 104.4 100.4 19.6 100.1"
+    },
+    {
+     "id": "eq-D-2-84",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-2-85",
+     "type": "equation",
+     "page": 24,
+     "original": "19.3 24.3 60.1 10.2 49.9 5.2 7.1 67.9 117.3 48.8 98.9 77.7 16.4 90.0"
+    },
+    {
+     "id": "eq-D-2-86",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-2-87",
+     "type": "equation",
+     "page": 24,
+     "original": "16.7 21.0 53.7 8.5 43.0 4.2 6.4 87.0 100.5 43.8 96.0 69.8 15.2 86.5"
+    },
+    {
+     "id": "eq-D-2-88",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-2-89",
+     "type": "equation",
+     "page": 24,
+     "original": "13.4 17.0 44.6 7.1 38.2 4.0 5.3"
+    },
+    {
+     "id": "eq-D-2-90",
+     "type": "equation",
+     "page": 24,
+     "original": "nan"
+    },
+    {
+     "id": "eq-D-2-91",
+     "type": "equation",
+     "page": 24,
+     "original": "105.0 37.7 99.7 37.0 14.3 88.0"
+    },
+    {
+     "id": "p-D-2-10",
      "type": "paragraph",
      "page": 24,
      "sentences": [
       {
-       "id": "s-D-2-94-1",
-       "original": "Nepali 105.4 115.1 98.5 91.6 94.5 73.3 101.5 113.7 100.3 51.2 100.8 124.8 62.0 101.8 96.7 105.1 87.3 79.8 77.5 59.9 107.4 125.7 100.3 35.1 97.6 122.6 44.0 102.4 91.3 102.2 65.6 53.2 59.5 36.9 100.9 144.2 60.2 18.9 92.2 110.1 24.2 69.5 83.2 101.4 41.1 32.0 77.8 22.0 101.1 103.7 63.2 12.2 83.2 123.0 12.9 54.4 76.8 101.6 35.2 28.3 45.7 20.6 101.4 106.2 43.7 10.2 80.5 124.5 11.4 52.2 75.6 101.5 28.1 23.1 38.5 16.5 100.7 110.5 38.3 8.7 76.6 115.7 9.5 47.1",
-       "zh": "Fleurs 数值行续（Nepali 行起，原文数字照录）：Nepali 105.4 115.1 98.5 91.6 94.5 73.3 101.5 113.7 100.3 51.2 100.8 124.8 62.0 101.8 96.7 105.1 87.3 79.8 77.5 59.9 107.4 125.7 100.3 35.1 97.6 122.6 44.0 102.4 91.3 102.2 65.6 53.2 59.5 36.9 100.9 144.2 60.2 18.9 92.2 110.1 24.2 69.5 83.2 101.4 41.1 32.0 77.8 22.0 101.1 103.7 63.2 12.2 83.2 123.0 12.9 54.4 76.8 101.6 35.2 28.3 45.7 20.6 101.4 106.2 43.7 10.2 80.5 124.5 11.4 52.2 75.6 101.5 28.1 23.1 38.5 16.5 100.7 110.5 38.3 8.7 76.6 115.7 9.5 47.1"
+       "id": "s-D-2-10-1",
+       "original": "Macedonian Lithuanian Latvian Lingala Maori Lao Model Malayalam Norwegian Mongolian Myanmar Marathi Maltese Nepali Malay Whisper tiny",
+       "zh": "（表列头续：Macedonian / Lithuanian / Latvian / Lingala / Maori / Lao / Model / Malayalam / Norwegian / Mongolian / Myanmar / Marathi / Maltese / Nepali / Malay / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-2-95",
-     "type": "table_body",
+     "id": "eq-D-2-92",
+     "type": "equation",
      "page": 24,
-     "original": "Occitan\nPunjabi\nPashto\nRomanian\nRussian\nSindhi\nSlovak\nShona\nSomali",
-     "cells": 9,
-     "zh": "Fleurs 语种列名碎片：Occitan、Punjabi、Pashto、Romanian、Russian、Sindhi、Slovak、Shona、Somali。"
+     "original": "105.4 115.1 98.5 91.6 94.5 73.3 101.5 113.7 100.3 51.2 100.8 124.8 62.0 101.8"
     },
     {
-     "id": "p-D-2-104",
+     "id": "eq-D-2-93",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-2-94",
+     "type": "equation",
+     "page": 24,
+     "original": "96.7 105.1 87.3 79.8 77.5 59.9 107.4 125.7 100.3 35.1 97.6 122.6 44.0 102.4"
+    },
+    {
+     "id": "eq-D-2-95",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-2-96",
+     "type": "equation",
+     "page": 24,
+     "original": "91.3 102.2 65.6 53.2 59.5 36.9 100.9 144.2 60.2 18.9 92.2 110.1 24.2 69.5"
+    },
+    {
+     "id": "eq-D-2-97",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-2-98",
+     "type": "equation",
+     "page": 24,
+     "original": "83.2 101.4 41.1 32.0 77.8 22.0 101.1 103.7 63.2 12.2 83.2 123.0 12.9 54.4"
+    },
+    {
+     "id": "eq-D-2-99",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-2-100",
+     "type": "equation",
+     "page": 24,
+     "original": "76.8 101.6 35.2 28.3 45.7 20.6 101.4 106.2 43.7 10.2 80.5 124.5 11.4 52.2"
+    },
+    {
+     "id": "eq-D-2-101",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-2-102",
+     "type": "equation",
+     "page": 24,
+     "original": "75.6 101.5 28.1 23.1 38.5 16.5 100.7 110.5 38.3 8.7 76.6 115.7 9.5 47.1"
+    },
+    {
+     "id": "p-D-2-11",
      "type": "paragraph",
      "page": 24,
      "sentences": [
       {
-       "id": "s-D-2-104-1",
-       "original": "Serbian 49.0 95.9 102.6 45.6 105.6 20.1 74.7 31.1 105.8 77.2 87.2 128.1 105.6 83.7 33.0 82.9 101.5 30.8 99.0 13.0 56.0 20.5 103.9 60.6 74.6 126.0 109.6 64.3 16.4 87.3 103.6 14.7 92.9 7.3 29.8 11.4 131.7 33.3 49.3 140.0 105.3 42.2 9.9 79.5 102.0 8.0 119.4 5.0 20.0 7.2 147.0 17.3 31.9 143.9 104.0 44.9 8.3 75.9 102.8 7.2 92.7 4.8 15.4 6.4 177.9 15.7 27.8 130.0 103.5 29.2 6.7 75.3 102.4 5.4 93.7 4.3 14.4 5.6 156.5 11.7 23.1 121.0 102.9 33.9",
-       "zh": "Fleurs 数值行续（Serbian 行起，原文数字照录）：Serbian 49.0 95.9 102.6 45.6 105.6 20.1 74.7 31.1 105.8 77.2 87.2 128.1 105.6 83.7 33.0 82.9 101.5 30.8 99.0 13.0 56.0 20.5 103.9 60.6 74.6 126.0 109.6 64.3 16.4 87.3 103.6 14.7 92.9 7.3 29.8 11.4 131.7 33.3 49.3 140.0 105.3 42.2 9.9 79.5 102.0 8.0 119.4 5.0 20.0 7.2 147.0 17.3 31.9 143.9 104.0 44.9 8.3 75.9 102.8 7.2 92.7 4.8 15.4 6.4 177.9 15.7 27.8 130.0 103.5 29.2 6.7 75.3 102.4 5.4 93.7 4.3 14.4 5.6 156.5 11.7 23.1 121.0 102.9 33.9"
+       "id": "s-D-2-11-1",
+       "original": "Portuguese Occitan Punjabi Pashto Polish Dutch Model Romanian Slovenian Russian Serbian Somali Slovak Sindhi Shona Whisper tiny",
+       "zh": "（表列头续：Portuguese / Occitan / Punjabi / Pashto / Polish / Dutch / Model / Romanian / Slovenian / Russian / Serbian / Somali / Slovak / Sindhi / Shona / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-2-105",
-     "type": "table_body",
+     "id": "eq-D-2-103",
+     "type": "equation",
      "page": 24,
-     "original": "Swedish\nSwahili\nTamil\nTelugu\nTajik\nThai\nTurkish\nUkrainian\nUrdu\nUzbek\nVietnamese",
-     "cells": 11,
-     "zh": "Fleurs 语种列名碎片：Swedish、Swahili、Tamil、Telugu、Tajik、Thai、Turkish、Ukrainian、Urdu、Uzbek、Vietnamese。"
+     "original": "49.0 95.9 102.6 45.6 105.6 20.1 74.7 31.1 105.8 77.2 87.2 128.1 105.6 83.7"
     },
     {
-     "id": "p-D-2-116",
+     "id": "eq-D-2-104",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-2-105",
+     "type": "equation",
+     "page": 24,
+     "original": "33.0 82.9 101.5 30.8 99.0 13.0 56.0 20.5 103.9 60.6 74.6 126.0 109.6 64.3"
+    },
+    {
+     "id": "eq-D-2-106",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-2-107",
+     "type": "equation",
+     "page": 24,
+     "original": "16.4 87.3 103.6 14.7 92.9 7.3 29.8 11.4 131.7 33.3 49.3 140.0 105.3 42.2"
+    },
+    {
+     "id": "eq-D-2-108",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-2-109",
+     "type": "equation",
+     "page": 24,
+     "original": "9.9 79.5 102.0 8.0 119.4 5.0 20.0 7.2 147.0 17.3 31.9 143.9 104.0 44.9"
+    },
+    {
+     "id": "eq-D-2-110",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-2-111",
+     "type": "equation",
+     "page": 24,
+     "original": "8.3 75.9 102.8 7.2 92.7 4.8 15.4 6.4 177.9 15.7 27.8 130.0 103.5 29.2"
+    },
+    {
+     "id": "eq-D-2-112",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-2-113",
+     "type": "equation",
+     "page": 24,
+     "original": "6.7 75.3 102.4 5.4 93.7 4.3 14.4 5.6 156.5 11.7 23.1 121.0 102.9 33.9"
+    },
+    {
+     "id": "p-D-2-12",
      "type": "paragraph",
      "page": 24,
      "sentences": [
       {
-       "id": "s-D-2-116-1",
-       "original": "Yoruba 52.7 100.9 99.9 105.1 101.7 58.8 42.5 51.2 65.2 105.2 60.0 106.4 37.4 92.5 58.7 105.2 109.3 38.2 27.5 37.7 52.0 114.0 40.5 101.8 20.8 73.7 35.2 98.2 84.3 21.9 15.9 19.3 37.3 107.7 21.2 116.4 11.2 52.8 23.1 82.8 74.0 15.4 10.4 11.6 28.2 109.6 12.7 105.1 10.5 47.9 20.6 100.6 74.5 13.2 9.4 10.3 25.0 93.3 10.7 111.7 8.5 39.3 17.5 99.0 85.8 11.5 8.4 8.6 22.6 90.2 10.3 94.8",
-       "zh": "Fleurs 数值行续（Yoruba 行起，原文数字照录）：Yoruba 52.7 100.9 99.9 105.1 101.7 58.8 42.5 51.2 65.2 105.2 60.0 106.4 37.4 92.5 58.7 105.2 109.3 38.2 27.5 37.7 52.0 114.0 40.5 101.8 20.8 73.7 35.2 98.2 84.3 21.9 15.9 19.3 37.3 107.7 21.2 116.4 11.2 52.8 23.1 82.8 74.0 15.4 10.4 11.6 28.2 109.6 12.7 105.1 10.5 47.9 20.6 100.6 74.5 13.2 9.4 10.3 25.0 93.3 10.7 111.7 8.5 39.3 17.5 99.0 85.8 11.5 8.4 8.6 22.6 90.2 10.3 94.8"
+       "id": "s-D-2-12-1",
+       "original": "Swedish Swahili Telugu Tamil Tajik Model Vietnamese Ukrainian Turkish Yoruba Uzbek Urdu Thai Whisper tiny",
+       "zh": "（表列头续：Swedish / Swahili / Telugu / Tamil / Tajik / Model / Vietnamese / Ukrainian / Turkish / Yoruba / Uzbek / Urdu / Thai / Whisper tiny。）"
       }
      ]
+    },
+    {
+     "id": "eq-D-2-114",
+     "type": "equation",
+     "page": 24,
+     "original": "52.7 100.9 99.9 105.1 101.7 58.8 42.5 51.2 65.2 105.2 60.0 106.4"
+    },
+    {
+     "id": "eq-D-2-115",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-2-116",
+     "type": "equation",
+     "page": 24,
+     "original": "37.4 92.5 58.7 105.2 109.3 38.2 27.5 37.7 52.0 114.0 40.5 101.8"
+    },
+    {
+     "id": "eq-D-2-117",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-2-118",
+     "type": "equation",
+     "page": 24,
+     "original": "20.8 73.7 35.2 98.2 84.3 21.9 15.9 19.3 37.3 107.7 21.2 116.4"
+    },
+    {
+     "id": "eq-D-2-119",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-2-120",
+     "type": "equation",
+     "page": 24,
+     "original": "11.2 52.8 23.1 82.8 74.0 15.4 10.4 11.6 28.2 109.6 12.7 105.1"
+    },
+    {
+     "id": "eq-D-2-121",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-2-122",
+     "type": "equation",
+     "page": 24,
+     "original": "10.5 47.9 20.6 100.6 74.5 13.2 9.4 10.3 25.0 93.3 10.7 111.7"
+    },
+    {
+     "id": "eq-D-2-123",
+     "type": "equation",
+     "page": 24,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-2-124",
+     "type": "equation",
+     "page": 24,
+     "original": "8.5 39.3 17.5 99.0 85.8 11.5 8.4 8.6 22.6 90.2 10.3 94.8"
     },
     {
      "id": "tab-D-2-4",
@@ -6070,124 +8184,477 @@ globalThis.PAPER_2212_04356 = {
    },
    "blocks": [
     {
-     "id": "tb-D-3-1",
-     "type": "table_body",
-     "page": 25,
-     "original": "D.3.1. FLEURS\nAfrikaans\nAmharic\nArabic\nAssamese\nAzerbaijani\nBelarusian\nBulgarian\nBengali\nBosnian\nCatalan\nChinese\nCzech\nWelsh",
-     "cells": 14,
-     "zh": "D.3.1 Fleurs 翻译表的语种列名碎片：Afrikaans、Amharic、Arabic、Assamese、Azerbaijani、Belarusian、Bulgarian、Bengali、Bosnian、Catalan、Chinese、Czech、Welsh。"
-    },
-    {
-     "id": "p-D-3-15",
+     "id": "p-D-3-1",
      "type": "paragraph",
      "page": 25,
      "sentences": [
       {
-       "id": "s-D-3-15-1",
-       "original": "Danish 1.6 0.1 0.1 0.4 0.1 0.8 0.4 0.4 0.4 5.2 0.6 0.6 0.6 0.7 4.4 0.3 1.0 0.4 0.8 3.3 2.7 0.7 4.1 13.1 1.9 2.7 0.7 5.0 18.1 0.2 10.6 1.2 5.8 7.1 14.8 2.7 16.8 25.1 9.3 14.2 1.3 18.1 29.5 0.9 19.9 3.5 11.7 9.8 23.9 10.6 26.0 31.9 15.1 23.6 8.4 28.6 31.6 1.1 23.8 3.9 13.1 11.0 26.2 12.0 28.0 33.7 16.8 25.6 11.2 31.6 34.1 1.9 25.5 5.4 13.7 11.7 28.5 13.2 29.7 34.2 18.4 27.8 13.0 32.7",
-       "zh": "Fleurs 各语言逐模型 BLEU 数值行（Danish 行起，原文数字照录）：Danish 1.6 0.1 0.1 0.4 0.1 0.8 0.4 0.4 0.4 5.2 0.6 0.6 0.6 0.7 4.4 0.3 1.0 0.4 0.8 3.3 2.7 0.7 4.1 13.1 1.9 2.7 0.7 5.0 18.1 0.2 10.6 1.2 5.8 7.1 14.8 2.7 16.8 25.1 9.3 14.2 1.3 18.1 29.5 0.9 19.9 3.5 11.7 9.8 23.9 10.6 26.0 31.9 15.1 23.6 8.4 28.6 31.6 1.1 23.8 3.9 13.1 11.0 26.2 12.0 28.0 33.7 16.8 25.6 11.2 31.6 34.1 1.9 25.5 5.4 13.7 11.7 28.5 13.2 29.7 34.2 18.4 27.8 13.0 32.7"
+       "id": "s-D-3-1-1",
+       "original": "D.3.1.",
+       "zh": "3.\n（原始数据照录）\nD.3.1."
+      },
+      {
+       "id": "s-D-3-1-2",
+       "original": "FLEURS Azerbaijani Belarusian Assamese Afrikaans Amharic Arabic Model Bulgarian Bosnian Chinese Catalan Bengali Danish Czech Welsh Whisper tiny",
+       "zh": "（表 D.3 列头：FLEURS；Azerbaijani / Belarusian / Assamese / Afrikaans / Amharic / Arabic / Model / Bulgarian / Bosnian / Chinese / Catalan / Bengali / Danish / Czech / Welsh / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-3-16",
-     "type": "table_body",
+     "id": "eq-D-3-1",
+     "type": "equation",
      "page": 25,
-     "original": "Greek\nEnglish\nPersian\nFinnish\nTagalog\nGalician\nGujarati\nHausa\nHebrew",
-     "cells": 9,
-     "zh": "Fleurs 语种列名碎片：Greek、English、Persian、Finnish、Tagalog、Galician、Gujarati、Hausa、Hebrew。"
+     "original": "1.6 0.1 0.1 0.4 0.1 0.8 0.4 0.4 0.4 5.2 0.6 0.6 0.6 0.7"
     },
     {
-     "id": "p-D-3-25",
+     "id": "eq-D-3-2",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-3-3",
+     "type": "equation",
+     "page": 25,
+     "original": "4.4 0.3 1.0 0.4 0.8 3.3 2.7 0.7 4.1 13.1 1.9 2.7 0.7 5.0"
+    },
+    {
+     "id": "eq-D-3-4",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-3-5",
+     "type": "equation",
+     "page": 25,
+     "original": "18.1 0.2 10.6 1.2 5.8 7.1 14.8 2.7 16.8 25.1 9.3 14.2 1.3 18.1"
+    },
+    {
+     "id": "eq-D-3-6",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-3-7",
+     "type": "equation",
+     "page": 25,
+     "original": "29.5 0.9 19.9 3.5 11.7 9.8 23.9 10.6 26.0 31.9 15.1 23.6 8.4 28.6"
+    },
+    {
+     "id": "eq-D-3-8",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-3-9",
+     "type": "equation",
+     "page": 25,
+     "original": "31.6 1.1 23.8 3.9 13.1 11.0 26.2 12.0 28.0 33.7 16.8 25.6 11.2 31.6"
+    },
+    {
+     "id": "eq-D-3-10",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-3-11",
+     "type": "equation",
+     "page": 25,
+     "original": "34.1 1.9 25.5 5.4 13.7 11.7 28.5 13.2 29.7 34.2 18.4 27.8 13.0 32.7"
+    },
+    {
+     "id": "p-D-3-2",
      "type": "paragraph",
      "page": 25,
      "sentences": [
       {
-       "id": "s-D-3-25-1",
-       "original": "Hindi 5.2 0.1 68.6 7.7 0.1 0.1 0.2 0.8 4.7 4.0 0.7 0.1 0.2 1.0 13.7 0.7 73.3 12.4 0.3 0.2 0.5 2.1 13.1 10.5 1.5 0.0 0.6 3.4 25.9 11.6 77.3 18.2 3.6 5.8 7.3 12.0 23.5 17.5 3.9 0.3 5.4 11.1 31.4 19.9 79.2 21.4 13.5 15.0 18.5 20.5 28.6 24.7 12.8 0.5 15.9 19.4 34.3 21.7 77.8 22.8 15.9 17.6 20.6 22.7 31.6 26.0 14.8 0.5 19.6 20.7 34.6 23.7 80.2 23.3 18.7 19.6 22.1 24.4 32.2 27.9 16.2 0.4 21.8 22.0",
-       "zh": "Fleurs 数值行续（Hindi 行起，原文数字照录）：Hindi 5.2 0.1 68.6 7.7 0.1 0.1 0.2 0.8 4.7 4.0 0.7 0.1 0.2 1.0 13.7 0.7 73.3 12.4 0.3 0.2 0.5 2.1 13.1 10.5 1.5 0.0 0.6 3.4 25.9 11.6 77.3 18.2 3.6 5.8 7.3 12.0 23.5 17.5 3.9 0.3 5.4 11.1 31.4 19.9 79.2 21.4 13.5 15.0 18.5 20.5 28.6 24.7 12.8 0.5 15.9 19.4 34.3 21.7 77.8 22.8 15.9 17.6 20.6 22.7 31.6 26.0 14.8 0.5 19.6 20.7 34.6 23.7 80.2 23.3 18.7 19.6 22.1 24.4 32.2 27.9 16.2 0.4 21.8 22.0"
+       "id": "s-D-3-2-1",
+       "original": "Estonian German Spanish English Persian Greek Model Galician Gujarati Hebrew Tagalog Finnish French Hausa Hindi Whisper tiny",
+       "zh": "（表列头续：Estonian / German / Spanish / English / Persian / Greek / Model / Galician / Gujarati / Hebrew / Tagalog / Finnish / French / Hausa / Hindi / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-3-26",
-     "type": "table_body",
+     "id": "eq-D-3-12",
+     "type": "equation",
      "page": 25,
-     "original": "Croatian\nHungarian\nArmenian\nIndonesian\nIcelandic\nJapanese\nJavanese\nGeorgian\nKazakh\nKhmer\nKannada\nKorean",
-     "cells": 12,
-     "zh": "Fleurs 语种列名碎片：Croatian、Hungarian、Armenian、Indonesian、Icelandic、Japanese、Javanese、Georgian、Kazakh、Khmer、Kannada、Korean。"
+     "original": "5.2 0.1 68.6 7.7 0.1 0.1 0.2 0.8 4.7 4.0 0.7 0.1 0.2 1.0"
     },
     {
-     "id": "p-D-3-38",
+     "id": "eq-D-3-13",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-3-14",
+     "type": "equation",
+     "page": 25,
+     "original": "13.7 0.7 73.3 12.4 0.3 0.2 0.5 2.1 13.1 10.5 1.5 0.0 0.6 3.4"
+    },
+    {
+     "id": "eq-D-3-15",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-3-16",
+     "type": "equation",
+     "page": 25,
+     "original": "25.9 11.6 77.3 18.2 3.6 5.8 7.3 12.0 23.5 17.5 3.9 0.3 5.4 11.1"
+    },
+    {
+     "id": "eq-D-3-17",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-3-18",
+     "type": "equation",
+     "page": 25,
+     "original": "31.4 19.9 79.2 21.4 13.5 15.0 18.5 20.5 28.6 24.7 12.8 0.5 15.9 19.4"
+    },
+    {
+     "id": "eq-D-3-19",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-3-20",
+     "type": "equation",
+     "page": 25,
+     "original": "34.3 21.7 77.8 22.8 15.9 17.6 20.6 22.7 31.6 26.0 14.8 0.5 19.6 20.7"
+    },
+    {
+     "id": "eq-D-3-21",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-3-22",
+     "type": "equation",
+     "page": 25,
+     "original": "34.6 23.7 80.2 23.3 18.7 19.6 22.1 24.4 32.2 27.9 16.2 0.4 21.8 22.0"
+    },
+    {
+     "id": "p-D-3-3",
      "type": "paragraph",
      "page": 25,
      "sentences": [
       {
-       "id": "s-D-3-38-1",
-       "original": "Luxembourgish 0.6 0.1 0.1 0.3 0.4 5.3 0.2 0.2 0.1 0.1 0.1 0.8 0.5 0.8 3.7 0.2 0.1 2.6 0.4 11.3 1.5 0.2 0.2 0.2 0.1 0.9 3.7 1.7 14.6 4.8 0.7 16.4 1.8 17.8 9.6 1.4 0.2 0.8 0.5 2.3 12.2 5.7 23.0 15.5 10.4 24.1 6.8 21.6 14.9 5.0 1.3 4.3 3.3 8.5 19.2 13.6 25.4 18.3 13.2 27.2 6.6 23.5 17.0 5.1 2.7 6.3 5.2 9.9 20.0 15.4 27.0 21.2 16.0 29.1 9.1 23.6 18.9 6.2 2.4 5.4 6.1 11.6 21.3 16.8",
-       "zh": "Fleurs 数值行续（Luxembourgish 行起，原文数字照录）：Luxembourgish 0.6 0.1 0.1 0.3 0.4 5.3 0.2 0.2 0.1 0.1 0.1 0.8 0.5 0.8 3.7 0.2 0.1 2.6 0.4 11.3 1.5 0.2 0.2 0.2 0.1 0.9 3.7 1.7 14.6 4.8 0.7 16.4 1.8 17.8 9.6 1.4 0.2 0.8 0.5 2.3 12.2 5.7 23.0 15.5 10.4 24.1 6.8 21.6 14.9 5.0 1.3 4.3 3.3 8.5 19.2 13.6 25.4 18.3 13.2 27.2 6.6 23.5 17.0 5.1 2.7 6.3 5.2 9.9 20.0 15.4 27.0 21.2 16.0 29.1 9.1 23.6 18.9 6.2 2.4 5.4 6.1 11.6 21.3 16.8"
+       "id": "s-D-3-3-1",
+       "original": "Indonesian Hungarian Armenian Icelandic Croatian Italian Model Luxembourgish Georgian Kannada Javanese Japanese Kazakh Korean Khmer Whisper tiny",
+       "zh": "（表列头续：Indonesian / Hungarian / Armenian / Icelandic / Croatian / Italian / Model / Luxembourgish / Georgian / Kannada / Javanese / Japanese / Kazakh / Korean / Khmer / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-3-39",
-     "type": "table_body",
+     "id": "eq-D-3-23",
+     "type": "equation",
      "page": 25,
-     "original": "Lingala\nLao\nLithuanian\nLatvian\nMaori\nMacedonian\nMalayalam\nMongolian\nMarathi\nMalay\nMaltese\nMyanmar\nNorwegian",
-     "cells": 13,
-     "zh": "Fleurs 语种列名碎片：Lingala、Lao、Lithuanian、Latvian、Maori、Macedonian、Malayalam、Mongolian、Marathi、Malay、Maltese、Myanmar、Norwegian。"
+     "original": "0.6 0.1 0.1 0.3 0.4 5.3 0.2 0.2 0.1 0.1 0.1 0.8 0.5 0.8"
     },
     {
-     "id": "p-D-3-52",
+     "id": "eq-D-3-24",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-3-25",
+     "type": "equation",
+     "page": 25,
+     "original": "3.7 0.2 0.1 2.6 0.4 11.3 1.5 0.2 0.2 0.2 0.1 0.9 3.7 1.7"
+    },
+    {
+     "id": "eq-D-3-26",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-3-27",
+     "type": "equation",
+     "page": 25,
+     "original": "14.6 4.8 0.7 16.4 1.8 17.8 9.6 1.4 0.2 0.8 0.5 2.3 12.2 5.7"
+    },
+    {
+     "id": "eq-D-3-28",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-3-29",
+     "type": "equation",
+     "page": 25,
+     "original": "23.0 15.5 10.4 24.1 6.8 21.6 14.9 5.0 1.3 4.3 3.3 8.5 19.2 13.6"
+    },
+    {
+     "id": "eq-D-3-30",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-3-31",
+     "type": "equation",
+     "page": 25,
+     "original": "25.4 18.3 13.2 27.2 6.6 23.5 17.0 5.1 2.7 6.3 5.2 9.9 20.0 15.4"
+    },
+    {
+     "id": "eq-D-3-32",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-3-33",
+     "type": "equation",
+     "page": 25,
+     "original": "27.0 21.2 16.0 29.1 9.1 23.6 18.9 6.2 2.4 5.4 6.1 11.6 21.3 16.8"
+    },
+    {
+     "id": "p-D-3-4",
      "type": "paragraph",
      "page": 25,
      "sentences": [
       {
-       "id": "s-D-3-52-1",
-       "original": "Nepali 0.1 0.2 0.1 0.2 0.3 1.0 0.8 0.1 0.2 0.3 0.6 0.1 1.4 0.1 0.1 0.3 0.3 0.4 1.0 5.4 1.4 0.1 0.9 2.1 1.4 0.1 8.4 0.3 0.5 2.0 1.9 1.5 3.9 15.3 5.7 0.1 3.8 14.1 4.9 0.0 22.0 2.9 0.9 8.1 9.6 10.0 8.5 23.5 13.8 0.5 10.9 23.2 11.2 0.2 29.1 12.7 1.2 9.3 12.0 12.5 9.4 26.4 16.5 1.0 13.1 25.5 12.8 0.5 30.5 12.9 1.0 11.0 14.0 14.3 10.2 27.7 16.7 1.0 12.9 27.3 13.5 0.4 31.4 16.1",
-       "zh": "Fleurs 数值行续（Nepali 行起，原文数字照录）：Nepali 0.1 0.2 0.1 0.2 0.3 1.0 0.8 0.1 0.2 0.3 0.6 0.1 1.4 0.1 0.1 0.3 0.3 0.4 1.0 5.4 1.4 0.1 0.9 2.1 1.4 0.1 8.4 0.3 0.5 2.0 1.9 1.5 3.9 15.3 5.7 0.1 3.8 14.1 4.9 0.0 22.0 2.9 0.9 8.1 9.6 10.0 8.5 23.5 13.8 0.5 10.9 23.2 11.2 0.2 29.1 12.7 1.2 9.3 12.0 12.5 9.4 26.4 16.5 1.0 13.1 25.5 12.8 0.5 30.5 12.9 1.0 11.0 14.0 14.3 10.2 27.7 16.7 1.0 12.9 27.3 13.5 0.4 31.4 16.1"
+       "id": "s-D-3-4-1",
+       "original": "Macedonian Lithuanian Latvian Lingala Maori Lao Model Malayalam Norwegian Mongolian Myanmar Marathi Maltese Nepali Malay Whisper tiny",
+       "zh": "（表列头续：Macedonian / Lithuanian / Latvian / Lingala / Maori / Lao / Model / Malayalam / Norwegian / Mongolian / Myanmar / Marathi / Maltese / Nepali / Malay / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-3-53",
-     "type": "table_body",
+     "id": "eq-D-3-34",
+     "type": "equation",
      "page": 25,
-     "original": "Occitan\nPunjabi\nPashto\nRomanian\nRussian\nSindhi\nSlovak\nShona\nSomali",
-     "cells": 9,
-     "zh": "Fleurs 语种列名碎片：Occitan、Punjabi、Pashto、Romanian、Russian、Sindhi、Slovak、Shona、Somali。"
+     "original": "0.1 0.2 0.1 0.2 0.3 1.0 0.8 0.1 0.2 0.3 0.6 0.1 1.4 0.1"
     },
     {
-     "id": "p-D-3-62",
+     "id": "eq-D-3-35",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-3-36",
+     "type": "equation",
+     "page": 25,
+     "original": "0.1 0.3 0.3 0.4 1.0 5.4 1.4 0.1 0.9 2.1 1.4 0.1 8.4 0.3"
+    },
+    {
+     "id": "eq-D-3-37",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-3-38",
+     "type": "equation",
+     "page": 25,
+     "original": "0.5 2.0 1.9 1.5 3.9 15.3 5.7 0.1 3.8 14.1 4.9 0.0 22.0 2.9"
+    },
+    {
+     "id": "eq-D-3-39",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-3-40",
+     "type": "equation",
+     "page": 25,
+     "original": "0.9 8.1 9.6 10.0 8.5 23.5 13.8 0.5 10.9 23.2 11.2 0.2 29.1 12.7"
+    },
+    {
+     "id": "eq-D-3-41",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-3-42",
+     "type": "equation",
+     "page": 25,
+     "original": "1.2 9.3 12.0 12.5 9.4 26.4 16.5 1.0 13.1 25.5 12.8 0.5 30.5 12.9"
+    },
+    {
+     "id": "eq-D-3-43",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-3-44",
+     "type": "equation",
+     "page": 25,
+     "original": "1.0 11.0 14.0 14.3 10.2 27.7 16.7 1.0 12.9 27.3 13.5 0.4 31.4 16.1"
+    },
+    {
+     "id": "p-D-3-5",
      "type": "paragraph",
      "page": 25,
      "sentences": [
       {
-       "id": "s-D-3-62-1",
-       "original": "Serbian 2.7 1.7 0.3 0.8 0.3 12.1 1.0 3.1 0.5 0.7 0.3 0.1 0.0 0.6 7.5 4.2 1.1 5.1 0.4 22.4 4.9 12.1 0.7 4.6 1.3 0.3 0.1 5.4 15.9 9.5 4.4 14.0 0.8 31.2 18.3 19.7 2.0 14.4 6.9 0.6 0.1 19.3 21.6 15.9 12.8 19.0 2.1 35.9 26.6 24.8 5.5 22.7 14.0 1.4 0.4 27.7 22.8 16.8 14.6 21.4 3.7 37.4 29.1 26.7 5.9 25.1 16.9 1.8 0.5 30.5 24.0 20.2 15.7 22.3 3.4 38.1 31.5 27.8 5.7 26.1 17.0 1.8 0.7 32.5",
-       "zh": "Fleurs 数值行续（Serbian 行起，原文数字照录）：Serbian 2.7 1.7 0.3 0.8 0.3 12.1 1.0 3.1 0.5 0.7 0.3 0.1 0.0 0.6 7.5 4.2 1.1 5.1 0.4 22.4 4.9 12.1 0.7 4.6 1.3 0.3 0.1 5.4 15.9 9.5 4.4 14.0 0.8 31.2 18.3 19.7 2.0 14.4 6.9 0.6 0.1 19.3 21.6 15.9 12.8 19.0 2.1 35.9 26.6 24.8 5.5 22.7 14.0 1.4 0.4 27.7 22.8 16.8 14.6 21.4 3.7 37.4 29.1 26.7 5.9 25.1 16.9 1.8 0.5 30.5 24.0 20.2 15.7 22.3 3.4 38.1 31.5 27.8 5.7 26.1 17.0 1.8 0.7 32.5"
+       "id": "s-D-3-5-1",
+       "original": "Portuguese Occitan Punjabi Pashto Polish Dutch Model Romanian Slovenian Russian Serbian Somali Slovak Sindhi Shona Whisper tiny",
+       "zh": "（表列头续：Portuguese / Occitan / Punjabi / Pashto / Polish / Dutch / Model / Romanian / Slovenian / Russian / Serbian / Somali / Slovak / Sindhi / Shona / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-3-63",
-     "type": "table_body",
+     "id": "eq-D-3-45",
+     "type": "equation",
      "page": 25,
-     "original": "Swedish\nSwahili\nTamil\nTelugu\nTajik\nThai\nTurkish\nUkrainian\nUrdu\nUzbek\nVietnamese",
-     "cells": 11,
-     "zh": "Fleurs 语种列名碎片：Swedish、Swahili、Tamil、Telugu、Tajik、Thai、Turkish、Ukrainian、Urdu、Uzbek、Vietnamese。"
+     "original": "2.7 1.7 0.3 0.8 0.3 12.1 1.0 3.1 0.5 0.7 0.3 0.1 0.0 0.6"
     },
     {
-     "id": "p-D-3-74",
+     "id": "eq-D-3-46",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-3-47",
+     "type": "equation",
+     "page": 25,
+     "original": "7.5 4.2 1.1 5.1 0.4 22.4 4.9 12.1 0.7 4.6 1.3 0.3 0.1 5.4"
+    },
+    {
+     "id": "eq-D-3-48",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-3-49",
+     "type": "equation",
+     "page": 25,
+     "original": "15.9 9.5 4.4 14.0 0.8 31.2 18.3 19.7 2.0 14.4 6.9 0.6 0.1 19.3"
+    },
+    {
+     "id": "eq-D-3-50",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-3-51",
+     "type": "equation",
+     "page": 25,
+     "original": "21.6 15.9 12.8 19.0 2.1 35.9 26.6 24.8 5.5 22.7 14.0 1.4 0.4 27.7"
+    },
+    {
+     "id": "eq-D-3-52",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-3-53",
+     "type": "equation",
+     "page": 25,
+     "original": "22.8 16.8 14.6 21.4 3.7 37.4 29.1 26.7 5.9 25.1 16.9 1.8 0.5 30.5"
+    },
+    {
+     "id": "eq-D-3-54",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-3-55",
+     "type": "equation",
+     "page": 25,
+     "original": "24.0 20.2 15.7 22.3 3.4 38.1 31.5 27.8 5.7 26.1 17.0 1.8 0.7 32.5"
+    },
+    {
+     "id": "p-D-3-6",
      "type": "paragraph",
      "page": 25,
      "sentences": [
       {
-       "id": "s-D-3-74-1",
-       "original": "Yoruba 1.8 0.1 0.2 0.3 0.2 0.2 0.2 1.2 0.4 0.0 0.1 0.2 9.1 0.1 0.4 0.4 0.2 0.7 2.4 6.9 1.5 0.2 0.9 0.5 22.9 0.1 2.1 4.0 4.4 5.8 15.7 18.7 8.8 0.5 8.5 0.5 32.1 3.1 7.0 10.8 11.4 12.8 22.9 25.8 14.9 3.8 16.6 0.9 33.1 5.3 8.5 10.9 13.0 15.2 25.7 28.0 16.3 5.8 19.5 1.2 35.3 7.2 9.2 12.5 14.5 16.1 26.6 29.4 17.2 6.0 20.4 1.4",
-       "zh": "Fleurs 数值行续（Yoruba 行起，原文数字照录）：Yoruba 1.8 0.1 0.2 0.3 0.2 0.2 0.2 1.2 0.4 0.0 0.1 0.2 9.1 0.1 0.4 0.4 0.2 0.7 2.4 6.9 1.5 0.2 0.9 0.5 22.9 0.1 2.1 4.0 4.4 5.8 15.7 18.7 8.8 0.5 8.5 0.5 32.1 3.1 7.0 10.8 11.4 12.8 22.9 25.8 14.9 3.8 16.6 0.9 33.1 5.3 8.5 10.9 13.0 15.2 25.7 28.0 16.3 5.8 19.5 1.2 35.3 7.2 9.2 12.5 14.5 16.1 26.6 29.4 17.2 6.0 20.4 1.4"
+       "id": "s-D-3-6-1",
+       "original": "Swedish Swahili Telugu Tamil Tajik Model Vietnamese Ukrainian Turkish Yoruba Uzbek Urdu Thai Whisper tiny",
+       "zh": "（表列头续：Swedish / Swahili / Telugu / Tamil / Tajik / Model / Vietnamese / Ukrainian / Turkish / Yoruba / Uzbek / Urdu / Thai / Whisper tiny。）"
       }
      ]
+    },
+    {
+     "id": "eq-D-3-56",
+     "type": "equation",
+     "page": 25,
+     "original": "1.8 0.1 0.2 0.3 0.2 0.2 0.2 1.2 0.4 0.0 0.1 0.2"
+    },
+    {
+     "id": "eq-D-3-57",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-3-58",
+     "type": "equation",
+     "page": 25,
+     "original": "9.1 0.1 0.4 0.4 0.2 0.7 2.4 6.9 1.5 0.2 0.9 0.5"
+    },
+    {
+     "id": "eq-D-3-59",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-3-60",
+     "type": "equation",
+     "page": 25,
+     "original": "22.9 0.1 2.1 4.0 4.4 5.8 15.7 18.7 8.8 0.5 8.5 0.5"
+    },
+    {
+     "id": "eq-D-3-61",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-3-62",
+     "type": "equation",
+     "page": 25,
+     "original": "32.1 3.1 7.0 10.8 11.4 12.8 22.9 25.8 14.9 3.8 16.6 0.9"
+    },
+    {
+     "id": "eq-D-3-63",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-3-64",
+     "type": "equation",
+     "page": 25,
+     "original": "33.1 5.3 8.5 10.9 13.0 15.2 25.7 28.0 16.3 5.8 19.5 1.2"
+    },
+    {
+     "id": "eq-D-3-65",
+     "type": "equation",
+     "page": 25,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-3-66",
+     "type": "equation",
+     "page": 25,
+     "original": "35.3 7.2 9.2 12.5 14.5 16.1 26.6 29.4 17.2 6.0 20.4 1.4"
     },
     {
      "id": "tab-D-3-1",
@@ -6197,44 +8664,165 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 14. Fleurs 上的 BLEU 分数。"
     },
     {
-     "id": "tb-D-3-75",
-     "type": "table_body",
-     "page": 26,
-     "original": "D.3.2. COVOST 2\nArabic\nCatalan\nWelsh\nPersian\nIndonesian\nJapanese\nLatvian",
-     "cells": 8,
-     "zh": "D.3.2 CoVoST 2 翻译表的语种列名碎片：Arabic、Catalan、Welsh、Persian、Indonesian、Japanese、Latvian。"
-    },
-    {
-     "id": "p-D-3-83",
+     "id": "p-D-3-7",
      "type": "paragraph",
      "page": 26,
      "sentences": [
       {
-       "id": "s-D-3-83-1",
-       "original": "Mongolian 0.2 4.9 0.4 4.0 10.5 0.2 0.1 6.1 0.3 5.1 0.3 0.1 0.1 1.2 11.0 0.5 11.7 21.3 0.3 0.1 15.4 4.9 13.0 4.9 0.5 0.1 17.7 22.3 1.0 25.3 33.0 2.4 4.9 27.3 27.6 24.0 17.3 1.4 0.2 30.6 29.2 12.1 33.2 38.4 11.4 15.5 33.6 42.3 29.5 24.6 9.7 0.2 35.5 30.3 16.1 34.3 38.0 13.4 17.5 34.4 45.4 29.1 24.2 10.5 0.3 39.7 31.8 21.5 36.3 40.1 15.0 19.3 36.4 48.1 30.9 26.1 13.9 0.1",
-       "zh": "CoVoST 2 各语言逐模型 BLEU 数值行（Mongolian 行起，原文数字照录）：Mongolian 0.2 4.9 0.4 4.0 10.5 0.2 0.1 6.1 0.3 5.1 0.3 0.1 0.1 1.2 11.0 0.5 11.7 21.3 0.3 0.1 15.4 4.9 13.0 4.9 0.5 0.1 17.7 22.3 1.0 25.3 33.0 2.4 4.9 27.3 27.6 24.0 17.3 1.4 0.2 30.6 29.2 12.1 33.2 38.4 11.4 15.5 33.6 42.3 29.5 24.6 9.7 0.2 35.5 30.3 16.1 34.3 38.0 13.4 17.5 34.4 45.4 29.1 24.2 10.5 0.3 39.7 31.8 21.5 36.3 40.1 15.0 19.3 36.4 48.1 30.9 26.1 13.9 0.1"
+       "id": "s-D-3-7-1",
+       "original": "D.3.2.",
+       "zh": "3.\n（原始数据照录）\nD.3.2."
+      },
+      {
+       "id": "s-D-3-7-2",
+       "original": "COVOST 2 Estonian German Spanish Catalan Arabic Welsh Model Indonesian Mongolian Japanese Latvian Persian French Italian Whisper tiny",
+       "zh": "（表列头：COVOST 2；Estonian / German / Spanish / Catalan / Arabic / Welsh / Model / Indonesian / Mongolian / Japanese / Latvian / Persian / French / Italian / Whisper tiny。）"
       }
      ]
     },
     {
-     "id": "tb-D-3-84",
-     "type": "table_body",
+     "id": "eq-D-3-67",
+     "type": "equation",
      "page": 26,
-     "original": "Russian\nSwedish\nTamil\nTurkish",
-     "cells": 4,
-     "zh": "CoVoST 2 语种列名碎片：Russian、Swedish、Tamil、Turkish。"
+     "original": "0.2 4.9 0.4 4.0 10.5 0.2 0.1 6.1 0.3 5.1 0.3 0.1 0.1"
     },
     {
-     "id": "p-D-3-88",
+     "id": "eq-D-3-68",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-3-69",
+     "type": "equation",
+     "page": 26,
+     "original": "1.2 11.0 0.5 11.7 21.3 0.3 0.1 15.4 4.9 13.0 4.9 0.5 0.1"
+    },
+    {
+     "id": "eq-D-3-70",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-3-71",
+     "type": "equation",
+     "page": 26,
+     "original": "17.7 22.3 1.0 25.3 33.0 2.4 4.9 27.3 27.6 24.0 17.3 1.4 0.2"
+    },
+    {
+     "id": "eq-D-3-72",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-3-73",
+     "type": "equation",
+     "page": 26,
+     "original": "30.6 29.2 12.1 33.2 38.4 11.4 15.5 33.6 42.3 29.5 24.6 9.7 0.2"
+    },
+    {
+     "id": "eq-D-3-74",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-3-75",
+     "type": "equation",
+     "page": 26,
+     "original": "35.5 30.3 16.1 34.3 38.0 13.4 17.5 34.4 45.4 29.1 24.2 10.5 0.3"
+    },
+    {
+     "id": "eq-D-3-76",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-3-77",
+     "type": "equation",
+     "page": 26,
+     "original": "39.7 31.8 21.5 36.3 40.1 15.0 19.3 36.4 48.1 30.9 26.1 13.9 0.1"
+    },
+    {
+     "id": "p-D-3-8",
      "type": "paragraph",
      "page": 26,
      "sentences": [
       {
-       "id": "s-D-3-88-1",
-       "original": "Chinese 4.3 9.5 5.7 0.4 2.0 0.1 0.2 0.4 12.4 23.2 16.1 1.4 10.5 0.4 2.8 1.4 28.1 40.6 30.9 9.2 29.9 1.7 16.8 6.8 38.1 48.7 39.4 17.7 39.5 2.9 27.0 14.0 39.3 48.6 41.6 23.9 40.3 3.7 26.7 17.1 41.2 51.6 43.3 21.6 42.9 4.2 28.3 18.0",
-       "zh": "CoVoST 2 数值行续（Chinese 行起，原文数字照录）：Chinese 4.3 9.5 5.7 0.4 2.0 0.1 0.2 0.4 12.4 23.2 16.1 1.4 10.5 0.4 2.8 1.4 28.1 40.6 30.9 9.2 29.9 1.7 16.8 6.8 38.1 48.7 39.4 17.7 39.5 2.9 27.0 14.0 39.3 48.6 41.6 23.9 40.3 3.7 26.7 17.1 41.2 51.6 43.3 21.6 42.9 4.2 28.3 18.0"
+       "id": "s-D-3-8-1",
+       "original": "Portuguese Russian Dutch Model Slovenian Swedish Chinese Turkish Tamil Whisper tiny",
+       "zh": "（表列头续：Portuguese / Russian / Dutch / Model / Slovenian / Swedish / Chinese / Turkish / Tamil / Whisper tiny。）"
       }
      ]
+    },
+    {
+     "id": "eq-D-3-78",
+     "type": "equation",
+     "page": 26,
+     "original": "4.3 9.5 5.7 0.4 2.0 0.1 0.2 0.4"
+    },
+    {
+     "id": "eq-D-3-79",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-3-80",
+     "type": "equation",
+     "page": 26,
+     "original": "12.4 23.2 16.1 1.4 10.5 0.4 2.8 1.4"
+    },
+    {
+     "id": "eq-D-3-81",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-3-82",
+     "type": "equation",
+     "page": 26,
+     "original": "28.1 40.6 30.9 9.2 29.9 1.7 16.8 6.8"
+    },
+    {
+     "id": "eq-D-3-83",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-3-84",
+     "type": "equation",
+     "page": 26,
+     "original": "38.1 48.7 39.4 17.7 39.5 2.9 27.0 14.0"
+    },
+    {
+     "id": "eq-D-3-85",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-3-86",
+     "type": "equation",
+     "page": 26,
+     "original": "39.3 48.6 41.6 23.9 40.3 3.7 26.7 17.1"
+    },
+    {
+     "id": "eq-D-3-87",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-3-88",
+     "type": "equation",
+     "page": 26,
+     "original": "41.2 51.6 43.3 21.6 42.9 4.2 28.3 18.0"
     },
     {
      "id": "tab-D-3-2",
@@ -6256,36 +8844,238 @@ globalThis.PAPER_2212_04356 = {
    },
    "blocks": [
     {
-     "id": "tb-D-4-1",
-     "type": "table_body",
-     "page": 26,
-     "original": "TED-LIUM3\nMeanwhile\nKincaid46\nRev16\nEarnings-21\nEarnings-22",
-     "cells": 6,
-     "zh": "长音频表的列名：TED-LIUM3、Meanwhile、Kincaid46、Rev16、Earnings-21、Earnings-22。"
-    },
-    {
-     "id": "p-D-4-7",
+     "id": "p-D-4-1",
      "type": "paragraph",
      "page": 26,
      "sentences": [
       {
-       "id": "s-D-4-7-1",
-       "original": "Whisper tiny.en 5.5 12.8 13.8 15.1 17.0 22.0 30.3 6.8 15.5 16.7 17.0 18.7 24.4 33.1 Whisper base.en 4.6 9.4 11.2 13.2 12.5 16.6 25.2 4.8 12.2 12.2 14.5 13.5 18.4 26.9 Whisper small.en 4.6 6.0 9.4 12.0 10.8 14.0 21.9 4.2 6.9 10.1 12.1 11.1 14.3 22.3 Whisper medium.en 3.6 5.2 8.9 11.9 10.2 13.3 20.6 3.8 5.4 8.6 11.4 10.3 13.2 20.3 3.8 5.3 8.8 11.0 10.3 13.4 20.4 3.5 5.1 8.8 11.3 9.7 12.6 19.6",
-       "zh": "Whisper 各模型长音频 WER 数值行（tiny.en / base.en / small.en / medium.en，原文数字照录）：Whisper tiny.en 5.5 12.8 13.8 15.1 17.0 22.0 30.3 6.8 15.5 16.7 17.0 18.7 24.4 33.1 Whisper base.en 4.6 9.4 11.2 13.2 12.5 16.6 25.2 4.8 12.2 12.2 14.5 13.5 18.4 26.9 Whisper small.en 4.6 6.0 9.4 12.0 10.8 14.0 21.9 4.2 6.9 10.1 12.1 11.1 14.3 22.3 Whisper medium.en 3.6 5.2 8.9 11.9 10.2 13.3 20.6 3.8 5.4 8.6 11.4 10.3 13.2 20.3 3.8 5.3 8.8 11.0 10.3 13.4 20.4 3.5 5.1 8.8 11.3 9.7 12.6 19.6"
+       "id": "s-D-4-1-1",
+       "original": "TED-LIUM3 Meanwhile Model Earnings-21 Earnings-22 Kincaid46 CORAAL Rev16 Whisper tiny.en",
+       "zh": "（表 D.4 列头：TED-LIUM3 / Meanwhile / Model / Earnings-21 / Earnings-22 / Kincaid46 / CORAAL / Rev16 / Whisper tiny.en。）"
       }
      ]
     },
     {
-     "id": "p-D-4-8",
-     "type": "paragraph",
+     "id": "eq-D-4-1",
+     "type": "equation",
      "page": 26,
-     "sentences": [
-      {
-       "id": "s-D-4-8-1",
-       "original": "wav2vec2-base-100h 17.6 27.7 39.3 35.2 45.7 57.1 55.4 wav2vec2-base-960h 12.8 19.7 32.9 29.8 37.3 46.8 49.1 wav2vec2-large-960h-lv60-self 7.2 11.4 21.1 21.3 21.7 28.0 36.7 wav2vec2-large-960h 10.1 16.4 27.4 26.4 30.4 40.1 43.5 wav2vec2-large-robust-ft-libri-960h 8.8 15.2 22.9 23.4 23.0 31.0 36.8 hubert-large-ls960-ft 8.1 12.9 22.4 23.4 23.0 30.6 37.9 hubert-xlarge-ls960-ft 8.1 12.5 22.9 23.2 23.1 31.3 38.1 stt en conformer ctc large 4.0 9.8 13.1 14.5 12.6 17.6 25.1 stt en conformer transducer xlarge 5.3 10.6 17.1 19.8 16.2 19.7 38.9",
-       "zh": "对比模型长音频 WER 数值行（原文数字照录）：wav2vec2-base-100h 17.6 27.7 39.3 35.2 45.7 57.1 55.4 wav2vec2-base-960h 12.8 19.7 32.9 29.8 37.3 46.8 49.1 wav2vec2-large-960h-lv60-self 7.2 11.4 21.1 21.3 21.7 28.0 36.7 wav2vec2-large-960h 10.1 16.4 27.4 26.4 30.4 40.1 43.5 wav2vec2-large-robust-ft-libri-960h 8.8 15.2 22.9 23.4 23.0 31.0 36.8 hubert-large-ls960-ft 8.1 12.9 22.4 23.4 23.0 30.6 37.9 hubert-xlarge-ls960-ft 8.1 12.5 22.9 23.2 23.1 31.3 38.1 stt en conformer ctc large 4.0 9.8 13.1 14.5 12.6 17.6 25.1 stt en conformer transducer xlarge 5.3 10.6 17.1 19.8 16.2 19.7 38.9"
-      }
-     ]
+     "original": "5.5 12.8 13.8 15.1 17.0 22.0 30.3"
+    },
+    {
+     "id": "eq-D-4-2",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper tiny"
+    },
+    {
+     "id": "eq-D-4-3",
+     "type": "equation",
+     "page": 26,
+     "original": "6.8 15.5 16.7 17.0 18.7 24.4 33.1"
+    },
+    {
+     "id": "eq-D-4-4",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper base.en"
+    },
+    {
+     "id": "eq-D-4-5",
+     "type": "equation",
+     "page": 26,
+     "original": "4.6 9.4 11.2 13.2 12.5 16.6 25.2"
+    },
+    {
+     "id": "eq-D-4-6",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper base"
+    },
+    {
+     "id": "eq-D-4-7",
+     "type": "equation",
+     "page": 26,
+     "original": "4.8 12.2 12.2 14.5 13.5 18.4 26.9"
+    },
+    {
+     "id": "eq-D-4-8",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper small.en"
+    },
+    {
+     "id": "eq-D-4-9",
+     "type": "equation",
+     "page": 26,
+     "original": "4.6 6.0 9.4 12.0 10.8 14.0 21.9"
+    },
+    {
+     "id": "eq-D-4-10",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper small"
+    },
+    {
+     "id": "eq-D-4-11",
+     "type": "equation",
+     "page": 26,
+     "original": "4.2 6.9 10.1 12.1 11.1 14.3 22.3"
+    },
+    {
+     "id": "eq-D-4-12",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper medium.en"
+    },
+    {
+     "id": "eq-D-4-13",
+     "type": "equation",
+     "page": 26,
+     "original": "3.6 5.2 8.9 11.9 10.2 13.3 20.6"
+    },
+    {
+     "id": "eq-D-4-14",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper medium"
+    },
+    {
+     "id": "eq-D-4-15",
+     "type": "equation",
+     "page": 26,
+     "original": "3.8 5.4 8.6 11.4 10.3 13.2 20.3"
+    },
+    {
+     "id": "eq-D-4-16",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper large"
+    },
+    {
+     "id": "eq-D-4-17",
+     "type": "equation",
+     "page": 26,
+     "original": "3.8 5.3 8.8 11.0 10.3 13.4 20.4"
+    },
+    {
+     "id": "eq-D-4-18",
+     "type": "equation",
+     "page": 26,
+     "original": "Whisper large-v2"
+    },
+    {
+     "id": "eq-D-4-19",
+     "type": "equation",
+     "page": 26,
+     "original": "3.5 5.1 8.8 11.3 9.7 12.6 19.6"
+    },
+    {
+     "id": "eq-D-4-20",
+     "type": "equation",
+     "page": 26,
+     "original": "wav2vec2-base-100h"
+    },
+    {
+     "id": "eq-D-4-21",
+     "type": "equation",
+     "page": 26,
+     "original": "17.6 27.7 39.3 35.2 45.7 57.1 55.4"
+    },
+    {
+     "id": "eq-D-4-22",
+     "type": "equation",
+     "page": 26,
+     "original": "wav2vec2-base-960h"
+    },
+    {
+     "id": "eq-D-4-23",
+     "type": "equation",
+     "page": 26,
+     "original": "12.8 19.7 32.9 29.8 37.3 46.8 49.1"
+    },
+    {
+     "id": "eq-D-4-24",
+     "type": "equation",
+     "page": 26,
+     "original": "wav2vec2-large-960h-lv60-self"
+    },
+    {
+     "id": "eq-D-4-25",
+     "type": "equation",
+     "page": 26,
+     "original": "7.2 11.4 21.1 21.3 21.7 28.0 36.7"
+    },
+    {
+     "id": "eq-D-4-26",
+     "type": "equation",
+     "page": 26,
+     "original": "wav2vec2-large-960h"
+    },
+    {
+     "id": "eq-D-4-27",
+     "type": "equation",
+     "page": 26,
+     "original": "10.1 16.4 27.4 26.4 30.4 40.1 43.5"
+    },
+    {
+     "id": "eq-D-4-28",
+     "type": "equation",
+     "page": 26,
+     "original": "wav2vec2-large-robust-ft-libri-960h"
+    },
+    {
+     "id": "eq-D-4-29",
+     "type": "equation",
+     "page": 26,
+     "original": "8.8 15.2 22.9 23.4 23.0 31.0 36.8"
+    },
+    {
+     "id": "eq-D-4-30",
+     "type": "equation",
+     "page": 26,
+     "original": "hubert-large-ls960-ft"
+    },
+    {
+     "id": "eq-D-4-31",
+     "type": "equation",
+     "page": 26,
+     "original": "8.1 12.9 22.4 23.4 23.0 30.6 37.9"
+    },
+    {
+     "id": "eq-D-4-32",
+     "type": "equation",
+     "page": 26,
+     "original": "hubert-xlarge-ls960-ft"
+    },
+    {
+     "id": "eq-D-4-33",
+     "type": "equation",
+     "page": 26,
+     "original": "8.1 12.5 22.9 23.2 23.1 31.3 38.1"
+    },
+    {
+     "id": "eq-D-4-34",
+     "type": "equation",
+     "page": 26,
+     "original": "stt en conformer ctc large"
+    },
+    {
+     "id": "eq-D-4-35",
+     "type": "equation",
+     "page": 26,
+     "original": "4.0 9.8 13.1 14.5 12.6 17.6 25.1"
+    },
+    {
+     "id": "eq-D-4-36",
+     "type": "equation",
+     "page": 26,
+     "original": "stt en conformer transducer xlarge"
+    },
+    {
+     "id": "eq-D-4-37",
+     "type": "equation",
+     "page": 26,
+     "original": "5.3 10.6 17.1 19.8 16.2 19.7 38.9"
     },
     {
      "id": "tab-D-4-1",
@@ -6307,22 +9097,2072 @@ globalThis.PAPER_2212_04356 = {
    },
    "blocks": [
     {
-     "id": "tb-E-1",
-     "type": "table_body",
-     "page": 27,
-     "original": "0.1 1 10 100\nHours of audio\nMultilingual Speech Recognition\nLao 0.1\nSundanese 0.1\nBurmese 0.1\nMalagasy 0.2\nTajik 0.3\nGujarati 0.3\nUzbek 0.3\nYiddish 0.4\nMalayalam 0.5\nGeorgian 0.6\nNepali 0.6\nMarathi 0.6\nPunjabi 0.8\nHaitian Creole 1.0\nMaltese 1.1\nBengali 1.3\nKhmer 1.3\nBelarusian 2.4\nKannada 3.8\nAfrikaans 4.1\nTelugu 4.3\nSwahili 5.4\nSinhala 5.4\nAlbanian 5.7\nGalician 8.9\nBosnian 11\nHindi 12\nKazakh 12\nArmenian 13\nMacedonian 16\nIcelandic 16\nBasque 21\nPersian 24\nSerbian 28 41 41\nAzerbaijani 47\nLatvian 65\nLithuanian 67\nWelsh 73\nTagalog 75\nBulgarian 86\nSlovak 90\nCroatian 91\nUrdu 104\nTamil 136\nCzech 192\nThai 226\nNorwegian 266\nRomanian 356\nHungarian 379\nMalay 382\nDanish 473\nGreek 529\nHebrew 688\nVietnamese 691\nUkrainian 697\nArabic 739\nIndonesian 1014\nFinnish 1066\nCatalan 1883 2077\nSwedish 2119 2585 4278\nTurkish 4333\nJapanese 7054\nKorean 7993 8573 9752\nRussian 9761 11100 13344\nChinese 23446\n65% English Speech Recognition\n(438,218 hours)\n18% Translation (125,739 hours)\n17% Multilingual Speech Recognition\n(117,113 hours)\nDataset Components\n1 10 100 Hours of audio\nTranslation",
-     "cells": 76,
-     "zh": "训练数据集统计图（图 11）内容碎片：多语言语音识别与翻译任务各语言的音频小时数分布（对数轴 0.1–100）；数据集构成：65% 英语语音识别（438,218 小时）、18% 翻译（125,739 小时）、17% 多语言语音识别（117,113 小时）。"
-    },
-    {
-     "id": "p-E-77",
+     "id": "p-E-1",
      "type": "paragraph",
      "page": 27,
      "sentences": [
       {
-       "id": "s-E-77-1",
-       "original": "Turkmen 1 Bashkir 1 Malagasy 2 Uzbek 4 Sundanese 7 Hausa 8 Luxembourgish 10 Tatar 14 Tajik 15 Lingala 20 Lao 20 Somali 21 Macedonian 30 Kazakh 31 Amharic 32 Georgian 40 Maltese 41 Sindhi 46 Faroese 46 Occitan 49 Burmese 59 Pashto 63 Latvian 68 Albanian 72 Haitian Creole 74 79 Mongolian 79 Icelandic 84 Yiddish 85 Azerbaijani 86 Kannada 90 Lithuanian 99 Armenian 116 Punjabi 117 Belarusian 133 Nepali 133 Assamese 136 Serbian 136 Slovak 144 Basque 168 Tibetan 186 Sanskrit 195 Bulgarian 202 Gujarati 208 Sinhala 211 Bosnian 219 Catalan 236 Croatian 239 Breton 269 Shona 279 Swahili 282 Marathi 288 Norwegian 322 Afrikaans 330 Hawaiian 338 Galician 368 Danish 386 Persian 392 395 Czech 401 Hebrew 418 Yoruba 432 Ukrainian 509 Hungarian 554 Romanian 555 Javanese 622 Khmer 672 Finnish 750 Malayalam 892 Tagalog 894 Greek 968 Telugu 987 Swedish 1055 Indonesian 1174 Maori 1381 Tamil 1484 Latin 1614 Thai 1635 Malay 1691 Vietnamese 1719 1767 Norwegian Nynorsk 1889 Bengali 1988 Urdu 1990 2145 2200 Turkish 2241 Arabic 2286 3620 4309 4481 Hindi 5438 6693 Russian 7687 Welsh 8263 Japanese 8860 Chinese 11731 Korean 19938",
-       "zh": "各语言翻译数据小时数数值行（原文数字照录）：Turkmen 1 Bashkir 1 Malagasy 2 Uzbek 4 Sundanese 7 Hausa 8 Luxembourgish 10 Tatar 14 Tajik 15 Lingala 20 Lao 20 Somali 21 Macedonian 30 Kazakh 31 Amharic 32 Georgian 40 Maltese 41 Sindhi 46 Faroese 46 Occitan 49 Burmese 59 Pashto 63 Latvian 68 Albanian 72 Haitian Creole 74 79 Mongolian 79 Icelandic 84 Yiddish 85 Azerbaijani 86 Kannada 90 Lithuanian 99 Armenian 116 Punjabi 117 Belarusian 133 Nepali 133 Assamese 136 Serbian 136 Slovak 144 Basque 168 Tibetan 186 Sanskrit 195 Bulgarian 202 Gujarati 208 Sinhala 211 Bosnian 219 Catalan 236 Croatian 239 Breton 269 Shona 279 Swahili 282 Marathi 288 Norwegian 322 Afrikaans 330 Hawaiian 338 Galician 368 Danish 386 Persian 392 395 Czech 401 Hebrew 418 Yoruba 432 Ukrainian 509 Hungarian 554 Romanian 555 Javanese 622 Khmer 672 Finnish 750 Malayalam 892 Tagalog 894 Greek 968 Telugu 987 Swedish 1055 Indonesian 1174 Maori 1381 Tamil 1484 Latin 1614 Thai 1635 Malay 1691 Vietnamese 1719 1767 Norwegian Nynorsk 1889 Bengali 1988 Urdu 1990 2145 2200 Turkish 2241 Arabic 2286 3620 4309 4481 Hindi 5438 6693 Russian 7687 Welsh 8263 Japanese 8860 Chinese 11731 Korean 19938"
+       "id": "s-E-1-1",
+       "original": "Dataset Components Multilingual Speech Recognition Chinese",
+       "zh": "（表 E 列头：Dataset Components；Multilingual Speech Recognition / Chinese（后续照原文）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-E-1",
+     "type": "equation",
+     "page": 27,
+     "original": "23446"
+    },
+    {
+     "id": "eq-E-2",
+     "type": "equation",
+     "page": 27,
+     "original": "German"
+    },
+    {
+     "id": "eq-E-3",
+     "type": "equation",
+     "page": 27,
+     "original": "13344"
+    },
+    {
+     "id": "eq-E-4",
+     "type": "equation",
+     "page": 27,
+     "original": "Spanish"
+    },
+    {
+     "id": "eq-E-5",
+     "type": "equation",
+     "page": 27,
+     "original": "11100"
+    },
+    {
+     "id": "eq-E-6",
+     "type": "equation",
+     "page": 27,
+     "original": "Russian"
+    },
+    {
+     "id": "eq-E-7",
+     "type": "equation",
+     "page": 27,
+     "original": "9761"
+    },
+    {
+     "id": "eq-E-8",
+     "type": "equation",
+     "page": 27,
+     "original": "Translation 17% Multilingual Speech Recognition French"
+    },
+    {
+     "id": "eq-E-9",
+     "type": "equation",
+     "page": 27,
+     "original": "9752"
+    },
+    {
+     "id": "eq-E-10",
+     "type": "equation",
+     "page": 27,
+     "original": "Portuguese"
+    },
+    {
+     "id": "eq-E-11",
+     "type": "equation",
+     "page": 27,
+     "original": "8573"
+    },
+    {
+     "id": "eq-E-12",
+     "type": "equation",
+     "page": 27,
+     "original": "Korean"
+    },
+    {
+     "id": "eq-E-13",
+     "type": "equation",
+     "page": 27,
+     "original": "7993"
+    },
+    {
+     "id": "eq-E-14",
+     "type": "equation",
+     "page": 27,
+     "original": "(117,113 hours) Japanese"
+    },
+    {
+     "id": "eq-E-15",
+     "type": "equation",
+     "page": 27,
+     "original": "7054"
+    },
+    {
+     "id": "eq-E-16",
+     "type": "equation",
+     "page": 27,
+     "original": "Turkish"
+    },
+    {
+     "id": "eq-E-17",
+     "type": "equation",
+     "page": 27,
+     "original": "4333"
+    },
+    {
+     "id": "eq-E-18",
+     "type": "equation",
+     "page": 27,
+     "original": "Polish"
+    },
+    {
+     "id": "eq-E-19",
+     "type": "equation",
+     "page": 27,
+     "original": "4278"
+    },
+    {
+     "id": "eq-E-20",
+     "type": "equation",
+     "page": 27,
+     "original": "Italian"
+    },
+    {
+     "id": "eq-E-21",
+     "type": "equation",
+     "page": 27,
+     "original": "2585"
+    },
+    {
+     "id": "eq-E-22",
+     "type": "equation",
+     "page": 27,
+     "original": "Swedish"
+    },
+    {
+     "id": "eq-E-23",
+     "type": "equation",
+     "page": 27,
+     "original": "2119"
+    },
+    {
+     "id": "eq-E-24",
+     "type": "equation",
+     "page": 27,
+     "original": "Dutch"
+    },
+    {
+     "id": "eq-E-25",
+     "type": "equation",
+     "page": 27,
+     "original": "2077"
+    },
+    {
+     "id": "eq-E-26",
+     "type": "equation",
+     "page": 27,
+     "original": "Catalan"
+    },
+    {
+     "id": "eq-E-27",
+     "type": "equation",
+     "page": 27,
+     "original": "1883"
+    },
+    {
+     "id": "eq-E-28",
+     "type": "equation",
+     "page": 27,
+     "original": "Finnish"
+    },
+    {
+     "id": "eq-E-29",
+     "type": "equation",
+     "page": 27,
+     "original": "1066"
+    },
+    {
+     "id": "eq-E-30",
+     "type": "equation",
+     "page": 27,
+     "original": "Indonesian"
+    },
+    {
+     "id": "eq-E-31",
+     "type": "equation",
+     "page": 27,
+     "original": "1014"
+    },
+    {
+     "id": "eq-E-32",
+     "type": "equation",
+     "page": 27,
+     "original": "Arabic"
+    },
+    {
+     "id": "eq-E-33",
+     "type": "equation",
+     "page": 27,
+     "original": "739"
+    },
+    {
+     "id": "eq-E-34",
+     "type": "equation",
+     "page": 27,
+     "original": "Ukrainian"
+    },
+    {
+     "id": "eq-E-35",
+     "type": "equation",
+     "page": 27,
+     "original": "697"
+    },
+    {
+     "id": "eq-E-36",
+     "type": "equation",
+     "page": 27,
+     "original": "Vietnamese"
+    },
+    {
+     "id": "eq-E-37",
+     "type": "equation",
+     "page": 27,
+     "original": "691"
+    },
+    {
+     "id": "eq-E-38",
+     "type": "equation",
+     "page": 27,
+     "original": "18% Translation (125,739 hours) Hebrew"
+    },
+    {
+     "id": "eq-E-39",
+     "type": "equation",
+     "page": 27,
+     "original": "688"
+    },
+    {
+     "id": "eq-E-40",
+     "type": "equation",
+     "page": 27,
+     "original": "Greek"
+    },
+    {
+     "id": "eq-E-41",
+     "type": "equation",
+     "page": 27,
+     "original": "529"
+    },
+    {
+     "id": "eq-E-42",
+     "type": "equation",
+     "page": 27,
+     "original": "Danish"
+    },
+    {
+     "id": "eq-E-43",
+     "type": "equation",
+     "page": 27,
+     "original": "473"
+    },
+    {
+     "id": "eq-E-44",
+     "type": "equation",
+     "page": 27,
+     "original": "Malay"
+    },
+    {
+     "id": "eq-E-45",
+     "type": "equation",
+     "page": 27,
+     "original": "382"
+    },
+    {
+     "id": "eq-E-46",
+     "type": "equation",
+     "page": 27,
+     "original": "Hungarian"
+    },
+    {
+     "id": "eq-E-47",
+     "type": "equation",
+     "page": 27,
+     "original": "379"
+    },
+    {
+     "id": "eq-E-48",
+     "type": "equation",
+     "page": 27,
+     "original": "Romanian"
+    },
+    {
+     "id": "eq-E-49",
+     "type": "equation",
+     "page": 27,
+     "original": "356"
+    },
+    {
+     "id": "eq-E-50",
+     "type": "equation",
+     "page": 27,
+     "original": "Norwegian"
+    },
+    {
+     "id": "eq-E-51",
+     "type": "equation",
+     "page": 27,
+     "original": "266"
+    },
+    {
+     "id": "eq-E-52",
+     "type": "equation",
+     "page": 27,
+     "original": "Thai"
+    },
+    {
+     "id": "eq-E-53",
+     "type": "equation",
+     "page": 27,
+     "original": "226"
+    },
+    {
+     "id": "eq-E-54",
+     "type": "equation",
+     "page": 27,
+     "original": "Czech"
+    },
+    {
+     "id": "eq-E-55",
+     "type": "equation",
+     "page": 27,
+     "original": "192"
+    },
+    {
+     "id": "eq-E-56",
+     "type": "equation",
+     "page": 27,
+     "original": "Tamil"
+    },
+    {
+     "id": "eq-E-57",
+     "type": "equation",
+     "page": 27,
+     "original": "136"
+    },
+    {
+     "id": "eq-E-58",
+     "type": "equation",
+     "page": 27,
+     "original": "Urdu"
+    },
+    {
+     "id": "eq-E-59",
+     "type": "equation",
+     "page": 27,
+     "original": "104"
+    },
+    {
+     "id": "eq-E-60",
+     "type": "equation",
+     "page": 27,
+     "original": "Croatian"
+    },
+    {
+     "id": "eq-E-61",
+     "type": "equation",
+     "page": 27,
+     "original": "91"
+    },
+    {
+     "id": "eq-E-62",
+     "type": "equation",
+     "page": 27,
+     "original": "Slovak"
+    },
+    {
+     "id": "eq-E-63",
+     "type": "equation",
+     "page": 27,
+     "original": "90"
+    },
+    {
+     "id": "eq-E-64",
+     "type": "equation",
+     "page": 27,
+     "original": "Bulgarian"
+    },
+    {
+     "id": "eq-E-65",
+     "type": "equation",
+     "page": 27,
+     "original": "86"
+    },
+    {
+     "id": "eq-E-66",
+     "type": "equation",
+     "page": 27,
+     "original": "Tagalog"
+    },
+    {
+     "id": "eq-E-67",
+     "type": "equation",
+     "page": 27,
+     "original": "75"
+    },
+    {
+     "id": "eq-E-68",
+     "type": "equation",
+     "page": 27,
+     "original": "Welsh"
+    },
+    {
+     "id": "eq-E-69",
+     "type": "equation",
+     "page": 27,
+     "original": "73"
+    },
+    {
+     "id": "eq-E-70",
+     "type": "equation",
+     "page": 27,
+     "original": "Lithuanian"
+    },
+    {
+     "id": "eq-E-71",
+     "type": "equation",
+     "page": 27,
+     "original": "67"
+    },
+    {
+     "id": "eq-E-72",
+     "type": "equation",
+     "page": 27,
+     "original": "Latvian"
+    },
+    {
+     "id": "eq-E-73",
+     "type": "equation",
+     "page": 27,
+     "original": "65"
+    },
+    {
+     "id": "eq-E-74",
+     "type": "equation",
+     "page": 27,
+     "original": "Azerbaijani"
+    },
+    {
+     "id": "eq-E-75",
+     "type": "equation",
+     "page": 27,
+     "original": "47"
+    },
+    {
+     "id": "eq-E-76",
+     "type": "equation",
+     "page": 27,
+     "original": "Estonian"
+    },
+    {
+     "id": "eq-E-77",
+     "type": "equation",
+     "page": 27,
+     "original": "41"
+    },
+    {
+     "id": "eq-E-78",
+     "type": "equation",
+     "page": 27,
+     "original": "Slovenian"
+    },
+    {
+     "id": "eq-E-79",
+     "type": "equation",
+     "page": 27,
+     "original": "41"
+    },
+    {
+     "id": "eq-E-80",
+     "type": "equation",
+     "page": 27,
+     "original": "Serbian"
+    },
+    {
+     "id": "eq-E-81",
+     "type": "equation",
+     "page": 27,
+     "original": "28"
+    },
+    {
+     "id": "eq-E-82",
+     "type": "equation",
+     "page": 27,
+     "original": "Persian"
+    },
+    {
+     "id": "eq-E-83",
+     "type": "equation",
+     "page": 27,
+     "original": "24"
+    },
+    {
+     "id": "eq-E-84",
+     "type": "equation",
+     "page": 27,
+     "original": "Basque"
+    },
+    {
+     "id": "eq-E-85",
+     "type": "equation",
+     "page": 27,
+     "original": "21"
+    },
+    {
+     "id": "eq-E-86",
+     "type": "equation",
+     "page": 27,
+     "original": "Icelandic"
+    },
+    {
+     "id": "eq-E-87",
+     "type": "equation",
+     "page": 27,
+     "original": "16"
+    },
+    {
+     "id": "eq-E-88",
+     "type": "equation",
+     "page": 27,
+     "original": "Macedonian"
+    },
+    {
+     "id": "eq-E-89",
+     "type": "equation",
+     "page": 27,
+     "original": "16"
+    },
+    {
+     "id": "eq-E-90",
+     "type": "equation",
+     "page": 27,
+     "original": "Armenian"
+    },
+    {
+     "id": "eq-E-91",
+     "type": "equation",
+     "page": 27,
+     "original": "13"
+    },
+    {
+     "id": "eq-E-92",
+     "type": "equation",
+     "page": 27,
+     "original": "Kazakh"
+    },
+    {
+     "id": "eq-E-93",
+     "type": "equation",
+     "page": 27,
+     "original": "12"
+    },
+    {
+     "id": "eq-E-94",
+     "type": "equation",
+     "page": 27,
+     "original": "Hindi"
+    },
+    {
+     "id": "eq-E-95",
+     "type": "equation",
+     "page": 27,
+     "original": "12"
+    },
+    {
+     "id": "eq-E-96",
+     "type": "equation",
+     "page": 27,
+     "original": "65% English Speech Recognition Bosnian"
+    },
+    {
+     "id": "eq-E-97",
+     "type": "equation",
+     "page": 27,
+     "original": "11"
+    },
+    {
+     "id": "eq-E-98",
+     "type": "equation",
+     "page": 27,
+     "original": "Galician"
+    },
+    {
+     "id": "eq-E-99",
+     "type": "equation",
+     "page": 27,
+     "original": "8.9"
+    },
+    {
+     "id": "eq-E-100",
+     "type": "equation",
+     "page": 27,
+     "original": "Albanian"
+    },
+    {
+     "id": "eq-E-101",
+     "type": "equation",
+     "page": 27,
+     "original": "5.7"
+    },
+    {
+     "id": "eq-E-102",
+     "type": "equation",
+     "page": 27,
+     "original": "(438,218 hours) Sinhala"
+    },
+    {
+     "id": "eq-E-103",
+     "type": "equation",
+     "page": 27,
+     "original": "5.4"
+    },
+    {
+     "id": "eq-E-104",
+     "type": "equation",
+     "page": 27,
+     "original": "Swahili"
+    },
+    {
+     "id": "eq-E-105",
+     "type": "equation",
+     "page": 27,
+     "original": "5.4"
+    },
+    {
+     "id": "eq-E-106",
+     "type": "equation",
+     "page": 27,
+     "original": "Telugu"
+    },
+    {
+     "id": "eq-E-107",
+     "type": "equation",
+     "page": 27,
+     "original": "4.3"
+    },
+    {
+     "id": "eq-E-108",
+     "type": "equation",
+     "page": 27,
+     "original": "Afrikaans"
+    },
+    {
+     "id": "eq-E-109",
+     "type": "equation",
+     "page": 27,
+     "original": "4.1"
+    },
+    {
+     "id": "eq-E-110",
+     "type": "equation",
+     "page": 27,
+     "original": "Kannada"
+    },
+    {
+     "id": "eq-E-111",
+     "type": "equation",
+     "page": 27,
+     "original": "3.8"
+    },
+    {
+     "id": "eq-E-112",
+     "type": "equation",
+     "page": 27,
+     "original": "Belarusian"
+    },
+    {
+     "id": "eq-E-113",
+     "type": "equation",
+     "page": 27,
+     "original": "2.4"
+    },
+    {
+     "id": "eq-E-114",
+     "type": "equation",
+     "page": 27,
+     "original": "Khmer"
+    },
+    {
+     "id": "eq-E-115",
+     "type": "equation",
+     "page": 27,
+     "original": "1.3"
+    },
+    {
+     "id": "eq-E-116",
+     "type": "equation",
+     "page": 27,
+     "original": "Bengali"
+    },
+    {
+     "id": "eq-E-117",
+     "type": "equation",
+     "page": 27,
+     "original": "1.3"
+    },
+    {
+     "id": "eq-E-118",
+     "type": "equation",
+     "page": 27,
+     "original": "Maltese"
+    },
+    {
+     "id": "eq-E-119",
+     "type": "equation",
+     "page": 27,
+     "original": "1.1"
+    },
+    {
+     "id": "eq-E-120",
+     "type": "equation",
+     "page": 27,
+     "original": "Haitian Creole"
+    },
+    {
+     "id": "eq-E-121",
+     "type": "equation",
+     "page": 27,
+     "original": "1.0"
+    },
+    {
+     "id": "eq-E-122",
+     "type": "equation",
+     "page": 27,
+     "original": "Punjabi"
+    },
+    {
+     "id": "eq-E-123",
+     "type": "equation",
+     "page": 27,
+     "original": "0.8"
+    },
+    {
+     "id": "eq-E-124",
+     "type": "equation",
+     "page": 27,
+     "original": "Marathi"
+    },
+    {
+     "id": "eq-E-125",
+     "type": "equation",
+     "page": 27,
+     "original": "0.6"
+    },
+    {
+     "id": "eq-E-126",
+     "type": "equation",
+     "page": 27,
+     "original": "Nepali"
+    },
+    {
+     "id": "eq-E-127",
+     "type": "equation",
+     "page": 27,
+     "original": "0.6"
+    },
+    {
+     "id": "eq-E-128",
+     "type": "equation",
+     "page": 27,
+     "original": "Georgian"
+    },
+    {
+     "id": "eq-E-129",
+     "type": "equation",
+     "page": 27,
+     "original": "0.6"
+    },
+    {
+     "id": "eq-E-130",
+     "type": "equation",
+     "page": 27,
+     "original": "Malayalam"
+    },
+    {
+     "id": "eq-E-131",
+     "type": "equation",
+     "page": 27,
+     "original": "0.5"
+    },
+    {
+     "id": "eq-E-132",
+     "type": "equation",
+     "page": 27,
+     "original": "Yiddish"
+    },
+    {
+     "id": "eq-E-133",
+     "type": "equation",
+     "page": 27,
+     "original": "0.4"
+    },
+    {
+     "id": "eq-E-134",
+     "type": "equation",
+     "page": 27,
+     "original": "Uzbek"
+    },
+    {
+     "id": "eq-E-135",
+     "type": "equation",
+     "page": 27,
+     "original": "0.3"
+    },
+    {
+     "id": "eq-E-136",
+     "type": "equation",
+     "page": 27,
+     "original": "Gujarati"
+    },
+    {
+     "id": "eq-E-137",
+     "type": "equation",
+     "page": 27,
+     "original": "0.3"
+    },
+    {
+     "id": "eq-E-138",
+     "type": "equation",
+     "page": 27,
+     "original": "Tajik"
+    },
+    {
+     "id": "eq-E-139",
+     "type": "equation",
+     "page": 27,
+     "original": "0.3"
+    },
+    {
+     "id": "eq-E-140",
+     "type": "equation",
+     "page": 27,
+     "original": "Malagasy"
+    },
+    {
+     "id": "eq-E-141",
+     "type": "equation",
+     "page": 27,
+     "original": "0.2"
+    },
+    {
+     "id": "eq-E-142",
+     "type": "equation",
+     "page": 27,
+     "original": "Burmese"
+    },
+    {
+     "id": "eq-E-143",
+     "type": "equation",
+     "page": 27,
+     "original": "0.1"
+    },
+    {
+     "id": "eq-E-144",
+     "type": "equation",
+     "page": 27,
+     "original": "Sundanese"
+    },
+    {
+     "id": "eq-E-145",
+     "type": "equation",
+     "page": 27,
+     "original": "0.1"
+    },
+    {
+     "id": "eq-E-146",
+     "type": "equation",
+     "page": 27,
+     "original": "Lao"
+    },
+    {
+     "id": "eq-E-147",
+     "type": "equation",
+     "page": 27,
+     "original": "0.1 0.1 1 10 100"
+    },
+    {
+     "id": "eq-E-148",
+     "type": "equation",
+     "page": 27,
+     "original": "1K 10K Hours of audio Turkmen 1 Bashkir"
+    },
+    {
+     "id": "eq-E-149",
+     "type": "equation",
+     "page": 27,
+     "original": "1"
+    },
+    {
+     "id": "eq-E-150",
+     "type": "equation",
+     "page": 27,
+     "original": "Malagasy"
+    },
+    {
+     "id": "eq-E-151",
+     "type": "equation",
+     "page": 27,
+     "original": "2"
+    },
+    {
+     "id": "eq-E-152",
+     "type": "equation",
+     "page": 27,
+     "original": "Uzbek"
+    },
+    {
+     "id": "eq-E-153",
+     "type": "equation",
+     "page": 27,
+     "original": "4"
+    },
+    {
+     "id": "eq-E-154",
+     "type": "equation",
+     "page": 27,
+     "original": "Sundanese"
+    },
+    {
+     "id": "eq-E-155",
+     "type": "equation",
+     "page": 27,
+     "original": "7"
+    },
+    {
+     "id": "eq-E-156",
+     "type": "equation",
+     "page": 27,
+     "original": "Hausa"
+    },
+    {
+     "id": "eq-E-157",
+     "type": "equation",
+     "page": 27,
+     "original": "8"
+    },
+    {
+     "id": "eq-E-158",
+     "type": "equation",
+     "page": 27,
+     "original": "Luxembourgish"
+    },
+    {
+     "id": "eq-E-159",
+     "type": "equation",
+     "page": 27,
+     "original": "10"
+    },
+    {
+     "id": "eq-E-160",
+     "type": "equation",
+     "page": 27,
+     "original": "Tatar"
+    },
+    {
+     "id": "eq-E-161",
+     "type": "equation",
+     "page": 27,
+     "original": "14"
+    },
+    {
+     "id": "eq-E-162",
+     "type": "equation",
+     "page": 27,
+     "original": "Tajik"
+    },
+    {
+     "id": "eq-E-163",
+     "type": "equation",
+     "page": 27,
+     "original": "15"
+    },
+    {
+     "id": "eq-E-164",
+     "type": "equation",
+     "page": 27,
+     "original": "Lingala"
+    },
+    {
+     "id": "eq-E-165",
+     "type": "equation",
+     "page": 27,
+     "original": "20"
+    },
+    {
+     "id": "eq-E-166",
+     "type": "equation",
+     "page": 27,
+     "original": "Lao"
+    },
+    {
+     "id": "eq-E-167",
+     "type": "equation",
+     "page": 27,
+     "original": "20"
+    },
+    {
+     "id": "eq-E-168",
+     "type": "equation",
+     "page": 27,
+     "original": "Somali"
+    },
+    {
+     "id": "eq-E-169",
+     "type": "equation",
+     "page": 27,
+     "original": "21"
+    },
+    {
+     "id": "eq-E-170",
+     "type": "equation",
+     "page": 27,
+     "original": "Macedonian"
+    },
+    {
+     "id": "eq-E-171",
+     "type": "equation",
+     "page": 27,
+     "original": "30"
+    },
+    {
+     "id": "eq-E-172",
+     "type": "equation",
+     "page": 27,
+     "original": "Kazakh"
+    },
+    {
+     "id": "eq-E-173",
+     "type": "equation",
+     "page": 27,
+     "original": "31"
+    },
+    {
+     "id": "eq-E-174",
+     "type": "equation",
+     "page": 27,
+     "original": "Amharic"
+    },
+    {
+     "id": "eq-E-175",
+     "type": "equation",
+     "page": 27,
+     "original": "32"
+    },
+    {
+     "id": "eq-E-176",
+     "type": "equation",
+     "page": 27,
+     "original": "Georgian"
+    },
+    {
+     "id": "eq-E-177",
+     "type": "equation",
+     "page": 27,
+     "original": "40"
+    },
+    {
+     "id": "eq-E-178",
+     "type": "equation",
+     "page": 27,
+     "original": "Maltese"
+    },
+    {
+     "id": "eq-E-179",
+     "type": "equation",
+     "page": 27,
+     "original": "41"
+    },
+    {
+     "id": "eq-E-180",
+     "type": "equation",
+     "page": 27,
+     "original": "Sindhi"
+    },
+    {
+     "id": "eq-E-181",
+     "type": "equation",
+     "page": 27,
+     "original": "46"
+    },
+    {
+     "id": "eq-E-182",
+     "type": "equation",
+     "page": 27,
+     "original": "Faroese"
+    },
+    {
+     "id": "eq-E-183",
+     "type": "equation",
+     "page": 27,
+     "original": "46"
+    },
+    {
+     "id": "eq-E-184",
+     "type": "equation",
+     "page": 27,
+     "original": "Occitan"
+    },
+    {
+     "id": "eq-E-185",
+     "type": "equation",
+     "page": 27,
+     "original": "49"
+    },
+    {
+     "id": "eq-E-186",
+     "type": "equation",
+     "page": 27,
+     "original": "Burmese"
+    },
+    {
+     "id": "eq-E-187",
+     "type": "equation",
+     "page": 27,
+     "original": "59"
+    },
+    {
+     "id": "eq-E-188",
+     "type": "equation",
+     "page": 27,
+     "original": "Pashto"
+    },
+    {
+     "id": "eq-E-189",
+     "type": "equation",
+     "page": 27,
+     "original": "63"
+    },
+    {
+     "id": "eq-E-190",
+     "type": "equation",
+     "page": 27,
+     "original": "Latvian"
+    },
+    {
+     "id": "eq-E-191",
+     "type": "equation",
+     "page": 27,
+     "original": "68"
+    },
+    {
+     "id": "eq-E-192",
+     "type": "equation",
+     "page": 27,
+     "original": "Albanian"
+    },
+    {
+     "id": "eq-E-193",
+     "type": "equation",
+     "page": 27,
+     "original": "72"
+    },
+    {
+     "id": "eq-E-194",
+     "type": "equation",
+     "page": 27,
+     "original": "Haitian Creole"
+    },
+    {
+     "id": "eq-E-195",
+     "type": "equation",
+     "page": 27,
+     "original": "74"
+    },
+    {
+     "id": "eq-E-196",
+     "type": "equation",
+     "page": 27,
+     "original": "Estonian"
+    },
+    {
+     "id": "eq-E-197",
+     "type": "equation",
+     "page": 27,
+     "original": "79"
+    },
+    {
+     "id": "eq-E-198",
+     "type": "equation",
+     "page": 27,
+     "original": "Mongolian"
+    },
+    {
+     "id": "eq-E-199",
+     "type": "equation",
+     "page": 27,
+     "original": "79"
+    },
+    {
+     "id": "eq-E-200",
+     "type": "equation",
+     "page": 27,
+     "original": "Icelandic"
+    },
+    {
+     "id": "eq-E-201",
+     "type": "equation",
+     "page": 27,
+     "original": "84"
+    },
+    {
+     "id": "eq-E-202",
+     "type": "equation",
+     "page": 27,
+     "original": "Yiddish"
+    },
+    {
+     "id": "eq-E-203",
+     "type": "equation",
+     "page": 27,
+     "original": "85"
+    },
+    {
+     "id": "eq-E-204",
+     "type": "equation",
+     "page": 27,
+     "original": "Azerbaijani"
+    },
+    {
+     "id": "eq-E-205",
+     "type": "equation",
+     "page": 27,
+     "original": "86"
+    },
+    {
+     "id": "eq-E-206",
+     "type": "equation",
+     "page": 27,
+     "original": "Kannada"
+    },
+    {
+     "id": "eq-E-207",
+     "type": "equation",
+     "page": 27,
+     "original": "90"
+    },
+    {
+     "id": "eq-E-208",
+     "type": "equation",
+     "page": 27,
+     "original": "Lithuanian"
+    },
+    {
+     "id": "eq-E-209",
+     "type": "equation",
+     "page": 27,
+     "original": "99"
+    },
+    {
+     "id": "eq-E-210",
+     "type": "equation",
+     "page": 27,
+     "original": "Armenian"
+    },
+    {
+     "id": "eq-E-211",
+     "type": "equation",
+     "page": 27,
+     "original": "116"
+    },
+    {
+     "id": "eq-E-212",
+     "type": "equation",
+     "page": 27,
+     "original": "Punjabi"
+    },
+    {
+     "id": "eq-E-213",
+     "type": "equation",
+     "page": 27,
+     "original": "117"
+    },
+    {
+     "id": "eq-E-214",
+     "type": "equation",
+     "page": 27,
+     "original": "Belarusian"
+    },
+    {
+     "id": "eq-E-215",
+     "type": "equation",
+     "page": 27,
+     "original": "133"
+    },
+    {
+     "id": "eq-E-216",
+     "type": "equation",
+     "page": 27,
+     "original": "Nepali"
+    },
+    {
+     "id": "eq-E-217",
+     "type": "equation",
+     "page": 27,
+     "original": "133"
+    },
+    {
+     "id": "eq-E-218",
+     "type": "equation",
+     "page": 27,
+     "original": "Assamese"
+    },
+    {
+     "id": "eq-E-219",
+     "type": "equation",
+     "page": 27,
+     "original": "136"
+    },
+    {
+     "id": "eq-E-220",
+     "type": "equation",
+     "page": 27,
+     "original": "Serbian"
+    },
+    {
+     "id": "eq-E-221",
+     "type": "equation",
+     "page": 27,
+     "original": "136"
+    },
+    {
+     "id": "eq-E-222",
+     "type": "equation",
+     "page": 27,
+     "original": "Slovak"
+    },
+    {
+     "id": "eq-E-223",
+     "type": "equation",
+     "page": 27,
+     "original": "144"
+    },
+    {
+     "id": "eq-E-224",
+     "type": "equation",
+     "page": 27,
+     "original": "Basque"
+    },
+    {
+     "id": "eq-E-225",
+     "type": "equation",
+     "page": 27,
+     "original": "168"
+    },
+    {
+     "id": "eq-E-226",
+     "type": "equation",
+     "page": 27,
+     "original": "Tibetan"
+    },
+    {
+     "id": "eq-E-227",
+     "type": "equation",
+     "page": 27,
+     "original": "186"
+    },
+    {
+     "id": "eq-E-228",
+     "type": "equation",
+     "page": 27,
+     "original": "Sanskrit"
+    },
+    {
+     "id": "eq-E-229",
+     "type": "equation",
+     "page": 27,
+     "original": "195"
+    },
+    {
+     "id": "eq-E-230",
+     "type": "equation",
+     "page": 27,
+     "original": "Bulgarian"
+    },
+    {
+     "id": "eq-E-231",
+     "type": "equation",
+     "page": 27,
+     "original": "202"
+    },
+    {
+     "id": "eq-E-232",
+     "type": "equation",
+     "page": 27,
+     "original": "Gujarati"
+    },
+    {
+     "id": "eq-E-233",
+     "type": "equation",
+     "page": 27,
+     "original": "208"
+    },
+    {
+     "id": "eq-E-234",
+     "type": "equation",
+     "page": 27,
+     "original": "Sinhala"
+    },
+    {
+     "id": "eq-E-235",
+     "type": "equation",
+     "page": 27,
+     "original": "211"
+    },
+    {
+     "id": "eq-E-236",
+     "type": "equation",
+     "page": 27,
+     "original": "Bosnian"
+    },
+    {
+     "id": "eq-E-237",
+     "type": "equation",
+     "page": 27,
+     "original": "219"
+    },
+    {
+     "id": "eq-E-238",
+     "type": "equation",
+     "page": 27,
+     "original": "Catalan"
+    },
+    {
+     "id": "eq-E-239",
+     "type": "equation",
+     "page": 27,
+     "original": "236"
+    },
+    {
+     "id": "eq-E-240",
+     "type": "equation",
+     "page": 27,
+     "original": "Croatian"
+    },
+    {
+     "id": "eq-E-241",
+     "type": "equation",
+     "page": 27,
+     "original": "239"
+    },
+    {
+     "id": "eq-E-242",
+     "type": "equation",
+     "page": 27,
+     "original": "Breton"
+    },
+    {
+     "id": "eq-E-243",
+     "type": "equation",
+     "page": 27,
+     "original": "269"
+    },
+    {
+     "id": "eq-E-244",
+     "type": "equation",
+     "page": 27,
+     "original": "Shona"
+    },
+    {
+     "id": "eq-E-245",
+     "type": "equation",
+     "page": 27,
+     "original": "279"
+    },
+    {
+     "id": "eq-E-246",
+     "type": "equation",
+     "page": 27,
+     "original": "Swahili"
+    },
+    {
+     "id": "eq-E-247",
+     "type": "equation",
+     "page": 27,
+     "original": "282"
+    },
+    {
+     "id": "eq-E-248",
+     "type": "equation",
+     "page": 27,
+     "original": "Marathi"
+    },
+    {
+     "id": "eq-E-249",
+     "type": "equation",
+     "page": 27,
+     "original": "288"
+    },
+    {
+     "id": "eq-E-250",
+     "type": "equation",
+     "page": 27,
+     "original": "Norwegian"
+    },
+    {
+     "id": "eq-E-251",
+     "type": "equation",
+     "page": 27,
+     "original": "322"
+    },
+    {
+     "id": "eq-E-252",
+     "type": "equation",
+     "page": 27,
+     "original": "Afrikaans"
+    },
+    {
+     "id": "eq-E-253",
+     "type": "equation",
+     "page": 27,
+     "original": "330"
+    },
+    {
+     "id": "eq-E-254",
+     "type": "equation",
+     "page": 27,
+     "original": "Hawaiian"
+    },
+    {
+     "id": "eq-E-255",
+     "type": "equation",
+     "page": 27,
+     "original": "338"
+    },
+    {
+     "id": "eq-E-256",
+     "type": "equation",
+     "page": 27,
+     "original": "Galician"
+    },
+    {
+     "id": "eq-E-257",
+     "type": "equation",
+     "page": 27,
+     "original": "368"
+    },
+    {
+     "id": "eq-E-258",
+     "type": "equation",
+     "page": 27,
+     "original": "Danish"
+    },
+    {
+     "id": "eq-E-259",
+     "type": "equation",
+     "page": 27,
+     "original": "386"
+    },
+    {
+     "id": "eq-E-260",
+     "type": "equation",
+     "page": 27,
+     "original": "Persian"
+    },
+    {
+     "id": "eq-E-261",
+     "type": "equation",
+     "page": 27,
+     "original": "392"
+    },
+    {
+     "id": "eq-E-262",
+     "type": "equation",
+     "page": 27,
+     "original": "Slovenian"
+    },
+    {
+     "id": "eq-E-263",
+     "type": "equation",
+     "page": 27,
+     "original": "395"
+    },
+    {
+     "id": "eq-E-264",
+     "type": "equation",
+     "page": 27,
+     "original": "Czech"
+    },
+    {
+     "id": "eq-E-265",
+     "type": "equation",
+     "page": 27,
+     "original": "401"
+    },
+    {
+     "id": "eq-E-266",
+     "type": "equation",
+     "page": 27,
+     "original": "Hebrew"
+    },
+    {
+     "id": "eq-E-267",
+     "type": "equation",
+     "page": 27,
+     "original": "418"
+    },
+    {
+     "id": "eq-E-268",
+     "type": "equation",
+     "page": 27,
+     "original": "Yoruba"
+    },
+    {
+     "id": "eq-E-269",
+     "type": "equation",
+     "page": 27,
+     "original": "432"
+    },
+    {
+     "id": "eq-E-270",
+     "type": "equation",
+     "page": 27,
+     "original": "Ukrainian"
+    },
+    {
+     "id": "eq-E-271",
+     "type": "equation",
+     "page": 27,
+     "original": "509"
+    },
+    {
+     "id": "eq-E-272",
+     "type": "equation",
+     "page": 27,
+     "original": "Hungarian"
+    },
+    {
+     "id": "eq-E-273",
+     "type": "equation",
+     "page": 27,
+     "original": "554"
+    },
+    {
+     "id": "eq-E-274",
+     "type": "equation",
+     "page": 27,
+     "original": "Romanian"
+    },
+    {
+     "id": "eq-E-275",
+     "type": "equation",
+     "page": 27,
+     "original": "555"
+    },
+    {
+     "id": "eq-E-276",
+     "type": "equation",
+     "page": 27,
+     "original": "Javanese"
+    },
+    {
+     "id": "eq-E-277",
+     "type": "equation",
+     "page": 27,
+     "original": "622"
+    },
+    {
+     "id": "eq-E-278",
+     "type": "equation",
+     "page": 27,
+     "original": "Khmer"
+    },
+    {
+     "id": "eq-E-279",
+     "type": "equation",
+     "page": 27,
+     "original": "672"
+    },
+    {
+     "id": "eq-E-280",
+     "type": "equation",
+     "page": 27,
+     "original": "Finnish"
+    },
+    {
+     "id": "eq-E-281",
+     "type": "equation",
+     "page": 27,
+     "original": "750"
+    },
+    {
+     "id": "eq-E-282",
+     "type": "equation",
+     "page": 27,
+     "original": "Malayalam"
+    },
+    {
+     "id": "eq-E-283",
+     "type": "equation",
+     "page": 27,
+     "original": "892"
+    },
+    {
+     "id": "eq-E-284",
+     "type": "equation",
+     "page": 27,
+     "original": "Tagalog"
+    },
+    {
+     "id": "eq-E-285",
+     "type": "equation",
+     "page": 27,
+     "original": "894"
+    },
+    {
+     "id": "eq-E-286",
+     "type": "equation",
+     "page": 27,
+     "original": "Greek"
+    },
+    {
+     "id": "eq-E-287",
+     "type": "equation",
+     "page": 27,
+     "original": "968"
+    },
+    {
+     "id": "eq-E-288",
+     "type": "equation",
+     "page": 27,
+     "original": "Telugu"
+    },
+    {
+     "id": "eq-E-289",
+     "type": "equation",
+     "page": 27,
+     "original": "987"
+    },
+    {
+     "id": "eq-E-290",
+     "type": "equation",
+     "page": 27,
+     "original": "Swedish"
+    },
+    {
+     "id": "eq-E-291",
+     "type": "equation",
+     "page": 27,
+     "original": "1055"
+    },
+    {
+     "id": "eq-E-292",
+     "type": "equation",
+     "page": 27,
+     "original": "Indonesian"
+    },
+    {
+     "id": "eq-E-293",
+     "type": "equation",
+     "page": 27,
+     "original": "1174"
+    },
+    {
+     "id": "eq-E-294",
+     "type": "equation",
+     "page": 27,
+     "original": "Maori"
+    },
+    {
+     "id": "eq-E-295",
+     "type": "equation",
+     "page": 27,
+     "original": "1381"
+    },
+    {
+     "id": "eq-E-296",
+     "type": "equation",
+     "page": 27,
+     "original": "Tamil"
+    },
+    {
+     "id": "eq-E-297",
+     "type": "equation",
+     "page": 27,
+     "original": "1484"
+    },
+    {
+     "id": "eq-E-298",
+     "type": "equation",
+     "page": 27,
+     "original": "Latin"
+    },
+    {
+     "id": "eq-E-299",
+     "type": "equation",
+     "page": 27,
+     "original": "1614"
+    },
+    {
+     "id": "eq-E-300",
+     "type": "equation",
+     "page": 27,
+     "original": "Thai"
+    },
+    {
+     "id": "eq-E-301",
+     "type": "equation",
+     "page": 27,
+     "original": "1635"
+    },
+    {
+     "id": "eq-E-302",
+     "type": "equation",
+     "page": 27,
+     "original": "Malay"
+    },
+    {
+     "id": "eq-E-303",
+     "type": "equation",
+     "page": 27,
+     "original": "1691"
+    },
+    {
+     "id": "eq-E-304",
+     "type": "equation",
+     "page": 27,
+     "original": "Vietnamese"
+    },
+    {
+     "id": "eq-E-305",
+     "type": "equation",
+     "page": 27,
+     "original": "1719"
+    },
+    {
+     "id": "eq-E-306",
+     "type": "equation",
+     "page": 27,
+     "original": "Dutch"
+    },
+    {
+     "id": "eq-E-307",
+     "type": "equation",
+     "page": 27,
+     "original": "1767"
+    },
+    {
+     "id": "eq-E-308",
+     "type": "equation",
+     "page": 27,
+     "original": "Norwegian Nynorsk"
+    },
+    {
+     "id": "eq-E-309",
+     "type": "equation",
+     "page": 27,
+     "original": "1889"
+    },
+    {
+     "id": "eq-E-310",
+     "type": "equation",
+     "page": 27,
+     "original": "Bengali"
+    },
+    {
+     "id": "eq-E-311",
+     "type": "equation",
+     "page": 27,
+     "original": "1988"
+    },
+    {
+     "id": "eq-E-312",
+     "type": "equation",
+     "page": 27,
+     "original": "Urdu"
+    },
+    {
+     "id": "eq-E-313",
+     "type": "equation",
+     "page": 27,
+     "original": "1990"
+    },
+    {
+     "id": "eq-E-314",
+     "type": "equation",
+     "page": 27,
+     "original": "Italian"
+    },
+    {
+     "id": "eq-E-315",
+     "type": "equation",
+     "page": 27,
+     "original": "2145"
+    },
+    {
+     "id": "eq-E-316",
+     "type": "equation",
+     "page": 27,
+     "original": "Polish"
+    },
+    {
+     "id": "eq-E-317",
+     "type": "equation",
+     "page": 27,
+     "original": "2200"
+    },
+    {
+     "id": "eq-E-318",
+     "type": "equation",
+     "page": 27,
+     "original": "Turkish"
+    },
+    {
+     "id": "eq-E-319",
+     "type": "equation",
+     "page": 27,
+     "original": "2241"
+    },
+    {
+     "id": "eq-E-320",
+     "type": "equation",
+     "page": 27,
+     "original": "Arabic"
+    },
+    {
+     "id": "eq-E-321",
+     "type": "equation",
+     "page": 27,
+     "original": "2286"
+    },
+    {
+     "id": "eq-E-322",
+     "type": "equation",
+     "page": 27,
+     "original": "Portuguese"
+    },
+    {
+     "id": "eq-E-323",
+     "type": "equation",
+     "page": 27,
+     "original": "3620"
+    },
+    {
+     "id": "eq-E-324",
+     "type": "equation",
+     "page": 27,
+     "original": "German"
+    },
+    {
+     "id": "eq-E-325",
+     "type": "equation",
+     "page": 27,
+     "original": "4309"
+    },
+    {
+     "id": "eq-E-326",
+     "type": "equation",
+     "page": 27,
+     "original": "French"
+    },
+    {
+     "id": "eq-E-327",
+     "type": "equation",
+     "page": 27,
+     "original": "4481"
+    },
+    {
+     "id": "eq-E-328",
+     "type": "equation",
+     "page": 27,
+     "original": "Hindi"
+    },
+    {
+     "id": "eq-E-329",
+     "type": "equation",
+     "page": 27,
+     "original": "5438"
+    },
+    {
+     "id": "eq-E-330",
+     "type": "equation",
+     "page": 27,
+     "original": "Spanish"
+    },
+    {
+     "id": "eq-E-331",
+     "type": "equation",
+     "page": 27,
+     "original": "6693"
+    },
+    {
+     "id": "eq-E-332",
+     "type": "equation",
+     "page": 27,
+     "original": "Russian"
+    },
+    {
+     "id": "eq-E-333",
+     "type": "equation",
+     "page": 27,
+     "original": "7687"
+    },
+    {
+     "id": "eq-E-334",
+     "type": "equation",
+     "page": 27,
+     "original": "Welsh"
+    },
+    {
+     "id": "eq-E-335",
+     "type": "equation",
+     "page": 27,
+     "original": "8263"
+    },
+    {
+     "id": "eq-E-336",
+     "type": "equation",
+     "page": 27,
+     "original": "Japanese"
+    },
+    {
+     "id": "eq-E-337",
+     "type": "equation",
+     "page": 27,
+     "original": "8860"
+    },
+    {
+     "id": "eq-E-338",
+     "type": "equation",
+     "page": 27,
+     "original": "Chinese"
+    },
+    {
+     "id": "eq-E-339",
+     "type": "equation",
+     "page": 27,
+     "original": "11731"
+    },
+    {
+     "id": "eq-E-340",
+     "type": "equation",
+     "page": 27,
+     "original": "Korean"
+    },
+    {
+     "id": "eq-E-341",
+     "type": "equation",
+     "page": 27,
+     "original": "19938 1 10 100"
+    },
+    {
+     "id": "p-E-2",
+     "type": "paragraph",
+     "page": 27,
+     "sentences": [
+      {
+       "id": "s-E-2-1",
+       "original": "1K 10K Hours of audio",
+       "zh": "（图 E 横轴：音频小时数（1K / 10K）。）"
       }
      ]
     },
@@ -6352,10 +11192,76 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-F-1-1",
-       "original": "Hyperparameter Value",
-       "zh": "表头：超参数；取值。"
+       "original": "Hyperparameter Value Updates",
+       "zh": "（表 F 列头：Hyperparameter / Value / Updates。）"
       }
      ]
+    },
+    {
+     "id": "eq-F-1",
+     "type": "equation",
+     "page": 28,
+     "original": "1048576"
+    },
+    {
+     "id": "eq-F-2",
+     "type": "equation",
+     "page": 28,
+     "original": "Batch Size"
+    },
+    {
+     "id": "eq-F-3",
+     "type": "equation",
+     "page": 28,
+     "original": "256"
+    },
+    {
+     "id": "eq-F-4",
+     "type": "equation",
+     "page": 28,
+     "original": "Warmup Updates"
+    },
+    {
+     "id": "eq-F-5",
+     "type": "equation",
+     "page": 28,
+     "original": "2048"
+    },
+    {
+     "id": "eq-F-6",
+     "type": "equation",
+     "page": 28,
+     "original": "Max grad norm"
+    },
+    {
+     "id": "eq-F-7",
+     "type": "equation",
+     "page": 28,
+     "original": "1.0"
+    },
+    {
+     "id": "eq-F-8",
+     "type": "equation",
+     "page": 28,
+     "original": "Optimizer AdamW"
+    },
+    {
+     "id": "eq-F-9",
+     "type": "equation",
+     "page": 28,
+     "original": "β1 0.9 β2 0.98 ϵ 10−6"
+    },
+    {
+     "id": "eq-F-10",
+     "type": "equation",
+     "page": 28,
+     "original": "Weight Decay"
+    },
+    {
+     "id": "eq-F-11",
+     "type": "equation",
+     "page": 28,
+     "original": "0.1"
     },
     {
      "id": "p-F-2",
@@ -6364,22 +11270,28 @@ globalThis.PAPER_2212_04356 = {
      "sentences": [
       {
        "id": "s-F-2-1",
-       "original": "Updates 1048576 Batch Size 256 Warmup Updates 2048 Max grad norm 1.0 Optimizer AdamW β1 0.9 β2 0.98 ϵ 10−6",
-       "zh": "Updates（更新次数）1048576；Batch Size（批大小）256；Warmup Updates（预热更新）2048；Max grad norm（最大梯度范数）1.0；Optimizer（优化器）AdamW；β1 0.9；β2 0.98；ϵ 10−6。"
+       "original": "Weight Init Gaussian Fan-In Learning Rate Schedule Linear Decay Speechless audio subsample factor",
+       "zh": "（表 F 行：Weight Init = Gaussian Fan-In；Learning Rate Schedule = Linear Decay；Speechless audio subsample factor（后续照原文）。）"
       }
      ]
     },
     {
-     "id": "p-F-3",
-     "type": "paragraph",
+     "id": "eq-F-12",
+     "type": "equation",
      "page": 28,
-     "sentences": [
-      {
-       "id": "s-F-3-1",
-       "original": "Weight Decay 0.1 Weight Init Gaussian Fan-In Learning Rate Schedule Linear Decay Speechless audio subsample factor 10× Condition on prior text rate 50%",
-       "zh": "Weight Decay（权重衰减）0.1；Weight Init（权重初始化）Gaussian Fan-In；Learning Rate Schedule（学习率调度）Linear Decay（线性衰减）；Speechless audio subsample factor（无语音音频降采样因子）10×；Condition on prior text rate（以前文为条件的概率）50%。"
-      }
-     ]
+     "original": "10×"
+    },
+    {
+     "id": "eq-F-13",
+     "type": "equation",
+     "page": 28,
+     "original": "Condition on prior text rate"
+    },
+    {
+     "id": "eq-F-14",
+     "type": "equation",
+     "page": 28,
+     "original": "50%"
     },
     {
      "id": "tab-F-1",
@@ -6389,26 +11301,68 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 17. Whisper 训练超参数。"
     },
     {
+     "id": "p-F-3",
+     "type": "paragraph",
+     "page": 28,
+     "sentences": [
+      {
+       "id": "s-F-3-1",
+       "original": "Hyperparameter Value Updates",
+       "zh": "（表 F 列头：Hyperparameter / Value / Updates。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-F-15",
+     "type": "equation",
+     "page": 28,
+     "original": "655360"
+    },
+    {
+     "id": "eq-F-16",
+     "type": "equation",
+     "page": 28,
+     "original": "Batch Size"
+    },
+    {
+     "id": "eq-F-17",
+     "type": "equation",
+     "page": 28,
+     "original": "1024"
+    },
+    {
+     "id": "eq-F-18",
+     "type": "equation",
+     "page": 28,
+     "original": "BPE Dropout"
+    },
+    {
+     "id": "eq-F-19",
+     "type": "equation",
+     "page": 28,
+     "original": "0.1"
+    },
+    {
+     "id": "eq-F-20",
+     "type": "equation",
+     "page": 28,
+     "original": "Stochastic Depth"
+    },
+    {
+     "id": "eq-F-21",
+     "type": "equation",
+     "page": 28,
+     "original": "0.1"
+    },
+    {
      "id": "p-F-4",
      "type": "paragraph",
      "page": 28,
      "sentences": [
       {
        "id": "s-F-4-1",
-       "original": "Hyperparameter Value",
-       "zh": "表头：超参数；取值。"
-      }
-     ]
-    },
-    {
-     "id": "p-F-5",
-     "type": "paragraph",
-     "page": 28,
-     "sentences": [
-      {
-       "id": "s-F-5-1",
-       "original": "Updates 655360 Batch Size 1024 BPE Dropout 0.1 Stochastic Depth 0.1 SpecAugment Policy LibriSpeech Basic",
-       "zh": "Updates（更新次数）655360；Batch Size（批大小）1024；BPE Dropout 0.1；Stochastic Depth 0.1；SpecAugment Policy（SpecAugment 策略）LibriSpeech Basic。"
+       "original": "SpecAugment Policy LibriSpeech Basic",
+       "zh": "（表 F 行：SpecAugment Policy = LibriSpeech Basic。）"
       }
      ]
     },
@@ -6420,12 +11374,82 @@ globalThis.PAPER_2212_04356 = {
      "zh": "表 18. Whisper Large V2 改动的超参数。"
     },
     {
-     "id": "tb-F-6",
-     "type": "table_body",
+     "id": "p-F-5",
+     "type": "paragraph",
      "page": 28,
-     "original": "Max Learning Rate\nTiny 1.5 × 10−3\nBase 1 × 10−3\nSmall 5 × 10−4\nMedium 2.5 × 10−4\nLarge 1.75 × 10−4\nLarge V2 2.0 × 10−4",
-     "cells": 7,
-     "zh": "各模型最大学习率：Tiny 1.5 × 10−3；Base 1 × 10−3；Small 5 × 10−4；Medium 2.5 × 10−4；Large 1.75 × 10−4；Large V2 2.0 × 10−4。"
+     "sentences": [
+      {
+       "id": "s-F-5-1",
+       "original": "Model Max Learning Rate Tiny",
+       "zh": "（表 F 列头：Model / Max Learning Rate——Tiny（后续照原文）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-F-22",
+     "type": "equation",
+     "page": 28,
+     "original": "1.5 × 10−3"
+    },
+    {
+     "id": "eq-F-23",
+     "type": "equation",
+     "page": 28,
+     "original": "Base"
+    },
+    {
+     "id": "eq-F-24",
+     "type": "equation",
+     "page": 28,
+     "original": "1 × 10−3"
+    },
+    {
+     "id": "eq-F-25",
+     "type": "equation",
+     "page": 28,
+     "original": "Small"
+    },
+    {
+     "id": "eq-F-26",
+     "type": "equation",
+     "page": 28,
+     "original": "5 × 10−4"
+    },
+    {
+     "id": "eq-F-27",
+     "type": "equation",
+     "page": 28,
+     "original": "Medium"
+    },
+    {
+     "id": "eq-F-28",
+     "type": "equation",
+     "page": 28,
+     "original": "2.5 × 10−4"
+    },
+    {
+     "id": "eq-F-29",
+     "type": "equation",
+     "page": 28,
+     "original": "Large"
+    },
+    {
+     "id": "eq-F-30",
+     "type": "equation",
+     "page": 28,
+     "original": "1.75 × 10−4"
+    },
+    {
+     "id": "eq-F-31",
+     "type": "equation",
+     "page": 28,
+     "original": "Large V2"
+    },
+    {
+     "id": "eq-F-32",
+     "type": "equation",
+     "page": 28,
+     "original": "2.0 × 10−4"
     },
     {
      "id": "tab-F-3",
@@ -6462,7 +11486,7 @@ globalThis.PAPER_2212_04356 = {
   {
    "id": "ann-003",
    "anchor": {
-    "sentence_id": "s-2-1-5-1",
+    "sentence_id": "s-2-1-3-1",
     "quote": "not actually humangenerated but the output of existing ASR systems"
    },
    "kind": "motivation",
@@ -6473,7 +11497,7 @@ globalThis.PAPER_2212_04356 = {
   {
    "id": "ann-004",
    "anchor": {
-    "sentence_id": "s-2-1-7-1",
+    "sentence_id": "s-2-1-5-1",
     "quote": "break audio ﬁles into 30-second segments"
    },
    "kind": "concept",
@@ -6534,16 +11558,6 @@ globalThis.PAPER_2212_04356 = {
    "featured": true
   },
   {
-   "id": "ann-010",
-   "anchor": {
-    "sentence_id": "s-3-3-13-2",
-    "quote": "relatively unremarkable LibriSpeech clean-test WER of 2.5"
-   },
-   "kind": "comparison",
-   "title": "2.5 的平平 WER 是卖点",
-   "explanation": "LibriSpeech test-clean 2.5 放在 2022 年毫不起眼（SOTA 已到 1.4），但这是全文最重要的数字之一：一个没在任何评测集上训练过的模型，在参考分布上「只是」打平 2019 年中 SOTA，却在其他 12 个数据集上平均少错 55.2%。论文想改写的正是「刷 LibriSpeech = 模型好」的评价惯性——分布内分数之外，还有鲁棒性这个独立维度。"
-  },
-  {
    "id": "ann-011",
    "anchor": {
     "sentence_id": "s-3-3-2-5",
@@ -6556,7 +11570,7 @@ globalThis.PAPER_2212_04356 = {
   {
    "id": "ann-012",
    "anchor": {
-    "sentence_id": "s-3-4-171-7",
+    "sentence_id": "s-3-4-17-7",
     "quote": "WER halves for every 16× increase in training data"
    },
    "kind": "number",
@@ -6567,7 +11581,7 @@ globalThis.PAPER_2212_04356 = {
   {
    "id": "ann-013",
    "anchor": {
-    "sentence_id": "s-3-5-17-5",
+    "sentence_id": "s-3-5-4-5",
     "quote": "mis-classiﬁed as Welsh by the language identiﬁcation system"
    },
    "kind": "critique",
@@ -6609,7 +11623,7 @@ globalThis.PAPER_2212_04356 = {
   {
    "id": "ann-017",
    "anchor": {
-    "sentence_id": "s-4-2-46-1",
+    "sentence_id": "s-4-2-9-1",
     "quote": "under-trained relative to dataset size"
    },
    "kind": "number",
@@ -6650,7 +11664,7 @@ globalThis.PAPER_2212_04356 = {
   {
    "id": "ann-021",
    "anchor": {
-    "sentence_id": "s-6-2-4",
+    "sentence_id": "s-improved-decoding-strategies-1-3",
     "quote": "complete hallucination where the model will output a transcript entirely unrelated to the actual audio"
    },
    "kind": "critique",

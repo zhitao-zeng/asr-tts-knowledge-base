@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VibeVoice-ASR 技术报告 · 全文双语精读 | ASR/TTS 知识库</title>
-<meta name="description" content="VibeVoice-ASR 技术报告（VIBEVOICE-ASR Technical Report）全文中文翻译 + 22 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta name="description" content="VibeVoice-ASR 技术报告（VIBEVOICE-ASR Technical Report）全文中文翻译 + 19 条句子级讲解 · ASR/TTS 知识库论文精读">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2601.18184/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VibeVoice-ASR 技术报告 · 全文双语精读">
-<meta property="og:description" content="VibeVoice-ASR 技术报告（VIBEVOICE-ASR Technical Report）全文中文翻译 + 22 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta property="og:description" content="VibeVoice-ASR 技术报告（VIBEVOICE-ASR Technical Report）全文中文翻译 + 19 条句子级讲解 · ASR/TTS 知识库论文精读">
 <meta property="og:url" content="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2601.18184/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"VIBEVOICE-ASR Technical Report","alternateName":"VibeVoice-ASR 技术报告","url":"https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2601.18184/","isBasedOn":"https://arxiv.org/abs/2601.18184","inLanguage":["en","zh-CN"],"isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Zhitao Zeng"}}</script>
 <style>
@@ -134,7 +134,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
     <div class="en-title">VIBEVOICE-ASR Technical Report</div>
     <div class="meta">
       关联模型：<a href="../../index.html#/model/vibevoice_asr">VibeVoice ASR</a>（微软 · 2026-01） ·
-      全文 69 个语块 · 讲解 22 条（精选 15 条）
+      全文 185 个语块 · 讲解 19 条（精选 14 条）
     </div>
   </div>
   <div class="controls">
@@ -166,9 +166,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div>
     <p class="muted" style="font-size:12.5px">以上为论文级三条摘要；下面进入全文双语精读，讲解锚定在具体句子旁。</p>
   </section>
-  <nav class="toc"><a class="lv1" href="#sec-1">1 引言</a><a class="lv1" href="#sec-vibevoice-asr">VibeVoice - ASR</a><a class="lv1" href="#sec-2">2 方法</a><a class="lv2" href="#sec-2-1">2.1 概览</a><a class="lv2" href="#sec-2-2">2.2 语音分词器</a><a class="lv2" href="#sec-2-3">2.3 VIBEVOICE-ASR</a><a class="lv2" href="#sec-2-3-1">2.3.1 预训练</a><a class="lv2" href="#sec-2-3-2">2.3.2 监督微调（SFT）</a><a class="lv2" href="#sec-high-quality-speech-and-music-be">高质量语音与音乐基准。</a><a class="lv2" href="#sec-context-aware-synthetic-data-pip">上下文感知的合成数据流水线。</a><a class="lv2" href="#sec-long-form-transcription-restorat">长音频转录修复。</a><a class="lv1" href="#sec-3">3 实验结果</a><a class="lv1" href="#sec-4">4 结论与局限</a><a class="lv1" href="#sec-acknowledge">致谢</a><a class="lv1" href="#sec-references">References</a></nav>
+  <nav class="toc"><a class="lv1" href="#sec-1">1 引言</a><a class="lv1" href="#sec-vibevoice-asr">VibeVoice - ASR</a><a class="lv1" href="#sec-2">2 方法</a><a class="lv2" href="#sec-2-1">2.1 概览</a><a class="lv2" href="#sec-2-2">2.2 语音分词器</a><a class="lv2" href="#sec-2-3">2.3 VIBEVOICE-ASR</a><a class="lv2" href="#sec-2-3-1">2.3.1 预训练</a><a class="lv2" href="#sec-2-3-2">2.3.2 监督微调（SFT）</a><a class="lv2" href="#sec-high-quality-speech-and-music-be">高质量语音与音乐基准。</a><a class="lv2" href="#sec-context-aware-synthetic-data-pip">上下文感知的合成数据流水线。</a><a class="lv2" href="#sec-long-form-transcription-restorat">长音频转录修复。</a><a class="lv1" href="#sec-3">3 实验结果</a><a class="lv1" href="#sec-4">4 结论与局限</a><a class="lv1" href="#sec-acknowledge">致谢</a><a class="lv1" href="#sec-references">References</a><a class="lv1" href="#sec-A">A Language Distribution of Training Data</a></nav>
   <article class="reader"><section><div class="pblk plain" id="p-front-1"><p class="refline">Zhiliang Peng∗, Jianwei Yu∗, Yaoyao Chang∗, Zilong Wang∗, Li Dong∗ Yingbo Hao, Yujie Tu, Chenyu Yang, Wenhui Wang, Songchen Xu, Yutao Sun Hangbo Bao, Weijiang Xu, Yi Zhu, Zehua Wang, Ting Song, Yan Xia, Zewen Chi Shaohan Huang, Liang Wang, Chuang Ding, Shuai Wang, Xie Chen, Furu Wei⋄ Microsoft Research https://aka.ms/GeneralAI This report presents VIBEVOICE-ASR, a general-purpose speech understanding framework built upon VIBEVOICE [PYW+25], designed to address the persistent challenges of context fragmentation and multi-speaker complexity in long-form audio (e.g., meetings, podcasts) that remain despite recent advancements in short-form speech recognition. Unlike traditional pipelined approaches that rely on audio chunking, VIBEVOICE-ASR supports single-pass processing for up to 60 minutes of audio. It unifies Automatic Speech Recognition, Speaker Diarization, and Timestamping into a single end-to-end generation task. In addition, VIBEVOICE-ASR supports over 50 languages, requires no explicit language setting, and natively handles code-switching within and across utterances. Furthermore, we introduce a prompt-based context injection mechanism that allows users to supply customized conetxt, significantly improving accuracy on domain-specific terminology and polyphonic character disambiguation.</p></div>
-<div class="pblk plain" id="p-front-2"><p class="refline">Code: github.com/microsoft/VibeVoice Demo: aka.ms/VibeVoice-ASR HuggingFace Models Transformers Release Microsoft Foundry DER (Diarization Error Rate) ↓ VibeVoice-ASR 50 46.23 43.04 45 38.75 40 32.96 35 31.6 30 23.54 23.79 22.03 25 20 16.29 15.32 11.92 13.43 15 10.92 6.77 10 3.42 5 0 AMI_IHM AMI_SDM MLC tcpWER (Time-Constrained Permutation WER)↓ VibeVoice-ASR 70 63.65 64.86 65.61 58.81 60 54.17 53.49 50 35.96 38.35 41.39 40 29.8 29.51 28.9 30 25.35 20.82 15.66 20 10 0 AMI_IHM AMI_SDM MLC</p></div>
+<div class="pblk plain" id="p-front-2"><p class="refline">Code: github.com/microsoft/VibeVoice Demo: aka.ms/VibeVoice-ASR HuggingFace Models Transformers Release Microsoft Foundry DER (Diarization Error Rate) ↓ VibeVoice-ASR Gemini-2.5-Pro Gemini-3-Pro</p></div>
+<div class="eq" id="eq-front-1"><code>50 46.23 43.04 45 38.75 40 32.96 35 31.6 30 23.54 23.79 22.03 25 20 16.29 15.32 11.92 13.43 15 10.92 6.77 10 3.42 5 0</code></div>
+<div class="pblk plain" id="p-front-3"><p class="refline">AISHELL4 AMI_IHM AMI_SDM AliMeeting MLC tcpWER (Time-Constrained Permutation WER)↓ VibeVoice-ASR Gemini-2.5-Pro Gemini-3-Pro</p></div>
+<div class="eq" id="eq-front-2"><code>70 63.65 64.86 65.61 58.81 60 54.17 53.49 50 35.96 38.35 41.39 40 29.8 29.51 28.9 30 25.35 20.82 15.66 20 10 0</code></div>
+<div class="pblk plain" id="p-front-4"><p class="refline">AISHELL4 AMI_IHM AMI_SDM AliMeeting MLC</p></div>
 <div class="cap" id="fig-front-1"><span class="cap-k">图</span><p class="en">Figure 1: VIBEVOICE-ASR sets a new state-of-the-art for long-form speech understanding, consistently outperforming strong closed-source multimodal models (Gemini-2.5/3-Pro) across five public benchmarks. The results demonstrate superior accuracy in both speaker attribution (DER) and time-aligned transcription (tcpWER), particularly in complex multi-speaker environments.</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-1"><span class="secnum">1</span> <span class="t-zh">引言</span><span class="t-en">Introduction</span></h2><div class="pblk" id="p-1-1">
@@ -177,29 +181,27 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-1-2-1"><span class="en">S Rich Transcription Who When What Welcome to Vibe…</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-2-1"><span class="en">A S Rich Transcription Who When What Welcome to Vibe…</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-2-1"><span class="zh">S 富转录（Rich Transcription） 谁 何时 说了什么 欢迎来到 Vibe…</span></span></p>
           
         </div>
+<div class="eq" id="eq-1-1"><code>Speaker 1, 0 ~ 10.25, Speaker 2, 10.3 ~ 33.33,</code></div>
 <div class="pblk" id="p-1-3">
-          <p class="en-lines"><span class="sent" data-sid="s-1-3-1"><span class="en">Speaker 1, 0 ~ 10.25, Speaker 2, 10.3 ~ 33.33, Nice to meet…</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-3-1"><span class="zh">说话人 1，0 ~ 10.25，说话人 2，10.3 ~ 33.33，很高兴见到…</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-3-1"><span class="en">Nice to meet…</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-3-1"><span class="zh">…</span></span></p>
           
         </div>
+<div class="eq" id="eq-1-2"><code>…</code></div>
 <div class="pblk" id="p-1-4">
-          <p class="en-lines"><span class="sent" data-sid="s-1-4-1"><span class="en">…</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-4-1"><span class="zh">…</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-5">
-          <p class="en-lines"><span class="sent" data-sid="s-1-5-1"><span class="en">Speaker N, 3575.5 ~ 3600, Let’s …</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-5-1"><span class="zh">说话人 N，3575.5 ~ 3600，让我们…</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-4-1"><span class="en">Speaker N, 3575.5 ~ 3600, Let’s …</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-4-1"><span class="zh">说话人 N，3575.5 ~ 3600，让我们…</span></span></p>
           
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-vibevoice-asr"><span class="t-zh">VibeVoice - ASR</span><span class="t-en">VibeVoice - ASR</span></h2><div class="pblk" id="p-vibevoice-asr-1">
-          <p class="en-lines"><span class="sent" data-sid="s-vibevoice-asr-1-1"><span class="en">+ S Optional Context 60-minute Long-form Audio &lt;begin&gt;</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vibevoice-asr-1-1"><span class="zh">+ S 可选上下文（Optional Context） 60 分钟长音频 &lt;begin&gt;</span></span></p>
+      <h2 class="sech lv1" id="sec-vibevoice-asr"><span class="t-zh">VibeVoice - ASR</span><span class="t-en">VibeVoice - ASR</span></h2><div class="eq" id="eq-vibevoice-asr-1"><code>+</code></div>
+<div class="pblk" id="p-vibevoice-asr-1">
+          <p class="en-lines"><span class="sent" data-sid="s-vibevoice-asr-1-1"><span class="en">A S Optional Context 60-minute Long-form Audio &lt;begin&gt;</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-vibevoice-asr-1-1"><span class="zh">（图 1 标签：+ A / S；可选上下文（Optional Context）；60 分钟长音频（60-minute Long-form Audio）；&lt;begin&gt;。）</span></span></p>
           
         </div>
 <div class="cap" id="fig-vibevoice-asr-1"><span class="cap-k">图</span><p class="en">Figure 2: The architectural overview of VIBEVOICE-ASR. VIBEVOICE-ASR processes 60-minute long-form audio in a single pass by ingesting continuous latents from dual-tokenizers alongside optional user-provided context. The output is a generated stream of Rich Transcription, explicitly interleaving Speaker ID (Who), Timestamps (When), and Content (What)</p><p class="zh">图 2：VIBEVOICE-ASR 的架构总览。VIBEVOICE-ASR 通过同时摄入双分词器输出的连续潜向量与用户可选提供的上下文，在单趟内处理 60 分钟的长音频。输出是一条生成的富转录（Rich Transcription）流，显式地交错排列说话人 ID（谁）、时间戳（何时）与内容（什么）。</p></div>
@@ -325,18 +327,21 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-3-1-3-1"><span class="zh">如 Table 1 所示，我们提出的数据流水线在绝大多数评测数据集上都取得了比两条基线更低的 DER 和 WER。</span></span><span class="sent" data-sid="s-2-3-1-3-2"><span class="zh">这些结果表明，在多样的声学条件下，我们的流水线提供了更鲁棒的分段、说话人分离与转录性能。</span></span></p>
           
         </div>
-<div class="cap" id="tab-2-3-1-1"><span class="cap-k">表</span><p class="en">Table 1: DER and WER comparison across different data pipelines. Model AMI-IHM AMI-SDM WhisperX 14.55 29.69 18.27 24.12 23.05 39.65 35.53 36.62 Emilia</p><p class="zh">表 1：不同数据处理流水线的 DER 与 WER 对比。表格列出各流水线在 AMI-IHM、AMI-SDM 等数据集上的 DER 与 WER 数值（部分数字因 PDF 抽取错位，见正文段）。</p></div>
+<div class="cap" id="tab-2-3-1-1"><span class="cap-k">表</span><p class="en">Table 1: DER and WER comparison across different data pipelines. Model AISHELL4 AMI-IHM AMI-SDM AliMeeting DER WER DER WER DER WER DER WER</p><p class="zh">表 1：不同数据管线下的 DER 与 WER 对比。表头：Model × AISHELL4（DER/WER）× AMI-IHM（DER/WER）× AMI-SDM（DER/WER）× AliMeeting（DER/WER）。</p></div>
 <div class="pblk" id="p-2-3-1-4">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-1-4-1"><span class="en">16.58 49.40 35.44 47.85 46.55 61.70 25.57 54.27 Ours pipeline 16.93 18.99 15.46 23.22 17.78 28.40 25.34 30.82 We employed a curriculum learning strategy for the LLM input sequence length, progressively increasing from 8,192 to 65,536 tokens.</span><button class="mk" data-sid="s-2-3-1-4-1" title="查看讲解">解</button></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-1-4-1"><span class="zh">16.58 49.40 35.44 47.85 46.55 61.70 25.57 54.27 Ours pipeline 16.93 18.99 15.46 23.22 17.78 28.40 25.34 30.82（抽取注：此句前半为 Table 1 的表格数值残留，非正文；以下为正文部分）我们对 LLM 的输入序列长度采用课程学习策略，从 8,192 逐步增加到 65,536 token。</span><button class="mk" data-sid="s-2-3-1-4-1" title="查看讲解">解</button></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-3-1-4-1">
-      <div class="ann-card kind-engineering">
-        <div class="ann-kind">工程启发</div>
-        <div class="ann-title">8K 到 65K 的课程学习</div>
-        <div class="ann-quote">progressively increasing from 8,192 to 65,536 tokens</div>
-        <div class="exp exp-tech">LLM 输入长度从 8,192 逐步拉到 65,536 token，这是长上下文训练的标准省钱做法：先用短序列把任务学稳，再逐步拉长让位置编码与注意力适应。65,536 这个终点正好覆盖 60 分钟音频所需的约 27,000 声学 token，加上文本提示与输出流仍有富余。直接 65K 起步不仅显存开销翻倍以上，收敛也更不稳，课程式拉长是工程上的必然选择。</div>
-        
-      </div></div></div>
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-1-4-1"><span class="en">WhisperX</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-3-1-4-1"><span class="zh">为验证该数据处理流水线的有效性，我们把它与两条被广泛采用的音频处理流水线——WhisperX [BHHZ23] 和 Emilia [HSW+24]——做了对比研究。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-3-1-1"><code>14.55 29.69 18.27 24.12 23.05 39.65 35.53 36.62</code></div>
+<div class="eq" id="eq-2-3-1-2"><code>Emilia</code></div>
+<div class="eq" id="eq-2-3-1-3"><code>16.58 49.40 35.44 47.85 46.55 61.70 25.57 54.27</code></div>
+<div class="eq" id="eq-2-3-1-4"><code>Ours pipeline</code></div>
+<div class="eq" id="eq-2-3-1-5"><code>16.93 18.99 15.46 23.22 17.78 28.40 25.34 30.82</code></div>
+<div class="pblk" id="p-2-3-1-5">
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-1-5-1"><span class="en">We employed a curriculum learning strategy for the LLM input sequence length, progressively increasing from 8,192 to 65,536 tokens.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-3-1-5-1"><span class="zh">我们对 LLM 输入序列长度采用课程学习策略，从 8,192 逐步增加到 65,536 个 token。</span></span></p>
+          
         </div></section>
 <section>
       <h3 class="sech lv2" id="sec-2-3-2"><span class="secnum">2.3.2</span> <span class="t-zh">监督微调（SFT）</span><span class="t-en">Supervised Fine-Tuning (SFT)</span></h3><div class="pblk" id="p-2-3-2-1">
@@ -387,17 +392,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div>
 <div class="pblk" id="p-long-form-transcription-restorat-3">
-          <p class="en-lines"><span class="sent" data-sid="s-long-form-transcription-restorat-3-1"><span class="en">2https://platform.openai.com/docs/models/gpt-4o-audio-preview To balance the VIBEVOICE-ASR’s capabilities across standard recognition, music robustness, context awareness, and long-form coherence, we apply a strategic data mixing ratio.</span></span> <span class="sent" data-sid="s-long-form-transcription-restorat-3-2"><span class="en">Specifically, the sampling weights for Standard Benchmarks, Music Data, Synthetic Data, and Refined Long-Form Data are set to 0.5 : 0.1 : 0.1 : 0.3, respectively.</span><button class="mk" data-sid="s-long-form-transcription-restorat-3-2" title="查看讲解">解</button></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-long-form-transcription-restorat-3-1"><span class="zh">2https://platform.openai.com/docs/models/gpt-4o-audio-preview 为在标准识别、音乐鲁棒性、上下文感知与长文本连贯性之间取得平衡，我们采用了战略性的数据混合配比。</span></span><span class="sent" data-sid="s-long-form-transcription-restorat-3-2"><span class="zh">具体而言，标准基准、音乐数据、合成数据与精修长文本数据的采样权重分别设为 0.5 : 0.1 : 0.1 : 0.3。</span><button class="mk" data-sid="s-long-form-transcription-restorat-3-2" title="查看讲解">解</button></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-long-form-transcription-restorat-3-2">
-      <div class="ann-card kind-number">
-        <div class="ann-kind">数字怎么理解</div>
-        <div class="ann-title">0.5:0.1:0.1:0.3 的配比</div>
-        <div class="ann-quote">sampling weights for Standard Benchmarks, Music Data, Synthetic Data, and Refined Long-Form Data are set to 0.5 : 0.1 : 0.1 : 0.3</div>
-        <div class="exp exp-tech">SFT 采样权重里精修长文本占 0.3，仅次于标准基准的 0.5，说明作者把长文本连贯性当作与基础识别几乎同等重要的能力来塑造。音乐与上下文合成数据各占 0.1 是锦上添花但不喧宾夺主。这个配比没有任何消融支撑，纯经验设定，但对复现者是最重要的超参之一——长文本比例过低，端到端 60 分钟优势立不住；过高则短音频精度受损。</div>
-        
-      </div></div></div>
-        </div></section>
+          <p class="en-lines"><span class="sent" data-sid="s-long-form-transcription-restorat-3-1"><span class="en">2https://platform.openai.com/docs/models/gpt-4o-audio-preview To balance the VIBEVOICE-ASR’s capabilities across standard recognition, music robustness, context awareness, and long-form coherence, we apply a strategic data mixing ratio.</span></span> <span class="sent" data-sid="s-long-form-transcription-restorat-3-2"><span class="en">Specifically, the sampling weights for Standard Benchmarks, Music Data, Synthetic Data, and Refined Long-Form Data are set</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-long-form-transcription-restorat-3-1"><span class="zh">2https://platform.openai.com/docs/models/gpt-4o-audio-preview 为在标准识别、音乐鲁棒性、上下文感知与长文本连贯性之间取得平衡，我们采用了战略性的数据混合配比。</span></span><span class="sent" data-sid="s-long-form-transcription-restorat-3-2"><span class="zh">具体而言，标准基准、音乐数据、合成数据与精修长文本数据的采样权重分别设为 0.5 : 0.1 : 0.1 : 0.3。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-long-form-transcription-restorat-1"><code>to 0.5 : 0.1 : 0.1 : 0.3, respectively.</code></div></section>
 <section>
       <h2 class="sech lv1" id="sec-3"><span class="secnum">3</span> <span class="t-zh">实验结果</span><span class="t-en">Results</span></h2><div class="pblk" id="p-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-3-1-1"><span class="en">We follow the MeetEval3 evaluation protocol and report four complementary metrics that capture different aspects of multi-speaker transcription quality.</span></span></p>
@@ -445,16 +444,45 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="cap" id="tab-3-1"><span class="cap-k">表</span><p class="en">Table 2: Overall diarization and ASR results across datasets and languages.</p><p class="zh">表 2：跨数据集与跨语言的总体说话人分离与 ASR 结果。表内数值抽取到随后的正文段落中（见 s-3-7-1 上方）。</p></div>
 <div class="pblk" id="p-3-7">
-          <p class="en-lines"><span class="sent" data-sid="s-3-7-1"><span class="en">VIBEVOICE-ASR Dataset Language AISHELL-4 15.32 31.59 35.96 22.42 22.03 27.43 54.17 22.75 6.77 24.99 25.35 21.40 AMI-IHM 23.54 29.57 38.35 18.48 46.23 22.34 63.65 17.61 11.92 20.41 20.82 18.81 AMI-SDM 23.79 34.78 41.39 22.35 43.04 26.91 64.86 22.09 13.43 28.82 29.80 24.65 31.60 41.64 53.49 27.43 38.75 32.84 65.61 26.75 10.92 29.33 29.51 27.40 MLC-Challenge 20.67 16.23 26.72 9.76 30.88 12.85 57.64 10.19 4.28 11.48 13.02 7.99 French 7.66 23.06 24.60 17.17 40.82 22.02 71.11 18.71 3.80 18.80 19.64 15.21 German 18.19 30.36 39.43 17.76 42.14 23.56 73.86 19.39 1.04 17.10 17.26 16.30 Italian 12.55 16.88 25.20 12.87 23.45 15.59 49.89 13.32 2.08 15.76 15.91 13.91 Japanese 20.40 30.41 37.36 16.58 59.68 21.96 81.41 18.47 0.82 15.33 15.41 14.69 Korean 17.57 19.23 29.81 10.18 39.28 19.39 57.33 11.21 4.52 15.35 16.07 9.65 Portuguese 20.86 30.03 40.20 20.15 39.17 23.29 85.44 20.10 7.98 29.91 31.65 21.54 Russian 5.35 14.26 16.59 10.74 22.76 13.05 51.89 10.31 0.90 12.94 12.98 12.40 Spanish 9.10 13.82 17.49 9.09 25.54 12.11 43.72 9.36 2.67 10.51 11.71 8.04 Thai 15.54 20.84 30.28 14.84 22.09 14.59 39.54 12.03 4.09 14.91 15.57 13.61 Vietnamese 14.65 16.71 27.28 12.33 32.24 13.15 60.43 11.53 0.16 14.57 14.57 14.43 AVERAGE 16.29 20.37 28.90 13.05 32.96 16.38 58.81 13.11 3.42 14.81 15.66 12.07 As shown in Table 2, VIBEVOICE-ASR consistently outperforms Gemini-2.5-Pro and Gemini3-Pro in terms of DER and tcpWER across all evaluated datasets, demonstrating substantially stronger speaker modeling and more accurate alignment of speaker turns over time.</span></span> <span class="sent" data-sid="s-3-7-2"><span class="en">On the cpWER metric, which more directly reflects the model’s ability to maintain speaker consistency, our model 3https://github.com/fgnt/meeteval achieves the best performance on 11 out of 16 evaluation settings, significantly outperforming both Gemini variants and indicating more reliable speaker differentiation in multi-speaker conditions.</span><button class="mk feat" data-sid="s-3-7-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-7-3"><span class="en">Regarding WER, our model attains the lowest error rate on 8 out of 16 settings, while exhibiting only marginal degradation on the remaining datasets.</span></span> <span class="sent" data-sid="s-3-7-4"><span class="en">Overall, these results indicate that VIBEVOICE- ASR achieves a better balance between content recognition accuracy and robust speaker-aware transcription, with particularly strong advantages in speaker attribution, temporal consistency, and multilingual generalization.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-7-1"><span class="zh">如 Table 2 所示，VIBEVOICE-ASR 在所有评测数据集上的 DER 与 tcpWER 均持续优于 Gemini-2.5-Pro 与 Gemini-3-Pro，展现出强得多的说话人建模能力和更精确的说话人轮换时间对齐。（抽取注：该段前半为 Table 2 的表格主体，原文按行混排，以下原样保留各数据集/语言的数值以便核对）AISHELL-4 15.32 31.59 35.96 22.42 22.03 27.43 54.17 22.75 6.77 24.99 25.35 21.40；AMI-IHM 23.54 29.57 38.35 18.48 46.23 22.34 63.65 17.61 11.92 20.41 20.82 18.81；AMI-SDM 23.79 34.78 41.39 22.35 43.04 26.91 64.86 22.09 13.43 28.82 29.80 24.65 31.60 41.64 53.49 27.43 38.75 32.84 65.61 26.75 10.92 29.33 29.51 27.40；MLC-Challenge 20.67 16.23 26.72 9.76 30.88 12.85 57.64 10.19 4.28 11.48 13.02 7.99；French 7.66 23.06 24.60 17.17 40.82 22.02 71.11 18.71 3.80 18.80 19.64 15.21；German 18.19 30.36 39.43 17.76 42.14 23.56 73.86 19.39 1.04 17.10 17.26 16.30；Italian 12.55 16.88 25.20 12.87 23.45 15.59 49.89 13.32 2.08 15.76 15.91 13.91；Japanese 20.40 30.41 37.36 16.58 59.68 21.96 81.41 18.47 0.82 15.33 15.41 14.69；Korean 17.57 19.23 29.81 10.18 39.28 19.39 57.33 11.21 4.52 15.35 16.07 9.65；Portuguese 20.86 30.03 40.20 20.15 39.17 23.29 85.44 20.10 7.98 29.91 31.65 21.54；Russian 5.35 14.26 16.59 10.74 22.76 13.05 51.89 10.31 0.90 12.94 12.98 12.40；Spanish 9.10 13.82 17.49 9.09 25.54 12.11 43.72 9.36 2.67 10.51 11.71 8.04；Thai 15.54 20.84 30.28 14.84 22.09 14.59 39.54 12.03 4.09 14.91 15.57 13.61；Vietnamese 14.65 16.71 27.28 12.33 32.24 13.15 60.43 11.53 0.16 14.57 14.57 14.43；AVERAGE 16.29 20.37 28.90 13.05 32.96 16.38 58.81 13.11 3.42 14.81 15.66 12.07。</span></span><span class="sent" data-sid="s-3-7-2"><span class="zh">在 cpWER 这一更直接反映模型保持说话人一致性能力的指标上，我们的模型 3https://github.com/fgnt/meeteval 在 16 个评测设置中的 11 个上取得最佳性能，显著优于两个 Gemini 变体，表明其在多说话人条件下的说话人区分更可靠。</span><button class="mk feat" data-sid="s-3-7-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-3-7-3"><span class="zh">就 WER 而言，我们的模型在 16 个设置中的 8 个上取得最低错误率，在其余数据集上仅有轻微退化。</span></span><span class="sent" data-sid="s-3-7-4"><span class="zh">总体而言，这些结果表明 VIBEVOICE-ASR 在内容识别精度与鲁棒的说话人感知转录之间取得了更好的平衡，在说话人归属、时间一致性与多语言泛化上优势尤为突出。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-7-2">
-      <div class="ann-card kind-number">
-        <div class="ann-kind">数字怎么理解</div>
-        <div class="ann-title">16 项里赢 11 项</div>
-        <div class="ann-quote">achieves the best performance on 11 out of 16 evaluation settings</div>
-        <div class="exp exp-tech">cpWER 上 16 个设置拿下 11 个最优，WER 只拿 8 个，这个组合很说明问题：VIBEVOICE-ASR 的绝对优势在说话人一致性，而非纯转写精度。纯 WER 上与 Gemini 互有胜负，意味着如果任务只要文字不要说话人，这套方案未必划算。另外所有多语言测试集都是单语言会话，并没有专门构造的中英夹杂长会议基准来直接验证其主打的语码混合长音频场景，这是评测覆盖上的一个空档。</div>
-        
-      </div></div></div>
+          <p class="en-lines"><span class="sent" data-sid="s-3-7-1"><span class="en">Gemini-2.5-Pro Gemini-3-Pro VIBEVOICE-ASR Dataset Language DER cpWER tcpWER WER DER cpWER tcpWER WER DER cpWER tcpWER WER AISHELL-4 Chinese</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-7-1"><span class="zh">（表 2 表头：Gemini-2.5-Pro / Gemini-3-Pro / VIBEVOICE-ASR × Dataset / Language × DER / cpWER / tcpWER / WER——AISHELL-4 Chinese，后续照原文。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-1"><code>15.32 31.59 35.96 22.42 22.03 27.43 54.17 22.75 6.77 24.99 25.35 21.40</code></div>
+<div class="eq" id="eq-3-2"><code>AMI-IHM English</code></div>
+<div class="eq" id="eq-3-3"><code>23.54 29.57 38.35 18.48 46.23 22.34 63.65 17.61 11.92 20.41 20.82 18.81</code></div>
+<div class="eq" id="eq-3-4"><code>AMI-SDM English</code></div>
+<div class="eq" id="eq-3-5"><code>23.79 34.78 41.39 22.35 43.04 26.91 64.86 22.09 13.43 28.82 29.80 24.65</code></div>
+<div class="eq" id="eq-3-6"><code>AliMeeting Chinese</code></div>
+<div class="eq" id="eq-3-7"><code>31.60 41.64 53.49 27.43 38.75 32.84 65.61 26.75 10.92 29.33 29.51 27.40</code></div>
+<div class="eq" id="eq-3-8"><code>MLC-Challenge English</code></div>
+<div class="eq" id="eq-3-9"><code>20.67 16.23 26.72 9.76 30.88 12.85 57.64 10.19 4.28 11.48 13.02 7.99</code></div>
+<div class="eq" id="eq-3-10"><code>French</code></div>
+<div class="eq" id="eq-3-11"><code>7.66 23.06 24.60 17.17 40.82 22.02 71.11 18.71 3.80 18.80 19.64 15.21</code></div>
+<div class="eq" id="eq-3-12"><code>German</code></div>
+<div class="eq" id="eq-3-13"><code>18.19 30.36 39.43 17.76 42.14 23.56 73.86 19.39 1.04 17.10 17.26 16.30</code></div>
+<div class="eq" id="eq-3-14"><code>Italian</code></div>
+<div class="eq" id="eq-3-15"><code>12.55 16.88 25.20 12.87 23.45 15.59 49.89 13.32 2.08 15.76 15.91 13.91</code></div>
+<div class="eq" id="eq-3-16"><code>Japanese</code></div>
+<div class="eq" id="eq-3-17"><code>20.40 30.41 37.36 16.58 59.68 21.96 81.41 18.47 0.82 15.33 15.41 14.69</code></div>
+<div class="eq" id="eq-3-18"><code>Korean</code></div>
+<div class="eq" id="eq-3-19"><code>17.57 19.23 29.81 10.18 39.28 19.39 57.33 11.21 4.52 15.35 16.07 9.65</code></div>
+<div class="eq" id="eq-3-20"><code>Portuguese</code></div>
+<div class="eq" id="eq-3-21"><code>20.86 30.03 40.20 20.15 39.17 23.29 85.44 20.10 7.98 29.91 31.65 21.54</code></div>
+<div class="eq" id="eq-3-22"><code>Russian</code></div>
+<div class="eq" id="eq-3-23"><code>5.35 14.26 16.59 10.74 22.76 13.05 51.89 10.31 0.90 12.94 12.98 12.40</code></div>
+<div class="eq" id="eq-3-24"><code>Spanish</code></div>
+<div class="eq" id="eq-3-25"><code>9.10 13.82 17.49 9.09 25.54 12.11 43.72 9.36 2.67 10.51 11.71 8.04</code></div>
+<div class="eq" id="eq-3-26"><code>Thai</code></div>
+<div class="eq" id="eq-3-27"><code>15.54 20.84 30.28 14.84 22.09 14.59 39.54 12.03 4.09 14.91 15.57 13.61</code></div>
+<div class="eq" id="eq-3-28"><code>Vietnamese</code></div>
+<div class="eq" id="eq-3-29"><code>14.65 16.71 27.28 12.33 32.24 13.15 60.43 11.53 0.16 14.57 14.57 14.43</code></div>
+<div class="eq" id="eq-3-30"><code>AVERAGE</code></div>
+<div class="eq" id="eq-3-31"><code>16.29 20.37 28.90 13.05 32.96 16.38 58.81 13.11 3.42 14.81 15.66 12.07</code></div>
+<div class="pblk" id="p-3-8">
+          <p class="en-lines"><span class="sent" data-sid="s-3-8-1"><span class="en">As shown in Table 2, VIBEVOICE-ASR consistently outperforms Gemini-2.5-Pro and Gemini3-Pro in terms of DER and tcpWER across all evaluated datasets, demonstrating substantially stronger speaker modeling and more accurate alignment of speaker turns over time.</span></span> <span class="sent" data-sid="s-3-8-2"><span class="en">On the cpWER metric, which more directly reflects the model’s ability to maintain speaker consistency, our model 3https://github.com/fgnt/meeteval achieves the best performance on 11 out of 16 evaluation settings, significantly outperforming both Gemini variants and indicating more reliable speaker differentiation in multi-speaker conditions.</span></span> <span class="sent" data-sid="s-3-8-3"><span class="en">Regarding WER, our model attains the lowest error rate on 8 out of 16 settings, while exhibiting only marginal degradation on the remaining datasets.</span></span> <span class="sent" data-sid="s-3-8-4"><span class="en">Overall, these results indicate that VIBEVOICE- ASR achieves a better balance between content recognition accuracy and robust speaker-aware transcription, with particularly strong advantages in speaker attribution, temporal consistency, and multilingual generalization.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-8-1"><span class="zh">如表 2 所示，VIBEVOICE-ASR 在所有评测数据集上的 DER 与 tcpWER 均持续优于 Gemini-2.5-Pro 与 Gemini-3-Pro，展现出强得多的说话人建模能力和更精确的说话人轮换时间对齐。</span></span><span class="sent" data-sid="s-3-8-2"><span class="zh">在 cpWER 这一更直接反映模型保持说话人一致性能力的指标上，我们的模型（脚注 3：https://github.com/fgnt/meeteval）在 16 个评测设置中的 11 个上取得最佳性能，显著优于两个 Gemini 变体，说明其在多说话人条件下有更可靠的说话人区分能力。</span></span><span class="sent" data-sid="s-3-8-3"><span class="zh">WER 方面，我们的模型在 16 个设置中的 8 个上取得最低错误率，在其余数据集上仅有轻微退化。</span></span><span class="sent" data-sid="s-3-8-4"><span class="zh">总体而言，这些结果表明 VIBEVOICE-ASR 在内容识别准确率与鲁棒的说话人感知转写之间取得了更好的平衡，在说话人归属、时间一致性与多语种泛化上优势尤其明显。</span></span></p>
+          
         </div></section>
 <section>
       <h2 class="sech lv1" id="sec-4"><span class="secnum">4</span> <span class="t-zh">结论与局限</span><span class="t-en">Conclusion and Limitations</span></h2><div class="pblk" id="p-4-1">
@@ -511,25 +539,105 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk plain" id="p-references-4"><p class="refline">[CMS13] Ricardo JGB Campello, Davoud Moulavi, and Jörg Sander. Density-based clustering based on hierarchical density estimates. In Pacific-Asia conference on knowledge discovery and data mining, pages 160–172. Springer, 2013.</p></div>
 <div class="pblk plain" id="p-references-5"><p class="refline">[CMW04] Christopher Cieri, David Miller, and Kevin Walker. The fisher corpus: A resource for the next generations of speech-to-text. In LREC, volume 4, pages 69–71, 2004.</p></div>
 <div class="pblk plain" id="p-references-6"><p class="refline">[CXZ+23] Yunfei Chu, Jin Xu, Xiaohuan Zhou, Qian Yang, Shiliang Zhang, Zhijie Yan, Chang Zhou, and Jingren Zhou. Qwen-audio: Advancing universal audio understanding via unified large-scale audio-language models. arXiv preprint arXiv:2311.07919, 2023.</p></div>
-<div class="pblk plain" id="p-references-7"><p class="refline">[FCL+21] Yihui Fu, Luyao Cheng, Shubo Lv, Yukai Jv, Yuxiang Kong, Zhuo Chen, Yanxin Hu, Lei Xie, Jian Wu, Hui Bu, et al. Aishell-4: An open source dataset for speech enhancement, separation, recognition and speaker diarization in conference scenario. arXiv preprint [HSW+24] Haorui He, Zengqiang Shang, Chaoren Wang, Xuyuan Li, Yicheng Gu, Hua Hua, Liwei Liu, Chen Yang, Jiaqi Li, Peiyang Shi, et al. Emilia: An extensive, multilingual, and diverse speech dataset for large-scale speech generation. In 2024 IEEE Spoken Language Technology Workshop (SLT), pages 885–890. IEEE, 2024.</p></div>
-<div class="pblk plain" id="p-references-8"><p class="refline">[HSZ26] Mingyue Huo, Yiwen Shao, and Yuheng Zhang.</p></div>
-<div class="pblk plain" id="p-references-9"><p class="refline">Tagspeech: End-to-end multispeaker asr and diarization with fine-grained temporal grounding.</p></div>
-<div class="pblk plain" id="p-references-10"><p class="refline">arXiv preprint [JCX+26] Changhao Jiang, Jiahao Chen, Zhenghao Xiang, Zhixiong Yang, Hanchen Wang, Jiabao Zhuang, Xinmeng Che, Jiajun Sun, Hui Li, Yifei Cao, et al. Muse: Towards reproducible long-form song generation with fine-grained style control. arXiv preprint [KLZ+23] Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph E. Gonzalez, Hao Zhang, and Ion Stoica. Efficient memory management for large language model serving with pagedattention. In Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles, 2023.</p></div>
-<div class="pblk plain" id="p-references-11"><p class="refline">[MGS+25] Bingshen Mu, Pengcheng Guo, Zhaokai Sun, Shuai Wang, Hexin Liu, Mingchen Shao, Lei Xie, Eng Siong Chng, Longshuai Xiao, Qiangze Feng, et al. Summary on the multilingual conversational speech language model challenge: Datasets, tasks, baselines, and methods. arXiv preprint arXiv:2509.13785, 2025.</p></div>
-<div class="pblk plain" id="p-references-12"><p class="refline">[PYW+25] Zhiliang Peng, Jianwei Yu, Wenhui Wang, Yaoyao Chang, Yutao Sun, Li Dong, Yi Zhu, Weijiang Xu, Hangbo Bao, Zehua Wang, et al. Vibevoice technical report. arXiv preprint arXiv:2508.19205, 2025.</p></div>
-<div class="pblk plain" id="p-references-13"><p class="refline">[RKX+23] Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever. Robust speech recognition via large-scale weak supervision. In International conference on machine learning, pages 28492–28518. PMLR, 2023.</p></div>
-<div class="pblk plain" id="p-references-14"><p class="refline">[SBW+24] Yutao Sun, Hangbo Bao, Wenhui Wang, Zhiliang Peng, Li Dong, Shaohan Huang, Jianyong Wang, and Furu Wei. Multimodal latent language modeling with next-token diffusion. arXiv preprint arXiv:2412.08635, 2024.</p></div>
-<div class="pblk plain" id="p-references-15"><p class="refline">[SFP+25] Aaditya Singh, Adam Fry, Adam Perelman, Adam Tart, Adi Ganesh, Ahmed El-Kishky, Aidan McLaughlin, Aiden Low, AJ Ostrow, Akhila Ananthram, et al. Openai gpt-5 system card. arXiv preprint arXiv:2601.03267, 2025.</p></div>
-<div class="pblk plain" id="p-references-16"><p class="refline">[SXF+25] Mohan Shi, Xiong Xiao, Ruchao Fan, Shaoshi Ling, and Jinyu Li. Train short, infer long: Speech-llm enables zero-shot streamable joint asr and diarization on long audio.</p></div>
-<div class="pblk plain" id="p-references-17"><p class="refline">arXiv preprint arXiv:2511.16046, 2025.</p></div>
-<div class="pblk plain" id="p-references-18"><p class="refline">[WLW+23] Hongji Wang, Chengdong Liang, Shuai Wang, Zhengyang Chen, Binbin Zhang, Xu Xiang, Yanlei Deng, and Yanmin Qian. Wespeaker: A research and production oriented speaker embedding learning toolkit. In ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1–5. IEEE, 2023.</p></div>
-<div class="pblk plain" id="p-references-19"><p class="refline">[XJM+23] Hainan Xu, Fei Jia, Somshubra Majumdar, He Huang, Shinji Watanabe, and Boris Ginsburg. Efficient sequence transduction by jointly predicting tokens and durations. In International Conference on Machine Learning, pages 38462–38484. PMLR, 2023.</p></div>
-<div class="pblk plain" id="p-references-20"><p class="refline">[YCB+24] Jianwei Yu, Hangting Chen, Yanyao Bian, Xiang Li, Yi Luo, Jinchuan Tian, Mengyang Liu, Jiayi Jiang, and Shuai Wang. Autoprep: An automatic preprocessing framework for in-the-wild speech data. In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1136–1140. IEEE, 2024.</p></div>
-<div class="pblk plain" id="p-references-21"><p class="refline">[YCD+25] Han Yin, Yafeng Chen, Chong Deng, Luyao Cheng, Hui Wang, Chao-Hong Tan, Qian Chen, Wen Wang, and Xiangang Li. Speakerlm: End-to-end versatile speaker diarization and recognition with multimodal large language models. arXiv preprint [YLY+26] Donghua Yu, Zhengyuan Lin, Chen Yang, Yiyang Zhang, Zhaoye Fei, Hanfu Chen, Jingqi Chen, Ke Chen, Qinyuan Cheng, Liwei Fan, et al. Moss transcribe diarize: Accurate transcription with speaker diarization. arXiv preprint arXiv:2601.01554, 2026.</p></div>
-<div class="pblk plain" id="p-references-22"><p class="refline">[YYZ+24] An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, et al. Qwen2. 5 technical report. arXiv preprint arXiv:2412.15115, 2024.</p></div>
-<div class="pblk plain" id="p-references-23"><p class="refline">[YZF+22] Fan Yu, Shiliang Zhang, Yihui Fu, Lei Xie, Siqi Zheng, Zhihao Du, Weilong Huang, Pengcheng Guo, Zhijie Yan, Bin Ma, et al. M2met: The icassp 2022 multi-channel multi-party meeting transcription challenge. In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6167–6171.</p></div>
-<div class="pblk plain" id="p-references-24"><p class="refline">IEEE, 2022. Language Distribution of Training Data Spanish Portuguese German Japanese Korean French Russian Indonesian Swedish Italian Hebrew Dutch Polish Norwegian Turkish Thai Arabic Hungarian Catalan Czech Danish Persian Afrikaans Hindi Finnish Estonian Afar Greek Romanian Vietnamese Bulgarian Icelandic Slovenian Slovak Lithuanian Swahili Ukrainian Kalaallisut Latvian Croatian Nepali Serbian Filipino Yiddish Malay Urdu Mongolian Armenian Javanese 10 2 10 1 100 101 102 Percentage (%)</p></div>
-<div class="cap" id="fig-references-1"><span class="cap-k">图</span><p class="en">Figure 3: Language distribution in the training data.</p></div></section></article>
+<div class="pblk plain" id="p-references-7"><p class="refline">[FCL+21] Yihui Fu, Luyao Cheng, Shubo Lv, Yukai Jv, Yuxiang Kong, Zhuo Chen, Yanxin Hu, Lei Xie, Jian Wu, Hui Bu, et al. Aishell-4: An open source dataset for speech enhancement, separation, recognition and speaker diarization in conference scenario. arXiv preprint arXiv:2104.03603, 2021.</p></div>
+<div class="pblk plain" id="p-references-8"><p class="refline">[HSW+24] Haorui He, Zengqiang Shang, Chaoren Wang, Xuyuan Li, Yicheng Gu, Hua Hua, Liwei Liu, Chen Yang, Jiaqi Li, Peiyang Shi, et al. Emilia: An extensive, multilingual, and diverse speech dataset for large-scale speech generation. In 2024 IEEE Spoken Language Technology Workshop (SLT), pages 885–890. IEEE, 2024.</p></div>
+<div class="pblk plain" id="p-references-9"><p class="refline">[HSZ26] Mingyue Huo, Yiwen Shao, and Yuheng Zhang.</p></div>
+<div class="pblk plain" id="p-references-10"><p class="refline">Tagspeech: End-to-end multispeaker asr and diarization with fine-grained temporal grounding.</p></div>
+<div class="pblk plain" id="p-references-11"><p class="refline">arXiv preprint arXiv:2601.06896, 2026.</p></div>
+<div class="pblk plain" id="p-references-12"><p class="refline">[JCX+26] Changhao Jiang, Jiahao Chen, Zhenghao Xiang, Zhixiong Yang, Hanchen Wang, Jiabao Zhuang, Xinmeng Che, Jiajun Sun, Hui Li, Yifei Cao, et al. Muse: Towards reproducible long-form song generation with fine-grained style control. arXiv preprint arXiv:2601.03973, 2026.</p></div>
+<div class="pblk plain" id="p-references-13"><p class="refline">[KLZ+23] Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph E. Gonzalez, Hao Zhang, and Ion Stoica. Efficient memory management for large language model serving with pagedattention. In Proceedings of the ACM SIGOPS 29th Symposium on Operating Systems Principles, 2023.</p></div>
+<div class="pblk plain" id="p-references-14"><p class="refline">[MGS+25] Bingshen Mu, Pengcheng Guo, Zhaokai Sun, Shuai Wang, Hexin Liu, Mingchen Shao, Lei Xie, Eng Siong Chng, Longshuai Xiao, Qiangze Feng, et al. Summary on the multilingual conversational speech language model challenge: Datasets, tasks, baselines, and methods. arXiv preprint arXiv:2509.13785, 2025.</p></div>
+<div class="pblk plain" id="p-references-15"><p class="refline">[PYW+25] Zhiliang Peng, Jianwei Yu, Wenhui Wang, Yaoyao Chang, Yutao Sun, Li Dong, Yi Zhu, Weijiang Xu, Hangbo Bao, Zehua Wang, et al. Vibevoice technical report. arXiv preprint arXiv:2508.19205, 2025.</p></div>
+<div class="pblk plain" id="p-references-16"><p class="refline">[RKX+23] Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever. Robust speech recognition via large-scale weak supervision. In International conference on machine learning, pages 28492–28518. PMLR, 2023.</p></div>
+<div class="pblk plain" id="p-references-17"><p class="refline">[SBW+24] Yutao Sun, Hangbo Bao, Wenhui Wang, Zhiliang Peng, Li Dong, Shaohan Huang, Jianyong Wang, and Furu Wei. Multimodal latent language modeling with next-token diffusion. arXiv preprint arXiv:2412.08635, 2024.</p></div>
+<div class="pblk plain" id="p-references-18"><p class="refline">[SFP+25] Aaditya Singh, Adam Fry, Adam Perelman, Adam Tart, Adi Ganesh, Ahmed El-Kishky, Aidan McLaughlin, Aiden Low, AJ Ostrow, Akhila Ananthram, et al. Openai gpt-5 system card. arXiv preprint arXiv:2601.03267, 2025.</p></div>
+<div class="pblk plain" id="p-references-19"><p class="refline">[SXF+25] Mohan Shi, Xiong Xiao, Ruchao Fan, Shaoshi Ling, and Jinyu Li. Train short, infer long: Speech-llm enables zero-shot streamable joint asr and diarization on long audio.</p></div>
+<div class="pblk plain" id="p-references-20"><p class="refline">arXiv preprint arXiv:2511.16046, 2025.</p></div>
+<div class="pblk plain" id="p-references-21"><p class="refline">[WLW+23] Hongji Wang, Chengdong Liang, Shuai Wang, Zhengyang Chen, Binbin Zhang, Xu Xiang, Yanlei Deng, and Yanmin Qian. Wespeaker: A research and production oriented speaker embedding learning toolkit. In ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1–5. IEEE, 2023.</p></div>
+<div class="pblk plain" id="p-references-22"><p class="refline">[XJM+23] Hainan Xu, Fei Jia, Somshubra Majumdar, He Huang, Shinji Watanabe, and Boris Ginsburg. Efficient sequence transduction by jointly predicting tokens and durations. In International Conference on Machine Learning, pages 38462–38484. PMLR, 2023.</p></div>
+<div class="pblk plain" id="p-references-23"><p class="refline">[YCB+24] Jianwei Yu, Hangting Chen, Yanyao Bian, Xiang Li, Yi Luo, Jinchuan Tian, Mengyang Liu, Jiayi Jiang, and Shuai Wang. Autoprep: An automatic preprocessing framework for in-the-wild speech data. In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1136–1140. IEEE, 2024.</p></div>
+<div class="pblk plain" id="p-references-24"><p class="refline">[YCD+25] Han Yin, Yafeng Chen, Chong Deng, Luyao Cheng, Hui Wang, Chao-Hong Tan, Qian Chen, Wen Wang, and Xiangang Li. Speakerlm: End-to-end versatile speaker diarization and recognition with multimodal large language models. arXiv preprint arXiv:2508.06372, 2025.</p></div>
+<div class="pblk plain" id="p-references-25"><p class="refline">[YLY+26] Donghua Yu, Zhengyuan Lin, Chen Yang, Yiyang Zhang, Zhaoye Fei, Hanfu Chen, Jingqi Chen, Ke Chen, Qinyuan Cheng, Liwei Fan, et al. Moss transcribe diarize: Accurate transcription with speaker diarization. arXiv preprint arXiv:2601.01554, 2026.</p></div>
+<div class="pblk plain" id="p-references-26"><p class="refline">[YYZ+24] An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, et al. Qwen2. 5 technical report. arXiv preprint arXiv:2412.15115, 2024.</p></div>
+<div class="pblk plain" id="p-references-27"><p class="refline">[YZF+22] Fan Yu, Shiliang Zhang, Yihui Fu, Lei Xie, Siqi Zheng, Zhihao Du, Weilong Huang, Pengcheng Guo, Zhijie Yan, Bin Ma, et al. M2met: The icassp 2022 multi-channel multi-party meeting transcription challenge. In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6167–6171.</p></div>
+<div class="pblk plain" id="p-references-28"><p class="refline">IEEE, 2022.</p></div></section>
+<section>
+      <h2 class="sech lv1" id="sec-A"><span class="secnum">A</span> <span class="t-zh">Language Distribution of Training Data</span><span class="t-en">Language Distribution of Training Data</span></h2><div class="pblk" id="p-A-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-1-1"><span class="en">English Chinese Spanish Portuguese German Japanese Korean French Russian Indonesian Swedish Italian Hebrew Dutch Polish Norwegian Turkish Thai Arabic</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-1-1"><span class="zh">（附录 A 语种清单：English / Chinese / Spanish / Portuguese / German / Japanese / Korean / French / Russian / Indonesian / Swedish / Italian / Hebrew / Dutch / Polish / Norwegian / Turkish / Thai / Arabic（占比降序，完整清单与数值见下表）。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-A-1"><code>0.181721%</code></div>
+<div class="eq" id="eq-A-2"><code>Hungarian</code></div>
+<div class="eq" id="eq-A-3"><code>0.175694%</code></div>
+<div class="eq" id="eq-A-4"><code>Catalan</code></div>
+<div class="eq" id="eq-A-5"><code>0.144024%</code></div>
+<div class="eq" id="eq-A-6"><code>Czech</code></div>
+<div class="eq" id="eq-A-7"><code>0.135779%</code></div>
+<div class="eq" id="eq-A-8"><code>Danish</code></div>
+<div class="eq" id="eq-A-9"><code>0.115226%</code></div>
+<div class="eq" id="eq-A-10"><code>Persian</code></div>
+<div class="eq" id="eq-A-11"><code>0.100209%</code></div>
+<div class="eq" id="eq-A-12"><code>Afrikaans</code></div>
+<div class="eq" id="eq-A-13"><code>0.098980%</code></div>
+<div class="eq" id="eq-A-14"><code>Hindi</code></div>
+<div class="eq" id="eq-A-15"><code>0.093302%</code></div>
+<div class="eq" id="eq-A-16"><code>Finnish</code></div>
+<div class="eq" id="eq-A-17"><code>0.065677%</code></div>
+<div class="eq" id="eq-A-18"><code>Estonian</code></div>
+<div class="eq" id="eq-A-19"><code>0.065011%</code></div>
+<div class="eq" id="eq-A-20"><code>Afar</code></div>
+<div class="eq" id="eq-A-21"><code>0.063801%</code></div>
+<div class="eq" id="eq-A-22"><code>Greek</code></div>
+<div class="eq" id="eq-A-23"><code>0.063136%</code></div>
+<div class="eq" id="eq-A-24"><code>Romanian</code></div>
+<div class="eq" id="eq-A-25"><code>0.056151%</code></div>
+<div class="eq" id="eq-A-26"><code>Vietnamese</code></div>
+<div class="eq" id="eq-A-27"><code>0.056144%</code></div>
+<div class="eq" id="eq-A-28"><code>Bulgarian</code></div>
+<div class="eq" id="eq-A-29"><code>0.044601%</code></div>
+<div class="eq" id="eq-A-30"><code>Icelandic</code></div>
+<div class="eq" id="eq-A-31"><code>0.042502%</code></div>
+<div class="eq" id="eq-A-32"><code>Slovenian</code></div>
+<div class="eq" id="eq-A-33"><code>0.040306%</code></div>
+<div class="eq" id="eq-A-34"><code>Slovak</code></div>
+<div class="eq" id="eq-A-35"><code>0.039944%</code></div>
+<div class="eq" id="eq-A-36"><code>Lithuanian</code></div>
+<div class="eq" id="eq-A-37"><code>0.025635%</code></div>
+<div class="eq" id="eq-A-38"><code>Swahili</code></div>
+<div class="eq" id="eq-A-39"><code>0.023807%</code></div>
+<div class="eq" id="eq-A-40"><code>Ukrainian</code></div>
+<div class="eq" id="eq-A-41"><code>0.015401%</code></div>
+<div class="eq" id="eq-A-42"><code>Kalaallisut</code></div>
+<div class="eq" id="eq-A-43"><code>0.012667%</code></div>
+<div class="eq" id="eq-A-44"><code>Latvian</code></div>
+<div class="eq" id="eq-A-45"><code>0.012208%</code></div>
+<div class="eq" id="eq-A-46"><code>Croatian</code></div>
+<div class="eq" id="eq-A-47"><code>0.011705%</code></div>
+<div class="eq" id="eq-A-48"><code>Nepali</code></div>
+<div class="eq" id="eq-A-49"><code>0.010376%</code></div>
+<div class="eq" id="eq-A-50"><code>Serbian</code></div>
+<div class="eq" id="eq-A-51"><code>0.009273%</code></div>
+<div class="eq" id="eq-A-52"><code>Filipino</code></div>
+<div class="eq" id="eq-A-53"><code>0.008435%</code></div>
+<div class="eq" id="eq-A-54"><code>Yiddish</code></div>
+<div class="eq" id="eq-A-55"><code>0.007840%</code></div>
+<div class="eq" id="eq-A-56"><code>Malay</code></div>
+<div class="eq" id="eq-A-57"><code>0.005445%</code></div>
+<div class="eq" id="eq-A-58"><code>Urdu</code></div>
+<div class="eq" id="eq-A-59"><code>0.004618%</code></div>
+<div class="eq" id="eq-A-60"><code>Mongolian</code></div>
+<div class="eq" id="eq-A-61"><code>0.003093%</code></div>
+<div class="eq" id="eq-A-62"><code>Armenian</code></div>
+<div class="eq" id="eq-A-63"><code>0.002467%</code></div>
+<div class="eq" id="eq-A-64"><code>Javanese</code></div>
+<div class="eq" id="eq-A-65"><code>66.651067% 14.388077% 6.281633% 2.377301% 1.852176% 0.953292% 0.912063% 0.898955% 0.691947% 0.575294% 0.508351% 0.447609% 0.391830% 0.275293% 0.254292% 0.210149% 0.206286% 0.197261% 0.191945% 10 2 10 1 100 101 102</code></div>
+<div class="pblk" id="p-A-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-2-1"><span class="en">Percentage (%)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-2-1"><span class="zh">（图 3 纵轴：占比 Percentage (%)。）</span></span></p>
+          
+        </div>
+<div class="cap" id="fig-A-1"><span class="cap-k">图</span><p class="en">Figure 3: Language distribution in the training data.</p><p class="zh">图 3：训练数据的语种分布。</p></div></section></article>
   <footer class="foot">
     原文来自 arXiv:2601.18184（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。
     本地 PDF：<a href="../../papers/2601.18184.pdf">papers/2601.18184.pdf</a>。

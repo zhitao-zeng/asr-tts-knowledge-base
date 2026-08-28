@@ -83,49 +83,32 @@ globalThis.PAPER_2606_06928 = {
        "id": "s-abstract-1-7",
        "original": "The model weights, fine-tuning code, and inference tools are publicly released under the Apache 2.0 license to foster community research and development.",
        "zh": "模型权重、微调代码与推理工具均以 Apache 2.0 许可证公开发布，以促进社区的研究与开发。"
-      },
-      {
-       "id": "s-abstract-1-8",
-       "original": "Background and VoxCPM Foundation . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "……背景与 VoxCPM 基础（目录残留行，页码指引略）……"
       }
      ]
     },
     {
-     "id": "p-abstract-2",
-     "type": "paragraph",
-     "page": 2,
-     "sentences": [
-      {
-       "id": "s-abstract-2-1",
-       "original": "3 1.2 VoxCPM2: From Foundation to Full-Featured System . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "……1.2 VoxCPM2：从基础模型到全功能系统（目录残留行，起始页码 3）……"
-      }
-     ]
+     "id": "eq-abstract-1",
+     "type": "equation",
+     "page": 1,
+     "original": "Background and VoxCPM Foundation . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-abstract-3",
-     "type": "paragraph",
+     "id": "eq-abstract-2",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-abstract-3-1",
-       "original": "3 1.3 Paper Organization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "……1.3 论文结构（目录残留行，起始页码 3）……"
-      }
-     ]
+     "original": "3 1.2 VoxCPM2: From Foundation to Full-Featured System . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-abstract-4",
-     "type": "paragraph",
+     "id": "eq-abstract-3",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-abstract-4-1",
-       "original": "4",
-       "zh": "（目录残留页码 4。）"
-      }
-     ]
+     "original": "3 1.3 Paper Organization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+    },
+    {
+     "id": "eq-abstract-4",
+     "type": "equation",
+     "page": 2,
+     "original": "4"
     }
    ]
   },
@@ -140,40 +123,22 @@ globalThis.PAPER_2606_06928 = {
    },
    "blocks": [
     {
-     "id": "p-2-1",
-     "type": "paragraph",
+     "id": "eq-2-1",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-2-1-1",
-       "original": "4 2.1 Large-Scale TTS Foundation Models . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：2.1 大规模 TTS 基础模型，起始页码 4。）"
-      }
-     ]
+     "original": "4 2.1 Large-Scale TTS Foundation Models . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-2-2",
-     "type": "paragraph",
+     "id": "eq-2-2",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-2-2-1",
-       "original": "4 2.2 Controllable and Expressive Speech Generation . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：2.2 可控与富有表现力的语音生成，起始页码 4。）"
-      }
-     ]
+     "original": "4 2.2 Controllable and Expressive Speech Generation . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-2-3",
-     "type": "paragraph",
+     "id": "eq-2-3",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-2-3-1",
-       "original": "6",
-       "zh": "（目录残留页码 6。）"
-      }
-     ]
+     "original": "6"
     }
    ]
   },
@@ -188,136 +153,94 @@ globalThis.PAPER_2606_06928 = {
    },
    "blocks": [
     {
-     "id": "p-3-1",
-     "type": "paragraph",
+     "id": "eq-3-1",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-3-1-1",
-       "original": "6 3.1 Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：3.1 系统概览，起始页码 6。）"
-      }
-     ]
+     "original": "6 3.1 Overview . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-3-2",
-     "type": "paragraph",
+     "id": "eq-3-2",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-3-2-1",
-       "original": "7 3.2 AudioVAE V2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：3.2 AudioVAE V2，起始页码 7。）"
-      }
-     ]
+     "original": "7 3.2 AudioVAE V2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-3-3",
-     "type": "paragraph",
+     "id": "eq-3-3",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-3-3-1",
-       "original": "8 3.3 Backbone Refinements and Scaling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：3.3 主干改进与规模化，起始页码 8。）"
-      }
-     ]
+     "original": "8 3.3 Backbone Refinements and Scaling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-3-4",
-     "type": "paragraph",
+     "id": "eq-3-4",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-3-4-1",
-       "original": "8 3.3.1 Internal Architecture Refinements . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：3.3.1 内部架构改进，起始页码 8。）"
-      }
-     ]
+     "original": "8 3.3.1 Internal Architecture Refinements . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-3-5",
-     "type": "paragraph",
+     "id": "eq-3-5",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-3-5-1",
-       "original": "8 3.3.2 Reference Audio Pathway . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：3.3.2 参考音频通路，起始页码 8。）"
-      }
-     ]
+     "original": "8 3.3.2 Reference Audio Pathway . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-3-6",
-     "type": "paragraph",
+     "id": "eq-3-6",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-3-6-1",
-       "original": "9 3.3.3 Configuration Scaling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：3.3.3 配置规模化，起始页码 9。）"
-      }
-     ]
+     "original": "9 3.3.3"
     },
     {
-     "id": "p-3-7",
-     "type": "paragraph",
+     "id": "eq-3-7",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-3-7-1",
-       "original": "9 3.4 Unified Sequence Organization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：3.4 统一序列组织，起始页码 9。）"
-      }
-     ]
+     "original": "Configuration Scaling"
     },
     {
-     "id": "p-3-8",
-     "type": "paragraph",
+     "id": "eq-3-8",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-3-8-1",
-       "original": "9 3.5 Training Strategy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：3.5 训练策略，起始页码 9。）"
-      }
-     ]
+     "original": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-3-9",
-     "type": "paragraph",
+     "id": "eq-3-9",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-3-9-1",
-       "original": "10 3.6 Data Construction and Annotation for Controllability . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：3.6 面向可控性的数据构建与标注，起始页码 10。）"
-      }
-     ]
+     "original": "9 3.4 Unified Sequence Organization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-3-10",
-     "type": "paragraph",
+     "id": "eq-3-10",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-3-10-1",
-       "original": "11 3.7 Inference . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：3.7 推理，起始页码 11。）"
-      }
-     ]
+     "original": "9 3.5 Training Strategy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-3-11",
-     "type": "paragraph",
+     "id": "eq-3-11",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-3-11-1",
-       "original": "12",
-       "zh": "（目录残留页码 12。）"
-      }
-     ]
+     "original": "10 3.6 Data Construction and Annotation for Controllability . . . . . . . . . . . . . . . . . . . . ."
+    },
+    {
+     "id": "eq-3-12",
+     "type": "equation",
+     "page": 2,
+     "original": "11 3.7"
+    },
+    {
+     "id": "eq-3-13",
+     "type": "equation",
+     "page": 2,
+     "original": "Inference"
+    },
+    {
+     "id": "eq-3-14",
+     "type": "equation",
+     "page": 2,
+     "original": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+    },
+    {
+     "id": "eq-3-15",
+     "type": "equation",
+     "page": 2,
+     "original": "12"
     }
    ]
   },
@@ -332,100 +255,76 @@ globalThis.PAPER_2606_06928 = {
    },
    "blocks": [
     {
-     "id": "p-4-1",
-     "type": "paragraph",
+     "id": "eq-4-1",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-4-1-1",
-       "original": "12 4.1 Experimental Setup . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：4.1 实验设置，起始页码 12。）"
-      }
-     ]
+     "original": "12 4.1 Experimental Setup . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-4-2",
-     "type": "paragraph",
+     "id": "eq-4-2",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-4-2-1",
-       "original": "12 4.2 Zero-Shot Voice Cloning on Seed-TTS-Eval . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：4.2 Seed-TTS-Eval 上的零样本声音克隆，起始页码 12。）"
-      }
-     ]
+     "original": "12 4.2 Zero-Shot Voice Cloning on Seed-TTS-Eval . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-4-3",
-     "type": "paragraph",
+     "id": "eq-4-3",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-4-3-1",
-       "original": "13 4.3 Multilingual Capability . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：4.3 多语言能力，起始页码 13。）"
-      }
-     ]
+     "original": "13 4.3 Multilingual Capability . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-4-4",
-     "type": "paragraph",
+     "id": "eq-4-4",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-4-4-1",
-       "original": "14 4.4 Voice Design and Controllable Generation . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：4.4 声音设计与可控生成，起始页码 14。）"
-      }
-     ]
+     "original": "14 4.4 Voice Design and Controllable Generation . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-4-5",
-     "type": "paragraph",
+     "id": "eq-4-5",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-4-5-1",
-       "original": "16 4.5 AudioVAE V2 Reconstruction Quality . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：4.5 AudioVAE V2 重建质量，起始页码 16。）"
-      }
-     ]
+     "original": "16 4.5 AudioVAE V2 Reconstruction Quality . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
     },
     {
-     "id": "p-4-6",
-     "type": "paragraph",
+     "id": "eq-4-6",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-4-6-1",
-       "original": "17 4.6 Inference Efficiency and Deployment . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：4.6 推理效率与部署，起始页码 17。）"
-      }
-     ]
+     "original": "17 4.6"
     },
     {
-     "id": "p-4-7",
-     "type": "paragraph",
+     "id": "eq-4-7",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-4-7-1",
-       "original": "18 4.7 Subjective Listening Tests . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
-       "zh": "（目录残留行：4.7 主观听测，起始页码 18。）"
-      }
-     ]
+     "original": "Inference Efficiency and Deployment"
     },
     {
-     "id": "p-4-8",
-     "type": "paragraph",
+     "id": "eq-4-8",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-4-8-1",
-       "original": "18",
-       "zh": "（目录残留页码 18。）"
-      }
-     ]
+     "original": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+    },
+    {
+     "id": "eq-4-9",
+     "type": "equation",
+     "page": 2,
+     "original": "18 4.7"
+    },
+    {
+     "id": "eq-4-10",
+     "type": "equation",
+     "page": 2,
+     "original": "Subjective Listening Tests"
+    },
+    {
+     "id": "eq-4-11",
+     "type": "equation",
+     "page": 2,
+     "original": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+    },
+    {
+     "id": "eq-4-12",
+     "type": "equation",
+     "page": 2,
+     "original": "18"
     }
    ]
   },
@@ -440,16 +339,10 @@ globalThis.PAPER_2606_06928 = {
    },
    "blocks": [
     {
-     "id": "p-5-1",
-     "type": "paragraph",
+     "id": "eq-5-1",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-5-1-1",
-       "original": "19",
-       "zh": "（目录残留页码 19。）"
-      }
-     ]
+     "original": "19"
     }
    ]
   },
@@ -464,16 +357,10 @@ globalThis.PAPER_2606_06928 = {
    },
    "blocks": [
     {
-     "id": "p-6-1",
-     "type": "paragraph",
+     "id": "eq-6-1",
+     "type": "equation",
      "page": 2,
-     "sentences": [
-      {
-       "id": "s-6-1-1",
-       "original": "20",
-       "zh": "（目录残留页码 20。）"
-      }
-     ]
+     "original": "20"
     }
    ]
   },
@@ -1052,10 +939,16 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-discrete-token-language-modeling-4-5",
-       "original": "The same LM-plus-flow-matching pipeline has also been adopted as the speech-generation component of broader audio foundation models, including GLM-4-Voice (Zeng et al., 2024), Step-Audio (Huang et al., 2025a) and Kimi-Audio (Kimi Team, 2025).",
-       "zh": "同样的「LM + 流匹配」流水线也被更广义音频基础模型用作语音生成组件，包括 GLM-4-Voice（Zeng et al., 2024）、Step-Audio（Huang et al., 2025a）和 Kimi-Audio（Kimi Team, 2025）。"
+       "original": "The same LM-plus-flow-matching pipeline has also been adopted as the speech-generation component of broader audio foundation models, including GLM-4-Voice (Zeng et al., 2024), Step-Audio (Huang et al., 2025a) and Kimi-Audio (Kimi Team,",
+       "zh": "（目录残留页码 4。）\n（原始数据照录）\nThe same LM-plus-flow-matching pipeline has also been adopted as the speech-generation component of broader audio foundation models, including GLM-4-Voice (Zeng et al., 2024), Step-Audio (Huang et al., 2025a) and Kimi-Audio (Kimi Team,"
       }
      ]
+    },
+    {
+     "id": "eq-discrete-token-language-modeling-1",
+     "type": "equation",
+     "page": 5,
+     "original": "2025)."
     }
    ]
   },
@@ -1313,8 +1206,8 @@ globalThis.PAPER_2606_06928 = {
    "level": 1,
    "page": 6,
    "title": {
-    "original": "Methodology Discrete Text Tokens: Continuous Speech Latent Tokens: Text Hidden States: Target Audio (to be generated) Patch-level Latents Generation",
-    "zh": "3 方法（架构图页：离散文本 token、连续语音隐 token、文本隐状态、待生成目标音频、patch 级隐变量生成）"
+    "original": "Methodology T Discrete Text Tokens: Continuous Speech Latent Tokens: Text Hidden States: Target Audio (to be generated) Patch-level Latents Generation",
+    "zh": "Methodology T Discrete Text Tokens: Continuous Speech Latent Tokens: Text Hidden States: Target Audio (to be generated) Patch-level Latents Generation"
    },
    "blocks": [
     {
@@ -1324,10 +1217,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-3-2-1-1",
-       "original": "Current patch . . .",
+       "original": "Current patch",
        "zh": "当前 patch……（图中文字残留，以下同）。"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-1",
+     "type": "equation",
+     "page": 7,
+     "original": ". . ."
     },
     {
      "id": "p-3-2-2",
@@ -1342,12 +1241,76 @@ globalThis.PAPER_2606_06928 = {
      ]
     },
     {
-     "id": "tb-3-2-3",
-     "type": "table_body",
+     "id": "p-3-2-3",
+     "type": "paragraph",
      "page": 7,
-     "original": "Scalar Semantic Hidden:\nResidual Acoustic Hidden:\n...\n...",
-     "cells": 4,
-     "zh": "图中文字残留块：标量语义隐状态（Scalar Semantic Hidden）、残差声学隐状态（Residual Acoustic Hidden）等图例标签。"
+     "sentences": [
+      {
+       "id": "s-3-2-3-1",
+       "original": "Scalar Semantic Hidden:",
+       "zh": "（图内标签：Scalar Semantic Hidden（标量语义隐藏态）：）"
+      }
+     ]
+    },
+    {
+     "id": "p-3-2-4",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-2-4-1",
+       "original": "Residual Acoustic Hidden:",
+       "zh": "（图内标签：Residual Acoustic Hidden（残差声学隐藏态）：）"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-2",
+     "type": "equation",
+     "page": 7,
+     "original": "..."
+    },
+    {
+     "id": "eq-3-2-3",
+     "type": "equation",
+     "page": 7,
+     "original": "..."
+    },
+    {
+     "id": "p-3-2-5",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-2-5-1",
+       "original": "FSQ Unified Sequence Organization Basic TTS Continue / Stop (EOS decision) Stop Predictor",
+       "zh": "FSQ；统一序列组织；基础 TTS；继续/停止（EOS 判定）；停止预测器……（图中文字残留）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-4",
+     "type": "equation",
+     "page": 7,
+     "original": ". . ."
+    },
+    {
+     "id": "p-3-2-6",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-2-6-1",
+       "original": "FSQ FSQ Text-Semantic Language Model (TSLM) text tgt audio Voice Design tgt audio voice desc text",
+       "zh": "FSQ；FSQ；文本-语义语言模型（TSLM）；text；tgt audio；声音设计（Voice Design）；tgt audio；voice desc；text……（图中文字残留）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-2-5",
+     "type": "equation",
+     "page": 7,
+     "original": ". . ."
     },
     {
      "id": "p-3-2-7",
@@ -1356,10 +1319,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-3-2-7-1",
-       "original": "FSQ Unified Sequence Organization Basic TTS Continue / Stop (EOS decision) Stop Predictor . . .",
-       "zh": "FSQ；统一序列组织；基础 TTS；继续/停止（EOS 判定）；停止预测器……（图中文字残留）。"
+       "original": "T T T",
+       "zh": "……（图中省略号残留）。"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-6",
+     "type": "equation",
+     "page": 7,
+     "original": "..."
     },
     {
      "id": "p-3-2-8",
@@ -1368,10 +1337,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-3-2-8-1",
-       "original": "FSQ FSQ Text-Semantic Language Model (TSLM) text tgt audio Voice Design tgt audio voice desc text . . .",
-       "zh": "FSQ；FSQ；文本-语义语言模型（TSLM）；text；tgt audio；声音设计（Voice Design）；tgt audio；voice desc；text……（图中文字残留）。"
+       "original": "T T",
+       "zh": "……（图中省略号残留）。"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-7",
+     "type": "equation",
+     "page": 7,
+     "original": "..."
     },
     {
      "id": "p-3-2-9",
@@ -1380,10 +1355,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-3-2-9-1",
-       "original": "...",
-       "zh": "……（图中省略号残留）。"
+       "original": "Controllable Cloning <Ref_Start> <Ref_End> LocEnc LocEnc LocEnc ref audio tgt audio style desc text BPE Tokenization Continuation Cloning",
+       "zh": "可控克隆（Controllable Cloning）；<Ref_Start>；<Ref_End>；LocEnc；LocEnc；LocEnc；ref audio；tgt audio；style desc；text；BPE 分词；续写克隆（Continuation Cloning）……prompt_text | text；tgt audio；prompt audio；\"(A happy young man)VoxCPM is a TTS model...\"（图中文字残留）。"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-8",
+     "type": "equation",
+     "page": 7,
+     "original": ". . ."
     },
     {
      "id": "p-3-2-10",
@@ -1392,8 +1373,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-3-2-10-1",
-       "original": "...",
-       "zh": "……（图中省略号残留）。"
+       "original": "prompt_text | text tgt audio prompt audio \"(A happy young man)VoxCPM is a TTS model...\"",
+       "zh": "可控克隆（Controllable Cloning）；<Ref_Start>；<Ref_End>；LocEnc；LocEnc；LocEnc；ref audio；tgt audio；style desc；text；BPE 分词；续写克隆（Continuation Cloning）……prompt_text | text；tgt audio；prompt audio；\"(A happy young man)VoxCPM is a TTS model...\"（图中文字残留）。"
       }
      ]
     },
@@ -1404,18 +1385,6 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-3-2-11-1",
-       "original": "Controllable Cloning <Ref_Start> <Ref_End> LocEnc LocEnc LocEnc ref audio tgt audio style desc text BPE Tokenization Continuation Cloning . . . prompt_text | text tgt audio prompt audio \"(A happy young man)VoxCPM is a TTS model...\"",
-       "zh": "可控克隆（Controllable Cloning）；<Ref_Start>；<Ref_End>；LocEnc；LocEnc；LocEnc；ref audio；tgt audio；style desc；text；BPE 分词；续写克隆（Continuation Cloning）……prompt_text | text；tgt audio；prompt audio；\"(A happy young man)VoxCPM is a TTS model...\"（图中文字残留）。"
-      }
-     ]
-    },
-    {
-     "id": "p-3-2-12",
-     "type": "paragraph",
-     "page": 7,
-     "sentences": [
-      {
-       "id": "s-3-2-12-1",
        "original": "Text (w/ description) Reference Audio (optional) Prompt Audio (optional)",
        "zh": "文本（可选附描述）；参考音频（可选）；提示音频（可选）。"
       }
@@ -1474,30 +1443,28 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-3-1-2-2",
-       "original": "Following the formulation in VoxCPM, the generation at the i-th patch is expressed as: zi ∼LocDiT hFSQ , hresidual , zi−1; t , hFSQ = FSQ TSLM(T, E<i) , hresidual = RALM HTSLM text , HFSQ ≤i ⊕E<i , (1) where T denotes the input text tokens, E<i = LocEnc(z<i) is the patch-level acoustic history aggregated by the Local Encoder, and t is the diffusion timestep.",
-       "zh": "沿用 VoxCPM 的形式化，第 i 个 patch 的生成可写为：zi ∼ LocDiT(hFSQ, hresidual, zi−1; t)，其中 hFSQ = FSQ(TSLM(T, E<i))，hresidual = RALM(HTSLM_text, HFSQ_≤i ⊕ E<i)（式 (1)）；T 表示输入文本 token，E<i = LocEnc(z<i) 是局部编码器聚合的 patch 级声学历史，t 是扩散步。"
-      },
-      {
-       "id": "s-3-1-2-3",
-       "original": "The FSQ layer applies per-dimension scalar quantization to the TSLM hidden states to produce the semi-discrete semantic skeleton hFSQ .",
-       "zh": "FSQ 层对 TSLM 隐状态做逐维标量量化，产出半离散的语义骨架 hFSQ。"
-      },
-      {
-       "id": "s-3-1-2-4",
-       "original": "The RALM then recovers fine-grained acoustic details into hresidual by conditioning on the TSLM text-side hidden states HTSLM text together with a fusion (⊕) of the FSQ-quantized audio-side history HFSQ ≤i and the Local Encoder embeddings E<i, granting causal access to the full sequence history.",
-       "zh": "随后 RALM 以 TSLM 文本侧隐状态 HTSLM_text，以及 FSQ 量化后的音频侧历史 HFSQ_≤i 与局部编码器嵌入 E<i 的融合（⊕）为条件，把细粒度声学细节恢复进 hresidual，从而以因果方式访问完整序列历史。"
-      },
-      {
-       "id": "s-3-1-2-5",
-       "original": "A stop predictor on top of the TSLM-FSQ hidden states determines generation termination, and the entire pipeline is trained end-to-end.",
-       "zh": "TSLM-FSQ 隐状态之上的一个停止预测器决定生成何时终止，整条流水线端到端训练。"
-      },
-      {
-       "id": "s-3-1-2-6",
-       "original": "We refer readers to the formal conference version of VoxCPM (Zhou et al., 2026b) for the full derivation.",
-       "zh": "完整推导请读者参阅 VoxCPM 的正式会议版本（Zhou et al., 2026b）。"
+       "original": "Following the formulation in VoxCPM, the generation at the i-th patch is expressed as: zi ∼LocDiT hFSQ i , hresidual i , zi−1; t",
+       "zh": "沿用 VoxCPM 的表述，第 i 个 patch 的生成为：z_i ~ LocDiT(h^FSQ_i, h^residual_i, z_{i−1}; t)，h^FSQ_i = FSQ(TSLM(T, E_{<i}))，h^residual_i = RALM(H^TSLM_text, H^FSQ_{≤i} ⊕ E_{<i})（式 1），其中 T 为输入文本 token，E_{<i} = LocEnc(z_{<i}) 为 Local Encoder 聚合的 patch 级声学历史，t 为扩散时间步。"
       }
      ]
+    },
+    {
+     "id": "eq-3-1-1",
+     "type": "equation",
+     "page": 7,
+     "original": ","
+    },
+    {
+     "id": "eq-3-1-2",
+     "type": "equation",
+     "page": 7,
+     "original": "hFSQ i = FSQ TSLM(T, E<i)"
+    },
+    {
+     "id": "eq-3-1-3",
+     "type": "equation",
+     "page": 7,
+     "original": ","
     },
     {
      "id": "p-3-1-3",
@@ -1506,15 +1473,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-3-1-3-1",
-       "original": "Eq. (1) already reflects two VoxCPM2-specific modifications relative to VoxCPM: (i) the LocDiT receives hFSQ and hresidual as separate conditioning tokens rather than a single summed vector hfinal = hFSQ + hresidual , and (ii) the fusion operator ⊕before the RALM is replaced by a learnable concatenation-projection (detailed in Section 3.3.1).",
-       "zh": "相对于 VoxCPM，式 (1) 已经体现了 VoxCPM2 特有的两处修改：(i) LocDiT 以独立的条件 token 接收 hFSQ 与 hresidual，而不是单个求和向量 hfinal = hFSQ + hresidual；(ii) RALM 之前的融合算子 ⊕ 被替换为可学习的拼接-投影（详见第 3.3.1 节）。"
-      },
-      {
-       "id": "s-3-1-3-2",
-       "original": "Three additional groups of changes transform VoxCPM into a high-fidelity, multilingual, and controllable system:",
-       "zh": "另外三组改动把 VoxCPM 塑造成一个高保真、多语言、可控的系统："
+       "original": "hresidual i = RALM HTSLM text , HFSQ ≤i ⊕E<i",
+       "zh": "沿用 VoxCPM 的表述，第 i 个 patch 的生成为：z_i ~ LocDiT(h^FSQ_i, h^residual_i, z_{i−1}; t)，h^FSQ_i = FSQ(TSLM(T, E_{<i}))，h^residual_i = RALM(H^TSLM_text, H^FSQ_{≤i} ⊕ E_{<i})（式 1），其中 T 为输入文本 token，E_{<i} = LocEnc(z_{<i}) 为 Local Encoder 聚合的 patch 级声学历史，t 为扩散时间步。"
       }
      ]
+    },
+    {
+     "id": "eq-3-1-4",
+     "type": "equation",
+     "page": 7,
+     "original": ", (1)"
     },
     {
      "id": "p-3-1-4",
@@ -1523,30 +1491,97 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-3-1-4-1",
-       "original": "• A redesigned latent codec, AudioVAE V2, that lifts the output sample rate to 48 kHz without lengthening the autoregressive sequence (Section 3.2).",
-       "zh": "• 重新设计的隐空间 codec——AudioVAE V2，在不拉长自回归序列的前提下把输出采样率提升到 48 kHz（第 3.2 节）。"
+       "original": "where T denotes the input text tokens, E<i = LocEnc(z<i) is the patch-level acoustic history aggregated by the Local Encoder, and t is the diffusion timestep.",
+       "zh": "沿用 VoxCPM 的表述，第 i 个 patch 的生成为：z_i ~ LocDiT(h^FSQ_i, h^residual_i, z_{i−1}; t)，h^FSQ_i = FSQ(TSLM(T, E_{<i}))，h^residual_i = RALM(H^TSLM_text, H^FSQ_{≤i} ⊕ E_{<i})（式 1），其中 T 为输入文本 token，E_{<i} = LocEnc(z_{<i}) 为 Local Encoder 聚合的 patch 级声学历史，t 为扩散时间步。"
+      },
+      {
+       "id": "s-3-1-4-2",
+       "original": "The FSQ layer applies per-dimension scalar quantization to the TSLM hidden states to produce the semi-discrete semantic skeleton hFSQ i .",
+       "zh": "FSQ 层对 TSLM 隐藏态做逐维标量量化，得到半离散的语义骨架 h^FSQ_i。"
+      },
+      {
+       "id": "s-3-1-4-3",
+       "original": "The RALM then recovers fine-grained acoustic details into hresidual i by conditioning on the TSLM text-side hidden states HTSLM text together with a fusion (⊕) of the FSQ-quantized audio-side history HFSQ ≤i and the Local Encoder embeddings E<i, granting causal access to the full sequence history.",
+       "zh": "随后 RALM 以 TSLM 文本侧隐藏态 H^TSLM_text 与 FSQ 量化的音频侧历史 H^FSQ_{≤i} 及 Local Encoder 嵌入 E_{<i} 的融合（⊕）为条件，把细粒度声学细节恢复为 h^residual_i，从而可以因果地访问完整序列历史。"
+      },
+      {
+       "id": "s-3-1-4-4",
+       "original": "A stop predictor on top of the TSLM-FSQ hidden states determines generation termination, and the entire pipeline is trained end-to-end.",
+       "zh": "TSLM-FSQ 隐状态之上的一个停止预测器决定生成何时终止，整条流水线端到端训练。"
+      },
+      {
+       "id": "s-3-1-4-5",
+       "original": "We refer readers to the formal conference version of VoxCPM (Zhou et al., 2026b) for the full derivation.",
+       "zh": "完整推导请读者参阅 VoxCPM 的正式会议版本（Zhou et al., 2026b）。"
       }
      ]
     },
     {
      "id": "p-3-1-5",
      "type": "paragraph",
-     "page": 8,
+     "page": 7,
      "sentences": [
       {
        "id": "s-3-1-5-1",
+       "original": "Eq. (1) already reflects two VoxCPM2-specific modifications relative to VoxCPM: (i) the LocDiT receives hFSQ i and hresidual i as separate conditioning tokens rather than a single summed vector hfinal i = hFSQ i + hresidual i",
+       "zh": "式 (1) 已体现 VoxCPM2 相对 VoxCPM 的两处修改：(i) LocDiT 以 h^FSQ_i 与 h^residual_i 作为两个独立条件 token，而非单个求和向量 h^final_i = h^FSQ_i + h^residual_i；(ii) RALM 前的融合算子 ⊕ 被替换为可学习的拼接-投影（详见 3.3.1 节）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-1-5",
+     "type": "equation",
+     "page": 7,
+     "original": ","
+    },
+    {
+     "id": "p-3-1-6",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-1-6-1",
+       "original": "and (ii) the fusion operator ⊕before the RALM is replaced by a learnable concatenation-projection (detailed in Section 3.3.1).",
+       "zh": "3.\n（原始数据照录）\nand (ii) the fusion operator ⊕before the RALM is replaced by a learnable concatenation-projection (detailed in Section 3.3.1)."
+      },
+      {
+       "id": "s-3-1-6-2",
+       "original": "Three additional groups of changes transform VoxCPM into a high-fidelity, multilingual, and controllable system:",
+       "zh": "另外三组改动把 VoxCPM 塑造成一个高保真、多语言、可控的系统："
+      }
+     ]
+    },
+    {
+     "id": "p-3-1-7",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-1-7-1",
+       "original": "• A redesigned latent codec, AudioVAE V2, that lifts the output sample rate to 48 kHz without lengthening the autoregressive sequence (Section 3.2).",
+       "zh": "• 重新设计的隐空间 codec——AudioVAE V2，在不拉长自回归序列的前提下把输出采样率提升到 48 kHz（第 3.2 节）。"
+      }
+     ]
+    },
+    {
+     "id": "p-3-1-8",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-3-1-8-1",
        "original": "• A refined backbone with wider information pathways, a new isolated reference-audio input, and substantially scaled capacity (Section 3.3). • A unified sequence organization that expresses basic TTS, voice design, reference cloning, controllable cloning, and continuation cloning as different input layouts over the same backbone (Section 3.4).",
        "zh": "• 改进的主干：更宽的信息通路、新增的独立参考音频输入，以及大幅扩展的容量（第 3.3 节）。• 统一序列组织，把基础 TTS、声音设计、参考克隆、可控克隆与续写克隆表达为同一主干上的不同输入布局（第 3.4 节）。"
       }
      ]
     },
     {
-     "id": "p-3-1-6",
+     "id": "p-3-1-9",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
-       "id": "s-3-1-6-1",
+       "id": "s-3-1-9-1",
        "original": "The training strategy, data construction pipeline, and inference recipe are described in Sections 3.5–3.7.",
        "zh": "训练策略、数据构建流水线与推理方案见第 3.5–3.7 节。"
       }
@@ -1676,16 +1711,34 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-3-3-1-1-1",
-       "original": "In VoxCPM, the FSQ-quantized semantic state hFSQ and the Local Encoder embedding Ei ∈E<i were merged by element-wise summation before entering the RALM.",
-       "zh": "在 VoxCPM 中，FSQ 量化后的语义状态 hFSQ 与局部编码器嵌入 Ei ∈ E<i 在进入 RALM 之前以逐元素相加的方式合并。"
+       "original": "In VoxCPM, the FSQ-quantized semantic state hFSQ i and the Local Encoder embedding Ei ∈E<i were merged by element-wise summation before entering the RALM.",
+       "zh": "在 VoxCPM 中，FSQ 量化的语义状态 h^FSQ_i 与 Local Encoder 嵌入 E_i ∈ E_{<i} 经逐元素求和合并后送入 RALM。"
       },
       {
        "id": "s-3-3-1-1-2",
-       "original": "VoxCPM2 replaces this with a learnable concatenation-projection, hres_in = Wfuse hFSQ ∥Ei , (2) where [ · ∥· ] denotes channel-wise concatenation.",
-       "zh": "VoxCPM2 把它替换为可学习的拼接-投影：hres_in = Wfuse [hFSQ ∥ Ei]（式 (2)），其中 [· ∥ ·] 表示按通道拼接。"
+       "original": "VoxCPM2 replaces this with a learnable concatenation-projection, hres_in i = Wfuse hFSQ i ∥Ei",
+       "zh": "VoxCPM2 将其替换为可学习的拼接-投影：h^res_in_i = W_fuse·[h^FSQ_i ∥ E_i]（式 2），其中 [·∥·] 表示通道维拼接。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-3-1-1",
+     "type": "equation",
+     "page": 8,
+     "original": ", (2)"
+    },
+    {
+     "id": "p-3-3-1-2",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-3-3-1-2-1",
+       "original": "where [ · ∥· ] denotes channel-wise concatenation.",
+       "zh": "VoxCPM2 将其替换为可学习的拼接-投影：h^res_in_i = W_fuse·[h^FSQ_i ∥ E_i]（式 2），其中 [·∥·] 表示通道维拼接。"
       },
       {
-       "id": "s-3-3-1-1-3",
+       "id": "s-3-3-1-2-2",
        "original": "This preserves richer information from both streams and allows the model to learn optimal combination weights.",
        "zh": "这保留了两路信息流中更丰富的内容，也让模型能够学习到最优的组合权重。"
       }
@@ -1725,18 +1778,60 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-multi-token-conditioning-prefix--1-4",
-       "original": "The process is: [ µsem, µres, µt, z(1) i−1, . . . , z(P ) i−1, ˜z(1) , . . . , ˜z(P ) ], where µsem, µres, µt are the projections of hFSQ , hresidual , and the diffusion timestep t, respectively, and z(1...P ) denotes the P latent frames inside one patch (the previous clean patch and the current noisy patch).",
+       "original": "The process is: [ µsem, µres, µt, z(1)",
        "zh": "具体序列为：[µsem, µres, µt, z(1)_i−1, …, z(P)_i−1, ẑ(1), …, ẑ(P)]，其中 µsem、µres、µt 分别是 hFSQ、hresidual 与扩散步 t 的投影，z(1...P) 表示一个 patch 内的 P 个隐帧（即前一干净 patch 与当前含噪 patch）。"
       }
      ]
     },
     {
+     "id": "eq-multi-token-conditioning-prefix--1",
+     "type": "equation",
+     "page": 8,
+     "original": "i−1, . . . , z(P )"
+    },
+    {
+     "id": "eq-multi-token-conditioning-prefix--2",
+     "type": "equation",
+     "page": 8,
+     "original": "i−1, ˜z(1) i"
+    },
+    {
+     "id": "eq-multi-token-conditioning-prefix--3",
+     "type": "equation",
+     "page": 8,
+     "original": ", . . . , ˜z(P )"
+    },
+    {
+     "id": "eq-multi-token-conditioning-prefix--4",
+     "type": "equation",
+     "page": 8,
+     "original": "i"
+    },
+    {
+     "id": "eq-multi-token-conditioning-prefix--5",
+     "type": "equation",
+     "page": 8,
+     "original": "],"
+    },
+    {
      "id": "p-multi-token-conditioning-prefix--2",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-multi-token-conditioning-prefix--2-1",
+       "original": "where µsem, µres, µt are the projections of hFSQ i , hresidual i , and the diffusion timestep t, respectively, and z(1...P ) denotes the P latent frames inside one patch (the previous clean patch and the current noisy patch).",
+       "zh": "1."
+      }
+     ]
+    },
+    {
+     "id": "p-multi-token-conditioning-prefix--3",
      "type": "paragraph",
      "page": 9,
      "sentences": [
       {
-       "id": "s-multi-token-conditioning-prefix--2-1",
+       "id": "s-multi-token-conditioning-prefix--3-1",
        "original": "The LocDiT attends over this sequence with full attention and predicts the velocity field at the noisy-patch positions.",
        "zh": "LocDiT 以全注意力机制处理这一序列，并在含噪 patch 的位置上预测速度场（velocity field）。"
       }
@@ -1912,10 +2007,60 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-3-3-3-2-1",
-       "original": "Component VoxCPM VoxCPM1.5 Backbone parameters ∼0.6B ∼0.8B ∼2B LocEnc TSLM MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-1B (28L, H=2048) FSQ latent dim 256 256 512 RALM LocDiT Patch size P 2 4 4 LM-side token rate 12.5 Hz 6.25 Hz 6.25 Hz Max sequence length 4096 4096 8192 Input sample rate 16 kHz 44.1 kHz 16 kHz Output sample rate 16 kHz 44.1 kHz 48 kHz",
-       "zh": "（Table 1 数值行残留，各列依次为：组件 | VoxCPM | VoxCPM1.5；主干参数约 0.6B、约 0.8B、约 2B；LocEnc 与 TSLM 依次采用 MiniCPM-4-0.5B（24 层，H=1024）、MiniCPM-4-0.5B（24 层，H=1024）、MiniCPM-4-1B（28 层，H=2048）；FSQ 隐维度 256、256、512；RALM 与 LocDiT；patch 大小 P 为 2、4、4；LM 侧 token 率 12.5 Hz、6.25 Hz、6.25 Hz；最大序列长度 4096、4096、8192；输入采样率 16 kHz、44.1 kHz、16 kHz；输出采样率 16 kHz、44.1 kHz、48 kHz。）"
+       "original": "Component VoxCPM VoxCPM1.5 VoxCPM2 Backbone parameters ∼0.6B ∼0.8B ∼2B LocEnc 4L, H=1024 8L, H=1024 12L, H=1024 TSLM MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-1B (28L, H=2048) FSQ latent dim",
+       "zh": "（目录残留页码 4。）\n（原始数据照录）\nComponent VoxCPM VoxCPM1.5 VoxCPM2 Backbone parameters ∼0.6B ∼0.8B ∼2B LocEnc 4L, H=1024 8L, H=1024 12L, H=1024 TSLM MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-1B (28L, H=2048) FSQ latent dim"
       }
      ]
+    },
+    {
+     "id": "eq-3-3-3-1",
+     "type": "equation",
+     "page": 9,
+     "original": "256 256 512"
+    },
+    {
+     "id": "p-3-3-3-3",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-3-3-3-3-1",
+       "original": "RALM 6L, H=1024 8L, H=1024 8L, H=2048 LocDiT 4L, H=1024 8L, H=1024 12L, H=1024 Patch size P",
+       "zh": "（目录残留页码 4。）\n（原始数据照录）\nRALM 6L, H=1024 8L, H=1024 8L, H=2048 LocDiT 4L, H=1024 8L, H=1024 12L, H=1024 Patch size P"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-3-3-2",
+     "type": "equation",
+     "page": 9,
+     "original": "2 4 4"
+    },
+    {
+     "id": "p-3-3-3-4",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-3-3-3-4-1",
+       "original": "LM-side token rate 12.5 Hz 6.25 Hz 6.25 Hz Max sequence length",
+       "zh": "（目录残留页码 6。）\n（原始数据照录）\nLM-side token rate 12.5 Hz 6.25 Hz 6.25 Hz Max sequence length"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-3-3-3",
+     "type": "equation",
+     "page": 9,
+     "original": "4096 4096 8192"
+    },
+    {
+     "id": "p-3-3-3-5",
+     "type": "table_body",
+     "page": 9,
+     "original": "Input sample rate 16 kHz 44.1 kHz 16 kHz Output sample rate 16 kHz 44.1 kHz 48 kHz",
+     "cells": 18,
+     "zh": "（目录残留页码 4。）"
     }
    ]
   },
@@ -2168,31 +2313,44 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-three-stage-progressive-curricul-2-9",
-       "original": "We extend the maximum sequence length to 8192 and audio duration to up to 3 minutes.",
+       "original": "We extend the maximum sequence length",
        "zh": "我们把最大序列长度扩展到 8192，音频时长放宽到最长 3 分钟。"
+      }
+     ]
+    },
+    {
+     "id": "eq-three-stage-progressive-curricul-1",
+     "type": "equation",
+     "page": 10,
+     "original": "to 8192 and audio duration to up to 3 minutes. Stages 1 and 2 together account for the majority of"
+    },
+    {
+     "id": "p-three-stage-progressive-curricul-3",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-three-stage-progressive-curricul-3-1",
+       "original": "training compute. 3.",
+       "zh": "3."
       },
       {
-       "id": "s-three-stage-progressive-curricul-2-10",
-       "original": "Stages 1 and 2 together account for the majority of training compute. 3.",
-       "zh": "第 1、2 阶段合计占训练算力的大头。3."
-      },
-      {
-       "id": "s-three-stage-progressive-curricul-2-11",
+       "id": "s-three-stage-progressive-curricul-3-2",
        "original": "High-quality annealing SFT.",
        "zh": "高质量退火 SFT（监督微调）。"
       },
       {
-       "id": "s-three-stage-progressive-curricul-2-12",
+       "id": "s-three-stage-progressive-curricul-3-3",
        "original": "The final stage uses a curated high-quality subset with more expressive speech and precisely annotated controllable data.",
        "zh": "最后阶段使用精选的高质量子集，其中包含更具表现力的语音与精确标注的可控数据。"
       },
       {
-       "id": "s-three-stage-progressive-curricul-2-13",
+       "id": "s-three-stage-progressive-curricul-3-4",
        "original": "Controllable samples occupy a significantly larger proportion than in Stage 2, including a higher ratio of reference-audio-based controllable cloning examples.",
        "zh": "可控样本的占比显著高于第 2 阶段，其中基于参考音频的可控克隆样本比例也更高。"
       },
       {
-       "id": "s-three-stage-progressive-curricul-2-14",
+       "id": "s-three-stage-progressive-curricul-3-5",
        "original": "We maintain the 8192-token context, utilize diverse samples ranging from 2 sec to 5 min, adopt a balanced language-level sampling ratio, and apply learning-rate annealing to further refine performance.",
        "zh": "我们保持 8192 token 的上下文，使用时长从 2 秒到 5 分钟的多样样本，采用各语言均衡的采样比例，并施加学习率退火以进一步打磨性能。"
       }
@@ -2652,7 +2810,7 @@ globalThis.PAPER_2606_06928 = {
    "page": 13,
    "title": {
     "original": "Model",
-    "zh": "模型（Seed-TTS-Eval 结果表行）"
+    "zh": "模型（InstructTTSEval 结果表行）"
    },
    "blocks": [
     {
@@ -2662,10 +2820,352 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-model-1-1",
-       "original": "Params OS test-EN test-ZH test-ZH-Hard WER↓ CER↓ CER↓ Closed-source MegaTTS3 (Jiang et al., 2025) 2.79 77.1 1.52 79.0 DiTAR (Jia et al., 2025) 1.69 73.5 1.02 75.3 CosyVoice 3 (Du et al., 2025) 2.22 72.0 1.12 78.1 5.83 75.8 Seed-TTS (Anastassiou et al., 2024) 2.25 76.2 1.12 79.6 7.59 77.6 MiniMax-Speech (Zhang et al., 2025a) 1.65 69.2 0.83 78.3 CosyVoice3.5 1.57 73.8 0.87 79.7 5.71 78.6 Open-source F5-TTS (Chen et al., 2025b) 2.00 67.0 1.53 76.0 8.67 71.3 MaskGCT (Wang et al., 2025d) 2.62 71.7 2.27 77.4 CosyVoice (Du et al., 2024a) 4.29 60.9 3.63 72.3 11.75 70.9 CosyVoice 2 (Du et al., 2024b) 3.09 65.9 1.38 75.7 6.83 72.4 CosyVoice 3 (Du et al., 2025) 2.02 71.8 1.16 78.0 6.08 75.8 Spark-TTS (Wang et al., 2025c) 3.14 57.3 1.54 66.0 FireRedTTS (Guo et al., 2024) 3.82 46.0 1.51 63.5 17.45 62.1 FireRedTTS-2 (Xie et al., 2025a) 1.95 66.5 1.14 73.6 Qwen2.5-Omni (Xu et al., 2025a) 2.72 63.2 1.70 75.2 7.97 74.7 Qwen3-Omni (Xu et al., 2025b) 30B-A3B 1.39 1.07 OpenAudio-s1-mini (OpenAudio, 2024) 1.94 55.0 1.18 68.5 23.37 64.3 IndexTTS2 (Zhou et al., 2026a) 2.23 70.6 1.03 76.5 7.12 75.5 VibeVoice (Peng et al., 2025) 3.04 68.9 1.16 74.4 HiggsAudio-v2 (Boson AI, 2025) 2.44 67.7 1.50 74.0 55.07 65.6 ZipVoice (Zhu et al., 2025) 1.64 66.8 1.40 75.1 MOSS-TTS (Gong et al., 2026) 1.85 73.4 1.20 78.8 Qwen3-TTS (Hu et al., 2026a) 1.23 71.7 1.22 77.0 6.76 74.8 Fish Audio S2 (Liao et al., 2026) 0.99 0.54 5.99 OmniVoice (Zhu et al., 2026) 1.60 74.1 0.84 77.7 LongCat-Audio-DiT (Xin et al., 2026) 1.50 78.6 1.09 81.8 6.04 79.7 VoxCPM 1.85 72.9 0.93 77.2 8.87 73.0 VoxCPM1.5 2.12 71.4 1.18 77.0 7.74 73.1 1.84 75.3 0.97 79.5 8.13 75.3",
-       "zh": "（Table 3 内容残留）列依次为：模型 | 参数量 | test-EN WER↓ SIM | test-ZH CER↓ SIM | test-ZH-Hard CER↓ SIM。闭源：MegaTTS3（Jiang et al., 2025）2.79 77.1 1.52 79.0；DiTAR（Jia et al., 2025）1.69 73.5 1.02 75.3；CosyVoice 3（Du et al., 2025）2.22 72.0 1.12 78.1 5.83 75.8；Seed-TTS（Anastassiou et al., 2024）2.25 76.2 1.12 79.6 7.59 77.6；MiniMax-Speech（Zhang et al., 2025a）1.65 69.2 0.83 78.3；CosyVoice3.5 1.57 73.8 0.87 79.7 5.71 78.6。开源：F5-TTS（Chen et al., 2025b）2.00 67.0 1.53 76.0 8.67 71.3；MaskGCT（Wang et al., 2025d）2.62 71.7 2.27 77.4；CosyVoice（Du et al., 2024a）4.29 60.9 3.63 72.3 11.75 70.9；CosyVoice 2（Du et al., 2024b）3.09 65.9 1.38 75.7 6.83 72.4；CosyVoice 3（Du et al., 2025）2.02 71.8 1.16 78.0 6.08 75.8；Spark-TTS（Wang et al., 2025c）3.14 57.3 1.54 66.0；FireRedTTS（Guo et al., 2024）3.82 46.0 1.51 63.5 17.45 62.1；FireRedTTS-2（Xie et al., 2025a）1.95 66.5 1.14 73.6；Qwen2.5-Omni（Xu et al., 2025a）2.72 63.2 1.70 75.2 7.97 74.7；Qwen3-Omni（Xu et al., 2025b）30B-A3B 1.39 1.07；OpenAudio-s1-mini（OpenAudio, 2024）1.94 55.0 1.18 68.5 23.37 64.3；IndexTTS2（Zhou et al., 2026a）2.23 70.6 1.03 76.5 7.12 75.5；VibeVoice（Peng et al., 2025）3.04 68.9 1.16 74.4；HiggsAudio-v2（Boson AI, 2025）2.44 67.7 1.50 74.0 55.07 65.6；ZipVoice（Zhu et al., 2025）1.64 66.8 1.40 75.1；MOSS-TTS（Gong et al., 2026）1.85 73.4 1.20 78.8；Qwen3-TTS（Hu et al., 2026a）1.23 71.7 1.22 77.0 6.76 74.8；Fish Audio S2（Liao et al., 2026）0.99 0.54 5.99；OmniVoice（Zhu et al., 2026）1.60 74.1 0.84 77.7；LongCat-Audio-DiT（Xin et al., 2026）1.50 78.6 1.09 81.8 6.04 79.7；VoxCPM 1.85 72.9 0.93 77.2 8.87 73.0；VoxCPM1.5 2.12 71.4 1.18 77.0 7.74 73.1；VoxCPM2 1.84 75.3 0.97 79.5 8.13 75.3。"
+       "original": "Params OS test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Closed-source MegaTTS3 (Jiang et al., 2025) 0.5B",
+       "zh": "（目录残留页码 20。）\n（原始数据照录）\nParams OS test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Closed-source MegaTTS3 (Jiang et al., 2025) 0.5B"
       }
      ]
+    },
+    {
+     "id": "eq-model-1",
+     "type": "equation",
+     "page": 13,
+     "original": "✗ 2.79 77.1 1.52 79.0 – –"
+    },
+    {
+     "id": "eq-model-2",
+     "type": "equation",
+     "page": 13,
+     "original": "DiTAR (Jia et al., 2025) 0.6B"
+    },
+    {
+     "id": "eq-model-3",
+     "type": "equation",
+     "page": 13,
+     "original": "✗ 1.69 73.5 1.02 75.3 – –"
+    },
+    {
+     "id": "eq-model-4",
+     "type": "equation",
+     "page": 13,
+     "original": "CosyVoice 3 (Du et al., 2025) 1.5B"
+    },
+    {
+     "id": "eq-model-5",
+     "type": "equation",
+     "page": 13,
+     "original": "✗ 2.22 72.0 1.12 78.1 5.83 75.8"
+    },
+    {
+     "id": "eq-model-6",
+     "type": "equation",
+     "page": 13,
+     "original": "Seed-TTS (Anastassiou et al., 2024)"
+    },
+    {
+     "id": "eq-model-7",
+     "type": "equation",
+     "page": 13,
+     "original": "– ✗ 2.25 76.2 1.12 79.6 7.59 77.6"
+    },
+    {
+     "id": "eq-model-8",
+     "type": "equation",
+     "page": 13,
+     "original": "MiniMax-Speech (Zhang et al., 2025a)"
+    },
+    {
+     "id": "eq-model-9",
+     "type": "equation",
+     "page": 13,
+     "original": "– ✗ 1.65 69.2 0.83 78.3 – –"
+    },
+    {
+     "id": "eq-model-10",
+     "type": "equation",
+     "page": 13,
+     "original": "CosyVoice3.5"
+    },
+    {
+     "id": "eq-model-11",
+     "type": "equation",
+     "page": 13,
+     "original": "– ✗ 1.57 73.8 0.87 79.7 5.71 78.6"
+    },
+    {
+     "id": "eq-model-12",
+     "type": "equation",
+     "page": 13,
+     "original": "Open-source F5-TTS (Chen et al., 2025b) 0.3B"
+    },
+    {
+     "id": "eq-model-13",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 2.00 67.0 1.53 76.0 8.67 71.3"
+    },
+    {
+     "id": "eq-model-14",
+     "type": "equation",
+     "page": 13,
+     "original": "MaskGCT (Wang et al., 2025d) 1B"
+    },
+    {
+     "id": "eq-model-15",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 2.62 71.7 2.27 77.4 – –"
+    },
+    {
+     "id": "eq-model-16",
+     "type": "equation",
+     "page": 13,
+     "original": "CosyVoice (Du et al., 2024a) 0.3B"
+    },
+    {
+     "id": "eq-model-17",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 4.29 60.9 3.63 72.3 11.75 70.9"
+    },
+    {
+     "id": "eq-model-18",
+     "type": "equation",
+     "page": 13,
+     "original": "CosyVoice 2 (Du et al., 2024b) 0.5B"
+    },
+    {
+     "id": "eq-model-19",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 3.09 65.9 1.38 75.7 6.83 72.4"
+    },
+    {
+     "id": "eq-model-20",
+     "type": "equation",
+     "page": 13,
+     "original": "CosyVoice 3 (Du et al., 2025) 0.5B"
+    },
+    {
+     "id": "eq-model-21",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 2.02 71.8 1.16 78.0 6.08 75.8"
+    },
+    {
+     "id": "eq-model-22",
+     "type": "equation",
+     "page": 13,
+     "original": "Spark-TTS (Wang et al., 2025c) 0.5B"
+    },
+    {
+     "id": "eq-model-23",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 3.14 57.3 1.54 66.0 – –"
+    },
+    {
+     "id": "eq-model-24",
+     "type": "equation",
+     "page": 13,
+     "original": "FireRedTTS (Guo et al., 2024) 0.5B"
+    },
+    {
+     "id": "eq-model-25",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 3.82 46.0 1.51 63.5 17.45 62.1"
+    },
+    {
+     "id": "eq-model-26",
+     "type": "equation",
+     "page": 13,
+     "original": "FireRedTTS-2 (Xie et al., 2025a) 1.5B"
+    },
+    {
+     "id": "eq-model-27",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 1.95 66.5 1.14 73.6 – –"
+    },
+    {
+     "id": "eq-model-28",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen2.5-Omni (Xu et al., 2025a) 7B"
+    },
+    {
+     "id": "eq-model-29",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 2.72 63.2 1.70 75.2 7.97 74.7"
+    },
+    {
+     "id": "eq-model-30",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen3-Omni (Xu et al., 2025b) 30B-A3B"
+    },
+    {
+     "id": "eq-model-31",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 1.39 – 1.07 – – –"
+    },
+    {
+     "id": "eq-model-32",
+     "type": "equation",
+     "page": 13,
+     "original": "OpenAudio-s1-mini (OpenAudio, 2024) 0.5B"
+    },
+    {
+     "id": "eq-model-33",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 1.94 55.0 1.18 68.5 23.37 64.3"
+    },
+    {
+     "id": "eq-model-34",
+     "type": "equation",
+     "page": 13,
+     "original": "IndexTTS2 (Zhou et al., 2026a) 1.5B"
+    },
+    {
+     "id": "eq-model-35",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 2.23 70.6 1.03 76.5 7.12 75.5"
+    },
+    {
+     "id": "eq-model-36",
+     "type": "equation",
+     "page": 13,
+     "original": "VibeVoice (Peng et al., 2025) 1.5B"
+    },
+    {
+     "id": "eq-model-37",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 3.04 68.9 1.16 74.4 – –"
+    },
+    {
+     "id": "eq-model-38",
+     "type": "equation",
+     "page": 13,
+     "original": "HiggsAudio-v2 (Boson AI, 2025) 3B"
+    },
+    {
+     "id": "eq-model-39",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 2.44 67.7 1.50 74.0 55.07 65.6"
+    },
+    {
+     "id": "eq-model-40",
+     "type": "equation",
+     "page": 13,
+     "original": "ZipVoice (Zhu et al., 2025) 0.1B"
+    },
+    {
+     "id": "eq-model-41",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 1.64 66.8 1.40 75.1 – –"
+    },
+    {
+     "id": "eq-model-42",
+     "type": "equation",
+     "page": 13,
+     "original": "MOSS-TTS (Gong et al., 2026) 8B"
+    },
+    {
+     "id": "eq-model-43",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 1.85 73.4 1.20 78.8 – –"
+    },
+    {
+     "id": "eq-model-44",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen3-TTS (Hu et al., 2026a) 1.7B"
+    },
+    {
+     "id": "eq-model-45",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 1.23 71.7 1.22 77.0 6.76 74.8"
+    },
+    {
+     "id": "eq-model-46",
+     "type": "equation",
+     "page": 13,
+     "original": "Fish Audio S2 (Liao et al., 2026) 4B"
+    },
+    {
+     "id": "eq-model-47",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 0.99 – 0.54 – 5.99 –"
+    },
+    {
+     "id": "eq-model-48",
+     "type": "equation",
+     "page": 13,
+     "original": "OmniVoice (Zhu et al., 2026) 0.8B"
+    },
+    {
+     "id": "eq-model-49",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 1.60 74.1 0.84 77.7 – –"
+    },
+    {
+     "id": "eq-model-50",
+     "type": "equation",
+     "page": 13,
+     "original": "LongCat-Audio-DiT (Xin et al., 2026) 3.5B"
+    },
+    {
+     "id": "eq-model-51",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 1.50 78.6 1.09 81.8 6.04 79.7"
+    },
+    {
+     "id": "eq-model-52",
+     "type": "equation",
+     "page": 13,
+     "original": "VoxCPM 0.6B"
+    },
+    {
+     "id": "eq-model-53",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 1.85 72.9 0.93 77.2 8.87 73.0"
+    },
+    {
+     "id": "eq-model-54",
+     "type": "equation",
+     "page": 13,
+     "original": "VoxCPM1.5 0.8B"
+    },
+    {
+     "id": "eq-model-55",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 2.12 71.4 1.18 77.0 7.74 73.1"
+    },
+    {
+     "id": "eq-model-56",
+     "type": "equation",
+     "page": 13,
+     "original": "VoxCPM2 2B"
+    },
+    {
+     "id": "eq-model-57",
+     "type": "equation",
+     "page": 13,
+     "original": "✓ 1.84 75.3 0.97 79.5 8.13 75.3"
     }
    ]
   },
@@ -2780,10 +3280,40 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-inference-recipe-1-1",
-       "original": "Sequence layout (Sec. 3.4) test-EN test-ZH test-ZH-Hard WER↓ CER↓ CER↓ Continuation only ⟨text | prompt⟩→⟨target⟩ 1.01 77.7 1.97 72.6 8.16 72.4 Reference only ⟨ref⟩| ⟨text⟩→⟨target⟩ 1.10 75.3 1.81 67.0 6.85 70.0 Reference + Continuation ⟨ref⟩| ⟨text | prompt⟩→⟨target⟩ 0.99 79.5 1.94 75.2 7.44 74.9",
-       "zh": "（Table 4 内容残留）序列布局（见第 3.4 节）| test-EN WER↓ SIM | test-ZH CER↓ SIM | test-ZH-Hard CER↓ SIM。仅续写 ⟨text | prompt⟩→⟨target⟩：1.01 77.7 1.97 72.6 8.16 72.4；仅参考 ⟨ref⟩|⟨text⟩→⟨target⟩：1.10 75.3 1.81 67.0 6.85 70.0；参考 + 续写 ⟨ref⟩|⟨text | prompt⟩→⟨target⟩：0.99 79.5 1.94 75.2 7.44 74.9。"
+       "original": "Sequence layout (Sec. 3.4) test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Continuation only ⟨text | prompt⟩→⟨target⟩",
+       "zh": "（目录残留页码 4。）\n（原始数据照录）\nSequence layout (Sec. 3.4) test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Continuation only ⟨text | prompt⟩→⟨target⟩"
       }
      ]
+    },
+    {
+     "id": "eq-inference-recipe-1",
+     "type": "equation",
+     "page": 14,
+     "original": "1.01 77.7 1.97 72.6 8.16 72.4"
+    },
+    {
+     "id": "eq-inference-recipe-2",
+     "type": "equation",
+     "page": 14,
+     "original": "Reference only ⟨ref⟩| ⟨text⟩→⟨target⟩"
+    },
+    {
+     "id": "eq-inference-recipe-3",
+     "type": "equation",
+     "page": 14,
+     "original": "1.10 75.3 1.81 67.0 6.85 70.0"
+    },
+    {
+     "id": "eq-inference-recipe-4",
+     "type": "equation",
+     "page": 14,
+     "original": "Reference + Continuation ⟨ref⟩| ⟨text | prompt⟩→⟨target⟩"
+    },
+    {
+     "id": "eq-inference-recipe-5",
+     "type": "equation",
+     "page": 14,
+     "original": "0.99 79.5 1.94 75.2 7.44 74.9"
     },
     {
      "id": "tab-inference-recipe-1",
@@ -2801,7 +3331,7 @@ globalThis.PAPER_2606_06928 = {
    "page": 14,
    "title": {
     "original": "Model",
-    "zh": "模型（CV3-Eval 结果表行）"
+    "zh": "模型（InstructTTSEval 结果表行）"
    },
    "blocks": [
     {
@@ -2811,20 +3341,40 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-model-2-1-1",
-       "original": "zh en hard-zh hard-en ja ko de es fr it ru CosyVoice 2 12.58 11.96 CosyVoice 3-1.5B 3.91 4.99 9.77 10.55 7.57 5.69 6.43 4.47 11.80 10.50 6.64 9.10 4.40 3.96 2.76 6.26 2.04 2.78 8.55 8.48 5.96 5.69 9.85 4.25 5.21 gibility.",
-       "zh": "（Table 5 内容残留）列依次为：模型 | zh | en | hard-zh | hard-en | ja | ko | de | es | fr | it | ru。CosyVoice 2：12.58 11.96；CosyVoice 3-1.5B：3.91 4.99 9.77 10.55 7.57 5.69 6.43 4.47 11.80 10.50 6.64 9.10；Fish Audio S2：4.40 3.96 2.76 6.26 2.04 2.78 8.55 8.48 5.96 5.69 9.85 4.25 5.21（抽取顺序可能有错位，以原表为准）。gibility（「intelligibility」跨页断词残留）。"
-      },
-      {
-       "id": "s-model-2-1-2",
-       "original": "It outperforms most token-based autoregressive systems in similarity and achieving comparable or better WER/CER than many non-autoregressive models.",
-       "zh": "它在相似度上超过大多数基于 token 的自回归系统，并在 WER/CER 上与许多非自回归模型相当或更优。"
-      },
-      {
-       "id": "s-model-2-1-3",
-       "original": "Subjective listening tests further confirm that its cloning performance is superior in terms of naturalness and prosody.",
-       "zh": "主观听测进一步证实，其克隆性能在自然度与韵律方面更为出色。"
+       "original": "zh en hard-zh hard-en ja ko de es fr it ru CosyVoice 2",
+       "zh": "（表格行：语种列 zh / en / hard-zh / hard-en / ja / ko / de / es / fr / it / ru——CosyVoice 2，后续照原文。）"
       }
      ]
+    },
+    {
+     "id": "eq-model-2-1",
+     "type": "equation",
+     "page": 14,
+     "original": "4.08 6.32 12.58 11.96 9.13 19.70 – – – – – CosyVoice 3-1.5B 3.91 4.99 9.77 10.55 7.57 5.69 6.43 4.47 11.80 10.50 6.64"
+    },
+    {
+     "id": "eq-model-2-2",
+     "type": "equation",
+     "page": 14,
+     "original": "Fish Audio S2"
+    },
+    {
+     "id": "eq-model-2-3",
+     "type": "equation",
+     "page": 14,
+     "original": "2.65 2.43 9.10 4.40 3.96 2.76 2.22 2.00 6.26 2.04 2.78"
+    },
+    {
+     "id": "eq-model-2-4",
+     "type": "equation",
+     "page": 14,
+     "original": "VoxCPM2"
+    },
+    {
+     "id": "eq-model-2-5",
+     "type": "equation",
+     "page": 14,
+     "original": "3.65 5.00 8.55 8.48 5.96 5.69 4.77 3.80 9.85 4.25 5.21"
     },
     {
      "id": "p-model-2-2",
@@ -2833,6 +3383,28 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-model-2-2-1",
+       "original": "gibility.",
+       "zh": "总的来看，VoxCPM 证明了分层连续隐空间建模可以在不牺牲声学丰富度或语义可懂度的前提下达到有竞争力的性能。"
+      },
+      {
+       "id": "s-model-2-2-2",
+       "original": "It outperforms most token-based autoregressive systems in similarity and achieving comparable or better WER/CER than many non-autoregressive models.",
+       "zh": "它在相似度上超过大多数基于 token 的自回归系统，WER/CER 与许多非自回归模型相当或更好。"
+      },
+      {
+       "id": "s-model-2-2-3",
+       "original": "Subjective listening tests further confirm that its cloning performance is superior in terms of naturalness and prosody.",
+       "zh": "主观试听进一步确认其克隆性能在自然度与韵律上更优。"
+      }
+     ]
+    },
+    {
+     "id": "p-model-2-3",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-model-2-3-1",
        "original": "Despite the significant increase in capabilities and language coverage, the architectural refinements and parameter scaling allow VoxCPM2 to maintain the strong zero-shot cloning ability of previous VoxCPM versions while further improving speaker similarity.",
        "zh": "尽管能力与语言覆盖大幅提升，架构改进与参数扩展使 VoxCPM2 保持了历代 VoxCPM 强大的零样本克隆能力，并进一步提高了说话人相似度。"
       }
@@ -2981,7 +3553,7 @@ globalThis.PAPER_2606_06928 = {
    "page": 15,
    "title": {
     "original": "Language",
-    "zh": "语言（MiniMax-MLS-Test WER 表行）"
+    "zh": "语言（MiniMax-MLS-Test SIM 表行）"
    },
    "blocks": [
     {
@@ -2991,10 +3563,292 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-language-1-1",
-       "original": "Minimax ElevenLabs Qwen3-TTS Arabic 1.67 1.67 3.50 13.05 Cantonese 34.11 51.51 30.67 38.58 Chinese 2.25 16.03 0.93 0.73 1.14 Czech 3.88 2.11 2.84 24.13 Dutch 1.14 0.80 0.99 0.91 English 2.16 2.34 0.93 1.62 2.29 Finnish 4.67 2.96 3.33 2.63 French 4.10 5.22 2.86 3.05 4.53 German 1.91 0.57 1.24 0.55 0.68 Greek 2.02 0.99 5.74 2.84 Hindi 6.96 5.83 14.64 19.70 Indonesian 1.24 1.06 1.46 1.08 Italian 1.54 1.74 0.95 1.27 1.56 Japanese 3.52 10.65 3.82 2.76 4.63 Korean 1.75 1.87 1.76 1.18 1.96 Polish 1.42 0.77 1.26 1.14 Portuguese 1.88 1.33 1.53 1.14 1.94 Romanian 2.88 1.35 10.74 21.58 Russian 4.28 3.88 3.21 2.40 3.63 Spanish 1.03 1.08 1.13 0.91 1.44 Thai 2.70 73.94 4.23 2.96 Turkish 1.52 0.70 0.87 0.82 Ukrainian 1.08 1.00 2.30 6.32 Vietnamese 0.88 73.42 7.41 3.31",
-       "zh": "（Table 6 内容残留）列为各系统的 WER（%）：MiniMax-Speech、ElevenLabs、Qwen3-TTS、Fish Audio S2、VoxCPM2（抽取未给出完整表头，列归属以原表为准）。阿拉伯语 1.67 1.67 3.50 13.05；粤语 34.11 51.51 30.67 38.58；中文 2.25 16.03 0.93 0.73 1.14；捷克语 3.88 2.11 2.84 24.13；荷兰语 1.14 0.80 0.99 0.91；英语 2.16 2.34 0.93 1.62 2.29；芬兰语 4.67 2.96 3.33 2.63；法语 4.10 5.22 2.86 3.05 4.53；德语 1.91 0.57 1.24 0.55 0.68；希腊语 2.02 0.99 5.74 2.84；印地语 6.96 5.83 14.64 19.70；印尼语 1.24 1.06 1.46 1.08；意大利语 1.54 1.74 0.95 1.27 1.56；日语 3.52 10.65 3.82 2.76 4.63；韩语 1.75 1.87 1.76 1.18 1.96；波兰语 1.42 0.77 1.26 1.14；葡萄牙语 1.88 1.33 1.53 1.14 1.94；罗马尼亚语 2.88 1.35 10.74 21.58；俄语 4.28 3.88 3.21 2.40 3.63；西班牙语 1.03 1.08 1.13 0.91 1.44；泰语 2.70 73.94 4.23 2.96；土耳其语 1.52 0.70 0.87 0.82；乌克兰语 1.08 1.00 2.30 6.32；越南语 0.88 73.42 7.41 3.31。"
+       "original": "Minimax ElevenLabs Qwen3-TTS Fish Audio S2 VoxCPM2 Arabic",
+       "zh": "（表头：Minimax / ElevenLabs / Qwen3-TTS / Fish Audio S2 / VoxCPM2——Arabic，后续照原文。）"
       }
      ]
+    },
+    {
+     "id": "eq-language-1",
+     "type": "equation",
+     "page": 15,
+     "original": "1.67 1.67 – 3.50 13.05"
+    },
+    {
+     "id": "eq-language-2",
+     "type": "equation",
+     "page": 15,
+     "original": "Cantonese"
+    },
+    {
+     "id": "eq-language-3",
+     "type": "equation",
+     "page": 15,
+     "original": "34.11 51.51 – 30.67 38.58"
+    },
+    {
+     "id": "eq-language-4",
+     "type": "equation",
+     "page": 15,
+     "original": "Chinese"
+    },
+    {
+     "id": "eq-language-5",
+     "type": "equation",
+     "page": 15,
+     "original": "2.25 16.03 0.93 0.73 1.14"
+    },
+    {
+     "id": "eq-language-6",
+     "type": "equation",
+     "page": 15,
+     "original": "Czech"
+    },
+    {
+     "id": "eq-language-7",
+     "type": "equation",
+     "page": 15,
+     "original": "3.88 2.11 – 2.84 24.13"
+    },
+    {
+     "id": "eq-language-8",
+     "type": "equation",
+     "page": 15,
+     "original": "Dutch"
+    },
+    {
+     "id": "eq-language-9",
+     "type": "equation",
+     "page": 15,
+     "original": "1.14 0.80 – 0.99 0.91"
+    },
+    {
+     "id": "eq-language-10",
+     "type": "equation",
+     "page": 15,
+     "original": "English"
+    },
+    {
+     "id": "eq-language-11",
+     "type": "equation",
+     "page": 15,
+     "original": "2.16 2.34 0.93 1.62 2.29"
+    },
+    {
+     "id": "eq-language-12",
+     "type": "equation",
+     "page": 15,
+     "original": "Finnish"
+    },
+    {
+     "id": "eq-language-13",
+     "type": "equation",
+     "page": 15,
+     "original": "4.67 2.96 – 3.33 2.63"
+    },
+    {
+     "id": "eq-language-14",
+     "type": "equation",
+     "page": 15,
+     "original": "French"
+    },
+    {
+     "id": "eq-language-15",
+     "type": "equation",
+     "page": 15,
+     "original": "4.10 5.22 2.86 3.05 4.53"
+    },
+    {
+     "id": "eq-language-16",
+     "type": "equation",
+     "page": 15,
+     "original": "German"
+    },
+    {
+     "id": "eq-language-17",
+     "type": "equation",
+     "page": 15,
+     "original": "1.91 0.57 1.24 0.55 0.68"
+    },
+    {
+     "id": "eq-language-18",
+     "type": "equation",
+     "page": 15,
+     "original": "Greek"
+    },
+    {
+     "id": "eq-language-19",
+     "type": "equation",
+     "page": 15,
+     "original": "2.02 0.99 – 5.74 2.84"
+    },
+    {
+     "id": "eq-language-20",
+     "type": "equation",
+     "page": 15,
+     "original": "Hindi"
+    },
+    {
+     "id": "eq-language-21",
+     "type": "equation",
+     "page": 15,
+     "original": "6.96 5.83 – 14.64 19.70"
+    },
+    {
+     "id": "eq-language-22",
+     "type": "equation",
+     "page": 15,
+     "original": "Indonesian"
+    },
+    {
+     "id": "eq-language-23",
+     "type": "equation",
+     "page": 15,
+     "original": "1.24 1.06 – 1.46 1.08"
+    },
+    {
+     "id": "eq-language-24",
+     "type": "equation",
+     "page": 15,
+     "original": "Italian"
+    },
+    {
+     "id": "eq-language-25",
+     "type": "equation",
+     "page": 15,
+     "original": "1.54 1.74 0.95 1.27 1.56"
+    },
+    {
+     "id": "eq-language-26",
+     "type": "equation",
+     "page": 15,
+     "original": "Japanese"
+    },
+    {
+     "id": "eq-language-27",
+     "type": "equation",
+     "page": 15,
+     "original": "3.52 10.65 3.82 2.76 4.63"
+    },
+    {
+     "id": "eq-language-28",
+     "type": "equation",
+     "page": 15,
+     "original": "Korean"
+    },
+    {
+     "id": "eq-language-29",
+     "type": "equation",
+     "page": 15,
+     "original": "1.75 1.87 1.76 1.18 1.96"
+    },
+    {
+     "id": "eq-language-30",
+     "type": "equation",
+     "page": 15,
+     "original": "Polish"
+    },
+    {
+     "id": "eq-language-31",
+     "type": "equation",
+     "page": 15,
+     "original": "1.42 0.77 – 1.26 1.14"
+    },
+    {
+     "id": "eq-language-32",
+     "type": "equation",
+     "page": 15,
+     "original": "Portuguese"
+    },
+    {
+     "id": "eq-language-33",
+     "type": "equation",
+     "page": 15,
+     "original": "1.88 1.33 1.53 1.14 1.94"
+    },
+    {
+     "id": "eq-language-34",
+     "type": "equation",
+     "page": 15,
+     "original": "Romanian"
+    },
+    {
+     "id": "eq-language-35",
+     "type": "equation",
+     "page": 15,
+     "original": "2.88 1.35 – 10.74 21.58"
+    },
+    {
+     "id": "eq-language-36",
+     "type": "equation",
+     "page": 15,
+     "original": "Russian"
+    },
+    {
+     "id": "eq-language-37",
+     "type": "equation",
+     "page": 15,
+     "original": "4.28 3.88 3.21 2.40 3.63"
+    },
+    {
+     "id": "eq-language-38",
+     "type": "equation",
+     "page": 15,
+     "original": "Spanish"
+    },
+    {
+     "id": "eq-language-39",
+     "type": "equation",
+     "page": 15,
+     "original": "1.03 1.08 1.13 0.91 1.44"
+    },
+    {
+     "id": "eq-language-40",
+     "type": "equation",
+     "page": 15,
+     "original": "Thai"
+    },
+    {
+     "id": "eq-language-41",
+     "type": "equation",
+     "page": 15,
+     "original": "2.70 73.94 – 4.23 2.96"
+    },
+    {
+     "id": "eq-language-42",
+     "type": "equation",
+     "page": 15,
+     "original": "Turkish"
+    },
+    {
+     "id": "eq-language-43",
+     "type": "equation",
+     "page": 15,
+     "original": "1.52 0.70 – 0.87 0.82"
+    },
+    {
+     "id": "eq-language-44",
+     "type": "equation",
+     "page": 15,
+     "original": "Ukrainian"
+    },
+    {
+     "id": "eq-language-45",
+     "type": "equation",
+     "page": 15,
+     "original": "1.08 1.00 – 2.30 6.32"
+    },
+    {
+     "id": "eq-language-46",
+     "type": "equation",
+     "page": 15,
+     "original": "Vietnamese"
+    },
+    {
+     "id": "eq-language-47",
+     "type": "equation",
+     "page": 15,
+     "original": "0.88 73.42 – 7.41 3.31"
     }
    ]
   },
@@ -3135,10 +3989,292 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-language-2-1-1",
-       "original": "Minimax ElevenLabs Qwen3-TTS Arabic 73.6 70.6 75.0 79.1 Cantonese 77.8 67.0 80.5 83.5 Chinese 78.0 67.7 79.9 81.6 82.5 Czech 79.6 68.5 79.8 78.3 Dutch 73.8 68.0 73.0 80.8 English 75.6 61.3 77.5 79.7 85.4 Finnish 83.5 75.9 81.9 89.0 French 62.8 53.5 62.8 69.8 73.5 German 73.3 61.4 77.5 76.7 80.3 Greek 82.6 73.3 79.5 86.0 Hindi 81.8 73.0 82.1 85.6 Indonesian 72.9 66.0 76.3 80.0 Italian 69.9 57.9 81.7 74.7 78.0 Japanese 77.6 73.8 78.8 79.6 82.8 Korean 77.6 70.0 79.9 81.7 83.3 Polish 80.2 72.9 81.9 88.4 Portuguese 80.5 71.1 81.7 78.1 83.7 Romanian 80.9 69.9 73.3 79.7 Russian 76.1 67.6 79.2 79.0 81.1 Spanish 76.2 61.5 81.4 77.6 83.1 Thai 80.0 58.8 78.6 84.0 Turkish 77.9 59.6 83.5 87.1 Ukrainian 73.0 64.7 74.7 79.8 Vietnamese 74.3 36.9 74.0 80.6",
-       "zh": "（Table 7 内容残留）列为各系统的 SIM（%）：MiniMax-Speech、ElevenLabs、Qwen3-TTS、Fish Audio S2、VoxCPM2（抽取未给出完整表头，列归属以原表为准）。阿拉伯语 73.6 70.6 75.0 79.1；粤语 77.8 67.0 80.5 83.5；中文 78.0 67.7 79.9 81.6 82.5；捷克语 79.6 68.5 79.8 78.3；荷兰语 73.8 68.0 73.0 80.8；英语 75.6 61.3 77.5 79.7 85.4；芬兰语 83.5 75.9 81.9 89.0；法语 62.8 53.5 62.8 69.8 73.5；德语 73.3 61.4 77.5 76.7 80.3；希腊语 82.6 73.3 79.5 86.0；印地语 81.8 73.0 82.1 85.6；印尼语 72.9 66.0 76.3 80.0；意大利语 69.9 57.9 81.7 74.7 78.0；日语 77.6 73.8 78.8 79.6 82.8；韩语 77.6 70.0 79.9 81.7 83.3；波兰语 80.2 72.9 81.9 88.4；葡萄牙语 80.5 71.1 81.7 78.1 83.7；罗马尼亚语 80.9 69.9 73.3 79.7；俄语 76.1 67.6 79.2 79.0 81.1；西班牙语 76.2 61.5 81.4 77.6 83.1；泰语 80.0 58.8 78.6 84.0；土耳其语 77.9 59.6 83.5 87.1；乌克兰语 73.0 64.7 74.7 79.8；越南语 74.3 36.9 74.0 80.6。"
+       "original": "Minimax ElevenLabs Qwen3-TTS Fish Audio S2 VoxCPM2 Arabic",
+       "zh": "（表头：Minimax / ElevenLabs / Qwen3-TTS / Fish Audio S2 / VoxCPM2——Arabic，后续照原文。）"
       }
      ]
+    },
+    {
+     "id": "eq-language-2-1",
+     "type": "equation",
+     "page": 16,
+     "original": "73.6 70.6 – 75.0 79.1"
+    },
+    {
+     "id": "eq-language-2-2",
+     "type": "equation",
+     "page": 16,
+     "original": "Cantonese"
+    },
+    {
+     "id": "eq-language-2-3",
+     "type": "equation",
+     "page": 16,
+     "original": "77.8 67.0 – 80.5 83.5"
+    },
+    {
+     "id": "eq-language-2-4",
+     "type": "equation",
+     "page": 16,
+     "original": "Chinese"
+    },
+    {
+     "id": "eq-language-2-5",
+     "type": "equation",
+     "page": 16,
+     "original": "78.0 67.7 79.9 81.6 82.5"
+    },
+    {
+     "id": "eq-language-2-6",
+     "type": "equation",
+     "page": 16,
+     "original": "Czech"
+    },
+    {
+     "id": "eq-language-2-7",
+     "type": "equation",
+     "page": 16,
+     "original": "79.6 68.5 – 79.8 78.3"
+    },
+    {
+     "id": "eq-language-2-8",
+     "type": "equation",
+     "page": 16,
+     "original": "Dutch"
+    },
+    {
+     "id": "eq-language-2-9",
+     "type": "equation",
+     "page": 16,
+     "original": "73.8 68.0 – 73.0 80.8"
+    },
+    {
+     "id": "eq-language-2-10",
+     "type": "equation",
+     "page": 16,
+     "original": "English"
+    },
+    {
+     "id": "eq-language-2-11",
+     "type": "equation",
+     "page": 16,
+     "original": "75.6 61.3 77.5 79.7 85.4"
+    },
+    {
+     "id": "eq-language-2-12",
+     "type": "equation",
+     "page": 16,
+     "original": "Finnish"
+    },
+    {
+     "id": "eq-language-2-13",
+     "type": "equation",
+     "page": 16,
+     "original": "83.5 75.9 – 81.9 89.0"
+    },
+    {
+     "id": "eq-language-2-14",
+     "type": "equation",
+     "page": 16,
+     "original": "French"
+    },
+    {
+     "id": "eq-language-2-15",
+     "type": "equation",
+     "page": 16,
+     "original": "62.8 53.5 62.8 69.8 73.5"
+    },
+    {
+     "id": "eq-language-2-16",
+     "type": "equation",
+     "page": 16,
+     "original": "German"
+    },
+    {
+     "id": "eq-language-2-17",
+     "type": "equation",
+     "page": 16,
+     "original": "73.3 61.4 77.5 76.7 80.3"
+    },
+    {
+     "id": "eq-language-2-18",
+     "type": "equation",
+     "page": 16,
+     "original": "Greek"
+    },
+    {
+     "id": "eq-language-2-19",
+     "type": "equation",
+     "page": 16,
+     "original": "82.6 73.3 – 79.5 86.0"
+    },
+    {
+     "id": "eq-language-2-20",
+     "type": "equation",
+     "page": 16,
+     "original": "Hindi"
+    },
+    {
+     "id": "eq-language-2-21",
+     "type": "equation",
+     "page": 16,
+     "original": "81.8 73.0 – 82.1 85.6"
+    },
+    {
+     "id": "eq-language-2-22",
+     "type": "equation",
+     "page": 16,
+     "original": "Indonesian"
+    },
+    {
+     "id": "eq-language-2-23",
+     "type": "equation",
+     "page": 16,
+     "original": "72.9 66.0 – 76.3 80.0"
+    },
+    {
+     "id": "eq-language-2-24",
+     "type": "equation",
+     "page": 16,
+     "original": "Italian"
+    },
+    {
+     "id": "eq-language-2-25",
+     "type": "equation",
+     "page": 16,
+     "original": "69.9 57.9 81.7 74.7 78.0"
+    },
+    {
+     "id": "eq-language-2-26",
+     "type": "equation",
+     "page": 16,
+     "original": "Japanese"
+    },
+    {
+     "id": "eq-language-2-27",
+     "type": "equation",
+     "page": 16,
+     "original": "77.6 73.8 78.8 79.6 82.8"
+    },
+    {
+     "id": "eq-language-2-28",
+     "type": "equation",
+     "page": 16,
+     "original": "Korean"
+    },
+    {
+     "id": "eq-language-2-29",
+     "type": "equation",
+     "page": 16,
+     "original": "77.6 70.0 79.9 81.7 83.3"
+    },
+    {
+     "id": "eq-language-2-30",
+     "type": "equation",
+     "page": 16,
+     "original": "Polish"
+    },
+    {
+     "id": "eq-language-2-31",
+     "type": "equation",
+     "page": 16,
+     "original": "80.2 72.9 – 81.9 88.4"
+    },
+    {
+     "id": "eq-language-2-32",
+     "type": "equation",
+     "page": 16,
+     "original": "Portuguese"
+    },
+    {
+     "id": "eq-language-2-33",
+     "type": "equation",
+     "page": 16,
+     "original": "80.5 71.1 81.7 78.1 83.7"
+    },
+    {
+     "id": "eq-language-2-34",
+     "type": "equation",
+     "page": 16,
+     "original": "Romanian"
+    },
+    {
+     "id": "eq-language-2-35",
+     "type": "equation",
+     "page": 16,
+     "original": "80.9 69.9 – 73.3 79.7"
+    },
+    {
+     "id": "eq-language-2-36",
+     "type": "equation",
+     "page": 16,
+     "original": "Russian"
+    },
+    {
+     "id": "eq-language-2-37",
+     "type": "equation",
+     "page": 16,
+     "original": "76.1 67.6 79.2 79.0 81.1"
+    },
+    {
+     "id": "eq-language-2-38",
+     "type": "equation",
+     "page": 16,
+     "original": "Spanish"
+    },
+    {
+     "id": "eq-language-2-39",
+     "type": "equation",
+     "page": 16,
+     "original": "76.2 61.5 81.4 77.6 83.1"
+    },
+    {
+     "id": "eq-language-2-40",
+     "type": "equation",
+     "page": 16,
+     "original": "Thai"
+    },
+    {
+     "id": "eq-language-2-41",
+     "type": "equation",
+     "page": 16,
+     "original": "80.0 58.8 – 78.6 84.0"
+    },
+    {
+     "id": "eq-language-2-42",
+     "type": "equation",
+     "page": 16,
+     "original": "Turkish"
+    },
+    {
+     "id": "eq-language-2-43",
+     "type": "equation",
+     "page": 16,
+     "original": "77.9 59.6 – 83.5 87.1"
+    },
+    {
+     "id": "eq-language-2-44",
+     "type": "equation",
+     "page": 16,
+     "original": "Ukrainian"
+    },
+    {
+     "id": "eq-language-2-45",
+     "type": "equation",
+     "page": 16,
+     "original": "73.0 64.7 – 74.7 79.8"
+    },
+    {
+     "id": "eq-language-2-46",
+     "type": "equation",
+     "page": 16,
+     "original": "Vietnamese"
+    },
+    {
+     "id": "eq-language-2-47",
+     "type": "equation",
+     "page": 16,
+     "original": "74.3 36.9 – 74.0 80.6"
     },
     {
      "id": "tab-language-2-1",
@@ -3166,8 +4302,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-lang-1-1",
-       "original": "Metric Lang.",
-       "zh": "（Table 8 表头残留）指标 | 语言。"
+       "original": "Metric VoxCPM2 Fish Audio S2 Lang.",
+       "zh": "表头：Metric × VoxCPM2 × Fish Audio S2 × Lang.（语种，后同）。"
       }
      ]
     },
@@ -3178,10 +4314,364 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-lang-2-1",
-       "original": "Metric ar (Arabic) 1.23 0.30 lo (Lao) 1.90 87.40 da (Danish) 2.70 3.52 ms (Malay) 1.75 1.41 de (German) 0.96 0.64 my (Burmese) 1.42 85.27 el (Greek) 3.17 4.61 nl (Dutch) 1.25 1.68 en (English) 0.42 1.03 no (Norwegian) 2.49 3.76 es (Spanish) 1.33 0.64 pl (Polish) 1.90 1.65 fi (Finnish) 2.24 2.80 pt (Portuguese) 1.48 1.49 fr (French) 2.16 2.34 ru (Russian) 0.90 0.86 he (Hebrew) 2.98 15.27 sv (Swedish) 2.22 2.63 hi (Hindi) 0.79 0.91 sw (Swahili) 1.07 2.02 id (Indonesian) 1.36 1.68 th (Thai) 0.94 1.92 it (Italian) 1.65 1.08 tl (Tagalog) 2.63 4.00 ja (Japanese) 2.40 1.82 tr (Turkish) 1.65 1.65 km (Khmer) 2.05 75.15 vi (Vietnamese) 1.56 5.56 ko (Korean) 0.95 0.29 zh (Chinese) 0.92 1.02",
-       "zh": "（Table 8 内容残留，每行为：语言 指标1 指标2，两列指标分别为 WER/CER（%）与 SIM，列归属以原表为准）ar（阿拉伯语）1.23 0.30；lo（老挝语）1.90 87.40；da（丹麦语）2.70 3.52；ms（马来语）1.75 1.41；de（德语）0.96 0.64；my（缅甸语）1.42 85.27；el（希腊语）3.17 4.61；nl（荷兰语）1.25 1.68；en（英语）0.42 1.03；no（挪威语）2.49 3.76；es（西班牙语）1.33 0.64；pl（波兰语）1.90 1.65；fi（芬兰语）2.24 2.80；pt（葡萄牙语）1.48 1.49；fr（法语）2.16 2.34；ru（俄语）0.90 0.86；he（希伯来语）2.98 15.27；sv（瑞典语）2.22 2.63；hi（印地语）0.79 0.91；sw（斯瓦希里语）1.07 2.02；id（印尼语）1.36 1.68；th（泰语）0.94 1.92；it（意大利语）1.65 1.08；tl（菲律宾语）2.63 4.00；ja（日语）2.40 1.82；tr（土耳其语）1.65 1.65；km（高棉语）2.05 75.15；vi（越南语）1.56 5.56；ko（韩语）0.95 0.29；zh（中文）0.92 1.02。"
+       "original": "Metric VoxCPM2 Fish Audio S2 ar (Arabic) CER",
+       "zh": "表头：Metric × VoxCPM2 / Fish Audio S2——ar (Arabic) CER（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-lang-1",
+     "type": "equation",
+     "page": 16,
+     "original": "1.23 0.30"
+    },
+    {
+     "id": "eq-lang-2",
+     "type": "equation",
+     "page": 16,
+     "original": "lo (Lao) CER"
+    },
+    {
+     "id": "eq-lang-3",
+     "type": "equation",
+     "page": 16,
+     "original": "1.90 87.40"
+    },
+    {
+     "id": "eq-lang-4",
+     "type": "equation",
+     "page": 16,
+     "original": "da (Danish) WER"
+    },
+    {
+     "id": "eq-lang-5",
+     "type": "equation",
+     "page": 16,
+     "original": "2.70 3.52"
+    },
+    {
+     "id": "eq-lang-6",
+     "type": "equation",
+     "page": 16,
+     "original": "ms (Malay) WER"
+    },
+    {
+     "id": "eq-lang-7",
+     "type": "equation",
+     "page": 16,
+     "original": "1.75 1.41"
+    },
+    {
+     "id": "eq-lang-8",
+     "type": "equation",
+     "page": 16,
+     "original": "de (German) WER"
+    },
+    {
+     "id": "eq-lang-9",
+     "type": "equation",
+     "page": 16,
+     "original": "0.96 0.64"
+    },
+    {
+     "id": "eq-lang-10",
+     "type": "equation",
+     "page": 16,
+     "original": "my (Burmese) CER"
+    },
+    {
+     "id": "eq-lang-11",
+     "type": "equation",
+     "page": 16,
+     "original": "1.42 85.27"
+    },
+    {
+     "id": "eq-lang-12",
+     "type": "equation",
+     "page": 16,
+     "original": "el (Greek) WER"
+    },
+    {
+     "id": "eq-lang-13",
+     "type": "equation",
+     "page": 16,
+     "original": "3.17 4.61"
+    },
+    {
+     "id": "eq-lang-14",
+     "type": "equation",
+     "page": 16,
+     "original": "nl (Dutch) WER"
+    },
+    {
+     "id": "eq-lang-15",
+     "type": "equation",
+     "page": 16,
+     "original": "1.25 1.68"
+    },
+    {
+     "id": "eq-lang-16",
+     "type": "equation",
+     "page": 16,
+     "original": "en (English) WER"
+    },
+    {
+     "id": "eq-lang-17",
+     "type": "equation",
+     "page": 16,
+     "original": "0.42 1.03"
+    },
+    {
+     "id": "eq-lang-18",
+     "type": "equation",
+     "page": 16,
+     "original": "no (Norwegian) WER"
+    },
+    {
+     "id": "eq-lang-19",
+     "type": "equation",
+     "page": 16,
+     "original": "2.49 3.76"
+    },
+    {
+     "id": "eq-lang-20",
+     "type": "equation",
+     "page": 16,
+     "original": "es (Spanish) WER"
+    },
+    {
+     "id": "eq-lang-21",
+     "type": "equation",
+     "page": 16,
+     "original": "1.33 0.64"
+    },
+    {
+     "id": "eq-lang-22",
+     "type": "equation",
+     "page": 16,
+     "original": "pl (Polish) WER"
+    },
+    {
+     "id": "eq-lang-23",
+     "type": "equation",
+     "page": 16,
+     "original": "1.90 1.65"
+    },
+    {
+     "id": "eq-lang-24",
+     "type": "equation",
+     "page": 16,
+     "original": "fi (Finnish) WER"
+    },
+    {
+     "id": "eq-lang-25",
+     "type": "equation",
+     "page": 16,
+     "original": "2.24 2.80"
+    },
+    {
+     "id": "eq-lang-26",
+     "type": "equation",
+     "page": 16,
+     "original": "pt (Portuguese) WER"
+    },
+    {
+     "id": "eq-lang-27",
+     "type": "equation",
+     "page": 16,
+     "original": "1.48 1.49"
+    },
+    {
+     "id": "eq-lang-28",
+     "type": "equation",
+     "page": 16,
+     "original": "fr (French) WER"
+    },
+    {
+     "id": "eq-lang-29",
+     "type": "equation",
+     "page": 16,
+     "original": "2.16 2.34"
+    },
+    {
+     "id": "eq-lang-30",
+     "type": "equation",
+     "page": 16,
+     "original": "ru (Russian) WER"
+    },
+    {
+     "id": "eq-lang-31",
+     "type": "equation",
+     "page": 16,
+     "original": "0.90 0.86"
+    },
+    {
+     "id": "eq-lang-32",
+     "type": "equation",
+     "page": 16,
+     "original": "he (Hebrew) CER"
+    },
+    {
+     "id": "eq-lang-33",
+     "type": "equation",
+     "page": 16,
+     "original": "2.98 15.27"
+    },
+    {
+     "id": "eq-lang-34",
+     "type": "equation",
+     "page": 16,
+     "original": "sv (Swedish) WER"
+    },
+    {
+     "id": "eq-lang-35",
+     "type": "equation",
+     "page": 16,
+     "original": "2.22 2.63"
+    },
+    {
+     "id": "eq-lang-36",
+     "type": "equation",
+     "page": 16,
+     "original": "hi (Hindi) CER"
+    },
+    {
+     "id": "eq-lang-37",
+     "type": "equation",
+     "page": 16,
+     "original": "0.79 0.91"
+    },
+    {
+     "id": "eq-lang-38",
+     "type": "equation",
+     "page": 16,
+     "original": "sw (Swahili) CER"
+    },
+    {
+     "id": "eq-lang-39",
+     "type": "equation",
+     "page": 16,
+     "original": "1.07 2.02"
+    },
+    {
+     "id": "eq-lang-40",
+     "type": "equation",
+     "page": 16,
+     "original": "id (Indonesian) WER"
+    },
+    {
+     "id": "eq-lang-41",
+     "type": "equation",
+     "page": 16,
+     "original": "1.36 1.68"
+    },
+    {
+     "id": "eq-lang-42",
+     "type": "equation",
+     "page": 16,
+     "original": "th (Thai) CER"
+    },
+    {
+     "id": "eq-lang-43",
+     "type": "equation",
+     "page": 16,
+     "original": "0.94 1.92"
+    },
+    {
+     "id": "eq-lang-44",
+     "type": "equation",
+     "page": 16,
+     "original": "it (Italian) WER"
+    },
+    {
+     "id": "eq-lang-45",
+     "type": "equation",
+     "page": 16,
+     "original": "1.65 1.08"
+    },
+    {
+     "id": "eq-lang-46",
+     "type": "equation",
+     "page": 16,
+     "original": "tl (Tagalog) WER"
+    },
+    {
+     "id": "eq-lang-47",
+     "type": "equation",
+     "page": 16,
+     "original": "2.63 4.00"
+    },
+    {
+     "id": "eq-lang-48",
+     "type": "equation",
+     "page": 16,
+     "original": "ja (Japanese) CER"
+    },
+    {
+     "id": "eq-lang-49",
+     "type": "equation",
+     "page": 16,
+     "original": "2.40 1.82"
+    },
+    {
+     "id": "eq-lang-50",
+     "type": "equation",
+     "page": 16,
+     "original": "tr (Turkish) WER"
+    },
+    {
+     "id": "eq-lang-51",
+     "type": "equation",
+     "page": 16,
+     "original": "1.65 1.65"
+    },
+    {
+     "id": "eq-lang-52",
+     "type": "equation",
+     "page": 16,
+     "original": "km (Khmer) CER"
+    },
+    {
+     "id": "eq-lang-53",
+     "type": "equation",
+     "page": 16,
+     "original": "2.05 75.15"
+    },
+    {
+     "id": "eq-lang-54",
+     "type": "equation",
+     "page": 16,
+     "original": "vi (Vietnamese) WER"
+    },
+    {
+     "id": "eq-lang-55",
+     "type": "equation",
+     "page": 16,
+     "original": "1.56 5.56"
+    },
+    {
+     "id": "eq-lang-56",
+     "type": "equation",
+     "page": 16,
+     "original": "ko (Korean) CER"
+    },
+    {
+     "id": "eq-lang-57",
+     "type": "equation",
+     "page": 16,
+     "original": "0.95 0.29"
+    },
+    {
+     "id": "eq-lang-58",
+     "type": "equation",
+     "page": 16,
+     "original": "zh (Chinese) CER"
+    },
+    {
+     "id": "eq-lang-59",
+     "type": "equation",
+     "page": 16,
+     "original": "0.92 1.02"
     }
    ]
   },
@@ -3196,16 +4686,10 @@ globalThis.PAPER_2606_06928 = {
    },
    "blocks": [
     {
-     "id": "p-average-across-30-languages-1",
-     "type": "paragraph",
+     "id": "eq-average-across-30-languages-1",
+     "type": "equation",
      "page": 16,
-     "sentences": [
-      {
-       "id": "s-average-across-30-languages-1-1",
-       "original": "1.68",
-       "zh": "（Table 8 平均值行残留）30 种语言平均：1.68。"
-      }
-     ]
+     "original": "1.68 –"
     }
    ]
   },
@@ -3289,10 +4773,148 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-model-3-1-1",
-       "original": "InstructTTSEval-ZH InstructTTSEval-EN APS↑ DSD↑ RP↑ APS↑ DSD↑ RP↑ Hume 83.0 75.3 54.3 GPT-4o-mini-TTS 54.9 52.3 46.0 76.4 74.3 54.8 Gemini-TTS-Pro 89.0 90.1 75.5 87.6 86.0 67.2 PromptTTS (Guo et al., 2023) 64.3 47.2 31.4 PromptStyle (Liu et al., 2023) 57.4 46.4 30.9 Parler-TTS-large (Lyth & King, 2024) 60.0 45.9 31.2 VoxInstruct (Zhou et al., 2024) 47.5 52.3 42.6 54.9 57.0 39.3 VoiceSculptor (Hu et al., 2026b) 75.7 64.7 61.5 Mimo-Audio-7B-Instruct (Zhang et al., 2025b) 75.7 74.3 61.5 80.6 77.6 59.5 Qwen3-TTS-12Hz-1.7B-VD (Hu et al., 2026a) 85.2 81.1 65.1 82.9 82.4 68.4 MOSS-VoiceGenerator (Huang et al., 2026) 78.0 80.0 74.0 68.2 82.0 68.7 85.2 71.5 60.8 84.2 83.2 71.4",
-       "zh": "（Table 9 内容残留）列依次为：模型 | InstructTTSEval-ZH APS↑ DSD↑ RP↑ | InstructTTSEval-EN APS↑ DSD↑ RP↑。Hume 83.0 75.3 54.3；GPT-4o-mini-TTS 54.9 52.3 46.0 76.4 74.3 54.8；Gemini-TTS-Pro 89.0 90.1 75.5 87.6 86.0 67.2；PromptTTS（Guo et al., 2023）64.3 47.2 31.4；PromptStyle（Liu et al., 2023）57.4 46.4 30.9；Parler-TTS-large（Lyth & King, 2024）60.0 45.9 31.2；VoxInstruct（Zhou et al., 2024）47.5 52.3 42.6 54.9 57.0 39.3；VoiceSculptor（Hu et al., 2026b）75.7 64.7 61.5；Mimo-Audio-7B-Instruct（Zhang et al., 2025b）75.7 74.3 61.5 80.6 77.6 59.5；Qwen3-TTS-12Hz-1.7B-VD（Hu et al., 2026a）85.2 81.1 65.1 82.9 82.4 68.4；MOSS-VoiceGenerator（Huang et al., 2026）78.0 80.0 74.0 68.2 82.0 68.7；VoxCPM2 85.2 71.5 60.8 84.2 83.2 71.4。"
+       "original": "InstructTTSEval-ZH InstructTTSEval-EN APS↑ DSD↑ RP↑ APS↑ DSD↑ RP↑ Hume",
+       "zh": "表头：InstructTTSEval-ZH / InstructTTSEval-EN × APS↑ / DSD↑ / RP↑——Hume（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-model-3-1",
+     "type": "equation",
+     "page": 17,
+     "original": "– – – 83.0 75.3 54.3"
+    },
+    {
+     "id": "eq-model-3-2",
+     "type": "equation",
+     "page": 17,
+     "original": "GPT-4o-mini-TTS"
+    },
+    {
+     "id": "eq-model-3-3",
+     "type": "equation",
+     "page": 17,
+     "original": "54.9 52.3 46.0 76.4 74.3 54.8"
+    },
+    {
+     "id": "eq-model-3-4",
+     "type": "equation",
+     "page": 17,
+     "original": "Gemini-TTS-Pro"
+    },
+    {
+     "id": "eq-model-3-5",
+     "type": "equation",
+     "page": 17,
+     "original": "89.0 90.1 75.5 87.6 86.0 67.2"
+    },
+    {
+     "id": "eq-model-3-6",
+     "type": "equation",
+     "page": 17,
+     "original": "PromptTTS (Guo et al., 2023)"
+    },
+    {
+     "id": "eq-model-3-7",
+     "type": "equation",
+     "page": 17,
+     "original": "– – – 64.3 47.2 31.4"
+    },
+    {
+     "id": "eq-model-3-8",
+     "type": "equation",
+     "page": 17,
+     "original": "PromptStyle (Liu et al., 2023)"
+    },
+    {
+     "id": "eq-model-3-9",
+     "type": "equation",
+     "page": 17,
+     "original": "– – – 57.4 46.4 30.9"
+    },
+    {
+     "id": "eq-model-3-10",
+     "type": "equation",
+     "page": 17,
+     "original": "Parler-TTS-large (Lyth & King, 2024)"
+    },
+    {
+     "id": "eq-model-3-11",
+     "type": "equation",
+     "page": 17,
+     "original": "– – – 60.0 45.9 31.2"
+    },
+    {
+     "id": "eq-model-3-12",
+     "type": "equation",
+     "page": 17,
+     "original": "VoxInstruct (Zhou et al., 2024)"
+    },
+    {
+     "id": "eq-model-3-13",
+     "type": "equation",
+     "page": 17,
+     "original": "47.5 52.3 42.6 54.9 57.0 39.3"
+    },
+    {
+     "id": "eq-model-3-14",
+     "type": "equation",
+     "page": 17,
+     "original": "VoiceSculptor (Hu et al., 2026b)"
+    },
+    {
+     "id": "eq-model-3-15",
+     "type": "equation",
+     "page": 17,
+     "original": "75.7 64.7 61.5 – – –"
+    },
+    {
+     "id": "eq-model-3-16",
+     "type": "equation",
+     "page": 17,
+     "original": "Mimo-Audio-7B-Instruct (Zhang et al., 2025b)"
+    },
+    {
+     "id": "eq-model-3-17",
+     "type": "equation",
+     "page": 17,
+     "original": "75.7 74.3 61.5 80.6 77.6 59.5"
+    },
+    {
+     "id": "eq-model-3-18",
+     "type": "equation",
+     "page": 17,
+     "original": "Qwen3-TTS-12Hz-1.7B-VD (Hu et al., 2026a)"
+    },
+    {
+     "id": "eq-model-3-19",
+     "type": "equation",
+     "page": 17,
+     "original": "85.2 81.1 65.1 82.9 82.4 68.4"
+    },
+    {
+     "id": "eq-model-3-20",
+     "type": "equation",
+     "page": 17,
+     "original": "MOSS-VoiceGenerator (Huang et al., 2026)"
+    },
+    {
+     "id": "eq-model-3-21",
+     "type": "equation",
+     "page": 17,
+     "original": "78.0 80.0 74.0 68.2 82.0 68.7"
+    },
+    {
+     "id": "eq-model-3-22",
+     "type": "equation",
+     "page": 17,
+     "original": "VoxCPM2"
+    },
+    {
+     "id": "eq-model-3-23",
+     "type": "equation",
+     "page": 17,
+     "original": "85.2 71.5 60.8 84.2 83.2 71.4"
     },
     {
      "id": "tab-model-3-1",
@@ -3344,20 +4966,40 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-input-1-1",
-       "original": "Output MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ MelD-48k↓ MelD-16k↓ VoxCPM 1.787 0.801 0.911 3.940 2.371 1.246 VoxCPM1.5 1.139 0.926 0.836 3.148 1.267 1.311 1.335 0.813 0.907 3.906 1.334 1.133 / 71.4 on APS, DSD, and RP respectively, outperforming all compared systems.",
-       "zh": "（Table 10 内容残留+跨句残留）列依次为：模型 输入/输出采样率 | VCTK MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ | Song Describer MelD-48k↓ MelD-16k↓。VoxCPM 1.787 0.801 0.911 3.940 2.371 1.246；VoxCPM1.5 1.139 0.926 0.836 3.148 1.267 1.311；VoxCPM2（AudioVAE V2）1.335 0.813 0.907 3.906 1.334 1.133。（接上文 s-4-4-2-4）/ 71.4，即英文子集 APS / DSD / RP 分别为 84.2 / 83.2 / 71.4，超过所有对比系统。"
-      },
-      {
-       "id": "s-input-1-2",
-       "original": "On the Chinese subset, it matches the top APS score (85.2, tied with Qwen3-TTS) and remains competitive on DSD (71.5) and RP (60.8), though it trails slightly on the more abstract tasks.",
-       "zh": "在中文子集上，它取得并列最优的 APS 分数（85.2，与 Qwen3-TTS 持平），并在 DSD（71.5）与 RP（60.8）上保持竞争力，尽管在更抽象的任务上略有落后。"
-      },
-      {
-       "id": "s-input-1-3",
-       "original": "The gap on the more abstract Chinese tasks may be attributed to current limitations in annotation diversity for higher-level stylistic and persona descriptions.",
-       "zh": "在更抽象的中文任务上的差距，可能归因于当前在更高层级的风格与人设描述方面标注多样性的不足。"
+       "original": "Output MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ MelD-48k↓ MelD-16k↓ VoxCPM 16kHz 16kHz",
+       "zh": "（目录残留页码 4。）\n（原始数据照录）\nOutput MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ MelD-48k↓ MelD-16k↓ VoxCPM 16kHz 16kHz"
       }
      ]
+    },
+    {
+     "id": "eq-input-1",
+     "type": "equation",
+     "page": 17,
+     "original": "1.787 0.801 0.911 3.940 2.371 1.246"
+    },
+    {
+     "id": "eq-input-2",
+     "type": "equation",
+     "page": 17,
+     "original": "VoxCPM1.5 44kHz 44kHz"
+    },
+    {
+     "id": "eq-input-3",
+     "type": "equation",
+     "page": 17,
+     "original": "1.139 0.926 0.836 3.148 1.267 1.311"
+    },
+    {
+     "id": "eq-input-4",
+     "type": "equation",
+     "page": 17,
+     "original": "VoxCPM2 16kHz 48kHz"
+    },
+    {
+     "id": "eq-input-5",
+     "type": "equation",
+     "page": 17,
+     "original": "1.335 0.813 0.907 3.906 1.334 1.133"
     },
     {
      "id": "p-input-2",
@@ -3366,21 +5008,43 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-input-2-1",
+       "original": "/ 71.4 on APS, DSD, and RP respectively, outperforming all compared systems.",
+       "zh": "（目录残留页码 4。）\n（原始数据照录）\n/ 71.4 on APS, DSD, and RP respectively, outperforming all compared systems."
+      },
+      {
+       "id": "s-input-2-2",
+       "original": "On the Chinese subset, it matches the top APS score (85.2, tied with Qwen3-TTS) and remains competitive on DSD (71.5) and RP (60.8), though it trails slightly on the more abstract tasks.",
+       "zh": "在中文子集上，它取得并列最优的 APS 分数（85.2，与 Qwen3-TTS 持平），并在 DSD（71.5）与 RP（60.8）上保持竞争力，尽管在更抽象的任务上略有落后。"
+      },
+      {
+       "id": "s-input-2-3",
+       "original": "The gap on the more abstract Chinese tasks may be attributed to current limitations in annotation diversity for higher-level stylistic and persona descriptions.",
+       "zh": "在更抽象的中文任务上的差距，可能归因于当前在更高层级的风格与人设描述方面标注多样性的不足。"
+      }
+     ]
+    },
+    {
+     "id": "p-input-3",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-input-3-1",
        "original": "The controllable generation capability of VoxCPM2 extends well beyond the InstructTTSEval benchmark.",
        "zh": "VoxCPM2 的可控生成能力远不止 InstructTTSEval 基准所覆盖的范围。"
       },
       {
-       "id": "s-input-2-2",
+       "id": "s-input-3-2",
        "original": "The model supports a wide variety of natural-language descriptions for voice design and style control, and can generate speech in all 30 supported languages as well as 9 Chinese dialects.",
        "zh": "模型支持多种多样的声音设计与风格控制自然语言描述，能以全部 30 种受支持语言及 9 种中文方言生成语音。"
       },
       {
-       "id": "s-input-2-3",
+       "id": "s-input-3-3",
        "original": "More diverse examples and interactive demonstrations are available on the project demo page.",
        "zh": "更多样的示例与交互演示见项目演示页。"
       },
       {
-       "id": "s-input-2-4",
+       "id": "s-input-3-4",
        "original": "Additionally, thanks to the inclusion of song-style annotated data during training, VoxCPM2 also exhibits preliminary singing voice generation ability, although singing quality remains an area for further improvement.",
        "zh": "此外，得益于训练中纳入的歌唱风格标注数据，VoxCPM2 还展现出初步的歌声生成能力，尽管歌声质量仍有待进一步提升。"
       }
@@ -3475,8 +5139,62 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-inference-path-1-1",
-       "original": "Params RTF ↓ VRAM VoxCPM2 (PyTorch) 0.30 ∼8 GB VoxCPM2 (Nano-vLLM) 0.13 ∼8 GB VoxCPM1.5 (PyTorch) 0.15 ∼6 GB VoxCPM (PyTorch) 0.17 ∼5 GB",
-       "zh": "（Table 11 内容残留）模型 | 参数量 | RTF↓ | 显存。VoxCPM2（PyTorch）0.30 ∼8 GB；VoxCPM2（Nano-vLLM）0.13 ∼8 GB；VoxCPM1.5（PyTorch）0.15 ∼6 GB；VoxCPM（PyTorch）0.17 ∼5 GB。"
+       "original": "Params RTF ↓ VRAM VoxCPM2 (PyTorch) 2B",
+       "zh": "（表：推理路径 × Params × RTF↓ × VRAM——VoxCPM2 (PyTorch) 2B/0.30/约 8 GB；VoxCPM2 (Nano-vLLM) 2B/0.13/约 8 GB；VoxCPM1.5 (PyTorch) 0.8B/0.15/约 6 GB；VoxCPM (PyTorch) 0.6B/0.17/约 5 GB。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-inference-path-1",
+     "type": "equation",
+     "page": 18,
+     "original": "0.30"
+    },
+    {
+     "id": "eq-inference-path-2",
+     "type": "equation",
+     "page": 18,
+     "original": "∼8 GB VoxCPM2 (Nano-vLLM) 2B"
+    },
+    {
+     "id": "eq-inference-path-3",
+     "type": "equation",
+     "page": 18,
+     "original": "0.13"
+    },
+    {
+     "id": "eq-inference-path-4",
+     "type": "equation",
+     "page": 18,
+     "original": "∼8 GB VoxCPM1.5 (PyTorch) 0.8B"
+    },
+    {
+     "id": "eq-inference-path-5",
+     "type": "equation",
+     "page": 18,
+     "original": "0.15"
+    },
+    {
+     "id": "eq-inference-path-6",
+     "type": "equation",
+     "page": 18,
+     "original": "∼6 GB VoxCPM (PyTorch) 0.6B"
+    },
+    {
+     "id": "eq-inference-path-7",
+     "type": "equation",
+     "page": 18,
+     "original": "0.17"
+    },
+    {
+     "id": "p-inference-path-2",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-inference-path-2-1",
+       "original": "∼5 GB",
+       "zh": "（表：推理路径 × Params × RTF↓ × VRAM——VoxCPM2 (PyTorch) 2B/0.30/约 8 GB；VoxCPM2 (Nano-vLLM) 2B/0.13/约 8 GB；VoxCPM1.5 (PyTorch) 0.8B/0.15/约 6 GB；VoxCPM (PyTorch) 0.6B/0.17/约 5 GB。）"
       }
      ]
     },
@@ -3496,7 +5214,7 @@ globalThis.PAPER_2606_06928 = {
    "page": 18,
    "title": {
     "original": "System",
-    "zh": "系统（主观评测表行残留）"
+    "zh": "系统（可控生成主观表头残留）"
    },
    "blocks": [
     {
@@ -3506,11 +5224,77 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-system-1-1",
-       "original": "N-MOS↑ S-MOS↑ IndexTTS2 Qwen3-TTS LongCat-Audio-DiT challenging super-resolution setting: it encodes 16 kHz audio but reconstructs at 48 kHz.",
-       "zh": "（Table 12 表头及部分行残留）系统 | N-MOS↑ | S-MOS↑：IndexTTS2、Qwen3-TTS、LongCat-Audio-DiT……（接上句 s-4-5-2-3）设定：它以 16 kHz 音频为输入，却重建出 48 kHz 音频。"
+       "original": "N-MOS↑ S-MOS↑ IndexTTS2",
+       "zh": "（表：N-MOS↑/S-MOS↑——IndexTTS2 4.78±0.02/4.71±0.03；Qwen3-TTS 4.80±0.02/4.69±0.03；Fish Audio S2 4.77±0.02/4.69±0.03；LongCat-Audio-DiT 4.63±0.03/4.65±0.03；VoxCPM2 4.78±0.02/4.74±0.03。）这是颇具挑战的超分辨率设置：编码 16 kHz 音频但以 48 kHz 重建。"
+      }
+     ]
+    },
+    {
+     "id": "eq-system-1",
+     "type": "equation",
+     "page": 18,
+     "original": "4.78 ± 0.02 4.71 ± 0.03"
+    },
+    {
+     "id": "eq-system-2",
+     "type": "equation",
+     "page": 18,
+     "original": "Qwen3-TTS"
+    },
+    {
+     "id": "eq-system-3",
+     "type": "equation",
+     "page": 18,
+     "original": "4.80 ± 0.02 4.69 ± 0.03"
+    },
+    {
+     "id": "eq-system-4",
+     "type": "equation",
+     "page": 18,
+     "original": "Fish Audio S2"
+    },
+    {
+     "id": "eq-system-5",
+     "type": "equation",
+     "page": 18,
+     "original": "4.77 ± 0.02 4.69 ± 0.03"
+    },
+    {
+     "id": "eq-system-6",
+     "type": "equation",
+     "page": 18,
+     "original": "LongCat-Audio-DiT"
+    },
+    {
+     "id": "eq-system-7",
+     "type": "equation",
+     "page": 18,
+     "original": "4.63 ± 0.03 4.65 ± 0.03"
+    },
+    {
+     "id": "eq-system-8",
+     "type": "equation",
+     "page": 18,
+     "original": "VoxCPM2"
+    },
+    {
+     "id": "eq-system-9",
+     "type": "equation",
+     "page": 18,
+     "original": "4.78 ± 0.02 4.74 ± 0.03"
+    },
+    {
+     "id": "p-system-2",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-system-2-1",
+       "original": "challenging super-resolution setting: it encodes 16 kHz audio but reconstructs at 48 kHz.",
+       "zh": "（目录残留页码 4。）\n（原始数据照录）\nchallenging super-resolution setting: it encodes 16 kHz audio but reconstructs at 48 kHz."
       },
       {
-       "id": "s-system-1-2",
+       "id": "s-system-2-2",
        "original": "This result supports the asymmetric codec design introduced in Section 3.2, which gives VoxCPM2 greater flexibility by keeping the autoregressive backbone in a compact low-rate latent space while still enabling high-sample-rate waveform generation.",
        "zh": "这一结果支持了第 3.2 节引入的非对称 codec 设计：让自回归主干保持在紧凑的低速率隐空间，同时仍能生成高采样率波形，从而给 VoxCPM2 带来更大的灵活性。"
       }
@@ -3680,7 +5464,7 @@ globalThis.PAPER_2606_06928 = {
    "page": 19,
    "title": {
     "original": "System",
-    "zh": "系统（多语言主观表头残留）"
+    "zh": "系统（可控生成主观表头残留）"
    },
    "blocks": [
     {
@@ -3690,10 +5474,52 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-system-2-1-1",
-       "original": "N-MOS↑ S-MOS↑ OmniVoice Qwen3-TTS",
-       "zh": "（Table 13 表头及部分行残留）系统 | N-MOS↑ | S-MOS↑：OmniVoice、Qwen3-TTS……（行数据抽取不完整，以原表为准）。"
+       "original": "N-MOS↑ S-MOS↑ OmniVoice",
+       "zh": "表头：N-MOS↑ / S-MOS↑——OmniVoice（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-system-2-1",
+     "type": "equation",
+     "page": 19,
+     "original": "4.76 ± 0.02 4.72 ± 0.02"
+    },
+    {
+     "id": "eq-system-2-2",
+     "type": "equation",
+     "page": 19,
+     "original": "Qwen3-TTS"
+    },
+    {
+     "id": "eq-system-2-3",
+     "type": "equation",
+     "page": 19,
+     "original": "4.77 ± 0.02 4.60 ± 0.03"
+    },
+    {
+     "id": "eq-system-2-4",
+     "type": "equation",
+     "page": 19,
+     "original": "Fish Audio S2"
+    },
+    {
+     "id": "eq-system-2-5",
+     "type": "equation",
+     "page": 19,
+     "original": "4.76 ± 0.02 4.70 ± 0.03"
+    },
+    {
+     "id": "eq-system-2-6",
+     "type": "equation",
+     "page": 19,
+     "original": "VoxCPM2"
+    },
+    {
+     "id": "eq-system-2-7",
+     "type": "equation",
+     "page": 19,
+     "original": "4.78 ± 0.02 4.66 ± 0.03"
     },
     {
      "id": "tab-system-2-1",
@@ -3721,10 +5547,52 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-system-3-1-1",
-       "original": "N-MOS↑ I-MOS↑ VoiceSculptor Qwen3-TTS-VD MOSS-VoiceGenerator",
-       "zh": "（Table 14 表头及部分行残留）系统 | N-MOS↑ | I-MOS↑：VoiceSculptor、Qwen3-TTS-VD、MOSS-VoiceGenerator……（行数据抽取不完整，以原表为准）。"
+       "original": "N-MOS↑ I-MOS↑ VoiceSculptor",
+       "zh": "表头：N-MOS↑ / I-MOS↑——VoiceSculptor（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-system-3-1",
+     "type": "equation",
+     "page": 19,
+     "original": "3.69 ± 0.07 3.56 ± 0.07"
+    },
+    {
+     "id": "eq-system-3-2",
+     "type": "equation",
+     "page": 19,
+     "original": "Qwen3-TTS-VD"
+    },
+    {
+     "id": "eq-system-3-3",
+     "type": "equation",
+     "page": 19,
+     "original": "4.61 ± 0.03 4.41 ± 0.04"
+    },
+    {
+     "id": "eq-system-3-4",
+     "type": "equation",
+     "page": 19,
+     "original": "MOSS-VoiceGenerator"
+    },
+    {
+     "id": "eq-system-3-5",
+     "type": "equation",
+     "page": 19,
+     "original": "4.31 ± 0.05 4.15 ± 0.05"
+    },
+    {
+     "id": "eq-system-3-6",
+     "type": "equation",
+     "page": 19,
+     "original": "VoxCPM2"
+    },
+    {
+     "id": "eq-system-3-7",
+     "type": "equation",
+     "page": 19,
+     "original": "4.48 ± 0.04 4.50 ± 0.03"
     }
    ]
   },
@@ -4047,11 +5915,13 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-1-3",
-       "original": "In ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 18337–18341."
+       "original": "In ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 18337–18341.",
+       "zh": "（目录残留页码 4。）"
       },
       {
        "id": "s-references-1-4",
-       "original": "IEEE, 2026."
+       "original": "IEEE, 2026.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4062,7 +5932,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-2-1",
-       "original": "Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al. Seed-tts: A family of high-quality versatile speech generation models. arXiv preprint arXiv:2406.02430, 2024."
+       "original": "Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al. Seed-tts: A family of high-quality versatile speech generation models. arXiv preprint arXiv:2406.02430, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4077,15 +5948,18 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-3-2",
-       "original": "Mars6: A small and robust hierarchical-codec text-to-speech model."
+       "original": "Mars6: A small and robust hierarchical-codec text-to-speech model.",
+       "zh": "（目录残留页码 6。）"
       },
       {
        "id": "s-references-3-3",
-       "original": "In ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 1–5."
+       "original": "In ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 1–5.",
+       "zh": "（目录残留页码 20。）"
       },
       {
        "id": "s-references-3-4",
-       "original": "IEEE, 2025."
+       "original": "IEEE, 2025.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -4100,7 +5974,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-4-2",
-       "original": "IEEE/ACM transactions on audio, speech, and language processing, 31:2523–2533, 2023a."
+       "original": "IEEE/ACM transactions on audio, speech, and language processing, 31:2523–2533, 2023a.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -4122,7 +5997,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "Soundstorm: Efficient parallel audio generation. arXiv preprint arXiv:2305.09636, 2023b."
+       "original": "Soundstorm: Efficient parallel audio generation. arXiv preprint arXiv:2305.09636, 2023b.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4137,7 +6013,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-7-2",
-       "original": "Higgs Audio v2: Redefining expressiveness in audio generation. https://github.com/boson-ai/ higgs-audio, 2025."
+       "original": "Higgs Audio v2: Redefining expressiveness in audio generation. https://github.com/boson-ai/ higgs-audio, 2025.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -4163,11 +6040,13 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 5734–5738."
+       "original": "In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 5734–5738.",
+       "zh": "（目录残留页码 4。）"
       },
       {
        "id": "s-references-9-2",
-       "original": "IEEE, 2021."
+       "original": "IEEE, 2021.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -4178,7 +6057,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "Edresson Casanova, Kelly Davis, Eren Gölge, Görkem Göknar, Iulian Gulea, Logan Hart, Aya Aljafari, Joshua Meyer, Reuben Morais, Samuel Olayemi, et al. Xtts: a massively multilingual zero-shot text-to-speech model. arXiv preprint arXiv:2406.04904, 2024."
+       "original": "Edresson Casanova, Kelly Davis, Eren Gölge, Görkem Göknar, Iulian Gulea, Logan Hart, Aya Aljafari, Joshua Meyer, Reuben Morais, Samuel Olayemi, et al. Xtts: a massively multilingual zero-shot text-to-speech model. arXiv preprint arXiv:2406.04904, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4193,7 +6073,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-11-2",
-       "original": "Flexivoice: Enabling flexible style control in zero-shot tts with natural language instructions. arXiv preprint arXiv:2601.04656, 2026a."
+       "original": "Flexivoice: Enabling flexible style control in zero-shot tts with natural language instructions. arXiv preprint arXiv:2601.04656, 2026a.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4204,7 +6085,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "Huakang Chen, Jingbin Hu, Liumeng Xue, Qirui Zhan, Wenhao Li, Guobin Ma, Hanke Xie, Dake Guo, Linhan Ma, Yuepeng Jiang, et al. Mint-bench: A comprehensive multilingual benchmark for instruction-following text-to-speech. arXiv preprint arXiv:2604.17958, 2026b."
+       "original": "Huakang Chen, Jingbin Hu, Liumeng Xue, Qirui Zhan, Wenhao Li, Guobin Ma, Hanke Xie, Dake Guo, Linhan Ma, Yuepeng Jiang, et al. Mint-bench: A comprehensive multilingual benchmark for instruction-following text-to-speech. arXiv preprint arXiv:2604.17958, 2026b.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4226,7 +6108,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "IEEE Transactions on Audio, Speech and Language Processing, 2025a."
+       "original": "IEEE Transactions on Audio, Speech and Language Processing, 2025a.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -4245,7 +6128,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-15-3",
-       "original": "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp."
+       "original": "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4256,7 +6140,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "6255–6271, 2025b."
+       "original": "6255–6271, 2025b.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4275,7 +6160,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-17-3",
-       "original": "In Advances in Neural Information Processing Systems (NeurIPS), 2024. arXiv:2306.05284."
+       "original": "In Advances in Neural Information Processing Systems (NeurIPS), 2024. arXiv:2306.05284.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4301,7 +6187,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "arXiv preprint arXiv:2210.13438, 2022."
+       "original": "arXiv preprint arXiv:2210.13438, 2022.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4312,7 +6199,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "Zhihao Du, Qian Chen, Shiliang Zhang, Kai Hu, Heng Lu, Yexin Yang, Hangrui Hu, Siqi Zheng, Yue Gu, Ziyang Ma, et al. Cosyvoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens. arXiv preprint arXiv:2407.05407, 2024a."
+       "original": "Zhihao Du, Qian Chen, Shiliang Zhang, Kai Hu, Heng Lu, Yexin Yang, Hangrui Hu, Siqi Zheng, Yue Gu, Ziyang Ma, et al. Cosyvoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens. arXiv preprint arXiv:2407.05407, 2024a.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4323,7 +6211,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "Zhihao Du, Yuxuan Wang, Qian Chen, Xian Shi, Xiang Lv, Tianyu Zhao, Zhifu Gao, Yexin Yang, Changfeng Gao, Hui Wang, et al. Cosyvoice 2: Scalable streaming speech synthesis with large language models. arXiv preprint arXiv:2412.10117, 2024b."
+       "original": "Zhihao Du, Yuxuan Wang, Qian Chen, Xian Shi, Xiang Lv, Tianyu Zhao, Zhifu Gao, Yexin Yang, Changfeng Gao, Hui Wang, et al. Cosyvoice 2: Scalable streaming speech synthesis with large language models. arXiv preprint arXiv:2412.10117, 2024b.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4345,7 +6234,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "arXiv preprint arXiv:2505.17589, 2025."
+       "original": "arXiv preprint arXiv:2505.17589, 2025.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -4360,11 +6250,13 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-24-2",
-       "original": "In 2024 IEEE spoken language technology workshop (SLT), pp. 682–689."
+       "original": "In 2024 IEEE spoken language technology workshop (SLT), pp. 682–689.",
+       "zh": "（目录残留页码 4。）"
       },
       {
        "id": "s-references-24-3",
-       "original": "IEEE, 2024."
+       "original": "IEEE, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4379,7 +6271,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-25-2",
-       "original": "Cfg-zero*: Improved classifier-free guidance for flow matching models. arXiv preprint arXiv:2503.18886, 2025."
+       "original": "Cfg-zero*: Improved classifier-free guidance for flow matching models. arXiv preprint arXiv:2503.18886, 2025.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4390,7 +6283,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "Yitian Gong, Botian Jiang, Yiwei Zhao, Yucheng Yuan, Kuangwei Chen, Yaozhou Jiang, Cheng Chang, Dong Hong, Mingshu Chen, Ruixiao Li, et al. Moss-tts technical report. arXiv preprint arXiv:2603.18090, 2026."
+       "original": "Yitian Gong, Botian Jiang, Yiwei Zhao, Yucheng Yuan, Kuangwei Chen, Yaozhou Jiang, Cheng Chang, Dong Hong, Mingshu Chen, Ruixiao Li, et al. Moss-tts technical report. arXiv preprint arXiv:2603.18090, 2026.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4416,7 +6310,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "arXiv preprint arXiv:2409.03283, 2024."
+       "original": "arXiv preprint arXiv:2409.03283, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4435,11 +6330,13 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-29-3",
-       "original": "In ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 1–5."
+       "original": "In ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 1–5.",
+       "zh": "（目录残留页码 20。）"
       },
       {
        "id": "s-references-29-4",
-       "original": "IEEE, 2023."
+       "original": "IEEE, 2023.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -4450,7 +6347,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "Hangrui Hu, Xinfa Zhu, Ting He, Dake Guo, Bin Zhang, Xiong Wang, Zhifang Guo, Ziyue Jiang, Hongkun Hao, Zishan Guo, et al. Qwen3-tts technical report. arXiv preprint arXiv:2601.15621, 2026a."
+       "original": "Hangrui Hu, Xinfa Zhu, Ting He, Dake Guo, Bin Zhang, Xiong Wang, Zhifang Guo, Ziyue Jiang, Hongkun Hao, Zishan Guo, et al. Qwen3-tts technical report. arXiv preprint arXiv:2601.15621, 2026a.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4483,7 +6381,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "arXiv preprint arXiv:2601.10629, 2026b."
+       "original": "arXiv preprint arXiv:2601.10629, 2026b.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4494,7 +6393,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "Ailin Huang, Boyong Wu, Bruce Wang, Chao Yan, Chen Hu, Chengli Feng, et al. Step-Audio: Unified understanding and generation in intelligent speech interaction. arXiv preprint arXiv:2502.11946, 2025a."
+       "original": "Ailin Huang, Boyong Wu, Bruce Wang, Chao Yan, Chen Hu, Chengli Feng, et al. Step-Audio: Unified understanding and generation in intelligent speech interaction. arXiv preprint arXiv:2502.11946, 2025a.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4509,7 +6409,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-35-2",
-       "original": "Instructttseval: Benchmarking complex natural-language instruction following in text-to-speech systems. arXiv preprint arXiv:2506.16381, 2025b."
+       "original": "Instructttseval: Benchmarking complex natural-language instruction following in text-to-speech systems. arXiv preprint arXiv:2506.16381, 2025b.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4531,7 +6432,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "arXiv preprint arXiv:2603.28086, 2026."
+       "original": "arXiv preprint arXiv:2603.28086, 2026.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4550,11 +6452,13 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-38-3",
-       "original": "In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 10301–10305."
+       "original": "In ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pp. 10301–10305.",
+       "zh": "（目录残留页码 4。）"
       },
       {
        "id": "s-references-38-4",
-       "original": "IEEE, 2024."
+       "original": "IEEE, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4573,7 +6477,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-39-3",
-       "original": "PMLR, 2025."
+       "original": "PMLR, 2025.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -4588,7 +6493,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-40-2",
-       "original": "MegaTTS 3: Sparse alignment enhanced latent diffusion transformer for zero-shot speech synthesis. arXiv preprint arXiv:2502.18924, 2025."
+       "original": "MegaTTS 3: Sparse alignment enhanced latent diffusion transformer for zero-shot speech synthesis. arXiv preprint arXiv:2502.18924, 2025.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4614,7 +6520,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-42-2",
-       "original": "In Proceedings of the 32nd ACM International Conference on Multimedia, pp. 1255–1264, 2024."
+       "original": "In Proceedings of the 32nd ACM International Conference on Multimedia, pp. 1255–1264, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4633,7 +6540,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-43-3",
-       "original": "Advances in Neural Information Processing Systems, 36:24892–24928, 2023."
+       "original": "Advances in Neural Information Processing Systems, 36:24892–24928, 2023.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4652,7 +6560,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-44-3",
-       "original": "Transactions of the Association for Computational Linguistics, 11:1703–1718, 2023."
+       "original": "Transactions of the Association for Computational Linguistics, 11:1703–1718, 2023.",
+       "zh": "（目录残留页码 18。）"
       }
      ]
     },
@@ -4667,7 +6576,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-45-2",
-       "original": "Kimi-Audio technical report. arXiv preprint arXiv:2504.18425, 2025."
+       "original": "Kimi-Audio technical report. arXiv preprint arXiv:2504.18425, 2025.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4686,9 +6596,16 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-46-3",
-       "original": "Advances in Neural Information Processing Systems, 36:27980–27993, 2023."
+       "original": "Advances in Neural Information Processing Systems, 36:27980–27993,",
+       "zh": "（目录残留页码 6。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 23,
+     "original": "2023."
     },
     {
      "id": "p-references-47",
@@ -4701,7 +6618,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-47-2",
-       "original": "Advances in neural information processing systems, 36:14005–14034, 2023."
+       "original": "Advances in neural information processing systems, 36:14005–14034, 2023.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4720,7 +6638,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-48-3",
-       "original": "IEEE Transactions on Neural Networks and Learning Systems, 2025."
+       "original": "IEEE Transactions on Neural Networks and Learning Systems, 2025.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -4739,9 +6658,16 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-49-3",
-       "original": "In IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2024."
+       "original": "In IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),",
+       "zh": "（目录残留页码 4。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 23,
+     "original": "2024."
     },
     {
      "id": "p-references-50",
@@ -4754,7 +6680,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-50-2",
-       "original": "In International Conference on Learning Representations, volume 2024, pp. 57672–57688, 2024."
+       "original": "In International Conference on Learning Representations, volume 2024, pp. 57672–57688, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4773,7 +6700,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-51-3",
-       "original": "In Proceedings of the AAAI conference on artificial intelligence, volume 33, pp. 6706–6713, 2019."
+       "original": "In Proceedings of the AAAI conference on artificial intelligence, volume 33, pp. 6706–6713, 2019.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4792,7 +6720,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-52-3",
-       "original": "Advances in Neural Information Processing Systems, 37:56424–56445, 2024."
+       "original": "Advances in Neural Information Processing Systems, 37:56424–56445, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4803,9 +6732,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-53-1",
-       "original": "Shijia Liao, Yuxuan Wang, Songting Liu, Yifan Cheng, Ruoyi Zhang, Tianyu Li, Shidong Li, Yisheng Zheng, Xingwei Liu, Qingzheng Wang, et al. Fish audio s2 technical report. arXiv preprint arXiv:2603.08823, 2026."
+       "original": "Shijia Liao, Yuxuan Wang, Songting Liu, Yifan Cheng, Ruoyi Zhang, Tianyu Li, Shidong Li, Yisheng Zheng, Xingwei Liu, Qingzheng Wang, et al. Fish audio s2 technical report. arXiv preprint arXiv:2603.08823,",
+       "zh": "（目录残留页码 6。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 23,
+     "original": "2026."
     },
     {
      "id": "p-references-54",
@@ -4814,7 +6750,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-54-1",
-       "original": "Alexander H Liu, Alexis Tacnet, Andy Ehrenberg, Andy Lo, Chen-Yo Sun, Guillaume Lample, Henry Lagarde, Jean-Malo Delignon, Jaeyoung Kim, John Harvill, et al. Voxtral tts. arXiv preprint arXiv:2603.25551, 2026."
+       "original": "Alexander H Liu, Alexis Tacnet, Andy Ehrenberg, Andy Lo, Chen-Yo Sun, Guillaume Lample, Henry Lagarde, Jean-Malo Delignon, Jaeyoung Kim, John Harvill, et al. Voxtral tts. arXiv preprint arXiv:2603.25551, 2026.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4837,7 +6774,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-55-4",
-       "original": "Interspeech 2023, pp. 4888–4892, 2023."
+       "original": "Interspeech 2023, pp. 4888–4892, 2023.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4863,7 +6801,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-57-1",
-       "original": "arXiv preprint arXiv:2402.01912, 2024."
+       "original": "arXiv preprint arXiv:2402.01912, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4878,7 +6817,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-58-2",
-       "original": "Magic-tts: Fine-grained controllable speech synthesis with explicit local duration and pause control. arXiv preprint arXiv:2604.21164, 2026."
+       "original": "Magic-tts: Fine-grained controllable speech synthesis with explicit local duration and pause control. arXiv preprint arXiv:2604.21164, 2026.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4897,7 +6837,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-59-3",
-       "original": "Advances in Neural Information Processing Systems, 38, 2026."
+       "original": "Advances in Neural Information Processing Systems, 38, 2026.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4912,7 +6853,8 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-60-2",
-       "original": "LongCat-AudioDiT: High-fidelity diffusion text-to-speech in the waveform latent space. arXiv preprint arXiv:2603.29339, 2026."
+       "original": "LongCat-AudioDiT: High-fidelity diffusion text-to-speech in the waveform latent space. arXiv preprint arXiv:2603.29339, 2026.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -4927,9 +6869,16 @@ globalThis.PAPER_2606_06928 = {
       },
       {
        "id": "s-references-61-2",
-       "original": "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp."
+       "original": "In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 23,
+     "original": "1287–1300, 2025."
     },
     {
      "id": "p-references-62",
@@ -4938,26 +6887,36 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-62-1",
-       "original": "1287–1300, 2025."
+       "original": "Fabian Mentzer, David Minnen, Eirikur Agustsson, and Michael Tschannen."
+      },
+      {
+       "id": "s-references-62-2",
+       "original": "Finite scalar quantization: Vq-vae made simple."
+      },
+      {
+       "id": "s-references-62-3",
+       "original": "In The Twelfth International Conference on Learning Representations, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
     {
      "id": "p-references-63",
      "type": "paragraph",
-     "page": 23,
+     "page": 24,
      "sentences": [
       {
        "id": "s-references-63-1",
-       "original": "Fabian Mentzer, David Minnen, Eirikur Agustsson, and Michael Tschannen."
+       "original": "Christoph Minixhofer, Ondˇrej Klejch, and Peter Bell."
       },
       {
        "id": "s-references-63-2",
-       "original": "Finite scalar quantization: Vq-vae made simple."
+       "original": "TTSDS—text-to-speech distribution score."
       },
       {
        "id": "s-references-63-3",
-       "original": "In The Twelfth International Conference on Learning Representations, 2024."
+       "original": "In IEEE Spoken Language Technology Workshop (SLT), 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -4968,15 +6927,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-64-1",
-       "original": "Christoph Minixhofer, Ondˇrej Klejch, and Peter Bell."
+       "original": "Yuto Nishimura, Takumi Hirose, Masanari Ohi, Hideki Nakayama, and Nakamasa Inoue."
       },
       {
        "id": "s-references-64-2",
-       "original": "TTSDS—text-to-speech distribution score."
+       "original": "HALL-E: Hierarchical neural codec language model for minute-long zero-shot text-to-speech synthesis."
       },
       {
        "id": "s-references-64-3",
-       "original": "In IEEE Spoken Language Technology Workshop (SLT), 2024."
+       "original": "In International Conference on Learning Representations (ICLR), 2025.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -4987,15 +6947,7 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-65-1",
-       "original": "Yuto Nishimura, Takumi Hirose, Masanari Ohi, Hideki Nakayama, and Nakamasa Inoue."
-      },
-      {
-       "id": "s-references-65-2",
-       "original": "HALL-E: Hierarchical neural codec language model for minute-long zero-shot text-to-speech synthesis."
-      },
-      {
-       "id": "s-references-65-3",
-       "original": "In International Conference on Learning Representations (ICLR), 2025."
+       "original": "OpenAudio."
       }
      ]
     },
@@ -5006,7 +6958,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-66-1",
-       "original": "OpenAudio."
+       "original": "Openaudio s1: a cutting-edge text-to-speech model that performs like voice actors. https://openaudio.com/blogs/s1, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5017,7 +6970,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-67-1",
-       "original": "Openaudio s1: a cutting-edge text-to-speech model that performs like voice actors. https://openaudio.com/blogs/s1, 2024."
+       "original": "Puyuan Peng, Po-Yao Huang, Shang-Wen Li, Abdelrahman Mohamed, and David Harwath."
+      },
+      {
+       "id": "s-references-67-2",
+       "original": "Voicecraft: Zero-shot speech editing and text-to-speech in the wild."
+      },
+      {
+       "id": "s-references-67-3",
+       "original": "In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 12442–12462, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5028,15 +6990,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-68-1",
-       "original": "Puyuan Peng, Po-Yao Huang, Shang-Wen Li, Abdelrahman Mohamed, and David Harwath."
-      },
-      {
-       "id": "s-references-68-2",
-       "original": "Voicecraft: Zero-shot speech editing and text-to-speech in the wild."
-      },
-      {
-       "id": "s-references-68-3",
-       "original": "In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 12442–12462, 2024."
+       "original": "Zhiliang Peng, Jianwei Yu, Wenhui Wang, Yaoyao Chang, Yutao Sun, Li Dong, Yi Zhu, Weijiang Xu, Hangbo Bao, Zehua Wang, et al. Vibevoice technical report. arXiv preprint arXiv:2508.19205, 2025.",
+       "zh": "（目录残留页码 19。）"
       }
      ]
     },
@@ -5047,7 +7002,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-69-1",
-       "original": "Zhiliang Peng, Jianwei Yu, Wenhui Wang, Yaoyao Chang, Yutao Sun, Li Dong, Yi Zhu, Weijiang Xu, Hangbo Bao, Zehua Wang, et al. Vibevoice technical report. arXiv preprint arXiv:2508.19205, 2025."
+       "original": "Wei Ping, Kainan Peng, Andrew Gibiansky, Sercan O Arik, Ajay Kannan, Sharan Narang, Jonathan Raiman, and John Miller."
+      },
+      {
+       "id": "s-references-69-2",
+       "original": "Deep voice 3: Scaling text-to-speech with convolutional sequence learning."
+      },
+      {
+       "id": "s-references-69-3",
+       "original": "In International Conference on Learning Representations, 2018.",
+       "zh": "（目录残留页码 18。）"
       }
      ]
     },
@@ -5058,15 +7022,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-70-1",
-       "original": "Wei Ping, Kainan Peng, Andrew Gibiansky, Sercan O Arik, Ajay Kannan, Sharan Narang, Jonathan Raiman, and John Miller."
+       "original": "Yi Ren, Chenxu Hu, Xu Tan, Tao Qin, Sheng Zhao, Zhou Zhao, and Tie-Yan Liu."
       },
       {
        "id": "s-references-70-2",
-       "original": "Deep voice 3: Scaling text-to-speech with convolutional sequence learning."
+       "original": "Fastspeech 2: Fast and high-quality end-to-end text to speech."
       },
       {
        "id": "s-references-70-3",
-       "original": "In International Conference on Learning Representations, 2018."
+       "original": "In International Conference on Learning Representations, 2020.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -5077,15 +7042,12 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-71-1",
-       "original": "Yi Ren, Chenxu Hu, Xu Tan, Tao Qin, Sheng Zhao, Zhou Zhao, and Tie-Yan Liu."
+       "original": "Yong Ren, Jiangyan Yi, Jianhua Tao, Haiyang Sun, Zhengqi Wen, Hao Gu, Le Xu, and Ye Bai."
       },
       {
        "id": "s-references-71-2",
-       "original": "Fastspeech 2: Fast and high-quality end-to-end text to speech."
-      },
-      {
-       "id": "s-references-71-3",
-       "original": "In International Conference on Learning Representations, 2020."
+       "original": "Ov-instructtts: Towards open-vocabulary instruct text-to-speech. arXiv preprint arXiv:2601.01459, 2026.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5096,11 +7058,17 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-72-1",
-       "original": "Yong Ren, Jiangyan Yi, Jianhua Tao, Haiyang Sun, Zhengqi Wen, Hao Gu, Le Xu, and Ye Bai."
+       "original": "Jonathan Shen, Ruoming Pang, Ron J Weiss, Mike Schuster, Navdeep Jaitly, Zongheng Yang, Zhifeng Chen, Yu Zhang, Yuxuan Wang, Rj Skerrv-Ryan, et al. Natural tts synthesis by conditioning wavenet on mel spectrogram predictions."
       },
       {
        "id": "s-references-72-2",
-       "original": "Ov-instructtts: Towards open-vocabulary instruct text-to-speech. arXiv preprint arXiv:2601.01459, 2026."
+       "original": "In 2018 IEEE international conference on acoustics, speech and signal processing (ICASSP), pp. 4779–4783.",
+       "zh": "（目录残留页码 4。）"
+      },
+      {
+       "id": "s-references-72-3",
+       "original": "IEEE, 2018.",
+       "zh": "（目录残留页码 18。）"
       }
      ]
     },
@@ -5111,15 +7079,12 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-73-1",
-       "original": "Jonathan Shen, Ruoming Pang, Ron J Weiss, Mike Schuster, Navdeep Jaitly, Zongheng Yang, Zhifeng Chen, Yu Zhang, Yuxuan Wang, Rj Skerrv-Ryan, et al. Natural tts synthesis by conditioning wavenet on mel spectrogram predictions."
+       "original": "Kai Shen, Zeqian Ju, Xu Tan, Eric Liu, Yichong Leng, Lei He, Tao Qin, Jiang Bian, et al. Naturalspeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers."
       },
       {
        "id": "s-references-73-2",
-       "original": "In 2018 IEEE international conference on acoustics, speech and signal processing (ICASSP), pp. 4779–4783."
-      },
-      {
-       "id": "s-references-73-3",
-       "original": "IEEE, 2018."
+       "original": "In The Twelfth International Conference on Learning Representations, 2023.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -5130,11 +7095,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-74-1",
-       "original": "Kai Shen, Zeqian Ju, Xu Tan, Eric Liu, Yichong Leng, Lei He, Tao Qin, Jiang Bian, et al. Naturalspeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers."
+       "original": "Jianlin Su, Murtadha Ahmed, Yu Lu, Shengfeng Pan, Wen Bo, and Yunfeng Liu."
       },
       {
        "id": "s-references-74-2",
-       "original": "In The Twelfth International Conference on Learning Representations, 2023."
+       "original": "Roformer: Enhanced transformer with rotary position embedding."
+      },
+      {
+       "id": "s-references-74-3",
+       "original": "Neurocomputing, 568:127063, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5145,17 +7115,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-75-1",
-       "original": "Jianlin Su, Murtadha Ahmed, Yu Lu, Shengfeng Pan, Wen Bo, and Yunfeng Liu."
-      },
-      {
-       "id": "s-references-75-2",
-       "original": "Roformer: Enhanced transformer with rotary position embedding."
-      },
-      {
-       "id": "s-references-75-3",
-       "original": "Neurocomputing, 568:127063, 2024."
+       "original": "MiniCPM Team, Chaojun Xiao, Yuxuan Li, Xu Han, Yuzhuo Bai, Jie Cai, Haotian Chen, Wentong Chen, Xin Cong, Ganqu Cui, et al. Minicpm4: Ultra-efficient llms on end devices. arXiv preprint arXiv:2506.07900,",
+       "zh": "（目录残留页码 4。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 24,
+     "original": "2025."
     },
     {
      "id": "p-references-76",
@@ -5164,7 +7133,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-76-1",
-       "original": "MiniCPM Team, Chaojun Xiao, Yuxuan Li, Xu Han, Yuzhuo Bai, Jie Cai, Haotian Chen, Wentong Chen, Xin Cong, Ganqu Cui, et al. Minicpm4: Ultra-efficient llms on end devices. arXiv preprint arXiv:2506.07900, 2025."
+       "original": "Fei Tian, Xiangyu Tony Zhang, Yuxin Zhang, Haoyang Zhang, Yuxin Li, Daijiao Liu, Yayue Deng, Donghang Wu, Jun Chen, Liang Zhao, et al. Step-audio-r1 technical report. arXiv preprint arXiv:2511.15848, 2025.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5175,7 +7145,21 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-77-1",
-       "original": "Fei Tian, Xiangyu Tony Zhang, Yuxin Zhang, Haoyang Zhang, Yuxin Li, Daijiao Liu, Yayue Deng, Donghang Wu, Jun Chen, Liang Zhao, et al. Step-audio-r1 technical report. arXiv preprint arXiv:2511.15848, 2025."
+       "original": "Arnon Turetzky, Avihu Dekel, Nimrod Shabtay, Slava Shechtman, David Haws, Hagai Aronowitz, Ron Hoory, and Yossi Adi."
+      },
+      {
+       "id": "s-references-77-2",
+       "original": "Speech synthesis from continuous features using per-token latent diffusion."
+      },
+      {
+       "id": "s-references-77-3",
+       "original": "In 2025 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pp. 1–8.",
+       "zh": "（目录残留页码 20。）"
+      },
+      {
+       "id": "s-references-77-4",
+       "original": "IEEE, 2025.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -5186,19 +7170,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-78-1",
-       "original": "Arnon Turetzky, Avihu Dekel, Nimrod Shabtay, Slava Shechtman, David Haws, Hagai Aronowitz, Ron Hoory, and Yossi Adi."
-      },
-      {
-       "id": "s-references-78-2",
-       "original": "Speech synthesis from continuous features using per-token latent diffusion."
-      },
-      {
-       "id": "s-references-78-3",
-       "original": "In 2025 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU), pp. 1–8."
-      },
-      {
-       "id": "s-references-78-4",
-       "original": "IEEE, 2025."
+       "original": "Apoorv Vyas, Bowen Shi, Matthew Le, Andros Tjandra, Yi-Chiao Wu, Baishan Guo, Jiemin Zhang, Xinyue Zhang, Robert Adkins, William Ngan, et al. Audiobox: Unified audio generation with natural language prompts. arXiv preprint arXiv:2312.15821, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5209,7 +7182,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-79-1",
-       "original": "Apoorv Vyas, Bowen Shi, Matthew Le, Andros Tjandra, Yi-Chiao Wu, Baishan Guo, Jiemin Zhang, Xinyue Zhang, Robert Adkins, William Ngan, et al. Audiobox: Unified audio generation with natural language prompts. arXiv preprint arXiv:2312.15821, 2024."
+       "original": "Helin Wang, Jiarui Hai, Dading Chong, Karan Thakkar, Tiantian Feng, Dongchao Yang, Junhyeok Lee, Thomas Thebaud, Laureano Moro Velazquez, Jesus Villalba, et al. Capspeech: Enabling downstream applications in style-captioned text-to-speech. arXiv preprint arXiv:2506.02863, 2025a.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -5220,22 +7194,24 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-80-1",
-       "original": "Helin Wang, Jiarui Hai, Dading Chong, Karan Thakkar, Tiantian Feng, Dongchao Yang, Junhyeok Lee, Thomas Thebaud, Laureano Moro Velazquez, Jesus Villalba, et al. Capspeech: Enabling downstream applications in style-captioned text-to-speech. arXiv preprint arXiv:2506.02863, 2025a."
+       "original": "Hui Wang, Shujie Liu, Lingwei Meng, Jinyu Li, Yifan Yang, Shiwan Zhao, Haiyang Sun, Yanqing Liu, Haoqin Sun, Jiaming Zhou, et al. Felle: Autoregressive speech synthesis with token-wise coarse-to-fine flow matching."
+      },
+      {
+       "id": "s-references-80-2",
+       "original": "In Proceedings of the 33rd ACM International Conference on Multimedia, pp. 10229–10238, 2025b.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
     {
      "id": "p-references-81",
      "type": "paragraph",
-     "page": 24,
+     "page": 25,
      "sentences": [
       {
        "id": "s-references-81-1",
-       "original": "Hui Wang, Shujie Liu, Lingwei Meng, Jinyu Li, Yifan Yang, Shiwan Zhao, Haiyang Sun, Yanqing Liu, Haoqin Sun, Jiaming Zhou, et al. Felle: Autoregressive speech synthesis with token-wise coarse-to-fine flow matching."
-      },
-      {
-       "id": "s-references-81-2",
-       "original": "In Proceedings of the 33rd ACM International Conference on Multimedia, pp. 10229–10238, 2025b."
+       "original": "Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, Zheng Liang, Qixi Zheng, Rui Wang, Xiaoqin Feng, et al. Spark-tts: An efficient llm-based text-to-speech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710, 2025c.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -5246,7 +7222,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-82-1",
-       "original": "Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, Zheng Liang, Qixi Zheng, Rui Wang, Xiaoqin Feng, et al. Spark-tts: An efficient llm-based text-to-speech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710, 2025c."
+       "original": "Yuancheng Wang, Haoyue Zhan, Liwei Liu, Ruihong Zeng, Haotian Guo, Jiachen Zheng, Qiang Zhang, Xueyao Zhang, Shunsi Zhang, and Zhizheng Wu."
+      },
+      {
+       "id": "s-references-82-2",
+       "original": "Maskgct: Zero-shot text-to-speech with masked generative codec transformer."
+      },
+      {
+       "id": "s-references-82-3",
+       "original": "In The Thirteenth International Conference on Learning Representations, 2025d.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -5257,15 +7242,21 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-83-1",
-       "original": "Yuancheng Wang, Haoyue Zhan, Liwei Liu, Ruihong Zeng, Haotian Guo, Jiachen Zheng, Qiang Zhang, Xueyao Zhang, Shunsi Zhang, and Zhizheng Wu."
+       "original": "Yuxuan Wang, Daisy Stanton, Yu Zhang, RJ-Skerry Ryan, Eric Battenberg, Joel Shor, Ying Xiao, Ye Jia, Fei Ren, and Rif A Saurous."
       },
       {
        "id": "s-references-83-2",
-       "original": "Maskgct: Zero-shot text-to-speech with masked generative codec transformer."
+       "original": "Style tokens: Unsupervised style modeling, control and transfer in end-to-end speech synthesis."
       },
       {
        "id": "s-references-83-3",
-       "original": "In The Thirteenth International Conference on Learning Representations, 2025d."
+       "original": "In International conference on machine learning, pp. 5180–5189.",
+       "zh": "（目录残留页码 18。）"
+      },
+      {
+       "id": "s-references-83-4",
+       "original": "PMLR, 2018.",
+       "zh": "（目录残留页码 18。）"
       }
      ]
     },
@@ -5276,19 +7267,12 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-84-1",
-       "original": "Yuxuan Wang, Daisy Stanton, Yu Zhang, RJ-Skerry Ryan, Eric Battenberg, Joel Shor, Ying Xiao, Ye Jia, Fei Ren, and Rif A Saurous."
+       "original": "Chun Yat Wu, Jiajun Deng, Guinan Li, Qiuqiang Kong, and Simon Lui."
       },
       {
        "id": "s-references-84-2",
-       "original": "Style tokens: Unsupervised style modeling, control and transfer in end-to-end speech synthesis."
-      },
-      {
-       "id": "s-references-84-3",
-       "original": "In International conference on machine learning, pp. 5180–5189."
-      },
-      {
-       "id": "s-references-84-4",
-       "original": "PMLR, 2018."
+       "original": "Clear: Continuous latent autoregressive modeling for high-quality and low-latency speech synthesis. arXiv preprint arXiv:2508.19098, 2025.",
+       "zh": "（目录残留页码 19。）"
       }
      ]
     },
@@ -5299,11 +7283,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-85-1",
-       "original": "Chun Yat Wu, Jiajun Deng, Guinan Li, Qiuqiang Kong, and Simon Lui."
+       "original": "Chaojun Xiao, Jie Cai, Weilin Zhao, Biyuan Lin, Guoyang Zeng, Jie Zhou, Zhi Zheng, Xu Han, Zhiyuan Liu, and Maosong Sun."
       },
       {
        "id": "s-references-85-2",
-       "original": "Clear: Continuous latent autoregressive modeling for high-quality and low-latency speech synthesis. arXiv preprint arXiv:2508.19098, 2025."
+       "original": "Densing law of llms."
+      },
+      {
+       "id": "s-references-85-3",
+       "original": "Nature Machine Intelligence, pp. 1–11, 2025.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -5314,15 +7303,12 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-86-1",
-       "original": "Chaojun Xiao, Jie Cai, Weilin Zhao, Biyuan Lin, Guoyang Zeng, Jie Zhou, Zhi Zheng, Xu Han, Zhiyuan Liu, and Maosong Sun."
+       "original": "Kun Xie, Feiyu Shen, Junjie Li, Fenglong Xie, Xu Tang, and Yao Hu."
       },
       {
        "id": "s-references-86-2",
-       "original": "Densing law of llms."
-      },
-      {
-       "id": "s-references-86-3",
-       "original": "Nature Machine Intelligence, pp. 1–11, 2025."
+       "original": "Fireredtts-2: Towards long conversational speech generation for podcast and chatbot. arXiv preprint arXiv:2509.02020, 2025a.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -5333,11 +7319,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-87-1",
-       "original": "Kun Xie, Feiyu Shen, Junjie Li, Fenglong Xie, Xu Tang, and Yao Hu."
+       "original": "Tianxin Xie, Yan Rong, Pengfei Zhang, Wenwu Wang, and Li Liu."
       },
       {
        "id": "s-references-87-2",
-       "original": "Fireredtts-2: Towards long conversational speech generation for podcast and chatbot. arXiv preprint arXiv:2509.02020, 2025a."
+       "original": "Towards controllable speech synthesis in the era of large language models: A systematic survey."
+      },
+      {
+       "id": "s-references-87-3",
+       "original": "In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pp. 764–791, 2025b.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5348,15 +7339,12 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-88-1",
-       "original": "Tianxin Xie, Yan Rong, Pengfei Zhang, Wenwu Wang, and Li Liu."
+       "original": "Detai Xin, Xu Tan, Shinnosuke Takamichi, and Hiroshi Saruwatari."
       },
       {
        "id": "s-references-88-2",
-       "original": "Towards controllable speech synthesis in the era of large language models: A systematic survey."
-      },
-      {
-       "id": "s-references-88-3",
-       "original": "In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pp. 764–791, 2025b."
+       "original": "Bigcodec: Pushing the limits of low-bitrate neural speech codec. arXiv preprint arXiv:2409.05377, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5367,11 +7355,7 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-89-1",
-       "original": "Detai Xin, Xu Tan, Shinnosuke Takamichi, and Hiroshi Saruwatari."
-      },
-      {
-       "id": "s-references-89-2",
-       "original": "Bigcodec: Pushing the limits of low-bitrate neural speech codec. arXiv preprint arXiv:2409.05377, 2024."
+       "original": "Detai Xin, Shujie Hu, Chengzuo Yang, Chen Huang, Guoqiao Yu, Guanglu Wan, and Xunliang Cai."
       }
      ]
     },
@@ -5382,7 +7366,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-90-1",
-       "original": "Detai Xin, Shujie Hu, Chengzuo Yang, Chen Huang, Guoqiao Yu, Guanglu Wan, and Xunliang Cai."
+       "original": "Longcat-audiodit: High-fidelity diffusion text-to-speech in the waveform latent space. arXiv preprint arXiv:2603.29339, 2026.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -5393,7 +7378,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-91-1",
-       "original": "Longcat-audiodit: High-fidelity diffusion text-to-speech in the waveform latent space. arXiv preprint arXiv:2603.29339, 2026."
+       "original": "Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang, et al. Qwen2. 5-omni technical report. arXiv preprint arXiv:2503.20215, 2025a.",
+       "zh": "（目录残留页码 20。）"
       }
      ]
     },
@@ -5404,7 +7390,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-92-1",
-       "original": "Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang, et al. Qwen2. 5-omni technical report. arXiv preprint arXiv:2503.20215, 2025a."
+       "original": "Jin Xu, Zhifang Guo, Hangrui Hu, Yunfei Chu, Xiong Wang, Jinzheng He, Yuxuan Wang, Xian Shi, Ting He, Xinfa Zhu, et al. Qwen3-omni technical report. arXiv preprint arXiv:2509.17765, 2025b.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -5415,7 +7402,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-93-1",
-       "original": "Jin Xu, Zhifang Guo, Hangrui Hu, Yunfei Chu, Xiong Wang, Jinzheng He, Yuxuan Wang, Xian Shi, Ting He, Xinfa Zhu, et al. Qwen3-omni technical report. arXiv preprint arXiv:2509.17765, 2025b."
+       "original": "Dongchao Yang, Songxiang Liu, Rongjie Huang, Chao Weng, and Helen Meng."
+      },
+      {
+       "id": "s-references-93-2",
+       "original": "Instructtts: Modelling expressive tts in discrete latent space with natural language style prompt."
+      },
+      {
+       "id": "s-references-93-3",
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 32:2913–2925, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5426,17 +7422,20 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-94-1",
-       "original": "Dongchao Yang, Songxiang Liu, Rongjie Huang, Chao Weng, and Helen Meng."
+       "original": "Guanrou Yang, Chen Yang, Qian Chen, Ziyang Ma, Wenxi Chen, Wen Wang, Tianrui Wang, Yifan Yang, Zhikang Niu, Wenrui Liu, et al. Emovoice: Llm-based emotional text-to-speech model with freestyle text prompting."
       },
       {
        "id": "s-references-94-2",
-       "original": "Instructtts: Modelling expressive tts in discrete latent space with natural language style prompt."
-      },
-      {
-       "id": "s-references-94-3",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 32:2913–2925, 2024."
+       "original": "In Proceedings of the 33rd ACM International Conference on Multimedia, pp. 10748–10757,",
+       "zh": "（目录残留页码 4。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 25,
+     "original": "2025."
     },
     {
      "id": "p-references-95",
@@ -5445,11 +7444,12 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-95-1",
-       "original": "Guanrou Yang, Chen Yang, Qian Chen, Ziyang Ma, Wenxi Chen, Wen Wang, Tianrui Wang, Yifan Yang, Zhikang Niu, Wenrui Liu, et al. Emovoice: Llm-based emotional text-to-speech model with freestyle text prompting."
+       "original": "Zhen Ye, Peiwen Sun, Jiahe Lei, Hongzhan Lin, Xu Tan, Zheqi Dai, Qiuqiang Kong, Jianyi Chen, Jiahao Pan, Qifeng Liu, et al. Codec does matter: Exploring the semantic shortcoming of codec for audio language model."
       },
       {
        "id": "s-references-95-2",
-       "original": "In Proceedings of the 33rd ACM International Conference on Multimedia, pp. 10748–10757, 2025."
+       "original": "In Proceedings of the AAAI Conference on Artificial Intelligence, volume 39, pp. 25697–25705, 2025a.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -5460,11 +7460,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-96-1",
-       "original": "Zhen Ye, Peiwen Sun, Jiahe Lei, Hongzhan Lin, Xu Tan, Zheqi Dai, Qiuqiang Kong, Jianyi Chen, Jiahao Pan, Qifeng Liu, et al. Codec does matter: Exploring the semantic shortcoming of codec for audio language model."
-      },
-      {
-       "id": "s-references-96-2",
-       "original": "In Proceedings of the AAAI Conference on Artificial Intelligence, volume 39, pp. 25697–25705, 2025a."
+       "original": "Zhen Ye, Xinfa Zhu, Chi-Min Chan, Xinsheng Wang, Xu Tan, Jiahe Lei, Yi Peng, Haohe Liu, Yizhu Jin, Zheqi Dai, et al. Llasa: Scaling train-time and inference-time compute for llama-based speech synthesis. arXiv preprint arXiv:2502.04128, 2025b.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5475,7 +7472,12 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-97-1",
-       "original": "Zhen Ye, Xinfa Zhu, Chi-Min Chan, Xinsheng Wang, Xu Tan, Jiahe Lei, Yi Peng, Haohe Liu, Yizhu Jin, Zheqi Dai, et al. Llasa: Scaling train-time and inference-time compute for llama-based speech synthesis. arXiv preprint arXiv:2502.04128, 2025b."
+       "original": "Aohan Zeng, Zhengxiao Du, Mingdao Liu, Kedong Wang, Shengmin Jiang, Lei Zhao, Yuxiao Dong, and Jie Tang."
+      },
+      {
+       "id": "s-references-97-2",
+       "original": "GLM-4-Voice: Towards intelligent and human-like end-to-end spoken chatbot. arXiv preprint arXiv:2412.02612, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5486,22 +7488,20 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-98-1",
-       "original": "Aohan Zeng, Zhengxiao Du, Mingdao Liu, Kedong Wang, Shengmin Jiang, Lei Zhao, Yuxiao Dong, and Jie Tang."
-      },
-      {
-       "id": "s-references-98-2",
-       "original": "GLM-4-Voice: Towards intelligent and human-like end-to-end spoken chatbot. arXiv preprint arXiv:2412.02612, 2024."
+       "original": "Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, et al. Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder. arXiv preprint arXiv:2505.07916, 2025a.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
     {
      "id": "p-references-99",
      "type": "paragraph",
-     "page": 25,
+     "page": 26,
      "sentences": [
       {
        "id": "s-references-99-1",
-       "original": "Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, et al. Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder. arXiv preprint arXiv:2505.07916, 2025a."
+       "original": "Dong Zhang, Gang Wang, Jinlong Xue, Kai Fang, Liang Zhao, Rui Ma, Shuhuai Ren, Shuo Liu, Tao Guo, Weiji Zhuang, et al. Mimo-audio: Audio language models are few-shot learners. arXiv preprint arXiv:2512.23808, 2025b.",
+       "zh": "（目录残留页码 12。）"
       }
      ]
     },
@@ -5512,9 +7512,24 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-100-1",
-       "original": "Dong Zhang, Gang Wang, Jinlong Xue, Kai Fang, Liang Zhao, Rui Ma, Shuhuai Ren, Shuo Liu, Tao Guo, Weiji Zhuang, et al. Mimo-audio: Audio language models are few-shot learners. arXiv preprint arXiv:2512.23808, 2025b."
+       "original": "Xin Zhang, Dong Zhang, Shimin Li, Yaqian Zhou, and Xipeng Qiu."
+      },
+      {
+       "id": "s-references-100-2",
+       "original": "Speechtokenizer: Unified speech tokenizer for speech language models."
+      },
+      {
+       "id": "s-references-100-3",
+       "original": "In International Conference on Learning Representations, volume 2024, pp.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
+    },
+    {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 26,
+     "original": "31798–31818, 2024."
     },
     {
      "id": "p-references-101",
@@ -5523,15 +7538,16 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-101-1",
-       "original": "Xin Zhang, Dong Zhang, Shimin Li, Yaqian Zhou, and Xipeng Qiu."
+       "original": "Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu."
       },
       {
        "id": "s-references-101-2",
-       "original": "Speechtokenizer: Unified speech tokenizer for speech language models."
+       "original": "Indextts2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech."
       },
       {
        "id": "s-references-101-3",
-       "original": "In International Conference on Learning Representations, volume 2024, pp."
+       "original": "In Proceedings of the AAAI Conference on Artificial Intelligence, volume 40, pp. 35139–35148, 2026a.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5542,7 +7558,7 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-102-1",
-       "original": "31798–31818, 2024."
+       "original": "Yixuan Zhou, Xiaoyu Qin, Zeyu Jin, Shuoyi Zhou, Shun Lei, Songtao Zhou, Zhiyong Wu, and Jia Jia."
       }
      ]
     },
@@ -5553,15 +7569,12 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-103-1",
-       "original": "Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu."
+       "original": "Voxinstruct: Expressive human instruction-to-speech generation with unified multilingual codec language modelling."
       },
       {
        "id": "s-references-103-2",
-       "original": "Indextts2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech."
-      },
-      {
-       "id": "s-references-103-3",
-       "original": "In Proceedings of the AAAI Conference on Artificial Intelligence, volume 40, pp. 35139–35148, 2026a."
+       "original": "In Proceedings of the 32nd ACM International Conference on Multimedia, pp. 554–563, 2024.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5572,7 +7585,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-104-1",
-       "original": "Yixuan Zhou, Xiaoyu Qin, Zeyu Jin, Shuoyi Zhou, Shun Lei, Songtao Zhou, Zhiyong Wu, and Jia Jia."
+       "original": "Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, et al. Voxcpm: Tokenizer-free tts for context-aware speech generation and true-to-life voice cloning. arXiv preprint arXiv:2509.24650, 2025.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5583,11 +7597,8 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-105-1",
-       "original": "Voxinstruct: Expressive human instruction-to-speech generation with unified multilingual codec language modelling."
-      },
-      {
-       "id": "s-references-105-2",
-       "original": "In Proceedings of the 32nd ACM International Conference on Multimedia, pp. 554–563, 2024."
+       "original": "Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, et al.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     },
@@ -5598,7 +7609,12 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-106-1",
-       "original": "Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, et al. Voxcpm: Tokenizer-free tts for context-aware speech generation and true-to-life voice cloning. arXiv preprint arXiv:2509.24650, 2025."
+       "original": "Hierarchical semantic-acoustic modeling via semi-discrete residual representations for expressive end-to-end speech synthesis."
+      },
+      {
+       "id": "s-references-106-2",
+       "original": "In The Fourteenth International Conference on Learning Representations, 2026b.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -5609,7 +7625,12 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-107-1",
-       "original": "Yixuan Zhou, Guoyang Zeng, Xin Liu, Xiang Li, Renjie Yu, Ziyang Wang, Runchuan Ye, Weiyue Sun, Jiancheng Gui, Kehan Li, et al."
+       "original": "Han Zhu, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang, Zhaoqing Li, Weiji Zhuang, Long Lin, and Daniel Povey."
+      },
+      {
+       "id": "s-references-107-2",
+       "original": "Zipvoice: Fast and high-quality zero-shot text-to-speech with flow matching. arXiv preprint arXiv:2506.13053, 2025.",
+       "zh": "（目录残留页码 6。）"
       }
      ]
     },
@@ -5620,41 +7641,12 @@ globalThis.PAPER_2606_06928 = {
      "sentences": [
       {
        "id": "s-references-108-1",
-       "original": "Hierarchical semantic-acoustic modeling via semi-discrete residual representations for expressive end-to-end speech synthesis."
-      },
-      {
-       "id": "s-references-108-2",
-       "original": "In The Fourteenth International Conference on Learning Representations, 2026b."
-      }
-     ]
-    },
-    {
-     "id": "p-references-109",
-     "type": "paragraph",
-     "page": 26,
-     "sentences": [
-      {
-       "id": "s-references-109-1",
-       "original": "Han Zhu, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang, Zhaoqing Li, Weiji Zhuang, Long Lin, and Daniel Povey."
-      },
-      {
-       "id": "s-references-109-2",
-       "original": "Zipvoice: Fast and high-quality zero-shot text-to-speech with flow matching. arXiv preprint arXiv:2506.13053, 2025."
-      }
-     ]
-    },
-    {
-     "id": "p-references-110",
-     "type": "paragraph",
-     "page": 26,
-     "sentences": [
-      {
-       "id": "s-references-110-1",
        "original": "Han Zhu, Lingxuan Ye, Wei Kang, Zengwei Yao, Liyong Guo, Fangjun Kuang, Zhifeng Han, Weiji Zhuang, Long Lin, and Daniel Povey."
       },
       {
-       "id": "s-references-110-2",
-       "original": "Omnivoice: Towards omnilingual zero-shot text-to-speech with diffusion language models. arXiv preprint arXiv:2604.00688, 2026."
+       "id": "s-references-108-2",
+       "original": "Omnivoice: Towards omnilingual zero-shot text-to-speech with diffusion language models. arXiv preprint arXiv:2604.00688, 2026.",
+       "zh": "（目录残留页码 4。）"
       }
      ]
     }
@@ -5784,17 +7776,6 @@ globalThis.PAPER_2606_06928 = {
    "explanation": "训练时以 10% 概率丢弃 LocDiT 的 LM 侧条件，这是无分类器引导（CFG）的标准训练手法：同一个模型同时学会条件分布与无条件分布，推理时按 v̂ = vuncond + α(vcond − vuncond) 线性插值。默认 α=2.0，实用区间 [1.5, 3.0]——α 越大越贴条件文本、但过大会出现伪影，这是扩散/流匹配 TTS 的共性 trade-off。"
   },
   {
-   "id": "ann-012",
-   "kind": "number",
-   "featured": false,
-   "anchor": {
-    "sentence_id": "s-three-stage-progressive-curricul-2-10",
-    "quote": "Stages 1 and 2 together account for the majority of training compute"
-   },
-   "title": "算力大头在前两阶段",
-   "explanation": "三阶段课程里，算力大头在前两个阶段（多语言预训练 + 可控联合预训练），第 3 阶段的高质量退火 SFT 只是「精修」。这个配比符合直觉：基础发音与韵律需要海量数据暴力覆盖，而风格可控性可以靠几千小时精选标注数据在后期注入——和 LLM 领域「预训练决定上限、SFT 决定对齐」的经验一致。"
-  },
-  {
    "id": "ann-013",
    "kind": "comparison",
    "featured": false,
@@ -5887,7 +7868,7 @@ globalThis.PAPER_2606_06928 = {
    "kind": "concept",
    "featured": false,
    "anchor": {
-    "sentence_id": "s-input-2-4",
+    "sentence_id": "s-input-3-4",
     "quote": "preliminary singing voice generation ability"
    },
    "title": "歌声生成是可控数据的意外涌现",

@@ -134,7 +134,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
     <div class="en-title">Mini-Omni: Language Models Can Hear, Talk While Thinking in Streaming</div>
     <div class="meta">
       关联模型：<a href="../../index.html#/model/mini_omni">Mini-Omni</a>（gpt-omni · 2024-08） ·
-      全文 84 个语块 · 讲解 20 条（精选 11 条）
+      全文 103 个语块 · 讲解 20 条（精选 11 条）
     </div>
   </div>
   <div class="controls">
@@ -446,8 +446,22 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div></section>
 <section>
       <h3 class="sech lv2" id="sec-task"><span class="t-zh">任务</span><span class="t-en">Task</span></h3><div class="pblk" id="p-task-1">
-          <p class="en-lines"><span class="sent" data-sid="s-task-1-1"><span class="en">Stages Dataset Modality items Libritts [Zen et al., 2019] 586 h ASR 1,2,3 VCTK [datashare, 2024] 44 h Multilingual LibriSpeech [Pratap et al., 2020] 8000h Text QA 2,3 Open-Orca [OpenOrca] T1|T2 2000K Audio QA 3 Moss-002-sft-data [Sun et al., 2024] 1500K Alpaca-GPT4 [vicgalle, 2024] Identity finetune [sayan1101, 2024] QAassistant [Mihaiii, 2024a] voice QA final Rlhf [Anthropic, 2024] Trivia-singlechoice [Mihaiii, 2024c] Trivia-Multichoice [Mihaiii, 2024b] OpenAssistant [OpenAssistan, 2024] Table 1: The datasets and their usage for training Mini-Omni are as follows: In the modality notation, T and A represent the text and audio modalities, with subscripts 1 and 2 indicating input or output.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-task-1-1"><span class="zh">阶段 数据集 模态 项目 Libritts [Zen et al., 2019] 586 小时 ASR 1,2,3 VCTK [datashare, 2024] 44 小时 多语言 LibriSpeech [Pratap et al., 2020] 8000 小时 Text QA 2,3 Open-Orca [OpenOrca] T1|T2 2000K Audio QA 3 Moss-002-sft-data [Sun et al., 2024] 1500K Alpaca-GPT4 [vicgalle, 2024] Identity finetune [sayan1101, 2024] QAassistant [Mihaiii, 2024a] voice QA final Rlhf [Anthropic, 2024] Trivia-singlechoice [Mihaiii, 2024c] Trivia-Multichoice [Mihaiii, 2024b] OpenAssistant [OpenAssistan, 2024] 表 1：训练 Mini-Omni 使用的数据集及其用途如下：在模态标注中，T 和 A 分别代表文本和音频模态，下标 1 和 2 表示输入或输出。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-task-1-1"><span class="en">Stages Dataset Modality items Libritts [Zen et al., 2019] A1|T1 586 h ASR</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-task-1-1"><span class="zh">（表 1：训练数据集与用途——Stages × Dataset × Modality × items：Libritts [Zen et al., 2019]（A1|T1，586h，ASR，阶段 1,2,3）、VCTK [datashare, 2024]（44h）、Multilingual LibriSpeech [Pratap et al., 2020]（8000h）、Text QA（Open-Orca [OpenOrca]，T1|T2，2000K，阶段 2,3）、Audio QA（Moss-002-sft-data [Sun et al., 2024]，A1|T1|A2|T2，1500K，阶段 3）、Alpaca-GPT4 [vicgalle, 2024]（55k）、Identity finetune [sayan1101, 2024]（2k）、QAassistant [Mihaiii, 2024a]（27k）、voice QA final Rlhf [Anthropic, 2024]（367k）、Trivia-singlechoice [Mihaiii, 2024c]（17k）、Trivia-Multichoice [Mihaiii, 2024b]（20k）、OpenAssistant [OpenAssistan, 2024]（2k）。模态记号中 T 与 A 分别代表文本与音频模态，下标 1/2 表示输入或输出。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-task-1"><code>1,2,3</code></div>
+<div class="pblk" id="p-task-2">
+          <p class="en-lines"><span class="sent" data-sid="s-task-2-1"><span class="en">VCTK [datashare, 2024] A1|T1 44 h Multilingual LibriSpeech [Pratap et al., 2020] A1|T1 8000h Text QA</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-task-2-1"><span class="zh">（表 1：训练数据集与用途——Stages × Dataset × Modality × items：Libritts [Zen et al., 2019]（A1|T1，586h，ASR，阶段 1,2,3）、VCTK [datashare, 2024]（44h）、Multilingual LibriSpeech [Pratap et al., 2020]（8000h）、Text QA（Open-Orca [OpenOrca]，T1|T2，2000K，阶段 2,3）、Audio QA（Moss-002-sft-data [Sun et al., 2024]，A1|T1|A2|T2，1500K，阶段 3）、Alpaca-GPT4 [vicgalle, 2024]（55k）、Identity finetune [sayan1101, 2024]（2k）、QAassistant [Mihaiii, 2024a]（27k）、voice QA final Rlhf [Anthropic, 2024]（367k）、Trivia-singlechoice [Mihaiii, 2024c]（17k）、Trivia-Multichoice [Mihaiii, 2024b]（20k）、OpenAssistant [OpenAssistan, 2024]（2k）。模态记号中 T 与 A 分别代表文本与音频模态，下标 1/2 表示输入或输出。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-task-2"><code>2,3</code></div>
+<div class="eq" id="eq-task-3"><code>Open-Orca [OpenOrca] T1|T2 2000K Audio QA</code></div>
+<div class="eq" id="eq-task-4"><code>3</code></div>
+<div class="pblk" id="p-task-3">
+          <p class="en-lines"><span class="sent" data-sid="s-task-3-1"><span class="en">Moss-002-sft-data [Sun et al., 2024] A1|T1|A2|T2 1500K Alpaca-GPT4 [vicgalle, 2024] A1|T1|A2|T2 55k Identity finetune [sayan1101, 2024] A1|T1|A2|T2 2k QAassistant [Mihaiii, 2024a] A1|T1|A2|T2 27k voice QA final Rlhf [Anthropic, 2024] A1|T1|A2|T2 367k Trivia-singlechoice [Mihaiii, 2024c] A1|T1|A2|T2 17k Trivia-Multichoice [Mihaiii, 2024b] A1|T1|A2|T2 20k OpenAssistant [OpenAssistan, 2024] A1|T1|A2|T2 2k Table 1: The datasets and their usage for training Mini-Omni are as follows: In the modality notation, T and A represent the text and audio modalities, with subscripts 1 and 2 indicating input or output.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-task-3-1"><span class="zh">（表 1：训练数据集与用途——Stages × Dataset × Modality × items：Libritts [Zen et al., 2019]（A1|T1，586h，ASR，阶段 1,2,3）、VCTK [datashare, 2024]（44h）、Multilingual LibriSpeech [Pratap et al., 2020]（8000h）、Text QA（Open-Orca [OpenOrca]，T1|T2，2000K，阶段 2,3）、Audio QA（Moss-002-sft-data [Sun et al., 2024]，A1|T1|A2|T2，1500K，阶段 3）、Alpaca-GPT4 [vicgalle, 2024]（55k）、Identity finetune [sayan1101, 2024]（2k）、QAassistant [Mihaiii, 2024a]（27k）、voice QA final Rlhf [Anthropic, 2024]（367k）、Trivia-singlechoice [Mihaiii, 2024c]（17k）、Trivia-Multichoice [Mihaiii, 2024b]（20k）、OpenAssistant [OpenAssistan, 2024]（2k）。模态记号中 T 与 A 分别代表文本与音频模态，下标 1/2 表示输入或输出。）</span></span></p>
           
         </div></section>
 <section>
@@ -478,8 +492,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div></section>
 <section>
       <h3 class="sech lv2" id="sec-method"><span class="t-zh">方法</span><span class="t-en">Method</span></h3><div class="pblk" id="p-method-1">
-          <p class="en-lines"><span class="sent" data-sid="s-method-1-1"><span class="en">test-clean test-other dev-clean dev-other wav2vec2-base [Baevski et al., 2020] 6.0 13.4 VITA [Fu et al., 2024] 8.14 18.41 7.57 16.57 whisper-small [Radford et al., 2023] 3.4 7.6 Mini-Omni 4.5 9.7 4.6 9.2 Table 2: Comparison of the model’s ASR with the base model used.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-method-1-1"><span class="zh">test-clean test-other dev-clean dev-other wav2vec2-base [Baevski et al., 2020] 6.0 13.4 VITA [Fu et al., 2024] 8.14 18.41 7.57 16.57 whisper-small [Radford et al., 2023] 3.4 7.6 Mini-Omni 4.5 9.7 4.6 9.2 表 2：模型 ASR 与所使用基础模型的对比。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-method-1-1"><span class="en">test-clean test-other dev-clean dev-other wav2vec2-base [Baevski et al., 2020]</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-method-1-1"><span class="zh">（表 2：ASR 对比——wav2vec2-base [Baevski et al., 2020] 6.0/13.4/-/-；VITA [Fu et al., 2024] 8.14/18.41/7.57/16.57；whisper-small [Radford et al., 2023] 3.4/7.6/-/-；Mini-Omni 4.5/9.7/4.6/9.2（test-clean/test-other/dev-clean/dev-other）。）表 2：模型 ASR 与所用基座模型的对比。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-method-1"><code>6.0 13.4 - -</code></div>
+<div class="eq" id="eq-method-2"><code>VITA [Fu et al., 2024]</code></div>
+<div class="eq" id="eq-method-3"><code>8.14 18.41 7.57 16.57</code></div>
+<div class="eq" id="eq-method-4"><code>whisper-small [Radford et al., 2023]</code></div>
+<div class="eq" id="eq-method-5"><code>3.4 7.6 - -</code></div>
+<div class="eq" id="eq-method-6"><code>Mini-Omni</code></div>
+<div class="eq" id="eq-method-7"><code>4.5 9.7 4.6 9.2</code></div>
+<div class="pblk" id="p-method-2">
+          <p class="en-lines"><span class="sent" data-sid="s-method-2-1"><span class="en">Table 2: Comparison of the model’s ASR with the base model used.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-method-2-1"><span class="zh">（表 2：ASR 对比——wav2vec2-base [Baevski et al., 2020] 6.0/13.4/-/-；VITA [Fu et al., 2024] 8.14/18.41/7.57/16.57；whisper-small [Radford et al., 2023] 3.4/7.6/-/-；Mini-Omni 4.5/9.7/4.6/9.2（test-clean/test-other/dev-clean/dev-other）。）表 2：模型 ASR 与所用基座模型的对比。</span></span></p>
           
         </div></section>
 <section>
@@ -510,13 +536,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-references"><span class="t-zh">References</span><span class="t-en">References</span></h2><div class="pblk plain" id="p-references-1"><p class="refline">Jean-Baptiste Alayrac, Jeff Donahue, Pauline Luc, Antoine Miech, Iain Barr, Yana Hasson, Karel Lenc, Arthur Mensch, Katherine Millican, Malcolm Reynolds, et al. Flamingo: a visual language model for few-shot learning. Advances in neural information processing systems, 35:23716–23736, 2022.</p></div>
+      <h2 class="sech lv1" id="sec-references"><span class="t-zh">References</span><span class="t-en">References</span></h2><div class="pblk plain" id="p-references-1"><p class="refline">Jean-Baptiste Alayrac, Jeff Donahue, Pauline Luc, Antoine Miech, Iain Barr, Yana Hasson, Karel Lenc, Arthur Mensch, Katherine Millican, Malcolm Reynolds, et al. Flamingo: a visual language model for few-shot learning. Advances in neural information processing systems, 35:23716–23736,</p></div>
+<div class="eq" id="eq-references-1"><code>2022.</code></div>
 <div class="pblk plain" id="p-references-2"><p class="refline">Anthropic. https://huggingface.co/datasets/anthropic/hh-rlhf, 2024.</p></div>
 <div class="pblk plain" id="p-references-3"><p class="refline">Alexei Baevski, Yuhao Zhou, Abdelrahman Mohamed, and Michael Auli. wav2vec 2.0: A framework for self-supervised learning of speech representations. Advances in neural information processing systems, 33:12449–12460, 2020.</p></div>
 <div class="pblk plain" id="p-references-4"><p class="refline">Qian Chen, Yunfei Chu, Zhifu Gao, Zerui Li, Kai Hu, Xiaohuan Zhou, Jin Xu, Ziyang Ma, Wen Wang, Siqi Zheng, et al. Lauragpt: Listen, attend, understand, and regenerate audio with gpt. arXiv preprint arXiv:2310.04673, 2023.</p></div>
 <div class="pblk plain" id="p-references-5"><p class="refline">Sanyuan Chen, Yu Wu, Chengyi Wang, Shujie Liu, Daniel Tompkins, Zhuo Chen, and Furu Wei.</p></div>
 <div class="pblk plain" id="p-references-6"><p class="refline">Beats: Audio pre-training with acoustic tokenizers. arXiv preprint arXiv:2212.09058, 2022.</p></div>
-<div class="pblk plain" id="p-references-7"><p class="refline">Yunfei Chu, Jin Xu, Qian Yang, Haojie Wei, Xipin Wei, Zhifang Guo, Yichong Leng, Yuanjun Lv, Jinzheng He, Junyang Lin, et al. Qwen2-audio technical report. arXiv preprint arXiv:2407.10759, 2024.</p></div>
+<div class="pblk plain" id="p-references-7"><p class="refline">Yunfei Chu, Jin Xu, Qian Yang, Haojie Wei, Xipin Wei, Zhifang Guo, Yichong Leng, Yuanjun Lv, Jinzheng He, Junyang Lin, et al. Qwen2-audio technical report. arXiv preprint arXiv:2407.10759,</p></div>
+<div class="eq" id="eq-references-2"><code>2024.</code></div>
 <div class="pblk plain" id="p-references-8"><p class="refline">Jade Copet, Felix Kreuk, Itai Gat, Tal Remez, David Kant, Gabriel Synnaeve, Yossi Adi, and Alexandre Défossez. Simple and controllable music generation. Advances in Neural Information Processing Systems, 36, 2024.</p></div>
 <div class="pblk plain" id="p-references-9"><p class="refline">Nilaksh Das, Saket Dingliwal, Srikanth Ronanki, Rohit Paturi, David Huang, Prashant Mathur, Jie Yuan, Dhanush Bekal, Xing Niu, Sai Muralidhar Jayanthi, et al. Speechverse: A large-scale generalizable audio language model. arXiv preprint arXiv:2405.08295, 2024. datashare. https://datashare.ed.ac.uk/handle/10283/2651, 2024.</p></div>
 <div class="pblk plain" id="p-references-10"><p class="refline">Chaoyou Fu, Haojia Lin, Zuwei Long, Yunhang Shen, Meng Zhao, Yifan Zhang, Xiong Wang, Di Yin, Long Ma, Xiawu Zheng, et al. Vita: Towards open-source interactive omni multimodal llm. arXiv preprint arXiv:2408.05211, 2024.</p></div>
@@ -529,25 +557,28 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk plain" id="p-references-17"><p class="refline">Mihaiii. https://huggingface.co/datasets/mihaiii/qa-assistant-2, 2024a.</p></div>
 <div class="pblk plain" id="p-references-18"><p class="refline">Mihaiii. https://huggingface.co/datasets/mihaiii/triviamultichoice, 2024b.</p></div>
 <div class="pblk plain" id="p-references-19"><p class="refline">Mihaiii. https://huggingface.co/datasets/mihaiii/triviasinglechoice, 2024c. mixtral. https://mistral.ai/, 2024.</p></div>
-<div class="pblk plain" id="p-references-20"><p class="refline">Eliya Nachmani, Alon Levkovitch, Roy Hirsch, Julian Salazar, Chulayuth Asawaroengchai, Soroosh Mariooryad, Ehud Rivlin, RJ Skerry-Ryan, and Michelle Tadmor Ramanovich. Spoken question answering and speech continuation using spectrogram-powered llm. arXiv preprint arXiv:2305.15255, 2023. openai. https://openai.com/, 2024.</p></div>
-<div class="pblk plain" id="p-references-21"><p class="refline">OpenAssistan. https://huggingface.co/datasets/openassistant/oasst1, 2024.</p></div>
-<div class="pblk plain" id="p-references-22"><p class="refline">OpenOrca. https://huggingface.co/datasets/open-orca/openorca/.</p></div>
-<div class="pblk plain" id="p-references-23"><p class="refline">Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur. Librispeech: an asr corpus based on public domain audio books. In 2015 IEEE international conference on acoustics, speech and signal processing (ICASSP), pages 5206–5210. IEEE, 2015.</p></div>
-<div class="pblk plain" id="p-references-24"><p class="refline">Vineel Pratap, Qiantong Xu, Anuroop Sriram, Gabriel Synnaeve, and Ronan Collobert. Mls: A large-scale multilingual dataset for speech research. arXiv preprint arXiv:2012.03411, 2020.</p></div>
-<div class="pblk plain" id="p-references-25"><p class="refline">Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever.</p></div>
-<div class="pblk plain" id="p-references-26"><p class="refline">Robust speech recognition via large-scale weak supervision. In International conference on machine learning, pages 28492–28518. PMLR, 2023. sayan1101. https://huggingface.co/datasets/sayan1101/identity-finetune-data, 2024.</p></div>
-<div class="pblk plain" id="p-references-27"><p class="refline">Hubert Siuzdak. https://github.com/hubertsiuzdak/snac/, 2024.</p></div>
-<div class="pblk plain" id="p-references-28"><p class="refline">Tianxiang Sun, Xiaotian Zhang, Zhengfu He, Peng Li, Qinyuan Cheng, Xiangyang Liu, Hang Yan, Yunfan Shao, Qiong Tang, Shiduo Zhang, et al. Moss: An open conversational large language model. Machine Intelligence Research, pages 1–18, 2024.</p></div>
-<div class="pblk plain" id="p-references-29"><p class="refline">Changli Tang, Wenyi Yu, Guangzhi Sun, Xianzhao Chen, Tian Tan, Wei Li, Lu Lu, Zejun Ma, and Chao Zhang. Salmonn: Towards generic hearing abilities for large language models. arXiv preprint arXiv:2310.13289, 2023. vicgalle. https://huggingface.co/datasets/vicgalle/alpaca-gpt4, 2024.</p></div>
-<div class="pblk plain" id="p-references-30"><p class="refline">An Yang, Baosong Yang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Zhou, Chengpeng Li, Chengyuan Li, Dayiheng Liu, Fei Huang, et al.</p></div>
-<div class="pblk plain" id="p-references-31"><p class="refline">Qwen2 technical report.</p></div>
-<div class="pblk plain" id="p-references-32"><p class="refline">arXiv preprint arXiv:2407.10671, 2024a.</p></div>
-<div class="pblk plain" id="p-references-33"><p class="refline">Dongchao Yang, Songxiang Liu, Rongjie Huang, Chao Weng, and Helen Meng. Instructtts: Modelling expressive tts in discrete latent space with natural language style prompt. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 2024b.</p></div>
-<div class="pblk plain" id="p-references-34"><p class="refline">Heiga Zen, Viet Dang, Rob Clark, Yu Zhang, Ron J Weiss, Ye Jia, Zhifeng Chen, and Yonghui Wu.</p></div>
-<div class="pblk plain" id="p-references-35"><p class="refline">Libritts: A corpus derived from librispeech for text-to-speech. arXiv preprint arXiv:1904.02882, 2019.</p></div>
-<div class="pblk plain" id="p-references-36"><p class="refline">Dong Zhang, Shimin Li, Xin Zhang, Jun Zhan, Pengyu Wang, Yaqian Zhou, and Xipeng Qiu.</p></div>
-<div class="pblk plain" id="p-references-37"><p class="refline">Speechgpt: Empowering large language models with intrinsic cross-modal conversational abilities. arXiv preprint arXiv:2305.11000, 2023a.</p></div>
-<div class="pblk plain" id="p-references-38"><p class="refline">Hang Zhang, Xin Li, and Lidong Bing. Video-llama: An instruction-tuned audio-visual language model for video understanding. arXiv preprint arXiv:2306.02858, 2023b.</p></div></section></article>
+<div class="pblk plain" id="p-references-20"><p class="refline">Eliya Nachmani, Alon Levkovitch, Roy Hirsch, Julian Salazar, Chulayuth Asawaroengchai, Soroosh Mariooryad, Ehud Rivlin, RJ Skerry-Ryan, and Michelle Tadmor Ramanovich. Spoken question answering and speech continuation using spectrogram-powered llm. arXiv preprint arXiv:2305.15255,</p></div>
+<div class="eq" id="eq-references-3"><code>2023.</code></div>
+<div class="pblk plain" id="p-references-21"><p class="refline">openai. https://openai.com/, 2024.</p></div>
+<div class="pblk plain" id="p-references-22"><p class="refline">OpenAssistan. https://huggingface.co/datasets/openassistant/oasst1, 2024.</p></div>
+<div class="pblk plain" id="p-references-23"><p class="refline">OpenOrca. https://huggingface.co/datasets/open-orca/openorca/.</p></div>
+<div class="pblk plain" id="p-references-24"><p class="refline">Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur. Librispeech: an asr corpus based on public domain audio books. In 2015 IEEE international conference on acoustics, speech and signal processing (ICASSP), pages 5206–5210. IEEE, 2015.</p></div>
+<div class="pblk plain" id="p-references-25"><p class="refline">Vineel Pratap, Qiantong Xu, Anuroop Sriram, Gabriel Synnaeve, and Ronan Collobert. Mls: A large-scale multilingual dataset for speech research. arXiv preprint arXiv:2012.03411, 2020.</p></div>
+<div class="pblk plain" id="p-references-26"><p class="refline">Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever.</p></div>
+<div class="pblk plain" id="p-references-27"><p class="refline">Robust speech recognition via large-scale weak supervision. In International conference on machine learning, pages 28492–28518. PMLR, 2023. sayan1101. https://huggingface.co/datasets/sayan1101/identity-finetune-data, 2024.</p></div>
+<div class="pblk plain" id="p-references-28"><p class="refline">Hubert Siuzdak. https://github.com/hubertsiuzdak/snac/, 2024.</p></div>
+<div class="pblk plain" id="p-references-29"><p class="refline">Tianxiang Sun, Xiaotian Zhang, Zhengfu He, Peng Li, Qinyuan Cheng, Xiangyang Liu, Hang Yan, Yunfan Shao, Qiong Tang, Shiduo Zhang, et al. Moss: An open conversational large language model. Machine Intelligence Research, pages 1–18, 2024.</p></div>
+<div class="pblk plain" id="p-references-30"><p class="refline">Changli Tang, Wenyi Yu, Guangzhi Sun, Xianzhao Chen, Tian Tan, Wei Li, Lu Lu, Zejun Ma, and Chao Zhang. Salmonn: Towards generic hearing abilities for large language models. arXiv preprint arXiv:2310.13289, 2023. vicgalle. https://huggingface.co/datasets/vicgalle/alpaca-gpt4, 2024.</p></div>
+<div class="pblk plain" id="p-references-31"><p class="refline">An Yang, Baosong Yang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Zhou, Chengpeng Li, Chengyuan Li, Dayiheng Liu, Fei Huang, et al.</p></div>
+<div class="pblk plain" id="p-references-32"><p class="refline">Qwen2 technical report.</p></div>
+<div class="pblk plain" id="p-references-33"><p class="refline">arXiv preprint arXiv:2407.10671, 2024a.</p></div>
+<div class="pblk plain" id="p-references-34"><p class="refline">Dongchao Yang, Songxiang Liu, Rongjie Huang, Chao Weng, and Helen Meng. Instructtts: Modelling expressive tts in discrete latent space with natural language style prompt. IEEE/ACM Transactions on Audio, Speech, and Language Processing, 2024b.</p></div>
+<div class="pblk plain" id="p-references-35"><p class="refline">Heiga Zen, Viet Dang, Rob Clark, Yu Zhang, Ron J Weiss, Ye Jia, Zhifeng Chen, and Yonghui Wu.</p></div>
+<div class="pblk plain" id="p-references-36"><p class="refline">Libritts: A corpus derived from librispeech for text-to-speech. arXiv preprint arXiv:1904.02882,</p></div>
+<div class="eq" id="eq-references-4"><code>2019.</code></div>
+<div class="pblk plain" id="p-references-37"><p class="refline">Dong Zhang, Shimin Li, Xin Zhang, Jun Zhan, Pengyu Wang, Yaqian Zhou, and Xipeng Qiu.</p></div>
+<div class="pblk plain" id="p-references-38"><p class="refline">Speechgpt: Empowering large language models with intrinsic cross-modal conversational abilities. arXiv preprint arXiv:2305.11000, 2023a.</p></div>
+<div class="pblk plain" id="p-references-39"><p class="refline">Hang Zhang, Xin Li, and Lidong Bing. Video-llama: An instruction-tuned audio-visual language model for video understanding. arXiv preprint arXiv:2306.02858, 2023b.</p></div></section></article>
   <footer class="foot">
     原文来自 arXiv:2408.16725（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。
     本地 PDF：<a href="../../papers/2408.16725.pdf">papers/2408.16725.pdf</a>。

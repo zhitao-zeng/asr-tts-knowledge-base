@@ -11,23 +11,24 @@ globalThis.PAPER_2603_10420 = {
  },
  "sections": [
   {
-   "id": "sec-front",
+   "id": "sec-kaituo-xu-yan-jia-kai-huang-junj",
    "num": null,
-   "level": 1,
+   "level": 2,
    "page": 1,
    "title": {
-    "original": "Front Matter",
-    "zh": "Front Matter"
+    "original": "Kaituo Xu, Yan Jia, Kai Huang, Junjie Chen, Wenpeng Li, Kun Liu",
+    "zh": "Kaituo Xu, Yan Jia, Kai Huang, Junjie Chen, Wenpeng Li, Kun Liu"
    },
    "blocks": [
     {
-     "id": "p-front-1",
+     "id": "p-kaituo-xu-yan-jia-kai-huang-junj-1",
      "type": "paragraph",
      "page": 1,
      "sentences": [
       {
-       "id": "s-front-1-1",
-       "original": "Kaituo Xu, Yan Jia, Kai Huang, Junjie Chen, Wenpeng Li, Kun Liu Feng-Long Xie, Xu Tang, Yao Hu Super Intelligence Team, Xiaohongshu Inc."
+       "id": "s-kaituo-xu-yan-jia-kai-huang-junj-1-1",
+       "original": "Feng-Long Xie, Xu Tang, Yao Hu Super Intelligence Team, Xiaohongshu Inc.",
+       "zh": "Feng-Long Xie、Xu Tang、Yao Hu，小红书公司 Super Intelligence 团队。（作者单位行）"
       }
      ]
     }
@@ -70,41 +71,59 @@ globalThis.PAPER_2603_10420 = {
       },
       {
        "id": "s-abstract-1-5",
-       "original": "FireRedASR2-LLM achieves 2.89% average CER on 4 public Mandarin benchmarks and 11.55% on 19 public Chinese dialects and accents benchmarks, outperforming competitive baselines including Doubao-ASR, Qwen3-ASR, and Fun-ASR.",
+       "original": "FireRedASR2-LLM achieves",
+       "zh": "FireRedASR2-LLM 在 4 个公开普通话基准上取得 2.89% 的平均 CER，在 19 个公开中文方言与口音基准上取得 11.55% 的平均 CER，优于 Doubao-ASR、Qwen3-ASR 和 Fun-ASR 等强竞争基线。"
+      }
+     ]
+    },
+    {
+     "id": "eq-abstract-1",
+     "type": "equation",
+     "page": 1,
+     "original": "2.89% average CER on 4 public Mandarin benchmarks and 11.55% on 19 public"
+    },
+    {
+     "id": "p-abstract-2",
+     "type": "paragraph",
+     "page": 1,
+     "sentences": [
+      {
+       "id": "s-abstract-2-1",
+       "original": "Chinese dialects and accents benchmarks, outperforming competitive baselines including Doubao-ASR, Qwen3-ASR, and Fun-ASR.",
        "zh": "FireRedASR2-LLM 在 4 个公开普通话基准上取得 2.89% 的平均 CER，在 19 个公开中文方言与口音基准上取得 11.55% 的平均 CER，优于 Doubao-ASR、Qwen3-ASR 和 Fun-ASR 等强竞争基线。"
       },
       {
-       "id": "s-abstract-1-6",
+       "id": "s-abstract-2-2",
        "original": "FireRedVAD: An ultra-lightweight module (0.6M parameters) based on the Deep Feedforward Sequential Memory Network (DFSMN), supporting streaming VAD, non-streaming VAD, and multi-label VAD (mVAD).",
        "zh": "FireRedVAD：一个基于深度前馈序列记忆网络（DFSMN）的超轻量模块（0.6M 参数），支持流式 VAD、非流式 VAD 和多标签 VAD（mVAD）。"
       },
       {
-       "id": "s-abstract-1-7",
+       "id": "s-abstract-2-3",
        "original": "On the FLEURS-VAD-102 benchmark, it achieves 97.57% frame-level F1 and 99.60% AUC-ROC, outperforming Silero-VAD, TEN-VAD, FunASR-VAD, and WebRTC-VAD.",
        "zh": "在 FLEURS-VAD-102 基准上，它取得 97.57% 的帧级 F1 和 99.60% 的 AUC-ROC，优于 Silero-VAD、TEN-VAD、FunASR-VAD 和 WebRTC-VAD。"
       },
       {
-       "id": "s-abstract-1-8",
+       "id": "s-abstract-2-4",
        "original": "FireRedLID: An Encoder-Decoder LID module supporting 100+ languages and 20+ Chinese dialects and accents.",
        "zh": "FireRedLID：一个基于编码器-解码器的 LID 模块，支持 100+ 语种和 20+ 中文方言与口音。"
       },
       {
-       "id": "s-abstract-1-9",
+       "id": "s-abstract-2-5",
        "original": "On FLEURS (82 languages), it achieves 97.18% utterance-level accuracy, outperforming Whisper and SpeechBrain.",
        "zh": "在 FLEURS（82 种语言）上，它取得 97.18% 的句级准确率，优于 Whisper 和 SpeechBrain。"
       },
       {
-       "id": "s-abstract-1-10",
+       "id": "s-abstract-2-6",
        "original": "FireRedPunc: A BERT-style punctuation prediction module for Chinese and English.",
        "zh": "FireRedPunc：一个面向中文和英文的 BERT 式标点预测模块。"
       },
       {
-       "id": "s-abstract-1-11",
+       "id": "s-abstract-2-7",
        "original": "On multi-domain benchmarks, it achieves 78.90% average F1, outperforming FunASR-Punc (62.77%).",
        "zh": "在多领域基准上，它取得 78.90% 的平均 F1，优于 FunASR-Punc（62.77%）。"
       },
       {
-       "id": "s-abstract-1-12",
+       "id": "s-abstract-2-8",
        "original": "To advance research in speech processing, we release model weights and code at https://github.com/FireRedTeam/FireRedASR2S.",
        "zh": "为推动语音处理研究，我们在 https://github.com/FireRedTeam/FireRedASR2S 开放了模型权重与代码。"
       }
@@ -166,8 +185,13 @@ globalThis.PAPER_2603_10420 = {
       },
       {
        "id": "s-1-2-3",
-       "original": "Moreover, some components",
+       "original": "Moreover, some components rely on weak or indirect supervision (e.g., VAD trained from ASR forced alignment), which may degrade robustness under challenging acoustic conditions.",
        "zh": "此外，一些组件"
+      },
+      {
+       "id": "s-1-2-4",
+       "original": "These limitations motivate an opensource, industrial-grade all-in-one ASR system with strong performance, clear modularization, and comprehensive evaluation.",
+       "zh": "这些局限促使我们构建一个开源的、工业级的一体化 ASR 系统，具备强性能、清晰的模块化划分和全面的评测。"
       }
      ]
     },
@@ -178,13 +202,18 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-1-3-1",
-       "original": "rely on weak or indirect supervision (e.g., VAD trained from ASR forced alignment), which may degrade robustness under challenging acoustic conditions.",
-       "zh": "依赖弱监督或间接监督信号（例如用 ASR 强制对齐来训练 VAD），在复杂声学条件下可能损害鲁棒性。"
+       "original": "In this technical report, we present FireRedASR2S, a state-of-the-art (SOTA), all-in-one ASR system integrating four modules: FireRedASR2 for ASR, FireRedVAD for VAD and multi-label VAD (mVAD), FireRedLID for multilingual and dialect LID, and FireRedPunc for punctuation prediction.",
+       "zh": "在这份技术报告中，我们提出 FireRedASR2S——一套业界领先（SOTA）的一体化 ASR 系统，整合了四个模块：负责 ASR 的 FireRedASR2、负责 VAD 与多标签 VAD（mVAD）的 FireRedVAD、负责多语种与方言 LID 的 FireRedLID，以及负责标点预测的 FireRedPunc。"
       },
       {
        "id": "s-1-3-2",
-       "original": "These limitations motivate an opensource, industrial-grade all-in-one ASR system with strong performance, clear modularization, and comprehensive evaluation.",
-       "zh": "这些局限促使我们构建一个开源的、工业级的一体化 ASR 系统，具备强性能、清晰的模块化划分和全面的评测。"
+       "original": "The suffix 2S denotes the 2nd-generation FireRedASR, expanded into an all-in-one ASR System.",
+       "zh": "后缀 2S 表示第二代 FireRedASR，并扩展为一体化 ASR 系统（System）。"
+      },
+      {
+       "id": "s-1-3-3",
+       "original": "FireRedASR2S provides a unified pipeline from waveform to structured transcription outputs, while allowing each module to be deployed independently.",
+       "zh": "FireRedASR2S 提供从波形到结构化转写输出的统一流水线，同时允许每个模块独立部署。"
       }
      ]
     },
@@ -195,18 +224,28 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-1-4-1",
-       "original": "In this technical report, we present FireRedASR2S, a state-of-the-art (SOTA), all-in-one ASR system integrating four modules: FireRedASR2 for ASR, FireRedVAD for VAD and multi-label VAD (mVAD), FireRedLID for multilingual and dialect LID, and FireRedPunc for punctuation prediction.",
-       "zh": "在这份技术报告中，我们提出 FireRedASR2S——一套业界领先（SOTA）的一体化 ASR 系统，整合了四个模块：负责 ASR 的 FireRedASR2、负责 VAD 与多标签 VAD（mVAD）的 FireRedVAD、负责多语种与方言 LID 的 FireRedLID，以及负责标点预测的 FireRedPunc。"
+       "original": "FireRedASR2 builds upon our previous FireRedASR [1] models with minimal architectural changes.",
+       "zh": "FireRedASR2 在我们此前的 FireRedASR [1] 模型基础上构建，架构改动很小。"
       },
       {
        "id": "s-1-4-2",
-       "original": "The suffix 2S denotes the 2nd-generation FireRedASR, expanded into an all-in-one ASR System.",
-       "zh": "后缀 2S 表示第二代 FireRedASR，并扩展为一体化 ASR 系统（System）。"
+       "original": "Compared to FireRedASR, FireRedASR2 improves recognition accuracy and expands coverage to a broader range of Chinese dialects, primarily by scaling supervised training data to approximately 200k hours with broader domain, language, and dialect diversity.",
+       "zh": "与 FireRedASR 相比，FireRedASR2 提升了识别精度并将覆盖范围扩展到更广的中文方言，其主要手段是把监督训练数据扩展到约 200k 小时，并覆盖更丰富的领域、语种与方言多样性。"
       },
       {
        "id": "s-1-4-3",
-       "original": "FireRedASR2S provides a unified pipeline from waveform to structured transcription outputs, while allowing each module to be deployed independently.",
-       "zh": "FireRedASR2S 提供从波形到结构化转写输出的统一流水线，同时允许每个模块独立部署。"
+       "original": "FireRedVAD is trained on thousands of hours of high-quality human-annotated acoustic event data, providing reliable segmentation under diverse acoustic conditions.",
+       "zh": "FireRedVAD 在数千小时高质量人工标注的声学事件数据上训练，能够在多样声学条件下提供可靠的切分。"
+      },
+      {
+       "id": "s-1-4-4",
+       "original": "FireRedLID is implemented as an Encoder-Decoder-based [20, 21] model initialized from the FireRedASR2-AED encoder and performs hierarchical language and dialect prediction.",
+       "zh": "FireRedLID 实现为一个基于编码器-解码器 [20, 21] 的模型，以 FireRedASR2-AED 的编码器初始化，并执行分层级的语种与方言预测。"
+      },
+      {
+       "id": "s-1-4-5",
+       "original": "FireRedPunc adopts a BERT-style encoder [22] initialized from LERT [23] and is trained on large-scale multi-domain Chinese and English corpora.",
+       "zh": "FireRedPunc 采用 BERT 式编码器 [22]，以 LERT [23] 初始化，并在大规模多领域中文与英文语料上训练。"
       }
      ]
     },
@@ -217,28 +256,8 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-1-5-1",
-       "original": "FireRedASR2 builds upon our previous FireRedASR [1] models with minimal architectural changes.",
-       "zh": "FireRedASR2 在我们此前的 FireRedASR [1] 模型基础上构建，架构改动很小。"
-      },
-      {
-       "id": "s-1-5-2",
-       "original": "Compared to FireRedASR, FireRedASR2 improves recognition accuracy and expands coverage to a broader range of Chinese dialects, primarily by scaling supervised training data to approximately 200k hours with broader domain, language, and dialect diversity.",
-       "zh": "与 FireRedASR 相比，FireRedASR2 提升了识别精度并将覆盖范围扩展到更广的中文方言，其主要手段是把监督训练数据扩展到约 200k 小时，并覆盖更丰富的领域、语种与方言多样性。"
-      },
-      {
-       "id": "s-1-5-3",
-       "original": "FireRedVAD is trained on thousands of hours of high-quality human-annotated acoustic event data, providing reliable segmentation under diverse acoustic conditions.",
-       "zh": "FireRedVAD 在数千小时高质量人工标注的声学事件数据上训练，能够在多样声学条件下提供可靠的切分。"
-      },
-      {
-       "id": "s-1-5-4",
-       "original": "FireRedLID is implemented as an Encoder-Decoder-based [20, 21] model initialized from the FireRedASR2-AED encoder and performs hierarchical language and dialect prediction.",
-       "zh": "FireRedLID 实现为一个基于编码器-解码器 [20, 21] 的模型，以 FireRedASR2-AED 的编码器初始化，并执行分层级的语种与方言预测。"
-      },
-      {
-       "id": "s-1-5-5",
-       "original": "FireRedPunc adopts a BERT-style encoder [22] initialized from LERT [23] and is trained on large-scale multi-domain Chinese and English corpora.",
-       "zh": "FireRedPunc 采用 BERT 式编码器 [22]，以 LERT [23] 初始化，并在大规模多领域中文与英文语料上训练。"
+       "original": "Our main contributions are:",
+       "zh": "我们的主要贡献如下："
       }
      ]
     },
@@ -249,8 +268,8 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-1-6-1",
-       "original": "Our main contributions are:",
-       "zh": "我们的主要贡献如下："
+       "original": "• All-in-one open-source system: We release an integrated ASR pipeline with unified interfaces and modular deployment.",
+       "zh": "• 一体化开源系统：我们发布了一条具有统一接口和模块化部署能力的集成 ASR 流水线。"
       }
      ]
     },
@@ -261,8 +280,8 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-1-7-1",
-       "original": "• All-in-one open-source system: We release an integrated ASR pipeline with unified interfaces and modular deployment.",
-       "zh": "• 一体化开源系统：我们发布了一条具有统一接口和模块化部署能力的集成 ASR 流水线。"
+       "original": "• Improved ASR accuracy and broader dialect coverage: Building upon FireRedASR, FireRedASR2 improves recognition accuracy and expands support for Chinese dialects, achieving strong results on 24 public test sets.",
+       "zh": "• 更高的 ASR 精度与更广的方言覆盖：在 FireRedASR 基础上，FireRedASR2 提升了识别精度并扩展了对中文方言的支持，在 24 个公开测试集上取得了强结果。"
       }
      ]
     },
@@ -273,8 +292,8 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-1-8-1",
-       "original": "• Improved ASR accuracy and broader dialect coverage: Building upon FireRedASR, FireRedASR2 improves recognition accuracy and expands support for Chinese dialects, achieving strong results on 24 public test sets.",
-       "zh": "• 更高的 ASR 精度与更广的方言覆盖：在 FireRedASR 基础上，FireRedASR2 提升了识别精度并扩展了对中文方言的支持，在 24 个公开测试集上取得了强结果。"
+       "original": "• Robust segmentation from human-labeled events: FireRedVAD provides strong multilingual VAD performance and is trained using high-quality human-annotated event data rather than forced-alignment-derived supervision.",
+       "zh": "• 来自人工标注事件的鲁棒切分：FireRedVAD 提供了强多语种 VAD 性能，其训练使用高质量人工标注的事件数据，而非由强制对齐导出的监督信号。"
       }
      ]
     },
@@ -285,8 +304,8 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-1-9-1",
-       "original": "• Robust segmentation from human-labeled events: FireRedVAD provides strong multilingual VAD performance and is trained using high-quality human-annotated event data rather than forced-alignment-derived supervision.",
-       "zh": "• 来自人工标注事件的鲁棒切分：FireRedVAD 提供了强多语种 VAD 性能，其训练使用高质量人工标注的事件数据，而非由强制对齐导出的监督信号。"
+       "original": "• Hierarchical multilingual and dialect LID: FireRedLID supports 100+ languages and 20+ Chinese dialects with a compact two-token decoding formulation.",
+       "zh": "• 分层级的多语种与方言 LID：FireRedLID 以紧凑的两 token 解码形式支持 100+ 语种和 20+ 中文方言。"
       }
      ]
     },
@@ -297,8 +316,8 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-1-10-1",
-       "original": "• Hierarchical multilingual and dialect LID: FireRedLID supports 100+ languages and 20+ Chinese dialects with a compact two-token decoding formulation.",
-       "zh": "• 分层级的多语种与方言 LID：FireRedLID 以紧凑的两 token 解码形式支持 100+ 语种和 20+ 中文方言。"
+       "original": "• Effective punctuation prediction: FireRedPunc achieves strong results on multi-domain Chinese and English punctuation benchmarks.",
+       "zh": "• 有效的标点预测：FireRedPunc 在多领域中文与英文标点基准上取得强结果。"
       }
      ]
     },
@@ -309,10 +328,21 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-1-11-1",
-       "original": "• Effective punctuation prediction: FireRedPunc achieves strong results on multi-domain Chinese and English punctuation benchmarks.",
-       "zh": "• 有效的标点预测：FireRedPunc 在多领域中文与英文标点基准上取得强结果。"
+       "original": "The remainder of this report is organized as follows.",
+       "zh": "本报告其余部分组织如下。"
+      },
+      {
+       "id": "s-1-11-2",
+       "original": "Section 2 presents the system overview.",
+       "zh": "第 2 节给出系统概览。"
       }
      ]
+    },
+    {
+     "id": "eq-1-1",
+     "type": "equation",
+     "page": 2,
+     "original": "Sections 3 to 6 describe each module. Section 7 reports evaluation results. Section 8 discusses key"
     },
     {
      "id": "p-1-12",
@@ -321,27 +351,7 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-1-12-1",
-       "original": "The remainder of this report is organized as follows.",
-       "zh": "本报告其余部分组织如下。"
-      },
-      {
-       "id": "s-1-12-2",
-       "original": "Section 2 presents the system overview.",
-       "zh": "第 2 节给出系统概览。"
-      },
-      {
-       "id": "s-1-12-3",
-       "original": "Sections 3 to 6 describe each module.",
-       "zh": "第 3 至 6 节分别描述各模块。"
-      },
-      {
-       "id": "s-1-12-4",
-       "original": "Section 7 reports evaluation results.",
-       "zh": "第 7 节报告评测结果。"
-      },
-      {
-       "id": "s-1-12-5",
-       "original": "Section 8 discusses key design choices and limitations, and Section 9 concludes the report.",
+       "original": "design choices and limitations, and Section 9 concludes the report.",
        "zh": "第 8 节讨论关键设计选择与局限，第 9 节总结全文。"
       }
      ]
@@ -408,27 +418,56 @@ globalThis.PAPER_2603_10420 = {
      ]
     },
     {
-     "id": "tb-2-3",
-     "type": "table_body",
-     "page": 3,
-     "original": "VAD FireRedVAD\nLID FireRedLID\nASR FireRedASR2\nPunc FireRedPunc",
-     "cells": 4,
-     "zh": "流水线四模块对应表：VAD→FireRedVAD、LID→FireRedLID、ASR→FireRedASR2、Punc→FireRedPunc。"
-    },
-    {
-     "id": "p-2-7",
+     "id": "p-2-3",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-2-7-1",
-       "original": "ASR Text w/ Punc: Hello World!",
+       "id": "s-2-3-1",
+       "original": "VAD FireRedVAD LID FireRedLID ASR Text w/ Punc: Hello World!",
        "zh": "ASR 带标点文本：Hello World!"
-      },
+      }
+     ]
+    },
+    {
+     "id": "p-2-4",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
       {
-       "id": "s-2-7-2",
-       "original": "ASR Timestamps: [0.2,0.6][0.7,1.2] ASR Confidence: 0.99 VAD & AED Info: [0.1, 1.4] speech LID Info: English/0.98",
-       "zh": "ASR 时间戳：[0.2,0.6][0.7,1.2] ASR 置信度：0.99 VAD 与 AED 信息：[0.1, 1.4] speech LID 信息：English/0.98"
+       "id": "s-2-4-1",
+       "original": "ASR Timestamps:",
+       "zh": "（图 1 流水线标签：ASR Timestamps: [0.2,0.6][0.7,1.2]；ASR Confidence: 0.99；VAD & AED Info: [0.1, 1.4] speech；LID Info: English/0.98；ASR FireRedASR2；Punc FireRedPunc。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-1",
+     "type": "equation",
+     "page": 3,
+     "original": "[0.2,0.6][0.7,1.2]"
+    },
+    {
+     "id": "eq-2-2",
+     "type": "equation",
+     "page": 3,
+     "original": "ASR Confidence:"
+    },
+    {
+     "id": "eq-2-3",
+     "type": "equation",
+     "page": 3,
+     "original": "0.99"
+    },
+    {
+     "id": "p-2-5",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-2-5-1",
+       "original": "VAD & AED Info: [0.1, 1.4] speech LID Info: English/0.98 ASR FireRedASR2 Punc FireRedPunc",
+       "zh": "（图 1 流水线标签：ASR Timestamps: [0.2,0.6][0.7,1.2]；ASR Confidence: 0.99；VAD & AED Info: [0.1, 1.4] speech；LID Info: English/0.98；ASR FireRedASR2；Punc FireRedPunc。）"
       }
      ]
     },
@@ -440,39 +479,39 @@ globalThis.PAPER_2603_10420 = {
      "zh": "Figure 1：FireRedASR2S 概览。输入波形依次经过 FireRedVAD（VAD）、FireRedLID（LID）、FireRedASR2（ASR）和 FireRedPunc（Punc）处理，产出结构化转写输出，包括带标点文本、时间戳、置信度分数和语种标签。"
     },
     {
-     "id": "p-2-8",
+     "id": "p-2-6",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-2-8-1",
+       "id": "s-2-6-1",
        "original": "Structured outputs: FireRedASR2S returns structured outputs containing (1) the final transcription text, (2) a list of sentence-level segments with start/end timestamps, recognized text, ASR confidence, and optional language labels with confidence, and (3) VAD segmentation results.",
        "zh": "结构化输出：FireRedASR2S 返回的结构化输出包含（1）最终转写文本，（2）句级分段列表（含起止时间戳、识别文本、ASR 置信度，以及可选的带置信度语种标签），以及（3）VAD 切分结果。"
       },
       {
-       "id": "s-2-8-2",
+       "id": "s-2-6-2",
        "original": "When ASR timestamping is enabled, the system can further derive sentence-level timestamps by leveraging punctuation prediction.",
        "zh": "当启用 ASR 时间戳时，系统还可以借助标点预测进一步导出句级时间戳。"
       },
       {
-       "id": "s-2-8-3",
+       "id": "s-2-6-3",
        "original": "All timestamps are reported on the original waveform timeline.",
        "zh": "所有时间戳都在原始波形时间轴上报告。"
       }
      ]
     },
     {
-     "id": "p-2-9",
+     "id": "p-2-7",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-2-9-1",
+       "id": "s-2-7-1",
        "original": "Modularity: Although FireRedASR2S is designed as an end-to-end pipeline, each module can be deployed as a standalone component (e.g., VAD-only segmentation, LID-only routing, ASR on pre-segmented audio, or punctuation on plain text).",
        "zh": "模块化：尽管 FireRedASR2S 被设计为端到端流水线，每个模块都可以作为独立组件部署（例如仅做 VAD 切分、仅做 LID 路由、对已切分音频做 ASR，或对纯文本做标点恢复）。"
       },
       {
-       "id": "s-2-9-2",
+       "id": "s-2-7-2",
        "original": "This modular design enables flexible deployment and independent iteration of each component.",
        "zh": "这种模块化设计支持灵活部署与各组件的独立迭代。"
       }
@@ -540,12 +579,16 @@ globalThis.PAPER_2603_10420 = {
      ]
     },
     {
-     "id": "tb-3-3",
-     "type": "table_body",
+     "id": "p-3-3",
+     "type": "paragraph",
      "page": 3,
-     "original": "Conformer\nEncoder\nAdapter\nLarge Language Model\nInitialize\nLoRA\nSpeech\nPrompt\nHello World <sos>\nTranscript Speech Representation\nWorld <eos> Hello\nTo Text\nConformer\nEncoder\n<sos> Hello World\nTransformer\nDecoder\nAttention\nAdapter\nFrame Splice\nLinear + ReLU\nLinear\nHello World <eos>\nTrainable Parameter\nFixed Parameter\nHidden vector\nSpeech\nCTC\nTimestamps",
-     "cells": 29,
-     "zh": "架构示意元素：Conformer 编码器、Adapter、大语言模型、LoRA、CTC 时间戳等，展示两个变体的结构与可训练/固定参数划分。"
+     "sentences": [
+      {
+       "id": "s-3-3-1",
+       "original": "Adapter Trainable Parameter Linear Fixed Parameter Linear + ReLU LoRA Hidden vector Frame Splice Speech Speech Hello World <eos> Timestamps Prompt CTC Transformer Attention Decoder <sos> Hello World Initialize Conformer Encoder World <eos> Hello Large Language Model Hello World <sos> To Text Transcript Speech Representation Adapter Conformer Encoder",
+       "zh": "（图 2 架构标签：Adapter（可训练参数 Linear / 固定参数 Linear+ReLU / LoRA）；Hidden vector；Frame Splice；语音「Hello World」<eos>；Timestamps prompt；CTC；Transformer Attention Decoder；<sos>；初始化 Conformer Encoder；Large Language Model；输出文本转写；语音表示 Adapter。）"
+      }
+     ]
     },
     {
      "id": "fig-3-1",
@@ -812,8 +855,13 @@ globalThis.PAPER_2603_10420 = {
       },
       {
        "id": "s-3-2-1-2",
-       "original": "The model consists of: (1) a Conformer-based audio Encoder that transforms acoustic features into high-level representations, (2) a lightweight Adapter that maps encoder outputs into the embedding space of a pretrained text LLM [28], and (3) an autoregressive",
+       "original": "The model consists of: (1) a Conformer-based audio Encoder that transforms acoustic features into high-level representations, (2) a lightweight Adapter that maps encoder outputs into the embedding space of a pretrained text LLM [28], and (3) an autoregressive LLM that performs next-token prediction to generate the transcript.",
        "zh": "该模型由三部分组成：（1）一个基于 Conformer 的音频编码器，把声学特征变换为高层表示；（2）一个轻量 Adapter，把编码器输出映射到预训练文本 LLM [28] 的嵌入空间；（3）一个自回归的"
+      },
+      {
+       "id": "s-3-2-1-3",
+       "original": "The overall architecture of FireRedASR2-LLM is illustrated in Figure 2 (right).",
+       "zh": "FireRedASR2-LLM 的整体架构如 Figure 2（右）所示。"
       }
      ]
     },
@@ -824,13 +872,13 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-3-2-2-1",
-       "original": "LLM that performs next-token prediction to generate the transcript.",
-       "zh": "LLM，通过下一 token 预测生成转写文本。"
+       "original": "FireRedASR2-LLM employs the same training data, input features and processing methods as FireRedASR2-AED.",
+       "zh": "FireRedASR2-LLM 采用与 FireRedASR2-AED 相同的训练数据、输入特征与处理方法。"
       },
       {
        "id": "s-3-2-2-2",
-       "original": "The overall architecture of FireRedASR2-LLM is illustrated in Figure 2 (right).",
-       "zh": "FireRedASR2-LLM 的整体架构如 Figure 2（右）所示。"
+       "original": "The encoder of FireRedASR2-LLM is initialized with pre-trained weights from the encoder of FireRedASR2-AED.",
+       "zh": "FireRedASR2-LLM 的编码器用 FireRedASR2-AED 编码器的预训练权重初始化。"
       }
      ]
     },
@@ -841,33 +889,16 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-3-2-3-1",
-       "original": "FireRedASR2-LLM employs the same training data, input features and processing methods as FireRedASR2-AED.",
-       "zh": "FireRedASR2-LLM 采用与 FireRedASR2-AED 相同的训练数据、输入特征与处理方法。"
-      },
-      {
-       "id": "s-3-2-3-2",
-       "original": "The encoder of FireRedASR2-LLM is initialized with pre-trained weights from the encoder of FireRedASR2-AED.",
-       "zh": "FireRedASR2-LLM 的编码器用 FireRedASR2-AED 编码器的预训练权重初始化。"
-      }
-     ]
-    },
-    {
-     "id": "p-3-2-4",
-     "type": "paragraph",
-     "page": 5,
-     "sentences": [
-      {
-       "id": "s-3-2-4-1",
        "original": "The key change from FireRedASR-LLM to FireRedASR2-LLM is the expanded 200k hours supervised training corpus described in Section 3.1.",
        "zh": "从 FireRedASR-LLM 到 FireRedASR2-LLM 的关键变化，是第 3.1 节所述扩展到 200k 小时的监督训练语料。"
       },
       {
-       "id": "s-3-2-4-2",
+       "id": "s-3-2-3-2",
        "original": "The architecture and the training strategy otherwise remain the same as FireRedASR-LLM.",
        "zh": "除此之外，架构与训练策略与 FireRedASR-LLM 保持一致。"
       },
       {
-       "id": "s-3-2-4-3",
+       "id": "s-3-2-3-3",
        "original": "We refer readers to [1] for details such as prompt formatting, parameter-efficient LLM adaptation, and decoding configurations.",
        "zh": "关于提示（prompt）格式、参数高效的 LLM 适配以及解码配置等细节，请读者参阅 [1]。"
       }
@@ -898,28 +929,46 @@ globalThis.PAPER_2603_10420 = {
      "page": 5,
      "original": "Table 1: Key updates from FireRedASR to FireRedASR2.",
      "zh": "Table 1：从 FireRedASR 到 FireRedASR2 的关键更新。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-item",
+   "num": null,
+   "level": 2,
+   "page": 5,
+   "title": {
+    "original": "Item",
+    "zh": "Item"
+   },
+   "blocks": [
     {
-     "id": "p-3-3-1",
+     "id": "p-item-1",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-3-3-1-1",
-       "original": "Item FireRedASR FireRedASR2",
-       "zh": "对比项 FireRedASR FireRedASR2"
+       "id": "s-item-1-1",
+       "original": "FireRedASR FireRedASR2 Training data ~70k hours ~200k hours Vocab size (AED)",
+       "zh": "（对比表：FireRedASR vs FireRedASR2——训练数据约 70k 小时 vs 约 200k 小时；词表大小（AED）7,832 vs 8,667；时间戳（AED）不支持 vs 支持。）"
       }
      ]
     },
     {
-     "id": "p-3-3-2",
+     "id": "eq-item-1",
+     "type": "equation",
+     "page": 5,
+     "original": "7,832 8,667"
+    },
+    {
+     "id": "p-item-2",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-3-3-2-1",
-       "original": "Training data ~70k hours ~200k hours Vocab size (AED) 7,832 8,667 Timestamps (AED) Not Supported Supported",
-       "zh": "训练数据 约 70k 小时 约 200k 小时 词表大小（AED）7,832 8,667 时间戳（AED）不支持 支持"
+       "id": "s-item-2-1",
+       "original": "Timestamps (AED) Not Supported Supported",
+       "zh": "（对比表：FireRedASR vs FireRedASR2——训练数据约 70k 小时 vs 约 200k 小时；词表大小（AED）7,832 vs 8,667；时间戳（AED）不支持 vs 支持。）"
       }
      ]
     }
@@ -1066,20 +1115,8 @@ globalThis.PAPER_2603_10420 = {
       },
       {
        "id": "s-4-2-2-3",
-       "original": "Although",
+       "original": "Although the tasks share a related ontology, mVAD and VAD are trained as separate models with task-specific objectives and post-processing criteria.",
        "zh": "尽管"
-      }
-     ]
-    },
-    {
-     "id": "p-4-2-3",
-     "type": "paragraph",
-     "page": 6,
-     "sentences": [
-      {
-       "id": "s-4-2-3-1",
-       "original": "the tasks share a related ontology, mVAD and VAD are trained as separate models with task-specific objectives and post-processing criteria.",
-       "zh": "这些任务共享一套相关的事件本体，mVAD 和 VAD 仍作为独立模型分别训练，各自采用任务特定的目标函数与后处理准则。"
       }
      ]
     }
@@ -1331,7 +1368,7 @@ globalThis.PAPER_2603_10420 = {
       },
       {
        "id": "s-5-1-1-2",
-       "original": "Given an",
+       "original": "Given an input utterance, the Encoder produces acoustic representations, and the Decoder generates a short token sequence that represents the LID result.",
        "zh": "给定一段"
       }
      ]
@@ -1343,8 +1380,13 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-5-1-2-1",
-       "original": "input utterance, the Encoder produces acoustic representations, and the Decoder generates a short token sequence that represents the LID result.",
-       "zh": "输入语句，编码器产出声学表示，解码器生成一个代表 LID 结果的短 token 序列。"
+       "original": "Initialization: The Conformer Encoder is initialized from the pre-trained FireRedASR2-AED Encoder (Section 3.1) to leverage its large-scale ASR representation learning.",
+       "zh": "初始化：Conformer 编码器以预训练的 FireRedASR2-AED 编码器（第 3.1 节）初始化，以利用其大规模 ASR 表示学习的成果。"
+      },
+      {
+       "id": "s-5-1-2-2",
+       "original": "The LID Decoder is randomly initialized and trained from scratch.",
+       "zh": "LID 解码器则随机初始化并从头训练。"
       }
      ]
     },
@@ -1355,13 +1397,8 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-5-1-3-1",
-       "original": "Initialization: The Conformer Encoder is initialized from the pre-trained FireRedASR2-AED Encoder (Section 3.1) to leverage its large-scale ASR representation learning.",
-       "zh": "初始化：Conformer 编码器以预训练的 FireRedASR2-AED 编码器（第 3.1 节）初始化，以利用其大规模 ASR 表示学习的成果。"
-      },
-      {
-       "id": "s-5-1-3-2",
-       "original": "The LID Decoder is randomly initialized and trained from scratch.",
-       "zh": "LID 解码器则随机初始化并从头训练。"
+       "original": "Input features: FireRedLID uses the same acoustic features as FireRedASR2 (Section 3).",
+       "zh": "输入特征：FireRedLID 使用与 FireRedASR2 相同的声学特征（第 3 节）。"
       }
      ]
     },
@@ -1372,8 +1409,13 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-5-1-4-1",
-       "original": "Input features: FireRedLID uses the same acoustic features as FireRedASR2 (Section 3).",
-       "zh": "输入特征：FireRedLID 使用与 FireRedASR2 相同的声学特征（第 3 节）。"
+       "original": "Training data: FireRedLID is trained on approximately 200k hours of multilingual speech covering 100+ languages, including Mandarin and 20+ Chinese dialects.",
+       "zh": "训练数据：FireRedLID 在约 200k 小时的多语种语音上训练，覆盖 100+ 语种，包括普通话和 20+ 中文方言。"
+      },
+      {
+       "id": "s-5-1-4-2",
+       "original": "The data is curated to include diverse domains and acoustic conditions to improve generalization.",
+       "zh": "数据经过筛选以涵盖多样领域与声学条件，从而改善泛化能力。"
       }
      ]
     },
@@ -1384,23 +1426,6 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-5-1-5-1",
-       "original": "Training data: FireRedLID is trained on approximately 200k hours of multilingual speech covering 100+ languages, including Mandarin and 20+ Chinese dialects.",
-       "zh": "训练数据：FireRedLID 在约 200k 小时的多语种语音上训练，覆盖 100+ 语种，包括普通话和 20+ 中文方言。"
-      },
-      {
-       "id": "s-5-1-5-2",
-       "original": "The data is curated to include diverse domains and acoustic conditions to improve generalization.",
-       "zh": "数据经过筛选以涵盖多样领域与声学条件，从而改善泛化能力。"
-      }
-     ]
-    },
-    {
-     "id": "p-5-1-6",
-     "type": "paragraph",
-     "page": 7,
-     "sentences": [
-      {
-       "id": "s-5-1-6-1",
        "original": "Training objective: FireRedLID is trained with a standard sequence-to-sequence cross-entropy objective using teacher forcing.",
        "zh": "训练目标：FireRedLID 采用标准的序列到序列交叉熵目标、以教师强制（teacher forcing）方式训练。"
       }
@@ -1586,20 +1611,16 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-6-3-1",
-       "original": "Punctuation set: We use a compact 5-way punctuation set corresponding to no-punctuation and the four marks , . ? !.",
+       "original": "Punctuation set: We use a compact 5-way punctuation set corresponding to no-punctuation and the four marks , .",
        "zh": "标点集合：我们使用紧凑的 5 类标点集合，对应无标点以及 , . ? ! 四个符号。"
-      },
-      {
-       "id": "s-6-3-2",
-       "original": "In our implementation, we use the Chinese full-width punctuation marks for Chinese text.",
-       "zh": "在实现中，中文文本使用中文全角标点符号。"
-      },
-      {
-       "id": "s-6-3-3",
-       "original": "This design covers the most frequent punctuation marks in ASR applications while keeping the classifier simple and stable.",
-       "zh": "这一设计覆盖了 ASR 应用中最高频的标点，同时让分类器保持简单稳定。"
       }
      ]
+    },
+    {
+     "id": "eq-6-1",
+     "type": "equation",
+     "page": 7,
+     "original": "?"
     },
     {
      "id": "p-6-4",
@@ -1608,25 +1629,35 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-6-4-1",
-       "original": "Training data: FireRedPunc is trained on large-scale multi-domain text corpora with punctuation annotations.",
-       "zh": "训练数据：FireRedPunc 在带标点标注的大规模多领域文本语料上训练。"
+       "original": "!.",
+       "zh": "标点集合：我们使用紧凑的 5 类标点集合，对应无标点以及 , . ? ! 四个符号。"
       },
       {
        "id": "s-6-4-2",
-       "original": "The training data contains approximately 18.57B Chinese characters and 2.20B English words, covering diverse domains and writing styles to improve generalization to ASR-like inputs.",
-       "zh": "训练数据包含约 18.57B 个中文字符和 2.20B 个英文单词，覆盖多样领域与写作风格，以改善对 ASR 风格输入的泛化。"
+       "original": "In our implementation, we use the Chinese full-width punctuation marks for Chinese text.",
+       "zh": "在实现中，中文文本使用中文全角标点符号。"
+      },
+      {
+       "id": "s-6-4-3",
+       "original": "This design covers the most frequent punctuation marks in ASR applications while keeping the classifier simple and stable.",
+       "zh": "这一设计覆盖了 ASR 应用中最高频的标点，同时让分类器保持简单稳定。"
       }
      ]
     },
     {
      "id": "p-6-5",
      "type": "paragraph",
-     "page": 8,
+     "page": 7,
      "sentences": [
       {
        "id": "s-6-5-1",
-       "original": "Training objective: We train FireRedPunc with a standard token-level cross-entropy objective.",
-       "zh": "训练目标：我们采用标准的 token 级交叉熵目标训练 FireRedPunc。"
+       "original": "Training data: FireRedPunc is trained on large-scale multi-domain text corpora with punctuation annotations.",
+       "zh": "训练数据：FireRedPunc 在带标点标注的大规模多领域文本语料上训练。"
+      },
+      {
+       "id": "s-6-5-2",
+       "original": "The training data contains approximately 18.57B Chinese characters and 2.20B English words, covering diverse domains and writing styles to improve generalization to ASR-like inputs.",
+       "zh": "训练数据包含约 18.57B 个中文字符和 2.20B 个英文单词，覆盖多样领域与写作风格，以改善对 ASR 风格输入的泛化。"
       }
      ]
     },
@@ -1637,11 +1668,23 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-6-6-1",
+       "original": "Training objective: We train FireRedPunc with a standard token-level cross-entropy objective.",
+       "zh": "训练目标：我们采用标准的 token 级交叉熵目标训练 FireRedPunc。"
+      }
+     ]
+    },
+    {
+     "id": "p-6-7",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-6-7-1",
        "original": "Inference: At inference time, we tokenize ASR outputs using the same tokenizer as the pre-trained LERT encoder and apply the model to obtain token-level punctuation tags.",
        "zh": "推理：推理时，我们用与预训练 LERT 编码器相同的分词器对 ASR 输出分词，再应用模型得到 token 级标点标签。"
       },
       {
-       "id": "s-6-6-2",
+       "id": "s-6-7-2",
        "original": "The final punctuated text is generated by inserting predicted punctuation marks into the original text sequence.",
        "zh": "最终带标点的文本通过把预测出的标点符号插入原始文本序列生成。"
       }
@@ -1792,92 +1835,182 @@ globalThis.PAPER_2603_10420 = {
      "page": 8,
      "original": "Table 2: Comparison of Character Error Rate (CER%) for FireRedASR2-LLM (FRASR2-LLM), FireRedASR2-AED (FRASR2-AED), and other large ASR baselines on public ASR test sets.",
      "zh": "Table 2：FireRedASR2-LLM（FRASR2-LLM）、FireRedASR2-AED（FRASR2-AED）与其他大型 ASR 基线在公开 ASR 测试集上的字错误率（CER%）对比。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-test-set-model",
+   "num": null,
+   "level": 2,
+   "page": 8,
+   "title": {
+    "original": "Test set \\ Model",
+    "zh": "Test set \\ Model"
+   },
+   "blocks": [
     {
-     "id": "p-7-1-5",
+     "id": "p-test-set-model-1",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
-       "id": "s-7-1-5-1",
-       "original": "FRASR2-LLM FRASR2-AED Doubao-ASR Qwen3-ASR Fun-ASR",
-       "zh": "FRASR2-LLM FRASR2-AED Doubao-ASR Qwen3-ASR Fun-ASR"
+       "id": "s-test-set-model-1-1",
+       "original": "FRASR2-LLM FRASR2-AED Doubao-ASR Qwen3-ASR Fun-ASR Avg-All-24",
+       "zh": "（表格：FRASR2-LLM / FRASR2-AED / Doubao-ASR / Qwen3-ASR / Fun-ASR——Avg-All-24：9.67/9.80/12.98/10.12/10.92；Avg-Mandarin-4：2.89/3.05/3.69/3.76/4.16；Avg-Dialect-19：11.55/11.67/15.39/11.85/12.76；Sing-1：1.12/1.17/4.36/2.57/3.05；aishell1：0.64/0.57/1.52/1.48/1.64；aishell2：2.15/2.51/2.77/2.71/2.38；ws-net：4.44/4.57/5.73/4.97/6.85；ws-meeting：4.32/4.53/4.74/5.88/5.78。API 基线评测时间：Doubao-ASR（volc.seedasr.auc）评于 2026 年 2 月初，Fun-ASR 评于 2025 年 11 月末。）"
       }
      ]
     },
     {
-     "id": "p-7-1-6",
-     "type": "paragraph",
+     "id": "eq-test-set-model-1",
+     "type": "equation",
      "page": 8,
-     "sentences": [
-      {
-       "id": "s-7-1-6-1",
-       "original": "Avg-All-24 9.67 9.80 12.98 10.12 10.92 Avg-Mandarin-4 2.89 3.05 3.69 3.76 4.16 Avg-Dialect-19 11.55 11.67 15.39 11.85 12.76 Sing-1 1.12 1.17 4.36 2.57 3.05 0.64 0.57 1.52 1.48 1.64 2.15 2.51 2.77 2.71 2.38 ws-net 4.44 4.57 5.73 4.97 6.85 ws-meeting 4.32 4.53 4.74 5.88 5.78",
-       "zh": "Avg-All-24 9.67 9.80 12.98 10.12 10.92 Avg-Mandarin-4 2.89 3.05 3.69 3.76 4.16 Avg-Dialect-19 11.55 11.67 15.39 11.85 12.76 Sing-1 1.12 1.17 4.36 2.57 3.05 0.64 0.57 1.52 1.48 1.64 2.15 2.51 2.77 2.71 2.38 ws-net 4.44 4.57 5.73 4.97 6.85 ws-meeting 4.32 4.53 4.74 5.88 5.78（以上各数值与原文一致，依次为五个模型在各聚合指标与单测试集上的 CER%）"
-      }
-     ]
+     "original": "9.67 9.80 12.98 10.12 10.92"
     },
     {
-     "id": "p-7-1-7",
+     "id": "eq-test-set-model-2",
+     "type": "equation",
+     "page": 8,
+     "original": "Avg-Mandarin-4"
+    },
+    {
+     "id": "eq-test-set-model-3",
+     "type": "equation",
+     "page": 8,
+     "original": "2.89 3.05 3.69 3.76 4.16"
+    },
+    {
+     "id": "eq-test-set-model-4",
+     "type": "equation",
+     "page": 8,
+     "original": "Avg-Dialect-19"
+    },
+    {
+     "id": "eq-test-set-model-5",
+     "type": "equation",
+     "page": 8,
+     "original": "11.55 11.67 15.39 11.85 12.76"
+    },
+    {
+     "id": "eq-test-set-model-6",
+     "type": "equation",
+     "page": 8,
+     "original": "Sing-1"
+    },
+    {
+     "id": "eq-test-set-model-7",
+     "type": "equation",
+     "page": 8,
+     "original": "1.12 1.17 4.36 2.57 3.05"
+    },
+    {
+     "id": "eq-test-set-model-8",
+     "type": "equation",
+     "page": 8,
+     "original": "aishell1"
+    },
+    {
+     "id": "eq-test-set-model-9",
+     "type": "equation",
+     "page": 8,
+     "original": "0.64 0.57 1.52 1.48 1.64"
+    },
+    {
+     "id": "eq-test-set-model-10",
+     "type": "equation",
+     "page": 8,
+     "original": "aishell2"
+    },
+    {
+     "id": "eq-test-set-model-11",
+     "type": "equation",
+     "page": 8,
+     "original": "2.15 2.51 2.77 2.71 2.38"
+    },
+    {
+     "id": "eq-test-set-model-12",
+     "type": "equation",
+     "page": 8,
+     "original": "ws-net"
+    },
+    {
+     "id": "eq-test-set-model-13",
+     "type": "equation",
+     "page": 8,
+     "original": "4.44 4.57 5.73 4.97 6.85"
+    },
+    {
+     "id": "eq-test-set-model-14",
+     "type": "equation",
+     "page": 8,
+     "original": "ws-meeting"
+    },
+    {
+     "id": "eq-test-set-model-15",
+     "type": "equation",
+     "page": 8,
+     "original": "4.32 4.53 4.74 5.88 5.78"
+    },
+    {
+     "id": "p-test-set-model-2",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
-       "id": "s-7-1-7-1",
+       "id": "s-test-set-model-2-1",
        "original": "API baselines: Doubao-ASR (volc.seedasr.auc) was evaluated in early February 2026, and Fun-ASR was evaluated in late November 2025.",
        "zh": "API 基线：Doubao-ASR（volc.seedasr.auc）于 2026 年 2 月初评测，Fun-ASR 于 2025 年 11 月底评测。"
       },
       {
-       "id": "s-7-1-7-2",
+       "id": "s-test-set-model-2-2",
        "original": "API results may change over time due to server-side updates and may include proprietary components.",
        "zh": "API 结果可能因服务端更新而随时间变化，且可能包含私有组件。"
       },
       {
-       "id": "s-7-1-7-3",
+       "id": "s-test-set-model-2-3",
        "original": "To ensure a fair comparison, we disabled ITN and punctuation in the API outputs whenever such options were available, and used the default VAD configuration provided by each API.",
        "zh": "为保证公平对比，凡 API 提供相应选项，我们都关闭了输出中的 ITN 与标点，并使用各 API 默认的 VAD 配置。"
       }
      ]
     },
     {
-     "id": "p-7-1-8",
+     "id": "p-test-set-model-3",
      "type": "paragraph",
      "page": 8,
      "sentences": [
       {
-       "id": "s-7-1-8-1",
+       "id": "s-test-set-model-3-1",
        "original": "Data overlap: Our ASR training data does not include any Chinese dialect or accented speech data from MagicData; all MagicData dialect datasets are used for evaluation only.",
        "zh": "数据重叠：我们的 ASR 训练数据不包含任何来自 MagicData 的中文方言或口音语音数据；所有 MagicData 方言数据集仅用于评测。"
       }
      ]
     },
     {
-     "id": "p-7-1-9",
+     "id": "p-test-set-model-4",
      "type": "paragraph",
      "page": 9,
      "sentences": [
       {
-       "id": "s-7-1-9-1",
+       "id": "s-test-set-model-4-1",
        "original": "Results and analysis: Table 2 summarizes the main results.",
        "zh": "结果与分析：Table 2 汇总了主要结果。"
       },
       {
-       "id": "s-7-1-9-2",
+       "id": "s-test-set-model-4-2",
        "original": "FireRedASR2-LLM achieves the best overall accuracy across all aggregated metrics, reaching 2.89% average CER on Mandarin (AvgMandarin-4), 11.55% on Chinese dialect (Avg-Dialect-19), and 9.67% on Avg-All-24.",
        "zh": "FireRedASR2-LLM 在所有聚合指标上都取得最佳整体精度：普通话（Avg-Mandarin-4）平均 CER 2.89%，中文方言（Avg-Dialect-19）11.55%，Avg-All-24 为 9.67%。"
       },
       {
-       "id": "s-7-1-9-3",
+       "id": "s-test-set-model-4-3",
        "original": "FireRedASR2 also performs strongly on singing lyrics recognition: on opencpop, FireRedASR2-LLM achieves 1.12% CER.",
        "zh": "FireRedASR2 在歌声歌词识别上同样表现强劲：在 opencpop 上，FireRedASR2-LLM 取得 1.12% CER。"
       },
       {
-       "id": "s-7-1-9-4",
+       "id": "s-test-set-model-4-4",
        "original": "FireRedASR2-AED achieves competitive accuracy with a smaller model size, providing a more balanced option for practical deployment.",
        "zh": "FireRedASR2-AED 以更小的模型尺寸取得有竞争力的精度，为实际部署提供了更均衡的选择。"
       },
       {
-       "id": "s-7-1-9-5",
+       "id": "s-test-set-model-4-5",
        "original": "Detailed per-test-set results are provided in Appendix A.",
        "zh": "详细的逐测试集结果见附录 A。"
       }
@@ -1996,65 +2129,107 @@ globalThis.PAPER_2603_10420 = {
      "page": 9,
      "original": "Table 3: Frame-level VAD performance on FLEURS-VAD-102. Higher is better for AUC-ROC and F1; lower is better for FAR and MR.",
      "zh": "Table 3：FLEURS-VAD-102 上的帧级 VAD 性能。AUC-ROC 与 F1 越高越好，FAR 与 MR 越低越好。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-metric-model",
+   "num": null,
+   "level": 2,
+   "page": 9,
+   "title": {
+    "original": "Metric \\ Model",
+    "zh": "Metric \\ Model"
+   },
+   "blocks": [
     {
-     "id": "p-7-2-6",
+     "id": "p-metric-model-1",
      "type": "paragraph",
      "page": 9,
      "sentences": [
       {
-       "id": "s-7-2-6-1",
-       "original": "Metric \\ Model FireRedVAD Silero-VAD TEN-VAD FunASR-VAD WebRTC-VAD",
-       "zh": "指标＼模型 FireRedVAD Silero-VAD TEN-VAD FunASR-VAD WebRTC-VAD"
+       "id": "s-metric-model-1-1",
+       "original": "FireRedVAD Silero-VAD TEN-VAD FunASR-VAD WebRTC-VAD AUC-ROC (%) ↑",
+       "zh": "（表格：FireRedVAD / Silero-VAD / TEN-VAD / FunASR-VAD / WebRTC-VAD——AUC-ROC (%)↑：99.60/97.99/97.81/–/–；F1 (%)↑：97.57/95.95/95.19/90.91/52.30；FAR (%)↓：2.69/9.41/15.47/44.03/2.83；MR (%)↓：3.62/3.95/2.95/0.42/64.15。FunASR-VAD 与 WebRTC-VAD 不报告 AUC-ROC，因为它们不输出阈值无关评测所需的连续后验概率。）"
       }
      ]
     },
     {
-     "id": "p-7-2-7",
-     "type": "paragraph",
+     "id": "eq-metric-model-1",
+     "type": "equation",
      "page": 9,
-     "sentences": [
-      {
-       "id": "s-7-2-7-1",
-       "original": "AUC-ROC (%) ↑ 99.60 97.99 97.81 F1 (%) ↑ 97.57 95.95 95.19 90.91 52.30 FAR (%) ↓ 2.69 9.41 15.47 44.03 2.83 MR (%) ↓ 3.62 3.95 2.95 0.42 64.15",
-       "zh": "AUC-ROC（%）↑ 99.60 97.99 97.81 F1（%）↑ 97.57 95.95 95.19 90.91 52.30 FAR（%）↓ 2.69 9.41 15.47 44.03 2.83 MR（%）↓ 3.62 3.95 2.95 0.42 64.15（数值与原文一致，FunASR-VAD 与 WebRTC-VAD 未报告 AUC-ROC）"
-      }
-     ]
+     "original": "99.60 97.99 97.81 – –"
     },
     {
-     "id": "p-7-2-8",
+     "id": "eq-metric-model-2",
+     "type": "equation",
+     "page": 9,
+     "original": "F1 (%) ↑"
+    },
+    {
+     "id": "eq-metric-model-3",
+     "type": "equation",
+     "page": 9,
+     "original": "97.57 95.95 95.19 90.91 52.30"
+    },
+    {
+     "id": "eq-metric-model-4",
+     "type": "equation",
+     "page": 9,
+     "original": "FAR (%) ↓"
+    },
+    {
+     "id": "eq-metric-model-5",
+     "type": "equation",
+     "page": 9,
+     "original": "2.69 9.41 15.47 44.03 2.83"
+    },
+    {
+     "id": "eq-metric-model-6",
+     "type": "equation",
+     "page": 9,
+     "original": "MR (%) ↓"
+    },
+    {
+     "id": "eq-metric-model-7",
+     "type": "equation",
+     "page": 9,
+     "original": "3.62 3.95 2.95 0.42 64.15"
+    },
+    {
+     "id": "p-metric-model-2",
      "type": "paragraph",
      "page": 9,
      "sentences": [
       {
-       "id": "s-7-2-8-1",
+       "id": "s-metric-model-2-1",
        "original": "AUC-ROC is not reported for FunASR-VAD and WebRTC-VAD, as these systems do not output continuous posterior probabilities required for threshold-independent evaluation.",
-       "zh": "FunASR-VAD 与 WebRTC-VAD 未报告 AUC-ROC，因为这两个系统不输出阈值无关评测所需的连续后验概率。"
+       "zh": "（表格：FireRedVAD / Silero-VAD / TEN-VAD / FunASR-VAD / WebRTC-VAD——AUC-ROC (%)↑：99.60/97.99/97.81/–/–；F1 (%)↑：97.57/95.95/95.19/90.91/52.30；FAR (%)↓：2.69/9.41/15.47/44.03/2.83；MR (%)↓：3.62/3.95/2.95/0.42/64.15。FunASR-VAD 与 WebRTC-VAD 不报告 AUC-ROC，因为它们不输出阈值无关评测所需的连续后验概率。）"
       }
      ]
     },
     {
-     "id": "p-7-2-9",
+     "id": "p-metric-model-3",
      "type": "paragraph",
      "page": 9,
      "sentences": [
       {
-       "id": "s-7-2-9-1",
+       "id": "s-metric-model-3-1",
        "original": "Results and analysis: As shown in Table 3, FireRedVAD achieves strong multilingual VAD performance with 99.60% AUC-ROC and 97.57% F1, outperforming all compared baselines.",
        "zh": "结果与分析：如 Table 3 所示，FireRedVAD 以 99.60% AUC-ROC 和 97.57% F1 取得强多语种 VAD 性能，优于所有参与对比的基线。"
       },
       {
-       "id": "s-7-2-9-2",
+       "id": "s-metric-model-3-2",
        "original": "Notably, FireRedVAD achieves this SOTA performance with an exceptionally small parameter size (∼0.6M), demonstrating a strong balance between accuracy and efficiency for practical industrial pipelines.",
        "zh": "值得注意的是，FireRedVAD 以极小的参数量（约 0.6M）达成这一 SOTA 性能，在精度与效率之间展现出面向工业实用流水线的强平衡。"
       },
       {
-       "id": "s-7-2-9-3",
+       "id": "s-metric-model-3-3",
        "original": "FireRedVAD maintains a low false alarm rate (2.69%) while keeping a low miss rate (3.62%), indicating a balanced operating point for downstream segmentation.",
        "zh": "FireRedVAD 保持低误报率（2.69%）的同时维持低漏检率（3.62%），表明其工作点对下游切分较为均衡。"
       },
       {
-       "id": "s-7-2-9-4",
+       "id": "s-metric-model-3-4",
        "original": "We note that some baselines (e.g., FunASR-VAD) achieve a very low miss rate but at the cost of a substantially higher false alarm rate, which may lead to excessive segmentation and unnecessary downstream ASR computation in practical deployments.",
        "zh": "我们注意到，一些基线（如 FunASR-VAD）实现了极低的漏检率，但代价是显著更高的误报率，这在实际部署中可能导致过度切分和不必要的下游 ASR 计算。"
       }
@@ -2129,53 +2304,83 @@ globalThis.PAPER_2603_10420 = {
      "page": 10,
      "original": "Table 4: Utterance-level LID accuracy (%) on public test sets. Higher is better.",
      "zh": "Table 4：公开测试集上的句级 LID 准确率（%）。越高越好。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-test-set-model-2",
+   "num": null,
+   "level": 2,
+   "page": 10,
+   "title": {
+    "original": "Test set \\ Model",
+    "zh": "Test set \\ Model"
+   },
+   "blocks": [
     {
-     "id": "p-7-3-4",
+     "id": "p-test-set-model-2-1",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
-       "id": "s-7-3-4-1",
-       "original": "FireRedLID Whisper SpeechBrain Dolphin",
-       "zh": "FireRedLID Whisper SpeechBrain Dolphin"
+       "id": "s-test-set-model-2-1-1",
+       "original": "FireRedLID Whisper SpeechBrain Dolphin FLEURS test",
+       "zh": "（表格：FireRedLID / Whisper / SpeechBrain / Dolphin——FLEURS test：97.18/79.41/92.91/–；CommonVoice test：92.07/80.81/78.75/–；中文方言：88.47/–/–/69.01。结果与分析：表 4 显示 FireRedLID 在多语种与中文方言 LID 任务上均表现强劲。）"
       }
      ]
     },
     {
-     "id": "p-7-3-5",
-     "type": "paragraph",
+     "id": "eq-test-set-model-2-1",
+     "type": "equation",
      "page": 10,
-     "sentences": [
-      {
-       "id": "s-7-3-5-1",
-       "original": "FLEURS test 97.18 79.41 92.91 CommonVoice test 92.07 80.81 78.75 Chinese dialects 88.47 69.01",
-       "zh": "FLEURS 测试集 97.18 79.41 92.91 CommonVoice 测试集 92.07 80.81 78.75 中文方言 88.47 69.01（数值与原文一致，部分单元格原文留空）"
-      }
-     ]
+     "original": "97.18 79.41 92.91 –"
     },
     {
-     "id": "p-7-3-6",
+     "id": "eq-test-set-model-2-2",
+     "type": "equation",
+     "page": 10,
+     "original": "CommonVoice test"
+    },
+    {
+     "id": "eq-test-set-model-2-3",
+     "type": "equation",
+     "page": 10,
+     "original": "92.07 80.81 78.75 –"
+    },
+    {
+     "id": "eq-test-set-model-2-4",
+     "type": "equation",
+     "page": 10,
+     "original": "Chinese dialects"
+    },
+    {
+     "id": "eq-test-set-model-2-5",
+     "type": "equation",
+     "page": 10,
+     "original": "88.47 – – 69.01"
+    },
+    {
+     "id": "p-test-set-model-2-2",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
-       "id": "s-7-3-6-1",
+       "id": "s-test-set-model-2-2-1",
        "original": "Results and analysis: Table 4 shows that FireRedLID achieves strong performance on both multilingual and Chinese dialect LID tasks.",
-       "zh": "结果与分析：Table 4 显示 FireRedLID 在多语种与中文方言 LID 任务上都取得强性能。"
+       "zh": "（表格：FireRedLID / Whisper / SpeechBrain / Dolphin——FLEURS test：97.18/79.41/92.91/–；CommonVoice test：92.07/80.81/78.75/–；中文方言：88.47/–/–/69.01。结果与分析：表 4 显示 FireRedLID 在多语种与中文方言 LID 任务上均表现强劲。）"
       },
       {
-       "id": "s-7-3-6-2",
+       "id": "s-test-set-model-2-2-2",
        "original": "On FLEURS, FireRedLID reaches 97.18% accuracy, substantially outperforming Whisper and improving over SpeechBrain.",
        "zh": "在 FLEURS 上，FireRedLID 达到 97.18% 准确率，大幅超越 Whisper，并优于 SpeechBrain。"
       },
       {
-       "id": "s-7-3-6-3",
+       "id": "s-test-set-model-2-2-3",
        "original": "On CommonVoice, FireRedLID also achieves the best accuracy among compared systems.",
        "zh": "在 CommonVoice 上，FireRedLID 同样在参与对比的系统中取得最佳准确率。"
       },
       {
-       "id": "s-7-3-6-4",
+       "id": "s-test-set-model-2-2-4",
        "original": "On the combined Chinese dialect benchmark, FireRedLID achieves 88.47% accuracy, demonstrating the effectiveness of our hierarchical label modeling for fine-grained Chinese dialect identification.",
        "zh": "在合并的中文方言基准上，FireRedLID 取得 88.47% 准确率，展示了我们的分层级标签建模在细粒度中文方言识别上的有效性。"
       }
@@ -2260,48 +2465,108 @@ globalThis.PAPER_2603_10420 = {
      "page": 10,
      "original": "Table 5: Punctuation prediction results on internal test sets (Precision/Recall/F1 in %). Higher is better.",
      "zh": "Table 5：内部测试集上的标点预测结果（精确率/召回率/F1，单位 %）。越高越好。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-test-set-model-3",
+   "num": null,
+   "level": 2,
+   "page": 10,
+   "title": {
+    "original": "Test set \\ Model",
+    "zh": "Test set \\ Model"
+   },
+   "blocks": [
     {
-     "id": "p-7-4-4",
+     "id": "p-test-set-model-3-1",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
-       "id": "s-7-4-4-1",
-       "original": "FireRedPunc FunASR-Punc",
+       "id": "s-test-set-model-3-1-1",
+       "original": "FireRedPunc FunASR-Punc Multi-domain Chinese",
        "zh": "FireRedPunc FunASR-Punc"
       }
      ]
+    }
+   ]
+  },
+  {
+   "id": "sec-82-84",
+   "num": "82.84",
+   "level": 2,
+   "page": 10,
+   "title": {
+    "original": "/ 83.08 / 82.96",
+    "zh": "/ 83.08 / 82.96"
+   },
+   "blocks": [
+    {
+     "id": "eq-82-84-1",
+     "type": "equation",
+     "page": 10,
+     "original": "77.27 / 74.03 / 75.62"
     },
     {
-     "id": "p-7-4-5",
+     "id": "p-82-84-1",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
-       "id": "s-7-4-5-1",
-       "original": "Multi-domain Chinese Multi-domain English Average F1 78.90 62.77",
-       "zh": "多领域中文 多领域英文 平均 F1 78.90 62.77（数值与原文一致）"
+       "id": "s-82-84-1-1",
+       "original": "Multi-domain English",
+       "zh": "（表头行）Multi-domain English（多领域英文）。"
       }
      ]
+    }
+   ]
+  },
+  {
+   "id": "sec-78-40",
+   "num": "78.40",
+   "level": 2,
+   "page": 10,
+   "title": {
+    "original": "/ 71.57 / 74.83",
+    "zh": "/ 71.57 / 74.83"
+   },
+   "blocks": [
+    {
+     "id": "eq-78-40-1",
+     "type": "equation",
+     "page": 10,
+     "original": "55.79 / 45.15 / 49.91"
     },
     {
-     "id": "p-7-4-6",
+     "id": "eq-78-40-2",
+     "type": "equation",
+     "page": 10,
+     "original": "Average F1"
+    },
+    {
+     "id": "eq-78-40-3",
+     "type": "equation",
+     "page": 10,
+     "original": "78.90 62.77"
+    },
+    {
+     "id": "p-78-40-1",
      "type": "paragraph",
      "page": 10,
      "sentences": [
       {
-       "id": "s-7-4-6-1",
+       "id": "s-78-40-1-1",
        "original": "Results and analysis: As shown in Table 5, FireRedPunc consistently outperforms the baseline on both Chinese and English benchmarks.",
-       "zh": "结果与分析：如 Table 5 所示，FireRedPunc 在中文与英文基准上都稳定优于基线。"
+       "zh": "（表格行）Average F1：78.90 / 62.77。结果与分析：如表 5 所示，FireRedPunc 在中英文基准上均持续优于基线。"
       },
       {
-       "id": "s-7-4-6-2",
+       "id": "s-78-40-1-2",
        "original": "In particular, FireRedPunc achieves 82.96% F1 on Chinese and 74.83% F1 on English, resulting in a 78.90% average F1.",
        "zh": "具体而言，FireRedPunc 在中文上取得 82.96% F1、在英文上取得 74.83% F1，平均 F1 为 78.90%。"
       },
       {
-       "id": "s-7-4-6-3",
+       "id": "s-78-40-1-3",
        "original": "The large gain on English suggests that our LERT-initialized BERT-style encoder and large-scale multi-domain training data are effective for punctuation prediction on ASR-like text.",
        "zh": "英文上的大幅领先说明，我们以 LERT 初始化的 BERT 式编码器与大规模多领域训练数据对 ASR 风格文本的标点预测是有效的。"
       }
@@ -2360,7 +2625,7 @@ globalThis.PAPER_2603_10420 = {
       },
       {
        "id": "s-8-3-2",
-       "original": "The consistent improvements on Mandarin",
+       "original": "The consistent improvements on Mandarin benchmarks and the strong performance on dialect test sets suggest that expanding supervised data diversity is a major driver for both recognition accuracy and generalization to diverse Chinese dialect scenarios.",
        "zh": "普通话"
       }
      ]
@@ -2372,8 +2637,13 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-8-4-1",
-       "original": "benchmarks and the strong performance on dialect test sets suggest that expanding supervised data diversity is a major driver for both recognition accuracy and generalization to diverse Chinese dialect scenarios.",
-       "zh": "基准上的一致提升以及方言测试集上的强表现表明，扩大监督数据的多样性是识别精度与对多样中文方言场景泛化能力的主要驱动力。"
+       "original": "Human-labeled event supervision for segmentation: Compared to VAD models trained from ASR forced-alignment-derived supervision, FireRedVAD is trained on thousands of hours of humanannotated acoustic event data.",
+       "zh": "面向切分的人工标注事件监督：与从 ASR 强制对齐导出监督信号训练的 VAD 模型相比，FireRedVAD 在数千小时人工标注的声学事件数据上训练。"
+      },
+      {
+       "id": "s-8-4-2",
+       "original": "This explicit event supervision improves robustness under diverse acoustic conditions and supports both VAD and mVAD use cases.",
+       "zh": "这种显式的事件监督提升了多样声学条件下的鲁棒性，并同时支撑 VAD 与 mVAD 两类用法。"
       }
      ]
     },
@@ -2384,28 +2654,11 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-8-5-1",
-       "original": "Human-labeled event supervision for segmentation: Compared to VAD models trained from ASR forced-alignment-derived supervision, FireRedVAD is trained on thousands of hours of humanannotated acoustic event data.",
-       "zh": "面向切分的人工标注事件监督：与从 ASR 强制对齐导出监督信号训练的 VAD 模型相比，FireRedVAD 在数千小时人工标注的声学事件数据上训练。"
-      },
-      {
-       "id": "s-8-5-2",
-       "original": "This explicit event supervision improves robustness under diverse acoustic conditions and supports both VAD and mVAD use cases.",
-       "zh": "这种显式的事件监督提升了多样声学条件下的鲁棒性，并同时支撑 VAD 与 mVAD 两类用法。"
-      }
-     ]
-    },
-    {
-     "id": "p-8-6",
-     "type": "paragraph",
-     "page": 11,
-     "sentences": [
-      {
-       "id": "s-8-6-1",
        "original": "Hierarchical LID for languages and Chinese dialects: FireRedLID models LID as a short sequence generation task with hierarchical labels, predicting language first and dialect conditioned on Chinese.",
        "zh": "面向语种与中文方言的分层级 LID：FireRedLID 把 LID 建模为带分层级标签的短序列生成任务，先预测语种，再以中文为条件预测方言。"
       },
       {
-       "id": "s-8-6-2",
+       "id": "s-8-5-2",
        "original": "This formulation better matches the label structure and reduces ambiguity compared with a flat label space, while keeping inference efficient.",
        "zh": "相比扁平标签空间，这一形式化更贴合标签结构、减少歧义，同时保持推理高效。"
       }
@@ -2488,7 +2741,7 @@ globalThis.PAPER_2603_10420 = {
       },
       {
        "id": "s-references-1-2",
-       "original": "Fireredasr: Open-source industrial-grade mandarin speech recognition models from encoder-decoder to llm integration. arXiv preprint"
+       "original": "Fireredasr: Open-source industrial-grade mandarin speech recognition models from encoder-decoder to llm integration. arXiv preprint arXiv:2501.14350, 2025."
       }
      ]
     },
@@ -2499,7 +2752,7 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-2-1",
-       "original": "[2] Xian Shi, Xiong Wang, Zhifang Guo, Yongqi Wang, Pei Zhang, Xinyu Zhang, Zishan Guo, Hongkun Hao, Yu Xi, Baosong Yang, et al. Qwen3-asr technical report. arXiv preprint"
+       "original": "[2] Xian Shi, Xiong Wang, Zhifang Guo, Yongqi Wang, Pei Zhang, Xinyu Zhang, Zishan Guo, Hongkun Hao, Yu Xi, Baosong Yang, et al. Qwen3-asr technical report. arXiv preprint arXiv:2601.21337, 2026."
       }
      ]
     },
@@ -2510,7 +2763,7 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-3-1",
-       "original": "[3] Keyu An, Yanni Chen, Zhigao Chen, Chong Deng, Zhihao Du, Changfeng Gao, Zhifu Gao, Bo Gong, Xiangang Li, Yabin Li, et al. Fun-asr technical report. arXiv preprint"
+       "original": "[3] Keyu An, Yanni Chen, Zhigao Chen, Chong Deng, Zhihao Du, Changfeng Gao, Zhifu Gao, Bo Gong, Xiangang Li, Yabin Li, et al."
       }
      ]
     },
@@ -2521,11 +2774,7 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "[4] Seed-ASR (2024)."
-      },
-      {
-       "id": "s-references-4-2",
-       "original": "Seed-asr: Understanding diverse speech and contexts with llm-based speech recognition. arXiv preprint arXiv:2407.04675, 2024."
+       "original": "Fun-asr technical report."
       }
      ]
     },
@@ -2536,7 +2785,7 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "[5] Wenjie Tian, Bingshen Mu, Guobin Ma, Xuelong Geng, Zhixian Zhao, and Lei Xie. dllm-asr: A faster diffusion llm-based framework for speech recognition. arXiv preprint arXiv:2601.17902, 2026."
+       "original": "arXiv preprint arXiv:2509.12508, 2025."
       }
      ]
     },
@@ -2547,11 +2796,11 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "[6] Bingshen Mu, Yiwen Shao, Kun Wei, Dong Yu, and Lei Xie."
+       "original": "[4] Seed-ASR (2024)."
       },
       {
        "id": "s-references-6-2",
-       "original": "Efficient scaling for llm-based asr. arXiv preprint arXiv:2508.04096, 2025."
+       "original": "Seed-asr: Understanding diverse speech and contexts with llm-based speech recognition. arXiv preprint arXiv:2407.04675, 2024."
       }
      ]
     },
@@ -2562,9 +2811,15 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "[7] Keyu An, Qian Chen, Chong Deng, Zhihao Du, Changfeng Gao, Zhifu Gao, Yue Gu, Ting He, Hangrui Hu, Kai Hu, et al. Funaudiollm: Voice understanding and generation foundation models for natural interaction between humans and llms. arXiv preprint arXiv:2407.04051, 2024."
+       "original": "[5] Wenjie Tian, Bingshen Mu, Guobin Ma, Xuelong Geng, Zhixian Zhao, and Lei Xie. dllm-asr: A faster diffusion llm-based framework for speech recognition. arXiv preprint arXiv:2601.17902,"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 11,
+     "original": "2026."
     },
     {
      "id": "p-references-8",
@@ -2573,7 +2828,11 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "[8] Yunfei Chu, Jin Xu, Qian Yang, Haojie Wei, Xipin Wei, Zhifang Guo, Yichong Leng, Yuanjun Lv, Jinzheng He, Junyang Lin, et al. Qwen2-audio technical report. arXiv preprint"
+       "original": "[6] Bingshen Mu, Yiwen Shao, Kun Wei, Dong Yu, and Lei Xie."
+      },
+      {
+       "id": "s-references-8-2",
+       "original": "Efficient scaling for llm-based asr."
       }
      ]
     },
@@ -2584,64 +2843,50 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "[9] Yunfei Chu, Jin Xu, Xiaohuan Zhou, Qian Yang, Shiliang Zhang, Zhijie Yan, Chang Zhou, and Jingren Zhou."
-      },
-      {
-       "id": "s-references-9-2",
-       "original": "Qwen-audio: Advancing universal audio understanding via unified large-scale audio-language models. arXiv preprint arXiv:2311.07919, 2023."
+       "original": "arXiv preprint arXiv:2508.04096, 2025."
       }
      ]
     },
     {
      "id": "p-references-10",
      "type": "paragraph",
-     "page": 12,
+     "page": 11,
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "[10] Jian Wu, Yashesh Gaur, Zhuo Chen, Long Zhou, Yimeng Zhu, Tianrui Wang, Jinyu Li, Shujie Liu, Bo Ren, Linquan Liu, et al. On decoder-only architecture for speech-to-text and large language model integration."
-      },
-      {
-       "id": "s-references-10-2",
-       "original": "In Automatic Speech Recognition and Understanding Workshop (ASRU), pages 1–8."
-      },
-      {
-       "id": "s-references-10-3",
-       "original": "IEEE, 2023."
+       "original": "[7] Keyu An, Qian Chen, Chong Deng, Zhihao Du, Changfeng Gao, Zhifu Gao, Yue Gu, Ting He, Hangrui Hu, Kai Hu, et al. Funaudiollm: Voice understanding and generation foundation models for natural interaction between humans and llms. arXiv preprint arXiv:2407.04051,"
       }
      ]
     },
     {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 11,
+     "original": "2024."
+    },
+    {
      "id": "p-references-11",
      "type": "paragraph",
-     "page": 12,
+     "page": 11,
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "[11] Paul K Rubenstein, Chulayuth Asawaroengchai, Duc Dung Nguyen, Ankur Bapna, Zalán Borsos, Félix de Chaumont Quitry, Peter Chen, Dalia El Badawy, Wei Han, Eugene Kharitonov, et al. Audiopalm: A large language model that can speak and listen. arXiv preprint arXiv:2306.12925, 2023."
+       "original": "[8] Yunfei Chu, Jin Xu, Qian Yang, Haojie Wei, Xipin Wei, Zhifang Guo, Yichong Leng, Yuanjun Lv, Jinzheng He, Junyang Lin, et al. Qwen2-audio technical report. arXiv preprint arXiv:2407.10759, 2024."
       }
      ]
     },
     {
      "id": "p-references-12",
      "type": "paragraph",
-     "page": 12,
+     "page": 11,
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "[12] Yuang Li, Yu Wu, Jinyu Li, and Shujie Liu."
+       "original": "[9] Yunfei Chu, Jin Xu, Xiaohuan Zhou, Qian Yang, Shiliang Zhang, Zhijie Yan, Chang Zhou, and Jingren Zhou."
       },
       {
        "id": "s-references-12-2",
-       "original": "Prompting large language models for zero-shot domain adaptation in speech recognition."
-      },
-      {
-       "id": "s-references-12-3",
-       "original": "In Automatic Speech Recognition and Understanding Workshop (ASRU), pages 1–8."
-      },
-      {
-       "id": "s-references-12-4",
-       "original": "IEEE, 2023."
+       "original": "Qwen-audio: Advancing universal audio understanding via unified large-scale audio-language models. arXiv preprint arXiv:2311.07919, 2023."
       }
      ]
     },
@@ -2652,7 +2897,7 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "[13] Mingqiu Wang, Wei Han, Izhak Shafran, Zelin Wu, Chung-Cheng Chiu, Yuan Cao, Nanxin Chen, Yu Zhang, Hagen Soltau, Paul K Rubenstein, et al. Slm: Bridge the thin gap between speech and text foundation models."
+       "original": "[10] Jian Wu, Yashesh Gaur, Zhuo Chen, Long Zhou, Yimeng Zhu, Tianrui Wang, Jinyu Li, Shujie Liu, Bo Ren, Linquan Liu, et al. On decoder-only architecture for speech-to-text and large language model integration."
       },
       {
        "id": "s-references-13-2",
@@ -2671,11 +2916,7 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "[14] Jing Pan, Jian Wu, Yashesh Gaur, Sunit Sivasankaran, Zhuo Chen, Shujie Liu, and Jinyu Li."
-      },
-      {
-       "id": "s-references-14-2",
-       "original": "Cosmic: Data efficient instruction-tuning for speech in-context learning. arXiv preprint"
+       "original": "[11] Paul K Rubenstein, Chulayuth Asawaroengchai, Duc Dung Nguyen, Ankur Bapna, Zalán Borsos, Félix de Chaumont Quitry, Peter Chen, Dalia El Badawy, Wei Han, Eugene Kharitonov, et al."
       }
      ]
     },
@@ -2686,21 +2927,15 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "[15] Wenyi Yu, Changli Tang, Guangzhi Sun, Xianzhao Chen, Tian Tan, Wei Li, Lu Lu, Zejun Ma, and Chao Zhang."
-      },
-      {
-       "id": "s-references-15-2",
-       "original": "Connecting speech encoder and large language model for asr."
-      },
-      {
-       "id": "s-references-15-3",
-       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 12637–12641."
-      },
-      {
-       "id": "s-references-15-4",
-       "original": "IEEE, 2024."
+       "original": "Audiopalm: A large language model that can speak and listen. arXiv preprint arXiv:2306.12925,"
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 12,
+     "original": "2023."
     },
     {
      "id": "p-references-16",
@@ -2709,19 +2944,19 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "[16] Zhehuai Chen, He Huang, Andrei Andrusenko, Oleksii Hrinchuk, Krishna C Puvvada, Jason Li, Subhankar Ghosh, Jagadeesh Balam, and Boris Ginsburg."
+       "original": "[12] Yuang Li, Yu Wu, Jinyu Li, and Shujie Liu."
       },
       {
        "id": "s-references-16-2",
-       "original": "Salm: Speech-augmented language model with in-context learning for speech recognition and translation."
+       "original": "Prompting large language models for zero-shot domain adaptation in speech recognition."
       },
       {
        "id": "s-references-16-3",
-       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 13521–13525."
+       "original": "In Automatic Speech Recognition and Understanding Workshop (ASRU), pages 1–8."
       },
       {
        "id": "s-references-16-4",
-       "original": "IEEE, 2024."
+       "original": "IEEE, 2023."
       }
      ]
     },
@@ -2732,19 +2967,15 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "[17] Egor Lakomkin, Chunyang Wu, Yassir Fathullah, Ozlem Kalinli, Michael L Seltzer, and Christian Fuegen."
+       "original": "[13] Mingqiu Wang, Wei Han, Izhak Shafran, Zelin Wu, Chung-Cheng Chiu, Yuan Cao, Nanxin Chen, Yu Zhang, Hagen Soltau, Paul K Rubenstein, et al. Slm: Bridge the thin gap between speech and text foundation models."
       },
       {
        "id": "s-references-17-2",
-       "original": "End-to-end speech recognition contextualization with large language models."
+       "original": "In Automatic Speech Recognition and Understanding Workshop (ASRU), pages 1–8."
       },
       {
        "id": "s-references-17-3",
-       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 12406–12410."
-      },
-      {
-       "id": "s-references-17-4",
-       "original": "IEEE, 2024."
+       "original": "IEEE, 2023."
       }
      ]
     },
@@ -2755,15 +2986,11 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "[18] Xuelong Geng, Tianyi Xu, Kun Wei, Bingshen Mu, Hongfei Xue, He Wang, Yangze Li, Pengcheng Guo, Yuhang Dai, Longhao Li, et al. Unveiling the potential of llm-based asr on chinese open-source datasets."
+       "original": "[14] Jing Pan, Jian Wu, Yashesh Gaur, Sunit Sivasankaran, Zhuo Chen, Shujie Liu, and Jinyu Li."
       },
       {
        "id": "s-references-18-2",
-       "original": "In 14th International Symposium on Chinese Spoken Language Processing (ISCSLP), pages 26–30."
-      },
-      {
-       "id": "s-references-18-3",
-       "original": "IEEE, 2024."
+       "original": "Cosmic: Data efficient instruction-tuning for speech in-context learning. arXiv preprint arXiv:2311.02248, 2023."
       }
      ]
     },
@@ -2774,9 +3001,27 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "[19] Ziyang Ma, Guanrou Yang, Yifan Yang, Zhifu Gao, Jiaming Wang, Zhihao Du, Fan Yu, Qian Chen, Siqi Zheng, Shiliang Zhang, et al. An embarrassingly simple approach for llm with strong asr capacity. arXiv preprint arXiv:2402.08846, 2024."
+       "original": "[15] Wenyi Yu, Changli Tang, Guangzhi Sun, Xianzhao Chen, Tian Tan, Wei Li, Lu Lu, Zejun Ma, and Chao Zhang."
+      },
+      {
+       "id": "s-references-19-2",
+       "original": "Connecting speech encoder and large language model for asr."
+      },
+      {
+       "id": "s-references-19-3",
+       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 12637–12641."
+      },
+      {
+       "id": "s-references-19-4",
+       "original": "IEEE,"
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 12,
+     "original": "2024."
     },
     {
      "id": "p-references-20",
@@ -2785,19 +3030,7 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "[20] Dzmitry Bahdanau, Jan Chorowski, Dmitriy Serdyuk, Philemon Brakel, and Yoshua Bengio."
-      },
-      {
-       "id": "s-references-20-2",
-       "original": "End-to-end attention-based large vocabulary speech recognition."
-      },
-      {
-       "id": "s-references-20-3",
-       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 4945–4949."
-      },
-      {
-       "id": "s-references-20-4",
-       "original": "IEEE, 2016."
+       "original": "[16] Zhehuai Chen, He Huang, Andrei Andrusenko, Oleksii Hrinchuk, Krishna C Puvvada, Jason Li, Subhankar Ghosh, Jagadeesh Balam, and Boris Ginsburg."
       }
      ]
     },
@@ -2808,21 +3041,23 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "[21] William Chan, Navdeep Jaitly, Quoc Le, and Oriol Vinyals."
+       "original": "Salm: Speech-augmented language model with in-context learning for speech recognition and translation."
       },
       {
        "id": "s-references-21-2",
-       "original": "Listen, attend and spell: A neural network for large vocabulary conversational speech recognition."
+       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 13521–13525."
       },
       {
        "id": "s-references-21-3",
-       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 4960–4964."
-      },
-      {
-       "id": "s-references-21-4",
-       "original": "IEEE, 2016."
+       "original": "IEEE,"
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 12,
+     "original": "2024."
     },
     {
      "id": "p-references-22",
@@ -2831,136 +3066,132 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "[22] Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova."
+       "original": "[17] Egor Lakomkin, Chunyang Wu, Yassir Fathullah, Ozlem Kalinli, Michael L Seltzer, and Christian Fuegen."
       },
       {
        "id": "s-references-22-2",
-       "original": "Bert: Pre-training of deep bidirectional transformers for language understanding."
-      },
-      {
-       "id": "s-references-22-3",
-       "original": "In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT), pages 4171–4186."
-      },
-      {
-       "id": "s-references-22-4",
-       "original": "Association for Computational Linguistics, 2019."
+       "original": "End-to-end speech recognition contextualization with large language models."
       }
      ]
     },
     {
      "id": "p-references-23",
      "type": "paragraph",
-     "page": 13,
+     "page": 12,
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "[23] Yiming Cui, Wanxiang Che, Shijin Wang, and Ting Liu."
+       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 12406–12410."
       },
       {
        "id": "s-references-23-2",
-       "original": "Lert: A linguistically-motivated pre-trained language model. arXiv preprint arXiv:2211.05344, 2022."
+       "original": "IEEE, 2024."
       }
      ]
     },
     {
      "id": "p-references-24",
      "type": "paragraph",
-     "page": 13,
+     "page": 12,
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "[24] Anmol Gulati, James Qin, Chung-Cheng Chiu, Niki Parmar, Yu Zhang, Jiahui Yu, Wei Han, Shibo Wang, Zhengdong Zhang, Yonghui Wu, et al. Conformer: Convolution-augmented transformer for speech recognition. arXiv preprint arXiv:2005.08100, 2020."
+       "original": "[18] Xuelong Geng, Tianyi Xu, Kun Wei, Bingshen Mu, Hongfei Xue, He Wang, Yangze Li, Pengcheng Guo, Yuhang Dai, Longhao Li, et al. Unveiling the potential of llm-based asr on chinese open-source datasets."
+      },
+      {
+       "id": "s-references-24-2",
+       "original": "In 14th International Symposium on Chinese Spoken Language Processing (ISCSLP), pages 26–30."
+      },
+      {
+       "id": "s-references-24-3",
+       "original": "IEEE, 2024."
       }
      ]
     },
     {
      "id": "p-references-25",
      "type": "paragraph",
-     "page": 13,
+     "page": 12,
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "[25] A Vaswani."
-      },
-      {
-       "id": "s-references-25-2",
-       "original": "Attention is all you need."
-      },
-      {
-       "id": "s-references-25-3",
-       "original": "Advances in Neural Information Processing Systems, 2017."
+       "original": "[19] Ziyang Ma, Guanrou Yang, Yifan Yang, Zhifu Gao, Jiaming Wang, Zhihao Du, Fan Yu, Qian Chen, Siqi Zheng, Shiliang Zhang, et al. An embarrassingly simple approach for llm with strong asr capacity. arXiv preprint arXiv:2402.08846, 2024."
       }
      ]
     },
     {
      "id": "p-references-26",
      "type": "paragraph",
-     "page": 13,
+     "page": 12,
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "[26] Rico Sennrich."
-      },
-      {
-       "id": "s-references-26-2",
-       "original": "Neural machine translation of rare words with subword units. arXiv preprint"
+       "original": "[20] Dzmitry Bahdanau, Jan Chorowski, Dmitriy Serdyuk, Philemon Brakel, and Yoshua Bengio."
       }
      ]
     },
     {
      "id": "p-references-27",
      "type": "paragraph",
-     "page": 13,
+     "page": 12,
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "[27] Alex Graves, Santiago Fernández, Faustino Gomez, and Jürgen Schmidhuber."
+       "original": "End-to-end attention-based large vocabulary speech recognition."
       },
       {
        "id": "s-references-27-2",
-       "original": "Connectionist temporal classification: labelling unsegmented sequence data with recurrent neural networks."
+       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 4945–4949."
       },
       {
        "id": "s-references-27-3",
-       "original": "In Proceedings of the 23rd international conference on Machine learning, pages 369–376, 2006."
+       "original": "IEEE, 2016."
       }
      ]
     },
     {
      "id": "p-references-28",
      "type": "paragraph",
-     "page": 13,
+     "page": 12,
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "[28] Qwen team."
+       "original": "[21] William Chan, Navdeep Jaitly, Quoc Le, and Oriol Vinyals."
       },
       {
        "id": "s-references-28-2",
-       "original": "Qwen2 technical report. arXiv preprint arXiv:2407.10671, 2024."
+       "original": "Listen, attend and spell: A neural network for large vocabulary conversational speech recognition."
+      },
+      {
+       "id": "s-references-28-3",
+       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 4960–4964."
+      },
+      {
+       "id": "s-references-28-4",
+       "original": "IEEE, 2016."
       }
      ]
     },
     {
      "id": "p-references-29",
      "type": "paragraph",
-     "page": 13,
+     "page": 12,
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "[29] Shiliang Zhang, Ming Lei, Zhijie Yan, and Lirong Dai."
+       "original": "[22] Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova."
       },
       {
        "id": "s-references-29-2",
-       "original": "Deep-fsmn for large vocabulary continuous speech recognition."
+       "original": "Bert: Pre-training of deep bidirectional transformers for language understanding."
       },
       {
        "id": "s-references-29-3",
-       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 5869–5873."
+       "original": "In Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT), pages 4171–4186."
       },
       {
        "id": "s-references-29-4",
-       "original": "IEEE, 2018."
+       "original": "Association for Computational Linguistics, 2019."
       }
      ]
     },
@@ -2971,15 +3202,11 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "[30] Zhifu Gao, Zerui Li, Jiaming Wang, Haoneng Luo, Xian Shi, Mengzhe Chen, Yabin Li, Lingyun Zuo, Zhihao Du, Zhangyu Xiao, and Shiliang Zhang."
+       "original": "[23] Yiming Cui, Wanxiang Che, Shijin Wang, and Ting Liu."
       },
       {
        "id": "s-references-30-2",
-       "original": "Funasr: A fundamental end-to-end speech recognition toolkit."
-      },
-      {
-       "id": "s-references-30-3",
-       "original": "In INTERSPEECH, 2023."
+       "original": "Lert: A linguistically-motivated pre-trained language model. arXiv preprint arXiv:2211.05344, 2022."
       }
      ]
     },
@@ -2990,15 +3217,7 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "[31] Shiliang Zhang, Hui Jiang, Shifu Xiong, Si Wei, and Li-Rong Dai."
-      },
-      {
-       "id": "s-references-31-2",
-       "original": "Compact feedforward sequential memory networks for large vocabulary continuous speech recognition."
-      },
-      {
-       "id": "s-references-31-3",
-       "original": "In Interspeech, pages 3389–3393, 2016."
+       "original": "[24] Anmol Gulati, James Qin, Chung-Cheng Chiu, Niki Parmar, Yu Zhang, Jiahui Yu, Wei Han, Shibo Wang, Zhengdong Zhang, Yonghui Wu, et al. Conformer: Convolution-augmented transformer for speech recognition. arXiv preprint arXiv:2005.08100, 2020."
       }
      ]
     },
@@ -3009,21 +3228,23 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "[32] Jörgen Valk and Tanel Alumäe."
+       "original": "[25] A Vaswani."
       },
       {
        "id": "s-references-32-2",
-       "original": "Voxlingua107: a dataset for spoken language recognition."
+       "original": "Attention is all you need."
       },
       {
        "id": "s-references-32-3",
-       "original": "In 2021 IEEE Spoken Language Technology Workshop (SLT), pages 652–658."
-      },
-      {
-       "id": "s-references-32-4",
-       "original": "IEEE, 2021."
+       "original": "Advances in Neural Information Processing Systems,"
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 13,
+     "original": "2017."
     },
     {
      "id": "p-references-33",
@@ -3032,15 +3253,11 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "[33] Irshad Ahmad Thukroo, Rumaan Bashir, and Kaiser J Giri."
+       "original": "[26] Rico Sennrich."
       },
       {
        "id": "s-references-33-2",
-       "original": "A review into deep learning techniques for spoken language identification."
-      },
-      {
-       "id": "s-references-33-3",
-       "original": "Multimedia tools and applications, 81(22):32593– 32624, 2022."
+       "original": "Neural machine translation of rare words with subword units. arXiv preprint arXiv:1508.07909, 2015."
       }
      ]
     },
@@ -3051,15 +3268,15 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "[34] Adal A Alashban, Mustafa A Qamhan, Ali H Meftah, and Yousef A Alotaibi."
+       "original": "[27] Alex Graves, Santiago Fernández, Faustino Gomez, and Jürgen Schmidhuber."
       },
       {
        "id": "s-references-34-2",
-       "original": "Spoken language identification system using convolutional recurrent neural network."
+       "original": "Connectionist temporal classification: labelling unsegmented sequence data with recurrent neural networks."
       },
       {
        "id": "s-references-34-3",
-       "original": "Applied Sciences, 12(18):9181, 2022."
+       "original": "In Proceedings of the 23rd international conference on Machine learning, pages 369–376, 2006."
       }
      ]
     },
@@ -3070,15 +3287,11 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-35-1",
-       "original": "[35] Douglas O’Shaughnessy."
+       "original": "[28] Qwen team."
       },
       {
        "id": "s-references-35-2",
-       "original": "Spoken language identification: An overview of past and present research trends."
-      },
-      {
-       "id": "s-references-35-3",
-       "original": "Speech Communication, 167:103167, 2025."
+       "original": "Qwen2 technical report. arXiv preprint arXiv:2407.10671, 2024."
       }
      ]
     },
@@ -3089,19 +3302,19 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "[36] Hui Bu, Jiayu Du, Xingyu Na, Bengu Wu, and Hao Zheng."
+       "original": "[29] Shiliang Zhang, Ming Lei, Zhijie Yan, and Lirong Dai."
       },
       {
        "id": "s-references-36-2",
-       "original": "Aishell-1: An open-source mandarin speech corpus and a speech recognition baseline."
+       "original": "Deep-fsmn for large vocabulary continuous speech recognition."
       },
       {
        "id": "s-references-36-3",
-       "original": "In 20th conference of the oriental chapter of the international coordinating committee on speech databases and speech I/O systems and assessment (O-COCOSDA), pages 1–5."
+       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 5869–5873."
       },
       {
        "id": "s-references-36-4",
-       "original": "IEEE, 2017."
+       "original": "IEEE, 2018."
       }
      ]
     },
@@ -3112,11 +3325,15 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "[37] Jiayu Du, Xingyu Na, Xuechen Liu, and Hui Bu."
+       "original": "[30] Zhifu Gao, Zerui Li, Jiaming Wang, Haoneng Luo, Xian Shi, Mengzhe Chen, Yabin Li, Lingyun Zuo, Zhihao Du, Zhangyu Xiao, and Shiliang Zhang."
       },
       {
        "id": "s-references-37-2",
-       "original": "Aishell-2: Transforming mandarin asr research into industrial scale. arXiv preprint arXiv:1808.10583, 2018."
+       "original": "Funasr: A fundamental end-to-end speech recognition toolkit."
+      },
+      {
+       "id": "s-references-37-3",
+       "original": "In INTERSPEECH, 2023."
       }
      ]
     },
@@ -3127,15 +3344,15 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "[38] Binbin Zhang, Hang Lv, Pengcheng Guo, Qijie Shao, Chao Yang, Lei Xie, Xin Xu, Hui Bu, Xiaoyu Chen, Chenchen Zeng, et al. Wenetspeech: A 10000+ hours multi-domain mandarin corpus for speech recognition."
+       "original": "[31] Shiliang Zhang, Hui Jiang, Shifu Xiong, Si Wei, and Li-Rong Dai."
       },
       {
        "id": "s-references-38-2",
-       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6182–6186."
+       "original": "Compact feedforward sequential memory networks for large vocabulary continuous speech recognition."
       },
       {
        "id": "s-references-38-3",
-       "original": "IEEE, 2022."
+       "original": "In Interspeech, pages 3389–3393, 2016."
       }
      ]
     },
@@ -3146,122 +3363,162 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "[39] Zhiyuan Tang, Dong Wang, Yanguang Xu, Jianwei Sun, Xiaoning Lei, Shuaijiang Zhao, Cheng Wen, Xingjun Tan, Chuandong Xie, Shuran Zhou, et al. Kespeech: An open source speech dataset of mandarin and its eight subdialects."
+       "original": "[32] Jörgen Valk and Tanel Alumäe."
       },
       {
        "id": "s-references-39-2",
-       "original": "In Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2), 2021."
+       "original": "Voxlingua107: a dataset for spoken language recognition."
+      },
+      {
+       "id": "s-references-39-3",
+       "original": "In 2021 IEEE Spoken Language Technology Workshop (SLT), pages 652–658."
+      },
+      {
+       "id": "s-references-39-4",
+       "original": "IEEE, 2021."
       }
      ]
     },
     {
      "id": "p-references-40",
      "type": "paragraph",
-     "page": 14,
+     "page": 13,
      "sentences": [
       {
        "id": "s-references-40-1",
-       "original": "[40] Longhao Li, Zhao Guo, Hongjie Chen, Yuhang Dai, Ziyu Zhang, Hongfei Xue, Tianlun Zuo, Chengyou Wang, Shuiyuan Wang, Jie Li, et al. Wenetspeech-yue: A large-scale cantonese speech corpus with multi-dimensional annotation. arXiv preprint arXiv:2509.03959, 2025."
+       "original": "[33] Irshad Ahmad Thukroo, Rumaan Bashir, and Kaiser J Giri."
+      },
+      {
+       "id": "s-references-40-2",
+       "original": "A review into deep learning techniques for spoken language identification."
+      },
+      {
+       "id": "s-references-40-3",
+       "original": "Multimedia tools and applications, 81(22):32593–"
       }
      ]
+    },
+    {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 13,
+     "original": "32624, 2022."
     },
     {
      "id": "p-references-41",
      "type": "paragraph",
-     "page": 14,
+     "page": 13,
      "sentences": [
       {
        "id": "s-references-41-1",
-       "original": "[41] Yuhang Dai, Ziyu Zhang, Shuai Wang, Longhao Li, Zhao Guo, Tianlun Zuo, Shuiyuan Wang, Hongfei Xue, Chengyou Wang, Qing Wang, et al. Wenetspeech-chuan: A large-scale sichuanese corpus with rich annotation for dialectal speech processing. arXiv preprint arXiv:2509.18004, 2025."
+       "original": "[34] Adal A Alashban, Mustafa A Qamhan, Ali H Meftah, and Yousef A Alotaibi."
+      },
+      {
+       "id": "s-references-41-2",
+       "original": "Spoken language identification system using convolutional recurrent neural network."
+      },
+      {
+       "id": "s-references-41-3",
+       "original": "Applied Sciences,"
       }
      ]
     },
     {
-     "id": "eq-references-1",
+     "id": "eq-references-8",
      "type": "equation",
-     "page": 14,
-     "original": "[42] Magic Data. Open source asr corpus. https://magichub.com/datasets, 2026."
+     "page": 13,
+     "original": "12(18):9181, 2022."
     },
     {
      "id": "p-references-42",
      "type": "paragraph",
-     "page": 14,
+     "page": 13,
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "[43] Yu Wang, Xinsheng Wang, Pengcheng Zhu, Jie Wu, Hanzhao Li, Heyang Xue, Yongmao Zhang, Lei Xie, and Mengxiao Bi."
+       "original": "[35] Douglas O’Shaughnessy."
       },
       {
        "id": "s-references-42-2",
-       "original": "Opencpop: A high-quality open source chinese popular song corpus for singing voice synthesis. arXiv preprint arXiv:2201.07429, 2022."
+       "original": "Spoken language identification: An overview of past and present research trends."
+      },
+      {
+       "id": "s-references-42-3",
+       "original": "Speech Communication, 167:103167, 2025."
       }
      ]
     },
     {
      "id": "p-references-43",
      "type": "paragraph",
-     "page": 14,
+     "page": 13,
      "sentences": [
       {
        "id": "s-references-43-1",
-       "original": "[44] VolcanoEngine."
+       "original": "[36] Hui Bu, Jiayu Du, Xingyu Na, Bengu Wu, and Hao Zheng."
       },
       {
        "id": "s-references-43-2",
-       "original": "Doubao-asr. https://www.volcengine.com/docs/6561/ 1354868, 2026."
+       "original": "Aishell-1: An open-source mandarin speech corpus and a speech recognition baseline."
+      },
+      {
+       "id": "s-references-43-3",
+       "original": "In 20th conference of the oriental chapter of the international coordinating committee on speech databases and speech I/O systems and assessment (O-COCOSDA), pages 1–5."
+      },
+      {
+       "id": "s-references-43-4",
+       "original": "IEEE, 2017."
       }
      ]
     },
     {
      "id": "p-references-44",
      "type": "paragraph",
-     "page": 14,
+     "page": 13,
      "sentences": [
       {
        "id": "s-references-44-1",
-       "original": "[45] Alibaba Cloud."
+       "original": "[37] Jiayu Du, Xingyu Na, Xuechen Liu, and Hui Bu."
       },
       {
        "id": "s-references-44-2",
-       "original": "Fun-asr. https://help.aliyun.com/zh/model-studio/ recording-file-recognition, 2026."
+       "original": "Aishell-2: Transforming mandarin asr research into industrial scale. arXiv preprint arXiv:1808.10583, 2018."
       }
      ]
     },
     {
      "id": "p-references-45",
      "type": "paragraph",
-     "page": 14,
+     "page": 13,
      "sentences": [
       {
        "id": "s-references-45-1",
-       "original": "[46] Silero Team."
+       "original": "[38] Binbin Zhang, Hang Lv, Pengcheng Guo, Qijie Shao, Chao Yang, Lei Xie, Xin Xu, Hui Bu, Xiaoyu Chen, Chenchen Zeng, et al. Wenetspeech: A 10000+ hours multi-domain mandarin corpus for speech recognition."
       },
       {
        "id": "s-references-45-2",
-       "original": "Silero vad: pre-trained enterprise-grade voice activity detector (vad), number detector and language classifier. https://github.com/snakers4/silero-vad, 2024."
+       "original": "In International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6182–6186."
+      },
+      {
+       "id": "s-references-45-3",
+       "original": "IEEE, 2022."
       }
      ]
     },
     {
      "id": "p-references-46",
      "type": "paragraph",
-     "page": 14,
+     "page": 13,
      "sentences": [
       {
        "id": "s-references-46-1",
-       "original": "[47] TEN Team."
+       "original": "[39] Zhiyuan Tang, Dong Wang, Yanguang Xu, Jianwei Sun, Xiaoning Lei, Shuaijiang Zhao, Cheng Wen, Xingjun Tan, Chuandong Xie, Shuran Zhou, et al. Kespeech: An open source speech dataset of mandarin and its eight subdialects."
       },
       {
        "id": "s-references-46-2",
-       "original": "Ten vad: A low-latency, lightweight and high-performance streaming voice activity detector (vad). https://github.com/TEN-framework/ten-vad.git, 2025."
+       "original": "In Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2), 2021."
       }
      ]
-    },
-    {
-     "id": "eq-references-2",
-     "type": "equation",
-     "page": 14,
-     "original": "[48] Google. webrtc: Real-time communication for the web. https://webrtc.org, 2026."
     },
     {
      "id": "p-references-47",
@@ -3270,11 +3527,7 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-47-1",
-       "original": "[49] Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera, and Ankur Bapna."
-      },
-      {
-       "id": "s-references-47-2",
-       "original": "Fleurs: Few-shot learning evaluation of universal representations of speech. arXiv preprint arXiv:2205.12446, 2022."
+       "original": "[40] Longhao Li, Zhao Guo, Hongjie Chen, Yuhang Dai, Ziyu Zhang, Hongfei Xue, Tianlun Zuo, Chengyou Wang, Shuiyuan Wang, Jie Li, et al. Wenetspeech-yue: A large-scale cantonese speech corpus with multi-dimensional annotation. arXiv preprint arXiv:2509.03959, 2025."
       }
      ]
     },
@@ -3285,17 +3538,21 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-48-1",
-       "original": "[50] Rosana Ardila, Megan Branson, Kelly Davis, Michael Kohler, Josh Meyer, Michael Henretty, Reuben Morais, Lindsay Saunders, Francis Tyers, and Gregor Weber."
-      },
-      {
-       "id": "s-references-48-2",
-       "original": "Common voice: A massively-multilingual speech corpus."
-      },
-      {
-       "id": "s-references-48-3",
-       "original": "In Proceedings of the twelfth language resources and evaluation conference, pages 4218–4222, 2020."
+       "original": "[41] Yuhang Dai, Ziyu Zhang, Shuai Wang, Longhao Li, Zhao Guo, Tianlun Zuo, Shuiyuan Wang, Hongfei Xue, Chengyou Wang, Qing Wang, et al. Wenetspeech-chuan: A large-scale sichuanese corpus with rich annotation for dialectal speech processing. arXiv preprint arXiv:2509.18004,"
       }
      ]
+    },
+    {
+     "id": "eq-references-9",
+     "type": "equation",
+     "page": 14,
+     "original": "2025."
+    },
+    {
+     "id": "eq-references-10",
+     "type": "equation",
+     "page": 14,
+     "original": "[42] Magic Data. Open source asr corpus. https://magichub.com/datasets, 2026."
     },
     {
      "id": "p-references-49",
@@ -3304,19 +3561,11 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-49-1",
-       "original": "[51] Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
+       "original": "[43] Yu Wang, Xinsheng Wang, Pengcheng Zhu, Jie Wu, Hanzhao Li, Heyang Xue, Yongmao Zhang, Lei Xie, and Mengxiao Bi."
       },
       {
        "id": "s-references-49-2",
-       "original": "Robust speech recognition via large-scale weak supervision."
-      },
-      {
-       "id": "s-references-49-3",
-       "original": "In International conference on machine learning, pages 28492–28518."
-      },
-      {
-       "id": "s-references-49-4",
-       "original": "PMLR, 2023."
+       "original": "Opencpop: A high-quality open source chinese popular song corpus for singing voice synthesis. arXiv preprint arXiv:2201.07429, 2022."
       }
      ]
     },
@@ -3327,11 +3576,7 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-50-1",
-       "original": "[52] Mirco Ravanelli, Titouan Parcollet, Peter Plantinga, Aku Rouhe, Samuele Cornell, Loren Lugosch, Cem Subakan, Nauman Dawalatabad, Abdelwahab Heba, Jianyuan Zhong, Ju-Chieh Chou, Sung-Lin Yeh, Szu-Wei Fu, Chien-Feng Liao, Elena Rastorgueva, François Grondin, William Aris, Hwidong Na, Yan Gao, Renato De Mori, and Yoshua Bengio."
-      },
-      {
-       "id": "s-references-50-2",
-       "original": "SpeechBrain: A general-purpose speech toolkit, 2021. arXiv:2106.04624."
+       "original": "[44] VolcanoEngine."
       }
      ]
     },
@@ -3342,10 +3587,179 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-references-51-1",
+       "original": "Doubao-asr."
+      }
+     ]
+    },
+    {
+     "id": "p-references-52",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-52-1",
+       "original": "https://www.volcengine.com/docs/6561/"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-11",
+     "type": "equation",
+     "page": 14,
+     "original": "1354868, 2026."
+    },
+    {
+     "id": "p-references-53",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-53-1",
+       "original": "[45] Alibaba Cloud."
+      }
+     ]
+    },
+    {
+     "id": "p-references-54",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-54-1",
+       "original": "Fun-asr."
+      }
+     ]
+    },
+    {
+     "id": "p-references-55",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-55-1",
+       "original": "https://help.aliyun.com/zh/model-studio/ recording-file-recognition, 2026."
+      }
+     ]
+    },
+    {
+     "id": "p-references-56",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-56-1",
+       "original": "[46] Silero Team."
+      },
+      {
+       "id": "s-references-56-2",
+       "original": "Silero vad: pre-trained enterprise-grade voice activity detector (vad), number detector and language classifier. https://github.com/snakers4/silero-vad, 2024."
+      }
+     ]
+    },
+    {
+     "id": "p-references-57",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-57-1",
+       "original": "[47] TEN Team."
+      },
+      {
+       "id": "s-references-57-2",
+       "original": "Ten vad: A low-latency, lightweight and high-performance streaming voice activity detector (vad). https://github.com/TEN-framework/ten-vad.git, 2025."
+      }
+     ]
+    },
+    {
+     "id": "eq-references-12",
+     "type": "equation",
+     "page": 14,
+     "original": "[48] Google. webrtc: Real-time communication for the web. https://webrtc.org, 2026."
+    },
+    {
+     "id": "p-references-58",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-58-1",
+       "original": "[49] Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera, and Ankur Bapna."
+      },
+      {
+       "id": "s-references-58-2",
+       "original": "Fleurs: Few-shot learning evaluation of universal representations of speech. arXiv preprint arXiv:2205.12446, 2022."
+      }
+     ]
+    },
+    {
+     "id": "p-references-59",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-59-1",
+       "original": "[50] Rosana Ardila, Megan Branson, Kelly Davis, Michael Kohler, Josh Meyer, Michael Henretty, Reuben Morais, Lindsay Saunders, Francis Tyers, and Gregor Weber."
+      },
+      {
+       "id": "s-references-59-2",
+       "original": "Common voice: A massively-multilingual speech corpus."
+      },
+      {
+       "id": "s-references-59-3",
+       "original": "In Proceedings of the twelfth language resources and evaluation conference, pages 4218–4222, 2020."
+      }
+     ]
+    },
+    {
+     "id": "p-references-60",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-60-1",
+       "original": "[51] Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
+      },
+      {
+       "id": "s-references-60-2",
+       "original": "Robust speech recognition via large-scale weak supervision."
+      },
+      {
+       "id": "s-references-60-3",
+       "original": "In International conference on machine learning, pages 28492–28518."
+      },
+      {
+       "id": "s-references-60-4",
+       "original": "PMLR, 2023."
+      }
+     ]
+    },
+    {
+     "id": "p-references-61",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-61-1",
+       "original": "[52] Mirco Ravanelli, Titouan Parcollet, Peter Plantinga, Aku Rouhe, Samuele Cornell, Loren Lugosch, Cem Subakan, Nauman Dawalatabad, Abdelwahab Heba, Jianyuan Zhong, Ju-Chieh Chou, Sung-Lin Yeh, Szu-Wei Fu, Chien-Feng Liao, Elena Rastorgueva, François Grondin, William Aris, Hwidong Na, Yan Gao, Renato De Mori, and Yoshua Bengio."
+      },
+      {
+       "id": "s-references-61-2",
+       "original": "SpeechBrain: A general-purpose speech toolkit, 2021. arXiv:2106.04624."
+      }
+     ]
+    },
+    {
+     "id": "p-references-62",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-references-62-1",
        "original": "[53] Yangyang Meng, Jinpeng Li, Guodong Lin, Yu Pu, Guanbo Wang, Hu Du, Zhiming Shao, Yukai Huang, Ke Li, and Wei-Qiang Zhang."
       },
       {
-       "id": "s-references-51-2",
+       "id": "s-references-62-2",
        "original": "Dolphin: A large-scale automatic speech recognition model for eastern languages. arXiv preprint arXiv:2503.20212, 2025."
       }
      ]
@@ -3396,101 +3810,395 @@ globalThis.PAPER_2603_10420 = {
      "page": 15,
      "original": "Table 6: Comparison of Character Error Rate (CER%) for FireRedASR2-LLM (FRASR2-LLM), FireRedASR2-AED (FRASR2-AED), and other large ASR baselines on public ASR test sets.",
      "zh": "Table 6：FireRedASR2-LLM（FRASR2-LLM）、FireRedASR2-AED（FRASR2-AED）与其他大型 ASR 基线在公开 ASR 测试集上的字错误率（CER%）对比。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-test-set-model-4",
+   "num": null,
+   "level": 2,
+   "page": 15,
+   "title": {
+    "original": "Test set \\ Model",
+    "zh": "Test set \\ Model"
+   },
+   "blocks": [
     {
-     "id": "p-A-2",
+     "id": "p-test-set-model-4-1",
      "type": "paragraph",
      "page": 15,
      "sentences": [
       {
-       "id": "s-A-2-1",
-       "original": "FRASR2-LLM FRASR2-AED Doubao-ASR Qwen3-ASR Fun-ASR Fun-Nano",
-       "zh": "FRASR2-LLM FRASR2-AED Doubao-ASR Qwen3-ASR Fun-ASR Fun-Nano"
+       "id": "s-test-set-model-4-1-1",
+       "original": "FRASR2-LLM FRASR2-AED Doubao-ASR Qwen3-ASR Fun-ASR Fun-Nano Avg-Mandarin-4",
+       "zh": "表头：FRASR2-LLM / FRASR2-AED / Doubao-ASR / Qwen3-ASR / Fun-ASR / Fun-Nano——Avg-Mandarin-4（后续照原文）。"
       }
      ]
     },
     {
-     "id": "p-A-3",
-     "type": "paragraph",
+     "id": "eq-test-set-model-4-1",
+     "type": "equation",
      "page": 15,
-     "sentences": [
-      {
-       "id": "s-A-3-1",
-       "original": "Avg-Mandarin-4 2.89 3.05 3.69 3.76 4.16 4.55 Avg-Dialect-19 11.55 11.67 15.39 11.85 12.76 15.07 Avg-All-24 9.67 9.80 12.98 10.12 10.92 12.81 0.64 0.57 1.52 1.48 1.64 1.96 2.15 2.51 2.77 2.71 2.38 3.02 ws-net 4.44 4.57 5.73 4.97 6.85 6.93 ws-meeting 4.32 4.53 4.74 5.88 5.78 6.29",
-       "zh": "Avg-Mandarin-4 2.89 3.05 3.69 3.76 4.16 4.55 Avg-Dialect-19 11.55 11.67 15.39 11.85 12.76 15.07 Avg-All-24 9.67 9.80 12.98 10.12 10.92 12.81 0.64 0.57 1.52 1.48 1.64 1.96 2.15 2.51 2.77 2.71 2.38 3.02 ws-net 4.44 4.57 5.73 4.97 6.85 6.93 ws-meeting 4.32 4.53 4.74 5.88 5.78 6.29（数值与原文一致，依次为六个模型在各聚合指标与普通话测试集上的 CER%）"
-      }
-     ]
+     "original": "2.89 3.05 3.69 3.76 4.16 4.55"
     },
     {
-     "id": "p-A-4",
-     "type": "paragraph",
+     "id": "eq-test-set-model-4-2",
+     "type": "equation",
      "page": 15,
-     "sentences": [
-      {
-       "id": "s-A-4-1",
-       "original": "kespeech 3.08 3.60 5.38 5.10 5.36 7.66 ws-yue-short 5.14 5.15 10.51 5.82 7.34 8.82 ws-yue-long 8.71 8.54 11.39 8.85 10.14 11.36 ws-chuan-easy 10.90 10.60 11.33 11.99 12.46 14.05 ws-chuan-hard 20.71 21.35 20.77 21.63 22.49 25.32 md-heavy 7.42 7.43 7.69 8.02 9.13 9.97 md-yue-conv 12.23 11.66 26.25 9.76 33.71 15.68 md-yue-daily 3.61 3.35 12.82 3.66 2.69 5.67 md-yue-vehicle 4.50 4.83 8.66 4.28 6.00 7.04 md-chuan-conv 13.18 13.07 11.77 14.35 14.01 17.11 md-chuan-daily 4.90 5.17 3.90 4.93 3.98 5.95 md-shanghai-conv 28.70 27.02 45.15 29.77 25.49 37.08 md-shanghai-daily 24.94 24.18 44.06 23.93 12.55 28.77 md-wu 7.15 7.14 7.70 7.57 10.63 10.56 md-zheng-conv 10.20 10.65 9.83 9.55 10.85 13.09 md-zheng-daily 5.80 6.26 5.77 5.88 6.29 8.18 md-wuhan 9.60 10.81 9.94 10.22 4.34 8.70 md-tianjin 15.45 15.30 15.79 16.16 19.27 22.03 md-changsha 23.18 25.64 23.76 23.70 25.66 29.23",
-       "zh": "kespeech 3.08 3.60 5.38 5.10 5.36 7.66 ws-yue-short 5.14 5.15 10.51 5.82 7.34 8.82 ws-yue-long 8.71 8.54 11.39 8.85 10.14 11.36 ws-chuan-easy 10.90 10.60 11.33 11.99 12.46 14.05 ws-chuan-hard 20.71 21.35 20.77 21.63 22.49 25.32 md-heavy 7.42 7.43 7.69 8.02 9.13 9.97 md-yue-conv 12.23 11.66 26.25 9.76 33.71 15.68 md-yue-daily 3.61 3.35 12.82 3.66 2.69 5.67 md-yue-vehicle 4.50 4.83 8.66 4.28 6.00 7.04 md-chuan-conv 13.18 13.07 11.77 14.35 14.01 17.11 md-chuan-daily 4.90 5.17 3.90 4.93 3.98 5.95 md-shanghai-conv 28.70 27.02 45.15 29.77 25.49 37.08 md-shanghai-daily 24.94 24.18 44.06 23.93 12.55 28.77 md-wu 7.15 7.14 7.70 7.57 10.63 10.56 md-zheng-conv 10.20 10.65 9.83 9.55 10.85 13.09 md-zheng-daily 5.80 6.26 5.77 5.88 6.29 8.18 md-wuhan 9.60 10.81 9.94 10.22 4.34 8.70 md-tianjin 15.45 15.30 15.79 16.16 19.27 22.03 md-changsha 23.18 25.64 23.76 23.70 25.66 29.23（19 个方言测试集的逐集 CER%，数值与原文一致）"
-      }
-     ]
+     "original": "Avg-Dialect-19"
     },
     {
-     "id": "p-A-5",
-     "type": "paragraph",
+     "id": "eq-test-set-model-4-3",
+     "type": "equation",
      "page": 15,
-     "sentences": [
-      {
-       "id": "s-A-5-1",
-       "original": "opencpop 1.12 1.17 4.36 2.57 3.05 2.95",
-       "zh": "opencpop 1.12 1.17 4.36 2.57 3.05 2.95（歌声歌词测试集 CER%，数值与原文一致）"
-      }
-     ]
+     "original": "11.55 11.67 15.39 11.85 12.76 15.07"
     },
     {
-     "id": "p-A-6",
+     "id": "eq-test-set-model-4-4",
+     "type": "equation",
+     "page": 15,
+     "original": "Avg-All-24"
+    },
+    {
+     "id": "eq-test-set-model-4-5",
+     "type": "equation",
+     "page": 15,
+     "original": "9.67 9.80 12.98 10.12 10.92 12.81"
+    },
+    {
+     "id": "eq-test-set-model-4-6",
+     "type": "equation",
+     "page": 15,
+     "original": "aishell1"
+    },
+    {
+     "id": "eq-test-set-model-4-7",
+     "type": "equation",
+     "page": 15,
+     "original": "0.64 0.57 1.52 1.48 1.64 1.96"
+    },
+    {
+     "id": "eq-test-set-model-4-8",
+     "type": "equation",
+     "page": 15,
+     "original": "aishell2"
+    },
+    {
+     "id": "eq-test-set-model-4-9",
+     "type": "equation",
+     "page": 15,
+     "original": "2.15 2.51 2.77 2.71 2.38 3.02"
+    },
+    {
+     "id": "eq-test-set-model-4-10",
+     "type": "equation",
+     "page": 15,
+     "original": "ws-net"
+    },
+    {
+     "id": "eq-test-set-model-4-11",
+     "type": "equation",
+     "page": 15,
+     "original": "4.44 4.57 5.73 4.97 6.85 6.93"
+    },
+    {
+     "id": "eq-test-set-model-4-12",
+     "type": "equation",
+     "page": 15,
+     "original": "ws-meeting"
+    },
+    {
+     "id": "eq-test-set-model-4-13",
+     "type": "equation",
+     "page": 15,
+     "original": "4.32 4.53 4.74 5.88 5.78 6.29"
+    },
+    {
+     "id": "eq-test-set-model-4-14",
+     "type": "equation",
+     "page": 15,
+     "original": "kespeech"
+    },
+    {
+     "id": "eq-test-set-model-4-15",
+     "type": "equation",
+     "page": 15,
+     "original": "3.08 3.60 5.38 5.10 5.36 7.66"
+    },
+    {
+     "id": "eq-test-set-model-4-16",
+     "type": "equation",
+     "page": 15,
+     "original": "ws-yue-short"
+    },
+    {
+     "id": "eq-test-set-model-4-17",
+     "type": "equation",
+     "page": 15,
+     "original": "5.14 5.15 10.51 5.82 7.34 8.82"
+    },
+    {
+     "id": "eq-test-set-model-4-18",
+     "type": "equation",
+     "page": 15,
+     "original": "ws-yue-long"
+    },
+    {
+     "id": "eq-test-set-model-4-19",
+     "type": "equation",
+     "page": 15,
+     "original": "8.71 8.54 11.39 8.85 10.14 11.36"
+    },
+    {
+     "id": "eq-test-set-model-4-20",
+     "type": "equation",
+     "page": 15,
+     "original": "ws-chuan-easy"
+    },
+    {
+     "id": "eq-test-set-model-4-21",
+     "type": "equation",
+     "page": 15,
+     "original": "10.90 10.60 11.33 11.99 12.46 14.05"
+    },
+    {
+     "id": "eq-test-set-model-4-22",
+     "type": "equation",
+     "page": 15,
+     "original": "ws-chuan-hard"
+    },
+    {
+     "id": "eq-test-set-model-4-23",
+     "type": "equation",
+     "page": 15,
+     "original": "20.71 21.35 20.77 21.63 22.49 25.32"
+    },
+    {
+     "id": "eq-test-set-model-4-24",
+     "type": "equation",
+     "page": 15,
+     "original": "md-heavy"
+    },
+    {
+     "id": "eq-test-set-model-4-25",
+     "type": "equation",
+     "page": 15,
+     "original": "7.42 7.43 7.69 8.02 9.13 9.97"
+    },
+    {
+     "id": "eq-test-set-model-4-26",
+     "type": "equation",
+     "page": 15,
+     "original": "md-yue-conv"
+    },
+    {
+     "id": "eq-test-set-model-4-27",
+     "type": "equation",
+     "page": 15,
+     "original": "12.23 11.66 26.25 9.76 33.71 15.68"
+    },
+    {
+     "id": "eq-test-set-model-4-28",
+     "type": "equation",
+     "page": 15,
+     "original": "md-yue-daily"
+    },
+    {
+     "id": "eq-test-set-model-4-29",
+     "type": "equation",
+     "page": 15,
+     "original": "3.61 3.35 12.82 3.66 2.69 5.67"
+    },
+    {
+     "id": "eq-test-set-model-4-30",
+     "type": "equation",
+     "page": 15,
+     "original": "md-yue-vehicle"
+    },
+    {
+     "id": "eq-test-set-model-4-31",
+     "type": "equation",
+     "page": 15,
+     "original": "4.50 4.83 8.66 4.28 6.00 7.04"
+    },
+    {
+     "id": "eq-test-set-model-4-32",
+     "type": "equation",
+     "page": 15,
+     "original": "md-chuan-conv"
+    },
+    {
+     "id": "eq-test-set-model-4-33",
+     "type": "equation",
+     "page": 15,
+     "original": "13.18 13.07 11.77 14.35 14.01 17.11"
+    },
+    {
+     "id": "eq-test-set-model-4-34",
+     "type": "equation",
+     "page": 15,
+     "original": "md-chuan-daily"
+    },
+    {
+     "id": "eq-test-set-model-4-35",
+     "type": "equation",
+     "page": 15,
+     "original": "4.90 5.17 3.90 4.93 3.98 5.95"
+    },
+    {
+     "id": "eq-test-set-model-4-36",
+     "type": "equation",
+     "page": 15,
+     "original": "md-shanghai-conv"
+    },
+    {
+     "id": "eq-test-set-model-4-37",
+     "type": "equation",
+     "page": 15,
+     "original": "28.70 27.02 45.15 29.77 25.49 37.08"
+    },
+    {
+     "id": "eq-test-set-model-4-38",
+     "type": "equation",
+     "page": 15,
+     "original": "md-shanghai-daily"
+    },
+    {
+     "id": "eq-test-set-model-4-39",
+     "type": "equation",
+     "page": 15,
+     "original": "24.94 24.18 44.06 23.93 12.55 28.77"
+    },
+    {
+     "id": "eq-test-set-model-4-40",
+     "type": "equation",
+     "page": 15,
+     "original": "md-wu"
+    },
+    {
+     "id": "eq-test-set-model-4-41",
+     "type": "equation",
+     "page": 15,
+     "original": "7.15 7.14 7.70 7.57 10.63 10.56"
+    },
+    {
+     "id": "eq-test-set-model-4-42",
+     "type": "equation",
+     "page": 15,
+     "original": "md-zheng-conv"
+    },
+    {
+     "id": "eq-test-set-model-4-43",
+     "type": "equation",
+     "page": 15,
+     "original": "10.20 10.65 9.83 9.55 10.85 13.09"
+    },
+    {
+     "id": "eq-test-set-model-4-44",
+     "type": "equation",
+     "page": 15,
+     "original": "md-zheng-daily"
+    },
+    {
+     "id": "eq-test-set-model-4-45",
+     "type": "equation",
+     "page": 15,
+     "original": "5.80 6.26 5.77 5.88 6.29 8.18"
+    },
+    {
+     "id": "eq-test-set-model-4-46",
+     "type": "equation",
+     "page": 15,
+     "original": "md-wuhan"
+    },
+    {
+     "id": "eq-test-set-model-4-47",
+     "type": "equation",
+     "page": 15,
+     "original": "9.60 10.81 9.94 10.22 4.34 8.70"
+    },
+    {
+     "id": "eq-test-set-model-4-48",
+     "type": "equation",
+     "page": 15,
+     "original": "md-tianjin"
+    },
+    {
+     "id": "eq-test-set-model-4-49",
+     "type": "equation",
+     "page": 15,
+     "original": "15.45 15.30 15.79 16.16 19.27 22.03"
+    },
+    {
+     "id": "eq-test-set-model-4-50",
+     "type": "equation",
+     "page": 15,
+     "original": "md-changsha"
+    },
+    {
+     "id": "eq-test-set-model-4-51",
+     "type": "equation",
+     "page": 15,
+     "original": "23.18 25.64 23.76 23.70 25.66 29.23"
+    },
+    {
+     "id": "eq-test-set-model-4-52",
+     "type": "equation",
+     "page": 15,
+     "original": "opencpop"
+    },
+    {
+     "id": "eq-test-set-model-4-53",
+     "type": "equation",
+     "page": 15,
+     "original": "1.12 1.17 4.36 2.57 3.05 2.95"
+    },
+    {
+     "id": "p-test-set-model-4-2",
      "type": "paragraph",
      "page": 15,
      "sentences": [
       {
-       "id": "s-A-6-1",
+       "id": "s-test-set-model-4-2-1",
        "original": "Abbreviations: ws denotes WenetSpeech; md denotes MagicData; conv denotes Conversational; daily denotes Daily-use; Fun-Nano denotes Fun-ASR-Nano-2512.",
-       "zh": "缩写说明：ws 表示 WenetSpeech；md 表示 MagicData；conv 表示对话（Conversational）；daily 表示日常用语（Daily-use）；Fun-Nano 表示 Fun-ASR-Nano-2512。"
+       "zh": "缩写说明：ws 表示 WenetSpeech；md 表示 MagicData；conv 表示 Conversational；daily 表示 Daily-use；Fun-Nano 表示 Fun-ASR-Nano-2512。"
       }
      ]
     },
     {
-     "id": "p-A-7",
+     "id": "p-test-set-model-4-3",
      "type": "paragraph",
      "page": 15,
      "sentences": [
       {
-       "id": "s-A-7-1",
+       "id": "s-test-set-model-4-3-1",
        "original": "API baselines: Doubao-ASR (volc.seedasr.auc) was evaluated in early February 2026, and Fun-ASR was evaluated in late November 2025.",
        "zh": "API 基线：Doubao-ASR（volc.seedasr.auc）于 2026 年 2 月初评测，Fun-ASR 于 2025 年 11 月底评测。"
       },
       {
-       "id": "s-A-7-2",
+       "id": "s-test-set-model-4-3-2",
        "original": "API results may change over time due to server-side updates and may include proprietary components.",
        "zh": "API 结果可能因服务端更新而随时间变化，且可能包含私有组件。"
       },
       {
-       "id": "s-A-7-3",
+       "id": "s-test-set-model-4-3-3",
        "original": "To ensure a fair comparison, we disabled ITN and punctuation in the API outputs whenever such options were available, and used the default VAD configuration provided by each API.",
        "zh": "为保证公平对比，凡 API 提供相应选项，我们都关闭了输出中的 ITN 与标点，并使用各 API 默认的 VAD 配置。"
       }
      ]
     },
     {
-     "id": "p-A-8",
+     "id": "p-test-set-model-4-4",
      "type": "paragraph",
      "page": 15,
      "sentences": [
       {
-       "id": "s-A-8-1",
+       "id": "s-test-set-model-4-4-1",
        "original": "Data overlap: Our ASR training data does not include any Chinese dialect or accented speech data from MagicData; all MagicData dialect datasets are used for evaluation only.",
        "zh": "数据重叠：我们的 ASR 训练数据不包含任何来自 MagicData 的中文方言或口音语音数据；所有 MagicData 方言数据集仅用于评测。"
       },
       {
-       "id": "s-A-8-2",
+       "id": "s-test-set-model-4-4-2",
        "original": "The Fun-ASR API may benefit from proprietary training data, which could explain its advantage on certain dialect subsets (e.g., MagicData Shanghai and Wuhan dialect test sets).",
        "zh": "Fun-ASR API 可能受益于其私有训练数据，这可以解释它在某些方言子集上的优势（例如 MagicData 上海话与武汉话测试集）。"
       }
@@ -3544,20 +4252,8 @@ globalThis.PAPER_2603_10420 = {
      "sentences": [
       {
        "id": "s-B-2-1-1",
-       "original": "Code English Name Chinese Name Code English Name Chinese Name",
+       "original": "Code English Name Chinese Name Code English Name Chinese Name zh Chinese 中文 en English 英语 es Spanish 西班牙语 fr French 法语 ja Japanese 日语 ko Korean 韩语 ru Russian 俄语 de German 德语 pt Portuguese 葡萄牙语 ar Arabic 阿拉伯语 ab Abkhazian 阿布哈兹语 af Afrikaans 南非荷兰语 am Amharic 阿姆哈拉语 as Assamese 阿萨姆语 az Azerbaijani 阿塞拜疆语 ba Bashkir 巴什基尔语 be Belarusian 白俄罗斯语 bg Bulgarian 保加利亚语 bn Bengali 孟加拉语 br Breton 布列塔尼语 bs Bosnian 波斯尼亚语 ca Catalan 加泰罗尼亚语 ceb Cebuano 宿务语 cs Czech 捷克语 cy Welsh 威尔士语 da Danish 丹麦语 el Greek 希腊语 eo Esperanto 世界语 et Estonian 爱沙尼亚语 eu Basque 巴斯克语 fa Persian 波斯语 fi Finnish 芬兰语 fo Faroese 法罗语 gl Galician 加利西亚语 gn Guarani 瓜拉尼语 gu Gujarati 古吉拉特语 gv Manx 马恩语 ha Hausa 豪萨语 haw Hawaiian 夏威夷语 hi Hindi 印地语 hr Croatian 克罗地亚语 ht Haitian Creole 海地克里奥尔语 hu Hungarian 匈牙利语 hy Armenian 亚美尼亚语 ia Interlingua 国际语 id Indonesian 印度尼西亚语 is Icelandic 冰岛语 it Italian 意大利语 iw Hebrew 希伯来语 jw Javanese 爪哇语 ka Georgian 格鲁吉亚语 kk Kazakh 哈萨克语 km Khmer 高棉语 kn Kannada 卡纳达语 la Latin 拉丁语 lb Luxembourgish 卢森堡语 ln Lingala 林加拉语 lo Lao 老挝语 lt Lithuanian 立陶宛语 lv Latvian 拉脱维亚语 mg Malagasy 马尔加什语 mi M¯aori 毛利语 mk Macedonian 马其顿语 ml Malayalam 马拉雅拉姆语 mn Mongolian 蒙古语 mr Marathi 马拉地语 ms Malay 马来语 mt Maltese 马耳他语 my Burmese 缅甸语 ne Nepali 尼泊尔语 nl Dutch 荷兰语 no Norwegian 挪威语 oc Occitan 奥克语 pa Punjabi 旁遮普语 pl Polish 波兰语 ps Pashto 普什图语 ro Romanian 罗马尼亚语 sd Sindhi 信德语 si Sinhala 僧伽罗语 sk Slovak 斯洛伐克语 sl Slovenian 斯洛文尼亚语 so Somali 索马里语 sq Albanian 阿尔巴尼亚语 sr Serbian 塞尔维亚语 sv Swedish 瑞典语 sw Swahili 斯瓦希里语 ta Tamil 泰米尔语 te Telugu 泰卢固语 th Thai 泰语 tr Turkish 土耳其语 uk Ukrainian 乌克兰语 ur Urdu 乌尔都语 uz Uzbek 乌兹别克语 vi Vietnamese 越南语 yi Yiddish 意第绪语 yo Yoruba 约鲁巴语",
        "zh": "代码 英文名 中文名 代码 英文名 中文名"
-      }
-     ]
-    },
-    {
-     "id": "p-B-2-2",
-     "type": "paragraph",
-     "page": 16,
-     "sentences": [
-      {
-       "id": "s-B-2-2-1",
-       "original": "zh Chinese 中文 en English 英语 es Spanish 西班牙语 fr French 法语 ja Japanese 日语 ko Korean 韩语 ru Russian 俄语 de German 德语 pt Portuguese 葡萄牙语 ar Arabic 阿拉伯语 ab Abkhazian 阿布哈兹语 af Afrikaans 南非荷兰语 am Amharic 阿姆哈拉语 as Assamese 阿萨姆语 az Azerbaijani 阿塞拜疆语 ba Bashkir 巴什基尔语 be Belarusian 白俄罗斯语 bg Bulgarian 保加利亚语 bn Bengali 孟加拉语 br Breton 布列塔尼语 bs Bosnian 波斯尼亚语 ca Catalan 加泰罗尼亚语 ceb Cebuano 宿务语 cs Czech 捷克语 cy Welsh 威尔士语 da Danish 丹麦语 el Greek 希腊语 eo Esperanto 世界语 et Estonian 爱沙尼亚语 eu Basque 巴斯克语 fa Persian 波斯语 fi Finnish 芬兰语 fo Faroese 法罗语 gl Galician 加利西亚语 gn Guarani 瓜拉尼语 gu Gujarati 古吉拉特语 gv Manx 马恩语 ha Hausa 豪萨语 haw Hawaiian 夏威夷语 hi Hindi 印地语 hr Croatian 克罗地亚语 ht Haitian Creole 海地克里奥尔语 hu Hungarian 匈牙利语 hy Armenian 亚美尼亚语 ia Interlingua 国际语 id Indonesian 印度尼西亚语 is Icelandic 冰岛语 it Italian 意大利语 iw Hebrew 希伯来语 jw Javanese 爪哇语 ka Georgian 格鲁吉亚语 kk Kazakh 哈萨克语 km Khmer 高棉语 kn Kannada 卡纳达语 la Latin 拉丁语 lb Luxembourgish 卢森堡语 ln Lingala 林加拉语 lo Lao 老挝语 lt Lithuanian 立陶宛语 lv Latvian 拉脱维亚语 mg Malagasy 马尔加什语 mi M¯aori 毛利语 mk Macedonian 马其顿语 ml Malayalam 马拉雅拉姆语 mn Mongolian 蒙古语 mr Marathi 马拉地语 ms Malay 马来语 mt Maltese 马耳他语 my Burmese 缅甸语 ne Nepali 尼泊尔语 nl Dutch 荷兰语 no Norwegian 挪威语 oc Occitan 奥克语 pa Punjabi 旁遮普语 pl Polish 波兰语 ps Pashto 普什图语 ro Romanian 罗马尼亚语 sd Sindhi 信德语 si Sinhala 僧伽罗语 sk Slovak 斯洛伐克语 sl Slovenian 斯洛文尼亚语 so Somali 索马里语 sq Albanian 阿尔巴尼亚语 sr Serbian 塞尔维亚语 sv Swedish 瑞典语 sw Swahili 斯瓦希里语 ta Tamil 泰米尔语 te Telugu 泰卢固语 th Thai 泰语 tr Turkish 土耳其语 uk Ukrainian 乌克兰语 ur Urdu 乌尔都语 uz Uzbek 乌兹别克语 vi Vietnamese 越南语 yi Yiddish 意第绪语 yo Yoruba 约鲁巴语",
-       "zh": "zh Chinese 中文 en English 英语 es Spanish 西班牙语 fr French 法语 ja Japanese 日语 ko Korean 韩语 ru Russian 俄语 de German 德语 pt Portuguese 葡萄牙语 ar Arabic 阿拉伯语 ab Abkhazian 阿布哈兹语 af Afrikaans 南非荷兰语 am Amharic 阿姆哈拉语 as Assamese 阿萨姆语 az Azerbaijani 阿塞拜疆语 ba Bashkir 巴什基尔语 be Belarusian 白俄罗斯语 bg Bulgarian 保加利亚语 bn Bengali 孟加拉语 br Breton 布列塔尼语 bs Bosnian 波斯尼亚语 ca Catalan 加泰罗尼亚语 ceb Cebuano 宿务语 cs Czech 捷克语 cy Welsh 威尔士语 da Danish 丹麦语 el Greek 希腊语 eo Esperanto 世界语 et Estonian 爱沙尼亚语 eu Basque 巴斯克语 fa Persian 波斯语 fi Finnish 芬兰语 fo Faroese 法罗语 gl Galician 加利西亚语 gn Guarani 瓜拉尼语 gu Gujarati 古吉拉特语 gv Manx 马恩语 ha Hausa 豪萨语 haw Hawaiian 夏威夷语 hi Hindi 印地语 hr Croatian 克罗地亚语 ht Haitian Creole 海地克里奥尔语 hu Hungarian 匈牙利语 hy Armenian 亚美尼亚语 ia Interlingua 国际语 id Indonesian 印度尼西亚语 is Icelandic 冰岛语 it Italian 意大利语 iw Hebrew 希伯来语 jw Javanese 爪哇语 ka Georgian 格鲁吉亚语 kk Kazakh 哈萨克语 km Khmer 高棉语 kn Kannada 卡纳达语 la Latin 拉丁语 lb Luxembourgish 卢森堡语 ln Lingala 林加拉语 lo Lao 老挝语 lt Lithuanian 立陶宛语 lv Latvian 拉脱维亚语 mg Malagasy 马尔加什语 mi Maori 毛利语 mk Macedonian 马其顿语 ml Malayalam 马拉雅拉姆语 mn Mongolian 蒙古语 mr Marathi 马拉地语 ms Malay 马来语 mt Maltese 马耳他语 my Burmese 缅甸语 ne Nepali 尼泊尔语 nl Dutch 荷兰语 no Norwegian 挪威语 oc Occitan 奥克语 pa Punjabi 旁遮普语 pl Polish 波兰语 ps Pashto 普什图语 ro Romanian 罗马尼亚语 sd Sindhi 信德语 si Sinhala 僧伽罗语 sk Slovak 斯洛伐克语 sl Slovenian 斯洛文尼亚语 so Somali 索马里语 sq Albanian 阿尔巴尼亚语 sr Serbian 塞尔维亚语 sv Swedish 瑞典语 sw Swahili 斯瓦希里语 ta Tamil 泰米尔语 te Telugu 泰卢固语 th Thai 泰语 tr Turkish 土耳其语 uk Ukrainian 乌克兰语 ur Urdu 乌尔都语 uz Uzbek 乌兹别克语 vi Vietnamese 越南语 yi Yiddish 意第绪语 yo Yoruba 约鲁巴语"
       }
      ]
     },
@@ -3569,50 +4265,14 @@ globalThis.PAPER_2603_10420 = {
      "zh": "Table 8：FireRedLID 支持的中文方言代码完整列表。"
     },
     {
-     "id": "p-B-2-3",
+     "id": "p-B-2-2",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-B-2-3-1",
-       "original": "Code English Name Chinese Name",
+       "id": "s-B-2-2-1",
+       "original": "Code English Name Chinese Name mandarin Chinese (Mandarin) 中文(普通话) yue Chinese (Yue: Guangdong/Hong Kong) 中文(粤语：广东/香港) wu Chinese (Wu: Shanghai/Wu) 中文(吴语：上海/吴语片区) min Chinese (Min: Fujian) 中文(闽语：福建) north Chinese (Mandarin-North: Shandong/Gansu/N- ingxia/Hebei/Shanxi/Liaoning/Shaanxi) 中文(官话-北方：山东/甘肃/宁夏/河 北/山西/辽宁/陕西) xinan Chinese (Mandarin-Southwest: Sichuan/Yunnan/Guizhou/Hubei/Chongqing) 中文(官话-西南：四川/云南/贵州/湖 北/重庆) xiang Chinese (Xiang: Hunan) 中文(湘语：湖南) bo Tibetan (in Chinese context) 中文(藏语)",
        "zh": "代码 英文名 中文名"
-      }
-     ]
-    },
-    {
-     "id": "p-B-2-4",
-     "type": "paragraph",
-     "page": 17,
-     "sentences": [
-      {
-       "id": "s-B-2-4-1",
-       "original": "mandarin Chinese (Mandarin) 中文(普通话) yue Chinese (Yue: Guangdong/Hong Kong) 中文(粤语：广东/香港) wu Chinese (Wu: Shanghai/Wu) 中文(吴语：上海/吴语片区) min Chinese (Min: Fujian) 中文(闽语：福建) north Chinese (Mandarin-North: Shandong/Gansu/N- ingxia/Hebei/Shanxi/Liaoning/Shaanxi)",
-       "zh": "mandarin 中文（普通话） yue 中文（粤语：广东/香港） wu 中文（吴语：上海/吴语片区） min 中文（闽语：福建） north 中文（官话-北方：山东/甘肃/宁夏/河北/山西/辽宁/陕西）"
-      }
-     ]
-    },
-    {
-     "id": "p-B-2-5",
-     "type": "paragraph",
-     "page": 17,
-     "sentences": [
-      {
-       "id": "s-B-2-5-1",
-       "original": "中文(官话-北方：山东/甘肃/宁夏/河 北/山西/辽宁/陕西) xinan Chinese (Mandarin-Southwest: Sichuan/Yunnan/Guizhou/Hubei/Chongqing)",
-       "zh": "（接上）xinan 中文（官话-西南：四川/云南/贵州/湖北/重庆）"
-      }
-     ]
-    },
-    {
-     "id": "p-B-2-6",
-     "type": "paragraph",
-     "page": 17,
-     "sentences": [
-      {
-       "id": "s-B-2-6-1",
-       "original": "中文(官话-西南：四川/云南/贵州/湖 北/重庆) xiang Chinese (Xiang: Hunan) 中文(湘语：湖南) bo Tibetan (in Chinese context) 中文(藏语)",
-       "zh": "（接上）xiang 中文（湘语：湖南） bo 中文（藏语，中文语境下的藏语）"
       }
      ]
     }
@@ -3623,7 +4283,7 @@ globalThis.PAPER_2603_10420 = {
   {
    "id": "ann-001",
    "anchor": {
-    "sentence_id": "s-1-3-1",
+    "sentence_id": "s-1-2-3",
     "quote": "VAD trained from ASR forced alignment"
    },
    "kind": "motivation",
@@ -3634,7 +4294,7 @@ globalThis.PAPER_2603_10420 = {
   {
    "id": "ann-002",
    "anchor": {
-    "sentence_id": "s-1-5-2",
+    "sentence_id": "s-1-4-2",
     "quote": "scaling supervised training data to approximately 200k hours"
    },
    "kind": "engineering",
@@ -3761,7 +4421,7 @@ globalThis.PAPER_2603_10420 = {
   {
    "id": "ann-014",
    "anchor": {
-    "sentence_id": "s-5-1-3-1",
+    "sentence_id": "s-5-1-2-1",
     "quote": "initialized from the pre-trained FireRedASR2-AED Encoder"
    },
    "kind": "connection",
@@ -3771,7 +4431,7 @@ globalThis.PAPER_2603_10420 = {
   {
    "id": "ann-015",
    "anchor": {
-    "sentence_id": "s-6-4-2",
+    "sentence_id": "s-6-5-2",
     "quote": "approximately 18.57B Chinese characters and 2.20B English words"
    },
    "kind": "number",
@@ -3813,7 +4473,7 @@ globalThis.PAPER_2603_10420 = {
   {
    "id": "ann-019",
    "anchor": {
-    "sentence_id": "s-7-1-8-1",
+    "sentence_id": "s-test-set-model-3-1",
     "quote": "does not include any Chinese dialect or accented speech data from MagicData"
    },
    "kind": "engineering",
@@ -3833,7 +4493,7 @@ globalThis.PAPER_2603_10420 = {
   {
    "id": "ann-021",
    "anchor": {
-    "sentence_id": "s-7-2-9-4",
+    "sentence_id": "s-metric-model-3-4",
     "quote": "achieve a very low miss rate but at the cost of a substantially higher false alarm rate"
    },
    "kind": "comparison",
@@ -3843,7 +4503,7 @@ globalThis.PAPER_2603_10420 = {
   {
    "id": "ann-022",
    "anchor": {
-    "sentence_id": "s-7-3-6-4",
+    "sentence_id": "s-test-set-model-2-2-4",
     "quote": "FireRedLID achieves 88.47% accuracy"
    },
    "kind": "number",

@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Qwen-Audio-3.0-TTS：基于多阶段训练范式的自由可控、高鲁棒语音合成 · 全文双语精读 | ASR/TTS 知识库</title>
-<meta name="description" content="Qwen-Audio-3.0-TTS：基于多阶段训练范式的自由可控、高鲁棒语音合成（Qwen-Audio-3.0-TTS: Freely Controllable and Highly Robust Speech Synthesis with Multi-Stage Training Paradigm）全文中文翻译 + 22 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta name="description" content="Qwen-Audio-3.0-TTS：基于多阶段训练范式的自由可控、高鲁棒语音合成（Qwen-Audio-3.0-TTS: Freely Controllable and Highly Robust Speech Synthesis with Multi-Stage Training Paradigm）全文中文翻译 + 21 条句子级讲解 · ASR/TTS 知识库论文精读">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2607.23938/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Qwen-Audio-3.0-TTS：基于多阶段训练范式的自由可控、高鲁棒语音合成 · 全文双语精读">
-<meta property="og:description" content="Qwen-Audio-3.0-TTS：基于多阶段训练范式的自由可控、高鲁棒语音合成（Qwen-Audio-3.0-TTS: Freely Controllable and Highly Robust Speech Synthesis with Multi-Stage Training Paradigm）全文中文翻译 + 22 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta property="og:description" content="Qwen-Audio-3.0-TTS：基于多阶段训练范式的自由可控、高鲁棒语音合成（Qwen-Audio-3.0-TTS: Freely Controllable and Highly Robust Speech Synthesis with Multi-Stage Training Paradigm）全文中文翻译 + 21 条句子级讲解 · ASR/TTS 知识库论文精读">
 <meta property="og:url" content="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2607.23938/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Qwen-Audio-3.0-TTS: Freely Controllable and Highly Robust Speech Synthesis with Multi-Stage Training Paradigm","alternateName":"Qwen-Audio-3.0-TTS：基于多阶段训练范式的自由可控、高鲁棒语音合成","url":"https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2607.23938/","isBasedOn":"https://arxiv.org/abs/2607.23938","inLanguage":["en","zh-CN"],"isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Zhitao Zeng"}}</script>
 <style>
@@ -134,7 +134,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
     <div class="en-title">Qwen-Audio-3.0-TTS: Freely Controllable and Highly Robust Speech Synthesis with Multi-Stage Training Paradigm</div>
     <div class="meta">
       关联模型：<a href="../../index.html#/model/qwen_audio_tts">Qwen-Audio-3.0-TTS</a>（阿里巴巴 · 2026-07） ·
-      全文 166 个语块 · 讲解 22 条（精选 11 条）
+      全文 388 个语块 · 讲解 21 条（精选 11 条）
     </div>
   </div>
   <div class="controls">
@@ -166,7 +166,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div>
     <p class="muted" style="font-size:12.5px">以上为论文级三条摘要；下面进入全文双语精读，讲解锚定在具体句子旁。</p>
   </section>
-  <nav class="toc"><a class="lv2" href="#sec-alibaba-token-foundry">阿里巴巴 Token Foundry</a><a class="lv1" href="#sec-abstract">摘要</a><a class="lv1" href="#sec-1">1 1 引言</a><a class="lv1" href="#sec-2">2 方法</a><a class="lv2" href="#sec-2-1">2.1 2.1 低帧率语音分词器</a><a class="lv2" href="#sec-2-2">2.2 2.2 多阶段渐进训练范式</a><a class="lv2" href="#sec-2-2-1">2.2.1 2.2.1 LM 与 FM 的独立预训练</a><a class="lv2" href="#sec-2-2-2">2.2.2 2.2.2 带高质量数据退火的 LM–FM 联合训练</a><a class="lv2" href="#sec-2-2-3">2.2.3 2.2.3 语言模型强化学习</a><a class="lv2" href="#sec-2-2-4">2.2.4 2.2.4 冻结 LM 的声学鲁棒性训练</a><a class="lv2" href="#sec-2-2-5">2.2.5 2.2.5 流匹配强化学习</a><a class="lv2" href="#sec-2-3">2.3 2.3 说话人适配</a><a class="lv1" href="#sec-3">3 3 实验设置</a><a class="lv2" href="#sec-3-1">3.1 3.1 语音分词器</a><a class="lv2" href="#sec-3-2">3.2 3.2 Qwen-Audio-3.0-TTS 的训练数据</a><a class="lv2" href="#sec-3-3">3.3 3.3 评测方法</a><a class="lv1" href="#sec-4">4 4 实验结果</a><a class="lv2" href="#sec-4-1">4.1 4.1 语音分词器的消融</a><a class="lv2" href="#sec-4-2">4.2 4.2 SEED-TTS-Eval 上的客观 TTS 结果</a><a class="lv2" href="#sec-4-3">4.3 4.3 多语言基准 CV3-Eval 上的客观评测</a><a class="lv2" href="#sec-4-3-1">4.3.1 4.3.1 多语言声音克隆结果</a><a class="lv2" href="#sec-4-3-2">4.3.2 4.3.2 跨语言声音克隆结果</a><a class="lv2" href="#sec-4-4">4.4 4.4 Qwen-Audio-TTS-Eval 上的客观 TTS 结果</a><a class="lv2" href="#sec-4-4-1">4.4.1 4.4.1 文本规整能力结果</a><a class="lv2" href="#sec-4-4-2">4.4.2 4.4.2 长音频语音生成结果</a><a class="lv2" href="#sec-4-4-3">4.4.3 4.4.3 声学鲁棒性结果</a><a class="lv2" href="#sec-4-4-4">4.4.4 4.4.4 零样本声音克隆下的指令跟随结果</a><a class="lv2" href="#sec-4-5">4.5 4.5 说话人适配模型的客观结果</a><a class="lv2" href="#sec-4-6">4.6 4.6 主观评测结果</a><a class="lv2" href="#sec-4-6-1">4.6.1 4.6.1 方言语音合成的主观评测</a><a class="lv2" href="#sec-dimension">维度</a><a class="lv2" href="#sec-dialect-authenticity">方言真实度</a><a class="lv2" href="#sec-4-6-2">4.6.2 4.6.2 指令跟随能力的主观评测</a><a class="lv2" href="#sec-system">系统</a><a class="lv1" href="#sec-5">5 5 结论</a><a class="lv1" href="#sec-acknowledgements">致谢</a><a class="lv1" href="#sec-references">References</a></nav>
+  <nav class="toc"><a class="lv2" href="#sec-alibaba-token-foundry">阿里巴巴 Token Foundry</a><a class="lv1" href="#sec-abstract">摘要</a><a class="lv1" href="#sec-1">1 1 引言</a><a class="lv1" href="#sec-2">2 Qwen-Audio-3.0-TTS</a><a class="lv2" href="#sec-2-1">2.1 2.1 低帧率语音分词器</a><a class="lv2" href="#sec-2-2">2.2 2.2 多阶段渐进训练范式</a><a class="lv2" href="#sec-2-2-1">2.2.1 2.2.1 LM 与 FM 的独立预训练</a><a class="lv2" href="#sec-2-2-2">2.2.2 2.2.2 带高质量数据退火的 LM–FM 联合训练</a><a class="lv2" href="#sec-2-2-3">2.2.3 2.2.3 语言模型强化学习</a><a class="lv2" href="#sec-2-2-4">2.2.4 2.2.4 冻结 LM 的声学鲁棒性训练</a><a class="lv2" href="#sec-2-2-5">2.2.5 2.2.5 流匹配强化学习</a><a class="lv2" href="#sec-2-3">2.3 2.3 说话人适配</a><a class="lv1" href="#sec-3">3 3 实验设置</a><a class="lv2" href="#sec-3-1">3.1 3.1 语音分词器</a><a class="lv2" href="#sec-3-2">3.2 3.2 Qwen-Audio-3.0-TTS 的训练数据</a><a class="lv2" href="#sec-3-3">3.3 3.3 评测方法</a><a class="lv1" href="#sec-4">4 4 实验结果</a><a class="lv2" href="#sec-4-1">4.1 4.1 语音分词器的消融</a><a class="lv2" href="#sec-4-2">4.2 4.2 SEED-TTS-Eval 上的客观 TTS 结果</a><a class="lv2" href="#sec-4-3">4.3 4.3 多语言基准 CV3-Eval 上的客观评测</a><a class="lv2" href="#sec-4-3-1">4.3.1 4.3.1 多语言声音克隆结果</a><a class="lv2" href="#sec-4-3-2">4.3.2 4.3.2 跨语言声音克隆结果</a><a class="lv2" href="#sec-4-4">4.4 4.4 Qwen-Audio-TTS-Eval 上的客观 TTS 结果</a><a class="lv2" href="#sec-4-4-1">4.4.1 4.4.1 文本规整能力结果</a><a class="lv2" href="#sec-4-4-2">4.4.2 4.4.2 长音频语音生成结果</a><a class="lv2" href="#sec-4-4-3">4.4.3 4.4.3 声学鲁棒性结果</a><a class="lv2" href="#sec-4-4-4">4.4.4 4.4.4 零样本声音克隆下的指令跟随结果</a><a class="lv2" href="#sec-4-5">4.5 4.5 说话人适配模型的客观结果</a><a class="lv2" href="#sec-4-6">4.6 4.6 主观评测结果</a><a class="lv2" href="#sec-4-6-1">4.6.1 4.6.1 方言语音合成的主观评测</a><a class="lv2" href="#sec-dimension">维度</a><a class="lv2" href="#sec-dialect-authenticity">方言真实度</a><a class="lv2" href="#sec-4-6-2">4.6.2 4.6.2 指令跟随能力的主观评测</a><a class="lv2" href="#sec-system">系统</a><a class="lv1" href="#sec-5">5 5 结论</a><a class="lv1" href="#sec-acknowledgements">致谢</a><a class="lv1" href="#sec-references">References</a></nav>
   <article class="reader"><section><div class="pblk plain" id="p-front-1"><p class="refline">(Equal contribution; alphabetical by given name.) Bajian Xiang, Cheng Wen, Han Zhao, Hao Wang, Haoxu Wang, Jiawei Jin, Jiayan Cui, Jie Chen, Mengxi Nie, Tianyu Zhao, Weiqin Li, Xiang Lv, Xiangang Li, Yang Xiang, Yang Zhou</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-alibaba-token-foundry"><span class="t-zh">阿里巴巴 Token Foundry</span><span class="t-en">Alibaba Token Foundry</span></h3><div class="pblk" id="p-alibaba-token-foundry-1">
@@ -258,8 +258,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-1-9">
-          <p class="en-lines"><span class="sent" data-sid="s-1-9-1"><span class="en">• Production-grade controllability: The model interprets free-style natural-language instructions describing role, emotion, speaking style, rate, timbre, and accent.</span></span> <span class="sent" data-sid="s-1-9-2"><span class="en">In parallel, 86 newly added fine-grained inline tags enable localized control at phrase and word level, intl 1.45 4 ms 8 vi 12 16 de th es pt fr id it ar ru (a) Content Consistency. tl 90.76 ms 80 70 vi 60 de th es pt fr id it ar ru (b) Speaker Similarity.</span><button class="mk" data-sid="s-1-9-2" title="查看讲解">解</button></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-9-1"><span class="zh">• 生产级可控性：模型能理解描述角色、情感、说话风格、语速、音色与口音的自由形式自然语言指令。</span></span><span class="sent" data-sid="s-1-9-2"><span class="zh">与此同时，新增的 86 个细粒度行内标签支持短语与词级别的局部控制，包括表现力过渡以及笑声、呼吸、咳嗽、叹气等非语言事件（此句中间穿插的 intl、4、8、12、16、60、70、80、1.45、90.76 ms 及语种代码为 Figure 2 图表内容的抽取残留）。</span><button class="mk" data-sid="s-1-9-2" title="查看讲解">解</button></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-9-1"><span class="en">• Production-grade controllability: The model interprets free-style natural-language instructions describing role, emotion, speaking style, rate, timbre, and accent.</span></span> <span class="sent" data-sid="s-1-9-2"><span class="en">In parallel, 86 newly added fine-grained inline tags enable localized control at phrase and word level, inzh en tl</span><button class="mk" data-sid="s-1-9-2" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-9-1"><span class="zh">• 生产级可控性：模型能理解描述角色、情感、说话风格、语速、音色与口音的自由形式自然语言指令。</span></span><span class="sent" data-sid="s-1-9-2"><span class="zh">同时新增 86 个细粒度内联标签，支持短语级与词级的局部控制。（图 1：(a) 内容一致性（Content Consistency）与 (b) 说话人相似度（Speaker Similarity）——zh/en/tl/ja/ms/ko/vi/de/th/es/pt/fr/id/it/ar/ru 各语种对比 MiniMax-Speech-2.8-HD、ElevenLabs-v3、Dots.TTS-2B (SOAR)、VoxCPM2、Qwen3-TTS-12Hz-1.7B-Base 与 Qwen-Audio-3.0-TTS（本模型，两图均含，3.0/3.0）；刻度 1.45/4/8/12/16 与 90.76/80/70/60。）</span><button class="mk" data-sid="s-1-9-2" title="查看讲解">解</button></span></p>
           <div class="ann-zone"><div class="ann-panel" data-sid="s-1-9-2">
       <div class="ann-card kind-engineering">
         <div class="ann-kind">工程启发</div>
@@ -269,43 +269,106 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="fig-1-2"><span class="cap-k">图</span><p class="en">Figure 2: Multilingual comparison on the 16-language CV3-Eval benchmark. In both panels, farther from the center indicates better performance.</p><p class="zh">图 2：16 语言 CV3-Eval 基准上的多语言对比。两个子图中，离中心越远表示性能越好。</p></div>
+<div class="eq" id="eq-1-1"><code>1.45 4</code></div>
+<div class="eq" id="eq-1-2"><code>ja ms</code></div>
+<div class="eq" id="eq-1-3"><code>8</code></div>
+<div class="eq" id="eq-1-4"><code>ko vi</code></div>
+<div class="eq" id="eq-1-5"><code>12 16</code></div>
 <div class="pblk" id="p-1-10">
-          <p class="en-lines"><span class="sent" data-sid="s-1-10-1"><span class="en">cluding expressive transitions and non-verbal events such as laughter, breathing, coughing, and sighing.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-10-1"><span class="zh">（接上句）包括表现力过渡以及笑声、呼吸、咳嗽、叹气等非语言事件。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-10-1"><span class="en">de th es pt fr id it ar ru MiniMax-Speech-2.8-HD ElevenLabs-v3 Dots.TTS-2B (SOAR) VoxCPM2 Qwen3-TTS-12Hz-1.7B-Base Qwen-Audio-3.0-TTS (a) Content Consistency. zh en tl</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-10-1"><span class="zh">同时新增 86 个细粒度内联标签，支持短语级与词级的局部控制。（图 1：(a) 内容一致性（Content Consistency）与 (b) 说话人相似度（Speaker Similarity）——zh/en/tl/ja/ms/ko/vi/de/th/es/pt/fr/id/it/ar/ru 各语种对比 MiniMax-Speech-2.8-HD、ElevenLabs-v3、Dots.TTS-2B (SOAR)、VoxCPM2、Qwen3-TTS-12Hz-1.7B-Base 与 Qwen-Audio-3.0-TTS（本模型，两图均含，3.0/3.0）；刻度 1.45/4/8/12/16 与 90.76/80/70/60。）</span></span></p>
           
         </div>
+<div class="eq" id="eq-1-6"><code>90.76</code></div>
+<div class="eq" id="eq-1-7"><code>ja ms</code></div>
+<div class="eq" id="eq-1-8"><code>80 70</code></div>
+<div class="eq" id="eq-1-9"><code>ko vi</code></div>
+<div class="eq" id="eq-1-10"><code>60</code></div>
 <div class="pblk" id="p-1-11">
-          <p class="en-lines"><span class="sent" data-sid="s-1-11-1"><span class="en">• Broad and robust deployment coverage: The model supports 16 languages, seven of them newly added, and 20 Chinese dialect regions; it handles hard text-normalization cases, one-pass synthesis up to 3 minutes, and degraded prompts without an explicit denoising mode.</span></span> <span class="sent" data-sid="s-1-11-2"><span class="en">A two-stage speaker-adaptation protocol and vocoder super-resolution further support target-voice adaptation and 48 kHz output.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-11-1"><span class="zh">• 广泛而鲁棒的部署覆盖：模型支持 16 种语言（其中 7 种为新增）与 20 个汉语方言区；能处理困难的文本规整（text normalization）案例、最长 3 分钟的单次合成，以及无需显式去噪模式的退化提示。</span></span><span class="sent" data-sid="s-1-11-2"><span class="zh">两阶段的说话人适配协议与声码器超分辨率进一步支持目标音色适配和 48 kHz 输出。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-11-1"><span class="en">de th es pt fr id it ar ru MiniMax-Speech-2.8-HD ElevenLabs-v3 Dots.TTS-2B (SOAR) VoxCPM2 Qwen3-TTS-12Hz-1.7B-Base Qwen-Audio-3.0-TTS (b) Speaker Similarity.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-11-1"><span class="zh">同时新增 86 个细粒度内联标签，支持短语级与词级的局部控制。（图 1：(a) 内容一致性（Content Consistency）与 (b) 说话人相似度（Speaker Similarity）——zh/en/tl/ja/ms/ko/vi/de/th/es/pt/fr/id/it/ar/ru 各语种对比 MiniMax-Speech-2.8-HD、ElevenLabs-v3、Dots.TTS-2B (SOAR)、VoxCPM2、Qwen3-TTS-12Hz-1.7B-Base 与 Qwen-Audio-3.0-TTS（本模型，两图均含，3.0/3.0）；刻度 1.45/4/8/12/16 与 90.76/80/70/60。）</span></span></p>
           
         </div>
+<div class="cap" id="fig-1-2"><span class="cap-k">图</span><p class="en">Figure 2: Multilingual comparison on the 16-language CV3-Eval benchmark. In both panels, farther from the center indicates better performance.</p><p class="zh">图 2：16 语言 CV3-Eval 基准上的多语言对比。两个子图中，离中心越远表示性能越好。</p></div>
 <div class="pblk" id="p-1-12">
-          <p class="en-lines"><span class="sent" data-sid="s-1-12-1"><span class="en">• Comprehensive evaluation: We evaluate zero-shot voice cloning, multilingual and crosslingual synthesis, free-style instruction following, fine-grained control, text normalization, long-form generation, adverse-prompt robustness, and 20-dialect synthesis through objective benchmarks and arena-style human evaluation.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-12-1"><span class="zh">• 全面评测：我们通过客观基准与竞技场式人工评测，评估零样本声音克隆、多语言与跨语言合成、自由形式指令跟随、细粒度控制、文本规整、长音频生成、恶劣提示鲁棒性与 20 种方言合成。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-12-1"><span class="en">cluding expressive transitions and non-verbal events such as laughter, breathing, coughing, and sighing.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-12-1"><span class="zh">（接上句）包括表现力过渡以及笑声、呼吸、咳嗽、叹气等非语言事件。</span></span></p>
           
         </div>
-<div class="cap" id="fig-1-3"><span class="cap-k">图</span><p class="en">Figure 1 provides the snapshot of Artificial Analysis Text-to-Speech Arena leaderboard1 on July 16, 2026, which evaluates provider-native voices through blind pairwise preference tests with comparable gender and accent. The provider label Qwen-Audio-3.0-TTS-Plus corresponds to the model reported as Qwen-Audio-3.0-TTS in this paper. Qwen-Audio-3.0-TTS-Plus ranks first with an Elo score of 1,237 from 1,427 samples. It has a displayed rank range of 1–2, and its 95% confidence interval overlaps that of Simba 3.2; the leaderboard therefore places Qwen-Audio-3.0-TTS-Plus first by point estimate and within the statistically leading group.</p><p class="zh">图 1 提供了 2026 年 7 月 16 日 Artificial Analysis 文本转语音竞技场榜单（见脚注 1）的快照，该榜单通过性别与口音可比的盲测成对偏好测试评估各提供商的原生音色。提供商标签 Qwen-Audio-3.0-TTS-Plus 对应本文所称的 Qwen-Audio-3.0-TTS 模型。Qwen-Audio-3.0-TTS-Plus 以 1,237 的 Elo 分数排名第一（样本量 1,427），显示名次区间为 1–2，其 95% 置信区间与 Simba 3.2 存在重叠；因此榜单按点估计将其列为第一，且它处于统计上的领先集团之内。</p></div>
 <div class="pblk" id="p-1-13">
-          <p class="en-lines"><span class="sent" data-sid="s-1-13-1"><span class="en">In addition, extensive experiments demonstrate that Qwen-Audio-3.0-TTS has a favorable balance between content consistency, speaker similarity, prosodic naturalness, audio quality, and controllability.</span></span> <span class="sent" data-sid="s-1-13-2"><span class="en">It achieves the best or highly competitive aggregate results on SEED-TTS-Eval, CV3-Eval, instruction-following, long-form synthesis, and adverse-prompt evaluation.</span></span> <span class="sent" data-sid="s-1-13-3"><span class="en">It obtains the best aggregate free-style instruction-following scores in both Chinese and English, while standard-mode inference remains competitive with systems using explicit denoising.</span></span> <span class="sent" data-sid="s-1-13-4"><span class="en">Figure 2 visualizes the perlanguage CV3-Eval comparison among several competitive providers, with content consistency in Figure 2a and speaker similarity in Figure 2b.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-13-1"><span class="zh">此外，大量实验表明 Qwen-Audio-3.0-TTS 在内容一致性、说话人相似度、韵律自然度、音频质量与可控性之间取得了良好的平衡。</span></span><span class="sent" data-sid="s-1-13-2"><span class="zh">它在 SEED-TTS-Eval、CV3-Eval、指令跟随、长音频合成与恶劣提示评测上取得了最佳或极具竞争力的综合结果。</span></span><span class="sent" data-sid="s-1-13-3"><span class="zh">它在中文和英文上都取得了最佳的自由形式指令跟随综合得分，同时其标准模式推理仍能与使用显式去噪的系统竞争。</span></span><span class="sent" data-sid="s-1-13-4"><span class="zh">Figure 2 可视化了若干有竞争力的提供商在 CV3-Eval 上的逐语言对比，其中 Figure 2a 为内容一致性，Figure 2b 为说话人相似度。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-13-1"><span class="en">• Broad and robust deployment coverage: The model supports 16 languages, seven of them newly added, and 20 Chinese dialect regions; it handles hard text-normalization cases, one-pass synthesis up to 3 minutes, and degraded prompts without an explicit denoising mode.</span></span> <span class="sent" data-sid="s-1-13-2"><span class="en">A two-stage speaker-adaptation protocol and vocoder super-resolution further support target-voice adaptation and 48 kHz output.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-13-1"><span class="zh">• 广泛而鲁棒的部署覆盖：模型支持 16 种语言（其中 7 种为新增）与 20 个汉语方言区；能处理困难的文本规整（text normalization）案例、最长 3 分钟的单次合成，以及无需显式去噪模式的退化提示。</span></span><span class="sent" data-sid="s-1-13-2"><span class="zh">两阶段的说话人适配协议与声码器超分辨率进一步支持目标音色适配和 48 kHz 输出。</span></span></p>
           
         </div>
 <div class="pblk" id="p-1-14">
-          <p class="en-lines"><span class="sent" data-sid="s-1-14-1"><span class="en">1https://artificialanalysis.ai/text-to-speech/leaderboard/provider-voice?tab=leaderboard</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-14-1"><span class="zh">1https://artificialanalysis.ai/text-to-speech/leaderboard/provider-voice?tab=leaderboard</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-1-14-1"><span class="en">• Comprehensive evaluation: We evaluate zero-shot voice cloning, multilingual and crosslingual synthesis, free-style instruction following, fine-grained control, text normalization, long-form generation, adverse-prompt robustness, and 20-dialect synthesis through objective benchmarks and arena-style human evaluation.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-14-1"><span class="zh">• 全面评测：我们通过客观基准与竞技场式人工评测，评估零样本声音克隆、多语言与跨语言合成、自由形式指令跟随、细粒度控制、文本规整、长音频生成、恶劣提示鲁棒性与 20 种方言合成。</span></span></p>
+          
+        </div>
+<div class="cap" id="fig-1-3"><span class="cap-k">图</span><p class="en">Figure 1 provides the snapshot of Artificial Analysis Text-to-Speech Arena leaderboard1 on July 16, 2026, which evaluates provider-native voices through blind pairwise preference tests with comparable gender and accent. The provider label Qwen-Audio-3.0-TTS-Plus corresponds to the model reported as Qwen-Audio-3.0-TTS in this paper. Qwen-Audio-3.0-TTS-Plus ranks first with an Elo score of 1,237 from 1,427 samples. It has a displayed rank range of 1–2, and its 95% confidence interval overlaps that of Simba 3.2; the leaderboard therefore places Qwen-Audio-3.0-TTS-Plus first by point estimate and within the statistically leading group.</p><p class="zh">图 1 提供了 2026 年 7 月 16 日 Artificial Analysis 文本转语音竞技场榜单（见脚注 1）的快照，该榜单通过性别与口音可比的盲测成对偏好测试评估各提供商的原生音色。提供商标签 Qwen-Audio-3.0-TTS-Plus 对应本文所称的 Qwen-Audio-3.0-TTS 模型。Qwen-Audio-3.0-TTS-Plus 以 1,237 的 Elo 分数排名第一（样本量 1,427），显示名次区间为 1–2，其 95% 置信区间与 Simba 3.2 存在重叠；因此榜单按点估计将其列为第一，且它处于统计上的领先集团之内。</p></div>
+<div class="pblk" id="p-1-15">
+          <p class="en-lines"><span class="sent" data-sid="s-1-15-1"><span class="en">In addition, extensive experiments demonstrate that Qwen-Audio-3.0-TTS has a favorable balance between content consistency, speaker similarity, prosodic naturalness, audio quality, and controllability.</span></span> <span class="sent" data-sid="s-1-15-2"><span class="en">It achieves the best or highly competitive aggregate results on SEED-TTS-Eval, CV3-Eval, instruction-following, long-form synthesis, and adverse-prompt evaluation.</span></span> <span class="sent" data-sid="s-1-15-3"><span class="en">It obtains the best aggregate free-style instruction-following scores in both Chinese and English, while standard-mode inference remains competitive with systems using explicit denoising.</span></span> <span class="sent" data-sid="s-1-15-4"><span class="en">Figure 2 visualizes the perlanguage CV3-Eval comparison among several competitive providers, with content consistency in Figure 2a and speaker similarity in Figure 2b.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-15-1"><span class="zh">此外，大量实验表明 Qwen-Audio-3.0-TTS 在内容一致性、说话人相似度、韵律自然度、音频质量与可控性之间取得了良好的平衡。</span></span><span class="sent" data-sid="s-1-15-2"><span class="zh">它在 SEED-TTS-Eval、CV3-Eval、指令跟随、长音频合成与恶劣提示评测上取得了最佳或极具竞争力的综合结果。</span></span><span class="sent" data-sid="s-1-15-3"><span class="zh">它在中文和英文上都取得了最佳的自由形式指令跟随综合得分，同时其标准模式推理仍能与使用显式去噪的系统竞争。</span></span><span class="sent" data-sid="s-1-15-4"><span class="zh">Figure 2 可视化了若干有竞争力的提供商在 CV3-Eval 上的逐语言对比，其中 Figure 2a 为内容一致性，Figure 2b 为说话人相似度。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-1-16">
+          <p class="en-lines"><span class="sent" data-sid="s-1-16-1"><span class="en">1https://artificialanalysis.ai/text-to-speech/leaderboard/provider-voice?tab=leaderboard</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-16-1"><span class="zh">1https://artificialanalysis.ai/text-to-speech/leaderboard/provider-voice?tab=leaderboard</span></span></p>
           
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-2"><span class="t-zh">2 方法</span><span class="t-en">2</span></h2><div class="pblk" id="p-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-2-1-1"><span class="en">Streaming Vocoder Legend Text / Instruction Token Mel Spectrogram DiT Flow-Matching Audio-Semantic (Codec) Token LM Hidden / Content Latent Channel Concatenation Noised Mel xₜ Prompt Mel Speaker Embedding Model / Module Speaker Embedding (Broadcast) Prompt Mel (Partial) Noised Mel xₜ Upsampled Content Latent Latent Upsampling  (×r) Special Token (S / T / E) Qwen LM S T E Autoregressive Codec Prediction Instruction + Text Tokens Audio-Semantic (Codec) Tokens</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-1-1"><span class="zh">（此句为 Figure 3 架构图的图内文字抽取残留：流式声码器、文本/指令 token、Mel 频谱图、DiT 流匹配、音频-语义（codec）token、LM 隐状态/内容潜变量、通道拼接、加噪 Mel xₜ、提示 Mel、说话人嵌入等模块名与连接关系，以及 Qwen LM 自回归 codec 预测与特殊 token（S/T/E）的布局。）</span></span></p>
+      <h2 class="sech lv1" id="sec-2"><span class="secnum">2</span> <span class="t-zh">Qwen-Audio-3.0-TTS</span><span class="t-en">Qwen-Audio-3.0-TTS</span></h2><div class="pblk" id="p-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-1"><span class="en">Streaming Vocoder Legend Text / Instruction Token Mel Spectrogram DiT Flow-Matching Audio-Semantic (Codec) Token LM Hidden / Content Latent Channel Concatenation Noised Mel xₜ Prompt Mel Speaker Embedding Model / Module</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-1"><span class="zh">（图 2 架构标签：流式声码器（Streaming Vocoder）；图例：文本/指令 token、Mel 频谱、DiT Flow-Matching、音频-语义（Codec）token、LM Hidden/内容潜变量、通道拼接、Noised Mel xₜ、Prompt Mel、说话人嵌入、模型/模块。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-1"><code>…</code></div>
+<div class="pblk" id="p-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-1"><span class="en">Speaker Embedding (Broadcast)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-1"><span class="zh">（图 2 标签：Speaker Embedding（广播）。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-2"><code>…</code></div>
+<div class="pblk" id="p-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-1"><span class="en">Prompt Mel (Partial)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-3-1"><span class="zh">（图 2 标签：Prompt Mel（局部）。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-3"><code>…</code></div>
+<div class="pblk" id="p-2-4">
+          <p class="en-lines"><span class="sent" data-sid="s-2-4-1"><span class="en">Noised Mel xₜ</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-4-1"><span class="zh">（图 2 架构标签：流式声码器（Streaming Vocoder）；图例：文本/指令 token、Mel 频谱、DiT Flow-Matching、音频-语义（Codec）token、LM Hidden/内容潜变量、通道拼接、Noised Mel xₜ、Prompt Mel、说话人嵌入、模型/模块。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-4"><code>…</code></div>
+<div class="pblk" id="p-2-5">
+          <p class="en-lines"><span class="sent" data-sid="s-2-5-1"><span class="en">Upsampled Content Latent Latent Upsampling  (×r) Special Token (S / T / E) Qwen LM S</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-5-1"><span class="zh">（图 2 标签：上采样内容潜变量（Latent Upsampling ×r）；特殊 token（S/T/E）；Qwen LM；S ……）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-5"><code>…</code></div>
+<div class="pblk" id="p-2-6">
+          <p class="en-lines"><span class="sent" data-sid="s-2-6-1"><span class="en">T</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-6-1"><span class="zh">在本报告中，我们提出 Qwen-Audio-3.0-TTS，一个面向生产环境的语音合成系统，它在内容一致性、说话人相似度、韵律自然度、音频质量、可控性、多语言覆盖、效率与鲁棒性上协同推进。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-6"><code>…</code></div>
+<div class="eq" id="eq-2-7"><code>…</code></div>
+<div class="pblk" id="p-2-7">
+          <p class="en-lines"><span class="sent" data-sid="s-2-7-1"><span class="en">E Autoregressive Codec Prediction</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-7-1"><span class="zh">（图 2 标签：E；自回归 Codec 预测（Autoregressive Codec Prediction）。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-8"><code>…</code></div>
+<div class="pblk" id="p-2-8">
+          <p class="en-lines"><span class="sent" data-sid="s-2-8-1"><span class="en">Instruction + Text Tokens Audio-Semantic (Codec) Tokens</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-8-1"><span class="zh">（此句为 Figure 3 架构图的图内文字抽取残留：流式声码器、文本/指令 token、Mel 频谱图、DiT 流匹配、音频-语义（codec）token、LM 隐状态/内容潜变量、通道拼接、加噪 Mel xₜ、提示 Mel、说话人嵌入等模块名与连接关系，以及 Qwen LM 自回归 codec 预测与特殊 token（S/T/E）的布局。）</span></span></p>
           
         </div>
 <div class="cap" id="fig-2-1"><span class="cap-k">图</span><p class="en">Figure 3: Overall architecture of Qwen-Audio-3.0-TTS, comprising the language model, flowmatching model, and vocoder.</p><p class="zh">图 3：Qwen-Audio-3.0-TTS 的整体架构，由语言模型、流匹配模型与声码器组成。</p></div>
-<div class="pblk" id="p-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-1"><span class="en">As shown in Figure 3, Qwen-Audio-3.0-TTS is built on a three-component synthesis architecture comprising a language model (LM) for semantic token prediction, a flow-matching model (FM) for acoustic feature reconstruction, and a causal BigVGAN vocoder [14] for waveform synthesis.</span></span> <span class="sent" data-sid="s-2-2-2"><span class="en">A 12.5 Hz low-frame-rate speech tokenizer reduces autoregressive decoding cost, while the progressive LM–FM training paradigm improves linguistic accuracy, acoustic fidelity, controllability, and robustness.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-1"><span class="zh">如 Figure 3 所示，Qwen-Audio-3.0-TTS 建立在一个三组件合成架构之上：负责语义 token 预测的语言模型（LM）、负责声学特征重建的流匹配模型（FM），以及负责波形合成的因果 BigVGAN 声码器 [14]。</span></span><span class="sent" data-sid="s-2-2-2"><span class="zh">12.5 Hz 低帧率语音分词器降低了自回归解码成本，而渐进式 LM–FM 训练范式则提升了语言准确性、声学保真度、可控性与鲁棒性。</span></span></p>
+<div class="pblk" id="p-2-9">
+          <p class="en-lines"><span class="sent" data-sid="s-2-9-1"><span class="en">As shown in Figure 3, Qwen-Audio-3.0-TTS is built on a three-component synthesis architecture comprising a language model (LM) for semantic token prediction, a flow-matching model (FM) for acoustic feature reconstruction, and a causal BigVGAN vocoder [14] for waveform synthesis.</span></span> <span class="sent" data-sid="s-2-9-2"><span class="en">A 12.5 Hz low-frame-rate speech tokenizer reduces autoregressive decoding cost, while the progressive LM–FM training paradigm improves linguistic accuracy, acoustic fidelity, controllability, and robustness.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-9-1"><span class="zh">如 Figure 3 所示，Qwen-Audio-3.0-TTS 建立在一个三组件合成架构之上：负责语义 token 预测的语言模型（LM）、负责声学特征重建的流匹配模型（FM），以及负责波形合成的因果 BigVGAN 声码器 [14]。</span></span><span class="sent" data-sid="s-2-9-2"><span class="zh">12.5 Hz 低帧率语音分词器降低了自回归解码成本，而渐进式 LM–FM 训练范式则提升了语言准确性、声学保真度、可控性与鲁棒性。</span></span></p>
           
         </div></section>
 <section>
@@ -390,15 +453,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-2-3-1-1"><span class="zh">从联合训练的检查点出发，我们优化自回归的文本到 token LM，同时冻结下游的 FM 与声码器。</span></span><span class="sent" data-sid="s-2-2-3-1-2"><span class="zh">在线组相对策略优化（GRPO）[19] 以针对冻结参考策略的 KL 惩罚为正则，在一个平衡内容一致性、时长鲁棒性、生成多样性与韵律自然度的复合奖励下，比较成组的 token 采样结果：</span></span></p>
           
         </div>
+<div class="eq" id="eq-2-2-3-1"><code>Rbase,i = λcontentRcontent,i + λdurRdur,i + λdivRdiv,i + λprosodyRprosody,i. (1)</code></div>
 <div class="pblk" id="p-2-2-3-2">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-3-2-1"><span class="en">Rbase,i = λcontentRcontent,i + λdurRdur,i + λdivRdiv,i + λprosodyRprosody,i.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-3-2-1"><span class="zh">Rbase,i = λcontentRcontent,i + λdurRdur,i + λdivRdiv,i + λprosodyRprosody,i。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-2-2-3-3">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-3-3-1"><span class="en">The content term is obtained from token-domain ASR; the duration term suppresses length outliers; the diversity term discourages mechanical collapse; and the prosody term rewards plausible alignment progression and pause timing.</span></span> <span class="sent" data-sid="s-2-2-3-3-2"><span class="en">All rewards are computed before FM and vocoder inference, enabling efficient token-only rollouts.</span><button class="mk feat" data-sid="s-2-2-3-3-2" title="查看讲解">解</button></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-3-3-1"><span class="zh">内容项来自 token 域的 ASR；时长项抑制时长异常值；多样性项抑制机械性塌缩；韵律项奖励合理的对齐推进与停顿时机。</span></span><span class="sent" data-sid="s-2-2-3-3-2"><span class="zh">所有奖励都在 FM 与声码器推理之前计算，从而实现高效的纯 token 采样。</span><button class="mk feat" data-sid="s-2-2-3-3-2" title="查看讲解">解</button></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-2-3-3-2">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-3-2-1"><span class="en">The content term is obtained from token-domain ASR; the duration term suppresses length outliers; the diversity term discourages mechanical collapse; and the prosody term rewards plausible alignment progression and pause timing.</span></span> <span class="sent" data-sid="s-2-2-3-2-2"><span class="en">All rewards are computed before FM and vocoder inference, enabling efficient token-only rollouts.</span><button class="mk feat" data-sid="s-2-2-3-2-2" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-3-2-1"><span class="zh">内容项来自 token 域的 ASR；时长项抑制时长异常值；多样性项抑制机械性塌缩；韵律项奖励合理的对齐推进与停顿时机。</span></span><span class="sent" data-sid="s-2-2-3-2-2"><span class="zh">所有奖励都在 FM 与声码器推理之前计算，从而实现高效的纯 token 采样。</span><button class="mk feat" data-sid="s-2-2-3-2-2" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-2-3-2-2">
       <div class="ann-card kind-engineering">
         <div class="ann-kind">工程启发</div>
         <div class="ann-title">纯 token 级 RL  rollout</div>
@@ -407,14 +466,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-2-2-3-4">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-3-4-1"><span class="en">We additionally use a differentiable DiffRO branch [4] based on Gumbel–Softmax [20].</span></span> <span class="sent" data-sid="s-2-2-3-4-2"><span class="en">To stabilize optimization, extreme anomalous rollouts, such as repetitions or missing stop tokens, are excluded from GRPO updates; DiffRO is further restricted to candidates with non-negative group-relative advantages: LRL = LGRPO + λdiffL+ DiffRO.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-3-4-1"><span class="zh">我们还额外使用了一个基于 Gumbel–Softmax [20] 的可微 DiffRO 分支 [4]。</span></span><span class="sent" data-sid="s-2-2-3-4-2"><span class="zh">为稳定优化，诸如重复或缺失结束 token 等极端异常样本被排除在 GRPO 更新之外；DiffRO 进一步被限制在组相对优势非负的候选上：LRL = LGRPO + λdiffL+ DiffRO。</span></span></p>
+<div class="pblk" id="p-2-2-3-3">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-3-3-1"><span class="en">We additionally use a differentiable DiffRO branch [4] based on Gumbel–Softmax [20].</span></span> <span class="sent" data-sid="s-2-2-3-3-2"><span class="en">To stabilize optimization, extreme anomalous rollouts, such as repetitions or missing stop tokens, are excluded from GRPO updates; DiffRO is further restricted to candidates with non-negative group-relative advantages: LRL = LGRPO + λdiffL+ DiffRO.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-3-3-1"><span class="zh">我们还额外使用了一个基于 Gumbel–Softmax [20] 的可微 DiffRO 分支 [4]。</span></span><span class="sent" data-sid="s-2-2-3-3-2"><span class="zh">为稳定优化，诸如重复或缺失结束 token 等极端异常样本被排除在 GRPO 更新之外；DiffRO 进一步被限制在组相对优势非负的候选上：LRL = LGRPO + λdiffL+ DiffRO。</span></span></p>
           
         </div>
-<div class="pblk" id="p-2-2-3-5">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-3-5-1"><span class="en">GRPO supplies sequence-level relative preference, whereas DiffRO supplies selected token-level corrective gradients.</span></span> <span class="sent" data-sid="s-2-2-3-5-2"><span class="en">LM reinforcement learning follows a two-phase curriculum: general generation optimization first excludes instruction-following, fine-grained-control, and dialect samples to avoid optimizing attributes not captured by the base reward; subsequent multi-task alignment adds dialect-classification correctness as an attribute reward, improving dialect authenticity while preserving the general synthesis robustness acquired during the first phase.</span></span> <span class="sent" data-sid="s-2-2-3-5-3"><span class="en">With suitable attribute supervision, the same framework can be extended to instruction following and fine-grained control.</span></span> <span class="sent" data-sid="s-2-2-3-5-4"><span class="en">The resulting curriculum goes beyond WER-only optimization and balances accuracy, naturalness, and controllability.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-3-5-1"><span class="zh">GRPO 提供序列级的相对偏好，DiffRO 则提供筛选后的 token 级纠错梯度。</span></span><span class="sent" data-sid="s-2-2-3-5-2"><span class="zh">LM 强化学习遵循两阶段课程：通用生成优化先排除指令跟随、细粒度控制与方言样本，以避免优化基础奖励未能刻画的属性；随后的多任务对齐加入方言分类正确性作为属性奖励，在保留第一阶段获得的通用合成鲁棒性的同时提升方言真实度。</span></span><span class="sent" data-sid="s-2-2-3-5-3"><span class="zh">配合合适的属性监督，同一框架可以扩展到指令跟随与细粒度控制。</span></span><span class="sent" data-sid="s-2-2-3-5-4"><span class="zh">最终的课程超越了只优化 WER 的做法，平衡了准确性、自然度与可控性。</span></span></p>
+<div class="eq" id="eq-2-2-3-2"><code>(2)</code></div>
+<div class="pblk" id="p-2-2-3-4">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-3-4-1"><span class="en">GRPO supplies sequence-level relative preference, whereas DiffRO supplies selected token-level corrective gradients.</span></span> <span class="sent" data-sid="s-2-2-3-4-2"><span class="en">LM reinforcement learning follows a two-phase curriculum: general generation optimization first excludes instruction-following, fine-grained-control, and dialect samples to avoid optimizing attributes not captured by the base reward; subsequent multi-task alignment adds dialect-classification correctness as an attribute reward, improving dialect authenticity while preserving the general synthesis robustness acquired during the first phase.</span></span> <span class="sent" data-sid="s-2-2-3-4-3"><span class="en">With suitable attribute supervision, the same framework can be extended to instruction following and fine-grained control.</span></span> <span class="sent" data-sid="s-2-2-3-4-4"><span class="en">The resulting curriculum goes beyond WER-only optimization and balances accuracy, naturalness, and controllability.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-3-4-1"><span class="zh">（式 2）GRPO 提供序列级相对偏好，而 DiffRO 提供选定 token 级的矫正梯度。</span></span><span class="sent" data-sid="s-2-2-3-4-2"><span class="zh">LM 强化学习遵循两阶段课程：通用生成优化先排除指令跟随、细粒度控制与方言样本，以避免优化基础奖励未能刻画的属性；随后的多任务对齐加入方言分类正确性作为属性奖励，在保留第一阶段获得的通用合成鲁棒性的同时提升方言真实度。</span></span><span class="sent" data-sid="s-2-2-3-4-3"><span class="zh">配合合适的属性监督，同一框架可以扩展到指令跟随与细粒度控制。</span></span><span class="sent" data-sid="s-2-2-3-4-4"><span class="zh">最终的课程超越了只优化 WER 的做法，平衡了准确性、自然度与可控性。</span></span></p>
           
         </div></section>
 <section>
@@ -447,21 +507,46 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-2-2-5-2"><code>∆t ϵ, σt = a</code></div>
 <div class="eq" id="eq-2-2-5-3"><code>xt+∆t = xt,mean + σt √</code></div>
 <div class="eq" id="eq-2-2-5-4"><code>1 −t</code></div>
-<div class="eq" id="eq-2-2-5-5"><code>t , ϵ ∼N(0, I), xt,mean = xt +</code></div>
+<div class="eq" id="eq-2-2-5-5"><code>t , ϵ ∼N(0, I), (3)</code></div>
 <div class="pblk" id="p-2-2-5-2">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-5-2-1"><span class="en">vθ(xt, t) + σ2 t 2(1 −t) (−xt + t vθ(xt, t)) ∆t, where vθ is the velocity field conditioned on LM hidden states, prompt mel features, and the speaker embedding, and a controls exploration intensity.</span></span> <span class="sent" data-sid="s-2-2-5-2-2"><span class="en">For each prompt, G waveforms are sampled and the reward is normalized within the group:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-5-2-1"><span class="zh">vθ(xt, t) + σ2 t 2(1 −t) (−xt + t vθ(xt, t)) ∆t，其中 vθ 是以 LM 隐状态、提示 Mel 特征与说话人嵌入为条件的速度场，a 控制探索强度（本句为跨页抽取的公式碎片，编号 eq-2-2-5-1 至 eq-2-2-5-5 的公式块为其前半部分）。</span></span><span class="sent" data-sid="s-2-2-5-2-2"><span class="zh">对每个提示，采样 G 条波形，奖励在组内归一化：</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-5-2-1"><span class="en">xt,mean = xt + vθ(xt, t) +</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-5-2-1"><span class="zh">（公式：x_{t,mean} = x_t + [v_θ(x_t, t) + σ²_t/(2(1 −t))·(−x_t + t·v_θ(x_t, t))]·∆t（式 4），其中 v_θ 为以 LM 隐藏态、提示 mel 特征与说话人嵌入为条件的速度场，a 控制探索强度。）</span></span></p>
           
         </div>
+<div class="eq" id="eq-2-2-5-6"><code>σ2</code></div>
 <div class="pblk" id="p-2-2-5-3">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-5-3-1"><span class="en">ˆAi = R(ˆxi 1, c) −mean{R(ˆxj 1, c)}G j=1 std{R(ˆxj 1, c)}G j=1 . where ˆxi 1 is the i-th terminal waveform and c contains its conditioning inputs.</span></span> <span class="sent" data-sid="s-2-2-5-3-2"><span class="en">The reward combines speaker-verification similarity (SS), ASR intelligibility, and DNSMOS quality, each standardized by its per-batch standard deviation:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-5-3-1"><span class="zh">ˆAi = R(ˆxi 1, c) −mean{R(ˆxj 1, c)}G j=1 std{R(ˆxj 1, c)}G j=1。其中 ˆxi 1 是第 i 条终止波形，c 包含其条件输入。</span></span><span class="sent" data-sid="s-2-2-5-3-2"><span class="zh">奖励结合了说话人验证相似度（SS）、ASR 可懂度与 DNSMOS 质量，每一项都按其批内标准差标准化：</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-5-3-1"><span class="en">t 2(1 −t) (−xt + t vθ(xt, t)) ∆t,</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-5-3-1"><span class="zh">（公式：x_{t,mean} = x_t + [v_θ(x_t, t) + σ²_t/(2(1 −t))·(−x_t + t·v_θ(x_t, t))]·∆t（式 4），其中 v_θ 为以 LM 隐藏态、提示 mel 特征与说话人嵌入为条件的速度场，a 控制探索强度。）</span></span></p>
           
         </div>
+<div class="eq" id="eq-2-2-5-7"><code>(4)</code></div>
 <div class="pblk" id="p-2-2-5-4">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-5-4-1"><span class="en">R = λ1 RSS std(RSS) + λ2 RASR std(RASR) + λ3 RMOS std(RMOS), so that λ1, λ2, and λ3 express the intended objective balance rather than raw reward variance.</span><button class="mk" data-sid="s-2-2-5-4-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-2-5-4-2"><span class="en">SDE exploration and policy optimization are restricted to an early-step window while later steps revert to the ODE, and classifier-free guidance [24] is omitted during training rollouts to widen exploration.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-5-4-1"><span class="zh">R = λ1 RSS std(RSS) + λ2 RASR std(RASR) + λ3 RMOS std(RMOS)，使 λ1、λ2、λ3 表达的是预期的目标平衡，而不是原始奖励的方差大小。</span><button class="mk" data-sid="s-2-2-5-4-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-2-5-4-2"><span class="zh">SDE 探索与策略优化被限制在早期步窗口内，后续步回到 ODE；训练采样期间省略无分类器引导（classifier-free guidance）[24] 以扩大探索范围。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-2-5-4-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-5-4-1"><span class="en">where vθ is the velocity field conditioned on LM hidden states, prompt mel features, and the speaker embedding, and a controls exploration intensity.</span></span> <span class="sent" data-sid="s-2-2-5-4-2"><span class="en">For each prompt, G waveforms are sampled and the reward is normalized within the group:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-5-4-1"><span class="zh">（公式：x_{t,mean} = x_t + [v_θ(x_t, t) + σ²_t/(2(1 −t))·(−x_t + t·v_θ(x_t, t))]·∆t（式 4），其中 v_θ 为以 LM 隐藏态、提示 mel 特征与说话人嵌入为条件的速度场，a 控制探索强度。）</span></span><span class="sent" data-sid="s-2-2-5-4-2"><span class="zh">对每个提示，采样 G 条波形，奖励在组内归一化：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-2-5-5">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-5-5-1"><span class="en">ˆAi = R(ˆxi 1, c) −mean{R(ˆxj 1, c)}G j=1 std{R(ˆxj 1, c)}G j=1</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-5-5-1"><span class="zh">ˆAi = R(ˆxi 1, c) −mean{R(ˆxj 1, c)}G j=1 std{R(ˆxj 1, c)}G j=1。其中 ˆxi 1 是第 i 条终止波形，c 包含其条件输入。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-2-5-8"><code>.</code></div>
+<div class="eq" id="eq-2-2-5-9"><code>(5)</code></div>
+<div class="pblk" id="p-2-2-5-6">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-5-6-1"><span class="en">where ˆxi 1 is the i-th terminal waveform and c contains its conditioning inputs.</span></span> <span class="sent" data-sid="s-2-2-5-6-2"><span class="en">The reward combines speaker-verification similarity (SS), ASR intelligibility, and DNSMOS quality, each standardized by its per-batch standard deviation:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-5-6-1"><span class="zh">（公式片段，式 5：……其中 x̂^i_1 为第 i 个终端波形，c 包含其条件输入。）</span></span><span class="sent" data-sid="s-2-2-5-6-2"><span class="zh">奖励结合了说话人验证相似度（SS）、ASR 可懂度与 DNSMOS 质量，每一项都按其批内标准差标准化：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-2-5-7">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-5-7-1"><span class="en">R = λ1 RSS std(RSS) + λ2 RASR std(RASR) + λ3 RMOS std(RMOS),</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-5-7-1"><span class="zh">（公式：R = λ1·R_SS/std(R_SS) + λ2·R_ASR/std(R_ASR) + λ3·R_MOS/std(R_MOS)（式 6），使 λ1、λ2、λ3 表达预期的目标配比而非原始奖励方差。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-2-2-5-10"><code>(6)</code></div>
+<div class="pblk" id="p-2-2-5-8">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-5-8-1"><span class="en">so that λ1, λ2, and λ3 express the intended objective balance rather than raw reward variance.</span><button class="mk" data-sid="s-2-2-5-8-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-2-5-8-2"><span class="en">SDE exploration and policy optimization are restricted to an early-step window while later steps revert to the ODE, and classifier-free guidance [24] is omitted during training rollouts to widen exploration.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-5-8-1"><span class="zh">（公式：R = λ1·R_SS/std(R_SS) + λ2·R_ASR/std(R_ASR) + λ3·R_MOS/std(R_MOS)（式 6），使 λ1、λ2、λ3 表达预期的目标配比而非原始奖励方差。）</span><button class="mk" data-sid="s-2-2-5-8-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-2-5-8-2"><span class="zh">SDE 探索与策略优化被限制在早期步窗口内，后续步回到 ODE；训练采样期间省略无分类器引导（classifier-free guidance）[24] 以扩大探索范围。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-2-5-8-1">
       <div class="ann-card kind-concept">
         <div class="ann-kind">概念</div>
         <div class="ann-title">奖励标准化求平衡</div>
@@ -575,28 +660,86 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="cap" id="tab-4-1-1"><span class="cap-k">表</span><p class="en">Table 1: ASR error rates (%) on Common Voice (CV) and FLEURS. CER is used for Chinese, Japanese, and Korean; WER is used for English. The best 12.5 Hz result is bold.</p><p class="zh">表 1：Common Voice（CV）与 FLEURS 上的 ASR 错误率（%）。中文、日文、韩文用 CER，英文用 WER。最佳 12.5 Hz 结果加粗。</p></div>
 <div class="pblk" id="p-4-1-3">
-          <p class="en-lines"><span class="sent" data-sid="s-4-1-3-1"><span class="en">Tokenizer Codebook Rate CV-zh CV-en CV-ja CV-ko FLEURS-zh FLEURS-en CosyVoice3 25 Hz 10.63 13.07 15.61 11.35 3.77 5.43 11.23 15.40 18.68 13.22 4.18 5.33 10.79 13.39 16.63 11.45 4.00 4.91 10.24 12.52 15.21 11.70 3.85 4.69</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-1-3-1"><span class="zh">（此句为 Table 1 数值的抽取残留：CosyVoice3（25 Hz）及三个 12.5 Hz 变体在 CV-zh、CV-en、CV-ja、CV-ko、FLEURS-zh、FLEURS-en 上的错误率依次为 10.63/13.07/15.61/11.35/3.77/5.43、11.23/15.40/18.68/13.22/4.18/5.33、10.79/13.39/16.63/11.45/4.00/4.91、10.24/12.52/15.21/11.70/3.85/4.69，码本与帧率列名在抽取中丢失。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-1-3-1"><span class="en">Tokenizer Codebook Rate CV-zh CV-en CV-ja CV-ko FLEURS-zh FLEURS-en CosyVoice3</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-1-3-1"><span class="zh">表头：Tokenizer / Codebook Rate × CV-zh / CV-en / CV-ja / CV-ko / FLEURS-zh / FLEURS-en——CosyVoice3（后续照原文）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-4-1-1"><code>6,561</code></div>
+<div class="eq" id="eq-4-1-2"><code>25 Hz</code></div>
+<div class="eq" id="eq-4-1-3"><code>10.63 13.07 15.61 11.35 3.77 5.43</code></div>
+<div class="eq" id="eq-4-1-4"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-1-5"><code>6,561</code></div>
+<div class="eq" id="eq-4-1-6"><code>12.5 Hz</code></div>
+<div class="eq" id="eq-4-1-7"><code>11.23 15.40 18.68 13.22 4.18 5.33</code></div>
+<div class="eq" id="eq-4-1-8"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-1-9"><code>19,683</code></div>
+<div class="eq" id="eq-4-1-10"><code>12.5 Hz</code></div>
+<div class="eq" id="eq-4-1-11"><code>10.79 13.39 16.63 11.45 4.00 4.91</code></div>
+<div class="eq" id="eq-4-1-12"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-1-13"><code>59,049</code></div>
+<div class="eq" id="eq-4-1-14"><code>12.5 Hz</code></div>
+<div class="eq" id="eq-4-1-15"><code>10.24 12.52 15.21 11.70 3.85 4.69</code></div>
 <div class="cap" id="tab-4-1-2"><span class="cap-k">表</span><p class="en">Table 2: Zero-shot TTS performance of different tokenizers on SEED-TTS-Eval. Content consistency is measured by CER/WER, and speaker similarity (SIM) is measured by ERes2Net and reported as a percentage. The best 12.5 Hz result in each column is shown in bold.</p><p class="zh">表 2：不同分词器在 SEED-TTS-Eval 上的零样本 TTS 性能。内容一致性以 CER/WER 衡量，说话人相似度（SIM）以 ERes2Net 衡量并以百分比报告。每列最佳 12.5 Hz 结果加粗。</p></div>
 <div class="pblk" id="p-4-1-4">
-          <p class="en-lines"><span class="sent" data-sid="s-4-1-4-1"><span class="en">Tokenizer Codebook Frame Rate test-zh test-en test-hard Size WER (%) ↓ CosyVoice3 25 Hz 1.45 80.60 2.57 73.60 6.83 77.60 2.59 72.44 3.21 61.64 7.94 69.78 1.48 83.25 2.56 77.58 6.70 80.85 1.23 83.09 2.37 77.49 6.68 80.61</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-1-4-1"><span class="zh">（此句为 Table 2 数值的抽取残留：CosyVoice3 25 Hz 基线与各 12.5 Hz 变体在 test-zh、test-en、test-hard 上的 WER（%）与 SIM 数值——1.45/80.60、2.57/73.60、6.83/77.60；2.59/72.44、3.21/61.64、7.94/69.78；1.48/83.25、2.56/77.58、6.70/80.85；1.23/83.09、2.37/77.49、6.68/80.61，部分列名在抽取中丢失。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-1-4-1"><span class="en">Tokenizer Codebook Frame Rate test-zh test-en test-hard Size CER (%) ↓ SIM (%) ↑ WER (%) ↓ SIM (%) ↑ CER (%) ↓ SIM (%) ↑ CosyVoice3</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-1-4-1"><span class="zh">表头：Tokenizer / Codebook / Frame Rate / Size × test-zh（CER (%) ↓ / SIM (%) ↑）/ test-en（WER (%) ↓ / SIM (%) ↑）/ test-hard（CER (%) ↓ / SIM (%) ↑）——CosyVoice3（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-4-1-16"><code>6,561</code></div>
+<div class="eq" id="eq-4-1-17"><code>25 Hz</code></div>
+<div class="eq" id="eq-4-1-18"><code>1.45 80.60 2.57 73.60 6.83 77.60</code></div>
+<div class="eq" id="eq-4-1-19"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-1-20"><code>6,561</code></div>
+<div class="eq" id="eq-4-1-21"><code>12.5 Hz</code></div>
+<div class="eq" id="eq-4-1-22"><code>2.59 72.44 3.21 61.64 7.94 69.78</code></div>
+<div class="eq" id="eq-4-1-23"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-1-24"><code>19,683</code></div>
+<div class="eq" id="eq-4-1-25"><code>12.5 Hz</code></div>
+<div class="eq" id="eq-4-1-26"><code>1.48 83.25 2.56 77.58 6.70 80.85</code></div>
+<div class="eq" id="eq-4-1-27"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-1-28"><code>59,049</code></div>
+<div class="eq" id="eq-4-1-29"><code>12.5 Hz</code></div>
+<div class="eq" id="eq-4-1-30"><code>1.23 83.09 2.37 77.49 6.68 80.61</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-2"><span class="secnum">4.2</span> <span class="t-zh">4.2 SEED-TTS-Eval 上的客观 TTS 结果</span><span class="t-en">Objective TTS Results on SEED-TTS-Eval</span></h3><div class="cap" id="tab-4-2-1"><span class="cap-k">表</span><p class="en">Table 3: Zero-shot TTS performance on SEED-TTS-Eval. Content consistency is measured by CER/WER, and speaker similarity (SIM) is reported as a cosine score. Values outside parentheses use WavLM and values inside parentheses use ERes2Net. Bold and underlined values denote the best and second-best results in each column, respectively. † ERes2Net SIM scores were computed by us using the publicly released models. Before reporting these scores, we verified that our reproduced CER/WER and WavLM SIM results closely matched those reported in the corresponding papers.</p><p class="zh">表 3：SEED-TTS-Eval 上的零样本 TTS 性能。内容一致性以 CER/WER 衡量，说话人相似度（SIM）以余弦分数报告。括号外数值用 WavLM，括号内数值用 ERes2Net。加粗与下划线分别表示每列最佳与次佳结果。† 标注的 ERes2Net SIM 分数由我们使用公开发布的模型计算；报告前我们验证了复现的 CER/WER 与 WavLM SIM 结果与对应论文报告值高度吻合。</p></div>
 <div class="pblk" id="p-4-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-1-1"><span class="en">test-zh test-en test-hard SIM ↑ WER (%) ↓ SIM ↑ SIM ↑ Human 1.26 2.14 Vocoder Resyn.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-1-1"><span class="zh">（此句为 Table 3 表头与基线行的抽取残留：test-zh、test-en、test-hard 三列的 SIM 与 WER（%）指标，以及 Human 1.26/2.14 与声码器重合成（Vocoder Resyn.）两个参考行。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-2-1-1"><span class="en">Model test-zh test-en test-hard CER (%) ↓ SIM ↑ WER (%) ↓ SIM ↑ CER (%) ↓ SIM ↑ Human</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-2-1-1"><span class="zh">表头：Model × test-zh（CER(%)↓/SIM↑）× test-en（WER(%)↓/SIM↑）× test-hard（CER(%)↓/SIM↑）——Human 1.26/0.755(0.775)、2.14/0.734(0.742)、-/-；Vocoder Resyn.（后续照原文）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-4-2-1"><code>1.26 0.755 (0.775) 2.14 0.734 (0.742) - -</code></div>
 <div class="pblk" id="p-4-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-2-1"><span class="en">1.27 0.720 2.17 0.700 Non-autoregressive Models F5-TTS (32 NFE) [8] 1.56 1.83 8.67 F5R-TTS [34] 1.37 0.754 8.79 0.718 LongCat-AudioDiT-3.5B [35] 1.09 1.50 6.04 Autoregressive Models Seed-TTS [2] 1.12 0.796 2.25 0.762 7.59 0.776 FireRedTTS-2 [36] 1.14 0.736 1.95 0.665 Qwen2.5-Omni-7B [38] 1.70 0.752 2.72 0.632 7.97 0.747 Qwen3.5-Omni-Plus [39] 0.99 1.26 Qwen3-TTS-12Hz-1.7B-Base [6] 0.77 1.24 MiniMax-Speech [40] 0.99 0.799 1.90 0.738 VoxCPM2 [13] 0.97 1.84 8.13 Dots.TTS-2B (SOAR) [12] 0.94 1.30 6.60 CosyVoice3-1.5B [4] 1.12 2.21 5.83 0.84 1.54 7.00</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-1"><span class="zh">（此句为 Table 3 数值主体的抽取残留：1.27/0.720/2.17/0.700 等数值对应参考行与各系统结果；非自回归模型 F5-TTS（32 NFE）[8] 1.56/1.83/8.67，F5R-TTS [34] 1.37/0.754/8.79/0.718，LongCat-AudioDiT-3.5B [35] 1.09/1.50/6.04；自回归模型 Seed-TTS [2] 1.12/0.796/2.25/0.762/7.59/0.776，FireRedTTS-2 [36] 1.14/0.736/1.95/0.665，Qwen2.5-Omni-7B [38] 1.70/0.752/2.72/0.632/7.97/0.747，Qwen3.5-Omni-Plus [39] 0.99/1.26，Qwen3-TTS-12Hz-1.7B-Base [6] 0.77/1.24，MiniMax-Speech [40] 0.99/0.799/1.90/0.738，VoxCPM2 [13] 0.97/1.84/8.13，Dots.TTS-2B (SOAR) [12] 0.94/1.30/6.60，CosyVoice3-1.5B [4] 1.12/2.21/5.83/0.84/1.54/7.00；部分 SIM 数值在抽取中丢失。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-2-2-1"><span class="en">Vocoder Resyn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-1"><span class="zh">表头：Model × test-zh（CER(%)↓/SIM↑）× test-en（WER(%)↓/SIM↑）× test-hard（CER(%)↓/SIM↑）——Human 1.26/0.755(0.775)、2.14/0.734(0.742)、-/-；Vocoder Resyn.（后续照原文）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-4-2-2"><code>1.27 0.720 2.17 0.700 - -</code></div>
+<div class="eq" id="eq-4-2-3"><code>Non-autoregressive Models F5-TTS (32 NFE) [8]</code></div>
+<div class="eq" id="eq-4-2-4"><code>1.56 0.741 (0.794) 1.83 0.647 (0.742) 8.67 0.713 (0.762)</code></div>
+<div class="eq" id="eq-4-2-5"><code>F5R-TTS [34]</code></div>
+<div class="eq" id="eq-4-2-6"><code>1.37 0.754 - - 8.79 0.718</code></div>
+<div class="eq" id="eq-4-2-7"><code>LongCat-AudioDiT-3.5B [35]</code></div>
+<div class="eq" id="eq-4-2-8"><code>1.09 0.818 (0.806)† 1.50 0.786 (0.771)† 6.04 0.797 (0.781)†</code></div>
+<div class="eq" id="eq-4-2-9"><code>Autoregressive Models Seed-TTS [2]</code></div>
+<div class="eq" id="eq-4-2-10"><code>1.12 0.796 2.25 0.762 7.59 0.776</code></div>
+<div class="eq" id="eq-4-2-11"><code>FireRedTTS-2 [36]</code></div>
+<div class="eq" id="eq-4-2-12"><code>1.14 0.736 1.95 0.665 - -</code></div>
+<div class="eq" id="eq-4-2-13"><code>Qwen2.5-Omni-7B [38]</code></div>
+<div class="eq" id="eq-4-2-14"><code>1.70 0.752 2.72 0.632 7.97 0.747</code></div>
+<div class="eq" id="eq-4-2-15"><code>Qwen3.5-Omni-Plus [39]</code></div>
+<div class="eq" id="eq-4-2-16"><code>0.99 - 1.26 - - -</code></div>
+<div class="eq" id="eq-4-2-17"><code>Qwen3-TTS-12Hz-1.7B-Base [6]</code></div>
+<div class="eq" id="eq-4-2-18"><code>0.77 - 1.24 - - -</code></div>
+<div class="eq" id="eq-4-2-19"><code>MiniMax-Speech [40]</code></div>
+<div class="eq" id="eq-4-2-20"><code>0.99 0.799 1.90 0.738 - -</code></div>
+<div class="eq" id="eq-4-2-21"><code>VoxCPM2 [13]</code></div>
+<div class="eq" id="eq-4-2-22"><code>0.97 0.795 (0.756)† 1.84 0.753 (0.725)† 8.13 0.753 (0.704)†</code></div>
+<div class="eq" id="eq-4-2-23"><code>Dots.TTS-2B (SOAR) [12]</code></div>
+<div class="eq" id="eq-4-2-24"><code>0.94 0.810 (0.818)† 1.30 0.771 (0.792)† 6.60 0.795 (0.800)†</code></div>
+<div class="eq" id="eq-4-2-25"><code>CosyVoice3-1.5B [4]</code></div>
+<div class="eq" id="eq-4-2-26"><code>1.12 0.781 (0.837) 2.21 0.720 (0.789) 5.83 0.758 (0.816)</code></div>
+<div class="eq" id="eq-4-2-27"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-2-28"><code>0.84 0.792 (0.847) 1.54 0.762 (0.815) 7.00 0.768 (0.824)</code></div>
 <div class="cap" id="tab-4-2-2"><span class="cap-k">表</span><p class="en">Table 3 compares Qwen-Audio-3.0-TTS with recent state-of-the-art zero-shot TTS models. Content consistency is evaluated using CER/WER, and speaker similarity is measured by WavLM and ERes2Net. For methods marked with †, we compute the ERes2Net scores using their publicly released models after verifying that the reproduced CER/WER and WavLM results closely match those reported in the original papers.</p><p class="zh">表 3 将 Qwen-Audio-3.0-TTS 与近期的 SOTA 零样本 TTS 模型进行了比较。内容一致性用 CER/WER 评估，说话人相似度用 WavLM 与 ERes2Net 衡量。对标有 † 的方法，我们在验证复现的 CER/WER 与 WavLM 结果与原论文报告值高度吻合后，使用其公开发布的模型计算 ERes2Net 分数。</p></div>
 <div class="pblk" id="p-4-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-3-1"><span class="en">Overall, Qwen-Audio-3.0-TTS achieves a strong balance between content accuracy and speaker similarity.</span></span> <span class="sent" data-sid="s-4-2-3-2"><span class="en">It ranks second in CER on test-zh while remaining competitive on test-en and test-hard.</span></span></p>
@@ -605,9 +748,29 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="cap" id="tab-4-2-3"><span class="cap-k">表</span><p class="en">Table 4: CER(%) and WER(%) on the CV3-Eval Multilingual Voice Cloning subset. MiniMaxSpeech-2.8-HD and ElevenLabs-v3 are evaluated through their public APIs, while all other comparison systems use publicly released open-source models. Best scores are in bold, and second-best scores are underlined. – means the language is unsupported.</p><p class="zh">表 4：CV3-Eval 多语言声音克隆子集上的 CER(%) 与 WER(%)。MiniMaxSpeech-2.8-HD 与 ElevenLabs-v3 通过其公开 API 评测，其余对比系统均使用公开发布的开源模型。最佳分数加粗，次佳加下划线。「–」表示该语言不受支持。</p></div>
 <div class="pblk" id="p-4-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="en">de es fr it ru ar id pt th vi ms tl 3.42 3.45 6.29 7.49 3.30 2.79 8.74 3.67 5.39 3.38 1.46 1.86 1.65 1.64 3.10 6.35 4.46 3.61 5.71 5.46 3.64 3.92 9.31 4.68 5.38 5.51 2.85 2.33 3.44 4.08 4.41 12.8 Qwen3-TTS-12Hz-1.7B-Base 3.09 3.67 6.48 5.64 3.31 3.22 9.05 4.01 7.40 2.71 3.58 4.70 8.23 10.1 5.97 8.04 35.7 5.34 14.0 5.01 11.1 7.71 12.3 5.57 8.84 3.55 6.21 5.88 9.95 5.48 4.17 10.3 4.42 5.97 4.44 3.10 2.63 1.86 4.97 5.47 7.08 3.89 5.24 10.4 12.8 7.41 4.25 12.9 6.68 6.77 3.91 4.99 7.57 5.69 6.43 4.47 11.8 10.5 6.64 3.35 4.25 4.78 4.30 4.00 3.08 9.77 3.82 4.68 3.36 2.35 1.99 1.45 3.17 2.62 6.43 We find that pushing CER/WER lower through more aggressive optimization consistently comes at the expense of speech naturalness and expressiveness.</span><button class="mk feat" data-sid="s-4-2-4-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-2-4-2"><span class="en">Our model therefore targets a better overall trade-off instead of optimizing specifically for the lowest CER/WER.</span></span> <span class="sent" data-sid="s-4-2-4-3"><span class="en">For speaker similarity, QwenAudio-3.0-TTS remains competitive under WavLM and achieves the highest ERes2Net scores across all three test sets.</span></span> <span class="sent" data-sid="s-4-2-4-4"><span class="en">We also observe that WavLM and ERes2Net often produce different system rankings, suggesting that the two metrics capture complementary aspects of speaker similarity.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="zh">（此句主体为 Table 4 数值的抽取残留：de/es/fr/it/ru/ar/id/pt/th/vi/ms/tl 各语言列下 MiniMax-Speech-2.8-HD、ElevenLabs-v3、Dots.TTS-2B、VoxCPM2、Qwen3-TTS-12Hz-1.7B-Base 与 Qwen-Audio-3.0-TTS 的 CER/WER 数值，含 3.42、3.45、6.29、7.49、3.30、2.79、8.74、3.67、5.39、3.38、1.46、1.86、1.65、1.64、3.10、6.35、4.46、3.61、5.71、5.46、3.64、3.92、9.31、4.68、5.38、5.51、2.85、2.33、3.44、4.08、4.41、12.8、3.09、3.67、6.48、5.64、3.31、3.22、9.05、4.01、7.40、2.71、3.58、4.70、8.23、10.1、5.97、8.04、35.7、5.34、14.0、5.01、11.1、7.71、12.3、5.57、8.84、3.55、6.21、5.88、9.95、5.48、4.17、10.3、4.42、5.97、4.44、3.10、2.63、1.86、4.97、5.47、7.08、3.89、5.24、10.4、12.8、7.41、4.25、12.9、6.68、6.77、3.91、4.99、7.57、5.69、6.43、4.47、11.8、10.5、6.64、3.35、4.25、4.78、4.30、4.00、3.08、9.77、3.82、4.68、3.36、2.35、1.99、1.45、3.17、2.62、6.43。）句末为正文：我们发现，通过更激进的优化压低 CER/WER，总会以牺牲语音自然度与表现力为代价。</span><button class="mk feat" data-sid="s-4-2-4-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-4-2-4-2"><span class="zh">因此，我们的模型以更好的整体权衡为目标，而不是专门针对最低 CER/WER 优化。</span></span><span class="sent" data-sid="s-4-2-4-3"><span class="zh">在说话人相似度上，Qwen-Audio-3.0-TTS 在 WavLM 下保持竞争力，并在全部三个测试集上取得最高的 ERes2Net 分数。</span></span><span class="sent" data-sid="s-4-2-4-4"><span class="zh">我们还观察到 WavLM 与 ERes2Net 常常给出不同的系统排名，说明这两个指标刻画了说话人相似度互补的侧面。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-4-2-4-1">
+          <p class="en-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="en">Model zh en ja ko de es fr it ru ar id pt th vi ms tl Commercial API Models MiniMax-Speech-2.8-HD</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="zh">表头：Model × zh/en/ja/ko/de/es/fr/it/ru/ar/id/pt/th/vi/ms/tl 各语种——商业 API 模型：MiniMax-Speech-2.8-HD（后续照原文）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-4-2-29"><code>3.42 3.45 6.29 7.49 3.30 2.79 8.74 3.67 5.39 3.38 1.46 1.86 1.65 1.64 3.10 6.35</code></div>
+<div class="eq" id="eq-4-2-30"><code>ElevenLabs-v3</code></div>
+<div class="eq" id="eq-4-2-31"><code>4.46 3.61 5.71 5.46 3.64 3.92 9.31 4.68 5.38 5.51 2.85 2.33 3.44 4.08 4.41 12.8</code></div>
+<div class="eq" id="eq-4-2-32"><code>Open-source Models</code></div>
+<div class="eq" id="eq-4-2-33"><code>Qwen3-TTS-12Hz-1.7B-Base 3.09 3.67 6.48 5.64 3.31 3.22 9.05 4.01 7.40 – – 2.71 – – – –</code></div>
+<div class="eq" id="eq-4-2-34"><code>Dots.TTS-2B (SOAR)</code></div>
+<div class="eq" id="eq-4-2-35"><code>3.58 4.70 8.23 10.1 5.97 8.04 35.7 5.34 14.0 – 5.01 11.1 7.71 12.3 5.57 8.84</code></div>
+<div class="eq" id="eq-4-2-36"><code>VoxCPM2</code></div>
+<div class="eq" id="eq-4-2-37"><code>3.55 6.21 5.88 9.95 5.48 4.17 10.3 4.42 5.97 4.44 3.10 2.63 1.86 4.97 5.47 7.08</code></div>
+<div class="eq" id="eq-4-2-38"><code>CosyVoice3-0.5B</code></div>
+<div class="eq" id="eq-4-2-39"><code>3.89 5.24 10.4 12.8 7.41 4.25 12.9 6.68 6.77 – – – – – – –</code></div>
+<div class="eq" id="eq-4-2-40"><code>CosyVoice3-1.5B</code></div>
+<div class="eq" id="eq-4-2-41"><code>3.91 4.99 7.57 5.69 6.43 4.47 11.8 10.5 6.64 – – – – – – –</code></div>
+<div class="eq" id="eq-4-2-42"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-2-43"><code>3.35 4.25 4.78 4.30 4.00 3.08 9.77 3.82 4.68 3.36 2.35 1.99 1.45 3.17 2.62 6.43</code></div>
+<div class="pblk" id="p-4-2-5">
+          <p class="en-lines"><span class="sent" data-sid="s-4-2-5-1"><span class="en">We find that pushing CER/WER lower through more aggressive optimization consistently comes at the expense of speech naturalness and expressiveness.</span><button class="mk feat" data-sid="s-4-2-5-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-2-5-2"><span class="en">Our model therefore targets a better overall trade-off instead of optimizing specifically for the lowest CER/WER.</span></span> <span class="sent" data-sid="s-4-2-5-3"><span class="en">For speaker similarity, QwenAudio-3.0-TTS remains competitive under WavLM and achieves the highest ERes2Net scores across all three test sets.</span></span> <span class="sent" data-sid="s-4-2-5-4"><span class="en">We also observe that WavLM and ERes2Net often produce different system rankings, suggesting that the two metrics capture complementary aspects of speaker similarity.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-2-5-1"><span class="zh">（此句主体为 Table 4 数值的抽取残留：de/es/fr/it/ru/ar/id/pt/th/vi/ms/tl 各语言列下 MiniMax-Speech-2.8-HD、ElevenLabs-v3、Dots.TTS-2B、VoxCPM2、Qwen3-TTS-12Hz-1.7B-Base 与 Qwen-Audio-3.0-TTS 的 CER/WER 数值，含 3.42、3.45、6.29、7.49、3.30、2.79、8.74、3.67、5.39、3.38、1.46、1.86、1.65、1.64、3.10、6.35、4.46、3.61、5.71、5.46、3.64、3.92、9.31、4.68、5.38、5.51、2.85、2.33、3.44、4.08、4.41、12.8、3.09、3.67、6.48、5.64、3.31、3.22、9.05、4.01、7.40、2.71、3.58、4.70、8.23、10.1、5.97、8.04、35.7、5.34、14.0、5.01、11.1、7.71、12.3、5.57、8.84、3.55、6.21、5.88、9.95、5.48、4.17、10.3、4.42、5.97、4.44、3.10、2.63、1.86、4.97、5.47、7.08、3.89、5.24、10.4、12.8、7.41、4.25、12.9、6.68、6.77、3.91、4.99、7.57、5.69、6.43、4.47、11.8、10.5、6.64、3.35、4.25、4.78、4.30、4.00、3.08、9.77、3.82、4.68、3.36、2.35、1.99、1.45、3.17、2.62、6.43。）句末为正文：我们发现，通过更激进的优化压低 CER/WER，总会以牺牲语音自然度与表现力为代价。</span><button class="mk feat" data-sid="s-4-2-5-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-4-2-5-2"><span class="zh">因此，我们的模型以更好的整体权衡为目标，而不是专门针对最低 CER/WER 优化。</span></span><span class="sent" data-sid="s-4-2-5-3"><span class="zh">在说话人相似度上，Qwen-Audio-3.0-TTS 在 WavLM 下保持竞争力，并在全部三个测试集上取得最高的 ERes2Net 分数。</span></span><span class="sent" data-sid="s-4-2-5-4"><span class="zh">我们还观察到 WavLM 与 ERes2Net 常常给出不同的系统排名，说明这两个指标刻画了说话人相似度互补的侧面。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-4-2-5-1">
       <div class="ann-card kind-critique">
         <div class="ann-kind">值得质疑</div>
         <div class="ann-title">CER 与自然度的拉锯</div>
@@ -643,16 +806,44 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="cap" id="tab-4-3-2-2"><span class="cap-k">表</span><p class="en">Table 5: WER/CER, ERes2Net speaker similarity (SIM), and DNSMOS on the hard-zh and hard-en subsets of CV3-Eval. The best result in each column is shown in bold, and the second-best result is underlined.</p><p class="zh">表 5：CV3-Eval hard-zh 与 hard-en 子集上的 WER/CER、ERes2Net 说话人相似度（SIM）与 DNSMOS。每列最佳结果加粗，次佳加下划线。</p></div>
 <div class="pblk" id="p-4-3-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-3-2-2-1"><span class="en">hard-zh hard-en DNSMOS ↑ WER (%) ↓ DNSMOS ↑ 7.42 74.6 3.74 7.37 72.1 3.80 10.66 50.3 3.81 5.84 48.9 3.92 11.24 69.1 3.79 6.53 66.1 3.88 9.24 72.8 3.75 8.50 73.9 3.84 11.75 77.5 3.65 11.69 76.0 3.72 8.10 69.9 3.63 7.48 67.0 3.73 9.77 78.5 3.79 10.55 76.1 3.95 7.44 78.7 3.93 6.71 76.6 4.04</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-3-2-2-1"><span class="zh">（此句为 Table 5 数值的抽取残留：hard-zh 与 hard-en 子集上各系统的 WER（%）、SIM、DNSMOS 数值——7.42/74.6/3.74、7.37/72.1/3.80、10.66/50.3/3.81、5.84/48.9/3.92、11.24/69.1/3.79、6.53/66.1/3.88、9.24/72.8/3.75、8.50/73.9/3.84、11.75/77.5/3.65、11.69/76.0/3.72、8.10/69.9/3.63、7.48/67.0/3.73、9.77/78.5/3.79、10.55/76.1/3.95、7.44/78.7/3.93、6.71/76.6/4.04，系统名列在抽取中丢失。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-3-2-2-1"><span class="en">Model hard-zh hard-en CER (%) ↓ SIM (%) ↑ DNSMOS ↑ WER (%) ↓ SIM (%) ↑ DNSMOS ↑ Commercial API Models MiniMax-Speech-2.8-HD</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-3-2-2-1"><span class="zh">表头：Model × hard-zh / hard-en（CER (%) ↓ / SIM (%) ↑ / DNSMOS ↑）/（WER (%) ↓ / SIM (%) ↑ / DNSMOS ↑）——商业 API 模型：MiniMax-Speech-2.8-HD（后续照原文）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-4-3-2-1"><code>7.42 74.6 3.74 7.37 72.1 3.80</code></div>
+<div class="eq" id="eq-4-3-2-2"><code>ElevenLabs-v3</code></div>
+<div class="eq" id="eq-4-3-2-3"><code>10.66 50.3 3.81 5.84 48.9 3.92</code></div>
+<div class="eq" id="eq-4-3-2-4"><code>Open-source Models Qwen3-TTS-12Hz-1.7B-Base</code></div>
+<div class="eq" id="eq-4-3-2-5"><code>11.24 69.1 3.79 6.53 66.1 3.88</code></div>
+<div class="eq" id="eq-4-3-2-6"><code>LongCat-AudioDiT-3.5B</code></div>
+<div class="eq" id="eq-4-3-2-7"><code>9.24 72.8 3.75 8.50 73.9 3.84</code></div>
+<div class="eq" id="eq-4-3-2-8"><code>Dots.TTS-2B (SOAR)</code></div>
+<div class="eq" id="eq-4-3-2-9"><code>11.75 77.5 3.65 11.69 76.0 3.72</code></div>
+<div class="eq" id="eq-4-3-2-10"><code>VoxCPM2</code></div>
+<div class="eq" id="eq-4-3-2-11"><code>8.10 69.9 3.63 7.48 67.0 3.73</code></div>
+<div class="eq" id="eq-4-3-2-12"><code>CosyVoice3-1.5B</code></div>
+<div class="eq" id="eq-4-3-2-13"><code>9.77 78.5 3.79 10.55 76.1 3.95</code></div>
+<div class="eq" id="eq-4-3-2-14"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-3-2-15"><code>7.44 78.7 3.93 6.71 76.6 4.04</code></div>
 <div class="cap" id="tab-4-3-2-3"><span class="cap-k">表</span><p class="en">Table 6: WER/CER (%, ↓) on the CV3-Eval Cross-lingual Voice Cloning subset. Top-level headers denote target languages and second-level headers denote source languages. Bold and underlined values indicate the best and second-best results in each transfer direction. For readability, entries with substantially higher WER/CER are omitted and denoted by “–”.</p><p class="zh">表 6：CV3-Eval 跨语言声音克隆子集上的 WER/CER（%，越低越好）。顶层表头为目标语言，二级表头为源语言。加粗与下划线分别表示每个迁移方向的最佳与次佳结果。为可读性，WER/CER 显著偏高的条目被省略并以「–」标注。</p></div>
 <div class="pblk" id="p-4-3-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-4-3-2-3-1"><span class="en">to-zh to-en to-ja to-ko 9.96 6.07 3.63 3.59 5.79 4.28 30.7 13.7 6.39 6.45 6.78 11.3 7.15 6.17 2.82 4.86 5.30 4.88 10.7 12.4 6.00 6.26 5.48 8.01 4.77 3.43 1.08 2.77 3.04 3.09 8.40 7.21 3.67 4.82 5.14 5.59 8.07 2.61 4.31 8.02 4.74 16.1 12.4 18.6 13.5 7.76 3.42 5.26 6.22 7.15 5.73 10.4 10.6 8.01 6.78 3.30 4.32 5.39 5.94 13.7 13.4 4.19 31.6 14.0 10.5 5.23 3.29 1.09 2.40 3.15 3.54 6.53 6.66 2.98 4.27 4.34 5.15</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-3-2-3-1"><span class="zh">（此句为 Table 6 数值的抽取残留：to-zh、to-en、to-ja、to-ko 各迁移方向下不同源语言的 WER/CER 数值——9.96、6.07、3.63、3.59、5.79、4.28、30.7、13.7、6.39、6.45、6.78、11.3、7.15、6.17、2.82、4.86、5.30、4.88、10.7、12.4、6.00、6.26、5.48、8.01、4.77、3.43、1.08、2.77、3.04、3.09、8.40、7.21、3.67、4.82、5.14、5.59、8.07、2.61、4.31、8.02、4.74、16.1、12.4、18.6、13.5、7.76、3.42、5.26、6.22、7.15、5.73、10.4、10.6、8.01、6.78、3.30、4.32、5.39、5.94、13.7、13.4、4.19、31.6、14.0、10.5、5.23、3.29、1.09、2.40、3.15、3.54、6.53、6.66、2.98、4.27、4.34、5.15，行列表头在抽取中部分丢失。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-3-2-3-1"><span class="en">Model to-zh to-en to-ja to-ko en ja ko zh ja ko zh en ko zh en ja Commercial API Models MiniMax-Speech-2.8-HD</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-3-2-3-1"><span class="zh">表头：Model × to-zh / to-en / to-ja / to-ko 与 en / ja / ko / zh 各方向——商业 API 模型：MiniMax-Speech-2.8-HD（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-4-3-2-16"><code>9.96 6.07 3.63 3.59 5.79 4.28 30.7 13.7 6.39 6.45 6.78 11.3</code></div>
+<div class="eq" id="eq-4-3-2-17"><code>ElevenLabs-v3</code></div>
+<div class="eq" id="eq-4-3-2-18"><code>7.15 6.17 2.82 4.86 5.30 4.88 10.7 12.4 6.00 6.26 5.48 8.01</code></div>
+<div class="eq" id="eq-4-3-2-19"><code>Open-source Models Qwen3-TTS-12Hz-1.7B-Base</code></div>
+<div class="eq" id="eq-4-3-2-20"><code>4.77 3.43 1.08 2.77 3.04 3.09 8.40 7.21 3.67 4.82 5.14 5.59</code></div>
+<div class="eq" id="eq-4-3-2-21"><code>Dots.TTS-2B (SOAR)</code></div>
+<div class="eq" id="eq-4-3-2-22"><code>8.07 – 2.61 4.31 8.02 4.74 16.1 – – 12.4 18.6 13.5</code></div>
+<div class="eq" id="eq-4-3-2-23"><code>VoxCPM2</code></div>
+<div class="eq" id="eq-4-3-2-24"><code>7.76 – 3.42 5.26 6.22 7.15 – – – 5.73 10.4 10.6</code></div>
+<div class="eq" id="eq-4-3-2-25"><code>CosyVoice3-1.5B</code></div>
+<div class="eq" id="eq-4-3-2-26"><code>8.01 6.78 3.30 4.32 5.39 5.94 13.7 13.4 4.19 31.6 14.0 10.5</code></div>
+<div class="eq" id="eq-4-3-2-27"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-3-2-28"><code>5.23 3.29 1.09 2.40 3.15 3.54 6.53 6.66 2.98 4.27 4.34 5.15</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-4"><span class="secnum">4.4</span> <span class="t-zh">4.4 Qwen-Audio-TTS-Eval 上的客观 TTS 结果</span><span class="t-en">Objective TTS Results on Qwen-Audio-TTS-Eval</span></h3></section>
 <section>
@@ -676,7 +867,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="cap" id="tab-4-4-2-1"><span class="cap-k">表</span><p class="en">Table 8 shows that Qwen-Audio-3.0-TTS maintains competitive content accuracy and strong speaker consistency in both Chinese and English during one-pass long-form synthesis. It substantially</p><p class="zh">表 8 显示，Qwen-Audio-3.0-TTS 在中英文单次长音频合成中都保持了有竞争力的内容准确性与很强的说话人一致性。它大幅（接 Table 8 标题块的下一段续文）。</p></div>
 <div class="cap" id="tab-4-4-2-2"><span class="cap-k">表</span><p class="en">Table 7: Complete category-level text-normalization accuracy. Higher is better; bold and underline denote the best and second-best results.</p><p class="zh">表 7：完整的类别级文本规整准确率。越高越好；加粗与下划线分别表示最佳与次佳结果。</p></div>
 <div class="pblk" id="p-4-4-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-2-1"><span class="en">Overall Num.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-2-1"><span class="en">Model Overall Num.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-2-1"><span class="zh">（此句为 Table 7 表头的抽取残留：Overall 与 Num. 两列。）</span></span></p>
           
         </div>
@@ -691,14 +882,47 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-4-4-2-5">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-5-1"><span class="en">Code Expr. 57.0 60.5 74.2 78.7 40.5 63.0 41.5 63.3 73.9 47.1 24.8 44.1 2.0 7.4 2.7 3.6 0.0 10.0 4.9 27.3 0.8 0.0 1.0 2.8 38.6 46.9 40.6 67.7 28.4 49.5 38.3 52.0 72.3 31.0 3.8 27.5 55.4 48.6 72.9 61.8 33.8 51.0 39.0 58.6 82.4 42.0 15.2 25.2 59.3 54.2 81.3 70.2 40.5 77.0 45.1 55.5 80.7 37.4 12.4 32.2 68.7 65.7 84.2 78.2 43.7 82.8 50.6 59.4 89.7 61.5 43.8 45.1</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-5-1"><span class="zh">（此句为 Table 7 数值主体的抽取残留：Code、Expr. 列及各系统在各类别上的准确率——57.0、60.5、74.2、78.7、40.5、63.0、41.5、63.3、73.9、47.1、24.8、44.1、2.0、7.4、2.7、3.6、0.0、10.0、4.9、27.3、0.8、0.0、1.0、2.8、38.6、46.9、40.6、67.7、28.4、49.5、38.3、52.0、72.3、31.0、3.8、27.5、55.4、48.6、72.9、61.8、33.8、51.0、39.0、58.6、82.4、42.0、15.2、25.2、59.3、54.2、81.3、70.2、40.5、77.0、45.1、55.5、80.7、37.4、12.4、32.2、68.7、65.7、84.2、78.2、43.7、82.8、50.6、59.4、89.7、61.5、43.8、45.1。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-5-1"><span class="en">Code Expr. zh en zh en zh en zh en zh en zh en Qwen3-TTS-12Hz-1.7B-Base</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-5-1"><span class="zh">（表格行：Code / Expr. × zh / en（六组）——Qwen3-TTS-12Hz-1.7B-Base，后续照原文。）</span></span></p>
           
         </div>
+<div class="eq" id="eq-4-4-2-1"><code>57.0 60.5 74.2 78.7 40.5 63.0 41.5 63.3 73.9 47.1 24.8 44.1</code></div>
+<div class="eq" id="eq-4-4-2-2"><code>LongCat-AudioDiT-3.5B</code></div>
+<div class="eq" id="eq-4-4-2-3"><code>2.0 7.4 2.7 3.6 0.0 10.0 4.9 27.3 0.8 0.0 1.0 2.8</code></div>
+<div class="eq" id="eq-4-4-2-4"><code>Dots.TTS-2B (SOAR)</code></div>
+<div class="eq" id="eq-4-4-2-5"><code>38.6 46.9 40.6 67.7 28.4 49.5 38.3 52.0 72.3 31.0 3.8 27.5</code></div>
+<div class="eq" id="eq-4-4-2-6"><code>VoxCPM2</code></div>
+<div class="eq" id="eq-4-4-2-7"><code>55.4 48.6 72.9 61.8 33.8 51.0 39.0 58.6 82.4 42.0 15.2 25.2</code></div>
+<div class="eq" id="eq-4-4-2-8"><code>CosyVoice3-1.5B</code></div>
+<div class="eq" id="eq-4-4-2-9"><code>59.3 54.2 81.3 70.2 40.5 77.0 45.1 55.5 80.7 37.4 12.4 32.2</code></div>
+<div class="eq" id="eq-4-4-2-10"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-4-2-11"><code>68.7 65.7 84.2 78.2 43.7 82.8 50.6 59.4 89.7 61.5 43.8 45.1</code></div>
 <div class="cap" id="tab-4-4-2-3"><span class="cap-k">表</span><p class="en">Table 8: Complete one-pass long-form comparison by input-length bucket. Length is measured in characters for Chinese and words for English; duration is estimated from the Qwen-Audio-3.0-TTS outputs. “–” indicates a metric that is not applicable, while “–†” denotes omitted CER/WER values that fall substantially outside the effective comparison range under our evaluation setting.</p><p class="zh">表 8：按输入长度分桶的完整单次长音频对比。中文长度以字符计、英文以词计；时长由 Qwen-Audio-3.0-TTS 的输出估计。「–」表示该指标不适用，「–†」表示在我们的评测设置下显著超出有效比较范围而被省略的 CER/WER 数值。</p></div>
 <div class="pblk" id="p-4-4-2-6">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-6-1"><span class="en">zh CER (%) ↓ zh SIM ↑ en WER (%) ↓ en SIM ↑ short mid long all P-SIM S-SIM short mid long all P-SIM S-SIM Text length (µ ± σ) Audio duration (µ ± σ, s) N samples 29 35 36 100 100 100 29 32 39 100 100 100 0.34 1.89 5.79 2.84 63.11 88.98 3.04 4.25 6.57 4.81 68.56 90.49 70.15 87.10 71.07 88.24 16.66 36.03 47.31 34.47 78.47 89.74 13.42 20.67 47.85 29.17 81.80 91.48 0.54 0.58 0.49 0.54 61.73 86.80 2.33 4.25 2.98 3.20 68.95 90.39 14.03 26.73 33.29 25.41 80.44 93.88 7.45 18.59 38.78 23.24 84.52 94.90 0.30 0.31 5.62 2.22 78.85 93.16 3.30 6.72 4.85 5.00 82.35 93.45 improves content fidelity over CosyVoice3-1.5B while retaining high prompt and segment-level speaker similarity.</span></span> <span class="sent" data-sid="s-4-4-2-6-2"><span class="en">The Chinese and English test sets each contain 100 paragraph-level inputs.</span></span> <span class="sent" data-sid="s-4-4-2-6-3"><span class="en">Samples are divided into short, mid, and long buckets by input length.</span></span> <span class="sent" data-sid="s-4-4-2-6-4"><span class="en">P-SIM is the average similarity between prompt and generated segments, while S-SIM is the average pairwise similarity among overlapping segments within a generated utterance.</span></span> <span class="sent" data-sid="s-4-4-2-6-5"><span class="en">Table 8 reports the complete bucket-level breakdown.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-6-1"><span class="zh">（此句开头为 Table 8 数值的抽取残留：zh CER（%）、zh SIM、en WER（%）、en SIM 的 short/mid/long/all 分桶及 P-SIM、S-SIM 两列；文本长度（µ ± σ）、音频时长（µ ± σ，s）、样本数 29/35/36 与 100/100/100、29/32/39 与 100/100/100，数值为 0.34/1.89/5.79/2.84/63.11/88.98、3.04/4.25/6.57/4.81/68.56/90.49、70.15/87.10/71.07/88.24、16.66/36.03/47.31/34.47/78.47/89.74、13.42/20.67/47.85/29.17/81.80/91.48、0.54/0.58/0.49/0.54/61.73/86.80、2.33/4.25/2.98/3.20/68.95/90.39、14.03/26.73/33.29/25.41/80.44/93.88、7.45/18.59/38.78/23.24/84.52/94.90、0.30/0.31/5.62/2.22/78.85/93.16、3.30/6.72/4.85/5.00/82.35/93.45，系统名列在抽取中丢失。）句末为正文：相对 CosyVoice3-1.5B，它大幅提升了内容保真度，同时保持了较高的提示级与段落级说话人相似度。</span></span><span class="sent" data-sid="s-4-4-2-6-2"><span class="zh">中文与英文测试集各包含 100 个段落级输入。</span></span><span class="sent" data-sid="s-4-4-2-6-3"><span class="zh">样本按输入长度分为短、中、长三档。</span></span><span class="sent" data-sid="s-4-4-2-6-4"><span class="zh">P-SIM 是提示与生成各段之间的平均相似度，S-SIM 是一条生成语音内部重叠段落之间的平均两两相似度。</span></span><span class="sent" data-sid="s-4-4-2-6-5"><span class="zh">Table 8 报告了完整的分档拆解。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-6-1"><span class="en">Model zh CER (%) ↓ zh SIM ↑ en WER (%) ↓ en SIM ↑ short mid long all P-SIM S-SIM short mid long all P-SIM S-SIM Text length (µ ± σ)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-6-1"><span class="zh">表头：Model × zh CER(%)↓ × zh SIM↑ × en WER(%)↓ × en SIM↑（short/mid/long/all，P-SIM/S-SIM）；文本长度（µ ± σ）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-4-4-2-12"><code>496±19 634±26 735±24 630±99 – – 248±26 345±31 451±29 358±88 – –</code></div>
+<div class="eq" id="eq-4-4-2-13"><code>Audio duration (µ ± σ, s)</code></div>
+<div class="eq" id="eq-4-4-2-14"><code>116±9 146±11 161±23 142±24 – – 86±14 115±18 163±27 125±38 – –</code></div>
+<div class="eq" id="eq-4-4-2-15"><code>N samples</code></div>
+<div class="eq" id="eq-4-4-2-16"><code>29 35 36 100 100 100 29 32 39 100 100 100</code></div>
+<div class="eq" id="eq-4-4-2-17"><code>Qwen3-TTS-12Hz-1.7B-Base</code></div>
+<div class="eq" id="eq-4-4-2-18"><code>0.34 1.89 5.79 2.84 63.11 88.98 3.04 4.25 6.57 4.81 68.56 90.49</code></div>
+<div class="eq" id="eq-4-4-2-19"><code>LongCat-AudioDiT-3.5B</code></div>
+<div class="eq" id="eq-4-4-2-20"><code>–† –† –† –† 70.15 87.10 –† –† –† –† 71.07 88.24</code></div>
+<div class="eq" id="eq-4-4-2-21"><code>Dots.TTS-2B (SOAR)</code></div>
+<div class="eq" id="eq-4-4-2-22"><code>16.66 36.03 47.31 34.47 78.47 89.74 13.42 20.67 47.85 29.17 81.80 91.48</code></div>
+<div class="eq" id="eq-4-4-2-23"><code>VoxCPM2</code></div>
+<div class="eq" id="eq-4-4-2-24"><code>0.54 0.58 0.49 0.54 61.73 86.80 2.33 4.25 2.98 3.20 68.95 90.39</code></div>
+<div class="eq" id="eq-4-4-2-25"><code>CosyVoice3-1.5B</code></div>
+<div class="eq" id="eq-4-4-2-26"><code>14.03 26.73 33.29 25.41 80.44 93.88 7.45 18.59 38.78 23.24 84.52 94.90</code></div>
+<div class="eq" id="eq-4-4-2-27"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-4-2-28"><code>0.30 0.31 5.62 2.22 78.85 93.16 3.30 6.72 4.85 5.00 82.35 93.45</code></div>
+<div class="pblk" id="p-4-4-2-7">
+          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-7-1"><span class="en">improves content fidelity over CosyVoice3-1.5B while retaining high prompt and segment-level speaker similarity.</span></span> <span class="sent" data-sid="s-4-4-2-7-2"><span class="en">The Chinese and English test sets each contain 100 paragraph-level inputs.</span></span> <span class="sent" data-sid="s-4-4-2-7-3"><span class="en">Samples are divided into short, mid, and long buckets by input length.</span></span> <span class="sent" data-sid="s-4-4-2-7-4"><span class="en">P-SIM is the average similarity between prompt and generated segments, while S-SIM is the average pairwise similarity among overlapping segments within a generated utterance.</span></span> <span class="sent" data-sid="s-4-4-2-7-5"><span class="en">Table 8 reports the complete bucket-level breakdown.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-7-1"><span class="zh">（正文残句）……相对 CosyVoice3-1.5B 提升了内容保真度，同时保持高提示与段级说话人相似度。</span></span><span class="sent" data-sid="s-4-4-2-7-2"><span class="zh">中文与英文测试集各含 100 个段落级输入。</span></span><span class="sent" data-sid="s-4-4-2-7-3"><span class="zh">样本按输入长度分为 short、mid、long 三档。</span></span><span class="sent" data-sid="s-4-4-2-7-4"><span class="zh">P-SIM 为提示与生成片段之间的平均相似度，S-SIM 为生成语音内部重叠片段之间的平均两两相似度。</span></span><span class="sent" data-sid="s-4-4-2-7-5"><span class="zh">表 8 给出完整的分档明细。</span></span></p>
           
         </div></section>
 <section>
@@ -708,16 +932,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-4-4-3-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-3-2-1"><span class="en">Qwen-Audio-3.0-TTS is designed with built-in robustness to degraded enrollment speech, without relying on a dedicated inference-time denoising mode.</span></span> <span class="sent" data-sid="s-4-4-3-2-2"><span class="en">As shown in Table 9, this capability leads to strong results across all three conditions.</span></span> <span class="sent" data-sid="s-4-4-3-2-3"><span class="en">We evaluate both standard and denoising modes for MiniMax-Speech-2.8-HD and ElevenLabs-v3.</span></span> <span class="sent" data-sid="s-4-4-3-2-4"><span class="en">Enabling denoising raises MiniMax’s DNSMOS from 3.464 to 3.728 on Noisy and from 3.065 to 3.343 on Reverb, but reduces SIM from 66.72 to 63.83 and from 61.56 to 56.53, respectively.</span><button class="mk" data-sid="s-4-4-3-2-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-4-3-2-5"><span class="en">A similar trade-off appears for ElevenLabs-v3, whose denoising mode improves Reverb DNSMOS from 3.090 to 4.025 and WER from 1.75% to 0.58%, while its SIM remains low at 44.39%.</span></span> <span class="sent" data-sid="s-4-4-3-2-6"><span class="en">By comparison, Qwen-Audio-3.0-TTS reaches DNSMOS scores of 3.962 and 3.925 on Noisy and Reverb, close to ElevenLabs-v3·Denoise, while achieving much higher SIM scores of 76.14% and 74.12%.</span><button class="mk" data-sid="s-4-4-3-2-6" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-4-3-2-7"><span class="en">On Reverb, it further obtains the best SIM together with the second-best WER and DNSMOS, showing a strong balance among denoising quality, intelligibility, and speaker preservation.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-3-2-1"><span class="zh">Qwen-Audio-3.0-TTS 在设计上内置了对退化注册语音的鲁棒性，不依赖专门的推理时去噪模式。</span></span><span class="sent" data-sid="s-4-4-3-2-2"><span class="zh">如 Table 9 所示，这一能力在全部三种条件下都带来了很强的结果。</span></span><span class="sent" data-sid="s-4-4-3-2-3"><span class="zh">我们对 MiniMax-Speech-2.8-HD 与 ElevenLabs-v3 都评测了标准模式与去噪模式。</span></span><span class="sent" data-sid="s-4-4-3-2-4"><span class="zh">开启去噪后，MiniMax 在 Noisy 上的 DNSMOS 从 3.464 升至 3.728、在 Reverb 上从 3.065 升至 3.343，但 SIM 分别从 66.72 降到 63.83、从 61.56 降到 56.53。</span><button class="mk" data-sid="s-4-4-3-2-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-4-4-3-2-5"><span class="zh">ElevenLabs-v3 出现类似的权衡：其去噪模式把 Reverb 上的 DNSMOS 从 3.090 提升到 4.025、WER 从 1.75% 降到 0.58%，但其 SIM 仍低至 44.39%。</span></span><span class="sent" data-sid="s-4-4-3-2-6"><span class="zh">相比之下，Qwen-Audio-3.0-TTS 在 Noisy 与 Reverb 上达到 3.962 与 3.925 的 DNSMOS，接近 ElevenLabs-v3·Denoise，同时取得高得多的 SIM——76.14% 与 74.12%。</span><button class="mk" data-sid="s-4-4-3-2-6" title="查看讲解">解</button></span><span class="sent" data-sid="s-4-4-3-2-7"><span class="zh">在 Reverb 上，它还取得最佳 SIM，WER 与 DNSMOS 均为次佳，在去噪质量、可懂度与说话人保留之间展现出很强的平衡。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-4-4-3-2-4">
-      <div class="ann-card kind-number">
-        <div class="ann-kind">数字怎么理解</div>
-        <div class="ann-title">外挂降噪的双刃剑</div>
-        <div class="ann-quote">Enabling denoising raises MiniMax’s DNSMOS from 3.464 to 3.728 on Noisy and from 3.065 to 3.343 on Reverb, but reduces SIM from 66.72 to 63.83 and from 61.56 to 56.53, respectively.</div>
-        <div class="exp exp-tech">MiniMax 开降噪后 DNSMOS 在 Noisy/Reverb 上从 3.464→3.728、3.065→3.343，但 SIM 从 66.72→63.83、61.56→56.53。音频质量分和说话人相似度此消彼长，说明独立降噪器在去噪的同时也削掉了说话人个性。这组数字是「内生化鲁棒训练优于外挂模块」这一主张的最直接证据。</div>
-        
-      </div></div><div class="ann-panel" data-sid="s-4-4-3-2-6">
+          <p class="en-lines"><span class="sent" data-sid="s-4-4-3-2-1"><span class="en">Qwen-Audio-3.0-TTS is designed with built-in robustness to degraded enrollment speech, without relying on a dedicated inference-time denoising mode.</span></span> <span class="sent" data-sid="s-4-4-3-2-2"><span class="en">As shown in Table 9, this capability leads to strong results across all three conditions.</span></span> <span class="sent" data-sid="s-4-4-3-2-3"><span class="en">We evaluate both standard and denoising modes for MiniMax-Speech-2.8-HD and ElevenLabs-v3.</span></span> <span class="sent" data-sid="s-4-4-3-2-4"><span class="en">Enabling denoising raises MiniMax’s DNSMOS</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-4-3-2-1"><span class="zh">Qwen-Audio-3.0-TTS 在设计上内置了对退化注册语音的鲁棒性，不依赖专门的推理时去噪模式。</span></span><span class="sent" data-sid="s-4-4-3-2-2"><span class="zh">如 Table 9 所示，这一能力在全部三种条件下都带来了很强的结果。</span></span><span class="sent" data-sid="s-4-4-3-2-3"><span class="zh">我们对 MiniMax-Speech-2.8-HD 与 ElevenLabs-v3 都评测了标准模式与去噪模式。</span></span><span class="sent" data-sid="s-4-4-3-2-4"><span class="zh">开启去噪后，MiniMax 在 Noisy 上的 DNSMOS 从 3.464 升至 3.728、在 Reverb 上从 3.065 升至 3.343，但 SIM 分别从 66.72 降到 63.83、从 61.56 降到 56.53。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-4-4-3-1"><code>from 3.464 to 3.728 on Noisy and from 3.065 to 3.343 on Reverb, but reduces SIM from 66.72 to</code></div>
+<div class="pblk" id="p-4-4-3-3">
+          <p class="en-lines"><span class="sent" data-sid="s-4-4-3-3-1"><span class="en">63.83 and from 61.56 to 56.53, respectively.</span></span> <span class="sent" data-sid="s-4-4-3-3-2"><span class="en">A similar trade-off appears for ElevenLabs-v3, whose denoising mode improves Reverb DNSMOS from 3.090 to 4.025 and WER from 1.75% to 0.58%, while its SIM remains low at 44.39%.</span></span> <span class="sent" data-sid="s-4-4-3-3-3"><span class="en">By comparison, Qwen-Audio-3.0-TTS reaches DNSMOS scores of 3.962 and 3.925 on Noisy and Reverb, close to ElevenLabs-v3·Denoise, while achieving much higher SIM scores of 76.14% and 74.12%.</span><button class="mk" data-sid="s-4-4-3-3-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-4-3-3-4"><span class="en">On Reverb, it further obtains the best SIM together with the second-best WER and DNSMOS, showing a strong balance among denoising quality, intelligibility, and speaker preservation.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-4-3-3-1"><span class="zh">开启去噪后，MiniMax 在 Noisy 上的 DNSMOS 从 3.464 升至 3.728、在 Reverb 上从 3.065 升至 3.343，但 SIM 分别从 66.72 降到 63.83、从 61.56 降到 56.53。</span></span><span class="sent" data-sid="s-4-4-3-3-2"><span class="zh">ElevenLabs-v3 出现类似的权衡：其去噪模式把 Reverb 上的 DNSMOS 从 3.090 提升到 4.025、WER 从 1.75% 降到 0.58%，但其 SIM 仍低至 44.39%。</span></span><span class="sent" data-sid="s-4-4-3-3-3"><span class="zh">相比之下，Qwen-Audio-3.0-TTS 在 Noisy 与 Reverb 上达到 3.962 与 3.925 的 DNSMOS，接近 ElevenLabs-v3·Denoise，同时取得高得多的 SIM——76.14% 与 74.12%。</span><button class="mk" data-sid="s-4-4-3-3-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-4-4-3-3-4"><span class="zh">在 Reverb 上，它还取得最佳 SIM，WER 与 DNSMOS 均为次佳，在去噪质量、可懂度与说话人保留之间展现出很强的平衡。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-4-4-3-3-3">
       <div class="ann-card kind-number">
         <div class="ann-kind">数字怎么理解</div>
         <div class="ann-title">恶劣提示下的领先幅度</div>
@@ -727,17 +950,41 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div>
 <div class="cap" id="tab-4-4-3-1"><span class="cap-k">表</span><p class="en">Table 9: Objective zero-shot TTS results under noisy, reverberant, and unclear prompt conditions. Models marked with “Denoise” use their inference-time denoising mode. Content error, ERes2Net speaker similarity (SIM), and DNSMOS are reported. Bold and underlined values denote the best and second-best results in each column.</p><p class="zh">表 9：含噪、混响与不清晰提示条件下的客观零样本 TTS 结果。标有「Denoise」的模型使用其推理时去噪模式。报告内容错误、ERes2Net 说话人相似度（SIM）与 DNSMOS。加粗与下划线分别表示每列最佳与次佳结果。</p></div>
-<div class="pblk" id="p-4-4-3-3">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-3-3-1"><span class="en">Noisy Reverb Unclear WER (%) ↓SIM (%) ↑DNSMOS ↑WER (%) ↓SIM (%) ↑DNSMOS ↑WER (%) ↓SIM (%) ↑DNSMOS ↑ 0.85 66.72 3.464 0.83 61.56 3.065 1.28 68.33 3.174 MiniMax-Speech-2.8-HD·Denoise 0.83 63.83 3.728 0.87 56.53 3.343 1.58 67.84 3.241 1.17 46.91 3.779 1.75 41.46 3.090 1.67 47.12 3.304 ElevenLabs-v3·Denoise 1.19 46.07 3.981 0.58 44.39 4.025 1.38 43.90 3.496 2.01 65.61 3.595 2.11 63.42 2.887 2.85 70.62 3.050 3.44 58.70 3.777 1.05 56.91 3.169 3.12 73.54 3.262 2.90 76.69 3.221 2.12 72.38 2.888 2.16 76.69 3.070 VoxCPM2·Denoise 4.36 65.31 3.678 10.07 51.05 2.830 6.71 68.81 3.051 1.56 75.40 3.301 1.78 71.91 3.021 2.39 72.06 3.113 1.18 76.14 3.962 0.69 74.12 3.925 1.61 76.53 3.305</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-3-3-1"><span class="zh">（此句为 Table 9 与 Table 10 数值的抽取残留：Noisy/Reverb/Unclear 三条件下各系统的 WER（%）、SIM（%）、DNSMOS——0.85/66.72/3.464、0.83/61.56/3.065、1.28/68.33/3.174，MiniMax-Speech-2.8-HD·Denoise 0.83/63.83/3.728、0.87/56.53/3.343、1.58/67.84/3.241，1.17/46.91/3.779、1.75/41.46/3.090、1.67/47.12/3.304，ElevenLabs-v3·Denoise 1.19/46.07/3.981、0.58/44.39/4.025、1.38/43.90/3.496，2.01/65.61/3.595、2.11/63.42/2.887、2.85/70.62/3.050，3.44/58.70/3.777、1.05/56.91/3.169、3.12/73.54/3.262，2.90/76.69/3.221、2.12/72.38/2.888、2.16/76.69/3.070，VoxCPM2·Denoise 4.36/65.31/3.678、10.07/51.05/2.830、6.71/68.81/3.051，1.56/75.40/3.301、1.78/71.91/3.021、2.39/72.06/3.113，1.18/76.14/3.962、0.69/74.12/3.925、1.61/76.53/3.305，部分系统名列在抽取中丢失。）</span></span></p>
+<div class="pblk" id="p-4-4-3-4">
+          <p class="en-lines"><span class="sent" data-sid="s-4-4-3-4-1"><span class="en">Model Noisy Reverb Unclear WER (%) ↓SIM (%) ↑DNSMOS ↑WER (%) ↓SIM (%) ↑DNSMOS ↑WER (%) ↓SIM (%) ↑DNSMOS ↑ Commercial API Models MiniMax-Speech-2.8-HD</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-4-3-4-1"><span class="zh">表头：Model × Noisy / Reverb / Unclear（WER (%) ↓ / SIM (%) ↑ / DNSMOS ↑ 各组）——商业 API 模型：MiniMax-Speech-2.8-HD（后续照原文）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-4-4-3-2"><code>0.85 66.72 3.464 0.83 61.56 3.065 1.28 68.33 3.174</code></div>
+<div class="eq" id="eq-4-4-3-3"><code>MiniMax-Speech-2.8-HD·Denoise</code></div>
+<div class="eq" id="eq-4-4-3-4"><code>0.83 63.83 3.728 0.87 56.53 3.343 1.58 67.84 3.241</code></div>
+<div class="eq" id="eq-4-4-3-5"><code>ElevenLabs-v3</code></div>
+<div class="eq" id="eq-4-4-3-6"><code>1.17 46.91 3.779 1.75 41.46 3.090 1.67 47.12 3.304</code></div>
+<div class="eq" id="eq-4-4-3-7"><code>ElevenLabs-v3·Denoise</code></div>
+<div class="eq" id="eq-4-4-3-8"><code>1.19 46.07 3.981 0.58 44.39 4.025 1.38 43.90 3.496</code></div>
+<div class="eq" id="eq-4-4-3-9"><code>Open-source Models Qwen3-TTS-12Hz-1.7B-Base</code></div>
+<div class="eq" id="eq-4-4-3-10"><code>2.01 65.61 3.595 2.11 63.42 2.887 2.85 70.62 3.050</code></div>
+<div class="eq" id="eq-4-4-3-11"><code>LongCat-AudioDiT-3.5B</code></div>
+<div class="eq" id="eq-4-4-3-12"><code>3.44 58.70 3.777 1.05 56.91 3.169 3.12 73.54 3.262</code></div>
+<div class="eq" id="eq-4-4-3-13"><code>Dots.TTS-2B (SOAR)</code></div>
+<div class="eq" id="eq-4-4-3-14"><code>2.90 76.69 3.221 2.12 72.38 2.888 2.16 76.69 3.070</code></div>
+<div class="eq" id="eq-4-4-3-15"><code>VoxCPM2·Denoise</code></div>
+<div class="eq" id="eq-4-4-3-16"><code>4.36 65.31 3.678 10.07 51.05 2.830 6.71 68.81 3.051</code></div>
+<div class="eq" id="eq-4-4-3-17"><code>CosyVoice3-1.5B</code></div>
+<div class="eq" id="eq-4-4-3-18"><code>1.56 75.40 3.301 1.78 71.91 3.021 2.39 72.06 3.113</code></div>
+<div class="eq" id="eq-4-4-3-19"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-4-3-20"><code>1.18 76.14 3.962 0.69 74.12 3.925 1.61 76.53 3.305</code></div>
 <div class="cap" id="tab-4-4-3-2"><span class="cap-k">表</span><p class="en">Table 10: Instruction-following performance and speaker similarity (%) on the bilingual benchmark. SA, NL, and ST denote single-attribute, natural-language multi-attribute, and structured-attribute instructions, respectively. Speaker similarity is measured by the ERes2Net cosine similarity between each synthesized utterance and its reference utterance. Overall is computed by averaging over all evaluation instances pooled across subsets. Bold and underlined values indicate the best and secondbest results in each column, respectively.</p><p class="zh">表 10：双语基准上的指令跟随性能与说话人相似度（%）。SA、NL、ST 分别表示单属性、自然语言多属性与结构化属性指令。说话人相似度以每条合成语音与其参考语音之间的 ERes2Net 余弦相似度衡量。Overall 为跨子集汇集的所有评测实例上的平均值。加粗与下划线分别表示每列最佳与次佳结果。</p></div>
-<div class="pblk" id="p-4-4-3-4">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-3-4-1"><span class="en">Instruction Following (zh) Instruction Following (en) Speaker Similarity SA NL ST Overall SA NL ST Overall IndexTTS2 65.00 42.67 40.67 54.39 67.50 37.33 62.00 59.39 64.97 66.25 82.50 67.33 68.67 75.91 63.33 56.00 74.00 64.09 75.60 68.45 87.50 72.00 65.33 78.94 83.33 76.00 78.00 80.45 73.27 66.66</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-3-4-1"><span class="zh">（此句为 Table 10 数值的抽取残留：中文与英文指令跟随的 SA/NL/ST/Overall 列及说话人相似度——IndexTTS2 65.00/42.67/40.67/54.39、67.50/37.33/62.00/59.39、64.97；66.25/82.50/67.33/68.67/75.91、63.33/56.00/74.00/64.09、75.60；68.45/87.50/72.00/65.33/78.94、83.33/76.00/78.00/80.45、73.27、66.66，部分系统名列在抽取中丢失。）</span></span></p>
+<div class="pblk" id="p-4-4-3-5">
+          <p class="en-lines"><span class="sent" data-sid="s-4-4-3-5-1"><span class="en">Model Instruction Following (zh) Instruction Following (en) Speaker Similarity SA NL ST Overall SA NL ST Overall zh en IndexTTS2</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-4-3-5-1"><span class="zh">表头：Model × Instruction Following (zh) / Instruction Following (en)（SA / NL / ST / Overall）× Speaker Similarity（zh / en）——IndexTTS2（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-4-4-3-21"><code>65.00 42.67 40.67 54.39 67.50 37.33 62.00 59.39 64.97 66.25</code></div>
+<div class="eq" id="eq-4-4-3-22"><code>CosyVoice3-1.5B</code></div>
+<div class="eq" id="eq-4-4-3-23"><code>82.50 67.33 68.67 75.91 63.33 56.00 74.00 64.09 75.60 68.45</code></div>
+<div class="eq" id="eq-4-4-3-24"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-4-4-3-25"><code>87.50 72.00 65.33 78.94 83.33 76.00 78.00 80.45 73.27 66.66</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-4-4"><span class="secnum">4.4.4</span> <span class="t-zh">4.4.4 零样本声音克隆下的指令跟随结果</span><span class="t-en">Results of Instruction Following under Zero-shot Voice Cloning</span></h3><div class="pblk" id="p-4-4-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-4-4-1-1"><span class="en">The benchmark contains 440 zero-shot voice-cloning cases, evenly split between Chinese and English, with single-attribute and natural-language or structured multi-attribute instructions.</span></span> <span class="sent" data-sid="s-4-4-4-1-2"><span class="en">For speaker preservation, ERes2Net cosine similarity is computed between the prompt and synthesized utterance.</span></span> <span class="sent" data-sid="s-4-4-4-1-3"><span class="en">Gemini-2.5-Pro [44] is instructed to judge only how the utterance is spoken.</span></span> <span class="sent" data-sid="s-4-4-4-1-4"><span class="en">Singleattribute cases receive a binary score.</span></span> <span class="sent" data-sid="s-4-4-4-1-5"><span class="en">Complex instructions are decomposed into affect, rate, volume, clarity, rhythm, and intonation; an LLM selects the three most important dimensions for each instruction and instantiates audible criteria before any system is evaluated.</span></span> <span class="sent" data-sid="s-4-4-4-1-6"><span class="en">Each criterion is binary, giving a score from 0 to 3, and the criteria remain fixed across systems.</span></span></p>
@@ -769,20 +1016,42 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-4-4-4-4">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-4-4-1"><span class="en">CosyVoice3 Spk A CosyVoice3 Spk B 2.5 Qwen-Audio-3.0-TTS Spk A Qwen-Audio-3.0-TTS Spk B 2 CER / WER (%) 1.5 1.25 1.23 1.22 1.14 1.07 0.99 0.95 1 0.9 CosyVoice3 Spk C CosyVoice3 Spk D Qwen-Audio-3.0-TTS Spk C Qwen-Audio-3.0-TTS Spk D 2.07 2.04 2.02 1.96 1.79 1.69 1.6 1.51 test-zh test-en</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-4-4-1"><span class="zh">（此句为 Figure 5 图表内容的抽取残留：CosyVoice3 与 Qwen-Audio-3.0-TTS 在说话人 A/B/C/D 上的 CER/WER（%）柱状数值 2.5、2、1.5、1.25、1.23、1.22、1.14、1.07、0.99、0.95、1、0.9 与 2.07、2.04、2.02、1.96、1.79、1.69、1.6、1.51，对应 test-zh 与 test-en 两个子图。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-4-4-4-1"><span class="en">CosyVoice3 Spk A CosyVoice3 Spk B</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-4-4-4-1"><span class="zh">（图例：CosyVoice3 Spk A / CosyVoice3 Spk B。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-4-4-4-1"><code>2.5</code></div>
+<div class="eq" id="eq-4-4-4-2"><code>Qwen-Audio-3.0-TTS Spk A Qwen-Audio-3.0-TTS Spk B</code></div>
+<div class="eq" id="eq-4-4-4-3"><code>2</code></div>
+<div class="eq" id="eq-4-4-4-4"><code>CER / WER (%)</code></div>
+<div class="eq" id="eq-4-4-4-5"><code>1.5 1.25 1.23 1.22 1.14 1.07 0.99 0.95 1 0.9</code></div>
+<div class="pblk" id="p-4-4-4-5">
+          <p class="en-lines"><span class="sent" data-sid="s-4-4-4-5-1"><span class="en">CosyVoice3 Spk C CosyVoice3 Spk D Qwen-Audio-3.0-TTS Spk C Qwen-Audio-3.0-TTS Spk D</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-4-4-5-1"><span class="zh">（图例：CosyVoice3 Spk C / CosyVoice3 Spk D / Qwen-Audio-3.0-TTS Spk C / Qwen-Audio-3.0-TTS Spk D。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-4-4-4-6"><code>2.07 2.04 2.02 1.96 1.79 1.69 1.6 1.51</code></div>
+<div class="pblk" id="p-4-4-4-6">
+          <p class="en-lines"><span class="sent" data-sid="s-4-4-4-6-1"><span class="en">test-zh test-en</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-4-4-6-1"><span class="zh">表头：Model × test-zh（CER(%)↓/SIM↑）× test-en（WER(%)↓/SIM↑）× test-hard（CER(%)↓/SIM↑）——Human 1.26/0.755(0.775)、2.14/0.734(0.742)、-/-；Vocoder Resyn.（后续照原文）。</span></span></p>
           
         </div>
 <div class="cap" id="fig-4-4-4-1"><span class="cap-k">图</span><p class="en">Figure 5: Content-consistency results for speaker-adapted CosyVoice3 and Qwen-Audio-3.0-TTS models on four anonymized speakers. Lower CER/WER is better.</p><p class="zh">图 5：说话人适配后的 CosyVoice3 与 Qwen-Audio-3.0-TTS 在四位匿名说话人上的内容一致性结果。CER/WER 越低越好。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-5"><span class="secnum">4.5</span> <span class="t-zh">4.5 说话人适配模型的客观结果</span><span class="t-en">Objective Results on Speaker-Adapted Models</span></h3><div class="pblk" id="p-4-5-1">
-          <p class="en-lines"><span class="sent" data-sid="s-4-5-1-1"><span class="en">We compare speaker-adapted versions of CosyVoice3 and Qwen-Audio-3.0-TTS on the standard SEED-TTS-Eval test-zh and test-en sets for four anonymized target speakers.</span></span> <span class="sent" data-sid="s-4-5-1-2"><span class="en">As shown in Figure 5, Qwen-Audio-3.0-TTS consistently improves content consistency across all four speakers.</span></span> <span class="sent" data-sid="s-4-5-1-3"><span class="en">On testzh, CER decreases from 1.25% to 1.07% for Speaker A, from 1.23% to 0.99% for Speaker B, from 1.22% to 0.95% for Speaker C, and from 1.14% to 0.90% for Speaker D.</span></span> <span class="sent" data-sid="s-4-5-1-4"><span class="en">On test-en, WER decreases from 2.02% to 1.79%, from 1.96% to 1.60%, from 2.07% to 1.69%, and from 2.04% to 1.51%, respectively.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-5-1-1"><span class="zh">我们在标准 SEED-TTS-Eval 的 test-zh 与 test-en 集上，比较了四位匿名目标说话人上经说话人适配的 CosyVoice3 与 Qwen-Audio-3.0-TTS。</span></span><span class="sent" data-sid="s-4-5-1-2"><span class="zh">如 Figure 5 所示，Qwen-Audio-3.0-TTS 在全部四位说话人上都持续改善内容一致性。</span></span><span class="sent" data-sid="s-4-5-1-3"><span class="zh">在 test-zh 上，说话人 A 的 CER 从 1.25% 降到 1.07%，说话人 B 从 1.23% 降到 0.99%，说话人 C 从 1.22% 降到 0.95%，说话人 D 从 1.14% 降到 0.90%。</span></span><span class="sent" data-sid="s-4-5-1-4"><span class="zh">在 test-en 上，WER 分别从 2.02% 降到 1.79%、从 1.96% 降到 1.60%、从 2.07% 降到 1.69%、从 2.04% 降到 1.51%。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-5-1-1"><span class="en">We compare speaker-adapted versions of CosyVoice3 and Qwen-Audio-3.0-TTS on the standard SEED-TTS-Eval test-zh and test-en sets for four anonymized target speakers.</span></span> <span class="sent" data-sid="s-4-5-1-2"><span class="en">As shown in Figure 5, Qwen-Audio-3.0-TTS consistently improves content consistency across all four speakers.</span></span> <span class="sent" data-sid="s-4-5-1-3"><span class="en">On test-</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-5-1-1"><span class="zh">我们在标准 SEED-TTS-Eval 的 test-zh 与 test-en 集上，比较了四位匿名目标说话人上经说话人适配的 CosyVoice3 与 Qwen-Audio-3.0-TTS。</span></span><span class="sent" data-sid="s-4-5-1-2"><span class="zh">如 Figure 5 所示，Qwen-Audio-3.0-TTS 在全部四位说话人上都持续改善内容一致性。</span></span><span class="sent" data-sid="s-4-5-1-3"><span class="zh">在 test-en 上，WER 分别从 2.02% 降到 1.79%、从 1.96% 降到 1.60%、从 2.07% 降到 1.69%、从 2.04% 降到 1.51%。</span></span></p>
           
         </div>
+<div class="eq" id="eq-4-5-1"><code>zh, CER decreases from 1.25% to 1.07% for Speaker A, from 1.23% to 0.99% for Speaker B, from 1.22% to 0.95% for Speaker C, and from 1.14% to 0.90% for Speaker D. On test-en, WER decreases from 2.02% to 1.79%, from 1.96% to 1.60%, from 2.07% to 1.69%, and from 2.04% to</code></div>
 <div class="pblk" id="p-4-5-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-5-2-1"><span class="en">These CER/WER metrics measure content consistency and help detect intelligibility and pronunciation regressions.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-5-2-1"><span class="zh">这些 CER/WER 指标衡量内容一致性，有助于发现可懂度与发音上的回退。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-4-5-2-1"><span class="en">1.51%, respectively.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-5-2-1"><span class="zh">（正文残句）……分别为 1.51%。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-4-5-3">
+          <p class="en-lines"><span class="sent" data-sid="s-4-5-3-1"><span class="en">These CER/WER metrics measure content consistency and help detect intelligibility and pronunciation regressions.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-5-3-1"><span class="zh">这些 CER/WER 指标衡量内容一致性，有助于发现可懂度与发音上的回退。</span></span></p>
           
         </div></section>
 <section>
@@ -818,11 +1087,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-dialect-authenticity"><span class="t-zh">方言真实度</span><span class="t-en">Dialect Authenticity</span></h3><div class="pblk" id="p-dialect-authenticity-1">
-          <p class="en-lines"><span class="sent" data-sid="s-dialect-authenticity-1-1"><span class="en">3.639 Pronunciation Accuracy 3.935 Prosodic Naturalness 3.680</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-dialect-authenticity-1-1"><span class="zh">方言真实度 3.639、发音准确率 3.935、韵律自然度 3.680（此句为 Table 11 数值行的抽取残留）。</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-dialect-authenticity"><span class="t-zh">方言真实度</span><span class="t-en">Dialect Authenticity</span></h3><div class="eq" id="eq-dialect-authenticity-1"><code>66.7% 31.5% 0.8% 1.0% 3.639</code></div>
+<div class="eq" id="eq-dialect-authenticity-2"><code>Pronunciation Accuracy</code></div>
+<div class="eq" id="eq-dialect-authenticity-3"><code>93.5% 6.5% 0.0% 0.0% 3.935</code></div>
+<div class="eq" id="eq-dialect-authenticity-4"><code>Prosodic Naturalness</code></div>
+<div class="eq" id="eq-dialect-authenticity-5"><code>68.1% 31.9% 0.0% 0.0% 3.680</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-6-2"><span class="secnum">4.6.2</span> <span class="t-zh">4.6.2 指令跟随能力的主观评测</span><span class="t-en">Subjective Evaluation of Instruction Following Capabilities</span></h3><div class="pblk" id="p-4-6-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-6-2-1-1"><span class="en">We conduct Arena-based human evaluation to assess the instruction-controlled speech synthesis capability of Qwen-Audio-3.0-TTS.</span></span> <span class="sent" data-sid="s-4-6-2-1-2"><span class="en">The evaluation considers two independently rated dimensions: Instruction Following and Prosodic Naturalness.</span></span> <span class="sent" data-sid="s-4-6-2-1-3"><span class="en">Instruction Following measures whether the synthesized speech accurately follows the specified control instructions, including emotion, speaking rate, role, and speaking style.</span></span> <span class="sent" data-sid="s-4-6-2-1-4"><span class="en">Prosodic Naturalness evaluates whether the generated prosody sounds natural and human-like, regardless of whether the target instruction is correctly satisfied.</span></span> <span class="sent" data-sid="s-4-6-2-1-5"><span class="en">This separation allows us to distinguish instruction controllability from perceptual naturalness.</span></span></p>
@@ -844,16 +1113,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="cap" id="tab-4-6-2-1"><span class="cap-k">表</span><p class="en">Table 12: Arena-based human evaluation of instruction-controlled synthesis. Win rates are reported in percentage; higher is better, and the best result in each column is shown in bold.</p><p class="zh">表 12：指令控制合成的竞技场式人工评测。胜率以百分比报告，越高越好，每列最佳结果加粗。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-system"><span class="t-zh">系统</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-1">
-          <p class="en-lines"><span class="sent" data-sid="s-system-1-1"><span class="en">Instruction Following Prosodic Naturalness Previous-Gen Baseline 30.9 42.9 44.8 55.6</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-system-1-1"><span class="zh">（此句为 Table 12 数值的抽取残留：指令跟随与韵律自然度两列，上一代基线 30.9/42.9，Qwen-Audio-3.0-TTS 44.8/55.6。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-system-1-1"><span class="en">Instruction Following Prosodic Naturalness Previous-Gen Baseline</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-system-1-1"><span class="zh">（表格：指令遵循（Instruction Following）× 韵律自然度（Prosodic Naturalness）——上一代基线 30.9/42.9；Qwen-Audio-3.0-TTS 44.8/55.6。）</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-system-1"><code>30.9 42.9</code></div>
+<div class="eq" id="eq-system-2"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-system-3"><code>44.8 55.6</code></div></section>
 <section>
       <h2 class="sech lv1" id="sec-5"><span class="secnum">5</span> <span class="t-zh">5 结论</span><span class="t-en">Conclusion</span></h2><div class="pblk" id="p-5-1">
-          <p class="en-lines"><span class="sent" data-sid="s-5-1-1"><span class="en">In this report, we present Qwen-Audio-3.0-TTS, a multilingual, freely controllable and highly robust speech synthesis system oriented towards production deployment.</span></span> <span class="sent" data-sid="s-5-1-2"><span class="en">Its 12.5 Hz speech tokenizer, together with chunk-based flow-matching and causal vocoder, reduces end-to-end latency.</span></span> <span class="sent" data-sid="s-5-1-3"><span class="en">Joint LM–FM training and LM reinforcement learning deliver a strong balance of content consistency and naturalness.</span></span> <span class="sent" data-sid="s-5-1-4"><span class="en">Acoustic robustness training and FM reinforcement learning progressively improve speaker similarity, audio fidelity and robustness.</span></span> <span class="sent" data-sid="s-5-1-5"><span class="en">Qwen-Audio-3.0-TTS achieves state-of-the-art performance on many reported dimensions or the strongest aggregate scores across SEED-TTS- Eval, CV3-Eval, instruction-following, long-form, and adverse-prompt evaluations.</span></span> <span class="sent" data-sid="s-5-1-6"><span class="en">It also ranks first on the independent Artificial Analysis Text-to-Speech Arena leaderboard released on July 16, 2026.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-1-1"><span class="en">In this report, we present Qwen-Audio-3.0-TTS, a multilingual, freely controllable and highly robust speech synthesis system oriented towards production deployment.</span></span> <span class="sent" data-sid="s-5-1-2"><span class="en">Its 12.5 Hz speech tokenizer, together with chunk-based flow-matching and causal vocoder, reduces end-to-end latency.</span></span> <span class="sent" data-sid="s-5-1-3"><span class="en">Joint LM–FM training and LM reinforcement learning deliver a strong balance of content consistency and naturalness.</span></span> <span class="sent" data-sid="s-5-1-4"><span class="en">Acoustic robustness training and FM reinforcement learning progressively improve speaker similarity, audio fidelity and robustness.</span></span> <span class="sent" data-sid="s-5-1-5"><span class="en">Qwen-Audio-3.0-TTS achieves state-of-the-art performance on many reported dimensions or the strongest aggregate scores across SEED-TTS- Eval, CV3-Eval, instruction-following, long-form, and adverse-prompt evaluations.</span></span> <span class="sent" data-sid="s-5-1-6"><span class="en">It also ranks first on the independent Artificial Analysis Text-to-Speech Arena leaderboard released on July 16,</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-1-1"><span class="zh">在本报告中，我们提出 Qwen-Audio-3.0-TTS，一个面向生产部署的多语言、自由可控且高度鲁棒的语音合成系统。</span></span><span class="sent" data-sid="s-5-1-2"><span class="zh">其 12.5 Hz 语音分词器与基于片段的流匹配、因果声码器一起降低了端到端延迟。</span></span><span class="sent" data-sid="s-5-1-3"><span class="zh">LM–FM 联合训练与 LM 强化学习在内容一致性与自然度之间取得了很强的平衡。</span></span><span class="sent" data-sid="s-5-1-4"><span class="zh">声学鲁棒性训练与 FM 强化学习逐步提升了说话人相似度、音频保真度与鲁棒性。</span></span><span class="sent" data-sid="s-5-1-5"><span class="zh">Qwen-Audio-3.0-TTS 在 SEED-TTS-Eval、CV3-Eval、指令跟随、长音频与恶劣提示评测中，在所报告的大多数维度上达到 SOTA 或取得最强综合得分。</span></span><span class="sent" data-sid="s-5-1-6"><span class="zh">它还在 2026 年 7 月 16 日发布的独立 Artificial Analysis 文本转语音竞技场榜单上排名第一。</span></span></p>
           
         </div>
+<div class="eq" id="eq-5-1"><code>2026.</code></div>
 <div class="pblk" id="p-5-2">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-1"><span class="en">Beyond individual benchmark gains, Qwen-Audio-3.0-TTS advances TTS toward a unified and practical speech-generation system.</span></span> <span class="sent" data-sid="s-5-2-2"><span class="en">A single model integrates multilingual and multi-dialect synthesis, zero-shot voice cloning, free-style instruction following, fine-grained inline control, one-pass long-form generation and robustness to degraded real-world prompts.</span></span> <span class="sent" data-sid="s-5-2-3"><span class="en">In addition, we propose a scalable speaker adaptation protocol based on Qwen-Audio-3.0-TTS.</span></span> <span class="sent" data-sid="s-5-2-4"><span class="en">We believe this provides a practical foundation for the next generation of general-purpose, controllable, and deployment-ready TTS systems.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-1"><span class="zh">超越单个基准的提升，Qwen-Audio-3.0-TTS 把 TTS 向统一而实用的语音生成系统推进了一步。</span></span><span class="sent" data-sid="s-5-2-2"><span class="zh">单一模型集成了多语言与多方言合成、零样本声音克隆、自由形式指令跟随、细粒度行内控制、单次长音频生成，以及对真实世界退化提示的鲁棒性。</span></span><span class="sent" data-sid="s-5-2-3"><span class="zh">此外，我们还提出了基于 Qwen-Audio-3.0-TTS 的可扩展说话人适配协议。</span></span><span class="sent" data-sid="s-5-2-4"><span class="zh">我们相信，这为下一代通用、可控、可部署的 TTS 系统提供了实用的基础。</span></span></p>
@@ -869,8 +1142,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       <h2 class="sech lv1" id="sec-references"><span class="t-zh">References</span><span class="t-en">References</span></h2><div class="pblk plain" id="p-references-1"><p class="refline">[1] Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, and Furu Wei. Neural codec language models are zero-shot text to speech synthesizers. CoRR, abs/2301.02111, 2023.</p></div>
 <div class="pblk plain" id="p-references-2"><p class="refline">[2] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, Mingqing Gong, Peisong Huang, Qingqing Huang, Zhiying Huang, Yuanyuan Huo, Dongya Jia, Chumin Li, Feiya Li, Hui Li, Jiaxin Li, Xiaoyang Li, Xingxing Li, Lin Liu, Shouda Liu, Sichao Liu, Xudong Liu, Yuchen Liu, Zhengxi Liu, Lu Lu, Junjie Pan, Xin Wang, Yuping Wang, Yuxuan Wang, Zhen Wei, Jian Wu, Chao Yao, Yifeng Yang, Yuanhao Yi, Junteng Zhang, Qidi Zhang, Shuo Zhang, Wenjie Zhang, Yang Zhang, Zilin Zhao, Dejian Zhong, and Xiaobin Zhuang. Seed-tts: A family of high-quality versatile speech generation models. CoRR, abs/2406.02430, 2024.</p></div>
 <div class="pblk plain" id="p-references-3"><p class="refline">[3] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, and Wei-Ning Hsu. Voicebox: Textguided multilingual universal speech generation at scale. In NeurIPS, 2023.</p></div>
-<div class="pblk plain" id="p-references-4"><p class="refline">[4] Zhihao Du, Changfeng Gao, Yuxuan Wang, Fan Yu, Tianyu Zhao, Hao Wang, Xiang Lv, Hui Wang, Chongjia Ni, Xian Shi, Keyu An, Guanrou Yang, Yabin Li, Yanni Chen, Zhifu Gao, Qian Chen, Yue Gu, Mengzhe Chen, Yafeng Chen, Shiliang Zhang, Wen Wang, and Jieping Ye. Cosyvoice 3: Towards in-the-wild speech generation via scaling-up and post-training, 2025.</p></div>
-<div class="pblk plain" id="p-references-5"><p class="refline">[5] Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, Zheng Liang, Qixi Zheng, Rui Wang, Xiaoqin Feng, et al. Spark-tts: An efficient llm-based text-tospeech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710, 2025.</p></div>
+<div class="pblk plain" id="p-references-4"><p class="refline">[4] Zhihao Du, Changfeng Gao, Yuxuan Wang, Fan Yu, Tianyu Zhao, Hao Wang, Xiang Lv, Hui Wang, Chongjia Ni, Xian Shi, Keyu An, Guanrou Yang, Yabin Li, Yanni Chen, Zhifu Gao, Qian Chen, Yue Gu, Mengzhe Chen, Yafeng Chen, Shiliang Zhang, Wen Wang, and Jieping Ye. Cosyvoice 3: Towards in-the-wild speech generation via scaling-up and post-training,</p></div>
+<div class="eq" id="eq-references-1"><code>2025.</code></div>
+<div class="pblk plain" id="p-references-5"><p class="refline">[5] Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, Zheng Liang, Qixi Zheng, Rui Wang, Xiaoqin Feng, et al. Spark-tts: An efficient llm-based text-tospeech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710,</p></div>
+<div class="eq" id="eq-references-2"><code>2025.</code></div>
 <div class="pblk plain" id="p-references-6"><p class="refline">[6] Hangrui Hu, Xinfa Zhu, Ting He, Dake Guo, Bin Zhang, Xiong Wang, Zhifang Guo, Ziyue Jiang, Hongkun Hao, Zishan Guo, Xinyu Zhang, Pei Zhang, Baosong Yang, Jin Xu, Jingren Zhou, and Junyang Lin. Qwen3-tts technical report, 2026.</p></div>
 <div class="pblk plain" id="p-references-7"><p class="refline">[7] Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao, Hemin Yang, Zirun Zhu, Min Tang, Xu Tan, Yanqing Liu, Sheng Zhao, and Naoyuki Kanda.</p></div>
 <div class="pblk plain" id="p-references-8"><p class="refline">E2 TTS: embarrassingly easy fully non-autoregressive zero-shot TTS.</p></div>
@@ -895,8 +1170,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk plain" id="p-references-27"><p class="refline">[21] Haoxu Wang, Biao Tian, Weiqin Li, Xiang Lv, Han Zhao, and Xiangang Li. Flowtts-grpo: Online reinforcement learning with multi-objective reward optimization for flow-matching based text-to-speech, 2026.</p></div>
 <div class="pblk plain" id="p-references-28"><p class="refline">[22] Haoxu Wang, Biao Tian, Yiheng Jiang, Zexu Pan, Shengkui Zhao, Bin Ma, Daren Chen, and Xiangang Li. Flowse-grpo: Training flow matching speech enhancement via online reinforcement learning. In ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing, pages 16182–16186, 2026.</p></div>
 <div class="pblk plain" id="p-references-29"><p class="refline">[23] Jie Liu, Gongye Liu, Jiajun Liang, Yangguang Li, Jiaheng Liu, Xintao Wang, Pengfei Wan, Di Zhang, and Wanli Ouyang. Flow-grpo: Training flow matching models via online rl. arXiv preprint arXiv:2505.05470, 2025.</p></div>
-<div class="pblk plain" id="p-references-30"><p class="refline">[24] Jonathan Ho and Tim Salimans. Classifier-free diffusion guidance. CoRR, abs/2207.12598, 2022.</p></div>
-<div class="pblk plain" id="p-references-31"><p class="refline">[25] Jianlin Su, Murtadha H. M. Ahmed, Yu Lu, Shengfeng Pan, Wen Bo, and Yunfeng Liu. Roformer: Enhanced transformer with rotary position embedding. Neurocomputing, 568:127063, 2024.</p></div>
+<div class="pblk plain" id="p-references-30"><p class="refline">[24] Jonathan Ho and Tim Salimans. Classifier-free diffusion guidance. CoRR, abs/2207.12598,</p></div>
+<div class="eq" id="eq-references-3"><code>2022.</code></div>
+<div class="pblk plain" id="p-references-31"><p class="refline">[25] Jianlin Su, Murtadha H. M. Ahmed, Yu Lu, Shengfeng Pan, Wen Bo, and Yunfeng Liu. Roformer: Enhanced transformer with rotary position embedding. Neurocomputing, 568:127063,</p></div>
+<div class="eq" id="eq-references-4"><code>2024.</code></div>
 <div class="pblk plain" id="p-references-32"><p class="refline">[26] Qwen Team. Qwen2.5: A party of foundation models, September 2024.</p></div>
 <div class="pblk plain" id="p-references-33"><p class="refline">[27] Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. LoRA: Low-rank adaptation of large language models. In International Conference on Learning Representations, 2022.</p></div>
 <div class="pblk plain" id="p-references-34"><p class="refline">[28] Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever. Robust speech recognition via large-scale weak supervision. In Andreas Krause, Emma Brunskill, Kyunghyun Cho, Barbara Engelhardt, Sivan Sabato, and Jonathan Scarlett, editors, International Conference on Machine Learning, ICML 2023, 23-29 July 2023, Honolulu, Hawaii, USA, volume 202 of Proceedings of Machine Learning Research, pages 28492– 28518. PMLR, 2023.</p></div>
@@ -906,9 +1183,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk plain" id="p-references-38"><p class="refline">[31] Yafeng Chen, Siqi Zheng, Hui Wang, Luyao Cheng, Qian Chen, and Jiajun Qi.</p></div>
 <div class="pblk plain" id="p-references-39"><p class="refline">An enhanced res2net with local and global feature fusion for speaker verification. arXiv preprint arXiv:2305.12838, 2023. [32] Chandan K. A. Reddy, Vishak Gopal, and Ross Cutler. Dnsmos P.835: A non-intrusive perceptual objective speech quality metric to evaluate noise suppressors. In ICASSP, pages 886–890.</p></div>
 <div class="pblk plain" id="p-references-40"><p class="refline">IEEE, 2022. [33] Zhengyang Chen, Sanyuan Chen, Yu Wu, Yao Qian, Chengyi Wang, Shujie Liu, Yanmin Qian, and Michael Zeng. Large-scale self-supervised speech representation learning for automatic speaker verification.</p></div>
-<div class="pblk plain" id="p-references-41"><p class="refline">In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6147–6151. IEEE, 2022. [34] Xiaohui Sun, Ruitong Xiao, Jianye Mo, Bowen Wu, Qun Yu, and Baoxun Wang. F5r-tts: Improving flow matching based text-to-speech with group relative policy optimization. arXiv preprint arXiv:2504.02407, 2025. [35] Detai Xin, Shujie Hu, Chengzuo Yang, Chen Huang, Guoqiao Yu, Guanglu Wan, and Xunliang Cai. Longcat-audiodit: High-fidelity diffusion text-to-speech in the waveform latent space, 2026. [36] Kun Xie, Feiyu Shen, Junjie Li, Fenglong Xie, Xu Tang, and Yao Hu. Fireredtts-2: Towards long conversational speech generation for podcast and chatbot, 2025. [37] Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu.</p></div>
-<div class="pblk plain" id="p-references-42"><p class="refline">Indextts2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech, 2025. [38] Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang, et al. Qwen2.5-omni technical report. arXiv preprint arXiv:2503.20215, 2025. [39] Qwen Team. Qwen3.5-omni technical report, 2026. [40] Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, Peikai Huang, Ruiyang Jin, Sitan Jiang, Weihua Cheng, Yawei Li, Yichen Xiao, Yiying Zhou, Yongmao Zhang, Yuan Lu, and Yucen He.</p></div>
-<div class="pblk plain" id="p-references-43"><p class="refline">Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder, 2025. [41] Se Jin Park, Julian Salazar, Aren Jansen, Keisuke Kinoshita, Yong Man Ro, and R. J. SkerryRyan. Long-form speech generation with spoken language models. CoRR, abs/2412.18603, 2024. [42] Rosana Ardila, Megan Branson, Kelly Davis, Michael Henretty, Michael Kohler, Josh Meyer, Reuben Morais, Lindsay Saunders, Francis M Tyers, and Gregor Weber. Common voice: A massively-multilingual speech corpus. arXiv preprint arXiv:1912.06670, 2019. [43] Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera, and Ankur Bapna. Fleurs: Few-shot learning evaluation of universal representations of speech. In 2022 IEEE Spoken Language Technology Workshop (SLT), pages 798–805. IEEE, 2023. [44] Gheorghe Comanici et al. Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities, 2025.</p></div></section></article>
+<div class="pblk plain" id="p-references-41"><p class="refline">In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6147–6151. IEEE, 2022. [34] Xiaohui Sun, Ruitong Xiao, Jianye Mo, Bowen Wu, Qun Yu, and Baoxun Wang. F5r-tts: Improving flow matching based text-to-speech with group relative policy optimization. arXiv preprint arXiv:2504.02407, 2025. [35] Detai Xin, Shujie Hu, Chengzuo Yang, Chen Huang, Guoqiao Yu, Guanglu Wan, and Xunliang Cai. Longcat-audiodit: High-fidelity diffusion text-to-speech in the waveform latent space,</p></div>
+<div class="eq" id="eq-references-5"><code>2026.</code></div>
+<div class="pblk plain" id="p-references-42"><p class="refline">[36] Kun Xie, Feiyu Shen, Junjie Li, Fenglong Xie, Xu Tang, and Yao Hu. Fireredtts-2: Towards long conversational speech generation for podcast and chatbot, 2025. [37] Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu.</p></div>
+<div class="pblk plain" id="p-references-43"><p class="refline">Indextts2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech, 2025. [38] Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang, et al. Qwen2.5-omni technical report. arXiv preprint arXiv:2503.20215,</p></div>
+<div class="eq" id="eq-references-6"><code>2025.</code></div>
+<div class="pblk plain" id="p-references-44"><p class="refline">[39] Qwen Team. Qwen3.5-omni technical report, 2026. [40] Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, Peikai Huang, Ruiyang Jin, Sitan Jiang, Weihua Cheng, Yawei Li, Yichen Xiao, Yiying Zhou, Yongmao Zhang, Yuan Lu, and Yucen He.</p></div>
+<div class="pblk plain" id="p-references-45"><p class="refline">Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder, 2025. [41] Se Jin Park, Julian Salazar, Aren Jansen, Keisuke Kinoshita, Yong Man Ro, and R. J. SkerryRyan. Long-form speech generation with spoken language models. CoRR, abs/2412.18603,</p></div>
+<div class="eq" id="eq-references-7"><code>2024.</code></div>
+<div class="pblk plain" id="p-references-46"><p class="refline">[42] Rosana Ardila, Megan Branson, Kelly Davis, Michael Henretty, Michael Kohler, Josh Meyer, Reuben Morais, Lindsay Saunders, Francis M Tyers, and Gregor Weber. Common voice: A massively-multilingual speech corpus. arXiv preprint arXiv:1912.06670, 2019. [43] Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera, and Ankur Bapna. Fleurs: Few-shot learning evaluation of universal representations of speech. In 2022 IEEE Spoken Language Technology Workshop (SLT), pages 798–805. IEEE, 2023. [44] Gheorghe Comanici et al. Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities, 2025.</p></div></section></article>
   <footer class="foot">
     原文来自 arXiv:2607.23938（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。
     本地 PDF：<a href="../../papers/2607.23938.pdf">papers/2607.23938.pdf</a>。

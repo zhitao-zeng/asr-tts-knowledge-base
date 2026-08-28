@@ -306,8 +306,92 @@ globalThis.PAPER_2607_23938 = {
       },
       {
        "id": "s-1-9-2",
-       "original": "In parallel, 86 newly added fine-grained inline tags enable localized control at phrase and word level, intl 1.45 4 ms 8 vi 12 16 de th es pt fr id it ar ru (a) Content Consistency. tl 90.76 ms 80 70 vi 60 de th es pt fr id it ar ru (b) Speaker Similarity.",
-       "zh": "与此同时，新增的 86 个细粒度行内标签支持短语与词级别的局部控制，包括表现力过渡以及笑声、呼吸、咳嗽、叹气等非语言事件（此句中间穿插的 intl、4、8、12、16、60、70、80、1.45、90.76 ms 及语种代码为 Figure 2 图表内容的抽取残留）。"
+       "original": "In parallel, 86 newly added fine-grained inline tags enable localized control at phrase and word level, inzh en tl",
+       "zh": "同时新增 86 个细粒度内联标签，支持短语级与词级的局部控制。（图 1：(a) 内容一致性（Content Consistency）与 (b) 说话人相似度（Speaker Similarity）——zh/en/tl/ja/ms/ko/vi/de/th/es/pt/fr/id/it/ar/ru 各语种对比 MiniMax-Speech-2.8-HD、ElevenLabs-v3、Dots.TTS-2B (SOAR)、VoxCPM2、Qwen3-TTS-12Hz-1.7B-Base 与 Qwen-Audio-3.0-TTS（本模型，两图均含，3.0/3.0）；刻度 1.45/4/8/12/16 与 90.76/80/70/60。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-1-1",
+     "type": "equation",
+     "page": 2,
+     "original": "1.45 4"
+    },
+    {
+     "id": "eq-1-2",
+     "type": "equation",
+     "page": 2,
+     "original": "ja ms"
+    },
+    {
+     "id": "eq-1-3",
+     "type": "equation",
+     "page": 2,
+     "original": "8"
+    },
+    {
+     "id": "eq-1-4",
+     "type": "equation",
+     "page": 2,
+     "original": "ko vi"
+    },
+    {
+     "id": "eq-1-5",
+     "type": "equation",
+     "page": 2,
+     "original": "12 16"
+    },
+    {
+     "id": "p-1-10",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-1-10-1",
+       "original": "de th es pt fr id it ar ru MiniMax-Speech-2.8-HD ElevenLabs-v3 Dots.TTS-2B (SOAR) VoxCPM2 Qwen3-TTS-12Hz-1.7B-Base Qwen-Audio-3.0-TTS (a) Content Consistency. zh en tl",
+       "zh": "同时新增 86 个细粒度内联标签，支持短语级与词级的局部控制。（图 1：(a) 内容一致性（Content Consistency）与 (b) 说话人相似度（Speaker Similarity）——zh/en/tl/ja/ms/ko/vi/de/th/es/pt/fr/id/it/ar/ru 各语种对比 MiniMax-Speech-2.8-HD、ElevenLabs-v3、Dots.TTS-2B (SOAR)、VoxCPM2、Qwen3-TTS-12Hz-1.7B-Base 与 Qwen-Audio-3.0-TTS（本模型，两图均含，3.0/3.0）；刻度 1.45/4/8/12/16 与 90.76/80/70/60。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-1-6",
+     "type": "equation",
+     "page": 2,
+     "original": "90.76"
+    },
+    {
+     "id": "eq-1-7",
+     "type": "equation",
+     "page": 2,
+     "original": "ja ms"
+    },
+    {
+     "id": "eq-1-8",
+     "type": "equation",
+     "page": 2,
+     "original": "80 70"
+    },
+    {
+     "id": "eq-1-9",
+     "type": "equation",
+     "page": 2,
+     "original": "ko vi"
+    },
+    {
+     "id": "eq-1-10",
+     "type": "equation",
+     "page": 2,
+     "original": "60"
+    },
+    {
+     "id": "p-1-11",
+     "type": "paragraph",
+     "page": 2,
+     "sentences": [
+      {
+       "id": "s-1-11-1",
+       "original": "de th es pt fr id it ar ru MiniMax-Speech-2.8-HD ElevenLabs-v3 Dots.TTS-2B (SOAR) VoxCPM2 Qwen3-TTS-12Hz-1.7B-Base Qwen-Audio-3.0-TTS (b) Speaker Similarity.",
+       "zh": "同时新增 86 个细粒度内联标签，支持短语级与词级的局部控制。（图 1：(a) 内容一致性（Content Consistency）与 (b) 说话人相似度（Speaker Similarity）——zh/en/tl/ja/ms/ko/vi/de/th/es/pt/fr/id/it/ar/ru 各语种对比 MiniMax-Speech-2.8-HD、ElevenLabs-v3、Dots.TTS-2B (SOAR)、VoxCPM2、Qwen3-TTS-12Hz-1.7B-Base 与 Qwen-Audio-3.0-TTS（本模型，两图均含，3.0/3.0）；刻度 1.45/4/8/12/16 与 90.76/80/70/60。）"
       }
      ]
     },
@@ -319,41 +403,41 @@ globalThis.PAPER_2607_23938 = {
      "zh": "图 2：16 语言 CV3-Eval 基准上的多语言对比。两个子图中，离中心越远表示性能越好。"
     },
     {
-     "id": "p-1-10",
-     "type": "paragraph",
-     "page": 3,
-     "sentences": [
-      {
-       "id": "s-1-10-1",
-       "original": "cluding expressive transitions and non-verbal events such as laughter, breathing, coughing, and sighing.",
-       "zh": "（接上句）包括表现力过渡以及笑声、呼吸、咳嗽、叹气等非语言事件。"
-      }
-     ]
-    },
-    {
-     "id": "p-1-11",
-     "type": "paragraph",
-     "page": 3,
-     "sentences": [
-      {
-       "id": "s-1-11-1",
-       "original": "• Broad and robust deployment coverage: The model supports 16 languages, seven of them newly added, and 20 Chinese dialect regions; it handles hard text-normalization cases, one-pass synthesis up to 3 minutes, and degraded prompts without an explicit denoising mode.",
-       "zh": "• 广泛而鲁棒的部署覆盖：模型支持 16 种语言（其中 7 种为新增）与 20 个汉语方言区；能处理困难的文本规整（text normalization）案例、最长 3 分钟的单次合成，以及无需显式去噪模式的退化提示。"
-      },
-      {
-       "id": "s-1-11-2",
-       "original": "A two-stage speaker-adaptation protocol and vocoder super-resolution further support target-voice adaptation and 48 kHz output.",
-       "zh": "两阶段的说话人适配协议与声码器超分辨率进一步支持目标音色适配和 48 kHz 输出。"
-      }
-     ]
-    },
-    {
      "id": "p-1-12",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
        "id": "s-1-12-1",
+       "original": "cluding expressive transitions and non-verbal events such as laughter, breathing, coughing, and sighing.",
+       "zh": "（接上句）包括表现力过渡以及笑声、呼吸、咳嗽、叹气等非语言事件。"
+      }
+     ]
+    },
+    {
+     "id": "p-1-13",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-1-13-1",
+       "original": "• Broad and robust deployment coverage: The model supports 16 languages, seven of them newly added, and 20 Chinese dialect regions; it handles hard text-normalization cases, one-pass synthesis up to 3 minutes, and degraded prompts without an explicit denoising mode.",
+       "zh": "• 广泛而鲁棒的部署覆盖：模型支持 16 种语言（其中 7 种为新增）与 20 个汉语方言区；能处理困难的文本规整（text normalization）案例、最长 3 分钟的单次合成，以及无需显式去噪模式的退化提示。"
+      },
+      {
+       "id": "s-1-13-2",
+       "original": "A two-stage speaker-adaptation protocol and vocoder super-resolution further support target-voice adaptation and 48 kHz output.",
+       "zh": "两阶段的说话人适配协议与声码器超分辨率进一步支持目标音色适配和 48 kHz 输出。"
+      }
+     ]
+    },
+    {
+     "id": "p-1-14",
+     "type": "paragraph",
+     "page": 3,
+     "sentences": [
+      {
+       "id": "s-1-14-1",
        "original": "• Comprehensive evaluation: We evaluate zero-shot voice cloning, multilingual and crosslingual synthesis, free-style instruction following, fine-grained control, text normalization, long-form generation, adverse-prompt robustness, and 20-dialect synthesis through objective benchmarks and arena-style human evaluation.",
        "zh": "• 全面评测：我们通过客观基准与竞技场式人工评测，评估零样本声音克隆、多语言与跨语言合成、自由形式指令跟随、细粒度控制、文本规整、长音频生成、恶劣提示鲁棒性与 20 种方言合成。"
       }
@@ -367,39 +451,39 @@ globalThis.PAPER_2607_23938 = {
      "zh": "图 1 提供了 2026 年 7 月 16 日 Artificial Analysis 文本转语音竞技场榜单（见脚注 1）的快照，该榜单通过性别与口音可比的盲测成对偏好测试评估各提供商的原生音色。提供商标签 Qwen-Audio-3.0-TTS-Plus 对应本文所称的 Qwen-Audio-3.0-TTS 模型。Qwen-Audio-3.0-TTS-Plus 以 1,237 的 Elo 分数排名第一（样本量 1,427），显示名次区间为 1–2，其 95% 置信区间与 Simba 3.2 存在重叠；因此榜单按点估计将其列为第一，且它处于统计上的领先集团之内。"
     },
     {
-     "id": "p-1-13",
+     "id": "p-1-15",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-1-13-1",
+       "id": "s-1-15-1",
        "original": "In addition, extensive experiments demonstrate that Qwen-Audio-3.0-TTS has a favorable balance between content consistency, speaker similarity, prosodic naturalness, audio quality, and controllability.",
        "zh": "此外，大量实验表明 Qwen-Audio-3.0-TTS 在内容一致性、说话人相似度、韵律自然度、音频质量与可控性之间取得了良好的平衡。"
       },
       {
-       "id": "s-1-13-2",
+       "id": "s-1-15-2",
        "original": "It achieves the best or highly competitive aggregate results on SEED-TTS-Eval, CV3-Eval, instruction-following, long-form synthesis, and adverse-prompt evaluation.",
        "zh": "它在 SEED-TTS-Eval、CV3-Eval、指令跟随、长音频合成与恶劣提示评测上取得了最佳或极具竞争力的综合结果。"
       },
       {
-       "id": "s-1-13-3",
+       "id": "s-1-15-3",
        "original": "It obtains the best aggregate free-style instruction-following scores in both Chinese and English, while standard-mode inference remains competitive with systems using explicit denoising.",
        "zh": "它在中文和英文上都取得了最佳的自由形式指令跟随综合得分，同时其标准模式推理仍能与使用显式去噪的系统竞争。"
       },
       {
-       "id": "s-1-13-4",
+       "id": "s-1-15-4",
        "original": "Figure 2 visualizes the perlanguage CV3-Eval comparison among several competitive providers, with content consistency in Figure 2a and speaker similarity in Figure 2b.",
        "zh": "Figure 2 可视化了若干有竞争力的提供商在 CV3-Eval 上的逐语言对比，其中 Figure 2a 为内容一致性，Figure 2b 为说话人相似度。"
       }
      ]
     },
     {
-     "id": "p-1-14",
+     "id": "p-1-16",
      "type": "paragraph",
      "page": 3,
      "sentences": [
       {
-       "id": "s-1-14-1",
+       "id": "s-1-16-1",
        "original": "1https://artificialanalysis.ai/text-to-speech/leaderboard/provider-voice?tab=leaderboard",
        "zh": "1https://artificialanalysis.ai/text-to-speech/leaderboard/provider-voice?tab=leaderboard"
       }
@@ -409,12 +493,12 @@ globalThis.PAPER_2607_23938 = {
   },
   {
    "id": "sec-2",
-   "num": null,
+   "num": "2",
    "level": 1,
    "page": 4,
    "title": {
-    "original": "2",
-    "zh": "2 方法"
+    "original": "Qwen-Audio-3.0-TTS",
+    "zh": "Qwen-Audio-3.0-TTS"
    },
    "blocks": [
     {
@@ -424,7 +508,139 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-2-1-1",
-       "original": "Streaming Vocoder Legend Text / Instruction Token Mel Spectrogram DiT Flow-Matching Audio-Semantic (Codec) Token LM Hidden / Content Latent Channel Concatenation Noised Mel xₜ Prompt Mel Speaker Embedding Model / Module Speaker Embedding (Broadcast) Prompt Mel (Partial) Noised Mel xₜ Upsampled Content Latent Latent Upsampling  (×r) Special Token (S / T / E) Qwen LM S T E Autoregressive Codec Prediction Instruction + Text Tokens Audio-Semantic (Codec) Tokens",
+       "original": "Streaming Vocoder Legend Text / Instruction Token Mel Spectrogram DiT Flow-Matching Audio-Semantic (Codec) Token LM Hidden / Content Latent Channel Concatenation Noised Mel xₜ Prompt Mel Speaker Embedding Model / Module",
+       "zh": "（图 2 架构标签：流式声码器（Streaming Vocoder）；图例：文本/指令 token、Mel 频谱、DiT Flow-Matching、音频-语义（Codec）token、LM Hidden/内容潜变量、通道拼接、Noised Mel xₜ、Prompt Mel、说话人嵌入、模型/模块。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-1",
+     "type": "equation",
+     "page": 4,
+     "original": "…"
+    },
+    {
+     "id": "p-2-2",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-2-1",
+       "original": "Speaker Embedding (Broadcast)",
+       "zh": "（图 2 标签：Speaker Embedding（广播）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-2",
+     "type": "equation",
+     "page": 4,
+     "original": "…"
+    },
+    {
+     "id": "p-2-3",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-3-1",
+       "original": "Prompt Mel (Partial)",
+       "zh": "（图 2 标签：Prompt Mel（局部）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-3",
+     "type": "equation",
+     "page": 4,
+     "original": "…"
+    },
+    {
+     "id": "p-2-4",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-4-1",
+       "original": "Noised Mel xₜ",
+       "zh": "（图 2 架构标签：流式声码器（Streaming Vocoder）；图例：文本/指令 token、Mel 频谱、DiT Flow-Matching、音频-语义（Codec）token、LM Hidden/内容潜变量、通道拼接、Noised Mel xₜ、Prompt Mel、说话人嵌入、模型/模块。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-4",
+     "type": "equation",
+     "page": 4,
+     "original": "…"
+    },
+    {
+     "id": "p-2-5",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-5-1",
+       "original": "Upsampled Content Latent Latent Upsampling  (×r) Special Token (S / T / E) Qwen LM S",
+       "zh": "（图 2 标签：上采样内容潜变量（Latent Upsampling ×r）；特殊 token（S/T/E）；Qwen LM；S ……）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-5",
+     "type": "equation",
+     "page": 4,
+     "original": "…"
+    },
+    {
+     "id": "p-2-6",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-6-1",
+       "original": "T",
+       "zh": "在本报告中，我们提出 Qwen-Audio-3.0-TTS，一个面向生产环境的语音合成系统，它在内容一致性、说话人相似度、韵律自然度、音频质量、可控性、多语言覆盖、效率与鲁棒性上协同推进。"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-6",
+     "type": "equation",
+     "page": 4,
+     "original": "…"
+    },
+    {
+     "id": "eq-2-7",
+     "type": "equation",
+     "page": 4,
+     "original": "…"
+    },
+    {
+     "id": "p-2-7",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-7-1",
+       "original": "E Autoregressive Codec Prediction",
+       "zh": "（图 2 标签：E；自回归 Codec 预测（Autoregressive Codec Prediction）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-8",
+     "type": "equation",
+     "page": 4,
+     "original": "…"
+    },
+    {
+     "id": "p-2-8",
+     "type": "paragraph",
+     "page": 4,
+     "sentences": [
+      {
+       "id": "s-2-8-1",
+       "original": "Instruction + Text Tokens Audio-Semantic (Codec) Tokens",
        "zh": "（此句为 Figure 3 架构图的图内文字抽取残留：流式声码器、文本/指令 token、Mel 频谱图、DiT 流匹配、音频-语义（codec）token、LM 隐状态/内容潜变量、通道拼接、加噪 Mel xₜ、提示 Mel、说话人嵌入等模块名与连接关系，以及 Qwen LM 自回归 codec 预测与特殊 token（S/T/E）的布局。）"
       }
      ]
@@ -437,17 +653,17 @@ globalThis.PAPER_2607_23938 = {
      "zh": "图 3：Qwen-Audio-3.0-TTS 的整体架构，由语言模型、流匹配模型与声码器组成。"
     },
     {
-     "id": "p-2-2",
+     "id": "p-2-9",
      "type": "paragraph",
      "page": 4,
      "sentences": [
       {
-       "id": "s-2-2-1",
+       "id": "s-2-9-1",
        "original": "As shown in Figure 3, Qwen-Audio-3.0-TTS is built on a three-component synthesis architecture comprising a language model (LM) for semantic token prediction, a flow-matching model (FM) for acoustic feature reconstruction, and a causal BigVGAN vocoder [14] for waveform synthesis.",
        "zh": "如 Figure 3 所示，Qwen-Audio-3.0-TTS 建立在一个三组件合成架构之上：负责语义 token 预测的语言模型（LM）、负责声学特征重建的流匹配模型（FM），以及负责波形合成的因果 BigVGAN 声码器 [14]。"
       },
       {
-       "id": "s-2-2-2",
+       "id": "s-2-9-2",
        "original": "A 12.5 Hz low-frame-rate speech tokenizer reduces autoregressive decoding cost, while the progressive LM–FM training paradigm improves linguistic accuracy, acoustic fidelity, controllability, and robustness.",
        "zh": "12.5 Hz 低帧率语音分词器降低了自回归解码成本，而渐进式 LM–FM 训练范式则提升了语言准确性、声学保真度、可控性与鲁棒性。"
       }
@@ -758,14 +974,25 @@ globalThis.PAPER_2607_23938 = {
      ]
     },
     {
+     "id": "eq-2-2-3-1",
+     "type": "equation",
+     "page": 6,
+     "original": "Rbase,i = λcontentRcontent,i + λdurRdur,i + λdivRdiv,i + λprosodyRprosody,i. (1)"
+    },
+    {
      "id": "p-2-2-3-2",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
        "id": "s-2-2-3-2-1",
-       "original": "Rbase,i = λcontentRcontent,i + λdurRdur,i + λdivRdiv,i + λprosodyRprosody,i.",
-       "zh": "Rbase,i = λcontentRcontent,i + λdurRdur,i + λdivRdiv,i + λprosodyRprosody,i。"
+       "original": "The content term is obtained from token-domain ASR; the duration term suppresses length outliers; the diversity term discourages mechanical collapse; and the prosody term rewards plausible alignment progression and pause timing.",
+       "zh": "内容项来自 token 域的 ASR；时长项抑制时长异常值；多样性项抑制机械性塌缩；韵律项奖励合理的对齐推进与停顿时机。"
+      },
+      {
+       "id": "s-2-2-3-2-2",
+       "original": "All rewards are computed before FM and vocoder inference, enabling efficient token-only rollouts.",
+       "zh": "所有奖励都在 FM 与声码器推理之前计算，从而实现高效的纯 token 采样。"
       }
      ]
     },
@@ -776,15 +1003,21 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-2-2-3-3-1",
-       "original": "The content term is obtained from token-domain ASR; the duration term suppresses length outliers; the diversity term discourages mechanical collapse; and the prosody term rewards plausible alignment progression and pause timing.",
-       "zh": "内容项来自 token 域的 ASR；时长项抑制时长异常值；多样性项抑制机械性塌缩；韵律项奖励合理的对齐推进与停顿时机。"
+       "original": "We additionally use a differentiable DiffRO branch [4] based on Gumbel–Softmax [20].",
+       "zh": "我们还额外使用了一个基于 Gumbel–Softmax [20] 的可微 DiffRO 分支 [4]。"
       },
       {
        "id": "s-2-2-3-3-2",
-       "original": "All rewards are computed before FM and vocoder inference, enabling efficient token-only rollouts.",
-       "zh": "所有奖励都在 FM 与声码器推理之前计算，从而实现高效的纯 token 采样。"
+       "original": "To stabilize optimization, extreme anomalous rollouts, such as repetitions or missing stop tokens, are excluded from GRPO updates; DiffRO is further restricted to candidates with non-negative group-relative advantages: LRL = LGRPO + λdiffL+ DiffRO.",
+       "zh": "为稳定优化，诸如重复或缺失结束 token 等极端异常样本被排除在 GRPO 更新之外；DiffRO 进一步被限制在组相对优势非负的候选上：LRL = LGRPO + λdiffL+ DiffRO。"
       }
      ]
+    },
+    {
+     "id": "eq-2-2-3-2",
+     "type": "equation",
+     "page": 6,
+     "original": "(2)"
     },
     {
      "id": "p-2-2-3-4",
@@ -793,38 +1026,21 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-2-2-3-4-1",
-       "original": "We additionally use a differentiable DiffRO branch [4] based on Gumbel–Softmax [20].",
-       "zh": "我们还额外使用了一个基于 Gumbel–Softmax [20] 的可微 DiffRO 分支 [4]。"
+       "original": "GRPO supplies sequence-level relative preference, whereas DiffRO supplies selected token-level corrective gradients.",
+       "zh": "（式 2）GRPO 提供序列级相对偏好，而 DiffRO 提供选定 token 级的矫正梯度。"
       },
       {
        "id": "s-2-2-3-4-2",
-       "original": "To stabilize optimization, extreme anomalous rollouts, such as repetitions or missing stop tokens, are excluded from GRPO updates; DiffRO is further restricted to candidates with non-negative group-relative advantages: LRL = LGRPO + λdiffL+ DiffRO.",
-       "zh": "为稳定优化，诸如重复或缺失结束 token 等极端异常样本被排除在 GRPO 更新之外；DiffRO 进一步被限制在组相对优势非负的候选上：LRL = LGRPO + λdiffL+ DiffRO。"
-      }
-     ]
-    },
-    {
-     "id": "p-2-2-3-5",
-     "type": "paragraph",
-     "page": 6,
-     "sentences": [
-      {
-       "id": "s-2-2-3-5-1",
-       "original": "GRPO supplies sequence-level relative preference, whereas DiffRO supplies selected token-level corrective gradients.",
-       "zh": "GRPO 提供序列级的相对偏好，DiffRO 则提供筛选后的 token 级纠错梯度。"
-      },
-      {
-       "id": "s-2-2-3-5-2",
        "original": "LM reinforcement learning follows a two-phase curriculum: general generation optimization first excludes instruction-following, fine-grained-control, and dialect samples to avoid optimizing attributes not captured by the base reward; subsequent multi-task alignment adds dialect-classification correctness as an attribute reward, improving dialect authenticity while preserving the general synthesis robustness acquired during the first phase.",
        "zh": "LM 强化学习遵循两阶段课程：通用生成优化先排除指令跟随、细粒度控制与方言样本，以避免优化基础奖励未能刻画的属性；随后的多任务对齐加入方言分类正确性作为属性奖励，在保留第一阶段获得的通用合成鲁棒性的同时提升方言真实度。"
       },
       {
-       "id": "s-2-2-3-5-3",
+       "id": "s-2-2-3-4-3",
        "original": "With suitable attribute supervision, the same framework can be extended to instruction following and fine-grained control.",
        "zh": "配合合适的属性监督，同一框架可以扩展到指令跟随与细粒度控制。"
       },
       {
-       "id": "s-2-2-3-5-4",
+       "id": "s-2-2-3-4-4",
        "original": "The resulting curriculum goes beyond WER-only optimization and balances accuracy, naturalness, and controllability.",
        "zh": "最终的课程超越了只优化 WER 的做法，平衡了准确性、自然度与可控性。"
       }
@@ -926,7 +1142,7 @@ globalThis.PAPER_2607_23938 = {
      "id": "eq-2-2-5-5",
      "type": "equation",
      "page": 6,
-     "original": "t , ϵ ∼N(0, I), xt,mean = xt +"
+     "original": "t , ϵ ∼N(0, I), (3)"
     },
     {
      "id": "p-2-2-5-2",
@@ -935,45 +1151,123 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-2-2-5-2-1",
-       "original": "vθ(xt, t) + σ2 t 2(1 −t) (−xt + t vθ(xt, t)) ∆t, where vθ is the velocity field conditioned on LM hidden states, prompt mel features, and the speaker embedding, and a controls exploration intensity.",
-       "zh": "vθ(xt, t) + σ2 t 2(1 −t) (−xt + t vθ(xt, t)) ∆t，其中 vθ 是以 LM 隐状态、提示 Mel 特征与说话人嵌入为条件的速度场，a 控制探索强度（本句为跨页抽取的公式碎片，编号 eq-2-2-5-1 至 eq-2-2-5-5 的公式块为其前半部分）。"
+       "original": "xt,mean = xt + vθ(xt, t) +",
+       "zh": "（公式：x_{t,mean} = x_t + [v_θ(x_t, t) + σ²_t/(2(1 −t))·(−x_t + t·v_θ(x_t, t))]·∆t（式 4），其中 v_θ 为以 LM 隐藏态、提示 mel 特征与说话人嵌入为条件的速度场，a 控制探索强度。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-2-5-6",
+     "type": "equation",
+     "page": 6,
+     "original": "σ2"
+    },
+    {
+     "id": "p-2-2-5-3",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-2-2-5-3-1",
+       "original": "t 2(1 −t) (−xt + t vθ(xt, t)) ∆t,",
+       "zh": "（公式：x_{t,mean} = x_t + [v_θ(x_t, t) + σ²_t/(2(1 −t))·(−x_t + t·v_θ(x_t, t))]·∆t（式 4），其中 v_θ 为以 LM 隐藏态、提示 mel 特征与说话人嵌入为条件的速度场，a 控制探索强度。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-2-5-7",
+     "type": "equation",
+     "page": 6,
+     "original": "(4)"
+    },
+    {
+     "id": "p-2-2-5-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-2-2-5-4-1",
+       "original": "where vθ is the velocity field conditioned on LM hidden states, prompt mel features, and the speaker embedding, and a controls exploration intensity.",
+       "zh": "（公式：x_{t,mean} = x_t + [v_θ(x_t, t) + σ²_t/(2(1 −t))·(−x_t + t·v_θ(x_t, t))]·∆t（式 4），其中 v_θ 为以 LM 隐藏态、提示 mel 特征与说话人嵌入为条件的速度场，a 控制探索强度。）"
       },
       {
-       "id": "s-2-2-5-2-2",
+       "id": "s-2-2-5-4-2",
        "original": "For each prompt, G waveforms are sampled and the reward is normalized within the group:",
        "zh": "对每个提示，采样 G 条波形，奖励在组内归一化："
       }
      ]
     },
     {
-     "id": "p-2-2-5-3",
+     "id": "p-2-2-5-5",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-2-2-5-3-1",
-       "original": "ˆAi = R(ˆxi 1, c) −mean{R(ˆxj 1, c)}G j=1 std{R(ˆxj 1, c)}G j=1 . where ˆxi 1 is the i-th terminal waveform and c contains its conditioning inputs.",
+       "id": "s-2-2-5-5-1",
+       "original": "ˆAi = R(ˆxi 1, c) −mean{R(ˆxj 1, c)}G j=1 std{R(ˆxj 1, c)}G j=1",
        "zh": "ˆAi = R(ˆxi 1, c) −mean{R(ˆxj 1, c)}G j=1 std{R(ˆxj 1, c)}G j=1。其中 ˆxi 1 是第 i 条终止波形，c 包含其条件输入。"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-2-5-8",
+     "type": "equation",
+     "page": 7,
+     "original": "."
+    },
+    {
+     "id": "eq-2-2-5-9",
+     "type": "equation",
+     "page": 7,
+     "original": "(5)"
+    },
+    {
+     "id": "p-2-2-5-6",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-2-2-5-6-1",
+       "original": "where ˆxi 1 is the i-th terminal waveform and c contains its conditioning inputs.",
+       "zh": "（公式片段，式 5：……其中 x̂^i_1 为第 i 个终端波形，c 包含其条件输入。）"
       },
       {
-       "id": "s-2-2-5-3-2",
+       "id": "s-2-2-5-6-2",
        "original": "The reward combines speaker-verification similarity (SS), ASR intelligibility, and DNSMOS quality, each standardized by its per-batch standard deviation:",
        "zh": "奖励结合了说话人验证相似度（SS）、ASR 可懂度与 DNSMOS 质量，每一项都按其批内标准差标准化："
       }
      ]
     },
     {
-     "id": "p-2-2-5-4",
+     "id": "p-2-2-5-7",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-2-2-5-4-1",
-       "original": "R = λ1 RSS std(RSS) + λ2 RASR std(RASR) + λ3 RMOS std(RMOS), so that λ1, λ2, and λ3 express the intended objective balance rather than raw reward variance.",
-       "zh": "R = λ1 RSS std(RSS) + λ2 RASR std(RASR) + λ3 RMOS std(RMOS)，使 λ1、λ2、λ3 表达的是预期的目标平衡，而不是原始奖励的方差大小。"
+       "id": "s-2-2-5-7-1",
+       "original": "R = λ1 RSS std(RSS) + λ2 RASR std(RASR) + λ3 RMOS std(RMOS),",
+       "zh": "（公式：R = λ1·R_SS/std(R_SS) + λ2·R_ASR/std(R_ASR) + λ3·R_MOS/std(R_MOS)（式 6），使 λ1、λ2、λ3 表达预期的目标配比而非原始奖励方差。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-2-2-5-10",
+     "type": "equation",
+     "page": 7,
+     "original": "(6)"
+    },
+    {
+     "id": "p-2-2-5-8",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-2-2-5-8-1",
+       "original": "so that λ1, λ2, and λ3 express the intended objective balance rather than raw reward variance.",
+       "zh": "（公式：R = λ1·R_SS/std(R_SS) + λ2·R_ASR/std(R_ASR) + λ3·R_MOS/std(R_MOS)（式 6），使 λ1、λ2、λ3 表达预期的目标配比而非原始奖励方差。）"
       },
       {
-       "id": "s-2-2-5-4-2",
+       "id": "s-2-2-5-8-2",
        "original": "SDE exploration and policy optimization are restricted to an early-step window while later steps revert to the ODE, and classifier-free guidance [24] is omitted during training rollouts to widen exploration.",
        "zh": "SDE 探索与策略优化被限制在早期步窗口内，后续步回到 ODE；训练采样期间省略无分类器引导（classifier-free guidance）[24] 以扩大探索范围。"
       }
@@ -1402,10 +1696,100 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-4-1-3-1",
-       "original": "Tokenizer Codebook Rate CV-zh CV-en CV-ja CV-ko FLEURS-zh FLEURS-en CosyVoice3 25 Hz 10.63 13.07 15.61 11.35 3.77 5.43 11.23 15.40 18.68 13.22 4.18 5.33 10.79 13.39 16.63 11.45 4.00 4.91 10.24 12.52 15.21 11.70 3.85 4.69",
-       "zh": "（此句为 Table 1 数值的抽取残留：CosyVoice3（25 Hz）及三个 12.5 Hz 变体在 CV-zh、CV-en、CV-ja、CV-ko、FLEURS-zh、FLEURS-en 上的错误率依次为 10.63/13.07/15.61/11.35/3.77/5.43、11.23/15.40/18.68/13.22/4.18/5.33、10.79/13.39/16.63/11.45/4.00/4.91、10.24/12.52/15.21/11.70/3.85/4.69，码本与帧率列名在抽取中丢失。）"
+       "original": "Tokenizer Codebook Rate CV-zh CV-en CV-ja CV-ko FLEURS-zh FLEURS-en CosyVoice3",
+       "zh": "表头：Tokenizer / Codebook Rate × CV-zh / CV-en / CV-ja / CV-ko / FLEURS-zh / FLEURS-en——CosyVoice3（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-1-1",
+     "type": "equation",
+     "page": 9,
+     "original": "6,561"
+    },
+    {
+     "id": "eq-4-1-2",
+     "type": "equation",
+     "page": 9,
+     "original": "25 Hz"
+    },
+    {
+     "id": "eq-4-1-3",
+     "type": "equation",
+     "page": 9,
+     "original": "10.63 13.07 15.61 11.35 3.77 5.43"
+    },
+    {
+     "id": "eq-4-1-4",
+     "type": "equation",
+     "page": 9,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-1-5",
+     "type": "equation",
+     "page": 9,
+     "original": "6,561"
+    },
+    {
+     "id": "eq-4-1-6",
+     "type": "equation",
+     "page": 9,
+     "original": "12.5 Hz"
+    },
+    {
+     "id": "eq-4-1-7",
+     "type": "equation",
+     "page": 9,
+     "original": "11.23 15.40 18.68 13.22 4.18 5.33"
+    },
+    {
+     "id": "eq-4-1-8",
+     "type": "equation",
+     "page": 9,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-1-9",
+     "type": "equation",
+     "page": 9,
+     "original": "19,683"
+    },
+    {
+     "id": "eq-4-1-10",
+     "type": "equation",
+     "page": 9,
+     "original": "12.5 Hz"
+    },
+    {
+     "id": "eq-4-1-11",
+     "type": "equation",
+     "page": 9,
+     "original": "10.79 13.39 16.63 11.45 4.00 4.91"
+    },
+    {
+     "id": "eq-4-1-12",
+     "type": "equation",
+     "page": 9,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-1-13",
+     "type": "equation",
+     "page": 9,
+     "original": "59,049"
+    },
+    {
+     "id": "eq-4-1-14",
+     "type": "equation",
+     "page": 9,
+     "original": "12.5 Hz"
+    },
+    {
+     "id": "eq-4-1-15",
+     "type": "equation",
+     "page": 9,
+     "original": "10.24 12.52 15.21 11.70 3.85 4.69"
     },
     {
      "id": "tab-4-1-2",
@@ -1421,10 +1805,100 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-4-1-4-1",
-       "original": "Tokenizer Codebook Frame Rate test-zh test-en test-hard Size WER (%) ↓ CosyVoice3 25 Hz 1.45 80.60 2.57 73.60 6.83 77.60 2.59 72.44 3.21 61.64 7.94 69.78 1.48 83.25 2.56 77.58 6.70 80.85 1.23 83.09 2.37 77.49 6.68 80.61",
-       "zh": "（此句为 Table 2 数值的抽取残留：CosyVoice3 25 Hz 基线与各 12.5 Hz 变体在 test-zh、test-en、test-hard 上的 WER（%）与 SIM 数值——1.45/80.60、2.57/73.60、6.83/77.60；2.59/72.44、3.21/61.64、7.94/69.78；1.48/83.25、2.56/77.58、6.70/80.85；1.23/83.09、2.37/77.49、6.68/80.61，部分列名在抽取中丢失。）"
+       "original": "Tokenizer Codebook Frame Rate test-zh test-en test-hard Size CER (%) ↓ SIM (%) ↑ WER (%) ↓ SIM (%) ↑ CER (%) ↓ SIM (%) ↑ CosyVoice3",
+       "zh": "表头：Tokenizer / Codebook / Frame Rate / Size × test-zh（CER (%) ↓ / SIM (%) ↑）/ test-en（WER (%) ↓ / SIM (%) ↑）/ test-hard（CER (%) ↓ / SIM (%) ↑）——CosyVoice3（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-1-16",
+     "type": "equation",
+     "page": 9,
+     "original": "6,561"
+    },
+    {
+     "id": "eq-4-1-17",
+     "type": "equation",
+     "page": 9,
+     "original": "25 Hz"
+    },
+    {
+     "id": "eq-4-1-18",
+     "type": "equation",
+     "page": 9,
+     "original": "1.45 80.60 2.57 73.60 6.83 77.60"
+    },
+    {
+     "id": "eq-4-1-19",
+     "type": "equation",
+     "page": 9,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-1-20",
+     "type": "equation",
+     "page": 9,
+     "original": "6,561"
+    },
+    {
+     "id": "eq-4-1-21",
+     "type": "equation",
+     "page": 9,
+     "original": "12.5 Hz"
+    },
+    {
+     "id": "eq-4-1-22",
+     "type": "equation",
+     "page": 9,
+     "original": "2.59 72.44 3.21 61.64 7.94 69.78"
+    },
+    {
+     "id": "eq-4-1-23",
+     "type": "equation",
+     "page": 9,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-1-24",
+     "type": "equation",
+     "page": 9,
+     "original": "19,683"
+    },
+    {
+     "id": "eq-4-1-25",
+     "type": "equation",
+     "page": 9,
+     "original": "12.5 Hz"
+    },
+    {
+     "id": "eq-4-1-26",
+     "type": "equation",
+     "page": 9,
+     "original": "1.48 83.25 2.56 77.58 6.70 80.85"
+    },
+    {
+     "id": "eq-4-1-27",
+     "type": "equation",
+     "page": 9,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-1-28",
+     "type": "equation",
+     "page": 9,
+     "original": "59,049"
+    },
+    {
+     "id": "eq-4-1-29",
+     "type": "equation",
+     "page": 9,
+     "original": "12.5 Hz"
+    },
+    {
+     "id": "eq-4-1-30",
+     "type": "equation",
+     "page": 9,
+     "original": "1.23 83.09 2.37 77.49 6.68 80.61"
     }
    ]
   },
@@ -1452,10 +1926,16 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-4-2-1-1",
-       "original": "test-zh test-en test-hard SIM ↑ WER (%) ↓ SIM ↑ SIM ↑ Human 1.26 2.14 Vocoder Resyn.",
-       "zh": "（此句为 Table 3 表头与基线行的抽取残留：test-zh、test-en、test-hard 三列的 SIM 与 WER（%）指标，以及 Human 1.26/2.14 与声码器重合成（Vocoder Resyn.）两个参考行。）"
+       "original": "Model test-zh test-en test-hard CER (%) ↓ SIM ↑ WER (%) ↓ SIM ↑ CER (%) ↓ SIM ↑ Human",
+       "zh": "表头：Model × test-zh（CER(%)↓/SIM↑）× test-en（WER(%)↓/SIM↑）× test-hard（CER(%)↓/SIM↑）——Human 1.26/0.755(0.775)、2.14/0.734(0.742)、-/-；Vocoder Resyn.（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-2-1",
+     "type": "equation",
+     "page": 9,
+     "original": "1.26 0.755 (0.775) 2.14 0.734 (0.742) - -"
     },
     {
      "id": "p-4-2-2",
@@ -1464,10 +1944,172 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-4-2-2-1",
-       "original": "1.27 0.720 2.17 0.700 Non-autoregressive Models F5-TTS (32 NFE) [8] 1.56 1.83 8.67 F5R-TTS [34] 1.37 0.754 8.79 0.718 LongCat-AudioDiT-3.5B [35] 1.09 1.50 6.04 Autoregressive Models Seed-TTS [2] 1.12 0.796 2.25 0.762 7.59 0.776 FireRedTTS-2 [36] 1.14 0.736 1.95 0.665 Qwen2.5-Omni-7B [38] 1.70 0.752 2.72 0.632 7.97 0.747 Qwen3.5-Omni-Plus [39] 0.99 1.26 Qwen3-TTS-12Hz-1.7B-Base [6] 0.77 1.24 MiniMax-Speech [40] 0.99 0.799 1.90 0.738 VoxCPM2 [13] 0.97 1.84 8.13 Dots.TTS-2B (SOAR) [12] 0.94 1.30 6.60 CosyVoice3-1.5B [4] 1.12 2.21 5.83 0.84 1.54 7.00",
-       "zh": "（此句为 Table 3 数值主体的抽取残留：1.27/0.720/2.17/0.700 等数值对应参考行与各系统结果；非自回归模型 F5-TTS（32 NFE）[8] 1.56/1.83/8.67，F5R-TTS [34] 1.37/0.754/8.79/0.718，LongCat-AudioDiT-3.5B [35] 1.09/1.50/6.04；自回归模型 Seed-TTS [2] 1.12/0.796/2.25/0.762/7.59/0.776，FireRedTTS-2 [36] 1.14/0.736/1.95/0.665，Qwen2.5-Omni-7B [38] 1.70/0.752/2.72/0.632/7.97/0.747，Qwen3.5-Omni-Plus [39] 0.99/1.26，Qwen3-TTS-12Hz-1.7B-Base [6] 0.77/1.24，MiniMax-Speech [40] 0.99/0.799/1.90/0.738，VoxCPM2 [13] 0.97/1.84/8.13，Dots.TTS-2B (SOAR) [12] 0.94/1.30/6.60，CosyVoice3-1.5B [4] 1.12/2.21/5.83/0.84/1.54/7.00；部分 SIM 数值在抽取中丢失。）"
+       "original": "Vocoder Resyn.",
+       "zh": "表头：Model × test-zh（CER(%)↓/SIM↑）× test-en（WER(%)↓/SIM↑）× test-hard（CER(%)↓/SIM↑）——Human 1.26/0.755(0.775)、2.14/0.734(0.742)、-/-；Vocoder Resyn.（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-2-2",
+     "type": "equation",
+     "page": 9,
+     "original": "1.27 0.720 2.17 0.700 - -"
+    },
+    {
+     "id": "eq-4-2-3",
+     "type": "equation",
+     "page": 9,
+     "original": "Non-autoregressive Models F5-TTS (32 NFE) [8]"
+    },
+    {
+     "id": "eq-4-2-4",
+     "type": "equation",
+     "page": 9,
+     "original": "1.56 0.741 (0.794) 1.83 0.647 (0.742) 8.67 0.713 (0.762)"
+    },
+    {
+     "id": "eq-4-2-5",
+     "type": "equation",
+     "page": 9,
+     "original": "F5R-TTS [34]"
+    },
+    {
+     "id": "eq-4-2-6",
+     "type": "equation",
+     "page": 9,
+     "original": "1.37 0.754 - - 8.79 0.718"
+    },
+    {
+     "id": "eq-4-2-7",
+     "type": "equation",
+     "page": 9,
+     "original": "LongCat-AudioDiT-3.5B [35]"
+    },
+    {
+     "id": "eq-4-2-8",
+     "type": "equation",
+     "page": 9,
+     "original": "1.09 0.818 (0.806)† 1.50 0.786 (0.771)† 6.04 0.797 (0.781)†"
+    },
+    {
+     "id": "eq-4-2-9",
+     "type": "equation",
+     "page": 9,
+     "original": "Autoregressive Models Seed-TTS [2]"
+    },
+    {
+     "id": "eq-4-2-10",
+     "type": "equation",
+     "page": 9,
+     "original": "1.12 0.796 2.25 0.762 7.59 0.776"
+    },
+    {
+     "id": "eq-4-2-11",
+     "type": "equation",
+     "page": 9,
+     "original": "FireRedTTS-2 [36]"
+    },
+    {
+     "id": "eq-4-2-12",
+     "type": "equation",
+     "page": 9,
+     "original": "1.14 0.736 1.95 0.665 - -"
+    },
+    {
+     "id": "eq-4-2-13",
+     "type": "equation",
+     "page": 9,
+     "original": "Qwen2.5-Omni-7B [38]"
+    },
+    {
+     "id": "eq-4-2-14",
+     "type": "equation",
+     "page": 9,
+     "original": "1.70 0.752 2.72 0.632 7.97 0.747"
+    },
+    {
+     "id": "eq-4-2-15",
+     "type": "equation",
+     "page": 9,
+     "original": "Qwen3.5-Omni-Plus [39]"
+    },
+    {
+     "id": "eq-4-2-16",
+     "type": "equation",
+     "page": 9,
+     "original": "0.99 - 1.26 - - -"
+    },
+    {
+     "id": "eq-4-2-17",
+     "type": "equation",
+     "page": 9,
+     "original": "Qwen3-TTS-12Hz-1.7B-Base [6]"
+    },
+    {
+     "id": "eq-4-2-18",
+     "type": "equation",
+     "page": 9,
+     "original": "0.77 - 1.24 - - -"
+    },
+    {
+     "id": "eq-4-2-19",
+     "type": "equation",
+     "page": 9,
+     "original": "MiniMax-Speech [40]"
+    },
+    {
+     "id": "eq-4-2-20",
+     "type": "equation",
+     "page": 9,
+     "original": "0.99 0.799 1.90 0.738 - -"
+    },
+    {
+     "id": "eq-4-2-21",
+     "type": "equation",
+     "page": 9,
+     "original": "VoxCPM2 [13]"
+    },
+    {
+     "id": "eq-4-2-22",
+     "type": "equation",
+     "page": 9,
+     "original": "0.97 0.795 (0.756)† 1.84 0.753 (0.725)† 8.13 0.753 (0.704)†"
+    },
+    {
+     "id": "eq-4-2-23",
+     "type": "equation",
+     "page": 9,
+     "original": "Dots.TTS-2B (SOAR) [12]"
+    },
+    {
+     "id": "eq-4-2-24",
+     "type": "equation",
+     "page": 9,
+     "original": "0.94 0.810 (0.818)† 1.30 0.771 (0.792)† 6.60 0.795 (0.800)†"
+    },
+    {
+     "id": "eq-4-2-25",
+     "type": "equation",
+     "page": 9,
+     "original": "CosyVoice3-1.5B [4]"
+    },
+    {
+     "id": "eq-4-2-26",
+     "type": "equation",
+     "page": 9,
+     "original": "1.12 0.781 (0.837) 2.21 0.720 (0.789) 5.83 0.758 (0.816)"
+    },
+    {
+     "id": "eq-4-2-27",
+     "type": "equation",
+     "page": 9,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-2-28",
+     "type": "equation",
+     "page": 9,
+     "original": "0.84 0.792 (0.847) 1.54 0.762 (0.815) 7.00 0.768 (0.824)"
     },
     {
      "id": "tab-4-2-2",
@@ -1507,21 +2149,123 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-4-2-4-1",
-       "original": "de es fr it ru ar id pt th vi ms tl 3.42 3.45 6.29 7.49 3.30 2.79 8.74 3.67 5.39 3.38 1.46 1.86 1.65 1.64 3.10 6.35 4.46 3.61 5.71 5.46 3.64 3.92 9.31 4.68 5.38 5.51 2.85 2.33 3.44 4.08 4.41 12.8 Qwen3-TTS-12Hz-1.7B-Base 3.09 3.67 6.48 5.64 3.31 3.22 9.05 4.01 7.40 2.71 3.58 4.70 8.23 10.1 5.97 8.04 35.7 5.34 14.0 5.01 11.1 7.71 12.3 5.57 8.84 3.55 6.21 5.88 9.95 5.48 4.17 10.3 4.42 5.97 4.44 3.10 2.63 1.86 4.97 5.47 7.08 3.89 5.24 10.4 12.8 7.41 4.25 12.9 6.68 6.77 3.91 4.99 7.57 5.69 6.43 4.47 11.8 10.5 6.64 3.35 4.25 4.78 4.30 4.00 3.08 9.77 3.82 4.68 3.36 2.35 1.99 1.45 3.17 2.62 6.43 We find that pushing CER/WER lower through more aggressive optimization consistently comes at the expense of speech naturalness and expressiveness.",
+       "original": "Model zh en ja ko de es fr it ru ar id pt th vi ms tl Commercial API Models MiniMax-Speech-2.8-HD",
+       "zh": "表头：Model × zh/en/ja/ko/de/es/fr/it/ru/ar/id/pt/th/vi/ms/tl 各语种——商业 API 模型：MiniMax-Speech-2.8-HD（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-2-29",
+     "type": "equation",
+     "page": 10,
+     "original": "3.42 3.45 6.29 7.49 3.30 2.79 8.74 3.67 5.39 3.38 1.46 1.86 1.65 1.64 3.10 6.35"
+    },
+    {
+     "id": "eq-4-2-30",
+     "type": "equation",
+     "page": 10,
+     "original": "ElevenLabs-v3"
+    },
+    {
+     "id": "eq-4-2-31",
+     "type": "equation",
+     "page": 10,
+     "original": "4.46 3.61 5.71 5.46 3.64 3.92 9.31 4.68 5.38 5.51 2.85 2.33 3.44 4.08 4.41 12.8"
+    },
+    {
+     "id": "eq-4-2-32",
+     "type": "equation",
+     "page": 10,
+     "original": "Open-source Models"
+    },
+    {
+     "id": "eq-4-2-33",
+     "type": "equation",
+     "page": 10,
+     "original": "Qwen3-TTS-12Hz-1.7B-Base 3.09 3.67 6.48 5.64 3.31 3.22 9.05 4.01 7.40 – – 2.71 – – – –"
+    },
+    {
+     "id": "eq-4-2-34",
+     "type": "equation",
+     "page": 10,
+     "original": "Dots.TTS-2B (SOAR)"
+    },
+    {
+     "id": "eq-4-2-35",
+     "type": "equation",
+     "page": 10,
+     "original": "3.58 4.70 8.23 10.1 5.97 8.04 35.7 5.34 14.0 – 5.01 11.1 7.71 12.3 5.57 8.84"
+    },
+    {
+     "id": "eq-4-2-36",
+     "type": "equation",
+     "page": 10,
+     "original": "VoxCPM2"
+    },
+    {
+     "id": "eq-4-2-37",
+     "type": "equation",
+     "page": 10,
+     "original": "3.55 6.21 5.88 9.95 5.48 4.17 10.3 4.42 5.97 4.44 3.10 2.63 1.86 4.97 5.47 7.08"
+    },
+    {
+     "id": "eq-4-2-38",
+     "type": "equation",
+     "page": 10,
+     "original": "CosyVoice3-0.5B"
+    },
+    {
+     "id": "eq-4-2-39",
+     "type": "equation",
+     "page": 10,
+     "original": "3.89 5.24 10.4 12.8 7.41 4.25 12.9 6.68 6.77 – – – – – – –"
+    },
+    {
+     "id": "eq-4-2-40",
+     "type": "equation",
+     "page": 10,
+     "original": "CosyVoice3-1.5B"
+    },
+    {
+     "id": "eq-4-2-41",
+     "type": "equation",
+     "page": 10,
+     "original": "3.91 4.99 7.57 5.69 6.43 4.47 11.8 10.5 6.64 – – – – – – –"
+    },
+    {
+     "id": "eq-4-2-42",
+     "type": "equation",
+     "page": 10,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-2-43",
+     "type": "equation",
+     "page": 10,
+     "original": "3.35 4.25 4.78 4.30 4.00 3.08 9.77 3.82 4.68 3.36 2.35 1.99 1.45 3.17 2.62 6.43"
+    },
+    {
+     "id": "p-4-2-5",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-4-2-5-1",
+       "original": "We find that pushing CER/WER lower through more aggressive optimization consistently comes at the expense of speech naturalness and expressiveness.",
        "zh": "（此句主体为 Table 4 数值的抽取残留：de/es/fr/it/ru/ar/id/pt/th/vi/ms/tl 各语言列下 MiniMax-Speech-2.8-HD、ElevenLabs-v3、Dots.TTS-2B、VoxCPM2、Qwen3-TTS-12Hz-1.7B-Base 与 Qwen-Audio-3.0-TTS 的 CER/WER 数值，含 3.42、3.45、6.29、7.49、3.30、2.79、8.74、3.67、5.39、3.38、1.46、1.86、1.65、1.64、3.10、6.35、4.46、3.61、5.71、5.46、3.64、3.92、9.31、4.68、5.38、5.51、2.85、2.33、3.44、4.08、4.41、12.8、3.09、3.67、6.48、5.64、3.31、3.22、9.05、4.01、7.40、2.71、3.58、4.70、8.23、10.1、5.97、8.04、35.7、5.34、14.0、5.01、11.1、7.71、12.3、5.57、8.84、3.55、6.21、5.88、9.95、5.48、4.17、10.3、4.42、5.97、4.44、3.10、2.63、1.86、4.97、5.47、7.08、3.89、5.24、10.4、12.8、7.41、4.25、12.9、6.68、6.77、3.91、4.99、7.57、5.69、6.43、4.47、11.8、10.5、6.64、3.35、4.25、4.78、4.30、4.00、3.08、9.77、3.82、4.68、3.36、2.35、1.99、1.45、3.17、2.62、6.43。）句末为正文：我们发现，通过更激进的优化压低 CER/WER，总会以牺牲语音自然度与表现力为代价。"
       },
       {
-       "id": "s-4-2-4-2",
+       "id": "s-4-2-5-2",
        "original": "Our model therefore targets a better overall trade-off instead of optimizing specifically for the lowest CER/WER.",
        "zh": "因此，我们的模型以更好的整体权衡为目标，而不是专门针对最低 CER/WER 优化。"
       },
       {
-       "id": "s-4-2-4-3",
+       "id": "s-4-2-5-3",
        "original": "For speaker similarity, QwenAudio-3.0-TTS remains competitive under WavLM and achieves the highest ERes2Net scores across all three test sets.",
        "zh": "在说话人相似度上，Qwen-Audio-3.0-TTS 在 WavLM 下保持竞争力，并在全部三个测试集上取得最高的 ERes2Net 分数。"
       },
       {
-       "id": "s-4-2-4-4",
+       "id": "s-4-2-5-4",
        "original": "We also observe that WavLM and ERes2Net often produce different system rankings, suggesting that the two metrics capture complementary aspects of speaker similarity.",
        "zh": "我们还观察到 WavLM 与 ERes2Net 常常给出不同的系统排名，说明这两个指标刻画了说话人相似度互补的侧面。"
       }
@@ -1666,10 +2410,100 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-4-3-2-2-1",
-       "original": "hard-zh hard-en DNSMOS ↑ WER (%) ↓ DNSMOS ↑ 7.42 74.6 3.74 7.37 72.1 3.80 10.66 50.3 3.81 5.84 48.9 3.92 11.24 69.1 3.79 6.53 66.1 3.88 9.24 72.8 3.75 8.50 73.9 3.84 11.75 77.5 3.65 11.69 76.0 3.72 8.10 69.9 3.63 7.48 67.0 3.73 9.77 78.5 3.79 10.55 76.1 3.95 7.44 78.7 3.93 6.71 76.6 4.04",
-       "zh": "（此句为 Table 5 数值的抽取残留：hard-zh 与 hard-en 子集上各系统的 WER（%）、SIM、DNSMOS 数值——7.42/74.6/3.74、7.37/72.1/3.80、10.66/50.3/3.81、5.84/48.9/3.92、11.24/69.1/3.79、6.53/66.1/3.88、9.24/72.8/3.75、8.50/73.9/3.84、11.75/77.5/3.65、11.69/76.0/3.72、8.10/69.9/3.63、7.48/67.0/3.73、9.77/78.5/3.79、10.55/76.1/3.95、7.44/78.7/3.93、6.71/76.6/4.04，系统名列在抽取中丢失。）"
+       "original": "Model hard-zh hard-en CER (%) ↓ SIM (%) ↑ DNSMOS ↑ WER (%) ↓ SIM (%) ↑ DNSMOS ↑ Commercial API Models MiniMax-Speech-2.8-HD",
+       "zh": "表头：Model × hard-zh / hard-en（CER (%) ↓ / SIM (%) ↑ / DNSMOS ↑）/（WER (%) ↓ / SIM (%) ↑ / DNSMOS ↑）——商业 API 模型：MiniMax-Speech-2.8-HD（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-3-2-1",
+     "type": "equation",
+     "page": 11,
+     "original": "7.42 74.6 3.74 7.37 72.1 3.80"
+    },
+    {
+     "id": "eq-4-3-2-2",
+     "type": "equation",
+     "page": 11,
+     "original": "ElevenLabs-v3"
+    },
+    {
+     "id": "eq-4-3-2-3",
+     "type": "equation",
+     "page": 11,
+     "original": "10.66 50.3 3.81 5.84 48.9 3.92"
+    },
+    {
+     "id": "eq-4-3-2-4",
+     "type": "equation",
+     "page": 11,
+     "original": "Open-source Models Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+     "id": "eq-4-3-2-5",
+     "type": "equation",
+     "page": 11,
+     "original": "11.24 69.1 3.79 6.53 66.1 3.88"
+    },
+    {
+     "id": "eq-4-3-2-6",
+     "type": "equation",
+     "page": 11,
+     "original": "LongCat-AudioDiT-3.5B"
+    },
+    {
+     "id": "eq-4-3-2-7",
+     "type": "equation",
+     "page": 11,
+     "original": "9.24 72.8 3.75 8.50 73.9 3.84"
+    },
+    {
+     "id": "eq-4-3-2-8",
+     "type": "equation",
+     "page": 11,
+     "original": "Dots.TTS-2B (SOAR)"
+    },
+    {
+     "id": "eq-4-3-2-9",
+     "type": "equation",
+     "page": 11,
+     "original": "11.75 77.5 3.65 11.69 76.0 3.72"
+    },
+    {
+     "id": "eq-4-3-2-10",
+     "type": "equation",
+     "page": 11,
+     "original": "VoxCPM2"
+    },
+    {
+     "id": "eq-4-3-2-11",
+     "type": "equation",
+     "page": 11,
+     "original": "8.10 69.9 3.63 7.48 67.0 3.73"
+    },
+    {
+     "id": "eq-4-3-2-12",
+     "type": "equation",
+     "page": 11,
+     "original": "CosyVoice3-1.5B"
+    },
+    {
+     "id": "eq-4-3-2-13",
+     "type": "equation",
+     "page": 11,
+     "original": "9.77 78.5 3.79 10.55 76.1 3.95"
+    },
+    {
+     "id": "eq-4-3-2-14",
+     "type": "equation",
+     "page": 11,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-3-2-15",
+     "type": "equation",
+     "page": 11,
+     "original": "7.44 78.7 3.93 6.71 76.6 4.04"
     },
     {
      "id": "tab-4-3-2-3",
@@ -1685,10 +2519,88 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-4-3-2-3-1",
-       "original": "to-zh to-en to-ja to-ko 9.96 6.07 3.63 3.59 5.79 4.28 30.7 13.7 6.39 6.45 6.78 11.3 7.15 6.17 2.82 4.86 5.30 4.88 10.7 12.4 6.00 6.26 5.48 8.01 4.77 3.43 1.08 2.77 3.04 3.09 8.40 7.21 3.67 4.82 5.14 5.59 8.07 2.61 4.31 8.02 4.74 16.1 12.4 18.6 13.5 7.76 3.42 5.26 6.22 7.15 5.73 10.4 10.6 8.01 6.78 3.30 4.32 5.39 5.94 13.7 13.4 4.19 31.6 14.0 10.5 5.23 3.29 1.09 2.40 3.15 3.54 6.53 6.66 2.98 4.27 4.34 5.15",
-       "zh": "（此句为 Table 6 数值的抽取残留：to-zh、to-en、to-ja、to-ko 各迁移方向下不同源语言的 WER/CER 数值——9.96、6.07、3.63、3.59、5.79、4.28、30.7、13.7、6.39、6.45、6.78、11.3、7.15、6.17、2.82、4.86、5.30、4.88、10.7、12.4、6.00、6.26、5.48、8.01、4.77、3.43、1.08、2.77、3.04、3.09、8.40、7.21、3.67、4.82、5.14、5.59、8.07、2.61、4.31、8.02、4.74、16.1、12.4、18.6、13.5、7.76、3.42、5.26、6.22、7.15、5.73、10.4、10.6、8.01、6.78、3.30、4.32、5.39、5.94、13.7、13.4、4.19、31.6、14.0、10.5、5.23、3.29、1.09、2.40、3.15、3.54、6.53、6.66、2.98、4.27、4.34、5.15，行列表头在抽取中部分丢失。）"
+       "original": "Model to-zh to-en to-ja to-ko en ja ko zh ja ko zh en ko zh en ja Commercial API Models MiniMax-Speech-2.8-HD",
+       "zh": "表头：Model × to-zh / to-en / to-ja / to-ko 与 en / ja / ko / zh 各方向——商业 API 模型：MiniMax-Speech-2.8-HD（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-3-2-16",
+     "type": "equation",
+     "page": 11,
+     "original": "9.96 6.07 3.63 3.59 5.79 4.28 30.7 13.7 6.39 6.45 6.78 11.3"
+    },
+    {
+     "id": "eq-4-3-2-17",
+     "type": "equation",
+     "page": 11,
+     "original": "ElevenLabs-v3"
+    },
+    {
+     "id": "eq-4-3-2-18",
+     "type": "equation",
+     "page": 11,
+     "original": "7.15 6.17 2.82 4.86 5.30 4.88 10.7 12.4 6.00 6.26 5.48 8.01"
+    },
+    {
+     "id": "eq-4-3-2-19",
+     "type": "equation",
+     "page": 11,
+     "original": "Open-source Models Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+     "id": "eq-4-3-2-20",
+     "type": "equation",
+     "page": 11,
+     "original": "4.77 3.43 1.08 2.77 3.04 3.09 8.40 7.21 3.67 4.82 5.14 5.59"
+    },
+    {
+     "id": "eq-4-3-2-21",
+     "type": "equation",
+     "page": 11,
+     "original": "Dots.TTS-2B (SOAR)"
+    },
+    {
+     "id": "eq-4-3-2-22",
+     "type": "equation",
+     "page": 11,
+     "original": "8.07 – 2.61 4.31 8.02 4.74 16.1 – – 12.4 18.6 13.5"
+    },
+    {
+     "id": "eq-4-3-2-23",
+     "type": "equation",
+     "page": 11,
+     "original": "VoxCPM2"
+    },
+    {
+     "id": "eq-4-3-2-24",
+     "type": "equation",
+     "page": 11,
+     "original": "7.76 – 3.42 5.26 6.22 7.15 – – – 5.73 10.4 10.6"
+    },
+    {
+     "id": "eq-4-3-2-25",
+     "type": "equation",
+     "page": 11,
+     "original": "CosyVoice3-1.5B"
+    },
+    {
+     "id": "eq-4-3-2-26",
+     "type": "equation",
+     "page": 11,
+     "original": "8.01 6.78 3.30 4.32 5.39 5.94 13.7 13.4 4.19 31.6 14.0 10.5"
+    },
+    {
+     "id": "eq-4-3-2-27",
+     "type": "equation",
+     "page": 11,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-3-2-28",
+     "type": "equation",
+     "page": 11,
+     "original": "5.23 3.29 1.09 2.40 3.15 3.54 6.53 6.66 2.98 4.27 4.34 5.15"
     }
    ]
   },
@@ -1809,7 +2721,7 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-4-4-2-2-1",
-       "original": "Overall Num.",
+       "original": "Model Overall Num.",
        "zh": "（此句为 Table 7 表头的抽取残留：Overall 与 Num. 两列。）"
       }
      ]
@@ -1845,10 +2757,76 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-4-4-2-5-1",
-       "original": "Code Expr. 57.0 60.5 74.2 78.7 40.5 63.0 41.5 63.3 73.9 47.1 24.8 44.1 2.0 7.4 2.7 3.6 0.0 10.0 4.9 27.3 0.8 0.0 1.0 2.8 38.6 46.9 40.6 67.7 28.4 49.5 38.3 52.0 72.3 31.0 3.8 27.5 55.4 48.6 72.9 61.8 33.8 51.0 39.0 58.6 82.4 42.0 15.2 25.2 59.3 54.2 81.3 70.2 40.5 77.0 45.1 55.5 80.7 37.4 12.4 32.2 68.7 65.7 84.2 78.2 43.7 82.8 50.6 59.4 89.7 61.5 43.8 45.1",
-       "zh": "（此句为 Table 7 数值主体的抽取残留：Code、Expr. 列及各系统在各类别上的准确率——57.0、60.5、74.2、78.7、40.5、63.0、41.5、63.3、73.9、47.1、24.8、44.1、2.0、7.4、2.7、3.6、0.0、10.0、4.9、27.3、0.8、0.0、1.0、2.8、38.6、46.9、40.6、67.7、28.4、49.5、38.3、52.0、72.3、31.0、3.8、27.5、55.4、48.6、72.9、61.8、33.8、51.0、39.0、58.6、82.4、42.0、15.2、25.2、59.3、54.2、81.3、70.2、40.5、77.0、45.1、55.5、80.7、37.4、12.4、32.2、68.7、65.7、84.2、78.2、43.7、82.8、50.6、59.4、89.7、61.5、43.8、45.1。）"
+       "original": "Code Expr. zh en zh en zh en zh en zh en zh en Qwen3-TTS-12Hz-1.7B-Base",
+       "zh": "（表格行：Code / Expr. × zh / en（六组）——Qwen3-TTS-12Hz-1.7B-Base，后续照原文。）"
       }
      ]
+    },
+    {
+     "id": "eq-4-4-2-1",
+     "type": "equation",
+     "page": 12,
+     "original": "57.0 60.5 74.2 78.7 40.5 63.0 41.5 63.3 73.9 47.1 24.8 44.1"
+    },
+    {
+     "id": "eq-4-4-2-2",
+     "type": "equation",
+     "page": 12,
+     "original": "LongCat-AudioDiT-3.5B"
+    },
+    {
+     "id": "eq-4-4-2-3",
+     "type": "equation",
+     "page": 12,
+     "original": "2.0 7.4 2.7 3.6 0.0 10.0 4.9 27.3 0.8 0.0 1.0 2.8"
+    },
+    {
+     "id": "eq-4-4-2-4",
+     "type": "equation",
+     "page": 12,
+     "original": "Dots.TTS-2B (SOAR)"
+    },
+    {
+     "id": "eq-4-4-2-5",
+     "type": "equation",
+     "page": 12,
+     "original": "38.6 46.9 40.6 67.7 28.4 49.5 38.3 52.0 72.3 31.0 3.8 27.5"
+    },
+    {
+     "id": "eq-4-4-2-6",
+     "type": "equation",
+     "page": 12,
+     "original": "VoxCPM2"
+    },
+    {
+     "id": "eq-4-4-2-7",
+     "type": "equation",
+     "page": 12,
+     "original": "55.4 48.6 72.9 61.8 33.8 51.0 39.0 58.6 82.4 42.0 15.2 25.2"
+    },
+    {
+     "id": "eq-4-4-2-8",
+     "type": "equation",
+     "page": 12,
+     "original": "CosyVoice3-1.5B"
+    },
+    {
+     "id": "eq-4-4-2-9",
+     "type": "equation",
+     "page": 12,
+     "original": "59.3 54.2 81.3 70.2 40.5 77.0 45.1 55.5 80.7 37.4 12.4 32.2"
+    },
+    {
+     "id": "eq-4-4-2-10",
+     "type": "equation",
+     "page": 12,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-4-2-11",
+     "type": "equation",
+     "page": 12,
+     "original": "68.7 65.7 84.2 78.2 43.7 82.8 50.6 59.4 89.7 61.5 43.8 45.1"
     },
     {
      "id": "tab-4-4-2-3",
@@ -1864,28 +2842,142 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-4-4-2-6-1",
-       "original": "zh CER (%) ↓ zh SIM ↑ en WER (%) ↓ en SIM ↑ short mid long all P-SIM S-SIM short mid long all P-SIM S-SIM Text length (µ ± σ) Audio duration (µ ± σ, s) N samples 29 35 36 100 100 100 29 32 39 100 100 100 0.34 1.89 5.79 2.84 63.11 88.98 3.04 4.25 6.57 4.81 68.56 90.49 70.15 87.10 71.07 88.24 16.66 36.03 47.31 34.47 78.47 89.74 13.42 20.67 47.85 29.17 81.80 91.48 0.54 0.58 0.49 0.54 61.73 86.80 2.33 4.25 2.98 3.20 68.95 90.39 14.03 26.73 33.29 25.41 80.44 93.88 7.45 18.59 38.78 23.24 84.52 94.90 0.30 0.31 5.62 2.22 78.85 93.16 3.30 6.72 4.85 5.00 82.35 93.45 improves content fidelity over CosyVoice3-1.5B while retaining high prompt and segment-level speaker similarity.",
-       "zh": "（此句开头为 Table 8 数值的抽取残留：zh CER（%）、zh SIM、en WER（%）、en SIM 的 short/mid/long/all 分桶及 P-SIM、S-SIM 两列；文本长度（µ ± σ）、音频时长（µ ± σ，s）、样本数 29/35/36 与 100/100/100、29/32/39 与 100/100/100，数值为 0.34/1.89/5.79/2.84/63.11/88.98、3.04/4.25/6.57/4.81/68.56/90.49、70.15/87.10/71.07/88.24、16.66/36.03/47.31/34.47/78.47/89.74、13.42/20.67/47.85/29.17/81.80/91.48、0.54/0.58/0.49/0.54/61.73/86.80、2.33/4.25/2.98/3.20/68.95/90.39、14.03/26.73/33.29/25.41/80.44/93.88、7.45/18.59/38.78/23.24/84.52/94.90、0.30/0.31/5.62/2.22/78.85/93.16、3.30/6.72/4.85/5.00/82.35/93.45，系统名列在抽取中丢失。）句末为正文：相对 CosyVoice3-1.5B，它大幅提升了内容保真度，同时保持了较高的提示级与段落级说话人相似度。"
+       "original": "Model zh CER (%) ↓ zh SIM ↑ en WER (%) ↓ en SIM ↑ short mid long all P-SIM S-SIM short mid long all P-SIM S-SIM Text length (µ ± σ)",
+       "zh": "表头：Model × zh CER(%)↓ × zh SIM↑ × en WER(%)↓ × en SIM↑（short/mid/long/all，P-SIM/S-SIM）；文本长度（µ ± σ）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-4-2-12",
+     "type": "equation",
+     "page": 12,
+     "original": "496±19 634±26 735±24 630±99 – – 248±26 345±31 451±29 358±88 – –"
+    },
+    {
+     "id": "eq-4-4-2-13",
+     "type": "equation",
+     "page": 12,
+     "original": "Audio duration (µ ± σ, s)"
+    },
+    {
+     "id": "eq-4-4-2-14",
+     "type": "equation",
+     "page": 12,
+     "original": "116±9 146±11 161±23 142±24 – – 86±14 115±18 163±27 125±38 – –"
+    },
+    {
+     "id": "eq-4-4-2-15",
+     "type": "equation",
+     "page": 12,
+     "original": "N samples"
+    },
+    {
+     "id": "eq-4-4-2-16",
+     "type": "equation",
+     "page": 12,
+     "original": "29 35 36 100 100 100 29 32 39 100 100 100"
+    },
+    {
+     "id": "eq-4-4-2-17",
+     "type": "equation",
+     "page": 12,
+     "original": "Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+     "id": "eq-4-4-2-18",
+     "type": "equation",
+     "page": 12,
+     "original": "0.34 1.89 5.79 2.84 63.11 88.98 3.04 4.25 6.57 4.81 68.56 90.49"
+    },
+    {
+     "id": "eq-4-4-2-19",
+     "type": "equation",
+     "page": 12,
+     "original": "LongCat-AudioDiT-3.5B"
+    },
+    {
+     "id": "eq-4-4-2-20",
+     "type": "equation",
+     "page": 12,
+     "original": "–† –† –† –† 70.15 87.10 –† –† –† –† 71.07 88.24"
+    },
+    {
+     "id": "eq-4-4-2-21",
+     "type": "equation",
+     "page": 12,
+     "original": "Dots.TTS-2B (SOAR)"
+    },
+    {
+     "id": "eq-4-4-2-22",
+     "type": "equation",
+     "page": 12,
+     "original": "16.66 36.03 47.31 34.47 78.47 89.74 13.42 20.67 47.85 29.17 81.80 91.48"
+    },
+    {
+     "id": "eq-4-4-2-23",
+     "type": "equation",
+     "page": 12,
+     "original": "VoxCPM2"
+    },
+    {
+     "id": "eq-4-4-2-24",
+     "type": "equation",
+     "page": 12,
+     "original": "0.54 0.58 0.49 0.54 61.73 86.80 2.33 4.25 2.98 3.20 68.95 90.39"
+    },
+    {
+     "id": "eq-4-4-2-25",
+     "type": "equation",
+     "page": 12,
+     "original": "CosyVoice3-1.5B"
+    },
+    {
+     "id": "eq-4-4-2-26",
+     "type": "equation",
+     "page": 12,
+     "original": "14.03 26.73 33.29 25.41 80.44 93.88 7.45 18.59 38.78 23.24 84.52 94.90"
+    },
+    {
+     "id": "eq-4-4-2-27",
+     "type": "equation",
+     "page": 12,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-4-2-28",
+     "type": "equation",
+     "page": 12,
+     "original": "0.30 0.31 5.62 2.22 78.85 93.16 3.30 6.72 4.85 5.00 82.35 93.45"
+    },
+    {
+     "id": "p-4-4-2-7",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-4-4-2-7-1",
+       "original": "improves content fidelity over CosyVoice3-1.5B while retaining high prompt and segment-level speaker similarity.",
+       "zh": "（正文残句）……相对 CosyVoice3-1.5B 提升了内容保真度，同时保持高提示与段级说话人相似度。"
       },
       {
-       "id": "s-4-4-2-6-2",
+       "id": "s-4-4-2-7-2",
        "original": "The Chinese and English test sets each contain 100 paragraph-level inputs.",
-       "zh": "中文与英文测试集各包含 100 个段落级输入。"
+       "zh": "中文与英文测试集各含 100 个段落级输入。"
       },
       {
-       "id": "s-4-4-2-6-3",
+       "id": "s-4-4-2-7-3",
        "original": "Samples are divided into short, mid, and long buckets by input length.",
-       "zh": "样本按输入长度分为短、中、长三档。"
+       "zh": "样本按输入长度分为 short、mid、long 三档。"
       },
       {
-       "id": "s-4-4-2-6-4",
+       "id": "s-4-4-2-7-4",
        "original": "P-SIM is the average similarity between prompt and generated segments, while S-SIM is the average pairwise similarity among overlapping segments within a generated utterance.",
-       "zh": "P-SIM 是提示与生成各段之间的平均相似度，S-SIM 是一条生成语音内部重叠段落之间的平均两两相似度。"
+       "zh": "P-SIM 为提示与生成片段之间的平均相似度，S-SIM 为生成语音内部重叠片段之间的平均两两相似度。"
       },
       {
-       "id": "s-4-4-2-6-5",
+       "id": "s-4-4-2-7-5",
        "original": "Table 8 reports the complete bucket-level breakdown.",
-       "zh": "Table 8 报告了完整的分档拆解。"
+       "zh": "表 8 给出完整的分档明细。"
       }
      ]
     }
@@ -1950,21 +3042,39 @@ globalThis.PAPER_2607_23938 = {
       },
       {
        "id": "s-4-4-3-2-4",
-       "original": "Enabling denoising raises MiniMax’s DNSMOS from 3.464 to 3.728 on Noisy and from 3.065 to 3.343 on Reverb, but reduces SIM from 66.72 to 63.83 and from 61.56 to 56.53, respectively.",
+       "original": "Enabling denoising raises MiniMax’s DNSMOS",
+       "zh": "开启去噪后，MiniMax 在 Noisy 上的 DNSMOS 从 3.464 升至 3.728、在 Reverb 上从 3.065 升至 3.343，但 SIM 分别从 66.72 降到 63.83、从 61.56 降到 56.53。"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-4-3-1",
+     "type": "equation",
+     "page": 12,
+     "original": "from 3.464 to 3.728 on Noisy and from 3.065 to 3.343 on Reverb, but reduces SIM from 66.72 to"
+    },
+    {
+     "id": "p-4-4-3-3",
+     "type": "paragraph",
+     "page": 12,
+     "sentences": [
+      {
+       "id": "s-4-4-3-3-1",
+       "original": "63.83 and from 61.56 to 56.53, respectively.",
        "zh": "开启去噪后，MiniMax 在 Noisy 上的 DNSMOS 从 3.464 升至 3.728、在 Reverb 上从 3.065 升至 3.343，但 SIM 分别从 66.72 降到 63.83、从 61.56 降到 56.53。"
       },
       {
-       "id": "s-4-4-3-2-5",
+       "id": "s-4-4-3-3-2",
        "original": "A similar trade-off appears for ElevenLabs-v3, whose denoising mode improves Reverb DNSMOS from 3.090 to 4.025 and WER from 1.75% to 0.58%, while its SIM remains low at 44.39%.",
        "zh": "ElevenLabs-v3 出现类似的权衡：其去噪模式把 Reverb 上的 DNSMOS 从 3.090 提升到 4.025、WER 从 1.75% 降到 0.58%，但其 SIM 仍低至 44.39%。"
       },
       {
-       "id": "s-4-4-3-2-6",
+       "id": "s-4-4-3-3-3",
        "original": "By comparison, Qwen-Audio-3.0-TTS reaches DNSMOS scores of 3.962 and 3.925 on Noisy and Reverb, close to ElevenLabs-v3·Denoise, while achieving much higher SIM scores of 76.14% and 74.12%.",
        "zh": "相比之下，Qwen-Audio-3.0-TTS 在 Noisy 与 Reverb 上达到 3.962 与 3.925 的 DNSMOS，接近 ElevenLabs-v3·Denoise，同时取得高得多的 SIM——76.14% 与 74.12%。"
       },
       {
-       "id": "s-4-4-3-2-7",
+       "id": "s-4-4-3-3-4",
        "original": "On Reverb, it further obtains the best SIM together with the second-best WER and DNSMOS, showing a strong balance among denoising quality, intelligibility, and speaker preservation.",
        "zh": "在 Reverb 上，它还取得最佳 SIM，WER 与 DNSMOS 均为次佳，在去噪质量、可懂度与说话人保留之间展现出很强的平衡。"
       }
@@ -1978,16 +3088,130 @@ globalThis.PAPER_2607_23938 = {
      "zh": "表 9：含噪、混响与不清晰提示条件下的客观零样本 TTS 结果。标有「Denoise」的模型使用其推理时去噪模式。报告内容错误、ERes2Net 说话人相似度（SIM）与 DNSMOS。加粗与下划线分别表示每列最佳与次佳结果。"
     },
     {
-     "id": "p-4-4-3-3",
+     "id": "p-4-4-3-4",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
-       "id": "s-4-4-3-3-1",
-       "original": "Noisy Reverb Unclear WER (%) ↓SIM (%) ↑DNSMOS ↑WER (%) ↓SIM (%) ↑DNSMOS ↑WER (%) ↓SIM (%) ↑DNSMOS ↑ 0.85 66.72 3.464 0.83 61.56 3.065 1.28 68.33 3.174 MiniMax-Speech-2.8-HD·Denoise 0.83 63.83 3.728 0.87 56.53 3.343 1.58 67.84 3.241 1.17 46.91 3.779 1.75 41.46 3.090 1.67 47.12 3.304 ElevenLabs-v3·Denoise 1.19 46.07 3.981 0.58 44.39 4.025 1.38 43.90 3.496 2.01 65.61 3.595 2.11 63.42 2.887 2.85 70.62 3.050 3.44 58.70 3.777 1.05 56.91 3.169 3.12 73.54 3.262 2.90 76.69 3.221 2.12 72.38 2.888 2.16 76.69 3.070 VoxCPM2·Denoise 4.36 65.31 3.678 10.07 51.05 2.830 6.71 68.81 3.051 1.56 75.40 3.301 1.78 71.91 3.021 2.39 72.06 3.113 1.18 76.14 3.962 0.69 74.12 3.925 1.61 76.53 3.305",
-       "zh": "（此句为 Table 9 与 Table 10 数值的抽取残留：Noisy/Reverb/Unclear 三条件下各系统的 WER（%）、SIM（%）、DNSMOS——0.85/66.72/3.464、0.83/61.56/3.065、1.28/68.33/3.174，MiniMax-Speech-2.8-HD·Denoise 0.83/63.83/3.728、0.87/56.53/3.343、1.58/67.84/3.241，1.17/46.91/3.779、1.75/41.46/3.090、1.67/47.12/3.304，ElevenLabs-v3·Denoise 1.19/46.07/3.981、0.58/44.39/4.025、1.38/43.90/3.496，2.01/65.61/3.595、2.11/63.42/2.887、2.85/70.62/3.050，3.44/58.70/3.777、1.05/56.91/3.169、3.12/73.54/3.262，2.90/76.69/3.221、2.12/72.38/2.888、2.16/76.69/3.070，VoxCPM2·Denoise 4.36/65.31/3.678、10.07/51.05/2.830、6.71/68.81/3.051，1.56/75.40/3.301、1.78/71.91/3.021、2.39/72.06/3.113，1.18/76.14/3.962、0.69/74.12/3.925、1.61/76.53/3.305，部分系统名列在抽取中丢失。）"
+       "id": "s-4-4-3-4-1",
+       "original": "Model Noisy Reverb Unclear WER (%) ↓SIM (%) ↑DNSMOS ↑WER (%) ↓SIM (%) ↑DNSMOS ↑WER (%) ↓SIM (%) ↑DNSMOS ↑ Commercial API Models MiniMax-Speech-2.8-HD",
+       "zh": "表头：Model × Noisy / Reverb / Unclear（WER (%) ↓ / SIM (%) ↑ / DNSMOS ↑ 各组）——商业 API 模型：MiniMax-Speech-2.8-HD（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-4-3-2",
+     "type": "equation",
+     "page": 13,
+     "original": "0.85 66.72 3.464 0.83 61.56 3.065 1.28 68.33 3.174"
+    },
+    {
+     "id": "eq-4-4-3-3",
+     "type": "equation",
+     "page": 13,
+     "original": "MiniMax-Speech-2.8-HD·Denoise"
+    },
+    {
+     "id": "eq-4-4-3-4",
+     "type": "equation",
+     "page": 13,
+     "original": "0.83 63.83 3.728 0.87 56.53 3.343 1.58 67.84 3.241"
+    },
+    {
+     "id": "eq-4-4-3-5",
+     "type": "equation",
+     "page": 13,
+     "original": "ElevenLabs-v3"
+    },
+    {
+     "id": "eq-4-4-3-6",
+     "type": "equation",
+     "page": 13,
+     "original": "1.17 46.91 3.779 1.75 41.46 3.090 1.67 47.12 3.304"
+    },
+    {
+     "id": "eq-4-4-3-7",
+     "type": "equation",
+     "page": 13,
+     "original": "ElevenLabs-v3·Denoise"
+    },
+    {
+     "id": "eq-4-4-3-8",
+     "type": "equation",
+     "page": 13,
+     "original": "1.19 46.07 3.981 0.58 44.39 4.025 1.38 43.90 3.496"
+    },
+    {
+     "id": "eq-4-4-3-9",
+     "type": "equation",
+     "page": 13,
+     "original": "Open-source Models Qwen3-TTS-12Hz-1.7B-Base"
+    },
+    {
+     "id": "eq-4-4-3-10",
+     "type": "equation",
+     "page": 13,
+     "original": "2.01 65.61 3.595 2.11 63.42 2.887 2.85 70.62 3.050"
+    },
+    {
+     "id": "eq-4-4-3-11",
+     "type": "equation",
+     "page": 13,
+     "original": "LongCat-AudioDiT-3.5B"
+    },
+    {
+     "id": "eq-4-4-3-12",
+     "type": "equation",
+     "page": 13,
+     "original": "3.44 58.70 3.777 1.05 56.91 3.169 3.12 73.54 3.262"
+    },
+    {
+     "id": "eq-4-4-3-13",
+     "type": "equation",
+     "page": 13,
+     "original": "Dots.TTS-2B (SOAR)"
+    },
+    {
+     "id": "eq-4-4-3-14",
+     "type": "equation",
+     "page": 13,
+     "original": "2.90 76.69 3.221 2.12 72.38 2.888 2.16 76.69 3.070"
+    },
+    {
+     "id": "eq-4-4-3-15",
+     "type": "equation",
+     "page": 13,
+     "original": "VoxCPM2·Denoise"
+    },
+    {
+     "id": "eq-4-4-3-16",
+     "type": "equation",
+     "page": 13,
+     "original": "4.36 65.31 3.678 10.07 51.05 2.830 6.71 68.81 3.051"
+    },
+    {
+     "id": "eq-4-4-3-17",
+     "type": "equation",
+     "page": 13,
+     "original": "CosyVoice3-1.5B"
+    },
+    {
+     "id": "eq-4-4-3-18",
+     "type": "equation",
+     "page": 13,
+     "original": "1.56 75.40 3.301 1.78 71.91 3.021 2.39 72.06 3.113"
+    },
+    {
+     "id": "eq-4-4-3-19",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-4-3-20",
+     "type": "equation",
+     "page": 13,
+     "original": "1.18 76.14 3.962 0.69 74.12 3.925 1.61 76.53 3.305"
     },
     {
      "id": "tab-4-4-3-2",
@@ -1997,16 +3221,46 @@ globalThis.PAPER_2607_23938 = {
      "zh": "表 10：双语基准上的指令跟随性能与说话人相似度（%）。SA、NL、ST 分别表示单属性、自然语言多属性与结构化属性指令。说话人相似度以每条合成语音与其参考语音之间的 ERes2Net 余弦相似度衡量。Overall 为跨子集汇集的所有评测实例上的平均值。加粗与下划线分别表示每列最佳与次佳结果。"
     },
     {
-     "id": "p-4-4-3-4",
+     "id": "p-4-4-3-5",
      "type": "paragraph",
      "page": 13,
      "sentences": [
       {
-       "id": "s-4-4-3-4-1",
-       "original": "Instruction Following (zh) Instruction Following (en) Speaker Similarity SA NL ST Overall SA NL ST Overall IndexTTS2 65.00 42.67 40.67 54.39 67.50 37.33 62.00 59.39 64.97 66.25 82.50 67.33 68.67 75.91 63.33 56.00 74.00 64.09 75.60 68.45 87.50 72.00 65.33 78.94 83.33 76.00 78.00 80.45 73.27 66.66",
-       "zh": "（此句为 Table 10 数值的抽取残留：中文与英文指令跟随的 SA/NL/ST/Overall 列及说话人相似度——IndexTTS2 65.00/42.67/40.67/54.39、67.50/37.33/62.00/59.39、64.97；66.25/82.50/67.33/68.67/75.91、63.33/56.00/74.00/64.09、75.60；68.45/87.50/72.00/65.33/78.94、83.33/76.00/78.00/80.45、73.27、66.66，部分系统名列在抽取中丢失。）"
+       "id": "s-4-4-3-5-1",
+       "original": "Model Instruction Following (zh) Instruction Following (en) Speaker Similarity SA NL ST Overall SA NL ST Overall zh en IndexTTS2",
+       "zh": "表头：Model × Instruction Following (zh) / Instruction Following (en)（SA / NL / ST / Overall）× Speaker Similarity（zh / en）——IndexTTS2（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-4-4-3-21",
+     "type": "equation",
+     "page": 13,
+     "original": "65.00 42.67 40.67 54.39 67.50 37.33 62.00 59.39 64.97 66.25"
+    },
+    {
+     "id": "eq-4-4-3-22",
+     "type": "equation",
+     "page": 13,
+     "original": "CosyVoice3-1.5B"
+    },
+    {
+     "id": "eq-4-4-3-23",
+     "type": "equation",
+     "page": 13,
+     "original": "82.50 67.33 68.67 75.91 63.33 56.00 74.00 64.09 75.60 68.45"
+    },
+    {
+     "id": "eq-4-4-3-24",
+     "type": "equation",
+     "page": 13,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-4-4-3-25",
+     "type": "equation",
+     "page": 13,
+     "original": "87.50 72.00 65.33 78.94 83.33 76.00 78.00 80.45 73.27 66.66"
     }
    ]
   },
@@ -2118,8 +3372,68 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-4-4-4-4-1",
-       "original": "CosyVoice3 Spk A CosyVoice3 Spk B 2.5 Qwen-Audio-3.0-TTS Spk A Qwen-Audio-3.0-TTS Spk B 2 CER / WER (%) 1.5 1.25 1.23 1.22 1.14 1.07 0.99 0.95 1 0.9 CosyVoice3 Spk C CosyVoice3 Spk D Qwen-Audio-3.0-TTS Spk C Qwen-Audio-3.0-TTS Spk D 2.07 2.04 2.02 1.96 1.79 1.69 1.6 1.51 test-zh test-en",
-       "zh": "（此句为 Figure 5 图表内容的抽取残留：CosyVoice3 与 Qwen-Audio-3.0-TTS 在说话人 A/B/C/D 上的 CER/WER（%）柱状数值 2.5、2、1.5、1.25、1.23、1.22、1.14、1.07、0.99、0.95、1、0.9 与 2.07、2.04、2.02、1.96、1.79、1.69、1.6、1.51，对应 test-zh 与 test-en 两个子图。）"
+       "original": "CosyVoice3 Spk A CosyVoice3 Spk B",
+       "zh": "（图例：CosyVoice3 Spk A / CosyVoice3 Spk B。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-4-4-1",
+     "type": "equation",
+     "page": 14,
+     "original": "2.5"
+    },
+    {
+     "id": "eq-4-4-4-2",
+     "type": "equation",
+     "page": 14,
+     "original": "Qwen-Audio-3.0-TTS Spk A Qwen-Audio-3.0-TTS Spk B"
+    },
+    {
+     "id": "eq-4-4-4-3",
+     "type": "equation",
+     "page": 14,
+     "original": "2"
+    },
+    {
+     "id": "eq-4-4-4-4",
+     "type": "equation",
+     "page": 14,
+     "original": "CER / WER (%)"
+    },
+    {
+     "id": "eq-4-4-4-5",
+     "type": "equation",
+     "page": 14,
+     "original": "1.5 1.25 1.23 1.22 1.14 1.07 0.99 0.95 1 0.9"
+    },
+    {
+     "id": "p-4-4-4-5",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-4-4-4-5-1",
+       "original": "CosyVoice3 Spk C CosyVoice3 Spk D Qwen-Audio-3.0-TTS Spk C Qwen-Audio-3.0-TTS Spk D",
+       "zh": "（图例：CosyVoice3 Spk C / CosyVoice3 Spk D / Qwen-Audio-3.0-TTS Spk C / Qwen-Audio-3.0-TTS Spk D。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-4-4-4-6",
+     "type": "equation",
+     "page": 14,
+     "original": "2.07 2.04 2.02 1.96 1.79 1.69 1.6 1.51"
+    },
+    {
+     "id": "p-4-4-4-6",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-4-4-4-6-1",
+       "original": "test-zh test-en",
+       "zh": "表头：Model × test-zh（CER(%)↓/SIM↑）× test-en（WER(%)↓/SIM↑）× test-hard（CER(%)↓/SIM↑）——Human 1.26/0.755(0.775)、2.14/0.734(0.742)、-/-；Vocoder Resyn.（后续照原文）。"
       }
      ]
     },
@@ -2159,15 +3473,16 @@ globalThis.PAPER_2607_23938 = {
       },
       {
        "id": "s-4-5-1-3",
-       "original": "On testzh, CER decreases from 1.25% to 1.07% for Speaker A, from 1.23% to 0.99% for Speaker B, from 1.22% to 0.95% for Speaker C, and from 1.14% to 0.90% for Speaker D.",
-       "zh": "在 test-zh 上，说话人 A 的 CER 从 1.25% 降到 1.07%，说话人 B 从 1.23% 降到 0.99%，说话人 C 从 1.22% 降到 0.95%，说话人 D 从 1.14% 降到 0.90%。"
-      },
-      {
-       "id": "s-4-5-1-4",
-       "original": "On test-en, WER decreases from 2.02% to 1.79%, from 1.96% to 1.60%, from 2.07% to 1.69%, and from 2.04% to 1.51%, respectively.",
+       "original": "On test-",
        "zh": "在 test-en 上，WER 分别从 2.02% 降到 1.79%、从 1.96% 降到 1.60%、从 2.07% 降到 1.69%、从 2.04% 降到 1.51%。"
       }
      ]
+    },
+    {
+     "id": "eq-4-5-1",
+     "type": "equation",
+     "page": 14,
+     "original": "zh, CER decreases from 1.25% to 1.07% for Speaker A, from 1.23% to 0.99% for Speaker B, from 1.22% to 0.95% for Speaker C, and from 1.14% to 0.90% for Speaker D. On test-en, WER decreases from 2.02% to 1.79%, from 1.96% to 1.60%, from 2.07% to 1.69%, and from 2.04% to"
     },
     {
      "id": "p-4-5-2",
@@ -2176,6 +3491,18 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-4-5-2-1",
+       "original": "1.51%, respectively.",
+       "zh": "（正文残句）……分别为 1.51%。"
+      }
+     ]
+    },
+    {
+     "id": "p-4-5-3",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-4-5-3-1",
        "original": "These CER/WER metrics measure content consistency and help detect intelligibility and pronunciation regressions.",
        "zh": "这些 CER/WER 指标衡量内容一致性，有助于发现可懂度与发音上的回退。"
       }
@@ -2324,16 +3651,34 @@ globalThis.PAPER_2607_23938 = {
    },
    "blocks": [
     {
-     "id": "p-dialect-authenticity-1",
-     "type": "paragraph",
+     "id": "eq-dialect-authenticity-1",
+     "type": "equation",
      "page": 15,
-     "sentences": [
-      {
-       "id": "s-dialect-authenticity-1-1",
-       "original": "3.639 Pronunciation Accuracy 3.935 Prosodic Naturalness 3.680",
-       "zh": "方言真实度 3.639、发音准确率 3.935、韵律自然度 3.680（此句为 Table 11 数值行的抽取残留）。"
-      }
-     ]
+     "original": "66.7% 31.5% 0.8% 1.0% 3.639"
+    },
+    {
+     "id": "eq-dialect-authenticity-2",
+     "type": "equation",
+     "page": 15,
+     "original": "Pronunciation Accuracy"
+    },
+    {
+     "id": "eq-dialect-authenticity-3",
+     "type": "equation",
+     "page": 15,
+     "original": "93.5% 6.5% 0.0% 0.0% 3.935"
+    },
+    {
+     "id": "eq-dialect-authenticity-4",
+     "type": "equation",
+     "page": 15,
+     "original": "Prosodic Naturalness"
+    },
+    {
+     "id": "eq-dialect-authenticity-5",
+     "type": "equation",
+     "page": 15,
+     "original": "68.1% 31.9% 0.0% 0.0% 3.680"
     }
    ]
   },
@@ -2422,10 +3767,28 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-system-1-1",
-       "original": "Instruction Following Prosodic Naturalness Previous-Gen Baseline 30.9 42.9 44.8 55.6",
-       "zh": "（此句为 Table 12 数值的抽取残留：指令跟随与韵律自然度两列，上一代基线 30.9/42.9，Qwen-Audio-3.0-TTS 44.8/55.6。）"
+       "original": "Instruction Following Prosodic Naturalness Previous-Gen Baseline",
+       "zh": "（表格：指令遵循（Instruction Following）× 韵律自然度（Prosodic Naturalness）——上一代基线 30.9/42.9；Qwen-Audio-3.0-TTS 44.8/55.6。）"
       }
      ]
+    },
+    {
+     "id": "eq-system-1",
+     "type": "equation",
+     "page": 15,
+     "original": "30.9 42.9"
+    },
+    {
+     "id": "eq-system-2",
+     "type": "equation",
+     "page": 15,
+     "original": "Qwen-Audio-3.0-TTS"
+    },
+    {
+     "id": "eq-system-3",
+     "type": "equation",
+     "page": 15,
+     "original": "44.8 55.6"
     }
    ]
   },
@@ -2471,10 +3834,16 @@ globalThis.PAPER_2607_23938 = {
       },
       {
        "id": "s-5-1-6",
-       "original": "It also ranks first on the independent Artificial Analysis Text-to-Speech Arena leaderboard released on July 16, 2026.",
+       "original": "It also ranks first on the independent Artificial Analysis Text-to-Speech Arena leaderboard released on July 16,",
        "zh": "它还在 2026 年 7 月 16 日发布的独立 Artificial Analysis 文本转语音竞技场榜单上排名第一。"
       }
      ]
+    },
+    {
+     "id": "eq-5-1",
+     "type": "equation",
+     "page": 15,
+     "original": "2026."
     },
     {
      "id": "p-5-2",
@@ -2612,9 +3981,15 @@ globalThis.PAPER_2607_23938 = {
       },
       {
        "id": "s-references-4-2",
-       "original": "Cosyvoice 3: Towards in-the-wild speech generation via scaling-up and post-training, 2025."
+       "original": "Cosyvoice 3: Towards in-the-wild speech generation via scaling-up and post-training,"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 17,
+     "original": "2025."
     },
     {
      "id": "p-references-5",
@@ -2623,9 +3998,15 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "[5] Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, Zheng Liang, Qixi Zheng, Rui Wang, Xiaoqin Feng, et al. Spark-tts: An efficient llm-based text-tospeech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710, 2025."
+       "original": "[5] Xinsheng Wang, Mingqi Jiang, Ziyang Ma, Ziyu Zhang, Songxiang Liu, Linqin Li, Zheng Liang, Qixi Zheng, Rui Wang, Xiaoqin Feng, et al. Spark-tts: An efficient llm-based text-tospeech model with single-stream decoupled speech tokens. arXiv preprint arXiv:2503.01710,"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 17,
+     "original": "2025."
     },
     {
      "id": "p-references-6",
@@ -2982,9 +4363,15 @@ globalThis.PAPER_2607_23938 = {
       },
       {
        "id": "s-references-30-3",
-       "original": "CoRR, abs/2207.12598, 2022."
+       "original": "CoRR, abs/2207.12598,"
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 18,
+     "original": "2022."
     },
     {
      "id": "p-references-31",
@@ -2997,7 +4384,8 @@ globalThis.PAPER_2607_23938 = {
       },
       {
        "id": "s-references-31-2",
-       "original": "M."
+       "original": "M.",
+       "zh": "在解码器一侧，Quantizer Decoder 将 token 上采样为 25 Hz 表征 H2，由 Voice Encoder-2 处理后送入 MinMo LLM。"
       },
       {
        "id": "s-references-31-3",
@@ -3009,9 +4397,15 @@ globalThis.PAPER_2607_23938 = {
       },
       {
        "id": "s-references-31-5",
-       "original": "Neurocomputing, 568:127063, 2024."
+       "original": "Neurocomputing, 568:127063,"
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 18,
+     "original": "2024."
     },
     {
      "id": "p-references-32",
@@ -3203,21 +4597,15 @@ globalThis.PAPER_2607_23938 = {
       },
       {
        "id": "s-references-41-6",
-       "original": "Longcat-audiodit: High-fidelity diffusion text-to-speech in the waveform latent space, 2026."
-      },
-      {
-       "id": "s-references-41-7",
-       "original": "[36] Kun Xie, Feiyu Shen, Junjie Li, Fenglong Xie, Xu Tang, and Yao Hu."
-      },
-      {
-       "id": "s-references-41-8",
-       "original": "Fireredtts-2: Towards long conversational speech generation for podcast and chatbot, 2025."
-      },
-      {
-       "id": "s-references-41-9",
-       "original": "[37] Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu."
+       "original": "Longcat-audiodit: High-fidelity diffusion text-to-speech in the waveform latent space,"
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 19,
+     "original": "2026."
     },
     {
      "id": "p-references-42",
@@ -3226,23 +4614,15 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "Indextts2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech, 2025."
+       "original": "[36] Kun Xie, Feiyu Shen, Junjie Li, Fenglong Xie, Xu Tang, and Yao Hu."
       },
       {
        "id": "s-references-42-2",
-       "original": "[38] Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang, et al. Qwen2.5-omni technical report. arXiv preprint arXiv:2503.20215, 2025."
+       "original": "Fireredtts-2: Towards long conversational speech generation for podcast and chatbot, 2025."
       },
       {
        "id": "s-references-42-3",
-       "original": "[39] Qwen Team."
-      },
-      {
-       "id": "s-references-42-4",
-       "original": "Qwen3.5-omni technical report, 2026."
-      },
-      {
-       "id": "s-references-42-5",
-       "original": "[40] Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, Peikai Huang, Ruiyang Jin, Sitan Jiang, Weihua Cheng, Yawei Li, Yichen Xiao, Yiying Zhou, Yongmao Zhang, Yuan Lu, and Yucen He."
+       "original": "[37] Siyi Zhou, Yiquan Zhou, Yi He, Xun Zhou, Jinchao Wang, Wei Deng, and Jingchen Shu."
       }
      ]
     },
@@ -3253,54 +4633,107 @@ globalThis.PAPER_2607_23938 = {
      "sentences": [
       {
        "id": "s-references-43-1",
-       "original": "Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder, 2025."
+       "original": "Indextts2: A breakthrough in emotionally expressive and duration-controlled auto-regressive zero-shot text-to-speech, 2025."
       },
       {
        "id": "s-references-43-2",
+       "original": "[38] Jin Xu, Zhifang Guo, Jinzheng He, Hangrui Hu, Ting He, Shuai Bai, Keqin Chen, Jialin Wang, Yang Fan, Kai Dang, et al. Qwen2.5-omni technical report. arXiv preprint arXiv:2503.20215,"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 19,
+     "original": "2025."
+    },
+    {
+     "id": "p-references-44",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-references-44-1",
+       "original": "[39] Qwen Team."
+      },
+      {
+       "id": "s-references-44-2",
+       "original": "Qwen3.5-omni technical report, 2026."
+      },
+      {
+       "id": "s-references-44-3",
+       "original": "[40] Bowen Zhang, Congchao Guo, Geng Yang, Hang Yu, Haozhe Zhang, Heidi Lei, Jialong Mai, Junjie Yan, Kaiyue Yang, Mingqi Yang, Peikai Huang, Ruiyang Jin, Sitan Jiang, Weihua Cheng, Yawei Li, Yichen Xiao, Yiying Zhou, Yongmao Zhang, Yuan Lu, and Yucen He."
+      }
+     ]
+    },
+    {
+     "id": "p-references-45",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-references-45-1",
+       "original": "Minimax-speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder, 2025."
+      },
+      {
+       "id": "s-references-45-2",
        "original": "[41] Se Jin Park, Julian Salazar, Aren Jansen, Keisuke Kinoshita, Yong Man Ro, and R."
       },
       {
-       "id": "s-references-43-3",
+       "id": "s-references-45-3",
        "original": "J."
       },
       {
-       "id": "s-references-43-4",
+       "id": "s-references-45-4",
        "original": "SkerryRyan."
       },
       {
-       "id": "s-references-43-5",
+       "id": "s-references-45-5",
        "original": "Long-form speech generation with spoken language models."
       },
       {
-       "id": "s-references-43-6",
-       "original": "CoRR, abs/2412.18603, 2024."
-      },
+       "id": "s-references-45-6",
+       "original": "CoRR, abs/2412.18603,"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 19,
+     "original": "2024."
+    },
+    {
+     "id": "p-references-46",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
       {
-       "id": "s-references-43-7",
+       "id": "s-references-46-1",
        "original": "[42] Rosana Ardila, Megan Branson, Kelly Davis, Michael Henretty, Michael Kohler, Josh Meyer, Reuben Morais, Lindsay Saunders, Francis M Tyers, and Gregor Weber."
       },
       {
-       "id": "s-references-43-8",
+       "id": "s-references-46-2",
        "original": "Common voice: A massively-multilingual speech corpus. arXiv preprint arXiv:1912.06670, 2019."
       },
       {
-       "id": "s-references-43-9",
+       "id": "s-references-46-3",
        "original": "[43] Alexis Conneau, Min Ma, Simran Khanuja, Yu Zhang, Vera Axelrod, Siddharth Dalmia, Jason Riesa, Clara Rivera, and Ankur Bapna."
       },
       {
-       "id": "s-references-43-10",
+       "id": "s-references-46-4",
        "original": "Fleurs: Few-shot learning evaluation of universal representations of speech."
       },
       {
-       "id": "s-references-43-11",
+       "id": "s-references-46-5",
        "original": "In 2022 IEEE Spoken Language Technology Workshop (SLT), pages 798–805."
       },
       {
-       "id": "s-references-43-12",
+       "id": "s-references-46-6",
        "original": "IEEE, 2023."
       },
       {
-       "id": "s-references-43-13",
+       "id": "s-references-46-7",
        "original": "[44] Gheorghe Comanici et al. Gemini 2.5: Pushing the frontier with advanced reasoning, multimodality, long context, and next generation agentic capabilities, 2025."
       }
      ]
@@ -3411,7 +4844,7 @@ globalThis.PAPER_2607_23938 = {
   {
    "id": "ann-010",
    "anchor": {
-    "sentence_id": "s-2-2-3-3-2",
+    "sentence_id": "s-2-2-3-2-2",
     "quote": "All rewards are computed before FM and vocoder inference, enabling efficient token-only rollouts."
    },
    "kind": "engineering",
@@ -3444,7 +4877,7 @@ globalThis.PAPER_2607_23938 = {
   {
    "id": "ann-013",
    "anchor": {
-    "sentence_id": "s-2-2-5-4-1",
+    "sentence_id": "s-2-2-5-8-1",
     "quote": "express the intended objective balance rather than raw reward variance"
    },
    "kind": "concept",
@@ -3477,7 +4910,7 @@ globalThis.PAPER_2607_23938 = {
   {
    "id": "ann-016",
    "anchor": {
-    "sentence_id": "s-4-2-4-1",
+    "sentence_id": "s-4-2-5-1",
     "quote": "pushing CER/WER lower through more aggressive optimization consistently comes at the expense of speech naturalness and expressiveness."
    },
    "kind": "critique",
@@ -3486,20 +4919,9 @@ globalThis.PAPER_2607_23938 = {
    "featured": true
   },
   {
-   "id": "ann-017",
-   "anchor": {
-    "sentence_id": "s-4-4-3-2-4",
-    "quote": "Enabling denoising raises MiniMax’s DNSMOS from 3.464 to 3.728 on Noisy and from 3.065 to 3.343 on Reverb, but reduces SIM from 66.72 to 63.83 and from 61.56 to 56.53, respectively."
-   },
-   "kind": "number",
-   "title": "外挂降噪的双刃剑",
-   "explanation": "MiniMax 开降噪后 DNSMOS 在 Noisy/Reverb 上从 3.464→3.728、3.065→3.343，但 SIM 从 66.72→63.83、61.56→56.53。音频质量分和说话人相似度此消彼长，说明独立降噪器在去噪的同时也削掉了说话人个性。这组数字是「内生化鲁棒训练优于外挂模块」这一主张的最直接证据。",
-   "featured": false
-  },
-  {
    "id": "ann-018",
    "anchor": {
-    "sentence_id": "s-4-4-3-2-6",
+    "sentence_id": "s-4-4-3-3-3",
     "quote": "Qwen-Audio-3.0-TTS reaches DNSMOS scores of 3.962 and 3.925 on Noisy and Reverb, close to ElevenLabs-v3·Denoise, while achieving much higher SIM scores of 76.14% and 74.12%."
    },
    "kind": "number",

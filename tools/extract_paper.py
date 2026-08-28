@@ -168,8 +168,10 @@ def extract(pdf_path):
     HEAD_MIN = body_size - 0.5      # 标题候选字号下限（加粗行）
     TITLE_MIN = body_size + 2.0     # 首页文档标题最小字号
 
-    # a) 跨页重复短行（running head）
-    cnt = Counter(re.sub(r"\d+", "#", l["text"].strip())[:60] for l in raw_lines if len(l["text"]) < 70)
+    # a) 跨页重复短行（running head）——只滤页边区域（页眉页脚住在页边；
+    #    全局滤会误杀正文/图表里恰好重复的短标签，如 VibeVoice 附录语言分布图）
+    cnt = Counter(re.sub(r"\d+", "#", l["text"].strip())[:60] for l in raw_lines
+                  if len(l["text"]) < 70 and (l["y0"] < 90 or l["y1"] > page_h - 60))
     repeated = {k for k, v in cnt.items() if v >= max(3, int(doc.page_count * 0.25))}
     # b) 页边孤立数字行（页码）；但 "2"/"2.1" 若是 bold 则是分体式标题编号，不能滤
     lines = []
@@ -181,7 +183,7 @@ def extract(pdf_path):
         # 首页大字号行也不过滤：论文标题常与页眉 running head 同文（如 Whisper），
         # 重复的是页眉（小字），首页大字号的是真标题
         if len(t) < 70 and norm in repeated and not SEC_NUM_ONLY_RE.match(t):
-            if not (l["page"] == 1 and l["size"] >= TITLE_MIN):
+            if not (l["page"] == 1 and l["size"] >= TITLE_MIN) and (l["y0"] < 90 or l["y1"] > page_h - 60):
                 continue
         if SEC_NUM_ONLY_RE.match(t) and not (l["bold"] and l["size"] >= HEAD_MIN):
             if l["y0"] < 70 or l["y1"] > page_h - 55:
@@ -201,11 +203,52 @@ def extract(pdf_path):
     cur_para = None  # 累积中的段落 {"page","lines":[...]}
     in_appendix = False  # 见过 References/Appendix 标题后，接受字母式附录标题
     in_toc = False       # 见过 "Contents" 标题后处于目录区
+
+    NUM_TOK = re.compile(r"^-?\d+(?:\.\d+)?%?$")
+    ALPHA_TOK = re.compile(r"[a-zA-Z一-鿿]")
+    def line_is_table(ln):
+        """行级表格判定：整行纯数字/符号 token（单元格行）/ 数字主导 /
+        ≥4 数字且无句末标点 / 符号主导（点线、刻度）。"""
+        toks = ln.split()
+        if not toks:
+            return False
+        nums = sum(1 for t in toks if NUM_TOK.match(t))
+        sym = sum(1 for t in toks if not ALPHA_TOK.search(t))
+        if sym == len(toks):
+            return True  # 整行都是数字/符号 token（表格单元格行，如 "16.93"、"3.67±0.09"）
+        if len(toks) > 3 and nums / len(toks) > 0.4:
+            return True
+        if nums >= 4 and not re.search(r"[.!?…][\"'”’)\]]*$", ln.rstrip()):
+            return True
+        if len(toks) > 3 and sym / len(toks) > 0.6:
+            return True
+        return False
+
     def flush_para():
         nonlocal cur_para
-        if cur_para:
-            blocks.append({"type": "paragraph", "page": cur_para["page"], "text": dehyphenate_join(cur_para["lines"])})
-            cur_para = None
+        if not cur_para:
+            return
+        # 行级 prose/table 分段：恢复回来的表格行、坐标轴 junk 与正文 prose 分离
+        segs = []  # [is_table, [lines]]
+        for ln in cur_para["lines"]:
+            t = line_is_table(ln)
+            if segs and segs[-1][0] == t:
+                segs[-1][1].append(ln)
+            else:
+                segs.append([t, [ln]])
+        # 短 prose 孤岛（≤8 词，如 "Model #langs ..." 表头行）两侧都是 table 时并入 table；
+        # 仅一侧相邻不并（防止吞掉表格前后的真实正文句子）
+        for k in range(len(segs)):
+            if segs[k][0] or len(" ".join(segs[k][1]).split()) > 8:
+                continue
+            prev_t = k > 0 and segs[k - 1][0]
+            next_t = k < len(segs) - 1 and segs[k + 1][0]
+            if prev_t and next_t:
+                segs[k][0] = True
+        for is_table, seg_lines in segs:
+            blocks.append({"type": "table_body" if is_table else "paragraph",
+                           "page": cur_para["page"], "text": dehyphenate_join(seg_lines)})
+        cur_para = None
 
     while i < len(lines):
         l = lines[i]
@@ -464,7 +507,29 @@ def extract(pdf_path):
             sec["blocks"].append({"id": f"eq-{base}-{c['eq']}", "type": "equation",
                                   "page": b["page"], "text": b["text"], "sentences": []})
 
-    # ---------- 5) 表格主体合并：连续 ≥4 个超短段落（≤50 字符）视为 PDF 表格碎块 ----------
+    # ---------- 5) 数值/符号糊块 → table_body ----------
+    # 恢复回来的表格行、坐标轴刻度、点线等数字/符号主导块不该当正文段落；
+    # 转成 table_body（阅读页折叠呈现、翻译豁免）。在 run 合并之前先做块级判定。
+    # 三档命中：纯数字主导 / 符号主导（点线、刻度）/ 带名字的表格行（≥4 个数字且不以句末标点结尾）
+    NUM_TOK = re.compile(r"^-?\d+(?:\.\d+)?%?$")
+    ALPHA_TOK = re.compile(r"[a-zA-Z一-鿿]")
+    for sec in paper["sections"]:
+        for b in sec["blocks"]:
+            if b["type"] != "paragraph":
+                continue
+            toks = b["text"].split()
+            if len(toks) <= 15:
+                continue
+            nums = [t for t in toks if NUM_TOK.match(t)]
+            num_ratio = len(nums) / len(toks)
+            sym_ratio = sum(1 for t in toks if not ALPHA_TOK.search(t)) / len(toks)
+            row_like = len(nums) >= 4 and num_ratio > 0.15 \
+                and not re.search(r"[.!?…][\"'”’)\]]*$", b["text"].rstrip())
+            if num_ratio > 0.35 or sym_ratio > 0.6 or row_like:
+                b["type"] = "table_body"
+                b["cells"] = len(toks)
+                b["sentences"] = []
+    # ---------- 5b) 表格主体合并：连续 ≥4 个超短段落（≤50 字符）视为 PDF 表格碎块 ----------
     # 大附录数值表在文本层是一列列碎 cell，不是可读正文；合并成 table_body，
     # 阅读页以折叠预格式块呈现，翻译层只需表注/说明，不逐格翻译数字。
     for sec in paper["sections"]:

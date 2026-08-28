@@ -128,7 +128,7 @@ globalThis.PAPER_2306_15687 = {
    "page": 1,
    "title": {
     "original": "Introduction",
-    "zh": "1 引言"
+    "zh": "介绍（QMOS 说明）"
    },
    "blocks": [
     {
@@ -889,7 +889,7 @@ globalThis.PAPER_2306_15687 = {
    "page": 4,
    "title": {
     "original": "Method",
-    "zh": "3 模型"
+    "zh": "方法完整结果（表 B4 残留）"
    },
    "blocks": []
   },
@@ -925,10 +925,16 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-3-1-1-4",
-       "original": "The relationship between a vector field and a flow is defined via the ordinary differential equation (ODE) as: d dtϕt(x) = vt(ϕt(x)); ϕ0(x) = x.",
+       "original": "The relationship between a vector field and a flow is defined via the ordinary differential equation (ODE) as:",
        "zh": "向量场与流的关系由常微分方程（ODE）定义：d/dt ϕt(x) = vt(ϕt(x))，且 ϕ0(x) = x。"
       }
      ]
+    },
+    {
+     "id": "eq-3-1-1",
+     "type": "equation",
+     "page": 4,
+     "original": "d dtϕt(x) = vt(ϕt(x)); ϕ0(x) = x. (1)"
     },
     {
      "id": "p-3-1-2",
@@ -937,10 +943,34 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-3-1-2-1",
-       "original": "For a flow ϕt, the probability path (time-dependent probability density function) p : [0, 1] × Rd → R>0 can be derived via the change of variables formula: pt(x) = p0(ϕ−1 t (x)) det ∂ϕ−1 t ∂x (x) .",
+       "original": "For a flow ϕt, the probability path (time-dependent probability density function) p : [0, 1] × Rd → R>0 can be derived via the change of variables formula: pt(x) = p0(ϕ−1 t (x)) det",
        "zh": "给定流 ϕt，可通过变量替换公式推导概率路径（时间相关的概率密度函数）p : [0, 1] × Rd → R>0：pt(x) = p0(ϕt⁻¹(x)) |det ∂ϕt⁻¹/∂x (x)|。"
       }
      ]
+    },
+    {
+     "id": "eq-3-1-2",
+     "type": "equation",
+     "page": 5,
+     "original": "∂ϕ−1"
+    },
+    {
+     "id": "eq-3-1-3",
+     "type": "equation",
+     "page": 5,
+     "original": "t ∂x (x)"
+    },
+    {
+     "id": "eq-3-1-4",
+     "type": "equation",
+     "page": 5,
+     "original": "."
+    },
+    {
+     "id": "eq-3-1-5",
+     "type": "equation",
+     "page": 5,
+     "original": "(2)"
     },
     {
      "id": "p-3-1-3",
@@ -950,7 +980,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-3-1-3-1",
        "original": "To sample from pt(x), we first draw x0 from p0 and then solve the initial value problem (IVP) for ϕt(x0) given dϕt(x)/dt = vt(ϕt(x)) and ϕ0(x) = x0.",
-       "zh": "要从 pt(x) 采样，我们先从 p0 抽取 x0，然后在 dϕt(x)/dt = vt(ϕt(x)) 和 ϕ0(x) = x0 的条件下求解初值问题（IVP）得到 ϕt(x0)。"
+       "zh": "（式 2）为从 pt(x) 采样，先从 p0 采 x0，再在 dϕt(x)/dt = vt(ϕt(x))、ϕ0(x) = x0 下求解初值问题（IVP）得 ϕt(x0)。"
       },
       {
        "id": "s-3-1-3-2",
@@ -977,13 +1007,19 @@ globalThis.PAPER_2306_15687 = {
      ]
     },
     {
+     "id": "eq-3-1-6",
+     "type": "equation",
+     "page": 5,
+     "original": "LF M(θ) = Et,pt(x)||ut(x) −vt(x; θ)||2, (3)"
+    },
+    {
      "id": "p-3-1-5",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
        "id": "s-3-1-5-1",
-       "original": "LF M(θ) = Et,pt(x)||ut(x) −vt(x; θ)||2, where t ∼U[0, 1] and x ∼pt(x).",
+       "original": "where t ∼U[0, 1] and x ∼pt(x).",
        "zh": "（式 2）LFM(θ) = Et,pt(x) ||ut(x) − vt(x; θ)||²，其中 t ∼ U[0, 1]，x ∼ pt(x)。"
       },
       {
@@ -1020,10 +1056,16 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-3-1-6-5",
-       "original": "With that, [Lipman et al., 2023] presents the Conditional Flow Matching (CFM) objective, LCF M(θ) = Et,q(x1),pt(x|x1)||ut(x | x1) −vt(x; θ)||2.",
+       "original": "With that, [Lipman et al., 2023] presents the Conditional Flow Matching (CFM) objective,",
        "zh": "在此基础上，[Lipman et al., 2023] 提出条件流匹配（CFM）目标（式 5）：LCFM(θ) = Et,q(x1),pt(x|x1) ||ut(x | x1) − vt(x; θ)||2。"
       }
      ]
+    },
+    {
+     "id": "eq-3-1-7",
+     "type": "equation",
+     "page": 5,
+     "original": "LCF M(θ) = Et,q(x1),pt(x|x1)||ut(x | x1) −vt(x; θ)||2. (4)"
     },
     {
      "id": "p-3-1-7",
@@ -1196,8 +1238,26 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-voicebox-audio-model-1-1",
-       "original": "H F F Phone embedder Frame-level phone emb Masked speech Noisy speech N Phonemize & Forced alignment Random span masking “How are you doing” N D F Transformer Linear Projection Predicted flow (gradient) N N 1 Sinusoidal position embedder Compute sample at flow step t for OT path Sampled flow step Sampled noise from the prior F",
+       "original": "H F F Phone embedder Frame-level phone emb Masked speech Noisy speech N Phonemize & Forced alignment Random span masking “How are you doing” N D F Transformer Linear Projection Predicted flow (gradient) N N",
        "zh": "（图内文字）H F F 音素嵌入器 帧级音素嵌入 被掩蔽语音 含噪语音 N 音素化与强制对齐 随机片段掩蔽 “How are you doing” N D F Transformer 线性投影 预测的流（梯度） N N 1 正弦位置嵌入器 计算 OT 路径上流步 t 处的样本 采样得到的流步 从先验采样的噪声 F"
+      }
+     ]
+    },
+    {
+     "id": "eq-voicebox-audio-model-1",
+     "type": "equation",
+     "page": 6,
+     "original": "1"
+    },
+    {
+     "id": "p-voicebox-audio-model-2",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-voicebox-audio-model-2-1",
+       "original": "Sinusoidal position embedder Compute sample at flow step t for OT path Sampled flow step Sampled noise from the prior F",
+       "zh": "（图内标签）噪声"
       }
      ]
     },
@@ -1309,13 +1369,19 @@ globalThis.PAPER_2306_15687 = {
      ]
     },
     {
+     "id": "eq-audio-model-fig-2-1",
+     "type": "equation",
+     "page": 6,
+     "original": "Laudio-CFM(θ) = Et,m,q(x,z),p0(x0)||ut(xt | x) −vt(xt, xctx, z; θ)||2, (5)"
+    },
+    {
      "id": "p-audio-model-fig-2-5",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
        "id": "s-audio-model-fig-2-5-1",
-       "original": "Laudio-CFM(θ) = Et,m,q(x,z),p0(x0)||ut(xt | x) −vt(xt, xctx, z; θ)||2, by reparameterizing Eq. (4).",
+       "original": "by reparameterizing Eq. (4).",
        "zh": "（式 2 的推广）Laudio-CFM(θ) = Et,m,q(x,z),p0(x0) ||ut(xt | x) − vt(xt, xctx, z; θ)||²，由式 (4) 重参数化得到。"
       },
       {
@@ -1355,13 +1421,19 @@ globalThis.PAPER_2306_15687 = {
      ]
     },
     {
+     "id": "eq-audio-model-fig-2-2",
+     "type": "equation",
+     "page": 7,
+     "original": "Laudio-CFM-m(θ) = Et,m,q(x,z),p0(x0)||m ⊙(ut(xt | x) −vt(xt, xctx, z; θ)) ||2, (6)"
+    },
+    {
      "id": "p-audio-model-fig-2-8",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
        "id": "s-audio-model-fig-2-8-1",
-       "original": "Laudio-CFM-m(θ) = Et,m,q(x,z),p0(x0)||m ⊙(ut(xt | x) −vt(xt, xctx, z; θ)) ||2, where the loss is only computed on masked frames.",
+       "original": "where the loss is only computed on masked frames.",
        "zh": "（式 2 的掩蔽形式）Laudio-CFM-m(θ) = Et,m,q(x,z),p0(x0) ||m ⊙ (ut(xt | x) − vt(xt, xctx, z; θ)) ||²，损失只在被掩蔽帧上计算。"
       },
       {
@@ -1431,13 +1503,19 @@ globalThis.PAPER_2306_15687 = {
      ]
     },
     {
+     "id": "eq-duration-model-1",
+     "type": "equation",
+     "page": 7,
+     "original": "Ldur-regr-m(θ) = Em,q(l,y)||m′ ⊙(lmis −g(lctx, y; θ)) ||1, (7)"
+    },
+    {
      "id": "p-duration-model-2",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
        "id": "s-duration-model-2-1",
-       "original": "Ldur-regr-m(θ) = Em,q(l,y)||m′ ⊙(lmis −g(lctx, y; θ)) ||1, where g denotes the regression-based duration model.",
+       "original": "where g denotes the regression-based duration model.",
        "zh": "Ldur-regr-m(θ) = Em,q(l,y) ||m′ ⊙ (lmis − g(lctx, y; θ)) ||1，其中 g 表示基于回归的时长模型。"
       },
       {
@@ -1456,7 +1534,7 @@ globalThis.PAPER_2306_15687 = {
    "page": 7,
    "title": {
     "original": "Inference",
-    "zh": "3.4 推理"
+    "zh": "推理"
    },
    "blocks": [
     {
@@ -1510,7 +1588,25 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-3-4-3-1",
-       "original": "Voicebox audio model inference ODE step 1 ODE step 2 ODE step N … conditionals: Voicebox audio model:",
+       "original": "Voicebox audio model inference ODE step 1 ODE step 2 ODE step N",
+       "zh": "（图内文字）Voicebox 音频模型推理 ODE 步 1 ODE 步 2 ODE 步 N … 条件输入：Voicebox 音频模型："
+      }
+     ]
+    },
+    {
+     "id": "eq-3-4-1",
+     "type": "equation",
+     "page": 7,
+     "original": "…"
+    },
+    {
+     "id": "p-3-4-4",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-3-4-4-1",
+       "original": "conditionals: Voicebox audio model:",
        "zh": "（图内文字）Voicebox 音频模型推理 ODE 步 1 ODE 步 2 ODE 步 N … 条件输入：Voicebox 音频模型："
       }
      ]
@@ -1523,22 +1619,22 @@ globalThis.PAPER_2306_15687 = {
      "zh": "图 3：推理等价于求解一个 ODE：初始条件 x0 从先验采样，导数 dxt/dt 由音频模型给出（标题在抽取中截断）。"
     },
     {
-     "id": "p-3-4-4",
+     "id": "p-3-4-5",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-3-4-4-1",
+       "id": "s-3-4-5-1",
        "original": "dt specified by the audio model, and conditional inputs (z, xctx).",
        "zh": "（接图 3，续）dt 由音频模型指定，条件输入为 (z, xctx)。"
       },
       {
-       "id": "s-3-4-4-2",
+       "id": "s-3-4-5-2",
        "original": "At each step, the ODE solver estimate xt+1 given t, xt from the previous step, the audio model, and the conditional inputs.",
        "zh": "每一步中，ODE 求解器根据上一步的 t、xt、音频模型和条件输入估计 xt+1。"
       },
       {
-       "id": "s-3-4-4-3",
+       "id": "s-3-4-5-3",
        "original": "In the end, it produces x1, which is a sample drawn from the learned distribution p1.",
        "zh": "最终得到 x1，即从学习到的分布 p1 中抽取的一个样本。"
       }
@@ -1600,11 +1696,29 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-3-5-2-3",
-       "original": "During inference, the modified vector field ˜vt for the audio model becomes ˜vt(w, xmis, z; θ) = (1 + α) · vt(w, xctx, z; θ) −α · vt(w; θ), where α is the strength of the guidance, and vt(w; θ) is obtained by dropping xctx and z.",
+       "original": "During inference, the modified vector field ˜vt for the audio model becomes",
+       "zh": "推理时，音频模型修改后的向量场 ṽt 变为 ṽt(w, xmis, z; θ) = (1 + α) · vt(w, xctx, z; θ) − α · vt(w; θ)，其中 α 为引导强度，vt(w; θ) 通过丢弃 xctx 和 z 得到。"
+      }
+     ]
+    },
+    {
+     "id": "eq-3-5-1",
+     "type": "equation",
+     "page": 8,
+     "original": "˜vt(w, xmis, z; θ) = (1 + α) · vt(w, xctx, z; θ) −α · vt(w; θ), (8)"
+    },
+    {
+     "id": "p-3-5-3",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-3-5-3-1",
+       "original": "where α is the strength of the guidance, and vt(w; θ) is obtained by dropping xctx and z.",
        "zh": "推理时，音频模型修改后的向量场 ṽt 变为 ṽt(w, xmis, z; θ) = (1 + α) · vt(w, xctx, z; θ) − α · vt(w; θ)，其中 α 为引导强度，vt(w; θ) 通过丢弃 xctx 和 z 得到。"
       },
       {
-       "id": "s-3-5-2-4",
+       "id": "s-3-5-3-2",
        "original": "We use α and αdur for the CFG strengths for audio and duration model, respectively, which are selected based on empirical results.5",
        "zh": "音频模型和时长模型的 CFG 强度分别记为 α 和 αdur，根据经验结果选取。（脚注 5）"
       }
@@ -1860,16 +1974,10 @@ globalThis.PAPER_2306_15687 = {
      ]
     },
     {
-     "id": "p-diverse-speech-sampling-alignmen-4",
-     "type": "paragraph",
+     "id": "eq-diverse-speech-sampling-alignmen-1",
+     "type": "equation",
      "page": 9,
-     "sentences": [
-      {
-       "id": "s-diverse-speech-sampling-alignmen-4-1",
-       "original": "[8   3  2  2 1  0   4 5  1 1 10 ]",
-       "zh": "（图内数字）[8 3 2 2 1 0 4 5 1 1 10]"
-      }
-     ]
+     "original": "[8   3  2  2 1  0   4 5  1 1 10 ]"
     }
    ]
   },
@@ -1890,10 +1998,16 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-diverse-sampling-1-1",
-       "original": "Duration phonemize model Audio model upsample [SIL HH AH L OW SIL W ER L D SIL] “Hello world” [SIL*8 HH*3 … D*1 SIL*10] [0   0  0  0 0  0   0 0  0 0 0  ] [8   3  2  2 1  7   1 5  2 10 ]",
+       "original": "Duration phonemize model Audio model upsample [SIL HH AH L OW SIL W ER L D SIL] “Hello world” [SIL*8 HH*3 … D*1 SIL*10]",
        "zh": "（图内文字）时长模型 音素化 音频模型 上采样 [SIL HH AH L OW SIL W ER L D SIL] “Hello world” [SIL*8 HH*3 … D*1 SIL*10] [0 0 0 0 0 0 0 0 0 0 0] [8 3 2 2 1 7 1 5 2 10]"
       }
      ]
+    },
+    {
+     "id": "eq-diverse-sampling-1",
+     "type": "equation",
+     "page": 9,
+     "original": "[0   0  0  0 0  0   0 0  0 0 0  ] [8   3  2  2 1  7   1 5  2 10 ]"
     }
    ]
   },
@@ -1914,8 +2028,26 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-editing-infilling-1-1",
-       "original": "Duration Forced-align & model Replace Audio model upsample [SIL HH AH L OW SIL T AA M SIL] “Hello world” → “Hello tom” [SIL*8 … AA*5 M*2 SIL*10] [8   3  2  2 1  7   0 0  0 10 ] (audio of “Hello world”)",
+       "original": "Duration Forced-align & model Replace Audio model upsample [SIL HH AH L OW SIL T AA M SIL] “Hello world” → “Hello tom” [SIL*8 … AA*5 M*2 SIL*10]",
        "zh": "（图内文字）时长模型 强制对齐与替换 音频模型 上采样 [SIL HH AH L OW SIL T AA M SIL] “Hello world” → “Hello tom” [SIL*8 … AA*5 M*2 SIL*10] [8 3 2 2 1 7 0 0 0 10]（“Hello world” 的音频）"
+      }
+     ]
+    },
+    {
+     "id": "eq-editing-infilling-1",
+     "type": "equation",
+     "page": 9,
+     "original": "[8   3  2  2 1  7   0 0  0 10 ]"
+    },
+    {
+     "id": "p-editing-infilling-2",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-editing-infilling-2-1",
+       "original": "(audio of “Hello world”)",
+       "zh": "（图内文字）“world” 片段被移除，插入 8 帧掩蔽（“tom” 的预测时长）[8 3 … 1 1 10 2 4 0 1 5 1 3 4] 时长模型 强制对齐 音频模型 上采样 [SIL HH … L D SIL HH EY SIL F OW K S SIL] “Hello world” [SIL*8 … K*3 S*3 SIL*4] [8 3 … 1 1 10 0 0 0 0 0 0 0 0]（“Hello world” 的音频）长度等于 “Hey folks” 预测时长之和的掩蔽（“Hello world” 的音频）“Hey folks” 音素化"
       }
      ]
     }
@@ -1938,7 +2070,43 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-style-transfer-1-1",
-       "original": "“world” segment removed, insert 8 frames of mask (predicted duration of “tom”) [8   3  … 1 1 10  2  4  0   1 5  1 3 4  ] Duration Forced-align model Audio model upsample [SIL HH … L D SIL HH EY SIL F OW K S SIL] “Hello world” [SIL*8 … K*3 S*3 SIL*4] [8   3  … 1 1 10  0  0  0   0 0  0 0 0  ] (audio of “Hello world”) mask whose length is (audio of “Hello world”) the sum of predicted duration for “Hey folks” “Hey folks” phonemize",
+       "original": "“world” segment removed, insert 8 frames of mask (predicted duration of “tom”)",
+       "zh": "（图内文字）“world” 片段被移除，插入 8 帧掩蔽（“tom” 的预测时长）[8 3 … 1 1 10 2 4 0 1 5 1 3 4] 时长模型 强制对齐 音频模型 上采样 [SIL HH … L D SIL HH EY SIL F OW K S SIL] “Hello world” [SIL*8 … K*3 S*3 SIL*4] [8 3 … 1 1 10 0 0 0 0 0 0 0 0]（“Hello world” 的音频）长度等于 “Hey folks” 预测时长之和的掩蔽（“Hello world” 的音频）“Hey folks” 音素化"
+      }
+     ]
+    },
+    {
+     "id": "eq-style-transfer-1",
+     "type": "equation",
+     "page": 9,
+     "original": "[8   3  … 1 1 10  2  4  0   1 5  1 3 4  ]"
+    },
+    {
+     "id": "p-style-transfer-2",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-style-transfer-2-1",
+       "original": "Duration Forced-align model Audio model upsample [SIL HH … L D SIL HH EY SIL F OW K S SIL] “Hello world” [SIL*8 … K*3 S*3 SIL*4]",
+       "zh": "（图内文字）“world” 片段被移除，插入 8 帧掩蔽（“tom” 的预测时长）[8 3 … 1 1 10 2 4 0 1 5 1 3 4] 时长模型 强制对齐 音频模型 上采样 [SIL HH … L D SIL HH EY SIL F OW K S SIL] “Hello world” [SIL*8 … K*3 S*3 SIL*4] [8 3 … 1 1 10 0 0 0 0 0 0 0 0]（“Hello world” 的音频）长度等于 “Hey folks” 预测时长之和的掩蔽（“Hello world” 的音频）“Hey folks” 音素化"
+      }
+     ]
+    },
+    {
+     "id": "eq-style-transfer-2",
+     "type": "equation",
+     "page": 9,
+     "original": "[8   3  … 1 1 10  0  0  0   0 0  0 0 0  ]"
+    },
+    {
+     "id": "p-style-transfer-3",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-style-transfer-3-1",
+       "original": "(audio of “Hello world”) mask whose length is (audio of “Hello world”) the sum of predicted duration for “Hey folks” “Hey folks” phonemize",
        "zh": "（图内文字）“world” 片段被移除，插入 8 帧掩蔽（“tom” 的预测时长）[8 3 … 1 1 10 2 4 0 1 5 1 3 4] 时长模型 强制对齐 音频模型 上采样 [SIL HH … L D SIL HH EY SIL F OW K S SIL] “Hello world” [SIL*8 … K*3 S*3 SIL*4] [8 3 … 1 1 10 0 0 0 0 0 0 0 0]（“Hello world” 的音频）长度等于 “Hey folks” 预测时长之和的掩蔽（“Hello world” 的音频）“Hey folks” 音素化"
       }
      ]
@@ -2172,30 +2340,16 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-diversity-and-quality-2-1",
-       "original": "As supplementary metrics, we include quality MOS (QMOS) for subjective audio quality evaluation, and similarity MOS (SMOS) for subjective audio similarity evaluation given pairs of prompt and system-generated audio clips.",
+       "original": "As supplementary metrics, we include quality MOS (QMOS) for subjective audio quality evaluation, and similarity MOS (SMOS) for subjective audio similarity evaluation given pairs of prompt and",
        "zh": "作为补充指标，我们报告用于主观音质评估的质量 MOS（QMOS），以及在给定提示音频与系统生成音频对的条件下用于主观相似度评估的相似度 MOS（SMOS）。"
-      },
-      {
-       "id": "s-diversity-and-quality-2-2",
-       "original": "Both of which are in the scale of 1 to 5 with 5 being the best. 50 samples are evaluated for each system and 10 ratings are collected for each sample.",
-       "zh": "两者均采用 1 到 5 分制，5 分为最佳。每个系统评估 50 个样本，每个样本收集 10 份评分。"
-      },
-      {
-       "id": "s-diversity-and-quality-2-3",
-       "original": "Averaged ratings along with 95% confidence interval are reported.",
-       "zh": "报告平均评分及 95% 置信区间。"
-      },
-      {
-       "id": "s-diversity-and-quality-2-4",
-       "original": "For that, the CrowdMOS Ribeiro et al. [2011] package was used with the recommended recipes for filtering outliers and inaccurate ratings.",
-       "zh": "为此使用了 CrowdMOS Ribeiro et al. [2011] 工具包，并按其推荐方案过滤离群与不准确的评分。"
-      },
-      {
-       "id": "s-diversity-and-quality-2-5",
-       "original": "The MOS instructions can be found in Appendix C.5.",
-       "zh": "MOS 评分说明见附录 C.5。"
       }
      ]
+    },
+    {
+     "id": "eq-diversity-and-quality-1",
+     "type": "equation",
+     "page": 10,
+     "original": "system-generated audio clips. Both of which are in the scale of 1 to 5 with 5 being the best. 50"
     },
     {
      "id": "p-diversity-and-quality-3",
@@ -2204,16 +2358,43 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-diversity-and-quality-3-1",
+       "original": "samples are evaluated for each system and 10 ratings are collected for each sample.",
+       "zh": "两者均采用 1 到 5 分制，5 分为最佳。每个系统评估 50 个样本，每个样本收集 10 份评分。"
+      },
+      {
+       "id": "s-diversity-and-quality-3-2",
+       "original": "Averaged ratings along with 95% confidence interval are reported.",
+       "zh": "报告平均评分及 95% 置信区间。"
+      },
+      {
+       "id": "s-diversity-and-quality-3-3",
+       "original": "For that, the CrowdMOS Ribeiro et al. [2011] package was used with the recommended recipes for filtering outliers and inaccurate ratings.",
+       "zh": "为此使用了 CrowdMOS Ribeiro et al. [2011] 工具包，并按其推荐方案过滤离群与不准确的评分。"
+      },
+      {
+       "id": "s-diversity-and-quality-3-4",
+       "original": "The MOS instructions can be found in Appendix C.5.",
+       "zh": "MOS 评分说明见附录 C.5。"
+      }
+     ]
+    },
+    {
+     "id": "p-diversity-and-quality-4",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-diversity-and-quality-4-1",
        "original": "To evaluate duration models, one can continue using the aforementioned metrics to gauge the end-toend performance.",
        "zh": "评估时长模型时，可以继续用上述指标衡量端到端性能。"
       },
       {
-       "id": "s-diversity-and-quality-3-2",
+       "id": "s-diversity-and-quality-4-2",
        "original": "Alternatively, we also present a few standalone metrics focusing on the duration model.",
        "zh": "此外，我们也提出几项专门针对时长模型的独立指标。"
       },
       {
-       "id": "s-diversity-and-quality-3-3",
+       "id": "s-diversity-and-quality-4-3",
        "original": "Descriptions and results can be found in Appendices C.2 to C.4.",
        "zh": "相关描述与结果见附录 C.2 至 C.4。"
       }
@@ -2254,15 +2435,16 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-5-1-1-2",
-       "original": "Following [Babu et al., 2022], for a given upsampling factor β, we upsample low resource languages to mimic sampling batches from a multinomial distribution ps ∼ ns N β s=1,...,S where S is the total number of languages, ns the number of pretraining hours of language s, and N the total number of hours.",
+       "original": "Following [Babu et al., 2022], for a given upsampling factor β, we upsample low resource languages to mimic sampling batches from a multinomial distribution ps ∼ ns N",
        "zh": "遵循 [Babu et al., 2022]，给定上采样因子 β，我们对低资源语言进行上采样，使采样批次近似服从多项分布 ps ∼ ns^β/N（s=1,...,S），其中 S 为语言总数，ns 为语言 s 的预训练小时数，N 为总小时数。"
-      },
-      {
-       "id": "s-5-1-1-3",
-       "original": "We set β = 0.25.",
-       "zh": "我们设 β = 0.25。"
       }
      ]
+    },
+    {
+     "id": "eq-5-1-1",
+     "type": "equation",
+     "page": 10,
+     "original": "β"
     },
     {
      "id": "p-5-1-2",
@@ -2271,8 +2453,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-5-1-2-1",
-       "original": "The two models are abbreviated as VB-En and VB-Multi.",
-       "zh": "两个模型分别简记为 VB-En 和 VB-Multi。"
+       "original": "s=1,...,S where S is the total number of languages, ns the number of pretraining hours of language s, and N the total number of hours.",
+       "zh": "遵循 [Babu et al., 2022]，给定上采样因子 β，我们对低资源语言进行上采样，使采样批次近似服从多项分布 ps ∼ ns^β/N（s=1,...,S），其中 S 为语言总数，ns 为语言 s 的预训练小时数，N 为总小时数。"
+      },
+      {
+       "id": "s-5-1-2-2",
+       "original": "We set β = 0.25.",
+       "zh": "我们设 β = 0.25。"
       }
      ]
     },
@@ -2283,21 +2470,33 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-5-1-3-1",
+       "original": "The two models are abbreviated as VB-En and VB-Multi.",
+       "zh": "两个模型分别简记为 VB-En 和 VB-Multi。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-1-4",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-5-1-4-1",
        "original": "The Montreal Forced Aligner (MFA) [McAuliffe et al., 2017] is used to phonemize and force align the transcript based on the MFA phone set, which is a modified version of the international phonetic alphabet (IPA).",
        "zh": "使用 Montreal 强制对齐器（MFA）[McAuliffe et al., 2017] 基于 MFA 音素集（国际音标 IPA 的修改版）对转写文本进行音素化和强制对齐。"
       },
       {
-       "id": "s-5-1-3-2",
+       "id": "s-5-1-4-2",
        "original": "Word position postfixes are added.",
        "zh": "并添加词内位置后缀。"
       },
       {
-       "id": "s-5-1-3-3",
+       "id": "s-5-1-4-3",
        "original": "Audio is represented as a 80-dimensional log Mel spectrogram and a HiFi-GAN vocoder trained on the same 60K hours of English speech is used to generate waveform.",
        "zh": "音频表示为 80 维对数 Mel 频谱图，并使用在相同 60K 小时英语语音上训练的 HiFi-GAN 声码器生成波形。"
       },
       {
-       "id": "s-5-1-3-4",
+       "id": "s-5-1-4-4",
        "original": "More details about phone representation, data transformation, and vocoder can be found in Appendices A.1 to A.3.",
        "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       }
@@ -2312,7 +2511,7 @@ globalThis.PAPER_2306_15687 = {
    "page": 11,
    "title": {
     "original": "Model",
-    "zh": "模型"
+    "zh": "模型结果（表 5 残留）"
    },
    "blocks": [
     {
@@ -2505,7 +2704,7 @@ globalThis.PAPER_2306_15687 = {
    "page": 11,
    "title": {
     "original": "Model",
-    "zh": "模型能力对照（表 1 残留）"
+    "zh": "模型结果（表 5 残留）"
    },
    "blocks": [
     {
@@ -2515,10 +2714,88 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-model-2-1-1",
-       "original": "ZS TTS Denoise Partial Edit Sampling VALL-E ✗ ✗ YourTTS ✗ ✗ A3T ✓(short) ✗ Demucs ✗ ✗ ✗ Voicebox ✓(short)",
-       "zh": "（表内文字）模型｜零样本 TTS｜去噪｜部分编辑｜采样：VALL-E ✗ ✗；YourTTS ✗ ✗；A3T ✓（短） ✗；Demucs ✗ ✗ ✗；Voicebox ✓（短）。"
+       "original": "ZS TTS Denoise Partial Edit Sampling VALL-E",
+       "zh": "（图内标签）噪声"
       }
      ]
+    },
+    {
+     "id": "eq-model-2-1",
+     "type": "equation",
+     "page": 11,
+     "original": "✓ ✗ ✗ ✓"
+    },
+    {
+     "id": "eq-model-2-2",
+     "type": "equation",
+     "page": 11,
+     "original": "YourTTS"
+    },
+    {
+     "id": "eq-model-2-3",
+     "type": "equation",
+     "page": 11,
+     "original": "✓ ✗ ✗ ✓"
+    },
+    {
+     "id": "eq-model-2-4",
+     "type": "equation",
+     "page": 11,
+     "original": "A3T"
+    },
+    {
+     "id": "eq-model-2-5",
+     "type": "equation",
+     "page": 11,
+     "original": "✓"
+    },
+    {
+     "id": "eq-model-2-6",
+     "type": "equation",
+     "page": 11,
+     "original": "✓(short)"
+    },
+    {
+     "id": "eq-model-2-7",
+     "type": "equation",
+     "page": 11,
+     "original": "✓ ✗"
+    },
+    {
+     "id": "eq-model-2-8",
+     "type": "equation",
+     "page": 11,
+     "original": "Demucs"
+    },
+    {
+     "id": "eq-model-2-9",
+     "type": "equation",
+     "page": 11,
+     "original": "✗ ✓ ✗ ✗"
+    },
+    {
+     "id": "eq-model-2-10",
+     "type": "equation",
+     "page": 11,
+     "original": "Voicebox"
+    },
+    {
+     "id": "eq-model-2-11",
+     "type": "equation",
+     "page": 11,
+     "original": "✓"
+    },
+    {
+     "id": "eq-model-2-12",
+     "type": "equation",
+     "page": 11,
+     "original": "✓(short)"
+    },
+    {
+     "id": "eq-model-2-13",
+     "type": "equation",
+     "page": 11,
+     "original": "✓ ✓"
     }
    ]
   },
@@ -2599,7 +2876,7 @@ globalThis.PAPER_2306_15687 = {
    "page": 12,
    "title": {
     "original": "Model",
-    "zh": "模型结果（表 2 残留）"
+    "zh": "模型结果（表 5 残留）"
    },
    "blocks": [
     {
@@ -2609,10 +2886,112 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-model-3-1-1",
-       "original": "SIM-r QMOS SMOS Ground truth 2.2 0.754 3.98± 0.14 cross-sentence A3T 63.3 0.046 0.146 YourTTS 7.7 0.337 3.27± 0.13 VALL-E 5.9 0.580 VB-En 1.9 0.662 0.681 3.78± 0.10 continuation A3T 18.7 0.058 0.144 VALL-E 3.8 0.452∗ 0.508 VB-En (α = 0.7) 2.0 0.593 0.616",
-       "zh": "（表内数字）SIM-r QMOS SMOS；真实语音 2.2 0.754 3.98±0.14；跨句：A3T 63.3 0.046 0.146，YourTTS 7.7 0.337 3.27±0.13，VALL-E 5.9 0.580，VB-En 1.9 0.662 0.681 3.78±0.10；续写：A3T 18.7 0.058 0.144，VALL-E 3.8 0.452∗ 0.508，VB-En（α = 0.7）2.0 0.593 0.616。"
+       "original": "WER SIM-o SIM-r QMOS SMOS Ground truth",
+       "zh": "表头：WER / SIM-o / SIM-r / QMOS / SMOS——Ground truth（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-model-3-1",
+     "type": "equation",
+     "page": 12,
+     "original": "2.2 0.754"
+    },
+    {
+     "id": "eq-model-3-2",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a"
+    },
+    {
+     "id": "eq-model-3-3",
+     "type": "equation",
+     "page": 12,
+     "original": "3.98± 0.14 4.01±0.09"
+    },
+    {
+     "id": "eq-model-3-4",
+     "type": "equation",
+     "page": 12,
+     "original": "cross-sentence A3T"
+    },
+    {
+     "id": "eq-model-3-5",
+     "type": "equation",
+     "page": 12,
+     "original": "63.3 0.046 0.146 - -"
+    },
+    {
+     "id": "eq-model-3-6",
+     "type": "equation",
+     "page": 12,
+     "original": "YourTTS"
+    },
+    {
+     "id": "eq-model-3-7",
+     "type": "equation",
+     "page": 12,
+     "original": "7.7 0.337"
+    },
+    {
+     "id": "eq-model-3-8",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a"
+    },
+    {
+     "id": "eq-model-3-9",
+     "type": "equation",
+     "page": 12,
+     "original": "3.27± 0.13 3.19±0.14"
+    },
+    {
+     "id": "eq-model-3-10",
+     "type": "equation",
+     "page": 12,
+     "original": "VALL-E"
+    },
+    {
+     "id": "eq-model-3-11",
+     "type": "equation",
+     "page": 12,
+     "original": "5.9 - 0.580 - -"
+    },
+    {
+     "id": "eq-model-3-12",
+     "type": "equation",
+     "page": 12,
+     "original": "VB-En"
+    },
+    {
+     "id": "eq-model-3-13",
+     "type": "equation",
+     "page": 12,
+     "original": "1.9 0.662 0.681 3.78± 0.10 3.71±0.11"
+    },
+    {
+     "id": "eq-model-3-14",
+     "type": "equation",
+     "page": 12,
+     "original": "continuation A3T"
+    },
+    {
+     "id": "eq-model-3-15",
+     "type": "equation",
+     "page": 12,
+     "original": "18.7 0.058 0.144 - -"
+    },
+    {
+     "id": "eq-model-3-16",
+     "type": "equation",
+     "page": 12,
+     "original": "VALL-E"
+    },
+    {
+     "id": "eq-model-3-17",
+     "type": "equation",
+     "page": 12,
+     "original": "3.8 0.452∗ 0.508 - - VB-En (α = 0.7) 2.0 0.593 0.616 - -"
     }
    ]
   },
@@ -2689,10 +3068,364 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-5-3-3-1",
-       "original": "Ref De En Es Fr Pl Pt GT 5.9 0.725 5.0 0.636 4.1 0.729 5.2 0.714 4.9 0.743 5.8 0.725 De 7.3 0.373 11.3 0.361 13.7 0.263 En 7.0 0.403 11.4 0.298 14.1 0.234 Es 7.6 0.327 11.6 0.316 13.5 0.256 Fr 7.6 0.363 10.7 0.459 13.1 0.299 Pl 7.8 0.349 11.8 0.370 15.1 0.308 Pt 7.6 0.322 11.8 0.297 13.6 0.436 YT AVG 7.5 0.356 11.4 0.350 13.9 0.299 De 4.8 0.632 4.8 0.522 3.6 0.442 5.3 0.489 5.5 0.449 5.4 0.420 En 5.9 0.435 4.2 0.535 4.1 0.423 6.8 0.423 8.3 0.402 7.6 0.385 Es 4.9 0.460 4.3 0.479 3.6 0.613 5.3 0.473 5.2 0.436 5.4 0.435 Fr 4.9 0.476 4.3 0.485 3.7 0.479 5.1 0.602 4.8 0.408 5.4 0.418 Pl 4.7 0.491 3.8 0.503 3.5 0.528 5.1 0.503 4.0 0.641 4.9 0.476 Pt 4.9 0.422 4.6 0.426 3.7 0.476 5.5 0.453 4.8 0.406 5.2 0.620 VB-Multi (α = 1.0) AVG 5.0 0.486 4.4 0.492 3.7 0.494 5.5 0.491 5.5 0.457 5.7 0.459",
-       "zh": "（表内数字）参考语言 Ref 依次对 De En Es Fr Pl Pt；行 GT：5.9 0.725，5.0 0.636，4.1 0.729，5.2 0.714，4.9 0.743，5.8 0.725。YourTTS（YT）：De 7.3 0.373，11.3 0.361，13.7 0.263；En 7.0 0.403，11.4 0.298，14.1 0.234；Es 7.6 0.327，11.6 0.316，13.5 0.256；Fr 7.6 0.363，10.7 0.459，13.1 0.299；Pl 7.8 0.349，11.8 0.370，15.1 0.308；Pt 7.6 0.322，11.8 0.297，13.6 0.436；YT 平均（AVG）7.5 0.356，11.4 0.350，13.9 0.299。VB-Multi（α = 1.0）：De 4.8 0.632，4.8 0.522，3.6 0.442，5.3 0.489，5.5 0.449，5.4 0.420；En 5.9 0.435，4.2 0.535，4.1 0.423，6.8 0.423，8.3 0.402，7.6 0.385；Es 4.9 0.460，4.3 0.479，3.6 0.613，5.3 0.473，5.2 0.436，5.4 0.435；Fr 4.9 0.476，4.3 0.485，3.7 0.479，5.1 0.602，4.8 0.408，5.4 0.418；Pl 4.7 0.491，3.8 0.503，3.5 0.528，5.1 0.503，4.0 0.641，4.9 0.476；Pt 4.9 0.422，4.6 0.426，3.7 0.476，5.5 0.453，4.8 0.406，5.2 0.620；VB-Multi 平均 5.0 0.486，4.4 0.492，3.7 0.494，5.5 0.491，5.5 0.457，5.7 0.459。"
+       "original": "Ref De En Es Fr Pl Pt WER SIM-o WER SIM-o WER SIM-o WER SIM-o WER SIM-o WER SIM-o GT",
+       "zh": "表头：Ref=De/En/Es/Fr/Pl/Pt 各参考语下的 WER / SIM-o——GT（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-5-3-1",
+     "type": "equation",
+     "page": 12,
+     "original": "- 5.9 0.725 5.0 0.636 4.1 0.729 5.2 0.714 4.9 0.743 5.8 0.725"
+    },
+    {
+     "id": "eq-5-3-2",
+     "type": "equation",
+     "page": 12,
+     "original": "De n/a n/a"
+    },
+    {
+     "id": "eq-5-3-3",
+     "type": "equation",
+     "page": 12,
+     "original": "7.3 0.373"
+    },
+    {
+     "id": "eq-5-3-4",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-5",
+     "type": "equation",
+     "page": 12,
+     "original": "11.3 0.361"
+    },
+    {
+     "id": "eq-5-3-6",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-7",
+     "type": "equation",
+     "page": 12,
+     "original": "13.7 0.263"
+    },
+    {
+     "id": "eq-5-3-8",
+     "type": "equation",
+     "page": 12,
+     "original": "En n/a n/a"
+    },
+    {
+     "id": "eq-5-3-9",
+     "type": "equation",
+     "page": 12,
+     "original": "7.0 0.403"
+    },
+    {
+     "id": "eq-5-3-10",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-11",
+     "type": "equation",
+     "page": 12,
+     "original": "11.4 0.298"
+    },
+    {
+     "id": "eq-5-3-12",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-13",
+     "type": "equation",
+     "page": 12,
+     "original": "14.1 0.234"
+    },
+    {
+     "id": "eq-5-3-14",
+     "type": "equation",
+     "page": 12,
+     "original": "Es n/a n/a"
+    },
+    {
+     "id": "eq-5-3-15",
+     "type": "equation",
+     "page": 12,
+     "original": "7.6 0.327"
+    },
+    {
+     "id": "eq-5-3-16",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-17",
+     "type": "equation",
+     "page": 12,
+     "original": "11.6 0.316"
+    },
+    {
+     "id": "eq-5-3-18",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-19",
+     "type": "equation",
+     "page": 12,
+     "original": "13.5 0.256"
+    },
+    {
+     "id": "eq-5-3-20",
+     "type": "equation",
+     "page": 12,
+     "original": "Fr n/a n/a"
+    },
+    {
+     "id": "eq-5-3-21",
+     "type": "equation",
+     "page": 12,
+     "original": "7.6 0.363"
+    },
+    {
+     "id": "eq-5-3-22",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-23",
+     "type": "equation",
+     "page": 12,
+     "original": "10.7 0.459"
+    },
+    {
+     "id": "eq-5-3-24",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-25",
+     "type": "equation",
+     "page": 12,
+     "original": "13.1 0.299"
+    },
+    {
+     "id": "eq-5-3-26",
+     "type": "equation",
+     "page": 12,
+     "original": "Pl n/a n/a"
+    },
+    {
+     "id": "eq-5-3-27",
+     "type": "equation",
+     "page": 12,
+     "original": "7.8 0.349"
+    },
+    {
+     "id": "eq-5-3-28",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-29",
+     "type": "equation",
+     "page": 12,
+     "original": "11.8 0.370"
+    },
+    {
+     "id": "eq-5-3-30",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-31",
+     "type": "equation",
+     "page": 12,
+     "original": "15.1 0.308"
+    },
+    {
+     "id": "eq-5-3-32",
+     "type": "equation",
+     "page": 12,
+     "original": "Pt n/a n/a"
+    },
+    {
+     "id": "eq-5-3-33",
+     "type": "equation",
+     "page": 12,
+     "original": "7.6 0.322"
+    },
+    {
+     "id": "eq-5-3-34",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-35",
+     "type": "equation",
+     "page": 12,
+     "original": "11.8 0.297"
+    },
+    {
+     "id": "eq-5-3-36",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-37",
+     "type": "equation",
+     "page": 12,
+     "original": "13.6 0.436"
+    },
+    {
+     "id": "eq-5-3-38",
+     "type": "equation",
+     "page": 12,
+     "original": "YT AVG n/a n/a"
+    },
+    {
+     "id": "eq-5-3-39",
+     "type": "equation",
+     "page": 12,
+     "original": "7.5 0.356"
+    },
+    {
+     "id": "eq-5-3-40",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-41",
+     "type": "equation",
+     "page": 12,
+     "original": "11.4 0.350"
+    },
+    {
+     "id": "eq-5-3-42",
+     "type": "equation",
+     "page": 12,
+     "original": "n/a n/a"
+    },
+    {
+     "id": "eq-5-3-43",
+     "type": "equation",
+     "page": 12,
+     "original": "13.9 0.299"
+    },
+    {
+     "id": "eq-5-3-44",
+     "type": "equation",
+     "page": 12,
+     "original": "De"
+    },
+    {
+     "id": "eq-5-3-45",
+     "type": "equation",
+     "page": 12,
+     "original": "4.8 0.632 4.8 0.522 3.6 0.442 5.3 0.489 5.5 0.449 5.4 0.420"
+    },
+    {
+     "id": "eq-5-3-46",
+     "type": "equation",
+     "page": 12,
+     "original": "En"
+    },
+    {
+     "id": "eq-5-3-47",
+     "type": "equation",
+     "page": 12,
+     "original": "5.9 0.435 4.2 0.535 4.1 0.423 6.8 0.423 8.3 0.402 7.6 0.385"
+    },
+    {
+     "id": "eq-5-3-48",
+     "type": "equation",
+     "page": 12,
+     "original": "Es"
+    },
+    {
+     "id": "eq-5-3-49",
+     "type": "equation",
+     "page": 12,
+     "original": "4.9 0.460 4.3 0.479 3.6 0.613 5.3 0.473 5.2 0.436 5.4 0.435"
+    },
+    {
+     "id": "eq-5-3-50",
+     "type": "equation",
+     "page": 12,
+     "original": "Fr"
+    },
+    {
+     "id": "eq-5-3-51",
+     "type": "equation",
+     "page": 12,
+     "original": "4.9 0.476 4.3 0.485 3.7 0.479 5.1 0.602 4.8 0.408 5.4 0.418"
+    },
+    {
+     "id": "eq-5-3-52",
+     "type": "equation",
+     "page": 12,
+     "original": "Pl"
+    },
+    {
+     "id": "eq-5-3-53",
+     "type": "equation",
+     "page": 12,
+     "original": "4.7 0.491 3.8 0.503 3.5 0.528 5.1 0.503 4.0 0.641 4.9 0.476"
+    },
+    {
+     "id": "eq-5-3-54",
+     "type": "equation",
+     "page": 12,
+     "original": "Pt"
+    },
+    {
+     "id": "eq-5-3-55",
+     "type": "equation",
+     "page": 12,
+     "original": "4.9 0.422 4.6 0.426 3.7 0.476 5.5 0.453 4.8 0.406 5.2 0.620"
+    },
+    {
+     "id": "eq-5-3-56",
+     "type": "equation",
+     "page": 12,
+     "original": "VB-Multi"
+    },
+    {
+     "id": "eq-5-3-57",
+     "type": "equation",
+     "page": 12,
+     "original": "(α = 1.0)"
+    },
+    {
+     "id": "eq-5-3-58",
+     "type": "equation",
+     "page": 12,
+     "original": "AVG"
+    },
+    {
+     "id": "eq-5-3-59",
+     "type": "equation",
+     "page": 12,
+     "original": "5.0 0.486 4.4 0.492 3.7 0.494 5.5 0.491 5.5 0.457 5.7 0.459"
     },
     {
      "id": "tab-5-3-2",
@@ -2708,10 +3441,28 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-5-3-4-1",
-       "original": "Ref=De Ref=En Ref=Es Ref=Fr Ref=Pl Ref=Pt SMOS (target text = En) YT VB-Multi (α = 1.0) QMOS (target text = En) YT VB-Multi (α = 1.0)",
-       "zh": "（表内文字）Ref=De Ref=En Ref=Es Ref=Fr Ref=Pl Ref=Pt；SMOS（目标文本 = En）：YT 对 VB-Multi（α = 1.0）；QMOS（目标文本 = En）：YT 对 VB-Multi（α = 1.0）。"
+       "original": "Ref=De Ref=En Ref=Es Ref=Fr Ref=Pl Ref=Pt SMOS (target text = En) YT",
+       "zh": "（表格行：Ref=De/En/Es/Fr/Pl/Pt 各参考语下的 SMOS（目标文本 = En）：YT 3.26±0.11/3.24±0.11/3.22±0.12/3.48±0.10/3.26±0.09/3.38±0.11。）"
       }
      ]
+    },
+    {
+     "id": "eq-5-3-60",
+     "type": "equation",
+     "page": 13,
+     "original": "3.26±0.11 3.24±0.11 3.22±0.12 3.48±0.10 3.26±0.09 3.38±0.11 VB-Multi (α = 1.0) 3.89±0.10 3.93±0.08 3.84±0.10 3.92±0.09 3.81±0.08 3.96±0.09"
+    },
+    {
+     "id": "eq-5-3-61",
+     "type": "equation",
+     "page": 13,
+     "original": "QMOS (target text = En) YT"
+    },
+    {
+     "id": "eq-5-3-62",
+     "type": "equation",
+     "page": 13,
+     "original": "3.29±0.12 3.17±0.13 3.29±0.12 3.08±0.12 3.35±0.12 3.21±0.12 VB-Multi (α = 1.0) 3.67±0.09 3.48±0.09 3.45±0.11 3.31±0.12 3.75±0.11 3.35±0.13"
     }
    ]
   },
@@ -2780,10 +3531,52 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-model-4-1-1",
-       "original": "QMOS Clean speech 2.2 0.687 Noisy speech 41.2 0.287 Demucs 32.5 0.368 A3T 11.5 0.148 VB-En (α = 0.7) 2.0 0.612",
-       "zh": "（表内数字）QMOS；干净语音 2.2 0.687；含噪语音 41.2 0.287；Demucs 32.5 0.368；A3T 11.5 0.148；VB-En（α = 0.7）2.0 0.612。"
+       "original": "WER SIM-o QMOS Clean speech",
+       "zh": "表头：WER / SIM-o / QMOS——Clean speech（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-model-4-1",
+     "type": "equation",
+     "page": 13,
+     "original": "2.2 0.687 4.07±0.15"
+    },
+    {
+     "id": "eq-model-4-2",
+     "type": "equation",
+     "page": 13,
+     "original": "Noisy speech"
+    },
+    {
+     "id": "eq-model-4-3",
+     "type": "equation",
+     "page": 13,
+     "original": "41.2 0.287 2.50±0.15"
+    },
+    {
+     "id": "eq-model-4-4",
+     "type": "equation",
+     "page": 13,
+     "original": "Demucs"
+    },
+    {
+     "id": "eq-model-4-5",
+     "type": "equation",
+     "page": 13,
+     "original": "32.5 0.368 2.86±0.17"
+    },
+    {
+     "id": "eq-model-4-6",
+     "type": "equation",
+     "page": 13,
+     "original": "A3T"
+    },
+    {
+     "id": "eq-model-4-7",
+     "type": "equation",
+     "page": 13,
+     "original": "11.5 0.148 3.10±0.15 VB-En (α = 0.7) 2.0 0.612 3.87±0.17"
     }
    ]
   },
@@ -2862,10 +3655,76 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-5-5-3-1",
-       "original": "Model FSD Ground truth 4.3 171.1 require additional input VITS-VCTK 10.6 306.6 YourTTS (ref=LS train) 9.0 277.9 text-only A3T 37.9 373.0 VITS-LJ 5.6 344.2 VB-En (α = 0, dur=regr) 3.1 155.7 VB-En (α = 0, dur=FM, αdur = 0) 5.6 159.8",
-       "zh": "（表内数字）模型 FSD；真实语音 4.3 171.1；需要额外输入：VITS-VCTK 10.6 306.6，YourTTS（参考=LS train）9.0 277.9；仅文本：A3T 37.9 373.0，VITS-LJ 5.6 344.2，VB-En（α = 0，dur=regr）3.1 155.7，VB-En（α = 0，dur=FM，αdur = 0）5.6 159.8。"
+       "original": "Model WER FSD Ground truth",
+       "zh": "表头：Model / WER / FSD——Ground truth（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-5-5-1",
+     "type": "equation",
+     "page": 14,
+     "original": "4.3 171.1"
+    },
+    {
+     "id": "eq-5-5-2",
+     "type": "equation",
+     "page": 14,
+     "original": "require additional input VITS-VCTK"
+    },
+    {
+     "id": "eq-5-5-3",
+     "type": "equation",
+     "page": 14,
+     "original": "10.6 306.6"
+    },
+    {
+     "id": "eq-5-5-4",
+     "type": "equation",
+     "page": 14,
+     "original": "YourTTS (ref=LS train)"
+    },
+    {
+     "id": "eq-5-5-5",
+     "type": "equation",
+     "page": 14,
+     "original": "9.0 277.9"
+    },
+    {
+     "id": "eq-5-5-6",
+     "type": "equation",
+     "page": 14,
+     "original": "text-only A3T"
+    },
+    {
+     "id": "eq-5-5-7",
+     "type": "equation",
+     "page": 14,
+     "original": "37.9 373.0"
+    },
+    {
+     "id": "eq-5-5-8",
+     "type": "equation",
+     "page": 14,
+     "original": "VITS-LJ"
+    },
+    {
+     "id": "eq-5-5-9",
+     "type": "equation",
+     "page": 14,
+     "original": "5.6 344.2"
+    },
+    {
+     "id": "eq-5-5-10",
+     "type": "equation",
+     "page": 14,
+     "original": "VB-En (α = 0, dur=regr)"
+    },
+    {
+     "id": "eq-5-5-11",
+     "type": "equation",
+     "page": 14,
+     "original": "3.1 155.7 VB-En (α = 0, dur=FM, αdur = 0) 5.6 159.8"
     },
     {
      "id": "tab-5-5-3",
@@ -2881,10 +3740,76 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-5-5-4-1",
-       "original": "WER on real data No LM 4-gram LM ASR training data test-c test-o test-c test-o Real audio (100hr) 9.0 21.5 6.1 16.2 Real audio (960hr) 2.6 6.3 2.2 5.0 VITS-LJ 58.0 81.2 51.6 78.1 VITS-VCTK 33.8 55.5 30.2 53.1 YourTTS (ref=LS train) 25.0 54.6 20.4 51.2 VB-En (α = 0, dur=regr) 7.1 17.6 6.5 14.6 VB-En (α = 0, dur=FM, αdur = 0) 3.1 8.3 2.6 6.7",
-       "zh": "（表内数字）真实数据上的 WER：无 LM 与 4-gram LM 下 ASR 训练数据在 test-c/test-o 上——真实音频（100hr）9.0 21.5／6.1 16.2；真实音频（960hr）2.6 6.3／2.2 5.0；VITS-LJ 58.0 81.2／51.6 78.1；VITS-VCTK 33.8 55.5／30.2 53.1；YourTTS（ref=LS train）25.0 54.6／20.4 51.2；VB-En（α = 0，dur=regr）7.1 17.6／6.5 14.6；VB-En（α = 0，dur=FM，αdur = 0）3.1 8.3／2.6 6.7。"
+       "original": "WER on real data No LM 4-gram LM ASR training data test-c test-o test-c test-o Real audio (100hr)",
+       "zh": "表头：WER on real data × No LM / 4-gram LM；ASR training data × test-c / test-o / test-c / test-o；Real audio (100hr)（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-5-5-12",
+     "type": "equation",
+     "page": 14,
+     "original": "9.0 21.5 6.1 16.2"
+    },
+    {
+     "id": "eq-5-5-13",
+     "type": "equation",
+     "page": 14,
+     "original": "Real audio (960hr)"
+    },
+    {
+     "id": "eq-5-5-14",
+     "type": "equation",
+     "page": 14,
+     "original": "2.6 6.3 2.2 5.0"
+    },
+    {
+     "id": "eq-5-5-15",
+     "type": "equation",
+     "page": 14,
+     "original": "VITS-LJ"
+    },
+    {
+     "id": "eq-5-5-16",
+     "type": "equation",
+     "page": 14,
+     "original": "58.0 81.2 51.6 78.1"
+    },
+    {
+     "id": "eq-5-5-17",
+     "type": "equation",
+     "page": 14,
+     "original": "VITS-VCTK"
+    },
+    {
+     "id": "eq-5-5-18",
+     "type": "equation",
+     "page": 14,
+     "original": "33.8 55.5 30.2 53.1"
+    },
+    {
+     "id": "eq-5-5-19",
+     "type": "equation",
+     "page": 14,
+     "original": "YourTTS (ref=LS train)"
+    },
+    {
+     "id": "eq-5-5-20",
+     "type": "equation",
+     "page": 14,
+     "original": "25.0 54.6 20.4 51.2"
+    },
+    {
+     "id": "eq-5-5-21",
+     "type": "equation",
+     "page": 14,
+     "original": "VB-En (α = 0, dur=regr)"
+    },
+    {
+     "id": "eq-5-5-22",
+     "type": "equation",
+     "page": 14,
+     "original": "7.1 17.6 6.5 14.6 VB-En (α = 0, dur=FM, αdur = 0) 3.1 8.3 2.6 6.7"
     },
     {
      "id": "tab-5-5-4",
@@ -3086,8 +4011,158 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-5-7-2-1",
-       "original": "Voicebox =0 =0.3 =0.7 VALL-E 6 Inference time (10s audio) 6 5 4 4 20.4X 2 3 2 0.675 0.650 0.625 SIM-r 0.600 0.575 21 22 23 24 25 0 21 22 23 24 25 26 NFE 21 22 23 24 25 NFE NFE (b) NFE vs WER (Zero-shot TTS) (a) NFE vs time (w/o CFG) 3.1 3.0 2.9 21 22 23 24 25 NFE (d) NFE vs WER (Diverse speech sampling) (c) NFE vs SIM-r (Zero-shot TTS) 220 200 FSD 180 160 21 22 23 24 25 NFE (e) NFE vs FSD (Diverse speech sampling)",
-       "zh": "（图内文字）Voicebox α=0 α=0.3 α=0.7 VALL-E；推理时间（10 秒音频）6 5 4 4，20.4 倍，2 3 2；3.1 3.0 2.9 26 为（b）子图纵轴刻度之一；SIM-r 0.675 0.650 0.625 0.600 0.575；NFE 21 22 23 24 25 等坐标轴。（b）NFE 对 WER（零样本 TTS）；（a）NFE 对时间（无 CFG）；（d）NFE 对 WER（多样化语音采样）；（c）NFE 对 SIM-r（零样本 TTS）；FSD 220 200 180 160；（e）NFE 对 FSD（多样化语音采样）。"
+       "original": "Voicebox",
+       "zh": "本文提出 Voicebox：迄今功能最全面的规模化文本引导语音生成模型。"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-7-1",
+     "type": "equation",
+     "page": 15,
+     "original": "=0 =0.3 =0.7"
+    },
+    {
+     "id": "eq-5-7-2",
+     "type": "equation",
+     "page": 15,
+     "original": "VALL-E"
+    },
+    {
+     "id": "eq-5-7-3",
+     "type": "equation",
+     "page": 15,
+     "original": "6"
+    },
+    {
+     "id": "eq-5-7-4",
+     "type": "equation",
+     "page": 15,
+     "original": "Inference time (10s audio)"
+    },
+    {
+     "id": "eq-5-7-5",
+     "type": "equation",
+     "page": 15,
+     "original": "6 5 4"
+    },
+    {
+     "id": "eq-5-7-6",
+     "type": "equation",
+     "page": 15,
+     "original": "WER"
+    },
+    {
+     "id": "eq-5-7-7",
+     "type": "equation",
+     "page": 15,
+     "original": "4"
+    },
+    {
+     "id": "eq-5-7-8",
+     "type": "equation",
+     "page": 15,
+     "original": "20.4X"
+    },
+    {
+     "id": "eq-5-7-9",
+     "type": "equation",
+     "page": 15,
+     "original": "2 3 2 0.675 0.650 0.625"
+    },
+    {
+     "id": "eq-5-7-10",
+     "type": "equation",
+     "page": 15,
+     "original": "SIM-r"
+    },
+    {
+     "id": "eq-5-7-11",
+     "type": "equation",
+     "page": 15,
+     "original": "0.600 0.575 21 22 23 24 25 0 21 22 23 24 25 26"
+    },
+    {
+     "id": "eq-5-7-12",
+     "type": "equation",
+     "page": 15,
+     "original": "NFE"
+    },
+    {
+     "id": "eq-5-7-13",
+     "type": "equation",
+     "page": 15,
+     "original": "21 22 23 24 25"
+    },
+    {
+     "id": "p-5-7-3",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-5-7-3-1",
+       "original": "NFE NFE (b) NFE vs WER (Zero-shot TTS) (a) NFE vs time (w/o CFG)",
+       "zh": "（图 7：(a) NFE vs time (w/o CFG)；(b) NFE vs WER (Zero-shot TTS)；横轴 NFE。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-7-14",
+     "type": "equation",
+     "page": 15,
+     "original": "3.1 3.0"
+    },
+    {
+     "id": "eq-5-7-15",
+     "type": "equation",
+     "page": 15,
+     "original": "WER"
+    },
+    {
+     "id": "eq-5-7-16",
+     "type": "equation",
+     "page": 15,
+     "original": "2.9 21 22 23 24 25"
+    },
+    {
+     "id": "p-5-7-4",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-5-7-4-1",
+       "original": "NFE (d) NFE vs WER (Diverse speech sampling) (c) NFE vs SIM-r (Zero-shot TTS)",
+       "zh": "（图 7：(c) NFE vs SIM-r (Zero-shot TTS)；(d) NFE vs WER (Diverse speech sampling)；横轴 NFE。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-7-17",
+     "type": "equation",
+     "page": 15,
+     "original": "220 200"
+    },
+    {
+     "id": "eq-5-7-18",
+     "type": "equation",
+     "page": 15,
+     "original": "FSD"
+    },
+    {
+     "id": "eq-5-7-19",
+     "type": "equation",
+     "page": 15,
+     "original": "180 160 21 22 23 24 25"
+    },
+    {
+     "id": "p-5-7-5",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-5-7-5-1",
+       "original": "NFE (e) NFE vs FSD (Diverse speech sampling)",
+       "zh": "（图 7：(e) NFE vs FSD (Diverse speech sampling)。）"
       }
      ]
     },
@@ -3099,41 +4174,83 @@ globalThis.PAPER_2306_15687 = {
      "zh": "图 5：NFE 与不同指标之间的权衡。使用 CFG 时推理时间翻倍。"
     },
     {
-     "id": "p-5-7-3",
+     "id": "p-5-7-6",
      "type": "paragraph",
      "page": 15,
      "sentences": [
       {
-       "id": "s-5-7-3-1",
+       "id": "s-5-7-6-1",
        "original": "audio, the shorter audio is used as the prompt.",
        "zh": "（接上）则以较短的音频作为提示。"
       },
       {
-       "id": "s-5-7-3-2",
+       "id": "s-5-7-6-2",
        "original": "Results are shown in Figure 6.",
        "zh": "结果见图 6。"
       },
       {
-       "id": "s-5-7-3-3",
+       "id": "s-5-7-6-3",
        "original": "As expected, WER mildly decreases and SIM-r grows quickly and flattens with longer audio prompts.",
        "zh": "符合预期：WER 随提示变长缓慢下降，SIM-r 快速上升后趋平。"
       },
       {
-       "id": "s-5-7-3-4",
+       "id": "s-5-7-6-4",
        "original": "Comparing against VALL-E, Voicebox is more efficient at leveraging an audio prompt, achieving the same speaker similarity as VALL-E with roughly two thirds the input audio.",
        "zh": "与 VALL-E 相比，Voicebox 利用提示音频更高效，只需约三分之二的输入音频即可达到与 VALL-E 相同的说话人相似度。"
       }
      ]
     },
     {
-     "id": "p-5-7-4",
+     "id": "eq-5-7-20",
+     "type": "equation",
+     "page": 15,
+     "original": "6 5 4"
+    },
+    {
+     "id": "eq-5-7-21",
+     "type": "equation",
+     "page": 15,
+     "original": "WER"
+    },
+    {
+     "id": "eq-5-7-22",
+     "type": "equation",
+     "page": 15,
+     "original": "3 2 1 2 3 4 5 6 7 8"
+    },
+    {
+     "id": "eq-5-7-23",
+     "type": "equation",
+     "page": 15,
+     "original": "Seconds (a) WER"
+    },
+    {
+     "id": "eq-5-7-24",
+     "type": "equation",
+     "page": 15,
+     "original": "0.7 0.6 0.5"
+    },
+    {
+     "id": "eq-5-7-25",
+     "type": "equation",
+     "page": 15,
+     "original": "SIM-r"
+    },
+    {
+     "id": "eq-5-7-26",
+     "type": "equation",
+     "page": 15,
+     "original": "0.4 0.3 0.2 1 2 3 4 5 6 7 8"
+    },
+    {
+     "id": "p-5-7-7",
      "type": "paragraph",
      "page": 15,
      "sentences": [
       {
-       "id": "s-5-7-4-1",
-       "original": "6 5 4 3 2 1 2 3 4 5 6 7 8 Seconds (a) WER 0.7 0.6 0.5 SIM-r 0.4 0.3 0.2 1 2 3 4 5 6 7 8 Seconds (b) Speaker Similarity",
-       "zh": "（图内文字）（a）WER：6 5 4 3 2 1；秒 2 3 4 5 6 7 8。（b）说话人相似度：SIM-r 0.7 0.6 0.5 0.4 0.3 0.2；秒 1 2 3 4 5 6 7 8。"
+       "id": "s-5-7-7-1",
+       "original": "Seconds (b) Speaker Similarity",
+       "zh": "（图 8 横轴：秒（Seconds）；(b) Speaker Similarity。）"
       }
      ]
     },
@@ -3145,39 +4262,165 @@ globalThis.PAPER_2306_15687 = {
      "zh": "图 6：零样本 TTS 任务（5.2 节）中 WER 与 SIM-r 随提示音频秒数的变化。音频以分类器自由引导强度（α）0.7、NFE 为 32 的中点 ODE 求解器生成。蓝线为 Voicebox，红色星号为 3 秒处的 VALL-E。更长提示（至 10 秒）时说话人相似度（SIM-r）保持不变。"
     },
     {
-     "id": "p-5-7-5",
+     "id": "p-5-7-8",
      "type": "paragraph",
      "page": 15,
      "sentences": [
       {
-       "id": "s-5-7-5-1",
+       "id": "s-5-7-8-1",
        "original": "Cross-lingual: Here we examine the effect of increasing the prompt length for the case of crosslingual zero-shot TTS.",
-       "zh": "跨语言：这里我们考察跨语言零样本 TTS 下增加提示长度的影响。"
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
-       "id": "s-5-7-5-2",
+       "id": "s-5-7-8-2",
        "original": "As described in 5.2, this setting has a total 36 language transfer directions for each pair of source and target language.",
-       "zh": "如 5.2 节所述，该设置对每对源语言与目标语言共有 36 个语言迁移方向。"
+       "zh": "5.\n（原始数据照录）\nAs described in 5.2, this setting has a total 36 language transfer directions for each pair of source and target language."
       },
       {
-       "id": "s-5-7-5-3",
+       "id": "s-5-7-8-3",
        "original": "For each target text in a given transfer setting, we examine how WER / SIM-o7 vary as the prompt length increases.",
-       "zh": "对给定迁移设置下的每个目标文本，我们考察 WER／SIM-o 随提示长度增加的变化。（脚注 7）"
+       "zh": "对于给定迁移设置下的每个目标文本，我们考察 WER / SIM-o（脚注 7）随提示长度增加的变化。"
       },
       {
-       "id": "s-5-7-5-4",
+       "id": "s-5-7-8-4",
        "original": "Similarly, the regression duration model is used for the target text. Fig. 7 and Fig. 8 plot the SIM-o (speaker similarity) and WER trends respectively.",
-       "zh": "同样，目标文本使用回归时长模型。图 7 与图 8 分别绘制了 SIM-o（说话人相似度）与 WER 的趋势。（接上）"
+       "zh": "类似地，目标文本使用回归时长模型。图 7 与图 8 分别绘制 SIM-o（说话人相似度）与 WER 的趋势。"
       },
       {
-       "id": "s-5-7-5-5",
+       "id": "s-5-7-8-5",
        "original": "When concatenating the prompt to the target for MLS, we find that the samples are quite a bit longer than what the model was trained on (16s max length), because MLS test set 7Same trend is observed with SIM-r.",
-       "zh": "（接上）将提示与目标拼接用于 MLS 时，我们发现样本比模型训练时所见（最长 16 秒）长不少，因为 MLS 测试集（脚注 7：SIM-r 上观察到相同趋势。）"
+       "zh": "在 MLS 上把提示与目标拼接时，我们发现样本比模型训练时长（最长 16s）长不少，因为 MLS 测试集（脚注 7：SIM-r 上也观察到同样趋势）。"
       },
       {
-       "id": "s-5-7-5-6",
-       "original": "We present SIM-o to be consistent with Table 3 english french german polish portuguese spanish 0.7 0.6 0.6 0.5 0.5 0.4 0.4 0.3 0.3 0.7 0.6 0.5 0.4 0.3 2 4 6 8 10 2 4 6 8 10 (a) English (b) French 0.7 0.7 0.6 0.6 0.5 0.5 0.4 0.4 0.3 0.3 2 4 6 8 10 (c) Spanish 0.7 0.6 0.5 0.4 0.3 2 4 6 8 10 2 4 6 8 10 2 4 6 8 10 (e) German (d) Portuguese (f) Polish",
-       "zh": "（接上）我们报告 SIM-o 以与表 3 保持一致。（图内文字）english french german polish portuguese spanish；0.7 0.6 0.5 0.4 0.3 等坐标轴；2 4 6 8 10；（a）English（b）French（c）Spanish（d）Portuguese（e）German（f）Polish。"
+       "id": "s-5-7-8-6",
+       "original": "We present SIM-o to be consistent with Table 3 english french german polish portuguese spanish",
+       "zh": "为与表 3 一致，此处报告 SIM-o。（图表语种：english / french / german / polish / portuguese / spanish。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-7-27",
+     "type": "equation",
+     "page": 15,
+     "original": "0.7 0.6 0.6 0.5 0.5"
+    },
+    {
+     "id": "eq-5-7-28",
+     "type": "equation",
+     "page": 15,
+     "original": "SIM-o SIM-o"
+    },
+    {
+     "id": "eq-5-7-29",
+     "type": "equation",
+     "page": 15,
+     "original": "0.4 0.4 0.3 0.3 0.7 0.6 0.5"
+    },
+    {
+     "id": "eq-5-7-30",
+     "type": "equation",
+     "page": 15,
+     "original": "SIM-o"
+    },
+    {
+     "id": "eq-5-7-31",
+     "type": "equation",
+     "page": 15,
+     "original": "0.4 0.3 2 4 6 8 10"
+    },
+    {
+     "id": "eq-5-7-32",
+     "type": "equation",
+     "page": 15,
+     "original": "Prompt (s)"
+    },
+    {
+     "id": "eq-5-7-33",
+     "type": "equation",
+     "page": 15,
+     "original": "2 4 6 8 10"
+    },
+    {
+     "id": "eq-5-7-34",
+     "type": "equation",
+     "page": 15,
+     "original": "Prompt (s) (a) English (b) French"
+    },
+    {
+     "id": "eq-5-7-35",
+     "type": "equation",
+     "page": 15,
+     "original": "0.7 0.7 0.6 0.6 0.5"
+    },
+    {
+     "id": "eq-5-7-36",
+     "type": "equation",
+     "page": 15,
+     "original": "SIM-o SIM-o"
+    },
+    {
+     "id": "eq-5-7-37",
+     "type": "equation",
+     "page": 15,
+     "original": "0.5 0.4 0.4 0.3 0.3 2 4 6 8 10"
+    },
+    {
+     "id": "eq-5-7-38",
+     "type": "equation",
+     "page": 15,
+     "original": "Prompt (s) (c) Spanish"
+    },
+    {
+     "id": "eq-5-7-39",
+     "type": "equation",
+     "page": 15,
+     "original": "0.7 0.6"
+    },
+    {
+     "id": "eq-5-7-40",
+     "type": "equation",
+     "page": 15,
+     "original": "SIM-o"
+    },
+    {
+     "id": "eq-5-7-41",
+     "type": "equation",
+     "page": 15,
+     "original": "0.5 0.4 0.3 2 4 6 8 10"
+    },
+    {
+     "id": "eq-5-7-42",
+     "type": "equation",
+     "page": 15,
+     "original": "Prompt (s)"
+    },
+    {
+     "id": "eq-5-7-43",
+     "type": "equation",
+     "page": 15,
+     "original": "2 4 6 8 10"
+    },
+    {
+     "id": "eq-5-7-44",
+     "type": "equation",
+     "page": 15,
+     "original": "Prompt (s)"
+    },
+    {
+     "id": "eq-5-7-45",
+     "type": "equation",
+     "page": 15,
+     "original": "2 4 6 8 10"
+    },
+    {
+     "id": "p-5-7-9",
+     "type": "paragraph",
+     "page": 15,
+     "sentences": [
+      {
+       "id": "s-5-7-9-1",
+       "original": "Prompt (s) (e) German (d) Portuguese (f) Polish",
+       "zh": "（图 8 子图：Prompt (s)；(e) German / (d) Portuguese / (f) Polish。）"
       }
      ]
     },
@@ -3189,64 +4432,64 @@ globalThis.PAPER_2306_15687 = {
      "zh": "图 7：每个子图对应六种目标语言之一，展示跨语言风格迁移下 SIM-o（说话人相似度）随提示音频秒数的变化（来自不同源语言）。分类器自由引导强度（α）设为 1.0，使用 NFE 为 32 的中点 ODE 求解器。"
     },
     {
-     "id": "p-5-7-6",
+     "id": "p-5-7-10",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-5-7-6-1",
+       "id": "s-5-7-10-1",
        "original": "samples are in average 15 seconds long.",
        "zh": "（接上）样本平均长 15 秒。"
       },
       {
-       "id": "s-5-7-6-2",
+       "id": "s-5-7-10-2",
        "original": "To alleviate this out of domain issue and focus the study on varying the prompt length, we truncate the target sequences to 4 seconds (at word boundaries).",
        "zh": "为缓解这一域外问题并将研究聚焦于提示长度的变化，我们将目标序列截断为 4 秒（按词边界）。"
       },
       {
-       "id": "s-5-7-6-3",
+       "id": "s-5-7-10-3",
        "original": "We notice that WERs are higher compared to Table 3, likely because the ASR model struggles with incomplete sentences.",
        "zh": "我们注意到 WER 较表 3 更高，可能是因为 ASR 模型难以处理不完整的句子。"
       },
       {
-       "id": "s-5-7-6-4",
+       "id": "s-5-7-10-4",
        "original": "Each subplot contains the trend for one of the target languages from all six source languages.",
        "zh": "每个子图展示一种目标语言在所有六种源语言下的趋势。"
       }
      ]
     },
     {
-     "id": "p-5-7-7",
+     "id": "p-5-7-11",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-5-7-7-1",
+       "id": "s-5-7-11-1",
        "original": "The speaker similarity consistently improves as the prompt length is increased, similar to the monolingual setting.",
        "zh": "说话人相似度随提示变长持续上升，与单语设置类似。"
       },
       {
-       "id": "s-5-7-7-2",
+       "id": "s-5-7-11-2",
        "original": "In contrast, we find that WER increases as we increase the prompt length for most directions.",
        "zh": "相反，我们发现大多数方向上 WER 随提示变长而上升。"
       },
       {
-       "id": "s-5-7-7-3",
+       "id": "s-5-7-11-3",
        "original": "The WER increases much more for En →non-En directions.",
        "zh": "英语→非英语方向的 WER 上升幅度大得多。"
       },
       {
-       "id": "s-5-7-7-4",
+       "id": "s-5-7-11-4",
        "original": "We hypothesize that this is due to training data imbalance across languages, where English accounts for over 90% of the multilingual training data.",
        "zh": "我们推测这源于训练数据的语言不均衡：英语占多语言训练数据的 90% 以上。"
       },
       {
-       "id": "s-5-7-7-5",
+       "id": "s-5-7-11-5",
        "original": "Hence, when transferring from English, the model is more likely to assume that the whole sentence is in English as the prompt length increases and produce incorrect pronunciation for the non-English target.",
        "zh": "因此从英语迁移时，随提示变长，模型更倾向于认为整句都是英语，从而对非英语目标产生错误发音。"
       },
       {
-       "id": "s-5-7-7-6",
+       "id": "s-5-7-11-6",
        "original": "Note that during the training phase, the model was only exposed to audio samples and phonemes originating from a single language.",
        "zh": "注意训练阶段模型只接触过来自单一语言的音频样本与音素。"
       }
@@ -3294,22 +4537,148 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-5-8-2-1",
        "original": "We vary the number of training and inference steps, and evaluate models on the zero-shot TTS task( Section 5.2).",
-       "zh": "我们改变训练步数与推理步数，在零样本 TTS 任务（5.2 节）上评估各模型。"
+       "zh": "5.\n（原始数据照录）\nWe vary the number of training and inference steps, and evaluate models on the zero-shot TTS task( Section 5.2)."
       },
       {
        "id": "s-5-8-2-2",
        "original": "Results in Table 8 shows that FM w/ OT trains significantly faster than the other two objectives, achieving the best performance with 100K training steps, and even outperforms SM w/ diff using only 50K updates.",
-       "zh": "表 8 的结果表明 FM w/ OT 的训练明显快于另外两个目标：100K 训练步即取得最佳性能，甚至只用 50K 次更新就超过 SM w/ diff。"
+       "zh": "表 8 的结果显示 FM w/ OT 的训练显著快于另两个目标，100K 训练步即达最佳性能，甚至只用 50K 更新就超过 SM w/ diff。"
       },
       {
        "id": "s-5-8-2-3",
        "original": "Results in Table 9 shows superior inference efficiency of FM w/ OT, which can produce good results with just 8 NFEs, while FM w/ diff requires at least 16 NFEs and SM w/ diff requires over 64 NFEs.",
-       "zh": "表 9 的结果显示 FM w/ OT 的推理效率更高：仅 8 次 NFE 即可产生不错的结果，而 FM w/ diff 至少需要 16 次 NFE，SM w/ diff 需要超过 64 次 NFE。"
+       "zh": "表 9 的结果显示 FM w/ OT 的推理效率优势：仅需 8 次 NFE 即可产出好结果，而 FM w/ diff 至少需要 16 次，SM w/ diff 需要 64 次以上。"
       },
       {
        "id": "s-5-8-2-4",
-       "original": "Complete results are in Table B4 english french german polish portuguese spanish 40 8.5 30 8.0 7.5 20 7.0 6.5 10 40 30 20 10 2 4 6 8 10 2 4 6 8 10 (a) English (b) French 18 40 16 30 14 12 20 10 10 8 2 4 6 8 10 (c) Spanish 80 60 40 20 2 4 6 8 10 2 4 6 8 10 2 4 6 8 10 (e) German (d) Portuguese (f) Polish",
-       "zh": "完整结果见表 B4。（图内文字）english french german polish portuguese spanish；各子图纵轴刻度含 40 30 20 10、8.5 8.0 7.5 7.0 6.5 以及 18 16 14 12、80 60 等与 NFE 2 4 6 8 10 横轴刻度；2 4 6 8 10；（a）English（b）French（c）Spanish（d）Portuguese（e）German（f）Polish。"
+       "original": "Complete results are in Table B4 english french german polish portuguese spanish",
+       "zh": "完整结果见表 B4。（图表语种：english / french / german / polish / portuguese / spanish。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-8-1",
+     "type": "equation",
+     "page": 16,
+     "original": "40 8.5 30 8.0"
+    },
+    {
+     "id": "eq-5-8-2",
+     "type": "equation",
+     "page": 16,
+     "original": "WER WER"
+    },
+    {
+     "id": "eq-5-8-3",
+     "type": "equation",
+     "page": 16,
+     "original": "7.5 20 7.0 6.5 10 40 30"
+    },
+    {
+     "id": "eq-5-8-4",
+     "type": "equation",
+     "page": 16,
+     "original": "WER"
+    },
+    {
+     "id": "eq-5-8-5",
+     "type": "equation",
+     "page": 16,
+     "original": "20 10 2 4 6 8 10"
+    },
+    {
+     "id": "eq-5-8-6",
+     "type": "equation",
+     "page": 16,
+     "original": "Prompt (s)"
+    },
+    {
+     "id": "eq-5-8-7",
+     "type": "equation",
+     "page": 16,
+     "original": "2 4 6 8 10"
+    },
+    {
+     "id": "eq-5-8-8",
+     "type": "equation",
+     "page": 16,
+     "original": "Prompt (s) (a) English (b) French"
+    },
+    {
+     "id": "eq-5-8-9",
+     "type": "equation",
+     "page": 16,
+     "original": "18 40 16 30 14"
+    },
+    {
+     "id": "eq-5-8-10",
+     "type": "equation",
+     "page": 16,
+     "original": "WER WER"
+    },
+    {
+     "id": "eq-5-8-11",
+     "type": "equation",
+     "page": 16,
+     "original": "12 20 10 10 8 2 4 6 8 10"
+    },
+    {
+     "id": "eq-5-8-12",
+     "type": "equation",
+     "page": 16,
+     "original": "Prompt (s) (c) Spanish"
+    },
+    {
+     "id": "eq-5-8-13",
+     "type": "equation",
+     "page": 16,
+     "original": "80 60"
+    },
+    {
+     "id": "eq-5-8-14",
+     "type": "equation",
+     "page": 16,
+     "original": "WER"
+    },
+    {
+     "id": "eq-5-8-15",
+     "type": "equation",
+     "page": 16,
+     "original": "40 20 2 4 6 8 10"
+    },
+    {
+     "id": "eq-5-8-16",
+     "type": "equation",
+     "page": 16,
+     "original": "Prompt (s)"
+    },
+    {
+     "id": "eq-5-8-17",
+     "type": "equation",
+     "page": 16,
+     "original": "2 4 6 8 10"
+    },
+    {
+     "id": "eq-5-8-18",
+     "type": "equation",
+     "page": 16,
+     "original": "Prompt (s)"
+    },
+    {
+     "id": "eq-5-8-19",
+     "type": "equation",
+     "page": 16,
+     "original": "2 4 6 8 10"
+    },
+    {
+     "id": "p-5-8-3",
+     "type": "paragraph",
+     "page": 16,
+     "sentences": [
+      {
+       "id": "s-5-8-3-1",
+       "original": "Prompt (s) (e) German (d) Portuguese (f) Polish",
+       "zh": "（图 B 子图：Prompt (s)；(e) German / (d) Portuguese / (f) Polish。）"
       }
      ]
     },
@@ -3328,16 +4697,46 @@ globalThis.PAPER_2306_15687 = {
      "zh": "表 8：不同目标在训练效率上的对比。推理使用 32 次 NFE。每个模型在单语零样本 TTS 任务上评估。"
     },
     {
-     "id": "p-5-8-3",
+     "id": "p-5-8-4",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-5-8-3-1",
-       "original": "Method upd=50K upd=100K upd=150K Sim-o Sim-o Sim-o FM w/ OT (proposed) 2.5 0.424 2.2 0.487 2.1 0.508 FM w/ diff 76.0 0.066 3.1 0.344 2.6 0.478 SM w/ diff 73.3 0.062 17.4 0.176 5.1 0.349",
-       "zh": "（表内数字）方法 upd=50K／upd=100K／upd=150K（WER 与 SIM-o）：FM w/ OT（本文）2.5 0.424／2.2 0.487／2.1 0.508；FM w/ diff 76.0 0.066／3.1 0.344／2.6 0.478；SM w/ diff 73.3 0.062／17.4 0.176／5.1 0.349。"
+       "id": "s-5-8-4-1",
+       "original": "Method upd=50K upd=100K upd=150K WER Sim-o WER Sim-o WER Sim-o FM w/ OT (proposed)",
+       "zh": "表头：Method × upd=50K / upd=100K / upd=150K 的 WER / Sim-o——FM w/ OT (proposed)（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-5-8-20",
+     "type": "equation",
+     "page": 17,
+     "original": "2.5 0.424 2.2 0.487 2.1 0.508"
+    },
+    {
+     "id": "eq-5-8-21",
+     "type": "equation",
+     "page": 17,
+     "original": "FM w/ diff"
+    },
+    {
+     "id": "eq-5-8-22",
+     "type": "equation",
+     "page": 17,
+     "original": "76.0 0.066 3.1 0.344 2.6 0.478"
+    },
+    {
+     "id": "eq-5-8-23",
+     "type": "equation",
+     "page": 17,
+     "original": "SM w/ diff"
+    },
+    {
+     "id": "eq-5-8-24",
+     "type": "equation",
+     "page": 17,
+     "original": "73.3 0.062 17.4 0.176 5.1 0.349"
     }
    ]
   },
@@ -3446,15 +4845,40 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-6-4-1",
-       "original": "Method NFE=4 NFE=8 NFE=16 NFE=32 Sim-o Sim-o Sim-o Sim-o FM w/ OT (proposed) 2.4 0.410 2.2 0.481 2.2 0.503 2.1 0.508 FM w/ diff 11.5 0.171 3.0 0.359 2.7 0.447 2.6 0.478 SM w/ diff 94.5 0.054 42.3 0.076 11.5 0.218 5.1 0.349 the split by masking out frames in the spectrogram corresponding to 90%, 50%, and 30% of the phonemes of the utterance.",
-       "zh": "（表内数字）方法 NFE=4／NFE=8／NFE=16／NFE=32（WER 与 SIM-o）：FM w/ OT（本文）2.4 0.410／2.2 0.481／2.2 0.503／2.1 0.508；FM w/ diff 11.5 0.171／3.0 0.359／2.7 0.447／2.6 0.478；SM w/ diff 94.5 0.054／42.3 0.076／11.5 0.218／5.1 0.349。（接上）合成方式是掩蔽频谱图中对应该语音 90%、50% 和 30% 音素的帧。"
-      },
-      {
-       "id": "s-6-4-2",
-       "original": "All samples are generated using classifier-free guidance with w = 0.7, midpoint ODE solver (step size 0.0625 / NFE=64), and the regression duration model.",
-       "zh": "所有样本均以 w = 0.7 的分类器自由引导、中点 ODE 求解器（步长 0.0625／NFE=64）以及回归时长模型生成。"
+       "original": "Method NFE=4 NFE=8 NFE=16 NFE=32 WER Sim-o WER Sim-o WER Sim-o WER Sim-o FM w/ OT (proposed)",
+       "zh": "（表：Method × NFE=4/8/16/32 的 WER/Sim-o——FM w/ OT（本文）2.4/0.410、2.2/0.481、2.2/0.503、2.1/0.508；FM w/ diff 11.5/0.171、3.0/0.359、2.7/0.447、2.6/0.478；SM w/ diff 94.5/0.054、42.3/0.076、11.5/0.218、5.1/0.349。）按掩盖句中 90%、50%、30% 音素对应的频谱帧来划分。"
       }
      ]
+    },
+    {
+     "id": "eq-6-1",
+     "type": "equation",
+     "page": 18,
+     "original": "2.4 0.410 2.2 0.481 2.2 0.503 2.1 0.508"
+    },
+    {
+     "id": "eq-6-2",
+     "type": "equation",
+     "page": 18,
+     "original": "FM w/ diff"
+    },
+    {
+     "id": "eq-6-3",
+     "type": "equation",
+     "page": 18,
+     "original": "11.5 0.171 3.0 0.359 2.7 0.447 2.6 0.478"
+    },
+    {
+     "id": "eq-6-4",
+     "type": "equation",
+     "page": 18,
+     "original": "SM w/ diff"
+    },
+    {
+     "id": "eq-6-5",
+     "type": "equation",
+     "page": 18,
+     "original": "94.5 0.054 42.3 0.076 11.5 0.218 5.1 0.349"
     },
     {
      "id": "p-6-5",
@@ -3463,21 +4887,38 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-6-5-1",
+       "original": "the split by masking out frames in the spectrogram corresponding to 90%, 50%, and 30% of the phonemes of the utterance.",
+       "zh": "（表：Method × NFE=4/8/16/32 的 WER/Sim-o——FM w/ OT（本文）2.4/0.410、2.2/0.481、2.2/0.503、2.1/0.508；FM w/ diff 11.5/0.171、3.0/0.359、2.7/0.447、2.6/0.478；SM w/ diff 94.5/0.054、42.3/0.076、11.5/0.218、5.1/0.349。）按掩盖句中 90%、50%、30% 音素对应的频谱帧来划分。"
+      },
+      {
+       "id": "s-6-5-2",
+       "original": "All samples are generated using classifier-free guidance with w = 0.7, midpoint ODE solver (step size 0.0625 / NFE=64), and the regression duration model.",
+       "zh": "所有样本均以 w = 0.7 的分类器自由引导、中点 ODE 求解器（步长 0.0625／NFE=64）以及回归时长模型生成。"
+      }
+     ]
+    },
+    {
+     "id": "p-6-6",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-6-6-1",
        "original": "We consider two detection tasks.",
        "zh": "我们考虑两个检测任务。"
       },
       {
-       "id": "s-6-5-2",
+       "id": "s-6-6-2",
        "original": "The first one is to distinguish between original audio and Voiceboxgenerated audio.",
        "zh": "第一个是区分原始音频与 Voicebox 生成的音频。"
       },
       {
-       "id": "s-6-5-3",
+       "id": "s-6-6-3",
        "original": "The second one is to distinguish resynthesized audio and Voicebox-generated audio.",
        "zh": "第二个是区分重合成音频与 Voicebox 生成的音频。"
       },
       {
-       "id": "s-6-5-4",
+       "id": "s-6-6-4",
        "original": "The resynthesized audio is created by extracting the Mel Spectrogram from original audio and then vocoding it with the HiFi-GAN vocoder.",
        "zh": "重合成音频的构造方式是：从原始音频提取 Mel 频谱图，再用 HiFi-GAN 声码器合成波形。"
       }
@@ -3498,16 +4939,34 @@ globalThis.PAPER_2306_15687 = {
      "zh": "表 10：合成语音检测指标。% Mask 为掩蔽比例，列为准确率（Accuracy）、精确率（Precision）、召回率（Recall）。"
     },
     {
-     "id": "p-6-6",
+     "id": "p-6-7",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-6-6-1",
-       "original": "Original audio vs Voicebox-generated audio 30% 1.000 1.000 1.000 50% 1.000 1.000 1.000 90% 1.000 1.000 1.000 Resynthesized audio vs Voicebox-generated audio 30% 0.704 0.714 0.680 50% 0.809 0.796 0.831 90% 0.907 0.881 0.942",
-       "zh": "（表内数字）原始音频对 Voicebox 生成音频：30% 掩蔽 1.000 1.000 1.000，50% 1.000 1.000 1.000，90% 1.000 1.000 1.000；重合成音频对 Voicebox 生成音频：30% 0.704 0.714 0.680，50% 0.809 0.796 0.831，90% 0.907 0.881 0.942。"
+       "id": "s-6-7-1",
+       "original": "Original audio vs Voicebox-generated audio",
+       "zh": "（图 10 标题：原始音频 vs Voicebox 生成音频的对比。）"
       }
      ]
+    },
+    {
+     "id": "eq-6-6",
+     "type": "equation",
+     "page": 18,
+     "original": "30% 1.000 1.000 1.000 50% 1.000 1.000 1.000 90% 1.000 1.000 1.000"
+    },
+    {
+     "id": "eq-6-7",
+     "type": "equation",
+     "page": 18,
+     "original": "Resynthesized audio vs Voicebox-generated audio"
+    },
+    {
+     "id": "eq-6-8",
+     "type": "equation",
+     "page": 18,
+     "original": "30% 0.704 0.714 0.680 50% 0.809 0.796 0.831 90% 0.907 0.881 0.942"
     }
    ]
   },
@@ -3796,35 +5255,43 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-1-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-1-2",
-       "original": "Aghajanyan, L."
+       "original": "Aghajanyan, L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-1-3",
-       "original": "Yu, A."
+       "original": "Yu, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-1-4",
-       "original": "Conneau, W.-N."
+       "original": "Conneau, W.-N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-1-5",
-       "original": "Hsu, K."
+       "original": "Hsu, K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-1-6",
-       "original": "Hambardzumyan, S."
+       "original": "Hambardzumyan, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-1-7",
-       "original": "Zhang, S."
+       "original": "Zhang, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-1-8",
-       "original": "Roller, N."
+       "original": "Roller, N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-1-9",
@@ -3832,7 +5299,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-1-10",
-       "original": "Levy, and L."
+       "original": "Levy, and L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-1-11",
@@ -3844,7 +5312,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-1-13",
-       "original": "ArXiv, abs/2301.03728, 2023."
+       "original": "ArXiv, abs/2301.03728, 2023.",
+       "zh": "1."
       }
      ]
     },
@@ -3855,7 +5324,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-2-1",
-       "original": "K."
+       "original": "K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-2-2",
@@ -3875,7 +5345,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-2-6",
-       "original": "ArXiv, abs/1804.02135, 2018."
+       "original": "ArXiv, abs/1804.02135, 2018.",
+       "zh": "4."
       }
      ]
     },
@@ -3886,23 +5357,28 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-3-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-3-2",
-       "original": "Ardila, M."
+       "original": "Ardila, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-3-3",
-       "original": "Branson, K."
+       "original": "Branson, K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-3-4",
-       "original": "Davis, M."
+       "original": "Davis, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-3-5",
-       "original": "Henretty, M."
+       "original": "Henretty, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-3-6",
@@ -3910,19 +5386,23 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-3-7",
-       "original": "Meyer, R."
+       "original": "Meyer, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-3-8",
-       "original": "Morais, L."
+       "original": "Morais, L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-3-9",
-       "original": "Saunders, F."
+       "original": "Saunders, F.",
+       "zh": "对于一对 (x, y)，可以使用语音识别模型通过强制对齐估计 l 和 z。（脚注 3：“时间”指音频样本的物理时间，而非 CNF 中的流时间 t ∈ [0, 1]，即从 0 到 1。）"
       },
       {
        "id": "s-references-3-10",
-       "original": "M."
+       "original": "M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       }
      ]
     },
@@ -3956,19 +5436,23 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-5-2",
-       "original": "Babu, C."
+       "original": "Babu, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-5-3",
-       "original": "Wang, A."
+       "original": "Wang, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-5-4",
-       "original": "Tjandra, K."
+       "original": "Tjandra, K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-5-5",
@@ -3976,11 +5460,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-5-6",
-       "original": "Xu, N."
+       "original": "Xu, N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-5-7",
-       "original": "Goyal, K."
+       "original": "Goyal, K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-5-8",
@@ -3992,19 +5478,23 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-5-10",
-       "original": "Pino, A."
+       "original": "Pino, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-5-11",
-       "original": "Baevski, A."
+       "original": "Baevski, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-5-12",
-       "original": "Conneau, and M."
+       "original": "Conneau, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-5-13",
-       "original": "Auli."
+       "original": "Auli.",
+       "zh": "2."
       },
       {
        "id": "s-references-5-14",
@@ -4020,19 +5510,23 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-5-17",
-       "original": "H."
+       "original": "H.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-5-18",
-       "original": "L."
+       "original": "L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-5-19",
-       "original": "Hansen, editors, Interspeech 2022, 23rd Annual Conference of the International Speech Communication Association, Incheon, Korea, 18-22 September 2022, pages 2278–2282."
+       "original": "Hansen, editors, Interspeech 2022, 23rd Annual Conference of the International Speech Communication Association, Incheon, Korea, 18-22 September 2022, pages 2278–2282.",
+       "zh": "2."
       },
       {
        "id": "s-references-5-20",
-       "original": "ISCA, 2022."
+       "original": "ISCA, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -4043,7 +5537,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-6-2",
@@ -4051,15 +5546,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-6-3",
-       "original": "Zhou, A."
+       "original": "Zhou, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-6-4",
-       "original": "Mohamed, and M."
+       "original": "Mohamed, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-6-5",
-       "original": "Auli. wav2vec 2.0: A framework for self-supervised learning of speech representations."
+       "original": "Auli. wav2vec 2.0: A framework for self-supervised learning of speech representations.",
+       "zh": "2."
       },
       {
        "id": "s-references-6-6",
@@ -4074,11 +5572,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "H."
+       "original": "H.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-7-2",
-       "original": "Bai, R."
+       "original": "Bai, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-7-3",
@@ -4090,11 +5590,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-7-5",
-       "original": "Li, M."
+       "original": "Li, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-7-6",
-       "original": "Ma, and L."
+       "original": "Ma, and L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-7-7",
@@ -4106,9 +5608,16 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-7-9",
-       "original": "In International Conference on Machine Learning, 2022."
+       "original": "In International Conference on Machine Learning,",
+       "zh": "2."
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 20,
+     "original": "2022."
     },
     {
      "id": "p-references-8",
@@ -4121,15 +5630,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-8-2",
-       "original": "Borsos, R."
+       "original": "Borsos, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-8-3",
-       "original": "Marinier, D."
+       "original": "Marinier, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-8-4",
-       "original": "Vincent, E."
+       "original": "Vincent, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-8-5",
@@ -4137,7 +5649,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-8-6",
-       "original": "Pietquin, M."
+       "original": "Pietquin, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-8-7",
@@ -4145,15 +5658,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-8-8",
-       "original": "Teboul, D."
+       "original": "Teboul, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-8-9",
-       "original": "Grangier, M."
+       "original": "Grangier, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-8-10",
-       "original": "Tagliasacchi, and N."
+       "original": "Tagliasacchi, and N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-8-11",
@@ -4187,11 +5703,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-10-2",
-       "original": "Borsos, M."
+       "original": "Borsos, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-10-3",
-       "original": "Sharifi, and M."
+       "original": "Sharifi, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-10-4",
@@ -4214,7 +5732,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-11-2",
@@ -4222,7 +5741,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-11-3",
-       "original": "Donahue, and K."
+       "original": "Donahue, and K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-11-4",
@@ -4241,23 +5761,28 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "T."
+       "original": "T.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-12-2",
-       "original": "B."
+       "original": "B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-12-3",
-       "original": "Brown, B."
+       "original": "Brown, B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-12-4",
-       "original": "Mann, N."
+       "original": "Mann, N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-12-5",
-       "original": "Ryder, M."
+       "original": "Ryder, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-12-6",
@@ -4269,7 +5794,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-12-8",
-       "original": "Dhariwal, A."
+       "original": "Dhariwal, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-12-9",
@@ -4281,15 +5807,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-12-11",
-       "original": "Sastry, A."
+       "original": "Sastry, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-12-12",
-       "original": "Askell, S."
+       "original": "Askell, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-12-13",
-       "original": "Agarwal, A."
+       "original": "Agarwal, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-12-14",
@@ -4301,23 +5830,28 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-12-16",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-12-17",
-       "original": "Henighan, R."
+       "original": "Henighan, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-12-18",
-       "original": "Child, A."
+       "original": "Child, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-12-19",
-       "original": "Ramesh, D."
+       "original": "Ramesh, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-12-20",
-       "original": "M."
+       "original": "M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-12-21",
@@ -4325,31 +5859,38 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-12-22",
-       "original": "Wu, C."
+       "original": "Wu, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-12-23",
-       "original": "Winter, C."
+       "original": "Winter, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-12-24",
-       "original": "Hesse, M."
+       "original": "Hesse, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-12-25",
-       "original": "Chen, E."
+       "original": "Chen, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-12-26",
-       "original": "Sigler, M."
+       "original": "Sigler, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-12-27",
-       "original": "Litwin, S."
+       "original": "Litwin, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-12-28",
-       "original": "Gray, B."
+       "original": "Gray, B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-12-29",
@@ -4357,15 +5898,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-12-30",
-       "original": "Clark, C."
+       "original": "Clark, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-12-31",
-       "original": "Berner, S."
+       "original": "Berner, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-12-32",
-       "original": "McCandlish, A."
+       "original": "McCandlish, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-12-33",
@@ -4373,7 +5917,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-12-34",
-       "original": "Sutskever, and D."
+       "original": "Sutskever, and D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-12-35",
@@ -4385,7 +5930,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-12-37",
-       "original": "ArXiv, abs/2005.14165, 2020."
+       "original": "ArXiv, abs/2005.14165, 2020.",
+       "zh": "5."
       }
      ]
     },
@@ -4396,7 +5942,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "E."
+       "original": "E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-13-2",
@@ -4404,31 +5951,38 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-13-3",
-       "original": "Weber, C."
+       "original": "Weber, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-13-4",
-       "original": "D."
+       "original": "D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-13-5",
-       "original": "Shulby, A."
+       "original": "Shulby, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-13-6",
-       "original": "C."
+       "original": "C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-13-7",
-       "original": "Júnior, E."
+       "original": "Júnior, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-13-8",
-       "original": "Gölge, and M."
+       "original": "Gölge, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-13-9",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-13-10",
@@ -4440,7 +5994,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-13-12",
-       "original": "In International Conference on Machine Learning, 2021."
+       "original": "In International Conference on Machine Learning, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -4451,27 +6006,33 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "E."
+       "original": "E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-14-2",
-       "original": "Casanova, A."
+       "original": "Casanova, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-14-3",
-       "original": "C."
+       "original": "C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-14-4",
-       "original": "Junior, C."
+       "original": "Junior, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-14-5",
-       "original": "Shulby, F."
+       "original": "Shulby, F.",
+       "zh": "对于一对 (x, y)，可以使用语音识别模型通过强制对齐估计 l 和 z。（脚注 3：“时间”指音频样本的物理时间，而非 CNF 中的流时间 t ∈ [0, 1]，即从 0 到 1。）"
       },
       {
        "id": "s-references-14-6",
-       "original": "S. d."
+       "original": "S. d.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-14-7",
@@ -4479,19 +6040,23 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-14-8",
-       "original": "P."
+       "original": "P.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-14-9",
-       "original": "Teixeira, M."
+       "original": "Teixeira, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-14-10",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-14-11",
-       "original": "Ponti, and S."
+       "original": "Ponti, and S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-14-12",
@@ -4510,7 +6075,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-15-2",
-       "original": "Language Resources and Evaluation, 56(3):1043–1055, 2022."
+       "original": "Language Resources and Evaluation, 56(3):1043–1055, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -4521,11 +6087,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-16-2",
-       "original": "T."
+       "original": "T.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-16-3",
@@ -4548,11 +6116,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-17-2",
-       "original": "T."
+       "original": "T.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-17-3",
@@ -4568,11 +6138,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-17-6",
-       "original": "Bettencourt, and D."
+       "original": "Bettencourt, and D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-17-7",
-       "original": "K."
+       "original": "K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-17-8",
@@ -4595,11 +6167,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "S."
+       "original": "S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-18-2",
-       "original": "Chen, C."
+       "original": "Chen, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-18-3",
@@ -4611,7 +6185,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-18-5",
-       "original": "Wu, S."
+       "original": "Wu, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-18-6",
@@ -4623,7 +6198,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-18-8",
-       "original": "Li, N."
+       "original": "Li, N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-18-9",
@@ -4650,7 +6226,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-19-2",
-       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6):1505–1518, 2022."
+       "original": "IEEE Journal of Selected Topics in Signal Processing, 16(6):1505–1518, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -4661,7 +6238,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-20-2",
@@ -4699,7 +6277,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-22-2",
@@ -4723,7 +6302,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-22-7",
-       "original": "ArXiv, abs/2210.13438, 2022."
+       "original": "ArXiv, abs/2210.13438, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -4734,7 +6314,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "B."
+       "original": "B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-23-2",
@@ -4742,7 +6323,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-23-3",
-       "original": "Thienpondt, and K."
+       "original": "Thienpondt, and K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-23-4",
@@ -4765,11 +6347,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "P."
+       "original": "P.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-24-2",
-       "original": "Dhariwal and A."
+       "original": "Dhariwal and A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-24-3",
@@ -4781,7 +6365,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-24-5",
-       "original": "Advances in Neural Information Processing Systems, 2021."
+       "original": "Advances in Neural Information Processing Systems, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -4792,19 +6377,23 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-25-2",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-25-3",
-       "original": "Godfrey, E."
+       "original": "Godfrey, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-25-4",
-       "original": "C."
+       "original": "C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-25-5",
@@ -4824,7 +6413,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-25-9",
-       "original": "IEEE Computer Society, 1992."
+       "original": "IEEE Computer Society, 1992.",
+       "zh": "2."
       }
      ]
     },
@@ -4835,7 +6425,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-26-2",
@@ -4843,11 +6434,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-26-3",
-       "original": "Qin, C.-C."
+       "original": "Qin, C.-C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-26-4",
-       "original": "Chiu, N."
+       "original": "Chiu, N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-26-5",
@@ -4863,7 +6456,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-26-8",
-       "original": "Han, S."
+       "original": "Han, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-26-9",
@@ -4875,7 +6469,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-26-11",
-       "original": "Wu, et al. Conformer: Convolution-augmented transformer for speech recognition. arXiv preprint arXiv:2005.08100, 2020."
+       "original": "Wu, et al. Conformer: Convolution-augmented transformer for speech recognition. arXiv preprint arXiv:2005.08100, 2020.",
+       "zh": "5."
       }
      ]
     },
@@ -4886,7 +6481,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "M."
+       "original": "M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-27-2",
@@ -4898,11 +6494,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-27-4",
-       "original": "Unterthiner, B."
+       "original": "Unterthiner, B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-27-5",
-       "original": "Nessler, and S."
+       "original": "Nessler, and S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-27-6",
@@ -4925,7 +6523,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-28-2",
@@ -4937,7 +6536,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-28-4",
-       "original": "Classifier-free diffusion guidance. arXiv preprint arXiv:2207.12598, 2022."
+       "original": "Classifier-free diffusion guidance. arXiv preprint arXiv:2207.12598, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -4948,11 +6548,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-29-2",
-       "original": "Ho, A."
+       "original": "Ho, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-29-3",
@@ -4979,19 +6581,23 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-30-2",
-       "original": "Hoffmann, S."
+       "original": "Hoffmann, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-30-3",
-       "original": "Borgeaud, A."
+       "original": "Borgeaud, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-30-4",
-       "original": "Mensch, E."
+       "original": "Mensch, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-30-5",
@@ -4999,15 +6605,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-30-6",
-       "original": "Cai, E."
+       "original": "Cai, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-30-7",
-       "original": "Rutherford, D. de Las Casas, L."
+       "original": "Rutherford, D. de Las Casas, L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-30-8",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-30-9",
@@ -5015,7 +6624,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-30-10",
-       "original": "Welbl, A."
+       "original": "Welbl, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-30-11",
@@ -5023,31 +6633,38 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-30-12",
-       "original": "Hennigan, E."
+       "original": "Hennigan, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-30-13",
-       "original": "Noland, K."
+       "original": "Noland, K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-30-14",
-       "original": "Millican, G. van den Driessche, B."
+       "original": "Millican, G. van den Driessche, B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-30-15",
-       "original": "Damoc, A."
+       "original": "Damoc, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-30-16",
-       "original": "Guy, S."
+       "original": "Guy, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-30-17",
-       "original": "Osindero, K."
+       "original": "Osindero, K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-30-18",
-       "original": "Simonyan, E."
+       "original": "Simonyan, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-30-19",
@@ -5055,7 +6672,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-30-20",
-       "original": "W."
+       "original": "W.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-30-21",
@@ -5063,7 +6681,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-30-22",
-       "original": "Vinyals, and L."
+       "original": "Vinyals, and L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-30-23",
@@ -5082,7 +6701,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-31-2",
-       "original": "ArXiv, abs/2203.15556, 2022."
+       "original": "ArXiv, abs/2203.15556, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -5093,7 +6713,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "W.-N."
+       "original": "W.-N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-32-2",
@@ -5101,11 +6722,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-32-3",
-       "original": "Zhang, R."
+       "original": "Zhang, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-32-4",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-32-5",
@@ -5163,11 +6786,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "W.-N."
+       "original": "W.-N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-34-2",
-       "original": "Hsu, B."
+       "original": "Hsu, B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-34-3",
@@ -5175,19 +6800,23 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-34-4",
-       "original": "H."
+       "original": "H.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-34-5",
-       "original": "Tsai, K."
+       "original": "Tsai, K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-34-6",
-       "original": "Lakhotia, R."
+       "original": "Lakhotia, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-34-7",
-       "original": "Salakhutdinov, and A."
+       "original": "Salakhutdinov, and A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-34-8",
@@ -5199,7 +6828,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-34-10",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 29:3451–3460, 2021."
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 29:3451–3460, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -5210,7 +6840,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-35-1",
-       "original": "W.-N."
+       "original": "W.-N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-35-2",
@@ -5218,7 +6849,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-35-3",
-       "original": "Remez, B."
+       "original": "Remez, B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-35-4",
@@ -5234,9 +6866,16 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-35-7",
-       "original": "Revise: Self-supervised speech resynthesis with visual input for universal and generalized speech enhancement. arXiv preprint arXiv:2212.11377, 2022."
+       "original": "Revise: Self-supervised speech resynthesis with visual input for universal and generalized speech enhancement. arXiv preprint arXiv:2212.11377,",
+       "zh": "2."
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 21,
+     "original": "2022."
     },
     {
      "id": "p-references-36",
@@ -5245,15 +6884,18 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-36-2",
-       "original": "Huang, M."
+       "original": "Huang, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-36-3",
-       "original": "W."
+       "original": "W.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-36-4",
@@ -5265,11 +6907,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-36-6",
-       "original": "Wang, D."
+       "original": "Wang, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-36-7",
-       "original": "Su, D."
+       "original": "Su, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-36-8",
@@ -5289,7 +6933,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-36-12",
-       "original": "In International Joint Conference on Artificial Intelligence, 2022."
+       "original": "In International Joint Conference on Artificial Intelligence, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -5308,7 +6953,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-37-3",
-       "original": "Zhang, R."
+       "original": "Zhang, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-37-4",
@@ -5320,7 +6966,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-37-6",
-       "original": "Shen, F."
+       "original": "Shen, F.",
+       "zh": "对于一对 (x, y)，可以使用语音识别模型通过强制对齐估计 l 和 z。（脚注 3：“时间”指音频样本的物理时间，而非 CNF 中的流时间 t ∈ [0, 1]，即从 0 到 1。）"
       },
       {
        "id": "s-references-37-7",
@@ -5328,7 +6975,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-37-8",
-       "original": "Nguyen, R."
+       "original": "Nguyen, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-37-9",
@@ -5355,19 +7003,23 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-38-2",
-       "original": "Kahn, M."
+       "original": "Kahn, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-38-3",
-       "original": "Rivière, W."
+       "original": "Rivière, W.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-38-4",
-       "original": "Zheng, E."
+       "original": "Zheng, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-38-5",
@@ -5375,7 +7027,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-38-6",
-       "original": "Xu, P.-E."
+       "original": "Xu, P.-E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-38-7",
@@ -5387,11 +7040,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-38-9",
-       "original": "Liptchinsky, R."
+       "original": "Liptchinsky, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-38-10",
-       "original": "Collobert, C."
+       "original": "Collobert, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-38-11",
@@ -5403,11 +7058,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-38-13",
-       "original": "Synnaeve, A."
+       "original": "Synnaeve, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-38-14",
-       "original": "Joulin, A. rahman Mohamed, and E."
+       "original": "Joulin, A. rahman Mohamed, and E.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-38-15",
@@ -5430,7 +7087,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "H."
+       "original": "H.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-39-2",
@@ -5438,11 +7096,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-39-3",
-       "original": "Kaneko, K."
+       "original": "Kaneko, K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-39-4",
-       "original": "Tanaka, and N."
+       "original": "Tanaka, and N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-39-5",
@@ -5465,15 +7125,18 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-40-1",
-       "original": "E."
+       "original": "E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-40-2",
-       "original": "Kharitonov, A."
+       "original": "Kharitonov, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-40-3",
-       "original": "Lee, A."
+       "original": "Lee, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-40-4",
@@ -5485,7 +7148,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-40-6",
-       "original": "Copet, K."
+       "original": "Copet, K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-40-7",
@@ -5493,15 +7157,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-40-8",
-       "original": "Nguyen, M."
+       "original": "Nguyen, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-40-9",
-       "original": "Rivière, A. rahman Mohamed, E."
+       "original": "Rivière, A. rahman Mohamed, E.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-40-10",
-       "original": "Dupoux, and W.-N."
+       "original": "Dupoux, and W.-N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-40-11",
@@ -5513,7 +7180,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-40-13",
-       "original": "In Annual Meeting of the Association for Computational Linguistics, 2021."
+       "original": "In Annual Meeting of the Association for Computational Linguistics, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -5524,11 +7192,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-41-1",
-       "original": "E."
+       "original": "E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-41-2",
-       "original": "Kharitonov, D."
+       "original": "Kharitonov, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-41-3",
@@ -5536,11 +7206,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-41-4",
-       "original": "Borsos, R."
+       "original": "Borsos, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-41-5",
-       "original": "Marinier, S."
+       "original": "Marinier, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-41-6",
@@ -5548,15 +7220,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-41-7",
-       "original": "Pietquin, M."
+       "original": "Pietquin, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-41-8",
-       "original": "Sharifi, M."
+       "original": "Sharifi, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-41-9",
-       "original": "Tagliasacchi, and N."
+       "original": "Tagliasacchi, and N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-41-10",
@@ -5564,9 +7239,16 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-41-11",
-       "original": "Speak, read and prompt: High-fidelity text-to-speech with minimal supervision, 2023."
+       "original": "Speak, read and prompt: High-fidelity text-to-speech with minimal supervision,",
+       "zh": "3."
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 22,
+     "original": "2023."
     },
     {
      "id": "p-references-42",
@@ -5575,19 +7257,23 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-42-1",
-       "original": "K."
+       "original": "K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-42-2",
-       "original": "Kilgour, M."
+       "original": "Kilgour, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-42-3",
-       "original": "Zuluaga, D."
+       "original": "Zuluaga, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-42-4",
-       "original": "Roblek, and M."
+       "original": "Roblek, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-42-5",
@@ -5610,11 +7296,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-43-1",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-43-2",
-       "original": "Kim, S."
+       "original": "Kim, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-43-3",
@@ -5622,7 +7310,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-43-4",
-       "original": "Kong, and S."
+       "original": "Kong, and S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-43-5",
@@ -5645,7 +7334,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-44-1",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-44-2",
@@ -5665,7 +7355,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-44-6",
-       "original": "In International Conference on Machine Learning, 2021."
+       "original": "In International Conference on Machine Learning, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -5676,11 +7367,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-45-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-45-2",
-       "original": "P."
+       "original": "P.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-45-3",
@@ -5696,7 +7389,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-45-6",
-       "original": "CoRR, abs/1412.6980, 2014."
+       "original": "CoRR, abs/1412.6980, 2014.",
+       "zh": "2."
       }
      ]
     },
@@ -5707,11 +7401,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-46-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-46-2",
-       "original": "P."
+       "original": "P.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-46-3",
@@ -5738,11 +7434,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-47-1",
-       "original": "F."
+       "original": "F.",
+       "zh": "对于一对 (x, y)，可以使用语音识别模型通过强制对齐估计 l 和 z。（脚注 3：“时间”指音频样本的物理时间，而非 CNF 中的流时间 t ∈ [0, 1]，即从 0 到 1。）"
       },
       {
        "id": "s-references-47-2",
-       "original": "Kreuk, A."
+       "original": "Kreuk, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-47-3",
@@ -5750,27 +7448,33 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-47-4",
-       "original": "Copet, E."
+       "original": "Copet, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-47-5",
-       "original": "Kharitonov, T.-A."
+       "original": "Kharitonov, T.-A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-47-6",
-       "original": "Nguyen, M."
+       "original": "Nguyen, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-47-7",
-       "original": "Rivière, W.-N."
+       "original": "Rivière, W.-N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-47-8",
-       "original": "Hsu, A."
+       "original": "Hsu, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-47-9",
-       "original": "Mohamed, E."
+       "original": "Mohamed, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-47-10",
@@ -5786,7 +7490,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-47-13",
-       "original": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, 2022."
+       "original": "In Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -5797,7 +7502,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-48-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-48-2",
@@ -5813,7 +7519,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-48-5",
-       "original": "IEEE, 1993."
+       "original": "IEEE, 1993.",
+       "zh": "3."
       }
      ]
     },
@@ -5824,15 +7531,18 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-49-1",
-       "original": "K."
+       "original": "K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-49-2",
-       "original": "Lakhotia, E."
+       "original": "Lakhotia, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-49-3",
-       "original": "Kharitonov, W.-N."
+       "original": "Kharitonov, W.-N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-49-4",
@@ -5840,11 +7550,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-49-5",
-       "original": "Adi, A."
+       "original": "Adi, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-49-6",
-       "original": "Polyak, B."
+       "original": "Polyak, B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-49-7",
@@ -5856,19 +7568,23 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-49-9",
-       "original": "Copet, A."
+       "original": "Copet, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-49-10",
-       "original": "Baevski, A."
+       "original": "Baevski, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-49-11",
-       "original": "B."
+       "original": "B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-49-12",
-       "original": "Mohamed, and E."
+       "original": "Mohamed, and E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-49-13",
@@ -5887,7 +7603,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-50-1",
-       "original": "Transactions of the Association for Computational Linguistics, 9:1336–1354, 2021."
+       "original": "Transactions of the Association for Computational Linguistics, 9:1336–1354, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -5898,7 +7615,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-51-1",
-       "original": "A. Ła´ncucki."
+       "original": "A. Ła´ncucki.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-51-2",
@@ -5906,7 +7624,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-51-3",
-       "original": "In International Conference on Acoustics, Speech and Signal Processing, 2021."
+       "original": "In International Conference on Acoustics, Speech and Signal Processing, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -5917,11 +7636,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-52-1",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-52-2",
-       "original": "Le Roux, S."
+       "original": "Le Roux, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-52-3",
@@ -5933,7 +7654,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-52-5",
-       "original": "R."
+       "original": "R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-52-6",
@@ -5964,11 +7686,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-53-2",
-       "original": "Lipman, R."
+       "original": "Lipman, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-53-3",
-       "original": "T."
+       "original": "T.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-53-4",
@@ -5980,11 +7704,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-53-6",
-       "original": "Ben-Hamu, M."
+       "original": "Ben-Hamu, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-53-7",
-       "original": "Nickel, and M."
+       "original": "Nickel, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-53-8",
@@ -5996,7 +7722,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-53-10",
-       "original": "In International Conference on Learning Representations, 2023."
+       "original": "In International Conference on Learning Representations, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -6007,7 +7734,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-54-1",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-54-2",
@@ -6019,11 +7747,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-54-4",
-       "original": "Toda, D."
+       "original": "Toda, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-54-5",
-       "original": "Saito, F."
+       "original": "Saito, F.",
+       "zh": "对于一对 (x, y)，可以使用语音识别模型通过强制对齐估计 l 和 z。（脚注 3：“时间”指音频样本的物理时间，而非 CNF 中的流时间 t ∈ [0, 1]，即从 0 到 1。）"
       },
       {
        "id": "s-references-54-6",
@@ -6031,7 +7761,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-54-7",
-       "original": "H."
+       "original": "H.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-54-8",
@@ -6054,7 +7785,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-55-2",
-       "original": "ArXiv, abs/1804.04262, 2018."
+       "original": "ArXiv, abs/1804.04262, 2018.",
+       "zh": "4."
       }
      ]
     },
@@ -6065,23 +7797,28 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-56-1",
-       "original": "M."
+       "original": "M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-56-2",
-       "original": "McAuliffe, M."
+       "original": "McAuliffe, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-56-3",
-       "original": "Socolof, S."
+       "original": "Socolof, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-56-4",
-       "original": "Mihuc, M."
+       "original": "Mihuc, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-56-5",
-       "original": "Wagner, and M."
+       "original": "Wagner, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-56-6",
@@ -6104,11 +7841,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-57-1",
-       "original": "T."
+       "original": "T.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-57-2",
-       "original": "Nguyen, E."
+       "original": "Nguyen, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-57-3",
@@ -6120,15 +7859,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-57-5",
-       "original": "Adi, W.-N."
+       "original": "Adi, W.-N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-57-6",
-       "original": "Hsu, A."
+       "original": "Hsu, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-57-7",
-       "original": "M."
+       "original": "M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-57-8",
@@ -6136,19 +7878,23 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-57-9",
-       "original": "Tomasello, R."
+       "original": "Tomasello, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-57-10",
-       "original": "Algayres, B."
+       "original": "Algayres, B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-57-11",
-       "original": "Sagot, A."
+       "original": "Sagot, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-57-12",
-       "original": "Mohamed, and E."
+       "original": "Mohamed, and E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-57-13",
@@ -6160,7 +7906,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-57-15",
-       "original": "Transactions of the Association for Computational Linguistics, 11:250–266, 2022."
+       "original": "Transactions of the Association for Computational Linguistics, 11:250–266, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -6171,7 +7918,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-58-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-58-2",
@@ -6179,7 +7927,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-58-3",
-       "original": "Dhariwal, A."
+       "original": "Dhariwal, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-58-4",
@@ -6191,7 +7940,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-58-6",
-       "original": "Mishkin, B."
+       "original": "Mishkin, B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-58-7",
@@ -6199,7 +7949,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-58-8",
-       "original": "Sutskever, and M."
+       "original": "Sutskever, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-58-9",
@@ -6218,7 +7969,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-59-2",
-       "original": "In International Conference on Machine Learning, 2021."
+       "original": "In International Conference on Machine Learning, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6237,11 +7989,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-60-3",
-       "original": "Chen, D."
+       "original": "Chen, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-60-4",
-       "original": "Povey, and S."
+       "original": "Povey, and S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-60-5",
@@ -6253,7 +8007,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-60-7",
-       "original": "International Conference on Acoustics, Speech and Signal Processing, 2015."
+       "original": "International Conference on Acoustics, Speech and Signal Processing, 2015.",
+       "zh": "5."
       }
      ]
     },
@@ -6264,11 +8019,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-61-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-61-2",
-       "original": "S."
+       "original": "S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-61-3",
@@ -6280,19 +8037,23 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-61-5",
-       "original": "Zhang, C.-C."
+       "original": "Zhang, C.-C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-61-6",
-       "original": "Chiu, B."
+       "original": "Chiu, B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-61-7",
-       "original": "Zoph, E."
+       "original": "Zoph, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-61-8",
-       "original": "D."
+       "original": "D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-61-9",
@@ -6323,19 +8084,23 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-62-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-62-2",
-       "original": "Paszke, S."
+       "original": "Paszke, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-62-3",
-       "original": "Gross, F."
+       "original": "Gross, F.",
+       "zh": "对于一对 (x, y)，可以使用语音识别模型通过强制对齐估计 l 和 z。（脚注 3：“时间”指音频样本的物理时间，而非 CNF 中的流时间 t ∈ [0, 1]，即从 0 到 1。）"
       },
       {
        "id": "s-references-62-4",
-       "original": "Massa, A."
+       "original": "Massa, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-62-5",
@@ -6355,11 +8120,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-62-9",
-       "original": "Lin, N."
+       "original": "Lin, N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-62-10",
-       "original": "Gimelshein, L."
+       "original": "Gimelshein, L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-62-11",
@@ -6378,7 +8145,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-63-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-63-2",
@@ -6390,23 +8158,28 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-63-4",
-       "original": "Copet, E."
+       "original": "Copet, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-63-5",
-       "original": "Kharitonov, K."
+       "original": "Kharitonov, K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-63-6",
-       "original": "Lakhotia, W.-N."
+       "original": "Lakhotia, W.-N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-63-7",
-       "original": "Hsu, A."
+       "original": "Hsu, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-63-8",
-       "original": "Mohamed, and E."
+       "original": "Mohamed, and E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-63-9",
@@ -6425,9 +8198,16 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-64-2",
-       "original": "In Interspeech, 2021."
+       "original": "In Interspeech,",
+       "zh": "1."
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 23,
+     "original": "2021."
     },
     {
      "id": "p-references-65",
@@ -6452,7 +8232,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-65-5",
-       "original": "Sadekova, and M."
+       "original": "Sadekova, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-65-6",
@@ -6464,7 +8245,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-65-8",
-       "original": "In International Conference on Machine Learning, 2021."
+       "original": "In International Conference on Machine Learning, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6475,11 +8257,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-66-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-66-2",
-       "original": "Povey, A."
+       "original": "Povey, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-66-3",
@@ -6487,7 +8271,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-66-4",
-       "original": "Boulianne, L."
+       "original": "Boulianne, L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-66-5",
@@ -6495,11 +8280,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-66-6",
-       "original": "Glembek, N."
+       "original": "Glembek, N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-66-7",
-       "original": "Goel, M."
+       "original": "Goel, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-66-8",
@@ -6519,7 +8306,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-66-12",
-       "original": "In Workshop on automatic speech recognition and understanding, 2011."
+       "original": "In Workshop on automatic speech recognition and understanding, 2011.",
+       "zh": "1."
       }
      ]
     },
@@ -6534,15 +8322,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-67-2",
-       "original": "Press, N."
+       "original": "Press, N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-67-3",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-67-4",
-       "original": "Smith, and M."
+       "original": "Smith, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-67-5",
@@ -6554,7 +8345,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-67-7",
-       "original": "ArXiv, abs/2108.12409, 2021."
+       "original": "ArXiv, abs/2108.12409, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6565,7 +8357,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-68-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-68-2",
@@ -6573,7 +8366,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-68-3",
-       "original": "W."
+       "original": "W.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-68-4",
@@ -6585,7 +8379,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-68-6",
-       "original": "Brockman, C."
+       "original": "Brockman, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-68-7",
@@ -6601,7 +8396,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-68-10",
-       "original": "ArXiv, abs/2212.04356, 2022."
+       "original": "ArXiv, abs/2212.04356, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -6612,11 +8408,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-69-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-69-2",
-       "original": "Ramesh, M."
+       "original": "Ramesh, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-69-3",
@@ -6624,19 +8422,23 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-69-4",
-       "original": "Goh, S."
+       "original": "Goh, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-69-5",
-       "original": "Gray, C."
+       "original": "Gray, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-69-6",
-       "original": "Voss, A."
+       "original": "Voss, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-69-7",
-       "original": "Radford, M."
+       "original": "Radford, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-69-8",
@@ -6652,7 +8454,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-69-11",
-       "original": "ArXiv, abs/2102.12092, 2021."
+       "original": "ArXiv, abs/2102.12092, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6667,7 +8470,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-70-2",
-       "original": "Ren, C."
+       "original": "Ren, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-70-3",
@@ -6679,7 +8483,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-70-5",
-       "original": "Qin, S."
+       "original": "Qin, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-70-6",
@@ -6699,7 +8504,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-70-10",
-       "original": "In International Conference on Learning Representations, 2021."
+       "original": "In International Conference on Learning Representations, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6710,19 +8516,23 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-71-1",
-       "original": "F."
+       "original": "F.",
+       "zh": "对于一对 (x, y)，可以使用语音识别模型通过强制对齐估计 l 和 z。（脚注 3：“时间”指音频样本的物理时间，而非 CNF 中的流时间 t ∈ [0, 1]，即从 0 到 1。）"
       },
       {
        "id": "s-references-71-2",
-       "original": "Ribeiro, D."
+       "original": "Ribeiro, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-71-3",
-       "original": "Florêncio, C."
+       "original": "Florêncio, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-71-4",
-       "original": "Zhang, and M."
+       "original": "Zhang, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-71-5",
@@ -6734,9 +8544,16 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-71-7",
-       "original": "In International Conference on Acoustics, Speech and Signal Processing, 2011."
+       "original": "In International Conference on Acoustics, Speech and Signal Processing,",
+       "zh": "1."
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 23,
+     "original": "2011."
     },
     {
      "id": "p-references-72",
@@ -6745,15 +8562,18 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-72-1",
-       "original": "C."
+       "original": "C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-72-2",
-       "original": "Robinson, N."
+       "original": "Robinson, N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-72-3",
-       "original": "Obin, and A."
+       "original": "Obin, and A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-72-4",
@@ -6776,15 +8596,18 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-73-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-73-2",
-       "original": "Rombach, A."
+       "original": "Rombach, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-73-3",
-       "original": "Blattmann, D."
+       "original": "Blattmann, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-73-4",
@@ -6792,7 +8615,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-73-5",
-       "original": "Esser, and B."
+       "original": "Esser, and B.",
+       "zh": "附录 B.1 表明这一版本带来更好的结果。"
       },
       {
        "id": "s-references-73-6",
@@ -6804,7 +8628,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-73-8",
-       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2022."
+       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -6815,7 +8640,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-74-1",
-       "original": "C."
+       "original": "C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-74-2",
@@ -6827,7 +8653,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-74-4",
-       "original": "Chang, C."
+       "original": "Chang, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-74-5",
@@ -6839,11 +8666,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-74-7",
-       "original": "Salimans, D."
+       "original": "Salimans, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-74-8",
-       "original": "Fleet, and M."
+       "original": "Fleet, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-74-9",
@@ -6855,7 +8684,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-74-11",
-       "original": "In ACM SIGGRAPH 2022 Conference Proceedings, 2022."
+       "original": "In ACM SIGGRAPH 2022 Conference Proceedings, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -6866,11 +8696,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-75-1",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-75-2",
-       "original": "Serrà, S."
+       "original": "Serrà, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-75-3",
@@ -6878,7 +8710,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-75-4",
-       "original": "Pons, R."
+       "original": "Pons, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-75-5",
@@ -6886,7 +8719,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-75-6",
-       "original": "Araz, and D."
+       "original": "Araz, and D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-75-7",
@@ -6898,7 +8732,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-75-9",
-       "original": "ArXiv, abs/2206.03065, 2022."
+       "original": "ArXiv, abs/2206.03065, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -6909,27 +8744,33 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-76-1",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-76-2",
-       "original": "Shen, R."
+       "original": "Shen, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-76-3",
-       "original": "Pang, R."
+       "original": "Pang, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-76-4",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-76-5",
-       "original": "Weiss, M."
+       "original": "Weiss, M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-76-6",
-       "original": "Schuster, N."
+       "original": "Schuster, N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-76-7",
@@ -6949,19 +8790,23 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-76-11",
-       "original": "Wang, R."
+       "original": "Wang, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-76-12",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-76-13",
-       "original": "SkerryRyan, R."
+       "original": "SkerryRyan, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-76-14",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-76-15",
@@ -6992,7 +8837,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-77-1",
-       "original": "K."
+       "original": "K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-77-2",
@@ -7012,7 +8858,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-77-6",
-       "original": "Leng, L."
+       "original": "Leng, L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-77-7",
@@ -7020,7 +8867,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-77-8",
-       "original": "Qin, S."
+       "original": "Qin, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-77-9",
@@ -7032,7 +8880,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-77-11",
-       "original": "Naturalspeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers. arXiv preprint arXiv:2304.09116, 2023."
+       "original": "Naturalspeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers. arXiv preprint arXiv:2304.09116, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -7043,11 +8892,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-78-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-78-2",
-       "original": "Skerry-Ryan, E."
+       "original": "Skerry-Ryan, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-78-3",
@@ -7059,7 +8910,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-78-5",
-       "original": "Wang, D."
+       "original": "Wang, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-78-6",
@@ -7067,19 +8919,23 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-78-7",
-       "original": "Shor, R."
+       "original": "Shor, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-78-8",
-       "original": "Weiss, R."
+       "original": "Weiss, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-78-9",
-       "original": "Clark, and R."
+       "original": "Clark, and R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-78-10",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       }
      ]
     },
@@ -7098,7 +8954,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-79-3",
-       "original": "In international conference on machine learning, pages 4693–4702."
+       "original": "In international conference on machine learning, pages 4693–4702.",
+       "zh": "2."
       },
       {
        "id": "s-references-79-4",
@@ -7117,7 +8974,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-80-2",
-       "original": "Song and S."
+       "original": "Song and S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-80-3",
@@ -7156,7 +9014,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-81-5",
-       "original": "Cong, C."
+       "original": "Cong, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-81-6",
@@ -7176,15 +9035,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-81-10",
-       "original": "Yi, L."
+       "original": "Yi, L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-81-11",
-       "original": "He, F."
+       "original": "He, F.",
+       "zh": "对于一对 (x, y)，可以使用语音识别模型通过强制对齐估计 l 和 z。（脚注 3：“时间”指音频样本的物理时间，而非 CNF 中的流时间 t ∈ [0, 1]，即从 0 到 1。）"
       },
       {
        "id": "s-references-81-12",
-       "original": "K."
+       "original": "K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-81-13",
@@ -7192,7 +9054,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-81-14",
-       "original": "Qin, S."
+       "original": "Qin, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-81-15",
@@ -7208,7 +9071,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-81-18",
-       "original": "ArXiv, abs/2205.04421, 2022."
+       "original": "ArXiv, abs/2205.04421, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -7219,19 +9083,23 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-82-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-82-2",
-       "original": "Vaswani, N."
+       "original": "Vaswani, N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-82-3",
-       "original": "M."
+       "original": "M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-82-4",
-       "original": "Shazeer, N."
+       "original": "Shazeer, N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-82-5",
@@ -7239,19 +9107,23 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-82-6",
-       "original": "Uszkoreit, L."
+       "original": "Uszkoreit, L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-82-7",
-       "original": "Jones, A."
+       "original": "Jones, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-82-8",
-       "original": "N."
+       "original": "N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-82-9",
-       "original": "Gomez, L."
+       "original": "Gomez, L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-82-10",
@@ -7278,11 +9150,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-83-1",
-       "original": "C."
+       "original": "C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-83-2",
-       "original": "Wang, W.-N."
+       "original": "Wang, W.-N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-83-3",
@@ -7290,11 +9164,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-83-4",
-       "original": "Adi, A."
+       "original": "Adi, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-83-5",
-       "original": "Polyak, A."
+       "original": "Polyak, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-83-6",
@@ -7310,7 +9186,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-83-9",
-       "original": "M."
+       "original": "M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-83-10",
@@ -7318,7 +9195,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-83-11",
-       "original": "In Conference on Empirical Methods in Natural Language Processing, 2021."
+       "original": "In Conference on Empirical Methods in Natural Language Processing, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -7329,11 +9207,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-84-1",
-       "original": "C."
+       "original": "C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-84-2",
-       "original": "Wang, S."
+       "original": "Wang, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-84-3",
@@ -7345,11 +9225,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-84-5",
-       "original": "Zhang, L."
+       "original": "Zhang, L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-84-6",
-       "original": "Zhou, S."
+       "original": "Zhou, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-84-7",
@@ -7369,15 +9251,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-84-11",
-       "original": "Li, L."
+       "original": "Li, L.",
+       "zh": "对大多数强制对齐器而言，只有词间以及句首、句尾的帧才能被对齐到 SIL。"
       },
       {
        "id": "s-references-84-12",
-       "original": "He, S."
+       "original": "He, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-84-13",
-       "original": "Zhao, and F."
+       "original": "Zhao, and F.",
+       "zh": "对于一对 (x, y)，可以使用语音识别模型通过强制对齐估计 l 和 z。（脚注 3：“时间”指音频样本的物理时间，而非 CNF 中的流时间 t ∈ [0, 1]，即从 0 到 1。）"
       },
       {
        "id": "s-references-84-14",
@@ -7396,7 +9281,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-85-1",
-       "original": "ArXiv, abs/2301.02111, 2023."
+       "original": "ArXiv, abs/2301.02111, 2023.",
+       "zh": "1."
       }
      ]
     },
@@ -7411,7 +9297,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-86-2",
-       "original": "Wang, D."
+       "original": "Wang, D.",
+       "zh": "为嵌入流步，应用正弦位置编码把 t ∈ [0, 1] 映射为 ht ∈ R^D。"
       },
       {
        "id": "s-references-86-3",
@@ -7419,15 +9306,18 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-86-4",
-       "original": "Zhang, R."
+       "original": "Zhang, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-86-5",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-86-6",
-       "original": "Skerry-Ryan, E."
+       "original": "Skerry-Ryan, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-86-7",
@@ -7439,7 +9329,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-86-9",
-       "original": "Xiao, F."
+       "original": "Xiao, F.",
+       "zh": "对于一对 (x, y)，可以使用语音识别模型通过强制对齐估计 l 和 z。（脚注 3：“时间”指音频样本的物理时间，而非 CNF 中的流时间 t ∈ [0, 1]，即从 0 到 1。）"
       },
       {
        "id": "s-references-86-10",
@@ -7447,11 +9338,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-86-11",
-       "original": "Jia, and R."
+       "original": "Jia, and R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-86-12",
-       "original": "A."
+       "original": "A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-86-13",
@@ -7482,11 +9375,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-87-3",
-       "original": "Du, L.-R."
+       "original": "Du, L.-R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-87-4",
-       "original": "Dai, and C.-H."
+       "original": "Dai, and C.-H.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-87-5",
@@ -7498,9 +9393,16 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-87-7",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 23(1): 7–19, 2014."
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 23(1):",
+       "zh": "4."
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 24,
+     "original": "7–19, 2014."
     },
     {
      "id": "p-references-88",
@@ -7509,15 +9411,18 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-88-1",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-88-2",
-       "original": "Yamagishi, C."
+       "original": "Yamagishi, C.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-88-3",
-       "original": "Veaux, and K."
+       "original": "Veaux, and K.",
+       "zh": "它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。"
       },
       {
        "id": "s-references-88-4",
@@ -7536,15 +9441,18 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-89-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-89-2",
-       "original": "Yamamoto, E."
+       "original": "Yamamoto, E.",
+       "zh": "与 VALL-E 相比，Voicebox 有若干设计优势：1）Voicebox 可以同时利用过去和未来的上下文，这对只需生成中间某一段的编辑任务很有用；2）Voicebox 的生成速度远快于 VALL-E，因为流匹配只需不到 10 次 NAR 步即可产出高质量样本，而 VALL-E 需要 1 次 AR 步加 7 次 NAR 步；3）Voicebox 将时长建模与音频建模解耦，可实现更细粒度的对齐控制；4）Voicebox 兼容任何连续特征，包括 Encodec 嵌入。"
       },
       {
        "id": "s-references-89-3",
-       "original": "Song, and J.-M."
+       "original": "Song, and J.-M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-89-4",
@@ -7567,7 +9475,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-90-1",
-       "original": "N."
+       "original": "N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-90-2",
@@ -7575,11 +9484,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-90-3",
-       "original": "Skripniuk, S."
+       "original": "Skripniuk, S.",
+       "zh": "MOS 评测也证实，Voicebox 的质量与相似度在主观上优于 YourTTS。"
       },
       {
        "id": "s-references-90-4",
-       "original": "Abdelnabi, and M."
+       "original": "Abdelnabi, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-90-5",
@@ -7591,7 +9502,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-90-7",
-       "original": "In Proceedings of the IEEE/CVF International conference on computer vision, pages 14448–14457, 2021."
+       "original": "In Proceedings of the IEEE/CVF International conference on computer vision, pages 14448–14457, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -7602,15 +9514,18 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-91-1",
-       "original": "N."
+       "original": "N.",
+       "zh": "设 x = (x1, x2, · · · , xN) 为 N 帧的音频样本，y = (y1, y2, · · · , yM) 为 M 个音素的文本序列，l = (l1, l2, · · · , lM) 为逐音素时长，其中 lj 表示 yj 对应多少音频帧，且 Σ(j=1..M) lj = N。"
       },
       {
        "id": "s-references-91-2",
-       "original": "Zeghidour, A."
+       "original": "Zeghidour, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-91-3",
-       "original": "Luebs, A."
+       "original": "Luebs, A.",
+       "zh": "关于音素表示、数据变换和声码器的更多细节见附录 A.1 至 A.3。"
       },
       {
        "id": "s-references-91-4",
@@ -7618,7 +9533,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-91-5",
-       "original": "Skoglund, and M."
+       "original": "Skoglund, and M.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-91-6",
@@ -7630,9 +9546,16 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-91-8",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30: 495–507, 2022."
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30:",
+       "zh": "2."
       }
      ]
+    },
+    {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 24,
+     "original": "495–507, 2022."
     },
     {
      "id": "p-references-92",
@@ -7641,7 +9564,8 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-references-92-1",
-       "original": "H."
+       "original": "H.",
+       "zh": "我们在附录 C.1 中验证了它的有效性，并比较了备选特征。"
       },
       {
        "id": "s-references-92-2",
@@ -7649,7 +9573,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-92-3",
-       "original": "Dang, R."
+       "original": "Dang, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-92-4",
@@ -7657,11 +9582,13 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-92-5",
-       "original": "Zhang, R."
+       "original": "Zhang, R.",
+       "zh": "定性来看，A3T 在不以音频上下文为条件时生成同一种机械音；VITS-LJ 质量高但只有单一音色，因此二者 FSD 都很高（质量或多样性差），不过 VITS-LJ 的 WER 很低。"
       },
       {
        "id": "s-references-92-6",
-       "original": "J."
+       "original": "J.",
+       "zh": "它通过一个条件向量场对 q(l | y, lctx) 建模，把 (x, xctx, z) 替换为 (l, lctx, y)，流也做相应替换，其中 l, lctx ∈ R^(M×1)，y ∈ [K]^M。"
       },
       {
        "id": "s-references-92-7",
@@ -7681,7 +9608,8 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-references-92-11",
-       "original": "Libritts: A corpus derived from librispeech for text-to-speech. arXiv preprint arXiv:1904.02882, 2019."
+       "original": "Libritts: A corpus derived from librispeech for text-to-speech. arXiv preprint arXiv:1904.02882, 2019.",
+       "zh": "4."
       }
      ]
     }
@@ -8012,14 +9940,80 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-A-4-2-1",
        "original": "Table A1: Number of MLS test samples after filtering.",
-       "zh": "表 A1：过滤后的 MLS 测试样本数。"
+       "zh": "表 A1：过滤后 MLS 测试样本数量。"
       },
       {
        "id": "s-A-4-2-2",
-       "original": "Language #samples before filtering #samples after filtering English 3769 3535 Spanish 2385 2323 German 3394 3183 French 2426 2284 Polish 520 508 Portuguese 871 838",
-       "zh": "（表内数字）语言｜过滤前样本数｜过滤后样本数：英语 3769 3535；西班牙语 2385 2323；德语 3394 3183；法语 2426 2284；波兰语 520 508；葡萄牙语 871 838。"
+       "original": "Language #samples before filtering #samples after filtering English",
+       "zh": "表头：Language / #samples before filtering / #samples after filtering——English（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-A-4-1",
+     "type": "equation",
+     "page": 26,
+     "original": "3769 3535"
+    },
+    {
+     "id": "eq-A-4-2",
+     "type": "equation",
+     "page": 26,
+     "original": "Spanish"
+    },
+    {
+     "id": "eq-A-4-3",
+     "type": "equation",
+     "page": 26,
+     "original": "2385 2323"
+    },
+    {
+     "id": "eq-A-4-4",
+     "type": "equation",
+     "page": 26,
+     "original": "German"
+    },
+    {
+     "id": "eq-A-4-5",
+     "type": "equation",
+     "page": 26,
+     "original": "3394 3183"
+    },
+    {
+     "id": "eq-A-4-6",
+     "type": "equation",
+     "page": 26,
+     "original": "French"
+    },
+    {
+     "id": "eq-A-4-7",
+     "type": "equation",
+     "page": 26,
+     "original": "2426 2284"
+    },
+    {
+     "id": "eq-A-4-8",
+     "type": "equation",
+     "page": 26,
+     "original": "Polish"
+    },
+    {
+     "id": "eq-A-4-9",
+     "type": "equation",
+     "page": 26,
+     "original": "520 508"
+    },
+    {
+     "id": "eq-A-4-10",
+     "type": "equation",
+     "page": 26,
+     "original": "Portuguese"
+    },
+    {
+     "id": "eq-A-4-11",
+     "type": "equation",
+     "page": 26,
+     "original": "871 838"
     }
    ]
   },
@@ -8288,7 +10282,7 @@ globalThis.PAPER_2306_15687 = {
    "page": 27,
    "title": {
     "original": "Method",
-    "zh": "方法对比（表 B2 残留）"
+    "zh": "方法完整结果（表 B4 残留）"
    },
    "blocks": [
     {
@@ -8298,10 +10292,52 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-method-1-1",
-       "original": "Loss Zero-Shot TTS (cross-sentence) Diverse sampling SIM-r FSD Flow Matching Masked 2.1 0.597 3.1 242.5 Flow Matching All 2.0 0.528 3.1 243.1 Regression Masked 2.0 0.520 2.9 278.8 Regression All 2.0 0.512 2.9 282.8",
-       "zh": "（表内数字）损失｜零样本 TTS（跨句）｜多样化采样（WER、SIM-r、FSD）：流匹配＋掩蔽 2.1 0.597／3.1 242.5；流匹配＋全帧 2.0 0.528／3.1 243.1；回归＋掩蔽 2.0 0.520／2.9 278.8；回归＋全帧 2.0 0.512／2.9 282.8。"
+       "original": "Loss Zero-Shot TTS (cross-sentence) Diverse sampling WER SIM-r WER FSD Flow Matching Masked",
+       "zh": "表头：Loss × Zero-Shot TTS (cross-sentence)（WER / SIM-r）× Diverse sampling（WER / FSD）——Flow Matching / Masked（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-method-1",
+     "type": "equation",
+     "page": 27,
+     "original": "2.1 0.597 3.1 242.5"
+    },
+    {
+     "id": "eq-method-2",
+     "type": "equation",
+     "page": 27,
+     "original": "Flow Matching All"
+    },
+    {
+     "id": "eq-method-3",
+     "type": "equation",
+     "page": 27,
+     "original": "2.0 0.528 3.1 243.1"
+    },
+    {
+     "id": "eq-method-4",
+     "type": "equation",
+     "page": 27,
+     "original": "Regression Masked"
+    },
+    {
+     "id": "eq-method-5",
+     "type": "equation",
+     "page": 27,
+     "original": "2.0 0.520 2.9 278.8"
+    },
+    {
+     "id": "eq-method-6",
+     "type": "equation",
+     "page": 27,
+     "original": "Regression All"
+    },
+    {
+     "id": "eq-method-7",
+     "type": "equation",
+     "page": 27,
+     "original": "2.0 0.512 2.9 282.8"
     }
    ]
   },
@@ -8378,10 +10414,16 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-train-data-hr-1-1",
-       "original": "Zero-Shot TTS Diverse sampling SIM-r FSD 60 2.30 0.151 3.48 280.48 600 2.11 0.417 3.19 205.39 6,000 2.08 0.573 2.96 195.52 60,000 2.05 0.645 2.95 214.38",
-       "zh": "（表内数字）训练数据（小时）｜零样本 TTS（WER、SIM-r）｜多样化采样（WER、FSD）：60 2.30 0.151／3.48 280.48；600 2.11 0.417／3.19 205.39；6,000 2.08 0.573／2.96 195.52；60,000 2.05 0.645／2.95 214.38。"
+       "original": "Zero-Shot TTS Diverse sampling WER SIM-r WER FSD",
+       "zh": "表头：Zero-Shot TTS（WER / SIM-r）× Diverse sampling（WER / FSD）。"
       }
      ]
+    },
+    {
+     "id": "eq-train-data-hr-1",
+     "type": "equation",
+     "page": 27,
+     "original": "60 2.30 0.151 3.48 280.48 600 2.11 0.417 3.19 205.39 6,000 2.08 0.573 2.96 195.52 60,000 2.05 0.645 2.95 214.38"
     }
    ]
   },
@@ -8443,10 +10485,52 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-method-2-1-1",
-       "original": "Train Steps NFE ZS-TTS (cross-sentence) Diverse sampling SIM-r FSD 4 2.7 0.303 0.362 4.8 276.499 8 2.5 0.353 0.412 4.8 235.958 16 2.4 0.366 0.425 4.7 227.485 32 2.5 0.364 0.424 4.7 225.931 50000 4 2.5 0.347 0.404 4.3 258.358 8 2.2 0.411 0.468 4.2 216.512 16 2.3 0.429 0.483 4.3 206.538 32 2.2 0.431 0.487 4.2 203.792 FM w/ OT 100000 4 2.4 0.356 0.410 4.0 249.712 8 2.2 0.430 0.481 4.0 208.511 16 2.2 0.453 0.503 4.0 198.040 32 2.1 0.458 0.508 3.9 195.304 150000 4 99.9 0.050 0.050 99.8 3478.910 8 99.9 0.047 0.047 99.9 4704.237 16 98.8 0.052 0.048 96.5 5336.591 32 76.0 0.060 0.066 49.5 2485.400 50000 4 98.9 0.048 0.048 96.6 4486.401 8 14.6 0.104 0.137 12.0 669.564 16 4.0 0.210 0.262 7.0 381.891 32 3.1 0.285 0.344 6.3 294.777 FM w/ diff 100000 4 11.5 0.132 0.171 11.4 692.560 8 3.0 0.305 0.359 5.6 334.237 16 2.7 0.391 0.447 5.4 244.067 32 2.6 0.423 0.478 5.2 224.963 150000 4 99.6 0.050 0.048 99.7 2816.083 8 99.3 0.051 0.048 99.6 3079.040 16 97.5 0.052 0.050 98.4 3710.340 32 73.3 0.057 0.062 86.2 3011.030 50000 4 99.4 0.050 0.050 99.3 3474.579 8 97.2 0.049 0.048 97.9 3600.423 16 53.9 0.064 0.071 69.6 2060.892 32 17.4 0.150 0.176 34.4 1071.579 SM w/ diff 100000 4 94.5 0.055 0.054 79.4 2953.417 8 42.3 0.070 0.076 27.5 1071.010 16 11.5 0.191 0.218 12.8 698.411 32 5.1 0.309 0.349 8.8 519.468 150000",
-       "zh": "（表内数字）方法｜训练步数｜NFE｜零样本 TTS（跨句：WER、SIM-o/SIM-r）｜多样化采样（WER、FSD）。训练 Step 取值 50000/100000/150000。FM w/ OT：50000 步 NFE=4/8/16/32 为 2.7 0.303 0.362 4.8 276.499／2.5 0.353 0.412 4.8 235.958／2.4 0.366 0.425 4.7 227.485／2.5 0.364 0.424 4.7 225.931；50000 续／100000 步为 2.5 0.347 0.404 4.3 258.358／2.2 0.411 0.468 4.2 216.512／2.3 0.429 0.483 4.3 206.538／2.2 0.431 0.487 4.2 203.792；100000 步为 2.4 0.356 0.410 4.0 249.712／2.2 0.430 0.481 4.0 208.511／2.2 0.453 0.503 4.0 198.040／2.1 0.458 0.508 3.9 195.304（另有 150000 步行 99.9 0.050 0.050 99.8 3478.910／99.9 0.047 0.047 99.9 4704.237／98.8 0.052 0.048 96.5 5336.591／76.0 0.060 0.066 49.5 2485.400）。FM w/ diff：50000 步为 99.9 0.050 0.050 99.8 3478.910／99.9 0.047 0.047 99.9 4704.237／98.8 0.052 0.048 96.5 5336.591／76.0 0.060 0.066 49.5 2485.400；50000 续／100000 步为 98.9 0.048 0.048 96.6 4486.401／14.6 0.104 0.137 12.0 669.564／4.0 0.210 0.262 7.0 381.891／3.1 0.285 0.344 6.3 294.777；100000 步为 11.5 0.132 0.171 11.4 692.560／3.0 0.305 0.359 5.6 334.237／2.7 0.391 0.447 5.4 244.067／2.6 0.423 0.478 5.2 224.963（另有 150000 步行 99.6 0.050 0.048 99.7 2816.083／99.3 0.051 0.048 99.6 3079.040／97.5 0.052 0.050 98.4 3710.340／73.3 0.057 0.062 86.2 3011.030）。SM w/ diff：50000 步为 99.6 0.050 0.048 99.7 2816.083／99.3 0.051 0.048 99.6 3079.040／97.5 0.052 0.050 98.4 3710.340／73.3 0.057 0.062 86.2 3011.030；50000 续／100000 步为 99.4 0.050 0.050 99.3 3474.579／97.2 0.049 0.048 97.9 3600.423／53.9 0.064 0.071 69.6 2060.892／17.4 0.150 0.176 34.4 1071.579；100000 步为 94.5 0.055 0.054 79.4 2953.417／42.3 0.070 0.076 27.5 1071.010／11.5 0.191 0.218 12.8 698.411／5.1 0.309 0.349 8.8 519.468（末行为 150000 步）。"
+       "original": "Train Steps NFE ZS-TTS (cross-sentence) Diverse sampling WER SIM-o SIM-r WER FSD",
+       "zh": "表头：Train Steps / NFE × ZS-TTS (cross-sentence)（WER / SIM-o / SIM-r）× Diverse sampling（WER / FSD）。"
       }
      ]
+    },
+    {
+     "id": "eq-method-2-1",
+     "type": "equation",
+     "page": 28,
+     "original": "4 2.7 0.303 0.362 4.8 276.499 8 2.5 0.353 0.412 4.8 235.958 16 2.4 0.366 0.425 4.7 227.485 32 2.5 0.364 0.424 4.7 225.931 50000 4 2.5 0.347 0.404 4.3 258.358 8 2.2 0.411 0.468 4.2 216.512 16 2.3 0.429 0.483 4.3 206.538 32 2.2 0.431 0.487 4.2 203.792"
+    },
+    {
+     "id": "eq-method-2-2",
+     "type": "equation",
+     "page": 28,
+     "original": "FM w/ OT"
+    },
+    {
+     "id": "eq-method-2-3",
+     "type": "equation",
+     "page": 28,
+     "original": "100000 4 2.4 0.356 0.410 4.0 249.712 8 2.2 0.430 0.481 4.0 208.511 16 2.2 0.453 0.503 4.0 198.040 32 2.1 0.458 0.508 3.9 195.304 150000 4 99.9 0.050 0.050 99.8 3478.910 8 99.9 0.047 0.047 99.9 4704.237 16 98.8 0.052 0.048 96.5 5336.591 32 76.0 0.060 0.066 49.5 2485.400 50000 4 98.9 0.048 0.048 96.6 4486.401 8 14.6 0.104 0.137 12.0 669.564 16 4.0 0.210 0.262 7.0 381.891 32 3.1 0.285 0.344 6.3 294.777"
+    },
+    {
+     "id": "eq-method-2-4",
+     "type": "equation",
+     "page": 28,
+     "original": "FM w/ diff"
+    },
+    {
+     "id": "eq-method-2-5",
+     "type": "equation",
+     "page": 28,
+     "original": "100000 4 11.5 0.132 0.171 11.4 692.560 8 3.0 0.305 0.359 5.6 334.237 16 2.7 0.391 0.447 5.4 244.067 32 2.6 0.423 0.478 5.2 224.963 150000 4 99.6 0.050 0.048 99.7 2816.083 8 99.3 0.051 0.048 99.6 3079.040 16 97.5 0.052 0.050 98.4 3710.340 32 73.3 0.057 0.062 86.2 3011.030 50000 4 99.4 0.050 0.050 99.3 3474.579 8 97.2 0.049 0.048 97.9 3600.423 16 53.9 0.064 0.071 69.6 2060.892 32 17.4 0.150 0.176 34.4 1071.579"
+    },
+    {
+     "id": "eq-method-2-6",
+     "type": "equation",
+     "page": 28,
+     "original": "SM w/ diff"
+    },
+    {
+     "id": "eq-method-2-7",
+     "type": "equation",
+     "page": 28,
+     "original": "100000 4 94.5 0.055 0.054 79.4 2953.417 8 42.3 0.070 0.076 27.5 1071.010 16 11.5 0.191 0.218 12.8 698.411 32 5.1 0.309 0.349 8.8 519.468 150000"
     }
    ]
   },
@@ -8510,16 +10594,190 @@ globalThis.PAPER_2306_15687 = {
        "zh": "“sp”表示添加的噪声为语音，“non-sp”表示非语音。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-wer",
+   "num": null,
+   "level": 2,
+   "page": 29,
+   "title": {
+    "original": "WER",
+    "zh": "WER"
+   },
+   "blocks": [
     {
-     "id": "p-B-4-4",
+     "id": "p-wer-1",
      "type": "paragraph",
      "page": 29,
      "sentences": [
       {
-       "id": "s-B-4-4-1",
-       "original": "sp non-sp sp non-sp sp non-sp sp non-sp SNR=-10dB, overlap=30% SNR=10dB, overlap=30% Noisy speech 26.7 24.9 0.202 0.238 3.7 3.1 0.605 0.603 Demucs 20.5 19.7 0.247 0.247 3.2 2.8 0.570 0.567 A3T 7.5 0.058 same as left VB-En (α = 0.7) 2.2 0.566 same as left SNR=-10dB, overlap=50% SNR=10dB, overlap=50% Noisy speech 43.6 40.8 0.256 0.292 4.5 3.8 0.649 0.649 Demucs 34.3 32.5 0.291 0.288 3.8 3.3 0.616 0.613 A3T 11.5 0.064 same as left VB-En (α = 0.7) 2.0 0.612 same as left SNR=-10dB, overlap=70% SNR=10dB, overlap=70% Noisy speech 60.0 56.0 0.260 0.303 6.3 4.6 0.595 0.592 Demucs 49.5 45.4 0.293 0.294 4.6 3.8 0.572 0.564 A3T 16.6 0.063 same as left VB-En (α = 0.7) 2.0 0.559 same as left",
-       "zh": "（表内数字）各条件下（sp/non-sp）的 WER 与 SIM-o。SNR=-10dB、overlap=30%：含噪语音 26.7 24.9 0.202 0.238，Demucs 20.5 19.7 0.247 0.247，A3T 7.5 0.058，VB-En（α = 0.7）2.2 0.566；SNR=10dB、overlap=30%：含噪 3.7 3.1 0.605 0.603，Demucs 3.2 2.8 0.570 0.567。SNR=-10dB、overlap=50%：含噪 43.6 40.8 0.256 0.292，Demucs 34.3 32.5 0.291 0.288，A3T 11.5 0.064，VB-En 2.0 0.612；SNR=10dB、overlap=50%：含噪 4.5 3.8 0.649 0.649，Demucs 3.8 3.3 0.616 0.613。SNR=-10dB、overlap=70%：含噪 60.0 56.0 0.260 0.303，Demucs 49.5 45.4 0.293 0.294，A3T 16.6 0.063，VB-En 2.0 0.559；SNR=10dB、overlap=70%：含噪 6.3 4.6 0.595 0.592，Demucs 4.6 3.8 0.572 0.564。A3T 与 VB-En 在低噪声（10dB）各重叠比例下的结果与左栏相同（same as left）。"
+       "id": "s-wer-1-1",
+       "original": "SIM-o WER SIM-o sp non-sp sp non-sp sp non-sp sp non-sp SNR=-10dB, overlap=30% SNR=10dB, overlap=30% Noisy speech",
+       "zh": "表头：SIM-o / WER / SIM-o（sp / non-sp 各列）——SNR=-10dB, overlap=30% 与 SNR=10dB, overlap=30% 的 Noisy speech（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-wer-1",
+     "type": "equation",
+     "page": 29,
+     "original": "26.7 24.9 0.202 0.238 3.7 3.1 0.605 0.603"
+    },
+    {
+     "id": "eq-wer-2",
+     "type": "equation",
+     "page": 29,
+     "original": "Demucs"
+    },
+    {
+     "id": "eq-wer-3",
+     "type": "equation",
+     "page": 29,
+     "original": "20.5 19.7 0.247 0.247 3.2 2.8 0.570 0.567"
+    },
+    {
+     "id": "eq-wer-4",
+     "type": "equation",
+     "page": 29,
+     "original": "A3T"
+    },
+    {
+     "id": "eq-wer-5",
+     "type": "equation",
+     "page": 29,
+     "original": "7.5 0.058"
+    },
+    {
+     "id": "eq-wer-6",
+     "type": "equation",
+     "page": 29,
+     "original": "same as left"
+    },
+    {
+     "id": "eq-wer-7",
+     "type": "equation",
+     "page": 29,
+     "original": "VB-En (α = 0.7) 2.2 0.566"
+    },
+    {
+     "id": "p-wer-2",
+     "type": "paragraph",
+     "page": 29,
+     "sentences": [
+      {
+       "id": "s-wer-2-1",
+       "original": "same as left SNR=-10dB, overlap=50% SNR=10dB, overlap=50% Noisy speech",
+       "zh": "（表格行）same as left；SNR=-10dB, overlap=50% 与 SNR=10dB, overlap=50% 的 Noisy speech（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-wer-8",
+     "type": "equation",
+     "page": 29,
+     "original": "43.6 40.8 0.256 0.292 4.5 3.8 0.649 0.649"
+    },
+    {
+     "id": "eq-wer-9",
+     "type": "equation",
+     "page": 29,
+     "original": "Demucs"
+    },
+    {
+     "id": "eq-wer-10",
+     "type": "equation",
+     "page": 29,
+     "original": "34.3 32.5 0.291 0.288 3.8 3.3 0.616 0.613"
+    },
+    {
+     "id": "eq-wer-11",
+     "type": "equation",
+     "page": 29,
+     "original": "A3T"
+    },
+    {
+     "id": "eq-wer-12",
+     "type": "equation",
+     "page": 29,
+     "original": "11.5 0.064"
+    },
+    {
+     "id": "eq-wer-13",
+     "type": "equation",
+     "page": 29,
+     "original": "same as left"
+    },
+    {
+     "id": "eq-wer-14",
+     "type": "equation",
+     "page": 29,
+     "original": "VB-En (α = 0.7) 2.0 0.612"
+    },
+    {
+     "id": "p-wer-3",
+     "type": "paragraph",
+     "page": 29,
+     "sentences": [
+      {
+       "id": "s-wer-3-1",
+       "original": "same as left SNR=-10dB, overlap=70% SNR=10dB, overlap=70% Noisy speech",
+       "zh": "（表格行）same as left；SNR=-10dB, overlap=70% 与 SNR=10dB, overlap=70% 的 Noisy speech（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-wer-15",
+     "type": "equation",
+     "page": 29,
+     "original": "60.0 56.0 0.260 0.303 6.3 4.6 0.595 0.592"
+    },
+    {
+     "id": "eq-wer-16",
+     "type": "equation",
+     "page": 29,
+     "original": "Demucs"
+    },
+    {
+     "id": "eq-wer-17",
+     "type": "equation",
+     "page": 29,
+     "original": "49.5 45.4 0.293 0.294 4.6 3.8 0.572 0.564"
+    },
+    {
+     "id": "eq-wer-18",
+     "type": "equation",
+     "page": 29,
+     "original": "A3T"
+    },
+    {
+     "id": "eq-wer-19",
+     "type": "equation",
+     "page": 29,
+     "original": "16.6 0.063"
+    },
+    {
+     "id": "eq-wer-20",
+     "type": "equation",
+     "page": 29,
+     "original": "same as left"
+    },
+    {
+     "id": "eq-wer-21",
+     "type": "equation",
+     "page": 29,
+     "original": "VB-En (α = 0.7) 2.0 0.559"
+    },
+    {
+     "id": "p-wer-4",
+     "type": "paragraph",
+     "page": 29,
+     "sentences": [
+      {
+       "id": "s-wer-4-1",
+       "original": "same as left",
+       "zh": "（表格行）2.0 / 0.559；same as left（同左）。"
       }
      ]
     }
@@ -8719,15 +10977,64 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-audio-feature-vocoder-1-1",
-       "original": "SIM-o (WavLM) SIM-o (ECAPA) d-c d-o d-c d-o d-c d-o Ground truth 2.1 4.7 1.000 1.000 1.000 1.000 Mel spectrogram / HiFi-GAN 2.1 4.7 0.915 0.909 0.766 0.762 Mel spectrogram / Parallel WaveGAN 2.1 5.2 0.868 0.847 0.721 0.711 Encodec post-quantized feature / Encodec decoder 2.1 4.5 0.943 0.944 0.724 0.722 Encodec pre-quantized feature / Encodec decoder 2.1 4.4 0.943 0.944 0.724 0.722 hours of English speech, where each partition has the same set of speakers and the same number of utterances for each speaker.",
-       "zh": "（表内数字）SIM-o（WavLM）／SIM-o（ECAPA），d-c 与 d-o：真实语音 2.1 4.7，1.000 1.000，1.000 1.000；Mel 频谱图／HiFi-GAN 2.1 4.7，0.915 0.909，0.766 0.762；Mel 频谱图／Parallel WaveGAN 2.1 5.2，0.868 0.847，0.721 0.711；Encodec 量化后特征／解码器 2.1 4.5，0.943 0.944，0.724 0.722；Encodec 量化前特征／解码器 2.1 4.4，0.943 0.944，0.724 0.722。（接上）小时英语语音构造两个划分，两个划分含相同的说话人集合，且每位说话人的语音条数相同。"
-      },
-      {
-       "id": "s-audio-feature-vocoder-1-2",
-       "original": "The first partition is considered the reference set.",
-       "zh": "第一个划分作为参考集。"
+       "original": "WER SIM-o (WavLM) SIM-o (ECAPA) d-c d-o d-c d-o d-c d-o Ground truth",
+       "zh": "（表：特征/声码器 × WER × SIM-o (WavLM) d-c/d-o × SIM-o (ECAPA) d-c/d-o——Ground truth 2.1/4.7/1.000/1.000/1.000/1.000；Mel/HiFi-GAN 2.1/4.7/0.915/0.909/0.766/0.762；Mel/Parallel WaveGAN 2.1/5.2/0.868/0.847/0.721/0.711；Encodec 后量化特征 2.1/4.5/0.943/0.944/0.724/0.722；Encodec 前量化特征 2.1/4.4/0.943/0.944/0.724/0.722。）各分区含相同说话人集合且每说话人句数相同。"
       }
      ]
+    },
+    {
+     "id": "eq-audio-feature-vocoder-1",
+     "type": "equation",
+     "page": 30,
+     "original": "2.1 4.7 1.000 1.000 1.000 1.000"
+    },
+    {
+     "id": "eq-audio-feature-vocoder-2",
+     "type": "equation",
+     "page": 30,
+     "original": "Mel spectrogram / HiFi-GAN"
+    },
+    {
+     "id": "eq-audio-feature-vocoder-3",
+     "type": "equation",
+     "page": 30,
+     "original": "2.1 4.7 0.915 0.909 0.766 0.762"
+    },
+    {
+     "id": "eq-audio-feature-vocoder-4",
+     "type": "equation",
+     "page": 30,
+     "original": "Mel spectrogram / Parallel WaveGAN"
+    },
+    {
+     "id": "eq-audio-feature-vocoder-5",
+     "type": "equation",
+     "page": 30,
+     "original": "2.1 5.2 0.868 0.847 0.721 0.711"
+    },
+    {
+     "id": "eq-audio-feature-vocoder-6",
+     "type": "equation",
+     "page": 30,
+     "original": "Encodec post-quantized feature / Encodec decoder"
+    },
+    {
+     "id": "eq-audio-feature-vocoder-7",
+     "type": "equation",
+     "page": 30,
+     "original": "2.1 4.5 0.943 0.944 0.724 0.722"
+    },
+    {
+     "id": "eq-audio-feature-vocoder-8",
+     "type": "equation",
+     "page": 30,
+     "original": "Encodec pre-quantized feature / Encodec decoder"
+    },
+    {
+     "id": "eq-audio-feature-vocoder-9",
+     "type": "equation",
+     "page": 30,
+     "original": "2.1 4.4 0.943 0.944 0.724 0.722"
     },
     {
      "id": "p-audio-feature-vocoder-2",
@@ -8736,28 +11043,13 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-audio-feature-vocoder-2-1",
-       "original": "To test the sensitivity to sample size, we use the second partition to create subsets by sampling r% of utterances from each speaker in that partition.",
-       "zh": "为测试对样本量的敏感性，我们用第二个划分构造子集：从该划分中每位说话人抽取 r% 的语音。"
+       "original": "hours of English speech, where each partition has the same set of speakers and the same number of utterances for each speaker.",
+       "zh": "（表：特征/声码器 × WER × SIM-o (WavLM) d-c/d-o × SIM-o (ECAPA) d-c/d-o——Ground truth 2.1/4.7/1.000/1.000/1.000/1.000；Mel/HiFi-GAN 2.1/4.7/0.915/0.909/0.766/0.762；Mel/Parallel WaveGAN 2.1/5.2/0.868/0.847/0.721/0.711；Encodec 后量化特征 2.1/4.5/0.943/0.944/0.724/0.722；Encodec 前量化特征 2.1/4.4/0.943/0.944/0.724/0.722。）各分区含相同说话人集合且每说话人句数相同。"
       },
       {
        "id": "s-audio-feature-vocoder-2-2",
-       "original": "This sampling method is denoted as “utt”.",
-       "zh": "该采样方式记为“utt”。"
-      },
-      {
-       "id": "s-audio-feature-vocoder-2-3",
-       "original": "We computed that on average, each speaker contributed approximately 2.33 sessions, with each session containing around 52.45 utterances.",
-       "zh": "经计算，每位说话人平均贡献约 2.33 个会话，每个会话约含 52.45 条语音。"
-      },
-      {
-       "id": "s-audio-feature-vocoder-2-4",
-       "original": "Therefore, the subsets created using the sampling method are expected to have similar audio style distributions to the reference set and the FSD is expected to stay low regardless of the subset size.",
-       "zh": "因此，用该采样方法构造的子集与参考集的音频风格分布预期相近，无论子集大小如何，FSD 都应保持较低。"
-      },
-      {
-       "id": "s-audio-feature-vocoder-2-5",
-       "original": "We consider r ∈{1, 5, 10, 25, 50, 100}.",
-       "zh": "我们取 r ∈{1, 5, 10, 25, 50, 100}。"
+       "original": "The first partition is considered the reference set.",
+       "zh": "第一个划分作为参考集。"
       }
      ]
     },
@@ -8768,28 +11060,28 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-audio-feature-vocoder-3-1",
-       "original": "To test the correlation with diversity, we again use the second partition to create subsets by sampling r% of speakers and including all the utterances in the partition from those speakers.",
-       "zh": "为测试与多样性的相关性，我们同样从第二个划分构造子集：抽取 r% 的说话人，并纳入这些说话人在该划分中的全部语音。"
+       "original": "To test the sensitivity to sample size, we use the second partition to create subsets by sampling r% of utterances from each speaker in that partition.",
+       "zh": "为测试对样本量的敏感性，我们用第二个划分构造子集：从该划分中每位说话人抽取 r% 的语音。"
       },
       {
        "id": "s-audio-feature-vocoder-3-2",
-       "original": "This sampling method is denoted as “spk” where a smaller r leads to a subset with fewer speakers and hence lower diversity.",
-       "zh": "该采样方式记为“spk”：r 越小，子集说话人越少，多样性越低。"
+       "original": "This sampling method is denoted as “utt”.",
+       "zh": "该采样方式记为“utt”。"
       },
       {
        "id": "s-audio-feature-vocoder-3-3",
-       "original": "Therefore the FSD is expected to increase as r decreases.",
-       "zh": "因此 FSD 预期随 r 减小而上升。"
+       "original": "We computed that on average, each speaker contributed approximately 2.33 sessions, with each session containing around 52.45 utterances.",
+       "zh": "经计算，每位说话人平均贡献约 2.33 个会话，每个会话约含 52.45 条语音。"
       },
       {
        "id": "s-audio-feature-vocoder-3-4",
-       "original": "The same set of values for r is considered.",
-       "zh": "r 取与之前相同的一组值。"
+       "original": "Therefore, the subsets created using the sampling method are expected to have similar audio style distributions to the reference set and the FSD is expected to stay low regardless of the subset size.",
+       "zh": "因此，用该采样方法构造的子集与参考集的音频风格分布预期相近，无论子集大小如何，FSD 都应保持较低。"
       },
       {
        "id": "s-audio-feature-vocoder-3-5",
-       "original": "For the same r, the “utt” subset should always have a lower FSD than the “spk” subset.",
-       "zh": "在相同 r 下，“utt”子集的 FSD 应始终低于“spk”子集。"
+       "original": "We consider r ∈{1, 5, 10, 25, 50, 100}.",
+       "zh": "我们取 r ∈{1, 5, 10, 25, 50, 100}。"
       }
      ]
     },
@@ -8800,23 +11092,28 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-audio-feature-vocoder-4-1",
-       "original": "We compare three different features for computing the FSD score.",
-       "zh": "我们比较三种用于计算 FSD 的特征。"
+       "original": "To test the correlation with diversity, we again use the second partition to create subsets by sampling r% of speakers and including all the utterances in the partition from those speakers.",
+       "zh": "为测试与多样性的相关性，我们同样从第二个划分构造子集：抽取 r% 的说话人，并纳入这些说话人在该划分中的全部语音。"
       },
       {
        "id": "s-audio-feature-vocoder-4-2",
-       "original": "The first is the supervised WavLM-TDCNN feature used for computing audio similarity (SIM-r and SIM-o).",
-       "zh": "第一种是用于计算音频相似度（SIM-r 与 SIM-o）的有监督 WavLM-TDCNN 特征。"
+       "original": "This sampling method is denoted as “spk” where a smaller r leads to a subset with fewer speakers and hence lower diversity.",
+       "zh": "该采样方式记为“spk”：r 越小，子集说话人越少，多样性越低。"
       },
       {
        "id": "s-audio-feature-vocoder-4-3",
-       "original": "The second is the self-supervised wav2vec 2.0 BASE [Baevski et al., 2020] feature reduced to 128 dimensions using principle component analysis (PCA).",
-       "zh": "第二种是经主成分分析（PCA）降到 128 维的自监督 wav2vec 2.0 BASE [Baevski et al., 2020] 特征。"
+       "original": "Therefore the FSD is expected to increase as r decreases.",
+       "zh": "因此 FSD 预期随 r 减小而上升。"
       },
       {
        "id": "s-audio-feature-vocoder-4-4",
-       "original": "The last one is the supervised audio event classification model feature that is used to compute FAD [Kilgour et al., 2019] for non-speech audio generation.",
-       "zh": "最后一种是用于为非语音音频生成计算 FAD [Kilgour et al., 2019] 的有监督音频事件分类模型特征。"
+       "original": "The same set of values for r is considered.",
+       "zh": "r 取与之前相同的一组值。"
+      },
+      {
+       "id": "s-audio-feature-vocoder-4-5",
+       "original": "For the same r, the “utt” subset should always have a lower FSD than the “spk” subset.",
+       "zh": "在相同 r 下，“utt”子集的 FSD 应始终低于“spk”子集。"
       }
      ]
     },
@@ -8827,18 +11124,23 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-audio-feature-vocoder-5-1",
-       "original": "Figure C1 first compares using different layers of wav2vec 2.0 features.",
-       "zh": "图 C1 首先比较 wav2vec 2.0 不同层的特征。"
+       "original": "We compare three different features for computing the FSD score.",
+       "zh": "我们比较三种用于计算 FSD 的特征。"
       },
       {
        "id": "s-audio-feature-vocoder-5-2",
-       "original": "All of them yield similar desirable results where “utt” stays low and “spk” increases drastically when the sample size reduces and speaker diversity decreases.",
-       "zh": "各层都呈现相似的预期结果：“utt”保持低位，“spk”随样本量与说话人多样性下降而急剧上升。"
+       "original": "The first is the supervised WavLM-TDCNN feature used for computing audio similarity (SIM-r and SIM-o).",
+       "zh": "第一种是用于计算音频相似度（SIM-r 与 SIM-o）的有监督 WavLM-TDCNN 特征。"
       },
       {
        "id": "s-audio-feature-vocoder-5-3",
-       "original": "We then decide to use the middle layer (layer 6) as the default feature for FSD computation.",
-       "zh": "我们随后选定中间层（第 6 层）作为 FSD 计算的默认特征。"
+       "original": "The second is the self-supervised wav2vec 2.0 BASE [Baevski et al., 2020] feature reduced to 128 dimensions using principle component analysis (PCA).",
+       "zh": "第二种是经主成分分析（PCA）降到 128 维的自监督 wav2vec 2.0 BASE [Baevski et al., 2020] 特征。"
+      },
+      {
+       "id": "s-audio-feature-vocoder-5-4",
+       "original": "The last one is the supervised audio event classification model feature that is used to compute FAD [Kilgour et al., 2019] for non-speech audio generation.",
+       "zh": "最后一种是用于为非语音音频生成计算 FAD [Kilgour et al., 2019] 的有监督音频事件分类模型特征。"
       }
      ]
     },
@@ -8849,18 +11151,18 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-audio-feature-vocoder-6-1",
-       "original": "Figure C2 further compares wav2vec 2.0-layer 6 with the two other features.",
-       "zh": "图 C2 进一步将 wav2vec 2.0 第 6 层与另外两种特征对比。"
+       "original": "Figure C1 first compares using different layers of wav2vec 2.0 features.",
+       "zh": "图 C1 首先比较 wav2vec 2.0 不同层的特征。"
       },
       {
        "id": "s-audio-feature-vocoder-6-2",
-       "original": "WavLM-TDCNN and wav2vec 2.0-layer 6 present similar trends and both have low variance.",
-       "zh": "WavLM-TDCNN 与 wav2vec 2.0 第 6 层呈现相似趋势且方差都很低。"
+       "original": "All of them yield similar desirable results where “utt” stays low and “spk” increases drastically when the sample size reduces and speaker diversity decreases.",
+       "zh": "各层都呈现相似的预期结果：“utt”保持低位，“spk”随样本量与说话人多样性下降而急剧上升。"
       },
       {
        "id": "s-audio-feature-vocoder-6-3",
-       "original": "Both of them are suitable for measuring diversity, and we decide to use wav2vec 2.0 features as it is self-supervised and would be able to capture more holistic information of speech such as prosody and emotion.",
-       "zh": "二者都适合衡量多样性；我们选择 wav2vec 2.0 特征，因为它是自监督的，能捕捉语音中更整体的信息（如韵律与情绪）。"
+       "original": "We then decide to use the middle layer (layer 6) as the default feature for FSD computation.",
+       "zh": "我们随后选定中间层（第 6 层）作为 FSD 计算的默认特征。"
       }
      ]
     },
@@ -8871,26 +11173,48 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-audio-feature-vocoder-7-1",
+       "original": "Figure C2 further compares wav2vec 2.0-layer 6 with the two other features.",
+       "zh": "图 C2 进一步将 wav2vec 2.0 第 6 层与另外两种特征对比。"
+      },
+      {
+       "id": "s-audio-feature-vocoder-7-2",
+       "original": "WavLM-TDCNN and wav2vec 2.0-layer 6 present similar trends and both have low variance.",
+       "zh": "WavLM-TDCNN 与 wav2vec 2.0 第 6 层呈现相似趋势且方差都很低。"
+      },
+      {
+       "id": "s-audio-feature-vocoder-7-3",
+       "original": "Both of them are suitable for measuring diversity, and we decide to use wav2vec 2.0 features as it is self-supervised and would be able to capture more holistic information of speech such as prosody and emotion.",
+       "zh": "二者都适合衡量多样性；我们选择 wav2vec 2.0 特征，因为它是自监督的，能捕捉语音中更整体的信息（如韵律与情绪）。"
+      }
+     ]
+    },
+    {
+     "id": "p-audio-feature-vocoder-8",
+     "type": "paragraph",
+     "page": 30,
+     "sentences": [
+      {
+       "id": "s-audio-feature-vocoder-8-1",
        "original": "In contrast, FAD score [Kilgour et al., 2019] is not appropriate for measuring speech diversity.",
        "zh": "相比之下，FAD 分数 [Kilgour et al., 2019] 不适合衡量语音多样性。"
       },
       {
-       "id": "s-audio-feature-vocoder-7-2",
+       "id": "s-audio-feature-vocoder-8-2",
        "original": "The score does not increase much between r = 25% and r = 1% for “spk” sampling method, showing that the score does not reflect the decreasing speaker diversity.",
        "zh": "在“spk”采样下，r = 25% 到 r = 1% 之间分数上升甚微，说明它没有反映说话人多样性的下降。"
       },
       {
-       "id": "s-audio-feature-vocoder-7-3",
+       "id": "s-audio-feature-vocoder-8-3",
        "original": "On the other hand, “utt” sampling method observes huge FAD score increase when reducing the sample size from r = 25% to r = 1% where the diversity does not change much as the number of speakers remains the same.",
        "zh": "另一方面，“utt”采样下把样本量从 r = 25% 减到 r = 1% 时 FAD 大幅上升，而此时说话人数量不变、多样性变化不大。"
       },
       {
-       "id": "s-audio-feature-vocoder-7-4",
+       "id": "s-audio-feature-vocoder-8-4",
        "original": "Moreover, at r = 1% both sampling methods result in similar FAD score while the two subsets exhibit very different levels of diversity.",
        "zh": "此外，r = 1% 时两种采样的 FAD 相近，但两个子集的多样性水平差异很大。"
       },
       {
-       "id": "s-audio-feature-vocoder-7-5",
+       "id": "s-audio-feature-vocoder-8-5",
        "original": "We hypothesize that this is because FAD score is computed based on features extracted from an audio even classifier trained on AudioSet, which learns to distinguish between events like lawn mower, car engine, and human speech, but does not learn to capture the variation within speech, such as different voices.",
        "zh": "我们推测这是因为 FAD 基于在 AudioSet 上训练的音频事件分类器特征计算——该分类器学会区分割草机、汽车引擎、人声等事件，却没有学会捕捉语音内部的差异（如不同音色）。"
       }
@@ -8935,35 +11259,115 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-quality-1-5",
-       "original": "Lower SNR layer-2 250 250 200 200 Fréchet Distance 150 150 100 100 50 50 0 0 layer-4 layer-6 200 150 100 50 0 100 101 102 100 101 102 layer-8 300 utt spk 200 250 Fréchet Distance 150 200 150 100 100 50 50 0 0 100 101 102 layer-10 layer-12 150 125 100 75 50 25 0 100 101 102 100 101 102 ratio(%) 100 101 102 ratio(%) ratio(%) Figure C1: FSD based on different layers of wav2vec 2.0 BASE. utt: utterance-based sampling, spk: speaker-based sampling.",
+       "original": "Lower SNR layer-2",
        "zh": "更低的 SNR（……（图内文字）layer-2/layer-4/layer-6/layer-8/layer-10/layer-12，Fréchet Distance 250 200 150 100 50 0，样本量横轴 100 101 102，utt spk，ratio(%)，部分子图纵轴刻度还包含 300 125 75 25 等；图 C1：基于 wav2vec 2.0 BASE 不同层的 FSD。utt：按语音采样；spk：按说话人采样。）（接上）"
-      },
-      {
-       "id": "s-quality-1-6",
-       "original": "Vertical bars denote standard deviation.",
-       "zh": "（接上）竖线表示标准差。"
       }
      ]
     },
     {
+     "id": "eq-quality-1",
+     "type": "equation",
+     "page": 30,
+     "original": "250 250 200 200"
+    },
+    {
+     "id": "eq-quality-2",
+     "type": "equation",
+     "page": 30,
+     "original": "Fréchet Distance"
+    },
+    {
+     "id": "eq-quality-3",
+     "type": "equation",
+     "page": 30,
+     "original": "150 150 100 100 50 50 0 0"
+    },
+    {
+     "id": "eq-quality-4",
+     "type": "equation",
+     "page": 30,
+     "original": "layer-4 layer-6"
+    },
+    {
+     "id": "eq-quality-5",
+     "type": "equation",
+     "page": 30,
+     "original": "200 150 100 50 0 100 101 102 100 101 102"
+    },
+    {
+     "id": "eq-quality-6",
+     "type": "equation",
+     "page": 30,
+     "original": "layer-8"
+    },
+    {
+     "id": "eq-quality-7",
+     "type": "equation",
+     "page": 30,
+     "original": "300"
+    },
+    {
+     "id": "eq-quality-8",
+     "type": "equation",
+     "page": 30,
+     "original": "utt spk"
+    },
+    {
+     "id": "eq-quality-9",
+     "type": "equation",
+     "page": 30,
+     "original": "200 250"
+    },
+    {
+     "id": "eq-quality-10",
+     "type": "equation",
+     "page": 30,
+     "original": "Fréchet Distance"
+    },
+    {
+     "id": "eq-quality-11",
+     "type": "equation",
+     "page": 30,
+     "original": "150 200 150 100 100 50 50 0 0 100 101 102"
+    },
+    {
+     "id": "eq-quality-12",
+     "type": "equation",
+     "page": 30,
+     "original": "layer-10 layer-12"
+    },
+    {
+     "id": "eq-quality-13",
+     "type": "equation",
+     "page": 30,
+     "original": "150 125 100 75 50 25 0 100 101 102 100 101 102"
+    },
+    {
+     "id": "eq-quality-14",
+     "type": "equation",
+     "page": 30,
+     "original": "ratio(%)"
+    },
+    {
+     "id": "eq-quality-15",
+     "type": "equation",
+     "page": 30,
+     "original": "100 101 102"
+    },
+    {
      "id": "p-quality-2",
      "type": "paragraph",
-     "page": 31,
+     "page": 30,
      "sentences": [
       {
        "id": "s-quality-2-1",
-       "original": "Wav2vec 2.0-layer 6 WavLM-TDCNN 3 utt spk 200 Fréchet Distance 150 2 100 1 50 0 0 FAD 400 300 200 100 0 100 101 102 100 101 102 ratio(%) 100 101 102 ratio(%) ratio(%) Figure C2: FSD with different sample size using supervised WavLM-TDCNN, self-supervised wav2vec 2.0, and supervised audio event classifier features. utt: utterance-based sampling, spk: speaker-based sampling.",
-       "zh": "（图内文字）Wav2vec 2.0-layer 6、WavLM-TDCNN 3 2 1（3 条曲线、2 类采样、1 个 FAD 面板）；utt spk；Fréchet Distance 200 150 100 50 0；FAD 400 300 200 100 0；100 101 102 ratio(%) 等坐标轴；图 C2：使用有监督 WavLM-TDCNN、自监督 wav2vec 2.0 与有监督音频事件分类器特征在不同样本量下的 FSD。utt：按语音采样；spk：按说话人采样。"
+       "original": "ratio(%) ratio(%) Figure C1: FSD based on different layers of wav2vec 2.0 BASE. utt: utterance-based sampling, spk: speaker-based sampling.",
+       "zh": "2.\n（原始数据照录）\nratio(%) ratio(%) Figure C1: FSD based on different layers of wav2vec 2.0 BASE. utt: utterance-based sampling, spk: speaker-based sampling."
       },
       {
        "id": "s-quality-2-2",
-       "original": "Vertical bars denote standard deviation. values correspond to lower quality.",
-       "zh": "（接上）竖线表示标准差。更低的 SNR 值对应更低的质量。"
-      },
-      {
-       "id": "s-quality-2-3",
-       "original": "We use the default speech feature extractor (i.e., wav2vec 2.0, layer-6) throughout the experiments.",
-       "zh": "整个实验均使用默认语音特征提取器（即 wav2vec 2.0 第 6 层）。"
+       "original": "Vertical bars denote standard deviation.",
+       "zh": "（接上）竖线表示标准差。"
       }
      ]
     },
@@ -8974,11 +11378,99 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-quality-3-1",
+       "original": "Wav2vec 2.0-layer 6 WavLM-TDCNN",
+       "zh": "2.\n（原始数据照录）\nWav2vec 2.0-layer 6 WavLM-TDCNN"
+      }
+     ]
+    },
+    {
+     "id": "eq-quality-16",
+     "type": "equation",
+     "page": 31,
+     "original": "3"
+    },
+    {
+     "id": "eq-quality-17",
+     "type": "equation",
+     "page": 31,
+     "original": "utt spk"
+    },
+    {
+     "id": "eq-quality-18",
+     "type": "equation",
+     "page": 31,
+     "original": "200"
+    },
+    {
+     "id": "eq-quality-19",
+     "type": "equation",
+     "page": 31,
+     "original": "Fréchet Distance"
+    },
+    {
+     "id": "eq-quality-20",
+     "type": "equation",
+     "page": 31,
+     "original": "150 2 100 1 50 0 0"
+    },
+    {
+     "id": "eq-quality-21",
+     "type": "equation",
+     "page": 31,
+     "original": "FAD"
+    },
+    {
+     "id": "eq-quality-22",
+     "type": "equation",
+     "page": 31,
+     "original": "400 300 200 100 0 100 101 102 100 101 102"
+    },
+    {
+     "id": "eq-quality-23",
+     "type": "equation",
+     "page": 31,
+     "original": "ratio(%)"
+    },
+    {
+     "id": "eq-quality-24",
+     "type": "equation",
+     "page": 31,
+     "original": "100 101 102"
+    },
+    {
+     "id": "p-quality-4",
+     "type": "paragraph",
+     "page": 31,
+     "sentences": [
+      {
+       "id": "s-quality-4-1",
+       "original": "ratio(%) ratio(%) Figure C2: FSD with different sample size using supervised WavLM-TDCNN, self-supervised wav2vec 2.0, and supervised audio event classifier features. utt: utterance-based sampling, spk: speaker-based sampling.",
+       "zh": "2.\n（原始数据照录）\nratio(%) ratio(%) Figure C2: FSD with different sample size using supervised WavLM-TDCNN, self-supervised wav2vec 2.0, and supervised audio event classifier features. utt: utterance-based sampling, spk: speaker-based sampling."
+      },
+      {
+       "id": "s-quality-4-2",
+       "original": "Vertical bars denote standard deviation. values correspond to lower quality.",
+       "zh": "（接上）竖线表示标准差。更低的 SNR 值对应更低的质量。"
+      },
+      {
+       "id": "s-quality-4-3",
+       "original": "We use the default speech feature extractor (i.e., wav2vec 2.0, layer-6) throughout the experiments.",
+       "zh": "整个实验均使用默认语音特征提取器（即 wav2vec 2.0 第 6 层）。"
+      }
+     ]
+    },
+    {
+     "id": "p-quality-5",
+     "type": "paragraph",
+     "page": 31,
+     "sentences": [
+      {
+       "id": "s-quality-5-1",
        "original": "Our results, summarized in Figure C3, show that a subset with a lower SNR has a higher FSD score.",
        "zh": "结果汇总于图 C3：SNR 越低的子集 FSD 越高。"
       },
       {
-       "id": "s-quality-3-2",
+       "id": "s-quality-5-2",
        "original": "Therefore, a lower FSD score indicates higher acoustic quality for the set of test samples when diversity is fixed.",
        "zh": "因此，在多样性固定时，更低的 FSD 表示待测样本集的声学质量更高。"
       }
@@ -9049,20 +11541,74 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-duration-correctness-ms-mae-1-1",
-       "original": "Our first metric, multi-sample mean-absolute error (MS-MAE), is the masked absolute error per-utterance divided by the average number of masked phonemes 3000 2500 Fréchet Distance 2000 1500 1000 500 0 10 20 30 40 50 SNR (dB) 0 Figure C3: FSD under different noisy levels.",
-       "zh": "我们的第一个指标是多样本平均绝对误差（MS-MAE）：每条语音上掩蔽部分的绝对误差除以掩蔽音素的平均数（……（图内文字）Fréchet Distance 3000 2500 2000 1500 1000 500 0；SNR (dB) 0 10 20 30 40 50；图 C3：不同噪声水平下的 FSD。）（接上）"
-      },
-      {
-       "id": "s-duration-correctness-ms-mae-1-2",
-       "original": "Feature: Wav2vec 2.0 layer-6 feature.",
-       "zh": "（接上）特征：wav2vec 2.0 第 6 层特征。"
-      },
-      {
-       "id": "s-duration-correctness-ms-mae-1-3",
-       "original": "Noise is added upon model output from Voicebox under unconditional setting. per-utterance Em,l,y||m ⊙ l −ˆl(lctx, y) ||1 Em,l,y||m||1",
-       "zh": "（接上）噪声加在无条件设置下 Voicebox 的模型输出上。逐条语音计算 Em,l,y||m ⊙ l − l̂(lctx, y)||1 / Em,l,y||m||1。"
+       "original": "Our first metric, multi-sample mean-absolute error (MS-MAE), is the masked absolute error per-utterance divided by the average number of masked phonemes",
+       "zh": "我们的第一个指标是多样本平均绝对误差（MS-MAE）：每句掩码绝对误差除以平均掩码音素数（公式见原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-duration-correctness-ms-mae-1",
+     "type": "equation",
+     "page": 31,
+     "original": "3000 2500"
+    },
+    {
+     "id": "eq-duration-correctness-ms-mae-2",
+     "type": "equation",
+     "page": 31,
+     "original": "Fréchet Distance"
+    },
+    {
+     "id": "eq-duration-correctness-ms-mae-3",
+     "type": "equation",
+     "page": 31,
+     "original": "2000 1500 1000 500 0 10 20 30 40 50"
+    },
+    {
+     "id": "eq-duration-correctness-ms-mae-4",
+     "type": "equation",
+     "page": 31,
+     "original": "SNR (dB)"
+    },
+    {
+     "id": "eq-duration-correctness-ms-mae-5",
+     "type": "equation",
+     "page": 31,
+     "original": "0"
+    },
+    {
+     "id": "p-duration-correctness-ms-mae-2",
+     "type": "paragraph",
+     "page": 31,
+     "sentences": [
+      {
+       "id": "s-duration-correctness-ms-mae-2-1",
+       "original": "Figure C3: FSD under different noisy levels.",
+       "zh": "图 C3：不同噪声水平下的 FSD。"
+      },
+      {
+       "id": "s-duration-correctness-ms-mae-2-2",
+       "original": "Feature: Wav2vec 2.0 layer-6 feature.",
+       "zh": "2.\n（原始数据照录）\nFeature: Wav2vec 2.0 layer-6 feature."
+      },
+      {
+       "id": "s-duration-correctness-ms-mae-2-3",
+       "original": "Noise is added upon model output from Voicebox under unconditional setting. per-utterance Em,l,y||m ⊙ l −ˆl(lctx, y)",
+       "zh": "噪声加在无条件设置下 Voicebox 的模型输出之上。每句误差 E_{m,l,y}[‖m ⊙ l − l̂(l_ctx, y)‖]（公式见原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-duration-correctness-ms-mae-6",
+     "type": "equation",
+     "page": 31,
+     "original": "||1"
+    },
+    {
+     "id": "eq-duration-correctness-ms-mae-7",
+     "type": "equation",
+     "page": 32,
+     "original": "Em,l,y||m||1 (9)"
     }
    ]
   },
@@ -9139,13 +11685,19 @@ globalThis.PAPER_2306_15687 = {
      "original": "(µ −µ′)2 + s + s′ −2 √"
     },
     {
+     "id": "eq-duration-diversity-and-quality-f-2",
+     "type": "equation",
+     "page": 32,
+     "original": "ss′, (10)"
+    },
+    {
      "id": "p-duration-diversity-and-quality-f-2",
      "type": "paragraph",
      "page": 32,
      "sentences": [
       {
        "id": "s-duration-diversity-and-quality-f-2-1",
-       "original": "ss′, treated as though they were Gaussians.",
+       "original": "treated as though they were Gaussians.",
        "zh": "（接上）即将 µ、s 与 µ′、s′ 视作高斯分布参数来计算。"
       },
       {
@@ -9280,10 +11832,40 @@ globalThis.PAPER_2306_15687 = {
       },
       {
        "id": "s-C-3-4-2",
-       "original": "Duration Model Phn-MS-MAE Phn-FDD Sil-MS-MAE Sil-FDD Unconditional Regression 2.53 0.72 5.32 2.39 Duration-conditional Regression 2.52 0.76 5.10 8.40 Duration-conditional Flow Matching 2.63 0.61 5.18 2.48 Table C8: English second-half infilling duration metrics on LS test-other.",
+       "original": "Duration Model Phn-MS-MAE Phn-FDD Sil-MS-MAE Sil-FDD Unconditional Regression",
        "zh": "（表内数字）时长模型 Phn-MS-MAE／Phn-FDD／Sil-MS-MAE／Sil-FDD：无条件回归 2.53 0.72 5.32 2.39；时长条件回归 2.52 0.76 5.10 8.40；时长条件流匹配 2.63 0.61 5.18 2.48。表 C8：LS test-other 上的英语后半段填充时长指标。"
       }
      ]
+    },
+    {
+     "id": "eq-C-3-1",
+     "type": "equation",
+     "page": 33,
+     "original": "2.53 0.72 5.32 2.39"
+    },
+    {
+     "id": "eq-C-3-2",
+     "type": "equation",
+     "page": 33,
+     "original": "Duration-conditional Regression"
+    },
+    {
+     "id": "eq-C-3-3",
+     "type": "equation",
+     "page": 33,
+     "original": "2.52 0.76 5.10 8.40"
+    },
+    {
+     "id": "eq-C-3-4",
+     "type": "equation",
+     "page": 33,
+     "original": "Duration-conditional Flow Matching"
+    },
+    {
+     "id": "eq-C-3-5",
+     "type": "equation",
+     "page": 33,
+     "original": "2.63 0.61 5.18 2.48"
     },
     {
      "id": "p-C-3-5",
@@ -9292,10 +11874,52 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-C-3-5-1",
-       "original": "Duration Model Phn-MS-MAE Phn-MS-Corr Sil-MS-MAE Unconditional Regression 2.57 0.26 5.44 Duration-conditional Regression 2.45 0.35 5.20 Duration-conditional Flow Matching 2.52 0.41 5.32",
-       "zh": "（表内数字）时长模型 Phn-MS-MAE／Phn-MS-Corr／Sil-MS-MAE：无条件回归 2.57 0.26 5.44；时长条件回归 2.45 0.35 5.20；时长条件流匹配 2.52 0.41 5.32。"
+       "original": "Table C8: English second-half infilling duration metrics on LS test-other.",
+       "zh": "（表内数字）时长模型 Phn-MS-MAE／Phn-FDD／Sil-MS-MAE／Sil-FDD：无条件回归 2.53 0.72 5.32 2.39；时长条件回归 2.52 0.76 5.10 8.40；时长条件流匹配 2.63 0.61 5.18 2.48。表 C8：LS test-other 上的英语后半段填充时长指标。"
       }
      ]
+    },
+    {
+     "id": "p-C-3-6",
+     "type": "paragraph",
+     "page": 33,
+     "sentences": [
+      {
+       "id": "s-C-3-6-1",
+       "original": "Duration Model Phn-MS-MAE Phn-MS-Corr Sil-MS-MAE Unconditional Regression",
+       "zh": "表头：Duration Model × Phn-MS-MAE / Phn-MS-Corr / Sil-MS-MAE——Unconditional / Regression（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-C-3-6",
+     "type": "equation",
+     "page": 33,
+     "original": "2.57 0.26 5.44"
+    },
+    {
+     "id": "eq-C-3-7",
+     "type": "equation",
+     "page": 33,
+     "original": "Duration-conditional Regression"
+    },
+    {
+     "id": "eq-C-3-8",
+     "type": "equation",
+     "page": 33,
+     "original": "2.45 0.35 5.20"
+    },
+    {
+     "id": "eq-C-3-9",
+     "type": "equation",
+     "page": 33,
+     "original": "Duration-conditional Flow Matching"
+    },
+    {
+     "id": "eq-C-3-10",
+     "type": "equation",
+     "page": 33,
+     "original": "2.52 0.41 5.32"
     }
    ]
   },
@@ -9361,14 +11985,44 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-C-4-3-1",
        "original": "Table C9: Diverse speech generation from LS test-other text.",
-       "zh": "表 C9：从 LS test-other 文本生成多样化语音。"
+       "zh": "表 C9：从 LS test-other 文本生成多样性语音。"
       },
       {
        "id": "s-C-4-3-2",
-       "original": "Duration Model with VB-En-1K FSD (LS-train) Unconditional Regression 3.8 148.7 Duration-conditional Regression 3.7 148.1 Duration-conditional Flow Matching 5.4 155.1",
-       "zh": "（表内数字）时长模型（配 VB-En-1K）WER／FSD（LS-train）：无条件回归 3.8 148.7；时长条件回归 3.7 148.1；时长条件流匹配 5.4 155.1。"
+       "original": "Duration Model with VB-En-1K WER FSD (LS-train) Unconditional Regression",
+       "zh": "表头：Duration Model with VB-En-1K × WER / FSD (LS-train)——Unconditional / Regression（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-C-4-1",
+     "type": "equation",
+     "page": 33,
+     "original": "3.8 148.7"
+    },
+    {
+     "id": "eq-C-4-2",
+     "type": "equation",
+     "page": 33,
+     "original": "Duration-conditional Regression"
+    },
+    {
+     "id": "eq-C-4-3",
+     "type": "equation",
+     "page": 33,
+     "original": "3.7 148.1"
+    },
+    {
+     "id": "eq-C-4-4",
+     "type": "equation",
+     "page": 33,
+     "original": "Duration-conditional Flow Matching"
+    },
+    {
+     "id": "eq-C-4-5",
+     "type": "equation",
+     "page": 33,
+     "original": "5.4 155.1"
     }
    ]
   },
@@ -9430,8 +12084,86 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-duration-model-with-vb-en-1k-1-1",
-       "original": "SIM-r cross-sentence Unconditional Regression 3.0 0.538 0.584 Duration-conditional Regression 2.7 0.545 0.591 Duration-conditional Flow Matching 3.4 0.528 0.578 continuation Unconditional Regression 2.5 0.485 0.524 Duration-conditional Regression 2.2 0.491 0.533 Duration-conditional Flow Matching 2.7 0.481 0.525 Table C11: Quality mean opinion score (QMOS) instruction.",
-       "zh": "（表内数字）SIM-r：跨句——无条件回归 3.0 0.538 0.584，时长条件回归 2.7 0.545 0.591，时长条件流匹配 3.4 0.528 0.578；续写——无条件回归 2.5 0.485 0.524，时长条件回归 2.2 0.491 0.533，时长条件流匹配 2.7 0.481 0.525。表 C11：质量平均意见分（QMOS）说明。"
+       "original": "WER SIM-o SIM-r cross-sentence Unconditional Regression",
+       "zh": "表头：WER / SIM-o / SIM-r × cross-sentence——Unconditional / Regression（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-duration-model-with-vb-en-1k-1",
+     "type": "equation",
+     "page": 34,
+     "original": "3.0 0.538 0.584"
+    },
+    {
+     "id": "eq-duration-model-with-vb-en-1k-2",
+     "type": "equation",
+     "page": 34,
+     "original": "Duration-conditional Regression"
+    },
+    {
+     "id": "eq-duration-model-with-vb-en-1k-3",
+     "type": "equation",
+     "page": 34,
+     "original": "2.7 0.545 0.591"
+    },
+    {
+     "id": "eq-duration-model-with-vb-en-1k-4",
+     "type": "equation",
+     "page": 34,
+     "original": "Duration-conditional Flow Matching"
+    },
+    {
+     "id": "eq-duration-model-with-vb-en-1k-5",
+     "type": "equation",
+     "page": 34,
+     "original": "3.4 0.528 0.578"
+    },
+    {
+     "id": "eq-duration-model-with-vb-en-1k-6",
+     "type": "equation",
+     "page": 34,
+     "original": "continuation Unconditional Regression"
+    },
+    {
+     "id": "eq-duration-model-with-vb-en-1k-7",
+     "type": "equation",
+     "page": 34,
+     "original": "2.5 0.485 0.524"
+    },
+    {
+     "id": "eq-duration-model-with-vb-en-1k-8",
+     "type": "equation",
+     "page": 34,
+     "original": "Duration-conditional Regression"
+    },
+    {
+     "id": "eq-duration-model-with-vb-en-1k-9",
+     "type": "equation",
+     "page": 34,
+     "original": "2.2 0.491 0.533"
+    },
+    {
+     "id": "eq-duration-model-with-vb-en-1k-10",
+     "type": "equation",
+     "page": 34,
+     "original": "Duration-conditional Flow Matching"
+    },
+    {
+     "id": "eq-duration-model-with-vb-en-1k-11",
+     "type": "equation",
+     "page": 34,
+     "original": "2.7 0.481 0.525"
+    },
+    {
+     "id": "p-duration-model-with-vb-en-1k-2",
+     "type": "paragraph",
+     "page": 34,
+     "sentences": [
+      {
+       "id": "s-duration-model-with-vb-en-1k-2-1",
+       "original": "Table C11: Quality mean opinion score (QMOS) instruction.",
+       "zh": "表 C11：质量平均意见分（QMOS）说明。"
       }
      ]
     }
@@ -9473,7 +12205,7 @@ globalThis.PAPER_2306_15687 = {
    "page": 34,
    "title": {
     "original": "Task Instructions",
-    "zh": "任务说明（QMOS）"
+    "zh": "任务说明（SMOS）"
    },
    "blocks": [
     {
@@ -9666,25 +12398,535 @@ globalThis.PAPER_2306_15687 = {
      "sentences": [
       {
        "id": "s-D-2-1",
-       "original": "VB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections Alibi Bias Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments.",
-       "zh": "（表内文字）VB-En／VB-Multi。模型参数：模型维度 1024 1024；头数 16 16；层数 24 24；前馈维度 4096 4096；注意力 dropout 0.0 0.0；激活 dropout 0.1 0.1；ConvPos 宽度 31 31；ConvPos 组数 16 16；ConvPos 深度 2 2；跳跃连接：有；ALiBi 偏置：有。训练参数：迭代次数 500000 750000；GPU 数 32 32；学习率（LR）0.0001 0.0001；梯度裁剪值 0.2 0.2；LR 调度器预热步数 5000 5000；损失掩蔽：有。数据参数：每批 token 数（帧）7500 7500；条件 dropout 0.2 0.2；位置相关音素：有；音素掩蔽比例 0.0, 0.0／0.0, 0.0；频谱图掩蔽比例 0.7, 1.0／0.7, 1.0；频谱图丢弃比例 0.3 0.3；切块长度 1600 1600；变换类型 normalize normalize；均值 -5.884 -5.884；标准差 2.261 2.261；上采样 β 0.25。表 D14：实验中基于条件流匹配的时长模型的详细配置。"
+       "original": "VB-En VB-Multi Model Parameters Model Dimension",
+       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\n（原始数据照录）\nVB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking true true Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones true true Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β - 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments."
+      }
+     ]
+    },
+    {
+     "id": "eq-D-1",
+     "type": "equation",
+     "page": 35,
+     "original": "1024 1024"
+    },
+    {
+     "id": "eq-D-2",
+     "type": "equation",
+     "page": 35,
+     "original": "Number of Heads"
+    },
+    {
+     "id": "eq-D-3",
+     "type": "equation",
+     "page": 35,
+     "original": "16 16"
+    },
+    {
+     "id": "eq-D-4",
+     "type": "equation",
+     "page": 35,
+     "original": "Number of Layers"
+    },
+    {
+     "id": "eq-D-5",
+     "type": "equation",
+     "page": 35,
+     "original": "24 24"
+    },
+    {
+     "id": "eq-D-6",
+     "type": "equation",
+     "page": 35,
+     "original": "Feedforward Dimension"
+    },
+    {
+     "id": "eq-D-7",
+     "type": "equation",
+     "page": 35,
+     "original": "4096 4096"
+    },
+    {
+     "id": "eq-D-8",
+     "type": "equation",
+     "page": 35,
+     "original": "Attention Dropout"
+    },
+    {
+     "id": "eq-D-9",
+     "type": "equation",
+     "page": 35,
+     "original": "0.0 0.0"
+    },
+    {
+     "id": "eq-D-10",
+     "type": "equation",
+     "page": 35,
+     "original": "Activation Dropout"
+    },
+    {
+     "id": "eq-D-11",
+     "type": "equation",
+     "page": 35,
+     "original": "0.1 0.1"
+    },
+    {
+     "id": "eq-D-12",
+     "type": "equation",
+     "page": 35,
+     "original": "ConvPos Width"
+    },
+    {
+     "id": "eq-D-13",
+     "type": "equation",
+     "page": 35,
+     "original": "31 31"
+    },
+    {
+     "id": "eq-D-14",
+     "type": "equation",
+     "page": 35,
+     "original": "ConvPos Groups"
+    },
+    {
+     "id": "eq-D-15",
+     "type": "equation",
+     "page": 35,
+     "original": "16 16"
+    },
+    {
+     "id": "eq-D-16",
+     "type": "equation",
+     "page": 35,
+     "original": "ConvPos Depth"
+    },
+    {
+     "id": "eq-D-17",
+     "type": "equation",
+     "page": 35,
+     "original": "2 2"
+    },
+    {
+     "id": "p-D-3",
+     "type": "paragraph",
+     "page": 35,
+     "sentences": [
+      {
+       "id": "s-D-3-1",
+       "original": "Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations",
+       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\n（原始数据照录）\nVB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking true true Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones true true Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β - 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments."
+      }
+     ]
+    },
+    {
+     "id": "eq-D-18",
+     "type": "equation",
+     "page": 35,
+     "original": "500000 750000"
+    },
+    {
+     "id": "eq-D-19",
+     "type": "equation",
+     "page": 35,
+     "original": "Number of GPUs"
+    },
+    {
+     "id": "eq-D-20",
+     "type": "equation",
+     "page": 35,
+     "original": "32 32"
+    },
+    {
+     "id": "eq-D-21",
+     "type": "equation",
+     "page": 35,
+     "original": "Learning Rate (LR)"
+    },
+    {
+     "id": "eq-D-22",
+     "type": "equation",
+     "page": 35,
+     "original": "0.0001 0.0001"
+    },
+    {
+     "id": "eq-D-23",
+     "type": "equation",
+     "page": 35,
+     "original": "Gradient Clipping Value"
+    },
+    {
+     "id": "eq-D-24",
+     "type": "equation",
+     "page": 35,
+     "original": "0.2 0.2"
+    },
+    {
+     "id": "eq-D-25",
+     "type": "equation",
+     "page": 35,
+     "original": "LR Scheduler Warmup Steps"
+    },
+    {
+     "id": "eq-D-26",
+     "type": "equation",
+     "page": 35,
+     "original": "5000 5000"
+    },
+    {
+     "id": "p-D-4",
+     "type": "paragraph",
+     "page": 35,
+     "sentences": [
+      {
+       "id": "s-D-4-1",
+       "original": "Loss Masking true true Data Parameters Tokens per Batch",
+       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\n（原始数据照录）\nVB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking true true Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones true true Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β - 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments."
+      }
+     ]
+    },
+    {
+     "id": "eq-D-27",
+     "type": "equation",
+     "page": 35,
+     "original": "7500 7500"
+    },
+    {
+     "id": "eq-D-28",
+     "type": "equation",
+     "page": 35,
+     "original": "Conditional Dropout"
+    },
+    {
+     "id": "eq-D-29",
+     "type": "equation",
+     "page": 35,
+     "original": "0.2 0.2"
+    },
+    {
+     "id": "eq-D-30",
+     "type": "equation",
+     "page": 35,
+     "original": "Position Dependent Phones true true Phoneme Mask Percent"
+    },
+    {
+     "id": "eq-D-31",
+     "type": "equation",
+     "page": 35,
+     "original": "0.0, 0.0 0.0, 0.0"
+    },
+    {
+     "id": "eq-D-32",
+     "type": "equation",
+     "page": 35,
+     "original": "Spectrogram Mask Percent"
+    },
+    {
+     "id": "eq-D-33",
+     "type": "equation",
+     "page": 35,
+     "original": "0.7, 1.0 0.7, 1.0"
+    },
+    {
+     "id": "eq-D-34",
+     "type": "equation",
+     "page": 35,
+     "original": "Spectrogram Drop Percentage"
+    },
+    {
+     "id": "eq-D-35",
+     "type": "equation",
+     "page": 35,
+     "original": "0.3 0.3"
+    },
+    {
+     "id": "eq-D-36",
+     "type": "equation",
+     "page": 35,
+     "original": "Chunk Length"
+    },
+    {
+     "id": "eq-D-37",
+     "type": "equation",
+     "page": 35,
+     "original": "1600 1600"
+    },
+    {
+     "id": "eq-D-38",
+     "type": "equation",
+     "page": 35,
+     "original": "Transform Type normalize normalize Mean"
+    },
+    {
+     "id": "eq-D-39",
+     "type": "equation",
+     "page": 35,
+     "original": "-5.884 -5.884"
+    },
+    {
+     "id": "eq-D-40",
+     "type": "equation",
+     "page": 35,
+     "original": "Standard Deviation"
+    },
+    {
+     "id": "eq-D-41",
+     "type": "equation",
+     "page": 35,
+     "original": "2.261 2.261"
+    },
+    {
+     "id": "eq-D-42",
+     "type": "equation",
+     "page": 35,
+     "original": "Upsampling β"
+    },
+    {
+     "id": "eq-D-43",
+     "type": "equation",
+     "page": 35,
+     "original": "- 0.25"
+    },
+    {
+     "id": "p-D-5",
+     "type": "paragraph",
+     "page": 35,
+     "sentences": [
+      {
+       "id": "s-D-5-1",
+       "original": "Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments.",
+       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\n（原始数据照录）\nVB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking true true Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones true true Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β - 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments."
       },
       {
-       "id": "s-D-2-2",
+       "id": "s-D-5-2",
        "original": "For regression based model, we use the same configurations but use regression loss.",
        "zh": "回归模型使用相同配置，但改用回归损失。"
       }
      ]
     },
     {
-     "id": "p-D-3",
+     "id": "p-D-6",
      "type": "paragraph",
      "page": 36,
      "sentences": [
       {
-       "id": "s-D-3-1",
-       "original": "VB-En VB-Multi Model Parameters Model Dimension 512 768 Number of Layers 8 10 Feedforward Dimension 2048 2048 Attention Dropout 0.1 0.1 Activation Dropout 0.1 0.1 ConvPos Width 15 15 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections Alibi Bias Training Parameters Number of Iterations 600000 600000 Number of GPUs 4 4 Learning Rate (LR) 0.0001 0.0001 LR Scheduler Warmup Steps 5000 5000 Loss Masking Data Parameters Conditional Dropout 0.2 0.2 Upsampling β 0.5 Tokens per Batch 15000 15000 Duration Drop Percentage 0.2 0.2 Duration Mask Percent 0.1, 1.0 0.1, 1.0 Position Dependent Phones Transform Type log log",
-       "zh": "（表内文字）VB-En／VB-Multi。模型参数：模型维度 512 768；层数 8 10；前馈维度 2048 2048；注意力 dropout 0.1 0.1；激活 dropout 0.1 0.1；ConvPos 宽度 15 15；ConvPos 组数 16 16；ConvPos 深度 2 2；跳跃连接：有；ALiBi 偏置：有。训练参数：迭代次数 600000 600000；GPU 数 4 4；学习率（LR）0.0001 0.0001；LR 调度器预热步数 5000 5000；损失掩蔽：有。数据参数：条件 dropout 0.2 0.2；上采样 β 0.5；每批 token 数 15000 15000；时长丢弃比例 0.2 0.2；时长掩蔽比例 0.1, 1.0／0.1, 1.0；位置相关音素：有；变换类型 log log。"
+       "id": "s-D-6-1",
+       "original": "VB-En VB-Multi Model Parameters Model Dimension",
+       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\n（原始数据照录）\nVB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking true true Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones true true Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β - 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments."
+      }
+     ]
+    },
+    {
+     "id": "eq-D-44",
+     "type": "equation",
+     "page": 36,
+     "original": "512 768"
+    },
+    {
+     "id": "eq-D-45",
+     "type": "equation",
+     "page": 36,
+     "original": "Number of Layers"
+    },
+    {
+     "id": "eq-D-46",
+     "type": "equation",
+     "page": 36,
+     "original": "8 10"
+    },
+    {
+     "id": "eq-D-47",
+     "type": "equation",
+     "page": 36,
+     "original": "Feedforward Dimension"
+    },
+    {
+     "id": "eq-D-48",
+     "type": "equation",
+     "page": 36,
+     "original": "2048 2048"
+    },
+    {
+     "id": "eq-D-49",
+     "type": "equation",
+     "page": 36,
+     "original": "Attention Dropout"
+    },
+    {
+     "id": "eq-D-50",
+     "type": "equation",
+     "page": 36,
+     "original": "0.1 0.1"
+    },
+    {
+     "id": "eq-D-51",
+     "type": "equation",
+     "page": 36,
+     "original": "Activation Dropout"
+    },
+    {
+     "id": "eq-D-52",
+     "type": "equation",
+     "page": 36,
+     "original": "0.1 0.1"
+    },
+    {
+     "id": "eq-D-53",
+     "type": "equation",
+     "page": 36,
+     "original": "ConvPos Width"
+    },
+    {
+     "id": "eq-D-54",
+     "type": "equation",
+     "page": 36,
+     "original": "15 15"
+    },
+    {
+     "id": "eq-D-55",
+     "type": "equation",
+     "page": 36,
+     "original": "ConvPos Groups"
+    },
+    {
+     "id": "eq-D-56",
+     "type": "equation",
+     "page": 36,
+     "original": "16 16"
+    },
+    {
+     "id": "eq-D-57",
+     "type": "equation",
+     "page": 36,
+     "original": "ConvPos Depth"
+    },
+    {
+     "id": "eq-D-58",
+     "type": "equation",
+     "page": 36,
+     "original": "2 2"
+    },
+    {
+     "id": "p-D-7",
+     "type": "paragraph",
+     "page": 36,
+     "sentences": [
+      {
+       "id": "s-D-7-1",
+       "original": "Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations",
+       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\n（原始数据照录）\nVB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking true true Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones true true Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β - 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments."
+      }
+     ]
+    },
+    {
+     "id": "eq-D-59",
+     "type": "equation",
+     "page": 36,
+     "original": "600000 600000"
+    },
+    {
+     "id": "eq-D-60",
+     "type": "equation",
+     "page": 36,
+     "original": "Number of GPUs"
+    },
+    {
+     "id": "eq-D-61",
+     "type": "equation",
+     "page": 36,
+     "original": "4 4"
+    },
+    {
+     "id": "eq-D-62",
+     "type": "equation",
+     "page": 36,
+     "original": "Learning Rate (LR)"
+    },
+    {
+     "id": "eq-D-63",
+     "type": "equation",
+     "page": 36,
+     "original": "0.0001 0.0001"
+    },
+    {
+     "id": "eq-D-64",
+     "type": "equation",
+     "page": 36,
+     "original": "LR Scheduler Warmup Steps"
+    },
+    {
+     "id": "eq-D-65",
+     "type": "equation",
+     "page": 36,
+     "original": "5000 5000"
+    },
+    {
+     "id": "eq-D-66",
+     "type": "equation",
+     "page": 36,
+     "original": "Loss Masking true true Data Parameters Conditional Dropout"
+    },
+    {
+     "id": "eq-D-67",
+     "type": "equation",
+     "page": 36,
+     "original": "0.2 0.2"
+    },
+    {
+     "id": "eq-D-68",
+     "type": "equation",
+     "page": 36,
+     "original": "Upsampling β"
+    },
+    {
+     "id": "eq-D-69",
+     "type": "equation",
+     "page": 36,
+     "original": "- 0.5"
+    },
+    {
+     "id": "eq-D-70",
+     "type": "equation",
+     "page": 36,
+     "original": "Tokens per Batch"
+    },
+    {
+     "id": "eq-D-71",
+     "type": "equation",
+     "page": 36,
+     "original": "15000 15000"
+    },
+    {
+     "id": "eq-D-72",
+     "type": "equation",
+     "page": 36,
+     "original": "Duration Drop Percentage"
+    },
+    {
+     "id": "eq-D-73",
+     "type": "equation",
+     "page": 36,
+     "original": "0.2 0.2"
+    },
+    {
+     "id": "eq-D-74",
+     "type": "equation",
+     "page": 36,
+     "original": "Duration Mask Percent"
+    },
+    {
+     "id": "eq-D-75",
+     "type": "equation",
+     "page": 36,
+     "original": "0.1, 1.0 0.1, 1.0"
+    },
+    {
+     "id": "p-D-8",
+     "type": "paragraph",
+     "page": 36,
+     "sentences": [
+      {
+       "id": "s-D-8-1",
+       "original": "Position Dependent Phones true true Transform Type log log",
+       "zh": "（表格行）Position Dependent Phones：true / true；Transform Type：log / log。"
       }
      ]
     }
@@ -9908,23 +13150,12 @@ globalThis.PAPER_2306_15687 = {
   {
    "id": "ann-020",
    "anchor": {
-    "sentence_id": "s-5-7-7-5",
+    "sentence_id": "s-5-7-11-5",
     "quote": "the model is more likely to assume that the whole sentence is in English"
    },
    "kind": "critique",
    "title": "提示越长越跑偏",
    "explanation": "跨语言迁移时提示越长 WER 越高，尤以英语→其他语言为甚：英语占多语言训练数据 90% 以上，长英语提示让模型“认定”整句都是英语。这是数据不均衡与上下文学习相互放大的典型案例，也提醒后续多语模型要控制语言比例。",
-   "featured": true
-  },
-  {
-   "id": "ann-021",
-   "anchor": {
-    "sentence_id": "s-5-8-2-2",
-    "quote": "even outperforms SM w/ diff using only 50K updates"
-   },
-   "kind": "number",
-   "title": "OT 路径快三倍",
-   "explanation": "带最优传输路径的流匹配用 50K 步就超过得分匹配 150K 步的水平，且推理仅需 8 次 NFE（SM 需 64 次以上）。OT 路径让传输轨迹更直，向量场更易学——这一消融是后来 TTS 领域普遍转向流匹配的直接证据。",
    "featured": true
   },
   {

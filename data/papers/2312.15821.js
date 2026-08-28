@@ -976,13 +976,19 @@ globalThis.PAPER_2312_15821 = {
      ]
     },
     {
+     "id": "eq-3-1",
+     "type": "equation",
+     "page": 6,
+     "original": "(1)"
+    },
+    {
      "id": "p-3-6",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
        "id": "s-3-6-1",
-       "original": "(1) Voicebox: Voicebox (Le et al., 2023) is a conditional generative model based on FM which additionally conditions on frame-aligned phonetic transcript and masked audio for audio prediction, and conditions on phonetic transcript and masked duration sequence for phone duration prediction.",
+       "original": "Voicebox: Voicebox (Le et al., 2023) is a conditional generative model based on FM which additionally conditions on frame-aligned phonetic transcript and masked audio for audio prediction, and conditions on phonetic transcript and masked duration sequence for phone duration prediction.",
        "zh": "(1) Voicebox：Voicebox（Le et al., 2023）是一个基于 FM 的条件生成模型，额外以帧对齐的音素转写和掩蔽音频为条件预测音频，并以音素转写和掩蔽时长序列为条件预测音素时长。"
       },
       {
@@ -1175,10 +1181,16 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-4-1-2-5",
-       "original": "This is similar to the latent diffusion framework (Rombach et al., 2022) that is also adopted in NaturalSpeech2 (Shen et al., 2023).",
+       "original": "This is similar to the latent diffusion framework (Rombach et al., 2022) that is also adopted in NaturalSpeech2 (Shen et al.,",
        "zh": "这类似于潜扩散框架（Rombach et al., 2022），NaturalSpeech2（Shen et al., 2023）也采用了该框架。"
       }
      ]
+    },
+    {
+     "id": "eq-4-1-1",
+     "type": "equation",
+     "page": 7,
+     "original": "2023)."
     },
     {
      "id": "p-4-1-3",
@@ -1841,7 +1853,7 @@ globalThis.PAPER_2312_15821 = {
    "page": 10,
    "title": {
     "original": "Main Results",
-    "zh": "主要结果"
+    "zh": "实验结果"
    },
    "blocks": [
     {
@@ -1912,10 +1924,76 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-5-4-3-1",
-       "original": "Sim-r ↑ Sim-o ↑ Word error rate (%) ↓ Avg Avg VALL-E 0.580 5.9∗ NS2 0.620 2.3∗ UniAudio 0.710 2.0∗ YourTTS 0.455 0.312 0.291 0.290 0.366 0.343 6.8 10.4 11.8 9.5 4.0 8.5 Voicebox 0.696 0.674 0.477 0.452 0.487 0.563 0.531 2.6 7.9 10.6 7.2 2.1 6.1 Audiobox Speech 0.745 0.734 0.607 0.608 0.603 0.659 0.642 3.2 3.7 9.1 3.2 0.9 4.0",
-       "zh": "Sim-r ↑ Sim-o ↑ 词错误率（%）↓ Avg Avg VALL-E 0.580 5.9∗ NS2 0.620 2.3∗ UniAudio 0.710 2.0∗ YourTTS 0.455 0.312 0.291 0.290 0.366 0.343 6.8 10.4 11.8 9.5 4.0 8.5 Voicebox 0.696 0.674 0.477 0.452 0.487 0.563 0.531 2.6 7.9 10.6 7.2 2.1 6.1 Audiobox Speech 0.745 0.734 0.607 0.608 0.603 0.659 0.642 3.2 3.7 9.1 3.2 0.9 4.0（表格数值行，数字与原文一致：Audiobox Speech 在 Sim-o 上全面领先，各域 WER 亦最低。）"
+       "original": "Sim-r ↑ Sim-o ↑ Word error rate (%) ↓ LS LS CV SWBD Expr Accent Avg LS CV SWBD Expr Accent Avg VALL-E",
+       "zh": "表头：Sim-r ↑ / Sim-o ↑ / Word error rate (%) ↓（LS / CV / SWBD / Expr / Accent / Avg 各列）——VALL-E（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-5-4-1",
+     "type": "equation",
+     "page": 10,
+     "original": "0.580 - - - - - - 5.9∗ - - - - -"
+    },
+    {
+     "id": "eq-5-4-2",
+     "type": "equation",
+     "page": 10,
+     "original": "NS2"
+    },
+    {
+     "id": "eq-5-4-3",
+     "type": "equation",
+     "page": 10,
+     "original": "0.620 - - - - - - 2.3∗ - - - - -"
+    },
+    {
+     "id": "eq-5-4-4",
+     "type": "equation",
+     "page": 10,
+     "original": "UniAudio"
+    },
+    {
+     "id": "eq-5-4-5",
+     "type": "equation",
+     "page": 10,
+     "original": "0.710 - - - - - - 2.0∗ - - - - -"
+    },
+    {
+     "id": "eq-5-4-6",
+     "type": "equation",
+     "page": 10,
+     "original": "YourTTS"
+    },
+    {
+     "id": "eq-5-4-7",
+     "type": "equation",
+     "page": 10,
+     "original": "- 0.455 0.312 0.291 0.290 0.366 0.343 6.8 10.4 11.8 9.5 4.0 8.5"
+    },
+    {
+     "id": "eq-5-4-8",
+     "type": "equation",
+     "page": 10,
+     "original": "Voicebox"
+    },
+    {
+     "id": "eq-5-4-9",
+     "type": "equation",
+     "page": 10,
+     "original": "0.696 0.674 0.477 0.452 0.487 0.563 0.531 2.6 7.9 10.6 7.2 2.1 6.1"
+    },
+    {
+     "id": "eq-5-4-10",
+     "type": "equation",
+     "page": 10,
+     "original": "Audiobox Speech"
+    },
+    {
+     "id": "eq-5-4-11",
+     "type": "equation",
+     "page": 10,
+     "original": "0.745 0.734 0.607 0.608 0.603 0.659 0.642 3.2 3.7 9.1 3.2 0.9 4.0"
     },
     {
      "id": "tab-5-4-2",
@@ -1931,10 +2009,82 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-5-4-4-1",
-       "original": "Style similarity MOS ↑ YourTTS 0.09 0.09 0.08 0.07 0.07 Voicebox 0.12 0.13 0.13 0.13 0.11 Audiobox Speech Quality MOS ↑ YourTTS 0.10 0.12 0.08 0.09 0.10 Voicebox 0.11 0.12 0.12 0.12 0.12 Audiobox Speech",
-       "zh": "风格相似度 MOS ↑ YourTTS 0.09 0.09 0.08 0.07 0.07 Voicebox 0.12 0.13 0.13 0.13 0.11 Audiobox Speech 质量 MOS ↑ YourTTS 0.10 0.12 0.08 0.09 0.10 Voicebox 0.11 0.12 0.12 0.12 0.12 Audiobox Speech（主观评分行，原文中 Audiobox Speech 的具体分数在抽取时缺失。）"
+       "original": "Style similarity MOS ↑ LS CV SWBD Expr Accent YourTTS",
+       "zh": "表头：Style similarity MOS ↑（LS / CV / SWBD / Expr / Accent）——YourTTS（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-5-4-12",
+     "type": "equation",
+     "page": 10,
+     "original": "1.67 ± 0.09 1.61 ± 0.09 1.55 ± 0.08 1.41 ± 0.07 1.46 ± 0.07"
+    },
+    {
+     "id": "eq-5-4-13",
+     "type": "equation",
+     "page": 10,
+     "original": "Voicebox"
+    },
+    {
+     "id": "eq-5-4-14",
+     "type": "equation",
+     "page": 10,
+     "original": "2.85 ± 0.12 2.66 ± 0.13 2.89 ± 0.13 2.42 ± 0.13 2.51 ± 0.11"
+    },
+    {
+     "id": "eq-5-4-15",
+     "type": "equation",
+     "page": 10,
+     "original": "Audiobox Speech"
+    },
+    {
+     "id": "eq-5-4-16",
+     "type": "equation",
+     "page": 10,
+     "original": "3.88 ± 0.11 3.77 ± 0.11 3.63 ± 0.12 3.85 ± 0.11 3.77 ± 0.11"
+    },
+    {
+     "id": "p-5-4-5",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-5-4-5-1",
+       "original": "Quality MOS ↑ LS CV SWBD Expr Accent YourTTS",
+       "zh": "表头：Quality MOS ↑（LS / CV / SWBD / Expr / Accent）——YourTTS（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-4-17",
+     "type": "equation",
+     "page": 10,
+     "original": "1.89 ± 0.10 2.19 ± 0.12 1.57 ± 0.08 1.74 ± 0.09 1.92 ± 0.10"
+    },
+    {
+     "id": "eq-5-4-18",
+     "type": "equation",
+     "page": 10,
+     "original": "Voicebox"
+    },
+    {
+     "id": "eq-5-4-19",
+     "type": "equation",
+     "page": 10,
+     "original": "3.70 ± 0.11 3.06 ± 0.12 2.94 ± 0.12 2.76 ± 0.12 3.38 ± 0.12"
+    },
+    {
+     "id": "eq-5-4-20",
+     "type": "equation",
+     "page": 10,
+     "original": "Audiobox Speech"
+    },
+    {
+     "id": "eq-5-4-21",
+     "type": "equation",
+     "page": 10,
+     "original": "4.11 ± 0.08 4.00 ± 0.09 3.74 ± 0.09 4.00 ± 0.09 4.22 ± 0.07"
     }
    ]
   },
@@ -2033,10 +2183,130 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-5-5-4-1",
-       "original": "Sim-o ↑ PT data FT data FT method has sil SP-book-60K SP-book-60K LoRA Y 0.708 0.461 0.530 0.552 0.529 Mix-185K SP-book-60K LoRA Y 0.718 0.505 0.592 0.571 0.584 Mix-185K SP-multi-100K LoRA Y 0.714 0.502 0.583 0.559 0.590 Mix-185K SP-multi-100K full Y 0.720 0.508 0.556 0.603 0.596 Mix-185K SP-multi-100K full N 0.734 0.607 0.608 0.603 0.659 WER (%) ↓ PT data FT data FT method has sil SP-book-60K SP-book-60K LoRA Y 4.4 4.4 8.7 4.2 1.5 Mix-185K SP-book-60K LoRA Y 3.8 4.7 8.9 3.9 1.4 Mix-185K SP-multi-100K LoRA Y 3.8 6.0 9.0 4.0 1.4 Mix-185K SP-multi-100K full Y 2.5 3.6 10.1 3.1 0.8 Mix-185K SP-multi-100K full N 3.2 3.7 9.1 3.2 0.9",
-       "zh": "Sim-o ↑ PT data FT data FT method has sil SP-book-60K SP-book-60K LoRA Y 0.708 0.461 0.530 0.552 0.529 Mix-185K SP-book-60K LoRA Y 0.718 0.505 0.592 0.571 0.584 Mix-185K SP-multi-100K LoRA Y 0.714 0.502 0.583 0.559 0.590 Mix-185K SP-multi-100K full Y 0.720 0.508 0.556 0.603 0.596 Mix-185K SP-multi-100K full N 0.734 0.607 0.608 0.603 0.659 WER（%）↓ PT data FT data FT method has sil SP-book-60K SP-book-60K LoRA Y 4.4 4.4 8.7 4.2 1.5 Mix-185K SP-book-60K LoRA Y 3.8 4.7 8.9 3.9 1.4 Mix-185K SP-multi-100K LoRA Y 3.8 6.0 9.0 4.0 1.4 Mix-185K SP-multi-100K full Y 2.5 3.6 10.1 3.1 0.8 Mix-185K SP-multi-100K full N 3.2 3.7 9.1 3.2 0.9（消融表格数值行，数字与原文一致。）"
+       "original": "Sim-o ↑ PT data FT data FT method has sil LS CV SWBD Expr Accent SP-book-60K SP-book-60K LoRA Y",
+       "zh": "表头：Sim-o ↑ × PT data / FT data / FT method / has sil（LS / CV / SWBD / Expr / Accent）——SP-book-60K / SP-book-60K / LoRA / Y（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-5-5-1",
+     "type": "equation",
+     "page": 11,
+     "original": "0.708 0.461 0.530 0.552 0.529"
+    },
+    {
+     "id": "eq-5-5-2",
+     "type": "equation",
+     "page": 11,
+     "original": "Mix-185K SP-book-60K LoRA Y"
+    },
+    {
+     "id": "eq-5-5-3",
+     "type": "equation",
+     "page": 11,
+     "original": "0.718 0.505 0.592 0.571 0.584"
+    },
+    {
+     "id": "eq-5-5-4",
+     "type": "equation",
+     "page": 11,
+     "original": "Mix-185K SP-multi-100K LoRA Y"
+    },
+    {
+     "id": "eq-5-5-5",
+     "type": "equation",
+     "page": 11,
+     "original": "0.714 0.502 0.583 0.559 0.590"
+    },
+    {
+     "id": "eq-5-5-6",
+     "type": "equation",
+     "page": 11,
+     "original": "Mix-185K SP-multi-100K full Y"
+    },
+    {
+     "id": "eq-5-5-7",
+     "type": "equation",
+     "page": 11,
+     "original": "0.720 0.508 0.556 0.603 0.596"
+    },
+    {
+     "id": "eq-5-5-8",
+     "type": "equation",
+     "page": 11,
+     "original": "Mix-185K SP-multi-100K full N"
+    },
+    {
+     "id": "eq-5-5-9",
+     "type": "equation",
+     "page": 11,
+     "original": "0.734 0.607 0.608 0.603 0.659"
+    },
+    {
+     "id": "p-5-5-5",
+     "type": "paragraph",
+     "page": 11,
+     "sentences": [
+      {
+       "id": "s-5-5-5-1",
+       "original": "WER (%) ↓ PT data FT data FT method has sil LS CV SWBD Expr Accent SP-book-60K SP-book-60K LoRA Y",
+       "zh": "表头：WER (%) ↓ × PT data / FT data / FT method / has sil（LS / CV / SWBD / Expr / Accent）——SP-book-60K / SP-book-60K / LoRA / Y（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-5-10",
+     "type": "equation",
+     "page": 11,
+     "original": "4.4 4.4 8.7 4.2 1.5"
+    },
+    {
+     "id": "eq-5-5-11",
+     "type": "equation",
+     "page": 11,
+     "original": "Mix-185K SP-book-60K LoRA Y"
+    },
+    {
+     "id": "eq-5-5-12",
+     "type": "equation",
+     "page": 11,
+     "original": "3.8 4.7 8.9 3.9 1.4"
+    },
+    {
+     "id": "eq-5-5-13",
+     "type": "equation",
+     "page": 11,
+     "original": "Mix-185K SP-multi-100K LoRA Y"
+    },
+    {
+     "id": "eq-5-5-14",
+     "type": "equation",
+     "page": 11,
+     "original": "3.8 6.0 9.0 4.0 1.4"
+    },
+    {
+     "id": "eq-5-5-15",
+     "type": "equation",
+     "page": 11,
+     "original": "Mix-185K SP-multi-100K full Y"
+    },
+    {
+     "id": "eq-5-5-16",
+     "type": "equation",
+     "page": 11,
+     "original": "2.5 3.6 10.1 3.1 0.8"
+    },
+    {
+     "id": "eq-5-5-17",
+     "type": "equation",
+     "page": 11,
+     "original": "Mix-185K SP-multi-100K full N"
+    },
+    {
+     "id": "eq-5-5-18",
+     "type": "equation",
+     "page": 11,
+     "original": "3.2 3.7 9.1 3.2 0.9"
     }
    ]
   },
@@ -2483,7 +2753,7 @@ globalThis.PAPER_2312_15821 = {
    "page": 13,
    "title": {
     "original": "Main Results",
-    "zh": "主要结果"
+    "zh": "实验结果"
    },
    "blocks": [
     {
@@ -2581,10 +2851,88 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-6-4-4-1",
-       "original": "objective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ Ground-truth 13.28 0.49 AudioLDM-L-Full Liu et al. (2023b) 3.37 28.76 1.66 8.72 0.43 AudioLDM 2-Full Liu et al. (2023c) 1.76 32.12 1.71 8.56 0.43 2.90± 0.16 2.98± 0.19 AudioLDM 2-Full-Large Liu et al. (2023c) 1.89 33.28 1.60 8.55 0.45 2.90± 0.16 TANGO Ghosal et al. (2023) 1.57 23.78 1.37 8.30 0.51 TANGO-full-FT Ghosal et al. (2023) 2.19 18.47 1.20 8.80 0.56 3.78± 0.15 Audiobox Sound 0.77 8.30 1.15 12.70 0.71",
-       "zh": "客观 主观 FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ Ground-truth 13.28 0.49 AudioLDM-L-Full Liu et al. (2023b) 3.37 28.76 1.66 8.72 0.43 AudioLDM 2-Full Liu et al. (2023c) 1.76 32.12 1.71 8.56 0.43 2.90± 0.16 2.98± 0.19 AudioLDM 2-Full-Large Liu et al. (2023c) 1.89 33.28 1.60 8.55 0.45 2.90± 0.16 TANGO Ghosal et al. (2023) 1.57 23.78 1.37 8.30 0.51 TANGO-full-FT Ghosal et al. (2023) 2.19 18.47 1.20 8.80 0.56 3.78± 0.15 Audiobox Sound 0.77 8.30 1.15 12.70 0.71（表格数值行，数字与原文一致：Audiobox Sound 的 FAD 0.77 远优于最优基线。）"
+       "original": "objective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ Ground-truth",
+       "zh": "表头：objective（FAD ↓ / FD ↓ / KLD ↓ / IS ↑ / CLAP ↑）× subjective（OVL ↑ / REL ↑）——Ground-truth（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-6-4-1",
+     "type": "equation",
+     "page": 14,
+     "original": "- - - 13.28 0.49 3.36± 0.18 3.86± 0.18"
+    },
+    {
+     "id": "eq-6-4-2",
+     "type": "equation",
+     "page": 14,
+     "original": "AudioLDM-L-Full Liu et al. (2023b)"
+    },
+    {
+     "id": "eq-6-4-3",
+     "type": "equation",
+     "page": 14,
+     "original": "3.37 28.76 1.66 8.72 0.43 2.48± 0.14 3.20± 0.18"
+    },
+    {
+     "id": "eq-6-4-4",
+     "type": "equation",
+     "page": 14,
+     "original": "AudioLDM 2-Full Liu et al. (2023c)"
+    },
+    {
+     "id": "eq-6-4-5",
+     "type": "equation",
+     "page": 14,
+     "original": "1.76 32.12 1.71 8.56 0.43 2.90± 0.16 2.98± 0.19"
+    },
+    {
+     "id": "eq-6-4-6",
+     "type": "equation",
+     "page": 14,
+     "original": "AudioLDM 2-Full-Large Liu et al. (2023c)"
+    },
+    {
+     "id": "eq-6-4-7",
+     "type": "equation",
+     "page": 14,
+     "original": "1.89 33.28 1.60 8.55 0.45 2.90± 0.16 3.13± 0.17"
+    },
+    {
+     "id": "eq-6-4-8",
+     "type": "equation",
+     "page": 14,
+     "original": "TANGO Ghosal et al. (2023)"
+    },
+    {
+     "id": "eq-6-4-9",
+     "type": "equation",
+     "page": 14,
+     "original": "1.57 23.78 1.37 8.30 0.51 3.10± 0.14 3.51± 0.16"
+    },
+    {
+     "id": "eq-6-4-10",
+     "type": "equation",
+     "page": 14,
+     "original": "TANGO-full-FT Ghosal et al. (2023)"
+    },
+    {
+     "id": "eq-6-4-11",
+     "type": "equation",
+     "page": 14,
+     "original": "2.19 18.47 1.20 8.80 0.56 3.04± 0.13 3.78± 0.15"
+    },
+    {
+     "id": "eq-6-4-12",
+     "type": "equation",
+     "page": 14,
+     "original": "Audiobox Sound"
+    },
+    {
+     "id": "eq-6-4-13",
+     "type": "equation",
+     "page": 14,
+     "original": "0.77 8.30 1.15 12.70 0.71 3.43± 0.15 4.09± 0.15"
     },
     {
      "id": "tab-6-4-2",
@@ -2600,16 +2948,82 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-6-4-5-1",
-       "original": "objective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ CLAP-aa ↑ OVL ↑ REL ↑ Ground-truth 13.28 0.49 AudioLDM-L-Full Liu et al. (2023b) 2.65 21.27 0.84 8.27 0.51 0.76 TANGO Ghosal et al. (2023) 1.25 18.02 0.78 8.53 0.53 0.78 TANGO-full-FT Ghosal et al. (2023) 1.86 15.00 0.71 8.95 0.56 0.78 Audiobox Sound 1.29 7.19 0.65 12.05 0.63 0.77 the ODE solver for our model and the number of DDIM steps in TANGO and AudioLDM2.",
-       "zh": "客观 主观 FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ CLAP-aa ↑ OVL ↑ REL ↑ Ground-truth 13.28 0.49 AudioLDM-L-Full Liu et al. (2023b) 2.65 21.27 0.84 8.27 0.51 0.76 TANGO Ghosal et al. (2023) 1.25 18.02 0.78 8.53 0.53 0.78 TANGO-full-FT Ghosal et al. (2023) 1.86 15.00 0.71 8.95 0.56 0.78 Audiobox Sound 1.29 7.19 0.65 12.05 0.63 0.77 ODE 求解器中的步数，以及 TANGO 和 AudioLDM2 中的 DDIM 步数。"
+       "original": "objective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ CLAP-aa ↑ OVL ↑ REL ↑ Ground-truth",
+       "zh": "（表：objective（FAD↓/FD↓/KLD↓/IS↑/CLAP↑/CLAP-aa↑）× subjective（OVL↑/REL↑）——Ground-truth、AudioLDM-L-Full、TANGO、TANGO-full-FT、Audiobox Sound 各行的完整数值。原始数据照录如下）\n（原始数据照录）\nobjective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ CLAP-aa ↑ OVL ↑ REL ↑ Ground-truth - - - 13.28 0.49 - 3.13± 0.13 4.21± 0.15 AudioLDM-L-Full Liu et al. (2023b) 2.65 21.27 0.84 8.27 0.51 0.76 2.58± 0.12 3.58± 0.17 TANGO Ghosal et al. (2023) 1.25 18.02 0.78 8.53 0.53 0.78 2.75± 0.12 3.94± 0.15 TANGO-full-FT Ghosal et al. (2023) 1.86 15.00 0.71 8.95 0.56 0.78 2.79± 0.12 4.07± 0.14 Audiobox Sound 1.29 7.19 0.65 12.05 0.63 0.77 2.95± 0.12 4.20± 0.12 the ODE solver for our model and the number of DDIM steps in TANGO and AudioLDM2."
+      }
+     ]
+    },
+    {
+     "id": "eq-6-4-14",
+     "type": "equation",
+     "page": 14,
+     "original": "- - - 13.28 0.49 - 3.13± 0.13 4.21± 0.15"
+    },
+    {
+     "id": "eq-6-4-15",
+     "type": "equation",
+     "page": 14,
+     "original": "AudioLDM-L-Full Liu et al. (2023b)"
+    },
+    {
+     "id": "eq-6-4-16",
+     "type": "equation",
+     "page": 14,
+     "original": "2.65 21.27 0.84 8.27 0.51 0.76 2.58± 0.12 3.58± 0.17"
+    },
+    {
+     "id": "eq-6-4-17",
+     "type": "equation",
+     "page": 14,
+     "original": "TANGO Ghosal et al. (2023)"
+    },
+    {
+     "id": "eq-6-4-18",
+     "type": "equation",
+     "page": 14,
+     "original": "1.25 18.02 0.78 8.53 0.53 0.78 2.75± 0.12 3.94± 0.15"
+    },
+    {
+     "id": "eq-6-4-19",
+     "type": "equation",
+     "page": 14,
+     "original": "TANGO-full-FT Ghosal et al. (2023)"
+    },
+    {
+     "id": "eq-6-4-20",
+     "type": "equation",
+     "page": 14,
+     "original": "1.86 15.00 0.71 8.95 0.56 0.78 2.79± 0.12 4.07± 0.14"
+    },
+    {
+     "id": "eq-6-4-21",
+     "type": "equation",
+     "page": 14,
+     "original": "Audiobox Sound"
+    },
+    {
+     "id": "eq-6-4-22",
+     "type": "equation",
+     "page": 14,
+     "original": "1.29 7.19 0.65 12.05 0.63 0.77 2.95± 0.12 4.20± 0.12"
+    },
+    {
+     "id": "p-6-4-6",
+     "type": "paragraph",
+     "page": 14,
+     "sentences": [
+      {
+       "id": "s-6-4-6-1",
+       "original": "the ODE solver for our model and the number of DDIM steps in TANGO and AudioLDM2.",
+       "zh": "（表：objective（FAD↓/FD↓/KLD↓/IS↑/CLAP↑/CLAP-aa↑）× subjective（OVL↑/REL↑）——Ground-truth、AudioLDM-L-Full、TANGO、TANGO-full-FT、Audiobox Sound 各行的完整数值。原始数据照录如下）\n（原始数据照录）\nobjective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ CLAP-aa ↑ OVL ↑ REL ↑ Ground-truth - - - 13.28 0.49 - 3.13± 0.13 4.21± 0.15 AudioLDM-L-Full Liu et al. (2023b) 2.65 21.27 0.84 8.27 0.51 0.76 2.58± 0.12 3.58± 0.17 TANGO Ghosal et al. (2023) 1.25 18.02 0.78 8.53 0.53 0.78 2.75± 0.12 3.94± 0.15 TANGO-full-FT Ghosal et al. (2023) 1.86 15.00 0.71 8.95 0.56 0.78 2.79± 0.12 4.07± 0.14 Audiobox Sound 1.29 7.19 0.65 12.05 0.63 0.77 2.95± 0.12 4.20± 0.12 the ODE solver for our model and the number of DDIM steps in TANGO and AudioLDM2."
       },
       {
-       "id": "s-6-4-5-2",
+       "id": "s-6-4-6-2",
        "original": "Audiobox Sound achieves consistently higher quality (lower FAD) with the same number of inference steps compared to AudioLDM2 and Tango.",
        "zh": "与 AudioLDM2 和 Tango 相比，Audiobox Sound 在相同推理步数下取得一致更高的质量（更低的 FAD）。"
       },
       {
-       "id": "s-6-4-5-3",
+       "id": "s-6-4-6-3",
        "original": "This implies the better efficiency of the flow-matching approach Audiobox is based on, as is similarly demonstrated in Le et al. (2023).",
        "zh": "这意味着 Audiobox 所基于的流匹配方法效率更高，与 Le et al. (2023) 的结论类似。"
       }
@@ -2739,10 +3153,88 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-6-5-4-1",
-       "original": "PT (SSL) FT-1 FT-2 w/ rerank FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ ✗ SD-cap-150 ✓ 1.17 9.88 1.17 11.43 0.71 ✗ SD-tag-6K + SD-cap-150 ✓ 1.61 13.16 1.34 10.17 0.67 ✗ SD-tag-6K + SD-cap-150 SD-cap-150 ✓ 0.97 8.70 1.17 12.19 0.71 ✓ SD-cap-150 ✓ 0.95 8.70 1.15 12.21 0.70 ✓ SD-tag-6K + SD-cap-150 SD-cap-150 ✗ 0.91 8.95 1.33 12.41 0.60 ✓ SD-tag-6K + SD-cap-150 SD-cap-150 ✓ 0.78 8.31 1.14 12.62 0.71",
-       "zh": "PT（SSL）FT-1 FT-2 w/ rerank FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ ✗ SD-cap-150 ✓ 1.17 9.88 1.17 11.43 0.71 ✗ SD-tag-6K + SD-cap-150 ✓ 1.61 13.16 1.34 10.17 0.67 ✗ SD-tag-6K + SD-cap-150 SD-cap-150 ✓ 0.97 8.70 1.17 12.19 0.71 ✓ SD-cap-150 ✓ 0.95 8.70 1.15 12.21 0.70 ✓ SD-tag-6K + SD-cap-150 ✗ 0.91 8.95 1.33 12.41 0.60 ✓ SD-tag-6K + SD-cap-150 SD-cap-150 ✓ 0.78 8.31 1.14 12.62 0.71（消融表格数值行，数字与原文一致。）"
+       "original": "PT (SSL) FT-1 FT-2 w/ rerank FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑",
+       "zh": "表头：PT (SSL) / FT-1 / FT-2 / w/ rerank × FAD ↓ / FD ↓ / KLD ↓ / IS ↑ / CLAP ↑。"
       }
      ]
+    },
+    {
+     "id": "eq-6-5-1",
+     "type": "equation",
+     "page": 15,
+     "original": "✗ -"
+    },
+    {
+     "id": "eq-6-5-2",
+     "type": "equation",
+     "page": 15,
+     "original": "SD-cap-150"
+    },
+    {
+     "id": "eq-6-5-3",
+     "type": "equation",
+     "page": 15,
+     "original": "✓ 1.17 9.88 1.17 11.43 0.71 ✗"
+    },
+    {
+     "id": "eq-6-5-4",
+     "type": "equation",
+     "page": 15,
+     "original": "SD-tag-6K + SD-cap-150"
+    },
+    {
+     "id": "eq-6-5-5",
+     "type": "equation",
+     "page": 15,
+     "original": "- ✓ 1.61 13.16 1.34 10.17 0.67 ✗"
+    },
+    {
+     "id": "eq-6-5-6",
+     "type": "equation",
+     "page": 15,
+     "original": "SD-tag-6K + SD-cap-150 SD-cap-150"
+    },
+    {
+     "id": "eq-6-5-7",
+     "type": "equation",
+     "page": 15,
+     "original": "✓ 0.97 8.70 1.17 12.19 0.71 ✓ -"
+    },
+    {
+     "id": "eq-6-5-8",
+     "type": "equation",
+     "page": 15,
+     "original": "SD-cap-150"
+    },
+    {
+     "id": "eq-6-5-9",
+     "type": "equation",
+     "page": 15,
+     "original": "✓ 0.95 8.70 1.15 12.21 0.70 ✓"
+    },
+    {
+     "id": "eq-6-5-10",
+     "type": "equation",
+     "page": 15,
+     "original": "SD-tag-6K + SD-cap-150 SD-cap-150"
+    },
+    {
+     "id": "eq-6-5-11",
+     "type": "equation",
+     "page": 15,
+     "original": "✗ 0.91 8.95 1.33 12.41 0.60 ✓"
+    },
+    {
+     "id": "eq-6-5-12",
+     "type": "equation",
+     "page": 15,
+     "original": "SD-tag-6K + SD-cap-150 SD-cap-150"
+    },
+    {
+     "id": "eq-6-5-13",
+     "type": "equation",
+     "page": 15,
+     "original": "✓ 0.78 8.31 1.14 12.62 0.71"
     }
    ]
   },
@@ -2833,13 +3325,19 @@ globalThis.PAPER_2312_15821 = {
    },
    "blocks": [
     {
+     "id": "eq-7-1-1",
+     "type": "equation",
+     "page": 16,
+     "original": "7.1.1"
+    },
+    {
      "id": "p-7-1-1",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
        "id": "s-7-1-1-1",
-       "original": "7.1.1 Speech Captions We aim to bridge the gap between speech and sound datasets by supporting description-based control for speech generation.",
+       "original": "Speech Captions We aim to bridge the gap between speech and sound datasets by supporting description-based control for speech generation.",
        "zh": "7.1.1 语音字幕 我们旨在通过为语音生成支持描述式控制，弥合语音数据集与音效数据集之间的鸿沟。"
       },
       {
@@ -2849,10 +3347,16 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-7-1-1-3",
-       "original": "We extract the following attributes: (1) age: 4 classes (2) gender: 2 classes (3) audio quality: 3 classes (4) pitch: 3 classes (5) speaking rate: 3 classes (6) accent: open-vocabulary (7) emotion: open-vocabulary (8) environment: open-vocabulary More details can be found in Appendix A.",
+       "original": "We extract the following attributes: (1) age: 4 classes",
        "zh": "我们提取以下属性：(1) 年龄：4 类 (2) 性别：2 类 (3) 音频质量：3 类 (4) 音调：3 类 (5) 语速：3 类 (6) 口音：开放词表 (7) 情感：开放词表 (8) 环境：开放词表。更多细节见附录 A。"
       }
      ]
+    },
+    {
+     "id": "eq-7-1-2",
+     "type": "equation",
+     "page": 16,
+     "original": "(2) gender: 2 classes (3) audio quality: 3 classes (4) pitch: 3 classes (5) speaking rate: 3 classes (6) accent:"
     },
     {
      "id": "p-7-1-2",
@@ -2861,18 +3365,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-2-1",
-       "original": "Given the above attributes, we use the LLAMA2 7B model Touvron et al. (2023) to convert them into captions.",
-       "zh": "给定上述属性，我们使用 LLAMA2 7B 模型 Touvron et al. (2023) 将其转换为字幕。"
-      },
-      {
-       "id": "s-7-1-2-2",
-       "original": "To capture different writing styles, we prompt the model a style bank mimicking different characters with example writing samples.",
-       "zh": "为捕捉不同的写作风格，我们用一个模仿不同人物角色的风格库提示模型，并附上写作示例。"
-      },
-      {
-       "id": "s-7-1-2-3",
-       "original": "A few of them are listed below:",
-       "zh": "以下列出其中几条："
+       "original": "open-vocabulary (7) emotion: open-vocabulary (8) environment: open-vocabulary More details can be found in Appendix A.",
+       "zh": "我们提取以下属性：(1) 年龄：4 类 (2) 性别：2 类 (3) 音频质量：3 类 (4) 音调：3 类 (5) 语速：3 类 (6) 口音：开放词表 (7) 情感：开放词表 (8) 环境：开放词表。更多细节见附录 A。"
       }
      ]
     },
@@ -2883,18 +3377,18 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-3-1",
-       "original": "• A young male adult voice, conveys anger and frustration.",
-       "zh": "• 一个年轻的成年男性嗓音，传达出愤怒和挫败感。"
+       "original": "Given the above attributes, we use the LLAMA2 7B model Touvron et al. (2023) to convert them into captions.",
+       "zh": "给定上述属性，我们使用 LLAMA2 7B 模型 Touvron et al. (2023) 将其转换为字幕。"
       },
       {
        "id": "s-7-1-3-2",
-       "original": "The audio, of normal quality, is recorded inside a small space.",
-       "zh": "音频质量正常，录制于一个小空间内。"
+       "original": "To capture different writing styles, we prompt the model a style bank mimicking different characters with example writing samples.",
+       "zh": "为捕捉不同的写作风格，我们用一个模仿不同人物角色的风格库提示模型，并附上写作示例。"
       },
       {
        "id": "s-7-1-3-3",
-       "original": "The person speaks with South Asia accent and a normal speaking pace.",
-       "zh": "此人说话带南亚口音，语速正常。"
+       "original": "A few of them are listed below:",
+       "zh": "以下列出其中几条："
       }
      ]
     },
@@ -2905,13 +3399,18 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-4-1",
-       "original": "• This young bloke’s ticked off, audio’s all good.",
-       "zh": "• 这小伙子气坏了，音频没问题。"
+       "original": "• A young male adult voice, conveys anger and frustration.",
+       "zh": "• 一个年轻的成年男性嗓音，传达出愤怒和挫败感。"
       },
       {
        "id": "s-7-1-4-2",
-       "original": "He’s in some small space and has a South Asian accent.",
-       "zh": "他在某个小空间里，带南亚口音。"
+       "original": "The audio, of normal quality, is recorded inside a small space.",
+       "zh": "音频质量正常，录制于一个小空间内。"
+      },
+      {
+       "id": "s-7-1-4-3",
+       "original": "The person speaks with South Asia accent and a normal speaking pace.",
+       "zh": "此人说话带南亚口音，语速正常。"
       }
      ]
     },
@@ -2922,8 +3421,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-5-1",
-       "original": "Talks normal speed.",
-       "zh": "语速正常。"
+       "original": "• This young bloke’s ticked off, audio’s all good.",
+       "zh": "• 这小伙子气坏了，音频没问题。"
+      },
+      {
+       "id": "s-7-1-5-2",
+       "original": "He’s in some small space and has a South Asian accent.",
+       "zh": "他在某个小空间里，带南亚口音。"
       }
      ]
     },
@@ -2934,13 +3438,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-6-1",
-       "original": "• Got this young dude who’s mad, audio’s decent.",
-       "zh": "• 有这么个年轻人，火气很大，音频还行。"
-      },
-      {
-       "id": "s-7-1-6-2",
-       "original": "He’s in a tight spot, has that South Asian accent, and talks at a chill pace.",
-       "zh": "他处在一个逼仄的地方，带那种南亚口音，说话节奏挺松弛。"
+       "original": "Talks normal speed.",
+       "zh": "语速正常。"
       }
      ]
     },
@@ -2951,23 +3450,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-7-1",
-       "original": "• Young man is angry.",
-       "zh": "• 年轻男子很生气。"
+       "original": "• Got this young dude who’s mad, audio’s decent.",
+       "zh": "• 有这么个年轻人，火气很大，音频还行。"
       },
       {
        "id": "s-7-1-7-2",
-       "original": "Audio is okay, small place.",
-       "zh": "音频可以，小地方。"
-      },
-      {
-       "id": "s-7-1-7-3",
-       "original": "Accent from South Asia.",
-       "zh": "南亚口音。"
-      },
-      {
-       "id": "s-7-1-7-4",
-       "original": "Speaks normal.",
-       "zh": "语速正常。"
+       "original": "He’s in a tight spot, has that South Asian accent, and talks at a chill pace.",
+       "zh": "他处在一个逼仄的地方，带那种南亚口音，说话节奏挺松弛。"
       }
      ]
     },
@@ -2978,8 +3467,23 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-8-1",
-       "original": "To further improve coverage over different environment and background sounds, for each utterance, we apply a random augmentation by convolving with a random room impulse responses (RIR) from a set of known environments and optionally add add a background noise from a set with known tags.",
-       "zh": "为进一步扩大对不同环境与背景声的覆盖，我们对每条话语施加随机增强：与来自已知环境集合的随机房间脉冲响应（RIR）卷积，并可选择叠加来自已知标签集合的背景噪声。"
+       "original": "• Young man is angry.",
+       "zh": "• 年轻男子很生气。"
+      },
+      {
+       "id": "s-7-1-8-2",
+       "original": "Audio is okay, small place.",
+       "zh": "音频可以，小地方。"
+      },
+      {
+       "id": "s-7-1-8-3",
+       "original": "Accent from South Asia.",
+       "zh": "南亚口音。"
+      },
+      {
+       "id": "s-7-1-8-4",
+       "original": "Speaks normal.",
+       "zh": "语速正常。"
       }
      ]
     },
@@ -2990,23 +3494,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-9-1",
-       "original": "We also generate the corresponding caption with updated environment and background noises using the LLAMA2 7B model.",
-       "zh": "我们还使用 LLAMA2 7B 模型，根据更新后的环境和背景噪声生成相应的字幕。"
-      },
-      {
-       "id": "s-7-1-9-2",
-       "original": "When adding any background noise to the utterance, we update the quality to “low”.",
-       "zh": "向话语添加任何背景噪声时，我们将质量更新为「低」。"
-      },
-      {
-       "id": "s-7-1-9-3",
-       "original": "For utterances applied only RIR we update the quality to be “normal” if the original quality was “studio”.",
-       "zh": "对只施加 RIR 的话语，若原质量为「录音棚级」，则更新为「正常」。"
-      },
-      {
-       "id": "s-7-1-9-4",
-       "original": "We do not apply utterances with low audio quality since those may not be suited for RIR augmentations.",
-       "zh": "低音频质量的话语不做处理，因为它们可能不适合 RIR 增强。"
+       "original": "To further improve coverage over different environment and background sounds, for each utterance, we apply a random augmentation by convolving with a random room impulse responses (RIR) from a set of known environments and optionally add add a background noise from a set with known tags.",
+       "zh": "为进一步扩大对不同环境与背景声的覆盖，我们对每条话语施加随机增强：与来自已知环境集合的随机房间脉冲响应（RIR）卷积，并可选择叠加来自已知标签集合的背景噪声。"
       }
      ]
     },
@@ -3017,13 +3506,23 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-10-1",
-       "original": "Human annotations: We create human-based annotation to gather more fine-grained description and better alignment towards human hearing perception.",
-       "zh": "人工标注：我们构建人工标注，以收集更细粒度、且与人类听觉感知更一致的描述。"
+       "original": "We also generate the corresponding caption with updated environment and background noises using the LLAMA2 7B model.",
+       "zh": "我们还使用 LLAMA2 7B 模型，根据更新后的环境和背景噪声生成相应的字幕。"
       },
       {
        "id": "s-7-1-10-2",
-       "original": "We select a 500 hour subset of SP-multi-100K described in Section 5.5.",
-       "zh": "我们从第 5.5 节所述的 SP-multi-100K 中选取一个 500 小时子集。"
+       "original": "When adding any background noise to the utterance, we update the quality to “low”.",
+       "zh": "向话语添加任何背景噪声时，我们将质量更新为「低」。"
+      },
+      {
+       "id": "s-7-1-10-3",
+       "original": "For utterances applied only RIR we update the quality to be “normal” if the original quality was “studio”.",
+       "zh": "对只施加 RIR 的话语，若原质量为「录音棚级」，则更新为「正常」。"
+      },
+      {
+       "id": "s-7-1-10-4",
+       "original": "We do not apply utterances with low audio quality since those may not be suited for RIR augmentations.",
+       "zh": "低音频质量的话语不做处理，因为它们可能不适合 RIR 增强。"
       }
      ]
     },
@@ -3034,38 +3533,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-11-1",
-       "original": "In the annotation guidelines, we ask the annotator to describe the perceived attribute such as: gender, age, accent, emotion, environment, tonal variation, speaking pace, pitch, emotion, audio quality, vocal style and any miscellaneous details from the speech utterances.",
-       "zh": "在标注指南中，我们要求标注者描述感知到的属性，如：性别、年龄、口音、情感、环境、音高变化、语速、音调、情感、音频质量、声线风格以及话语中的任何其他细节。"
+       "original": "Human annotations: We create human-based annotation to gather more fine-grained description and better alignment towards human hearing perception.",
+       "zh": "人工标注：我们构建人工标注，以收集更细粒度、且与人类听觉感知更一致的描述。"
       },
       {
        "id": "s-7-1-11-2",
-       "original": "In addition to this we also collect categories for the attributes.",
-       "zh": "除此之外，我们还收集各属性的类别。"
-      },
-      {
-       "id": "s-7-1-11-3",
-       "original": "To ensure we get high quality description, we filter annotators in two stages.",
-       "zh": "为确保获得高质量描述，我们分两阶段筛选标注者。"
-      },
-      {
-       "id": "s-7-1-11-4",
-       "original": "First, we keep annotators who successfully labeled pre-selected gold samples with high accuracy.",
-       "zh": "首先，保留能以高准确率标注预选金标样本的标注者。"
-      },
-      {
-       "id": "s-7-1-11-5",
-       "original": "We additionally use an LLM to automatically rate the quality annotations to ensure high quality detailed captions to complement our automatic caption above.",
-       "zh": "我们还额外使用一个 LLM 自动为标注质量打分，以确保获得高质量、细节丰富的字幕，作为上述自动字幕的补充。"
-      },
-      {
-       "id": "s-7-1-11-6",
-       "original": "More details on quality can be found in Appendix B.",
-       "zh": "更多质量方面的细节见附录 B。"
-      },
-      {
-       "id": "s-7-1-11-7",
-       "original": "Here are some captions example curated by our human annotator:",
-       "zh": "以下是我们的人工标注者整理出的一些字幕示例："
+       "original": "We select a 500 hour subset of SP-multi-100K described in Section 5.5.",
+       "zh": "我们从第 5.5 节所述的 SP-multi-100K 中选取一个 500 小时子集。"
       }
      ]
     },
@@ -3076,33 +3550,38 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-12-1",
-       "original": "1.",
-       "zh": "1."
+       "original": "In the annotation guidelines, we ask the annotator to describe the perceived attribute such as: gender, age, accent, emotion, environment, tonal variation, speaking pace, pitch, emotion, audio quality, vocal style and any miscellaneous details from the speech utterances.",
+       "zh": "在标注指南中，我们要求标注者描述感知到的属性，如：性别、年龄、口音、情感、环境、音高变化、语速、音调、情感、音频质量、声线风格以及话语中的任何其他细节。"
       },
       {
        "id": "s-7-1-12-2",
-       "original": "A young woman with an American accent speaks in a higher pitched voice.",
-       "zh": "一位带美国口音的年轻女性用偏高的音调说话。"
+       "original": "In addition to this we also collect categories for the attributes.",
+       "zh": "除此之外，我们还收集各属性的类别。"
       },
       {
        "id": "s-7-1-12-3",
-       "original": "She speaks at a normal pace with a bit of a muffled voice.",
-       "zh": "她语速正常，声音略带闷塞。"
+       "original": "To ensure we get high quality description, we filter annotators in two stages.",
+       "zh": "为确保获得高质量描述，我们分两阶段筛选标注者。"
       },
       {
        "id": "s-7-1-12-4",
-       "original": "She is outside in an urban area and cars can be heard passing by in the background.",
-       "zh": "她身处城市户外，背景里能听到汽车驶过。"
+       "original": "First, we keep annotators who successfully labeled pre-selected gold samples with high accuracy.",
+       "zh": "首先，保留能以高准确率标注预选金标样本的标注者。"
       },
       {
        "id": "s-7-1-12-5",
-       "original": "She has a happy and excited tone that is slightly melodious.",
-       "zh": "她的语气开心而兴奋，略带抑扬感。"
+       "original": "We additionally use an LLM to automatically rate the quality annotations to ensure high quality detailed captions to complement our automatic caption above.",
+       "zh": "我们还额外使用一个 LLM 自动为标注质量打分，以确保获得高质量、细节丰富的字幕，作为上述自动字幕的补充。"
       },
       {
        "id": "s-7-1-12-6",
-       "original": "The audio is of poor quality and dog barking can be heard at the end.",
-       "zh": "音频质量较差，结尾处能听到狗叫。"
+       "original": "More details on quality can be found in Appendix B.",
+       "zh": "更多质量方面的细节见附录 B。"
+      },
+      {
+       "id": "s-7-1-12-7",
+       "original": "Here are some captions example curated by our human annotator:",
+       "zh": "以下是我们的人工标注者整理出的一些字幕示例："
       }
      ]
     },
@@ -3113,45 +3592,60 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-13-1",
-       "original": "2.",
-       "zh": "2."
+       "original": "1.",
+       "zh": "1."
       },
       {
        "id": "s-7-1-13-2",
-       "original": "A middle aged man with a mildly masculine voice seems to be outside in a rural or natural environment with a moderately background noise of birds singing.",
-       "zh": "一位嗓音略带阳刚的中年男子似乎在乡村或自然环境的户外，背景噪声为中等强度的鸟鸣。"
+       "original": "A young woman with an American accent speaks in a higher pitched voice.",
+       "zh": "一位带美国口音的年轻女性用偏高的音调说话。"
       },
       {
        "id": "s-7-1-13-3",
-       "original": "He seems to be in a neutral mood when show casing a house to some people.",
-       "zh": "他似乎情绪平稳，正在向一些人展示一所房子。"
+       "original": "She speaks at a normal pace with a bit of a muffled voice.",
+       "zh": "她语速正常，声音略带闷塞。"
       },
       {
        "id": "s-7-1-13-4",
-       "original": "His voice is hoarse/rough speaking at a slow pace with an average voice pitch.",
-       "zh": "他嗓音沙哑/粗糙，语速缓慢，音高适中。"
+       "original": "She is outside in an urban area and cars can be heard passing by in the background.",
+       "zh": "她身处城市户外，背景里能听到汽车驶过。"
+      },
+      {
+       "id": "s-7-1-13-5",
+       "original": "She has a happy and excited tone that is slightly melodious.",
+       "zh": "她的语气开心而兴奋，略带抑扬感。"
+      },
+      {
+       "id": "s-7-1-13-6",
+       "original": "The audio is of poor quality and dog barking can be heard at the end.",
+       "zh": "音频质量较差，结尾处能听到狗叫。"
       }
      ]
     },
     {
      "id": "p-7-1-14",
      "type": "paragraph",
-     "page": 17,
+     "page": 16,
      "sentences": [
       {
        "id": "s-7-1-14-1",
-       "original": "Voice Prompts Natural language description alone allows user to control styles through describing attributes such as age, accent, emotion, pitch, and environment.",
-       "zh": "声音提示 仅靠自然语言描述，用户就可以通过描述年龄、口音、情感、音调和环境等属性来控制风格。"
+       "original": "2.",
+       "zh": "2."
       },
       {
        "id": "s-7-1-14-2",
-       "original": "However, a user maybe interested in synthesizing a specific vocal style and while changing other attributes such as quality, emotion, background.",
-       "zh": "然而，用户可能希望合成特定的声线风格，同时改变质量、情感、背景等其他属性。"
+       "original": "A middle aged man with a mildly masculine voice seems to be outside in a rural or natural environment with a moderately background noise of birds singing.",
+       "zh": "一位嗓音略带阳刚的中年男子似乎在乡村或自然环境的户外，背景噪声为中等强度的鸟鸣。"
       },
       {
        "id": "s-7-1-14-3",
-       "original": "This requires disentangled control between the input voice sample and natural language text prompt.",
-       "zh": "这需要在输入声音样本与自然语言文本提示之间实现解耦控制。"
+       "original": "He seems to be in a neutral mood when show casing a house to some people.",
+       "zh": "他似乎情绪平稳，正在向一些人展示一所房子。"
+      },
+      {
+       "id": "s-7-1-14-4",
+       "original": "His voice is hoarse/rough speaking at a slow pace with an average voice pitch.",
+       "zh": "他嗓音沙哑/粗糙，语速缓慢，音高适中。"
       }
      ]
     },
@@ -3162,23 +3656,18 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-15-1",
-       "original": "For each target utterance, we sample an additional utterance from the same speaker to serve as voice prompt during training.",
-       "zh": "对每条目标话语，我们从同一说话人处另采样一条话语，在训练时作为声音提示。"
+       "original": "Voice Prompts Natural language description alone allows user to control styles through describing attributes such as age, accent, emotion, pitch, and environment.",
+       "zh": "声音提示 仅靠自然语言描述，用户就可以通过描述年龄、口音、情感、音调和环境等属性来控制风格。"
       },
       {
        "id": "s-7-1-15-2",
-       "original": "The voice prompt is selected such that it differs from the target utterance on one or more attribute such as emotion, environment, and speaking rate.",
-       "zh": "声音提示的选取标准是：它在情感、环境、语速等一个或多个属性上与目标话语不同。"
+       "original": "However, a user maybe interested in synthesizing a specific vocal style and while changing other attributes such as quality, emotion, background.",
+       "zh": "然而，用户可能希望合成特定的声线风格，同时改变质量、情感、背景等其他属性。"
       },
       {
        "id": "s-7-1-15-3",
-       "original": "This is to de-correlate the target and prompt on everything but vocal similarity.",
-       "zh": "这是为了让目标与提示在声线相似度之外的一切属性上去相关。"
-      },
-      {
-       "id": "s-7-1-15-4",
-       "original": "We additionally apply a random room impulse response and background noise augmentation to the voice prompt to increase robustness as well as further de-correlation.",
-       "zh": "我们还对声音提示施加随机房间脉冲响应与背景噪声增强，以增强鲁棒性并进一步去相关。"
+       "original": "This requires disentangled control between the input voice sample and natural language text prompt.",
+       "zh": "这需要在输入声音样本与自然语言文本提示之间实现解耦控制。"
       }
      ]
     },
@@ -3189,11 +3678,38 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-1-16-1",
+       "original": "For each target utterance, we sample an additional utterance from the same speaker to serve as voice prompt during training.",
+       "zh": "对每条目标话语，我们从同一说话人处另采样一条话语，在训练时作为声音提示。"
+      },
+      {
+       "id": "s-7-1-16-2",
+       "original": "The voice prompt is selected such that it differs from the target utterance on one or more attribute such as emotion, environment, and speaking rate.",
+       "zh": "声音提示的选取标准是：它在情感、环境、语速等一个或多个属性上与目标话语不同。"
+      },
+      {
+       "id": "s-7-1-16-3",
+       "original": "This is to de-correlate the target and prompt on everything but vocal similarity.",
+       "zh": "这是为了让目标与提示在声线相似度之外的一切属性上去相关。"
+      },
+      {
+       "id": "s-7-1-16-4",
+       "original": "We additionally apply a random room impulse response and background noise augmentation to the voice prompt to increase robustness as well as further de-correlation.",
+       "zh": "我们还对声音提示施加随机房间脉冲响应与背景噪声增强，以增强鲁棒性并进一步去相关。"
+      }
+     ]
+    },
+    {
+     "id": "p-7-1-17",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-7-1-17-1",
        "original": "Note that this is different from passing the audio as audio context (zero-shot TTS) where we expect the model to copy over emotion, environment and other background details as well.",
        "zh": "注意，这与将音频作为音频上下文（零样本 TTS）不同——后者期望模型把情感、环境和其他背景细节一并复制过来。"
       },
       {
-       "id": "s-7-1-16-2",
+       "id": "s-7-1-17-2",
        "original": "Here we would want the model to transfer only the vocal style from prompt and use the description for other details such as environment and emotions.",
        "zh": "在这里，我们希望模型只从提示迁移声线风格，而环境、情感等其他细节由描述决定。"
       }
@@ -3430,7 +3946,7 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-7-3-4-3",
-       "original": "We use the same contrastive loss for model training following Wu et al. (2023); Radford et al. (2021), where τ is a learnable parameter. i=1 (log exp (ea i · et i/τ) PN j=1 exp (ea i · et j/τ) + log exp (et i · ea i /τ) PN j=1 exp (et i · ea j /τ) ) (2)",
+       "original": "We use the same contrastive loss for model training following Wu et al. (2023); Radford et al. (2021), where τ is a learnable parameter. i=1 (log exp (ea i · et i/τ) PN j=1 exp (ea i · et j/τ) + log exp (et i · ea i /τ) PN j=1 exp (et i · ea j /τ)",
        "zh": "我们沿用 Wu et al. (2023); Radford et al. (2021) 的对比损失训练模型，其中 τ 是可学习参数。i=1 (log exp (ea i · et i/τ) PN j=1 exp (ea i · et j/τ) + log exp (et i · ea i /τ) PN j=1 exp (et i · ea j /τ) ) (2)"
       }
      ]
@@ -3439,10 +3955,16 @@ globalThis.PAPER_2312_15821 = {
      "id": "eq-7-3-1",
      "type": "equation",
      "page": 18,
-     "original": "N X"
+     "original": ") (2)"
     },
     {
      "id": "eq-7-3-2",
+     "type": "equation",
+     "page": 18,
+     "original": "N X"
+    },
+    {
+     "id": "eq-7-3-3",
      "type": "equation",
      "page": 18,
      "original": "L = 1 2N"
@@ -3609,16 +4131,100 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-3-9-1",
-       "original": "Speech Text→Audio Audio→Text CLAP (general audio) Wu et al. (2023) 0.36 1.29 2.29 0.64 2.26 3.55 CLAP (w/ speech) Wu et al. (2023) 0.82 2.42 3.37 0.51 1.90 2.60 Speech-CLAP 7.10 16.30 22.01 5.96 16.07 22.34 Sound Text→Audio Audio→Text CLAP (general audio) Wu et al. (2023) 11.03 45.33 63.64 9.45 44.36 61.70 CLAP (w/ speech) Wu et al. (2023) 11.15 42.42 60.36 9.70 43.15 59.03 Speech-CLAP 13.33 51.88 67.64 11.27 47.27 64.48 Correlation between Joint-CLAP scores and human opionion scores In practice, we also notice the Joint-CLAP model is more closely correlated to human-perceived text-audio similarity, as opposed to the public CLAP model (see Figure 3).",
-       "zh": "语音 文本→音频 音频→文本 CLAP (general audio) Wu et al. (2023) 0.36 1.29 2.29 0.64 2.26 3.55 CLAP (w/ speech) Wu et al. (2023) 0.82 2.42 3.37 0.51 1.90 2.60 Speech-CLAP 7.10 16.30 22.01 5.96 16.07 22.34 音效 文本→音频 音频→文本 CLAP (general audio) Wu et al. (2023) 11.03 45.33 63.64 9.45 44.36 61.70 CLAP (w/ speech) Wu et al. (2023) 11.15 42.42 60.36 9.70 43.15 59.03 Speech-CLAP 13.33 51.88 67.64 11.27 47.27 64.48 Joint-CLAP 分数与人类意见分数的相关性 实践中，我们还注意到 Joint-CLAP 模型与人感知到的文本-音频相似度相关性更强，这不同于公开 CLAP 模型（见 Figure 3）。"
+       "original": "Speech Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023)",
+       "zh": "（表：Speech/Sound 下 Text→Audio 与 Audio→Text 的 R@1/R@5/R@10——CLAP (general audio)、CLAP (w/ speech)、Speech-CLAP 三系统完整数值。原始数据照录如下）\n（原始数据照录）\nSpeech Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023) 0.36 1.29 2.29 0.64 2.26 3.55 CLAP (w/ speech) Wu et al. (2023) 0.82 2.42 3.37 0.51 1.90 2.60 Speech-CLAP 7.10 16.30 22.01 5.96 16.07 22.34 Sound Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023) 11.03 45.33 63.64 9.45 44.36 61.70 CLAP (w/ speech) Wu et al. (2023) 11.15 42.42 60.36 9.70 43.15 59.03 Speech-CLAP 13.33 51.88 67.64 11.27 47.27 64.48 Correlation between Joint-CLAP scores and human opionion scores In practice, we also notice the Joint-CLAP model is more closely correlated to human-perceived text-audio similarity, as opposed to the public CLAP model (see Figure 3)."
+      }
+     ]
+    },
+    {
+     "id": "eq-7-3-4",
+     "type": "equation",
+     "page": 19,
+     "original": "0.36 1.29 2.29 0.64 2.26 3.55"
+    },
+    {
+     "id": "eq-7-3-5",
+     "type": "equation",
+     "page": 19,
+     "original": "CLAP (w/ speech) Wu et al. (2023)"
+    },
+    {
+     "id": "eq-7-3-6",
+     "type": "equation",
+     "page": 19,
+     "original": "0.82 2.42 3.37 0.51 1.90 2.60"
+    },
+    {
+     "id": "eq-7-3-7",
+     "type": "equation",
+     "page": 19,
+     "original": "Speech-CLAP"
+    },
+    {
+     "id": "eq-7-3-8",
+     "type": "equation",
+     "page": 19,
+     "original": "7.10 16.30 22.01 5.96 16.07 22.34"
+    },
+    {
+     "id": "p-7-3-10",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-7-3-10-1",
+       "original": "Sound Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023)",
+       "zh": "（表：Speech/Sound 下 Text→Audio 与 Audio→Text 的 R@1/R@5/R@10——CLAP (general audio)、CLAP (w/ speech)、Speech-CLAP 三系统完整数值。原始数据照录如下）\n（原始数据照录）\nSpeech Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023) 0.36 1.29 2.29 0.64 2.26 3.55 CLAP (w/ speech) Wu et al. (2023) 0.82 2.42 3.37 0.51 1.90 2.60 Speech-CLAP 7.10 16.30 22.01 5.96 16.07 22.34 Sound Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023) 11.03 45.33 63.64 9.45 44.36 61.70 CLAP (w/ speech) Wu et al. (2023) 11.15 42.42 60.36 9.70 43.15 59.03 Speech-CLAP 13.33 51.88 67.64 11.27 47.27 64.48 Correlation between Joint-CLAP scores and human opionion scores In practice, we also notice the Joint-CLAP model is more closely correlated to human-perceived text-audio similarity, as opposed to the public CLAP model (see Figure 3)."
+      }
+     ]
+    },
+    {
+     "id": "eq-7-3-9",
+     "type": "equation",
+     "page": 19,
+     "original": "11.03 45.33 63.64 9.45 44.36 61.70"
+    },
+    {
+     "id": "eq-7-3-10",
+     "type": "equation",
+     "page": 19,
+     "original": "CLAP (w/ speech) Wu et al. (2023)"
+    },
+    {
+     "id": "eq-7-3-11",
+     "type": "equation",
+     "page": 19,
+     "original": "11.15 42.42 60.36 9.70 43.15 59.03"
+    },
+    {
+     "id": "eq-7-3-12",
+     "type": "equation",
+     "page": 19,
+     "original": "Speech-CLAP"
+    },
+    {
+     "id": "eq-7-3-13",
+     "type": "equation",
+     "page": 19,
+     "original": "13.33 51.88 67.64 11.27 47.27 64.48"
+    },
+    {
+     "id": "p-7-3-11",
+     "type": "paragraph",
+     "page": 19,
+     "sentences": [
+      {
+       "id": "s-7-3-11-1",
+       "original": "Correlation between Joint-CLAP scores and human opionion scores In practice, we also notice the Joint-CLAP model is more closely correlated to human-perceived text-audio similarity, as opposed to the public CLAP model (see Figure 3).",
+       "zh": "（表：Speech/Sound 下 Text→Audio 与 Audio→Text 的 R@1/R@5/R@10——CLAP (general audio)、CLAP (w/ speech)、Speech-CLAP 三系统完整数值。原始数据照录如下）\n（原始数据照录）\nSpeech Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023) 0.36 1.29 2.29 0.64 2.26 3.55 CLAP (w/ speech) Wu et al. (2023) 0.82 2.42 3.37 0.51 1.90 2.60 Speech-CLAP 7.10 16.30 22.01 5.96 16.07 22.34 Sound Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023) 11.03 45.33 63.64 9.45 44.36 61.70 CLAP (w/ speech) Wu et al. (2023) 11.15 42.42 60.36 9.70 43.15 59.03 Speech-CLAP 13.33 51.88 67.64 11.27 47.27 64.48 Correlation between Joint-CLAP scores and human opionion scores In practice, we also notice the Joint-CLAP model is more closely correlated to human-perceived text-audio similarity, as opposed to the public CLAP model (see Figure 3)."
       },
       {
-       "id": "s-7-3-9-2",
+       "id": "s-7-3-11-2",
        "original": "Specifically, we take six Audiobox models of varying performance and run subjective evaluation with these models on the four evaluation sets.",
        "zh": "具体而言，我们取 6 个性能各异的 Audiobox 模型，在 4 个评测集上进行主观评测。"
       },
       {
-       "id": "s-7-3-9-3",
+       "id": "s-7-3-11-3",
        "original": "As is shown in Figure 3, the Pearson correlation coefficient between the text-audio similarity and REL score is increased from 0.028 to 0.727 with a joint CLAP model, suggesting that its text-audio similarity score is a reliable metric for evaluating description-controlled speech generation.",
        "zh": "如 Figure 3 所示，采用联合 CLAP 模型后，文本-音频相似度与 REL 分数之间的 Pearson 相关系数从 0.028 提升到 0.727，表明其文本-音频相似度分数是评测描述控制语音生成的可靠指标。"
       }
@@ -3753,20 +4359,16 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-4-4-1",
-       "original": "Hyper-parameters P(vp=F) p(ctx=F | vp=T) P(ctx=F | vp=F) p(cap=F) 0.5 0.7 0.5 0.3 These probabilities are designed with specific use cases discussed previously.",
+       "original": "Hyper-parameters P(vp=F) p(ctx=F | vp=T) P(ctx=F | vp=F) p(cap=F)",
        "zh": "超参数 P(vp=F) p(ctx=F | vp=T) P(ctx=F | vp=F) p(cap=F) 0.5 0.7 0.5 0.3 这些概率是围绕前面讨论的具体用例设计的。"
-      },
-      {
-       "id": "s-7-4-4-2",
-       "original": "Note that zero-shot TTS requires the model to copy each and every attribute from the audio prompt while restylization requires model to maintain high similarity of vocal style while discarding emotion, environment and other attributes.",
-       "zh": "注意，零样本 TTS 要求模型复制音频提示中的每一个属性，而风格重塑要求模型在保持声线风格高度相似的同时，丢弃情感、环境等其他属性。"
-      },
-      {
-       "id": "s-7-4-4-3",
-       "original": "This requires us to distinguish the context from the voice prompt.",
-       "zh": "这要求我们把上下文与声音提示区分开来。"
       }
      ]
+    },
+    {
+     "id": "eq-7-4-1",
+     "type": "equation",
+     "page": 20,
+     "original": "0.5 0.7 0.5 0.3"
     },
     {
      "id": "p-7-4-5",
@@ -3775,21 +4377,43 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-4-5-1",
+       "original": "These probabilities are designed with specific use cases discussed previously.",
+       "zh": "超参数 P(vp=F) p(ctx=F | vp=T) P(ctx=F | vp=F) p(cap=F) 0.5 0.7 0.5 0.3 这些概率是围绕前面讨论的具体用例设计的。"
+      },
+      {
+       "id": "s-7-4-5-2",
+       "original": "Note that zero-shot TTS requires the model to copy each and every attribute from the audio prompt while restylization requires model to maintain high similarity of vocal style while discarding emotion, environment and other attributes.",
+       "zh": "注意，零样本 TTS 要求模型复制音频提示中的每一个属性，而风格重塑要求模型在保持声线风格高度相似的同时，丢弃情感、环境等其他属性。"
+      },
+      {
+       "id": "s-7-4-5-3",
+       "original": "This requires us to distinguish the context from the voice prompt.",
+       "zh": "这要求我们把上下文与声音提示区分开来。"
+      }
+     ]
+    },
+    {
+     "id": "p-7-4-6",
+     "type": "paragraph",
+     "page": 20,
+     "sentences": [
+      {
+       "id": "s-7-4-6-1",
        "original": "Setting the dropout probabilities as defined in Table 9 lead to the joint probabilities presented in Table 10.",
        "zh": "按 Table 9 定义的丢弃概率，可导出 Table 10 所示的联合概率。"
       },
       {
-       "id": "s-7-4-5-2",
+       "id": "s-7-4-6-2",
        "original": "The joint probabilities correspond to each of the use case that the model can support.",
        "zh": "这些联合概率分别对应模型可支持的各个用例。"
       },
       {
-       "id": "s-7-4-5-3",
+       "id": "s-7-4-6-3",
        "original": "Note that the generative pre-training already tunes model for ZS-TTS and diverse speech sampling applications.",
        "zh": "注意，生成式预训练已经让模型适配 ZS-TTS 与多样化语音采样应用。"
       },
       {
-       "id": "s-7-4-5-4",
+       "id": "s-7-4-6-4",
        "original": "Therefore, we select the hyper-parameters to bias the model towards description-guided TTS with and without vocal conditioning.",
        "zh": "因此，我们选择这些超参数，使模型向带或不带声线条件的描述引导 TTS 倾斜。"
       }
@@ -3803,100 +4427,64 @@ globalThis.PAPER_2312_15821 = {
      "zh": "Table 10 不同用例下 context、voice prompt 与 caption 的导出联合概率。"
     },
     {
-     "id": "p-7-4-6",
-     "type": "paragraph",
-     "page": 20,
-     "sentences": [
-      {
-       "id": "s-7-4-6-1",
-       "original": "Hyper-parameters ZS-TTS Description-TTS w/ vocal Description-TTS Sampling P(ctx=T, vp=F, cap=F) P(ctx=F, vp=T, cap=T) P(ctx=F, vp=F, cap=T) P(ctx=F, vp=F, cap=F) 0.075 0.245 0.175 0.075 In the first stage fine-tuning, we fine-tune all parameters for a maximum of 600K updates with 32 A100-80GB GPUs.",
-       "zh": "超参数 ZS-TTS 描述引导 TTS（带声线） 描述引导 TTS 采样 P(ctx=T, vp=F, cap=F) P(ctx=F, vp=T, cap=T) P(ctx=F, vp=F, cap=T) P(ctx=F, vp=F, cap=F) 0.075 0.245 0.175 0.075 第一阶段微调中，我们在 32 张 A100-80GB GPU 上对全部参数微调最多 600K 次更新。"
-      },
-      {
-       "id": "s-7-4-6-2",
-       "original": "We stopped training after 350K steps as we didnot find any gains in model performance beyond this.",
-       "zh": "我们在 350K 步后停止训练，因为此后模型性能不再有收益。"
-      },
-      {
-       "id": "s-7-4-6-3",
-       "original": "In the second stage, we further fine-tune our model parameter with LoRA fine-tuning on the self-attention parameters with r = 64 and cross attention input projection layers for 100K updates with 16 A100-80GB GPUs.",
-       "zh": "第二阶段，我们进一步用 LoRA 微调模型参数——作用于自注意力参数（r = 64）与交叉注意力输入投影层——在 16 张 A100-80GB GPU 上训练 100K 次更新。"
-      }
-     ]
-    },
-    {
      "id": "p-7-4-7",
      "type": "paragraph",
      "page": 20,
      "sentences": [
       {
        "id": "s-7-4-7-1",
-       "original": "For the unified Audiobox duration model, we use both transcript and the description text as the input.",
-       "zh": "对统一 Audiobox 时长模型，我们同时使用转写与描述文本作为输入。"
-      },
-      {
-       "id": "s-7-4-7-2",
-       "original": "We use 12 Transformers decoder layer with 8 heads, 768/2048 embedding/FFN dimensions self-attention and cross-attention layer to attend the description embedding.",
-       "zh": "我们使用 12 层 Transformer 解码器，8 头，嵌入/FFN 维度为 768/2048，自注意力与交叉注意力层用于关注描述嵌入。"
-      },
-      {
-       "id": "s-7-4-7-3",
-       "original": "We use 40 dimension for the character embedding.",
-       "zh": "字符嵌入使用 40 维。"
+       "original": "Hyper-parameters ZS-TTS Description-TTS w/ vocal Description-TTS Sampling P(ctx=T, vp=F, cap=F) P(ctx=F, vp=T, cap=T) P(ctx=F, vp=F, cap=T) P(ctx=F, vp=F, cap=F)",
+       "zh": "超参数 ZS-TTS 描述引导 TTS（带声线） 描述引导 TTS 采样 P(ctx=T, vp=F, cap=F) P(ctx=F, vp=T, cap=T) P(ctx=F, vp=F, cap=T) P(ctx=F, vp=F, cap=F) 0.075 0.245 0.175 0.075 第一阶段微调中，我们在 32 张 A100-80GB GPU 上对全部参数微调最多 600K 次更新。"
       }
      ]
     },
     {
+     "id": "eq-7-4-2",
+     "type": "equation",
+     "page": 20,
+     "original": "0.075 0.245 0.175 0.075"
+    },
+    {
      "id": "p-7-4-8",
      "type": "paragraph",
-     "page": 21,
+     "page": 20,
      "sentences": [
       {
        "id": "s-7-4-8-1",
-       "original": "During training, we set the description embedding drop probability 0.3.",
-       "zh": "训练时，我们把描述嵌入的丢弃概率设为 0.3。"
+       "original": "In the first stage fine-tuning, we fine-tune all parameters for a maximum of 600K updates with 32 A100-80GB GPUs.",
+       "zh": "超参数 ZS-TTS 描述引导 TTS（带声线） 描述引导 TTS 采样 P(ctx=T, vp=F, cap=F) P(ctx=F, vp=T, cap=T) P(ctx=F, vp=F, cap=T) P(ctx=F, vp=F, cap=F) 0.075 0.245 0.175 0.075 第一阶段微调中，我们在 32 张 A100-80GB GPU 上对全部参数微调最多 600K 次更新。"
       },
       {
        "id": "s-7-4-8-2",
-       "original": "The model trained with 600K updates with flow-matching loss with 8 A100-80GB GPUS.",
-       "zh": "模型在 8 张 A100-80GB GPU 上以流匹配损失训练 600K 次更新。"
+       "original": "We stopped training after 350K steps as we didnot find any gains in model performance beyond this.",
+       "zh": "我们在 350K 步后停止训练，因为此后模型性能不再有收益。"
       },
       {
        "id": "s-7-4-8-3",
-       "original": "For evaluation, we use the checkpoint at 200K steps.",
-       "zh": "评测时，我们使用 200K 步处的检查点。"
+       "original": "In the second stage, we further fine-tune our model parameter with LoRA fine-tuning on the self-attention parameters with r = 64 and cross attention input projection layers for 100K updates with 16 A100-80GB GPUs.",
+       "zh": "第二阶段，我们进一步用 LoRA 微调模型参数——作用于自注意力参数（r = 64）与交叉注意力输入投影层——在 16 张 A100-80GB GPU 上训练 100K 次更新。"
       }
      ]
     },
     {
      "id": "p-7-4-9",
      "type": "paragraph",
-     "page": 21,
+     "page": 20,
      "sentences": [
       {
        "id": "s-7-4-9-1",
-       "original": "Evaluation data: We measure the effectiveness of description-guided TTS and description-guided TTS with vocal prompts on the following test sets.",
-       "zh": "评测数据：我们在以下测试集上衡量描述引导 TTS 与带声音提示的描述引导 TTS 的效果。"
+       "original": "For the unified Audiobox duration model, we use both transcript and the description text as the input.",
+       "zh": "对统一 Audiobox 时长模型，我们同时使用转写与描述文本作为输入。"
       },
       {
        "id": "s-7-4-9-2",
-       "original": "First, we annotate a set of 1,946 recordings sampled from diverse sources, including LibriTTS (Zen et al., 2019), Common Voice (Ardila et al., 2019), Switchboard (Godfrey et al., 1992), Fisher (Cieri, Christopher, et al. , 2004,2005a,,), Spotify (Clifton et al., 2020), AudioSet (Gemmeke et al., 2017), Expresso (Nguyen et al., 2023) in order to evaluate the ability to generalize.",
-       "zh": "首先，我们标注了 1,946 条采自多种来源的录音，包括 LibriTTS (Zen et al., 2019)、Common Voice (Ardila et al., 2019)、Switchboard (Godfrey et al., 1992)、Fisher (Cieri, Christopher, et al. , 2004,2005a,,)、Spotify (Clifton et al., 2020)、AudioSet (Gemmeke et al., 2017)、Expresso (Nguyen et al., 2023)，以评估泛化能力。"
+       "original": "We use 12 Transformers decoder layer with 8 heads, 768/2048 embedding/FFN dimensions self-attention and cross-attention layer to attend the description embedding.",
+       "zh": "我们使用 12 层 Transformer 解码器，8 头，嵌入/FFN 维度为 768/2048，自注意力与交叉注意力层用于关注描述嵌入。"
       },
       {
        "id": "s-7-4-9-3",
-       "original": "This set is denoted as SpCap (SC).",
-       "zh": "该集合记为 SpCap（SC）。"
-      },
-      {
-       "id": "s-7-4-9-4",
-       "original": "The second set is AC-filtered (AC-filt) (Lee et al., 2023) with 825 utterances.",
-       "zh": "第二个集合是 AC-filtered（AC-filt）(Lee et al., 2023)，含 825 条话语。"
-      },
-      {
-       "id": "s-7-4-9-5",
-       "original": "It constructed from AudioCaps test set by transcribing and keeping samples with reliable ASR transcriptions.",
-       "zh": "它由 AudioCaps 测试集转写而来，只保留 ASR 转写可靠的样本。"
+       "original": "We use 40 dimension for the character embedding.",
+       "zh": "字符嵌入使用 40 维。"
       }
      ]
     },
@@ -3907,33 +4495,18 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-4-10-1",
-       "original": "The third one is the Expresso test set (Expr) with 999 utterances.",
-       "zh": "第三个是 Expresso 测试集（Expr），含 999 条话语。"
+       "original": "During training, we set the description embedding drop probability 0.3.",
+       "zh": "训练时，我们把描述嵌入的丢弃概率设为 0.3。"
       },
       {
        "id": "s-7-4-10-2",
-       "original": "Finally, the fourth one contains utterances from the internal Accent set.",
-       "zh": "最后，第四个集合包含来自内部 Accent 集的话语。"
+       "original": "The model trained with 600K updates with flow-matching loss with 8 A100-80GB GPUS.",
+       "zh": "模型在 8 张 A100-80GB GPU 上以流匹配损失训练 600K 次更新。"
       },
       {
        "id": "s-7-4-10-3",
-       "original": "We apply randomly sampled RIR and noise augmentation to construct this set and denote it as “Accent+” (500 utterances).",
-       "zh": "我们施加随机采样的 RIR 与噪声增强来构造该集合，记为「Accent+」（500 条话语）。"
-      },
-      {
-       "id": "s-7-4-10-4",
-       "original": "Expr and Accent+ use speech captions derived from LLM using the available attributes.",
-       "zh": "Expr 与 Accent+ 使用由 LLM 基于可用属性生成的语音字幕。"
-      },
-      {
-       "id": "s-7-4-10-5",
-       "original": "For Accent+, we additionally pass the environment and background noises tags to the LLM to incorporate the information into generated captions.",
-       "zh": "对 Accent+，我们还额外把环境与背景噪声标签传给 LLM，以便把这些信息纳入生成的字幕。"
-      },
-      {
-       "id": "s-7-4-10-6",
-       "original": "Together these sets cover a wide variety of acoustic events, emotions, accents, environments, and vocal styles.",
-       "zh": "这些集合合在一起覆盖了非常多样的声学事件、情感、口音、环境与声线风格。"
+       "original": "For evaluation, we use the checkpoint at 200K steps.",
+       "zh": "评测时，我们使用 200K 步处的检查点。"
       }
      ]
     },
@@ -3944,18 +4517,28 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-4-11-1",
-       "original": "To evaluate description-based TTS with vocal prompt, we use Expr and Accent+ datasets and select another utterance from the same speaker.",
-       "zh": "为评测带声音提示的描述引导 TTS，我们使用 Expr 与 Accent+ 数据集，并从同一说话人处另选一条话语。"
+       "original": "Evaluation data: We measure the effectiveness of description-guided TTS and description-guided TTS with vocal prompts on the following test sets.",
+       "zh": "评测数据：我们在以下测试集上衡量描述引导 TTS 与带声音提示的描述引导 TTS 的效果。"
       },
       {
        "id": "s-7-4-11-2",
-       "original": "The prompt is selected such that is different from the target utterance on either emotion or speaking style (enunciated, whisper, etc).",
-       "zh": "提示的选取标准是：它在情感或说话风格（清晰发音、耳语等）上与目标话语不同。"
+       "original": "First, we annotate a set of 1,946 recordings sampled from diverse sources, including LibriTTS (Zen et al., 2019), Common Voice (Ardila et al., 2019), Switchboard (Godfrey et al., 1992), Fisher (Cieri, Christopher, et al. , 2004,2005a,,), Spotify (Clifton et al., 2020), AudioSet (Gemmeke et al., 2017), Expresso (Nguyen et al., 2023) in order to evaluate the ability to generalize.",
+       "zh": "首先，我们标注了 1,946 条采自多种来源的录音，包括 LibriTTS (Zen et al., 2019)、Common Voice (Ardila et al., 2019)、Switchboard (Godfrey et al., 1992)、Fisher (Cieri, Christopher, et al. , 2004,2005a,,)、Spotify (Clifton et al., 2020)、AudioSet (Gemmeke et al., 2017)、Expresso (Nguyen et al., 2023)，以评估泛化能力。"
       },
       {
        "id": "s-7-4-11-3",
-       "original": "Furthermore, we also compare against Audiobox Sound and Audiobox Speech on speech and sound applications using the evaluation sets described in Sections 5 and 6 respectively.",
-       "zh": "此外，我们还分别在第 5、6 节所述的评测集上，把 Audiobox Sound 与 Audiobox Speech 在语音和音效应用上做对比。"
+       "original": "This set is denoted as SpCap (SC).",
+       "zh": "该集合记为 SpCap（SC）。"
+      },
+      {
+       "id": "s-7-4-11-4",
+       "original": "The second set is AC-filtered (AC-filt) (Lee et al., 2023) with 825 utterances.",
+       "zh": "第二个集合是 AC-filtered（AC-filt）(Lee et al., 2023)，含 825 条话语。"
+      },
+      {
+       "id": "s-7-4-11-5",
+       "original": "It constructed from AudioCaps test set by transcribing and keeping samples with reliable ASR transcriptions.",
+       "zh": "它由 AudioCaps 测试集转写而来，只保留 ASR 转写可靠的样本。"
       }
      ]
     },
@@ -3966,38 +4549,33 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-4-12-1",
-       "original": "Inference: We use duration model described in this section with averaging over 5 samples.",
-       "zh": "推理：我们使用本节所述的时长模型，并对 5 个样本做平均。"
+       "original": "The third one is the Expresso test set (Expr) with 999 utterances.",
+       "zh": "第三个是 Expresso 测试集（Expr），含 999 条话语。"
       },
       {
        "id": "s-7-4-12-2",
-       "original": "For descriptionguided TTS (with or without voice prompt), we additionally sample a silence duration of between 0 and 3 seconds and pad it to both ends.",
-       "zh": "对描述引导 TTS（带或不带声音提示），我们额外采样一个 0 到 3 秒之间的静音时长，并填充到两端。"
+       "original": "Finally, the fourth one contains utterances from the internal Accent set.",
+       "zh": "最后，第四个集合包含来自内部 Accent 集的话语。"
       },
       {
        "id": "s-7-4-12-3",
-       "original": "We find this generates audios that are coherent with the description particularly when they also mention acoustic events.",
-       "zh": "我们发现这样生成的音频与描述更一致，特别是当描述还提到声学事件时。"
+       "original": "We apply randomly sampled RIR and noise augmentation to construct this set and denote it as “Accent+” (500 utterances).",
+       "zh": "我们施加随机采样的 RIR 与噪声增强来构造该集合，记为「Accent+」（500 条话语）。"
       },
       {
        "id": "s-7-4-12-4",
-       "original": "For example: a man speaks and car passes by while a dog is barking.",
-       "zh": "例如：一个人在说话，同时有汽车驶过、狗在叫。"
+       "original": "Expr and Accent+ use speech captions derived from LLM using the available attributes.",
+       "zh": "Expr 与 Accent+ 使用由 LLM 基于可用属性生成的语音字幕。"
       },
       {
        "id": "s-7-4-12-5",
-       "original": "However, this can cause model to hallucinate sounds when there are no acoustic events described.",
-       "zh": "然而，当描述中没有声学事件时，这可能导致模型幻听出声音。"
+       "original": "For Accent+, we additionally pass the environment and background noises tags to the LLM to incorporate the information into generated captions.",
+       "zh": "对 Accent+，我们还额外把环境与背景噪声标签传给 LLM，以便把这些信息纳入生成的字幕。"
       },
       {
        "id": "s-7-4-12-6",
-       "original": "To cover all scenarios involving description-guided TTS, we generate N = 8 samples with stochastic silence padding and then output the best sample based on clap re-ranking using the joint model.",
-       "zh": "为覆盖描述引导 TTS 的所有场景，我们生成 N = 8 个带随机静音填充的样本，然后用联合模型做 CLAP 重排序，输出最佳样本。"
-      },
-      {
-       "id": "s-7-4-12-7",
-       "original": "We use a guidance weight of 0.75 for the description-guided TTS (with/without voice prompt) applications.",
-       "zh": "对描述引导 TTS（带/不带声音提示）应用，我们使用 0.75 的引导权重。"
+       "original": "Together these sets cover a wide variety of acoustic events, emotions, accents, environments, and vocal styles.",
+       "zh": "这些集合合在一起覆盖了非常多样的声学事件、情感、口音、环境与声线风格。"
       }
      ]
     },
@@ -4008,31 +4586,95 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-4-13-1",
+       "original": "To evaluate description-based TTS with vocal prompt, we use Expr and Accent+ datasets and select another utterance from the same speaker.",
+       "zh": "为评测带声音提示的描述引导 TTS，我们使用 Expr 与 Accent+ 数据集，并从同一说话人处另选一条话语。"
+      },
+      {
+       "id": "s-7-4-13-2",
+       "original": "The prompt is selected such that is different from the target utterance on either emotion or speaking style (enunciated, whisper, etc).",
+       "zh": "提示的选取标准是：它在情感或说话风格（清晰发音、耳语等）上与目标话语不同。"
+      },
+      {
+       "id": "s-7-4-13-3",
+       "original": "Furthermore, we also compare against Audiobox Sound and Audiobox Speech on speech and sound applications using the evaluation sets described in Sections 5 and 6 respectively.",
+       "zh": "此外，我们还分别在第 5、6 节所述的评测集上，把 Audiobox Sound 与 Audiobox Speech 在语音和音效应用上做对比。"
+      }
+     ]
+    },
+    {
+     "id": "p-7-4-14",
+     "type": "paragraph",
+     "page": 21,
+     "sentences": [
+      {
+       "id": "s-7-4-14-1",
+       "original": "Inference: We use duration model described in this section with averaging over 5 samples.",
+       "zh": "推理：我们使用本节所述的时长模型，并对 5 个样本做平均。"
+      },
+      {
+       "id": "s-7-4-14-2",
+       "original": "For descriptionguided TTS (with or without voice prompt), we additionally sample a silence duration of between 0 and 3 seconds and pad it to both ends.",
+       "zh": "对描述引导 TTS（带或不带声音提示），我们额外采样一个 0 到 3 秒之间的静音时长，并填充到两端。"
+      },
+      {
+       "id": "s-7-4-14-3",
+       "original": "We find this generates audios that are coherent with the description particularly when they also mention acoustic events.",
+       "zh": "我们发现这样生成的音频与描述更一致，特别是当描述还提到声学事件时。"
+      },
+      {
+       "id": "s-7-4-14-4",
+       "original": "For example: a man speaks and car passes by while a dog is barking.",
+       "zh": "例如：一个人在说话，同时有汽车驶过、狗在叫。"
+      },
+      {
+       "id": "s-7-4-14-5",
+       "original": "However, this can cause model to hallucinate sounds when there are no acoustic events described.",
+       "zh": "然而，当描述中没有声学事件时，这可能导致模型幻听出声音。"
+      },
+      {
+       "id": "s-7-4-14-6",
+       "original": "To cover all scenarios involving description-guided TTS, we generate N = 8 samples with stochastic silence padding and then output the best sample based on clap re-ranking using the joint model.",
+       "zh": "为覆盖描述引导 TTS 的所有场景，我们生成 N = 8 个带随机静音填充的样本，然后用联合模型做 CLAP 重排序，输出最佳样本。"
+      },
+      {
+       "id": "s-7-4-14-7",
+       "original": "We use a guidance weight of 0.75 for the description-guided TTS (with/without voice prompt) applications.",
+       "zh": "对描述引导 TTS（带/不带声音提示）应用，我们使用 0.75 的引导权重。"
+      }
+     ]
+    },
+    {
+     "id": "p-7-4-15",
+     "type": "paragraph",
+     "page": 21,
+     "sentences": [
+      {
+       "id": "s-7-4-15-1",
        "original": "For sound only generation, we always generate 10s long audios with pseudo-transcripts using a guidance weight of 1.33.",
        "zh": "对纯音效生成，我们始终用伪转写生成 10 秒长的音频，引导权重为 1.33。"
       },
       {
-       "id": "s-7-4-13-2",
+       "id": "s-7-4-15-2",
        "original": "We use clap reranking with N = 16 samples using the sound clap model.",
        "zh": "我们用音效 CLAP 模型做 CLAP 重排序，取 N = 16 个样本。"
       },
       {
-       "id": "s-7-4-13-3",
+       "id": "s-7-4-15-3",
        "original": "For zero-shot in-context TTS applications, we trim the end-silences similar to the Audiobox Speech model and use a guidance weight of 1.0.",
        "zh": "对零样本上下文 TTS 应用，我们像 Audiobox Speech 模型一样裁剪末尾静音，并使用 1.0 的引导权重。"
       },
       {
-       "id": "s-7-4-13-4",
+       "id": "s-7-4-15-4",
        "original": "Given that this application doesn’t involve any descriptions, we do not use clap re-ranking.",
        "zh": "由于该应用不涉及任何描述，我们不使用 CLAP 重排序。"
       },
       {
-       "id": "s-7-4-13-5",
+       "id": "s-7-4-15-5",
        "original": "Unless specified, both acoustic and duration Audiobox models use the midpoint solver with a step size of 1/32, which invokes the function being integrated 64 times.",
        "zh": "除非特别说明，声学与时长的 Audiobox 模型都使用步长为 1/32 的中点求解器，即被积函数被调用 64 次。"
       },
       {
-       "id": "s-7-4-13-6",
+       "id": "s-7-4-15-6",
        "original": "When using classifier free guidance the model does 2 forward passes, leading to a total of 128 calls to the model forward pass.",
        "zh": "使用无分类器引导时，模型做 2 次前向传播，因此总共调用模型前向 128 次。"
       }
@@ -4083,13 +4725,19 @@ globalThis.PAPER_2312_15821 = {
      ]
     },
     {
+     "id": "eq-7-5-1",
+     "type": "equation",
+     "page": 21,
+     "original": "7.5.1"
+    },
+    {
      "id": "p-7-5-2",
      "type": "paragraph",
      "page": 21,
      "sentences": [
       {
        "id": "s-7-5-2-1",
-       "original": "7.5.1 Description-based control for speech generation",
+       "original": "Description-based control for speech generation",
        "zh": "7.5.1 语音生成的描述式控制"
       }
      ]
@@ -4127,35 +4775,52 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-5-4-1",
-       "original": "JointCLAP ↑ WER (%) ↓ SC AC-filt SC AC-filt ground truth 0.403 0.479 0.548 0.561 8.4 23.5 5.8 13.5 VoiceLDM 0.245 0.449 0.060 0.235 8.0 6.8 5.3 4.4 AudioLDM2-SP 0.241 0.225 0.066 0.110 32.5 26.3 33.8 23.9 Audiobox 0.430 0.489 0.387 0.596 7.2 5.2 4.5 2.6 QMOS ↑ REL ↑ SC AC-filt SC AC-filt ground truth VoiceLDM AudioLDM2-SP Audiobox We also note that AudioLDM2 and VoiceLDM struggle in particular on expressive datasets (Expr and Accent+).",
-       "zh": "JointCLAP ↑ WER (%) ↓ SC AC-filt SC AC-filt ground truth 0.403 0.479 0.548 0.561 8.4 23.5 5.8 13.5 VoiceLDM 0.245 0.449 0.060 0.235 8.0 6.8 5.3 4.4 AudioLDM2-SP 0.241 0.225 0.066 0.110 32.5 26.3 33.8 23.9 Audiobox 0.430 0.489 0.387 0.596 7.2 5.2 4.5 2.6 QMOS ↑ REL ↑ SC AC-filt SC AC-filt ground truth VoiceLDM AudioLDM2-SP Audiobox 我们还注意到，AudioLDM2 与 VoiceLDM 在表现力数据集（Expr 与 Accent+）上尤为吃力。"
-      },
-      {
-       "id": "s-7-5-4-2",
-       "original": "In particular, we find that utterances generated by AudioLDM2 and VoiceLDM models are significantly worse than the ground truth especially in complicated scenarios involving description of both speech, environment (cathedral), and background sounds.",
-       "zh": "具体而言，我们发现 AudioLDM2 与 VoiceLDM 生成的话语显著差于真值，尤其是在同时包含语音、环境（大教堂）与背景声描述的复杂场景下。"
-      },
-      {
-       "id": "s-7-5-4-3",
-       "original": "This results in worse scores on the Accent+ dataset.",
-       "zh": "这导致它们在 Accent+ 数据集上得分更差。"
-      },
-      {
-       "id": "s-7-5-4-4",
-       "original": "Furthermore, Expr test set contains voices exploring expressive styles like enunciation, whispering, non-binary gender which is where AudioLDM2 and VoiceLDM struggle.",
-       "zh": "此外，Expr 测试集包含探索表现力风格的语音，如清晰发音、耳语、非二元性别等——这正是 AudioLDM2 与 VoiceLDM 吃力之处。"
-      },
-      {
-       "id": "s-7-5-4-5",
-       "original": "We hypothesize this could be because they are out-of-distribution cases w.r.t training.",
-       "zh": "我们推测这可能是因为这些相对训练分布而言是分布外样本。"
-      },
-      {
-       "id": "s-7-5-4-6",
-       "original": "Both VoiceLDM and AudioLDM2 model tend to struggle on such utterances leading to low scores on objective metrics.",
-       "zh": "VoiceLDM 与 AudioLDM2 模型在这类话语上都表现吃力，导致客观指标得分偏低。"
+       "original": "JointCLAP ↑ WER (%) ↓ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth",
+       "zh": "（表：JointCLAP↑ × WER(%)↓（SC/AC-filt/Expr/Accent+）与 QMOS↑/REL↑——ground truth、VoiceLDM、AudioLDM2-SP、Audiobox 各行完整数值。原始数据照录如下）\n（原始数据照录）\nJointCLAP ↑ WER (%) ↓ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 0.403 0.479 0.548 0.561 8.4 23.5 5.8 13.5 VoiceLDM 0.245 0.449 0.060 0.235 8.0 6.8 5.3 4.4 AudioLDM2-SP 0.241 0.225 0.066 0.110 32.5 26.3 33.8 23.9 Audiobox 0.430 0.489 0.387 0.596 7.2 5.2 4.5 2.6 QMOS ↑ REL ↑ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 3.60± 0.11 3.25± 0.14 4.00± 0.09 3.24± 0.13 3.66± 0.10 3.86± 0.12 4.01± 0.10 3.51± 0.11 VoiceLDM 3.01± 0.10 2.95± 0.13 2.92± 0.12 2.87± 0.12 2.90± 0.10 3.08± 0.14 2.78± 0.11 3.2± 0.11 AudioLDM2-SP 2.19± 0.11 2.17± 0.12 2.47± 0.11 2.25± 0.10 2.37± 0.11 2.11± 0.12 2.48± 0.11 2.22± 0.10 Audiobox 3.58± 0.10 3.38± 0.12 3.82± 0.09 3.54± 0.12 3.74± 0.09 3.61± 0.12 3.94± 0.11 3.61± 0.10 We also note that AudioLDM2 and VoiceLDM struggle in particular on expressive datasets (Expr and Accent+)."
       }
      ]
+    },
+    {
+     "id": "eq-7-5-2",
+     "type": "equation",
+     "page": 22,
+     "original": "0.403 0.479 0.548 0.561 8.4 23.5 5.8 13.5"
+    },
+    {
+     "id": "eq-7-5-3",
+     "type": "equation",
+     "page": 22,
+     "original": "VoiceLDM"
+    },
+    {
+     "id": "eq-7-5-4",
+     "type": "equation",
+     "page": 22,
+     "original": "0.245 0.449 0.060 0.235 8.0 6.8 5.3 4.4"
+    },
+    {
+     "id": "eq-7-5-5",
+     "type": "equation",
+     "page": 22,
+     "original": "AudioLDM2-SP"
+    },
+    {
+     "id": "eq-7-5-6",
+     "type": "equation",
+     "page": 22,
+     "original": "0.241 0.225 0.066 0.110 32.5 26.3 33.8 23.9"
+    },
+    {
+     "id": "eq-7-5-7",
+     "type": "equation",
+     "page": 22,
+     "original": "Audiobox"
+    },
+    {
+     "id": "eq-7-5-8",
+     "type": "equation",
+     "page": 22,
+     "original": "0.430 0.489 0.387 0.596 7.2 5.2 4.5 2.6"
     },
     {
      "id": "p-7-5-5",
@@ -4164,15 +4829,52 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-5-5-1",
-       "original": "Our subjective evaluations also align with the objective metrics where we find the the Audiobox model significantly outperforms the baselines in particular to similarity to the description.",
-       "zh": "我们的主观评测也与客观指标一致：Audiobox 模型显著优于基线，尤其是在与描述的相似度上。"
-      },
-      {
-       "id": "s-7-5-5-2",
-       "original": "The worse scores on Accent+ and Expr dataset for AudioLDM2 and VoiceLDM model further confirms our own observations.",
-       "zh": "AudioLDM2 与 VoiceLDM 模型在 Accent+ 与 Expr 数据集上更差的分数进一步印证了我们的观察。"
+       "original": "QMOS ↑ REL ↑ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth",
+       "zh": "（表：JointCLAP↑ × WER(%)↓（SC/AC-filt/Expr/Accent+）与 QMOS↑/REL↑——ground truth、VoiceLDM、AudioLDM2-SP、Audiobox 各行完整数值。原始数据照录如下）\n（原始数据照录）\nJointCLAP ↑ WER (%) ↓ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 0.403 0.479 0.548 0.561 8.4 23.5 5.8 13.5 VoiceLDM 0.245 0.449 0.060 0.235 8.0 6.8 5.3 4.4 AudioLDM2-SP 0.241 0.225 0.066 0.110 32.5 26.3 33.8 23.9 Audiobox 0.430 0.489 0.387 0.596 7.2 5.2 4.5 2.6 QMOS ↑ REL ↑ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 3.60± 0.11 3.25± 0.14 4.00± 0.09 3.24± 0.13 3.66± 0.10 3.86± 0.12 4.01± 0.10 3.51± 0.11 VoiceLDM 3.01± 0.10 2.95± 0.13 2.92± 0.12 2.87± 0.12 2.90± 0.10 3.08± 0.14 2.78± 0.11 3.2± 0.11 AudioLDM2-SP 2.19± 0.11 2.17± 0.12 2.47± 0.11 2.25± 0.10 2.37± 0.11 2.11± 0.12 2.48± 0.11 2.22± 0.10 Audiobox 3.58± 0.10 3.38± 0.12 3.82± 0.09 3.54± 0.12 3.74± 0.09 3.61± 0.12 3.94± 0.11 3.61± 0.10 We also note that AudioLDM2 and VoiceLDM struggle in particular on expressive datasets (Expr and Accent+)."
       }
      ]
+    },
+    {
+     "id": "eq-7-5-9",
+     "type": "equation",
+     "page": 22,
+     "original": "3.60± 0.11 3.25± 0.14 4.00± 0.09 3.24± 0.13 3.66± 0.10 3.86± 0.12 4.01± 0.10 3.51± 0.11"
+    },
+    {
+     "id": "eq-7-5-10",
+     "type": "equation",
+     "page": 22,
+     "original": "VoiceLDM"
+    },
+    {
+     "id": "eq-7-5-11",
+     "type": "equation",
+     "page": 22,
+     "original": "3.01± 0.10 2.95± 0.13 2.92± 0.12 2.87± 0.12 2.90± 0.10 3.08± 0.14 2.78± 0.11 3.2± 0.11"
+    },
+    {
+     "id": "eq-7-5-12",
+     "type": "equation",
+     "page": 22,
+     "original": "AudioLDM2-SP"
+    },
+    {
+     "id": "eq-7-5-13",
+     "type": "equation",
+     "page": 22,
+     "original": "2.19± 0.11 2.17± 0.12 2.47± 0.11 2.25± 0.10 2.37± 0.11 2.11± 0.12 2.48± 0.11 2.22± 0.10"
+    },
+    {
+     "id": "eq-7-5-14",
+     "type": "equation",
+     "page": 22,
+     "original": "Audiobox"
+    },
+    {
+     "id": "eq-7-5-15",
+     "type": "equation",
+     "page": 22,
+     "original": "3.58± 0.10 3.38± 0.12 3.82± 0.09 3.54± 0.12 3.74± 0.09 3.61± 0.12 3.94± 0.11 3.61± 0.10"
     },
     {
      "id": "p-7-5-6",
@@ -4181,38 +4883,33 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-5-6-1",
-       "original": "In Table 12, we present the results for description-guided TTS with voice prompt.",
-       "zh": "Table 12 给出了带声音提示的描述引导 TTS 结果。"
+       "original": "We also note that AudioLDM2 and VoiceLDM struggle in particular on expressive datasets (Expr and Accent+).",
+       "zh": "（表：JointCLAP↑ × WER(%)↓（SC/AC-filt/Expr/Accent+）与 QMOS↑/REL↑——ground truth、VoiceLDM、AudioLDM2-SP、Audiobox 各行完整数值。原始数据照录如下）\n（原始数据照录）\nJointCLAP ↑ WER (%) ↓ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 0.403 0.479 0.548 0.561 8.4 23.5 5.8 13.5 VoiceLDM 0.245 0.449 0.060 0.235 8.0 6.8 5.3 4.4 AudioLDM2-SP 0.241 0.225 0.066 0.110 32.5 26.3 33.8 23.9 Audiobox 0.430 0.489 0.387 0.596 7.2 5.2 4.5 2.6 QMOS ↑ REL ↑ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 3.60± 0.11 3.25± 0.14 4.00± 0.09 3.24± 0.13 3.66± 0.10 3.86± 0.12 4.01± 0.10 3.51± 0.11 VoiceLDM 3.01± 0.10 2.95± 0.13 2.92± 0.12 2.87± 0.12 2.90± 0.10 3.08± 0.14 2.78± 0.11 3.2± 0.11 AudioLDM2-SP 2.19± 0.11 2.17± 0.12 2.47± 0.11 2.25± 0.10 2.37± 0.11 2.11± 0.12 2.48± 0.11 2.22± 0.10 Audiobox 3.58± 0.10 3.38± 0.12 3.82± 0.09 3.54± 0.12 3.74± 0.09 3.61± 0.12 3.94± 0.11 3.61± 0.10 We also note that AudioLDM2 and VoiceLDM struggle in particular on expressive datasets (Expr and Accent+)."
       },
       {
        "id": "s-7-5-6-2",
-       "original": "VoiceLDM and AudioLDM2 model do not simultaneously support conditioning based on vocal and text descriptions for a transcript.",
-       "zh": "VoiceLDM 与 AudioLDM2 模型无法同时支持基于声线与文本描述对转写进行条件控制。"
+       "original": "In particular, we find that utterances generated by AudioLDM2 and VoiceLDM models are significantly worse than the ground truth especially in complicated scenarios involving description of both speech, environment (cathedral), and background sounds.",
+       "zh": "具体而言，我们发现 AudioLDM2 与 VoiceLDM 生成的话语显著差于真值，尤其是在同时包含语音、环境（大教堂）与背景声描述的复杂场景下。"
       },
       {
        "id": "s-7-5-6-3",
-       "original": "Towards our best effort comparison, we combine the CLAP embedding for the audio vocal prompt and the textual description by averaging them and use it as a conditioning input.",
-       "zh": "为尽力公平对比，我们把音频声线提示与文本描述的 CLAP 嵌入取平均，合并后作为条件输入。"
+       "original": "This results in worse scores on the Accent+ dataset.",
+       "zh": "这导致它们在 Accent+ 数据集上得分更差。"
       },
       {
        "id": "s-7-5-6-4",
-       "original": "We find that Audiobox outperforms both baselines.",
-       "zh": "我们发现 Audiobox 优于两个基线。"
+       "original": "Furthermore, Expr test set contains voices exploring expressive styles like enunciation, whispering, non-binary gender which is where AudioLDM2 and VoiceLDM struggle.",
+       "zh": "此外，Expr 测试集包含探索表现力风格的语音，如清晰发音、耳语、非二元性别等——这正是 AudioLDM2 与 VoiceLDM 吃力之处。"
       },
       {
        "id": "s-7-5-6-5",
-       "original": "We also notice that in the absence of voice-prompt, the speaker similarity of Audiobox is greatly reduced as the description cannot capture all aspects of voice.",
-       "zh": "我们还注意到，缺少声音提示时 Audiobox 的说话人相似度大幅下降，因为描述无法捕捉声音的全部层面。"
+       "original": "We hypothesize this could be because they are out-of-distribution cases w.r.t training.",
+       "zh": "我们推测这可能是因为这些相对训练分布而言是分布外样本。"
       },
       {
        "id": "s-7-5-6-6",
-       "original": "The subjective evaluations aligns with the objective metrics both for description and generated audio similarity and speaker similarity.",
-       "zh": "主观评测与客观指标一致：包括描述与生成音频的相似度，以及说话人相似度。"
-      },
-      {
-       "id": "s-7-5-6-7",
-       "original": "We find that the voice prompt greatly improves the speaker similarity while matching the descriptions.",
-       "zh": "我们发现声音提示在与描述匹配的同时大幅提升了说话人相似度。"
+       "original": "Both VoiceLDM and AudioLDM2 model tend to struggle on such utterances leading to low scores on objective metrics.",
+       "zh": "VoiceLDM 与 AudioLDM2 模型在这类话语上都表现吃力，导致客观指标得分偏低。"
       }
      ]
     },
@@ -4223,7 +4920,72 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-5-7-1",
-       "original": "7.5.2 Comparison to Audiobox Speech and Audiobox Sound",
+       "original": "Our subjective evaluations also align with the objective metrics where we find the the Audiobox model significantly outperforms the baselines in particular to similarity to the description.",
+       "zh": "我们的主观评测也与客观指标一致：Audiobox 模型显著优于基线，尤其是在与描述的相似度上。"
+      },
+      {
+       "id": "s-7-5-7-2",
+       "original": "The worse scores on Accent+ and Expr dataset for AudioLDM2 and VoiceLDM model further confirms our own observations.",
+       "zh": "AudioLDM2 与 VoiceLDM 模型在 Accent+ 与 Expr 数据集上更差的分数进一步印证了我们的观察。"
+      }
+     ]
+    },
+    {
+     "id": "p-7-5-8",
+     "type": "paragraph",
+     "page": 22,
+     "sentences": [
+      {
+       "id": "s-7-5-8-1",
+       "original": "In Table 12, we present the results for description-guided TTS with voice prompt.",
+       "zh": "Table 12 给出了带声音提示的描述引导 TTS 结果。"
+      },
+      {
+       "id": "s-7-5-8-2",
+       "original": "VoiceLDM and AudioLDM2 model do not simultaneously support conditioning based on vocal and text descriptions for a transcript.",
+       "zh": "VoiceLDM 与 AudioLDM2 模型无法同时支持基于声线与文本描述对转写进行条件控制。"
+      },
+      {
+       "id": "s-7-5-8-3",
+       "original": "Towards our best effort comparison, we combine the CLAP embedding for the audio vocal prompt and the textual description by averaging them and use it as a conditioning input.",
+       "zh": "为尽力公平对比，我们把音频声线提示与文本描述的 CLAP 嵌入取平均，合并后作为条件输入。"
+      },
+      {
+       "id": "s-7-5-8-4",
+       "original": "We find that Audiobox outperforms both baselines.",
+       "zh": "我们发现 Audiobox 优于两个基线。"
+      },
+      {
+       "id": "s-7-5-8-5",
+       "original": "We also notice that in the absence of voice-prompt, the speaker similarity of Audiobox is greatly reduced as the description cannot capture all aspects of voice.",
+       "zh": "我们还注意到，缺少声音提示时 Audiobox 的说话人相似度大幅下降，因为描述无法捕捉声音的全部层面。"
+      },
+      {
+       "id": "s-7-5-8-6",
+       "original": "The subjective evaluations aligns with the objective metrics both for description and generated audio similarity and speaker similarity.",
+       "zh": "主观评测与客观指标一致：包括描述与生成音频的相似度，以及说话人相似度。"
+      },
+      {
+       "id": "s-7-5-8-7",
+       "original": "We find that the voice prompt greatly improves the speaker similarity while matching the descriptions.",
+       "zh": "我们发现声音提示在与描述匹配的同时大幅提升了说话人相似度。"
+      }
+     ]
+    },
+    {
+     "id": "eq-7-5-16",
+     "type": "equation",
+     "page": 22,
+     "original": "7.5.2"
+    },
+    {
+     "id": "p-7-5-9",
+     "type": "paragraph",
+     "page": 22,
+     "sentences": [
+      {
+       "id": "s-7-5-9-1",
+       "original": "Comparison to Audiobox Speech and Audiobox Sound",
        "zh": "7.5.2 与 Audiobox Speech 和 Audiobox Sound 的对比"
       }
      ]
@@ -4236,27 +4998,27 @@ globalThis.PAPER_2312_15821 = {
      "zh": "Table 13 在 5 个不同数据集上对比统一 Audiobox 与纯语音的 Audiobox Speech 模型的零样本 TTS。该任务中两个声学模型使用同一时长模型。我们发现统一 Audiobox 模型的说话人相似度更高，但词错误率略差；主观评测也证实了这一点，两个模型之间只有细微差别。"
     },
     {
-     "id": "p-7-5-8",
+     "id": "p-7-5-10",
      "type": "paragraph",
      "page": 22,
      "sentences": [
       {
-       "id": "s-7-5-8-1",
+       "id": "s-7-5-10-1",
        "original": "In Table 14, we present the results comparing the unified Audiobox to the Audiobox Sound, VoiceLDM, and AudioLDM2 models on the task of TTA task as described in Section 6.2.",
        "zh": "Table 14 给出统一 Audiobox 与 Audiobox Sound、VoiceLDM、AudioLDM2 模型在第 6.2 节所述 TTA 任务上的对比结果。"
       },
       {
-       "id": "s-7-5-8-2",
+       "id": "s-7-5-10-2",
        "original": "We find that Audiobox significantly outperforms all baselines achieving the state-of-the-art performance for joint models and even outperforms sound only models such as TANGO.",
        "zh": "我们发现 Audiobox 显著优于所有基线，达到联合模型的最先进水平，甚至超过 TANGO 等纯音效模型。"
       },
       {
-       "id": "s-7-5-8-3",
+       "id": "s-7-5-10-3",
        "original": "The Audiobox performs worse only to the Audiobox Sound model which specializes in sound generation.",
        "zh": "Audiobox 仅劣于专精音效生成的 Audiobox Sound 模型。"
       },
       {
-       "id": "s-7-5-8-4",
+       "id": "s-7-5-10-4",
        "original": "The subjective evaluations further confirm that both our Audiobox and Audiobox Sound outperform all other baselines by a significant margin.",
        "zh": "主观评测进一步证实，Audiobox 与 Audiobox Sound 都以显著优势优于其他所有基线。"
       }
@@ -4270,48 +5032,14 @@ globalThis.PAPER_2312_15821 = {
      "zh": "Table 12 带额外声音条件的语音生成描述式控制"
     },
     {
-     "id": "p-7-5-9",
-     "type": "paragraph",
-     "page": 23,
-     "sentences": [
-      {
-       "id": "s-7-5-9-1",
-       "original": "Comparing on objective metrics.",
-       "zh": "客观指标对比。"
-      }
-     ]
-    },
-    {
-     "id": "p-7-5-10",
-     "type": "paragraph",
-     "page": 23,
-     "sentences": [
-      {
-       "id": "s-7-5-10-1",
-       "original": "Model Voice cond.",
-       "zh": "模型 声音条件"
-      }
-     ]
-    },
-    {
      "id": "p-7-5-11",
      "type": "paragraph",
      "page": 23,
      "sentences": [
       {
        "id": "s-7-5-11-1",
-       "original": "JointCLAP ↑ Sim-o ↑ WER ↓ ground truth n/a 0.548 0.561 0.395 0.526 5.8 13.5 VoiceLDM avg.",
-       "zh": "JointCLAP ↑ Sim-o ↑ WER ↓ ground truth n/a 0.548 0.561 0.395 0.526 5.8 13.5 VoiceLDM avg.（取平均）"
-      },
-      {
-       "id": "s-7-5-11-2",
-       "original": "CLAP 0.093 0.204 0.115 0.076 4.8 3.9 AudioLDM2-SP avg.",
-       "zh": "CLAP 0.093 0.204 0.115 0.076 4.8 3.9 AudioLDM2-SP avg.（取平均）"
-      },
-      {
-       "id": "s-7-5-11-3",
-       "original": "CLAP 0.067 0.118 0.045 0.089 34.6 30.2 Audiobox No 0.387 0.596 0.181 0.141 4.5 2.6 Audiobox Yes 0.480 0.593 0.377 0.344 7.7 2.8 Comparing on subjective metrics for Speaker similarity, quality and description aspects Model Voice cond.",
-       "zh": "CLAP 0.067 0.118 0.045 0.089 34.6 30.2 Audiobox No 0.387 0.596 0.181 0.141 4.5 2.6 Audiobox Yes 0.480 0.593 0.377 0.344 7.7 2.8 说话人相似度、质量与描述维度的主观指标对比 模型 声音条件"
+       "original": "Comparing on objective metrics.",
+       "zh": "客观指标对比。"
       }
      ]
     },
@@ -4322,10 +5050,130 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-7-5-12-1",
-       "original": "QMOS ↑ REL ↑ Speaker Similarity MOS ↑ ground truth n/a Audiobox No Audiobox Yes",
-       "zh": "QMOS ↑ REL ↑ 说话人相似度 MOS ↑ ground truth n/a Audiobox No Audiobox Yes"
+       "original": "Model Voice cond.",
+       "zh": "模型 声音条件"
       }
      ]
+    },
+    {
+     "id": "p-7-5-13",
+     "type": "paragraph",
+     "page": 23,
+     "sentences": [
+      {
+       "id": "s-7-5-13-1",
+       "original": "JointCLAP ↑ Sim-o ↑ WER ↓ Expr Accent+ Expr Accent+ Expr Accent+ ground truth n/a",
+       "zh": "表头：JointCLAP ↑ / Sim-o ↑ / WER ↓（Expr / Accent+ 各组）——ground truth n/a（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-7-5-17",
+     "type": "equation",
+     "page": 23,
+     "original": "0.548 0.561 0.395 0.526 5.8 13.5"
+    },
+    {
+     "id": "eq-7-5-18",
+     "type": "equation",
+     "page": 23,
+     "original": "VoiceLDM avg. CLAP"
+    },
+    {
+     "id": "eq-7-5-19",
+     "type": "equation",
+     "page": 23,
+     "original": "0.093 0.204 0.115 0.076 4.8 3.9"
+    },
+    {
+     "id": "eq-7-5-20",
+     "type": "equation",
+     "page": 23,
+     "original": "AudioLDM2-SP avg. CLAP"
+    },
+    {
+     "id": "eq-7-5-21",
+     "type": "equation",
+     "page": 23,
+     "original": "0.067 0.118 0.045 0.089 34.6 30.2"
+    },
+    {
+     "id": "eq-7-5-22",
+     "type": "equation",
+     "page": 23,
+     "original": "Audiobox No"
+    },
+    {
+     "id": "eq-7-5-23",
+     "type": "equation",
+     "page": 23,
+     "original": "0.387 0.596 0.181 0.141 4.5 2.6"
+    },
+    {
+     "id": "eq-7-5-24",
+     "type": "equation",
+     "page": 23,
+     "original": "Audiobox Yes"
+    },
+    {
+     "id": "eq-7-5-25",
+     "type": "equation",
+     "page": 23,
+     "original": "0.480 0.593 0.377 0.344 7.7 2.8"
+    },
+    {
+     "id": "p-7-5-14",
+     "type": "paragraph",
+     "page": 23,
+     "sentences": [
+      {
+       "id": "s-7-5-14-1",
+       "original": "Comparing on subjective metrics for Speaker similarity, quality and description aspects Model Voice cond.",
+       "zh": "模型 声音条件"
+      }
+     ]
+    },
+    {
+     "id": "p-7-5-15",
+     "type": "paragraph",
+     "page": 23,
+     "sentences": [
+      {
+       "id": "s-7-5-15-1",
+       "original": "QMOS ↑ REL ↑ Speaker Similarity MOS ↑ Expr Accent+ Expr Accent+ Expr Accent+ ground truth n/a",
+       "zh": "表头：QMOS ↑ / REL ↑ / Speaker Similarity MOS ↑（Expr / Accent+ 各组）——ground truth n/a（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-7-5-26",
+     "type": "equation",
+     "page": 23,
+     "original": "4.0± 0.09 3.24± 0.13 4.01± 0.1 3.51± 0.11 3.38± 0.11 3.27± 0.10"
+    },
+    {
+     "id": "eq-7-5-27",
+     "type": "equation",
+     "page": 23,
+     "original": "Audiobox No"
+    },
+    {
+     "id": "eq-7-5-28",
+     "type": "equation",
+     "page": 23,
+     "original": "3.82± 0.09 3.54± 0.12 3.94± 0.11 3.61± 0.1 3.02± 0.12 3.03± 0.10"
+    },
+    {
+     "id": "eq-7-5-29",
+     "type": "equation",
+     "page": 23,
+     "original": "Audiobox Yes"
+    },
+    {
+     "id": "eq-7-5-30",
+     "type": "equation",
+     "page": 23,
+     "original": "3.86± 0.09 3.58± 0.12 3.99± 0.11 3.57± 0.11 3.36± 0.11 3.24± 0.11"
     },
     {
      "id": "tab-7-5-5",
@@ -4335,16 +5183,94 @@ globalThis.PAPER_2312_15821 = {
      "zh": "Table 13 在上下文 TTS 应用上对比 Audiobox 与 Audiobox Speech 模型。两个模型使用相同的回归式时长模型"
     },
     {
-     "id": "p-7-5-13",
+     "id": "p-7-5-16",
      "type": "paragraph",
      "page": 23,
      "sentences": [
       {
-       "id": "s-7-5-13-1",
-       "original": "Style similarity and content correctness using objective metrics Sim-o ↑ Word error rate (%) ↓ Avg Avg Audiobox Speech 0.734 0.607 0.608 0.603 0.659 0.642 3.2 3.7 9.1 3.2 0.9 4.0 Audiobox 0.732 0.624 0.610 0.643 0.674 0.656 4.8 3.0 12.6 2.7 0.9 4.8 Style similarity MOS subjective evaluation ↑ Audiobox Speech Audiobox Quality MOS subjective evaluation ↑ Audiobox Speech Audiobox",
-       "zh": "客观指标的风格相似度与内容正确性 Sim-o ↑ 词错误率 (%) ↓ Avg Avg Audiobox Speech 0.734 0.607 0.608 0.603 0.659 0.642 3.2 3.7 9.1 3.2 0.9 4.0 Audiobox 0.732 0.624 0.610 0.643 0.674 0.656 4.8 3.0 12.6 2.7 0.9 4.8 风格相似度 MOS 主观评测 ↑ Audiobox Speech Audiobox 质量 MOS 主观评测 ↑ Audiobox Speech Audiobox"
+       "id": "s-7-5-16-1",
+       "original": "Style similarity and content correctness using objective metrics Sim-o ↑ Word error rate (%) ↓ LS CV SWBD Expr Accent Avg LS CV SWBD Expr Accent Avg Audiobox Speech",
+       "zh": "（小标题：客观指标的风格相似度与内容正确性。）表头：Sim-o ↑ / Word error rate (%) ↓（LS / CV / SWBD / Expr / Accent / Avg）——Audiobox Speech（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-7-5-31",
+     "type": "equation",
+     "page": 23,
+     "original": "0.734 0.607 0.608 0.603 0.659 0.642 3.2 3.7 9.1 3.2 0.9 4.0"
+    },
+    {
+     "id": "eq-7-5-32",
+     "type": "equation",
+     "page": 23,
+     "original": "Audiobox"
+    },
+    {
+     "id": "eq-7-5-33",
+     "type": "equation",
+     "page": 23,
+     "original": "0.732 0.624 0.610 0.643 0.674 0.656 4.8 3.0 12.6 2.7 0.9 4.8"
+    },
+    {
+     "id": "p-7-5-17",
+     "type": "paragraph",
+     "page": 23,
+     "sentences": [
+      {
+       "id": "s-7-5-17-1",
+       "original": "Style similarity MOS subjective evaluation ↑ LS CV SWBD Expr Accent Audiobox Speech",
+       "zh": "（小标题：Style similarity MOS 主观评测 ↑。）表头：LS / CV / SWBD / Expr / Accent——Audiobox Speech（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-7-5-34",
+     "type": "equation",
+     "page": 23,
+     "original": "3.88 ± 0.11 3.77 ± 0.11 3.63 ± 0.12 3.85 ± 0.11 3.77 ± 0.11"
+    },
+    {
+     "id": "eq-7-5-35",
+     "type": "equation",
+     "page": 23,
+     "original": "Audiobox"
+    },
+    {
+     "id": "eq-7-5-36",
+     "type": "equation",
+     "page": 23,
+     "original": "3.72 ± 0.11 4.03 ± 0.11 3.72 ± 0.12 4.01 ± 0.10 3.88 ± 0.11"
+    },
+    {
+     "id": "p-7-5-18",
+     "type": "paragraph",
+     "page": 23,
+     "sentences": [
+      {
+       "id": "s-7-5-18-1",
+       "original": "Quality MOS subjective evaluation ↑ LS CV SWBD Expr Accent Audiobox Speech",
+       "zh": "（小标题：Quality MOS 主观评测 ↑。）表头：LS / CV / SWBD / Expr / Accent——Audiobox Speech（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-7-5-37",
+     "type": "equation",
+     "page": 23,
+     "original": "4.11 ± 0.08 4.00 ± 0.09 3.74 ± 0.09 4.00 ± 0.09 4.22 ± 0.08"
+    },
+    {
+     "id": "eq-7-5-38",
+     "type": "equation",
+     "page": 23,
+     "original": "Audiobox"
+    },
+    {
+     "id": "eq-7-5-39",
+     "type": "equation",
+     "page": 23,
+     "original": "3.95 ± 0.08 3.97 ± 0.09 3.88 ± 0.08 3.93 ± 0.09 4.17 ± 0.07"
     }
    ]
   },
@@ -4433,10 +5359,76 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-8-4-1",
-       "original": "objective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ ground truth 13.28 0.49 Unified Models VoiceLDM Lee et al. (2023) 10.28 49.48 2.95 4.79 0.37 UniAudio Yang et al. (2023b) 3.12 2.60 Audiobox (ours) 1.10 10.14 1.19 11.90 0.70 Sound-only models TANGO-full-FT Ghosal et al. (2023) 2.19 18.47 1.20 8.80 0.56 Audiobox Sound (ours) 0.77 8.30 1.15 12.70 0.71 very small and minimize the global truncation error (sum of local truncation error) between approximate sample xθ n and ground truth data point x(1) in the following formula: Ex0∼p(x0)∥x(1) −xθ n∥, where xθ n is the output of the solver stepθ.",
-       "zh": "objective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ ground truth 13.28 0.49 Unified Models VoiceLDM Lee et al. (2023) 10.28 49.48 2.95 4.79 0.37 UniAudio Yang et al. (2023b) 3.12 2.60 Audiobox (ours) 1.10 10.14 1.19 11.90 0.70 Sound-only models TANGO-full-FT Ghosal et al. (2023) 2.19 18.47 1.20 8.80 0.56 Audiobox Sound (ours) 0.77 8.30 1.15 12.70 0.71 非常小，并在下式中最小化近似样本 xθ n 与真值数据点 x(1) 之间的全局截断误差（局部截断误差之和）：Ex0∼p(x0)∥x(1) −xθ n∥，其中 xθ n 是求解器 stepθ 的输出。"
+       "original": "objective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ ground truth",
+       "zh": "（表：objective（FAD↓/FD↓/KLD↓/IS↑/CLAP↑）× subjective（OVL↑/REL↑）——ground truth、VoiceLDM、UniAudio、Audiobox (ours)、TANGO-full-FT、Audiobox Sound (ours) 各行完整数值。原始数据照录如下）\n（原始数据照录）\nobjective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ ground truth - - - 13.28 0.49 3.36± 0.18 3.86± 0.18 Unified Models VoiceLDM Lee et al. (2023) 10.28 49.48 2.95 4.79 0.37 2.07± 0.16 2.62± 0.22 UniAudio Yang et al. (2023b) 3.12 - 2.60 - - - - Audiobox (ours) 1.10 10.14 1.19 11.90 0.70 3.19± 0.14 3.94± 0.14 Sound-only models TANGO-full-FT Ghosal et al. (2023) 2.19 18.47 1.20 8.80 0.56 3.04± 0.13 3.78± 0.15 Audiobox Sound (ours) 0.77 8.30 1.15 12.70 0.71 3.43± 0.15 4.09± 0.15 very small and minimize the global truncation error (sum of local truncation error) between approximate sample xθ n and ground truth data point x(1) in the following formula: Ex0∼p(x0)∥x(1) −xθ n∥, where xθ n is the output of the solver stepθ."
       }
      ]
+    },
+    {
+     "id": "eq-8-1",
+     "type": "equation",
+     "page": 24,
+     "original": "- - - 13.28 0.49 3.36± 0.18 3.86± 0.18"
+    },
+    {
+     "id": "eq-8-2",
+     "type": "equation",
+     "page": 24,
+     "original": "Unified Models VoiceLDM Lee et al. (2023)"
+    },
+    {
+     "id": "eq-8-3",
+     "type": "equation",
+     "page": 24,
+     "original": "10.28 49.48 2.95 4.79 0.37 2.07± 0.16 2.62± 0.22"
+    },
+    {
+     "id": "eq-8-4",
+     "type": "equation",
+     "page": 24,
+     "original": "UniAudio Yang et al. (2023b)"
+    },
+    {
+     "id": "eq-8-5",
+     "type": "equation",
+     "page": 24,
+     "original": "3.12 - 2.60 - - - -"
+    },
+    {
+     "id": "eq-8-6",
+     "type": "equation",
+     "page": 24,
+     "original": "Audiobox (ours)"
+    },
+    {
+     "id": "eq-8-7",
+     "type": "equation",
+     "page": 24,
+     "original": "1.10 10.14 1.19 11.90 0.70 3.19± 0.14 3.94± 0.14"
+    },
+    {
+     "id": "eq-8-8",
+     "type": "equation",
+     "page": 24,
+     "original": "Sound-only models TANGO-full-FT Ghosal et al. (2023)"
+    },
+    {
+     "id": "eq-8-9",
+     "type": "equation",
+     "page": 24,
+     "original": "2.19 18.47 1.20 8.80 0.56 3.04± 0.13 3.78± 0.15"
+    },
+    {
+     "id": "eq-8-10",
+     "type": "equation",
+     "page": 24,
+     "original": "Audiobox Sound (ours)"
+    },
+    {
+     "id": "eq-8-11",
+     "type": "equation",
+     "page": 24,
+     "original": "0.77 8.30 1.15 12.70 0.71 3.43± 0.15 4.09± 0.15"
     },
     {
      "id": "p-8-5",
@@ -4445,33 +5437,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-8-5-1",
-       "original": "At a high level, Bespoke solvers aims to learn transformation for paths such that transformed can be more accurately estimated with the desired number of ODE steps.",
-       "zh": "从高层看，Bespoke solver 旨在为路径学习一种变换，使变换后的路径能在期望的 ODE 步数下被更准确地估计。"
-      },
-      {
-       "id": "s-8-5-2",
-       "original": "Bespoke Solver work by transforming the sample trajectory x(t) using two components tr : [0, 1] →[0, 1] as time reparameterization and invertible function φ : [0, 1] × Rd →Rd, where those functions are parameterized by extra parameters θ.",
-       "zh": "Bespoke Solver 通过两个组件变换样本轨迹 x(t)：tr : [0, 1] →[0, 1] 作为时间重参数化，以及可逆函数 φ : [0, 1] × Rd →Rd，这些函数由额外参数 θ 参数化。"
-      },
-      {
-       "id": "s-8-5-3",
-       "original": "Let the parametric solver be stepθ(t, x; ut).",
-       "zh": "设参数化求解器为 stepθ(t, x; ut)。"
-      },
-      {
-       "id": "s-8-5-4",
-       "original": "First we transform input (t, x) into (r, ¯x) = (rt, φrt(x)).",
-       "zh": "首先把输入 (t, x) 变换为 (r, ¯x) = (rt, φrt(x))。"
-      },
-      {
-       "id": "s-8-5-5",
-       "original": "Next, we perform a step in the transformed space as (rnext, ¯xnext) = step(r, ¯x; ¯ur), using the chosen base solver (e.g., midpoint), where ¯ur is vector field on transformed trajectory.",
-       "zh": "接着在变换后的空间中执行一步 (rnext, ¯xnext) = step(r, ¯x; ¯ur)，使用所选的基础求解器（如中点法），其中 ¯ur 是变换后轨迹上的向量场。"
-      },
-      {
-       "id": "s-8-5-6",
-       "original": "To transform back to original space, we compute (tnext, xnext) = stepθ(x, t; ut) = (trnext, φ−1 rnext(¯xnext)).",
-       "zh": "为变换回原空间，我们计算 (tnext, xnext) = stepθ(x, t; ut) = (trnext, φ−1 rnext(¯xnext))。"
+       "original": "very small and minimize the global truncation error (sum of local truncation error) between approximate sample xθ n and ground truth data point x(1) in the following formula: Ex0∼p(x0)∥x(1) −xθ n∥, where xθ n is the output of the solver stepθ.",
+       "zh": "（表：objective（FAD↓/FD↓/KLD↓/IS↑/CLAP↑）× subjective（OVL↑/REL↑）——ground truth、VoiceLDM、UniAudio、Audiobox (ours)、TANGO-full-FT、Audiobox Sound (ours) 各行完整数值。原始数据照录如下）\n（原始数据照录）\nobjective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ ground truth - - - 13.28 0.49 3.36± 0.18 3.86± 0.18 Unified Models VoiceLDM Lee et al. (2023) 10.28 49.48 2.95 4.79 0.37 2.07± 0.16 2.62± 0.22 UniAudio Yang et al. (2023b) 3.12 - 2.60 - - - - Audiobox (ours) 1.10 10.14 1.19 11.90 0.70 3.19± 0.14 3.94± 0.14 Sound-only models TANGO-full-FT Ghosal et al. (2023) 2.19 18.47 1.20 8.80 0.56 3.04± 0.13 3.78± 0.15 Audiobox Sound (ours) 0.77 8.30 1.15 12.70 0.71 3.43± 0.15 4.09± 0.15 very small and minimize the global truncation error (sum of local truncation error) between approximate sample xθ n and ground truth data point x(1) in the following formula: Ex0∼p(x0)∥x(1) −xθ n∥, where xθ n is the output of the solver stepθ."
       }
      ]
     },
@@ -4482,8 +5449,33 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-8-6-1",
-       "original": "To train the Bespoke solver, we generate the ground-truth path x(t) at times ti where i ∈[N] using standard ODE solver, and we calculate the local truncation error dθ i = ∥x(ti)−stepθ x(ti−1, x(ti−1); u)∥between ground truth and predicted sample from parameterized solver θ, and finally we minimize the Bespoke loss L(θ) = Ex0∼p(x0) Pn i=1 dθ i .",
-       "zh": "为训练 Bespoke solver，我们用标准 ODE 求解器在时刻 ti（i ∈[N]）生成真值路径 x(t)，计算真值与参数化求解器 θ 预测样本之间的局部截断误差 dθ i = ∥x(ti)−stepθ x(ti−1, x(ti−1); u)∥，最后最小化 Bespoke 损失 L(θ) = Ex0∼p(x0) Pn i=1 dθ i 。"
+       "original": "At a high level, Bespoke solvers aims to learn transformation for paths such that transformed can be more accurately estimated with the desired number of ODE steps.",
+       "zh": "从高层看，Bespoke solver 旨在为路径学习一种变换，使变换后的路径能在期望的 ODE 步数下被更准确地估计。"
+      },
+      {
+       "id": "s-8-6-2",
+       "original": "Bespoke Solver work by transforming the sample trajectory x(t) using two components tr : [0, 1] →[0, 1] as time reparameterization and invertible function φ : [0, 1] × Rd →Rd, where those functions are parameterized by extra parameters θ.",
+       "zh": "Bespoke Solver 通过两个组件变换样本轨迹 x(t)：tr : [0, 1] →[0, 1] 作为时间重参数化，以及可逆函数 φ : [0, 1] × Rd →Rd，这些函数由额外参数 θ 参数化。"
+      },
+      {
+       "id": "s-8-6-3",
+       "original": "Let the parametric solver be stepθ(t, x; ut).",
+       "zh": "设参数化求解器为 stepθ(t, x; ut)。"
+      },
+      {
+       "id": "s-8-6-4",
+       "original": "First we transform input (t, x) into (r, ¯x) = (rt, φrt(x)).",
+       "zh": "首先把输入 (t, x) 变换为 (r, ¯x) = (rt, φrt(x))。"
+      },
+      {
+       "id": "s-8-6-5",
+       "original": "Next, we perform a step in the transformed space as (rnext, ¯xnext) = step(r, ¯x; ¯ur), using the chosen base solver (e.g., midpoint), where ¯ur is vector field on transformed trajectory.",
+       "zh": "接着在变换后的空间中执行一步 (rnext, ¯xnext) = step(r, ¯x; ¯ur)，使用所选的基础求解器（如中点法），其中 ¯ur 是变换后轨迹上的向量场。"
+      },
+      {
+       "id": "s-8-6-6",
+       "original": "To transform back to original space, we compute (tnext, xnext) = stepθ(x, t; ut) = (trnext, φ−1 rnext(¯xnext)).",
+       "zh": "为变换回原空间，我们计算 (tnext, xnext) = stepθ(x, t; ut) = (trnext, φ−1 rnext(¯xnext))。"
       }
      ]
     },
@@ -4494,18 +5486,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-8-7-1",
-       "original": "In this paper, we generate ground truth paths for training Bespoke Solvers for speech generation using dopri5 ODE solver to estimate N = 200 steps with guidance weight (GW) of 0.7.",
-       "zh": "本文中，我们用 dopri5 ODE 求解器估计 N = 200 步、引导权重（GW）为 0.7，生成用于训练语音生成 Bespoke Solver 的真值路径。"
-      },
-      {
-       "id": "s-8-7-2",
-       "original": "Table 15 top half shows the evaluation result on zero-shot TTS with matched guidance weight (0.7) comparing two standard ODE solvers: midpoint and dopri5 with the Bespoke Solver.",
-       "zh": "Table 15 上半部分给出引导权重匹配（0.7）时零样本 TTS 的评测结果，对比两个标准 ODE 求解器：中点法与 dopri5，以及 Bespoke Solver。"
-      },
-      {
-       "id": "s-8-7-3",
-       "original": "As we can see, by using bespoke solver, we could reduce ODE steps down to 4 and still retain similar performance in term of style similarity and WER.",
-       "zh": "可以看到，使用 bespoke solver 后，ODE 步数可降至 4，仍在风格相似度与 WER 上保持相近的性能。"
+       "original": "To train the Bespoke solver, we generate the ground-truth path x(t) at times ti where i ∈[N] using standard ODE solver, and we calculate the local truncation error dθ i = ∥x(ti)−stepθ x(ti−1, x(ti−1); u)∥between ground truth and predicted sample from parameterized solver θ, and finally we minimize the Bespoke loss L(θ) = Ex0∼p(x0) Pn i=1 dθ i .",
+       "zh": "为训练 Bespoke solver，我们用标准 ODE 求解器在时刻 ti（i ∈[N]）生成真值路径 x(t)，计算真值与参数化求解器 θ 预测样本之间的局部截断误差 dθ i = ∥x(ti)−stepθ x(ti−1, x(ti−1); u)∥，最后最小化 Bespoke 损失 L(θ) = Ex0∼p(x0) Pn i=1 dθ i 。"
       }
      ]
     },
@@ -4516,11 +5498,33 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-8-8-1",
+       "original": "In this paper, we generate ground truth paths for training Bespoke Solvers for speech generation using dopri5 ODE solver to estimate N = 200 steps with guidance weight (GW) of 0.7.",
+       "zh": "本文中，我们用 dopri5 ODE 求解器估计 N = 200 步、引导权重（GW）为 0.7，生成用于训练语音生成 Bespoke Solver 的真值路径。"
+      },
+      {
+       "id": "s-8-8-2",
+       "original": "Table 15 top half shows the evaluation result on zero-shot TTS with matched guidance weight (0.7) comparing two standard ODE solvers: midpoint and dopri5 with the Bespoke Solver.",
+       "zh": "Table 15 上半部分给出引导权重匹配（0.7）时零样本 TTS 的评测结果，对比两个标准 ODE 求解器：中点法与 dopri5，以及 Bespoke Solver。"
+      },
+      {
+       "id": "s-8-8-3",
+       "original": "As we can see, by using bespoke solver, we could reduce ODE steps down to 4 and still retain similar performance in term of style similarity and WER.",
+       "zh": "可以看到，使用 bespoke solver 后，ODE 步数可降至 4，仍在风格相似度与 WER 上保持相近的性能。"
+      }
+     ]
+    },
+    {
+     "id": "p-8-9",
+     "type": "paragraph",
+     "page": 24,
+     "sentences": [
+      {
+       "id": "s-8-9-1",
        "original": "In addition, we also study if a Bespoke Solver trained for a specific guidance weight generalizes to a different guidance weight, and present comparison between the default midpoint solver with the bespoke solver using GW=0.0.",
        "zh": "此外，我们还研究了针对特定引导权重训练的 Bespoke Solver 能否泛化到其他引导权重，并给出 GW=0.0 下默认中点求解器与 bespoke solver 的对比。"
       },
       {
-       "id": "s-8-8-2",
+       "id": "s-8-9-2",
        "original": "Results suggest that it can generalize to different guidance setups.",
        "zh": "结果表明它可以泛化到不同的引导设置。"
       }
@@ -4534,16 +5538,82 @@ globalThis.PAPER_2312_15821 = {
      "zh": "Table 15 标准 ODE 求解器（midpoint、dopri5）与参数化 Bespoke solver 在 NFE、说话人相似度与 WER 上的对比。"
     },
     {
-     "id": "p-8-9",
+     "id": "p-8-10",
      "type": "paragraph",
      "page": 24,
      "sentences": [
       {
-       "id": "s-8-9-1",
-       "original": "Solver NFE GW Sim-o ↑ Word error rate (%) ↓ 0.733 0.607 0.605 0.602 0.657 3.0 3.6 9.5 2.8 0.9 midpoint, 16 steps 32 0.734 0.607 0.608 0.603 0.659 3.2 3.7 9.1 3.2 0.9 Bespoke, 4 steps 8 0.735 0.607 0.606 0.606 0.658 3.0 3.5 8.3 3.0 0.7 dopri5 ∼280 0.7 midpoint, 16 steps 32 0.0 0.671 0.546 0.578 0.541 0.601 3.6 5.1 12.1 3.1 1.3 Bespoke, 4 steps 8 0.672 0.548 0.576 0.544 0.604 3.6 5.1 12.1 3.0 1.3",
-       "zh": "Solver NFE GW Sim-o ↑ 词错误率 (%) ↓ 0.733 0.607 0.605 0.602 0.657 3.0 3.6 9.5 2.8 0.9 midpoint, 16 steps 32 0.734 0.607 0.608 0.603 0.659 3.2 3.7 9.1 3.2 0.9 Bespoke, 4 steps 8 0.735 0.607 0.606 0.606 0.658 3.0 3.5 8.3 3.0 0.7 dopri5 ∼280 0.7 midpoint, 16 steps 32 0.0 0.671 0.546 0.578 0.541 0.601 3.6 5.1 12.1 3.1 1.3 Bespoke, 4 steps 8 0.672 0.548 0.576 0.544 0.604 3.6 5.1 12.1 3.0 1.3"
+       "id": "s-8-10-1",
+       "original": "Solver NFE GW Sim-o ↑ Word error rate (%) ↓ LS CV SWBD Expr Accent LS CV SWBD Expr Accent",
+       "zh": "表头：Solver / NFE / GW × Sim-o ↑ / Word error rate (%) ↓（LS / CV / SWBD / Expr / Accent 各组）。"
       }
      ]
+    },
+    {
+     "id": "eq-8-12",
+     "type": "equation",
+     "page": 24,
+     "original": "0.733 0.607 0.605 0.602 0.657 3.0 3.6 9.5 2.8 0.9"
+    },
+    {
+     "id": "eq-8-13",
+     "type": "equation",
+     "page": 24,
+     "original": "midpoint, 16 steps"
+    },
+    {
+     "id": "eq-8-14",
+     "type": "equation",
+     "page": 24,
+     "original": "32 0.734 0.607 0.608 0.603 0.659 3.2 3.7 9.1 3.2 0.9"
+    },
+    {
+     "id": "eq-8-15",
+     "type": "equation",
+     "page": 24,
+     "original": "Bespoke, 4 steps"
+    },
+    {
+     "id": "eq-8-16",
+     "type": "equation",
+     "page": 24,
+     "original": "8 0.735 0.607 0.606 0.606 0.658 3.0 3.5 8.3 3.0 0.7"
+    },
+    {
+     "id": "eq-8-17",
+     "type": "equation",
+     "page": 24,
+     "original": "dopri5"
+    },
+    {
+     "id": "eq-8-18",
+     "type": "equation",
+     "page": 24,
+     "original": "∼280 0.7"
+    },
+    {
+     "id": "eq-8-19",
+     "type": "equation",
+     "page": 24,
+     "original": "midpoint, 16 steps"
+    },
+    {
+     "id": "eq-8-20",
+     "type": "equation",
+     "page": 24,
+     "original": "32 0.0 0.671 0.546 0.578 0.541 0.601 3.6 5.1 12.1 3.1 1.3"
+    },
+    {
+     "id": "eq-8-21",
+     "type": "equation",
+     "page": 24,
+     "original": "Bespoke, 4 steps"
+    },
+    {
+     "id": "eq-8-22",
+     "type": "equation",
+     "page": 24,
+     "original": "8 0.672 0.548 0.576 0.544 0.604 3.6 5.1 12.1 3.0 1.3"
     }
    ]
   },
@@ -4826,10 +5896,148 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-10-1-3-1",
-       "original": "To give a concrete examples, our training data may contain both instances of chihuahua barking and those of Augmentation FPR FNR No augmentation 0.001 0 Bandpass filter 0.001 0 Boost audio 0.001 0 Duck audio 0.001 0 Echo 0.001 0.001 Highpass filter 0.001 0 Lowpass filter 0.001 0 Pink noise 0.001 0 Random noise 0 0 Speed slower 0 0.003 Smoothing 0 0.001 Up-down resampling 0.001 0",
-       "zh": "举个具体的例子，我们的训练数据可能同时包含吉娃娃犬吠和拉布拉多犬吠的实例；然而，这些实例很可能都被标注为「一只狗在叫」。增强 FPR FNR 无增强 0.001 0 带通滤波 0.001 0 提升音频 0.001 0 闪避音频 0.001 0 回声 0.001 0.001 高通滤波 0.001 0 低通滤波 0.001 0 粉红噪声 0.001 0 随机噪声 0 0 减速 0 0.003 平滑 0 0.001 上下重采样 0.001 0"
+       "original": "To give a concrete examples, our training data may contain both instances of chihuahua barking and those of Augmentation FPR FNR No augmentation",
+       "zh": "举个具体例子，我们的训练数据可能同时包含吉娃娃吠叫的样本与（表头：Augmentation / FPR / FNR——No augmentation，后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-10-1-1",
+     "type": "equation",
+     "page": 26,
+     "original": "0.001 0"
+    },
+    {
+     "id": "eq-10-1-2",
+     "type": "equation",
+     "page": 26,
+     "original": "Bandpass filter"
+    },
+    {
+     "id": "eq-10-1-3",
+     "type": "equation",
+     "page": 26,
+     "original": "0.001 0"
+    },
+    {
+     "id": "eq-10-1-4",
+     "type": "equation",
+     "page": 26,
+     "original": "Boost audio"
+    },
+    {
+     "id": "eq-10-1-5",
+     "type": "equation",
+     "page": 26,
+     "original": "0.001 0"
+    },
+    {
+     "id": "eq-10-1-6",
+     "type": "equation",
+     "page": 26,
+     "original": "Duck audio"
+    },
+    {
+     "id": "eq-10-1-7",
+     "type": "equation",
+     "page": 26,
+     "original": "0.001 0"
+    },
+    {
+     "id": "eq-10-1-8",
+     "type": "equation",
+     "page": 26,
+     "original": "Echo"
+    },
+    {
+     "id": "eq-10-1-9",
+     "type": "equation",
+     "page": 26,
+     "original": "0.001 0.001"
+    },
+    {
+     "id": "eq-10-1-10",
+     "type": "equation",
+     "page": 26,
+     "original": "Highpass filter"
+    },
+    {
+     "id": "eq-10-1-11",
+     "type": "equation",
+     "page": 26,
+     "original": "0.001 0"
+    },
+    {
+     "id": "eq-10-1-12",
+     "type": "equation",
+     "page": 26,
+     "original": "Lowpass filter"
+    },
+    {
+     "id": "eq-10-1-13",
+     "type": "equation",
+     "page": 26,
+     "original": "0.001 0"
+    },
+    {
+     "id": "eq-10-1-14",
+     "type": "equation",
+     "page": 26,
+     "original": "Pink noise"
+    },
+    {
+     "id": "eq-10-1-15",
+     "type": "equation",
+     "page": 26,
+     "original": "0.001 0"
+    },
+    {
+     "id": "eq-10-1-16",
+     "type": "equation",
+     "page": 26,
+     "original": "Random noise"
+    },
+    {
+     "id": "eq-10-1-17",
+     "type": "equation",
+     "page": 26,
+     "original": "0 0"
+    },
+    {
+     "id": "eq-10-1-18",
+     "type": "equation",
+     "page": 26,
+     "original": "Speed slower"
+    },
+    {
+     "id": "eq-10-1-19",
+     "type": "equation",
+     "page": 26,
+     "original": "0 0.003"
+    },
+    {
+     "id": "eq-10-1-20",
+     "type": "equation",
+     "page": 26,
+     "original": "Smoothing"
+    },
+    {
+     "id": "eq-10-1-21",
+     "type": "equation",
+     "page": 26,
+     "original": "0 0.001"
+    },
+    {
+     "id": "eq-10-1-22",
+     "type": "equation",
+     "page": 26,
+     "original": "Up-down resampling"
+    },
+    {
+     "id": "eq-10-1-23",
+     "type": "equation",
+     "page": 26,
+     "original": "0.001 0"
     },
     {
      "id": "tab-10-1-1",
@@ -5190,7 +6398,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-1-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-1-2",
@@ -5198,7 +6407,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-1-3",
-       "original": "I."
+       "original": "I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-1-4",
@@ -5210,11 +6420,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-1-6",
-       "original": "Engel, M."
+       "original": "Engel, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-1-7",
-       "original": "Verzetti, A."
+       "original": "Verzetti, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-1-8",
@@ -5222,19 +6434,23 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-1-9",
-       "original": "Huang, A."
+       "original": "Huang, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-1-10",
-       "original": "Jansen, A."
+       "original": "Jansen, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-1-11",
-       "original": "Roberts, M."
+       "original": "Roberts, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-1-12",
-       "original": "Tagliasacchi, et al. Musiclm: Generating music from text. arXiv preprint arXiv:2301.11325, 2023."
+       "original": "Tagliasacchi, et al. Musiclm: Generating music from text. arXiv preprint arXiv:2301.11325, 2023.",
+       "zh": "1."
       }
      ]
     },
@@ -5245,23 +6461,28 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-2-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-2-2",
-       "original": "Ardila, M."
+       "original": "Ardila, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-2-3",
-       "original": "Branson, K."
+       "original": "Branson, K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-2-4",
-       "original": "Davis, M."
+       "original": "Davis, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-2-5",
-       "original": "Henretty, M."
+       "original": "Henretty, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-2-6",
@@ -5269,7 +6490,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-2-7",
-       "original": "Meyer, R."
+       "original": "Meyer, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-2-8",
@@ -5281,7 +6503,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-2-10",
-       "original": "M."
+       "original": "M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-2-11",
@@ -5315,7 +6538,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-4-2",
@@ -5323,15 +6547,18 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-4-3",
-       "original": "Zhou, A."
+       "original": "Zhou, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-4-4",
-       "original": "Mohamed, and M."
+       "original": "Mohamed, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-4-5",
-       "original": "Auli. wav2vec 2.0: A framework for self-supervised learning of speech representations."
+       "original": "Auli. wav2vec 2.0: A framework for self-supervised learning of speech representations.",
+       "zh": "2."
       },
       {
        "id": "s-references-4-6",
@@ -5346,19 +6573,23 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "Z."
+       "original": "Z.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-5-2",
-       "original": "Borsos, M."
+       "original": "Borsos, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-5-3",
-       "original": "Sharifi, D."
+       "original": "Sharifi, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-5-4",
-       "original": "Vincent, E."
+       "original": "Vincent, E.",
+       "zh": "为提升极低 NFE 区间（即 4）下的推理速度，我们采用 Bespoke Solvers Shaul et al. (2023)，以低得多的 NFE 恢复与原模型相近的样本质量。"
       },
       {
        "id": "s-references-5-5",
@@ -5366,7 +6597,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-5-6",
-       "original": "Zeghidour, and M."
+       "original": "Zeghidour, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-5-7",
@@ -5385,11 +6617,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "H."
+       "original": "H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-6-2",
-       "original": "Bredin. pyannote.audio 2.1 speaker diarization pipeline: principle, benchmark, and recipe."
+       "original": "Bredin. pyannote.audio 2.1 speaker diarization pipeline: principle, benchmark, and recipe.",
+       "zh": "2."
       },
       {
        "id": "s-references-6-3",
@@ -5397,9 +6631,15 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-6-4",
-       "original": "INTERSPEECH 2023, 2023."
+       "original": "INTERSPEECH"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 30,
+     "original": "2023, 2023."
     },
     {
      "id": "p-references-7",
@@ -5408,7 +6648,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "K."
+       "original": "K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-7-2",
@@ -5428,7 +6669,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-7-6",
-       "original": "Berg-Kirkpatrick, and S."
+       "original": "Berg-Kirkpatrick, and S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-7-7",
@@ -5451,7 +6693,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-8-2",
@@ -5478,7 +6721,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-9-2",
@@ -5498,11 +6742,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-9-6",
-       "original": "Bettencourt, and D."
+       "original": "Bettencourt, and D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-9-7",
-       "original": "K."
+       "original": "K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-9-8",
@@ -5525,7 +6771,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-10-1",
-       "original": "S."
+       "original": "S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-10-2",
@@ -5541,7 +6788,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-10-5",
-       "original": "Wu, S."
+       "original": "Wu, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-10-6",
@@ -5633,15 +6881,18 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-14-2",
-       "original": "Clifton, A."
+       "original": "Clifton, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-14-3",
-       "original": "Pappu, S."
+       "original": "Pappu, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-14-4",
@@ -5657,7 +6908,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-14-7",
-       "original": "Carterette, and R."
+       "original": "Carterette, and R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-14-8",
@@ -5684,7 +6936,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-15-3",
-       "original": "Kreuk, I."
+       "original": "Kreuk, I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-15-4",
@@ -5692,7 +6945,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-15-5",
-       "original": "Remez, D."
+       "original": "Remez, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-15-6",
@@ -5704,7 +6958,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-15-8",
-       "original": "Adi, and A."
+       "original": "Adi, and A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-15-9",
@@ -5727,7 +6982,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-16-2",
@@ -5747,11 +7003,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-16-6",
-       "original": "High fidelity neural audio compression."
+       "original": "High fidelity neural audio compression.",
+       "zh": "2."
       },
       {
        "id": "s-references-16-7",
-       "original": "ArXiv, abs/2210.13438, 2022."
+       "original": "ArXiv, abs/2210.13438, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -5770,7 +7028,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-17-3",
-       "original": "McAuley, and M."
+       "original": "McAuley, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-17-4",
@@ -5778,7 +7037,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-17-5",
-       "original": "Adversarial audio synthesis. arXiv preprint arXiv:1802.04208, 2018."
+       "original": "Adversarial audio synthesis. arXiv preprint arXiv:1802.04208, 2018.",
+       "zh": "2."
       }
      ]
     },
@@ -5789,7 +7049,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-18-2",
@@ -5809,9 +7070,16 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-18-6",
-       "original": "High fidelity neural audio compression. arXiv preprint arXiv:2210.13438, 2022."
+       "original": "High fidelity neural audio compression. arXiv preprint arXiv:2210.13438,",
+       "zh": "2."
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 30,
+     "original": "2022."
     },
     {
      "id": "p-references-19",
@@ -5820,7 +7088,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "P."
+       "original": "P.",
+       "zh": "1."
       },
       {
        "id": "s-references-19-2",
@@ -5828,11 +7097,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-19-3",
-       "original": "Couairon, H."
+       "original": "Couairon, H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-19-4",
-       "original": "Jégou, M."
+       "original": "Jégou, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-19-5",
@@ -5867,19 +7138,23 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-20-3",
-       "original": "Gemmeke, D."
+       "original": "Gemmeke, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-20-4",
-       "original": "P."
+       "original": "P.",
+       "zh": "1."
       },
       {
        "id": "s-references-20-5",
-       "original": "Ellis, D."
+       "original": "Ellis, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-20-6",
-       "original": "Freedman, A."
+       "original": "Freedman, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-20-7",
@@ -5887,7 +7162,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-20-8",
-       "original": "Lawrence, R."
+       "original": "Lawrence, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-20-9",
@@ -5895,11 +7171,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-20-10",
-       "original": "Moore, M."
+       "original": "Moore, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-20-11",
-       "original": "Plakal, and M."
+       "original": "Plakal, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-20-12",
@@ -5926,7 +7204,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-21-2",
@@ -5934,11 +7213,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-21-3",
-       "original": "Majumder, A."
+       "original": "Majumder, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-21-4",
-       "original": "Mehrish, and S."
+       "original": "Mehrish, and S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-21-5",
@@ -5965,7 +7246,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-22-3",
-       "original": "Godfrey, E."
+       "original": "Godfrey, E.",
+       "zh": "为提升极低 NFE 区间（即 4）下的推理速度，我们采用 Bespoke Solvers Shaul et al. (2023)，以低得多的 NFE 恢复与原模型相近的样本质量。"
       },
       {
        "id": "s-references-22-4",
@@ -5996,7 +7278,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-23-2",
-       "original": "IEEE Computer Society, 1992."
+       "original": "IEEE Computer Society, 1992.",
+       "zh": "2."
       }
      ]
     },
@@ -6007,7 +7290,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "Z."
+       "original": "Z.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-24-2",
@@ -6019,7 +7303,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-24-4",
-       "original": "Wu, S."
+       "original": "Wu, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-24-5",
@@ -6062,7 +7347,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-25-4",
-       "original": "Classifier-free diffusion guidance. arXiv preprint arXiv:2207.12598, 2022."
+       "original": "Classifier-free diffusion guidance. arXiv preprint arXiv:2207.12598, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -6077,11 +7363,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-26-2",
-       "original": "Ho, A."
+       "original": "Ho, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-26-3",
-       "original": "Jain, and P."
+       "original": "Jain, and P.",
+       "zh": "1."
       },
       {
        "id": "s-references-26-4",
@@ -6112,7 +7400,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-27-3",
-       "original": "Zhang, R."
+       "original": "Zhang, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-27-4",
@@ -6120,7 +7409,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-27-5",
-       "original": "Weiss, H."
+       "original": "Weiss, H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-27-6",
@@ -6152,9 +7442,16 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-27-13",
-       "original": "In International Conference on Learning Representations, 2019."
+       "original": "In International Conference on Learning Representations,",
+       "zh": "1."
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 31,
+     "original": "2019."
     },
     {
      "id": "p-references-28",
@@ -6171,23 +7468,28 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-28-3",
-       "original": "Bolte, Y.-H."
+       "original": "Bolte, Y.-H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-28-4",
-       "original": "H."
+       "original": "H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-28-5",
-       "original": "Tsai, K."
+       "original": "Tsai, K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-28-6",
-       "original": "Lakhotia, R."
+       "original": "Lakhotia, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-28-7",
-       "original": "Salakhutdinov, and A."
+       "original": "Salakhutdinov, and A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-28-8",
@@ -6199,7 +7501,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-28-10",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 29:3451–3460, 2021."
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 29:3451–3460, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6210,7 +7513,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "E."
+       "original": "E.",
+       "zh": "为提升极低 NFE 区间（即 4）下的推理速度，我们采用 Bespoke Solvers Shaul et al. (2023)，以低得多的 NFE 恢复与原模型相近的样本质量。"
       },
       {
        "id": "s-references-29-2",
@@ -6222,7 +7526,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-29-4",
-       "original": "Shen, P."
+       "original": "Shen, P.",
+       "zh": "1."
       },
       {
        "id": "s-references-29-5",
@@ -6234,7 +7539,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-29-7",
-       "original": "Li, S."
+       "original": "Li, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-29-8",
@@ -6250,7 +7556,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-29-11",
-       "original": "Lora: Low-rank adaptation of large language models, 2021."
+       "original": "Lora: Low-rank adaptation of large language models, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6265,11 +7572,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-30-2",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-30-3",
-       "original": "Huang, A."
+       "original": "Huang, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-30-4",
@@ -6281,7 +7590,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-30-6",
-       "original": "Shazeer, I."
+       "original": "Shazeer, I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-30-7",
@@ -6289,27 +7599,33 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-30-8",
-       "original": "Hawthorne, A."
+       "original": "Hawthorne, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-30-9",
-       "original": "M."
+       "original": "M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-30-10",
-       "original": "Dai, M."
+       "original": "Dai, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-30-11",
-       "original": "D."
+       "original": "D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-30-12",
-       "original": "Hoffman, M."
+       "original": "Hoffman, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-30-13",
-       "original": "Dinculescu, and D."
+       "original": "Dinculescu, and D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-30-14",
@@ -6332,11 +7648,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-31-2",
-       "original": "Huang, D."
+       "original": "Huang, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-31-3",
-       "original": "S."
+       "original": "S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-31-4",
@@ -6348,11 +7666,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-31-6",
-       "original": "I."
+       "original": "I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-31-7",
-       "original": "Denk, A."
+       "original": "Denk, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-31-8",
@@ -6376,7 +7696,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-31-13",
-       "original": "Frank, et al. Noise2music: Text-conditioned music generation with diffusion models. arXiv preprint arXiv:2302.03917, 2023a."
+       "original": "Frank, et al. Noise2music: Text-conditioned music generation with diffusion models. arXiv preprint arXiv:2302.03917, 2023a.",
+       "zh": "2."
       }
      ]
     },
@@ -6387,7 +7708,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-32-2",
@@ -6395,7 +7717,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-32-3",
-       "original": "Huang, D."
+       "original": "Huang, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-32-4",
@@ -6407,7 +7730,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-32-6",
-       "original": "Liu, M."
+       "original": "Liu, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-32-7",
@@ -6431,7 +7755,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-32-12",
-       "original": "Make-an-audio: Text-to-audio generation with prompt-enhanced diffusion models. arXiv preprint arXiv:2301.12661, 2023b."
+       "original": "Make-an-audio: Text-to-audio generation with prompt-enhanced diffusion models. arXiv preprint arXiv:2301.12661, 2023b.",
+       "zh": "1."
       }
      ]
     },
@@ -6446,7 +7771,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-33-2",
-       "original": "Kahn, M."
+       "original": "Kahn, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-33-3",
@@ -6454,7 +7780,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-33-4",
-       "original": "Zheng, E."
+       "original": "Zheng, E.",
+       "zh": "为提升极低 NFE 区间（即 4）下的推理速度，我们采用 Bespoke Solvers Shaul et al. (2023)，以低得多的 NFE 恢复与原模型相近的样本质量。"
       },
       {
        "id": "s-references-33-5",
@@ -6462,7 +7789,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-33-6",
-       "original": "Xu, P.-E."
+       "original": "Xu, P.-E.",
+       "zh": "为提升极低 NFE 区间（即 4）下的推理速度，我们采用 Bespoke Solvers Shaul et al. (2023)，以低得多的 NFE 恢复与原模型相近的样本质量。"
       },
       {
        "id": "s-references-33-7",
@@ -6474,7 +7802,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-33-9",
-       "original": "Liptchinsky, R."
+       "original": "Liptchinsky, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-33-10",
@@ -6490,11 +7819,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-33-13",
-       "original": "Synnaeve, A."
+       "original": "Synnaeve, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-33-14",
-       "original": "Joulin, A. rahman Mohamed, and E."
+       "original": "Joulin, A. rahman Mohamed, and E.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-33-15",
@@ -6517,11 +7848,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "E."
+       "original": "E.",
+       "zh": "为提升极低 NFE 区间（即 4）下的推理速度，我们采用 Bespoke Solvers Shaul et al. (2023)，以低得多的 NFE 恢复与原模型相近的样本质量。"
       },
       {
        "id": "s-references-34-2",
-       "original": "Kharitonov, D."
+       "original": "Kharitonov, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-34-3",
@@ -6529,23 +7862,28 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-34-4",
-       "original": "Borsos, R."
+       "original": "Borsos, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-34-5",
-       "original": "Marinier, S."
+       "original": "Marinier, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-34-6",
-       "original": "Girgin, O."
+       "original": "Girgin, O.",
+       "zh": "我们发现 Audiobox 显著优于所有基线，达到联合模型的最先进水平，甚至超过 TANGO 等纯音效模型。"
       },
       {
        "id": "s-references-34-7",
-       "original": "Pietquin, M."
+       "original": "Pietquin, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-34-8",
-       "original": "Sharifi, M."
+       "original": "Sharifi, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-34-9",
@@ -6575,19 +7913,23 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "K."
+       "original": "K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-36-2",
-       "original": "Kilgour, M."
+       "original": "Kilgour, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-36-3",
-       "original": "Zuluaga, D."
+       "original": "Zuluaga, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-36-4",
-       "original": "Roblek, and M."
+       "original": "Roblek, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-36-5",
@@ -6614,7 +7956,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-37-2",
-       "original": "D."
+       "original": "D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-37-3",
@@ -6622,7 +7965,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-37-4",
-       "original": "Kim, H."
+       "original": "Kim, H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-37-5",
@@ -6638,9 +7982,15 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-37-8",
-       "original": "In NAACL-HLT, 2019."
+       "original": "In NAACL-HLT,"
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 31,
+     "original": "2019."
     },
     {
      "id": "p-references-38",
@@ -6649,11 +7999,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-38-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-38-2",
-       "original": "P."
+       "original": "P.",
+       "zh": "1."
       },
       {
        "id": "s-references-38-3",
@@ -6669,7 +8021,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-38-6",
-       "original": "CoRR, abs/1412.6980, 2014."
+       "original": "CoRR, abs/1412.6980, 2014.",
+       "zh": "2."
       }
      ]
     },
@@ -6680,15 +8033,18 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-39-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-39-2",
-       "original": "P."
+       "original": "P.",
+       "zh": "1."
       },
       {
        "id": "s-references-39-3",
-       "original": "Kingma and M."
+       "original": "Kingma and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-39-4",
@@ -6769,11 +8125,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-42-6",
-       "original": "Wang, and M."
+       "original": "Wang, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-42-7",
-       "original": "D."
+       "original": "D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-42-8",
@@ -6785,9 +8143,15 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-42-10",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 28, 2019."
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 28,"
       }
      ]
+    },
+    {
+     "id": "eq-references-5",
+     "type": "equation",
+     "page": 31,
+     "original": "2019."
     },
     {
      "id": "p-references-43",
@@ -6804,7 +8168,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-43-3",
-       "original": "Synnaeve, A."
+       "original": "Synnaeve, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-43-4",
@@ -6812,7 +8177,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-43-5",
-       "original": "Singer, A."
+       "original": "Singer, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-43-6",
@@ -6820,7 +8186,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-43-7",
-       "original": "Copet, D."
+       "original": "Copet, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-43-8",
@@ -6836,7 +8203,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-43-11",
-       "original": "Audiogen: Textually guided audio generation. arXiv preprint arXiv:2209.15352, 2022."
+       "original": "Audiogen: Textually guided audio generation. arXiv preprint arXiv:2209.15352, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -6847,7 +8215,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-44-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-44-2",
@@ -6855,7 +8224,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-44-3",
-       "original": "Colotte, and D."
+       "original": "Colotte, and D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-44-4",
@@ -6871,7 +8241,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-44-7",
-       "original": "IEEE, 2021."
+       "original": "IEEE, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6882,11 +8253,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-45-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-45-2",
-       "original": "Kumar, K."
+       "original": "Kumar, K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-45-3",
@@ -6894,7 +8267,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-45-4",
-       "original": "Ni, P."
+       "original": "Ni, P.",
+       "zh": "1."
       },
       {
        "id": "s-references-45-5",
@@ -6902,7 +8276,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-45-6",
-       "original": "Zhang, E."
+       "original": "Zhang, E.",
+       "zh": "为提升极低 NFE 区间（即 4）下的推理速度，我们采用 Bespoke Solvers Shaul et al. (2023)，以低得多的 NFE 恢复与原模型相近的样本质量。"
       },
       {
        "id": "s-references-45-7",
@@ -6929,7 +8304,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-46-1",
-       "original": "A. Łańcucki."
+       "original": "A. Łańcucki.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-46-2",
@@ -6937,11 +8313,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-46-3",
-       "original": "In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6588–6592."
+       "original": "In ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6588–6592.",
+       "zh": "2."
       },
       {
        "id": "s-references-46-4",
-       "original": "IEEE, 2021."
+       "original": "IEEE, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -6952,11 +8330,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-47-1",
-       "original": "M."
+       "original": "M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-47-2",
-       "original": "Le, A."
+       "original": "Le, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-47-3",
@@ -6972,11 +8352,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-47-6",
-       "original": "Sari, R."
+       "original": "Sari, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-47-7",
-       "original": "Moritz, M."
+       "original": "Moritz, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-47-8",
@@ -7018,7 +8400,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-49-1",
-       "original": "S.-g."
+       "original": "S.-g.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-49-2",
@@ -7034,7 +8417,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-49-5",
-       "original": "Catanzaro, and S."
+       "original": "Catanzaro, and S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-49-6",
@@ -7042,7 +8426,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-49-7",
-       "original": "Bigvgan: A universal neural vocoder with large-scale training. arXiv preprint arXiv:2206.04658, 2022."
+       "original": "Bigvgan: A universal neural vocoder with large-scale training. arXiv preprint arXiv:2206.04658, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -7053,11 +8438,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-50-1",
-       "original": "Y."
+       "original": "Y.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-50-2",
-       "original": "Lee, I."
+       "original": "Lee, I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-50-3",
@@ -7069,7 +8456,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-50-5",
-       "original": "S."
+       "original": "S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-50-6",
@@ -7088,7 +8476,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-51-1",
-       "original": "Y."
+       "original": "Y.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-51-2",
@@ -7096,7 +8485,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-51-3",
-       "original": "Guo, K."
+       "original": "Guo, K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-51-4",
@@ -7116,7 +8506,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-51-8",
-       "original": "Liu, D."
+       "original": "Liu, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-51-9",
@@ -7124,7 +8515,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-51-10",
-       "original": "Zhang, K."
+       "original": "Zhang, K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-51-11",
@@ -7139,7 +8531,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-52-1",
-       "original": "P."
+       "original": "P.",
+       "zh": "1."
       },
       {
        "id": "s-references-52-2",
@@ -7155,11 +8548,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-52-5",
-       "original": "Wang, A."
+       "original": "Wang, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-52-6",
-       "original": "Wang, and A."
+       "original": "Wang, and A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-52-7",
@@ -7178,11 +8573,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-53-1",
-       "original": "Y."
+       "original": "Y.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-53-2",
-       "original": "Lipman, R."
+       "original": "Lipman, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-53-3",
@@ -7194,15 +8591,18 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-53-5",
-       "original": "Chen, H."
+       "original": "Chen, H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-53-6",
-       "original": "Ben-Hamu, M."
+       "original": "Ben-Hamu, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-53-7",
-       "original": "Nickel, and M."
+       "original": "Nickel, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-53-8",
@@ -7225,19 +8625,23 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-54-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-54-2",
-       "original": "H."
+       "original": "H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-54-3",
-       "original": "Liu, M."
+       "original": "Liu, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-54-4",
-       "original": "Le, A."
+       "original": "Le, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-54-5",
@@ -7245,7 +8649,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-54-6",
-       "original": "Shi, A."
+       "original": "Shi, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-54-7",
@@ -7268,7 +8673,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-55-1",
-       "original": "H."
+       "original": "H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-55-2",
@@ -7288,7 +8694,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-55-6",
-       "original": "Liu, D."
+       "original": "Liu, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-55-7",
@@ -7296,11 +8703,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-55-8",
-       "original": "Wang, and M."
+       "original": "Wang, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-55-9",
-       "original": "D."
+       "original": "D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-55-10",
@@ -7308,7 +8717,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-55-11",
-       "original": "Audioldm: Text-to-audio generation with latent diffusion models. arXiv preprint arXiv:2301.12503, 2023b."
+       "original": "Audioldm: Text-to-audio generation with latent diffusion models. arXiv preprint arXiv:2301.12503, 2023b.",
+       "zh": "1."
       }
      ]
     },
@@ -7319,7 +8729,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-56-1",
-       "original": "H."
+       "original": "H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-56-2",
@@ -7355,11 +8766,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-56-10",
-       "original": "Wang, and M."
+       "original": "Wang, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-56-11",
-       "original": "D."
+       "original": "D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-56-12",
@@ -7390,7 +8803,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-57-4",
-       "original": "Zhao, H."
+       "original": "Zhao, H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-57-5",
@@ -7402,7 +8816,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-57-7",
-       "original": "Liu, R."
+       "original": "Liu, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-57-8",
@@ -7410,11 +8825,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-57-9",
-       "original": "Wang, M."
+       "original": "Wang, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-57-10",
-       "original": "D."
+       "original": "D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-57-11",
@@ -7437,11 +8854,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-58-1",
-       "original": "Y."
+       "original": "Y.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-58-2",
-       "original": "Liu, M."
+       "original": "Liu, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-58-3",
@@ -7453,19 +8872,23 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-58-5",
-       "original": "Du, M."
+       "original": "Du, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-58-6",
-       "original": "Joshi, D."
+       "original": "Joshi, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-58-7",
-       "original": "Chen, O."
+       "original": "Chen, O.",
+       "zh": "我们发现 Audiobox 显著优于所有基线，达到联合模型的最先进水平，甚至超过 TANGO 等纯音效模型。"
       },
       {
        "id": "s-references-58-8",
-       "original": "Levy, M."
+       "original": "Levy, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-58-9",
@@ -7500,23 +8923,28 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-59-1",
-       "original": "M."
+       "original": "M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-59-2",
-       "original": "McAuliffe, M."
+       "original": "McAuliffe, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-59-3",
-       "original": "Socolof, S."
+       "original": "Socolof, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-59-4",
-       "original": "Mihuc, M."
+       "original": "Mihuc, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-59-5",
-       "original": "Wagner, and M."
+       "original": "Wagner, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-59-6",
@@ -7543,7 +8971,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-60-2",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-60-3",
@@ -7551,15 +8980,18 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-60-4",
-       "original": "Hsu, A. d’Avirro, B."
+       "original": "Hsu, A. d’Avirro, B.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-60-5",
-       "original": "Shi, I."
+       "original": "Shi, I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-60-6",
-       "original": "Gat, M."
+       "original": "Gat, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-60-7",
@@ -7575,13 +9007,20 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-60-10",
-       "original": "Synnaeve, M."
+       "original": "Synnaeve, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-60-11",
-       "original": "Hassid, et al. Expresso: A benchmark and analysis of discrete expressive speech resynthesis. arXiv preprint arXiv:2308.05725, 2023."
+       "original": "Hassid, et al. Expresso: A benchmark and analysis of discrete expressive speech resynthesis. arXiv preprint arXiv:2308.05725,"
       }
      ]
+    },
+    {
+     "id": "eq-references-6",
+     "type": "equation",
+     "page": 32,
+     "original": "2023."
     },
     {
      "id": "p-references-61",
@@ -7598,11 +9037,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-61-3",
-       "original": "Chen, D."
+       "original": "Chen, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-61-4",
-       "original": "Povey, and S."
+       "original": "Povey, and S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-61-5",
@@ -7632,15 +9073,18 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-63-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-63-2",
-       "original": "Plaquet and H."
+       "original": "Plaquet and H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-63-3",
-       "original": "Bredin."
+       "original": "Bredin.",
+       "zh": "2."
       },
       {
        "id": "s-references-63-4",
@@ -7671,7 +9115,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-64-3",
-       "original": "Xu, A."
+       "original": "Xu, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-64-4",
@@ -7679,7 +9124,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-64-5",
-       "original": "Synnaeve, and R."
+       "original": "Synnaeve, and R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-64-6",
@@ -7691,7 +9137,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-64-8",
-       "original": "ArXiv, abs/2012.03411, 2020."
+       "original": "ArXiv, abs/2012.03411, 2020.",
+       "zh": "2."
       }
      ]
     },
@@ -7702,7 +9149,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-65-1",
-       "original": "O."
+       "original": "O.",
+       "zh": "我们发现 Audiobox 显著优于所有基线，达到联合模型的最先进水平，甚至超过 TANGO 等纯音效模型。"
       },
       {
        "id": "s-references-65-2",
@@ -7710,11 +9158,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-65-3",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-65-4",
-       "original": "Smith, and M."
+       "original": "Smith, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-65-5",
@@ -7726,7 +9176,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-65-7",
-       "original": "ArXiv, abs/2108.12409, 2021."
+       "original": "ArXiv, abs/2108.12409, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -7737,7 +9188,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-66-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-66-2",
@@ -7753,7 +9205,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-66-5",
-       "original": "Hallacy, A."
+       "original": "Hallacy, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-66-6",
@@ -7761,7 +9214,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-66-7",
-       "original": "Goh, S."
+       "original": "Goh, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-66-8",
@@ -7769,11 +9223,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-66-9",
-       "original": "Sastry, A."
+       "original": "Sastry, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-66-10",
-       "original": "Askell, P."
+       "original": "Askell, P.",
+       "zh": "1."
       },
       {
        "id": "s-references-66-11",
@@ -7785,7 +9241,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-66-13",
-       "original": "Krueger, and I."
+       "original": "Krueger, and I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-66-14",
@@ -7797,7 +9254,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-66-16",
-       "original": "In International Conference on Machine Learning, 2021."
+       "original": "In International Conference on Machine Learning, 2021.",
+       "zh": "1."
       },
       {
        "id": "s-references-66-17",
@@ -7812,7 +9270,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-67-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-67-2",
@@ -7836,7 +9295,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-67-7",
-       "original": "McLeavey, and I."
+       "original": "McLeavey, and I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-67-8",
@@ -7844,7 +9304,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-67-9",
-       "original": "Robust speech recognition via large-scale weak supervision, 2022."
+       "original": "Robust speech recognition via large-scale weak supervision, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -7863,19 +9324,23 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-68-3",
-       "original": "Shazeer, A."
+       "original": "Shazeer, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-68-4",
-       "original": "Roberts, K."
+       "original": "Roberts, K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-68-5",
-       "original": "Lee, S."
+       "original": "Lee, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-68-6",
-       "original": "Narang, M."
+       "original": "Narang, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-68-7",
@@ -7887,7 +9352,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-68-9",
-       "original": "Li, and P."
+       "original": "Li, and P.",
+       "zh": "1."
       },
       {
        "id": "s-references-68-10",
@@ -7903,9 +9369,15 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-68-13",
-       "original": "The Journal of Machine Learning Research, 21(1): 5485–5551, 2020."
+       "original": "The Journal of Machine Learning Research, 21(1):"
       }
      ]
+    },
+    {
+     "id": "eq-references-7",
+     "type": "equation",
+     "page": 32,
+     "original": "5485–5551, 2020."
     },
     {
      "id": "p-references-69",
@@ -7914,15 +9386,18 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-69-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-69-2",
-       "original": "Ramesh, P."
+       "original": "Ramesh, P.",
+       "zh": "1."
       },
       {
        "id": "s-references-69-3",
-       "original": "Dhariwal, A."
+       "original": "Dhariwal, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-69-4",
@@ -7930,7 +9405,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-69-5",
-       "original": "Chu, and M."
+       "original": "Chu, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-69-6",
@@ -7938,7 +9414,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-69-7",
-       "original": "Hierarchical text-conditional image generation with clip latents. arXiv preprint arXiv:2204.06125, 1(2):3, 2022."
+       "original": "Hierarchical text-conditional image generation with clip latents. arXiv preprint arXiv:2204.06125, 1(2):3, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -7949,7 +9426,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-70-1",
-       "original": "Y."
+       "original": "Y.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-70-2",
@@ -7965,7 +9443,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-70-5",
-       "original": "Qin, S."
+       "original": "Qin, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-70-6",
@@ -7985,7 +9464,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-70-10",
-       "original": "In International Conference on Learning Representations, 2021."
+       "original": "In International Conference on Learning Representations, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -7996,7 +9476,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-71-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-71-2",
@@ -8004,11 +9485,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-71-3",
-       "original": "Beerends, M."
+       "original": "Beerends, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-71-4",
-       "original": "Hollier, and A."
+       "original": "Hollier, and A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-71-5",
@@ -8024,7 +9507,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-71-8",
-       "original": "Proceedings (Cat. No.01CH37221), volume 2, pages 749–752 vol.2, 2001."
+       "original": "Proceedings (Cat. No.01CH37221), volume 2, pages 749–752 vol.2, 2001.",
+       "zh": "1."
       }
      ]
     },
@@ -8035,7 +9519,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-72-1",
-       "original": "doi: 10.1109/ICASSP.2001.941023."
+       "original": "doi: 10.1109/ICASSP.2001.941023.",
+       "zh": "1."
       }
      ]
     },
@@ -8046,19 +9531,23 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-73-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-73-2",
-       "original": "Rombach, A."
+       "original": "Rombach, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-73-3",
-       "original": "Blattmann, D."
+       "original": "Blattmann, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-73-4",
-       "original": "Lorenz, P."
+       "original": "Lorenz, P.",
+       "zh": "1."
       },
       {
        "id": "s-references-73-5",
@@ -8070,7 +9559,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-73-7",
-       "original": "High-resolution image synthesis with latent diffusion models, 2021."
+       "original": "High-resolution image synthesis with latent diffusion models, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -8081,19 +9571,23 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-74-1",
-       "original": "R."
+       "original": "R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-74-2",
-       "original": "Rombach, A."
+       "original": "Rombach, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-74-3",
-       "original": "Blattmann, D."
+       "original": "Blattmann, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-74-4",
-       "original": "Lorenz, P."
+       "original": "Lorenz, P.",
+       "zh": "1."
       },
       {
        "id": "s-references-74-5",
@@ -8109,7 +9603,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-74-8",
-       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2022."
+       "original": "In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -8120,11 +9615,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-75-1",
-       "original": "O."
+       "original": "O.",
+       "zh": "我们发现 Audiobox 显著优于所有基线，达到联合模型的最先进水平，甚至超过 TANGO 等纯音效模型。"
       },
       {
        "id": "s-references-75-2",
-       "original": "Ronneberger, P."
+       "original": "Ronneberger, P.",
+       "zh": "1."
       },
       {
        "id": "s-references-75-3",
@@ -8140,7 +9637,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-75-6",
-       "original": "In Medical Image Computing and Computer-Assisted Intervention–MICCAI 2015: 18th International Conference, Munich, Germany, October 5-9, 2015, Proceedings, Part III 18, pages 234–241."
+       "original": "In Medical Image Computing and Computer-Assisted Intervention–MICCAI 2015: 18th International Conference, Munich, Germany, October 5-9, 2015, Proceedings, Part III 18, pages 234–241.",
+       "zh": "1."
       },
       {
        "id": "s-references-75-7",
@@ -8159,7 +9657,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-76-2",
-       "original": "Salimans, I."
+       "original": "Salimans, I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-76-3",
@@ -8175,7 +9674,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-76-6",
-       "original": "Cheung, A."
+       "original": "Cheung, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-76-7",
@@ -8222,7 +9722,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-77-5",
-       "original": "Mo\\ˆ usai: Text-to-music generation with long-context latent diffusion. arXiv preprint arXiv:2301.11757, 2023."
+       "original": "Mo\\ˆ usai: Text-to-music generation with long-context latent diffusion. arXiv preprint arXiv:2301.11757, 2023.",
+       "zh": "1."
       }
      ]
     },
@@ -8256,7 +9757,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-79-3",
-       "original": "Perez, R."
+       "original": "Perez, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-79-4",
@@ -8264,11 +9766,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-79-5",
-       "original": "Chen, A."
+       "original": "Chen, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-79-6",
-       "original": "Thabet, A."
+       "original": "Thabet, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-79-7",
@@ -8306,11 +9810,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-81-2",
-       "original": "Shen, R."
+       "original": "Shen, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-81-3",
-       "original": "Pang, R."
+       "original": "Pang, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-81-4",
@@ -8318,7 +9824,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-81-5",
-       "original": "Weiss, M."
+       "original": "Weiss, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-81-6",
@@ -8342,7 +9849,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-81-11",
-       "original": "Wang, R."
+       "original": "Wang, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-81-12",
@@ -8350,11 +9858,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-81-13",
-       "original": "Skerry-Ryan, R."
+       "original": "Skerry-Ryan, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-81-14",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       }
      ]
     },
@@ -8392,7 +9902,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-83-1",
-       "original": "K."
+       "original": "K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-83-2",
@@ -8420,7 +9931,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-83-8",
-       "original": "Qin, S."
+       "original": "Qin, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-83-9",
@@ -8443,7 +9955,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-84-1",
-       "original": "K."
+       "original": "K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-84-2",
@@ -8451,15 +9964,18 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-84-3",
-       "original": "Shih, R."
+       "original": "Shih, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-84-4",
-       "original": "Valle, R."
+       "original": "Valle, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-84-5",
-       "original": "Badlani, A."
+       "original": "Badlani, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-84-6",
@@ -8479,7 +9995,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-84-10",
-       "original": "In ICML Workshop on Invertible Neural Networks, Normalizing Flows, and Explicit Likelihood Models, 2021."
+       "original": "In ICML Workshop on Invertible Neural Networks, Normalizing Flows, and Explicit Likelihood Models, 2021.",
+       "zh": "1."
       }
      ]
     },
@@ -8490,7 +10007,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-85-1",
-       "original": "H."
+       "original": "H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-85-2",
@@ -8498,15 +10016,18 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-3",
-       "original": "Martin, K."
+       "original": "Martin, K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-85-4",
-       "original": "Stone, P."
+       "original": "Stone, P.",
+       "zh": "1."
       },
       {
        "id": "s-references-85-5",
-       "original": "Albert, A."
+       "original": "Albert, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-85-6",
@@ -8518,19 +10039,23 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-8",
-       "original": "Bashlykov, S."
+       "original": "Bashlykov, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-85-9",
-       "original": "Batra, P."
+       "original": "Batra, P.",
+       "zh": "1."
       },
       {
        "id": "s-references-85-10",
-       "original": "Bhargava, S."
+       "original": "Bhargava, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-85-11",
-       "original": "Bhosale, D."
+       "original": "Bhosale, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-85-12",
@@ -8546,7 +10071,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-15",
-       "original": "Ferrer, M."
+       "original": "Ferrer, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-85-16",
@@ -8554,7 +10080,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-17",
-       "original": "Cucurull, D."
+       "original": "Cucurull, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-85-18",
@@ -8586,23 +10113,28 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-25",
-       "original": "Goyal, A."
+       "original": "Goyal, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-85-26",
-       "original": "Hartshorn, S."
+       "original": "Hartshorn, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-85-27",
-       "original": "Hosseini, R."
+       "original": "Hosseini, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-85-28",
-       "original": "Hou, H."
+       "original": "Hou, H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-85-29",
-       "original": "Inan, M."
+       "original": "Inan, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-85-30",
@@ -8610,27 +10142,33 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-31",
-       "original": "Kerkez, M."
+       "original": "Kerkez, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-85-32",
-       "original": "Khabsa, I."
+       "original": "Khabsa, I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-85-33",
-       "original": "Kloumann, A."
+       "original": "Kloumann, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-85-34",
-       "original": "Korenev, P."
+       "original": "Korenev, P.",
+       "zh": "1."
       },
       {
        "id": "s-references-85-35",
-       "original": "S."
+       "original": "S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-85-36",
-       "original": "Koura, M.-A."
+       "original": "Koura, M.-A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-85-37",
@@ -8642,7 +10180,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-39",
-       "original": "Lee, D."
+       "original": "Lee, D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-85-40",
@@ -8662,11 +10201,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-44",
-       "original": "Mihaylov, P."
+       "original": "Mihaylov, P.",
+       "zh": "1."
       },
       {
        "id": "s-references-85-45",
-       "original": "Mishra, I."
+       "original": "Mishra, I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-85-46",
@@ -8674,7 +10215,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-47",
-       "original": "Nie, A."
+       "original": "Nie, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-85-48",
@@ -8682,31 +10224,38 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-49",
-       "original": "Reizenstein, R."
+       "original": "Reizenstein, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-85-50",
-       "original": "Rungta, K."
+       "original": "Rungta, K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-85-51",
-       "original": "Saladi, A."
+       "original": "Saladi, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-85-52",
-       "original": "Schelten, R."
+       "original": "Schelten, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-85-53",
-       "original": "Silva, E."
+       "original": "Silva, E.",
+       "zh": "为提升极低 NFE 区间（即 4）下的推理速度，我们采用 Bespoke Solvers Shaul et al. (2023)，以低得多的 NFE 恢复与原模型相近的样本质量。"
       },
       {
        "id": "s-references-85-54",
-       "original": "M."
+       "original": "M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-85-55",
-       "original": "Smith, R."
+       "original": "Smith, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-85-56",
@@ -8714,7 +10263,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-57",
-       "original": "E."
+       "original": "E.",
+       "zh": "为提升极低 NFE 区间（即 4）下的推理速度，我们采用 Bespoke Solvers Shaul et al. (2023)，以低得多的 NFE 恢复与原模型相近的样本质量。"
       },
       {
        "id": "s-references-85-58",
@@ -8722,11 +10272,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-59",
-       "original": "Tang, R."
+       "original": "Tang, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-85-60",
-       "original": "Taylor, A."
+       "original": "Taylor, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-85-61",
@@ -8738,7 +10290,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-63",
-       "original": "Kuan, P."
+       "original": "Kuan, P.",
+       "zh": "1."
       },
       {
        "id": "s-references-85-64",
@@ -8746,7 +10299,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-65",
-       "original": "Yan, I."
+       "original": "Yan, I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-85-66",
@@ -8754,27 +10308,33 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-85-67",
-       "original": "Zhang, A."
+       "original": "Zhang, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-85-68",
-       "original": "Fan, M."
+       "original": "Fan, M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-85-69",
-       "original": "Kambadur, S."
+       "original": "Kambadur, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-85-70",
-       "original": "Narang, A."
+       "original": "Narang, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-85-71",
-       "original": "Rodriguez, R."
+       "original": "Rodriguez, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-85-72",
-       "original": "Stojnic, S."
+       "original": "Stojnic, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-85-73",
@@ -8797,7 +10357,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-86-1",
-       "original": "A."
+       "original": "A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-86-2",
@@ -8805,7 +10366,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-86-3",
-       "original": "M."
+       "original": "M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-86-4",
@@ -8821,7 +10383,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-86-7",
-       "original": "Jones, A."
+       "original": "Jones, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-86-8",
@@ -8833,7 +10396,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-86-10",
-       "original": "Kaiser, and I."
+       "original": "Kaiser, and I.",
+       "zh": "值得注意的是，FAD 与 KLD 的趋势并不一致，正如 TTA 与 TAI 的比较所示。"
       },
       {
        "id": "s-references-86-11",
@@ -8860,7 +10424,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-87-2",
-       "original": "Wang, S."
+       "original": "Wang, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-87-3",
@@ -8868,7 +10433,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-87-4",
-       "original": "Wu, Z.-H."
+       "original": "Wu, Z.-H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-87-5",
@@ -8876,7 +10442,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-87-6",
-       "original": "Zhou, S."
+       "original": "Zhou, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-87-7",
@@ -8888,7 +10455,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-87-9",
-       "original": "Liu, H."
+       "original": "Liu, H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-87-10",
@@ -8900,7 +10468,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-87-12",
-       "original": "He, S."
+       "original": "He, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-87-13",
@@ -8923,7 +10492,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-88-2",
-       "original": "ArXiv, abs/2301.02111, 2023a."
+       "original": "ArXiv, abs/2301.02111, 2023a.",
+       "zh": "1."
       }
      ]
     },
@@ -8934,7 +10504,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-89-1",
-       "original": "Y."
+       "original": "Y.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-89-2",
@@ -8958,7 +10529,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-89-7",
-       "original": "Bian, and S."
+       "original": "Bian, and S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-89-8",
@@ -8977,11 +10549,13 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-90-1",
-       "original": "Y."
+       "original": "Y.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-90-2",
-       "original": "Wu, K."
+       "original": "Wu, K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-90-3",
@@ -8997,7 +10571,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-90-6",
-       "original": "Berg-Kirkpatrick, and S."
+       "original": "Berg-Kirkpatrick, and S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-90-7",
@@ -9032,7 +10607,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-91-3",
-       "original": "Veaux, and K."
+       "original": "Veaux, and K.",
+       "zh": "我们将该数据集称为「Mix-185K」。"
       },
       {
        "id": "s-references-91-4",
@@ -9051,15 +10627,18 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-92-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-92-2",
-       "original": "Yang, S."
+       "original": "Yang, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-92-3",
-       "original": "Liu, R."
+       "original": "Liu, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-92-4",
@@ -9071,11 +10650,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-92-6",
-       "original": "Weng, H."
+       "original": "Weng, H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-92-7",
-       "original": "Meng, and D."
+       "original": "Meng, and D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-92-8",
@@ -9083,7 +10664,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-92-9",
-       "original": "InstructTTS: Modelling expressive tts in discrete latent space with natural language style prompt. arXiv preprint arXiv:2301.13662, 2023a."
+       "original": "InstructTTS: Modelling expressive tts in discrete latent space with natural language style prompt. arXiv preprint arXiv:2301.13662, 2023a.",
+       "zh": "1."
       }
      ]
     },
@@ -9094,7 +10676,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-93-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-93-2",
@@ -9106,11 +10689,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-93-4",
-       "original": "Tan, R."
+       "original": "Tan, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-93-5",
-       "original": "Huang, S."
+       "original": "Huang, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-93-6",
@@ -9122,7 +10707,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-93-8",
-       "original": "Shi, S."
+       "original": "Shi, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-93-9",
@@ -9145,7 +10731,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-94-1",
-       "original": "D."
+       "original": "D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-94-2",
@@ -9153,7 +10740,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-94-3",
-       "original": "Yu, H."
+       "original": "Yu, H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-94-4",
@@ -9169,7 +10757,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-94-7",
-       "original": "Zou, and D."
+       "original": "Zou, and D.",
+       "zh": "标注界面见附录 D。"
       },
       {
        "id": "s-references-94-8",
@@ -9196,11 +10785,13 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-95-2",
-       "original": "Zeghidour, A."
+       "original": "Zeghidour, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-95-3",
-       "original": "Luebs, A."
+       "original": "Luebs, A.",
+       "zh": "我们首先比较前两行：两者的预训练数据不同，都用 LoRA 微调。"
       },
       {
        "id": "s-references-95-4",
@@ -9208,7 +10799,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-95-5",
-       "original": "Skoglund, and M."
+       "original": "Skoglund, and M.",
+       "zh": "多阶段微调：除我们收集的 500 小时高质量语音字幕外，其余语音字幕都是用属性标签和 LLM 生成的。"
       },
       {
        "id": "s-references-95-6",
@@ -9220,7 +10812,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-95-8",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30:495–507, 2022."
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 30:495–507, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -9231,7 +10824,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-96-1",
-       "original": "H."
+       "original": "H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-96-2",
@@ -9239,7 +10833,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-96-3",
-       "original": "Dang, R."
+       "original": "Dang, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-96-4",
@@ -9247,7 +10842,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-96-5",
-       "original": "Zhang, R."
+       "original": "Zhang, R.",
+       "zh": "最后，比较最后两行可以确认：使用不含静音的音频提示能大幅提升在结尾静音往往较长的数据集上的相似度（CV、Accent），同时 WER 总体保持。"
       },
       {
        "id": "s-references-96-6",
@@ -9282,7 +10878,8 @@ globalThis.PAPER_2312_15821 = {
      "sentences": [
       {
        "id": "s-references-97-1",
-       "original": "Z."
+       "original": "Z.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-97-2",
@@ -9294,7 +10891,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-97-4",
-       "original": "Wang, S."
+       "original": "Wang, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-97-5",
@@ -9302,7 +10900,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-97-6",
-       "original": "Wu, S."
+       "original": "Wu, S.",
+       "zh": "UniAudio（Yang et al., 2023b）聚焦于构建能执行多种任务的单一模型，包括文生音乐、文生音效、上下文内 TTS 和自然语言风格提示 TTS。"
       },
       {
        "id": "s-references-97-7",
@@ -9314,7 +10913,8 @@ globalThis.PAPER_2312_15821 = {
       },
       {
        "id": "s-references-97-9",
-       "original": "Liu, H."
+       "original": "Liu, H.",
+       "zh": "作者感谢 Ricky Chen、Hady Elsahar、Ilia Kulikov、Hirofumi Inaguma、Jing Xu、Yossi Adi、Alexander H. Liu、Chung-Ming Chien、Qing He、Thilo Koehler、Fuchun Peng、Xiaohui Zhang、Vimal Manohar、Po-Wei Chou、Kaustubh Kalgaonkar、Anurag Kumar、Yangyang Shi、Zhaoheng Ni、Gael Le Lan 与 Varun Nagaraja 在研究上的有益讨论；"
       },
       {
        "id": "s-references-97-10",
@@ -9766,7 +11366,7 @@ globalThis.PAPER_2312_15821 = {
   {
    "id": "ann-009",
    "anchor": {
-    "sentence_id": "s-7-1-15-2",
+    "sentence_id": "s-7-1-16-2",
     "quote": "The voice prompt is selected such that it differs from the target utterance on one or more attribute such as emotion, environment, and speaking rate."
    },
    "kind": "motivation",
@@ -9788,7 +11388,7 @@ globalThis.PAPER_2312_15821 = {
   {
    "id": "ann-011",
    "anchor": {
-    "sentence_id": "s-7-4-5-4",
+    "sentence_id": "s-7-4-6-4",
     "quote": "we select the hyper-parameters to bias the model towards description-guided TTS with and without vocal conditioning."
    },
    "kind": "number",
@@ -9809,7 +11409,7 @@ globalThis.PAPER_2312_15821 = {
   {
    "id": "ann-013",
    "anchor": {
-    "sentence_id": "s-7-3-9-3",
+    "sentence_id": "s-7-3-11-3",
     "quote": "the Pearson correlation coefficient between the text-audio similarity and REL score is increased from 0.028 to 0.727"
    },
    "kind": "number",
@@ -9830,7 +11430,7 @@ globalThis.PAPER_2312_15821 = {
   {
    "id": "ann-015",
    "anchor": {
-    "sentence_id": "s-8-7-3",
+    "sentence_id": "s-8-8-3",
     "quote": "by using bespoke solver, we could reduce ODE steps down to 4 and still retain similar performance in term of style similarity and WER"
    },
    "kind": "number",
@@ -9862,7 +11462,7 @@ globalThis.PAPER_2312_15821 = {
   {
    "id": "ann-018",
    "anchor": {
-    "sentence_id": "s-7-5-8-3",
+    "sentence_id": "s-7-5-10-3",
     "quote": "The Audiobox performs worse only to the Audiobox Sound model which specializes in sound generation."
    },
    "kind": "concept",
@@ -9873,7 +11473,7 @@ globalThis.PAPER_2312_15821 = {
   {
    "id": "ann-019",
    "anchor": {
-    "sentence_id": "s-7-4-12-2",
+    "sentence_id": "s-7-4-14-2",
     "quote": "we additionally sample a silence duration of between 0 and 3 seconds and pad it to both ends"
    },
    "kind": "engineering",

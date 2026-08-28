@@ -134,7 +134,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
     <div class="en-title">Pushing the Limits of On-Device Streaming ASR: A Compact, High-Accuracy English Model for Low-Latency Inference</div>
     <div class="meta">
       关联模型：<a href="../../index.html#/model/on_device">On-Device Streaming ASR</a>（NVIDIA · 2026-04） ·
-      全文 166 个语块 · 讲解 24 条（精选 13 条）
+      全文 410 个语块 · 讲解 24 条（精选 13 条）
     </div>
   </div>
   <div class="controls">
@@ -166,7 +166,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div>
     <p class="muted" style="font-size:12.5px">以上为论文级三条摘要；下面进入全文双语精读，讲解锚定在具体句子旁。</p>
   </section>
-  <nav class="toc"><a class="lv1" href="#sec-abstract">摘要</a><a class="lv1" href="#sec-1">1 引言</a><a class="lv1" href="#sec-2">2 被评测的模型族</a><a class="lv2" href="#sec-2-1">2.1 Whisper 模型</a><a class="lv2" href="#sec-2-2">2.2 Parakeet TDT 与 Conformer Transducer</a><a class="lv2" href="#sec-2-3">2.3 Qwen3-ASR</a><a class="lv2" href="#sec-2-4">2.4 NVIDIA Nemotron Speech Streaming</a><a class="lv1" href="#sec-3">3 评测方法论</a><a class="lv2" href="#sec-3-1">3.1 基准数据集</a><a class="lv2" href="#sec-dataset">数据集</a><a class="lv2" href="#sec-3-2">3.2 评测指标</a><a class="lv2" href="#sec-3-3">3.3 硬件</a><a class="lv1" href="#sec-4">4 批处理模式对比</a><a class="lv1" href="#sec-5">5 流式与分块模式分析</a><a class="lv2" href="#sec-5-1">5.1 Parakeet TDT 分块分析</a><a class="lv2" href="#sec-5-2">5.2 Nemotron 流式配置</a><a class="lv2" href="#sec-5-3">5.3 与其他流式/分块模型的对比</a><a class="lv1" href="#sec-6">6 ONNX Runtime 集成与模型优化</a><a class="lv2" href="#sec-6-1">6.1 流式推理架构</a><a class="lv2" href="#sec-6-2">6.2 量化方法</a><a class="lv2" href="#sec-round-to-nearest-rtn">最近舍入（RTN）</a><a class="lv2" href="#sec-k-quant">K-quant</a><a class="lv1" href="#sec-7">7 结果</a><a class="lv2" href="#sec-7-1">7.1 量化结果</a><a class="lv2" href="#sec-7-2">7.2 关键发现</a><a class="lv2" href="#sec-7-3">7.3 算法延迟与有效延迟的权衡</a><a class="lv1" href="#sec-8">8 推荐与选定配置</a><a class="lv1" href="#sec-9">9 讨论</a><a class="lv2" href="#sec-9-1">9.1 实际适用范围与定位</a><a class="lv2" href="#sec-9-2">9.2 同期工作</a><a class="lv2" href="#sec-9-3">9.3 未来工作</a><a class="lv1" href="#sec-references">References</a><a class="lv1" href="#sec-A">A 附录 A：完整评测结果</a></nav>
+  <nav class="toc"><a class="lv1" href="#sec-abstract">摘要</a><a class="lv1" href="#sec-1">1 引言</a><a class="lv1" href="#sec-2">2 被评测的模型族</a><a class="lv2" href="#sec-model">Model</a><a class="lv2" href="#sec-2-1">2.1 Whisper 模型</a><a class="lv2" href="#sec-2-2">2.2 Parakeet TDT 与 Conformer Transducer</a><a class="lv2" href="#sec-2-3">2.3 Qwen3-ASR</a><a class="lv2" href="#sec-2-4">2.4 NVIDIA Nemotron Speech Streaming</a><a class="lv1" href="#sec-3">3 评测方法论</a><a class="lv2" href="#sec-3-1">3.1 基准数据集</a><a class="lv2" href="#sec-dataset">数据集</a><a class="lv2" href="#sec-3-2">3.2 评测指标</a><a class="lv2" href="#sec-3-3">3.3 硬件</a><a class="lv1" href="#sec-4">4 批处理模式对比</a><a class="lv2" href="#sec-model-2">Model</a><a class="lv1" href="#sec-5">5 流式与分块模式分析</a><a class="lv2" href="#sec-5-1">5.1 Parakeet TDT 分块分析</a><a class="lv2" href="#sec-5-2">5.2 Nemotron 流式配置</a><a class="lv2" href="#sec-5-3">5.3 与其他流式/分块模型的对比</a><a class="lv1" href="#sec-6">6 ONNX Runtime 集成与模型优化</a><a class="lv2" href="#sec-6-1">6.1 流式推理架构</a><a class="lv2" href="#sec-6-2">6.2 量化方法</a><a class="lv2" href="#sec-round-to-nearest-rtn">最近舍入（RTN）</a><a class="lv2" href="#sec-k-quant">K-quant</a><a class="lv1" href="#sec-7">7 结果</a><a class="lv2" href="#sec-7-1">7.1 量化结果</a><a class="lv2" href="#sec-7-2">7.2 关键发现</a><a class="lv2" href="#sec-7-3">7.3 算法延迟与有效延迟的权衡</a><a class="lv1" href="#sec-8">8 推荐与选定配置</a><a class="lv1" href="#sec-9">9 讨论</a><a class="lv2" href="#sec-9-1">9.1 实际适用范围与定位</a><a class="lv2" href="#sec-9-2">9.2 同期工作</a><a class="lv2" href="#sec-9-3">9.3 未来工作</a><a class="lv1" href="#sec-references">References</a><a class="lv1" href="#sec-A">A 附录 A：完整评测结果</a><a class="lv2" href="#sec-A-1">A.1 Whisper — All Configurations</a><a class="lv2" href="#sec-A-2">A.2 Nemotron-0.6B — All Streaming Configurations</a><a class="lv2" href="#sec-A-3">A.3 Parakeet TDT-0.6B-v3 — All Chunking Configurations</a><a class="lv2" href="#sec-A-4">A.4 Parakeet TDT-0.6B-v3 — ONNX Quantization</a><a class="lv2" href="#sec-format">Format</a><a class="lv2" href="#sec-A-5">A.5 Canary-1B-v2 — All Configurations</a><a class="lv2" href="#sec-A-6">A.6 Conformer Transducer XL — All Configurations</a><a class="lv2" href="#sec-config">Config</a><a class="lv2" href="#sec-A-7">A.7 Qwen3-ASR — All Configurations</a><a class="lv2" href="#sec-A-8">A.8 Cross-Model Streaming Comparison (CPU)</a><a class="lv2" href="#sec-A-9">A.9 Nemotron-0.6B — ONNX Quantization Results</a><a class="lv2" href="#sec-A-10">A.10 Nemotron-0.6B — ONNX int4 k-quant at 0.16s Delay</a></nav>
   <article class="reader"><section><div class="pblk plain" id="p-front-1"><p class="refline">Nenad Banfic, David Fan, Kunal Vaishnavi, Sam Kemp, Sunghoon Choi, Rui Ren, Sayan Shaw, Meng Tang CoreAI, Microsoft April 2026</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-abstract"><span class="t-zh">摘要</span><span class="t-en">Abstract</span></h2><div class="pblk" id="p-abstract-1">
@@ -233,10 +233,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-1"><span class="zh">我们评测了以下模型族，覆盖现代 ASR 的主要范式：</span></span></p>
           
         </div>
-<div class="cap" id="tab-2-1"><span class="cap-k">表</span><p class="en">Table 1: Overview of evaluated model families.</p><p class="zh">表 1：被评测模型族概览。</p></div>
-<div class="pblk" id="p-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-1"><span class="en">Architecture Modes Whisper Large-v3-Turbo Encoder–Decoder Whisper Small Encoder–Decoder Chunk/Batch Cache-aware Transducer Stream/Batch TDT Transducer Chunk/Batch AED + AlignAtt Chunk/Batch Conformer Trans.</span></span> <span class="sent" data-sid="s-2-2-2"><span class="en">XL Conformer Transducer Chunk LLM-based ASR Batch/Chunk LLM-based ASR Batch/Chunk</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-1"><span class="zh">架构与推理模式概览：Whisper Large-v3-Turbo 为编码器-解码器；Whisper Small 为编码器-解码器（分块/批处理）；cache-aware Transducer 支持流式/批处理；TDT Transducer 为分块/批处理；AED + AlignAtt 为分块/批处理；Conformer Trans.（转下句）</span></span><span class="sent" data-sid="s-2-2-2"><span class="zh">XL 为 Conformer Transducer（分块）；基于 LLM 的 ASR 为批处理/分块；基于 LLM 的 ASR 为批处理/分块。</span></span></p>
+<div class="cap" id="tab-2-1"><span class="cap-k">表</span><p class="en">Table 1: Overview of evaluated model families.</p><p class="zh">表 1：被评测模型族概览。</p></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-model"><span class="t-zh">Model</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-1">
+          <p class="en-lines"><span class="sent" data-sid="s-model-1-1"><span class="en">Architecture Modes Size Whisper Large-v3-Turbo Encoder–Decoder Batch 1.62 GB Whisper Small Encoder–Decoder Chunk/Batch 0.97 GB Nemotron-0.6B Cache-aware Transducer Stream/Batch 2.47 GB Parakeet TDT-0.6B-v3 TDT Transducer Chunk/Batch 2.51 GB Canary-1B-v2 AED + AlignAtt Chunk/Batch 6.36 GB Conformer Trans.</span></span> <span class="sent" data-sid="s-model-1-2"><span class="en">XL Conformer Transducer Chunk 2.58 GB Qwen3-ASR-1.7B LLM-based ASR Batch/Chunk 4.70 GB Qwen3-ASR-0.6B LLM-based ASR Batch/Chunk 1.88 GB</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-model-1-1"><span class="zh">（表 1 模型清单：Architecture × Modes × Size——Whisper Large-v3-Turbo（编码器-解码器，Batch，1.62 GB）；Whisper Small（编码器-解码器，Chunk/Batch，0.97 GB）；Nemotron-0.6B（Cache-aware Transducer，Stream/Batch，2.47 GB）；Parakeet TDT-0.6B-v3（TDT Transducer，Chunk/Batch，2.51 GB）；Canary-1B-v2（AED + AlignAtt，Chunk/Batch，6.36 GB）；Conformer Trans.（后续照原文）。）</span></span><span class="sent" data-sid="s-model-1-2"><span class="zh">（表 1 续：XL Conformer Transducer（Chunk，2.58 GB）；Qwen3-ASR-1.7B（LLM-based ASR，Batch/Chunk，4.70 GB）；Qwen3-ASR-0.6B（LLM-based ASR，Batch/Chunk，1.88 GB）。）</span></span></p>
           
         </div></section>
 <section>
@@ -291,8 +292,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="cap" id="tab-3-1-1"><span class="cap-k">表</span><p class="en">Table 2: Evaluation benchmark datasets.</p><p class="zh">表 2：评测基准数据集。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-dataset"><span class="t-zh">数据集</span><span class="t-en">Dataset</span></h3><div class="pblk" id="p-dataset-1">
-          <p class="en-lines"><span class="sent" data-sid="s-dataset-1-1"><span class="en">Domain Characteristics Meeting transcription Overlapping speech, far-field Earnings22 Financial earnings calls Domain-specific terminology GigaSpeech Internet audio Diverse topics and acoustics LibriSpeech Clean Audiobook (clean) Read speech, studio quality LibriSpeech Other Audiobook (other) Read speech, noisier conditions SPGISpeech Financial transcription Professional dictation TED-LIUM TED talks Prepared speech, varied topics VoxPopuli European Parliament Spontaneous speech, accented</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-dataset-1-1"><span class="zh">数据集及领域特征如下：会议转写——重叠语音、远场；Earnings22——金融财报电话会，含领域专门术语；GigaSpeech——互联网音频，主题与声学环境多样；LibriSpeech Clean——有声书（干净），朗读语音、录音棚质量；LibriSpeech Other——有声书（其他），朗读语音、条件更嘈杂；SPGISpeech——金融转写，专业口述；TED-LIUM——TED 演讲，准备过的讲话、主题多样；VoxPopuli——欧洲议会，自发言语、带口音。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-dataset-1-1"><span class="en">Domain Characteristics AMI Meeting transcription Overlapping speech, far-field Earnings22 Financial earnings calls Domain-specific terminology GigaSpeech Internet audio Diverse topics and acoustics LibriSpeech Clean Audiobook (clean) Read speech, studio quality LibriSpeech Other Audiobook (other) Read speech, noisier conditions SPGISpeech Financial transcription Professional dictation TED-LIUM TED talks Prepared speech, varied topics VoxPopuli European Parliament Spontaneous speech, accented</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-dataset-1-1"><span class="zh">（表 1 评测集：AMI——会议转写，重叠语音、远场；Earnings22——财报电话会，领域术语；GigaSpeech——互联网音频，主题与声学多样；LibriSpeech Clean——有声书（干净），朗读、录音棚质量；LibriSpeech Other——有声书（其他），更嘈杂；SPGISpeech——财经转写，专业口述；TED-LIUM——TED 演讲，有准备的演讲、主题多样；VoxPopuli——欧洲议会，即兴发言、带口音。）</span></span></p>
           
         </div></section>
 <section>
@@ -317,10 +318,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-3-2-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-5-1"><span class="en">• Latency (Delay): The algorithmic delay introduced by the chunking/streaming configuration, determined by the chunk size and right context.</span></span> <span class="sent" data-sid="s-3-2-5-2"><span class="en">For streaming ASR, we can also define the effective latency, bounded by the algorithmic delay plus the compute time for a single chunk: effective latency ≈delay+ chunk duration .</span></span> <span class="sent" data-sid="s-3-2-5-3"><span class="en">When the algorithmic delay equals the chunk duration (as in all Nemotron configurations we evaluate), this simplifies to effective latency ≈delay · 1 + 1 .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-5-1"><span class="zh">• 延迟（Delay）：由分块/流式配置引入的算法延迟，取决于块大小与右上下文长度。</span></span><span class="sent" data-sid="s-3-2-5-2"><span class="zh">对流式 ASR，还可以定义有效延迟，其上界为算法延迟加上单个片段的计算时间：有效延迟 ≈ 延迟 + 块时长 / RTFx。</span></span><span class="sent" data-sid="s-3-2-5-3"><span class="zh">当算法延迟等于块时长时（我们评测的所有 Nemotron 配置都满足这一点），上式简化为：有效延迟 ≈ 延迟 · (1 + 1/RTFx)。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-5-1"><span class="en">• Latency (Delay): The algorithmic delay introduced by the chunking/streaming configuration, determined by the chunk size and right context.</span></span> <span class="sent" data-sid="s-3-2-5-2"><span class="en">For streaming ASR, we can also define the effective latency, bounded by the algorithmic delay plus the compute time for a single chunk: effective latency ≈delay+ chunk duration RTFx .</span></span> <span class="sent" data-sid="s-3-2-5-3"><span class="en">When the algorithmic delay equals the chunk duration (as in all Nemotron configurations we evaluate), this simplifies to effective latency ≈delay ·</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-5-1"><span class="zh">• 延迟（Delay）：由分块/流式配置引入的算法延迟，取决于块大小与右上下文长度。</span></span><span class="sent" data-sid="s-3-2-5-2"><span class="zh">对流式 ASR 还可定义有效延迟，其上界为算法延迟加上单 chunk 计算时间：effective latency ≈ delay + chunk duration / RTFx。</span></span><span class="sent" data-sid="s-3-2-5-3"><span class="zh">当算法延迟等于 chunk 时长时（我们评测的所有 Nemotron 配置均如此），简化为 effective latency ≈ delay · (1 + 1/RTFx)。</span></span></p>
           
         </div>
+<div class="eq" id="eq-3-2-1"><code>1 + 1</code></div>
+<div class="eq" id="eq-3-2-2"><code>RTFx</code></div>
+<div class="eq" id="eq-3-2-3"><code>.</code></div>
 <div class="pblk" id="p-3-2-6">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-6-1"><span class="en">• Model Size: On-disk size of the model weights.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-6-1"><span class="zh">• 模型体积：模型权重的磁盘占用大小。</span></span></p>
@@ -357,15 +361,46 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-4-1"><span class="cap-k">表</span><p class="en">Table 3: Batch-mode WER (%) comparison across models.</p><p class="zh">表 3：各模型批处理模式 WER（%）对比。</p></div>
-<div class="pblk" id="p-4-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-1"><span class="en">5.90 11.76 10.26 8.75 1.60 3.41 2.83 2.28 6.34 6.69 13.77 11.03 9.16 2.12 4.47 3.04 2.83 7.09 6.32 11.39 11.19 9.57 1.92 3.59 3.98 2.80 6.09 7.15 16.01 11.79 10.82 2.18 3.56 2.28 4.29 6.25 7.07 11.16 12.38 11.35 2.28 4.83 2.63 4.42 7.48 Whisper-v3-Turbo 7.83 16.13 11.63 10.14 2.10 4.24 2.97 3.57 11.87 Whisper-v3-Turbo (ORT) 7.52 16.36 11.38 10.13 2.17 4.24 2.93 3.62 9.30 Whisper Small.en 8.59 17.93 12.97 11.35 3.05 7.25 3.60 4.07 8.50 Earn. = Earnings22, Giga = GigaSpeech, LS-c/o = LibriSpeech Clean/Other, SPGI = SPGISpeech, TED = TED-LIUM, VoxP. = VoxPopuli.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-1"><span class="zh">表 3 原始数值（%）依次为：5.90、11.76、10.26、8.75、1.60、3.41、2.83、2.28、6.34；6.69、13.77、11.03、9.16、2.12、4.47、3.04、2.83、7.09；6.32、11.39、11.19、9.57、1.92、3.59、3.98、2.80、6.09；7.15、16.01、11.79、10.82、2.18、3.56、2.28、4.29、6.25；7.07、11.16、12.38、11.35、2.28、4.83、2.63、4.42、7.48。Whisper-v3-Turbo：7.83、16.13、11.63、10.14、2.10、4.24、2.97、3.57、11.87。Whisper-v3-Turbo (ORT)：7.52、16.36、11.38、10.13、2.17、4.24、2.93、3.62、9.30。Whisper Small.en：8.59、17.93、12.97、11.35、3.05、7.25、3.60、4.07、8.50。缩写说明：Earn. = Earnings22，Giga = GigaSpeech，LS-c/o = LibriSpeech Clean/Other，SPGI = SPGISpeech，TED = TED-LIUM，VoxP. = VoxPopuli。</span></span></p>
+<div class="cap" id="tab-4-1"><span class="cap-k">表</span><p class="en">Table 3: Batch-mode WER (%) comparison across models.</p><p class="zh">表 3：各模型批处理模式 WER（%）对比。</p></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-model-2"><span class="t-zh">Model</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="en">Avg AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="zh">表头：Avg（平均）｜AMI｜Earn.（Earnings22，后同）。</span></span></p>
           
         </div>
-<div class="pblk" id="p-4-3">
-          <p class="en-lines"><span class="sent" data-sid="s-4-3-1"><span class="en">Qwen3-ASR-1.7B achieves the best batch WER among the evaluated models, however, its size of 4.70 GB exceeds our size requirements by far.</span></span> <span class="sent" data-sid="s-4-3-2"><span class="en">Qwen3-ASR-0.6B, Parakeet TDT-0.6B- v3, and Nemotron-0.6B are all promising, so we next evaluate them in streaming and chunked settings.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-3-1"><span class="zh">Qwen3-ASR-1.7B 在被评测模型中取得了最好的批处理 WER，但其 4.70 GB 的体积远超我们的体积要求。</span></span><span class="sent" data-sid="s-4-3-2"><span class="zh">Qwen3-ASR-0.6B、Parakeet TDT-0.6B-v3 和 Nemotron-0.6B 都很有潜力，因此我们接下来在流式与分块设置下评测它们。</span></span></p>
+<div class="pblk" id="p-model-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-model-2-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-model-2-2-1"><span class="zh">表头续：Giga（GigaSpeech）｜LS-c（LibriSpeech clean）｜LS-o（LibriSpeech other）｜SPGI（SPGISpeech）｜TED（TED-LIUM）｜VoxP.（VoxPopuli）。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-model-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-model-2-3-1"><span class="en">Qwen3-ASR-1.7B</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-model-2-3-1"><span class="zh">然而，表现最好的模型——Qwen3-ASR-1.7B 的 WER 为 5.90%，Parakeet TDT-0.6B-v3 为 6.32%，Canary-1B-v2 为 7.15%——都是以批处理为主的架构，需要 2–7 GB 内存和 GPU 推理。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-model-2-1"><code>5.90 11.76 10.26 8.75 1.60 3.41 2.83 2.28 6.34</code></div>
+<div class="eq" id="eq-model-2-2"><code>Qwen3-ASR-0.6B</code></div>
+<div class="eq" id="eq-model-2-3"><code>6.69 13.77 11.03 9.16 2.12 4.47 3.04 2.83 7.09</code></div>
+<div class="eq" id="eq-model-2-4"><code>Parakeet TDT-0.6B-v3</code></div>
+<div class="eq" id="eq-model-2-5"><code>6.32 11.39 11.19 9.57 1.92 3.59 3.98 2.80 6.09</code></div>
+<div class="eq" id="eq-model-2-6"><code>Canary-1B-v2</code></div>
+<div class="eq" id="eq-model-2-7"><code>7.15 16.01 11.79 10.82 2.18 3.56 2.28 4.29 6.25</code></div>
+<div class="eq" id="eq-model-2-8"><code>Nemotron-0.6B</code></div>
+<div class="eq" id="eq-model-2-9"><code>7.07 11.16 12.38 11.35 2.28 4.83 2.63 4.42 7.48</code></div>
+<div class="eq" id="eq-model-2-10"><code>Whisper-v3-Turbo</code></div>
+<div class="eq" id="eq-model-2-11"><code>7.83 16.13 11.63 10.14 2.10 4.24 2.97 3.57 11.87</code></div>
+<div class="eq" id="eq-model-2-12"><code>Whisper-v3-Turbo (ORT)</code></div>
+<div class="eq" id="eq-model-2-13"><code>7.52 16.36 11.38 10.13 2.17 4.24 2.93 3.62 9.30</code></div>
+<div class="eq" id="eq-model-2-14"><code>Whisper Small.en</code></div>
+<div class="eq" id="eq-model-2-15"><code>8.59 17.93 12.97 11.35 3.05 7.25 3.60 4.07 8.50</code></div>
+<div class="pblk" id="p-model-2-4">
+          <p class="en-lines"><span class="sent" data-sid="s-model-2-4-1"><span class="en">Earn. = Earnings22, Giga = GigaSpeech, LS-c/o = LibriSpeech Clean/Other, SPGI = SPGISpeech, TED = TED-LIUM, VoxP. = VoxPopuli.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-model-2-4-1"><span class="zh">（表格行+表注）Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.；int4 k-quant ONNX 0.67 GB CPU：8.89/2.87/19.92/14.02/11.08/2.99/6.59/3.76/3.94/8.84。表注：Earn. = Earnings22，Giga = GigaSpeech，LS-c/o = LibriSpeech Clean/Other，SPGI = SPGISpeech，TED = TED-LIUM，VoxP. = VoxPopuli。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-model-2-5">
+          <p class="en-lines"><span class="sent" data-sid="s-model-2-5-1"><span class="en">Qwen3-ASR-1.7B achieves the best batch WER among the evaluated models, however, its size of 4.70 GB exceeds our size requirements by far.</span></span> <span class="sent" data-sid="s-model-2-5-2"><span class="en">Qwen3-ASR-0.6B, Parakeet TDT-0.6B- v3, and Nemotron-0.6B are all promising, so we next evaluate them in streaming and chunked settings.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-model-2-5-1"><span class="zh">Qwen3-ASR-1.7B 在被评测模型中取得了最好的批处理 WER，但其 4.70 GB 的体积远超我们的体积要求。</span></span><span class="sent" data-sid="s-model-2-5-2"><span class="zh">Qwen3-ASR-0.6B、Parakeet TDT-0.6B-v3 和 Nemotron-0.6B 都很有潜力，因此我们接下来在流式与分块设置下评测它们。</span></span></p>
           
         </div></section>
 <section>
@@ -376,16 +411,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-1-1-1"><span class="zh">我们首先研究了面向批处理的 Transducer 模型能否被改造成分块流式使用。</span></span><span class="sent" data-sid="s-5-1-1-2"><span class="zh">我们对 Parakeet TDT-0.6B-v3 的分块配置做了大范围搜索：把块大小（延迟）固定在 2.4 s，变化总上下文与历史长度，以理解 Transducer 模型对块边界的敏感性。</span></span><span class="sent" data-sid="s-5-1-1-3"><span class="zh">Figure 1 可视化了结果。</span></span></p>
           
         </div>
-<div class="pblk" id="p-5-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-1-2-1"><span class="en">35 32.2% (4s ctx) 30 25 20 15 10 Parakeet TDT configs Parakeet batch: 6.32% 5 10 15 20 25 30 35 Total Context Window (seconds) 5</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-1-2-1"><span class="zh">图 1 原始坐标元素：纵轴 WER 刻度最高约 35、另有 30、25、20、15、10，其中标注 32.2%（4 s 上下文）；横轴为总上下文窗口（秒），刻度 5、10、15、20、25、30、35；散点为 Parakeet TDT 各配置，参考线为 Parakeet 批处理基线 6.32%。</span></span></p>
-          
-        </div>
+<div class="eq" id="eq-5-1-1"><code>35 32.2%</code></div>
+<div class="eq" id="eq-5-1-2"><code>(4s ctx)</code></div>
+<div class="eq" id="eq-5-1-3"><code>30 25</code></div>
+<div class="eq" id="eq-5-1-4"><code>Average WER (%)</code></div>
+<div class="eq" id="eq-5-1-5"><code>20 15 10</code></div>
+<div class="eq" id="eq-5-1-6"><code>Parakeet TDT configs Parakeet batch: 6.32%</code></div>
+<div class="eq" id="eq-5-1-7"><code>5 10 15 20 25 30 35</code></div>
+<div class="eq" id="eq-5-1-8"><code>Total Context Window (seconds)</code></div>
+<div class="eq" id="eq-5-1-9"><code>5</code></div>
 <div class="cap" id="fig-5-1-1"><span class="cap-k">图</span><p class="en">Figure 1: Parakeet TDT-0.6B-v3: WER vs. total context window across 18 chunking configurations. Even the best chunked configuration (9.22%) degrades substantially from the 6.32% batch baseline.</p><p class="zh">图 1：Parakeet TDT-0.6B-v3：在 18 种分块配置下 WER 随总上下文窗口的变化。即使是最好的分块配置（9.22%），相比 6.32% 的批处理基线也有明显退化。</p></div>
-<div class="pblk" id="p-5-1-3">
-          <p class="en-lines"><span class="sent" data-sid="s-5-1-3-1"><span class="en">The best Parakeet chunked configuration achieves 9.22% WER, a 46% relative increase over its 6.32% batch WER.</span><button class="mk feat" data-sid="s-5-1-3-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-1-3-2"><span class="en">This analysis confirms that models not specifically designed for streaming incur substantial penalties when adapted to chunked operation, motivating our focus on natively streaming architectures.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-1-3-1"><span class="zh">最好的 Parakeet 分块配置取得 9.22% 的 WER，相对其 6.32% 的批处理 WER 上升了 46%。</span><button class="mk feat" data-sid="s-5-1-3-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-1-3-2"><span class="zh">这一分析证实：未针对流式专门设计的模型在被改造为分块运行时会付出很大代价，这也促使我们把重点转向原生流式架构。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-5-1-3-1">
+<div class="pblk" id="p-5-1-2">
+          <p class="en-lines"><span class="sent" data-sid="s-5-1-2-1"><span class="en">The best Parakeet chunked configuration achieves 9.22% WER, a 46% relative increase over its 6.32% batch WER.</span><button class="mk feat" data-sid="s-5-1-2-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-1-2-2"><span class="en">This analysis confirms that models not specifically designed for streaming incur substantial penalties when adapted to chunked operation, motivating our focus on natively streaming architectures.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-1-2-1"><span class="zh">最好的 Parakeet 分块配置取得 9.22% 的 WER，相对其 6.32% 的批处理 WER 上升了 46%。</span><button class="mk feat" data-sid="s-5-1-2-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-1-2-2"><span class="zh">这一分析证实：未针对流式专门设计的模型在被改造为分块运行时会付出很大代价，这也促使我们把重点转向原生流式架构。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-5-1-2-1">
       <div class="ann-card kind-number">
         <div class="ann-kind">数字怎么理解</div>
         <div class="ann-title">46% 退化说明了什么</div>
@@ -409,15 +448,44 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="cap" id="tab-5-2-1"><span class="cap-k">表</span><p class="en">Table 4: Nemotron-0.6B streaming configurations.</p><p class="zh">表 4：Nemotron-0.6B 流式配置。</p></div>
 <div class="pblk" id="p-5-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="en">History Batch (offline) 7.07 11.16 12.38 11.35 2.28 4.83 2.63 4.42 7.48 7.10 11.31 12.46 11.39 2.28 4.84 2.64 4.42 7.47 7.46 11.38 12.49 11.39 2.41 5.07 2.71 4.50 9.75 7.28 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 8.51 11.93 13.93 11.76 3.43 6.00 3.47 5.11 12.49 8.04 14.82 13.66 12.44 2.49 5.52 2.90 4.72 7.79 8.91 17.76 14.64 13.33 2.61 5.93 3.73 5.06 8.24 9.0 8.5 8.0 7.5 7.0 Configurations Selected: (7,10,7) 0 1 2 3 4 5 6 Algorithmic Delay (seconds) 6.5</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="zh">表 4 原始数值：历史（History）与批处理（离线）行：7.07、11.16、12.38、11.35、2.28、4.83、2.63、4.42、7.48；其后各流式配置行依次为 7.10、11.31、12.46、11.39、2.28、4.84、2.64、4.42、7.47；7.46、11.38、12.49、11.39、2.41、5.07、2.71、4.50、9.75；7.28、11.80、12.64、11.50、2.33、5.08、2.72、4.46、7.69；8.51、11.93、13.93、11.76、3.43、6.00、3.47、5.11、12.49；8.04、14.82、13.66、12.44、2.49、5.52、2.90、4.72、7.79；8.91、17.76、14.64、13.33、2.61、5.93、3.73、5.06、8.24。图 2 坐标元素：纵轴 WER 刻度 9.0、8.5、8.0、7.5、7.0，横轴为算法延迟（秒）刻度 0、1、2、3、4、5、6，标注 Selected: (7,10,7) 与 6.5。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="en">Config Delay History Avg AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="zh">表头：Config（配置）｜Delay（延迟）｜History（历史）｜Avg｜AMI｜Earn.。</span></span></p>
           
         </div>
-<div class="cap" id="fig-5-2-1"><span class="cap-k">图</span><p class="en">Figure 2: Nemotron-0.6B: Delay vs. WER trade-off across streaming configurations. The configuration (7,10,7) with 0.56 s delay and 5.6 s history achieves the best balance, reaching 7.28% WER, only 0.21% above the batch baseline.</p><p class="zh">图 2：Nemotron-0.6B：不同流式配置下延迟与 WER 的权衡。配置 (7,10,7) 以 0.56 s 延迟和 5.6 s 历史取得最佳平衡，WER 达 7.28%，仅比批处理基线高 0.21%。</p></div>
 <div class="pblk" id="p-5-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-5-2-3-1"><span class="en">The configuration (7, 10, 7) emerges as the optimal operating point: it provides only 0.56 s of algorithmic delay while achieving 7.28% average WER, merely 0.21% absolute above the offline batch baseline.</span></span> <span class="sent" data-sid="s-5-2-3-2"><span class="en">In contrast, the best Parakeet chunked result (9.22%) is 1.94 percentage points worse at 4× higher latency.</span></span> <span class="sent" data-sid="s-5-2-3-3"><span class="en">The key insight is that sufficient history context (5.6 s via 10 left chunks) is critical.</span></span> <span class="sent" data-sid="s-5-2-3-4"><span class="en">It’s interesting to compare (7, 10, 7) at 7.28% WER with (7, 2, 7) at 8.51% WER, where the only difference is reduced history.</span><button class="mk feat" data-sid="s-5-2-3-4" title="查看讲解">解</button></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-2-3-1"><span class="zh">配置 (7, 10, 7) 成为最优工作点：算法延迟仅 0.56 s，同时平均 WER 为 7.28%，只比离线批处理基线高 0.21%（绝对值）。</span></span><span class="sent" data-sid="s-5-2-3-2"><span class="zh">相比之下，Parakeet 最好的分块结果（9.22%）要差 1.94 个百分点，且延迟是其 4×。</span></span><span class="sent" data-sid="s-5-2-3-3"><span class="zh">关键洞察在于：充足的历史上下文（通过 10 个左侧块提供 5.6 s 历史）至关重要。</span></span><span class="sent" data-sid="s-5-2-3-4"><span class="zh">有趣的是，把 (7, 10, 7) 的 7.28% WER 与 (7, 2, 7) 的 8.51% WER 对比，二者唯一的差别就是历史被缩短了。</span><button class="mk feat" data-sid="s-5-2-3-4" title="查看讲解">解</button></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-5-2-3-4">
+          <p class="en-lines"><span class="sent" data-sid="s-5-2-3-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-2-3-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-5-2-4">
+          <p class="en-lines"><span class="sent" data-sid="s-5-2-4-1"><span class="en">Batch (offline)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-2-4-1"><span class="zh">（表头行）Batch (offline)（离线批处理）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-5-2-1"><code>– – 7.07 11.16 12.38 11.35 2.28 4.83 2.63 4.42 7.48 (70, 2, 70)</code></div>
+<div class="eq" id="eq-5-2-2"><code>5.6 s 11.2 s</code></div>
+<div class="eq" id="eq-5-2-3"><code>7.10 11.31 12.46 11.39 2.28 4.84 2.64 4.42 7.47 (14, 2, 14)</code></div>
+<div class="eq" id="eq-5-2-4"><code>1.12 s 2.24 s</code></div>
+<div class="eq" id="eq-5-2-5"><code>7.46 11.38 12.49 11.39 2.41 5.07 2.71 4.50 9.75 (7, 10, 7)</code></div>
+<div class="eq" id="eq-5-2-6"><code>0.56 s 5.6 s</code></div>
+<div class="eq" id="eq-5-2-7"><code>7.28 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 (7, 2, 7)</code></div>
+<div class="eq" id="eq-5-2-8"><code>0.56 s 1.12 s</code></div>
+<div class="eq" id="eq-5-2-9"><code>8.51 11.93 13.93 11.76 3.43 6.00 3.47 5.11 12.49 (2, 35, 2)</code></div>
+<div class="eq" id="eq-5-2-10"><code>0.16 s 5.6 s</code></div>
+<div class="eq" id="eq-5-2-11"><code>8.04 14.82 13.66 12.44 2.49 5.52 2.90 4.72 7.79 (1, 70, 1)</code></div>
+<div class="eq" id="eq-5-2-12"><code>0.08 s 5.6 s</code></div>
+<div class="eq" id="eq-5-2-13"><code>8.91 17.76 14.64 13.33 2.61 5.93 3.73 5.06 8.24 9.0 (7,2,7) 8.5</code></div>
+<div class="eq" id="eq-5-2-14"><code>Average WER (%)</code></div>
+<div class="eq" id="eq-5-2-15"><code>8.0 (2,35,2) (14,2,14) 7.5 (7,10,7) 7.0</code></div>
+<div class="eq" id="eq-5-2-16"><code>Configurations Selected: (7,10,7)</code></div>
+<div class="eq" id="eq-5-2-17"><code>(70,2,70) 0 1 2 3 4 5 6</code></div>
+<div class="eq" id="eq-5-2-18"><code>Algorithmic Delay (seconds)</code></div>
+<div class="eq" id="eq-5-2-19"><code>6.5</code></div>
+<div class="cap" id="fig-5-2-1"><span class="cap-k">图</span><p class="en">Figure 2: Nemotron-0.6B: Delay vs. WER trade-off across streaming configurations. The configuration (7,10,7) with 0.56 s delay and 5.6 s history achieves the best balance, reaching 7.28% WER, only 0.21% above the batch baseline.</p><p class="zh">图 2：Nemotron-0.6B：不同流式配置下延迟与 WER 的权衡。配置 (7,10,7) 以 0.56 s 延迟和 5.6 s 历史取得最佳平衡，WER 达 7.28%，仅比批处理基线高 0.21%。</p></div>
+<div class="pblk" id="p-5-2-5">
+          <p class="en-lines"><span class="sent" data-sid="s-5-2-5-1"><span class="en">The configuration (7, 10, 7) emerges as the optimal operating point: it provides only 0.56 s of algorithmic delay while achieving 7.28% average WER, merely 0.21% absolute above the offline batch baseline.</span></span> <span class="sent" data-sid="s-5-2-5-2"><span class="en">In contrast, the best Parakeet chunked result (9.22%) is 1.94 percentage points worse at 4× higher latency.</span></span> <span class="sent" data-sid="s-5-2-5-3"><span class="en">The key insight is that sufficient history context (5.6 s via 10 left chunks) is critical.</span></span> <span class="sent" data-sid="s-5-2-5-4"><span class="en">It’s interesting to compare (7, 10, 7) at 7.28% WER with (7, 2, 7) at 8.51% WER, where the only difference is reduced history.</span><button class="mk feat" data-sid="s-5-2-5-4" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-2-5-1"><span class="zh">配置 (7, 10, 7) 成为最优工作点：算法延迟仅 0.56 s，同时平均 WER 为 7.28%，只比离线批处理基线高 0.21%（绝对值）。</span></span><span class="sent" data-sid="s-5-2-5-2"><span class="zh">相比之下，Parakeet 最好的分块结果（9.22%）要差 1.94 个百分点，且延迟是其 4×。</span></span><span class="sent" data-sid="s-5-2-5-3"><span class="zh">关键洞察在于：充足的历史上下文（通过 10 个左侧块提供 5.6 s 历史）至关重要。</span></span><span class="sent" data-sid="s-5-2-5-4"><span class="zh">有趣的是，把 (7, 10, 7) 的 7.28% WER 与 (7, 2, 7) 的 8.51% WER 对比，二者唯一的差别就是历史被缩短了。</span><button class="mk feat" data-sid="s-5-2-5-4" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-5-2-5-4">
       <div class="ann-card kind-number">
         <div class="ann-kind">数字怎么理解</div>
         <div class="ann-title">1.23% 差距全是历史长度</div>
@@ -434,19 +502,45 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="cap" id="tab-5-3-1"><span class="cap-k">表</span><p class="en">Table 5: Cross-model streaming comparison (batch_size=1, CPU).</p><p class="zh">表 5：跨模型流式对比（batch_size=1，CPU）。</p></div>
 <div class="pblk" id="p-5-3-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="en">BSF 7.28 1.03 2.46 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 10.45 1.77 0.49 16.97 16.92 12.29 4.95 7.69 6.70 6.34 11.75 12.83 2.03 1.38 16.73 19.81 15.27 6.63 8.25 17.82 9.95 8.19 Conformer Trans.</span></span> <span class="sent" data-sid="s-5-3-2-2"><span class="en">XL 11.06 1.27 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18 12.45 1.74 2.93 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98 Key observations:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="zh">表 5 原始数值（含 BSF 列）：7.28、1.03、2.46、11.80、12.64、11.50、2.33、5.08、2.72、4.46、7.69；10.45、1.77、0.49、16.97、16.92、12.29、4.95、7.69、6.70、6.34；11.75、12.83、2.03、1.38、16.73、19.81、15.27、6.63、8.25、17.82、9.95、8.19；Conformer Trans.（转下句）</span></span><span class="sent" data-sid="s-5-3-2-2"><span class="zh">XL：11.06、1.27、22.57、24.44、14.05、2.11、3.83、7.95、5.36、8.18；12.45、1.74、2.93、22.10、22.04、14.60、4.87、5.96、4.42、7.64、17.98。关键观察：</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="en">Model Size Delay Avg BSF RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="zh">表头：Model｜Size｜Delay｜Avg｜BSF｜RTFx｜AMI｜Earn.。</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-3-3">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-3-1"><span class="en">• Nemotron-0.6B achieves the best streaming WER (7.28%) among all models tested, while also having the lowest latency at 0.56 s and a BSF of 1.03, essentially no degradation from batch mode.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-3-1"><span class="zh">• Nemotron-0.6B 在所有被测模型中取得最好的流式 WER（7.28%），延迟也最低（0.56 s），BSF 为 1.03，相对批处理模式几乎没有退化。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-3-3-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-3-3-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-3-4">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-4-1"><span class="en">• Qwen3-ASR-1.7B, despite being the best batch model among the tested models, degrades significantly in chunked mode (BSF = 1.77) and runs below real-time on CPU (RTFx = 0.49), making it unsuitable for edge deployment.</span><button class="mk feat" data-sid="s-5-3-4-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-3-4-2"><span class="en">The Qwen3-ASR-0.6B model showed similar results, as shown in the appendix.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-4-1"><span class="zh">• Qwen3-ASR-1.7B 虽然是被测模型中批处理最强的模型，但在分块模式下退化显著（BSF = 1.77），且在 CPU 上跑不过实时（RTFx = 0.49），不适合边缘部署。</span><button class="mk feat" data-sid="s-5-3-4-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-3-4-2"><span class="zh">Qwen3-ASR-0.6B 模型也呈现类似结果，见附录。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-5-3-4-1">
+          <p class="en-lines"><span class="sent" data-sid="s-5-3-4-1"><span class="en">Nemotron-0.6B 2.47 GB 0.56 s</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-3-4-1"><span class="zh">2.
+（原始数据照录）
+Nemotron-0.6B 2.47 GB 0.56 s</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-5-3-1"><code>7.28 1.03 2.46 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69</code></div>
+<div class="eq" id="eq-5-3-2"><code>Qwen3-ASR-1.7B 4.70 GB 2.4 s</code></div>
+<div class="eq" id="eq-5-3-3"><code>10.45 1.77 0.49 16.97 16.92 12.29 4.95 7.69 6.70 6.34 11.75</code></div>
+<div class="eq" id="eq-5-3-4"><code>Parakeet TDT-0.6B-v3 2.51 GB 2.4 s</code></div>
+<div class="eq" id="eq-5-3-5"><code>12.83 2.03 1.38 16.73 19.81 15.27 6.63 8.25 17.82 9.95 8.19</code></div>
+<div class="eq" id="eq-5-3-6"><code>Conformer Trans. XL 2.58 GB 2.4 s</code></div>
+<div class="eq" id="eq-5-3-7"><code>11.06 – 1.27 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18</code></div>
+<div class="eq" id="eq-5-3-8"><code>Canary-1B-v2 6.36 GB 4.8 s</code></div>
+<div class="eq" id="eq-5-3-9"><code>12.45 1.74 2.93 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98</code></div>
+<div class="pblk" id="p-5-3-5">
+          <p class="en-lines"><span class="sent" data-sid="s-5-3-5-1"><span class="en">Key observations:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-3-5-1"><span class="zh">（小标题）关键观察（Key observations）：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-5-3-6">
+          <p class="en-lines"><span class="sent" data-sid="s-5-3-6-1"><span class="en">• Nemotron-0.6B achieves the best streaming WER (7.28%) among all models tested, while also having the lowest latency at 0.56 s and a BSF of 1.03, essentially no degradation from batch mode.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-3-6-1"><span class="zh">• Nemotron-0.6B 在所有被测模型中取得最好的流式 WER（7.28%），延迟也最低（0.56 s），BSF 为 1.03，相对批处理模式几乎没有退化。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-5-3-7">
+          <p class="en-lines"><span class="sent" data-sid="s-5-3-7-1"><span class="en">• Qwen3-ASR-1.7B, despite being the best batch model among the tested models, degrades significantly in chunked mode (BSF = 1.77) and runs below real-time on CPU (RTFx = 0.49), making it unsuitable for edge deployment.</span><button class="mk feat" data-sid="s-5-3-7-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-3-7-2"><span class="en">The Qwen3-ASR-0.6B model showed similar results, as shown in the appendix.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-3-7-1"><span class="zh">• Qwen3-ASR-1.7B 虽然是被测模型中批处理最强的模型，但在分块模式下退化显著（BSF = 1.77），且在 CPU 上跑不过实时（RTFx = 0.49），不适合边缘部署。</span><button class="mk feat" data-sid="s-5-3-7-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-3-7-2"><span class="zh">Qwen3-ASR-0.6B 模型也呈现类似结果，见附录。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-5-3-7-1">
       <div class="ann-card kind-comparison">
         <div class="ann-kind">和以前有什么区别</div>
         <div class="ann-title">LLM-ASR 的端侧短板</div>
@@ -455,15 +549,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-5-3-5">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-5-1"><span class="en">• Parakeet TDT and Canary show substantial streaming degradation (BSF ≥1.74), with WER almost doubling despite operating at 4× higher latency than Nemotron.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-5-1"><span class="zh">• Parakeet TDT 和 Canary 出现明显的流式退化（BSF ≥1.74），尽管运行延迟是 Nemotron 的 4×，WER 仍几乎翻倍。</span></span></p>
+<div class="pblk" id="p-5-3-8">
+          <p class="en-lines"><span class="sent" data-sid="s-5-3-8-1"><span class="en">• Parakeet TDT and Canary show substantial streaming degradation (BSF ≥1.74), with WER almost doubling despite operating at 4× higher latency than Nemotron.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-3-8-1"><span class="zh">• Parakeet TDT 和 Canary 出现明显的流式退化（BSF ≥1.74），尽管运行延迟是 Nemotron 的 4×，WER 仍几乎翻倍。</span></span></p>
           
         </div>
-<div class="pblk" id="p-5-3-6">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-6-1"><span class="en">• While Parakeet TDT achieves higher RTFx than Nemotron on GPU (see Table 9 in the appendix), it is notably slower on CPU (RTFx 1.38 vs. 2.46).</span></span> <span class="sent" data-sid="s-5-3-6-2"><span class="en">We hypothesize that Parakeet’s larger chunks benefit from GPU parallelism over wide tensors, whereas on CPU, where parallelism is limited, Nemotron’s smaller, cache-efficient chunks incur less per-step compute and better exploit the CPU memory hierarchy.</span><button class="mk" data-sid="s-5-3-6-2" title="查看讲解">解</button></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-6-1"><span class="zh">• 虽然 Parakeet TDT 在 GPU 上的 RTFx 高于 Nemotron（见附录 Table 9），但在 CPU 上明显更慢（RTFx 1.38 对 2.46）。</span></span><span class="sent" data-sid="s-5-3-6-2"><span class="zh">我们的假设是：Parakeet 较大的块能从 GPU 对宽张量的并行处理中获益；而在并行度受限的 CPU 上，Nemotron 更小、缓存效率更高的块每步计算量更低，也更能利用 CPU 的存储层级。</span><button class="mk" data-sid="s-5-3-6-2" title="查看讲解">解</button></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-5-3-6-2">
+<div class="pblk" id="p-5-3-9">
+          <p class="en-lines"><span class="sent" data-sid="s-5-3-9-1"><span class="en">• While Parakeet TDT achieves higher RTFx than Nemotron on GPU (see Table 9 in the appendix), it is notably slower on CPU (RTFx 1.38 vs. 2.46).</span></span> <span class="sent" data-sid="s-5-3-9-2"><span class="en">We hypothesize that Parakeet’s larger chunks benefit from GPU parallelism over wide tensors, whereas on CPU, where parallelism is limited, Nemotron’s smaller, cache-efficient chunks incur less per-step compute and better exploit the CPU memory hierarchy.</span><button class="mk" data-sid="s-5-3-9-2" title="查看讲解">解</button></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-3-9-1"><span class="zh">• 虽然 Parakeet TDT 在 GPU 上的 RTFx 高于 Nemotron（见附录 Table 9），但在 CPU 上明显更慢（RTFx 1.38 对 2.46）。</span></span><span class="sent" data-sid="s-5-3-9-2"><span class="zh">我们的假设是：Parakeet 较大的块能从 GPU 对宽张量的并行处理中获益；而在并行度受限的 CPU 上，Nemotron 更小、缓存效率更高的块每步计算量更低，也更能利用 CPU 的存储层级。</span><button class="mk" data-sid="s-5-3-9-2" title="查看讲解">解</button></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-5-3-9-2">
       <div class="ann-card kind-engineering">
         <div class="ann-kind">工程启发</div>
         <div class="ann-title">GPU 结论不能直接搬到 CPU</div>
@@ -568,8 +662,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="eq" id="eq-round-to-nearest-rtn-3"><code>qj = clamp round wj s</code></div>
 <div class="pblk" id="p-round-to-nearest-rtn-3">
-          <p class="en-lines"><span class="sent" data-sid="s-round-to-nearest-rtn-3-1"><span class="en">s + z , 0, 2n −1 RTN is one of the fastest quantization methods, but provides no mechanism to minimize the resulting quantization error.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-round-to-nearest-rtn-3-1"><span class="zh">qj = clamp(round(wj / s) + z, 0, 2n − 1)。RTN 是最快的量化方法之一，但它没有任何机制来最小化由此产生的量化误差。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-round-to-nearest-rtn-3-1"><span class="en">s + z</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-round-to-nearest-rtn-3-1"><span class="zh">（公式片段：……s + z（RTN 量化公式，见原文）。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-round-to-nearest-rtn-4"><code>, 0, 2n −1</code></div>
+<div class="pblk" id="p-round-to-nearest-rtn-4">
+          <p class="en-lines"><span class="sent" data-sid="s-round-to-nearest-rtn-4-1"><span class="en">RTN is one of the fastest quantization methods, but provides no mechanism to minimize the resulting quantization error.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-round-to-nearest-rtn-4-1"><span class="zh">qj = clamp(round(wj / s) + z, 0, 2n − 1)。RTN 是最快的量化方法之一，但它没有任何机制来最小化由此产生的量化误差。</span></span></p>
           
         </div></section>
 <section>
@@ -589,24 +689,32 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-k-quant-4"><code>b X</code></div>
 <div class="eq" id="eq-k-quant-5"><code>k=1 w2 k</code></div>
 <div class="eq" id="eq-k-quant-6"><code>+ |wj|</code></div>
+<div class="eq" id="eq-k-quant-7"><code>|</code></div>
+<div class="eq" id="eq-k-quant-8"><code>{z</code></div>
+<div class="eq" id="eq-k-quant-9"><code>}</code></div>
 <div class="pblk" id="p-k-quant-3">
-          <p class="en-lines"><span class="sent" data-sid="s-k-quant-3-1"><span class="en">| {z } block RMS (constant) Given fixed quantized integers qj (obtained from an initial RTN-like pass), k-quant then solves for the optimal affine mapping (s∗, m∗) such that the dequantized weights ˆwj = s∗·qj +m∗ are as close as possible to the original weights wj:</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-k-quant-3-1"><span class="en">block RMS (constant) Given fixed quantized integers qj (obtained from an initial RTN-like pass), k-quant then solves for the optimal affine mapping (s∗, m∗) such that the dequantized weights ˆwj = s∗·qj +m∗ are as close as possible to the original weights wj:</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-k-quant-3-1"><span class="zh">其中第一项是块级 RMS（对块内所有元素为常数）。在固定量化整数 qj（由一次初始的类 RTN 扫描得到）后，k-quant 求解最优仿射映射 (s∗, m∗)，使反量化权重 ŵj = s∗·qj + m∗ 尽可能接近原始权重 wj：即最小化 Σ_j αj·(s∗·qj + m∗ − wj)²。</span></span></p>
           
         </div>
-<div class="eq" id="eq-k-quant-7"><code></code></div>
-<div class="eq" id="eq-k-quant-8"><code>2</code></div>
-<div class="eq" id="eq-k-quant-9"><code></code></div>
+<div class="eq" id="eq-k-quant-10"><code></code></div>
+<div class="eq" id="eq-k-quant-11"><code>2</code></div>
+<div class="eq" id="eq-k-quant-12"><code></code></div>
+<div class="eq" id="eq-k-quant-13"><code></code></div>
+<div class="eq" id="eq-k-quant-14"><code>s∗· qj + m∗</code></div>
+<div class="eq" id="eq-k-quant-15"><code>|</code></div>
+<div class="eq" id="eq-k-quant-16"><code>{z</code></div>
+<div class="eq" id="eq-k-quant-17"><code>}</code></div>
 <div class="pblk" id="p-k-quant-4">
-          <p class="en-lines"><span class="sent" data-sid="s-k-quant-4-1"><span class="en"> s∗· qj + m∗ | {z } ˆwj (reconstructed)</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-k-quant-4-1"><span class="en">ˆwj (reconstructed)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-k-quant-4-1"><span class="zh">上式中 s∗·qj + m∗ 即重建权重 ŵj。</span></span></p>
           
         </div>
-<div class="eq" id="eq-k-quant-10"><code>b X</code></div>
-<div class="eq" id="eq-k-quant-11"><code>min s∗, m∗</code></div>
-<div class="eq" id="eq-k-quant-12"><code>j=1 αj</code></div>
-<div class="eq" id="eq-k-quant-13"><code>−wj</code></div>
-<div class="eq" id="eq-k-quant-14"><code> </code></div>
+<div class="eq" id="eq-k-quant-18"><code>b X</code></div>
+<div class="eq" id="eq-k-quant-19"><code>min s∗, m∗</code></div>
+<div class="eq" id="eq-k-quant-20"><code>j=1 αj</code></div>
+<div class="eq" id="eq-k-quant-21"><code>−wj</code></div>
+<div class="eq" id="eq-k-quant-22"><code> </code></div>
 <div class="pblk" id="p-k-quant-5">
           <p class="en-lines"><span class="sent" data-sid="s-k-quant-5-1"><span class="en">This is a two-variable weighted least-squares problem with a closed-form solution.</span></span> <span class="sent" data-sid="s-k-quant-5-2"><span class="en">The block RMS provides a scale-adaptive baseline importance for all elements, while |wj| ensures that larger weights receive proportionally more attention during optimization.</span></span> <span class="sent" data-sid="s-k-quant-5-3"><span class="en">The RMS term is necessary because using |wj| alone would assign near-zero importance to near-zero weights, allowing the optimizer to introduce arbitrary error on them.</span><button class="mk" data-sid="s-k-quant-5-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-k-quant-5-4"><span class="en">Since even a small weight encodes meaningful information (e.g., suppressing a particular output dimension), this would degrade model quality.</span></span> <span class="sent" data-sid="s-k-quant-5-5"><span class="en">The RMS term sets a minimum importance floor that adapts to the block’s overall magnitude scale, preventing any weight from being completely ignored.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-k-quant-5-1"><span class="zh">这是一个带权两变量最小二乘问题，有闭式解。</span></span><span class="sent" data-sid="s-k-quant-5-2"><span class="zh">块 RMS 为所有元素提供了一个随尺度自适应的基线重要性，而 |wj| 保证较大的权重在优化中获得成比例的更多关注。</span></span><span class="sent" data-sid="s-k-quant-5-3"><span class="zh">RMS 项是必要的：如果只用 |wj|，接近零的权重会被赋予接近零的重要性，优化器就可以在它们身上引入任意大的误差。</span><button class="mk" data-sid="s-k-quant-5-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-k-quant-5-4"><span class="zh">由于即使是很小的权重也编码着有意义的信息（例如抑制某个输出维度），这样做会损害模型质量。</span></span><span class="sent" data-sid="s-k-quant-5-5"><span class="zh">RMS 项设定了一条随块整体幅值尺度自适应的最低重要性底线，防止任何权重被完全忽略。</span></span></p>
@@ -672,14 +780,56 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       <h3 class="sech lv2" id="sec-7-1"><span class="secnum">7.1</span> <span class="t-zh">量化结果</span><span class="t-en">Quantization Results</span></h3><div class="cap" id="tab-7-1-1"><span class="cap-k">表</span><p class="en">Table 6 reports the full evaluation results across all quantization variants.</p><p class="zh">Table 6 报告了所有量化变体的完整评测结果。</p></div>
 <div class="cap" id="tab-7-1-2"><span class="cap-k">表</span><p class="en">Table 6: Nemotron-0.6B quantization results. Streaming config: (7,10,7), 0.56 s delay, 5.6 s history. CPU inference, batch_size=1.</p><p class="zh">表 6：Nemotron-0.6B 量化结果。流式配置：(7,10,7)，0.56 s 延迟，5.6 s 历史。CPU 推理，batch_size=1。</p></div>
 <div class="pblk" id="p-7-1-1">
-          <p class="en-lines"><span class="sent" data-sid="s-7-1-1-1"><span class="en">Variant Device Baseline (PyTorch) CUDA 7.28 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 8.03 6.73 16.40 13.32 12.00 2.35 5.01 2.61 4.66 7.90 8.01 7.25 16.37 13.35 11.97 2.36 4.97 2.52 4.62 7.92 int4-mixed k-quant 8.12 7.15 16.72 13.52 12.08 2.36 5.02 2.64 4.70 7.88 8.20 7.20 17.05 13.60 12.10 2.38 5.04 2.83 4.65 7.98 int4 k-quant w/ ConvInt 10.14 8.00 20.55 11.68 14.73 5.32 10.14 3.05 5.64 9.98 8.46 7.30 18.94 13.52 12.12 2.42 5.10 2.85 4.72 8.05 9.00 8.75 8.50 int4-mix k-quant 8.25 8.00 7.75 7.50 7.25 ONNX Variants PyTorch Baseline Baseline 0.0 0.5 1.0 1.5 2.0 2.5 Model Size (GB) 7.00</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-7-1-1-1"><span class="zh">表 6 原始数值：基线（PyTorch，CUDA）行：7.28、11.80、12.64、11.50、2.33、5.08、2.72、4.46、7.69；其后各 ONNX 变体行依次为 8.03、6.73、16.40、13.32、12.00、2.35、5.01、2.61、4.66、7.90；8.01、7.25、16.37、13.35、11.97、2.36、4.97、2.52、4.62、7.92；int4-mixed k-quant：8.12、7.15、16.72、13.52、12.08、2.36、5.02、2.64、4.70、7.88；int4 k-quant：8.20、7.20、17.05、13.60、12.10、2.38、5.04、2.83、4.65、7.98；int4 k-quant w/ ConvInt：10.14、8.00、20.55、11.68、14.73、5.32、10.14、3.05、5.64、9.98；8.46、7.30、18.94、13.52、12.12、2.42、5.10、2.85、4.72、8.05。图 3 坐标元素：纵轴 WER 刻度 9.00、8.75、8.50、8.25、8.00、7.75、7.50、7.25，横轴为模型体积（GB）刻度 0.0、0.5、1.0、1.5、2.0、2.5，标注 int4-mix k-quant、ONNX Variants、PyTorch Baseline 与 7.00。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-7-1-1-1"><span class="en">Variant Format Size Device Avg RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-7-1-1-1"><span class="zh">表头：Variant（变体）｜Format（格式）｜Size（体积）｜Device（设备）｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
           
         </div>
-<div class="cap" id="fig-7-1-1"><span class="cap-k">图</span><p class="en">Figure 3: Model size vs. WER for Nemotron quantization variants. The int4 k-quant variant achieves 8.20% WER at 0.67 GB, within 0.17% of the ONNX FP32 baseline (8.03%).</p><p class="zh">图 3：Nemotron 各量化变体的模型体积与 WER 关系。int4 k-quant 变体在 0.67 GB 体积下取得 8.20% WER，与 ONNX FP32 基线（8.03%）的差距在 0.17% 以内。</p></div>
 <div class="pblk" id="p-7-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-7-1-2-1"><span class="en">9.0 8.8 8.6 8.4 int4-mix k-quant 8.2 8.0 7.8 ONNX Variants 6.4 6.6 6.8 7.0 7.2 7.4 7.6 CPU RTFx (batch_size=1)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-7-1-2-1"><span class="zh">图 4 坐标元素：纵轴 WER 刻度 9.0、8.8、8.6、8.4，横轴为 CPU RTFx（batch_size=1）刻度 6.4、6.6、6.8、7.0、7.2、7.4、7.6，标注 int4-mix k-quant、8.2、8.0、7.8 与 ONNX Variants。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-7-1-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-7-1-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-7-1-3">
+          <p class="en-lines"><span class="sent" data-sid="s-7-1-3-1"><span class="en">Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-7-1-3-1"><span class="zh">2.
+（原始数据照录）
+Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-7-1-1"><code>7.28 – 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69</code></div>
+<div class="eq" id="eq-7-1-2"><code>FP32 ONNX 2.47 GB CPU</code></div>
+<div class="eq" id="eq-7-1-3"><code>8.03 6.73 16.40 13.32 12.00 2.35 5.01 2.61 4.66 7.90</code></div>
+<div class="eq" id="eq-7-1-4"><code>int8 k-quant ONNX 1.28 GB CPU</code></div>
+<div class="eq" id="eq-7-1-5"><code>8.01 7.25 16.37 13.35 11.97 2.36 4.97 2.52 4.62 7.92</code></div>
+<div class="eq" id="eq-7-1-6"><code>int4-mixed k-quant ONNX 0.73 GB CPU</code></div>
+<div class="eq" id="eq-7-1-7"><code>8.12 7.15 16.72 13.52 12.08 2.36 5.02 2.64 4.70 7.88</code></div>
+<div class="eq" id="eq-7-1-8"><code>int4 k-quant ONNX 0.67 GB CPU</code></div>
+<div class="eq" id="eq-7-1-9"><code>8.20 7.20 17.05 13.60 12.10 2.38 5.04 2.83 4.65 7.98</code></div>
+<div class="eq" id="eq-7-1-10"><code>int4 k-quant w/ ConvInt ONNX 0.67 GB CPU</code></div>
+<div class="eq" id="eq-7-1-11"><code>10.14 8.00 20.55 11.68 14.73 5.32 10.14 3.05 5.64 9.98</code></div>
+<div class="eq" id="eq-7-1-12"><code>int4 RTN ONNX 0.66 GB CPU</code></div>
+<div class="eq" id="eq-7-1-13"><code>8.46 7.30 18.94 13.52 12.12 2.42 5.10 2.85 4.72 8.05 9.00 8.75</code></div>
+<div class="eq" id="eq-7-1-14"><code>int4 RTN</code></div>
+<div class="eq" id="eq-7-1-15"><code>8.50</code></div>
+<div class="eq" id="eq-7-1-16"><code>int4 k-quant Average WER (%) int4-mix k-quant</code></div>
+<div class="eq" id="eq-7-1-17"><code>8.25 8.00 7.75 7.50 7.25</code></div>
+<div class="eq" id="eq-7-1-18"><code>ONNX Variants PyTorch Baseline FP32 int8 k-quant Baseline</code></div>
+<div class="eq" id="eq-7-1-19"><code>0.0 0.5 1.0 1.5 2.0 2.5</code></div>
+<div class="eq" id="eq-7-1-20"><code>Model Size (GB)</code></div>
+<div class="eq" id="eq-7-1-21"><code>7.00</code></div>
+<div class="cap" id="fig-7-1-1"><span class="cap-k">图</span><p class="en">Figure 3: Model size vs. WER for Nemotron quantization variants. The int4 k-quant variant achieves 8.20% WER at 0.67 GB, within 0.17% of the ONNX FP32 baseline (8.03%).</p><p class="zh">图 3：Nemotron 各量化变体的模型体积与 WER 关系。int4 k-quant 变体在 0.67 GB 体积下取得 8.20% WER，与 ONNX FP32 基线（8.03%）的差距在 0.17% 以内。</p></div>
+<div class="eq" id="eq-7-1-22"><code>9.0 8.8 8.6</code></div>
+<div class="eq" id="eq-7-1-23"><code>Average WER (%)</code></div>
+<div class="eq" id="eq-7-1-24"><code>8.4</code></div>
+<div class="eq" id="eq-7-1-25"><code>int4-mix k-quant</code></div>
+<div class="eq" id="eq-7-1-26"><code>8.2</code></div>
+<div class="eq" id="eq-7-1-27"><code>FP32</code></div>
+<div class="eq" id="eq-7-1-28"><code>8.0 7.8</code></div>
+<div class="eq" id="eq-7-1-29"><code>ONNX Variants int4 RTN int4 k-quant int8 k-quant</code></div>
+<div class="eq" id="eq-7-1-30"><code>6.4 6.6 6.8 7.0 7.2 7.4 7.6</code></div>
+<div class="pblk" id="p-7-1-4">
+          <p class="en-lines"><span class="sent" data-sid="s-7-1-4-1"><span class="en">CPU RTFx (batch_size=1)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-7-1-4-1"><span class="zh">（图注行）CPU RTFx (batch_size=1)。</span></span></p>
           
         </div>
 <div class="cap" id="fig-7-1-2"><span class="cap-k">图</span><p class="en">Figure 4: CPU RTFx vs. WER. All ONNX variants achieve RTFx &gt; 6× real-time on CPU, with quantized variants slightly faster than FP32.</p><p class="zh">图 4：CPU RTFx 与 WER 的关系。所有 ONNX 变体在 CPU 上都达到 RTFx &gt; 6× 实时，量化变体略快于 FP32。</p></div></section>
@@ -736,16 +886,28 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-7-3-2-1"><span class="zh">0.16 s 配置下，ONNX int4 k-quant 模型在 CPU 上的平均 WER 为 8.89%（见附录 Table 16），只比 0.56 s 的结果高 0.69%，而算法延迟降低了 3× 以上。</span></span><span class="sent" data-sid="s-7-3-2-2"><span class="zh">这些结果表明：对于更看重响应速度的应用，只要目标硬件有足够的算力余量，在推荐的 0.56 s 配置基础上进一步压低延迟是可行的。</span></span></p>
           
         </div>
+<div class="eq" id="eq-7-3-1"><code>1400 1200</code></div>
+<div class="eq" id="eq-7-3-2"><code>Effective Latency (ms)</code></div>
+<div class="eq" id="eq-7-3-3"><code>1000</code></div>
+<div class="eq" id="eq-7-3-4"><code>~130ms</code></div>
+<div class="eq" id="eq-7-3-5"><code>800 600</code></div>
+<div class="eq" id="eq-7-3-6"><code>~50ms</code></div>
+<div class="eq" id="eq-7-3-7"><code>400 200</code></div>
+<div class="eq" id="eq-7-3-8"><code>Ideal (RTFx =</code></div>
+<div class="eq" id="eq-7-3-9"><code>)</code></div>
 <div class="pblk" id="p-7-3-3">
-          <p class="en-lines"><span class="sent" data-sid="s-7-3-3-1"><span class="en">1400 1200 Effective Latency (ms) 1000 ~130ms 800 600 ~50ms 400 200 Ideal (RTFx = ) Extrapolated (est.)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-7-3-3-1"><span class="zh">图 5 纵轴元素：有效延迟（毫秒）刻度 1400、1200、1000、800、600、400、200，并标注 ~130ms 与 ~50ms 两条参考位置，以及 Ideal (RTFx = ∞) 与 Extrapolated (est.) 两条曲线。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-7-3-3-1"><span class="en">Extrapolated (est.)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-7-3-3-1"><span class="zh">（图例行）Extrapolated (est.)（外推估计）。</span></span></p>
           
         </div>
 <div class="pblk" id="p-7-3-4">
-          <p class="en-lines"><span class="sent" data-sid="s-7-3-4-1"><span class="en">Server CPU (32 cores) Consumer CPU (RTFx/2, est.) RTFx &lt; 1 (audio dropout) 0.0 0.2 0.4 0.6 0.8 1.0 1.2 Algorithmic Delay (s) 0</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-7-3-4-1"><span class="zh">图 5 横轴与曲线标注：Server CPU（32 核）、Consumer CPU（RTFx/2，估计值）、RTFx &lt; 1（音频丢帧）；横轴为算法延迟（秒），刻度 0.0、0.2、0.4、0.6、0.8、1.0、1.2，末端为 0。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-7-3-4-1"><span class="en">Server CPU (32 cores) Consumer CPU (RTFx/2, est.) RTFx &lt; 1 (audio dropout)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-7-3-4-1"><span class="zh">（图例行）Server CPU (32 cores) / Consumer CPU (RTFx/2, est.) / RTFx &lt; 1（音频欠载）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-7-3-10"><code>0.0 0.2 0.4 0.6 0.8 1.0 1.2</code></div>
+<div class="eq" id="eq-7-3-11"><code>Algorithmic Delay (s)</code></div>
+<div class="eq" id="eq-7-3-12"><code>0</code></div>
 <div class="cap" id="fig-7-3-1"><span class="cap-k">图</span><p class="en">Figure 5: Effective latency vs. algorithmic delay for Nemotron-0.6B int4 k-quant on CPU. The red shaded region indicates where RTFx drops below 1× (audio dropout).</p><p class="zh">图 5：Nemotron-0.6B int4 k-quant 在 CPU 上有效延迟与算法延迟的关系。红色阴影区域表示 RTFx 跌破 1×（音频丢帧）的位置。</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-8"><span class="secnum">8</span> <span class="t-zh">推荐与选定配置</span><span class="t-en">Recommendation and Selected Configuration</span></h2><div class="pblk" id="p-8-1">
@@ -872,97 +1034,329 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk plain" id="p-references-10"><p class="refline">[8] NVIDIA, “Nemotron Speech Streaming,” https://huggingface.co/nvidia/ nemotron-speech-streaming-en-0.6b, 2025.</p></div>
 <div class="pblk plain" id="p-references-11"><p class="refline">[9] Hugging Face, “Open ASR Leaderboard”, https://huggingface.co/spaces/hf-audio/ open_asr_leaderboard, 2024.</p></div>
 <div class="pblk plain" id="p-references-12"><p class="refline">[10] ONNX Runtime Contributors, “ONNX Runtime: cross-platform, high performance ML inferencing and training accelerator,” https://onnxruntime.ai/, 2024.</p></div>
-<div class="pblk plain" id="p-references-13"><p class="refline">[11] J. Lin, J. Tang, H. Tang, S. Yang, X. Dang, and S. Han, “AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration,” https://arxiv.org/abs/ 2306.00978, 2023.</p></div>
+<div class="pblk plain" id="p-references-13"><p class="refline">[11] J. Lin, J. Tang, H. Tang, S. Yang, X. Dang, and S. Han, “AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration,” https://arxiv.org/abs/</p></div>
+<div class="eq" id="eq-references-1"><code>2306.00978, 2023.</code></div>
 <div class="pblk plain" id="p-references-14"><p class="refline">[12] E. Frantar, S. Ashkboos, T. Hoefler, and D. Alistarh, “GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers,” https://arxiv.org/abs/2210.</p></div>
-<div class="pblk plain" id="p-references-15"><p class="refline">17323, 2022.</p></div>
-<div class="pblk plain" id="p-references-16"><p class="refline">[13] J. Yu, Y. Park, and S. Watanabe, “2-bit Conformer Quantization for Automatic Speech Recognition,” https://arxiv.org/abs/2305.16619, 2023.</p></div>
-<div class="pblk plain" id="p-references-17"><p class="refline">[14] Mistral AI Team, “Voxtral,” https://arxiv.org/abs/2507.13264, 2025.</p></div>
-<div class="pblk plain" id="p-references-18"><p class="refline">[15] M. Kudlur, E. King, J. Wang, and P. Warden, “Moonshine v2: Ergodic Streaming Encoder ASR for Latency-Critical Speech Applications,” https://arxiv.org/abs/2602.</p></div>
-<div class="pblk plain" id="p-references-19"><p class="refline">12241, 2026.</p></div></section>
+<div class="eq" id="eq-references-2"><code>17323, 2022.</code></div>
+<div class="pblk plain" id="p-references-15"><p class="refline">[13] J. Yu, Y. Park, and S. Watanabe, “2-bit Conformer Quantization for Automatic Speech Recognition,” https://arxiv.org/abs/2305.16619, 2023.</p></div>
+<div class="pblk plain" id="p-references-16"><p class="refline">[14] Mistral AI Team, “Voxtral,” https://arxiv.org/abs/2507.13264, 2025.</p></div>
+<div class="pblk plain" id="p-references-17"><p class="refline">[15] M. Kudlur, E. King, J. Wang, and P. Warden, “Moonshine v2: Ergodic Streaming Encoder ASR for Latency-Critical Speech Applications,” https://arxiv.org/abs/2602.</p></div>
+<div class="eq" id="eq-references-3"><code>12241, 2026.</code></div></section>
 <section>
       <h2 class="sech lv1" id="sec-A"><span class="secnum">A</span> <span class="t-zh">附录 A：完整评测结果</span><span class="t-en">Complete Evaluation Results</span></h2><div class="pblk" id="p-A-1">
           <p class="en-lines"><span class="sent" data-sid="s-A-1-1"><span class="en">This appendix reports all configurations evaluated during this study, including incomplete runs and configurations not featured in the main text.</span></span> <span class="sent" data-sid="s-A-1-2"><span class="en">All WER values are in percent (%).</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-1-1"><span class="zh">本附录报告本研究期间评测过的所有配置，包括未跑完的运行和正文未收录的配置。</span></span><span class="sent" data-sid="s-A-1-2"><span class="zh">所有 WER 数值均以百分数（%）表示。</span></span></p>
           
-        </div>
-<div class="pblk" id="p-A-2">
-          <p class="en-lines"><span class="sent" data-sid="s-A-2-1"><span class="en">Whisper — All Configurations</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-2-1"><span class="zh">Whisper —— 全部配置</span></span></p>
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-A-1"><span class="secnum">A.1</span> <span class="t-zh">Whisper — All Configurations</span><span class="t-en">Whisper — All Configurations</span></h3><div class="cap" id="tab-A-1-1"><span class="cap-k">表</span><p class="en">Table 7: All Whisper configurations evaluated.</p><p class="zh">表 7：评测过的全部 Whisper 配置。</p></div>
+<div class="pblk" id="p-A-1-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-1-1-1"><span class="en">Model Format Mode Size Avg AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-1-1-1"><span class="zh">表头：Model｜Format｜Mode（模式）｜Size｜Avg｜AMI｜Earn.。</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-1"><span class="cap-k">表</span><p class="en">Table 7: All Whisper configurations evaluated.</p><p class="zh">表 7：评测过的全部 Whisper 配置。</p></div>
-<div class="pblk" id="p-A-3">
-          <p class="en-lines"><span class="sent" data-sid="s-A-3-1"><span class="en">Mode whisper-large-v3-turbo 7.83 16.13 11.63 10.14 2.10 4.24 2.97 3.57 11.87 whisper-large-v3-turbo ORT FP16 7.52 16.36 11.38 10.13 2.17 4.24 2.93 3.62 9.30 whisper-small.en 17.93 12.97 11.35 3.05 7.25 3.60 4.07 8.50 faster-whisper (small) Chunk (3 s) 24.74 32.90 32.59 17.23 22.72 19.81 23.18 Nemotron-0.6B — All Streaming Configurations</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-3-1"><span class="zh">表 7/8 原始数值：whisper-large-v3-turbo：7.83、16.13、11.63、10.14、2.10、4.24、2.97、3.57、11.87；whisper-large-v3-turbo ORT FP16：7.52、16.36、11.38、10.13、2.17、4.24、2.93、3.62、9.30；whisper-small.en：17.93、12.97、11.35、3.05、7.25、3.60、4.07、8.50；faster-whisper (small) Chunk (3 s)：24.74、32.90、32.59、17.23、22.72、19.81、23.18。下接：Nemotron-0.6B —— 全部流式配置。</span></span></p>
+<div class="pblk" id="p-A-1-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-1-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-1-2-1"><span class="zh">1.
+（原始数据照录）
+Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-2"><span class="cap-k">表</span><p class="en">Table 8: All Nemotron-0.6B streaming configurations (PyTorch, CUDA, batch_size=16).</p><p class="zh">表 8：全部 Nemotron-0.6B 流式配置（PyTorch，CUDA，batch_size=16）。</p></div>
-<div class="pblk" id="p-A-4">
-          <p class="en-lines"><span class="sent" data-sid="s-A-4-1"><span class="en">History Batch (offline) 7.07 990.48 11.16 12.38 11.35 2.28 4.83 2.63 4.42 7.48 7.10 268.39 11.31 12.46 11.39 2.28 4.84 2.64 4.42 7.47 7.46 260.05 11.38 12.49 11.39 2.41 5.07 2.71 4.50 9.75 7.28 145.16 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 8.51 144.71 11.93 13.93 11.76 3.43 6.00 3.47 5.11 12.49 8.04 45.05 14.82 13.66 12.44 2.49 5.52 2.90 4.72 7.79 19.75 26.36 19.46 11.86 17.88 13.32 32.42 8.91 17.76 14.64 13.33 2.61 5.93 3.73 5.06 8.24 Parakeet TDT-0.6B-v3 — All Chunking Configurations</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-4-1"><span class="zh">表 8 原始数值（历史/RTFx 列穿插）：批处理（离线）：7.07、990.48、11.16、12.38、11.35、2.28、4.83、2.63、4.42、7.48；其后各配置行：7.10、268.39、11.31、12.46、11.39、2.28、4.84、2.64、4.42、7.47；7.46、260.05、11.38、12.49、11.39、2.41、5.07、2.71、4.50、9.75；7.28、145.16、11.80、12.64、11.50、2.33、5.08、2.72、4.46、7.69；8.51、144.71、11.93、13.93、11.76、3.43、6.00、3.47、5.11、12.49；8.04、45.05、14.82、13.66、12.44、2.49、5.52、2.90、4.72、7.79；19.75、26.36、19.46、11.86、17.88、13.32、32.42；8.91、17.76、14.64、13.33、2.61、5.93、3.73、5.06、8.24。下接：Parakeet TDT-0.6B-v3 —— 全部分块配置。</span></span></p>
+<div class="eq" id="eq-A-1-1"><code>7.83 16.13 11.63 10.14 2.10 4.24 2.97 3.57 11.87</code></div>
+<div class="eq" id="eq-A-1-2"><code>whisper-large-v3-turbo ORT FP16 Batch 1.75 GB</code></div>
+<div class="eq" id="eq-A-1-3"><code>7.52 16.36 11.38 10.13 2.17 4.24 2.93 3.62 9.30</code></div>
+<div class="eq" id="eq-A-1-4"><code>whisper-small.en PyTorch Batch 0.97 GB</code></div>
+<div class="eq" id="eq-A-1-5"><code>(8.59) 17.93 12.97 11.35 3.05 7.25 3.60 4.07 8.50</code></div>
+<div class="eq" id="eq-A-1-6"><code>faster-whisper (small) PyTorch Chunk (3 s) 0.97 GB</code></div>
+<div class="eq" id="eq-A-1-7"><code>24.74 32.90 32.59 – 17.23 22.72 19.81 – 23.18</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-A-2"><span class="secnum">A.2</span> <span class="t-zh">Nemotron-0.6B — All Streaming Configurations</span><span class="t-en">Nemotron-0.6B — All Streaming Configurations</span></h3><div class="cap" id="tab-A-2-1"><span class="cap-k">表</span><p class="en">Table 8: All Nemotron-0.6B streaming configurations (PyTorch, CUDA, batch_size=16).</p><p class="zh">表 8：全部 Nemotron-0.6B 流式配置（PyTorch，CUDA，batch_size=16）。</p></div>
+<div class="pblk" id="p-A-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-2-1-1"><span class="en">Config Delay History Avg RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-2-1-1"><span class="zh">表头：Config｜Delay｜History｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-3"><span class="cap-k">表</span><p class="en">Table 9: All Parakeet TDT-0.6B-v3 configurations. Batch and chunked modes (CUDA, batch_size=16). Config format: delay (left-current-right = total context).</p><p class="zh">表 9：全部 Parakeet TDT-0.6B-v3 配置。批处理与分块模式（CUDA，batch_size=16）。配置格式：延迟（左-当前-右 = 总上下文）。</p></div>
-<div class="pblk" id="p-A-5">
-          <p class="en-lines"><span class="sent" data-sid="s-A-5-1"><span class="en">Precision 16.94 211.45 41.64 32.38 20.56 3.69 6.10 8.63 10.73 11.75 13.2 s (8.4-11.6-1.6=21.6) 9.24 272.39 15.96 17.37 12.10 2.52 4.34 7.40 5.65 8.59 12.13 358.98 22.25 22.61 18.23 3.76 4.82 8.41 8.36 8.62 16.10 307.51 37.21 30.55 21.74 4.17 5.32 9.14 10.40 10.32 9.66 257.87 15.56 17.80 12.39 3.69 5.17 7.86 6.16 8.66 9.22 250.41 15.35 17.12 12.02 3.44 5.27 7.23 5.32 8.01 9.33 361.64 15.26 17.36 12.15 3.59 5.12 7.41 5.65 8.10 fp16 9.59 219.76 15.27 19.44 12.16 3.47 5.26 7.41 5.61 8.07 9.2 s (5.6-7.6-1.6=14.8) 11.61 402.68 21.72 21.74 17.68 3.35 4.88 7.97 7.36 8.14 15.83 257.07 35.91 29.09 20.56 6.06 6.84 8.63 9.56 9.95 8.8 s (5.6-7.6-1.2=14.4) 15.99 204.10 36.08 29.15 21.49 5.07 6.94 8.66 10.56 9.98 8 s (5.6-7.2-0.8=13.6) 15.97 404.98 35.48 29.27 21.84 5.69 6.39 8.89 10.15 10.04 fp16 12.55 323.81 21.65 21.53 18.32 6.43 7.37 8.46 7.95 8.71 16.46 361.34 35.60 29.04 21.92 7.45 8.09 8.92 10.45 10.22 12.83 83.68 16.73 19.81 15.27 6.63 8.25 17.82 9.95 8.19 fp16 11.54 228.68 15.51 18.91 13.45 9.27 9.73 9.39 7.20 8.82 11.52 15.52 18.91 13.44 9.34 9.57 9.33 7.26 8.79 32.17 209.69 43.08 38.13 35.66 35.62 30.13 31.28 30.93 12.55 Parakeet TDT-0.6B-v3 — ONNX Quantization</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-5-1"><span class="zh">表 9 原始数值（Precision 列与各行数据）：16.94、211.45、41.64、32.38、20.56、3.69、6.10、8.63、10.73、11.75；13.2 s (8.4-11.6-1.6=21.6)：9.24、272.39、15.96、17.37、12.10、2.52、4.34、7.40、5.65、8.59；12.13、358.98、22.25、22.61、18.23、3.76、4.82、8.41、8.36、8.62；16.10、307.51、37.21、30.55、21.74、4.17、5.32、9.14、10.40、10.32；9.66、257.87、15.56、17.80、12.39、3.69、5.17、7.86、6.16、8.66；9.22、250.41、15.35、17.12、12.02、3.44、5.27、7.23、5.32、8.01；9.33、361.64、15.26、17.36、12.15、3.59、5.12、7.41、5.65、8.10；fp16：9.59、219.76、15.27、19.44、12.16、3.47、5.26、7.41、5.61、8.07；9.2 s (5.6-7.6-1.6=14.8)：11.61、402.68、21.72、21.74、17.68、3.35、4.88、7.97、7.36、8.14；15.83、257.07、35.91、29.09、20.56、6.06、6.84、8.63、9.56、9.95；8.8 s (5.6-7.6-1.2=14.4)：15.99、204.10、36.08、29.15、21.49、5.07、6.94、8.66、10.56、9.98；8 s (5.6-7.2-0.8=13.6)：15.97、404.98、35.48、29.27、21.84、5.69、6.39、8.89、10.15、10.04；fp16：12.55、323.81、21.65、21.53、18.32、6.43、7.37、8.46、7.95、8.71；16.46、361.34、35.60、29.04、21.92、7.45、8.09、8.92、10.45、10.22；12.83、83.68、16.73、19.81、15.27、6.63、8.25、17.82、9.95、8.19；fp16：11.54、228.68、15.51、18.91、13.45、9.27、9.73、9.39、7.20、8.82；11.52、15.52、18.91、13.44、9.34、9.57、9.33、7.26、8.79；32.17、209.69、43.08、38.13、35.66、35.62、30.13、31.28、30.93、12.55。下接：Parakeet TDT-0.6B-v3 —— ONNX 量化。</span></span></p>
+<div class="pblk" id="p-A-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-2-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-2-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-4"><span class="cap-k">表</span><p class="en">Table 10: Parakeet TDT-0.6B-v3 ONNX quantization variants (batch mode, CUDA, batch_size=16).</p><p class="zh">表 10：Parakeet TDT-0.6B-v3 ONNX 量化变体（批处理模式，CUDA，batch_size=16）。</p></div>
-<div class="pblk" id="p-A-6">
-          <p class="en-lines"><span class="sent" data-sid="s-A-6-1"><span class="en">ONNX fp16 21.46 2.21 3.96 6.82 ONNX int8 9.92 97.10 18.82 21.19 12.92 2.18 4.25 7.17 5.79 7.07 ONNX int4 11.50 112.94 21.22 26.34 14.39 2.16 4.02 8.97 8.17 6.77 Canary-1B-v2 — All Configurations</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-6-1"><span class="zh">表 10 原始数值：ONNX fp16：21.46、2.21、3.96、6.82；ONNX int8：9.92、97.10、18.82、21.19、12.92、2.18、4.25、7.17、5.79、7.07；ONNX int4：11.50、112.94、21.22、26.34、14.39、2.16、4.02、8.97、8.17、6.77。下接：Canary-1B-v2 —— 全部配置。</span></span></p>
+<div class="pblk" id="p-A-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-A-2-3-1"><span class="en">Batch (offline)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-2-3-1"><span class="zh">（表头行）Batch (offline)（离线批处理）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-5"><span class="cap-k">表</span><p class="en">Table 11: Canary-1B-v2 configurations (PyTorch bf16, CUDA, batch_size=16).</p><p class="zh">表 11：Canary-1B-v2 配置（PyTorch bf16，CUDA，batch_size=16）。</p></div>
-<div class="pblk" id="p-A-7">
-          <p class="en-lines"><span class="sent" data-sid="s-A-7-1"><span class="en">(749) Chunk 4.8 s 12.45 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98 Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.</span></span> <span class="sent" data-sid="s-A-7-2"><span class="en">Conformer Transducer XL — All Configurations</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-7-1"><span class="zh">表 11 原始数值：(749) Chunk 4.8 s：12.45、22.10、22.04、14.60、4.87、5.96、4.42、7.64、17.98。分块配置为 (10.0-2.4-2.4=14.8)，采用 AlignAtt 流式策略。</span></span><span class="sent" data-sid="s-A-7-2"><span class="zh">Conformer Transducer XL —— 全部配置</span></span></p>
+<div class="eq" id="eq-A-2-1"><code>– – 7.07 990.48 11.16 12.38 11.35 2.28 4.83 2.63 4.42 7.48 (70, 2, 70)</code></div>
+<div class="eq" id="eq-A-2-2"><code>5.6 s 11.2 s</code></div>
+<div class="eq" id="eq-A-2-3"><code>7.10 268.39 11.31 12.46 11.39 2.28 4.84 2.64 4.42 7.47 (14, 2, 14)</code></div>
+<div class="eq" id="eq-A-2-4"><code>1.12 s 2.24 s</code></div>
+<div class="eq" id="eq-A-2-5"><code>7.46 260.05 11.38 12.49 11.39 2.41 5.07 2.71 4.50 9.75 (7, 10, 7)</code></div>
+<div class="eq" id="eq-A-2-6"><code>0.56 s 5.6 s</code></div>
+<div class="eq" id="eq-A-2-7"><code>7.28 145.16 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 (7, 2, 7)</code></div>
+<div class="eq" id="eq-A-2-8"><code>0.56 s 1.12 s</code></div>
+<div class="eq" id="eq-A-2-9"><code>8.51 144.71 11.93 13.93 11.76 3.43 6.00 3.47 5.11 12.49 (2, 35, 2)</code></div>
+<div class="eq" id="eq-A-2-10"><code>0.16 s 5.6 s</code></div>
+<div class="eq" id="eq-A-2-11"><code>8.04 45.05 14.82 13.66 12.44 2.49 5.52 2.90 4.72 7.79 (2, 2, 2)</code></div>
+<div class="eq" id="eq-A-2-12"><code>0.16 s 0.32 s</code></div>
+<div class="eq" id="eq-A-2-13"><code>– – 19.75 26.36 19.46 11.86 17.88 – 13.32 32.42 (1, 70, 1)</code></div>
+<div class="eq" id="eq-A-2-14"><code>0.08 s 5.6 s</code></div>
+<div class="eq" id="eq-A-2-15"><code>8.91 – 17.76 14.64 13.33 2.61 5.93 3.73 5.06 8.24</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-A-3"><span class="secnum">A.3</span> <span class="t-zh">Parakeet TDT-0.6B-v3 — All Chunking Configurations</span><span class="t-en">Parakeet TDT-0.6B-v3 — All Chunking Configurations</span></h3><div class="cap" id="tab-A-3-1"><span class="cap-k">表</span><p class="en">Table 9: All Parakeet TDT-0.6B-v3 configurations. Batch and chunked modes (CUDA, batch_size=16). Config format: delay (left-current-right = total context).</p><p class="zh">表 9：全部 Parakeet TDT-0.6B-v3 配置。批处理与分块模式（CUDA，batch_size=16）。配置格式：延迟（左-当前-右 = 总上下文）。</p></div>
+<div class="pblk" id="p-A-3-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-3-1-1"><span class="en">Config Precision Avg RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-3-1-1"><span class="zh">表头：Config｜Precision（精度）｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-6"><span class="cap-k">表</span><p class="en">Table 12: Conformer Transducer XL chunked configurations (PyTorch bf16, CUDA, batch_size=16). Config: delay (left-current-right = total context).</p><p class="zh">表 12：Conformer Transducer XL 分块配置（PyTorch bf16，CUDA，batch_size=16）。配置：延迟（左-当前-右 = 总上下文）。</p></div>
-<div class="pblk" id="p-A-8">
-          <p class="en-lines"><span class="sent" data-sid="s-A-8-1"><span class="en">10.78 222.90 22.07 23.47 14.21 2.22 4.10 7.93 5.48 6.80 10.96 133.69 22.31 24.22 13.99 2.04 3.78 7.86 5.40 8.05 11.06 82.03 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18 11.02 44.28 22.69 24.47 13.97 1.93 3.46 7.86 5.26 8.49 Qwen3-ASR — All Configurations</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-8-1"><span class="zh">表 12 原始数值：10.78、222.90、22.07、23.47、14.21、2.22、4.10、7.93、5.48、6.80；10.96、133.69、22.31、24.22、13.99、2.04、3.78、7.86、5.40、8.05；11.06、82.03、22.57、24.44、14.05、2.11、3.83、7.95、5.36、8.18；11.02、44.28、22.69、24.47、13.97、1.93、3.46、7.86、5.26、8.49。下接：Qwen3-ASR —— 全部配置。</span></span></p>
+<div class="pblk" id="p-A-3-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-3-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-3-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-7"><span class="cap-k">表</span><p class="en">Table 13: Qwen3-ASR configurations (PyTorch, CUDA, batch_size=32).</p><p class="zh">表 13：Qwen3-ASR 配置（PyTorch，CUDA，batch_size=32）。</p></div>
-<div class="pblk" id="p-A-9">
-          <p class="en-lines"><span class="sent" data-sid="s-A-9-1"><span class="en">5.90 187.91 11.76 10.26 8.75 1.60 3.41 2.83 2.28 6.34 6.69 194.71 13.77 11.03 9.16 2.12 4.47 3.04 2.83 7.09 Chunk 3 s (1 s stride) 9.69 61.70 15.54 14.94 11.28 3.58 5.99 5.26 5.03 9.90 Chunk 3 s (1 s stride) 9.81 64.11 17.47 15.05 11.37 3.94 7.02 5.22 5.02 13.41 Chunk 2.4 s (1.2 s stride) 10.45 42.76 16.97 16.92 12.29 4.95 7.69 6.70 6.34 11.75 Chunk 2.4 s (1.2 s stride) 10.41 46.32 18.55 16.60 12.00 4.97 8.31 6.13 5.75 10.99 Cross-Model Streaming Comparison (CPU)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-9-1"><span class="zh">表 13 原始数值：批处理行 5.90、187.91、11.76、10.26、8.75、1.60、3.41、2.83、2.28、6.34；6.69、194.71、13.77、11.03、9.16、2.12、4.47、3.04、2.83、7.09；Chunk 3 s（1 s 步长）：9.69、61.70、15.54、14.94、11.28、3.58、5.99、5.26、5.03、9.90；Chunk 3 s（1 s 步长）：9.81、64.11、17.47、15.05、11.37、3.94、7.02、5.22、5.02、13.41；Chunk 2.4 s（1.2 s 步长）：10.45、42.76、16.97、16.92、12.29、4.95、7.69、6.70、6.34、11.75；Chunk 2.4 s（1.2 s 步长）：10.41、46.32、18.55、16.60、12.00、4.97、8.31、6.13、5.75、10.99。下接：跨模型流式对比（CPU）。</span></span></p>
+<div class="pblk" id="p-A-3-3">
+          <p class="en-lines"><span class="sent" data-sid="s-A-3-3-1"><span class="en">Batch</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-3-3-1"><span class="zh">（表 1 模型清单：Architecture × Modes × Size——Whisper Large-v3-Turbo（编码器-解码器，Batch，1.62 GB）；Whisper Small（编码器-解码器，Chunk/Batch，0.97 GB）；Nemotron-0.6B（Cache-aware Transducer，Stream/Batch，2.47 GB）；Parakeet TDT-0.6B-v3（TDT Transducer，Chunk/Batch，2.51 GB）；Canary-1B-v2（AED + AlignAtt，Chunk/Batch，6.36 GB）；Conformer Trans.（后续照原文）。）</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-8"><span class="cap-k">表</span><p class="en">Table 14: Cross-model streaming comparison (CPU, batch_size=1). Best streaming or lowlatency configuration per model.</p><p class="zh">表 14：跨模型流式对比（CPU，batch_size=1）。取每个模型最好的流式或低延迟配置。</p></div>
-<div class="pblk" id="p-A-10">
-          <p class="en-lines"><span class="sent" data-sid="s-A-10-1"><span class="en">BSF 7.28 1.03 2.46 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 10.45 1.77 0.49 16.97 16.92 12.29 4.95 7.69 6.70 6.34 11.75 12.83 2.03 1.38 16.73 19.81 15.27 6.63 8.25 17.82 9.95 8.19 Conformer Trans.</span></span> <span class="sent" data-sid="s-A-10-2"><span class="en">XL 11.06 1.27 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18 12.45 1.74 2.93 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98 Nemotron-0.6B — ONNX Quantization Results</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-10-1"><span class="zh">表 14 原始数值（含 BSF 列）：7.28、1.03、2.46、11.80、12.64、11.50、2.33、5.08、2.72、4.46、7.69；10.45、1.77、0.49、16.97、16.92、12.29、4.95、7.69、6.70、6.34；11.75、12.83、2.03、1.38、16.73、19.81、15.27、6.63、8.25、17.82、9.95、8.19；Conformer Trans.（转下句）</span></span><span class="sent" data-sid="s-A-10-2"><span class="zh">XL：11.06、1.27、22.57、24.44、14.05、2.11、3.83、7.95、5.36、8.18；12.45、1.74、2.93、22.10、22.04、14.60、4.87、5.96、4.42、7.64、17.98。下接：Nemotron-0.6B —— ONNX 量化结果。</span></span></p>
+<div class="eq" id="eq-A-3-1"><code>– (6.32) (3332.74) (11.39) (11.19) (9.57) (1.92) (3.59) (3.98) (2.80) (6.09)</code></div>
+<div class="eq" id="eq-A-3-2"><code>28.8 s (7.2-21.6-7.2=36) bf16</code></div>
+<div class="eq" id="eq-A-3-3"><code>16.94 211.45 41.64 32.38 20.56 3.69 6.10 8.63 10.73 11.75</code></div>
+<div class="eq" id="eq-A-3-4"><code>13.2 s (8.4-11.6-1.6=21.6) bf16</code></div>
+<div class="eq" id="eq-A-3-5"><code>9.24 272.39 15.96 17.37 12.10 2.52 4.34 7.40 5.65 8.59</code></div>
+<div class="eq" id="eq-A-3-6"><code>11.6 s (8.4-10.4-1.2=20) bf16</code></div>
+<div class="eq" id="eq-A-3-7"><code>12.13 358.98 22.25 22.61 18.23 3.76 4.82 8.41 8.36 8.62</code></div>
+<div class="eq" id="eq-A-3-8"><code>10.8 s (8.4-10-0.8=19.2) bf16</code></div>
+<div class="eq" id="eq-A-3-9"><code>16.10 307.51 37.21 30.55 21.74 4.17 5.32 9.14 10.40 10.32</code></div>
+<div class="eq" id="eq-A-3-10"><code>12.8 s (3.2-9.6-3.2=16) bf16</code></div>
+<div class="eq" id="eq-A-3-11"><code>9.66 257.87 15.56 17.80 12.39 3.69 5.17 7.86 6.16 8.66</code></div>
+<div class="eq" id="eq-A-3-12"><code>10.4 s (5.6-8.8-1.6=16) bf16</code></div>
+<div class="eq" id="eq-A-3-13"><code>9.22 250.41 15.35 17.12 12.02 3.44 5.27 7.23 5.32 8.01</code></div>
+<div class="eq" id="eq-A-3-14"><code>9.6 s (5.6-8-1.6=15.2) bf16</code></div>
+<div class="eq" id="eq-A-3-15"><code>9.33 361.64 15.26 17.36 12.15 3.59 5.12 7.41 5.65 8.10</code></div>
+<div class="eq" id="eq-A-3-16"><code>9.6 s (5.6-8-1.6=15.2) fp16</code></div>
+<div class="eq" id="eq-A-3-17"><code>9.59 219.76 15.27 19.44 12.16 3.47 5.26 7.41 5.61 8.07</code></div>
+<div class="eq" id="eq-A-3-18"><code>9.2 s (5.6-7.6-1.6=14.8) bf16</code></div>
+<div class="eq" id="eq-A-3-19"><code>11.61 402.68 21.72 21.74 17.68 3.35 4.88 7.97 7.36 8.14</code></div>
+<div class="eq" id="eq-A-3-20"><code>8.8 s (5.6-8-0.8=14.4) bf16</code></div>
+<div class="eq" id="eq-A-3-21"><code>15.83 257.07 35.91 29.09 20.56 6.06 6.84 8.63 9.56 9.95</code></div>
+<div class="eq" id="eq-A-3-22"><code>8.8 s (5.6-7.6-1.2=14.4) bf16</code></div>
+<div class="eq" id="eq-A-3-23"><code>15.99 204.10 36.08 29.15 21.49 5.07 6.94 8.66 10.56 9.98</code></div>
+<div class="eq" id="eq-A-3-24"><code>8 s (5.6-7.2-0.8=13.6) bf16</code></div>
+<div class="eq" id="eq-A-3-25"><code>15.97 404.98 35.48 29.27 21.84 5.69 6.39 8.89 10.15 10.04</code></div>
+<div class="eq" id="eq-A-3-26"><code>9.6 s (2.4-7.2-2.4=12) fp16</code></div>
+<div class="eq" id="eq-A-3-27"><code>12.55 323.81 21.65 21.53 18.32 6.43 7.37 8.46 7.95 8.71</code></div>
+<div class="eq" id="eq-A-3-28"><code>9.6 s (2.4-7.2-2.4=12) bf16</code></div>
+<div class="eq" id="eq-A-3-29"><code>16.46 361.34 35.60 29.04 21.92 7.45 8.09 8.92 10.45 10.22</code></div>
+<div class="eq" id="eq-A-3-30"><code>2.4 s (9.6-0.8-1.6=12) bf16</code></div>
+<div class="eq" id="eq-A-3-31"><code>12.83 83.68 16.73 19.81 15.27 6.63 8.25 17.82 9.95 8.19</code></div>
+<div class="eq" id="eq-A-3-32"><code>6.4 s (1.6-4.8-1.6=8) fp16</code></div>
+<div class="eq" id="eq-A-3-33"><code>11.54 228.68 15.51 18.91 13.45 9.27 9.73 9.39 7.20 8.82</code></div>
+<div class="eq" id="eq-A-3-34"><code>6.4 s (1.6-4.8-1.6=8) bf16</code></div>
+<div class="eq" id="eq-A-3-35"><code>11.52 – 15.52 18.91 13.44 9.34 9.57 9.33 7.26 8.79</code></div>
+<div class="eq" id="eq-A-3-36"><code>3.2 s (0.8-2.4-0.8=4) bf16</code></div>
+<div class="eq" id="eq-A-3-37"><code>32.17 209.69 43.08 38.13 35.66 35.62 30.13 31.28 30.93 12.55</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-A-4"><span class="secnum">A.4</span> <span class="t-zh">Parakeet TDT-0.6B-v3 — ONNX Quantization</span><span class="t-en">Parakeet TDT-0.6B-v3 — ONNX Quantization</span></h3><div class="cap" id="tab-A-4-1"><span class="cap-k">表</span><p class="en">Table 10: Parakeet TDT-0.6B-v3 ONNX quantization variants (batch mode, CUDA, batch_size=16).</p><p class="zh">表 10：Parakeet TDT-0.6B-v3 ONNX 量化变体（批处理模式，CUDA，batch_size=16）。</p></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-format"><span class="t-zh">Format</span><span class="t-en">Format</span></h3><div class="pblk" id="p-format-1">
+          <p class="en-lines"><span class="sent" data-sid="s-format-1-1"><span class="en">Size Avg RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-format-1-1"><span class="zh">表头：Size｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-9"><span class="cap-k">表</span><p class="en">Table 15: Nemotron-0.6B ONNX quantization results. Config: (7,10,7), 0.56 s delay, 5.6 s history. CPU inference, batch_size=1.</p><p class="zh">表 15：Nemotron-0.6B ONNX 量化结果。配置：(7,10,7)，0.56 s 延迟，5.6 s 历史。CPU 推理，batch_size=1。</p></div>
-<div class="pblk" id="p-A-11">
-          <p class="en-lines"><span class="sent" data-sid="s-A-11-1"><span class="en">Variant Device Baseline (PyTorch) CUDA 7.28 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 8.03 6.73 16.40 13.32 12.00 2.35 5.01 2.61 4.66 7.90 8.01 7.25 16.37 13.35 11.97 2.36 4.97 2.52 4.62 7.92 int4-mixed k-quant 8.12 7.15 16.72 13.52 12.08 2.36 5.02 2.64 4.70 7.88 8.20 7.20 17.05 13.60 12.10 2.38 5.04 2.83 4.65 7.98 int4 k-quant + ConvInt 10.14 8.00 20.55 11.68 14.73 5.32 10.14 3.05 5.64 9.98 8.46 7.30 18.94 13.52 12.12 2.42 5.10 2.85 4.72 8.05 Nemotron-0.6B — ONNX int4 k-quant at 0.16s Delay</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-11-1"><span class="zh">表 15 原始数值：基线（PyTorch，CUDA）：7.28、11.80、12.64、11.50、2.33、5.08、2.72、4.46、7.69；其后各行：8.03、6.73、16.40、13.32、12.00、2.35、5.01、2.61、4.66、7.90；8.01、7.25、16.37、13.35、11.97、2.36、4.97、2.52、4.62、7.92；int4-mixed k-quant：8.12、7.15、16.72、13.52、12.08、2.36、5.02、2.64、4.70、7.88；int4 k-quant：8.20、7.20、17.05、13.60、12.10、2.38、5.04、2.83、4.65、7.98；int4 k-quant + ConvInt：10.14、8.00、20.55、11.68、14.73、5.32、10.14、3.05、5.64、9.98；8.46、7.30、18.94、13.52、12.12、2.42、5.10、2.85、4.72、8.05。下接：Nemotron-0.6B —— 0.16 s 延迟下的 ONNX int4 k-quant。</span></span></p>
+<div class="pblk" id="p-format-2">
+          <p class="en-lines"><span class="sent" data-sid="s-format-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-format-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-10"><span class="cap-k">表</span><p class="en">Table 16: Nemotron-0.6B int4 k-quant at 0.16 s algorithmic delay. Config: (2,20,2), 3.2 s history. CPU inference, batch_size=1.</p><p class="zh">表 16：Nemotron-0.6B int4 k-quant 在 0.16 s 算法延迟下的结果。配置：(2,20,2)，3.2 s 历史。CPU 推理，batch_size=1。</p></div>
-<div class="pblk" id="p-A-12">
-          <p class="en-lines"><span class="sent" data-sid="s-A-12-1"><span class="en">Variant Device 8.89 2.87 19.92 14.02 11.08 2.99 6.59 3.76 3.94 8.84 Earn. = Earnings22, Giga = GigaSpeech, LS-c/o = LibriSpeech Clean/Other, SPGI = SPGISpeech, TED = TED-LIUM, VoxP. = VoxPopuli.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-12-1"><span class="zh">表 16 原始数值：8.89、2.87、19.92、14.02、11.08、2.99、6.59、3.76、3.94、8.84。缩写说明：Earn. = Earnings22，Giga = GigaSpeech，LS-c/o = LibriSpeech Clean/Other，SPGI = SPGISpeech，TED = TED-LIUM，VoxP. = VoxPopuli。</span></span></p>
+<div class="pblk" id="p-format-3">
+          <p class="en-lines"><span class="sent" data-sid="s-format-3-1"><span class="en">ONNX fp16 1.30 GB</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-format-3-1"><span class="zh">1.
+（原始数据照录）
+ONNX fp16 1.30 GB</span></span></p>
           
         </div>
-<div class="pblk" id="p-A-13">
-          <p class="en-lines"><span class="sent" data-sid="s-A-13-1"><span class="en">Parenthesized values are reported by original authors.</span></span> <span class="sent" data-sid="s-A-13-2"><span class="en">A dash (–) indicates the configuration was not evaluated or results were incomplete.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-13-1"><span class="zh">括号内的数值为原作者报告的数字。</span></span><span class="sent" data-sid="s-A-13-2"><span class="zh">破折号（–）表示该配置未被评测或结果不完整。</span></span></p>
+<div class="eq" id="eq-format-1"><code>– – 21.46 – – 2.21 3.96 – – 6.82</code></div>
+<div class="eq" id="eq-format-2"><code>ONNX int8 1.02 GB</code></div>
+<div class="eq" id="eq-format-3"><code>9.92 97.10 18.82 21.19 12.92 2.18 4.25 7.17 5.79 7.07</code></div>
+<div class="eq" id="eq-format-4"><code>ONNX int4 0.74 GB</code></div>
+<div class="eq" id="eq-format-5"><code>11.50 112.94 21.22 26.34 14.39 2.16 4.02 8.97 8.17 6.77</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-A-5"><span class="secnum">A.5</span> <span class="t-zh">Canary-1B-v2 — All Configurations</span><span class="t-en">Canary-1B-v2 — All Configurations</span></h3><div class="cap" id="tab-A-5-1"><span class="cap-k">表</span><p class="en">Table 11: Canary-1B-v2 configurations (PyTorch bf16, CUDA, batch_size=16).</p><p class="zh">表 11：Canary-1B-v2 配置（PyTorch bf16，CUDA，batch_size=16）。</p></div>
+<div class="pblk" id="p-A-5-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-5-1-1"><span class="en">Model Config Size Avg RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-5-1-1"><span class="zh">表头：Model｜Config｜Size｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
           
         </div>
-<div class="pblk" id="p-A-14">
-          <p class="en-lines"><span class="sent" data-sid="s-A-14-1"><span class="en">CoreAI, Microsoft Corporation.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-14-1"><span class="zh">CoreAI，微软公司。</span></span></p>
+<div class="pblk" id="p-A-5-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-5-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-5-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
           
         </div>
-<div class="pblk" id="p-A-15">
-          <p class="en-lines"><span class="sent" data-sid="s-A-15-1"><span class="en">April 2026.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-15-1"><span class="zh">2026 年 4 月。</span></span></p>
+<div class="pblk" id="p-A-5-3">
+          <p class="en-lines"><span class="sent" data-sid="s-A-5-3-1"><span class="en">Canary-1B-v2 Batch 6.36 GB</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-5-3-1"><span class="zh">（表格行）Canary-1B-v2 / Batch / 6.36 GB。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-A-5-1"><code>(7.15) (749) (16.01) (11.79) (10.82) (2.18) (3.56) (2.28) (4.29) (6.25)</code></div>
+<div class="eq" id="eq-A-5-2"><code>Canary-1B-v2 Chunk 4.8 s 6.36 GB</code></div>
+<div class="eq" id="eq-A-5-3"><code>12.45 – 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98</code></div>
+<div class="pblk" id="p-A-5-4">
+          <p class="en-lines"><span class="sent" data-sid="s-A-5-4-1"><span class="en">Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-5-4-1"><span class="zh">2.
+（原始数据照录）
+Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.</span></span></p>
+          
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-A-6"><span class="secnum">A.6</span> <span class="t-zh">Conformer Transducer XL — All Configurations</span><span class="t-en">Conformer Transducer XL — All Configurations</span></h3><div class="cap" id="tab-A-6-1"><span class="cap-k">表</span><p class="en">Table 12: Conformer Transducer XL chunked configurations (PyTorch bf16, CUDA, batch_size=16). Config: delay (left-current-right = total context).</p><p class="zh">表 12：Conformer Transducer XL 分块配置（PyTorch bf16，CUDA，batch_size=16）。配置：延迟（左-当前-右 = 总上下文）。</p></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-config"><span class="t-zh">Config</span><span class="t-en">Config</span></h3><div class="pblk" id="p-config-1">
+          <p class="en-lines"><span class="sent" data-sid="s-config-1-1"><span class="en">Avg RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-config-1-1"><span class="zh">表头：Avg｜RTFx｜AMI｜Earn.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-config-2">
+          <p class="en-lines"><span class="sent" data-sid="s-config-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-config-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-config-3">
+          <p class="en-lines"><span class="sent" data-sid="s-config-3-1"><span class="en">6.4 s (1.6-4.8-1.6=8)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-config-3-1"><span class="zh">1.
+（原始数据照录）
+6.4 s (1.6-4.8-1.6=8)</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-config-1"><code>10.78 222.90 22.07 23.47 14.21 2.22 4.10 7.93 5.48 6.80</code></div>
+<div class="eq" id="eq-config-2"><code>3.2 s (4.8-1.6-1.6=8)</code></div>
+<div class="eq" id="eq-config-3"><code>10.96 133.69 22.31 24.22 13.99 2.04 3.78 7.86 5.40 8.05</code></div>
+<div class="eq" id="eq-config-4"><code>2.4 s (5.6-0.8-1.6=8)</code></div>
+<div class="eq" id="eq-config-5"><code>11.06 82.03 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18</code></div>
+<div class="eq" id="eq-config-6"><code>2.4 s (9.6-0.8-1.6=12)</code></div>
+<div class="eq" id="eq-config-7"><code>11.02 44.28 22.69 24.47 13.97 1.93 3.46 7.86 5.26 8.49</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-A-7"><span class="secnum">A.7</span> <span class="t-zh">Qwen3-ASR — All Configurations</span><span class="t-en">Qwen3-ASR — All Configurations</span></h3><div class="cap" id="tab-A-7-1"><span class="cap-k">表</span><p class="en">Table 13: Qwen3-ASR configurations (PyTorch, CUDA, batch_size=32).</p><p class="zh">表 13：Qwen3-ASR 配置（PyTorch，CUDA，batch_size=32）。</p></div>
+<div class="pblk" id="p-A-7-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-7-1-1"><span class="en">Model Config Avg RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-7-1-1"><span class="zh">表头：Model｜Config｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-7-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-7-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-7-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-7-3">
+          <p class="en-lines"><span class="sent" data-sid="s-A-7-3-1"><span class="en">Qwen3-ASR-1.7B Batch</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-7-3-1"><span class="zh">1.
+（原始数据照录）
+Qwen3-ASR-1.7B Batch</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-A-7-1"><code>5.90 187.91 11.76 10.26 8.75 1.60 3.41 2.83 2.28 6.34</code></div>
+<div class="eq" id="eq-A-7-2"><code>Qwen3-ASR-0.6B Batch</code></div>
+<div class="eq" id="eq-A-7-3"><code>6.69 194.71 13.77 11.03 9.16 2.12 4.47 3.04 2.83 7.09</code></div>
+<div class="eq" id="eq-A-7-4"><code>Qwen3-ASR-1.7B Chunk 3 s (1 s stride)</code></div>
+<div class="eq" id="eq-A-7-5"><code>9.69 61.70 15.54 14.94 11.28 3.58 5.99 5.26 5.03 9.90</code></div>
+<div class="eq" id="eq-A-7-6"><code>Qwen3-ASR-0.6B Chunk 3 s (1 s stride)</code></div>
+<div class="eq" id="eq-A-7-7"><code>9.81 64.11 17.47 15.05 11.37 3.94 7.02 5.22 5.02 13.41</code></div>
+<div class="eq" id="eq-A-7-8"><code>Qwen3-ASR-1.7B Chunk 2.4 s (1.2 s stride)</code></div>
+<div class="eq" id="eq-A-7-9"><code>10.45 42.76 16.97 16.92 12.29 4.95 7.69 6.70 6.34 11.75</code></div>
+<div class="eq" id="eq-A-7-10"><code>Qwen3-ASR-0.6B Chunk 2.4 s (1.2 s stride)</code></div>
+<div class="eq" id="eq-A-7-11"><code>10.41 46.32 18.55 16.60 12.00 4.97 8.31 6.13 5.75 10.99</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-A-8"><span class="secnum">A.8</span> <span class="t-zh">Cross-Model Streaming Comparison (CPU)</span><span class="t-en">Cross-Model Streaming Comparison (CPU)</span></h3><div class="cap" id="tab-A-8-1"><span class="cap-k">表</span><p class="en">Table 14: Cross-model streaming comparison (CPU, batch_size=1). Best streaming or lowlatency configuration per model.</p><p class="zh">表 14：跨模型流式对比（CPU，batch_size=1）。取每个模型最好的流式或低延迟配置。</p></div>
+<div class="pblk" id="p-A-8-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-8-1-1"><span class="en">Model Size Delay Avg BSF RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-8-1-1"><span class="zh">表头：Model｜Size｜Delay｜Avg｜BSF｜RTFx｜AMI｜Earn.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-8-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-8-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-8-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-8-3">
+          <p class="en-lines"><span class="sent" data-sid="s-A-8-3-1"><span class="en">Nemotron-0.6B 2.47 GB 0.56 s</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-8-3-1"><span class="zh">2.
+（原始数据照录）
+Nemotron-0.6B 2.47 GB 0.56 s</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-A-8-1"><code>7.28 1.03 2.46 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69</code></div>
+<div class="eq" id="eq-A-8-2"><code>Qwen3-ASR-1.7B 4.70 GB 2.4 s</code></div>
+<div class="eq" id="eq-A-8-3"><code>10.45 1.77 0.49 16.97 16.92 12.29 4.95 7.69 6.70 6.34 11.75</code></div>
+<div class="eq" id="eq-A-8-4"><code>Parakeet TDT-0.6B-v3 2.51 GB 2.4 s</code></div>
+<div class="eq" id="eq-A-8-5"><code>12.83 2.03 1.38 16.73 19.81 15.27 6.63 8.25 17.82 9.95 8.19</code></div>
+<div class="eq" id="eq-A-8-6"><code>Conformer Trans. XL 2.58 GB 2.4 s</code></div>
+<div class="eq" id="eq-A-8-7"><code>11.06 – 1.27 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18</code></div>
+<div class="eq" id="eq-A-8-8"><code>Canary-1B-v2 6.36 GB 4.8 s</code></div>
+<div class="eq" id="eq-A-8-9"><code>12.45 1.74 2.93 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-A-9"><span class="secnum">A.9</span> <span class="t-zh">Nemotron-0.6B — ONNX Quantization Results</span><span class="t-en">Nemotron-0.6B — ONNX Quantization Results</span></h3><div class="cap" id="tab-A-9-1"><span class="cap-k">表</span><p class="en">Table 15: Nemotron-0.6B ONNX quantization results. Config: (7,10,7), 0.56 s delay, 5.6 s history. CPU inference, batch_size=1.</p><p class="zh">表 15：Nemotron-0.6B ONNX 量化结果。配置：(7,10,7)，0.56 s 延迟，5.6 s 历史。CPU 推理，batch_size=1。</p></div>
+<div class="pblk" id="p-A-9-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-9-1-1"><span class="en">Variant Format Size Device Avg RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-9-1-1"><span class="zh">表头：Variant｜Format｜Size｜Device｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-9-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-9-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-9-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-9-3">
+          <p class="en-lines"><span class="sent" data-sid="s-A-9-3-1"><span class="en">Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-9-3-1"><span class="zh">2.
+（原始数据照录）
+Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-A-9-1"><code>7.28 – 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69</code></div>
+<div class="eq" id="eq-A-9-2"><code>FP32 ONNX 2.47 GB CPU</code></div>
+<div class="eq" id="eq-A-9-3"><code>8.03 6.73 16.40 13.32 12.00 2.35 5.01 2.61 4.66 7.90</code></div>
+<div class="eq" id="eq-A-9-4"><code>int8 k-quant ONNX 1.28 GB CPU</code></div>
+<div class="eq" id="eq-A-9-5"><code>8.01 7.25 16.37 13.35 11.97 2.36 4.97 2.52 4.62 7.92</code></div>
+<div class="eq" id="eq-A-9-6"><code>int4-mixed k-quant ONNX 0.73 GB CPU</code></div>
+<div class="eq" id="eq-A-9-7"><code>8.12 7.15 16.72 13.52 12.08 2.36 5.02 2.64 4.70 7.88</code></div>
+<div class="eq" id="eq-A-9-8"><code>int4 k-quant ONNX 0.67 GB CPU</code></div>
+<div class="eq" id="eq-A-9-9"><code>8.20 7.20 17.05 13.60 12.10 2.38 5.04 2.83 4.65 7.98</code></div>
+<div class="eq" id="eq-A-9-10"><code>int4 k-quant + ConvInt ONNX 0.67 GB CPU</code></div>
+<div class="eq" id="eq-A-9-11"><code>10.14 8.00 20.55 11.68 14.73 5.32 10.14 3.05 5.64 9.98</code></div>
+<div class="eq" id="eq-A-9-12"><code>int4 RTN ONNX 0.66 GB CPU</code></div>
+<div class="eq" id="eq-A-9-13"><code>8.46 7.30 18.94 13.52 12.12 2.42 5.10 2.85 4.72 8.05</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-A-10"><span class="secnum">A.10</span> <span class="t-zh">Nemotron-0.6B — ONNX int4 k-quant at 0.16s Delay</span><span class="t-en">Nemotron-0.6B — ONNX int4 k-quant at 0.16s Delay</span></h3><div class="cap" id="tab-A-10-1"><span class="cap-k">表</span><p class="en">Table 16: Nemotron-0.6B int4 k-quant at 0.16 s algorithmic delay. Config: (2,20,2), 3.2 s history. CPU inference, batch_size=1.</p><p class="zh">表 16：Nemotron-0.6B int4 k-quant 在 0.16 s 算法延迟下的结果。配置：(2,20,2)，3.2 s 历史。CPU 推理，batch_size=1。</p></div>
+<div class="pblk" id="p-A-10-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-10-1-1"><span class="en">Variant Format Size Device Avg RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-10-1-1"><span class="zh">表头：Variant｜Format｜Size｜Device｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-10-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-10-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP. int4 k-quant ONNX 0.67 GB CPU</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-10-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。
+（原始数据照录）
+Giga LS-c LS-o SPGI TED VoxP. int4 k-quant ONNX 0.67 GB CPU</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-A-10-1"><code>8.89 2.87 19.92 14.02 11.08 2.99 6.59 3.76 3.94 8.84</code></div>
+<div class="pblk" id="p-A-10-3">
+          <p class="en-lines"><span class="sent" data-sid="s-A-10-3-1"><span class="en">Earn. = Earnings22, Giga = GigaSpeech, LS-c/o = LibriSpeech Clean/Other, SPGI = SPGISpeech, TED = TED-LIUM, VoxP. = VoxPopuli.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-10-3-1"><span class="zh">（表格行+表注）Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.；int4 k-quant ONNX 0.67 GB CPU：8.89/2.87/19.92/14.02/11.08/2.99/6.59/3.76/3.94/8.84。表注：Earn. = Earnings22，Giga = GigaSpeech，LS-c/o = LibriSpeech Clean/Other，SPGI = SPGISpeech，TED = TED-LIUM，VoxP. = VoxPopuli。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-10-4">
+          <p class="en-lines"><span class="sent" data-sid="s-A-10-4-1"><span class="en">Parenthesized values are reported by original authors.</span></span> <span class="sent" data-sid="s-A-10-4-2"><span class="en">A dash (–) indicates the configuration was not evaluated or results were incomplete.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-10-4-1"><span class="zh">括号内的数值为原作者报告的数字。</span></span><span class="sent" data-sid="s-A-10-4-2"><span class="zh">破折号（–）表示该配置未被评测或结果不完整。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-10-5">
+          <p class="en-lines"><span class="sent" data-sid="s-A-10-5-1"><span class="en">CoreAI, Microsoft Corporation.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-10-5-1"><span class="zh">CoreAI，微软公司。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-10-6">
+          <p class="en-lines"><span class="sent" data-sid="s-A-10-6-1"><span class="en">April 2026.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-10-6-1"><span class="zh">2026 年 4 月。</span></span></p>
           
         </div></section></article>
   <footer class="foot">

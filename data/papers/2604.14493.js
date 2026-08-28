@@ -280,21 +280,33 @@ globalThis.PAPER_2604_14493 = {
      "page": 2,
      "original": "Table 1: Overview of evaluated model families.",
      "zh": "表 1：被评测模型族概览。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-model",
+   "num": null,
+   "level": 2,
+   "page": 2,
+   "title": {
+    "original": "Model",
+    "zh": "Model"
+   },
+   "blocks": [
     {
-     "id": "p-2-2",
+     "id": "p-model-1",
      "type": "paragraph",
      "page": 2,
      "sentences": [
       {
-       "id": "s-2-2-1",
-       "original": "Architecture Modes Whisper Large-v3-Turbo Encoder–Decoder Whisper Small Encoder–Decoder Chunk/Batch Cache-aware Transducer Stream/Batch TDT Transducer Chunk/Batch AED + AlignAtt Chunk/Batch Conformer Trans.",
-       "zh": "架构与推理模式概览：Whisper Large-v3-Turbo 为编码器-解码器；Whisper Small 为编码器-解码器（分块/批处理）；cache-aware Transducer 支持流式/批处理；TDT Transducer 为分块/批处理；AED + AlignAtt 为分块/批处理；Conformer Trans.（转下句）"
+       "id": "s-model-1-1",
+       "original": "Architecture Modes Size Whisper Large-v3-Turbo Encoder–Decoder Batch 1.62 GB Whisper Small Encoder–Decoder Chunk/Batch 0.97 GB Nemotron-0.6B Cache-aware Transducer Stream/Batch 2.47 GB Parakeet TDT-0.6B-v3 TDT Transducer Chunk/Batch 2.51 GB Canary-1B-v2 AED + AlignAtt Chunk/Batch 6.36 GB Conformer Trans.",
+       "zh": "（表 1 模型清单：Architecture × Modes × Size——Whisper Large-v3-Turbo（编码器-解码器，Batch，1.62 GB）；Whisper Small（编码器-解码器，Chunk/Batch，0.97 GB）；Nemotron-0.6B（Cache-aware Transducer，Stream/Batch，2.47 GB）；Parakeet TDT-0.6B-v3（TDT Transducer，Chunk/Batch，2.51 GB）；Canary-1B-v2（AED + AlignAtt，Chunk/Batch，6.36 GB）；Conformer Trans.（后续照原文）。）"
       },
       {
-       "id": "s-2-2-2",
-       "original": "XL Conformer Transducer Chunk LLM-based ASR Batch/Chunk LLM-based ASR Batch/Chunk",
-       "zh": "XL 为 Conformer Transducer（分块）；基于 LLM 的 ASR 为批处理/分块；基于 LLM 的 ASR 为批处理/分块。"
+       "id": "s-model-1-2",
+       "original": "XL Conformer Transducer Chunk 2.58 GB Qwen3-ASR-1.7B LLM-based ASR Batch/Chunk 4.70 GB Qwen3-ASR-0.6B LLM-based ASR Batch/Chunk 1.88 GB",
+       "zh": "（表 1 续：XL Conformer Transducer（Chunk，2.58 GB）；Qwen3-ASR-1.7B（LLM-based ASR，Batch/Chunk，4.70 GB）；Qwen3-ASR-0.6B（LLM-based ASR，Batch/Chunk，1.88 GB）。）"
       }
      ]
     }
@@ -519,8 +531,8 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-dataset-1-1",
-       "original": "Domain Characteristics Meeting transcription Overlapping speech, far-field Earnings22 Financial earnings calls Domain-specific terminology GigaSpeech Internet audio Diverse topics and acoustics LibriSpeech Clean Audiobook (clean) Read speech, studio quality LibriSpeech Other Audiobook (other) Read speech, noisier conditions SPGISpeech Financial transcription Professional dictation TED-LIUM TED talks Prepared speech, varied topics VoxPopuli European Parliament Spontaneous speech, accented",
-       "zh": "数据集及领域特征如下：会议转写——重叠语音、远场；Earnings22——金融财报电话会，含领域专门术语；GigaSpeech——互联网音频，主题与声学环境多样；LibriSpeech Clean——有声书（干净），朗读语音、录音棚质量；LibriSpeech Other——有声书（其他），朗读语音、条件更嘈杂；SPGISpeech——金融转写，专业口述；TED-LIUM——TED 演讲，准备过的讲话、主题多样；VoxPopuli——欧洲议会，自发言语、带口音。"
+       "original": "Domain Characteristics AMI Meeting transcription Overlapping speech, far-field Earnings22 Financial earnings calls Domain-specific terminology GigaSpeech Internet audio Diverse topics and acoustics LibriSpeech Clean Audiobook (clean) Read speech, studio quality LibriSpeech Other Audiobook (other) Read speech, noisier conditions SPGISpeech Financial transcription Professional dictation TED-LIUM TED talks Prepared speech, varied topics VoxPopuli European Parliament Spontaneous speech, accented",
+       "zh": "（表 1 评测集：AMI——会议转写，重叠语音、远场；Earnings22——财报电话会，领域术语；GigaSpeech——互联网音频，主题与声学多样；LibriSpeech Clean——有声书（干净），朗读、录音棚质量；LibriSpeech Other——有声书（其他），更嘈杂；SPGISpeech——财经转写，专业口述；TED-LIUM——TED 演讲，有准备的演讲、主题多样；VoxPopuli——欧洲议会，即兴发言、带口音。）"
       }
      ]
     }
@@ -626,15 +638,33 @@ globalThis.PAPER_2604_14493 = {
       },
       {
        "id": "s-3-2-5-2",
-       "original": "For streaming ASR, we can also define the effective latency, bounded by the algorithmic delay plus the compute time for a single chunk: effective latency ≈delay+ chunk duration .",
-       "zh": "对流式 ASR，还可以定义有效延迟，其上界为算法延迟加上单个片段的计算时间：有效延迟 ≈ 延迟 + 块时长 / RTFx。"
+       "original": "For streaming ASR, we can also define the effective latency, bounded by the algorithmic delay plus the compute time for a single chunk: effective latency ≈delay+ chunk duration RTFx .",
+       "zh": "对流式 ASR 还可定义有效延迟，其上界为算法延迟加上单 chunk 计算时间：effective latency ≈ delay + chunk duration / RTFx。"
       },
       {
        "id": "s-3-2-5-3",
-       "original": "When the algorithmic delay equals the chunk duration (as in all Nemotron configurations we evaluate), this simplifies to effective latency ≈delay · 1 + 1 .",
-       "zh": "当算法延迟等于块时长时（我们评测的所有 Nemotron 配置都满足这一点），上式简化为：有效延迟 ≈ 延迟 · (1 + 1/RTFx)。"
+       "original": "When the algorithmic delay equals the chunk duration (as in all Nemotron configurations we evaluate), this simplifies to effective latency ≈delay ·",
+       "zh": "当算法延迟等于 chunk 时长时（我们评测的所有 Nemotron 配置均如此），简化为 effective latency ≈ delay · (1 + 1/RTFx)。"
       }
      ]
+    },
+    {
+     "id": "eq-3-2-1",
+     "type": "equation",
+     "page": 4,
+     "original": "1 + 1"
+    },
+    {
+     "id": "eq-3-2-2",
+     "type": "equation",
+     "page": 4,
+     "original": "RTFx"
+    },
+    {
+     "id": "eq-3-2-3",
+     "type": "equation",
+     "page": 4,
+     "original": "."
     },
     {
      "id": "p-3-2-6",
@@ -734,31 +764,169 @@ globalThis.PAPER_2604_14493 = {
      "page": 5,
      "original": "Table 3: Batch-mode WER (%) comparison across models.",
      "zh": "表 3：各模型批处理模式 WER（%）对比。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-model-2",
+   "num": null,
+   "level": 2,
+   "page": 5,
+   "title": {
+    "original": "Model",
+    "zh": "Model"
+   },
+   "blocks": [
     {
-     "id": "p-4-2",
+     "id": "p-model-2-1",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-4-2-1",
-       "original": "5.90 11.76 10.26 8.75 1.60 3.41 2.83 2.28 6.34 6.69 13.77 11.03 9.16 2.12 4.47 3.04 2.83 7.09 6.32 11.39 11.19 9.57 1.92 3.59 3.98 2.80 6.09 7.15 16.01 11.79 10.82 2.18 3.56 2.28 4.29 6.25 7.07 11.16 12.38 11.35 2.28 4.83 2.63 4.42 7.48 Whisper-v3-Turbo 7.83 16.13 11.63 10.14 2.10 4.24 2.97 3.57 11.87 Whisper-v3-Turbo (ORT) 7.52 16.36 11.38 10.13 2.17 4.24 2.93 3.62 9.30 Whisper Small.en 8.59 17.93 12.97 11.35 3.05 7.25 3.60 4.07 8.50 Earn. = Earnings22, Giga = GigaSpeech, LS-c/o = LibriSpeech Clean/Other, SPGI = SPGISpeech, TED = TED-LIUM, VoxP. = VoxPopuli.",
-       "zh": "表 3 原始数值（%）依次为：5.90、11.76、10.26、8.75、1.60、3.41、2.83、2.28、6.34；6.69、13.77、11.03、9.16、2.12、4.47、3.04、2.83、7.09；6.32、11.39、11.19、9.57、1.92、3.59、3.98、2.80、6.09；7.15、16.01、11.79、10.82、2.18、3.56、2.28、4.29、6.25；7.07、11.16、12.38、11.35、2.28、4.83、2.63、4.42、7.48。Whisper-v3-Turbo：7.83、16.13、11.63、10.14、2.10、4.24、2.97、3.57、11.87。Whisper-v3-Turbo (ORT)：7.52、16.36、11.38、10.13、2.17、4.24、2.93、3.62、9.30。Whisper Small.en：8.59、17.93、12.97、11.35、3.05、7.25、3.60、4.07、8.50。缩写说明：Earn. = Earnings22，Giga = GigaSpeech，LS-c/o = LibriSpeech Clean/Other，SPGI = SPGISpeech，TED = TED-LIUM，VoxP. = VoxPopuli。"
+       "id": "s-model-2-1-1",
+       "original": "Avg AMI Earn.",
+       "zh": "表头：Avg（平均）｜AMI｜Earn.（Earnings22，后同）。"
       }
      ]
     },
     {
-     "id": "p-4-3",
+     "id": "p-model-2-2",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-4-3-1",
+       "id": "s-model-2-2-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP.",
+       "zh": "表头续：Giga（GigaSpeech）｜LS-c（LibriSpeech clean）｜LS-o（LibriSpeech other）｜SPGI（SPGISpeech）｜TED（TED-LIUM）｜VoxP.（VoxPopuli）。"
+      }
+     ]
+    },
+    {
+     "id": "p-model-2-3",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-model-2-3-1",
+       "original": "Qwen3-ASR-1.7B",
+       "zh": "然而，表现最好的模型——Qwen3-ASR-1.7B 的 WER 为 5.90%，Parakeet TDT-0.6B-v3 为 6.32%，Canary-1B-v2 为 7.15%——都是以批处理为主的架构，需要 2–7 GB 内存和 GPU 推理。"
+      }
+     ]
+    },
+    {
+     "id": "eq-model-2-1",
+     "type": "equation",
+     "page": 5,
+     "original": "5.90 11.76 10.26 8.75 1.60 3.41 2.83 2.28 6.34"
+    },
+    {
+     "id": "eq-model-2-2",
+     "type": "equation",
+     "page": 5,
+     "original": "Qwen3-ASR-0.6B"
+    },
+    {
+     "id": "eq-model-2-3",
+     "type": "equation",
+     "page": 5,
+     "original": "6.69 13.77 11.03 9.16 2.12 4.47 3.04 2.83 7.09"
+    },
+    {
+     "id": "eq-model-2-4",
+     "type": "equation",
+     "page": 5,
+     "original": "Parakeet TDT-0.6B-v3"
+    },
+    {
+     "id": "eq-model-2-5",
+     "type": "equation",
+     "page": 5,
+     "original": "6.32 11.39 11.19 9.57 1.92 3.59 3.98 2.80 6.09"
+    },
+    {
+     "id": "eq-model-2-6",
+     "type": "equation",
+     "page": 5,
+     "original": "Canary-1B-v2"
+    },
+    {
+     "id": "eq-model-2-7",
+     "type": "equation",
+     "page": 5,
+     "original": "7.15 16.01 11.79 10.82 2.18 3.56 2.28 4.29 6.25"
+    },
+    {
+     "id": "eq-model-2-8",
+     "type": "equation",
+     "page": 5,
+     "original": "Nemotron-0.6B"
+    },
+    {
+     "id": "eq-model-2-9",
+     "type": "equation",
+     "page": 5,
+     "original": "7.07 11.16 12.38 11.35 2.28 4.83 2.63 4.42 7.48"
+    },
+    {
+     "id": "eq-model-2-10",
+     "type": "equation",
+     "page": 5,
+     "original": "Whisper-v3-Turbo"
+    },
+    {
+     "id": "eq-model-2-11",
+     "type": "equation",
+     "page": 5,
+     "original": "7.83 16.13 11.63 10.14 2.10 4.24 2.97 3.57 11.87"
+    },
+    {
+     "id": "eq-model-2-12",
+     "type": "equation",
+     "page": 5,
+     "original": "Whisper-v3-Turbo (ORT)"
+    },
+    {
+     "id": "eq-model-2-13",
+     "type": "equation",
+     "page": 5,
+     "original": "7.52 16.36 11.38 10.13 2.17 4.24 2.93 3.62 9.30"
+    },
+    {
+     "id": "eq-model-2-14",
+     "type": "equation",
+     "page": 5,
+     "original": "Whisper Small.en"
+    },
+    {
+     "id": "eq-model-2-15",
+     "type": "equation",
+     "page": 5,
+     "original": "8.59 17.93 12.97 11.35 3.05 7.25 3.60 4.07 8.50"
+    },
+    {
+     "id": "p-model-2-4",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-model-2-4-1",
+       "original": "Earn. = Earnings22, Giga = GigaSpeech, LS-c/o = LibriSpeech Clean/Other, SPGI = SPGISpeech, TED = TED-LIUM, VoxP. = VoxPopuli.",
+       "zh": "（表格行+表注）Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.；int4 k-quant ONNX 0.67 GB CPU：8.89/2.87/19.92/14.02/11.08/2.99/6.59/3.76/3.94/8.84。表注：Earn. = Earnings22，Giga = GigaSpeech，LS-c/o = LibriSpeech Clean/Other，SPGI = SPGISpeech，TED = TED-LIUM，VoxP. = VoxPopuli。"
+      }
+     ]
+    },
+    {
+     "id": "p-model-2-5",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-model-2-5-1",
        "original": "Qwen3-ASR-1.7B achieves the best batch WER among the evaluated models, however, its size of 4.70 GB exceeds our size requirements by far.",
        "zh": "Qwen3-ASR-1.7B 在被评测模型中取得了最好的批处理 WER，但其 4.70 GB 的体积远超我们的体积要求。"
       },
       {
-       "id": "s-4-3-2",
+       "id": "s-model-2-5-2",
        "original": "Qwen3-ASR-0.6B, Parakeet TDT-0.6B- v3, and Nemotron-0.6B are all promising, so we next evaluate them in streaming and chunked settings.",
        "zh": "Qwen3-ASR-0.6B、Parakeet TDT-0.6B-v3 和 Nemotron-0.6B 都很有潜力，因此我们接下来在流式与分块设置下评测它们。"
       }
@@ -810,16 +978,58 @@ globalThis.PAPER_2604_14493 = {
      ]
     },
     {
-     "id": "p-5-1-2",
-     "type": "paragraph",
+     "id": "eq-5-1-1",
+     "type": "equation",
      "page": 5,
-     "sentences": [
-      {
-       "id": "s-5-1-2-1",
-       "original": "35 32.2% (4s ctx) 30 25 20 15 10 Parakeet TDT configs Parakeet batch: 6.32% 5 10 15 20 25 30 35 Total Context Window (seconds) 5",
-       "zh": "图 1 原始坐标元素：纵轴 WER 刻度最高约 35、另有 30、25、20、15、10，其中标注 32.2%（4 s 上下文）；横轴为总上下文窗口（秒），刻度 5、10、15、20、25、30、35；散点为 Parakeet TDT 各配置，参考线为 Parakeet 批处理基线 6.32%。"
-      }
-     ]
+     "original": "35 32.2%"
+    },
+    {
+     "id": "eq-5-1-2",
+     "type": "equation",
+     "page": 5,
+     "original": "(4s ctx)"
+    },
+    {
+     "id": "eq-5-1-3",
+     "type": "equation",
+     "page": 5,
+     "original": "30 25"
+    },
+    {
+     "id": "eq-5-1-4",
+     "type": "equation",
+     "page": 5,
+     "original": "Average WER (%)"
+    },
+    {
+     "id": "eq-5-1-5",
+     "type": "equation",
+     "page": 5,
+     "original": "20 15 10"
+    },
+    {
+     "id": "eq-5-1-6",
+     "type": "equation",
+     "page": 5,
+     "original": "Parakeet TDT configs Parakeet batch: 6.32%"
+    },
+    {
+     "id": "eq-5-1-7",
+     "type": "equation",
+     "page": 5,
+     "original": "5 10 15 20 25 30 35"
+    },
+    {
+     "id": "eq-5-1-8",
+     "type": "equation",
+     "page": 5,
+     "original": "Total Context Window (seconds)"
+    },
+    {
+     "id": "eq-5-1-9",
+     "type": "equation",
+     "page": 5,
+     "original": "5"
     },
     {
      "id": "fig-5-1-1",
@@ -829,17 +1039,17 @@ globalThis.PAPER_2604_14493 = {
      "zh": "图 1：Parakeet TDT-0.6B-v3：在 18 种分块配置下 WER 随总上下文窗口的变化。即使是最好的分块配置（9.22%），相比 6.32% 的批处理基线也有明显退化。"
     },
     {
-     "id": "p-5-1-3",
+     "id": "p-5-1-2",
      "type": "paragraph",
      "page": 5,
      "sentences": [
       {
-       "id": "s-5-1-3-1",
+       "id": "s-5-1-2-1",
        "original": "The best Parakeet chunked configuration achieves 9.22% WER, a 46% relative increase over its 6.32% batch WER.",
        "zh": "最好的 Parakeet 分块配置取得 9.22% 的 WER，相对其 6.32% 的批处理 WER 上升了 46%。"
       },
       {
-       "id": "s-5-1-3-2",
+       "id": "s-5-1-2-2",
        "original": "This analysis confirms that models not specifically designed for streaming incur substantial penalties when adapted to chunked operation, motivating our focus on natively streaming architectures.",
        "zh": "这一分析证实：未针对流式专门设计的模型在被改造为分块运行时会付出很大代价，这也促使我们把重点转向原生流式架构。"
       }
@@ -893,10 +1103,148 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-5-2-2-1",
-       "original": "History Batch (offline) 7.07 11.16 12.38 11.35 2.28 4.83 2.63 4.42 7.48 7.10 11.31 12.46 11.39 2.28 4.84 2.64 4.42 7.47 7.46 11.38 12.49 11.39 2.41 5.07 2.71 4.50 9.75 7.28 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 8.51 11.93 13.93 11.76 3.43 6.00 3.47 5.11 12.49 8.04 14.82 13.66 12.44 2.49 5.52 2.90 4.72 7.79 8.91 17.76 14.64 13.33 2.61 5.93 3.73 5.06 8.24 9.0 8.5 8.0 7.5 7.0 Configurations Selected: (7,10,7) 0 1 2 3 4 5 6 Algorithmic Delay (seconds) 6.5",
-       "zh": "表 4 原始数值：历史（History）与批处理（离线）行：7.07、11.16、12.38、11.35、2.28、4.83、2.63、4.42、7.48；其后各流式配置行依次为 7.10、11.31、12.46、11.39、2.28、4.84、2.64、4.42、7.47；7.46、11.38、12.49、11.39、2.41、5.07、2.71、4.50、9.75；7.28、11.80、12.64、11.50、2.33、5.08、2.72、4.46、7.69；8.51、11.93、13.93、11.76、3.43、6.00、3.47、5.11、12.49；8.04、14.82、13.66、12.44、2.49、5.52、2.90、4.72、7.79；8.91、17.76、14.64、13.33、2.61、5.93、3.73、5.06、8.24。图 2 坐标元素：纵轴 WER 刻度 9.0、8.5、8.0、7.5、7.0，横轴为算法延迟（秒）刻度 0、1、2、3、4、5、6，标注 Selected: (7,10,7) 与 6.5。"
+       "original": "Config Delay History Avg AMI Earn.",
+       "zh": "表头：Config（配置）｜Delay（延迟）｜History（历史）｜Avg｜AMI｜Earn.。"
       }
      ]
+    },
+    {
+     "id": "p-5-2-3",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-5-2-3-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP.",
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-2-4",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-5-2-4-1",
+       "original": "Batch (offline)",
+       "zh": "（表头行）Batch (offline)（离线批处理）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-5-2-1",
+     "type": "equation",
+     "page": 6,
+     "original": "– – 7.07 11.16 12.38 11.35 2.28 4.83 2.63 4.42 7.48 (70, 2, 70)"
+    },
+    {
+     "id": "eq-5-2-2",
+     "type": "equation",
+     "page": 6,
+     "original": "5.6 s 11.2 s"
+    },
+    {
+     "id": "eq-5-2-3",
+     "type": "equation",
+     "page": 6,
+     "original": "7.10 11.31 12.46 11.39 2.28 4.84 2.64 4.42 7.47 (14, 2, 14)"
+    },
+    {
+     "id": "eq-5-2-4",
+     "type": "equation",
+     "page": 6,
+     "original": "1.12 s 2.24 s"
+    },
+    {
+     "id": "eq-5-2-5",
+     "type": "equation",
+     "page": 6,
+     "original": "7.46 11.38 12.49 11.39 2.41 5.07 2.71 4.50 9.75 (7, 10, 7)"
+    },
+    {
+     "id": "eq-5-2-6",
+     "type": "equation",
+     "page": 6,
+     "original": "0.56 s 5.6 s"
+    },
+    {
+     "id": "eq-5-2-7",
+     "type": "equation",
+     "page": 6,
+     "original": "7.28 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 (7, 2, 7)"
+    },
+    {
+     "id": "eq-5-2-8",
+     "type": "equation",
+     "page": 6,
+     "original": "0.56 s 1.12 s"
+    },
+    {
+     "id": "eq-5-2-9",
+     "type": "equation",
+     "page": 6,
+     "original": "8.51 11.93 13.93 11.76 3.43 6.00 3.47 5.11 12.49 (2, 35, 2)"
+    },
+    {
+     "id": "eq-5-2-10",
+     "type": "equation",
+     "page": 6,
+     "original": "0.16 s 5.6 s"
+    },
+    {
+     "id": "eq-5-2-11",
+     "type": "equation",
+     "page": 6,
+     "original": "8.04 14.82 13.66 12.44 2.49 5.52 2.90 4.72 7.79 (1, 70, 1)"
+    },
+    {
+     "id": "eq-5-2-12",
+     "type": "equation",
+     "page": 6,
+     "original": "0.08 s 5.6 s"
+    },
+    {
+     "id": "eq-5-2-13",
+     "type": "equation",
+     "page": 6,
+     "original": "8.91 17.76 14.64 13.33 2.61 5.93 3.73 5.06 8.24 9.0 (7,2,7) 8.5"
+    },
+    {
+     "id": "eq-5-2-14",
+     "type": "equation",
+     "page": 6,
+     "original": "Average WER (%)"
+    },
+    {
+     "id": "eq-5-2-15",
+     "type": "equation",
+     "page": 6,
+     "original": "8.0 (2,35,2) (14,2,14) 7.5 (7,10,7) 7.0"
+    },
+    {
+     "id": "eq-5-2-16",
+     "type": "equation",
+     "page": 6,
+     "original": "Configurations Selected: (7,10,7)"
+    },
+    {
+     "id": "eq-5-2-17",
+     "type": "equation",
+     "page": 6,
+     "original": "(70,2,70) 0 1 2 3 4 5 6"
+    },
+    {
+     "id": "eq-5-2-18",
+     "type": "equation",
+     "page": 6,
+     "original": "Algorithmic Delay (seconds)"
+    },
+    {
+     "id": "eq-5-2-19",
+     "type": "equation",
+     "page": 6,
+     "original": "6.5"
     },
     {
      "id": "fig-5-2-1",
@@ -906,27 +1254,27 @@ globalThis.PAPER_2604_14493 = {
      "zh": "图 2：Nemotron-0.6B：不同流式配置下延迟与 WER 的权衡。配置 (7,10,7) 以 0.56 s 延迟和 5.6 s 历史取得最佳平衡，WER 达 7.28%，仅比批处理基线高 0.21%。"
     },
     {
-     "id": "p-5-2-3",
+     "id": "p-5-2-5",
      "type": "paragraph",
      "page": 6,
      "sentences": [
       {
-       "id": "s-5-2-3-1",
+       "id": "s-5-2-5-1",
        "original": "The configuration (7, 10, 7) emerges as the optimal operating point: it provides only 0.56 s of algorithmic delay while achieving 7.28% average WER, merely 0.21% absolute above the offline batch baseline.",
        "zh": "配置 (7, 10, 7) 成为最优工作点：算法延迟仅 0.56 s，同时平均 WER 为 7.28%，只比离线批处理基线高 0.21%（绝对值）。"
       },
       {
-       "id": "s-5-2-3-2",
+       "id": "s-5-2-5-2",
        "original": "In contrast, the best Parakeet chunked result (9.22%) is 1.94 percentage points worse at 4× higher latency.",
        "zh": "相比之下，Parakeet 最好的分块结果（9.22%）要差 1.94 个百分点，且延迟是其 4×。"
       },
       {
-       "id": "s-5-2-3-3",
+       "id": "s-5-2-5-3",
        "original": "The key insight is that sufficient history context (5.6 s via 10 left chunks) is critical.",
        "zh": "关键洞察在于：充足的历史上下文（通过 10 个左侧块提供 5.6 s 历史）至关重要。"
       },
       {
-       "id": "s-5-2-3-4",
+       "id": "s-5-2-5-4",
        "original": "It’s interesting to compare (7, 10, 7) at 7.28% WER with (7, 2, 7) at 8.51% WER, where the only difference is reduced history.",
        "zh": "有趣的是，把 (7, 10, 7) 的 7.28% WER 与 (7, 2, 7) 的 8.51% WER 对比，二者唯一的差别就是历史被缩短了。"
       }
@@ -975,13 +1323,8 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-5-3-2-1",
-       "original": "BSF 7.28 1.03 2.46 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 10.45 1.77 0.49 16.97 16.92 12.29 4.95 7.69 6.70 6.34 11.75 12.83 2.03 1.38 16.73 19.81 15.27 6.63 8.25 17.82 9.95 8.19 Conformer Trans.",
-       "zh": "表 5 原始数值（含 BSF 列）：7.28、1.03、2.46、11.80、12.64、11.50、2.33、5.08、2.72、4.46、7.69；10.45、1.77、0.49、16.97、16.92、12.29、4.95、7.69、6.70、6.34；11.75、12.83、2.03、1.38、16.73、19.81、15.27、6.63、8.25、17.82、9.95、8.19；Conformer Trans.（转下句）"
-      },
-      {
-       "id": "s-5-3-2-2",
-       "original": "XL 11.06 1.27 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18 12.45 1.74 2.93 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98 Key observations:",
-       "zh": "XL：11.06、1.27、22.57、24.44、14.05、2.11、3.83、7.95、5.36、8.18；12.45、1.74、2.93、22.10、22.04、14.60、4.87、5.96、4.42、7.64、17.98。关键观察："
+       "original": "Model Size Delay Avg BSF RTFx AMI Earn.",
+       "zh": "表头：Model｜Size｜Delay｜Avg｜BSF｜RTFx｜AMI｜Earn.。"
       }
      ]
     },
@@ -992,8 +1335,8 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-5-3-3-1",
-       "original": "• Nemotron-0.6B achieves the best streaming WER (7.28%) among all models tested, while also having the lowest latency at 0.56 s and a BSF of 1.03, essentially no degradation from batch mode.",
-       "zh": "• Nemotron-0.6B 在所有被测模型中取得最好的流式 WER（7.28%），延迟也最低（0.56 s），BSF 为 1.03，相对批处理模式几乎没有退化。"
+       "original": "Giga LS-c LS-o SPGI TED VoxP.",
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。"
       }
      ]
     },
@@ -1004,15 +1347,64 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-5-3-4-1",
-       "original": "• Qwen3-ASR-1.7B, despite being the best batch model among the tested models, degrades significantly in chunked mode (BSF = 1.77) and runs below real-time on CPU (RTFx = 0.49), making it unsuitable for edge deployment.",
-       "zh": "• Qwen3-ASR-1.7B 虽然是被测模型中批处理最强的模型，但在分块模式下退化显著（BSF = 1.77），且在 CPU 上跑不过实时（RTFx = 0.49），不适合边缘部署。"
-      },
-      {
-       "id": "s-5-3-4-2",
-       "original": "The Qwen3-ASR-0.6B model showed similar results, as shown in the appendix.",
-       "zh": "Qwen3-ASR-0.6B 模型也呈现类似结果，见附录。"
+       "original": "Nemotron-0.6B 2.47 GB 0.56 s",
+       "zh": "2.\n（原始数据照录）\nNemotron-0.6B 2.47 GB 0.56 s"
       }
      ]
+    },
+    {
+     "id": "eq-5-3-1",
+     "type": "equation",
+     "page": 7,
+     "original": "7.28 1.03 2.46 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69"
+    },
+    {
+     "id": "eq-5-3-2",
+     "type": "equation",
+     "page": 7,
+     "original": "Qwen3-ASR-1.7B 4.70 GB 2.4 s"
+    },
+    {
+     "id": "eq-5-3-3",
+     "type": "equation",
+     "page": 7,
+     "original": "10.45 1.77 0.49 16.97 16.92 12.29 4.95 7.69 6.70 6.34 11.75"
+    },
+    {
+     "id": "eq-5-3-4",
+     "type": "equation",
+     "page": 7,
+     "original": "Parakeet TDT-0.6B-v3 2.51 GB 2.4 s"
+    },
+    {
+     "id": "eq-5-3-5",
+     "type": "equation",
+     "page": 7,
+     "original": "12.83 2.03 1.38 16.73 19.81 15.27 6.63 8.25 17.82 9.95 8.19"
+    },
+    {
+     "id": "eq-5-3-6",
+     "type": "equation",
+     "page": 7,
+     "original": "Conformer Trans. XL 2.58 GB 2.4 s"
+    },
+    {
+     "id": "eq-5-3-7",
+     "type": "equation",
+     "page": 7,
+     "original": "11.06 – 1.27 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18"
+    },
+    {
+     "id": "eq-5-3-8",
+     "type": "equation",
+     "page": 7,
+     "original": "Canary-1B-v2 6.36 GB 4.8 s"
+    },
+    {
+     "id": "eq-5-3-9",
+     "type": "equation",
+     "page": 7,
+     "original": "12.45 1.74 2.93 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98"
     },
     {
      "id": "p-5-3-5",
@@ -1021,8 +1413,8 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-5-3-5-1",
-       "original": "• Parakeet TDT and Canary show substantial streaming degradation (BSF ≥1.74), with WER almost doubling despite operating at 4× higher latency than Nemotron.",
-       "zh": "• Parakeet TDT 和 Canary 出现明显的流式退化（BSF ≥1.74），尽管运行延迟是 Nemotron 的 4×，WER 仍几乎翻倍。"
+       "original": "Key observations:",
+       "zh": "（小标题）关键观察（Key observations）："
       }
      ]
     },
@@ -1033,11 +1425,52 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-5-3-6-1",
+       "original": "• Nemotron-0.6B achieves the best streaming WER (7.28%) among all models tested, while also having the lowest latency at 0.56 s and a BSF of 1.03, essentially no degradation from batch mode.",
+       "zh": "• Nemotron-0.6B 在所有被测模型中取得最好的流式 WER（7.28%），延迟也最低（0.56 s），BSF 为 1.03，相对批处理模式几乎没有退化。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-3-7",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-5-3-7-1",
+       "original": "• Qwen3-ASR-1.7B, despite being the best batch model among the tested models, degrades significantly in chunked mode (BSF = 1.77) and runs below real-time on CPU (RTFx = 0.49), making it unsuitable for edge deployment.",
+       "zh": "• Qwen3-ASR-1.7B 虽然是被测模型中批处理最强的模型，但在分块模式下退化显著（BSF = 1.77），且在 CPU 上跑不过实时（RTFx = 0.49），不适合边缘部署。"
+      },
+      {
+       "id": "s-5-3-7-2",
+       "original": "The Qwen3-ASR-0.6B model showed similar results, as shown in the appendix.",
+       "zh": "Qwen3-ASR-0.6B 模型也呈现类似结果，见附录。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-3-8",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-5-3-8-1",
+       "original": "• Parakeet TDT and Canary show substantial streaming degradation (BSF ≥1.74), with WER almost doubling despite operating at 4× higher latency than Nemotron.",
+       "zh": "• Parakeet TDT 和 Canary 出现明显的流式退化（BSF ≥1.74），尽管运行延迟是 Nemotron 的 4×，WER 仍几乎翻倍。"
+      }
+     ]
+    },
+    {
+     "id": "p-5-3-9",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-5-3-9-1",
        "original": "• While Parakeet TDT achieves higher RTFx than Nemotron on GPU (see Table 9 in the appendix), it is notably slower on CPU (RTFx 1.38 vs. 2.46).",
        "zh": "• 虽然 Parakeet TDT 在 GPU 上的 RTFx 高于 Nemotron（见附录 Table 9），但在 CPU 上明显更慢（RTFx 1.38 对 2.46）。"
       },
       {
-       "id": "s-5-3-6-2",
+       "id": "s-5-3-9-2",
        "original": "We hypothesize that Parakeet’s larger chunks benefit from GPU parallelism over wide tensors, whereas on CPU, where parallelism is limited, Nemotron’s smaller, cache-efficient chunks incur less per-step compute and better exploit the CPU memory hierarchy.",
        "zh": "我们的假设是：Parakeet 较大的块能从 GPU 对宽张量的并行处理中获益；而在并行度受限的 CPU 上，Nemotron 更小、缓存效率更高的块每步计算量更低，也更能利用 CPU 的存储层级。"
       }
@@ -1350,7 +1783,25 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-round-to-nearest-rtn-3-1",
-       "original": "s + z , 0, 2n −1 RTN is one of the fastest quantization methods, but provides no mechanism to minimize the resulting quantization error.",
+       "original": "s + z",
+       "zh": "（公式片段：……s + z（RTN 量化公式，见原文）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-round-to-nearest-rtn-4",
+     "type": "equation",
+     "page": 8,
+     "original": ", 0, 2n −1"
+    },
+    {
+     "id": "p-round-to-nearest-rtn-4",
+     "type": "paragraph",
+     "page": 8,
+     "sentences": [
+      {
+       "id": "s-round-to-nearest-rtn-4-1",
+       "original": "RTN is one of the fastest quantization methods, but provides no mechanism to minimize the resulting quantization error.",
        "zh": "qj = clamp(round(wj / s) + z, 0, 2n − 1)。RTN 是最快的量化方法之一，但它没有任何机制来最小化由此产生的量化误差。"
       }
      ]
@@ -1433,34 +1884,82 @@ globalThis.PAPER_2604_14493 = {
      "original": "+ |wj|"
     },
     {
+     "id": "eq-k-quant-7",
+     "type": "equation",
+     "page": 9,
+     "original": "|"
+    },
+    {
+     "id": "eq-k-quant-8",
+     "type": "equation",
+     "page": 9,
+     "original": "{z"
+    },
+    {
+     "id": "eq-k-quant-9",
+     "type": "equation",
+     "page": 9,
+     "original": "}"
+    },
+    {
      "id": "p-k-quant-3",
      "type": "paragraph",
      "page": 9,
      "sentences": [
       {
        "id": "s-k-quant-3-1",
-       "original": "| {z } block RMS (constant) Given fixed quantized integers qj (obtained from an initial RTN-like pass), k-quant then solves for the optimal affine mapping (s∗, m∗) such that the dequantized weights ˆwj = s∗·qj +m∗ are as close as possible to the original weights wj:",
+       "original": "block RMS (constant) Given fixed quantized integers qj (obtained from an initial RTN-like pass), k-quant then solves for the optimal affine mapping (s∗, m∗) such that the dequantized weights ˆwj = s∗·qj +m∗ are as close as possible to the original weights wj:",
        "zh": "其中第一项是块级 RMS（对块内所有元素为常数）。在固定量化整数 qj（由一次初始的类 RTN 扫描得到）后，k-quant 求解最优仿射映射 (s∗, m∗)，使反量化权重 ŵj = s∗·qj + m∗ 尽可能接近原始权重 wj：即最小化 Σ_j αj·(s∗·qj + m∗ − wj)²。"
       }
      ]
     },
     {
-     "id": "eq-k-quant-7",
+     "id": "eq-k-quant-10",
      "type": "equation",
      "page": 9,
      "original": ""
     },
     {
-     "id": "eq-k-quant-8",
+     "id": "eq-k-quant-11",
      "type": "equation",
      "page": 9,
      "original": "2"
     },
     {
-     "id": "eq-k-quant-9",
+     "id": "eq-k-quant-12",
      "type": "equation",
      "page": 9,
      "original": ""
+    },
+    {
+     "id": "eq-k-quant-13",
+     "type": "equation",
+     "page": 9,
+     "original": ""
+    },
+    {
+     "id": "eq-k-quant-14",
+     "type": "equation",
+     "page": 9,
+     "original": "s∗· qj + m∗"
+    },
+    {
+     "id": "eq-k-quant-15",
+     "type": "equation",
+     "page": 9,
+     "original": "|"
+    },
+    {
+     "id": "eq-k-quant-16",
+     "type": "equation",
+     "page": 9,
+     "original": "{z"
+    },
+    {
+     "id": "eq-k-quant-17",
+     "type": "equation",
+     "page": 9,
+     "original": "}"
     },
     {
      "id": "p-k-quant-4",
@@ -1469,37 +1968,37 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-k-quant-4-1",
-       "original": " s∗· qj + m∗ | {z } ˆwj (reconstructed)",
+       "original": "ˆwj (reconstructed)",
        "zh": "上式中 s∗·qj + m∗ 即重建权重 ŵj。"
       }
      ]
     },
     {
-     "id": "eq-k-quant-10",
+     "id": "eq-k-quant-18",
      "type": "equation",
      "page": 9,
      "original": "b X"
     },
     {
-     "id": "eq-k-quant-11",
+     "id": "eq-k-quant-19",
      "type": "equation",
      "page": 9,
      "original": "min s∗, m∗"
     },
     {
-     "id": "eq-k-quant-12",
+     "id": "eq-k-quant-20",
      "type": "equation",
      "page": 9,
      "original": "j=1 αj"
     },
     {
-     "id": "eq-k-quant-13",
+     "id": "eq-k-quant-21",
      "type": "equation",
      "page": 9,
      "original": "−wj"
     },
     {
-     "id": "eq-k-quant-14",
+     "id": "eq-k-quant-22",
      "type": "equation",
      "page": 9,
      "original": " "
@@ -1701,10 +2200,160 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-7-1-1-1",
-       "original": "Variant Device Baseline (PyTorch) CUDA 7.28 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 8.03 6.73 16.40 13.32 12.00 2.35 5.01 2.61 4.66 7.90 8.01 7.25 16.37 13.35 11.97 2.36 4.97 2.52 4.62 7.92 int4-mixed k-quant 8.12 7.15 16.72 13.52 12.08 2.36 5.02 2.64 4.70 7.88 8.20 7.20 17.05 13.60 12.10 2.38 5.04 2.83 4.65 7.98 int4 k-quant w/ ConvInt 10.14 8.00 20.55 11.68 14.73 5.32 10.14 3.05 5.64 9.98 8.46 7.30 18.94 13.52 12.12 2.42 5.10 2.85 4.72 8.05 9.00 8.75 8.50 int4-mix k-quant 8.25 8.00 7.75 7.50 7.25 ONNX Variants PyTorch Baseline Baseline 0.0 0.5 1.0 1.5 2.0 2.5 Model Size (GB) 7.00",
-       "zh": "表 6 原始数值：基线（PyTorch，CUDA）行：7.28、11.80、12.64、11.50、2.33、5.08、2.72、4.46、7.69；其后各 ONNX 变体行依次为 8.03、6.73、16.40、13.32、12.00、2.35、5.01、2.61、4.66、7.90；8.01、7.25、16.37、13.35、11.97、2.36、4.97、2.52、4.62、7.92；int4-mixed k-quant：8.12、7.15、16.72、13.52、12.08、2.36、5.02、2.64、4.70、7.88；int4 k-quant：8.20、7.20、17.05、13.60、12.10、2.38、5.04、2.83、4.65、7.98；int4 k-quant w/ ConvInt：10.14、8.00、20.55、11.68、14.73、5.32、10.14、3.05、5.64、9.98；8.46、7.30、18.94、13.52、12.12、2.42、5.10、2.85、4.72、8.05。图 3 坐标元素：纵轴 WER 刻度 9.00、8.75、8.50、8.25、8.00、7.75、7.50、7.25，横轴为模型体积（GB）刻度 0.0、0.5、1.0、1.5、2.0、2.5，标注 int4-mix k-quant、ONNX Variants、PyTorch Baseline 与 7.00。"
+       "original": "Variant Format Size Device Avg RTFx AMI Earn.",
+       "zh": "表头：Variant（变体）｜Format（格式）｜Size（体积）｜Device（设备）｜Avg｜RTFx｜AMI｜Earn.。"
       }
      ]
+    },
+    {
+     "id": "p-7-1-2",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-7-1-2-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP.",
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。"
+      }
+     ]
+    },
+    {
+     "id": "p-7-1-3",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-7-1-3-1",
+       "original": "Baseline (PyTorch) PyTorch 2.47 GB CUDA",
+       "zh": "2.\n（原始数据照录）\nBaseline (PyTorch) PyTorch 2.47 GB CUDA"
+      }
+     ]
+    },
+    {
+     "id": "eq-7-1-1",
+     "type": "equation",
+     "page": 10,
+     "original": "7.28 – 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69"
+    },
+    {
+     "id": "eq-7-1-2",
+     "type": "equation",
+     "page": 10,
+     "original": "FP32 ONNX 2.47 GB CPU"
+    },
+    {
+     "id": "eq-7-1-3",
+     "type": "equation",
+     "page": 10,
+     "original": "8.03 6.73 16.40 13.32 12.00 2.35 5.01 2.61 4.66 7.90"
+    },
+    {
+     "id": "eq-7-1-4",
+     "type": "equation",
+     "page": 10,
+     "original": "int8 k-quant ONNX 1.28 GB CPU"
+    },
+    {
+     "id": "eq-7-1-5",
+     "type": "equation",
+     "page": 10,
+     "original": "8.01 7.25 16.37 13.35 11.97 2.36 4.97 2.52 4.62 7.92"
+    },
+    {
+     "id": "eq-7-1-6",
+     "type": "equation",
+     "page": 10,
+     "original": "int4-mixed k-quant ONNX 0.73 GB CPU"
+    },
+    {
+     "id": "eq-7-1-7",
+     "type": "equation",
+     "page": 10,
+     "original": "8.12 7.15 16.72 13.52 12.08 2.36 5.02 2.64 4.70 7.88"
+    },
+    {
+     "id": "eq-7-1-8",
+     "type": "equation",
+     "page": 10,
+     "original": "int4 k-quant ONNX 0.67 GB CPU"
+    },
+    {
+     "id": "eq-7-1-9",
+     "type": "equation",
+     "page": 10,
+     "original": "8.20 7.20 17.05 13.60 12.10 2.38 5.04 2.83 4.65 7.98"
+    },
+    {
+     "id": "eq-7-1-10",
+     "type": "equation",
+     "page": 10,
+     "original": "int4 k-quant w/ ConvInt ONNX 0.67 GB CPU"
+    },
+    {
+     "id": "eq-7-1-11",
+     "type": "equation",
+     "page": 10,
+     "original": "10.14 8.00 20.55 11.68 14.73 5.32 10.14 3.05 5.64 9.98"
+    },
+    {
+     "id": "eq-7-1-12",
+     "type": "equation",
+     "page": 10,
+     "original": "int4 RTN ONNX 0.66 GB CPU"
+    },
+    {
+     "id": "eq-7-1-13",
+     "type": "equation",
+     "page": 10,
+     "original": "8.46 7.30 18.94 13.52 12.12 2.42 5.10 2.85 4.72 8.05 9.00 8.75"
+    },
+    {
+     "id": "eq-7-1-14",
+     "type": "equation",
+     "page": 10,
+     "original": "int4 RTN"
+    },
+    {
+     "id": "eq-7-1-15",
+     "type": "equation",
+     "page": 10,
+     "original": "8.50"
+    },
+    {
+     "id": "eq-7-1-16",
+     "type": "equation",
+     "page": 10,
+     "original": "int4 k-quant Average WER (%) int4-mix k-quant"
+    },
+    {
+     "id": "eq-7-1-17",
+     "type": "equation",
+     "page": 10,
+     "original": "8.25 8.00 7.75 7.50 7.25"
+    },
+    {
+     "id": "eq-7-1-18",
+     "type": "equation",
+     "page": 10,
+     "original": "ONNX Variants PyTorch Baseline FP32 int8 k-quant Baseline"
+    },
+    {
+     "id": "eq-7-1-19",
+     "type": "equation",
+     "page": 10,
+     "original": "0.0 0.5 1.0 1.5 2.0 2.5"
+    },
+    {
+     "id": "eq-7-1-20",
+     "type": "equation",
+     "page": 10,
+     "original": "Model Size (GB)"
+    },
+    {
+     "id": "eq-7-1-21",
+     "type": "equation",
+     "page": 10,
+     "original": "7.00"
     },
     {
      "id": "fig-7-1-1",
@@ -1714,14 +2363,68 @@ globalThis.PAPER_2604_14493 = {
      "zh": "图 3：Nemotron 各量化变体的模型体积与 WER 关系。int4 k-quant 变体在 0.67 GB 体积下取得 8.20% WER，与 ONNX FP32 基线（8.03%）的差距在 0.17% 以内。"
     },
     {
-     "id": "p-7-1-2",
+     "id": "eq-7-1-22",
+     "type": "equation",
+     "page": 11,
+     "original": "9.0 8.8 8.6"
+    },
+    {
+     "id": "eq-7-1-23",
+     "type": "equation",
+     "page": 11,
+     "original": "Average WER (%)"
+    },
+    {
+     "id": "eq-7-1-24",
+     "type": "equation",
+     "page": 11,
+     "original": "8.4"
+    },
+    {
+     "id": "eq-7-1-25",
+     "type": "equation",
+     "page": 11,
+     "original": "int4-mix k-quant"
+    },
+    {
+     "id": "eq-7-1-26",
+     "type": "equation",
+     "page": 11,
+     "original": "8.2"
+    },
+    {
+     "id": "eq-7-1-27",
+     "type": "equation",
+     "page": 11,
+     "original": "FP32"
+    },
+    {
+     "id": "eq-7-1-28",
+     "type": "equation",
+     "page": 11,
+     "original": "8.0 7.8"
+    },
+    {
+     "id": "eq-7-1-29",
+     "type": "equation",
+     "page": 11,
+     "original": "ONNX Variants int4 RTN int4 k-quant int8 k-quant"
+    },
+    {
+     "id": "eq-7-1-30",
+     "type": "equation",
+     "page": 11,
+     "original": "6.4 6.6 6.8 7.0 7.2 7.4 7.6"
+    },
+    {
+     "id": "p-7-1-4",
      "type": "paragraph",
      "page": 11,
      "sentences": [
       {
-       "id": "s-7-1-2-1",
-       "original": "9.0 8.8 8.6 8.4 int4-mix k-quant 8.2 8.0 7.8 ONNX Variants 6.4 6.6 6.8 7.0 7.2 7.4 7.6 CPU RTFx (batch_size=1)",
-       "zh": "图 4 坐标元素：纵轴 WER 刻度 9.0、8.8、8.6、8.4，横轴为 CPU RTFx（batch_size=1）刻度 6.4、6.6、6.8、7.0、7.2、7.4、7.6，标注 int4-mix k-quant、8.2、8.0、7.8 与 ONNX Variants。"
+       "id": "s-7-1-4-1",
+       "original": "CPU RTFx (batch_size=1)",
+       "zh": "（图注行）CPU RTFx (batch_size=1)。"
       }
      ]
     },
@@ -1914,14 +2617,68 @@ globalThis.PAPER_2604_14493 = {
      ]
     },
     {
+     "id": "eq-7-3-1",
+     "type": "equation",
+     "page": 12,
+     "original": "1400 1200"
+    },
+    {
+     "id": "eq-7-3-2",
+     "type": "equation",
+     "page": 12,
+     "original": "Effective Latency (ms)"
+    },
+    {
+     "id": "eq-7-3-3",
+     "type": "equation",
+     "page": 12,
+     "original": "1000"
+    },
+    {
+     "id": "eq-7-3-4",
+     "type": "equation",
+     "page": 12,
+     "original": "~130ms"
+    },
+    {
+     "id": "eq-7-3-5",
+     "type": "equation",
+     "page": 12,
+     "original": "800 600"
+    },
+    {
+     "id": "eq-7-3-6",
+     "type": "equation",
+     "page": 12,
+     "original": "~50ms"
+    },
+    {
+     "id": "eq-7-3-7",
+     "type": "equation",
+     "page": 12,
+     "original": "400 200"
+    },
+    {
+     "id": "eq-7-3-8",
+     "type": "equation",
+     "page": 12,
+     "original": "Ideal (RTFx ="
+    },
+    {
+     "id": "eq-7-3-9",
+     "type": "equation",
+     "page": 12,
+     "original": ")"
+    },
+    {
      "id": "p-7-3-3",
      "type": "paragraph",
      "page": 12,
      "sentences": [
       {
        "id": "s-7-3-3-1",
-       "original": "1400 1200 Effective Latency (ms) 1000 ~130ms 800 600 ~50ms 400 200 Ideal (RTFx = ) Extrapolated (est.)",
-       "zh": "图 5 纵轴元素：有效延迟（毫秒）刻度 1400、1200、1000、800、600、400、200，并标注 ~130ms 与 ~50ms 两条参考位置，以及 Ideal (RTFx = ∞) 与 Extrapolated (est.) 两条曲线。"
+       "original": "Extrapolated (est.)",
+       "zh": "（图例行）Extrapolated (est.)（外推估计）。"
       }
      ]
     },
@@ -1932,10 +2689,28 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-7-3-4-1",
-       "original": "Server CPU (32 cores) Consumer CPU (RTFx/2, est.) RTFx < 1 (audio dropout) 0.0 0.2 0.4 0.6 0.8 1.0 1.2 Algorithmic Delay (s) 0",
-       "zh": "图 5 横轴与曲线标注：Server CPU（32 核）、Consumer CPU（RTFx/2，估计值）、RTFx < 1（音频丢帧）；横轴为算法延迟（秒），刻度 0.0、0.2、0.4、0.6、0.8、1.0、1.2，末端为 0。"
+       "original": "Server CPU (32 cores) Consumer CPU (RTFx/2, est.) RTFx < 1 (audio dropout)",
+       "zh": "（图例行）Server CPU (32 cores) / Consumer CPU (RTFx/2, est.) / RTFx < 1（音频欠载）。"
       }
      ]
+    },
+    {
+     "id": "eq-7-3-10",
+     "type": "equation",
+     "page": 12,
+     "original": "0.0 0.2 0.4 0.6 0.8 1.0 1.2"
+    },
+    {
+     "id": "eq-7-3-11",
+     "type": "equation",
+     "page": 12,
+     "original": "Algorithmic Delay (s)"
+    },
+    {
+     "id": "eq-7-3-12",
+     "type": "equation",
+     "page": 12,
+     "original": "0"
     },
     {
      "id": "fig-7-3-1",
@@ -2336,7 +3111,8 @@ globalThis.PAPER_2604_14493 = {
       },
       {
        "id": "s-references-1-9",
-       "original": "ICML, https://arxiv.org/ abs/2212.04356, 2023."
+       "original": "ICML, https://arxiv.org/ abs/2212.04356, 2023.",
+       "zh": "2."
       }
      ]
     },
@@ -2358,7 +3134,8 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-references-3-1",
-       "original": "com/NVIDIA/NeMo, 2024."
+       "original": "com/NVIDIA/NeMo, 2024.",
+       "zh": "4."
       }
      ]
     },
@@ -2369,7 +3146,8 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-references-4-1",
-       "original": "[3] Qwen Team, “Qwen3-ASR Technical Report,” https://arxiv.org/abs/2601.21337, 2026."
+       "original": "[3] Qwen Team, “Qwen3-ASR Technical Report,” https://arxiv.org/abs/2601.21337, 2026.",
+       "zh": "1."
       }
      ]
     },
@@ -2380,7 +3158,8 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-references-5-1",
-       "original": "[4] Microsoft, “Olive: a hardware-aware model optimization tool for ONNX models,” https: //github.com/microsoft/Olive, 2024."
+       "original": "[4] Microsoft, “Olive: a hardware-aware model optimization tool for ONNX models,” https: //github.com/microsoft/Olive, 2024.",
+       "zh": "4."
       }
      ]
     },
@@ -2391,7 +3170,8 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-references-6-1",
-       "original": "[5] SYSTRAN, “Faster-Whisper: faster inference for OpenAI’s Whisper using CTranslate2,” https://github.com/SYSTRAN/faster-whisper, 2024."
+       "original": "[5] SYSTRAN, “Faster-Whisper: faster inference for OpenAI’s Whisper using CTranslate2,” https://github.com/SYSTRAN/faster-whisper, 2024.",
+       "zh": "4."
       }
      ]
     },
@@ -2424,7 +3204,8 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-references-9-1",
-       "original": "[7] NVIDIA, “Conformer Transducer XL,” https://huggingface.co/nvidia/stt_en_ conformer_transducer_xlarge, 2022."
+       "original": "[7] NVIDIA, “Conformer Transducer XL,” https://huggingface.co/nvidia/stt_en_ conformer_transducer_xlarge, 2022.",
+       "zh": "2."
       }
      ]
     },
@@ -2446,7 +3227,8 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "[9] Hugging Face, “Open ASR Leaderboard”, https://huggingface.co/spaces/hf-audio/ open_asr_leaderboard, 2024."
+       "original": "[9] Hugging Face, “Open ASR Leaderboard”, https://huggingface.co/spaces/hf-audio/ open_asr_leaderboard, 2024.",
+       "zh": "4."
       }
      ]
     },
@@ -2457,7 +3239,8 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "[10] ONNX Runtime Contributors, “ONNX Runtime: cross-platform, high performance ML inferencing and training accelerator,” https://onnxruntime.ai/, 2024."
+       "original": "[10] ONNX Runtime Contributors, “ONNX Runtime: cross-platform, high performance ML inferencing and training accelerator,” https://onnxruntime.ai/, 2024.",
+       "zh": "4."
       }
      ]
     },
@@ -2492,9 +3275,16 @@ globalThis.PAPER_2604_14493 = {
       },
       {
        "id": "s-references-13-7",
-       "original": "Han, “AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration,” https://arxiv.org/abs/ 2306.00978, 2023."
+       "original": "Han, “AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration,” https://arxiv.org/abs/",
+       "zh": "3."
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 15,
+     "original": "2306.00978, 2023."
     },
     {
      "id": "p-references-14",
@@ -2524,13 +3314,32 @@ globalThis.PAPER_2604_14493 = {
      ]
     },
     {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 15,
+     "original": "17323, 2022."
+    },
+    {
      "id": "p-references-15",
      "type": "paragraph",
      "page": 15,
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "17323, 2022."
+       "original": "[13] J."
+      },
+      {
+       "id": "s-references-15-2",
+       "original": "Yu, Y."
+      },
+      {
+       "id": "s-references-15-3",
+       "original": "Park, and S."
+      },
+      {
+       "id": "s-references-15-4",
+       "original": "Watanabe, “2-bit Conformer Quantization for Automatic Speech Recognition,” https://arxiv.org/abs/2305.16619, 2023.",
+       "zh": "3."
       }
      ]
     },
@@ -2541,19 +3350,7 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "[13] J."
-      },
-      {
-       "id": "s-references-16-2",
-       "original": "Yu, Y."
-      },
-      {
-       "id": "s-references-16-3",
-       "original": "Park, and S."
-      },
-      {
-       "id": "s-references-16-4",
-       "original": "Watanabe, “2-bit Conformer Quantization for Automatic Speech Recognition,” https://arxiv.org/abs/2305.16619, 2023."
+       "original": "[14] Mistral AI Team, “Voxtral,” https://arxiv.org/abs/2507.13264, 2025."
       }
      ]
     },
@@ -2564,47 +3361,32 @@ globalThis.PAPER_2604_14493 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "[14] Mistral AI Team, “Voxtral,” https://arxiv.org/abs/2507.13264, 2025."
-      }
-     ]
-    },
-    {
-     "id": "p-references-18",
-     "type": "paragraph",
-     "page": 15,
-     "sentences": [
-      {
-       "id": "s-references-18-1",
        "original": "[15] M."
       },
       {
-       "id": "s-references-18-2",
+       "id": "s-references-17-2",
        "original": "Kudlur, E."
       },
       {
-       "id": "s-references-18-3",
+       "id": "s-references-17-3",
        "original": "King, J."
       },
       {
-       "id": "s-references-18-4",
+       "id": "s-references-17-4",
        "original": "Wang, and P."
       },
       {
-       "id": "s-references-18-5",
-       "original": "Warden, “Moonshine v2: Ergodic Streaming Encoder ASR for Latency-Critical Speech Applications,” https://arxiv.org/abs/2602."
+       "id": "s-references-17-5",
+       "original": "Warden, “Moonshine v2: Ergodic Streaming Encoder ASR for Latency-Critical Speech Applications,” https://arxiv.org/abs/2602.",
+       "zh": "2."
       }
      ]
     },
     {
-     "id": "p-references-19",
-     "type": "paragraph",
+     "id": "eq-references-3",
+     "type": "equation",
      "page": 15,
-     "sentences": [
-      {
-       "id": "s-references-19-1",
-       "original": "12241, 2026."
-      }
-     ]
+     "original": "12241, 2026."
     }
    ]
   },
@@ -2634,255 +3416,1265 @@ globalThis.PAPER_2604_14493 = {
        "zh": "所有 WER 数值均以百分数（%）表示。"
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-A-1",
+   "num": "A.1",
+   "level": 2,
+   "page": 16,
+   "title": {
+    "original": "Whisper — All Configurations",
+    "zh": "Whisper — All Configurations"
+   },
+   "blocks": [
     {
-     "id": "p-A-2",
-     "type": "paragraph",
-     "page": 16,
-     "sentences": [
-      {
-       "id": "s-A-2-1",
-       "original": "Whisper — All Configurations",
-       "zh": "Whisper —— 全部配置"
-      }
-     ]
-    },
-    {
-     "id": "tab-A-1",
+     "id": "tab-A-1-1",
      "type": "table_caption",
      "page": 16,
      "original": "Table 7: All Whisper configurations evaluated.",
      "zh": "表 7：评测过的全部 Whisper 配置。"
     },
     {
-     "id": "p-A-3",
+     "id": "p-A-1-1",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-A-3-1",
-       "original": "Mode whisper-large-v3-turbo 7.83 16.13 11.63 10.14 2.10 4.24 2.97 3.57 11.87 whisper-large-v3-turbo ORT FP16 7.52 16.36 11.38 10.13 2.17 4.24 2.93 3.62 9.30 whisper-small.en 17.93 12.97 11.35 3.05 7.25 3.60 4.07 8.50 faster-whisper (small) Chunk (3 s) 24.74 32.90 32.59 17.23 22.72 19.81 23.18 Nemotron-0.6B — All Streaming Configurations",
-       "zh": "表 7/8 原始数值：whisper-large-v3-turbo：7.83、16.13、11.63、10.14、2.10、4.24、2.97、3.57、11.87；whisper-large-v3-turbo ORT FP16：7.52、16.36、11.38、10.13、2.17、4.24、2.93、3.62、9.30；whisper-small.en：17.93、12.97、11.35、3.05、7.25、3.60、4.07、8.50；faster-whisper (small) Chunk (3 s)：24.74、32.90、32.59、17.23、22.72、19.81、23.18。下接：Nemotron-0.6B —— 全部流式配置。"
+       "id": "s-A-1-1-1",
+       "original": "Model Format Mode Size Avg AMI Earn.",
+       "zh": "表头：Model｜Format｜Mode（模式）｜Size｜Avg｜AMI｜Earn.。"
       }
      ]
     },
     {
-     "id": "tab-A-2",
+     "id": "p-A-1-2",
+     "type": "paragraph",
+     "page": 16,
+     "sentences": [
+      {
+       "id": "s-A-1-2-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB",
+       "zh": "1.\n（原始数据照录）\nGiga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-1-1",
+     "type": "equation",
+     "page": 16,
+     "original": "7.83 16.13 11.63 10.14 2.10 4.24 2.97 3.57 11.87"
+    },
+    {
+     "id": "eq-A-1-2",
+     "type": "equation",
+     "page": 16,
+     "original": "whisper-large-v3-turbo ORT FP16 Batch 1.75 GB"
+    },
+    {
+     "id": "eq-A-1-3",
+     "type": "equation",
+     "page": 16,
+     "original": "7.52 16.36 11.38 10.13 2.17 4.24 2.93 3.62 9.30"
+    },
+    {
+     "id": "eq-A-1-4",
+     "type": "equation",
+     "page": 16,
+     "original": "whisper-small.en PyTorch Batch 0.97 GB"
+    },
+    {
+     "id": "eq-A-1-5",
+     "type": "equation",
+     "page": 16,
+     "original": "(8.59) 17.93 12.97 11.35 3.05 7.25 3.60 4.07 8.50"
+    },
+    {
+     "id": "eq-A-1-6",
+     "type": "equation",
+     "page": 16,
+     "original": "faster-whisper (small) PyTorch Chunk (3 s) 0.97 GB"
+    },
+    {
+     "id": "eq-A-1-7",
+     "type": "equation",
+     "page": 16,
+     "original": "24.74 32.90 32.59 – 17.23 22.72 19.81 – 23.18"
+    }
+   ]
+  },
+  {
+   "id": "sec-A-2",
+   "num": "A.2",
+   "level": 2,
+   "page": 16,
+   "title": {
+    "original": "Nemotron-0.6B — All Streaming Configurations",
+    "zh": "Nemotron-0.6B — All Streaming Configurations"
+   },
+   "blocks": [
+    {
+     "id": "tab-A-2-1",
      "type": "table_caption",
      "page": 16,
      "original": "Table 8: All Nemotron-0.6B streaming configurations (PyTorch, CUDA, batch_size=16).",
      "zh": "表 8：全部 Nemotron-0.6B 流式配置（PyTorch，CUDA，batch_size=16）。"
     },
     {
-     "id": "p-A-4",
+     "id": "p-A-2-1",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-A-4-1",
-       "original": "History Batch (offline) 7.07 990.48 11.16 12.38 11.35 2.28 4.83 2.63 4.42 7.48 7.10 268.39 11.31 12.46 11.39 2.28 4.84 2.64 4.42 7.47 7.46 260.05 11.38 12.49 11.39 2.41 5.07 2.71 4.50 9.75 7.28 145.16 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 8.51 144.71 11.93 13.93 11.76 3.43 6.00 3.47 5.11 12.49 8.04 45.05 14.82 13.66 12.44 2.49 5.52 2.90 4.72 7.79 19.75 26.36 19.46 11.86 17.88 13.32 32.42 8.91 17.76 14.64 13.33 2.61 5.93 3.73 5.06 8.24 Parakeet TDT-0.6B-v3 — All Chunking Configurations",
-       "zh": "表 8 原始数值（历史/RTFx 列穿插）：批处理（离线）：7.07、990.48、11.16、12.38、11.35、2.28、4.83、2.63、4.42、7.48；其后各配置行：7.10、268.39、11.31、12.46、11.39、2.28、4.84、2.64、4.42、7.47；7.46、260.05、11.38、12.49、11.39、2.41、5.07、2.71、4.50、9.75；7.28、145.16、11.80、12.64、11.50、2.33、5.08、2.72、4.46、7.69；8.51、144.71、11.93、13.93、11.76、3.43、6.00、3.47、5.11、12.49；8.04、45.05、14.82、13.66、12.44、2.49、5.52、2.90、4.72、7.79；19.75、26.36、19.46、11.86、17.88、13.32、32.42；8.91、17.76、14.64、13.33、2.61、5.93、3.73、5.06、8.24。下接：Parakeet TDT-0.6B-v3 —— 全部分块配置。"
+       "id": "s-A-2-1-1",
+       "original": "Config Delay History Avg RTFx AMI Earn.",
+       "zh": "表头：Config｜Delay｜History｜Avg｜RTFx｜AMI｜Earn.。"
       }
      ]
     },
     {
-     "id": "tab-A-3",
+     "id": "p-A-2-2",
+     "type": "paragraph",
+     "page": 16,
+     "sentences": [
+      {
+       "id": "s-A-2-2-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP.",
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。"
+      }
+     ]
+    },
+    {
+     "id": "p-A-2-3",
+     "type": "paragraph",
+     "page": 16,
+     "sentences": [
+      {
+       "id": "s-A-2-3-1",
+       "original": "Batch (offline)",
+       "zh": "（表头行）Batch (offline)（离线批处理）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-2-1",
+     "type": "equation",
+     "page": 16,
+     "original": "– – 7.07 990.48 11.16 12.38 11.35 2.28 4.83 2.63 4.42 7.48 (70, 2, 70)"
+    },
+    {
+     "id": "eq-A-2-2",
+     "type": "equation",
+     "page": 16,
+     "original": "5.6 s 11.2 s"
+    },
+    {
+     "id": "eq-A-2-3",
+     "type": "equation",
+     "page": 16,
+     "original": "7.10 268.39 11.31 12.46 11.39 2.28 4.84 2.64 4.42 7.47 (14, 2, 14)"
+    },
+    {
+     "id": "eq-A-2-4",
+     "type": "equation",
+     "page": 16,
+     "original": "1.12 s 2.24 s"
+    },
+    {
+     "id": "eq-A-2-5",
+     "type": "equation",
+     "page": 16,
+     "original": "7.46 260.05 11.38 12.49 11.39 2.41 5.07 2.71 4.50 9.75 (7, 10, 7)"
+    },
+    {
+     "id": "eq-A-2-6",
+     "type": "equation",
+     "page": 16,
+     "original": "0.56 s 5.6 s"
+    },
+    {
+     "id": "eq-A-2-7",
+     "type": "equation",
+     "page": 16,
+     "original": "7.28 145.16 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 (7, 2, 7)"
+    },
+    {
+     "id": "eq-A-2-8",
+     "type": "equation",
+     "page": 16,
+     "original": "0.56 s 1.12 s"
+    },
+    {
+     "id": "eq-A-2-9",
+     "type": "equation",
+     "page": 16,
+     "original": "8.51 144.71 11.93 13.93 11.76 3.43 6.00 3.47 5.11 12.49 (2, 35, 2)"
+    },
+    {
+     "id": "eq-A-2-10",
+     "type": "equation",
+     "page": 16,
+     "original": "0.16 s 5.6 s"
+    },
+    {
+     "id": "eq-A-2-11",
+     "type": "equation",
+     "page": 16,
+     "original": "8.04 45.05 14.82 13.66 12.44 2.49 5.52 2.90 4.72 7.79 (2, 2, 2)"
+    },
+    {
+     "id": "eq-A-2-12",
+     "type": "equation",
+     "page": 16,
+     "original": "0.16 s 0.32 s"
+    },
+    {
+     "id": "eq-A-2-13",
+     "type": "equation",
+     "page": 16,
+     "original": "– – 19.75 26.36 19.46 11.86 17.88 – 13.32 32.42 (1, 70, 1)"
+    },
+    {
+     "id": "eq-A-2-14",
+     "type": "equation",
+     "page": 16,
+     "original": "0.08 s 5.6 s"
+    },
+    {
+     "id": "eq-A-2-15",
+     "type": "equation",
+     "page": 16,
+     "original": "8.91 – 17.76 14.64 13.33 2.61 5.93 3.73 5.06 8.24"
+    }
+   ]
+  },
+  {
+   "id": "sec-A-3",
+   "num": "A.3",
+   "level": 2,
+   "page": 16,
+   "title": {
+    "original": "Parakeet TDT-0.6B-v3 — All Chunking Configurations",
+    "zh": "Parakeet TDT-0.6B-v3 — All Chunking Configurations"
+   },
+   "blocks": [
+    {
+     "id": "tab-A-3-1",
      "type": "table_caption",
      "page": 16,
      "original": "Table 9: All Parakeet TDT-0.6B-v3 configurations. Batch and chunked modes (CUDA, batch_size=16). Config format: delay (left-current-right = total context).",
      "zh": "表 9：全部 Parakeet TDT-0.6B-v3 配置。批处理与分块模式（CUDA，batch_size=16）。配置格式：延迟（左-当前-右 = 总上下文）。"
     },
     {
-     "id": "p-A-5",
+     "id": "p-A-3-1",
      "type": "paragraph",
      "page": 16,
      "sentences": [
       {
-       "id": "s-A-5-1",
-       "original": "Precision 16.94 211.45 41.64 32.38 20.56 3.69 6.10 8.63 10.73 11.75 13.2 s (8.4-11.6-1.6=21.6) 9.24 272.39 15.96 17.37 12.10 2.52 4.34 7.40 5.65 8.59 12.13 358.98 22.25 22.61 18.23 3.76 4.82 8.41 8.36 8.62 16.10 307.51 37.21 30.55 21.74 4.17 5.32 9.14 10.40 10.32 9.66 257.87 15.56 17.80 12.39 3.69 5.17 7.86 6.16 8.66 9.22 250.41 15.35 17.12 12.02 3.44 5.27 7.23 5.32 8.01 9.33 361.64 15.26 17.36 12.15 3.59 5.12 7.41 5.65 8.10 fp16 9.59 219.76 15.27 19.44 12.16 3.47 5.26 7.41 5.61 8.07 9.2 s (5.6-7.6-1.6=14.8) 11.61 402.68 21.72 21.74 17.68 3.35 4.88 7.97 7.36 8.14 15.83 257.07 35.91 29.09 20.56 6.06 6.84 8.63 9.56 9.95 8.8 s (5.6-7.6-1.2=14.4) 15.99 204.10 36.08 29.15 21.49 5.07 6.94 8.66 10.56 9.98 8 s (5.6-7.2-0.8=13.6) 15.97 404.98 35.48 29.27 21.84 5.69 6.39 8.89 10.15 10.04 fp16 12.55 323.81 21.65 21.53 18.32 6.43 7.37 8.46 7.95 8.71 16.46 361.34 35.60 29.04 21.92 7.45 8.09 8.92 10.45 10.22 12.83 83.68 16.73 19.81 15.27 6.63 8.25 17.82 9.95 8.19 fp16 11.54 228.68 15.51 18.91 13.45 9.27 9.73 9.39 7.20 8.82 11.52 15.52 18.91 13.44 9.34 9.57 9.33 7.26 8.79 32.17 209.69 43.08 38.13 35.66 35.62 30.13 31.28 30.93 12.55 Parakeet TDT-0.6B-v3 — ONNX Quantization",
-       "zh": "表 9 原始数值（Precision 列与各行数据）：16.94、211.45、41.64、32.38、20.56、3.69、6.10、8.63、10.73、11.75；13.2 s (8.4-11.6-1.6=21.6)：9.24、272.39、15.96、17.37、12.10、2.52、4.34、7.40、5.65、8.59；12.13、358.98、22.25、22.61、18.23、3.76、4.82、8.41、8.36、8.62；16.10、307.51、37.21、30.55、21.74、4.17、5.32、9.14、10.40、10.32；9.66、257.87、15.56、17.80、12.39、3.69、5.17、7.86、6.16、8.66；9.22、250.41、15.35、17.12、12.02、3.44、5.27、7.23、5.32、8.01；9.33、361.64、15.26、17.36、12.15、3.59、5.12、7.41、5.65、8.10；fp16：9.59、219.76、15.27、19.44、12.16、3.47、5.26、7.41、5.61、8.07；9.2 s (5.6-7.6-1.6=14.8)：11.61、402.68、21.72、21.74、17.68、3.35、4.88、7.97、7.36、8.14；15.83、257.07、35.91、29.09、20.56、6.06、6.84、8.63、9.56、9.95；8.8 s (5.6-7.6-1.2=14.4)：15.99、204.10、36.08、29.15、21.49、5.07、6.94、8.66、10.56、9.98；8 s (5.6-7.2-0.8=13.6)：15.97、404.98、35.48、29.27、21.84、5.69、6.39、8.89、10.15、10.04；fp16：12.55、323.81、21.65、21.53、18.32、6.43、7.37、8.46、7.95、8.71；16.46、361.34、35.60、29.04、21.92、7.45、8.09、8.92、10.45、10.22；12.83、83.68、16.73、19.81、15.27、6.63、8.25、17.82、9.95、8.19；fp16：11.54、228.68、15.51、18.91、13.45、9.27、9.73、9.39、7.20、8.82；11.52、15.52、18.91、13.44、9.34、9.57、9.33、7.26、8.79；32.17、209.69、43.08、38.13、35.66、35.62、30.13、31.28、30.93、12.55。下接：Parakeet TDT-0.6B-v3 —— ONNX 量化。"
+       "id": "s-A-3-1-1",
+       "original": "Config Precision Avg RTFx AMI Earn.",
+       "zh": "表头：Config｜Precision（精度）｜Avg｜RTFx｜AMI｜Earn.。"
       }
      ]
     },
     {
-     "id": "tab-A-4",
+     "id": "p-A-3-2",
+     "type": "paragraph",
+     "page": 16,
+     "sentences": [
+      {
+       "id": "s-A-3-2-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP.",
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。"
+      }
+     ]
+    },
+    {
+     "id": "p-A-3-3",
+     "type": "paragraph",
+     "page": 16,
+     "sentences": [
+      {
+       "id": "s-A-3-3-1",
+       "original": "Batch",
+       "zh": "（表 1 模型清单：Architecture × Modes × Size——Whisper Large-v3-Turbo（编码器-解码器，Batch，1.62 GB）；Whisper Small（编码器-解码器，Chunk/Batch，0.97 GB）；Nemotron-0.6B（Cache-aware Transducer，Stream/Batch，2.47 GB）；Parakeet TDT-0.6B-v3（TDT Transducer，Chunk/Batch，2.51 GB）；Canary-1B-v2（AED + AlignAtt，Chunk/Batch，6.36 GB）；Conformer Trans.（后续照原文）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-3-1",
+     "type": "equation",
+     "page": 16,
+     "original": "– (6.32) (3332.74) (11.39) (11.19) (9.57) (1.92) (3.59) (3.98) (2.80) (6.09)"
+    },
+    {
+     "id": "eq-A-3-2",
+     "type": "equation",
+     "page": 16,
+     "original": "28.8 s (7.2-21.6-7.2=36) bf16"
+    },
+    {
+     "id": "eq-A-3-3",
+     "type": "equation",
+     "page": 16,
+     "original": "16.94 211.45 41.64 32.38 20.56 3.69 6.10 8.63 10.73 11.75"
+    },
+    {
+     "id": "eq-A-3-4",
+     "type": "equation",
+     "page": 16,
+     "original": "13.2 s (8.4-11.6-1.6=21.6) bf16"
+    },
+    {
+     "id": "eq-A-3-5",
+     "type": "equation",
+     "page": 16,
+     "original": "9.24 272.39 15.96 17.37 12.10 2.52 4.34 7.40 5.65 8.59"
+    },
+    {
+     "id": "eq-A-3-6",
+     "type": "equation",
+     "page": 16,
+     "original": "11.6 s (8.4-10.4-1.2=20) bf16"
+    },
+    {
+     "id": "eq-A-3-7",
+     "type": "equation",
+     "page": 16,
+     "original": "12.13 358.98 22.25 22.61 18.23 3.76 4.82 8.41 8.36 8.62"
+    },
+    {
+     "id": "eq-A-3-8",
+     "type": "equation",
+     "page": 16,
+     "original": "10.8 s (8.4-10-0.8=19.2) bf16"
+    },
+    {
+     "id": "eq-A-3-9",
+     "type": "equation",
+     "page": 16,
+     "original": "16.10 307.51 37.21 30.55 21.74 4.17 5.32 9.14 10.40 10.32"
+    },
+    {
+     "id": "eq-A-3-10",
+     "type": "equation",
+     "page": 16,
+     "original": "12.8 s (3.2-9.6-3.2=16) bf16"
+    },
+    {
+     "id": "eq-A-3-11",
+     "type": "equation",
+     "page": 16,
+     "original": "9.66 257.87 15.56 17.80 12.39 3.69 5.17 7.86 6.16 8.66"
+    },
+    {
+     "id": "eq-A-3-12",
+     "type": "equation",
+     "page": 16,
+     "original": "10.4 s (5.6-8.8-1.6=16) bf16"
+    },
+    {
+     "id": "eq-A-3-13",
+     "type": "equation",
+     "page": 16,
+     "original": "9.22 250.41 15.35 17.12 12.02 3.44 5.27 7.23 5.32 8.01"
+    },
+    {
+     "id": "eq-A-3-14",
+     "type": "equation",
+     "page": 16,
+     "original": "9.6 s (5.6-8-1.6=15.2) bf16"
+    },
+    {
+     "id": "eq-A-3-15",
+     "type": "equation",
+     "page": 16,
+     "original": "9.33 361.64 15.26 17.36 12.15 3.59 5.12 7.41 5.65 8.10"
+    },
+    {
+     "id": "eq-A-3-16",
+     "type": "equation",
+     "page": 16,
+     "original": "9.6 s (5.6-8-1.6=15.2) fp16"
+    },
+    {
+     "id": "eq-A-3-17",
+     "type": "equation",
+     "page": 16,
+     "original": "9.59 219.76 15.27 19.44 12.16 3.47 5.26 7.41 5.61 8.07"
+    },
+    {
+     "id": "eq-A-3-18",
+     "type": "equation",
+     "page": 16,
+     "original": "9.2 s (5.6-7.6-1.6=14.8) bf16"
+    },
+    {
+     "id": "eq-A-3-19",
+     "type": "equation",
+     "page": 16,
+     "original": "11.61 402.68 21.72 21.74 17.68 3.35 4.88 7.97 7.36 8.14"
+    },
+    {
+     "id": "eq-A-3-20",
+     "type": "equation",
+     "page": 16,
+     "original": "8.8 s (5.6-8-0.8=14.4) bf16"
+    },
+    {
+     "id": "eq-A-3-21",
+     "type": "equation",
+     "page": 16,
+     "original": "15.83 257.07 35.91 29.09 20.56 6.06 6.84 8.63 9.56 9.95"
+    },
+    {
+     "id": "eq-A-3-22",
+     "type": "equation",
+     "page": 16,
+     "original": "8.8 s (5.6-7.6-1.2=14.4) bf16"
+    },
+    {
+     "id": "eq-A-3-23",
+     "type": "equation",
+     "page": 16,
+     "original": "15.99 204.10 36.08 29.15 21.49 5.07 6.94 8.66 10.56 9.98"
+    },
+    {
+     "id": "eq-A-3-24",
+     "type": "equation",
+     "page": 16,
+     "original": "8 s (5.6-7.2-0.8=13.6) bf16"
+    },
+    {
+     "id": "eq-A-3-25",
+     "type": "equation",
+     "page": 16,
+     "original": "15.97 404.98 35.48 29.27 21.84 5.69 6.39 8.89 10.15 10.04"
+    },
+    {
+     "id": "eq-A-3-26",
+     "type": "equation",
+     "page": 16,
+     "original": "9.6 s (2.4-7.2-2.4=12) fp16"
+    },
+    {
+     "id": "eq-A-3-27",
+     "type": "equation",
+     "page": 16,
+     "original": "12.55 323.81 21.65 21.53 18.32 6.43 7.37 8.46 7.95 8.71"
+    },
+    {
+     "id": "eq-A-3-28",
+     "type": "equation",
+     "page": 16,
+     "original": "9.6 s (2.4-7.2-2.4=12) bf16"
+    },
+    {
+     "id": "eq-A-3-29",
+     "type": "equation",
+     "page": 16,
+     "original": "16.46 361.34 35.60 29.04 21.92 7.45 8.09 8.92 10.45 10.22"
+    },
+    {
+     "id": "eq-A-3-30",
+     "type": "equation",
+     "page": 16,
+     "original": "2.4 s (9.6-0.8-1.6=12) bf16"
+    },
+    {
+     "id": "eq-A-3-31",
+     "type": "equation",
+     "page": 16,
+     "original": "12.83 83.68 16.73 19.81 15.27 6.63 8.25 17.82 9.95 8.19"
+    },
+    {
+     "id": "eq-A-3-32",
+     "type": "equation",
+     "page": 16,
+     "original": "6.4 s (1.6-4.8-1.6=8) fp16"
+    },
+    {
+     "id": "eq-A-3-33",
+     "type": "equation",
+     "page": 16,
+     "original": "11.54 228.68 15.51 18.91 13.45 9.27 9.73 9.39 7.20 8.82"
+    },
+    {
+     "id": "eq-A-3-34",
+     "type": "equation",
+     "page": 16,
+     "original": "6.4 s (1.6-4.8-1.6=8) bf16"
+    },
+    {
+     "id": "eq-A-3-35",
+     "type": "equation",
+     "page": 16,
+     "original": "11.52 – 15.52 18.91 13.44 9.34 9.57 9.33 7.26 8.79"
+    },
+    {
+     "id": "eq-A-3-36",
+     "type": "equation",
+     "page": 16,
+     "original": "3.2 s (0.8-2.4-0.8=4) bf16"
+    },
+    {
+     "id": "eq-A-3-37",
+     "type": "equation",
+     "page": 16,
+     "original": "32.17 209.69 43.08 38.13 35.66 35.62 30.13 31.28 30.93 12.55"
+    }
+   ]
+  },
+  {
+   "id": "sec-A-4",
+   "num": "A.4",
+   "level": 2,
+   "page": 17,
+   "title": {
+    "original": "Parakeet TDT-0.6B-v3 — ONNX Quantization",
+    "zh": "Parakeet TDT-0.6B-v3 — ONNX Quantization"
+   },
+   "blocks": [
+    {
+     "id": "tab-A-4-1",
      "type": "table_caption",
      "page": 17,
      "original": "Table 10: Parakeet TDT-0.6B-v3 ONNX quantization variants (batch mode, CUDA, batch_size=16).",
      "zh": "表 10：Parakeet TDT-0.6B-v3 ONNX 量化变体（批处理模式，CUDA，batch_size=16）。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-format",
+   "num": null,
+   "level": 2,
+   "page": 17,
+   "title": {
+    "original": "Format",
+    "zh": "Format"
+   },
+   "blocks": [
     {
-     "id": "p-A-6",
+     "id": "p-format-1",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-6-1",
-       "original": "ONNX fp16 21.46 2.21 3.96 6.82 ONNX int8 9.92 97.10 18.82 21.19 12.92 2.18 4.25 7.17 5.79 7.07 ONNX int4 11.50 112.94 21.22 26.34 14.39 2.16 4.02 8.97 8.17 6.77 Canary-1B-v2 — All Configurations",
-       "zh": "表 10 原始数值：ONNX fp16：21.46、2.21、3.96、6.82；ONNX int8：9.92、97.10、18.82、21.19、12.92、2.18、4.25、7.17、5.79、7.07；ONNX int4：11.50、112.94、21.22、26.34、14.39、2.16、4.02、8.97、8.17、6.77。下接：Canary-1B-v2 —— 全部配置。"
+       "id": "s-format-1-1",
+       "original": "Size Avg RTFx AMI Earn.",
+       "zh": "表头：Size｜Avg｜RTFx｜AMI｜Earn.。"
       }
      ]
     },
     {
-     "id": "tab-A-5",
+     "id": "p-format-2",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-format-2-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP.",
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。"
+      }
+     ]
+    },
+    {
+     "id": "p-format-3",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-format-3-1",
+       "original": "ONNX fp16 1.30 GB",
+       "zh": "1.\n（原始数据照录）\nONNX fp16 1.30 GB"
+      }
+     ]
+    },
+    {
+     "id": "eq-format-1",
+     "type": "equation",
+     "page": 17,
+     "original": "– – 21.46 – – 2.21 3.96 – – 6.82"
+    },
+    {
+     "id": "eq-format-2",
+     "type": "equation",
+     "page": 17,
+     "original": "ONNX int8 1.02 GB"
+    },
+    {
+     "id": "eq-format-3",
+     "type": "equation",
+     "page": 17,
+     "original": "9.92 97.10 18.82 21.19 12.92 2.18 4.25 7.17 5.79 7.07"
+    },
+    {
+     "id": "eq-format-4",
+     "type": "equation",
+     "page": 17,
+     "original": "ONNX int4 0.74 GB"
+    },
+    {
+     "id": "eq-format-5",
+     "type": "equation",
+     "page": 17,
+     "original": "11.50 112.94 21.22 26.34 14.39 2.16 4.02 8.97 8.17 6.77"
+    }
+   ]
+  },
+  {
+   "id": "sec-A-5",
+   "num": "A.5",
+   "level": 2,
+   "page": 17,
+   "title": {
+    "original": "Canary-1B-v2 — All Configurations",
+    "zh": "Canary-1B-v2 — All Configurations"
+   },
+   "blocks": [
+    {
+     "id": "tab-A-5-1",
      "type": "table_caption",
      "page": 17,
      "original": "Table 11: Canary-1B-v2 configurations (PyTorch bf16, CUDA, batch_size=16).",
      "zh": "表 11：Canary-1B-v2 配置（PyTorch bf16，CUDA，batch_size=16）。"
     },
     {
-     "id": "p-A-7",
+     "id": "p-A-5-1",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-7-1",
-       "original": "(749) Chunk 4.8 s 12.45 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98 Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.",
-       "zh": "表 11 原始数值：(749) Chunk 4.8 s：12.45、22.10、22.04、14.60、4.87、5.96、4.42、7.64、17.98。分块配置为 (10.0-2.4-2.4=14.8)，采用 AlignAtt 流式策略。"
-      },
-      {
-       "id": "s-A-7-2",
-       "original": "Conformer Transducer XL — All Configurations",
-       "zh": "Conformer Transducer XL —— 全部配置"
+       "id": "s-A-5-1-1",
+       "original": "Model Config Size Avg RTFx AMI Earn.",
+       "zh": "表头：Model｜Config｜Size｜Avg｜RTFx｜AMI｜Earn.。"
       }
      ]
     },
     {
-     "id": "tab-A-6",
+     "id": "p-A-5-2",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-A-5-2-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP.",
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。"
+      }
+     ]
+    },
+    {
+     "id": "p-A-5-3",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-A-5-3-1",
+       "original": "Canary-1B-v2 Batch 6.36 GB",
+       "zh": "（表格行）Canary-1B-v2 / Batch / 6.36 GB。"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-5-1",
+     "type": "equation",
+     "page": 17,
+     "original": "(7.15) (749) (16.01) (11.79) (10.82) (2.18) (3.56) (2.28) (4.29) (6.25)"
+    },
+    {
+     "id": "eq-A-5-2",
+     "type": "equation",
+     "page": 17,
+     "original": "Canary-1B-v2 Chunk 4.8 s 6.36 GB"
+    },
+    {
+     "id": "eq-A-5-3",
+     "type": "equation",
+     "page": 17,
+     "original": "12.45 – 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98"
+    },
+    {
+     "id": "p-A-5-4",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-A-5-4-1",
+       "original": "Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.",
+       "zh": "2.\n（原始数据照录）\nChunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sec-A-6",
+   "num": "A.6",
+   "level": 2,
+   "page": 17,
+   "title": {
+    "original": "Conformer Transducer XL — All Configurations",
+    "zh": "Conformer Transducer XL — All Configurations"
+   },
+   "blocks": [
+    {
+     "id": "tab-A-6-1",
      "type": "table_caption",
      "page": 17,
      "original": "Table 12: Conformer Transducer XL chunked configurations (PyTorch bf16, CUDA, batch_size=16). Config: delay (left-current-right = total context).",
      "zh": "表 12：Conformer Transducer XL 分块配置（PyTorch bf16，CUDA，batch_size=16）。配置：延迟（左-当前-右 = 总上下文）。"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-config",
+   "num": null,
+   "level": 2,
+   "page": 17,
+   "title": {
+    "original": "Config",
+    "zh": "Config"
+   },
+   "blocks": [
     {
-     "id": "p-A-8",
+     "id": "p-config-1",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-8-1",
-       "original": "10.78 222.90 22.07 23.47 14.21 2.22 4.10 7.93 5.48 6.80 10.96 133.69 22.31 24.22 13.99 2.04 3.78 7.86 5.40 8.05 11.06 82.03 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18 11.02 44.28 22.69 24.47 13.97 1.93 3.46 7.86 5.26 8.49 Qwen3-ASR — All Configurations",
-       "zh": "表 12 原始数值：10.78、222.90、22.07、23.47、14.21、2.22、4.10、7.93、5.48、6.80；10.96、133.69、22.31、24.22、13.99、2.04、3.78、7.86、5.40、8.05；11.06、82.03、22.57、24.44、14.05、2.11、3.83、7.95、5.36、8.18；11.02、44.28、22.69、24.47、13.97、1.93、3.46、7.86、5.26、8.49。下接：Qwen3-ASR —— 全部配置。"
+       "id": "s-config-1-1",
+       "original": "Avg RTFx AMI Earn.",
+       "zh": "表头：Avg｜RTFx｜AMI｜Earn.。"
       }
      ]
     },
     {
-     "id": "tab-A-7",
+     "id": "p-config-2",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-config-2-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP.",
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。"
+      }
+     ]
+    },
+    {
+     "id": "p-config-3",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-config-3-1",
+       "original": "6.4 s (1.6-4.8-1.6=8)",
+       "zh": "1.\n（原始数据照录）\n6.4 s (1.6-4.8-1.6=8)"
+      }
+     ]
+    },
+    {
+     "id": "eq-config-1",
+     "type": "equation",
+     "page": 17,
+     "original": "10.78 222.90 22.07 23.47 14.21 2.22 4.10 7.93 5.48 6.80"
+    },
+    {
+     "id": "eq-config-2",
+     "type": "equation",
+     "page": 17,
+     "original": "3.2 s (4.8-1.6-1.6=8)"
+    },
+    {
+     "id": "eq-config-3",
+     "type": "equation",
+     "page": 17,
+     "original": "10.96 133.69 22.31 24.22 13.99 2.04 3.78 7.86 5.40 8.05"
+    },
+    {
+     "id": "eq-config-4",
+     "type": "equation",
+     "page": 17,
+     "original": "2.4 s (5.6-0.8-1.6=8)"
+    },
+    {
+     "id": "eq-config-5",
+     "type": "equation",
+     "page": 17,
+     "original": "11.06 82.03 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18"
+    },
+    {
+     "id": "eq-config-6",
+     "type": "equation",
+     "page": 17,
+     "original": "2.4 s (9.6-0.8-1.6=12)"
+    },
+    {
+     "id": "eq-config-7",
+     "type": "equation",
+     "page": 17,
+     "original": "11.02 44.28 22.69 24.47 13.97 1.93 3.46 7.86 5.26 8.49"
+    }
+   ]
+  },
+  {
+   "id": "sec-A-7",
+   "num": "A.7",
+   "level": 2,
+   "page": 17,
+   "title": {
+    "original": "Qwen3-ASR — All Configurations",
+    "zh": "Qwen3-ASR — All Configurations"
+   },
+   "blocks": [
+    {
+     "id": "tab-A-7-1",
      "type": "table_caption",
      "page": 17,
      "original": "Table 13: Qwen3-ASR configurations (PyTorch, CUDA, batch_size=32).",
      "zh": "表 13：Qwen3-ASR 配置（PyTorch，CUDA，batch_size=32）。"
     },
     {
-     "id": "p-A-9",
+     "id": "p-A-7-1",
      "type": "paragraph",
      "page": 17,
      "sentences": [
       {
-       "id": "s-A-9-1",
-       "original": "5.90 187.91 11.76 10.26 8.75 1.60 3.41 2.83 2.28 6.34 6.69 194.71 13.77 11.03 9.16 2.12 4.47 3.04 2.83 7.09 Chunk 3 s (1 s stride) 9.69 61.70 15.54 14.94 11.28 3.58 5.99 5.26 5.03 9.90 Chunk 3 s (1 s stride) 9.81 64.11 17.47 15.05 11.37 3.94 7.02 5.22 5.02 13.41 Chunk 2.4 s (1.2 s stride) 10.45 42.76 16.97 16.92 12.29 4.95 7.69 6.70 6.34 11.75 Chunk 2.4 s (1.2 s stride) 10.41 46.32 18.55 16.60 12.00 4.97 8.31 6.13 5.75 10.99 Cross-Model Streaming Comparison (CPU)",
-       "zh": "表 13 原始数值：批处理行 5.90、187.91、11.76、10.26、8.75、1.60、3.41、2.83、2.28、6.34；6.69、194.71、13.77、11.03、9.16、2.12、4.47、3.04、2.83、7.09；Chunk 3 s（1 s 步长）：9.69、61.70、15.54、14.94、11.28、3.58、5.99、5.26、5.03、9.90；Chunk 3 s（1 s 步长）：9.81、64.11、17.47、15.05、11.37、3.94、7.02、5.22、5.02、13.41；Chunk 2.4 s（1.2 s 步长）：10.45、42.76、16.97、16.92、12.29、4.95、7.69、6.70、6.34、11.75；Chunk 2.4 s（1.2 s 步长）：10.41、46.32、18.55、16.60、12.00、4.97、8.31、6.13、5.75、10.99。下接：跨模型流式对比（CPU）。"
+       "id": "s-A-7-1-1",
+       "original": "Model Config Avg RTFx AMI Earn.",
+       "zh": "表头：Model｜Config｜Avg｜RTFx｜AMI｜Earn.。"
       }
      ]
     },
     {
-     "id": "tab-A-8",
+     "id": "p-A-7-2",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-A-7-2-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP.",
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。"
+      }
+     ]
+    },
+    {
+     "id": "p-A-7-3",
+     "type": "paragraph",
+     "page": 17,
+     "sentences": [
+      {
+       "id": "s-A-7-3-1",
+       "original": "Qwen3-ASR-1.7B Batch",
+       "zh": "1.\n（原始数据照录）\nQwen3-ASR-1.7B Batch"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-7-1",
+     "type": "equation",
+     "page": 17,
+     "original": "5.90 187.91 11.76 10.26 8.75 1.60 3.41 2.83 2.28 6.34"
+    },
+    {
+     "id": "eq-A-7-2",
+     "type": "equation",
+     "page": 17,
+     "original": "Qwen3-ASR-0.6B Batch"
+    },
+    {
+     "id": "eq-A-7-3",
+     "type": "equation",
+     "page": 17,
+     "original": "6.69 194.71 13.77 11.03 9.16 2.12 4.47 3.04 2.83 7.09"
+    },
+    {
+     "id": "eq-A-7-4",
+     "type": "equation",
+     "page": 17,
+     "original": "Qwen3-ASR-1.7B Chunk 3 s (1 s stride)"
+    },
+    {
+     "id": "eq-A-7-5",
+     "type": "equation",
+     "page": 17,
+     "original": "9.69 61.70 15.54 14.94 11.28 3.58 5.99 5.26 5.03 9.90"
+    },
+    {
+     "id": "eq-A-7-6",
+     "type": "equation",
+     "page": 17,
+     "original": "Qwen3-ASR-0.6B Chunk 3 s (1 s stride)"
+    },
+    {
+     "id": "eq-A-7-7",
+     "type": "equation",
+     "page": 17,
+     "original": "9.81 64.11 17.47 15.05 11.37 3.94 7.02 5.22 5.02 13.41"
+    },
+    {
+     "id": "eq-A-7-8",
+     "type": "equation",
+     "page": 17,
+     "original": "Qwen3-ASR-1.7B Chunk 2.4 s (1.2 s stride)"
+    },
+    {
+     "id": "eq-A-7-9",
+     "type": "equation",
+     "page": 17,
+     "original": "10.45 42.76 16.97 16.92 12.29 4.95 7.69 6.70 6.34 11.75"
+    },
+    {
+     "id": "eq-A-7-10",
+     "type": "equation",
+     "page": 17,
+     "original": "Qwen3-ASR-0.6B Chunk 2.4 s (1.2 s stride)"
+    },
+    {
+     "id": "eq-A-7-11",
+     "type": "equation",
+     "page": 17,
+     "original": "10.41 46.32 18.55 16.60 12.00 4.97 8.31 6.13 5.75 10.99"
+    }
+   ]
+  },
+  {
+   "id": "sec-A-8",
+   "num": "A.8",
+   "level": 2,
+   "page": 18,
+   "title": {
+    "original": "Cross-Model Streaming Comparison (CPU)",
+    "zh": "Cross-Model Streaming Comparison (CPU)"
+   },
+   "blocks": [
+    {
+     "id": "tab-A-8-1",
      "type": "table_caption",
      "page": 18,
      "original": "Table 14: Cross-model streaming comparison (CPU, batch_size=1). Best streaming or lowlatency configuration per model.",
      "zh": "表 14：跨模型流式对比（CPU，batch_size=1）。取每个模型最好的流式或低延迟配置。"
     },
     {
-     "id": "p-A-10",
+     "id": "p-A-8-1",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-10-1",
-       "original": "BSF 7.28 1.03 2.46 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 10.45 1.77 0.49 16.97 16.92 12.29 4.95 7.69 6.70 6.34 11.75 12.83 2.03 1.38 16.73 19.81 15.27 6.63 8.25 17.82 9.95 8.19 Conformer Trans.",
-       "zh": "表 14 原始数值（含 BSF 列）：7.28、1.03、2.46、11.80、12.64、11.50、2.33、5.08、2.72、4.46、7.69；10.45、1.77、0.49、16.97、16.92、12.29、4.95、7.69、6.70、6.34；11.75、12.83、2.03、1.38、16.73、19.81、15.27、6.63、8.25、17.82、9.95、8.19；Conformer Trans.（转下句）"
-      },
-      {
-       "id": "s-A-10-2",
-       "original": "XL 11.06 1.27 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18 12.45 1.74 2.93 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98 Nemotron-0.6B — ONNX Quantization Results",
-       "zh": "XL：11.06、1.27、22.57、24.44、14.05、2.11、3.83、7.95、5.36、8.18；12.45、1.74、2.93、22.10、22.04、14.60、4.87、5.96、4.42、7.64、17.98。下接：Nemotron-0.6B —— ONNX 量化结果。"
+       "id": "s-A-8-1-1",
+       "original": "Model Size Delay Avg BSF RTFx AMI Earn.",
+       "zh": "表头：Model｜Size｜Delay｜Avg｜BSF｜RTFx｜AMI｜Earn.。"
       }
      ]
     },
     {
-     "id": "tab-A-9",
+     "id": "p-A-8-2",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-A-8-2-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP.",
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。"
+      }
+     ]
+    },
+    {
+     "id": "p-A-8-3",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-A-8-3-1",
+       "original": "Nemotron-0.6B 2.47 GB 0.56 s",
+       "zh": "2.\n（原始数据照录）\nNemotron-0.6B 2.47 GB 0.56 s"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-8-1",
+     "type": "equation",
+     "page": 18,
+     "original": "7.28 1.03 2.46 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69"
+    },
+    {
+     "id": "eq-A-8-2",
+     "type": "equation",
+     "page": 18,
+     "original": "Qwen3-ASR-1.7B 4.70 GB 2.4 s"
+    },
+    {
+     "id": "eq-A-8-3",
+     "type": "equation",
+     "page": 18,
+     "original": "10.45 1.77 0.49 16.97 16.92 12.29 4.95 7.69 6.70 6.34 11.75"
+    },
+    {
+     "id": "eq-A-8-4",
+     "type": "equation",
+     "page": 18,
+     "original": "Parakeet TDT-0.6B-v3 2.51 GB 2.4 s"
+    },
+    {
+     "id": "eq-A-8-5",
+     "type": "equation",
+     "page": 18,
+     "original": "12.83 2.03 1.38 16.73 19.81 15.27 6.63 8.25 17.82 9.95 8.19"
+    },
+    {
+     "id": "eq-A-8-6",
+     "type": "equation",
+     "page": 18,
+     "original": "Conformer Trans. XL 2.58 GB 2.4 s"
+    },
+    {
+     "id": "eq-A-8-7",
+     "type": "equation",
+     "page": 18,
+     "original": "11.06 – 1.27 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18"
+    },
+    {
+     "id": "eq-A-8-8",
+     "type": "equation",
+     "page": 18,
+     "original": "Canary-1B-v2 6.36 GB 4.8 s"
+    },
+    {
+     "id": "eq-A-8-9",
+     "type": "equation",
+     "page": 18,
+     "original": "12.45 1.74 2.93 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98"
+    }
+   ]
+  },
+  {
+   "id": "sec-A-9",
+   "num": "A.9",
+   "level": 2,
+   "page": 18,
+   "title": {
+    "original": "Nemotron-0.6B — ONNX Quantization Results",
+    "zh": "Nemotron-0.6B — ONNX Quantization Results"
+   },
+   "blocks": [
+    {
+     "id": "tab-A-9-1",
      "type": "table_caption",
      "page": 18,
      "original": "Table 15: Nemotron-0.6B ONNX quantization results. Config: (7,10,7), 0.56 s delay, 5.6 s history. CPU inference, batch_size=1.",
      "zh": "表 15：Nemotron-0.6B ONNX 量化结果。配置：(7,10,7)，0.56 s 延迟，5.6 s 历史。CPU 推理，batch_size=1。"
     },
     {
-     "id": "p-A-11",
+     "id": "p-A-9-1",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-11-1",
-       "original": "Variant Device Baseline (PyTorch) CUDA 7.28 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69 8.03 6.73 16.40 13.32 12.00 2.35 5.01 2.61 4.66 7.90 8.01 7.25 16.37 13.35 11.97 2.36 4.97 2.52 4.62 7.92 int4-mixed k-quant 8.12 7.15 16.72 13.52 12.08 2.36 5.02 2.64 4.70 7.88 8.20 7.20 17.05 13.60 12.10 2.38 5.04 2.83 4.65 7.98 int4 k-quant + ConvInt 10.14 8.00 20.55 11.68 14.73 5.32 10.14 3.05 5.64 9.98 8.46 7.30 18.94 13.52 12.12 2.42 5.10 2.85 4.72 8.05 Nemotron-0.6B — ONNX int4 k-quant at 0.16s Delay",
-       "zh": "表 15 原始数值：基线（PyTorch，CUDA）：7.28、11.80、12.64、11.50、2.33、5.08、2.72、4.46、7.69；其后各行：8.03、6.73、16.40、13.32、12.00、2.35、5.01、2.61、4.66、7.90；8.01、7.25、16.37、13.35、11.97、2.36、4.97、2.52、4.62、7.92；int4-mixed k-quant：8.12、7.15、16.72、13.52、12.08、2.36、5.02、2.64、4.70、7.88；int4 k-quant：8.20、7.20、17.05、13.60、12.10、2.38、5.04、2.83、4.65、7.98；int4 k-quant + ConvInt：10.14、8.00、20.55、11.68、14.73、5.32、10.14、3.05、5.64、9.98；8.46、7.30、18.94、13.52、12.12、2.42、5.10、2.85、4.72、8.05。下接：Nemotron-0.6B —— 0.16 s 延迟下的 ONNX int4 k-quant。"
+       "id": "s-A-9-1-1",
+       "original": "Variant Format Size Device Avg RTFx AMI Earn.",
+       "zh": "表头：Variant｜Format｜Size｜Device｜Avg｜RTFx｜AMI｜Earn.。"
       }
      ]
     },
     {
-     "id": "tab-A-10",
+     "id": "p-A-9-2",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-A-9-2-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP.",
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。"
+      }
+     ]
+    },
+    {
+     "id": "p-A-9-3",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-A-9-3-1",
+       "original": "Baseline (PyTorch) PyTorch 2.47 GB CUDA",
+       "zh": "2.\n（原始数据照录）\nBaseline (PyTorch) PyTorch 2.47 GB CUDA"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-9-1",
+     "type": "equation",
+     "page": 18,
+     "original": "7.28 – 11.80 12.64 11.50 2.33 5.08 2.72 4.46 7.69"
+    },
+    {
+     "id": "eq-A-9-2",
+     "type": "equation",
+     "page": 18,
+     "original": "FP32 ONNX 2.47 GB CPU"
+    },
+    {
+     "id": "eq-A-9-3",
+     "type": "equation",
+     "page": 18,
+     "original": "8.03 6.73 16.40 13.32 12.00 2.35 5.01 2.61 4.66 7.90"
+    },
+    {
+     "id": "eq-A-9-4",
+     "type": "equation",
+     "page": 18,
+     "original": "int8 k-quant ONNX 1.28 GB CPU"
+    },
+    {
+     "id": "eq-A-9-5",
+     "type": "equation",
+     "page": 18,
+     "original": "8.01 7.25 16.37 13.35 11.97 2.36 4.97 2.52 4.62 7.92"
+    },
+    {
+     "id": "eq-A-9-6",
+     "type": "equation",
+     "page": 18,
+     "original": "int4-mixed k-quant ONNX 0.73 GB CPU"
+    },
+    {
+     "id": "eq-A-9-7",
+     "type": "equation",
+     "page": 18,
+     "original": "8.12 7.15 16.72 13.52 12.08 2.36 5.02 2.64 4.70 7.88"
+    },
+    {
+     "id": "eq-A-9-8",
+     "type": "equation",
+     "page": 18,
+     "original": "int4 k-quant ONNX 0.67 GB CPU"
+    },
+    {
+     "id": "eq-A-9-9",
+     "type": "equation",
+     "page": 18,
+     "original": "8.20 7.20 17.05 13.60 12.10 2.38 5.04 2.83 4.65 7.98"
+    },
+    {
+     "id": "eq-A-9-10",
+     "type": "equation",
+     "page": 18,
+     "original": "int4 k-quant + ConvInt ONNX 0.67 GB CPU"
+    },
+    {
+     "id": "eq-A-9-11",
+     "type": "equation",
+     "page": 18,
+     "original": "10.14 8.00 20.55 11.68 14.73 5.32 10.14 3.05 5.64 9.98"
+    },
+    {
+     "id": "eq-A-9-12",
+     "type": "equation",
+     "page": 18,
+     "original": "int4 RTN ONNX 0.66 GB CPU"
+    },
+    {
+     "id": "eq-A-9-13",
+     "type": "equation",
+     "page": 18,
+     "original": "8.46 7.30 18.94 13.52 12.12 2.42 5.10 2.85 4.72 8.05"
+    }
+   ]
+  },
+  {
+   "id": "sec-A-10",
+   "num": "A.10",
+   "level": 2,
+   "page": 18,
+   "title": {
+    "original": "Nemotron-0.6B — ONNX int4 k-quant at 0.16s Delay",
+    "zh": "Nemotron-0.6B — ONNX int4 k-quant at 0.16s Delay"
+   },
+   "blocks": [
+    {
+     "id": "tab-A-10-1",
      "type": "table_caption",
      "page": 18,
      "original": "Table 16: Nemotron-0.6B int4 k-quant at 0.16 s algorithmic delay. Config: (2,20,2), 3.2 s history. CPU inference, batch_size=1.",
      "zh": "表 16：Nemotron-0.6B int4 k-quant 在 0.16 s 算法延迟下的结果。配置：(2,20,2)，3.2 s 历史。CPU 推理，batch_size=1。"
     },
     {
-     "id": "p-A-12",
+     "id": "p-A-10-1",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-12-1",
-       "original": "Variant Device 8.89 2.87 19.92 14.02 11.08 2.99 6.59 3.76 3.94 8.84 Earn. = Earnings22, Giga = GigaSpeech, LS-c/o = LibriSpeech Clean/Other, SPGI = SPGISpeech, TED = TED-LIUM, VoxP. = VoxPopuli.",
-       "zh": "表 16 原始数值：8.89、2.87、19.92、14.02、11.08、2.99、6.59、3.76、3.94、8.84。缩写说明：Earn. = Earnings22，Giga = GigaSpeech，LS-c/o = LibriSpeech Clean/Other，SPGI = SPGISpeech，TED = TED-LIUM，VoxP. = VoxPopuli。"
+       "id": "s-A-10-1-1",
+       "original": "Variant Format Size Device Avg RTFx AMI Earn.",
+       "zh": "表头：Variant｜Format｜Size｜Device｜Avg｜RTFx｜AMI｜Earn.。"
       }
      ]
     },
     {
-     "id": "p-A-13",
+     "id": "p-A-10-2",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-13-1",
+       "id": "s-A-10-2-1",
+       "original": "Giga LS-c LS-o SPGI TED VoxP. int4 k-quant ONNX 0.67 GB CPU",
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。\n（原始数据照录）\nGiga LS-c LS-o SPGI TED VoxP. int4 k-quant ONNX 0.67 GB CPU"
+      }
+     ]
+    },
+    {
+     "id": "eq-A-10-1",
+     "type": "equation",
+     "page": 18,
+     "original": "8.89 2.87 19.92 14.02 11.08 2.99 6.59 3.76 3.94 8.84"
+    },
+    {
+     "id": "p-A-10-3",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-A-10-3-1",
+       "original": "Earn. = Earnings22, Giga = GigaSpeech, LS-c/o = LibriSpeech Clean/Other, SPGI = SPGISpeech, TED = TED-LIUM, VoxP. = VoxPopuli.",
+       "zh": "（表格行+表注）Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.；int4 k-quant ONNX 0.67 GB CPU：8.89/2.87/19.92/14.02/11.08/2.99/6.59/3.76/3.94/8.84。表注：Earn. = Earnings22，Giga = GigaSpeech，LS-c/o = LibriSpeech Clean/Other，SPGI = SPGISpeech，TED = TED-LIUM，VoxP. = VoxPopuli。"
+      }
+     ]
+    },
+    {
+     "id": "p-A-10-4",
+     "type": "paragraph",
+     "page": 18,
+     "sentences": [
+      {
+       "id": "s-A-10-4-1",
        "original": "Parenthesized values are reported by original authors.",
        "zh": "括号内的数值为原作者报告的数字。"
       },
       {
-       "id": "s-A-13-2",
+       "id": "s-A-10-4-2",
        "original": "A dash (–) indicates the configuration was not evaluated or results were incomplete.",
        "zh": "破折号（–）表示该配置未被评测或结果不完整。"
       }
      ]
     },
     {
-     "id": "p-A-14",
+     "id": "p-A-10-5",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-14-1",
+       "id": "s-A-10-5-1",
        "original": "CoreAI, Microsoft Corporation.",
        "zh": "CoreAI，微软公司。"
       }
      ]
     },
     {
-     "id": "p-A-15",
+     "id": "p-A-10-6",
      "type": "paragraph",
      "page": 18,
      "sentences": [
       {
-       "id": "s-A-15-1",
+       "id": "s-A-10-6-1",
        "original": "April 2026.",
        "zh": "2026 年 4 月。"
       }
@@ -2940,7 +4732,7 @@ globalThis.PAPER_2604_14493 = {
   {
    "id": "ann-005",
    "anchor": {
-    "sentence_id": "s-5-1-3-1",
+    "sentence_id": "s-5-1-2-1",
     "quote": "achieves 9.22% WER, a 46% relative increase over its 6.32% batch WER"
    },
    "kind": "number",
@@ -2963,7 +4755,7 @@ globalThis.PAPER_2604_14493 = {
   {
    "id": "ann-007",
    "anchor": {
-    "sentence_id": "s-5-2-3-4",
+    "sentence_id": "s-5-2-5-4",
     "quote": "(7, 10, 7) at 7.28% WER with (7, 2, 7) at 8.51% WER, where the only difference is reduced history"
    },
    "kind": "number",
@@ -2974,7 +4766,7 @@ globalThis.PAPER_2604_14493 = {
   {
    "id": "ann-008",
    "anchor": {
-    "sentence_id": "s-5-3-4-1",
+    "sentence_id": "s-5-3-7-1",
     "quote": "degrades significantly in chunked mode (BSF = 1.77) and runs below real-time on CPU (RTFx = 0.49)"
    },
    "kind": "comparison",
@@ -2985,7 +4777,7 @@ globalThis.PAPER_2604_14493 = {
   {
    "id": "ann-009",
    "anchor": {
-    "sentence_id": "s-5-3-6-2",
+    "sentence_id": "s-5-3-9-2",
     "quote": "Parakeet’s larger chunks benefit from GPU parallelism over wide tensors, whereas on CPU, where parallelism is limited, Nemotron’s smaller, cache-efficient chunks incur less per-step compute"
    },
    "kind": "engineering",

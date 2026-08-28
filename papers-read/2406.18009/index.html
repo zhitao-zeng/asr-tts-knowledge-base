@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>E2 TTS：简单到令人不好意思的全非自回归零样本 TTS · 全文双语精读 | ASR/TTS 知识库</title>
-<meta name="description" content="E2 TTS：简单到令人不好意思的全非自回归零样本 TTS（E2 TTS: EMBARRASSINGLY EASY FULLY NON-AUTOREGRESSIVE ZERO-SHOT TTS Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao,）全文中文翻译 + 21 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta name="description" content="E2 TTS：简单到令人不好意思的全非自回归零样本 TTS（E2 TTS: EMBARRASSINGLY EASY FULLY NON-AUTOREGRESSIVE ZERO-SHOT TTS Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao,）全文中文翻译 + 20 条句子级讲解 · ASR/TTS 知识库论文精读">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2406.18009/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="E2 TTS：简单到令人不好意思的全非自回归零样本 TTS · 全文双语精读">
-<meta property="og:description" content="E2 TTS：简单到令人不好意思的全非自回归零样本 TTS（E2 TTS: EMBARRASSINGLY EASY FULLY NON-AUTOREGRESSIVE ZERO-SHOT TTS Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao,）全文中文翻译 + 21 条句子级讲解 · ASR/TTS 知识库论文精读">
+<meta property="og:description" content="E2 TTS：简单到令人不好意思的全非自回归零样本 TTS（E2 TTS: EMBARRASSINGLY EASY FULLY NON-AUTOREGRESSIVE ZERO-SHOT TTS Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao,）全文中文翻译 + 20 条句子级讲解 · ASR/TTS 知识库论文精读">
 <meta property="og:url" content="https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2406.18009/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"E2 TTS: EMBARRASSINGLY EASY FULLY NON-AUTOREGRESSIVE ZERO-SHOT TTS Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao,","alternateName":"E2 TTS：简单到令人不好意思的全非自回归零样本 TTS","url":"https://zhitao-zeng.github.io/asr-tts-knowledge-base/papers-read/2406.18009/","isBasedOn":"https://arxiv.org/abs/2406.18009","inLanguage":["en","zh-CN"],"isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Zhitao Zeng"}}</script>
 <style>
@@ -134,7 +134,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
     <div class="en-title">E2 TTS: EMBARRASSINGLY EASY FULLY NON-AUTOREGRESSIVE ZERO-SHOT TTS Sefik Emre Eskimez, Xiaofei Wang, Manthan Thakker, Canrun Li, Chung-Hsien Tsai, Zhen Xiao,</div>
     <div class="meta">
       关联模型：<a href="../../index.html#/model/e2_tts">E2-TTS</a>（Microsoft · 2024-06） ·
-      全文 123 个语块 · 讲解 21 条（精选 11 条）
+      全文 266 个语块 · 讲解 20 条（精选 10 条）
     </div>
   </div>
   <div class="controls">
@@ -166,7 +166,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div>
     <p class="muted" style="font-size:12.5px">以上为论文级三条摘要；下面进入全文双语精读，讲解锚定在具体句子旁。</p>
   </section>
-  <nav class="toc"><a class="lv1" href="#sec-abstract">摘要</a><a class="lv1" href="#sec-1">1 1 引言</a><a class="lv1" href="#sec-2">2 2 E2 TTS</a><a class="lv2" href="#sec-2-1">2.1 2.1 训练</a><a class="lv1" href="#sec-e2-tts-training">E2 TTS - 训练</a><a class="lv1" href="#sec-e2-tts-inference">E2 TTS - 推理</a><a class="lv2" href="#sec-vocoder">声码器</a><a class="lv2" href="#sec-2-2">2.2 2.2 推理</a><a class="lv2" href="#sec-2-3">2.3 2.3 基于流匹配的 mel 频谱图生成器</a><a class="lv1" href="#sec-e2-tts-x1-training">声码器</a><a class="lv2" href="#sec-vocoder-2">声码器</a><a class="lv2" href="#sec-2-4">2.4 2.4 与 Voicebox 的关系</a><a class="lv2" href="#sec-2-5">2.5 2.5 E2 TTS 的扩展</a><a class="lv1" href="#sec-3">3 3 实验</a><a class="lv2" href="#sec-3-1">3.1 3.1 训练数据</a><a class="lv2" href="#sec-3-2">3.2 3.2 模型配置</a><a class="lv2" href="#sec-3-3">3.3 3.3 评测数据与指标</a><a class="lv2" href="#sec-3-4">3.4 3.4 主要结果</a><a class="lv2" href="#sec-3-5">3.5 3.5 E2 TTS 扩展的评测</a><a class="lv2" href="#sec-3-6">3.6 3.6 系统行为分析</a><a class="lv1" href="#sec-4">4 4 结论</a><a class="lv1" href="#sec-5">5 5 参考文献</a></nav>
+  <nav class="toc"><a class="lv1" href="#sec-abstract">摘要</a><a class="lv1" href="#sec-1">1 1 引言</a><a class="lv1" href="#sec-2">2 2 E2 TTS</a><a class="lv2" href="#sec-2-1">2.1 2.1 训练</a><a class="lv1" href="#sec-e2-tts-training">E2 TTS - 训练</a><a class="lv2" href="#sec-flow-matching-transformer">Flow-matching Transformer</a><a class="lv1" href="#sec-e2-tts-inference">E2 TTS - 推理</a><a class="lv2" href="#sec-vocoder">声码器</a><a class="lv2" href="#sec-flow-matching-transformer-2">Flow-matching Transformer</a><a class="lv2" href="#sec-2-2">2.2 2.2 推理</a><a class="lv2" href="#sec-2-3">2.3 2.3 基于流匹配的 mel 频谱图生成器</a><a class="lv1" href="#sec-e2-tts-x1-training">声码器</a><a class="lv2" href="#sec-flow-matching-transformer-3">Flow-matching Transformer</a><a class="lv2" href="#sec-vocoder-2">声码器</a><a class="lv2" href="#sec-flow-matching-transformer-4">Flow-matching Transformer</a><a class="lv2" href="#sec-2-4">2.4 2.4 与 Voicebox 的关系</a><a class="lv2" href="#sec-2-5">2.5 2.5 E2 TTS 的扩展</a><a class="lv1" href="#sec-3">3 3 实验</a><a class="lv2" href="#sec-3-1">3.1 3.1 训练数据</a><a class="lv2" href="#sec-3-2">3.2 3.2 模型配置</a><a class="lv2" href="#sec-3-3">3.3 3.3 评测数据与指标</a><a class="lv2" href="#sec-id">ID</a><a class="lv2" href="#sec-id-2">ID</a><a class="lv2" href="#sec-3-4">3.4 3.4 主要结果</a><a class="lv2" href="#sec-id-3">ID</a><a class="lv2" href="#sec-id-4">ID</a><a class="lv2" href="#sec-3-5">3.5 3.5 E2 TTS 扩展的评测</a><a class="lv2" href="#sec-3-6">3.6 3.6 系统行为分析</a><a class="lv1" href="#sec-4">4 4 结论</a><a class="lv1" href="#sec-5">5 5 参考文献</a></nav>
   <article class="reader"><section><div class="pblk plain" id="p-front-1"><p class="refline">Hemin Yang, Zirun Zhu, Min Tang, Xu Tan, Yanqing Liu, Sheng Zhao, Naoyuki Kanda Microsoft Corporation, USA</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-abstract"><span class="t-zh">摘要</span><span class="t-en">ABSTRACT</span></h2><div class="pblk" id="p-abstract-1">
@@ -255,68 +255,118 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div></section>
 <section>
       <h2 class="sech lv1" id="sec-e2-tts-training"><span class="t-zh">E2 TTS - 训练</span><span class="t-en">E2 TTS - Training</span></h2><div class="pblk" id="p-e2-tts-training-1">
-          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-training-1-1"><span class="en">Training target</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-training-1-1"><span class="en">Training target Masked Masked</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-e2-tts-training-1-1"><span class="zh">训练目标。</span></span></p>
           
         </div>
-<div class="eq" id="eq-e2-tts-training-1"><code>𝑚⨀Ƹ𝑠</code></div>
-<div class="pblk" id="p-e2-tts-training-2">
-          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-training-2-1"><span class="en">Model input</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-e2-tts-training-2-1"><span class="zh">模型输入。</span></span></p>
+<div class="eq" id="eq-e2-tts-training-1"><code>𝑚⨀Ƹ𝑠</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-flow-matching-transformer"><span class="t-zh">Flow-matching Transformer</span><span class="t-en">Flow-matching Transformer</span></h3><div class="pblk" id="p-flow-matching-transformer-1">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-1-1"><span class="en">(Mel spectrogram generator) Model input Masked</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-1-1"><span class="zh">模型输入。</span></span></p>
           
         </div>
-<div class="eq" id="eq-e2-tts-training-2"><code>(1 −𝑚)⨀Ƹ𝑠</code></div>
-<div class="eq" id="eq-e2-tts-training-3"><code>ො𝑦</code></div>
-<div class="pblk" id="p-e2-tts-training-3">
-          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-training-3-1"><span class="en">i w r u ?</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-e2-tts-training-3-1"><span class="zh">i w r u ?（图示乱码碎片：音频转录中的零散字母。）</span></span></p>
+<div class="eq" id="eq-flow-matching-transformer-1"><code>(1 −𝑚)⨀Ƹ𝑠</code></div>
+<div class="eq" id="eq-flow-matching-transformer-2"><code>ො𝑦</code></div>
+<div class="pblk" id="p-flow-matching-transformer-2">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-1"><span class="en">H i</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-1"><span class="zh">（图内字符序列示意：H i !）</span></span></p>
           
         </div>
-<div class="pblk" id="p-e2-tts-training-4">
-          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-training-4-1"><span class="en">&lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; Audio mel spectrogram Ƹ𝑠 Transcription of the audio 𝑦 Hi!</span></span> <span class="sent" data-sid="s-e2-tts-training-4-2"><span class="en">How are you?</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-e2-tts-training-4-1"><span class="zh">&lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; 音频 mel 频谱图，音频的转录，&quot;Hi!&quot;（图注碎片：ŝ 为 mel 频谱图，y 为转录。）</span></span><span class="sent" data-sid="s-e2-tts-training-4-2"><span class="zh">&quot;How are you?&quot;（图示示例转录文字。）</span></span></p>
+<div class="eq" id="eq-flow-matching-transformer-3"><code>!</code></div>
+<div class="pblk" id="p-flow-matching-transformer-3">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-1"><span class="en">H o w a r e y o u</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-1"><span class="zh">（图内字符序列示意：H o w a r e y o u ?）</span></span></p>
           
         </div>
-<div class="pblk" id="p-e2-tts-training-5">
-          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-training-5-1"><span class="en">Training data</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-e2-tts-training-5-1"><span class="zh">训练数据。</span></span></p>
+<div class="eq" id="eq-flow-matching-transformer-4"><code>?</code></div>
+<div class="pblk" id="p-flow-matching-transformer-4">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-1"><span class="en">&lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; Filler tokens Audio mel spectrogram Ƹ𝑠 Transcription of the audio 𝑦 Hi!</span></span> <span class="sent" data-sid="s-flow-matching-transformer-4-2"><span class="en">How are you?</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-1"><span class="zh">（图 1(a) 标签：⟨F⟩×10 填充 token（Filler tokens）；音频 mel 频谱图 ŝ；音频转写文本 y「Hi!」。）</span></span><span class="sent" data-sid="s-flow-matching-transformer-4-2"><span class="zh">&quot;How are you?&quot;（图示示例转录文字。）</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-flow-matching-transformer-5">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-5-1"><span class="en">Training data It’s a good day!</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-5-1"><span class="zh">训练数据。</span></span></p>
           
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-e2-tts-inference"><span class="t-zh">E2 TTS - 推理</span><span class="t-en">E2 TTS - Inference</span></h2></section>
+      <h2 class="sech lv1" id="sec-e2-tts-inference"><span class="t-zh">E2 TTS - 推理</span><span class="t-en">E2 TTS - Inference</span></h2><div class="pblk" id="p-e2-tts-inference-1">
+          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-inference-1-1"><span class="en">2 sec</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-e2-tts-inference-1-1"><span class="zh">（图内时长标注：2 sec。）</span></span></p>
+          
+        </div></section>
 <section>
       <h3 class="sech lv2" id="sec-vocoder"><span class="t-zh">声码器</span><span class="t-en">Vocoder</span></h3><div class="pblk" id="p-vocoder-1">
           <p class="en-lines"><span class="sent" data-sid="s-vocoder-1-1"><span class="en">Discarded</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-vocoder-1-1"><span class="zh">丢弃。</span></span></p>
           
-        </div>
-<div class="eq" id="eq-vocoder-1"><code>𝑧gen</code></div>
-<div class="eq" id="eq-vocoder-2"><code>ො𝑦′</code></div>
-<div class="pblk" id="p-vocoder-2">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-2-1"><span class="en">l l I t ‘ s g &lt;F&gt; &lt;F&gt; &lt;F&gt; Audio mel spectrogram Ƹ𝑠aud Transcription of the audio 𝑦aud Hello!</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-2-1"><span class="zh">l l I t ' s g &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; 音频 mel 频谱图（ŝaud），音频的转录（yaud），&quot;Hello!&quot;（图注碎片：推理输入示意。）</span></span></p>
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-flow-matching-transformer-2"><span class="t-zh">Flow-matching Transformer</span><span class="t-en">Flow-matching Transformer</span></h3><div class="pblk" id="p-flow-matching-transformer-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-1-1"><span class="en">(Mel spectrogram generator)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-1-1"><span class="zh">（图内模块标签：Mel 频谱生成器。）</span></span></p>
           
         </div>
-<div class="pblk" id="p-vocoder-3">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-3-1"><span class="en">Audio prompt Text prompt 𝑦text Duration</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-3-1"><span class="zh">音频提示、文本提示 ytext、时长（图示标注文字。）</span></span></p>
+<div class="eq" id="eq-flow-matching-transformer-2-1"><code>𝑧gen</code></div>
+<div class="eq" id="eq-flow-matching-transformer-2-2"><code>ො𝑦′</code></div>
+<div class="pblk" id="p-flow-matching-transformer-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-2-1"><span class="en">H e l l o</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-2-1"><span class="zh">（图内字符序列示意：H e l l o !）</span></span></p>
           
         </div>
-<div class="cap" id="fig-vocoder-1"><span class="cap-k">图</span><p class="en">Fig. 1. An overview of the training (left) and the inference (right) processes of E2 TTS.</p><p class="zh">图 1. E2 TTS 训练（左）与推理（右）过程总览。</p></div>
-<div class="pblk" id="p-vocoder-4">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-4-1"><span class="en">where ci represents the i-th character of the transcription.2 First, we extract its mel-filterbank features ˆs ∈RD×T , where D denotes the feature dimension and T represents the sequence length.</span></span> <span class="sent" data-sid="s-vocoder-4-2"><span class="en">We then create an extended character sequence ˆy, where a special filler token ⟨F⟩is appended to y to make the length of ˆy equal to T.3 ˆy = (c1, c2, . . . , cM, ⟨F⟩, . . . , ⟨F⟩ (T −M) times ).</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-4-1"><span class="zh">其中 ci 表示转录中的第 i 个字符。2 首先，我们提取其 mel 滤波器组特征 ŝ ∈ R^(D×T)，其中 D 表示特征维度，T 表示序列长度。</span></span><span class="sent" data-sid="s-vocoder-4-2"><span class="zh">然后，我们构造扩展字符序列 ŷ：在 y 后面追加特殊的填充 token ⟨F⟩，使 ŷ 的长度等于 T。3 ŷ = (c1, c2, ..., cM, ⟨F⟩, ..., ⟨F⟩（T − M 次）)。</span></span></p>
+<div class="eq" id="eq-flow-matching-transformer-2-3"><code>!</code></div>
+<div class="pblk" id="p-flow-matching-transformer-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-3-1"><span class="en">I t</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-3-1"><span class="zh">（图内字符序列示意：I t ‘ s a g o o d d a y !）</span></span></p>
           
         </div>
-<div class="pblk" id="p-vocoder-5">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-5-1"><span class="en">A spectrogram generator, consisting of a vanilla Transformer [26] with U-net [23] style skip connection, is then trained based on the speech infilling task [18].</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-5-1"><span class="zh">随后，一个由带 U-net [23] 风格跳跃连接的原版 Transformer [26] 构成的频谱图生成器，基于语音填充任务 [18] 进行训练。</span></span></p>
+<div class="eq" id="eq-flow-matching-transformer-2-4"><code>‘</code></div>
+<div class="pblk" id="p-flow-matching-transformer-2-4">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-4-1"><span class="en">s a g o o d d a y</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-4-1"><span class="zh">（图内字符序列示意：I t ‘ s a g o o d d a y !）</span></span></p>
           
         </div>
-<div class="pblk" id="p-vocoder-6">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-6-1"><span class="en">More specifically, the model is trained to learn the distribution P(m ⊙ˆs|(1 −m) ⊙ˆs, ˆy), where m ∈{0, 1}D×T represents a binary temporal mask, and ⊙is the Hadamard product.</span><button class="mk feat" data-sid="s-vocoder-6-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-vocoder-6-2"><span class="en">E2 TTS uses the conditional flow-matching [20] to learn such distribution.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-6-1"><span class="zh">更具体地说，模型被训练来学习分布 P(m ⊙ ŝ | (1 − m) ⊙ ŝ, ŷ)，其中 m ∈ {0,1}^(D×T) 表示一个二元时间掩码，⊙ 是 Hadamard 积。</span><button class="mk feat" data-sid="s-vocoder-6-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-vocoder-6-2"><span class="zh">E2 TTS 使用条件流匹配 [20] 来学习该分布。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-vocoder-6-1">
+<div class="eq" id="eq-flow-matching-transformer-2-5"><code>!</code></div>
+<div class="pblk" id="p-flow-matching-transformer-2-5">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-5-1"><span class="en">&lt;F&gt; &lt;F&gt; &lt;F&gt; Filler tokens Audio mel spectrogram Ƹ𝑠aud Transcription of the audio 𝑦aud Hello!</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-5-1"><span class="zh">（图内标签：⟨F⟩×3 填充 token；音频 mel 频谱图 ŝ_aud；音频转写 y_aud「Hello!」。）</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-flow-matching-transformer-2-6">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-6-1"><span class="en">It’s a good day!</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-6-1"><span class="zh">（图内文本：It's a good day!）</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-flow-matching-transformer-2-7">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-7-1"><span class="en">2 sec Audio prompt Text prompt 𝑦text Duration</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-7-1"><span class="zh">（图内标签：2 sec；Audio prompt；Text prompt y_text；Duration。）</span></span></p>
+          
+        </div>
+<div class="cap" id="fig-flow-matching-transformer-2-1"><span class="cap-k">图</span><p class="en">Fig. 1. An overview of the training (left) and the inference (right) processes of E2 TTS.</p><p class="zh">图 1. E2 TTS 训练（左）与推理（右）过程总览。</p></div>
+<div class="pblk" id="p-flow-matching-transformer-2-8">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-8-1"><span class="en">where ci represents the i-th character of the transcription.2 First, we extract its mel-filterbank features ˆs ∈RD×T , where D denotes the feature dimension and T represents the sequence length.</span></span> <span class="sent" data-sid="s-flow-matching-transformer-2-8-2"><span class="en">We then create an extended character sequence ˆy, where a special filler token ⟨F⟩is appended to y to make the length of ˆy equal to T.3 ˆy = (c1, c2, . . . , cM, ⟨F⟩, . . . , ⟨F⟩</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-8-1"><span class="zh">其中 ci 表示转录中的第 i 个字符。2 首先，我们提取其 mel 滤波器组特征 ŝ ∈ R^(D×T)，其中 D 表示特征维度，T 表示序列长度。</span></span><span class="sent" data-sid="s-flow-matching-transformer-2-8-2"><span class="zh">随后构造扩展字符序列 ŷ：在 y 后追加特殊填充 token ⟨F⟩，使 ŷ 长度等于 T（脚注 3：ŷ = (c1, c2, …, cM, ⟨F⟩, …, ⟨F⟩)，其中填充段共 (T −M) 个）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-flow-matching-transformer-2-6"><code>|</code></div>
+<div class="eq" id="eq-flow-matching-transformer-2-7"><code>{z</code></div>
+<div class="eq" id="eq-flow-matching-transformer-2-8"><code>}</code></div>
+<div class="pblk" id="p-flow-matching-transformer-2-9">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-9-1"><span class="en">(T −M) times</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-9-1"><span class="zh">随后构造扩展字符序列 ŷ：在 y 后追加特殊填充 token ⟨F⟩，使 ŷ 长度等于 T（脚注 3：ŷ = (c1, c2, …, cM, ⟨F⟩, …, ⟨F⟩)，其中填充段共 (T −M) 个）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-flow-matching-transformer-2-9"><code>). (1)</code></div>
+<div class="pblk" id="p-flow-matching-transformer-2-10">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-10-1"><span class="en">A spectrogram generator, consisting of a vanilla Transformer [26] with U-net [23] style skip connection, is then trained based on the speech infilling task [18].</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-10-1"><span class="zh">随后，一个由带 U-net [23] 风格跳跃连接的原版 Transformer [26] 构成的频谱图生成器，基于语音填充任务 [18] 进行训练。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-flow-matching-transformer-2-11">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-11-1"><span class="en">More specifically, the model is trained to learn the distribution P(m ⊙ˆs|(1 −m) ⊙ˆs, ˆy), where m ∈{0, 1}D×T represents a binary temporal mask, and ⊙is the Hadamard product.</span><button class="mk feat" data-sid="s-flow-matching-transformer-2-11-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-flow-matching-transformer-2-11-2"><span class="en">E2 TTS uses the conditional flow-matching [20] to learn such distribution.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-11-1"><span class="zh">更具体地说，模型被训练来学习分布 P(m ⊙ ŝ | (1 − m) ⊙ ŝ, ŷ)，其中 m ∈ {0,1}^(D×T) 表示一个二元时间掩码，⊙ 是 Hadamard 积。</span><button class="mk feat" data-sid="s-flow-matching-transformer-2-11-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-flow-matching-transformer-2-11-2"><span class="zh">E2 TTS 使用条件流匹配 [20] 来学习该分布。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-flow-matching-transformer-2-11-1">
       <div class="ann-card kind-concept">
         <div class="ann-kind">概念</div>
         <div class="ann-title">infilling 任务的形式化</div>
@@ -326,25 +376,43 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-2-2"><span class="secnum">2.2</span> <span class="t-zh">2.2 推理</span><span class="t-en">Inference</span></h3><div class="cap" id="fig-2-2-1"><span class="cap-k">图</span><p class="en">Fig. 1 (b) provides an overview of the inference with E2 TTS. Suppose we have an audio prompt saud and its transcription yaud = (c′ 1, c′ 2, ..., c′ Maud) to mimic the speaker characteristics. We also suppose a text prompt ytext = (c′′ 2, ..., c′′ Mtext). In the E2 TTS framework, we also require the target duration of the speech that we want to generate, which may be determined arbitrarily. The target duration is internally represented by the frame length T gen. First, we extract the mel-filterbank features ˆsaud ∈RD×T aud from saud. We then create an extended character sequence ˆy′ by</p><p class="zh">图 1（b）给出了 E2 TTS 推理过程的总览。假设我们有一个音频提示 saud 及其转录 yaud = (c′1, c′2, ..., c′Maud)，用于模仿说话人特征；再假设有文本提示 ytext = (c′′2, ..., c′′Mtext)。在 E2 TTS 框架中，我们还需要指定希望生成的语音的目标时长，该时长可以任意确定。目标时长在内部以帧长度 Tgen 表示。首先，我们从 saud 中提取 mel 滤波器组特征 ŝaud ∈ R^(D×Taud)。然后，通过如下方式构造扩展字符序列 ŷ′……</p></div>
+      <h3 class="sech lv2" id="sec-2-2"><span class="secnum">2.2</span> <span class="t-zh">2.2 推理</span><span class="t-en">Inference</span></h3><div class="cap" id="fig-2-2-1"><span class="cap-k">图</span><p class="en">Fig. 1 (b) provides an overview of the inference with E2 TTS. Suppose we have an audio prompt saud and its transcription yaud = (c′ 1, c′ 2, ..., c′ Maud) to mimic the speaker characteristics. We also suppose a text prompt ytext = (c′′ 1, c′′ 2, ..., c′′ Mtext). In the E2 TTS framework, we also require the target duration of the speech that we want to generate, which may be determined arbitrarily. The target duration is internally represented by the frame length T gen. First, we extract the mel-filterbank features ˆsaud ∈RD×T aud</p><p class="zh">图 1(b) 给出 E2 TTS 推理过程概览。设有音频提示 s_aud 及其转写 y_aud = (c′1, c′2, …, c′M_aud) 用于模仿说话人特征；另有文本提示 y_text = (c′′1, c′′2, …, c′′M_text)。E2 TTS 框架还需指定目标语音时长，可任意给定，内部以帧长 T_gen 表示。首先从 s_aud 提取 mel 滤波组特征 ŝ_aud ∈ R^{D×T_aud}（式见原文）。</p></div>
 <div class="pblk" id="p-2-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-1-1"><span class="en">concatenating yaud, ytext, and repeated ⟨F⟩, as follows:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-1-1"><span class="zh">将 yaud、ytext 与重复的 ⟨F⟩ 拼接，如下所示：</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-1-1"><span class="en">from saud.</span></span> <span class="sent" data-sid="s-2-2-1-2"><span class="en">We then create an extended character sequence ˆy′ by concatenating yaud, ytext, and repeated ⟨F⟩, as follows:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-1-1"><span class="zh">（公式续行：从 s_aud 提取。）</span></span><span class="sent" data-sid="s-2-2-1-2"><span class="zh">将 yaud、ytext 与重复的 ⟨F⟩ 拼接，如下所示：</span></span></p>
           
         </div>
 <div class="pblk" id="p-2-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-2-1"><span class="en">ˆy′ = (c′ 1, c′ 2, . . . , c′ Maud, c′′ 2, . . . , c′′ Mtext, ⟨F⟩, . . . , ⟨F⟩ T times ), where T = T aud+T gen−M aud−M text, which ensures the length of ˆy′ is equal to T aud + T gen.4 2Alternatively, we can represent y as a sequence of Unicode bytes [25].</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-2-1"><span class="zh">ŷ′ = (c′1, c′2, ..., c′Maud, c′′2, ..., c′′Mtext, ⟨F⟩, ..., ⟨F⟩（T 次）)，其中 T = Taud + Tgen − Maud − Mtext，这保证了 ŷ′ 的长度等于 Taud + Tgen。4 2或者，我们也可以将 y 表示为 Unicode 字节序列 [25]。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-2-1"><span class="en">ˆy′ = (c′ 1, c′</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-2-1"><span class="zh">（公式片段：ŷ′ = (c′1, c′2, …（见原文）。）</span></span></p>
           
         </div>
+<div class="eq" id="eq-2-2-1"><code>2, . . . , c′</code></div>
+<div class="eq" id="eq-2-2-2"><code>Maud, c′′ 1, c′′</code></div>
+<div class="eq" id="eq-2-2-3"><code>2, . . . , c′′</code></div>
+<div class="eq" id="eq-2-2-4"><code>Mtext, ⟨F⟩, . . . , ⟨F⟩</code></div>
+<div class="eq" id="eq-2-2-5"><code>|</code></div>
+<div class="eq" id="eq-2-2-6"><code>{z</code></div>
+<div class="eq" id="eq-2-2-7"><code>}</code></div>
 <div class="pblk" id="p-2-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-3-1"><span class="en">3We assume M ≤T, which is almost always valid. 4To ensure T ≥0, T gen needs to satisfy T gen ≥Maud + Mtext − T aud, which is almost always valid in the TTS scenario.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-3-1"><span class="zh">3我们假设 M ≤ T，这在实际中几乎总是成立。4为保证 T ≥ 0，Tgen 需满足 Tgen ≥ Maud + Mtext − Taud，这在 TTS 场景下几乎总是成立。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-3-1"><span class="en">T times</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-3-1"><span class="zh">（公式片段：M_text 个字符后接 ⟨F⟩×T 填充。）</span></span></p>
           
         </div>
+<div class="eq" id="eq-2-2-8"><code>), (2)</code></div>
 <div class="pblk" id="p-2-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-4-1"><span class="en">The mel spectrogram generator then generates mel-filterbank features ˜s based on the learned distribution of P(˜s|[ˆsaud; zgen], ˆy′), where zgen is an all-zero matrix with a shape of D × T gen, and [; ] is a concatenation operation in the dimension of T ∗.</span></span> <span class="sent" data-sid="s-2-2-4-2"><span class="en">The generated part of ˜s are then converted to the speech signal based on the vocoder.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-4-1"><span class="zh">mel 频谱图生成器随后基于学习到的分布 P(s̃ | [ŝaud; zgen], ŷ′) 生成 mel 滤波器组特征 s̃，其中 zgen 是形状为 D × Tgen 的全零矩阵，[; ] 表示在 T 维度上的拼接操作。</span></span><span class="sent" data-sid="s-2-2-4-2"><span class="zh">s̃ 中生成的部分随后由声码器转换为语音信号。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-4-1"><span class="en">where T = T aud+T gen−M aud−M text, which ensures the length of ˆy′ is equal to T aud + T gen.4 2Alternatively, we can represent y as a sequence of Unicode bytes [25].</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-4-1"><span class="zh">ŷ′ = (c′1, c′2, ..., c′Maud, c′′2, ..., c′′Mtext, ⟨F⟩, ..., ⟨F⟩（T 次）)，其中 T = Taud + Tgen − Maud − Mtext，这保证了 ŷ′ 的长度等于 Taud + Tgen。4 2或者，我们也可以将 y 表示为 Unicode 字节序列 [25]。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-2-5">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-5-1"><span class="en">3We assume M ≤T, which is almost always valid. 4To ensure T ≥0, T gen needs to satisfy T gen ≥Maud + Mtext − T aud, which is almost always valid in the TTS scenario.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-5-1"><span class="zh">3我们假设 M ≤ T，这在实际中几乎总是成立。4为保证 T ≥ 0，Tgen 需满足 Tgen ≥ Maud + Mtext − Taud，这在 TTS 场景下几乎总是成立。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-2-6">
+          <p class="en-lines"><span class="sent" data-sid="s-2-2-6-1"><span class="en">The mel spectrogram generator then generates mel-filterbank features ˜s based on the learned distribution of P(˜s|[ˆsaud; zgen], ˆy′), where zgen is an all-zero matrix with a shape of D × T gen, and [; ] is a concatenation operation in the dimension of T ∗.</span></span> <span class="sent" data-sid="s-2-2-6-2"><span class="en">The generated part of ˜s are then converted to the speech signal based on the vocoder.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-2-6-1"><span class="zh">mel 频谱图生成器随后基于学习到的分布 P(s̃ | [ŝaud; zgen], ŷ′) 生成 mel 滤波器组特征 s̃，其中 zgen 是形状为 D × Tgen 的全零矩阵，[; ] 表示在 T 维度上的拼接操作。</span></span><span class="sent" data-sid="s-2-2-6-2"><span class="zh">s̃ 中生成的部分随后由声码器转换为语音信号。</span></span></p>
           
         </div></section>
 <section>
@@ -353,8 +421,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-3-1-1"><span class="zh">E2 TTS 采用条件流匹配（conditional flow matching）[20]，它融合了连续正则化流（continuous normalizing flows）[27] 的原理。</span></span><span class="sent" data-sid="s-2-3-1-2"><span class="zh">该模型的工作方式是将一个简单的初始分布 p0 变换为刻画数据的复杂目标分布 p1。</span></span><span class="sent" data-sid="s-2-3-1-3"><span class="zh">这一变换过程由一个以 θ 为参数的神经网络实现，它被训练来估计一个随时间变化的向量场，记为 vt(x; θ)，其中 t ∈ [0, 1]。</span></span><span class="sent" data-sid="s-2-3-1-4"><span class="zh">从该向量场出发，我们推导出一个流 ϕt，它有效地将 p0 过渡为 p1。</span></span><span class="sent" data-sid="s-2-3-1-5"><span class="zh">该神经网络的训练由条件流匹配目标驱动：</span></span></p>
           
         </div>
+<div class="eq" id="eq-2-3-1"><code>LCFM(θ) = Et,q(x1),pt(x|x1) ∥ut(x|x1) −vt(x; θ)∥2 , (3)</code></div>
 <div class="pblk" id="p-2-3-2">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-2-1"><span class="en">LCFM(θ) = Et,q(x1),pt(x|x1) ∥ut(x|x1) −vt(x; θ)∥2 , where pt is the probability path at time t, ut is the designated vector field for pt, x1 symbolizes the random variable corresponding to the training data, and q is the distribution of the training data.</span></span> <span class="sent" data-sid="s-2-3-2-2"><span class="en">In the training phase, we construct both a probability path and a vector field from the training data, utilizing an optimal transport path: pt(x|x1) = N(x|tx1, (1 −(1 −σmin)t)2I) and ut(x|x1) = (x1 −(1 −σmin)x)/(1 −(1 −σmin)t).</span><button class="mk feat" data-sid="s-2-3-2-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-3-2-3"><span class="en">For inference, we apply an ordinary differential equation (ODE) solver [27] to generate the log mel-filterbank features starting from the initial distribution p0.</span><button class="mk" data-sid="s-2-3-2-3" title="查看讲解">解</button></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-2-3-2-1"><span class="en">where pt is the probability path at time t, ut is the designated vector field for pt, x1 symbolizes the random variable corresponding to the training data, and q is the distribution of the training data.</span></span> <span class="sent" data-sid="s-2-3-2-2"><span class="en">In the training phase, we construct both a probability path and a vector field from the training data, utilizing an optimal transport path: pt(x|x1) = N(x|tx1, (1 −(1 −σmin)t)2I) and ut(x|x1) = (x1 −(1 −σmin)x)/(1 −(1 −σmin)t).</span><button class="mk feat" data-sid="s-2-3-2-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-3-2-3"><span class="en">For inference, we apply an ordinary differential equation (ODE) solver [27] to generate the log mel-filterbank features starting from the initial distribution p0.</span><button class="mk" data-sid="s-2-3-2-3" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-3-2-1"><span class="zh">LCFM(θ) = E_{t,q(x1),pt(x|x1)} ‖ut(x|x1) − vt(x; θ)‖^2，其中 pt 是时刻 t 的概率路径，ut 是为 pt 指定的向量场，x1 表示训练数据对应的随机变量，q 是训练数据的分布。</span></span><span class="sent" data-sid="s-2-3-2-2"><span class="zh">在训练阶段，我们利用最优传输路径从训练数据构造概率路径和向量场：pt(x|x1) = N(x|tx1, (1 − (1 − σmin)t)^2 · I)，ut(x|x1) = (x1 − (1 − σmin)x)/(1 − (1 − σmin)t)。</span><button class="mk feat" data-sid="s-2-3-2-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-3-2-3"><span class="zh">推理时，我们应用常微分方程（ODE）求解器 [27]，从初始分布 p0 出发生成 log mel 滤波器组特征。</span><button class="mk" data-sid="s-2-3-2-3" title="查看讲解">解</button></span></p>
           <div class="ann-zone"><div class="ann-panel" data-sid="s-2-3-2-2">
       <div class="ann-card kind-engineering">
@@ -384,60 +453,96 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div></section>
 <section>
       <h2 class="sech lv1" id="sec-e2-tts-x1-training"><span class="t-zh">声码器</span><span class="t-en">E2 TTS X1 - Training</span></h2><div class="pblk" id="p-e2-tts-x1-training-1">
-          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-x1-training-1-1"><span class="en">E2 TTS X1 - Inference Training target</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-e2-tts-x1-training-1-1"><span class="zh">E2 TTS X1 - 推理；训练目标。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-x1-training-1-1"><span class="en">E2 TTS X1 - Inference Training target Masked</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-e2-tts-x1-training-1-1"><span class="zh">（图内标签：E2 TTS X1 - Inference；Training target；Masked。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-e2-tts-x1-training-1"><code>𝑚⨀Ƹ𝑠</code></div>
-<div class="pblk" id="p-e2-tts-x1-training-2">
-          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-x1-training-2-1"><span class="en">Model input</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-e2-tts-x1-training-2-1"><span class="zh">模型输入。</span></span></p>
+<div class="eq" id="eq-e2-tts-x1-training-1"><code>𝑚⨀Ƹ𝑠</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-flow-matching-transformer-3"><span class="t-zh">Flow-matching Transformer</span><span class="t-en">Flow-matching Transformer</span></h3><div class="pblk" id="p-flow-matching-transformer-3-1">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-1-1"><span class="en">(Mel spectrogram generator) Model input Masked</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-1-1"><span class="zh">模型输入。</span></span></p>
           
         </div>
-<div class="eq" id="eq-e2-tts-x1-training-2"><code>(1 −𝑚)⨀Ƹ𝑠</code></div></section>
+<div class="eq" id="eq-flow-matching-transformer-3-1"><code>(1 −𝑚)⨀Ƹ𝑠</code></div>
+<div class="pblk" id="p-flow-matching-transformer-3-2">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-2-1"><span class="en">It’s a good day!</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-2-1"><span class="zh">（图内文本：It's a good day!）</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-flow-matching-transformer-3-3">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-3-1"><span class="en">2 sec</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-3-1"><span class="zh">（图内时长标注：2 sec。）</span></span></p>
+          
+        </div></section>
 <section>
       <h3 class="sech lv2" id="sec-vocoder-2"><span class="t-zh">声码器</span><span class="t-en">Vocoder</span></h3><div class="pblk" id="p-vocoder-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-vocoder-2-1-1"><span class="en">Discarded</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-vocoder-2-1-1"><span class="zh">丢弃。</span></span></p>
           
-        </div>
-<div class="eq" id="eq-vocoder-2-1"><code>𝑧gen</code></div>
-<div class="pblk" id="p-vocoder-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-2-2-1"><span class="en">ො𝑦′ w r u ?</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-2-2-1"><span class="zh">ŷ′，w r u ?（图示碎片：转录中的零散字母。）</span></span></p>
+        </div></section>
+<section>
+      <h3 class="sech lv2" id="sec-flow-matching-transformer-4"><span class="t-zh">Flow-matching Transformer</span><span class="t-en">Flow-matching Transformer</span></h3><div class="pblk" id="p-flow-matching-transformer-4-1">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-1-1"><span class="en">(Mel spectrogram generator)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-1-1"><span class="zh">（图内模块标签：Mel 频谱生成器。）</span></span></p>
           
         </div>
-<div class="pblk" id="p-vocoder-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-2-3-1"><span class="en">&lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt;</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-2-3-1"><span class="zh">&lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt;（图示填充 token 行。）</span></span></p>
+<div class="eq" id="eq-flow-matching-transformer-4-1"><code>𝑧gen</code></div>
+<div class="eq" id="eq-flow-matching-transformer-4-2"><code>ො𝑦′</code></div>
+<div class="pblk" id="p-flow-matching-transformer-4-2">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-2-1"><span class="en">H o w a r e y o u</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-2-1"><span class="zh">（图内字符序列示意：H o w a r e y o u ?）</span></span></p>
           
         </div>
-<div class="eq" id="eq-vocoder-2-2"><code>ො𝑦</code></div>
-<div class="pblk" id="p-vocoder-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-2-4-1"><span class="en">Audio mel spectrogram Ƹ𝑠 Transcription of the masked region of the audio 𝑦 How are you?</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-2-4-1"><span class="zh">音频 mel 频谱图（ŝ），音频被掩码区域的转录（y），&quot;How are you?&quot;（图注碎片。）</span></span></p>
+<div class="eq" id="eq-flow-matching-transformer-4-3"><code>?</code></div>
+<div class="pblk" id="p-flow-matching-transformer-4-3">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-3-1"><span class="en">&lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt;</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-3-1"><span class="zh">&lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt;（图示填充 token 行。）</span></span></p>
           
         </div>
-<div class="pblk" id="p-vocoder-2-5">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-2-5-1"><span class="en">Training data I t ‘ s g &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; Audio mel spectrogram Ƹ𝑠aud Audio prompt Text prompt 𝑦text Duration</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-2-5-1"><span class="zh">训练数据：I t ' s g &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; 音频 mel 频谱图（ŝaud）；音频提示、文本提示 ytext、时长（图注碎片。）</span></span></p>
+<div class="eq" id="eq-flow-matching-transformer-4-4"><code>ො𝑦</code></div>
+<div class="pblk" id="p-flow-matching-transformer-4-4">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-4-1"><span class="en">Filler tokens Audio mel spectrogram Ƹ𝑠 Transcription of the masked region of the audio 𝑦 How are you?</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-4-1"><span class="zh">&quot;How are you?&quot;（图示示例转录文字。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-vocoder-2-1"><span class="cap-k">图</span><p class="en">Fig. 2. An overview of the training (left) and the inference (right) processes of E2 TTS X1.</p><p class="zh">图 2. E2 TTS X1 训练（左）与推理（右）过程总览。</p></div>
-<div class="pblk" id="p-vocoder-2-6">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-2-6-1"><span class="en">I enjoyed a day in Besiktas, Istanbul.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-2-6-1"><span class="zh">&quot;I enjoyed a day in Besiktas, Istanbul.&quot;（示例原文，意为&quot;我在伊斯坦布尔的贝西克塔斯度过了愉快的一天&quot;。）</span></span></p>
+<div class="pblk" id="p-flow-matching-transformer-4-5">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-5-1"><span class="en">Training data I t</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-5-1"><span class="zh">训练数据。</span></span></p>
           
         </div>
-<div class="pblk" id="p-vocoder-2-7">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-2-7-1"><span class="en">I enjoyed a day in (B EH1 SH IH0 K T AA0 SH), (IH0 S T AA1 N B UH0 L).</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-2-7-1"><span class="zh">&quot;I enjoyed a day in (B EH1 SH IH0 K T AA0 SH), (IH0 S T AA1 N B UH0 L).&quot;（其中括号内为音素序列。）</span></span></p>
+<div class="eq" id="eq-flow-matching-transformer-4-5"><code>‘</code></div>
+<div class="pblk" id="p-flow-matching-transformer-4-6">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-6-1"><span class="en">s a g o o d d a y</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-6-1"><span class="zh">（图内字符序列示意：I t ‘ s a g o o d d a y !）</span></span></p>
           
         </div>
-<div class="cap" id="fig-vocoder-2-2"><span class="cap-k">图</span><p class="en">Fig. 3. Example of the transcription for E2 TTS X2 where words are replaced with phoneme sequences enclosed in parentheses.</p><p class="zh">图 3. E2 TTS X2 的转录示例：单词被替换为括号包裹的音素序列。</p></div>
-<div class="pblk" id="p-vocoder-2-8">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-2-8-1"><span class="en">trained to output a vector field vt with the conditional flow-matching objective LCFM.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-2-8-1"><span class="zh">被训练为以条件流匹配目标 LCFM 输出向量场 vt。</span></span></p>
+<div class="eq" id="eq-flow-matching-transformer-4-6"><code>!</code></div>
+<div class="pblk" id="p-flow-matching-transformer-4-7">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-7-1"><span class="en">&lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; Filler tokens Audio mel spectrogram Ƹ𝑠aud It’s a good day!</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-7-1"><span class="zh">（图内标签：⟨F⟩×10 填充 token；音频 mel 频谱图 ŝ_aud；「It's a good day!」。）</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-flow-matching-transformer-4-8">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-8-1"><span class="en">2 sec Audio prompt Text prompt 𝑦text Duration</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-8-1"><span class="zh">（图内标签：2 sec；Audio prompt；Text prompt y_text；Duration。）</span></span></p>
+          
+        </div>
+<div class="cap" id="fig-flow-matching-transformer-4-1"><span class="cap-k">图</span><p class="en">Fig. 2. An overview of the training (left) and the inference (right) processes of E2 TTS X1.</p><p class="zh">图 2. E2 TTS X1 训练（左）与推理（右）过程总览。</p></div>
+<div class="pblk" id="p-flow-matching-transformer-4-9">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-9-1"><span class="en">I enjoyed a day in Besiktas, Istanbul.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-9-1"><span class="zh">&quot;I enjoyed a day in Besiktas, Istanbul.&quot;（示例原文，意为&quot;我在伊斯坦布尔的贝西克塔斯度过了愉快的一天&quot;。）</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-flow-matching-transformer-4-10">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-10-1"><span class="en">I enjoyed a day in (B EH1 SH IH0 K T AA0 SH), (IH0 S T AA1 N B UH0 L).</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-10-1"><span class="zh">&quot;I enjoyed a day in (B EH1 SH IH0 K T AA0 SH), (IH0 S T AA1 N B UH0 L).&quot;（其中括号内为音素序列。）</span></span></p>
+          
+        </div>
+<div class="cap" id="fig-flow-matching-transformer-4-2"><span class="cap-k">图</span><p class="en">Fig. 3. Example of the transcription for E2 TTS X2 where words are replaced with phoneme sequences enclosed in parentheses.</p><p class="zh">图 3. E2 TTS X2 的转录示例：单词被替换为括号包裹的音素序列。</p></div>
+<div class="pblk" id="p-flow-matching-transformer-4-11">
+          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-11-1"><span class="en">trained to output a vector field vt with the conditional flow-matching objective LCFM.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-11-1"><span class="zh">被训练为以条件流匹配目标 LCFM 输出向量场 vt。</span></span></p>
           
         </div></section>
 <section>
@@ -462,29 +567,40 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div></section>
 <section>
       <h3 class="sech lv2" id="sec-2-5"><span class="secnum">2.5</span> <span class="t-zh">2.5 E2 TTS 的扩展</span><span class="t-en">Extension of E2 TTS</span></h3><div class="pblk" id="p-2-5-1">
-          <p class="en-lines"><span class="sent" data-sid="s-2-5-1-1"><span class="en">2.5.1.</span></span> <span class="sent" data-sid="s-2-5-1-2"><span class="en">Extension 1: Eliminating the need for transcription of audio prompts in inference In certain application contexts, obtaining the transcription of the audio prompt can be challenging.</span></span> <span class="sent" data-sid="s-2-5-1-3"><span class="en">To eliminate the requirement of the transcription of the audio prompt during inference, we introduce an extension, illustrated in Fig. 2.</span></span> <span class="sent" data-sid="s-2-5-1-4"><span class="en">This extension, referred to as E2 TTS X1, assumes that we have access to the transcription of the masked region of the audio, which we use for y.</span></span> <span class="sent" data-sid="s-2-5-1-5"><span class="en">During inference, the extended character sequence ˆy′ is formed without yaud, namely, ˆy′ = (c′′ 2, . . . , c′′ Mtext, ⟨F⟩, . . . , ⟨F⟩ T times ).</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-5-1-1"><span class="zh">2.5.1.</span></span><span class="sent" data-sid="s-2-5-1-2"><span class="zh">扩展 1：消除推理时对音频提示转录的需求。在某些应用场景中，获取音频提示的转录可能比较困难。</span></span><span class="sent" data-sid="s-2-5-1-3"><span class="zh">为了消除推理时对音频提示转录的需求，我们引入了一个扩展，如 Fig. 2 所示。</span></span><span class="sent" data-sid="s-2-5-1-4"><span class="zh">这个被称为 E2 TTS X1 的扩展假设我们可以获取音频中被掩码区域的转录，并将其用作 y。</span></span><span class="sent" data-sid="s-2-5-1-5"><span class="zh">推理时，扩展字符序列 ŷ′ 的构造不包含 yaud，即 ŷ′ = (c′′2, ..., c′′Mtext, ⟨F⟩, ..., ⟨F⟩（T 次）)。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-2-5-1-1"><span class="en">2.5.1.</span></span> <span class="sent" data-sid="s-2-5-1-2"><span class="en">Extension 1: Eliminating the need for transcription of audio prompts in inference In certain application contexts, obtaining the transcription of the audio prompt can be challenging.</span></span> <span class="sent" data-sid="s-2-5-1-3"><span class="en">To eliminate the requirement of the transcription of the audio prompt during inference, we introduce an extension, illustrated in Fig. 2.</span></span> <span class="sent" data-sid="s-2-5-1-4"><span class="en">This extension, referred to as E2 TTS X1, assumes that we have access to the transcription of the masked region of the audio, which we use for y.</span></span> <span class="sent" data-sid="s-2-5-1-5"><span class="en">During inference, the extended character sequence ˆy′ is formed without yaud, namely, ˆy′ = (c′′ 1, c′′</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-5-1-1"><span class="zh">2.5.1.</span></span><span class="sent" data-sid="s-2-5-1-2"><span class="zh">扩展 1：消除推理时对音频提示转录的需求。在某些应用场景中，获取音频提示的转录可能比较困难。</span></span><span class="sent" data-sid="s-2-5-1-3"><span class="zh">为了消除推理时对音频提示转录的需求，我们引入了一个扩展，如 Fig. 2 所示。</span></span><span class="sent" data-sid="s-2-5-1-4"><span class="zh">这个被称为 E2 TTS X1 的扩展假设我们可以获取音频中被掩码区域的转录，并将其用作 y。</span></span><span class="sent" data-sid="s-2-5-1-5"><span class="zh">推理时不含 y_aud，直接构造扩展字符序列 ŷ′，即 ŷ′ = (c′′1, c′′2, …,（后接填充）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-2-5-1"><code>2, . . . , c′′</code></div>
+<div class="eq" id="eq-2-5-2"><code>Mtext, ⟨F⟩, . . . , ⟨F⟩</code></div>
+<div class="eq" id="eq-2-5-3"><code>|</code></div>
+<div class="eq" id="eq-2-5-4"><code>{z</code></div>
+<div class="eq" id="eq-2-5-5"><code>}</code></div>
 <div class="pblk" id="p-2-5-2">
-          <p class="en-lines"><span class="sent" data-sid="s-2-5-2-1"><span class="en">The rest of the procedure remains the same as in the basic E2 TTS.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-5-2-1"><span class="zh">其余流程与基础版 E2 TTS 保持一致。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-2-5-2-1"><span class="en">T times</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-5-2-1"><span class="zh">（公式片段：M_text 个字符后接 ⟨F⟩×T 填充。）</span></span></p>
           
         </div>
+<div class="eq" id="eq-2-5-6"><code>). (4)</code></div>
 <div class="pblk" id="p-2-5-3">
-          <p class="en-lines"><span class="sent" data-sid="s-2-5-3-1"><span class="en">The transcription of the masked region of the training audio can be obtained in several ways.</span></span> <span class="sent" data-sid="s-2-5-3-2"><span class="en">One method is to simply apply automatic speech recognition (ASR) to the masked region during training, which is straightforward but costly.</span></span> <span class="sent" data-sid="s-2-5-3-3"><span class="en">In our experiment, we employed the Montreal Forced Aligner [28] to determine the start and end times of words within each training data sample.</span></span> <span class="sent" data-sid="s-2-5-3-4"><span class="en">The masked region was determined in such a way that we ensured not to cut the word in the middle.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-5-3-1"><span class="zh">训练音频被掩码区域的转录可以通过几种方式获得。</span></span><span class="sent" data-sid="s-2-5-3-2"><span class="zh">一种方法是在训练时对被掩码区域直接应用自动语音识别（ASR），这很直接但成本较高。</span></span><span class="sent" data-sid="s-2-5-3-3"><span class="zh">在我们的实验中，我们使用 Montreal Forced Aligner [28] 来确定每个训练数据样本中各单词的起止时间。</span></span><span class="sent" data-sid="s-2-5-3-4"><span class="zh">掩码区域的选取保证不会把单词从中间切断。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-2-5-3-1"><span class="en">The rest of the procedure remains the same as in the basic E2 TTS.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-5-3-1"><span class="zh">其余流程与基础版 E2 TTS 保持一致。</span></span></p>
           
         </div>
 <div class="pblk" id="p-2-5-4">
-          <p class="en-lines"><span class="sent" data-sid="s-2-5-4-1"><span class="en">2.5.2.</span></span> <span class="sent" data-sid="s-2-5-4-2"><span class="en">Extension 2: Enabling explicit indication of pronunciation for parts of words in a sentence In certain scenarios, users want to specify the pronunciation of a specific word such as unique foreign names.</span></span> <span class="sent" data-sid="s-2-5-4-3"><span class="en">Retraining the model to accommodate such new words is both expensive and time-consuming.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-5-4-1"><span class="zh">2.5.2.</span></span><span class="sent" data-sid="s-2-5-4-2"><span class="zh">扩展 2：支持显式指定句中部分单词的发音。在某些场景中，用户希望指定特定单词（例如罕见的外国人名）的发音。</span></span><span class="sent" data-sid="s-2-5-4-3"><span class="zh">为适配这类新词而重新训练模型既昂贵又耗时。</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-2-5-4-1"><span class="en">The transcription of the masked region of the training audio can be obtained in several ways.</span></span> <span class="sent" data-sid="s-2-5-4-2"><span class="en">One method is to simply apply automatic speech recognition (ASR) to the masked region during training, which is straightforward but costly.</span></span> <span class="sent" data-sid="s-2-5-4-3"><span class="en">In our experiment, we employed the Montreal Forced Aligner [28] to determine the start and end times of words within each training data sample.</span></span> <span class="sent" data-sid="s-2-5-4-4"><span class="en">The masked region was determined in such a way that we ensured not to cut the word in the middle.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-5-4-1"><span class="zh">训练音频被掩码区域的转录可以通过几种方式获得。</span></span><span class="sent" data-sid="s-2-5-4-2"><span class="zh">一种方法是在训练时对被掩码区域直接应用自动语音识别（ASR），这很直接但成本较高。</span></span><span class="sent" data-sid="s-2-5-4-3"><span class="zh">在我们的实验中，我们使用 Montreal Forced Aligner [28] 来确定每个训练数据样本中各单词的起止时间。</span></span><span class="sent" data-sid="s-2-5-4-4"><span class="zh">掩码区域的选取保证不会把单词从中间切断。</span></span></p>
           
         </div>
 <div class="pblk" id="p-2-5-5">
-          <p class="en-lines"><span class="sent" data-sid="s-2-5-5-1"><span class="en">To tackle this challenge, we introduce another extension that enables us to indicate the pronunciation of a word during inference.</span></span> <span class="sent" data-sid="s-2-5-5-2"><span class="en">In this extension, referred to as E2 TTS X2, we occasionally substitute a word in y with a phoneme sequence enclosed in parentheses during training, as depicted in Fig. 3.</span></span> <span class="sent" data-sid="s-2-5-5-3"><span class="en">In our implementation, we replaced the word in y with the phoneme sequence from the CMU pronouncing dictionary [29] with a 15% probability.</span><button class="mk" data-sid="s-2-5-5-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-5-5-4"><span class="en">During inference, we simply replace the target word with phoneme sequences enclosed in parentheses.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-5-5-1"><span class="zh">为应对这一挑战，我们引入了另一个扩展，使我们能够在推理时指定单词的发音。</span></span><span class="sent" data-sid="s-2-5-5-2"><span class="zh">在这个被称为 E2 TTS X2 的扩展中，我们在训练时偶尔将 y 中的某个单词替换为括号包裹的音素序列，如 Fig. 3 所示。</span></span><span class="sent" data-sid="s-2-5-5-3"><span class="zh">在我们的实现中，我们以 15% 的概率将 y 中的单词替换为来自 CMU 发音词典 [29] 的音素序列。</span><button class="mk" data-sid="s-2-5-5-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-5-5-4"><span class="zh">推理时，我们只需将目标单词替换为括号包裹的音素序列即可。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-5-5-3">
+          <p class="en-lines"><span class="sent" data-sid="s-2-5-5-1"><span class="en">2.5.2.</span></span> <span class="sent" data-sid="s-2-5-5-2"><span class="en">Extension 2: Enabling explicit indication of pronunciation for parts of words in a sentence In certain scenarios, users want to specify the pronunciation of a specific word such as unique foreign names.</span></span> <span class="sent" data-sid="s-2-5-5-3"><span class="en">Retraining the model to accommodate such new words is both expensive and time-consuming.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-5-5-1"><span class="zh">2.5.2.</span></span><span class="sent" data-sid="s-2-5-5-2"><span class="zh">扩展 2：支持显式指定句中部分单词的发音。在某些场景中，用户希望指定特定单词（例如罕见的外国人名）的发音。</span></span><span class="sent" data-sid="s-2-5-5-3"><span class="zh">为适配这类新词而重新训练模型既昂贵又耗时。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-2-5-6">
+          <p class="en-lines"><span class="sent" data-sid="s-2-5-6-1"><span class="en">To tackle this challenge, we introduce another extension that enables us to indicate the pronunciation of a word during inference.</span></span> <span class="sent" data-sid="s-2-5-6-2"><span class="en">In this extension, referred to as E2 TTS X2, we occasionally substitute a word in y with a phoneme sequence enclosed in parentheses during training, as depicted in Fig. 3.</span></span> <span class="sent" data-sid="s-2-5-6-3"><span class="en">In our implementation, we replaced the word in y with the phoneme sequence from the CMU pronouncing dictionary [29] with a 15% probability.</span><button class="mk" data-sid="s-2-5-6-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-5-6-4"><span class="en">During inference, we simply replace the target word with phoneme sequences enclosed in parentheses.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-5-6-1"><span class="zh">为应对这一挑战，我们引入了另一个扩展，使我们能够在推理时指定单词的发音。</span></span><span class="sent" data-sid="s-2-5-6-2"><span class="zh">在这个被称为 E2 TTS X2 的扩展中，我们在训练时偶尔将 y 中的某个单词替换为括号包裹的音素序列，如 Fig. 3 所示。</span></span><span class="sent" data-sid="s-2-5-6-3"><span class="zh">在我们的实现中，我们以 15% 的概率将 y 中的单词替换为来自 CMU 发音词典 [29] 的音素序列。</span><button class="mk" data-sid="s-2-5-6-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-2-5-6-4"><span class="zh">推理时，我们只需将目标单词替换为括号包裹的音素序列即可。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-2-5-6-3">
       <div class="ann-card kind-engineering">
         <div class="ann-kind">工程启发</div>
         <div class="ann-title">标点为什么必须保留</div>
@@ -493,9 +609,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-2-5-6">
-          <p class="en-lines"><span class="sent" data-sid="s-2-5-6-1"><span class="en">It’s important to note that y is still a simple sequence of characters, and whether the character represents a word or a phoneme is solely determined by the existence of parentheses and their content.</span></span> <span class="sent" data-sid="s-2-5-6-2"><span class="en">It’s also noteworthy that punctuation marks surrounding the word are retained during replacement, which allows the model to utilize these punctuation marks even when the word is replaced with phoneme sequences.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-5-6-1"><span class="zh">需要注意的是，y 仍然是一个简单的字符序列，某个字符表示的是单词还是音素，完全由括号是否存在及其内容决定。</span></span><span class="sent" data-sid="s-2-5-6-2"><span class="zh">同样值得注意的是，替换时单词周围的标点符号会被保留，这使得即使单词被替换为音素序列，模型仍然能利用这些标点符号。</span></span></p>
+<div class="pblk" id="p-2-5-7">
+          <p class="en-lines"><span class="sent" data-sid="s-2-5-7-1"><span class="en">It’s important to note that y is still a simple sequence of characters, and whether the character represents a word or a phoneme is solely determined by the existence of parentheses and their content.</span></span> <span class="sent" data-sid="s-2-5-7-2"><span class="en">It’s also noteworthy that punctuation marks surrounding the word are retained during replacement, which allows the model to utilize these punctuation marks even when the word is replaced with phoneme sequences.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-5-7-1"><span class="zh">需要注意的是，y 仍然是一个简单的字符序列，某个字符表示的是单词还是音素，完全由括号是否存在及其内容决定。</span></span><span class="sent" data-sid="s-2-5-7-2"><span class="zh">同样值得注意的是，替换时单词周围的标点符号会被保留，这使得即使单词被替换为音素序列，模型仍然能利用这些标点符号。</span></span></p>
           
         </div></section>
 <section>
@@ -576,16 +692,51 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-4-1"><span class="zh">6我们实验中使用的测试集可在以下地址获取：https://github.com/microsoft/e2tts-test-suite。</span></span></p>
           
         </div>
-<div class="cap" id="tab-3-3-1"><span class="cap-k">表</span><p class="en">Table 1. Objective results for LibriSpeech-PC test-clean evaluation set. WER is expressed in percentage. † Our reproduction. LL, LH, and PP stand for Librilight, Libriheavy, and Proprietary, respectively.</p><p class="zh">Table 1. LibriSpeech-PC test-clean 评测集的客观结果。WER 以百分比表示。† 我们的复现。LL、LH、PP 分别表示 Librilight、Libriheavy 和专有数据（Proprietary）。</p></div>
-<div class="pblk" id="p-3-3-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-5-1"><span class="en">Data (hours) Init WER↓SIM-o↑ (GT) Ground Truth - - 2.0 0.695 (B1) VALL-E [8] LL (60K) 4.9 0.500 (B2) NaturalSpeech 3 [15] LL (60K) 2.6 0.632 LL (60K) 2.1 0.658 2.2 0.667 Pretrain [34] 2.2 0.695 2.0 0.675 Pretrain [34] 1.9 0.708 PP (200K) 1.9 0.707</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-5-1"><span class="zh">数据（小时数）、初始化、WER↓、SIM-o↑。（GT）Ground Truth - - 2.0 0.695。（B1）VALL-E [8] LL (60K) 4.9 0.500。（B2）NaturalSpeech 3 [15] LL (60K) 2.6 0.632。LL (60K) 2.1 0.658、2.2 0.667。Pretrain [34] 2.2 0.695、2.0 0.675。Pretrain [34] 1.9 0.708。PP (200K) 1.9 0.707。</span></span></p>
+<div class="cap" id="tab-3-3-1"><span class="cap-k">表</span><p class="en">Table 1. Objective results for LibriSpeech-PC test-clean evaluation set. WER is expressed in percentage. † Our reproduction. LL, LH, and PP stand for Librilight, Libriheavy, and Proprietary, respectively.</p><p class="zh">Table 1. LibriSpeech-PC test-clean 评测集的客观结果。WER 以百分比表示。† 我们的复现。LL、LH、PP 分别表示 Librilight、Libriheavy 和专有数据（Proprietary）。</p></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-id"><span class="t-zh">ID</span><span class="t-en">ID</span></h3><div class="pblk" id="p-id-1">
+          <p class="en-lines"><span class="sent" data-sid="s-id-1-1"><span class="en">Model Data (hours) Init WER↓SIM-o↑ (GT) Ground Truth</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-id-1-1"><span class="zh">表头：Model / Data (hours) / Init / WER↓ / SIM-o↑——(GT) Ground Truth（后续照原文）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-3-3-2"><span class="cap-k">表</span><p class="en">Table 2. Subjective results for LibriSpeech-PC test-clean evaluation set. † Our reproduction.</p><p class="zh">Table 2. LibriSpeech-PC test-clean 评测集的主观结果。† 我们的复现。</p></div>
-<div class="pblk" id="p-3-3-6">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-6-1"><span class="en">CMOS↑ SMOS↑ (GT) Ground Truth 0.00 (B2) NaturalSpeech 3 [15] (B4) Voicebox [18]† For the subjective assessments, we conducted two tests: the Comparative Mean Opinion Score (CMOS) and the Speaker Similarity Mean Opinion Score (SMOS).</span></span> <span class="sent" data-sid="s-3-3-6-2"><span class="en">We evaluated 39 samples for both tests, with one sample per speaker from our test-clean set.</span></span> <span class="sent" data-sid="s-3-3-6-3"><span class="en">Each sample was assessed by 12 Native English evaluators.</span></span> <span class="sent" data-sid="s-3-3-6-4"><span class="en">In the CMOS test [15], evaluators were shown the ground-truth sample and the generated sample side-by-side without knowing which was the ground-truth, and were asked to rate the naturalness on a 7-point scale (from -3 to 3), where a negative value indicates a preference for the ground-truth and a positive value indicates the opposite.</span></span> <span class="sent" data-sid="s-3-3-6-5"><span class="en">In the SMOS test, evaluators were presented with the audio prompt and the generated sample, and asked to rate the speaker similarity on a scale of 1 (not similar at all) to 5 (identical), with increments of 1.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-6-1"><span class="zh">CMOS↑、SMOS↑。（GT）Ground Truth 0.00。（B2）NaturalSpeech 3 [15]。（B4）Voicebox [18]†。在主观评测中，我们进行了两项测试：比较平均意见分（CMOS）和说话人相似度平均意见分（SMOS）。</span></span><span class="sent" data-sid="s-3-3-6-2"><span class="zh">两项测试各评测 39 个样本，每个样本来自我们 test-clean 集中的一位说话人。</span></span><span class="sent" data-sid="s-3-3-6-3"><span class="zh">每个样本由 12 位以英语为母语的评测者评分。</span></span><span class="sent" data-sid="s-3-3-6-4"><span class="zh">在 CMOS 测试 [15] 中，评测者并排看到真实样本与生成样本，但不知道哪个是真实样本，并被要求在 7 分制（-3 到 3）上评价自然度，负值表示偏好真实样本，正值表示相反。</span></span><span class="sent" data-sid="s-3-3-6-5"><span class="zh">在 SMOS 测试中，评测者看到音频提示和生成样本，并被要求按 1（完全不相似）到 5（完全相同）的尺度评价说话人相似度，步长为 1。</span></span></p>
+<div class="eq" id="eq-id-1"><code>- - 2.0 0.695</code></div>
+<div class="eq" id="eq-id-2"><code>(B1) VALL-E [8] LL (60K) Random</code></div>
+<div class="eq" id="eq-id-3"><code>4.9 0.500</code></div>
+<div class="eq" id="eq-id-4"><code>(B2) NaturalSpeech 3 [15] LL (60K) Random</code></div>
+<div class="eq" id="eq-id-5"><code>2.6 0.632</code></div>
+<div class="eq" id="eq-id-6"><code>(B3) Voicebox [18]† LL (60K) Random</code></div>
+<div class="eq" id="eq-id-7"><code>2.1 0.658</code></div>
+<div class="eq" id="eq-id-8"><code>(B4) Voicebox [18]† LH (50K) Random</code></div>
+<div class="eq" id="eq-id-9"><code>2.2 0.667</code></div>
+<div class="eq" id="eq-id-10"><code>(B5) Voicebox [18]† LH (50K) Pretrain [34]</code></div>
+<div class="eq" id="eq-id-11"><code>2.2 0.695</code></div>
+<div class="eq" id="eq-id-12"><code>(P1) E2 TTS LH (50K) Random</code></div>
+<div class="eq" id="eq-id-13"><code>2.0 0.675</code></div>
+<div class="eq" id="eq-id-14"><code>(P2) E2 TTS LH (50K) Pretrain [34]</code></div>
+<div class="eq" id="eq-id-15"><code>1.9 0.708</code></div>
+<div class="eq" id="eq-id-16"><code>(P3) E2 TTS PP (200K) Random</code></div>
+<div class="eq" id="eq-id-17"><code>1.9 0.707</code></div>
+<div class="cap" id="tab-id-1"><span class="cap-k">表</span><p class="en">Table 2. Subjective results for LibriSpeech-PC test-clean evaluation set. † Our reproduction.</p><p class="zh">Table 2. LibriSpeech-PC test-clean 评测集的主观结果。† 我们的复现。</p></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-id-2"><span class="t-zh">ID</span><span class="t-en">ID</span></h3><div class="pblk" id="p-id-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-id-2-1-1"><span class="en">Model CMOS↑ SMOS↑ (GT) Ground Truth</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-id-2-1-1"><span class="zh">（表：Model × CMOS↑ × SMOS↑——(GT) Ground Truth 0.00/3.91±0.13；(B2) NaturalSpeech 3 [15] -0.98/4.76±0.06；(B4) Voicebox [18]† -0.78/4.73±0.06；(P1) E2 TTS -0.14/4.66±0.07；(P2) E2 TTS -0.05/4.65±0.08；(P3) E2 TTS -0.18/4.64±0.08。）主观评测包含两项：比较平均意见分（CMOS）与说话人相似度平均意见分（SMOS）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-id-2-1"><code>0.00 3.91±0.13</code></div>
+<div class="eq" id="eq-id-2-2"><code>(B2) NaturalSpeech 3 [15]</code></div>
+<div class="eq" id="eq-id-2-3"><code>-0.98 4.76±0.06</code></div>
+<div class="eq" id="eq-id-2-4"><code>(B4) Voicebox [18]†</code></div>
+<div class="eq" id="eq-id-2-5"><code>-0.78 4.73±0.06</code></div>
+<div class="eq" id="eq-id-2-6"><code>(P1) E2 TTS</code></div>
+<div class="eq" id="eq-id-2-7"><code>-0.14 4.66±0.07</code></div>
+<div class="eq" id="eq-id-2-8"><code>(P2) E2 TTS</code></div>
+<div class="eq" id="eq-id-2-9"><code>-0.05 4.65±0.08</code></div>
+<div class="eq" id="eq-id-2-10"><code>(P3) E2 TTS</code></div>
+<div class="eq" id="eq-id-2-11"><code>-0.18 4.64±0.08</code></div>
+<div class="pblk" id="p-id-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-id-2-2-1"><span class="en">For the subjective assessments, we conducted two tests: the Comparative Mean Opinion Score (CMOS) and the Speaker Similarity Mean Opinion Score (SMOS).</span></span> <span class="sent" data-sid="s-id-2-2-2"><span class="en">We evaluated 39 samples for both tests, with one sample per speaker from our test-clean set.</span></span> <span class="sent" data-sid="s-id-2-2-3"><span class="en">Each sample was assessed by 12 Native English evaluators.</span></span> <span class="sent" data-sid="s-id-2-2-4"><span class="en">In the CMOS test [15], evaluators were shown the ground-truth sample and the generated sample side-by-side without knowing which was the ground-truth, and were asked to rate the naturalness on a 7-point scale (from -3 to 3), where a negative value indicates a preference for the ground-truth and a positive value indicates the opposite.</span></span> <span class="sent" data-sid="s-id-2-2-5"><span class="en">In the SMOS test, evaluators were presented with the audio prompt and the generated sample, and asked to rate the speaker similarity on a scale of 1 (not similar at all) to 5 (identical), with increments of 1.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-id-2-2-1"><span class="zh">（表：Model × CMOS↑ × SMOS↑——(GT) Ground Truth 0.00/3.91±0.13；(B2) NaturalSpeech 3 [15] -0.98/4.76±0.06；(B4) Voicebox [18]† -0.78/4.73±0.06；(P1) E2 TTS -0.14/4.66±0.07；(P2) E2 TTS -0.05/4.65±0.08；(P3) E2 TTS -0.18/4.64±0.08。）主观评测包含两项：比较平均意见分（CMOS）与说话人相似度平均意见分（SMOS）。</span></span><span class="sent" data-sid="s-id-2-2-2"><span class="zh">两项测试各评测 39 个样本，每个样本来自我们 test-clean 集中的一位说话人。</span></span><span class="sent" data-sid="s-id-2-2-3"><span class="zh">每个样本由 12 位以英语为母语的评测者评分。</span></span><span class="sent" data-sid="s-id-2-2-4"><span class="zh">在 CMOS 测试 [15] 中，评测者并排看到真实样本与生成样本，但不知道哪个是真实样本，并被要求在 7 分制（-3 到 3）上评价自然度，负值表示偏好真实样本，正值表示相反。</span></span><span class="sent" data-sid="s-id-2-2-5"><span class="zh">在 SMOS 测试中，评测者看到音频提示和生成样本，并被要求按 1（完全不相似）到 5（完全相同）的尺度评价说话人相似度，步长为 1。</span></span></p>
           
         </div></section>
 <section>
@@ -595,33 +746,62 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="pblk" id="p-3-4-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-2-1"><span class="en">Table 1 presents the objective evaluation results for the baseline and E2 TTS models across various configurations.</span></span> <span class="sent" data-sid="s-3-4-2-2"><span class="en">By comparing the (B4) and (P1) systems, we observe that the E2 TTS model achieved better WER and SIM-o than the Voicebox model when both were trained on the Libriheavy dataset.</span></span> <span class="sent" data-sid="s-3-4-2-3"><span class="en">This trend holds even when we initialize the model with unsupervised pre-training [34] ((B5) vs. (P2)), where the (P2) system achieved the best WER (1.9%) and SIM-o (0.708) which are better than those of the ground-truth audio.</span><button class="mk feat" data-sid="s-3-4-2-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-4-2-4"><span class="en">Finally, by using larger training data (P3), E2 TTS achieved the same best WER (1.9%) and the second best SIM-o (0.707) even when the model is trained from scratch, showcasing the scalability of E2 TTS.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-2-1"><span class="zh">Table 1 展示了基线和 E2 TTS 模型在各种配置下的客观评测结果。</span></span><span class="sent" data-sid="s-3-4-2-2"><span class="zh">通过比较 (B4) 与 (P1) 系统，我们观察到：当两者都在 Libriheavy 数据集上训练时，E2 TTS 模型取得了比 Voicebox 模型更好的 WER 和 SIM-o。</span></span><span class="sent" data-sid="s-3-4-2-3"><span class="zh">即使我们用无监督预训练 [34] 初始化模型，这一趋势依然成立（(B5) 对 (P2)），其中 (P2) 系统取得了最佳 WER（1.9%）和 SIM-o（0.708），优于真实音频本身的指标。</span><button class="mk feat" data-sid="s-3-4-2-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-3-4-2-4"><span class="zh">最后，通过使用更大的训练数据 (P3)，即使模型从头训练，E2 TTS 仍取得了相同的最佳 WER（1.9%）和第二好的 SIM-o（0.707），展示了 E2 TTS 的可扩展性。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-4-2-3">
-      <div class="ann-card kind-number">
-        <div class="ann-kind">数字怎么理解</div>
-        <div class="ann-title">超越真人的指标怎么读</div>
-        <div class="ann-quote">the (P2) system achieved the best WER (1.9%) and SIM-o (0.708) which are better than those of the ground-truth audio</div>
-        <div class="exp exp-tech">WER 1.9% 低于 Ground Truth 的 2.0%，SIM-o 0.708 高于真人的 0.695——「比真人还真」。这不是玄学：WER 由 Hubert-large ASR 反向评测，生成语音往往比真人朗读平稳、无口误无环境噪声，天然更讨 ASR 喜欢；SIM-o 是 WavLM 嵌入余弦相似度，生成样本刻意贴近提示音色，而 LibriSpeech 真人朗读会为不同角色变换嗓音（脚 8 承认这点），反而拉低真人分。两个指标都以模型为裁判，存在系统性偏好，超过 GT 不等于主观质量超过真人。</div>
-        
-      </div></div></div>
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-2-1"><span class="en">Table 1 presents the objective evaluation results for the baseline and E2 TTS models across various configurations.</span></span> <span class="sent" data-sid="s-3-4-2-2"><span class="en">By comparing the (B4) and (P1) systems, we observe that the E2 TTS model achieved better WER and SIM-o than the Voicebox model when both were trained on the Libriheavy dataset.</span></span> <span class="sent" data-sid="s-3-4-2-3"><span class="en">This trend holds even when we initialize the model with unsupervised pre-training [34] ((B5) vs. (P2)), where the (P2) system achieved the best WER (1.9%) and SIM-o (0.708) which are better than those of the ground-truth audio.</span></span> <span class="sent" data-sid="s-3-4-2-4"><span class="en">Finally, by using larger training data (P3), E2 TTS achieved the same best WER (1.9%) and the second best SIM-o (0.707) even when the model is trained from scratch, showcasing the scalability of E2 TTS.</span></span> <span class="sent" data-sid="s-3-4-2-5"><span class="en">(B4) - Voicebox (P1) - E2 TTS</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-2-1"><span class="zh">表 1 给出基线与 E2 TTS 模型在多种配置下的客观评测结果。</span></span><span class="sent" data-sid="s-3-4-2-2"><span class="zh">对比 (B4) 与 (P1) 系统可见，同样在 Libriheavy 数据集上训练时，E2 TTS 的 WER 与 SIM-o 优于 Voicebox。</span></span><span class="sent" data-sid="s-3-4-2-3"><span class="zh">即使用无监督预训练初始化 [34]（(B5) vs. (P2)），这一趋势依然成立：(P2) 系统取得最佳 WER (1.9%) 与 SIM-o (0.708)，甚至优于真实音频。</span></span><span class="sent" data-sid="s-3-4-2-4"><span class="zh">最后，使用更大训练数据 (P3) 时，即使从头训练，E2 TTS 也取得相同的最佳 WER (1.9%) 与第二好的 SIM-o (0.707)，展示了其可扩展性。</span></span><span class="sent" data-sid="s-3-4-2-5"><span class="zh">（图例：(B4) - Voicebox / (P1) - E2 TTS。）</span></span></p>
+          
         </div>
+<div class="eq" id="eq-3-4-1"><code>16% 12%</code></div>
+<div class="eq" id="eq-3-4-2"><code>WER</code></div>
+<div class="eq" id="eq-3-4-3"><code>8% 4% 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</code></div>
+<div class="eq" id="eq-3-4-4"><code>Training Progress</code></div>
+<div class="eq" id="eq-3-4-5"><code>0.74 0.70 0.66</code></div>
+<div class="eq" id="eq-3-4-6"><code>SIM-o</code></div>
+<div class="eq" id="eq-3-4-7"><code>0.62</code></div>
+<div class="eq" id="eq-3-4-8"><code>(B4) - Voicebox (P1) - E2 TTS</code></div>
+<div class="eq" id="eq-3-4-9"><code>0.58 0.54 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</code></div>
 <div class="pblk" id="p-3-4-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="en">0.74 0.70 0.66 0.62 0.58 0.54 0.74 0.70 0.66 0.62 0.58 0.54</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="zh">0.74 0.70 0.66 0.62 0.58 0.54 0.74 0.70 0.66 0.62 0.58 0.54（Fig. 4 坐标轴刻度碎片。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="en">Training Progress (B5) - Voicebox (P2) - E2 TTS</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="zh">（图横轴：Training Progress（训练进度）；图例：(B5) - Voicebox / (P2) - E2 TTS。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-4-10"><code>16% 12%</code></div>
+<div class="eq" id="eq-3-4-11"><code>WER</code></div>
+<div class="eq" id="eq-3-4-12"><code>8% 4% 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</code></div>
+<div class="eq" id="eq-3-4-13"><code>Training Progress</code></div>
+<div class="eq" id="eq-3-4-14"><code>0.74 0.70 0.66</code></div>
+<div class="eq" id="eq-3-4-15"><code>SIM-o</code></div>
+<div class="eq" id="eq-3-4-16"><code>0.62</code></div>
+<div class="eq" id="eq-3-4-17"><code>(B5) - Voicebox (P2) - E2 TTS</code></div>
+<div class="eq" id="eq-3-4-18"><code>0.58 0.54 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</code></div>
+<div class="pblk" id="p-3-4-4">
+          <p class="en-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="en">Training Progress</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="zh">（图横轴：Training Progress（训练进度）。）</span></span></p>
           
         </div>
 <div class="cap" id="fig-3-4-1"><span class="cap-k">图</span><p class="en">Fig. 4. The training progress of Voicebox and E2TTS models. The top row shows WER and the bottom row shows SIM progressions.</p><p class="zh">图 4. Voicebox 和 E2 TTS 模型的训练过程。上排为 WER，下排为 SIM 的变化曲线。</p></div>
-<div class="cap" id="tab-3-4-1"><span class="cap-k">表</span><p class="en">Table 3. Comparison between the basic E2 TTS and E2 TTS X1. While the basic E2 TTS requires the transcription of the audio prompt during inference, E2 TTS X1 does not require it. WER is expressed in percentage.</p><p class="zh">Table 3. 基础版 E2 TTS 与 E2 TTS X1 的比较。基础版 E2 TTS 在推理时需要音频提示的转录，E2 TTS X1 则不需要。WER 以百分比表示。</p></div>
-<div class="pblk" id="p-3-4-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="en">Init WER↓ SIM-o↑ 2.0 0.675 1.9 0.708 2.0 0.664 2.0 0.705 It is noteworthy that E2 TTS achieved superior performance compared to all strong baselines, including VALL-E, NaturalSpeech 3, and Voicebox, despite its extremely simple framework.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="zh">初始化、WER↓、SIM-o↑：2.0 0.675、1.9 0.708、2.0 0.664、2.0 0.705。值得注意的是，尽管框架极其简单，E2 TTS 的表现优于所有强基线，包括 VALL-E、NaturalSpeech 3 和 Voicebox。</span></span></p>
+<div class="cap" id="tab-3-4-1"><span class="cap-k">表</span><p class="en">Table 3. Comparison between the basic E2 TTS and E2 TTS X1. While the basic E2 TTS requires the transcription of the audio prompt during inference, E2 TTS X1 does not require it. WER is expressed in percentage.</p><p class="zh">Table 3. 基础版 E2 TTS 与 E2 TTS X1 的比较。基础版 E2 TTS 在推理时需要音频提示的转录，E2 TTS X1 则不需要。WER 以百分比表示。</p></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-id-3"><span class="t-zh">ID</span><span class="t-en">ID</span></h3><div class="pblk" id="p-id-3-1">
+          <p class="en-lines"><span class="sent" data-sid="s-id-3-1-1"><span class="en">Model Init WER↓ SIM-o↑ (P1) E2 TTS Random</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-id-3-1-1"><span class="zh">（表：Model × Init × WER↓ × SIM-o↑——(P1) E2 TTS 随机初始化 2.0/0.675；(P2) E2 TTS 预训练 [34] 1.9/0.708；(P1-X1) E2 TTS X1 随机 2.0/0.664；(P2-X1) E2 TTS X1 预训练 [34] 2.0/0.705。）值得注意的是，尽管框架极其简单，E2 TTS 仍超过了 VALL-E、NaturalSpeech 3、Voicebox 等所有强基线。</span></span></p>
           
         </div>
-<div class="pblk" id="p-3-4-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-5-1"><span class="en">Table 2 illustrated the subjective evaluation results for NaturalSpeech 3, Voicebox, and E2 TTS.</span></span> <span class="sent" data-sid="s-3-4-5-2"><span class="en">Firstly, all variants of E2 TTS, from (P1) to (P3), showed a better CMOS score compared to NaturalSpeech 3 and Voicebox.</span></span> <span class="sent" data-sid="s-3-4-5-3"><span class="en">In particular, the (P2) model achieved a CMOS score of -0.05, which is considered to have a level of naturalness indistinguishable from the ground truth [15, 24].7 The comparison between (B4) and (P1) suggests that the use of phoneme alignment was the major bottleneck in achieving better naturalness.</span><button class="mk" data-sid="s-3-4-5-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-4-5-4"><span class="en">Regarding speaker similarity, all the models we tested showed a better SMOS compared to the ground truth, a phenomenon also observed in NaturalSpeech 3 [15].8 Among the tested systems, E2 TTS achieved a comparable SMOS to Voicebox and NaturalSpeech 3.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-5-1"><span class="zh">Table 2 展示了 NaturalSpeech 3、Voicebox 和 E2 TTS 的主观评测结果。</span></span><span class="sent" data-sid="s-3-4-5-2"><span class="zh">首先，E2 TTS 的所有变体（从 (P1) 到 (P3)）的 CMOS 分数都优于 NaturalSpeech 3 和 Voicebox。</span></span><span class="sent" data-sid="s-3-4-5-3"><span class="zh">特别是，(P2) 模型取得了 -0.05 的 CMOS 分数，这被认为达到了与真实样本难以区分的自然度水平 [15, 24]。7 (B4) 与 (P1) 的比较表明，使用音素对齐是实现更高自然度的主要瓶颈。</span><button class="mk" data-sid="s-3-4-5-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-3-4-5-4"><span class="zh">关于说话人相似度，我们测试的所有模型的 SMOS 都优于真实样本，NaturalSpeech 3 [15] 中也观察到了这一现象。8 在所测系统中，E2 TTS 取得了与 Voicebox 和 NaturalSpeech 3 相当的 SMOS。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-4-5-3">
+<div class="eq" id="eq-id-3-1"><code>2.0 0.675</code></div>
+<div class="eq" id="eq-id-3-2"><code>(P2) E2 TTS Pre-trained [34]</code></div>
+<div class="eq" id="eq-id-3-3"><code>1.9 0.708</code></div>
+<div class="eq" id="eq-id-3-4"><code>(P1-X1) E2 TTS X1 Random</code></div>
+<div class="eq" id="eq-id-3-5"><code>2.0 0.664</code></div>
+<div class="eq" id="eq-id-3-6"><code>(P2-X1) E2 TTS X1 Pre-trained [34]</code></div>
+<div class="eq" id="eq-id-3-7"><code>2.0 0.705</code></div>
+<div class="pblk" id="p-id-3-2">
+          <p class="en-lines"><span class="sent" data-sid="s-id-3-2-1"><span class="en">It is noteworthy that E2 TTS achieved superior performance compared to all strong baselines, including VALL-E, NaturalSpeech 3, and Voicebox, despite its extremely simple framework.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-id-3-2-1"><span class="zh">（表：Model × Init × WER↓ × SIM-o↑——(P1) E2 TTS 随机初始化 2.0/0.675；(P2) E2 TTS 预训练 [34] 1.9/0.708；(P1-X1) E2 TTS X1 随机 2.0/0.664；(P2-X1) E2 TTS X1 预训练 [34] 2.0/0.705。）值得注意的是，尽管框架极其简单，E2 TTS 仍超过了 VALL-E、NaturalSpeech 3、Voicebox 等所有强基线。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-id-3-3">
+          <p class="en-lines"><span class="sent" data-sid="s-id-3-3-1"><span class="en">Table 2 illustrated the subjective evaluation results for NaturalSpeech 3, Voicebox, and E2 TTS.</span></span> <span class="sent" data-sid="s-id-3-3-2"><span class="en">Firstly, all variants of E2 TTS, from (P1) to (P3), showed a better CMOS score compared to NaturalSpeech 3 and Voicebox.</span></span> <span class="sent" data-sid="s-id-3-3-3"><span class="en">In particular, the (P2) model achieved a CMOS score of -0.05, which is considered to have a level of naturalness indistinguishable from the ground truth [15, 24].7 The comparison between (B4) and (P1) suggests that the use of phoneme alignment was the major bottleneck in achieving better naturalness.</span><button class="mk" data-sid="s-id-3-3-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-id-3-3-4"><span class="en">Regarding speaker similarity, all the models we tested showed a better SMOS compared to the ground truth, a phenomenon also observed in NaturalSpeech 3 [15].8 Among the tested systems, E2 TTS achieved a comparable SMOS to Voicebox and NaturalSpeech 3.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-id-3-3-1"><span class="zh">Table 2 展示了 NaturalSpeech 3、Voicebox 和 E2 TTS 的主观评测结果。</span></span><span class="sent" data-sid="s-id-3-3-2"><span class="zh">首先，E2 TTS 的所有变体（从 (P1) 到 (P3)）的 CMOS 分数都优于 NaturalSpeech 3 和 Voicebox。</span></span><span class="sent" data-sid="s-id-3-3-3"><span class="zh">特别是，(P2) 模型取得了 -0.05 的 CMOS 分数，这被认为达到了与真实样本难以区分的自然度水平 [15, 24]。7 (B4) 与 (P1) 的比较表明，使用音素对齐是实现更高自然度的主要瓶颈。</span><button class="mk" data-sid="s-id-3-3-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-id-3-3-4"><span class="zh">关于说话人相似度，我们测试的所有模型的 SMOS 都优于真实样本，NaturalSpeech 3 [15] 中也观察到了这一现象。8 在所测系统中，E2 TTS 取得了与 Voicebox 和 NaturalSpeech 3 相当的 SMOS。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-id-3-3-3">
       <div class="ann-card kind-number">
         <div class="ann-kind">数字怎么理解</div>
         <div class="ann-title">-0.05 是不是人类水平</div>
@@ -630,10 +810,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-3-4-6">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-6-1"><span class="en">Overall, E2 TTS demonstrated a robust zero-shot TTS capability that is either superior or comparable to strong baselines, including Voicebox and NaturalSpeech 3.</span></span> <span class="sent" data-sid="s-3-4-6-2"><span class="en">The comparison between Voicebox and E2 TTS revealed that the use of phoneme alignment was the primary obstacle in achieving natural-sounding audio.</span><button class="mk feat" data-sid="s-3-4-6-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-4-6-3"><span class="en">With a simple training scheme, E2 TTS can be easily scaled up to accommodate large training data.</span></span> <span class="sent" data-sid="s-3-4-6-4"><span class="en">This resulted in human-level speaker similarity, intelligibility, and a level of naturalness that is indistinguishable from a human’s voice in the zero-shot TTS setting, despite the framework’s extreme simplicity.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-6-1"><span class="zh">总体而言，E2 TTS 展示了鲁棒的零样本 TTS 能力，优于或可比于 Voicebox、NaturalSpeech 3 等强基线。</span></span><span class="sent" data-sid="s-3-4-6-2"><span class="zh">Voicebox 与 E2 TTS 的比较表明，使用音素对齐是实现自然听感音频的主要障碍。</span><button class="mk feat" data-sid="s-3-4-6-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-3-4-6-3"><span class="zh">凭借简单的训练方案，E2 TTS 可以轻松扩展以适配大规模训练数据。</span></span><span class="sent" data-sid="s-3-4-6-4"><span class="zh">这使得在零样本 TTS 设定下达到了人类水平的说话人相似度、可懂度，以及与人类语音难以区分的自然度——尽管该框架极其简单。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-4-6-2">
+<div class="pblk" id="p-id-3-4">
+          <p class="en-lines"><span class="sent" data-sid="s-id-3-4-1"><span class="en">Overall, E2 TTS demonstrated a robust zero-shot TTS capability that is either superior or comparable to strong baselines, including Voicebox and NaturalSpeech 3.</span></span> <span class="sent" data-sid="s-id-3-4-2"><span class="en">The comparison between Voicebox and E2 TTS revealed that the use of phoneme alignment was the primary obstacle in achieving natural-sounding audio.</span><button class="mk feat" data-sid="s-id-3-4-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-id-3-4-3"><span class="en">With a simple training scheme, E2 TTS can be easily scaled up to accommodate large training data.</span></span> <span class="sent" data-sid="s-id-3-4-4"><span class="en">This resulted in human-level speaker similarity, intelligibility, and a level of naturalness that is indistinguishable from a human’s voice in the zero-shot TTS setting, despite the framework’s extreme simplicity.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-id-3-4-1"><span class="zh">总体而言，E2 TTS 展示了鲁棒的零样本 TTS 能力，优于或可比于 Voicebox、NaturalSpeech 3 等强基线。</span></span><span class="sent" data-sid="s-id-3-4-2"><span class="zh">Voicebox 与 E2 TTS 的比较表明，使用音素对齐是实现自然听感音频的主要障碍。</span><button class="mk feat" data-sid="s-id-3-4-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-id-3-4-3"><span class="zh">凭借简单的训练方案，E2 TTS 可以轻松扩展以适配大规模训练数据。</span></span><span class="sent" data-sid="s-id-3-4-4"><span class="zh">这使得在零样本 TTS 设定下达到了人类水平的说话人相似度、可懂度，以及与人类语音难以区分的自然度——尽管该框架极其简单。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-id-3-4-2">
       <div class="ann-card kind-critique">
         <div class="ann-kind">值得质疑</div>
         <div class="ann-title">对齐瓶颈说的成色</div>
@@ -642,22 +822,30 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-3-4-7">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-7-1"><span class="en">7In the evaluation, E2 TTS was judged to be better in 33% of samples, while the ground truth was better in another 33% of samples.</span></span> <span class="sent" data-sid="s-3-4-7-2"><span class="en">The remaining samples were judged to be of equal quality.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-7-1"><span class="zh">7在评测中，E2 TTS 在 33% 的样本上被评为更好，真实样本在另外 33% 的样本上被评为更好。</span></span><span class="sent" data-sid="s-3-4-7-2"><span class="zh">其余样本被评为质量相当。</span></span></p>
+<div class="pblk" id="p-id-3-5">
+          <p class="en-lines"><span class="sent" data-sid="s-id-3-5-1"><span class="en">7In the evaluation, E2 TTS was judged to be better in 33% of samples, while the ground truth was better in another 33% of samples.</span></span> <span class="sent" data-sid="s-id-3-5-2"><span class="en">The remaining samples were judged to be of equal quality.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-id-3-5-1"><span class="zh">7在评测中，E2 TTS 在 33% 的样本上被评为更好，真实样本在另外 33% 的样本上被评为更好。</span></span><span class="sent" data-sid="s-id-3-5-2"><span class="zh">其余样本被评为质量相当。</span></span></p>
           
         </div>
-<div class="pblk" id="p-3-4-8">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-8-1"><span class="en">8In LibriSpeech, some speakers utilized varying voice characteristics for different characters in the book, leading to a low SMOS for the ground truth.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-8-1"><span class="zh">8在 LibriSpeech 中，一些说话人为书中的不同角色使用了不同的声音特征，导致真实样本的 SMOS 偏低。</span></span></p>
+<div class="pblk" id="p-id-3-6">
+          <p class="en-lines"><span class="sent" data-sid="s-id-3-6-1"><span class="en">8In LibriSpeech, some speakers utilized varying voice characteristics for different characters in the book, leading to a low SMOS for the ground truth.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-id-3-6-1"><span class="zh">8在 LibriSpeech 中，一些说话人为书中的不同角色使用了不同的声音特征，导致真实样本的 SMOS 偏低。</span></span></p>
           
         </div>
-<div class="cap" id="tab-3-4-2"><span class="cap-k">表</span><p class="en">Table 4. The WER (%) and SIM-o of E2 TTS X2 where a word is randomly replaced with the phoneme sequence during inference. Even when we replaced 50% of words into phoneme sequences, E2 TTS X2 worked reasonably well. This indicates that we can specify the pronunciation of a new term without retraining.</p><p class="zh">Table 4. E2 TTS X2 的 WER（%）与 SIM-o：推理时随机将单词替换为音素序列。即使我们把 50% 的单词替换为音素序列，E2 TTS X2 仍能正常工作。这表明我们可以在不重新训练的情况下指定新术语的发音。</p></div>
-<div class="pblk" id="p-3-4-9">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-9-1"><span class="en">Init Phoneme % WER↓ SIM-o↑ 2.0 0.675 2.0 0.679 2.0 0.678 2.1 0.679 1.9 0.708 1.9 0.708 2.0 0.708 2.1 0.707</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-9-1"><span class="zh">初始化、音素替换比例、WER↓、SIM-o↑：2.0 0.675、2.0 0.679、2.0 0.678、2.1 0.679、1.9 0.708、1.9 0.708、2.0 0.708、2.1 0.707。</span></span></p>
+<div class="cap" id="tab-id-3-1"><span class="cap-k">表</span><p class="en">Table 4. The WER (%) and SIM-o of E2 TTS X2 where a word is randomly replaced with the phoneme sequence during inference. Even when we replaced 50% of words into phoneme sequences, E2 TTS X2 worked reasonably well. This indicates that we can specify the pronunciation of a new term without retraining.</p><p class="zh">Table 4. E2 TTS X2 的 WER（%）与 SIM-o：推理时随机将单词替换为音素序列。即使我们把 50% 的单词替换为音素序列，E2 TTS X2 仍能正常工作。这表明我们可以在不重新训练的情况下指定新术语的发音。</p></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-id-4"><span class="t-zh">ID</span><span class="t-en">ID</span></h3><div class="pblk" id="p-id-4-1">
+          <p class="en-lines"><span class="sent" data-sid="s-id-4-1-1"><span class="en">Model Init Phoneme % WER↓ SIM-o↑ (P1) E2 TTS Random</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-id-4-1-1"><span class="zh">表头：Model / Init / Phoneme % / WER↓ / SIM-o↑——(P1) E2 TTS Random（后续照原文）。</span></span></p>
           
-        </div></section>
+        </div>
+<div class="eq" id="eq-id-4-1"><code>0% 2.0 0.675</code></div>
+<div class="eq" id="eq-id-4-2"><code>(P1-X2) E2 TTS X2 Random</code></div>
+<div class="eq" id="eq-id-4-3"><code>0% 2.0 0.679 25% 2.0 0.678 50% 2.1 0.679</code></div>
+<div class="eq" id="eq-id-4-4"><code>(P2) E2 TTS Pre-trained [34]</code></div>
+<div class="eq" id="eq-id-4-5"><code>0% 1.9 0.708</code></div>
+<div class="eq" id="eq-id-4-6"><code>(P2-X2) E2 TTS X2 Pre-trained [34]</code></div>
+<div class="eq" id="eq-id-4-7"><code>0% 1.9 0.708 25% 2.0 0.708 50% 2.1 0.707</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-3-5"><span class="secnum">3.5</span> <span class="t-zh">3.5 E2 TTS 扩展的评测</span><span class="t-en">Evaluation of E2 TTS extensions</span></h3><div class="pblk" id="p-3-5-1">
           <p class="en-lines"><span class="sent" data-sid="s-3-5-1-1"><span class="en">3.5.1.</span></span> <span class="sent" data-sid="s-3-5-1-2"><span class="en">Evaluation of the extension 1 The results for the E2 TTS X1 models are shown in Table 3.</span></span> <span class="sent" data-sid="s-3-5-1-3"><span class="en">These results indicate that the E2 TTS X1 model has achieved results nearly identical to those of the E2 TTS model, especially when the model was initialized by unsupervised pre-training [34].</span></span> <span class="sent" data-sid="s-3-5-1-4"><span class="en">E2 TTS X1 does not require the transcription of the audio prompt, which greatly enhances its usability.</span></span></p>
@@ -681,15 +869,47 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
+<div class="eq" id="eq-3-5-1"><code>0.850</code></div>
+<div class="eq" id="eq-3-5-2"><code>SIM-o SIM-o</code></div>
+<div class="eq" id="eq-3-5-3"><code>0.825 4% 0.800 4%</code></div>
+<div class="eq" id="eq-3-5-4"><code>SIM-o WER WER</code></div>
+<div class="eq" id="eq-3-5-5"><code>3% 0.775 3% 2% 0.750 2% 1% 0.725 1% 0.850 0.850</code></div>
+<div class="eq" id="eq-3-5-6"><code>SIM-o</code></div>
+<div class="eq" id="eq-3-5-7"><code>0.825 0.825 0.800 4% 0.800</code></div>
+<div class="eq" id="eq-3-5-8"><code>SIM-o SIM-o WER</code></div>
+<div class="eq" id="eq-3-5-9"><code>0.775 3% 0.775 0.750 2% 0.750 0.725 1% 0.725 [4, 5) [5, 6) [6, 7) [7, 8) [8, 9) [9, 10]</code></div>
+<div class="eq" id="eq-3-5-10"><code>Audio Prompt Length (s)</code></div>
+<div class="eq" id="eq-3-5-11"><code>0% 0.700 0% [4, 5) [5, 6) [6, 7) [7, 8) [8, 9) [9, 10]</code></div>
+<div class="eq" id="eq-3-5-12"><code>Audio Prompt Length (s)</code></div>
+<div class="eq" id="eq-3-5-13"><code>0.700 0% 0.700 [4, 5) [5, 6) [6, 7) [7, 8) [8, 9) [9, 10]</code></div>
 <div class="pblk" id="p-3-5-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-5-4-1"><span class="en">0.850 0.825 0.800 0.775 0.750 0.725 0.850 0.850 0.825 0.825 0.800 0.800 0.775 0.775 0.750 0.750 0.725 0.725 0.700 0.700 0.700</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-5-4-1"><span class="zh">0.850 0.825 0.800 0.775 0.750 0.725 0.850 0.850 0.825 0.825 0.800 0.800 0.775 0.775 0.750 0.750 0.725 0.725 0.700 0.700 0.700（Fig. 5 坐标轴刻度碎片。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-5-4-1"><span class="en">Audio Prompt Length (s) (P2) E2 TTS (P1) E2 TTS (P3) E2 TTS</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-5-4-1"><span class="zh">（图横轴：Audio Prompt Length (s)；图例：(P2) E2 TTS / (P1) E2 TTS / (P3) E2 TTS。）</span></span></p>
           
         </div>
 <div class="cap" id="fig-3-5-1"><span class="cap-k">图</span><p class="en">Fig. 5. The results of WER and SIM, shown in buckets according to the audio prompt length. The left, middle, and right plots show E2 TTS with (P1), (P2), and (P3) configurations, respectively.</p><p class="zh">图 5. 按音频提示长度分桶展示的 WER 和 SIM 结果。左、中、右图分别为 (P1)、(P2)、(P3) 配置下的 E2 TTS。</p></div>
+<div class="eq" id="eq-3-5-14"><code>5%</code></div>
 <div class="pblk" id="p-3-5-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-5-5-1"><span class="en">0.7 0.8 0.9 1.0 1.1 1.2 1.3 Speech Rate 0.72 0.70 0.68 0.66 0.64 0.62 0.60 0.7 0.8 0.9 1.0 1.1 1.2 1.3 Speech Rate</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-5-5-1"><span class="zh">0.7 0.8 0.9 1.0 1.1 1.2 1.3 语速；0.72 0.70 0.68 0.66 0.64 0.62 0.60；0.7 0.8 0.9 1.0 1.1 1.2 1.3 语速（Fig. 6 坐标轴碎片。）</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-3-5-5-1"><span class="en">(P1) - E2 TTS (P2) - E2 TTS (P3) - E2 TTS</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-5-5-1"><span class="zh">（图例：(P1) - E2 TTS / (P2) - E2 TTS / (P3) - E2 TTS。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-5-15"><code>4%</code></div>
+<div class="eq" id="eq-3-5-16"><code>WER</code></div>
+<div class="eq" id="eq-3-5-17"><code>3% 2% 1% 0.7 0.8 0.9 1.0 1.1 1.2 1.3</code></div>
+<div class="eq" id="eq-3-5-18"><code>Speech Rate</code></div>
+<div class="eq" id="eq-3-5-19"><code>0.72 0.70 0.68</code></div>
+<div class="eq" id="eq-3-5-20"><code>SIM-o</code></div>
+<div class="eq" id="eq-3-5-21"><code>0.66</code></div>
+<div class="pblk" id="p-3-5-6">
+          <p class="en-lines"><span class="sent" data-sid="s-3-5-6-1"><span class="en">(P1) - E2 TTS (P2) - E2 TTS (P3) - E2 TTS</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-5-6-1"><span class="zh">（图例：(P1) - E2 TTS / (P2) - E2 TTS / (P3) - E2 TTS。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-5-22"><code>0.64 0.62 0.60 0.7 0.8 0.9 1.0 1.1 1.2 1.3</code></div>
+<div class="pblk" id="p-3-5-7">
+          <p class="en-lines"><span class="sent" data-sid="s-3-5-7-1"><span class="en">Speech Rate</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-5-7-1"><span class="zh">（图纵轴：Speech Rate（语速）。）</span></span></p>
           
         </div>
 <div class="cap" id="fig-3-5-2"><span class="cap-k">图</span><p class="en">Fig. 6. WER and SIM-o of different speech rates between 0.7 to 1.3 for E2TTS with (P1), (P2), and (P3) configurations.</p><p class="zh">图 6. 在 (P1)、(P2)、(P3) 配置下，语速在 0.7 到 1.3 之间变化时 E2 TTS 的 WER 和 SIM-o。</p></div></section>
@@ -718,9 +938,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div>
 <div class="pblk" id="p-3-6-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-6-4-1"><span class="en">3.6.3.</span></span> <span class="sent" data-sid="s-3-6-4-2"><span class="en">Impact of changing the speech rate We further examined the model’s ability to produce suitable content when altering the total duration input.</span></span> <span class="sent" data-sid="s-3-6-4-3"><span class="en">In this experiment, we adjusted the total duration by multiplying it by 1 sr , where sr represents the speech rate.</span></span> <span class="sent" data-sid="s-3-6-4-4"><span class="en">The results are shown in Fig. 6.</span></span> <span class="sent" data-sid="s-3-6-4-5"><span class="en">As depicted in the graphs, the E2 TTS model exhibited only a moderate increase in WER while maintaining a high SIM-o, even in the challenging cases of sr = 0.7 and sr = 1.3.</span><button class="mk" data-sid="s-3-6-4-5" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-6-4-6"><span class="en">This result suggests the robustness of E2 TTS with respect to the total duration input.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-6-4-1"><span class="zh">3.6.3.</span></span><span class="sent" data-sid="s-3-6-4-2"><span class="zh">改变语速的影响。我们进一步考察了模型在改变总时长输入时生成合适内容的能力。</span></span><span class="sent" data-sid="s-3-6-4-3"><span class="zh">在本实验中，我们通过将总时长乘以 1/sr 来调整它，其中 sr 表示语速。</span></span><span class="sent" data-sid="s-3-6-4-4"><span class="zh">结果见 Fig. 6。</span></span><span class="sent" data-sid="s-3-6-4-5"><span class="zh">如图所示，即使在 sr = 0.7 和 sr = 1.3 这样有挑战性的情况下，E2 TTS 模型的 WER 也只是适度上升，同时保持了较高的 SIM-o。</span><button class="mk" data-sid="s-3-6-4-5" title="查看讲解">解</button></span><span class="sent" data-sid="s-3-6-4-6"><span class="zh">该结果表明 E2 TTS 对总时长输入具有鲁棒性。</span></span></p>
-          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-6-4-5">
+          <p class="en-lines"><span class="sent" data-sid="s-3-6-4-1"><span class="en">3.6.3.</span></span> <span class="sent" data-sid="s-3-6-4-2"><span class="en">Impact of changing the speech rate We further examined the model’s ability to produce suitable content when altering the total duration input.</span></span> <span class="sent" data-sid="s-3-6-4-3"><span class="en">In this experiment, we adjusted the total duration by multiplying it by</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-6-4-1"><span class="zh">3.6.3.</span></span><span class="sent" data-sid="s-3-6-4-2"><span class="zh">改变语速的影响。我们进一步考察了模型在改变总时长输入时生成合适内容的能力。</span></span><span class="sent" data-sid="s-3-6-4-3"><span class="zh">在本实验中，我们通过将总时长乘以 1/sr 来调整它，其中 sr 表示语速。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-6-1"><code>1</code></div>
+<div class="pblk" id="p-3-6-5">
+          <p class="en-lines"><span class="sent" data-sid="s-3-6-5-1"><span class="en">sr , where sr represents the speech rate.</span></span> <span class="sent" data-sid="s-3-6-5-2"><span class="en">The results are shown in Fig. 6.</span></span> <span class="sent" data-sid="s-3-6-5-3"><span class="en">As depicted in the graphs, the E2 TTS model exhibited only a moderate increase in WER while maintaining a high SIM-o, even in the challenging cases of sr = 0.7 and sr = 1.3.</span><button class="mk" data-sid="s-3-6-5-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-6-5-4"><span class="en">This result suggests the robustness of E2 TTS with respect to the total duration input.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-6-5-1"><span class="zh">在本实验中，我们通过将总时长乘以 1/sr 来调整它，其中 sr 表示语速。</span></span><span class="sent" data-sid="s-3-6-5-2"><span class="zh">结果见 Fig. 6。</span></span><span class="sent" data-sid="s-3-6-5-3"><span class="zh">如图所示，即使在 sr = 0.7 和 sr = 1.3 这样有挑战性的情况下，E2 TTS 模型的 WER 也只是适度上升，同时保持了较高的 SIM-o。</span><button class="mk" data-sid="s-3-6-5-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-3-6-5-4"><span class="zh">该结果表明 E2 TTS 对总时长输入具有鲁棒性。</span></span></p>
+          <div class="ann-zone"><div class="ann-panel" data-sid="s-3-6-5-3">
       <div class="ann-card kind-number">
         <div class="ann-kind">数字怎么理解</div>
         <div class="ann-title">±30% 时长扰动测试</div>
@@ -751,121 +977,136 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-1"><span class="zh">[3] Jaehyeon Kim, Sungwon Kim, Jungil Kong, and Sungroh Yoon, “Glow-TTS: A generative flow for text-to-speech via monotonic alignment search,” Proc.</span></span><span class="sent" data-sid="s-5-3-2"><span class="zh">NeurIPS, vol. 33, pp.</span></span></p>
           
         </div>
+<div class="eq" id="eq-5-1"><code>8067–8077, 2020.</code></div>
 <div class="pblk" id="p-5-4">
-          <p class="en-lines"><span class="sent" data-sid="s-5-4-1"><span class="en">8067–8077, 2020.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-4-1"><span class="zh">8067–8077, 2020.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-4-1"><span class="en">[4] Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae, “HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis,” Proc.</span></span> <span class="sent" data-sid="s-5-4-2"><span class="en">NeurIPS, vol. 33, pp. 17022–17033,</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-4-1"><span class="zh">[4] Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae, “HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis,” Proc.</span></span><span class="sent" data-sid="s-5-4-2"><span class="zh">NeurIPS, vol. 33, pp.
+（原始数据照录）
+NeurIPS, vol. 33, pp. 17022–17033,</span></span></p>
           
         </div>
+<div class="eq" id="eq-5-2"><code>2020.</code></div>
 <div class="pblk" id="p-5-5">
-          <p class="en-lines"><span class="sent" data-sid="s-5-5-1"><span class="en">[4] Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae, “HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis,” Proc.</span></span> <span class="sent" data-sid="s-5-5-2"><span class="en">NeurIPS, vol. 33, pp. 17022–17033, 2020.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-5-1"><span class="zh">[4] Jungil Kong, Jaehyeon Kim, and Jaekyoung Bae, “HiFi-GAN: Generative adversarial networks for efficient and high fidelity speech synthesis,” Proc.</span></span><span class="sent" data-sid="s-5-5-2"><span class="zh">NeurIPS, vol. 33, pp. 17022–17033, 2020.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-5-1"><span class="en">[5] Xu Tan, Jiawei Chen, Haohe Liu, Jian Cong, Chen Zhang, Yanqing Liu, Xi Wang, Yichong Leng, Yuanhao Yi, Lei He, et al., “Naturalspeech: End-to-end text-to-speech synthesis with human-level quality,” IEEE Transactions on Pattern Analysis and Machine Intelligence, 2024.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-5-1"><span class="zh">[5] Xu Tan, Jiawei Chen, Haohe Liu, Jian Cong, Chen Zhang, Yanqing Liu, Xi Wang, Yichong Leng, Yuanhao Yi, Lei He, et al., “Naturalspeech: End-to-end text-to-speech synthesis with human-level quality,” IEEE Transactions on Pattern Analysis and Machine Intelligence, 2024.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-6">
-          <p class="en-lines"><span class="sent" data-sid="s-5-6-1"><span class="en">[5] Xu Tan, Jiawei Chen, Haohe Liu, Jian Cong, Chen Zhang, Yanqing Liu, Xi Wang, Yichong Leng, Yuanhao Yi, Lei He, et al., “Naturalspeech: End-to-end text-to-speech synthesis with human-level quality,” IEEE Transactions on Pattern Analysis and Machine Intelligence, 2024.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-6-1"><span class="zh">[5] Xu Tan, Jiawei Chen, Haohe Liu, Jian Cong, Chen Zhang, Yanqing Liu, Xi Wang, Yichong Leng, Yuanhao Yi, Lei He, et al., “Naturalspeech: End-to-end text-to-speech synthesis with human-level quality,” IEEE Transactions on Pattern Analysis and Machine Intelligence, 2024.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-6-1"><span class="en">[6] Sercan Arik, Jitong Chen, Kainan Peng, Wei Ping, and Yanqi Zhou, “Neural voice cloning with a few samples,” Proc.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-6-1"><span class="zh">[6] Sercan Arik, Jitong Chen, Kainan Peng, Wei Ping, and Yanqi Zhou, “Neural voice cloning with a few samples,” Proc.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-7">
-          <p class="en-lines"><span class="sent" data-sid="s-5-7-1"><span class="en">[6] Sercan Arik, Jitong Chen, Kainan Peng, Wei Ping, and Yanqi Zhou, “Neural voice cloning with a few samples,” Proc.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-7-1"><span class="zh">[6] Sercan Arik, Jitong Chen, Kainan Peng, Wei Ping, and Yanqi Zhou, “Neural voice cloning with a few samples,” Proc.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-7-1"><span class="en">NeurIPS, vol. 31, 2018.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-7-1"><span class="zh">NeurIPS, vol. 31, 2018.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-8">
-          <p class="en-lines"><span class="sent" data-sid="s-5-8-1"><span class="en">NeurIPS, vol. 31, 2018.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-8-1"><span class="zh">NeurIPS, vol. 31, 2018.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-8-1"><span class="en">[7] Ye Jia, Yu Zhang, Ron Weiss, Quan Wang, Jonathan Shen, Fei Ren, Patrick Nguyen, Ruoming Pang, Ignacio Lopez Moreno, Yonghui Wu, et al., “Transfer learning from speaker verification to multispeaker text-to-speech synthesis,” Proc.</span></span> <span class="sent" data-sid="s-5-8-2"><span class="en">NeurIPS, vol. 31, 2018.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-8-1"><span class="zh">[7] Ye Jia, Yu Zhang, Ron Weiss, Quan Wang, Jonathan Shen, Fei Ren, Patrick Nguyen, Ruoming Pang, Ignacio Lopez Moreno, Yonghui Wu, et al., “Transfer learning from speaker verification to multispeaker text-to-speech synthesis,” Proc.</span></span><span class="sent" data-sid="s-5-8-2"><span class="zh">NeurIPS, vol. 31, 2018.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-9">
-          <p class="en-lines"><span class="sent" data-sid="s-5-9-1"><span class="en">[7] Ye Jia, Yu Zhang, Ron Weiss, Quan Wang, Jonathan Shen, Fei Ren, Patrick Nguyen, Ruoming Pang, Ignacio Lopez Moreno, Yonghui Wu, et al., “Transfer learning from speaker verification to multispeaker text-to-speech synthesis,” Proc.</span></span> <span class="sent" data-sid="s-5-9-2"><span class="en">NeurIPS, vol. 31, 2018.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-9-1"><span class="zh">[7] Ye Jia, Yu Zhang, Ron Weiss, Quan Wang, Jonathan Shen, Fei Ren, Patrick Nguyen, Ruoming Pang, Ignacio Lopez Moreno, Yonghui Wu, et al., “Transfer learning from speaker verification to multispeaker text-to-speech synthesis,” Proc.</span></span><span class="sent" data-sid="s-5-9-2"><span class="zh">NeurIPS, vol. 31, 2018.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-9-1"><span class="en">[8] Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, et al., “Neural codec language models are zero-shot text to speech synthesizers,” arXiv preprint arXiv:2301.02111,</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-9-1"><span class="zh">[8] Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, et al., “Neural codec language models are zero-shot text to speech synthesizers,” arXiv preprint arXiv:2301.02111, 2023.</span></span></p>
           
         </div>
+<div class="eq" id="eq-5-3"><code>2023.</code></div>
 <div class="pblk" id="p-5-10">
-          <p class="en-lines"><span class="sent" data-sid="s-5-10-1"><span class="en">[8] Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, et al., “Neural codec language models are zero-shot text to speech synthesizers,” arXiv preprint arXiv:2301.02111, 2023.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-10-1"><span class="zh">[8] Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, et al., “Neural codec language models are zero-shot text to speech synthesizers,” arXiv preprint arXiv:2301.02111, 2023.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-10-1"><span class="en">[9] Xiaofei Wang, Manthan Thakker, Zhuo Chen, Naoyuki Kanda, Sefik Emre Eskimez, Sanyuan Chen, Min Tang, Shujie Liu, Jinyu Li, and Takuya Yoshioka, “Speechx: Neural codec language model as a versatile speech transformer,” arXiv preprint arXiv:2308.06873, 2023.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-10-1"><span class="zh">[9] Xiaofei Wang 等，「SpeechX: Neural codec language model as a versatile speech transformer」，arXiv:2308.06873，2023。（参考文献，照录）</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-11">
-          <p class="en-lines"><span class="sent" data-sid="s-5-11-1"><span class="en">[9] Xiaofei Wang, Manthan Thakker, Zhuo Chen, Naoyuki Kanda, Sefik Emre Eskimez, Sanyuan Chen, Min Tang, Shujie Liu, Jinyu Li, and Takuya Yoshioka, “Speechx: Neural codec language model as a versatile speech transformer,” arXiv preprint [10] Chenpeng Du, Yiwei Guo, Hankun Wang, Yifan Yang, Zhikang Niu, Shuai Wang, Hui Zhang, Xie Chen, and Kai Yu, “Vall-t: Decoder-only generative transducer for robust and decoding-controllable text-to-speech,” arXiv preprint [11] Detai Xin, Xu Tan, Kai Shen, Zeqian Ju, Dongchao Yang, Yuancheng Wang, Shinnosuke Takamichi, Hiroshi Saruwatari, Shujie Liu, Jinyu Li, et al., “RALL-E: Robust codec language modeling with chain-of-thought prompting for text-to-speech synthesis,” arXiv preprint arXiv:2404.03204, 2024.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-11-1"><span class="zh">[9] Xiaofei Wang, Manthan Thakker, Zhuo Chen, Naoyuki Kanda, Sefik Emre Eskimez, Sanyuan Chen, Min Tang, Shujie Liu, Jinyu Li, and Takuya Yoshioka, “Speechx: Neural codec language model as a versatile speech transformer,” arXiv preprint [10] Chenpeng Du, Yiwei Guo, Hankun Wang, Yifan Yang, Zhikang Niu, Shuai Wang, Hui Zhang, Xie Chen, and Kai Yu, “Vall-t: Decoder-only generative transducer for robust and decoding-controllable text-to-speech,” arXiv preprint [11] Detai Xin, Xu Tan, Kai Shen, Zeqian Ju, Dongchao Yang, Yuancheng Wang, Shinnosuke Takamichi, Hiroshi Saruwatari, Shujie Liu, Jinyu Li, et al., “RALL-E: Robust codec language modeling with chain-of-thought prompting for text-to-speech synthesis,” arXiv preprint arXiv:2404.03204, 2024.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-11-1"><span class="en">[10] Chenpeng Du, Yiwei Guo, Hankun Wang, Yifan Yang, Zhikang Niu, Shuai Wang, Hui Zhang, Xie Chen, and Kai Yu, “Vall-t: Decoder-only generative transducer for robust and decoding-controllable text-to-speech,” arXiv preprint arXiv:2401.14321, 2024.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-11-1"><span class="zh">[10] Chenpeng Du 等，「VALL-T: Decoder-only generative transducer for robust and decoding-controllable text-to-speech」，arXiv:2401.14321，2024。（参考文献，照录）</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-12">
-          <p class="en-lines"><span class="sent" data-sid="s-5-12-1"><span class="en">[12] Sanyuan Chen, Shujie Liu, Long Zhou, Yanqing Liu, Xu Tan, Jinyu Li, Sheng Zhao, Yao Qian, and Furu Wei, “VALL- E 2: Neural Codec Language Models are Human Parity Zero-Shot Text to Speech Synthesizers,” arXiv preprint [13] Dongchao Yang, Jinchuan Tian, Xu Tan, Rongjie Huang, Songxiang Liu, Xuankai Chang, Jiatong Shi, Sheng Zhao, Jiang Bian, Xixin Wu, et al., “Uniaudio: An audio foundation model toward universal audio generation,” arXiv preprint [14] Kai Shen, Zeqian Ju, Xu Tan, Yanqing Liu, Yichong Leng, Lei He, Tao Qin, Sheng Zhao, and Jiang Bian, “NaturalSpeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers,” arXiv preprint arXiv:2304.09116, 2023.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-12-1"><span class="zh">[12] Sanyuan Chen, Shujie Liu, Long Zhou, Yanqing Liu, Xu Tan, Jinyu Li, Sheng Zhao, Yao Qian, and Furu Wei, “VALL- E 2: Neural Codec Language Models are Human Parity Zero-Shot Text to Speech Synthesizers,” arXiv preprint [13] Dongchao Yang, Jinchuan Tian, Xu Tan, Rongjie Huang, Songxiang Liu, Xuankai Chang, Jiatong Shi, Sheng Zhao, Jiang Bian, Xixin Wu, et al., “Uniaudio: An audio foundation model toward universal audio generation,” arXiv preprint [14] Kai Shen, Zeqian Ju, Xu Tan, Yanqing Liu, Yichong Leng, Lei He, Tao Qin, Sheng Zhao, and Jiang Bian, “NaturalSpeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers,” arXiv preprint arXiv:2304.09116, 2023.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-12-1"><span class="en">[11] Detai Xin, Xu Tan, Kai Shen, Zeqian Ju, Dongchao Yang, Yuancheng Wang, Shinnosuke Takamichi, Hiroshi Saruwatari, Shujie Liu, Jinyu Li, et al., “RALL-E: Robust codec language modeling with chain-of-thought prompting for text-to-speech synthesis,” arXiv preprint arXiv:2404.03204, 2024.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-12-1"><span class="zh">[9] Xiaofei Wang, Manthan Thakker, Zhuo Chen, Naoyuki Kanda, Sefik Emre Eskimez, Sanyuan Chen, Min Tang, Shujie Liu, Jinyu Li, and Takuya Yoshioka, “Speechx: Neural codec language model as a versatile speech transformer,” arXiv preprint [10] Chenpeng Du, Yiwei Guo, Hankun Wang, Yifan Yang, Zhikang Niu, Shuai Wang, Hui Zhang, Xie Chen, and Kai Yu, “Vall-t: Decoder-only generative transducer for robust and decoding-controllable text-to-speech,” arXiv preprint [11] Detai Xin, Xu Tan, Kai Shen, Zeqian Ju, Dongchao Yang, Yuancheng Wang, Shinnosuke Takamichi, Hiroshi Saruwatari, Shujie Liu, Jinyu Li, et al., “RALL-E: Robust codec language modeling with chain-of-thought prompting for text-to-speech synthesis,” arXiv preprint arXiv:2404.03204, 2024.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-13">
-          <p class="en-lines"><span class="sent" data-sid="s-5-13-1"><span class="en">[15] Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, Yichong Leng, Kaitao Song, Siliang Tang, et al., “Naturalspeech 3: Zero-shot speech synthesis with factorized codec and diffusion models,” arXiv preprint arXiv:2403.03100, 2024.</span></span> <span class="sent" data-sid="s-5-13-2"><span class="en">[16] Jonathan Ho, Ajay Jain, and Pieter Abbeel, “Denoising diffusion probabilistic models,” in Proc.</span></span> <span class="sent" data-sid="s-5-13-3"><span class="en">NIPS, 2020, vol. 33, pp.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-13-1"><span class="zh">[15] Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, Yichong Leng, Kaitao Song, Siliang Tang, et al., “Naturalspeech 3: Zero-shot speech synthesis with factorized codec and diffusion models,” arXiv preprint arXiv:2403.03100, 2024.</span></span><span class="sent" data-sid="s-5-13-2"><span class="zh">[16] Jonathan Ho, Ajay Jain, and Pieter Abbeel, “Denoising diffusion probabilistic models,” in Proc.</span></span><span class="sent" data-sid="s-5-13-3"><span class="zh">NIPS, 2020, vol. 33, pp.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-13-1"><span class="en">[12] Sanyuan Chen, Shujie Liu, Long Zhou, Yanqing Liu, Xu Tan, Jinyu Li, Sheng Zhao, Yao Qian, and Furu Wei, “VALL- E 2: Neural Codec Language Models are Human Parity Zero-Shot Text to Speech Synthesizers,” arXiv preprint arXiv:2402.07383, 2024.</span></span> <span class="sent" data-sid="s-5-13-2"><span class="en">[13] Dongchao Yang, Jinchuan Tian, Xu Tan, Rongjie Huang, Songxiang Liu, Xuankai Chang, Jiatong Shi, Sheng Zhao, Jiang Bian, Xixin Wu, et al., “Uniaudio: An audio foundation model toward universal audio generation,” arXiv preprint arXiv:2310.00704, 2023.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-13-1"><span class="zh">[12] Sanyuan Chen 等，「VALL-E 2: Neural Codec Language Models are Human Parity Zero-Shot Text to Speech Synthesizers」，arXiv:2402.07383，2024。（参考文献，照录）</span></span><span class="sent" data-sid="s-5-13-2"><span class="zh">[13] Dongchao Yang 等，「UniAudio: An audio foundation model toward universal audio generation」，arXiv:2310.00704，2023。（参考文献，照录）</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-14">
-          <p class="en-lines"><span class="sent" data-sid="s-5-14-1"><span class="en">6840–6851.</span></span> <span class="sent" data-sid="s-5-14-2"><span class="en">[17] Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole, “Score-based generative modeling through stochastic differential equations,” in Proc.</span></span> <span class="sent" data-sid="s-5-14-3"><span class="en">ICML, 2020.</span></span> <span class="sent" data-sid="s-5-14-4"><span class="en">[18] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, et al., “Voicebox: Text-guided multilingual universal speech generation at scale,” Advances in neural information processing systems, vol. 36, 2024.</span></span> <span class="sent" data-sid="s-5-14-5"><span class="en">[19] Shivam Mehta, Ruibo Tu, Jonas Beskow, ´Eva Sz´ekely, and Gustav Eje Henter, “Matcha-TTS: A fast TTS architecture with conditional flow matching,” in Proc.</span></span> <span class="sent" data-sid="s-5-14-6"><span class="en">ICASSP.</span></span> <span class="sent" data-sid="s-5-14-7"><span class="en">IEEE, 2024, pp.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-14-1"><span class="zh">6840–6851.</span></span><span class="sent" data-sid="s-5-14-2"><span class="zh">[17] Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole, “Score-based generative modeling through stochastic differential equations,” in Proc.</span></span><span class="sent" data-sid="s-5-14-3"><span class="zh">ICML, 2020.</span></span><span class="sent" data-sid="s-5-14-4"><span class="zh">[18] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, et al., “Voicebox: Text-guided multilingual universal speech generation at scale,” Advances in neural information processing systems, vol. 36, 2024.</span></span><span class="sent" data-sid="s-5-14-5"><span class="zh">[19] Shivam Mehta, Ruibo Tu, Jonas Beskow, ´Eva Sz´ekely, and Gustav Eje Henter, “Matcha-TTS: A fast TTS architecture with conditional flow matching,” in Proc.</span></span><span class="sent" data-sid="s-5-14-6"><span class="zh">ICASSP.</span></span><span class="sent" data-sid="s-5-14-7"><span class="zh">IEEE, 2024, pp.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-14-1"><span class="en">[14] Kai Shen, Zeqian Ju, Xu Tan, Yanqing Liu, Yichong Leng, Lei He, Tao Qin, Sheng Zhao, and Jiang Bian, “NaturalSpeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers,” arXiv preprint arXiv:2304.09116, 2023.</span></span> <span class="sent" data-sid="s-5-14-2"><span class="en">[15] Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, Yichong Leng, Kaitao Song, Siliang Tang, et al., “Naturalspeech 3: Zero-shot speech synthesis with factorized codec and diffusion models,” arXiv preprint arXiv:2403.03100, 2024.</span></span> <span class="sent" data-sid="s-5-14-3"><span class="en">[16] Jonathan Ho, Ajay Jain, and Pieter Abbeel, “Denoising diffusion probabilistic models,” in Proc.</span></span> <span class="sent" data-sid="s-5-14-4"><span class="en">NIPS, 2020, vol. 33, pp.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-14-1"><span class="zh">[12] Sanyuan Chen, Shujie Liu, Long Zhou, Yanqing Liu, Xu Tan, Jinyu Li, Sheng Zhao, Yao Qian, and Furu Wei, “VALL- E 2: Neural Codec Language Models are Human Parity Zero-Shot Text to Speech Synthesizers,” arXiv preprint [13] Dongchao Yang, Jinchuan Tian, Xu Tan, Rongjie Huang, Songxiang Liu, Xuankai Chang, Jiatong Shi, Sheng Zhao, Jiang Bian, Xixin Wu, et al., “Uniaudio: An audio foundation model toward universal audio generation,” arXiv preprint [14] Kai Shen, Zeqian Ju, Xu Tan, Yanqing Liu, Yichong Leng, Lei He, Tao Qin, Sheng Zhao, and Jiang Bian, “NaturalSpeech 2: Latent diffusion models are natural and zero-shot speech and singing synthesizers,” arXiv preprint arXiv:2304.09116, 2023.</span></span><span class="sent" data-sid="s-5-14-2"><span class="zh">[15] Zeqian Ju, Yuancheng Wang, Kai Shen, Xu Tan, Detai Xin, Dongchao Yang, Yanqing Liu, Yichong Leng, Kaitao Song, Siliang Tang, et al., “Naturalspeech 3: Zero-shot speech synthesis with factorized codec and diffusion models,” arXiv preprint arXiv:2403.03100, 2024.</span></span><span class="sent" data-sid="s-5-14-3"><span class="zh">[16] Jonathan Ho, Ajay Jain, and Pieter Abbeel, “Denoising diffusion probabilistic models,” in Proc.</span></span><span class="sent" data-sid="s-5-14-4"><span class="zh">NIPS, 2020, vol. 33, pp.</span></span></p>
           
         </div>
+<div class="eq" id="eq-5-4"><code>6840–6851.</code></div>
 <div class="pblk" id="p-5-15">
-          <p class="en-lines"><span class="sent" data-sid="s-5-15-1"><span class="en">11341–11345.</span></span> <span class="sent" data-sid="s-5-15-2"><span class="en">[20] Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matthew Le, “Flow matching for generative modeling,” in Proc.</span></span> <span class="sent" data-sid="s-5-15-3"><span class="en">ICLR, 2022.</span></span> <span class="sent" data-sid="s-5-15-4"><span class="en">[21] Vadim Popov, Ivan Vovk, Vladimir Gogoryan, Tasnima Sadekova, and Mikhail Kudinov, “Grad-TTS: A diffusion probabilistic model for text-to-speech,” in Proc.</span></span> <span class="sent" data-sid="s-5-15-5"><span class="en">ICML, 2021, pp. 8599–8608.</span></span> <span class="sent" data-sid="s-5-15-6"><span class="en">[22] Yuan Gao, Nobuyuki Morioka, Yu Zhang, and Nanxin Chen, “E3 TTS: Easy end-to-end diffusion-based text to speech,” in 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU).</span></span> <span class="sent" data-sid="s-5-15-7"><span class="en">IEEE, 2023, pp. 1–8.</span></span> <span class="sent" data-sid="s-5-15-8"><span class="en">[23] Olaf Ronneberger, Philipp Fischer, and Thomas Brox, “U-net: Convolutional networks for biomedical image segmentation,” in Proc.</span></span> <span class="sent" data-sid="s-5-15-9"><span class="en">MICCAI.</span></span> <span class="sent" data-sid="s-5-15-10"><span class="en">Springer, 2015, pp. 234–241.</span></span> <span class="sent" data-sid="s-5-15-11"><span class="en">[24] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al., “Seed-TTS: A Family of HighQuality Versatile Speech Generation Models,” arXiv preprint [25] Bo Li, Yu Zhang, Tara Sainath, Yonghui Wu, and William Chan, “Bytes are all you need: End-to-end multilingual speech recognition and synthesis with bytes,” in Proc.</span></span> <span class="sent" data-sid="s-5-15-12"><span class="en">ICASSP, 2019, pp. 5621–5625.</span></span> <span class="sent" data-sid="s-5-15-13"><span class="en">[26] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin, “Attention is all you need,” Proc.</span></span> <span class="sent" data-sid="s-5-15-14"><span class="en">NIPS, vol. 30, 2017.</span></span> <span class="sent" data-sid="s-5-15-15"><span class="en">[27] Ricky TQ Chen, Yulia Rubanova, Jesse Bettencourt, and David K Duvenaud, “Neural ordinary differential equations,” in Proc.</span></span> <span class="sent" data-sid="s-5-15-16"><span class="en">NeurIPS, 2018, vol. 31.</span></span> <span class="sent" data-sid="s-5-15-17"><span class="en">[28] Michael McAuliffe, Michaela Socolof, Sarah Mihuc, Michael Wagner, and Morgan Sonderegger, “Montreal forced aligner: Trainable text-speech alignment using kaldi.,” in Proc.</span></span> <span class="sent" data-sid="s-5-15-18"><span class="en">Interspeech, 2017, pp. 498–502.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-15-1"><span class="zh">11341–11345.</span></span><span class="sent" data-sid="s-5-15-2"><span class="zh">[20] Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matthew Le, “Flow matching for generative modeling,” in Proc.</span></span><span class="sent" data-sid="s-5-15-3"><span class="zh">ICLR, 2022.</span></span><span class="sent" data-sid="s-5-15-4"><span class="zh">[21] Vadim Popov, Ivan Vovk, Vladimir Gogoryan, Tasnima Sadekova, and Mikhail Kudinov, “Grad-TTS: A diffusion probabilistic model for text-to-speech,” in Proc.</span></span><span class="sent" data-sid="s-5-15-5"><span class="zh">ICML, 2021, pp. 8599–8608.</span></span><span class="sent" data-sid="s-5-15-6"><span class="zh">[22] Yuan Gao, Nobuyuki Morioka, Yu Zhang, and Nanxin Chen, “E3 TTS: Easy end-to-end diffusion-based text to speech,” in 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU).</span></span><span class="sent" data-sid="s-5-15-7"><span class="zh">IEEE, 2023, pp. 1–8.</span></span><span class="sent" data-sid="s-5-15-8"><span class="zh">[23] Olaf Ronneberger, Philipp Fischer, and Thomas Brox, “U-net: Convolutional networks for biomedical image segmentation,” in Proc.</span></span><span class="sent" data-sid="s-5-15-9"><span class="zh">MICCAI.</span></span><span class="sent" data-sid="s-5-15-10"><span class="zh">Springer, 2015, pp. 234–241.</span></span><span class="sent" data-sid="s-5-15-11"><span class="zh">[24] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al., “Seed-TTS: A Family of HighQuality Versatile Speech Generation Models,” arXiv preprint [25] Bo Li, Yu Zhang, Tara Sainath, Yonghui Wu, and William Chan, “Bytes are all you need: End-to-end multilingual speech recognition and synthesis with bytes,” in Proc.</span></span><span class="sent" data-sid="s-5-15-12"><span class="zh">ICASSP, 2019, pp. 5621–5625.</span></span><span class="sent" data-sid="s-5-15-13"><span class="zh">[26] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin, “Attention is all you need,” Proc.</span></span><span class="sent" data-sid="s-5-15-14"><span class="zh">NIPS, vol. 30, 2017.</span></span><span class="sent" data-sid="s-5-15-15"><span class="zh">[27] Ricky TQ Chen, Yulia Rubanova, Jesse Bettencourt, and David K Duvenaud, “Neural ordinary differential equations,” in Proc.</span></span><span class="sent" data-sid="s-5-15-16"><span class="zh">NeurIPS, 2018, vol. 31.</span></span><span class="sent" data-sid="s-5-15-17"><span class="zh">[28] Michael McAuliffe, Michaela Socolof, Sarah Mihuc, Michael Wagner, and Morgan Sonderegger, “Montreal forced aligner: Trainable text-speech alignment using kaldi.,” in Proc.</span></span><span class="sent" data-sid="s-5-15-18"><span class="zh">Interspeech, 2017, pp. 498–502.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-15-1"><span class="en">[17] Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole, “Score-based generative modeling through stochastic differential equations,” in Proc.</span></span> <span class="sent" data-sid="s-5-15-2"><span class="en">ICML, 2020.</span></span> <span class="sent" data-sid="s-5-15-3"><span class="en">[18] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, et al., “Voicebox: Text-guided multilingual universal speech generation at scale,” Advances in neural information processing systems, vol. 36, 2024.</span></span> <span class="sent" data-sid="s-5-15-4"><span class="en">[19] Shivam Mehta, Ruibo Tu, Jonas Beskow, ´Eva Sz´ekely, and Gustav Eje Henter, “Matcha-TTS: A fast TTS architecture with conditional flow matching,” in Proc.</span></span> <span class="sent" data-sid="s-5-15-5"><span class="en">ICASSP.</span></span> <span class="sent" data-sid="s-5-15-6"><span class="en">IEEE, 2024, pp.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-15-1"><span class="zh">[17] Yang Song, Jascha Sohl-Dickstein, Diederik P Kingma, Abhishek Kumar, Stefano Ermon, and Ben Poole, “Score-based generative modeling through stochastic differential equations,” in Proc.</span></span><span class="sent" data-sid="s-5-15-2"><span class="zh">ICML, 2020.</span></span><span class="sent" data-sid="s-5-15-3"><span class="zh">[18] Matthew Le, Apoorv Vyas, Bowen Shi, Brian Karrer, Leda Sari, Rashel Moritz, Mary Williamson, Vimal Manohar, Yossi Adi, Jay Mahadeokar, et al., “Voicebox: Text-guided multilingual universal speech generation at scale,” Advances in neural information processing systems, vol. 36, 2024.</span></span><span class="sent" data-sid="s-5-15-4"><span class="zh">[19] Shivam Mehta, Ruibo Tu, Jonas Beskow, ´Eva Sz´ekely, and Gustav Eje Henter, “Matcha-TTS: A fast TTS architecture with conditional flow matching,” in Proc.</span></span><span class="sent" data-sid="s-5-15-5"><span class="zh">ICASSP.</span></span><span class="sent" data-sid="s-5-15-6"><span class="zh">IEEE, 2024, pp.</span></span></p>
           
         </div>
+<div class="eq" id="eq-5-5"><code>11341–11345.</code></div>
 <div class="pblk" id="p-5-16">
-          <p class="en-lines"><span class="sent" data-sid="s-5-16-1"><span class="en">[29] Kevin Lenzo, “The carnegie mellon university pronouncing dictionary,” .</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-16-1"><span class="zh">[29] Kevin Lenzo, “The carnegie mellon university pronouncing dictionary,” .</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-16-1"><span class="en">[20] Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matthew Le, “Flow matching for generative modeling,” in Proc.</span></span> <span class="sent" data-sid="s-5-16-2"><span class="en">ICLR, 2022.</span></span> <span class="sent" data-sid="s-5-16-3"><span class="en">[21] Vadim Popov, Ivan Vovk, Vladimir Gogoryan, Tasnima Sadekova, and Mikhail Kudinov, “Grad-TTS: A diffusion probabilistic model for text-to-speech,” in Proc.</span></span> <span class="sent" data-sid="s-5-16-4"><span class="en">ICML, 2021, pp. 8599–8608.</span></span> <span class="sent" data-sid="s-5-16-5"><span class="en">[22] Yuan Gao, Nobuyuki Morioka, Yu Zhang, and Nanxin Chen, “E3 TTS: Easy end-to-end diffusion-based text to speech,” in 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU).</span></span> <span class="sent" data-sid="s-5-16-6"><span class="en">IEEE, 2023, pp. 1–8.</span></span> <span class="sent" data-sid="s-5-16-7"><span class="en">[23] Olaf Ronneberger, Philipp Fischer, and Thomas Brox, “U-net: Convolutional networks for biomedical image segmentation,” in Proc.</span></span> <span class="sent" data-sid="s-5-16-8"><span class="en">MICCAI.</span></span> <span class="sent" data-sid="s-5-16-9"><span class="en">Springer, 2015, pp. 234–241.</span></span> <span class="sent" data-sid="s-5-16-10"><span class="en">[24] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al., “Seed-TTS: A Family of HighQuality Versatile Speech Generation Models,” arXiv preprint arXiv:2406.02430, 2024.</span></span> <span class="sent" data-sid="s-5-16-11"><span class="en">[25] Bo Li, Yu Zhang, Tara Sainath, Yonghui Wu, and William Chan, “Bytes are all you need: End-to-end multilingual speech recognition and synthesis with bytes,” in Proc.</span></span> <span class="sent" data-sid="s-5-16-12"><span class="en">ICASSP, 2019, pp. 5621–5625.</span></span> <span class="sent" data-sid="s-5-16-13"><span class="en">[26] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin, “Attention is all you need,” Proc.</span></span> <span class="sent" data-sid="s-5-16-14"><span class="en">NIPS, vol. 30,</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-16-1"><span class="zh">[20] Yaron Lipman, Ricky TQ Chen, Heli Ben-Hamu, Maximilian Nickel, and Matthew Le, “Flow matching for generative modeling,” in Proc.</span></span><span class="sent" data-sid="s-5-16-2"><span class="zh">ICLR, 2022.</span></span><span class="sent" data-sid="s-5-16-3"><span class="zh">[21] Vadim Popov, Ivan Vovk, Vladimir Gogoryan, Tasnima Sadekova, and Mikhail Kudinov, “Grad-TTS: A diffusion probabilistic model for text-to-speech,” in Proc.</span></span><span class="sent" data-sid="s-5-16-4"><span class="zh">ICML, 2021, pp. 8599–8608.</span></span><span class="sent" data-sid="s-5-16-5"><span class="zh">[22] Yuan Gao, Nobuyuki Morioka, Yu Zhang, and Nanxin Chen, “E3 TTS: Easy end-to-end diffusion-based text to speech,” in 2023 IEEE Automatic Speech Recognition and Understanding Workshop (ASRU).</span></span><span class="sent" data-sid="s-5-16-6"><span class="zh">IEEE, 2023, pp. 1–8.</span></span><span class="sent" data-sid="s-5-16-7"><span class="zh">[23] Olaf Ronneberger, Philipp Fischer, and Thomas Brox, “U-net: Convolutional networks for biomedical image segmentation,” in Proc.</span></span><span class="sent" data-sid="s-5-16-8"><span class="zh">MICCAI.</span></span><span class="sent" data-sid="s-5-16-9"><span class="zh">Springer, 2015, pp. 234–241.</span></span><span class="sent" data-sid="s-5-16-10"><span class="zh">[24] Philip Anastassiou 等，「Seed-TTS: A Family of High-Quality Versatile Speech Generation Models」，arXiv:2406.02430，2024。（参考文献，照录）</span></span><span class="sent" data-sid="s-5-16-11"><span class="zh">[24] Philip Anastassiou, Jiawei Chen, Jitong Chen, Yuanzhe Chen, Zhuo Chen, Ziyi Chen, Jian Cong, Lelai Deng, Chuang Ding, Lu Gao, et al., “Seed-TTS: A Family of HighQuality Versatile Speech Generation Models,” arXiv preprint [25] Bo Li, Yu Zhang, Tara Sainath, Yonghui Wu, and William Chan, “Bytes are all you need: End-to-end multilingual speech recognition and synthesis with bytes,” in Proc.</span></span><span class="sent" data-sid="s-5-16-12"><span class="zh">ICASSP, 2019, pp. 5621–5625.</span></span><span class="sent" data-sid="s-5-16-13"><span class="zh">[26] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, and Illia Polosukhin, “Attention is all you need,” Proc.</span></span><span class="sent" data-sid="s-5-16-14"><span class="zh">NIPS, vol. 30, 2017.</span></span></p>
           
         </div>
+<div class="eq" id="eq-5-6"><code>2017.</code></div>
 <div class="pblk" id="p-5-17">
-          <p class="en-lines"><span class="sent" data-sid="s-5-17-1"><span class="en">[30] Wei Kang, Xiaoyu Yang, Zengwei Yao, Fangjun Kuang, Yifan Yang, Liyong Guo, Long Lin, and Daniel Povey, “LibriHeavy: a 50,000 hours ASR corpus with punctuation casing and context,” in Proc.</span></span> <span class="sent" data-sid="s-5-17-2"><span class="en">ICASSP.</span></span> <span class="sent" data-sid="s-5-17-3"><span class="en">IEEE, 2024, pp. 10991–10995.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-17-1"><span class="zh">[30] Wei Kang, Xiaoyu Yang, Zengwei Yao, Fangjun Kuang, Yifan Yang, Liyong Guo, Long Lin, and Daniel Povey, “LibriHeavy: a 50,000 hours ASR corpus with punctuation casing and context,” in Proc.</span></span><span class="sent" data-sid="s-5-17-2"><span class="zh">ICASSP.</span></span><span class="sent" data-sid="s-5-17-3"><span class="zh">IEEE, 2024, pp. 10991–10995.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-17-1"><span class="en">[27] Ricky TQ Chen, Yulia Rubanova, Jesse Bettencourt, and David K Duvenaud, “Neural ordinary differential equations,” in Proc.</span></span> <span class="sent" data-sid="s-5-17-2"><span class="en">NeurIPS, 2018, vol. 31.</span></span> <span class="sent" data-sid="s-5-17-3"><span class="en">[28] Michael McAuliffe, Michaela Socolof, Sarah Mihuc, Michael Wagner, and Morgan Sonderegger, “Montreal forced aligner: Trainable text-speech alignment using kaldi.,” in Proc.</span></span> <span class="sent" data-sid="s-5-17-4"><span class="en">Interspeech, 2017, pp. 498–502.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-17-1"><span class="zh">[27] Ricky TQ Chen, Yulia Rubanova, Jesse Bettencourt, and David K Duvenaud, “Neural ordinary differential equations,” in Proc.</span></span><span class="sent" data-sid="s-5-17-2"><span class="zh">NeurIPS, 2018, vol. 31.</span></span><span class="sent" data-sid="s-5-17-3"><span class="zh">[28] Michael McAuliffe, Michaela Socolof, Sarah Mihuc, Michael Wagner, and Morgan Sonderegger, “Montreal forced aligner: Trainable text-speech alignment using kaldi.,” in Proc.</span></span><span class="sent" data-sid="s-5-17-4"><span class="zh">Interspeech, 2017, pp. 498–502.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-18">
-          <p class="en-lines"><span class="sent" data-sid="s-5-18-1"><span class="en">[31] Jacob Kahn, Morgane Rivi`ere, Weiyi Zheng, Evgeny Kharitonov, Qiantong Xu, Pierre-Emmanuel Mazar´e, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert, Christian Fuegen, et al., “Libri-light: A benchmark for ASR with limited or no supervision,” in Proc.</span></span> <span class="sent" data-sid="s-5-18-2"><span class="en">ICASSP, 2020, pp. 7669–7673.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-18-1"><span class="zh">[31] Jacob Kahn, Morgane Rivi`ere, Weiyi Zheng, Evgeny Kharitonov, Qiantong Xu, Pierre-Emmanuel Mazar´e, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert, Christian Fuegen, et al., “Libri-light: A benchmark for ASR with limited or no supervision,” in Proc.</span></span><span class="sent" data-sid="s-5-18-2"><span class="zh">ICASSP, 2020, pp. 7669–7673.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-18-1"><span class="en">[29] Kevin Lenzo, “The carnegie mellon university pronouncing dictionary,” .</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-18-1"><span class="zh">[29] Kevin Lenzo, “The carnegie mellon university pronouncing dictionary,” .</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-19">
-          <p class="en-lines"><span class="sent" data-sid="s-5-19-1"><span class="en">[32] Sang-gil Lee, Wei Ping, Boris Ginsburg, Bryan Catanzaro, and Sungroh Yoon, “BigVGAN: A universal neural vocoder with large-scale training,” in Proc.</span></span> <span class="sent" data-sid="s-5-19-2"><span class="en">ICLR, 2022.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-19-1"><span class="zh">[32] Sang-gil Lee, Wei Ping, Boris Ginsburg, Bryan Catanzaro, and Sungroh Yoon, “BigVGAN: A universal neural vocoder with large-scale training,” in Proc.</span></span><span class="sent" data-sid="s-5-19-2"><span class="zh">ICLR, 2022.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-19-1"><span class="en">[30] Wei Kang, Xiaoyu Yang, Zengwei Yao, Fangjun Kuang, Yifan Yang, Liyong Guo, Long Lin, and Daniel Povey, “LibriHeavy: a 50,000 hours ASR corpus with punctuation casing and context,” in Proc.</span></span> <span class="sent" data-sid="s-5-19-2"><span class="en">ICASSP.</span></span> <span class="sent" data-sid="s-5-19-3"><span class="en">IEEE, 2024, pp. 10991–10995.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-19-1"><span class="zh">[30] Wei Kang, Xiaoyu Yang, Zengwei Yao, Fangjun Kuang, Yifan Yang, Liyong Guo, Long Lin, and Daniel Povey, “LibriHeavy: a 50,000 hours ASR corpus with punctuation casing and context,” in Proc.</span></span><span class="sent" data-sid="s-5-19-2"><span class="zh">ICASSP.</span></span><span class="sent" data-sid="s-5-19-3"><span class="zh">IEEE, 2024, pp. 10991–10995.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-20">
-          <p class="en-lines"><span class="sent" data-sid="s-5-20-1"><span class="en">[33] Jonathan Ho and Tim Salimans, “Classifier-free diffusion guidance,” arXiv preprint arXiv:2207.12598, 2022.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-20-1"><span class="zh">[33] Jonathan Ho and Tim Salimans, “Classifier-free diffusion guidance,” arXiv preprint arXiv:2207.12598, 2022.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-20-1"><span class="en">[31] Jacob Kahn, Morgane Rivi`ere, Weiyi Zheng, Evgeny Kharitonov, Qiantong Xu, Pierre-Emmanuel Mazar´e, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert, Christian Fuegen, et al., “Libri-light: A benchmark for ASR with limited or no supervision,” in Proc.</span></span> <span class="sent" data-sid="s-5-20-2"><span class="en">ICASSP, 2020, pp. 7669–7673.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-20-1"><span class="zh">[31] Jacob Kahn, Morgane Rivi`ere, Weiyi Zheng, Evgeny Kharitonov, Qiantong Xu, Pierre-Emmanuel Mazar´e, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert, Christian Fuegen, et al., “Libri-light: A benchmark for ASR with limited or no supervision,” in Proc.</span></span><span class="sent" data-sid="s-5-20-2"><span class="zh">ICASSP, 2020, pp. 7669–7673.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-21">
-          <p class="en-lines"><span class="sent" data-sid="s-5-21-1"><span class="en">[34] Xiaofei Wang, Sefik Emre Eskimez, Manthan Thakker, Hemin Yang, Zirun Zhu, Min Tang, Yufei Xia, Jinzhu Li, Sheng Zhao, Jinyu Li, and Naoyuki Kanda, “An investigation of noise robustness for flow-matching-based zero-shot TTS,” in Proc.</span></span> <span class="sent" data-sid="s-5-21-2"><span class="en">Interspeech, 2024.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-21-1"><span class="zh">[34] Xiaofei Wang, Sefik Emre Eskimez, Manthan Thakker, Hemin Yang, Zirun Zhu, Min Tang, Yufei Xia, Jinzhu Li, Sheng Zhao, Jinyu Li, and Naoyuki Kanda, “An investigation of noise robustness for flow-matching-based zero-shot TTS,” in Proc.</span></span><span class="sent" data-sid="s-5-21-2"><span class="zh">Interspeech, 2024.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-21-1"><span class="en">[32] Sang-gil Lee, Wei Ping, Boris Ginsburg, Bryan Catanzaro, and Sungroh Yoon, “BigVGAN: A universal neural vocoder with large-scale training,” in Proc.</span></span> <span class="sent" data-sid="s-5-21-2"><span class="en">ICLR, 2022.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-21-1"><span class="zh">[32] Sang-gil Lee, Wei Ping, Boris Ginsburg, Bryan Catanzaro, and Sungroh Yoon, “BigVGAN: A universal neural vocoder with large-scale training,” in Proc.</span></span><span class="sent" data-sid="s-5-21-2"><span class="zh">ICLR, 2022.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-22">
-          <p class="en-lines"><span class="sent" data-sid="s-5-22-1"><span class="en">[35] Aleksandr Meister, Matvei Novikov, Nikolay Karpov, Evelina Bakhturina, Vitaly Lavrukhin, and Boris Ginsburg, “LibriSpeech-PC: Benchmark for evaluation of punctuation and capitalization capabilities of end-to-end asr models,” in Proc.</span></span> <span class="sent" data-sid="s-5-22-2"><span class="en">ASRU.</span></span> <span class="sent" data-sid="s-5-22-3"><span class="en">IEEE, 2023, pp. 1–7.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-22-1"><span class="zh">[35] Aleksandr Meister, Matvei Novikov, Nikolay Karpov, Evelina Bakhturina, Vitaly Lavrukhin, and Boris Ginsburg, “LibriSpeech-PC: Benchmark for evaluation of punctuation and capitalization capabilities of end-to-end asr models,” in Proc.</span></span><span class="sent" data-sid="s-5-22-2"><span class="zh">ASRU.</span></span><span class="sent" data-sid="s-5-22-3"><span class="zh">IEEE, 2023, pp. 1–7.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-22-1"><span class="en">[33] Jonathan Ho and Tim Salimans, “Classifier-free diffusion guidance,” arXiv preprint arXiv:2207.12598, 2022.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-22-1"><span class="zh">[33] Jonathan Ho and Tim Salimans, “Classifier-free diffusion guidance,” arXiv preprint arXiv:2207.12598, 2022.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-23">
-          <p class="en-lines"><span class="sent" data-sid="s-5-23-1"><span class="en">[36] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur, “LibriSpeech: an ASR corpus based on public domain audio books,” in Proc.</span></span> <span class="sent" data-sid="s-5-23-2"><span class="en">ICASSP, 2015, pp. 5206–5210.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-23-1"><span class="zh">[36] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur, “LibriSpeech: an ASR corpus based on public domain audio books,” in Proc.</span></span><span class="sent" data-sid="s-5-23-2"><span class="zh">ICASSP, 2015, pp. 5206–5210.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-23-1"><span class="en">[34] Xiaofei Wang, Sefik Emre Eskimez, Manthan Thakker, Hemin Yang, Zirun Zhu, Min Tang, Yufei Xia, Jinzhu Li, Sheng Zhao, Jinyu Li, and Naoyuki Kanda, “An investigation of noise robustness for flow-matching-based zero-shot TTS,” in Proc.</span></span> <span class="sent" data-sid="s-5-23-2"><span class="en">Interspeech, 2024.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-23-1"><span class="zh">[34] Xiaofei Wang, Sefik Emre Eskimez, Manthan Thakker, Hemin Yang, Zirun Zhu, Min Tang, Yufei Xia, Jinzhu Li, Sheng Zhao, Jinyu Li, and Naoyuki Kanda, “An investigation of noise robustness for flow-matching-based zero-shot TTS,” in Proc.</span></span><span class="sent" data-sid="s-5-23-2"><span class="zh">Interspeech, 2024.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-24">
-          <p class="en-lines"><span class="sent" data-sid="s-5-24-1"><span class="en">[37] Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed, “HuBERT: Self-supervised speech representation learning by masked prediction of hidden units,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-24-1"><span class="zh">[37] Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed, “HuBERT: Self-supervised speech representation learning by masked prediction of hidden units,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-24-1"><span class="en">[35] Aleksandr Meister, Matvei Novikov, Nikolay Karpov, Evelina Bakhturina, Vitaly Lavrukhin, and Boris Ginsburg, “LibriSpeech-PC: Benchmark for evaluation of punctuation and capitalization capabilities of end-to-end asr models,” in Proc.</span></span> <span class="sent" data-sid="s-5-24-2"><span class="en">ASRU.</span></span> <span class="sent" data-sid="s-5-24-3"><span class="en">IEEE, 2023, pp. 1–7.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-24-1"><span class="zh">[35] Aleksandr Meister, Matvei Novikov, Nikolay Karpov, Evelina Bakhturina, Vitaly Lavrukhin, and Boris Ginsburg, “LibriSpeech-PC: Benchmark for evaluation of punctuation and capitalization capabilities of end-to-end asr models,” in Proc.</span></span><span class="sent" data-sid="s-5-24-2"><span class="zh">ASRU.</span></span><span class="sent" data-sid="s-5-24-3"><span class="zh">IEEE, 2023, pp. 1–7.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-25">
-          <p class="en-lines"><span class="sent" data-sid="s-5-25-1"><span class="en">29, pp. 3451–3460, 2021.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-25-1"><span class="zh">29, pp. 3451–3460, 2021.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-25-1"><span class="en">[36] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur, “LibriSpeech: an ASR corpus based on public domain audio books,” in Proc.</span></span> <span class="sent" data-sid="s-5-25-2"><span class="en">ICASSP, 2015, pp. 5206–5210.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-25-1"><span class="zh">[36] Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur, “LibriSpeech: an ASR corpus based on public domain audio books,” in Proc.</span></span><span class="sent" data-sid="s-5-25-2"><span class="zh">ICASSP, 2015, pp. 5206–5210.</span></span></p>
           
         </div>
 <div class="pblk" id="p-5-26">
-          <p class="en-lines"><span class="sent" data-sid="s-5-26-1"><span class="en">[38] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al., “WavLM: Large-scale self-supervised pre-training for full stack speech processing,” IEEE Journal of Selected Topics in Signal Processing, vol. 16, no. 6, pp. 1505– 1518, 2022.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-26-1"><span class="zh">[38] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al., “WavLM: Large-scale self-supervised pre-training for full stack speech processing,” IEEE Journal of Selected Topics in Signal Processing, vol. 16, no. 6, pp. 1505– 1518, 2022.</span></span></p>
+          <p class="en-lines"><span class="sent" data-sid="s-5-26-1"><span class="en">[37] Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed, “HuBERT: Self-supervised speech representation learning by masked prediction of hidden units,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-26-1"><span class="zh">[37] Wei-Ning Hsu, Benjamin Bolte, Yao-Hung Hubert Tsai, Kushal Lakhotia, Ruslan Salakhutdinov, and Abdelrahman Mohamed, “HuBERT: Self-supervised speech representation learning by masked prediction of hidden units,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol.</span></span></p>
           
-        </div></section></article>
+        </div>
+<div class="eq" id="eq-5-7"><code>29, pp. 3451–3460, 2021.</code></div>
+<div class="pblk" id="p-5-27">
+          <p class="en-lines"><span class="sent" data-sid="s-5-27-1"><span class="en">[38] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al., “WavLM: Large-scale self-supervised pre-training for full stack speech processing,” IEEE Journal of Selected Topics in Signal Processing, vol. 16, no. 6, pp. 1505–</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-27-1"><span class="zh">[38] Sanyuan Chen, Chengyi Wang, Zhengyang Chen, Yu Wu, Shujie Liu, Zhuo Chen, Jinyu Li, Naoyuki Kanda, Takuya Yoshioka, Xiong Xiao, et al., “WavLM: Large-scale self-supervised pre-training for full stack speech processing,” IEEE Journal of Selected Topics in Signal Processing, vol. 16, no. 6, pp. 1505– 1518, 2022.</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-5-8"><code>1518, 2022.</code></div></section></article>
   <footer class="foot">
     原文来自 arXiv:2406.18009（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。
     本地 PDF：<a href="../../papers/2406.18009.pdf">papers/2406.18009.pdf</a>。

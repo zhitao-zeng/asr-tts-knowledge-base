@@ -1236,8 +1236,56 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-task-1-1",
-       "original": "Stages Dataset Modality items Libritts [Zen et al., 2019] 586 h ASR 1,2,3 VCTK [datashare, 2024] 44 h Multilingual LibriSpeech [Pratap et al., 2020] 8000h Text QA 2,3 Open-Orca [OpenOrca] T1|T2 2000K Audio QA 3 Moss-002-sft-data [Sun et al., 2024] 1500K Alpaca-GPT4 [vicgalle, 2024] Identity finetune [sayan1101, 2024] QAassistant [Mihaiii, 2024a] voice QA final Rlhf [Anthropic, 2024] Trivia-singlechoice [Mihaiii, 2024c] Trivia-Multichoice [Mihaiii, 2024b] OpenAssistant [OpenAssistan, 2024] Table 1: The datasets and their usage for training Mini-Omni are as follows: In the modality notation, T and A represent the text and audio modalities, with subscripts 1 and 2 indicating input or output.",
-       "zh": "阶段 数据集 模态 项目 Libritts [Zen et al., 2019] 586 小时 ASR 1,2,3 VCTK [datashare, 2024] 44 小时 多语言 LibriSpeech [Pratap et al., 2020] 8000 小时 Text QA 2,3 Open-Orca [OpenOrca] T1|T2 2000K Audio QA 3 Moss-002-sft-data [Sun et al., 2024] 1500K Alpaca-GPT4 [vicgalle, 2024] Identity finetune [sayan1101, 2024] QAassistant [Mihaiii, 2024a] voice QA final Rlhf [Anthropic, 2024] Trivia-singlechoice [Mihaiii, 2024c] Trivia-Multichoice [Mihaiii, 2024b] OpenAssistant [OpenAssistan, 2024] 表 1：训练 Mini-Omni 使用的数据集及其用途如下：在模态标注中，T 和 A 分别代表文本和音频模态，下标 1 和 2 表示输入或输出。"
+       "original": "Stages Dataset Modality items Libritts [Zen et al., 2019] A1|T1 586 h ASR",
+       "zh": "（表 1：训练数据集与用途——Stages × Dataset × Modality × items：Libritts [Zen et al., 2019]（A1|T1，586h，ASR，阶段 1,2,3）、VCTK [datashare, 2024]（44h）、Multilingual LibriSpeech [Pratap et al., 2020]（8000h）、Text QA（Open-Orca [OpenOrca]，T1|T2，2000K，阶段 2,3）、Audio QA（Moss-002-sft-data [Sun et al., 2024]，A1|T1|A2|T2，1500K，阶段 3）、Alpaca-GPT4 [vicgalle, 2024]（55k）、Identity finetune [sayan1101, 2024]（2k）、QAassistant [Mihaiii, 2024a]（27k）、voice QA final Rlhf [Anthropic, 2024]（367k）、Trivia-singlechoice [Mihaiii, 2024c]（17k）、Trivia-Multichoice [Mihaiii, 2024b]（20k）、OpenAssistant [OpenAssistan, 2024]（2k）。模态记号中 T 与 A 分别代表文本与音频模态，下标 1/2 表示输入或输出。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-task-1",
+     "type": "equation",
+     "page": 7,
+     "original": "1,2,3"
+    },
+    {
+     "id": "p-task-2",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-task-2-1",
+       "original": "VCTK [datashare, 2024] A1|T1 44 h Multilingual LibriSpeech [Pratap et al., 2020] A1|T1 8000h Text QA",
+       "zh": "（表 1：训练数据集与用途——Stages × Dataset × Modality × items：Libritts [Zen et al., 2019]（A1|T1，586h，ASR，阶段 1,2,3）、VCTK [datashare, 2024]（44h）、Multilingual LibriSpeech [Pratap et al., 2020]（8000h）、Text QA（Open-Orca [OpenOrca]，T1|T2，2000K，阶段 2,3）、Audio QA（Moss-002-sft-data [Sun et al., 2024]，A1|T1|A2|T2，1500K，阶段 3）、Alpaca-GPT4 [vicgalle, 2024]（55k）、Identity finetune [sayan1101, 2024]（2k）、QAassistant [Mihaiii, 2024a]（27k）、voice QA final Rlhf [Anthropic, 2024]（367k）、Trivia-singlechoice [Mihaiii, 2024c]（17k）、Trivia-Multichoice [Mihaiii, 2024b]（20k）、OpenAssistant [OpenAssistan, 2024]（2k）。模态记号中 T 与 A 分别代表文本与音频模态，下标 1/2 表示输入或输出。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-task-2",
+     "type": "equation",
+     "page": 7,
+     "original": "2,3"
+    },
+    {
+     "id": "eq-task-3",
+     "type": "equation",
+     "page": 7,
+     "original": "Open-Orca [OpenOrca] T1|T2 2000K Audio QA"
+    },
+    {
+     "id": "eq-task-4",
+     "type": "equation",
+     "page": 7,
+     "original": "3"
+    },
+    {
+     "id": "p-task-3",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-task-3-1",
+       "original": "Moss-002-sft-data [Sun et al., 2024] A1|T1|A2|T2 1500K Alpaca-GPT4 [vicgalle, 2024] A1|T1|A2|T2 55k Identity finetune [sayan1101, 2024] A1|T1|A2|T2 2k QAassistant [Mihaiii, 2024a] A1|T1|A2|T2 27k voice QA final Rlhf [Anthropic, 2024] A1|T1|A2|T2 367k Trivia-singlechoice [Mihaiii, 2024c] A1|T1|A2|T2 17k Trivia-Multichoice [Mihaiii, 2024b] A1|T1|A2|T2 20k OpenAssistant [OpenAssistan, 2024] A1|T1|A2|T2 2k Table 1: The datasets and their usage for training Mini-Omni are as follows: In the modality notation, T and A represent the text and audio modalities, with subscripts 1 and 2 indicating input or output.",
+       "zh": "（表 1：训练数据集与用途——Stages × Dataset × Modality × items：Libritts [Zen et al., 2019]（A1|T1，586h，ASR，阶段 1,2,3）、VCTK [datashare, 2024]（44h）、Multilingual LibriSpeech [Pratap et al., 2020]（8000h）、Text QA（Open-Orca [OpenOrca]，T1|T2，2000K，阶段 2,3）、Audio QA（Moss-002-sft-data [Sun et al., 2024]，A1|T1|A2|T2，1500K，阶段 3）、Alpaca-GPT4 [vicgalle, 2024]（55k）、Identity finetune [sayan1101, 2024]（2k）、QAassistant [Mihaiii, 2024a]（27k）、voice QA final Rlhf [Anthropic, 2024]（367k）、Trivia-singlechoice [Mihaiii, 2024c]（17k）、Trivia-Multichoice [Mihaiii, 2024b]（20k）、OpenAssistant [OpenAssistan, 2024]（2k）。模态记号中 T 与 A 分别代表文本与音频模态，下标 1/2 表示输入或输出。）"
       }
      ]
     }
@@ -1343,8 +1391,62 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-method-1-1",
-       "original": "test-clean test-other dev-clean dev-other wav2vec2-base [Baevski et al., 2020] 6.0 13.4 VITA [Fu et al., 2024] 8.14 18.41 7.57 16.57 whisper-small [Radford et al., 2023] 3.4 7.6 Mini-Omni 4.5 9.7 4.6 9.2 Table 2: Comparison of the model’s ASR with the base model used.",
-       "zh": "test-clean test-other dev-clean dev-other wav2vec2-base [Baevski et al., 2020] 6.0 13.4 VITA [Fu et al., 2024] 8.14 18.41 7.57 16.57 whisper-small [Radford et al., 2023] 3.4 7.6 Mini-Omni 4.5 9.7 4.6 9.2 表 2：模型 ASR 与所使用基础模型的对比。"
+       "original": "test-clean test-other dev-clean dev-other wav2vec2-base [Baevski et al., 2020]",
+       "zh": "（表 2：ASR 对比——wav2vec2-base [Baevski et al., 2020] 6.0/13.4/-/-；VITA [Fu et al., 2024] 8.14/18.41/7.57/16.57；whisper-small [Radford et al., 2023] 3.4/7.6/-/-；Mini-Omni 4.5/9.7/4.6/9.2（test-clean/test-other/dev-clean/dev-other）。）表 2：模型 ASR 与所用基座模型的对比。"
+      }
+     ]
+    },
+    {
+     "id": "eq-method-1",
+     "type": "equation",
+     "page": 7,
+     "original": "6.0 13.4 - -"
+    },
+    {
+     "id": "eq-method-2",
+     "type": "equation",
+     "page": 7,
+     "original": "VITA [Fu et al., 2024]"
+    },
+    {
+     "id": "eq-method-3",
+     "type": "equation",
+     "page": 7,
+     "original": "8.14 18.41 7.57 16.57"
+    },
+    {
+     "id": "eq-method-4",
+     "type": "equation",
+     "page": 7,
+     "original": "whisper-small [Radford et al., 2023]"
+    },
+    {
+     "id": "eq-method-5",
+     "type": "equation",
+     "page": 7,
+     "original": "3.4 7.6 - -"
+    },
+    {
+     "id": "eq-method-6",
+     "type": "equation",
+     "page": 7,
+     "original": "Mini-Omni"
+    },
+    {
+     "id": "eq-method-7",
+     "type": "equation",
+     "page": 7,
+     "original": "4.5 9.7 4.6 9.2"
+    },
+    {
+     "id": "p-method-2",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-method-2-1",
+       "original": "Table 2: Comparison of the model’s ASR with the base model used.",
+       "zh": "（表 2：ASR 对比——wav2vec2-base [Baevski et al., 2020] 6.0/13.4/-/-；VITA [Fu et al., 2024] 8.14/18.41/7.57/16.57；whisper-small [Radford et al., 2023] 3.4/7.6/-/-；Mini-Omni 4.5/9.7/4.6/9.2（test-clean/test-other/dev-clean/dev-other）。）表 2：模型 ASR 与所用基座模型的对比。"
       }
      ]
     }
@@ -1471,9 +1573,15 @@ globalThis.PAPER_2408_16725 = {
       },
       {
        "id": "s-references-1-2",
-       "original": "Advances in neural information processing systems, 35:23716–23736, 2022."
+       "original": "Advances in neural information processing systems, 35:23716–23736,"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 9,
+     "original": "2022."
     },
     {
      "id": "p-references-2",
@@ -1541,9 +1649,15 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-7-1",
-       "original": "Yunfei Chu, Jin Xu, Qian Yang, Haojie Wei, Xipin Wei, Zhifang Guo, Yichong Leng, Yuanjun Lv, Jinzheng He, Junyang Lin, et al. Qwen2-audio technical report. arXiv preprint arXiv:2407.10759, 2024."
+       "original": "Yunfei Chu, Jin Xu, Qian Yang, Haojie Wei, Xipin Wei, Zhifang Guo, Yichong Leng, Yuanjun Lv, Jinzheng He, Junyang Lin, et al. Qwen2-audio technical report. arXiv preprint arXiv:2407.10759,"
       }
      ]
+    },
+    {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 9,
+     "original": "2024."
     },
     {
      "id": "p-references-8",
@@ -1732,9 +1846,15 @@ globalThis.PAPER_2408_16725 = {
       },
       {
        "id": "s-references-20-2",
-       "original": "Spoken question answering and speech continuation using spectrogram-powered llm. arXiv preprint arXiv:2305.15255, 2023. openai. https://openai.com/, 2024."
+       "original": "Spoken question answering and speech continuation using spectrogram-powered llm. arXiv preprint arXiv:2305.15255,"
       }
      ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 10,
+     "original": "2023."
     },
     {
      "id": "p-references-21",
@@ -1743,7 +1863,7 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "OpenAssistan. https://huggingface.co/datasets/openassistant/oasst1, 2024."
+       "original": "openai. https://openai.com/, 2024."
       }
      ]
     },
@@ -1754,7 +1874,7 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "OpenOrca. https://huggingface.co/datasets/open-orca/openorca/."
+       "original": "OpenAssistan. https://huggingface.co/datasets/openassistant/oasst1, 2024."
       }
      ]
     },
@@ -1765,19 +1885,7 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-23-1",
-       "original": "Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur."
-      },
-      {
-       "id": "s-references-23-2",
-       "original": "Librispeech: an asr corpus based on public domain audio books."
-      },
-      {
-       "id": "s-references-23-3",
-       "original": "In 2015 IEEE international conference on acoustics, speech and signal processing (ICASSP), pages 5206–5210."
-      },
-      {
-       "id": "s-references-23-4",
-       "original": "IEEE, 2015."
+       "original": "OpenOrca. https://huggingface.co/datasets/open-orca/openorca/."
       }
      ]
     },
@@ -1788,11 +1896,19 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-24-1",
-       "original": "Vineel Pratap, Qiantong Xu, Anuroop Sriram, Gabriel Synnaeve, and Ronan Collobert."
+       "original": "Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur."
       },
       {
        "id": "s-references-24-2",
-       "original": "Mls: A large-scale multilingual dataset for speech research. arXiv preprint arXiv:2012.03411, 2020."
+       "original": "Librispeech: an asr corpus based on public domain audio books."
+      },
+      {
+       "id": "s-references-24-3",
+       "original": "In 2015 IEEE international conference on acoustics, speech and signal processing (ICASSP), pages 5206–5210."
+      },
+      {
+       "id": "s-references-24-4",
+       "original": "IEEE, 2015."
       }
      ]
     },
@@ -1803,7 +1919,11 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-25-1",
-       "original": "Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
+       "original": "Vineel Pratap, Qiantong Xu, Anuroop Sriram, Gabriel Synnaeve, and Ronan Collobert."
+      },
+      {
+       "id": "s-references-25-2",
+       "original": "Mls: A large-scale multilingual dataset for speech research. arXiv preprint arXiv:2012.03411, 2020."
       }
      ]
     },
@@ -1814,15 +1934,7 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-26-1",
-       "original": "Robust speech recognition via large-scale weak supervision."
-      },
-      {
-       "id": "s-references-26-2",
-       "original": "In International conference on machine learning, pages 28492–28518."
-      },
-      {
-       "id": "s-references-26-3",
-       "original": "PMLR, 2023. sayan1101. https://huggingface.co/datasets/sayan1101/identity-finetune-data, 2024."
+       "original": "Alec Radford, Jong Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and Ilya Sutskever."
       }
      ]
     },
@@ -1833,7 +1945,15 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-27-1",
-       "original": "Hubert Siuzdak. https://github.com/hubertsiuzdak/snac/, 2024."
+       "original": "Robust speech recognition via large-scale weak supervision."
+      },
+      {
+       "id": "s-references-27-2",
+       "original": "In International conference on machine learning, pages 28492–28518."
+      },
+      {
+       "id": "s-references-27-3",
+       "original": "PMLR, 2023. sayan1101. https://huggingface.co/datasets/sayan1101/identity-finetune-data, 2024."
       }
      ]
     },
@@ -1844,11 +1964,7 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-28-1",
-       "original": "Tianxiang Sun, Xiaotian Zhang, Zhengfu He, Peng Li, Qinyuan Cheng, Xiangyang Liu, Hang Yan, Yunfan Shao, Qiong Tang, Shiduo Zhang, et al. Moss: An open conversational large language model."
-      },
-      {
-       "id": "s-references-28-2",
-       "original": "Machine Intelligence Research, pages 1–18, 2024."
+       "original": "Hubert Siuzdak. https://github.com/hubertsiuzdak/snac/, 2024."
       }
      ]
     },
@@ -1859,11 +1975,11 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-29-1",
-       "original": "Changli Tang, Wenyi Yu, Guangzhi Sun, Xianzhao Chen, Tian Tan, Wei Li, Lu Lu, Zejun Ma, and Chao Zhang."
+       "original": "Tianxiang Sun, Xiaotian Zhang, Zhengfu He, Peng Li, Qinyuan Cheng, Xiangyang Liu, Hang Yan, Yunfan Shao, Qiong Tang, Shiduo Zhang, et al. Moss: An open conversational large language model."
       },
       {
        "id": "s-references-29-2",
-       "original": "Salmonn: Towards generic hearing abilities for large language models. arXiv preprint arXiv:2310.13289, 2023. vicgalle. https://huggingface.co/datasets/vicgalle/alpaca-gpt4, 2024."
+       "original": "Machine Intelligence Research, pages 1–18, 2024."
       }
      ]
     },
@@ -1874,7 +1990,11 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-30-1",
-       "original": "An Yang, Baosong Yang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Zhou, Chengpeng Li, Chengyuan Li, Dayiheng Liu, Fei Huang, et al."
+       "original": "Changli Tang, Wenyi Yu, Guangzhi Sun, Xianzhao Chen, Tian Tan, Wei Li, Lu Lu, Zejun Ma, and Chao Zhang."
+      },
+      {
+       "id": "s-references-30-2",
+       "original": "Salmonn: Towards generic hearing abilities for large language models. arXiv preprint arXiv:2310.13289, 2023. vicgalle. https://huggingface.co/datasets/vicgalle/alpaca-gpt4, 2024."
       }
      ]
     },
@@ -1885,7 +2005,7 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-31-1",
-       "original": "Qwen2 technical report."
+       "original": "An Yang, Baosong Yang, Binyuan Hui, Bo Zheng, Bowen Yu, Chang Zhou, Chengpeng Li, Chengyuan Li, Dayiheng Liu, Fei Huang, et al."
       }
      ]
     },
@@ -1896,7 +2016,7 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-32-1",
-       "original": "arXiv preprint arXiv:2407.10671, 2024a."
+       "original": "Qwen2 technical report."
       }
      ]
     },
@@ -1907,15 +2027,7 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-33-1",
-       "original": "Dongchao Yang, Songxiang Liu, Rongjie Huang, Chao Weng, and Helen Meng."
-      },
-      {
-       "id": "s-references-33-2",
-       "original": "Instructtts: Modelling expressive tts in discrete latent space with natural language style prompt."
-      },
-      {
-       "id": "s-references-33-3",
-       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 2024b."
+       "original": "arXiv preprint arXiv:2407.10671, 2024a."
       }
      ]
     },
@@ -1926,7 +2038,15 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-34-1",
-       "original": "Heiga Zen, Viet Dang, Rob Clark, Yu Zhang, Ron J Weiss, Ye Jia, Zhifeng Chen, and Yonghui Wu."
+       "original": "Dongchao Yang, Songxiang Liu, Rongjie Huang, Chao Weng, and Helen Meng."
+      },
+      {
+       "id": "s-references-34-2",
+       "original": "Instructtts: Modelling expressive tts in discrete latent space with natural language style prompt."
+      },
+      {
+       "id": "s-references-34-3",
+       "original": "IEEE/ACM Transactions on Audio, Speech, and Language Processing, 2024b."
       }
      ]
     },
@@ -1937,7 +2057,7 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-35-1",
-       "original": "Libritts: A corpus derived from librispeech for text-to-speech. arXiv preprint arXiv:1904.02882, 2019."
+       "original": "Heiga Zen, Viet Dang, Rob Clark, Yu Zhang, Ron J Weiss, Ye Jia, Zhifeng Chen, and Yonghui Wu."
       }
      ]
     },
@@ -1948,9 +2068,15 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-36-1",
-       "original": "Dong Zhang, Shimin Li, Xin Zhang, Jun Zhan, Pengyu Wang, Yaqian Zhou, and Xipeng Qiu."
+       "original": "Libritts: A corpus derived from librispeech for text-to-speech. arXiv preprint arXiv:1904.02882,"
       }
      ]
+    },
+    {
+     "id": "eq-references-4",
+     "type": "equation",
+     "page": 10,
+     "original": "2019."
     },
     {
      "id": "p-references-37",
@@ -1959,7 +2085,7 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-37-1",
-       "original": "Speechgpt: Empowering large language models with intrinsic cross-modal conversational abilities. arXiv preprint arXiv:2305.11000, 2023a."
+       "original": "Dong Zhang, Shimin Li, Xin Zhang, Jun Zhan, Pengyu Wang, Yaqian Zhou, and Xipeng Qiu."
       }
      ]
     },
@@ -1970,10 +2096,21 @@ globalThis.PAPER_2408_16725 = {
      "sentences": [
       {
        "id": "s-references-38-1",
+       "original": "Speechgpt: Empowering large language models with intrinsic cross-modal conversational abilities. arXiv preprint arXiv:2305.11000, 2023a."
+      }
+     ]
+    },
+    {
+     "id": "p-references-39",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-references-39-1",
        "original": "Hang Zhang, Xin Li, and Lidong Bing."
       },
       {
-       "id": "s-references-38-2",
+       "id": "s-references-39-2",
        "original": "Video-llama: An instruction-tuned audio-visual language model for video understanding. arXiv preprint arXiv:2306.02858, 2023b."
       }
      ]

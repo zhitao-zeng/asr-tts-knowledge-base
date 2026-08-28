@@ -416,10 +416,34 @@ globalThis.PAPER_2506_21619 = {
       },
       {
        "id": "s-proposed-method-1-3",
-       "original": "The BigVGANv2 vocoder then converts the mel-spectrograms into speech EA Autoregressive Text-to-Semantic Transformer Emotion Adapter + BT 1 2 3 4 5 ...",
+       "original": "The BigVGANv2 vocoder then converts the mel-spectrograms into speech EA Autoregressive Text-to-Semantic Transformer Emotion Adapter",
        "zh": "BigVGANv2 声码器随后将 Mel 频谱图转换为语音（本句末尾混入 Figure 2 图片内文字残留：EA、Autoregressive Text-to-Semantic Transformer、Emotion Adapter + BT、1 2 3 4 5 ……，即图 2 中的模块标注与序号）。"
       }
      ]
+    },
+    {
+     "id": "eq-proposed-method-1",
+     "type": "equation",
+     "page": 2,
+     "original": "+"
+    },
+    {
+     "id": "eq-proposed-method-2",
+     "type": "equation",
+     "page": 2,
+     "original": "BT"
+    },
+    {
+     "id": "eq-proposed-method-3",
+     "type": "equation",
+     "page": 2,
+     "original": "1 2 3 4 5 ..."
+    },
+    {
+     "id": "eq-proposed-method-4",
+     "type": "equation",
+     "page": 3,
+     "original": "1 2 3 4 5 6 7 8 ..."
     },
     {
      "id": "p-proposed-method-2",
@@ -428,8 +452,8 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-proposed-method-2-1",
-       "original": "1 2 3 4 5 6 7 8 ... p c e GRL Embedding Table BA Conditioner Text Tokenizer Semantic Codec Emotion Perceiver Speaker Classifier Speaker Perceiver Speech Token Num Conditioner Hello! 你好！ Speaker Prompt GT Speech Style Prompt Text",
-       "zh": "（整行为 Figure 2 图片内文字的抽取残留：1 2 3 4 5 6 7 8 …… p c e、GRL、Embedding Table、BA、Conditioner、Text Tokenizer、Semantic Codec、Emotion Perceiver、Speaker Classifier、Speaker Perceiver、Speech Token Num Conditioner、Hello! 你好！、Speaker Prompt、GT Speech、Style Prompt、Text，均为图 2 中的组件标注。）"
+       "original": "p c e GRL Embedding Table BA Conditioner Text Tokenizer Semantic Codec Emotion Perceiver Speaker Classifier Speaker Perceiver Speech Token Num Conditioner Extraction Semantic Feature Semantic Feature Extraction Extraction Semantic Feature Hello! 你好！ Speaker Prompt GT Speech Style Prompt Text",
+       "zh": "（图 2 架构标签：p/c/e；GRL；Embedding Table；BA Conditioner；Text Tokenizer；Semantic Codec；Emotion Perceiver；Speaker Classifier；Speaker Perceiver；Speech Token Num Conditioner；Extraction；Semantic Feature；Hello! 你好！；Speaker Prompt / GT Speech / Style Prompt / Text。）"
       }
      ]
     },
@@ -676,7 +700,19 @@ globalThis.PAPER_2506_21619 = {
      "id": "eq-training-and-inference-1",
      "type": "equation",
      "page": 4,
-     "original": "T LAR = −"
+     "original": "T X"
+    },
+    {
+     "id": "eq-training-and-inference-2",
+     "type": "equation",
+     "page": 4,
+     "original": "LAR = − 1 T + 1"
+    },
+    {
+     "id": "eq-training-and-inference-3",
+     "type": "equation",
+     "page": 4,
+     "original": "t=0 log q(yt) −α log q(e), (1)"
     },
     {
      "id": "p-training-and-inference-4",
@@ -685,7 +721,7 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-training-and-inference-4-1",
-       "original": "1 T + 1 t=0 log q(yt) −α log q(e), where yT represents the end-of-sequence token <EA>, q(yt) denotes the posterior probability of semantic tokens, q(e) denotes the posterior probability that e originates from the target speaker and α is the loss coefficient.",
+       "original": "where yT represents the end-of-sequence token <EA>, q(yt) denotes the posterior probability of semantic tokens, q(e) denotes the posterior probability that e originates from the target speaker and α is the loss coefficient.",
        "zh": "−1/(T+1)·Σ_{t=0}^{T} log q(yt) − α·log q(e)（公式经抽取重排），其中 yT 表示序列结束 token <EA>，q(yt) 表示语义 token 的后验概率，q(e) 表示 e 来自目标说话人的后验概率，α 为损失系数。"
       }
      ]
@@ -726,8 +762,8 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-training-and-inference-7-1",
-       "original": "Flow Matching Module Reference Feature Noising Concat Gpt Latent Random fusion Reference Token Semantic Token Reference Mel Target Mel Speaker Embedding Mel Spectrogram Speaker Embedding Semantic Codec Training Sample",
-       "zh": "（整行为 Figure 3 图片内文字的抽取残留：Flow Matching Module、Reference Feature、Noising、Concat、Gpt Latent、Random fusion、Reference Token、Semantic Token、Reference Mel、Target Mel、Speaker Embedding、Mel Spectrogram、Speaker Embedding、Semantic Codec、Training Sample，均为图 3 中的组件标注。）"
+       "original": "Flow Matching Module Semantic Feature Reference Feature Noising Concat Gpt Latent Random fusion Reference Token Semantic Token Reference Mel Target Mel Speaker Embedding Mel Spectrogram Speaker Embedding Semantic Codec Extraction Extraction Training Sample",
+       "zh": "（图 3 训练流程标签：Flow Matching 模块；语义特征（Semantic Feature）与参考特征（Reference Feature）；Noising/Concat；GPT Latent；随机融合；参考 token/语义 token；参考 Mel/目标 Mel；说话人嵌入；Mel 频谱；语义 codec；Extraction；训练样本。）"
       }
      ]
     },
@@ -886,19 +922,31 @@ globalThis.PAPER_2506_21619 = {
      "id": "eq-training-and-inference-2-1",
      "type": "equation",
      "page": 4,
-     "original": "F D"
+     "original": "F X"
     },
     {
      "id": "eq-training-and-inference-2-2",
      "type": "equation",
      "page": 4,
-     "original": "LL1 = 1 F · D"
+     "original": "D X"
     },
     {
      "id": "eq-training-and-inference-2-3",
      "type": "equation",
      "page": 4,
-     "original": "d=1 |(ypred)f,d −(ytar)f,d|, f=1"
+     "original": "LL1 = 1 F · D"
+    },
+    {
+     "id": "eq-training-and-inference-2-4",
+     "type": "equation",
+     "page": 4,
+     "original": "d=1 |(ypred)f,d −(ytar)f,d|, (2)"
+    },
+    {
+     "id": "eq-training-and-inference-2-5",
+     "type": "equation",
+     "page": 4,
+     "original": "f=1"
     },
     {
      "id": "p-training-and-inference-2-2",
@@ -965,15 +1013,16 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-text-to-emotion-t2e-3-1",
-       "original": "Then, we use the large language model Deepseek-r1 as a teacher to map a text input t to a 7-dimensional emotion probability distribution: p = Deepseek-r1(t) ∈∆7, where ∆7 is the 7-dimensional probability simplex (P7 i=1 pi = 1, pi ≥0).",
+       "original": "Then, we use the large language model Deepseek-r1 as a teacher to map a text input t to a 7-dimensional emotion probability distribution:",
        "zh": "然后，我们使用大语言模型 Deepseek-r1 作为教师，将文本输入 t 映射为一个 7 维情感概率分布：p = Deepseek-r1(t) ∈ ∆7，其中 ∆7 为 7 维概率单纯形（满足 Σi=1..7 pi = 1，pi ≥ 0）。"
-      },
-      {
-       "id": "s-text-to-emotion-t2e-3-2",
-       "original": "To enable efficient inference with smaller models, we apply knowledge distillation to transfer the teacher’s behavior to a smaller student model Qwen-3- 1.7b.",
-       "zh": "为了能够用更小的模型实现高效推理，我们应用知识蒸馏，将教师的行为迁移到更小的学生模型 Qwen-3-1.7b。"
       }
      ]
+    },
+    {
+     "id": "eq-text-to-emotion-t2e-1",
+     "type": "equation",
+     "page": 4,
+     "original": "p = Deepseek-r1(t) ∈∆7, (3)"
     },
     {
      "id": "p-text-to-emotion-t2e-4",
@@ -982,10 +1031,16 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-text-to-emotion-t2e-4-1",
-       "original": "We construct a training dataset of 1000 text-distribution pairs using two types of prompts with Deepseek-r1:",
-       "zh": "我们使用 Deepseek-r1 配合两类提示，构建了一个包含 1000 个文本—分布对的训练数据集："
+       "original": "where",
+       "zh": "如 Figure 2 所示，输入序列构造为 [c, p, e⟨BT⟩, Etext, e⟨BA⟩, Esem]，其中 c 表示说话人属性，p 控制时长，Etext 表示文本嵌入，Esem 表示由语义 codec 从真实语音中提取的语义 token 的嵌入。e⟨BT⟩ 和 e⟨BA⟩ 作为专用的边界 token，分别用于界定文本序列和语义序列的范围。"
       }
      ]
+    },
+    {
+     "id": "eq-text-to-emotion-t2e-2",
+     "type": "equation",
+     "page": 4,
+     "original": "∆7"
     },
     {
      "id": "p-text-to-emotion-t2e-5",
@@ -994,47 +1049,37 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-text-to-emotion-t2e-5-1",
-       "original": "• Descriptive: “Please generate descriptive sentences that express {emotion}.” • Script-like: “Please generate script-like utterances that express {emotion}.”",
-       "zh": "• 描述型：“请生成表达{情感}的描述性句子。”• 剧本型：“请生成表达{情感}的剧本式台词。”"
+       "original": "is the 7-dimensional probability simplex (P7 i=1 pi = 1, pi ≥0).",
+       "zh": "然后，我们使用大语言模型 Deepseek-r1 作为教师，将文本输入 t 映射为一个 7 维情感概率分布：p = Deepseek-r1(t) ∈ ∆7，其中 ∆7 为 7 维概率单纯形（满足 Σi=1..7 pi = 1，pi ≥ 0）。"
+      },
+      {
+       "id": "s-text-to-emotion-t2e-5-2",
+       "original": "To enable efficient inference with smaller models, we apply knowledge distillation to transfer the teacher’s behavior to a smaller student model Qwen-3- 1.7b.",
+       "zh": "为了能够用更小的模型实现高效推理，我们应用知识蒸馏，将教师的行为迁移到更小的学生模型 Qwen-3-1.7b。"
       }
      ]
     },
     {
      "id": "p-text-to-emotion-t2e-6",
      "type": "paragraph",
-     "page": 5,
+     "page": 4,
      "sentences": [
       {
        "id": "s-text-to-emotion-t2e-6-1",
-       "original": "For each generated sentence, we use a classification prompt to obtain the corresponding emotion distribution: “Given the input sentence, return a JSON object with probabilities for each of the 7 emotions.",
-       "zh": "对于每个生成的句子，我们使用一条分类提示来获取对应的情感分布：“给定输入句子，返回一个 JSON 对象，给出 7 种情感各自的概率。"
-      },
-      {
-       "id": "s-text-to-emotion-t2e-6-2",
-       "original": "Probabilities must sum to 1 and be rounded to two decimal places.”",
-       "zh": "概率之和必须为 1，并四舍五入保留两位小数。”"
+       "original": "We construct a training dataset of 1000 text-distribution pairs using two types of prompts with Deepseek-r1:",
+       "zh": "我们使用 Deepseek-r1 配合两类提示，构建了一个包含 1000 个文本—分布对的训练数据集："
       }
      ]
     },
     {
      "id": "p-text-to-emotion-t2e-7",
      "type": "paragraph",
-     "page": 5,
+     "page": 4,
      "sentences": [
       {
        "id": "s-text-to-emotion-t2e-7-1",
-       "original": "Using this dataset, we fine-tune Qwen-3-1.7b via LoRA.",
-       "zh": "利用该数据集，我们通过 LoRA 对 Qwen-3-1.7b 进行微调。"
-      },
-      {
-       "id": "s-text-to-emotion-t2e-7-2",
-       "original": "The training objective is to minimize the cross-entropy loss between the student model’s predictions and the teacherprovided distributions: min ϕ E(t,p)∼D CrossEntropy Qwen-3θ+ϕ(t), p , where θ denotes the original parameters of Qwen-3-1.7b and ϕ represents the LoRA parameters. t refers to input text samples from the dataset D, while p denotes the soft probability distributions generated by the teacher model.",
-       "zh": "训练目标是最小化学生模型预测与教师所给分布之间的交叉熵损失：min_ϕ E_{(t,p)~D} CrossEntropy(Qwen-3_{θ+ϕ}(t), p)，其中 θ 表示 Qwen-3-1.7b 的原始参数，ϕ 表示 LoRA 参数；t 指取自数据集 D 的输入文本样本，p 表示教师模型生成的软概率分布（公式经抽取重排，按原意译出）。"
-      },
-      {
-       "id": "s-text-to-emotion-t2e-7-3",
-       "original": "After training, the distilled Qwen-3-1.7b model can efficiently replace Deepseek-r1 during inference with significantly reduced computational cost.",
-       "zh": "训练完成后，蒸馏得到的 Qwen-3-1.7b 模型即可在推理时高效替代 Deepseek-r1，计算成本显著降低。"
+       "original": "• Descriptive: “Please generate descriptive sentences that express {emotion}.” • Script-like: “Please generate script-like utterances that express {emotion}.”",
+       "zh": "• 描述型：“请生成表达{情感}的描述性句子。”• 剧本型：“请生成表达{情感}的剧本式台词。”"
       }
      ]
     },
@@ -1045,16 +1090,15 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-text-to-emotion-t2e-8-1",
-       "original": "Next step, the emotion vector einput is computed as a weighted average over the emotion embedding set V:",
-       "zh": "接下来，情感向量 einput 通过对情感嵌入集合 V 加权平均计算得到："
+       "original": "For each generated sentence, we use a classification prompt to obtain the corresponding emotion distribution: “Given the input sentence, return a JSON object with probabilities for each of the 7 emotions.",
+       "zh": "对于每个生成的句子，我们使用一条分类提示来获取对应的情感分布：“给定输入句子，返回一个 JSON 对象，给出 7 种情感各自的概率。"
+      },
+      {
+       "id": "s-text-to-emotion-t2e-8-2",
+       "original": "Probabilities must sum to 1 and be rounded to two decimal places.”",
+       "zh": "概率之和必须为 1，并四舍五入保留两位小数。”"
       }
      ]
-    },
-    {
-     "id": "eq-text-to-emotion-t2e-1",
-     "type": "equation",
-     "page": 5,
-     "original": "e∈E pe · 1 |Ve|"
     },
     {
      "id": "p-text-to-emotion-t2e-9",
@@ -1063,10 +1107,21 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-text-to-emotion-t2e-9-1",
-       "original": "einput = v∈Ve v.",
-       "zh": "einput = Σ_{e∈E} pe · (1/|Ve|) Σ_{v∈Ve} v（公式经抽取重排，按原意译出）。"
+       "original": "Using this dataset, we fine-tune Qwen-3-1.7b via LoRA.",
+       "zh": "利用该数据集，我们通过 LoRA 对 Qwen-3-1.7b 进行微调。"
+      },
+      {
+       "id": "s-text-to-emotion-t2e-9-2",
+       "original": "The training objective is to minimize the cross-entropy loss between the student model’s predictions and the teacherprovided distributions: min ϕ E(t,p)∼D CrossEntropy Qwen-3θ+ϕ(t), p",
+       "zh": "训练目标是最小化学生模型预测与教师分布之间的交叉熵：min_ϕ E_{(t,p)~D} CrossEntropy(Qwen-3_{θ+ϕ}(t), p)（式 4），其中 θ 为 Qwen-3-1.7b 原始参数，ϕ 为 LoRA 参数，t 为数据集 D 的输入文本样本，p 为教师模型生成的软概率分布。"
       }
      ]
+    },
+    {
+     "id": "eq-text-to-emotion-t2e-3",
+     "type": "equation",
+     "page": 5,
+     "original": ", (4)"
     },
     {
      "id": "p-text-to-emotion-t2e-10",
@@ -1075,6 +1130,65 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-text-to-emotion-t2e-10-1",
+       "original": "where θ denotes the original parameters of Qwen-3-1.7b and ϕ represents the LoRA parameters. t refers to input text samples from the dataset D, while p denotes the soft probability distributions generated by the teacher model.",
+       "zh": "训练目标是最小化学生模型预测与教师分布之间的交叉熵：min_ϕ E_{(t,p)~D} CrossEntropy(Qwen-3_{θ+ϕ}(t), p)（式 4），其中 θ 为 Qwen-3-1.7b 原始参数，ϕ 为 LoRA 参数，t 为数据集 D 的输入文本样本，p 为教师模型生成的软概率分布。"
+      },
+      {
+       "id": "s-text-to-emotion-t2e-10-2",
+       "original": "After training, the distilled Qwen-3-1.7b model can efficiently replace Deepseek-r1 during inference with significantly reduced computational cost.",
+       "zh": "训练完成后，蒸馏得到的 Qwen-3-1.7b 模型即可在推理时高效替代 Deepseek-r1，计算成本显著降低。"
+      }
+     ]
+    },
+    {
+     "id": "p-text-to-emotion-t2e-11",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-text-to-emotion-t2e-11-1",
+       "original": "Next step, the emotion vector einput is computed as a weighted average over the emotion embedding set V:",
+       "zh": "接下来，情感向量 einput 通过对情感嵌入集合 V 加权平均计算得到："
+      }
+     ]
+    },
+    {
+     "id": "eq-text-to-emotion-t2e-4",
+     "type": "equation",
+     "page": 5,
+     "original": "e∈E pe · 1 |Ve|"
+    },
+    {
+     "id": "p-text-to-emotion-t2e-12",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-text-to-emotion-t2e-12-1",
+       "original": "einput = X",
+       "zh": "（公式片段：e_input = X（见原文）。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-text-to-emotion-t2e-5",
+     "type": "equation",
+     "page": 5,
+     "original": "X"
+    },
+    {
+     "id": "eq-text-to-emotion-t2e-6",
+     "type": "equation",
+     "page": 5,
+     "original": "v∈Ve v. (5)"
+    },
+    {
+     "id": "p-text-to-emotion-t2e-13",
+     "type": "paragraph",
+     "page": 5,
+     "sentences": [
+      {
+       "id": "s-text-to-emotion-t2e-13-1",
        "original": "Finally, this emotion vector is fed as a prompt into the T2S model, enabling the generation of speech with the desired emotional characteristics.",
        "zh": "最后，该情感向量作为提示送入 T2S 模型，从而生成具有所需情感特征的语音。"
       }
@@ -1226,8 +1340,8 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-training-1-1",
-       "original": "Hyperparameter Details: trained IndexTTS2 on 8 NVIDIA A100 80GB GPUs using the AdamW optimizer with an initial learning rate of 2e-4.",
-       "zh": "超参数细节：我们在 8 张 NVIDIA A100 80GB GPU 上训练 IndexTTS2，使用 AdamW 优化器，初始学习率为 2e-4。"
+       "original": "Hyperparameter Details: We trained IndexTTS2 on 8 NVIDIA A100 80GB GPUs using the AdamW optimizer with an initial learning rate of 2e-4.",
+       "zh": "超参数细节：我们在 8 张 NVIDIA A100 80GB GPU 上训练 IndexTTS2，使用 AdamW 优化器，初始学习率 2e-4。"
       },
       {
        "id": "s-training-1-2",
@@ -1271,8 +1385,8 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-basic-1-1",
-       "original": "Competence Comparison: evaluated IndexTTS2 on standard test sets (LibriSpeech-test-clean, SeedTTS test-zh/en, and AIShell-1 test)1.",
-       "zh": "能力对比：我们在标准测试集（LibriSpeech-test-clean、SeedTTS test-zh/en 和 AIShell-1 test）上评估了 IndexTTS2（脚注 1）。"
+       "original": "Competence Comparison: We evaluated IndexTTS2 on standard test sets (LibriSpeech-test-clean, SeedTTS test-zh/en, and AIShell-1 test)1.",
+       "zh": "能力对比：我们在标准测试集（LibriSpeech-test-clean、SeedTTS test-zh/en 与 AIShell-1 test）上评测 IndexTTS2（脚注 1）。"
       },
       {
        "id": "s-basic-1-2",
@@ -1361,10 +1475,100 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-dataset-1-1",
-       "original": "SS↑ WER(%)↓ 0.833 3.405 0.790 7.759 0.821 8.044 0.843 5.999 0.756 8.843 0.819 3.436 0.870 3.115 0.887 3.334",
-       "zh": "（整行为 Table 1 数值的抽取碎块：SS↑ 与 WER(%)↓ 两列，数值依次为 0.833 3.405、0.790 7.759、0.821 8.044、0.843 5.999、0.756 8.843、0.819 3.436、0.870 3.115、0.887 3.334。）"
+       "original": "Model SS↑ WER(%)↓ SMOS↑ PMOS↑ QMOS↑ Ground Truth",
+       "zh": "表头：Model / SS↑ / WER(%)↓ / SMOS↑ / PMOS↑ / QMOS↑——Ground Truth（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-dataset-1",
+     "type": "equation",
+     "page": 6,
+     "original": "0.833 3.405 4.02±0.22 3.85±0.26 4.23±0.12"
+    },
+    {
+     "id": "eq-dataset-2",
+     "type": "equation",
+     "page": 6,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-dataset-3",
+     "type": "equation",
+     "page": 6,
+     "original": "0.790 7.759 4.12±0.09 3.98±0.11 4.19±0.19"
+    },
+    {
+     "id": "eq-dataset-4",
+     "type": "equation",
+     "page": 6,
+     "original": "F5-TTS"
+    },
+    {
+     "id": "eq-dataset-5",
+     "type": "equation",
+     "page": 6,
+     "original": "0.821 8.044 4.08±0.21 3.73±0.27 4.12±0.13"
+    },
+    {
+     "id": "eq-dataset-6",
+     "type": "equation",
+     "page": 6,
+     "original": "CosyVoice2"
+    },
+    {
+     "id": "eq-dataset-7",
+     "type": "equation",
+     "page": 6,
+     "original": "0.843 5.999 4.02±0.22 4.04±0.28 4.17±0.25"
+    },
+    {
+     "id": "eq-dataset-8",
+     "type": "equation",
+     "page": 6,
+     "original": "SparkTTS"
+    },
+    {
+     "id": "eq-dataset-9",
+     "type": "equation",
+     "page": 6,
+     "original": "0.756 8.843 4.06±0.20 3.94±0.21 4.15±0.16"
+    },
+    {
+     "id": "eq-dataset-10",
+     "type": "equation",
+     "page": 6,
+     "original": "IndexTTS"
+    },
+    {
+     "id": "eq-dataset-11",
+     "type": "equation",
+     "page": 6,
+     "original": "0.819 3.436 4.23±0.14 4.02±0.18 4.29±0.22"
+    },
+    {
+     "id": "eq-dataset-12",
+     "type": "equation",
+     "page": 6,
+     "original": "IndexTTS2"
+    },
+    {
+     "id": "eq-dataset-13",
+     "type": "equation",
+     "page": 6,
+     "original": "0.870 3.115 4.44±0.12 4.12±0.17 4.29±0.14"
+    },
+    {
+     "id": "eq-dataset-14",
+     "type": "equation",
+     "page": 6,
+     "original": "- GPT latent"
+    },
+    {
+     "id": "eq-dataset-15",
+     "type": "equation",
+     "page": 6,
+     "original": "0.887 3.334 4.33±0.10 4.10±0.12 4.17±0.22"
     }
    ]
   },
@@ -1385,10 +1589,328 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-librispeech-1-1",
-       "original": "test-clean 0.820 1.897 0.824 2.530 0.803 1.937 0.794 3.277 0.755 1.543 0.808 1.844 0.860 1.521 0.879 1.616 0.776 1.254 0.807 2.447 0.844 1.514 0.846 1.451 0.683 2.636 0.781 1.097 0.865 1.008 0.890 1.261 0.847 1.840 0.598 4.930 0.831 3.671 0.834 1.967 0.593 1.743 0.794 1.478 0.843 1.516 0.868 1.791",
-       "zh": "（整行为 Table 1 在 LibriSpeech test-clean 等子集上的数值抽取碎块：test-clean 0.820 1.897 0.824 2.530 0.803 1.937 0.794 3.277 0.755 1.543 0.808 1.844 0.860 1.521 0.879 1.616 0.776 1.254 0.807 2.447 0.844 1.514 0.846 1.451 0.683 2.636 0.781 1.097 0.865 1.008 0.890 1.261 0.847 1.840 0.598 4.930 0.831 3.671 0.834 1.967 0.593 1.743 0.794 1.478 0.843 1.516 0.868 1.791。）"
+       "original": "test-clean Ground Truth",
+       "zh": "（表格行）test-clean；Ground Truth（后续照原文）。"
       }
      ]
+    },
+    {
+     "id": "eq-librispeech-1",
+     "type": "equation",
+     "page": 6,
+     "original": "0.820 1.897 4.21±0.19 4.06±0.25 4.40±0.15"
+    },
+    {
+     "id": "eq-librispeech-2",
+     "type": "equation",
+     "page": 6,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-librispeech-3",
+     "type": "equation",
+     "page": 6,
+     "original": "0.824 2.530 4.35±0.20 4.02±0.24 4.50±0.17"
+    },
+    {
+     "id": "eq-librispeech-4",
+     "type": "equation",
+     "page": 6,
+     "original": "F5-TTS"
+    },
+    {
+     "id": "eq-librispeech-5",
+     "type": "equation",
+     "page": 6,
+     "original": "0.803 1.937 4.44±0.14 4.06±0.21 4.40±0.12"
+    },
+    {
+     "id": "eq-librispeech-6",
+     "type": "equation",
+     "page": 6,
+     "original": "CosyVoice2"
+    },
+    {
+     "id": "eq-librispeech-7",
+     "type": "equation",
+     "page": 6,
+     "original": "0.794 3.277 4.42±0.26 3.96±0.24 4.52±0.15"
+    },
+    {
+     "id": "eq-librispeech-8",
+     "type": "equation",
+     "page": 6,
+     "original": "SparkTTS"
+    },
+    {
+     "id": "eq-librispeech-9",
+     "type": "equation",
+     "page": 6,
+     "original": "0.755 1.543 3.96±0.23 4.12±0.22 3.89±0.20"
+    },
+    {
+     "id": "eq-librispeech-10",
+     "type": "equation",
+     "page": 6,
+     "original": "IndexTTS"
+    },
+    {
+     "id": "eq-librispeech-11",
+     "type": "equation",
+     "page": 6,
+     "original": "0.808 1.844 4.67±0.16 4.52±0.14 4.67±0.19"
+    },
+    {
+     "id": "eq-librispeech-12",
+     "type": "equation",
+     "page": 6,
+     "original": "IndexTTS2"
+    },
+    {
+     "id": "eq-librispeech-13",
+     "type": "equation",
+     "page": 6,
+     "original": "0.860 1.521 4.42±0.19 4.40±0.13 4.48±0.15"
+    },
+    {
+     "id": "eq-librispeech-14",
+     "type": "equation",
+     "page": 6,
+     "original": "- GPT latent"
+    },
+    {
+     "id": "eq-librispeech-15",
+     "type": "equation",
+     "page": 6,
+     "original": "0.879 1.616 4.40±0.22 4.31±0.17 4.42±0.20"
+    }
+   ]
+  },
+  {
+   "id": "sec-seedtts",
+   "num": null,
+   "level": 2,
+   "page": 6,
+   "title": {
+    "original": "SeedTTS",
+    "zh": "SeedTTS"
+   },
+   "blocks": [
+    {
+     "id": "p-seedtts-1",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-seedtts-1-1",
+       "original": "test-en Ground Truth",
+       "zh": "为验证 TTS 系统的基础能力，我们在四个基准上评估模型：(1) SeedTTS test-en（Anastassiou et al. 2024），出自 SeedTTS，包含 1,000 条来自 Common Voice 数据集的语音；(2) SeedTTS test-zh（Anastassiou et al. 2024），包含 2,000 条来自 DiDiSpeech（Guo et al. 2021）的语音；(3) LibriSpeech-testclean（Panayotov et al. 2015），从 LibriSpeech 语料库中随机选取的 2,620 条语音；以及 (4) AISHELL-1（Bu et al. 2017），从 AISHELL-1 数据集中随机抽取的 1,000 条语音。"
+      }
+     ]
+    },
+    {
+     "id": "eq-seedtts-1",
+     "type": "equation",
+     "page": 6,
+     "original": "0.776 1.254 3.81±0.24 4.04±0.28 4.21±0.26"
+    },
+    {
+     "id": "eq-seedtts-2",
+     "type": "equation",
+     "page": 6,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-seedtts-3",
+     "type": "equation",
+     "page": 6,
+     "original": "0.807 2.447 3.94±0.22 3.54±0.26 4.15±0.15"
+    },
+    {
+     "id": "eq-seedtts-4",
+     "type": "equation",
+     "page": 6,
+     "original": "F5-TTS"
+    },
+    {
+     "id": "eq-seedtts-5",
+     "type": "equation",
+     "page": 6,
+     "original": "0.844 1.514 4.19±0.21 3.88±0.23 4.38±0.16"
+    },
+    {
+     "id": "eq-seedtts-6",
+     "type": "equation",
+     "page": 6,
+     "original": "CosyVoice2"
+    },
+    {
+     "id": "eq-seedtts-7",
+     "type": "equation",
+     "page": 6,
+     "original": "0.846 1.451 4.12±0.25 4.33±0.19 4.31±0.21"
+    },
+    {
+     "id": "eq-seedtts-8",
+     "type": "equation",
+     "page": 6,
+     "original": "SparkTTS"
+    },
+    {
+     "id": "eq-seedtts-9",
+     "type": "equation",
+     "page": 6,
+     "original": "0.683 2.636 3.65±0.26 4.10±0.25 3.79±0.18"
+    },
+    {
+     "id": "eq-seedtts-10",
+     "type": "equation",
+     "page": 6,
+     "original": "IndexTTS"
+    },
+    {
+     "id": "eq-seedtts-11",
+     "type": "equation",
+     "page": 6,
+     "original": "0.781 1.097 4.10±0.09 3.73±0.23 4.33±0.17"
+    },
+    {
+     "id": "eq-seedtts-12",
+     "type": "equation",
+     "page": 6,
+     "original": "IndexTTS2"
+    },
+    {
+     "id": "eq-seedtts-13",
+     "type": "equation",
+     "page": 6,
+     "original": "0.865 1.008 4.44±0.17 4.46±0.11 4.54±0.08"
+    },
+    {
+     "id": "eq-seedtts-14",
+     "type": "equation",
+     "page": 6,
+     "original": "- GPT latent"
+    },
+    {
+     "id": "eq-seedtts-15",
+     "type": "equation",
+     "page": 6,
+     "original": "0.890 1.261 4.44±0.13 4.33±0.15 4.48±0.17"
+    }
+   ]
+  },
+  {
+   "id": "sec-seedtts-2",
+   "num": null,
+   "level": 2,
+   "page": 6,
+   "title": {
+    "original": "SeedTTS",
+    "zh": "SeedTTS"
+   },
+   "blocks": [
+    {
+     "id": "p-seedtts-2-1",
+     "type": "paragraph",
+     "page": 6,
+     "sentences": [
+      {
+       "id": "s-seedtts-2-1-1",
+       "original": "test-zh Ground Truth",
+       "zh": "（表格行）test-zh；Ground Truth（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-seedtts-2-1",
+     "type": "equation",
+     "page": 6,
+     "original": "0.847 1.840 4.27±0.19 3.83±0.25 4.42±0.07"
+    },
+    {
+     "id": "eq-seedtts-2-2",
+     "type": "equation",
+     "page": 6,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-seedtts-2-3",
+     "type": "equation",
+     "page": 6,
+     "original": "0.598 4.930 3.92±0.03 2.67±0.08 3.67±0.07"
+    },
+    {
+     "id": "eq-seedtts-2-4",
+     "type": "equation",
+     "page": 6,
+     "original": "F5-TTS"
+    },
+    {
+     "id": "eq-seedtts-2-5",
+     "type": "equation",
+     "page": 6,
+     "original": "0.831 3.671 4.17±0.30 3.60±0.25 4.25±0.22"
+    },
+    {
+     "id": "eq-seedtts-2-6",
+     "type": "equation",
+     "page": 6,
+     "original": "CosyVoice2"
+    },
+    {
+     "id": "eq-seedtts-2-7",
+     "type": "equation",
+     "page": 6,
+     "original": "0.834 1.967 4.21±0.23 4.33±0.19 4.40±0.21"
+    },
+    {
+     "id": "eq-seedtts-2-8",
+     "type": "equation",
+     "page": 6,
+     "original": "SparkTTS"
+    },
+    {
+     "id": "eq-seedtts-2-9",
+     "type": "equation",
+     "page": 6,
+     "original": "0.593 1.743 3.48±0.22 3.96±0.16 3.79±0.20"
+    },
+    {
+     "id": "eq-seedtts-2-10",
+     "type": "equation",
+     "page": 6,
+     "original": "IndexTTS"
+    },
+    {
+     "id": "eq-seedtts-2-11",
+     "type": "equation",
+     "page": 6,
+     "original": "0.794 1.478 4.48±0.18 4.25±0.19 4.46±0.07"
+    },
+    {
+     "id": "eq-seedtts-2-12",
+     "type": "equation",
+     "page": 6,
+     "original": "IndexTTS2"
+    },
+    {
+     "id": "eq-seedtts-2-13",
+     "type": "equation",
+     "page": 6,
+     "original": "0.843 1.516 4.54±0.11 4.42±0.17 4.52±0.17"
+    },
+    {
+     "id": "eq-seedtts-2-14",
+     "type": "equation",
+     "page": 6,
+     "original": "- GPT latent"
+    },
+    {
+     "id": "eq-seedtts-2-15",
+     "type": "equation",
+     "page": 6,
+     "original": "0.868 1.791 4.33±0.22 4.27±0.26 4.40±0.19"
     }
    ]
   },
@@ -1484,40 +2006,184 @@ globalThis.PAPER_2506_21619 = {
      "page": 7,
      "original": "Table 2: Performance Comparison of Various Systems on the Emotional Test Dataset",
      "zh": "表 2：各系统在情感测试数据集上的性能对比"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-model",
+   "num": null,
+   "level": 2,
+   "page": 7,
+   "title": {
+    "original": "Model",
+    "zh": "Model"
+   },
+   "blocks": [
     {
-     "id": "p-evaluation-of-natural-language-c-2",
+     "id": "p-model-1",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-evaluation-of-natural-language-c-2-1",
-       "original": "SS↑ WER(%)↓ ES↑ EMOS↑ 0.810 4.059 0.841 0.773 3.053 0.757 0.803 1.831 0.802 0.673 2.299 0.832 0.649 1.136 0.660 0.836 1.883 0.887 0.869 2.766 0.888 - Training strategy 0.773 1.362 0.689",
-       "zh": "（整行为 Table 2 数值的抽取碎块：SS↑、WER(%)↓、ES↑、EMOS↑ 各列，数值依次为 0.810 4.059 0.841；0.773 3.053 0.757；0.803 1.831 0.802；0.673 2.299 0.832；0.649 1.136 0.660；0.836 1.883 0.887；0.869 2.766 0.888；以及 - Training strategy 0.773 1.362 0.689。）"
+       "id": "s-model-1-1",
+       "original": "SS↑ WER(%)↓ ES↑ SMOS↑ EMOS↑ PMOS↑ QMOS↑ MaskGCT",
+       "zh": "表头：Model / SS↑ / WER(%)↓ / ES↑ / SMOS↑ / EMOS↑ / PMOS↑ / QMOS↑——MaskGCT（后续照原文）。"
       }
      ]
     },
     {
-     "id": "tab-evaluation-of-natural-language-c-2",
+     "id": "eq-model-1",
+     "type": "equation",
+     "page": 7,
+     "original": "0.810 4.059 0.841 3.42±0.36 3.37±0.42 3.04±0.40 3.39±0.37"
+    },
+    {
+     "id": "eq-model-2",
+     "type": "equation",
+     "page": 7,
+     "original": "F5-TTS"
+    },
+    {
+     "id": "eq-model-3",
+     "type": "equation",
+     "page": 7,
+     "original": "0.773 3.053 0.757 3.37±0.40 3.16±0.32 3.13±0.30 3.36±0.29"
+    },
+    {
+     "id": "eq-model-4",
+     "type": "equation",
+     "page": 7,
+     "original": "CosyVoice2"
+    },
+    {
+     "id": "eq-model-5",
+     "type": "equation",
+     "page": 7,
+     "original": "0.803 1.831 0.802 3.13±0.32 3.09±0.33 2.98±0.35 3.28±0.22"
+    },
+    {
+     "id": "eq-model-6",
+     "type": "equation",
+     "page": 7,
+     "original": "SparkTTS"
+    },
+    {
+     "id": "eq-model-7",
+     "type": "equation",
+     "page": 7,
+     "original": "0.673 2.299 0.832 3.01±0.26 3.16±0.24 3.21±0.28 3.04±0.18"
+    },
+    {
+     "id": "eq-model-8",
+     "type": "equation",
+     "page": 7,
+     "original": "IndexTTS"
+    },
+    {
+     "id": "eq-model-9",
+     "type": "equation",
+     "page": 7,
+     "original": "0.649 1.136 0.660 3.17±0.39 2.74±0.36 3.15±0.36 3.56±0.27"
+    },
+    {
+     "id": "eq-model-10",
+     "type": "equation",
+     "page": 7,
+     "original": "IndexTTS2"
+    },
+    {
+     "id": "eq-model-11",
+     "type": "equation",
+     "page": 7,
+     "original": "0.836 1.883 0.887 4.24±0.19 4.22±0.12 4.08±0.20 4.18±0.10"
+    },
+    {
+     "id": "eq-model-12",
+     "type": "equation",
+     "page": 7,
+     "original": "- GPT latent"
+    },
+    {
+     "id": "eq-model-13",
+     "type": "equation",
+     "page": 7,
+     "original": "0.869 2.766 0.888 4.15±0.20 4.15±0.19 4.02±0.20 4.03±0.11"
+    },
+    {
+     "id": "eq-model-14",
+     "type": "equation",
+     "page": 7,
+     "original": "- Training strategy"
+    },
+    {
+     "id": "eq-model-15",
+     "type": "equation",
+     "page": 7,
+     "original": "0.773 1.362 0.689 3.44±0.29 2.82±0.35 3.83±0.33 3.69±0.18"
+    },
+    {
+     "id": "tab-model-1",
      "type": "table_caption",
      "page": 7,
      "original": "Table 3: Comparison of Natural Language-Based Emotion Control with CosyVoice2",
      "zh": "表 3：与 CosyVoice2 在基于自然语言的情感控制上的对比"
-    },
+    }
+   ]
+  },
+  {
+   "id": "sec-model-2",
+   "num": null,
+   "level": 2,
+   "page": 7,
+   "title": {
+    "original": "Model",
+    "zh": "Model"
+   },
+   "blocks": [
     {
-     "id": "p-evaluation-of-natural-language-c-3",
+     "id": "p-model-2-1",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-evaluation-of-natural-language-c-3-1",
-       "original": "EMOS↑ mance.",
-       "zh": "（跨页断句残留：“EMOS↑ mance.”，即上句“consistent performance”被 Table 2/3 数值切断后的尾部。）"
+       "id": "s-model-2-1-1",
+       "original": "SMOS↑ EMOS↑ PMOS↑ QMOS↑ CosyVoice2",
+       "zh": "（表格行：SMOS↑/EMOS↑/PMOS↑/QMOS↑——CosyVoice2 2.973±0.26/3.339±0.30/3.679±0.19/3.429±0.24；IndexTTS2 3.875±0.21/3.786±0.24/4.143±0.13/4.071±0.15。）（正文残句）……表现。"
       }
      ]
     },
     {
-     "id": "tab-evaluation-of-natural-language-c-3",
+     "id": "eq-model-2-1",
+     "type": "equation",
+     "page": 7,
+     "original": "2.973±0.26 3.339±0.30 3.679±0.19 3.429±0.24"
+    },
+    {
+     "id": "eq-model-2-2",
+     "type": "equation",
+     "page": 7,
+     "original": "IndexTTS2"
+    },
+    {
+     "id": "eq-model-2-3",
+     "type": "equation",
+     "page": 7,
+     "original": "3.875±0.21 3.786±0.24 4.143±0.13 4.071±0.15"
+    },
+    {
+     "id": "p-model-2-2",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-model-2-2-1",
+       "original": "mance.",
+       "zh": "（表格行：SMOS↑/EMOS↑/PMOS↑/QMOS↑——CosyVoice2 2.973±0.26/3.339±0.30/3.679±0.19/3.429±0.24；IndexTTS2 3.875±0.21/3.786±0.24/4.143±0.13/4.071±0.15。）（正文残句）……表现。"
+      }
+     ]
+    },
+    {
+     "id": "tab-model-2-1",
      "type": "table_caption",
      "page": 7,
      "original": "Table 4: Token Number Error Rate for Duration Control with Different Settings(%)",
@@ -1536,19 +2202,73 @@ globalThis.PAPER_2506_21619 = {
    },
    "blocks": [
     {
-     "id": "p-dataset-2-1",
+     "id": "eq-dataset-2-1",
+     "type": "equation",
+     "page": 7,
+     "original": "*1 *0.75 *0.875 *1.125 *1.25"
+    }
+   ]
+  },
+  {
+   "id": "sec-seedtts-3",
+   "num": null,
+   "level": 2,
+   "page": 7,
+   "title": {
+    "original": "SeedTTS",
+    "zh": "SeedTTS"
+   },
+   "blocks": [
+    {
+     "id": "p-seedtts-3-1",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
-       "id": "s-dataset-2-1-1",
-       "original": "*1 0.019 0.067 0.023 0.014 0.018 0.015 0 0.009 0.023 0.013",
-       "zh": "（整行为 Table 4 数值的抽取碎块：*1 0.019 0.067 0.023 0.014 0.018 0.015 0 0.009 0.023 0.013，对应不同时长缩放设定下的 token 数量错误率。）"
+       "id": "s-seedtts-3-1-1",
+       "original": "test-zh",
+       "zh": "为验证 TTS 系统的基础能力，我们在四个基准上评估模型：(1) SeedTTS test-en（Anastassiou et al. 2024），出自 SeedTTS，包含 1,000 条来自 Common Voice 数据集的语音；(2) SeedTTS test-zh（Anastassiou et al. 2024），包含 2,000 条来自 DiDiSpeech（Guo et al. 2021）的语音；(3) LibriSpeech-testclean（Panayotov et al. 2015），从 LibriSpeech 语料库中随机选取的 2,620 条语音；以及 (4) AISHELL-1（Bu et al. 2017），从 AISHELL-1 数据集中随机抽取的 1,000 条语音。"
       }
      ]
     },
     {
-     "id": "tab-dataset-2-1",
+     "id": "eq-seedtts-3-1",
+     "type": "equation",
+     "page": 7,
+     "original": "0.019 0.067 0.023 0.014 0.018"
+    }
+   ]
+  },
+  {
+   "id": "sec-seedtts-4",
+   "num": null,
+   "level": 2,
+   "page": 7,
+   "title": {
+    "original": "SeedTTS",
+    "zh": "SeedTTS"
+   },
+   "blocks": [
+    {
+     "id": "p-seedtts-4-1",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-seedtts-4-1-1",
+       "original": "test-en",
+       "zh": "为验证 TTS 系统的基础能力，我们在四个基准上评估模型：(1) SeedTTS test-en（Anastassiou et al. 2024），出自 SeedTTS，包含 1,000 条来自 Common Voice 数据集的语音；(2) SeedTTS test-zh（Anastassiou et al. 2024），包含 2,000 条来自 DiDiSpeech（Guo et al. 2021）的语音；(3) LibriSpeech-testclean（Panayotov et al. 2015），从 LibriSpeech 语料库中随机选取的 2,620 条语音；以及 (4) AISHELL-1（Bu et al. 2017），从 AISHELL-1 数据集中随机抽取的 1,000 条语音。"
+      }
+     ]
+    },
+    {
+     "id": "eq-seedtts-4-1",
+     "type": "equation",
+     "page": 7,
+     "original": "0.015 0 0.009 0.023 0.013"
+    },
+    {
+     "id": "tab-seedtts-4-1",
      "type": "table_caption",
      "page": 7,
      "original": "Table 5: MOS Scores for Different Models under Duration Control",
@@ -1573,8 +2293,140 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-datasets-1-1",
-       "original": "GT IndexTTS2 4.56±0.08 GT IndexTTS2 4.48±0.09",
-       "zh": "（整行为 Table 5 数值的抽取碎块：GT 与 IndexTTS2 的 MOS 为 4.56±0.08，另一组 GT 与 IndexTTS2 的 MOS 为 4.48±0.09。）"
+       "original": "Model SMOS↑ PMOS↑ QMOS↑ GT",
+       "zh": "（表格：Model × SMOS↑ × PMOS↑ × QMOS↑——GT 3.82±0.23/3.72±0.19/3.96±0.06；MaskGCT 4.04±0.18/4.16±0.06/3.66±0.11；F5-TTS 4.32±0.15/4.04±0.15/4.32±0.16；IndexTTS2 4.56±0.08/4.38±0.12/4.42±0.02。）"
+      }
+     ]
+    },
+    {
+     "id": "eq-datasets-1",
+     "type": "equation",
+     "page": 7,
+     "original": "3.82±0.23 3.72±0.19 3.96±0.06"
+    },
+    {
+     "id": "eq-datasets-2",
+     "type": "equation",
+     "page": 7,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-datasets-3",
+     "type": "equation",
+     "page": 7,
+     "original": "4.04±0.18 4.16±0.06 3.66±0.11"
+    },
+    {
+     "id": "eq-datasets-4",
+     "type": "equation",
+     "page": 7,
+     "original": "F5-TTS"
+    },
+    {
+     "id": "eq-datasets-5",
+     "type": "equation",
+     "page": 7,
+     "original": "4.32±0.15 4.04±0.15 4.32±0.16"
+    },
+    {
+     "id": "eq-datasets-6",
+     "type": "equation",
+     "page": 7,
+     "original": "IndexTTS2 4.56±0.08"
+    },
+    {
+     "id": "eq-datasets-7",
+     "type": "equation",
+     "page": 7,
+     "original": "4.38±0.12 4.42±0.02"
+    }
+   ]
+  },
+  {
+   "id": "sec-seedtts-5",
+   "num": null,
+   "level": 2,
+   "page": 7,
+   "title": {
+    "original": "SeedTTS",
+    "zh": "SeedTTS"
+   },
+   "blocks": [
+    {
+     "id": "p-seedtts-5-1",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-seedtts-5-1-1",
+       "original": "test-zh GT",
+       "zh": "（表格行）test-zh；GT（后续照原文）。"
+      }
+     ]
+    },
+    {
+     "id": "eq-seedtts-5-1",
+     "type": "equation",
+     "page": 7,
+     "original": "4.32±0.26 4.34±0.05 4.42±0.11"
+    },
+    {
+     "id": "eq-seedtts-5-2",
+     "type": "equation",
+     "page": 7,
+     "original": "MaskGCT"
+    },
+    {
+     "id": "eq-seedtts-5-3",
+     "type": "equation",
+     "page": 7,
+     "original": "4.54±0.16 4.24±0.08 4.44±0.13"
+    },
+    {
+     "id": "eq-seedtts-5-4",
+     "type": "equation",
+     "page": 7,
+     "original": "F5-TTS"
+    },
+    {
+     "id": "eq-seedtts-5-5",
+     "type": "equation",
+     "page": 7,
+     "original": "4.34±0.18 4.24±0.06 4.26±0.09"
+    },
+    {
+     "id": "eq-seedtts-5-6",
+     "type": "equation",
+     "page": 7,
+     "original": "IndexTTS2 4.48±0.09"
+    },
+    {
+     "id": "eq-seedtts-5-7",
+     "type": "equation",
+     "page": 7,
+     "original": "4.46±0.18 4.44±0.05"
+    }
+   ]
+  },
+  {
+   "id": "sec-seedtts-6",
+   "num": null,
+   "level": 2,
+   "page": 7,
+   "title": {
+    "original": "SeedTTS",
+    "zh": "SeedTTS"
+   },
+   "blocks": [
+    {
+     "id": "p-seedtts-6-1",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-seedtts-6-1-1",
+       "original": "test-en",
+       "zh": "为验证 TTS 系统的基础能力，我们在四个基准上评估模型：(1) SeedTTS test-en（Anastassiou et al. 2024），出自 SeedTTS，包含 1,000 条来自 Common Voice 数据集的语音；(2) SeedTTS test-zh（Anastassiou et al. 2024），包含 2,000 条来自 DiDiSpeech（Guo et al. 2021）的语音；(3) LibriSpeech-testclean（Panayotov et al. 2015），从 LibriSpeech 语料库中随机选取的 2,620 条语音；以及 (4) AISHELL-1（Bu et al. 2017），从 AISHELL-1 数据集中随机抽取的 1,000 条语音。"
       }
      ]
     }
@@ -1597,18 +2449,36 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-duration-specified-speech-synthe-1-1",
-       "original": "evaluated IndexTTS2’s duration control accuracy on SeedTTS test-zh and test-en using five experimental setups with duration scalings (original, 0.75×, 0.875×, 1.125×, and 1.25×).",
-       "zh": "我们在 SeedTTS test-zh 与 test-en 上、采用五种时长缩放设定（原始、0.75×、0.875×、1.125× 和 1.25×）评估了 IndexTTS2 的时长控制精度。"
+       "original": "We evaluated IndexTTS2’s duration control accuracy on SeedTTS test-zh and test-en using five experimental setups with duration scalings (original, 0.75×, 0.875×, 1.125×, and 1.25×).",
+       "zh": "为验证 TTS 系统的基础能力，我们在四个基准上评估模型：(1) SeedTTS test-en（Anastassiou et al. 2024），出自 SeedTTS，包含 1,000 条来自 Common Voice 数据集的语音；(2) SeedTTS test-zh（Anastassiou et al. 2024），包含 2,000 条来自 DiDiSpeech（Guo et al. 2021）的语音；(3) LibriSpeech-testclean（Panayotov et al. 2015），从 LibriSpeech 语料库中随机选取的 2,620 条语音；以及 (4) AISHELL-1（Bu et al. 2017），从 AISHELL-1 数据集中随机抽取的 1,000 条语音。\n（原始数据照录）\nWe evaluated IndexTTS2’s duration control accuracy on SeedTTS test-zh and test-en using five experimental setups with duration scalings (original, 0.75×, 0.875×, 1.125×, and 1.25×)."
       },
       {
        "id": "s-duration-specified-speech-synthe-1-2",
        "original": "Results in Table 4 show minimal token number error rates (<0.02% for original durations and <0.03% for 0.875×/1.125×), with only a slight increase to 0.067% on SeedTTS test-zh for larger scaling factors (0.75×).",
-       "zh": "Table 4 的结果显示 token 数量错误率极低（原始时长下 <0.02%，0.875×/1.125× 下 <0.03%），仅在更大缩放因子（0.75×）下 SeedTTS test-zh 上略升至 0.067%。"
+       "zh": "表 4 的结果显示 token 数误差率极小（原始时长 <0.02%，0.875×/1.125× 时 <0.03%），仅在较大缩放因子（0.75×）下 SeedTTS test-zh 上微升至 0.067%。"
       },
       {
        "id": "s-duration-specified-speech-synthe-1-3",
-       "original": "These findings indicate an almost negligible gap between F5TTS F5TTS 0.75 0.785 1 1.125 0.75 0.785 1 1.125 (a) SeedTTS test-en (b) SeedTTS test-zh",
-       "zh": "这些发现表明（下接 Figure 4 图片内文字残留：F5TTS F5TTS 0.75 0.785 1 1.125 0.75 0.785 1 1.125，(a) SeedTTS test-en (b) SeedTTS test-zh，即图 4 的横轴刻度与子图标注）"
+       "original": "These findings indicate an almost negligible gap between MaskGCT F5TTS IndexTTS2 MaskGCT F5TTS IndexTTS2",
+       "zh": "这些发现表明（图内图例：MaskGCT / F5TTS / IndexTTS2（两组）。）之间的差距几乎可以忽略。"
+      }
+     ]
+    },
+    {
+     "id": "eq-duration-specified-speech-synthe-1",
+     "type": "equation",
+     "page": 7,
+     "original": "4% 4% 3% 3% 2% 2% 1% 1% 0% 0% 0.75 0.785 1 1.125 0.75 0.785 1 1.125"
+    },
+    {
+     "id": "p-duration-specified-speech-synthe-2",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-duration-specified-speech-synthe-2-1",
+       "original": "(a) SeedTTS test-en (b) SeedTTS test-zh",
+       "zh": "为验证 TTS 系统的基础能力，我们在四个基准上评估模型：(1) SeedTTS test-en（Anastassiou et al. 2024），出自 SeedTTS，包含 1,000 条来自 Common Voice 数据集的语音；(2) SeedTTS test-zh（Anastassiou et al. 2024），包含 2,000 条来自 DiDiSpeech（Guo et al. 2021）的语音；(3) LibriSpeech-testclean（Panayotov et al. 2015），从 LibriSpeech 语料库中随机选取的 2,620 条语音；以及 (4) AISHELL-1（Bu et al. 2017），从 AISHELL-1 数据集中随机抽取的 1,000 条语音。"
       }
      ]
     },
@@ -1620,44 +2490,44 @@ globalThis.PAPER_2506_21619 = {
      "zh": "图 4：时长控制部分的 WER 对比。"
     },
     {
-     "id": "p-duration-specified-speech-synthe-2",
-     "type": "paragraph",
-     "page": 7,
-     "sentences": [
-      {
-       "id": "s-duration-specified-speech-synthe-2-1",
-       "original": "generated tokens and target durations, demonstrating IndexTTS2’s precise control over speech synthesis timing.",
-       "zh": "生成 token 数与目标时长之间的差距几乎可以忽略，证明 IndexTTS2 对语音合成时长的精确控制。"
-      }
-     ]
-    },
-    {
      "id": "p-duration-specified-speech-synthe-3",
      "type": "paragraph",
      "page": 7,
      "sentences": [
       {
        "id": "s-duration-specified-speech-synthe-3-1",
+       "original": "generated tokens and target durations, demonstrating IndexTTS2’s precise control over speech synthesis timing.",
+       "zh": "生成 token 数与目标时长之间的差距几乎可以忽略，证明 IndexTTS2 对语音合成时长的精确控制。"
+      }
+     ]
+    },
+    {
+     "id": "p-duration-specified-speech-synthe-4",
+     "type": "paragraph",
+     "page": 7,
+     "sentences": [
+      {
+       "id": "s-duration-specified-speech-synthe-4-1",
        "original": "We further assessed speech quality under duration control by comparing WER.",
        "zh": "我们通过比较 WER 进一步评估了时长控制下的语音质量。"
       },
       {
-       "id": "s-duration-specified-speech-synthe-3-2",
+       "id": "s-duration-specified-speech-synthe-4-2",
        "original": "As shown in Figure 4, IndexTTS2 matches F5-TTS on test-en and significantly outperforms MaskGCT.",
        "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
       },
       {
-       "id": "s-duration-specified-speech-synthe-3-3",
+       "id": "s-duration-specified-speech-synthe-4-3",
        "original": "On test-zh, IndexTTS2 surpasses F5-TTS by 0.5 pp and MaskGCT by 2 pp, with only a marginal drop in performance under scaled durations.",
        "zh": "在 test-zh 上，IndexTTS2 比 F5-TTS 高 0.5 个百分点、比 MaskGCT 高 2 个百分点，且在缩放时长下性能仅有轻微下降。"
       },
       {
-       "id": "s-duration-specified-speech-synthe-3-4",
+       "id": "s-duration-specified-speech-synthe-4-4",
        "original": "To investigate the prosodic advantages of autoregressive modeling under fixed duration control, we conducted a comparison between IndexTTS2 and non-autoregressive TTS systems using SMOS, PMOS, and QMOS metrics.",
        "zh": "为考察固定时长控制下自回归建模的韵律优势，我们使用 SMOS、PMOS 和 QMOS 指标对 IndexTTS2 与非自回归 TTS 系统进行了比较。"
       },
       {
-       "id": "s-duration-specified-speech-synthe-3-5",
+       "id": "s-duration-specified-speech-synthe-4-5",
        "original": "Results in Table 5 show that IndexTTS2 achieves superior prosody and speech quality.",
        "zh": "Table 5 的结果显示，IndexTTS2 取得了更优的韵律与语音质量。"
       }
@@ -1810,7 +2680,8 @@ globalThis.PAPER_2506_21619 = {
       },
       {
        "id": "s-references-5-2",
-       "original": "T.; Rubanova, Y.; Bettencourt, J.; and Duvenaud, D."
+       "original": "T.; Rubanova, Y.; Bettencourt, J.; and Duvenaud, D.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
       },
       {
        "id": "s-references-5-3",
@@ -1847,7 +2718,8 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-references-8-1",
-       "original": "Chen, S.; Feng, Y.; He, L.; He, T.; He, W.; Hu, Y.; Lin, B.; Lin, Y.; Pan, Y.; Tan, P.; et al. 2024a."
+       "original": "Chen, S.; Feng, Y.; He, L.; He, T.; He, W.; Hu, Y.; Lin, B.; Lin, Y.; Pan, Y.; Tan, P.; et al. 2024a.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
       },
       {
        "id": "s-references-8-2",
@@ -1889,11 +2761,7 @@ globalThis.PAPER_2506_21619 = {
       },
       {
        "id": "s-references-10-2",
-       "original": "F5-tts: A fairytaler that fakes fluent and faithful speech with flow matching. arXiv preprint Cho, D.-H.; Oh, H.-S.; Kim, S.-B.; and Lee, S.-W. 2025."
-      },
-      {
-       "id": "s-references-10-3",
-       "original": "EmoSphere++: Emotion-controllable zero-shot textto-speech via emotion-adaptive spherical vector."
+       "original": "F5-tts: A fairytaler that fakes fluent and faithful speech with flow matching. arXiv preprint arXiv:2410.06885."
       }
      ]
     },
@@ -1904,7 +2772,11 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-references-11-1",
-       "original": "IEEE Transactions on Affective Computing."
+       "original": "Cho, D.-H.; Oh, H.-S.; Kim, S.-B.; and Lee, S.-W. 2025."
+      },
+      {
+       "id": "s-references-11-2",
+       "original": "EmoSphere++: Emotion-controllable zero-shot textto-speech via emotion-adaptive spherical vector."
       }
      ]
     },
@@ -1915,7 +2787,7 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-references-12-1",
-       "original": "Cong, G.; Pan, J.; Li, L.; Qi, Y.; Peng, Y.; van den Hengel, A.; Yang, J.; and Huang, Q. 2025."
+       "original": "IEEE Transactions on Affective Computing."
       }
      ]
     },
@@ -1926,11 +2798,7 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-references-13-1",
-       "original": "Emodubber: Towards high quality and emotion controllable movie dubbing."
-      },
-      {
-       "id": "s-references-13-2",
-       "original": "In Proceedings of the Computer Vision and Pattern Recognition Conference, 15863–15873."
+       "original": "Cong, G.; Pan, J.; Li, L.; Qi, Y.; Peng, Y.; van den Hengel, A.; Yang, J.; and Huang, Q. 2025."
       }
      ]
     },
@@ -1941,11 +2809,11 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-references-14-1",
-       "original": "Deng, W.; Zhou, S.; Shu, J.; Wang, J.; and Wang, L. 2025."
+       "original": "Emodubber: Towards high quality and emotion controllable movie dubbing."
       },
       {
        "id": "s-references-14-2",
-       "original": "IndexTTS: An Industrial-Level Controllable and Efficient Zero-Shot Text-To-Speech System."
+       "original": "In Proceedings of the Computer Vision and Pattern Recognition Conference, 15863–15873."
       }
      ]
     },
@@ -1956,23 +2824,11 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-references-15-1",
-       "original": "Devalal, S.; and Karthikeyan, A. 2018."
+       "original": "Deng, W.; Zhou, S.; Shu, J.; Wang, J.; and Wang, L. 2025."
       },
       {
        "id": "s-references-15-2",
-       "original": "LoRa technology-an overview."
-      },
-      {
-       "id": "s-references-15-3",
-       "original": "In 2018 second international conference on electronics, communication and aerospace technology (ICECA), 284–290."
-      },
-      {
-       "id": "s-references-15-4",
-       "original": "IEEE."
-      },
-      {
-       "id": "s-references-15-5",
-       "original": "Du, Z.; Chen, Q.; Zhang, S.; Hu, K.; Lu, H.; Yang, Y.; Hu, H.; Zheng, S.; Gu, Y.; Ma, Z.; et al. 2024a."
+       "original": "IndexTTS: An Industrial-Level Controllable and Efficient Zero-Shot Text-To-Speech System."
       }
      ]
     },
@@ -1983,91 +2839,7 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-references-16-1",
-       "original": "Cosyvoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens. arXiv preprint Du, Z.; Wang, Y.; Chen, Q.; Shi, X.; Lv, X.; Zhao, T.; Gao, Z.; Yang, Y.; Gao, C.; Wang, H.; et al. 2024b."
-      },
-      {
-       "id": "s-references-16-2",
-       "original": "Cosyvoice 2: Scalable streaming speech synthesis with large language models. arXiv preprint arXiv:2412.10117."
-      },
-      {
-       "id": "s-references-16-3",
-       "original": "Elizalde, B.; Deshmukh, S.; Ismail, M."
-      },
-      {
-       "id": "s-references-16-4",
-       "original": "A.; and Wang, H. 2023."
-      },
-      {
-       "id": "s-references-16-5",
-       "original": "CLAP Learning Audio Concepts from Natural Language Supervision."
-      },
-      {
-       "id": "s-references-16-6",
-       "original": "In IEEE International Conference on Acoustics, Speech and Signal Processing ICASSP 2023, Rhodes Island, Greece, June 4-10, 2023, 1–5."
-      },
-      {
-       "id": "s-references-16-7",
-       "original": "IEEE."
-      },
-      {
-       "id": "s-references-16-8",
-       "original": "Eskimez, S."
-      },
-      {
-       "id": "s-references-16-9",
-       "original": "E.; Wang, X.; Thakker, M.; Li, C.; Tsai, C.; Xiao, Z.; Yang, H.; Zhu, Z.; Tang, M.; Tan, X.; Liu, Y.; Zhao, S.; and Kanda, N. 2024."
-      },
-      {
-       "id": "s-references-16-10",
-       "original": "E2 TTS: Embarrassingly Easy Fully Non-Autoregressive Zero-Shot TTS."
-      },
-      {
-       "id": "s-references-16-11",
-       "original": "In IEEE Spoken Language Technology Workshop, SLT 2024, Macao, December 2-5, 2024, 682–689."
-      },
-      {
-       "id": "s-references-16-12",
-       "original": "IEEE."
-      },
-      {
-       "id": "s-references-16-13",
-       "original": "Ganin, Y.; Ustinova, E.; Ajakan, H.; Germain, P.; Larochelle, H.; Laviolette, F.; March, M.; and Lempitsky, V. 2016."
-      },
-      {
-       "id": "s-references-16-14",
-       "original": "Domain-adversarial training of neural networks."
-      },
-      {
-       "id": "s-references-16-15",
-       "original": "Journal of machine learning research, 17(59): 1–35."
-      },
-      {
-       "id": "s-references-16-16",
-       "original": "Gao, Z.; Li, Z.; Wang, J.; Luo, H.; Shi, X.; Chen, M.; Li, Y.; Zuo, L.; Du, Z.; and Zhang, S. 2023."
-      },
-      {
-       "id": "s-references-16-17",
-       "original": "FunASR: A Fundamental End-to-End Speech Recognition Toolkit."
-      },
-      {
-       "id": "s-references-16-18",
-       "original": "In 24th Annual Conference of the International Speech Communication Association, Interspeech 2023, Dublin, Ireland, August 20-24, 2023, 1593–1597."
-      },
-      {
-       "id": "s-references-16-19",
-       "original": "ISCA."
-      },
-      {
-       "id": "s-references-16-20",
-       "original": "Guo, D.; Yang, D.; Zhang, H.; Song, J.; Zhang, R.; Xu, R.; Zhu, Q.; Ma, S.; Wang, P.; Bi, X.; et al. 2025."
-      },
-      {
-       "id": "s-references-16-21",
-       "original": "Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning. arXiv preprint arXiv:2501.12948."
-      },
-      {
-       "id": "s-references-16-22",
-       "original": "Guo, H.-H.; Hu, Y.; Liu, K.; Shen, F.-Y.; Tang, X.; Wu, Y.-C.; Xie, F.-L.; Xie, K.; and Xu, K.-T. 2024."
+       "original": "arXiv preprint arXiv:2502.05512."
       }
      ]
     },
@@ -2078,541 +2850,733 @@ globalThis.PAPER_2506_21619 = {
      "sentences": [
       {
        "id": "s-references-17-1",
-       "original": "Fireredtts: A foundation text-to-speech framework for industrylevel generative speech applications."
+       "original": "Devalal, S.; and Karthikeyan, A. 2018."
       },
       {
        "id": "s-references-17-2",
-       "original": "Guo, T.; Wen, C.; Jiang, D.; Luo, N.; Zhang, R.; Zhao, S.; Li, W.; Gong, C.; Zou, W.; Han, K.; et al. 2021."
+       "original": "LoRa technology-an overview."
       },
       {
        "id": "s-references-17-3",
-       "original": "Didispeech: A large scale mandarin speech corpus."
+       "original": "In 2018 second international conference on electronics, communication and aerospace technology (ICECA), 284–290."
       },
       {
        "id": "s-references-17-4",
-       "original": "In ICASSP 2021- 2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 6968–6972."
+       "original": "IEEE."
       },
       {
        "id": "s-references-17-5",
-       "original": "IEEE."
-      },
-      {
-       "id": "s-references-17-6",
-       "original": "He, H.; Shang, Z.; Wang, C.; Li, X.; Gu, Y.; Hua, H.; Liu, L.; Yang, C.; Li, J.; Shi, P.; et al. 2024."
-      },
-      {
-       "id": "s-references-17-7",
-       "original": "Emilia: An extensive, multilingual, and diverse speech dataset for large-scale speech generation."
-      },
-      {
-       "id": "s-references-17-8",
-       "original": "In 2024 IEEE Spoken Language Technology Workshop (SLT), 885–890."
-      },
-      {
-       "id": "s-references-17-9",
-       "original": "IEEE."
-      },
-      {
-       "id": "s-references-17-10",
-       "original": "Ji, S.; Zuo, J.; Wang, W.; Fang, M.; Zheng, S.; Chen, Q.; Jiang, Z.; Huang, H.; Wang, Z.; Cheng, X.; et al. 2024."
-      },
-      {
-       "id": "s-references-17-11",
-       "original": "Controlspeech: Towards simultaneous zero-shot speaker cloning and zero-shot language style control with decoupled codec."
-      },
-      {
-       "id": "s-references-17-12",
-       "original": "Ju, Z.; Wang, Y.; Shen, K.; Tan, X.; Xin, D.; Yang, D.; Liu, Y.; Leng, Y.; Song, K.; Tang, S.; Wu, Z.; Qin, T.; Li, X.- Y.; Ye, W.; Zhang, S.; Bian, J.; He, L.; Li, J.; and Zhao, S. 2024."
-      },
-      {
-       "id": "s-references-17-13",
-       "original": "NaturalSpeech 3: Zero-Shot Speech Synthesis with Factorized Codec and Diffusion Models. arXiv:2403.03100."
-      },
-      {
-       "id": "s-references-17-14",
-       "original": "Kim, D.; Hong, S.; and Choi, Y.-H. 2023."
+       "original": "Du, Z.; Chen, Q.; Zhang, S.; Hu, K.; Lu, H.; Yang, Y.; Hu, H.; Zheng, S.; Gu, Y.; Ma, Z.; et al. 2024a."
       }
      ]
     },
     {
      "id": "p-references-18",
      "type": "paragraph",
-     "page": 9,
+     "page": 8,
      "sentences": [
       {
        "id": "s-references-18-1",
-       "original": "SC VALL-E: Style-Controllable Zero-Shot Text to Speech Synthesizer."
+       "original": "Cosyvoice: A scalable multilingual zero-shot text-to-speech synthesizer based on supervised semantic tokens. arXiv preprint arXiv:2407.05407."
       },
       {
        "id": "s-references-18-2",
-       "original": "Kim, J.; Kim, S.; Kong, J.; and Yoon, S. 2020."
+       "original": "Du, Z.; Wang, Y.; Chen, Q.; Shi, X.; Lv, X.; Zhao, T.; Gao, Z.; Yang, Y.; Gao, C.; Wang, H.; et al. 2024b.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
       },
       {
        "id": "s-references-18-3",
-       "original": "Glow-tts: A generative flow for text-to-speech via monotonic alignment search."
+       "original": "Cosyvoice 2: Scalable streaming speech synthesis with large language models. arXiv preprint arXiv:2412.10117."
       },
       {
        "id": "s-references-18-4",
-       "original": "Advances in Neural Information Processing Systems, 33: 8067–8077."
+       "original": "Elizalde, B.; Deshmukh, S.; Ismail, M."
       },
       {
        "id": "s-references-18-5",
-       "original": "Koenker, R.; and Bassett Jr, G. 1978."
+       "original": "A.; and Wang, H. 2023."
       },
       {
        "id": "s-references-18-6",
-       "original": "Regression quantiles."
+       "original": "CLAP Learning Audio Concepts from Natural Language Supervision."
       },
       {
        "id": "s-references-18-7",
-       "original": "Econometrica: journal of the Econometric Society, 33–50."
+       "original": "In IEEE International Conference on Acoustics, Speech and Signal Processing ICASSP 2023, Rhodes Island, Greece, June 4-10, 2023, 1–5."
       },
       {
        "id": "s-references-18-8",
-       "original": "Le, M.; Vyas, A.; Shi, B.; Karrer, B.; Sari, L.; Moritz, R.; Williamson, M.; Manohar, V.; Adi, Y.; Mahadeokar, J.; et al. 2023."
+       "original": "IEEE."
       },
       {
        "id": "s-references-18-9",
-       "original": "Voicebox: Text-guided multilingual universal speech generation at scale."
+       "original": "Eskimez, S."
       },
       {
        "id": "s-references-18-10",
-       "original": "Advances in neural information processing systems, 36: 14005–14034."
+       "original": "E.; Wang, X.; Thakker, M.; Li, C.; Tsai, C.; Xiao, Z.; Yang, H.; Zhu, Z.; Tang, M.; Tan, X.; Liu, Y.; Zhao, S.; and Kanda, N. 2024."
       },
       {
        "id": "s-references-18-11",
-       "original": "Lee, K.; Kim, D."
+       "original": "E2 TTS: Embarrassingly Easy Fully Non-Autoregressive Zero-Shot TTS."
       },
       {
        "id": "s-references-18-12",
-       "original": "W.; Kim, J.; and Cho, J. 2024."
-      },
-      {
-       "id": "s-references-18-13",
-       "original": "Ditto-tts: Efficient and scalable zero-shot text-to-speech with diffusion transformer. arXiv preprint arXiv:2406.11427."
-      },
-      {
-       "id": "s-references-18-14",
-       "original": "Lee, S.; Ping, W.; Ginsburg, B.; Catanzaro, B.; and Yoon, S. 2023."
-      },
-      {
-       "id": "s-references-18-15",
-       "original": "BigVGAN: A Universal Neural Vocoder with LargeScale Training."
-      },
-      {
-       "id": "s-references-18-16",
-       "original": "In The Eleventh International Conference on Learning Representations, ICLR 2023, Kigali, Rwanda, May 1-5, 2023."
-      },
-      {
-       "id": "s-references-18-17",
-       "original": "Li, H.; Li, Y.; Wang, X.; Hu, J.; Xie, Q.; Yang, S.; and Xie, L. 2025."
-      },
-      {
-       "id": "s-references-18-18",
-       "original": "FleSpeech: Flexibly Controllable Speech Generation with Various Prompts. arXiv preprint arXiv:2501.04644."
-      },
-      {
-       "id": "s-references-18-19",
-       "original": "Li, Y."
-      },
-      {
-       "id": "s-references-18-20",
-       "original": "A.; Han, C.; Raghavan, V.; Mischler, G.; and Mesgarani, N. 2023."
-      },
-      {
-       "id": "s-references-18-21",
-       "original": "Styletts 2: Towards human-level text-tospeech through style diffusion and adversarial training with large speech language models."
-      },
-      {
-       "id": "s-references-18-22",
-       "original": "Advances in Neural Information Processing Systems, 36: 19594–19621."
-      },
-      {
-       "id": "s-references-18-23",
-       "original": "Lipman, Y.; Chen, R."
-      },
-      {
-       "id": "s-references-18-24",
-       "original": "T."
-      },
-      {
-       "id": "s-references-18-25",
-       "original": "Q.; Ben-Hamu, H.; Nickel, M.; and Le, M. 2023."
-      },
-      {
-       "id": "s-references-18-26",
-       "original": "Flow Matching for Generative Modeling."
-      },
-      {
-       "id": "s-references-18-27",
-       "original": "In The Eleventh International Conference on Learning Representations, ICLR 2023, Kigali, Rwanda, May 1-5, 2023."
-      },
-      {
-       "id": "s-references-18-28",
-       "original": "Liu, S. 2024."
-      },
-      {
-       "id": "s-references-18-29",
-       "original": "Zero-shot Voice Conversion with Diffusion Transformers. arXiv preprint arXiv:2411.09943."
-      },
-      {
-       "id": "s-references-18-30",
-       "original": "Ma, Z.; Zheng, Z.; Ye, J.; Li, J.; Gao, Z.; Zhang, S.; and Chen, X. 2024. emotion2vec: Self-Supervised Pre-Training for Speech Emotion Representation."
-      },
-      {
-       "id": "s-references-18-31",
-       "original": "In Ku, L.; Martins, A.; and Srikumar, V., eds., Findings of the Association for Computational Linguistics, ACL 2024, Bangkok, Thailand and virtual meeting, August 11-16, 2024, 15747–15760."
-      },
-      {
-       "id": "s-references-18-32",
-       "original": "Association for Computational Linguistics."
-      },
-      {
-       "id": "s-references-18-33",
-       "original": "Mentzer, F.; Minnen, D.; Agustsson, E.; and Tschannen, M. 2023."
-      },
-      {
-       "id": "s-references-18-34",
-       "original": "Finite scalar quantization: Vq-vae made simple. arXiv preprint arXiv:2309.15505."
-      },
-      {
-       "id": "s-references-18-35",
-       "original": "Panayotov, V.; Chen, G.; Povey, D.; and Khudanpur, S. 2015."
-      },
-      {
-       "id": "s-references-18-36",
-       "original": "Librispeech: an asr corpus based on public domain audio books."
-      },
-      {
-       "id": "s-references-18-37",
-       "original": "In 2015 IEEE international conference on acoustics, speech and signal processing (ICASSP), 5206–5210."
-      },
-      {
-       "id": "s-references-18-38",
-       "original": "IEEE."
+       "original": "In IEEE Spoken Language Technology Workshop, SLT 2024, Macao, December"
       }
      ]
+    },
+    {
+     "id": "eq-references-1",
+     "type": "equation",
+     "page": 8,
+     "original": "2-5, 2024, 682–689. IEEE."
     },
     {
      "id": "p-references-19",
      "type": "paragraph",
-     "page": 9,
+     "page": 8,
      "sentences": [
       {
        "id": "s-references-19-1",
-       "original": "Peebles, W.; and Xie, S. 2023."
+       "original": "Ganin, Y.; Ustinova, E.; Ajakan, H.; Germain, P.; Larochelle, H.; Laviolette, F.; March, M.; and Lempitsky, V. 2016."
       },
       {
        "id": "s-references-19-2",
-       "original": "Scalable diffusion models with transformers."
+       "original": "Domain-adversarial training of neural networks."
       },
       {
        "id": "s-references-19-3",
-       "original": "In Proceedings of the IEEE/CVF international conference on computer vision, 4195–4205."
+       "original": "Journal of machine learning research, 17(59): 1–35."
       },
       {
        "id": "s-references-19-4",
-       "original": "Qi, T.; Zheng, W.; Lu, C.; Zong, Y.; and Lian, H. 2024."
+       "original": "Gao, Z.; Li, Z.; Wang, J.; Luo, H.; Shi, X.; Chen, M.; Li, Y.; Zuo, L.; Du, Z.; and Zhang, S. 2023."
       },
       {
        "id": "s-references-19-5",
-       "original": "PAVITS: Exploring Prosody-Aware VITS for End-to-End Emotional Voice Conversion."
+       "original": "FunASR: A Fundamental End-to-End Speech Recognition Toolkit."
       },
       {
        "id": "s-references-19-6",
-       "original": "In IEEE International Conference on Acoustics, Speech and Signal Processing, ICASSP 2024, Seoul, Republic of Korea, April 14-19, 2024, 12697– 12701."
-      },
-      {
-       "id": "s-references-19-7",
-       "original": "IEEE."
-      },
-      {
-       "id": "s-references-19-8",
-       "original": "Radford, A.; Kim, J."
-      },
-      {
-       "id": "s-references-19-9",
-       "original": "W.; Hallacy, C.; Ramesh, A.; Goh, G.; Agarwal, S.; Sastry, G.; Askell, A.; Mishkin, P.; Clark, J.; Krueger, G.; and Sutskever, I. 2021."
+       "original": "In 24th Annual Conference of the International Speech Communication Association, Interspeech 2023, Dublin, Ireland, August"
       }
      ]
     },
     {
+     "id": "eq-references-2",
+     "type": "equation",
+     "page": 8,
+     "original": "20-24, 2023, 1593–1597. ISCA."
+    },
+    {
      "id": "p-references-20",
      "type": "paragraph",
-     "page": 9,
+     "page": 8,
      "sentences": [
       {
        "id": "s-references-20-1",
-       "original": "Learning Transferable Visual Models From Natural Language Supervision."
+       "original": "Guo, D.; Yang, D.; Zhang, H.; Song, J.; Zhang, R.; Xu, R.; Zhu, Q.; Ma, S.; Wang, P.; Bi, X.; et al. 2025."
       },
       {
        "id": "s-references-20-2",
-       "original": "In Meila, M.; and Zhang, T., eds., Proceedings of the 38th International Conference on Machine Learning, ICML 2021, 18-24 July 2021, Virtual Event, 8748–8763."
+       "original": "Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning. arXiv preprint arXiv:2501.12948."
       },
       {
        "id": "s-references-20-3",
-       "original": "PMLR."
-      },
-      {
-       "id": "s-references-20-4",
-       "original": "Radford, A.; Kim, J."
-      },
-      {
-       "id": "s-references-20-5",
-       "original": "W.; Xu, T.; Brockman, G.; McLeavey, C.; and Sutskever, I. 2023."
-      },
-      {
-       "id": "s-references-20-6",
-       "original": "Robust speech recognition via large-scale weak supervision."
-      },
-      {
-       "id": "s-references-20-7",
-       "original": "In International conference on machine learning, 28492–28518."
-      },
-      {
-       "id": "s-references-20-8",
-       "original": "PMLR."
-      },
-      {
-       "id": "s-references-20-9",
-       "original": "Ren, Y.; Hu, C.; Tan, X.; Qin, T.; Zhao, S.; Zhao, Z.; and Liu, T.-Y. 2022."
-      },
-      {
-       "id": "s-references-20-10",
-       "original": "FastSpeech 2: Fast and High-Quality Endto-End Text to Speech."
-      },
-      {
-       "id": "s-references-20-11",
-       "original": "Rodr´ıguez, P.; Bautista, M."
-      },
-      {
-       "id": "s-references-20-12",
-       "original": "A.; Gonzalez, J.; and Escalera, S. 2018."
-      },
-      {
-       "id": "s-references-20-13",
-       "original": "Beyond one-hot encoding: Lower dimensional target embedding."
-      },
-      {
-       "id": "s-references-20-14",
-       "original": "Image and Vision Computing, 75: 21–31."
-      },
-      {
-       "id": "s-references-20-15",
-       "original": "Rosenblatt, F. 1958."
-      },
-      {
-       "id": "s-references-20-16",
-       "original": "The perceptron: a probabilistic model for information storage and organization in the brain."
-      },
-      {
-       "id": "s-references-20-17",
-       "original": "Psychological review, 65(6): 386."
-      },
-      {
-       "id": "s-references-20-18",
-       "original": "Rumelhart, D."
-      },
-      {
-       "id": "s-references-20-19",
-       "original": "E.; Hinton, G."
-      },
-      {
-       "id": "s-references-20-20",
-       "original": "E.; and Williams, R."
-      },
-      {
-       "id": "s-references-20-21",
-       "original": "J. 1986."
-      },
-      {
-       "id": "s-references-20-22",
-       "original": "Learning representations by back-propagating errors."
+       "original": "Guo, H.-H.; Hu, Y.; Liu, K.; Shen, F.-Y.; Tang, X.; Wu, Y.-C.; Xie, F.-L.; Xie, K.; and Xu, K.-T. 2024.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
       }
      ]
     },
     {
      "id": "p-references-21",
      "type": "paragraph",
-     "page": 9,
+     "page": 8,
      "sentences": [
       {
        "id": "s-references-21-1",
-       "original": "nature, 323(6088): 533–536."
-      },
-      {
-       "id": "s-references-21-2",
-       "original": "Sahipjohn, N.; Gudmalwar, A.; Shah, N.; Wasnik, P.; and Shah, R."
-      },
-      {
-       "id": "s-references-21-3",
-       "original": "R. 2024."
-      },
-      {
-       "id": "s-references-21-4",
-       "original": "DubWise: Video-guided speech duration control in multimodal LLM-based text-to-speech for dubbing. arXiv preprint arXiv:2406.08802."
-      },
-      {
-       "id": "s-references-21-5",
-       "original": "Shen, K.; Ju, Z.; Tan, X.; Liu, E.; Leng, Y.; He, L.; Qin, T.; Zhao, S.; and Bian, J. 2024."
-      },
-      {
-       "id": "s-references-21-6",
-       "original": "NaturalSpeech 2: Latent Diffusion Models are Natural and Zero-Shot Speech and Singing Synthesizers."
-      },
-      {
-       "id": "s-references-21-7",
-       "original": "In The Twelfth International Conference on Learning Representations, ICLR 2024, Vienna, Austria, May 7-11, 2024."
-      },
-      {
-       "id": "s-references-21-8",
-       "original": "Sundaram, J."
-      },
-      {
-       "id": "s-references-21-9",
-       "original": "P."
-      },
-      {
-       "id": "s-references-21-10",
-       "original": "S.; Du, W.; and Zhao, Z. 2019."
-      },
-      {
-       "id": "s-references-21-11",
-       "original": "A survey on LoRa networking: Research problems, current solutions, and open issues."
-      },
-      {
-       "id": "s-references-21-12",
-       "original": "IEEE Communications Surveys & Tutorials, 22(1): 371–388."
-      },
-      {
-       "id": "s-references-21-13",
-       "original": "Touvron, H.; Lavril, T.; Izacard, G.; Martinet, X.; Lachaux, M.; Lacroix, T.; Rozi`ere, B.; Goyal, N.; Hambro, E.; Azhar, F.; Rodriguez, A.; Joulin, A.; Grave, E.; and Lample, G. 2023."
-      },
-      {
-       "id": "s-references-21-14",
-       "original": "LLaMA: Open and Efficient Foundation Language Models."
-      },
-      {
-       "id": "s-references-21-15",
-       "original": "CoRR, abs/2302.13971. van den Oord, A.; Vinyals, O.; and Kavukcuoglu, K. 2017."
-      },
-      {
-       "id": "s-references-21-16",
-       "original": "Neural Discrete Representation Learning."
-      },
-      {
-       "id": "s-references-21-17",
-       "original": "In Advances in Neural Information Processing Systems 30: Annual Conference on Neural Information Processing Systems 2017, December 4-9, 2017, Long Beach, CA, USA, 6306–6315."
+       "original": "Fireredtts: A foundation text-to-speech framework for industrylevel generative speech applications."
       }
      ]
     },
     {
      "id": "p-references-22",
      "type": "paragraph",
-     "page": 10,
+     "page": 8,
      "sentences": [
       {
        "id": "s-references-22-1",
-       "original": "Vaswani, A.; Shazeer, N.; Parmar, N.; Uszkoreit, J.; Jones, L.; Gomez, A."
+       "original": "arXiv preprint arXiv:2409.03283."
       },
       {
        "id": "s-references-22-2",
-       "original": "N.; Kaiser, L.; and Polosukhin, I. 2017."
+       "original": "Guo, T.; Wen, C.; Jiang, D.; Luo, N.; Zhang, R.; Zhao, S.; Li, W.; Gong, C.; Zou, W.; Han, K.; et al. 2021.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
       },
       {
        "id": "s-references-22-3",
-       "original": "Attention is All you Need."
+       "original": "Didispeech: A large scale mandarin speech corpus."
       },
       {
        "id": "s-references-22-4",
-       "original": "In Advances in Neural Information Processing Systems 30: Annual Conference on Neural Information Processing Systems 2017, December 4-9, 2017, Long Beach, CA, USA, 5998–6008."
+       "original": "In ICASSP 2021- 2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 6968–6972."
       },
       {
        "id": "s-references-22-5",
-       "original": "Wang, X.; Jiang, M.; Ma, Z.; Zhang, Z.; Liu, S.; Li, L.; Liang, Z.; Zheng, Q.; Wang, R.; Feng, X.; et al. 2025."
+       "original": "IEEE."
       },
       {
        "id": "s-references-22-6",
-       "original": "Spark-tts: An efficient llm-based text-to-speech model with single-stream decoupled speech tokens."
+       "original": "He, H.; Shang, Z.; Wang, C.; Li, X.; Gu, Y.; Hua, H.; Liu, L.; Yang, C.; Li, J.; Shi, P.; et al. 2024."
       },
       {
        "id": "s-references-22-7",
-       "original": "Wang, Y.; Zhan, H.; Liu, L.; Zeng, R.; Guo, H.; Zheng, J.; Zhang, Q.; Zhang, X.; Zhang, S.; and Wu, Z. 2024."
+       "original": "Emilia: An extensive, multilingual, and diverse speech dataset for large-scale speech generation."
       },
       {
        "id": "s-references-22-8",
-       "original": "Maskgct: Zero-shot text-to-speech with masked generative codec transformer. arXiv preprint arXiv:2409.00750."
+       "original": "In 2024 IEEE Spoken Language Technology Workshop (SLT), 885–890."
       },
       {
        "id": "s-references-22-9",
-       "original": "Yang, A.; Li, A.; Yang, B.; Zhang, B.; Hui, B.; Zheng, B.; Yu, B.; Gao, C.; Huang, C.; Lv, C.; Zheng, C.; Liu, D.; Zhou, F.; Huang, F.; Hu, F.; Ge, H.; Wei, H.; Lin, H.; Tang, J.; Yang, J.; Tu, J.; Zhang, J.; Yang, J.; Yang, J.; Zhou, J.; Zhou, J.; Lin, J.; Dang, K.; Bao, K.; Yang, K.; Yu, L.; Deng, L.; Li, M.; Xue, M.; Li, M.; Zhang, P.; Wang, P.; Zhu, Q.; Men, R.; Gao, R.; Liu, S.; Luo, S.; Li, T.; Tang, T.; Yin, W.; Ren, X.; Wang, X.; Zhang, X.; Ren, X.; Fan, Y.; Su, Y.; Zhang, Y.; Zhang, Y.; Wan, Y.; Liu, Y.; Wang, Z.; Cui, Z.; Zhang, Z.; Zhou, Z.; and Qiu, Z. 2025."
+       "original": "IEEE."
       },
       {
        "id": "s-references-22-10",
-       "original": "Qwen3 Technical Report."
+       "original": "Ji, S.; Zuo, J.; Wang, W.; Fang, M.; Zheng, S.; Chen, Q.; Jiang, Z.; Huang, H.; Wang, Z.; Cheng, X.; et al. 2024."
       },
       {
        "id": "s-references-22-11",
-       "original": "Yang, D.; Wang, D.; Guo, H.; Chen, X.; Wu, X.; and Meng, H. 2024."
+       "original": "Controlspeech: Towards simultaneous zero-shot speaker cloning and zero-shot language style control with decoupled codec. arXiv preprint arXiv:2406.01205."
       },
       {
        "id": "s-references-22-12",
-       "original": "Simplespeech: Towards simple and efficient textto-speech with scalar latent transformer diffusion models."
+       "original": "Ju, Z.; Wang, Y.; Shen, K.; Tan, X.; Xin, D.; Yang, D.; Liu, Y.; Leng, Y.; Song, K.; Tang, S.; Wu, Z.; Qin, T.; Li, X.- Y.; Ye, W.; Zhang, S.; Bian, J.; He, L.; Li, J.; and Zhao, S. 2024.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
       },
       {
        "id": "s-references-22-13",
-       "original": "Zhang, X.; Zhang, X.; Peng, K.; Tang, Z.; Manohar, V.; Liu, Y.; Hwang, J.; Li, D.; Wang, Y.; Chan, J.; et al. 2025."
+       "original": "NaturalSpeech 3: Zero-Shot Speech Synthesis with Factorized Codec and Diffusion Models. arXiv:2403.03100."
       },
       {
        "id": "s-references-22-14",
+       "original": "Kim, D.; Hong, S.; and Choi, Y.-H. 2023."
+      }
+     ]
+    },
+    {
+     "id": "p-references-23",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-references-23-1",
+       "original": "SC VALL-E: Style-Controllable Zero-Shot Text to Speech Synthesizer. arXiv preprint arXiv:2307.10550."
+      },
+      {
+       "id": "s-references-23-2",
+       "original": "Kim, J.; Kim, S.; Kong, J.; and Yoon, S. 2020."
+      },
+      {
+       "id": "s-references-23-3",
+       "original": "Glow-tts: A generative flow for text-to-speech via monotonic alignment search."
+      },
+      {
+       "id": "s-references-23-4",
+       "original": "Advances in Neural Information Processing Systems, 33: 8067–8077."
+      },
+      {
+       "id": "s-references-23-5",
+       "original": "Koenker, R.; and Bassett Jr, G. 1978."
+      },
+      {
+       "id": "s-references-23-6",
+       "original": "Regression quantiles."
+      },
+      {
+       "id": "s-references-23-7",
+       "original": "Econometrica: journal of the Econometric Society, 33–50."
+      },
+      {
+       "id": "s-references-23-8",
+       "original": "Le, M.; Vyas, A.; Shi, B.; Karrer, B.; Sari, L.; Moritz, R.; Williamson, M.; Manohar, V.; Adi, Y.; Mahadeokar, J.; et al. 2023."
+      },
+      {
+       "id": "s-references-23-9",
+       "original": "Voicebox: Text-guided multilingual universal speech generation at scale."
+      },
+      {
+       "id": "s-references-23-10",
+       "original": "Advances in neural information processing systems, 36: 14005–14034."
+      },
+      {
+       "id": "s-references-23-11",
+       "original": "Lee, K.; Kim, D."
+      },
+      {
+       "id": "s-references-23-12",
+       "original": "W.; Kim, J.; and Cho, J. 2024."
+      },
+      {
+       "id": "s-references-23-13",
+       "original": "Ditto-tts: Efficient and scalable zero-shot text-to-speech with diffusion transformer. arXiv preprint arXiv:2406.11427."
+      },
+      {
+       "id": "s-references-23-14",
+       "original": "Lee, S.; Ping, W.; Ginsburg, B.; Catanzaro, B.; and Yoon, S. 2023."
+      },
+      {
+       "id": "s-references-23-15",
+       "original": "BigVGAN: A Universal Neural Vocoder with LargeScale Training."
+      },
+      {
+       "id": "s-references-23-16",
+       "original": "In The Eleventh International Conference on Learning Representations, ICLR 2023, Kigali, Rwanda, May 1-5, 2023."
+      },
+      {
+       "id": "s-references-23-17",
+       "original": "Li, H.; Li, Y.; Wang, X.; Hu, J.; Xie, Q.; Yang, S.; and Xie, L. 2025."
+      },
+      {
+       "id": "s-references-23-18",
+       "original": "FleSpeech: Flexibly Controllable Speech Generation with Various Prompts. arXiv preprint arXiv:2501.04644."
+      },
+      {
+       "id": "s-references-23-19",
+       "original": "Li, Y."
+      },
+      {
+       "id": "s-references-23-20",
+       "original": "A.; Han, C.; Raghavan, V.; Mischler, G.; and Mesgarani, N. 2023."
+      },
+      {
+       "id": "s-references-23-21",
+       "original": "Styletts 2: Towards human-level text-tospeech through style diffusion and adversarial training with large speech language models."
+      },
+      {
+       "id": "s-references-23-22",
+       "original": "Advances in Neural Information Processing Systems, 36: 19594–19621."
+      },
+      {
+       "id": "s-references-23-23",
+       "original": "Lipman, Y.; Chen, R."
+      },
+      {
+       "id": "s-references-23-24",
+       "original": "T.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
+      },
+      {
+       "id": "s-references-23-25",
+       "original": "Q.; Ben-Hamu, H.; Nickel, M.; and Le, M. 2023."
+      },
+      {
+       "id": "s-references-23-26",
+       "original": "Flow Matching for Generative Modeling."
+      },
+      {
+       "id": "s-references-23-27",
+       "original": "In The Eleventh International Conference on Learning Representations, ICLR 2023, Kigali, Rwanda, May 1-5, 2023."
+      },
+      {
+       "id": "s-references-23-28",
+       "original": "Liu, S. 2024."
+      },
+      {
+       "id": "s-references-23-29",
+       "original": "Zero-shot Voice Conversion with Diffusion Transformers. arXiv preprint arXiv:2411.09943."
+      },
+      {
+       "id": "s-references-23-30",
+       "original": "Ma, Z.; Zheng, Z.; Ye, J.; Li, J.; Gao, Z.; Zhang, S.; and Chen, X. 2024. emotion2vec: Self-Supervised Pre-Training for Speech Emotion Representation."
+      },
+      {
+       "id": "s-references-23-31",
+       "original": "In Ku, L.; Martins, A.; and Srikumar, V., eds., Findings of the Association for Computational Linguistics, ACL 2024, Bangkok, Thailand and virtual meeting, August 11-16, 2024, 15747–15760."
+      },
+      {
+       "id": "s-references-23-32",
+       "original": "Association for Computational Linguistics."
+      },
+      {
+       "id": "s-references-23-33",
+       "original": "Mentzer, F.; Minnen, D.; Agustsson, E.; and Tschannen, M. 2023."
+      },
+      {
+       "id": "s-references-23-34",
+       "original": "Finite scalar quantization: Vq-vae made simple. arXiv preprint arXiv:2309.15505."
+      },
+      {
+       "id": "s-references-23-35",
+       "original": "Panayotov, V.; Chen, G.; Povey, D.; and Khudanpur, S. 2015."
+      },
+      {
+       "id": "s-references-23-36",
+       "original": "Librispeech: an asr corpus based on public domain audio books."
+      },
+      {
+       "id": "s-references-23-37",
+       "original": "In 2015 IEEE international conference on acoustics, speech and signal processing (ICASSP), 5206–5210."
+      },
+      {
+       "id": "s-references-23-38",
+       "original": "IEEE."
+      }
+     ]
+    },
+    {
+     "id": "p-references-24",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-references-24-1",
+       "original": "Peebles, W.; and Xie, S. 2023."
+      },
+      {
+       "id": "s-references-24-2",
+       "original": "Scalable diffusion models with transformers."
+      },
+      {
+       "id": "s-references-24-3",
+       "original": "In Proceedings of the IEEE/CVF international conference on computer vision, 4195–4205."
+      },
+      {
+       "id": "s-references-24-4",
+       "original": "Qi, T.; Zheng, W.; Lu, C.; Zong, Y.; and Lian, H. 2024.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
+      },
+      {
+       "id": "s-references-24-5",
+       "original": "PAVITS: Exploring Prosody-Aware VITS for End-to-End Emotional Voice Conversion."
+      },
+      {
+       "id": "s-references-24-6",
+       "original": "In IEEE International Conference on Acoustics, Speech and Signal Processing, ICASSP 2024, Seoul, Republic of Korea, April 14-19, 2024, 12697– 12701."
+      },
+      {
+       "id": "s-references-24-7",
+       "original": "IEEE."
+      },
+      {
+       "id": "s-references-24-8",
+       "original": "Radford, A.; Kim, J."
+      },
+      {
+       "id": "s-references-24-9",
+       "original": "W.; Hallacy, C.; Ramesh, A.; Goh, G.; Agarwal, S.; Sastry, G.; Askell, A.; Mishkin, P.; Clark, J.; Krueger, G.; and Sutskever, I. 2021."
+      }
+     ]
+    },
+    {
+     "id": "p-references-25",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-references-25-1",
+       "original": "Learning Transferable Visual Models From Natural Language Supervision."
+      },
+      {
+       "id": "s-references-25-2",
+       "original": "In Meila, M.; and Zhang, T., eds., Proceedings of the 38th International Conference on Machine Learning, ICML 2021, 18-24 July 2021, Virtual Event, 8748–8763.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
+      },
+      {
+       "id": "s-references-25-3",
+       "original": "PMLR."
+      },
+      {
+       "id": "s-references-25-4",
+       "original": "Radford, A.; Kim, J."
+      },
+      {
+       "id": "s-references-25-5",
+       "original": "W.; Xu, T.; Brockman, G.; McLeavey, C.; and Sutskever, I. 2023.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
+      },
+      {
+       "id": "s-references-25-6",
+       "original": "Robust speech recognition via large-scale weak supervision."
+      },
+      {
+       "id": "s-references-25-7",
+       "original": "In International conference on machine learning, 28492–28518."
+      },
+      {
+       "id": "s-references-25-8",
+       "original": "PMLR."
+      },
+      {
+       "id": "s-references-25-9",
+       "original": "Ren, Y.; Hu, C.; Tan, X.; Qin, T.; Zhao, S.; Zhao, Z.; and Liu, T.-Y. 2022.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
+      },
+      {
+       "id": "s-references-25-10",
+       "original": "FastSpeech 2: Fast and High-Quality Endto-End Text to Speech."
+      },
+      {
+       "id": "s-references-25-11",
+       "original": "Rodr´ıguez, P.; Bautista, M."
+      },
+      {
+       "id": "s-references-25-12",
+       "original": "A.; Gonzalez, J.; and Escalera, S. 2018."
+      },
+      {
+       "id": "s-references-25-13",
+       "original": "Beyond one-hot encoding: Lower dimensional target embedding."
+      },
+      {
+       "id": "s-references-25-14",
+       "original": "Image and Vision Computing, 75: 21–31."
+      },
+      {
+       "id": "s-references-25-15",
+       "original": "Rosenblatt, F. 1958."
+      },
+      {
+       "id": "s-references-25-16",
+       "original": "The perceptron: a probabilistic model for information storage and organization in the brain."
+      },
+      {
+       "id": "s-references-25-17",
+       "original": "Psychological review, 65(6): 386."
+      },
+      {
+       "id": "s-references-25-18",
+       "original": "Rumelhart, D."
+      },
+      {
+       "id": "s-references-25-19",
+       "original": "E.; Hinton, G."
+      },
+      {
+       "id": "s-references-25-20",
+       "original": "E.; and Williams, R."
+      },
+      {
+       "id": "s-references-25-21",
+       "original": "J. 1986."
+      },
+      {
+       "id": "s-references-25-22",
+       "original": "Learning representations by back-propagating errors."
+      }
+     ]
+    },
+    {
+     "id": "p-references-26",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-references-26-1",
+       "original": "nature, 323(6088): 533–536."
+      },
+      {
+       "id": "s-references-26-2",
+       "original": "Sahipjohn, N.; Gudmalwar, A.; Shah, N.; Wasnik, P.; and Shah, R."
+      },
+      {
+       "id": "s-references-26-3",
+       "original": "R. 2024."
+      },
+      {
+       "id": "s-references-26-4",
+       "original": "DubWise: Video-guided speech duration control in multimodal LLM-based text-to-speech for dubbing. arXiv preprint arXiv:2406.08802."
+      },
+      {
+       "id": "s-references-26-5",
+       "original": "Shen, K.; Ju, Z.; Tan, X.; Liu, E.; Leng, Y.; He, L.; Qin, T.; Zhao, S.; and Bian, J. 2024.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
+      },
+      {
+       "id": "s-references-26-6",
+       "original": "NaturalSpeech 2: Latent Diffusion Models are Natural and Zero-Shot Speech and Singing Synthesizers."
+      },
+      {
+       "id": "s-references-26-7",
+       "original": "In The Twelfth International Conference on Learning Representations, ICLR 2024, Vienna, Austria, May"
+      }
+     ]
+    },
+    {
+     "id": "eq-references-3",
+     "type": "equation",
+     "page": 9,
+     "original": "7-11, 2024."
+    },
+    {
+     "id": "p-references-27",
+     "type": "paragraph",
+     "page": 9,
+     "sentences": [
+      {
+       "id": "s-references-27-1",
+       "original": "Sundaram, J."
+      },
+      {
+       "id": "s-references-27-2",
+       "original": "P.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
+      },
+      {
+       "id": "s-references-27-3",
+       "original": "S.; Du, W.; and Zhao, Z. 2019."
+      },
+      {
+       "id": "s-references-27-4",
+       "original": "A survey on LoRa networking: Research problems, current solutions, and open issues."
+      },
+      {
+       "id": "s-references-27-5",
+       "original": "IEEE Communications Surveys & Tutorials, 22(1): 371–388."
+      },
+      {
+       "id": "s-references-27-6",
+       "original": "Touvron, H.; Lavril, T.; Izacard, G.; Martinet, X.; Lachaux, M.; Lacroix, T.; Rozi`ere, B.; Goyal, N.; Hambro, E.; Azhar, F.; Rodriguez, A.; Joulin, A.; Grave, E.; and Lample, G. 2023.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
+      },
+      {
+       "id": "s-references-27-7",
+       "original": "LLaMA: Open and Efficient Foundation Language Models."
+      },
+      {
+       "id": "s-references-27-8",
+       "original": "CoRR, abs/2302.13971. van den Oord, A.; Vinyals, O.; and Kavukcuoglu, K. 2017."
+      },
+      {
+       "id": "s-references-27-9",
+       "original": "Neural Discrete Representation Learning."
+      },
+      {
+       "id": "s-references-27-10",
+       "original": "In Advances in Neural Information Processing Systems 30: Annual Conference on Neural Information Processing Systems 2017, December 4-9, 2017, Long Beach, CA, USA, 6306–6315."
+      }
+     ]
+    },
+    {
+     "id": "p-references-28",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-references-28-1",
+       "original": "Vaswani, A.; Shazeer, N.; Parmar, N.; Uszkoreit, J.; Jones, L.; Gomez, A."
+      },
+      {
+       "id": "s-references-28-2",
+       "original": "N.; Kaiser, L.; and Polosukhin, I. 2017."
+      },
+      {
+       "id": "s-references-28-3",
+       "original": "Attention is All you Need."
+      },
+      {
+       "id": "s-references-28-4",
+       "original": "In Advances in Neural Information Processing Systems 30: Annual Conference on Neural Information Processing Systems 2017, December 4-9, 2017, Long Beach, CA, USA, 5998–6008."
+      },
+      {
+       "id": "s-references-28-5",
+       "original": "Wang, X.; Jiang, M.; Ma, Z.; Zhang, Z.; Liu, S.; Li, L.; Liang, Z.; Zheng, Q.; Wang, R.; Feng, X.; et al. 2025."
+      },
+      {
+       "id": "s-references-28-6",
+       "original": "Spark-tts: An efficient llm-based text-to-speech model with single-stream decoupled speech tokens."
+      }
+     ]
+    },
+    {
+     "id": "p-references-29",
+     "type": "paragraph",
+     "page": 10,
+     "sentences": [
+      {
+       "id": "s-references-29-1",
+       "original": "arXiv preprint arXiv:2503.01710."
+      },
+      {
+       "id": "s-references-29-2",
+       "original": "Wang, Y.; Zhan, H.; Liu, L.; Zeng, R.; Guo, H.; Zheng, J.; Zhang, Q.; Zhang, X.; Zhang, S.; and Wu, Z. 2024."
+      },
+      {
+       "id": "s-references-29-3",
+       "original": "Maskgct: Zero-shot text-to-speech with masked generative codec transformer. arXiv preprint arXiv:2409.00750."
+      },
+      {
+       "id": "s-references-29-4",
+       "original": "Yang, A.; Li, A.; Yang, B.; Zhang, B.; Hui, B.; Zheng, B.; Yu, B.; Gao, C.; Huang, C.; Lv, C.; Zheng, C.; Liu, D.; Zhou, F.; Huang, F.; Hu, F.; Ge, H.; Wei, H.; Lin, H.; Tang, J.; Yang, J.; Tu, J.; Zhang, J.; Yang, J.; Yang, J.; Zhou, J.; Zhou, J.; Lin, J.; Dang, K.; Bao, K.; Yang, K.; Yu, L.; Deng, L.; Li, M.; Xue, M.; Li, M.; Zhang, P.; Wang, P.; Zhu, Q.; Men, R.; Gao, R.; Liu, S.; Luo, S.; Li, T.; Tang, T.; Yin, W.; Ren, X.; Wang, X.; Zhang, X.; Ren, X.; Fan, Y.; Su, Y.; Zhang, Y.; Zhang, Y.; Wan, Y.; Liu, Y.; Wang, Z.; Cui, Z.; Zhang, Z.; Zhou, Z.; and Qiu, Z. 2025.",
+       "zh": "如 Figure 4 所示，IndexTTS2 在 test-en 上与 F5-TTS 持平，并显著优于 MaskGCT。"
+      },
+      {
+       "id": "s-references-29-5",
+       "original": "Qwen3 Technical Report. arXiv:2505.09388."
+      },
+      {
+       "id": "s-references-29-6",
+       "original": "Yang, D.; Wang, D.; Guo, H.; Chen, X.; Wu, X.; and Meng, H. 2024."
+      },
+      {
+       "id": "s-references-29-7",
+       "original": "Simplespeech: Towards simple and efficient textto-speech with scalar latent transformer diffusion models. arXiv preprint arXiv:2406.02328."
+      },
+      {
+       "id": "s-references-29-8",
+       "original": "Zhang, X.; Zhang, X.; Peng, K.; Tang, Z.; Manohar, V.; Liu, Y.; Hwang, J.; Li, D.; Wang, Y.; Chan, J.; et al. 2025."
+      },
+      {
+       "id": "s-references-29-9",
        "original": "Vevo: Controllable zero-shot voice imitation with self-supervised disentanglement. arXiv preprint arXiv:2502.07243."
       },
       {
-       "id": "s-references-22-15",
+       "id": "s-references-29-10",
        "original": "Zhou, K.; Sisman, B.; Liu, R.; and Li, H. 2021."
       },
       {
-       "id": "s-references-22-16",
+       "id": "s-references-29-11",
        "original": "Seen and Unseen Emotional Style Transfer for Voice Conversion with A New Emotional Speech Dataset."
       },
       {
-       "id": "s-references-22-17",
+       "id": "s-references-29-12",
        "original": "In ICASSP 2021 - 2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 920–924."
       },
       {
-       "id": "s-references-22-18",
+       "id": "s-references-29-13",
        "original": "Zhou, K.; Sisman, B.; Rana, R.; Schuller, B."
       },
       {
-       "id": "s-references-22-19",
+       "id": "s-references-29-14",
        "original": "W.; and Li, H. 2023."
       },
       {
-       "id": "s-references-22-20",
+       "id": "s-references-29-15",
        "original": "Emotion Intensity and its Control for Emotional Voice Conversion."
       },
       {
-       "id": "s-references-22-21",
+       "id": "s-references-29-16",
        "original": "IEEE Trans."
       },
       {
-       "id": "s-references-22-22",
+       "id": "s-references-29-17",
        "original": "Affect."
       },
       {
-       "id": "s-references-22-23",
+       "id": "s-references-29-18",
        "original": "Comput., 14(1): 31–48."
       },
       {
-       "id": "s-references-22-24",
+       "id": "s-references-29-19",
        "original": "Zhou, Y.; Qin, X.; Jin, Z.; Zhou, S.; Lei, S.; Zhou, S.; Wu, Z.; and Jia, J. 2024."
       },
       {
-       "id": "s-references-22-25",
+       "id": "s-references-29-20",
        "original": "Voxinstruct: Expressive human instructionto-speech generation with unified multilingual codec language modelling."
       },
       {
-       "id": "s-references-22-26",
+       "id": "s-references-29-21",
        "original": "In Proceedings of the 32nd ACM International Conference on Multimedia, 554–563."
       }
      ]
@@ -2734,7 +3698,7 @@ globalThis.PAPER_2506_21619 = {
   {
    "id": "ann-011",
    "anchor": {
-    "sentence_id": "s-text-to-emotion-t2e-4-1",
+    "sentence_id": "s-text-to-emotion-t2e-6-1",
     "quote": "We construct a training dataset of 1000 text-distribution pairs using two types of prompts with Deepseek-r1"
    },
    "kind": "critique",
@@ -2809,21 +3773,9 @@ globalThis.PAPER_2506_21619 = {
    "featured": true
   },
   {
-   "id": "ann-018",
-   "anchor": {
-    "sentence_id": "s-duration-specified-speech-synthe-1-2",
-    "quote": "minimal token number error rates (<0.02% for original durations and <0.03% for 0.875×/1.125×)"
-   },
-   "kind": "number",
-   "title": "误差率的正确读法",
-   "explanation": "token 数量错误率 <0.02%（原始时长）/ <0.03%（0.875×/1.125×），最大 0.067%（0.75× 中文）——但要注意分母是「目标 token 数」。以语义 codec 常见 25–50 Hz 的帧率换算，0.067% 对应每分钟偏差约 1–2 个 token，即几十毫秒级，对帧级口型同步足够，对字幕时间戳则仍要靠后校准。另一个温和警示：错误率随缩放因子变大而升高，说明极端变速（0.75×）下位置先验开始失效，论文只测到 ±25%，超出此范围的行为完全未知。",
-   "explanation_plain": "误差按 token 数算，每分钟最多差一两个 token，配音够用但不是零误差。",
-   "featured": true
-  },
-  {
    "id": "ann-019",
    "anchor": {
-    "sentence_id": "s-duration-specified-speech-synthe-3-3",
+    "sentence_id": "s-duration-specified-speech-synthe-4-3",
     "quote": "IndexTTS2 surpasses F5-TTS by 0.5 pp and MaskGCT by 2 pp"
    },
    "kind": "comparison",
