@@ -423,7 +423,6 @@ globalThis.KB = {
       "paper_url": "https://arxiv.org/abs/2604.18105",
       "has_arxiv": true,
       "source_type": "论文",
-      "pdf_local": "papers/2604.18105.pdf",
       "reader_paper": "2604.18105",
       "license": "商业/可部署",
       "params": "2.3B",

@@ -77,7 +77,9 @@ try {
 const INSIGHTS = sandbox.__INSIGHTS;
 const KB = sandbox.__KB;
 const problems = [];
+const warns = [];
 const ok = (cond, msg) => { if (!cond) problems.push(msg); };
+const warn = (msg) => { warns.push(msg); };
 
 // 渲染冒烟测试：主逻辑顶层会按 location.hash 渲染首页到 #app，验证数据/逻辑引用未断裂
 {
@@ -172,12 +174,33 @@ for (const [id, rule] of Object.entries(CANONICAL)) {
   if (rule.stream !== undefined) ok(m.caps && m.caps.stream === rule.stream, `[守护] ${id} caps.stream 应为 ${rule.stream}，实为 ${m.caps && m.caps.stream}`);
 }
 
+// 8) 许可证门禁：本地 PDF 仅允许明确可再分发的论文托管于仓库
+const LIC_PATH = path.join(__dirname, "..", "papers", "licenses.json");
+if (fs.existsSync(LIC_PATH)) {
+  const LICENSES = JSON.parse(fs.readFileSync(LIC_PATH, "utf8"));
+  for (const m of KB.models) {
+    if (!m.pdf_local) continue;
+    const arx = (m.pdf_local.match(/(\d{4}\.\d{4,5})\.pdf$/) || [])[1];
+    const lic = arx && LICENSES[arx];
+    if (!lic) { warn(`[License] ${m.id} 本地 PDF ${m.pdf_local} 缺许可证记录，请补 papers/licenses.json`); continue; }
+    if (lic.redistribution_allowed === true) continue;
+    if (lic.status === "verified") {
+      ok(false, `[License] ${m.id} 许可证「${lic.license || ""}」不允许再分发，但仍托管了本地 PDF ${m.pdf_local}`);
+    } else {
+      warn(`[License] ${m.id} 本地 PDF ${m.pdf_local} 许可证「${lic.license || ""}」未核实（status=${lic.status}），建议确认授权或移除 PDF`);
+    }
+  }
+} else {
+  warn("[License] papers/licenses.json 不存在，跳过许可证门禁");
+}
+
 // 5) 汇总
 console.log(`模型总数: ${KB.models.length}`);
 console.log(`INSIGHTS 条目数: ${total} (期望 ${KB.models.length * 3})`);
 console.log(`每篇 3 条达成: ${KB.models.every((m) => (INSIGHTS[m.id] || []).length === 3)}`);
 console.log(`Benchmark 条目数: ${benchRows}（均能在 KB.models 解析）`);
 if (orphan.length) console.log(`孤儿 key: ${orphan.length}`);
+if (warns.length) console.log(`许可证提醒: ${warns.length}（不阻断，待人工确认；可用 tools/gen_licenses.js 刷新）`);
 
 if (problems.length) {
   console.error(`\n❌ 校验未通过，发现 ${problems.length} 个问题:`);

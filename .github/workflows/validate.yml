@@ -22,3 +22,9 @@ jobs:
       # 数字/引用一致性（data/papers/ 为空时自动跳过）。
       - name: Run paper-reader quality gate
         run: node tools/validate_paper.js
+      # SEO 产物门禁：data/kb.js 是唯一事实来源，index.html/models.html/sitemap.xml/robots.txt
+      # 必须由其重新生成并随仓库提交；若提交遗漏 regeneration，则 diff 非空、本步失败。
+      - name: Regenerate SEO artifacts
+        run: node tools/gen_seo.js
+      - name: Ensure generated files are up to date
+        run: git diff --exit-code -- index.html models.html sitemap.xml robots.txt

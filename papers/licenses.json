@@ -1,0 +1,282 @@
+{
+  "_policy": "本地 PDF 仅托管明确允许再分发的论文（CC BY / CC BY-SA / CC0 / Public Domain / MIT / Apache / BSD / 作者或出版方明确授权）。其他论文仅保留 arXiv 链接，不托管 PDF。redistribution_allowed=false 且 status=verified 的条目不得托管本地 PDF（validate.js 门禁会阻断）。status=review 表示待人工确认，当前仅告警不阻断。",
+  "2603.10420": {
+    "arxiv_id": "2603.10420",
+    "license": "开源(权重)",
+    "source_url": "https://arxiv.org/abs/2603.10420",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2604.18105": {
+    "arxiv_id": "2604.18105",
+    "source_url": "https://arxiv.org/abs/2604.18105",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "verified",
+    "license": "arXiv non-exclusive distribution license",
+    "note": "arXiv 非独占分发许可仅授予 arXiv.org 分发权，不授予任意第三方在 GitHub 再分发；仅保留 arXiv 链接"
+  },
+  "2604.14493": {
+    "arxiv_id": "2604.14493",
+    "license": "商业",
+    "source_url": "https://arxiv.org/abs/2604.14493",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2601.18184": {
+    "arxiv_id": "2601.18184",
+    "license": "研究",
+    "source_url": "https://arxiv.org/abs/2601.18184",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2605.23463": {
+    "arxiv_id": "2605.23463",
+    "license": "研究/有限开放",
+    "source_url": "https://arxiv.org/abs/2605.23463",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2607.23938": {
+    "arxiv_id": "2607.23938",
+    "license": "开源(通义)",
+    "source_url": "https://arxiv.org/abs/2607.23938",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2608.11593": {
+    "arxiv_id": "2608.11593",
+    "license": "开源",
+    "source_url": "https://arxiv.org/abs/2608.11593",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2606.24320": {
+    "arxiv_id": "2606.24320",
+    "license": "Apache 2.0",
+    "source_url": "https://arxiv.org/abs/2606.24320",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": true,
+    "status": "verified"
+  },
+  "2604.00688": {
+    "arxiv_id": "2604.00688",
+    "license": "开源",
+    "source_url": "https://arxiv.org/abs/2604.00688",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2606.03455": {
+    "arxiv_id": "2606.03455",
+    "license": "开源",
+    "source_url": "https://arxiv.org/abs/2606.03455",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2603.29339": {
+    "arxiv_id": "2603.29339",
+    "license": "开源",
+    "source_url": "https://arxiv.org/abs/2603.29339",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2606.06928": {
+    "arxiv_id": "2606.06928",
+    "license": "Apache 2.0",
+    "source_url": "https://arxiv.org/abs/2606.06928",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": true,
+    "status": "verified"
+  },
+  "2603.25551": {
+    "arxiv_id": "2603.25551",
+    "license": "CC BY-NC",
+    "source_url": "https://arxiv.org/abs/2603.25551",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "非商业许可，公开仓库再分发需谨慎"
+  },
+  "2603.08823": {
+    "arxiv_id": "2603.08823",
+    "license": "开源",
+    "source_url": "https://arxiv.org/abs/2603.08823",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2506.21619": {
+    "arxiv_id": "2506.21619",
+    "license": "开源",
+    "source_url": "https://arxiv.org/abs/2506.21619",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2502.18924": {
+    "arxiv_id": "2502.18924",
+    "license": "开源",
+    "source_url": "https://arxiv.org/abs/2502.18924",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2212.04356": {
+    "arxiv_id": "2212.04356",
+    "license": "MIT(代码)/权重受限",
+    "source_url": "https://arxiv.org/abs/2212.04356",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": true,
+    "status": "verified"
+  },
+  "2006.11477": {
+    "arxiv_id": "2006.11477",
+    "license": "MIT (fairseq/transformers 开源)",
+    "source_url": "https://arxiv.org/abs/2006.11477",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": true,
+    "status": "verified"
+  },
+  "2106.07447": {
+    "arxiv_id": "2106.07447",
+    "license": "MIT (fairseq 开源)",
+    "source_url": "https://arxiv.org/abs/2106.07447",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": true,
+    "status": "verified"
+  },
+  "2303.01037": {
+    "arxiv_id": "2303.01037",
+    "license": "闭源（Google Cloud Chirp 提供）",
+    "source_url": "https://arxiv.org/abs/2303.01037",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2305.13516": {
+    "arxiv_id": "2305.13516",
+    "license": "CC-BY-NC 4.0（非商业）",
+    "source_url": "https://arxiv.org/abs/2305.13516",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "非商业许可，公开仓库再分发需谨慎"
+  },
+  "2407.10759": {
+    "arxiv_id": "2407.10759",
+    "license": "Apache 2.0 / Qwen 许可",
+    "source_url": "https://arxiv.org/abs/2407.10759",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": true,
+    "status": "verified"
+  },
+  "2408.16725": {
+    "arxiv_id": "2408.16725",
+    "license": "Apache 2.0",
+    "source_url": "https://arxiv.org/abs/2408.16725",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": true,
+    "status": "verified"
+  },
+  "2308.11596": {
+    "arxiv_id": "2308.11596",
+    "license": "CC-BY-NC 4.0（非商业）",
+    "source_url": "https://arxiv.org/abs/2308.11596",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "非商业许可，公开仓库再分发需谨慎"
+  },
+  "2301.02111": {
+    "arxiv_id": "2301.02111",
+    "license": "研究用途",
+    "source_url": "https://arxiv.org/abs/2301.02111",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2306.15687": {
+    "arxiv_id": "2306.15687",
+    "license": "研究用途（权重未公开）",
+    "source_url": "https://arxiv.org/abs/2306.15687",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2403.03100": {
+    "arxiv_id": "2403.03100",
+    "license": "研究用途（FACodec 已开源）",
+    "source_url": "https://arxiv.org/abs/2403.03100",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2312.15821": {
+    "arxiv_id": "2312.15821",
+    "license": "研究用途",
+    "source_url": "https://arxiv.org/abs/2312.15821",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2406.18009": {
+    "arxiv_id": "2406.18009",
+    "license": "CC BY-SA 4.0（论文）",
+    "source_url": "https://arxiv.org/abs/2406.18009",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": true,
+    "status": "verified"
+  },
+  "2410.06885": {
+    "arxiv_id": "2410.06885",
+    "license": "开源（CC BY 4.0，代码与权重已发布）",
+    "source_url": "https://arxiv.org/abs/2410.06885",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": true,
+    "status": "verified"
+  },
+  "2409.00750": {
+    "arxiv_id": "2409.00750",
+    "license": "开源（代码与权重已发布，ICLR 2025）",
+    "source_url": "https://arxiv.org/abs/2409.00750",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2406.02430": {
+    "arxiv_id": "2406.02430",
+    "license": "技术报告（权重未公开）",
+    "source_url": "https://arxiv.org/abs/2406.02430",
+    "checked_at": "2026-08-28",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
+  }
+}
