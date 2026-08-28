@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On-Device Streaming ASR · NVIDIA ｜ ASR/TTS 知识库</title>
+<meta name="description" content="将 Nemotron 语音模型量化至 0.67GB，可在端侧设备流式运行。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/on_device/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "On-Device Streaming ASR · NVIDIA",
+  "about": {
+    "@type": "Thing",
+    "name": "On-Device Streaming ASR",
+    "alternateName": "NVIDIA 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "NVIDIA"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-04",
+  "description": "将 Nemotron 语音模型量化至 0.67GB，可在端侧设备流式运行。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/on_device/",
+  "articleBody": "将 Nemotron 语音模型量化至 0.67GB，可在端侧设备流式运行。\n\n## 设计动机\n在纯 CPU、无 GPU 的边缘设备上跑高质量流式 ASR，需同时优化精度、延迟、内存。该工作（Microsoft CoreAI，构建于 NVIDIA Nemotron Speech 之上）先系统比较主流架构，再对最强候选做训练后压缩。\n\n## 整体流水线\n选定 NVIDIA Nemotron Speech Streaming（cache-aware transducer / 约 0.6B）为基座 → 在 ONNX Runtime 中重新实现完整流式推理管线（chunk 级、跨 chunk 携带编码器 cache）→ 训练后量化（int4 k-quant 等）+ 图级算子融合 → 端侧 CPU 流式解码。\n\n## 关键模块\n- 基座：Nemotron Speech Streaming 的 cache-aware transducer，原生支持 chunk 流式与跨 chunk 缓存。\n- 量化：importance-weighted k-quant、混合精度、round-to-nearest，结合算子融合。\n- 流式策略：小 chunk（560ms）处理，编码器 cache 跨 chunk 传递，算法延迟约 0.56s。\n\n## 与 SOTA 的本质区别\n不是新模型，而是“架构选型实证研究 + 后训练压缩”的组合：在 50+ 配置（Whisper / Nemotron / Parakeet TDT / Canary / Conformer Transducer / Qwen3-ASR）中，证明 Nemotron Streaming 是 CPU 端侧最强候选，再用 int4 把它压到 0.67GB。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>On-Device Streaming ASR</h1>
+    <div class="meta">NVIDIA · 2026-04 · 领域 ASR · 参数量 0.67GB(量化) · 许可 商业</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>将 Nemotron 语音模型量化至 0.67GB，可在端侧设备流式运行。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">CTC / Transducer 流式端侧系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>端侧模型体积 (GB)</td><td>体积 (GB)</td><td class="v">0.67</td><td>0.67GB 量化</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>在纯 CPU、无 GPU 的边缘设备上跑高质量流式 ASR，需同时优化精度、延迟、内存。该工作（Microsoft CoreAI，构建于 NVIDIA Nemotron Speech 之上）先系统比较主流架构，再对最强候选做训练后压缩。</p><h3>整体流水线</h3><p>选定 NVIDIA Nemotron Speech Streaming（cache-aware transducer / 约 0.6B）为基座 → 在 ONNX Runtime 中重新实现完整流式推理管线（chunk 级、跨 chunk 携带编码器 cache）→ 训练后量化（int4 k-quant 等）+ 图级算子融合 → 端侧 CPU 流式解码。</p><h3>关键模块</h3><ul class="ml"><li>基座：Nemotron Speech Streaming 的 cache-aware transducer，原生支持 chunk 流式与跨 chunk 缓存。</li><li>量化：importance-weighted k-quant、混合精度、round-to-nearest，结合算子融合。</li><li>流式策略：小 chunk（560ms）处理，编码器 cache 跨 chunk 传递，算法延迟约 0.56s。</li></ul><h3>与 SOTA 的本质区别</h3><p>不是新模型，而是“架构选型实证研究 + 后训练压缩”的组合：在 50+ 配置（Whisper / Nemotron / Parakeet TDT / Canary / Conformer Transducer / Qwen3-ASR）中，证明 Nemotron Streaming 是 CPU 端侧最强候选，再用 int4 把它压到 0.67GB。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方</h3><p>基座 Nemotron Speech Streaming 为已训练模型；本工作不做重训，仅做训练后量化 + 算子融合。</p><h3>压缩策略对比</h3><p>对比 RTN、混合精度、importance-weighted k-quant；int4 k-quant 为推荐配置：模型从 2.47GB 缩到 0.67GB，WER 保持在全精度 PyTorch 基线 1% 绝对误差以内。</p><h3>known_results 数字解读</h3><p>int4 k-quant 变体：模型体积 0.67GB，8 个标准英文基准平均流式 WER 8.20%，算法延迟 0.56s，CPU 上快于实时。体积降 &gt;70% 而 WER 仅升 &lt;1% 绝对——这是“质量-效率”新帕累托点。注意 8.20% 是流式约束下的均值，明显高于批处理大模型（如 Qwen3-ASR-1.7B 批处理 5.90%）。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>端侧部署</td><td>模型体积</td><td class="v">0.67GB</td><td>量化后，端侧流式可行</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>架构选型消融（核心）</h3><p>对 6 个模型族、50+ 配置在 batch/chunked/streaming 三模式下评测，确认 Nemotron Speech Streaming 是资源受限硬件上实时英文流式的最强候选；并刻画 chunk 大小/上下文长度 vs WER 的关系。</p><h3>量化消融</h3><p>量化 + 算子融合比单纯 RTN 更好地保住 transducer 精度；int4 k-quant 在体积-WER 曲线上最优。</p><h3>关键发现</h3><p>模型内存在 &lt;1% WER 代价下可砍 70%+；低算法延迟使端侧语音 agent 与本地 LLM 紧耦合成为可能。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>仅英文、仅 CPU、流式；8.20% 流式 WER 高于批处理大模型，属精度换部署。</li><li>本质是第三方（Microsoft）在 NVIDIA 基座上的压缩研究，并非 NVIDIA 官方“on-device 产品”。</li><li>端侧不同芯片的算子支持度影响实际表现（依赖 ONNX Runtime + 特定量化内核）。</li></ul><h3>批判</h3><p>第一，8.20% 相对榜首 5.33–5.42% 仍有明显差距，所谓“SOTA 端侧”是限定在“CPU、&lt;1GB、流式”约束下的帕累托最优，而非绝对精度领先；把“新帕累托点”说成“突破极限”略夸张。第二，论文以 Nemotron Streaming 为唯一基座，未证明该压缩流水线对其他 transducer/LLM-ASR 同样有效，泛化性未验证。第三，0.56s 算法延迟对强交互（如打断式对话）仍偏长，且未给出长静音/重叠语音下的退化。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>极致量化到 0.67GB 仍可流式</li><li>端侧低资源可部署</li><li>量化+流式联合优化</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Moonshine v2</span><p>同端侧，但源自更大 Nemotron 基线的量化</p></div><div class="diff"><span class="vs">vs 云端 LLM-ASR</span><p>精度妥协换端侧可部署</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2604.14493" target="_blank" rel="noopener">On-Device Streaming ASR arXiv:2604.14493</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2604.14493.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2604.14493" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>Rather than exporting a single monolithic ONNX graph, we decompose the model into three independently optimizable ONNX sessions: the encoder, the decoder, and the joiner.</blockquote>
+      <div class="src">— arXiv:2604.14493 方法</div>
+      <p>把模型 <strong>拆成 encoder/decoder/joiner 三个独立 ONNX 会话</strong> 是这套边缘方案的关键工程技巧：既能对 encoder 更激进量化、对 decoder 保守量化，又能让 ONNX Runtime 分别做图级优化（如多头注意力融核）。本质是把 Transducer 的天然模块边界利用到了极致。</p>
+    </div>
+    <div class="ins">
+      <blockquote>On the full evaluation sets, the int4 k-quant variant achieves 8.20% average WER compared to the 8.03% ONNX FP32 baseline, a degradation of only 0.17% absolute despite a 73% reduction in model size (from 2.47 GB to 0.67 GB).</blockquote>
+      <div class="src">— arXiv:2604.14493 讨论</div>
+      <p><strong>模型从 2.47GB 压到 0.67GB（缩 73%），WER 只掉 0.17%</strong>，量化收益惊人；int8 几乎无损（8.01% vs 8.03%）。但注意 ConvInteger/MatMulInteger 整型算子会显著退化到 10.14%——说明 <strong>量化算子选型比 bit 数更致命</strong>，整型累加会在 24 层 Conformer 里累积舍入误差。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Our evaluation focuses on core transcription accuracy and does not cover several important system-level capabilities often required in production settings, such as robust inverse text normalization, speaker diarization, code-switching, custom vocabulary adaptation, or broader internal evaluation suites.</blockquote>
+      <div class="src">— arXiv:2604.14493 讨论</div>
+      <p>作者很诚实：这套边缘系统 <strong>只验证了核心转写，没覆盖 ITN/说话人分离/码切换/热词自适应</strong> 等生产必需能力。所以「ESB 上接近生产系统」的结论要打折——它更像是隐私/离线/低延迟场景的强选项，而非端到端生产替代品。另一个代价是仅英文。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2604.14493/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/on_device">在交互知识库中打开 On-Device Streaming ASR 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

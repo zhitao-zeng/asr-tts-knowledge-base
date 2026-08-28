@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audiobox · Meta ｜ ASR/TTS 知识库</title>
+<meta name="description" content="基于流匹配的统一音频生成模型，用自然语言描述与示例双重提示统一语音与音效生成。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/audiobox/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Audiobox · Meta",
+  "about": {
+    "@type": "Thing",
+    "name": "Audiobox",
+    "alternateName": "Meta 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Meta"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2023-12",
+  "description": "基于流匹配的统一音频生成模型，用自然语言描述与示例双重提示统一语音与音效生成。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/audiobox/",
+  "articleBody": "基于流匹配的统一音频生成模型，用自然语言描述与示例双重提示统一语音与音效生成。\n\n\n## 流匹配统一框架\nAudiobox 继承 Voicebox 的流匹配生成框架，但预测自编码器（稠密 EnCodec 特征，量化前）的潜表示，而非离散 token。\n\n## 双重提示\n支持描述式提示（自然语言文本）与示例式提示（音频/语音样本），并允许转写、声线与其它音频风格在生成语音时独立控制。\n\n## 统一多模态\n单模型同时覆盖语音与音效生成，可做人声风格化、文生音效与音频填充编辑。\n"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Audiobox</h1>
+    <div class="meta">Meta · 2023-12 · 领域 TTS · 参数量 未公开（统一音频生成模型） · 许可 研究用途</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>基于流匹配的统一音频生成模型，用自然语言描述与示例双重提示统一语音与音效生成。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">波形 / 连续隐空间新路线</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>流匹配统一框架</h3><p>Audiobox 继承 Voicebox 的流匹配生成框架，但预测自编码器（稠密 EnCodec 特征，量化前）的潜表示，而非离散 token。</p><h3>双重提示</h3><p>支持描述式提示（自然语言文本）与示例式提示（音频/语音样本），并允许转写、声线与其它音频风格在生成语音时独立控制。</p><h3>统一多模态</h3><p>单模型同时覆盖语音与音效生成，可做人声风格化、文生音效与音频填充编辑。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>分阶段训练</h3><p>先在约 18.5 万小时无标签音频上做自监督掩蔽填充预训练；再用约 10 万小时转写语音训练语音生成，约 6 千小时音效数据训练文生音效。</p><h3>语言化标注</h3><p>用大模型将结构化标签/转写转化为自然语言描述，并以语音字幕（含人工标注与 LLM 生成）联合训练统一模型。</p><h3>Bespoke Solvers</h3><p>提出专用求解器，将流匹配 ODE 采样加速 25 倍以上且不损失性能。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>LibriSpeech（零样本 TTS）</td><td>说话人相似度</td><td class="v">0.745</td><td>论文设定基准</td></tr><tr><td>AudioCaps（文生音效）</td><td>FAD</td><td class="v">0.77</td><td>文本到音效生成基准</td></tr><tr><td>推理加速</td><td>Bespoke Solvers</td><td class="v">&gt;25x 快于默认 ODE 求解器</td><td>无性能损失</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>提示方式对比</h3><p>论文对比描述式与示例式提示、SSL 预训练的作用，验证双重提示的增益。</p><h3>Joint-CLAP</h3><p>因现成 CLAP 难以区分口音/情感等细粒度风格，提出 Joint-CLAP 评测模型。</p><h3>基准</h3><p>零样本 TTS 在 LibriSpeech 上相似度 0.745，文生音效在 AudioCaps 上 FAD 0.77。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>标注成本</h3><p>统一多模态需要大量高质量字幕与音效标注，构建成本高。</p><h3>可控性边界</h3><p>细粒度风格控制质量依赖描述文本的准确程度；权重以研究用途发布。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>用自然语言描述 + 音频示例双重提示统一语音与音效</li><li>自监督填充目标预训练提升标签稀缺下的泛化</li><li>Bespoke Solvers 将流匹配采样加速 25 倍以上</li><li>Joint-CLAP 细粒度音频-文本评测</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Voicebox</span><p>从纯语音扩展到语音+音效统一生成，并加入自然语言控制</p></div><div class="diff"><span class="vs">vs 单一模态生成模型</span><p>一个模型覆盖 TTS、声音风格化、文生音效</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2312.15821" target="_blank" rel="noopener">Audiobox arXiv:2312.15821</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2312.15821.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2312.15821" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>This paper presents Audiobox, a unified model based on flow-matching that is capable of generating various audio modalities.</blockquote>
+      <div class="src">— arXiv:2312.15821v1 Introduction</div>
+      <p>用统一的 flow-matching 架构把<strong>语音与声波/音效生成</strong>收进同一个模型，并设计 description-based（自然语言）与 example-based（参考音频）两种提示方式。是把「通用音频生成」从单模态拼凑推向统一范式的关键一步。</p>
+    </div>
+    <div class="ins">
+      <blockquote>To improve model generalization with limited labels, we adapt a self-supervised infilling objective to pre-train on large quantities of unlabeled audio.</blockquote>
+      <div class="src">— arXiv:2312.15821v1 Introduction</div>
+      <p>核心方法是用<strong>自监督补全（infilling）目标</strong>在海量无标注音频上预训练，以缓解标注稀缺。配合 Bespoke Solvers 把生成加速 25 倍以上，体现「用无标注数据换可控性」的扩展思路。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Hence, it is harder to generalize description-based control due to the scarcity of labeled data covering various concepts and concepts of different granularity.</blockquote>
+      <div class="src">— arXiv:2312.15821v1 §10.1 Limitations</div>
+      <p>局限在于基于文本描述的控制高度依赖稀缺的「音频-描述」配对数据，难以泛化到细粒度概念；而基于参考音频的控制虽易扩展，却无法精细解耦。揭示「自然语言可控生成」受限于标注规模这一普遍瓶颈。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2312.15821/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/audiobox">在交互知识库中打开 Audiobox 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

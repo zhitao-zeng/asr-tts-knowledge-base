@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fun-ASR (SenseVoice 系) · 阿里 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="FunAudioLLM 家族的识别模型（SenseVoice 路线），多语种+情感/事件标签。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/fun_asr/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Fun-ASR (SenseVoice 系) · 阿里",
+  "about": {
+    "@type": "Thing",
+    "name": "Fun-ASR (SenseVoice 系)",
+    "alternateName": "阿里 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "阿里"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-02",
+  "description": "FunAudioLLM 家族的识别模型（SenseVoice 路线），多语种+情感/事件标签。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/fun_asr/",
+  "articleBody": "FunAudioLLM 家族的识别模型（SenseVoice 路线），多语种+情感/事件标签。\n\n## 多任务非自回归范式\n- SenseVoice 是 FunAudioLLM 的多模态语音基础模型，采用非自回归(NAR)、CTC 式编码器 + 多任务预测头，单次前向同时输出 ASR 文本、语种(LID)、情感(SER)、音频事件(AED)与 ITN。\n- 编码器用 SANM（Streaming Attention plus FSMN）混合块：多头自注意力 + 前馈序列记忆网络(FSMN) 的逐深度 1D 卷积，兼顾长程依赖与流式友好。\n- 据公开实现，SenseVoice-Small 用 4 头、80 维输入、256 隐层、FFN 2048、FSMN 卷积核 11；支持 rich-text 标签输出（如 [zh][happy][bgm]…）。\n\n## 多语言与富标签\n- 训练数据 40 万+ 小时，支持 50+ 语言（Small 主覆盖中/粤/英/日/韩五语，Large 更强）。\n- 本质区别于 Whisper：Whisper 仅 ASR 且自回归慢；SenseVoice 把情感/事件检测内建进同一次 NAR 推理，省去级联多个模型。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Fun-ASR (SenseVoice 系)</h1>
+    <div class="meta">阿里 · 2026-02 · 领域 ASR · 参数量 中小 · 许可 开源</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>FunAudioLLM 家族的识别模型（SenseVoice 路线），多语种+情感/事件标签。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AED / Conformer 高精度系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>综合质量（官方宣称，无统一数字）</td><td>综合</td><td class="v">undefined</td><td>可用</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>多任务非自回归范式</h3><ul class="ml"><li>SenseVoice 是 FunAudioLLM 的多模态语音基础模型，采用非自回归(NAR)、CTC 式编码器 + 多任务预测头，单次前向同时输出 ASR 文本、语种(LID)、情感(SER)、音频事件(AED)与 ITN。</li><li>编码器用 SANM（Streaming Attention plus FSMN）混合块：多头自注意力 + 前馈序列记忆网络(FSMN) 的逐深度 1D 卷积，兼顾长程依赖与流式友好。</li><li>据公开实现，SenseVoice-Small 用 4 头、80 维输入、256 隐层、FFN 2048、FSMN 卷积核 11；支持 rich-text 标签输出（如 [zh][happy][bgm]…）。</li></ul><h3>多语言与富标签</h3><ul class="ml"><li>训练数据 40 万+ 小时，支持 50+ 语言（Small 主覆盖中/粤/英/日/韩五语，Large 更强）。</li><li>本质区别于 Whisper：Whisper 仅 ASR 且自回归慢；SenseVoice 把情感/事件检测内建进同一次 NAR 推理，省去级联多个模型。</li></ul></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方</h3><ul class="ml"><li>大规模多语 + 富标签联合训练：ASR/LID/SER/AED/ITN 多任务共享编码器表征，各任务头从不同投影分支输出。</li><li>数据混合以中英日韩为主、覆盖 50+ 语；非自回归目标使其推理比 Whisper-Large 快约 15 倍。</li><li>与已知结果呼应：brief 标注“多语种+富标签 综合可用”。SenseVoice 的卖点正是“一个模型同时给转写+语种+情感+事件”，并在社区被广泛采用（FunASR 工具箱开源、可商用）。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>多语种 + 富标签</td><td>综合</td><td class="v">可用</td><td>社区广泛采用</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>数字与发现解读</h3><ul class="ml"><li>速度消融：非自回归带来约 5×（vs Whisper-Small）、15×（vs Whisper-Large）的推理加速，是其在实时/批量场景落地的核心增益。</li><li>多任务权衡：论文/文档强调富标签任务（情感/事件）作为辅助信号与主 ASR 联合训练，未报告显著的主任务精度损失，证明其多任务头可“免费”附带而不拖累识别。</li><li>已知结果含义：brief 中“综合可用”应理解为——绝对 CER 不及大模型 LLM-ASR，但“识别+情感+事件+ITN 一体化 + 高速 + 开源可商用”的组合使其在工业落地中性价比突出。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>绝对识别精度不及 LLM 系大模型（如 Qwen3-ASR、Seed-ASR）；情感/事件标签质量依赖标注数据。</li><li>富标签仅覆盖有限情感类别与少量事件类型，细粒度表现有限。</li><li>Small 版仅 5 语强覆盖，其余语种为弱覆盖。</li></ul><h3>批判</h3><ul class="ml"><li>“多任务一体化”叙事有吸引力，但情感/事件标签本质是分类头，对主 ASR 的增益有限，更多是产品卖点而非精度突破。</li><li>40 万小时训练量在 2026 年已不占优，对比 Qwen3-ASR 的 4000 万小时伪标注、Luna 的 100 万小时，其数据规模劣势会直接反映在噪声/方言鲁棒性上。</li><li>非自回归 CTC 式结构在极低资源语种与强口音上的上限低于强 LLM 解码，定位应是“轻量工业组件”而非“旗舰 ASR”。</li></ul></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>识别同时输出情感/事件标签</li><li>多语种</li><li>开源社区活跃</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs 标准 ASR</span><p>在纯文本外附加情感/事件标签</p></div><div class="diff"><span class="vs">vs CosyVoice3</span><p>同家族，Fun-ASR 做识别、CosyVoice 做合成</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://github.com/FunAudioLLM" target="_blank" rel="noopener">FunAudioLLM 仓库</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="https://github.com/FunAudioLLM" target="_blank" rel="noopener">🔗 在线来源</a></p><p class="muted" style="font-size:12px">仅在线链接，PDF 未随仓库托管；可前往来源页查看原文。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：fun_asr 采用多任务训练，在输出识别文本的同时预测情感与事件标签，架构上属&quot;识别+副任务&quot;的富标签 ASR，而非纯转写模型。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 明确&quot;在识别文本同时预测情感与事件标签&quot;。与同类对比：不同于单一转写 ASR，它把结构化标签纳入同一前向过程，省去后处理级联。边界与不确定性：副任务的耦合方式（联合解码/共享编码器）为内部实现，此论点为基于架构描述的推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：因多语种+富标签（情感/事件）联合训练且设计轻量高效、社区活跃，可推断 fun_asr 在需结构化输出（客服质检、会议分析）的中文场景落地成本低、可玩性高。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：富标签+轻量使其适合直接嵌入业务分析流水线。与同类对比：对比需额外接情感/事件模型的方案，它一体化输出更省成本。边界与不确定性：中文场景的实际精度与社区生态热度需以实测为准；&quot;轻量&quot;与高精度间的平衡属推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：闭源/未开源使副任务（情感/事件）标签体系、准确率无公开基准可核；多任务联合训练可能使主识别质量在边缘语种上被副任务拖累，且&quot;轻量&quot;与高精度间需权衡验证。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：多任务会竞争表征容量。与同类对比：相比纯识别模型，边缘语种的主任务精度可能略降。边界与不确定性：标签体系定义、副任务准确率、轻量与精度权衡均不可公开审计；此为诚实的风险推断。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/fun_asr">在交互知识库中打开 Fun-ASR (SenseVoice 系) 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

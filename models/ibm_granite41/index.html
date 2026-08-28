@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBM Granite Speech 4.1 · IBM ｜ ASR/TTS 知识库</title>
+<meta name="description" content="2B 非自回归(NAR)解码的识别模型，WER 5.33%，低延迟且可商用。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/ibm_granite41/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "IBM Granite Speech 4.1 · IBM",
+  "about": {
+    "@type": "Thing",
+    "name": "IBM Granite Speech 4.1",
+    "alternateName": "IBM 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "IBM"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-02",
+  "description": "2B 非自回归(NAR)解码的识别模型，WER 5.33%，低延迟且可商用。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/ibm_granite41/",
+  "articleBody": "2B 非自回归(NAR)解码的识别模型，WER 5.33%，低延迟且可商用。\n\n## 设计动机\nGranite Speech 4.1 家族按“瓶颈”出三款变体：精度优先（AR 2B）、功能丰富（2B Plus，含说话人/词级时间戳）、吞吐优先（2B NAR）。核心创新在 NAR 变体把 ASR 重述为“基于双向 LLM 的转写编辑（NLE）”。\n\n## 整体流水线\n波形 → Conformer 音频编码器（block-local Shaw 注意力）→ windowed projector → Granite-4.0-1b LLM 文本头。\n- AR 变体：标准自回归 token-by-token 解码。\n- NAR 变体（NLE）：冻结 CTC 先出草稿转写 → 双向 LLM 单次前向对草稿做 copy/insert/delete/replace 编辑（is_causal=False，全上下文双向注意力）→ CTC 解码出最终文本，无 token 循环。\n\n## 关键模块\n- 音频编码器：Conformer + block-local Shaw 注意力，控制长序列计算。\n- 投影器：带注意力的 MLP；Plus 变体拼接编码器中间层与末层（cat_hidden_layers=[3]），加倍 K/V 宽度。\n- 文本头：Granite-4.0-1b LLM；NAR 用其作为双向编辑器。\n\n## 与 SOTA 的本质区别\n不是新编码器，而是“用双向 LLM 编辑 CTC 草稿”替代自回归生成，从而在保持精度的同时消除串行解码瓶颈；AR 与 NAR 共享编码器、解码管线结构不同。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>IBM Granite Speech 4.1</h1>
+    <div class="meta">IBM · 2026-02 · 领域 ASR · 参数量 2B (NAR) · 许可 Apache 2.0</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>2B 非自回归(NAR)解码的识别模型，WER 5.33%，低延迟且可商用。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AED / Conformer 高精度系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>公开英文基准 (WER% 均值)</td><td>WER (%)</td><td class="v">5.33</td><td>公开英文基准均值</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>Granite Speech 4.1 家族按“瓶颈”出三款变体：精度优先（AR 2B）、功能丰富（2B Plus，含说话人/词级时间戳）、吞吐优先（2B NAR）。核心创新在 NAR 变体把 ASR 重述为“基于双向 LLM 的转写编辑（NLE）”。</p><h3>整体流水线</h3><p>波形 → Conformer 音频编码器（block-local Shaw 注意力）→ windowed projector → Granite-4.0-1b LLM 文本头。</p><ul class="ml"><li>AR 变体：标准自回归 token-by-token 解码。</li><li>NAR 变体（NLE）：冻结 CTC 先出草稿转写 → 双向 LLM 单次前向对草稿做 copy/insert/delete/replace 编辑（is_causal=False，全上下文双向注意力）→ CTC 解码出最终文本，无 token 循环。</li></ul><h3>关键模块</h3><ul class="ml"><li>音频编码器：Conformer + block-local Shaw 注意力，控制长序列计算。</li><li>投影器：带注意力的 MLP；Plus 变体拼接编码器中间层与末层（cat_hidden_layers=[3]），加倍 K/V 宽度。</li><li>文本头：Granite-4.0-1b LLM；NAR 用其作为双向编辑器。</li></ul><h3>与 SOTA 的本质区别</h3><p>不是新编码器，而是“用双向 LLM 编辑 CTC 草稿”替代自回归生成，从而在保持精度的同时消除串行解码瓶颈；AR 与 NAR 共享编码器、解码管线结构不同。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练目标</h3><p>AR 变体：标准 ASR 目标 + 标点/true-casing + 双向语音翻译（AST）+ keyword biasing（关键词偏置）。</p><p>NAR 变体：NLE 编辑目标，CTC 草稿作为条件。</p><h3>数据与对齐</h3><p>在 Granite 生态上对齐，便于后续语言处理；支持英文 + 法/德/西/葡（+ 日，仅 AR/Plus）。输入上限约 6 分钟（4096 token 上下文为硬限）。Apache 2.0 全开源。</p><h3>known_results 数字解读</h3><p>base AR 2B 在 HF Open ASR Leaderboard 平均 WER 5.33%（与 2B 级模型相当、许可更友好），实时因子约 231x（1 小时音频约 16 秒）。NAR 变体在单卡 H100 批大小 128 下 RTFx 约 1820（1 小时约 2 秒），LibriSpeech test-clean 1.29%，与上游卡一致。英文子集：AMI IHM 7.91 / AMI SDM 19.59 / Earnings22 8.48 / GigaSpeech 10.12 / SPGISpeech 3.04 / TED-LIUM 3.67 / VoxPopuli 5.83——可见 NAR 用轻微精度换巨大延迟下降。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>公开英文基准(均值)</td><td>WER</td><td class="v">5.33%</td><td>与 2B 级模型相当，许可更友好</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>NAR vs AR 权衡（核心）</h3><p>NAR 以放弃翻译、关键词偏置、说话人属性、词级时间戳为代价，换取约 8x 吞吐（1820 vs 231 RTFx），且 LibriSpeech 精度几乎持平（1.29%）。</p><h3>投影器/层拼接消融</h3><p>Plus 变体拼接中间层提升 K/V 表达，换来词级时间戳与说话人归属，但 WER 略升（约 5.71%）。</p><h3>量化鲁棒性</h3><p>GGUF 实测 Q4_K_M 下 LibriSpeech WER 仅 1.35%（BF16 1.29%），量化对 NAR 几乎中性。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>NAR 变体仅支持 en/fr/de/es/pt（丢掉日语），且无翻译/时间戳/关键词偏置。</li><li>输入上限约 6 分钟，长音频被拒而非静默截断。</li><li>多语种覆盖不如专门多语模型；NAR 在极长句或强口音上可能弱于强 AR/LLM 模型。</li></ul><h3>批判</h3><p>第一，NLE 的质量上界受冻结 CTC 草稿限制：若 CTC 草稿错得离谱（如专有名词、强口音），双向编辑的修正空间有限，论文未给出“草稿质量 vs 最终精度”的关联分析。第二，5.33% 是 AR base 的榜均值，NAR 为换速度精度略降，但公开榜未单列 NAR 均值，不宜直接套用 5.33% 形容 NAR。第三，6 分钟硬限对会议/通话长音频不友好，工程价值打折扣。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>非自回归解码降低延迟</li><li>2B + Apache 2.0 全开源可商用</li><li>Granite 生态衔接</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Cohere Transcribe</span><p>精度接近但 Granite 完全开源可商用</p></div><div class="diff"><span class="vs">vs AR 系模型</span><p>NAR 是延迟优势来源</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="" target="_blank" rel="noopener">IBM Granite Speech 4.1（无公开论文 PDF，以官方发布为准）</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p class="muted">本模型未附公开论文链接（闭源或仅发布页）。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：IBM Granite 41 采用“编码器+NAR 解码”的非自回归结构以并行输出文本，定位为低延迟、可嵌入 Granite LLM 生态的开放 ASR。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 明确其为 NAR（mask-predict/CTC+NAR）且 Apache 2.0 全开源。与同类对比：相比 cohere/meta 的自回归/统一建模，NAR 显著降低首字延迟，且与 Granite LM 打通便于后续摘要/问答。边界与不确定性：是否纯 NAR 或 CTC+NAR 混合为 DEEP 给出的候选，属合理推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：NAR 解码与编码器联合优化的目标，使其在流式/实时场景的吞吐与延迟表现应优于同规模自回归模型。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 称 NAR 减少自回归等待并联合优化。与同类对比：相对 kyutai_stt 的流式 Conformer/AR chunk，Granite41 的 NAR 并行性利于高并发批处理。边界与不确定性：NAR 常伴随质量-延迟权衡，具体 WER 与延迟未公开，为推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：尽管 Apache 2.0 开源可审计，其多语种覆盖广度与低资源语言表现未在 DEEP 中披露，存在能力边界不确定性。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 仅提“大规模语音-文本对齐”未列语言范围。与同类对比：对比 meta_omni 的“超多语种统一建模”，Granite41 的语种广度可能更聚焦。边界与不确定性：开源但缺公开基准，实际多语种表现属未证实推断。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/ibm_granite41">在交互知识库中打开 IBM Granite Speech 4.1 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

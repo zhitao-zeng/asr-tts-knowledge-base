@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WavTTS · 社区/工业 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="首个原始波形生成式 TTS：DiT+flow matching 直接建模波形，配多尺度 mel 监督，逼近潜空间 SOTA。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/wavtts/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "WavTTS · 社区/工业",
+  "about": {
+    "@type": "Thing",
+    "name": "WavTTS",
+    "alternateName": "社区/工业 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "社区/工业"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-06",
+  "description": "首个原始波形生成式 TTS：DiT+flow matching 直接建模波形，配多尺度 mel 监督，逼近潜空间 SOTA。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/wavtts/",
+  "articleBody": "首个原始波形生成式 TTS：DiT+flow matching 直接建模波形，配多尺度 mel 监督，逼近潜空间 SOTA。\n\n## 设计动机\n主流零样本 TTS 依赖 VAE 潜空间或 mel 频谱等压缩表征，虽提升效率却带来信息损失与非端到端训练。WavTTS 主张直接建模原始波形以消除中间表征损失，但原始波形序列极长（16kHz 下每秒 16000 样本），被视为难以扩展。WavTTS 是首个在波形空间逼近 SOTA 潜空间生成模型的原始波形 TTS。\n\n## 整体流水线\n基于 flow matching + Diffusion Transformer（DiT）。文本由 ConvNeXt V2 编码器编码，token 经 padding 对齐到音频 patch 长度，由 DiT 在隐式对齐下做语音填充（speech-infilling）实现零样本克隆：给定上下文音频与文本，预测被掩掉的波形段。\n\n## 关键模块\n- 波形 patchification：将 1D 波形切分为非重叠 patch，交由 DiT 处理，解决超长序列计算难题。\n- x-prediction 目标：直接预测干净波形 x1（而非速度 v），配合 flow matching 损失 L_FM = E[||x_theta - x1||^2 / (1-t)]，稳定高维空间训练。\n- 多尺度 mel 频谱监督：提供感知引导，加速收敛并提升质量。\n- 信号-噪声方差对齐 + 噪声偏移时间调度：训练与推理均把调度推向高噪声区间，显著提升鲁棒性、自然度与可懂度。\n\n## 本质区别\n相较 Latent Diffusion（VAE 潜空间）与 Mel Diffusion（丢相位），WavTTS 在时域 lossless 波形上做端到端生成，省去预训练 codec/声码器，挑战“高质量 TTS 必须依赖中间声学特征或离散 token”的假设。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>WavTTS</h1>
+    <div class="meta">社区/工业 · 2026-06 · 领域 TTS · 参数量 大 · 许可 开源</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>首个原始波形生成式 TTS：DiT+flow matching 直接建模波形，配多尺度 mel 监督，逼近潜空间 SOTA。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">波形 / 连续隐空间新路线</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>零样本/克隆质量（官方宣称，无统一数字）</td><td>综合</td><td class="v">undefined</td><td>逼近 SOTA 潜空间 TTS</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>主流零样本 TTS 依赖 VAE 潜空间或 mel 频谱等压缩表征，虽提升效率却带来信息损失与非端到端训练。WavTTS 主张直接建模原始波形以消除中间表征损失，但原始波形序列极长（16kHz 下每秒 16000 样本），被视为难以扩展。WavTTS 是首个在波形空间逼近 SOTA 潜空间生成模型的原始波形 TTS。</p><h3>整体流水线</h3><p>基于 flow matching + Diffusion Transformer（DiT）。文本由 ConvNeXt V2 编码器编码，token 经 padding 对齐到音频 patch 长度，由 DiT 在隐式对齐下做语音填充（speech-infilling）实现零样本克隆：给定上下文音频与文本，预测被掩掉的波形段。</p><h3>关键模块</h3><ul class="ml"><li>波形 patchification：将 1D 波形切分为非重叠 patch，交由 DiT 处理，解决超长序列计算难题。</li><li>x-prediction 目标：直接预测干净波形 x1（而非速度 v），配合 flow matching 损失 L_FM = E[||x_theta - x1||^2 / (1-t)]，稳定高维空间训练。</li><li>多尺度 mel 频谱监督：提供感知引导，加速收敛并提升质量。</li><li>信号-噪声方差对齐 + 噪声偏移时间调度：训练与推理均把调度推向高噪声区间，显著提升鲁棒性、自然度与可懂度。</li></ul><h3>本质区别</h3><p>相较 Latent Diffusion（VAE 潜空间）与 Mel Diffusion（丢相位），WavTTS 在时域 lossless 波形上做端到端生成，省去预训练 codec/声码器，挑战“高质量 TTS 必须依赖中间声学特征或离散 token”的假设。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练目标</h3><ul class="ml"><li>主损失为 flow matching（rectified flow，直线路径 x_t = (1-t)x0 + t x1），采用 x-prediction。</li><li>辅助损失为多尺度 mel 频谱重建监督，作为感知正则。</li></ul><h3>数据与缩放</h3><p>论文做了缩放分析，指出大规模数据 + 匹配模型容量是释放高维波形建模潜力的关键；并与 STFT/MDCT 等无损表征对比，证明直接时域生成的简洁有效。</p><h3>batches.json 数字解读</h3><ul class="ml"><li>已知结果：开源基准上质量逼近当前 SOTA 潜空间零样本 TTS，且显著优于此前端到端语音生成模型。该结论为相对排序（无单一精确指标给出），强调“首次让原始波形模型接近潜空间 SOTA”，即缩小了端到端波形生成与两阶段潜空间模型的质量鸿沟，而非在某具体 CER/SIM 上夺冠。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>开源基准</td><td>质量</td><td class="v">逼近 SOTA 潜空间 TTS</td><td>显著优于此前端到端语音生成模型</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>消融与关键发现</h3><ul class="ml"><li>预测目标消融：x-prediction 优于速度/噪声预测，在高维波形空间更稳定。</li><li>噪声调度消融：信号-噪声方差对齐 + 偏向高噪声区间的 time schedule 显著提升自然度与可懂度（核心发现之一）。</li><li>patchification 粒度：非重叠 patch 是可行且必要的序列压缩手段。</li><li>多尺度 mel 监督贡献：提供感知引导、加速收敛、改善质量。</li><li>表征对比：直接时域生成优于 STFT/MDCT 等无损中间表征的复杂度/效果权衡。</li></ul><h3>数字解读</h3><ul class="ml"><li>论文没有给出单一夺冠数字，其贡献指标是“相对此前端到端模型大幅领先、相对 SOTA 潜空间模型接近”。读者应理解为：WavTTS 把波形扩散的质量天花板抬到可与 Latent/Mel 扩散媲美的区间，验证了端到端波形生成的可行性方向。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>原始波形序列极长，计算/显存成本高于潜空间模型；长音频生成效率仍是瓶颈。</li><li>patchification 虽降序列长度，但采样步数与高分辨率仍带来推理开销。</li><li>零样本克隆依赖 speech-infilling 上下文，对极短参考或高噪参考的鲁棒性未充分验证。</li></ul><h3>批判</h3><p>评审视角：WavTTS 的方法学价值高——它用极简设计（patchify + x-pred + mel 监督 + 噪声调度）证明“端到端波形扩散”可行，对后续免 codec TTS 有启示。批判点：(1) “逼近 SOTA”仍暗示与潜空间模型存在质量差，端到端未必更优，只是范式更简洁；(2) 波形空间的高计算成本使其在实时/端侧短期不具竞争力；(3) 缺乏与 VoxCPM2、LongCat-AudioDiT 等连续潜空间免 token 方案的同等算力对比，结论外推需谨慎。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>首个原始波形生成式 TTS</li><li>DiT + flow matching 直接建模波形</li><li>多尺度 mel 监督做感知引导</li><li>证明波形空间扩散可规模化</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs CosyVoice3</span><p>WavTTS 无 codec，CosyVoice 经 codec/扩散</p></div><div class="diff"><span class="vs">vs VoxCPM2</span><p>WavTTS 波形级，VoxCPM2 连续隐空间</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2606.03455" target="_blank" rel="noopener">WavTTS arXiv:2606.03455</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2606.03455.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2606.03455" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>In this paper, we proposed WavTTS, an end-to-end zero-shot TTS framework that directly models speech in the raw waveform space.</blockquote>
+      <div class="src">— arXiv:2606.03455 Section 6 Conclusion</div>
+      <p><strong>核心创新</strong>：WavTTS 是首个<strong>直接在原始波形空间</strong>端到端生成语音的 TTS 框架，完全不依赖 neural codec、vocoder 或 VAE 中间表示，避开了离散/压缩表示带来的信息损失。对比 F5-TTS、E2 TTS 等基于 codec token 的 NAR 模型，它开辟了一条“原生波形生成”的简洁范式。</p>
+    </div>
+    <div class="ins">
+      <blockquote>By combining flow matching with a Diffusion Transformer backbone and an efficient patchification strategy, WavTTS enables tractable modeling of high-dimensional time-domain signals without relying on neural codecs, vocoders, or autoencoders.</blockquote>
+      <div class="src">— arXiv:2606.03455 Section 6 Conclusion</div>
+      <p><strong>关键方法</strong>：用 flow matching + DiT 骨干 + 非重叠 patchification 把超高维时域信号变可计算，并辅以 x-prediction 目标、多尺度 mel 监督、信号-噪声方差对齐。实验上它逼近基于压缩表示的 SOTA NAR 零样本 TTS，同时大幅超越更早的端到端语音生成系统，证明原生波形路线可行。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Sway Sampling provides only a limited degree of timestep shifting, which we find insufficient for high-dimensional raw waveform generation.</blockquote>
+      <div class="src">— arXiv:2606.03455 Section 3</div>
+      <p><strong>主要局限</strong>：高维原始波形的 ODE 积分对早期高噪声步极敏感，常规 Sway Sampling 的时延偏移不足，需专门提出 <strong>PolyShift</strong> 复合噪声偏移调度来抑制伪影。说明原生波形生成对推理调度更挑剔，调参/算力成本高于基于 mel/codec 的成熟方案，是其落地的主要代价边界。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2606.03455/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/wavtts">在交互知识库中打开 WavTTS 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

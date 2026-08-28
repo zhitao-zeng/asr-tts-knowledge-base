@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voxtral TTS · Mistral ｜ ASR/TTS 知识库</title>
+<meta name="description" content="4B 混合(AR 语义 token + flow-matching 声学 token)；自研 Voxtral Codec(VQ-FSQ)；3s 克隆、9 语、对 ElevenLabs Flash v2.5 胜率 68.4%。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/voxtral_tts/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Voxtral TTS · Mistral",
+  "about": {
+    "@type": "Thing",
+    "name": "Voxtral TTS",
+    "alternateName": "Mistral 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Mistral"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-03",
+  "description": "4B 混合(AR 语义 token + flow-matching 声学 token)；自研 Voxtral Codec(VQ-FSQ)；3s 克隆、9 语、对 ElevenLabs Flash v2.5 胜率 68.4%。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/voxtral_tts/",
+  "articleBody": "4B 混合(AR 语义 token + flow-matching 声学 token)；自研 Voxtral Codec(VQ-FSQ)；3s 克隆、9 语、对 ElevenLabs Flash v2.5 胜率 68.4%。\n\n## 设计动机\n现代 TTS 能“读对字”却常在长序列中丢失自然韵律、情感色彩与说话人一致性，Mistral 称之为“表现力鸿沟（Expressivity Gap）”。Voxtral 的核心洞察是把语义（离散、长程）与声学（密集、连续）分开处理：AR 负责长程语义连贯与说话人身份，flow-matching 负责低计算成本的密集声学细节。\n\n## 整体流水线（混合 AR + FM）\n- Voxtral Codec：卷积-Transformer 自编码器，混合 VQ-FSQ 量化。24kHz 单声道 → 12.5Hz（每 80ms 一帧），292 维潜空间拆为 256 维语义（VQ，码本 8192，由冻结 Whisper ASR 蒸馏，无强制对齐）+ 36 维声学（FSQ，21 级）。码率约 2.14 kbps。\n- AR 解码器：由 Ministral 3B 初始化的 decoder-only Transformer，参考音频 token 前置到文本 token，每帧 AR 生成一个语义 token，直至结束 token。\n- Flow-matching 变换器：双向 3 层，每帧 8 次 NFE（Euler 积分）+ CFG（α=1.2）生成 36 个声学浮值，再量化到 21 级 FSQ。\n总参约 4B（约 3.4B 解码器 + 390M FM + 300M codec）。\n\n## 本质区别\n相较纯 AR（VALLE 式，逐 token 预测密集声学，慢且易累积错误）或纯扩散/流（Voicebox 式），Voxtral 用“AR 语义骨架 + FM 声学 flesh”的混合，并以 ASR 蒸馏语义 token 实现 meaning-aware 量化；VQ-FSQ 混合量化在保真与效率间优于纯 RVQ。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Voxtral TTS</h1>
+    <div class="meta">Mistral · 2026-03 · 领域 TTS · 参数量 4B · 许可 CC BY-NC</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>4B 混合(AR 语义 token + flow-matching 声学 token)；自研 Voxtral Codec(VQ-FSQ)；3s 克隆、9 语、对 ElevenLabs Flash v2.5 胜率 68.4%。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">扩散-LM 混合系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>对 ElevenLabs Flash v2.5 胜率 (%)</td><td>胜率 (%)</td><td class="v">68.4</td><td>母语者人工评测</td></tr><tr><td>首包延迟 (ms)</td><td>延迟 (ms)</td><td class="v">70</td><td>首包 ~70ms</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>现代 TTS 能“读对字”却常在长序列中丢失自然韵律、情感色彩与说话人一致性，Mistral 称之为“表现力鸿沟（Expressivity Gap）”。Voxtral 的核心洞察是把语义（离散、长程）与声学（密集、连续）分开处理：AR 负责长程语义连贯与说话人身份，flow-matching 负责低计算成本的密集声学细节。</p><h3>整体流水线（混合 AR + FM）</h3><ul class="ml"><li>Voxtral Codec：卷积-Transformer 自编码器，混合 VQ-FSQ 量化。24kHz 单声道 → 12.5Hz（每 80ms 一帧），292 维潜空间拆为 256 维语义（VQ，码本 8192，由冻结 Whisper ASR 蒸馏，无强制对齐）+ 36 维声学（FSQ，21 级）。码率约 2.14 kbps。</li><li>AR 解码器：由 Ministral 3B 初始化的 decoder-only Transformer，参考音频 token 前置到文本 token，每帧 AR 生成一个语义 token，直至结束 token。</li><li>Flow-matching 变换器：双向 3 层，每帧 8 次 NFE（Euler 积分）+ CFG（α=1.2）生成 36 个声学浮值，再量化到 21 级 FSQ。</li></ul><p>总参约 4B（约 3.4B 解码器 + 390M FM + 300M codec）。</p><h3>本质区别</h3><p>相较纯 AR（VALLE 式，逐 token 预测密集声学，慢且易累积错误）或纯扩散/流（Voicebox 式），Voxtral 用“AR 语义骨架 + FM 声学 flesh”的混合，并以 ASR 蒸馏语义 token 实现 meaning-aware 量化；VQ-FSQ 混合量化在保真与效率间优于纯 RVQ。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方</h3><ul class="ml"><li>Codec 训练：重建损失 + 对抗损失 + 辅助 ASR 蒸馏损失（对齐语义 token 与文本内容）。</li><li>生成训练：语义交叉熵 + 单采样时间步的 flow matching 损失（静音段降权）。</li><li>后训练 DPO：把 Direct Preference Optimization 适配到“离散语义 + 连续声学”混合设定——语义用标准交叉熵 DPO，声学用 Flow-DPO；胜-负对用 WER、说话人相似度、响度一致性、UTMOS-v2、LM 评委等指标。约 3–30 秒参考音频做零样本克隆，9 语训练。</li></ul><h3>batches.json 数字解读</h3><ul class="ml"><li>已知结果：母语者人工评测中，多语种零样本克隆对 ElevenLabs Flash v2.5 胜率 68.4%；实测首包延迟约 70ms。68.4% 为成对盲测胜率（人类偏好 Voxtral 的自然度/表现力），显著高于随机基线 50%，表明在跨语种克隆听感上明显优于 ElevenLabs 旗舰；70ms TTFT 印证其低延迟实时友好定位（注：同族 Voxtral Mini Realtime 为 ASR，流式延迟约 480ms、首包更低，二者构成实时语音栈听/说两端，但延迟量级不同）。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>人工评测(母语者)</td><td>对 ElevenLabs Flash v2.5 胜率</td><td class="v">68.4%</td><td>多语种克隆自然度/表现力</td></tr><tr><td>实测</td><td>首包延迟</td><td class="v">~70ms</td><td>实时友好</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>消融与关键发现</h3><ul class="ml"><li>声学生成范式对比：flow-matching 在人工评测的表现力上优于 MaskGIT 与 Depth Transformer；且 FM 仅需 8 NFE，而 Depth Transformer 每帧需 36 个 AR 步，计算更优。</li><li>语义 token 设计：由 Whisper 蒸馏的 VQ 语义 token 实现 meaning-aware 量化，优于随机/自监督初始化。</li><li>DPO 收益：Flow-DPO + 语义 DPO 消除音量渐弱（volume tapering）与“幻觉词”等伪影；但在合成 DPO 数据上训练超过一个 epoch 会增加机械感伪影（重要训练警示）。</li><li>延迟优化：vLLM-Omni 用 CUDA Graphs（加速 47%）+ AR 与 Codec 解码异步流式，实现首包低延迟与 30+ 并发。</li></ul><h3>数字解读</h3><ul class="ml"><li>68.4% 胜率 vs ElevenLabs Flash v2.5：在 9 语多语种零样本克隆人工配对偏好中，人类评审以 68.4% 概率偏好 Voxtral，是“表现力鸿沟”被缩小的直接证据；需注意该评测聚焦克隆自然度/表现力，且 ElevenLabs 为商业强基线，结果有力但场景受限（默认语音场景胜率约 58.3%，相对低一些）。</li><li>约 70ms TTFT：TTS 侧低首包延迟，支撑实时对讲；同族 ASR（Voxtral Mini Realtime）流式延迟约 480ms，二者延迟量级不同但共同构成实时语音栈的听/说两端；但完整句子延迟仍取决于 AR 语义逐帧生成，长句端到端延迟高于纯 NAR 模型。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>CC BY-NC 不可商用；4B 规模推理成本不低。</li><li>语种限于 9 语；高噪/野外参考音频需更高 CFG，可能削弱情感细腻度。</li><li>AR 语义逐帧生成使长句端到端延迟高于纯 NAR；Codec 编码器权重未公开（社区仅持解码器+AR 主干，做声音克隆需从参考嵌入反解 codes）。</li></ul><h3>批判</h3><p>评审视角：Voxtral TTS 是“混合 AR+FM + 意义感知量化 + 适配混合设定的 DPO”的范式级示范，68.4% 胜率与 70ms TTFT 是其最硬的两项证据，且 CC BY-NC 开放权重利于研究复现。批判点：(1) 68.4% 胜率依赖其自建母语者评测协议，跨机构可复现性待验证，且默认语音场景 58.3% 胜率显示优势在“克隆/表现力”场景更突出；(2) “表现力鸿沟”的论述偏向产品叙事，缺乏与 GPT-SoVITS、CosyVoice 等开源系统在同等条件下的可控表现力量化对比；(3) AR 语义主干使严格实时长句仍有延迟天花板，Codec 编码器闭源也限制了完全自托管的声音设计自由度。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>AR 语义 + flow-matching 声学混合</li><li>自研 Voxtral Codec(VQ-FSQ)</li><li>3s 克隆、9 语、~70ms 延迟</li><li>对 ElevenLabs 68.4% 胜率</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Qwen-Audio-3.0-TTS</span><p>Voxtral 混合架构+低延迟，Qwen-Audio 为榜首</p></div><div class="diff"><span class="vs">vs CosyVoice3</span><p>同混合，Voxtral 偏实时低延迟+自研 codec</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2603.25551" target="_blank" rel="noopener">Voxtral TTS arXiv:2603.25551</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2603.25551.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2603.25551" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>We introduce Voxtral TTS, an expressive multilingual text-to-speech model that generates natural speech from as little as 3 seconds of reference audio. Voxtral TTS adopts a hybrid architecture that combines auto-regressive generation of semantic speech tokens with flow-matching for acoustic tokens.</blockquote>
+      <div class="src">— arXiv:2603.25551 Abstract</div>
+      <p><strong>核心创新</strong>：Voxtral TTS 用 <strong>混合架构</strong>——AR 生成语义 token 保证长程一致，flow-matching 生成声学 token 保证丰富声学细节——仅需 3 秒参考音频即做多语零样本克隆。相比纯 AR（VALL-E 系）或纯 NAR 扩散（E2/F5），它取两者之长，并为后续把 DPO 适配到“离散-连续混合”设定打下基础。</p>
+    </div>
+    <div class="ins">
+      <blockquote>In human evaluations conducted by native speakers, Voxtral TTS is preferred for multilingual voice cloning due to its naturalness and expressivity, achieving a 68.4% win rate over ElevenLabs Flash v2.5.</blockquote>
+      <div class="src">— arXiv:2603.25551 Abstract</div>
+      <p><strong>关键实验结论</strong>：在母语者人工评测中，Voxtral TTS 多语声音克隆以 <strong>68.4% 胜率</strong> 超过 ElevenLabs Flash v2.5（旗舰音也达 58.3%）。这是闭源商业 TTS 被开源/开放权重模型在主观偏好上反超的强信号，且模型仅 4B、支持 9 语言、低延迟流式，性价比突出。</p>
+    </div>
+    <div class="ins">
+      <blockquote>We optimize the model using the combined DPO loss along with the pretraining objective on high-quality speech for 1 epoch, as we found that training longer on synthetic data led to more robotic speech.</blockquote>
+      <div class="src">— arXiv:2603.25551 Section 3.2</div>
+      <p><strong>主要局限</strong>：偏好对齐（flow-DPO）对训练极敏感——在合成数据上多训一个 epoch 就会导致“更机械”的语音，被迫只用 1 epoch 且学习率压到 8e-8；同时权重以 <strong>CC BY-NC</strong> 发布（非商用），且拒绝采样构造偏好对依赖外部 LLM 与多个判分模型，偏好数据工程成本高、可控性受许可与数据质量双重约束。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2603.25551/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/voxtral_tts">在交互知识库中打开 Voxtral TTS 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

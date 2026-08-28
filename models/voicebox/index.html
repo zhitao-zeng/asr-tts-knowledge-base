@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voicebox · Meta ｜ ASR/TTS 知识库</title>
+<meta name="description" content="基于条件流匹配（flow matching）的语音修复式生成模型，通过上下文学习统一多种语音任务。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/voicebox/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Voicebox · Meta",
+  "about": {
+    "@type": "Thing",
+    "name": "Voicebox",
+    "alternateName": "Meta 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Meta"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2023-06",
+  "description": "基于条件流匹配（flow matching）的语音修复式生成模型，通过上下文学习统一多种语音任务。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/voicebox/",
+  "articleBody": "基于条件流匹配（flow matching）的语音修复式生成模型，通过上下文学习统一多种语音任务。\n\n\n## 生成目标\nVoicebox 是一个非自回归的流匹配（flow matching）生成模型，以 80 维 log-mel 谱图（100Hz）为预测目标，骨干为 24 层 Transformer（约 330M 参数）。\n\n## 填充式训练\n不同于从左向右逐帧生成，Voicebox 在给定部分音频上下文与对应文本的条件下，训练模型对掩蔽区域做语音填充（infilling）。这种掩蔽目标让单组权重可覆盖多种任务。\n\n## 前后向上下文\n模型可同时利用片段的前向与后向上下文做条件生成，比纯前向的 AR 模型更灵活，也为跨语言合成提供可能。\n"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Voicebox</h1>
+    <div class="meta">Meta · 2023-06 · 领域 TTS · 参数量 ~330M(语音骨干) · 许可 研究用途（权重未公开）</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>基于条件流匹配（flow matching）的语音修复式生成模型，通过上下文学习统一多种语音任务。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">波形 / 连续隐空间新路线</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>生成目标</h3><p>Voicebox 是一个非自回归的流匹配（flow matching）生成模型，以 80 维 log-mel 谱图（100Hz）为预测目标，骨干为 24 层 Transformer（约 330M 参数）。</p><h3>填充式训练</h3><p>不同于从左向右逐帧生成，Voicebox 在给定部分音频上下文与对应文本的条件下，训练模型对掩蔽区域做语音填充（infilling）。这种掩蔽目标让单组权重可覆盖多种任务。</p><h3>前后向上下文</h3><p>模型可同时利用片段的前向与后向上下文做条件生成，比纯前向的 AR 模型更灵活，也为跨语言合成提供可能。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据规模</h3><p>在英语约 6 万小时有声书与跨 6 种语言约 5 万小时、未经过滤或增强的语音上训练，采用条件流匹配目标与最优传输路径。</p><h3>上下文学习</h3><p>推理时无需任务专用微调，仅通过提示音频与文本即可执行零样本 TTS、跨语言合成、去噪、内容编辑与风格转换等任务。</p><h3>速度优势</h3><p>非自回归采样使其比自回归基线快至多 20 倍。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>LibriSpeech（零样本 TTS）</td><td>WER</td><td class="v">1.9%</td><td>对比 VALL-E 的 5.9%</td></tr><tr><td>LibriSpeech（零样本 TTS）</td><td>说话人相似度 SIM</td><td class="v">0.681</td><td>对比 VALL-E 的 0.580</td></tr><tr><td>推理速度</td><td>相对 VALL-E</td><td class="v">最高 20x 更快</td><td>论文口径</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>任务通用性</h3><p>论文系统对比了不同上下文（仅前向 / 前后向）与掩蔽策略对零样本 TTS、跨语言 TTS、去噪、编辑等任务的影响，验证填充式训练带来的通用能力。</p><h3>与 VALL-E 对比</h3><p>在 LibriSpeech 上，Voicebox 将零样本 WER 由 5.9% 降至 1.9%，SIM 由 0.580 提升至 0.681。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>权重未公开</h3><p>出于滥用风险，Meta 仅发布论文、音频样本与检测分类器，未公开模型权重。</p><h3>表征选择</h3><p>Voicebox 直接预测 log-mel 谱图而非离散 codec token，后续系统（如 E2-TTS、F5-TTS）多在 codec 或潜表示上进一步演进。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>将流匹配作为语音生成目标并大规模缩放</li><li>填充式训练实现单模型多任务上下文学习</li><li>可同时利用前后向上下文，比 AR 模型快约 20 倍</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs VALL-E</span><p>非自回归流匹配，WER 1.9% 显著优于 5.9%</p></div><div class="diff"><span class="vs">vs 传统单任务 TTS</span><p>一个模型覆盖 TTS/编辑/去噪/风格转换</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2306.15687" target="_blank" rel="noopener">Voicebox arXiv:2306.15687</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2306.15687.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2306.15687" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>Voicebox is a non-autoregressive flow-matching model trained to infill speech, given audio context and text, trained on over 50K hours of speech that are neither filtered nor enhanced.</blockquote>
+      <div class="src">— arXiv:2306.15687v2 Abstract</div>
+      <p>用 <strong>flow-matching（连续归一化流）</strong> 把语音生成建模为「文本引导的语音补全」任务，并以 GPT 式 in-context learning 获得任务泛化能力。它是首个把大规模生成模型「通用主义者」思路带入语音、且能在 50K 小时未清洗数据上训练的代表作。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Voicebox outperforms the state-of-the-art zero-shot TTS model VALL-E on both intelligibility (5.9% vs 1.9% word error rates) and audio similarity (0.580 vs 0.681) while being up to 20 times faster.</blockquote>
+      <div class="src">— arXiv:2306.15687v2 Abstract</div>
+      <p>关键结论：flow-matching 的 CNF 只需极少 NFE（&lt;10 步 ODE）即可生成，效率相较自回归 VALL-E 提升一个数量级，同时 WER/SIM 全面占优。证明<strong>非自回归连续生成</strong>在质量与速度上可同时击败 AR Codec LM。 </p>
+    </div>
+    <div class="ins">
+      <blockquote>Voicebox depends on a phonemizer and a forced aligner to produce frame-level phonetic transcript.</blockquote>
+      <div class="src">— arXiv:2306.15687v2 §7 Conclusion and Discussion</div>
+      <p>与后续 E2-TTS/F5-TTS/MaskGCT 不同，Voicebox 仍依赖<strong>音素化器 + 强制对齐器</strong>产出帧级音素标注，且无法对音色/情感/风格等属性做解耦独立控制。这条管线依赖正是后来 fully-NAR 模型刻意要消除的边界。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2306.15687/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/voicebox">在交互知识库中打开 Voicebox 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

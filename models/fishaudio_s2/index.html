@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fish Audio S2 · Fish Audio ｜ ASR/TTS 知识库</title>
+<meta name="description" content="开源 TTS：Dual-AR（4B Slow + 400M Fast AR）+ RVQ codec，80+ 语言、词级情绪控制；发布权重、微调代码与 SGLang 推理引擎（RTF 0.195、首包 &lt;100ms）。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/fishaudio_s2/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Fish Audio S2 · Fish Audio",
+  "about": {
+    "@type": "Thing",
+    "name": "Fish Audio S2",
+    "alternateName": "Fish Audio 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Fish Audio"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-03",
+  "description": "开源 TTS：Dual-AR（4B Slow + 400M Fast AR）+ RVQ codec，80+ 语言、词级情绪控制；发布权重、微调代码与 SGLang 推理引擎（RTF 0.195、首包 <100ms）。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/fishaudio_s2/",
+  "articleBody": "开源 TTS：Dual-AR（4B Slow + 400M Fast AR）+ RVQ codec，80+ 语言、词级情绪控制；发布权重、微调代码与 SGLang 推理引擎（RTF 0.195、首包 <100ms）。\n\n## 双自回归 Dual-AR 生成范式\n- 沿用 Fish-Speech 的 decoder-only Transformer 主干与 RVQ 音频 codec 路线，核心创新是把生成解耦为 Slow AR 与 Fast AR。\n- Slow AR 用预训练 Qwen3-4B 作为时序语义骨干，以自回归方式建模文本 token 与第一码本语义 token 的交错序列。\n- Fast AR 仅 4 层轻量 Transformer，按深度维度在每个时间步重建剩余 9 个声学 RVQ 码本，条件为 Slow AR 隐状态。\n- 多码本融合 Multi-Codebook Fusion 把 10 个码本 token 与 Slow AR token 聚合为连续向量供下一步使用，兼顾容量与长上下文（大于 16k）。\n\n## 音频分词器与语义蒸馏\n- 基于 Descript Audio Codec（DAC），分层 RVQ 共 10 个码本，44.1kHz 采样，约 21Hz 帧率，446M 参数。\n- 关键修改：因果卷积支持流式、因果滑动窗口 Transformer 处理长程依赖、第一码本通过 w2v-BERT 2.0 激活做语义蒸馏以稳定对齐。\n\n## 与之前 SOTA 的本质区别\n- 传统 codec-LM 一次性预测所有 RVQ 层导致序列爆炸、难以长上下文；S2 用慢语义加快声学解耦把高保真 44.1kHz 建模成本压到可控。\n- 用 DAC 而非完全自研 codec，并在第一码本显式注入语义监督，是其区别于 VALL-E 类系统的关键。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Fish Audio S2</h1>
+    <div class="meta">Fish Audio · 2026-03 · 领域 TTS · 参数量 4B · 许可 开源</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>开源 TTS：Dual-AR（4B Slow + 400M Fast AR）+ RVQ codec，80+ 语言、词级情绪控制；发布权重、微调代码与 SGLang 推理引擎（RTF 0.195、首包 &lt;100ms）。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AR codec-LM 系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>零样本/克隆质量（官方宣称，无统一数字）</td><td>综合</td><td class="v">undefined</td><td>社区实测克隆好</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>双自回归 Dual-AR 生成范式</h3><ul class="ml"><li>沿用 Fish-Speech 的 decoder-only Transformer 主干与 RVQ 音频 codec 路线，核心创新是把生成解耦为 Slow AR 与 Fast AR。</li><li>Slow AR 用预训练 Qwen3-4B 作为时序语义骨干，以自回归方式建模文本 token 与第一码本语义 token 的交错序列。</li><li>Fast AR 仅 4 层轻量 Transformer，按深度维度在每个时间步重建剩余 9 个声学 RVQ 码本，条件为 Slow AR 隐状态。</li><li>多码本融合 Multi-Codebook Fusion 把 10 个码本 token 与 Slow AR token 聚合为连续向量供下一步使用，兼顾容量与长上下文（大于 16k）。</li></ul><h3>音频分词器与语义蒸馏</h3><ul class="ml"><li>基于 Descript Audio Codec（DAC），分层 RVQ 共 10 个码本，44.1kHz 采样，约 21Hz 帧率，446M 参数。</li><li>关键修改：因果卷积支持流式、因果滑动窗口 Transformer 处理长程依赖、第一码本通过 w2v-BERT 2.0 激活做语义蒸馏以稳定对齐。</li></ul><h3>与之前 SOTA 的本质区别</h3><ul class="ml"><li>传统 codec-LM 一次性预测所有 RVQ 层导致序列爆炸、难以长上下文；S2 用慢语义加快声学解耦把高保真 44.1kHz 建模成本压到可控。</li><li>用 DAC 而非完全自研 codec，并在第一码本显式注入语义监督，是其区别于 VALL-E 类系统的关键。</li></ul></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据与多阶段流水线</h3><ul class="ml"><li>三阶段数据策展：源分离加 VAD 切分、基于 w2v-BERT 2.0 的语音质量模型做 SNR 与说话人一致性与可懂度过滤、Qwen3-Omni-30B 富转录 ASR 联合产出内容与自然语言声学标签（韵律、情绪、副语言、说话人轮次）。</li><li>总数据超过 1000 万小时音频，覆盖约 80 种语言，累计超过 5000 亿 token；上下文长度从 8192 渐进扩展到 16384。</li><li>模态交织策略：序列以 70% 概率被切分并与文本交错，强制单调对齐。</li></ul><h3>训练目标与阶段</h3><ul class="ml"><li>先对抗训练 446M codec（GAN 加 MPD/MSD/MRSD 判别器）；再交叉模态预训练；SFT 用富控制高质量数据加实时文本/音频增强；最后 RL 后训练。</li><li>损失以标准交叉熵预测 token 为主，codec 端为 GAN 重构加频谱加 KL 惩罚。</li></ul><h3>多奖励 RL 对齐 GRPO</h3><ul class="ml"><li>采用 Group Relative Policy Optimization，奖励 Rtotal = w1*RSTT + w2*RPref + w3*RSIM：RSTT 来自 ASR 逐 token 置信度（语义正确性），RPref 来自质量模型（声学偏好），RSIM 来自声纹模型余弦相似度（说话人相似）。</li><li>优势估计用组级统计、不做标准差归一化，策略损失加入逐 token KL 惩罚；用 rank-stabilized LoRA（r=16，alpha=64）微调 MLP 层。</li><li>batches.json 中 known_results 仅记社区实测克隆质量好，说明该模型尚未进入标准公开榜（如 Seed-TTS）作横向排名；其 Audio Turing Test 后验均值 0.483 经指令改写提升到 0.515、Fish Audio Instruction Benchmark 标签激活率 93.3% 才是对外可查的核心量化结果。社区实测的好应理解为相对 Fish-Speech v1 在指令跟随与长音频稳定性上的提升，而非单纯音质。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>SGLang 推理引擎</td><td>RTF</td><td class="v">0.195</td><td>流式生产级</td></tr><tr><td>首包音频</td><td>延迟</td><td class="v">&lt;100ms</td><td>time-to-first-audio</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>指令跟随与图灵测试</h3><ul class="ml"><li>Audio Turing Test 后验均值 0.483，经指令改写提升到 0.515；Emergent TTS Eval 对基线总胜率 81.88%。</li><li>Fish Audio Instruction Benchmark（自研）整体标签激活率 93.3%，质量分 4.51/5.0，证明内联标签（如 laugh、breath）高可靠。</li><li>这些数字对应 known_results 中克隆质量好的定性结论：模型在零样本克隆之外，关键增益是指令可控性与长音频稳定性。</li></ul><h3>数据奖励对齐消融</h3><ul class="ml"><li>论文核心消融是预训练与后训练使用同一组质量与 ASR 模型作奖励，消除两阶段分布偏移；对比显示 GRPO 多奖励联合优化在说话人相似与清晰度上优于单奖励。</li></ul><h3>长音频稳定性</h3><ul class="ml"><li>Long-TTS-Eval 上 S2 在新闻、论文、文学三类保持最低 WER，验证多说话人多轮生成长音频时跳词与音色漂移被显著抑制。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>低资源语言（训练数据小于 1000 小时）仍落后于 ElevenLabs 等闭源巨头；8B 级总参（4B Slow 加轻量 Fast 加 codec）推理成本高于小模型。</li><li>尽管 RTF 0.195、TTFA 小于 100ms，自回归骨架使超长句首包后仍有逐步生成延迟。</li></ul><h3>批判</h3><ul class="ml"><li>论文大量使用自研基准（Fish Audio Instruction Benchmark、Audio Turing Test 后验均值）作为主证据，缺乏与同代开源或闭源系统在统一第三方榜（如 Seed-TTS、CV3-Eval）上的完整对比表，SOTA 表述偏乐观。</li><li>多奖励 GRPO 中 RSTT/RPref/RSIM 权重为超参，论文未充分说明权重搜索与外部泛化性；LoRA 仅微调 MLP 层，可能限制音色空间的大规模塑形。</li><li>5000 亿 token、80 语的数据宣称缺乏按语种细分的规模披露，社区复现其数据管线门槛极高。</li></ul></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>开源 TTS + 微调代码 + SGLang 引擎</li><li>Dual-AR（Slow+Fast AR）+ RVQ codec</li><li>80+ 语言、词级情绪控制</li><li>RTF 0.195、首包 &lt;100ms</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs CosyVoice3</span><p>Fish 偏开源社区+指令控制，CosyVoice 偏大厂多语种</p></div><div class="diff"><span class="vs">vs Luna-TTS</span><p>Fish 为 AR，Luna 为非 AR</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2603.08823" target="_blank" rel="noopener">Fish Audio S2 arXiv:2603.08823</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2603.08823.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2603.08823" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：Fish Audio S2 采用 codec-LM 自回归生成范式，流程为文本/参考音频 → 语音 codec token → 神经解码器还原波形，属于当前主流的神经 codec 语音生成路线。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 架构字段明确 codec-LM 自回归与解码器还原波形。与同类对比：与 Qwen3-TTS、Orpheus 同属 codec-LM 家族，差异更多在训练规模、社区生态与克隆优化。边界与不确定性：自回归逐 token 生成意味着推理时延与长序列稳定性是该路线的普遍挑战，此为基于范式的推断而非实测。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：经大规模语音 codec 训练与零样本克隆优化，Fish Audio S2 在声音克隆的自然度与相似度上应有较强表现，且活跃的开源社区生态有助于生态扩展。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：训练字段提及「大规模语音 codec 训练；零样本克隆优化；社区生态活跃」。与同类对比：社区生态是相对 MiniMax、Qwen 等纯闭源商业模型的优势。边界与不确定性：DEEP Results 为空，无 MOS/相似度指标，克隆质量与跨语种泛化为推断；社区版本与官方闭源版本能力可能不一致。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：该模型未开源，可复现性与合规审计受限；自回归 codec 生成在极端参考或长文本下可能出现韵律重复、token 崩坏等不稳定现象。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 未标注开源，且架构为自回归 codec。与同类对比：相比扩散/混合范式（如 CosyVoice3）在长序列稳定性上更脆弱。边界与不确定性：闭源导致无法本地复现与做安全过滤审查；零样本克隆同样带来声音冒用合规风险，结论为基于属性与范式的推断。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2603.08823/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/fishaudio_s2">在交互知识库中打开 Fish Audio S2 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

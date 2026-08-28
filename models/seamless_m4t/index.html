@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SeamlessM4T · Meta ｜ ASR/TTS 知识库</title>
+<meta name="description" content="Meta 的大规模多语种多模态翻译模型，单一模型支持语音/文本到语音/文本翻译，覆盖约 100 种语言。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/seamless_m4t/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "SeamlessM4T · Meta",
+  "about": {
+    "@type": "Thing",
+    "name": "SeamlessM4T",
+    "alternateName": "Meta 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Meta"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2023-02",
+  "description": "Meta 的大规模多语种多模态翻译模型，单一模型支持语音/文本到语音/文本翻译，覆盖约 100 种语言。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/seamless_m4t/",
+  "articleBody": "Meta 的大规模多语种多模态翻译模型，单一模型支持语音/文本到语音/文本翻译，覆盖约 100 种语言。\n\n## 统一多模态\nSeamlessM4T 用一个统一模型覆盖语音识别、语音到文本翻译、语音到语音翻译、文本到语音翻译与文本到文本翻译。\n\n## 语音表征\n语音编码器基于 w2v-BERT 自监督表征，文本侧用 NLLB 多语种翻译模型初始化，解码端可生成文本或单位化语音。\n\n## 规模\n支持约 100 种语言的语音/文本翻译，其中约 35 种支持语音到语音。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>SeamlessM4T</h1>
+    <div class="meta">Meta · 2023-02 · 领域 ASR · 参数量 约 1.2B · 许可 CC-BY-NC 4.0（非商业）</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>Meta 的大规模多语种多模态翻译模型，单一模型支持语音/文本到语音/文本翻译，覆盖约 100 种语言。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">LLM / MoE 统一系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>统一多模态</h3><p>SeamlessM4T 用一个统一模型覆盖语音识别、语音到文本翻译、语音到语音翻译、文本到语音翻译与文本到文本翻译。</p><h3>语音表征</h3><p>语音编码器基于 w2v-BERT 自监督表征，文本侧用 NLLB 多语种翻译模型初始化，解码端可生成文本或单位化语音。</p><h3>规模</h3><p>支持约 100 种语言的语音/文本翻译，其中约 35 种支持语音到语音。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>多任务联合</h3><p>在大量多语种语音-文本平行数据上联合训练多个翻译任务，使单一检查点同时具备识别、翻译与语音生成能力。</p><h3>后续版本</h3><p>SeamlessM4T v2 进一步用更大数据与改进单位化语音合成（如 w2v-BERT 2.0、文本到单位模型）提升质量。</p><h3>鲁棒训练</h3><p>针对噪声与口音的鲁棒训练提升真实场景表现。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>多语种 ASR/翻译基准</td><td>WER/BLEU</td><td class="v">覆盖约 100 语言（见论文）</td><td>支持约 100 语言语音/文本翻译、约 35 语言语音到语音；精确指标见原论文</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>统一 vs 级联</h3><p>论文比较统一模型与级联方案，统一模型在保持质量的同时减少级联错误累积与延迟。</p><h3>语音单位</h3><p>单位化（hierarchical units）语音表示对跨模态翻译一致性与自然度至关重要。</p><h3>鲁棒性</h3><p>噪声与口音鲁棒训练显著提升实际部署表现。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>非商业许可</h3><p>采用 CC-BY-NC 4.0，限制商业部署。</p><h3>语音到语音覆盖</h3><p>仅约 35 种语言支持语音到语音，少于文本/语音识别覆盖。</p><h3>延迟</h3><p>虽优于级联，但自回归生成仍非极低延迟。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>单一模型统一语音/文本到语音/文本的多模态多语种翻译</li><li>基于 w2v-BERT 与单位化语音表征实现跨模态一致</li><li>推动语音到语音同声翻译研究（后续 SeamlessStreaming）</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Whisper</span><p>SeamlessM4T 聚焦翻译（含语音到语音）且覆盖约 100 语言，Whisper 以识别/英译为主</p></div><div class="diff"><span class="vs">vs MMS</span><p>MMS 专注 ASR/TTS/语种识别千余语言，SeamlessM4T 专注百语言翻译且含语音到语音</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2308.11596" target="_blank" rel="noopener">SeamlessM4T arXiv:2308.11596</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2308.11596.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2308.11596" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>We enable speech-to-speech translation with UnitY, a two-pass modeling framework that first generates text and subsequently predicts discrete acoustic units.</blockquote>
+      <div class="src">— arXiv:2308.11596v3 §4.3 UnitY</div>
+      <p>把 S2ST 拆成「先出文本、再出离散声学单元」的两段式解码（X2T 文本翻译 + T2U 文本到单元），用一个统一多任务模型同时覆盖 S2ST/S2TT/T2ST/T2TT/ASR 共 100 种语言。这是「一个模型通吃多模态多语言翻译」的范式起点，直接对标级联 ASR+T2TT 流水线。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Unlike cascaded models, the different components in UnitY can be jointly optimized.</blockquote>
+      <div class="src">— arXiv:2308.11596v3 §4.3</div>
+      <p>联合优化消除了级联系统的误差传播与领域不匹配，但代价是依赖<strong>离散声学单元</strong>这一中间语义表示来桥接多模态源-目标映射；语音自然度受限于单独训练的单元声码器（multilingual HiFi-GAN），本质上是「文本保真优先于声学细节」的工程取舍。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Due to the lack of available model-based techniques that could be applied to added toxicity or gender imbalance detection in this multimodal and massively multilingual setting, we used string-matching techniques that present known limitations.</blockquote>
+      <div class="src">— arXiv:2308.11596v3 §6.4 Limitations</div>
+      <p>在 100 语言规模下，对有害内容与性别偏差的评测只能退回词表字符串匹配：对黏着语/无分词语言误检严重，且 ASR 前置又引入假阴性。说明「统一多语言大模型」在<strong>安全与公平性评测</strong>上的代价远未解决，是后续多语言生成模型必须正视的边界。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2308.11596/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/seamless_m4t">在交互知识库中打开 SeamlessM4T 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

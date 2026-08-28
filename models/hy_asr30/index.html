@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>腾讯 Hy ASR 3.0 · 腾讯 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="MoE + LLM 架构，中文 WER 低至 3.34%，工业高精度代表。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/hy_asr30/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "腾讯 Hy ASR 3.0 · 腾讯",
+  "about": {
+    "@type": "Thing",
+    "name": "腾讯 Hy ASR 3.0",
+    "alternateName": "腾讯 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "腾讯"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-04",
+  "description": "MoE + LLM 架构，中文 WER 低至 3.34%，工业高精度代表。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/hy_asr30/",
+  "articleBody": "MoE + LLM 架构，中文 WER 低至 3.34%，工业高精度代表。\n\n## 设计动机\n腾讯混元 Hy ASR 3.0 preview（2026-08 发布）定位从逐字转写到理解语境的范式迁移：把最新一代 Hy3 大语言模型的语义理解塞进识别管线，让 ASR 先理解再说字，从而消歧同音词、结合上下文纠错。\n\n## 整体流水线\n基座是 MoE 架构的 Hy3 大语言模型（负责语义推理/上下文建模），语音侧是腾讯自研无监督语音 Encoder（数千万小时级无监督数据训练，提取声学表征）。两者做联合训练（encoder 与 LLM 在训练阶段就耦合），而非传统声学模型出候选、语言模型重排的两段式。架构上可视为无监督语音编码器 + MoE LLM 解码器的端到端对齐。\n\n## 与之前 SOTA 的本质区别\n注：batches.json 简述为 MoE 语音编码器，但公开资料表明 MoE 指的是 Hy3 LLM 主干（稀疏激活控成本），语音 Encoder 是自研无监督模型而非 MoE。其本质区别在于让 Encoder 与 LLM 在训练期耦合、识别即理解一体，并用多阶段强化学习塑形，而非把 LLM 当后置重排器。这使其能处理期中考试 vs 期终考试、致癌 vs 治癌等纯声学无法消歧的案例。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>腾讯 Hy ASR 3.0</h1>
+    <div class="meta">腾讯 · 2026-04 · 领域 ASR · 参数量 MoE+LLM · 许可 商业</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>MoE + LLM 架构，中文 WER 低至 3.34%，工业高精度代表。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">LLM / MoE 统一系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>中文场景 (WER%)</td><td>WER (%)</td><td class="v">3.34</td><td>中文场景 WER</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>腾讯混元 Hy ASR 3.0 preview（2026-08 发布）定位从逐字转写到理解语境的范式迁移：把最新一代 Hy3 大语言模型的语义理解塞进识别管线，让 ASR 先理解再说字，从而消歧同音词、结合上下文纠错。</p><h3>整体流水线</h3><p>基座是 MoE 架构的 Hy3 大语言模型（负责语义推理/上下文建模），语音侧是腾讯自研无监督语音 Encoder（数千万小时级无监督数据训练，提取声学表征）。两者做联合训练（encoder 与 LLM 在训练阶段就耦合），而非传统声学模型出候选、语言模型重排的两段式。架构上可视为无监督语音编码器 + MoE LLM 解码器的端到端对齐。</p><h3>与之前 SOTA 的本质区别</h3><p>注：batches.json 简述为 MoE 语音编码器，但公开资料表明 MoE 指的是 Hy3 LLM 主干（稀疏激活控成本），语音 Encoder 是自研无监督模型而非 MoE。其本质区别在于让 Encoder 与 LLM 在训练期耦合、识别即理解一体，并用多阶段强化学习塑形，而非把 LLM 当后置重排器。这使其能处理期中考试 vs 期终考试、致癌 vs 治癌等纯声学无法消歧的案例。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方</h3><p>语音 Encoder 与 Hy3 大语言模型联合训练，引入数千万小时级、多来源语音数据，覆盖多方言/口音/声学环境。大规模联合预训练后通过多阶段能力注入获得上下文感知、复杂场景适应、方言识别；SFT 数据覆盖 10 大方言片区 + 20 余个二级小片区。后训练引入多阶段强化学习，分别优化通用转写准确性、Any-context 上下文能力、复杂长尾场景。支持热词注入适配品牌名/人名/术语。</p><h3>known_results 数字解读</h3><p>batches.json 给中文场景 WER 3.34%、工业第一梯队。官方口径：开源评测集多语种 WER 约 3%，其中中文普通话 3.34%、英语 2.62%、粤语 3.12%；自建集覆盖 10 余方言、专业术语、高噪与耳语场景，官方称同样领先。作为 preview 版本，数字是官方发布口径，闭源不可独立复现，需以腾讯云 API 实测为准。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>中文场景</td><td>WER</td><td class="v">3.34%</td><td>工业第一梯队</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>关键消融与发现</h3><h3>MoE 稀疏度权衡</h3><p>据推测，Hy3 的 MoE 专家数/激活度是精度-推理成本的核心旋钮：稀疏激活在保持大模型容量的同时控制单次推理算力，使 LLM 级理解可在云端实时服务。具体专家配置未公开，属推断。</p><h3>上下文纠错贡献</h3><p>最有说明力的是同音词消歧案例：无 LLM 时筠州易被判为云州/郓州，接入 Hy3 上下文推理后借讨论苏轼苏辙背景锁定正确地名。这证明理解优先相比纯声学显著提升专名/多音字准确率，但量化消融（如去掉上下文模块后的 WER 增量）未公开。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>闭源商业 API（腾讯云），不可微调/自部署；以 preview 发布，指标为官方口径。</li><li>语种以中文/粤语/英语为主，广度弱于 Omnilingual/Canary 等。</li><li>强依赖 Hy3 LLM 推理，端侧不现实，延迟与成本高于轻量 Conformer。</li></ul><h3>批判</h3><p>WER 3.34% 与理解语境存在指标错配：传统 WER 衡量逐字准确率，而 Hy ASR 3.0 的价值在语义消歧，后者用 WER 无法充分捕捉（同音纠错可能不改变 WER 却改变正确性）。更需警惕的是，把 LLM 推理引入 ASR 会引入幻觉式纠错风险，模型可能因上下文偏向把正确声学词改成语义更顺但错误的词，在医疗/法律等不容错场景需谨慎。作为 preview，缺独立第三方基准与消融，真实边界待正式版与社区实测验证。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>MoE 稀疏激活兼顾容量与成本</li><li>LLM 解码强化语言理解</li><li>中文 WER 3.34%</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Cohere Transcribe</span><p>Hy 中文更强，Cohere 偏英文开放榜</p></div><div class="diff"><span class="vs">vs Qwen3-ASR</span><p>同为 LLM 系，分属腾讯/阿里生态</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://www.tencent.com/" target="_blank" rel="noopener">腾讯 Hy ASR 3.0（官方发布页，链接待补）</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="https://www.tencent.com/" target="_blank" rel="noopener">🔗 在线来源</a></p><p class="muted" style="font-size:12px">仅在线链接，PDF 未随仓库托管；可前往来源页查看原文。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：HY-ASR30 采用 MoE 稀疏语音编码器 + LLM 解码，将语音表征对齐到语言模型，定位为高精度中文/多方言大模型 ASR。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 明确 MoE 编码器 + LLM 解码、对齐到 LM。与同类对比：相对 cohere（无 LLM）、canary（疑似 LLM 关联），其显式用 LLM 解码提升语义理解。边界与不确定性：MoE 专家数与 LLM 基座未披露，为推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：稀疏激活在扩容模型容量的同时保持推理成本可控，使其在中文多方言/语义纠错上应强于同成本稠密模型。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 称稀疏激活平衡容量与成本、中文/多方言数据。与同类对比：对比 moonshine 的小模型，HY 走高容量路线。边界与不确定性：LLM 解码带来语义纠错增益，但具体 WER/延迟未公开，为推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：MoE+LLM 的两级结构带来更高系统复杂度和首包延迟，且闭源下方言覆盖边界与失败模式不可验证。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：架构描述含 MoE+LLM 两级。与同类对比：相对 NAR 的 granite41，其延迟更高；相对开源模型不可审计。边界与不确定性：多方言实际覆盖、长音频稳定性为风险，属推断。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/hy_asr30">在交互知识库中打开 腾讯 Hy ASR 3.0 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

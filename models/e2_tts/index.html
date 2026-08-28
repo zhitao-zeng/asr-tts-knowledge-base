@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E2-TTS · Microsoft ｜ ASR/TTS 知识库</title>
+<meta name="description" content="极简的全非自回归零样本 TTS，仅靠填充式流匹配从字符序列生成语音，无需时长/对齐模块。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/e2_tts/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "E2-TTS · Microsoft",
+  "about": {
+    "@type": "Thing",
+    "name": "E2-TTS",
+    "alternateName": "Microsoft 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Microsoft"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2024-06",
+  "description": "极简的全非自回归零样本 TTS，仅靠填充式流匹配从字符序列生成语音，无需时长/对齐模块。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/e2_tts/",
+  "articleBody": "极简的全非自回归零样本 TTS，仅靠填充式流匹配从字符序列生成语音，无需时长/对齐模块。\n\n\n## 极简输入\nE2-TTS 将文本转为带填充 token 的字符序列，与输入语音长度对齐，无需音素、时长模型或文本编码器。\n\n## 流匹配生成器\n基于流匹配的 mel 谱图生成器在音频填充任务上训练，整体为全非自回归结构，避免了单调对齐搜索等复杂技术。\n\n## 全并行推理\n推理时指定目标长度并行生成 mel 谱图，再由声码器合成波形。\n"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>E2-TTS</h1>
+    <div class="meta">Microsoft · 2024-06 · 领域 TTS · 参数量 未公开 · 许可 CC BY-SA 4.0（论文）</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>极简的全非自回归零样本 TTS，仅靠填充式流匹配从字符序列生成语音，无需时长/对齐模块。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">全非自回归扩散系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>极简输入</h3><p>E2-TTS 将文本转为带填充 token 的字符序列，与输入语音长度对齐，无需音素、时长模型或文本编码器。</p><h3>流匹配生成器</h3><p>基于流匹配的 mel 谱图生成器在音频填充任务上训练，整体为全非自回归结构，避免了单调对齐搜索等复杂技术。</p><h3>全并行推理</h3><p>推理时指定目标长度并行生成 mel 谱图，再由声码器合成波形。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>填充目标</h3><p>以带噪/掩蔽语音与文本为条件，训练模型预测完整 mel 谱图，学习语音的上下文重建。</p><h3>输入灵活性</h3><p>因结构简单，文本输入表示可灵活调整；论文提出若干推理期变体以提升可用性。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>LibriSpeech</td><td>零样本 TTS</td><td class="v">达到/超越 Voicebox 与 NaturalSpeech 3</td><td>论文口径，具体 WER/SIM 以原论文为准</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>去复杂化</h3><p>论文说明在去除时长模型、G2P、单调对齐后，仅用字符+填充 token 仍能取得与或超越 Voicebox、NaturalSpeech 3 的零样本能力。</p><h3>变体研究</h3><p>给出多种推理变体，平衡质量与效率。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>收敛与鲁棒性</h3><p>原始设计存在收敛慢、鲁棒性不足的问题，后续 F5-TTS 以此为基础改进。</p><h3>表示敏感</h3><p>对输入文本表示与填充策略较敏感，需要调参以保证稳定性。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>极简全非自回归流程，去除时长与对齐模块</li><li>字符+填充 token 表示即可驱动流匹配生成</li><li>证明无复杂组件也能达 SOTA 零样本 TTS</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs VALL-E</span><p>非自回归且无需 codec 自回归解码</p></div><div class="diff"><span class="vs">vs Voicebox</span><p>以字符填充替代 mel 填充，进一步简化输入</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2406.18009" target="_blank" rel="noopener">E2-TTS arXiv:2406.18009</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2406.18009.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2406.18009" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>We propose E2 TTS, a fully non-autoregressive (NAR), zero-shot text-to-speech system.</blockquote>
+      <div class="src">— arXiv:2406.18009v2 Abstract</div>
+      <p>首个彻底抛弃自回归的零样本 TTS：不预测 token 序列，而是直接在连续 mel 空间用 flow-matching 并行生成。相比 VALL-E 的 AR Codec LM，从根上消除了顺序采样的延迟与暴露偏差。</p>
+    </div>
+    <div class="ins">
+      <blockquote>We convert the input text into a character sequence with filler tokens to match the length of the input character sequence and the output mel-filterbank sequence.</blockquote>
+      <div class="src">— arXiv:2406.18009v2 §4 Conclusions</div>
+      <p>方法极简：字符序列用特殊 <strong>filler token &lt;F&gt;</strong> 填充到与 mel 等长，既不需要时长模型，也不依赖 G2P/强制对齐器。把「文本-语音对齐」这个 NAR 最大难题，转化为 filler 位置的隐式学习。</p>
+    </div>
+    <div class="ins">
+      <blockquote>While the neural codec language model-based zero-shot TTS achieved promising results, there are still a few limitations based on its auto-regressive (AR) model-based architecture.</blockquote>
+      <div class="src">— arXiv:2406.18009v2 §1 Introduction</div>
+      <p>E2 选择 fully-NAR 正是为消除 AR Codec LM 的三大痛点：顺序采样导致推理延迟、需精心调 tokenizer、长序列需 AR+NAR 混合技巧维稳。但 fully-NAR 以 filler 长度猜测 + 训练<strong>收敛慢、鲁棒性低</strong>为代价——这正是 F5-TTS 后续用 ConvNeXt 与 Sway Sampling 要补的。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2406.18009/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/e2_tts">在交互知识库中打开 E2-TTS 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

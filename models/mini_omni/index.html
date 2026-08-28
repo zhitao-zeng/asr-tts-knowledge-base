@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini-Omni · gpt-omni ｜ ASR/TTS 知识库</title>
+<meta name="description" content="首个开源的端到端实时语音对话模型，文本与语音 token 并行生成，仅 0.5B 参数即可实时交互。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/mini_omni/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Mini-Omni · gpt-omni",
+  "about": {
+    "@type": "Thing",
+    "name": "Mini-Omni",
+    "alternateName": "gpt-omni 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "gpt-omni"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2024-08",
+  "description": "首个开源的端到端实时语音对话模型，文本与语音 token 并行生成，仅 0.5B 参数即可实时交互。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/mini_omni/",
+  "articleBody": "首个开源的端到端实时语音对话模型，文本与语音 token 并行生成，仅 0.5B 参数即可实时交互。\n\n## 端到端语音对话\nMini-Omni 是首个开源的端到端实时语音对话模型，输入端可为语音或文本，输出端同时包含文本与语音，无需外部 ASR 或 TTS。\n\n## 并行生成\n通过文本-语音同时生成方案，让已生成的文本 token 指导语音 token，降低直接推理语音的难度，并消除等待完整文本的时间。\n\n## 组件\n以 Whisper-small 为语音编码器、Qwen2-0.5B 为语言骨干、SNAC 多码本方法做语音解码，仅 0.5B 参数。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Mini-Omni</h1>
+    <div class="meta">gpt-omni · 2024-08 · 领域 ASR · 参数量 0.5B (Qwen2-0.5B) · 许可 Apache 2.0</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>首个开源的端到端实时语音对话模型，文本与语音 token 并行生成，仅 0.5B 参数即可实时交互。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">LLM / MoE 统一系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>端到端语音对话</h3><p>Mini-Omni 是首个开源的端到端实时语音对话模型，输入端可为语音或文本，输出端同时包含文本与语音，无需外部 ASR 或 TTS。</p><h3>并行生成</h3><p>通过文本-语音同时生成方案，让已生成的文本 token 指导语音 token，降低直接推理语音的难度，并消除等待完整文本的时间。</p><h3>组件</h3><p>以 Whisper-small 为语音编码器、Qwen2-0.5B 为语言骨干、SNAC 多码本方法做语音解码，仅 0.5B 参数。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>三阶段训练</h3><p>阶段一冻结 LLM、仅训练 ASR/TTS 适配器做模态对齐；阶段二冻结适配器、让模型在音频输入下做文本推理；阶段三整体微调多模态数据。</p><h3>数据集</h3><p>引入 VoiceAssistant-400K（GPT-4o 生成、40 万条）用于语音助手微调，并融合 LibriTTS、VCTK、Open-Orca 等数据。</p><h3>Any Model Can Talk</h3><p>该训练框架可迁移到任意语言模型，少量参数与分阶段训练即可赋予语音交互能力。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>LibriSpeech test-clean</td><td>WER</td><td class="v">4.5%</td><td>Mini-Omni（0.5B）；Whisper-small 为 3.4%</td></tr><tr><td>LibriSpeech test-other</td><td>WER</td><td class="v">9.7%</td><td>Whisper-small 为 7.6%</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>解码策略</h3><p>对比基础并行、文本指导并行与批并行解码，批并行解码借文本推理增强语音质量效果最佳。</p><h3>文本指导</h3><p>让文本 token 先出、语音层顺序跟随，可明显降低语音推理错误。</p><h3>参数效率</h3><p>0.5B 小模型在保留文本能力前提下实现实时语音交互。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>语音精度</h3><p>纯语音 ASR 弱于专用模型：LibriSpeech clean/other 为 4.5% / 9.7%，高于 Whisper-small 的 3.4% / 7.6%。</p><h3>语音自然度</h3><p>音频输出质量与专业 TTS 仍有差距。</p><h3>规模</h3><p>0.5B 参数限制复杂推理与多任务深度。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>首个开源端到端实时语音到语音对话模型</li><li>文本与语音 token 并行生成消除级联延迟</li><li>三阶段训练使任意 LLM 快速获得语音能力</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Whisper</span><p>Mini-Omni 端到端语音到语音且实时，Whisper 仅做识别、需外接 TTS</p></div><div class="diff"><span class="vs">vs Qwen2-Audio</span><p>Mini-Omni 端到端语音输出且实时，Qwen2-Audio 以文本输出、非实时</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2408.16725" target="_blank" rel="noopener">Mini-Omni arXiv:2408.16725</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2408.16725.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2408.16725" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>To our best knowledge, Mini-Omni is the first fully end-to-end, open-source model for real-time speech interaction.</blockquote>
+      <div class="src">— arXiv:2408.16725 Abstract</div>
+      <p><strong>核心创新</strong>：首个<strong>全端到端、开源</strong>的实时语音交互模型，能「听-想-说」流式进行，无需 ASR→LLM→TTS 级联。它把语音对话从级联管线压缩成单一模型，延迟与工程复杂度大幅下降，是实时语音 agent 的重要路线验证。</p>
+    </div>
+    <div class="ins">
+      <blockquote>To achieve this capability, we propose a text-instructed speech generation method, along with batch-parallel strategies during inference to further boost the performance.</blockquote>
+      <div class="src">— arXiv:2408.16725 Abstract</div>
+      <p><strong>关键方法</strong>：用<strong>文本引导的语音生成</strong>（用文本模态监督音频生成）配合<strong>batch-parallel 推理</strong>（文本与音频并行解码）实现实时。仅 0.5B 参数即完成实时对话，证明小模型也能跑通端到端语音，但需文本模态「托底」以保证逻辑一致。</p>
+    </div>
+    <div class="ins">
+      <blockquote>while Mini-Omni&#39;s speech recognition performance slightly lags behind Whisper-small&#39;s decoder</blockquote>
+      <div class="src">— arXiv:2408.16725 Section 4</div>
+      <p><strong>主要局限（诚实写出）</strong>：Mini-Omni 的语音识别略<strong>落后于 Whisper-small</strong>解码器，且「仅音频模态」推理时逻辑一致性弱于文本推理（需 batch 生成弥补）。它是实时端到端的早期验证，音质/识别精度与纯级联方案仍有差距，适合低延迟场景而非最高精度场景。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2408.16725/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/mini_omni">在交互知识库中打开 Mini-Omni 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

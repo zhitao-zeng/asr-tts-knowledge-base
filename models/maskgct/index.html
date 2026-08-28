@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaskGCT · 港中文（深圳）等 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="全非自回归的掩码生成编解码 Transformer，无需文本-语音显式对齐与时长预测即可零样本 TTS。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/maskgct/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "MaskGCT · 港中文（深圳）等",
+  "about": {
+    "@type": "Thing",
+    "name": "MaskGCT",
+    "alternateName": "港中文（深圳）等 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "港中文（深圳）等"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2024-09",
+  "description": "全非自回归的掩码生成编解码 Transformer，无需文本-语音显式对齐与时长预测即可零样本 TTS。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/maskgct/",
+  "articleBody": "全非自回归的掩码生成编解码 Transformer，无需文本-语音显式对齐与时长预测即可零样本 TTS。\n\n\n## 两阶段掩码生成\nMaskGCT 为全非自回归模型：T2S 用文本预测自监督语音模型提取的语义 token；S2A 基于语义 token 预测声学 token；最后由声学编解码器重建波形。\n\n## Mask-and-Predict\n训练时学习在条件与提示下预测被掩蔽的语义/声学 token；推理时按指定长度并行生成，无需显式文本-语音对齐。\n\n## 去对齐去时长\n完全去除音素级时长预测与单调对齐，降低非自回归系统的不自然来源。\n"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>MaskGCT</h1>
+    <div class="meta">港中文（深圳）等 · 2024-09 · 领域 TTS · 参数量 未公开 · 许可 开源（代码与权重已发布，ICLR 2025）</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>全非自回归的掩码生成编解码 Transformer，无需文本-语音显式对齐与时长预测即可零样本 TTS。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">全非自回归扩散系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>两阶段掩码生成</h3><p>MaskGCT 为全非自回归模型：T2S 用文本预测自监督语音模型提取的语义 token；S2A 基于语义 token 预测声学 token；最后由声学编解码器重建波形。</p><h3>Mask-and-Predict</h3><p>训练时学习在条件与提示下预测被掩蔽的语义/声学 token；推理时按指定长度并行生成，无需显式文本-语音对齐。</p><h3>去对齐去时长</h3><p>完全去除音素级时长预测与单调对齐，降低非自回归系统的不自然来源。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>大规模数据</h3><p>在约 10 万小时真实场景（in-the-wild）多语言语音上训练。</p><h3>学习目标</h3><p>以掩码预测为训练目标，迭代式并行解码语义 token，再由 S2A 分层生成多层级声学 token 以保留细节。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>零样本 TTS 基准</td><td>质量/相似度/可懂度</td><td class="v">优于现有 SOTA 零样本 TTS</td><td>论文口径，具体数值以原论文为准</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>无对齐优势</h3><p>论文验证在无显式对齐与时长预测下，mask-and-predict 仍能取得更优自然度与可懂度。</p><h3>模块配置</h3><p>对比 T2S/S2A 各配置，说明语义 token 与分层声学 token 的作用。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>表征依赖</h3><p>性能受 SSL 语义 token 与声学编解码器质量制约。</p><h3>长度指定</h3><p>并行生成需指定长度，极端韵律与细粒度情感控制仍受限。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>全非自回归且无需文本-语音显式对齐</li><li>mask-and-predict 范式引入语音生成</li><li>两阶段 T2S+S2A 解耦语义与声学</li><li>10 万小时 in-the-wild 数据缩放</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs 自回归 TTS（VALL-E）</span><p>无 AR 解码，鲁棒性更好且有长度可控性</p></div><div class="diff"><span class="vs">vs 需时长预测的非自回归 TTS</span><p>去除音素级时长预测，自然度更高</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2409.00750" target="_blank" rel="noopener">MaskGCT arXiv:2409.00750</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2409.00750.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2409.00750" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>In this paper, we introduce Masked Generative Codec Transformer (MaskGCT), a fully non-autoregressive TTS model that eliminates the need for explicit alignment information between text and speech supervision, as well as phone-level duration prediction.</blockquote>
+      <div class="src">— arXiv:2409.00750v3 Abstract</div>
+      <p>用<strong>掩码生成（mask-and-predict）</strong>Transformer 实现 fully-NAR 零样本 TTS，同时去掉了显式文本-语音对齐监督与音素级时长预测——补齐了 NaturalSpeech 3 仍依赖对齐的最后一公里，是 NAR 范式对 AR 与扩散两条路线的汇合。</p>
+    </div>
+    <div class="ins">
+      <blockquote>MaskGCT is a two-stage model: in the first stage, the model uses text to predict semantic tokens extracted from a speech self-supervised learning (SSL) model, and in the second stage, the model predicts acoustic tokens conditioned on these semantic tokens.</blockquote>
+      <div class="src">— arXiv:2409.00750v3 Abstract</div>
+      <p>两阶段（T2S 文本→语义 token，S2A 语义→RVQ 声学 token）并以 <strong>VQ-VAE</strong> 量化 SSL 表征替代 k-means，单码本即最小化语义信息损失；并行迭代解码天然支持长度控制，在 100K 小时上 CMOS 追平真人。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Achieving more robust cross-lingual translation remains a focus for future work.</blockquote>
+      <div class="src">— arXiv:2409.00750v3 §Discussion</div>
+      <p>局限/未来在于跨语言鲁棒性仍不足，且「更适配语音生成的离散表示」本身仍是开放问题。说明掩码生成虽解了对齐束缚，但<strong>语义-声学表示的适用性</strong>与多语言泛化仍是待攻克的边界。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2409.00750/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/maskgct">在交互知识库中打开 MaskGCT 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

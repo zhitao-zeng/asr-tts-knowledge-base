@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VALL-E · Microsoft ｜ ASR/TTS 知识库</title>
+<meta name="description" content="将 TTS 建模为神经编解码器语言模型，仅凭 3 秒语音提示即可实现零样本音色克隆。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/valle/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "VALL-E · Microsoft",
+  "about": {
+    "@type": "Thing",
+    "name": "VALL-E",
+    "alternateName": "Microsoft 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Microsoft"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2023-01",
+  "description": "将 TTS 建模为神经编解码器语言模型，仅凭 3 秒语音提示即可实现零样本音色克隆。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/valle/",
+  "articleBody": "将 TTS 建模为神经编解码器语言模型，仅凭 3 秒语音提示即可实现零样本音色克隆。\n\n\n## 整体范式\nVALL-E 把文本到语音建模为神经编解码器语言模型任务，而非传统的声学特征回归。它使用 EnCodec 将语音离散化为多层 codec token，模型在 token 空间进行条件生成。\n\n## 两阶段生成\n第一阶段为自回归（AR）Transformer，根据音素序列与 3 秒注册语音的声学 token，逐层生成最粗粒度的语义音频 token；第二阶段为非自回归（NAR）Transformer，并行补全剩余细粒度 codec token。两层结构分别负责内容与声学细节。\n\n## 零样本克隆\n推理时仅需一段 3 秒的说话人提示，模型通过上下文学习复现其音色、情感、韵律乃至录音声学环境，无需任何说话人微调。\n"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>VALL-E</h1>
+    <div class="meta">Microsoft · 2023-01 · 领域 TTS · 参数量 ~1.4B(含 LLM) · 许可 研究用途</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>将 TTS 建模为神经编解码器语言模型，仅凭 3 秒语音提示即可实现零样本音色克隆。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AR codec-LM 系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>整体范式</h3><p>VALL-E 把文本到语音建模为神经编解码器语言模型任务，而非传统的声学特征回归。它使用 EnCodec 将语音离散化为多层 codec token，模型在 token 空间进行条件生成。</p><h3>两阶段生成</h3><p>第一阶段为自回归（AR）Transformer，根据音素序列与 3 秒注册语音的声学 token，逐层生成最粗粒度的语义音频 token；第二阶段为非自回归（NAR）Transformer，并行补全剩余细粒度 codec token。两层结构分别负责内容与声学细节。</p><h3>零样本克隆</h3><p>推理时仅需一段 3 秒的说话人提示，模型通过上下文学习复现其音色、情感、韵律乃至录音声学环境，无需任何说话人微调。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练数据</h3><p>模型在 LibriLight 数据集上训练，包含约 6 万小时英语语音、7000 多名说话人，多来自 LibriVox 公共领域有声书，规模是传统 TTS 语料的数百倍。</p><h3>训练目标</h3><p>以离散音频 codec token 的 next-token 预测为目标，AR 阶段用交叉熵建模粗 token 序列，NAR 阶段预测各细粒度层。大规模数据使模型学到丰富的说话人分布，从而支持推理时少样本上下文学习。</p><h3>未开源</h3><p>由于潜在的语音伪造与冒用风险，微软未公开模型权重，研究论文仅以研究用途发布。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>LibriSpeech</td><td>WER</td><td class="v">5.9%</td><td>零样本 TTS，优于 YourTTS 的 7.7%</td></tr><tr><td>LibriSpeech</td><td>说话人相似度 SIM</td><td class="v">0.580</td><td>零样本克隆，论文口径</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>组件作用</h3><p>论文通过 AR 与 NAR 两阶段的组合说明其对音质与稳定性的贡献，并展示改变随机种子可在保持内容下生成不同韵律。</p><h3>多样性</h3><p>VALL-E 能在相同文本与提示下产出多样语音，体现语言模型采样特性。</p><h3>复现情况</h3><p>因权重未公开，社区主要通过 Amphion 等开源项目进行近似复现与扩展（如 VALL-E X、VALL-E 2）。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>安全与可及性</h3><p>模型权重未发布，仅限研究用途，且存在被用于声音克隆与欺骗的风险，论文也呼吁构建检测模型。</p><h3>质量边界</h3><p>在部分样本上仍显机械感，长文本与复杂韵律的连贯性、可控性仍有提升空间。</p><h3>数据依赖</h3><p>零样本效果依赖提示音色在训练分布中的覆盖度，罕见口音或极端风格可能退化。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>首次将神经编解码器语言建模范式引入零样本 TTS</li><li>AR+NAR 两阶段生成离散音频 token</li><li>3 秒提示即可克隆未见说话人音色/情感/声学环境</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs 传统 mel+声码器 TTS</span><p>以离散 codec token 替代 mel 谱，走向语言模型范式</p></div><div class="diff"><span class="vs">vs YourTTS</span><p>零样本 WER 5.9% 优于其 7.7%</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2301.02111" target="_blank" rel="noopener">VALL-E arXiv:2301.02111</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2301.02111.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2301.02111" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>Specifically, we train a neural codec language model (called VALL-E) using discrete codes derived from an off-the-shelf neural audio codec model, and regard TTS as a conditional language modeling task rather than continuous signal regression as in previous work.</blockquote>
+      <div class="src">— arXiv:2301.02111v1 Abstract</div>
+      <p>VALL-E 把 TTS 重新定义为<strong>条件语言建模</strong>而非连续信号回归，用现成神经 Codec（EnCodec）的离散码作中间表示。这一「拿来主义」让语音合成首次借用 NLP 大语言模型的范式与规模化红利，是零样本 TTS 的奠基性转折。</p>
+    </div>
+    <div class="ins">
+      <blockquote>When we obtain the first quantizer codes by the AR model, we employ a non-autoregressive (NAR) model to generate codes of the other seven quantizers.</blockquote>
+      <div class="src">— arXiv:2301.02111v1 §4.2.2</div>
+      <p>第一码本用 AR 建模内容/音色、其余 7 个码本用 NAR 并行生成，是「用 AR 保语义、用 NAR 提速」的经典折中。但两套独立模型也埋下结构冗余——论文自己指出未来方向是用一个统一大模型预测所有码本。</p>
+    </div>
+    <div class="ins">
+      <blockquote>We observe that some words may be unclear, missed, or duplicated in speech synthesis.</blockquote>
+      <div class="src">— arXiv:2301.02111v1 §6 Conclusion, Limitations</div>
+      <p>因为音素→声学的 AR 部分存在<strong>乱序注意力对齐</strong>且缺乏约束，VALL-E 会出现漏字、重复、吞音等鲁棒性问题。这暴露了「Codec LM 范式」的根本代价：把语音当 token 序列生成就继承了自回归语言模型的对齐脆弱性，后续 NaturalSpeech/Voicebox 等转向 NAR/扩散正是为补这一刀。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2301.02111/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/valle">在交互知识库中打开 VALL-E 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

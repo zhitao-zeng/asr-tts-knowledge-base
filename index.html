@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASR / TTS 知识库 · 更新至 2026-08（论文精读版）</title>
+<title>ASR / TTS 知识库 · 截至 2026-08（论文精读版）</title>
 <meta name="description" content="面向论文精读的 ASR（语音识别）与 TTS（语音合成）开源/闭源模型知识库：覆盖 Whisper、SeamlessM4T、FireRedASR、CosyVoice、Seed-TTS 等 56 个模型的架构解读、能力维度矩阵、基准对比与逐句论文精读。">
 <meta name="keywords" content="ASR,TTS,语音识别,语音合成,语音大模型,Whisper,SeamlessM4T,FireRedASR,CosyVoice,Seed-TTS,VoiceCraft,MetaVoice,深度学习,知识库,论文精读">
 <meta name="author" content="Zhitao Zeng">
@@ -44,896 +44,1344 @@
           "@type": "ListItem",
           "position": 1,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Cohere Transcribe",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "2B Conformer 编码器 + 轻量 Transformer 解码器的开放权重 ASR，登顶 HuggingFace Open ASR Leaderboard（平均 WER 5.42%）。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/cohere_transcribe",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Cohere Transcribe",
+            "about": {
+              "@type": "Thing",
+              "name": "Cohere Transcribe",
+              "alternateName": "Cohere 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Cohere"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "2B Conformer 编码器 + 轻量 Transformer 解码器的开放权重 ASR，登顶 HuggingFace Open ASR Leaderboard（平均 WER 5.42%）。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/cohere_transcribe"
           }
         },
         {
           "@type": "ListItem",
           "position": 2,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "FireRedASR2 (2S)",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "工业级 All-in-One ASR 系统：ASR+VAD+LID+标点四模块一体；ASR 含 LLM(8B+) 与 AED(1B+) 两变体，中文/方言强劲。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fireredasr2",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "FireRedASR2 (2S)",
+            "about": {
+              "@type": "Thing",
+              "name": "FireRedASR2 (2S)",
+              "alternateName": "FireRed / 小红书 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "FireRed / 小红书"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "工业级 All-in-One ASR 系统：ASR+VAD+LID+标点四模块一体；ASR 含 LLM(8B+) 与 AED(1B+) 两变体，中文/方言强劲。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fireredasr2"
           }
         },
         {
           "@type": "ListItem",
           "position": 3,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "NIM4-ASR",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "2.3B 实时流式 LLM-ASR，约 600M 流式 Conformer + Qwen3-1.7B 解码；引入百万级音素 RAG 热词机制强化专名/术语识别。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/nim4_asr",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "NIM4-ASR",
+            "about": {
+              "@type": "Thing",
+              "name": "NIM4-ASR",
+              "alternateName": "NIO / 蔚来 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "NIO / 蔚来"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "2.3B 实时流式 LLM-ASR，约 600M 流式 Conformer + Qwen3-1.7B 解码；引入百万级音素 RAG 热词机制强化专名/术语识别。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/nim4_asr"
           }
         },
         {
           "@type": "ListItem",
           "position": 4,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "IBM Granite Speech 4.1",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "2B 非自回归(NAR)解码的识别模型，WER 5.33%，低延迟且可商用。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/ibm_granite41",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "IBM Granite Speech 4.1",
+            "about": {
+              "@type": "Thing",
+              "name": "IBM Granite Speech 4.1",
+              "alternateName": "IBM 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "IBM"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "2B 非自回归(NAR)解码的识别模型，WER 5.33%，低延迟且可商用。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/ibm_granite41"
           }
         },
         {
           "@type": "ListItem",
           "position": 5,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Moonshine v2",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "流式优先的小模型，比 Whisper 快约 100 倍，主打端侧/实时。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/moonshine_v2",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Moonshine v2",
+            "about": {
+              "@type": "Thing",
+              "name": "Moonshine v2",
+              "alternateName": "Useful Sensors 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Useful Sensors"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "流式优先的小模型，比 Whisper 快约 100 倍，主打端侧/实时。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/moonshine_v2"
           }
         },
         {
           "@type": "ListItem",
           "position": 6,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "On-Device Streaming ASR",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "将 Nemotron 语音模型量化至 0.67GB，可在端侧设备流式运行。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/on_device",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "On-Device Streaming ASR",
+            "about": {
+              "@type": "Thing",
+              "name": "On-Device Streaming ASR",
+              "alternateName": "NVIDIA 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "NVIDIA"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "将 Nemotron 语音模型量化至 0.67GB，可在端侧设备流式运行。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/on_device"
           }
         },
         {
           "@type": "ListItem",
           "position": 7,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Kyutai STT",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "端到端实时 STT，延迟约 0.5s，强调自然实时对话体验。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/kyutai_stt",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Kyutai STT",
+            "about": {
+              "@type": "Thing",
+              "name": "Kyutai STT",
+              "alternateName": "Kyutai 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Kyutai"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "端到端实时 STT，延迟约 0.5s，强调自然实时对话体验。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/kyutai_stt"
           }
         },
         {
           "@type": "ListItem",
           "position": 8,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Voxtral Mini Realtime",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "Mistral 原生流式 ASR（Voxtral Realtime）：约 480ms 延迟下质量与 Whisper 相当，13 种语言，Apache 2.0 开放权重。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/voxtral_mini",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Voxtral Mini Realtime",
+            "about": {
+              "@type": "Thing",
+              "name": "Voxtral Mini Realtime",
+              "alternateName": "Mistral 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Mistral"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "Mistral 原生流式 ASR（Voxtral Realtime）：约 480ms 延迟下质量与 Whisper 相当，13 种语言，Apache 2.0 开放权重。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/voxtral_mini"
           }
         },
         {
           "@type": "ListItem",
           "position": 9,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "NVIDIA Parakeet TDT",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "TDT 架构高吞吐 ASR，RTFx 约 3332，服务端批处理之王。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/parakeet_tdt",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "NVIDIA Parakeet TDT",
+            "about": {
+              "@type": "Thing",
+              "name": "NVIDIA Parakeet TDT",
+              "alternateName": "NVIDIA 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "NVIDIA"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "TDT 架构高吞吐 ASR，RTFx 约 3332，服务端批处理之王。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/parakeet_tdt"
           }
         },
         {
           "@type": "ListItem",
           "position": 10,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Canary-Qwen 2.5B",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "2.5B multilingual ASR，覆盖英/法/德/西，内置标点与 ITN。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/canary_qwen",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Canary-Qwen 2.5B",
+            "about": {
+              "@type": "Thing",
+              "name": "Canary-Qwen 2.5B",
+              "alternateName": "NVIDIA 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "NVIDIA"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "2.5B multilingual ASR，覆盖英/法/德/西，内置标点与 ITN。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/canary_qwen"
           }
         },
         {
           "@type": "ListItem",
           "position": 11,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "VibeVoice ASR",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "单次处理 60 分钟音频并附说话人日志，面向长会议/访谈。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/vibevoice_asr",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "VibeVoice ASR",
+            "about": {
+              "@type": "Thing",
+              "name": "VibeVoice ASR",
+              "alternateName": "微软 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "微软"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "单次处理 60 分钟音频并附说话人日志，面向长会议/访谈。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/vibevoice_asr"
           }
         },
         {
           "@type": "ListItem",
           "position": 12,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "StepAudio 2.5",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "统一音频-语言基座，ASR 分支用可验证多 token 并行解码(RTF 0.0053)，三赛道(A SR/TTS/实时对话) SOTA。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/stepaudio25",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "StepAudio 2.5",
+            "about": {
+              "@type": "Thing",
+              "name": "StepAudio 2.5",
+              "alternateName": "阶梯星辰 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "阶梯星辰"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "统一音频-语言基座，ASR 分支用可验证多 token 并行解码(RTF 0.0053)，三赛道(A SR/TTS/实时对话) SOTA。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/stepaudio25"
           }
         },
         {
           "@type": "ListItem",
           "position": 13,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Meta Omnilingual ASR",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "单模型覆盖 1600+ 语言，面向超多语言/长尾语种统一识别。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/meta_omni",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Meta Omnilingual ASR",
+            "about": {
+              "@type": "Thing",
+              "name": "Meta Omnilingual ASR",
+              "alternateName": "Meta 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Meta"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "单模型覆盖 1600+ 语言，面向超多语言/长尾语种统一识别。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/meta_omni"
           }
         },
         {
           "@type": "ListItem",
           "position": 14,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "腾讯 Hy ASR 3.0",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "MoE + LLM 架构，中文 WER 低至 3.34%，工业高精度代表。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/hy_asr30",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "腾讯 Hy ASR 3.0",
+            "about": {
+              "@type": "Thing",
+              "name": "腾讯 Hy ASR 3.0",
+              "alternateName": "腾讯 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "腾讯"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "MoE + LLM 架构，中文 WER 低至 3.34%，工业高精度代表。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/hy_asr30"
           }
         },
         {
           "@type": "ListItem",
           "position": 15,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Fun-Realtime-ASR",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "ASR WER 1.8% 登顶 Artificial Analysis 词错误率榜，三赛道‘大满贯’之一。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fun_realtime_asr",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Fun-Realtime-ASR",
+            "about": {
+              "@type": "Thing",
+              "name": "Fun-Realtime-ASR",
+              "alternateName": "阿里 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "阿里"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "ASR WER 1.8% 登顶 Artificial Analysis 词错误率榜，三赛道‘大满贯’之一。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fun_realtime_asr"
           }
         },
         {
           "@type": "ListItem",
           "position": 16,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Doubao / Seed-ASR 2.0",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "字节 Seed 统一语音基座，多任务（识别/理解/翻译）一体。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/seed_asr20",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Doubao / Seed-ASR 2.0",
+            "about": {
+              "@type": "Thing",
+              "name": "Doubao / Seed-ASR 2.0",
+              "alternateName": "字节跳动 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "字节跳动"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "字节 Seed 统一语音基座，多任务（识别/理解/翻译）一体。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/seed_asr20"
           }
         },
         {
           "@type": "ListItem",
           "position": 17,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Qwen3-ASR",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "Qwen 大模型原生语音识别，多语种、与 Qwen 生态无缝衔接。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/qwen3_asr",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Qwen3-ASR",
+            "about": {
+              "@type": "Thing",
+              "name": "Qwen3-ASR",
+              "alternateName": "阿里巴巴 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "阿里巴巴"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "Qwen 大模型原生语音识别，多语种、与 Qwen 生态无缝衔接。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/qwen3_asr"
           }
         },
         {
           "@type": "ListItem",
           "position": 18,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "GLM-ASR",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "基于 GLM 语义对齐的识别头，中文场景优化，开源可商用。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/glm_asr",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "GLM-ASR",
+            "about": {
+              "@type": "Thing",
+              "name": "GLM-ASR",
+              "alternateName": "智谱 AI 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "智谱 AI"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "基于 GLM 语义对齐的识别头，中文场景优化，开源可商用。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/glm_asr"
           }
         },
         {
           "@type": "ListItem",
           "position": 19,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Fun-ASR (SenseVoice 系)",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "FunAudioLLM 家族的识别模型（SenseVoice 路线），多语种+情感/事件标签。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fun_asr",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Fun-ASR (SenseVoice 系)",
+            "about": {
+              "@type": "Thing",
+              "name": "Fun-ASR (SenseVoice 系)",
+              "alternateName": "阿里 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "阿里"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "FunAudioLLM 家族的识别模型（SenseVoice 路线），多语种+情感/事件标签。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fun_asr"
           }
         },
         {
           "@type": "ListItem",
           "position": 20,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "ElevenLabs Scribe v2",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "商业 SOTA 转写，长音频 + 说话人 + 标点一体化，企业级体验。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/elevenlabs_scribe2",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "ElevenLabs Scribe v2",
+            "about": {
+              "@type": "Thing",
+              "name": "ElevenLabs Scribe v2",
+              "alternateName": "ElevenLabs 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "ElevenLabs"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "商业 SOTA 转写，长音频 + 说话人 + 标点一体化，企业级体验。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/elevenlabs_scribe2"
           }
         },
         {
           "@type": "ListItem",
           "position": 21,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Qwen-Audio-3.0-TTS",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "12.5Hz 低帧率 tokenizer + 五阶段渐进训练(LM+flow-matching 协同)，登顶 Artificial Analysis TTS 榜。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/qwen_audio_tts",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Qwen-Audio-3.0-TTS",
+            "about": {
+              "@type": "Thing",
+              "name": "Qwen-Audio-3.0-TTS",
+              "alternateName": "阿里巴巴 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "阿里巴巴"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "12.5Hz 低帧率 tokenizer + 五阶段渐进训练(LM+flow-matching 协同)，登顶 Artificial Analysis TTS 榜。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/qwen_audio_tts"
           }
         },
         {
           "@type": "ListItem",
           "position": 22,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Luna-TTS Family",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "扩散-LM 全非自回归 TTS：整个 RVQ token 网格固定步并行细化；实时变体块级 RTF 0.024、首块 41.6ms。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/luna_tts",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Luna-TTS Family",
+            "about": {
+              "@type": "Thing",
+              "name": "Luna-TTS Family",
+              "alternateName": "社区/工业 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "社区/工业"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "扩散-LM 全非自回归 TTS：整个 RVQ token 网格固定步并行细化；实时变体块级 RTF 0.024、首块 41.6ms。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/luna_tts"
           }
         },
         {
           "@type": "ListItem",
           "position": 23,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "ZONOS2",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "8B MoE(900M 激活) TTS，训练语料 200K→6M+ 小时，自然度/克隆 SOTA，Apache 2.0。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/zonos2",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "ZONOS2",
+            "about": {
+              "@type": "Thing",
+              "name": "ZONOS2",
+              "alternateName": "Zyphra 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Zyphra"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "8B MoE(900M 激活) TTS，训练语料 200K→6M+ 小时，自然度/克隆 SOTA，Apache 2.0。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/zonos2"
           }
         },
         {
           "@type": "ListItem",
           "position": 24,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "OmniVoice",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "600+ 语言全非自回归扩散-LM TTS：文本直接映射到多 codebook 声学 token，免去两阶段语义中介。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/omnivoice",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "OmniVoice",
+            "about": {
+              "@type": "Thing",
+              "name": "OmniVoice",
+              "alternateName": "k2-fsa / 社区 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "k2-fsa / 社区"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "600+ 语言全非自回归扩散-LM TTS：文本直接映射到多 codebook 声学 token，免去两阶段语义中介。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/omnivoice"
           }
         },
         {
           "@type": "ListItem",
           "position": 25,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Fun-Realtime-TTS",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "AA TTS Elo 1190 全球第 5，实时可控，三赛道大满贯之一。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fun_realtime_tts",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Fun-Realtime-TTS",
+            "about": {
+              "@type": "Thing",
+              "name": "Fun-Realtime-TTS",
+              "alternateName": "阿里 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "阿里"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "AA TTS Elo 1190 全球第 5，实时可控，三赛道大满贯之一。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fun_realtime_tts"
           }
         },
         {
           "@type": "ListItem",
           "position": 26,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "StepAudio 2.5 (TTS)",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "统一基座的 TTS 分支，用偏好 RLHF + 上下文丰富监督做可控、富表现力合成。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/stepaudio25_tts",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "StepAudio 2.5 (TTS)",
+            "about": {
+              "@type": "Thing",
+              "name": "StepAudio 2.5 (TTS)",
+              "alternateName": "阶梯星辰 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "阶梯星辰"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "统一基座的 TTS 分支，用偏好 RLHF + 上下文丰富监督做可控、富表现力合成。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/stepaudio25_tts"
           }
         },
         {
           "@type": "ListItem",
           "position": 27,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "WavTTS",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "首个原始波形生成式 TTS：DiT+flow matching 直接建模波形，配多尺度 mel 监督，逼近潜空间 SOTA。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/wavtts",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "WavTTS",
+            "about": {
+              "@type": "Thing",
+              "name": "WavTTS",
+              "alternateName": "社区/工业 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "社区/工业"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "首个原始波形生成式 TTS：DiT+flow matching 直接建模波形，配多尺度 mel 监督，逼近潜空间 SOTA。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/wavtts"
           }
         },
         {
           "@type": "ListItem",
           "position": 28,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "LongCat-AudioDiT",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "波形潜空间 NAR 扩散 TTS：仅 Wav-VAE + 扩散主干；自适应投影引导；Seed-ZH SIM 0.818(超 Seed-TTS 0.809)。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/longcat_audiodit",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "LongCat-AudioDiT",
+            "about": {
+              "@type": "Thing",
+              "name": "LongCat-AudioDiT",
+              "alternateName": "美团 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "美团"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "波形潜空间 NAR 扩散 TTS：仅 Wav-VAE + 扩散主干；自适应投影引导；Seed-ZH SIM 0.818(超 Seed-TTS 0.809)。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/longcat_audiodit"
           }
         },
         {
           "@type": "ListItem",
           "position": 29,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "VoxCPM2",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "2B 分层连续隐空间模型，不依赖任何外部离散 tokenizer；非对称 AudioVAE 16k→48k；30 语+9 方言、2M+ 小时，Apache 2.0。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/voxcpm2",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "VoxCPM2",
+            "about": {
+              "@type": "Thing",
+              "name": "VoxCPM2",
+              "alternateName": "OpenBMB 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "OpenBMB"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "2B 分层连续隐空间模型，不依赖任何外部离散 tokenizer；非对称 AudioVAE 16k→48k；30 语+9 方言、2M+ 小时，Apache 2.0。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/voxcpm2"
           }
         },
         {
           "@type": "ListItem",
           "position": 30,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Chatterbox-Flash",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "块扩散(chunk diffusion)流式 TTS，低首包延迟，适合实时对话。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/chatterbox_flash",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Chatterbox-Flash",
+            "about": {
+              "@type": "Thing",
+              "name": "Chatterbox-Flash",
+              "alternateName": "Resemble / 社区 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Resemble / 社区"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "块扩散(chunk diffusion)流式 TTS，低首包延迟，适合实时对话。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/chatterbox_flash"
           }
         },
         {
           "@type": "ListItem",
           "position": 31,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Confucius4-TTS",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "无文本(textless)跨语种克隆，用连续表征实现‘听一段即跨语克隆’。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/confucius4_tts",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Confucius4-TTS",
+            "about": {
+              "@type": "Thing",
+              "name": "Confucius4-TTS",
+              "alternateName": "网易 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "网易"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "无文本(textless)跨语种克隆，用连续表征实现‘听一段即跨语克隆’。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/confucius4_tts"
           }
         },
         {
           "@type": "ListItem",
           "position": 32,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Voxtral TTS",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "4B 混合(AR 语义 token + flow-matching 声学 token)；自研 Voxtral Codec(VQ-FSQ)；3s 克隆、9 语、对 ElevenLabs Flash v2.5 胜率 68.4%。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/voxtral_tts",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Voxtral TTS",
+            "about": {
+              "@type": "Thing",
+              "name": "Voxtral TTS",
+              "alternateName": "Mistral 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Mistral"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "4B 混合(AR 语义 token + flow-matching 声学 token)；自研 Voxtral Codec(VQ-FSQ)；3s 克隆、9 语、对 ElevenLabs Flash v2.5 胜率 68.4%。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/voxtral_tts"
           }
         },
         {
           "@type": "ListItem",
           "position": 33,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Fish Audio S2",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "开源 TTS：Dual-AR（4B Slow + 400M Fast AR）+ RVQ codec，80+ 语言、词级情绪控制；发布权重、微调代码与 SGLang 推理引擎（RTF 0.195、首包 <100ms）。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fishaudio_s2",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Fish Audio S2",
+            "about": {
+              "@type": "Thing",
+              "name": "Fish Audio S2",
+              "alternateName": "Fish Audio 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Fish Audio"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "开源 TTS：Dual-AR（4B Slow + 400M Fast AR）+ RVQ codec，80+ 语言、词级情绪控制；发布权重、微调代码与 SGLang 推理引擎（RTF 0.195、首包 <100ms）。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/fishaudio_s2"
           }
         },
         {
           "@type": "ListItem",
           "position": 34,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "MiniMax Speech 2.8",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "原生语气词/声音标签(breath、laugh 等)，10 秒克隆、40+ 语言（略早于窗口）。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/minimax28",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "MiniMax Speech 2.8",
+            "about": {
+              "@type": "Thing",
+              "name": "MiniMax Speech 2.8",
+              "alternateName": "MiniMax 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "MiniMax"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "原生语气词/声音标签(breath、laugh 等)，10 秒克隆、40+ 语言（略早于窗口）。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/minimax28"
           }
         },
         {
           "@type": "ListItem",
           "position": 35,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "IndexTTS2",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "AR TTS 中首个做‘精准时长控制 + 情感/音色解耦’，视频配音/音画对齐神器。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/indextts2",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "IndexTTS2",
+            "about": {
+              "@type": "Thing",
+              "name": "IndexTTS2",
+              "alternateName": "B站 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "B站"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "AR TTS 中首个做‘精准时长控制 + 情感/音色解耦’，视频配音/音画对齐神器。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/indextts2"
           }
         },
         {
           "@type": "ListItem",
           "position": 36,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "MegaTTS 3",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "稀疏对齐引导潜在 DiT：给定稀疏对齐边界降低难度又不限搜索空间；8 步生成 1 分钟语音。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/mega_tts3",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "MegaTTS 3",
+            "about": {
+              "@type": "Thing",
+              "name": "MegaTTS 3",
+              "alternateName": "字节跳动 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "字节跳动"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "稀疏对齐引导潜在 DiT：给定稀疏对齐边界降低难度又不限搜索空间；8 步生成 1 分钟语音。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/mega_tts3"
           }
         },
         {
           "@type": "ListItem",
           "position": 37,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "CosyVoice 3",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "LLM 语义 + 扩散声学的混合 TTS，多语种零样本克隆，社区与工业双热（跨 AR/混合两线）。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/cosyvoice3",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "CosyVoice 3",
+            "about": {
+              "@type": "Thing",
+              "name": "CosyVoice 3",
+              "alternateName": "阿里巴巴 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "阿里巴巴"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "LLM 语义 + 扩散声学的混合 TTS，多语种零样本克隆，社区与工业双热（跨 AR/混合两线）。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/cosyvoice3"
           }
         },
         {
           "@type": "ListItem",
           "position": 38,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Qwen3-TTS",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "Qwen 自回归 TTS，零样本克隆，与 Qwen 生态互通。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/qwen3_tts",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Qwen3-TTS",
+            "about": {
+              "@type": "Thing",
+              "name": "Qwen3-TTS",
+              "alternateName": "阿里巴巴 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "阿里巴巴"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "Qwen 自回归 TTS，零样本克隆，与 Qwen 生态互通。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/qwen3_tts"
           }
         },
         {
           "@type": "ListItem",
           "position": 39,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Orpheus TTS",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "情绪标签驱动的类人韵律 TTS，自回归 codec-LM。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/orpheus_tts",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Orpheus TTS",
+            "about": {
+              "@type": "Thing",
+              "name": "Orpheus TTS",
+              "alternateName": "社区 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "社区"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "情绪标签驱动的类人韵律 TTS，自回归 codec-LM。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/orpheus_tts"
           }
         },
         {
           "@type": "ListItem",
           "position": 40,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Higgs Audio v2",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "多说话者 + 情感，连续表征 TTS，强在角色与情绪表达。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/higgs2",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Higgs Audio v2",
+            "about": {
+              "@type": "Thing",
+              "name": "Higgs Audio v2",
+              "alternateName": "社区/工业 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "社区/工业"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "多说话者 + 情感，连续表征 TTS，强在角色与情绪表达。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/higgs2"
           }
         },
         {
           "@type": "ListItem",
           "position": 41,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Whisper",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "OpenAI 的弱监督大规模多语种语音识别与翻译模型，零样本泛化能力强。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/whisper",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Whisper",
+            "about": {
+              "@type": "Thing",
+              "name": "Whisper",
+              "alternateName": "OpenAI 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "OpenAI"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "OpenAI 的弱监督大规模多语种语音识别与翻译模型，零样本泛化能力强。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/whisper"
           }
         },
         {
           "@type": "ListItem",
           "position": 42,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Wav2Vec 2.0",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "Meta 提出的自监督语音表征学习框架，用掩码对比学习从无标注音频习得表征，少量标注即可微调出强 ASR。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/wav2vec2",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Wav2Vec 2.0",
+            "about": {
+              "@type": "Thing",
+              "name": "Wav2Vec 2.0",
+              "alternateName": "Meta 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Meta"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "Meta 提出的自监督语音表征学习框架，用掩码对比学习从无标注音频习得表征，少量标注即可微调出强 ASR。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/wav2vec2"
           }
         },
         {
           "@type": "ListItem",
           "position": 43,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "HuBERT",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "Meta 提出的隐藏单元 BERT，用离线聚类伪标签做 BERT 式掩码预测，在 LibriSpeech 上匹配或超越 wav2vec 2.0。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/hubert",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "HuBERT",
+            "about": {
+              "@type": "Thing",
+              "name": "HuBERT",
+              "alternateName": "Meta 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Meta"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "Meta 提出的隐藏单元 BERT，用离线聚类伪标签做 BERT 式掩码预测，在 LibriSpeech 上匹配或超越 wav2vec 2.0。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/hubert"
           }
         },
         {
           "@type": "ListItem",
           "position": 44,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Google USM",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "Google 的通用语音模型，用 BEST-RQ 在 1200 万小时、300+ 语言音频上自监督预训练，单一模型支持 100+ 语言 ASR 与翻译。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/google_usm",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Google USM",
+            "about": {
+              "@type": "Thing",
+              "name": "Google USM",
+              "alternateName": "Google 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Google"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "Google 的通用语音模型，用 BEST-RQ 在 1200 万小时、300+ 语言音频上自监督预训练，单一模型支持 100+ 语言 ASR 与翻译。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/google_usm"
           }
         },
         {
           "@type": "ListItem",
           "position": 45,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "MMS (Massively Multilingual Speech)",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "Meta 的大规模多语种语音项目，基于 wav2vec 2.0 把 ASR 扩展到 1107 种语言、TTS 与语种识别覆盖超过 4000 种语言。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/meta_mms",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "MMS (Massively Multilingual Speech)",
+            "about": {
+              "@type": "Thing",
+              "name": "MMS (Massively Multilingual Speech)",
+              "alternateName": "Meta 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Meta"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "Meta 的大规模多语种语音项目，基于 wav2vec 2.0 把 ASR 扩展到 1107 种语言、TTS 与语种识别覆盖超过 4000 种语言。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/meta_mms"
           }
         },
         {
           "@type": "ListItem",
           "position": 46,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Qwen2-Audio",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "阿里通义千问的音频-语言模型，以 Qwen2 为骨干统一处理语音识别、翻译、音频理解与问答等多任务。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/qwen2_audio",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Qwen2-Audio",
+            "about": {
+              "@type": "Thing",
+              "name": "Qwen2-Audio",
+              "alternateName": "Alibaba 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Alibaba"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "阿里通义千问的音频-语言模型，以 Qwen2 为骨干统一处理语音识别、翻译、音频理解与问答等多任务。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/qwen2_audio"
           }
         },
         {
           "@type": "ListItem",
           "position": 47,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Mini-Omni",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "首个开源的端到端实时语音对话模型，文本与语音 token 并行生成，仅 0.5B 参数即可实时交互。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/mini_omni",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Mini-Omni",
+            "about": {
+              "@type": "Thing",
+              "name": "Mini-Omni",
+              "alternateName": "gpt-omni 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "gpt-omni"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "首个开源的端到端实时语音对话模型，文本与语音 token 并行生成，仅 0.5B 参数即可实时交互。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/mini_omni"
           }
         },
         {
           "@type": "ListItem",
           "position": 48,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "SeamlessM4T",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "Meta 的大规模多语种多模态翻译模型，单一模型支持语音/文本到语音/文本翻译，覆盖约 100 种语言。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/seamless_m4t",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "SeamlessM4T",
+            "about": {
+              "@type": "Thing",
+              "name": "SeamlessM4T",
+              "alternateName": "Meta 的 ASR 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Meta"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "Meta 的大规模多语种多模态翻译模型，单一模型支持语音/文本到语音/文本翻译，覆盖约 100 种语言。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/seamless_m4t"
           }
         },
         {
           "@type": "ListItem",
           "position": 49,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "VALL-E",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "将 TTS 建模为神经编解码器语言模型，仅凭 3 秒语音提示即可实现零样本音色克隆。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/valle",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "VALL-E",
+            "about": {
+              "@type": "Thing",
+              "name": "VALL-E",
+              "alternateName": "Microsoft 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Microsoft"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "将 TTS 建模为神经编解码器语言模型，仅凭 3 秒语音提示即可实现零样本音色克隆。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/valle"
           }
         },
         {
           "@type": "ListItem",
           "position": 50,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Voicebox",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "基于条件流匹配（flow matching）的语音修复式生成模型，通过上下文学习统一多种语音任务。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/voicebox",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Voicebox",
+            "about": {
+              "@type": "Thing",
+              "name": "Voicebox",
+              "alternateName": "Meta 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Meta"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "基于条件流匹配（flow matching）的语音修复式生成模型，通过上下文学习统一多种语音任务。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/voicebox"
           }
         },
         {
           "@type": "ListItem",
           "position": 51,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "NaturalSpeech 3",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "用属性分解编解码器 FACodec 与分解扩散模型，将语音按属性子空间分别生成，实现超自然零样本 TTS。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/natural_speech3",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "NaturalSpeech 3",
+            "about": {
+              "@type": "Thing",
+              "name": "NaturalSpeech 3",
+              "alternateName": "Microsoft 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Microsoft"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "用属性分解编解码器 FACodec 与分解扩散模型，将语音按属性子空间分别生成，实现超自然零样本 TTS。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/natural_speech3"
           }
         },
         {
           "@type": "ListItem",
           "position": 52,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Audiobox",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "基于流匹配的统一音频生成模型，用自然语言描述与示例双重提示统一语音与音效生成。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/audiobox",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Audiobox",
+            "about": {
+              "@type": "Thing",
+              "name": "Audiobox",
+              "alternateName": "Meta 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Meta"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "基于流匹配的统一音频生成模型，用自然语言描述与示例双重提示统一语音与音效生成。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/audiobox"
           }
         },
         {
           "@type": "ListItem",
           "position": 53,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "E2-TTS",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "极简的全非自回归零样本 TTS，仅靠填充式流匹配从字符序列生成语音，无需时长/对齐模块。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/e2_tts",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "E2-TTS",
+            "about": {
+              "@type": "Thing",
+              "name": "E2-TTS",
+              "alternateName": "Microsoft 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "Microsoft"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "极简的全非自回归零样本 TTS，仅靠填充式流匹配从字符序列生成语音，无需时长/对齐模块。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/e2_tts"
           }
         },
         {
           "@type": "ListItem",
           "position": 54,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "F5-TTS",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "基于流匹配与 Diffusion Transformer 的全非自回归 TTS，用 ConvNeXt 细化文本并引入 Sway Sampling。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/f5_tts",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "F5-TTS",
+            "about": {
+              "@type": "Thing",
+              "name": "F5-TTS",
+              "alternateName": "上海交大 / 剑桥等 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "上海交大 / 剑桥等"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "基于流匹配与 Diffusion Transformer 的全非自回归 TTS，用 ConvNeXt 细化文本并引入 Sway Sampling。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/f5_tts"
           }
         },
         {
           "@type": "ListItem",
           "position": 55,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "MaskGCT",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "全非自回归的掩码生成编解码 Transformer，无需文本-语音显式对齐与时长预测即可零样本 TTS。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/maskgct",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "MaskGCT",
+            "about": {
+              "@type": "Thing",
+              "name": "MaskGCT",
+              "alternateName": "港中文（深圳）等 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "港中文（深圳）等"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "全非自回归的掩码生成编解码 Transformer，无需文本-语音显式对齐与时长预测即可零样本 TTS。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/maskgct"
           }
         },
         {
           "@type": "ListItem",
           "position": 56,
           "item": {
-            "@type": "SoftwareApplication",
-            "name": "Seed-TTS",
-            "applicationCategory": "AI/ML Model",
-            "operatingSystem": "Web",
-            "description": "字节跳动的大规模自回归 TTS 模型家族，零样本上下文学习在自然度与相似度上匹配真人语音。",
-            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/seed_tts",
-            "provider": {
+            "@type": "TechArticle",
+            "headline": "Seed-TTS",
+            "about": {
+              "@type": "Thing",
+              "name": "Seed-TTS",
+              "alternateName": "ByteDance 的 TTS 模型"
+            },
+            "author": {
               "@type": "Organization",
               "name": "ByteDance"
-            }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zhitao Zeng"
+            },
+            "inLanguage": "zh-CN",
+            "description": "字节跳动的大规模自回归 TTS 模型家族，零样本上下文学习在自然度与相似度上匹配真人语音。",
+            "url": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/#/model/seed_tts"
           }
         }
       ]
@@ -1126,7 +1574,7 @@ function wrapText(str,max){const out=[];let cur="";for(const ch of str){cur+=ch;
 /* 深度精读文本：支持 mini-markdown —— "## " 子标题、 "- " 要点、空行分段 */
 function renderDeep(t){
   if(!t) return "";
-  const lines=esc(t).split("\n");
+  const lines=String(t==null?"":t).split("\n");
   let html="", inUl=false;
   const closeUl=()=>{ if(inUl){html+="</ul>";inUl=false;} };
   for(const raw of lines){
@@ -1172,10 +1620,10 @@ function renderHome(){
   app.innerHTML=`
   <div class="hero">
     <h1>ASR / TTS 模型知识库 <span class="muted" style="font-size:15px">· 2026 前沿 + 近年代表作（含可下载 PDF 离线包）</span></h1>
-    <p>近半年（2026.02–2026.08，含中文方言与经典基础论文）语音识别与合成代表模型的<strong>论文深度解读</strong>：每个模型点进去有
+    <p>截至 2026-08：语音识别与合成代表模型的<strong>论文深度解读</strong>，覆盖近期前沿、边界工作与经典基础论文（含中文方言）。每个模型点进去有
     <strong>架构细节 · 训练数据与目标 · 关键实验结果（带具体数字）· 消融与关键发现 · 局限与开放问题 · 与别家技术差异</strong>。
     多架构模型（FireRedASR2、StepAudio 2.5）挂多条主线并拆分架构变体。</p>
-    <div class="stat">共 <b>${KB.models.length}</b> 个模型（ASR ${asr} · TTS ${tts}）｜ <b>${KB.lineages.length}</b> 条框架主线 ｜ 深度精读覆盖 <b>${deep}</b> 个 ｜ <b>${KB.models.filter(m=>m.pdf_local).length}</b> 篇论文已随包下载（断网可读）｜ 数据快照 2026-08-20</div>
+    <div class="stat">共 <b>${KB.models.length}</b> 个模型（ASR ${asr} · TTS ${tts}）｜ <b>${KB.lineages.length}</b> 条框架主线 ｜ 深度精读覆盖 <b>${deep}</b> 个 ｜ <b>${KB.models.filter(m=>m.pdf_local).length}</b> 篇论文已随包下载（断网可读）｜ 数据快照 2026-08</div>
   </div>
   <div class="grid g3" style="margin-top:16px">
     <a class="card model-card" href="#/models" style="text-decoration:none;color:inherit">
@@ -1250,7 +1698,11 @@ function renderModels(){
   $("#fDom").value=modelFilter.domain;$("#fDom").onchange=e=>{modelFilter.domain=e.target.value;renderModels();};
   $("#fOpen").value=modelFilter.open;$("#fOpen").onchange=e=>{modelFilter.open=e.target.value;renderModels();};
   $("#fPaper").value=modelFilter.paper;$("#fPaper").onchange=e=>{modelFilter.paper=e.target.value;renderModels();};
-  $("#fQ").value=modelFilter.q;$("#fQ").oninput=e=>{modelFilter.q=e.target.value;renderModels();};
+  $("#fQ").value=modelFilter.q;$("#fQ").oninput=e=>{
+    const s=e.target.selectionStart, en=e.target.selectionEnd;
+    modelFilter.q=e.target.value;renderModels();
+    const el=$("#fQ"); if(el){ el.focus(); try{ el.setSelectionRange(s,en); }catch(_){} }
+  };
 }
 
 /* ---------- 深度精读数据（由脚本注入；覆盖各模型的架构/训练/消融/局限字段） ---------- */
@@ -1347,7 +1799,7 @@ function renderModel(id){
       ${archHtml?`<div class="sec"><div class="h">架构变体（多架构拆分）</div>${archHtml}</div>`:""}
       <div class="sec"><div class="h">与别家技术差异</div>${diffHtml}</div>
       ${refHtml?`<div class="sec"><div class="h">参考来源</div><ul class="tight">${refHtml}</ul></div>`:""}
-      ${(m.pdf_local||m.paper_url)?`<div class="sec"><div class="h">论文 / 来源</div>${m.pdf_local?`<p><a class="link" href="${esc(m.pdf_local)}" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p><p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开。</p>`:''}${m.paper_url?`<p><a class="link" href="${esc(m.paper_url)}" target="_blank" rel="noopener">🔗 在线来源${/arxiv/.test(m.paper_url)?'（arXiv 摘要页）':''}</a></p><p class="muted" style="font-size:12px">PDF 已随仓库直接托管（非 LFS），克隆即离线可读；线上站点亦可直接打开 arXiv 原文。</p>`:''}</div>`:""}
+      ${(m.pdf_local||m.paper_url)?`<div class="sec"><div class="h">论文 / 来源</div>${m.pdf_local?`<p><a class="link" href="${esc(m.pdf_local)}" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p><p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p>`:''}${m.paper_url?`<p><a class="link" href="${esc(m.paper_url)}" target="_blank" rel="noopener">🔗 在线来源${/arxiv/.test(m.paper_url)?'（arXiv 摘要页）':''}</a></p>${m.pdf_local?'':`<p class="muted" style="font-size:12px">仅在线链接，PDF 未随仓库托管；可前往来源页查看原文。</p>`}`:''}</div>`:""}
       ${(typeof INSIGHTS!=="undefined"&&INSIGHTS[id])?`<div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div><p><a class="link" href="#/insight/${id}">打开逐句解读 →</a>（${INSIGHTS[id].length} 条原句/论点 + 解读）</p></div>`:""}
       ${m.reader_paper?`<div class="sec"><div class="h acc">全文双语精读 <span class="deep-badge">新</span></div><p><a class="link" href="papers-read/${esc(m.reader_paper)}/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>`:""}
     </div>

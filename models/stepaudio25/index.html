@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StepAudio 2.5 · 阶梯星辰 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="统一音频-语言基座，ASR 分支用可验证多 token 并行解码(RTF 0.0053)，三赛道(A SR/TTS/实时对话) SOTA。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/stepaudio25/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "StepAudio 2.5 · 阶梯星辰",
+  "about": {
+    "@type": "Thing",
+    "name": "StepAudio 2.5",
+    "alternateName": "阶梯星辰 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "阶梯星辰"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-05",
+  "description": "统一音频-语言基座，ASR 分支用可验证多 token 并行解码(RTF 0.0053)，三赛道(A SR/TTS/实时对话) SOTA。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/stepaudio25/",
+  "articleBody": "统一音频-语言基座，ASR 分支用可验证多 token 并行解码(RTF 0.0053)，三赛道(A SR/TTS/实时对话) SOTA。\n\n## 设计动机\nStepAudio 2.5（StepFun，arXiv 2605.23463）的核心理念是：文本与音频共享同一多模态表征空间，任务差异只是 operational regimes（数据构造、优化目标、解码约束）不同。由此一个 audio-language foundation 经后训练塑形出 ASR、TTS、Realtime 三种人格，而非三个独立模型。\n\n## 整体流水线（ASR 分支）\nASR 分支的关键创新是可验证多 token 解码（MTP，Multi-Token Prediction）。在标准自回归识别器之上冻结式对齐出多条 MTP 分支，每步并行提出若干未来 token，再由自回归主干逐位置验证，仅接受被验证路径支持的 token。MTP-5 配置下前 5 个位置的接受率分别约 0.95 / 0.88 / 0.80 / 0.71 / 0.64，平均每步接受约 5 个 token（满分 6）。\n\n## 与之前 SOTA 的本质区别\n相对扩大解码器导致逐 token 延迟线性增加的旧规律，StepAudio 2.5 用 MTP 把解码器规模与推理延迟解耦：多数步骤一次出多个已验证 token，使更大解码器不再等价于更慢。这是把 LLM 中 MTP 加速训练的思路首次系统性用于 ASR 落地。TTS 分支绕过音频编码器，把音频 token 当另一种语言纯自回归生成；Realtime 分支沿用同一主干做低延迟对话。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>StepAudio 2.5</h1>
+    <div class="meta">阶梯星辰 · 2026-05 · 领域 ASR · 参数量 大 · 许可 研究/有限开放</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>统一音频-语言基座，ASR 分支用可验证多 token 并行解码(RTF 0.0053)，三赛道(A SR/TTS/实时对话) SOTA。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">LLM / MoE 统一系</span> <span class="tag">扩散-LM 混合系</span><span class="tag warn">多架构模型</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>AISHELL-1</td><td>CER (%)</td><td class="v">0.71</td><td>AISHELL-1 CER</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>StepAudio 2.5（StepFun，arXiv 2605.23463）的核心理念是：文本与音频共享同一多模态表征空间，任务差异只是 operational regimes（数据构造、优化目标、解码约束）不同。由此一个 audio-language foundation 经后训练塑形出 ASR、TTS、Realtime 三种人格，而非三个独立模型。</p><h3>整体流水线（ASR 分支）</h3><p>ASR 分支的关键创新是可验证多 token 解码（MTP，Multi-Token Prediction）。在标准自回归识别器之上冻结式对齐出多条 MTP 分支，每步并行提出若干未来 token，再由自回归主干逐位置验证，仅接受被验证路径支持的 token。MTP-5 配置下前 5 个位置的接受率分别约 0.95 / 0.88 / 0.80 / 0.71 / 0.64，平均每步接受约 5 个 token（满分 6）。</p><h3>与之前 SOTA 的本质区别</h3><p>相对扩大解码器导致逐 token 延迟线性增加的旧规律，StepAudio 2.5 用 MTP 把解码器规模与推理延迟解耦：多数步骤一次出多个已验证 token，使更大解码器不再等价于更慢。这是把 LLM 中 MTP 加速训练的思路首次系统性用于 ASR 落地。TTS 分支绕过音频编码器，把音频 token 当另一种语言纯自回归生成；Realtime 分支沿用同一主干做低延迟对话。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方</h3><p>ASR 训练含 100K 小时短音频监督数据 + 50K 小时长音频（由多假设验证 + LLM 归一化构建）。长音频 pipeline：VAD 切 30s 片段，3 套 ASR 系统独立转写，ROVER token 级投票融合，分歧率过滤（大于 5% 丢弃），邻段重组为长样本，LLM 恢复标点/ITN 并保证跨段一致性。</p><h3>对齐与损失</h3><p>MTP 训练分两阶段：先 frozen-branch alignment（校准新分支不扰动已收敛的自回归识别器），再 joint calibration（主干与 lookahead 提案协同）。最终损失等于标准下一 token 交叉熵 + MTP 损失的指数衰减聚合（越远的预测权重越低）。后训练以 task-tailored RLHF 为主机制：ASR 用可验证奖励做对齐，TTS 用生成式奖励模型（GRM）做偏好 RLHF，Realtime 用生成式奖励模型 + 交互准则。</p><h3>known_results 数字解读</h3><p>batches.json 给出 AISHELL-1 CER 0.71%、RTF 0.0053（较 Qwen3-ASR 快 1.8 倍）。论文更全：中文平均 CER 2.97%（FLEURS-zh 2.63%），英文平均 WER 3.68%（LibriSpeech-clean 1.38%），长音频平均 3.70%（32K 上下文窗口）。RTF 0.0053 在 H800 单并发 30s 片段测得，比 Qwen3-ASR-1.7B（0.0094）快 1.8 倍、比 FunASR-Nano 快 11 倍、比 VibeVoice-ASR 快 19.6 倍。关键消融：加 MTP-5 后精度几乎不变（波动小于 0.06 绝对点），即加速几乎是白拿的。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>AISHELL-1</td><td>CER</td><td class="v">0.71%</td><td>ASR 分支，RTF 0.0053（较 Qwen3-ASR 快 1.8×）</td></tr><tr><td>标准 ASR/TTS/Realtime 基准</td><td>综合</td><td class="v">SOTA</td><td>三赛道均达 SOTA</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>关键消融与发现</h3><h3>MTP 加速几乎零精度代价</h3><p>对比 SFT 后未做 MTP 的基线，三语言/长音频平均误差波动在 0.03-0.06 绝对点内。原因是分阶段训练 + 自回归验证保证最终文本总由被验证路径决定，从而把激进加速与精度第一梯队同时拿到。</p><h3>lookahead 深度选择</h3><p>MTP-3/5/7 对比：前几位接受率几乎不随分支总数变化，说明早期位置确定性高、远端位置才是收益瓶颈；MTP-5 在加速与实现复杂度间最优。</p><h3>长音频上下文收益</h3><p>在长 LibriSpeech 变体上，32K 原生上下文避免分段边界错误，长音频错误率 3.70% 显著优于需 VAD 切段的 Qwen3-ASR-1.7B。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>统一基座规模大、部署重，离线批处理友好但严格端侧不现实。</li><li>RLHF/数据工厂成本高，权重开放程度有限（技术报告为主）。</li><li>长音频依赖 32K 上下文，超长会议仍需策略。</li></ul><h3>批判</h3><p>一个底座三种人格优雅，但工程现实是三分支各自有独立后训练与部署管线，所谓统一更多是表征与主干共享，推理时仍是不同服务。MTP 的加速依赖语音识别具有模态诱导的确定性（同音歧义少、文本可先验验证），在强口音/专业术语密集场景，验证路径可能更保守、接受率下降，加速收益收缩。另外 AISHELL-1 0.71% 已接近该测试集人工标注天花板，作为领先指标边际意义有限，更该看长音频与方言等真实分布。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>统一音频-语言表征，任务差异=运行模态而非架构</li><li>以 RLHF 为主机制定义复杂优化目标</li><li>ASR 可验证多 token 并行解码（RTF 0.0053）</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Qwen-Audio-3.0</span><p>StepAudio 以统一基座三赛道 SOTA 见长，Qwen 分榜领先</p></div><div class="diff"><span class="vs">vs FireRedASR2</span><p>StepAudio 偏统一基座，FireRedASR2 偏识别家族+流水线</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2605.23463" target="_blank" rel="noopener">StepAudio 2.5 arXiv:2605.23463</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2605.23463.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2605.23463" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>Rather than treating these tasks as architecturally distinct, we operate on the premise that once text and audio share a multimodal representational space, task specialization becomes a matter of operational regimes: data construction, optimization targets, and decoding constraints.</blockquote>
+      <div class="src">— arXiv:2605.23463 摘要</div>
+      <p>StepAudio 2.5 的理论前提是：<strong>ASR/TTS/实时对话不是三种架构，而是同一多模态表征空间里的不同「操作机制」</strong>（数据构造、优化目标、解码约束）。这比「加几个任务头」更彻底——它用统一 backbone + 分支路训练去逼近专用系统，是统一音频-语言模型路线的一次硬核验证。</p>
+    </div>
+    <div class="ins">
+      <blockquote>the ASR branch advances transcription efficiency via verifiable multi-token decoding; the TTS branch achieves controllable, expressive synthesis through preference-based RLHF and context-rich supervision; and the Realtime branch realizes low-latency, persona-consistent dialogue via generative reward modeling within an RLHF framework.</blockquote>
+      <div class="src">— arXiv:2605.23463 摘要</div>
+      <p>落地手段是 <strong>把 RLHF 做成三条专业化分支</strong>：ASR 用可验证多 token 解码（MTP）提速、TTS 用偏好 RLHF 控表达、Realtime 用生成式奖励模型保人格一致。亮点在于「可验证」信号用于 ASR/TTS 这种有 ground-truth 的任务，而开放式对话质量则用生成奖励兜底——任务性质决定奖励来源不同。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Despite this shared direction, simultaneously meeting the deployment requirements of all three capabilities within a single model remains challenging.</blockquote>
+      <div class="src">— arXiv:2605.23463 引言</div>
+      <p>作者也承认 <strong>单模型同时满足三套部署需求（长转录/可控合成/低延迟对话）本就困难</strong>，三者目标并不天然对齐。统一模型的隐性代价是：任一分支要做到极致都需专门 RLHF 工程，且极端条件下可能仍略逊于纯专用系统——所以「匹配/超越专用系统」的结论要分场景看，不能当成全面碾压。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2605.23463/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/stepaudio25">在交互知识库中打开 StepAudio 2.5 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

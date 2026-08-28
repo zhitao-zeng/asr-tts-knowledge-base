@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FireRedASR2 (2S) · FireRed / 小红书 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="工业级 All-in-One ASR 系统：ASR+VAD+LID+标点四模块一体；ASR 含 LLM(8B+) 与 AED(1B+) 两变体，中文/方言强劲。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/fireredasr2/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "FireRedASR2 (2S) · FireRed / 小红书",
+  "about": {
+    "@type": "Thing",
+    "name": "FireRedASR2 (2S)",
+    "alternateName": "FireRed / 小红书 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "FireRed / 小红书"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-03",
+  "description": "工业级 All-in-One ASR 系统：ASR+VAD+LID+标点四模块一体；ASR 含 LLM(8B+) 与 AED(1B+) 两变体，中文/方言强劲。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/fireredasr2/",
+  "articleBody": "工业级 All-in-One ASR 系统：ASR+VAD+LID+标点四模块一体；ASR 含 LLM(8B+) 与 AED(1B+) 两变体，中文/方言强劲。\n\n## 设计动机\n真实部署需要的不只是孤立 ASR，而是“切分→判语种→转写→加标点”的完整流水线。FireRedASR2S 把四个模块统一到一个可独立部署的管线，避免异构级联带来的接口不一致与误差传播。\n\n## 整体流水线（2S = 第二代 FireRedASR 扩展为 All-in-One System）\n波形 → FireRedVAD（切分/事件检测）→ FireRedLID（语种/方言路由）→ FireRedASR2（转写）→ FireRedPunc（标点）。各模块可独立调用，也可级联。\n\n## 关键模块\n- FireRedVAD：0.6M 参数的 DFSMN，支持流式 / 非流式 / 多标签 mVAD；用数千小时人工标注声学事件训练，而非 ASR forced-alignment 弱监督。\n- FireRedLID：Encoder-Decoder，100+ 语种 + 20+ 中文方言，分层两 token 解码（先语种后方言）。\n- FireRedASR2：两变体共享前端——LLM 版（8B+，接语言模型做解码）与 AED 版（1B+，标准注意力编码器-解码器）；支持普通话、方言、英文、code-switch 与歌词识别。\n- FireRedPunc：BERT 式（基于 LERT 初始化）的中英标点预测。\n\n## 与 SOTA 的本质区别\n不是单点结构创新，而是“工业级一体化 + 开源权重/代码”的组合；ASR 内部靠把监督数据扩到约 200k 小时、扩大方言覆盖来提升，而非新注意力机制。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>FireRedASR2 (2S)</h1>
+    <div class="meta">FireRed / 小红书 · 2026-03 · 领域 ASR · 参数量 LLM 8B+ / AED 1B+ · 许可 开源(权重)</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>工业级 All-in-One ASR 系统：ASR+VAD+LID+标点四模块一体；ASR 含 LLM(8B+) 与 AED(1B+) 两变体，中文/方言强劲。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AED / Conformer 高精度系</span> <span class="tag">LLM / MoE 统一系</span> <span class="tag">长音频 / 超多语言系</span><span class="tag warn">多架构模型</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>AISHELL-1</td><td>CER (%)</td><td class="v">0.57</td><td>AED 变体 AISHELL-1 CER（论文，离线）</td></tr><tr><td>中文通用基准 (CER% 均值)</td><td>CER (%)</td><td class="v">2.89</td><td>4 个公开中文基准平均</td></tr><tr><td>FLEURS (82 语, 句级准确率%)</td><td>准确率 (%)</td><td class="v">97.18</td><td>FLEURS 82 语</td></tr><tr><td>中文方言/口音 (CER% 均值)</td><td>CER (%)</td><td class="v">11.55</td><td>19 个方言/口音基准平均</td></tr><tr><td>多领域标点 (F1%)</td><td>F1 (%)</td><td class="v">78.9</td><td>多领域标点基准</td></tr><tr><td>VAD · FLEURS-VAD-102 (帧级 F1%)</td><td>F1 (%)</td><td class="v">97.57</td><td>FLEURS-VAD-102</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>真实部署需要的不只是孤立 ASR，而是“切分→判语种→转写→加标点”的完整流水线。FireRedASR2S 把四个模块统一到一个可独立部署的管线，避免异构级联带来的接口不一致与误差传播。</p><h3>整体流水线（2S = 第二代 FireRedASR 扩展为 All-in-One System）</h3><p>波形 → FireRedVAD（切分/事件检测）→ FireRedLID（语种/方言路由）→ FireRedASR2（转写）→ FireRedPunc（标点）。各模块可独立调用，也可级联。</p><h3>关键模块</h3><ul class="ml"><li>FireRedVAD：0.6M 参数的 DFSMN，支持流式 / 非流式 / 多标签 mVAD；用数千小时人工标注声学事件训练，而非 ASR forced-alignment 弱监督。</li><li>FireRedLID：Encoder-Decoder，100+ 语种 + 20+ 中文方言，分层两 token 解码（先语种后方言）。</li><li>FireRedASR2：两变体共享前端——LLM 版（8B+，接语言模型做解码）与 AED 版（1B+，标准注意力编码器-解码器）；支持普通话、方言、英文、code-switch 与歌词识别。</li><li>FireRedPunc：BERT 式（基于 LERT 初始化）的中英标点预测。</li></ul><h3>与 SOTA 的本质区别</h3><p>不是单点结构创新，而是“工业级一体化 + 开源权重/代码”的组合；ASR 内部靠把监督数据扩到约 200k 小时、扩大方言覆盖来提升，而非新注意力机制。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据规模与混合</h3><p>四模块分别训练后联合部署。ASR 监督数据扩至约 200k 小时，覆盖更广域、更多语种与方言；VAD 用高质量人工标注事件数据；LID 初始化自 AED 编码器；Punc 用大规模多域中英语料。</p><h3>训练目标</h3><p>各模块标准监督目标（VAD 帧级分类、LID 分类、ASR CTC/AR、Punc 序列标注）；无统一 RLHF，属工程化多任务而非对齐训练。</p><h3>known_results 数字解读</h3><ul class="ml"><li>FireRedASR2-LLM：4 个公开中文基准平均 CER 2.89%，19 个中文方言/口音基准平均 CER 11.55%，超越 Doubao-ASR / Qwen3-ASR / Fun-ASR。AED 变体约 3.05%，精度低于 LLM 变体约 0.16 点。</li><li>FireRedVAD：FLEURS-VAD-102 帧级 F1 97.57%、AUC-ROC 99.60%，优于 Silero / TEN / FunASR / WebRTC。</li><li>FireRedLID：FLEURS(82 语) 句级准确率 97.18%，优于 Whisper / SpeechBrain。</li><li>FireRedPunc：多域标点 F1 78.90%，显著优于 FunASR-Punc 的 62.77%。</li></ul><p>这些数字说明增益来自“每个子模块都做到对应基准 SOTA”的系统性工程，而非单点突破。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>4 个公开中文基准(平均)</td><td>CER</td><td class="v">2.89%</td><td>LLM 变体，优于 Doubao-ASR / Qwen3-ASR / Fun-ASR</td></tr><tr><td>19 个中文方言/口音基准(平均)</td><td>CER</td><td class="v">11.55%</td><td>LLM 变体</td></tr><tr><td>FLEURS-VAD-102</td><td>帧级 F1 / AUC-ROC</td><td class="v">97.57% / 99.60%</td><td>VAD，优于 Silero/TEN/FunASR/WebRTC</td></tr><tr><td>FLEURS(82 语)</td><td>句级准确率</td><td class="v">97.18%</td><td>LID，优于 Whisper/SpeechBrain</td></tr><tr><td>多领域标点基准</td><td>F1</td><td class="v">78.90%</td><td>Punc，优于 FunASR-Punc 62.77%</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>模块级消融</h3><p>论文给出四模块在各自基准上相对强基线的溢出收益；方言覆盖广度是 ASR 关键增益来源（19 方言平均 11.55% vs 竞品）。</p><h3>变体对比</h3><p>LLM 变体(8B+) vs AED 变体(1B+)：精度 AED 低约 0.16 CER 点但推理成本低一个数量级，构成精度-成本权衡。</p><h3>关键发现</h3><p>统一流水线在工程上优于级联开源组件；但论文未提供“去掉某个模块/换组件”的严格消融，更多是分别打榜而非端到端消融。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>LLM 变体 8B+ 推理成本高，端侧不现实；AED 变体精度低于 LLM 变体。</li><li>与统一音频-语言基座（如 StepAudio）相比，不具备对话/生成能力，只是识别流水线。</li><li>权重开源但训练数据与微调代码“coming soon”，目前复现成本不低。</li></ul><h3>批判</h3><p>第一，所有 SOTA 数字均为团队在“选定公开基准”上的自报，缺乏第三方盲测与难集（强口音、远场、重叠语音）细拆；11.55% 方言均值掩盖了低资源方言可能远高于此。第二，四模块级联存在误差传播：VAD 切错 → LID 判错 → ASR 错，论文未量化级联累积误差。第三，AED 与 LLM 双变体带来维护负担，且 LLM 变体的“8B+”未给精确参数量，透明度有限。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>四模块 All-in-One 流水线</li><li>LLM / AED 双变体按需选型</li><li>方言/口音覆盖广度(19 基准 11.55%)</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Cohere Transcribe</span><p>FireRedASR2 多模块+多变体+开源，Cohere 同为 Apache 2.0 开放权重、纯 ASR 单模型</p></div><div class="diff"><span class="vs">vs StepAudio 2.5</span><p>FireRedASR2 偏识别流水线，StepAudio 偏统一音频-语言基座</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2603.10420" target="_blank" rel="noopener">FireRedASR2S arXiv:2603.10420</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2603.10420.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2603.10420" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>In this technical report, we present FireRedASR2S, a state-of-the-art (SOTA), all-in-one ASR system integrating four modules: FireRedASR2 for ASR, FireRedVAD for VAD and multi-label VAD (mVAD), FireRedLID for multilingual and dialect LID, and FireRedPunc for punctuation prediction.</blockquote>
+      <div class="src">— arXiv:2603.10420 摘要/引言</div>
+      <p>FireRedASR2S 的核心思路是把 <strong>VAD/LID/ASR/Punc 四个原本常由异构工具拼凑的模块收进一条统一流水线</strong>，既统一接口又保留各模块独立部署。相比简单堆模块，它强调用 <strong>人工标注的声学事件</strong> 训练 VAD（而非 ASR forced-alignment 弱监督），这是工业级鲁棒性的关键。代价是 FireRedVAD 依赖人工标注数据，标注成本较高。</p>
+    </div>
+    <div class="ins">
+      <blockquote>FireRedASR2 achieves strong results, reaching 2.89% average CER on Mandarin (Avg-Mandarin-4), 11.55% on Chinese dialect (Avg-Dialect-19), and 9.67% on Avg-All-24.</blockquote>
+      <div class="src">— arXiv:2603.10420 实验</div>
+      <p>这组数字说明 FireRedASR2 在 <strong>中文（含方言）场景已显著领先 Doubao-ASR / Qwen3-ASR / Fun-ASR 等</strong> 公开对手。值得注意 11.55% 的方言平均 CER 仍是两位数，且 19 个方言基准跨度很大，落地到具体小语种仍需看单集表现，不能只盯平均值。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Future work will focus on further improving performance and expanding support for more languages.</blockquote>
+      <div class="src">— arXiv:2603.10420 结论</div>
+      <p>作者自承当前最大的 unfinished business 是 <strong>语言覆盖仍不完整</strong>——FireRedLID 虽标称 100+ 语言，但 ASR 主体强项仍在中文与方言。LLM 变体（8B+）精度最高但部署重，AED 变体（1B+）走效率路线，实际使用要在 <strong>精度-算力-语种覆盖</strong> 三者间权衡。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2603.10420/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/fireredasr2">在交互知识库中打开 FireRedASR2 (2S) 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

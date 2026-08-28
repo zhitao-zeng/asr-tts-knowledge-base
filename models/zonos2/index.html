@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZONOS2 · Zyphra ｜ ASR/TTS 知识库</title>
+<meta name="description" content="8B MoE(900M 激活) TTS，训练语料 200K→6M+ 小时，自然度/克隆 SOTA，Apache 2.0。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/zonos2/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "ZONOS2 · Zyphra",
+  "about": {
+    "@type": "Thing",
+    "name": "ZONOS2",
+    "alternateName": "Zyphra 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Zyphra"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-06",
+  "description": "8B MoE(900M 激活) TTS，训练语料 200K→6M+ 小时，自然度/克隆 SOTA，Apache 2.0。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/zonos2/",
+  "articleBody": "8B MoE(900M 激活) TTS，训练语料 200K→6M+ 小时，自然度/克隆 SOTA，Apache 2.0。\n\n## 开源首个 MoE TTS 主干\n- decoder-only Transformer + 稀疏 MoE 主干：总参 8B、激活仅 900M，路由设计沿用 Zyphra ZAYA 系 MoE++，结合 Grouped Query Attention；用高保真 DAC codec 直接预测 44.1kHz 离散 token。\n- 文本用原始 UTF-8 字节 tokenization（非音素化），支持分层语种覆盖与句中 code-switching，降低对语言特定音素化的依赖。\n- 采用 delay pattern（多 codebook 并行生成，重叠不同时间步的 codebook）提升生成效率；并配 voice cloning（stable/expressive 两模式）、speaking-rate 与 Quality Mode 等条件控制。\n\n## 说话人条件化\n- 两阶段退火处理说话人嵌入：含 LDA 投影 + 声学增广；零样本克隆无需说话人标签、无需克隆目标转写、支持不限长 utterance。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>ZONOS2</h1>
+    <div class="meta">Zyphra · 2026-06 · 领域 TTS · 参数量 8B (900M 激活) · 许可 Apache 2.0</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>8B MoE(900M 激活) TTS，训练语料 200K→6M+ 小时，自然度/克隆 SOTA，Apache 2.0。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">全非自回归扩散系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>ZTTS1-Eval (质量/相似度/WER)</td><td>综合</td><td class="v">undefined</td><td>竞争性 SOTA（自研基准）</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>开源首个 MoE TTS 主干</h3><ul class="ml"><li>decoder-only Transformer + 稀疏 MoE 主干：总参 8B、激活仅 900M，路由设计沿用 Zyphra ZAYA 系 MoE++，结合 Grouped Query Attention；用高保真 DAC codec 直接预测 44.1kHz 离散 token。</li><li>文本用原始 UTF-8 字节 tokenization（非音素化），支持分层语种覆盖与句中 code-switching，降低对语言特定音素化的依赖。</li><li>采用 delay pattern（多 codebook 并行生成，重叠不同时间步的 codebook）提升生成效率；并配 voice cloning（stable/expressive 两模式）、speaking-rate 与 Quality Mode 等条件控制。</li></ul><h3>说话人条件化</h3><ul class="ml"><li>两阶段退火处理说话人嵌入：含 LDA 投影 + 声学增广；零样本克隆无需说话人标签、无需克隆目标转写、支持不限长 utterance。</li></ul></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据与两阶段退火</h3><ul class="ml"><li>训练语料从 Zonos-v0.1 的 20 万小时扩展到 6M+ 小时多语，新数据管线 + 集成 ASR 过滤提升鲁棒与语种多样性；多阶段清洗在预训练/中期/退火逐步抬高文音对齐过滤阈值以减少幻觉/漏读/重复。</li><li>与已知结果呼应：brief 标注其在自研 ZTTS1-Eval 上质量/相似度/WER 达“竞争性 SOTA 并保持良好流式延迟”。这对应 8B MoE（容量）+ 6M 小时（数据）+ 两阶段说话人退火（保真）的协同，且 MoE 小前向 footprint 保住实时流式。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>ZTTS1-Eval(自研基准)</td><td>质量/相似度/WER</td><td class="v">竞争性 SOTA</td><td>保持良好流式延迟</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>数字与发现解读</h3><ul class="ml"><li>规模与数据缩放：1.6B 到 8B 总参(激活 900M) 把自然度/克隆保真推到 SOTA 区间；200K 到 6M 小时（约 707 年音频）是质量跃升的主因之一，配合 ensemble ASR 过滤降低错读。</li><li>MoE 收益：稀疏激活使 8B 容量在实时流式下仍可接受延迟，是“质量-延迟”帕累托的关键；但音频 token 的专家均衡仍是稳定性挑战（论文自陈）。</li><li>ZTTS1-Eval（自研，9 语干净 + 17 语野外，更新打分模型并加入韵律 TTSDS2 与多样性 DS-WED 指标）：ZONOS2 在质量(UTMOS)/说话人相似度具竞争性，Quality Mode 改善野外自发语音的可懂度(WER)，并在英文子集上韵律(TTSDS2)与生成多样性(DS-WED)显著更高。</li><li>已知结果含义：brief 中“竞争性 SOTA”应理解为——它不追求单点第一，而在质量/相似度/多语/延迟/多样性上全面强，尤其韵律与多样性指标领先；与 Seed-TTS-Eval/CosyVoice3-Eval 同样具竞争性。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>8B 总参仍偏大，MoE 路由在边缘设备支持有限；部分指标与顶级商业系统持平而非领先。</li><li>自研 ZTTS1-Eval 由厂商发布，与外部基准存在口径差异；一次性最长 1 分钟生成限制长内容需分段。</li><li>DAC 44.1kHz 高码率 token 带来更大建模难度，需靠规模与数据补偿稳定性。</li></ul><h3>批判</h3><ul class="ml"><li>“首个开源 MoE TTS”是真实架构贡献，但 8B 总参/900M 激活的 MoE 在端侧价值有限，更像“用规模换质量”而非架构效率革命；专家均衡不稳定的自陈问题暗示训练稳定性仍有代价。</li><li>ZTTS1-Eval 由同一团队发布，虽有 9/17 语覆盖与更新打分模型，但仍是 vendor benchmark，与外部 CV3/Seed 的横向可比性需第三方复现。</li><li>字节级输入虽提升多语鲁棒，却增加序列长度与首包成本；建议补充在一致协议下与 Luna-TTS / Qwen-Audio-3.0-TTS 的盲测 MOS 与延迟对照。</li></ul></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>8B MoE(900M 激活) 容量-效率平衡</li><li>6M+ 小时训练语料</li><li>Apache 2.0 全开源 + 自研 ZTTS1-Eval</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Luna-TTS</span><p>ZONOS2 重 MoE 容量与可控，Luna 重非 AR 范式</p></div><div class="diff"><span class="vs">vs OmniVoice</span><p>ZONOS2 偏可控/质量，OmniVoice 偏多语种</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2606.24320" target="_blank" rel="noopener">ZONOS2 arXiv:2606.24320</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2606.24320.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2606.24320" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>We pioneer the use of MoE models in the open-source TTS space, building upon the ZAYA1 architecture.</blockquote>
+      <div class="src">— arXiv:2606.24320 Section I Contributions</div>
+      <p><strong>核心创新</strong>：ZONOS2 是首个将 <strong>MoE（Mixture-of-Experts）</strong> 骨干引入开源 TTS 的工作，总参 8B、激活仅 900M，在保持低推理开销的同时把模型容量推到 SOTA 级。对比此前的稠密 AR TTS（如 VALL-E、NatureSpeech 系列），MoE 让开源社区第一次在“参数规模 vs. 推理成本”上对齐闭源大模型，是开放语音合成的重要分水岭。</p>
+    </div>
+    <div class="ins">
+      <blockquote>To achieve low latency, we use a delay pattern approach to codebook generation which generates multiple codebook tokens in parallel by overlapping the generation of different codebooks of different timesteps.</blockquote>
+      <div class="src">— arXiv:2606.24320 Section I</div>
+      <p><strong>关键方法</strong>：采用 delay pattern 让多个 RVQ codebook 在时间维上错位并行生成，而非逐 codebook 串行，从而把流式延迟压到可接受范围。代价是 codebook 预测与 delay 模式耦合，带来后续训练不稳定（见局限），但换来了接近实时的零样本克隆体验。</p>
+    </div>
+    <div class="ins">
+      <blockquote>A large portion of the instability in the final ZONOS2 model can be attributed to the inherent difficulty of delayed DAC token prediction.</blockquote>
+      <div class="src">— arXiv:2606.24320 Section VII Discussion</div>
+      <p><strong>主要局限</strong>：延迟 DAC token 预测本身训练难度高，是 ZONOS2 大量不稳定性的根源；论文明确把“探索替代音频 codec 以稳定训练、提升鲁棒性与推理效率”列为未来工作。换言之，其强表达力部分建立在较脆弱的训练动态之上，换 codec 是主要改进方向。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2606.24320/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/zonos2">在交互知识库中打开 ZONOS2 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

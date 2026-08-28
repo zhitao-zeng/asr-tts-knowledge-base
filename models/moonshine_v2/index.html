@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moonshine v2 · Useful Sensors ｜ ASR/TTS 知识库</title>
+<meta name="description" content="流式优先的小模型，比 Whisper 快约 100 倍，主打端侧/实时。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/moonshine_v2/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Moonshine v2 · Useful Sensors",
+  "about": {
+    "@type": "Thing",
+    "name": "Moonshine v2",
+    "alternateName": "Useful Sensors 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Useful Sensors"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-02",
+  "description": "流式优先的小模型，比 Whisper 快约 100 倍，主打端侧/实时。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/moonshine_v2/",
+  "articleBody": "流式优先的小模型，比 Whisper 快约 100 倍，主打端侧/实时。\n\n## 设计动机\n为端侧/嵌入式实时而生，追求“极小参数量 + 极低首包延迟”，而非绝对精度。V2 相对 V1 的关键升级是让编码器可流式。\n\n## 整体流水线\n16kHz 音频 → 50Hz 音频前端（因果卷积 + 滚动 buffer）→ 滑动窗口 Transformer 编码器（“ergodic encoder”）→ 适配器注入位置信息 → 自回归解码器（RoPE + cross-attention 到编码器状态）→ 文本 token。\n\n## 关键模块\n- Ergodic 编码器：因果滑动窗口注意力、无位置嵌入，可逐 chunk 处理，突破“必须看完整段才出首 token”的限制，实现无界长度流式。\n- 适配器：在编码器与解码器之间注入位置信息（因编码器本身无位置编码）。\n- 解码器：RoPE 因果自注意力 + 对编码器状态的 cross-attention，配合 KV-cache 自回归生成。\n- 前端：因果卷积 buffer 支持增量音频输入，跨 chunk 保持状态。\n\n## 与 SOTA 的本质区别\n典型轻量 encoder-decoder，但用“无位置编码的滑动窗口编码器 + 适配器补位置”换取真正的流式低延迟，而非把 Whisper 类模型硬改流式。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Moonshine v2</h1>
+    <div class="meta">Useful Sensors · 2026-02 · 领域 ASR · 参数量 小模型 · 许可 Apache 2.0</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>流式优先的小模型，比 Whisper 快约 100 倍，主打端侧/实时。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">CTC / Transducer 流式端侧系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>综合质量（官方宣称，无统一数字）</td><td>综合</td><td class="v">undefined</td><td>相对 Whisper 推理 ~100×</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>为端侧/嵌入式实时而生，追求“极小参数量 + 极低首包延迟”，而非绝对精度。V2 相对 V1 的关键升级是让编码器可流式。</p><h3>整体流水线</h3><p>16kHz 音频 → 50Hz 音频前端（因果卷积 + 滚动 buffer）→ 滑动窗口 Transformer 编码器（“ergodic encoder”）→ 适配器注入位置信息 → 自回归解码器（RoPE + cross-attention 到编码器状态）→ 文本 token。</p><h3>关键模块</h3><ul class="ml"><li>Ergodic 编码器：因果滑动窗口注意力、无位置嵌入，可逐 chunk 处理，突破“必须看完整段才出首 token”的限制，实现无界长度流式。</li><li>适配器：在编码器与解码器之间注入位置信息（因编码器本身无位置编码）。</li><li>解码器：RoPE 因果自注意力 + 对编码器状态的 cross-attention，配合 KV-cache 自回归生成。</li><li>前端：因果卷积 buffer 支持增量音频输入，跨 chunk 保持状态。</li></ul><h3>与 SOTA 的本质区别</h3><p>典型轻量 encoder-decoder，但用“无位置编码的滑动窗口编码器 + 适配器补位置”换取真正的流式低延迟，而非把 Whisper 类模型硬改流式。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据规模</h3><p>在约 300K 小时语音数据上训练；MIT 许可证，社区友好。</p><h3>变体与部署</h3><p>tiny 约 43M（小至 ~130MB）、small 约 147M、medium 约 245M；可在 NPU/CPU 上浮点实时运行。Web 端有纯 Swift MLX 实现。</p><h3>known_results 数字解读</h3><p>medium：MacBook Pro 上流式延迟约 107ms，精度与 Whisper Large V3 持平但参数量仅其约 1/6（6x 更少参数）；LibriSpeech clean 约 3.0% WER。相对 Whisper 同精度量级推理快约 100x。需注意：这是“同精度量级”而非“同绝对精度”，且 Moonshine 主打英文。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>相对 Whisper</td><td>推理速度</td><td class="v">~100×</td><td>同精度量级下</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>流式机制消融</h3><p>V2 引入编码器滑动窗口注意力后，TTFT 显著下降（无需等整段音频）；ONNX 拆成 frontend/encoder/adapter/cross_kv/decoder_kv 五组件，便于 NPU 上融合、减少 NPU-CPU 数据传输。</p><h3>精度-速度权衡</h3><p>设计即是在帕累托前沿上选“小模型点”：以绝对精度换极低算力；论文未做大型结构消融，重点在部署可行性。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>绝对精度弱于大模型（medium ~3% LibriSpeech clean 已是其上限，难比 1.x% 级大模型）。</li><li>偏英文，多语覆盖弱。</li><li>仅适合对精度容忍度高的端侧/实时场景（指令、字幕、听写）。</li></ul><h3>批判</h3><p>第一，“6x 更少参数、精度与 Whisper Large V3 持平”是略带选择性的对比：Whisper Large V3 是 1.6B 多语模型，Moonshine 是英文专用且只在英文集比；跨语种的公平比较缺失。第二，~100x 加速是相对 Whisper 同精度量级，并非相对其最优批处理部署，易被误读为全面百倍优势。第三，无位置编码的 ergodic 编码器在长程依赖（超长句、跨段落指代）上理论上弱于带显式位置/双向注意力的模型，论文未给长音频退化曲线。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>流式优先架构，首包延迟极低</li><li>极低算力可运行</li><li>Apache 2.0 开源</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Whisper</span><p>快约 100×但绝对精度弱</p></div><div class="diff"><span class="vs">vs Parakeet TDT</span><p>Moonshine 偏端侧小模型，Parakeet 偏服务端高吞吐</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://github.com/usefulsensors/moonshine" target="_blank" rel="noopener">Moonshine v2 仓库</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="https://github.com/usefulsensors/moonshine" target="_blank" rel="noopener">🔗 在线来源</a></p><p class="muted" style="font-size:12px">仅在线链接，PDF 未随仓库托管；可前往来源页查看原文。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：Moonshine v2 为面向嵌入式/MCU 的轻量流式编码器-解码器，定位极致低算力实时 ASR 而非高精度旗舰。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 明确“小参数量换取极低算力、适合 MCU/嵌入式、流式裁剪”。与同类对比：相较 2B 的 cohere_transcribe、2.5B 的 canary_qwen，其规模显著更小，目标场景为端侧而非云端。边界与不确定性：具体参数量与流式策略（是否 chunked）未披露，为合理推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：以“延迟/精度权衡”为优化目标的轻量训练，使其在资源受限设备上的实时性占优，但绝对识别精度应为其取舍代价。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 称面向实时场景的延迟/精度权衡优化。与同类对比：相对 parakeet_tdt 的 TDT 流式，Moonshine 用更小模型换更低功耗，精度上限更低。边界与不确定性：Apache 2.0 可复现，但缺乏公开 WER 对照，精度损失幅度为推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：超小模型容量决定了其在嘈杂环境、多语种与专业词汇上的鲁棒性天然受限，属结构性短板而非可调参数问题。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：架构指向“小参数量”，容量即上界。与同类对比：对比 hy_asr30 的 MoE 稀疏扩容，Moonshine 无法通过稀疏激活扩展容量。边界与不确定性：开源但架构决定了能力天花板，具体场景失效边界需实测，为推断。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/moonshine_v2">在交互知识库中打开 Moonshine v2 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

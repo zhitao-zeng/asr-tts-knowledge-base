@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kyutai STT · Kyutai ｜ ASR/TTS 知识库</title>
+<meta name="description" content="端到端实时 STT，延迟约 0.5s，强调自然实时对话体验。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/kyutai_stt/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Kyutai STT · Kyutai",
+  "about": {
+    "@type": "Thing",
+    "name": "Kyutai STT",
+    "alternateName": "Kyutai 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Kyutai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-03",
+  "description": "端到端实时 STT，延迟约 0.5s，强调自然实时对话体验。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/kyutai_stt/",
+  "articleBody": "端到端实时 STT，延迟约 0.5s，强调自然实时对话体验。\n\n## 设计动机\n为 Unmute 等实时语音对话而生，追求“边听边出 + 低延迟 + 高并发”的流式 STT，并内置语义级 VAD 以智能判断用户是否说完。\n\n## 整体流水线\n音频 → Mimi 音频 codec 编码（12.5Hz，每帧 32 个音频 token）→ decoder-only Transformer 消费音频 token → 建模“文本流”基于“语音流”输出文本 token。文本流相对音频流做时间偏移（shift），使模型基于已到达音频预测文本。\n\n## 关键模块\n- 多流（multistream）架构（源自 Moshi）：文本流与语音流分别建模，文本流相对音频流滞后，天然支持流式。\n- 语义 VAD：不仅输出文本，还输出“用户是否已说完”的概率，停顿等待时间随内容与语调自适应（非固定静音阈值），避免长句中误判。\n- delayed-streams modeling：延迟流建模使高批量推理无需额外胶水代码即可流式，单卡 H100 可并发 400 路实时音频。\n\n## 与 SOTA 的本质区别\n不是 encoder-decoder + 外部 VAD 的级联，而是用多流 decoder-only Transformer 把“流式、并发、语义 VAD”内建进同一模型；相对 Whisper-Streaming 那种反复重跑重叠片段的 hack，吞吐与延迟都更优。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Kyutai STT</h1>
+    <div class="meta">Kyutai · 2026-03 · 领域 ASR · 参数量 中等 · 许可 开源</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>端到端实时 STT，延迟约 0.5s，强调自然实时对话体验。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">CTC / Transducer 流式端侧系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>端侧/流式延迟 (首包/总)</td><td>延迟 (ms)</td><td class="v">500</td><td>实测 ~0.5s（约）</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>为 Unmute 等实时语音对话而生，追求“边听边出 + 低延迟 + 高并发”的流式 STT，并内置语义级 VAD 以智能判断用户是否说完。</p><h3>整体流水线</h3><p>音频 → Mimi 音频 codec 编码（12.5Hz，每帧 32 个音频 token）→ decoder-only Transformer 消费音频 token → 建模“文本流”基于“语音流”输出文本 token。文本流相对音频流做时间偏移（shift），使模型基于已到达音频预测文本。</p><h3>关键模块</h3><ul class="ml"><li>多流（multistream）架构（源自 Moshi）：文本流与语音流分别建模，文本流相对音频流滞后，天然支持流式。</li><li>语义 VAD：不仅输出文本，还输出“用户是否已说完”的概率，停顿等待时间随内容与语调自适应（非固定静音阈值），避免长句中误判。</li><li>delayed-streams modeling：延迟流建模使高批量推理无需额外胶水代码即可流式，单卡 H100 可并发 400 路实时音频。</li></ul><h3>与 SOTA 的本质区别</h3><p>不是 encoder-decoder + 外部 VAD 的级联，而是用多流 decoder-only Transformer 把“流式、并发、语义 VAD”内建进同一模型；相对 Whisper-Streaming 那种反复重跑重叠片段的 hack，吞吐与延迟都更优。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据规模</h3><p>预训练：2.5M 小时公开音频，用 whisper-timestamped 生成合成转写（伪标签）。</p><p>微调：2.6B 模型用 24k 小时带真值转写数据；长音频微调用 LibriSpeech 拼接 1000h + 合成对话 22k h。1B 模型用 Fisher 2000h 英文 + 专有数据（1000h 英 / 600h 法）。</p><p>算力：预训练 48 × H100，微调 16 × H100。</p><h3>known_results 数字解读</h3><p>stt-1b-en_fr 延迟约 0.5s（词在说完 500ms 后转出），stt-2.6b-en 延迟约 2.5s。单卡 H100 可 400 路并发实时；精度与“能看到整段音频”的非流式 SOTA 持平。Unmute 用“flush trick”：检测到说完即让 STT 以约 4x 实时猛跑已收音频，把额外等待从 500ms 压到约 125ms。注意 0.5s 是 1B 低延迟版的指标，2.6B 精度版延迟达 2.5s。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>实测</td><td>延迟</td><td class="v">~0.5s</td><td>接近人类对话节奏</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>延迟-精度权衡</h3><p>1B（0.5s 延迟，en/fr）vs 2.6B（2.5s 延迟，英文更准）：以延迟换精度；2.6B 与非流式 SOTA 持平但延迟高 2.5s，体现流式固有代价。</p><h3>语义 VAD 价值</h3><p>自适应停顿预测避免固定等待的误触发；但语义 VAD 目前仅在 Rust 服务实现，其他实现缺失。</p><h3>并发设计</h3><p>delayed-streams modeling 是 400 路并发的关键，无需 Whisper-Streaming 式胶水代码。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>1B 仅英/法，2.6B 仅英文；语种覆盖窄。</li><li>2.6B 延迟 2.5s，对强实时交互偏长（靠 flush trick 缓解）。</li><li>依赖 Mimi codec（12.5Hz/32 token），非原生波形建模；长音频（2 小时）可用但无额外处理。</li></ul><h3>批判</h3><p>第一，预训练用 whisper-timestamped 合成标签，标签噪声会随 2.5M 小时被放大，可能限制精度上限；虽经带真值数据微调，但伪标签的系统性偏差未被量化。第二，“与非流式 SOTA 持平”的宣称主要针对英文 LibriSpeech 类集，多语/方言/强噪场景是否仍持平缺乏公开细拆。第三，0.5s 与 2.5s 两档延迟跨度大，中间档缺失，应用选型受限；且语义 VAD 仅 Rust 实现，跨平台一致性存疑。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>端到端流式，0.5s 级延迟</li><li>自然实时对话友好</li><li>开源可复现</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Moonshine v2</span><p>同样实时，Kyutai 强调端到端与自然对话</p></div><div class="diff"><span class="vs">vs Voxtral Mini</span><p>二者均实时，Voxtral 配 TTS 生态</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://github.com/kyutai-late/kyutai-stt" target="_blank" rel="noopener">Kyutai STT 仓库</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="https://github.com/kyutai-late/kyutai-stt" target="_blank" rel="noopener">🔗 在线来源</a></p><p class="muted" style="font-size:12px">仅在线链接，PDF 未随仓库托管；可前往来源页查看原文。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：Kyutai STT 为端到端流式 ASR，去掉独立 VAD 级联、边听边出，定位为对话式低首包延迟场景。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 明确“无独立 VAD 级联、流式 Conformer/Transformer+chunk、低延迟”。与同类对比：相对需 VAD+ASR 两级的传统流水线，其一体化更利于自然对话节奏。边界与不确定性：具体 backbone（Conformer 或 Transformer）DEEP 用“通常采用”表述，属推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：以 chunk 级流式损失训练并强调首包延迟，其在交互/会议等实时转录的端到端延迟应显著低于非流式模型。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 称流式目标训练、强调首包延迟。与同类对比：相对 cohere（非流式 AED）更适合实时，相对 NAR 的 granite41 则在自然对话节奏上更优。边界与不确定性：开源可复现，但具体延迟/WER 未列，为推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：端到端流式去掉 VAD 后，对长静音、重叠说话人与远场噪声的边界处理依赖模型本身，鲁棒性边界不透明。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 称无独立 VAD 级联。与同类对比：对比带 VAD 的级联系统，少了一道可独立调优的静音/切分模块。边界与不确定性：开源但无公开长音频/重叠语音基准，实际边界为推断。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/kyutai_stt">在交互知识库中打开 Kyutai STT 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

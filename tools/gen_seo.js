@@ -37,13 +37,14 @@ const itemListElements = models.map((m, i) => ({
   "@type": "ListItem",
   "position": i + 1,
   "item": {
-    "@type": "SoftwareApplication",
-    "name": m.name,
-    "applicationCategory": "AI/ML Model",
-    "operatingSystem": "Web",
+    "@type": "TechArticle",
+    "headline": m.name,
+    "about": { "@type": "Thing", "name": m.name, "alternateName": `${m.org} 的 ${m.domain} 模型` },
+    "author": { "@type": "Organization", "name": m.org },
+    "publisher": { "@type": "Organization", "name": "Zhitao Zeng" },
+    "inLanguage": "zh-CN",
     "description": trunc(m.summary || `${m.org} 的 ${m.domain} 模型`, 160),
-    "url": BASE + "#/model/" + m.id,
-    "provider": { "@type": "Organization", "name": m.org }
+    "url": BASE + "#/model/" + m.id
   }
 }));
 
@@ -142,12 +143,16 @@ fs.writeFileSync(MODELS_HTML, modelsPage, "utf8");
 console.log(`✔ models.html 已生成（静态可爬取，${models.length} 个模型）`);
 
 /* ---------- 3) sitemap.xml + robots.txt ---------- */
+const genModelPages = require("./gen_model_pages.js");
+const modelUrls = genModelPages();
+
 const readerIds = [...new Set(models.filter(m => m.reader_paper).map(m => m.reader_paper))];
 const urls = [BASE, BASE + "models.html"];
 if (readerIds.length) {
   urls.push(BASE + "papers-read/");
   for (const pid of readerIds) urls.push(BASE + "papers-read/" + pid + "/");
 }
+for (const u of modelUrls) urls.push(u);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(u => `  <url><loc>${esc(u)}</loc><changefreq>weekly</changefreq><priority>${u === BASE ? "1.0" : "0.8"}</priority></url>`).join("\n")}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MMS (Massively Multilingual Speech) · Meta ｜ ASR/TTS 知识库</title>
+<meta name="description" content="Meta 的大规模多语种语音项目，基于 wav2vec 2.0 把 ASR 扩展到 1107 种语言、TTS 与语种识别覆盖超过 4000 种语言。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/meta_mms/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "MMS (Massively Multilingual Speech) · Meta",
+  "about": {
+    "@type": "Thing",
+    "name": "MMS (Massively Multilingual Speech)",
+    "alternateName": "Meta 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Meta"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2023-05",
+  "description": "Meta 的大规模多语种语音项目，基于 wav2vec 2.0 把 ASR 扩展到 1107 种语言、TTS 与语种识别覆盖超过 4000 种语言。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/meta_mms/",
+  "articleBody": "Meta 的大规模多语种语音项目，基于 wav2vec 2.0 把 ASR 扩展到 1107 种语言、TTS 与语种识别覆盖超过 4000 种语言。\n\n## 基于 wav2vec 2.0\nMMS 沿用 wav2vec 2.0 自监督架构，预训练模型覆盖 1406 种语言；ASR 微调采用 CTC，并配合每语种适配器（adapter）支持 1162 种语言切换。\n\n## 多任务\n同一套预训练表征可微调出 ASR、语音合成（TTS）与语种识别三种模型，互不依赖。\n\n## 规模\nASR 主力为 1B 参数 wav2vec 2.0 模型。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>MMS (Massively Multilingual Speech)</h1>
+    <div class="meta">Meta · 2023-05 · 领域 ASR · 参数量 约 1B (wav2vec 2.0) · 许可 CC-BY-NC 4.0（非商业）</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>Meta 的大规模多语种语音项目，基于 wav2vec 2.0 把 ASR 扩展到 1107 种语言、TTS 与语种识别覆盖超过 4000 种语言。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AED / Conformer 高精度系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>基于 wav2vec 2.0</h3><p>MMS 沿用 wav2vec 2.0 自监督架构，预训练模型覆盖 1406 种语言；ASR 微调采用 CTC，并配合每语种适配器（adapter）支持 1162 种语言切换。</p><h3>多任务</h3><p>同一套预训练表征可微调出 ASR、语音合成（TTS）与语种识别三种模型，互不依赖。</p><h3>规模</h3><p>ASR 主力为 1B 参数 wav2vec 2.0 模型。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据与自监督</h3><p>在约 500,000 小时、1406 种语言的语音上自监督预训练。标注数据来自宗教文本（新约）朗读，覆盖 1100+ 语言，平均每语种约 32 小时。</p><h3>强制对齐</h3><p>训练对齐模型并对长录音做多轮强制对齐与交叉验证过滤，得到可用标注。</p><h3>适配器</h3><p>推理时通过加载对应语种适配器在单一模型内切换千余种语言。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>FLEURS-54 (平均 WER)</td><td>WER</td><td class="v">约 Whisper 一半</td><td>论文对比：MMS 平均 WER 约为 Whisper 的一半</td></tr><tr><td>语种扩展 61→1107</td><td>CER 增量</td><td class="v">+0.4%</td><td>覆盖扩大 18 倍而 CER 仅升约 0.4%</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>语种数 vs 误差</h3><p>论文核心发现：从 61 增至 1107 种语言，字符错误率仅上升约 0.4%，而语言覆盖扩大 18 倍以上。</p><h3>对比 Whisper</h3><p>在 FLEURS-54 上，MMS 平均 WER 约为 Whisper 的一半，且覆盖语种多 10 倍以上。</p><h3>数据量</h3><p>增加每语种标注与预训练数据可进一步降低低资源语言误差。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>领域偏差</h3><p>训练音频来自宗教文本朗读，内容单一、多为男性说话人，可能引入域偏置。</p><h3>非商业许可</h3><p>模型采用 CC-BY-NC 4.0，禁止商业使用。</p><h3>TTS 自然度</h3><p>基于 32 小时朗读数据的 TTS 在语音自然度与多样性上有限。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>把自监督语音模型扩展到 1406 语言预训练、1107 语言 ASR</li><li>用语种适配器在单一模型内切换千余种语言</li><li>证明海量语种扩展下精度几乎不退化</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs wav2vec 2.0</span><p>同一架构但把语种从几十扩展到上千，并加入适配器与 TTS/LID</p></div><div class="diff"><span class="vs">vs Whisper</span><p>MMS 专注低资源多语种且非商业，FLEURS 上 WER 约为 Whisper 一半</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2305.13516" target="_blank" rel="noopener">MMS arXiv:2305.13516</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2305.13516.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2305.13516" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>The MMS project increases the number of supported languages by 10-40x, depending on the task.</blockquote>
+      <div class="src">— arXiv:2305.13516 Abstract</div>
+      <p><strong>核心创新/规模化极致</strong>：MMS 把语音技术覆盖<strong>提升 10–40 倍</strong>，建成 1406 语言 wav2vec 2.0、1107 语言 ASR/TTS、4017 语言语言识别，是迄今语言覆盖最广的语音项目，把「多语言规模化」推到千语级。</p>
+    </div>
+    <div class="ins">
+      <blockquote>our multilingual speech recognition model more than halves the word error rate of Whisper on 54 languages of the FLEURS benchmark while being trained on a small fraction of the labeled data.</blockquote>
+      <div class="src">— arXiv:2305.13516 Abstract</div>
+      <p><strong>关键实验结论（对比 Whisper）</strong>：在 FLEURS 54 语上 WER 比 <strong>Whisper 减半</strong>，且只用其一小部分标注数据——靠自监督 wav2vec 2.0 + 语言特定参数的组合，证明「千语 ASR」可行且性能衰减很小。代价：对比基于的是 Whisper 非最优长尾配置，绝对值仍受数据量主导。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Most speakers in MMS-lab dataset appear to be male and this bears the risk of machine learning models trained on this data performing better for male speakers.</blockquote>
+      <div class="src">— arXiv:2305.13516 Section 8.1</div>
+      <p><strong>主要局限（诚实写出）</strong>：MMS-lab 语料多来自<strong>公开宗教文本（如新约）朗读</strong>，且说话人<strong>多为男性</strong>，带来性别与领域偏置风险；数据还偏朗读风格、覆盖不均（非洲语言 CER 达标率仅 76%）。这是「为覆盖而用易得语料」的典型代价，需后续去偏与领域扩展。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2305.13516/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/meta_mms">在交互知识库中打开 MMS (Massively Multilingual Speech) 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

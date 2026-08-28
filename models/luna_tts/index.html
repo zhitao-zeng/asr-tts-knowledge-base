@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luna-TTS Family · 社区/工业 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="扩散-LM 全非自回归 TTS：整个 RVQ token 网格固定步并行细化；实时变体块级 RTF 0.024、首块 41.6ms。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/luna_tts/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Luna-TTS Family · 社区/工业",
+  "about": {
+    "@type": "Thing",
+    "name": "Luna-TTS Family",
+    "alternateName": "社区/工业 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "社区/工业"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-08",
+  "description": "扩散-LM 全非自回归 TTS：整个 RVQ token 网格固定步并行细化；实时变体块级 RTF 0.024、首块 41.6ms。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/luna_tts/",
+  "articleBody": "扩散-LM 全非自回归 TTS：整个 RVQ token 网格固定步并行细化；实时变体块级 RTF 0.024、首块 41.6ms。\n\n## 从文本 LLM 渐进改造的扩散 LM\n- 核心是把现成自回归文本 LLM（Qwen3-0.6B）逐步改造成语音扩散模型：causal 到 bidirectional 再到 block-causal，同一 0.6B 骨架、同一 tokenizer/数据管线，得出全并行(Luna-TTS)与块流式(Luna-TTS Realtime)两变体。\n- 自研 Luna-Codec：因果 RVQ，24kHz 语音编码为 25Hz token 网格，8 层 codebook × 2048 词表，约 200 token/秒、等效码率 2.2 kbps；第一层 codebook 用 WavLM 蒸馏做“语义锚定”，把语言内容塞进前几层。\n- 扩散机制为 absorbing-state 离散掩码扩散（同 LLaDA/MaskGCT）：前向独立随机掩码每个网格位置，训练时一次性并行恢复所有被遮罩位置。\n\n## 两档解码\n- Luna-TTS：固定 S 步（实测 16 步）并行细化整张 RVQ 网格，零样本克隆与语音编辑天然是 in-filling（参考网格摆在序列中、目标区即被遮部分）。\n- Luna-TTS Realtime：32 帧(1.28s)块间自回归、块内并行去噪，KV-cache 块级生成 + 增量音频投递；块因果是训练时学进去的生成行为而非推理才套 mask。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Luna-TTS Family</h1>
+    <div class="meta">社区/工业 · 2026-08 · 领域 TTS · 参数量 0.6B 主干 · 许可 开源</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>扩散-LM 全非自回归 TTS：整个 RVQ token 网格固定步并行细化；实时变体块级 RTF 0.024、首块 41.6ms。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">全非自回归扩散系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>Seed-TTS-Eval test-zh (CER%)</td><td>CER (%)</td><td class="v">0.73</td><td>CER 0.73 / SIM 79.7</td></tr><tr><td>Seed-TTS-Eval test-zh (SIM%)</td><td>SIM (%)</td><td class="v">79.7</td><td>Luna-TTS</td></tr><tr><td>Seed-TTS-Eval test-en (WER%)</td><td>WER (%)</td><td class="v">1.49</td><td>WER 1.49 / SIM 76.8</td></tr><tr><td>Seed-TTS-Eval test-en (SIM%)</td><td>SIM (%)</td><td class="v">76.8</td><td>Luna-TTS</td></tr><tr><td>CV3-Eval (野外, 错率)</td><td>错率</td><td class="v">undefined</td><td>官方：对比中最低（未公开统一数字）</td></tr><tr><td>实时 RTF (流式)</td><td>RTF</td><td class="v">0.024</td><td>实时变体 RTF 0.0240</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>从文本 LLM 渐进改造的扩散 LM</h3><ul class="ml"><li>核心是把现成自回归文本 LLM（Qwen3-0.6B）逐步改造成语音扩散模型：causal 到 bidirectional 再到 block-causal，同一 0.6B 骨架、同一 tokenizer/数据管线，得出全并行(Luna-TTS)与块流式(Luna-TTS Realtime)两变体。</li><li>自研 Luna-Codec：因果 RVQ，24kHz 语音编码为 25Hz token 网格，8 层 codebook × 2048 词表，约 200 token/秒、等效码率 2.2 kbps；第一层 codebook 用 WavLM 蒸馏做“语义锚定”，把语言内容塞进前几层。</li><li>扩散机制为 absorbing-state 离散掩码扩散（同 LLaDA/MaskGCT）：前向独立随机掩码每个网格位置，训练时一次性并行恢复所有被遮罩位置。</li></ul><h3>两档解码</h3><ul class="ml"><li>Luna-TTS：固定 S 步（实测 16 步）并行细化整张 RVQ 网格，零样本克隆与语音编辑天然是 in-filling（参考网格摆在序列中、目标区即被遮部分）。</li><li>Luna-TTS Realtime：32 帧(1.28s)块间自回归、块内并行去噪，KV-cache 块级生成 + 增量音频投递；块因果是训练时学进去的生成行为而非推理才套 mask。</li></ul></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据四阶段与训练流水线</h3><ul class="ml"><li>数据：约 100 万小时中英日韩（中 43.4%/英 43.1%/日 6.7%/韩 6.9%），四阶段流水线（切割到标准化/LID 到主 ASR+强制对齐到质量过滤+第二 ASR 交叉验证），用时长预测器（另一 Qwen3-0.6B，双向）独立定帧数 T，顺带获得语速连续调节。</li><li>训练：foundation pretrain（约 100B packed token，余弦退火）到 高质量 annealing（约 10 万小时精选再训 1 epoch）到 表达性持续训练（情绪/非语言发声 NVV 标签走文本侧条件通道）到 block adaptation（约 2 万步出 Realtime）。</li><li>RL：GRPO 轨迹级策略优化，把去噪轨迹中每步实际采样决策当动作算策略比值（rollout/replay 用同一 CFG 采样避免自欺），奖励为组内相对词典序（先比内容准确率，再比说话人相似度）。</li><li>与已知结果呼应：brief 标注其在 Seed-TTS-Eval 多项达 SOTA/最强综合，这正是 1M 小时数据 + 渐进改造 + GRPO（把 WER/SIM 直接变梯度）共同作用的产物。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>Seed-TTS-Eval test-zh</td><td>CER / SIM</td><td class="v">0.73 / 79.7</td><td>四项指标全对比最佳</td></tr><tr><td>Seed-TTS-Eval test-en</td><td>WER / SIM</td><td class="v">1.49 / 76.8</td><td>优于开源与商业系统</td></tr><tr><td>CV3-Eval(野外)</td><td>中/英错率</td><td class="v">最低</td><td>对比中最低</td></tr><tr><td>实时变体(warmed 服务)</td><td>RTF / 首块延迟</td><td class="v">0.0240 / 41.6ms</td><td>块级生成</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>数字与发现解读</h3><ul class="ml"><li>Seed-TTS-Eval（2020 中 + 1088 英，CER 用 Paraformer-zh、WER 用 Whisper-large-v3、SIM 用 WavLM-large）：Luna-TTS 四项全第一——中文 CER 0.73（vs MiniMax-Speech 0.83、同协议重评 Qwen3-TTS 0.98）、英文 WER 1.49（vs Qwen-Audio-3.0-TTS 1.54）、中/英 SIM 79.7/76.8 双最高。说明全并行扩散在零样本克隆的内容与音色上都压过 AR 商用系统。</li><li>CV3-Eval（更难野外）：最低中/英错误率 3.17/3.18，困难子集 6.90/6.18，四语平均 4.32（仅比 Qwen-Audio-3.0-TTS 差 0.15）；短板在韩语 CER 5.93（语料仅 6.9%）。</li><li>Realtime 代价：Seed-TTS-Eval 上约换掉 0.3 点 CER/WER 与 3 点 SIM（中 1.08 CER/76.9 SIM），但困难子集差距被拉大（hard-zh 12.56 vs 6.90）——因为块一旦提交不可反悔，早期错误持续污染后续块，而全并行版可在全局细化中回头修。</li><li>推理性能：Luna-TTS 16 步 RTF 0.0211、整句 216ms；Realtime 8 步双卡 CFG 首包 41.6ms、10.6s 音频 254ms 出完(RTF 0.0240)。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>NAR 并行生成对极长句的一致性与细粒度可控仍有上限；Realtime 引入块级 AR，严格非完全 NAR，且块提交不可变带来困难子集退化。</li><li>韩语等低占比语种质量受限；需外部时长预测器。</li><li>0.6B 容量下超复杂韵律/跨语种迁移不及更大模型。</li></ul><h3>批判</h3><ul class="ml"><li>四项全第一的协议依赖冻结的 Paraformer/Whisper/WavLM 作为判据，这些代理指标是否等价于人类听感仍有争议；Pith 评审指出假设未单独测量 cross-ASR 过滤对 benchmark 的偏向。</li><li>“从文本 LLM 改造”路径很优雅，但 bidirectional/block-causal 改造使推理需特殊注意力掩码与 KV 管理，工程化复杂度高于标准 AR；迭代去噪的延迟优势只在并行硬件上成立，纯 CPU 端侧未必快。</li><li>作为评审，我认为其真正贡献是“证明 AR 文本 LLM 可零样本改造成生产级扩散 TTS”，而非指标绝对值；建议补充人类 MOS 与困难长音频的一致性强测。</li></ul></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>从 AR 文本 LLM 渐进适配到扩散-LM(NAR)</li><li>整个 RVQ 网格并行细化，去 AR 瓶颈</li><li>实时块级去噪 + KV-cache，RTF 0.024</li><li>GRPO 用于去噪轨迹对齐</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs CosyVoice3</span><p>Luna 去 AR 为扩散-LM，CosyVoice 仍含 AR 语义</p></div><div class="diff"><span class="vs">vs Qwen-Audio-3.0</span><p>Luna 纯非 AR，Qwen-Audio 为混合</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2608.11593" target="_blank" rel="noopener">Luna-TTS arXiv:2608.11593</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2608.11593.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2608.11593" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>Modern text-to-speech (TTS) is dominated by autoregressive (AR) codec language models, whose left-to-right decoding carries structural costs: latency that grows with utterance length, error accumulation along the committed prefix, and an artificial generation order imposed on the Residual Vector Quantization (RVQ) token grid, which possesses none.</blockquote>
+      <div class="src">— arXiv:2608.11593 摘要</div>
+      <p>LUNA 的立论很尖锐：<strong>AR codec LM 的左到右解码对 RVQ token 网格是「人为强加顺序」</strong>——RVQ 本是二维网格，没有天然时序，于是带来延迟随长度增长、前缀错误累积两大结构代价。这是它转向扩散语言模型的动机，也点醒了整个 AR-TTS 范式的根本低效。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Luna-TTS is fully non-autoregressive: it generates the entire RVQ token grid of an utterance in a fixed number of parallel refinement steps, with zero-shot voice cloning and speech editing arising natively as infilling.</blockquote>
+      <div class="src">— arXiv:2608.11593 摘要/贡献</div>
+      <p>LUNA 直接 <strong>用 masked diffusion 在整个 RVQ 网格上做固定步数并行细化</strong>，零样本克隆与编辑天然就是 infilling，不需专门模块。它把预训练 Qwen3 文本 LLM 经 causal→bidirectional→block-causal 渐进适配，借文本侧任何顺序生成能力补 RVQ 几何——这是「从文本 LLM 改 TTS」比从零训 codec LM 更省力的关键。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Under the warmed local serving protocol, Luna-TTS Realtime achieves an end-to-end RTF of 0.0240 and commits its first 1.28s decoded audio block in 41.6 ms, corresponding to more than 40× real-time generation within the measured engine boundary.</blockquote>
+      <div class="src">— arXiv:2608.11593 摘要</div>
+      <p>实时变体用 <strong>块级（32 帧/1.28s）AR + 块内并行去噪</strong>，RTF 0.0240、首块 41.6ms、&gt;40× 实时，延迟不再随句长线性涨。代价/边界是：GRPO 强化只在已实现去噪轨迹上算 policy ratio，且持续训练从 Luna-TTS 继承，流式质量高度依赖 block-causal 适配是否充分——Seed-TTS-Eval 四项最佳说明这条路目前站得住。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2608.11593/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/luna_tts">在交互知识库中打开 Luna-TTS Family 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

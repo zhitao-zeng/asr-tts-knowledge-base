@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qwen3-TTS · 阿里巴巴 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="Qwen 自回归 TTS，零样本克隆，与 Qwen 生态互通。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/qwen3_tts/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Qwen3-TTS · 阿里巴巴",
+  "about": {
+    "@type": "Thing",
+    "name": "Qwen3-TTS",
+    "alternateName": "阿里巴巴 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "阿里巴巴"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-04",
+  "description": "Qwen 自回归 TTS，零样本克隆，与 Qwen 生态互通。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/qwen3_tts/",
+  "articleBody": "Qwen 自回归 TTS，零样本克隆，与 Qwen 生态互通。\n\n## 双轨 Dual-Track 离散多码本 LM 架构\n- 两个自研 tokenizer：（1）Qwen-TTS-Tokenizer-25Hz 单码本，强调语义内容，用 block-wise DiT 或流匹配做流式波形重建，与 Qwen-Audio 无缝集成；（2）Qwen-TTS-Tokenizer-12Hz 多码本（12.5Hz、16 层 RVQ），极速率、超低延迟。\n- 12Hz 变体采用分层预测：主干 Talker（28 层 transformer、RoPE、GQA）吞入聚合码本特征预测 0 号码本；MTP 多 token 预测模块生成剩余 15 个码本，避免每步跑 16 次全模型。\n- 25Hz 变体用单码本加线性头预测当前 token，再经 chunk-wise DiT 高保真重建。\n\n## 端到端离散建模与流式\n- 论文强调通用端到端架构：离散多码本 LM 完全旁路传统 LM 加 DiT 级联的信息瓶颈与级联误差，提升 versatility、效率与上限。\n- Dual-Track 流式：文本 token 与声学 token 沿通道轴连接，收到一个文本 token 立即预测对应声学 token，由 Code2Wav 转波形；首包延迟低至 97ms（0.6B）/101ms（1.7B）。\n\n## 与 SOTA 的本质区别\n- 区别于语义 token 加扩散声学两阶段，Qwen3-TTS 用统一离散多码本 LM 端到端建模全部信息；轻量非 DiT 解码器加 12Hz 极低帧率实现 97ms 首包，是其相对 Qwen-Audio-3.0-TTS（同族前作，12.5Hz tokenizer 加 LM 加 FM 五阶段）的工程飞跃。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Qwen3-TTS</h1>
+    <div class="meta">阿里巴巴 · 2026-04 · 领域 TTS · 参数量 大 · 许可 开源(通义)</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>Qwen 自回归 TTS，零样本克隆，与 Qwen 生态互通。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AR codec-LM 系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>零样本/克隆质量（官方宣称，无统一数字）</td><td>综合</td><td class="v">undefined</td><td>零样本克隆质量好</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>双轨 Dual-Track 离散多码本 LM 架构</h3><ul class="ml"><li>两个自研 tokenizer：（1）Qwen-TTS-Tokenizer-25Hz 单码本，强调语义内容，用 block-wise DiT 或流匹配做流式波形重建，与 Qwen-Audio 无缝集成；（2）Qwen-TTS-Tokenizer-12Hz 多码本（12.5Hz、16 层 RVQ），极速率、超低延迟。</li><li>12Hz 变体采用分层预测：主干 Talker（28 层 transformer、RoPE、GQA）吞入聚合码本特征预测 0 号码本；MTP 多 token 预测模块生成剩余 15 个码本，避免每步跑 16 次全模型。</li><li>25Hz 变体用单码本加线性头预测当前 token，再经 chunk-wise DiT 高保真重建。</li></ul><h3>端到端离散建模与流式</h3><ul class="ml"><li>论文强调通用端到端架构：离散多码本 LM 完全旁路传统 LM 加 DiT 级联的信息瓶颈与级联误差，提升 versatility、效率与上限。</li><li>Dual-Track 流式：文本 token 与声学 token 沿通道轴连接，收到一个文本 token 立即预测对应声学 token，由 Code2Wav 转波形；首包延迟低至 97ms（0.6B）/101ms（1.7B）。</li></ul><h3>与 SOTA 的本质区别</h3><ul class="ml"><li>区别于语义 token 加扩散声学两阶段，Qwen3-TTS 用统一离散多码本 LM 端到端建模全部信息；轻量非 DiT 解码器加 12Hz 极低帧率实现 97ms 首包，是其相对 Qwen-Audio-3.0-TTS（同族前作，12.5Hz tokenizer 加 LM 加 FM 五阶段）的工程飞跃。</li></ul></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据与三阶段预训练</h3><ul class="ml"><li>训练数据超过 500 万小时语音，跨 10 种语言（中/英/日/韩/德/法/俄/葡/西/意）加多方言。</li><li>三阶段预训练：S0 提升任务稳定性；S1/S2 用高质量数据持续预训练降低幻觉；S3 长上下文扩展（token 长度至 32768）。</li></ul><h3>对齐与微调</h3><ul class="ml"><li>DPO 对齐人类偏好；GSPO 群体相对策略优化提升任务稳定性；轻量说话人微调增强自然度与可控性。</li><li>说话人编码器与主干联合训练，支持 3 秒克隆与基于描述的声音设计 VoiceDesign/CustomVoice 控制。</li></ul><h3>known_results 解读</h3><ul class="ml"><li>batches.json 记零样本克隆质量好，官方发布，属定性。论文与官方公开量化更丰富：Seed-TTS 基准最低 WER、6/10 语言 WER 最优且全语言 SIM 最高、跨语言 zh 到 ko 错误率降 66%、long-zh WER 1.517 与 long-en WER 1.225、InstructTTSEval 开源模型 SOTA。好应理解为在零样本克隆与长语音稳定性上达到开源 SOTA 级别，而非仅可用。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>零样本克隆</td><td>质量</td><td class="v">好</td><td>官方发布</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>双 tokenizer 取舍</h3><ul class="ml"><li>论文经验发现：纯语义 tokenizer 表达力不足，纯声学 tokenizer 注入过多低层细节导致 LLM 长程误差累积；25Hz 融合语义与声学（基于 Qwen2-Audio 编码器）在表达力与可建模性间平衡。</li><li>12Hz 多码本加轻量因果 ConvNet 实现 97ms 首包，验证极低帧率对延迟的关键作用。</li></ul><h3>分层预测 MTP</h3><ul class="ml"><li>消融：用 MTP 模块并行生成剩余 15 码本，相比逐码本串行显著降延迟且质量持平，是 12Hz 变体实时性的核心。</li></ul><h3>对齐策略</h3><ul class="ml"><li>DPO 加 GSPO 对比无对齐：指令跟随与任务稳定性提升；长上下文扩展（32768）使超 10 分钟长语音 WER 最低。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>12Hz 极低帧率虽降延迟，但相对高帧率 codec 在极细腻韵律与高频细节上可能有损。</li><li>10 语覆盖以主流语种为主，超低资源语种未覆盖；虽 Apache-2.0 开源，1.7B 部署仍需相当算力。</li><li>端到端多码本 LM 把全部信息压入离散 token，对可解释的中间表征（语义与声学分离）控制弱于两阶段方案。</li></ul><h3>批判</h3><ul class="ml"><li>大量指标（Seed-TTS 最低 WER、跨语言降 66%）来自其自有评测设置，缺乏与 Fish-Speech S2/MiniMax/ElevenLabs 在统一榜上的逐项绝对值对比，SOTA 需结合上下文看。</li><li>25Hz 与 12Hz 双变体定位重叠（均支持流式、克隆、指令），选型指南不足，易让用户困惑。</li><li>GSPO 作为较新优化器，其相对 PPO/GRPO 的稳定性收益缺乏充分消融披露。</li></ul></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>自回归 codec-LM</li><li>零样本克隆</li><li>Qwen 生态互通</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs CosyVoice3</span><p>同家族，Qwen3-TTS 偏自回归，CosyVoice 偏混合</p></div><div class="diff"><span class="vs">vs Fish Audio S2</span><p>同为 AR，Qwen3-TTS 生态更大</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="" target="_blank" rel="noopener">（无公开论文 PDF，以官方发布为准）</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p class="muted">本模型未附公开论文链接（闭源或仅发布页）。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：Qwen3-TTS 复用 Qwen 大模型的表征空间，采用 codec-LM 自回归生成并支持零样本克隆，定位为通义大模型家族内与语言模型生态对齐的语音合成组件。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：架构字段「codec-LM 自回归，复用 Qwen 表征；零样本克隆」。与同类对比：复用 Qwen 表征使其在中文/多语种语义理解上与通义生态协同，区别于独立训练的 Fish Audio S2。边界与不确定性：表征复用带来的具体增益（如多音字、语义韵律）未经实测，为推断；模型闭源不可本地验证。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：依托 Qwen 生态对齐与 codec-LM 训练，Qwen3-TTS 在多语种零样本克隆与端到端语音生成上应具备较强能力，并可与通义系对话/agent 流水线低摩擦集成。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：训练字段「codec-LM 训练 + Qwen 生态对齐；多语种」。与同类对比：生态内对齐是其相对独立 TTS 产品的集成优势。边界与不确定性：DEEP Results 为空，克隆相似度与多语种质量无客观指标；零样本克隆在远语种上泛化为推断，需以官方评测为准。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：作为闭源模型，Qwen3-TTS 不可本地复现与部署，codec-LM 自回归路线存在长序列不稳定风险，且零样本克隆带来声音身份冒用合规风险。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 未标注开源，且架构为自回归 codec。与同类对比：闭源使其可审计性低于 CosyVoice3/Orpheus。边界与不确定性：自回归 token 崩坏/重复为范式共性推断；商业调用下数据合规、声音授权边界需以官方条款为准，属推断性提示。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/qwen3_tts">在交互知识库中打开 Qwen3-TTS 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

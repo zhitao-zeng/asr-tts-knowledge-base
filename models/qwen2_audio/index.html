@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qwen2-Audio · Alibaba ｜ ASR/TTS 知识库</title>
+<meta name="description" content="阿里通义千问的音频-语言模型，以 Qwen2 为骨干统一处理语音识别、翻译、音频理解与问答等多任务。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/qwen2_audio/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Qwen2-Audio · Alibaba",
+  "about": {
+    "@type": "Thing",
+    "name": "Qwen2-Audio",
+    "alternateName": "Alibaba 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Alibaba"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2024-07",
+  "description": "阿里通义千问的音频-语言模型，以 Qwen2 为骨干统一处理语音识别、翻译、音频理解与问答等多任务。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/qwen2_audio/",
+  "articleBody": "阿里通义千问的音频-语言模型，以 Qwen2 为骨干统一处理语音识别、翻译、音频理解与问答等多任务。\n\n## 音频编码器 + LLM\nQwen2-Audio 由音频编码器（处理 Mel 频谱）与 Qwen2 大语言模型组成，把音频离散化为 token 后与大语言模型联合建模。\n\n## 多任务统一\n模型通过指令式提示统一处理 ASR、语音翻译、音频问答、音乐/声音理解等任务，无需每任务独立模型。\n\n## 规模\n以 Qwen2-7B 为语言骨干，整体约 7B 参数。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Qwen2-Audio</h1>
+    <div class="meta">Alibaba · 2024-07 · 领域 ASR · 参数量 约 7B (Qwen2-7B 骨干) · 许可 Apache 2.0 / Qwen 许可</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>阿里通义千问的音频-语言模型，以 Qwen2 为骨干统一处理语音识别、翻译、音频理解与问答等多任务。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">LLM / MoE 统一系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>音频编码器 + LLM</h3><p>Qwen2-Audio 由音频编码器（处理 Mel 频谱）与 Qwen2 大语言模型组成，把音频离散化为 token 后与大语言模型联合建模。</p><h3>多任务统一</h3><p>模型通过指令式提示统一处理 ASR、语音翻译、音频问答、音乐/声音理解等任务，无需每任务独立模型。</p><h3>规模</h3><p>以 Qwen2-7B 为语言骨干，整体约 7B 参数。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>两阶段</h3><p>先做音频-文本对齐的预训练，再做多任务监督微调。训练数据涵盖大量 ASR、翻译、音频描述与问答样本。</p><h3>多语种</h3><p>支持多语种语音识别与翻译，并通过指令适配不同音频理解任务。</p><h3>指令数据</h3><p>多任务指令数据让单一模型在识别、翻译与问答间泛化。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>LibriSpeech / FLEURS 等</td><td>WER/BLEU</td><td class="v">论文 SOTA（见论文表）</td><td>在多项音频-语言基准优于先前音频大模型；精确数字见原论文</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>音频编码器贡献</h3><p>论文验证音频编码器表征质量直接决定 ASR 与音频理解下限。</p><h3>指令微调</h3><p>多任务指令微调显著提升跨任务泛化，使单一模型覆盖识别、翻译与问答。</p><h3>规模效应</h3><p>更大语言骨干带来更好的音频推理与少样本能力。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>延迟</h3><p>自回归生成带来较高延迟，非流式友好。</p><h3>音频推理上限</h3><p>复杂声学场景（重叠说话、强噪）下仍落后于专用 ASR。</p><h3>数据依赖</h3><p>多任务表现依赖训练数据的覆盖与质量。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>以 Qwen2 LLM 骨干统一音频理解与生成多任务</li><li>指令式提示让单一模型覆盖 ASR/翻译/音频问答</li><li>开放权重推动中文社区音频大模型研究</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Whisper</span><p>Qwen2-Audio 是音频-语言模型，除 ASR 外还能做音频问答与理解，Whisper 仅做识别/翻译</p></div><div class="diff"><span class="vs">vs Mini-Omni</span><p>Qwen2-Audio 以文本为输出、非实时；Mini-Omni 端到端语音到语音且实时</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2407.10759" target="_blank" rel="noopener">Qwen2-Audio arXiv:2407.10759</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2407.10759.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2407.10759" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>In contrast to complex hierarchical tags, we have simplified the pre-training process by utilizing natural language prompts for different data and tasks, and have further expanded the data volume.</blockquote>
+      <div class="src">— arXiv:2407.10759 Abstract</div>
+      <p><strong>核心创新</strong>：用<strong>自然语言 prompt</strong> 统一描述不同音频数据与任务，取代复杂的层级标签，简化了预训练流程并扩大数据量。这使 Qwen2-Audio 成为「音频-语言」统一模型，能听音频、遵循语音指令直接作答，是音频 LLM 从「多任务头」走向「对话式」的关键一步。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Different from Qwen-Audio, the initialization of the audio encoder of Qwen2-Audio is based on the Whisper-large-v3 model.</blockquote>
+      <div class="src">— arXiv:2407.10759 Section 3.1</div>
+      <p><strong>关键方法</strong>：音频编码器直接<strong>初始化自 Whisper-large-v3</strong>，借力成熟 ASR 表征，再把 LLM（Qwen2）与音频编码器对齐微调。代价/边界：强依赖 Whisper 的表示与英语偏向，非从头学音频表征，跨语种上限受 Whisper 制约。</p>
+    </div>
+    <div class="ins">
+      <blockquote>One point to note is that Qwen2-Audio is not evaluated in a zero-shot manner on the Common Voice 15 dataset, whereas Whisper&#39;s results are obtained in a zero-shot fashion.</blockquote>
+      <div class="src">— arXiv:2407.10759 Section 4.2</div>
+      <p><strong>主要局限（诚实写出）</strong>：论文明确指出 Qwen2-Audio 在 Common Voice 15 上<strong>并非零样本评测</strong>，而 Whisper 是零样本，二者对比口径不一致，结论需打折。此外 8.2B 参数规模带来高推理成本，且音频推理深度仍弱于纯文本推理，实时性受限。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2407.10759/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/qwen2_audio">在交互知识库中打开 Qwen2-Audio 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

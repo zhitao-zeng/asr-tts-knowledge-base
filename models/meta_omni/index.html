@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Omnilingual ASR · Meta ｜ ASR/TTS 知识库</title>
+<meta name="description" content="单模型覆盖 1600+ 语言，面向超多语言/长尾语种统一识别。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/meta_omni/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Meta Omnilingual ASR · Meta",
+  "about": {
+    "@type": "Thing",
+    "name": "Meta Omnilingual ASR",
+    "alternateName": "Meta 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Meta"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-03",
+  "description": "单模型覆盖 1600+ 语言，面向超多语言/长尾语种统一识别。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/meta_omni/",
+  "articleBody": "单模型覆盖 1600+ 语言，面向超多语言/长尾语种统一识别。\n\n## 设计动机\nOmnilingual ASR（Meta FAIR，arXiv 2511.09690，2025-11）针对 7000+ 语言中绝大多数无 ASR 支持的问题，主张把多语言 ASR 做成可扩展框架而非固定语言列表。其设计可让社区用极少量自有样本引入新语言。\n\n## 整体流水线\n把 wav2vec 2.0 语音编码器扩展到 7B 参数做大规模跨语言自监督表征，再接两类解码器：（1）CTC ASR，编码器后加线性层 + 字符级 CTC 损失，可实时；（2）LLM ASR，wav2vec 2.0 编码器 + Transformer 解码器（类 LLM），做字符级下一 token 预测，支持语言条件（如 eng_Latn、cmn_Hans）。零样本变体 omniASR_LLM_7B_ZS 用上下文示例（N+1 语音-文本对）做 in-context learning，并用 SONAR 多语编码器检索最相关示例注入上下文，无需更新权重即可转录未见语言。\n\n## 与之前 SOTA 的本质区别\n相对 Whisper（固定 100 语）、USM（1200 万小时预训练）、MMS（1100+ 语），Omnilingual 的本质区别是可扩展 + 零样本上下文学习：监督覆盖 1600+ 语，零样本经上下文示例泛化到 5400+ 语。这把加语言从专家微调降级为提供几条样本。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Meta Omnilingual ASR</h1>
+    <div class="meta">Meta · 2026-03 · 领域 ASR · 参数量 大 · 许可 开源</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>单模型覆盖 1600+ 语言，面向超多语言/长尾语种统一识别。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">长音频 / 超多语言系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>ASR 语种覆盖 (语言数)</td><td>语言数</td><td class="v">1600</td><td>1600+</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>Omnilingual ASR（Meta FAIR，arXiv 2511.09690，2025-11）针对 7000+ 语言中绝大多数无 ASR 支持的问题，主张把多语言 ASR 做成可扩展框架而非固定语言列表。其设计可让社区用极少量自有样本引入新语言。</p><h3>整体流水线</h3><p>把 wav2vec 2.0 语音编码器扩展到 7B 参数做大规模跨语言自监督表征，再接两类解码器：（1）CTC ASR，编码器后加线性层 + 字符级 CTC 损失，可实时；（2）LLM ASR，wav2vec 2.0 编码器 + Transformer 解码器（类 LLM），做字符级下一 token 预测，支持语言条件（如 eng_Latn、cmn_Hans）。零样本变体 omniASR_LLM_7B_ZS 用上下文示例（N+1 语音-文本对）做 in-context learning，并用 SONAR 多语编码器检索最相关示例注入上下文，无需更新权重即可转录未见语言。</p><h3>与之前 SOTA 的本质区别</h3><p>相对 Whisper（固定 100 语）、USM（1200 万小时预训练）、MMS（1100+ 语），Omnilingual 的本质区别是可扩展 + 零样本上下文学习：监督覆盖 1600+ 语，零样本经上下文示例泛化到 5400+ 语。这把加语言从专家微调降级为提供几条样本。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方</h3><p>自监督预训练用约 430 万小时无标签语音（1239 语 + 46 万小时未标语言），远少于 USM 的 1200 万小时但数据效率更高。监督数据来自 AllASR 语料：120,710 小时标注语音、1690 语；其中 Omnilingual ASR Corpus 为与非洲/南亚社区合作委托采集的 3350 小时、348 语自然口语。编码器用标准 wav2vec 2.0 对比目标，训练后弃量化器作表征骨干；CTC/LLM 解码器在表征上微调。模型家族 300M-7B 全开源（Apache 2.0 / CC BY 4.0）。</p><h3>known_results 数字解读</h3><p>batches.json 给语种覆盖 1600+（长尾可用）。论文更具体：7B LLM ASR 在 1600+ 支持语中有 78% 字符错误率（CER）低于 10%；在 FLEURS-102 等多语基准平均 CER 胜过 Google USM 变体，尽管预训练小时数仅约三分之一。CTC 300M 在 A100 上 30s 音频 RTF 低至 0.001。这些数字说明扩展 wav2vec 2.0 + LLM 风格解码器是覆盖长尾的高效路径，而非单纯堆数据。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>语种覆盖</td><td>语言数</td><td class="v">1600+</td><td>长尾语种可用</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>关键消融与发现</h3><h3>低资源上采样</h3><p>论文研究对低资源语的上采样比例：适度上采样能显著提升长尾精度且不明显损害高资源语；过度上采样则高资源回退。这证实数据配比是其性能关键旋钮。</p><h3>语言条件的作用</h3><p>消融语言 ID 注入：显式语言条件（cmn_Hans 等）在已知语上稳定增益；但训练时随机丢弃语言 token，使推理可在无显式标签下运行，提升易用性。</p><h3>零样本示例检索</h3><p>对比随机示例 / 文本相似度 / SONAR 音频-文本近邻三种上下文示例选法，SONAR 检索显著提升零样本 CER，证明语义对齐的示例检索是零样本泛化成立的核心。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>单语精度通常不及专门为该语优化的模型；78% 语言 CER 小于 10% 意味着约 22% 语言仍偏高。</li><li>7B 全量部署重；300M CTC 虽快但精度有限。</li><li>零样本依赖社区提供示例，极低资源语示例稀缺时退化为弱基线。</li></ul><h3>批判</h3><p>1600+ 语的覆盖不等于可用：CER 小于 10% 在拼音文字里可能每句几个错字，但在形态复杂/黏着语里 10% CER 已严重影响可读性，且论文以字符错误率为统一口径，对语种间公平性存疑。更关键的是，这种社区自带样本扩展范式把质量责任转移给用户，缺乏中心化评测会放大长尾语的实际误差。它的最大价值是社会学与可扩展性示范，而非单语 SOTA，应与专用模型互补而非替代。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>1600+ 语言统一建模</li><li>覆盖大量低资源语种</li><li>大规模多语种数据</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Canary-Qwen</span><p>Meta 重语种广度，Canary 重 4 语精度+标点</p></div><div class="diff"><span class="vs">vs VibeVoice ASR</span><p>Meta 重语种，VibeVoice 重长音频+说话人</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="" target="_blank" rel="noopener">Meta Omnilingual ASR（无公开论文 PDF，以官方发布为准）</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p class="muted">本模型未附公开论文链接（闭源或仅发布页）。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：Meta Omni 采用超多语种统一建模（类 w2v-BERT/Conformer），定位为单模型通吃高/低资源语言的广覆盖 ASR。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 明确“超多语种统一建模、单一模型覆盖高低资源”。与同类对比：相对 canary_qwen 的四语聚焦，其追求语种广度。边界与不确定性：具体骨干与语种数未披露，“类 w2v-BERT”为推断表述。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：以海量含低资源语种数据统一训练，其在长尾语言上的可用性应优于仅覆盖主流语种的模型，但单语精度或被摊薄。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 称含大量低资源语种、兼顾主流与长尾。与同类对比：对比 parakeet（强监督主流），Omni 在低频语种更可用但高频语种精度或略低。边界与不确定性：统一模型容量分配是权衡，具体权衡结果未公开，为推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：广覆盖统一模型面临低资源语种数据质量与评估稀缺的固有风险，且闭源下偏见与失败模式不可审计。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：低资源语种标注稀疏为行业常识，DEEP 未给评估。与同类对比：对比开源的 canary/parakeet，Omni 闭源无法审计权重。边界与不确定性：长尾语言真实表现缺乏公开基准，属高风险推断。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/meta_omni">在交互知识库中打开 Meta Omnilingual ASR 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

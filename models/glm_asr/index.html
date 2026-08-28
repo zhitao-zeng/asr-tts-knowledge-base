@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLM-ASR · 智谱 AI ｜ ASR/TTS 知识库</title>
+<meta name="description" content="基于 GLM 语义对齐的识别头，中文场景优化，开源可商用。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/glm_asr/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "GLM-ASR · 智谱 AI",
+  "about": {
+    "@type": "Thing",
+    "name": "GLM-ASR",
+    "alternateName": "智谱 AI 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "智谱 AI"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-04",
+  "description": "基于 GLM 语义对齐的识别头，中文场景优化，开源可商用。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/glm_asr/",
+  "articleBody": "基于 GLM 语义对齐的识别头，中文场景优化，开源可商用。\n\n## 双模型战略与整体架构\n- “一云一端”布局：云端 GLM-ASR-2512 追求极致精度（长语音/复杂语境），端侧 GLM-ASR-Nano-2512（1.5B）主打本地部署、隐私与低延迟。\n- 架构为端到端 Encoder-Decoder：编码器采用改进版 Conformer（CNN 局部特征 + Transformer 长程建模），并引入深度可分离卷积做轻量化；解码器为 Transformer Decoder，含因果注意力与编码器跨注意力。\n- 特征前端用 Mel 频谱 + SpecAugment（时间/频率掩码）增强泛化；并非 LLM 解码范式，而是“重感知、极致压缩、轻量推理”的非对称设计。\n\n## 多任务与鲁棒头\n- 支持 17 种语言，针对普通话、英语及粤语深度优化；输出含热词/自定义词典接口。\n- 设计理念强调“从真实场景往回推”：专门覆盖多噪声、多口音、低音量（耳语）与方言样本。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>GLM-ASR</h1>
+    <div class="meta">智谱 AI · 2026-04 · 领域 ASR · 参数量 中等 · 许可 开源</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>基于 GLM 语义对齐的识别头，中文场景优化，开源可商用。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AED / Conformer 高精度系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>综合质量（官方宣称，无统一数字）</td><td>综合</td><td class="v">undefined</td><td>良好</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>双模型战略与整体架构</h3><ul class="ml"><li>“一云一端”布局：云端 GLM-ASR-2512 追求极致精度（长语音/复杂语境），端侧 GLM-ASR-Nano-2512（1.5B）主打本地部署、隐私与低延迟。</li><li>架构为端到端 Encoder-Decoder：编码器采用改进版 Conformer（CNN 局部特征 + Transformer 长程建模），并引入深度可分离卷积做轻量化；解码器为 Transformer Decoder，含因果注意力与编码器跨注意力。</li><li>特征前端用 Mel 频谱 + SpecAugment（时间/频率掩码）增强泛化；并非 LLM 解码范式，而是“重感知、极致压缩、轻量推理”的非对称设计。</li></ul><h3>多任务与鲁棒头</h3><ul class="ml"><li>支持 17 种语言，针对普通话、英语及粤语深度优化；输出含热词/自定义词典接口。</li><li>设计理念强调“从真实场景往回推”：专门覆盖多噪声、多口音、低音量（耳语）与方言样本。</li></ul></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方</h3><ul class="ml"><li>多语言混合训练：普通话/英语/粤语等混合，对方言等低资源数据用加权损失提权。</li><li>低音量语音专项：构建 2000+ 小时轻声/不同分贝数据集，训练时用动态音量调整模拟真实音量变化。</li><li>对齐手段：SFT + RL 对齐（据官方技术文档）以保输出质量；Nano 版在训练中显式覆盖嘈杂/重叠语音/会议场景。</li><li>与已知结果呼应：brief 标注“中文场景综合良好”。公开数据显示云端版 GLM-ASR-2512 中文 CER 低至 0.0717（国际领先），端侧 Nano 平均 CER 4.10，属开源端侧 SOTA 区间。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>中文场景</td><td>综合</td><td class="v">良好</td><td>以官方发布为准</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>数字与发现解读</h3><ul class="ml"><li>基准均值：GLM-ASR-Nano 在中文多基准平均 CER 4.10，显著优于 Whisper V3 的 6.93（同参数量级），证明中文特异性优化有效。分项为 Wenet Meeting 6.73、Aishell-1 1.81、Libri Clean 2.00、Libri Other 4.19、Fleurs EN 5.78。</li><li>对照表中其平均 4.10 优于 FunAudio-ASR(4.73)、Whisper V3(6.93)，在开源端侧模型中为最低均值之一；云端 2512 版 CER 0.0717 则进入工业第一梯队。</li><li>鲁棒性证据：官方展示粤语口语、中英 code-switch（如“我很 cool”）、低音量耳语、街道/咖啡馆噪声均能可靠转写，验证“真实场景回推”训练假设。</li><li>已知结果含义：brief 中“综合良好”对应其强项在中文/方言/低音量，而非全语种的广度——它刻意不与 Whisper 在近百语上全面竞争。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>语种以中文/英文为主（17 语），多语广度不及 Whisper / GPT-4o-Transcribe。</li><li>非 LLM 范式，缺语言理解与指令跟随能力；长音频依赖外部 VAD 切分。</li><li>云端版为闭源 API，细化指标以官方为准。</li></ul><h3>批判</h3><ul class="ml"><li>命名易与“GLM 大模型”混淆，但本质是 Conformer + Transformer 的经典 AED，并非 GLM 文本 LLM 驱动，语义先验来自 Conformer 而非语言模型——与 Qwen3-ASR / StepAudio 的 LALM 路线有代差。</li><li>“4.10 平均 CER 优于 Whisper V3”的对照需注意：Whisper V3 参数量更大且为近百语通用模型，该对比对中文场景公平、对多语场景不公平，存在 selection bias。</li><li>低音量/方言增益更多来自数据覆盖而非架构创新；端侧 1.5B 在极长会议上的流式与显存表现未充分披露，生产落地仍有工程缺口。</li></ul></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>GLM 语义对齐提升语言学合理性</li><li>中文优化</li><li>开源</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Qwen3-ASR</span><p>同为国产开源大模型系，GLM 偏语义对齐</p></div><div class="diff"><span class="vs">vs Cohere Transcribe</span><p>GLM 开源，Cohere 同为 Apache 2.0 开放权重、纯 ASR 单模型</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="" target="_blank" rel="noopener">（无公开论文 PDF，以官方发布为准）</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p class="muted">本模型未附公开论文链接（闭源或仅发布页）。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：GLM-ASR 在 GLM 表征上接识别头，利用语言模型语义先验提升识别的语言学合理性，架构本质是&quot;LLM 表征 + 轻量识别解码&quot;的范式。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 写明&quot;在 GLM 表征上接识别头，利用语言模型语义先验&quot;。与同类对比：相比纯声学模型，它更依赖语义先验做消歧；相比 Qwen3-ASR 的完整 LLM 化，它更轻量（接识别头而非全生成）。边界与不确定性：识别头的具体形式（CTC/Transformer 解码）为内部实现，此判断为基于架构描述的推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：因借助 GLM 语义先验且针对中文数据优化，可推断 GLM-ASR 在同音词消歧、语法合理的长句、专有名词语境理解上优于纯声学模型，中文场景优势明显。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：语义先验对中文同音字（如&quot;公式/公司&quot;）消歧天然有利。与同类对比：在中文长句与领域专有名词上，可能优于无语义先验的轻量 ASR。边界与不确定性：中文优势的具体幅度需官方基准佐证；英文/多语种能力未知，属合理推论。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：闭源下训练数据、是否支持多语种及实时流式未知；语义先验过强可能导致&quot;过度纠正&quot;（把口误/口语化表达改成规范书面语），在需忠实转写的场景存在偏差风险。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：强语义先验会倾向输出&quot;更合理&quot;而非&quot;更忠实&quot;的文本。与同类对比：相对逐字转写模型，它在口语、口误、俚语场景可能产生偏差。边界与不确定性：是否支持流式、过度纠正的实际发生率均不可验证；此为风险推断，须以官方为准。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/glm_asr">在交互知识库中打开 GLM-ASR 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

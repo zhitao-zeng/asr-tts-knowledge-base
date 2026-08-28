@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoxCPM2 · OpenBMB ｜ ASR/TTS 知识库</title>
+<meta name="description" content="2B 分层连续隐空间模型，不依赖任何外部离散 tokenizer；非对称 AudioVAE 16k→48k；30 语+9 方言、2M+ 小时，Apache 2.0。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/voxcpm2/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "VoxCPM2 · OpenBMB",
+  "about": {
+    "@type": "Thing",
+    "name": "VoxCPM2",
+    "alternateName": "OpenBMB 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "OpenBMB"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-06",
+  "description": "2B 分层连续隐空间模型，不依赖任何外部离散 tokenizer；非对称 AudioVAE 16k→48k；30 语+9 方言、2M+ 小时，Apache 2.0。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/voxcpm2/",
+  "articleBody": "2B 分层连续隐空间模型，不依赖任何外部离散 tokenizer；非对称 AudioVAE 16k→48k；30 语+9 方言、2M+ 小时，Apache 2.0。\n\n## 设计动机\n传统 TTS 依赖离散 token 化（VQ/EnCodec/DAC），量化带来信息损失、“拼接感”与可控性弱。VoxCPM2 继承 VoxCPM 的“分层扩散-自回归”连续隐空间范式，完全不依赖外部离散语音 tokenizer，直接生成连续语音表征以保留细粒度声学细节。\n\n## 整体流水线（四阶段）\n- LocEnc：将输入文本与参考音频编码为上下文表征。\n- TSLM（文本→语音 LM）：以文本为条件自回归生成粗粒度语音表征。\n- RALM（残差音频 LM）：自回归细化、补充声学细节。\n- LocDiT（局部扩散 Transformer）：用 conditional flow matching（CFM）去噪产出最终高保真音频。\n主干基于 MiniCPM-4（2B 参数，GQA + LongRoPE），LM token 率 6.25Hz，patch size 4。\n\n## 关键模块\n- 非对称 AudioVAE V2：以 16kHz 编码、48kHz 重建，实现隐式超分且编码高效（无需外置上采样器）。\n- 统一序列组织（unified sequence organization）：用同一组输入积木的不同排列表达所有生成模式（30 语、9 中文方言、自然语言声音设计、风格可控克隆、高保真续写克隆），单一参数集 + 单一目标联合训练。\n\n## 本质区别\n相较 codec-LM（离散 token）路线，VoxCPM2 在连续隐空间做分层扩散-自回归，消除量化损失；相较单一扩散，其“粗→细”两阶段 LM + 局部扩散兼顾长程一致与高频细节。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>VoxCPM2</h1>
+    <div class="meta">OpenBMB · 2026-06 · 领域 TTS · 参数量 2B · 许可 Apache 2.0</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>2B 分层连续隐空间模型，不依赖任何外部离散 tokenizer；非对称 AudioVAE 16k→48k；30 语+9 方言、2M+ 小时，Apache 2.0。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">波形 / 连续隐空间新路线</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>TTS 语种覆盖 (语言数)</td><td>语言数</td><td class="v">30</td><td>30 语</td></tr><tr><td>内部 30 语言评测 (平均 WER%)</td><td>WER (%)</td><td class="v">1.68</td><td>内部 30 语评测集</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>传统 TTS 依赖离散 token 化（VQ/EnCodec/DAC），量化带来信息损失、“拼接感”与可控性弱。VoxCPM2 继承 VoxCPM 的“分层扩散-自回归”连续隐空间范式，完全不依赖外部离散语音 tokenizer，直接生成连续语音表征以保留细粒度声学细节。</p><h3>整体流水线（四阶段）</h3><ul class="ml"><li>LocEnc：将输入文本与参考音频编码为上下文表征。</li><li>TSLM（文本→语音 LM）：以文本为条件自回归生成粗粒度语音表征。</li><li>RALM（残差音频 LM）：自回归细化、补充声学细节。</li><li>LocDiT（局部扩散 Transformer）：用 conditional flow matching（CFM）去噪产出最终高保真音频。</li></ul><p>主干基于 MiniCPM-4（2B 参数，GQA + LongRoPE），LM token 率 6.25Hz，patch size 4。</p><h3>关键模块</h3><ul class="ml"><li>非对称 AudioVAE V2：以 16kHz 编码、48kHz 重建，实现隐式超分且编码高效（无需外置上采样器）。</li><li>统一序列组织（unified sequence organization）：用同一组输入积木的不同排列表达所有生成模式（30 语、9 中文方言、自然语言声音设计、风格可控克隆、高保真续写克隆），单一参数集 + 单一目标联合训练。</li></ul><h3>本质区别</h3><p>相较 codec-LM（离散 token）路线，VoxCPM2 在连续隐空间做分层扩散-自回归，消除量化损失；相较单一扩散，其“粗→细”两阶段 LM + 局部扩散兼顾长程一致与高频细节。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方</h3><ul class="ml"><li>联合扩展到 2B 参数 + 2M+ 小时多语种语音数据（Apache 2.0 全开源，含权重、微调与推理代码）。</li><li>统一序列组织使所有能力在单一目标下联合训练，无需为各模式分别建模。</li></ul><h3>batches.json 数字解读</h3><ul class="ml"><li>已知结果：内部 30 语言评测集平均 WER 1.68%，零样本/指令跟随 TTS 达 SOTA 或竞争性。WER 1.68% 为 30 语跨语种零样本合成的平均词错率，属极低水平，说明连续隐空间 + 大模型容量在海量多语种数据下能同时保持高可懂度与跨语种泛化；该数字来自内部评测集，需结合公开零样本/指令跟随基准（论文称达 SOTA/竞争性）交叉验证。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>内部 30 语言评测集</td><td>平均 WER</td><td class="v">1.68%</td><td>零样本/指令跟随 TTS 达 SOTA 或竞争性</td></tr><tr><td>公开零样本/指令跟随基准</td><td>综合</td><td class="v">SOTA/竞争性</td><td>Apache 2.0 全开源</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>消融与关键发现</h3><ul class="ml"><li>非对称 AudioVAE（16k 编码/48k 重建）的隐式超分收益：证明低帧率高效编码 + 高采样率重建可在不增外置上采样器的前提下提升音质。</li><li>统一序列组织对各生成模式联合训练的必要性：同一参数集通过输入积木排列复用，是“单模型多能力”成立的核心。</li><li>能力消融：30 语言、9 中文方言、Voice Design（自然语言描述生成新音色）、Controllable Cloning（克隆+风格引导）、Ultimate Cloning（带原文的高保真续写）均在同一主干验证。</li></ul><h3>数字解读</h3><ul class="ml"><li>30 语平均 WER 1.68%：在内部多语种零样本集上，平均词错率仅 1.68%，配合 48kHz 原生输出，说明 VoxCPM2 在“免 token 化 + 连续隐空间”路线上达到了与离散 codec 模型可比甚至更优的可懂度，且语言自动推断（无需语言标签）降低了多语种部署门槛。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>连续隐空间对离散可控编辑（如精确插入/替换某词 token）不如 codec 直观。</li><li>2M 小时数据门槛高，复现预训练成本极大（虽权重开源，重训不现实）。</li><li>长音频效率与实时性待验证；RTF 约 0.3（RTX 4090）/0.13（优化后端）属近实时而非超低延迟。</li></ul><h3>批判</h3><p>评审视角：VoxCPM2 是“免 token 化连续隐空间 TTS”路线的代表，架构统一、开源彻底（Apache 2.0）、能力维度丰富（声音设计/续写克隆尤为亮眼）。批判点：(1) 2B 参数 + 2M 小时虽强，但“无外部 tokenizer”的优势主要体现在保真度与免训练复杂度，并未在客观指标上大幅超越顶尖离散 codec 模型，更多是可及性与统一性的工程胜利；(2) 内部 30 语 WER 1.68% 缺乏统一的公开基准对照，跨模型可比性受限；(3) 连续表征的“可编辑性”弱于离散 token，使其在需要精细内容控制的工业场景落地不如 codec 路线灵活。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>免外部离散 tokenizer 的连续隐空间</li><li>非对称 AudioVAE 16k→48k 隐式超分</li><li>统一序列组织实现单目标多模式联合训练</li><li>2B + 2M 小时 + Apache 2.0 全开源</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs CosyVoice3</span><p>VoxCPM2 免外部 tokenizer，CosyVoice 依赖 codec</p></div><div class="diff"><span class="vs">vs WavTTS</span><p>VoxCPM2 连续隐空间，WavTTS 原始波形</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2606.06928" target="_blank" rel="noopener">VoxCPM2 arXiv:2606.06928</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2606.06928.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2606.06928" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>We present VoxCPM2, a fully open-source multilingual and controllable speech generation foundation model that extends the hierarchical diffusion-autoregressive modeling paradigm of VoxCPM.</blockquote>
+      <div class="src">— arXiv:2606.06928 Abstract</div>
+      <p><strong>核心创新</strong>：VoxCPM2 把 <strong>分层扩散-自回归（hierarchical continuous-latent）</strong> 范式扩展到 2B 参数、30 语言 + 9 中文方言的统一基础模型，并以 Apache 2.0 完全开源。它<strong>不依赖任何外部离散 tokenizer</strong>，仅凭连续隐变量即可支撑多语与可控生成，是开源语音基础模型里覆盖度与可复现性都突出的代表。</p>
+    </div>
+    <div class="ins">
+      <blockquote>VoxCPM2 advances the framework in three key dimensions: (i) capability, by unifying 30 languages, 9 Chinese dialects, natural-language voice design, style-controllable voice cloning, and high-fidelity continuation cloning within a single backbone; (ii) quality, through an asymmetric AudioVAE that encodes at 16 kHz and reconstructs at 48 kHz, enabling implicit super-resolution with high encoding efficiency; and (iii) scale, by jointly scaling the model to 2B parameters and the training data to over 2 million hours of multilingual speech.</blockquote>
+      <div class="src">— arXiv:2606.06928 Abstract</div>
+      <p><strong>关键方法</strong>：三大支柱——(1) 统一序列组织把五种生成配置（基础 TTS / 声音设计 / 参考克隆 / 可控克隆 / 续写克隆）表达为同一组输入块的不同排布，单一目标联合训练；(2) <strong>非对称 AudioVAE</strong>（16kHz 编码→48kHz 重建）实现隐式超分且编码高效；(3) 2M 小时数据 + 2B 参数规模化。内部 30 语评测平均 WER 仅 1.68%。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Note that even with this threshold, the selected reference clips may still differ in fine acoustic details from the target, so reference-based cloning naturally achieves lower similarity than continuation-based cloning.</blockquote>
+      <div class="src">— arXiv:2606.06928 Section 3.6</div>
+      <p><strong>主要局限</strong>：参考克隆的相似度天然低于续写克隆——因为即使按说话人嵌入阈值（&gt;0.7）筛选，参考片段与目标在细粒度声学细节上仍有差异，且参考音频无需对齐文本。换言之，纯“参考音频 + 自然语言风格”可控克隆在相似度上让位于需要参考文本前缀的续写式克隆，是解耦身份与风格设计带来的固有权衡。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2606.06928/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/voxcpm2">在交互知识库中打开 VoxCPM2 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

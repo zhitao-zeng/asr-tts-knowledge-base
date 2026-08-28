@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wav2Vec 2.0 · Meta ｜ ASR/TTS 知识库</title>
+<meta name="description" content="Meta 提出的自监督语音表征学习框架，用掩码对比学习从无标注音频习得表征，少量标注即可微调出强 ASR。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/wav2vec2/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Wav2Vec 2.0 · Meta",
+  "about": {
+    "@type": "Thing",
+    "name": "Wav2Vec 2.0",
+    "alternateName": "Meta 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Meta"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2020-06",
+  "description": "Meta 提出的自监督语音表征学习框架，用掩码对比学习从无标注音频习得表征，少量标注即可微调出强 ASR。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/wav2vec2/",
+  "articleBody": "Meta 提出的自监督语音表征学习框架，用掩码对比学习从无标注音频习得表征，少量标注即可微调出强 ASR。\n\n## 三阶段结构\nwav2vec 2.0 由三部分组成：卷积特征编码器把 16kHz 原始波形降帧率编码为潜在表示；Transformer 上下文网络生成上下文化表征；量化模块把编码器输出映射为离散单元作为预训练目标。\n\n## 预训练目标\n在潜在空间对语音片段做掩码，再用对比损失从一组干扰项中识别被掩码片段对应的正确量化单元。量化模块在微调时被丢弃，顶部接线性投影以 CTC 解码。\n\n## 掩码策略\n掩码以一定概率作用于潜在表示片段，迫使模型从上下文推断被遮住的语音内容，类似文本中的 masked language modeling。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Wav2Vec 2.0</h1>
+    <div class="meta">Meta · 2020-06 · 领域 ASR · 参数量 Base 95M / Large 317M · 许可 MIT (fairseq/transformers 开源)</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>Meta 提出的自监督语音表征学习框架，用掩码对比学习从无标注音频习得表征，少量标注即可微调出强 ASR。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AED / Conformer 高精度系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>三阶段结构</h3><p>wav2vec 2.0 由三部分组成：卷积特征编码器把 16kHz 原始波形降帧率编码为潜在表示；Transformer 上下文网络生成上下文化表征；量化模块把编码器输出映射为离散单元作为预训练目标。</p><h3>预训练目标</h3><p>在潜在空间对语音片段做掩码，再用对比损失从一组干扰项中识别被掩码片段对应的正确量化单元。量化模块在微调时被丢弃，顶部接线性投影以 CTC 解码。</p><h3>掩码策略</h3><p>掩码以一定概率作用于潜在表示片段，迫使模型从上下文推断被遮住的语音内容，类似文本中的 masked language modeling。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>两阶段范式</h3><p>先在大规模无标注音频上自监督预训练，再用少量标注数据微调。预训练使用类似掩码语言建模的思路但适配连续高帧率音频。</p><h3>数据规模</h3><p>论文在 LibriSpeech 960h(LS-960) 与 Libri-Light 60k 小时(LV-60k) 上预训练。低资源实验中，Large 模型在 53k 小时无标注预训练后，仅用 10 分钟标注即可微调。</p><h3>微调</h3><p>预训练后接 CTC 损失做字符级识别，并可配合外部语言模型解码进一步提升精度。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>LibriSpeech test-clean/other</td><td>WER</td><td class="v">1.8/3.3</td><td>Large 全 960h 微调，无外部 LM</td></tr><tr><td>LibriSpeech test-clean</td><td>WER</td><td class="v">4.8</td><td>仅 10 分钟标注 + LV-60k(53k 小时) 无标注预训练</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>连续输入 + 量化目标</h3><p>消融表明：上下文网络输入保持连续、仅对对比损失目标做量化（Baseline）效果最好；输入与目标都量化最差。</p><h3>掩码与规模</h3><p>提高掩码比例、增大模型与无标注数据量均稳定降低 WER，LV-60k 预训练的 Large 显著优于 LS-960。</p><h3>量化位置</h3><p>仅量化目标（而非输入）的设定是相对先前工作的关键改进点。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>依赖微调</h3><p>预训练后仍需 CTC 微调与（可选）语言模型解码，无法直接端到端零样本使用。</p><h3>表征偏向</h3><p>量化目标依赖初始聚类质量；字符级词表与 LM 词表不匹配会拖累解码反馈。</p><h3>长尾语言</h3><p>对极低资源语言仍需该语种标注数据微调，纯自监督不保证跨语言迁移。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>首次证明纯音频自监督 + 少量微调可超越半监督方法</li><li>掩码对比学习在连续语音上的有效范式</li><li>开启 XLSR/HuBERT/WavLM 等后续自监督浪潮</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs HuBERT</span><p>wav2vec 2.0 用在线量化对比目标，HuBERT 用离线聚类伪标签做 BERT 式预测，后者在 LS960 上略优</p></div><div class="diff"><span class="vs">vs Whisper</span><p>wav2vec 2.0 是自监督表征+微调，Whisper 是弱监督端到端零样本</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2006.11477" target="_blank" rel="noopener">Wav2Vec 2.0 arXiv:2006.11477</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2006.11477.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2006.11477" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>We show for the first time that learning powerful representations from speech audio alone followed by fine-tuning on transcribed speech can outperform the best semi-supervised methods while being conceptually simpler.</blockquote>
+      <div class="src">— arXiv:2006.11477 Abstract</div>
+      <p><strong>为何成为范式</strong>：首次证明「自监督预训练表示 + 少量标注微调」能超过当时最佳半监督 ASR，且概念更简洁。它把 ASR 从「堆标注」转向「堆无标注语音」，直接催生 XLSR、HuBERT、WavLM 等一整条自监督语音表示路线，是后续 Whisper、USM、MMS 的表征基础。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Using just ten minutes of labeled data and pre-training on 53k hours of unlabeled data still achieves 4.8/8.2 WER.</blockquote>
+      <div class="src">— arXiv:2006.11477 Abstract</div>
+      <p><strong>关键实验结论</strong>：仅 10 分钟标注 + 53k 小时无标注，就在 LibriSpeech 上拿到 4.8/8.2 WER，证明极低资源语言也能靠无标注语音做出可用识别。代价是：它产出的是<strong>表示</strong>而非端到端识别器，仍需带 CTC/微调头的任务特定训练，且 10 分钟档仍有明显拼写错误。</p>
+    </div>
+    <div class="ins">
+      <blockquote>We expect performance gains by switching to a seq2seq architecture and a word piece vocabulary.</blockquote>
+      <div class="src">— arXiv:2006.11477 Conclusion</div>
+      <p><strong>时代局限/未来工作</strong>：wav2vec 2.0 仍是「对比学习预训练 + CTC 微调」范式，作者自己指出换 <strong>seq2seq 架构与子词词表</strong>还能再涨点。这也正是其时代局限——非端到端、无流式、无多语言/多任务统一，这些后来由 Whisper、USM 等补齐。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2006.11477/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/wav2vec2">在交互知识库中打开 Wav2Vec 2.0 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

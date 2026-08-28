@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canary-Qwen 2.5B · NVIDIA ｜ ASR/TTS 知识库</title>
+<meta name="description" content="2.5B multilingual ASR，覆盖英/法/德/西，内置标点与 ITN。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/canary_qwen/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Canary-Qwen 2.5B · NVIDIA",
+  "about": {
+    "@type": "Thing",
+    "name": "Canary-Qwen 2.5B",
+    "alternateName": "NVIDIA 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "NVIDIA"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-02",
+  "description": "2.5B multilingual ASR，覆盖英/法/德/西，内置标点与 ITN。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/canary_qwen/",
+  "articleBody": "2.5B multilingual ASR，覆盖英/法/德/西，内置标点与 ITN。\n\n## 设计动机\nCanary-Qwen-2.5B 是 NVIDIA 提出的 Speech-Augmented Language Model（SALM），动机是把转录和语言理解合并进单一模型：传统 ASR 只出文本，后续摘要/问答需再接 LLM；Canary-Qwen 让音频直接驱动一个真实 LLM，从而原生支持转写后处理。\n\n## 整体流水线\nFastConformer 编码器（含 Linearly Scalable Attention）抽取语音表征，经线性投影 + LoRA 适配器注入 Qwen3-1.7B 解码器。总参约 2.5B（FastConformer 编码器 + Qwen3-1.7B）。模型以 80ms 帧率（约 12.5 token/秒）工作，支持 ASR 模式（带标点/大小写转写）与 LLM 模式（对转写文本做摘要、问答）双模式切换。\n\n## 与之前 SOTA 的本质区别\n相对纯 Transducer（Parakeet）或级联后处理，Canary-Qwen 把 LLM 作为解码器本体而非后置模块。适配器设计保持模块化，可拆下编码器单独部署、把 Qwen3 当作独立文本 LLM 用，因此一个部署同时服务口语与书面语下游任务，这是相对 Canary 1B 系列的关键升级。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Canary-Qwen 2.5B</h1>
+    <div class="meta">NVIDIA · 2026-02 · 领域 ASR · 参数量 2.5B · 许可 CC-BY-4.0</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>2.5B multilingual ASR，覆盖英/法/德/西，内置标点与 ITN。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">CTC / Transducer 流式端侧系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>综合质量（官方宣称，无统一数字）</td><td>综合</td><td class="v">undefined</td><td>四语高精度</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>Canary-Qwen-2.5B 是 NVIDIA 提出的 Speech-Augmented Language Model（SALM），动机是把转录和语言理解合并进单一模型：传统 ASR 只出文本，后续摘要/问答需再接 LLM；Canary-Qwen 让音频直接驱动一个真实 LLM，从而原生支持转写后处理。</p><h3>整体流水线</h3><p>FastConformer 编码器（含 Linearly Scalable Attention）抽取语音表征，经线性投影 + LoRA 适配器注入 Qwen3-1.7B 解码器。总参约 2.5B（FastConformer 编码器 + Qwen3-1.7B）。模型以 80ms 帧率（约 12.5 token/秒）工作，支持 ASR 模式（带标点/大小写转写）与 LLM 模式（对转写文本做摘要、问答）双模式切换。</p><h3>与之前 SOTA 的本质区别</h3><p>相对纯 Transducer（Parakeet）或级联后处理，Canary-Qwen 把 LLM 作为解码器本体而非后置模块。适配器设计保持模块化，可拆下编码器单独部署、把 Qwen3 当作独立文本 LLM 用，因此一个部署同时服务口语与书面语下游任务，这是相对 Canary 1B 系列的关键升级。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方</h3><p>在 234K 小时多样化英语语音、约 4000 万 speech-text 对上训练，沿用 Canary 的多任务目标：识别 + 标点恢复 + 大小写 + 逆文本归一化（ITN）。LoRA 适配器在冻结/部分冻结 Qwen3 的前提下对接音频表征，避免灾难性遗忘文本能力。</p><h3>鲁棒性数据构造</h3><p>训练含约 48 小时 MUSAN 噪声数据做抗噪增强，使其在 0dB 信噪比下仍保持约 9.83% WER（远低于行业平均约 18.2%）。许可为 CC-BY-4.0，可商用。</p><h3>known_results 数字解读</h3><p>batches.json 把 Canary-Qwen 标为四语基准高精度、标点与 ITN 开箱可用。公开指标：HF Open ASR 榜平均 WER 5.63%（榜首），LibriSpeech-clean 1.60%、SPGISpeech 1.9%、AMI 会议 92.3% 口语识别准确率，418 RTFx。注意其四语（英/法/德/西）能力继承自 Canary 系列，但公开宣传以英语 SOTA 为主，多语种是可用而非主打卖点。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>四语基准</td><td>WER</td><td class="v">高精度</td><td>标点与 ITN 开箱可用</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>关键消融与发现</h3><h3>编码器-解码器耦合方式</h3><p>核心消融是线性投影 + LoRA 能否在冻结 LLM 的同时对齐语音表征。结果证明轻量适配器即可让 Qwen3 直接消费 FastConformer 输出，且 LLM 模式文本能力基本保留，这是 SALM 成立的前提。</p><h3>精度-速度平衡</h3><p>相比 Parakeet-TDT 的极致吞吐（约 2000-3300 RTFx），Canary-Qwen 用更重的解码器换取精度与理解力，418 RTFx 仍属实时 400 倍以上，证明高精度 + 可理解可在 2.5B 规模下共存。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>仅四语（英/法/德/西），超多语言需其他模型；以英文为主战场。</li><li>相对纯 LLM 系（如 Qwen3-ASR 全量）缺通用语言理解广度，但强于传统 ASR。</li><li>2.5B 部署需约 5GB 显存，低于超大模型但高于纯 Conformer。</li></ul><h3>批判</h3><p>转录+理解一体化的卖点在实际产品中常受限于上下文长度与延迟：LLM 模式做长音频摘要时仍需先把整段转写塞进上下文，并非真正边听边总结。此外 418 RTFx 与 Parakeet 的 3000+ RTFx 直接对比不公平，后者是轻量 Transducer，前者带 1.7B LLM 解码，二者精度档位不同。其榜首 5.63% 是 HF Open ASR 平均口径，跨榜与 Artificial Analysis 等更硬口径不可直接横比。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>2.5B 多语种(4 语)</li><li>内置标点恢复与 ITN</li><li>CC-BY-4.0</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Parakeet TDT</span><p>Canary 重多语种+标点，Parakeet 重纯吞吐</p></div><div class="diff"><span class="vs">vs Meta Omnilingual</span><p>Canary 仅 4 语高精度，Meta 重千语覆盖</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://catalog.ngc.nvidia.com/" target="_blank" rel="noopener">NVIDIA NeMo Canary</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="https://catalog.ngc.nvidia.com/" target="_blank" rel="noopener">🔗 在线来源</a></p><p class="muted" style="font-size:12px">仅在线链接，PDF 未随仓库托管；可前往来源页查看原文。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：Canary-Qwen 为多语种（英/法/德/西）编码器-解码器，并将标点恢复与逆文本归一化作为联合任务，定位为“开箱即用”的生产级转写。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 明确四语 + 标点/ITN 多任务、2.5B。与同类对比：相对 cohere（无显式后处理）、parakeet（纯 ASR），其内置 ITN/标点更贴合落地。边界与不确定性：CC-BY-4.0 开源；“Qwen”暗示 LLM 解码关联但未证实，为推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：2.5B 规模 + 四语多任务联合训练，使其在目标语种内的转写可读性与后处理完整度应高于无 ITN 的同类模型。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 称多任务联合训练、兼顾精度与成本。与同类对比：对比 moonshine（轻量无后处理），Canary 输出更贴近最终文本。边界与不确定性：仅四语，非目标语种为短板，具体指标未列，为推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：明确仅覆盖英/法/德/西四语，其多语种边界清晰受限，且 ITN 规则的语言/地区适配存在不确定性。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 列明四语。与同类对比：对比 meta_omni 的超多语种统一建模，Canary 语种广度远窄。边界与不确定性：ITN 在不同地区格式（如数字/货币）差异大，开源但无覆盖说明，属推断。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/canary_qwen">在交互知识库中打开 Canary-Qwen 2.5B 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

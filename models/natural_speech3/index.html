@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NaturalSpeech 3 · Microsoft ｜ ASR/TTS 知识库</title>
+<meta name="description" content="用属性分解编解码器 FACodec 与分解扩散模型，将语音按属性子空间分别生成，实现超自然零样本 TTS。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/natural_speech3/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "NaturalSpeech 3 · Microsoft",
+  "about": {
+    "@type": "Thing",
+    "name": "NaturalSpeech 3",
+    "alternateName": "Microsoft 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Microsoft"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2024-03",
+  "description": "用属性分解编解码器 FACodec 与分解扩散模型，将语音按属性子空间分别生成，实现超自然零样本 TTS。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/natural_speech3/",
+  "articleBody": "用属性分解编解码器 FACodec 与分解扩散模型，将语音按属性子空间分别生成，实现超自然零样本 TTS。\n\n\n## FACodec 解耦\nNaturalSpeech 3 的核心是 FACodec：用分解向量量化（FVQ）把波形编码为内容、韵律、音色、声学细节四个解耦子空间，并可由这些表示重构高质量波形。\n\n## 分解扩散模型\n模型针对音素时长、内容、韵律、声学细节分别用对应的提示生成；其中韵律、内容、声学细节共享一个扩散模型，音色直接从提示提取而无需单独建模。\n\n## 分而治之\n将复杂语音分解为属性子空间，显著降低建模难度，并允许用不同提示分别控制不同属性。\n"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>NaturalSpeech 3</h1>
+    <div class="meta">Microsoft · 2024-03 · 领域 TTS · 参数量 ~1B · 许可 研究用途（FACodec 已开源）</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>用属性分解编解码器 FACodec 与分解扩散模型，将语音按属性子空间分别生成，实现超自然零样本 TTS。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">波形 / 连续隐空间新路线</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>FACodec 解耦</h3><p>NaturalSpeech 3 的核心是 FACodec：用分解向量量化（FVQ）把波形编码为内容、韵律、音色、声学细节四个解耦子空间，并可由这些表示重构高质量波形。</p><h3>分解扩散模型</h3><p>模型针对音素时长、内容、韵律、声学细节分别用对应的提示生成；其中韵律、内容、声学细节共享一个扩散模型，音色直接从提示提取而无需单独建模。</p><h3>分而治之</h3><p>将复杂语音分解为属性子空间，显著降低建模难度，并允许用不同提示分别控制不同属性。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据/模型缩放</h3><p>论文将模型扩展到约 1B 参数，训练数据扩展到约 20 万小时，展示明显的 scaling 能力。</p><h3>解耦训练</h3><p>FACodec 借助信息瓶颈、多种监督损失与对抗训练增强属性解耦；扩散模型在各子空间以相应提示条件化训练。</p><h3>开源组件</h3><p>FACodec 的代码与预训练模型已通过 Amphion 开源，便于下游复用。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>LibriSpeech</td><td>CMOS</td><td class="v">与真值相当或更优</td><td>多说话人上首次达到人类水平自然度</td></tr><tr><td>LibriSpeech</td><td>说话人相似度 Sim-O</td><td class="v">0.67（由 0.64 提升）</td><td>论文口径</td></tr><tr><td>LibriSpeech</td><td>WER</td><td class="v">1.81（由 1.94 降低）</td><td>论文明示的可懂度提升</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>解耦增益</h3><p>论文验证 FACodec 解耦对零样本音质、相似度与稳定性的提升，并展示把 FACodec 接入自回归 VALL-E 也能显著改善。</p><h3>评测结果</h3><p>在 LibriSpeech 上，NaturalSpeech 3 的 CMOS 与真值相当或更优，Sim-O 由 0.64 提升至 0.67，WER 由 1.94 降至 1.81，MCD 平均降低 0.16。</p><h3>属性控制</h3><p>通过分别更换时长/韵律等提示，可实现语速、情感等细粒度可控生成。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>资源需求</h3><p>1B 参数与 20 万小时训练对算力和数据要求很高。</p><h3>提示依赖</h3><p>仍需参考音频，极细粒度情感与口音复刻依赖提示的覆盖度。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>提出 FACodec 将语音按属性解耦为子空间</li><li>分解扩散模型分属性生成、提升可控性</li><li>首次在多说话人 LibriSpeech 上达到人类水平自然度</li><li>1B 参数 + 20 万小时的数据/模型缩放</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs VALL-E / 离散 codec TTS</span><p>用连续 RVQ 之外的属性分解表征，降低建模复杂度</p></div><div class="diff"><span class="vs">vs NaturalSpeech 2</span><p>引入 FACodec 与分解扩散，零样本能力更强</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2403.03100" target="_blank" rel="noopener">NaturalSpeech 3 arXiv:2403.03100</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2403.03100.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2403.03100" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>Motivated by it, we propose NaturalSpeech 3, a TTS system with novel factorized diffusion models to generate natural speech in a zero-shot way.</blockquote>
+      <div class="src">— arXiv:2403.03100 Abstract</div>
+      <p>核心创新是把语音<strong>因式分解</strong>为内容/韵律/音色/声学细节等子空间分别生成，而非端到端硬回归。这是从「整体波形建模」转向「属性可分解生成」的范式转折，为可控性与解耦奠定结构基础。</p>
+    </div>
+    <div class="ins">
+      <blockquote>we design a neural codec with factorized vector quantization (FVQ) to disentangle speech waveform into subspaces of content, prosody, timbre, and acoustic details</blockquote>
+      <div class="src">— arXiv:2403.03100 Abstract</div>
+      <p>提出 <strong>FACodec（FVQ 神经声码器）</strong> 作为各属性的离散表示来源，再用 factorized diffusion 在每个子空间按对应 prompt 生成。配合 1B 参数 + 200K 小时训练，把「解耦生成」从理念落到可扩展系统，质量追平真人录音。</p>
+    </div>
+    <div class="ins">
+      <blockquote>we need phoneme transcription for content supervision, which limits the scalability</blockquote>
+      <div class="src">— arXiv:2403.03100 Appendix C Limitation</div>
+      <p>局限在于 FACodec 的内容监督仍需<strong>音素转写</strong>，且只在英文 LibriVox 有声书（朗读风格）上验证，不支持多语言、也难覆盖背景音等属性。说明「解耦表示」在可扩展性与真实多样性上仍有未填的坑。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2403.03100/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/natural_speech3">在交互知识库中打开 NaturalSpeech 3 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

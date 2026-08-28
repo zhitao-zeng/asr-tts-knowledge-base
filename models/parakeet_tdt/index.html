@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NVIDIA Parakeet TDT · NVIDIA ｜ ASR/TTS 知识库</title>
+<meta name="description" content="TDT 架构高吞吐 ASR，RTFx 约 3332，服务端批处理之王。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/parakeet_tdt/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "NVIDIA Parakeet TDT · NVIDIA",
+  "about": {
+    "@type": "Thing",
+    "name": "NVIDIA Parakeet TDT",
+    "alternateName": "NVIDIA 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "NVIDIA"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-01",
+  "description": "TDT 架构高吞吐 ASR，RTFx 约 3332，服务端批处理之王。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/parakeet_tdt/",
+  "articleBody": "TDT 架构高吞吐 ASR，RTFx 约 3332，服务端批处理之王。\n\n## 设计动机\nParakeet-TDT 是 NVIDIA NeMo 在 RNN-T 基础上提出的序列建模范式，核心动机是消除传统 Transducer 在帧级预测中大量空白帧（blank）带来的算力浪费。人类平均每秒说 2-3 个词，而每帧仅覆盖约 40ms 音频，导致绝大多数帧输出 blank，计算被白白消耗。\n\n## 整体流水线\nFastConformer 编码器（8 倍深度可分离卷积早期下采样）先把 16kHz 音频压成高帧率表征，再送入 TDT 解码器。TDT 在每个非 blank 帧同时预测（1）输出 token 的概率；（2）该 token 持续多少帧的 duration。推理时若预测某词跨 15 帧，则直接跳过 15 帧，无需逐帧处理，实现帧同步（frame-synchronous）流式解码。\n\n## 与之前 SOTA 的本质区别\n相对标准 RNN-T/Transducer，TDT 用 duration 预测显式建模 token 跨度，把对齐过程内嵌进模型而非依赖外部对齐。Parakeet-TDT 1.1B 比同规模 Parakeet-RNNT-1.1B 快 64% 且精度更高，是首个在 HF Open ASR 榜把平均 WER 压到 7% 以下的模型。0.6B 与 1.1B 两档均原生输出标点、大小写与词级时间戳，无需后置 LM/ITN 模块。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>NVIDIA Parakeet TDT</h1>
+    <div class="meta">NVIDIA · 2026-01 · 领域 ASR · 参数量 0.6–1.1B · 许可 CC-BY-4.0</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>TDT 架构高吞吐 ASR，RTFx 约 3332，服务端批处理之王。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">CTC / Transducer 流式端侧系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>服务端吞吐 (RTFx)</td><td>RTFx</td><td class="v">3332</td><td>批处理 RTFx</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>Parakeet-TDT 是 NVIDIA NeMo 在 RNN-T 基础上提出的序列建模范式，核心动机是消除传统 Transducer 在帧级预测中大量空白帧（blank）带来的算力浪费。人类平均每秒说 2-3 个词，而每帧仅覆盖约 40ms 音频，导致绝大多数帧输出 blank，计算被白白消耗。</p><h3>整体流水线</h3><p>FastConformer 编码器（8 倍深度可分离卷积早期下采样）先把 16kHz 音频压成高帧率表征，再送入 TDT 解码器。TDT 在每个非 blank 帧同时预测（1）输出 token 的概率；（2）该 token 持续多少帧的 duration。推理时若预测某词跨 15 帧，则直接跳过 15 帧，无需逐帧处理，实现帧同步（frame-synchronous）流式解码。</p><h3>与之前 SOTA 的本质区别</h3><p>相对标准 RNN-T/Transducer，TDT 用 duration 预测显式建模 token 跨度，把对齐过程内嵌进模型而非依赖外部对齐。Parakeet-TDT 1.1B 比同规模 Parakeet-RNNT-1.1B 快 64% 且精度更高，是首个在 HF Open ASR 榜把平均 WER 压到 7% 以下的模型。0.6B 与 1.1B 两档均原生输出标点、大小写与词级时间戳，无需后置 LM/ITN 模块。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方</h3><p>在大规模带标注英语语音上做有监督训练，TDT 目标函数联合优化 token 与 duration 预测，并用偏向最大化可跳过帧数的方式鼓励 duration 分支学习更长跨度以提升吞吐。编码器采用全注意力（full attention）以换取更强的长上下文理解，并利用 FastConformer 的线性可扩展注意力降低计算。</p><h3>数据规模与开源</h3><p>模型以 CC-BY-4.0 开源，0.6B 变体可单次处理最长 24 分钟音频。其训练数据小时数未像 Canary 那样公开，但工程目标明确是服务端高吞吐批处理而非极低延迟。</p><h3>known_results 数字解读</h3><p>batches.json 给出服务端批处理 RTFx 约 3332（即 1 秒音频约 0.0003 秒处理完）。该数字来自 0.6B v3 在 batch size 128 量级测得的约 2940-3380 RTFx 区间；其本质是 duration 跳帧 + FastConformer 下采样 + 大 batch 三者叠加的极致吞吐，代价是精度位于开源前列但非绝对榜首（部分榜单平均 WER 约 6.3%）。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>服务端批处理</td><td>RTFx</td><td class="v">~3332</td><td>即 1 秒音频约 0.0003 秒处理</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>关键消融与发现</h3><h3>duration 粒度权衡</h3><p>TDT 的核心设计变量是 duration 的离散取值集合（如 1/2/4/8 帧等）。粒度太粗会丢失细对齐、损害精度；太细则跳帧收益消失、回到逐帧开销。工程实现选择能让平均跳过帧数最大化的离散集合，在保持与 RNN-T 同等精度的前提下取得 64% 速度提升。</p><h3>速度来源拆解</h3><p>公开解读把总加速拆给两块：FastConformer 早期 8 倍下采样贡献约 2.4-2.8 倍；TDT 跳帧再贡献约 2.82 倍，合计相对基线 Conformer-RNNT 约 6-8 倍。这证明浪费计算是旧架构主要瓶颈，而 TDT 把瓶颈从逐帧 joiner 计算转移到 token 级 joiner 计算。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>以吞吐而非超低首包延迟为目标，严格流式/端侧低延迟场景弱于专用流式模型。</li><li>公开变体以英文为主，多语种覆盖远不及 Qwen3-ASR 等。</li><li>精度处于开源第一梯队但非绝对榜首，部分开放榜平均 WER 约 6-8%，对精度敏感任务需权衡。</li></ul><h3>批判</h3><p>TDT 的 RTFx 数字高度依赖 batch size 与并发设定，单条流式请求的实时因子远不及批处理数值，宣传中 3332 倍易被误读为单流延迟。此外 duration 预测把长静音/音乐段也纳入跳过逻辑，对含长停顿的会议音频，跳帧可能跨过边界信息，需要配合 VAD 才能稳妥。它本质是服务端批处理怪兽，定位清晰但不可泛化为通用低延迟方案。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>TDT 联合预测 token 与时长</li><li>极高吞吐，适合批量转写</li><li>CC-BY-4.0</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Moonshine v2</span><p>Parakeet 重吞吐，Moonshine 重端侧小模型</p></div><div class="diff"><span class="vs">vs Cohere Transcribe</span><p>Cohere 重开放榜精度，Parakeet 重吞吐</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://catalog.ngc.nvidia.com/" target="_blank" rel="noopener">NVIDIA NeMo Parakeet</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="https://catalog.ngc.nvidia.com/" target="_blank" rel="noopener">🔗 在线来源</a></p><p class="muted" style="font-size:12px">仅在线链接，PDF 未随仓库托管；可前往来源页查看原文。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：Parakeet TDT 在 RNN-T 上叠加 duration 预测（Token-and-Duration Transducer），定位为兼顾流式与高吞吐的强监督 ASR。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 明确 TDT=token+duration 联合预测、天然流式、减帧重复。与同类对比：相对标准 RNN-T/Transducer（cohere），TDT 通过跳帧减少冗余计算。边界与不确定性：CC-BY-4.0 开源，但“duration”分布假设依赖训练设定，为合理推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：duration 预测大幅削减帧级重复计算，使其在批处理/服务端高并发场景的吞吐与成本效率应优于普通 Transducer。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 称“大幅减少帧级重复计算，利于批处理”。与同类对比：相对 moonshine 的轻量端侧，Parakeet 走服务端高精度+高吞吐路线。边界与不确定性：强监督训练带来对齐精度，但跨域泛化可能弱于弱监督 cohere，属推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：作为强监督 CC-BY 模型，其能力上限受监督数据覆盖约束，对带噪/口音长尾的鲁棒性可能不及弱监督范式。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 称“大规模监督语音训练”。与同类对比：对比 cohere 的弱监督海量带噪标注，Parakeet 在分布外噪声上或更易退化。边界与不确定性：开源可审计，但具体鲁棒性基准未列，为推断。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/parakeet_tdt">在交互知识库中打开 NVIDIA Parakeet TDT 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

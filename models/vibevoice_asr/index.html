@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VibeVoice ASR · 微软 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="单次处理 60 分钟音频并附说话人日志，面向长会议/访谈。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/vibevoice_asr/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "VibeVoice ASR · 微软",
+  "about": {
+    "@type": "Thing",
+    "name": "VibeVoice ASR",
+    "alternateName": "微软 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "微软"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-01",
+  "description": "单次处理 60 分钟音频并附说话人日志，面向长会议/访谈。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/vibevoice_asr/",
+  "articleBody": "单次处理 60 分钟音频并附说话人日志，面向长会议/访谈。\n\n## 设计动机\nVibeVoice-ASR（Microsoft Research，arXiv 2601.18184）针对长音频转写痛点：工业级级联管线用 VAD 切 30s 短片段，分别做 ASR、说话人日志（diarization）、时间戳对齐，再靠启发式规则融合，导致上下文碎片化与跨段说话人错乱。VibeVoice 把长语音理解作为首要问题，单次推理端到端产出结构化结果。\n\n## 整体流水线\n基于 Qwen2 Decoder（28 层 Transformer、3584 隐藏维）为骨干，配声学 tokenizer 编码器与语义 tokenizer 编码器双路，加扩散头。关键是用约 7.5Hz 超低帧率连续语音 tokenizer 把 60 分钟音频压进 64K token 上下文窗口，使模型能全局关注整场会话。Flash-Attention 优化超长序列推理。\n\n## 与之前 SOTA 的本质区别\n相对切片段+级联范式，VibeVoice 把 ASR、说话人日志、时间戳预测统一为单一文本生成任务，直接输出谁-何时-说了什么的结构化富转录（Rich Transcription）。无需外部聚类算法即可在单次推理里完成说话人归属，从架构上消除跨段误差传播。支持 50+ 语言与无缝语种切换（如中英夹杂），并提供自定义热词注入。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>VibeVoice ASR</h1>
+    <div class="meta">微软 · 2026-01 · 领域 ASR · 参数量 大 · 许可 研究</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>单次处理 60 分钟音频并附说话人日志，面向长会议/访谈。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">长音频 / 超多语言系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>综合质量（官方宣称，无统一数字）</td><td>综合</td><td class="v">undefined</td><td>长音频单次 60 分钟</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>VibeVoice-ASR（Microsoft Research，arXiv 2601.18184）针对长音频转写痛点：工业级级联管线用 VAD 切 30s 短片段，分别做 ASR、说话人日志（diarization）、时间戳对齐，再靠启发式规则融合，导致上下文碎片化与跨段说话人错乱。VibeVoice 把长语音理解作为首要问题，单次推理端到端产出结构化结果。</p><h3>整体流水线</h3><p>基于 Qwen2 Decoder（28 层 Transformer、3584 隐藏维）为骨干，配声学 tokenizer 编码器与语义 tokenizer 编码器双路，加扩散头。关键是用约 7.5Hz 超低帧率连续语音 tokenizer 把 60 分钟音频压进 64K token 上下文窗口，使模型能全局关注整场会话。Flash-Attention 优化超长序列推理。</p><h3>与之前 SOTA 的本质区别</h3><p>相对切片段+级联范式，VibeVoice 把 ASR、说话人日志、时间戳预测统一为单一文本生成任务，直接输出谁-何时-说了什么的结构化富转录（Rich Transcription）。无需外部聚类算法即可在单次推理里完成说话人归属，从架构上消除跨段误差传播。支持 50+ 语言与无缝语种切换（如中英夹杂），并提供自定义热词注入。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方</h3><p>模型约 9B 参数，采用 MIT 开源许可。SFT 阶段侧重中英环境，但预训练底座覆盖 50+ 语言，因此法语/德语/日语等零样本泛化强。训练把联合产出识别+说话人+时间戳作为统一序列目标，并用结构化输出格式监督，使模型学会在生成文本同时给出说话人标签与时间区间。</p><h3>known_results 数字解读</h3><p>batches.json 给出单次 60 分钟、含说话人日志。论文在 AISHELL-4、AMI、AliMeeting、MLC 等五项基准上对比闭源多模态大模型：说话人错误率（DER）降至 3.42%（对比基线 16.29%）；带时间约束的 tcpWER 达 14.81%，大幅领先 Gemini-2.5-Pro / Gemini-3-Pro 等。这证明单次长上下文在说话人归属与时序对齐上显著优于级联方案，DER 与 tcpWER 的下降正是取消分段后全局一致性的直接收益。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>长音频场景</td><td>单次时长</td><td class="v">60 分钟</td><td>含说话人日志</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>关键消融与发现</h3><h3>超低帧率 tokenizer 的必要性</h3><p>核心设计选择是约 7.5Hz 高压缩 tokenizer。若不压缩，60 分钟音频帧数远超 LLM 上下文上限，只能回退到分段；7.5Hz 让一小时约 2.7 万帧，配合 64K 窗口留足余量做全局说话人追踪，这是单次推理成立的前提。</p><h3>联合训练 vs 级联</h3><p>论文把联合训练（识别+日志+时间戳一次出）与分别训练再融合对比，结论是联合建模让说话人标签与时间戳和文本强一致，消除了级联中 ASR 段边界与 diarization 聚类不对齐的根本缺陷，DER/tcpWER 因此大幅下降。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>9B 规模 + 64K 长上下文，显存与算力占用大，单条长音频推理成本高。</li><li>中文/英文为主监督，长尾语种靠预训练泛化，弱于专门低资源模型。</li><li>单次 60 分钟是上限，超长（如数小时）仍需分段或流式策略。</li></ul><h3>批判</h3><p>VibeVoice 把 diarization 内嵌进生成，的确根治了级联错位，但其 DER 3.42% 的惊人数字很可能受益于评测集本身已提供较干净的说话人边界假设或受限说话人数（如 AISHELL-4/AMI）。在真实开放麦克风、重叠语音严重场景下，生成式说话人归属仍可能漂移。另外 64K 上下文对一小时音频够用，但说话人表征隐式编码在 token 序列里，长会议里远端说话人被后续内容稀释的风险未被充分讨论。它更像是会议/播客转录的专用利器，而非通用流式 ASR。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>单次 60 分钟超长音频</li><li>内置说话人分离(diarization)</li><li>长上下文建模</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs 标准 ASR</span><p>突破分钟级限制，直接吃整场会议</p></div><div class="diff"><span class="vs">vs Meta Omnilingual</span><p>VibeVoice 重长音频+说话人，Meta 重语种覆盖</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2601.18184" target="_blank" rel="noopener">VibeVoice ASR arXiv:2601.18184</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2601.18184.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2601.18184" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>Unlike traditional pipelined approaches that rely on audio chunking, VIBEVOICE-ASR supports single-pass processing for up to 60 minutes of audio. It unifies Automatic Speech Recognition, Speaker Diarization, and Timestamping into a single end-to-end generation task.</blockquote>
+      <div class="src">— arXiv:2601.18184 摘要</div>
+      <p>VIBEVOICE-ASR 主打 <strong>单趟处理 60 分钟、把 ASR/说话人分离/时间戳统一成一个端到端生成任务</strong>，直接解决长音频的「上下文碎片」问题——传统分块流水线会丢失跨块信息。这是与 VIBEVOICE 同源、但把多任务塞进同一生成流的关键升级。</p>
+    </div>
+    <div class="ins">
+      <blockquote>By leveraging an ultra-low frame rate tokenizer (7.5 Hz), VIBEVOICE-ASR compresses an hour-long audio in a single pass by ingesting continuous latents from dual-tokenizers alongside optional user-provided context.</blockquote>
+      <div class="src">— arXiv:2601.18184 方法</div>
+      <p><strong>7.5Hz 超低帧率 tokenizer 是单趟长音频能塞进上下文窗口的前提</strong>：3600s×7.5=27000 tokens，刚好在 LLM 上下文量级内。配合 prompt 上下文注入（领域术语/多音字消歧），让它能在不显式设语言的情况下处理 50+ 语言与码切换。代价是超低帧率可能损失细粒度韵律/音素边界信息——靠双 tokenizer（声学+语义）互补缓解。</p>
+    </div>
+    <div class="ins">
+      <blockquote>The current architecture generates a serialized output stream and does not explicitly handle overlapping speech (the cocktail party problem). In scenarios where multiple speakers talk simultaneously, the model tends to transcribe the dominant speaker, potentially missing secondary information.</blockquote>
+      <div class="src">— arXiv:2601.18184 结论与局限</div>
+      <p>两个明确局限：<strong>(1) 多语遗忘</strong>——预训练覆盖 50+ 语言但 SFT 偏英/中/码切换，低资源语言会退化；(2) <strong>重叠语音（鸡尾酒会问题）</strong>——串行输出流只转写主导说话人，漏掉次要信息。前者靠开源微调代码社区补，后者需未来做 separation-aware 建模，是长音频会议场景的硬伤。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2601.18184/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/vibevoice_asr">在交互知识库中打开 VibeVoice ASR 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

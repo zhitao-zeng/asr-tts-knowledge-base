@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whisper · OpenAI ｜ ASR/TTS 知识库</title>
+<meta name="description" content="OpenAI 的弱监督大规模多语种语音识别与翻译模型，零样本泛化能力强。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/whisper/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Whisper · OpenAI",
+  "about": {
+    "@type": "Thing",
+    "name": "Whisper",
+    "alternateName": "OpenAI 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "OpenAI"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2022-09",
+  "description": "OpenAI 的弱监督大规模多语种语音识别与翻译模型，零样本泛化能力强。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/whisper/",
+  "articleBody": "OpenAI 的弱监督大规模多语种语音识别与翻译模型，零样本泛化能力强。\n\n## 模型结构\nWhisper 采用标准的 Transformer 编码器-解码器（seq2seq）结构。输入音频被切分为固定 30 秒的片段，转换为 80 维 log-Mel 频谱后送入编码器。\n\n## 多任务控制\n解码器通过特殊的控制 token 区分任务：语种识别、转录（同语种）、任意语种到英语的翻译，以及是否输出时间戳。单一模型靠这些 token 在零样本设定下切换行为，无需为每个任务单独微调。\n\n## 词汇与规模\n词表约 51,865 个 token，覆盖约 99 种语言的控制与输出。模型有多个尺寸，从 tiny(39M) 到 large(1550M)。\n\n## 流式限制\n30 秒固定窗口使其天然以片段为单位推理，长音频需分段拼接，不适合低延迟流式场景。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Whisper</h1>
+    <div class="meta">OpenAI · 2022-09 · 领域 ASR · 参数量 Large-v3 约 1.5B · 许可 MIT(代码)/权重受限</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>OpenAI 的弱监督大规模多语种语音识别与翻译模型，零样本泛化能力强。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AED / Conformer 高精度系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>模型结构</h3><p>Whisper 采用标准的 Transformer 编码器-解码器（seq2seq）结构。输入音频被切分为固定 30 秒的片段，转换为 80 维 log-Mel 频谱后送入编码器。</p><h3>多任务控制</h3><p>解码器通过特殊的控制 token 区分任务：语种识别、转录（同语种）、任意语种到英语的翻译，以及是否输出时间戳。单一模型靠这些 token 在零样本设定下切换行为，无需为每个任务单独微调。</p><h3>词汇与规模</h3><p>词表约 51,865 个 token，覆盖约 99 种语言的控制与输出。模型有多个尺寸，从 tiny(39M) 到 large(1550M)。</p><h3>流式限制</h3><p>30 秒固定窗口使其天然以片段为单位推理，长音频需分段拼接，不适合低延迟流式场景。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>弱监督数据</h3><p>模型在 680,000 小时弱监督多语种音频上做完全监督训练。数据主要来自互联网，其中约 438,000 小时为英语音频配英语文本，约 126,000 小时为非英语语音翻译为英语，约 117,000 小时为非英语音频配本语种文本。</p><h3>训练目标</h3><p>采用标准的序列到序列交叉熵损失，在转录与翻译任务间交替训练，使编码器-解码器同时具备同语种与跨语种预测能力。训练在 16kHz 重采样音频上进行。</p><h3>关键思想</h3><p>核心并非复杂算法，而是用海量、多样、弱标注的数据直接获得鲁棒性，从而在无微调的零样本场景下逼近甚至超过许多全监督结果。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>LibriSpeech test-clean</td><td>WER</td><td class="v">2.7%</td><td>Large-v3（后续版本；论文原 large 为 3.0%）；零样本无微调</td></tr><tr><td>LibriSpeech test-other</td><td>WER</td><td class="v">5.2%</td><td>Large-v3；噪声与多变条件下</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>消融重点</h3><p>论文本身未做大量结构消融，重点论证的是数据与弱监督规模的作用。</p><h3>任务提示的作用</h3><p>实验表明，任务与语种控制 token 让同一个模型在识别、翻译、语种识别之间正确切换；去掉或错误设置这些 token 会显著劣化对应任务。</p><h3>尺寸与鲁棒性</h3><p>不同尺寸模型在口音、背景噪声、专业术语上的表现随参数规模提升而改善，large 在英语与多语种基准上均明显强于 tiny/base。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>实时性</h3><p>Whisper 以 30 秒片段为单位处理，长音频需分段并拼接，天然不适合低延迟流式场景。</p><h3>语言不均衡</h3><p>训练数据约 65% 为英语，其余语言表现与数据量强相关，低资源语言（如威尔士语、部分声调语言）WER 可达 30% 以上。</p><h3>幻觉与标点</h3><p>在静音或噪声极强时可能出现幻觉文本；标点与大小写依赖解码策略，不一定可靠。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>用 68 万小时弱监督数据实现零样本鲁棒 ASR</li><li>单一 seq2seq 模型靠控制 token 统一识别/翻译/语种识别多任务</li><li>开源多尺寸模型推动社区与产业落地</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs wav2vec 2.0</span><p>Whisper 端到端 seq2seq 且零样本，wav2vec 2.0 需针对每语种微调</p></div><div class="diff"><span class="vs">vs Google USM</span><p>Whisper 开源且数据量更小（68 万 vs 1200 万小时），USM 在 100+ 语言上精度更高</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2212.04356" target="_blank" rel="noopener">Whisper arXiv:2212.04356</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2212.04356.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2212.04356" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>When scaled to 680,000 hours of multilingual and multitask supervision, the resulting models generalize well to standard benchmarks and are often competitive with prior fully supervised results but in a zero-shot transfer setting without the need for any fine-tuning.</blockquote>
+      <div class="src">— arXiv:2212.04356 Abstract</div>
+      <p><strong>核心创新/为何成为范式</strong>：用 68 万小时「弱监督」网络转录音频做大规模多任务训练，模型在<strong>零样本迁移</strong>下即可泛化到标准基准、常媲美全监督结果。它把 ASR 从「单语料精调」推向「海量弱标 + 零样本」，成为开源语音识别的事实基线。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Whisper departs noticeably from most recent state-of-the-art speech recognition systems due to the lack of unsupervised pre-training or self-teaching methods.</blockquote>
+      <div class="src">— arXiv:2212.04356 Section 6.3</div>
+      <p><strong>关键设计选择</strong>：Whisper 刻意<strong>不做无监督预训练/自训练</strong>，纯靠弱标数据规模取胜——这与同期 wav2vec 2.0/HuBERT 路线截然相反。代价是数据效率偏低：同样精度需要远比自监督+少量标注更多的标注小时数，且作者也承认加入自监督可能进一步提升。</p>
+    </div>
+    <div class="ins">
+      <blockquote>Whisper models are trained on 30-second audio chunks and cannot consume longer audio inputs at once.</blockquote>
+      <div class="src">— arXiv:2212.04356 Section 3.8</div>
+      <p><strong>主要局限（诚实写出）</strong>：Whisper 以 30 秒分块训练、<strong>无法一次性吃下长音频</strong>，无原生流式、无说话人分离。此外（见 5.3）其预训练数据<strong>高度偏英语</strong>（采集偏英语互联网），多数语言训练不足 1000 小时，长尾语言 WER 仍很差。这是弱监督规模化的典型代价。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2212.04356/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/whisper">在交互知识库中打开 Whisper 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

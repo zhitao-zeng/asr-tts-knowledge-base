@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiniMax Speech 2.8 · MiniMax ｜ ASR/TTS 知识库</title>
+<meta name="description" content="原生语气词/声音标签(breath、laugh 等)，10 秒克隆、40+ 语言（略早于窗口）。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/minimax28/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "MiniMax Speech 2.8 · MiniMax",
+  "about": {
+    "@type": "Thing",
+    "name": "MiniMax Speech 2.8",
+    "alternateName": "MiniMax 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "MiniMax"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-01",
+  "description": "原生语气词/声音标签(breath、laugh 等)，10 秒克隆、40+ 语言（略早于窗口）。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/minimax28/",
+  "articleBody": "原生语气词/声音标签(breath、laugh 等)，10 秒克隆、40+ 语言（略早于窗口）。\n\n## 闭源企业级 TTS：以 Sound Tags 为核心卖点\n- 官方未公开论文或架构细节，以下基于官方博客与 Together AI 模型卡推断。\n- 据推测为 LLM 语义 token 加扩散或流匹配声学、或 codec-LM 类混合范式；关键差异化不是基础架构，而是文本内联的 Sound Tags 系统。\n- Sound Tags 把笑声（laughs/chuckle/snorts）、呼吸（breath/inhale/exhale/pant/sighs/sniffs/gasps）、喉部与口腔动作（clear-throat/coughs/groans/humming/lip-smacking 等）作为文本内标记注入，实现无需后处理的细粒度副语言控制。\n\n## 多语种与克隆\n- 支持 40+ 语言，含中英阿西法日等，官方强调亚洲语言一致性与跨语言口音渗透消除（以普通话-日语对起步）。\n- 高保真声音克隆：仅需 10 秒样本即可捕获音色纹理、气声与语速，跨语种保持说话人身份。\n\n## 实时性\n- 端到端延迟低于 250ms、TTFT 低于 300ms，支持全流式合成，定位为语音 Agent 与陪伴类 NPC。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>MiniMax Speech 2.8</h1>
+    <div class="meta">MiniMax · 2026-01 · 领域 TTS · 参数量 大 · 许可 商业</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>原生语气词/声音标签(breath、laugh 等)，10 秒克隆、40+ 语言（略早于窗口）。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">波形 / 连续隐空间新路线</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>零样本/克隆质量（官方宣称，无统一数字）</td><td>综合</td><td class="v">undefined</td><td>表现力/多语种强</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>闭源企业级 TTS：以 Sound Tags 为核心卖点</h3><ul class="ml"><li>官方未公开论文或架构细节，以下基于官方博客与 Together AI 模型卡推断。</li><li>据推测为 LLM 语义 token 加扩散或流匹配声学、或 codec-LM 类混合范式；关键差异化不是基础架构，而是文本内联的 Sound Tags 系统。</li><li>Sound Tags 把笑声（laughs/chuckle/snorts）、呼吸（breath/inhale/exhale/pant/sighs/sniffs/gasps）、喉部与口腔动作（clear-throat/coughs/groans/humming/lip-smacking 等）作为文本内标记注入，实现无需后处理的细粒度副语言控制。</li></ul><h3>多语种与克隆</h3><ul class="ml"><li>支持 40+ 语言，含中英阿西法日等，官方强调亚洲语言一致性与跨语言口音渗透消除（以普通话-日语对起步）。</li><li>高保真声音克隆：仅需 10 秒样本即可捕获音色纹理、气声与语速，跨语种保持说话人身份。</li></ul><h3>实时性</h3><ul class="ml"><li>端到端延迟低于 250ms、TTFT 低于 300ms，支持全流式合成，定位为语音 Agent 与陪伴类 NPC。</li></ul></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方（据推测）</h3><ul class="ml"><li>闭源，无公开数据规模与损失函数；据推测为大规模多语种语音加富标签（情绪、副语言事件）的多任务训练。</li><li>表现力提升来自对口语填充词（um/uh/ah）与停顿的显式建模，而非仅韵律预测。</li></ul><h3>known_results 解读</h3><ul class="ml"><li>batches.json 记 known_results 为表现力/多语种综合：强，官方发布，属定性结论，无精确指标。</li><li>公开可查的量化数字来自 Together AI 模型卡：相对 Speech-2.6 盲测自然度失败率下降 60%，相对 Speech-2.0 综合听感胜率 54.5%，这些是对内代际对比而非跨厂商基准。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>表现力/多语种</td><td>综合</td><td class="v">强</td><td>官方发布</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>无公开独立消融</h3><ul class="ml"><li>作为闭源商业系统，MiniMax 未发布消融实验；其对外证据为盲测 A/B（母语者，60 组随机音频对）与 TTFT/RTF 实测。</li><li>盲测中 59% 的自然度失败被归因到 2.6 版本、在 2.8 中被解决，提示改进主要来自副语言与停顿建模而非基础 codec 升级。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>闭源、付费 API，不可微调、不可复现；语种虽标 40+ 但实际低资源语种质量未披露。</li><li>Sound Tags 列表固定，超出现有标签的情绪或动作无法表达；精确内容可控性依赖标签体系覆盖度。</li></ul><h3>批判</h3><ul class="ml"><li>60% 自然度提升、54.5% 胜率均为相对自家旧版本的代际对比，缺乏与 ElevenLabs、Fish-Speech、Qwen3-TTS 等同期竞品的统一基准对比，横向参考需谨慎。</li><li>该模型定位为生产部署而非研究，透明度天然低；论文式的技术严谨性不可得，社区难以验证其亚洲语言一致性等主张。</li><li>10 秒克隆的声纹安全与授权边界未充分讨论。</li></ul></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>原生声音标签（breath/laugh/情绪）</li><li>10 秒克隆、40+ 语言</li><li>表现力控制强</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs CosyVoice3</span><p>MiniMax 重声音标签表现力，CosyVoice 重多语种</p></div><div class="diff"><span class="vs">vs Voxtral TTS</span><p>MiniMax 偏表现力标签，Voxtral 偏实时</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://www.minimax.io/" target="_blank" rel="noopener">MiniMax Speech</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="https://www.minimax.io/" target="_blank" rel="noopener">🔗 在线来源</a></p><p class="muted" style="font-size:12px">仅在线链接，PDF 未随仓库托管；可前往来源页查看原文。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：MiniMax Speech 2.8 属表现力增强路线，在合成中原生支持声音/情绪标签控制（如 breath、laugh、情绪），并面向 40+ 语种与 10 秒参考克隆，定位为商业化多语种情感语音合成服务。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：架构字段明确「原生支持声音/情绪标签控制」与表现力增强路线，训练字段给出 40+ 语种与 10 秒克隆。与同类对比：情绪/ breath/laugh 等标签控制比 CosyVoice3、Qwen3 仅靠参考音频更显式、更可控。边界与不确定性：标签体系的覆盖范围与中文支持程度未披露，此为基于官方描述的推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：凭借显式情绪标签 + 多语种训练，MiniMax Speech 2.8 在情感表达（喜怒哀乐、笑声、气声）与多语种零样本克隆上应具较强能力，适合有声书、游戏角色配音等高频情感场景。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：训练字段「表现力标签数据 + 多语种(40+) 训练；10 秒参考克隆」。与同类对比：相对 Orpheus（仅靠情绪条件）其标签更系统、语种覆盖更广。边界与不确定性：DEEP Results 为空，情感可控性与跨语种克隆相似度无客观指标，且 40+ 语种中低资源语种质量可能参差，均属推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：作为闭源商业模型，MiniMax Speech 2.8 不可本地部署与复现，情绪标签能力高度依赖其平台 API；多语种广度带来语种质量不均与合规审查困难。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 未标注开源，且能力绑定平台情绪标签。与同类对比：相比开源 CosyVoice3/Orpheus，闭源在可审计性与合规上风险更高。边界与不确定性：声音克隆涉身份冒用合规风险；语种广度下小语种质量边界、标签细粒度上限为推断，需以官方文档与实测为准。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/minimax28">在交互知识库中打开 MiniMax Speech 2.8 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F5-TTS · 上海交大 / 剑桥等 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="基于流匹配与 Diffusion Transformer 的全非自回归 TTS，用 ConvNeXt 细化文本并引入 Sway Sampling。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/f5_tts/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "F5-TTS · 上海交大 / 剑桥等",
+  "about": {
+    "@type": "Thing",
+    "name": "F5-TTS",
+    "alternateName": "上海交大 / 剑桥等 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "上海交大 / 剑桥等"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2024-10",
+  "description": "基于流匹配与 Diffusion Transformer 的全非自回归 TTS，用 ConvNeXt 细化文本并引入 Sway Sampling。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/f5_tts/",
+  "articleBody": "基于流匹配与 Diffusion Transformer 的全非自回归 TTS，用 ConvNeXt 细化文本并引入 Sway Sampling。\n\n\n## DiT + 流匹配\nF5-TTS 以流匹配与 Diffusion Transformer（DiT）为骨干，无需时长模型、文本编码器或音素对齐。\n\n## ConvNeXt 文本细化\n文本先经 ConvNeXt V2 模块细化表示，再与填充 token 拼接到与语音等长，便于与语音对齐。\n\n## Sway Sampling\n推理期提出 Sway Sampling 调整流步骤采样权重，显著提升自然度与可懂度，且可免重训应用于其它流匹配模型。\n"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>F5-TTS</h1>
+    <div class="meta">上海交大 / 剑桥等 · 2024-10 · 领域 TTS · 参数量 未公开 · 许可 开源（CC BY 4.0，代码与权重已发布）</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>基于流匹配与 Diffusion Transformer 的全非自回归 TTS，用 ConvNeXt 细化文本并引入 Sway Sampling。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">全非自回归扩散系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>DiT + 流匹配</h3><p>F5-TTS 以流匹配与 Diffusion Transformer（DiT）为骨干，无需时长模型、文本编码器或音素对齐。</p><h3>ConvNeXt 文本细化</h3><p>文本先经 ConvNeXt V2 模块细化表示，再与填充 token 拼接到与语音等长，便于与语音对齐。</p><h3>Sway Sampling</h3><p>推理期提出 Sway Sampling 调整流步骤采样权重，显著提升自然度与可懂度，且可免重训应用于其它流匹配模型。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据</h3><p>在公开约 10 万小时多语言数据集（如 Emilia）上训练。</p><h3>对齐改进</h3><p>ConvNeXt 细化让文本表示更易与语音对齐，缓解 E2-TTS 收敛慢的问题；Sway Sampling 作为推理策略进一步提升质量与效率。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>LibriSpeech-PC</td><td>WER</td><td class="v">2.42（32 NFE）</td><td>论文报告值</td></tr><tr><td>推理</td><td>RTF</td><td class="v">0.15</td><td>相较扩散类 SOTA TTS 大幅提升</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>模块消融</h3><p>论文对比有无 ConvNeXt 文本细化、不同填充策略，证明 ConvNeXt 改善对齐、缩短训练。</p><h3>采样策略</h3><p>对比 Sway Sampling 开/关，显示其在 WER 与主观自然度上的明显增益。</p><h3>效率</h3><p>推理 RTF 达 0.15，较扩散类 SOTA TTS 显著更快。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>提示依赖</h3><p>仍需参考音频做上下文学习，零样本能力受提示质量影响。</p><h3>训练门槛</h3><p>虽比 E2-TTS 更易训练，仍需要足量多语言数据与工程调参。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>ConvNeXt 细化文本表示改善与语音对齐</li><li>Sway Sampling 推理策略免重训即提升性能</li><li>DiT + 流匹配全非自回归且完全开源</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs E2-TTS</span><p>用 ConvNeXt 与 Sway Sampling 解决其收敛慢/鲁棒性差</p></div><div class="diff"><span class="vs">vs 扩散类 TTS</span><p>RTF 0.15，推理更快</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2410.06885" target="_blank" rel="noopener">F5-TTS arXiv:2410.06885</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2410.06885.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2410.06885" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>This paper introduces F5-TTS, a fully non-autoregressive text-to-speech system based on flow matching with Diffusion Transformer (DiT).</blockquote>
+      <div class="src">— arXiv:2410.06885v3 Abstract</div>
+      <p>在 E2-TTS 的 fully-NAR + flow-matching 骨架上，把主干换成 <strong>Diffusion Transformer (DiT)</strong>，是「轻量填充」范式走向可扩展、强对齐的成熟化标志，证明该路线可兼具质量、零样本与推理速度。</p>
+    </div>
+    <div class="ins">
+      <blockquote>We further propose an inference-time Sway Sampling strategy, which significantly improves our model&#39;s performance and efficiency.</blockquote>
+      <div class="src">— arXiv:2410.06885v3 Abstract</div>
+      <p>关键改进有两点：用 <strong>ConvNeXt</strong> 细化文本表示以易对齐，并提出推理期 <strong>Sway Sampling</strong> 重排 flow 步——无需重训即可套用到任何 flow-matching 模型。最终 RTF 0.15，较同期扩散 TTS 大幅提速，是对 E2「慢收敛」的直接回应。</p>
+    </div>
+    <div class="ins">
+      <blockquote>There are two limitations to this work. First, although F5-TTS accelerates the training and inference while maintaining the simplicity of the system through better structure design, the mel spectrogram sequence length is still much longer than the text modality.</blockquote>
+      <div class="src">— arXiv:2410.06885v3 §Limitations</div>
+      <p>局限在于仍受困于 <strong>mel 序列远长于文本</strong>的表征效率问题，且对情绪等副语言细节缺乏细粒度控制。指向未来更紧凑、通用的连续语音表示，是该范式进一步提效提控的方向。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2410.06885/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/f5_tts">在交互知识库中打开 F5-TTS 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

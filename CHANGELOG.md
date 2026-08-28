@@ -5,6 +5,12 @@
 
 ---
 
+## [2026-08-27] 审查修复 · 正确性 / 许可证 / UX-SEO 三提交
+
+- **Commit 1 correctness**：NIM4-ASR 纠错（机构=NIO/蔚来、600M 流式 Conformer + Qwen3-1.7B、六阶段训练、音素 RAG 热词、流式/多语 caps）；ASR 与 TTS 语种覆盖榜拆分（meta_omni / omnivoice / voxcpm2）；Cohere「从零监督训练」、Fish「4B Dual-AR + RVQ codec」谱系文案修正；全量人工复核 caps（wav2vec2 / HuBERT 多语回退 false 等）；Benchmark 加领域一致性校验。
+- **Commit 2 license-and-build-gates**：新增 `tools/gen_licenses.js` 与 `papers/licenses.json`（33 条目：9 allowed / 1 verified-false(NIM4) / 23 review）；`validate.js` §8 许可证门禁（verified 且不允许即阻断，其余 warn）；移除无明确再分发许可的 NIM4 本地 PDF（保留 `reader_paper` 入口）；CI 加 SEO 产物重生成 + `git diff --exit-code` 门禁。
+- **Commit 3 ux-and-seo**：修内部搜索框丢焦点（renderModels 重建输入，保存/恢复光标位置）；修 renderDeep 二次转义（`&` 不再双重编码为 `&amp;amp;`）；修 PDF 提示条件（「随仓库托管」仅当 `pdf_local` 存在时显示）；生成 56 个模型静态详情页 `models/<id>/index.html`（无需 JS + 每页 JSON-LD `TechArticle`）并纳入 sitemap；JSON-LD 由 `SoftwareApplication` 改为 `TechArticle`；统一 README / 汇总页 / 首页日期为「截至 2026-08」；`LICENSE` 保留纯 MIT，PDF 合规声明移至 `THIRD_PARTY_NOTICES.md`。
+
 ## [2026-08-27] 全文双语精读 · 全量 32 篇
 
 - **精读覆盖扩至全部 32 篇本地论文**（在 3 篇原型基础上新增 29 篇）：wav2vec 2.0、

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cohere Transcribe · Cohere ｜ ASR/TTS 知识库</title>
+<meta name="description" content="2B Conformer 编码器 + 轻量 Transformer 解码器的开放权重 ASR，登顶 HuggingFace Open ASR Leaderboard（平均 WER 5.42%）。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/cohere_transcribe/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Cohere Transcribe · Cohere",
+  "about": {
+    "@type": "Thing",
+    "name": "Cohere Transcribe",
+    "alternateName": "Cohere 的 ASR 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Cohere"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-03",
+  "description": "2B Conformer 编码器 + 轻量 Transformer 解码器的开放权重 ASR，登顶 HuggingFace Open ASR Leaderboard（平均 WER 5.42%）。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/cohere_transcribe/",
+  "articleBody": "2B Conformer 编码器 + 轻量 Transformer 解码器的开放权重 ASR，登顶 HuggingFace Open ASR Leaderboard（平均 WER 5.42%）。\n\n## 设计动机\nCohere 的首个音频模型（cohere-transcribe-03-2026），目标是在 HF Open ASR Leaderboard 上做到专用 ASR 精度第一，同时保持可自托管的生产就绪性。其关键判断是：多数语音模型把容量压在解码端，而 ASR 的瓶颈其实在声学理解，因此把 90% 以上参数放到编码器。\n\n## 整体流水线\n输入波形 → 重采样 16kHz 单声道 → log-Mel 频谱图 → Fast-Conformer 编码器（承担 90%+ 的 2B 参数）→ 轻量 Transformer 解码器（cross-attention 输出 token）。长音频（>35s）自动分块再拼接。\n\n## 关键模块\n- 编码器：Fast-Conformer，非标准 Conformer，强调推理时计算可并行化；约 2B 总参中编码器占绝大多数。\n- 解码器：轻量 Transformer，仅做 token 生成，串行计算被压到最小。\n- 分词：16,000-token 多语 BPE（带 byte fallback），从分布内数据自行训练，而非复用通用 LLM tokenizer。\n- 训练目标：标准监督交叉熵，从零训起，不蒸馏、不微调自 Whisper 等基线。\n\n## 与 SOTA 的本质区别\n与 Qwen3-ASR-1.7B、IBM Granite 等“挂接预训练文本 LLM”的路线相反，Cohere 用专用 encoder-heavy 结构换取更低解码延迟与更高吞吐，放弃 LLM 带来的语言理解/指令能力。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Cohere Transcribe</h1>
+    <div class="meta">Cohere · 2026-03 · 领域 ASR · 参数量 2B · 许可 Apache 2.0</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>2B Conformer 编码器 + 轻量 Transformer 解码器的开放权重 ASR，登顶 HuggingFace Open ASR Leaderboard（平均 WER 5.42%）。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AED / Conformer 高精度系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>HF Open ASR Leaderboard (WER%)</td><td>WER (%)</td><td class="v">5.42</td><td>多数据集均值</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>Cohere 的首个音频模型（cohere-transcribe-03-2026），目标是在 HF Open ASR Leaderboard 上做到专用 ASR 精度第一，同时保持可自托管的生产就绪性。其关键判断是：多数语音模型把容量压在解码端，而 ASR 的瓶颈其实在声学理解，因此把 90% 以上参数放到编码器。</p><h3>整体流水线</h3><p>输入波形 → 重采样 16kHz 单声道 → log-Mel 频谱图 → Fast-Conformer 编码器（承担 90%+ 的 2B 参数）→ 轻量 Transformer 解码器（cross-attention 输出 token）。长音频（&gt;35s）自动分块再拼接。</p><h3>关键模块</h3><ul class="ml"><li>编码器：Fast-Conformer，非标准 Conformer，强调推理时计算可并行化；约 2B 总参中编码器占绝大多数。</li><li>解码器：轻量 Transformer，仅做 token 生成，串行计算被压到最小。</li><li>分词：16,000-token 多语 BPE（带 byte fallback），从分布内数据自行训练，而非复用通用 LLM tokenizer。</li><li>训练目标：标准监督交叉熵，从零训起，不蒸馏、不微调自 Whisper 等基线。</li></ul><h3>与 SOTA 的本质区别</h3><p>与 Qwen3-ASR-1.7B、IBM Granite 等“挂接预训练文本 LLM”的路线相反，Cohere 用专用 encoder-heavy 结构换取更低解码延迟与更高吞吐，放弃 LLM 带来的语言理解/指令能力。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据规模与混合</h3><p>在 500,000 小时人工标注音频-文本对上从零训练（非弱监督海量爬取式），针对企业常用语种精选 14 种：英、法、德、意、西、葡、希、荷、波、中（普通话）、日、韩、越、阿。</p><h3>课程/阶段与鲁棒性</h3><ul class="ml"><li>背景噪声增强：SNR 0–30 dB 的非语音噪声注入，提升抗噪鲁棒性。</li><li>合成数据补洞：在错误分析轮次后，针对具体失败模式补充合成样本做定向修补。</li><li>长音频原生支持：用 packed representation 减少批处理 padding 开销。</li></ul><h3>训练目标</h3><p>标准 supervised cross-entropy on output tokens；无 RLHF / 对齐阶段（纯识别任务）。</p><h3>known_results 数字解读</h3><p>HF Open ASR Leaderboard 平均 WER 5.42%（8 个英文测试集均值），是开放榜第一。该数字由 AMI(8.13%)、Earnings22(10.86%)、GigaSpeech(9.34%)、LibriSpeech Clean(1.25%)、LibriSpeech Other(2.37%)、SPGISpeech(3.08%)、TED-LIUM(2.49%)、VoxPopuli(5.87%) 聚合得到——干净朗读接近 1%，但会议/电话等真实场景退化到 8–11%，说明 5.42% 是“均值被难集拉高”的代表值，并非处处低错。</p></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>HF Open ASR Leaderboard（多数据集均值）</td><td>WER</td><td class="v">5.42%</td><td>平均，居榜首</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>吞吐与延迟消融</h3><ul class="ml"><li>离线吞吐：宣称比同规模专用 ASR 高约 3x；RTFx 最高可达 524x（高端硬件），因解码器极轻。</li><li>vLLM 集成提供额外约 2x 吞吐（批处理优化）。</li><li>人类偏好评测：平均胜率 61%；对 Whisper Large v3 胜率 64%、对 NVIDIA Canary 67%、对 IBM Granite 4.0 1B 高达 78%，说明原始 WER 接近时主观质量差距更大。</li></ul><h3>多语结果</h3><p>多语榜整体第 4、开源第 2；日语偏好 70%、意语 60%。</p><h3>关键发现</h3><p>精度-速度帕累托前沿上，encoder-heavy 设计以“解码端精度微损”换“显著推理加速”，是其核心卖点；但论文未给出独立结构消融（如去掉噪声增强的增益），差异主要来自数据与训练配方而非结构创新。</p></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>不支持自动语种检测，必须显式指定语言码。</li><li>无原生说话人分离（diarization）与时间戳输出。</li><li>对非语音声学事件可能幻觉，官方建议前置 VAD。</li><li>仅 14 语种，远少于 Whisper 的 100+；闭源 API 之外权重 Apache 2.0 可自托管但不可微调（未开放训练代码/数据）。</li></ul><h3>批判</h3><p>第一，5.42% 与第 2 名 IBM Granite 4.0 1B（5.52%）仅差 0.1 点、Zoom Scribe v1（5.47%）也在伯仲之间，榜单“第一”更多是边际胜出而非代际领先；把均值当唯一指标易误导。第二，encoder 堆参提升了吞吐，却牺牲了 LLM 系模型的语言理解/后处理（标点、ITN、指令）能力，在企业“语音智能”链路上反而可能要外挂文本模型。第三，14 语种选择偏企业功利，对低资源/方言覆盖明显弱于多语大模型。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>大 Conformer 编码器 + 轻量 Transformer 解码器</li><li>开放权重（Apache 2.0）可自托管</li><li>HF Open ASR 榜第一（WER 5.42%）</li><li>2B 规模易部署</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Whisper / Parakeet</span><p>同规模下 WER 更低且登顶开放榜，且完全开源</p></div><div class="diff"><span class="vs">vs LLM 系 ASR</span><p>纯 Conformer 更轻、延迟更可控，但缺语言理解</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://cohere.com/blog/transcribe" target="_blank" rel="noopener">Cohere Transcribe 官方博客</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="https://cohere.com/blog/transcribe" target="_blank" rel="noopener">🔗 在线来源</a></p><p class="muted" style="font-size:12px">仅在线链接，PDF 未随仓库托管；可前往来源页查看原文。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：Cohere Transcribe 采用 Conformer 编码器 + 自回归/Transducer 解码器的经典 AED 结构而非 LLM 解码，定位为与 Whisper 同范式的 2B 级工程化弱监督 ASR。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 文本明确其为 Conformer+Transducer/AED 且未引入 LLM 解码，规模 2B，属 Whisper 式弱监督范式。与同类对比：相比引入 LLM 解码的 Canary-Qwen、hy_asr30，其推理路径更短、延迟更可控，但语义/上下文纠错能力较弱。边界与不确定性：2B 参数、弱监督数据规模等为公开/行业披露或合理推断，具体数据配比与训练语料未公开，属合理推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：沿用 Whisper 式“海量带噪标注→强鲁棒性”弱监督训练，该模型在英语及常见带噪真实场景的泛化能力应优于纯监督小模型。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：DEEP 指出以大规模弱监督音频为主并针对开放榜单调优。与同类对比：相对纯监督的 parakeet_tdt，弱监督带来更广域口音/噪声鲁棒性，但可能在对齐精度上略逊于强监督 TDT。边界与不确定性：具体 WER 未公开，以上为基于范式与“针对榜单调优”的推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：未采用 LLM 解码且为闭源黑箱，其在低频语言、专业术语及标点/ITN 后处理的精细度与可控性存在不确定性。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：架构描述明确无 LLM 解码；闭源意味着无权重可审计。与同类对比：对比 canary_qwen 显式联合标点/ITN 多任务，Cohere Transcribe 的后处理策略未披露。边界与不确定性：闭源，无法验证训练数据偏见，跨领域与边缘语言的稳定性为风险点，属推断。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/cohere_transcribe">在交互知识库中打开 Cohere Transcribe 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

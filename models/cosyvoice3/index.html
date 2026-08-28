@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CosyVoice 3 · 阿里巴巴 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="LLM 语义 + 扩散声学的混合 TTS，多语种零样本克隆，社区与工业双热（跨 AR/混合两线）。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/cosyvoice3/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "CosyVoice 3 · 阿里巴巴",
+  "about": {
+    "@type": "Thing",
+    "name": "CosyVoice 3",
+    "alternateName": "阿里巴巴 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "阿里巴巴"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-03",
+  "description": "LLM 语义 + 扩散声学的混合 TTS，多语种零样本克隆，社区与工业双热（跨 AR/混合两线）。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/cosyvoice3/",
+  "articleBody": "LLM 语义 + 扩散声学的混合 TTS，多语种零样本克隆，社区与工业双热（跨 AR/混合两线）。\n\n## 监督语义 token 加 LLM 加流匹配的两阶段混合\n- 沿用 CosyVoice 系列监督语义令牌路线：语义编码器从多语言 ASR 模型提取带文本对齐的语义令牌；LLM 生成器以文本为输入预测语音令牌；流匹配 FM 解码器将令牌转为高保真波形；说话人编码器用 3 秒短音频提取音色实现零样本克隆。\n- 与 CosyVoice2（LLM 加 chunk-aware FM、双向流式）相比，v3 强化 tokenizer 与后训练。\n\n## 多任务监督语音分词器 FSQ\n- 用 MinMo 多模态 LLM 作分词器骨干，替代前代 SenseVoice-Large；多任务监督训练含 ASR/LID/SER/AED/SA 五类，训练数据 53 万小时，使离散 token 更准捕捉情感与发音风格等非语言信息。\n- 沿用有限标量量化 FSQ，保持 25Hz（每秒 25 token）、100% 码本利用率，解耦说话人身份与语义。\n\n## 流式与声码器\n- DiT 扩散加自适应掩码支持离线与流式切换；HiFi-GAN 类声码器输出 24kHz。公开资料亦提及其用流匹配加 DiffRO 扩散优化、双向流式首包延迟约 150ms。\n- 版本提供 300M/0.5B，v3 把模型从 0.5B 扩到 1.5B。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>CosyVoice 3</h1>
+    <div class="meta">阿里巴巴 · 2026-03 · 领域 TTS · 参数量 大 · 许可 开源</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>LLM 语义 + 扩散声学的混合 TTS，多语种零样本克隆，社区与工业双热（跨 AR/混合两线）。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AR codec-LM 系</span> <span class="tag">扩散-LM 混合系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>零样本/克隆质量（官方宣称，无统一数字）</td><td>综合</td><td class="v">undefined</td><td>多语种零样本领先</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>监督语义 token 加 LLM 加流匹配的两阶段混合</h3><ul class="ml"><li>沿用 CosyVoice 系列监督语义令牌路线：语义编码器从多语言 ASR 模型提取带文本对齐的语义令牌；LLM 生成器以文本为输入预测语音令牌；流匹配 FM 解码器将令牌转为高保真波形；说话人编码器用 3 秒短音频提取音色实现零样本克隆。</li><li>与 CosyVoice2（LLM 加 chunk-aware FM、双向流式）相比，v3 强化 tokenizer 与后训练。</li></ul><h3>多任务监督语音分词器 FSQ</h3><ul class="ml"><li>用 MinMo 多模态 LLM 作分词器骨干，替代前代 SenseVoice-Large；多任务监督训练含 ASR/LID/SER/AED/SA 五类，训练数据 53 万小时，使离散 token 更准捕捉情感与发音风格等非语言信息。</li><li>沿用有限标量量化 FSQ，保持 25Hz（每秒 25 token）、100% 码本利用率，解耦说话人身份与语义。</li></ul><h3>流式与声码器</h3><ul class="ml"><li>DiT 扩散加自适应掩码支持离线与流式切换；HiFi-GAN 类声码器输出 24kHz。公开资料亦提及其用流匹配加 DiffRO 扩散优化、双向流式首包延迟约 150ms。</li><li>版本提供 300M/0.5B，v3 把模型从 0.5B 扩到 1.5B。</li></ul></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据规模 Scaling</h3><ul class="ml"><li>训练数据从万小时级扩展到 100 万小时，涵盖 9 种语言（中/英/日/韩/德/法/西/意/俄）与 18 种中国方言，跨多领域与多文本格式。</li></ul><h3>模型规模 Scaling</h3><ul class="ml"><li>参数从 0.5B 增至 1.5B，多语种基准因容量提升而增强。</li></ul><h3>通用后训练 DiffRO（可微分奖励优化）</h3><ul class="ml"><li>针对离散 token 类 TTS 缺乏通用后训练的问题，提出 DiffRO：直接优化语音 token（而非合成音频），降低计算开销。</li><li>训练 ASR 类 Token2Text 模型，以文本后验概率为基础奖励，融合情感识别、MOS 预测等多任务奖励，用 Gumbel-Softmax 采样加 KL 约束。</li><li>已知效果：各语言 WER/CER 相对提升 20%-50%，低资源语言提升超 68%。</li></ul><h3>known_results 解读</h3><ul class="ml"><li>batches.json 记多语种零样本克隆/质量领先，社区广泛采用。论文与官方给出：MOS 5.53+，9 语加 18 方言，3 秒克隆，双向流式首包约 150ms，内容一致性、说话人相似、韵律自然度三维度较 v2 显著提升。DiffRO 的 20%-50% WER 相对提升（低资源大于 68%）是对领先的量化支撑，但注意这是相对自身 v2 的内部提升。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>多语种零样本</td><td>克隆/质量</td><td class="v">领先</td><td>社区广泛采用</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>分词器多任务监督</h3><ul class="ml"><li>消融：MinMo 多任务监督（ASR/LID/SER/AED/SA）相比单任务 SenseVoice-Large 分词器，在情感与风格捕捉、零样本自然度上更优；FSQ 保证 100% 码本利用率避免码本坍缩。</li></ul><h3>DiffRO 后训练</h3><ul class="ml"><li>DiffRO 对比无后训练基线，各语言 WER/CER 相对降 20%-50%，低资源语种大于 68%；证明直接优化 token 级别奖励比优化音频更省算力且有效。</li><li>对比 PPO/DPO，DiffRO 用 Gumbel-Softmax 使离散 token 可微，避免对合成音频的依赖。</li></ul><h3>规模 Scaling</h3><ul class="ml"><li>数据万到百万小时、参数 0.5B 到 1.5B 的消融显示多语种与方言增益主要来自数据规模，容量提升带来边际质量增益。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>含 AR 语义生成，有延迟与错误累积；相对全 NAR 模型实时性弱（虽双向流式把首包压到约 150ms）。</li><li>9 语加 18 方言覆盖仍有限，超低资源语种未覆盖；FSQ 25Hz 的语义 tokenizer 表达力上限低于高码本声学 codec。</li><li>虽 Apache-2.0 开源，1.5B 版本部署成本不低。</li></ul><h3>批判</h3><ul class="ml"><li>领先主要建立在相对 v2 的内部提升与社区采用度，缺乏与 Fish-Speech S2/Qwen3-TTS/Seed-TTS 同代横向基准的完整对比表。</li><li>DiffRO 的 20%-50% 是相对百分比且基于其内部 ASR 奖励，外部独立评测（WER/CER 绝对值）缺失，绝对值水平未明。</li><li>MOS 5.53+ 接近真人，但 MOS 评测易受听感疲劳与标注偏差影响，且常成对对比自家旧版，需谨慎解读。</li></ul></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>LLM 语义 token + 扩散声学</li><li>多语种零样本克隆</li><li>开源 + 工业双落地</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs Qwen-Audio-3.0-TTS</span><p>CosyVoice 偏 codec+扩散混合，Qwen-Audio 偏语义规划+扩散渲染</p></div><div class="diff"><span class="vs">vs IndexTTS2</span><p>CosyVoice 重多语种，IndexTTS2 重时长控制</p></div><div class="diff"><span class="vs">vs VoxCPM2</span><p>CosyVoice 依赖 codec，VoxCPM2 免 tokenizer</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://github.com/FunAudioLLM/CosyVoice" target="_blank" rel="noopener">CosyVoice 仓库</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="https://github.com/FunAudioLLM/CosyVoice" target="_blank" rel="noopener">🔗 在线来源</a></p><p class="muted" style="font-size:12px">仅在线链接，PDF 未随仓库托管；可前往来源页查看原文。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：CosyVoice 3 采用「LLM 生成语义 token + 扩散模型生成声学细节」的混合范式，并支持 in-context learning 零样本克隆与多语种，且官方开源权重，属于可复现的社区型 TTS 路线。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：架构字段明确 LLM+扩散混合与 in-context learning，训练字段标注「开源」。与同类对比：相较纯自回归 codec（Fish Audio S2、Qwen3-TTS）用扩散补声学细节，通常声学自然度更优；且开源降低复现门槛。边界与不确定性：混合范式通常推理开销高于纯 codec-LM，此为基于范式的推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：借助 LLM 语义建模与扩散声学建模联合训练，CosyVoice 3 在零样本克隆相似度、多语种覆盖与合成自然度上应具较强且可本地验证的能力。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：训练字段「大规模多语种语音 + LLM 语义建模 + 扩散声学建模联合；开源」。与同类对比：开源使其能力可被社区独立评测，比闭源模型更透明。边界与不确定性：DEEP Results 为空，无公开 MOS/相似度佐证；多语种中各语种子集质量可能不一，结论为基于架构与开源属性的推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：主要局限在混合范式推理开销较大，且虽开源但蒸馏版/完整权重可用性与商用许可需核实；零样本克隆仍带来声音冒用合规风险。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：架构为 LLM+扩散，训练标注开源但商用许可未细述。与同类对比：相比端到端 codec-LM 延迟更低，但扩散步数带来算力成本。边界与不确定性：开源仅降低技术复现风险，不消除合规风险；权重分发渠道与许可条款边界需以官方仓库为准，属推断性提示。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/cosyvoice3">在交互知识库中打开 CosyVoice 3 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

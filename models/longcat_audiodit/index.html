@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LongCat-AudioDiT · 美团 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="波形潜空间 NAR 扩散 TTS：仅 Wav-VAE + 扩散主干；自适应投影引导；Seed-ZH SIM 0.818(超 Seed-TTS 0.809)。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/longcat_audiodit/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "LongCat-AudioDiT · 美团",
+  "about": {
+    "@type": "Thing",
+    "name": "LongCat-AudioDiT",
+    "alternateName": "美团 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "美团"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-03",
+  "description": "波形潜空间 NAR 扩散 TTS：仅 Wav-VAE + 扩散主干；自适应投影引导；Seed-ZH SIM 0.818(超 Seed-TTS 0.809)。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/longcat_audiodit/",
+  "articleBody": "波形潜空间 NAR 扩散 TTS：仅 Wav-VAE + 扩散主干；自适应投影引导；Seed-ZH SIM 0.818(超 Seed-TTS 0.809)。\n\n## 设计动机\n主流 TTS 受困于“预测中间声学特征（mel）+ 独立声码器”的两阶段范式，跨空间传话必然累积误差、丢失高保真个性细节——而这恰是零样本克隆最需保留的。LongCat-AudioDiT 直接在波形潜空间生成，仅用 Wav-VAE + 扩散主干，规避中间表征衰减。\n\n## 整体流水线（单阶段）\n输入文本 token（UMT5-base，支持 107 语，首层+末层 embedding 融合以提升可懂度）+ 可选参考音频 → Wav-VAE 编码器压到波形潜空间 → DiT 做 conditional flow matching → Wav-VAE 解码器重建波形。无独立声码器/codec 级联。\n\n## 关键模块\n- Wav-VAE：全卷积音频自编码器，Oobleck block + 空洞卷积多尺度建模，Snake-Beta 激活，非参数 shortcut 分支稳定训练；24kHz → 11.7Hz（2048 倍压缩），64 维潜空间。\n- DiT 扩散主干：1536 隐维、24 层、24 头，Global AdaLN 注入时间步，QK-Norm + RoPE（Qwen2 式旋转位置），长跳跃连接，REPA（用 mHuBERT 特征做表征对齐）。\n- 推理：Euler ODE 求解器（默认 16 步），APG 替代 CFG。\n\n## 本质区别\n相较 CosyVoice/Qwen3-TTS 的“LLM 语义 token + 扩散声学”或两阶段 vocoder，LongCat-AudioDiT 是单阶段、纯波形潜空间、NAR 扩散，去除所有级联误差点。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>LongCat-AudioDiT</h1>
+    <div class="meta">美团 · 2026-03 · 领域 TTS · 参数量 3.5B · 许可 开源</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>波形潜空间 NAR 扩散 TTS：仅 Wav-VAE + 扩散主干；自适应投影引导；Seed-ZH SIM 0.818(超 Seed-TTS 0.809)。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">波形 / 连续隐空间新路线</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>Seed-TTS-Eval test-zh (SIM%)</td><td>SIM (%)</td><td class="v">81.8</td><td>Seed-ZH SIM 0.818</td></tr><tr><td>Seed-Hard (SIM%)</td><td>SIM (%)</td><td class="v">79.7</td><td>Seed-Hard SIM 0.797</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>设计动机</h3><p>主流 TTS 受困于“预测中间声学特征（mel）+ 独立声码器”的两阶段范式，跨空间传话必然累积误差、丢失高保真个性细节——而这恰是零样本克隆最需保留的。LongCat-AudioDiT 直接在波形潜空间生成，仅用 Wav-VAE + 扩散主干，规避中间表征衰减。</p><h3>整体流水线（单阶段）</h3><p>输入文本 token（UMT5-base，支持 107 语，首层+末层 embedding 融合以提升可懂度）+ 可选参考音频 → Wav-VAE 编码器压到波形潜空间 → DiT 做 conditional flow matching → Wav-VAE 解码器重建波形。无独立声码器/codec 级联。</p><h3>关键模块</h3><ul class="ml"><li>Wav-VAE：全卷积音频自编码器，Oobleck block + 空洞卷积多尺度建模，Snake-Beta 激活，非参数 shortcut 分支稳定训练；24kHz → 11.7Hz（2048 倍压缩），64 维潜空间。</li><li>DiT 扩散主干：1536 隐维、24 层、24 头，Global AdaLN 注入时间步，QK-Norm + RoPE（Qwen2 式旋转位置），长跳跃连接，REPA（用 mHuBERT 特征做表征对齐）。</li><li>推理：Euler ODE 求解器（默认 16 步），APG 替代 CFG。</li></ul><h3>本质区别</h3><p>相较 CosyVoice/Qwen3-TTS 的“LLM 语义 token + 扩散声学”或两阶段 vocoder，LongCat-AudioDiT 是单阶段、纯波形潜空间、NAR 扩散，去除所有级联误差点。</p></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方</h3><ul class="ml"><li>非自回归 conditional flow matching（CFM）目标，无复杂多阶段训练、无高质量人工标注数据。</li><li>变体：LongCat-AudioDiT-1.1B（MIT，开源零样本 TTS）与 3.5B（MIT，SOTA 克隆，Seed-ZH SIM 0.818）。</li><li>文本编码器 UMT5-base 支撑 107 语言开箱即用。</li></ul><h3>关键推理期改进</h3><ul class="ml"><li>纠正长期训练-推理不匹配：每个 ODE 步做 prompt 区域潜变量重置 + 无条件预测净化。</li><li>用自适应投影引导（APG）替代标准 CFG 提升质量。</li></ul><h3>batches.json 数字解读</h3><ul class="ml"><li>已知结果：Seed-ZH SIM 0.818（vs Seed-TTS 0.809）、Seed-Hard SIM 0.797（vs 0.776）。SIM 为说话人相似度（越高越像参考说话人）。3.5B 相对此前 SOTA Seed-TTS，Seed-ZH 提升 +0.009、Seed-Hard 提升 +0.021——绝对值增幅不大但 Seed-Hard（难例集）增益更明显，说明在困难克隆场景下优势更突出。另报告 CER 1.09%（ZH）、WER 1.50%（EN），在 NAR 模型中属第一梯队可懂度。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>Seed-ZH</td><td>SIM</td><td class="v">0.818</td><td>vs Seed-TTS 0.809</td></tr><tr><td>Seed-Hard</td><td>SIM</td><td class="v">0.797</td><td>vs Seed-TTS 0.776</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>消融与关键发现</h3><ul class="ml"><li>训练-推理不匹配修正：prompt 区域潜变量重置 + 无条件预测净化，是质量提升的关键推理期技术。</li><li>APG vs CFG：自适应投影引导在质量上优于标准 classifier-free guidance。</li><li>反直觉发现（核心）：Wav-VAE 重建保真度更高 ≠ TTS 整体更好——Wav-VAE 与扩散主干需协同调优，单纯追求 codec 重建质量反而会损害最终合成质量。</li><li>模块验证：REPA、Snake-Beta 激活、长跳跃连接等均经系统消融确认贡献。</li></ul><h3>数字解读</h3><ul class="ml"><li>Seed-ZH SIM 0.818 vs Seed-TTS 0.809：在 Seed 中文零样本克隆基准上，LongCat-AudioDiT-3.5B 将说话人相似度从 0.809 提升至 0.818，超过 Seed-TTS、CosyVoice 3.5、MiniMax-Speech。</li><li>Seed-Hard SIM 0.797 vs 0.776：在更难样本上相对提升更大（+0.021），印证波形潜空间 + 推理修正对困难克隆更稳健。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>波形潜空间扩散计算仍重；3.5B 部署成本不低（虽 MIT 开源可商用）。</li><li>对极长音频效率有限；单阶段虽简化管线但扩散步数仍带来延迟。</li><li>公开信息集中在 Seed 克隆与可懂度，自然度 MOS/情感可控性等细节披露较少。</li></ul><h3>批判</h3><p>评审视角：LongCat-AudioDiT 的“单阶段波形潜空间 + 推理期修正 + APG”是清晰且可复现的工程贡献，MIT 许可利于落地。批判点：(1) “Wav-VAE 高保真 ≠ TTS 更好”的反直觉结论虽有趣，但论文未给出该现象的理论解释，仅作经验观察，可能存在评测集偏向；(2) SIM 绝对值提升仅约 1 个百分点，实际听感差异可能微弱，需主观 MOS 佐证；(3) 与同样单阶段波形潜空间的 WavTTS 缺少同设定对比，难以判断“波形潜空间 vs 时域波形”两条端到端路线的优劣。</p></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>波形潜空间直接扩散，仅 Wav-VAE+扩散主干</li><li>纠正训练-推理不匹配</li><li>自适应投影引导替代 CFG</li><li>Wav-VAE 重建好≠TTS 好(反直觉)</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs WavTTS</span><p>LongCat 在潜空间扩散，WavTTS 直接波形</p></div><div class="diff"><span class="vs">vs CosyVoice3</span><p>LongCat 走波形潜空间，CosyVoice 走 codec</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://arxiv.org/abs/2603.29339" target="_blank" rel="noopener">LongCat-AudioDiT arXiv:2603.29339</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="../../papers/2603.29339.pdf" target="_blank" rel="noopener">📄 打开已下载的本地 PDF</a></p>
+      <p class="muted" style="font-size:12px">文件已随本知识库保存于 <code>papers/</code> 目录，断网也可直接打开；PDF 已随仓库直接托管（非 LFS），克隆即离线可读。</p><p><a class="link" href="https://arxiv.org/abs/2603.29339" target="_blank" rel="noopener">🔗 在线来源（arXiv 摘要页）</a></p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>Unlike previous methods that rely on intermediate acoustic representations such as mel-spectrograms, the core innovation of LongCat-AudioDiT lies in operating directly within the waveform latent space.</blockquote>
+      <div class="src">— arXiv:2603.29339 Abstract</div>
+      <p><strong>核心创新</strong>：LongCat-AudioDiT 是非自回归扩散 TTS，<strong>直接在波形 latent 空间</strong>操作，只需 Wav-VAE + 扩散骨干，省去 mel/codec 级联，从根上缓解误差累积。对比依赖 mel 的 DiTTo-TTS、E2/F5，它用更精简的单阶段管线拿到更强零样本克隆相似度。</p>
+    </div>
+    <div class="ins">
+      <blockquote>we investigate the interplay between the Wav-VAE and the TTS backbone, revealing the counterintuitive finding that superior reconstruction fidelity in the Wav-VAE does not necessarily lead to better overall TTS performance.</blockquote>
+      <div class="src">— arXiv:2603.29339 Abstract</div>
+      <p><strong>关键实验结论</strong>：反直觉地发现 Wav-VAE 重建保真度更高<strong>并不</strong>必然带来更好的 TTS（RQ2 消融验证）。这提示“VAE 重建上界=生成上界”的朴素假设不成立，对后续 codec/VAE 设计有直接警示意义；同时其 3.5B 变体在 Seed-ZH/Hard 的 SIM 从 0.809/0.776 提升至 0.818/0.797。</p>
+    </div>
+    <div class="ins">
+      <blockquote>While our error rates slightly trail heavily engineered proprietary systems like Qwen3-TTS and CosyVoice3.5, it is crucial to emphasize that those models rely on complex multi-stage training pipelines and massive amounts of high-quality, human-annotated data.</blockquote>
+      <div class="src">— arXiv:2603.29339 Section 5.2</div>
+      <p><strong>主要局限</strong>：在可懂度（WER/CER）上仍略逊于 Qwen3-TTS、CosyVoice3.5 等重度工程化闭源系统；其优势建立在“极简端到端 + 单阶段训练”之上，意味着若要进一步追平顶尖可懂度，可能不得不引入那些它刻意回避的复杂多阶段/人工标注流程——这是简化架构付出的客观代价。</p>
+    </div></div>
+  <div class="sec"><div class="h acc">全文双语精读 <span class="badge-new">新</span></div>
+        <p><a class="link" href="../../papers-read/2603.29339/">📖 阅读全文翻译与逐句讲解 →</a>（中英对照 / 仅中文 / 仅原文三种模式，讲解锚定到具体句子，可离线打开）</p></div>
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/longcat_audiodit">在交互知识库中打开 LongCat-AudioDiT 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>

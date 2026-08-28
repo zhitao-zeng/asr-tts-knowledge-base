@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orpheus TTS · 社区 ｜ ASR/TTS 知识库</title>
+<meta name="description" content="情绪标签驱动的类人韵律 TTS，自回归 codec-LM。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/orpheus_tts/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Orpheus TTS · 社区",
+  "about": {
+    "@type": "Thing",
+    "name": "Orpheus TTS",
+    "alternateName": "社区 的 TTS 模型"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "社区"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zhitao Zeng"
+  },
+  "inLanguage": "zh-CN",
+  "datePublished": "2026-03",
+  "description": "情绪标签驱动的类人韵律 TTS，自回归 codec-LM。",
+  "mainEntityOfPage": "https://zhitao-zeng.github.io/asr-tts-knowledge-base/models/orpheus_tts/",
+  "articleBody": "情绪标签驱动的类人韵律 TTS，自回归 codec-LM。\n\n## 基于 Llama-3B 的语音 LLM（codec-LM）\n- 用修改版 Meta Llama-3.2-3B 作骨干，输入文本 prompt、输出音频 token，由 SNAC 神经 codec（24kHz 变体）解码为波形。\n- 推理时每帧生成 7 个 token，作为单个展平序列解码（而非 7 个 LM 头），对应当前帧的多分辨率 SNAC 码本。\n- 非流式（基于 CNN）的 SNAC tokenizer；推理端用 CNN detokenizer 加滑动窗口修改实现流式、避免爆音 popping。\n\n## 数据与训练\n- 训练数据超 10 万小时英语语音加数十亿文本 token 的 QA 对混合；文本 token 训练被认为提升语言理解、保留语义推理。\n- 用合法或无版权音频数据训练；提供预训练 base、生产微调 ft（8 个英文声音 tara/leah/jess/leo/dan/mia/zac/zoe）、多语种预览家族。\n\n## 与 SOTA 的本质区别\n- 不是传统 TTS 专用架构，而是把 LLM 当语音生成器，情感、韵律、节奏是模型从大规模语音加文本中学到的涌现能力，而非后处理或显式韵律模型。\n- 内联情绪标签（laugh/chuckle/sigh/cough/sniffle/groan/yawn/gasp）作为副语言事件被演出来而非读出。"
+}
+</script>
+</head>
+<body>
+<header class="top"><a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">← 返回交互知识库（需 JavaScript）</a> · <a href="../../models.html">静态清单</a></header>
+<main>
+  <div class="hd">
+    <h1>Orpheus TTS</h1>
+    <div class="meta">社区 · 2026-03 · 领域 TTS · 参数量 中等 · 许可 开源</div>
+  </div>
+  <div class="sec"><div class="h">一句话</div><p>情绪标签驱动的类人韵律 TTS，自回归 codec-LM。</p></div>
+  <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">AR codec-LM 系</span></div></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>零样本/克隆质量（官方宣称，无统一数字）</td><td>综合</td><td class="v">undefined</td><td>社区实测韵律自然</td></tr></tbody></table></div>
+  <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>基于 Llama-3B 的语音 LLM（codec-LM）</h3><ul class="ml"><li>用修改版 Meta Llama-3.2-3B 作骨干，输入文本 prompt、输出音频 token，由 SNAC 神经 codec（24kHz 变体）解码为波形。</li><li>推理时每帧生成 7 个 token，作为单个展平序列解码（而非 7 个 LM 头），对应当前帧的多分辨率 SNAC 码本。</li><li>非流式（基于 CNN）的 SNAC tokenizer；推理端用 CNN detokenizer 加滑动窗口修改实现流式、避免爆音 popping。</li></ul><h3>数据与训练</h3><ul class="ml"><li>训练数据超 10 万小时英语语音加数十亿文本 token 的 QA 对混合；文本 token 训练被认为提升语言理解、保留语义推理。</li><li>用合法或无版权音频数据训练；提供预训练 base、生产微调 ft（8 个英文声音 tara/leah/jess/leo/dan/mia/zac/zoe）、多语种预览家族。</li></ul><h3>与 SOTA 的本质区别</h3><ul class="ml"><li>不是传统 TTS 专用架构，而是把 LLM 当语音生成器，情感、韵律、节奏是模型从大规模语音加文本中学到的涌现能力，而非后处理或显式韵律模型。</li><li>内联情绪标签（laugh/chuckle/sigh/cough/sniffle/groan/yawn/gasp）作为副语言事件被演出来而非读出。</li></ul></div>
+  <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>训练配方（社区开源）</h3><ul class="ml"><li>预训练在大规模语音加文本数据上维持语言理解；文本 token 训练 boost TTS 表现同时保留语义推理。</li><li>微调生产模型在若干声音上优化对话场景；支持少至 50 例每说话人的自定义微调。</li><li>损失为标准下一 token 交叉熵（自回归）；无公开 RLHF 或对齐披露。</li></ul><h3>known_results 解读</h3><ul class="ml"><li>batches.json 记社区实测韵律自然度好。公开可查：流式延迟约 200ms（A100 上快于实时播放），文本流式输入 KV cache 可降至 25-50ms；声称自然度、情感、节奏优于 SOTA 闭源，但据官方自述主要基于内部评测与主观判断，缺乏标准化基准与同行评审。社区实测的好主要指情感真实度（尤其 laugh/sigh 落地自然）。</li></ul></div>
+  <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>社区实测</td><td>韵律自然度</td><td class="v">好</td><td>社区实测</td></tr></tbody></table></div>
+  <div class="sec"><div class="h warnc">消融与关键发现</div><h3>无正式论文消融</h3><ul class="ml"><li>Orpheus 以模型权重与代码开源（Apache-2.0）为主，未发布同行评审论文与系统消融。</li><li>社区经验消融：Q8_0 GGUF 在 8GB 显存可跑，情绪标签中 laugh/sigh 可靠，groan/yawn 等稀有标签需重采样；这些是单卡经验而非基准。</li><li>架构选择（每帧 7 token 展平序列 vs 多 LM 头）来自其设计说明，称在 A100/H100 加 vLLM 上 token 生成速度快于实时播放，故更长序列仍可实时。</li></ul></div>
+  <div class="sec"><div class="h warnc">局限与开放问题 · 批判评估</div><h3>真实边界</h3><ul class="ml"><li>主要英语，多语种仅预览；AR 生成有延迟与错误累积。</li><li>3B 参数，Q8_0 GGUF 约 4GB 权重加 SNAC 加 KV cache 约 8GB 显存，小显存需更激进量化（质量降）。</li><li>情绪控制依赖固定标签集，超出现有 8 类副语言的细粒度情绪不可表达；零样本克隆需参考音频。</li></ul><h3>批判</h3><ul class="ml"><li>优于 ElevenLabs/OpenAI 等所有闭源为官方自述、基于内部主观评测，缺乏 Seed-TTS/CV3-Eval 等统一基准的 WER/SIM 绝对值，研究界对其优越性有合理质疑。</li><li>无正式论文意味着方法细节（数据清洗、对齐、训练超参）不可审计；10 万小时无版权音频的来源与质量参差可能影响复现。</li><li>3B 全量 speech-LLM 在延迟与显存上高于 Kokoro（82M）与 Chatterbox（0.5B）等小模型，实时部署成本偏高；情绪标签演得出来但可控性弱于 MiniMax 的 Sound Tags 体系。</li></ul></div>
+  <div class="sec"><div class="h">创新点</div><ul class="tight"><li>情绪标签驱动韵律</li><li>类人自然度</li><li>开源</li></ul></div>
+  <div class="sec"><div class="h">与别家技术差异</div><div class="diff"><span class="vs">vs CosyVoice3</span><p>Orpheus 重情绪韵律，CosyVoice 重多语种</p></div><div class="diff"><span class="vs">vs Fish Audio S2</span><p>同 AR，Orpheus 偏情绪表达</p></div></div>
+  <div class="sec"><div class="h">参考来源</div><ul class="tight"><li><a class="link" href="https://github.com/canopyai/Orpheus-TTS" target="_blank" rel="noopener">Orpheus-TTS 仓库</a></li></ul></div>
+  <div class="sec"><div class="h">论文 / 来源</div><p><a class="link" href="https://github.com/canopyai/Orpheus-TTS" target="_blank" rel="noopener">🔗 在线来源</a></p><p class="muted" style="font-size:12px">仅在线链接，PDF 未随仓库托管；可前往来源页查看原文。</p></div>
+  <div class="sec"><div class="h">论文逐句解读 · Insight 旁注</div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：Orpheus-TTS 采用 codec-LM 生成并引入情绪标签条件以强调韵律自然度，且官方开源，定位为开源、偏情感表达质量的语音合成模型。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：架构字段「codec-LM + 情绪标签条件，强调韵律自然度」，训练字段标注「开源」。与同类对比：相对纯克隆向的 Qwen3-TTS，更突出情感/韵律；相对 MiniMax 商业情绪标签，开源更透明。边界与不确定性：情绪标签的细粒度与中文覆盖未经实测，为基于描述的推断。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：情绪标签数据 + codec-LM 训练使 Orpheus 在情感表达自然度与基础零样本克隆上具备可用能力，且因开源可本地部署与社区优化。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：训练字段「情绪标签数据 + codec-LM 训练；开源」。与同类对比：开源使其可复现性与可定制性优于闭源商业 TTS。边界与不确定性：DEEP Results 为空，无 MOS/情感准确度指标；克隆相似度与跨语种能力为推断，需以社区评测为准。</p>
+    </div>
+    <div class="ins">
+      <blockquote>据公开信息/架构可知的推导论点：局限在情绪标签体系覆盖有限、自回归 codec 长序列稳定性风险，以及开源权重可用性/部署依赖需核实；零样本克隆仍存合规风险。</blockquote>
+      <div class="src">— 推导（依据知识库 DEEP 文本 / 官方发布）</div>
+      <p>推导根据：架构为自回归 codec，训练标注开源但权重分发未详述。与同类对比：闭源商业模型有平台保障，开源需自行解决依赖与算力。边界与不确定性：开源降低技术复现风险但不消除合规风险；情绪标签边界与权重发布渠道为推断性提示，需以官方仓库为准。</p>
+    </div></div>
+  
+  <div class="sec"><div class="h">交互版</div><p><a class="link" href="../../#/model/orpheus_tts">在交互知识库中打开 Orpheus TTS 卡片 →</a>（含能力矩阵、谱系图与筛选）</p></div>
+</main>
+<footer><p class="mut">本页为 SEO / 无障碍静态详情页，由 tools/gen_seo.js 自动生成，数据来源 data/kb.js。返回 <a href="https://zhitao-zeng.github.io/asr-tts-knowledge-base/">知识库首页</a>。</p></footer>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;max-width:920px;margin:0 auto;padding:20px 18px 60px;color:#1f2937;line-height:1.65;background:#f6f8fb}
+  .top{margin-bottom:14px;font-size:13px}a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+  h1{font-size:26px;margin:4px 0 6px}
+  .hd{border-bottom:2px solid #e5e7eb;padding-bottom:10px;margin-bottom:6px}
+  .meta{color:#6b7280;font-size:14px}
+  .sec{border-top:1px solid #e5e7eb;padding:16px 0}
+  .h{font-size:17px;font-weight:700;margin:0 0 8px;color:#3730a3}
+  .h.acc{color:#0e7490}.h.warnc{color:#b45309}
+  .badge-new{font-size:11px;background:#dcfce7;color:#166534;padding:1px 7px;border-radius:6px;vertical-align:middle}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:#dbeafe;color:#1e40af;margin:2px}
+  .tag.warn{background:#fef3c7;color:#92400e}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tight{margin:6px 0;padding-left:20px}ul.ml{margin:6px 0;padding-left:20px}
+  .ml li,.tight li{margin:3px 0}
+  .muted{color:#9ca3af;font-size:13px}
+  .link{font-weight:600}
+  table.bench{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:4px}
+  table.bench th,table.bench td{border:1px solid #e5e7eb;padding:6px 9px;text-align:left;vertical-align:top}
+  table.bench th{background:#eef2ff;color:#3730a3}
+  table.bench td.v{font-weight:700;white-space:nowrap}
+  .ins{border-left:3px solid #c7d2fe;background:#fff;padding:8px 14px;margin:10px 0;border-radius:0 8px 8px 0}
+  .ins blockquote{margin:0 0 4px;color:#4338ca;font-style:italic}
+  .ins .src{font-size:12px;color:#6b7280;margin-bottom:4px}
+  .diff{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:8px 12px;margin:8px 0}
+  .diff .vs{font-weight:700;color:#3730a3}
+  .diff p{margin:4px 0 0}
+  h3{font-size:15px;color:#1e3a8a;margin:12px 0 4px}
+  code{background:#e5e7eb;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  footer{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:10px}
+  .mut{color:#9ca3af;font-size:12px}
+</style>
+</body>
+</html>
