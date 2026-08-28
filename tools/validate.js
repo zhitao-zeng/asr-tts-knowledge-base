@@ -141,6 +141,12 @@ for (const b of sandbox.__BENCHMARKS || []) {
   for (const e of b.entries || []) {
     benchRows++;
     ok(modelIds.has(e.id), `[基准漂移] 数据集 "${b.id}" 引用了不存在的模型 id: ${e.id}`);
+    if (!modelIds.has(e.id)) continue;
+    const m = KB.models.find((x) => x.id === e.id);
+    // 领域一致性：Benchmark 引用的模型必须与榜单领域相同（防止 ASR/TTS 混排）。
+    // 注：CER/WER 同时被 ASR 与 TTS 榜单使用（TTS 输出也按 CER/WER 评测，如 Seed-TTS-Eval），
+    //     故以榜单声明的 domain 为准，而非指标名。
+    ok(m.domain === b.domain, `[Benchmark 领域错误] ${b.id}(${b.domain}) 引用了 ${e.id}(${m.domain})`);
   }
 }
 
@@ -150,6 +156,7 @@ const CANONICAL = {
   fireredasr2:       { domain: "ASR", orgRe: /小红书/ },
   voxtral_mini:      { date: "2026-02", domain: "ASR", paperRe: /2602\.11298/, latency_ms: 480 },
   fishaudio_s2:      { date: "2026-03", domain: "TTS", has_arxiv: true, paperRe: /2603\.08823/ },
+  nim4_asr:          { domain: "ASR", orgRe: /NIO|蔚来/, stream: true }, // P0-1 纠错回归守护
 };
 for (const [id, rule] of Object.entries(CANONICAL)) {
   const m = KB.models.find((x) => x.id === id);
@@ -162,6 +169,7 @@ for (const [id, rule] of Object.entries(CANONICAL)) {
   if (rule.paperRe) ok(rule.paperRe.test(m.paper_url || ""), `[守护] ${id} paper_url 应匹配 ${rule.paperRe}，实为 "${m.paper_url}"`);
   if (rule.latency_ms !== undefined) ok(m.metrics && m.metrics.latency_ms === rule.latency_ms, `[守护] ${id} metrics.latency_ms 应为 ${rule.latency_ms}，实为 ${m.metrics && m.metrics.latency_ms}`);
   if (rule.has_arxiv !== undefined) ok(m.has_arxiv === rule.has_arxiv, `[守护] ${id} has_arxiv 应为 ${rule.has_arxiv}，实为 ${m.has_arxiv}`);
+  if (rule.stream !== undefined) ok(m.caps && m.caps.stream === rule.stream, `[守护] ${id} caps.stream 应为 ${rule.stream}，实为 ${m.caps && m.caps.stream}`);
 }
 
 // 5) 汇总

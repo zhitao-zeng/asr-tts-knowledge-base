@@ -11,7 +11,7 @@ globalThis.KB = {
       "members": [
         {
           "model_id": "cohere_transcribe",
-          "innovation_point": "2B Conformer + 弱监督，登顶 HF Open ASR 榜（avg WER 5.42%）"
+          "innovation_point": "2B Conformer，从零监督训练，登顶 HF Open ASR 榜（avg WER 5.42%）"
         },
         {
           "model_id": "fireredasr2",
@@ -147,7 +147,7 @@ globalThis.KB = {
         },
         {
           "model_id": "fishaudio_s2",
-          "innovation_point": "轻量 codec-LM，社区高人气"
+          "innovation_point": "4B Dual-AR（Slow+Fast AR）+ RVQ codec，社区高人气"
         }
       ]
     },
@@ -414,7 +414,7 @@ globalThis.KB = {
     {
       "id": "nim4_asr",
       "name": "NIM4-ASR",
-      "org": "NVIDIA",
+      "org": "NIO / 蔚来",
       "date": "2026-04",
       "domain": "ASR",
       "framework_lines": [
@@ -428,9 +428,9 @@ globalThis.KB = {
       "license": "商业/可部署",
       "params": "2.3B",
       "metrics": {},
-      "summary": "2.3B LLM 架构 ASR，引入 RAG 热词机制强化专名/术语识别。",
-      "architecture": "语音编码器将音频映射为表征后送入 2.3B 语言模型做解码；关键模块是检索增强(RAG)：推理时从知识库检索相关热词（人名、地名、产品名、术语）并以约束/提示方式注入解码过程。",
-      "training": "在标准 ASR 语料上微调 LLM 解码，并加入‘热词检索→注入’的推理管线训练；热词可来自领域词典或实时检索。",
+      "summary": "2.3B 实时流式 LLM-ASR，约 600M 流式 Conformer + Qwen3-1.7B 解码；引入百万级音素 RAG 热词机制强化专名/术语识别。",
+      "architecture": "约 600M 流式 Conformer 编码器 + 两层 MLP adaptor 将音频映射为表征，送入 Qwen3-1.7B 语言模型做解码；原生流式（chunk 级编码 + KV-cache 复用），首包延迟受 ~160ms/token 分辨率约束。关键模块是检索增强(RAG)：推理时从百万级音素索引检索热词（人名、地名、产品名、术语），以约束/提示方式注入解码过程。",
+      "training": "六阶段训练范式：CR-CTC 预训练 → 对齐(alignment) → IA-SFT(迭代异步 SFT) → Late Joint SFT → Context SFT(热词上下文) → ASR 专用 GRPO（奖励 R_acc=exp(-α·CER)、R_hallu、R_ctx）；推理时百万级音素 RAG 热词检索→注入，热词可来自领域词典或实时检索。",
       "results": [
         {
           "dataset": "含专名/术语的数据集",
@@ -442,9 +442,10 @@ globalThis.KB = {
       "ablation": "核心消融即‘有无 RAG 热词’：在术语密集场景（金融、医疗、客服）WER 下降明显，通用场景增益较小。",
       "limitation": "依赖外部检索索引的质量与覆盖；热词注入增加推理复杂度；2.3B 规模在中低端硬件仍需优化。",
       "innovation": [
-        "LLM 架构做识别，语言先验强",
-        "RAG 热词注入缓解专名错误",
-        "NIM 微服务化部署"
+        "原生流式编码 + KV-cache 复用（低延迟实时 ASR）",
+        "百万级音素 RAG 热词检索（亚毫秒，强化专名/术语）",
+        "ASR 专用 GRPO（R_acc / R_hallu / R_ctx 多奖励）",
+        "六阶段训练范式（CR-CTC → 对齐 → IA-SFT → Late Joint SFT → Context SFT → GRPO）"
       ],
       "diff_vs": [
         {
@@ -463,9 +464,9 @@ globalThis.KB = {
         }
       ],
       "caps": {
-        "stream": false,
+        "stream": true,
         "long": false,
-        "multi": false,
+        "multi": true,
         "clone": false,
         "emot": false
       }
@@ -2317,8 +2318,8 @@ globalThis.KB = {
       "caps": {
         "stream": true,
         "long": false,
-        "multi": false,
-        "clone": false,
+        "multi": true,
+        "clone": true,
         "emot": true
       }
     },
@@ -2376,7 +2377,7 @@ globalThis.KB = {
       "caps": {
         "stream": false,
         "long": false,
-        "multi": false,
+        "multi": true,
         "clone": true,
         "emot": true
       }
@@ -2865,7 +2866,7 @@ globalThis.KB = {
       "caps": {
         "stream": false,
         "long": false,
-        "multi": true,
+        "multi": false,
         "clone": false,
         "emot": false
       }
@@ -2933,7 +2934,7 @@ globalThis.KB = {
       "caps": {
         "stream": false,
         "long": false,
-        "multi": true,
+        "multi": false,
         "clone": false,
         "emot": false
       }
@@ -5114,7 +5115,12 @@ globalThis.BENCHMARKS = [
       {
         "id": "fireredasr2",
         "v": 0.57,
-        "note": "AED 变体 AISHELL-1 CER（论文）"
+        "note": "AED 变体 AISHELL-1 CER（论文，离线）"
+      },
+      {
+        "id": "nim4_asr",
+        "v": 0.57,
+        "note": "AISHELL-1 CER 离线 0.57%（流式 0.60%）"
       }
     ]
   },
@@ -5264,30 +5270,40 @@ globalThis.BENCHMARKS = [
     ]
   },
   {
-    "id": "asr_langs",
-    "name": "语种覆盖 (语言数)",
-    "domain": "ASR",
-    "metric": "语言数",
-    "unit": "",
-    "better": "higher",
-    "entries": [
-      {
-        "id": "meta_omni",
-        "v": 1600,
-        "note": "1600+"
-      },
-      {
-        "id": "omnivoice",
-        "v": 600,
-        "note": "600+"
-      },
-      {
-        "id": "voxcpm2",
-        "v": 30,
-        "note": "30 语"
-      }
-    ]
-  },
+    "id": "asr_language_coverage",
+      "name": "ASR 语种覆盖 (语言数)",
+      "domain": "ASR",
+      "metric": "语言数",
+      "unit": "",
+      "better": "higher",
+      "entries": [
+        {
+          "id": "meta_omni",
+          "v": 1600,
+          "note": "1600+"
+        }
+      ]
+    },
+    {
+      "id": "tts_language_coverage",
+      "name": "TTS 语种覆盖 (语言数)",
+      "domain": "TTS",
+      "metric": "语言数",
+      "unit": "",
+      "better": "higher",
+      "entries": [
+        {
+          "id": "omnivoice",
+          "v": 600,
+          "note": "600+"
+        },
+        {
+          "id": "voxcpm2",
+          "v": 30,
+          "note": "30 语"
+        }
+      ]
+    },
   {
     "id": "asr_size",
     "name": "端侧模型体积 (GB)",

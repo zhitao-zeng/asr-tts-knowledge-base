@@ -42,10 +42,13 @@ function baseline(m) {
 const OVERRIDES = {
   cohere_transcribe: { multi: true },            // 官方明确 14 种语言
   whisper:           { multi: true },            // 100+ 语言，语音领域事实标准
-  wav2vec2:          { multi: true },            // 多语 LibriVox/多语预训练基座
-  hubert:            { multi: true },            // 多语 HuBERT 基座
-  meta_mms:          { multi: true },            // MMS 覆盖 1000+ 语言（基线已判但保留）
+  meta_mms:          { multi: true },            // MMS 覆盖 1000+ 语言
   qwen_audio_tts:    { stream: false },          // Qwen-Audio 为音频理解模型，非流式 TTS
+  // —— 以下为本次人工复核后确认的精确能力（覆盖启发式）——
+  nim4_asr:          { stream: true, multi: true }, // 原生流式 + 中英/方言/code-switch
+  fishaudio_s2:      { multi: true, clone: true },  // 80+ 语言；Fish 为克隆向模型
+  minimax28:         { multi: true },               // 40+ 语言
+  // 原始 wav2vec 2.0 / HuBERT 为英语(LibriSpeech)基线；多语版本为 XLSR / mHuBERT 等派生模型，故不强标 multi
 };
 
 const CAP_KEYS = ["stream", "long", "multi", "clone", "emot"];
@@ -61,7 +64,7 @@ function resolve(m) {
 for (const m of KB.models) {
   const computed = resolve(m);
   if (m.caps && typeof m.caps === "object") {
-    for (const k of CAP_KEYS) if (!(k in OVERRIDES[m.id] || {})) computed[k] = m.caps[k];
+    for (const k of CAP_KEYS) if (!(k in (OVERRIDES[m.id] || {}))) computed[k] = m.caps[k];
   }
   m.caps = computed;
 }
