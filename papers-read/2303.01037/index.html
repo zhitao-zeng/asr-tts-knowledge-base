@@ -102,6 +102,13 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+/* 重建表格网格（extract_tables.py 产物） */
+.ptab-wrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ptab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ptab th{background:#f1f5f9;font-weight:700;padding:6px 9px;border-bottom:1.5px solid var(--line);text-align:left;white-space:nowrap}
+.ptab td{padding:5px 9px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap}
+.ptab td:first-child,.ptab th:first-child{text-align:left;font-weight:600}
+.ptab tbody tr:hover td{background:#f8fafc}
 .tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
 .refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
 /* 三分钟摘要 */
@@ -457,15 +464,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-2-1"><span class="zh">在实验中，我们考虑两个模型，参数量分别为 600M 和 2B。</span></span><span class="sent" data-sid="s-2-1-2-2"><span class="zh">主要结果均使用 2B 模型获得，而 600M 模型用于消融实验和观察模型规模扩展行为。</span></span><span class="sent" data-sid="s-2-1-2-3"><span class="zh">模型的一些特性列于 Table 2。</span></span></p>
           
         </div>
-<div class="cap" id="tab-2-1-1"><span class="cap-k">表</span><p class="en">Table 2: Conformer model parameters.</p><p class="zh">表 2：Conformer 模型参数。</p></div>
+<div class="cap" id="tab-2-1-1"><span class="cap-k">表</span><p class="en">Table 2: Conformer model parameters.</p><p class="zh">表 2：Conformer 模型参数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Table 2: Conformer model parameters.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th># Params (B)</th><th></th><th># Layers</th><th></th><th>Dimension</th><th></th><th>Att. Heads</th><th></th><th>Conv. Kernel Size</th><th></th></tr></thead><tbody><tr><td>Conformer-0.6</td><td></td><td>0.6</td><td></td><td>24</td><td></td><td>1024</td><td></td><td>8</td><td></td><td>5</td></tr>
+<tr><td>Conformer-2B</td><td></td><td>2.0</td><td></td><td>32</td><td></td><td>1536</td><td></td><td>16</td><td></td><td>5</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-2-1-3">
           <p class="en-lines"><span class="sent" data-sid="s-2-1-3-1"><span class="en">Model # Params (B) # Layers Dimension Att.</span></span> <span class="sent" data-sid="s-2-1-3-2"><span class="en">Heads Conv.</span></span> <span class="sent" data-sid="s-2-1-3-3"><span class="en">Kernel Size Conformer-0.6</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-3-1"><span class="zh">表头：Model / # Params (B) / # Layers / Dimension / Att.（后续照原文）。</span></span><span class="sent" data-sid="s-2-1-3-2"><span class="zh">表头续：Heads / Conv.。</span></span><span class="sent" data-sid="s-2-1-3-3"><span class="zh">表头续：Kernel Size——Conformer-0.6（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-2-1-1"><code>0.6 24 1024 8 5</code></div>
-<div class="eq" id="eq-2-1-2"><code>Conformer-2B</code></div>
-<div class="eq" id="eq-2-1-3"><code>2.0 32 1536 16 5</code></div></section>
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-2-2"><span class="secnum">2.2</span> <span class="t-zh">预训练：BEST-RQ</span><span class="t-en">Pre-training: BEST-RQ</span></h3><div class="pblk" id="p-2-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-2-2-1-1"><span class="en">We select BEST-RQ [10] as the method to pre-train our networks with speech audio.</span></span> <span class="sent" data-sid="s-2-2-1-2"><span class="en">BEST-RQ provides a simple framework with a small number of hyperparameters for unsupervised training on</span></span></p>
@@ -925,26 +933,26 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-4-4"><span class="secnum">4.4</span> <span class="t-zh">在未见过语言上推高 ASR 质量</span><span class="t-en">Pushing the Quality of ASR on Unseen Languages</span></h3><div class="cap" id="tab-4-4-1"><span class="cap-k">表</span><p class="en">Table 4: Noisy student training for unseen languages. WERs (%) for the teacher adapter models and the student models are presented. The relative improvement (%) of the student models can be found in the last column.</p><p class="zh">表 4：面向未见过语言的噪声学生训练。表中给出教师适配器模型与学生模型的 WER（%），最后一列是学生模型的相对改进（%）。</p></div>
+      <h3 class="sech lv2" id="sec-4-4"><span class="secnum">4.4</span> <span class="t-zh">在未见过语言上推高 ASR 质量</span><span class="t-en">Pushing the Quality of ASR on Unseen Languages</span></h3><div class="cap" id="tab-4-4-1"><span class="cap-k">表</span><p class="en">Table 4: Noisy student training for unseen languages. WERs (%) for the teacher adapter models and the student models are presented. The relative improvement (%) of the student models can be found in the last column.</p><p class="zh">表 4：面向未见过语言的噪声学生训练。表中给出教师适配器模型与学生模型的 WER（%），最后一列是学生模型的相对改进（%）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>in the last column.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Hausa (ha)</td><td></td><td>88.9</td><td></td><td>2175.0</td><td></td><td>24.5</td><td></td><td>22.8</td><td></td><td>7.5</td></tr>
+<tr><td>Kazakh (kk)</td><td></td><td>37.7</td><td></td><td>196.0</td><td></td><td>11.8</td><td></td><td>10.9</td><td></td><td>8.3</td></tr>
+<tr><td>Shona (sn)</td><td></td><td>121.0</td><td></td><td>247.0</td><td></td><td>29.1</td><td></td><td>22.2</td><td></td><td>31.1</td></tr>
+<tr><td>Pashto (ps)</td><td></td><td>93.7</td><td></td><td>254.0</td><td></td><td>36.0</td><td></td><td>35.4</td><td></td><td>1.7</td></tr>
+<tr><td>Yoruba (yo)</td><td></td><td>94.8</td><td></td><td>1292.0</td><td></td><td>33.4</td><td></td><td>30.6</td><td></td><td>9.2</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-4-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-4-1-1"><span class="en">Languages Whisper-v2 # hrs in YT-NTL USM-LAS-Adapter USM-M + pseudo label Rel.</span></span> <span class="sent" data-sid="s-4-4-1-2"><span class="en">Imprv.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-4-1-1"><span class="zh">（Table 4 表头）语言 / Whisper-v2 / YT-NTL 中的小时数 / USM-LAS-Adapter / USM-M + 伪标注 / 相对提升。</span></span><span class="sent" data-sid="s-4-4-1-2"><span class="zh">改进率。</span></span></p>
           
         </div>
-<div class="pblk" id="p-4-4-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-1"><span class="en">Hausa (ha)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-1"><span class="zh">（Table 4 正文，数值与原文一致）豪萨语（ha）88.9、2175.0、24.5、22.8、7.5；哈萨克语（kk）37.7、196.0、11.8、10.9、8.3；绍纳语（sn）121.0、247.0、29.1、22.2、31.1；普什图语（ps）93.7、254.0、36.0、35.4、1.7；约鲁巴语（yo）94.8、1292.0、33.4、30.6、9.2。长尾语言往往没有可用于监督学习的配对转写——我们把这类语言称为「未见过」语言，因为模型在训练中从未见过这些语言的配对数据。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-4-4-1"><code>88.9 2175.0 24.5 22.8 7.5</code></div>
-<div class="eq" id="eq-4-4-2"><code>Kazakh (kk)</code></div>
-<div class="eq" id="eq-4-4-3"><code>37.7 196.0 11.8 10.9 8.3</code></div>
-<div class="eq" id="eq-4-4-4"><code>Shona (sn)</code></div>
-<div class="eq" id="eq-4-4-5"><code>121.0 247.0 29.1 22.2 31.1</code></div>
-<div class="eq" id="eq-4-4-6"><code>Pashto (ps)</code></div>
-<div class="eq" id="eq-4-4-7"><code>93.7 254.0 36.0 35.4 1.7</code></div>
-<div class="eq" id="eq-4-4-8"><code>Yoruba (yo)</code></div>
-<div class="eq" id="eq-4-4-9"><code>94.8 1292.0 33.4 30.6 9.2</code></div>
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-4-4-3">
           <p class="en-lines"><span class="sent" data-sid="s-4-4-3-1"><span class="en">Tail languages often do not have paired transcriptions for supervised learning—we refer to these languages as unseen languages, as the model has not seen paired data for these lanugages during training.</span></span> <span class="sent" data-sid="s-4-4-3-2"><span class="en">To create pseudo-labels for these languages, we first build a USM-LAS-Adapter by attaching residual adapters to USM-LAS and training them using FLEURS data.</span></span> <span class="sent" data-sid="s-4-4-3-3"><span class="en">By using the USM-LAS- Adapter as a teacher, we can now transcribe the unlabeled data in the unseen languages as part of the YT-NTL dataset.</span></span> <span class="sent" data-sid="s-4-4-3-4"><span class="en">As shown in Table 4, we observe consistent wins for all languages on the FLEURS benchmark.</span></span> <span class="sent" data-sid="s-4-4-3-5"><span class="en">For some languages, the improvement is larger than 30%.</span></span> <span class="sent" data-sid="s-4-4-3-6"><span class="en">This further demonstrates the robustness of the USM-LAS model—despite using only 10 hours of out of domain data from FLEURS, the USM-LAS-Adapter is able to transcribe YouTube data to produce meaningful recognition results that lead to these improvements.</span></span> <span class="sent" data-sid="s-4-4-3-7"><span class="en">We find the approach of training adapter models on small datasets and utilizing them for pseudo-labeling to be a promising route for scaling up the number of languages that can be transcribed by USMs.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-4-3-1"><span class="zh">（Table 4 正文，数值与原文一致）豪萨语（ha）88.9、2175.0、24.5、22.8、7.5；哈萨克语（kk）37.7、196.0、11.8、10.9、8.3；绍纳语（sn）121.0、247.0、29.1、22.2、31.1；普什图语（ps）93.7、254.0、36.0、35.4、1.7；约鲁巴语（yo）94.8、1292.0、33.4、30.6、9.2。长尾语言往往没有可用于监督学习的配对转写——我们把这类语言称为「未见过」语言，因为模型在训练中从未见过这些语言的配对数据。</span></span><span class="sent" data-sid="s-4-4-3-2"><span class="zh">为给这些语言构造伪标注，我们首先构建一个 USM-LAS-Adapter：把残差适配器挂到 USM-LAS 上，并用 FLEURS 数据训练它们。</span></span><span class="sent" data-sid="s-4-4-3-3"><span class="zh">以 USM-LAS-Adapter 为教师，我们现在就可以转写 YT-NTL 数据集中未见过语言的无标注数据。</span></span><span class="sent" data-sid="s-4-4-3-4"><span class="zh">如 Table 4 所示，我们观察到所有语言在 FLEURS 基准上都一致地取得收益。</span></span><span class="sent" data-sid="s-4-4-3-5"><span class="zh">对某些语言，改进幅度超过 30%。</span></span><span class="sent" data-sid="s-4-4-3-6"><span class="zh">这进一步证明了 USM-LAS 模型的鲁棒性——尽管只用了来自 FLEURS 的 10 小时域外数据，USM-LAS-Adapter 就能转写 YouTube 数据，产出有意义的识别结果并带来这些改进。</span></span><span class="sent" data-sid="s-4-4-3-7"><span class="zh">我们发现，「先在小数据集上训练适配器模型、再用它们生成伪标注」这一路线，在扩展 USM 可转写语言数量方面很有前景。</span></span></p>
@@ -971,25 +979,21 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-1-1-1"><span class="zh">如 Table 5 所示，我们观察到：把 BEST-RQ 训练的多 softmax 损失中 softmax 组数从 1 增加到 16，ASR 与 AST 基准会一致地取得 &gt; 5% 的相对改进。</span></span><span class="sent" data-sid="s-5-1-1-2"><span class="zh">我们还发现，使用多个 softmax 组显著降低了不同预训练运行之间的性能波动，并加快了收敛速度。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 5: YT-55 versus YT-NTL across different domains, with and without multi-softmax groups. For simplicity, we report CER for FLEURS. For CoVoST, we report the BLEU score. YT-NTL covers 27 additional languages not covered in YT-55.</p><p class="zh">表 5：YT-55 与 YT-NTL 在不同领域上的对比，含/不含多 softmax 组。为简洁起见，FLEURS 报告 CER，CoVoST 报告 BLEU 分数。YT-NTL 覆盖了 YT-55 未覆盖的另外 27 种语言。</p></div>
-<div class="pblk" id="p-5-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-1-2-1"><span class="en">Model pre-train Set # Params (B) # Softmax FLEURS (CER) CoVoST (BLEU)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-1-2-1"><span class="zh">（Table 5 表头）预训练集 / 参数量（B）/ softmax 组数 / FLEURS（CER）/ CoVoST（BLEU）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-1-1"><code>.</code></div>
-<div class="pblk" id="p-5-1-3">
-          <p class="en-lines"><span class="sent" data-sid="s-5-1-3-1"><span class="en">102 langs 27 langs Conformer-0.6B YT-55</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-1-3-1"><span class="zh">（图内标签：102 langs / 27 langs；Conformer-0.6B；YT-55。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-1-2"><code>0.6 1 9.5 - 20.9</code></div>
-<div class="eq" id="eq-5-1-3"><code>Conformer-2B YT-55</code></div>
-<div class="eq" id="eq-5-1-4"><code>2.0 1 7.9 9.5 26.6</code></div>
-<div class="eq" id="eq-5-1-5"><code>Conformer-2B YT-NTL-U</code></div>
-<div class="eq" id="eq-5-1-6"><code>2.0 1 7.4 8.5 27.5</code></div>
-<div class="eq" id="eq-5-1-7"><code>Conformer-2B YT-NTL-U</code></div>
-<div class="eq" id="eq-5-1-8"><code>2.0 16 6.9 8.1 28.7</code></div></section>
+<div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 5: YT-55 versus YT-NTL across different domains, with and without multi-softmax groups. For simplicity, we report CER for FLEURS. For CoVoST, we report the BLEU score. YT-NTL covers 27 additional languages not covered in YT-55.</p><p class="zh">表 5：YT-55 与 YT-NTL 在不同领域上的对比，含/不含多 softmax 组。为简洁起见，FLEURS 报告 CER，CoVoST 报告 BLEU 分数。YT-NTL 覆盖了 YT-55 未覆盖的另外 27 种语言。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>additional languages not covered in YT-55.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Model</th><th>pre-train Set</th><th></th><th></th><th># Params (B)</th><th></th><th># Softmax</th><th></th><th></th><th>FLEURS (CER)</th><th></th><th></th><th>CoVoST (BLEU)</th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td>.</td><td></td><td></td><td></td><td></td><td>102 langs</td><td></td><td>27 langs</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Conformer-0.6B</td><td></td><td>YT-55</td><td></td><td></td><td>0.6</td><td></td><td>1</td><td></td><td>9.5</td><td></td><td>-</td><td></td><td>20.9</td></tr>
+<tr><td></td><td>Conformer-2B</td><td></td><td>YT-55</td><td></td><td></td><td>2.0</td><td></td><td>1</td><td></td><td>7.9</td><td></td><td>9.5</td><td></td><td>26.6</td></tr>
+<tr><td></td><td>Conformer-2B</td><td></td><td>YT-NTL-U</td><td></td><td></td><td>2.0</td><td></td><td>1</td><td></td><td>7.4</td><td></td><td>8.5</td><td></td><td>27.5</td></tr>
+<tr><td></td><td>Conformer-2B</td><td></td><td>YT-NTL-U</td><td></td><td></td><td>2.0</td><td></td><td>16</td><td></td><td>6.9</td><td></td><td>8.1</td><td></td><td>28.7</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-5-2"><span class="secnum">5.2</span> <span class="t-zh">模型与语言规模扩展</span><span class="t-en">Model and Language Scaling</span></h3><div class="pblk" id="p-5-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-1-1"><span class="en">We find that scaling up the model size and increasing the language coverage of the pre-training dataset greatly benefits the performance of the USMs, as demonstrated in Table 5.</span></span> <span class="sent" data-sid="s-5-2-1-2"><span class="en">In particular, we find a 10% relative improvement of ASR and AST performance by using YT-NTL vs. YT-55 for pre-training, despite the fact that each newly added language in YT-NTL contains approximately 500 hours of speech—a relatively small amount.</span><button class="mk" data-sid="s-5-2-1-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-2-1-3"><span class="en">As could be expected, the relative gains on the newly covered languages are more substantial than those on other languages.</span></span></p>
@@ -1022,23 +1026,17 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="fig-5-4-1-s1"><span class="zh">图 7（上接说明文字）：描绘了 2.4 节所述的长音频性能退化问题。图中可见，对于有 17 层的浅层 Conformer 模型，在使用较小的局部自注意力上下文……（图注剩余部分在后续段落继续）</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-4-1"><span class="cap-k">表</span><p class="en">Table 6: BLEU scores for the CoVoST 2 X →En task to compare BEST-RQ against W2v-BERT. Higher is better.</p><p class="zh">表 6：CoVoST 2 X→英语任务上 BEST-RQ 与 W2v-BERT 的 BLEU 分数对比。越高越好。</p></div>
-<div class="pblk" id="p-5-4-1">
-          <p class="en-lines"><span class="sent" data-sid="s-5-4-1-1"><span class="en">X →English high mid low all</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-4-1-1"><span class="zh">（Table 6 表头）X →英语：高资源 / 中资源 / 低资源 / 全部。</span></span></p>
-          
-        </div></section>
+<div class="cap" id="tab-5-4-1"><span class="cap-k">表</span><p class="en">Table 6: BLEU scores for the CoVoST 2 X →En task to compare BEST-RQ against W2v-BERT. Higher is better.</p><p class="zh">表 6：CoVoST 2 X→英语任务上 BEST-RQ 与 W2v-BERT 的 BLEU 分数对比。越高越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Higher is better.</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>X →English</th><th>high</th><th>mid</th><th>low</th><th>all</th></tr><tr><th></th><th>Previous Work</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>XLS-R (0.3B) [33]</td><td>30.6</td><td>18.9</td><td>5.1</td><td>13.2</td></tr>
+<tr><td></td><td>XLS-R (1B) [33]</td><td>34.3</td><td>25.5</td><td>11.7</td><td>19.3</td></tr>
+<tr><td></td><td>XLS-R (2B) [33]</td><td>36.1</td><td>27.7</td><td>15.1</td><td>22.1</td></tr></tbody></table></div></div>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-previous-work"><span class="t-zh">已有工作（Table 6 基线行）</span><span class="t-en">Previous Work</span></h3><div class="pblk" id="p-previous-work-1">
-          <p class="en-lines"><span class="sent" data-sid="s-previous-work-1-1"><span class="en">XLS-R (0.3B) [33]</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-previous-work-1-1"><span class="zh">（表格行）XLS-R (0.3B) [33]。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-previous-work-1"><code>30.6 18.9 5.1 13.2</code></div>
-<div class="eq" id="eq-previous-work-2"><code>XLS-R (1B) [33]</code></div>
-<div class="eq" id="eq-previous-work-3"><code>34.3 25.5 11.7 19.3</code></div>
-<div class="eq" id="eq-previous-work-4"><code>XLS-R (2B) [33]</code></div>
-<div class="eq" id="eq-previous-work-5"><code>36.1 27.7 15.1 22.1</code></div></section>
+      <h3 class="sech lv2" id="sec-previous-work"><span class="t-zh">已有工作（Table 6 基线行）</span><span class="t-en">Previous Work</span></h3>
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-conformer-0-6b"><span class="t-zh">Conformer-0.6B（Table 6 续与 Figure 7 说明）</span><span class="t-en">Conformer-0.6B</span></h3><div class="pblk" id="p-conformer-0-6b-1">
           <p class="en-lines"><span class="sent" data-sid="s-conformer-0-6b-1-1"><span class="en">W2v-BERT</span></span></p>
@@ -1068,39 +1066,33 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-conformer-2b-1-s1"><span class="zh">表 7（文字说明部分）：证明分块注意力能解决长音频退化问题，并在四种不同语言——en-US（英语）、ru-RU（俄语）、ko-KR（韩语）和 uk-UA（乌克兰语）——上表现鲁棒。我们把块长为 8 秒的分块注意力模型（Table 7 中的 CW-8s）与每个 Conformer 层使用 128 帧上下文的局部自注意力模型（LSA-128）对比。我们注意到，进一步增大局部自注意力模型的上下文窗口，会在 YouTube 长音频测试集的所有语言上导致高删除错误率。这些结果表明：分块注意力模型不出现长音频性能退化，且能优于工作在最大允许感受野长度下的局部自注意力模型。</span></span></p>
           
         </div>
-<div class="cap" id="tab-conformer-2b-2"><span class="cap-k">表</span><p class="en">Table 7: Chunk-wise attention. WER (%) is reported on the YouTube long-form set.</p><p class="zh">表 7：分块注意力。报告 YouTube 长音频集上的 WER（%）。</p></div>
-<div class="pblk" id="p-conformer-2b-3">
-          <p class="en-lines"><span class="sent" data-sid="s-conformer-2b-3-1"><span class="en">Model # Params (B) # Layers en-US ru-RU ko-KR uk-UA LSA-128</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-conformer-2b-3-1"><span class="zh">表头：Model / # Params (B) / # Layers / en-US / ru-RU / ko-KR / uk-UA / LSA-128。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-conformer-2b-4"><code>0.6 24 16.2 16.6 26.2 15.5</code></div>
-<div class="eq" id="eq-conformer-2b-5"><code>CW-8s</code></div>
-<div class="eq" id="eq-conformer-2b-6"><code>0.6 24 12.5 14.7 19.5 15.3</code></div></section>
+<div class="cap" id="tab-conformer-2b-2"><span class="cap-k">表</span><p class="en">Table 7: Chunk-wise attention. WER (%) is reported on the YouTube long-form set.</p><p class="zh">表 7：分块注意力。报告 YouTube 长音频集上的 WER（%）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>at the maximum allowed receptive field length.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Model</th><th># Params (B)</th><th></th><th># Layers</th><th></th><th>en-US</th><th>ru-RU</th><th>ko-KR</th><th>uk-UA</th></tr></thead><tbody><tr><td></td><td>LSA-128</td><td></td><td>0.6</td><td></td><td>24</td><td>16.2</td><td>16.6</td><td>26.2</td><td>15.5</td></tr>
+<tr><td></td><td>CW-8s</td><td></td><td>0.6</td><td></td><td>24</td><td>12.5</td><td>14.7</td><td>19.5</td><td>15.3</td></tr></tbody></table></div></div>
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-5-5"><span class="secnum">5.5</span> <span class="t-zh">USM-CTC 模型的 TPU 服务能力</span><span class="t-en">TPU Serving Capacity of USM-CTC Models</span></h3><div class="pblk" id="p-5-5-1">
           <p class="en-lines"><span class="sent" data-sid="s-5-5-1-1"><span class="en">In section 4, we have demonstrated that USM-CTC models are powerful generic ASR models with reliable long-form transcription performance and excellent generalization properties.</span></span> <span class="sent" data-sid="s-5-5-1-2"><span class="en">Here we</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-5-1-1"><span class="zh">在第 4 节中，我们已证明 USM-CTC 模型是强大的通用 ASR 模型，具备可靠的长音频转录性能与优秀的泛化特性。</span></span><span class="sent" data-sid="s-5-5-1-2"><span class="zh">此处我们（下接）</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-5-1"><span class="cap-k">表</span><p class="en">Table 8: RTF for USM-2B.</p><p class="zh">表 8：USM-2B 的 RTF。</p></div>
-<div class="pblk" id="p-5-5-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-5-2-1"><span class="en">Model bf-16 Streaming # Params (B) TPU [88] Batch Size 1.0/RTF Conformer-0.1B Y Y</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-5-2-1"><span class="zh">1.
-模型 bf-16 流式 # 参数量 (B) TPU [88] Batch Size 1.0/RTF Conformer-0.1B Y Y</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-5-1"><code>0.1</code></div>
-<div class="eq" id="eq-5-5-2"><code>TPUv4i</code></div>
-<div class="eq" id="eq-5-5-3"><code>64 3047</code></div>
-<div class="eq" id="eq-5-5-4"><code>Conformer-0.6B N N</code></div>
-<div class="eq" id="eq-5-5-5"><code>0.6</code></div>
-<div class="eq" id="eq-5-5-6"><code>TPUv4i</code></div>
-<div class="eq" id="eq-5-5-7"><code>64 1920</code></div>
-<div class="eq" id="eq-5-5-8"><code>Conformer-2B N N</code></div>
-<div class="eq" id="eq-5-5-9"><code>2.0</code></div>
-<div class="eq" id="eq-5-5-10"><code>TPUv4i</code></div>
-<div class="eq" id="eq-5-5-11"><code>32 827</code></div>
+<div class="cap" id="tab-5-5-1"><span class="cap-k">表</span><p class="en">Table 8: RTF for USM-2B.</p><p class="zh">表 8：USM-2B 的 RTF。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th>bf-16</th><th>Streaming</th><th></th><th># Params (B)</th><th></th><th>TPU [88]</th><th>Batch Size</th><th></th><th>1.0/RTF</th></tr></thead><tbody><tr><td>Conformer-0.1B</td><td>Y</td><td></td><td>Y</td><td></td><td>0.1</td><td>TPUv4i</td><td></td><td>64</td><td>3047</td></tr>
+<tr><td>Conformer-0.6B</td><td>N</td><td></td><td>N</td><td></td><td>0.6</td><td>TPUv4i</td><td></td><td>64</td><td>1920</td></tr>
+<tr><td>Conformer-2B</td><td>N</td><td></td><td>N</td><td></td><td>2.0</td><td>TPUv4i</td><td></td><td>32</td><td>827</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-5-5-3">
           <p class="en-lines"><span class="sent" data-sid="s-5-5-3-1"><span class="en">measure the serving capacity of the USM-CTC model as represented by the real time factor (RTF) in an ideal setup where we assume that each batch sent to TPU is fully packed along the time axis.</span></span> <span class="sent" data-sid="s-5-5-3-2"><span class="en">The results of these measurements are presented in Table 8.</span></span> <span class="sent" data-sid="s-5-5-3-3"><span class="en">Surprisingly, we find that the 2B-paramter USM-CTC model is only 3.9× slower than the 100M-parameter streaming model [89], primarily due to the fact that our models operate at batch processing mode.</span><button class="mk feat" data-sid="s-5-5-3-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-5-3-4"><span class="en">This result demonstrates that the USM-CTC can be used as an offline transcriber efficiently on TPUs (or GPUs).</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-5-3-1"><span class="zh">（表格：Model × bf-16 × Streaming × #Params (B) × TPU [88] × Batch Size × 1.0/RTF——Conformer-0.1B：Y/Y/0.1/TPUv4i/64/3047；Conformer-0.6B：N/N/0.6/TPUv4i/64/1920；Conformer-2B：N/N/2.0/TPUv4i/32/827。）在理想设置（假设送往 TPU 的每个 batch 在时间轴上完全排满）下，以实时因子（RTF）度量 USM-CTC 模型的服务能力。</span></span><span class="sent" data-sid="s-5-5-3-2"><span class="zh">这些测量的结果呈现在 Table 8 中。</span></span><span class="sent" data-sid="s-5-5-3-3"><span class="zh">令人意外的是，我们发现 2B 参数的 USM-CTC 模型只比 100M 参数的流式模型 [89] 慢 3.9×（3.9 倍）——这主要归功于我们的模型以批处理模式运行。</span><button class="mk feat" data-sid="s-5-5-3-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-5-3-4"><span class="zh">这一结果表明，USM-CTC 可以作为离线转写器在 TPU（或 GPU）上高效运行。</span></span></p>

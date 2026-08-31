@@ -102,6 +102,13 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+/* 重建表格网格（extract_tables.py 产物） */
+.ptab-wrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ptab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ptab th{background:#f1f5f9;font-weight:700;padding:6px 9px;border-bottom:1.5px solid var(--line);text-align:left;white-space:nowrap}
+.ptab td{padding:5px 9px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap}
+.ptab td:first-child,.ptab th:first-child{text-align:left;font-weight:600}
+.ptab tbody tr:hover td{background:#f8fafc}
 .tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
 .refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
 /* 三分钟摘要 */
@@ -660,27 +667,27 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-6-1-1"><span class="secnum">6.1.1</span> <span class="t-zh">6.1.1 Seed-TTS-Eval</span><span class="t-en">Seed-TTS-Eval</span></h3><div class="cap" id="tab-6-1-1-1"><span class="cap-k">表</span><p class="en">Table 1: Results on Seed-TTS-Eval.</p><p class="zh">表 1：Seed-TTS-Eval 上的结果。</p></div>
-<div class="pblk" id="p-6-1-1-1">
-          <p class="en-lines"><span class="sent" data-sid="s-6-1-1-1-1"><span class="en">Model WER (%) ↓ test-zh | test-en | zh-hard Fish Audio S2</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-6-1-1-1-1"><span class="zh">表头：Model × WER (%)↓（test-zh | test-en | zh-hard）——Fish Audio S2（后续数值照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-6-1-1-1"><code>0.54 | 0.99 | 5.99</code></div>
-<div class="eq" id="eq-6-1-1-2"><code>Fish Audio S1</code></div>
-<div class="eq" id="eq-6-1-1-3"><code>0.54 | 1.07 | 17.00</code></div>
-<div class="eq" id="eq-6-1-1-4"><code>CosyVoice 3-1.5B (Du et al., 2025)</code></div>
-<div class="eq" id="eq-6-1-1-5"><code>1.12 | 2.21 | 5.83</code></div>
-<div class="eq" id="eq-6-1-1-6"><code>Qwen3-TTS (Hu et al., 2026)</code></div>
-<div class="eq" id="eq-6-1-1-7"><code>0.77 | 1.24 | –</code></div>
-<div class="eq" id="eq-6-1-1-8"><code>Qwen3-Omni (Xu et al., 2025b)</code></div>
-<div class="eq" id="eq-6-1-1-9"><code>1.07 | 1.39 | –</code></div>
-<div class="eq" id="eq-6-1-1-10"><code>FireRedTTS-2 (Xie et al., 2025)</code></div>
-<div class="eq" id="eq-6-1-1-11"><code>1.14 | 1.95 | –</code></div>
-<div class="eq" id="eq-6-1-1-12"><code>Seed-TTS (Anastassiou et al., 2024)</code></div>
-<div class="eq" id="eq-6-1-1-13"><code>1.12 | 2.25 | 7.59</code></div>
+      <h3 class="sech lv2" id="sec-6-1-1"><span class="secnum">6.1.1</span> <span class="t-zh">6.1.1 Seed-TTS-Eval</span><span class="t-en">Seed-TTS-Eval</span></h3><div class="cap" id="tab-6-1-1-1"><span class="cap-k">表</span><p class="en">Table 1: Results on Seed-TTS-Eval.</p><p class="zh">表 1：Seed-TTS-Eval 上的结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th></tr><tr><th>Model</th><th>test-zh | test-en | zh-hard</th><th></th></tr><tr><th>Fish Audio S2</th><th>0.54 | 0.99 | 5.99</th><th></th></tr><tr><th>Fish Audio S1</th><th>0.54 | 1.07 | 17.00</th><th></th></tr><tr><th>CosyVoice 3-1.5B (Du et al., 2025)</th><th>1.12 | 2.21 | 5.83</th><th></th></tr></thead><tbody><tr><td>Qwen3-TTS (Hu et al., 2026)</td><td>0.77 | 1.24 |</td><td>–</td></tr>
+<tr><td>Qwen3-Omni (Xu et al., 2025b)</td><td>1.07 | 1.39 |</td><td>–</td></tr>
+<tr><td>FireRedTTS-2 (Xie et al., 2025)</td><td>1.14 | 1.95 |</td><td>–</td></tr>
+<tr><td>Seed-TTS (Anastassiou et al., 2024)</td><td>1.12 | 2.25 | 7.59</td><td></td></tr>
+<tr><td></td><td>0.99 | 1.90 |</td><td></td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-6-1-1-14"><code>Minimax Speech-02 (Zhang et al., 2025)</code></div>
-<div class="eq" id="eq-6-1-1-15"><code>0.99 | 1.90 | –</code></div>
+
 <div class="pblk" id="p-6-1-1-2">
           <p class="en-lines"><span class="sent" data-sid="s-6-1-1-2-1"><span class="en">We assess voice-cloning intelligibility on Seed-TTS-Eval using WER over the test-zh, test-en, and ZH-hard splits.</span></span> <span class="sent" data-sid="s-6-1-1-2-2"><span class="en">WER is computed by transcribing synthesized audio with Whisper-large-v3 (Radford et al., 2023) for English and Paraformer-zh Gao et al. (2023) for Chinese, following the benchmark protocol; results are reported in Table 1.</span><button class="mk" data-sid="s-6-1-1-2-2" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-6-1-1-2-1"><span class="zh">/ T</span></span><span class="sent" data-sid="s-6-1-1-2-2"><span class="zh">WER 按基准协议计算：英文用 Whisper-large-v3（Radford et al., 2023）、中文用 Paraformer-zh（Gao et al., 2023）转写合成音频；结果报告在表 1。</span><button class="mk" data-sid="s-6-1-1-2-2" title="查看讲解">解</button></span></p>
@@ -716,74 +723,101 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-6-1-2-1"><span class="cap-k">表</span><p class="en">Table 2: Results on CV3-Eval multilingual voice cloning subset.</p><p class="zh">表 2：CV3-Eval 多语言声音克隆子集上的结果。</p></div>
+<div class="cap" id="tab-6-1-2-1"><span class="cap-k">表</span><p class="en">Table 2: Results on CV3-Eval multilingual voice cloning subset.</p><p class="zh">表 2：CV3-Eval 多语言声音克隆子集上的结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th>WER (%) ↓</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>zh</th><th>en</th><th>ja</th><th>ko</th><th>de</th><th>es</th><th>fr</th><th>it</th><th>ru</th><th>hard-zh</th><th>hard-en</th></tr></thead><tbody><tr><td>Fish Audio S2</td><td>2.65</td><td>2.43</td><td>3.96</td><td>2.76</td><td>2.22</td><td>2.00</td><td>6.26</td><td>2.04</td><td>2.78</td><td>9.10</td><td>4.40</td></tr>
+<tr><td>Fish Audio S1</td><td>2.98</td><td>3.00</td><td>4.54</td><td>3.19</td><td>2.78</td><td>2.84</td><td>8.15</td><td>2.94</td><td>5.18</td><td>9.72</td><td>7.26</td></tr>
+<tr><td>CosyVoice2 + DiffRO</td><td>3.00</td><td>4.72</td><td>6.36</td><td>5.14</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>10.66</td><td>10.25</td></tr>
+<tr><td>CosyVoice3-0.5B + DiffRO</td><td>2.89</td><td>3.68</td><td>5.15</td><td>4.02</td><td>4.51</td><td>2.99</td><td>8.56</td><td>2.94</td><td>3.79</td><td>8.26</td><td>7.60</td></tr>
+<tr><td>CosyVoice3-1.5B + DiffRO</td><td>3.01</td><td>3.71</td><td>5.27</td><td>4.01</td><td>3.93</td><td>3.26</td><td>8.09</td><td>2.72</td><td>4.11</td><td>9.06</td><td>7.56</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-6-1-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-6-1-2-3-1"><span class="en">Model WER (%) ↓ zh en ja ko de es fr it ru hard-zh hard-en Fish Audio S2</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-6-1-2-3-1"><span class="zh">表头：Model / WER (%) ↓（zh / en / ja / ko / de / es / fr / it / ru / hard-zh / hard-en）——Fish Audio S2（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-6-1-2-1"><code>2.65 2.43 3.96 2.76 2.22 2.00 6.26 2.04 2.78 9.10 4.40</code></div>
-<div class="eq" id="eq-6-1-2-2"><code>Fish Audio S1</code></div>
-<div class="eq" id="eq-6-1-2-3"><code>2.98 3.00 4.54 3.19 2.78 2.84 8.15 2.94 5.18 9.72 7.26</code></div>
-<div class="eq" id="eq-6-1-2-4"><code>CosyVoice2 + DiffRO</code></div>
-<div class="eq" id="eq-6-1-2-5"><code>3.00 4.72 6.36 5.14 – – – – – 10.66 10.25</code></div>
-<div class="eq" id="eq-6-1-2-6"><code>CosyVoice3-0.5B + DiffRO</code></div>
-<div class="eq" id="eq-6-1-2-7"><code>2.89 3.68 5.15 4.02 4.51 2.99 8.56 2.94 3.79 8.26 7.60</code></div>
-<div class="eq" id="eq-6-1-2-8"><code>CosyVoice3-1.5B + DiffRO</code></div>
-<div class="eq" id="eq-6-1-2-9"><code>3.01 3.71 5.27 4.01 3.93 3.26 8.09 2.72 4.11 9.06 7.56</code></div>
-<div class="cap" id="tab-6-1-2-2"><span class="cap-k">表</span><p class="en">Table 3: Results on the Minimax Multilingual Testset.</p><p class="zh">表 3：Minimax Multilingual Testset 上的结果。</p></div>
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-6-1-2-2"><span class="cap-k">表</span><p class="en">Table 3: Results on the Minimax Multilingual Testset.</p><p class="zh">表 3：Minimax Multilingual Testset 上的结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Language</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>MiniMax</th><th></th><th></th><th></th><th>MiniMax ElevenLabs</th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Arabic</td><td>1.665</td><td>1.666</td><td>3.500</td><td>6.420</td><td>0.736</td><td>0.706</td><td>0.750</td><td>0.713</td></tr>
+<tr><td>Cantonese</td><td>34.111</td><td>51.513</td><td>30.670</td><td>48.800</td><td>0.778</td><td>0.670</td><td>0.805</td><td>0.773</td></tr>
+<tr><td>Chinese</td><td>2.252</td><td>16.026</td><td>0.730</td><td>0.980</td><td>0.780</td><td>0.677</td><td>0.816</td><td>0.777</td></tr>
+<tr><td>Czech</td><td>3.875</td><td>2.108</td><td>2.840</td><td>18.020</td><td>0.796</td><td>0.685</td><td>0.798</td><td>0.733</td></tr>
+<tr><td>Dutch</td><td>1.143</td><td>0.803</td><td>0.990</td><td>2.270</td><td>0.738</td><td>0.680</td><td>0.730</td><td>0.701</td></tr>
+<tr><td>English</td><td>2.164</td><td>2.339</td><td>1.620</td><td>2.370</td><td>0.756</td><td>0.613</td><td>0.797</td><td>0.785</td></tr>
+<tr><td>Finnish</td><td>4.666</td><td>2.964</td><td>3.330</td><td>10.000</td><td>0.835</td><td>0.759</td><td>0.819</td><td>0.780</td></tr>
+<tr><td>French</td><td>4.099</td><td>5.216</td><td>3.050</td><td>5.700</td><td>0.628</td><td>0.535</td><td>0.698</td><td>0.602</td></tr>
+<tr><td>German</td><td>1.906</td><td>0.572</td><td>0.550</td><td>0.650</td><td>0.733</td><td>0.614</td><td>0.767</td><td>0.719</td></tr>
+<tr><td>Greek</td><td>2.016</td><td>0.991</td><td>5.740</td><td>19.840</td><td>0.826</td><td>0.733</td><td>0.795</td><td>0.746</td></tr>
+<tr><td>Hindi</td><td>6.962</td><td>5.827</td><td>14.640</td><td>32.280</td><td>0.818</td><td>0.730</td><td>0.821</td><td>0.792</td></tr>
+<tr><td>Indonesian</td><td>1.237</td><td>1.059</td><td>1.460</td><td>8.000</td><td>0.729</td><td>0.660</td><td>0.763</td><td>0.696</td></tr>
+<tr><td>Italian</td><td>1.543</td><td>1.743</td><td>1.270</td><td>1.870</td><td>0.699</td><td>0.579</td><td>0.747</td><td>0.714</td></tr>
+<tr><td>Japanese</td><td>3.519</td><td>10.646</td><td>2.760</td><td>3.450</td><td>0.776</td><td>0.738</td><td>0.796</td><td>0.780</td></tr>
+<tr><td>Korean</td><td>1.747</td><td>1.865</td><td>1.180</td><td>1.990</td><td>0.776</td><td>0.700</td><td>0.817</td><td>0.747</td></tr>
+<tr><td>Polish</td><td>1.415</td><td>0.766</td><td>1.260</td><td>3.410</td><td>0.802</td><td>0.729</td><td>0.819</td><td>0.794</td></tr>
+<tr><td>Portuguese</td><td>1.877</td><td>1.331</td><td>1.140</td><td>1.940</td><td>0.805</td><td>0.711</td><td>0.781</td><td>0.756</td></tr>
+<tr><td>Romanian</td><td>2.878</td><td>1.347</td><td>10.740</td><td>19.490</td><td>0.809</td><td>0.699</td><td>0.733</td><td>0.739</td></tr>
+<tr><td>Russian</td><td>4.281</td><td>3.878</td><td>2.400</td><td>5.250</td><td>0.761</td><td>0.676</td><td>0.790</td><td>0.764</td></tr>
+<tr><td>Spanish</td><td>1.029</td><td>1.084</td><td>0.910</td><td>1.780</td><td>0.762</td><td>0.615</td><td>0.776</td><td>0.753</td></tr>
+<tr><td>Thai</td><td>2.701</td><td>73.936</td><td>4.230</td><td>96.750</td><td>0.800</td><td>0.588</td><td>0.786</td><td>0.691</td></tr>
+<tr><td>Turkish</td><td>1.520</td><td>0.699</td><td>0.870</td><td>2.260</td><td>0.779</td><td>0.596</td><td>0.835</td><td>0.786</td></tr>
+<tr><td>Ukrainian</td><td>1.082</td><td>0.997</td><td>2.300</td><td>14.490</td><td>0.730</td><td>0.647</td><td>0.747</td><td>0.653</td></tr>
+<tr><td>Vietnamese</td><td>0.880</td><td>73.415</td><td>7.410</td><td>78.130</td><td>0.743</td><td>0.369</td><td>0.740</td><td>0.664</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-6-1-2-4">
           <p class="en-lines"><span class="sent" data-sid="s-6-1-2-4-1"><span class="en">Language WER (%) ↓ SIM ↑ MiniMax ElevenLabs Fish Audio S2 Fish Audio S1 MiniMax ElevenLabs Fish Audio S2 Fish Audio S1 Arabic</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-6-1-2-4-1"><span class="zh">表头：Language × WER (%) ↓ / SIM ↑（MiniMax / ElevenLabs / Fish Audio S2 / Fish Audio S1 两组）——Arabic（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-6-1-2-10"><code>1.665 1.666 3.500 6.420 0.736 0.706 0.750 0.713</code></div>
-<div class="eq" id="eq-6-1-2-11"><code>Cantonese</code></div>
-<div class="eq" id="eq-6-1-2-12"><code>34.111 51.513 30.670 48.800 0.778 0.670 0.805 0.773</code></div>
-<div class="eq" id="eq-6-1-2-13"><code>Chinese</code></div>
-<div class="eq" id="eq-6-1-2-14"><code>2.252 16.026 0.730 0.980 0.780 0.677 0.816 0.777</code></div>
-<div class="eq" id="eq-6-1-2-15"><code>Czech</code></div>
-<div class="eq" id="eq-6-1-2-16"><code>3.875 2.108 2.840 18.020 0.796 0.685 0.798 0.733</code></div>
-<div class="eq" id="eq-6-1-2-17"><code>Dutch</code></div>
-<div class="eq" id="eq-6-1-2-18"><code>1.143 0.803 0.990 2.270 0.738 0.680 0.730 0.701</code></div>
-<div class="eq" id="eq-6-1-2-19"><code>English</code></div>
-<div class="eq" id="eq-6-1-2-20"><code>2.164 2.339 1.620 2.370 0.756 0.613 0.797 0.785</code></div>
-<div class="eq" id="eq-6-1-2-21"><code>Finnish</code></div>
-<div class="eq" id="eq-6-1-2-22"><code>4.666 2.964 3.330 10.000 0.835 0.759 0.819 0.780</code></div>
-<div class="eq" id="eq-6-1-2-23"><code>French</code></div>
-<div class="eq" id="eq-6-1-2-24"><code>4.099 5.216 3.050 5.700 0.628 0.535 0.698 0.602</code></div>
-<div class="eq" id="eq-6-1-2-25"><code>German</code></div>
-<div class="eq" id="eq-6-1-2-26"><code>1.906 0.572 0.550 0.650 0.733 0.614 0.767 0.719</code></div>
-<div class="eq" id="eq-6-1-2-27"><code>Greek</code></div>
-<div class="eq" id="eq-6-1-2-28"><code>2.016 0.991 5.740 19.840 0.826 0.733 0.795 0.746</code></div>
-<div class="eq" id="eq-6-1-2-29"><code>Hindi</code></div>
-<div class="eq" id="eq-6-1-2-30"><code>6.962 5.827 14.640 32.280 0.818 0.730 0.821 0.792</code></div>
-<div class="eq" id="eq-6-1-2-31"><code>Indonesian</code></div>
-<div class="eq" id="eq-6-1-2-32"><code>1.237 1.059 1.460 8.000 0.729 0.660 0.763 0.696</code></div>
-<div class="eq" id="eq-6-1-2-33"><code>Italian</code></div>
-<div class="eq" id="eq-6-1-2-34"><code>1.543 1.743 1.270 1.870 0.699 0.579 0.747 0.714</code></div>
-<div class="eq" id="eq-6-1-2-35"><code>Japanese</code></div>
-<div class="eq" id="eq-6-1-2-36"><code>3.519 10.646 2.760 3.450 0.776 0.738 0.796 0.780</code></div>
-<div class="eq" id="eq-6-1-2-37"><code>Korean</code></div>
-<div class="eq" id="eq-6-1-2-38"><code>1.747 1.865 1.180 1.990 0.776 0.700 0.817 0.747</code></div>
-<div class="eq" id="eq-6-1-2-39"><code>Polish</code></div>
-<div class="eq" id="eq-6-1-2-40"><code>1.415 0.766 1.260 3.410 0.802 0.729 0.819 0.794</code></div>
-<div class="eq" id="eq-6-1-2-41"><code>Portuguese</code></div>
-<div class="eq" id="eq-6-1-2-42"><code>1.877 1.331 1.140 1.940 0.805 0.711 0.781 0.756</code></div>
-<div class="eq" id="eq-6-1-2-43"><code>Romanian</code></div>
-<div class="eq" id="eq-6-1-2-44"><code>2.878 1.347 10.740 19.490 0.809 0.699 0.733 0.739</code></div>
-<div class="eq" id="eq-6-1-2-45"><code>Russian</code></div>
-<div class="eq" id="eq-6-1-2-46"><code>4.281 3.878 2.400 5.250 0.761 0.676 0.790 0.764</code></div>
-<div class="eq" id="eq-6-1-2-47"><code>Spanish</code></div>
-<div class="eq" id="eq-6-1-2-48"><code>1.029 1.084 0.910 1.780 0.762 0.615 0.776 0.753</code></div>
-<div class="eq" id="eq-6-1-2-49"><code>Thai</code></div>
-<div class="eq" id="eq-6-1-2-50"><code>2.701 73.936 4.230 96.750 0.800 0.588 0.786 0.691</code></div>
-<div class="eq" id="eq-6-1-2-51"><code>Turkish</code></div>
-<div class="eq" id="eq-6-1-2-52"><code>1.520 0.699 0.870 2.260 0.779 0.596 0.835 0.786</code></div>
-<div class="eq" id="eq-6-1-2-53"><code>Ukrainian</code></div>
-<div class="eq" id="eq-6-1-2-54"><code>1.082 0.997 2.300 14.490 0.730 0.647 0.747 0.653</code></div>
-<div class="eq" id="eq-6-1-2-55"><code>Vietnamese</code></div>
-<div class="eq" id="eq-6-1-2-56"><code>0.880 73.415 7.410 78.130 0.743 0.369 0.740 0.664</code></div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-6-1-3"><span class="secnum">6.1.3</span> <span class="t-zh">6.1.3 长音频基准</span><span class="t-en">Long-Audio Benchmark</span></h3><div class="pblk" id="p-6-1-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-6-1-3-1-1"><span class="en">To evaluate long-form speech generation, we adopt the Long-TTS-Eval dataset, which covers six content categories—literature, news, knowledge, speeches, reviews, and academic papers—in both English and Chinese, sourced from news outlets, Wikipedia, YouTube transcripts, and arXiv papers.</span></span> <span class="sent" data-sid="s-6-1-3-1-2"><span class="en">Reference audios are sampled from the Seed-TTS-Eval benchmark.</span></span> <span class="sent" data-sid="s-6-1-3-1-3"><span class="en">Since our model is pretrained to support a maximum of 8,192 context length (Section 4.2), samples exceeding this context limit are truncated at sentence boundaries.</span></span> <span class="sent" data-sid="s-6-1-3-1-4"><span class="en">We first estimate the ratio of generated audio tokens to input text tokens from a subset of Long-TTS-Eval, then set text token limits of 939 for English and 884 for Chinese, such that the expected generated audio does not exceed approximately 185 seconds.</span></span> <span class="sent" data-sid="s-6-1-3-1-5"><span class="en">To increase length diversity, we apply a ±30% random perturbation around these thresholds.</span></span> <span class="sent" data-sid="s-6-1-3-1-6"><span class="en">The final benchmark contains both truncated and non-truncated samples, with text token counts ranging from 74 to 1,211 (mean: 760) for English and 32 to 1,146 (mean: 589) for Chinese.</span></span></p>
@@ -801,19 +835,22 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-6-2-1-1"><span class="zh">尽管客观指标为模型准确性提供了基础评估，它们往往难以捕捉自然度、韵律和语义连贯性等细腻的生成质量。</span></span><span class="sent" data-sid="s-6-2-1-2"><span class="zh">为在规模化条件下补充人工评测，我们引入了全面的 LLM-as-a-Judge 评测。</span></span><span class="sent" data-sid="s-6-2-1-3"><span class="zh">具体来说，我们系统</span></span></p>
           
         </div>
-<div class="cap" id="tab-6-2-1"><span class="cap-k">表</span><p class="en">Table 4: Results on the Long-Audio benchmark.</p><p class="zh">表 4：长音频基准上的结果。</p></div>
+<div class="cap" id="tab-6-2-1"><span class="cap-k">表</span><p class="en">Table 4: Results on the Long-Audio benchmark.</p><p class="zh">表 4：长音频基准上的结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th></th><th></th><th></th><th>English</th><th></th><th></th><th></th><th></th><th></th><th>Chinese</th><th></th><th></th></tr></thead><tbody><tr><td>Fish Audio S2</td><td></td><td>4.38</td><td></td><td>0.523</td><td></td><td>0.0761</td><td></td><td>5.95</td><td></td><td>0.557</td><td></td><td>0.0923</td></tr>
+<tr><td>Fish Audio S1</td><td></td><td>6.26</td><td></td><td>0.436</td><td></td><td>0.108</td><td></td><td>6.44</td><td></td><td>0.505</td><td></td><td>0.108</td></tr>
+<tr><td>Qwen3-TTS (Hu et al., 2026)</td><td></td><td>7.69</td><td></td><td>0.390</td><td></td><td>0.0737</td><td></td><td>8.09</td><td></td><td>0.574</td><td></td><td>0.0614</td></tr>
+<tr><td>VibeVoice (Peng et al., 2025)</td><td></td><td>28.0</td><td></td><td>0.530</td><td></td><td>0.0572</td><td></td><td>26.2</td><td></td><td>0.609</td><td></td><td>0.0537</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-6-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-6-2-2-1"><span class="en">Model English Chinese WER (%) ↓ SIM-Mean ↑ SIM-Std ↓ CER (%) ↓ SIM-Mean ↑ SIM-Std ↓ Fish Audio S2</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-6-2-2-1"><span class="zh">（表格：Model × English（WER(%)↓/SIM-Mean↑/SIM-Std↓）× Chinese（CER(%)↓/SIM-Mean↑/SIM-Std↓）——Fish Audio S2 4.38/0.523/0.0761、5.95/0.557/0.0923；Fish Audio S1 6.26/0.436/0.108、6.44/0.505/0.108；Qwen3-TTS (Hu et al., 2026) 7.69/0.390/0.0737、8.09/0.574/0.0614；VibeVoice (Peng et al., 2025) 28.0/0.530/0.0572、26.2/0.609/0.0537。）系统地在三个不同基准上评估模型的生成能力：(1) Audio Turing Test 的人级不可区分性；(2) Emergent TTS Eval 的高级合成行为；(3) Fish-Instruction-Benchmark 的细粒度指令遵循与可控性。</span></span></p>
           
         </div>
-<div class="eq" id="eq-6-2-1"><code>4.38 0.523 0.0761 5.95 0.557 0.0923</code></div>
-<div class="eq" id="eq-6-2-2"><code>Fish Audio S1</code></div>
-<div class="eq" id="eq-6-2-3"><code>6.26 0.436 0.108 6.44 0.505 0.108</code></div>
-<div class="eq" id="eq-6-2-4"><code>Qwen3-TTS (Hu et al., 2026)</code></div>
-<div class="eq" id="eq-6-2-5"><code>7.69 0.390 0.0737 8.09 0.574 0.0614</code></div>
-<div class="eq" id="eq-6-2-6"><code>VibeVoice (Peng et al., 2025)</code></div>
-<div class="eq" id="eq-6-2-7"><code>28.0 0.530 0.0572 26.2 0.609 0.0537</code></div>
+
+
+
+
+
+
+
 <div class="pblk" id="p-6-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-6-2-3-1"><span class="en">tematically assess the model’s generative capabilities across three distinct benchmarks: (1) human-level indistinguishability on the Audio Turing Test; (2) advanced synthesis behaviors on the Emergent TTS Eval; and (3) fine-grained instruction following and controllability on our Fish-Instruction-Benchmark.</span></span> <span class="sent" data-sid="s-6-2-3-2"><span class="en">This automated approach ensures a highly scalable and reproducible evaluation pipeline while providing insights that strongly correlate with human perception.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-6-2-3-1"><span class="zh">（表格：Model × English（WER(%)↓/SIM-Mean↑/SIM-Std↓）× Chinese（CER(%)↓/SIM-Mean↑/SIM-Std↓）——Fish Audio S2 4.38/0.523/0.0761、5.95/0.557/0.0923；Fish Audio S1 6.26/0.436/0.108、6.44/0.505/0.108；Qwen3-TTS (Hu et al., 2026) 7.69/0.390/0.0737、8.09/0.574/0.0614；VibeVoice (Peng et al., 2025) 28.0/0.530/0.0572、26.2/0.609/0.0537。）系统地在三个不同基准上评估模型的生成能力：(1) Audio Turing Test 的人级不可区分性；(2) Emergent TTS Eval 的高级合成行为；(3) Fish-Instruction-Benchmark 的细粒度指令遵循与可控性。</span></span><span class="sent" data-sid="s-6-2-3-2"><span class="zh">这种自动化方法确保了高度可扩展、可复现的评测流水线，同时提供与人类感知强相关的洞察。</span></span></p>
@@ -842,60 +879,68 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-6-2-1-1"><span class="cap-k">表</span><p class="en">Table 5: Posterior summary statistics from the ATT evaluation: means, standard deviations (Std), and 95% highest density intervals (HDI).</p><p class="zh">表 5：ATT 评测的后验汇总统计：均值、标准差（Std）与 95% 最高密度区间（HDI）。</p></div>
-<div class="pblk" id="p-6-2-1-4">
-          <p class="en-lines"><span class="sent" data-sid="s-6-2-1-4-1"><span class="en">Model Mean (Std) 95% HDI Fish Audio S2</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-6-2-1-4-1"><span class="zh">（表格：Model × Mean (Std) × 95% HDI——Fish Audio S2 0.483 (0.068) [0.477, 0.489]；Fish Audio S2 (w/ instruction) 0.515 (0.061) [0.510, 0.521]；Fish Audio S1 0.479 (0.087) [0.471, 0.486]；Seed-TTS (Anastassiou et al., 2024) 0.417 (0.011) [0.398, 0.438]；MiniMax-Speech (Zhang et al., 2025) 0.387 (0.011) [0.368, 0.407]；Step-Audio (Huang et al., 2025) 0.286 (0.011) [0.266, 0.307]；CosyVoice (Du et al., 2024) 0.234 (0.010) [0.214, 0.254]；GPT-4o 0.138 (0.011) [0.118, 0.158]。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-6-2-1-1"><code>0.483 (0.068) [0.477, 0.489]</code></div>
-<div class="eq" id="eq-6-2-1-2"><code>Fish Audio S2 (w/ instruction)</code></div>
-<div class="eq" id="eq-6-2-1-3"><code>0.515 (0.061) [0.510, 0.521]</code></div>
-<div class="eq" id="eq-6-2-1-4"><code>Fish Audio S1</code></div>
-<div class="eq" id="eq-6-2-1-5"><code>0.479 (0.087) [0.471, 0.486]</code></div>
-<div class="eq" id="eq-6-2-1-6"><code>Seed-TTS (Anastassiou et al., 2024)</code></div>
-<div class="eq" id="eq-6-2-1-7"><code>0.417 (0.011) [0.398, 0.438]</code></div>
-<div class="eq" id="eq-6-2-1-8"><code>MiniMax-Speech (Zhang et al., 2025)</code></div>
-<div class="eq" id="eq-6-2-1-9"><code>0.387 (0.011) [0.368, 0.407]</code></div>
-<div class="eq" id="eq-6-2-1-10"><code>Step-Audio (Huang et al., 2025)</code></div>
-<div class="eq" id="eq-6-2-1-11"><code>0.286 (0.011) [0.266, 0.307]</code></div>
-<div class="eq" id="eq-6-2-1-12"><code>CosyVoice (Du et al., 2024)</code></div>
-<div class="eq" id="eq-6-2-1-13"><code>0.234 (0.010) [0.214, 0.254]</code></div>
-<div class="eq" id="eq-6-2-1-14"><code>GPT-4o</code></div>
-<div class="eq" id="eq-6-2-1-15"><code>0.138 (0.011) [0.118, 0.158]</code></div>
-<div class="cap" id="tab-6-2-1-2"><span class="cap-k">表</span><p class="en">Table 6: Results on EmergentTTS-Eval across five dimensions, with WER and Win-Rate against baseline.⋆ indicates strong prompting.</p><p class="zh">表 6：EmergentTTS-Eval 五个维度上的结果，含 WER 与相对基线的胜率（Win-Rate）。⋆ 表示强提示。</p></div>
-<div class="pblk" id="p-6-2-1-5">
-          <p class="en-lines"><span class="sent" data-sid="s-6-2-1-5-1"><span class="en">Model Overall Emotions Foreign Words Paralinguistics Questions Syntactic Comp.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-6-2-1-5-1"><span class="zh">（表格碎片）Overall、Emotions、Foreign Words、Paralinguistics、Questions、Syntactic Comp.（各维度列名）。</span></span></p>
-          
-        </div>
+<div class="cap" id="tab-6-2-1-1"><span class="cap-k">表</span><p class="en">Table 5: Posterior summary statistics from the ATT evaluation: means, standard deviations (Std), and 95% highest density intervals (HDI).</p><p class="zh">表 5：ATT 评测的后验汇总统计：均值、标准差（Std）与 95% 最高密度区间（HDI）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th></tr><tr><th>Model</th><th>Mean (Std)</th><th>95% HDI</th></tr><tr><th>Fish Audio S2</th><th>0.483 (0.068)</th><th>[0.477, 0.489]</th></tr><tr><th>Fish Audio S2 (w/ instruction)</th><th>0.515 (0.061)</th><th>[0.510, 0.521]</th></tr><tr><th>Fish Audio S1</th><th>0.479 (0.087)</th><th>[0.471, 0.486]</th></tr></thead><tbody><tr><td>Seed-TTS (Anastassiou et al., 2024)</td><td>0.417 (0.011)</td><td>[0.398, 0.438]</td></tr>
+<tr><td>MiniMax-Speech (Zhang et al., 2025)</td><td>0.387 (0.011)</td><td>[0.368, 0.407]</td></tr>
+<tr><td>Step-Audio (Huang et al., 2025)</td><td>0.286 (0.011)</td><td>[0.266, 0.307]</td></tr>
+<tr><td>CosyVoice (Du et al., 2024)</td><td>0.234 (0.010)</td><td>[0.214, 0.254]</td></tr>
+<tr><td>GPT-4o</td><td>0.138 (0.011)</td><td>[0.118, 0.158]</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-6-2-1-2"><span class="cap-k">表</span><p class="en">Table 6: Results on EmergentTTS-Eval across five dimensions, with WER and Win-Rate against baseline.⋆ indicates strong prompting.</p><p class="zh">表 6：EmergentTTS-Eval 五个维度上的结果，含 WER 与相对基线的胜率（Win-Rate）。⋆ 表示强提示。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>indicates strong prompting.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th>Emotions</th><th></th><th>Foreign Words</th><th></th><th>Paralinguistics</th><th></th><th>Questions</th><th></th><th>Syntactic Comp.</th><th></th></tr><tr><th></th><th>WER (%) ↓</th><th>Win (%) ↑</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>WER (%) ↓</th><th></th></tr></thead><tbody><tr><td>Fish Audio S2 ⋆</td><td>8.15</td><td>81.88</td><td>0.52</td><td>86.61</td><td>14.74</td><td>63.39</td><td>24.58</td><td>91.61</td><td>0.38</td><td>84.41</td><td>0.51</td><td>83.39</td></tr>
+<tr><td>Fish Audio S1</td><td>7.60</td><td>36.88</td><td>0.75</td><td>24.82</td><td>15.77</td><td>53.75</td><td>20.02</td><td>37.68</td><td>0.72</td><td>43.55</td><td>0.74</td><td>24.64</td></tr>
+<tr><td>Gemini-2.5-Flash-Preview-TTS ⋆</td><td>6.35</td><td>79.10</td><td>0.71</td><td>97.32</td><td>11.80</td><td>65.56</td><td>18.38</td><td>91.25</td><td>0.40</td><td>74.82</td><td>0.50</td><td>67.14</td></tr>
+<tr><td>Gemini-2.5-Flash-Preview-TTS</td><td>6.59</td><td>78.00</td><td>0.60</td><td>95.00</td><td>12.99</td><td>63.03</td><td>18.25</td><td>89.10</td><td>0.36</td><td>74.82</td><td>0.73</td><td>68.03</td></tr>
+<tr><td>gpt-4o-audio-preview ⋆</td><td>7.75</td><td>77.36</td><td>1.82</td><td>96.96</td><td>13.30</td><td>70.00</td><td>21.15</td><td>89.46</td><td>1.38</td><td>62.50</td><td>1.16</td><td>68.39</td></tr>
+<tr><td>Gemini-2.5-Pro-Preview-TTS ⋆</td><td>7.91</td><td>73.00</td><td>0.87</td><td>92.14</td><td>16.22</td><td>63.44</td><td>20.87</td><td>84.28</td><td>0.72</td><td>65.71</td><td>0.87</td><td>60.00</td></tr>
+<tr><td>gpt-4o-mini-audio-preview ⋆</td><td>8.86</td><td>66.27</td><td>9.34</td><td>74.10</td><td>12.70</td><td>73.39</td><td>20.92</td><td>68.03</td><td>0.74</td><td>55.53</td><td>0.72</td><td>60.35</td></tr>
+<tr><td>gpt-4o-audio-preview ⋆</td><td>7.64</td><td>64.90</td><td>0.93</td><td>67.14</td><td>13.75</td><td>71.60</td><td>20.56</td><td>77.32</td><td>1.72</td><td>49.64</td><td>1.26</td><td>58.92</td></tr>
+<tr><td>gpt-4o-mini-tts ⋆</td><td>7.11</td><td>61.98</td><td>0.71</td><td>67.32</td><td>12.07</td><td>63.03</td><td>21.33</td><td>63.39</td><td>0.66</td><td>54.28</td><td>0.84</td><td>61.96</td></tr>
+<tr><td>gpt-4o-audio-preview</td><td>8.27</td><td>60.53</td><td>1.03</td><td>56.78</td><td>14.72</td><td>68.75</td><td>23.16</td><td>71.60</td><td>1.19</td><td>48.75</td><td>1.25</td><td>56.78</td></tr>
+<tr><td>gpt-4o-mini-audio-preview</td><td>7.18</td><td>55.15</td><td>0.95</td><td>62.90</td><td>14.48</td><td>64.82</td><td>19.04</td><td>52.14</td><td>0.55</td><td>45.71</td><td>0.88</td><td>50.17</td></tr>
+<tr><td>Baseline gpt-4o-mini-tts</td><td>7.23</td><td>50.00</td><td>0.72</td><td>–</td><td>13.45</td><td>–</td><td>20.55</td><td>–</td><td>0.42</td><td>–</td><td>1.04</td><td>–</td></tr>
+<tr><td>HumeAI ⋆</td><td>8.62</td><td>49.12</td><td>0.83</td><td>71.78</td><td>21.05</td><td>41.25</td><td>19.84</td><td>42.14</td><td>0.38</td><td>42.14</td><td>0.93</td><td>48.57</td></tr></tbody></table></div></div>
+
 <div class="tbwrap" id="p-6-2-1-6">
           <details class="tb"><summary>原始表格文本（40 个单元格，PDF 抽取顺序，数字与原文一致；精确排版见原文 PDF）</summary><pre>WER (%) ↓ Win (%) ↑ WER (%) ↓ Win (%) ↑ WER (%) ↓ Win (%) ↑ WER (%) ↓ Win (%) ↑ WER (%) ↓ Win (%) ↑ WER (%) ↓ Win (%) ↑ Fish Audio S2 ⋆</pre></details></div>
-<div class="eq" id="eq-6-2-1-16"><code>8.15 81.88 0.52 86.61 14.74 63.39 24.58 91.61 0.38 84.41 0.51 83.39</code></div>
-<div class="eq" id="eq-6-2-1-17"><code>Fish Audio S1</code></div>
-<div class="eq" id="eq-6-2-1-18"><code>7.60 36.88 0.75 24.82 15.77 53.75 20.02 37.68 0.72 43.55 0.74 24.64</code></div>
-<div class="eq" id="eq-6-2-1-19"><code>Gemini-2.5-Flash-Preview-TTS ⋆</code></div>
-<div class="eq" id="eq-6-2-1-20"><code>6.35 79.10 0.71 97.32 11.80 65.56 18.38 91.25 0.40 74.82 0.50 67.14</code></div>
-<div class="eq" id="eq-6-2-1-21"><code>Gemini-2.5-Flash-Preview-TTS</code></div>
-<div class="eq" id="eq-6-2-1-22"><code>6.59 78.00 0.60 95.00 12.99 63.03 18.25 89.10 0.36 74.82 0.73 68.03</code></div>
-<div class="eq" id="eq-6-2-1-23"><code>gpt-4o-audio-preview ⋆</code></div>
-<div class="eq" id="eq-6-2-1-24"><code>7.75 77.36 1.82 96.96 13.30 70.00 21.15 89.46 1.38 62.50 1.16 68.39</code></div>
-<div class="eq" id="eq-6-2-1-25"><code>Gemini-2.5-Pro-Preview-TTS ⋆</code></div>
-<div class="eq" id="eq-6-2-1-26"><code>7.91 73.00 0.87 92.14 16.22 63.44 20.87 84.28 0.72 65.71 0.87 60.00</code></div>
-<div class="eq" id="eq-6-2-1-27"><code>gpt-4o-mini-audio-preview ⋆</code></div>
-<div class="eq" id="eq-6-2-1-28"><code>8.86 66.27 9.34 74.10 12.70 73.39 20.92 68.03 0.74 55.53 0.72 60.35</code></div>
-<div class="eq" id="eq-6-2-1-29"><code>gpt-4o-audio-preview ⋆</code></div>
-<div class="eq" id="eq-6-2-1-30"><code>7.64 64.90 0.93 67.14 13.75 71.60 20.56 77.32 1.72 49.64 1.26 58.92</code></div>
-<div class="eq" id="eq-6-2-1-31"><code>gpt-4o-mini-tts ⋆</code></div>
-<div class="eq" id="eq-6-2-1-32"><code>7.11 61.98 0.71 67.32 12.07 63.03 21.33 63.39 0.66 54.28 0.84 61.96</code></div>
-<div class="eq" id="eq-6-2-1-33"><code>gpt-4o-audio-preview</code></div>
-<div class="eq" id="eq-6-2-1-34"><code>8.27 60.53 1.03 56.78 14.72 68.75 23.16 71.60 1.19 48.75 1.25 56.78</code></div>
-<div class="eq" id="eq-6-2-1-35"><code>gpt-4o-mini-audio-preview</code></div>
-<div class="eq" id="eq-6-2-1-36"><code>7.18 55.15 0.95 62.90 14.48 64.82 19.04 52.14 0.55 45.71 0.88 50.17</code></div>
-<div class="eq" id="eq-6-2-1-37"><code>Baseline gpt-4o-mini-tts</code></div>
-<div class="eq" id="eq-6-2-1-38"><code>7.23 50.00 0.72 – 13.45 – 20.55 – 0.42 – 1.04 –</code></div>
-<div class="eq" id="eq-6-2-1-39"><code>HumeAI ⋆</code></div>
-<div class="eq" id="eq-6-2-1-40"><code>8.62 49.12 0.83 71.78 21.05 41.25 19.84 42.14 0.38 42.14 0.93 48.57</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-6-2-1-41"><code>Higgs Audio V2 (Boson AI, 2025)</code></div>
 <div class="eq" id="eq-6-2-1-42"><code>11.82 44.64 0.97 69.28 22.26 21.42 31.34 45.53 3.23 45.35 1.29 41.60</code></div>
 <div class="eq" id="eq-6-2-1-43"><code>minimax/speech-02-hd (Zhang et al., 2025)</code></div>
@@ -956,23 +1001,24 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-6-3-1-1"><span class="zh">如附录 A 详述，我们提出 Fish Instruction Benchmark，用于评估超出传统 WER/MOS 指标的细粒度指令跟随。</span></span><span class="sent" data-sid="s-6-3-1-2"><span class="zh">该基准不依赖全局风格提示，而是在英文和中文样本的特定词位置使用内联声音标签。</span></span><span class="sent" data-sid="s-6-3-1-3"><span class="zh">随后我们用 Gemini 3 Pro 从三个互补维度评估生成的语音：标签激活率、声学自然度和全局表现力。</span></span><span class="sent" data-sid="s-6-3-1-4"><span class="zh">我们在该基准上评测了 Fish Audio S2 和 Fish Audio S1，结果汇总在表 7。</span></span></p>
           
         </div>
-<div class="cap" id="tab-6-3-1"><span class="cap-k">表</span><p class="en">Table 7: Results on the Fish Audio Instruction Benchmark.</p><p class="zh">表 7：Fish Audio Instruction Benchmark 上的结果。</p></div>
-<div class="pblk" id="p-6-3-2">
-          <p class="en-lines"><span class="sent" data-sid="s-6-3-2-1"><span class="en">Dataset Metric Fish Audio S2 Fish Audio S1 Chinese TAR ↑</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-6-3-2-1"><span class="zh">（表格：Dataset × Metric × Fish Audio S2 × Fish Audio S1——Chinese：TAR↑ 0.984/0.942；Naturalness↑ 4.40/4.15；Expressiveness↑ 4.94/4.65；English：TAR↑ 0.881/0.626；Naturalness↑ 4.21/3.71；Expressiveness↑ 4.50/3.93。）如表 7 所示，Fish Audio S2 在中英两组设置的所有指令遵循指标上持续优于 Fish Audio S1。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-6-3-1"><code>0.984 0.942</code></div>
-<div class="eq" id="eq-6-3-2"><code>Naturalness ↑</code></div>
-<div class="eq" id="eq-6-3-3"><code>4.40 4.15</code></div>
-<div class="eq" id="eq-6-3-4"><code>Expressiveness ↑</code></div>
-<div class="eq" id="eq-6-3-5"><code>4.94 4.65</code></div>
-<div class="eq" id="eq-6-3-6"><code>English TAR ↑</code></div>
-<div class="eq" id="eq-6-3-7"><code>0.881 0.626</code></div>
-<div class="eq" id="eq-6-3-8"><code>Naturalness ↑</code></div>
-<div class="eq" id="eq-6-3-9"><code>4.21 3.71</code></div>
-<div class="eq" id="eq-6-3-10"><code>Expressiveness ↑</code></div>
-<div class="eq" id="eq-6-3-11"><code>4.50 3.93</code></div>
+<div class="cap" id="tab-6-3-1"><span class="cap-k">表</span><p class="en">Table 7: Results on the Fish Audio Instruction Benchmark.</p><p class="zh">表 7：Fish Audio Instruction Benchmark 上的结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Dataset</th><th>Metric</th><th>Fish Audio S2</th><th></th><th>Fish Audio S1</th><th></th></tr></thead><tbody><tr><td></td><td>TAR ↑</td><td></td><td>0.984</td><td></td><td>0.942</td></tr>
+<tr><td>Chinese</td><td>Naturalness ↑</td><td></td><td>4.40</td><td></td><td>4.15</td></tr>
+<tr><td></td><td>Expressiveness ↑</td><td></td><td>4.94</td><td></td><td>4.65</td></tr>
+<tr><td></td><td>TAR ↑</td><td></td><td>0.881</td><td></td><td>0.626</td></tr>
+<tr><td>English</td><td>Naturalness ↑</td><td></td><td>4.21</td><td></td><td>3.71</td></tr>
+<tr><td></td><td>Expressiveness ↑</td><td></td><td>4.50</td><td></td><td>3.93</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-6-3-3">
           <p class="en-lines"><span class="sent" data-sid="s-6-3-3-1"><span class="en">As shown in Table 7, Fish Audio S2 consistently outperforms Fish Audio S1 across all reported instructionfollowing metrics in both Chinese and English settings.</span></span> <span class="sent" data-sid="s-6-3-3-2"><span class="en">On the Chinese set, TAR, Naturalness, and Expressiveness improve from 0.942/4.15/4.65 to 0.984/4.40/4.94.</span></span> <span class="sent" data-sid="s-6-3-3-3"><span class="en">On the English set, the improvements are larger, increasing from 0.626/3.71/3.93 to 0.881/4.21/4.50.</span></span> <span class="sent" data-sid="s-6-3-3-4"><span class="en">These results suggest that Fish Audio S2 provides more reliable tag activation and more natural, expressive vocal tag rendering under zero-shot instruction following.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-6-3-3-1"><span class="zh">（表格：Dataset × Metric × Fish Audio S2 × Fish Audio S1——Chinese：TAR↑ 0.984/0.942；Naturalness↑ 4.40/4.15；Expressiveness↑ 4.94/4.65；English：TAR↑ 0.881/0.626；Naturalness↑ 4.21/3.71；Expressiveness↑ 4.50/3.93。）如表 7 所示，Fish Audio S2 在中英两组设置的所有指令遵循指标上持续优于 Fish Audio S1。</span></span><span class="sent" data-sid="s-6-3-3-2"><span class="zh">在中文集上，TAR、Naturalness 和 Expressiveness 从 0.942/4.15/4.65 提升到 0.984/4.40/4.94。</span></span><span class="sent" data-sid="s-6-3-3-3"><span class="zh">在英文集上提升更大，从 0.626/3.71/3.93 提升到 0.881/4.21/4.50。</span></span><span class="sent" data-sid="s-6-3-3-4"><span class="zh">这些结果表明，Fish Audio S2 在零样本指令跟随下能更可靠地激活标签，并更自然、更有表现力地呈现声音标签。</span></span></p>

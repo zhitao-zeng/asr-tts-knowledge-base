@@ -659,11 +659,6 @@ globalThis.PAPER_2606_24320 = {
        "zh": "早期实验表明，音素化所提供的归纳偏置的价值会随规模扩大而递减。"
       },
       {
-       "id": "s-II-B-3-2",
-       "original": "As data and model size are increased, the model learns the mapping from raw bytes to pronunciation on its Input G2P pipeline output en: 电脑is computer en:Chinese letter Chinese letter is computer en:alpharetrovirus en:retroretrovirus es:Satoshi es:Satosi TABLE I: Representative silent failures in the G2P preprocessing pipeline.",
-       "zh": "随着数据与模型规模的增加，模型会自行学会从原始字节到发音的映射。（以下为抽取层混入正文的表 I 内容，逐词译为中文标签：As data and model size are increased, the model learns the mapping from raw bytes to pronunciation on its 输入 G2P 管线输出 en: 电脑is computer en:汉字 汉字 is computer en:alpharetrovirus en:retroretrovirus es:Satoshi es:Satosi  表 I：G2P 预处理管线中具有代表性的静默失败。）"
-      },
-      {
        "id": "s-II-B-3-3",
        "original": "The first row shows a Chinese span processed under an English tag; the second shows an overmatched substring or morphology rule; the third shows loss of source-pronunciation information when a proper noun is constrained to the Spanish G2P inventory. own.",
        "zh": "表 I 注：第一行展示中文片段在英语标签下被处理；第二行展示过度匹配的子串或形态规则；第三行展示专有名词受限于西班牙语 G2P 音素清单而丢失源发音信息。"
@@ -772,6 +767,13 @@ globalThis.PAPER_2606_24320 = {
        "zh": "由于 LDA 是在带说话人标签的数据上估计的、目标是最大化说话人间方差相对于说话人内方差，它保留了区分不同说话人的方向，同时衰减了同一说话人不同录音之间变化的因素——例如上文提到的时长、噪声、词汇内容与停顿结构。"
       }
      ]
+    },
+    {
+     "id": "tab-I",
+     "type": "table_caption",
+     "page": 3,
+     "original": "TABLE I: Representative silent failures in the G2P pre- processing pipeline. The first row shows a Chinese span processed under an English tag; the second shows an over- matched substring or morphology rule; the third shows loss",
+     "zh": "表 I：G2P 预处理流水线的代表性静默失败案例。"
     },
     {
      "id": "p-II-C-4",
@@ -1678,13 +1680,7 @@ globalThis.PAPER_2606_24320 = {
      "id": "p-IV-A-6",
      "type": "paragraph",
      "page": 7,
-     "sentences": [
-      {
-       "id": "s-IV-A-6-1",
-       "original": "MSR-UTMOS TABLE II: Comparison of Seed-TTS-Eval, CV3-Eval, the MiniMax multilingual test set (MiniMax-ML), and the proposed ZTTS1-Eval. †: MiniMax-ML contains 100 sentences and two reference utterances per language. weight decay of 0.1, gradient clipping at 0.5, a 100-step warmup, and cosine learning-rate decay.",
-       "zh": "（表 II：Seed-TTS-Eval、CV3-Eval、MiniMax 多语测试集（MiniMax-ML）与本文 ZTTS1-Eval 的对比——任务特定性：task specific / TTSDS2 + DS-WED；ASR scorer：Whisper-L / Paraformer（三者）与 Qwen3-ASR；Speaker scorer：WavLM / ERes2Net / WavLM / ReDimNet；Quality scorer：– / DNSMOS / – / MSR-UTMOS。表注 †：MiniMax-ML 每语言 100 句、每语 2 条参考语音。训练配置：weight decay 0.1、梯度裁剪 0.5、100 步 warmup、余弦学习率衰减。）"
-      }
-     ]
+     "sentences": []
     },
     {
      "id": "p-IV-A-7",
@@ -1937,6 +1933,13 @@ globalThis.PAPER_2606_24320 = {
        "zh": "(b) ITW 集。"
       }
      ]
+    },
+    {
+     "id": "tab-II",
+     "type": "table_caption",
+     "page": 7,
+     "original": "TABLE II: Comparison of Seed-TTS-Eval, CV3-Eval, the MiniMax multilingual test set (MiniMax-ML), and the proposed ZTTS1-Eval. †: MiniMax-ML contains 100 sentences and two reference utterances per language.",
+     "zh": "表 II：Seed-TTS-Eval、CV3-Eval、MiniMax 多语测试集（MiniMax-ML）与本文 ZTTS1-Eval 的对比。"
     },
     {
      "id": "fig-V-1",
@@ -2521,11 +2524,6 @@ globalThis.PAPER_2606_24320 = {
      "page": 8,
      "sentences": [
       {
-       "id": "s-VI-6-1",
-       "original": "Inworld TTS 2 (Inworld AI, 2026) TABLE III: ZTTS1-Eval Clean zero-shot results across WER, MSR-UTMOS and speaker similarity, segmented by open-source and closed-source models.",
-       "zh": "（表格行）Inworld TTS 2 (Inworld AI, 2026)。表 III：ZTTS1-Eval Clean 零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。"
-      },
-      {
        "id": "s-VI-6-2",
        "original": "Best result per language and metric is shown in bold; second-best is underlined.",
        "zh": "每种语言、每项指标的最优结果加粗显示，次优加下划线。"
@@ -2620,6 +2618,13 @@ globalThis.PAPER_2606_24320 = {
        "zh": "ZONOS2 在 CosyVoice 3 与 Seed-TTS 评测集上的表现见表 VII。"
       }
      ]
+    },
+    {
+     "id": "tab-III",
+     "type": "table_caption",
+     "page": 9,
+     "original": "TABLE III: ZTTS1-Eval Clean zero-shot results across WER, MSR-UTMOS and speaker similarity, segmented by open-source and closed-source models. Best result per language and metric is shown in bold; second-best is underlined.",
+     "zh": "表 III：ZTTS1-Eval Clean 零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。"
     },
     {
      "id": "p-VI-9",
@@ -3011,11 +3016,6 @@ globalThis.PAPER_2606_24320 = {
      "page": 10,
      "sentences": [
       {
-       "id": "s-VI-13-1",
-       "original": "Inworld TTS 2 (Inworld AI, 2026) TABLE IV: ZTTS1-Eval In-the-wild zero-shot results across WER, MSR-UTMOS, and speaker similarity segmented by open-source and closed-source models.",
-       "zh": "（表格行）60.5/–/56.0/63.3/62.6/60.6/61.4/61.8/–/59.5/–；Inworld TTS 2（Inworld AI, 2026）。表 IV：ZTTS1-Eval 实景（in-the-wild）零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。"
-      },
-      {
        "id": "s-VI-13-2",
        "original": "Best result per language and metric is shown in bold; second-best is underlined.",
        "zh": "每种语言、每项指标的最优结果加粗显示，次优加下划线。"
@@ -3171,6 +3171,13 @@ globalThis.PAPER_2606_24320 = {
        "zh": "其中最有效的是最终实现中的 LDA 降维与两阶段退火的组合。"
       }
      ]
+    },
+    {
+     "id": "tab-IV",
+     "type": "table_caption",
+     "page": 10,
+     "original": "TABLE IV: ZTTS1-Eval In-the-wild zero-shot results across WER, MSR-UTMOS, and speaker similarity segmented by open-source and closed-source models. Best result per language and metric is shown in bold; second-best is underlined.",
+     "zh": "表 IV：ZTTS1-Eval 实景（in-the-wild）零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。"
     }
    ]
   },
@@ -4352,13 +4359,7 @@ globalThis.PAPER_2606_24320 = {
      "id": "p-A-4",
      "type": "paragraph",
      "page": 12,
-     "sentences": [
-      {
-       "id": "s-A-4-1",
-       "original": "Router configuration EDA Positional embeddings RoPE Tokenizer Byte level TABLE V: ZONOS2 8B Configuration.",
-       "zh": "表 V：ZONOS2 8B 配置。属性取值——架构：decoder-only MoE Transformer；激活参数 900M；总参数 8B；Transformer 层数 28；隐藏维度 2048；GQA 查询头数 16；KV 头数 4；头维度 128；注意力变体：GQA（4× 分组）；每个 MoE 层专家数 16；路由：top-1（最后一个 MoE 层为 top-2）；专家 FFN 宽度 3072；Qwen 门控位置：逐头（headwise）；路由器潜在维度 128；路由器配置：EDA；位置嵌入：RoPE；分词器：字节级。"
-      }
-     ]
+     "sentences": []
     }
    ]
   },
@@ -4615,13 +4616,21 @@ globalThis.PAPER_2606_24320 = {
      "id": "p-total-1",
      "type": "paragraph",
      "page": 12,
-     "sentences": [
-      {
-       "id": "s-total-1-1",
-       "original": "TABLE VI: ZTTS1-Eval ITW language coverage statistics.",
-       "zh": "合计 1618 条语句、2.86 小时。表 VI：ZTTS1-Eval ITW 语言覆盖统计。"
-      }
-     ]
+     "sentences": []
+    },
+    {
+     "id": "tab-V",
+     "type": "table_caption",
+     "page": 12,
+     "original": "TABLE V: ZONOS2 8B Configuration.",
+     "zh": "表 V：ZONOS2 8B 配置。"
+    },
+    {
+     "id": "tab-VI",
+     "type": "table_caption",
+     "page": 12,
+     "original": "TABLE VI: ZTTS1-Eval ITW language coverage statis- tics.",
+     "zh": "表 VI：ZTTS1-Eval ITW 语种覆盖统计。"
     }
    ]
   },
@@ -5184,11 +5193,6 @@ globalThis.PAPER_2606_24320 = {
      "page": 14,
      "sentences": [
       {
-       "id": "s-D-4-1",
-       "original": "TABLE VII: ZONOS2 evaluation results across speaker similarity, DNSMOS, WER, and emotion accuracy on the CosyVoice 3 Eval and Seed-TTS-Eval benchmarks, grouped by task.",
-       "zh": "表 VII：ZONOS2 在 CosyVoice 3 Eval 与 Seed-TTS-Eval 基准上按任务分组的说话人相似度、DNSMOS、WER 与情绪准确率评测结果。"
-      },
-      {
        "id": "s-D-4-2",
        "original": "Emotion accuracy is only reported for the emotion zero-shot task.",
        "zh": "情绪准确率仅在情绪零样本任务上报告。"
@@ -5201,6 +5205,13 @@ globalThis.PAPER_2606_24320 = {
      "page": 14,
      "original": "Fig. 6: Violin plots of DS-WED scores for the English portions of both ZTTS1-Eval sets.",
      "zh": "图 6：ZTTS1-Eval 两个集合英文部分 DS-WED 分数的小提琴图。"
+    },
+    {
+     "id": "tab-VII",
+     "type": "table_caption",
+     "page": 14,
+     "original": "TABLE VII: ZONOS2 evaluation results across speaker similarity, DNSMOS, WER, and emotion accuracy on the CosyVoice 3 Eval and Seed-TTS-Eval benchmarks, grouped by task. Emotion accuracy is only reported for the emotion zero-shot task.",
+     "zh": "表 VII：ZONOS2 在 CosyVoice 3 Eval 与 Seed-TTS-Eval 基准上按任务分组的说话人相似度、DNSMOS、WER 与情绪准确率评测结果。"
     },
     {
      "id": "fig-D-2",

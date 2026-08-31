@@ -102,6 +102,13 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+/* 重建表格网格（extract_tables.py 产物） */
+.ptab-wrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ptab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ptab th{background:#f1f5f9;font-weight:700;padding:6px 9px;border-bottom:1.5px solid var(--line);text-align:left;white-space:nowrap}
+.ptab td{padding:5px 9px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap}
+.ptab td:first-child,.ptab th:first-child{text-align:left;font-weight:600}
+.ptab tbody tr:hover td{background:#f8fafc}
 .tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
 .refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
 /* 三分钟摘要 */
@@ -332,17 +339,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-3-1-3-1"><span class="zh">如 Table 1 所示，我们提出的数据流水线在绝大多数评测数据集上都取得了比两条基线更低的 DER 和 WER。</span></span><span class="sent" data-sid="s-2-3-1-3-2"><span class="zh">这些结果表明，在多样的声学条件下，我们的流水线提供了更鲁棒的分段、说话人分离与转录性能。</span></span></p>
           
         </div>
-<div class="cap" id="tab-2-3-1-1"><span class="cap-k">表</span><p class="en">Table 1: DER and WER comparison across different data pipelines. Model AISHELL4 AMI-IHM AMI-SDM AliMeeting DER WER DER WER DER WER DER WER</p><p class="zh">表 1：不同数据管线下的 DER 与 WER 对比。表头：Model × AISHELL4（DER/WER）× AMI-IHM（DER/WER）× AMI-SDM（DER/WER）× AliMeeting（DER/WER）。</p></div>
-<div class="pblk" id="p-2-3-1-4">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-1-4-1"><span class="en">WhisperX</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-1-4-1"><span class="zh">为验证该数据处理流水线的有效性，我们把它与两条被广泛采用的音频处理流水线——WhisperX [BHHZ23] 和 Emilia [HSW+24]——做了对比研究。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-3-1-1"><code>14.55 29.69 18.27 24.12 23.05 39.65 35.53 36.62</code></div>
-<div class="eq" id="eq-2-3-1-2"><code>Emilia</code></div>
-<div class="eq" id="eq-2-3-1-3"><code>16.58 49.40 35.44 47.85 46.55 61.70 25.57 54.27</code></div>
-<div class="eq" id="eq-2-3-1-4"><code>Ours pipeline</code></div>
-<div class="eq" id="eq-2-3-1-5"><code>16.93 18.99 15.46 23.22 17.78 28.40 25.34 30.82</code></div>
+<div class="cap" id="tab-2-3-1-1"><span class="cap-k">表</span><p class="en">Table 1: DER and WER comparison across different data pipelines. Model AISHELL4 AMI-IHM AMI-SDM AliMeeting DER WER DER WER DER WER DER WER</p><p class="zh">表 1：不同数据管线下的 DER 与 WER 对比。表头：Model × AISHELL4（DER/WER）× AMI-IHM（DER/WER）× AMI-SDM（DER/WER）× AliMeeting（DER/WER）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th>AISHELL4</th><th></th><th>AMI-IHM</th><th></th><th>AMI-SDM</th><th></th><th>AliMeeting</th><th></th></tr><tr><th></th><th>DER</th><th>WER</th><th>DER</th><th>WER</th><th>DER</th><th>WER</th><th>DER</th><th>WER</th></tr></thead><tbody><tr><td>WhisperX</td><td>14.55</td><td>29.69</td><td>18.27</td><td>24.12</td><td>23.05</td><td>39.65</td><td>35.53</td><td>36.62</td></tr>
+<tr><td>Emilia</td><td>16.58</td><td>49.40</td><td>35.44</td><td>47.85</td><td>46.55</td><td>61.70</td><td>25.57</td><td>54.27</td></tr>
+<tr><td>Ours pipeline</td><td>16.93</td><td>18.99</td><td>15.46</td><td>23.22</td><td>17.78</td><td>28.40</td><td>25.34</td><td>30.82</td></tr></tbody></table></div></div>
+
+
+
+
+
+
 <div class="pblk" id="p-2-3-1-5">
           <p class="en-lines"><span class="sent" data-sid="s-2-3-1-5-1"><span class="en">We employed a curriculum learning strategy for the LLM input sequence length, progressively increasing from 8,192 to 65,536 tokens.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-3-1-5-1"><span class="zh">我们对 LLM 输入序列长度采用课程学习策略，从 8,192 逐步增加到 65,536 个 token。</span></span></p>
@@ -447,43 +452,54 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-3-1"><span class="cap-k">表</span><p class="en">Table 2: Overall diarization and ASR results across datasets and languages.</p><p class="zh">表 2：跨数据集与跨语言的总体说话人分离与 ASR 结果。表内数值抽取到随后的正文段落中（见 s-3-7-1 上方）。</p></div>
-<div class="pblk" id="p-3-7">
-          <p class="en-lines"><span class="sent" data-sid="s-3-7-1"><span class="en">Gemini-2.5-Pro Gemini-3-Pro VIBEVOICE-ASR Dataset Language DER cpWER tcpWER WER DER cpWER tcpWER WER DER cpWER tcpWER WER AISHELL-4 Chinese</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-7-1"><span class="zh">（表 2 表头：Gemini-2.5-Pro / Gemini-3-Pro / VIBEVOICE-ASR × Dataset / Language × DER / cpWER / tcpWER / WER——AISHELL-4 Chinese，后续照原文。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-1"><code>15.32 31.59 35.96 22.42 22.03 27.43 54.17 22.75 6.77 24.99 25.35 21.40</code></div>
-<div class="eq" id="eq-3-2"><code>AMI-IHM English</code></div>
-<div class="eq" id="eq-3-3"><code>23.54 29.57 38.35 18.48 46.23 22.34 63.65 17.61 11.92 20.41 20.82 18.81</code></div>
-<div class="eq" id="eq-3-4"><code>AMI-SDM English</code></div>
-<div class="eq" id="eq-3-5"><code>23.79 34.78 41.39 22.35 43.04 26.91 64.86 22.09 13.43 28.82 29.80 24.65</code></div>
-<div class="eq" id="eq-3-6"><code>AliMeeting Chinese</code></div>
-<div class="eq" id="eq-3-7"><code>31.60 41.64 53.49 27.43 38.75 32.84 65.61 26.75 10.92 29.33 29.51 27.40</code></div>
-<div class="eq" id="eq-3-8"><code>MLC-Challenge English</code></div>
-<div class="eq" id="eq-3-9"><code>20.67 16.23 26.72 9.76 30.88 12.85 57.64 10.19 4.28 11.48 13.02 7.99</code></div>
-<div class="eq" id="eq-3-10"><code>French</code></div>
-<div class="eq" id="eq-3-11"><code>7.66 23.06 24.60 17.17 40.82 22.02 71.11 18.71 3.80 18.80 19.64 15.21</code></div>
-<div class="eq" id="eq-3-12"><code>German</code></div>
-<div class="eq" id="eq-3-13"><code>18.19 30.36 39.43 17.76 42.14 23.56 73.86 19.39 1.04 17.10 17.26 16.30</code></div>
-<div class="eq" id="eq-3-14"><code>Italian</code></div>
-<div class="eq" id="eq-3-15"><code>12.55 16.88 25.20 12.87 23.45 15.59 49.89 13.32 2.08 15.76 15.91 13.91</code></div>
-<div class="eq" id="eq-3-16"><code>Japanese</code></div>
-<div class="eq" id="eq-3-17"><code>20.40 30.41 37.36 16.58 59.68 21.96 81.41 18.47 0.82 15.33 15.41 14.69</code></div>
-<div class="eq" id="eq-3-18"><code>Korean</code></div>
-<div class="eq" id="eq-3-19"><code>17.57 19.23 29.81 10.18 39.28 19.39 57.33 11.21 4.52 15.35 16.07 9.65</code></div>
-<div class="eq" id="eq-3-20"><code>Portuguese</code></div>
-<div class="eq" id="eq-3-21"><code>20.86 30.03 40.20 20.15 39.17 23.29 85.44 20.10 7.98 29.91 31.65 21.54</code></div>
-<div class="eq" id="eq-3-22"><code>Russian</code></div>
-<div class="eq" id="eq-3-23"><code>5.35 14.26 16.59 10.74 22.76 13.05 51.89 10.31 0.90 12.94 12.98 12.40</code></div>
-<div class="eq" id="eq-3-24"><code>Spanish</code></div>
-<div class="eq" id="eq-3-25"><code>9.10 13.82 17.49 9.09 25.54 12.11 43.72 9.36 2.67 10.51 11.71 8.04</code></div>
-<div class="eq" id="eq-3-26"><code>Thai</code></div>
-<div class="eq" id="eq-3-27"><code>15.54 20.84 30.28 14.84 22.09 14.59 39.54 12.03 4.09 14.91 15.57 13.61</code></div>
-<div class="eq" id="eq-3-28"><code>Vietnamese</code></div>
-<div class="eq" id="eq-3-29"><code>14.65 16.71 27.28 12.33 32.24 13.15 60.43 11.53 0.16 14.57 14.57 14.43</code></div>
-<div class="eq" id="eq-3-30"><code>AVERAGE</code></div>
-<div class="eq" id="eq-3-31"><code>16.29 20.37 28.90 13.05 32.96 16.38 58.81 13.11 3.42 14.81 15.66 12.07</code></div>
+<div class="cap" id="tab-3-1"><span class="cap-k">表</span><p class="en">Table 2: Overall diarization and ASR results across datasets and languages.</p><p class="zh">表 2：跨数据集与跨语言的总体说话人分离与 ASR 结果。表内数值抽取到随后的正文段落中（见 s-3-7-1 上方）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>Gemini-2.5-Pro</th><th></th><th></th><th></th><th>Gemini-3-Pro</th><th></th><th></th><th></th><th>VIBEVOICE-ASR</th><th></th><th></th></tr></thead><tbody><tr><td>AISHELL-4</td><td>Chinese</td><td>15.32</td><td>31.59</td><td>35.96</td><td>22.42</td><td>22.03</td><td>27.43</td><td>54.17</td><td>22.75</td><td>6.77</td><td>24.99</td><td>25.35</td><td>21.40</td></tr>
+<tr><td>AMI-IHM</td><td>English</td><td>23.54</td><td>29.57</td><td>38.35</td><td>18.48</td><td>46.23</td><td>22.34</td><td>63.65</td><td>17.61</td><td>11.92</td><td>20.41</td><td>20.82</td><td>18.81</td></tr>
+<tr><td>AMI-SDM</td><td>English</td><td>23.79</td><td>34.78</td><td>41.39</td><td>22.35</td><td>43.04</td><td>26.91</td><td>64.86</td><td>22.09</td><td>13.43</td><td>28.82</td><td>29.80</td><td>24.65</td></tr>
+<tr><td>AliMeeting</td><td>Chinese</td><td>31.60</td><td>41.64</td><td>53.49</td><td>27.43</td><td>38.75</td><td>32.84</td><td>65.61</td><td>26.75</td><td>10.92</td><td>29.33</td><td>29.51</td><td>27.40</td></tr>
+<tr><td></td><td>English</td><td>20.67</td><td>16.23</td><td>26.72</td><td>9.76</td><td>30.88</td><td>12.85</td><td>57.64</td><td>10.19</td><td>4.28</td><td>11.48</td><td>13.02</td><td>7.99</td></tr>
+<tr><td></td><td>French</td><td>7.66</td><td>23.06</td><td>24.60</td><td>17.17</td><td>40.82</td><td>22.02</td><td>71.11</td><td>18.71</td><td>3.80</td><td>18.80</td><td>19.64</td><td>15.21</td></tr>
+<tr><td></td><td>German</td><td>18.19</td><td>30.36</td><td>39.43</td><td>17.76</td><td>42.14</td><td>23.56</td><td>73.86</td><td>19.39</td><td>1.04</td><td>17.10</td><td>17.26</td><td>16.30</td></tr>
+<tr><td></td><td>Italian</td><td>12.55</td><td>16.88</td><td>25.20</td><td>12.87</td><td>23.45</td><td>15.59</td><td>49.89</td><td>13.32</td><td>2.08</td><td>15.76</td><td>15.91</td><td>13.91</td></tr>
+<tr><td></td><td>Japanese</td><td>20.40</td><td>30.41</td><td>37.36</td><td>16.58</td><td>59.68</td><td>21.96</td><td>81.41</td><td>18.47</td><td>0.82</td><td>15.33</td><td>15.41</td><td>14.69</td></tr>
+<tr><td>MLC-Challenge</td><td>Korean</td><td>17.57</td><td>19.23</td><td>29.81</td><td>10.18</td><td>39.28</td><td>19.39</td><td>57.33</td><td>11.21</td><td>4.52</td><td>15.35</td><td>16.07</td><td>9.65</td></tr>
+<tr><td></td><td>Portuguese</td><td>20.86</td><td>30.03</td><td>40.20</td><td>20.15</td><td>39.17</td><td>23.29</td><td>85.44</td><td>20.10</td><td>7.98</td><td>29.91</td><td>31.65</td><td>21.54</td></tr>
+<tr><td></td><td>Russian</td><td>5.35</td><td>14.26</td><td>16.59</td><td>10.74</td><td>22.76</td><td>13.05</td><td>51.89</td><td>10.31</td><td>0.90</td><td>12.94</td><td>12.98</td><td>12.40</td></tr>
+<tr><td></td><td>Spanish</td><td>9.10</td><td>13.82</td><td>17.49</td><td>9.09</td><td>25.54</td><td>12.11</td><td>43.72</td><td>9.36</td><td>2.67</td><td>10.51</td><td>11.71</td><td>8.04</td></tr>
+<tr><td></td><td>Thai</td><td>15.54</td><td>20.84</td><td>30.28</td><td>14.84</td><td>22.09</td><td>14.59</td><td>39.54</td><td>12.03</td><td>4.09</td><td>14.91</td><td>15.57</td><td>13.61</td></tr>
+<tr><td></td><td>Vietnamese</td><td>14.65</td><td>16.71</td><td>27.28</td><td>12.33</td><td>32.24</td><td>13.15</td><td>60.43</td><td>11.53</td><td>0.16</td><td>14.57</td><td>14.57</td><td>14.43</td></tr>
+<tr><td></td><td>AVERAGE</td><td>16.29</td><td>20.37</td><td>28.90</td><td>13.05</td><td>32.96</td><td>16.38</td><td>58.81</td><td>13.11</td><td>3.42</td><td>14.81</td><td>15.66</td><td>12.07</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-3-8">
           <p class="en-lines"><span class="sent" data-sid="s-3-8-1"><span class="en">As shown in Table 2, VIBEVOICE-ASR consistently outperforms Gemini-2.5-Pro and Gemini3-Pro in terms of DER and tcpWER across all evaluated datasets, demonstrating substantially stronger speaker modeling and more accurate alignment of speaker turns over time.</span></span> <span class="sent" data-sid="s-3-8-2"><span class="en">On the cpWER metric, which more directly reflects the model’s ability to maintain speaker consistency, our model 3https://github.com/fgnt/meeteval achieves the best performance on 11 out of 16 evaluation settings, significantly outperforming both Gemini variants and indicating more reliable speaker differentiation in multi-speaker conditions.</span></span> <span class="sent" data-sid="s-3-8-3"><span class="en">Regarding WER, our model attains the lowest error rate on 8 out of 16 settings, while exhibiting only marginal degradation on the remaining datasets.</span></span> <span class="sent" data-sid="s-3-8-4"><span class="en">Overall, these results indicate that VIBEVOICE- ASR achieves a better balance between content recognition accuracy and robust speaker-aware transcription, with particularly strong advantages in speaker attribution, temporal consistency, and multilingual generalization.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-8-1"><span class="zh">如表 2 所示，VIBEVOICE-ASR 在所有评测数据集上的 DER 与 tcpWER 均持续优于 Gemini-2.5-Pro 与 Gemini-3-Pro，展现出强得多的说话人建模能力和更精确的说话人轮换时间对齐。</span></span><span class="sent" data-sid="s-3-8-2"><span class="zh">在 cpWER 这一更直接反映模型保持说话人一致性能力的指标上，我们的模型（脚注 3：https://github.com/fgnt/meeteval）在 16 个评测设置中的 11 个上取得最佳性能，显著优于两个 Gemini 变体，说明其在多说话人条件下有更可靠的说话人区分能力。</span></span><span class="sent" data-sid="s-3-8-3"><span class="zh">WER 方面，我们的模型在 16 个设置中的 8 个上取得最低错误率，在其余数据集上仅有轻微退化。</span></span><span class="sent" data-sid="s-3-8-4"><span class="zh">总体而言，这些结果表明 VIBEVOICE-ASR 在内容识别准确率与鲁棒的说话人感知转写之间取得了更好的平衡，在说话人归属、时间一致性与多语种泛化上优势尤其明显。</span></span></p>

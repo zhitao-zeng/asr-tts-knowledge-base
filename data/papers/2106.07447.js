@@ -888,11 +888,6 @@ globalThis.PAPER_2106_07447 = {
      "page": 3,
      "sentences": [
       {
-       "id": "s-II-E-7-1",
-       "original": "Num. of Params 95M 317M 964M TABLE I: Model architecture summary for BASE, LARGE, and X-LARGE HuBERT models The convolutional waveform encoder generates a feature sequence at a 20ms framerate for audio sampled at 16kHz (CNN encoder down-sampling factor is 320x).",
-       "zh": "（Table I 行）256 768 1024；参数量 95M/317M/964M。表 I：BASE、LARGE、X-LARGE 三个 HuBERT 模型的架构汇总。卷积波形编码器对 16kHz 音频生成 20ms 帧率的特征序列（CNN 编码器下采样因子 320x）。"
-      },
-      {
        "id": "s-II-E-7-2",
        "original": "The audio encoded features are then randomly masked as described in Section II-B.",
        "zh": "随后按第 II-B 节所述对编码后的音频特征做随机掩码。"
@@ -998,6 +993,13 @@ globalThis.PAPER_2106_07447 = {
      "type": "equation",
      "page": 3,
      "original": "or sequential [28], [30], [32], [33], [43]."
+    },
+    {
+     "id": "tab-I",
+     "type": "table_caption",
+     "page": 3,
+     "original": "TABLE I: Model architecture summary for BASE, LARGE, and X-LARGE HuBERT models",
+     "zh": "表 I：BASE、LARGE 与 X-LARGE HuBERT 模型的架构汇总。"
     },
     {
      "id": "p-III-2",
@@ -2158,13 +2160,7 @@ globalThis.PAPER_2106_07447 = {
      "id": "p-V-A-2",
      "type": "paragraph",
      "page": 5,
-     "sentences": [
-      {
-       "id": "s-V-A-2-1",
-       "original": "TABLE II: Results and comparison with the literature on low resource setups (10-min, 1-hour, 10-hour, and 100-hour of labeled data).",
-       "zh": "HuBERT 的优势在不同标注数据量的设置下都成立，唯一例外是 100 小时标注微调时 HuBERT LARGE 在 test-clean 上比 wav2vec 2.0 LARGE 高 0.1% WER、HuBERT BASE 高 0.1% WER。（表 II 全表：10 分钟/1 小时/10 小时/100 小时四档低资源设置下与 DiscreteBERT、DeCoAR 2.0、SlimIPL、IPL、Noisy Student 等文献的对比，原始数据照录）\nHuBERT 的优势在不同标注数据量的设置下都成立，唯一例外是 100 小时标注微调时 HuBERT LARGE 在 test-clean 上比 wav2vec 2.0 LARGE 高 0.1% WER、HuBERT BASE 高 0.1% WER。模型 无标注数据 LM dev-clean dev-other test-clean test-other 10 分钟标注 DiscreteBERT [51] LS-960 4-gram 15.7 24.1 16.3 25.2 wav2vec 2.0 BASE [6] LS-960 4-gram 8.9 15.7 9.1 15.6 wav2vec 2.0 LARGE [6] LL-60k 4-gram 6.3 9.8 6.6 10.3 wav2vec 2.0 LARGE [6] LL-60k Transformer 4.6 7.9 4.8 8.2 HUBERT BASE LS-960 4-gram 9.1 15.0 9.7 15.3 HUBERT LARGE LL-60k 4-gram 6.1 9.4 6.6 10.1 HUBERT LARGE LL-60k Transformer 4.3 7.0 4.7 7.6 HUBERT X-LARGE LL-60k Transformer 4.4 6.1 4.6 6.8 1 小时标注 DeCoAR 2.0 [50] LS-960 4-gram - - 13.8 29.1 DiscreteBERT [51] LS-960 4-gram 8.5 16.4 9.0 17.6 wav2vec 2.0 BASE [6] LS-960 4-gram 5.0 10.8 5.5 11.3 wav2vec 2.0 LARGE [6] LL-60k Transformer 2.9 5.4 2.9 5.8 HUBERT BASE LS-960 4-gram 5.6 10.9 6.1 11.3 HUBERT LARGE LL-60k Transformer 2.6 4.9 2.9 5.4 HUBERT X-LARGE LL-60k Transformer 2.6 4.2 2.8 4.8 10 小时标注 SlimIPL [54] LS-960 4-gram + Transformer 5.3 7.9 5.5 9.0 DeCoAR 2.0 [50] LS-960 4-gram - - 5.4 13.3 DiscreteBERT [51] LS-960 4-gram 5.3 13.2 5.9 14.1 wav2vec 2.0 BASE [6] LS-960 4-gram 3.8 9.1 4.3 9.5 wav2vec 2.0 LARGE [6] LL-60k Transformer 2.4 4.8 2.6 4.9 HUBERT BASE LS-960 4-gram 3.9 9.0 4.3 9.4 HUBERT LARGE LL-60k Transformer 2.2 4.3 2.4 4.6 HUBERT X-LARGE LL-60k Transformer 2.1 3.6 2.3 4.0 100 小时标注 IPL [12] LL-60k 4-gram + Transformer 3.19 6.14 3.72 7.11 SlimIPL [54] LS-860 4-gram + Transformer 2.2 4.6 2.7 5.2 Noisy Student [61] LS-860 LSTM 3.9 8.8 4.2 8.6 DeCoAR 2.0 [50] LS-960 4-gram - - 5.0 12.1 DiscreteBERT [51] LS-960 4-gram 4.0 10.9 4.5 12.1 wav2vec 2.0 BASE [6] LS-960 4-gram 2.7 7.9 3.4 8.0 wav2vec 2.0 LARGE [6] LL-60k Transformer 1.9 4.0 2.0 4.0 HUBERT BASE LS-960 4-gram 2.7 7.8 3.4 8.1 HUBERT LARGE LL-60k Transformer 1.8 3.7 2.1 3.9 HUBERT X-LARGE LL-60k Transformer 1.7 3.0 1.9 3.5 表 II：低资源设置（10 分钟、1 小时、10 小时、100 小时标注数据）下与文献的对比结果。"
-      }
-     ]
+     "sentences": []
     },
     {
      "id": "p-V-A-3",
@@ -2408,11 +2404,6 @@ globalThis.PAPER_2106_07447 = {
      "page": 6,
      "sentences": [
       {
-       "id": "s-V-B-4-1",
-       "original": "TABLE III: Comparison with the literature on high resource setups using all 960 hours of labeled LibriSpeech data. different sizes of its training data.",
-       "zh": "我们首先考察 k-means 聚类算法在聚类数与训练数据规模变化下的稳定性。（表 III 高资源对比全表：监督 Conformer L、IPL、Noisy Student、wav2vec 2.0 LARGE、预训练 Conformer XXL、wav2vec 2.0+自训练、Conformer XXL+Noisy Student 与本文 HUBERT LARGE/X-LARGE，原始数据照录）\n我们首先考察 k-means 聚类算法在聚类数与训练数据规模变化下的稳定性。模型 无标注数据 LM dev-clean dev-other test-clean test-other 监督 Conformer L [62] LSTM 1.9 3.9 自训练 IPL [12] LL-60k 4-gram + Transformer 1.85 3.26 2.10 4.01 Noisy Student [61] LV-60k LSTM 1.6 3.4 1.7 3.4 预训练 wav2vec 2.0 LARGE [6] LL-60k Transformer 1.6 3.0 1.8 3.3 预训练 Conformer XXL [40] LL-60k LSTM 1.5 3.0 1.5 3.1 预训练+自训练 wav2vec 2.0 + self-training [63] LL-60k Transformer 1.1 2.7 1.5 3.1 预训练 Conformer XXL + Noisy Student [40] LL-60k LSTM 1.3 2.6 1.4 2.6 本文（预训练） HUBERT LARGE LL-60k Transformer 1.5 3.0 1.9 3.3 HUBERT X-LARGE LL-60k Transformer 1.5 2.5 1.8 2.9 表 III：使用全部 960 小时标注 LibriSpeech 数据的高资源设置下与文献的对比。以及不同规模的训练数据。"
-      },
-      {
        "id": "s-V-B-4-2",
        "original": "Two features are considered: 39-dimensional MFCC features and 768-dimensional output from the 6-th transformer layer of the ﬁrst iteration HuBERT- BASE model.",
        "zh": "考虑两种特征：39 维 MFCC 特征，以及第一轮 HuBERT-BASE 模型第 6 层 Transformer 的 768 维输出。"
@@ -2423,6 +2414,13 @@ globalThis.PAPER_2106_07447 = {
        "zh": "这两种特征分别用于生成第一轮和第二轮 HuBERT 训练的簇分配。"
       }
      ]
+    },
+    {
+     "id": "tab-II",
+     "type": "table_caption",
+     "page": 6,
+     "original": "TABLE II: Results and comparison with the literature on low resource setups (10-min, 1-hour, 10-hour, and 100-hour of labeled data).",
+     "zh": "表 II：低资源设置（10 分钟、1 小时、10 小时、100 小时标注数据）下的结果与文献对比。"
     },
     {
      "id": "p-V-B-5",
@@ -2497,11 +2495,6 @@ globalThis.PAPER_2106_07447 = {
      "type": "paragraph",
      "page": 7,
      "sentences": [
-      {
-       "id": "s-V-B-7-1",
-       "original": "TABLE IV: Stability of K-means as an unsupervised unit discovery algorithm with respect to different features, numbers of clusters, and training data sizes.",
-       "zh": "最后，在 HuBERT 特征上聚类的 PNMI 远高于在 MFCC 特征上聚类，且 500 类时差距更大，说明迭代精炼显著提升了聚类质量。（表 IV 全表：feature × 聚类数 × k-means 训练规模（1h/10h/100h）的 PNMI 均值±标准差，原始数据照录）\n最后，在 HuBERT 特征上聚类的 PNMI 远高于在 MFCC 特征上聚类，且 500 类时差距更大，说明迭代精炼显著提升了聚类质量。特征 C PNMI（均值 ± 标准差）K-means 训练规模 = 1h 10h 100h MFCC 100 0.251 ± 0.001 0.253 ± 0.001 0.253 ± 0.001 500 0.283 ± 0.001 0.285 ± 0.000 0.287 ± 0.001 BASE-it1-L6 100 0.563 ± 0.012 0.561 ± 0.012 0.575 ± 0.008 500 0.680 ± 0.005 0.684 ± 0.003 0.686 ± 0.004 表 IV：K-means 作为无监督单元发现算法在不同特征、聚类数和训练数据规模下的稳定性。"
-      },
       {
        "id": "s-V-B-7-2",
        "original": "PNMI stands for phonenormalized mutual information.",
@@ -2830,16 +2823,25 @@ globalThis.PAPER_2106_07447 = {
      "page": 7,
      "sentences": [
       {
-       "id": "s-V-C-7-1",
-       "original": "TABLE V: The effect of the training objective and clustering quality on performance.",
-       "zh": "（表 V 全表：训练目标与聚类质量对性能的影响——Chenone 监督上限、K-means 各配置、MFCC/BASE-it1-layer6/BASE-it2-layer9 特征、Product K-means 各组合的 PNMI 与 dev-other WER 数值。原始数据照录如下）\nC PNMI dev-other WER (%) WER Chenone（监督上限） 8976 0.809 10.38 9.16 9.79 K-means {50,100} 17.81 K-means {50,100,500} 17.56 K-means 在 MFCC 上 50 0.227 18.68 31.07 94.60 100 0.243 17.86 29.57 96.37 500 0.276 18.40 33.42 97.66 K-means 在 BASE-it1-layer6 上 500 0.637 11.91 13.47 23.29 K-means 在 BASE-it2-layer9 上 500 0.704 10.75 11.59 13.79 Product K-means-0-100 19.26 Product K-means-1-100 17.64 Product K-means-2-100 18.46 Product K-means-{0,1,2}-100 16.73 表 V：训练目标与聚类质量对性能的影响。"
-      },
-      {
        "id": "s-V-C-7-2",
        "original": "C refers to the number of units, and α is the weight for masked frames.",
        "zh": "C 表示单元数，α 是被掩码帧损失的权重。"
       }
      ]
+    },
+    {
+     "id": "tab-III",
+     "type": "table_caption",
+     "page": 7,
+     "original": "TABLE III: Comparison with the literature on high resource setups using all 960 hours of labeled LibriSpeech data.",
+     "zh": "表 III：使用全部 960 小时 LibriSpeech 标注数据的高资源设置下与文献的对比。"
+    },
+    {
+     "id": "tab-IV",
+     "type": "table_caption",
+     "page": 7,
+     "original": "TABLE IV: Stability of K-means as an unsupervised unit discovery algorithm with respect to different features, numbers of clusters, and training data sizes. PNMI stands for phone- normalized mutual information.",
+     "zh": "表 IV：k-means 作为无监督单元发现算法在不同特征、聚类数与训练规模下的稳定性。"
     },
     {
      "id": "p-V-C-8",
@@ -2956,11 +2958,6 @@ globalThis.PAPER_2106_07447 = {
        "id": "s-V-D-3-1",
        "original": "Results shown in Table V indicate that when learning from bad cluster assignments, computing loss only from the masked regions achieves the best performance, while the inclusion of unmasked loss results in signiﬁcantly higher WERs.",
        "zh": "Table V 的结果表明：当从糟糕的簇分配中学习时，只计算掩码区域的损失取得最好性能，而引入未掩码损失会导致 WER 显著升高。"
-      },
-      {
-       "id": "s-V-D-3-2",
-       "original": "However, as the clustering quality improves, the model would suffer less when computing losses on the unmasked frames (BASE- TABLE VI: Cluster ensembles with k-means and product k-means. it1-layer6) or even achieve better performance as the case of chenone.",
-       "zh": "然而，随着聚类质量提升，在未掩码帧上计算损失的负面影响会减小（BASE-it1-layer6），甚至在 chenone 监督标签的情形下反而更好。（Table VI：k-means 与乘积 k-means 的簇集成结果。）"
       }
      ]
     }
@@ -3088,13 +3085,21 @@ globalThis.PAPER_2106_07447 = {
      "id": "p-VI-2",
      "type": "paragraph",
      "page": 8,
-     "sentences": [
-      {
-       "id": "s-VI-2-1",
-       "original": "TABLE VII: Varying the number of HuBERT pre-training steps. p is set to 6.5%.",
-       "zh": "在 LibriSpeech 960 小时与 60,000 小时 Libri-light 两种预训练设置下，HuBERT 在 10 分钟、1 小时等各微调子集上都匹配或超过当时 SOTA 系统。（Table VII：预训练步数变化，K-means 聚类数 50/100，dev-other WER 分别为 18.68→13.65→12.40→11.82 与 17.86→12.97→12.32→11.68；[51] 13.5k 26.6。p 取 6.5%。）表 VII：改变 HuBERT 预训练步数的影响。"
-      }
-     ]
+     "sentences": []
+    },
+    {
+     "id": "tab-V",
+     "type": "table_caption",
+     "page": 8,
+     "original": "TABLE V: The effect of the training objective and clustering quality on performance. C refers to the number of units, and α is the weight for masked frames.",
+     "zh": "表 V：训练目标与聚类质量对性能的影响。"
+    },
+    {
+     "id": "tab-VI",
+     "type": "table_caption",
+     "page": 8,
+     "original": "TABLE VI: Cluster ensembles with k-means and product k-means.",
+     "zh": "表 VI：k-means 与 product k-means 的聚类集成。"
     },
     {
      "id": "p-VI-3",
@@ -4370,6 +4375,13 @@ globalThis.PAPER_2106_07447 = {
        "original": "Neuhoff, “Quantization,” IEEE transactions on information theory, vol. 44, no. 6, pp. 2325–2383, 1998."
       }
      ]
+    },
+    {
+     "id": "tab-VII",
+     "type": "table_caption",
+     "page": 9,
+     "original": "TABLE VII: Varying the number of HuBERT pre-training steps. p is set to 6.5%.",
+     "zh": "表 VII：改变 HuBERT 预训练步数的影响。p 取 6.5%。"
     },
     {
      "id": "p-references-23",

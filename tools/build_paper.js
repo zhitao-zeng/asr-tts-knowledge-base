@@ -37,6 +37,14 @@ function esc(s) {
 function md(s) { return esc(s).replace(/\*\*([^*]+?)\*\*/g, "<strong>$1</strong>"); }
 
 /* ---------------- 阅读页 ---------------- */
+function renderGrid(grid) {
+  const head = (grid.headers || []).map(h =>
+    `<tr>${h.map(c => `<th>${esc(c)}</th>`).join("")}</tr>`).join("");
+  const body = (grid.rows || []).map(r =>
+    `<tr>${r.map(c => `<td>${esc(c)}</td>`).join("")}</tr>`).join("\n");
+  return `<div class="ptab-wrap"><table class="ptab">${head ? `<thead>${head}</thead>` : ""}<tbody>${body}</tbody></table></div>`;
+}
+
 function renderPaper(paper) {
   const model = (KB.models || []).find(m => m.id === paper.model_id) || {};
   const annBySid = new Map();
@@ -47,6 +55,48 @@ function renderPaper(paper) {
     annBySid.get(sid).push(a);
   }
   const nFeat = (paper.annotations || []).filter(a => a.featured).length;
+
+  /* --- 重建表格网格（tools/extract_tables.py 产物，按 caption 块 id 索引） --- */
+  let TABLES = {};
+  try {
+    const tp = path.join(ROOT, "data", "tables", paper.paper_id + ".json");
+    if (fs.existsSync(tp)) TABLES = JSON.parse(fs.readFileSync(tp, "utf8"));
+  } catch (e) { /* 表格缺失不阻塞构建 */ }
+  // 每页被表格覆盖的数字/词 token 集合（用于抑制表格的文本层碎块回声）
+  const pageNumSets = new Map();
+  const pageWordSets = new Map();
+  for (const t of Object.values(TABLES)) {
+    const toks = [...(t.headers || []).flat(), ...(t.rows || []).flat()].join(" ").split(/\s+/);
+    const numSet = pageNumSets.get(t.page) || new Set();
+    const wordSet = pageWordSets.get(t.page) || new Set();
+    for (const tk of toks) {
+      if (/\d/.test(tk)) numSet.add(tk);
+      if (tk) wordSet.add(tk);
+    }
+    pageNumSets.set(t.page, numSet);
+    pageWordSets.set(t.page, wordSet);
+  }
+  function coveredByTable(b) {
+    const numSet = pageNumSets.get(b.page);
+    const wordSet = pageWordSets.get(b.page);
+    if (!wordSet) return false;
+    const text = b.type === "paragraph" ? b.sentences.map(s => s.original).join(" ") : b.original;
+    const words = String(text).split(/\s+/).filter(Boolean);
+    const nums = words.filter(t => /\d/.test(t));
+    if (nums.length >= 3 && numSet) {
+      const hit = nums.filter(t => numSet.has(t)).length;
+      if (hit / nums.length >= 0.7) return true;
+    }
+    // 纯标签回声（"AMI-IHM English"、"AVERAGE"、"French" 行）：短块且词全部在网格里
+    if (words.length >= 1 && words.length <= 12) {
+      const hitW = words.filter(w => wordSet.has(w)).length;
+      if (hitW / words.length >= 0.8) return true;
+    }
+    return false;
+  }
+  function blockHasAnn(b) {
+    return b.type === "paragraph" && (b.sentences || []).some(s => annBySid.has(s.id));
+  }
 
   /* --- 讲解面板（每句一组；多条时第一条展开、其余折叠） --- */
   function annPanels(sid) {
@@ -82,6 +132,10 @@ function renderPaper(paper) {
     const secTitle = sec.id === "sec-front" ? "" : `
       <${hTag} class="sech lv${sec.level}" id="${esc(sec.id)}">${secNum}<span class="t-zh">${esc(sec.title.zh || sec.title.original)}</span><span class="t-en">${esc(sec.title.original)}</span></${hTag}>`;
     const blocks = (sec.blocks || []).map(b => {
+      // 表格文本层回声抑制：该块被同页重建表格覆盖（≥70% 数字 token 命中网格）
+      // 且无讲解锚定时，不再重复渲染（内容已在 caption 处的真表格里）
+      if (b.type !== "table_caption" && b.type !== "figure_caption"
+          && !blockHasAnn(b) && coveredByTable(b)) return "";
       if (b.type === "paragraph") {
         if (exempt) {
           // 参考文献 / 作者块：仅原文，小字
@@ -105,7 +159,9 @@ function renderPaper(paper) {
         const img = (b.type === "figure_caption" && fs.existsSync(png))
           ? `<img class="fig" src="../assets/figures/${esc(paper.paper_id)}/${esc(b.id)}.png" loading="lazy" alt="${esc(b.original.slice(0, 120))}">`
           : "";
-        return `<div class="cap" id="${esc(b.id)}">${img}<span class="cap-k">${kind}</span><p class="en">${esc(b.original)}</p>${b.zh ? `<p class="zh">${esc(b.zh)}</p>` : ""}</div>`;
+        // 表本体网格（tools/extract_tables.py 产物）；有网格就渲染真表格
+        const gridHtml = (b.type === "table_caption" && TABLES[b.id]) ? renderGrid(TABLES[b.id]) : "";
+        return `<div class="cap" id="${esc(b.id)}">${img}<span class="cap-k">${kind}</span><p class="en">${esc(b.original)}</p>${b.zh ? `<p class="zh">${esc(b.zh)}</p>` : ""}${gridHtml}</div>`;
       }
       if (b.type === "equation") {
         return `<div class="eq" id="${esc(b.id)}"><code>${esc(b.original)}</code></div>`;
@@ -254,6 +310,13 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+/* 重建表格网格（extract_tables.py 产物） */
+.ptab-wrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ptab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ptab th{background:#f1f5f9;font-weight:700;padding:6px 9px;border-bottom:1.5px solid var(--line);text-align:left;white-space:nowrap}
+.ptab td{padding:5px 9px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap}
+.ptab td:first-child,.ptab th:first-child{text-align:left;font-weight:600}
+.ptab tbody tr:hover td{background:#f8fafc}
 .tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
 .refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
 /* 三分钟摘要 */

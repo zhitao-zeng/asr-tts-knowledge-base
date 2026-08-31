@@ -102,6 +102,13 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+/* 重建表格网格（extract_tables.py 产物） */
+.ptab-wrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ptab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ptab th{background:#f1f5f9;font-weight:700;padding:6px 9px;border-bottom:1.5px solid var(--line);text-align:left;white-space:nowrap}
+.ptab td{padding:5px 9px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap}
+.ptab td:first-child,.ptab th:first-child{text-align:left;font-weight:600}
+.ptab tbody tr:hover td{background:#f8fafc}
 .tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
 .refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
 /* 三分钟摘要 */
@@ -696,21 +703,21 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-ar-models-2-6"><code>Qwen3-TTS</code></div>
 <div class="eq" id="eq-ar-models-2-7"><code>0.708 1.54 4.16 0.766 1.15</code></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-3-46"><span class="secnum">3.46</span> <span class="t-zh">3.46 NAR 模型</span><span class="t-en">NAR Models</span></h3><div class="pblk" id="p-3-46-1">
-          <p class="en-lines"><span class="sent" data-sid="s-3-46-1-1"><span class="en">F5-TTS</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-46-1-1"><span class="zh">OmniVoice-Emilia 超越了所有同样在 Emilia 语料上训练的 NAR 基线（F5-TTS [14]、ZipVoice [16]、MaskGCT [19]），验证了我们所提架构的有效性。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-46-1"><code>0.664 1.85 3.72 0.750 1.53 2.93</code></div>
-<div class="eq" id="eq-3-46-2"><code>ZipVoice</code></div>
-<div class="eq" id="eq-3-46-3"><code>0.697 1.70 3.82 0.751 1.40 3.15</code></div>
-<div class="eq" id="eq-3-46-4"><code>MaskGCT</code></div>
-<div class="eq" id="eq-3-46-5"><code>0.713 2.88 3.55 0.773 2.40 2.63</code></div>
-<div class="eq" id="eq-3-46-6"><code>OmniVoice-Emilia</code></div>
-<div class="eq" id="eq-3-46-7"><code>0.717 1.72 3.88 0.765 0.89 3.05</code></div>
-<div class="eq" id="eq-3-46-8"><code>OmniVoice</code></div>
-<div class="eq" id="eq-3-46-9"><code>0.741 1.60 3.91 0.777 0.84 3.11</code></div>
-<div class="cap" id="tab-3-46-1"><span class="cap-k">表</span><p class="en">Table 2: Subjective evaluation results on Chinese and English test sets. CMOS and SMOS are used for evaluation. Best results are highlighted in bold.</p><p class="zh">表 2：中英文测试集上的主观评估结果。采用 CMOS 与 SMOS 进行评估。最优结果以粗体标出。</p></div></section>
+      <h3 class="sech lv2" id="sec-3-46"><span class="secnum">3.46</span> <span class="t-zh">3.46 NAR 模型</span><span class="t-en">NAR Models</span></h3>
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-3-46-1"><span class="cap-k">表</span><p class="en">Table 2: Subjective evaluation results on Chinese and English test sets. CMOS and SMOS are used for evaluation. Best results are highlighted in bold.</p><p class="zh">表 2：中英文测试集上的主观评估结果。采用 CMOS 与 SMOS 进行评估。最优结果以粗体标出。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>F5-TTS</td><td>0.664</td><td>1.85</td><td>3.72</td><td>0.750</td><td>1.53</td><td>2.93</td></tr>
+<tr><td>ZipVoice</td><td>0.697</td><td>1.70</td><td>3.82</td><td>0.751</td><td>1.40</td><td>3.15</td></tr>
+<tr><td>MaskGCT</td><td>0.713</td><td>2.88</td><td>3.55</td><td>0.773</td><td>2.40</td><td>2.63</td></tr>
+<tr><td>OmniVoice-Emilia</td><td>0.717</td><td>1.72</td><td>3.88</td><td>0.765</td><td>0.89</td><td>3.05</td></tr>
+<tr><td>OmniVoice</td><td>0.741</td><td>1.60</td><td>3.91</td><td>0.777</td><td>0.84</td><td>3.11</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-3"><span class="t-zh">Model</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-3-1-1"><span class="en">CMOS ↑ SMOS ↑ Ground-truth</span></span></p>
@@ -720,13 +727,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-model-3-1"><code>0.00 3.02±0.20</code></div>
 <div class="eq" id="eq-model-3-2"><code>Qwen3-TTS</code></div>
 <div class="eq" id="eq-model-3-3"><code>0.40± 0.16 3.65 ± 0.18</code></div>
-<div class="eq" id="eq-model-3-4"><code>ZipVoice</code></div>
+
 <div class="eq" id="eq-model-3-5"><code>-0.30± 0.16 3.35± 0.19</code></div>
-<div class="eq" id="eq-model-3-6"><code>MaskGCT</code></div>
+
 <div class="eq" id="eq-model-3-7"><code>-0.38± 0.17 3.20± 0.18</code></div>
-<div class="eq" id="eq-model-3-8"><code>OmniVoice-Emilia</code></div>
+
 <div class="eq" id="eq-model-3-9"><code>0.42± 0.15 3.58± 0.18</code></div>
-<div class="eq" id="eq-model-3-10"><code>OmniVoice</code></div>
+
 <div class="eq" id="eq-model-3-11"><code>0.44± 0.16 3.80± 0.17</code></div>
 <div class="pblk" id="p-model-3-2">
           <p class="en-lines"><span class="sent" data-sid="s-model-3-2-1"><span class="en">intelligibility (CER &lt; 5%) even for many languages with less than 10 hours of training data, demonstrating strong generalization capability on low-resource languages.</span></span> <span class="sent" data-sid="s-model-3-2-2"><span class="en">Note that we do not claim OmniVoice can generate speech of better quality than the ground truth for all languages.</span></span> <span class="sent" data-sid="s-model-3-2-3"><span class="en">However, OmniVoice’s performance has exceeded the measurement capability of existing ASR models.</span><button class="mk feat" data-sid="s-model-3-2-3" title="查看讲解">解</button></span></p>
@@ -740,59 +747,82 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-model-3-1"><span class="cap-k">表</span><p class="en">Table 3: Evaluation on the MiniMax-Multilingual-24 test set.</p><p class="zh">表 3：MiniMax-Multilingual-24 测试集上的评估结果。</p></div>
+<div class="cap" id="tab-model-3-1"><span class="cap-k">表</span><p class="en">Table 3: Evaluation on the MiniMax-Multilingual-24 test set.</p><p class="zh">表 3：MiniMax-Multilingual-24 测试集上的评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>WER ↓</th><th></th><th></th><th>SIM-o ↑</th><th></th></tr><tr><th>Language</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>MiniMax</th><th></th><th></th><th>MiniMax</th><th></th></tr></thead><tbody><tr><td>Arabic</td><td>1.392</td><td>1.665</td><td>1.666</td><td>0.776</td><td>0.736</td><td>0.706</td></tr>
+<tr><td>Cantonese</td><td>17.709*</td><td>34.111</td><td>51.513</td><td>0.838</td><td>0.778</td><td>0.670</td></tr>
+<tr><td>Chinese</td><td>1.008</td><td>2.252</td><td>16.026</td><td>0.821</td><td>0.780</td><td>0.677</td></tr>
+<tr><td>Czech</td><td>2.856</td><td>3.875</td><td>2.108</td><td>0.837</td><td>0.796</td><td>0.685</td></tr>
+<tr><td>Dutch</td><td>1.358</td><td>1.143</td><td>0.803</td><td>0.813</td><td>0.738</td><td>0.680</td></tr>
+<tr><td>English</td><td>1.560</td><td>2.164</td><td>2.339</td><td>0.884</td><td>0.756</td><td>0.613</td></tr>
+<tr><td>Finnish</td><td>3.750</td><td>4.666</td><td>2.964</td><td>0.864</td><td>0.835</td><td>0.759</td></tr>
+<tr><td>French</td><td>3.347</td><td>4.099</td><td>5.216</td><td>0.801</td><td>0.628</td><td>0.535</td></tr>
+<tr><td>German</td><td>0.964</td><td>1.906</td><td>0.572</td><td>0.812</td><td>0.733</td><td>0.614</td></tr>
+<tr><td>Greek</td><td>1.057</td><td>2.016</td><td>0.991</td><td>0.867</td><td>0.826</td><td>0.733</td></tr>
+<tr><td>Hindi</td><td>4.330</td><td>6.962</td><td>5.827</td><td>0.863</td><td>0.818</td><td>0.730</td></tr>
+<tr><td>Indonesian</td><td>1.973</td><td>1.237</td><td>1.059</td><td>0.805</td><td>0.729</td><td>0.660</td></tr>
+<tr><td>Italian</td><td>2.070</td><td>1.543</td><td>1.743</td><td>0.812</td><td>0.699</td><td>0.579</td></tr>
+<tr><td>Japanese</td><td>4.027</td><td>3.519</td><td>10.646</td><td>0.828</td><td>0.776</td><td>0.738</td></tr>
+<tr><td>Korean</td><td>2.651</td><td>1.747</td><td>1.865</td><td>0.828</td><td>0.776</td><td>0.700</td></tr>
+<tr><td>Polish</td><td>0.874</td><td>1.415</td><td>0.766</td><td>0.877</td><td>0.802</td><td>0.729</td></tr>
+<tr><td>Portuguese</td><td>2.511</td><td>1.877</td><td>1.331</td><td>0.859</td><td>0.805</td><td>0.711</td></tr>
+<tr><td>Romanian</td><td>2.424</td><td>2.878</td><td>1.347</td><td>0.836</td><td>0.809</td><td>0.699</td></tr>
+<tr><td>Russian</td><td>2.233</td><td>4.281</td><td>3.878</td><td>0.783</td><td>0.761</td><td>0.676</td></tr>
+<tr><td>Spanish</td><td>1.026</td><td>1.029</td><td>1.084</td><td>0.804</td><td>0.762</td><td>0.615</td></tr>
+<tr><td>Thai</td><td>3.978</td><td>2.701</td><td>73.936</td><td>0.841</td><td>0.800</td><td>0.588</td></tr>
+<tr><td>Turkish</td><td>2.166</td><td>1.520</td><td>0.699</td><td>0.851</td><td>0.779</td><td>0.596</td></tr>
+<tr><td>Ukrainian</td><td>1.774</td><td>1.082</td><td>0.997</td><td>0.810</td><td>0.730</td><td>0.647</td></tr>
+<tr><td>Vietnamese</td><td>1.373</td><td>0.880</td><td>73.415</td><td>0.804</td><td>0.743</td><td>0.369</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-model-3-3">
           <p class="en-lines"><span class="sent" data-sid="s-model-3-3-1"><span class="en">Language WER ↓ SIM-o ↑ OmniVoice MiniMax ElevenLabs OmniVoice MiniMax ElevenLabs Arabic</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-3-3-1"><span class="zh">表头：Language × WER ↓ / SIM-o ↑（OmniVoice / MiniMax / ElevenLabs 两组）——Arabic（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-model-3-12"><code>1.392 1.665 1.666 0.776 0.736 0.706</code></div>
-<div class="eq" id="eq-model-3-13"><code>Cantonese</code></div>
-<div class="eq" id="eq-model-3-14"><code>17.709* 34.111 51.513 0.838 0.778 0.670</code></div>
-<div class="eq" id="eq-model-3-15"><code>Chinese</code></div>
-<div class="eq" id="eq-model-3-16"><code>1.008 2.252 16.026 0.821 0.780 0.677</code></div>
-<div class="eq" id="eq-model-3-17"><code>Czech</code></div>
-<div class="eq" id="eq-model-3-18"><code>2.856 3.875 2.108 0.837 0.796 0.685</code></div>
-<div class="eq" id="eq-model-3-19"><code>Dutch</code></div>
-<div class="eq" id="eq-model-3-20"><code>1.358 1.143 0.803 0.813 0.738 0.680</code></div>
-<div class="eq" id="eq-model-3-21"><code>English</code></div>
-<div class="eq" id="eq-model-3-22"><code>1.560 2.164 2.339 0.884 0.756 0.613</code></div>
-<div class="eq" id="eq-model-3-23"><code>Finnish</code></div>
-<div class="eq" id="eq-model-3-24"><code>3.750 4.666 2.964 0.864 0.835 0.759</code></div>
-<div class="eq" id="eq-model-3-25"><code>French</code></div>
-<div class="eq" id="eq-model-3-26"><code>3.347 4.099 5.216 0.801 0.628 0.535</code></div>
-<div class="eq" id="eq-model-3-27"><code>German</code></div>
-<div class="eq" id="eq-model-3-28"><code>0.964 1.906 0.572 0.812 0.733 0.614</code></div>
-<div class="eq" id="eq-model-3-29"><code>Greek</code></div>
-<div class="eq" id="eq-model-3-30"><code>1.057 2.016 0.991 0.867 0.826 0.733</code></div>
-<div class="eq" id="eq-model-3-31"><code>Hindi</code></div>
-<div class="eq" id="eq-model-3-32"><code>4.330 6.962 5.827 0.863 0.818 0.730</code></div>
-<div class="eq" id="eq-model-3-33"><code>Indonesian</code></div>
-<div class="eq" id="eq-model-3-34"><code>1.973 1.237 1.059 0.805 0.729 0.660</code></div>
-<div class="eq" id="eq-model-3-35"><code>Italian</code></div>
-<div class="eq" id="eq-model-3-36"><code>2.070 1.543 1.743 0.812 0.699 0.579</code></div>
-<div class="eq" id="eq-model-3-37"><code>Japanese</code></div>
-<div class="eq" id="eq-model-3-38"><code>4.027 3.519 10.646 0.828 0.776 0.738</code></div>
-<div class="eq" id="eq-model-3-39"><code>Korean</code></div>
-<div class="eq" id="eq-model-3-40"><code>2.651 1.747 1.865 0.828 0.776 0.700</code></div>
-<div class="eq" id="eq-model-3-41"><code>Polish</code></div>
-<div class="eq" id="eq-model-3-42"><code>0.874 1.415 0.766 0.877 0.802 0.729</code></div>
-<div class="eq" id="eq-model-3-43"><code>Portuguese</code></div>
-<div class="eq" id="eq-model-3-44"><code>2.511 1.877 1.331 0.859 0.805 0.711</code></div>
-<div class="eq" id="eq-model-3-45"><code>Romanian</code></div>
-<div class="eq" id="eq-model-3-46"><code>2.424 2.878 1.347 0.836 0.809 0.699</code></div>
-<div class="eq" id="eq-model-3-47"><code>Russian</code></div>
-<div class="eq" id="eq-model-3-48"><code>2.233 4.281 3.878 0.783 0.761 0.676</code></div>
-<div class="eq" id="eq-model-3-49"><code>Spanish</code></div>
-<div class="eq" id="eq-model-3-50"><code>1.026 1.029 1.084 0.804 0.762 0.615</code></div>
-<div class="eq" id="eq-model-3-51"><code>Thai</code></div>
-<div class="eq" id="eq-model-3-52"><code>3.978 2.701 73.936 0.841 0.800 0.588</code></div>
-<div class="eq" id="eq-model-3-53"><code>Turkish</code></div>
-<div class="eq" id="eq-model-3-54"><code>2.166 1.520 0.699 0.851 0.779 0.596</code></div>
-<div class="eq" id="eq-model-3-55"><code>Ukrainian</code></div>
-<div class="eq" id="eq-model-3-56"><code>1.774 1.082 0.997 0.810 0.730 0.647</code></div>
-<div class="eq" id="eq-model-3-57"><code>Vietnamese</code></div>
-<div class="eq" id="eq-model-3-58"><code>1.373 0.880 73.415 0.804 0.743 0.369</code></div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-average"><span class="t-zh">平均值</span><span class="t-en">Average</span></h3><div class="eq" id="eq-average-1"><code>2.850 3.774 10.950 0.830 0.766 0.655</code></div>
 <div class="pblk" id="p-average-1">
@@ -824,26 +854,28 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-average-13"><code>1K 10K 100K Duration (Hours)</code></div>
 <div class="eq" id="eq-average-14"><code>0.5</code></div>
 <div class="cap" id="fig-average-1"><img class="fig" src="../assets/figures/2604.00688/fig-average-1.png" loading="lazy" alt="Figure 4: CERs of OmniVoice vs. ground truth across languages with varying training data durations on FLEURS-Multilingua"><span class="cap-k">图</span><p class="en">Figure 4: CERs of OmniVoice vs. ground truth across languages with varying training data durations on FLEURS-Multilingual-102. Hollow circles indicate languages where OmniVoice achieves lower CER than ground-truth, Filled circles indicate higher CER.</p><p class="zh">图 4：在 FLEURS-Multilingual-102 上，不同训练数据时长下 OmniVoice 与真实语音的逐语言 CER 对比。空心圆表示 OmniVoice 的 CER 低于真实语音的语言，实心圆表示 CER 更高的语言。</p></div>
-<div class="cap" id="tab-average-1"><span class="cap-k">表</span><p class="en">Table 4: Evaluation on the FLEURS-Multilingual-102 test set.</p><p class="zh">表 4：FLEURS-Multilingual-102 测试集上的评估结果。</p></div></section>
+<div class="cap" id="tab-average-1"><span class="cap-k">表</span><p class="en">Table 4: Evaluation on the FLEURS-Multilingual-102 test set.</p><p class="zh">表 4：FLEURS-Multilingual-102 测试集上的评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th>FLEURS-Multilingual-102</th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th>Languages with CER ≤</th><th></th></tr><tr><th></th><th>Avg SIM-o ↑</th><th></th><th></th><th></th><th>Avg CER ↓</th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>5%</td><td>10%</td></tr>
+<tr><td>Ground-truth</td><td></td><td></td><td>-</td><td></td><td></td><td>5.11</td><td>75</td><td>92</td></tr>
+<tr><td>OmniVoice</td><td></td><td>0.788</td><td></td><td></td><td></td><td>4.00</td><td>82</td><td>95</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-model-4"><span class="t-zh">Model</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-4-1">
-          <p class="en-lines"><span class="sent" data-sid="s-model-4-1-1"><span class="en">FLEURS-Multilingual-102 Avg SIM-o ↑ Avg CER ↓ Languages with CER ≤</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-model-4-1-1"><span class="zh">FLEURS-Multilingual-102：平均 SIM-o ↑、平均 CER ↓、CER ≤ 某阈值的语言数量（表头）。</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-model-4"><span class="t-zh">Model</span><span class="t-en">Model</span></h3></section>
 <section>
-      <h3 class="sech lv2" id="sec-5"><span class="t-zh">5%（表格碎块小节）</span><span class="t-en">5%</span></h3><div class="eq" id="eq-5-1"><code>10%</code></div>
-<div class="eq" id="eq-5-2"><code>Ground-truth</code></div>
-<div class="eq" id="eq-5-3"><code>- 5.11 75 92</code></div>
-<div class="eq" id="eq-5-4"><code>OmniVoice</code></div>
-<div class="eq" id="eq-5-5"><code>0.788 4.00 82 95</code></div></section>
+      <h3 class="sech lv2" id="sec-5"><span class="t-zh">5%（表格碎块小节）</span><span class="t-en">5%</span></h3>
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-4-3"><span class="secnum">4.3</span> <span class="t-zh">4.3 关键设计的有效性</span><span class="t-en">Effectiveness of Key Designs</span></h3><div class="pblk" id="p-4-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-1-1"><span class="en">To validate the effectiveness of our core designs, we conduct ablation experiments on the Emilia dataset.</span></span> <span class="sent" data-sid="s-4-3-1-2"><span class="en">All models are trained for 300k updates with the same hyperparameters, with prompt denoising disabled unless otherwise specified.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-1-1"><span class="zh">为验证核心设计的有效性，我们在 Emilia 数据集上进行了消融实验。</span></span><span class="sent" data-sid="s-4-3-1-2"><span class="zh">所有模型均以相同超参数训练 300k 次更新，除特别说明外均关闭提示去噪。</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-3-1"><span class="cap-k">表</span><p class="en">Table 5: Impact of different masking strategies.</p><p class="zh">表 5：不同掩码策略的影响。</p></div></section>
+<div class="cap" id="tab-4-3-1"><span class="cap-k">表</span><p class="en">Table 5: Impact of different masking strategies.</p><p class="zh">表 5：不同掩码策略的影响。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>Languages with CER ≤</th><th></th></tr><tr><th></th><th></th><th></th><th>Avg SIM-o ↑</th><th></th><th></th><th>Avg CER ↓</th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>5%</td><td>10%</td></tr>
+<tr><td></td><td></td><td>Ground-truth</td><td></td><td></td><td>-</td><td></td><td>5.11</td><td>75</td><td>92</td></tr>
+<tr><td></td><td></td><td>OmniVoice</td><td></td><td>0.788</td><td></td><td></td><td>4.00</td><td>82</td><td>95</td></tr>
+<tr><td>4.3</td><td>Effectiveness of Key Designs</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>noising disabled unless otherwise specified.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-masking-strategy"><span class="t-zh">掩码策略</span><span class="t-en">Masking Strategy</span></h3><div class="pblk" id="p-masking-strategy-1">
           <p class="en-lines"><span class="sent" data-sid="s-masking-strategy-1-1"><span class="en">Librispeech-PC test-clean SIM-o ↑ WER ↓ UTMOS ↑ SoundStorm-style mask</span></span></p>
@@ -867,7 +899,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-masking-strategy-3-1"><span class="zh">如表 5 所示，全码本随机掩码一致优于 MaskGCT 与 SoundStorm 所采用的单码本掩码策略。</span></span><span class="sent" data-sid="s-masking-strategy-3-2"><span class="zh">此外，我们还进行了一个只在单码本上计算损失的实验，结果同样出现显著的性能下降，证实了所提密集损失计算的优势。</span></span></p>
           
         </div>
-<div class="cap" id="tab-masking-strategy-1"><span class="cap-k">表</span><p class="en">Table 6: Impact of LLM initialization on WER across datasets. Abbreviations: Libri = LibrispeechPC test-clean, Seed-en = Seed-TTS test-en, Seed-zh = Seed-TTS test-zh.</p><p class="zh">表 6：LLM 初始化对各数据集 WER 的影响。缩写：Libri = LibriSpeech-PC test-clean，Seed-en = Seed-TTS test-en，Seed-zh = Seed-TTS test-zh。</p></div></section>
+<div class="cap" id="tab-masking-strategy-1"><span class="cap-k">表</span><p class="en">Table 6: Impact of LLM initialization on WER across datasets. Abbreviations: Libri = LibrispeechPC test-clean, Seed-en = Seed-TTS test-en, Seed-zh = Seed-TTS test-zh.</p><p class="zh">表 6：LLM 初始化对各数据集 WER 的影响。缩写：Libri = LibriSpeech-PC test-clean，Seed-en = Seed-TTS test-en，Seed-zh = Seed-TTS test-zh。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>WER ↓</th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Libri</th><th>Seed-en</th><th>Seed-zh</th></tr></thead><tbody><tr><td>LLM initialization</td><td>1e-4</td><td>1.57</td><td>1.72</td><td>0.89</td></tr>
+<tr><td></td><td>1e-4</td><td>2.79</td><td>2.34</td><td>1.11</td></tr>
+<tr><td></td><td>2e-4</td><td>2.52</td><td>2.43</td><td>1.01</td></tr>
+<tr><td>Random initialization</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>5e-4</td><td>2.56</td><td>2.07</td><td>1.01</td></tr>
+<tr><td></td><td>1e-3</td><td>2.72</td><td>2.29</td><td>1.02</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-5"><span class="t-zh">Model</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-5-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-5-1-1"><span class="en">Learning Rate WER ↓</span></span></p>
@@ -875,20 +912,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-libri"><span class="t-zh">Libri（表格碎块小节）</span><span class="t-en">Libri</span></h3><div class="pblk" id="p-libri-1">
-          <p class="en-lines"><span class="sent" data-sid="s-libri-1-1"><span class="en">Seed-en Seed-zh LLM initialization 1e-4</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-libri-1-1"><span class="zh">（表格：Seed-en/Seed-zh × LLM 初始化——1e-4：1.57/1.72/0.89；1e-4：2.79/2.34/1.11；2e-4：2.52/2.43/1.01；5e-4：2.56/2.07/1.01；1e-3：2.72/2.29/1.02；随机初始化（对照）。）我们用表 6 说明 LLM 初始化对高可懂度（低 WER）的重要性。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-libri-1"><code>1.57 1.72 0.89</code></div>
-<div class="eq" id="eq-libri-2"><code>1e-4</code></div>
-<div class="eq" id="eq-libri-3"><code>2.79 2.34 1.11</code></div>
-<div class="eq" id="eq-libri-4"><code>2e-4</code></div>
-<div class="eq" id="eq-libri-5"><code>2.52 2.43 1.01</code></div>
-<div class="eq" id="eq-libri-6"><code>5e-4</code></div>
-<div class="eq" id="eq-libri-7"><code>2.56 2.07 1.01</code></div>
-<div class="eq" id="eq-libri-8"><code>1e-3</code></div>
-<div class="eq" id="eq-libri-9"><code>2.72 2.29 1.02</code></div>
+      <h3 class="sech lv2" id="sec-libri"><span class="t-zh">Libri（表格碎块小节）</span><span class="t-en">Libri</span></h3>
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-libri-2">
           <p class="en-lines"><span class="sent" data-sid="s-libri-2-1"><span class="en">Random initialization We illustrate the importance of LLM initialization for high intelligibility (i.e., low WER) in Table 6.</span></span> <span class="sent" data-sid="s-libri-2-2"><span class="en">It can be observed that even after extensive learning rate tuning, the WERs of models without LLM initialization are still consistently higher than those of the model with LLM initialization, highlighting the importance of inheriting linguistic knowledge from pre-trained LLMs.</span><button class="mk feat" data-sid="s-libri-2-2" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-libri-2-1"><span class="zh">（表格：Seed-en/Seed-zh × LLM 初始化——1e-4：1.57/1.72/0.89；1e-4：2.79/2.34/1.11；2e-4：2.52/2.43/1.01；5e-4：2.56/2.07/1.01；1e-3：2.72/2.29/1.02；随机初始化（对照）。）我们用表 6 说明 LLM 初始化对高可懂度（低 WER）的重要性。</span></span><span class="sent" data-sid="s-libri-2-2"><span class="zh">可以观察到，即使经过充分的学习率调参，没有 LLM 初始化的模型 WER 仍一致高于有 LLM 初始化的模型，凸显了从预训练 LLM 继承语言知识的重要性。</span><button class="mk feat" data-sid="s-libri-2-2" title="查看讲解">解</button></span></p>
@@ -913,16 +946,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-libri-1"><span class="cap-k">表</span><p class="en">Table 7: Impact of prompt denoising task.</p><p class="zh">表 7：提示去噪任务的影响。</p></div></section>
+<div class="cap" id="tab-libri-1"><span class="cap-k">表</span><p class="en">Table 7: Impact of prompt denoising task.</p><p class="zh">表 7：提示去噪任务的影响。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Librispeech-PC test-clean</th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>SIM-o ↑</th><th></th><th>WER ↓</th><th>UTMOS ↑</th><th></th></tr></thead><tbody><tr><td>w/o prompt denoise</td><td></td><td>0.697</td><td>1.57</td><td></td><td>4.23</td></tr>
+<tr><td>w/ prompt denoise</td><td></td><td>0.668</td><td>1.56</td><td></td><td>4.32</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-model-6"><span class="t-zh">Model</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-6-1">
-          <p class="en-lines"><span class="sent" data-sid="s-model-6-1-1"><span class="en">Librispeech-PC test-clean SIM-o ↑ WER ↓ UTMOS ↑ w/o prompt denoise</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-model-6-1-1"><span class="zh">表头：Librispeech-PC test-clean × SIM-o ↑ / WER ↓ / UTMOS ↑——w/o prompt denoise（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-model-6-1"><code>0.697 1.57 4.23</code></div>
-<div class="eq" id="eq-model-6-2"><code>w/ prompt denoise</code></div>
-<div class="eq" id="eq-model-6-3"><code>0.668 1.56 4.32</code></div></section>
+      <h3 class="sech lv2" id="sec-model-6"><span class="t-zh">Model</span><span class="t-en">Model</span></h3>
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-4-3-1"><span class="secnum">4.3.1</span> <span class="t-zh">4.3.1 推理速度</span><span class="t-en">Inference Speed</span></h3><div class="pblk" id="p-4-3-1-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-1-1-1"><span class="en">We evaluate the inference speed of OmniVoice on an H20 GPU using PyTorch as the inference framework.</span></span> <span class="sent" data-sid="s-4-3-1-1-2"><span class="en">Following the identical experimental setup in [16, 14], we use a 3-second audio prompt to generate 10-second audio clips, and report the real-time factor (RTF) across different batch sizes and inference steps.</span></span> <span class="sent" data-sid="s-4-3-1-1-3"><span class="en">As shown in Table 8, OmniVoice achieves an RTF of 0.0319 with 16 inference steps and a batch size of 1, outperforming the corresponding results of ZipVoice (0.0557) with the same inference step configuration.</span><button class="mk feat" data-sid="s-4-3-1-1-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-3-1-1-4"><span class="en">Notably, OmniVoice also yields better generation quality in the same 16-step setting (shown in Appendix B).</span></span> <span class="sent" data-sid="s-4-3-1-1-5"><span class="en">When batch inference is employed, OmniVoice attains an even lower RTF of 0.022.</span></span> <span class="sent" data-sid="s-4-3-1-1-6"><span class="en">In addition, its inference efficiency can be further improved with acceleration techniques such as TensorRT.</span></span> <span class="sent" data-sid="s-4-3-1-1-7"><span class="en">These results demonstrate the high inference efficiency of OmniVoice.</span></span></p>
@@ -936,14 +966,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-4-3-1-1"><span class="cap-k">表</span><p class="en">Table 8: RTF with different inference steps and batch sizes.</p><p class="zh">表 8：不同推理步数与批大小下的 RTF。</p></div></section>
+<div class="cap" id="tab-4-3-1-1"><span class="cap-k">表</span><p class="en">Table 8: RTF with different inference steps and batch sizes.</p><p class="zh">表 8：不同推理步数与批大小下的 RTF。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th>Batch Size</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Inference Steps</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td>1</td><td></td><td>2</td><td></td><td>4</td><td></td><td>8</td></tr>
+<tr><td></td><td></td><td>16</td><td>0.0319</td><td></td><td>0.0263</td><td></td><td>0.0235</td><td></td><td>0.0224</td><td></td></tr>
+<tr><td></td><td></td><td>32</td><td>0.0598</td><td></td><td>0.0486</td><td></td><td>0.0436</td><td></td><td>0.0414</td><td></td></tr>
+<tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-inference-steps"><span class="t-zh">推理步数</span><span class="t-en">Inference Steps</span></h3><div class="pblk" id="p-inference-steps-1">
-          <p class="en-lines"><span class="sent" data-sid="s-inference-steps-1-1"><span class="en">Batch Size</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-inference-steps-1-1"><span class="zh">（图横轴：Batch Size（批大小）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-inference-steps-1"><code>1 2 4 8 16 0.0319 0.0263 0.0235 0.0224 32 0.0598 0.0486 0.0436 0.0414</code></div></section>
+      <h3 class="sech lv2" id="sec-inference-steps"><span class="t-zh">推理步数</span><span class="t-en">Inference Steps</span></h3>
+</section>
 <section>
       <h2 class="sech lv1" id="sec-5-2"><span class="secnum">5</span> <span class="t-zh">5 结论</span><span class="t-en">Conclusions</span></h2><div class="pblk" id="p-5-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-1-1"><span class="en">In this work, we introduce OmniVoice, a massively multilingual zero-shot TTS model supporting over 600 languages with SOTA performance, addressing the critical limitation of narrow language coverage in existing zero-shot TTS systems.</span></span> <span class="sent" data-sid="s-5-2-1-2"><span class="en">The core of OmniVoice is a novel diffusion language model-style single-stage discrete-token NAR framework, which directly maps text to multicodebook acoustic tokens to circumvent the inherent limitations of conventional two-stage models.</span></span> <span class="sent" data-sid="s-5-2-1-3"><span class="en">To unlock the full potential of this streamlined architecture, we propose a full-codebook random masking strategy to enhance training efficiency and LLM weight initialization to resolve the intelligibility challenge.</span></span> <span class="sent" data-sid="s-5-2-1-4"><span class="en">Trained on a 581k-hour multilingual dataset curated exclusively from opensource resources, OmniVoice achieves the broadest language coverage of zero-shot TTS models to date, delivers SOTA performance on Chinese, English and diverse multilingual benchmarks, exhibits exceptional generalization to low-resource languages, and is equipped with multi-dimensional controllability and high inference efficiency, marking a significant advance in expanding high-quality TTS capabilities to a broad spectrum of the world’s languages.</span></span></p>
@@ -1092,795 +1121,942 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-B-1-1"><span class="zh">在表 9 中，我们在中英文基准上评估了多语版 OmniVoice 模型在不同推理步数下的表现。</span></span></p>
           
         </div>
-<div class="cap" id="tab-B-1"><span class="cap-k">表</span><p class="en">Table 9: Objective evaluation results of OmniVoice with different inference steps.</p><p class="zh">表 9：OmniVoice 在不同推理步数下的客观评估结果。</p></div>
+<div class="cap" id="tab-B-1"><span class="cap-k">表</span><p class="en">Table 9: Objective evaluation results of OmniVoice with different inference steps.</p><p class="zh">表 9：OmniVoice 在不同推理步数下的客观评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>LibriSpeech-PC test-clean</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Steps</th><th></th><th>WER ↓</th><th></th><th>SIM-o ↑</th><th>WER ↓</th><th></th><th>SIM-o ↑</th><th>WER ↓</th><th></th></tr></thead><tbody><tr><td>64</td><td>0.729</td><td>1.28</td><td>4.30</td><td>0.742</td><td>1.60</td><td>3.92</td><td>0.777</td><td>0.81</td><td>3.13</td></tr>
+<tr><td>32</td><td>0.729</td><td>1.30</td><td>4.28</td><td>0.741</td><td>1.53</td><td>3.91</td><td>0.777</td><td>0.84</td><td>3.11</td></tr>
+<tr><td>16</td><td>0.728</td><td>1.50</td><td>4.23</td><td>0.735</td><td>1.72</td><td>3.92</td><td>0.773</td><td>0.99</td><td>3.00</td></tr>
+<tr><td>8</td><td>0.713</td><td>2.02</td><td>4.02</td><td>0.716</td><td>1.94</td><td>3.59</td><td>0.756</td><td>1.58</td><td>2.72</td></tr>
+<tr><td>2https://huggingface.co/datasets/capleaf/viVoice</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>3https://www.openslr.org/96/</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>4https://huggingface.co/datasets/Paradoxia/opendata-iisys-hui</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>5https://huggingface.co/datasets/adiren7/darija_speech_to_text</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>6https://huggingface.co/datasets/KandirResearch/DarijaTTS-clean</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>7https://huggingface.co/datasets/nadsoft/Jordan-Audio</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>8https://huggingface.co/datasets/AhmedBadawy11/UAE_100K</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-B-2">
           <p class="en-lines"><span class="sent" data-sid="s-B-2-1"><span class="en">LibriSpeech-PC test-clean Seed-TTS test-en Seed-TTS test-zh Steps SIM-o ↑ WER ↓ UTMOS ↑ SIM-o ↑ WER ↓ UTMOS ↑ SIM-o ↑ WER ↓ UTMOS ↑</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-2-1"><span class="zh">表头：LibriSpeech-PC test-clean / Seed-TTS test-en / Seed-TTS test-zh × Steps（SIM-o ↑ / WER ↓ / UTMOS ↑ 各组）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-B-1"><code>64 0.729 1.28 4.30 0.742 1.60 3.92 0.777 0.81 3.13 32 0.729 1.30 4.28 0.741 1.53 3.91 0.777 0.84 3.11 16 0.728 1.50 4.23 0.735 1.72 3.92 0.773 0.99 3.00 8 0.713 2.02 4.02 0.716 1.94 3.59 0.756 1.58 2.72</code></div>
-<div class="pblk" id="p-B-3">
-          <p class="en-lines"><span class="sent" data-sid="s-B-3-1"><span class="en">2https://huggingface.co/datasets/capleaf/viVoice 3https://www.openslr.org/96/ 4https://huggingface.co/datasets/Paradoxia/opendata-iisys-hui 5https://huggingface.co/datasets/adiren7/darija_speech_to_text 6https://huggingface.co/datasets/KandirResearch/DarijaTTS-clean 7https://huggingface.co/datasets/nadsoft/Jordan-Audio 8https://huggingface.co/datasets/AhmedBadawy11/UAE_100K</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-3-1"><span class="zh">（脚注 2：https://huggingface.co/datasets/capleaf/viVoice；3：https://www.openslr.org/96/；4：https://huggingface.co/datasets/Paradoxia/opendata-iisys-hui；5：https://huggingface.co/datasets/adiren7/darija_speech_to_text；6：https://huggingface.co/datasets/KandirResearch/DarijaTTS-clean；7：https://huggingface.co/datasets/nadsoft/Jordan-Audio；8：https://huggingface.co/datasets/AhmedBadawy11/UAE_100K）</span></span></p>
-          
-        </div></section>
+
+</section>
 <section>
       <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">附录 C FLEURS-Multilingual-102 详细结果</span><span class="t-en">Detailed Results on FLEURS-Multilingual-102</span></h2><div class="pblk" id="p-C-1">
           <p class="en-lines"><span class="sent" data-sid="s-C-1-1"><span class="en">Per-language CERs of of ground-truth and OmniVoice on FLEURS-Multilingual-102 is shown in Fig. 4.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-C-1-1"><span class="zh">真实语音与 OmniVoice 在 FLEURS-Multilingual-102 上的逐语言 CER 如图 4 所示。</span></span></p>
           
         </div>
-<div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 10: Per-language CERs of ground-truth and OmniVoice on FLEURS-Multilingual-102</p><p class="zh">表 10：真实语音与 OmniVoice 在 FLEURS-Multilingual-102 上的逐语言 CER。</p></div></section>
+<div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 10: Per-language CERs of ground-truth and OmniVoice on FLEURS-Multilingual-102</p><p class="zh">表 10：真实语音与 OmniVoice 在 FLEURS-Multilingual-102 上的逐语言 CER。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Language</th><th></th><th></th><th>Language</th><th></th><th></th></tr></thead><tbody><tr><td>Afrikaans</td><td>3.54</td><td>3.08</td><td>Amharic</td><td>4.98</td><td>7.30</td></tr>
+<tr><td>Armenian</td><td>1.38</td><td>1.45</td><td>Assamese</td><td>5.29</td><td>3.92</td></tr>
+<tr><td>Asturian</td><td>3.79</td><td>2.07</td><td>Azerbaijani</td><td>2.60</td><td>3.20</td></tr>
+<tr><td>Belarusian</td><td>1.80</td><td>1.00</td><td>Bengali</td><td>4.10</td><td>3.08</td></tr>
+<tr><td>Bosnian</td><td>1.61</td><td>0.66</td><td>Bulgarian</td><td>1.66</td><td>0.87</td></tr>
+<tr><td>Burmese</td><td>6.77</td><td>12.20</td><td>Cantonese</td><td>11.01</td><td>21.92</td></tr>
+<tr><td>Catalan</td><td>1.17</td><td>0.86</td><td>Cebuano</td><td>1.74</td><td>1.81</td></tr>
+<tr><td></td><td>3.92</td><td>2.97</td><td>Chichewa</td><td>4.63</td><td>3.32</td></tr>
+<tr><td>Chinese</td><td>5.54</td><td>3.16</td><td>Croatian</td><td>4.64</td><td>0.93</td></tr>
+<tr><td>Czech</td><td>2.19</td><td>1.21</td><td>Danish</td><td>2.86</td><td>1.79</td></tr>
+<tr><td>Dutch</td><td>2.01</td><td>1.87</td><td>English</td><td>2.63</td><td>1.67</td></tr>
+<tr><td>Estonian</td><td>0.97</td><td>1.03</td><td>Filipino</td><td>2.34</td><td>1.24</td></tr>
+<tr><td>Finnish</td><td>1.60</td><td>1.46</td><td>French</td><td>2.13</td><td>1.95</td></tr>
+<tr><td>Fulah</td><td>12.33</td><td>7.70</td><td>Galician</td><td>1.52</td><td>1.03</td></tr>
+<tr><td>Ganda</td><td>7.87</td><td>6.60</td><td>Georgian</td><td>1.78</td><td>1.83</td></tr>
+<tr><td>German</td><td>2.22</td><td>1.35</td><td>Greek</td><td>2.31</td><td>1.57</td></tr>
+<tr><td>Gujarati</td><td>3.06</td><td>2.74</td><td>Hausa</td><td>5.14</td><td>3.03</td></tr>
+<tr><td>Hebrew</td><td>4.91</td><td>9.75</td><td>Hindi</td><td>2.54</td><td>2.64</td></tr>
+<tr><td>Hungarian</td><td>1.75</td><td>1.04</td><td>Icelandic</td><td>2.82</td><td>3.77</td></tr>
+<tr><td>Igbo</td><td>7.75</td><td>7.40</td><td>Indonesian</td><td>1.87</td><td>2.95</td></tr>
+<tr><td>Irish</td><td>17.56</td><td>8.52</td><td>Italian</td><td>1.27</td><td>1.56</td></tr>
+<tr><td>Japanese</td><td>7.70</td><td>5.96</td><td>Javanese</td><td>3.17</td><td>2.80</td></tr>
+<tr><td></td><td>3.29</td><td>2.10</td><td>Kamba</td><td>8.81</td><td>10.42</td></tr>
+<tr><td>Kannada</td><td>2.84</td><td>2.70</td><td>Kazakh</td><td>2.01</td><td>3.11</td></tr>
+<tr><td>Khmer</td><td>6.20</td><td>11.48</td><td>Kirghiz</td><td>2.33</td><td>1.80</td></tr>
+<tr><td>Korean</td><td>3.72</td><td>3.78</td><td>Lao</td><td>22.87</td><td>25.51</td></tr>
+<tr><td>Latvian</td><td>1.87</td><td>1.55</td><td>Lingala</td><td>2.36</td><td>1.68</td></tr>
+<tr><td></td><td>2.98</td><td>2.05</td><td>Luo</td><td>3.58</td><td>3.37</td></tr>
+<tr><td></td><td>5.48</td><td>4.52</td><td></td><td>1.05</td><td>0.89</td></tr>
+<tr><td>Malay</td><td>1.59</td><td>1.19</td><td>Malayalam</td><td>2.99</td><td>3.40</td></tr>
+<tr><td>Maltese</td><td>2.01</td><td>3.65</td><td>Maori</td><td>4.90</td><td>1.98</td></tr>
+<tr><td>Marathi</td><td>5.02</td><td>2.76</td><td>Mongolian</td><td>4.78</td><td>4.26</td></tr>
+<tr><td>Nepali</td><td>4.76</td><td>3.43</td><td></td><td>1.50</td><td>1.14</td></tr>
+<tr><td>Occitan</td><td>9.63</td><td>6.99</td><td>Odia</td><td>5.77</td><td>5.53</td></tr>
+<tr><td>Oromo</td><td>12.50</td><td>4.97</td><td>Panjabi</td><td>5.76</td><td>2.95</td></tr>
+<tr><td>Pedi</td><td>4.88</td><td>4.44</td><td>Persian</td><td>1.57</td><td>1.90</td></tr>
+<tr><td>Polish</td><td>1.14</td><td>0.61</td><td>Portuguese</td><td>1.45</td><td>1.22</td></tr>
+<tr><td>Pushto</td><td>11.42</td><td>5.53</td><td>Romanian</td><td>2.15</td><td>0.94</td></tr>
+<tr><td>Russian</td><td>1.68</td><td>1.10</td><td>Serbian</td><td>1.36</td><td>0.82</td></tr>
+<tr><td>Shona</td><td>4.07</td><td>1.80</td><td>Sindhi</td><td>5.51</td><td>3.26</td></tr>
+<tr><td>Slovak</td><td>2.76</td><td>0.85</td><td>Slovenian</td><td>2.40</td><td>1.20</td></tr>
+<tr><td>Somali</td><td>10.13</td><td>4.86</td><td>Spanish</td><td>1.08</td><td>0.77</td></tr>
+<tr><td></td><td>2.58</td><td>1.92</td><td>Swahili</td><td>2.41</td><td>1.37</td></tr>
+<tr><td>Swedish</td><td>2.14</td><td>1.43</td><td>Tajik</td><td>3.17</td><td>2.36</td></tr>
+<tr><td>Tamil</td><td>4.00</td><td>3.77</td><td>Telugu</td><td>4.51</td><td>3.77</td></tr>
+<tr><td>Thai</td><td>6.98</td><td>7.71</td><td>Turkish</td><td>1.94</td><td>2.71</td></tr>
+<tr><td>Ukrainian</td><td>1.45</td><td>1.23</td><td>Umbundu</td><td>6.97</td><td>5.44</td></tr>
+<tr><td>Urdu</td><td>80.27</td><td>28.73</td><td>Uzbek</td><td>3.31</td><td>2.23</td></tr>
+<tr><td></td><td>3.49</td><td>2.63</td><td>Welsh</td><td>3.91</td><td>3.37</td></tr>
+<tr><td>Wolof</td><td>12.17</td><td>6.87</td><td>Xhosa</td><td>3.62</td><td>3.83</td></tr>
+<tr><td>Yoruba</td><td>17.97</td><td>21.37</td><td>Zulu</td><td>3.33</td><td>2.03</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-language"><span class="t-zh">Language</span><span class="t-en">Language</span></h3><div class="pblk" id="p-language-1">
           <p class="en-lines"><span class="sent" data-sid="s-language-1-1"><span class="en">Ground-truth OmniVoice Language Ground-truth OmniVoice Afrikaans</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-language-1-1"><span class="zh">表头：Ground-truth / OmniVoice × Language——Afrikaans（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-language-1"><code>3.54 3.08</code></div>
-<div class="eq" id="eq-language-2"><code>Amharic</code></div>
-<div class="eq" id="eq-language-3"><code>4.98 7.30</code></div>
-<div class="eq" id="eq-language-4"><code>Armenian</code></div>
-<div class="eq" id="eq-language-5"><code>1.38 1.45</code></div>
-<div class="eq" id="eq-language-6"><code>Assamese</code></div>
-<div class="eq" id="eq-language-7"><code>5.29 3.92</code></div>
-<div class="eq" id="eq-language-8"><code>Asturian</code></div>
-<div class="eq" id="eq-language-9"><code>3.79 2.07</code></div>
-<div class="eq" id="eq-language-10"><code>Azerbaijani</code></div>
-<div class="eq" id="eq-language-11"><code>2.60 3.20</code></div>
-<div class="eq" id="eq-language-12"><code>Belarusian</code></div>
-<div class="eq" id="eq-language-13"><code>1.80 1.00</code></div>
-<div class="eq" id="eq-language-14"><code>Bengali</code></div>
-<div class="eq" id="eq-language-15"><code>4.10 3.08</code></div>
-<div class="eq" id="eq-language-16"><code>Bosnian</code></div>
-<div class="eq" id="eq-language-17"><code>1.61 0.66</code></div>
-<div class="eq" id="eq-language-18"><code>Bulgarian</code></div>
-<div class="eq" id="eq-language-19"><code>1.66 0.87</code></div>
-<div class="eq" id="eq-language-20"><code>Burmese</code></div>
-<div class="eq" id="eq-language-21"><code>6.77 12.20</code></div>
-<div class="eq" id="eq-language-22"><code>Cantonese</code></div>
-<div class="eq" id="eq-language-23"><code>11.01 21.92</code></div>
-<div class="eq" id="eq-language-24"><code>Catalan</code></div>
-<div class="eq" id="eq-language-25"><code>1.17 0.86</code></div>
-<div class="eq" id="eq-language-26"><code>Cebuano</code></div>
-<div class="eq" id="eq-language-27"><code>1.74 1.81</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-language-28"><code>Central Kurdish</code></div>
-<div class="eq" id="eq-language-29"><code>3.92 2.97</code></div>
-<div class="eq" id="eq-language-30"><code>Chichewa</code></div>
-<div class="eq" id="eq-language-31"><code>4.63 3.32</code></div>
-<div class="eq" id="eq-language-32"><code>Chinese</code></div>
-<div class="eq" id="eq-language-33"><code>5.54 3.16</code></div>
-<div class="eq" id="eq-language-34"><code>Croatian</code></div>
-<div class="eq" id="eq-language-35"><code>4.64 0.93</code></div>
-<div class="eq" id="eq-language-36"><code>Czech</code></div>
-<div class="eq" id="eq-language-37"><code>2.19 1.21</code></div>
-<div class="eq" id="eq-language-38"><code>Danish</code></div>
-<div class="eq" id="eq-language-39"><code>2.86 1.79</code></div>
-<div class="eq" id="eq-language-40"><code>Dutch</code></div>
-<div class="eq" id="eq-language-41"><code>2.01 1.87</code></div>
-<div class="eq" id="eq-language-42"><code>English</code></div>
-<div class="eq" id="eq-language-43"><code>2.63 1.67</code></div>
-<div class="eq" id="eq-language-44"><code>Estonian</code></div>
-<div class="eq" id="eq-language-45"><code>0.97 1.03</code></div>
-<div class="eq" id="eq-language-46"><code>Filipino</code></div>
-<div class="eq" id="eq-language-47"><code>2.34 1.24</code></div>
-<div class="eq" id="eq-language-48"><code>Finnish</code></div>
-<div class="eq" id="eq-language-49"><code>1.60 1.46</code></div>
-<div class="eq" id="eq-language-50"><code>French</code></div>
-<div class="eq" id="eq-language-51"><code>2.13 1.95</code></div>
-<div class="eq" id="eq-language-52"><code>Fulah</code></div>
-<div class="eq" id="eq-language-53"><code>12.33 7.70</code></div>
-<div class="eq" id="eq-language-54"><code>Galician</code></div>
-<div class="eq" id="eq-language-55"><code>1.52 1.03</code></div>
-<div class="eq" id="eq-language-56"><code>Ganda</code></div>
-<div class="eq" id="eq-language-57"><code>7.87 6.60</code></div>
-<div class="eq" id="eq-language-58"><code>Georgian</code></div>
-<div class="eq" id="eq-language-59"><code>1.78 1.83</code></div>
-<div class="eq" id="eq-language-60"><code>German</code></div>
-<div class="eq" id="eq-language-61"><code>2.22 1.35</code></div>
-<div class="eq" id="eq-language-62"><code>Greek</code></div>
-<div class="eq" id="eq-language-63"><code>2.31 1.57</code></div>
-<div class="eq" id="eq-language-64"><code>Gujarati</code></div>
-<div class="eq" id="eq-language-65"><code>3.06 2.74</code></div>
-<div class="eq" id="eq-language-66"><code>Hausa</code></div>
-<div class="eq" id="eq-language-67"><code>5.14 3.03</code></div>
-<div class="eq" id="eq-language-68"><code>Hebrew</code></div>
-<div class="eq" id="eq-language-69"><code>4.91 9.75</code></div>
-<div class="eq" id="eq-language-70"><code>Hindi</code></div>
-<div class="eq" id="eq-language-71"><code>2.54 2.64</code></div>
-<div class="eq" id="eq-language-72"><code>Hungarian</code></div>
-<div class="eq" id="eq-language-73"><code>1.75 1.04</code></div>
-<div class="eq" id="eq-language-74"><code>Icelandic</code></div>
-<div class="eq" id="eq-language-75"><code>2.82 3.77</code></div>
-<div class="eq" id="eq-language-76"><code>Igbo</code></div>
-<div class="eq" id="eq-language-77"><code>7.75 7.40</code></div>
-<div class="eq" id="eq-language-78"><code>Indonesian</code></div>
-<div class="eq" id="eq-language-79"><code>1.87 2.95</code></div>
-<div class="eq" id="eq-language-80"><code>Irish</code></div>
-<div class="eq" id="eq-language-81"><code>17.56 8.52</code></div>
-<div class="eq" id="eq-language-82"><code>Italian</code></div>
-<div class="eq" id="eq-language-83"><code>1.27 1.56</code></div>
-<div class="eq" id="eq-language-84"><code>Japanese</code></div>
-<div class="eq" id="eq-language-85"><code>7.70 5.96</code></div>
-<div class="eq" id="eq-language-86"><code>Javanese</code></div>
-<div class="eq" id="eq-language-87"><code>3.17 2.80</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-language-88"><code>Kabuverdianu</code></div>
-<div class="eq" id="eq-language-89"><code>3.29 2.10</code></div>
-<div class="eq" id="eq-language-90"><code>Kamba</code></div>
-<div class="eq" id="eq-language-91"><code>8.81 10.42</code></div>
-<div class="eq" id="eq-language-92"><code>Kannada</code></div>
-<div class="eq" id="eq-language-93"><code>2.84 2.70</code></div>
-<div class="eq" id="eq-language-94"><code>Kazakh</code></div>
-<div class="eq" id="eq-language-95"><code>2.01 3.11</code></div>
-<div class="eq" id="eq-language-96"><code>Khmer</code></div>
-<div class="eq" id="eq-language-97"><code>6.20 11.48</code></div>
-<div class="eq" id="eq-language-98"><code>Kirghiz</code></div>
-<div class="eq" id="eq-language-99"><code>2.33 1.80</code></div>
-<div class="eq" id="eq-language-100"><code>Korean</code></div>
-<div class="eq" id="eq-language-101"><code>3.72 3.78</code></div>
-<div class="eq" id="eq-language-102"><code>Lao</code></div>
-<div class="eq" id="eq-language-103"><code>22.87 25.51</code></div>
-<div class="eq" id="eq-language-104"><code>Latvian</code></div>
-<div class="eq" id="eq-language-105"><code>1.87 1.55</code></div>
-<div class="eq" id="eq-language-106"><code>Lingala</code></div>
-<div class="eq" id="eq-language-107"><code>2.36 1.68</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-language-108"><code>Lithuanian</code></div>
-<div class="eq" id="eq-language-109"><code>2.98 2.05</code></div>
-<div class="eq" id="eq-language-110"><code>Luo</code></div>
-<div class="eq" id="eq-language-111"><code>3.58 3.37</code></div>
+
+
+
 <div class="eq" id="eq-language-112"><code>Luxembourgish</code></div>
-<div class="eq" id="eq-language-113"><code>5.48 4.52</code></div>
+
 <div class="eq" id="eq-language-114"><code>Macedonian</code></div>
-<div class="eq" id="eq-language-115"><code>1.05 0.89</code></div>
-<div class="eq" id="eq-language-116"><code>Malay</code></div>
-<div class="eq" id="eq-language-117"><code>1.59 1.19</code></div>
-<div class="eq" id="eq-language-118"><code>Malayalam</code></div>
-<div class="eq" id="eq-language-119"><code>2.99 3.40</code></div>
-<div class="eq" id="eq-language-120"><code>Maltese</code></div>
-<div class="eq" id="eq-language-121"><code>2.01 3.65</code></div>
-<div class="eq" id="eq-language-122"><code>Maori</code></div>
-<div class="eq" id="eq-language-123"><code>4.90 1.98</code></div>
-<div class="eq" id="eq-language-124"><code>Marathi</code></div>
-<div class="eq" id="eq-language-125"><code>5.02 2.76</code></div>
-<div class="eq" id="eq-language-126"><code>Mongolian</code></div>
-<div class="eq" id="eq-language-127"><code>4.78 4.26</code></div>
-<div class="eq" id="eq-language-128"><code>Nepali</code></div>
-<div class="eq" id="eq-language-129"><code>4.76 3.43</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-language-130"><code>Norwegian Bokmål</code></div>
-<div class="eq" id="eq-language-131"><code>1.50 1.14</code></div>
-<div class="eq" id="eq-language-132"><code>Occitan</code></div>
-<div class="eq" id="eq-language-133"><code>9.63 6.99</code></div>
-<div class="eq" id="eq-language-134"><code>Odia</code></div>
-<div class="eq" id="eq-language-135"><code>5.77 5.53</code></div>
-<div class="eq" id="eq-language-136"><code>Oromo</code></div>
-<div class="eq" id="eq-language-137"><code>12.50 4.97</code></div>
-<div class="eq" id="eq-language-138"><code>Panjabi</code></div>
-<div class="eq" id="eq-language-139"><code>5.76 2.95</code></div>
-<div class="eq" id="eq-language-140"><code>Pedi</code></div>
-<div class="eq" id="eq-language-141"><code>4.88 4.44</code></div>
-<div class="eq" id="eq-language-142"><code>Persian</code></div>
-<div class="eq" id="eq-language-143"><code>1.57 1.90</code></div>
-<div class="eq" id="eq-language-144"><code>Polish</code></div>
-<div class="eq" id="eq-language-145"><code>1.14 0.61</code></div>
-<div class="eq" id="eq-language-146"><code>Portuguese</code></div>
-<div class="eq" id="eq-language-147"><code>1.45 1.22</code></div>
-<div class="eq" id="eq-language-148"><code>Pushto</code></div>
-<div class="eq" id="eq-language-149"><code>11.42 5.53</code></div>
-<div class="eq" id="eq-language-150"><code>Romanian</code></div>
-<div class="eq" id="eq-language-151"><code>2.15 0.94</code></div>
-<div class="eq" id="eq-language-152"><code>Russian</code></div>
-<div class="eq" id="eq-language-153"><code>1.68 1.10</code></div>
-<div class="eq" id="eq-language-154"><code>Serbian</code></div>
-<div class="eq" id="eq-language-155"><code>1.36 0.82</code></div>
-<div class="eq" id="eq-language-156"><code>Shona</code></div>
-<div class="eq" id="eq-language-157"><code>4.07 1.80</code></div>
-<div class="eq" id="eq-language-158"><code>Sindhi</code></div>
-<div class="eq" id="eq-language-159"><code>5.51 3.26</code></div>
-<div class="eq" id="eq-language-160"><code>Slovak</code></div>
-<div class="eq" id="eq-language-161"><code>2.76 0.85</code></div>
-<div class="eq" id="eq-language-162"><code>Slovenian</code></div>
-<div class="eq" id="eq-language-163"><code>2.40 1.20</code></div>
-<div class="eq" id="eq-language-164"><code>Somali</code></div>
-<div class="eq" id="eq-language-165"><code>10.13 4.86</code></div>
-<div class="eq" id="eq-language-166"><code>Spanish</code></div>
-<div class="eq" id="eq-language-167"><code>1.08 0.77</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-language-168"><code>Standard Arabic</code></div>
-<div class="eq" id="eq-language-169"><code>2.58 1.92</code></div>
-<div class="eq" id="eq-language-170"><code>Swahili</code></div>
-<div class="eq" id="eq-language-171"><code>2.41 1.37</code></div>
-<div class="eq" id="eq-language-172"><code>Swedish</code></div>
-<div class="eq" id="eq-language-173"><code>2.14 1.43</code></div>
-<div class="eq" id="eq-language-174"><code>Tajik</code></div>
-<div class="eq" id="eq-language-175"><code>3.17 2.36</code></div>
-<div class="eq" id="eq-language-176"><code>Tamil</code></div>
-<div class="eq" id="eq-language-177"><code>4.00 3.77</code></div>
-<div class="eq" id="eq-language-178"><code>Telugu</code></div>
-<div class="eq" id="eq-language-179"><code>4.51 3.77</code></div>
-<div class="eq" id="eq-language-180"><code>Thai</code></div>
-<div class="eq" id="eq-language-181"><code>6.98 7.71</code></div>
-<div class="eq" id="eq-language-182"><code>Turkish</code></div>
-<div class="eq" id="eq-language-183"><code>1.94 2.71</code></div>
-<div class="eq" id="eq-language-184"><code>Ukrainian</code></div>
-<div class="eq" id="eq-language-185"><code>1.45 1.23</code></div>
-<div class="eq" id="eq-language-186"><code>Umbundu</code></div>
-<div class="eq" id="eq-language-187"><code>6.97 5.44</code></div>
-<div class="eq" id="eq-language-188"><code>Urdu</code></div>
-<div class="eq" id="eq-language-189"><code>80.27 28.73</code></div>
-<div class="eq" id="eq-language-190"><code>Uzbek</code></div>
-<div class="eq" id="eq-language-191"><code>3.31 2.23</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-language-192"><code>Vietnamese</code></div>
-<div class="eq" id="eq-language-193"><code>3.49 2.63</code></div>
-<div class="eq" id="eq-language-194"><code>Welsh</code></div>
-<div class="eq" id="eq-language-195"><code>3.91 3.37</code></div>
-<div class="eq" id="eq-language-196"><code>Wolof</code></div>
-<div class="eq" id="eq-language-197"><code>12.17 6.87</code></div>
-<div class="eq" id="eq-language-198"><code>Xhosa</code></div>
-<div class="eq" id="eq-language-199"><code>3.62 3.83</code></div>
-<div class="eq" id="eq-language-200"><code>Yoruba</code></div>
-<div class="eq" id="eq-language-201"><code>17.97 21.37</code></div>
-<div class="eq" id="eq-language-202"><code>Zulu</code></div>
-<div class="eq" id="eq-language-203"><code>3.33 2.03</code></div></section>
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h2 class="sech lv1" id="sec-D"><span class="secnum">D</span> <span class="t-zh">附录 D OmniVoice 支持的语言</span><span class="t-en">Supported Languages of OmniVoice</span></h2><div class="pblk" id="p-D-1">
           <p class="en-lines"><span class="sent" data-sid="s-D-1-1"><span class="en">OmniVoice supports 646 languages with a total of 581k hours of training data.</span></span> <span class="sent" data-sid="s-D-1-2"><span class="en">Detailed language, along with its OmniVoice language ID, ISO 639-3 code, and training data duration are shown in Table 11.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-1-1"><span class="zh">OmniVoice 支持 646 种语言，训练数据总量为 581k 小时。</span></span><span class="sent" data-sid="s-D-1-2"><span class="zh">每种语言的详细信息——包括其 OmniVoice 语言 ID、ISO 639-3 代码与训练数据时长——见表 11。</span></span></p>
           
         </div>
-<div class="cap" id="tab-D-1"><span class="cap-k">表</span><p class="en">Table 11: Supported languages of OmniVoice along with its OmniVoice language ID, ISO 639-3 code, and training data duration (hours).</p><p class="zh">表 11：OmniVoice 支持的语言，附其 OmniVoice 语言 ID、ISO 639-3 代码与训练数据时长（小时）。</p></div>
+<div class="cap" id="tab-D-1"><span class="cap-k">表</span><p class="en">Table 11: Supported languages of OmniVoice along with its OmniVoice language ID, ISO 639-3 code, and training data duration (hours).</p><p class="zh">表 11：OmniVoice 支持的语言，附其 OmniVoice 语言 ID、ISO 639-3 代码与训练数据时长（小时）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Language</th><th>ID</th><th>ISO</th><th>Hours</th><th>Language</th><th></th><th>ID</th><th>ISO</th><th>Hours</th><th>Language</th><th>ID</th><th>ISO</th><th>Hours</th></tr></thead><tbody><tr><td>Abadi</td><td>kbt</td><td>kbt</td><td>9.73</td><td>Abkhazian</td><td></td><td>ab</td><td>abk</td><td>57.27</td><td>Abron</td><td>abr</td><td>abr</td><td>9.22</td></tr>
+<tr><td>Abua</td><td>abn</td><td>abn</td><td>10.27</td><td></td><td></td><td>fub</td><td>fub</td><td>13.12</td><td>Adyghe</td><td>ady</td><td>ady</td><td>32.6</td></tr>
+<tr><td>Afade</td><td>aal</td><td>aal</td><td>10.19</td><td></td><td>Afrikaans</td><td>af</td><td>afr</td><td>4.4</td><td>Agwagwune</td><td>yay</td><td>yay</td><td>8.26</td></tr>
+<tr><td>Aja (Benin)</td><td>ajg</td><td>ajg</td><td>5.63</td><td></td><td>Akebu</td><td>keu keu</td><td></td><td>9.1</td><td>Alago</td><td>ala</td><td>ala</td><td>11.04</td></tr>
+<tr><td>Albanian</td><td>sq</td><td>sqi</td><td>8.59</td><td>Algerian Arabic</td><td></td><td>arq</td><td>arq</td><td>9.64</td><td></td><td>aao</td><td>aao</td><td>2.02</td></tr>
+<tr><td></td><td>qva</td><td>qva</td><td>9.59</td><td>Ambonese Malay</td><td></td><td>abs</td><td>abs</td><td>10.03</td><td>Amdo Tibetan</td><td>adx</td><td>adx</td><td>56.94</td></tr>
+<tr><td>Amharic</td><td>am</td><td>amh</td><td>12.83</td><td></td><td>Anaang</td><td>anw anw</td><td></td><td>9.65</td><td>Angika</td><td>anp</td><td>anp</td><td>10.65</td></tr>
+<tr><td></td><td>xmv xmv</td><td></td><td>17.9</td><td>Aragonese</td><td></td><td>an</td><td>arg</td><td>16.4</td><td></td><td>aae</td><td>aae</td><td>6.11</td></tr>
+<tr><td></td><td>qxu</td><td>qxu</td><td>10.12</td><td></td><td>Armenian</td><td>hy</td><td>hye</td><td>42.15</td><td>Ashe</td><td>ahs</td><td>ahs</td><td>10.62</td></tr>
+<tr><td></td><td>prq</td><td>prq</td><td>7.16</td><td></td><td>Askopan</td><td>eiv</td><td>eiv</td><td>10.44</td><td>Assamese</td><td>as</td><td>asm</td><td>270.85</td></tr>
+<tr><td>Asturian</td><td>ast</td><td>ast</td><td>8.48</td><td></td><td>Atayal</td><td>tay</td><td>tay</td><td>7.02</td><td>Awak</td><td>awo awo</td><td></td><td>10.22</td></tr>
+<tr><td></td><td>quy</td><td>quy</td><td>0.05</td><td>Azerbaijani</td><td></td><td>az</td><td>aze</td><td>9.84</td><td>Baatonum</td><td>bba</td><td>bba</td><td>10.53</td></tr>
+<tr><td>Bacama</td><td>bcy</td><td>bcy</td><td>9.94</td><td></td><td>Bade</td><td>bde bde</td><td></td><td>9.89</td><td>Bafia</td><td>ksf</td><td>ksf</td><td>16.43</td></tr>
+<tr><td>Bafut</td><td>bfd</td><td>bfd</td><td>9.03</td><td>Bagirmi Fulfulde</td><td></td><td>fui</td><td>fui</td><td>15.04</td><td>Bago-Kusuntu</td><td>bqg</td><td>bqg</td><td>8.86</td></tr>
+<tr><td></td><td>abv</td><td>abv</td><td>10.41</td><td></td><td>Bakoko</td><td>bkh bkh</td><td></td><td>6.0</td><td>Balanta-Ganja</td><td>bjt</td><td>bjt</td><td>9.41</td></tr>
+<tr><td>Balti</td><td>bft</td><td>bft</td><td>16.28</td><td>Bamenyam</td><td></td><td>bce</td><td>bce</td><td>9.9</td><td>Bamun</td><td>bax</td><td>bax</td><td>10.24</td></tr>
+<tr><td>Bangwinji</td><td>bsj</td><td>bsj</td><td>10.0</td><td></td><td>Banjar</td><td>bjn</td><td>bjn</td><td>11.68</td><td>Bankon</td><td>abb</td><td>abb</td><td>11.2</td></tr>
+<tr><td>Baoulé</td><td>bci</td><td>bci</td><td>10.21</td><td>Bara Malagasy</td><td></td><td>bhr</td><td>bhr</td><td>12.14</td><td>Barok</td><td>bjk</td><td>bjk</td><td>10.16</td></tr>
+<tr><td></td><td>bas</td><td>bas</td><td>10.66</td><td>Basa (Nigeria)</td><td></td><td>bzw bzw</td><td></td><td>10.27</td><td>Bashkir</td><td>ba</td><td>bak</td><td>249.1</td></tr>
+<tr><td>Basque</td><td>eu</td><td>eus</td><td>479.86</td><td>Batak Mandailing</td><td></td><td>btm btm</td><td></td><td>11.09</td><td>Batanga</td><td>bnm bnm</td><td></td><td>15.01</td></tr>
+<tr><td>Bateri</td><td>btv</td><td>btv</td><td>9.8</td><td></td><td>Bats</td><td>bbl</td><td>bbl</td><td>11.22</td><td>Bayot</td><td>bda</td><td>bda</td><td>9.47</td></tr>
+<tr><td>Bebele</td><td>beb</td><td>beb</td><td>7.52</td><td>Belarusian</td><td></td><td>be</td><td>bel</td><td>1809.43</td><td>Bengali</td><td>bn</td><td>ben</td><td>271.76</td></tr>
+<tr><td>Betawi</td><td>bew bew</td><td></td><td>11.15</td><td></td><td>Bhili</td><td>bhb bhb</td><td></td><td>9.98</td><td>Bhojpuri</td><td>bho</td><td>bho</td><td>10.05</td></tr>
+<tr><td>Bilur</td><td>bxf</td><td>bxf</td><td>10.84</td><td></td><td>Bima</td><td>bhp bhp</td><td></td><td>10.67</td><td>Bodo</td><td>brx</td><td>brx</td><td>231.57</td></tr>
+<tr><td>Boghom</td><td>bux</td><td>bux</td><td>10.48</td><td></td><td>Bokyi</td><td>bky bky</td><td></td><td>9.85</td><td>Bomu</td><td>bmq bmq</td><td></td><td>10.68</td></tr>
+<tr><td>Bondei</td><td>bou</td><td>bou</td><td>9.98</td><td>Borgu Fulfulde</td><td></td><td>fue</td><td>fue</td><td>20.1</td><td>Bosnian</td><td>bs</td><td>bos</td><td>690.73</td></tr>
+<tr><td>Brahui</td><td>brh</td><td>brh</td><td>19.89</td><td></td><td>Braj</td><td>bra</td><td>bra</td><td>10.68</td><td>Breton</td><td>br</td><td>bre</td><td>25.48</td></tr>
+<tr><td>Buduma</td><td>bdm bdm</td><td></td><td>10.17</td><td></td><td>Buginese</td><td>bug bug</td><td></td><td>11.09</td><td>Bukharic</td><td>bhh</td><td>bhh</td><td>11.38</td></tr>
+<tr><td>Bulgarian</td><td>bg</td><td>bul</td><td>2190.76</td><td>Bulu (Cameroon)</td><td></td><td>bum bum</td><td></td><td>9.06</td><td>Bundeli</td><td>bns</td><td>bns</td><td>10.88</td></tr>
+<tr><td>Bunun</td><td>bnn</td><td>bnn</td><td>9.26</td><td>Bura-Pabir</td><td></td><td>bwr bwr</td><td></td><td>10.4</td><td>Burak</td><td>bys</td><td>bys</td><td>9.92</td></tr>
+<tr><td>Burmese</td><td>my</td><td>mya</td><td>12.14</td><td>Burushaski</td><td></td><td>bsk</td><td>bsk</td><td>9.14</td><td></td><td>miu</td><td>miu</td><td>9.18</td></tr>
+<tr><td></td><td>qvl</td><td>qvl</td><td>9.95</td><td>Cakfem-Mushere</td><td></td><td>cky cky</td><td></td><td>8.96</td><td>Cameroon Pidgin</td><td>wes</td><td>wes</td><td>10.06</td></tr>
+<tr><td></td><td>sro</td><td>sro</td><td>10.16</td><td>Cantonese</td><td></td><td>yue yue 13302.38</td><td></td><td></td><td>Catalan</td><td>ca</td><td>cat</td><td>3358.6</td></tr>
+<tr><td>Cebuano</td><td>ceb</td><td>ceb</td><td>12.17</td><td></td><td>Cen</td><td>cen</td><td>cen</td><td>9.85</td><td>Central Kurdish</td><td>ckb</td><td>ckb</td><td>137.52</td></tr>
+<tr><td></td><td>nhn</td><td>nhn</td><td>9.51</td><td>Central Pame</td><td></td><td>pbs</td><td>pbs</td><td>9.69</td><td>Central Pashto</td><td>pst</td><td>pst</td><td>11.4</td></tr>
+<tr><td></td><td>ncx</td><td>ncx</td><td>9.86</td><td></td><td></td><td>tar</td><td>tar</td><td>9.73</td><td>Central Yupik</td><td>esu</td><td>esu</td><td>2.18</td></tr>
+<tr><td></td><td>fuq</td><td>fuq</td><td>9.28</td><td>Chadian Arabic</td><td></td><td>shu</td><td>shu</td><td>2.29</td><td>Chichewa</td><td>ny</td><td>nya</td><td>10.8</td></tr>
+<tr><td></td><td>zpv</td><td>zpv</td><td>9.85</td><td></td><td>Chiga</td><td>cgg cgg</td><td></td><td>10.84</td><td>Chimalapa Zoque</td><td>zoh</td><td>zoh</td><td>9.35</td></tr>
+<tr><td></td><td>qug</td><td>qug</td><td>10.12</td><td></td><td>Chinese</td><td>zh</td><td>cmn 111343.3</td><td></td><td></td><td>qxa</td><td>qxa</td><td>9.99</td></tr>
+<tr><td></td><td>the</td><td>the</td><td>10.06</td><td></td><td>Chokwe</td><td>cjk</td><td>cjk</td><td>11.01</td><td>Chuvash</td><td>cv</td><td>chv</td><td>23.96</td></tr>
+<tr><td>Cibak</td><td>ckl</td><td>ckl</td><td>10.91</td><td>Coastal Konjo</td><td></td><td>kjc</td><td>kjc</td><td>10.18</td><td>Copainalá Zoque</td><td>zoc</td><td>zoc</td><td>10.07</td></tr>
+<tr><td>Cornish</td><td>kw</td><td>cor</td><td>12.15</td><td></td><td></td><td>qwa qwa</td><td></td><td>9.72</td><td>Croatian</td><td>hr</td><td>hrv</td><td>2795.31</td></tr>
+<tr><td></td><td>mfn mfn</td><td></td><td>10.03</td><td></td><td></td><td>xtu</td><td>xtu</td><td>9.4</td><td>Czech</td><td>cs</td><td>ces</td><td>148.13</td></tr>
+<tr><td>Dadiya</td><td>dbd</td><td>dbd</td><td>9.61</td><td></td><td>Dagbani</td><td>dag dag</td><td></td><td>10.14</td><td>Dameli</td><td>dml</td><td>dml</td><td>9.18</td></tr>
+<tr><td>Danish</td><td>da</td><td>dan</td><td>1665.98</td><td></td><td>Dargwa</td><td>dar</td><td>dar</td><td>1.22</td><td>Dazaga</td><td>dzg</td><td>dzg</td><td>9.96</td></tr>
+<tr><td>Deccan</td><td>dcc</td><td>dcc</td><td>10.38</td><td></td><td>Degema</td><td>deg deg</td><td></td><td>11.07</td><td>Dera (Nigeria)</td><td>kna</td><td>kna</td><td>11.91</td></tr>
+<tr><td>Dghwede</td><td>dgh</td><td>dgh</td><td>9.95</td><td></td><td>Dhatki</td><td>mki mki</td><td></td><td>8.83</td><td>Dhivehi</td><td>dv</td><td>div</td><td>38.61</td></tr>
+<tr><td>Dhofari Arabic</td><td>adf</td><td>adf</td><td>0.31</td><td>Dijim-Bwilim</td><td></td><td>cfa</td><td>cfa</td><td>10.32</td><td>Dogri</td><td>dgo</td><td>dgo</td><td>117.04</td></tr>
+<tr><td>Domaaki</td><td>dmk dmk</td><td></td><td>6.38</td><td></td><td>Dotyali</td><td>dty</td><td>dty</td><td>10.85</td><td>Duala</td><td>dua</td><td>dua</td><td>12.13</td></tr>
+<tr><td>Dutch</td><td>nl</td><td>nld</td><td>2264.13</td><td></td><td>D˜uya</td><td>ldb</td><td>ldb</td><td>11.31</td><td>Dyula</td><td>dyu</td><td>dyu</td><td>0.34</td></tr>
+<tr><td></td><td>bgp</td><td>bgp</td><td>10.98</td><td></td><td></td><td>gui</td><td>gui</td><td>22.72</td><td></td><td>avl</td><td>avl</td><td>1.86</td></tr>
+<tr><td>Eastern Krahn</td><td>kqo</td><td>kqo</td><td>9.28</td><td>Eastern Mari</td><td></td><td>mhr mhr</td><td></td><td>272.31</td><td>Eastern Yiddish</td><td>ydd</td><td>ydd</td><td>18.43</td></tr>
+<tr><td>Ebrié</td><td>ebr</td><td>ebr</td><td>1.5</td><td></td><td>Eggon</td><td>ego ego</td><td></td><td>9.95</td><td>Egyptian Arabic</td><td>arz</td><td>arz</td><td>23.23</td></tr>
+<tr><td>Ejagham</td><td>etu</td><td>etu</td><td>10.3</td><td></td><td>Eleme</td><td>elm elm</td><td></td><td>11.27</td><td>Eloyi</td><td>afo</td><td>afo</td><td>11.21</td></tr>
+<tr><td>Embu</td><td>ebu</td><td>ebu</td><td>9.81</td><td></td><td>English</td><td>en</td><td>eng 206061.1</td><td></td><td>Erzya</td><td>myv myv</td><td></td><td>3.1</td></tr>
+<tr><td>Esan</td><td>ish</td><td>ish</td><td>10.05</td><td></td><td>Esperanto</td><td>eo</td><td>epo</td><td>1396.64</td><td>Estonian</td><td>et</td><td>est</td><td>960.37</td></tr>
+<tr><td></td><td>eto</td><td>eto</td><td>7.43</td><td></td><td>Ewondo</td><td>ewo ewo</td><td></td><td>12.71</td><td>Extremaduran</td><td>ext</td><td>ext</td><td>13.59</td></tr>
+<tr><td></td><td>fan</td><td>fan</td><td>3.51</td><td></td><td>Fanti</td><td>fat</td><td>fat</td><td>11.38</td><td>Farefare</td><td>gur</td><td>gur</td><td>9.24</td></tr>
+<tr><td>Fe’fe’</td><td>fmp fmp</td><td></td><td>9.86</td><td></td><td>Filipino</td><td>fil</td><td>fil</td><td>7.71</td><td></td><td>tlp</td><td>tlp</td><td>11.35</td></tr>
+<tr><td>Finnish</td><td>fi</td><td>fin</td><td>468.62</td><td></td><td>Fipa</td><td>fip</td><td>fip</td><td>10.55</td><td>French</td><td>fr</td><td>fra</td><td>23675.32</td></tr>
+<tr><td>Fulah</td><td>ff</td><td>ful</td><td>13.84</td><td></td><td>Galician</td><td>gl</td><td>glg</td><td>208.81</td><td>Gambian Wolof</td><td>wof</td><td>wof</td><td>9.46</td></tr>
+<tr><td>Ganda</td><td>lg</td><td>lug</td><td>447.82</td><td></td><td>Garhwali</td><td>gbm gbm</td><td></td><td>19.14</td><td>Gawar-Bati</td><td>gwt</td><td>gwt</td><td>12.16</td></tr>
+<tr><td>Gawri</td><td>gwc gwc</td><td></td><td>10.83</td><td></td><td>Gbagyi</td><td>gbr</td><td>gbr</td><td>12.12</td><td>Gbari</td><td>gby</td><td>gby</td><td>12.59</td></tr>
+<tr><td>Geji</td><td>gyz</td><td>gyz</td><td>10.49</td><td></td><td>Gen</td><td>gej</td><td>gej</td><td>5.39</td><td>Georgian</td><td>ka</td><td>kat</td><td>156.96</td></tr>
+<tr><td>German</td><td>de</td><td>deu 21927.13</td><td></td><td>Geser-Gorom</td><td></td><td>ges</td><td>ges</td><td>10.08</td><td>Gheg Albanian</td><td>aln</td><td>aln</td><td>3.92</td></tr>
+<tr><td>Ghomálá’</td><td>bbj</td><td>bbj</td><td>7.32</td><td></td><td>Gidar</td><td>gid</td><td>gid</td><td>10.06</td><td>Glavda</td><td>glw</td><td>glw</td><td>10.51</td></tr>
+<tr><td>Goan Konkani</td><td>gom gom</td><td></td><td>9.82</td><td></td><td>Goaria</td><td>gig</td><td>gig</td><td>9.41</td><td>Goemai</td><td>ank</td><td>ank</td><td>10.0</td></tr>
+<tr><td>Gola</td><td>gol</td><td>gol</td><td>9.26</td><td></td><td>Greek</td><td>el</td><td>ell</td><td>2412.54</td><td>Guarani</td><td>gn</td><td>grn</td><td>4.06</td></tr>
+<tr><td>Guduf-Gava</td><td>gdf</td><td>gdf</td><td>12.21</td><td></td><td></td><td>amu amu</td><td></td><td>10.1</td><td>Gujarati</td><td>gu</td><td>guj</td><td>91.18</td></tr>
+<tr><td>Gujari</td><td>gju</td><td>gju</td><td>8.66</td><td>Gulf Arabic</td><td></td><td>afb</td><td>afb</td><td>98.55</td><td>Gurgula</td><td>ggg</td><td>ggg</td><td>7.12</td></tr>
+<tr><td>Gusii</td><td>guz</td><td>guz</td><td>9.5</td><td></td><td>Gusilay</td><td>gsl</td><td>gsl</td><td>10.0</td><td>Gweno</td><td>gwe gwe</td><td></td><td>8.87</td></tr>
+<tr><td>Güilá Zapotec</td><td>ztu</td><td>ztu</td><td>9.17</td><td></td><td>Hadothi</td><td>hoj</td><td>hoj</td><td>10.08</td><td>Hahon</td><td>hah</td><td>hah</td><td>9.64</td></tr>
+<tr><td>Haitian</td><td>ht</td><td>hat</td><td>0.04</td><td>Hakha Chin</td><td></td><td>cnh cnh</td><td></td><td>2.24</td><td>Hakö</td><td>hao</td><td>hao</td><td>8.56</td></tr>
+<tr><td>Halia</td><td>hla</td><td>hla</td><td>9.86</td><td></td><td>Hausa</td><td>ha</td><td>hau</td><td>17.75</td><td>Hawaiian</td><td>haw haw</td><td></td><td>11.79</td></tr>
+<tr><td>Hazaragi</td><td>haz</td><td>haz</td><td>9.69</td><td></td><td>Hebrew</td><td>he</td><td>heb</td><td>13.4</td><td>Hemba</td><td>hem hem</td><td></td><td>9.53</td></tr>
+<tr><td>Herero</td><td>hz</td><td>her</td><td>9.59</td><td>Highland Konjo</td><td></td><td>kjk</td><td>kjk</td><td>10.21</td><td>Hijazi Arabic</td><td>acw acw</td><td></td><td>22.32</td></tr>
+<tr><td>Hindi</td><td>hi</td><td>hin</td><td>117.17</td><td></td><td>Huarijio</td><td>var</td><td>var</td><td>9.28</td><td>Huautla Mazatec</td><td>mau mau</td><td></td><td>6.39</td></tr>
+<tr><td></td><td>nhq</td><td>nhq</td><td>5.07</td><td></td><td>Huba</td><td>hbb hbb</td><td></td><td>10.7</td><td>Huitepec Mixtec</td><td>mxs mxs</td><td></td><td>9.64</td></tr>
+<tr><td>Hula</td><td>hul</td><td>hul</td><td>10.33</td><td>Hungarian</td><td></td><td>hu</td><td>hun</td><td>255.83</td><td></td><td>hkk</td><td>hkk</td><td>8.69</td></tr>
+<tr><td>Hwana</td><td>hwo hwo</td><td></td><td>11.23</td><td></td><td>Ibibio</td><td>ibb</td><td>ibb</td><td>7.38</td><td>Icelandic</td><td>is</td><td>isl</td><td>647.29</td></tr>
+<tr><td></td><td>ida</td><td>ida</td><td>9.31</td><td></td><td>Idoma</td><td>idu</td><td>idu</td><td>11.16</td><td>Igbo</td><td>ig</td><td>ibo</td><td>13.69</td></tr>
+<tr><td>Igo</td><td>ahl</td><td>ahl</td><td>9.22</td><td></td><td>Ikposo</td><td>kpo kpo</td><td></td><td>7.83</td><td>Ikwere</td><td>ikw</td><td>ikw</td><td>10.0</td></tr>
+<tr><td></td><td>qvi</td><td>qvi</td><td>11.0</td><td>Indonesian</td><td></td><td>id</td><td>ind</td><td>6327.87</td><td>Indus Kohistani</td><td>mvy mvy</td><td></td><td>21.64</td></tr>
+<tr><td>Interlingua</td><td>ia</td><td>ina</td><td>13.48</td><td></td><td>Inupiaq</td><td>ik</td><td>ipk</td><td>2.11</td><td>Irish</td><td>ga</td><td>gle</td><td>21.4</td></tr>
+<tr><td>Iron Ossetic</td><td>os</td><td>oss</td><td>1.38</td><td></td><td>Isekiri</td><td>its</td><td>its</td><td>11.85</td><td>Isoko</td><td>iso</td><td>iso</td><td>10.33</td></tr>
+<tr><td>Italian</td><td>it</td><td>ita</td><td>9402.46</td><td></td><td>Ito</td><td>itw</td><td>itw</td><td>9.19</td><td>Itzá</td><td>itz</td><td>itz</td><td>7.08</td></tr>
+<tr><td></td><td>vmj</td><td>vmj</td><td>10.17</td><td></td><td>Izon</td><td>ijc</td><td>ijc</td><td>9.95</td><td>Jambi Malay</td><td>jax</td><td>jax</td><td>10.29</td></tr>
+<tr><td>Japanese</td><td>ja</td><td>jpn</td><td>36914.4</td><td></td><td>Jaqaru</td><td>jqr</td><td>jqr</td><td>9.32</td><td></td><td>qxw qxw</td><td></td><td>11.42</td></tr>
+<tr><td>Jaunsari</td><td>jns</td><td>jns</td><td>11.25</td><td></td><td>Javanese</td><td>jv</td><td>jav</td><td>11.19</td><td>Jiba</td><td>juo</td><td>juo</td><td>10.43</td></tr>
+<tr><td>Jju</td><td>kaj</td><td>kaj</td><td>10.16</td><td></td><td></td><td>aju</td><td>aju</td><td>7.21</td><td></td><td>vmc vmc</td><td></td><td>9.43</td></tr>
+<tr><td>Kabardian</td><td>kbd</td><td>kbd</td><td>108.35</td><td></td><td>Kabras</td><td>lkb</td><td>lkb</td><td>9.99</td><td>Kabuverdianu</td><td>kea</td><td>kea</td><td>10.51</td></tr>
+<tr><td>Kabyle</td><td>kab</td><td>kab</td><td>529.52</td><td>Kachi Koli</td><td></td><td>gjk</td><td>gjk</td><td>20.83</td><td>Kairak</td><td>ckr</td><td>ckr</td><td>10.51</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-D-2">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-1"><span class="en">Language ID ISO Hours Language ID ISO Hours Language ID ISO Hours Abadi kbt kbt</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-1"><span class="zh">表头：Language / ID / ISO / Hours（三列组）——Abadi kbt kbt（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-1"><code>9.73</code></div>
-<div class="eq" id="eq-D-2"><code>Abkhazian ab abk</code></div>
-<div class="eq" id="eq-D-3"><code>57.27</code></div>
-<div class="eq" id="eq-D-4"><code>Abron abr abr</code></div>
-<div class="eq" id="eq-D-5"><code>9.22</code></div>
-<div class="eq" id="eq-D-6"><code>Abua abn abn</code></div>
-<div class="eq" id="eq-D-7"><code>10.27</code></div>
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-8"><code>Adamawa Fulfulde fub fub</code></div>
-<div class="eq" id="eq-D-9"><code>13.12</code></div>
-<div class="eq" id="eq-D-10"><code>Adyghe ady ady</code></div>
-<div class="eq" id="eq-D-11"><code>32.6</code></div>
-<div class="eq" id="eq-D-12"><code>Afade aal aal</code></div>
-<div class="eq" id="eq-D-13"><code>10.19</code></div>
-<div class="eq" id="eq-D-14"><code>Afrikaans af afr</code></div>
-<div class="eq" id="eq-D-15"><code>4.4</code></div>
-<div class="eq" id="eq-D-16"><code>Agwagwune yay yay</code></div>
-<div class="eq" id="eq-D-17"><code>8.26</code></div>
-<div class="eq" id="eq-D-18"><code>Aja (Benin) ajg ajg</code></div>
-<div class="eq" id="eq-D-19"><code>5.63</code></div>
-<div class="eq" id="eq-D-20"><code>Akebu keu keu</code></div>
-<div class="eq" id="eq-D-21"><code>9.1</code></div>
-<div class="eq" id="eq-D-22"><code>Alago ala ala</code></div>
-<div class="eq" id="eq-D-23"><code>11.04</code></div>
-<div class="eq" id="eq-D-24"><code>Albanian sq sqi</code></div>
-<div class="eq" id="eq-D-25"><code>8.59</code></div>
-<div class="eq" id="eq-D-26"><code>Algerian Arabic arq arq</code></div>
-<div class="eq" id="eq-D-27"><code>9.64</code></div>
-<div class="eq" id="eq-D-28"><code>Algerian Saharan Arabic aao aao</code></div>
-<div class="eq" id="eq-D-29"><code>2.02</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-30"><code>Ambo-Pasco Quechua qva qva</code></div>
-<div class="eq" id="eq-D-31"><code>9.59</code></div>
-<div class="eq" id="eq-D-32"><code>Ambonese Malay abs abs</code></div>
-<div class="eq" id="eq-D-33"><code>10.03</code></div>
-<div class="eq" id="eq-D-34"><code>Amdo Tibetan adx adx</code></div>
-<div class="eq" id="eq-D-35"><code>56.94</code></div>
-<div class="eq" id="eq-D-36"><code>Amharic am amh</code></div>
-<div class="eq" id="eq-D-37"><code>12.83</code></div>
-<div class="eq" id="eq-D-38"><code>Anaang anw anw</code></div>
-<div class="eq" id="eq-D-39"><code>9.65</code></div>
-<div class="eq" id="eq-D-40"><code>Angika anp anp</code></div>
-<div class="eq" id="eq-D-41"><code>10.65</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-42"><code>Antankarana Malagasy xmv xmv</code></div>
-<div class="eq" id="eq-D-43"><code>17.9</code></div>
-<div class="eq" id="eq-D-44"><code>Aragonese an arg</code></div>
-<div class="eq" id="eq-D-45"><code>16.4</code></div>
+
+
+
 <div class="eq" id="eq-D-46"><code>Arbëreshë Albanian aae aae</code></div>
-<div class="eq" id="eq-D-47"><code>6.11</code></div>
+
 <div class="eq" id="eq-D-48"><code>Arequipa-La Unión Quechua qxu qxu</code></div>
-<div class="eq" id="eq-D-49"><code>10.12</code></div>
-<div class="eq" id="eq-D-50"><code>Armenian hy hye</code></div>
-<div class="eq" id="eq-D-51"><code>42.15</code></div>
-<div class="eq" id="eq-D-52"><code>Ashe ahs ahs</code></div>
-<div class="eq" id="eq-D-53"><code>10.62</code></div>
+
+
+
+
+
 <div class="eq" id="eq-D-54"><code>Ashéninka Perenë prq prq</code></div>
-<div class="eq" id="eq-D-55"><code>7.16</code></div>
-<div class="eq" id="eq-D-56"><code>Askopan eiv eiv</code></div>
-<div class="eq" id="eq-D-57"><code>10.44</code></div>
-<div class="eq" id="eq-D-58"><code>Assamese as asm</code></div>
-<div class="eq" id="eq-D-59"><code>270.85</code></div>
-<div class="eq" id="eq-D-60"><code>Asturian ast ast</code></div>
-<div class="eq" id="eq-D-61"><code>8.48</code></div>
-<div class="eq" id="eq-D-62"><code>Atayal tay tay</code></div>
-<div class="eq" id="eq-D-63"><code>7.02</code></div>
-<div class="eq" id="eq-D-64"><code>Awak awo awo</code></div>
-<div class="eq" id="eq-D-65"><code>10.22</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-66"><code>Ayacucho Quechua quy quy</code></div>
-<div class="eq" id="eq-D-67"><code>0.05</code></div>
-<div class="eq" id="eq-D-68"><code>Azerbaijani az aze</code></div>
-<div class="eq" id="eq-D-69"><code>9.84</code></div>
-<div class="eq" id="eq-D-70"><code>Baatonum bba bba</code></div>
-<div class="eq" id="eq-D-71"><code>10.53</code></div>
-<div class="eq" id="eq-D-72"><code>Bacama bcy bcy</code></div>
-<div class="eq" id="eq-D-73"><code>9.94</code></div>
-<div class="eq" id="eq-D-74"><code>Bade bde bde</code></div>
-<div class="eq" id="eq-D-75"><code>9.89</code></div>
-<div class="eq" id="eq-D-76"><code>Bafia ksf ksf</code></div>
-<div class="eq" id="eq-D-77"><code>16.43</code></div>
-<div class="eq" id="eq-D-78"><code>Bafut bfd bfd</code></div>
-<div class="eq" id="eq-D-79"><code>9.03</code></div>
-<div class="eq" id="eq-D-80"><code>Bagirmi Fulfulde fui fui</code></div>
-<div class="eq" id="eq-D-81"><code>15.04</code></div>
-<div class="eq" id="eq-D-82"><code>Bago-Kusuntu bqg bqg</code></div>
-<div class="eq" id="eq-D-83"><code>8.86</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-84"><code>Baharna Arabic abv abv</code></div>
-<div class="eq" id="eq-D-85"><code>10.41</code></div>
-<div class="eq" id="eq-D-86"><code>Bakoko bkh bkh</code></div>
-<div class="eq" id="eq-D-87"><code>6.0</code></div>
-<div class="eq" id="eq-D-88"><code>Balanta-Ganja bjt bjt</code></div>
-<div class="eq" id="eq-D-89"><code>9.41</code></div>
-<div class="eq" id="eq-D-90"><code>Balti bft bft</code></div>
-<div class="eq" id="eq-D-91"><code>16.28</code></div>
-<div class="eq" id="eq-D-92"><code>Bamenyam bce bce</code></div>
-<div class="eq" id="eq-D-93"><code>9.9</code></div>
-<div class="eq" id="eq-D-94"><code>Bamun bax bax</code></div>
-<div class="eq" id="eq-D-95"><code>10.24</code></div>
-<div class="eq" id="eq-D-96"><code>Bangwinji bsj bsj</code></div>
-<div class="eq" id="eq-D-97"><code>10.0</code></div>
-<div class="eq" id="eq-D-98"><code>Banjar bjn bjn</code></div>
-<div class="eq" id="eq-D-99"><code>11.68</code></div>
-<div class="eq" id="eq-D-100"><code>Bankon abb abb</code></div>
-<div class="eq" id="eq-D-101"><code>11.2</code></div>
-<div class="eq" id="eq-D-102"><code>Baoulé bci bci</code></div>
-<div class="eq" id="eq-D-103"><code>10.21</code></div>
-<div class="eq" id="eq-D-104"><code>Bara Malagasy bhr bhr</code></div>
-<div class="eq" id="eq-D-105"><code>12.14</code></div>
-<div class="eq" id="eq-D-106"><code>Barok bjk bjk</code></div>
-<div class="eq" id="eq-D-107"><code>10.16</code></div>
-<div class="eq" id="eq-D-108"><code>Basa (Cameroon) bas bas</code></div>
-<div class="eq" id="eq-D-109"><code>10.66</code></div>
-<div class="eq" id="eq-D-110"><code>Basa (Nigeria) bzw bzw</code></div>
-<div class="eq" id="eq-D-111"><code>10.27</code></div>
-<div class="eq" id="eq-D-112"><code>Bashkir ba bak</code></div>
-<div class="eq" id="eq-D-113"><code>249.1</code></div>
-<div class="eq" id="eq-D-114"><code>Basque eu eus</code></div>
-<div class="eq" id="eq-D-115"><code>479.86</code></div>
-<div class="eq" id="eq-D-116"><code>Batak Mandailing btm btm</code></div>
-<div class="eq" id="eq-D-117"><code>11.09</code></div>
-<div class="eq" id="eq-D-118"><code>Batanga bnm bnm</code></div>
-<div class="eq" id="eq-D-119"><code>15.01</code></div>
-<div class="eq" id="eq-D-120"><code>Bateri btv btv</code></div>
-<div class="eq" id="eq-D-121"><code>9.8</code></div>
-<div class="eq" id="eq-D-122"><code>Bats bbl bbl</code></div>
-<div class="eq" id="eq-D-123"><code>11.22</code></div>
-<div class="eq" id="eq-D-124"><code>Bayot bda bda</code></div>
-<div class="eq" id="eq-D-125"><code>9.47</code></div>
-<div class="eq" id="eq-D-126"><code>Bebele beb beb</code></div>
-<div class="eq" id="eq-D-127"><code>7.52</code></div>
-<div class="eq" id="eq-D-128"><code>Belarusian be bel</code></div>
-<div class="eq" id="eq-D-129"><code>1809.43</code></div>
-<div class="eq" id="eq-D-130"><code>Bengali bn ben</code></div>
-<div class="eq" id="eq-D-131"><code>271.76</code></div>
-<div class="eq" id="eq-D-132"><code>Betawi bew bew</code></div>
-<div class="eq" id="eq-D-133"><code>11.15</code></div>
-<div class="eq" id="eq-D-134"><code>Bhili bhb bhb</code></div>
-<div class="eq" id="eq-D-135"><code>9.98</code></div>
-<div class="eq" id="eq-D-136"><code>Bhojpuri bho bho</code></div>
-<div class="eq" id="eq-D-137"><code>10.05</code></div>
-<div class="eq" id="eq-D-138"><code>Bilur bxf bxf</code></div>
-<div class="eq" id="eq-D-139"><code>10.84</code></div>
-<div class="eq" id="eq-D-140"><code>Bima bhp bhp</code></div>
-<div class="eq" id="eq-D-141"><code>10.67</code></div>
-<div class="eq" id="eq-D-142"><code>Bodo brx brx</code></div>
-<div class="eq" id="eq-D-143"><code>231.57</code></div>
-<div class="eq" id="eq-D-144"><code>Boghom bux bux</code></div>
-<div class="eq" id="eq-D-145"><code>10.48</code></div>
-<div class="eq" id="eq-D-146"><code>Bokyi bky bky</code></div>
-<div class="eq" id="eq-D-147"><code>9.85</code></div>
-<div class="eq" id="eq-D-148"><code>Bomu bmq bmq</code></div>
-<div class="eq" id="eq-D-149"><code>10.68</code></div>
-<div class="eq" id="eq-D-150"><code>Bondei bou bou</code></div>
-<div class="eq" id="eq-D-151"><code>9.98</code></div>
-<div class="eq" id="eq-D-152"><code>Borgu Fulfulde fue fue</code></div>
-<div class="eq" id="eq-D-153"><code>20.1</code></div>
-<div class="eq" id="eq-D-154"><code>Bosnian bs bos</code></div>
-<div class="eq" id="eq-D-155"><code>690.73</code></div>
-<div class="eq" id="eq-D-156"><code>Brahui brh brh</code></div>
-<div class="eq" id="eq-D-157"><code>19.89</code></div>
-<div class="eq" id="eq-D-158"><code>Braj bra bra</code></div>
-<div class="eq" id="eq-D-159"><code>10.68</code></div>
-<div class="eq" id="eq-D-160"><code>Breton br bre</code></div>
-<div class="eq" id="eq-D-161"><code>25.48</code></div>
-<div class="eq" id="eq-D-162"><code>Buduma bdm bdm</code></div>
-<div class="eq" id="eq-D-163"><code>10.17</code></div>
-<div class="eq" id="eq-D-164"><code>Buginese bug bug</code></div>
-<div class="eq" id="eq-D-165"><code>11.09</code></div>
-<div class="eq" id="eq-D-166"><code>Bukharic bhh bhh</code></div>
-<div class="eq" id="eq-D-167"><code>11.38</code></div>
-<div class="eq" id="eq-D-168"><code>Bulgarian bg bul</code></div>
-<div class="eq" id="eq-D-169"><code>2190.76</code></div>
-<div class="eq" id="eq-D-170"><code>Bulu (Cameroon) bum bum</code></div>
-<div class="eq" id="eq-D-171"><code>9.06</code></div>
-<div class="eq" id="eq-D-172"><code>Bundeli bns bns</code></div>
-<div class="eq" id="eq-D-173"><code>10.88</code></div>
-<div class="eq" id="eq-D-174"><code>Bunun bnn bnn</code></div>
-<div class="eq" id="eq-D-175"><code>9.26</code></div>
-<div class="eq" id="eq-D-176"><code>Bura-Pabir bwr bwr</code></div>
-<div class="eq" id="eq-D-177"><code>10.4</code></div>
-<div class="eq" id="eq-D-178"><code>Burak bys bys</code></div>
-<div class="eq" id="eq-D-179"><code>9.92</code></div>
-<div class="eq" id="eq-D-180"><code>Burmese my mya</code></div>
-<div class="eq" id="eq-D-181"><code>12.14</code></div>
-<div class="eq" id="eq-D-182"><code>Burushaski bsk bsk</code></div>
-<div class="eq" id="eq-D-183"><code>9.14</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-184"><code>Cacaloxtepec Mixtec miu miu</code></div>
-<div class="eq" id="eq-D-185"><code>9.18</code></div>
+
 <div class="eq" id="eq-D-186"><code>Cajatambo North Lima Quechua qvl qvl</code></div>
-<div class="eq" id="eq-D-187"><code>9.95</code></div>
-<div class="eq" id="eq-D-188"><code>Cakfem-Mushere cky cky</code></div>
-<div class="eq" id="eq-D-189"><code>8.96</code></div>
-<div class="eq" id="eq-D-190"><code>Cameroon Pidgin wes wes</code></div>
-<div class="eq" id="eq-D-191"><code>10.06</code></div>
+
+
+
+
+
 <div class="eq" id="eq-D-192"><code>Campidanese Sardinian sro sro</code></div>
-<div class="eq" id="eq-D-193"><code>10.16</code></div>
-<div class="eq" id="eq-D-194"><code>Cantonese yue yue 13302.38 Catalan ca cat</code></div>
-<div class="eq" id="eq-D-195"><code>3358.6</code></div>
-<div class="eq" id="eq-D-196"><code>Cebuano ceb ceb</code></div>
-<div class="eq" id="eq-D-197"><code>12.17</code></div>
-<div class="eq" id="eq-D-198"><code>Cen cen cen</code></div>
-<div class="eq" id="eq-D-199"><code>9.85</code></div>
-<div class="eq" id="eq-D-200"><code>Central Kurdish ckb ckb</code></div>
-<div class="eq" id="eq-D-201"><code>137.52</code></div>
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-202"><code>Central Nahuatl nhn nhn</code></div>
-<div class="eq" id="eq-D-203"><code>9.51</code></div>
-<div class="eq" id="eq-D-204"><code>Central Pame pbs pbs</code></div>
-<div class="eq" id="eq-D-205"><code>9.69</code></div>
-<div class="eq" id="eq-D-206"><code>Central Pashto pst pst</code></div>
-<div class="eq" id="eq-D-207"><code>11.4</code></div>
+
+
+
+
+
 <div class="eq" id="eq-D-208"><code>Central Puebla Nahuatl ncx ncx</code></div>
-<div class="eq" id="eq-D-209"><code>9.86</code></div>
+
 <div class="eq" id="eq-D-210"><code>Central Tarahumara tar tar</code></div>
-<div class="eq" id="eq-D-211"><code>9.73</code></div>
-<div class="eq" id="eq-D-212"><code>Central Yupik esu esu</code></div>
-<div class="eq" id="eq-D-213"><code>2.18</code></div>
+
+
+
 <div class="eq" id="eq-D-214"><code>Central-Eastern Niger Fulfulde fuq fuq</code></div>
-<div class="eq" id="eq-D-215"><code>9.28</code></div>
-<div class="eq" id="eq-D-216"><code>Chadian Arabic shu shu</code></div>
-<div class="eq" id="eq-D-217"><code>2.29</code></div>
-<div class="eq" id="eq-D-218"><code>Chichewa ny nya</code></div>
-<div class="eq" id="eq-D-219"><code>10.8</code></div>
+
+
+
+
+
 <div class="eq" id="eq-D-220"><code>Chichicapan Zapotec zpv zpv</code></div>
-<div class="eq" id="eq-D-221"><code>9.85</code></div>
-<div class="eq" id="eq-D-222"><code>Chiga cgg cgg</code></div>
-<div class="eq" id="eq-D-223"><code>10.84</code></div>
-<div class="eq" id="eq-D-224"><code>Chimalapa Zoque zoh zoh</code></div>
-<div class="eq" id="eq-D-225"><code>9.35</code></div>
+
+
+
+
+
 <div class="eq" id="eq-D-226"><code>Chimborazo Highland Quichua qug qug</code></div>
-<div class="eq" id="eq-D-227"><code>10.12</code></div>
+
 <div class="pblk" id="p-D-3">
           <p class="en-lines"><span class="sent" data-sid="s-D-3-1"><span class="en">Chinese zh cmn 111343.3 Chiquián Ancash Quechua qxa qxa</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-3-1"><span class="zh">（表格行）Chinese zh cmn 111343.3；Chiquián Ancash Quechua qxa qxa（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-228"><code>9.99</code></div>
+
 <div class="eq" id="eq-D-229"><code>Chitwania Tharu the the</code></div>
-<div class="eq" id="eq-D-230"><code>10.06</code></div>
-<div class="eq" id="eq-D-231"><code>Chokwe cjk cjk</code></div>
-<div class="eq" id="eq-D-232"><code>11.01</code></div>
-<div class="eq" id="eq-D-233"><code>Chuvash cv chv</code></div>
-<div class="eq" id="eq-D-234"><code>23.96</code></div>
-<div class="eq" id="eq-D-235"><code>Cibak ckl ckl</code></div>
-<div class="eq" id="eq-D-236"><code>10.91</code></div>
-<div class="eq" id="eq-D-237"><code>Coastal Konjo kjc kjc</code></div>
-<div class="eq" id="eq-D-238"><code>10.18</code></div>
-<div class="eq" id="eq-D-239"><code>Copainalá Zoque zoc zoc</code></div>
-<div class="eq" id="eq-D-240"><code>10.07</code></div>
-<div class="eq" id="eq-D-241"><code>Cornish kw cor</code></div>
-<div class="eq" id="eq-D-242"><code>12.15</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-243"><code>Corongo Ancash Quechua qwa qwa</code></div>
-<div class="eq" id="eq-D-244"><code>9.72</code></div>
-<div class="eq" id="eq-D-245"><code>Croatian hr hrv</code></div>
-<div class="eq" id="eq-D-246"><code>2795.31</code></div>
+
+
+
 <div class="eq" id="eq-D-247"><code>Cross River Mbembe mfn mfn</code></div>
-<div class="eq" id="eq-D-248"><code>10.03</code></div>
+
 <div class="eq" id="eq-D-249"><code>Cuyamecalco Mixtec xtu xtu</code></div>
-<div class="eq" id="eq-D-250"><code>9.4</code></div>
-<div class="eq" id="eq-D-251"><code>Czech cs ces</code></div>
-<div class="eq" id="eq-D-252"><code>148.13</code></div>
-<div class="eq" id="eq-D-253"><code>Dadiya dbd dbd</code></div>
-<div class="eq" id="eq-D-254"><code>9.61</code></div>
-<div class="eq" id="eq-D-255"><code>Dagbani dag dag</code></div>
-<div class="eq" id="eq-D-256"><code>10.14</code></div>
-<div class="eq" id="eq-D-257"><code>Dameli dml dml</code></div>
-<div class="eq" id="eq-D-258"><code>9.18</code></div>
-<div class="eq" id="eq-D-259"><code>Danish da dan</code></div>
-<div class="eq" id="eq-D-260"><code>1665.98</code></div>
-<div class="eq" id="eq-D-261"><code>Dargwa dar dar</code></div>
-<div class="eq" id="eq-D-262"><code>1.22</code></div>
-<div class="eq" id="eq-D-263"><code>Dazaga dzg dzg</code></div>
-<div class="eq" id="eq-D-264"><code>9.96</code></div>
-<div class="eq" id="eq-D-265"><code>Deccan dcc dcc</code></div>
-<div class="eq" id="eq-D-266"><code>10.38</code></div>
-<div class="eq" id="eq-D-267"><code>Degema deg deg</code></div>
-<div class="eq" id="eq-D-268"><code>11.07</code></div>
-<div class="eq" id="eq-D-269"><code>Dera (Nigeria) kna kna</code></div>
-<div class="eq" id="eq-D-270"><code>11.91</code></div>
-<div class="eq" id="eq-D-271"><code>Dghwede dgh dgh</code></div>
-<div class="eq" id="eq-D-272"><code>9.95</code></div>
-<div class="eq" id="eq-D-273"><code>Dhatki mki mki</code></div>
-<div class="eq" id="eq-D-274"><code>8.83</code></div>
-<div class="eq" id="eq-D-275"><code>Dhivehi dv div</code></div>
-<div class="eq" id="eq-D-276"><code>38.61</code></div>
-<div class="eq" id="eq-D-277"><code>Dhofari Arabic adf adf</code></div>
-<div class="eq" id="eq-D-278"><code>0.31</code></div>
-<div class="eq" id="eq-D-279"><code>Dijim-Bwilim cfa cfa</code></div>
-<div class="eq" id="eq-D-280"><code>10.32</code></div>
-<div class="eq" id="eq-D-281"><code>Dogri dgo dgo</code></div>
-<div class="eq" id="eq-D-282"><code>117.04</code></div>
-<div class="eq" id="eq-D-283"><code>Domaaki dmk dmk</code></div>
-<div class="eq" id="eq-D-284"><code>6.38</code></div>
-<div class="eq" id="eq-D-285"><code>Dotyali dty dty</code></div>
-<div class="eq" id="eq-D-286"><code>10.85</code></div>
-<div class="eq" id="eq-D-287"><code>Duala dua dua</code></div>
-<div class="eq" id="eq-D-288"><code>12.13</code></div>
-<div class="eq" id="eq-D-289"><code>Dutch nl nld</code></div>
-<div class="eq" id="eq-D-290"><code>2264.13</code></div>
-<div class="eq" id="eq-D-291"><code>D˜uya ldb ldb</code></div>
-<div class="eq" id="eq-D-292"><code>11.31</code></div>
-<div class="eq" id="eq-D-293"><code>Dyula dyu dyu</code></div>
-<div class="eq" id="eq-D-294"><code>0.34</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-295"><code>Eastern Balochi bgp bgp</code></div>
-<div class="eq" id="eq-D-296"><code>10.98</code></div>
+
 <div class="eq" id="eq-D-297"><code>Eastern Bolivian Guaraní gui gui</code></div>
-<div class="eq" id="eq-D-298"><code>22.72</code></div>
-<div class="eq" id="eq-D-299"><code>Eastern Egyptian Bedawi Arabic avl avl</code></div>
-<div class="eq" id="eq-D-300"><code>1.86</code></div>
-<div class="eq" id="eq-D-301"><code>Eastern Krahn kqo kqo</code></div>
-<div class="eq" id="eq-D-302"><code>9.28</code></div>
-<div class="eq" id="eq-D-303"><code>Eastern Mari mhr mhr</code></div>
-<div class="eq" id="eq-D-304"><code>272.31</code></div>
-<div class="eq" id="eq-D-305"><code>Eastern Yiddish ydd ydd</code></div>
-<div class="eq" id="eq-D-306"><code>18.43</code></div>
-<div class="eq" id="eq-D-307"><code>Ebrié ebr ebr</code></div>
-<div class="eq" id="eq-D-308"><code>1.5</code></div>
-<div class="eq" id="eq-D-309"><code>Eggon ego ego</code></div>
-<div class="eq" id="eq-D-310"><code>9.95</code></div>
-<div class="eq" id="eq-D-311"><code>Egyptian Arabic arz arz</code></div>
-<div class="eq" id="eq-D-312"><code>23.23</code></div>
-<div class="eq" id="eq-D-313"><code>Ejagham etu etu</code></div>
-<div class="eq" id="eq-D-314"><code>10.3</code></div>
-<div class="eq" id="eq-D-315"><code>Eleme elm elm</code></div>
-<div class="eq" id="eq-D-316"><code>11.27</code></div>
-<div class="eq" id="eq-D-317"><code>Eloyi afo afo</code></div>
-<div class="eq" id="eq-D-318"><code>11.21</code></div>
-<div class="eq" id="eq-D-319"><code>Embu ebu ebu</code></div>
-<div class="eq" id="eq-D-320"><code>9.81</code></div>
-<div class="eq" id="eq-D-321"><code>English en eng 206061.1 Erzya myv myv</code></div>
-<div class="eq" id="eq-D-322"><code>3.1</code></div>
-<div class="eq" id="eq-D-323"><code>Esan ish ish</code></div>
-<div class="eq" id="eq-D-324"><code>10.05</code></div>
-<div class="eq" id="eq-D-325"><code>Esperanto eo epo</code></div>
-<div class="eq" id="eq-D-326"><code>1396.64</code></div>
-<div class="eq" id="eq-D-327"><code>Estonian et est</code></div>
-<div class="eq" id="eq-D-328"><code>960.37</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-329"><code>Eton (Cameroon) eto eto</code></div>
-<div class="eq" id="eq-D-330"><code>7.43</code></div>
-<div class="eq" id="eq-D-331"><code>Ewondo ewo ewo</code></div>
-<div class="eq" id="eq-D-332"><code>12.71</code></div>
-<div class="eq" id="eq-D-333"><code>Extremaduran ext ext</code></div>
-<div class="eq" id="eq-D-334"><code>13.59</code></div>
+
+
+
+
+
 <div class="eq" id="eq-D-335"><code>Fang (Equatorial Guinea) fan fan</code></div>
-<div class="eq" id="eq-D-336"><code>3.51</code></div>
-<div class="eq" id="eq-D-337"><code>Fanti fat fat</code></div>
-<div class="eq" id="eq-D-338"><code>11.38</code></div>
-<div class="eq" id="eq-D-339"><code>Farefare gur gur</code></div>
-<div class="eq" id="eq-D-340"><code>9.24</code></div>
-<div class="eq" id="eq-D-341"><code>Fe’fe’ fmp fmp</code></div>
-<div class="eq" id="eq-D-342"><code>9.86</code></div>
-<div class="eq" id="eq-D-343"><code>Filipino fil fil</code></div>
-<div class="eq" id="eq-D-344"><code>7.71</code></div>
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-345"><code>Filomena Mata-Coahuitlán Totonac tlp tlp</code></div>
-<div class="eq" id="eq-D-346"><code>11.35</code></div>
-<div class="eq" id="eq-D-347"><code>Finnish fi fin</code></div>
-<div class="eq" id="eq-D-348"><code>468.62</code></div>
-<div class="eq" id="eq-D-349"><code>Fipa fip fip</code></div>
-<div class="eq" id="eq-D-350"><code>10.55</code></div>
-<div class="eq" id="eq-D-351"><code>French fr fra</code></div>
-<div class="eq" id="eq-D-352"><code>23675.32</code></div>
-<div class="eq" id="eq-D-353"><code>Fulah ff ful</code></div>
-<div class="eq" id="eq-D-354"><code>13.84</code></div>
-<div class="eq" id="eq-D-355"><code>Galician gl glg</code></div>
-<div class="eq" id="eq-D-356"><code>208.81</code></div>
-<div class="eq" id="eq-D-357"><code>Gambian Wolof wof wof</code></div>
-<div class="eq" id="eq-D-358"><code>9.46</code></div>
-<div class="eq" id="eq-D-359"><code>Ganda lg lug</code></div>
-<div class="eq" id="eq-D-360"><code>447.82</code></div>
-<div class="eq" id="eq-D-361"><code>Garhwali gbm gbm</code></div>
-<div class="eq" id="eq-D-362"><code>19.14</code></div>
-<div class="eq" id="eq-D-363"><code>Gawar-Bati gwt gwt</code></div>
-<div class="eq" id="eq-D-364"><code>12.16</code></div>
-<div class="eq" id="eq-D-365"><code>Gawri gwc gwc</code></div>
-<div class="eq" id="eq-D-366"><code>10.83</code></div>
-<div class="eq" id="eq-D-367"><code>Gbagyi gbr gbr</code></div>
-<div class="eq" id="eq-D-368"><code>12.12</code></div>
-<div class="eq" id="eq-D-369"><code>Gbari gby gby</code></div>
-<div class="eq" id="eq-D-370"><code>12.59</code></div>
-<div class="eq" id="eq-D-371"><code>Geji gyz gyz</code></div>
-<div class="eq" id="eq-D-372"><code>10.49</code></div>
-<div class="eq" id="eq-D-373"><code>Gen gej gej</code></div>
-<div class="eq" id="eq-D-374"><code>5.39</code></div>
-<div class="eq" id="eq-D-375"><code>Georgian ka kat</code></div>
-<div class="eq" id="eq-D-376"><code>156.96</code></div>
-<div class="eq" id="eq-D-377"><code>German de deu 21927.13 Geser-Gorom ges ges</code></div>
-<div class="eq" id="eq-D-378"><code>10.08</code></div>
-<div class="eq" id="eq-D-379"><code>Gheg Albanian aln aln</code></div>
-<div class="eq" id="eq-D-380"><code>3.92</code></div>
-<div class="eq" id="eq-D-381"><code>Ghomálá’ bbj bbj</code></div>
-<div class="eq" id="eq-D-382"><code>7.32</code></div>
-<div class="eq" id="eq-D-383"><code>Gidar gid gid</code></div>
-<div class="eq" id="eq-D-384"><code>10.06</code></div>
-<div class="eq" id="eq-D-385"><code>Glavda glw glw</code></div>
-<div class="eq" id="eq-D-386"><code>10.51</code></div>
-<div class="eq" id="eq-D-387"><code>Goan Konkani gom gom</code></div>
-<div class="eq" id="eq-D-388"><code>9.82</code></div>
-<div class="eq" id="eq-D-389"><code>Goaria gig gig</code></div>
-<div class="eq" id="eq-D-390"><code>9.41</code></div>
-<div class="eq" id="eq-D-391"><code>Goemai ank ank</code></div>
-<div class="eq" id="eq-D-392"><code>10.0</code></div>
-<div class="eq" id="eq-D-393"><code>Gola gol gol</code></div>
-<div class="eq" id="eq-D-394"><code>9.26</code></div>
-<div class="eq" id="eq-D-395"><code>Greek el ell</code></div>
-<div class="eq" id="eq-D-396"><code>2412.54</code></div>
-<div class="eq" id="eq-D-397"><code>Guarani gn grn</code></div>
-<div class="eq" id="eq-D-398"><code>4.06</code></div>
-<div class="eq" id="eq-D-399"><code>Guduf-Gava gdf gdf</code></div>
-<div class="eq" id="eq-D-400"><code>12.21</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-401"><code>Guerrero Amuzgo amu amu</code></div>
-<div class="eq" id="eq-D-402"><code>10.1</code></div>
-<div class="eq" id="eq-D-403"><code>Gujarati gu guj</code></div>
-<div class="eq" id="eq-D-404"><code>91.18</code></div>
-<div class="eq" id="eq-D-405"><code>Gujari gju gju</code></div>
-<div class="eq" id="eq-D-406"><code>8.66</code></div>
-<div class="eq" id="eq-D-407"><code>Gulf Arabic afb afb</code></div>
-<div class="eq" id="eq-D-408"><code>98.55</code></div>
-<div class="eq" id="eq-D-409"><code>Gurgula ggg ggg</code></div>
-<div class="eq" id="eq-D-410"><code>7.12</code></div>
-<div class="eq" id="eq-D-411"><code>Gusii guz guz</code></div>
-<div class="eq" id="eq-D-412"><code>9.5</code></div>
-<div class="eq" id="eq-D-413"><code>Gusilay gsl gsl</code></div>
-<div class="eq" id="eq-D-414"><code>10.0</code></div>
-<div class="eq" id="eq-D-415"><code>Gweno gwe gwe</code></div>
-<div class="eq" id="eq-D-416"><code>8.87</code></div>
-<div class="eq" id="eq-D-417"><code>Güilá Zapotec ztu ztu</code></div>
-<div class="eq" id="eq-D-418"><code>9.17</code></div>
-<div class="eq" id="eq-D-419"><code>Hadothi hoj hoj</code></div>
-<div class="eq" id="eq-D-420"><code>10.08</code></div>
-<div class="eq" id="eq-D-421"><code>Hahon hah hah</code></div>
-<div class="eq" id="eq-D-422"><code>9.64</code></div>
-<div class="eq" id="eq-D-423"><code>Haitian ht hat</code></div>
-<div class="eq" id="eq-D-424"><code>0.04</code></div>
-<div class="eq" id="eq-D-425"><code>Hakha Chin cnh cnh</code></div>
-<div class="eq" id="eq-D-426"><code>2.24</code></div>
-<div class="eq" id="eq-D-427"><code>Hakö hao hao</code></div>
-<div class="eq" id="eq-D-428"><code>8.56</code></div>
-<div class="eq" id="eq-D-429"><code>Halia hla hla</code></div>
-<div class="eq" id="eq-D-430"><code>9.86</code></div>
-<div class="eq" id="eq-D-431"><code>Hausa ha hau</code></div>
-<div class="eq" id="eq-D-432"><code>17.75</code></div>
-<div class="eq" id="eq-D-433"><code>Hawaiian haw haw</code></div>
-<div class="eq" id="eq-D-434"><code>11.79</code></div>
-<div class="eq" id="eq-D-435"><code>Hazaragi haz haz</code></div>
-<div class="eq" id="eq-D-436"><code>9.69</code></div>
-<div class="eq" id="eq-D-437"><code>Hebrew he heb</code></div>
-<div class="eq" id="eq-D-438"><code>13.4</code></div>
-<div class="eq" id="eq-D-439"><code>Hemba hem hem</code></div>
-<div class="eq" id="eq-D-440"><code>9.53</code></div>
-<div class="eq" id="eq-D-441"><code>Herero hz her</code></div>
-<div class="eq" id="eq-D-442"><code>9.59</code></div>
-<div class="eq" id="eq-D-443"><code>Highland Konjo kjk kjk</code></div>
-<div class="eq" id="eq-D-444"><code>10.21</code></div>
-<div class="eq" id="eq-D-445"><code>Hijazi Arabic acw acw</code></div>
-<div class="eq" id="eq-D-446"><code>22.32</code></div>
-<div class="eq" id="eq-D-447"><code>Hindi hi hin</code></div>
-<div class="eq" id="eq-D-448"><code>117.17</code></div>
-<div class="eq" id="eq-D-449"><code>Huarijio var var</code></div>
-<div class="eq" id="eq-D-450"><code>9.28</code></div>
-<div class="eq" id="eq-D-451"><code>Huautla Mazatec mau mau</code></div>
-<div class="eq" id="eq-D-452"><code>6.39</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-453"><code>Huaxcaleca Nahuatl nhq nhq</code></div>
-<div class="eq" id="eq-D-454"><code>5.07</code></div>
-<div class="eq" id="eq-D-455"><code>Huba hbb hbb</code></div>
-<div class="eq" id="eq-D-456"><code>10.7</code></div>
-<div class="eq" id="eq-D-457"><code>Huitepec Mixtec mxs mxs</code></div>
-<div class="eq" id="eq-D-458"><code>9.64</code></div>
-<div class="eq" id="eq-D-459"><code>Hula hul hul</code></div>
-<div class="eq" id="eq-D-460"><code>10.33</code></div>
-<div class="eq" id="eq-D-461"><code>Hungarian hu hun</code></div>
-<div class="eq" id="eq-D-462"><code>255.83</code></div>
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-463"><code>Hunjara-Kaina Ke hkk hkk</code></div>
-<div class="eq" id="eq-D-464"><code>8.69</code></div>
-<div class="eq" id="eq-D-465"><code>Hwana hwo hwo</code></div>
-<div class="eq" id="eq-D-466"><code>11.23</code></div>
-<div class="eq" id="eq-D-467"><code>Ibibio ibb ibb</code></div>
-<div class="eq" id="eq-D-468"><code>7.38</code></div>
-<div class="eq" id="eq-D-469"><code>Icelandic is isl</code></div>
-<div class="eq" id="eq-D-470"><code>647.29</code></div>
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-471"><code>Idakho-Isukha-Tiriki ida ida</code></div>
-<div class="eq" id="eq-D-472"><code>9.31</code></div>
-<div class="eq" id="eq-D-473"><code>Idoma idu idu</code></div>
-<div class="eq" id="eq-D-474"><code>11.16</code></div>
-<div class="eq" id="eq-D-475"><code>Igbo ig ibo</code></div>
-<div class="eq" id="eq-D-476"><code>13.69</code></div>
-<div class="eq" id="eq-D-477"><code>Igo ahl ahl</code></div>
-<div class="eq" id="eq-D-478"><code>9.22</code></div>
-<div class="eq" id="eq-D-479"><code>Ikposo kpo kpo</code></div>
-<div class="eq" id="eq-D-480"><code>7.83</code></div>
-<div class="eq" id="eq-D-481"><code>Ikwere ikw ikw</code></div>
-<div class="eq" id="eq-D-482"><code>10.0</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-483"><code>Imbabura Highland Quichua qvi qvi</code></div>
-<div class="eq" id="eq-D-484"><code>11.0</code></div>
-<div class="eq" id="eq-D-485"><code>Indonesian id ind</code></div>
-<div class="eq" id="eq-D-486"><code>6327.87</code></div>
-<div class="eq" id="eq-D-487"><code>Indus Kohistani mvy mvy</code></div>
-<div class="eq" id="eq-D-488"><code>21.64</code></div>
-<div class="eq" id="eq-D-489"><code>Interlingua ia ina</code></div>
-<div class="eq" id="eq-D-490"><code>13.48</code></div>
-<div class="eq" id="eq-D-491"><code>Inupiaq ik ipk</code></div>
-<div class="eq" id="eq-D-492"><code>2.11</code></div>
-<div class="eq" id="eq-D-493"><code>Irish ga gle</code></div>
-<div class="eq" id="eq-D-494"><code>21.4</code></div>
-<div class="eq" id="eq-D-495"><code>Iron Ossetic os oss</code></div>
-<div class="eq" id="eq-D-496"><code>1.38</code></div>
-<div class="eq" id="eq-D-497"><code>Isekiri its its</code></div>
-<div class="eq" id="eq-D-498"><code>11.85</code></div>
-<div class="eq" id="eq-D-499"><code>Isoko iso iso</code></div>
-<div class="eq" id="eq-D-500"><code>10.33</code></div>
-<div class="eq" id="eq-D-501"><code>Italian it ita</code></div>
-<div class="eq" id="eq-D-502"><code>9402.46</code></div>
-<div class="eq" id="eq-D-503"><code>Ito itw itw</code></div>
-<div class="eq" id="eq-D-504"><code>9.19</code></div>
-<div class="eq" id="eq-D-505"><code>Itzá itz itz</code></div>
-<div class="eq" id="eq-D-506"><code>7.08</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-507"><code>Ixtayutla Mixtec vmj vmj</code></div>
-<div class="eq" id="eq-D-508"><code>10.17</code></div>
-<div class="eq" id="eq-D-509"><code>Izon ijc ijc</code></div>
-<div class="eq" id="eq-D-510"><code>9.95</code></div>
-<div class="eq" id="eq-D-511"><code>Jambi Malay jax jax</code></div>
-<div class="eq" id="eq-D-512"><code>10.29</code></div>
-<div class="eq" id="eq-D-513"><code>Japanese ja jpn</code></div>
-<div class="eq" id="eq-D-514"><code>36914.4</code></div>
-<div class="eq" id="eq-D-515"><code>Jaqaru jqr jqr</code></div>
-<div class="eq" id="eq-D-516"><code>9.32</code></div>
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-517"><code>Jauja Wanca Quechua qxw qxw</code></div>
-<div class="eq" id="eq-D-518"><code>11.42</code></div>
-<div class="eq" id="eq-D-519"><code>Jaunsari jns jns</code></div>
-<div class="eq" id="eq-D-520"><code>11.25</code></div>
-<div class="eq" id="eq-D-521"><code>Javanese jv jav</code></div>
-<div class="eq" id="eq-D-522"><code>11.19</code></div>
-<div class="eq" id="eq-D-523"><code>Jiba juo juo</code></div>
-<div class="eq" id="eq-D-524"><code>10.43</code></div>
-<div class="eq" id="eq-D-525"><code>Jju kaj kaj</code></div>
-<div class="eq" id="eq-D-526"><code>10.16</code></div>
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-527"><code>Judeo-Moroccan Arabic aju aju</code></div>
-<div class="eq" id="eq-D-528"><code>7.21</code></div>
+
 <div class="eq" id="eq-D-529"><code>Juxtlahuaca Mixtec vmc vmc</code></div>
-<div class="eq" id="eq-D-530"><code>9.43</code></div>
-<div class="eq" id="eq-D-531"><code>Kabardian kbd kbd</code></div>
-<div class="eq" id="eq-D-532"><code>108.35</code></div>
-<div class="eq" id="eq-D-533"><code>Kabras lkb lkb</code></div>
-<div class="eq" id="eq-D-534"><code>9.99</code></div>
-<div class="eq" id="eq-D-535"><code>Kabuverdianu kea kea</code></div>
-<div class="eq" id="eq-D-536"><code>10.51</code></div>
-<div class="eq" id="eq-D-537"><code>Kabyle kab kab</code></div>
-<div class="eq" id="eq-D-538"><code>529.52</code></div>
-<div class="eq" id="eq-D-539"><code>Kachi Koli gjk gjk</code></div>
-<div class="eq" id="eq-D-540"><code>20.83</code></div>
-<div class="eq" id="eq-D-541"><code>Kairak ckr ckr</code></div>
-<div class="eq" id="eq-D-542"><code>10.51</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-543"><code>Kalabari ijn ijn</code></div>
-<div class="eq" id="eq-D-544"><code>11.04</code></div>
+
 <div class="eq" id="eq-D-545"><code>Kalasha kls kls</code></div>
 <div class="eq" id="eq-D-546"><code>9.11</code></div>
 <div class="eq" id="eq-D-547"><code>Kalenjin kln kln</code></div>
@@ -1890,11 +2066,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-551"><code>Kamba kam kam</code></div>
 <div class="eq" id="eq-D-552"><code>14.72</code></div>
 <div class="eq" id="eq-D-553"><code>Kamo kcq kcq</code></div>
-<div class="eq" id="eq-D-554"><code>10.49</code></div>
+
 <div class="eq" id="eq-D-555"><code>Kanauji bjj bjj</code></div>
-<div class="eq" id="eq-D-556"><code>11.01</code></div>
+
 <div class="eq" id="eq-D-557"><code>Kanembu kbl kbl</code></div>
-<div class="eq" id="eq-D-558"><code>10.19</code></div>
+
 <div class="eq" id="eq-D-559"><code>Kannada kn kan</code></div>
 <div class="eq" id="eq-D-560"><code>128.06</code></div>
 <div class="eq" id="eq-D-561"><code>Karekare kai kai</code></div>
@@ -1908,27 +2084,27 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-569"><code>Kazakh kk kaz</code></div>
 <div class="eq" id="eq-D-570"><code>1537.29</code></div>
 <div class="eq" id="eq-D-571"><code>Keiyo eyo eyo</code></div>
-<div class="eq" id="eq-D-572"><code>9.24</code></div>
+
 <div class="eq" id="eq-D-573"><code>Khams Tibetan khg khg</code></div>
-<div class="eq" id="eq-D-574"><code>6.38</code></div>
+
 <div class="eq" id="eq-D-575"><code>Khana ogo ogo</code></div>
-<div class="eq" id="eq-D-576"><code>10.51</code></div>
+
 <div class="eq" id="eq-D-577"><code>Khetrani xhe xhe</code></div>
-<div class="eq" id="eq-D-578"><code>9.4</code></div>
+
 <div class="eq" id="eq-D-579"><code>Khmer km khm</code></div>
 <div class="eq" id="eq-D-580"><code>7.1</code></div>
 <div class="eq" id="eq-D-581"><code>Khowar khw khw</code></div>
 <div class="eq" id="eq-D-582"><code>15.55</code></div>
 <div class="eq" id="eq-D-583"><code>Kinga zga zga</code></div>
-<div class="eq" id="eq-D-584"><code>9.5</code></div>
+
 <div class="eq" id="eq-D-585"><code>Kinnauri kfk kfk</code></div>
-<div class="eq" id="eq-D-586"><code>10.32</code></div>
+
 <div class="eq" id="eq-D-587"><code>Kinyarwanda rw kin</code></div>
 <div class="eq" id="eq-D-588"><code>2021.66</code></div>
 <div class="eq" id="eq-D-589"><code>Kirghiz ky kir</code></div>
 <div class="eq" id="eq-D-590"><code>46.63</code></div>
 <div class="eq" id="eq-D-591"><code>Kirya-Konzäl fkk fkk</code></div>
-<div class="eq" id="eq-D-592"><code>9.98</code></div>
+
 <div class="eq" id="eq-D-593"><code>Kochila Tharu thq thq</code></div>
 <div class="eq" id="eq-D-594"><code>10.28</code></div>
 <div class="eq" id="eq-D-595"><code>Kohistani Shina plk plk</code></div>
@@ -1938,7 +2114,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-599"><code>Kok Borok trp trp</code></div>
 <div class="eq" id="eq-D-600"><code>10.74</code></div>
 <div class="eq" id="eq-D-601"><code>Kol (Papua New Guinea) kol kol</code></div>
-<div class="eq" id="eq-D-602"><code>9.95</code></div>
+
 <div class="eq" id="eq-D-603"><code>Kom (Cameroon) bkm bkm</code></div>
 <div class="eq" id="eq-D-604"><code>10.76</code></div>
 <div class="eq" id="eq-D-605"><code>Koma kmy kmy</code></div>
@@ -1968,13 +2144,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-629"><code>Kushi kuh kuh</code></div>
 <div class="eq" id="eq-D-630"><code>10.35</code></div>
 <div class="eq" id="eq-D-631"><code>Kwambi kwm kwm</code></div>
-<div class="eq" id="eq-D-632"><code>9.9</code></div>
+
 <div class="eq" id="eq-D-633"><code>Kwasio nmg nmg</code></div>
 <div class="eq" id="eq-D-634"><code>10.39</code></div>
 <div class="eq" id="eq-D-635"><code>Lala-Roba lla lla</code></div>
-<div class="eq" id="eq-D-636"><code>10.38</code></div>
+
 <div class="eq" id="eq-D-637"><code>Lamang hia hia</code></div>
-<div class="eq" id="eq-D-638"><code>11.07</code></div>
+
 <div class="eq" id="eq-D-639"><code>Lao lo lao</code></div>
 <div class="eq" id="eq-D-640"><code>7.63</code></div>
 <div class="eq" id="eq-D-641"><code>Larike-Wakasihu alo alo</code></div>
@@ -1988,9 +2164,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-649"><code>Levantine Arabic apc apc</code></div>
 <div class="eq" id="eq-D-650"><code>15.65</code></div>
 <div class="eq" id="eq-D-651"><code>Liana-Seti ste ste</code></div>
-<div class="eq" id="eq-D-652"><code>10.43</code></div>
+
 <div class="eq" id="eq-D-653"><code>Liberia Kpelle xpe xpe</code></div>
-<div class="eq" id="eq-D-654"><code>9.5</code></div>
+
 <div class="eq" id="eq-D-655"><code>Liberian English lir lir</code></div>
 <div class="eq" id="eq-D-656"><code>10.26</code></div>
 <div class="eq" id="eq-D-657"><code>Libyan Arabic ayl ayl</code></div>
@@ -2008,11 +2184,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-669"><code>Logooli rag rag</code></div>
 <div class="eq" id="eq-D-670"><code>9.39</code></div>
 <div class="eq" id="eq-D-671"><code>Logudorese Sardinian src src</code></div>
-<div class="eq" id="eq-D-672"><code>10.67</code></div>
+
 <div class="eq" id="eq-D-673"><code>Loja Highland Quichua qvj qvj</code></div>
 <div class="eq" id="eq-D-674"><code>10.59</code></div>
 <div class="eq" id="eq-D-675"><code>Loloda loa loa</code></div>
-<div class="eq" id="eq-D-676"><code>9.31</code></div>
+
 <div class="eq" id="eq-D-677"><code>Longuda lnu lnu</code></div>
 <div class="eq" id="eq-D-678"><code>10.46</code></div>
 <div class="eq" id="eq-D-679"><code>Loxicha Zapotec ztp ztp</code></div>
@@ -2028,7 +2204,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-689"><code>Maasina Fulfulde ffm ffm</code></div>
 <div class="eq" id="eq-D-690"><code>10.46</code></div>
 <div class="eq" id="eq-D-691"><code>Maba (Chad) mde mde</code></div>
-<div class="eq" id="eq-D-692"><code>9.5</code></div>
+
 <div class="eq" id="eq-D-693"><code>Macedo-Romanian rup rup</code></div>
 <div class="eq" id="eq-D-694"><code>0.02</code></div>
 <div class="eq" id="eq-D-695"><code>Macedonian mk mkd</code></div>
@@ -2058,9 +2234,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-719"><code>Manipuri mni mni</code></div>
 <div class="eq" id="eq-D-720"><code>44.46</code></div>
 <div class="eq" id="eq-D-721"><code>Mansoanka msw msw</code></div>
-<div class="eq" id="eq-D-722"><code>9.32</code></div>
+
 <div class="eq" id="eq-D-723"><code>Manx gv glv</code></div>
-<div class="eq" id="eq-D-724"><code>10.07</code></div>
+
 <div class="eq" id="eq-D-725"><code>Maori mi mri</code></div>
 <div class="eq" id="eq-D-726"><code>18.02</code></div>
 <div class="eq" id="eq-D-727"><code>Marathi mr mar</code></div>
@@ -2068,35 +2244,35 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-729"><code>Marghi Central mrt mrt</code></div>
 <div class="eq" id="eq-D-730"><code>10.36</code></div>
 <div class="eq" id="eq-D-731"><code>Marghi South mfm mfm</code></div>
-<div class="eq" id="eq-D-732"><code>10.05</code></div>
+
 <div class="eq" id="eq-D-733"><code>Maria (India) mrr mrr</code></div>
-<div class="eq" id="eq-D-734"><code>11.0</code></div>
+
 <div class="eq" id="eq-D-735"><code>Marwari (Pakistan) mve mve</code></div>
-<div class="eq" id="eq-D-736"><code>9.96</code></div>
+
 <div class="eq" id="eq-D-737"><code>Masana mcn mcn</code></div>
 <div class="eq" id="eq-D-738"><code>10.09</code></div>
 <div class="eq" id="eq-D-739"><code>Masikoro Malagasy msh msh</code></div>
 <div class="eq" id="eq-D-740"><code>14.16</code></div>
 <div class="eq" id="eq-D-741"><code>Matsés mcf mcf</code></div>
-<div class="eq" id="eq-D-742"><code>9.61</code></div>
+
 <div class="eq" id="eq-D-743"><code>Mazaltepec Zapotec zpy zpy</code></div>
-<div class="eq" id="eq-D-744"><code>9.47</code></div>
+
 <div class="eq" id="eq-D-745"><code>Mazatlán Mazatec vmz vmz</code></div>
-<div class="eq" id="eq-D-746"><code>9.82</code></div>
+
 <div class="eq" id="eq-D-747"><code>Mazatlán Mixe mzl mzl</code></div>
-<div class="eq" id="eq-D-748"><code>10.05</code></div>
+
 <div class="eq" id="eq-D-749"><code>Mbe mfo mfo</code></div>
-<div class="eq" id="eq-D-750"><code>10.24</code></div>
+
 <div class="eq" id="eq-D-751"><code>Mbo (Cameroon) mbo mbo</code></div>
-<div class="eq" id="eq-D-752"><code>9.51</code></div>
+
 <div class="eq" id="eq-D-753"><code>Mbum mdd mdd</code></div>
-<div class="eq" id="eq-D-754"><code>9.82</code></div>
+
 <div class="eq" id="eq-D-755"><code>Medumba byv byv</code></div>
 <div class="eq" id="eq-D-756"><code>10.95</code></div>
 <div class="eq" id="eq-D-757"><code>Mekeo mek mek</code></div>
-<div class="eq" id="eq-D-758"><code>9.18</code></div>
+
 <div class="eq" id="eq-D-759"><code>Meru mer mer</code></div>
-<div class="eq" id="eq-D-760"><code>9.89</code></div>
+
 <div class="eq" id="eq-D-761"><code>Mesopotamian Arabic acm acm</code></div>
 <div class="eq" id="eq-D-762"><code>3.78</code></div>
 <div class="eq" id="eq-D-763"><code>Mewari mtr mtr</code></div>
@@ -2106,9 +2282,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-767"><code>Mingrelian xmf xmf</code></div>
 <div class="eq" id="eq-D-768"><code>11.47</code></div>
 <div class="eq" id="eq-D-769"><code>Mitlatongo Mixtec vmm vmm</code></div>
-<div class="eq" id="eq-D-770"><code>9.95</code></div>
+
 <div class="eq" id="eq-D-771"><code>Miya mkf mkf</code></div>
-<div class="eq" id="eq-D-772"><code>10.16</code></div>
+
 <div class="eq" id="eq-D-773"><code>Mokpwe bri bri</code></div>
 <div class="eq" id="eq-D-774"><code>7.53</code></div>
 <div class="eq" id="eq-D-775"><code>Moksha mdf mdf</code></div>
@@ -2130,7 +2306,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-791"><code>Mungaka mhk mhk</code></div>
 <div class="eq" id="eq-D-792"><code>7.53</code></div>
 <div class="eq" id="eq-D-793"><code>Musey mse mse</code></div>
-<div class="eq" id="eq-D-794"><code>7.21</code></div>
+
 <div class="eq" id="eq-D-795"><code>Musgu mug mug</code></div>
 <div class="eq" id="eq-D-796"><code>4.74</code></div>
 <div class="eq" id="eq-D-797"><code>Musi mui mui</code></div>
@@ -2140,7 +2316,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-801"><code>Najdi Arabic ars ars</code></div>
 <div class="eq" id="eq-D-802"><code>203.54</code></div>
 <div class="eq" id="eq-D-803"><code>Nalik nal nal</code></div>
-<div class="eq" id="eq-D-804"><code>10.33</code></div>
+
 <div class="eq" id="eq-D-805"><code>Nawdm nmz nmz</code></div>
 <div class="eq" id="eq-D-806"><code>6.3</code></div>
 <div class="eq" id="eq-D-807"><code>Ndonga ng ndo</code></div>
@@ -2152,11 +2328,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-813"><code>Ngamo nbh nbh</code></div>
 <div class="eq" id="eq-D-814"><code>10.04</code></div>
 <div class="eq" id="eq-D-815"><code>Ngas anc anc</code></div>
-<div class="eq" id="eq-D-816"><code>10.14</code></div>
+
 <div class="eq" id="eq-D-817"><code>Ngiemboon nnh nnh</code></div>
 <div class="eq" id="eq-D-818"><code>16.15</code></div>
 <div class="eq" id="eq-D-819"><code>Ngizim ngi ngi</code></div>
-<div class="eq" id="eq-D-820"><code>10.06</code></div>
+
 <div class="eq" id="eq-D-821"><code>Ngomba jgo jgo</code></div>
 <div class="eq" id="eq-D-822"><code>10.15</code></div>
 <div class="eq" id="eq-D-823"><code>Ngombale nla nla</code></div>
@@ -2164,15 +2340,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-825"><code>Nigerian Fulfulde fuv fuv</code></div>
 <div class="eq" id="eq-D-826"><code>9.97</code></div>
 <div class="eq" id="eq-D-827"><code>Nigerian Pidgin pcm pcm</code></div>
-<div class="eq" id="eq-D-828"><code>11.04</code></div>
+
 <div class="eq" id="eq-D-829"><code>Nimadi noe noe</code></div>
 <div class="eq" id="eq-D-830"><code>11.12</code></div>
 <div class="eq" id="eq-D-831"><code>Nobiin fia fia</code></div>
-<div class="eq" id="eq-D-832"><code>9.96</code></div>
+
 <div class="eq" id="eq-D-833"><code>North Mesopotamian Arabic ayp ayp</code></div>
 <div class="eq" id="eq-D-834"><code>10.92</code></div>
 <div class="eq" id="eq-D-835"><code>North Moluccan Malay max max</code></div>
-<div class="eq" id="eq-D-836"><code>9.43</code></div>
+
 <div class="eq" id="eq-D-837"><code>Northern Betsimisaraka Malagasy bmm bmm</code></div>
 <div class="eq" id="eq-D-838"><code>19.12</code></div>
 <div class="eq" id="eq-D-839"><code>Northern Hindko hno hno</code></div>
@@ -2180,7 +2356,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-841"><code>Northern Kurdish kmr kmr</code></div>
 <div class="eq" id="eq-D-842"><code>69.59</code></div>
 <div class="eq" id="eq-D-843"><code>Northern Pame pmq pmq</code></div>
-<div class="eq" id="eq-D-844"><code>10.24</code></div>
+
 <div class="eq" id="eq-D-845"><code>Northern Pashto pbu pbu</code></div>
 <div class="eq" id="eq-D-846"><code>11.03</code></div>
 <div class="eq" id="eq-D-847"><code>Northern Uzbek uzn uzn</code></div>
@@ -2194,7 +2370,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-855"><code>Norwegian Nynorsk nn nno</code></div>
 <div class="eq" id="eq-D-856"><code>1.54</code></div>
 <div class="eq" id="eq-D-857"><code>Notsi ncf ncf</code></div>
-<div class="eq" id="eq-D-858"><code>9.84</code></div>
+
 <div class="eq" id="eq-D-859"><code>Nyankpa yes yes</code></div>
 <div class="eq" id="eq-D-860"><code>10.26</code></div>
 <div class="eq" id="eq-D-861"><code>Nyungwe nyu nyu</code></div>
@@ -2214,7 +2390,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-875"><code>Omani Arabic acx acx</code></div>
 <div class="eq" id="eq-D-876"><code>22.03</code></div>
 <div class="eq" id="eq-D-877"><code>Orizaba Nahuatl nlv nlv</code></div>
-<div class="eq" id="eq-D-878"><code>11.42</code></div>
+
 <div class="eq" id="eq-D-879"><code>Orma orc orc</code></div>
 <div class="eq" id="eq-D-880"><code>22.01</code></div>
 <div class="eq" id="eq-D-881"><code>Ormuri oru oru</code></div>
@@ -2228,13 +2404,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-889"><code>Panjabi pa pan</code></div>
 <div class="eq" id="eq-D-890"><code>147.37</code></div>
 <div class="eq" id="eq-D-891"><code>Papuan Malay pmy pmy</code></div>
-<div class="eq" id="eq-D-892"><code>10.17</code></div>
+
 <div class="eq" id="eq-D-893"><code>Parkari Koli kvx kvx</code></div>
-<div class="eq" id="eq-D-894"><code>11.04</code></div>
+
 <div class="eq" id="eq-D-895"><code>Pedi nso nso</code></div>
 <div class="eq" id="eq-D-896"><code>12.64</code></div>
 <div class="eq" id="eq-D-897"><code>Pero pip pip</code></div>
-<div class="eq" id="eq-D-898"><code>9.85</code></div>
+
 <div class="eq" id="eq-D-899"><code>Persian fa fas</code></div>
 <div class="eq" id="eq-D-900"><code>366.07</code></div>
 <div class="eq" id="eq-D-901"><code>Petats pex pex</code></div>
@@ -2244,7 +2420,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-905"><code>Piemontese pms pms</code></div>
 <div class="eq" id="eq-D-906"><code>16.01</code></div>
 <div class="eq" id="eq-D-907"><code>Piya-Kwonci piy piy</code></div>
-<div class="eq" id="eq-D-908"><code>10.38</code></div>
+
 <div class="eq" id="eq-D-909"><code>Plateau Malagasy plt plt</code></div>
 <div class="eq" id="eq-D-910"><code>19.39</code></div>
 <div class="eq" id="eq-D-911"><code>Polish pl pol</code></div>
@@ -2256,21 +2432,21 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-917"><code>Pular fuf fuf</code></div>
 <div class="eq" id="eq-D-918"><code>13.77</code></div>
 <div class="eq" id="eq-D-919"><code>Puno Quechua qxp qxp</code></div>
-<div class="eq" id="eq-D-920"><code>9.81</code></div>
+
 <div class="eq" id="eq-D-921"><code>Pushto ps pus</code></div>
 <div class="eq" id="eq-D-922"><code>88.62</code></div>
 <div class="eq" id="eq-D-923"><code>Pökoot pko pko</code></div>
-<div class="eq" id="eq-D-924"><code>10.4</code></div>
+
 <div class="eq" id="eq-D-925"><code>Qaqet byx byx</code></div>
 <div class="eq" id="eq-D-926"><code>9.79</code></div>
 <div class="eq" id="eq-D-927"><code>Quiotepec Chinantec chq chq</code></div>
 <div class="eq" id="eq-D-928"><code>9.76</code></div>
 <div class="eq" id="eq-D-929"><code>Rana Tharu thr thr</code></div>
-<div class="eq" id="eq-D-930"><code>9.99</code></div>
+
 <div class="eq" id="eq-D-931"><code>Rangi lag lag</code></div>
-<div class="eq" id="eq-D-932"><code>9.47</code></div>
+
 <div class="eq" id="eq-D-933"><code>Rapoisi kyx kyx</code></div>
-<div class="eq" id="eq-D-934"><code>9.17</code></div>
+
 <div class="eq" id="eq-D-935"><code>Ratahan rth rth</code></div>
 <div class="eq" id="eq-D-936"><code>9.34</code></div>
 <div class="eq" id="eq-D-937"><code>Rayón Zoque zor zor</code></div>
@@ -2284,23 +2460,23 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-945"><code>Rotokas roo roo</code></div>
 <div class="eq" id="eq-D-946"><code>9.07</code></div>
 <div class="eq" id="eq-D-947"><code>Rukai dru dru</code></div>
-<div class="eq" id="eq-D-948"><code>9.26</code></div>
+
 <div class="eq" id="eq-D-949"><code>Russian ru rus</code></div>
 <div class="eq" id="eq-D-950"><code>20338.5</code></div>
 <div class="eq" id="eq-D-951"><code>Sacapulteco quv quv</code></div>
 <div class="eq" id="eq-D-952"><code>8.9</code></div>
 <div class="eq" id="eq-D-953"><code>Saidi Arabic aec aec</code></div>
-<div class="eq" id="eq-D-954"><code>9.28</code></div>
+
 <div class="eq" id="eq-D-955"><code>Sakalava Malagasy skg skg</code></div>
 <div class="eq" id="eq-D-956"><code>9.02</code></div>
 <div class="eq" id="eq-D-957"><code>Sakizaya szy szy</code></div>
 <div class="eq" id="eq-D-958"><code>11.47</code></div>
 <div class="eq" id="eq-D-959"><code>Saleman sau sau</code></div>
-<div class="eq" id="eq-D-960"><code>10.53</code></div>
+
 <div class="eq" id="eq-D-961"><code>Samba Daka ccg ccg</code></div>
 <div class="eq" id="eq-D-962"><code>10.11</code></div>
 <div class="eq" id="eq-D-963"><code>Samba Leko ndi ndi</code></div>
-<div class="eq" id="eq-D-964"><code>11.27</code></div>
+
 <div class="eq" id="eq-D-965"><code>San Felipe Otlaltepec Popoloca pow pow</code></div>
 <div class="eq" id="eq-D-966"><code>8.84</code></div>
 <div class="eq" id="eq-D-967"><code>San Francisco Del Mar Huave hue hue</code></div>
@@ -2316,7 +2492,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-977"><code>Sanskrit sa san</code></div>
 <div class="eq" id="eq-D-978"><code>84.44</code></div>
 <div class="eq" id="eq-D-979"><code>Santa Ana de Tusi Pasco Quechua qxt qxt</code></div>
-<div class="eq" id="eq-D-980"><code>10.05</code></div>
+
 <div class="eq" id="eq-D-981"><code>Santa Catarina Albarradas Zapotec ztn ztn</code></div>
 <div class="eq" id="eq-D-982"><code>10.02</code></div>
 <div class="eq" id="eq-D-983"><code>Santali sat sat</code></div>
@@ -2324,7 +2500,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-985"><code>Santiago del Estero Quichua qus qus</code></div>
 <div class="eq" id="eq-D-986"><code>9.55</code></div>
 <div class="eq" id="eq-D-987"><code>Saposa sps sps</code></div>
-<div class="eq" id="eq-D-988"><code>9.81</code></div>
+
 <div class="eq" id="eq-D-989"><code>Saraiki skr skr</code></div>
 <div class="eq" id="eq-D-990"><code>4.13</code></div>
 <div class="eq" id="eq-D-991"><code>Sardinian sc srd</code></div>
@@ -2336,31 +2512,31 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-997"><code>Serbian sr srp</code></div>
 <div class="eq" id="eq-D-998"><code>1855.33</code></div>
 <div class="eq" id="eq-D-999"><code>Seri sei sei</code></div>
-<div class="eq" id="eq-D-1000"><code>9.81</code></div>
+
 <div class="eq" id="eq-D-1001"><code>Shina scl scl</code></div>
-<div class="eq" id="eq-D-1002"><code>9.84</code></div>
+
 <div class="eq" id="eq-D-1003"><code>Shona sn sna</code></div>
-<div class="eq" id="eq-D-1004"><code>9.96</code></div>
+
 <div class="eq" id="eq-D-1005"><code>Siar-Lak sjr sjr</code></div>
 <div class="eq" id="eq-D-1006"><code>9.87</code></div>
 <div class="eq" id="eq-D-1007"><code>Sibe nco nco</code></div>
-<div class="eq" id="eq-D-1008"><code>9.96</code></div>
+
 <div class="eq" id="eq-D-1009"><code>Sicilian scn scn</code></div>
 <div class="eq" id="eq-D-1010"><code>13.35</code></div>
 <div class="eq" id="eq-D-1011"><code>Sihuas Ancash Quechua qws qws</code></div>
-<div class="eq" id="eq-D-1012"><code>10.18</code></div>
+
 <div class="eq" id="eq-D-1013"><code>Sikkimese sip sip</code></div>
-<div class="eq" id="eq-D-1014"><code>10.07</code></div>
+
 <div class="eq" id="eq-D-1015"><code>Sinaugoro snc snc</code></div>
-<div class="eq" id="eq-D-1016"><code>10.38</code></div>
+
 <div class="eq" id="eq-D-1017"><code>Sindhi sd snd</code></div>
 <div class="eq" id="eq-D-1018"><code>46.27</code></div>
 <div class="eq" id="eq-D-1019"><code>Sindhi Bhil sbn sbn</code></div>
-<div class="eq" id="eq-D-1020"><code>10.53</code></div>
+
 <div class="eq" id="eq-D-1021"><code>Sinhala si sin</code></div>
 <div class="eq" id="eq-D-1022"><code>11.98</code></div>
 <div class="eq" id="eq-D-1023"><code>Sinicahua Mixtec xti xti</code></div>
-<div class="eq" id="eq-D-1024"><code>9.5</code></div>
+
 <div class="eq" id="eq-D-1025"><code>Sipacapense qum qum</code></div>
 <div class="eq" id="eq-D-1026"><code>9.37</code></div>
 <div class="eq" id="eq-D-1027"><code>Siwai siw siw</code></div>
@@ -2370,13 +2546,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-1031"><code>Slovenian sl slv</code></div>
 <div class="eq" id="eq-D-1032"><code>1172.61</code></div>
 <div class="eq" id="eq-D-1033"><code>Solos sol sol</code></div>
-<div class="eq" id="eq-D-1034"><code>9.95</code></div>
+
 <div class="eq" id="eq-D-1035"><code>Somali so som</code></div>
 <div class="eq" id="eq-D-1036"><code>13.22</code></div>
 <div class="eq" id="eq-D-1037"><code>Soninke snk snk</code></div>
 <div class="eq" id="eq-D-1038"><code>10.04</code></div>
 <div class="eq" id="eq-D-1039"><code>South Giziga giz giz</code></div>
-<div class="eq" id="eq-D-1040"><code>10.03</code></div>
+
 <div class="eq" id="eq-D-1041"><code>South Ucayali Ashéninka cpy cpy</code></div>
 <div class="eq" id="eq-D-1042"><code>9.15</code></div>
 <div class="eq" id="eq-D-1043"><code>Southeastern Nochixtlán Mixtec mxy mxy</code></div>
@@ -2388,7 +2564,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-1049"><code>Southern Pastaza Quechua qup qup</code></div>
 <div class="eq" id="eq-D-1050"><code>11.13</code></div>
 <div class="eq" id="eq-D-1051"><code>Soyaltepec Mazatec vmp vmp</code></div>
-<div class="eq" id="eq-D-1052"><code>10.17</code></div>
+
 <div class="eq" id="eq-D-1053"><code>Spanish es spa 27559.74 Standard Arabic arb arb</code></div>
 <div class="eq" id="eq-D-1054"><code>1483.53</code></div>
 <div class="eq" id="eq-D-1055"><code>Standard Moroccan Tamazight zgh zgh</code></div>
@@ -2396,7 +2572,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-1057"><code>Sudanese Arabic apd apd</code></div>
 <div class="eq" id="eq-D-1058"><code>9.93</code></div>
 <div class="eq" id="eq-D-1059"><code>Sulka sua sua</code></div>
-<div class="eq" id="eq-D-1060"><code>10.12</code></div>
+
 <div class="eq" id="eq-D-1061"><code>Svan sva sva</code></div>
 <div class="eq" id="eq-D-1062"><code>15.11</code></div>
 <div class="eq" id="eq-D-1063"><code>Swahili sw swa</code></div>
@@ -2416,27 +2592,27 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-1077"><code>Tandroy-Mahafaly Malagasy tdx tdx</code></div>
 <div class="eq" id="eq-D-1078"><code>3.81</code></div>
 <div class="eq" id="eq-D-1079"><code>Tangale tan tan</code></div>
-<div class="eq" id="eq-D-1080"><code>10.14</code></div>
+
 <div class="eq" id="eq-D-1081"><code>Tanosy Malagasy txy txy</code></div>
 <div class="eq" id="eq-D-1082"><code>12.07</code></div>
 <div class="eq" id="eq-D-1083"><code>Tarok yer yer</code></div>
-<div class="eq" id="eq-D-1084"><code>10.08</code></div>
+
 <div class="eq" id="eq-D-1085"><code>Tatar tt tat</code></div>
 <div class="eq" id="eq-D-1086"><code>30.03</code></div>
 <div class="eq" id="eq-D-1087"><code>Tedaga tuq tuq</code></div>
-<div class="eq" id="eq-D-1088"><code>10.0</code></div>
+
 <div class="eq" id="eq-D-1089"><code>Telugu te tel</code></div>
 <div class="eq" id="eq-D-1090"><code>230.21</code></div>
 <div class="eq" id="eq-D-1091"><code>Tem kdh kdh</code></div>
 <div class="eq" id="eq-D-1092"><code>4.07</code></div>
 <div class="eq" id="eq-D-1093"><code>Teop tio tio</code></div>
-<div class="eq" id="eq-D-1094"><code>9.85</code></div>
+
 <div class="eq" id="eq-D-1095"><code>Tepeuxila Cuicatec cux cux</code></div>
-<div class="eq" id="eq-D-1096"><code>7.83</code></div>
+
 <div class="eq" id="eq-D-1097"><code>Tepinapa Chinantec cte cte</code></div>
 <div class="eq" id="eq-D-1098"><code>9.54</code></div>
 <div class="eq" id="eq-D-1099"><code>Tera ttr ttr</code></div>
-<div class="eq" id="eq-D-1100"><code>9.89</code></div>
+
 <div class="eq" id="eq-D-1101"><code>Terei buo buo</code></div>
 <div class="eq" id="eq-D-1102"><code>9.48</code></div>
 <div class="eq" id="eq-D-1103"><code>Termanu twu twu</code></div>
@@ -2464,7 +2640,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-1125"><code>Tinputz tpz tpz</code></div>
 <div class="eq" id="eq-D-1126"><code>9.33</code></div>
 <div class="eq" id="eq-D-1127"><code>Tlacoapa Me’phaa tpl tpl</code></div>
-<div class="eq" id="eq-D-1128"><code>9.28</code></div>
+
 <div class="eq" id="eq-D-1129"><code>Tlacoatzintepec Chinantec ctl ctl</code></div>
 <div class="eq" id="eq-D-1130"><code>10.04</code></div>
 <div class="eq" id="eq-D-1131"><code>Tlingit tli tli</code></div>
@@ -2472,11 +2648,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-1133"><code>Toki Pona tok tok</code></div>
 <div class="eq" id="eq-D-1134"><code>13.51</code></div>
 <div class="eq" id="eq-D-1135"><code>Tomoip tqp tqp</code></div>
-<div class="eq" id="eq-D-1136"><code>10.1</code></div>
+
 <div class="eq" id="eq-D-1137"><code>Tondano tdn tdn</code></div>
-<div class="eq" id="eq-D-1138"><code>9.14</code></div>
+
 <div class="eq" id="eq-D-1139"><code>Tonsea txs txs</code></div>
-<div class="eq" id="eq-D-1140"><code>9.32</code></div>
+
 <div class="eq" id="eq-D-1141"><code>Tooro ttj ttj</code></div>
 <div class="eq" id="eq-D-1142"><code>10.31</code></div>
 <div class="eq" id="eq-D-1143"><code>Torau ttu ttu</code></div>
@@ -2498,15 +2674,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-1159"><code>Tulu tcy tcy</code></div>
 <div class="eq" id="eq-D-1160"><code>11.72</code></div>
 <div class="eq" id="eq-D-1161"><code>Tunen tvu tvu</code></div>
-<div class="eq" id="eq-D-1162"><code>9.85</code></div>
+
 <div class="eq" id="eq-D-1163"><code>Tungag lcm lcm</code></div>
 <div class="eq" id="eq-D-1164"><code>9.77</code></div>
 <div class="eq" id="eq-D-1165"><code>Tunisian Arabic aeb aeb</code></div>
 <div class="eq" id="eq-D-1166"><code>21.63</code></div>
 <div class="eq" id="eq-D-1167"><code>Tupuri tui tui</code></div>
-<div class="eq" id="eq-D-1168"><code>9.26</code></div>
+
 <div class="eq" id="eq-D-1169"><code>Turkana tuv tuv</code></div>
-<div class="eq" id="eq-D-1170"><code>10.17</code></div>
+
 <div class="eq" id="eq-D-1171"><code>Turkish tr tur</code></div>
 <div class="eq" id="eq-D-1172"><code>125.36</code></div>
 <div class="eq" id="eq-D-1173"><code>Turkmen tk tuk</code></div>
@@ -2544,13 +2720,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-1205"><code>Wadiyara Koli kxp kxp</code></div>
 <div class="eq" id="eq-D-1206"><code>20.0</code></div>
 <div class="eq" id="eq-D-1207"><code>Waja wja wja</code></div>
-<div class="eq" id="eq-D-1208"><code>10.22</code></div>
+
 <div class="eq" id="eq-D-1209"><code>Wakhi wbl wbl</code></div>
 <div class="eq" id="eq-D-1210"><code>11.67</code></div>
 <div class="eq" id="eq-D-1211"><code>Wanga lwg lwg</code></div>
 <div class="eq" id="eq-D-1212"><code>9.36</code></div>
 <div class="eq" id="eq-D-1213"><code>Wapan juk juk</code></div>
-<div class="eq" id="eq-D-1214"><code>10.22</code></div>
+
 <div class="eq" id="eq-D-1215"><code>Warji wji wji</code></div>
 <div class="eq" id="eq-D-1216"><code>11.39</code></div>
 <div class="eq" id="eq-D-1217"><code>Welsh cy cym</code></div>
@@ -2560,7 +2736,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-1221"><code>Western Frisian fy fry</code></div>
 <div class="eq" id="eq-D-1222"><code>70.41</code></div>
 <div class="eq" id="eq-D-1223"><code>Western Highland Purepecha pua pua</code></div>
-<div class="eq" id="eq-D-1224"><code>10.17</code></div>
+
 <div class="eq" id="eq-D-1225"><code>Western Juxtlahuaca Mixtec jmx jmx</code></div>
 <div class="eq" id="eq-D-1226"><code>10.01</code></div>
 <div class="eq" id="eq-D-1227"><code>Western Maninkakan mlq mlq</code></div>
@@ -2568,15 +2744,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-1229"><code>Western Mari mrj mrj</code></div>
 <div class="eq" id="eq-D-1230"><code>32.26</code></div>
 <div class="eq" id="eq-D-1231"><code>Western Niger Fulfulde fuh fuh</code></div>
-<div class="eq" id="eq-D-1232"><code>9.69</code></div>
+
 <div class="eq" id="eq-D-1233"><code>Western Panjabi pnb pnb</code></div>
-<div class="eq" id="eq-D-1234"><code>10.0</code></div>
+
 <div class="eq" id="eq-D-1235"><code>Wolof wo wol</code></div>
 <div class="eq" id="eq-D-1236"><code>8.71</code></div>
 <div class="eq" id="eq-D-1237"><code>Wuzlam udl udl</code></div>
 <div class="eq" id="eq-D-1238"><code>9.23</code></div>
 <div class="eq" id="eq-D-1239"><code>Xanaguía Zapotec ztg ztg</code></div>
-<div class="eq" id="eq-D-1240"><code>9.86</code></div>
+
 <div class="eq" id="eq-D-1241"><code>Xhosa xh xho</code></div>
 <div class="eq" id="eq-D-1242"><code>13.35</code></div>
 <div class="eq" id="eq-D-1243"><code>Yace ekr ekr</code></div>
@@ -2586,25 +2762,25 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-1247"><code>Yalahatan jal jal</code></div>
 <div class="eq" id="eq-D-1248"><code>11.18</code></div>
 <div class="eq" id="eq-D-1249"><code>Yanahuanca Pasco Quechua qur qur</code></div>
-<div class="eq" id="eq-D-1250"><code>9.95</code></div>
+
 <div class="eq" id="eq-D-1251"><code>Yangben yav yav</code></div>
 <div class="eq" id="eq-D-1252"><code>8.7</code></div>
 <div class="eq" id="eq-D-1253"><code>Yaqui yaq yaq</code></div>
 <div class="eq" id="eq-D-1254"><code>9.93</code></div>
 <div class="eq" id="eq-D-1255"><code>Yauyos Quechua qux qux</code></div>
-<div class="eq" id="eq-D-1256"><code>9.35</code></div>
+
 <div class="eq" id="eq-D-1257"><code>Yekhee ets ets</code></div>
 <div class="eq" id="eq-D-1258"><code>10.11</code></div>
 <div class="eq" id="eq-D-1259"><code>Yiddish yi yid</code></div>
 <div class="eq" id="eq-D-1260"><code>1.81</code></div>
 <div class="eq" id="eq-D-1261"><code>Yidgha ydg ydg</code></div>
-<div class="eq" id="eq-D-1262"><code>9.89</code></div>
+
 <div class="eq" id="eq-D-1263"><code>Yoruba yo yor</code></div>
 <div class="eq" id="eq-D-1264"><code>15.66</code></div>
 <div class="eq" id="eq-D-1265"><code>Yutanduchi Mixtec mab mab</code></div>
-<div class="eq" id="eq-D-1266"><code>9.26</code></div>
+
 <div class="eq" id="eq-D-1267"><code>Zacatlán-Ahuacatlán-Tepetzintla Nahuatl nhi nhi</code></div>
-<div class="eq" id="eq-D-1268"><code>0.05</code></div>
+
 <div class="eq" id="eq-D-1269"><code>Zarma dje dje</code></div>
 <div class="eq" id="eq-D-1270"><code>10.72</code></div>
 <div class="eq" id="eq-D-1271"><code>Zaza zza zza</code></div>

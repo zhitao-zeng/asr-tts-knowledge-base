@@ -102,6 +102,13 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+/* 重建表格网格（extract_tables.py 产物） */
+.ptab-wrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ptab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ptab th{background:#f1f5f9;font-weight:700;padding:6px 9px;border-bottom:1.5px solid var(--line);text-align:left;white-space:nowrap}
+.ptab td{padding:5px 9px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap}
+.ptab td:first-child,.ptab th:first-child{text-align:left;font-weight:600}
+.ptab tbody tr:hover td{background:#f8fafc}
 .tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
 .refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
 /* 三分钟摘要 */
@@ -694,7 +701,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-1-1"><span class="zh">训练遵循渐进式日程：每个阶段继承上一阶段的检查点，只改变数据分布或注意力模式。</span></span><span class="sent" data-sid="s-3-2-1-2"><span class="zh">表 4 分列了各阶段的数据、训练量与目的。</span></span></p>
           
         </div>
-<div class="cap" id="tab-3-2-1"><span class="cap-k">表</span><p class="en">Table 4: Progressive training schedule.</p><p class="zh">Table 4：渐进式训练日程。</p></div>
+<div class="cap" id="tab-3-2-1"><span class="cap-k">表</span><p class="en">Table 4: Progressive training schedule.</p><p class="zh">Table 4：渐进式训练日程。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Full multilingual mixture</th><th></th><th>Learn multilingual speech generation</th></tr><tr><th>pretraining</th><th></th><th>weighted epochs; ∼100B</th><th>from Qwen3-0.6B</th></tr><tr><th></th><th></th><th>packed speech–text tokens</th><th></th></tr><tr><th>High-quality</th><th>Curated high-quality speech</th><th>∼100K-hour pool;</th><th>Improve fidelity, robustness, and natural</th></tr><tr><th>annealing</th><th></th><th>approximately one epoch</th><th>prosody</th></tr></thead><tbody><tr><td>Expressive</td><td>Emotion- and NVV-annotated</td><td>Compact finely annotated</td><td>Add independent and joint expressive</td></tr>
+<tr><td>continual</td><td>speech with neutral mixing</td><td>pool</td><td>control</td></tr>
+<tr><td>pretraining</td><td></td><td></td><td></td></tr>
+<tr><td>Block adaptation</td><td>Multilingual mixture</td><td>Approximately 20K</td><td>Learn block-causal streaming and</td></tr>
+<tr><td></td><td></td><td>optimization steps</td><td>termination</td></tr>
+<tr><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-3-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="en">Stage Data Training amount Purpose Foundation pretraining Full multilingual mixture ∼1 million hours; ∼1.1 weighted epochs; ∼100B packed speech–text tokens Learn multilingual speech generation from Qwen3-0.6B High-quality annealing Curated high-quality speech ∼100K-hour pool; approximately one epoch Improve fidelity, robustness, and natural prosody Emotion- and NVV-annotated speech with neutral mixing Compact finely annotated pool Add independent and joint expressive control Expressive continual pretraining Block adaptation Multilingual mixture Approximately 20K optimization steps Learn block-causal streaming and termination</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="zh">（Table 4 正文碎块，抽取乱序：阶段 / 数据 / 训练量 / 目的——基础预训练：完整多语言混合集，约 1 百万小时、约 1.1 个加权 epoch、约 100B 个打包语音—文本 token，从 Qwen3-0.6B 学习多语言语音生成；高质量退火：精选高质量语音，约 100K 小时池、约一个 epoch，提升保真度、鲁棒性与自然韵律；表现力继续预训练：带情绪与 NVV 标注的语音混合中性语音，紧凑精标注池，获得独立与联合的表现力控制；块适配：多语言混合集，约 20K 优化步，学习块因果流式与终止。）</span></span></p>
@@ -890,35 +902,40 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-1-1"><span class="zh">我们在同一条 Seed-TTS-Eval 中文请求上、以 BF16、batch size 1 为两种形态做基准。</span></span><span class="sent" data-sid="s-5-2-1-2"><span class="zh">本地首块延迟从引擎调用计起，到首个 32 帧（1.28 秒）声学块完成并解码为止。</span></span><span class="sent" data-sid="s-5-2-1-3"><span class="zh">完整响应延迟包含声学生成、codec 解码与 WAV 序列化。</span></span><span class="sent" data-sid="s-5-2-1-4"><span class="zh">所有数值为 12 次预热运行的中位数；不含网络传输。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-2-1"><span class="cap-k">表</span><p class="en">Table 5: Luna-TTS Family 0.6B inference performance on NVIDIA H20 GPUs.</p><p class="zh">Table 5：Luna-TTS 系列 0.6B 在 NVIDIA H20 GPU 上的推理性能。</p></div>
+<div class="cap" id="tab-5-2-1"><span class="cap-k">表</span><p class="en">Table 5: Luna-TTS Family 0.6B inference performance on NVIDIA H20 GPUs.</p><p class="zh">Table 5：Luna-TTS 系列 0.6B 在 NVIDIA H20 GPU 上的推理性能。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>Local first block</th><th></th><th></th><th>Full response</th><th></th><th></th><th>End-to-end</th><th></th></tr><tr><th>Profile</th><th>Steps</th><th>Execution</th><th></th><th>(ms)</th><th></th><th></th><th>(ms)</th><th></th><th></th><th>RTF ↓</th></tr></thead><tbody><tr><td>Luna-TTS</td><td>32</td><td>1× H20, full-grid</td><td></td><td></td><td>419.6</td><td></td><td></td><td>419.6</td><td></td><td>0.0410</td></tr>
+<tr><td>Luna-TTS</td><td>16</td><td>1× H20, full-grid</td><td></td><td></td><td>216.0</td><td></td><td></td><td>216.0</td><td></td><td>0.0211</td></tr>
+<tr><td>Luna-TTS Realtime</td><td>16</td><td>1× H20, sequential CFG</td><td></td><td></td><td>98.9</td><td></td><td></td><td>837.7</td><td></td><td>0.0790</td></tr>
+<tr><td>Luna-TTS Realtime</td><td>16</td><td>2× H20, parallel CFG</td><td></td><td></td><td>63.8</td><td></td><td></td><td>451.4</td><td></td><td>0.0426</td></tr>
+<tr><td>Luna-TTS Realtime</td><td>8</td><td>1× H20, sequential CFG</td><td></td><td></td><td>59.6</td><td></td><td></td><td>457.6</td><td></td><td>0.0432</td></tr>
+<tr><td>Luna-TTS Realtime</td><td>8</td><td>2× H20, parallel CFG</td><td></td><td></td><td>41.6</td><td></td><td></td><td>254.0</td><td></td><td>0.0240</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-5-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="en">Profile Steps Execution Local first block (ms) Full response (ms) End-to-end RTF ↓ Luna-TTS</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="zh">（表 5：Profile × Steps × Execution × 首块延迟 (ms) × 完整响应 (ms) × 端到端 RTF↓——Luna-TTS 32 步 1×H20 全网格 419.6/419.6/0.0410；16 步 1×H20 216.0/216.0/0.0211；Luna-TTS Realtime 16 步 1×H20 顺序 CFG 98.9/837.7/0.0790；16 步 2×H20 并行 CFG 63.8/451.4/0.0426；8 步 1×H20 顺序 CFG 59.6/457.6/0.0432；8 步 2×H20 并行 CFG 41.6/254.0/0.0240。）两种服务配置优化不同延迟目标。</span></span></p>
           
         </div>
-<div class="eq" id="eq-5-2-1"><code>32</code></div>
-<div class="eq" id="eq-5-2-2"><code>1× H20, full-grid</code></div>
-<div class="eq" id="eq-5-2-3"><code>419.6 419.6 0.0410</code></div>
-<div class="eq" id="eq-5-2-4"><code>Luna-TTS</code></div>
-<div class="eq" id="eq-5-2-5"><code>16</code></div>
-<div class="eq" id="eq-5-2-6"><code>1× H20, full-grid</code></div>
-<div class="eq" id="eq-5-2-7"><code>216.0 216.0 0.0211</code></div>
-<div class="eq" id="eq-5-2-8"><code>Luna-TTS Realtime</code></div>
-<div class="eq" id="eq-5-2-9"><code>16</code></div>
-<div class="eq" id="eq-5-2-10"><code>1× H20, sequential CFG</code></div>
-<div class="eq" id="eq-5-2-11"><code>98.9 837.7 0.0790</code></div>
-<div class="eq" id="eq-5-2-12"><code>Luna-TTS Realtime</code></div>
-<div class="eq" id="eq-5-2-13"><code>16</code></div>
-<div class="eq" id="eq-5-2-14"><code>2× H20, parallel CFG</code></div>
-<div class="eq" id="eq-5-2-15"><code>63.8 451.4 0.0426</code></div>
-<div class="eq" id="eq-5-2-16"><code>Luna-TTS Realtime</code></div>
-<div class="eq" id="eq-5-2-17"><code>8</code></div>
-<div class="eq" id="eq-5-2-18"><code>1× H20, sequential CFG</code></div>
-<div class="eq" id="eq-5-2-19"><code>59.6 457.6 0.0432</code></div>
-<div class="eq" id="eq-5-2-20"><code>Luna-TTS Realtime</code></div>
-<div class="eq" id="eq-5-2-21"><code>8</code></div>
-<div class="eq" id="eq-5-2-22"><code>2× H20, parallel CFG</code></div>
-<div class="eq" id="eq-5-2-23"><code>41.6 254.0 0.0240</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-5-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-3-1"><span class="en">The two serving profiles optimize different latency targets.</span></span> <span class="sent" data-sid="s-5-2-3-2"><span class="en">At 16 steps, Luna-TTS synthesizes the complete waveform in 216.0 ms with an end-to-end RTF of 0.0211.</span></span> <span class="sent" data-sid="s-5-2-3-3"><span class="en">For streaming workloads, Luna-TTS Realtime returns the first decoded 1.28s audio block in 41.6 ms and completes a 10.6-second waveform in 254.0 ms.</span><button class="mk" data-sid="s-5-2-3-3" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-3-1"><span class="zh">（表 5：Profile × Steps × Execution × 首块延迟 (ms) × 完整响应 (ms) × 端到端 RTF↓——Luna-TTS 32 步 1×H20 全网格 419.6/419.6/0.0410；16 步 1×H20 216.0/216.0/0.0211；Luna-TTS Realtime 16 步 1×H20 顺序 CFG 98.9/837.7/0.0790；16 步 2×H20 并行 CFG 63.8/451.4/0.0426；8 步 1×H20 顺序 CFG 59.6/457.6/0.0432；8 步 2×H20 并行 CFG 41.6/254.0/0.0240。）两种服务配置优化不同延迟目标。</span></span><span class="sent" data-sid="s-5-2-3-2"><span class="zh">在 16 步时，Luna-TTS 以 216.0 毫秒合成完整波形，端到端 RTF 为 0.0211。</span></span><span class="sent" data-sid="s-5-2-3-3"><span class="zh">对流式负载，Luna-TTS Realtime 在 41.6 毫秒内返回首个解码的 1.28 秒音频块，并在 254.0 毫秒内完成一段 10.6 秒的波形。</span><button class="mk" data-sid="s-5-2-3-3" title="查看讲解">解</button></span></p>
@@ -936,7 +953,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-4-1"><span class="zh">并行 CFG 显著加速了两个运行点。</span></span><span class="sent" data-sid="s-5-2-4-2"><span class="zh">它把完整响应延迟在 16 步时降低 46.1%，在 8 步时降低 44.5%。</span></span></p>
           
         </div>
-<div class="eq" id="eq-5-2-24"><code>44.5% at 8 steps. Local first-block latency decreases from 98.9 to 63.8 ms at 16 steps and from 59.6 to 41.6 ms at 8</code></div>
+
 <div class="pblk" id="p-5-2-5">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-5-1"><span class="en">steps.</span></span> <span class="sent" data-sid="s-5-2-5-2"><span class="en">We use the 8-step dual-H20 configuration as the default latency-optimized deployment.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-5-1"><span class="zh">生成从一个全 MASK 的 T 帧网格出发，以 S = 32 步细化产出整条语句。</span></span><span class="sent" data-sid="s-5-2-5-2"><span class="zh">我们把 8 步双 H20 配置作为默认的延迟优化部署形态。</span></span></p>
@@ -948,24 +965,17 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-5-3-1-s1"><span class="zh">表 6（正文表）把我们实测的服务结果与代表性开源 TTS 系统已发表的推理结果并列。配置与硬件列保留各来源报告的运行点。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-3-2"><span class="cap-k">表</span><p class="en">Table 6: Inference speed comparison with open-source TTS systems. Lower is better.</p><p class="zh">Table 6：与开源 TTS 系统的推理速度对比。越低越好。</p></div>
-<div class="pblk" id="p-5-3-1">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-1-1"><span class="en">System Configuration Hardware RTF ↓</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-1-1"><span class="zh">表头：System（系统）× Configuration（配置）× Hardware（硬件）× RTF↓。</span></span></p>
-          
-        </div></section>
+<div class="cap" id="tab-5-3-2"><span class="cap-k">表</span><p class="en">Table 6: Inference speed comparison with open-source TTS systems. Lower is better.</p><p class="zh">Table 6：与开源 TTS 系统的推理速度对比。越低越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>System</th><th>Configuration</th><th>Hardware</th><th>RTF ↓</th></tr></thead><tbody><tr><td>Luna-TTS</td><td>16-step, full-grid</td><td>1× H20</td><td>0.0211</td></tr>
+<tr><td></td><td></td><td>2× H20</td><td></td></tr></tbody></table></div></div>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-luna-tts"><span class="t-zh">Luna-TTS</span><span class="t-en">Luna-TTS</span></h3><div class="pblk" id="p-luna-tts-1">
-          <p class="en-lines"><span class="sent" data-sid="s-luna-tts-1-1"><span class="en">16-step, full-grid 1× H20</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-luna-tts-1-1"><span class="zh">（表 6 行：16 步全网格 1×H20 0.0211；Luna-TTS Realtime 8 步并行 CFG 2×H20 0.0240；Fast F5-TTS [65] 7 步 EPSS RTX 3090 0.0300；OmniVoice [48] 16 步 batch 1 H20 0.0319；ZipVoice [66] 16 NFE H20 0.0557；VoxCPM2 [67] 加速推理 RTX 4090 约 0.13；Spark-TTS [68] 0.5B 并发 1 L20 0.1362；F5-TTS [28] 原始模型 0.15；Fish Audio S2 [15] SGLang-Omni [69] H200 0.195；Qwen3-TTS-25Hz [13] 0.6B 并发 1 — 0.234。）在表 6 各工作点中，Luna-TTS 以 0.0211 取得最低 RTF。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-luna-tts-1"><code>0.0211</code></div>
-<div class="eq" id="eq-luna-tts-2"><code>Luna-TTS Realtime 8-step, parallel CFG 2× H20</code></div>
-<div class="eq" id="eq-luna-tts-3"><code>0.0240</code></div>
+      <h3 class="sech lv2" id="sec-luna-tts"><span class="t-zh">Luna-TTS</span><span class="t-en">Luna-TTS</span></h3>
+
+
+
 <div class="eq" id="eq-luna-tts-4"><code>Fast F5-TTS [65] 7-step EPSS RTX 3090</code></div>
 <div class="eq" id="eq-luna-tts-5"><code>0.0300</code></div>
-<div class="eq" id="eq-luna-tts-6"><code>OmniVoice [48] 16-step, batch 1 H20</code></div>
+
 <div class="eq" id="eq-luna-tts-7"><code>0.0319</code></div>
 <div class="eq" id="eq-luna-tts-8"><code>ZipVoice [66] 16 NFE H20</code></div>
 <div class="eq" id="eq-luna-tts-9"><code>0.0557</code></div>
@@ -989,57 +999,63 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-luna-tts-1-s1"><span class="zh">表 7（正文表）对比领先商用与开源 TTS 系统已发表的首包延迟。</span></span></p>
           
         </div>
-<div class="cap" id="tab-luna-tts-2"><span class="cap-k">表</span><p class="en">Table 7: Published first-output latency.</p><p class="zh">Table 7：已发表的首包延迟。</p></div>
-<div class="pblk" id="p-luna-tts-3">
-          <p class="en-lines"><span class="sent" data-sid="s-luna-tts-3-1"><span class="en">System Setup Latency</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-luna-tts-3-1"><span class="zh">表头：System（系统）× Setup（配置）× Latency（延迟）。</span></span></p>
-          
-        </div></section>
+<div class="cap" id="tab-luna-tts-2"><span class="cap-k">表</span><p class="en">Table 7: Published first-output latency.</p><p class="zh">Table 7：已发表的首包延迟。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Table 7: Published first-output latency.</th><th></th><th></th></tr><tr><th>System</th><th>Setup</th><th></th><th></th><th>Latency</th></tr><tr><th>Luna-TTS Realtime</th><th>2× H20, excluding network</th><th></th><th></th><th>41.6 ms</th></tr><tr><th>Cartesia Sonic 3.5 [70]</th><th>H100, concurrency 1</th><th></th><th></th><th>50 ms</th></tr><tr><th>ElevenLabs Flash v2.5 [71]</th><th>Excluding application/network</th><th></th><th></th><th>∼75 ms</th></tr></thead><tbody><tr><td>Hume Octave 2 [72]</td><td>Excluding network</td><td></td><td></td><td>∼100 ms</td></tr>
+<tr><td>PlayHT Play 3.0 Mini [73]</td><td>—</td><td></td><td></td><td>190 ms</td></tr>
+<tr><td>Deepgram Aura-2 [74]</td><td>—</td><td></td><td>&lt; 200 ms</td><td></td></tr>
+<tr><td>VibeVoice-Realtime [75]</td><td>—</td><td></td><td></td><td>∼300 ms</td></tr></tbody></table></div></div>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-luna-tts-realtime"><span class="t-zh">Luna-TTS Realtime</span><span class="t-en">Luna-TTS Realtime</span></h3><div class="tbwrap" id="p-luna-tts-realtime-1">
-          <details class="tb"><summary>原始表格文本（36 个单元格，PDF 抽取顺序，数字与原文一致；精确排版见原文 PDF）</summary><pre>2× H20, excluding network 41.6 ms Cartesia Sonic 3.5 [70] H100, concurrency 1 50 ms ElevenLabs Flash v2.5 [71] Excluding application/network ∼75 ms Hume Octave 2 [72] Excluding network ∼100 ms PlayHT Play 3.0 Mini [73]</pre></details></div>
-<div class="eq" id="eq-luna-tts-realtime-1"><code>—</code></div>
-<div class="eq" id="eq-luna-tts-realtime-2"><code>190 ms Deepgram Aura-2 [74]</code></div>
-<div class="eq" id="eq-luna-tts-realtime-3"><code>—</code></div>
-<div class="eq" id="eq-luna-tts-realtime-4"><code>&lt; 200 ms VibeVoice-Realtime [75]</code></div>
-<div class="eq" id="eq-luna-tts-realtime-5"><code>—</code></div>
+      <h3 class="sech lv2" id="sec-luna-tts-realtime"><span class="t-zh">Luna-TTS Realtime</span><span class="t-en">Luna-TTS Realtime</span></h3>
+
+
+
+
+
 <div class="pblk" id="p-luna-tts-realtime-2">
           <p class="en-lines"><span class="sent" data-sid="s-luna-tts-realtime-2-1"><span class="en">∼300 ms Among the measurements collected in Table 7, Luna-TTS Realtime records the lowest first-output latency at 41.6 ms.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-luna-tts-realtime-2-1"><span class="zh">（表 7 行：2×H20（不含网络）41.6 ms；Cartesia Sonic 3.5 [70] H100 并发 1 50 ms；ElevenLabs Flash v2.5 [71] 不含应用/网络约 75 ms；Hume Octave 2 [72] 不含网络约 100 ms；PlayHT Play 3.0 Mini [73] 190 ms；Deepgram Aura-2 [74] &lt; 200 ms；VibeVoice-Realtime [75] 约 300 ms。）在表 7 的测量中，Luna-TTS Realtime 以 41.6 ms 录得最低首包延迟。</span></span></p>
           
         </div>
 <div class="cap" id="tab-luna-tts-realtime-1"><span class="cap-k">表</span><p class="en">Table 8: Zero-shot WER/CER (%) and speaker similarity on Seed-TTS-Eval. ⋄quoted directly from the original papers or technical reports of the respective models; † official checkpoint re-evaluated by us using the official evaluation toolkit. SIM is reported on a 100-point scale. Best result per column in bold.</p><p class="zh">Table 8：Seed-TTS-Eval 上的零样本 WER/CER（%）与说话人相似度。⋄ 直接从各模型的原始论文或技术报告引用；† 我们使用官方评测工具包复评的官方检查点。SIM 以 100 分制报告。每列最佳结果加粗。</p></div>
-<div class="pblk" id="p-luna-tts-realtime-3">
-          <p class="en-lines"><span class="sent" data-sid="s-luna-tts-realtime-3-1"><span class="en">System Params zh CER↓ zh SIM↑ en WER↓ en SIM↑ Seed-TTS⋄[6]</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-luna-tts-realtime-3-1"><span class="zh">表头：System / Params × zh CER↓ / zh SIM↑ / en WER↓ / en SIM↑——Seed-TTS⋄[6]（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-luna-tts-realtime-6"><code>— 1.12 79.6 2.25 76.2</code></div>
-<div class="eq" id="eq-luna-tts-realtime-7"><code>MaskGCT⋄[31] 1B</code></div>
-<div class="eq" id="eq-luna-tts-realtime-8"><code>2.27 77.4 2.62 71.7</code></div>
-<div class="eq" id="eq-luna-tts-realtime-9"><code>F5-TTS⋄[28] 0.3B</code></div>
-<div class="eq" id="eq-luna-tts-realtime-10"><code>1.56 76.0 1.83 67.0</code></div>
-<div class="eq" id="eq-luna-tts-realtime-11"><code>CosyVoice 3⋄[9] 1.5B</code></div>
-<div class="eq" id="eq-luna-tts-realtime-12"><code>1.12 78.1 2.21 72.0</code></div>
-<div class="eq" id="eq-luna-tts-realtime-13"><code>MiniMax-Speech⋄[10]</code></div>
-<div class="eq" id="eq-luna-tts-realtime-14"><code>— 0.83 78.3 1.65 69.2</code></div>
-<div class="eq" id="eq-luna-tts-realtime-15"><code>GLM-TTS⋄[12] 1.5B</code></div>
-<div class="eq" id="eq-luna-tts-realtime-16"><code>1.03 76.1 2.23 67.2</code></div>
-<div class="eq" id="eq-luna-tts-realtime-17"><code>Qwen3-TTS-12Hz-1.7B-Base† [13] 1.7B</code></div>
-<div class="eq" id="eq-luna-tts-realtime-18"><code>0.98 76.9 1.68 71.7</code></div>
-<div class="eq" id="eq-luna-tts-realtime-19"><code>Qwen-Audio-3.0-TTS⋄[14]</code></div>
-<div class="eq" id="eq-luna-tts-realtime-20"><code>— 0.84 79.2 1.54 76.2</code></div>
-<div class="eq" id="eq-luna-tts-realtime-21"><code>MOSS-TTS-Local-Transformer⋄[16] 1.7B</code></div>
-<div class="eq" id="eq-luna-tts-realtime-22"><code>1.33 77.2 1.87 71.7</code></div>
-<div class="eq" id="eq-luna-tts-realtime-23"><code>VoxCPM2⋄[76] 2B</code></div>
-<div class="eq" id="eq-luna-tts-realtime-24"><code>0.97 79.5 1.84 75.3</code></div>
-<div class="eq" id="eq-luna-tts-realtime-25"><code>OmniVoice⋄[48] 0.6B</code></div>
-<div class="eq" id="eq-luna-tts-realtime-26"><code>0.84 77.7 1.60 74.1</code></div>
-<div class="eq" id="eq-luna-tts-realtime-27"><code>Luna-TTS 0.6B</code></div>
-<div class="eq" id="eq-luna-tts-realtime-28"><code>0.73 79.7 1.49 76.8</code></div>
-<div class="eq" id="eq-luna-tts-realtime-29"><code>Luna-TTS Realtime 0.6B</code></div>
-<div class="eq" id="eq-luna-tts-realtime-30"><code>1.08 76.9 1.81 73.4</code></div>
-<div class="cap" id="tab-luna-tts-realtime-2"><span class="cap-k">表</span><p class="en">Table 9: Zero-shot WER/CER (%) on the six subsets of CV3-Eval, scored with the official toolkit (CER for zh/ja/ko/hard-zh, WER for en/hard-en). Avg. is the mean over the four language subsets (500 utterances each); the hard subsets are reported separately as diagnostics. ⋄and † have the same meaning as in Table 8; “—” indicates values not reported by the source. Best result per column in bold.</p><p class="zh">Table 9：CV3-Eval 六个子集上的零样本 WER/CER（%），用官方工具包评分（zh/ja/ko/hard-zh 用 CER，en/hard-en 用 WER）。Avg. 为四个语言子集（各 500 条）的均值；hard 子集作为诊断单列。⋄ 与 † 含义同 Table 8；“—” 表示来源未报告。每列最佳结果加粗。</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-luna-tts-realtime-2"><span class="cap-k">表</span><p class="en">Table 9: Zero-shot WER/CER (%) on the six subsets of CV3-Eval, scored with the official toolkit (CER for zh/ja/ko/hard-zh, WER for en/hard-en). Avg. is the mean over the four language subsets (500 utterances each); the hard subsets are reported separately as diagnostics. ⋄and † have the same meaning as in Table 8; “—” indicates values not reported by the source. Best result per column in bold.</p><p class="zh">Table 9：CV3-Eval 六个子集上的零样本 WER/CER（%），用官方工具包评分（zh/ja/ko/hard-zh 用 CER，en/hard-en 用 WER）。Avg. 为四个语言子集（各 500 条）的均值；hard 子集作为诊断单列。⋄ 与 † 含义同 Table 8；“—” 表示来源未报告。每列最佳结果加粗。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>System</th><th>Params</th><th>zh CER↓</th><th>zh SIM↑</th><th></th><th>en SIM↑</th></tr></thead><tbody><tr><td>Seed-TTS⋄[6]</td><td>—</td><td>1.12</td><td>79.6</td><td>2.25</td><td>76.2</td></tr>
+<tr><td>MaskGCT⋄[31]</td><td>1B</td><td>2.27</td><td>77.4</td><td>2.62</td><td>71.7</td></tr>
+<tr><td>F5-TTS⋄[28]</td><td>0.3B</td><td>1.56</td><td>76.0</td><td>1.83</td><td>67.0</td></tr>
+<tr><td>CosyVoice 3⋄[9]</td><td>1.5B</td><td>1.12</td><td>78.1</td><td>2.21</td><td>72.0</td></tr>
+<tr><td>MiniMax-Speech⋄[10]</td><td>—</td><td>0.83</td><td>78.3</td><td>1.65</td><td>69.2</td></tr>
+<tr><td>GLM-TTS⋄[12]</td><td>1.5B</td><td>1.03</td><td>76.1</td><td>2.23</td><td>67.2</td></tr>
+<tr><td>Qwen3-TTS-12Hz-1.7B-Base† [13]</td><td>1.7B</td><td>0.98</td><td>76.9</td><td>1.68</td><td>71.7</td></tr>
+<tr><td>Qwen-Audio-3.0-TTS⋄[14]</td><td>—</td><td>0.84</td><td>79.2</td><td>1.54</td><td>76.2</td></tr>
+<tr><td>MOSS-TTS-Local-Transformer⋄[16]</td><td>1.7B</td><td>1.33</td><td>77.2</td><td>1.87</td><td>71.7</td></tr>
+<tr><td>VoxCPM2⋄[76]</td><td>2B</td><td>0.97</td><td>79.5</td><td>1.84</td><td>75.3</td></tr>
+<tr><td>OmniVoice⋄[48]</td><td>0.6B</td><td>0.84</td><td>77.7</td><td>1.60</td><td>74.1</td></tr>
+<tr><td>Luna-TTS</td><td>0.6B</td><td>0.73</td><td>79.7</td><td>1.49</td><td>76.8</td></tr>
+<tr><td>Luna-TTS Realtime</td><td>0.6B</td><td>1.08</td><td>76.9</td><td>1.81</td><td>73.4</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-luna-tts-realtime-4">
           <p class="en-lines"><span class="sent" data-sid="s-luna-tts-realtime-4-1"><span class="en">System zh en ja ko Avg.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-luna-tts-realtime-4-1"><span class="zh">（Table 9 表头行：zh / en / ja / ko / Avg.）</span></span></p>
@@ -1051,19 +1067,19 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-luna-tts-realtime-31"><code>3.91 4.99 7.57 5.69 5.54 9.77 10.55</code></div>
-<div class="eq" id="eq-luna-tts-realtime-32"><code>VoxCPM2⋄[76]</code></div>
+
 <div class="eq" id="eq-luna-tts-realtime-33"><code>3.55 6.21 5.88 9.95 6.40 8.10 7.48</code></div>
-<div class="eq" id="eq-luna-tts-realtime-34"><code>MOSS-TTS-Local-Transformer⋄[16]</code></div>
+
 <div class="eq" id="eq-luna-tts-realtime-35"><code>3.95 4.35 10.10 5.95 6.09 — —</code></div>
-<div class="eq" id="eq-luna-tts-realtime-36"><code>Qwen-Audio-3.0-TTS⋄[14]</code></div>
+
 <div class="eq" id="eq-luna-tts-realtime-37"><code>3.35 4.25 4.78 4.30 4.17 7.44 6.71</code></div>
-<div class="eq" id="eq-luna-tts-realtime-38"><code>Qwen3-TTS-12Hz-1.7B-Base† [13]</code></div>
+
 <div class="eq" id="eq-luna-tts-realtime-39"><code>3.19 3.92 5.00 4.63 4.18 9.36 7.47</code></div>
 <div class="eq" id="eq-luna-tts-realtime-40"><code>OmniVoice† [48]</code></div>
 <div class="eq" id="eq-luna-tts-realtime-41"><code>3.89 4.57 7.24 11.80 6.88 11.98 19.69</code></div>
-<div class="eq" id="eq-luna-tts-realtime-42"><code>Luna-TTS</code></div>
+
 <div class="eq" id="eq-luna-tts-realtime-43"><code>3.17 3.18 5.00 5.93 4.32 6.90 6.18</code></div>
-<div class="eq" id="eq-luna-tts-realtime-44"><code>Luna-TTS Realtime</code></div>
+
 <div class="eq" id="eq-luna-tts-realtime-45"><code>3.62 4.06 6.36 5.76 4.95 12.56 13.98</code></div></section>
 <section>
       <h2 class="sech lv1" id="sec-6"><span class="secnum">6</span> <span class="t-zh">评测</span><span class="t-en">Evaluation</span></h2><div class="pblk" id="p-6-1">
@@ -1137,39 +1153,41 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-6-2-1-2-1"><span class="zh">客观可控性。</span></span><span class="sent" data-sid="s-6-2-1-2-2"><span class="zh">我们计算 PCER（在抽取出的 NV 符号上计算的 CER），并报告微平均的事件精确率、召回率与 F1，以刻画预测正确性与目标事件覆盖率。</span></span><span class="sent" data-sid="s-6-2-1-2-3"><span class="zh">所有指标均为百分数。</span></span></p>
           
         </div>
-<div class="cap" id="tab-6-2-1-1"><span class="cap-k">表</span><p class="en">Table 10: NVASR-based objective evaluation of NVV controllability.</p><p class="zh">Table 10：基于 NVASR 的 NVV 可控性客观评测。</p></div></section>
+<div class="cap" id="tab-6-2-1-1"><span class="cap-k">表</span><p class="en">Table 10: NVASR-based objective evaluation of NVV controllability.</p><p class="zh">Table 10：基于 NVASR 的 NVV 可控性客观评测。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th>PCER ↓</th><th>Precision ↑</th><th>Recall ↑</th><th>F1 ↑</th></tr></thead><tbody><tr><td>MiniMax Speech 2.8 HD</td><td>41.29%</td><td>78.00%</td><td>60.50%</td><td>68.14%</td></tr>
+<tr><td>ElevenLabs Eleven v3</td><td>41.73%</td><td>87.45%</td><td>59.79%</td><td>71.02%</td></tr>
+<tr><td>Fish Audio S2.1 Pro</td><td>47.36%</td><td>77.36%</td><td>55.59%</td><td>64.69%</td></tr>
+<tr><td>Luna-TTS</td><td>39.95%</td><td>79.38%</td><td>66.76%</td><td>72.52%</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-model"><span class="t-zh">模型（Table 13 正文）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-1">
-          <p class="en-lines"><span class="sent" data-sid="s-model-1-1"><span class="en">PCER ↓ Precision ↑ Recall ↑ F1 ↑ MiniMax Speech 2.8 HD</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-model-1-1"><span class="zh">（表格：PCER↓/Precision↑/Recall↑/F1↑——MiniMax Speech 2.8 HD 41.29%/78.00%/60.50%/68.14%；ElevenLabs Eleven v3 41.73%/87.45%/59.79%/71.02%；Fish Audio S2.1 Pro 47.36%/77.36%/55.59%/64.69%；Luna-TTS 39.95%/79.38%/66.76%/72.52%。）基于 LALM 的感知评测。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-model-1"><code>41.29% 78.00% 60.50% 68.14%</code></div>
-<div class="eq" id="eq-model-2"><code>ElevenLabs Eleven v3</code></div>
-<div class="eq" id="eq-model-3"><code>41.73% 87.45% 59.79% 71.02%</code></div>
-<div class="eq" id="eq-model-4"><code>Fish Audio S2.1 Pro</code></div>
-<div class="eq" id="eq-model-5"><code>47.36% 77.36% 55.59% 64.69%</code></div>
-<div class="eq" id="eq-model-6"><code>Luna-TTS</code></div>
-<div class="eq" id="eq-model-7"><code>39.95% 79.38% 66.76% 72.52%</code></div>
+      <h3 class="sech lv2" id="sec-model"><span class="t-zh">模型（Table 13 正文）</span><span class="t-en">Model</span></h3>
+
+
+
+
+
+
+
 <div class="pblk" id="p-model-2">
           <p class="en-lines"><span class="sent" data-sid="s-model-2-1"><span class="en">LALM-based perceptual evaluation.</span></span> <span class="sent" data-sid="s-model-2-2"><span class="en">Gemini 3.1 Pro Preview [82] rates NVV Accuracy, NVV Perceptual Effect (NVV PE), and overall naturalness, quality, and expression.</span></span> <span class="sent" data-sid="s-model-2-3"><span class="en">NVV Accuracy measures event realization and positioning, whereas NVV PE captures the perceptual effectiveness of the generated NVV.</span></span> <span class="sent" data-sid="s-model-2-4"><span class="en">Overall metrics use a 1–5 scale, while NVV-specific metrics use a 0–5 scale (0 = absent or nearly inaudible).</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-2-1"><span class="zh">（表格：PCER↓/Precision↑/Recall↑/F1↑——MiniMax Speech 2.8 HD 41.29%/78.00%/60.50%/68.14%；ElevenLabs Eleven v3 41.73%/87.45%/59.79%/71.02%；Fish Audio S2.1 Pro 47.36%/77.36%/55.59%/64.69%；Luna-TTS 39.95%/79.38%/66.76%/72.52%。）基于 LALM 的感知评测。</span></span><span class="sent" data-sid="s-model-2-2"><span class="zh">Gemini 3.1 Pro Preview [82] 对 NVV 准确性、NVV 感知效果（NVV PE）以及整体自然度、质量与表现力打分。</span></span><span class="sent" data-sid="s-model-2-3"><span class="zh">NVV 准确性衡量事件实现与定位，NVV PE 刻画所生成 NVV 的感知效果。</span></span><span class="sent" data-sid="s-model-2-4"><span class="zh">整体指标用 1–5 分制，NVV 专项指标用 0–5 分制（0 = 缺失或几乎不可闻）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-model-1"><span class="cap-k">表</span><p class="en">Table 11: Average LALM-based NVV-control ratings over each system’s supported categories.</p><p class="zh">Table 11：各系统在其支持类别上的 LALM NVV 控制平均评分。</p></div></section>
+<div class="cap" id="tab-model-1"><span class="cap-k">表</span><p class="en">Table 11: Average LALM-based NVV-control ratings over each system’s supported categories.</p><p class="zh">Table 11：各系统在其支持类别上的 LALM NVV 控制平均评分。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>NVV</th><th>NVV</th><th></th><th>Overall</th><th></th><th>Overall</th><th></th><th>Overall</th></tr><tr><th>Model</th><th>Accuracy ↑</th><th></th><th>PE↑</th><th>Naturalness ↑</th><th></th><th>Quality ↑</th><th></th><th>Expression ↑</th><th></th></tr></thead><tbody><tr><td>MiniMax Speech 2.8 HD</td><td></td><td>3.95</td><td>3.62</td><td></td><td>3.50</td><td></td><td>4.12</td><td></td><td>3.54</td></tr>
+<tr><td>ElevenLabs Eleven v3</td><td></td><td>3.65</td><td>3.75</td><td></td><td>3.40</td><td></td><td>4.15</td><td></td><td>3.30</td></tr>
+<tr><td>Fish Audio S2.1 Pro</td><td></td><td>3.56</td><td>2.66</td><td></td><td>2.83</td><td></td><td>3.73</td><td></td><td>3.00</td></tr>
+<tr><td>Luna-TTS</td><td></td><td>3.60</td><td>3.63</td><td></td><td>3.65</td><td></td><td>4.18</td><td></td><td>3.75</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-2"><span class="t-zh">模型（Table 13 正文）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="en">NVV Accuracy ↑ NVV PE↑ Overall Naturalness ↑ Overall Quality ↑ Overall Expression ↑ MiniMax Speech 2.8 HD</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="zh">表头：NVV Accuracy ↑ / NVV PE↑ / Overall Naturalness ↑ / Overall Quality ↑ / Overall Expression ↑——MiniMax Speech 2.8 HD（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-model-2-1"><code>3.95 3.62 3.50 4.12 3.54</code></div>
-<div class="eq" id="eq-model-2-2"><code>ElevenLabs Eleven v3</code></div>
-<div class="eq" id="eq-model-2-3"><code>3.65 3.75 3.40 4.15 3.30</code></div>
-<div class="eq" id="eq-model-2-4"><code>Fish Audio S2.1 Pro</code></div>
-<div class="eq" id="eq-model-2-5"><code>3.56 2.66 2.83 3.73 3.00</code></div>
-<div class="eq" id="eq-model-2-6"><code>Luna-TTS</code></div>
-<div class="eq" id="eq-model-2-7"><code>3.60 3.63 3.65 4.18 3.75</code></div></section>
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-6-2-2"><span class="secnum">6.2.2</span> <span class="t-zh">情绪控制</span><span class="t-en">Emotion Control</span></h3><div class="pblk" id="p-6-2-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-6-2-2-1-1"><span class="en">We evaluate emotion control using E-Sim, LALM-based ratings, and human MOS.</span></span> <span class="sent" data-sid="s-6-2-2-1-2"><span class="en">E-Sim uses the ESD test set [83], which provides test texts and corresponding human reference recordings.</span></span> <span class="sent" data-sid="s-6-2-2-1-3"><span class="en">For the LALM and human evaluations, we construct a held-out bilingual emotion test set using LLM-assisted generation.</span></span> <span class="sent" data-sid="s-6-2-2-1-4"><span class="en">The resulting natural conversational utterances cover diverse scenarios and undergo quality checks and human review.</span></span> <span class="sent" data-sid="s-6-2-2-1-5"><span class="en">E-Sim is evaluated on five shared emotions—Angry, Happy, Sad, Surprise, and Neutral.</span></span> <span class="sent" data-sid="s-6-2-2-1-6"><span class="en">In contrast, the LALM and human evaluations cover all emotion categories explicitly supported by each system.</span></span></p>
@@ -1181,20 +1199,19 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-6-2-2-2-1"><span class="zh">情绪相似度。</span></span><span class="sent" data-sid="s-6-2-2-2-2"><span class="zh">用 emotion2vec_plus_large [84]，我们把 E-Sim 计算为生成语音与配对真人录音在句级嵌入上的余弦相似度。</span></span><span class="sent" data-sid="s-6-2-2-2-3"><span class="zh">由于 E-Sim 也可能捕捉非情绪的声学因素，我们把它当作补充性指标解读。</span></span></p>
           
         </div>
-<div class="cap" id="tab-6-2-2-1"><span class="cap-k">表</span><p class="en">Table 12: E-Sim (↑) across five shared target emotions.</p><p class="zh">Table 12：五种共享目标情绪上的 E-Sim（↑）。</p></div></section>
+<div class="cap" id="tab-6-2-2-1"><span class="cap-k">表</span><p class="en">Table 12: E-Sim (↑) across five shared target emotions.</p><p class="zh">Table 12：五种共享目标情绪上的 E-Sim（↑）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th>Angry Happy</th><th></th><th>Sad</th><th>Surprise Neutral Overall</th><th></th><th></th></tr></thead><tbody><tr><td>MiniMax Speech 2.8 HD</td><td>0.530</td><td>0.603</td><td>0.460</td><td>0.357</td><td>0.715</td><td>0.533</td></tr>
+<tr><td>ElevenLabs Eleven v3</td><td>0.544</td><td>0.513</td><td>0.481</td><td>0.406</td><td>0.814</td><td>0.552</td></tr>
+<tr><td>Fish Audio S2.1 Pro</td><td>0.473</td><td>0.416</td><td>0.402</td><td>0.279</td><td>0.867</td><td>0.487</td></tr>
+<tr><td>Luna-TTS</td><td>0.608</td><td>0.497</td><td>0.543</td><td>0.403</td><td>0.741</td><td>0.558</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-model-3"><span class="t-zh">模型（Table 13 正文）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-3-1">
-          <p class="en-lines"><span class="sent" data-sid="s-model-3-1-1"><span class="en">Angry Happy Sad Surprise Neutral Overall MiniMax Speech 2.8 HD</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-model-3-1-1"><span class="zh">（表格：Angry/Happy/Sad/Surprise/Neutral/Overall——MiniMax Speech 2.8 HD 0.530/0.603/0.460/0.357/0.715/0.533；ElevenLabs Eleven v3 0.544/0.513/0.481/0.406/0.814/0.552；Fish Audio S2.1 Pro 0.473/0.416/0.402/0.279/0.867/0.487；Luna-TTS 0.608/0.497/0.543/0.403/0.741/0.558。）基于 LALM 的评测。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-model-3-1"><code>0.530 0.603 0.460 0.357 0.715 0.533</code></div>
-<div class="eq" id="eq-model-3-2"><code>ElevenLabs Eleven v3</code></div>
-<div class="eq" id="eq-model-3-3"><code>0.544 0.513 0.481 0.406 0.814 0.552</code></div>
-<div class="eq" id="eq-model-3-4"><code>Fish Audio S2.1 Pro</code></div>
-<div class="eq" id="eq-model-3-5"><code>0.473 0.416 0.402 0.279 0.867 0.487</code></div>
-<div class="eq" id="eq-model-3-6"><code>Luna-TTS</code></div>
-<div class="eq" id="eq-model-3-7"><code>0.608 0.497 0.543 0.403 0.741 0.558</code></div>
+      <h3 class="sech lv2" id="sec-model-3"><span class="t-zh">模型（Table 13 正文）</span><span class="t-en">Model</span></h3>
+
+
+
+
+
+
+
 <div class="pblk" id="p-model-3-2">
           <p class="en-lines"><span class="sent" data-sid="s-model-3-2-1"><span class="en">LALM-based evaluation.</span></span> <span class="sent" data-sid="s-model-3-2-2"><span class="en">Following the model-as-a-judge paradigm of EmergentTTS-Eval [85] and the distinction between instruction following and perceptual quality in MINT-Bench [86], Gemini 3.1 Pro Preview [82] rates Emotion Match and Expression Quality on a 1–5 scale.</span></span> <span class="sent" data-sid="s-model-3-2-3"><span class="en">These metrics measure target-emotion alignment and the quality of emotional delivery, respectively.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-3-2-1"><span class="zh">（表格：Angry/Happy/Sad/Surprise/Neutral/Overall——MiniMax Speech 2.8 HD 0.530/0.603/0.460/0.357/0.715/0.533；ElevenLabs Eleven v3 0.544/0.513/0.481/0.406/0.814/0.552；Fish Audio S2.1 Pro 0.473/0.416/0.402/0.279/0.867/0.487；Luna-TTS 0.608/0.497/0.543/0.403/0.741/0.558。）基于 LALM 的评测。</span></span><span class="sent" data-sid="s-model-3-2-2"><span class="zh">沿用 EmergentTTS-Eval [85] 的模型作裁判范式与 MINT-Bench [86] 对指令遵循和感知质量的区分，Gemini 3.1 Pro Preview [82] 按 1–5 分制对 Emotion Match 与 Expression Quality 打分。</span></span><span class="sent" data-sid="s-model-3-2-3"><span class="zh">这两个指标分别衡量目标情绪对齐度与情绪表达的质量。</span></span></p>
@@ -1205,26 +1222,25 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-model-3-3-1"><span class="zh">人工听测。</span></span><span class="sent" data-sid="s-model-3-3-2"><span class="zh">在随机化盲听测试中，听者对每条样本独立按 1–5 分制打两组分：自然度与拟人度（N-MOS），以及目标情绪传达的准确与可信程度（E-MOS）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-model-3-1"><span class="cap-k">表</span><p class="en">Table 13: Average emotion-control ratings over each system’s supported emotions.</p><p class="zh">Table 13：各系统在其支持情绪上的情绪控制平均评分。</p></div></section>
+<div class="cap" id="tab-model-3-1"><span class="cap-k">表</span><p class="en">Table 13: Average emotion-control ratings over each system’s supported emotions.</p><p class="zh">Table 13：各系统在其支持情绪上的情绪控制平均评分。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>LALM-based Evaluation</th><th></th><th></th><th>Human Listening Test</th><th></th><th></th><th></th></tr><tr><th></th><th>Emotion</th><th>Expression</th><th></th><th>N-MOS ↑</th><th></th><th>E-MOS ↑</th><th></th></tr><tr><th>Model</th><th>Match ↑</th><th>Quality ↑</th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>MiniMax Speech 2.8 HD</td><td>2.70</td><td></td><td>4.40</td><td></td><td>4.10</td><td></td><td>3.70</td></tr>
+<tr><td>ElevenLabs Eleven v3</td><td>2.67</td><td></td><td>4.49</td><td></td><td>4.18</td><td></td><td>3.82</td></tr>
+<tr><td>Fish Audio S2.1 Pro</td><td>1.93</td><td></td><td>3.94</td><td></td><td>3.95</td><td></td><td>3.55</td></tr>
+<tr><td>Luna-TTS</td><td>2.63</td><td></td><td>4.54</td><td></td><td>4.14</td><td></td><td>3.90</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-lalm-based-evaluation"><span class="t-zh">基于 LALM 的评测</span><span class="t-en">LALM-based Evaluation</span></h3><div class="pblk" id="p-lalm-based-evaluation-1">
-          <p class="en-lines"><span class="sent" data-sid="s-lalm-based-evaluation-1-1"><span class="en">Human Listening Test</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-lalm-based-evaluation-1-1"><span class="zh">人工听测（此为 Table 13 的表内栏目标题，抽取为独立段落。）</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-lalm-based-evaluation"><span class="t-zh">基于 LALM 的评测</span><span class="t-en">LALM-based Evaluation</span></h3></section>
 <section>
       <h3 class="sech lv2" id="sec-model-4"><span class="t-zh">模型（Table 13 正文）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-4-1-1"><span class="en">Emotion Match ↑ Expression Quality ↑ N-MOS ↑ E-MOS ↑ MiniMax Speech 2.8 HD</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-4-1-1"><span class="zh">表头：Emotion Match ↑ / Expression Quality ↑ / N-MOS ↑ / E-MOS ↑——MiniMax Speech 2.8 HD（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-model-4-1"><code>2.70 4.40 4.10 3.70</code></div>
-<div class="eq" id="eq-model-4-2"><code>ElevenLabs Eleven v3</code></div>
-<div class="eq" id="eq-model-4-3"><code>2.67 4.49 4.18 3.82</code></div>
-<div class="eq" id="eq-model-4-4"><code>Fish Audio S2.1 Pro</code></div>
-<div class="eq" id="eq-model-4-5"><code>1.93 3.94 3.95 3.55</code></div>
-<div class="eq" id="eq-model-4-6"><code>Luna-TTS</code></div>
-<div class="eq" id="eq-model-4-7"><code>2.63 4.54 4.14 3.90</code></div></section>
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-6-2-3"><span class="secnum">6.2.3</span> <span class="t-zh">表现力控制总体表现</span><span class="t-en">Overall Expressive Control Performance</span></h3><div class="pblk" id="p-6-2-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-6-2-3-1-1"><span class="en">Across the NVV and emotion evaluations, Luna-TTS delivers the strongest overall balance of controllability, perceptual quality, and expressive coverage among the evaluated systems.</span></span> <span class="sent" data-sid="s-6-2-3-1-2"><span class="en">For NVV control, it achieves the lowest PCER and the highest recall and F1 score, together with the best LALM-rated overall naturalness, quality, and expression.</span></span> <span class="sent" data-sid="s-6-2-3-1-3"><span class="en">For emotion control, it achieves the highest overall E-Sim, the best LALM-rated Expression Quality, and the highest human-rated E-MOS, while maintaining competitive Emotion Match and near-best N-MOS across its full supported emotion inventory.</span></span> <span class="sent" data-sid="s-6-2-3-1-4"><span class="en">Together, these results show that Luna-TTS provides broad and effective expressive control without sacrificing perceptual quality or speech naturalness.</span></span></p>
@@ -1254,44 +1270,50 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-6-3-1"><span class="cap-k">表</span><p class="en">Table 14: Results from our internal English TTS Arena. Elo values are medians from 300 bootstrap resamples, and uncertainty intervals span the 5th–95th bootstrap percentiles.</p><p class="zh">Table 14：内部英文 TTS Arena 结果。Elo 值为 300 次 bootstrap 重采样的中位数，不确定区间覆盖第 5–95 个 bootstrap 百分位。</p></div>
-<div class="pblk" id="p-6-3-4">
-          <p class="en-lines"><span class="sent" data-sid="s-6-3-4-1"><span class="en">Rank System Elo 90% bootstrap interval Wins Losses Win rate</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-6-3-4-1"><span class="zh">表头：Rank / System / Elo / 90% bootstrap interval / Wins / Losses / Win rate（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-6-3-1"><code>1</code></div>
-<div class="eq" id="eq-6-3-2"><code>Luna-TTS</code></div>
-<div class="eq" id="eq-6-3-3"><code>1548.47 1531.98–1566.59 495 368 57.36% 2</code></div>
-<div class="eq" id="eq-6-3-4"><code>Gemini 3.1 Flash TTS</code></div>
-<div class="eq" id="eq-6-3-5"><code>1546.13 1517.81–1572.46 221 196 53.00% 3</code></div>
-<div class="eq" id="eq-6-3-6"><code>Inworld TTS 2</code></div>
-<div class="eq" id="eq-6-3-7"><code>1495.67 1474.79–1519.24 283 317 47.17% 4</code></div>
-<div class="eq" id="eq-6-3-8"><code>ElevenLabs Eleven v3</code></div>
-<div class="eq" id="eq-6-3-9"><code>1484.37 1436.10–1529.14 50 69 42.02% 5</code></div>
-<div class="eq" id="eq-6-3-10"><code>StepAudio 2.5 TTS</code></div>
-<div class="eq" id="eq-6-3-11"><code>1480.39 1458.27–1506.09 229 298 43.45% 6</code></div>
-<div class="eq" id="eq-6-3-12"><code>MiniMax Speech 2.8 HD</code></div>
-<div class="eq" id="eq-6-3-13"><code>1445.53 1391.82–1495.23 41 71 36.61%</code></div>
+<div class="cap" id="tab-6-3-1"><span class="cap-k">表</span><p class="en">Table 14: Results from our internal English TTS Arena. Elo values are medians from 300 bootstrap resamples, and uncertainty intervals span the 5th–95th bootstrap percentiles.</p><p class="zh">Table 14：内部英文 TTS Arena 结果。Elo 值为 300 次 bootstrap 重采样的中位数，不确定区间覆盖第 5–95 个 bootstrap 百分位。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>uncertainty intervals span the 5th–95th bootstrap percentiles.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Rank</th><th></th><th></th><th>System</th><th>Elo</th><th>90% bootstrap interval</th><th></th><th>Wins</th><th>Losses</th><th>Win rate</th></tr></thead><tbody><tr><td></td><td>1</td><td></td><td></td><td>Luna-TTS</td><td>1548.47</td><td></td><td>1531.98–1566.59</td><td>495</td><td>368</td><td>57.36%</td></tr>
+<tr><td></td><td>2</td><td></td><td>Gemini 3.1 Flash TTS</td><td></td><td>1546.13</td><td></td><td>1517.81–1572.46</td><td>221</td><td>196</td><td>53.00%</td></tr>
+<tr><td></td><td>3</td><td></td><td></td><td>Inworld TTS 2</td><td>1495.67</td><td></td><td>1474.79–1519.24</td><td>283</td><td>317</td><td>47.17%</td></tr>
+<tr><td></td><td>4</td><td></td><td>ElevenLabs Eleven v3</td><td></td><td>1484.37</td><td></td><td>1436.10–1529.14</td><td>50</td><td>69</td><td>42.02%</td></tr>
+<tr><td></td><td>5</td><td></td><td>StepAudio 2.5 TTS</td><td></td><td>1480.39</td><td></td><td>1458.27–1506.09</td><td>229</td><td>298</td><td>43.45%</td></tr>
+<tr><td></td><td>6</td><td>MiniMax Speech 2.8 HD</td><td></td><td></td><td>1445.53</td><td></td><td>1391.82–1495.23</td><td>41</td><td>71</td><td>36.61%</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="tab-6-3-2">
           <p class="en-lines"><span class="sent" data-sid="tab-6-3-2-s1"><span class="en">Table 15 reports Luna-TTS’s direct results against each competing system. Luna-TTS achieves a positive win rate in all five head-to-head comparisons. Its largest margin is observed against Inworld TTS 2, while its comparison with Gemini is nearly balanced.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="tab-6-3-2-s1"><span class="zh">表 15（正文表）报告 Luna-TTS 对每个对手的直面对决结果。Luna-TTS 在五场对擂中全部取得正胜率，最大优势来自对 Inworld TTS 2，与 Gemini 的对比则几乎打平。</span></span></p>
           
         </div>
-<div class="cap" id="tab-6-3-3"><span class="cap-k">表</span><p class="en">Table 15: Luna-TTS head-to-head results in our internal English TTS Arena.</p><p class="zh">Table 15：Luna-TTS 在内部英文 TTS Arena 的逐头对决结果。</p></div>
+<div class="cap" id="tab-6-3-3"><span class="cap-k">表</span><p class="en">Table 15: Luna-TTS head-to-head results in our internal English TTS Arena.</p><p class="zh">Table 15：Luna-TTS 在内部英文 TTS Arena 的逐头对决结果。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>1</td><td></td><td></td><td></td><td>1531.98–1566.59</td><td>495</td><td>368</td><td>57.36%</td></tr>
+<tr><td>2</td><td></td><td>Gemini 3.1 Flash TTS</td><td>1546.13</td><td>1517.81–1572.46</td><td>221</td><td>196</td><td>53.00%</td></tr>
+<tr><td>3</td><td></td><td>Inworld TTS 2</td><td>1495.67</td><td>1474.79–1519.24</td><td>283</td><td>317</td><td>47.17%</td></tr>
+<tr><td>4</td><td></td><td>ElevenLabs Eleven v3</td><td>1484.37</td><td>1436.10–1529.14</td><td>50</td><td>69</td><td>42.02%</td></tr>
+<tr><td>5</td><td></td><td>StepAudio 2.5 TTS</td><td>1480.39</td><td>1458.27–1506.09</td><td>229</td><td>298</td><td>43.45%</td></tr>
+<tr><td>6</td><td>MiniMax Speech 2.8 HD</td><td></td><td>1445.53</td><td>1391.82–1495.23</td><td>41</td><td>71</td><td>36.61%</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-6-3-5">
           <p class="en-lines"><span class="sent" data-sid="s-6-3-5-1"><span class="en">Opponent Luna-TTS wins–losses Win rate Inworld TTS 2</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-6-3-5-1"><span class="zh">表头：Opponent × Luna-TTS wins–losses / Win rate——Inworld TTS 2（后续照原文）。</span></span></p>
           
         </div>
 <div class="eq" id="eq-6-3-14"><code>92–52 63.89%</code></div>
-<div class="eq" id="eq-6-3-15"><code>MiniMax Speech 2.8 HD</code></div>
+
 <div class="eq" id="eq-6-3-16"><code>54–34 61.36%</code></div>
-<div class="eq" id="eq-6-3-17"><code>ElevenLabs Eleven v3</code></div>
+
 <div class="eq" id="eq-6-3-18"><code>56–38 59.57%</code></div>
-<div class="eq" id="eq-6-3-19"><code>StepAudio 2.5 TTS</code></div>
+
 <div class="eq" id="eq-6-3-20"><code>176–131 57.33%</code></div>
-<div class="eq" id="eq-6-3-21"><code>Gemini 3.1 Flash TTS</code></div>
+
 <div class="eq" id="eq-6-3-22"><code>117–113 50.87%</code></div>
 <div class="eq" id="eq-6-3-23"><code>Overall</code></div>
 <div class="eq" id="eq-6-3-24"><code>495–368 57.36%</code></div></section>

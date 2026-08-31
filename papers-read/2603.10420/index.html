@@ -102,6 +102,13 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+/* 重建表格网格（extract_tables.py 产物） */
+.ptab-wrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ptab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ptab th{background:#f1f5f9;font-weight:700;padding:6px 9px;border-bottom:1.5px solid var(--line);text-align:left;white-space:nowrap}
+.ptab td{padding:5px 9px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap}
+.ptab td:first-child,.ptab th:first-child{text-align:left;font-weight:600}
+.ptab tbody tr:hover td{background:#f8fafc}
 .tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
 .refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
 /* 三分钟摘要 */
@@ -424,19 +431,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-3-3-1-s1"><span class="zh">Table 1 汇总了 FireRedASR2 与 FireRedASR 之间的主要差异。总体而言，FireRedASR2 保留了 FireRedASR 中经过验证的模型设计，同时通过更大、更多样的训练语料提升泛化能力，并在 AED 变体中通过事后 CTC 分支实现时间戳生成。</span></span></p>
           
         </div>
-<div class="cap" id="tab-3-3-2"><span class="cap-k">表</span><p class="en">Table 1: Key updates from FireRedASR to FireRedASR2.</p><p class="zh">Table 1：从 FireRedASR 到 FireRedASR2 的关键更新。</p></div></section>
+<div class="cap" id="tab-3-3-2"><span class="cap-k">表</span><p class="en">Table 1: Key updates from FireRedASR to FireRedASR2.</p><p class="zh">Table 1：从 FireRedASR 到 FireRedASR2 的关键更新。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>branch in the AED variant.</th><th></th><th></th><th></th></tr><tr><th></th><th>Table 1: Key updates from FireRedASR to FireRedASR2.</th><th></th><th></th></tr><tr><th></th><th>Item</th><th>FireRedASR</th><th>FireRedASR2</th></tr><tr><th></th><th>Training data</th><th>~70k hours</th><th>~200k hours</th></tr></thead><tbody><tr><td></td><td>Vocab size (AED)</td><td>7,832</td><td>8,667</td></tr>
+<tr><td></td><td>Timestamps (AED)</td><td>Not Supported</td><td>Supported</td></tr>
+<tr><td>4</td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-item"><span class="t-zh">Item</span><span class="t-en">Item</span></h3><div class="pblk" id="p-item-1">
-          <p class="en-lines"><span class="sent" data-sid="s-item-1-1"><span class="en">FireRedASR FireRedASR2 Training data ~70k hours ~200k hours Vocab size (AED)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-item-1-1"><span class="zh">（对比表：FireRedASR vs FireRedASR2——训练数据约 70k 小时 vs 约 200k 小时；词表大小（AED）7,832 vs 8,667；时间戳（AED）不支持 vs 支持。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-item-1"><code>7,832 8,667</code></div>
-<div class="pblk" id="p-item-2">
-          <p class="en-lines"><span class="sent" data-sid="s-item-2-1"><span class="en">Timestamps (AED) Not Supported Supported</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-item-2-1"><span class="zh">（对比表：FireRedASR vs FireRedASR2——训练数据约 70k 小时 vs 约 200k 小时；词表大小（AED）7,832 vs 8,667；时间戳（AED）不支持 vs 支持。）</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-item"><span class="t-zh">Item</span><span class="t-en">Item</span></h3>
+
+</section>
 <section>
       <h2 class="sech lv1" id="sec-4"><span class="secnum">4</span> <span class="t-zh">4 FireRedVAD：语音活动检测</span><span class="t-en">FireRedVAD: Voice Activity Detection</span></h2><div class="pblk" id="p-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-1-1"><span class="en">FireRedVAD provides robust segmentation for downstream ASR in real-world audio, where speech may co-exist with singing, background music, and various non-speech acoustic events.</span></span> <span class="sent" data-sid="s-4-1-2"><span class="en">Unlike many industrial VAD solutions that rely on ASR forced-alignment signals and are trained primarily on ASR corpora, FireRedVAD is trained on high-quality human-annotated acoustic event data, enabling more reliable detection under complex acoustic conditions.</span><button class="mk feat" data-sid="s-4-1-2" title="查看讲解">解</button></span></p>
@@ -714,28 +715,31 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-7-1-1"><span class="cap-k">表</span><p class="en">Table 2: Comparison of Character Error Rate (CER%) for FireRedASR2-LLM (FRASR2-LLM), FireRedASR2-AED (FRASR2-AED), and other large ASR baselines on public ASR test sets.</p><p class="zh">Table 2：FireRedASR2-LLM（FRASR2-LLM）、FireRedASR2-AED（FRASR2-AED）与其他大型 ASR 基线在公开 ASR 测试集上的字错误率（CER%）对比。</p></div></section>
+<div class="cap" id="tab-7-1-1"><span class="cap-k">表</span><p class="en">Table 2: Comparison of Character Error Rate (CER%) for FireRedASR2-LLM (FRASR2-LLM), FireRedASR2-AED (FRASR2-AED), and other large ASR baselines on public ASR test sets.</p><p class="zh">Table 2：FireRedASR2-LLM（FRASR2-LLM）、FireRedASR2-AED（FRASR2-AED）与其他大型 ASR 基线在公开 ASR 测试集上的字错误率（CER%）对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Test set \ Model</th><th>FRASR2-LLM FRASR2-AED</th><th></th><th></th><th>Doubao-ASR</th><th></th><th>Qwen3-ASR</th><th></th><th>Fun-ASR</th><th></th></tr></thead><tbody><tr><td>Avg-All-24</td><td></td><td>9.67</td><td>9.80</td><td></td><td>12.98</td><td></td><td>10.12</td><td></td><td>10.92</td></tr>
+<tr><td>Avg-Mandarin-4</td><td></td><td>2.89</td><td>3.05</td><td></td><td>3.69</td><td></td><td>3.76</td><td></td><td>4.16</td></tr>
+<tr><td>Avg-Dialect-19</td><td></td><td>11.55</td><td>11.67</td><td></td><td>15.39</td><td></td><td>11.85</td><td></td><td>12.76</td></tr>
+<tr><td>Sing-1</td><td></td><td>1.12</td><td>1.17</td><td></td><td>4.36</td><td></td><td>2.57</td><td></td><td>3.05</td></tr>
+<tr><td>aishell1</td><td></td><td>0.64</td><td>0.57</td><td></td><td>1.52</td><td></td><td>1.48</td><td></td><td>1.64</td></tr>
+<tr><td>aishell2</td><td></td><td>2.15</td><td>2.51</td><td></td><td>2.77</td><td></td><td>2.71</td><td></td><td>2.38</td></tr>
+<tr><td>ws-net</td><td></td><td>4.44</td><td>4.57</td><td></td><td>5.73</td><td></td><td>4.97</td><td></td><td>6.85</td></tr>
+<tr><td>ws-meeting</td><td></td><td>4.32</td><td>4.53</td><td></td><td>4.74</td><td></td><td>5.88</td><td></td><td>5.78</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-test-set-model"><span class="t-zh">Test set \ Model</span><span class="t-en">Test set \ Model</span></h3><div class="pblk" id="p-test-set-model-1">
-          <p class="en-lines"><span class="sent" data-sid="s-test-set-model-1-1"><span class="en">FRASR2-LLM FRASR2-AED Doubao-ASR Qwen3-ASR Fun-ASR Avg-All-24</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-test-set-model-1-1"><span class="zh">（表格：FRASR2-LLM / FRASR2-AED / Doubao-ASR / Qwen3-ASR / Fun-ASR——Avg-All-24：9.67/9.80/12.98/10.12/10.92；Avg-Mandarin-4：2.89/3.05/3.69/3.76/4.16；Avg-Dialect-19：11.55/11.67/15.39/11.85/12.76；Sing-1：1.12/1.17/4.36/2.57/3.05；aishell1：0.64/0.57/1.52/1.48/1.64；aishell2：2.15/2.51/2.77/2.71/2.38；ws-net：4.44/4.57/5.73/4.97/6.85；ws-meeting：4.32/4.53/4.74/5.88/5.78。API 基线评测时间：Doubao-ASR（volc.seedasr.auc）评于 2026 年 2 月初，Fun-ASR 评于 2025 年 11 月末。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-test-set-model-1"><code>9.67 9.80 12.98 10.12 10.92</code></div>
-<div class="eq" id="eq-test-set-model-2"><code>Avg-Mandarin-4</code></div>
-<div class="eq" id="eq-test-set-model-3"><code>2.89 3.05 3.69 3.76 4.16</code></div>
-<div class="eq" id="eq-test-set-model-4"><code>Avg-Dialect-19</code></div>
-<div class="eq" id="eq-test-set-model-5"><code>11.55 11.67 15.39 11.85 12.76</code></div>
-<div class="eq" id="eq-test-set-model-6"><code>Sing-1</code></div>
-<div class="eq" id="eq-test-set-model-7"><code>1.12 1.17 4.36 2.57 3.05</code></div>
-<div class="eq" id="eq-test-set-model-8"><code>aishell1</code></div>
-<div class="eq" id="eq-test-set-model-9"><code>0.64 0.57 1.52 1.48 1.64</code></div>
-<div class="eq" id="eq-test-set-model-10"><code>aishell2</code></div>
-<div class="eq" id="eq-test-set-model-11"><code>2.15 2.51 2.77 2.71 2.38</code></div>
-<div class="eq" id="eq-test-set-model-12"><code>ws-net</code></div>
-<div class="eq" id="eq-test-set-model-13"><code>4.44 4.57 5.73 4.97 6.85</code></div>
-<div class="eq" id="eq-test-set-model-14"><code>ws-meeting</code></div>
-<div class="eq" id="eq-test-set-model-15"><code>4.32 4.53 4.74 5.88 5.78</code></div>
+      <h3 class="sech lv2" id="sec-test-set-model"><span class="t-zh">Test set \ Model</span><span class="t-en">Test set \ Model</span></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-test-set-model-2">
           <p class="en-lines"><span class="sent" data-sid="s-test-set-model-2-1"><span class="en">API baselines: Doubao-ASR (volc.seedasr.auc) was evaluated in early February 2026, and Fun-ASR was evaluated in late November 2025.</span></span> <span class="sent" data-sid="s-test-set-model-2-2"><span class="en">API results may change over time due to server-side updates and may include proprietary components.</span></span> <span class="sent" data-sid="s-test-set-model-2-3"><span class="en">To ensure a fair comparison, we disabled ITN and punctuation in the API outputs whenever such options were available, and used the default VAD configuration provided by each API.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-test-set-model-2-1"><span class="zh">API 基线：Doubao-ASR（volc.seedasr.auc）于 2026 年 2 月初评测，Fun-ASR 于 2025 年 11 月底评测。</span></span><span class="sent" data-sid="s-test-set-model-2-2"><span class="zh">API 结果可能因服务端更新而随时间变化，且可能包含私有组件。</span></span><span class="sent" data-sid="s-test-set-model-2-3"><span class="zh">为保证公平对比，凡 API 提供相应选项，我们都关闭了输出中的 ITN 与标点，并使用各 API 默认的 VAD 配置。</span></span></p>
@@ -791,20 +795,19 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-7-2-1"><span class="cap-k">表</span><p class="en">Table 3: Frame-level VAD performance on FLEURS-VAD-102. Higher is better for AUC-ROC and F1; lower is better for FAR and MR.</p><p class="zh">Table 3：FLEURS-VAD-102 上的帧级 VAD 性能。AUC-ROC 与 F1 越高越好，FAR 与 MR 越低越好。</p></div></section>
+<div class="cap" id="tab-7-2-1"><span class="cap-k">表</span><p class="en">Table 3: Frame-level VAD performance on FLEURS-VAD-102. Higher is better for AUC-ROC and F1; lower is better for FAR and MR.</p><p class="zh">Table 3：FLEURS-VAD-102 上的帧级 VAD 性能。AUC-ROC 与 F1 越高越好，FAR 与 MR 越低越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>F1; lower is better for FAR and MR.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Metric \ Model</th><th>FireRedVAD Silero-VAD</th><th></th><th></th><th>TEN-VAD</th><th></th><th>FunASR-VAD</th><th></th><th>WebRTC-VAD</th><th></th></tr></thead><tbody><tr><td>AUC-ROC (%) ↑</td><td></td><td>99.60</td><td>97.99</td><td></td><td>97.81</td><td></td><td>–</td><td></td><td>–</td></tr>
+<tr><td>F1 (%) ↑</td><td></td><td>97.57</td><td>95.95</td><td></td><td>95.19</td><td></td><td>90.91</td><td></td><td>52.30</td></tr>
+<tr><td>FAR (%) ↓</td><td></td><td>2.69</td><td>9.41</td><td></td><td>15.47</td><td></td><td>44.03</td><td></td><td>2.83</td></tr>
+<tr><td>MR (%) ↓</td><td></td><td>3.62</td><td>3.95</td><td></td><td>2.95</td><td></td><td>0.42</td><td></td><td>64.15</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-metric-model"><span class="t-zh">Metric \ Model</span><span class="t-en">Metric \ Model</span></h3><div class="pblk" id="p-metric-model-1">
-          <p class="en-lines"><span class="sent" data-sid="s-metric-model-1-1"><span class="en">FireRedVAD Silero-VAD TEN-VAD FunASR-VAD WebRTC-VAD AUC-ROC (%) ↑</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-metric-model-1-1"><span class="zh">（表格：FireRedVAD / Silero-VAD / TEN-VAD / FunASR-VAD / WebRTC-VAD——AUC-ROC (%)↑：99.60/97.99/97.81/–/–；F1 (%)↑：97.57/95.95/95.19/90.91/52.30；FAR (%)↓：2.69/9.41/15.47/44.03/2.83；MR (%)↓：3.62/3.95/2.95/0.42/64.15。FunASR-VAD 与 WebRTC-VAD 不报告 AUC-ROC，因为它们不输出阈值无关评测所需的连续后验概率。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-metric-model-1"><code>99.60 97.99 97.81 – –</code></div>
-<div class="eq" id="eq-metric-model-2"><code>F1 (%) ↑</code></div>
-<div class="eq" id="eq-metric-model-3"><code>97.57 95.95 95.19 90.91 52.30</code></div>
-<div class="eq" id="eq-metric-model-4"><code>FAR (%) ↓</code></div>
-<div class="eq" id="eq-metric-model-5"><code>2.69 9.41 15.47 44.03 2.83</code></div>
-<div class="eq" id="eq-metric-model-6"><code>MR (%) ↓</code></div>
-<div class="eq" id="eq-metric-model-7"><code>3.62 3.95 2.95 0.42 64.15</code></div>
+      <h3 class="sech lv2" id="sec-metric-model"><span class="t-zh">Metric \ Model</span><span class="t-en">Metric \ Model</span></h3>
+
+
+
+
+
+
+
 <div class="pblk" id="p-metric-model-2">
           <p class="en-lines"><span class="sent" data-sid="s-metric-model-2-1"><span class="en">AUC-ROC is not reported for FunASR-VAD and WebRTC-VAD, as these systems do not output continuous posterior probabilities required for threshold-independent evaluation.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-metric-model-2-1"><span class="zh">（表格：FireRedVAD / Silero-VAD / TEN-VAD / FunASR-VAD / WebRTC-VAD——AUC-ROC (%)↑：99.60/97.99/97.81/–/–；F1 (%)↑：97.57/95.95/95.19/90.91/52.30；FAR (%)↓：2.69/9.41/15.47/44.03/2.83；MR (%)↓：3.62/3.95/2.95/0.42/64.15。FunASR-VAD 与 WebRTC-VAD 不报告 AUC-ROC，因为它们不输出阈值无关评测所需的连续后验概率。）</span></span></p>
@@ -838,18 +841,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-7-3-3-1"><span class="zh">基线：我们与 Whisper [51] 的语种识别、SpeechBrain LID 模型 [52] 以及 Dolphin [53] 对比。</span></span></p>
           
         </div>
-<div class="cap" id="tab-7-3-1"><span class="cap-k">表</span><p class="en">Table 4: Utterance-level LID accuracy (%) on public test sets. Higher is better.</p><p class="zh">Table 4：公开测试集上的句级 LID 准确率（%）。越高越好。</p></div></section>
+<div class="cap" id="tab-7-3-1"><span class="cap-k">表</span><p class="en">Table 4: Utterance-level LID accuracy (%) on public test sets. Higher is better.</p><p class="zh">Table 4：公开测试集上的句级 LID 准确率（%）。越高越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Test set \ Model</th><th>FireRedLID</th><th></th><th>Whisper</th><th></th><th>SpeechBrain</th><th></th><th>Dolphin</th><th></th></tr></thead><tbody><tr><td>FLEURS test</td><td></td><td>97.18</td><td></td><td>79.41</td><td></td><td>92.91</td><td></td><td>–</td></tr>
+<tr><td>CommonVoice test</td><td></td><td>92.07</td><td></td><td>80.81</td><td></td><td>78.75</td><td></td><td>–</td></tr>
+<tr><td>Chinese dialects</td><td></td><td>88.47</td><td></td><td>–</td><td></td><td>–</td><td></td><td>69.01</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-test-set-model-2"><span class="t-zh">Test set \ Model</span><span class="t-en">Test set \ Model</span></h3><div class="pblk" id="p-test-set-model-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-test-set-model-2-1-1"><span class="en">FireRedLID Whisper SpeechBrain Dolphin FLEURS test</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-test-set-model-2-1-1"><span class="zh">（表格：FireRedLID / Whisper / SpeechBrain / Dolphin——FLEURS test：97.18/79.41/92.91/–；CommonVoice test：92.07/80.81/78.75/–；中文方言：88.47/–/–/69.01。结果与分析：表 4 显示 FireRedLID 在多语种与中文方言 LID 任务上均表现强劲。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-test-set-model-2-1"><code>97.18 79.41 92.91 –</code></div>
-<div class="eq" id="eq-test-set-model-2-2"><code>CommonVoice test</code></div>
-<div class="eq" id="eq-test-set-model-2-3"><code>92.07 80.81 78.75 –</code></div>
-<div class="eq" id="eq-test-set-model-2-4"><code>Chinese dialects</code></div>
-<div class="eq" id="eq-test-set-model-2-5"><code>88.47 – – 69.01</code></div>
+      <h3 class="sech lv2" id="sec-test-set-model-2"><span class="t-zh">Test set \ Model</span><span class="t-en">Test set \ Model</span></h3>
+
+
+
+
+
 <div class="pblk" id="p-test-set-model-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-test-set-model-2-2-1"><span class="en">Results and analysis: Table 4 shows that FireRedLID achieves strong performance on both multilingual and Chinese dialect LID tasks.</span></span> <span class="sent" data-sid="s-test-set-model-2-2-2"><span class="en">On FLEURS, FireRedLID reaches 97.18% accuracy, substantially outperforming Whisper and improving over SpeechBrain.</span></span> <span class="sent" data-sid="s-test-set-model-2-2-3"><span class="en">On CommonVoice, FireRedLID also achieves the best accuracy among compared systems.</span></span> <span class="sent" data-sid="s-test-set-model-2-2-4"><span class="en">On the combined Chinese dialect benchmark, FireRedLID achieves 88.47% accuracy, demonstrating the effectiveness of our hierarchical label modeling for fine-grained Chinese dialect identification.</span><button class="mk feat" data-sid="s-test-set-model-2-2-4" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-test-set-model-2-2-1"><span class="zh">（表格：FireRedLID / Whisper / SpeechBrain / Dolphin——FLEURS test：97.18/79.41/92.91/–；CommonVoice test：92.07/80.81/78.75/–；中文方言：88.47/–/–/69.01。结果与分析：表 4 显示 FireRedLID 在多语种与中文方言 LID 任务上均表现强劲。）</span></span><span class="sent" data-sid="s-test-set-model-2-2-2"><span class="zh">在 FLEURS 上，FireRedLID 达到 97.18% 准确率，大幅超越 Whisper，并优于 SpeechBrain。</span></span><span class="sent" data-sid="s-test-set-model-2-2-3"><span class="zh">在 CommonVoice 上，FireRedLID 同样在参与对比的系统中取得最佳准确率。</span></span><span class="sent" data-sid="s-test-set-model-2-2-4"><span class="zh">在合并的中文方言基准上，FireRedLID 取得 88.47% 准确率，展示了我们的分层级标签建模在细粒度中文方言识别上的有效性。</span><button class="mk feat" data-sid="s-test-set-model-2-2-4" title="查看讲解">解</button></span></p>
@@ -1023,66 +1024,92 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-A-1-1"><span class="zh">本附录报告第 7.1 节所用全部 24 个公开测试集上的逐测试集 CER（%）。</span></span><span class="sent" data-sid="s-A-1-2"><span class="zh">为完整起见，我们还纳入了 Fun-ASR-Nano，即 FunAudioLLM 发布的开源检查点。</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-1"><span class="cap-k">表</span><p class="en">Table 6: Comparison of Character Error Rate (CER%) for FireRedASR2-LLM (FRASR2-LLM), FireRedASR2-AED (FRASR2-AED), and other large ASR baselines on public ASR test sets.</p><p class="zh">Table 6：FireRedASR2-LLM（FRASR2-LLM）、FireRedASR2-AED（FRASR2-AED）与其他大型 ASR 基线在公开 ASR 测试集上的字错误率（CER%）对比。</p></div></section>
+<div class="cap" id="tab-A-1"><span class="cap-k">表</span><p class="en">Table 6: Comparison of Character Error Rate (CER%) for FireRedASR2-LLM (FRASR2-LLM), FireRedASR2-AED (FRASR2-AED), and other large ASR baselines on public ASR test sets.</p><p class="zh">Table 6：FireRedASR2-LLM（FRASR2-LLM）、FireRedASR2-AED（FRASR2-AED）与其他大型 ASR 基线在公开 ASR 测试集上的字错误率（CER%）对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Test set \ Model</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Avg-Mandarin-4</td><td>2.89</td><td>3.05</td><td>3.69</td><td>3.76</td><td>4.16</td><td>4.55</td></tr>
+<tr><td>Avg-Dialect-19</td><td>11.55</td><td>11.67</td><td>15.39</td><td>11.85</td><td>12.76</td><td>15.07</td></tr>
+<tr><td>Avg-All-24</td><td>9.67</td><td>9.80</td><td>12.98</td><td>10.12</td><td>10.92</td><td>12.81</td></tr>
+<tr><td>aishell1</td><td>0.64</td><td>0.57</td><td>1.52</td><td>1.48</td><td>1.64</td><td>1.96</td></tr>
+<tr><td>aishell2</td><td>2.15</td><td>2.51</td><td>2.77</td><td>2.71</td><td>2.38</td><td>3.02</td></tr>
+<tr><td>ws-net</td><td>4.44</td><td>4.57</td><td>5.73</td><td>4.97</td><td>6.85</td><td>6.93</td></tr>
+<tr><td>ws-meeting</td><td>4.32</td><td>4.53</td><td>4.74</td><td>5.88</td><td>5.78</td><td>6.29</td></tr>
+<tr><td>kespeech</td><td>3.08</td><td>3.60</td><td>5.38</td><td>5.10</td><td>5.36</td><td>7.66</td></tr>
+<tr><td>ws-yue-short</td><td>5.14</td><td>5.15</td><td>10.51</td><td>5.82</td><td>7.34</td><td>8.82</td></tr>
+<tr><td>ws-yue-long</td><td>8.71</td><td>8.54</td><td>11.39</td><td>8.85</td><td>10.14</td><td>11.36</td></tr>
+<tr><td>ws-chuan-easy</td><td>10.90</td><td>10.60</td><td>11.33</td><td>11.99</td><td>12.46</td><td>14.05</td></tr>
+<tr><td>ws-chuan-hard</td><td>20.71</td><td>21.35</td><td>20.77</td><td>21.63</td><td>22.49</td><td>25.32</td></tr>
+<tr><td>md-heavy</td><td>7.42</td><td>7.43</td><td>7.69</td><td>8.02</td><td>9.13</td><td>9.97</td></tr>
+<tr><td>md-yue-conv</td><td>12.23</td><td>11.66</td><td>26.25</td><td>9.76</td><td>33.71</td><td>15.68</td></tr>
+<tr><td>md-yue-daily</td><td>3.61</td><td>3.35</td><td>12.82</td><td>3.66</td><td>2.69</td><td>5.67</td></tr>
+<tr><td>md-yue-vehicle</td><td>4.50</td><td>4.83</td><td>8.66</td><td>4.28</td><td>6.00</td><td>7.04</td></tr>
+<tr><td>md-chuan-conv</td><td>13.18</td><td>13.07</td><td>11.77</td><td>14.35</td><td>14.01</td><td>17.11</td></tr>
+<tr><td>md-chuan-daily</td><td>4.90</td><td>5.17</td><td>3.90</td><td>4.93</td><td>3.98</td><td>5.95</td></tr>
+<tr><td>md-shanghai-conv</td><td>28.70</td><td>27.02</td><td>45.15</td><td>29.77</td><td>25.49</td><td>37.08</td></tr>
+<tr><td>md-shanghai-daily</td><td>24.94</td><td>24.18</td><td>44.06</td><td>23.93</td><td>12.55</td><td>28.77</td></tr>
+<tr><td>md-wu</td><td>7.15</td><td>7.14</td><td>7.70</td><td>7.57</td><td>10.63</td><td>10.56</td></tr>
+<tr><td>md-zheng-conv</td><td>10.20</td><td>10.65</td><td>9.83</td><td>9.55</td><td>10.85</td><td>13.09</td></tr>
+<tr><td>md-zheng-daily</td><td>5.80</td><td>6.26</td><td>5.77</td><td>5.88</td><td>6.29</td><td>8.18</td></tr>
+<tr><td>md-wuhan</td><td>9.60</td><td>10.81</td><td>9.94</td><td>10.22</td><td>4.34</td><td>8.70</td></tr>
+<tr><td>md-tianjin</td><td>15.45</td><td>15.30</td><td>15.79</td><td>16.16</td><td>19.27</td><td>22.03</td></tr>
+<tr><td>md-changsha</td><td>23.18</td><td>25.64</td><td>23.76</td><td>23.70</td><td>25.66</td><td>29.23</td></tr>
+<tr><td>opencpop</td><td>1.12</td><td>1.17</td><td>4.36</td><td>2.57</td><td>3.05</td><td>2.95</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-test-set-model-4"><span class="t-zh">Test set \ Model</span><span class="t-en">Test set \ Model</span></h3><div class="pblk" id="p-test-set-model-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-test-set-model-4-1-1"><span class="en">FRASR2-LLM FRASR2-AED Doubao-ASR Qwen3-ASR Fun-ASR Fun-Nano Avg-Mandarin-4</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-test-set-model-4-1-1"><span class="zh">表头：FRASR2-LLM / FRASR2-AED / Doubao-ASR / Qwen3-ASR / Fun-ASR / Fun-Nano——Avg-Mandarin-4（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-test-set-model-4-1"><code>2.89 3.05 3.69 3.76 4.16 4.55</code></div>
-<div class="eq" id="eq-test-set-model-4-2"><code>Avg-Dialect-19</code></div>
-<div class="eq" id="eq-test-set-model-4-3"><code>11.55 11.67 15.39 11.85 12.76 15.07</code></div>
-<div class="eq" id="eq-test-set-model-4-4"><code>Avg-All-24</code></div>
-<div class="eq" id="eq-test-set-model-4-5"><code>9.67 9.80 12.98 10.12 10.92 12.81</code></div>
-<div class="eq" id="eq-test-set-model-4-6"><code>aishell1</code></div>
-<div class="eq" id="eq-test-set-model-4-7"><code>0.64 0.57 1.52 1.48 1.64 1.96</code></div>
-<div class="eq" id="eq-test-set-model-4-8"><code>aishell2</code></div>
-<div class="eq" id="eq-test-set-model-4-9"><code>2.15 2.51 2.77 2.71 2.38 3.02</code></div>
-<div class="eq" id="eq-test-set-model-4-10"><code>ws-net</code></div>
-<div class="eq" id="eq-test-set-model-4-11"><code>4.44 4.57 5.73 4.97 6.85 6.93</code></div>
-<div class="eq" id="eq-test-set-model-4-12"><code>ws-meeting</code></div>
-<div class="eq" id="eq-test-set-model-4-13"><code>4.32 4.53 4.74 5.88 5.78 6.29</code></div>
-<div class="eq" id="eq-test-set-model-4-14"><code>kespeech</code></div>
-<div class="eq" id="eq-test-set-model-4-15"><code>3.08 3.60 5.38 5.10 5.36 7.66</code></div>
-<div class="eq" id="eq-test-set-model-4-16"><code>ws-yue-short</code></div>
-<div class="eq" id="eq-test-set-model-4-17"><code>5.14 5.15 10.51 5.82 7.34 8.82</code></div>
-<div class="eq" id="eq-test-set-model-4-18"><code>ws-yue-long</code></div>
-<div class="eq" id="eq-test-set-model-4-19"><code>8.71 8.54 11.39 8.85 10.14 11.36</code></div>
-<div class="eq" id="eq-test-set-model-4-20"><code>ws-chuan-easy</code></div>
-<div class="eq" id="eq-test-set-model-4-21"><code>10.90 10.60 11.33 11.99 12.46 14.05</code></div>
-<div class="eq" id="eq-test-set-model-4-22"><code>ws-chuan-hard</code></div>
-<div class="eq" id="eq-test-set-model-4-23"><code>20.71 21.35 20.77 21.63 22.49 25.32</code></div>
-<div class="eq" id="eq-test-set-model-4-24"><code>md-heavy</code></div>
-<div class="eq" id="eq-test-set-model-4-25"><code>7.42 7.43 7.69 8.02 9.13 9.97</code></div>
-<div class="eq" id="eq-test-set-model-4-26"><code>md-yue-conv</code></div>
-<div class="eq" id="eq-test-set-model-4-27"><code>12.23 11.66 26.25 9.76 33.71 15.68</code></div>
-<div class="eq" id="eq-test-set-model-4-28"><code>md-yue-daily</code></div>
-<div class="eq" id="eq-test-set-model-4-29"><code>3.61 3.35 12.82 3.66 2.69 5.67</code></div>
-<div class="eq" id="eq-test-set-model-4-30"><code>md-yue-vehicle</code></div>
-<div class="eq" id="eq-test-set-model-4-31"><code>4.50 4.83 8.66 4.28 6.00 7.04</code></div>
-<div class="eq" id="eq-test-set-model-4-32"><code>md-chuan-conv</code></div>
-<div class="eq" id="eq-test-set-model-4-33"><code>13.18 13.07 11.77 14.35 14.01 17.11</code></div>
-<div class="eq" id="eq-test-set-model-4-34"><code>md-chuan-daily</code></div>
-<div class="eq" id="eq-test-set-model-4-35"><code>4.90 5.17 3.90 4.93 3.98 5.95</code></div>
-<div class="eq" id="eq-test-set-model-4-36"><code>md-shanghai-conv</code></div>
-<div class="eq" id="eq-test-set-model-4-37"><code>28.70 27.02 45.15 29.77 25.49 37.08</code></div>
-<div class="eq" id="eq-test-set-model-4-38"><code>md-shanghai-daily</code></div>
-<div class="eq" id="eq-test-set-model-4-39"><code>24.94 24.18 44.06 23.93 12.55 28.77</code></div>
-<div class="eq" id="eq-test-set-model-4-40"><code>md-wu</code></div>
-<div class="eq" id="eq-test-set-model-4-41"><code>7.15 7.14 7.70 7.57 10.63 10.56</code></div>
-<div class="eq" id="eq-test-set-model-4-42"><code>md-zheng-conv</code></div>
-<div class="eq" id="eq-test-set-model-4-43"><code>10.20 10.65 9.83 9.55 10.85 13.09</code></div>
-<div class="eq" id="eq-test-set-model-4-44"><code>md-zheng-daily</code></div>
-<div class="eq" id="eq-test-set-model-4-45"><code>5.80 6.26 5.77 5.88 6.29 8.18</code></div>
-<div class="eq" id="eq-test-set-model-4-46"><code>md-wuhan</code></div>
-<div class="eq" id="eq-test-set-model-4-47"><code>9.60 10.81 9.94 10.22 4.34 8.70</code></div>
-<div class="eq" id="eq-test-set-model-4-48"><code>md-tianjin</code></div>
-<div class="eq" id="eq-test-set-model-4-49"><code>15.45 15.30 15.79 16.16 19.27 22.03</code></div>
-<div class="eq" id="eq-test-set-model-4-50"><code>md-changsha</code></div>
-<div class="eq" id="eq-test-set-model-4-51"><code>23.18 25.64 23.76 23.70 25.66 29.23</code></div>
-<div class="eq" id="eq-test-set-model-4-52"><code>opencpop</code></div>
-<div class="eq" id="eq-test-set-model-4-53"><code>1.12 1.17 4.36 2.57 3.05 2.95</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-test-set-model-4-2">
           <p class="en-lines"><span class="sent" data-sid="s-test-set-model-4-2-1"><span class="en">Abbreviations: ws denotes WenetSpeech; md denotes MagicData; conv denotes Conversational; daily denotes Daily-use; Fun-Nano denotes Fun-ASR-Nano-2512.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-test-set-model-4-2-1"><span class="zh">缩写说明：ws 表示 WenetSpeech；md 表示 MagicData；conv 表示 Conversational；daily 表示 Daily-use；Fun-Nano 表示 Fun-ASR-Nano-2512。</span></span></p>
@@ -1109,7 +1136,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-B-2-1-1"><span class="zh">代码 英文名 中文名 代码 英文名 中文名</span></span></p>
           
         </div>
-<div class="cap" id="tab-B-2-2"><span class="cap-k">表</span><p class="en">Table 8: Full list of Chinese dialect codes supported by FireRedLID.</p><p class="zh">Table 8：FireRedLID 支持的中文方言代码完整列表。</p></div>
+<div class="cap" id="tab-B-2-2"><span class="cap-k">表</span><p class="en">Table 8: Full list of Chinese dialect codes supported by FireRedLID.</p><p class="zh">Table 8：FireRedLID 支持的中文方言代码完整列表。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>English Name</th><th>Chinese Name</th></tr><tr><th></th><th>Chinese (Mandarin)</th><th>中文(普通话)</th></tr><tr><th>yue</th><th>Chinese (Yue: Guangdong/Hong Kong)</th><th>中文(粤语：广东/香港)</th></tr><tr><th>wu</th><th>Chinese (Wu: Shanghai/Wu)</th><th>中文(吴语：上海/吴语片区)</th></tr><tr><th>min</th><th>Chinese (Min: Fujian)</th><th>中文(闽语：福建)</th></tr></thead><tbody><tr><td>north</td><td>Chinese (Mandarin-North: Shandong/Gansu/N-</td><td>中文(官话-北方：山东/甘肃/宁夏/河</td></tr>
+<tr><td></td><td>ingxia/Hebei/Shanxi/Liaoning/Shaanxi)</td><td>北/山西/辽宁/陕西)</td></tr>
+<tr><td>xinan</td><td>Chinese (Mandarin-Southwest: Sichuan/Yun-</td><td>中文(官话-西南：四川/云南/贵州/湖</td></tr>
+<tr><td></td><td>nan/Guizhou/Hubei/Chongqing)</td><td>北/重庆)</td></tr>
+<tr><td>xiang</td><td>Chinese (Xiang: Hunan)</td><td>中文(湘语：湖南)</td></tr>
+<tr><td>bo</td><td>Tibetan (in Chinese context)</td><td>中文(藏语)</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-B-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-B-2-2-1"><span class="en">Code English Name Chinese Name mandarin Chinese (Mandarin) 中文(普通话) yue Chinese (Yue: Guangdong/Hong Kong) 中文(粤语：广东/香港) wu Chinese (Wu: Shanghai/Wu) 中文(吴语：上海/吴语片区) min Chinese (Min: Fujian) 中文(闽语：福建) north Chinese (Mandarin-North: Shandong/Gansu/N- ingxia/Hebei/Shanxi/Liaoning/Shaanxi) 中文(官话-北方：山东/甘肃/宁夏/河 北/山西/辽宁/陕西) xinan Chinese (Mandarin-Southwest: Sichuan/Yunnan/Guizhou/Hubei/Chongqing) 中文(官话-西南：四川/云南/贵州/湖 北/重庆) xiang Chinese (Xiang: Hunan) 中文(湘语：湖南) bo Tibetan (in Chinese context) 中文(藏语)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-2-2-1"><span class="zh">代码 英文名 中文名</span></span></p>

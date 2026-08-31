@@ -102,6 +102,13 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+/* 重建表格网格（extract_tables.py 产物） */
+.ptab-wrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ptab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ptab th{background:#f1f5f9;font-weight:700;padding:6px 9px;border-bottom:1.5px solid var(--line);text-align:left;white-space:nowrap}
+.ptab td{padding:5px 9px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap}
+.ptab td:first-child,.ptab th:first-child{text-align:left;font-weight:600}
+.ptab tbody tr:hover td{background:#f8fafc}
 .tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
 .refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
 /* 三分钟摘要 */
@@ -519,78 +526,67 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-1-3-1"><span class="zh">脚注 3：https://github.com/facebook/Ax</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 1: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech. Models use either the audio of Librispeech (LS-960) or the larger LibriVox (LV-60k) as unlabeled data. We consider two model sizes: BASE (95m parameters) and LARGE (317m parameters). Prior work used 860 unlabeled hours (LS-860) but the total with labeled data is 960 hours and comparable to our setup.</p><p class="zh">表 1：在 Libri-light 低资源标注数据设置（10 分钟、1 小时、10 小时）以及 Librispeech 的 clean 100h 子集上训练时，Librispeech dev/test 集上的 WER。模型分别以 Librispeech 音频（LS-960）或更大的 LibriVox（LV-60k）作为无标注数据。我们考察两种模型规模：BASE（95m 参数）与 LARGE（317m 参数）。先前工作使用 860 小时无标注数据（LS-860），但加上标注数据后总量为 960 小时，与我们的设置相当。</p></div>
+<div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 1: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech. Models use either the audio of Librispeech (LS-960) or the larger LibriVox (LV-60k) as unlabeled data. We consider two model sizes: BASE (95m parameters) and LARGE (317m parameters). Prior work used 860 unlabeled hours (LS-860) but the total with labeled data is 960 hours and comparable to our setup.</p><p class="zh">表 1：在 Libri-light 低资源标注数据设置（10 分钟、1 小时、10 小时）以及 Librispeech 的 clean 100h 子集上训练时，Librispeech dev/test 集上的 WER。模型分别以 Librispeech 音频（LS-960）或更大的 LibriVox（LV-60k）作为无标注数据。我们考察两种模型规模：BASE（95m 参数）与 LARGE（317m 参数）。先前工作使用 860 小时无标注数据（LS-860），但加上标注数据后总量为 960 小时，与我们的设置相当。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th>clean</th><th>other</th><th>clean</th><th>other</th></tr><tr><th>10 min labeled</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Discrete BERT [4]</td><td>LS-960</td><td>4-gram</td><td>15.7</td><td>24.1</td><td>16.3</td><td>25.2</td></tr>
+<tr><td>BASE</td><td>LS-960</td><td>4-gram</td><td>8.9</td><td>15.7</td><td>9.1</td><td>15.6</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>6.6</td><td>13.2</td><td>6.9</td><td>12.9</td></tr>
+<tr><td>LARGE</td><td>LS-960</td><td>Transf.</td><td>6.6</td><td>10.6</td><td>6.8</td><td>10.8</td></tr>
+<tr><td></td><td>LV-60k</td><td>Transf.</td><td>4.6</td><td>7.9</td><td>4.8</td><td>8.2</td></tr>
+<tr><td>1h labeled</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Discrete BERT [4]</td><td>LS-960</td><td>4-gram</td><td>8.5</td><td>16.4</td><td>9.0</td><td>17.6</td></tr>
+<tr><td>BASE</td><td>LS-960</td><td>4-gram</td><td>5.0</td><td>10.8</td><td>5.5</td><td>11.3</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>3.8</td><td>9.0</td><td>4.0</td><td>9.3</td></tr>
+<tr><td>LARGE</td><td>LS-960</td><td>Transf.</td><td>3.8</td><td>7.1</td><td>3.9</td><td>7.6</td></tr>
+<tr><td></td><td>LV-60k</td><td>Transf.</td><td>2.9</td><td>5.4</td><td>2.9</td><td>5.8</td></tr>
+<tr><td>10h labeled</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Discrete BERT [4]</td><td>LS-960</td><td>4-gram</td><td>5.3</td><td>13.2</td><td>5.9</td><td>14.1</td></tr>
+<tr><td>Iter. pseudo-labeling [58]</td><td>LS-960</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>LV-60k</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>BASE</td><td>LS-960</td><td>4-gram</td><td>3.8</td><td>9.1</td><td>4.3</td><td>9.5</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>2.9</td><td>7.4</td><td>3.2</td><td>7.8</td></tr>
+<tr><td>LARGE</td><td>LS-960</td><td>Transf.</td><td>2.9</td><td>5.7</td><td>3.2</td><td>6.1</td></tr>
+<tr><td></td><td>LV-60k</td><td>Transf.</td><td>2.4</td><td>4.8</td><td>2.6</td><td>4.9</td></tr>
+<tr><td>100h labeled</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Hybrid DNN/HMM [34]</td><td>-</td><td>4-gram</td><td>5.0</td><td>19.5</td><td>5.8</td><td>18.6</td></tr>
+<tr><td>TTS data augm. [30]</td><td>-</td><td>LSTM</td><td></td><td></td><td>4.3</td><td>13.5</td></tr>
+<tr><td>Discrete BERT [4]</td><td>LS-960</td><td>4-gram</td><td>4.0</td><td>10.9</td><td>4.5</td><td>12.1</td></tr>
+<tr><td>Iter. pseudo-labeling [58]</td><td>LS-860</td><td></td><td>4.98</td><td>7.97</td><td>5.59</td><td>8.95</td></tr>
+<tr><td></td><td>LV-60k</td><td></td><td>3.19</td><td>6.14</td><td>3.72</td><td>7.11</td></tr>
+<tr><td>Noisy student [42]</td><td>LS-860</td><td>LSTM</td><td>3.9</td><td>8.8</td><td>4.2</td><td>8.6</td></tr>
+<tr><td>BASE</td><td>LS-960</td><td>4-gram</td><td>2.7</td><td>7.9</td><td>3.4</td><td>8.0</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>2.2</td><td>6.3</td><td>2.6</td><td>6.3</td></tr>
+<tr><td>LARGE</td><td>LS-960</td><td>Transf.</td><td>2.1</td><td>4.8</td><td>2.3</td><td>5.0</td></tr>
+<tr><td></td><td>LV-60k</td><td>Transf.</td><td>1.9</td><td>4.0</td><td>2.0</td><td>4.0</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-5-1-4">
           <p class="en-lines"><span class="sent" data-sid="s-5-1-4-1"><span class="en">Model Unlabeled LM dev test data clean other clean other</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-1-4-1"><span class="zh">表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。</span></span></p>
           
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-10"><span class="secnum">10</span> <span class="t-zh">10 分钟标注（附录表格碎片）</span><span class="t-en">min labeled</span></h2><div class="pblk" id="p-10-1">
-          <p class="en-lines"><span class="sent" data-sid="s-10-1-1"><span class="en">Discrete BERT [4] LS-960 4-gram</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-1-1"><span class="zh">（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10-1"><code>15.7 24.1 16.3 25.2</code></div>
-<div class="eq" id="eq-10-2"><code>BASE LS-960 4-gram</code></div>
-<div class="eq" id="eq-10-3"><code>8.9 15.7 9.1 15.6</code></div>
-<div class="pblk" id="p-10-2">
-          <p class="en-lines"><span class="sent" data-sid="s-10-2-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10-4"><code>6.6 13.2 6.9 12.9</code></div>
-<div class="pblk" id="p-10-3">
-          <p class="en-lines"><span class="sent" data-sid="s-10-3-1"><span class="en">LARGE LS-960 Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-3-1"><span class="zh">（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10-5"><code>6.6 10.6 6.8 10.8</code></div>
-<div class="pblk" id="p-10-4">
-          <p class="en-lines"><span class="sent" data-sid="s-10-4-1"><span class="en">LV-60k Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-4-1"><span class="zh">（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10-6"><code>4.6 7.9 4.8 8.2</code></div></section>
+      <h2 class="sech lv1" id="sec-10"><span class="secnum">10</span> <span class="t-zh">10 分钟标注（附录表格碎片）</span><span class="t-en">min labeled</span></h2>
+
+
+
+
+
+
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-1h-labeled"><span class="t-zh">1h labeled</span><span class="t-en">1h labeled</span></h3><div class="pblk" id="p-1h-labeled-1">
-          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-1-1"><span class="en">Discrete BERT [4] LS-960 4-gram</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-1-1"><span class="zh">（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1h-labeled-1"><code>8.5 16.4 9.0 17.6</code></div>
-<div class="eq" id="eq-1h-labeled-2"><code>BASE LS-960 4-gram</code></div>
-<div class="eq" id="eq-1h-labeled-3"><code>5.0 10.8 5.5 11.3</code></div>
-<div class="pblk" id="p-1h-labeled-2">
-          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-2-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1h-labeled-4"><code>3.8 9.0 4.0 9.3</code></div>
-<div class="pblk" id="p-1h-labeled-3">
-          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-3-1"><span class="en">LARGE LS-960 Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-3-1"><span class="zh">（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1h-labeled-5"><code>3.8 7.1 3.9 7.6</code></div>
-<div class="pblk" id="p-1h-labeled-4">
-          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-4-1"><span class="en">LV-60k Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-4-1"><span class="zh">（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1h-labeled-6"><code>2.9 5.4 2.9 5.8</code></div></section>
+      <h3 class="sech lv2" id="sec-1h-labeled"><span class="t-zh">1h labeled</span><span class="t-en">1h labeled</span></h3>
+
+
+
+
+
+
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-10h-labeled"><span class="t-zh">10h labeled</span><span class="t-en">10h labeled</span></h3><div class="pblk" id="p-10h-labeled-1">
-          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-1-1"><span class="en">Discrete BERT [4] LS-960 4-gram</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-1-1"><span class="zh">（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10h-labeled-1"><code>5.3 13.2 5.9 14.1</code></div>
-<div class="pblk" id="p-10h-labeled-2">
-          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-2-1"><span class="en">Iter. pseudo-labeling [58] LS-960 4-gram+Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-2-1"><span class="zh">（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-10h-labeled"><span class="t-zh">10h labeled</span><span class="t-en">10h labeled</span></h3>
+
+
 <div class="eq" id="eq-10h-labeled-2"><code>23.51 25.48 24.37 26.02</code></div>
 <div class="pblk" id="p-10h-labeled-3">
           <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-3-1"><span class="en">LV-60k 4-gram+Transf.</span></span></p>
@@ -598,75 +594,43 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-10h-labeled-3"><code>17.00 19.34 18.03 19.92</code></div>
-<div class="eq" id="eq-10h-labeled-4"><code>BASE LS-960 4-gram</code></div>
-<div class="eq" id="eq-10h-labeled-5"><code>3.8 9.1 4.3 9.5</code></div>
-<div class="pblk" id="p-10h-labeled-4">
-          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-4-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10h-labeled-6"><code>2.9 7.4 3.2 7.8</code></div>
-<div class="pblk" id="p-10h-labeled-5">
-          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-5-1"><span class="en">LARGE LS-960 Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-5-1"><span class="zh">（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10h-labeled-7"><code>2.9 5.7 3.2 6.1</code></div>
-<div class="pblk" id="p-10h-labeled-6">
-          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-6-1"><span class="en">LV-60k Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-6-1"><span class="zh">（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10h-labeled-8"><code>2.4 4.8 2.6 4.9</code></div></section>
+
+
+
+
+
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-100h-labeled"><span class="t-zh">100h labeled</span><span class="t-en">100h labeled</span></h3><div class="pblk" id="p-100h-labeled-1">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-1-1"><span class="en">Hybrid DNN/HMM [34]</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-1-1"><span class="zh">（表格行）Hybrid DNN/HMM [34]｜-｜4-gram：5.0 19.5 5.8 18.6；TTS data augm.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-1"><code>-</code></div>
-<div class="eq" id="eq-100h-labeled-2"><code>4-gram</code></div>
-<div class="eq" id="eq-100h-labeled-3"><code>5.0 19.5 5.8 18.6</code></div>
-<div class="eq" id="eq-100h-labeled-4"><code>TTS data augm. [30]</code></div>
-<div class="eq" id="eq-100h-labeled-5"><code>-</code></div>
-<div class="eq" id="eq-100h-labeled-6"><code>LSTM</code></div>
-<div class="eq" id="eq-100h-labeled-7"><code>4.3 13.5</code></div>
-<div class="eq" id="eq-100h-labeled-8"><code>Discrete BERT [4] LS-960 4-gram</code></div>
-<div class="eq" id="eq-100h-labeled-9"><code>4.0 10.9 4.5 12.1</code></div>
-<div class="pblk" id="p-100h-labeled-2">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-1"><span class="en">Iter. pseudo-labeling [58] LS-860 4-gram+Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-1"><span class="zh">（表格行）[30]｜-｜LSTM：4.3 13.5；Discrete BERT [4]｜LS-960｜4-gram：4.0 10.9 4.5 12.1；Iter. pseudo-labeling [58]｜LS-860｜4-gram+Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-10"><code>4.98 7.97 5.59 8.95</code></div>
+      <h3 class="sech lv2" id="sec-100h-labeled"><span class="t-zh">100h labeled</span><span class="t-en">100h labeled</span></h3>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-100h-labeled-3">
           <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-3-1"><span class="en">LV-60k 4-gram+Transf.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-3-1"><span class="zh">（表格行）23.51 25.48 24.37 26.02｜LV-60k｜4-gram+Transf.。</span></span></p>
           
         </div>
-<div class="eq" id="eq-100h-labeled-11"><code>3.19 6.14 3.72 7.11</code></div>
-<div class="eq" id="eq-100h-labeled-12"><code>Noisy student [42] LS-860 LSTM</code></div>
-<div class="eq" id="eq-100h-labeled-13"><code>3.9 8.8 4.2 8.6</code></div>
-<div class="eq" id="eq-100h-labeled-14"><code>BASE LS-960 4-gram</code></div>
-<div class="eq" id="eq-100h-labeled-15"><code>2.7 7.9 3.4 8.0</code></div>
-<div class="pblk" id="p-100h-labeled-4">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-4-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-16"><code>2.2 6.3 2.6 6.3</code></div>
-<div class="pblk" id="p-100h-labeled-5">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-5-1"><span class="en">LARGE LS-960 Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-5-1"><span class="zh">（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-17"><code>2.1 4.8 2.3 5.0</code></div>
-<div class="pblk" id="p-100h-labeled-6">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-6-1"><span class="en">LV-60k Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-6-1"><span class="zh">（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-18"><code>1.9 4.0 2.0 4.0</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-100h-labeled-7">
           <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-7-1"><span class="en">Our approach of jointly learning discrete units and contextualized representations clearly improves over previous work which learned quantized audio units in a separate step [4], reducing WER by a about a third.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-7-1"><span class="zh">（Table 1 数值碎块续）TTS 数据增强 [30]：4.3 13.5 4.0 10.9 4.5 12.1；Iter. pseudo-labeling [58]：4.98 7.97 5.59 8.95 3.19 6.14 3.72 7.11；Noisy student [42]：3.9 8.8 4.2 8.6 2.7 7.9 3.4 8.0 2.2 6.3 2.6 6.3 2.1 4.8 2.3 5.0 1.9 4.0 2.0 4.0。我们联合学习离散单元与上下文化表示的方法，明显优于先在单独一步中学习量化音频单元的先前工作 [4]，WER 降低了约三分之一。</span></span></p>
@@ -689,56 +653,40 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-9-1"><span class="zh">当 LARGE 模型使用少一个数量级的标注数据（10 小时标注）时，仍取得 WER 3.2/6.1，相对迭代式自训练的错误率降幅为 24%/29%。</span></span><span class="sent" data-sid="s-100h-labeled-9-2"><span class="zh">只用 1 小时标注数据，同一模型取得 WER 3.9/7.6，在 test-clean 和 test-other 上分别提升 7%/12%——而标注数据少了两个数量级。</span></span><span class="sent" data-sid="s-100h-labeled-9-3"><span class="zh">我们注意到 Libri-（原文在此断行，接下页「light data splits…」）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-100h-labeled-1"><span class="cap-k">表</span><p class="en">Table 2: WER on Librispeech when using all 960 hours of labeled data (cf. Table 1).</p><p class="zh">表 2：使用全部 960 小时标注数据时 Librispeech 上的 WER（参见 Table 1）。</p></div>
-<div class="pblk" id="p-100h-labeled-10">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-10-1"><span class="en">Model Unlabeled LM dev test data clean other clean other</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-10-1"><span class="zh">表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。</span></span></p>
-          
-        </div></section>
+<div class="cap" id="tab-100h-labeled-1"><span class="cap-k">表</span><p class="en">Table 2: WER on Librispeech when using all 960 hours of labeled data (cf. Table 1).</p><p class="zh">表 2：使用全部 960 小时标注数据时 Librispeech 上的 WER（参见 Table 1）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Unlabeled</th><th></th><th></th><th></th><th></th><th>dev</th><th></th><th></th><th></th><th>test</th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th>LM</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>data</th><th></th><th></th><th>clean</th><th></th><th>other</th><th></th><th>clean</th><th></th><th>other</th></tr><tr><th>Supervised</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>CTC Transf [51]</td><td></td><td>-</td><td>CLM+Transf.</td><td></td><td>2.20</td><td></td><td>4.94</td><td></td><td>2.47</td><td></td><td>5.45</td></tr>
+<tr><td>S2S Transf. [51]</td><td></td><td>-</td><td>CLM+Transf.</td><td></td><td>2.10</td><td></td><td>4.79</td><td></td><td>2.33</td><td></td><td>5.17</td></tr>
+<tr><td>Transf. Transducer [60]</td><td></td><td>-</td><td></td><td>Transf.</td><td></td><td>-</td><td></td><td>-</td><td>2.0</td><td></td><td>4.6</td></tr>
+<tr><td>ContextNet [17]</td><td></td><td>-</td><td></td><td>LSTM</td><td>1.9</td><td></td><td>3.9</td><td></td><td>1.9</td><td></td><td>4.1</td></tr>
+<tr><td>Conformer [15]</td><td></td><td>-</td><td></td><td>LSTM</td><td>2.1</td><td></td><td>4.3</td><td></td><td>1.9</td><td></td><td>3.9</td></tr></tbody></table></div></div>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-supervised"><span class="t-zh">有监督（表格碎片）</span><span class="t-en">Supervised</span></h3><div class="pblk" id="p-supervised-1">
-          <p class="en-lines"><span class="sent" data-sid="s-supervised-1-1"><span class="en">CTC Transf [51]</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-supervised-1-1"><span class="zh">（表格行）CTC｜Transf [51]｜-｜CLM+Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-supervised-1"><code>-</code></div>
-<div class="pblk" id="p-supervised-2">
-          <p class="en-lines"><span class="sent" data-sid="s-supervised-2-1"><span class="en">CLM+Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-supervised-2-1"><span class="zh">（表格行）CTC｜Transf [51]｜-｜CLM+Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-supervised-2"><code>2.20 4.94 2.47 5.45</code></div>
-<div class="eq" id="eq-supervised-3"><code>S2S Transf. [51]</code></div>
-<div class="eq" id="eq-supervised-4"><code>-</code></div>
-<div class="pblk" id="p-supervised-3">
-          <p class="en-lines"><span class="sent" data-sid="s-supervised-3-1"><span class="en">CLM+Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-supervised-3-1"><span class="zh">（表格行）CTC｜Transf [51]｜-｜CLM+Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-supervised-5"><code>2.10 4.79 2.33 5.17</code></div>
-<div class="eq" id="eq-supervised-6"><code>Transf. Transducer [60]</code></div>
-<div class="eq" id="eq-supervised-7"><code>-</code></div>
-<div class="pblk" id="p-supervised-4">
-          <p class="en-lines"><span class="sent" data-sid="s-supervised-4-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-supervised-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-supervised-8"><code>- - 2.0 4.6</code></div>
-<div class="eq" id="eq-supervised-9"><code>ContextNet [17]</code></div>
-<div class="eq" id="eq-supervised-10"><code>-</code></div>
-<div class="eq" id="eq-supervised-11"><code>LSTM</code></div>
-<div class="eq" id="eq-supervised-12"><code>1.9 3.9 1.9 4.1</code></div>
-<div class="eq" id="eq-supervised-13"><code>Conformer [15]</code></div>
-<div class="eq" id="eq-supervised-14"><code>-</code></div>
-<div class="eq" id="eq-supervised-15"><code>LSTM</code></div>
-<div class="eq" id="eq-supervised-16"><code>2.1 4.3 1.9 3.9</code></div></section>
+      <h3 class="sech lv2" id="sec-supervised"><span class="t-zh">有监督（表格碎片）</span><span class="t-en">Supervised</span></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-semi-supervised"><span class="t-zh">半监督（表格碎片）</span><span class="t-en">Semi-supervised</span></h3><div class="pblk" id="p-semi-supervised-1">
           <p class="en-lines"><span class="sent" data-sid="s-semi-supervised-1-1"><span class="en">CTC Transf. + PL [51] LV-60k CLM+Transf.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-semi-supervised-1-1"><span class="zh">（表格行）CTC｜Transf. + PL [51]｜LV-60k｜CLM+Transf.。</span></span></p>
           
         </div>
-<div class="eq" id="eq-semi-supervised-1"><code>2.10 4.79 2.33 4.54</code></div>
+
 <div class="pblk" id="p-semi-supervised-2">
           <p class="en-lines"><span class="sent" data-sid="s-semi-supervised-2-1"><span class="en">S2S Transf. + PL [51] LV-60k CLM+Transf.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-semi-supervised-2-1"><span class="zh">（表格行）2.10 4.79 2.33 4.54；S2S｜Transf. + PL [51]｜LV-60k｜CLM+Transf.。</span></span></p>
@@ -759,13 +707,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-this-work-1-1"><span class="zh">表头与首行：模型（Model）｜无标注数据｜LM｜dev/test（clean/other）；LARGE 从头训练（from scratch）：None 2.8 7.6 3.0 7.7；4-gram 1.8 5.4 2.6 5.8；Transf.（后续数值照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-this-work-1"><code>-</code></div>
-<div class="pblk" id="p-this-work-2">
-          <p class="en-lines"><span class="sent" data-sid="s-this-work-2-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-this-work-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-this-work-2"><code>1.7 4.3 2.1 4.6</code></div>
+
+
+
 <div class="pblk" id="p-this-work-3">
           <p class="en-lines"><span class="sent" data-sid="s-this-work-3-1"><span class="en">BASE LS-960 Transf.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-this-work-3-1"><span class="zh">（表格行）BASE｜LS-960｜Transf.（Transformer LM）。</span></span></p>
@@ -777,7 +721,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-this-work-4-1"><span class="zh">（表格行）6.6 13.2 6.9 12.9｜LARGE｜LS-960｜Transf.（Transformer LM）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-this-work-4"><code>1.7 3.9 2.0 4.1</code></div>
+
 <div class="pblk" id="p-this-work-5">
           <p class="en-lines"><span class="sent" data-sid="s-this-work-5-1"><span class="en">LV-60k Transf.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-this-work-5-1"><span class="zh">（表格行）6.6 10.6 6.8 10.8｜LV-60k｜Transf.。</span></span></p>
@@ -818,21 +762,21 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-1-1"><span class="zh">接下来，我们在带标注的 TIMIT 训练数据上微调预训练模型，评测 TIMIT 音素识别的准确率。</span></span><span class="sent" data-sid="s-5-3-1-2"><span class="zh">微调方式与 Libri-light 的 10 小时子集相同，但不使用语言模型。</span></span><span class="sent" data-sid="s-5-3-1-3"><span class="zh">Table 3 显示，我们的方法在该数据集上取得新的最佳水平，在 dev/test 集上把 PER 相对降低了 23%/29%。</span></span><span class="sent" data-sid="s-5-3-1-4"><span class="zh">附录 D 分析了离散潜在语音表示与音素之间的关系。</span></span><span class="sent" data-sid="s-5-3-1-5"><span class="zh">其他在 TIMIT 上评测的近期预训练工作还有 [47]，他们通过求解多个任务来学习良好的语音表示。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-3-1"><span class="cap-k">表</span><p class="en">Table 3: TIMIT phoneme recognition accuracy in terms of phoneme error rate (PER).</p><p class="zh">表 3：以音素错误率（PER）衡量的 TIMIT 音素识别准确率。</p></div>
-<div class="pblk" id="p-5-3-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="en">dev PER test PER CNN + TD-ﬁlterbanks [59]</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="zh">表头：dev PER / test PER；CNN + TD-filterbanks [59]（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-3-1"><code>15.6 18.0</code></div>
-<div class="eq" id="eq-5-3-2"><code>PASE+ [47]</code></div>
-<div class="eq" id="eq-5-3-3"><code>- 17.2</code></div>
-<div class="eq" id="eq-5-3-4"><code>Li-GRU + fMLLR [46]</code></div>
-<div class="eq" id="eq-5-3-5"><code>– 14.9</code></div>
-<div class="eq" id="eq-5-3-6"><code>wav2vec [49]</code></div>
-<div class="eq" id="eq-5-3-7"><code>12.9 14.7</code></div>
-<div class="eq" id="eq-5-3-8"><code>vq-wav2vec [5]</code></div>
-<div class="eq" id="eq-5-3-9"><code>9.6 11.6</code></div></section>
+<div class="cap" id="tab-5-3-1"><span class="cap-k">表</span><p class="en">Table 3: TIMIT phoneme recognition accuracy in terms of phoneme error rate (PER).</p><p class="zh">表 3：以音素错误率（PER）衡量的 TIMIT 音素识别准确率。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>dev PER</th><th></th><th></th><th>test PER</th><th></th></tr></thead><tbody><tr><td>CNN + TD-ﬁlterbanks [59]</td><td></td><td>15.6</td><td></td><td></td><td>18.0</td></tr>
+<tr><td>PASE+ [47]</td><td></td><td></td><td>-</td><td></td><td>17.2</td></tr>
+<tr><td>Li-GRU + fMLLR [46]</td><td></td><td></td><td>–</td><td></td><td>14.9</td></tr>
+<tr><td>wav2vec [49]</td><td></td><td>12.9</td><td></td><td></td><td>14.7</td></tr>
+<tr><td>vq-wav2vec [5]</td><td></td><td></td><td>9.6</td><td></td><td>11.6</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-this-work-no-lm"><span class="t-zh">本文方法（无 LM，表格碎片）</span><span class="t-en">This work (no LM)</span></h3><div class="pblk" id="p-this-work-no-lm-1">
           <p class="en-lines"><span class="sent" data-sid="s-this-work-no-lm-1-1"><span class="en">LARGE (LS-960)</span></span></p>
@@ -840,24 +784,19 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-this-work-no-lm-1"><code>7.4 8.3</code></div>
-<div class="cap" id="tab-this-work-no-lm-1"><span class="cap-k">表</span><p class="en">Table 4: Average WER and standard deviation on combined dev-clean/other of Librispeech for three training seeds. We ablate quantizing the context network input and the targets in the contrastive loss.</p><p class="zh">表 4：三种训练种子在 Librispeech dev-clean/other 合并集上的平均 WER 与标准差。我们对「上下文网络的输入是否量化」与「对比损失的目标是否量化」做了消融。</p></div>
-<div class="pblk" id="p-this-work-no-lm-2">
-          <p class="en-lines"><span class="sent" data-sid="s-this-work-no-lm-2-1"><span class="en">avg.</span></span> <span class="sent" data-sid="s-this-work-no-lm-2-2"><span class="en">WER std.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-this-work-no-lm-2-1"><span class="zh">平均值</span></span><span class="sent" data-sid="s-this-work-no-lm-2-2"><span class="zh">WER 标准差</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-this-work-no-lm-3">
-          <p class="en-lines"><span class="sent" data-sid="s-this-work-no-lm-3-1"><span class="en">Continuous inputs, quantized targets (Baseline)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-this-work-no-lm-3-1"><span class="zh">（表格行）连续输入、量化目标（Baseline 基线配置）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-this-work-no-lm-2"><code>7.97 0.02</code></div>
-<div class="eq" id="eq-this-work-no-lm-3"><code>Quantized inputs, quantized targets</code></div>
-<div class="eq" id="eq-this-work-no-lm-4"><code>12.18 0.41</code></div>
-<div class="eq" id="eq-this-work-no-lm-5"><code>Quantized inputs, continuous targets</code></div>
-<div class="eq" id="eq-this-work-no-lm-6"><code>11.18 0.16</code></div>
-<div class="eq" id="eq-this-work-no-lm-7"><code>Continuous inputs, continuous targets</code></div>
-<div class="eq" id="eq-this-work-no-lm-8"><code>8.58 0.08</code></div></section>
+<div class="cap" id="tab-this-work-no-lm-1"><span class="cap-k">表</span><p class="en">Table 4: Average WER and standard deviation on combined dev-clean/other of Librispeech for three training seeds. We ablate quantizing the context network input and the targets in the contrastive loss.</p><p class="zh">表 4：三种训练种子在 Librispeech dev-clean/other 合并集上的平均 WER 与标准差。我们对「上下文网络的输入是否量化」与「对比损失的目标是否量化」做了消融。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>avg. WER</th><th></th><th>std.</th></tr></thead><tbody><tr><td>Continuous inputs, quantized targets (Baseline)</td><td></td><td>7.97</td><td>0.02</td></tr>
+<tr><td>Quantized inputs, quantized targets</td><td></td><td>12.18</td><td>0.41</td></tr>
+<tr><td>Quantized inputs, continuous targets</td><td></td><td>11.18</td><td>0.16</td></tr>
+<tr><td>Continuous inputs, continuous targets</td><td></td><td>8.58</td><td>0.08</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-5-4"><span class="secnum">5.4</span> <span class="t-zh">附录 F 消融</span><span class="t-en">Ablations</span></h3><div class="pblk" id="p-5-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-5-4-1-1"><span class="en">A difference to previous work [5, 4] is that we quantize the latent audio representations only for the contrastive loss, i.e., when latents are used as targets, but not when the latents are input to the Transformer network.</span><button class="mk feat" data-sid="s-5-4-1-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-4-1-2"><span class="en">We motivate this choice by an ablating for which we adopt a reduced training setup to increase experimental turn around: we pre-train BASE on LS-960 for 250k updates with masking probability p = 0.075, ﬁne-tune on train-10h for 60k updates on a single GPU with 640k samples per batch, or 40 sec of speech audio.</span></span> <span class="sent" data-sid="s-5-4-1-3"><span class="en">We report the average WER and standard deviation on the concatenation of dev-clean and dev-other (dev PER) for three seeds of ﬁne-tuning.</span></span></p>
@@ -979,35 +918,46 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-A-4"><code>Span length</code></div>
 <div class="eq" id="eq-A-5"><code>0.00</code></div>
 <div class="cap" id="fig-A-1"><img class="fig" src="../assets/figures/2006.11477/fig-A-1.png" loading="lazy" alt="Figure 2: Mask length distribution for a 15 second sample with p = 0.065 and M = 10."><span class="cap-k">图</span><p class="en">Figure 2: Mask length distribution for a 15 second sample with p = 0.065 and M = 10.</p><p class="zh">图 2：对 15 秒样本、p = 0.065、M = 10 时的掩码长度分布。</p></div>
-<div class="cap" id="tab-A-1"><span class="cap-k">表</span><p class="en">Table 5: Ablations on settings for the masking strategy during pre-training. When masking without overlap, we choose starting time steps with p = 0.037 which results in the total number of masked tokens to match the baseline.</p><p class="zh">表 5：预训练掩码策略各项设置的消融。当采用无重叠掩码时，我们以 p = 0.037 选取起始时间步，使被掩码 token 总数与基线一致。</p></div>
+<div class="cap" id="tab-A-1"><span class="cap-k">表</span><p class="en">Table 5: Ablations on settings for the masking strategy during pre-training. When masking without overlap, we choose starting time steps with p = 0.037 which results in the total number of masked tokens to match the baseline.</p><p class="zh">表 5：预训练掩码策略各项设置的消融。当采用无重叠掩码时，我们以 p = 0.037 选取起始时间步，使被掩码 token 总数与基线一致。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th></tr><tr><th></th><th></th><th>std</th></tr></thead><tbody><tr><td>Baseline (p = 0.075)</td><td>7.97</td><td>0.02</td></tr>
+<tr><td>Mask length M = 8</td><td>8.33</td><td>0.05</td></tr>
+<tr><td>Mask length M = 12</td><td>8.19</td><td>0.08</td></tr>
+<tr><td>Mask length M = 15</td><td>8.43</td><td>0.19</td></tr>
+<tr><td>Mask probability p = 0.065</td><td>7.95</td><td>0.08</td></tr>
+<tr><td>Mask probability p = 0.06</td><td>8.14</td><td>0.22</td></tr>
+<tr><td>Mask w/o overlap, uniform(1,31)</td><td>8.39</td><td>0.02</td></tr>
+<tr><td>Mask w/o overlap, uniform(10,30)</td><td>9.17</td><td>0.05</td></tr>
+<tr><td>Mask w/o overlap, poisson(15)</td><td>8.13</td><td>0.04</td></tr>
+<tr><td>Mask w/o overlap, normal(15, 10)</td><td>8.37</td><td>0.03</td></tr>
+<tr><td>Mask w/o overlap, length 10</td><td>9.15</td><td>0.02</td></tr>
+<tr><td>Mask w/o overlap, length 15</td><td>9.43</td><td>0.26</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-A-3">
           <p class="en-lines"><span class="sent" data-sid="s-A-3-1"><span class="en">avg WER std Baseline (p = 0.075)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-3-1"><span class="zh">表头：avg WER / std；Baseline（p = 0.075，掩码概率）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-A-6"><code>7.97 0.02</code></div>
-<div class="eq" id="eq-A-7"><code>Mask length M = 8</code></div>
-<div class="eq" id="eq-A-8"><code>8.33 0.05</code></div>
-<div class="eq" id="eq-A-9"><code>Mask length M = 12</code></div>
-<div class="eq" id="eq-A-10"><code>8.19 0.08</code></div>
-<div class="eq" id="eq-A-11"><code>Mask length M = 15</code></div>
-<div class="eq" id="eq-A-12"><code>8.43 0.19</code></div>
-<div class="eq" id="eq-A-13"><code>Mask probability p = 0.065</code></div>
-<div class="eq" id="eq-A-14"><code>7.95 0.08</code></div>
-<div class="eq" id="eq-A-15"><code>Mask probability p = 0.06</code></div>
-<div class="eq" id="eq-A-16"><code>8.14 0.22</code></div>
-<div class="eq" id="eq-A-17"><code>Mask w/o overlap, uniform(1,31)</code></div>
-<div class="eq" id="eq-A-18"><code>8.39 0.02</code></div>
-<div class="eq" id="eq-A-19"><code>Mask w/o overlap, uniform(10,30)</code></div>
-<div class="eq" id="eq-A-20"><code>9.17 0.05</code></div>
-<div class="eq" id="eq-A-21"><code>Mask w/o overlap, poisson(15)</code></div>
-<div class="eq" id="eq-A-22"><code>8.13 0.04</code></div>
-<div class="eq" id="eq-A-23"><code>Mask w/o overlap, normal(15, 10)</code></div>
-<div class="eq" id="eq-A-24"><code>8.37 0.03</code></div>
-<div class="eq" id="eq-A-25"><code>Mask w/o overlap, length 10</code></div>
-<div class="eq" id="eq-A-26"><code>9.15 0.02</code></div>
-<div class="eq" id="eq-A-27"><code>Mask w/o overlap, length 15</code></div>
-<div class="eq" id="eq-A-28"><code>9.43 0.26</code></div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h2 class="sech lv1" id="sec-B"><span class="secnum">B</span> <span class="t-zh">附录 B 微调设置</span><span class="t-en">Fine-tuning Setup</span></h2><div class="pblk" id="p-B-1">
           <p class="en-lines"><span class="sent" data-sid="s-B-1-1"><span class="en">During ﬁne-tuning we apply a masking strategy to the feature encoder outputs similar to SpecAugment [41]: we randomly choose a number of starting time steps for which a span of ten subsequent time-steps is replaced with a mask embedding; spans may overlap and we use the same masked time step embedding as during pre-training.</span></span> <span class="sent" data-sid="s-B-1-2"><span class="en">We also mask channels by choosing a number of channels as starting indices and then expand each one to cover the subsequent 64 channels.</span></span> <span class="sent" data-sid="s-B-1-3"><span class="en">Spans may overlap and the selected channel spans are set to zero value.</span></span> <span class="sent" data-sid="s-B-1-4"><span class="en">We use LayerDrop [22, 12] at a rate of 0.05 for BASE and 0.1 for LARGE during ﬁne-tuning.</span></span></p>
@@ -1019,272 +969,223 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-B-1-s1"><span class="zh">表 6 总结了各标注数据设置所用的微调超参数；Table 7 给出 Librispeech 预训练模型在各标注数据设置下做最终评测的解码参数；Table 8 给出 LibriVox 的解码参数。</span></span></p>
           
         </div>
-<div class="cap" id="tab-B-2"><span class="cap-k">表</span><p class="en">Table 6: Fine-tuning hyperparameters timestep mask prob. channel mask prob. updates</p><p class="zh">表 6：微调超参数（时间步掩码概率、通道掩码概率、更新次数）。</p></div>
-<div class="pblk" id="p-B-2">
-          <p class="en-lines"><span class="sent" data-sid="s-B-2-1"><span class="en">10 min</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-2-1"><span class="zh">我们还证明了超低资源语音识别的可行性：只用 10 分钟标注数据，我们的方法在 Librispeech 的 clean/other 测试集上取得词错误率（WER）4.8/8.2。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-B-1"><code>0.075 0.008</code></div>
-<div class="eq" id="eq-B-2"><code>12k 1 hour</code></div>
-<div class="eq" id="eq-B-3"><code>0.075 0.004</code></div>
-<div class="eq" id="eq-B-4"><code>13k 10 hours</code></div>
-<div class="eq" id="eq-B-5"><code>0.065 0.004</code></div>
-<div class="eq" id="eq-B-6"><code>20k 100 hours</code></div>
-<div class="eq" id="eq-B-7"><code>0.05 0.008</code></div>
-<div class="eq" id="eq-B-8"><code>50k 960 hours</code></div>
-<div class="eq" id="eq-B-9"><code>0.05 0.0016</code></div>
-<div class="eq" id="eq-B-10"><code>320k TIMIT</code></div>
-<div class="eq" id="eq-B-11"><code>0.065 0.012</code></div>
-<div class="pblk" id="p-B-3">
-          <p class="en-lines"><span class="sent" data-sid="s-B-3-1"><span class="en">40k</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-3-1"><span class="zh">我们用一项消融来论证这一选择：为加快实验迭代，采用缩减版训练设置——在 LS-960 上以掩码概率 p = 0.075 预训练 BASE 共 250k 次更新，再在 train-10h 上用单张 GPU、每批 640k 个采样点（即 40 秒语音）微调 60k 次更新。</span></span></p>
-          
-        </div>
-<div class="cap" id="tab-B-3"><span class="cap-k">表</span><p class="en">Table 7: Decoding parameters for Librispeech subsets for models pre-trained on Librispeech</p><p class="zh">表 7：在 Librispeech 上预训练的模型，于 Librispeech 各子集上的解码参数。</p></div>
-<div class="pblk" id="p-B-4">
-          <p class="en-lines"><span class="sent" data-sid="s-B-4-1"><span class="en">4gram LM weight 4gram word insert.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-4-1"><span class="zh">（Table 8 表头碎块）4gram LM 权重／4gram 词插入。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-B-5">
-          <p class="en-lines"><span class="sent" data-sid="s-B-5-1"><span class="en">TransLM weight TransLM word insert.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-5-1"><span class="zh">（Table 8 表头碎块）TransLM 权重／TransLM 词插入。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-B-6">
-          <p class="en-lines"><span class="sent" data-sid="s-B-6-1"><span class="en">10 min</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-6-1"><span class="zh">我们还证明了超低资源语音识别的可行性：只用 10 分钟标注数据，我们的方法在 Librispeech 的 clean/other 测试集上取得词错误率（WER）4.8/8.2。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-B-12"><code>3.23 -0.26 1.20 -1.39</code></div>
-<div class="eq" id="eq-B-13"><code>1 hour</code></div>
-<div class="eq" id="eq-B-14"><code>2.90 -1.62 1.15 -2.08</code></div>
-<div class="eq" id="eq-B-15"><code>10 hours</code></div>
-<div class="eq" id="eq-B-16"><code>2.46 -0.59 1.06 -2.32</code></div>
-<div class="eq" id="eq-B-17"><code>100 hours</code></div>
-<div class="eq" id="eq-B-18"><code>2.15 -0.52 0.87 -1.00</code></div>
-<div class="eq" id="eq-B-19"><code>960 hours</code></div>
-<div class="eq" id="eq-B-20"><code>1.74 0.52 0.92 -0.86</code></div>
-<div class="cap" id="tab-B-4"><span class="cap-k">表</span><p class="en">Table 8: Decoding parameters for Librispeech subsets for models pre-trained on Librivox.</p><p class="zh">表 8：在 Librivox 上预训练的模型，于 Librispeech 各子集上的解码参数。</p></div>
-<div class="pblk" id="p-B-7">
-          <p class="en-lines"><span class="sent" data-sid="s-B-7-1"><span class="en">4gram LM weight 4gram word insert.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-7-1"><span class="zh">（Table 8 表头碎块）4gram LM 权重／4gram 词插入。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-B-8">
-          <p class="en-lines"><span class="sent" data-sid="s-B-8-1"><span class="en">TransLM weight TransLM word insert.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-8-1"><span class="zh">（Table 8 表头碎块）TransLM 权重／TransLM 词插入。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-B-9">
-          <p class="en-lines"><span class="sent" data-sid="s-B-9-1"><span class="en">10 min</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-9-1"><span class="zh">我们还证明了超低资源语音识别的可行性：只用 10 分钟标注数据，我们的方法在 Librispeech 的 clean/other 测试集上取得词错误率（WER）4.8/8.2。</span></span></p>
-          
-        </div>
+<div class="cap" id="tab-B-2"><span class="cap-k">表</span><p class="en">Table 6: Fine-tuning hyperparameters timestep mask prob. channel mask prob. updates</p><p class="zh">表 6：微调超参数（时间步掩码概率、通道掩码概率、更新次数）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Table 6: Fine-tuning hyperparameters</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>timestep mask prob.</th><th></th><th>channel mask prob.</th><th></th><th>updates</th><th></th></tr></thead><tbody><tr><td>10 min</td><td></td><td>0.075</td><td></td><td>0.008</td><td></td><td>12k</td></tr>
+<tr><td>1 hour</td><td></td><td>0.075</td><td></td><td>0.004</td><td></td><td>13k</td></tr>
+<tr><td>10 hours</td><td></td><td>0.065</td><td></td><td>0.004</td><td></td><td>20k</td></tr>
+<tr><td>100 hours</td><td></td><td>0.05</td><td></td><td>0.008</td><td></td><td>50k</td></tr>
+<tr><td>960 hours</td><td></td><td>0.05</td><td></td><td>0.0016</td><td></td><td>320k</td></tr>
+<tr><td>TIMIT</td><td></td><td>0.065</td><td></td><td>0.012</td><td></td><td>40k</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-B-3"><span class="cap-k">表</span><p class="en">Table 7: Decoding parameters for Librispeech subsets for models pre-trained on Librispeech</p><p class="zh">表 7：在 Librispeech 上预训练的模型，于 Librispeech 各子集上的解码参数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Table 6: Fine-tuning hyperparameters</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>timestep mask prob.</th><th></th><th>channel mask prob.</th><th></th><th>updates</th><th></th></tr></thead><tbody><tr><td>10 min</td><td></td><td>0.075</td><td></td><td>0.008</td><td></td><td>12k</td></tr>
+<tr><td>1 hour</td><td></td><td>0.075</td><td></td><td>0.004</td><td></td><td>13k</td></tr>
+<tr><td>10 hours</td><td></td><td>0.065</td><td></td><td>0.004</td><td></td><td>20k</td></tr>
+<tr><td>100 hours</td><td></td><td>0.05</td><td></td><td>0.008</td><td></td><td>50k</td></tr>
+<tr><td>960 hours</td><td></td><td>0.05</td><td></td><td>0.0016</td><td></td><td>320k</td></tr>
+<tr><td>TIMIT</td><td></td><td>0.065</td><td></td><td>0.012</td><td></td><td>40k</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-B-4"><span class="cap-k">表</span><p class="en">Table 8: Decoding parameters for Librispeech subsets for models pre-trained on Librivox.</p><p class="zh">表 8：在 Librivox 上预训练的模型，于 Librispeech 各子集上的解码参数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>4gram LM weight</th><th></th><th>4gram word insert.</th><th></th><th>TransLM weight</th><th></th><th>TransLM word insert.</th><th></th></tr></thead><tbody><tr><td>10 min</td><td></td><td>3.23</td><td></td><td>-0.26</td><td></td><td>1.20</td><td></td><td>-1.39</td></tr>
+<tr><td>1 hour</td><td></td><td>2.90</td><td></td><td>-1.62</td><td></td><td>1.15</td><td></td><td>-2.08</td></tr>
+<tr><td>10 hours</td><td></td><td>2.46</td><td></td><td>-0.59</td><td></td><td>1.06</td><td></td><td>-2.32</td></tr>
+<tr><td>100 hours</td><td></td><td>2.15</td><td></td><td>-0.52</td><td></td><td>0.87</td><td></td><td>-1.00</td></tr>
+<tr><td>960 hours</td><td></td><td>1.74</td><td></td><td>0.52</td><td></td><td>0.92</td><td></td><td>-0.86</td></tr></tbody></table></div></div>
+
+
+
 <div class="eq" id="eq-B-21"><code>3.86 -1.18 1.47 -2.82</code></div>
-<div class="eq" id="eq-B-22"><code>1 hour</code></div>
+
 <div class="eq" id="eq-B-23"><code>3.09 -2.33 1.33 -0.69</code></div>
-<div class="eq" id="eq-B-24"><code>10 hours</code></div>
+
 <div class="eq" id="eq-B-25"><code>2.12 -0.90 0.94 -1.05</code></div>
-<div class="eq" id="eq-B-26"><code>100 hours</code></div>
-<div class="eq" id="eq-B-27"><code>2.15 -0.52 0.87 -1.00</code></div>
-<div class="eq" id="eq-B-28"><code>960 hours</code></div>
+
+
+
 <div class="eq" id="eq-B-29"><code>1.57 -0.64 0.90 -0.31</code></div></section>
 <section>
-      <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">附录 C Libri-light 与 Librispeech 的完整结果</span><span class="t-en">Full results for Libri-light and Librispeech</span></h2><div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 9: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups (cf. Table 1).</p><p class="zh">表 9：在 Libri-light 低资源标注数据设置上训练时，Librispeech dev/test 集上的 WER（参见 Table 1）。</p></div>
+      <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">附录 C Libri-light 与 Librispeech 的完整结果</span><span class="t-en">Full results for Libri-light and Librispeech</span></h2><div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 9: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups (cf. Table 1).</p><p class="zh">表 9：在 Libri-light 低资源标注数据设置上训练时，Librispeech dev/test 集上的 WER（参见 Table 1）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th>clean</th><th>other</th><th>clean</th><th>other</th></tr><tr><th>10 min labeled</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>BASE</td><td>LS-960</td><td>None</td><td>46.1</td><td>51.5</td><td>46.9</td><td>50.9</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>8.9</td><td>15.7</td><td>9.1</td><td>15.6</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>6.6</td><td>13.2</td><td>6.9</td><td>12.9</td></tr>
+<tr><td>LARGE</td><td>LS-960</td><td>None</td><td>43.0</td><td>46.3</td><td>43.5</td><td>45.3</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>8.6</td><td>12.9</td><td>8.9</td><td>13.1</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>6.6</td><td>10.6</td><td>6.8</td><td>10.8</td></tr>
+<tr><td>LARGE</td><td>LV-60k</td><td>None</td><td>38.3</td><td>41.0</td><td>40.2</td><td>38.7</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>6.3</td><td>9.8</td><td>6.6</td><td>10.3</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>4.6</td><td>7.9</td><td>4.8</td><td>8.2</td></tr>
+<tr><td>1h labeled</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>BASE</td><td>LS-960</td><td>None</td><td>24.1</td><td>29.6</td><td>24.5</td><td>29.7</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>5.0</td><td>10.8</td><td>5.5</td><td>11.3</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>3.8</td><td>9.0</td><td>4.0</td><td>9.3</td></tr>
+<tr><td>LARGE</td><td>LS-960</td><td>None</td><td>21.6</td><td>25.3</td><td>22.1</td><td>25.3</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>4.8</td><td>8.5</td><td>5.1</td><td>9.4</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>3.8</td><td>7.1</td><td>3.9</td><td>7.6</td></tr>
+<tr><td>LARGE</td><td>LV-60k</td><td>None</td><td>17.3</td><td>20.6</td><td>17.2</td><td>20.3</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>3.6</td><td>6.5</td><td>3.8</td><td>7.1</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>2.9</td><td>5.4</td><td>2.9</td><td>5.8</td></tr>
+<tr><td>10h labeled</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>BASE</td><td>LS-960</td><td>None</td><td>10.9</td><td>17.4</td><td>11.1</td><td>17.6</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>3.8</td><td>9.1</td><td>4.3</td><td>9.5</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>2.9</td><td>7.4</td><td>3.2</td><td>7.8</td></tr>
+<tr><td>LARGE</td><td>LS-960</td><td>None</td><td>8.1</td><td>12.0</td><td>8.0</td><td>12.1</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>3.4</td><td>6.9</td><td>3.8</td><td>7.3</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>2.9</td><td>5.7</td><td>3.2</td><td>6.1</td></tr>
+<tr><td>LARGE</td><td>LV-60k</td><td>None</td><td>6.3</td><td>9.8</td><td>6.3</td><td>10.0</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>2.6</td><td>5.5</td><td>3.0</td><td>5.8</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>2.4</td><td>4.8</td><td>2.6</td><td>4.9</td></tr>
+<tr><td>100h labeled</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>BASE</td><td>LS-960</td><td>None</td><td>6.1</td><td>13.5</td><td>6.1</td><td>13.3</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>2.7</td><td>7.9</td><td>3.4</td><td>8.0</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>2.2</td><td>6.3</td><td>2.6</td><td>6.3</td></tr>
+<tr><td>LARGE</td><td>LS-960</td><td>None</td><td>4.6</td><td>9.3</td><td>4.7</td><td>9.0</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>2.3</td><td>5.7</td><td>2.8</td><td>6.0</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>2.1</td><td>4.8</td><td>2.3</td><td>5.0</td></tr>
+<tr><td>LARGE</td><td>LV-60k</td><td>None</td><td>3.3</td><td>6.5</td><td>3.1</td><td>6.3</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>1.8</td><td>4.5</td><td>2.3</td><td>4.6</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>1.9</td><td>4.0</td><td>2.0</td><td>4.0</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-C-1">
           <p class="en-lines"><span class="sent" data-sid="s-C-1-1"><span class="en">Model Unlabeled LM dev test data clean other clean other</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-C-1-1"><span class="zh">表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。</span></span></p>
           
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-10-2"><span class="secnum">10</span> <span class="t-zh">10 分钟标注（附录表格碎片）</span><span class="t-en">min labeled</span></h2><div class="pblk" id="p-10-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-10-2-1-1"><span class="en">BASE LS-960 None</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-2-1-1"><span class="zh">（表格行）BASE｜LS-960｜None：46.1 51.5 46.9 50.9；4-gram：8.9 15.7 9.1 15.6｜Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10-2-1"><code>46.1 51.5 46.9 50.9</code></div>
-<div class="eq" id="eq-10-2-2"><code>4-gram</code></div>
-<div class="eq" id="eq-10-2-3"><code>8.9 15.7 9.1 15.6</code></div>
-<div class="pblk" id="p-10-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-10-2-2-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-2-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10-2-4"><code>6.6 13.2 6.9 12.9</code></div>
-<div class="eq" id="eq-10-2-5"><code>LARGE LS-960 None</code></div>
-<div class="eq" id="eq-10-2-6"><code>43.0 46.3 43.5 45.3</code></div>
-<div class="eq" id="eq-10-2-7"><code>4-gram</code></div>
-<div class="eq" id="eq-10-2-8"><code>8.6 12.9 8.9 13.1</code></div>
-<div class="pblk" id="p-10-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-10-2-3-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-2-3-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10-2-9"><code>6.6 10.6 6.8 10.8</code></div>
-<div class="eq" id="eq-10-2-10"><code>LARGE LV-60k None</code></div>
-<div class="eq" id="eq-10-2-11"><code>38.3 41.0 40.2 38.7</code></div>
-<div class="eq" id="eq-10-2-12"><code>4-gram</code></div>
-<div class="eq" id="eq-10-2-13"><code>6.3 9.8 6.6 10.3</code></div>
-<div class="pblk" id="p-10-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-10-2-4-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10-2-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10-2-14"><code>4.6 7.9 4.8 8.2</code></div></section>
+      <h2 class="sech lv1" id="sec-10-2"><span class="secnum">10</span> <span class="t-zh">10 分钟标注（附录表格碎片）</span><span class="t-en">min labeled</span></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-1h-labeled-2"><span class="t-zh">1h labeled</span><span class="t-en">1h labeled</span></h3><div class="pblk" id="p-1h-labeled-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-2-1-1"><span class="en">BASE LS-960 None</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-2-1-1"><span class="zh">（表格行）BASE｜LS-960｜None：46.1 51.5 46.9 50.9；4-gram：8.9 15.7 9.1 15.6｜Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1h-labeled-2-1"><code>24.1 29.6 24.5 29.7</code></div>
-<div class="eq" id="eq-1h-labeled-2-2"><code>4-gram</code></div>
-<div class="eq" id="eq-1h-labeled-2-3"><code>5.0 10.8 5.5 11.3</code></div>
-<div class="pblk" id="p-1h-labeled-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-2-2-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-2-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1h-labeled-2-4"><code>3.8 9.0 4.0 9.3</code></div>
-<div class="eq" id="eq-1h-labeled-2-5"><code>LARGE LS-960 None</code></div>
-<div class="eq" id="eq-1h-labeled-2-6"><code>21.6 25.3 22.1 25.3</code></div>
-<div class="eq" id="eq-1h-labeled-2-7"><code>4-gram</code></div>
-<div class="eq" id="eq-1h-labeled-2-8"><code>4.8 8.5 5.1 9.4</code></div>
-<div class="pblk" id="p-1h-labeled-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-2-3-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-2-3-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1h-labeled-2-9"><code>3.8 7.1 3.9 7.6</code></div>
-<div class="eq" id="eq-1h-labeled-2-10"><code>LARGE LV-60k None</code></div>
-<div class="eq" id="eq-1h-labeled-2-11"><code>17.3 20.6 17.2 20.3</code></div>
-<div class="eq" id="eq-1h-labeled-2-12"><code>4-gram</code></div>
-<div class="eq" id="eq-1h-labeled-2-13"><code>3.6 6.5 3.8 7.1</code></div>
-<div class="pblk" id="p-1h-labeled-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-1h-labeled-2-4-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1h-labeled-2-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1h-labeled-2-14"><code>2.9 5.4 2.9 5.8</code></div></section>
+      <h3 class="sech lv2" id="sec-1h-labeled-2"><span class="t-zh">1h labeled</span><span class="t-en">1h labeled</span></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-10h-labeled-2"><span class="t-zh">10h labeled</span><span class="t-en">10h labeled</span></h3><div class="pblk" id="p-10h-labeled-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-2-1-1"><span class="en">BASE LS-960 None</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-2-1-1"><span class="zh">（表格行）BASE｜LS-960｜None：46.1 51.5 46.9 50.9；4-gram：8.9 15.7 9.1 15.6｜Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10h-labeled-2-1"><code>10.9 17.4 11.1 17.6</code></div>
-<div class="eq" id="eq-10h-labeled-2-2"><code>4-gram</code></div>
-<div class="eq" id="eq-10h-labeled-2-3"><code>3.8 9.1 4.3 9.5</code></div>
-<div class="pblk" id="p-10h-labeled-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-2-2-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-2-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10h-labeled-2-4"><code>2.9 7.4 3.2 7.8</code></div>
-<div class="eq" id="eq-10h-labeled-2-5"><code>LARGE LS-960 None</code></div>
-<div class="eq" id="eq-10h-labeled-2-6"><code>8.1 12.0 8.0 12.1</code></div>
-<div class="eq" id="eq-10h-labeled-2-7"><code>4-gram</code></div>
-<div class="eq" id="eq-10h-labeled-2-8"><code>3.4 6.9 3.8 7.3</code></div>
-<div class="pblk" id="p-10h-labeled-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-2-3-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-2-3-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10h-labeled-2-9"><code>2.9 5.7 3.2 6.1</code></div>
-<div class="eq" id="eq-10h-labeled-2-10"><code>LARGE LV-60k None</code></div>
-<div class="eq" id="eq-10h-labeled-2-11"><code>6.3 9.8 6.3 10.0</code></div>
-<div class="eq" id="eq-10h-labeled-2-12"><code>4-gram</code></div>
-<div class="eq" id="eq-10h-labeled-2-13"><code>2.6 5.5 3.0 5.8</code></div>
-<div class="pblk" id="p-10h-labeled-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-2-4-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-2-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-10h-labeled-2-14"><code>2.4 4.8 2.6 4.9</code></div></section>
+      <h3 class="sech lv2" id="sec-10h-labeled-2"><span class="t-zh">10h labeled</span><span class="t-en">10h labeled</span></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-100h-labeled-2"><span class="t-zh">100h labeled</span><span class="t-en">100h labeled</span></h3><div class="pblk" id="p-100h-labeled-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-1-1"><span class="en">BASE LS-960 None</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-1-1"><span class="zh">（表格行）BASE｜LS-960｜None：46.1 51.5 46.9 50.9；4-gram：8.9 15.7 9.1 15.6｜Transf.。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-2-1"><code>6.1 13.5 6.1 13.3</code></div>
-<div class="eq" id="eq-100h-labeled-2-2"><code>4-gram</code></div>
-<div class="eq" id="eq-100h-labeled-2-3"><code>2.7 7.9 3.4 8.0</code></div>
-<div class="pblk" id="p-100h-labeled-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-2-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-2-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-2-4"><code>2.2 6.3 2.6 6.3</code></div>
-<div class="eq" id="eq-100h-labeled-2-5"><code>LARGE LS-960 None</code></div>
-<div class="eq" id="eq-100h-labeled-2-6"><code>4.6 9.3 4.7 9.0</code></div>
-<div class="eq" id="eq-100h-labeled-2-7"><code>4-gram</code></div>
-<div class="eq" id="eq-100h-labeled-2-8"><code>2.3 5.7 2.8 6.0</code></div>
-<div class="pblk" id="p-100h-labeled-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-3-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-3-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-2-9"><code>2.1 4.8 2.3 5.0</code></div>
-<div class="eq" id="eq-100h-labeled-2-10"><code>LARGE LV-60k None</code></div>
-<div class="eq" id="eq-100h-labeled-2-11"><code>3.3 6.5 3.1 6.3</code></div>
-<div class="eq" id="eq-100h-labeled-2-12"><code>4-gram</code></div>
-<div class="eq" id="eq-100h-labeled-2-13"><code>1.8 4.5 2.3 4.6</code></div>
-<div class="pblk" id="p-100h-labeled-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-4-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-4-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-2-14"><code>1.9 4.0 2.0 4.0</code></div>
-<div class="cap" id="tab-100h-labeled-2-1"><span class="cap-k">表</span><p class="en">Table 10: WER on Librispeech when using all 960 hours of Librispeech as labeled data (cf. Table 2).</p><p class="zh">表 10：使用 Librispeech 全部 960 小时作为标注数据时 Librispeech 上的 WER（参见 Table 2）。</p></div>
+      <h3 class="sech lv2" id="sec-100h-labeled-2"><span class="t-zh">100h labeled</span><span class="t-en">100h labeled</span></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-100h-labeled-2-1"><span class="cap-k">表</span><p class="en">Table 10: WER on Librispeech when using all 960 hours of Librispeech as labeled data (cf. Table 2).</p><p class="zh">表 10：使用 Librispeech 全部 960 小时作为标注数据时 Librispeech 上的 WER（参见 Table 2）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th>clean</th><th>other</th><th>clean</th><th>other</th></tr></thead><tbody><tr><td>LARGE - from scratch</td><td>-</td><td>None</td><td>2.8</td><td>7.6</td><td>3.0</td><td>7.7</td></tr>
+<tr><td></td><td>-</td><td>4-gram</td><td>1.8</td><td>5.4</td><td>2.6</td><td>5.8</td></tr>
+<tr><td></td><td>-</td><td>Transf.</td><td>1.7</td><td>4.3</td><td>2.1</td><td>4.6</td></tr>
+<tr><td>BASE</td><td>LS-960</td><td>None</td><td>3.2</td><td>8.9</td><td>3.4</td><td>8.5</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>2.0</td><td>5.9</td><td>2.6</td><td>6.1</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>1.8</td><td>4.7</td><td>2.1</td><td>4.8</td></tr>
+<tr><td>LARGE</td><td>LS-960</td><td>None</td><td>2.6</td><td>6.5</td><td>2.8</td><td>6.3</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>1.7</td><td>4.6</td><td>2.3</td><td>5.0</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>1.7</td><td>3.9</td><td>2.0</td><td>4.1</td></tr>
+<tr><td>LARGE</td><td>LV-60k</td><td>None</td><td>2.1</td><td>4.5</td><td>2.2</td><td>4.5</td></tr>
+<tr><td></td><td></td><td>4-gram</td><td>1.4</td><td>3.5</td><td>2.0</td><td>3.6</td></tr>
+<tr><td></td><td></td><td>Transf.</td><td>1.6</td><td>3.0</td><td>1.8</td><td>3.3</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-100h-labeled-2-5">
           <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-5-1"><span class="en">Model Unlabeled LM dev test data clean other clean other LARGE - from scratch</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-5-1"><span class="zh">表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-100h-labeled-2-15"><code>-</code></div>
-<div class="eq" id="eq-100h-labeled-2-16"><code>None</code></div>
-<div class="eq" id="eq-100h-labeled-2-17"><code>2.8 7.6 3.0 7.7 -</code></div>
-<div class="eq" id="eq-100h-labeled-2-18"><code>4-gram</code></div>
-<div class="eq" id="eq-100h-labeled-2-19"><code>1.8 5.4 2.6 5.8 -</code></div>
-<div class="pblk" id="p-100h-labeled-2-6">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-6-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-6-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-2-20"><code>1.7 4.3 2.1 4.6</code></div>
-<div class="eq" id="eq-100h-labeled-2-21"><code>BASE LS-960 None</code></div>
-<div class="eq" id="eq-100h-labeled-2-22"><code>3.2 8.9 3.4 8.5</code></div>
-<div class="eq" id="eq-100h-labeled-2-23"><code>4-gram</code></div>
-<div class="eq" id="eq-100h-labeled-2-24"><code>2.0 5.9 2.6 6.1</code></div>
-<div class="pblk" id="p-100h-labeled-2-7">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-7-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-7-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-2-25"><code>1.8 4.7 2.1 4.8</code></div>
-<div class="eq" id="eq-100h-labeled-2-26"><code>LARGE LS-960 None</code></div>
-<div class="eq" id="eq-100h-labeled-2-27"><code>2.6 6.5 2.8 6.3</code></div>
-<div class="eq" id="eq-100h-labeled-2-28"><code>4-gram</code></div>
-<div class="eq" id="eq-100h-labeled-2-29"><code>1.7 4.6 2.3 5.0</code></div>
-<div class="pblk" id="p-100h-labeled-2-8">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-8-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-8-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-2-30"><code>1.7 3.9 2.0 4.1</code></div>
-<div class="eq" id="eq-100h-labeled-2-31"><code>LARGE LV-60k None</code></div>
-<div class="eq" id="eq-100h-labeled-2-32"><code>2.1 4.5 2.2 4.5</code></div>
-<div class="eq" id="eq-100h-labeled-2-33"><code>4-gram</code></div>
-<div class="eq" id="eq-100h-labeled-2-34"><code>1.4 3.5 2.0 3.6</code></div>
-<div class="pblk" id="p-100h-labeled-2-9">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-9-1"><span class="en">Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-9-1"><span class="zh">模型在 Librispeech（LS-960）或 LibriVox（LV-60k）的音频数据上预训练，多数结果用 Transformer 语言模型（Transf.）解码得到；附录 C 给出了完全不用语言模型、以及用 n-gram 语言模型的结果。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-100h-labeled-2-35"><code>1.6 3.0 1.8 3.3</code></div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h2 class="sech lv1" id="sec-D"><span class="secnum">D</span> <span class="t-zh">附录 D 离散潜在语音表示分析</span><span class="t-en">Analysis of Discrete Latent Speech Representations</span></h2><div class="pblk" id="p-D-1">
           <p class="en-lines"><span class="sent" data-sid="s-D-1-1"><span class="en">Next, we investigate whether the discrete latent speech representations qt learned by the quantizer relate to phonetic information: Using LARGE pre-trained on LV-60k and without any ﬁne-tuning, we compute the discrete latents for the training data of TIMIT and compute the co-occurrence between human annotated phonemes and the latents.</span><button class="mk feat" data-sid="s-D-1-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-D-1-2"><span class="en">Ties are broken by choosing the phoneme which is most represented in the receptive ﬁeld of qt.</span></span> <span class="sent" data-sid="s-D-1-3"><span class="en">The training data contains 3696 utterances of average length 13.6 sec, or 563k discrete latents.</span></span></p>
@@ -1352,7 +1253,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-E-7-1"><span class="zh">预训练的语音表示可以很容易地适配去识别特定的声音，而微调则把这些表示落到真实的拼写上。</span></span></p>
           
         </div>
-<div class="cap" id="tab-E-1"><span class="cap-k">表</span><p class="en">Table 11: Top word errors for models trained on 10m, 1h and 10h, 100h, 960h of labeled data and decoded on the Librispeech dev-clean subset without a language model or lexicon (see Table 9 and Table 10 - None). In brackets is the total number of occurrences of each error.</p><p class="zh">表 11：分别在 10m、1h、10h、100h、960h 标注数据上训练、且不用语言模型与词表解码的模型，在 Librispeech dev-clean 子集上的最高频词错误（见 Table 9 与 Table 10 的 None 列）；括号内为各错误出现的总次数。</p></div>
+<div class="cap" id="tab-E-1"><span class="cap-k">表</span><p class="en">Table 11: Top word errors for models trained on 10m, 1h and 10h, 100h, 960h of labeled data and decoded on the Librispeech dev-clean subset without a language model or lexicon (see Table 9 and Table 10 - None). In brackets is the total number of occurrences of each error.</p><p class="zh">表 11：分别在 10m、1h、10h、100h、960h 标注数据上训练、且不用语言模型与词表解码的模型，在 Librispeech dev-clean 子集上的最高频词错误（见 Table 9 与 Table 10 的 None 列）；括号内为各错误出现的总次数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>bozzle →bozall (4)</th><th>butte →bute (3)</th><th>criss →chris (3)</th></tr><tr><th>clarke →clark (4)</th><th>color →colour (3)</th><th>he’s →is (3)</th></tr><tr><th>gryce →grice (4)</th><th>deucalion →ducalion (3)</th><th>his →is (3)</th></tr><tr><th>i’m →am (4)</th><th>forcemeat →meat (3)</th><th>honor →honour (3)</th></tr><tr><th>in →ind (4)</th><th>gryce →grice (3)</th><th>lattimer →latimer (3)</th></tr></thead><tbody><tr><td>letty →lettie (4)</td><td>honor →honour (3)</td><td>millet →mellet (3)</td></tr>
+<tr><td>phoebe →phebe (4)</td><td>kearny →kirney (3)</td><td>pyncheon →pension (3)</td></tr>
+<tr><td>the →a (4)</td><td>nuova →noiva (3)</td><td>tad →ted (3)</td></tr>
+<tr><td>ann →anne (3)</td><td>thing →anything (3)</td><td>thing →anything (3)</td></tr>
+<tr><td>awhile →while (3)</td><td>this →the (3)</td><td>trevelyan →trevelian (3)</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-E-8">
           <p class="en-lines"><span class="sent" data-sid="s-E-8-1"><span class="en">10m LARGE LV-60k 1h LARGE LV-60k 10h LARGE LV-60k all →al (181) too →to (26) in →and (15) are →ar (115) until →untill (24) a →the (11) will →wil (100) new →knew (22) o →oh (10) you →yo (90) door →dor (18) and →in (9) one →on (89) says →sais (18) mode →mod (9) two →to (81) soul →sol (17) ursus →ersus (9) well →wel (80) bread →bred (16) tom →tome (8) been →ben (73) poor →pore (16) randal →randol (7) upon →apon (73) a →the (13) the →a (7) good →god (67) either →ither (13) color →colour (6) see →se (66) food →fud (13) ﬂour →ﬂower (6) we →whe (60) doubt →dout (12) phoebe →feeby (6) little →litle (54) earth →erth (12) an →and (5) great →grate (53) led →lead (12) cucumbers →cucombers (5) your →yor (53) sea →see (12) egg →eg (5) could →coud (51) thee →the (12) macklewain →macklewaine (5) here →hear (51) tom →tome (12) magpie →magpi (5) know →now (45) add →ad (11) milner →millner (5) there →ther (45) good →god (11) stacy →staci (5) three →thre (45) heaven →heven (11) trevelyan →trevellion (5) still →stil (42) mary →marry (11) verloc →verlock (5) off →of (40) randal →randel (11) ann →an (4) don’t →dont (37) answered →ansered (10) anyone →one (4) shall →shal (36) blood →blod (10) apartment →appartment (4) little →litl (35) bozzle →bosel (10) basin →bason (4) 100h LARGE LV-60k 960h LARGE LV-60k 960h LARGE from scratch a →the (13) a →the (12) and →in (20) and →in (10) and →in (9) a →the (16) in →and (10) macklewain →mackelwaine (7) in →and (13) o →oh (8) in →and (6) the →a (10) minnetaki →minnitaki (7) o →oh (6) in →an (8) randal →randall (7) bozzle →bosell (5) and →an (5) christie →cristy (6) criss →chris (5) clarke →clark (4) macklewain →mackelwane (6) bozzle →bosel (4) grethel →gretel (4) randal →randoll (6) clarke →clark (4) macklewain →mackelwaine (4) bozzle →bosall (5) colored →coloured (4) this →the (4) kaliko →calico (5) grethel →gretel (4) an →and (3) trevelyan →trevelian (5) lige →lyge (4) anyone →one (3) an →and (4) the →a (4) bozzle →basell (3) and →an (4) and →an (3) buns →bunds (3) anyone →one (4) ann →marianne (3) carrie →carry (3) bozzle →bozall (4) butte →bute (3) criss →chris (3) clarke →clark (4) color →colour (3) he’s →is (3) gryce →grice (4) deucalion →ducalion (3) his →is (3) i’m →am (4) forcemeat →meat (3) honor →honour (3) in →ind (4) gryce →grice (3) lattimer →latimer (3) letty →lettie (4) honor →honour (3) millet →mellet (3) phoebe →phebe (4) kearny →kirney (3) pyncheon →pension (3) the →a (4) nuova →noiva (3) tad →ted (3) ann →anne (3) thing →anything (3) thing →anything (3) awhile →while (3) this →the (3) trevelyan →trevelian (3)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-E-8-1"><span class="zh">（附录 E 转写错误对照大表：10m/1h/10h/100h/960h 各配置下最常见替换错误，格式为「正确词 → 模型误词（次数）」。原始数据照录如下）
@@ -1396,25 +1301,34 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-F-2"><span class="cap-k">表</span><p class="en">Table 13: Ablation of various hyper-parmeter choices. We report average WER and standard deviation on combined dev-clean/other of Librispeech for three seeds of training.</p><p class="zh">表 13：各项超参数选择的消融。报告三次训练种子在 Librispeech dev-clean/other 合并集上的平均 WER 与标准差。</p></div>
+<div class="cap" id="tab-F-2"><span class="cap-k">表</span><p class="en">Table 13: Ablation of various hyper-parmeter choices. We report average WER and standard deviation on combined dev-clean/other of Librispeech for three seeds of training.</p><p class="zh">表 13：各项超参数选择的消融。报告三次训练种子在 Librispeech dev-clean/other 合并集上的平均 WER 与标准差。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th></tr><tr><th></th><th></th><th>std.</th></tr></thead><tbody><tr><td>Baseline (p = 0.075, α = 0.1)</td><td>7.97</td><td>0.02</td></tr>
+<tr><td>Continuous inputs, continuous targets</td><td>8.58</td><td>0.08</td></tr>
+<tr><td>+ MLP on targets</td><td>8.51</td><td>0.05</td></tr>
+<tr><td>+ Separate encoders</td><td>8.90</td><td>0.01</td></tr>
+<tr><td>receptive ﬁeld 30ms</td><td>7.99</td><td>0.06</td></tr>
+<tr><td>diversity penalty</td><td></td><td></td></tr>
+<tr><td>α = 0</td><td>8.48</td><td>0.08</td></tr>
+<tr><td>α = 0.05</td><td>8.34</td><td>0.08</td></tr>
+<tr><td>α = 0.2</td><td>8.58</td><td>0.45</td></tr>
+<tr><td>Conv pos emb, kernel 256</td><td>8.14</td><td>0.05</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-F-3">
           <p class="en-lines"><span class="sent" data-sid="s-F-3-1"><span class="en">avg.</span></span> <span class="sent" data-sid="s-F-3-2"><span class="en">WER std.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-F-3-1"><span class="zh">平均值</span></span><span class="sent" data-sid="s-F-3-2"><span class="zh">WER 标准差</span></span></p>
           
         </div>
-<div class="eq" id="eq-F-1"><code>Baseline (p = 0.075, α = 0.1) 7.97 0.02</code></div>
-<div class="eq" id="eq-F-2"><code>Continuous inputs, continuous targets</code></div>
-<div class="eq" id="eq-F-3"><code>8.58 0.08</code></div>
-<div class="eq" id="eq-F-4"><code>+ MLP on targets</code></div>
-<div class="eq" id="eq-F-5"><code>8.51 0.05</code></div>
-<div class="eq" id="eq-F-6"><code>+ Separate encoders</code></div>
-<div class="eq" id="eq-F-7"><code>8.90 0.01</code></div>
-<div class="eq" id="eq-F-8"><code>receptive ﬁeld 30ms</code></div>
-<div class="eq" id="eq-F-9"><code>7.99 0.06</code></div>
-<div class="eq" id="eq-F-10"><code>diversity penalty</code></div>
-<div class="eq" id="eq-F-11"><code>α = 0 8.48 0.08 α = 0.05 8.34 0.08 α = 0.2 8.58 0.45</code></div>
-<div class="eq" id="eq-F-12"><code>Conv pos emb, kernel 256</code></div>
-<div class="eq" id="eq-F-13"><code>8.14 0.05</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-F-14"><code>No gradient to encoder from quantizer</code></div>
 <div class="eq" id="eq-F-15"><code>8.41 0.08</code></div>
 <div class="eq" id="eq-F-16"><code>Negatives K = 200 same utterance</code></div>

@@ -102,6 +102,13 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+/* 重建表格网格（extract_tables.py 产物） */
+.ptab-wrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ptab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ptab th{background:#f1f5f9;font-weight:700;padding:6px 9px;border-bottom:1.5px solid var(--line);text-align:left;white-space:nowrap}
+.ptab td{padding:5px 9px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap}
+.ptab td:first-child,.ptab th:first-child{text-align:left;font-weight:600}
+.ptab tbody tr:hover td{background:#f8fafc}
 .tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
 .refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
 /* 三分钟摘要 */
@@ -814,34 +821,39 @@ LM 侧 token 速率 12.5 Hz 6.25 Hz 6.25 Hz 最大序列长度</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-1-2-1"><span class="zh">（脚注残留）[1] https://github.com/BytedanceSpeech/seed-tts-eval（Anastassiou et al., 2024）[2] https://github.com/FunAudioLLM/CV3-Eval [3] https://huggingface.co/datasets/MiniMaxAI/TTS-Multilingual-Test-Set [4] https://github.com/KexinHUANG19/InstructTTSEval（Huang et al., 2025b）[5] https://commonvoice.mozilla.org/ [6] https://huggingface.co/datasets/google/fleurs</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-1-1"><span class="cap-k">表</span><p class="en">Table 3: Zero-shot voice cloning on Seed-TTS-Eval. WER (English) / CER (Chinese, Hard) reported in %; SIM in %. Bold marks the strongest open-source result per column; italic marks the strongest closed-source result per column. “–” indicates the result is not reported in the source publication or is unavailable.</p><p class="zh">表 3：Seed-TTS-Eval 上的零样本语音克隆。WER（英文）/ CER（中文、困难子集）以 % 报告；SIM 以 % 报告。加粗表示该列最强开源结果；斜体表示该列最强闭源结果；「–」表示源文献未报告或不可得。</p></div></section>
+<div class="cap" id="tab-4-1-1"><span class="cap-k">表</span><p class="en">Table 3: Zero-shot voice cloning on Seed-TTS-Eval. WER (English) / CER (Chinese, Hard) reported in %; SIM in %. Bold marks the strongest open-source result per column; italic marks the strongest closed-source result per column. “–” indicates the result is not reported in the source publication or is unavailable.</p><p class="zh">表 3：Seed-TTS-Eval 上的零样本语音克隆。WER（英文）/ CER（中文、困难子集）以 % 报告；SIM 以 % 报告。加粗表示该列最强开源结果；斜体表示该列最强闭源结果；「–」表示源文献未报告或不可得。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th></th><th>OS</th><th>test-EN</th><th></th><th>test-ZH</th><th></th><th>test-ZH-Hard</th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>SIM↑</th><th></th><th>SIM↑</th><th>CER↓</th><th>SIM↑</th></tr><tr><th>Closed-source</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>MegaTTS3 (Jiang et al., 2025)</td><td>0.5B</td><td>✗</td><td>2.79</td><td>77.1</td><td>1.52</td><td>79.0</td><td>–</td><td>–</td></tr>
+<tr><td>DiTAR (Jia et al., 2025)</td><td>0.6B</td><td>✗</td><td>1.69</td><td>73.5</td><td>1.02</td><td>75.3</td><td>–</td><td>–</td></tr>
+<tr><td>CosyVoice 3 (Du et al., 2025)</td><td>1.5B</td><td>✗</td><td>2.22</td><td>72.0</td><td>1.12</td><td>78.1</td><td>5.83</td><td>75.8</td></tr>
+<tr><td>Seed-TTS (Anastassiou et al., 2024)</td><td>–</td><td>✗</td><td>2.25</td><td>76.2</td><td>1.12</td><td>79.6</td><td>7.59</td><td>77.6</td></tr>
+<tr><td>MiniMax-Speech (Zhang et al., 2025a)</td><td>–</td><td>✗</td><td>1.65</td><td>69.2</td><td>0.83</td><td>78.3</td><td>–</td><td>–</td></tr>
+<tr><td>CosyVoice3.5</td><td>–</td><td>✗</td><td>1.57</td><td>73.8</td><td>0.87</td><td>79.7</td><td>5.71</td><td>78.6</td></tr>
+<tr><td>Open-source</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>F5-TTS (Chen et al., 2025b)</td><td>0.3B</td><td>✓</td><td>2.00</td><td>67.0</td><td>1.53</td><td>76.0</td><td>8.67</td><td>71.3</td></tr>
+<tr><td>MaskGCT (Wang et al., 2025d)</td><td>1B</td><td>✓</td><td>2.62</td><td>71.7</td><td>2.27</td><td>77.4</td><td>–</td><td>–</td></tr>
+<tr><td>CosyVoice (Du et al., 2024a)</td><td>0.3B</td><td>✓</td><td>4.29</td><td>60.9</td><td>3.63</td><td>72.3</td><td>11.75</td><td>70.9</td></tr>
+<tr><td></td><td></td><td>✓</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-model"><span class="t-zh">模型（InstructTTSEval 结果表行）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-1">
-          <p class="en-lines"><span class="sent" data-sid="s-model-1-1"><span class="en">Params OS test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Closed-source MegaTTS3 (Jiang et al., 2025) 0.5B</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-model-1-1"><span class="zh">（目录残留页码 20。）
-参数量 OS test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ 闭源 MegaTTS3 (Jiang et al., 2025) 0.5B</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-model-1"><code>✗ 2.79 77.1 1.52 79.0 – –</code></div>
-<div class="eq" id="eq-model-2"><code>DiTAR (Jia et al., 2025) 0.6B</code></div>
-<div class="eq" id="eq-model-3"><code>✗ 1.69 73.5 1.02 75.3 – –</code></div>
-<div class="eq" id="eq-model-4"><code>CosyVoice 3 (Du et al., 2025) 1.5B</code></div>
-<div class="eq" id="eq-model-5"><code>✗ 2.22 72.0 1.12 78.1 5.83 75.8</code></div>
-<div class="eq" id="eq-model-6"><code>Seed-TTS (Anastassiou et al., 2024)</code></div>
-<div class="eq" id="eq-model-7"><code>– ✗ 2.25 76.2 1.12 79.6 7.59 77.6</code></div>
-<div class="eq" id="eq-model-8"><code>MiniMax-Speech (Zhang et al., 2025a)</code></div>
-<div class="eq" id="eq-model-9"><code>– ✗ 1.65 69.2 0.83 78.3 – –</code></div>
-<div class="eq" id="eq-model-10"><code>CosyVoice3.5</code></div>
-<div class="eq" id="eq-model-11"><code>– ✗ 1.57 73.8 0.87 79.7 5.71 78.6</code></div>
-<div class="eq" id="eq-model-12"><code>Open-source F5-TTS (Chen et al., 2025b) 0.3B</code></div>
-<div class="eq" id="eq-model-13"><code>✓ 2.00 67.0 1.53 76.0 8.67 71.3</code></div>
-<div class="eq" id="eq-model-14"><code>MaskGCT (Wang et al., 2025d) 1B</code></div>
-<div class="eq" id="eq-model-15"><code>✓ 2.62 71.7 2.27 77.4 – –</code></div>
-<div class="eq" id="eq-model-16"><code>CosyVoice (Du et al., 2024a) 0.3B</code></div>
-<div class="eq" id="eq-model-17"><code>✓ 4.29 60.9 3.63 72.3 11.75 70.9</code></div>
+      <h3 class="sech lv2" id="sec-model"><span class="t-zh">模型（InstructTTSEval 结果表行）</span><span class="t-en">Model</span></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-model-18"><code>CosyVoice 2 (Du et al., 2024b) 0.5B</code></div>
 <div class="eq" id="eq-model-19"><code>✓ 3.09 65.9 1.38 75.7 6.83 72.4</code></div>
-<div class="eq" id="eq-model-20"><code>CosyVoice 3 (Du et al., 2025) 0.5B</code></div>
+
 <div class="eq" id="eq-model-21"><code>✓ 2.02 71.8 1.16 78.0 6.08 75.8</code></div>
 <div class="eq" id="eq-model-22"><code>Spark-TTS (Wang et al., 2025c) 0.5B</code></div>
 <div class="eq" id="eq-model-23"><code>✓ 3.14 57.3 1.54 66.0 – –</code></div>
@@ -897,7 +909,9 @@ LM 侧 token 速率 12.5 Hz 6.25 Hz 6.25 Hz 最大序列长度</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="tab-4-2-2-1-s1"><span class="zh">表 3：Seed-TTS-Eval 上的零样本语音克隆结果。在 2B 参数规模下，VoxCPM2 在开源与闭源系统中均取得有竞争力的表现：test-EN 上 WER/SIM 为 1.84/75.3，test-ZH 上为 0.97/79.5，在更具挑战的 test-ZH-Hard 子集上为 8.13/75.3。作为分层连续隐空间模型，VoxCPM2 在保持良好可懂度的同时展现出很强的说话人相似度。</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-2-2-2"><span class="cap-k">表</span><p class="en">Table 4: Effect of different inference recipes on VoxCPM2 zero-shot voice cloning performance (Seed-TTS- Eval).</p><p class="zh">表 4：不同推理配方对 VoxCPM2 零样本语音克隆性能的影响（Seed-TTS-Eval）。</p></div></section>
+<div class="cap" id="tab-4-2-2-2"><span class="cap-k">表</span><p class="en">Table 4: Effect of different inference recipes on VoxCPM2 zero-shot voice cloning performance (Seed-TTS- Eval).</p><p class="zh">表 4：不同推理配方对 VoxCPM2 零样本语音克隆性能的影响（Seed-TTS-Eval）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Eval).</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Inference recipe</th><th>Sequence layout (Sec. 3.4)</th><th></th><th>test-EN</th><th></th><th></th><th>test-ZH</th><th></th><th>test-ZH-Hard</th><th></th></tr><tr><th></th><th></th><th></th><th>WER↓</th><th></th><th>SIM↑</th><th>CER↓</th><th></th><th>SIM↑</th><th>CER↓</th><th>SIM↑</th></tr></thead><tbody><tr><td></td><td>Continuation only</td><td>⟨text | prompt⟩→⟨target⟩</td><td></td><td>1.01</td><td>77.7</td><td></td><td>1.97</td><td>72.6</td><td>8.16</td><td>72.4</td></tr>
+<tr><td></td><td>Reference only</td><td>⟨ref⟩| ⟨text⟩→⟨target⟩</td><td></td><td>1.10</td><td>75.3</td><td></td><td>1.81</td><td>67.0</td><td>6.85</td><td>70.0</td></tr>
+<tr><td></td><td></td><td>⟨ref⟩| ⟨text | prompt⟩→⟨target⟩</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-inference-recipe"><span class="t-zh">推理配方（结果表行）</span><span class="t-en">Inference recipe</span></h3><div class="pblk" id="p-inference-recipe-1">
           <p class="en-lines"><span class="sent" data-sid="s-inference-recipe-1-1"><span class="en">Sequence layout (Sec. 3.4) test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Continuation only ⟨text | prompt⟩→⟨target⟩</span></span></p>
@@ -905,21 +919,23 @@ LM 侧 token 速率 12.5 Hz 6.25 Hz 6.25 Hz 最大序列长度</span></span></p>
 序列布局（第 3.4 节） test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ 仅续写 ⟨text | prompt⟩→⟨target⟩</span></span></p>
           
         </div>
-<div class="eq" id="eq-inference-recipe-1"><code>1.01 77.7 1.97 72.6 8.16 72.4</code></div>
-<div class="eq" id="eq-inference-recipe-2"><code>Reference only ⟨ref⟩| ⟨text⟩→⟨target⟩</code></div>
-<div class="eq" id="eq-inference-recipe-3"><code>1.10 75.3 1.81 67.0 6.85 70.0</code></div>
-<div class="eq" id="eq-inference-recipe-4"><code>Reference + Continuation ⟨ref⟩| ⟨text | prompt⟩→⟨target⟩</code></div>
+
+
+
+
 <div class="eq" id="eq-inference-recipe-5"><code>0.99 79.5 1.94 75.2 7.44 74.9</code></div>
-<div class="cap" id="tab-inference-recipe-1"><span class="cap-k">表</span><p class="en">Table 5: CV3-Eval multilingual zero-shot cloning. WER/CER (%, lower is better). Bold marks the best result per column. “–” indicates the result is not reported in the source publication.</p><p class="zh">表 5：CV3-Eval 多语言零样本克隆。WER/CER（%，越低越好）。加粗表示该列最优结果；「–」表示源文献未报告该结果。</p></div></section>
+<div class="cap" id="tab-inference-recipe-1"><span class="cap-k">表</span><p class="en">Table 5: CV3-Eval multilingual zero-shot cloning. WER/CER (%, lower is better). Bold marks the best result per column. “–” indicates the result is not reported in the source publication.</p><p class="zh">表 5：CV3-Eval 多语言零样本克隆。WER/CER（%，越低越好）。加粗表示该列最优结果；「–」表示源文献未报告该结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th>zh</th><th>en</th><th>hard-zh hard-en</th><th></th><th>ja</th><th>ko</th><th>de</th><th>es</th><th>fr</th><th>it</th><th>ru</th></tr></thead><tbody><tr><td>CosyVoice 2</td><td>4.08 6.32</td><td></td><td>12.58</td><td>11.96</td><td>9.13 19.70</td><td></td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>CosyVoice 3-1.5B 3.91 4.99</td><td></td><td></td><td>9.77</td><td>10.55</td><td>7.57</td><td>5.69</td><td>6.43 4.47 11.80 10.50 6.64</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Fish Audio S2</td><td>2.65 2.43</td><td></td><td>9.10</td><td>4.40</td><td>3.96</td><td>2.76</td><td>2.22 2.00</td><td></td><td>6.26</td><td>2.04</td><td>2.78</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-2"><span class="t-zh">模型（InstructTTSEval 结果表行）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="en">zh en hard-zh hard-en ja ko de es fr it ru CosyVoice 2</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="zh">（表格行：语种列 zh / en / hard-zh / hard-en / ja / ko / de / es / fr / it / ru——CosyVoice 2，后续照原文。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-model-2-1"><code>4.08 6.32 12.58 11.96 9.13 19.70 – – – – – CosyVoice 3-1.5B 3.91 4.99 9.77 10.55 7.57 5.69 6.43 4.47 11.80 10.50 6.64</code></div>
-<div class="eq" id="eq-model-2-2"><code>Fish Audio S2</code></div>
-<div class="eq" id="eq-model-2-3"><code>2.65 2.43 9.10 4.40 3.96 2.76 2.22 2.00 6.26 2.04 2.78</code></div>
+
+
+
 <div class="eq" id="eq-model-2-4"><code>VoxCPM2</code></div>
 <div class="eq" id="eq-model-2-5"><code>3.65 5.00 8.55 8.48 5.96 5.69 4.77 3.80 9.85 4.25 5.21</code></div>
 <div class="pblk" id="p-model-2-2">
@@ -964,60 +980,83 @@ LM 侧 token 速率 12.5 Hz 6.25 Hz 6.25 Hz 最大序列长度</span></span></p>
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-cv3-eval-in-the-wild-multilingua-1"><span class="cap-k">表</span><p class="en">Table 6: Intelligibility on MiniMax-MLS-Test (24 languages, WER %, lower is better). Bold marks the best result per language; “–” indicates the system does not report a result for the language.</p><p class="zh">表 6：MiniMax-MLS-Test 上的可懂度（24 种语言，WER %，越低越好）。加粗表示该语言最优结果；「–」表示该系统未报告该语言的结果。</p></div></section>
+<div class="cap" id="tab-cv3-eval-in-the-wild-multilingua-1"><span class="cap-k">表</span><p class="en">Table 6: Intelligibility on MiniMax-MLS-Test (24 languages, WER %, lower is better). Bold marks the best result per language; “–” indicates the system does not report a result for the language.</p><p class="zh">表 6：MiniMax-MLS-Test 上的可懂度（24 种语言，WER %，越低越好）。加粗表示该语言最优结果；「–」表示该系统未报告该语言的结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Language</th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Arabic</td><td>1.67</td><td>1.67</td><td>–</td><td>3.50</td><td>13.05</td></tr>
+<tr><td>Cantonese</td><td>34.11</td><td>51.51</td><td>–</td><td>30.67</td><td>38.58</td></tr>
+<tr><td>Chinese</td><td>2.25</td><td>16.03</td><td>0.93</td><td>0.73</td><td>1.14</td></tr>
+<tr><td>Czech</td><td>3.88</td><td>2.11</td><td>–</td><td>2.84</td><td>24.13</td></tr>
+<tr><td>Dutch</td><td>1.14</td><td>0.80</td><td>–</td><td>0.99</td><td>0.91</td></tr>
+<tr><td>English</td><td>2.16</td><td>2.34</td><td>0.93</td><td>1.62</td><td>2.29</td></tr>
+<tr><td>Finnish</td><td>4.67</td><td>2.96</td><td>–</td><td>3.33</td><td>2.63</td></tr>
+<tr><td>French</td><td>4.10</td><td>5.22</td><td>2.86</td><td>3.05</td><td>4.53</td></tr>
+<tr><td>German</td><td>1.91</td><td>0.57</td><td>1.24</td><td>0.55</td><td>0.68</td></tr>
+<tr><td>Greek</td><td>2.02</td><td>0.99</td><td>–</td><td>5.74</td><td>2.84</td></tr>
+<tr><td>Hindi</td><td>6.96</td><td>5.83</td><td>–</td><td>14.64</td><td>19.70</td></tr>
+<tr><td>Indonesian</td><td>1.24</td><td>1.06</td><td>–</td><td>1.46</td><td>1.08</td></tr>
+<tr><td>Italian</td><td>1.54</td><td>1.74</td><td>0.95</td><td>1.27</td><td>1.56</td></tr>
+<tr><td>Japanese</td><td>3.52</td><td>10.65</td><td>3.82</td><td>2.76</td><td>4.63</td></tr>
+<tr><td>Korean</td><td>1.75</td><td>1.87</td><td>1.76</td><td>1.18</td><td>1.96</td></tr>
+<tr><td>Polish</td><td>1.42</td><td>0.77</td><td>–</td><td>1.26</td><td>1.14</td></tr>
+<tr><td>Portuguese</td><td>1.88</td><td>1.33</td><td>1.53</td><td>1.14</td><td>1.94</td></tr>
+<tr><td>Romanian</td><td>2.88</td><td>1.35</td><td>–</td><td>10.74</td><td>21.58</td></tr>
+<tr><td>Russian</td><td>4.28</td><td>3.88</td><td>3.21</td><td>2.40</td><td>3.63</td></tr>
+<tr><td>Spanish</td><td>1.03</td><td>1.08</td><td>1.13</td><td>0.91</td><td>1.44</td></tr>
+<tr><td>Thai</td><td>2.70</td><td>73.94</td><td>–</td><td>4.23</td><td>2.96</td></tr>
+<tr><td>Turkish</td><td>1.52</td><td>0.70</td><td>–</td><td>0.87</td><td>0.82</td></tr>
+<tr><td>Ukrainian</td><td>1.08</td><td>1.00</td><td>–</td><td>2.30</td><td>6.32</td></tr>
+<tr><td>Vietnamese</td><td>0.88</td><td>73.42</td><td>–</td><td>7.41</td><td>3.31</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-language"><span class="t-zh">语言（MiniMax-MLS-Test SIM 表行）</span><span class="t-en">Language</span></h3><div class="pblk" id="p-language-1">
           <p class="en-lines"><span class="sent" data-sid="s-language-1-1"><span class="en">Minimax ElevenLabs Qwen3-TTS Fish Audio S2 VoxCPM2 Arabic</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-language-1-1"><span class="zh">（表头：Minimax / ElevenLabs / Qwen3-TTS / Fish Audio S2 / VoxCPM2——Arabic，后续照原文。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-language-1"><code>1.67 1.67 – 3.50 13.05</code></div>
-<div class="eq" id="eq-language-2"><code>Cantonese</code></div>
-<div class="eq" id="eq-language-3"><code>34.11 51.51 – 30.67 38.58</code></div>
-<div class="eq" id="eq-language-4"><code>Chinese</code></div>
-<div class="eq" id="eq-language-5"><code>2.25 16.03 0.93 0.73 1.14</code></div>
-<div class="eq" id="eq-language-6"><code>Czech</code></div>
-<div class="eq" id="eq-language-7"><code>3.88 2.11 – 2.84 24.13</code></div>
-<div class="eq" id="eq-language-8"><code>Dutch</code></div>
-<div class="eq" id="eq-language-9"><code>1.14 0.80 – 0.99 0.91</code></div>
-<div class="eq" id="eq-language-10"><code>English</code></div>
-<div class="eq" id="eq-language-11"><code>2.16 2.34 0.93 1.62 2.29</code></div>
-<div class="eq" id="eq-language-12"><code>Finnish</code></div>
-<div class="eq" id="eq-language-13"><code>4.67 2.96 – 3.33 2.63</code></div>
-<div class="eq" id="eq-language-14"><code>French</code></div>
-<div class="eq" id="eq-language-15"><code>4.10 5.22 2.86 3.05 4.53</code></div>
-<div class="eq" id="eq-language-16"><code>German</code></div>
-<div class="eq" id="eq-language-17"><code>1.91 0.57 1.24 0.55 0.68</code></div>
-<div class="eq" id="eq-language-18"><code>Greek</code></div>
-<div class="eq" id="eq-language-19"><code>2.02 0.99 – 5.74 2.84</code></div>
-<div class="eq" id="eq-language-20"><code>Hindi</code></div>
-<div class="eq" id="eq-language-21"><code>6.96 5.83 – 14.64 19.70</code></div>
-<div class="eq" id="eq-language-22"><code>Indonesian</code></div>
-<div class="eq" id="eq-language-23"><code>1.24 1.06 – 1.46 1.08</code></div>
-<div class="eq" id="eq-language-24"><code>Italian</code></div>
-<div class="eq" id="eq-language-25"><code>1.54 1.74 0.95 1.27 1.56</code></div>
-<div class="eq" id="eq-language-26"><code>Japanese</code></div>
-<div class="eq" id="eq-language-27"><code>3.52 10.65 3.82 2.76 4.63</code></div>
-<div class="eq" id="eq-language-28"><code>Korean</code></div>
-<div class="eq" id="eq-language-29"><code>1.75 1.87 1.76 1.18 1.96</code></div>
-<div class="eq" id="eq-language-30"><code>Polish</code></div>
-<div class="eq" id="eq-language-31"><code>1.42 0.77 – 1.26 1.14</code></div>
-<div class="eq" id="eq-language-32"><code>Portuguese</code></div>
-<div class="eq" id="eq-language-33"><code>1.88 1.33 1.53 1.14 1.94</code></div>
-<div class="eq" id="eq-language-34"><code>Romanian</code></div>
-<div class="eq" id="eq-language-35"><code>2.88 1.35 – 10.74 21.58</code></div>
-<div class="eq" id="eq-language-36"><code>Russian</code></div>
-<div class="eq" id="eq-language-37"><code>4.28 3.88 3.21 2.40 3.63</code></div>
-<div class="eq" id="eq-language-38"><code>Spanish</code></div>
-<div class="eq" id="eq-language-39"><code>1.03 1.08 1.13 0.91 1.44</code></div>
-<div class="eq" id="eq-language-40"><code>Thai</code></div>
-<div class="eq" id="eq-language-41"><code>2.70 73.94 – 4.23 2.96</code></div>
-<div class="eq" id="eq-language-42"><code>Turkish</code></div>
-<div class="eq" id="eq-language-43"><code>1.52 0.70 – 0.87 0.82</code></div>
-<div class="eq" id="eq-language-44"><code>Ukrainian</code></div>
-<div class="eq" id="eq-language-45"><code>1.08 1.00 – 2.30 6.32</code></div>
-<div class="eq" id="eq-language-46"><code>Vietnamese</code></div>
-<div class="eq" id="eq-language-47"><code>0.88 73.42 – 7.41 3.31</code></div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-minimax-mls-test-24-language-int"><span class="t-zh">MiniMax-MLS-Test：24 语言可懂度与说话人相似度</span><span class="t-en">MiniMax-MLS-Test: 24-language Intelligibility and Speaker Similarity.</span></h3><div class="pblk" id="p-minimax-mls-test-24-language-int-1">
           <p class="en-lines"><span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-1"><span class="en">On speaker similarity (Table 7), VoxCPM2 achieves the highest SIM on 22 out of 24 languages, demonstrating strong and consistent voice preservation across diverse language families.</span><button class="mk feat" data-sid="s-minimax-mls-test-24-language-int-1-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-2"><span class="en">Even on Czech and Romanian—languages not explicitly seen during training—VoxCPM2 shows promising speaker preservation, falling within only 1.5–2 SIM points of the best system.</span></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-3"><span class="en">This advantage is largely attributed to the hierarchical continuous-latent modeling paradigm, which enables richer speaker representation compared to discrete-token approaches.</span></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-4"><span class="en">Additionally, large-scale multilingual pretraining appears to endow the model with a certain degree of emergent zero-shot synthesis capability on languages within similar families.</span></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-5"><span class="en">On intelligibility (Table 6), VoxCPM2 delivers strong results on most languages, particularly Chinese (1.14), Dutch (0.91), Finnish (2.63), German (0.68), and Turkish (0.82).</span></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-6"><span class="en">The main weaknesses appear in Arabic and Hindi.</span></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-7"><span class="en">These languages are included in the training set but with relatively limited data volume.</span></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-8"><span class="en">Moreover, since we use Whisper-large-v3 for ASR evaluation on this benchmark, part of the higher WER may stem from the recognizer’s limited accuracy on these languages rather than purely from synthesis quality.</span><button class="mk" data-sid="s-minimax-mls-test-24-language-int-1-8" title="查看讲解">解</button></span> <span class="sent" data-sid="s-minimax-mls-test-24-language-int-1-9"><span class="en">For completely unseen languages such as Czech and Romanian, the model still produces partially intelligible speech, indicating partial zero-shot transfer and suggesting room for rapid adaptation through few-shot fine-tuning</span></span></p>
@@ -1051,61 +1090,107 @@ LM 侧 token 速率 12.5 Hz 6.25 Hz 6.25 Hz 最大序列长度</span></span></p>
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-internal-30-language-benchmark-1"><span class="cap-k">表</span><p class="en">Table 7: Speaker similarity on MiniMax-MLS-Test (24 languages, SIM %, higher is better). Bold marks the best result per language.</p><p class="zh">表 7：MiniMax-MLS-Test 上的说话人相似度（24 种语言，SIM %，越高越好）。加粗表示该语言最优结果。</p></div></section>
+<div class="cap" id="tab-internal-30-language-benchmark-1"><span class="cap-k">表</span><p class="en">Table 7: Speaker similarity on MiniMax-MLS-Test (24 languages, SIM %, higher is better). Bold marks the best result per language.</p><p class="zh">表 7：MiniMax-MLS-Test 上的说话人相似度（24 种语言，SIM %，越高越好）。加粗表示该语言最优结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Language</th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Arabic</td><td>73.6</td><td>70.6</td><td>–</td><td>75.0</td><td>79.1</td></tr>
+<tr><td>Cantonese</td><td>77.8</td><td>67.0</td><td>–</td><td>80.5</td><td>83.5</td></tr>
+<tr><td>Chinese</td><td>78.0</td><td>67.7</td><td>79.9</td><td>81.6</td><td>82.5</td></tr>
+<tr><td>Czech</td><td>79.6</td><td>68.5</td><td>–</td><td>79.8</td><td>78.3</td></tr>
+<tr><td>Dutch</td><td>73.8</td><td>68.0</td><td>–</td><td>73.0</td><td>80.8</td></tr>
+<tr><td>English</td><td>75.6</td><td>61.3</td><td>77.5</td><td>79.7</td><td>85.4</td></tr>
+<tr><td>Finnish</td><td>83.5</td><td>75.9</td><td>–</td><td>81.9</td><td>89.0</td></tr>
+<tr><td>French</td><td>62.8</td><td>53.5</td><td>62.8</td><td>69.8</td><td>73.5</td></tr>
+<tr><td>German</td><td>73.3</td><td>61.4</td><td>77.5</td><td>76.7</td><td>80.3</td></tr>
+<tr><td>Greek</td><td>82.6</td><td>73.3</td><td>–</td><td>79.5</td><td>86.0</td></tr>
+<tr><td>Hindi</td><td>81.8</td><td>73.0</td><td>–</td><td>82.1</td><td>85.6</td></tr>
+<tr><td>Indonesian</td><td>72.9</td><td>66.0</td><td>–</td><td>76.3</td><td>80.0</td></tr>
+<tr><td>Italian</td><td>69.9</td><td>57.9</td><td>81.7</td><td>74.7</td><td>78.0</td></tr>
+<tr><td>Japanese</td><td>77.6</td><td>73.8</td><td>78.8</td><td>79.6</td><td>82.8</td></tr>
+<tr><td>Korean</td><td>77.6</td><td>70.0</td><td>79.9</td><td>81.7</td><td>83.3</td></tr>
+<tr><td>Polish</td><td>80.2</td><td>72.9</td><td>–</td><td>81.9</td><td>88.4</td></tr>
+<tr><td>Portuguese</td><td>80.5</td><td>71.1</td><td>81.7</td><td>78.1</td><td>83.7</td></tr>
+<tr><td>Romanian</td><td>80.9</td><td>69.9</td><td>–</td><td>73.3</td><td>79.7</td></tr>
+<tr><td>Russian</td><td>76.1</td><td>67.6</td><td>79.2</td><td>79.0</td><td>81.1</td></tr>
+<tr><td>Spanish</td><td>76.2</td><td>61.5</td><td>81.4</td><td>77.6</td><td>83.1</td></tr>
+<tr><td>Thai</td><td>80.0</td><td>58.8</td><td>–</td><td>78.6</td><td>84.0</td></tr>
+<tr><td>Turkish</td><td>77.9</td><td>59.6</td><td>–</td><td>83.5</td><td>87.1</td></tr>
+<tr><td>Ukrainian</td><td>73.0</td><td>64.7</td><td>–</td><td>74.7</td><td>79.8</td></tr>
+<tr><td>Vietnamese</td><td>74.3</td><td>36.9</td><td>–</td><td>74.0</td><td>80.6</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-language-2"><span class="t-zh">语言（MiniMax-MLS-Test SIM 表行）</span><span class="t-en">Language</span></h3><div class="pblk" id="p-language-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-language-2-1-1"><span class="en">Minimax ElevenLabs Qwen3-TTS Fish Audio S2 VoxCPM2 Arabic</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-language-2-1-1"><span class="zh">（表头：Minimax / ElevenLabs / Qwen3-TTS / Fish Audio S2 / VoxCPM2——Arabic，后续照原文。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-language-2-1"><code>73.6 70.6 – 75.0 79.1</code></div>
-<div class="eq" id="eq-language-2-2"><code>Cantonese</code></div>
-<div class="eq" id="eq-language-2-3"><code>77.8 67.0 – 80.5 83.5</code></div>
-<div class="eq" id="eq-language-2-4"><code>Chinese</code></div>
-<div class="eq" id="eq-language-2-5"><code>78.0 67.7 79.9 81.6 82.5</code></div>
-<div class="eq" id="eq-language-2-6"><code>Czech</code></div>
-<div class="eq" id="eq-language-2-7"><code>79.6 68.5 – 79.8 78.3</code></div>
-<div class="eq" id="eq-language-2-8"><code>Dutch</code></div>
-<div class="eq" id="eq-language-2-9"><code>73.8 68.0 – 73.0 80.8</code></div>
-<div class="eq" id="eq-language-2-10"><code>English</code></div>
-<div class="eq" id="eq-language-2-11"><code>75.6 61.3 77.5 79.7 85.4</code></div>
-<div class="eq" id="eq-language-2-12"><code>Finnish</code></div>
-<div class="eq" id="eq-language-2-13"><code>83.5 75.9 – 81.9 89.0</code></div>
-<div class="eq" id="eq-language-2-14"><code>French</code></div>
-<div class="eq" id="eq-language-2-15"><code>62.8 53.5 62.8 69.8 73.5</code></div>
-<div class="eq" id="eq-language-2-16"><code>German</code></div>
-<div class="eq" id="eq-language-2-17"><code>73.3 61.4 77.5 76.7 80.3</code></div>
-<div class="eq" id="eq-language-2-18"><code>Greek</code></div>
-<div class="eq" id="eq-language-2-19"><code>82.6 73.3 – 79.5 86.0</code></div>
-<div class="eq" id="eq-language-2-20"><code>Hindi</code></div>
-<div class="eq" id="eq-language-2-21"><code>81.8 73.0 – 82.1 85.6</code></div>
-<div class="eq" id="eq-language-2-22"><code>Indonesian</code></div>
-<div class="eq" id="eq-language-2-23"><code>72.9 66.0 – 76.3 80.0</code></div>
-<div class="eq" id="eq-language-2-24"><code>Italian</code></div>
-<div class="eq" id="eq-language-2-25"><code>69.9 57.9 81.7 74.7 78.0</code></div>
-<div class="eq" id="eq-language-2-26"><code>Japanese</code></div>
-<div class="eq" id="eq-language-2-27"><code>77.6 73.8 78.8 79.6 82.8</code></div>
-<div class="eq" id="eq-language-2-28"><code>Korean</code></div>
-<div class="eq" id="eq-language-2-29"><code>77.6 70.0 79.9 81.7 83.3</code></div>
-<div class="eq" id="eq-language-2-30"><code>Polish</code></div>
-<div class="eq" id="eq-language-2-31"><code>80.2 72.9 – 81.9 88.4</code></div>
-<div class="eq" id="eq-language-2-32"><code>Portuguese</code></div>
-<div class="eq" id="eq-language-2-33"><code>80.5 71.1 81.7 78.1 83.7</code></div>
-<div class="eq" id="eq-language-2-34"><code>Romanian</code></div>
-<div class="eq" id="eq-language-2-35"><code>80.9 69.9 – 73.3 79.7</code></div>
-<div class="eq" id="eq-language-2-36"><code>Russian</code></div>
-<div class="eq" id="eq-language-2-37"><code>76.1 67.6 79.2 79.0 81.1</code></div>
-<div class="eq" id="eq-language-2-38"><code>Spanish</code></div>
-<div class="eq" id="eq-language-2-39"><code>76.2 61.5 81.4 77.6 83.1</code></div>
-<div class="eq" id="eq-language-2-40"><code>Thai</code></div>
-<div class="eq" id="eq-language-2-41"><code>80.0 58.8 – 78.6 84.0</code></div>
-<div class="eq" id="eq-language-2-42"><code>Turkish</code></div>
-<div class="eq" id="eq-language-2-43"><code>77.9 59.6 – 83.5 87.1</code></div>
-<div class="eq" id="eq-language-2-44"><code>Ukrainian</code></div>
-<div class="eq" id="eq-language-2-45"><code>73.0 64.7 – 74.7 79.8</code></div>
-<div class="eq" id="eq-language-2-46"><code>Vietnamese</code></div>
-<div class="eq" id="eq-language-2-47"><code>74.3 36.9 – 74.0 80.6</code></div>
-<div class="cap" id="tab-language-2-1"><span class="cap-k">表</span><p class="en">Table 8: Internal 30-language intelligibility benchmark (500 utterances per language; ASR by Gemini 3.1 Flash Lite). WER % for word-segmented languages; CER % for logographic or non-segmented scripts.</p><p class="zh">表 8：内部 30 语言可懂度基准（每种语言 500 条语句；ASR 由 Gemini 3.1 Flash Lite 完成）。按词切分的语言报告 WER %，语素文字或不切分文字报告 CER %。</p></div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-language-2-1"><span class="cap-k">表</span><p class="en">Table 8: Internal 30-language intelligibility benchmark (500 utterances per language; ASR by Gemini 3.1 Flash Lite). WER % for word-segmented languages; CER % for logographic or non-segmented scripts.</p><p class="zh">表 8：内部 30 语言可懂度基准（每种语言 500 条语句；ASR 由 Gemini 3.1 Flash Lite 完成）。按词切分的语言报告 WER %，语素文字或不切分文字报告 CER %。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Arabic</td><td>73.6</td><td>70.6</td><td>–</td><td>75.0</td><td></td></tr>
+<tr><td>Cantonese</td><td>77.8</td><td>67.0</td><td>–</td><td>80.5</td><td>83.5</td></tr>
+<tr><td>Chinese</td><td>78.0</td><td>67.7</td><td>79.9</td><td>81.6</td><td>82.5</td></tr>
+<tr><td>Czech</td><td>79.6</td><td>68.5</td><td>–</td><td>79.8</td><td>78.3</td></tr>
+<tr><td>Dutch</td><td>73.8</td><td>68.0</td><td>–</td><td>73.0</td><td>80.8</td></tr>
+<tr><td>English</td><td>75.6</td><td>61.3</td><td>77.5</td><td>79.7</td><td>85.4</td></tr>
+<tr><td>Finnish</td><td>83.5</td><td>75.9</td><td>–</td><td>81.9</td><td>89.0</td></tr>
+<tr><td>French</td><td>62.8</td><td>53.5</td><td>62.8</td><td>69.8</td><td>73.5</td></tr>
+<tr><td>German</td><td>73.3</td><td>61.4</td><td>77.5</td><td>76.7</td><td>80.3</td></tr>
+<tr><td>Greek</td><td>82.6</td><td>73.3</td><td>–</td><td>79.5</td><td>86.0</td></tr>
+<tr><td>Hindi</td><td>81.8</td><td>73.0</td><td>–</td><td>82.1</td><td>85.6</td></tr>
+<tr><td>Indonesian</td><td>72.9</td><td>66.0</td><td>–</td><td>76.3</td><td>80.0</td></tr>
+<tr><td>Italian</td><td>69.9</td><td>57.9</td><td>81.7</td><td>74.7</td><td>78.0</td></tr>
+<tr><td>Japanese</td><td>77.6</td><td>73.8</td><td>78.8</td><td>79.6</td><td>82.8</td></tr>
+<tr><td>Korean</td><td>77.6</td><td>70.0</td><td>79.9</td><td>81.7</td><td>83.3</td></tr>
+<tr><td>Polish</td><td>80.2</td><td>72.9</td><td>–</td><td>81.9</td><td>88.4</td></tr>
+<tr><td>Portuguese</td><td>80.5</td><td>71.1</td><td>81.7</td><td>78.1</td><td>83.7</td></tr>
+<tr><td>Romanian</td><td>80.9</td><td>69.9</td><td>–</td><td>73.3</td><td>79.7</td></tr>
+<tr><td>Russian</td><td>76.1</td><td>67.6</td><td>79.2</td><td>79.0</td><td>81.1</td></tr>
+<tr><td>Spanish</td><td>76.2</td><td>61.5</td><td>81.4</td><td>77.6</td><td>83.1</td></tr>
+<tr><td>Thai</td><td>80.0</td><td>58.8</td><td>–</td><td>78.6</td><td>84.0</td></tr>
+<tr><td>Turkish</td><td>77.9</td><td>59.6</td><td>–</td><td>83.5</td><td>87.1</td></tr>
+<tr><td>Ukrainian</td><td>73.0</td><td>64.7</td><td>–</td><td>74.7</td><td>79.8</td></tr>
+<tr><td>Vietnamese</td><td>74.3</td><td>36.9</td><td>–</td><td>74.0</td><td>80.6</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-lang"><span class="t-zh">语言（内部 30 语言基准表行）</span><span class="t-en">Lang.</span></h3><div class="pblk" id="p-lang-1">
           <p class="en-lines"><span class="sent" data-sid="s-lang-1-1"><span class="en">Metric VoxCPM2 Fish Audio S2 Lang.</span></span></p>
@@ -1189,53 +1274,55 @@ LM 侧 token 速率 12.5 Hz 6.25 Hz 6.25 Hz 最大序列长度</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-1"><span class="zh">InstructTTSEval 从抽象程度递增的三个子任务全面评估指令遵循能力。</span></span><span class="sent" data-sid="s-4-4-2-2"><span class="zh">Table 9 汇总了结果。</span></span><span class="sent" data-sid="s-4-4-2-3"><span class="zh">在该基准上，VoxCPM2 取得强劲的指令遵循表现。</span></span><span class="sent" data-sid="s-4-4-2-4"><span class="zh">在英文子集上，它以 84.2 / 83.2 取得最佳总分（未完，见下句）</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-4-1"><span class="cap-k">表</span><p class="en">Table 9: Instruction-following on InstructTTSEval (%, higher is better). APS = acoustic-parameter specification, DSD = descriptive-style directive, RP = role-play.</p><p class="zh">表 9：InstructTTSEval 上的指令遵循（%，越高越好）。APS = 声学参数指定，DSD = 描述式风格指令，RP = 角色扮演。</p></div></section>
+<div class="cap" id="tab-4-4-1"><span class="cap-k">表</span><p class="en">Table 9: Instruction-following on InstructTTSEval (%, higher is better). APS = acoustic-parameter specification, DSD = descriptive-style directive, RP = role-play.</p><p class="zh">表 9：InstructTTSEval 上的指令遵循（%，越高越好）。APS = 声学参数指定，DSD = 描述式风格指令，RP = 角色扮演。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th>InstructTTSEval-ZH</th><th></th><th></th><th>InstructTTSEval-EN</th><th></th><th></th></tr><tr><th></th><th>APS↑</th><th></th><th>RP↑</th><th>APS↑</th><th></th><th>RP↑</th></tr></thead><tbody><tr><td>Hume</td><td>–</td><td>–</td><td>–</td><td>83.0</td><td>75.3</td><td>54.3</td></tr>
+<tr><td>GPT-4o-mini-TTS</td><td>54.9</td><td>52.3</td><td>46.0</td><td>76.4</td><td>74.3</td><td>54.8</td></tr>
+<tr><td>Gemini-TTS-Pro</td><td>89.0</td><td>90.1</td><td>75.5</td><td>87.6</td><td>86.0</td><td>67.2</td></tr>
+<tr><td>PromptTTS (Guo et al., 2023)</td><td>–</td><td>–</td><td>–</td><td>64.3</td><td>47.2</td><td>31.4</td></tr>
+<tr><td>PromptStyle (Liu et al., 2023)</td><td>–</td><td>–</td><td>–</td><td>57.4</td><td>46.4</td><td>30.9</td></tr>
+<tr><td>Parler-TTS-large (Lyth &amp; King, 2024)</td><td>–</td><td>–</td><td>–</td><td>60.0</td><td>45.9</td><td>31.2</td></tr>
+<tr><td>VoxInstruct (Zhou et al., 2024)</td><td>47.5</td><td>52.3</td><td>42.6</td><td>54.9</td><td>57.0</td><td>39.3</td></tr>
+<tr><td>VoiceSculptor (Hu et al., 2026b)</td><td>75.7</td><td>64.7</td><td>61.5</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>Mimo-Audio-7B-Instruct (Zhang et al., 2025b)</td><td>75.7</td><td>74.3</td><td>61.5</td><td>80.6</td><td>77.6</td><td>59.5</td></tr>
+<tr><td>Qwen3-TTS-12Hz-1.7B-VD (Hu et al., 2026a)</td><td>85.2</td><td>81.1</td><td>65.1</td><td>82.9</td><td>82.4</td><td>68.4</td></tr>
+<tr><td>MOSS-VoiceGenerator (Huang et al., 2026)</td><td>78.0</td><td>80.0</td><td>74.0</td><td>68.2</td><td>82.0</td><td>68.7</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-3"><span class="t-zh">模型（InstructTTSEval 结果表行）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-3-1-1"><span class="en">InstructTTSEval-ZH InstructTTSEval-EN APS↑ DSD↑ RP↑ APS↑ DSD↑ RP↑ Hume</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-3-1-1"><span class="zh">表头：InstructTTSEval-ZH / InstructTTSEval-EN × APS↑ / DSD↑ / RP↑——Hume（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-model-3-1"><code>– – – 83.0 75.3 54.3</code></div>
-<div class="eq" id="eq-model-3-2"><code>GPT-4o-mini-TTS</code></div>
-<div class="eq" id="eq-model-3-3"><code>54.9 52.3 46.0 76.4 74.3 54.8</code></div>
-<div class="eq" id="eq-model-3-4"><code>Gemini-TTS-Pro</code></div>
-<div class="eq" id="eq-model-3-5"><code>89.0 90.1 75.5 87.6 86.0 67.2</code></div>
-<div class="eq" id="eq-model-3-6"><code>PromptTTS (Guo et al., 2023)</code></div>
-<div class="eq" id="eq-model-3-7"><code>– – – 64.3 47.2 31.4</code></div>
-<div class="eq" id="eq-model-3-8"><code>PromptStyle (Liu et al., 2023)</code></div>
-<div class="eq" id="eq-model-3-9"><code>– – – 57.4 46.4 30.9</code></div>
-<div class="eq" id="eq-model-3-10"><code>Parler-TTS-large (Lyth &amp; King, 2024)</code></div>
-<div class="eq" id="eq-model-3-11"><code>– – – 60.0 45.9 31.2</code></div>
-<div class="eq" id="eq-model-3-12"><code>VoxInstruct (Zhou et al., 2024)</code></div>
-<div class="eq" id="eq-model-3-13"><code>47.5 52.3 42.6 54.9 57.0 39.3</code></div>
-<div class="eq" id="eq-model-3-14"><code>VoiceSculptor (Hu et al., 2026b)</code></div>
-<div class="eq" id="eq-model-3-15"><code>75.7 64.7 61.5 – – –</code></div>
-<div class="eq" id="eq-model-3-16"><code>Mimo-Audio-7B-Instruct (Zhang et al., 2025b)</code></div>
-<div class="eq" id="eq-model-3-17"><code>75.7 74.3 61.5 80.6 77.6 59.5</code></div>
-<div class="eq" id="eq-model-3-18"><code>Qwen3-TTS-12Hz-1.7B-VD (Hu et al., 2026a)</code></div>
-<div class="eq" id="eq-model-3-19"><code>85.2 81.1 65.1 82.9 82.4 68.4</code></div>
-<div class="eq" id="eq-model-3-20"><code>MOSS-VoiceGenerator (Huang et al., 2026)</code></div>
-<div class="eq" id="eq-model-3-21"><code>78.0 80.0 74.0 68.2 82.0 68.7</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-model-3-22"><code>VoxCPM2</code></div>
 <div class="eq" id="eq-model-3-23"><code>85.2 71.5 60.8 84.2 83.2 71.4</code></div>
-<div class="cap" id="tab-model-3-1"><span class="cap-k">表</span><p class="en">Table 10: Reconstruction quality of the Audio VAE used in VoxCPM, VoxCPM1.5, and VoxCPM2. Evaluation metrics: MelD-48k: Mel-distance at 48kHz; MelD-16k: Mel-distance at 16kHz; PESQ-16k: Perceptual Speech Quality (Evaluated at 16kHz); STOI-16k: Short-Time Objective Intelligibility (Evaluated at 16kHz).</p><p class="zh">表 10：VoxCPM、VoxCPM1.5 与 VoxCPM2 所用 Audio VAE 的重建质量。评测指标：MelD-48k：48 kHz 下梅尔距离；MelD-16k：16 kHz 下梅尔距离；PESQ-16k：感知语音质量（16 kHz 评测）；STOI-16k：短时客观可懂度（16 kHz 评测）。</p></div></section>
+<div class="cap" id="tab-model-3-1"><span class="cap-k">表</span><p class="en">Table 10: Reconstruction quality of the Audio VAE used in VoxCPM, VoxCPM1.5, and VoxCPM2. Evaluation metrics: MelD-48k: Mel-distance at 48kHz; MelD-16k: Mel-distance at 16kHz; PESQ-16k: Perceptual Speech Quality (Evaluated at 16kHz); STOI-16k: Short-Time Objective Intelligibility (Evaluated at 16kHz).</p><p class="zh">表 10：VoxCPM、VoxCPM1.5 与 VoxCPM2 所用 Audio VAE 的重建质量。评测指标：MelD-48k：48 kHz 下梅尔距离；MelD-16k：16 kHz 下梅尔距离；PESQ-16k：感知语音质量（16 kHz 评测）；STOI-16k：短时客观可懂度（16 kHz 评测）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>VAE</th><th>Sample Rate</th><th></th><th></th><th></th><th></th><th>VCTK (48kHz)</th><th></th><th></th><th></th><th></th><th>Song Describer (44kHz)</th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th>MelD-48k↓</th><th></th><th>MelD-16k↓</th><th></th><th>STOI-16k↑</th><th></th><th>PESQ-16k↑</th><th></th><th>MelD-48k↓</th><th></th><th>MelD-16k↓</th><th></th></tr><tr><th></th><th>Input</th><th>Output</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>VoxCPM</td><td>16kHz</td><td>16kHz</td><td></td><td>1.787</td><td></td><td>0.801</td><td></td><td>0.911</td><td></td><td>3.940</td><td></td><td>2.371</td><td></td><td>1.246</td></tr>
+<tr><td>VoxCPM1.5</td><td>44kHz</td><td>44kHz</td><td></td><td>1.139</td><td></td><td>0.926</td><td></td><td>0.836</td><td></td><td>3.148</td><td></td><td>1.267</td><td></td><td>1.311</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-vae"><span class="t-zh">VAE（表头残留）</span><span class="t-en">VAE</span></h3><div class="pblk" id="p-vae-1">
-          <p class="en-lines"><span class="sent" data-sid="s-vae-1-1"><span class="en">Model Sample Rate VCTK (48kHz) Song Describer (44kHz)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vae-1-1"><span class="zh">（Table 10 表头残留）模型 | 采样率 | VCTK（48 kHz）| Song Describer（44 kHz）。</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-vae"><span class="t-zh">VAE（表头残留）</span><span class="t-en">VAE</span></h3></section>
 <section>
-      <h3 class="sech lv2" id="sec-input"><span class="t-zh">输入/输出（VAE 重建表行）</span><span class="t-en">Input</span></h3><div class="pblk" id="p-input-1">
-          <p class="en-lines"><span class="sent" data-sid="s-input-1-1"><span class="en">Output MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ MelD-48k↓ MelD-16k↓ VoxCPM 16kHz 16kHz</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-input-1-1"><span class="zh">（目录残留页码 4。）
-输出 MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ MelD-48k↓ MelD-16k↓ VoxCPM 16kHz 16kHz</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-input-1"><code>1.787 0.801 0.911 3.940 2.371 1.246</code></div>
-<div class="eq" id="eq-input-2"><code>VoxCPM1.5 44kHz 44kHz</code></div>
-<div class="eq" id="eq-input-3"><code>1.139 0.926 0.836 3.148 1.267 1.311</code></div>
+      <h3 class="sech lv2" id="sec-input"><span class="t-zh">输入/输出（VAE 重建表行）</span><span class="t-en">Input</span></h3>
+
+
+
 <div class="eq" id="eq-input-4"><code>VoxCPM2 16kHz 48kHz</code></div>
 <div class="eq" id="eq-input-5"><code>1.335 0.813 0.907 3.906 1.334 1.133</code></div>
 <div class="pblk" id="p-input-2">
@@ -1272,41 +1359,34 @@ LM 侧 token 速率 12.5 Hz 6.25 Hz 6.25 Hz 最大序列长度</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-5-2-1"><span class="zh">这一对比揭示了三代 codec 各自互补的优势。</span></span><span class="sent" data-sid="s-4-5-2-2"><span class="zh">VoxCPM 所用的 Audio VAE 在 16 kHz 频带语音指标上仍极具竞争力，而 VoxCPM1.5 所用的 Audio VAE 通过直接在高采样率上工作取得了最佳全频带梅尔距离。</span></span><span class="sent" data-sid="s-4-5-2-3"><span class="zh">相比之下，AudioVAE V2 在一个更苛刻的超分辨率设定下、在低频带与全频带指标上都取得了有竞争力的重建（未完，见下句）</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-5-2"><span class="cap-k">表</span><p class="en">Table 11: Inference efficiency of VoxCPM2 on a single NVIDIA RTX 4090 (24 GB). RTF (real-time factor) is wall-clock generation time divided by output-audio duration; values &lt;1 indicate faster-than-real-time generation.</p><p class="zh">表 11：VoxCPM2 在单张 NVIDIA RTX 4090（24 GB）上的推理效率。RTF（实时因子）为实际生成耗时除以输出音频时长；小于 1 表示快于实时。</p></div></section>
+<div class="cap" id="tab-4-5-2"><span class="cap-k">表</span><p class="en">Table 11: Inference efficiency of VoxCPM2 on a single NVIDIA RTX 4090 (24 GB). RTF (real-time factor) is wall-clock generation time divided by output-audio duration; values &lt;1 indicate faster-than-real-time generation.</p><p class="zh">表 11：VoxCPM2 在单张 NVIDIA RTX 4090（24 GB）上的推理效率。RTF（实时因子）为实际生成耗时除以输出音频时长；小于 1 表示快于实时。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>generation.</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Inference path</th><th>Params</th><th></th><th>RTF ↓</th><th>VRAM</th></tr></thead><tbody><tr><td></td><td>VoxCPM2 (PyTorch)</td><td></td><td>2B</td><td>0.30</td><td>∼8 GB</td></tr>
+<tr><td></td><td>VoxCPM2 (Nano-vLLM)</td><td></td><td>2B</td><td>0.13</td><td>∼8 GB</td></tr>
+<tr><td></td><td>VoxCPM1.5 (PyTorch)</td><td></td><td>0.8B</td><td>0.15</td><td>∼6 GB</td></tr>
+<tr><td></td><td>VoxCPM (PyTorch)</td><td></td><td>0.6B</td><td>0.17</td><td>∼5 GB</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-inference-path"><span class="t-zh">推理路径（效率表行）</span><span class="t-en">Inference path</span></h3><div class="pblk" id="p-inference-path-1">
-          <p class="en-lines"><span class="sent" data-sid="s-inference-path-1-1"><span class="en">Params RTF ↓ VRAM VoxCPM2 (PyTorch) 2B</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-inference-path-1-1"><span class="zh">（表：推理路径 × Params × RTF↓ × VRAM——VoxCPM2 (PyTorch) 2B/0.30/约 8 GB；VoxCPM2 (Nano-vLLM) 2B/0.13/约 8 GB；VoxCPM1.5 (PyTorch) 0.8B/0.15/约 6 GB；VoxCPM (PyTorch) 0.6B/0.17/约 5 GB。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-inference-path-1"><code>0.30</code></div>
-<div class="eq" id="eq-inference-path-2"><code>∼8 GB VoxCPM2 (Nano-vLLM) 2B</code></div>
-<div class="eq" id="eq-inference-path-3"><code>0.13</code></div>
-<div class="eq" id="eq-inference-path-4"><code>∼8 GB VoxCPM1.5 (PyTorch) 0.8B</code></div>
-<div class="eq" id="eq-inference-path-5"><code>0.15</code></div>
-<div class="eq" id="eq-inference-path-6"><code>∼6 GB VoxCPM (PyTorch) 0.6B</code></div>
-<div class="eq" id="eq-inference-path-7"><code>0.17</code></div>
-<div class="pblk" id="p-inference-path-2">
-          <p class="en-lines"><span class="sent" data-sid="s-inference-path-2-1"><span class="en">∼5 GB</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-inference-path-2-1"><span class="zh">（表：推理路径 × Params × RTF↓ × VRAM——VoxCPM2 (PyTorch) 2B/0.30/约 8 GB；VoxCPM2 (Nano-vLLM) 2B/0.13/约 8 GB；VoxCPM1.5 (PyTorch) 0.8B/0.15/约 6 GB；VoxCPM (PyTorch) 0.6B/0.17/约 5 GB。）</span></span></p>
-          
-        </div>
-<div class="cap" id="tab-inference-path-1"><span class="cap-k">表</span><p class="en">Table 12: Subjective evaluation on zero-shot voice cloning. N-MOS and S-MOS are reported with 95% confidence intervals.</p><p class="zh">表 12：零样本语音克隆的主观评测。N-MOS 与 S-MOS 均报告 95% 置信区间。</p></div></section>
+      <h3 class="sech lv2" id="sec-inference-path"><span class="t-zh">推理路径（效率表行）</span><span class="t-en">Inference path</span></h3>
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-inference-path-1"><span class="cap-k">表</span><p class="en">Table 12: Subjective evaluation on zero-shot voice cloning. N-MOS and S-MOS are reported with 95% confidence intervals.</p><p class="zh">表 12：零样本语音克隆的主观评测。N-MOS 与 S-MOS 均报告 95% 置信区间。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>confidence intervals.</th><th></th><th></th><th></th></tr><tr><th></th><th>System</th><th>N-MOS↑</th><th>S-MOS↑</th></tr><tr><th></th><th>IndexTTS2</th><th>4.78 ± 0.02</th><th>4.71 ± 0.03</th></tr><tr><th></th><th>Qwen3-TTS</th><th>4.80 ± 0.02</th><th>4.69 ± 0.03</th></tr><tr><th></th><th>Fish Audio S2</th><th>4.77 ± 0.02</th><th>4.69 ± 0.03</th></tr></thead><tbody><tr><td></td><td>LongCat-Audio-DiT</td><td>4.63 ± 0.03</td><td>4.65 ± 0.03</td></tr>
+<tr><td></td><td>VoxCPM2</td><td>4.78 ± 0.02</td><td>4.74 ± 0.03</td></tr>
+<tr><td>generation.</td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-system"><span class="t-zh">系统（可控生成主观表头残留）</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-1">
-          <p class="en-lines"><span class="sent" data-sid="s-system-1-1"><span class="en">N-MOS↑ S-MOS↑ IndexTTS2</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-system-1-1"><span class="zh">（表：N-MOS↑/S-MOS↑——IndexTTS2 4.78±0.02/4.71±0.03；Qwen3-TTS 4.80±0.02/4.69±0.03；Fish Audio S2 4.77±0.02/4.69±0.03；LongCat-Audio-DiT 4.63±0.03/4.65±0.03；VoxCPM2 4.78±0.02/4.74±0.03。）这是颇具挑战的超分辨率设置：编码 16 kHz 音频但以 48 kHz 重建。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-system-1"><code>4.78 ± 0.02 4.71 ± 0.03</code></div>
-<div class="eq" id="eq-system-2"><code>Qwen3-TTS</code></div>
-<div class="eq" id="eq-system-3"><code>4.80 ± 0.02 4.69 ± 0.03</code></div>
-<div class="eq" id="eq-system-4"><code>Fish Audio S2</code></div>
-<div class="eq" id="eq-system-5"><code>4.77 ± 0.02 4.69 ± 0.03</code></div>
-<div class="eq" id="eq-system-6"><code>LongCat-Audio-DiT</code></div>
-<div class="eq" id="eq-system-7"><code>4.63 ± 0.03 4.65 ± 0.03</code></div>
-<div class="eq" id="eq-system-8"><code>VoxCPM2</code></div>
-<div class="eq" id="eq-system-9"><code>4.78 ± 0.02 4.74 ± 0.03</code></div>
+      <h3 class="sech lv2" id="sec-system"><span class="t-zh">系统（可控生成主观表头残留）</span><span class="t-en">System</span></h3>
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-system-2">
           <p class="en-lines"><span class="sent" data-sid="s-system-2-1"><span class="en">challenging super-resolution setting: it encodes 16 kHz audio but reconstructs at 48 kHz.</span></span> <span class="sent" data-sid="s-system-2-2"><span class="en">This result supports the asymmetric codec design introduced in Section 3.2, which gives VoxCPM2 greater flexibility by keeping the autoregressive backbone in a compact low-rate latent space while still enabling high-sample-rate waveform generation.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-system-2-1"><span class="zh">（目录残留页码 4。）
@@ -1349,34 +1429,44 @@ LM 侧 token 速率 12.5 Hz 6.25 Hz 6.25 Hz 最大序列长度</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-7-2-1"><span class="zh">（脚注残留）[7] https://github.com/a710128/nanovllm-voxcpm [8] https://github.com/vllm-project/vllm-omni</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-7-1"><span class="cap-k">表</span><p class="en">Table 13: Subjective evaluation on multilingual synthesis. N-MOS averaged across eight languages which all systems support (de, en, es, fr, ja, ko, ru, zh) from MiniMax-MLS-Test.</p><p class="zh">表 13：多语言合成的主观评测。N-MOS 在所有系统均支持的八种语言（de、en、es、fr、ja、ko、ru、zh，取自 MiniMax-MLS-Test）上取平均。</p></div></section>
+<div class="cap" id="tab-4-7-1"><span class="cap-k">表</span><p class="en">Table 13: Subjective evaluation on multilingual synthesis. N-MOS averaged across eight languages which all systems support (de, en, es, fr, ja, ko, ru, zh) from MiniMax-MLS-Test.</p><p class="zh">表 13：多语言合成的主观评测。N-MOS 在所有系统均支持的八种语言（de、en、es、fr、ja、ko、ru、zh，取自 MiniMax-MLS-Test）上取平均。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>OmniVoice</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Qwen3-TTS</th><th>4.77 ± 0.02</th><th></th><th>4.60 ± 0.03</th><th></th></tr><tr><th></th><th></th><th>Fish Audio S2</th><th>4.76 ± 0.02</th><th></th><th>4.70 ± 0.03</th><th></th></tr><tr><th></th><th></th><th>VoxCPM2</th><th>4.78 ± 0.02</th><th></th><th>4.66 ± 0.03</th><th></th></tr><tr><th>based voice design instructions.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>System</td><td></td><td></td><td>N-MOS↑</td><td></td><td>I-MOS↑</td></tr>
+<tr><td></td><td>VoiceSculptor</td><td></td><td></td><td>3.69 ± 0.07</td><td></td><td>3.56 ± 0.07</td></tr>
+<tr><td></td><td>Qwen3-TTS-VD</td><td></td><td></td><td>4.61 ± 0.03</td><td></td><td>4.41 ± 0.04</td></tr>
+<tr><td></td><td>MOSS-VoiceGenerator</td><td></td><td></td><td>4.31 ± 0.05</td><td></td><td>4.15 ± 0.05</td></tr>
+<tr><td></td><td>VoxCPM2</td><td></td><td></td><td>4.48 ± 0.04</td><td></td><td>4.50 ± 0.03</td></tr>
+<tr><td>Setup.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Results and Analysis.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-system-2"><span class="t-zh">系统（可控生成主观表头残留）</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-system-2-1-1"><span class="en">N-MOS↑ S-MOS↑ OmniVoice</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-system-2-1-1"><span class="zh">表头：N-MOS↑ / S-MOS↑——OmniVoice（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-system-2-1"><code>4.76 ± 0.02 4.72 ± 0.02</code></div>
-<div class="eq" id="eq-system-2-2"><code>Qwen3-TTS</code></div>
-<div class="eq" id="eq-system-2-3"><code>4.77 ± 0.02 4.60 ± 0.03</code></div>
-<div class="eq" id="eq-system-2-4"><code>Fish Audio S2</code></div>
-<div class="eq" id="eq-system-2-5"><code>4.76 ± 0.02 4.70 ± 0.03</code></div>
-<div class="eq" id="eq-system-2-6"><code>VoxCPM2</code></div>
-<div class="eq" id="eq-system-2-7"><code>4.78 ± 0.02 4.66 ± 0.03</code></div>
-<div class="cap" id="tab-system-2-1"><span class="cap-k">表</span><p class="en">Table 14: Subjective results on controllable generation. I-MOS rates how well the speech follows the textbased voice design instructions.</p><p class="zh">表 14：可控生成的主观结果。I-MOS 评估语音对基于文本的声音设计指令的遵循程度。</p></div></section>
+
+
+
+
+
+
+
+<div class="cap" id="tab-system-2-1"><span class="cap-k">表</span><p class="en">Table 14: Subjective results on controllable generation. I-MOS rates how well the speech follows the textbased voice design instructions.</p><p class="zh">表 14：可控生成的主观结果。I-MOS 评估语音对基于文本的声音设计指令的遵循程度。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>based voice design instructions.</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>System</th><th>N-MOS↑</th><th>I-MOS↑</th></tr><tr><th></th><th></th><th>VoiceSculptor</th><th>3.69 ± 0.07</th><th>3.56 ± 0.07</th></tr><tr><th></th><th></th><th>Qwen3-TTS-VD</th><th>4.61 ± 0.03</th><th>4.41 ± 0.04</th></tr><tr><th></th><th></th><th>MOSS-VoiceGenerator</th><th>4.31 ± 0.05</th><th>4.15 ± 0.05</th></tr></thead><tbody><tr><td></td><td></td><td>VoxCPM2</td><td>4.48 ± 0.04</td><td>4.50 ± 0.03</td></tr>
+<tr><td>Setup.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>timbre, accent and speaking styles.</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>instructions.</td><td></td><td></td><td></td></tr>
+<tr><td>Results and Analysis.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>5</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-system-3"><span class="t-zh">系统（可控生成主观表头残留）</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-3-1">
-          <p class="en-lines"><span class="sent" data-sid="s-system-3-1-1"><span class="en">N-MOS↑ I-MOS↑ VoiceSculptor</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-system-3-1-1"><span class="zh">表头：N-MOS↑ / I-MOS↑——VoiceSculptor（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-system-3-1"><code>3.69 ± 0.07 3.56 ± 0.07</code></div>
-<div class="eq" id="eq-system-3-2"><code>Qwen3-TTS-VD</code></div>
-<div class="eq" id="eq-system-3-3"><code>4.61 ± 0.03 4.41 ± 0.04</code></div>
-<div class="eq" id="eq-system-3-4"><code>MOSS-VoiceGenerator</code></div>
-<div class="eq" id="eq-system-3-5"><code>4.31 ± 0.05 4.15 ± 0.05</code></div>
-<div class="eq" id="eq-system-3-6"><code>VoxCPM2</code></div>
-<div class="eq" id="eq-system-3-7"><code>4.48 ± 0.04 4.50 ± 0.03</code></div></section>
+      <h3 class="sech lv2" id="sec-system-3"><span class="t-zh">系统（可控生成主观表头残留）</span><span class="t-en">System</span></h3>
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-setup"><span class="t-zh">实验设置</span><span class="t-en">Setup.</span></h3><div class="pblk" id="p-setup-1">
           <p class="en-lines"><span class="sent" data-sid="s-setup-1-1"><span class="en">We prepare about 100 audio samples covering zero-shot voice cloning (English and Chinese from Seed-TTS-Eval), multilingual synthesis (8 languages from MiniMax-MLS-Test), and controllable generation with diverse natural-language instructions (written by LLM).</span></span> <span class="sent" data-sid="s-setup-1-2"><span class="en">We compare VoxCPM2 against representative open-source baselines drawn from Sections 4.2–4.4.</span></span> <span class="sent" data-sid="s-setup-1-3"><span class="en">A total of 50 listeners participated in a randomized, double-blind evaluation, and the three scoring metrics are defined as follows:</span></span></p>

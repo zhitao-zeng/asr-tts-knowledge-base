@@ -102,6 +102,13 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+/* 重建表格网格（extract_tables.py 产物） */
+.ptab-wrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ptab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ptab th{background:#f1f5f9;font-weight:700;padding:6px 9px;border-bottom:1.5px solid var(--line);text-align:left;white-space:nowrap}
+.ptab td{padding:5px 9px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap}
+.ptab td:first-child,.ptab th:first-child{text-align:left;font-weight:600}
+.ptab tbody tr:hover td{background:#f8fafc}
 .tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
 .refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
 /* 三分钟摘要 */
@@ -487,7 +494,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-4-1"><span class="zh">（图 2 纵轴：在 [Common Voice, CHiME-6, TED-LIUM] 上的平均 WER (%)。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-3-1"><code>40</code></div>
+
 <div class="pblk" id="p-3-3-5">
           <p class="en-lines"><span class="sent" data-sid="s-3-3-5-1"><span class="en">Supervised LibriSpeech models Zero-shot Whisper models Zero-shot Human (Alec) Ideal robustness (y = x)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-5-1"><span class="zh">（图 2 图例：LibriSpeech 监督模型 / 零样本 Whisper 模型 / 零样本人类（Alec）/ 理想鲁棒性（y = x）。）</span></span></p>
@@ -510,38 +517,55 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-8-1"><span class="zh">我们的主要发现汇总于图 2 与表 2。</span></span><span class="sent" data-sid="s-3-3-8-2"><span class="zh">尽管最好的零样本 Whisper 模型 LibriSpeech clean-test WER 为 2.5，只相当于现代监督基线或 2019 年中期的 SOTA 水平，但零样本 Whisper 模型与 LibriSpeech 监督模型的鲁棒性特性截然不同，且在其他数据集上大幅超过所有参评的 LibriSpeech 模型。</span></span><span class="sent" data-sid="s-3-3-8-3"><span class="zh">（表格表头：Even wav2vec 2.0 / Whisper；RER Dataset × Large (no LM) / Large V2。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-3-3"><code>(%)</code></div>
-<div class="eq" id="eq-3-3-4"><code>LibriSpeech Clean</code></div>
-<div class="eq" id="eq-3-3-5"><code>2.7 2.7 0.0</code></div>
-<div class="eq" id="eq-3-3-6"><code>Artie</code></div>
-<div class="eq" id="eq-3-3-7"><code>24.5 6.2 74.7</code></div>
-<div class="eq" id="eq-3-3-8"><code>Common Voice</code></div>
-<div class="eq" id="eq-3-3-9"><code>29.9 9.0 69.9</code></div>
-<div class="eq" id="eq-3-3-10"><code>Fleurs En</code></div>
-<div class="eq" id="eq-3-3-11"><code>14.6 4.4 69.9</code></div>
-<div class="eq" id="eq-3-3-12"><code>Tedlium</code></div>
-<div class="eq" id="eq-3-3-13"><code>10.5 4.0 61.9</code></div>
-<div class="eq" id="eq-3-3-14"><code>CHiME6</code></div>
-<div class="eq" id="eq-3-3-15"><code>65.8 25.5 61.2</code></div>
-<div class="eq" id="eq-3-3-16"><code>VoxPopuli En</code></div>
-<div class="eq" id="eq-3-3-17"><code>17.9 7.3 59.2</code></div>
-<div class="eq" id="eq-3-3-18"><code>CORAAL</code></div>
-<div class="eq" id="eq-3-3-19"><code>35.6 16.2 54.5</code></div>
-<div class="eq" id="eq-3-3-20"><code>AMI IHM</code></div>
-<div class="eq" id="eq-3-3-21"><code>37.0 16.9 54.3</code></div>
-<div class="eq" id="eq-3-3-22"><code>Switchboard</code></div>
-<div class="eq" id="eq-3-3-23"><code>28.3 13.8 51.2</code></div>
-<div class="eq" id="eq-3-3-24"><code>CallHome</code></div>
-<div class="eq" id="eq-3-3-25"><code>34.8 17.6 49.4</code></div>
-<div class="eq" id="eq-3-3-26"><code>WSJ</code></div>
-<div class="eq" id="eq-3-3-27"><code>7.7 3.9 49.4</code></div>
-<div class="eq" id="eq-3-3-28"><code>AMI SDM1</code></div>
-<div class="eq" id="eq-3-3-29"><code>67.6 36.4 46.2</code></div>
-<div class="eq" id="eq-3-3-30"><code>LibriSpeech Other</code></div>
-<div class="eq" id="eq-3-3-31"><code>6.2 5.2 16.1</code></div>
-<div class="eq" id="eq-3-3-32"><code>Average</code></div>
-<div class="eq" id="eq-3-3-33"><code>29.3 12.8 55.2</code></div>
-<div class="cap" id="tab-3-3-1"><span class="cap-k">表</span><p class="en">Table 2. Detailed comparison of effective robustness across various datasets. Although both models perform within 0.1% of each other on LibriSpeech, a zero-shot Whisper model performs much better on other datasets than expected for its LibriSpeech performance and makes 55.2% less errors on average. Results reported in word error rate (WER) for both models after applying our text normalizer.</p><p class="zh">表 2. 各数据集上有效鲁棒性的详细对比。尽管两个模型在 LibriSpeech 上的表现相差不到 0.1%，零样本 Whisper 模型在其他数据集上的表现远超按其 LibriSpeech 表现预期的水平，平均错误减少 55.2%。两个模型报告的都是应用本文文本标准化器后的词错误率（WER）。</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-3-3-1"><span class="cap-k">表</span><p class="en">Table 2. Detailed comparison of effective robustness across various datasets. Although both models perform within 0.1% of each other on LibriSpeech, a zero-shot Whisper model performs much better on other datasets than expected for its LibriSpeech performance and makes 55.2% less errors on average. Results reported in word error rate (WER) for both models after applying our text normalizer.</p><p class="zh">表 2. 各数据集上有效鲁棒性的详细对比。尽管两个模型在 LibriSpeech 上的表现相差不到 0.1%，零样本 Whisper 模型在其他数据集上的表现远超按其 LibriSpeech 表现预期的水平，平均错误减少 55.2%。两个模型报告的都是应用本文文本标准化器后的词错误率（WER）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Dataset</th><th></th><th></th><th>(%)</th></tr></thead><tbody><tr><td>40</td><td></td><td>LibriSpeech Clean</td><td>2.7</td><td>2.7</td><td>0.0</td></tr>
+<tr><td></td><td>Supervised LibriSpeech models</td><td>Artie</td><td>24.5</td><td>6.2</td><td>74.7</td></tr>
+<tr><td></td><td>Zero-shot Whisper models</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Zero-shot Human (Alec)</td><td>Common Voice</td><td>29.9</td><td>9.0</td><td>69.9</td></tr>
+<tr><td></td><td>Ideal robustness (y = x)</td><td>Fleurs En</td><td>14.6</td><td>4.4</td><td>69.9</td></tr>
+<tr><td>30</td><td></td><td>Tedlium</td><td>10.5</td><td>4.0</td><td>61.9</td></tr>
+<tr><td></td><td></td><td>CHiME6</td><td>65.8</td><td>25.5</td><td>61.2</td></tr>
+<tr><td></td><td></td><td>VoxPopuli En</td><td>17.9</td><td>7.3</td><td>59.2</td></tr>
+<tr><td></td><td></td><td>CORAAL</td><td>35.6</td><td>16.2</td><td>54.5</td></tr>
+<tr><td>20</td><td></td><td>AMI IHM</td><td>37.0</td><td>16.9</td><td>54.3</td></tr>
+<tr><td></td><td></td><td>Switchboard</td><td>28.3</td><td>13.8</td><td>51.2</td></tr>
+<tr><td></td><td></td><td>CallHome</td><td>34.8</td><td>17.6</td><td>49.4</td></tr>
+<tr><td></td><td></td><td>WSJ</td><td>7.7</td><td>3.9</td><td>49.4</td></tr>
+<tr><td>10</td><td></td><td>AMI SDM1</td><td>67.6</td><td>36.4</td><td>46.2</td></tr>
+<tr><td></td><td></td><td>LibriSpeech Other</td><td>6.2</td><td>5.2</td><td>16.1</td></tr>
+<tr><td></td><td></td><td>Average</td><td>29.3</td><td>12.8</td><td>55.2</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>5</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-3-3-9">
           <p class="en-lines"><span class="sent" data-sid="s-3-3-9-1"><span class="en">the smallest zero-shot Whisper model, which has only 39 million parameters and a 6.7 WER on LibriSpeech test-clean is roughly competitive with the best supervised LibriSpeech model when evaluated on other datasets.</span></span> <span class="sent" data-sid="s-3-3-9-2"><span class="en">When compared to a human in Figure 2, the best zero-shot Whisper models roughly match their accuracy and robustness.</span></span> <span class="sent" data-sid="s-3-3-9-3"><span class="en">For a detailed breakdown of this large improvement in robustness, Table 2 compares the performance of the best zero-shot Whisper model with a supervised LibriSpeech model that has the closest performance to it on LibriSpeech test-clean.</span></span> <span class="sent" data-sid="s-3-3-9-4"><span class="en">Despite their very close performance on the reference distribution, the zero-shot Whisper model achieves an average relative error reduction of 55.2% when evaluated on other speech recognition datasets.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-9-1"><span class="zh">即使是最小的零样本 Whisper 模型——只有 39 million（3900 万）参数、LibriSpeech test-clean WER 为 6.7——在其他数据集上评测时也大致能与最好的 LibriSpeech 监督模型竞争。</span></span><span class="sent" data-sid="s-3-3-9-2"><span class="zh">在 Figure 2 中与人类对比时，最好的零样本 Whisper 模型大致达到了人类的准确率和鲁棒性。</span></span><span class="sent" data-sid="s-3-3-9-3"><span class="zh">为详细拆解鲁棒性上的巨大提升，Table 2 把最好的零样本 Whisper 模型与在 LibriSpeech test-clean 上表现最接近它的 LibriSpeech 监督模型做了对比。</span></span><span class="sent" data-sid="s-3-3-9-4"><span class="zh">尽管两者在参考分布上的表现非常接近，零样本 Whisper 模型在其他语音识别数据集上评测时取得了平均 55.2% 的相对错误率下降。</span></span></p>
@@ -565,25 +589,25 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="eq" id="eq-3-4-1"><code>80</code></div>
 <div class="eq" id="eq-3-4-2"><code>TG MT NE BE HY</code></div>
-<div class="eq" id="eq-3-4-3"><code>40</code></div>
+
 <div class="pblk" id="p-3-4-3">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="en">SW MR IS KN Word Error Rate (WER) KK SR AF CY FA LT HE AZ LV UR SL HI ET</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="zh">Whisper 在 Multilingual LibriSpeech 上表现良好，超过 XLS-R (Babu et al., 2021)、mSLAM (Bapna et al., 2022)。（图表：各语种 WER（刻度 2.5/5/10/20/40/80）随预训练转写音频小时数（0.1/1/10/100/1K/10K/100K/1M）变化的散点，r2 = 0.83；语种代码 MY/KA/BN/GU/PA/LO/TE/ML/KM/UZ/TG/MT/NE/BE/HY/SW/MR/IS/KN/KK/SR/AF/CY/FA/LT/HE/AZ/LV/UR/SL/HI/ET/TA/HU/MK/AR/RO/GL/ZH/BG/FIL/BS/KO/DA/EL/HR/CS/SK/TH/VI/FI/NB/MS/UK/SV/TR/FR/CA/ID/NL/RU/PL/JA/DE/PT/EN/IT/ES。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-4-4"><code>20</code></div>
+
 <div class="pblk" id="p-3-4-4">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="en">TA HU MK AR RO GL ZH BG FIL BS KO DA EL HR CS SK TH VI</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="zh">Whisper 在 Multilingual LibriSpeech 上表现良好，超过 XLS-R (Babu et al., 2021)、mSLAM (Bapna et al., 2022)。（图表：各语种 WER（刻度 2.5/5/10/20/40/80）随预训练转写音频小时数（0.1/1/10/100/1K/10K/100K/1M）变化的散点，r2 = 0.83；语种代码 MY/KA/BN/GU/PA/LO/TE/ML/KM/UZ/TG/MT/NE/BE/HY/SW/MR/IS/KN/KK/SR/AF/CY/FA/LT/HE/AZ/LV/UR/SL/HI/ET/TA/HU/MK/AR/RO/GL/ZH/BG/FIL/BS/KO/DA/EL/HR/CS/SK/TH/VI/FI/NB/MS/UK/SV/TR/FR/CA/ID/NL/RU/PL/JA/DE/PT/EN/IT/ES。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-4-5"><code>10</code></div>
+
 <div class="pblk" id="p-3-4-5">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-5-1"><span class="en">FI NB MS UK SV TR FR CA ID NL RU PL JA</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-5-1"><span class="zh">Whisper 在 Multilingual LibriSpeech 上表现良好，超过 XLS-R (Babu et al., 2021)、mSLAM (Bapna et al., 2022)。（图表：各语种 WER（刻度 2.5/5/10/20/40/80）随预训练转写音频小时数（0.1/1/10/100/1K/10K/100K/1M）变化的散点，r2 = 0.83；语种代码 MY/KA/BN/GU/PA/LO/TE/ML/KM/UZ/TG/MT/NE/BE/HY/SW/MR/IS/KN/KK/SR/AF/CY/FA/LT/HE/AZ/LV/UR/SL/HI/ET/TA/HU/MK/AR/RO/GL/ZH/BG/FIL/BS/KO/DA/EL/HR/CS/SK/TH/VI/FI/NB/MS/UK/SV/TR/FR/CA/ID/NL/RU/PL/JA/DE/PT/EN/IT/ES。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-4-6"><code>5</code></div>
+
 <div class="eq" id="eq-3-4-7"><code>DE PT EN IT r2 = 0.83 ES</code></div>
 <div class="eq" id="eq-3-4-8"><code>2.5 0.1 1 10 100</code></div>
 <div class="pblk" id="p-3-4-6">
@@ -676,28 +700,32 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-3-4-18">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-18-1"><span class="en">X →English High Mid Low All XMEF-X</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-18-1"><span class="zh">（表头：X →English × High / Mid / Low / All；XMEF-X。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-4-29"><code>34.2 20.2 5.9 14.7</code></div>
-<div class="eq" id="eq-3-4-30"><code>XLS-R (2B)</code></div>
-<div class="eq" id="eq-3-4-31"><code>36.1 27.7 15.1 22.1</code></div>
-<div class="eq" id="eq-3-4-32"><code>mSLAM-CTC (2B)</code></div>
-<div class="eq" id="eq-3-4-33"><code>37.8 29.6 18.5 24.8</code></div>
-<div class="eq" id="eq-3-4-34"><code>Maestro</code></div>
-<div class="eq" id="eq-3-4-35"><code>38.2 31.3 18.4 25.2</code></div>
-<div class="eq" id="eq-3-4-36"><code>Zero-Shot Whisper</code></div>
-<div class="eq" id="eq-3-4-37"><code>36.2 32.6 25.2 29.1</code></div>
-<div class="cap" id="tab-3-4-2"><span class="cap-k">表</span><p class="en">Table 4. X→en Speech translation performance. Zero-shot Whisper outperforms existing models on CoVoST2 in the overall, medium, and low resource settings but still moderately underperforms on high-resource languages compared to prior directly supervised work.</p><p class="zh">表 4. X→en 语音翻译性能。零样本 Whisper 在 CoVoST2 的总体、中资源和低资源设定上超过现有模型，但在高资源语言上仍适度落后于此前直接监督的工作。</p></div>
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-3-4-2"><span class="cap-k">表</span><p class="en">Table 4. X→en Speech translation performance. Zero-shot Whisper outperforms existing models on CoVoST2 in the overall, medium, and low resource settings but still moderately underperforms on high-resource languages compared to prior directly supervised work.</p><p class="zh">表 4. X→en 语音翻译性能。零样本 Whisper 在 CoVoST2 的总体、中资源和低资源设定上超过现有模型，但在高资源语言上仍适度落后于此前直接监督的工作。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td>100</td></tr>
+<tr><td>X →English</td><td>High</td><td>Mid</td><td>Low</td><td>All</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>50</td></tr>
+<tr><td>XMEF-X</td><td>34.2</td><td>20.2</td><td>5.9</td><td>14.7</td><td></td></tr>
+<tr><td>XLS-R (2B)</td><td>36.1</td><td>27.7</td><td>15.1</td><td>22.1</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>20</td></tr>
+<tr><td>mSLAM-CTC (2B)</td><td>37.8</td><td>29.6</td><td>18.5</td><td>24.8</td><td></td></tr>
+<tr><td>Maestro</td><td>38.2</td><td>31.3</td><td>18.4</td><td>25.2</td><td>10</td></tr>
+<tr><td>Zero-Shot Whisper</td><td>36.2</td><td>32.6</td><td>25.2</td><td>29.1</td><td>5</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-3-4-19">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-19-1"><span class="en">Language ID Fleurs w2v-bert-51 (0.6B)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-19-1"><span class="zh">（表格行：Language ID × Fleurs——w2v-bert-51 (0.6B) 71.4；mSLAM-CTC (2B) 77.7；Zero-shot Whisper 64.5。）</span></span></p>
           
         </div>
 <div class="eq" id="eq-3-4-38"><code>71.4</code></div>
-<div class="eq" id="eq-3-4-39"><code>mSLAM-CTC (2B)</code></div>
+
 <div class="eq" id="eq-3-4-40"><code>77.7</code></div>
 <div class="eq" id="eq-3-4-41"><code>Zero-shot Whisper</code></div>
 <div class="eq" id="eq-3-4-42"><code>64.5</code></div>
@@ -713,7 +741,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-5-2-1"><span class="zh">作为在更多语言上的额外分析，我们还把 Fleurs 这个语音识别数据集改作翻译数据集使用。</span></span><span class="sent" data-sid="s-3-5-2-2"><span class="zh">由于每种语言转录的是相同的句子，我们把英语转录当作参考译文。</span></span><span class="sent" data-sid="s-3-5-2-3"><span class="zh">在 Figure 4 中，我们可视化了每种语言的翻译训练数据量与其在 Fleurs 上零样本 BLEU 分数之间的相关性。</span></span><span class="sent" data-sid="s-3-5-2-4"><span class="zh">虽然随训练数据增加有明显改进趋势，但平方相关系数远低于语音识别上观察到的 0.83。（图 5：白噪声与 pub 噪声下 LibriSpeech test-clean WER（刻度 1/2/5/10/20/50/100）随信噪比（-10/0/10/20/30/40 dB）变化，对比 unispeech-sat-base-100h-libri-ft、wav2vec2-base-100h、wav2vec2-base-960h、wav2vec2-large-960h、wav2vec2-large-robust-ft-libri-960h、wav2vec2-large-960h-lv60-self、asr-crdnn-rnnlm-librispeech、asr-transformer-transformerlm-librispeech、hubert-large-ls960-ft、hubert-xlarge-ls960-ft、s2t-medium/large-librispeech-asr、stt_en_conformer_ctc_large、stt_en_conformer_transducer_xlarge 与 Whisper。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-5-1"><code>100</code></div>
+
 <div class="eq" id="eq-3-5-2"><code>WER on LibriSpeech test-clean (%)</code></div>
 <div class="eq" id="eq-3-5-3"><code>50 20 10 5 2 1 40 30 20 10 0 -10</code></div>
 <div class="eq" id="eq-3-5-4"><code>signal-to-noise ratio (dB)</code></div>
@@ -1405,275 +1433,481 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <section>
       <h2 class="sech lv1" id="sec-D"><span class="secnum">D</span> <span class="t-zh">原始性能数值表</span><span class="t-en">Raw Performance Tables</span></h2></section>
 <section>
-      <h3 class="sech lv2" id="sec-D-1"><span class="secnum">D.1</span> <span class="t-zh">英语转录</span><span class="t-en">English Transcription</span></h3><div class="pblk" id="p-D-1-1">
-          <p class="en-lines"><span class="sent" data-sid="s-D-1-1-1"><span class="en">D.1.1.</span></span> <span class="sent" data-sid="s-D-1-1-2"><span class="en">GREEDY DECODING LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 CallHome WSJ Model CommonVoice5.1 VoxPopuli.en Switchboard Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-D-1-1-1"><span class="zh">（附录小节号：D.1.1.）</span></span><span class="sent" data-sid="s-D-1-1-2"><span class="zh">5.
-贪心解码 LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 CallHome WSJ 模型 CommonVoice5.1 VoxPopuli.en Switchboard Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-D-1-1"><code>5.6 14.6 6.0 5.0 24.1 17.8 26.3 20.0 23.9 41.3 23.7 50.3 11.7 11.6</code></div>
-<div class="eq" id="eq-D-1-2"><code>Whisper tiny</code></div>
-<div class="eq" id="eq-D-1-3"><code>7.6 16.9 7.0 6.7 30.0 22.8 29.6 23.9 31.0 49.6 27.6 58.1 12.7 13.7</code></div>
-<div class="eq" id="eq-D-1-4"><code>Whisper base.en</code></div>
-<div class="eq" id="eq-D-1-5"><code>4.2 10.2 4.9 4.6 20.9 15.2 19.0 13.4 22.6 36.4 20.5 46.7 10.0 7.6</code></div>
-<div class="eq" id="eq-D-1-6"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-1-7"><code>5.0 12.4 5.5 5.1 23.0 16.8 21.6 16.9 26.0 40.2 22.0 49.9 10.0 10.1</code></div>
-<div class="eq" id="eq-D-1-8"><code>Whisper small.en</code></div>
-<div class="eq" id="eq-D-1-9"><code>3.1 7.4 4.0 3.3 18.2 15.7 13.1 9.7 20.2 27.6 17.5 38.0 8.1 6.0</code></div>
-<div class="eq" id="eq-D-1-10"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-1-11"><code>3.4 7.6 4.3 4.0 17.5 14.5 13.5 10.3 18.1 29.3 19.0 39.6 8.3 6.6</code></div>
-<div class="eq" id="eq-D-1-12"><code>Whisper medium.en</code></div>
-<div class="eq" id="eq-D-1-13"><code>3.1 6.3 4.1 3.3 16.2 14.1 10.6 7.6 17.5 25.3 16.4 37.2 7.4 5.0</code></div>
-<div class="eq" id="eq-D-1-14"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-1-15"><code>2.9 5.9 3.8 2.9 16.4 14.0 10.3 7.2 16.6 26.4 16.6 36.0 7.4 5.4</code></div>
-<div class="eq" id="eq-D-1-16"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-1-17"><code>2.7 5.6 4.0 3.1 15.8 13.1 9.5 6.7 19.4 25.6 16.4 36.9 7.3 4.6</code></div>
-<div class="eq" id="eq-D-1-18"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-1-19"><code>2.7 5.2 4.0 3.9 17.6 13.8 9.0 6.2 16.2 25.5 16.9 36.4 7.3 4.4</code></div>
-<div class="eq" id="eq-D-1-20"><code>wav2vec2-base-100h</code></div>
-<div class="eq" id="eq-D-1-21"><code>6.0 13.4 17.8 13.9 46.9 40.2 47.4 40.8 47.0 79.9 48.1 81.2 28.9 23.1</code></div>
-<div class="eq" id="eq-D-1-22"><code>wav2vec2-base-960h</code></div>
-<div class="eq" id="eq-D-1-23"><code>3.3 8.5 12.8 8.9 40.6 32.9 36.4 30.9 39.9 68.5 40.2 71.9 21.4 17.4</code></div>
-<div class="eq" id="eq-D-1-24"><code>wav2vec2-large-960h-lv60-self</code></div>
-<div class="eq" id="eq-D-1-25"><code>1.8 3.8 7.4 4.4 29.1 22.2 19.9 15.8 29.2 56.3 30.8 57.0 13.0 10.2</code></div>
-<div class="eq" id="eq-D-1-26"><code>wav2vec2-large-960h</code></div>
-<div class="eq" id="eq-D-1-27"><code>2.7 6.2 10.5 7.7 34.8 28.3 29.9 24.5 35.6 65.8 37.0 67.6 17.9 14.6</code></div>
-<div class="eq" id="eq-D-1-28"><code>wav2vec2-large-robust-ft-libri-960h</code></div>
-<div class="eq" id="eq-D-1-29"><code>2.6 5.3 9.2 6.1 23.4 19.8 20.3 16.2 29.4 58.1 31.7 61.6 15.1 11.8</code></div>
-<div class="eq" id="eq-D-1-30"><code>asr-crdnn-rnnlm-librispeech</code></div>
-<div class="eq" id="eq-D-1-31"><code>3.0 9.7 17.7 10.7 59.7 56.1 43.7 33.3 83.8 81.0 57.2 85.8 30.6 32.4</code></div>
-<div class="eq" id="eq-D-1-32"><code>asr-transformer-transformerlm-librispeech</code></div>
-<div class="eq" id="eq-D-1-33"><code>2.1 5.4 11.9 7.4 38.9 33.0 30.6 23.5 44.9 79.5 44.5 75.4 17.8 17.0</code></div>
-<div class="eq" id="eq-D-1-34"><code>hubert-large-ls960-ft</code></div>
-<div class="eq" id="eq-D-1-35"><code>2.0 4.1 8.4 5.4 29.6 22.8 20.8 16.0 32.0 60.0 33.7 59.1 14.4 10.9</code></div>
-<div class="eq" id="eq-D-1-36"><code>hubert-xlarge-ls960-ft</code></div>
-<div class="eq" id="eq-D-1-37"><code>1.9 3.5 8.3 5.4 29.3 22.2 19.8 14.8 31.5 58.5 33.3 58.9 14.2 10.5</code></div>
-<div class="eq" id="eq-D-1-38"><code>s2t-large-librispeech-asr</code></div>
-<div class="eq" id="eq-D-1-39"><code>3.3 8.1 14.9 9.4 54.5 40.3 38.1 30.7 50.2 79.2 53.4 79.5 21.6 18.0</code></div>
-<div class="eq" id="eq-D-1-40"><code>s2t-medium-librispeech-asr</code></div>
-<div class="eq" id="eq-D-1-41"><code>3.6 8.2 15.7 9.7 58.1 42.4 39.3 31.3 52.6 79.8 60.3 85.3 22.9 19.7</code></div>
-<div class="eq" id="eq-D-1-42"><code>stt en conformer ctc large</code></div>
-<div class="eq" id="eq-D-1-43"><code>2.1 4.2 4.4 2.1 11.3 8.2 7.4 4.0 13.5 30.5 15.9 39.9 6.7 8.2</code></div>
-<div class="eq" id="eq-D-1-44"><code>stt en conformer transducer xlarge</code></div>
-<div class="eq" id="eq-D-1-45"><code>1.5 2.8 4.3 1.2 12.0 7.4 4.3 1.5 19.9 36.8 20.5 48.6 6.0 6.3</code></div>
-<div class="eq" id="eq-D-1-46"><code>unispeech-sat-base-100h-libri-ft</code></div>
-<div class="eq" id="eq-D-1-47"><code>5.7 13.8 17.7 13.6 46.5 40.0 45.3 38.6 44.7 74.8 47.8 77.7 29.8 22.4</code></div>
-<div class="cap" id="tab-D-1-1"><span class="cap-k">表</span><p class="en">Table 8. English transcription WER (%) with greedy decoding</p><p class="zh">表 8. 贪心解码下的英语转录 WER（%）。</p></div>
-<div class="pblk" id="p-D-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-D-1-2-1"><span class="en">D.1.2.</span></span> <span class="sent" data-sid="s-D-1-2-2"><span class="en">BEAM SEARCH WITH TEMPERATURE FALLBACK LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 Switchboard CallHome WSJ Model CommonVoice5.1 VoxPopuli.en Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-D-1-2-1"><span class="zh">（附录小节号：D.1.2.）</span></span><span class="sent" data-sid="s-D-1-2-2"><span class="zh">5.
-带回退的束搜索 LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 Switchboard CallHome WSJ 模型 CommonVoice5.1 VoxPopuli.en Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-D-1-48"><code>5.4 12.8 5.4 4.6 21.4 16.0 23.5 18.4 21.4 42.0 22.7 54.2 10.9 10.0</code></div>
-<div class="eq" id="eq-D-1-49"><code>Whisper tiny</code></div>
-<div class="eq" id="eq-D-1-50"><code>6.7 15.0 6.3 5.9 24.8 18.3 26.1 20.8 25.1 48.0 25.6 57.3 11.6 12.4</code></div>
-<div class="eq" id="eq-D-1-51"><code>Whisper base.en</code></div>
-<div class="eq" id="eq-D-1-52"><code>4.1 9.6 4.6 4.0 18.3 14.2 17.5 13.2 18.5 35.2 21.1 49.0 9.3 7.1</code></div>
-<div class="eq" id="eq-D-1-53"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-1-54"><code>4.9 11.0 5.0 4.4 20.5 15.6 19.4 15.3 20.5 40.0 21.5 50.0 9.5 8.9</code></div>
-<div class="eq" id="eq-D-1-55"><code>Whisper small.en</code></div>
-<div class="eq" id="eq-D-1-56"><code>3.2 6.7 4.3 3.0 17.2 13.4 12.6 9.2 17.5 29.5 17.9 42.5 8.1 5.3</code></div>
-<div class="eq" id="eq-D-1-57"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-1-58"><code>3.3 7.2 4.3 3.9 17.1 13.3 12.8 9.3 16.4 30.9 19.2 43.5 8.2 6.1</code></div>
-<div class="eq" id="eq-D-1-59"><code>Whisper medium.en</code></div>
-<div class="eq" id="eq-D-1-60"><code>3.0 5.7 4.3 2.8 14.7 12.4 10.3 7.4 15.3 27.0 17.1 39.4 7.8 4.5</code></div>
-<div class="eq" id="eq-D-1-61"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-1-62"><code>2.7 5.6 4.0 2.7 15.3 13.2 9.7 6.7 14.9 27.6 17.6 43.0 7.6 4.4</code></div>
-<div class="eq" id="eq-D-1-63"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-1-64"><code>2.8 5.7 4.3 3.5 16.2 14.2 8.9 6.4 15.1 25.2 17.6 37.1 7.2 4.5</code></div>
-<div class="eq" id="eq-D-1-65"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-1-66"><code>2.5 4.9 3.7 2.6 16.4 13.6 8.2 5.7 14.2 24.9 17.4 39.9 7.0 4.2</code></div>
-<div class="cap" id="tab-D-1-2"><span class="cap-k">表</span><p class="en">Table 9. English transcription WER (%) with beam search and temperature fallback</p><p class="zh">表 9. 束搜索与温度回退下的英语转录 WER（%）。</p></div></section>
+      <h3 class="sech lv2" id="sec-D-1"><span class="secnum">D.1</span> <span class="t-zh">英语转录</span><span class="t-en">English Transcription</span></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-D-1-1"><span class="cap-k">表</span><p class="en">Table 8. English transcription WER (%) with greedy decoding</p><p class="zh">表 8. 贪心解码下的英语转录 WER（%）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>LibriSpeech.test-clean</th><th>LibriSpeech.test-other</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>CommonVoice5.1</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>TED-LIUM3</th><th></th><th></th><th>Switchboard</th><th></th><th></th><th></th><th></th><th></th><th>AMI-SDM1</th><th>VoxPopuli.en</th><th>Fleurs.en us</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>CallHome</th><th></th><th></th><th></th><th>CORAAL</th><th>CHiME6</th><th>AMI-IHM</th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td>WSJ</td><td></td><td></td><td></td><td>Artie</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny.en</td><td>5.6</td><td>14.6</td><td>6.0</td><td>5.0</td><td>24.1</td><td>17.8</td><td>26.3</td><td>20.0</td><td>23.9</td><td>41.3</td><td>23.7</td><td>50.3</td><td>11.7</td><td>11.6</td></tr>
+<tr><td>Whisper tiny</td><td>7.6</td><td>16.9</td><td>7.0</td><td>6.7</td><td>30.0</td><td>22.8</td><td>29.6</td><td>23.9</td><td>31.0</td><td>49.6</td><td>27.6</td><td>58.1</td><td>12.7</td><td>13.7</td></tr>
+<tr><td>Whisper base.en</td><td>4.2</td><td>10.2</td><td>4.9</td><td>4.6</td><td>20.9</td><td>15.2</td><td>19.0</td><td>13.4</td><td>22.6</td><td>36.4</td><td>20.5</td><td>46.7</td><td>10.0</td><td>7.6</td></tr>
+<tr><td>Whisper base</td><td>5.0</td><td>12.4</td><td>5.5</td><td>5.1</td><td>23.0</td><td>16.8</td><td>21.6</td><td>16.9</td><td>26.0</td><td>40.2</td><td>22.0</td><td>49.9</td><td>10.0</td><td>10.1</td></tr>
+<tr><td>Whisper small.en</td><td>3.1</td><td>7.4</td><td>4.0</td><td>3.3</td><td>18.2</td><td>15.7</td><td>13.1</td><td>9.7</td><td>20.2</td><td>27.6</td><td>17.5</td><td>38.0</td><td>8.1</td><td>6.0</td></tr>
+<tr><td>Whisper small</td><td>3.4</td><td>7.6</td><td>4.3</td><td>4.0</td><td>17.5</td><td>14.5</td><td>13.5</td><td>10.3</td><td>18.1</td><td>29.3</td><td>19.0</td><td>39.6</td><td>8.3</td><td>6.6</td></tr>
+<tr><td>Whisper medium.en</td><td>3.1</td><td>6.3</td><td>4.1</td><td>3.3</td><td>16.2</td><td>14.1</td><td>10.6</td><td>7.6</td><td>17.5</td><td>25.3</td><td>16.4</td><td>37.2</td><td>7.4</td><td>5.0</td></tr>
+<tr><td>Whisper medium</td><td>2.9</td><td>5.9</td><td>3.8</td><td>2.9</td><td>16.4</td><td>14.0</td><td>10.3</td><td>7.2</td><td>16.6</td><td>26.4</td><td>16.6</td><td>36.0</td><td>7.4</td><td>5.4</td></tr>
+<tr><td>Whisper large</td><td>2.7</td><td>5.6</td><td>4.0</td><td>3.1</td><td>15.8</td><td>13.1</td><td>9.5</td><td>6.7</td><td>19.4</td><td>25.6</td><td>16.4</td><td>36.9</td><td>7.3</td><td>4.6</td></tr>
+<tr><td>Whisper large-v2</td><td>2.7</td><td>5.2</td><td>4.0</td><td>3.9</td><td>17.6</td><td>13.8</td><td>9.0</td><td>6.2</td><td>16.2</td><td>25.5</td><td>16.9</td><td>36.4</td><td>7.3</td><td>4.4</td></tr>
+<tr><td>wav2vec2-base-100h</td><td>6.0</td><td>13.4</td><td>17.8</td><td>13.9</td><td>46.9</td><td>40.2</td><td>47.4</td><td>40.8</td><td>47.0</td><td>79.9</td><td>48.1</td><td>81.2</td><td>28.9</td><td>23.1</td></tr>
+<tr><td>wav2vec2-base-960h</td><td>3.3</td><td>8.5</td><td>12.8</td><td>8.9</td><td>40.6</td><td>32.9</td><td>36.4</td><td>30.9</td><td>39.9</td><td>68.5</td><td>40.2</td><td>71.9</td><td>21.4</td><td>17.4</td></tr>
+<tr><td>wav2vec2-large-960h-lv60-self</td><td>1.8</td><td>3.8</td><td>7.4</td><td>4.4</td><td>29.1</td><td>22.2</td><td>19.9</td><td>15.8</td><td>29.2</td><td>56.3</td><td>30.8</td><td>57.0</td><td>13.0</td><td>10.2</td></tr>
+<tr><td>wav2vec2-large-960h</td><td>2.7</td><td>6.2</td><td>10.5</td><td>7.7</td><td>34.8</td><td>28.3</td><td>29.9</td><td>24.5</td><td>35.6</td><td>65.8</td><td>37.0</td><td>67.6</td><td>17.9</td><td>14.6</td></tr>
+<tr><td>wav2vec2-large-robust-ft-libri-960h</td><td>2.6</td><td>5.3</td><td>9.2</td><td>6.1</td><td>23.4</td><td>19.8</td><td>20.3</td><td>16.2</td><td>29.4</td><td>58.1</td><td>31.7</td><td>61.6</td><td>15.1</td><td>11.8</td></tr>
+<tr><td>asr-crdnn-rnnlm-librispeech</td><td>3.0</td><td>9.7</td><td>17.7</td><td>10.7</td><td>59.7</td><td>56.1</td><td>43.7</td><td>33.3</td><td>83.8</td><td>81.0</td><td>57.2</td><td>85.8</td><td>30.6</td><td>32.4</td></tr>
+<tr><td>asr-transformer-transformerlm-librispeech</td><td>2.1</td><td>5.4</td><td>11.9</td><td>7.4</td><td>38.9</td><td>33.0</td><td>30.6</td><td>23.5</td><td>44.9</td><td>79.5</td><td>44.5</td><td>75.4</td><td>17.8</td><td>17.0</td></tr>
+<tr><td>hubert-large-ls960-ft</td><td>2.0</td><td>4.1</td><td>8.4</td><td>5.4</td><td>29.6</td><td>22.8</td><td>20.8</td><td>16.0</td><td>32.0</td><td>60.0</td><td>33.7</td><td>59.1</td><td>14.4</td><td>10.9</td></tr>
+<tr><td>hubert-xlarge-ls960-ft</td><td>1.9</td><td>3.5</td><td>8.3</td><td>5.4</td><td>29.3</td><td>22.2</td><td>19.8</td><td>14.8</td><td>31.5</td><td>58.5</td><td>33.3</td><td>58.9</td><td>14.2</td><td>10.5</td></tr>
+<tr><td>s2t-large-librispeech-asr</td><td>3.3</td><td>8.1</td><td>14.9</td><td>9.4</td><td>54.5</td><td>40.3</td><td>38.1</td><td>30.7</td><td>50.2</td><td>79.2</td><td>53.4</td><td>79.5</td><td>21.6</td><td>18.0</td></tr>
+<tr><td>s2t-medium-librispeech-asr</td><td>3.6</td><td>8.2</td><td>15.7</td><td>9.7</td><td>58.1</td><td>42.4</td><td>39.3</td><td>31.3</td><td>52.6</td><td>79.8</td><td>60.3</td><td>85.3</td><td>22.9</td><td>19.7</td></tr>
+<tr><td>stt en conformer ctc large</td><td>2.1</td><td>4.2</td><td>4.4</td><td>2.1</td><td>11.3</td><td>8.2</td><td>7.4</td><td>4.0</td><td>13.5</td><td>30.5</td><td>15.9</td><td>39.9</td><td>6.7</td><td>8.2</td></tr>
+<tr><td>stt en conformer transducer xlarge</td><td>1.5</td><td>2.8</td><td>4.3</td><td>1.2</td><td>12.0</td><td>7.4</td><td>4.3</td><td>1.5</td><td>19.9</td><td>36.8</td><td>20.5</td><td>48.6</td><td>6.0</td><td>6.3</td></tr>
+<tr><td>unispeech-sat-base-100h-libri-ft</td><td>5.7</td><td>13.8</td><td>17.7</td><td>13.6</td><td>46.5</td><td>40.0</td><td>45.3</td><td>38.6</td><td>44.7</td><td>74.8</td><td>47.8</td><td>77.7</td><td>29.8</td><td>22.4</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-D-1-2"><span class="cap-k">表</span><p class="en">Table 9. English transcription WER (%) with beam search and temperature fallback</p><p class="zh">表 9. 束搜索与温度回退下的英语转录 WER（%）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>LibriSpeech.test-clean</th><th>LibriSpeech.test-other</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>CommonVoice5.1</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>TED-LIUM3</th><th></th><th></th><th>Switchboard</th><th></th><th></th><th></th><th></th><th></th><th>AMI-SDM1</th><th>VoxPopuli.en</th><th>Fleurs.en us</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>CallHome</th><th></th><th></th><th></th><th>CORAAL</th><th>CHiME6</th><th>AMI-IHM</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>WSJ</th><th></th><th></th><th></th><th>Artie</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny.en</td><td>5.4</td><td>12.8</td><td>5.4</td><td>4.6</td><td>21.4</td><td>16.0</td><td>23.5</td><td>18.4</td><td>21.4</td><td>42.0</td><td>22.7</td><td>54.2</td><td>10.9</td><td>10.0</td></tr>
+<tr><td>Whisper tiny</td><td>6.7</td><td>15.0</td><td>6.3</td><td>5.9</td><td>24.8</td><td>18.3</td><td>26.1</td><td>20.8</td><td>25.1</td><td>48.0</td><td>25.6</td><td>57.3</td><td>11.6</td><td>12.4</td></tr>
+<tr><td>Whisper base.en</td><td>4.1</td><td>9.6</td><td>4.6</td><td>4.0</td><td>18.3</td><td>14.2</td><td>17.5</td><td>13.2</td><td>18.5</td><td>35.2</td><td>21.1</td><td>49.0</td><td>9.3</td><td>7.1</td></tr>
+<tr><td>Whisper base</td><td>4.9</td><td>11.0</td><td>5.0</td><td>4.4</td><td>20.5</td><td>15.6</td><td>19.4</td><td>15.3</td><td>20.5</td><td>40.0</td><td>21.5</td><td>50.0</td><td>9.5</td><td>8.9</td></tr>
+<tr><td>Whisper small.en</td><td>3.2</td><td>6.7</td><td>4.3</td><td>3.0</td><td>17.2</td><td>13.4</td><td>12.6</td><td>9.2</td><td>17.5</td><td>29.5</td><td>17.9</td><td>42.5</td><td>8.1</td><td>5.3</td></tr>
+<tr><td>Whisper small</td><td>3.3</td><td>7.2</td><td>4.3</td><td>3.9</td><td>17.1</td><td>13.3</td><td>12.8</td><td>9.3</td><td>16.4</td><td>30.9</td><td>19.2</td><td>43.5</td><td>8.2</td><td>6.1</td></tr>
+<tr><td>Whisper medium.en</td><td>3.0</td><td>5.7</td><td>4.3</td><td>2.8</td><td>14.7</td><td>12.4</td><td>10.3</td><td>7.4</td><td>15.3</td><td>27.0</td><td>17.1</td><td>39.4</td><td>7.8</td><td>4.5</td></tr>
+<tr><td>Whisper medium</td><td>2.7</td><td>5.6</td><td>4.0</td><td>2.7</td><td>15.3</td><td>13.2</td><td>9.7</td><td>6.7</td><td>14.9</td><td>27.6</td><td>17.6</td><td>43.0</td><td>7.6</td><td>4.4</td></tr>
+<tr><td>Whisper large</td><td>2.8</td><td>5.7</td><td>4.3</td><td>3.5</td><td>16.2</td><td>14.2</td><td>8.9</td><td>6.4</td><td>15.1</td><td>25.2</td><td>17.6</td><td>37.1</td><td>7.2</td><td>4.5</td></tr>
+<tr><td>Whisper large-v2</td><td>2.5</td><td>4.9</td><td>3.7</td><td>2.6</td><td>16.4</td><td>13.6</td><td>8.2</td><td>5.7</td><td>14.2</td><td>24.9</td><td>17.4</td><td>39.9</td><td>7.0</td><td>4.2</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-D-2"><span class="secnum">D.2</span> <span class="t-zh">多语言转录</span><span class="t-en">Multilingual Transcription</span></h3><div class="pblk" id="p-D-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-1-1"><span class="en">D.2.1.</span></span> <span class="sent" data-sid="s-D-2-1-2"><span class="en">MULTILINGUAL LIBRISPEECH English French Dutch Model Portuguese German Spanish Italian Polish Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-1-1"><span class="zh">（附录小节号：D.2.1.）</span></span><span class="sent" data-sid="s-D-2-1-2"><span class="zh">（表 D.2.1 列头：MULTILINGUAL LIBRISPEECH；English / French / Dutch / Model / Portuguese / German / Spanish / Italian / Polish / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-2-1"><code>39.4 15.7 36.8 24.9 41.7 34.2 31.3 19.2</code></div>
-<div class="eq" id="eq-D-2-2"><code>Whisper base</code></div>
+
+
 <div class="eq" id="eq-D-2-3"><code>28.4 11.7 26.6 17.7 31.1 22.8 21.9 12.8</code></div>
-<div class="eq" id="eq-D-2-4"><code>Whisper small</code></div>
+
 <div class="eq" id="eq-D-2-5"><code>17.2 8.3 16.2 10.5 21.4 11.2 13.0 7.8</code></div>
-<div class="eq" id="eq-D-2-6"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-2-7"><code>11.7 6.8 8.9 7.4 16.0 6.5 9.0 5.3</code></div>
-<div class="eq" id="eq-D-2-8"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-2-9"><code>10.2 6.3 8.9 6.6 14.3 6.6 9.2 5.4</code></div>
-<div class="eq" id="eq-D-2-10"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-2-11"><code>9.3 6.2 7.3 5.5 13.8 5.0 6.8 4.2</code></div>
-<div class="cap" id="tab-D-2-1"><span class="cap-k">表</span><p class="en">Table 10. WER (%) on MLS</p><p class="zh">表 10. MLS 上的 WER（%）。</p></div>
+
+
+
+
+
+
+<div class="cap" id="tab-D-2-1"><span class="cap-k">表</span><p class="en">Table 10. WER (%) on MLS</p><p class="zh">表 10. MLS 上的 WER（%）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>Bulgarian</th><th></th><th></th><th></th><th></th><th></th><th></th><th>German</th><th></th><th></th><th></th><th>Estonian</th><th></th></tr><tr><th></th><th></th><th>Arabic</th><th></th><th></th><th>Bengali</th><th>Catalan</th><th>Czech</th><th>Welsh</th><th>Danish</th><th></th><th>Greek</th><th>English</th><th>Spanish</th><th></th><th>Persian</th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Whisper tiny</td><td>90.9</td><td></td><td>79.3</td><td>104.1</td><td></td><td>51.0</td><td>79.7</td><td>101.8</td><td>77.2</td><td>34.5</td><td>61.9</td><td>28.8</td><td>30.3</td><td></td><td>120.3</td></tr>
+<tr><td>Whisper base</td><td>84.4</td><td></td><td>68.1</td><td>103.7</td><td></td><td>39.9</td><td>63.1</td><td>93.8</td><td>57.5</td><td>24.5</td><td>51.5</td><td>21.9</td><td>19.6</td><td>88.1</td><td>99.0</td></tr>
+<tr><td>Whisper small</td><td>66.4</td><td></td><td>44.8</td><td>118.6</td><td></td><td>23.8</td><td>34.1</td><td>65.4</td><td>32.1</td><td>13.0</td><td>31.7</td><td>14.5</td><td>10.3</td><td>67.2</td><td>71.9</td></tr>
+<tr><td>Whisper medium</td><td>60.3</td><td></td><td>26.7</td><td>124.7</td><td></td><td>16.4</td><td>18.8</td><td>43.6</td><td>19.3</td><td>8.5</td><td>20.0</td><td>11.2</td><td>6.9</td><td>45.6</td><td>49.9</td></tr>
+<tr><td>Whisper large</td><td>56.0</td><td></td><td>24.1</td><td>106.0</td><td></td><td>15.3</td><td>17.1</td><td>40.3</td><td>18.3</td><td>7.7</td><td>18.3</td><td>10.1</td><td>6.4</td><td>41.4</td><td>44.8</td></tr>
+<tr><td>Whisper large-v2</td><td>53.8</td><td></td><td>19.9</td><td>103.4</td><td></td><td>14.1</td><td>13.5</td><td>34.2</td><td>14.4</td><td>6.4</td><td>16.0</td><td>9.4</td><td>5.6</td><td>35.1</td><td>39.4</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Hungarian</td><td>Indonesian</td><td></td><td></td><td>Lithuanian</td><td></td><td>Malayalam</td><td>Mongolian</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Finnish</td><td>French</td><td></td><td></td><td></td><td></td><td></td><td>Japanese</td><td></td><td>Latvian</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>Hindi</td><td></td><td></td><td>Italian</td><td></td><td></td><td></td><td></td><td></td><td>Dutch</td><td>Polish</td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td>68.5</td><td></td><td>49.7</td><td>108.3</td><td></td><td>87.0</td><td>49.6</td><td>44.5</td><td>36.1</td><td>103.5</td><td>87.8</td><td>102.7</td><td>123.0</td><td>43.6</td><td>45.3</td></tr>
+<tr><td>Whisper base</td><td>52.9</td><td></td><td>37.3</td><td>106.5</td><td></td><td>71.9</td><td>36.1</td><td>30.5</td><td>24.2</td><td>91.3</td><td>78.0</td><td>122.9</td><td>137.0</td><td>29.5</td><td>32.8</td></tr>
+<tr><td>Whisper small</td><td>30.5</td><td></td><td>22.7</td><td></td><td>43.6</td><td>44.4</td><td>18.4</td><td>16.0</td><td>14.0</td><td>72.8</td><td>54.6</td><td>104.8</td><td>225.8</td><td>14.2</td><td>16.9</td></tr>
+<tr><td>Whisper medium</td><td>18.8</td><td></td><td>16.0</td><td></td><td>31.5</td><td>26.9</td><td>11.6</td><td>9.4</td><td>10.5</td><td>49.4</td><td>37.2</td><td>137.8</td><td>113.4</td><td>8.0</td><td>10.1</td></tr>
+<tr><td>Whisper large</td><td>17.0</td><td></td><td>14.7</td><td></td><td>25.0</td><td>23.5</td><td>10.6</td><td>8.1</td><td>9.4</td><td>43.9</td><td>34.8</td><td>107.1</td><td>117.4</td><td>7.1</td><td>9.0</td></tr>
+<tr><td>Whisper large-v2</td><td>14.4</td><td></td><td>13.9</td><td></td><td>21.9</td><td>19.7</td><td>8.5</td><td>7.1</td><td>9.1</td><td>35.2</td><td>25.5</td><td>103.2</td><td>128.4</td><td>5.8</td><td>7.6</td></tr>
+<tr><td></td><td></td><td>Portuguese</td><td>Romanian</td><td></td><td></td><td></td><td>Slovenian</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Vietnamese</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>Russian</td><td>Slovak</td><td></td><td>Serbian</td><td>Swedish</td><td></td><td></td><td>Turkish</td><td></td><td></td><td>Chinese</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Tamil</td><td>Thai</td><td></td><td>Urdu</td><td></td><td></td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td></td><td>35.2</td><td>68.2</td><td></td><td>40.6</td><td>104.0</td><td>82.0</td><td>106.1</td><td>58.2</td><td>105.7</td><td>55.9</td><td>53.6</td><td>74.7</td><td>69.3</td><td>52.4</td></tr>
+<tr><td>Whisper base</td><td></td><td>23.7</td><td>55.9</td><td></td><td>28.8</td><td>87.2</td><td>70.3</td><td>103.0</td><td>42.4</td><td>49.5</td><td>32.1</td><td>38.6</td><td>58.6</td><td>51.6</td><td>44.9</td></tr>
+<tr><td>Whisper small</td><td></td><td>12.5</td><td>33.2</td><td></td><td>15.0</td><td>60.4</td><td>45.5</td><td>101.3</td><td>22.1</td><td>28.7</td><td>18.1</td><td>23.7</td><td>39.1</td><td>33.3</td><td>29.4</td></tr>
+<tr><td>Whisper medium</td><td></td><td>8.1</td><td>21.5</td><td></td><td>9.3</td><td>42.0</td><td>29.8</td><td>85.6</td><td>13.7</td><td>19.6</td><td>10.5</td><td>17.7</td><td>29.9</td><td>24.4</td><td>23.2</td></tr>
+<tr><td>Whisper large</td><td></td><td>7.1</td><td>19.8</td><td></td><td>8.2</td><td>37.9</td><td>25.1</td><td>87.4</td><td>12.4</td><td>17.6</td><td>8.8</td><td>16.6</td><td>28.1</td><td>19.9</td><td>29.1</td></tr>
+<tr><td>Whisper large-v2</td><td></td><td>6.3</td><td>15.8</td><td></td><td>7.1</td><td>31.9</td><td>20.6</td><td>70.5</td><td>10.6</td><td>16.1</td><td>8.0</td><td>14.5</td><td>24.2</td><td>18.2</td><td>26.8</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>Table 11. WER (%) on CommonVoice9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>en accented</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Hungarian</td><td></td><td>Lithuanian</td><td></td><td></td><td>Romanian</td></tr>
+<tr><td></td><td></td><td>English</td><td></td><td></td><td>Spanish</td><td>Estonian</td><td>Finnish</td><td></td><td>Croatian</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>French</td><td></td><td></td><td>Italian</td><td></td><td>Dutch</td><td>Polish</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>11.6</td><td>18.8</td><td></td><td>19.7</td><td>99.2</td><td>54.1</td><td>32.9</td><td>72.4</td><td>74.5</td><td>40.5</td><td>93.1</td><td>41.9</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>9.5</td><td>17.5</td><td></td><td>14.4</td><td>83.0</td><td>39.7</td><td>24.9</td><td>53.6</td><td>52.6</td><td>30.8</td><td>82.1</td><td>29.4</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>8.2</td><td>19.2</td><td></td><td>11.1</td><td>59.2</td><td>24.9</td><td>15.7</td><td>33.7</td><td>31.3</td><td>22.9</td><td>60.1</td><td>18.8</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>7.6</td><td>19.1</td><td></td><td>9.6</td><td>38.2</td><td>16.6</td><td>12.2</td><td>23.9</td><td>19.3</td><td>19.7</td><td>39.3</td><td>14.9</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>7.2</td><td>20.8</td><td></td><td>8.8</td><td>33.3</td><td>15.5</td><td>11.0</td><td>19.0</td><td>16.8</td><td>18.4</td><td>35.0</td><td>14.0</td><td>9.0</td><td></td></tr>
+<tr><td></td><td></td><td>7.0</td><td>18.6</td><td></td><td>8.2</td><td>28.7</td><td>12.4</td><td>11.4</td><td>16.1</td><td>13.8</td><td>19.0</td><td>33.2</td><td>12.9</td><td>7.8</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Table 12. WER (%) on VoxPopuli</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-D-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-2-1"><span class="en">D.2.2.</span></span> <span class="sent" data-sid="s-D-2-2-2"><span class="en">COMMON VOICE 9 Bulgarian Catalan Bengali Arabic Czech Welsh Model Estonian German Spanish English Persian Danish Greek Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-2-1"><span class="zh">（附录小节号：D.2.2.）</span></span><span class="sent" data-sid="s-D-2-2-2"><span class="zh">（表 D.2.2 列头：COMMON VOICE 9；Bulgarian / Catalan / Bengali / Arabic / Czech / Welsh / Model / Estonian / German / Spanish / English / Persian / Danish / Greek / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-2-12"><code>90.9 79.3 104.1 51.0 79.7 101.8 77.2 34.5 61.9 28.8 30.3 102.1 120.3</code></div>
-<div class="eq" id="eq-D-2-13"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-2-14"><code>84.4 68.1 103.7 39.9 63.1 93.8 57.5 24.5 51.5 21.9 19.6 88.1 99.0</code></div>
-<div class="eq" id="eq-D-2-15"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-2-16"><code>66.4 44.8 118.6 23.8 34.1 65.4 32.1 13.0 31.7 14.5 10.3 67.2 71.9</code></div>
-<div class="eq" id="eq-D-2-17"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-2-18"><code>60.3 26.7 124.7 16.4 18.8 43.6 19.3 8.5 20.0 11.2 6.9 45.6 49.9</code></div>
-<div class="eq" id="eq-D-2-19"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-2-20"><code>56.0 24.1 106.0 15.3 17.1 40.3 18.3 7.7 18.3 10.1 6.4 41.4 44.8</code></div>
-<div class="eq" id="eq-D-2-21"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-2-22"><code>53.8 19.9 103.4 14.1 13.5 34.2 14.4 6.4 16.0 9.4 5.6 35.1 39.4</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-D-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-3-1"><span class="en">Indonesian Hungarian Finnish French Italian Hindi Model Malayalam Lithuanian Mongolian Japanese Latvian Polish Dutch Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-3-1"><span class="zh">（表列头续：Indonesian / Hungarian / Finnish / French / Italian / Hindi / Model / Malayalam / Lithuanian / Mongolian / Japanese / Latvian / Polish / Dutch / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-2-23"><code>68.5 49.7 108.3 87.0 49.6 44.5 36.1 103.5 87.8 102.7 123.0 43.6 45.3</code></div>
-<div class="eq" id="eq-D-2-24"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-2-25"><code>52.9 37.3 106.5 71.9 36.1 30.5 24.2 91.3 78.0 122.9 137.0 29.5 32.8</code></div>
-<div class="eq" id="eq-D-2-26"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-2-27"><code>30.5 22.7 43.6 44.4 18.4 16.0 14.0 72.8 54.6 104.8 225.8 14.2 16.9</code></div>
-<div class="eq" id="eq-D-2-28"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-2-29"><code>18.8 16.0 31.5 26.9 11.6 9.4 10.5 49.4 37.2 137.8 113.4 8.0 10.1</code></div>
-<div class="eq" id="eq-D-2-30"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-2-31"><code>17.0 14.7 25.0 23.5 10.6 8.1 9.4 43.9 34.8 107.1 117.4 7.1 9.0</code></div>
-<div class="eq" id="eq-D-2-32"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-2-33"><code>14.4 13.9 21.9 19.7 8.5 7.1 9.1 35.2 25.5 103.2 128.4 5.8 7.6</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-D-2-4">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-4-1"><span class="en">Portuguese Romanian Slovenian Russian Serbian Slovak Model Vietnamese Swedish Chinese Turkish Tamil Urdu Thai Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-4-1"><span class="zh">（表列头续：Portuguese / Romanian / Slovenian / Russian / Serbian / Slovak / Model / Vietnamese / Swedish / Chinese / Turkish / Tamil / Urdu / Thai / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-2-34"><code>35.2 68.2 40.6 104.0 82.0 106.1 58.2 105.7 55.9 53.6 74.7 69.3 52.4</code></div>
-<div class="eq" id="eq-D-2-35"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-2-36"><code>23.7 55.9 28.8 87.2 70.3 103.0 42.4 49.5 32.1 38.6 58.6 51.6 44.9</code></div>
-<div class="eq" id="eq-D-2-37"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-2-38"><code>12.5 33.2 15.0 60.4 45.5 101.3 22.1 28.7 18.1 23.7 39.1 33.3 29.4</code></div>
-<div class="eq" id="eq-D-2-39"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-2-40"><code>8.1 21.5 9.3 42.0 29.8 85.6 13.7 19.6 10.5 17.7 29.9 24.4 23.2</code></div>
-<div class="eq" id="eq-D-2-41"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-2-42"><code>7.1 19.8 8.2 37.9 25.1 87.4 12.4 17.6 8.8 16.6 28.1 19.9 29.1</code></div>
-<div class="eq" id="eq-D-2-43"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-2-44"><code>6.3 15.8 7.1 31.9 20.6 70.5 10.6 16.1 8.0 14.5 24.2 18.2 26.8</code></div>
-<div class="cap" id="tab-D-2-2"><span class="cap-k">表</span><p class="en">Table 11. WER (%) on CommonVoice9</p><p class="zh">表 11. CommonVoice9 上的 WER（%）。</p></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-D-2-2"><span class="cap-k">表</span><p class="en">Table 11. WER (%) on CommonVoice9</p><p class="zh">表 11. CommonVoice9 上的 WER（%）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>Portuguese</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>English</th><th>French</th><th>German</th><th>Italian</th><th></th><th></th><th></th><th></th><th>Spanish</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>Dutch</th><th></th><th></th><th></th><th></th><th>Polish</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Whisper tiny</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>34.2</td><td></td><td>31.3</td><td></td><td>19.2</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Whisper base</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>22.8</td><td></td><td>21.9</td><td></td><td>12.8</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Whisper small</td><td></td><td></td><td></td><td>8.3</td><td></td><td></td><td></td><td>11.2</td><td></td><td>13.0</td><td></td><td>7.8</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Whisper medium</td><td></td><td></td><td></td><td>6.8</td><td>8.9</td><td>7.4</td><td></td><td>6.5</td><td></td><td>9.0</td><td></td><td>5.3</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Whisper large</td><td></td><td></td><td></td><td>6.3</td><td>8.9</td><td>6.6</td><td></td><td>6.6</td><td></td><td>9.2</td><td></td><td>5.4</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Whisper large-v2</td><td></td><td></td><td>9.3</td><td>6.2</td><td>7.3</td><td>5.5</td><td></td><td>5.0</td><td></td><td>6.8</td><td></td><td>4.2</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>Table 10. WER (%) on MLS</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Bulgarian</td><td></td><td></td><td></td><td></td><td></td><td>German</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Estonian</td><td></td></tr>
+<tr><td></td><td>Arabic</td><td></td><td>Bengali</td><td>Catalan</td><td>Czech</td><td>Welsh</td><td>Danish</td><td></td><td></td><td>Greek</td><td></td><td></td><td>English</td><td>Spanish</td><td></td><td>Persian</td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td>90.9</td><td>79.3</td><td>104.1</td><td>51.0</td><td>79.7</td><td>101.8</td><td>77.2</td><td>34.5</td><td></td><td>61.9</td><td></td><td>28.8</td><td></td><td>30.3</td><td></td><td>120.3</td></tr>
+<tr><td>Whisper base</td><td>84.4</td><td>68.1</td><td>103.7</td><td>39.9</td><td>63.1</td><td>93.8</td><td>57.5</td><td>24.5</td><td></td><td>51.5</td><td></td><td>21.9</td><td></td><td>19.6</td><td>88.1</td><td>99.0</td></tr>
+<tr><td>Whisper small</td><td>66.4</td><td>44.8</td><td>118.6</td><td>23.8</td><td>34.1</td><td>65.4</td><td>32.1</td><td>13.0</td><td></td><td>31.7</td><td></td><td>14.5</td><td></td><td>10.3</td><td>67.2</td><td>71.9</td></tr>
+<tr><td>Whisper medium</td><td>60.3</td><td>26.7</td><td>124.7</td><td>16.4</td><td>18.8</td><td>43.6</td><td>19.3</td><td></td><td>8.5</td><td>20.0</td><td></td><td>11.2</td><td></td><td>6.9</td><td>45.6</td><td>49.9</td></tr>
+<tr><td>Whisper large</td><td>56.0</td><td>24.1</td><td>106.0</td><td>15.3</td><td>17.1</td><td>40.3</td><td>18.3</td><td></td><td>7.7</td><td>18.3</td><td></td><td>10.1</td><td></td><td>6.4</td><td>41.4</td><td>44.8</td></tr>
+<tr><td>Whisper large-v2</td><td>53.8</td><td>19.9</td><td>103.4</td><td>14.1</td><td>13.5</td><td>34.2</td><td>14.4</td><td></td><td>6.4</td><td>16.0</td><td></td><td></td><td>9.4</td><td>5.6</td><td>35.1</td><td>39.4</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>Hungarian</td><td>Indonesian</td><td></td><td></td><td>Lithuanian</td><td></td><td></td><td></td><td></td><td>Malayalam</td><td>Mongolian</td><td></td><td></td></tr>
+<tr><td></td><td>Finnish</td><td>French</td><td></td><td></td><td></td><td></td><td>Japanese</td><td></td><td></td><td>Latvian</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Hindi</td><td></td><td></td><td>Italian</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Dutch</td><td>Polish</td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td>68.5</td><td>49.7</td><td>108.3</td><td>87.0</td><td>49.6</td><td>44.5</td><td>36.1</td><td>103.5</td><td></td><td>87.8</td><td></td><td>102.7</td><td></td><td>123.0</td><td>43.6</td><td>45.3</td></tr>
+<tr><td>Whisper base</td><td>52.9</td><td>37.3</td><td>106.5</td><td>71.9</td><td>36.1</td><td>30.5</td><td>24.2</td><td>91.3</td><td></td><td>78.0</td><td></td><td>122.9</td><td></td><td>137.0</td><td>29.5</td><td>32.8</td></tr>
+<tr><td>Whisper small</td><td>30.5</td><td>22.7</td><td>43.6</td><td>44.4</td><td>18.4</td><td>16.0</td><td>14.0</td><td>72.8</td><td></td><td>54.6</td><td></td><td>104.8</td><td></td><td>225.8</td><td>14.2</td><td>16.9</td></tr>
+<tr><td>Whisper medium</td><td>18.8</td><td>16.0</td><td>31.5</td><td>26.9</td><td>11.6</td><td>9.4</td><td>10.5</td><td>49.4</td><td></td><td>37.2</td><td></td><td>137.8</td><td></td><td>113.4</td><td>8.0</td><td>10.1</td></tr>
+<tr><td>Whisper large</td><td>17.0</td><td>14.7</td><td>25.0</td><td>23.5</td><td>10.6</td><td>8.1</td><td>9.4</td><td>43.9</td><td></td><td>34.8</td><td></td><td>107.1</td><td></td><td>117.4</td><td>7.1</td><td>9.0</td></tr>
+<tr><td>Whisper large-v2</td><td>14.4</td><td>13.9</td><td>21.9</td><td>19.7</td><td>8.5</td><td>7.1</td><td>9.1</td><td>35.2</td><td></td><td>25.5</td><td></td><td>103.2</td><td></td><td>128.4</td><td>5.8</td><td>7.6</td></tr>
+<tr><td></td><td>Portuguese</td><td>Romanian</td><td></td><td></td><td>Slovenian</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Vietnamese</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Russian</td><td>Slovak</td><td></td><td>Serbian</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Turkish</td><td></td><td></td><td>Chinese</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Tamil</td><td></td><td>Thai</td><td></td><td></td><td>Urdu</td><td></td><td></td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td>35.2</td><td>68.2</td><td>40.6</td><td>104.0</td><td>82.0</td><td>106.1</td><td>58.2</td><td>105.7</td><td></td><td></td><td>55.9</td><td></td><td>53.6</td><td>74.7</td><td>69.3</td><td>52.4</td></tr>
+<tr><td>Whisper base</td><td>23.7</td><td>55.9</td><td>28.8</td><td>87.2</td><td>70.3</td><td>103.0</td><td>42.4</td><td></td><td>49.5</td><td></td><td>32.1</td><td></td><td>38.6</td><td>58.6</td><td>51.6</td><td>44.9</td></tr>
+<tr><td>Whisper small</td><td>12.5</td><td>33.2</td><td>15.0</td><td>60.4</td><td>45.5</td><td>101.3</td><td>22.1</td><td></td><td>28.7</td><td></td><td>18.1</td><td></td><td>23.7</td><td>39.1</td><td>33.3</td><td>29.4</td></tr>
+<tr><td>Whisper medium</td><td>8.1</td><td>21.5</td><td>9.3</td><td>42.0</td><td>29.8</td><td>85.6</td><td>13.7</td><td></td><td>19.6</td><td></td><td>10.5</td><td></td><td>17.7</td><td>29.9</td><td>24.4</td><td>23.2</td></tr>
+<tr><td>Whisper large</td><td>7.1</td><td>19.8</td><td>8.2</td><td>37.9</td><td>25.1</td><td>87.4</td><td>12.4</td><td></td><td>17.6</td><td></td><td>8.8</td><td></td><td>16.6</td><td>28.1</td><td>19.9</td><td>29.1</td></tr>
+<tr><td>Whisper large-v2</td><td>6.3</td><td>15.8</td><td>7.1</td><td>31.9</td><td>20.6</td><td>70.5</td><td>10.6</td><td></td><td>16.1</td><td></td><td>8.0</td><td></td><td>14.5</td><td>24.2</td><td>18.2</td><td>26.8</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-D-2-5">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-5-1"><span class="en">D.2.3.</span></span> <span class="sent" data-sid="s-D-2-5-2"><span class="en">VOXPOPULI</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-5-1"><span class="zh">D.2.3.</span></span><span class="sent" data-sid="s-D-2-5-2"><span class="zh">VOXPOPULI。</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-2-45"><code>en accented</code></div>
+
 <div class="pblk" id="p-D-2-6">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-6-1"><span class="en">Estonian German Spanish Finnish English French Czech Model Lithuanian Hungarian Romanian Slovenian Croatian Slovak Italian Polish Dutch Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-6-1"><span class="zh">（表列头续：Estonian / German / Spanish / Finnish / English / French / Czech / Model / Lithuanian / Hungarian / Romanian / Slovenian / Croatian / Slovak / Italian / Polish / Dutch / Whisper tiny。）</span></span></p>
           
         </div>
 <div class="eq" id="eq-D-2-46"><code>73.5 27.4 11.6 18.8 19.7 99.2 54.1 32.9 72.4 74.5 40.5 93.1 41.9 31.4 65.9 78.7 81.9</code></div>
-<div class="eq" id="eq-D-2-47"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-2-48"><code>54.7 20.6 9.5 17.5 14.4 83.0 39.7 24.9 53.6 52.6 30.8 82.1 29.4 22.1 49.3 63.7 70.5</code></div>
-<div class="eq" id="eq-D-2-49"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-2-50"><code>28.8 14.8 8.2 19.2 11.1 59.2 24.9 15.7 33.7 31.3 22.9 60.1 18.8 13.3 28.6 37.3 50.8</code></div>
-<div class="eq" id="eq-D-2-51"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-2-52"><code>18.4 12.4 7.6 19.1 9.6 38.2 16.6 12.2 23.9 19.3 19.7 39.3 14.9 10.1 18.4 23.0 36.3</code></div>
-<div class="eq" id="eq-D-2-53"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-2-54"><code>15.9 11.9 7.2 20.8 8.8 33.3 15.5 11.0 19.0 16.8 18.4 35.0 14.0 9.0 17.0 19.1 31.3</code></div>
-<div class="eq" id="eq-D-2-55"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-2-56"><code>12.6 11.2 7.0 18.6 8.2 28.7 12.4 11.4 16.1 13.8 19.0 33.2 12.9 7.8 14.4 15.4 27.9</code></div>
-<div class="cap" id="tab-D-2-3"><span class="cap-k">表</span><p class="en">Table 12. WER (%) on VoxPopuli</p><p class="zh">表 12. VoxPopuli 上的 WER（%）。</p></div>
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-D-2-3"><span class="cap-k">表</span><p class="en">Table 12. WER (%) on VoxPopuli</p><p class="zh">表 12. VoxPopuli 上的 WER（%）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>Portuguese</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th>English</th><th>French</th><th>German</th><th>Italian</th><th></th><th></th><th></th><th></th><th>Spanish</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>Polish</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td>Whisper tiny</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>34.2</td><td></td><td>31.3</td><td></td><td>19.2</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Whisper base</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>22.8</td><td></td><td>21.9</td><td></td><td>12.8</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Whisper small</td><td></td><td></td><td></td><td>8.3</td><td></td><td></td><td></td><td>11.2</td><td></td><td>13.0</td><td></td><td></td><td>7.8</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Whisper medium</td><td></td><td></td><td></td><td>6.8</td><td>8.9</td><td>7.4</td><td></td><td></td><td>6.5</td><td></td><td>9.0</td><td></td><td>5.3</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Whisper large</td><td></td><td></td><td></td><td>6.3</td><td>8.9</td><td>6.6</td><td></td><td></td><td>6.6</td><td></td><td>9.2</td><td></td><td>5.4</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Whisper large-v2</td><td></td><td></td><td>9.3</td><td>6.2</td><td>7.3</td><td>5.5</td><td></td><td></td><td>5.0</td><td></td><td>6.8</td><td></td><td>4.2</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>Table 10. WER (%) on MLS</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Bulgarian</td><td></td><td></td><td></td><td></td><td></td><td>German</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Estonian</td><td></td></tr>
+<tr><td></td><td></td><td>Arabic</td><td></td><td>Bengali</td><td>Catalan</td><td>Czech</td><td>Welsh</td><td>Danish</td><td></td><td></td><td>Greek</td><td></td><td></td><td>English</td><td>Spanish</td><td></td><td>Persian</td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td>90.9</td><td></td><td>79.3</td><td></td><td>51.0</td><td>79.7</td><td>101.8</td><td>77.2</td><td>34.5</td><td></td><td>61.9</td><td></td><td>28.8</td><td></td><td>30.3</td><td></td><td>120.3</td></tr>
+<tr><td>Whisper base</td><td>84.4</td><td></td><td>68.1</td><td></td><td>39.9</td><td>63.1</td><td>93.8</td><td>57.5</td><td>24.5</td><td></td><td>51.5</td><td></td><td>21.9</td><td></td><td>19.6</td><td>88.1</td><td>99.0</td></tr>
+<tr><td>Whisper small</td><td>66.4</td><td></td><td>44.8</td><td></td><td>23.8</td><td>34.1</td><td>65.4</td><td>32.1</td><td>13.0</td><td></td><td>31.7</td><td></td><td>14.5</td><td></td><td>10.3</td><td>67.2</td><td>71.9</td></tr>
+<tr><td>Whisper medium</td><td>60.3</td><td></td><td>26.7</td><td></td><td>16.4</td><td>18.8</td><td>43.6</td><td>19.3</td><td></td><td>8.5</td><td>20.0</td><td></td><td>11.2</td><td></td><td>6.9</td><td>45.6</td><td>49.9</td></tr>
+<tr><td>Whisper large</td><td>56.0</td><td></td><td>24.1</td><td></td><td>15.3</td><td>17.1</td><td>40.3</td><td>18.3</td><td></td><td>7.7</td><td>18.3</td><td></td><td>10.1</td><td></td><td>6.4</td><td>41.4</td><td>44.8</td></tr>
+<tr><td>Whisper large-v2</td><td>53.8</td><td></td><td>19.9</td><td></td><td>14.1</td><td>13.5</td><td>34.2</td><td>14.4</td><td></td><td>6.4</td><td>16.0</td><td></td><td></td><td>9.4</td><td>5.6</td><td>35.1</td><td>39.4</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>Hungarian</td><td>Indonesian</td><td></td><td></td><td>Lithuanian</td><td></td><td></td><td></td><td></td><td>Malayalam</td><td>Mongolian</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Finnish</td><td>French</td><td></td><td></td><td></td><td></td><td>Japanese</td><td></td><td></td><td>Latvian</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>Hindi</td><td></td><td></td><td>Italian</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Dutch</td><td>Polish</td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td>68.5</td><td></td><td>49.7</td><td></td><td>87.0</td><td>49.6</td><td>44.5</td><td>36.1</td><td>103.5</td><td></td><td>87.8</td><td></td><td>102.7</td><td></td><td>123.0</td><td>43.6</td><td>45.3</td></tr>
+<tr><td>Whisper base</td><td>52.9</td><td></td><td>37.3</td><td></td><td>71.9</td><td>36.1</td><td>30.5</td><td>24.2</td><td>91.3</td><td></td><td>78.0</td><td></td><td>122.9</td><td></td><td>137.0</td><td>29.5</td><td>32.8</td></tr>
+<tr><td>Whisper small</td><td>30.5</td><td></td><td>22.7</td><td>43.6</td><td>44.4</td><td>18.4</td><td>16.0</td><td>14.0</td><td>72.8</td><td></td><td>54.6</td><td></td><td>104.8</td><td></td><td>225.8</td><td>14.2</td><td>16.9</td></tr>
+<tr><td>Whisper medium</td><td>18.8</td><td></td><td>16.0</td><td>31.5</td><td>26.9</td><td>11.6</td><td>9.4</td><td>10.5</td><td>49.4</td><td></td><td>37.2</td><td></td><td>137.8</td><td></td><td>113.4</td><td>8.0</td><td>10.1</td></tr>
+<tr><td>Whisper large</td><td>17.0</td><td></td><td>14.7</td><td>25.0</td><td>23.5</td><td>10.6</td><td>8.1</td><td>9.4</td><td>43.9</td><td></td><td>34.8</td><td></td><td>107.1</td><td></td><td>117.4</td><td>7.1</td><td>9.0</td></tr>
+<tr><td>Whisper large-v2</td><td>14.4</td><td></td><td>13.9</td><td>21.9</td><td>19.7</td><td>8.5</td><td>7.1</td><td>9.1</td><td>35.2</td><td></td><td>25.5</td><td></td><td>103.2</td><td></td><td>128.4</td><td>5.8</td><td>7.6</td></tr>
+<tr><td></td><td></td><td>Portuguese</td><td>Romanian</td><td></td><td></td><td>Slovenian</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Vietnamese</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>Russian</td><td>Slovak</td><td></td><td>Serbian</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Turkish</td><td></td><td></td><td>Chinese</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Tamil</td><td></td><td>Thai</td><td></td><td></td><td>Urdu</td><td></td><td></td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td></td><td>35.2</td><td>68.2</td><td>40.6</td><td>104.0</td><td>82.0</td><td>106.1</td><td>58.2</td><td>105.7</td><td></td><td></td><td>55.9</td><td></td><td>53.6</td><td>74.7</td><td>69.3</td><td>52.4</td></tr>
+<tr><td>Whisper base</td><td></td><td>23.7</td><td>55.9</td><td>28.8</td><td>87.2</td><td>70.3</td><td>103.0</td><td>42.4</td><td></td><td>49.5</td><td></td><td>32.1</td><td></td><td>38.6</td><td>58.6</td><td>51.6</td><td>44.9</td></tr>
+<tr><td>Whisper small</td><td></td><td>12.5</td><td>33.2</td><td>15.0</td><td>60.4</td><td>45.5</td><td>101.3</td><td>22.1</td><td></td><td>28.7</td><td></td><td>18.1</td><td></td><td>23.7</td><td>39.1</td><td>33.3</td><td>29.4</td></tr>
+<tr><td>Whisper medium</td><td></td><td>8.1</td><td>21.5</td><td>9.3</td><td>42.0</td><td>29.8</td><td>85.6</td><td>13.7</td><td></td><td>19.6</td><td></td><td>10.5</td><td></td><td>17.7</td><td>29.9</td><td>24.4</td><td>23.2</td></tr>
+<tr><td>Whisper large</td><td></td><td>7.1</td><td>19.8</td><td>8.2</td><td>37.9</td><td>25.1</td><td>87.4</td><td>12.4</td><td></td><td>17.6</td><td></td><td>8.8</td><td></td><td>16.6</td><td>28.1</td><td>19.9</td><td>29.1</td></tr>
+<tr><td>Whisper large-v2</td><td></td><td>6.3</td><td>15.8</td><td>7.1</td><td>31.9</td><td>20.6</td><td>70.5</td><td>10.6</td><td></td><td>16.1</td><td></td><td>8.0</td><td></td><td>14.5</td><td>24.2</td><td>18.2</td><td>26.8</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>Table 11. WER (%) on CommonVoice9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>en accented</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Hungarian</td><td></td><td></td><td></td><td>Lithuanian</td><td></td><td></td><td></td><td>Romanian</td></tr>
+<tr><td></td><td></td><td>English</td><td></td><td>Spanish</td><td>Estonian</td><td>Finnish</td><td></td><td>Croatian</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>French</td><td></td><td></td><td></td><td>Italian</td><td></td><td></td><td></td><td>Dutch</td><td>Polish</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>11.6</td><td>18.8</td><td>19.7</td><td>99.2</td><td>54.1</td><td>32.9</td><td>72.4</td><td>74.5</td><td></td><td>40.5</td><td></td><td>93.1</td><td></td><td>41.9</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>9.5</td><td>17.5</td><td>14.4</td><td>83.0</td><td>39.7</td><td>24.9</td><td>53.6</td><td>52.6</td><td></td><td>30.8</td><td></td><td>82.1</td><td></td><td>29.4</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>8.2</td><td>19.2</td><td>11.1</td><td>59.2</td><td>24.9</td><td>15.7</td><td>33.7</td><td>31.3</td><td></td><td>22.9</td><td></td><td>60.1</td><td></td><td>18.8</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>7.6</td><td>19.1</td><td>9.6</td><td>38.2</td><td>16.6</td><td>12.2</td><td>23.9</td><td>19.3</td><td></td><td>19.7</td><td></td><td>39.3</td><td></td><td>14.9</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>7.2</td><td>20.8</td><td>8.8</td><td>33.3</td><td>15.5</td><td>11.0</td><td>19.0</td><td>16.8</td><td></td><td>18.4</td><td></td><td>35.0</td><td></td><td>14.0</td><td>9.0</td><td></td></tr>
+<tr><td></td><td></td><td>7.0</td><td>18.6</td><td>8.2</td><td>28.7</td><td>12.4</td><td>11.4</td><td>16.1</td><td>13.8</td><td></td><td>19.0</td><td></td><td>33.2</td><td></td><td>12.9</td><td>7.8</td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-D-2-7">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-7-1"><span class="en">D.2.4.</span></span> <span class="sent" data-sid="s-D-2-7-2"><span class="en">FLEURS Azerbaijani Belarusian Assamese Afrikaans Amharic Arabic Model Bulgarian Bosnian Chinese Catalan Bengali Danish Czech Welsh Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-7-1"><span class="zh">（附录小节号：D.2.4.）</span></span><span class="sent" data-sid="s-D-2-7-2"><span class="zh">（表 D.2.4 列头：FLEURS；Azerbaijani / Belarusian / Assamese / Afrikaans / Amharic / Arabic / Model / Bulgarian / Bosnian / Chinese / Catalan / Bengali / Danish / Czech / Welsh / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-2-57"><code>91.2 122.9 63.4 102.0 93.1 94.0 81.0 101.6 82.1 42.8 40.5 82.8 101.3 82.0</code></div>
-<div class="eq" id="eq-D-2-58"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-2-59"><code>81.5 196.8 48.8 102.0 76.4 91.3 65.1 100.6 66.7 29.0 34.1 66.0 85.3 57.6</code></div>
-<div class="eq" id="eq-D-2-60"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-2-61"><code>61.1 120.2 30.6 108.0 49.1 75.1 37.3 104.4 39.4 16.2 20.8 37.6 59.3 32.8</code></div>
-<div class="eq" id="eq-D-2-62"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-2-63"><code>44.9 229.3 20.4 102.3 33.1 60.4 21.4 100.6 23.9 9.6 12.1 21.3 40.8 19.5</code></div>
-<div class="eq" id="eq-D-2-64"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-2-65"><code>42.6 129.3 18.1 105.6 28.7 56.6 18.4 104.9 20.7 8.0 19.6 17.4 36.6 16.8</code></div>
-<div class="eq" id="eq-D-2-66"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-2-67"><code>36.7 140.3 16.0 106.2 23.4 45.4 14.6 104.1 15.7 7.3 14.7 13.3 33.0 13.8</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-D-2-8">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-8-1"><span class="en">Estonian German Spanish English Persian Greek Model Galician Gujarati Hebrew Tagalog Finnish French Hausa Hindi Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-8-1"><span class="zh">（表列头续：Estonian / German / Spanish / English / Persian / Greek / Model / Galician / Gujarati / Hebrew / Tagalog / Finnish / French / Hausa / Hindi / Whisper tiny。）</span></span></p>
           
         </div>
 <div class="eq" id="eq-D-2-68"><code>27.8 67.4 12.4 15.9 94.8 101.8 59.5 65.6 41.4 54.8 101.2 100.2 71.6 102.3</code></div>
-<div class="eq" id="eq-D-2-69"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-2-70"><code>17.9 53.5 8.9 9.9 77.9 86.1 43.1 45.8 28.5 47.4 101.4 98.6 61.7 101.1</code></div>
-<div class="eq" id="eq-D-2-71"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-2-72"><code>10.2 30.8 6.1 5.6 51.3 55.8 24.0 27.7 15.0 30.2 106.4 90.1 44.4 38.4</code></div>
-<div class="eq" id="eq-D-2-73"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-2-74"><code>6.5 19.0 4.4 3.6 29.8 41.0 13.9 19.1 8.7 21.2 104.8 106.6 33.1 26.8</code></div>
-<div class="eq" id="eq-D-2-75"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-2-76"><code>5.5 18.7 4.5 3.5 25.5 36.1 12.2 15.8 7.7 19.0 103.9 87.0 30.2 26.9</code></div>
-<div class="eq" id="eq-D-2-77"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-2-78"><code>4.5 12.5 4.2 3.0 21.9 32.9 9.7 13.8 8.3 15.4 102.7 88.9 27.1 21.5</code></div>
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-D-2-9">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-9-1"><span class="en">Indonesian Hungarian Armenian Icelandic Croatian Italian Model Luxembourgish Georgian Kannada Javanese Japanese Kazakh Korean Khmer Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-9-1"><span class="zh">（表列头续：Indonesian / Hungarian / Armenian / Icelandic / Croatian / Italian / Model / Luxembourgish / Georgian / Kannada / Javanese / Japanese / Kazakh / Korean / Khmer / Whisper tiny。）</span></span></p>
           
         </div>
 <div class="eq" id="eq-D-2-79"><code>79.0 83.8 118.6 51.7 113.3 29.8 37.0 107.3 123.0 165.2 100.6 100.7 36.1 99.1</code></div>
-<div class="eq" id="eq-D-2-80"><code>Whisper base</code></div>
+
 <div class="eq" id="eq-D-2-81"><code>59.1 65.0 126.3 33.1 95.5 17.9 22.8 89.5 114.7 109.2 101.6 107.2 27.8 100.7</code></div>
-<div class="eq" id="eq-D-2-82"><code>Whisper small</code></div>
+
 <div class="eq" id="eq-D-2-83"><code>33.4 38.9 86.6 16.3 72.6 9.8 12.0 88.6 118.3 70.3 104.4 100.4 19.6 100.1</code></div>
-<div class="eq" id="eq-D-2-84"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-2-85"><code>19.3 24.3 60.1 10.2 49.9 5.2 7.1 67.9 117.3 48.8 98.9 77.7 16.4 90.0</code></div>
-<div class="eq" id="eq-D-2-86"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-2-87"><code>16.7 21.0 53.7 8.5 43.0 4.2 6.4 87.0 100.5 43.8 96.0 69.8 15.2 86.5</code></div>
-<div class="eq" id="eq-D-2-88"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-2-89"><code>13.4 17.0 44.6 7.1 38.2 4.0 5.3</code></div>
-<div class="eq" id="eq-D-2-90"><code>nan</code></div>
-<div class="eq" id="eq-D-2-91"><code>105.0 37.7 99.7 37.0 14.3 88.0</code></div>
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-D-2-10">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-10-1"><span class="en">Macedonian Lithuanian Latvian Lingala Maori Lao Model Malayalam Norwegian Mongolian Myanmar Marathi Maltese Nepali Malay Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-10-1"><span class="zh">（表列头续：Macedonian / Lithuanian / Latvian / Lingala / Maori / Lao / Model / Malayalam / Norwegian / Mongolian / Myanmar / Marathi / Maltese / Nepali / Malay / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-2-92"><code>105.4 115.1 98.5 91.6 94.5 73.3 101.5 113.7 100.3 51.2 100.8 124.8 62.0 101.8</code></div>
-<div class="eq" id="eq-D-2-93"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-2-94"><code>96.7 105.1 87.3 79.8 77.5 59.9 107.4 125.7 100.3 35.1 97.6 122.6 44.0 102.4</code></div>
-<div class="eq" id="eq-D-2-95"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-2-96"><code>91.3 102.2 65.6 53.2 59.5 36.9 100.9 144.2 60.2 18.9 92.2 110.1 24.2 69.5</code></div>
-<div class="eq" id="eq-D-2-97"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-2-98"><code>83.2 101.4 41.1 32.0 77.8 22.0 101.1 103.7 63.2 12.2 83.2 123.0 12.9 54.4</code></div>
-<div class="eq" id="eq-D-2-99"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-2-100"><code>76.8 101.6 35.2 28.3 45.7 20.6 101.4 106.2 43.7 10.2 80.5 124.5 11.4 52.2</code></div>
-<div class="eq" id="eq-D-2-101"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-2-102"><code>75.6 101.5 28.1 23.1 38.5 16.5 100.7 110.5 38.3 8.7 76.6 115.7 9.5 47.1</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-D-2-11">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-11-1"><span class="en">Portuguese Occitan Punjabi Pashto Polish Dutch Model Romanian Slovenian Russian Serbian Somali Slovak Sindhi Shona Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-11-1"><span class="zh">（表列头续：Portuguese / Occitan / Punjabi / Pashto / Polish / Dutch / Model / Romanian / Slovenian / Russian / Serbian / Somali / Slovak / Sindhi / Shona / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-2-103"><code>49.0 95.9 102.6 45.6 105.6 20.1 74.7 31.1 105.8 77.2 87.2 128.1 105.6 83.7</code></div>
-<div class="eq" id="eq-D-2-104"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-2-105"><code>33.0 82.9 101.5 30.8 99.0 13.0 56.0 20.5 103.9 60.6 74.6 126.0 109.6 64.3</code></div>
-<div class="eq" id="eq-D-2-106"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-2-107"><code>16.4 87.3 103.6 14.7 92.9 7.3 29.8 11.4 131.7 33.3 49.3 140.0 105.3 42.2</code></div>
-<div class="eq" id="eq-D-2-108"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-2-109"><code>9.9 79.5 102.0 8.0 119.4 5.0 20.0 7.2 147.0 17.3 31.9 143.9 104.0 44.9</code></div>
-<div class="eq" id="eq-D-2-110"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-2-111"><code>8.3 75.9 102.8 7.2 92.7 4.8 15.4 6.4 177.9 15.7 27.8 130.0 103.5 29.2</code></div>
-<div class="eq" id="eq-D-2-112"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-2-113"><code>6.7 75.3 102.4 5.4 93.7 4.3 14.4 5.6 156.5 11.7 23.1 121.0 102.9 33.9</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-D-2-12">
           <p class="en-lines"><span class="sent" data-sid="s-D-2-12-1"><span class="en">Swedish Swahili Telugu Tamil Tajik Model Vietnamese Ukrainian Turkish Yoruba Uzbek Urdu Thai Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-12-1"><span class="zh">（表列头续：Swedish / Swahili / Telugu / Tamil / Tajik / Model / Vietnamese / Ukrainian / Turkish / Yoruba / Uzbek / Urdu / Thai / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-2-114"><code>52.7 100.9 99.9 105.1 101.7 58.8 42.5 51.2 65.2 105.2 60.0 106.4</code></div>
-<div class="eq" id="eq-D-2-115"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-2-116"><code>37.4 92.5 58.7 105.2 109.3 38.2 27.5 37.7 52.0 114.0 40.5 101.8</code></div>
-<div class="eq" id="eq-D-2-117"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-2-118"><code>20.8 73.7 35.2 98.2 84.3 21.9 15.9 19.3 37.3 107.7 21.2 116.4</code></div>
-<div class="eq" id="eq-D-2-119"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-2-120"><code>11.2 52.8 23.1 82.8 74.0 15.4 10.4 11.6 28.2 109.6 12.7 105.1</code></div>
-<div class="eq" id="eq-D-2-121"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-2-122"><code>10.5 47.9 20.6 100.6 74.5 13.2 9.4 10.3 25.0 93.3 10.7 111.7</code></div>
-<div class="eq" id="eq-D-2-123"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-2-124"><code>8.5 39.3 17.5 99.0 85.8 11.5 8.4 8.6 22.6 90.2 10.3 94.8</code></div>
-<div class="cap" id="tab-D-2-4"><span class="cap-k">表</span><p class="en">Table 13. WER (%) on Fleurs</p><p class="zh">表 13. Fleurs 上的 WER（%）。</p></div></section>
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-D-2-4"><span class="cap-k">表</span><p class="en">Table 13. WER (%) on Fleurs</p><p class="zh">表 13. Fleurs 上的 WER（%）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Afrikaans</th><th></th><th></th><th>Assamese</th><th>Azerbaijani</th><th>Belarusian</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Amharic</th><th></th><th></th><th></th><th></th><th>Bulgarian</th><th></th><th>Bosnian</th><th></th><th>Chinese</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>Arabic</th><th></th><th></th><th></th><th></th><th>Bengali</th><th></th><th>Catalan</th><th></th><th>Czech</th><th>Welsh</th><th>Danish</th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Whisper tiny</td><td>91.2</td><td>122.9</td><td>63.4</td><td>102.0</td><td>93.1</td><td>94.0</td><td>81.0</td><td>101.6</td><td>82.1</td><td>42.8</td><td>40.5</td><td>82.8</td><td></td><td>82.0</td></tr>
+<tr><td>Whisper base</td><td>81.5</td><td>196.8</td><td>48.8</td><td>102.0</td><td>76.4</td><td>91.3</td><td>65.1</td><td>100.6</td><td>66.7</td><td>29.0</td><td>34.1</td><td>66.0</td><td>85.3</td><td>57.6</td></tr>
+<tr><td>Whisper small</td><td>61.1</td><td>120.2</td><td>30.6</td><td>108.0</td><td>49.1</td><td>75.1</td><td>37.3</td><td>104.4</td><td>39.4</td><td>16.2</td><td>20.8</td><td>37.6</td><td>59.3</td><td>32.8</td></tr>
+<tr><td>Whisper medium</td><td>44.9</td><td>229.3</td><td>20.4</td><td>102.3</td><td>33.1</td><td>60.4</td><td>21.4</td><td>100.6</td><td>23.9</td><td>9.6</td><td>12.1</td><td>21.3</td><td>40.8</td><td>19.5</td></tr>
+<tr><td>Whisper large</td><td>42.6</td><td>129.3</td><td>18.1</td><td>105.6</td><td>28.7</td><td>56.6</td><td>18.4</td><td>104.9</td><td>20.7</td><td>8.0</td><td>19.6</td><td>17.4</td><td>36.6</td><td>16.8</td></tr>
+<tr><td>Whisper large-v2</td><td>36.7</td><td>140.3</td><td>16.0</td><td>106.2</td><td>23.4</td><td>45.4</td><td>14.6</td><td>104.1</td><td>15.7</td><td>7.3</td><td>14.7</td><td>13.3</td><td>33.0</td><td>13.8</td></tr>
+<tr><td></td><td>German</td><td></td><td>English</td><td>Spanish</td><td>Estonian</td><td>Persian</td><td>Finnish</td><td>Tagalog</td><td></td><td>Galician</td><td>Gujarati</td><td></td><td>Hebrew</td><td></td></tr>
+<tr><td></td><td></td><td>Greek</td><td></td><td></td><td></td><td></td><td></td><td></td><td>French</td><td></td><td></td><td>Hausa</td><td></td><td>Hindi</td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td>27.8</td><td>67.4</td><td>12.4</td><td>15.9</td><td>94.8</td><td></td><td>59.5</td><td>65.6</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper base</td><td>17.9</td><td>53.5</td><td>8.9</td><td>9.9</td><td>77.9</td><td>86.1</td><td>43.1</td><td>45.8</td><td></td><td></td><td></td><td>98.6</td><td></td><td></td></tr>
+<tr><td>Whisper small</td><td>10.2</td><td>30.8</td><td>6.1</td><td>5.6</td><td>51.3</td><td>55.8</td><td>24.0</td><td>27.7</td><td></td><td></td><td></td><td>90.1</td><td></td><td>38.4</td></tr>
+<tr><td>Whisper medium</td><td>6.5</td><td>19.0</td><td>4.4</td><td>3.6</td><td>29.8</td><td>41.0</td><td>13.9</td><td>19.1</td><td>8.7</td><td></td><td></td><td></td><td></td><td>26.8</td></tr>
+<tr><td>Whisper large</td><td>5.5</td><td>18.7</td><td>4.5</td><td>3.5</td><td>25.5</td><td>36.1</td><td>12.2</td><td>15.8</td><td>7.7</td><td></td><td></td><td>87.0</td><td></td><td>26.9</td></tr>
+<tr><td>Whisper large-v2</td><td>4.5</td><td>12.5</td><td>4.2</td><td>3.0</td><td>21.9</td><td>32.9</td><td>9.7</td><td>13.8</td><td>8.3</td><td></td><td></td><td>88.9</td><td></td><td>21.5</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Luxembourgish</td></tr>
+<tr><td></td><td></td><td>Hungarian</td><td>Armenian</td><td>Indonesian</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Croatian</td><td></td><td></td><td></td><td>Icelandic</td><td></td><td>Japanese</td><td>Javanese</td><td>Georgian</td><td>Kazakh</td><td></td><td>Kannada</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Italian</td><td></td><td></td><td></td><td></td><td>Khmer</td><td></td><td>Korean</td><td></td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>165.2</td><td>100.6</td><td>100.7</td><td>36.1</td><td>99.1</td></tr>
+<tr><td>Whisper base</td><td></td><td></td><td></td><td></td><td>95.5</td><td></td><td></td><td>89.5</td><td></td><td>109.2</td><td>101.6</td><td>107.2</td><td>27.8</td><td>100.7</td></tr>
+<tr><td>Whisper small</td><td></td><td></td><td>86.6</td><td></td><td>72.6</td><td>9.8</td><td></td><td>88.6</td><td></td><td>70.3</td><td>104.4</td><td>100.4</td><td>19.6</td><td>100.1</td></tr>
+<tr><td>Whisper medium</td><td></td><td></td><td>60.1</td><td></td><td>49.9</td><td>5.2</td><td>7.1</td><td>67.9</td><td></td><td>48.8</td><td>98.9</td><td>77.7</td><td>16.4</td><td>90.0</td></tr>
+<tr><td>Whisper large</td><td></td><td></td><td>53.7</td><td>8.5</td><td>43.0</td><td>4.2</td><td>6.4</td><td>87.0</td><td></td><td>43.8</td><td>96.0</td><td>69.8</td><td>15.2</td><td>86.5</td></tr>
+<tr><td>Whisper large-v2</td><td></td><td></td><td>44.6</td><td>7.1</td><td>38.2</td><td>4.0</td><td>5.3</td><td>nan</td><td></td><td>37.7</td><td>99.7</td><td>37.0</td><td>14.3</td><td>88.0</td></tr>
+<tr><td></td><td></td><td></td><td>Lithuanian</td><td></td><td></td><td>Macedonian</td><td>Malayalam</td><td>Mongolian</td><td></td><td></td><td></td><td></td><td>Norwegian</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Marathi</td><td></td><td>Maltese</td><td>Myanmar</td><td></td><td></td></tr>
+<tr><td></td><td>Lingala</td><td></td><td></td><td>Latvian</td><td>Maori</td><td></td><td></td><td></td><td></td><td>Malay</td><td></td><td></td><td></td><td>Nepali</td></tr>
+<tr><td></td><td></td><td>Lao</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td></td><td>115.1</td><td>98.5</td><td>91.6</td><td>94.5</td><td></td><td></td><td>113.7</td><td>100.3</td><td>51.2</td><td>100.8</td><td>124.8</td><td>62.0</td><td>101.8</td></tr>
+<tr><td>Whisper base</td><td>96.7</td><td>105.1</td><td>87.3</td><td>79.8</td><td>77.5</td><td></td><td></td><td>125.7</td><td>100.3</td><td>35.1</td><td>97.6</td><td>122.6</td><td>44.0</td><td>102.4</td></tr>
+<tr><td>Whisper small</td><td>91.3</td><td>102.2</td><td>65.6</td><td>53.2</td><td>59.5</td><td></td><td></td><td>144.2</td><td>60.2</td><td>18.9</td><td>92.2</td><td>110.1</td><td>24.2</td><td>69.5</td></tr>
+<tr><td>Whisper medium</td><td>83.2</td><td>101.4</td><td>41.1</td><td>32.0</td><td>77.8</td><td></td><td></td><td>103.7</td><td>63.2</td><td>12.2</td><td>83.2</td><td>123.0</td><td>12.9</td><td>54.4</td></tr>
+<tr><td>Whisper large</td><td>76.8</td><td>101.6</td><td>35.2</td><td>28.3</td><td>45.7</td><td></td><td></td><td>106.2</td><td>43.7</td><td>10.2</td><td>80.5</td><td>124.5</td><td>11.4</td><td>52.2</td></tr>
+<tr><td>Whisper large-v2</td><td>75.6</td><td>101.5</td><td>28.1</td><td>23.1</td><td>38.5</td><td></td><td></td><td>110.5</td><td>38.3</td><td>8.7</td><td>76.6</td><td>115.7</td><td>9.5</td><td>47.1</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Portuguese</td><td>Romanian</td><td></td><td></td><td></td><td>Slovenian</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Occitan</td><td>Punjabi</td><td>Polish</td><td>Pashto</td><td></td><td></td><td>Russian</td><td>Sindhi</td><td>Slovak</td><td></td><td>Shona</td><td>Somali</td><td>Serbian</td></tr>
+<tr><td></td><td>Dutch</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td>49.0</td><td>95.9</td><td>102.6</td><td>45.6</td><td>105.6</td><td>20.1</td><td>74.7</td><td>31.1</td><td>105.8</td><td>77.2</td><td>87.2</td><td>128.1</td><td>105.6</td><td>83.7</td></tr>
+<tr><td>Whisper base</td><td>33.0</td><td>82.9</td><td>101.5</td><td>30.8</td><td>99.0</td><td>13.0</td><td>56.0</td><td>20.5</td><td>103.9</td><td>60.6</td><td>74.6</td><td>126.0</td><td>109.6</td><td>64.3</td></tr>
+<tr><td>Whisper small</td><td>16.4</td><td>87.3</td><td>103.6</td><td>14.7</td><td>92.9</td><td>7.3</td><td>29.8</td><td>11.4</td><td>131.7</td><td>33.3</td><td>49.3</td><td>140.0</td><td>105.3</td><td>42.2</td></tr>
+<tr><td>Whisper medium</td><td>9.9</td><td>79.5</td><td>102.0</td><td>8.0</td><td>119.4</td><td>5.0</td><td>20.0</td><td>7.2</td><td>147.0</td><td>17.3</td><td>31.9</td><td>143.9</td><td>104.0</td><td>44.9</td></tr>
+<tr><td>Whisper large</td><td>8.3</td><td>75.9</td><td>102.8</td><td>7.2</td><td>92.7</td><td>4.8</td><td>15.4</td><td>6.4</td><td>177.9</td><td>15.7</td><td>27.8</td><td>130.0</td><td>103.5</td><td>29.2</td></tr>
+<tr><td>Whisper large-v2</td><td>6.7</td><td>75.3</td><td>102.4</td><td>5.4</td><td>93.7</td><td>4.3</td><td>14.4</td><td>5.6</td><td>156.5</td><td>11.7</td><td>23.1</td><td>121.0</td><td>102.9</td><td>33.9</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Ukrainian</td><td></td><td></td><td>Vietnamese</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Swedish</td><td>Swahili</td><td></td><td></td><td></td><td></td><td>Turkish</td><td></td><td></td><td></td><td></td><td>Yoruba</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>Tamil</td><td>Telugu</td><td></td><td></td><td></td><td></td><td>Urdu</td><td>Uzbek</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Tajik</td><td>Thai</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>52.7</td><td>100.9</td><td>99.9</td><td>105.1</td><td>101.7</td><td>58.8</td><td>42.5</td><td>51.2</td><td>65.2</td><td>105.2</td><td>60.0</td><td>106.4</td><td></td></tr>
+<tr><td></td><td></td><td>37.4</td><td>92.5</td><td>58.7</td><td>105.2</td><td>109.3</td><td>38.2</td><td>27.5</td><td>37.7</td><td>52.0</td><td>114.0</td><td>40.5</td><td>101.8</td><td></td></tr>
+<tr><td></td><td></td><td>20.8</td><td>73.7</td><td>35.2</td><td>98.2</td><td>84.3</td><td>21.9</td><td>15.9</td><td>19.3</td><td>37.3</td><td>107.7</td><td>21.2</td><td>116.4</td><td></td></tr>
+<tr><td></td><td></td><td>11.2</td><td>52.8</td><td>23.1</td><td>82.8</td><td>74.0</td><td>15.4</td><td>10.4</td><td>11.6</td><td>28.2</td><td>109.6</td><td>12.7</td><td>105.1</td><td></td></tr>
+<tr><td></td><td></td><td>10.5</td><td>47.9</td><td>20.6</td><td>100.6</td><td>74.5</td><td>13.2</td><td>9.4</td><td>10.3</td><td>25.0</td><td>93.3</td><td>10.7</td><td>111.7</td><td></td></tr>
+<tr><td></td><td></td><td>8.5</td><td>39.3</td><td>17.5</td><td>99.0</td><td>85.8</td><td>11.5</td><td>8.4</td><td>8.6</td><td>22.6</td><td>90.2</td><td>10.3</td><td>94.8</td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-D-3"><span class="secnum">D.3</span> <span class="t-zh">语音翻译</span><span class="t-en">Speech Translation</span></h3><div class="pblk" id="p-D-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-D-3-1-1"><span class="en">D.3.1.</span></span> <span class="sent" data-sid="s-D-3-1-2"><span class="en">FLEURS Azerbaijani Belarusian Assamese Afrikaans Amharic Arabic Model Bulgarian Bosnian Chinese Catalan Bengali Danish Czech Welsh Whisper tiny</span></span></p>
@@ -1681,176 +1915,258 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 D.3.1.</span></span><span class="sent" data-sid="s-D-3-1-2"><span class="zh">（表 D.3 列头：FLEURS；Azerbaijani / Belarusian / Assamese / Afrikaans / Amharic / Arabic / Model / Bulgarian / Bosnian / Chinese / Catalan / Bengali / Danish / Czech / Welsh / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-3-1"><code>1.6 0.1 0.1 0.4 0.1 0.8 0.4 0.4 0.4 5.2 0.6 0.6 0.6 0.7</code></div>
-<div class="eq" id="eq-D-3-2"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-3-3"><code>4.4 0.3 1.0 0.4 0.8 3.3 2.7 0.7 4.1 13.1 1.9 2.7 0.7 5.0</code></div>
-<div class="eq" id="eq-D-3-4"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-3-5"><code>18.1 0.2 10.6 1.2 5.8 7.1 14.8 2.7 16.8 25.1 9.3 14.2 1.3 18.1</code></div>
-<div class="eq" id="eq-D-3-6"><code>Whisper medium</code></div>
+
+
+
+
+
+
 <div class="eq" id="eq-D-3-7"><code>29.5 0.9 19.9 3.5 11.7 9.8 23.9 10.6 26.0 31.9 15.1 23.6 8.4 28.6</code></div>
-<div class="eq" id="eq-D-3-8"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-3-9"><code>31.6 1.1 23.8 3.9 13.1 11.0 26.2 12.0 28.0 33.7 16.8 25.6 11.2 31.6</code></div>
-<div class="eq" id="eq-D-3-10"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-3-11"><code>34.1 1.9 25.5 5.4 13.7 11.7 28.5 13.2 29.7 34.2 18.4 27.8 13.0 32.7</code></div>
+
+
+
+
 <div class="pblk" id="p-D-3-2">
           <p class="en-lines"><span class="sent" data-sid="s-D-3-2-1"><span class="en">Estonian German Spanish English Persian Greek Model Galician Gujarati Hebrew Tagalog Finnish French Hausa Hindi Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-3-2-1"><span class="zh">（表列头续：Estonian / German / Spanish / English / Persian / Greek / Model / Galician / Gujarati / Hebrew / Tagalog / Finnish / French / Hausa / Hindi / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-3-12"><code>5.2 0.1 68.6 7.7 0.1 0.1 0.2 0.8 4.7 4.0 0.7 0.1 0.2 1.0</code></div>
-<div class="eq" id="eq-D-3-13"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-3-14"><code>13.7 0.7 73.3 12.4 0.3 0.2 0.5 2.1 13.1 10.5 1.5 0.0 0.6 3.4</code></div>
-<div class="eq" id="eq-D-3-15"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-3-16"><code>25.9 11.6 77.3 18.2 3.6 5.8 7.3 12.0 23.5 17.5 3.9 0.3 5.4 11.1</code></div>
-<div class="eq" id="eq-D-3-17"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-3-18"><code>31.4 19.9 79.2 21.4 13.5 15.0 18.5 20.5 28.6 24.7 12.8 0.5 15.9 19.4</code></div>
-<div class="eq" id="eq-D-3-19"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-3-20"><code>34.3 21.7 77.8 22.8 15.9 17.6 20.6 22.7 31.6 26.0 14.8 0.5 19.6 20.7</code></div>
-<div class="eq" id="eq-D-3-21"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-3-22"><code>34.6 23.7 80.2 23.3 18.7 19.6 22.1 24.4 32.2 27.9 16.2 0.4 21.8 22.0</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-D-3-3">
           <p class="en-lines"><span class="sent" data-sid="s-D-3-3-1"><span class="en">Indonesian Hungarian Armenian Icelandic Croatian Italian Model Luxembourgish Georgian Kannada Javanese Japanese Kazakh Korean Khmer Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-3-3-1"><span class="zh">（表列头续：Indonesian / Hungarian / Armenian / Icelandic / Croatian / Italian / Model / Luxembourgish / Georgian / Kannada / Javanese / Japanese / Kazakh / Korean / Khmer / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-3-23"><code>0.6 0.1 0.1 0.3 0.4 5.3 0.2 0.2 0.1 0.1 0.1 0.8 0.5 0.8</code></div>
-<div class="eq" id="eq-D-3-24"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-3-25"><code>3.7 0.2 0.1 2.6 0.4 11.3 1.5 0.2 0.2 0.2 0.1 0.9 3.7 1.7</code></div>
-<div class="eq" id="eq-D-3-26"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-3-27"><code>14.6 4.8 0.7 16.4 1.8 17.8 9.6 1.4 0.2 0.8 0.5 2.3 12.2 5.7</code></div>
-<div class="eq" id="eq-D-3-28"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-3-29"><code>23.0 15.5 10.4 24.1 6.8 21.6 14.9 5.0 1.3 4.3 3.3 8.5 19.2 13.6</code></div>
-<div class="eq" id="eq-D-3-30"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-3-31"><code>25.4 18.3 13.2 27.2 6.6 23.5 17.0 5.1 2.7 6.3 5.2 9.9 20.0 15.4</code></div>
-<div class="eq" id="eq-D-3-32"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-3-33"><code>27.0 21.2 16.0 29.1 9.1 23.6 18.9 6.2 2.4 5.4 6.1 11.6 21.3 16.8</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-D-3-4">
           <p class="en-lines"><span class="sent" data-sid="s-D-3-4-1"><span class="en">Macedonian Lithuanian Latvian Lingala Maori Lao Model Malayalam Norwegian Mongolian Myanmar Marathi Maltese Nepali Malay Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-3-4-1"><span class="zh">（表列头续：Macedonian / Lithuanian / Latvian / Lingala / Maori / Lao / Model / Malayalam / Norwegian / Mongolian / Myanmar / Marathi / Maltese / Nepali / Malay / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-3-34"><code>0.1 0.2 0.1 0.2 0.3 1.0 0.8 0.1 0.2 0.3 0.6 0.1 1.4 0.1</code></div>
-<div class="eq" id="eq-D-3-35"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-3-36"><code>0.1 0.3 0.3 0.4 1.0 5.4 1.4 0.1 0.9 2.1 1.4 0.1 8.4 0.3</code></div>
-<div class="eq" id="eq-D-3-37"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-3-38"><code>0.5 2.0 1.9 1.5 3.9 15.3 5.7 0.1 3.8 14.1 4.9 0.0 22.0 2.9</code></div>
-<div class="eq" id="eq-D-3-39"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-3-40"><code>0.9 8.1 9.6 10.0 8.5 23.5 13.8 0.5 10.9 23.2 11.2 0.2 29.1 12.7</code></div>
-<div class="eq" id="eq-D-3-41"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-3-42"><code>1.2 9.3 12.0 12.5 9.4 26.4 16.5 1.0 13.1 25.5 12.8 0.5 30.5 12.9</code></div>
-<div class="eq" id="eq-D-3-43"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-3-44"><code>1.0 11.0 14.0 14.3 10.2 27.7 16.7 1.0 12.9 27.3 13.5 0.4 31.4 16.1</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-D-3-5">
           <p class="en-lines"><span class="sent" data-sid="s-D-3-5-1"><span class="en">Portuguese Occitan Punjabi Pashto Polish Dutch Model Romanian Slovenian Russian Serbian Somali Slovak Sindhi Shona Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-3-5-1"><span class="zh">（表列头续：Portuguese / Occitan / Punjabi / Pashto / Polish / Dutch / Model / Romanian / Slovenian / Russian / Serbian / Somali / Slovak / Sindhi / Shona / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-3-45"><code>2.7 1.7 0.3 0.8 0.3 12.1 1.0 3.1 0.5 0.7 0.3 0.1 0.0 0.6</code></div>
-<div class="eq" id="eq-D-3-46"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-3-47"><code>7.5 4.2 1.1 5.1 0.4 22.4 4.9 12.1 0.7 4.6 1.3 0.3 0.1 5.4</code></div>
-<div class="eq" id="eq-D-3-48"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-3-49"><code>15.9 9.5 4.4 14.0 0.8 31.2 18.3 19.7 2.0 14.4 6.9 0.6 0.1 19.3</code></div>
-<div class="eq" id="eq-D-3-50"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-3-51"><code>21.6 15.9 12.8 19.0 2.1 35.9 26.6 24.8 5.5 22.7 14.0 1.4 0.4 27.7</code></div>
-<div class="eq" id="eq-D-3-52"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-3-53"><code>22.8 16.8 14.6 21.4 3.7 37.4 29.1 26.7 5.9 25.1 16.9 1.8 0.5 30.5</code></div>
-<div class="eq" id="eq-D-3-54"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-3-55"><code>24.0 20.2 15.7 22.3 3.4 38.1 31.5 27.8 5.7 26.1 17.0 1.8 0.7 32.5</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-D-3-6">
           <p class="en-lines"><span class="sent" data-sid="s-D-3-6-1"><span class="en">Swedish Swahili Telugu Tamil Tajik Model Vietnamese Ukrainian Turkish Yoruba Uzbek Urdu Thai Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-3-6-1"><span class="zh">（表列头续：Swedish / Swahili / Telugu / Tamil / Tajik / Model / Vietnamese / Ukrainian / Turkish / Yoruba / Uzbek / Urdu / Thai / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-3-56"><code>1.8 0.1 0.2 0.3 0.2 0.2 0.2 1.2 0.4 0.0 0.1 0.2</code></div>
-<div class="eq" id="eq-D-3-57"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-3-58"><code>9.1 0.1 0.4 0.4 0.2 0.7 2.4 6.9 1.5 0.2 0.9 0.5</code></div>
-<div class="eq" id="eq-D-3-59"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-3-60"><code>22.9 0.1 2.1 4.0 4.4 5.8 15.7 18.7 8.8 0.5 8.5 0.5</code></div>
-<div class="eq" id="eq-D-3-61"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-3-62"><code>32.1 3.1 7.0 10.8 11.4 12.8 22.9 25.8 14.9 3.8 16.6 0.9</code></div>
-<div class="eq" id="eq-D-3-63"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-3-64"><code>33.1 5.3 8.5 10.9 13.0 15.2 25.7 28.0 16.3 5.8 19.5 1.2</code></div>
-<div class="eq" id="eq-D-3-65"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-3-66"><code>35.3 7.2 9.2 12.5 14.5 16.1 26.6 29.4 17.2 6.0 20.4 1.4</code></div>
-<div class="cap" id="tab-D-3-1"><span class="cap-k">表</span><p class="en">Table 14. BLEU scores on Fleurs</p><p class="zh">表 14. Fleurs 上的 BLEU 分数。</p></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-D-3-1"><span class="cap-k">表</span><p class="en">Table 14. BLEU scores on Fleurs</p><p class="zh">表 14. Fleurs 上的 BLEU 分数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Afrikaans</th><th></th><th></th><th>Assamese</th><th>Azerbaijani</th><th>Belarusian</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Amharic</th><th></th><th></th><th></th><th></th><th>Bulgarian</th><th></th><th>Bosnian</th><th></th><th>Chinese</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>Arabic</th><th></th><th></th><th></th><th></th><th>Bengali</th><th></th><th>Catalan</th><th></th><th>Czech</th><th>Welsh</th><th>Danish</th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Whisper tiny</td><td>1.6</td><td>0.1</td><td>0.1</td><td></td><td>0.1</td><td>0.8</td><td>0.4</td><td>0.4</td><td>0.4</td><td>5.2</td><td>0.6</td><td>0.6</td><td>0.6</td><td>0.7</td></tr>
+<tr><td>Whisper base</td><td>4.4</td><td>0.3</td><td>1.0</td><td></td><td>0.8</td><td>3.3</td><td>2.7</td><td>0.7</td><td>4.1</td><td>13.1</td><td>1.9</td><td>2.7</td><td>0.7</td><td>5.0</td></tr>
+<tr><td>Whisper small</td><td>18.1</td><td>0.2</td><td></td><td></td><td>5.8</td><td>7.1</td><td></td><td>2.7</td><td>16.8</td><td>25.1</td><td>9.3</td><td>14.2</td><td>1.3</td><td>18.1</td></tr>
+<tr><td>Whisper medium</td><td>29.5</td><td>0.9</td><td></td><td></td><td></td><td>9.8</td><td></td><td></td><td>26.0</td><td>31.9</td><td>15.1</td><td>23.6</td><td>8.4</td><td>28.6</td></tr>
+<tr><td>Whisper large</td><td>31.6</td><td>1.1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>28.0</td><td>33.7</td><td>16.8</td><td>25.6</td><td>11.2</td><td>31.6</td></tr>
+<tr><td>Whisper large-v2</td><td>34.1</td><td>1.9</td><td></td><td></td><td></td><td></td><td></td><td></td><td>29.7</td><td>34.2</td><td>18.4</td><td>27.8</td><td>13.0</td><td>32.7</td></tr>
+<tr><td></td><td>German</td><td></td><td>English</td><td>Spanish</td><td>Estonian</td><td>Persian</td><td>Finnish</td><td>Tagalog</td><td></td><td>Galician</td><td>Gujarati</td><td></td><td>Hebrew</td><td></td></tr>
+<tr><td></td><td></td><td>Greek</td><td></td><td></td><td></td><td></td><td></td><td></td><td>French</td><td></td><td></td><td>Hausa</td><td></td><td>Hindi</td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td>5.2</td><td>0.1</td><td>68.6</td><td>7.7</td><td>0.1</td><td>0.1</td><td>0.2</td><td>0.8</td><td>4.7</td><td>4.0</td><td>0.7</td><td>0.1</td><td>0.2</td><td>1.0</td></tr>
+<tr><td>Whisper base</td><td></td><td>0.7</td><td>73.3</td><td>12.4</td><td>0.3</td><td>0.2</td><td>0.5</td><td>2.1</td><td>13.1</td><td>10.5</td><td>1.5</td><td>0.0</td><td>0.6</td><td>3.4</td></tr>
+<tr><td>Whisper small</td><td></td><td></td><td>77.3</td><td>18.2</td><td>3.6</td><td>5.8</td><td>7.3</td><td>12.0</td><td>23.5</td><td>17.5</td><td>3.9</td><td>0.3</td><td>5.4</td><td>11.1</td></tr>
+<tr><td>Whisper medium</td><td></td><td></td><td>79.2</td><td>21.4</td><td>13.5</td><td>15.0</td><td>18.5</td><td>20.5</td><td>28.6</td><td>24.7</td><td>12.8</td><td>0.5</td><td>15.9</td><td>19.4</td></tr>
+<tr><td>Whisper large</td><td></td><td></td><td>77.8</td><td>22.8</td><td>15.9</td><td>17.6</td><td>20.6</td><td>22.7</td><td>31.6</td><td>26.0</td><td>14.8</td><td>0.5</td><td>19.6</td><td>20.7</td></tr>
+<tr><td>Whisper large-v2</td><td></td><td></td><td>80.2</td><td>23.3</td><td>18.7</td><td>19.6</td><td>22.1</td><td>24.4</td><td>32.2</td><td>27.9</td><td>16.2</td><td>0.4</td><td>21.8</td><td>22.0</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Luxembourgish</td></tr>
+<tr><td></td><td></td><td>Hungarian</td><td>Armenian</td><td>Indonesian</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Croatian</td><td></td><td></td><td></td><td>Icelandic</td><td></td><td>Japanese</td><td>Javanese</td><td>Georgian</td><td>Kazakh</td><td></td><td>Kannada</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Italian</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Korean</td><td></td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td>0.6</td><td>0.1</td><td>0.1</td><td></td><td>0.4</td><td>5.3</td><td>0.2</td><td>0.2</td><td>0.1</td><td>0.1</td><td></td><td>0.8</td><td>0.5</td><td>0.8</td></tr>
+<tr><td>Whisper base</td><td>3.7</td><td>0.2</td><td>0.1</td><td></td><td>0.4</td><td>11.3</td><td>1.5</td><td>0.2</td><td>0.2</td><td>0.2</td><td></td><td>0.9</td><td>3.7</td><td>1.7</td></tr>
+<tr><td>Whisper small</td><td>14.6</td><td>4.8</td><td>0.7</td><td>16.4</td><td>1.8</td><td>17.8</td><td>9.6</td><td>1.4</td><td>0.2</td><td>0.8</td><td></td><td>2.3</td><td></td><td>5.7</td></tr>
+<tr><td>Whisper medium</td><td>23.0</td><td>15.5</td><td>10.4</td><td>24.1</td><td>6.8</td><td>21.6</td><td>14.9</td><td>5.0</td><td>1.3</td><td>4.3</td><td></td><td>8.5</td><td></td><td></td></tr>
+<tr><td>Whisper large</td><td>25.4</td><td>18.3</td><td>13.2</td><td>27.2</td><td>6.6</td><td>23.5</td><td>17.0</td><td>5.1</td><td>2.7</td><td>6.3</td><td></td><td>9.9</td><td></td><td></td></tr>
+<tr><td>Whisper large-v2</td><td>27.0</td><td>21.2</td><td>16.0</td><td>29.1</td><td>9.1</td><td>23.6</td><td>18.9</td><td>6.2</td><td>2.4</td><td>5.4</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Lithuanian</td><td></td><td></td><td>Macedonian</td><td>Malayalam</td><td>Mongolian</td><td></td><td></td><td></td><td></td><td>Norwegian</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Marathi</td><td></td><td>Maltese</td><td>Myanmar</td><td></td><td></td></tr>
+<tr><td></td><td>Lingala</td><td></td><td></td><td>Latvian</td><td>Maori</td><td></td><td></td><td></td><td></td><td>Malay</td><td></td><td></td><td></td><td>Nepali</td></tr>
+<tr><td></td><td></td><td>Lao</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td>0.1</td><td>0.2</td><td>0.1</td><td>0.2</td><td>0.3</td><td>1.0</td><td>0.8</td><td>0.1</td><td>0.2</td><td>0.3</td><td>0.6</td><td>0.1</td><td>1.4</td><td>0.1</td></tr>
+<tr><td>Whisper base</td><td>0.1</td><td>0.3</td><td>0.3</td><td>0.4</td><td>1.0</td><td>5.4</td><td>1.4</td><td>0.1</td><td>0.9</td><td>2.1</td><td>1.4</td><td>0.1</td><td>8.4</td><td>0.3</td></tr>
+<tr><td>Whisper small</td><td>0.5</td><td>2.0</td><td>1.9</td><td>1.5</td><td>3.9</td><td>15.3</td><td>5.7</td><td>0.1</td><td>3.8</td><td>14.1</td><td>4.9</td><td>0.0</td><td>22.0</td><td>2.9</td></tr>
+<tr><td>Whisper medium</td><td>0.9</td><td>8.1</td><td>9.6</td><td>10.0</td><td>8.5</td><td>23.5</td><td>13.8</td><td>0.5</td><td>10.9</td><td>23.2</td><td>11.2</td><td>0.2</td><td>29.1</td><td>12.7</td></tr>
+<tr><td>Whisper large</td><td>1.2</td><td>9.3</td><td>12.0</td><td>12.5</td><td>9.4</td><td>26.4</td><td>16.5</td><td>1.0</td><td>13.1</td><td>25.5</td><td>12.8</td><td>0.5</td><td>30.5</td><td>12.9</td></tr>
+<tr><td>Whisper large-v2</td><td>1.0</td><td></td><td>14.0</td><td>14.3</td><td>10.2</td><td>27.7</td><td>16.7</td><td>1.0</td><td>12.9</td><td>27.3</td><td>13.5</td><td>0.4</td><td>31.4</td><td>16.1</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Portuguese</td><td>Romanian</td><td></td><td></td><td></td><td>Slovenian</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Occitan</td><td>Punjabi</td><td>Polish</td><td>Pashto</td><td></td><td></td><td>Russian</td><td>Sindhi</td><td>Slovak</td><td></td><td>Shona</td><td>Somali</td><td>Serbian</td></tr>
+<tr><td></td><td>Dutch</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper tiny</td><td>2.7</td><td>1.7</td><td>0.3</td><td>0.8</td><td>0.3</td><td>12.1</td><td>1.0</td><td>3.1</td><td>0.5</td><td>0.7</td><td>0.3</td><td>0.1</td><td>0.0</td><td>0.6</td></tr>
+<tr><td>Whisper base</td><td>7.5</td><td>4.2</td><td>1.1</td><td>5.1</td><td>0.4</td><td>22.4</td><td>4.9</td><td>12.1</td><td>0.7</td><td>4.6</td><td>1.3</td><td>0.3</td><td>0.1</td><td>5.4</td></tr>
+<tr><td>Whisper small</td><td>15.9</td><td>9.5</td><td>4.4</td><td>14.0</td><td>0.8</td><td>31.2</td><td>18.3</td><td>19.7</td><td>2.0</td><td>14.4</td><td>6.9</td><td>0.6</td><td>0.1</td><td>19.3</td></tr>
+<tr><td>Whisper medium</td><td>21.6</td><td>15.9</td><td>12.8</td><td>19.0</td><td>2.1</td><td>35.9</td><td>26.6</td><td>24.8</td><td>5.5</td><td>22.7</td><td>14.0</td><td>1.4</td><td>0.4</td><td>27.7</td></tr>
+<tr><td>Whisper large</td><td>22.8</td><td>16.8</td><td>14.6</td><td>21.4</td><td>3.7</td><td>37.4</td><td>29.1</td><td>26.7</td><td>5.9</td><td>25.1</td><td>16.9</td><td>1.8</td><td>0.5</td><td>30.5</td></tr>
+<tr><td>Whisper large-v2</td><td>24.0</td><td>20.2</td><td>15.7</td><td>22.3</td><td>3.4</td><td>38.1</td><td>31.5</td><td>27.8</td><td>5.7</td><td>26.1</td><td>17.0</td><td>1.8</td><td>0.7</td><td>32.5</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Ukrainian</td><td></td><td></td><td>Vietnamese</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Swedish</td><td>Swahili</td><td></td><td></td><td></td><td></td><td>Turkish</td><td></td><td></td><td></td><td></td><td>Yoruba</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>Tamil</td><td>Telugu</td><td></td><td></td><td></td><td></td><td>Urdu</td><td>Uzbek</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Tajik</td><td>Thai</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>1.8</td><td>0.1</td><td>0.2</td><td>0.3</td><td>0.2</td><td>0.2</td><td>0.2</td><td>1.2</td><td>0.4</td><td>0.0</td><td>0.1</td><td>0.2</td><td></td></tr>
+<tr><td></td><td></td><td>9.1</td><td>0.1</td><td>0.4</td><td>0.4</td><td>0.2</td><td>0.7</td><td>2.4</td><td>6.9</td><td>1.5</td><td>0.2</td><td>0.9</td><td>0.5</td><td></td></tr>
+<tr><td></td><td></td><td>22.9</td><td>0.1</td><td>2.1</td><td>4.0</td><td>4.4</td><td>5.8</td><td>15.7</td><td>18.7</td><td>8.8</td><td>0.5</td><td>8.5</td><td>0.5</td><td></td></tr>
+<tr><td></td><td></td><td>32.1</td><td>3.1</td><td>7.0</td><td>10.8</td><td>11.4</td><td>12.8</td><td>22.9</td><td>25.8</td><td>14.9</td><td>3.8</td><td>16.6</td><td>0.9</td><td></td></tr>
+<tr><td></td><td></td><td>33.1</td><td>5.3</td><td>8.5</td><td>10.9</td><td>13.0</td><td>15.2</td><td>25.7</td><td>28.0</td><td>16.3</td><td>5.8</td><td>19.5</td><td>1.2</td><td></td></tr>
+<tr><td></td><td></td><td>35.3</td><td>7.2</td><td>9.2</td><td>12.5</td><td>14.5</td><td>16.1</td><td>26.6</td><td>29.4</td><td>17.2</td><td>6.0</td><td>20.4</td><td>1.4</td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-D-3-7">
           <p class="en-lines"><span class="sent" data-sid="s-D-3-7-1"><span class="en">D.3.2.</span></span> <span class="sent" data-sid="s-D-3-7-2"><span class="en">COVOST 2 Estonian German Spanish Catalan Arabic Welsh Model Indonesian Mongolian Japanese Latvian Persian French Italian Whisper tiny</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-D-3-7-1"><span class="zh">3.
 D.3.2.</span></span><span class="sent" data-sid="s-D-3-7-2"><span class="zh">（表列头：COVOST 2；Estonian / German / Spanish / Catalan / Arabic / Welsh / Model / Indonesian / Mongolian / Japanese / Latvian / Persian / French / Italian / Whisper tiny。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-3-67"><code>0.2 4.9 0.4 4.0 10.5 0.2 0.1 6.1 0.3 5.1 0.3 0.1 0.1</code></div>
-<div class="eq" id="eq-D-3-68"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-3-69"><code>1.2 11.0 0.5 11.7 21.3 0.3 0.1 15.4 4.9 13.0 4.9 0.5 0.1</code></div>
-<div class="eq" id="eq-D-3-70"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-3-71"><code>17.7 22.3 1.0 25.3 33.0 2.4 4.9 27.3 27.6 24.0 17.3 1.4 0.2</code></div>
-<div class="eq" id="eq-D-3-72"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-3-73"><code>30.6 29.2 12.1 33.2 38.4 11.4 15.5 33.6 42.3 29.5 24.6 9.7 0.2</code></div>
-<div class="eq" id="eq-D-3-74"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-3-75"><code>35.5 30.3 16.1 34.3 38.0 13.4 17.5 34.4 45.4 29.1 24.2 10.5 0.3</code></div>
-<div class="eq" id="eq-D-3-76"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-3-77"><code>39.7 31.8 21.5 36.3 40.1 15.0 19.3 36.4 48.1 30.9 26.1 13.9 0.1</code></div>
-<div class="pblk" id="p-D-3-8">
-          <p class="en-lines"><span class="sent" data-sid="s-D-3-8-1"><span class="en">Portuguese Russian Dutch Model Slovenian Swedish Chinese Turkish Tamil Whisper tiny</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-D-3-8-1"><span class="zh">（表列头续：Portuguese / Russian / Dutch / Model / Slovenian / Swedish / Chinese / Turkish / Tamil / Whisper tiny。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-D-3-78"><code>4.3 9.5 5.7 0.4 2.0 0.1 0.2 0.4</code></div>
-<div class="eq" id="eq-D-3-79"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-3-80"><code>12.4 23.2 16.1 1.4 10.5 0.4 2.8 1.4</code></div>
-<div class="eq" id="eq-D-3-81"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-3-82"><code>28.1 40.6 30.9 9.2 29.9 1.7 16.8 6.8</code></div>
-<div class="eq" id="eq-D-3-83"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-3-84"><code>38.1 48.7 39.4 17.7 39.5 2.9 27.0 14.0</code></div>
-<div class="eq" id="eq-D-3-85"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-3-86"><code>39.3 48.6 41.6 23.9 40.3 3.7 26.7 17.1</code></div>
-<div class="eq" id="eq-D-3-87"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-3-88"><code>41.2 51.6 43.3 21.6 42.9 4.2 28.3 18.0</code></div>
-<div class="cap" id="tab-D-3-2"><span class="cap-k">表</span><p class="en">Table 15. BLEU scores on CoVoST2</p><p class="zh">表 15. CoVoST2 上的 BLEU 分数。</p></div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-D-3-2"><span class="cap-k">表</span><p class="en">Table 15. BLEU scores on CoVoST2</p><p class="zh">表 15. CoVoST2 上的 BLEU 分数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>Indonesian</th><th></th><th></th><th></th><th></th><th>Mongolian</th></tr><tr><th></th><th></th><th>Catalan</th><th></th><th></th><th>German</th><th></th><th></th><th>Spanish</th><th>Estonian</th><th></th><th>Persian</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>Japanese</th><th>Latvian</th><th></th></tr><tr><th></th><th>Arabic</th><th></th><th>Welsh</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>French</th><th></th><th></th><th></th><th></th><th>Italian</th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Whisper tiny</td><td>0.2</td><td>4.9</td><td></td><td>0.4</td><td></td><td>4.0</td><td>10.5</td><td></td><td></td><td>0.2</td><td></td><td>0.1</td><td></td><td>6.1</td><td></td><td>0.3</td><td></td><td>5.1</td><td>0.3</td><td>0.1</td><td>0.1</td></tr>
+<tr><td>Whisper base</td><td>1.2</td><td>11.0</td><td></td><td>0.5</td><td>11.7</td><td></td><td>21.3</td><td></td><td></td><td>0.3</td><td></td><td>0.1</td><td>15.4</td><td></td><td></td><td>4.9</td><td>13.0</td><td></td><td>4.9</td><td>0.5</td><td>0.1</td></tr>
+<tr><td>Whisper small</td><td>17.7</td><td>22.3</td><td></td><td>1.0</td><td>25.3</td><td></td><td>33.0</td><td></td><td></td><td>2.4</td><td></td><td>4.9</td><td>27.3</td><td></td><td>27.6</td><td></td><td>24.0</td><td></td><td>17.3</td><td>1.4</td><td>0.2</td></tr>
+<tr><td>Whisper medium</td><td>30.6</td><td>29.2</td><td>12.1</td><td></td><td>33.2</td><td></td><td>38.4</td><td></td><td>11.4</td><td></td><td>15.5</td><td></td><td>33.6</td><td></td><td>42.3</td><td></td><td>29.5</td><td></td><td>24.6</td><td>9.7</td><td>0.2</td></tr>
+<tr><td>Whisper large</td><td>35.5</td><td>30.3</td><td>16.1</td><td></td><td>34.3</td><td></td><td>38.0</td><td></td><td>13.4</td><td></td><td>17.5</td><td></td><td>34.4</td><td></td><td>45.4</td><td></td><td>29.1</td><td></td><td>24.2</td><td>10.5</td><td>0.3</td></tr>
+<tr><td>Whisper large-v2</td><td>39.7</td><td>31.8</td><td>21.5</td><td></td><td>36.3</td><td></td><td>40.1</td><td></td><td>15.0</td><td></td><td>19.3</td><td></td><td>36.4</td><td></td><td>48.1</td><td></td><td>30.9</td><td></td><td>26.1</td><td>13.9</td><td>0.1</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Portuguese</td><td></td><td></td><td></td><td>Slovenian</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Russian</td><td></td><td></td><td></td><td>Swedish</td><td></td><td></td><td></td><td>Turkish</td><td></td><td>Chinese</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>Dutch</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Tamil</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Model</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Whisper tiny</td><td></td><td></td><td>4.3</td><td></td><td>9.5</td><td></td><td>5.7</td><td></td><td>0.4</td><td></td><td>2.0</td><td></td><td>0.1</td><td></td><td>0.2</td><td></td><td>0.4</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Whisper base</td><td></td><td></td><td>12.4</td><td></td><td>23.2</td><td></td><td>16.1</td><td></td><td>1.4</td><td></td><td>10.5</td><td></td><td>0.4</td><td></td><td>2.8</td><td></td><td>1.4</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Whisper small</td><td></td><td></td><td>28.1</td><td></td><td>40.6</td><td></td><td>30.9</td><td></td><td>9.2</td><td></td><td>29.9</td><td></td><td>1.7</td><td></td><td>16.8</td><td></td><td>6.8</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Whisper medium</td><td></td><td></td><td>38.1</td><td></td><td>48.7</td><td></td><td>39.4</td><td></td><td>17.7</td><td></td><td>39.5</td><td></td><td>2.9</td><td></td><td>27.0</td><td></td><td>14.0</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Whisper large</td><td></td><td></td><td>39.3</td><td></td><td>48.6</td><td></td><td>41.6</td><td></td><td>23.9</td><td></td><td>40.3</td><td></td><td>3.7</td><td></td><td>26.7</td><td></td><td>17.1</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Whisper large-v2</td><td></td><td></td><td>41.2</td><td></td><td>51.6</td><td></td><td>43.3</td><td></td><td>21.6</td><td></td><td>42.9</td><td></td><td>4.2</td><td></td><td>28.3</td><td></td><td>18.0</td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-D-4"><span class="secnum">D.4</span> <span class="t-zh">长音频转录</span><span class="t-en">Long-form Transcription</span></h3><div class="pblk" id="p-D-4-1">
-          <p class="en-lines"><span class="sent" data-sid="s-D-4-1-1"><span class="en">TED-LIUM3 Meanwhile Model Earnings-21 Earnings-22 Kincaid46 CORAAL Rev16 Whisper tiny.en</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-D-4-1-1"><span class="zh">（表 D.4 列头：TED-LIUM3 / Meanwhile / Model / Earnings-21 / Earnings-22 / Kincaid46 / CORAAL / Rev16 / Whisper tiny.en。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-D-4-1"><code>5.5 12.8 13.8 15.1 17.0 22.0 30.3</code></div>
-<div class="eq" id="eq-D-4-2"><code>Whisper tiny</code></div>
-<div class="eq" id="eq-D-4-3"><code>6.8 15.5 16.7 17.0 18.7 24.4 33.1</code></div>
-<div class="eq" id="eq-D-4-4"><code>Whisper base.en</code></div>
-<div class="eq" id="eq-D-4-5"><code>4.6 9.4 11.2 13.2 12.5 16.6 25.2</code></div>
-<div class="eq" id="eq-D-4-6"><code>Whisper base</code></div>
-<div class="eq" id="eq-D-4-7"><code>4.8 12.2 12.2 14.5 13.5 18.4 26.9</code></div>
-<div class="eq" id="eq-D-4-8"><code>Whisper small.en</code></div>
-<div class="eq" id="eq-D-4-9"><code>4.6 6.0 9.4 12.0 10.8 14.0 21.9</code></div>
-<div class="eq" id="eq-D-4-10"><code>Whisper small</code></div>
-<div class="eq" id="eq-D-4-11"><code>4.2 6.9 10.1 12.1 11.1 14.3 22.3</code></div>
-<div class="eq" id="eq-D-4-12"><code>Whisper medium.en</code></div>
-<div class="eq" id="eq-D-4-13"><code>3.6 5.2 8.9 11.9 10.2 13.3 20.6</code></div>
-<div class="eq" id="eq-D-4-14"><code>Whisper medium</code></div>
-<div class="eq" id="eq-D-4-15"><code>3.8 5.4 8.6 11.4 10.3 13.2 20.3</code></div>
-<div class="eq" id="eq-D-4-16"><code>Whisper large</code></div>
-<div class="eq" id="eq-D-4-17"><code>3.8 5.3 8.8 11.0 10.3 13.4 20.4</code></div>
-<div class="eq" id="eq-D-4-18"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-D-4-19"><code>3.5 5.1 8.8 11.3 9.7 12.6 19.6</code></div>
-<div class="eq" id="eq-D-4-20"><code>wav2vec2-base-100h</code></div>
-<div class="eq" id="eq-D-4-21"><code>17.6 27.7 39.3 35.2 45.7 57.1 55.4</code></div>
-<div class="eq" id="eq-D-4-22"><code>wav2vec2-base-960h</code></div>
-<div class="eq" id="eq-D-4-23"><code>12.8 19.7 32.9 29.8 37.3 46.8 49.1</code></div>
-<div class="eq" id="eq-D-4-24"><code>wav2vec2-large-960h-lv60-self</code></div>
-<div class="eq" id="eq-D-4-25"><code>7.2 11.4 21.1 21.3 21.7 28.0 36.7</code></div>
-<div class="eq" id="eq-D-4-26"><code>wav2vec2-large-960h</code></div>
-<div class="eq" id="eq-D-4-27"><code>10.1 16.4 27.4 26.4 30.4 40.1 43.5</code></div>
-<div class="eq" id="eq-D-4-28"><code>wav2vec2-large-robust-ft-libri-960h</code></div>
-<div class="eq" id="eq-D-4-29"><code>8.8 15.2 22.9 23.4 23.0 31.0 36.8</code></div>
-<div class="eq" id="eq-D-4-30"><code>hubert-large-ls960-ft</code></div>
-<div class="eq" id="eq-D-4-31"><code>8.1 12.9 22.4 23.4 23.0 30.6 37.9</code></div>
-<div class="eq" id="eq-D-4-32"><code>hubert-xlarge-ls960-ft</code></div>
-<div class="eq" id="eq-D-4-33"><code>8.1 12.5 22.9 23.2 23.1 31.3 38.1</code></div>
-<div class="eq" id="eq-D-4-34"><code>stt en conformer ctc large</code></div>
-<div class="eq" id="eq-D-4-35"><code>4.0 9.8 13.1 14.5 12.6 17.6 25.1</code></div>
-<div class="eq" id="eq-D-4-36"><code>stt en conformer transducer xlarge</code></div>
-<div class="eq" id="eq-D-4-37"><code>5.3 10.6 17.1 19.8 16.2 19.7 38.9</code></div>
-<div class="cap" id="tab-D-4-1"><span class="cap-k">表</span><p class="en">Table 16. Long-form English transcription WER (%)</p><p class="zh">表 16. 长音频英语转录 WER（%）。</p></div></section>
+      <h3 class="sech lv2" id="sec-D-4"><span class="secnum">D.4</span> <span class="t-zh">长音频转录</span><span class="t-en">Long-form Transcription</span></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-D-4-1"><span class="cap-k">表</span><p class="en">Table 16. Long-form English transcription WER (%)</p><p class="zh">表 16. 长音频英语转录 WER（%）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>TED-LIUM3</th><th></th><th></th><th></th><th>Earnings-21</th><th>Earnings-22</th><th></th></tr><tr><th></th><th></th><th>Meanwhile</th><th>Kincaid46</th><th></th><th></th><th></th><th>CORAAL</th></tr><tr><th></th><th></th><th></th><th></th><th>Rev16</th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Whisper tiny.en</td><td>5.5</td><td>12.8</td><td>13.8</td><td>15.1</td><td>17.0</td><td>22.0</td><td>30.3</td></tr>
+<tr><td>Whisper tiny</td><td>6.8</td><td>15.5</td><td>16.7</td><td>17.0</td><td>18.7</td><td>24.4</td><td>33.1</td></tr>
+<tr><td>Whisper base.en</td><td>4.6</td><td>9.4</td><td>11.2</td><td>13.2</td><td>12.5</td><td>16.6</td><td>25.2</td></tr>
+<tr><td>Whisper base</td><td>4.8</td><td>12.2</td><td>12.2</td><td>14.5</td><td>13.5</td><td>18.4</td><td>26.9</td></tr>
+<tr><td>Whisper small.en</td><td>4.6</td><td>6.0</td><td>9.4</td><td>12.0</td><td>10.8</td><td>14.0</td><td>21.9</td></tr>
+<tr><td>Whisper small</td><td>4.2</td><td>6.9</td><td>10.1</td><td>12.1</td><td>11.1</td><td>14.3</td><td>22.3</td></tr>
+<tr><td>Whisper medium.en</td><td>3.6</td><td>5.2</td><td>8.9</td><td>11.9</td><td>10.2</td><td>13.3</td><td>20.6</td></tr>
+<tr><td>Whisper medium</td><td>3.8</td><td>5.4</td><td>8.6</td><td>11.4</td><td>10.3</td><td>13.2</td><td>20.3</td></tr>
+<tr><td>Whisper large</td><td>3.8</td><td>5.3</td><td>8.8</td><td>11.0</td><td>10.3</td><td>13.4</td><td>20.4</td></tr>
+<tr><td>Whisper large-v2</td><td>3.5</td><td>5.1</td><td>8.8</td><td>11.3</td><td>9.7</td><td>12.6</td><td>19.6</td></tr>
+<tr><td>wav2vec2-base-100h</td><td>17.6</td><td>27.7</td><td>39.3</td><td>35.2</td><td>45.7</td><td>57.1</td><td>55.4</td></tr>
+<tr><td>wav2vec2-base-960h</td><td>12.8</td><td>19.7</td><td>32.9</td><td>29.8</td><td>37.3</td><td>46.8</td><td>49.1</td></tr>
+<tr><td>wav2vec2-large-960h-lv60-self</td><td>7.2</td><td>11.4</td><td>21.1</td><td>21.3</td><td>21.7</td><td>28.0</td><td>36.7</td></tr>
+<tr><td>wav2vec2-large-960h</td><td>10.1</td><td>16.4</td><td>27.4</td><td>26.4</td><td>30.4</td><td>40.1</td><td>43.5</td></tr>
+<tr><td>wav2vec2-large-robust-ft-libri-960h</td><td>8.8</td><td>15.2</td><td>22.9</td><td>23.4</td><td>23.0</td><td>31.0</td><td>36.8</td></tr>
+<tr><td>hubert-large-ls960-ft</td><td>8.1</td><td>12.9</td><td>22.4</td><td>23.4</td><td>23.0</td><td>30.6</td><td>37.9</td></tr>
+<tr><td>hubert-xlarge-ls960-ft</td><td>8.1</td><td>12.5</td><td>22.9</td><td>23.2</td><td>23.1</td><td>31.3</td><td>38.1</td></tr>
+<tr><td>stt en conformer ctc large</td><td>4.0</td><td>9.8</td><td>13.1</td><td>14.5</td><td>12.6</td><td>17.6</td><td>25.1</td></tr>
+<tr><td>stt en conformer transducer xlarge</td><td>5.3</td><td>10.6</td><td>17.1</td><td>19.8</td><td>16.2</td><td>19.7</td><td>38.9</td></tr></tbody></table></div></div></section>
 <section>
       <h2 class="sech lv1" id="sec-E"><span class="secnum">E</span> <span class="t-zh">训练数据集统计</span><span class="t-en">Training Dataset Statistics</span></h2><div class="pblk" id="p-E-1">
           <p class="en-lines"><span class="sent" data-sid="s-E-1-1"><span class="en">Dataset Components Multilingual Speech Recognition Chinese</span></span></p>
@@ -2205,66 +2521,110 @@ D.3.2.</span></span><span class="sent" data-sid="s-D-3-7-2"><span class="zh">（
         </div>
 <div class="cap" id="fig-E-1"><img class="fig" src="../assets/figures/2212.04356/fig-E-1.png" loading="lazy" alt="Figure 11. Training dataset statistics"><span class="cap-k">图</span><p class="en">Figure 11. Training dataset statistics</p><p class="zh">图 11. 训练数据集统计。</p></div></section>
 <section>
-      <h2 class="sech lv1" id="sec-F"><span class="secnum">F</span> <span class="t-zh">超参数</span><span class="t-en">Hyperparameters</span></h2><div class="pblk" id="p-F-1">
-          <p class="en-lines"><span class="sent" data-sid="s-F-1-1"><span class="en">Hyperparameter Value Updates</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-F-1-1"><span class="zh">（表 F 列头：Hyperparameter / Value / Updates。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-F-1"><code>1048576</code></div>
-<div class="eq" id="eq-F-2"><code>Batch Size</code></div>
-<div class="eq" id="eq-F-3"><code>256</code></div>
-<div class="eq" id="eq-F-4"><code>Warmup Updates</code></div>
-<div class="eq" id="eq-F-5"><code>2048</code></div>
-<div class="eq" id="eq-F-6"><code>Max grad norm</code></div>
-<div class="eq" id="eq-F-7"><code>1.0</code></div>
-<div class="eq" id="eq-F-8"><code>Optimizer AdamW</code></div>
-<div class="eq" id="eq-F-9"><code>β1 0.9 β2 0.98 ϵ 10−6</code></div>
-<div class="eq" id="eq-F-10"><code>Weight Decay</code></div>
-<div class="eq" id="eq-F-11"><code>0.1</code></div>
+      <h2 class="sech lv1" id="sec-F"><span class="secnum">F</span> <span class="t-zh">超参数</span><span class="t-en">Hyperparameters</span></h2>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-F-2">
           <p class="en-lines"><span class="sent" data-sid="s-F-2-1"><span class="en">Weight Init Gaussian Fan-In Learning Rate Schedule Linear Decay Speechless audio subsample factor</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-F-2-1"><span class="zh">（表 F 行：Weight Init = Gaussian Fan-In；Learning Rate Schedule = Linear Decay；Speechless audio subsample factor（后续照原文）。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-F-12"><code>10×</code></div>
-<div class="eq" id="eq-F-13"><code>Condition on prior text rate</code></div>
-<div class="eq" id="eq-F-14"><code>50%</code></div>
-<div class="cap" id="tab-F-1"><span class="cap-k">表</span><p class="en">Table 17. Whisper training hyperparameters.</p><p class="zh">表 17. Whisper 训练超参数。</p></div>
-<div class="pblk" id="p-F-3">
-          <p class="en-lines"><span class="sent" data-sid="s-F-3-1"><span class="en">Hyperparameter Value Updates</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-F-3-1"><span class="zh">（表 F 列头：Hyperparameter / Value / Updates。）</span></span></p>
-          
-        </div>
+
+
+
+<div class="cap" id="tab-F-1"><span class="cap-k">表</span><p class="en">Table 17. Whisper training hyperparameters.</p><p class="zh">表 17. Whisper 训练超参数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Hyperparameter</th><th></th><th></th><th>Value</th></tr></thead><tbody><tr><td>Updates</td><td></td><td>1048576</td><td></td></tr>
+<tr><td>Batch Size</td><td></td><td></td><td>256</td></tr>
+<tr><td>Warmup Updates</td><td></td><td></td><td>2048</td></tr>
+<tr><td>Max grad norm</td><td></td><td></td><td>1.0</td></tr>
+<tr><td>Optimizer</td><td></td><td>AdamW</td><td></td></tr>
+<tr><td>β1</td><td></td><td></td><td>0.9</td></tr>
+<tr><td>β2</td><td></td><td></td><td>0.98</td></tr>
+<tr><td>ϵ</td><td></td><td></td><td>10−6</td></tr>
+<tr><td>Weight Decay</td><td></td><td></td><td>0.1</td></tr>
+<tr><td>Weight Init</td><td>Gaussian Fan-In</td><td></td><td></td></tr>
+<tr><td>Learning Rate Schedule</td><td>Linear Decay</td><td></td><td></td></tr>
+<tr><td>Speechless audio subsample factor</td><td></td><td></td><td>10×</td></tr>
+<tr><td>Condition on prior text rate</td><td></td><td></td><td>50%</td></tr></tbody></table></div></div>
+
 <div class="eq" id="eq-F-15"><code>655360</code></div>
-<div class="eq" id="eq-F-16"><code>Batch Size</code></div>
-<div class="eq" id="eq-F-17"><code>1024</code></div>
-<div class="eq" id="eq-F-18"><code>BPE Dropout</code></div>
-<div class="eq" id="eq-F-19"><code>0.1</code></div>
-<div class="eq" id="eq-F-20"><code>Stochastic Depth</code></div>
-<div class="eq" id="eq-F-21"><code>0.1</code></div>
+
+
+
+
+
+
 <div class="pblk" id="p-F-4">
           <p class="en-lines"><span class="sent" data-sid="s-F-4-1"><span class="en">SpecAugment Policy LibriSpeech Basic</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-F-4-1"><span class="zh">（表 F 行：SpecAugment Policy = LibriSpeech Basic。）</span></span></p>
           
         </div>
-<div class="cap" id="tab-F-2"><span class="cap-k">表</span><p class="en">Table 18. Hyperparameters changed for Whisper Large V2.</p><p class="zh">表 18. Whisper Large V2 改动的超参数。</p></div>
-<div class="pblk" id="p-F-5">
-          <p class="en-lines"><span class="sent" data-sid="s-F-5-1"><span class="en">Model Max Learning Rate Tiny</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-F-5-1"><span class="zh">（表 F 列头：Model / Max Learning Rate——Tiny（后续照原文）。）</span></span></p>
-          
-        </div>
+<div class="cap" id="tab-F-2"><span class="cap-k">表</span><p class="en">Table 18. Hyperparameters changed for Whisper Large V2.</p><p class="zh">表 18. Whisper Large V2 改动的超参数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Hyperparameter</th><th></th><th></th><th>Value</th></tr><tr><th>Updates</th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Batch Size</td><td></td><td></td><td>256</td></tr>
+<tr><td>Warmup Updates</td><td></td><td></td><td>2048</td></tr>
+<tr><td>Max grad norm</td><td></td><td></td><td>1.0</td></tr>
+<tr><td>Optimizer</td><td></td><td></td><td></td></tr>
+<tr><td>β1</td><td></td><td></td><td>0.9</td></tr>
+<tr><td>β2</td><td></td><td></td><td>0.98</td></tr>
+<tr><td>ϵ</td><td></td><td></td><td>10−6</td></tr>
+<tr><td>Weight Decay</td><td></td><td></td><td>0.1</td></tr>
+<tr><td>Weight Init</td><td></td><td>Gaussian Fan-In</td><td></td></tr>
+<tr><td>Learning Rate Schedule</td><td></td><td>Linear Decay</td><td></td></tr>
+<tr><td>Speechless audio subsample factor</td><td></td><td></td><td>10×</td></tr>
+<tr><td>Condition on prior text rate</td><td></td><td></td><td>50%</td></tr>
+<tr><td></td><td>Table 17. Whisper training hyperparameters.</td><td></td><td></td></tr>
+<tr><td></td><td>Hyperparameter</td><td>Value</td><td></td></tr>
+<tr><td></td><td>Updates</td><td></td><td></td></tr>
+<tr><td></td><td>Batch Size</td><td>1024</td><td></td></tr>
+<tr><td></td><td>BPE Dropout</td><td>0.1</td><td></td></tr>
+<tr><td></td><td>Stochastic Depth</td><td>0.1</td><td></td></tr>
+<tr><td></td><td>SpecAugment Policy</td><td></td><td></td></tr></tbody></table></div></div>
+
 <div class="eq" id="eq-F-22"><code>1.5 × 10−3</code></div>
-<div class="eq" id="eq-F-23"><code>Base</code></div>
+
 <div class="eq" id="eq-F-24"><code>1 × 10−3</code></div>
-<div class="eq" id="eq-F-25"><code>Small</code></div>
+
 <div class="eq" id="eq-F-26"><code>5 × 10−4</code></div>
-<div class="eq" id="eq-F-27"><code>Medium</code></div>
+
 <div class="eq" id="eq-F-28"><code>2.5 × 10−4</code></div>
-<div class="eq" id="eq-F-29"><code>Large</code></div>
+
 <div class="eq" id="eq-F-30"><code>1.75 × 10−4</code></div>
-<div class="eq" id="eq-F-31"><code>Large V2</code></div>
+
 <div class="eq" id="eq-F-32"><code>2.0 × 10−4</code></div>
-<div class="cap" id="tab-F-3"><span class="cap-k">表</span><p class="en">Table 19. Whisper model learning rates.</p><p class="zh">表 19. Whisper 各模型的学习率。</p></div></section></article>
+<div class="cap" id="tab-F-3"><span class="cap-k">表</span><p class="en">Table 19. Whisper model learning rates.</p><p class="zh">表 19. Whisper 各模型的学习率。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Hyperparameter</th><th></th><th></th><th></th><th>Value</th></tr><tr><th>Updates</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Batch Size</td><td></td><td></td><td></td><td>256</td></tr>
+<tr><td>Warmup Updates</td><td></td><td></td><td></td><td>2048</td></tr>
+<tr><td>Max grad norm</td><td></td><td></td><td></td><td>1.0</td></tr>
+<tr><td>Optimizer</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>β1</td><td></td><td></td><td></td><td>0.9</td></tr>
+<tr><td>β2</td><td></td><td></td><td></td><td>0.98</td></tr>
+<tr><td>ϵ</td><td></td><td></td><td></td><td>10−6</td></tr>
+<tr><td>Weight Decay</td><td></td><td></td><td></td><td>0.1</td></tr>
+<tr><td>Weight Init</td><td></td><td></td><td>Gaussian Fan-In</td><td></td></tr>
+<tr><td>Learning Rate Schedule</td><td></td><td></td><td>Linear Decay</td><td></td></tr>
+<tr><td>Speechless audio subsample factor</td><td></td><td></td><td></td><td>10×</td></tr>
+<tr><td>Condition on prior text rate</td><td></td><td></td><td></td><td>50%</td></tr>
+<tr><td></td><td>Table 17. Whisper training hyperparameters.</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Hyperparameter</td><td></td><td>Value</td><td></td></tr>
+<tr><td></td><td>Updates</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Batch Size</td><td></td><td>1024</td><td></td></tr>
+<tr><td></td><td>BPE Dropout</td><td></td><td>0.1</td><td></td></tr>
+<tr><td></td><td>Stochastic Depth</td><td></td><td>0.1</td><td></td></tr>
+<tr><td></td><td>SpecAugment Policy</td><td></td><td></td><td></td></tr>
+<tr><td>Table 18. Hyperparameters changed for Whisper Large V2.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Model</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Tiny</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Base</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Small</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Medium</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Large</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Large V2</td><td></td><td></td></tr></tbody></table></div></div></section></article>
   <footer class="foot">
     原文来自 arXiv:2212.04356（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。
     本地 PDF：<a href="../../papers/2212.04356.pdf">papers/2212.04356.pdf</a>。

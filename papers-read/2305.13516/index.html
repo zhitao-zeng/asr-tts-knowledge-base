@@ -102,6 +102,13 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+/* 重建表格网格（extract_tables.py 产物） */
+.ptab-wrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ptab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ptab th{background:#f1f5f9;font-weight:700;padding:6px 9px;border-bottom:1.5px solid var(--line);text-align:left;white-space:nowrap}
+.ptab td{padding:5px 9px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap}
+.ptab td:first-child,.ptab th:first-child{text-align:left;font-weight:600}
+.ptab tbody tr:hover td{background:#f8fafc}
 .tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
 .refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
 /* 三分钟摘要 */
@@ -1071,30 +1078,36 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-4-1"><span class="zh">表头：#lang / labeled data (h) / train / FLEURS-54 dev / test——Prior Work：Whisper medium（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-5-2-5"><code>99</code></div>
-<div class="eq" id="eq-5-2-6"><code>680K</code></div>
-<div class="eq" id="eq-5-2-7"><code>- 50.1</code></div>
-<div class="eq" id="eq-5-2-8"><code>Whisper large-v2</code></div>
-<div class="eq" id="eq-5-2-9"><code>99</code></div>
-<div class="eq" id="eq-5-2-10"><code>680K</code></div>
-<div class="eq" id="eq-5-2-11"><code>- 44.3</code></div>
-<div class="eq" id="eq-5-2-12"><code>This Work MMS</code></div>
-<div class="eq" id="eq-5-2-13"><code>61</code></div>
-<div class="eq" id="eq-5-2-14"><code>3K</code></div>
-<div class="eq" id="eq-5-2-15"><code>20.9 20.7</code></div>
-<div class="eq" id="eq-5-2-16"><code>MMS (LSAH)</code></div>
-<div class="eq" id="eq-5-2-17"><code>61</code></div>
-<div class="eq" id="eq-5-2-18"><code>3K</code></div>
-<div class="eq" id="eq-5-2-19"><code>19.0 19.1</code></div>
-<div class="eq" id="eq-5-2-20"><code>MMS</code></div>
-<div class="eq" id="eq-5-2-21"><code>1,107</code></div>
-<div class="eq" id="eq-5-2-22"><code>45K</code></div>
-<div class="eq" id="eq-5-2-23"><code>24.8 24.8</code></div>
-<div class="eq" id="eq-5-2-24"><code>MMS (LSAH)</code></div>
-<div class="eq" id="eq-5-2-25"><code>1,107</code></div>
-<div class="eq" id="eq-5-2-26"><code>45K</code></div>
-<div class="eq" id="eq-5-2-27"><code>18.7 18.7</code></div>
-<div class="cap" id="tab-5-2-1"><span class="cap-k">表</span><p class="en">Table 3: Comparison to Whisper. We report average WER on the 54 languages of the FLEURS benchmark supported by both Whisper and MMS (FLEURS-54). MMS is a CTC-based model and to enable a fairer comparison we use n-gram models trained on web data when comparing to Whisper whose decoder is a neural sequence-model that serves as a language model and was trained on billions of web tokens.</p><p class="zh">表 3：与 Whisper 的对比。我们报告在 Whisper 和 MMS 都支持的 FLEURS 基准 54 种语言（FLEURS-54）上的平均 WER。MMS 是基于 CTC 的模型；为进行更公平的对比，在与 Whisper 比较时我们使用了在网络数据上训练的 n-gram 语言模型——Whisper 的解码器本身是一个神经序列模型，充当语言模型，且在数十亿的网络 token 上训练过。</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-5-2-1"><span class="cap-k">表</span><p class="en">Table 3: Comparison to Whisper. We report average WER on the 54 languages of the FLEURS benchmark supported by both Whisper and MMS (FLEURS-54). MMS is a CTC-based model and to enable a fairer comparison we use n-gram models trained on web data when comparing to Whisper whose decoder is a neural sequence-model that serves as a language model and was trained on billions of web tokens.</p><p class="zh">表 3：与 Whisper 的对比。我们报告在 Whisper 和 MMS 都支持的 FLEURS 基准 54 种语言（FLEURS-54）上的平均 WER。MMS 是基于 CTC 的模型；为进行更公平的对比，在与 Whisper 比较时我们使用了在网络数据上训练的 n-gram 语言模型——Whisper 的解码器本身是一个神经序列模型，充当语言模型，且在数十亿的网络 token 上训练过。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>#lang</th><th></th><th></th><th>FLEURS-54</th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>dev</th><th></th><th>test</th></tr><tr><th>Prior Work</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Whisper medium</td><td></td><td>99</td><td>680K</td><td></td><td>-</td><td>50.1</td></tr>
+<tr><td>Whisper large-v2</td><td></td><td>99</td><td>680K</td><td></td><td>-</td><td>44.3</td></tr>
+<tr><td>This Work</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MMS</td><td></td><td>61</td><td>3K</td><td>20.9</td><td></td><td>20.7</td></tr>
+<tr><td>MMS (LSAH)</td><td></td><td>61</td><td>3K</td><td>19.0</td><td></td><td>19.1</td></tr>
+<tr><td>MMS</td><td>1,107</td><td></td><td>45K</td><td>24.8</td><td></td><td>24.8</td></tr>
+<tr><td>MMS (LSAH)</td><td>1,107</td><td></td><td>45K</td><td>18.7</td><td></td><td>18.7</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-5-2-5">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-5-1"><span class="en">In summary, this shows that scaling multilingual ASR models to over one thousand languages is feasible and that there is little performance degradation when coupled with language-specific parameters.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-5-1"><span class="zh">总之，这表明将多语言 ASR 模型扩展到一千种语言以上是可行的，而且与语言特定参数结合时，性能退化很小。</span></span></p>
@@ -1112,23 +1125,25 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-1-1-1"><span class="zh">Whisper 是一个在来自网络的 680K 小时弱标注音频数据上训练的多语言模型，能够转写 99 种语言的语音 [Radford et al., 2022]。</span></span><span class="sent" data-sid="s-5-3-1-1-2"><span class="zh">该模型使用序列到序列架构 [Sutskever et al., 2014]，其解码器是一个神经序列模型，部分地充当语言模型。</span></span><span class="sent" data-sid="s-5-3-1-1-3"><span class="zh">解码器在标注训练数据的目标侧文本上训练，这些文本可能高达来自网络的数十亿词。20 20假设每小时配对语音数据对应 10K 词文本，解码器约在 6.8B 词上训练。</span></span></p>
           
         </div>
-<div class="pblk" id="p-5-3-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-1-2-1"><span class="en">FLEURS-102 dev test Prior Work w2v-BERT [Chen et al., 2022]</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-1-2-1"><span class="zh">（表格：FLEURS-102 dev/test——Prior Work：w2v-BERT [Chen et al., 2022] -/12.3；Maestro-U [Chen et al., 2022] -/8.7；USM [Zhang et al., 2023a] -/6.9；USM-M [Zhang et al., 2023a] -/6.5；USM-M-adapter [Zhang et al., 2023a] -/6.7；This Work：MMS FL-102 (LSFT) + LM 6.3/6.3。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-3-1-1"><code>- 12.3</code></div>
-<div class="eq" id="eq-5-3-1-2"><code>Maestro-U [Chen et al., 2022]</code></div>
-<div class="eq" id="eq-5-3-1-3"><code>- 8.7</code></div>
-<div class="eq" id="eq-5-3-1-4"><code>USM [Zhang et al., 2023a]</code></div>
-<div class="eq" id="eq-5-3-1-5"><code>- 6.9</code></div>
-<div class="eq" id="eq-5-3-1-6"><code>USM-M [Zhang et al., 2023a]</code></div>
-<div class="eq" id="eq-5-3-1-7"><code>- 6.5</code></div>
-<div class="eq" id="eq-5-3-1-8"><code>USM-M-adapter [Zhang et al., 2023a]</code></div>
-<div class="eq" id="eq-5-3-1-9"><code>- 6.7</code></div>
-<div class="eq" id="eq-5-3-1-10"><code>This Work MMS FL-102 (LSFT) + LM</code></div>
-<div class="eq" id="eq-5-3-1-11"><code>6.3 6.3</code></div>
-<div class="cap" id="tab-5-3-1-1"><span class="cap-k">表</span><p class="en">Table 4: Comparison to Google USM. We report average CER on the 102 languages of FLEURS and use n-gram models together with our CTC acoustic models. USM-M is an RNN-T model which uses both unlabeled text as well as labeled speech data during pre-training and for MMS we use unlabeled text to train language models for inference.</p><p class="zh">表 4：与 Google USM 的对比。我们报告 FLEURS 102 种语言上的平均 CER，并将 n-gram 模型与我们的 CTC 声学模型搭配使用。USM-M 是一个 RNN-T 模型，在预训练时同时使用无标注文本和标注语音数据；而对 MMS，我们使用无标注文本来训练推理用的语言模型。</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-5-3-1-1"><span class="cap-k">表</span><p class="en">Table 4: Comparison to Google USM. We report average CER on the 102 languages of FLEURS and use n-gram models together with our CTC acoustic models. USM-M is an RNN-T model which uses both unlabeled text as well as labeled speech data during pre-training and for MMS we use unlabeled text to train language models for inference.</p><p class="zh">表 4：与 Google USM 的对比。我们报告 FLEURS 102 种语言上的平均 CER，并将 n-gram 模型与我们的 CTC 声学模型搭配使用。USM-M 是一个 RNN-T 模型，在预训练时同时使用无标注文本和标注语音数据；而对 MMS，我们使用无标注文本来训练推理用的语言模型。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>FLEURS-102</th><th></th><th></th></tr><tr><th></th><th>dev</th><th></th><th>test</th></tr><tr><th>Prior Work</th><th></th><th></th><th></th></tr></thead><tbody><tr><td>w2v-BERT [Chen et al., 2022]</td><td></td><td>-</td><td>12.3</td></tr>
+<tr><td>Maestro-U [Chen et al., 2022]</td><td></td><td>-</td><td>8.7</td></tr>
+<tr><td>USM [Zhang et al., 2023a]</td><td></td><td>-</td><td>6.9</td></tr>
+<tr><td>USM-M [Zhang et al., 2023a]</td><td></td><td>-</td><td>6.5</td></tr>
+<tr><td>USM-M-adapter [Zhang et al., 2023a]</td><td></td><td>-</td><td>6.7</td></tr>
+<tr><td>This Work</td><td></td><td></td><td></td></tr>
+<tr><td>MMS FL-102 (LSFT) + LM</td><td>6.3</td><td></td><td>6.3</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-5-3-1-3">
           <p class="en-lines"><span class="sent" data-sid="s-5-3-1-3-1"><span class="en">In contrast, MMS is a CTC model whose decoder is a simple linear layer mapping to a set of characters (§5.1).</span></span> <span class="sent" data-sid="s-5-3-1-3-2"><span class="en">When comparing CTC models to models with sequence-model based decoders, the former are typically paired with an external language model to enable a fairer comparison.</span></span> <span class="sent" data-sid="s-5-3-1-3-3"><span class="en">We therefore train simple n-gram models on web data (Common Crawl) for each language and use it during inference time (CC LM; Heafield 2011, Conneau et al. 2020b, NLLB_Team et al. 2022); Appendix B details the training procedure.</span></span> <span class="sent" data-sid="s-5-3-1-3-4"><span class="en">We evaluate both models on the 54 languages of FLEURS supported by both Whisper and MMS (FLEURS-54) and report word error rate except for Thai, Lao, Burmese and Khmer where we use character error rate.21 The results (Table 3) show that MMS reduces the word error rate of Whisper by a relative 58% while supporting over 11 times the number of languages.</span><button class="mk feat" data-sid="s-5-3-1-3-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-3-1-3-5"><span class="en">Moreover, MMS was trained on 44.7K hours of labeled data compared to 680K for Whisper.22 A reduced version of MMS trained on 61 languages can still outperform Whisper to a similar degree while being trained on only about 3K hours of labeled training data.</span></span> <span class="sent" data-sid="s-5-3-1-3-6"><span class="en">Overall, MMS (LSAH) outperforms Whisper on 31 out of the 54 languages.</span></span> <span class="sent" data-sid="s-5-3-1-3-7"><span class="en">Appendix C provides a per-language breakdown of the results.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-1-3-1"><span class="zh">相比之下，MMS 是一个 CTC 模型，其解码器只是一个映射到字符集合的简单线性层（§5.1）。</span></span><span class="sent" data-sid="s-5-3-1-3-2"><span class="zh">在将 CTC 模型与基于序列模型的解码器模型对比时，前者通常搭配外部语言模型，以使比较更公平。</span></span><span class="sent" data-sid="s-5-3-1-3-3"><span class="zh">因此，我们为每种语言在网络数据（Common Crawl）上训练简单的 n-gram 模型，并在推理时使用（CC LM；Heafield 2011, Conneau et al. 2020b, NLLB_Team et al. 2022）；附录 B 详述了训练过程。</span></span><span class="sent" data-sid="s-5-3-1-3-4"><span class="zh">我们在 Whisper 和 MMS 都支持的 54 种 FLEURS 语言（FLEURS-54）上评估两个模型，报告词错误率，但泰语、老挝语、缅甸语和高棉语除外——这些语言我们使用字错误率。21 结果（表 3）表明，MMS 将 Whisper 的词错误率相对降低了 58%，同时支持的语言数量是其 11 倍以上。</span><button class="mk feat" data-sid="s-5-3-1-3-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-3-1-3-5"><span class="zh">此外，MMS 只用 44.7K 小时标注数据训练，而 Whisper 用了 680K 小时。22 在 61 种语言上训练的精简版 MMS 仍能以相近幅度超过 Whisper，而其标注训练数据仅约 3K 小时。</span></span><span class="sent" data-sid="s-5-3-1-3-6"><span class="zh">总体而言，MMS (LSAH) 在 54 种语言中的 31 种上超过 Whisper。</span></span><span class="sent" data-sid="s-5-3-1-3-7"><span class="zh">附录 C 提供结果的逐语言分解。</span></span></p>
@@ -1188,24 +1203,34 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-5-3-2-2"><code>Maestro [Chen et al., 2022]</code></div>
 <div class="eq" id="eq-5-3-2-3"><code>14 8.1</code></div>
 <div class="eq" id="eq-5-3-2-4"><code>RNN-T 1B [Li et al., 2021]</code></div>
-<div class="eq" id="eq-5-3-2-5"><code>15 7.9</code></div>
-<div class="eq" id="eq-5-3-2-6"><code>Whisper [Radford et al., 2022]</code></div>
-<div class="eq" id="eq-5-3-2-7"><code>99 13.6∗ 7.3*</code></div>
-<div class="eq" id="eq-5-3-2-8"><code>ML-IO [Tjandra et al., 2022b]</code></div>
-<div class="eq" id="eq-5-3-2-9"><code>70 7.5</code></div>
-<div class="eq" id="eq-5-3-2-10"><code>USM-M [Zhang et al., 2023a]</code></div>
-<div class="eq" id="eq-5-3-2-11"><code>102 6.5</code></div>
-<div class="eq" id="eq-5-3-2-12"><code>This Work - Single-Domain training FL</code></div>
-<div class="eq" id="eq-5-3-2-13"><code>102 6.4</code></div>
-<div class="eq" id="eq-5-3-2-14"><code>CV</code></div>
-<div class="eq" id="eq-5-3-2-15"><code>76 19.7</code></div>
-<div class="eq" id="eq-5-3-2-16"><code>VP</code></div>
-<div class="eq" id="eq-5-3-2-17"><code>14 10.3</code></div>
-<div class="eq" id="eq-5-3-2-18"><code>MLS</code></div>
-<div class="eq" id="eq-5-3-2-19"><code>8 8.7</code></div>
-<div class="eq" id="eq-5-3-2-20"><code>This Work - Multi-Domain training MMS-lab+FL+CV+VP+MLS</code></div>
-<div class="eq" id="eq-5-3-2-21"><code>1,162 6.2 19.6 10.6 9.0</code></div>
-<div class="cap" id="tab-5-3-2-1"><span class="cap-k">表</span><p class="en">Table 5: Evaluation of MMS on Multilingual Benchmarks. MMS is fine-tuned on MMS-lab, FLEURS, CommonVoice, Voxpopuli and MLS. We report CER on FLEURS and WER on the other benchmarks. Results are averaged over all languages of a benchmark and (∗) indicates results with a different data normalization which does not enable a strict comparison to other results [Radford et al., 2022]. Our models use n-gram language models trained on Common Crawl during inference. For each approach, we show the number of languages an individual models supports and some prior results are based on multiple models, e.g., Wang et al. [2021].</p><p class="zh">表 5：MMS 在多语言基准上的评估。MMS 在 MMS-lab、FLEURS、CommonVoice、Voxpopuli 和 MLS 上微调。我们在 FLEURS 上报告 CER，在其他基准上报告 WER。结果按基准的所有语言取平均，(∗) 表示因数据规范化不同而无法与其他结果严格比较的结果 [Radford et al., 2022]。我们的模型在推理时使用在 Common Crawl 上训练的 n-gram 语言模型。对每种方法，我们给出单个模型支持的语言数量；部分先前结果基于多个模型，例如 Wang et al. [2021]。</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-5-3-2-1"><span class="cap-k">表</span><p class="en">Table 5: Evaluation of MMS on Multilingual Benchmarks. MMS is fine-tuned on MMS-lab, FLEURS, CommonVoice, Voxpopuli and MLS. We report CER on FLEURS and WER on the other benchmarks. Results are averaged over all languages of a benchmark and (∗) indicates results with a different data normalization which does not enable a strict comparison to other results [Radford et al., 2022]. Our models use n-gram language models trained on Common Crawl during inference. For each approach, we show the number of languages an individual models supports and some prior results are based on multiple models, e.g., Wang et al. [2021].</p><p class="zh">表 5：MMS 在多语言基准上的评估。MMS 在 MMS-lab、FLEURS、CommonVoice、Voxpopuli 和 MLS 上微调。我们在 FLEURS 上报告 CER，在其他基准上报告 WER。结果按基准的所有语言取平均，(∗) 表示因数据规范化不同而无法与其他结果严格比较的结果 [Radford et al., 2022]。我们的模型在推理时使用在 Common Crawl 上训练的 n-gram 语言模型。对每种方法，我们给出单个模型支持的语言数量；部分先前结果基于多个模型，例如 Wang et al. [2021]。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>15</td><td></td><td></td><td></td><td>7.9</td></tr>
+<tr><td>Whisper [Radford et al., 2022]</td><td>99</td><td></td><td></td><td>13.6∗</td><td>7.3*</td></tr>
+<tr><td>ML-IO [Tjandra et al., 2022b]</td><td>70</td><td></td><td></td><td></td><td>7.5</td></tr>
+<tr><td>USM-M [Zhang et al., 2023a]</td><td>102</td><td>6.5</td><td></td><td></td><td></td></tr>
+<tr><td>This Work - Single-Domain training</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>FL</td><td>102</td><td>6.4</td><td></td><td></td><td></td></tr>
+<tr><td>CV</td><td>76</td><td></td><td>19.7</td><td></td><td></td></tr>
+<tr><td>VP</td><td>14</td><td></td><td></td><td>10.3</td><td></td></tr>
+<tr><td>MLS</td><td>8</td><td></td><td></td><td></td><td>8.7</td></tr>
+<tr><td>This Work - Multi-Domain training</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MMS-lab+FL+CV+VP+MLS</td><td></td><td>6.2</td><td>19.6</td><td>10.6</td><td>9.0</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-5-3-2-8">
           <p class="en-lines"><span class="sent" data-sid="s-5-3-2-8-1"><span class="en">To enable a fairer comparison, we use n-gram language models trained on unlabeled text during inference: for each language, we use either an n-gram model trained on CommonCrawl or a model trained on the transcriptions of the FLEURS training set, depending on dev set performance and data availability.</span></span> <span class="sent" data-sid="s-5-3-2-8-2"><span class="en">Appendix B details the training procedure.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-2-8-1"><span class="zh">为使比较更公平，我们在推理时使用在无标注文本上训练的 n-gram 语言模型：对每种语言，根据开发集性能和数据可得性，我们使用在 CommonCrawl 上训练的 n-gram 模型，或在 FLEURS 训练集转写上训练的模型。</span></span><span class="sent" data-sid="s-5-3-2-8-2"><span class="zh">附录 B 详述了训练过程。</span></span></p>
@@ -1237,26 +1262,27 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-4-3-1"><span class="zh">26在 FLEURS 数据上训练的模型训练了 300K 次更新；对 MLS 模型，我们发现 50k 次更新效果良好；CommonVoice 和 VoxPopuli 模型训练了 200K 次更新。</span></span></p>
           
         </div>
-<div class="pblk" id="p-5-4-4">
-          <p class="en-lines"><span class="sent" data-sid="s-5-4-4-1"><span class="en">#lang CER CER ≤5</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-4-4-1"><span class="zh">CER CER
-#语言 CER CER ≤5</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-4-1"><code>%</code></div>
-<div class="eq" id="eq-5-4-2"><code>Asia</code></div>
-<div class="eq" id="eq-5-4-3"><code>335 1.6 ± 0.1 330 99%</code></div>
-<div class="eq" id="eq-5-4-4"><code>South America</code></div>
-<div class="eq" id="eq-5-4-5"><code>136 1.5 ± 0.2 132 97%</code></div>
-<div class="eq" id="eq-5-4-6"><code>North America</code></div>
-<div class="eq" id="eq-5-4-7"><code>144 2.2 ± 0.2 139 97%</code></div>
-<div class="eq" id="eq-5-4-8"><code>Europe</code></div>
-<div class="eq" id="eq-5-4-9"><code>41 1.7 ± 0.4 40 98%</code></div>
-<div class="eq" id="eq-5-4-10"><code>Africa</code></div>
-<div class="eq" id="eq-5-4-11"><code>363 2.9 ± 0.2 331 91%</code></div>
-<div class="eq" id="eq-5-4-12"><code>Pacific</code></div>
-<div class="eq" id="eq-5-4-13"><code>88 1.7 ± 0.5 87 99% 1,107 2.1 ± 0.1 1,059 96%</code></div>
-<div class="cap" id="tab-5-4-2"><span class="cap-k">表</span><p class="en">Table 6: ASR Evaluation on 1,107 Languages. We evaluate the MMS multi-domain model trained on MMS-lab, FLEURS, CommonVoice, VoxPopuli, and MLS supporting 1,162 languages (§5.4) Results are in terms of the average character error rate on the MMS-lab test sets for the languages of different geographical regions. We also show the number of languages for which the model achieves CER less than five, indicating systems which on average produce no more than one incorrect character every twenty characters. All results are shown with confidence interval 95%.</p><p class="zh">表 6：1,107 种语言上的 ASR 评估。我们评估在 MMS-lab、FLEURS、CommonVoice、VoxPopuli 和 MLS 上训练的、支持 1,162 种语言的 MMS 多域模型（§5.4）。结果是不同地理区域语言在 MMS-lab 测试集上的平均字错误率。我们还展示模型达到 CER 小于 5 的语言数量，即平均每 20 个字符出错不超过 1 个的系统。所有结果均带 95% 置信区间。</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-5-4-2"><span class="cap-k">表</span><p class="en">Table 6: ASR Evaluation on 1,107 Languages. We evaluate the MMS multi-domain model trained on MMS-lab, FLEURS, CommonVoice, VoxPopuli, and MLS supporting 1,162 languages (§5.4) Results are in terms of the average character error rate on the MMS-lab test sets for the languages of different geographical regions. We also show the number of languages for which the model achieves CER less than five, indicating systems which on average produce no more than one incorrect character every twenty characters. All results are shown with confidence interval 95%.</p><p class="zh">表 6：1,107 种语言上的 ASR 评估。我们评估在 MMS-lab、FLEURS、CommonVoice、VoxPopuli 和 MLS 上训练的、支持 1,162 种语言的 MMS 多域模型（§5.4）。结果是不同地理区域语言在 MMS-lab 测试集上的平均字错误率。我们还展示模型达到 CER 小于 5 的语言数量，即平均每 20 个字符出错不超过 1 个的系统。所有结果均带 95% 置信区间。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>#lang</th><th></th><th></th><th>CER</th><th>CER ≤5</th><th></th><th></th><th></th><th>%</th></tr></thead><tbody><tr><td>Asia</td><td></td><td>335</td><td>1.6 ± 0.1</td><td></td><td></td><td></td><td>330</td><td>99%</td><td></td></tr>
+<tr><td>South America</td><td></td><td>136</td><td>1.5 ± 0.2</td><td></td><td></td><td></td><td>132</td><td>97%</td><td></td></tr>
+<tr><td>North America</td><td></td><td>144</td><td>2.2 ± 0.2</td><td></td><td></td><td></td><td>139</td><td>97%</td><td></td></tr>
+<tr><td>Europe</td><td></td><td>41</td><td>1.7 ± 0.4</td><td></td><td></td><td></td><td>40</td><td>98%</td><td></td></tr>
+<tr><td>Africa</td><td></td><td>363</td><td>2.9 ± 0.2</td><td></td><td></td><td></td><td>331</td><td>91%</td><td></td></tr>
+<tr><td>Pacific</td><td></td><td>88</td><td>1.7 ± 0.5</td><td></td><td></td><td></td><td>87</td><td>99%</td><td></td></tr>
+<tr><td></td><td>1,107</td><td></td><td>2.1 ± 0.1</td><td></td><td></td><td>1,059</td><td></td><td>96%</td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-5-4-5">
           <p class="en-lines"><span class="sent" data-sid="s-5-4-5-1"><span class="en">smaller number of languages and on MLS other approaches are better which attribute to a focus on fewer languages.</span></span> <span class="sent" data-sid="s-5-4-5-2"><span class="en">Whisper results are not strictly comparable due to the different normalization but it appears to perform better on MLS due to a focus on head languages.</span></span> <span class="sent" data-sid="s-5-4-5-3"><span class="en">Overall, this demonstrates that a combined model supporting well over 1,000 languages can perform in aggregate competitively on a range of benchmarks.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-4-5-1"><span class="zh">更少的语言；在 MLS 上，其他方法更好，这归因于它们聚焦更少语言。</span></span><span class="sent" data-sid="s-5-4-5-2"><span class="zh">由于规范化不同，Whisper 的结果无法严格比较，但它似乎在 MLS 上表现更好，因为它聚焦头部语言。</span></span><span class="sent" data-sid="s-5-4-5-3"><span class="zh">总体而言，这表明一个支持远超 1,000 种语言的组合模型，能在一系列基准上总体表现有竞争力。</span></span></p>
@@ -1275,11 +1301,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="tab-5-5-1">
-          <p class="en-lines"><span class="sent" data-sid="tab-5-5-1-s1"><span class="en">Table 6 shows that our model meets the CER quality threshold for 96% of the 1,107 languages. The region with the lowest rate is Africa at 91% and we attribute this in part to different writing scripts. We note that this metric is by far not perfect as it imposes the same threshold for every language which may not be appropriate due to different character sets etc. Also, many of the recordings in MMS-lab are single speaker which means that both the training data and the test data contains utterances with the same voice for a particular language. While this makes evaluation challenging, we hope that this analysis gives a sense that the model can be used to transcribe a wide variety of languages.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="tab-5-5-1-s1"><span class="zh">表 6 表明，我们的模型在 1,107 种语言中的 96% 达到了 CER 质量阈值。比例最低的区域是非洲，为 91%，我们将这部分归因于不同的书写文字。我们注意到，这一度量远非完美，因为它对每种语言施加相同的阈值，而由于字符集不同等原因，这可能并不合适。此外，MMS-lab 中的许多录音是单一说话人，这意味着对特定语言而言，训练数据和测试数据包含相同声音的语句。尽管这使评估具有挑战性，我们希望这一分析能让人感觉到：该模型可用于转写种类繁多的语言。</span></span></p>
-          
-        </div></section>
+</section>
 <section>
       <h2 class="sech lv1" id="sec-6"><span class="secnum">6</span> <span class="t-zh">语种识别</span><span class="t-en">Language Identification</span></h2><div class="pblk" id="p-6-1">
           <p class="en-lines"><span class="sent" data-sid="s-6-1-1"><span class="en">Language Identification (LID) is the task of determining the language which is spoken in a given utterance.</span></span> <span class="sent" data-sid="s-6-1-2"><span class="en">This has several important applications: despite much work on multilingual speech recognition [Burget et al., 2010, Lin et al., 2009, Heigold et al., 2013, Bourlard et al., 2011, Cho et al., 2018, Toshniwal et al., 2018, Kannan et al., 2019, Li et al., 2019, Pratap et al., 2020b], many deployed systems are still trained on data in a single language despite the need to transcribe speech in different languages.</span></span> <span class="sent" data-sid="s-6-1-3"><span class="en">It is therefore crucial to route utterances to the correct system and this routing depends on an LID model.</span></span> <span class="sent" data-sid="s-6-1-4"><span class="en">Moreover, much work on mining speech data from the web relies on LID, including some of the most recent large-scale weakly-supervised work [Radford et al., 2022].</span></span> <span class="sent" data-sid="s-6-1-5"><span class="en">Training a language identification system requires speech data for which the spoken language is known, however, the most diverse public corpora span no more than about 100 languages [Valk and Alumäe, 2020, Conneau et al., 2022].</span></span></p>
@@ -1374,26 +1396,35 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 (23 lang.)
 (25 lang.)
 Prior Work mSLAM [Bapna et al., 2022b]</pre></details></div>
-<div class="eq" id="eq-6-2-1"><code>102 77.7 - - -</code></div>
+
 <div class="eq" id="eq-6-2-2"><code>Whisper [Radford et al., 2022]</code></div>
 <div class="eq" id="eq-6-2-3"><code>82 64.5 - - -</code></div>
 <div class="eq" id="eq-6-2-4"><code>ASRL [Chen et al., 2023]</code></div>
-<div class="eq" id="eq-6-2-5"><code>102 95.9 - - -</code></div>
+
 <div class="eq" id="eq-6-2-6"><code>XLS-R [Babu et al., 2022]</code></div>
-<div class="eq" id="eq-6-2-7"><code>107 - 94.3 - -</code></div>
+
 <div class="eq" id="eq-6-2-8"><code>SpeechBrain [Ravanelli et al., 2021]</code></div>
-<div class="eq" id="eq-6-2-9"><code>107 - 93.3 - -</code></div>
+
 <div class="eq" id="eq-6-2-10"><code>AmberNet [Jia et al., 2022]</code></div>
-<div class="eq" id="eq-6-2-11"><code>107 - 95.3 - -</code></div>
+
 <div class="eq" id="eq-6-2-12"><code>Our Baselines (based on existing datasets) MMS (FL)</code></div>
-<div class="eq" id="eq-6-2-13"><code>102 96.2 - - -</code></div>
-<div class="eq" id="eq-6-2-14"><code>MMS (VL)</code></div>
-<div class="eq" id="eq-6-2-15"><code>107 - 94.7 - -</code></div>
-<div class="eq" id="eq-6-2-16"><code>MMS (FL + VL)</code></div>
-<div class="eq" id="eq-6-2-17"><code>126 97.4 94.3 78 87.8</code></div>
-<div class="eq" id="eq-6-2-18"><code>This Work MMS (MMS-lab-U+unlab+FL+VL)</code></div>
-<div class="eq" id="eq-6-2-19"><code>126 97.5 93.9 84.1 87.3 256 97.2 93.4 80.1 87.6 512 96.8 92.9 81.6 85.6 1,024 97 92.8 80.5 86.2 2,048 97.3 92.8 81.5 86.6 4,017 97.2 93.9 80.5 87.1</code></div>
-<div class="cap" id="tab-6-2-1"><span class="cap-k">表</span><p class="en">Table 7: Scaling LID to 4,017 Languages. We show test accuracy of LID models trained on an increasing number of languages using data from FLEURS (FL), VoxLingua-107 (VL) and MMS- lab-U+unlab; smaller language subsets are included in the larger subsets. There is little performance degradation when scaling to more languages. We also show results from the literature as well as baselines trained only on FL or VL.</p><p class="zh">表 7：将 LID 扩展到 4,017 种语言。我们展示使用来自 FLEURS（FL）、VoxLingua-107（VL）和 MMS-lab-U+unlab 的数据、在递增语言数量上训练的 LID 模型的测试准确率；较小的语言子集包含在较大的子集中。扩展到更多语言时性能退化很小。我们还展示文献中的结果以及仅在 FL 或 VL 上训练的基线。</p></div>
+
+
+
+
+
+
+
+<div class="cap" id="tab-6-2-1"><span class="cap-k">表</span><p class="en">Table 7: Scaling LID to 4,017 Languages. We show test accuracy of LID models trained on an increasing number of languages using data from FLEURS (FL), VoxLingua-107 (VL) and MMS- lab-U+unlab; smaller language subsets are included in the larger subsets. There is little performance degradation when scaling to more languages. We also show results from the literature as well as baselines trained only on FL or VL.</p><p class="zh">表 7：将 LID 扩展到 4,017 种语言。我们展示使用来自 FLEURS（FL）、VoxLingua-107（VL）和 MMS-lab-U+unlab 的数据、在递增语言数量上训练的 LID 模型的测试准确率；较小的语言子集包含在较大的子集中。扩展到更多语言时性能退化很小。我们还展示文献中的结果以及仅在 FL 或 VL 上训练的基线。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>MMS (FL)</td><td>102</td><td>96.2</td><td></td><td></td><td></td><td>-</td><td></td><td>-</td></tr>
+<tr><td>MMS (VL)</td><td>107</td><td></td><td>-</td><td>94.7</td><td></td><td>-</td><td></td><td>-</td></tr>
+<tr><td>MMS (FL + VL)</td><td>126</td><td>97.4</td><td></td><td>94.3</td><td></td><td>78</td><td>87.8</td><td></td></tr>
+<tr><td>This Work</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>MMS (MMS-lab-U+unlab+FL+VL)</td><td>126</td><td>97.5</td><td></td><td>93.9</td><td>84.1</td><td></td><td>87.3</td><td></td></tr>
+<tr><td></td><td>256</td><td>97.2</td><td></td><td>93.4</td><td>80.1</td><td></td><td>87.6</td><td></td></tr>
+<tr><td></td><td>512</td><td>96.8</td><td></td><td>92.9</td><td>81.6</td><td></td><td>85.6</td><td></td></tr>
+<tr><td></td><td>1,024</td><td></td><td>97</td><td>92.8</td><td>80.5</td><td></td><td>86.2</td><td></td></tr>
+<tr><td></td><td>2,048</td><td>97.3</td><td></td><td>92.8</td><td>81.5</td><td></td><td>86.6</td><td></td></tr>
+<tr><td></td><td>4,017</td><td>97.2</td><td></td><td>93.9</td><td>80.5</td><td></td><td>87.1</td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-6-2-8">
           <p class="en-lines"><span class="sent" data-sid="s-6-2-8-1"><span class="en">a model trained on FLEURS evaluated on VoxLingua-107 data, and how this compares to models trained on MMS-lab-U/MMS-unlab.</span></span> <span class="sent" data-sid="s-6-2-8-2"><span class="en">To enable a controlled comparison, we report LID accuracy on the 72 languages supported by all considered datasets and train only on data of these languages.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-6-2-8-1"><span class="zh">在 FLEURS 上训练的模型在 VoxLingua-107 数据上评估的性能，以及这与在 MMS-lab-U/MMS-unlab 上训练的模型相比如何。</span></span><span class="sent" data-sid="s-6-2-8-2"><span class="zh">为进行受控比较，我们在所有考虑的数据集都支持的 72 种语言上报告 LID 准确率，并只在这些语言的数据上训练。</span></span></p>
@@ -1512,48 +1543,36 @@ Prior Work mSLAM [Bapna et al., 2022b]</pre></details></div>
           <p class="zh-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-1-1"><span class="zh">最后，我们使用 MOS 评估模型，而且由于很难找到精通大量语言的人工评分员，我们要求评分员同时判断合成样本的保真度和语音听起来的自然度。</span></span><span class="sent" data-sid="s-mean-opinion-score-mos-1-2"><span class="zh">我们依靠 ASR 来了解 TTS 输出中保留了多少内容，并将 MOS 分数用于衡量生成质量和自然度。</span></span><span class="sent" data-sid="s-mean-opinion-score-mos-1-3"><span class="zh">我们对每种语言的每种方法评估 50 个样本，收集 30对全部 1,107 种语言，以下语言使用 uroman 编码：阿姆哈拉语、Gumuz、韩语、Sebat Bet Gurage 和提格里尼亚语。训练 训练 文本 ASR (CER) MOS 更新次数 数据 表示</span></span></p>
           
         </div>
-<div class="pblk" id="p-mean-opinion-score-mos-2">
-          <p class="en-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-2-1"><span class="en">MMS-lab LJS FLEURS MMS-lab LJS FLEURS Natural speech</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-2-1"><span class="zh">（表头：MMS-lab / LJS / FLEURS × MMS-lab / LJS / FLEURS——Natural speech（后续照原文）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-mean-opinion-score-mos-1"><code>4.4 4.3 9.3 3.89 ± 0.06 3.96 ± 0.06 3.37 ± 0.07</code></div>
-<div class="pblk" id="p-mean-opinion-score-mos-3">
-          <p class="en-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-3-1"><span class="en">800K LJS phon.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-3-1"><span class="zh">（表格行）800K LJS phon.（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-mean-opinion-score-mos-2"><code>5.5 4.9 5.9 3.87 ± 0.08 3.82 ± 0.06 3.73 ± 0.07</code></div>
-<div class="pblk" id="p-mean-opinion-score-mos-4">
-          <p class="en-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-4-1"><span class="en">100K LJS phon.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-4-1"><span class="zh">（表格行）5.5/4.9/5.9；3.87 ± 0.08 / 3.82 ± 0.06 / 3.73 ± 0.07；100K LJS phon.（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-mean-opinion-score-mos-3"><code>6.3 4.9 6.3 3.64 ± 0.09 3.74 ± 0.07 3.66 ± 0.07</code></div>
-<div class="pblk" id="p-mean-opinion-score-mos-5">
-          <p class="en-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-5-1"><span class="en">100K MMS-lab phon.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-5-1"><span class="zh">（表格行）6.3/4.9/6.3；3.64 ± 0.09 / 3.74 ± 0.07 / 3.66 ± 0.07；100K MMS-lab phon.（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-mean-opinion-score-mos-4"><code>7.2 6.8 7.9 3.68 ± 0.07 3.51 ± 0.08 3.54 ± 0.07</code></div>
-<div class="eq" id="eq-mean-opinion-score-mos-5"><code>100K MMS-lab chars</code></div>
-<div class="eq" id="eq-mean-opinion-score-mos-6"><code>7.2 9.2 10.0 3.58 ± 0.08 3.45 ± 0.08 3.34 ± 0.09</code></div>
-<div class="cap" id="tab-mean-opinion-score-mos-1"><span class="cap-k">表</span><p class="en">Table 8: Ablation of Training Setup. Our design choices (last row) lead to a moderate quality reduction compared to the standard VITS setup (second row) but enable scaling TTS to 1,107 languages. The standard VITS setting performs 800K training updates on clean LJSpeech data using a high quality phonemizer while as MMS is trained on MMS-lab data for fewer updates and with characters. Natural speech results are based on the human utterances of each dataset. We report ASR CER and MOS scores from a human study with confidence interval 95% on the English development sets of MMS-lab, LJSpeech and FLEURS.</p><p class="zh">表 8：训练设置的消融。我们的设计选择（最后一行）相比标准 VITS 设置（第二行）带来适度的质量下降，但使 TTS 能扩展到 1,107 种语言。标准 VITS 设置在干净的 LJSpeech 数据上用高质量音素化工具执行 800K 次训练更新，而 MMS 在 MMS-lab 数据上以更少更新次数和字符输入训练。自然语音结果基于各数据集的人类语句。我们报告 ASR CER 和来自人类研究的 MOS 分数（置信区间 95%），在 MMS-lab、LJSpeech 和 FLEURS 的英语开发集上评估。</p></div>
-<div class="pblk" id="p-mean-opinion-score-mos-6">
-          <p class="en-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-6-1"><span class="en">ASR (CER) MOS MMS-lab LJS FLEURS MMS-lab LJS FLEURS Natural speech</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-6-1"><span class="zh">CER</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-mean-opinion-score-mos-7"><code>4.4 4.3 9.3 3.89 ± 0.06 3.96 ± 0.06 3.37 ± 0.07</code></div>
-<div class="eq" id="eq-mean-opinion-score-mos-8"><code>no background music</code></div>
-<div class="eq" id="eq-mean-opinion-score-mos-9"><code>7.2 9.2 10.0 3.51 ± 0.07 3.52 ± 0.08 3.41 ± 0.09</code></div>
-<div class="eq" id="eq-mean-opinion-score-mos-10"><code>background music</code></div>
-<div class="eq" id="eq-mean-opinion-score-mos-11"><code>11.8 15.6 16.1 3.24 ± 0.08 2.98 ± 0.08 3.01 ± 0.08</code></div>
-<div class="eq" id="eq-mean-opinion-score-mos-12"><code>+ denoise</code></div>
-<div class="eq" id="eq-mean-opinion-score-mos-13"><code>10.8 13.2 14.4 3.32 ± 0.08 3.18 ± 0.07 3.16 ± 0.08</code></div>
-<div class="eq" id="eq-mean-opinion-score-mos-14"><code>+ denoise + filter</code></div>
-<div class="eq" id="eq-mean-opinion-score-mos-15"><code>7.8 10.8 11.9 3.47 ± 0.07 3.32 ± 0.08 3.12 ± 0.07</code></div>
-<div class="cap" id="tab-mean-opinion-score-mos-2"><span class="cap-k">表</span><p class="en">Table 9: Ablation of Building TTS Models using Data with Background Music. Curating the training data containing background music results in TTS systems which approach the performance of models trained on recordings without background music. We show MOS ratings as well as ASR CER on three different benchmarks for English data for the development sets of MMS-lab, LJSpeech and FLEURS. The TTS model labeled &quot;no background music&quot; is identical to the last row in Table 8 and we use the MMS-lab development set of the non-drama recording.</p><p class="zh">表 9：使用含背景音乐的数据构建 TTS 模型的消融。对含背景音乐的训练数据进行整理，得到的 TTS 系统接近在无背景音乐录音上训练的模型的性能。我们展示了英语数据在 MMS-lab、LJSpeech 和 FLEURS 三个基准开发集上的 MOS 评分以及 ASR CER。标注为&quot;无背景音乐&quot;的 TTS 模型与表 8 最后一行相同，我们使用非广播剧录音的 MMS-lab 开发集。</p></div>
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-mean-opinion-score-mos-1"><span class="cap-k">表</span><p class="en">Table 8: Ablation of Training Setup. Our design choices (last row) lead to a moderate quality reduction compared to the standard VITS setup (second row) but enable scaling TTS to 1,107 languages. The standard VITS setting performs 800K training updates on clean LJSpeech data using a high quality phonemizer while as MMS is trained on MMS-lab data for fewer updates and with characters. Natural speech results are based on the human utterances of each dataset. We report ASR CER and MOS scores from a human study with confidence interval 95% on the English development sets of MMS-lab, LJSpeech and FLEURS.</p><p class="zh">表 8：训练设置的消融。我们的设计选择（最后一行）相比标准 VITS 设置（第二行）带来适度的质量下降，但使 TTS 能扩展到 1,107 种语言。标准 VITS 设置在干净的 LJSpeech 数据上用高质量音素化工具执行 800K 次训练更新，而 MMS 在 MMS-lab 数据上以更少更新次数和字符输入训练。自然语音结果基于各数据集的人类语句。我们报告 ASR CER 和来自人类研究的 MOS 分数（置信区间 95%），在 MMS-lab、LJSpeech 和 FLEURS 的英语开发集上评估。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>train</th><th>train</th><th>text</th><th></th><th>ASR (CER)</th><th></th><th></th><th></th><th></th><th>MOS</th><th></th><th></th></tr><tr><th>upd</th><th>data</th><th>repr.</th><th>MMS-lab</th><th></th><th>LJS</th><th>FLEURS</th><th></th><th>MMS-lab</th><th></th><th>LJS</th><th>FLEURS</th></tr></thead><tbody><tr><td>Natural speech</td><td></td><td></td><td></td><td>4.4</td><td>4.3</td><td></td><td>9.3</td><td>3.89 ± 0.06</td><td>3.96 ± 0.06</td><td></td><td>3.37 ± 0.07</td></tr>
+<tr><td>800K</td><td>LJS</td><td>phon.</td><td></td><td>5.5</td><td>4.9</td><td></td><td>5.9</td><td>3.87 ± 0.08</td><td>3.82 ± 0.06</td><td></td><td>3.73 ± 0.07</td></tr>
+<tr><td>100K</td><td>LJS</td><td>phon.</td><td></td><td>6.3</td><td>4.9</td><td></td><td>6.3</td><td>3.64 ± 0.09</td><td>3.74 ± 0.07</td><td></td><td>3.66 ± 0.07</td></tr>
+<tr><td>100K</td><td>MMS-lab</td><td>phon.</td><td></td><td>7.2</td><td>6.8</td><td></td><td>7.9</td><td>3.68 ± 0.07</td><td>3.51 ± 0.08</td><td></td><td>3.54 ± 0.07</td></tr>
+<tr><td>100K</td><td>MMS-lab</td><td>chars</td><td></td><td>7.2</td><td>9.2</td><td></td><td>10.0</td><td>3.58 ± 0.08</td><td>3.45 ± 0.08</td><td></td><td>3.34 ± 0.09</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-mean-opinion-score-mos-2"><span class="cap-k">表</span><p class="en">Table 9: Ablation of Building TTS Models using Data with Background Music. Curating the training data containing background music results in TTS systems which approach the performance of models trained on recordings without background music. We show MOS ratings as well as ASR CER on three different benchmarks for English data for the development sets of MMS-lab, LJSpeech and FLEURS. The TTS model labeled &quot;no background music&quot; is identical to the last row in Table 8 and we use the MMS-lab development set of the non-drama recording.</p><p class="zh">表 9：使用含背景音乐的数据构建 TTS 模型的消融。对含背景音乐的训练数据进行整理，得到的 TTS 系统接近在无背景音乐录音上训练的模型的性能。我们展示了英语数据在 MMS-lab、LJSpeech 和 FLEURS 三个基准开发集上的 MOS 评分以及 ASR CER。标注为&quot;无背景音乐&quot;的 TTS 模型与表 8 最后一行相同，我们使用非广播剧录音的 MMS-lab 开发集。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>ASR (CER)</th><th></th><th></th><th></th><th></th><th>MOS</th><th></th><th></th></tr><tr><th></th><th>MMS-lab</th><th></th><th></th><th>LJS</th><th>FLEURS</th><th></th><th>MMS-lab</th><th></th><th>LJS</th><th>FLEURS</th></tr></thead><tbody><tr><td>Natural speech</td><td></td><td></td><td>4.4</td><td>4.3</td><td></td><td>9.3</td><td>3.89 ± 0.06</td><td>3.96 ± 0.06</td><td></td><td>3.37 ± 0.07</td></tr>
+<tr><td>no background music</td><td></td><td></td><td>7.2</td><td>9.2</td><td></td><td>10.0</td><td>3.51 ± 0.07</td><td>3.52 ± 0.08</td><td></td><td>3.41 ± 0.09</td></tr>
+<tr><td>background music</td><td></td><td>11.8</td><td></td><td>15.6</td><td></td><td>16.1</td><td>3.24 ± 0.08</td><td>2.98 ± 0.08</td><td></td><td>3.01 ± 0.08</td></tr>
+<tr><td>+ denoise</td><td></td><td>10.8</td><td></td><td>13.2</td><td></td><td>14.4</td><td>3.32 ± 0.08</td><td>3.18 ± 0.07</td><td></td><td>3.16 ± 0.08</td></tr>
+<tr><td>+ denoise + filter</td><td></td><td></td><td>7.8</td><td>10.8</td><td></td><td>11.9</td><td>3.47 ± 0.07</td><td>3.32 ± 0.08</td><td></td><td>3.12 ± 0.07</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-mean-opinion-score-mos-7">
           <p class="en-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-7-1"><span class="en">ten judgements per sample and ask raters to judge the quality from 1 (lowest quality) to 5 (highest quality).</span></span> <span class="sent" data-sid="s-mean-opinion-score-mos-7-2"><span class="en">Results are reported in terms of the mean score as well as the 95% confidence interval.</span></span> <span class="sent" data-sid="s-mean-opinion-score-mos-7-3"><span class="en">We use the CrowdMOS [Ribeiro et al., 2011] package with the recommended recipes for detecting and discarding inaccurate ratings.</span></span> <span class="sent" data-sid="s-mean-opinion-score-mos-7-4"><span class="en">We do not require raters to be able to speak the respective language (except for English) as it is very hard to find raters that speak all the languages we consider.</span></span> <span class="sent" data-sid="s-mean-opinion-score-mos-7-5"><span class="en">We rely on the ASR error rate to get a sense of content preservation in the TTS models.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-mean-opinion-score-mos-7-1"><span class="zh">每个样本 10 个判断，并要求评分员按 1（最低质量）到 5（最高质量）评判质量。</span></span><span class="sent" data-sid="s-mean-opinion-score-mos-7-2"><span class="zh">结果以平均分和 95% 置信区间报告。</span></span><span class="sent" data-sid="s-mean-opinion-score-mos-7-3"><span class="zh">我们使用 CrowdMOS [Ribeiro et al., 2011] 软件包及其推荐的配方来检测和丢弃不准确的评分。</span></span><span class="sent" data-sid="s-mean-opinion-score-mos-7-4"><span class="zh">我们不要求评分员会说相应语言（英语除外），因为很难找到会说我们考虑的所有语言的评分员。</span></span><span class="sent" data-sid="s-mean-opinion-score-mos-7-5"><span class="zh">我们依靠 ASR 错误率来了解 TTS 模型中的内容保留程度。</span></span></p>
@@ -1572,15 +1591,12 @@ Prior Work mSLAM [Bapna et al., 2022b]</pre></details></div>
           <p class="zh-lines"><span class="sent" data-sid="s-7-4-1-2-1"><span class="zh">我们在 MMS-lab 的开发集上评估性能——这对 MMS-lab 模型是域内的；在 LJSpeech（LJS；Ito and Johnson 2017）上评估——这对原始 VITS 设置是域内的；以及在 FLEURS 上评估——这对两者都是域外的。31 FLEURS 的音频经常包含高水平的噪声和混响，用它做 TTS 相对少见，然而它确实覆盖了 31在 LJSpeech 上测量 CER 时，我们使用 Radford et al. [2022] 的归一化方法去除参考和假设中的标点与大小写。</span></span></p>
           
         </div>
-<div class="pblk" id="p-7-4-1-3">
-          <p class="en-lines"><span class="sent" data-sid="s-7-4-1-3-1"><span class="en">ASR (CER) MOS TTS ref TTS ref In-domain</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-7-4-1-3-1"><span class="zh">CER</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-7-4-1-1"><code>11.1 9.2 3.51 ± 0.11 3.61 ± 0.11</code></div>
-<div class="eq" id="eq-7-4-1-2"><code>Out-of-domain</code></div>
-<div class="eq" id="eq-7-4-1-3"><code>11.3 8.8 3.52 ± 0.11 3.33 ± 0.12∗</code></div>
-<div class="cap" id="tab-7-4-1-1"><span class="cap-k">表</span><p class="en">Table 10: TTS in-domain and Out-of-domain Evaluation on 61 Languages. We synthesize the test sets of MMS-lab (in-domain) and FLEURS (out-of-domain) to measure character error rate (CER) and collect human judgements (MOS) for both the model outputs (TTS) and human utterances (ref). The MMS models are robust with little performance degradation when applied to general domain data (out-of-domain): they retain much of the original content (low difference between CER of TTS and ref) and the systems produce outputs with good prosody and sound quality (low difference between MOS scores between TTS and ref). We show MOS scores with confidence interval 95%. (∗) human judges assigned low ratings since the human reference audio in FLEURS contains a lot of variability compared to synthesized speech or the MMS-lab reference speech (in-domain ref).</p><p class="zh">表 10：61 种语言上的 TTS 域内与域外评估。我们合成 MMS-lab（域内）和 FLEURS（域外）的测试集，以测量字错误率（CER）并为模型输出（TTS）和人类语句（ref）收集人类判断（MOS）。MMS 模型是稳健的，在应用于通用领域数据（域外）时性能退化很小：它们保留了大部分原始内容（TTS 与 ref 的 CER 差异小），并且系统产出的输出具有良好的韵律和音质（TTS 与 ref 的 MOS 分数差异小）。我们展示置信区间 95% 的 MOS 分数。(∗) 人类评委对 FLEURS 中的人类参考音频给出了较低评分，因为相比合成语音或 MMS-lab 参考语音（域内 ref），它包含大量变化。</p></div>
+
+
+
+
+<div class="cap" id="tab-7-4-1-1"><span class="cap-k">表</span><p class="en">Table 10: TTS in-domain and Out-of-domain Evaluation on 61 Languages. We synthesize the test sets of MMS-lab (in-domain) and FLEURS (out-of-domain) to measure character error rate (CER) and collect human judgements (MOS) for both the model outputs (TTS) and human utterances (ref). The MMS models are robust with little performance degradation when applied to general domain data (out-of-domain): they retain much of the original content (low difference between CER of TTS and ref) and the systems produce outputs with good prosody and sound quality (low difference between MOS scores between TTS and ref). We show MOS scores with confidence interval 95%. (∗) human judges assigned low ratings since the human reference audio in FLEURS contains a lot of variability compared to synthesized speech or the MMS-lab reference speech (in-domain ref).</p><p class="zh">表 10：61 种语言上的 TTS 域内与域外评估。我们合成 MMS-lab（域内）和 FLEURS（域外）的测试集，以测量字错误率（CER）并为模型输出（TTS）和人类语句（ref）收集人类判断（MOS）。MMS 模型是稳健的，在应用于通用领域数据（域外）时性能退化很小：它们保留了大部分原始内容（TTS 与 ref 的 CER 差异小），并且系统产出的输出具有良好的韵律和音质（TTS 与 ref 的 MOS 分数差异小）。我们展示置信区间 95% 的 MOS 分数。(∗) 人类评委对 FLEURS 中的人类参考音频给出了较低评分，因为相比合成语音或 MMS-lab 参考语音（域内 ref），它包含大量变化。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>ASR (CER)</th><th></th><th></th><th></th><th>MOS</th><th></th><th></th></tr><tr><th></th><th>TTS</th><th>ref</th><th></th><th>TTS</th><th></th><th></th><th>ref</th></tr></thead><tbody><tr><td>In-domain</td><td>11.1</td><td>9.2</td><td>3.51 ± 0.11</td><td></td><td></td><td>3.61 ± 0.11</td><td></td></tr>
+<tr><td>Out-of-domain</td><td>11.3</td><td>8.8</td><td>3.52 ± 0.11</td><td></td><td></td><td>3.33 ± 0.12∗</td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-7-4-1-4">
           <p class="en-lines"><span class="sent" data-sid="s-7-4-1-4-1"><span class="en">large number of languages and it is out-of-domain with respect to the MMS-lab training data which makes it an interesting evaluation set, particularly for the experiment in §7.5.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-7-4-1-4-1"><span class="zh">大量语言，且相对 MMS-lab 训练数据而言是域外的，这使它成为一个有趣的评估集，特别是对 §7.5 的实验而言。</span></span></p>
@@ -1618,27 +1634,29 @@ Prior Work mSLAM [Bapna et al., 2022b]</pre></details></div>
           <p class="zh-lines"><span class="sent" data-sid="tab-7-5-1-s1"><span class="zh">表 10 表明，MMS 模型对领域偏移具有稳健性：合成语音（TTS）的 CER 在域外仅略高于域内，且合成样本的 MOS 分数</span></span></p>
           
         </div>
-<div class="pblk" id="p-7-5-2">
-          <p class="en-lines"><span class="sent" data-sid="s-7-5-2-1"><span class="en">#lang MCD ASR (CER) TTS CER</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-7-5-2-1"><span class="zh">CER</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-7-5-1"><code>%</code></div>
-<div class="eq" id="eq-7-5-2"><code>TTS ref</code></div>
-<div class="eq" id="eq-7-5-3"><code>≤5</code></div>
-<div class="eq" id="eq-7-5-4"><code>Asia</code></div>
-<div class="eq" id="eq-7-5-5"><code>335 4.30 ± 0.1 3.1 ± 0.2 1.9 ± 0.1 296 88%</code></div>
-<div class="eq" id="eq-7-5-6"><code>South America</code></div>
-<div class="eq" id="eq-7-5-7"><code>136 4.10 ± 0.1 2.6 ± 0.2 1.8 ± 0.1 129 95%</code></div>
-<div class="eq" id="eq-7-5-8"><code>North America</code></div>
-<div class="eq" id="eq-7-5-9"><code>144 4.12 ± 0.1 3.8 ± 0.8 2.4 ± 0.2 125 87%</code></div>
-<div class="eq" id="eq-7-5-10"><code>Europe</code></div>
-<div class="eq" id="eq-7-5-11"><code>41 4.33 ± 0.2 3.0 ± 0.3 1.9 ± 0.2 39 95%</code></div>
-<div class="eq" id="eq-7-5-12"><code>Africa</code></div>
-<div class="eq" id="eq-7-5-13"><code>363 4.34 ± 0.1 4.1 ± 0.2 2.6 ± 0.1 277 76%</code></div>
-<div class="eq" id="eq-7-5-14"><code>Pacific</code></div>
-<div class="eq" id="eq-7-5-15"><code>88 4.72 ± 0.2 3.4 ± 1.3 1.8 ± 0.2 79 90% 1,107 4.30 ± 0.0 3.5 ± 0.2 2.2 ± 0.1 945 85%</code></div>
-<div class="cap" id="tab-7-5-2"><span class="cap-k">表</span><p class="en">Table 11: TTS Evaluation on 1,107 Languages. The majority of MMS TTS models can synthesize speech which preserves most of the content as per the ASR character error rates (TTS CER ≤5). We report MCD and character error rate for the synthesized outputs (TTS) of the MMS-lab test sets as well as the human references (ref). We also show the number of systems which achieve CER less than five, indicating systems which on average produce no more than one incorrect character every twenty characters. Results are shown with confidence interval 95%.</p><p class="zh">表 11：1,107 种语言上的 TTS 评估。大多数 MMS TTS 模型能合成保留大部分内容的语音，按 ASR 字错误率衡量（TTS CER ≤5）。我们报告 MMS-lab 测试集的合成输出（TTS）以及人类参考（ref）的 MCD 和字错误率。我们还展示 CER 小于 5 的系统数量，表示平均每 20 个字符产生不超过 1 个错误字符的系统。结果带 95% 置信区间。</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-7-5-2"><span class="cap-k">表</span><p class="en">Table 11: TTS Evaluation on 1,107 Languages. The majority of MMS TTS models can synthesize speech which preserves most of the content as per the ASR character error rates (TTS CER ≤5). We report MCD and character error rate for the synthesized outputs (TTS) of the MMS-lab test sets as well as the human references (ref). We also show the number of systems which achieve CER less than five, indicating systems which on average produce no more than one incorrect character every twenty characters. Results are shown with confidence interval 95%.</p><p class="zh">表 11：1,107 种语言上的 TTS 评估。大多数 MMS TTS 模型能合成保留大部分内容的语音，按 ASR 字错误率衡量（TTS CER ≤5）。我们报告 MMS-lab 测试集的合成输出（TTS）以及人类参考（ref）的 MCD 和字错误率。我们还展示 CER 小于 5 的系统数量，表示平均每 20 个字符产生不超过 1 个错误字符的系统。结果带 95% 置信区间。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>#lang</th><th></th><th></th><th>MCD</th><th></th><th>ASR (CER)</th><th></th><th></th><th>TTS CER</th><th></th><th></th><th>%</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th>TTS</th><th></th><th>ref</th><th></th><th>≤5</th><th></th><th></th></tr></thead><tbody><tr><td>Asia</td><td></td><td>335</td><td>4.30 ± 0.1</td><td></td><td>3.1 ± 0.2</td><td></td><td>1.9 ± 0.1</td><td></td><td></td><td>296</td><td>88%</td><td></td></tr>
+<tr><td>South America</td><td></td><td>136</td><td>4.10 ± 0.1</td><td></td><td>2.6 ± 0.2</td><td></td><td>1.8 ± 0.1</td><td></td><td></td><td>129</td><td>95%</td><td></td></tr>
+<tr><td>North America</td><td></td><td>144</td><td>4.12 ± 0.1</td><td></td><td>3.8 ± 0.8</td><td></td><td>2.4 ± 0.2</td><td></td><td></td><td>125</td><td>87%</td><td></td></tr>
+<tr><td>Europe</td><td></td><td>41</td><td>4.33 ± 0.2</td><td></td><td>3.0 ± 0.3</td><td></td><td>1.9 ± 0.2</td><td></td><td></td><td>39</td><td>95%</td><td></td></tr>
+<tr><td>Africa</td><td></td><td>363</td><td>4.34 ± 0.1</td><td></td><td>4.1 ± 0.2</td><td></td><td>2.6 ± 0.1</td><td></td><td></td><td>277</td><td>76%</td><td></td></tr>
+<tr><td>Pacific</td><td></td><td>88</td><td>4.72 ± 0.2</td><td></td><td>3.4 ± 1.3</td><td></td><td>1.8 ± 0.2</td><td></td><td></td><td>79</td><td>90%</td><td></td></tr>
+<tr><td></td><td>1,107</td><td></td><td>4.30 ± 0.0</td><td></td><td>3.5 ± 0.2</td><td></td><td>2.2 ± 0.1</td><td></td><td></td><td>945</td><td>85%</td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-7-5-3">
           <p class="en-lines"><span class="sent" data-sid="s-7-5-3-1"><span class="en">samples are nearly identical.</span></span> <span class="sent" data-sid="s-7-5-3-2"><span class="en">We note that the in-domain and out-of-domain settings are measured on different data which does not enable strong claims about identical performance.</span></span> <span class="sent" data-sid="s-7-5-3-3"><span class="en">The systems also retain much of the original content as the small difference in CER between TTS and human utterances (ref) shows.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-7-5-3-1"><span class="zh">样本的 MOS 分数几乎相同。</span></span><span class="sent" data-sid="s-7-5-3-2"><span class="zh">我们注意到，域内和域外设置是在不同数据上测量的，这无法支持关于性能相同的强论断。</span></span><span class="sent" data-sid="s-7-5-3-3"><span class="zh">这些系统也保留了大部分原始内容，正如 TTS 与人类语句（ref）之间 CER 的微小差异所示。</span></span></p>

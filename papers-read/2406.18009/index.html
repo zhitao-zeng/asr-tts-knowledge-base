@@ -102,6 +102,13 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
+/* 重建表格网格（extract_tables.py 产物） */
+.ptab-wrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff}
+.ptab{border-collapse:collapse;width:100%;font-size:12.5px;font-variant-numeric:tabular-nums}
+.ptab th{background:#f1f5f9;font-weight:700;padding:6px 9px;border-bottom:1.5px solid var(--line);text-align:left;white-space:nowrap}
+.ptab td{padding:5px 9px;border-bottom:1px solid #f1f5f9;text-align:right;white-space:nowrap}
+.ptab td:first-child,.ptab th:first-child{text-align:left;font-weight:600}
+.ptab tbody tr:hover td{background:#f8fafc}
 .tb pre{font-size:11.5px;line-height:1.5;background:#f8fafc;border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto;max-height:320px;white-space:pre-wrap}
 .refline{font-size:12px;color:var(--muted);line-height:1.6;margin:3px 0;word-break:break-word}
 /* 三分钟摘要 */
@@ -784,20 +791,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="cap" id="fig-3-4-1"><img class="fig" src="../assets/figures/2406.18009/fig-3-4-1.png" loading="lazy" alt="Fig. 4. The training progress of Voicebox and E2TTS models. The top row shows WER and the bottom row shows SIM progressi"><span class="cap-k">图</span><p class="en">Fig. 4. The training progress of Voicebox and E2TTS models. The top row shows WER and the bottom row shows SIM progressions.</p><p class="zh">图 4. Voicebox 和 E2 TTS 模型的训练过程。上排为 WER，下排为 SIM 的变化曲线。</p></div>
-<div class="cap" id="tab-3-4-1"><span class="cap-k">表</span><p class="en">Table 3. Comparison between the basic E2 TTS and E2 TTS X1. While the basic E2 TTS requires the transcription of the audio prompt during inference, E2 TTS X1 does not require it. WER is expressed in percentage.</p><p class="zh">Table 3. 基础版 E2 TTS 与 E2 TTS X1 的比较。基础版 E2 TTS 在推理时需要音频提示的转录，E2 TTS X1 则不需要。WER 以百分比表示。</p></div></section>
+<div class="cap" id="tab-3-4-1"><span class="cap-k">表</span><p class="en">Table 3. Comparison between the basic E2 TTS and E2 TTS X1. While the basic E2 TTS requires the transcription of the audio prompt during inference, E2 TTS X1 does not require it. WER is expressed in percentage.</p><p class="zh">Table 3. 基础版 E2 TTS 与 E2 TTS X1 的比较。基础版 E2 TTS 在推理时需要音频提示的转录，E2 TTS X1 则不需要。WER 以百分比表示。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>(P1)</td><td>E2 TTS</td><td>Random</td><td>2.0</td><td>0.675</td><td>ID</td><td>Model</td><td>Init</td><td>Phoneme %</td><td></td><td>WER↓</td><td>SIM-o↑</td></tr>
+<tr><td></td><td>(P2)</td><td>E2 TTS</td><td>Pre-trained [34]</td><td>1.9</td><td>0.708</td><td>(P1)</td><td>E2 TTS</td><td>Random</td><td></td><td>0%</td><td>2.0</td><td>0.675</td></tr>
+<tr><td></td><td>(P1-X1)</td><td>E2 TTS X1</td><td>Random</td><td>2.0</td><td>0.664</td><td></td><td></td><td></td><td></td><td>0%</td><td>2.0</td><td>0.679</td></tr>
+<tr><td></td><td>(P2-X1)</td><td>E2 TTS X1</td><td>Pre-trained [34]</td><td>2.0</td><td>0.705</td><td>(P1-X2)</td><td>E2 TTS X2</td><td>Random</td><td></td><td>25%</td><td>2.0</td><td>0.678</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>50%</td><td>2.1</td><td>0.679</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-id-3"><span class="t-zh">ID</span><span class="t-en">ID</span></h3><div class="pblk" id="p-id-3-1">
-          <p class="en-lines"><span class="sent" data-sid="s-id-3-1-1"><span class="en">Model Init WER↓ SIM-o↑ (P1) E2 TTS Random</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-id-3-1-1"><span class="zh">（表：Model × Init × WER↓ × SIM-o↑——(P1) E2 TTS 随机初始化 2.0/0.675；(P2) E2 TTS 预训练 [34] 1.9/0.708；(P1-X1) E2 TTS X1 随机 2.0/0.664；(P2-X1) E2 TTS X1 预训练 [34] 2.0/0.705。）值得注意的是，尽管框架极其简单，E2 TTS 仍超过了 VALL-E、NaturalSpeech 3、Voicebox 等所有强基线。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-id-3-1"><code>2.0 0.675</code></div>
-<div class="eq" id="eq-id-3-2"><code>(P2) E2 TTS Pre-trained [34]</code></div>
-<div class="eq" id="eq-id-3-3"><code>1.9 0.708</code></div>
-<div class="eq" id="eq-id-3-4"><code>(P1-X1) E2 TTS X1 Random</code></div>
-<div class="eq" id="eq-id-3-5"><code>2.0 0.664</code></div>
-<div class="eq" id="eq-id-3-6"><code>(P2-X1) E2 TTS X1 Pre-trained [34]</code></div>
-<div class="eq" id="eq-id-3-7"><code>2.0 0.705</code></div>
+      <h3 class="sech lv2" id="sec-id-3"><span class="t-zh">ID</span><span class="t-en">ID</span></h3>
+
+
+
+
+
+
+
 <div class="pblk" id="p-id-3-2">
           <p class="en-lines"><span class="sent" data-sid="s-id-3-2-1"><span class="en">It is noteworthy that E2 TTS achieved superior performance compared to all strong baselines, including VALL-E, NaturalSpeech 3, and Voicebox, despite its extremely simple framework.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-id-3-2-1"><span class="zh">（表：Model × Init × WER↓ × SIM-o↑——(P1) E2 TTS 随机初始化 2.0/0.675；(P2) E2 TTS 预训练 [34] 1.9/0.708；(P1-X1) E2 TTS X1 随机 2.0/0.664；(P2-X1) E2 TTS X1 预训练 [34] 2.0/0.705。）值得注意的是，尽管框架极其简单，E2 TTS 仍超过了 VALL-E、NaturalSpeech 3、Voicebox 等所有强基线。</span></span></p>
@@ -837,20 +844,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-id-3-6-1"><span class="zh">8在 LibriSpeech 中，一些说话人为书中的不同角色使用了不同的声音特征，导致真实样本的 SMOS 偏低。</span></span></p>
           
         </div>
-<div class="cap" id="tab-id-3-1"><span class="cap-k">表</span><p class="en">Table 4. The WER (%) and SIM-o of E2 TTS X2 where a word is randomly replaced with the phoneme sequence during inference. Even when we replaced 50% of words into phoneme sequences, E2 TTS X2 worked reasonably well. This indicates that we can specify the pronunciation of a new term without retraining.</p><p class="zh">Table 4. E2 TTS X2 的 WER（%）与 SIM-o：推理时随机将单词替换为音素序列。即使我们把 50% 的单词替换为音素序列，E2 TTS X2 仍能正常工作。这表明我们可以在不重新训练的情况下指定新术语的发音。</p></div></section>
+<div class="cap" id="tab-id-3-1"><span class="cap-k">表</span><p class="en">Table 4. The WER (%) and SIM-o of E2 TTS X2 where a word is randomly replaced with the phoneme sequence during inference. Even when we replaced 50% of words into phoneme sequences, E2 TTS X2 worked reasonably well. This indicates that we can specify the pronunciation of a new term without retraining.</p><p class="zh">Table 4. E2 TTS X2 的 WER（%）与 SIM-o：推理时随机将单词替换为音素序列。即使我们把 50% 的单词替换为音素序列，E2 TTS X2 仍能正常工作。这表明我们可以在不重新训练的情况下指定新术语的发音。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>(P1)</td><td>E2 TTS</td><td>Random</td><td>2.0</td><td>0.675</td><td>ID</td><td>Model</td><td>Init</td><td>Phoneme %</td><td></td><td>WER↓</td><td>SIM-o↑</td></tr>
+<tr><td></td><td>(P2)</td><td>E2 TTS</td><td>Pre-trained [34]</td><td>1.9</td><td>0.708</td><td>(P1)</td><td>E2 TTS</td><td>Random</td><td></td><td>0%</td><td>2.0</td><td>0.675</td></tr>
+<tr><td></td><td>(P1-X1)</td><td>E2 TTS X1</td><td>Random</td><td>2.0</td><td>0.664</td><td></td><td></td><td></td><td></td><td>0%</td><td>2.0</td><td>0.679</td></tr>
+<tr><td></td><td>(P2-X1)</td><td>E2 TTS X1</td><td>Pre-trained [34]</td><td>2.0</td><td>0.705</td><td>(P1-X2)</td><td>E2 TTS X2</td><td>Random</td><td></td><td>25%</td><td>2.0</td><td>0.678</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>50%</td><td>2.1</td><td>0.679</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-id-4"><span class="t-zh">ID</span><span class="t-en">ID</span></h3><div class="pblk" id="p-id-4-1">
-          <p class="en-lines"><span class="sent" data-sid="s-id-4-1-1"><span class="en">Model Init Phoneme % WER↓ SIM-o↑ (P1) E2 TTS Random</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-id-4-1-1"><span class="zh">表头：Model / Init / Phoneme % / WER↓ / SIM-o↑——(P1) E2 TTS Random（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-id-4-1"><code>0% 2.0 0.675</code></div>
-<div class="eq" id="eq-id-4-2"><code>(P1-X2) E2 TTS X2 Random</code></div>
-<div class="eq" id="eq-id-4-3"><code>0% 2.0 0.679 25% 2.0 0.678 50% 2.1 0.679</code></div>
-<div class="eq" id="eq-id-4-4"><code>(P2) E2 TTS Pre-trained [34]</code></div>
-<div class="eq" id="eq-id-4-5"><code>0% 1.9 0.708</code></div>
-<div class="eq" id="eq-id-4-6"><code>(P2-X2) E2 TTS X2 Pre-trained [34]</code></div>
-<div class="eq" id="eq-id-4-7"><code>0% 1.9 0.708 25% 2.0 0.708 50% 2.1 0.707</code></div></section>
+      <h3 class="sech lv2" id="sec-id-4"><span class="t-zh">ID</span><span class="t-en">ID</span></h3>
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-3-5"><span class="secnum">3.5</span> <span class="t-zh">3.5 E2 TTS 扩展的评测</span><span class="t-en">Evaluation of E2 TTS extensions</span></h3><div class="pblk" id="p-3-5-1">
           <p class="en-lines"><span class="sent" data-sid="s-3-5-1-1"><span class="en">3.5.1.</span></span> <span class="sent" data-sid="s-3-5-1-2"><span class="en">Evaluation of the extension 1 The results for the E2 TTS X1 models are shown in Table 3.</span></span> <span class="sent" data-sid="s-3-5-1-3"><span class="en">These results indicate that the E2 TTS X1 model has achieved results nearly identical to those of the E2 TTS model, especially when the model was initialized by unsupervised pre-training [34].</span></span> <span class="sent" data-sid="s-3-5-1-4"><span class="en">E2 TTS X1 does not require the transcription of the audio prompt, which greatly enhances its usability.</span></span></p>
