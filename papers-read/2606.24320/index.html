@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -372,17 +372,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="cap" id="tab-I"><span class="cap-k">表</span><p class="en">TABLE I: Representative silent failures in the G2P pre- processing pipeline. The first row shows a Chinese span processed under an English tag; the second shows an over- matched substring or morphology rule; the third shows loss</p><p class="zh">表 I：G2P 预处理流水线的代表性静默失败案例。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Input</th><th></th><th></th><th>G2P pipeline output</th><th></th></tr><tr><th></th><th>en: 电脑is computer</th><th></th><th></th><th>en:Chinese letter Chinese letter is computer</th></tr></thead><tbody><tr><td></td><td>en:alpharetrovirus</td><td></td><td>en:retroretrovirus</td><td></td></tr>
 <tr><td>es:Satoshi</td><td></td><td>es:Satosi</td><td></td><td></td></tr></tbody></table></div></div>
-<div class="pblk" id="p-II-C-4">
-          <p class="en-lines"><span class="sent" data-sid="s-II-C-4-1"><span class="en">To condition the autoregressive TTS model on this representation, a learned projection of the speaker embedding is placed at the beginning of the sequence:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-II-C-4-1"><span class="zh">为让自回归 TTS 模型以该表示为条件，把说话人嵌入的学习投影放在序列开头：hspk = Wspk êx + bspk，其中 Wspk ∈ Rdmodel×1024 将说话人嵌入映射到 Transformer 的隐藏维度。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-II-C-1"><code>hspk = Wspkˆex + bspk, (3)</code></div>
-<div class="pblk" id="p-II-C-5">
-          <p class="en-lines"><span class="sent" data-sid="s-II-C-5-1"><span class="en">where Wspk ∈Rdmodel×1024 maps the speaker embedding into the transformer hidden dimension.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-II-C-5-1"><span class="zh">为让自回归 TTS 模型以该表示为条件，把说话人嵌入的学习投影放在序列开头：hspk = Wspk êx + bspk，其中 Wspk ∈ Rdmodel×1024 将说话人嵌入映射到 Transformer 的隐藏维度。</span></span></p>
-          
-        </div>
+
+
+
 <div class="pblk" id="p-II-C-6">
           <p class="en-lines"><span class="sent" data-sid="s-II-C-6-1"><span class="en">Beyond discarding nuisance factors, the LDA projection helps mitigate a core problem with the speaker embeddings.</span></span> <span class="sent" data-sid="s-II-C-6-2"><span class="en">There is a tradeoff between how much information an embedding carries about its source utterance and how long the model can be trained on embeddings drawn from that utterance before overfitting starts to occur.</span></span> <span class="sent" data-sid="s-II-C-6-3"><span class="en">Because the embedding is computed from the groundtruth recording of the target utterance, any utterancespecific information it leaks, such as lexical content and pause timing, offers the model a shortcut.</span><button class="mk feat" data-sid="s-II-C-6-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-II-C-6-4"><span class="en">It can reduce its training loss by reading these specifics out of the speaker embedding instead of learning a solution that generalizes to text, emotion, or pauses not present in the reference clip.</span></span> <span class="sent" data-sid="s-II-C-6-5"><span class="en">The more information about the target the embedding exposes, the sooner this shortcut comes to dominate and the fewer useful training steps remain.</span></span> <span class="sent" data-sid="s-II-C-6-6"><span class="en">Without the LDA transformation, we found we could not take enough training steps with the speaker embedding to learn high-quality voice cloning before overfitting occurred.</span><button class="mk feat" data-sid="s-II-C-6-6" title="查看讲解">解</button></span> <span class="sent" data-sid="s-II-C-6-7"><span class="en">The LDA projection is necessary to extend the usable training horizon of the embedding.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-II-C-6-1"><span class="zh">除了丢弃干扰因素，LDA 投影还有助于缓解说话人嵌入的一个核心问题。</span></span><span class="sent" data-sid="s-II-C-6-2"><span class="zh">嵌入携带其源语句的信息量，与模型能在来自该语句的嵌入上训练多久才会过拟合，二者之间存在权衡。</span></span><span class="sent" data-sid="s-II-C-6-3"><span class="zh">因为嵌入是从目标语句的真实录音计算的，它泄漏的任何语句特定信息（如词汇内容与停顿时机）都给模型提供了一条捷径。</span><button class="mk feat" data-sid="s-II-C-6-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-II-C-6-4"><span class="zh">模型可以直接从说话人嵌入中读出这些细节来降低训练损失，而不去学一个能泛化到参考片段之外的文本、情感或停顿的解。</span></span><span class="sent" data-sid="s-II-C-6-5"><span class="zh">嵌入暴露的目标信息越多，这条捷径就越快占据主导，剩余的有效训练步数就越少。</span></span><span class="sent" data-sid="s-II-C-6-6"><span class="zh">我们发现，若不做 LDA 变换，用说话人嵌入训练时还没学到高质量的声音克隆，模型就已经过拟合了。</span><button class="mk feat" data-sid="s-II-C-6-6" title="查看讲解">解</button></span><span class="sent" data-sid="s-II-C-6-7"><span class="zh">LDA 投影是延长嵌入可用训练时程的必要手段。</span></span></p>
@@ -1217,12 +1209,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-D-2-1"><span class="zh">表头：Task Set × Spk. sim.↑ × DNSMOS↑ × WER%↓ × Emo. acc.%↑。</span></span></p>
           
         </div>
-<div class="eq" id="eq-D-1"><code>ZONOS2</code></div>
-<div class="pblk" id="p-D-3">
-          <p class="en-lines"><span class="sent" data-sid="s-D-3-1"><span class="en">CosyVoice 3 Eval en</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-D-3-1"><span class="zh">（表格行）CosyVoice 3 Eval / en（后续照原文）。</span></span></p>
-          
-        </div>
+
+
 <div class="eq" id="eq-D-2"><code>49.66 3.901 4.48 –</code></div>
 <div class="eq" id="eq-D-3"><code>hard_en</code></div>
 <div class="eq" id="eq-D-4"><code>49.58 4.020 5.23 –</code></div>
@@ -1250,7 +1238,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-D-26"><code>39.12 3.837 4.71 37.3</code></div>
 <div class="eq" id="eq-D-27"><code>zh</code></div>
 <div class="eq" id="eq-D-28"><code>58.48 3.610 7.57 36.7</code></div>
-<div class="eq" id="eq-D-29"><code>emotion</code></div>
+
 <div class="eq" id="eq-D-30"><code>48.16 3.743 – –</code></div>
 <div class="eq" id="eq-D-31"><code>rhyme</code></div>
 <div class="eq" id="eq-D-32"><code>42.00 3.547 – –</code></div>
@@ -1266,11 +1254,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="pblk" id="p-D-4">
-          <p class="en-lines"><span class="sent" data-sid="s-D-4-2"><span class="en">Emotion accuracy is only reported for the emotion zero-shot task.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-D-4-2"><span class="zh">情绪准确率仅在情绪零样本任务上报告。</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-D-1"><img class="fig" src="../assets/figures/2606.24320/fig-D-1.png" loading="lazy" alt="Fig. 6: Violin plots of DS-WED scores for the English portions of both ZTTS1-Eval sets."><span class="cap-k">图</span><p class="en">Fig. 6: Violin plots of DS-WED scores for the English portions of both ZTTS1-Eval sets.</p><p class="zh">图 6：ZTTS1-Eval 两个集合英文部分 DS-WED 分数的小提琴图。</p></div>
 <div class="cap" id="tab-VII"><span class="cap-k">表</span><p class="en">TABLE VII: ZONOS2 evaluation results across speaker similarity, DNSMOS, WER, and emotion accuracy on the CosyVoice 3 Eval and Seed-TTS-Eval benchmarks, grouped by task. Emotion accuracy is only reported for the emotion zero-shot task.</p><p class="zh">表 VII：ZONOS2 在 CosyVoice 3 Eval 与 Seed-TTS-Eval 基准上按任务分组的说话人相似度、DNSMOS、WER 与情绪准确率评测结果。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Test-ZH</td><td></td><td>58.20</td><td>–</td><td>2.55</td><td>–</td></tr>
 <tr><td></td><td>Test-ZH-Hard</td><td>56.2</td><td>–</td><td>11.15</td><td>–</td></tr></tbody></table></div></div>

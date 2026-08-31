@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -257,84 +257,24 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-1-7">
-          <p class="en-lines"><span class="sent" data-sid="s-1-7-1"><span class="en">Input audio ASR Detect the language and recognize the speech:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-7-1"><span class="zh">（Figure 2 图内文字）输入音频；ASR（任务）；「检测语言并识别语音」。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-8">
-          <p class="en-lines"><span class="sent" data-sid="s-1-8-1"><span class="en">Language prompt (Sound of a car horning.)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-8-1"><span class="zh">（Figure 2 图内文字）语言提示；（Sound of a car horning. 汽车鸣笛声。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-9">
-          <p class="en-lines"><span class="sent" data-sid="s-1-9-1"><span class="en">Input audio AAC Generate the caption in English:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-9-1"><span class="zh">（Figure 2 图内文字）输入音频；AAC（音频描述任务）；「用英文生成描述」。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-10">
-          <p class="en-lines"><span class="sent" data-sid="s-1-10-1"><span class="en">Language prompt Audio Encoder SFT Voice Chat “I lost my phone today…”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-10-1"><span class="zh">（Figure 2 图内文字）语言提示；音频编码器；SFT；语音聊天；「我今天把手机丢了……」</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-11">
-          <p class="en-lines"><span class="sent" data-sid="s-1-11-1"><span class="en">“What’s the mood of the speaker?”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-11-1"><span class="zh">「说话人的情绪如何？」</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-12">
-          <p class="en-lines"><span class="sent" data-sid="s-1-12-1"><span class="en">Audio Analysis DPO “What emotions does the music convey?” (A guitar melody.)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-12-1"><span class="zh">音频分析；DPO；「这段音乐传达了什么情绪？」（一段吉他旋律。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-13">
-          <p class="en-lines"><span class="sent" data-sid="s-1-13-1"><span class="en">Query Input audio This piece of guitar music, with its soothing folk style, conveys a sense of calmness and nostalgia.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-13-1"><span class="zh">查询；输入音频；这段吉他曲以其舒缓的民谣风格，传达出一种平静与怀旧之感。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-14">
-          <p class="en-lines"><span class="sent" data-sid="s-1-14-1"><span class="en">Response 1 This piece of guitar music evokes a deep sense of calm and relaxation.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-14-1"><span class="zh">（示例回答 1：这段吉他音乐唤起深深的平静与放松感。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-15">
-          <p class="en-lines"><span class="sent" data-sid="s-1-15-1"><span class="en">The gentle strumming patterns and melodies resonate with a feeling of peacefulness, as if transporting the listener to a quiet, serene place.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-15-1"><span class="zh">轻柔的扫弦节奏与旋律唤起一种安宁的感觉，仿佛把听者带到一处静谧之地。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-16">
-          <p class="en-lines"><span class="sent" data-sid="s-1-16-1"><span class="en">Response 2 &lt;|zh|&gt;你好。 A loud honk from a car startles a man crossing a busy city street, the noise echoing through the bustling surroundings.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-16-1"><span class="zh">（示例回答 2：&lt;|zh|&gt;你好。一声汽车鸣笛惊到了正穿过繁忙城市街道的男子，噪声在熙攘环境中回荡。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-17">
-          <p class="en-lines"><span class="sent" data-sid="s-1-17-1"><span class="en">Next Token Prediction QwenLM I'm sorry to hear that!</span></span> <span class="sent" data-sid="s-1-17-2"><span class="en">Losing your phone can be frustrating.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-17-1"><span class="zh">（Figure 2 训练信号）下一个 token 预测（Next Token Prediction）；QwenLM；（回答示例：）听到这个消息我很难过！</span></span><span class="sent" data-sid="s-1-17-2"><span class="zh">丢了手机确实很让人沮丧。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-18">
-          <p class="en-lines"><span class="sent" data-sid="s-1-18-1"><span class="en">She is sad.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-18-1"><span class="zh">（Figure 2 中标注回答的示例：）她很难过。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-19">
-          <p class="en-lines"><span class="sent" data-sid="s-1-19-1"><span class="en">Qwen2-Audio Preference scores FeedBack Lose！</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-19-1"><span class="zh">（图 1 标签：Qwen2-Audio 偏好打分（Preference scores）；反馈示例「Lose! 3.0 / Win! 9.0」，Response 1。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1-16"><code>3.0</code></div>
-<div class="eq" id="eq-1-17"><code>Response 1</code></div>
-<div class="eq" id="eq-1-18"><code>9.0</code></div>
-<div class="pblk" id="p-1-20">
-          <p class="en-lines"><span class="sent" data-sid="s-1-20-1"><span class="en">Win!</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-20-1"><span class="zh">（图 1 标签：Qwen2-Audio 偏好打分（Preference scores）；反馈示例「Lose! 3.0 / Win! 9.0」，Response 1。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-1-21">
-          <p class="en-lines"><span class="sent" data-sid="s-1-21-1"><span class="en">Response 2</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-21-1"><span class="zh">（图 1 标签：Response 2。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-1-2"><img class="fig" src="../assets/figures/2407.10759/fig-1-2.png" loading="lazy" alt="Figure 2: The overview of three-stage training process of Qwen2-Audio."><span class="cap-k">图</span><p class="en">Figure 2: The overview of three-stage training process of Qwen2-Audio.</p><p class="zh">Figure 2：Qwen2-Audio 三阶段训练流程概览。</p></div>
 <div class="pblk" id="p-1-22">
           <p class="en-lines"><span class="sent" data-sid="s-1-22-1"><span class="en">achieves state-of-the-art performance on the test set of Aishell2, FLUERS-zh, VocalSound and AIR-Bench chat benchmark.</span></span></p>
@@ -630,7 +570,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-1-1"><span class="zh">这里展示一部分案例，用以说明 Qwen2-Audio 基于音频的交互能力。</span></span><span class="sent" data-sid="s-4-1-2"><span class="zh">更多令人印象深刻的示例，请参见 https://github.com/QwenLM/Qwen2-Audio。</span></span></p>
           
         </div>
-<div class="eq" id="eq-4-1"><code>0:00 / 0:07</code></div>
+
 <div class="pblk" id="p-4-2">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-1"><span class="en">Yes, the speaker is female and in her twenties.</span><button class="mk" data-sid="s-4-2-1" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-1"><span class="zh">（音频示例 0:00/0:07：「是的，说话者是女性，二十多岁。」）</span><button class="mk" data-sid="s-4-2-1" title="查看讲解">解</button></span></p>
@@ -643,32 +583,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="eq" id="eq-4-2"><code>0:00 / 0:09</code></div>
-<div class="pblk" id="p-4-3">
-          <p class="en-lines"><span class="sent" data-sid="s-4-3-1"><span class="en">“I have an exam coming up, but I'm not well prepared.</span></span> <span class="sent" data-sid="s-4-3-2"><span class="en">I can't sleep well every night.”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-3-1"><span class="zh">（音频示例 0:00/0:09：「我马上要考试了，但准备得不太充分。」）</span></span><span class="sent" data-sid="s-4-3-2"><span class="zh">我每天晚上都睡不好。」</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-4">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-1"><span class="en">“I heard that you can understand what people say and even know their age and gender.</span></span> <span class="sent" data-sid="s-4-4-2"><span class="en">So, can you guess my age and gender?”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-1"><span class="zh">（用户语音：）「我听说你能听懂人们说的话，甚至能知道他们的年龄和性别。</span></span><span class="sent" data-sid="s-4-4-2"><span class="zh">那么，你能猜猜我的年龄和性别吗？」</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-5">
-          <p class="en-lines"><span class="sent" data-sid="s-4-5-1"><span class="en">I'm sorry to hear that you're feeling stressed about your exam.</span></span> <span class="sent" data-sid="s-4-5-2"><span class="en">It's completely normal to feel anxious when you're preparing for an important test.</span></span> <span class="sent" data-sid="s-4-5-3"><span class="en">Here are some tips that might help you:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-5-1"><span class="zh">（模型回答：）很抱歉听到你因考试而感到焦虑。</span></span><span class="sent" data-sid="s-4-5-2"><span class="zh">在准备重要考试时感到紧张是完全正常的。</span></span><span class="sent" data-sid="s-4-5-3"><span class="zh">这里有一些可能对你有帮助的建议：</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-6">
-          <p class="en-lines"><span class="sent" data-sid="s-4-6-1"><span class="en">Remember, it's okay if you're not feeling well-prepared.</span></span> <span class="sent" data-sid="s-4-6-2"><span class="en">Just do your best, and trust yourself.</span></span> <span class="sent" data-sid="s-4-6-3"><span class="en">Good luck with your exam!</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-6-1"><span class="zh">请记住，感觉自己没有充分准备好是正常的。</span></span><span class="sent" data-sid="s-4-6-2"><span class="zh">尽你最大的努力，相信自己。</span></span><span class="sent" data-sid="s-4-6-3"><span class="zh">祝你考试顺利！</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-7">
-          <p class="en-lines"><span class="sent" data-sid="s-4-7-1"><span class="en">1.</span></span> <span class="sent" data-sid="s-4-7-2"><span class="en">Start studying early: Don't leave everything until the last minute.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-7-1"><span class="zh">1.</span></span><span class="sent" data-sid="s-4-7-2"><span class="zh">尽早开始学习：不要把所有事情都拖到最后关头。</span></span></p>
-          
-        </div>
+
+
+
+
+
+
 <div class="pblk" id="p-4-8">
           <p class="en-lines"><span class="sent" data-sid="s-4-8-1"><span class="en">Break up your study sessions into smaller chunks of time, and try to stick to a regular schedule. 2.</span></span> <span class="sent" data-sid="s-4-8-2"><span class="en">Find a quiet place to study: A quiet environment can help you concentrate better.</span></span> <span class="sent" data-sid="s-4-8-3"><span class="en">If possible, ﬁnd a library or a study room where you can work without distractions. 3.</span></span> <span class="sent" data-sid="s-4-8-4"><span class="en">Take breaks: It's important to take breaks during your study sessions.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-8-1"><span class="zh">把学习时间切分成较小的时间段，并尽量坚持规律的日程。2.</span></span><span class="sent" data-sid="s-4-8-2"><span class="zh">找一个安静的地方学习：安静的环境能帮助你更好地集中注意力。</span></span><span class="sent" data-sid="s-4-8-3"><span class="zh">如果可能，找一间图书馆或自习室，在那里你可以不受干扰地学习。3.</span></span><span class="sent" data-sid="s-4-8-4"><span class="zh">适当休息：在学习过程中安排休息非常重要。</span></span></p>
@@ -686,78 +606,33 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-1-1"><span class="zh">在本文中，我们提出了 Qwen2-Audio，它在 Qwen-Audio 分析多种音频类型的能力之上，又被赋予了语音交互能力。</span></span><span class="sent" data-sid="s-5-1-2"><span class="zh">在预训练阶段，我们针对不同的数据与任务使用自然语言提示，并进一步扩大了数据规模。</span></span><span class="sent" data-sid="s-5-1-3"><span class="zh">在 SFT 阶段，我们通过提升 SFT 数据的数量、质量与复杂度，增强了 Qwen2-Audio 与人类交互意图的对齐，从而实现无缝的语音与文本交互。</span></span><span class="sent" data-sid="s-5-1-4"><span class="zh">此外，我们通过 DPO 阶段改善了 Qwen2-Audio 的回答质量。</span></span><span class="sent" data-sid="s-5-1-5"><span class="zh">在多个基准上测得的客观指标展示了 Qwen2-Audio 在音频理解与对话能力上的熟练程度。</span></span><span class="sent" data-sid="s-5-1-6"><span class="zh">文中给出的案例也展示了 Qwen2-Audio 流畅而灵活的语音交互能力。</span></span></p>
           
         </div>
-<div class="eq" id="eq-5-1"><code>0:00 / 0:07</code></div>
-<div class="eq" id="eq-5-2"><code>每个⼈都希望被欣赏，所以如果你欣赏某⼈，不要把它保密。</code></div>
-<div class="eq" id="eq-5-3"><code>0:00 / 0:03</code></div>
-<div class="pblk" id="p-5-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-2-1"><span class="en">“Translate it into German.”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-2-1"><span class="zh">（音频示例：0:00/0:07「每个人都希望被欣赏，所以如果你欣赏某人，不要把它保密。」0:00/0:03 指令「把它翻译成德语。」）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-3">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-1"><span class="en">“Help me translate the sentence into Chinese.</span></span> <span class="sent" data-sid="s-5-3-2"><span class="en">Everyone wants to be appreciated, so if you appreciate someone, don't keep it a secret.”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-1"><span class="zh">（轮次重组后的示例文本：）「帮我把这个句子翻译成中文。</span></span><span class="sent" data-sid="s-5-3-2"><span class="zh">Everyone wants to be appreciated, so if you appreciate someone, don't keep it a secret.（每个人都希望被欣赏，所以如果你欣赏某人，不要把它保密。）」</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-4">
-          <p class="en-lines"><span class="sent" data-sid="s-5-4-1"><span class="en">Jeder möchte geschätzt werden, also wenn du jemanden schätzt, lass es nicht als Geheimnis verbergen.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-4-1"><span class="zh">（模型输出的德语译文：）Jeder möchte geschätzt werden, also wenn du jemanden schätzt, lass es nicht als Geheimnis verbergen.（每个人都希望被欣赏，所以如果你欣赏某人，不要把它当作秘密藏起来。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-4"><code>0:00 / 0:03</code></div>
-<div class="pblk" id="p-5-5">
-          <p class="en-lines"><span class="sent" data-sid="s-5-5-1"><span class="en">“How about into French?”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-5-1"><span class="zh">（音频示例 0:00/0:03：「翻译成法语怎么样？」）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-6">
-          <p class="en-lines"><span class="sent" data-sid="s-5-6-1"><span class="en">Chacun veut être apprecié, alors si tu apprécies quelqu'un, ne le gardes pas secret.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-6-1"><span class="zh">（模型输出的法语译文：）Chacun veut être apprecié, alors si tu apprécies quelqu'un, ne le gardes pas secret.（每个人都希望被欣赏，所以如果你欣赏某人，不要把它保密。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-5"><code>0:00 / 0:05</code></div>
-<div class="pblk" id="p-5-7">
-          <p class="en-lines"><span class="sent" data-sid="s-5-7-1"><span class="en">“给我⽣成⼀些类似这句话意思的，其他说法的句⼦，⽤中⽂⽣成。” 1. 每个⼈都喜欢被赞美，所以如果你喜欢⼀个⼈，不要隐藏你的赞赏。 2. 所有⼈都渴望得到认可，因此如果你欣赏某⼈，请不要独⾃享⽤这种感觉。 3. 欣赏他⼈是⼀种美德，所以不要让别⼈知道你对他们的赞赏是秘密的。 4. ⼈们都希望受到赞扬，所以如果你欣赏某⼈，不妨公开表达出来。 5. 如果你喜欢某⼈，不要犹豫告诉他们，因为每个⼈都有权利享受他⼈的赞赏。</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-7-1"><span class="zh">1.
-&quot;给我生成一些类似这句话意思的，其他说法的句子，用中文生成。&quot; 1. 每个人都喜欢被赞美，所以如果你喜欢一个人，不要隐藏你的赞赏。 2. 所有人都渴望得到认可，因此如果你欣赏某人，请不要独自享用这种感觉。 3. 欣赏他人是一种美德，所以不要让别人知道你对他们的赞赏是秘密的。 4. 人们都希望受到赞扬，所以如果你欣赏某人，不妨公开表达出来。 5. 如果你喜欢某人，不要犹豫告诉他们，因为每个人都有权利享受他人的赞赏。</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-5-1"><img class="fig" src="../assets/figures/2407.10759/fig-5-1.png" loading="lazy" alt="Figure 5: Example showing Qwen2-Audio’s capability in free chat around speech."><span class="cap-k">图</span><p class="en">Figure 5: Example showing Qwen2-Audio’s capability in free chat around speech.</p><p class="zh">Figure 5：示例展示 Qwen2-Audio 围绕语音进行自由对话的能力。</p></div>
-<div class="eq" id="eq-5-6"><code>0:00 / 0:05</code></div>
+
 <div class="pblk" id="p-5-8">
           <p class="en-lines"><span class="sent" data-sid="s-5-8-1"><span class="en">Use headphones to block out external noise and ﬁnd a quiet place to study.</span></span> <span class="sent" data-sid="s-5-8-2"><span class="en">Prioritize your tasks and set realistic goals for yourself.</span></span> <span class="sent" data-sid="s-5-8-3"><span class="en">Use active learning techniques such as summarizing, note-taking, and quizzing to help you retain information.</span></span> <span class="sent" data-sid="s-5-8-4"><span class="en">Take breaks and practice self-care to avoid burnout.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-8-1"><span class="zh">（音频示例 0:00/0:05：用耳机隔绝外界噪声，找个安静的地方学习。）</span></span><span class="sent" data-sid="s-5-8-2"><span class="zh">为任务排好优先级，为自己设定现实可行的目标。</span></span><span class="sent" data-sid="s-5-8-3"><span class="zh">使用主动学习技巧，如总结、记笔记和自测，帮助你记住知识。</span></span><span class="sent" data-sid="s-5-8-4"><span class="zh">适时休息并做好自我关照，以避免过度疲劳（burnout）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-5-7"><code>0:00 / 0:05</code></div>
-<div class="pblk" id="p-5-9">
-          <p class="en-lines"><span class="sent" data-sid="s-5-9-1"><span class="en">（with renovation noise）“In this situation, can I negotiate with them?”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-9-1"><span class="zh">（音频示例 0:00/0:05：（伴随装修噪声）「这种情况下，我可以和他们协商吗？」）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-10">
-          <p class="en-lines"><span class="sent" data-sid="s-5-10-1"><span class="en">（with renovation noise）“Oh no, how can I study quiet like this?”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-10-1"><span class="zh">（伴随装修噪声的语音：）「天哪，这样我怎么安静学习啊？」</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-11">
-          <p class="en-lines"><span class="sent" data-sid="s-5-11-1"><span class="en">Yes, you can try negotiating with them to reach a mutually beneﬁcial agreement.</span></span> <span class="sent" data-sid="s-5-11-2"><span class="en">You could also consider seeking help from a mediator or professional negotiator if needed.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-11-1"><span class="zh">（模型回答：）可以，你可以尝试和他们协商，达成一个双方都有益的协议。</span></span><span class="sent" data-sid="s-5-11-2"><span class="zh">如有需要，你也可以考虑寻求调解人或专业谈判者的帮助。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-8"><code>0:00 / 0:07</code></div>
-<div class="pblk" id="p-5-12">
-          <p class="en-lines"><span class="sent" data-sid="s-5-12-1"><span class="en">因为这种场景让你感到放松和舒适，有助于提⾼睡眠质量。 （⾬声）“哎呀，真喜欢在这种场景下睡觉啊睡的真⾹，你能猜猜为什么我喜欢在这种场景 下睡觉吗？”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-12-1"><span class="zh">（音频示例 0:00/0:07：「因为这种场景让你感到放松和舒适，有助于提高睡眠质量。（雨声）哎呀，真喜欢在这种场景下睡觉啊睡的真香，你能猜猜为什么我喜欢在这种场景下睡觉吗？」）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
 <div class="cap" id="fig-5-2"><img class="fig" src="../assets/figures/2407.10759/fig-5-2.png" loading="lazy" alt="Figure 6: Example showing Qwen2-Audio’s capability in free chat around speech and nature sound."><span class="cap-k">图</span><p class="en">Figure 6: Example showing Qwen2-Audio’s capability in free chat around speech and nature sound.</p><p class="zh">Figure 6：示例展示 Qwen2-Audio 围绕语音与自然声音进行自由对话的能力。</p></div>
-<div class="pblk" id="p-5-13">
-          <p class="en-lines"><span class="sent" data-sid="s-5-13-1"><span class="en">“Please transcribe the content of the next audio clip.” (Then a piece of audio is played)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-13-1"><span class="zh">（音频示例：指令「请转写下一段音频的内容。」（随后播放一段音频）0:00/0:10，音频原文为「Stop all the clocks, cut off the telephone, prevent the dog from barking, silence the pianos and with muffled drum bring out the coffin, let the mourners come.」）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-9"><code>0:00 / 0:10</code></div>
+
+
 <div class="pblk" id="p-5-14">
           <p class="en-lines"><span class="sent" data-sid="s-5-14-1"><span class="en">The original content of this audio is: 'Stop all the clocks, cut oﬀ the telephone, prevent the dog from barking, silence the pianos and with muﬄed drum bring out the coﬃn, let the mourners come.'</span><button class="mk" data-sid="s-5-14-1" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-14-1"><span class="zh">（音频示例：指令「请转写下一段音频的内容。」（随后播放一段音频）0:00/0:10，音频原文为「Stop all the clocks, cut off the telephone, prevent the dog from barking, silence the pianos and with muffled drum bring out the coffin, let the mourners come.」）</span><button class="mk" data-sid="s-5-14-1" title="查看讲解">解</button></span></p>
@@ -770,77 +645,37 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-5-15">
-          <p class="en-lines"><span class="sent" data-sid="s-5-15-1"><span class="en">No less than 50 words and no more than 200 words, add scenes such as rain and thunder to the poem.</span></span> <span class="sent" data-sid="s-5-15-2"><span class="en">Finally, give the verses you created in lines.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-15-1"><span class="zh">（用户追加指令：）不少于 50 词、不超过 200 词，在诗中加入雨和雷等场景。</span></span><span class="sent" data-sid="s-5-15-2"><span class="zh">最后，把你创作的诗句按行给出。</span></span></p>
-          
-        </div>
+
 <div class="pblk" id="p-5-16">
           <p class="en-lines"><span class="sent" data-sid="s-5-16-1"><span class="en">In the midst of an eerie stormy night, With raindrops falling heavy and bright, The world seemed to hush its voice, As winds howled through the darkened space.</span></span> <span class="sent" data-sid="s-5-16-2"><span class="en">Stop all the clocks, the time stood still, As the lightning ﬂashed through the sky, The telephone's ring was drowned out, By the roaring thunder that shook the ground.</span></span> <span class="sent" data-sid="s-5-16-3"><span class="en">Prevent the dog from barking, its cries were silenced, By the fear that gripped it in the night, Silence the pianos, their keys were muted, As the mournful sound of raindrops beat on wood.</span></span> <span class="sent" data-sid="s-5-16-4"><span class="en">With muﬄed drums, a slow march began, A solemn procession through the storm, The coﬃn was carried, heavy and solemn, Let the mourners come, to pay their ﬁnal respects.</span></span> <span class="sent" data-sid="s-5-16-5"><span class="en">As the storm slowly passed, the world emerged, A new day dawned, but memories lingered, Of the night when time stood still, And the mourners came, to say goodbye.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-16-1"><span class="zh">（模型创作的诗歌：）在一个诡异的暴风雨之夜，/ 雨点重重落下，明亮而密集，/ 世界仿佛屏住了声音，/ 狂风在黑暗的空间中呼啸。</span></span><span class="sent" data-sid="s-5-16-2"><span class="zh">停止所有的时钟，时间凝固了，/ 闪电划过天空，/ 电话铃声被淹没，/ 被震动大地的滚滚雷声吞没。</span></span><span class="sent" data-sid="s-5-16-3"><span class="zh">阻止狗吠，它的哀鸣被沉默，/ 被黑夜里攫住它的恐惧压制，/ 让钢琴静默，琴键都已喑哑，/ 只有雨滴敲打木头的哀伤声响。</span></span><span class="sent" data-sid="s-5-16-4"><span class="zh">随着低沉的鼓声，缓慢的行进步伐开始，/ 一场庄重的队伍穿过风暴，/ 棺材被抬着，沉重而肃穆，/ 让哀悼者前来，致以最后的敬意。</span></span><span class="sent" data-sid="s-5-16-5"><span class="zh">当风暴缓缓过去，世界重新浮现，/ 新的一天破晓，但记忆仍萦绕，/ 那一夜时间凝固，/ 哀悼者前来，作最后的告别。</span></span></p>
           
         </div>
 <div class="cap" id="fig-5-3"><img class="fig" src="../assets/figures/2407.10759/fig-5-3.png" loading="lazy" alt="Figure 7: Example showing Qwen2-Audio’s capability in speech analysis."><span class="cap-k">图</span><p class="en">Figure 7: Example showing Qwen2-Audio’s capability in speech analysis.</p><p class="zh">Figure 7：示例展示 Qwen2-Audio 在语音分析方面的能力。</p></div>
-<div class="eq" id="eq-5-10"><code>0:00 / 0:22</code></div>
-<div class="pblk" id="p-5-17">
-          <p class="en-lines"><span class="sent" data-sid="s-5-17-1"><span class="en">What do you hear?</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-17-1"><span class="zh">（音频示例 0:00/0:22：问「你听到了什么？」）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-18">
-          <p class="en-lines"><span class="sent" data-sid="s-5-18-1"><span class="en">I heard the sound of an alarm and a truck's air brake mixed with the noise of a heavy engine running and shifting gears.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-18-1"><span class="zh">（模型回答：）我听到了警报声、卡车的气刹车声，混杂着一台重型发动机运转和换挡的噪声。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-19">
-          <p class="en-lines"><span class="sent" data-sid="s-5-19-1"><span class="en">Under what circumstances can you hear such sounds?</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-19-1"><span class="zh">（用户追问：）在什么场合下会听到这样的声音？</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-20">
-          <p class="en-lines"><span class="sent" data-sid="s-5-20-1"><span class="en">These types of sounds might be commonly heard in industrial settings like construction sites or factories where machinery is operated, or during emergency situations like traﬃc accidents where sirens are triggered.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-20-1"><span class="zh">（模型回答：）这类声音可能常见于工地或工厂等运转机械的工业环境，也可能出现在警笛被触发的紧急情况（如交通事故）中。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-21">
-          <p class="en-lines"><span class="sent" data-sid="s-5-21-1"><span class="en">“I am so scared!</span></span> <span class="sent" data-sid="s-5-21-2"><span class="en">What should I do?”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-21-1"><span class="zh">（用户语音：）「我好害怕！</span></span><span class="sent" data-sid="s-5-21-2"><span class="zh">我该怎么办？」</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-11"><code>0:00 / 0:03</code></div>
-<div class="pblk" id="p-5-22">
-          <p class="en-lines"><span class="sent" data-sid="s-5-22-1"><span class="en">It's understandable to feel scared under any situation that makes you feel uncomfortable.</span></span> <span class="sent" data-sid="s-5-22-2"><span class="en">It's important to remember that it's okay to be scared.</span></span> <span class="sent" data-sid="s-5-22-3"><span class="en">Here are some things you can do:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-22-1"><span class="zh">（音频示例 0:00/0:03：「在任何让你不舒服的情况下感到害怕都是可以理解的。」）</span></span><span class="sent" data-sid="s-5-22-2"><span class="zh">重要的是记住：害怕是正常的。</span></span><span class="sent" data-sid="s-5-22-3"><span class="zh">以下是你可以做的一些事情：</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-5-23">
           <p class="en-lines"><span class="sent" data-sid="s-5-23-1"><span class="en">1.</span></span> <span class="sent" data-sid="s-5-23-2"><span class="en">Take deep breaths: Inhale deeply through your nose and exhale slowly through your mouth.</span></span> <span class="sent" data-sid="s-5-23-3"><span class="en">This can help calm your mind and body. 2.</span></span> <span class="sent" data-sid="s-5-23-4"><span class="en">Find a safe place: If possible, move to a safe location away from the source of the fear.</span></span> <span class="sent" data-sid="s-5-23-5"><span class="en">If you're in a car, pull over to a parking lot or a safe spot on the side of the road. 3.</span></span> <span class="sent" data-sid="s-5-23-6"><span class="en">Stay informed: If you have access to information about the situation, stay informed but don't overdo it.</span></span> <span class="sent" data-sid="s-5-23-7"><span class="en">Too much information can create more anxiety. 4.</span></span> <span class="sent" data-sid="s-5-23-8"><span class="en">Talk to someone: Talking to someone you trust can help you process your feelings and gain perspective.</span></span> <span class="sent" data-sid="s-5-23-9"><span class="en">You can call a friend, family member, or even a professional counselor if needed. 5.</span></span> <span class="sent" data-sid="s-5-23-10"><span class="en">Practice relaxation techniques: Listening to music, doing yoga or meditation, or engaging in other relaxing activities can help reduce stress and anxiety.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-23-1"><span class="zh">1.</span></span><span class="sent" data-sid="s-5-23-2"><span class="zh">深呼吸：用鼻子深吸气，再缓慢地用嘴呼出。</span></span><span class="sent" data-sid="s-5-23-3"><span class="zh">这可以帮助平复你的身心。2.</span></span><span class="sent" data-sid="s-5-23-4"><span class="zh">找一个安全的地方：如果可能，转移到远离恐惧来源的安全位置。</span></span><span class="sent" data-sid="s-5-23-5"><span class="zh">如果你在开车，驶到停车场或路边安全地带停下。3.</span></span><span class="sent" data-sid="s-5-23-6"><span class="zh">保持知情：如果你能获取有关事态的信息，保持关注即可，但不要过度。</span></span><span class="sent" data-sid="s-5-23-7"><span class="zh">过多的信息可能带来更多焦虑。4.</span></span><span class="sent" data-sid="s-5-23-8"><span class="zh">与他人交谈：与你信任的人交谈，能帮助你梳理情绪并获得新的视角。</span></span><span class="sent" data-sid="s-5-23-9"><span class="zh">如果需要，可以打给朋友、家人，甚至专业咨询师。5.</span></span><span class="sent" data-sid="s-5-23-10"><span class="zh">练习放松技巧：听音乐、做瑜伽或冥想，或进行其他放松活动，都有助于减轻压力与焦虑。</span></span></p>
           
         </div>
-<div class="pblk" id="p-5-24">
-          <p class="en-lines"><span class="sent" data-sid="s-5-24-1"><span class="en">Remember, it's okay to take time for yourself to process your emotions and come up with a plan that works best for you.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-24-1"><span class="zh">请记住：给自己时间处理情绪、并制定出最适合自己的应对方案，是完全正常的。</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-5-4"><img class="fig" src="../assets/figures/2407.10759/fig-5-4.png" loading="lazy" alt="Figure 8: Example showing Qwen2-Audio’s capability in sound analysis."><span class="cap-k">图</span><p class="en">Figure 8: Example showing Qwen2-Audio’s capability in sound analysis.</p><p class="zh">Figure 8：示例展示 Qwen2-Audio 在声音分析方面的能力。</p></div>
-<div class="pblk" id="p-5-25">
-          <p class="en-lines"><span class="sent" data-sid="s-5-25-1"><span class="en">（play a piece of music without asking anything）</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-25-1"><span class="zh">（音频示例：（只播放一段音乐、不提任何问题）0:00/0:30，模型回答「这是一段流行朋克（pop punk）音乐。」）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-12"><code>0:00 / 0:30</code></div>
+
+
 <div class="pblk" id="p-5-26">
           <p class="en-lines"><span class="sent" data-sid="s-5-26-1"><span class="en">This is a pop punk music piece.</span></span> <span class="sent" data-sid="s-5-26-2"><span class="en">There is a male vocalist singing melodically in the lead.</span></span> <span class="sent" data-sid="s-5-26-3"><span class="en">The tune is being played by the guitar with the bass guitar playing in the background.</span></span> <span class="sent" data-sid="s-5-26-4"><span class="en">The rhythmic background consists of loud and aggressive sounding drums.</span></span> <span class="sent" data-sid="s-5-26-5"><span class="en">The atmosphere is rebellious.</span></span> <span class="sent" data-sid="s-5-26-6"><span class="en">This piece could be used in the soundtrack of a high school drama movie or TV show during scenes where the characters are rebelling against authority.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-26-1"><span class="zh">（音频示例：（只播放一段音乐、不提任何问题）0:00/0:30，模型回答「这是一段流行朋克（pop punk）音乐。」）</span></span><span class="sent" data-sid="s-5-26-2"><span class="zh">有一位男声主唱，演唱旋律动听。</span></span><span class="sent" data-sid="s-5-26-3"><span class="zh">乐曲由吉他演奏，背景中有贝斯吉他伴奏。</span></span><span class="sent" data-sid="s-5-26-4"><span class="zh">背景节奏由响亮而有攻击性的鼓点构成。</span></span><span class="sent" data-sid="s-5-26-5"><span class="zh">整体氛围带有叛逆感。</span></span><span class="sent" data-sid="s-5-26-6"><span class="zh">这首曲子很适合用在高中题材影视剧的配乐中，尤其是角色反抗权威的场景。</span></span></p>
           
         </div>
-<div class="pblk" id="p-5-27">
-          <p class="en-lines"><span class="sent" data-sid="s-5-27-1"><span class="en">“What’s the tempo of this music?”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-27-1"><span class="zh">（用户提问：）「这段音乐的速度（tempo）是多少？」</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-13"><code>0:00 / 0:03</code></div>
+
+
 <div class="pblk" id="p-5-28">
           <p class="en-lines"><span class="sent" data-sid="s-5-28-1"><span class="en">The tempo of this music is 104.17  bpm.</span><button class="mk" data-sid="s-5-28-1" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-28-1"><span class="zh">（音频示例 0:00/0:03：「这段音乐的速度是 104.17 bpm。」）</span><button class="mk" data-sid="s-5-28-1" title="查看讲解">解</button></span></p>
@@ -853,35 +688,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-5-29">
-          <p class="en-lines"><span class="sent" data-sid="s-5-29-1"><span class="en">“What’s the time signature of this music”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-29-1"><span class="zh">（音频示例：问「这段音乐的拍号是什么？」0:00/0:03，回答「这段音乐的拍号是 4/4。」）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-14"><code>0:00 / 0:03</code></div>
-<div class="pblk" id="p-5-30">
-          <p class="en-lines"><span class="sent" data-sid="s-5-30-1"><span class="en">The time signature of this music is 4/4.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-30-1"><span class="zh">（音频示例：问「这段音乐的拍号是什么？」0:00/0:03，回答「这段音乐的拍号是 4/4。」）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-31">
-          <p class="en-lines"><span class="sent" data-sid="s-5-31-1"><span class="en">“What’s the key of this music”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-31-1"><span class="zh">（音频示例：问「这段音乐是什么调？」0:00/0:03，回答「这段音乐是 F# 大调。」）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-15"><code>0:00 / 0:03</code></div>
-<div class="pblk" id="p-5-32">
-          <p class="en-lines"><span class="sent" data-sid="s-5-32-1"><span class="en">The key of this music piece is F# major.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-32-1"><span class="zh">（音频示例：问「这段音乐是什么调？」0:00/0:03，回答「这段音乐是 F# 大调。」）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
 <div class="cap" id="fig-5-5"><img class="fig" src="../assets/figures/2407.10759/fig-5-5.png" loading="lazy" alt="Figure 9: Example showing Qwen2-Audio’s capability in music analysis."><span class="cap-k">图</span><p class="en">Figure 9: Example showing Qwen2-Audio’s capability in music analysis.</p><p class="zh">Figure 9：示例展示 Qwen2-Audio 在音乐分析方面的能力。</p></div>
-<div class="pblk" id="p-5-33">
-          <p class="en-lines"><span class="sent" data-sid="s-5-33-1"><span class="en">“What are the lyrics of the singing?” (Then a song is played.)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-33-1"><span class="zh">（用户提问：）「歌唱部分的歌词是什么？」（随后播放一首歌。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-16"><code>0:00 / 0:20</code></div>
+
+
 <div class="pblk" id="p-5-34">
           <p class="en-lines"><span class="sent" data-sid="s-5-34-1"><span class="en">The lyrics are 'Waiting for my favorite song.'</span><button class="mk feat" data-sid="s-5-34-1" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-34-1"><span class="zh">（音频示例 0:00/0:20：歌词是「Waiting for my favorite song.」）</span><button class="mk feat" data-sid="s-5-34-1" title="查看讲解">解</button></span></p>
@@ -894,61 +709,21 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-5-35">
-          <p class="en-lines"><span class="sent" data-sid="s-5-35-1"><span class="en">“What are the lyrics of the singing?” (Then a song mixed with a sound is played.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-35-1"><span class="zh">（用户再次提问：）「歌唱部分的歌词是什么？」（随后播放一段混有环境声音的歌。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-17"><code>0:00 / 0:20</code></div>
-<div class="pblk" id="p-5-36">
-          <p class="en-lines"><span class="sent" data-sid="s-5-36-1"><span class="en">The lyrics are 'Waiting for my favorite song.'</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-36-1"><span class="zh">（音频示例 0:00/0:20：歌词是「Waiting for my favorite song.」）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-37">
-          <p class="en-lines"><span class="sent" data-sid="s-5-37-1"><span class="en">“What are the lyrics of the singing?” (Then a song mixed with a speech(man speaking) is played.)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-37-1"><span class="zh">（用户再次提问：）「歌唱部分的歌词是什么？」（随后播放一段混有人声语音（男子说话）的歌。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-18"><code>0:00 / 0:20</code></div>
-<div class="pblk" id="p-5-38">
-          <p class="en-lines"><span class="sent" data-sid="s-5-38-1"><span class="en">The lyrics are 'Waiting for my favorite song.'</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-38-1"><span class="zh">（音频示例 0:00/0:20：歌词是「Waiting for my favorite song.」）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-39">
-          <p class="en-lines"><span class="sent" data-sid="s-5-39-1"><span class="en">“What does the person say?” (Then a speech is played.)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-39-1"><span class="zh">（用户提问：）「这个人说了什么？」（随后播放一段语音。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-19"><code>0:00 / 0:10</code></div>
-<div class="pblk" id="p-5-40">
-          <p class="en-lines"><span class="sent" data-sid="s-5-40-1"><span class="en">The old man laid down his hand to light a cigar.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-40-1"><span class="zh">（音频示例 0:00/0:10：老人放下手去点雪茄。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-41">
-          <p class="en-lines"><span class="sent" data-sid="s-5-41-1"><span class="en">“What does the person say?” (Then a speech mixed with a music is played.)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-41-1"><span class="zh">（用户再次提问：）「这个人说了什么？」（随后播放一段混有音乐的语音。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-20"><code>0:00 / 0:10</code></div>
-<div class="pblk" id="p-5-42">
-          <p class="en-lines"><span class="sent" data-sid="s-5-42-1"><span class="en">The old man laid down his hand to light a cigar.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-42-1"><span class="zh">（音频示例 0:00/0:10：老人放下手去点雪茄。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-5-43">
-          <p class="en-lines"><span class="sent" data-sid="s-5-43-1"><span class="en">“What does the person say?” (Then a speech mixed with a sound is played.)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-43-1"><span class="zh">（用户再次提问：）「这个人说了什么？」（随后播放一段混有环境声音的语音。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-21"><code>0:00 / 0:10</code></div>
-<div class="pblk" id="p-5-44">
-          <p class="en-lines"><span class="sent" data-sid="s-5-44-1"><span class="en">The old man laid down his hand to light a cigar.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-44-1"><span class="zh">（音频示例 0:00/0:10：老人放下手去点雪茄。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-5-6"><img class="fig" src="../assets/figures/2407.10759/fig-5-6.png" loading="lazy" alt="Figure 10: Example showing Qwen2-Audio’s robustness in mixed audio analysis."><span class="cap-k">图</span><p class="en">Figure 10: Example showing Qwen2-Audio’s robustness in mixed audio analysis.</p><p class="zh">Figure 10：示例展示 Qwen2-Audio 在混合音频分析上的鲁棒性。</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-6"><span class="secnum">6</span> <span class="t-zh">致谢</span><span class="t-en">Acknowledgements</span></h2><div class="pblk" id="p-6-1">

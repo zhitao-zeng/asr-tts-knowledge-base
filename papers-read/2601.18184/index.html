@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -176,11 +176,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
   </section>
   <nav class="toc"><a class="lv1" href="#sec-1">1 引言</a><a class="lv1" href="#sec-vibevoice-asr">VibeVoice - ASR</a><a class="lv1" href="#sec-2">2 方法</a><a class="lv2" href="#sec-2-1">2.1 概览</a><a class="lv2" href="#sec-2-2">2.2 语音分词器</a><a class="lv2" href="#sec-2-3">2.3 VIBEVOICE-ASR</a><a class="lv2" href="#sec-2-3-1">2.3.1 预训练</a><a class="lv2" href="#sec-2-3-2">2.3.2 监督微调（SFT）</a><a class="lv2" href="#sec-high-quality-speech-and-music-be">高质量语音与音乐基准。</a><a class="lv2" href="#sec-context-aware-synthetic-data-pip">上下文感知的合成数据流水线。</a><a class="lv2" href="#sec-long-form-transcription-restorat">长音频转录修复。</a><a class="lv1" href="#sec-3">3 实验结果</a><a class="lv1" href="#sec-4">4 结论与局限</a><a class="lv1" href="#sec-acknowledge">致谢</a><a class="lv1" href="#sec-references">References</a><a class="lv1" href="#sec-A">A Language Distribution of Training Data</a></nav>
   <article class="reader"><section><div class="pblk plain" id="p-front-1"><p class="refline">Zhiliang Peng∗, Jianwei Yu∗, Yaoyao Chang∗, Zilong Wang∗, Li Dong∗ Yingbo Hao, Yujie Tu, Chenyu Yang, Wenhui Wang, Songchen Xu, Yutao Sun Hangbo Bao, Weijiang Xu, Yi Zhu, Zehua Wang, Ting Song, Yan Xia, Zewen Chi Shaohan Huang, Liang Wang, Chuang Ding, Shuai Wang, Xie Chen, Furu Wei⋄ Microsoft Research https://aka.ms/GeneralAI This report presents VIBEVOICE-ASR, a general-purpose speech understanding framework built upon VIBEVOICE [PYW+25], designed to address the persistent challenges of context fragmentation and multi-speaker complexity in long-form audio (e.g., meetings, podcasts) that remain despite recent advancements in short-form speech recognition. Unlike traditional pipelined approaches that rely on audio chunking, VIBEVOICE-ASR supports single-pass processing for up to 60 minutes of audio. It unifies Automatic Speech Recognition, Speaker Diarization, and Timestamping into a single end-to-end generation task. In addition, VIBEVOICE-ASR supports over 50 languages, requires no explicit language setting, and natively handles code-switching within and across utterances. Furthermore, we introduce a prompt-based context injection mechanism that allows users to supply customized conetxt, significantly improving accuracy on domain-specific terminology and polyphonic character disambiguation.</p></div>
-<div class="pblk plain" id="p-front-2"><p class="refline">Code: github.com/microsoft/VibeVoice Demo: aka.ms/VibeVoice-ASR HuggingFace Models Transformers Release Microsoft Foundry DER (Diarization Error Rate) ↓ VibeVoice-ASR Gemini-2.5-Pro Gemini-3-Pro</p></div>
-<div class="eq" id="eq-front-1"><code>50 46.23 43.04 45 38.75 40 32.96 35 31.6 30 23.54 23.79 22.03 25 20 16.29 15.32 11.92 13.43 15 10.92 6.77 10 3.42 5 0</code></div>
-<div class="pblk plain" id="p-front-3"><p class="refline">AISHELL4 AMI_IHM AMI_SDM AliMeeting MLC tcpWER (Time-Constrained Permutation WER)↓ VibeVoice-ASR Gemini-2.5-Pro Gemini-3-Pro</p></div>
-<div class="eq" id="eq-front-2"><code>70 63.65 64.86 65.61 58.81 60 54.17 53.49 50 35.96 38.35 41.39 40 29.8 29.51 28.9 30 25.35 20.82 15.66 20 10 0</code></div>
-<div class="pblk plain" id="p-front-4"><p class="refline">AISHELL4 AMI_IHM AMI_SDM AliMeeting MLC</p></div>
+
+
+
+
+
 <div class="cap" id="fig-front-1"><img class="fig" src="../assets/figures/2601.18184/fig-front-1.png" loading="lazy" alt="Figure 1: VIBEVOICE-ASR sets a new state-of-the-art for long-form speech understanding, consistently outperforming stron"><span class="cap-k">图</span><p class="en">Figure 1: VIBEVOICE-ASR sets a new state-of-the-art for long-form speech understanding, consistently outperforming strong closed-source multimodal models (Gemini-2.5/3-Pro) across five public benchmarks. The results demonstrate superior accuracy in both speaker attribution (DER) and time-aligned transcription (tcpWER), particularly in complex multi-speaker environments.</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-1"><span class="secnum">1</span> <span class="t-zh">引言</span><span class="t-en">Introduction</span></h2><div class="pblk" id="p-1-1">
@@ -188,30 +188,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-1-1-1"><span class="zh">近年来，大语言模型（LLM）与声学编码器的结合 [CXZ+23] 推动了语音处理的一次范式转变。</span></span><span class="sent" data-sid="s-1-1-2"><span class="zh">尽管这些大规模音频模型 ∗核心贡献者。⋄通讯作者：fuwei@microsoft.com。</span></span></p>
           
         </div>
-<div class="pblk" id="p-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-1-2-1"><span class="en">A S Rich Transcription Who When What Welcome to Vibe…</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-2-1"><span class="zh">S 富转录（Rich Transcription） 谁 何时 说了什么 欢迎来到 Vibe…</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1-1"><code>Speaker 1, 0 ~ 10.25, Speaker 2, 10.3 ~ 33.33,</code></div>
-<div class="pblk" id="p-1-3">
-          <p class="en-lines"><span class="sent" data-sid="s-1-3-1"><span class="en">Nice to meet…</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-3-1"><span class="zh">…</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1-2"><code>…</code></div>
-<div class="pblk" id="p-1-4">
-          <p class="en-lines"><span class="sent" data-sid="s-1-4-1"><span class="en">Speaker N, 3575.5 ~ 3600, Let’s …</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-4-1"><span class="zh">说话人 N，3575.5 ~ 3600，让我们…</span></span></p>
-          
-        </div></section>
+
+
+
+
+</section>
 <section>
-      <h2 class="sech lv1" id="sec-vibevoice-asr"><span class="t-zh">VibeVoice - ASR</span><span class="t-en">VibeVoice - ASR</span></h2><div class="eq" id="eq-vibevoice-asr-1"><code>+</code></div>
-<div class="pblk" id="p-vibevoice-asr-1">
-          <p class="en-lines"><span class="sent" data-sid="s-vibevoice-asr-1-1"><span class="en">A S Optional Context 60-minute Long-form Audio &lt;begin&gt;</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vibevoice-asr-1-1"><span class="zh">（图 1 标签：+ A / S；可选上下文（Optional Context）；60 分钟长音频（60-minute Long-form Audio）；&lt;begin&gt;。）</span></span></p>
-          
-        </div>
+      <h2 class="sech lv1" id="sec-vibevoice-asr"><span class="t-zh">VibeVoice - ASR</span><span class="t-en">VibeVoice - ASR</span></h2>
+
 <div class="cap" id="fig-vibevoice-asr-1"><img class="fig" src="../assets/figures/2601.18184/fig-vibevoice-asr-1.png" loading="lazy" alt="Figure 2: The architectural overview of VIBEVOICE-ASR. VIBEVOICE-ASR processes 60-minute long-form audio in a single pas"><span class="cap-k">图</span><p class="en">Figure 2: The architectural overview of VIBEVOICE-ASR. VIBEVOICE-ASR processes 60-minute long-form audio in a single pass by ingesting continuous latents from dual-tokenizers alongside optional user-provided context. The output is a generated stream of Rich Transcription, explicitly interleaving Speaker ID (Who), Timestamps (When), and Content (What)</p><p class="zh">图 2：VIBEVOICE-ASR 的架构总览。VIBEVOICE-ASR 通过同时摄入双分词器输出的连续潜向量与用户可选提供的上下文，在单趟内处理 60 分钟的长音频。输出是一条生成的富转录（Rich Transcription）流，显式地交错排列说话人 ID（谁）、时间戳（何时）与内容（什么）。</p></div>
 <div class="pblk" id="p-vibevoice-asr-2">
           <p class="en-lines"><span class="sent" data-sid="s-vibevoice-asr-2-1"><span class="en">have achieved remarkable success in short-form speech recognition, transcribing and analyzing longform audio—such as hour-long meetings, podcasts, and academic lectures—remains a formidable challenge.</span></span></p>
@@ -587,81 +571,73 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk plain" id="p-references-27"><p class="refline">[YZF+22] Fan Yu, Shiliang Zhang, Yihui Fu, Lei Xie, Siqi Zheng, Zhihao Du, Weilong Huang, Pengcheng Guo, Zhijie Yan, Bin Ma, et al. M2met: The icassp 2022 multi-channel multi-party meeting transcription challenge. In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 6167–6171.</p></div>
 <div class="pblk plain" id="p-references-28"><p class="refline">IEEE, 2022.</p></div></section>
 <section>
-      <h2 class="sech lv1" id="sec-A"><span class="secnum">A</span> <span class="t-zh">Language Distribution of Training Data</span><span class="t-en">Language Distribution of Training Data</span></h2><div class="pblk" id="p-A-1">
-          <p class="en-lines"><span class="sent" data-sid="s-A-1-1"><span class="en">English Chinese Spanish Portuguese German Japanese Korean French Russian Indonesian Swedish Italian Hebrew Dutch Polish Norwegian Turkish Thai Arabic</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-1-1"><span class="zh">（附录 A 语种清单：English / Chinese / Spanish / Portuguese / German / Japanese / Korean / French / Russian / Indonesian / Swedish / Italian / Hebrew / Dutch / Polish / Norwegian / Turkish / Thai / Arabic（占比降序，完整清单与数值见下表）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-A-1"><code>0.181721%</code></div>
-<div class="eq" id="eq-A-2"><code>Hungarian</code></div>
-<div class="eq" id="eq-A-3"><code>0.175694%</code></div>
-<div class="eq" id="eq-A-4"><code>Catalan</code></div>
-<div class="eq" id="eq-A-5"><code>0.144024%</code></div>
-<div class="eq" id="eq-A-6"><code>Czech</code></div>
-<div class="eq" id="eq-A-7"><code>0.135779%</code></div>
-<div class="eq" id="eq-A-8"><code>Danish</code></div>
-<div class="eq" id="eq-A-9"><code>0.115226%</code></div>
-<div class="eq" id="eq-A-10"><code>Persian</code></div>
-<div class="eq" id="eq-A-11"><code>0.100209%</code></div>
-<div class="eq" id="eq-A-12"><code>Afrikaans</code></div>
-<div class="eq" id="eq-A-13"><code>0.098980%</code></div>
-<div class="eq" id="eq-A-14"><code>Hindi</code></div>
-<div class="eq" id="eq-A-15"><code>0.093302%</code></div>
-<div class="eq" id="eq-A-16"><code>Finnish</code></div>
-<div class="eq" id="eq-A-17"><code>0.065677%</code></div>
-<div class="eq" id="eq-A-18"><code>Estonian</code></div>
-<div class="eq" id="eq-A-19"><code>0.065011%</code></div>
-<div class="eq" id="eq-A-20"><code>Afar</code></div>
-<div class="eq" id="eq-A-21"><code>0.063801%</code></div>
-<div class="eq" id="eq-A-22"><code>Greek</code></div>
-<div class="eq" id="eq-A-23"><code>0.063136%</code></div>
-<div class="eq" id="eq-A-24"><code>Romanian</code></div>
-<div class="eq" id="eq-A-25"><code>0.056151%</code></div>
-<div class="eq" id="eq-A-26"><code>Vietnamese</code></div>
-<div class="eq" id="eq-A-27"><code>0.056144%</code></div>
-<div class="eq" id="eq-A-28"><code>Bulgarian</code></div>
-<div class="eq" id="eq-A-29"><code>0.044601%</code></div>
-<div class="eq" id="eq-A-30"><code>Icelandic</code></div>
-<div class="eq" id="eq-A-31"><code>0.042502%</code></div>
-<div class="eq" id="eq-A-32"><code>Slovenian</code></div>
-<div class="eq" id="eq-A-33"><code>0.040306%</code></div>
-<div class="eq" id="eq-A-34"><code>Slovak</code></div>
-<div class="eq" id="eq-A-35"><code>0.039944%</code></div>
-<div class="eq" id="eq-A-36"><code>Lithuanian</code></div>
-<div class="eq" id="eq-A-37"><code>0.025635%</code></div>
-<div class="eq" id="eq-A-38"><code>Swahili</code></div>
-<div class="eq" id="eq-A-39"><code>0.023807%</code></div>
-<div class="eq" id="eq-A-40"><code>Ukrainian</code></div>
-<div class="eq" id="eq-A-41"><code>0.015401%</code></div>
-<div class="eq" id="eq-A-42"><code>Kalaallisut</code></div>
-<div class="eq" id="eq-A-43"><code>0.012667%</code></div>
-<div class="eq" id="eq-A-44"><code>Latvian</code></div>
-<div class="eq" id="eq-A-45"><code>0.012208%</code></div>
-<div class="eq" id="eq-A-46"><code>Croatian</code></div>
-<div class="eq" id="eq-A-47"><code>0.011705%</code></div>
-<div class="eq" id="eq-A-48"><code>Nepali</code></div>
-<div class="eq" id="eq-A-49"><code>0.010376%</code></div>
-<div class="eq" id="eq-A-50"><code>Serbian</code></div>
-<div class="eq" id="eq-A-51"><code>0.009273%</code></div>
-<div class="eq" id="eq-A-52"><code>Filipino</code></div>
-<div class="eq" id="eq-A-53"><code>0.008435%</code></div>
-<div class="eq" id="eq-A-54"><code>Yiddish</code></div>
-<div class="eq" id="eq-A-55"><code>0.007840%</code></div>
-<div class="eq" id="eq-A-56"><code>Malay</code></div>
-<div class="eq" id="eq-A-57"><code>0.005445%</code></div>
-<div class="eq" id="eq-A-58"><code>Urdu</code></div>
-<div class="eq" id="eq-A-59"><code>0.004618%</code></div>
-<div class="eq" id="eq-A-60"><code>Mongolian</code></div>
-<div class="eq" id="eq-A-61"><code>0.003093%</code></div>
-<div class="eq" id="eq-A-62"><code>Armenian</code></div>
-<div class="eq" id="eq-A-63"><code>0.002467%</code></div>
-<div class="eq" id="eq-A-64"><code>Javanese</code></div>
-<div class="eq" id="eq-A-65"><code>66.651067% 14.388077% 6.281633% 2.377301% 1.852176% 0.953292% 0.912063% 0.898955% 0.691947% 0.575294% 0.508351% 0.447609% 0.391830% 0.275293% 0.254292% 0.210149% 0.206286% 0.197261% 0.191945% 10 2 10 1 100 101 102</code></div>
-<div class="pblk" id="p-A-2">
-          <p class="en-lines"><span class="sent" data-sid="s-A-2-1"><span class="en">Percentage (%)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-2-1"><span class="zh">（图 3 纵轴：占比 Percentage (%)。）</span></span></p>
-          
-        </div>
+      <h2 class="sech lv1" id="sec-A"><span class="secnum">A</span> <span class="t-zh">Language Distribution of Training Data</span><span class="t-en">Language Distribution of Training Data</span></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-A-1"><img class="fig" src="../assets/figures/2601.18184/fig-A-1.png" loading="lazy" alt="Figure 3: Language distribution in the training data."><span class="cap-k">图</span><p class="en">Figure 3: Language distribution in the training data.</p><p class="zh">图 3：训练数据的语种分布。</p></div></section></article>
   <footer class="foot">
     原文来自 arXiv:2601.18184（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。

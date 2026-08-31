@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -322,7 +322,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="eq" id="eq-information-complete-acoustic-mo-1"><code>S=32</code></div>
+
 <div class="pblk" id="p-information-complete-acoustic-mo-2">
           <p class="en-lines"><span class="sent" data-sid="s-information-complete-acoustic-mo-2-1"><span class="en">bidirectional · confidence-based unmasking · CFG h1 h2 h3 · · · hQ Q parallel heads CB 1: WavLM-distilled offline · batch · editing Diffusion LM Backbone (init.</span></span> <span class="sent" data-sid="s-information-complete-acoustic-mo-2-2"><span class="en">Qwen3) attn: bidirectional (Luna-TTS) / block-causal (Luna-TTS Realtime) 25 Hz × 8 CB (2.2 kbps) Luna-TTS Realtime KV cache Σ codebook embeddings per frame Causal Decoder streaming, frame-synchronous stream 1.28s/block Sb=8 steps block-causal · stop token at block boundary streaming · blockwise parallel text y + tags prompt P target Xt (b) unified masked-diffusion backbone (a) Luna-Codec direct conversion (c) decoding regimes block-causal adaptation Luna-TTS masked diffusion · bidirectional Qwen3 LLM AR · causal · text continual pretraining, 1M hours (zh/en/ja/ko) Luna-TTS Realtime block diffusion · block-causal continual training, block-causal objective</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-information-complete-acoustic-mo-2-1"><span class="zh">（图 1 内嵌文字，抽取乱序：bidirectional · confidence-based unmasking · CFG；h1 h2 h3 ··· hQ，Q 个并行头；CB 1: WavLM-distilled；offline · batch · editing；Diffusion LM Backbone (init.——双向注意力（Luna-TTS）/ 块因果注意力（Luna-TTS Realtime）⋯⋯）</span></span><span class="sent" data-sid="s-information-complete-acoustic-mo-2-2"><span class="zh">（图 1 标签续：(a) Luna-Codec 直接转换；(b) 统一掩码扩散主干；(c) 解码范式——Luna-TTS：掩码扩散、双向 Qwen3、文本继续预训练 1M 小时（zh/en/ja/ko）；Luna-TTS Realtime：块扩散、块因果目标续训；25 Hz × 8 CB（2.2 kbps）；KV cache；每帧码本嵌入求和（Σ）；Causal Decoder 流式、帧同步；1.28s/块、Sb=8 步、块边界 stop token。）</span></span></p>
@@ -618,18 +618,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-pretraining-data-construction-1-1"><span class="zh">我们把数据生产组织为四个概念阶段（图 2）：</span></span></p>
           
         </div>
-<div class="eq" id="eq-pretraining-data-construction-1"><code>1 2</code></div>
-<div class="pblk" id="p-pretraining-data-construction-2">
-          <p class="en-lines"><span class="sent" data-sid="s-pretraining-data-construction-2-1"><span class="en">Standardize &amp; Segment Transcribe &amp; Align format &amp; loudness norm. language identification VAD + speaker turns primary ASR transcripts forced alignment of text units to audio raw recordings zh · en · ja · ko</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-pretraining-data-construction-2-1"><span class="zh">（图 2 内嵌文字，抽取乱序：1 2 标准化与切分 / 转写与对齐；格式与响度归一化；语种识别；VAD + 说话人轮次；主 ASR 转写文本；文本单元到音频的强制对齐；原始录音；zh · en · ja · ko；3 4 过滤与验证 / 组装与分词；声学质量过滤器；第二个独立 ASR；跨 ASR 的 WER/CER 核验；语音—文本样本；Luna-Codec 声学 token 化；离散声学 token；被拒绝：质量过低或跨 ASR 不一致。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-pretraining-data-construction-2"><code>3 4</code></div>
-<div class="pblk" id="p-pretraining-data-construction-3">
-          <p class="en-lines"><span class="sent" data-sid="s-pretraining-data-construction-3-1"><span class="en">Filter &amp; Verify Assemble &amp; Tokenize acoustic-quality filters second independent ASR cross-ASR WER/CER check speech–text examples Luna-Codec acoustic tokenization discrete acoustic tokens rejected: low quality or cross-ASR disagreement</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-pretraining-data-construction-3-1"><span class="zh">（图 2 内嵌文字，抽取乱序：1 2 标准化与切分 / 转写与对齐；格式与响度归一化；语种识别；VAD + 说话人轮次；主 ASR 转写文本；文本单元到音频的强制对齐；原始录音；zh · en · ja · ko；3 4 过滤与验证 / 组装与分词；声学质量过滤器；第二个独立 ASR；跨 ASR 的 WER/CER 核验；语音—文本样本；Luna-Codec 声学 token 化；离散声学 token；被拒绝：质量过低或跨 ASR 不一致。）</span></span></p>
-          
-        </div>
+
+
+
+
 <div class="cap" id="fig-pretraining-data-construction-1"><img class="fig" src="../assets/figures/2608.11593/fig-pretraining-data-construction-1.png" loading="lazy" alt="Figure 2: Four-stage multilingual data-processing pipeline. Raw recordings are converted into speaker-consistent, transc"><span class="cap-k">图</span><p class="en">Figure 2: Four-stage multilingual data-processing pipeline. Raw recordings are converted into speaker-consistent, transcript-verified cuts before acoustic tokenization by Luna-Codec; cuts that fail the quality or cross-ASR consistency checks are discarded.</p><p class="zh">图 2：四阶段多语言数据处理流水线。原始录音先被转成说话人一致、转写经验证的切片，再由 Luna-Codec 做声学 token 化；未通过质量或跨 ASR 一致性检查的切片被丢弃。</p></div>
 <div class="pblk" id="p-pretraining-data-construction-4">
           <p class="en-lines"><span class="sent" data-sid="s-pretraining-data-construction-4-1"><span class="en">Source recordings are first standardized, language identified, and segmented using speech activity and speaker boundaries.</span></span> <span class="sent" data-sid="s-pretraining-data-construction-4-2"><span class="en">A primary ASR system supplies transcripts, while forced alignment maps textual units to the waveform.</span></span> <span class="sent" data-sid="s-pretraining-data-construction-4-3"><span class="en">Acoustic-quality filtering and a second, independently trained ASR system then verify each bounded, speakerconsistent cut; cross-ASR agreement is measured at the word level for English and the character level for Chinese, Japanese, and Korean.</span><button class="mk" data-sid="s-pretraining-data-construction-4-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-pretraining-data-construction-4-4"><span class="en">Accepted speaker-consistent cuts are encoded by Luna-Codec into the T × Q RVQ token grid.</span></span></p>

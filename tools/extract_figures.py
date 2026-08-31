@@ -302,6 +302,18 @@ def render_png(pg, bbox, out_path, dpi=DPI):
     pix = pg.get_pixmap(matrix=mat, clip=clip, alpha=False)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     pix.save(str(out_path))
+    return clip
+
+
+def figure_text_tokens(pg, clip):
+    """图区内的文字 token 集合（供阅读页抑制图内文字的文本层碎块回声）。"""
+    toks = set()
+    for w in pg.get_text("words"):
+        r = fitz.Rect(w[:4])
+        if r.intersects(clip):
+            for t in w[4].split():
+                toks.add(t)
+    return toks
 
 
 def process(arxiv_id, debug=False):
@@ -332,6 +344,7 @@ def process(arxiv_id, debug=False):
 
     ok, miss = 0, 0
     misses = []
+    manifest = {}
     for fig in figs:
         fid = fig["id"]
         page = fig["page"] - 1
@@ -353,7 +366,8 @@ def process(arxiv_id, debug=False):
             continue
         out_png = out_dir / f"{fid}.png"
         try:
-            render_png(pg, fig_bbox, out_png)
+            clip = render_png(pg, fig_bbox, out_png)
+            manifest[fid] = {"page": page + 1, "tokens": sorted(figure_text_tokens(pg, clip))}
             ok += 1
             if debug:
                 dbg_dir = DEBUG_DIR / arxiv_id
@@ -364,6 +378,12 @@ def process(arxiv_id, debug=False):
         except Exception as e:
             misses.append((fid, f"渲染失败: {e}"))
             miss += 1
+    # 图内文字清单（阅读页据此抑制图内文字的文本层碎块回声）
+    mf_dir = ROOT / "data" / "figures"
+    mf_dir.mkdir(exist_ok=True)
+    if manifest:
+        json.dump(manifest, open(mf_dir / f"{arxiv_id}.json", "w", encoding="utf-8"),
+                  ensure_ascii=False, indent=0)
     return (arxiv_id, ok, miss, "; ".join(f"{f}:{m}" for f, m in misses))
 
 

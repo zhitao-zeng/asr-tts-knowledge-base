@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -245,11 +245,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-1"><span class="en">Speech Tokens Acoustic Vocoder Speech Tokenizer Autoregressive Transformer Reference Text Tokens Diffusion Transformer Target</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-1"><span class="zh">（图 1 架构标签：语音 token（Speech Tokens）→ 声码器（Acoustic Vocoder）；语音分词器（Speech Tokenizer）；自回归 Transformer；参考文本 token（Reference Text Tokens）；扩散 Transformer（Diffusion Transformer）；目标（Target）。）</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-2-1"><img class="fig" src="../assets/figures/2406.02430/fig-2-1.png" loading="lazy" alt="Figure 1. An overview of the Seed-TTS inference pipeline. (1) The speech tokenizer learns tokens from reference speech. "><span class="cap-k">图</span><p class="en">Figure 1. An overview of the Seed-TTS inference pipeline. (1) The speech tokenizer learns tokens from reference speech. (2) The autoregressive language model generates the speech tokens based on the condition text and speech. (3) The diffusion transformer model generates continuous speech representations given generated speech tokens in a coarse-to-fine manner. (4) The acoustic vocoder yields higher-quality speech from the diffusion output.</p><p class="zh">图 1. Seed-TTS 推理流程概览。(1) 语音分词器从参考语音中学习 token。(2) 自回归语言模型基于条件文本与语音生成语音 token。(3) 扩散 Transformer 模型以由粗到细的方式，根据生成的语音 token 生成连续语音表征。(4) 声学声码器从扩散输出中产出更高质量的语音。</p></div>
 <div class="pblk" id="p-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-2-3-1"><span class="en">First, a speech tokenizer converts the speech signal into a sequence of speech tokens, upon which a token language model is trained using a method similar to those described in Betker [2023], Łajszczak et al. [2024], and Wang et al. [2023b].</span></span> <span class="sent" data-sid="s-2-3-2"><span class="en">We investigate both continuous and discrete speech tokenizers, and found that the design of the tokenizer is crucial to the performance of the entire system.</span></span> <span class="sent" data-sid="s-2-3-3"><span class="en">The language model is trained on paired sequences of text and speech tokens.</span></span> <span class="sent" data-sid="s-2-3-4"><span class="en">During inference, it generates speech tokens autoregressively.</span></span> <span class="sent" data-sid="s-2-3-5"><span class="en">Note that in this technical report we focus on the speech generation task, so the loss for the text sequence is masked.</span><button class="mk" data-sid="s-2-3-5" title="查看讲解">解</button></span> <span class="sent" data-sid="s-2-3-6"><span class="en">These generated tokens are then processed by the diffusion model to enhance acoustic details.</span></span> <span class="sent" data-sid="s-2-3-7"><span class="en">The output is passed to the acoustic vocoder to predict the final waveform.</span></span> <span class="sent" data-sid="s-2-3-8"><span class="en">The acoustic vocoder is separately trained with a design similar to Kumar et al. [2024], Lee et al. [2022], Cong et al. [2021] and Liu and Qian [2021].</span></span></p>
@@ -458,11 +454,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-visualizing-speaker-similarity-o-1-1"><span class="zh">为验证合成语音中音色的保持程度，我们用与上文相同的打乱方法生成了 VoxCeleb1 测试集 [Nagrani et al., 2017] 的英语话语，并使用 Chen et al. [2022c] 基于 WavLM 的说话人确认模型提取它们的说话人嵌入。</span></span><span class="sent" data-sid="s-visualizing-speaker-similarity-o-1-2"><span class="zh">我们用 t-SNE [Van der Maaten and Hinton, 2008] 在 Figure 3 中绘制了 25 位说话人的真值语音与合成语音的说话人嵌入。</span></span></p>
           
         </div>
-<div class="pblk" id="p-visualizing-speaker-similarity-o-2">
-          <p class="en-lines"><span class="sent" data-sid="s-visualizing-speaker-similarity-o-2-1"><span class="en">Synthesized Ground Truth</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-visualizing-speaker-similarity-o-2-1"><span class="zh">（此句为图内图例文字的抽取残留）合成；真值。</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-visualizing-speaker-similarity-o-1"><img class="fig" src="../assets/figures/2406.02430/fig-visualizing-speaker-similarity-o-1.png" loading="lazy" alt="Figure 3. t-SNE visualization of speaker embeddings from the VoxCeleb1 test set (25 speakers) on synthesized and ground "><span class="cap-k">图</span><p class="en">Figure 3. t-SNE visualization of speaker embeddings from the VoxCeleb1 test set (25 speakers) on synthesized and ground truth speech.</p><p class="zh">图 3. VoxCeleb1 测试集（25 位说话人）中合成语音与真值语音的说话人嵌入 t-SNE 可视化。</p></div>
 <div class="pblk" id="p-visualizing-speaker-similarity-o-3">
           <p class="en-lines"><span class="sent" data-sid="s-visualizing-speaker-similarity-o-3-1"><span class="en">We observe that the embeddings of ground truth and synthesized speech from the same speaker reliably cluster together, which supports the finding that the quality and speaker similarity of speech generated by Seed-TTS closely resembles real human speech.</span></span></p>
@@ -589,11 +581,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-1-5-1"><span class="zh">我们通过零样本语音转换（VC）任务 [Wang et al., 2023a] 报告所提解耦方法的效果。</span></span><span class="sent" data-sid="s-4-1-5-2"><span class="zh">零样本 VC 是指：在保留源语音说话内容的前提下，把其说话人身份更换为一种全新的目标音色。</span></span><span class="sent" data-sid="s-4-1-5-3"><span class="zh">所提 VC 流程的示意图见 Figure 4。</span></span><span class="sent" data-sid="s-4-1-5-4"><span class="zh">在这一设定下，由于内容与韵律由源语音决定，VC 实验只涉及 Seed-TTS 流程中的扩散模块。</span></span></p>
           
         </div>
-<div class="pblk" id="p-4-1-6">
-          <p class="en-lines"><span class="sent" data-sid="s-4-1-6-1"><span class="en">Diffusion Transformer Speaker A Speaker B Acoustic Vocoder Speaker B</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-1-6-1"><span class="zh">（图 12 标签：扩散 Transformer；说话人 A / 说话人 B；声码器输出说话人 B 的语音。）</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-4-1-1"><img class="fig" src="../assets/figures/2406.02430/fig-4-1-1.png" loading="lazy" alt="Figure 4: The diagram for zero-shot voice conversion in Seed-TTS system."><span class="cap-k">图</span><p class="en">Figure 4: The diagram for zero-shot voice conversion in Seed-TTS system.</p><p class="zh">图 4：Seed-TTS 系统中零样本语音转换的示意图。</p></div>
 <div class="pblk" id="p-4-1-7">
           <p class="en-lines"><span class="sent" data-sid="s-4-1-7-1"><span class="en">We introduce a test set designed for zero-shot voice conversion evaluation based on the objective test set in §3.1.</span></span> <span class="sent" data-sid="s-4-1-7-2"><span class="en">Specifically, for each utterance, we randomly selected a non-matching speaker as the timbre reference.</span></span> <span class="sent" data-sid="s-4-1-7-3"><span class="en">This test set configuration is released alongside the zero-shot ICL test set.</span></span> <span class="sent" data-sid="s-4-1-7-4"><span class="en">We conducted benchmarking experiments on this test set to assess the efficacy of our proposed method.</span></span> <span class="sent" data-sid="s-4-1-7-5"><span class="en">We selected open-source SOTA methods for comparison, including HierSpeech++ [Lee et al., 2023] and DiffVC [Popov et al., 2021].</span></span> <span class="sent" data-sid="s-4-1-7-6"><span class="en">Since these two methods only use English data for training, we restrict our evaluation to the English test subset.</span></span></p>
@@ -751,11 +739,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-4-1"><span class="zh">与采用下一 token 语言建模的方法相比，纯扩散模型的流程更简单。</span></span><span class="sent" data-sid="s-4-3-4-2"><span class="zh">作为非流式模型，Seed-TTSDiT 天然支持内容编辑 [Wang et al., 2023c, Le et al., 2024, Jiang et al., 2023] 等应用，如 Figure 5 所示。</span></span><span class="sent" data-sid="s-4-3-4-3"><span class="zh">话虽如此，语言建模方法在流式处理以及与文本语言模型集成方面具有优势。</span></span></p>
           
         </div>
-<div class="pblk" id="p-4-3-5">
-          <p class="en-lines"><span class="sent" data-sid="s-4-3-5-1"><span class="en">Mask Diffusion Transformer Acoustic Vocoder I like cat very much I like dog very much Edited Text: I like dog very much</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-3-5-1"><span class="zh">（图 14 标签：Mask → 扩散 Transformer → 声码器；编辑示例：「I like cat very much」经文本编辑为「I like dog very much」（Edited Text）。）</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-4-3-1"><img class="fig" src="../assets/figures/2406.02430/fig-4-3-1.png" loading="lazy" alt="Figure 5. Fully diffusion-based model Seed-TTSDiT, supporting speech content editing. In this example, we replace the wo"><span class="cap-k">图</span><p class="en">Figure 5. Fully diffusion-based model Seed-TTSDiT, supporting speech content editing. In this example, we replace the word “cat” in the original speech with the word “dog”.</p><p class="zh">图 5. 完全基于扩散模型的 Seed-TTSDiT 支持语音内容编辑。本例中，我们把原始语音中的单词“cat”替换为“dog”。</p></div>
 <div class="pblk" id="p-4-3-6">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-6-1"><span class="en">We use the same test set as in §3.1 to evaluate Seed-TTSDiT on the zero-shot TTS task and present the evaluation results in Table 10.</span></span> <span class="sent" data-sid="s-4-3-6-2"><span class="en">We find that the fully diffusion-based method achieves superior performance in SIM while achieving similar results to Seed-TTSICL in terms of WER.</span></span> <span class="sent" data-sid="s-4-3-6-3"><span class="en">This finding indicates strong capability for sequence modeling inherent to the diffusion model.</span></span></p>
@@ -828,26 +812,22 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div>
 
-<div class="eq" id="eq-system-8-17"><code>WER SIM</code></div>
-<div class="eq" id="eq-system-8-18"><code>0.98 0.95 0.921 0.911 0.901 0.92 2.165 2.190 2.201 2.194 2.101 2.134 2.079</code></div>
-<div class="eq" id="eq-system-8-19"><code>WER (EN)</code></div>
 
-<div class="eq" id="eq-system-8-21"><code>SIM (EN)</code></div>
-<div class="eq" id="eq-system-8-22"><code>0.89 0.86 0.83 0% 10% 20% 30% 40% 50% 60%</code></div>
+
+
+
+
+
 
 <div class="cap" id="fig-system-8-1"><img class="fig" src="../assets/figures/2406.02430/fig-system-8-1.png" loading="lazy" alt="Figure 6: Seed-TTSDiT exhibits robustness across various masked rates in content editing."><span class="cap-k">图</span><p class="en">Figure 6: Seed-TTSDiT exhibits robustness across various masked rates in content editing.</p><p class="zh">图 6：Seed-TTSDiT 在内容编辑中对不同掩蔽比例都表现出鲁棒性。</p></div>
 
-<div class="eq" id="eq-system-8-24"><code>WER SIM</code></div>
-<div class="eq" id="eq-system-8-25"><code>0.98 3.080 0.95 2.856 0.92 2.565 0.901 2.165 2.062</code></div>
-<div class="eq" id="eq-system-8-26"><code>WER (EN)</code></div>
-<div class="eq" id="eq-system-8-27"><code>0.892 0.886 2.30 2.038 2.060 2.007 1.90 1.50</code></div>
-<div class="eq" id="eq-system-8-28"><code>SIM (EN)</code></div>
-<div class="eq" id="eq-system-8-29"><code>0.894 0.886 0.89 0.873 0.86 0.83 0.7 0.8 0.9 1.0 1.0 1.1 1.2 1.3</code></div>
-<div class="pblk" id="p-system-8-6">
-          <p class="en-lines"><span class="sent" data-sid="s-system-8-6-1"><span class="en">Speed Rate</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-system-8-6-1"><span class="zh">（图横轴：Speed Rate（语速比）。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
 <div class="cap" id="fig-system-8-2"><img class="fig" src="../assets/figures/2406.02430/fig-system-8-2.png" loading="lazy" alt="Figure 7. Seed-TTSDiT is capable of synthesizing speech of different speeds with high speaker similarity. The WER shows "><span class="cap-k">图</span><p class="en">Figure 7. Seed-TTSDiT is capable of synthesizing speech of different speeds with high speaker similarity. The WER shows a slight degradation when the speed rate is too high.</p><p class="zh">图 7. Seed-TTSDiT 能够以高说话人相似度合成不同语速的语音。当速率过高时 WER 会略有恶化。</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-5"><span class="secnum">5</span> <span class="t-zh">模型应用、局限性与安全性</span><span class="t-en">Model applications, limitations, and safety</span></h2><div class="pblk" id="p-5-1">

@@ -98,6 +98,30 @@ function renderPaper(paper) {
     return b.type === "paragraph" && (b.sentences || []).some(s => annBySid.has(s.id));
   }
 
+  /* --- 图内文字清单（extract_figures.py 产物）：图已显示时，图内文字的
+         文本层碎块（标签/刻度/示例词）不再以段落形式重复渲染 --- */
+  let FIG_TOKENS = new Map();  // page -> Set(token)
+  try {
+    const fp = path.join(ROOT, "data", "figures", paper.paper_id + ".json");
+    if (fs.existsSync(fp)) {
+      const mf = JSON.parse(fs.readFileSync(fp, "utf8"));
+      for (const info of Object.values(mf)) {
+        const cur = FIG_TOKENS.get(info.page) || new Set();
+        for (const t of info.tokens || []) cur.add(t);
+        FIG_TOKENS.set(info.page, cur);
+      }
+    }
+  } catch (e) { /* 无图清单不阻塞 */ }
+  function coveredByFigure(b) {
+    const set = FIG_TOKENS.get(b.page);
+    if (!set || !set.size) return false;
+    const text = b.type === "paragraph" ? b.sentences.map(s => s.original).join(" ") : b.original;
+    const words = String(text).split(/\s+/).filter(Boolean);
+    if (!words.length || words.length > 40) return false;  // 长段落不可能是图内文字
+    const hit = words.filter(w => set.has(w)).length;
+    return hit / words.length >= 0.7;
+  }
+
   /* --- 讲解面板（每句一组；多条时第一条展开、其余折叠） --- */
   function annPanels(sid) {
     const list = annBySid.get(sid) || [];
@@ -135,7 +159,7 @@ function renderPaper(paper) {
       // 表格文本层回声抑制：该块被同页重建表格覆盖（≥70% 数字 token 命中网格）
       // 且无讲解锚定时，不再重复渲染（内容已在 caption 处的真表格里）
       if (b.type !== "table_caption" && b.type !== "figure_caption"
-          && !blockHasAnn(b) && coveredByTable(b)) return "";
+          && !blockHasAnn(b) && (coveredByTable(b) || coveredByFigure(b))) return "";
       if (b.type === "paragraph") {
         if (exempt) {
           // 参考文献 / 作者块：仅原文，小字
@@ -305,8 +329,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}

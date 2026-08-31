@@ -1,0 +1,122 @@
+{
+"fig-accented-tts-1": {
+"page": 3,
+"tokens": [
+"(a)",
+"(b)",
+"Aligner",
+"Anchor",
+"Decoder",
+"Diffusion",
+"Discriminator",
+"Encoder",
+"Latent",
+"Masked",
+"Phoneme",
+"Sparse",
+"Sparse-Aligned",
+"Target",
+"Text",
+"Transformer",
+"Vector",
+"Wave",
+"WaveVAE",
+"t",
+"with"
+]
+},
+"fig-4-4-1": {
+"page": 7,
+"tokens": [
+"(a)",
+"(b)",
+"0.04",
+"0.07",
+"0.17",
+"0.19",
+"0.29",
+"0.31",
+"0.33",
+"0.34",
+"0.35",
+"0.37",
+"0.40",
+"0.44",
+"0.81",
+"0.83",
+"0.93",
+"0.96",
+"3",
+"4.42",
+"4.45",
+"4.48",
+"4:",
+"CTA-TTS",
+"Comparisons",
+"F.A.",
+"FFE↓",
+"GPE↓",
+"LibriSpeech",
+"MCD↓",
+"Method",
+"NaturalSpeech",
+"Ours",
+"S-DiT",
+"S.A.",
+"Table",
+"VDE↓",
+"about",
+"accented",
+"alignment",
+"alignment.",
+"and",
+"denotes",
+"forced",
+"met-",
+"naturalness",
+"on",
+"prosodic",
+"rics",
+"set.",
+"sparse",
+"standard",
+"test-clean",
+"w/",
+"“F.A.”",
+"“S.A.”"
+]
+},
+"fig-C-1": {
+"page": 15,
+"tokens": [
+"(b)",
+"(c)",
+"ASMOS",
+"SMOS",
+"Screenshot",
+"of",
+"testing."
+]
+},
+"fig-F-1": {
+"page": 17,
+"tokens": []
+},
+"fig-F-2": {
+"page": 17,
+"tokens": []
+},
+"fig-F-3": {
+"page": 17,
+"tokens": [
+"(b)",
+"(c)",
+"16",
+"27",
+"Layer",
+"different",
+"timesteps.",
+"with"
+]
+}
+}

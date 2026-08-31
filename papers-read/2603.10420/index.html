@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -280,24 +280,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-2-1"><span class="zh">流水线：如 Figure 1 所示，FireRedASR2S 将输入波形依次经过四个阶段处理。</span></span><span class="sent" data-sid="s-2-2-2"><span class="zh">首先，FireRedVAD 在原始音频时间轴上检测语音段并滤除非语音区段，以提升长音频上的鲁棒性。</span></span><span class="sent" data-sid="s-2-2-3"><span class="zh">其次，FireRedLID 为每个检测到的语音段预测一个句级语种标签，并在适用时预测一个中文方言标签。</span></span><span class="sent" data-sid="s-2-2-4"><span class="zh">第三，FireRedASR2 将每个语音段转写为文本并返回一个 ASR 置信度分数；使用 FireRedASR2-AED 时，还会额外提供 token 级与词级时间戳。</span></span><span class="sent" data-sid="s-2-2-5"><span class="zh">最后，FireRedPunc 为 ASR 输出恢复标点，以提升可读性与下游可用性。</span></span></p>
           
         </div>
-<div class="pblk" id="p-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-1"><span class="en">VAD FireRedVAD LID FireRedLID ASR Text w/ Punc: Hello World!</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-1"><span class="zh">ASR 带标点文本：Hello World!</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-2-4-1"><span class="en">ASR Timestamps:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-4-1"><span class="zh">（图 1 流水线标签：ASR Timestamps: [0.2,0.6][0.7,1.2]；ASR Confidence: 0.99；VAD &amp; AED Info: [0.1, 1.4] speech；LID Info: English/0.98；ASR FireRedASR2；Punc FireRedPunc。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-1"><code>[0.2,0.6][0.7,1.2]</code></div>
-<div class="eq" id="eq-2-2"><code>ASR Confidence:</code></div>
-<div class="eq" id="eq-2-3"><code>0.99</code></div>
-<div class="pblk" id="p-2-5">
-          <p class="en-lines"><span class="sent" data-sid="s-2-5-1"><span class="en">VAD &amp; AED Info: [0.1, 1.4] speech LID Info: English/0.98 ASR FireRedASR2 Punc FireRedPunc</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-5-1"><span class="zh">（图 1 流水线标签：ASR Timestamps: [0.2,0.6][0.7,1.2]；ASR Confidence: 0.99；VAD &amp; AED Info: [0.1, 1.4] speech；LID Info: English/0.98；ASR FireRedASR2；Punc FireRedPunc。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
 <div class="cap" id="fig-2-1"><img class="fig" src="../assets/figures/2603.10420/fig-2-1.png" loading="lazy" alt="Figure 1: Overview of FireRedASR2S. The input waveform is processed sequentially by FireRedVAD (VAD), FireRedLID (LID), "><span class="cap-k">图</span><p class="en">Figure 1: Overview of FireRedASR2S. The input waveform is processed sequentially by FireRedVAD (VAD), FireRedLID (LID), FireRedASR2 (ASR), and FireRedPunc (Punc) to produce structured transcription outputs, including punctuated text, timestamps, confidence scores, and language labels.</p><p class="zh">Figure 1：FireRedASR2S 概览。输入波形依次经过 FireRedVAD（VAD）、FireRedLID（LID）、FireRedASR2（ASR）和 FireRedPunc（Punc）处理，产出结构化转写输出，包括带标点文本、时间戳、置信度分数和语种标签。</p></div>
 <div class="pblk" id="p-2-6">
           <p class="en-lines"><span class="sent" data-sid="s-2-6-1"><span class="en">Structured outputs: FireRedASR2S returns structured outputs containing (1) the final transcription text, (2) a list of sentence-level segments with start/end timestamps, recognized text, ASR confidence, and optional language labels with confidence, and (3) VAD segmentation results.</span></span> <span class="sent" data-sid="s-2-6-2"><span class="en">When ASR timestamping is enabled, the system can further derive sentence-level timestamps by leveraging punctuation prediction.</span></span> <span class="sent" data-sid="s-2-6-3"><span class="en">All timestamps are reported on the original waveform timeline.</span></span></p>

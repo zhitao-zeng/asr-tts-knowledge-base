@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -182,20 +182,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-webpage"><span class="t-zh">项目主页：</span><span class="t-en">Webpage:</span></h3><div class="pblk" id="p-webpage-1">
-          <p class="en-lines"><span class="sent" data-sid="s-webpage-1-1"><span class="en">https://mistral.ai/news/voxtral-tts Model weights: https://huggingface.co/mistralai/Voxtral-4B-TTS-2603</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-webpage-1-1"><span class="zh">（链接行）https://mistral.ai/news/voxtral-tts；模型权重：https://huggingface.co/mistralai/Voxtral-4B-TTS-2603</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-webpage-1"><code>0 20 40 60 80 100</code></div>
-<div class="eq" id="eq-webpage-2"><code>Average Listener Preference (%) Voice cloning Flagship voices</code></div>
-<div class="eq" id="eq-webpage-3"><code>68.4% 31.6% 58.3% 41.7%</code></div>
-<div class="pblk" id="p-webpage-2">
-          <p class="en-lines"><span class="sent" data-sid="s-webpage-2-1"><span class="en">Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-webpage-2-1"><span class="zh">2.
-Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-webpage"><span class="t-zh">项目主页：</span><span class="t-en">Webpage:</span></h3>
+
+
+
+
 <div class="cap" id="fig-webpage-1"><img class="fig" src="../assets/figures/2603.25551/fig-webpage-1.png" loading="lazy" alt="Figure 1: Voxtral TTS is preferred to ElevenLabs Flash v2.5 in human evaluations. We plot the win rate for Voxtral TTS a"><span class="cap-k">图</span><p class="en">Figure 1: Voxtral TTS is preferred to ElevenLabs Flash v2.5 in human evaluations. We plot the win rate for Voxtral TTS against ElevenLabs Flash v2.5 in human evaluations across two categories. For flagship voices, we use the default voices for each model and 77 unique text examples. In the voice cloning set-up, we provide a short audio reference clip and 60 text prompts. In both categories, human annotators blindly rate which audio is better between the two models. Voxtral TTS is preferred in 58.3 and 68.4% of instances.</p><p class="zh">图 1：在人工评测中，Voxtral TTS 相比 ElevenLabs Flash v2.5 更受偏好。图中绘制了人工评测里 Voxtral TTS 对 ElevenLabs Flash v2.5 的胜率，覆盖两个类别。旗舰音色设置下，我们使用各模型的默认音色和 77 条不重复的文本样例；声音克隆设置下，我们提供一段短音频参考片段和 60 条文本提示。两个类别中，人工标注者都在不知道模型身份的情况下盲选哪段音频更好。Voxtral TTS 在 58.3% 和 68.4% 的样本上更受偏好。</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-1"><span class="secnum">1</span> <span class="t-zh">引言</span><span class="t-en">Introduction</span></h2><div class="pblk" id="p-1-1">
@@ -254,11 +245,7 @@ Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-waveform-autoencoder-2-1"><span class="zh">• 一个 2 层因果自注意力 Transformer，使用滑动窗口注意力（窗口大小 16 →8 →4 →2，每个下采样阶段减半）、ALiBi 位置偏置 [Press et al., 2021]、QK-norm，以及初始化为 0.01 的 LayerScale [Touvron et al., 2021]；• 一个因果 CNN 层。</span></span><span class="sent" data-sid="s-waveform-autoencoder-2-2"><span class="zh">在前三个块中，CNN 以 2× 下采样（步幅 2），把 100 Hz 累计降低 8× 至 12.5 Hz。</span></span><span class="sent" data-sid="s-waveform-autoencoder-2-3"><span class="zh">在第四个块中，CNN 步幅为 1，把 1024 维表征投影到 292 维潜空间。</span></span></p>
           
         </div>
-<div class="pblk" id="p-waveform-autoencoder-3">
-          <p class="en-lines"><span class="sent" data-sid="s-waveform-autoencoder-3-1"><span class="en">80ms audio A Acoustic Flow-Matching Transformer Semantic Linear Head A A &lt;EOA&gt; Autoregressive Decoder Backbone A T A A A T T T A A A A voice reference</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-waveform-autoencoder-3-1"><span class="zh">（图 1 标签：80ms 音频帧 A；声学 Flow-Matching Transformer；Semantic Linear Head；&lt;EOA&gt;；自回归 Decoder Backbone；token 序列 A/T 交替；voice reference。）</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-waveform-autoencoder-1"><img class="fig" src="../assets/figures/2603.25551/fig-waveform-autoencoder-1.png" loading="lazy" alt="Figure 2: Architecture overview of Voxtral TTS. A voice reference ranging from 3s-30s is fed to the Voxtral Codec encode"><span class="cap-k">图</span><p class="en">Figure 2: Architecture overview of Voxtral TTS. A voice reference ranging from 3s-30s is fed to the Voxtral Codec encoder to obtain audio tokens at a frame rate of 12.5 Hz. Each audio frame (labeled A) consists of a semantic token and acoustic tokens. The voice reference audio tokens along with the text prompt tokens (labeled T) are fed to the decoder backbone. The decoder auto-regressively generates a sequence of semantic tokens until it reaches a special End of Audio token (&lt;EOA&gt;). At each timestep, the semantic token from the decoder backbone is fed to a flow-matching transformer, which is run multiple times to predict the acoustic tokens. The semantic and acoustic tokens are fed to the Voxtral Codec decoder to obtain the generated waveform.</p><p class="zh">图 2：Voxtral TTS 的架构总览。一段 3s-30s 的语音参考被送入 Voxtral Codec 编码器，得到 12.5 Hz 帧率的音频 token。每个音频帧（标记为 A）由一个语义 token 和若干声学 token 组成。语音参考的音频 token 与文本提示 token（标记为 T）一起送入解码器主干。解码器自回归地生成语义 token 序列，直到遇到特殊的音频结束 token（&lt;EOA&gt;）。在每个时间步，解码器主干输出的语义 token 被送入流匹配 Transformer，后者运行多次以预测声学 token。语义与声学 token 一起送入 Voxtral Codec 解码器，得到生成的波形。</p></div>
 <div class="pblk" id="p-waveform-autoencoder-4">
           <p class="en-lines"><span class="sent" data-sid="s-waveform-autoencoder-4-1"><span class="en">Adversarial + Reconstruction Losses Soft-Aligned ASR Distillation Loss ASR Model Encoder Decoder q1 (d=256) q2 (d=36) Linear Linear VQ FSQ Strided Causal Conv Strided Causal Conv Transformer Block Transformer Block Transformer Block Transformer Block Causal Conv Patch 24 kHz Quantization Transposed Causal Conv Transformer Block Transformer Block Causal Conv Unpatch (21 levels) x36 Repeat 4x Repeat 4x</span></span></p>
@@ -895,30 +882,26 @@ Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-5-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="en">Effect of NFEs</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="zh">（小标题：NFE 次数的影响（Effect of NFEs）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-2-1"><code>30.1 3.5 30.0 25.0 3.0</code></div>
-<div class="eq" id="eq-5-2-2"><code>UTMOS (</code></div>
-<div class="eq" id="eq-5-2-3"><code>)</code></div>
-<div class="eq" id="eq-5-2-4"><code>WER (</code></div>
-<div class="eq" id="eq-5-2-5"><code>) 2.58 20.0 2.5 15.0 2.0 10.0 6.5 6.7 7.0 1.44 1.5 3.48 3.48 0.732 0.735 0.75</code></div>
-<div class="eq" id="eq-5-2-6"><code>Speaker Similarity (</code></div>
-<div class="eq" id="eq-5-2-7"><code>) 0.70 0.656 0.65 0.60 0.55 0.50 0.45 0.421 2 4 8 16</code></div>
-<div class="eq" id="eq-5-2-8"><code>NFEs</code></div>
-<div class="eq" id="eq-5-2-9"><code>2 4 8 16</code></div>
-<div class="eq" id="eq-5-2-10"><code>NFEs</code></div>
-<div class="eq" id="eq-5-2-11"><code>2 4 8 16</code></div>
-<div class="eq" id="eq-5-2-12"><code>NFEs Effect of CFG Scale</code></div>
-<div class="eq" id="eq-5-2-13"><code>7.5 7.5 3.48 3.5 3.41 7.2 7.1</code></div>
-<div class="eq" id="eq-5-2-14"><code>UTMOS (</code></div>
-<div class="eq" id="eq-5-2-15"><code>) 3.4</code></div>
-<div class="eq" id="eq-5-2-16"><code>WER (</code></div>
-<div class="eq" id="eq-5-2-17"><code>) 7.0 3.3 6.7 6.8 3.2 6.5 6.3 6.2 3.09 3.1 6.2 3.52 0.737</code></div>
-<div class="eq" id="eq-5-2-18"><code>Speaker Similarity (</code></div>
-<div class="eq" id="eq-5-2-19"><code>) 3.48 0.732 0.733 0.735 0.730 0.726 0.725 0.720 0.715 0.710 0.707 1.0 1.1 1.2 1.3 1.4 1.0 1.1 1.2 1.3 1.4 1.0 1.1 1.2 1.3 1.4</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-5-2-2"><img class="fig" src="../assets/figures/2603.25551/fig-5-2-2.png" loading="lazy" alt="Figure 4: Effect of NFEs and CFG on automatic evaluations. The metrics are averaged over SEED-TTS and the 9 languages in"><span class="cap-k">图</span><p class="en">Figure 4: Effect of NFEs and CFG on automatic evaluations. The metrics are averaged over SEED-TTS and the 9 languages in MiniMax. Increasing the NFEs from 2 to 8 improves speaker similarity and UTMOS metrics. There is a slight regression in WER as the NFEs is increased beyond this. The metrics monotonically increase with higher CFG, but human evaluations flagged regressions in text-adherence with high α.</p><p class="zh">图 4：NFE 与 CFG 对自动评测的影响。指标在 SEED-TTS 与 MiniMax 的 9 种语言上取平均。把 NFE 从 2 增加到 8 会改善说话人相似度与 UTMOS；超过 8 之后 WER 会轻微回退。指标随 CFG 升高单调改善，但人工评测发现高 α 会带来文本贴合度（text-adherence）上的回退。</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-6"><span class="secnum">6</span> <span class="t-zh">基于 vLLM-Omni 的推理与服务</span><span class="t-en">Inference and Serving in vLLM-Omni</span></h2><div class="pblk" id="p-6-1">

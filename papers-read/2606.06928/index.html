@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -410,69 +410,25 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-3-2"><span class="secnum">3</span> <span class="t-zh">Methodology T Discrete Text Tokens: Continuous Speech Latent Tokens: Text Hidden States: Target Audio (to be generated) Patch-level Latents Generation</span><span class="t-en">Methodology T Discrete Text Tokens: Continuous Speech Latent Tokens: Text Hidden States: Target Audio (to be generated) Patch-level Latents Generation</span></h2><div class="pblk" id="p-3-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-1-1"><span class="en">Current patch</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-1-1"><span class="zh">当前 patch……（图中文字残留，以下同）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-2-1"><code>. . .</code></div>
-<div class="pblk" id="p-3-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="en">LocDiT (flow matching) × N Steps LocDiT LocDiT t Prev. patch Noisy patch Residual Acoustic Language Model (RALM) Acoustic Embeddings:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="zh">LocDiT（流匹配）× N 步；LocDiT；LocDiT；t；前一 patch；含噪 patch；残差声学语言模型（RALM）；声学嵌入：（图中文字残留）。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="en">Scalar Semantic Hidden:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="zh">（图内标签：Scalar Semantic Hidden（标量语义隐藏态）：）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-4-1"><span class="en">Residual Acoustic Hidden:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-4-1"><span class="zh">（图内标签：Residual Acoustic Hidden（残差声学隐藏态）：）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-2-2"><code>...</code></div>
-<div class="eq" id="eq-3-2-3"><code>...</code></div>
-<div class="pblk" id="p-3-2-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-5-1"><span class="en">FSQ Unified Sequence Organization Basic TTS Continue / Stop (EOS decision) Stop Predictor</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-5-1"><span class="zh">FSQ；统一序列组织；基础 TTS；继续/停止（EOS 判定）；停止预测器……（图中文字残留）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-2-4"><code>. . .</code></div>
-<div class="pblk" id="p-3-2-6">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-6-1"><span class="en">FSQ FSQ Text-Semantic Language Model (TSLM) text tgt audio Voice Design tgt audio voice desc text</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-6-1"><span class="zh">FSQ；FSQ；文本-语义语言模型（TSLM）；text；tgt audio；声音设计（Voice Design）；tgt audio；voice desc；text……（图中文字残留）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-2-5"><code>. . .</code></div>
-<div class="pblk" id="p-3-2-7">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-7-1"><span class="en">T T T</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-7-1"><span class="zh">……（图中省略号残留）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-2-6"><code>...</code></div>
-<div class="pblk" id="p-3-2-8">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-8-1"><span class="en">T T</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-8-1"><span class="zh">……（图中省略号残留）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-2-7"><code>...</code></div>
-<div class="pblk" id="p-3-2-9">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-9-1"><span class="en">Controllable Cloning &lt;Ref_Start&gt; &lt;Ref_End&gt; LocEnc LocEnc LocEnc ref audio tgt audio style desc text BPE Tokenization Continuation Cloning</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-9-1"><span class="zh">可控克隆（Controllable Cloning）；&lt;Ref_Start&gt;；&lt;Ref_End&gt;；LocEnc；LocEnc；LocEnc；ref audio；tgt audio；style desc；text；BPE 分词；续写克隆（Continuation Cloning）……prompt_text | text；tgt audio；prompt audio；&quot;(A happy young man)VoxCPM is a TTS model...&quot;（图中文字残留）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-2-8"><code>. . .</code></div>
-<div class="pblk" id="p-3-2-10">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-10-1"><span class="en">prompt_text | text tgt audio prompt audio &quot;(A happy young man)VoxCPM is a TTS model...&quot;</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-10-1"><span class="zh">可控克隆（Controllable Cloning）；&lt;Ref_Start&gt;；&lt;Ref_End&gt;；LocEnc；LocEnc；LocEnc；ref audio；tgt audio；style desc；text；BPE 分词；续写克隆（Continuation Cloning）……prompt_text | text；tgt audio；prompt audio；&quot;(A happy young man)VoxCPM is a TTS model...&quot;（图中文字残留）。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-2-11">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-11-1"><span class="en">Text (w/ description) Reference Audio (optional) Prompt Audio (optional)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-11-1"><span class="zh">文本（可选附描述）；参考音频（可选）；提示音频（可选）。</span></span></p>
-          
-        </div>
+      <h2 class="sech lv1" id="sec-3-2"><span class="secnum">3</span> <span class="t-zh">Methodology T Discrete Text Tokens: Continuous Speech Latent Tokens: Text Hidden States: Target Audio (to be generated) Patch-level Latents Generation</span><span class="t-en">Methodology T Discrete Text Tokens: Continuous Speech Latent Tokens: Text Hidden States: Target Audio (to be generated) Patch-level Latents Generation</span></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-3-2-1"><img class="fig" src="../assets/figures/2606.06928/fig-3-2-1.png" loading="lazy" alt="Figure 1: Overall architecture of VoxCPM2."><span class="cap-k">图</span><p class="en">Figure 1: Overall architecture of VoxCPM2.</p><p class="zh">图 1：VoxCPM2 的整体架构。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-3-1"><span class="secnum">3.1</span> <span class="t-zh">3.1 系统概览</span><span class="t-en">Overview</span></h3><div class="pblk" id="p-3-1-1">

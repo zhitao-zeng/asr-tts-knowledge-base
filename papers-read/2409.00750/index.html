@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -278,11 +278,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-1-1-1"><span class="zh">给定某数据的离散表征序列 X，我们定义 Xt = X ⊙Mt 为用对应的二值掩码 Mt = [mt,i]N i=1 遮蔽 X 中部分 token 的过程。</span></span><span class="sent" data-sid="s-3-1-1-2"><span class="zh">具体来说，若 mt,i = 1，则把 xi 替换为特殊的 [MASK] token；若 mt,i = 0，则保持 xi 不变。</span></span><span class="sent" data-sid="s-3-1-1-3"><span class="zh">这里，每个 mt,i 独立同分布地服从参数为 γ(t) 的伯努利分布，其中 γ(t) ∈(0, 1] 表示掩码调度函数（关于「语义」与「声学」定义的更详细讨论见附录 B）。</span></span></p>
           
         </div>
-<div class="pblk" id="p-3-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-1-2-1"><span class="en">Prompt Semantic Tokens Semantic Tokens Acoustic Tokens Speech Semantic Codec Speech Acoustic Text-to-Semantic Semantic-to-Acoustic Codec Prompt Speech MaskGCT Text MaskGCT Generated Speech</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-1-2-1"><span class="zh">（图 2 架构标签：Prompt（语义 token + 声学 token 提示）→ Text-to-Semantic → Semantic-to-Acoustic → 语音；Speech Semantic Codec 与 Speech Acoustic Codec；MaskGCT Text / MaskGCT；生成语音。）</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-3-1-1"><img class="fig" src="../assets/figures/2409.00750/fig-3-1-1.png" loading="lazy" alt="Figure 1: An overview of the proposed two-stage MaskGCT framework. It consists of four main components: (1) a speech sem"><span class="cap-k">图</span><p class="en">Figure 1: An overview of the proposed two-stage MaskGCT framework. It consists of four main components: (1) a speech semantic representation codec converts speech to semantic tokens; (2) a text-to-semantic model predicts semantic tokens with text and prompt semantic tokens; (3) a semantic-to-acoustic model predicts acoustic tokens conditioned on semantic tokens; (4) a speech acoustic codec reconstructs waveform from acoustic tokens.</p><p class="zh">图 1：所提出的两阶段 MaskGCT 框架总览。它由四个主要部分组成：(1) 语音语义表征 codec，把语音转换为语义 token；(2) 文本到语义模型，基于文本和提示语义 token 预测语义 token；(3) 语义到声学模型，以语义 token 为条件预测声学 token；(4) 语音声学 codec，从声学 token 重建波形。</p></div>
 <div class="pblk" id="p-3-1-3">
           <p class="en-lines"><span class="sent" data-sid="s-3-1-3-1"><span class="en">2T ), t ∈(0, T]).</span></span> <span class="sent" data-sid="s-3-1-3-2"><span class="en">We denote X0 = X.</span></span> <span class="sent" data-sid="s-3-1-3-3"><span class="en">The non-autoregressive masked generative transformers are trained to predict the masked tokens based on the unmasked tokens and a condition C.</span><button class="mk feat" data-sid="s-3-1-3-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-1-3-4"><span class="en">This prediction is modeled as pθ(X0|Xt, C).</span></span> <span class="sent" data-sid="s-3-1-3-5"><span class="en">The parameters θ are optimized to minimize the negative log-likelihood of the masked tokens: (for example, γ(t) = sin( πt</span></span></p>
@@ -588,21 +584,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-3-1-1"><span class="zh">我们分析了 MaskGCT 生成结果在总时长变化（也可视为语速变化）下的鲁棒性。</span></span><span class="sent" data-sid="s-4-2-3-1-2"><span class="zh">结果见 Figure 3。</span></span><span class="sent" data-sid="s-4-2-3-1-3"><span class="zh">我们将真实总时长乘以 0.7 到 1.3 的系数进行考察。</span></span><span class="sent" data-sid="s-4-2-3-1-4"><span class="zh">结果表明，总时长系数为 1.0 时 WER 最低，</span></span></p>
           
         </div>
-<div class="eq" id="eq-4-2-3-1"><code>5</code></div>
-<div class="pblk" id="p-4-2-3-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-3-2-1"><span class="en">SeedTTS test-en SeedTTS test-zh</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-3-2-1"><span class="zh">（图表横轴标签：SeedTTS test-en 与 SeedTTS test-zh 两个测试集。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-4-2-3-2"><code>4</code></div>
 
-<div class="eq" id="eq-4-2-3-3"><code>3</code></div>
-<div class="eq" id="eq-4-2-3-4"><code>0.7 0.8 0.9 1 1.1 1.2 1.3</code></div>
-<div class="pblk" id="p-4-2-3-4">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-3-4-1"><span class="en">Total Duration Multiplier</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-3-4-1"><span class="zh">（Figure 3 横轴残留）0.7 0.8 0.9 1 1.1 1.2 1.3 总时长系数</span></span></p>
-          
-        </div>
+
+
+
+
+
+
 <div class="cap" id="fig-4-2-3-1"><img class="fig" src="../assets/figures/2409.00750/fig-4-2-3-1.png" loading="lazy" alt="Figure 3: WER vs. Total Duration Multiplier."><span class="cap-k">图</span><p class="en">Figure 3: WER vs. Total Duration Multiplier.</p><p class="zh">图 3：WER 随总时长系数的变化。</p></div>
 <div class="pblk" id="p-4-2-3-5">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-3-5-1"><span class="en">indicating that the models perform best when the speech is played at its natural speed.</span></span> <span class="sent" data-sid="s-4-2-3-5-2"><span class="en">When the multiplier is 0.9 or 1.1, the model is still able to achieve a WER very close to the best.</span></span> <span class="sent" data-sid="s-4-2-3-5-3"><span class="en">When the multiplier is 0.7 or 1.3, the WER is slightly higher but still within a reasonable range.</span></span> <span class="sent" data-sid="s-4-2-3-5-4"><span class="en">This shows that our model can generate reasonable and accurate content at different speech tempos.</span></span></p>
@@ -853,7 +841,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-A-2-12"><code>5 10 25 50 75 0.75</code></div>
 
 
 
@@ -865,7 +852,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-A-2-20"><code>5 10 25 50 75 0.68</code></div>
+
+
 
 
 <div class="cap" id="fig-A-2-2"><img class="fig" src="../assets/figures/2409.00750/fig-A-2-2.png" loading="lazy" alt="Figure 4: Inference Steps vs. SIM and WER. The results on the left are for SeedTTS test-zh, and the results on the right"><span class="cap-k">图</span><p class="en">Figure 4: Inference Steps vs. SIM and WER. The results on the left are for SeedTTS test-zh, and the results on the right are for SeedTTS test-en. In this ablation study, we utilize the ground truth speech length.</p><p class="zh">图 4：推理步数与 SIM、WER 的关系。左侧结果为 SeedTTS test-zh，右侧为 SeedTTS test-en。本消融实验使用真实语音长度。</p></div></section>
@@ -921,11 +909,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <section>
       <h2 class="sech lv1" id="sec-vq"><span class="t-zh">VQ</span><span class="t-en">VQ</span></h2></section>
 <section>
-      <h2 class="sech lv1" id="sec-encoder"><span class="t-zh">编码器</span><span class="t-en">Encoder</span></h2><div class="pblk" id="p-encoder-1">
-          <p class="en-lines"><span class="sent" data-sid="s-encoder-1-1"><span class="en">Semantic features W2v-BERT 2.0 Time/Spec Discriminator</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-encoder-1-1"><span class="zh">语义特征、W2v-BERT 2.0、时域/频域判别器</span></span></p>
-          
-        </div></section>
+      <h2 class="sech lv1" id="sec-encoder"><span class="t-zh">编码器</span><span class="t-en">Encoder</span></h2></section>
 <section>
       <h3 class="sech lv2" id="sec-speech-acoustic"><span class="t-zh">语音声学</span><span class="t-en">Speech Acoustic</span></h3></section>
 <section>

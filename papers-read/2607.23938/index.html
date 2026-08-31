@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -329,54 +329,22 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-2"><span class="secnum">2</span> <span class="t-zh">Qwen-Audio-3.0-TTS</span><span class="t-en">Qwen-Audio-3.0-TTS</span></h2><div class="pblk" id="p-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-2-1-1"><span class="en">Streaming Vocoder Legend Text / Instruction Token Mel Spectrogram DiT Flow-Matching Audio-Semantic (Codec) Token LM Hidden / Content Latent Channel Concatenation Noised Mel xₜ Prompt Mel Speaker Embedding Model / Module</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-1-1"><span class="zh">（图 2 架构标签：流式声码器（Streaming Vocoder）；图例：文本/指令 token、Mel 频谱、DiT Flow-Matching、音频-语义（Codec）token、LM Hidden/内容潜变量、通道拼接、Noised Mel xₜ、Prompt Mel、说话人嵌入、模型/模块。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-1"><code>…</code></div>
-<div class="pblk" id="p-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-2-2-1"><span class="en">Speaker Embedding (Broadcast)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-2-1"><span class="zh">（图 2 标签：Speaker Embedding（广播）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-2"><code>…</code></div>
-<div class="pblk" id="p-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-1"><span class="en">Prompt Mel (Partial)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-1"><span class="zh">（图 2 标签：Prompt Mel（局部）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-3"><code>…</code></div>
-<div class="pblk" id="p-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-2-4-1"><span class="en">Noised Mel xₜ</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-4-1"><span class="zh">（图 2 架构标签：流式声码器（Streaming Vocoder）；图例：文本/指令 token、Mel 频谱、DiT Flow-Matching、音频-语义（Codec）token、LM Hidden/内容潜变量、通道拼接、Noised Mel xₜ、Prompt Mel、说话人嵌入、模型/模块。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-4"><code>…</code></div>
-<div class="pblk" id="p-2-5">
-          <p class="en-lines"><span class="sent" data-sid="s-2-5-1"><span class="en">Upsampled Content Latent Latent Upsampling  (×r) Special Token (S / T / E) Qwen LM S</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-5-1"><span class="zh">（图 2 标签：上采样内容潜变量（Latent Upsampling ×r）；特殊 token（S/T/E）；Qwen LM；S ……）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-5"><code>…</code></div>
-<div class="pblk" id="p-2-6">
-          <p class="en-lines"><span class="sent" data-sid="s-2-6-1"><span class="en">T</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-6-1"><span class="zh">在本报告中，我们提出 Qwen-Audio-3.0-TTS，一个面向生产环境的语音合成系统，它在内容一致性、说话人相似度、韵律自然度、音频质量、可控性、多语言覆盖、效率与鲁棒性上协同推进。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-6"><code>…</code></div>
-<div class="eq" id="eq-2-7"><code>…</code></div>
-<div class="pblk" id="p-2-7">
-          <p class="en-lines"><span class="sent" data-sid="s-2-7-1"><span class="en">E Autoregressive Codec Prediction</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-7-1"><span class="zh">（图 2 标签：E；自回归 Codec 预测（Autoregressive Codec Prediction）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-8"><code>…</code></div>
-<div class="pblk" id="p-2-8">
-          <p class="en-lines"><span class="sent" data-sid="s-2-8-1"><span class="en">Instruction + Text Tokens Audio-Semantic (Codec) Tokens</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-8-1"><span class="zh">（此句为 Figure 3 架构图的图内文字抽取残留：流式声码器、文本/指令 token、Mel 频谱图、DiT 流匹配、音频-语义（codec）token、LM 隐状态/内容潜变量、通道拼接、加噪 Mel xₜ、提示 Mel、说话人嵌入等模块名与连接关系，以及 Qwen LM 自回归 codec 预测与特殊 token（S/T/E）的布局。）</span></span></p>
-          
-        </div>
+      <h2 class="sech lv1" id="sec-2"><span class="secnum">2</span> <span class="t-zh">Qwen-Audio-3.0-TTS</span><span class="t-en">Qwen-Audio-3.0-TTS</span></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-2-1"><img class="fig" src="../assets/figures/2607.23938/fig-2-1.png" loading="lazy" alt="Figure 3: Overall architecture of Qwen-Audio-3.0-TTS, comprising the language model, flowmatching model, and vocoder."><span class="cap-k">图</span><p class="en">Figure 3: Overall architecture of Qwen-Audio-3.0-TTS, comprising the language model, flowmatching model, and vocoder.</p><p class="zh">图 3：Qwen-Audio-3.0-TTS 的整体架构，由语言模型、流匹配模型与声码器组成。</p></div>
 <div class="pblk" id="p-2-9">
           <p class="en-lines"><span class="sent" data-sid="s-2-9-1"><span class="en">As shown in Figure 3, Qwen-Audio-3.0-TTS is built on a three-component synthesis architecture comprising a language model (LM) for semantic token prediction, a flow-matching model (FM) for acoustic feature reconstruction, and a causal BigVGAN vocoder [14] for waveform synthesis.</span></span> <span class="sent" data-sid="s-2-9-2"><span class="en">A 12.5 Hz low-frame-rate speech tokenizer reduces autoregressive decoding cost, while the progressive LM–FM training paradigm improves linguistic accuracy, acoustic fidelity, controllability, and robustness.</span></span></p>
@@ -1077,27 +1045,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-4-4-3-1"><span class="zh">我们将 Qwen-Audio-3.0-TTS 与 IndexTTS2 [37] 和 CosyVoice3-1.5B 比较，这两个近期系统都支持以参考语音为条件的风格控制合成。</span></span><span class="sent" data-sid="s-4-4-4-3-2"><span class="zh">如 Table 10 所示，Qwen-Audio-3.0-TTS 在中英文上都取得最佳的整体指令跟随结果，得分分别为 78.94 与 80.45。</span></span><span class="sent" data-sid="s-4-4-4-3-3"><span class="zh">它在自然语言指令上的优势尤其明显，说明其解读灵活描述、并把多个风格要求转化为可听语音特征的能力更强。</span></span><span class="sent" data-sid="s-4-4-4-3-4"><span class="zh">与 CosyVoice3-1.5B 相比，它在保持有竞争力的说话人相似度的同时提升了双语指令跟随，展示了更强的风格控制而基本不牺牲提示音色的保留。</span></span></p>
           
         </div>
-<div class="pblk" id="p-4-4-4-4">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-4-4-1"><span class="en">CosyVoice3 Spk A CosyVoice3 Spk B</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-4-4-1"><span class="zh">（图例：CosyVoice3 Spk A / CosyVoice3 Spk B。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-4-4-4-1"><code>2.5</code></div>
-<div class="eq" id="eq-4-4-4-2"><code>Qwen-Audio-3.0-TTS Spk A Qwen-Audio-3.0-TTS Spk B</code></div>
-<div class="eq" id="eq-4-4-4-3"><code>2</code></div>
-<div class="eq" id="eq-4-4-4-4"><code>CER / WER (%)</code></div>
-<div class="eq" id="eq-4-4-4-5"><code>1.5 1.25 1.23 1.22 1.14 1.07 0.99 0.95 1 0.9</code></div>
-<div class="pblk" id="p-4-4-4-5">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-4-5-1"><span class="en">CosyVoice3 Spk C CosyVoice3 Spk D Qwen-Audio-3.0-TTS Spk C Qwen-Audio-3.0-TTS Spk D</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-4-5-1"><span class="zh">（图例：CosyVoice3 Spk C / CosyVoice3 Spk D / Qwen-Audio-3.0-TTS Spk C / Qwen-Audio-3.0-TTS Spk D。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-4-4-4-6"><code>2.07 2.04 2.02 1.96 1.79 1.69 1.6 1.51</code></div>
-<div class="pblk" id="p-4-4-4-6">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-4-6-1"><span class="en">test-zh test-en</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-4-6-1"><span class="zh">表头：Model × test-zh（CER(%)↓/SIM↑）× test-en（WER(%)↓/SIM↑）× test-hard（CER(%)↓/SIM↑）——Human 1.26/0.755(0.775)、2.14/0.734(0.742)、-/-；Vocoder Resyn.（后续照原文）。</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-4-4-4-1"><img class="fig" src="../assets/figures/2607.23938/fig-4-4-4-1.png" loading="lazy" alt="Figure 5: Content-consistency results for speaker-adapted CosyVoice3 and Qwen-Audio-3.0-TTS models on four anonymized sp"><span class="cap-k">图</span><p class="en">Figure 5: Content-consistency results for speaker-adapted CosyVoice3 and Qwen-Audio-3.0-TTS models on four anonymized speakers. Lower CER/WER is better.</p><p class="zh">图 5：说话人适配后的 CosyVoice3 与 Qwen-Audio-3.0-TTS 在四位匿名说话人上的内容一致性结果。CER/WER 越低越好。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-5"><span class="secnum">4.5</span> <span class="t-zh">4.5 说话人适配模型的客观结果</span><span class="t-en">Objective Results on Speaker-Adapted Models</span></h3><div class="pblk" id="p-4-5-1">

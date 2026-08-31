@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -270,12 +270,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-proposed-method-1"><code>+</code></div>
 <div class="eq" id="eq-proposed-method-2"><code>BT</code></div>
 <div class="eq" id="eq-proposed-method-3"><code>1 2 3 4 5 ...</code></div>
-<div class="eq" id="eq-proposed-method-4"><code>1 2 3 4 5 6 7 8 ...</code></div>
-<div class="pblk" id="p-proposed-method-2">
-          <p class="en-lines"><span class="sent" data-sid="s-proposed-method-2-1"><span class="en">p c e GRL Embedding Table BA Conditioner Text Tokenizer Semantic Codec Emotion Perceiver Speaker Classifier Speaker Perceiver Speech Token Num Conditioner Extraction Semantic Feature Semantic Feature Extraction Extraction Semantic Feature Hello! 你好！ Speaker Prompt GT Speech Style Prompt Text</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-proposed-method-2-1"><span class="zh">（图 2 架构标签：p/c/e；GRL；Embedding Table；BA Conditioner；Text Tokenizer；Semantic Codec；Emotion Perceiver；Speaker Classifier；Speaker Perceiver；Speech Token Num Conditioner；Extraction；Semantic Feature；Hello! 你好！；Speaker Prompt / GT Speech / Style Prompt / Text。）</span></span></p>
-          
-        </div>
+
+
 <div class="cap" id="fig-proposed-method-1"><img class="fig" src="../assets/figures/2506.21619/fig-proposed-method-1.png" loading="lazy" alt="Figure 2: Autoregressive Text-to-Semantic Module. When speech token num is specified, precise control of the number of s"><span class="cap-k">图</span><p class="en">Figure 2: Autoregressive Text-to-Semantic Module. When speech token num is specified, precise control of the number of synthesized semantic tokens is performed. The emotion adapter (red dashed lines) is employed to extract emotional features from the style prompt, which are then used as input to the Text-to-Semantic process for the reconstruction of emotions.</p><p class="zh">图 2：自回归文本到语义模块。当指定语音 token 数量时，模块会对生成的语义 token 数量进行精确控制。情感适配器（红色虚线）用于从风格提示中提取情感特征，随后作为文本到语义过程的输入，用于情感的重建。</p></div>
 <div class="pblk" id="p-proposed-method-3">
           <p class="en-lines"><span class="sent" data-sid="s-proposed-method-3-1"><span class="en">waveforms.</span></span> <span class="sent" data-sid="s-proposed-method-3-2"><span class="en">To enable natural language-based emotional control, we introduce a Text-to-Emotion (T2E) module that produces an emotion vector from input text, which is integrated into the T2S module via a dedicated emotion vector interface.</span></span> <span class="sent" data-sid="s-proposed-method-3-3"><span class="en">This design facilitates flexible, high-quality emotional speech synthesis through explicit natural language instructions or reference audio inputs.</span></span></p>
@@ -364,16 +360,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-training-and-inference-5-1"><span class="zh">阶段 3：为提升鲁棒性，我们冻结所有特征条件器，并在全量数据集上进行微调。</span></span></p>
           
         </div>
-<div class="pblk" id="p-training-and-inference-6">
-          <p class="en-lines"><span class="sent" data-sid="s-training-and-inference-6-1"><span class="en">During inference, duration control is achieved by setting p = Wnumh(T), while free-form generation is enabled by using p = 0.</span></span> <span class="sent" data-sid="s-training-and-inference-6-2"><span class="en">Emotional prosody can be directly manipulated by providing a desired emotion vector e as input.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-training-and-inference-6-1"><span class="zh">推理时，通过设置 p = Wnum·h(T) 实现时长控制，而使用 p = 0 即可启用自由形式生成。</span></span><span class="sent" data-sid="s-training-and-inference-6-2"><span class="zh">通过直接给定期望的情感向量 e 作为输入，即可直接操控情感韵律。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-training-and-inference-7">
-          <p class="en-lines"><span class="sent" data-sid="s-training-and-inference-7-1"><span class="en">Flow Matching Module Semantic Feature Reference Feature Noising Concat Gpt Latent Random fusion Reference Token Semantic Token Reference Mel Target Mel Speaker Embedding Mel Spectrogram Speaker Embedding Semantic Codec Extraction Extraction Training Sample</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-training-and-inference-7-1"><span class="zh">（图 3 训练流程标签：Flow Matching 模块；语义特征（Semantic Feature）与参考特征（Reference Feature）；Noising/Concat；GPT Latent；随机融合；参考 token/语义 token；参考 Mel/目标 Mel；说话人嵌入；Mel 频谱；语义 codec；Extraction；训练样本。）</span></span></p>
-          
-        </div>
+
+
 <div class="cap" id="fig-training-and-inference-1"><img class="fig" src="../assets/figures/2506.21619/fig-training-and-inference-1.png" loading="lazy" alt="Figure 3: Semantic-to-Mel module based on flow matching."><span class="cap-k">图</span><p class="en">Figure 3: Semantic-to-Mel module based on flow matching.</p><p class="zh">图 3：基于流匹配的语义到 Mel 模块。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-semantic-to-mel-module-s2m"><span class="t-zh">语义到 Mel 模块（S2M）</span><span class="t-en">Semantic-to-Mel Module (S2M)</span></h3><div class="pblk" id="p-semantic-to-mel-module-s2m-1">
@@ -412,16 +400,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="eq" id="eq-training-and-inference-2-1"><code>F X</code></div>
-<div class="eq" id="eq-training-and-inference-2-2"><code>D X</code></div>
-<div class="eq" id="eq-training-and-inference-2-3"><code>LL1 = 1 F · D</code></div>
-<div class="eq" id="eq-training-and-inference-2-4"><code>d=1 |(ypred)f,d −(ytar)f,d|, (2)</code></div>
-<div class="eq" id="eq-training-and-inference-2-5"><code>f=1</code></div>
-<div class="pblk" id="p-training-and-inference-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-training-and-inference-2-2-1"><span class="en">where F denotes the number of frames and D the dimensionality of the mel-frequency bins.</span></span> <span class="sent" data-sid="s-training-and-inference-2-2-2"><span class="en">During inference, an ODE solver generates mel-spectrograms from Gaussian noise, conditioned on the speaker embeddings and the final semantic representation Qfin.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-training-and-inference-2-2-1"><span class="zh">其中 F 表示帧数，D 表示 Mel 频带的维度。</span></span><span class="sent" data-sid="s-training-and-inference-2-2-2"><span class="zh">推理时，ODE 求解器以说话人嵌入和最终语义表征 Qfin 为条件，从高斯噪声生成 Mel 频谱图。</span></span></p>
-          
-        </div></section>
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-text-to-emotion-t2e"><span class="t-zh">文本到情感（T2E）</span><span class="t-en">Text-to-Emotion (T2E)</span></h3><div class="pblk" id="p-text-to-emotion-t2e-1">
           <p class="en-lines"><span class="sent" data-sid="s-text-to-emotion-t2e-1-1"><span class="en">We achieve the effect of natural language emotion control through the following steps.</span></span></p>
@@ -446,11 +430,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div>
 <div class="eq" id="eq-text-to-emotion-t2e-1"><code>p = Deepseek-r1(t) ∈∆7, (3)</code></div>
-<div class="pblk" id="p-text-to-emotion-t2e-4">
-          <p class="en-lines"><span class="sent" data-sid="s-text-to-emotion-t2e-4-1"><span class="en">where</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-text-to-emotion-t2e-4-1"><span class="zh">如 Figure 2 所示，输入序列构造为 [c, p, e⟨BT⟩, Etext, e⟨BA⟩, Esem]，其中 c 表示说话人属性，p 控制时长，Etext 表示文本嵌入，Esem 表示由语义 codec 从真实语音中提取的语义 token 的嵌入。e⟨BT⟩ 和 e⟨BA⟩ 作为专用的边界 token，分别用于界定文本序列和语义序列的范围。</span></span></p>
-          
-        </div>
+
 <div class="eq" id="eq-text-to-emotion-t2e-2"><code>∆7</code></div>
 <div class="pblk" id="p-text-to-emotion-t2e-5">
           <p class="en-lines"><span class="sent" data-sid="s-text-to-emotion-t2e-5-1"><span class="en">is the 7-dimensional probability simplex (P7 i=1 pi = 1, pi ≥0).</span></span> <span class="sent" data-sid="s-text-to-emotion-t2e-5-2"><span class="en">To enable efficient inference with smaller models, we apply knowledge distillation to transfer the teacher’s behavior to a smaller student model Qwen-3- 1.7b.</span></span></p>
@@ -727,18 +707,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <section>
       <h3 class="sech lv2" id="sec-dataset-2"><span class="t-zh">数据集</span><span class="t-en">Dataset</span></h3></section>
 <section>
-      <h3 class="sech lv2" id="sec-seedtts-3"><span class="t-zh">SeedTTS</span><span class="t-en">SeedTTS</span></h3><div class="pblk" id="p-seedtts-3-1">
-          <p class="en-lines"><span class="sent" data-sid="s-seedtts-3-1-1"><span class="en">test-zh</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-seedtts-3-1-1"><span class="zh">为验证 TTS 系统的基础能力，我们在四个基准上评估模型：(1) SeedTTS test-en（Anastassiou et al. 2024），出自 SeedTTS，包含 1,000 条来自 Common Voice 数据集的语音；(2) SeedTTS test-zh（Anastassiou et al. 2024），包含 2,000 条来自 DiDiSpeech（Guo et al. 2021）的语音；(3) LibriSpeech-testclean（Panayotov et al. 2015），从 LibriSpeech 语料库中随机选取的 2,620 条语音；以及 (4) AISHELL-1（Bu et al. 2017），从 AISHELL-1 数据集中随机抽取的 1,000 条语音。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-seedtts-3-1"><code>0.019 0.067 0.023 0.014 0.018</code></div></section>
+      <h3 class="sech lv2" id="sec-seedtts-3"><span class="t-zh">SeedTTS</span><span class="t-en">SeedTTS</span></h3>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-seedtts-4"><span class="t-zh">SeedTTS</span><span class="t-en">SeedTTS</span></h3><div class="pblk" id="p-seedtts-4-1">
-          <p class="en-lines"><span class="sent" data-sid="s-seedtts-4-1-1"><span class="en">test-en</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-seedtts-4-1-1"><span class="zh">为验证 TTS 系统的基础能力，我们在四个基准上评估模型：(1) SeedTTS test-en（Anastassiou et al. 2024），出自 SeedTTS，包含 1,000 条来自 Common Voice 数据集的语音；(2) SeedTTS test-zh（Anastassiou et al. 2024），包含 2,000 条来自 DiDiSpeech（Guo et al. 2021）的语音；(3) LibriSpeech-testclean（Panayotov et al. 2015），从 LibriSpeech 语料库中随机选取的 2,620 条语音；以及 (4) AISHELL-1（Bu et al. 2017），从 AISHELL-1 数据集中随机抽取的 1,000 条语音。</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-seedtts-4"><span class="t-zh">SeedTTS</span><span class="t-en">SeedTTS</span></h3>
 <div class="eq" id="eq-seedtts-4-1"><code>0.015 0 0.009 0.023 0.013</code></div>
 <div class="cap" id="tab-seedtts-4-1"><span class="cap-k">表</span><p class="en">Table 5: MOS Scores for Different Models under Duration Control</p><p class="zh">表 5：时长控制下不同模型的 MOS 分数</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Control</th><th></th><th></th><th></th><th></th></tr><tr><th>Datasets</th><th>Model</th><th>SMOS↑</th><th>PMOS↑</th><th>QMOS↑</th></tr></thead><tbody><tr><td></td><td>GT</td><td>3.82±0.23</td><td>3.72±0.19</td><td>3.96±0.06</td></tr>
 <tr><td></td><td>MaskGCT</td><td>4.04±0.18</td><td>4.16±0.06</td><td>3.66±0.11</td></tr>
@@ -767,11 +739,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-seedtts-5-6"><code>IndexTTS2 4.48±0.09</code></div>
 <div class="eq" id="eq-seedtts-5-7"><code>4.46±0.18 4.44±0.05</code></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-seedtts-6"><span class="t-zh">SeedTTS</span><span class="t-en">SeedTTS</span></h3><div class="pblk" id="p-seedtts-6-1">
-          <p class="en-lines"><span class="sent" data-sid="s-seedtts-6-1-1"><span class="en">test-en</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-seedtts-6-1-1"><span class="zh">为验证 TTS 系统的基础能力，我们在四个基准上评估模型：(1) SeedTTS test-en（Anastassiou et al. 2024），出自 SeedTTS，包含 1,000 条来自 Common Voice 数据集的语音；(2) SeedTTS test-zh（Anastassiou et al. 2024），包含 2,000 条来自 DiDiSpeech（Guo et al. 2021）的语音；(3) LibriSpeech-testclean（Panayotov et al. 2015），从 LibriSpeech 语料库中随机选取的 2,620 条语音；以及 (4) AISHELL-1（Bu et al. 2017），从 AISHELL-1 数据集中随机抽取的 1,000 条语音。</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-seedtts-6"><span class="t-zh">SeedTTS</span><span class="t-en">SeedTTS</span></h3></section>
 <section>
       <h3 class="sech lv2" id="sec-duration-specified-speech-synthe"><span class="t-zh">指定时长语音合成评估</span><span class="t-en">Duration-Specified Speech Synthesis Evaluation:</span></h3><div class="pblk" id="p-duration-specified-speech-synthe-1">
           <p class="en-lines"><span class="sent" data-sid="s-duration-specified-speech-synthe-1-1"><span class="en">We evaluated IndexTTS2’s duration control accuracy on SeedTTS test-zh and test-en using five experimental setups with duration scalings (original, 0.75×, 0.875×, 1.125×, and 1.25×).</span></span> <span class="sent" data-sid="s-duration-specified-speech-synthe-1-2"><span class="en">Results in Table 4 show minimal token number error rates (&lt;0.02% for original durations and &lt;0.03% for 0.875×/1.125×), with only a slight increase to 0.067% on SeedTTS test-zh for larger scaling factors (0.75×).</span></span> <span class="sent" data-sid="s-duration-specified-speech-synthe-1-3"><span class="en">These findings indicate an almost negligible gap between MaskGCT F5TTS IndexTTS2 MaskGCT F5TTS IndexTTS2</span></span></p>
@@ -779,12 +747,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 我们在 SeedTTS test-zh 和 test-en 上评估了 IndexTTS2 的时长控制精度，使用五种时长缩放实验设置（原始、0.75×、0.875×、1.125× 和 1.25×）。</span></span><span class="sent" data-sid="s-duration-specified-speech-synthe-1-2"><span class="zh">表 4 的结果显示 token 数误差率极小（原始时长 &lt;0.02%，0.875×/1.125× 时 &lt;0.03%），仅在较大缩放因子（0.75×）下 SeedTTS test-zh 上微升至 0.067%。</span></span><span class="sent" data-sid="s-duration-specified-speech-synthe-1-3"><span class="zh">这些发现表明（图内图例：MaskGCT / F5TTS / IndexTTS2（两组）。）之间的差距几乎可以忽略。</span></span></p>
           
         </div>
-<div class="eq" id="eq-duration-specified-speech-synthe-1"><code>4% 4% 3% 3% 2% 2% 1% 1% 0% 0% 0.75 0.785 1 1.125 0.75 0.785 1 1.125</code></div>
-<div class="pblk" id="p-duration-specified-speech-synthe-2">
-          <p class="en-lines"><span class="sent" data-sid="s-duration-specified-speech-synthe-2-1"><span class="en">(a) SeedTTS test-en (b) SeedTTS test-zh</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-duration-specified-speech-synthe-2-1"><span class="zh">为验证 TTS 系统的基础能力，我们在四个基准上评估模型：(1) SeedTTS test-en（Anastassiou et al. 2024），出自 SeedTTS，包含 1,000 条来自 Common Voice 数据集的语音；(2) SeedTTS test-zh（Anastassiou et al. 2024），包含 2,000 条来自 DiDiSpeech（Guo et al. 2021）的语音；(3) LibriSpeech-testclean（Panayotov et al. 2015），从 LibriSpeech 语料库中随机选取的 2,620 条语音；以及 (4) AISHELL-1（Bu et al. 2017），从 AISHELL-1 数据集中随机抽取的 1,000 条语音。</span></span></p>
-          
-        </div>
+
+
 <div class="cap" id="fig-duration-specified-speech-synthe-1"><img class="fig" src="../assets/figures/2506.21619/fig-duration-specified-speech-synthe-1.png" loading="lazy" alt="Figure 4: Comparison of WER for duration control section."><span class="cap-k">图</span><p class="en">Figure 4: Comparison of WER for duration control section.</p><p class="zh">图 4：时长控制部分的 WER 对比。</p></div>
 <div class="pblk" id="p-duration-specified-speech-synthe-3">
           <p class="en-lines"><span class="sent" data-sid="s-duration-specified-speech-synthe-3-1"><span class="en">generated tokens and target durations, demonstrating IndexTTS2’s precise control over speech synthesis timing.</span></span></p>

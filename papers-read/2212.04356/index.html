@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -335,60 +335,28 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-2-3-4">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-4-1"><span class="en">Multitask training data (680k hours) Sequence-to-sequence learning English transcription 🗣️  “Ask not what your country can do for ⋯” 📝  Ask not what your country can do for ⋯ Any-to-English speech translation TRANS-</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-4-1"><span class="zh">多任务训练数据（680k 小时）；序列到序列学习。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-3-1"><code>⋯</code></div>
-<div class="pblk" id="p-2-3-5">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-5-1"><span class="en">EN</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-5-1"><span class="zh">（图 1 标签：EN 0.0；The quick brown CRIBE；next-token prediction；MLP / cross attention / self attention；Transformer Encoder Blocks / Transformer Decoder Blocks；西语示例「El rápido zorro marrón salta sobre ⋯」；「The quick brown fox jumps over ⋯」；Non-English transcription。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-3-2"><code>0.0</code></div>
-<div class="pblk" id="p-2-3-6">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-6-1"><span class="en">The quick brown CRIBE next-token prediction MLP MLP cross attention self attention self attention Transformer Encoder Blocks Transformer Decoder Blocks 🗣️  “El rápido zorro marrón salta sobre ⋯” 📝  The quick brown fox jumps over ⋯ Non-English transcription</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-6-1"><span class="zh">（图 1 标签：EN 0.0；The quick brown CRIBE；next-token prediction；MLP / cross attention / self attention；Transformer Encoder Blocks / Transformer Decoder Blocks；西语示例「El rápido zorro marrón salta sobre ⋯」；「The quick brown fox jumps over ⋯」；Non-English transcription。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-3-3"><code>🗣️ “언덕 위에 올라 내려다보면 너무나 넓고 넓은 ⋯” 📝  언덕 위에 올라 내려다보면 너무나 넓고 넓은 ⋯ ~</code></div>
-<div class="pblk" id="p-2-3-7">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-7-1"><span class="en">Sinusoidal Positional Encoding No speech 🔊 (background music playing)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-7-1"><span class="zh">English（英语）行。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-3-4"><code>📝  ∅</code></div>
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-2-3-8">
           <p class="en-lines"><span class="sent" data-sid="s-2-3-8-1"><span class="en">Multitask training format X → X Transcription Language identification LANGUAGE TRANSCRIBE TAG START OF TRANSCRIPT previous text tokens PREV NO SPEECH TRANSLATE Custom vocabulary / prompting Voice activity X → English detection Translation special tokens text tokens timestamp (VAD) tokens cross attention</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-3-8-1"><span class="zh">English（英语）行。</span></span></p>
           
         </div>
-<div class="eq" id="eq-2-3-5"><code>⋮ ⋮</code></div>
-<div class="eq" id="eq-2-3-6"><code>⋮</code></div>
-<div class="pblk" id="p-2-3-9">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-9-1"><span class="en">MLP MLP self attention cross attention self attention MLP self attention MLP cross attention self attention Learned Positional Encoding 2 × Conv1D + GELU TRANS-</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-9-1"><span class="zh">（图 1 架构图内部标签：编码器堆叠 MLP / self attention，解码器堆叠 MLP / cross attention / self attention，学习式位置编码（Learned Positional Encoding），输入经 2 × Conv1D + GELU。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-3-7"><code>⋯</code></div>
-<div class="pblk" id="p-2-3-10">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-10-1"><span class="en">SOT EN CRIBE</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-10-1"><span class="zh">（图 2 多任务格式标签：SOT EN CRIBE 0.0；The quick；Log-Mel Spectrogram；Tokens in Multitask Training Format；Time-aligned transcription（begin ⋯ end time text tokens，time 对齐）；EOT；NO TIMESTAMPS text tokens；Text-only transcription（允许按数据集微调）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-3-8"><code>0.0</code></div>
-<div class="pblk" id="p-2-3-11">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-11-1"><span class="en">The quick Log-Mel Spectrogram Tokens in Multitask Training Format Time-aligned transcription begin</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-11-1"><span class="zh">（图 2 多任务格式标签：SOT EN CRIBE 0.0；The quick；Log-Mel Spectrogram；Tokens in Multitask Training Format；Time-aligned transcription（begin ⋯ end time text tokens，time 对齐）；EOT；NO TIMESTAMPS text tokens；Text-only transcription（允许按数据集微调）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-2-3-9"><code>⋯</code></div>
-<div class="pblk" id="p-2-3-12">
-          <p class="en-lines"><span class="sent" data-sid="s-2-3-12-1"><span class="en">end time text tokens begin end time text tokens time time EOT NO TIMESTAMPS text tokens Text-only transcription (allows dataset-specific fine-tuning)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-2-3-12-1"><span class="zh">（图 2 多任务格式标签：SOT EN CRIBE 0.0；The quick；Log-Mel Spectrogram；Tokens in Multitask Training Format；Time-aligned transcription（begin ⋯ end time text tokens，time 对齐）；EOT；NO TIMESTAMPS text tokens；Text-only transcription（允许按数据集微调）。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-2-3-1"><img class="fig" src="../assets/figures/2212.04356/fig-2-3-1.png" loading="lazy" alt="Figure 1. Overview of our approach. A sequence-to-sequence Transformer model is trained on many different speech process"><span class="cap-k">图</span><p class="en">Figure 1. Overview of our approach. A sequence-to-sequence Transformer model is trained on many different speech processing tasks, including multilingual speech recognition, speech translation, spoken language identiﬁcation, and voice activity detection. All of these tasks are jointly represented as a sequence of tokens to be predicted by the decoder, allowing for a single model to replace many different stages of a traditional speech processing pipeline. The multitask training format uses a set of special tokens that serve as task speciﬁers or classiﬁcation targets, as further explained in Section 2.3.</p><p class="zh">图 1. 方法概览。一个序列到序列 Transformer 模型在多种语音处理任务上联合训练，包括多语言语音识别、语音翻译、口语语种识别和语音活动检测。所有这些任务统一表示为解码器要预测的 token 序列，使单个模型可以替代传统语音处理流水线中的许多不同阶段。多任务训练格式使用一组特殊 token 作为任务指定符或分类目标，详见 Section 2.3。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-2-4"><span class="secnum">2.4</span> <span class="t-zh">训练细节</span><span class="t-en">Training Details</span></h3><div class="pblk" id="p-2-4-1">
@@ -485,23 +453,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-3-1"><span class="zh">Whisper 模型在广泛而多样的音频分布上训练、并以零样本方式评测，因此有可能比现有系统更接近人类的行为模式。</span></span><span class="sent" data-sid="s-3-3-3-2"><span class="zh">为研究是否如此（还是说人机差距来自尚未理解的因素），我们可以把 Whisper 模型同时与人类表现和标准微调模型比较，看它更接近哪一方。</span></span></p>
           
         </div>
-<div class="pblk" id="p-3-3-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-4-1"><span class="en">Average WER on [Common Voice, CHiME-6, TED-LIUM] (%)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-4-1"><span class="zh">（图 2 纵轴：在 [Common Voice, CHiME-6, TED-LIUM] 上的平均 WER (%)。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-3-1"><code>40</code></div>
-<div class="pblk" id="p-3-3-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-5-1"><span class="en">Supervised LibriSpeech models Zero-shot Whisper models Zero-shot Human (Alec) Ideal robustness (y = x)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-5-1"><span class="zh">（图 2 图例：LibriSpeech 监督模型 / 零样本 Whisper 模型 / 零样本人类（Alec）/ 理想鲁棒性（y = x）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-3-2"><code>30 20 10 0 0 1 2 3 4 5 6 7 8</code></div>
-<div class="pblk" id="p-3-3-6">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-6-1"><span class="en">WER on LibriSpeech dev-clean (%)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-6-1"><span class="zh">（图 2 横轴：LibriSpeech dev-clean 上的 WER (%)。）</span></span></p>
-          
-        </div>
+
+
+
+
+
 <div class="cap" id="fig-3-3-1"><img class="fig" src="../assets/figures/2212.04356/fig-3-3-1.png" loading="lazy" alt="Figure 2. Zero-shot Whisper models close the gap to human robustness. Despite matching or outperforming a human on Libri"><span class="cap-k">图</span><p class="en">Figure 2. Zero-shot Whisper models close the gap to human robustness. Despite matching or outperforming a human on LibriSpeech dev-clean, supervised LibriSpeech models make roughly twice as many errors as a human on other datasets demonstrating their brittleness and lack of robustness. The estimated robustness frontier of zero-shot Whisper models, however, includes the 95% conﬁdence interval for this particular human.</p><p class="zh">图 2. 零样本 Whisper 模型缩小了与人类鲁棒性的差距。尽管在 LibriSpeech dev-clean 上达到或超过人类，LibriSpeech 监督模型在其他数据集上的错误数大约是人的两倍，暴露出它们的脆弱和缺乏鲁棒性。而零样本 Whisper 模型的估计鲁棒性前沿，已经覆盖了这一位人类的 95% 置信区间。</p></div>
 <div class="pblk" id="p-3-3-7">
           <p class="en-lines"><span class="sent" data-sid="s-3-3-7-1"><span class="en">To quantify this difference, we examine both overall robustness, that is average performance across many distributions/datasets, and effective robustness, introduced by Taori et al. (2020), which measures the difference in expected performance between a reference dataset, which is usually in-distribution, and one or more out-of-distribution datasets.</span></span> <span class="sent" data-sid="s-3-3-7-2"><span class="en">A model with high effective robustness does better than expected on out-of-distribution datasets as a function of its performance on the reference dataset and approaches the ideal of equal performance on all datasets.</span></span> <span class="sent" data-sid="s-3-3-7-3"><span class="en">For our analysis, we use LibriSpeech as the reference dataset due to its central role in modern speech recognition research and the availability of many released models trained on it, which allows for characterizing robustness behaviors.</span></span> <span class="sent" data-sid="s-3-3-7-4"><span class="en">We use a suite of 12 other academic speech recognition datasets to study out-of-distribution behaviors.</span></span> <span class="sent" data-sid="s-3-3-7-5"><span class="en">Full details about these datasets can be found in Appendix A.</span></span></p>
@@ -584,25 +540,25 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="eq" id="eq-3-4-1"><code>80</code></div>
 <div class="eq" id="eq-3-4-2"><code>TG MT NE BE HY</code></div>
-<div class="eq" id="eq-3-4-3"><code>40</code></div>
+
 <div class="pblk" id="p-3-4-3">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="en">SW MR IS KN Word Error Rate (WER) KK SR AF CY FA LT HE AZ LV UR SL HI ET</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="zh">Whisper 在 Multilingual LibriSpeech 上表现良好，超过 XLS-R (Babu et al., 2021)、mSLAM (Bapna et al., 2022)。（图表：各语种 WER（刻度 2.5/5/10/20/40/80）随预训练转写音频小时数（0.1/1/10/100/1K/10K/100K/1M）变化的散点，r2 = 0.83；语种代码 MY/KA/BN/GU/PA/LO/TE/ML/KM/UZ/TG/MT/NE/BE/HY/SW/MR/IS/KN/KK/SR/AF/CY/FA/LT/HE/AZ/LV/UR/SL/HI/ET/TA/HU/MK/AR/RO/GL/ZH/BG/FIL/BS/KO/DA/EL/HR/CS/SK/TH/VI/FI/NB/MS/UK/SV/TR/FR/CA/ID/NL/RU/PL/JA/DE/PT/EN/IT/ES。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-4-4"><code>20</code></div>
+
 <div class="pblk" id="p-3-4-4">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="en">TA HU MK AR RO GL ZH BG FIL BS KO DA EL HR CS SK TH VI</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="zh">Whisper 在 Multilingual LibriSpeech 上表现良好，超过 XLS-R (Babu et al., 2021)、mSLAM (Bapna et al., 2022)。（图表：各语种 WER（刻度 2.5/5/10/20/40/80）随预训练转写音频小时数（0.1/1/10/100/1K/10K/100K/1M）变化的散点，r2 = 0.83；语种代码 MY/KA/BN/GU/PA/LO/TE/ML/KM/UZ/TG/MT/NE/BE/HY/SW/MR/IS/KN/KK/SR/AF/CY/FA/LT/HE/AZ/LV/UR/SL/HI/ET/TA/HU/MK/AR/RO/GL/ZH/BG/FIL/BS/KO/DA/EL/HR/CS/SK/TH/VI/FI/NB/MS/UK/SV/TR/FR/CA/ID/NL/RU/PL/JA/DE/PT/EN/IT/ES。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-4-5"><code>10</code></div>
+
 <div class="pblk" id="p-3-4-5">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-5-1"><span class="en">FI NB MS UK SV TR FR CA ID NL RU PL JA</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-5-1"><span class="zh">Whisper 在 Multilingual LibriSpeech 上表现良好，超过 XLS-R (Babu et al., 2021)、mSLAM (Bapna et al., 2022)。（图表：各语种 WER（刻度 2.5/5/10/20/40/80）随预训练转写音频小时数（0.1/1/10/100/1K/10K/100K/1M）变化的散点，r2 = 0.83；语种代码 MY/KA/BN/GU/PA/LO/TE/ML/KM/UZ/TG/MT/NE/BE/HY/SW/MR/IS/KN/KK/SR/AF/CY/FA/LT/HE/AZ/LV/UR/SL/HI/ET/TA/HU/MK/AR/RO/GL/ZH/BG/FIL/BS/KO/DA/EL/HR/CS/SK/TH/VI/FI/NB/MS/UK/SV/TR/FR/CA/ID/NL/RU/PL/JA/DE/PT/EN/IT/ES。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-4-6"><code>5</code></div>
+
 <div class="eq" id="eq-3-4-7"><code>DE PT EN IT r2 = 0.83 ES</code></div>
 <div class="eq" id="eq-3-4-8"><code>2.5 0.1 1 10 100</code></div>
 <div class="pblk" id="p-3-4-6">
@@ -638,52 +594,24 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-9-1"><span class="zh">这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-4-18"><code>40</code></div>
-<div class="eq" id="eq-3-4-19"><code>PT CA DE SV</code></div>
-<div class="eq" id="eq-3-4-20"><code>35</code></div>
-<div class="eq" id="eq-3-4-21"><code>FR AF DA SR RO</code></div>
-<div class="eq" id="eq-3-4-22"><code>30</code></div>
-<div class="pblk" id="p-3-4-10">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-10-1"><span class="en">NB BS GL RU HR SK UK CS ID BG MK MS IT</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-10-1"><span class="zh">这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-4-23"><code>25</code></div>
-<div class="pblk" id="p-3-4-11">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-11-1"><span class="en">TR EL AR ES PL FIL FI OC NL HE KO HI HU BLEU VI</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-11-1"><span class="zh">这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-4-24"><code>20</code></div>
-<div class="pblk" id="p-3-4-12">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-12-1"><span class="en">FA ET ZH SL ML HY UR TH GU JA LB LV</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-12-1"><span class="zh">这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-4-25"><code>15</code></div>
-<div class="pblk" id="p-3-4-13">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-13-1"><span class="en">NE PA TE BN LT TG CY MR MT KN BE AZ</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-13-1"><span class="zh">这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-4-26"><code>10</code></div>
-<div class="pblk" id="p-3-4-14">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-14-1"><span class="en">TA MI LO IS SW SD UZ KM AS</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-14-1"><span class="zh">这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-4-27"><code>5</code></div>
-<div class="pblk" id="p-3-4-15">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-15-1"><span class="en">KK KA PS r2 = 0.24 MN SN LN AM YO SO MY HA</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-15-1"><span class="zh">这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-4-28"><code>0 1 10 100</code></div>
-<div class="pblk" id="p-3-4-16">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-16-1"><span class="en">1K 10K 100K Hours of translated audio</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-16-1"><span class="zh">这两个基准相对较窄，只含 15 种独特语言，且几乎都在（图表：翻译方向 BLEU（刻度 0/5/10/15/20/25/30/35/40）随翻译音频小时数（1/10/100/1K/10K/100K）变化的散点，r2 = 0.24；语种代码 PT/CA/DE/SV/FR/AF/DA/SR/RO/NB/BS/GL/RU/HR/SK/UK/CS/ID/BG/MK/MS/IT/TR/EL/AR/ES/PL/FIL/FI/OC/NL/HE/KO/HI/HU/VI/FA/ET/ZH/SL/ML/HY/UR/TH/GU/JA/LB/LV/NE/PA/TE/BN/LT/TG/CY/MR/MT/KN/BE/AZ/TA/MI/LO/IS/SW/SD/UZ/KM/AS/KK/KA/PS/MN/SN/LN/AM/YO/SO/MY/HA。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-3-4-2"><img class="fig" src="../assets/figures/2212.04356/fig-3-4-2.png" loading="lazy" alt="Figure 4. Correlation of pre-training supervision amount with downstream translation performance. The amount of pretrain"><span class="cap-k">图</span><p class="en">Figure 4. Correlation of pre-training supervision amount with downstream translation performance. The amount of pretraining translation data for a given language is only moderately predictive of Whisper’s zero-shot performance on that language in Fleurs.</p><p class="zh">图 4. 预训练监督数据量与下游翻译性能的相关性。某种语言的预训练翻译数据量，对 Whisper 在该语言 Fleurs 上的零样本表现只有中等程度的预测力。</p></div>
 <div class="pblk" id="p-3-4-17">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-17-1"><span class="en">the Indo-European language family and many of which are high-resource languages.</span></span> <span class="sent" data-sid="s-3-4-17-2"><span class="en">These benchmarks only provide limited coverage and room to study Whisper models multilingual capabilities which include training data for speech recognition in 75 languages.</span></span> <span class="sent" data-sid="s-3-4-17-3"><span class="en">To study the performance of Whisper more broadly we also report performance on the Fleurs dataset (Conneau et al., 2022).</span></span> <span class="sent" data-sid="s-3-4-17-4"><span class="en">In particular, we were interested in studying the relationship between the amount of training data we have for a given language and the resulting downstream zero-shot performance for that language.</span></span> <span class="sent" data-sid="s-3-4-17-5"><span class="en">We visualize this relation in Figure 3.</span></span> <span class="sent" data-sid="s-3-4-17-6"><span class="en">We ﬁnd a strong squared correlation coefﬁcient of 0.83 between the log of the word error rate and the log of the amount of training data per language.</span></span> <span class="sent" data-sid="s-3-4-17-7"><span class="en">Checking the regression coefﬁcient for a linear ﬁt to these log-log values results in an estimate that WER halves for every 16× increase in training data.</span><button class="mk feat" data-sid="s-3-4-17-7" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-4-17-8"><span class="en">We also observed that many of the largest outliers in terms of worse than expected performance according to this trend are languages that have unique scripts and are more distantly related to the Indo-European languages making up the majority of the training dataset such as Hebrew (HE), Telugu (TE), Chinese (ZH), and Korean (KO).</span></span> <span class="sent" data-sid="s-3-4-17-9"><span class="en">These differences could be due to a lack of transfer due to linguistic distance, our byte level BPE tokenizer being a poor match for these languages, or variations in data quality.</span></span></p>
@@ -738,15 +666,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 
-<div class="eq" id="eq-3-5-2"><code>WER on LibriSpeech test-clean (%)</code></div>
-<div class="eq" id="eq-3-5-3"><code>50 20 10 5 2 1 40 30 20 10 0 -10</code></div>
-<div class="eq" id="eq-3-5-4"><code>signal-to-noise ratio (dB)</code></div>
-<div class="eq" id="eq-3-5-5"><code>40 30 20 10 0 -10</code></div>
-<div class="pblk" id="p-3-5-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-5-3-1"><span class="en">signal-to-noise ratio (dB) unispeech-sat-base-100h-libri-ft wav2vec2-base-100h wav2vec2-base-960h wav2vec2-large-960h wav2vec2-large-robust-ft-libri-960h wav2vec2-large-960h-lv60-self asr-crdnn-rnnlm-librispeech asr-transformer-transformerlm-librispeech hubert-large-ls960-ft hubert-xlarge-ls960-ft s2t-medium-librispeech-asr s2t-large-librispeech-asr stt_en_conformer_ctc_large stt_en_conformer_transducer_xlarge Whisper</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-5-3-1"><span class="zh">虽然随训练数据增加有明显改进趋势，但平方相关系数远低于语音识别上观察到的 0.83。（图 5：白噪声与 pub 噪声下 LibriSpeech test-clean WER（刻度 1/2/5/10/20/50/100）随信噪比（-10/0/10/20/30/40 dB）变化，对比 unispeech-sat-base-100h-libri-ft、wav2vec2-base-100h、wav2vec2-base-960h、wav2vec2-large-960h、wav2vec2-large-robust-ft-libri-960h、wav2vec2-large-960h-lv60-self、asr-crdnn-rnnlm-librispeech、asr-transformer-transformerlm-librispeech、hubert-large-ls960-ft、hubert-xlarge-ls960-ft、s2t-medium/large-librispeech-asr、stt_en_conformer_ctc_large、stt_en_conformer_transducer_xlarge 与 Whisper。）</span></span></p>
-          
-        </div>
+
+
+
+
+
 <div class="cap" id="fig-3-5-1"><img class="fig" src="../assets/figures/2212.04356/fig-3-5-1.png" loading="lazy" alt="Figure 5. WER on LibriSpeech test-clean as a function of SNR under additive white noise (left) and pub noise (right). Th"><span class="cap-k">图</span><p class="en">Figure 5. WER on LibriSpeech test-clean as a function of SNR under additive white noise (left) and pub noise (right). The accuracy of LibriSpeech-trained models degrade faster than the best Whisper model (⋆). NVIDIA STT models (•) perform best under low noise but are outperformed by Whisper under high noise (SNR &lt; 10 dB). The second-best model under low noise (▼) is ﬁne-tuned on LibriSpeech only and degrades even more quickly.</p><p class="zh">图 5. 加性白噪声（左）和酒吧噪声（右）下，LibriSpeech test-clean 上 WER 随信噪比（SNR）的变化。LibriSpeech 训练模型的准确率比最好的 Whisper 模型（⋆）退化得更快。NVIDIA STT 模型（•）在低噪声下表现最好，但在高噪声（SNR &lt; 10 dB）下被 Whisper 超过。低噪声下第二好的模型（▼）仅在 LibriSpeech 上微调，退化得更快。</p></div>
 <div class="pblk" id="p-3-5-4">
           <p class="en-lines"><span class="sent" data-sid="s-3-5-4-1"><span class="en">and only 0.24.</span></span> <span class="sent" data-sid="s-3-5-4-2"><span class="en">We suspect this is partly caused by the noisier training data due to errors in audio language identiﬁcation.</span></span> <span class="sent" data-sid="s-3-5-4-3"><span class="en">As an example, Welsh (CY) is an outlier with much worse than expected performance at only 13 BLEU despite supposedly having 9,000 hours of translation data.</span></span> <span class="sent" data-sid="s-3-5-4-4"><span class="en">This large amount of Welsh translation data is surprising, ranking 4th overall for translation data and ahead of some of the most spoken languages in the world like French, Spanish, and Russian.</span></span> <span class="sent" data-sid="s-3-5-4-5"><span class="en">Inspection shows the majority of supposedly Welsh translation data is actually English audio with English captions where the English audio was mis-classiﬁed as Welsh by the language identiﬁcation system, resulting in it being included as translation training data rather transcription data according to our dataset creation rules.</span><button class="mk" data-sid="s-3-5-4-5" title="查看讲解">解</button></span></p>
@@ -780,14 +704,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-3-8"><span class="secnum">3.8</span> <span class="t-zh">长音频转录</span><span class="t-en">Long-form Transcription</span></h3><div class="pblk" id="p-3-8-1">
-          <p class="en-lines"><span class="sent" data-sid="s-3-8-1-1"><span class="en">Whisper models are trained on 30-second audio chunks and cannot consume longer audio inputs at once.</span></span> <span class="sent" data-sid="s-3-8-1-2"><span class="en">This is not a</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-8-1-1"><span class="zh">Whisper 模型在 30 秒音频片段上训练，无法一次性接收更长的音频输入。</span></span><span class="sent" data-sid="s-3-8-1-2"><span class="zh">这并非新发现；开发与人类判断更一致的评测指标是一个活跃的研究方向，虽然已有一些有前景的方法，但都还没有在语音识别领域被广泛采用。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-8-1"><code>40 35 30</code></div>
-<div class="eq" id="eq-3-8-2"><code>Word Error Rate (%)</code></div>
-<div class="eq" id="eq-3-8-3"><code>25 20 15 10 5</code></div>
+      <h3 class="sech lv2" id="sec-3-8"><span class="secnum">3.8</span> <span class="t-zh">长音频转录</span><span class="t-en">Long-form Transcription</span></h3>
+
+
+
 <div class="pblk" id="p-3-8-2">
           <p class="en-lines"><span class="sent" data-sid="s-3-8-2-1"><span class="en">problem with most academic datasets comprised of short utterances but presents challenges in real-world applications which often require transcribing minutes- or hours-long audio.</span></span> <span class="sent" data-sid="s-3-8-2-2"><span class="en">We developed a strategy to perform buffered transcription of long audio by consecutively transcribing 30-second segments of audio and shifting the window according to the timestamps predicted by the model.</span><button class="mk feat" data-sid="s-3-8-2-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-8-2-3"><span class="en">We observed that it is crucial to have beam search and temperature scheduling based on the repetitiveness and the log probability of the model predictions in order to reliably transcribe long audio.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-8-2-1"><span class="zh">这不是一个（图 6 坐标：WER (%) 5/10/15/20/25/30/35/40）大多数由短句组成的学术数据集的问题，但在真实应用中构成挑战——那里常常需要转录几分钟到几小时的音频。</span></span><span class="sent" data-sid="s-3-8-2-2"><span class="zh">我们开发了一种长音频缓冲转录策略：连续转录 30 秒的音频段，并按照模型预测的时间戳移动窗口。</span><button class="mk feat" data-sid="s-3-8-2-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-3-8-2-3"><span class="zh">我们观察到，要可靠地转录长音频，束搜索（beam search）和基于模型预测的重复程度与对数概率的温度调度是至关重要的。</span></span></p>
@@ -815,12 +735,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-8-5-1"><span class="zh">我们与开源模型以及 4 家商业 ASR 服务做了性能比较。</span></span><span class="sent" data-sid="s-3-8-5-2"><span class="zh">结果汇总于图 6：Whisper 与 4 家商业 ASR 服务的 WER 分布（横轴 WER 刻度 0 起；数据集：TED-LIUM3、Meanwhile、Kincaid46、Rev16、Earnings-21、Earnings-22、CORAAL；对比系统：Company A/B/C/D 与 NVIDIA STT (CTC large)。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-8-4"><code>0</code></div>
-<div class="pblk" id="p-3-8-6">
-          <p class="en-lines"><span class="sent" data-sid="s-3-8-6-1"><span class="en">Whisper Company A Company B Company C Company D NVIDIA STT (CTC large)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-8-6-1"><span class="zh">结果汇总于图 6：Whisper 与 4 家商业 ASR 服务的 WER 分布（横轴 WER 刻度 0 起；数据集：TED-LIUM3、Meanwhile、Kincaid46、Rev16、Earnings-21、Earnings-22、CORAAL；对比系统：Company A/B/C/D 与 NVIDIA STT (CTC large)。）</span></span></p>
-          
-        </div>
+
+
 <div class="cap" id="fig-3-8-1"><img class="fig" src="../assets/figures/2212.04356/fig-3-8-1.png" loading="lazy" alt="Figure 6. Whisper is competitive with state-of-the-art commercial and open-source ASR systems in long-form transcription"><span class="cap-k">图</span><p class="en">Figure 6. Whisper is competitive with state-of-the-art commercial and open-source ASR systems in long-form transcription. The distribution of word error rates from six ASR systems on seven long-form datasets are compared, where the input lengths range from a few minutes to a few hours. The boxes show the quartiles of per-example WERs, and the per-dataset aggregate WERs are annotated on each box. Our model outperforms the best open source model (NVIDIA STT) on all datasets, and in most cases, commercial ASR systems as well.</p><p class="zh">图 6. Whisper 在长音频转录上可与最先进的商业和开源 ASR 系统竞争。图中比较了 6 个 ASR 系统在 7 个长音频数据集上的词错误率分布，输入长度从几分钟到几小时不等。箱线图展示逐样本 WER 的四分位数，每个箱上标注了按数据集聚合的 WER。我们的模型在所有数据集上超过最好的开源模型（NVIDIA STT），并且在多数情况下也超过商业 ASR 系统。</p></div>
 <div class="pblk" id="p-3-8-7">
           <p class="en-lines"><span class="sent" data-sid="s-3-8-7-1"><span class="en">as well as the NVIDIA STT Conformer-CTC Large model from the NeMo toolkit (Kuchaiev et al., 2019) which performed the best among the open-source models.</span></span> <span class="sent" data-sid="s-3-8-7-2"><span class="en">All commercial ASR services are queried using their default English transcription settings as of September 1st, 2022, and for the NVIDIA STT model we used their buffered inference implementation in the FrameBatchASR class to enable long-form transcription.</span></span> <span class="sent" data-sid="s-3-8-7-3"><span class="en">The results show that Whisper performs better than the compared models on most datasets, especially on the Meanwhile dataset which is heavy with uncommon words.</span></span> <span class="sent" data-sid="s-3-8-7-4"><span class="en">Additionally, we note the possibility that some of the commercial ASR systems have been trained on some of these publicly available datasets, and therefore these results may not be accurately reﬂecting the relative robustness of the systems.</span></span></p>
@@ -848,14 +764,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-1-1-1"><span class="zh">弱监督训练方法的一大前景在于，它们有潜力使用比传统监督学习大得多的数据集。</span></span><span class="sent" data-sid="s-4-1-1-2"><span class="zh">然而其代价是：所用数据可能比金标准监督数据噪声大得多、质量低得多。</span></span><span class="sent" data-sid="s-4-1-1-3"><span class="zh">这种做法的一个隐忧是：尽管初期看起来有前景，但在这种数据上训练的模型，性能可能会饱和在数据集自身的质量水平上，而这一水平可能远低于人类。</span></span><span class="sent" data-sid="s-4-1-1-4"><span class="zh">一个相关担忧是：随着容量与训练算力增加，模型可能学会利用（图 7 坐标：WER (%) 0/5/10/15/20/25；Whisper、A/B/C/D/E/F/G/H/I 各 ASR 系统、human transcription、computer-assisted。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-4-1-1"><code>25</code></div>
-<div class="eq" id="eq-4-1-2"><code>Word Error Rate (%)</code></div>
-<div class="eq" id="eq-4-1-3"><code>20 15 10 5 0</code></div>
-<div class="pblk" id="p-4-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-1-2-1"><span class="en">Whisper A B C D E F G H I ASR human transcription computer-assisted</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-1-2-1"><span class="zh">一个相关担忧是：随着容量与训练算力增加，模型可能学会利用（图 7 坐标：WER (%) 0/5/10/15/20/25；Whisper、A/B/C/D/E/F/G/H/I 各 ASR 系统、human transcription、computer-assisted。）</span></span></p>
-          
-        </div>
+
+
+
+
 <div class="cap" id="fig-4-1-1"><img class="fig" src="../assets/figures/2212.04356/fig-4-1-1.png" loading="lazy" alt="Figure 7. Whisper’s performance is close to that of professional human transcribers. This plot shows the WER distributio"><span class="cap-k">图</span><p class="en">Figure 7. Whisper’s performance is close to that of professional human transcribers. This plot shows the WER distributions of 25 recordings from the Kincaid46 dataset transcribed by Whisper, the same 4 commercial ASR systems from Figure 6 (A-D), one computer-assisted human transcription service (E) and 4 human transcription services (F-I). The box plot is superimposed with dots indicating the WERs on individual recordings, and the aggregate WER over the 25 recordings are annotated on each box.</p><p class="zh">图 7. Whisper 的表现接近专业人工转写员。图中展示了 Kincaid46 数据集 25 段录音的 WER 分布：Whisper、Figure 6 中同 4 家商业 ASR 系统（A–D）、1 种计算机辅助人工转写服务（E）和 4 种人工转写服务（F–I）。箱线图上叠加了各录音的 WER 散点，每个箱上标注了 25 段录音的聚合 WER。</p></div>
 <div class="pblk" id="p-4-1-3">
           <p class="en-lines"><span class="sent" data-sid="s-4-1-3-1"><span class="en">idiosyncrasies of the dataset, and their ability to generalize robustly to out-of-distribution data could even degrade.</span></span></p>
@@ -873,35 +785,19 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-1-1"><span class="zh">以 680,000 小时标注音频计，Whisper 数据集是有监督语音识别领域有史以来最大的数据集之一。</span></span><span class="sent" data-sid="s-4-2-1-2"><span class="zh">原始数据集规模对 Whisper 的性能究竟有多重要？</span></span><span class="sent" data-sid="s-4-2-1-3"><span class="zh">为研究这个问题，我们在完整数据集的 0.5%、1%、2%、4% 和 8% 的子采样版本上训练了一组 medium 尺寸模型，并与在完整数据集上训练的同款 medium 模型比较。</span></span><span class="sent" data-sid="s-4-2-1-4"><span class="zh">每个数据集尺寸都用基于验证损失的早停来选择模型检查点。</span></span><span class="sent" data-sid="s-4-2-1-5"><span class="zh">评测在参数的指数滑动平均（Polyak &amp; Juditsky, 1992）上进行，平滑率为 0.9999，以减轻子采样模型因早停导致学习率未完全衰减到零的影响。</span></span><span class="sent" data-sid="s-4-2-1-6"><span class="zh">英语语音识别、多语言语音识别和 X→en 翻译的性能报告在 Table 6 中。</span></span></p>
           
         </div>
-<div class="pblk" id="p-4-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-2-1"><span class="en">English Speech Recognition Multilingual Speech Recognition (Fleurs)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-1"><span class="zh">（图 8 标题：English Speech Recognition 与 Multilingual Speech Recognition (Fleurs)。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-4-2-1"><code>20.0 100</code></div>
-<div class="eq" id="eq-4-2-2"><code>Average Large V2 Average Large V2</code></div>
-<div class="eq" id="eq-4-2-3"><code>17.5 80 15.0</code></div>
-<div class="pblk" id="p-4-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-3-1"><span class="en">WER on 67 languages (%) WER on 12 datasets (%) BLEU on 21 languages</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-3-1"><span class="zh">（图 8 纵轴：67 种语言上的 WER (%) / 12 个数据集上的 WER (%) / 21 种语言上的 BLEU。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-4-2-4"><code>12.5 60 10.0 40 7.5 5.0 20 2.5 0.0 0</code></div>
-<div class="pblk" id="p-4-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="en">38M 73M 244M 768M 1549M 1549M Model parameters 38M 73M 244M 768M 1549M 1549M Model parameters X-&gt;En Translation (CoVoST2) Language Identification (Fleurs)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="zh">（图 8 横轴：模型参数量 38M / 73M / 244M / 768M / 1549M / 1549M；子图 X-&gt;En Translation (CoVoST2) 与 Language Identification (Fleurs)。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-4-2-5"><code>50 80</code></div>
-<div class="eq" id="eq-4-2-6"><code>Average Large V2 Average Large V2</code></div>
-<div class="eq" id="eq-4-2-7"><code>40 70</code></div>
-<div class="eq" id="eq-4-2-8"><code>Accuracy on 102 languages (%)</code></div>
-<div class="eq" id="eq-4-2-9"><code>30 60 20 50 10 40 0 30</code></div>
-<div class="pblk" id="p-4-2-5">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-5-1"><span class="en">38M 73M 244M 768M 1549M 1549M Model parameters 38M 73M 244M 768M 1549M 1549M Model parameters</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-5-1"><span class="zh">（图 8 横轴：模型参数量 38M / 73M / 244M / 768M / 1549M / 1549M。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-4-2-1"><img class="fig" src="../assets/figures/2212.04356/fig-4-2-1.png" loading="lazy" alt="Figure 8. Zero-shot Whisper performance scales reliably across tasks and languages with increasing model size. Lightly s"><span class="cap-k">图</span><p class="en">Figure 8. Zero-shot Whisper performance scales reliably across tasks and languages with increasing model size. Lightly shaded lines represent individual datasets or languages, showing that performance is more varied than the smooth trends in aggregate performance. Large V2 distinguished with a dashed orange line since it includes several changes that are not present for the smaller models in this analysis.</p><p class="zh">图 8. 随模型尺寸增大，零样本 Whisper 的性能跨任务、跨语言可靠地扩展。浅色细线代表单个数据集或语言，显示个体表现的波动比聚合趋势的平滑曲线更大。Large V2 用橙色虚线单独标出，因为它包含本分析中小模型所没有的若干改动。</p></div>
 <div class="pblk" id="p-4-2-6">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-6-1"><span class="en">Dataset English Multilingual X→En size WER (↓) WER (↓) BLEU (↑)</span></span></p>
@@ -985,12 +881,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="eq" id="eq-4-4-1"><code>0 10 20 30 40 50</code></div>
-<div class="pblk" id="p-4-4-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-1"><span class="en">Relative WER reduction compared to FairSpeech's normalizer (%)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-1"><span class="zh">例如在 CallHome 与 Switchboard 上，我们的标准化器不惩罚「you're」与「you are」这类常见英语缩写差异；在 WSJ 上，我们的标准化器统一了书面与（图表：相对 FairSpeech 标准化器的相对 WER 降低（刻度 0/10/20/30/40/50%）：开源模型 vs Whisper 模型；数据集 CORAAL、CommonVoice9.en、AMI-SDM1、CommonVoice5.1、Fleurs.en_us、AMI-IHM、Artie、LibriSpeech、TED-LIUM3、VoxPopuli.en、WSJ、CallHome、Switchboard。）</span></span></p>
-          
-        </div>
+
+
 <div class="cap" id="fig-4-4-1"><img class="fig" src="../assets/figures/2212.04356/fig-4-4-1.png" loading="lazy" alt="Figure 10. On most datasets, our text normalizer has similar effect on reducing WERs between Whisper models and other op"><span class="cap-k">图</span><p class="en">Figure 10. On most datasets, our text normalizer has similar effect on reducing WERs between Whisper models and other open-source models, compared to FairSpeech’s normalizer. For each dataset, the boxplot shows the distribution of relative WER reduction across different models in our eval suite, showing that using our text normalizer generally results in lower WERs than FairSpeech’s. On a few datasets our normalizer reduces WER signiﬁcantly and more so for Whisper models, such as CallHome and Switchboard which have many contractions in the ground truth and WSJ which contains many numerical expressions.</p><p class="zh">图 10. 在大多数数据集上，与 FairSpeech 的标准化器相比，我们的文本标准化器对 Whisper 模型和其他开源模型的 WER 降幅作用相近。对每个数据集，箱线图展示了我们评测套件中不同模型的相对 WER 降幅分布，总体看我们的标准化器带来的 WER 低于 FairSpeech 的。在少数数据集上（如真值含大量缩略形式的 CallHome 和 Switchboard，以及含大量数字表达的 WSJ），我们的标准化器显著降低 WER，且对 Whisper 模型降得更多。</p></div>
 <div class="pblk" id="p-4-4-3">
           <p class="en-lines"><span class="sent" data-sid="s-4-4-3-1"><span class="en">ken forms of numerical and monetary expressions, such as “sixty-eight million dollars” versus “$68 million”.</span></span></p>
@@ -2207,357 +2099,349 @@ D.3.2.</span></span><span class="sent" data-sid="s-D-3-7-2"><span class="zh">（
 <tr><td>stt en conformer ctc large</td><td>4.0</td><td>9.8</td><td>13.1</td><td>14.5</td><td>12.6</td><td>17.6</td><td>25.1</td></tr>
 <tr><td></td><td>5.3</td><td>10.6</td><td>17.1</td><td>19.8</td><td>16.2</td><td>19.7</td><td>38.9</td></tr></tbody></table></div></div></section>
 <section>
-      <h2 class="sech lv1" id="sec-E"><span class="secnum">E</span> <span class="t-zh">训练数据集统计</span><span class="t-en">Training Dataset Statistics</span></h2><div class="pblk" id="p-E-1">
-          <p class="en-lines"><span class="sent" data-sid="s-E-1-1"><span class="en">Dataset Components Multilingual Speech Recognition Chinese</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-E-1-1"><span class="zh">（表 E 列头：Dataset Components；Multilingual Speech Recognition / Chinese（后续照原文）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-E-1"><code>23446</code></div>
-<div class="eq" id="eq-E-2"><code>German</code></div>
-<div class="eq" id="eq-E-3"><code>13344</code></div>
-<div class="eq" id="eq-E-4"><code>Spanish</code></div>
-<div class="eq" id="eq-E-5"><code>11100</code></div>
-<div class="eq" id="eq-E-6"><code>Russian</code></div>
-<div class="eq" id="eq-E-7"><code>9761</code></div>
-<div class="eq" id="eq-E-8"><code>Translation 17% Multilingual Speech Recognition French</code></div>
-<div class="eq" id="eq-E-9"><code>9752</code></div>
-<div class="eq" id="eq-E-10"><code>Portuguese</code></div>
-<div class="eq" id="eq-E-11"><code>8573</code></div>
-<div class="eq" id="eq-E-12"><code>Korean</code></div>
-<div class="eq" id="eq-E-13"><code>7993</code></div>
-<div class="eq" id="eq-E-14"><code>(117,113 hours) Japanese</code></div>
-<div class="eq" id="eq-E-15"><code>7054</code></div>
-<div class="eq" id="eq-E-16"><code>Turkish</code></div>
-<div class="eq" id="eq-E-17"><code>4333</code></div>
-<div class="eq" id="eq-E-18"><code>Polish</code></div>
-<div class="eq" id="eq-E-19"><code>4278</code></div>
-<div class="eq" id="eq-E-20"><code>Italian</code></div>
-<div class="eq" id="eq-E-21"><code>2585</code></div>
-<div class="eq" id="eq-E-22"><code>Swedish</code></div>
-<div class="eq" id="eq-E-23"><code>2119</code></div>
-<div class="eq" id="eq-E-24"><code>Dutch</code></div>
-<div class="eq" id="eq-E-25"><code>2077</code></div>
-<div class="eq" id="eq-E-26"><code>Catalan</code></div>
-<div class="eq" id="eq-E-27"><code>1883</code></div>
-<div class="eq" id="eq-E-28"><code>Finnish</code></div>
-<div class="eq" id="eq-E-29"><code>1066</code></div>
-<div class="eq" id="eq-E-30"><code>Indonesian</code></div>
-<div class="eq" id="eq-E-31"><code>1014</code></div>
-<div class="eq" id="eq-E-32"><code>Arabic</code></div>
-<div class="eq" id="eq-E-33"><code>739</code></div>
-<div class="eq" id="eq-E-34"><code>Ukrainian</code></div>
-<div class="eq" id="eq-E-35"><code>697</code></div>
-<div class="eq" id="eq-E-36"><code>Vietnamese</code></div>
-<div class="eq" id="eq-E-37"><code>691</code></div>
-<div class="eq" id="eq-E-38"><code>18% Translation (125,739 hours) Hebrew</code></div>
-<div class="eq" id="eq-E-39"><code>688</code></div>
-<div class="eq" id="eq-E-40"><code>Greek</code></div>
-<div class="eq" id="eq-E-41"><code>529</code></div>
-<div class="eq" id="eq-E-42"><code>Danish</code></div>
-<div class="eq" id="eq-E-43"><code>473</code></div>
-<div class="eq" id="eq-E-44"><code>Malay</code></div>
-<div class="eq" id="eq-E-45"><code>382</code></div>
-<div class="eq" id="eq-E-46"><code>Hungarian</code></div>
-<div class="eq" id="eq-E-47"><code>379</code></div>
-<div class="eq" id="eq-E-48"><code>Romanian</code></div>
-<div class="eq" id="eq-E-49"><code>356</code></div>
-<div class="eq" id="eq-E-50"><code>Norwegian</code></div>
-<div class="eq" id="eq-E-51"><code>266</code></div>
-<div class="eq" id="eq-E-52"><code>Thai</code></div>
-<div class="eq" id="eq-E-53"><code>226</code></div>
-<div class="eq" id="eq-E-54"><code>Czech</code></div>
-<div class="eq" id="eq-E-55"><code>192</code></div>
-<div class="eq" id="eq-E-56"><code>Tamil</code></div>
-<div class="eq" id="eq-E-57"><code>136</code></div>
-<div class="eq" id="eq-E-58"><code>Urdu</code></div>
-<div class="eq" id="eq-E-59"><code>104</code></div>
-<div class="eq" id="eq-E-60"><code>Croatian</code></div>
-<div class="eq" id="eq-E-61"><code>91</code></div>
-<div class="eq" id="eq-E-62"><code>Slovak</code></div>
-<div class="eq" id="eq-E-63"><code>90</code></div>
-<div class="eq" id="eq-E-64"><code>Bulgarian</code></div>
-<div class="eq" id="eq-E-65"><code>86</code></div>
-<div class="eq" id="eq-E-66"><code>Tagalog</code></div>
-<div class="eq" id="eq-E-67"><code>75</code></div>
-<div class="eq" id="eq-E-68"><code>Welsh</code></div>
-<div class="eq" id="eq-E-69"><code>73</code></div>
-<div class="eq" id="eq-E-70"><code>Lithuanian</code></div>
-<div class="eq" id="eq-E-71"><code>67</code></div>
-<div class="eq" id="eq-E-72"><code>Latvian</code></div>
-<div class="eq" id="eq-E-73"><code>65</code></div>
-<div class="eq" id="eq-E-74"><code>Azerbaijani</code></div>
-<div class="eq" id="eq-E-75"><code>47</code></div>
-<div class="eq" id="eq-E-76"><code>Estonian</code></div>
-<div class="eq" id="eq-E-77"><code>41</code></div>
-<div class="eq" id="eq-E-78"><code>Slovenian</code></div>
-<div class="eq" id="eq-E-79"><code>41</code></div>
-<div class="eq" id="eq-E-80"><code>Serbian</code></div>
-<div class="eq" id="eq-E-81"><code>28</code></div>
-<div class="eq" id="eq-E-82"><code>Persian</code></div>
-<div class="eq" id="eq-E-83"><code>24</code></div>
-<div class="eq" id="eq-E-84"><code>Basque</code></div>
-<div class="eq" id="eq-E-85"><code>21</code></div>
-<div class="eq" id="eq-E-86"><code>Icelandic</code></div>
-<div class="eq" id="eq-E-87"><code>16</code></div>
-<div class="eq" id="eq-E-88"><code>Macedonian</code></div>
-<div class="eq" id="eq-E-89"><code>16</code></div>
-<div class="eq" id="eq-E-90"><code>Armenian</code></div>
-<div class="eq" id="eq-E-91"><code>13</code></div>
-<div class="eq" id="eq-E-92"><code>Kazakh</code></div>
-<div class="eq" id="eq-E-93"><code>12</code></div>
-<div class="eq" id="eq-E-94"><code>Hindi</code></div>
-<div class="eq" id="eq-E-95"><code>12</code></div>
-<div class="eq" id="eq-E-96"><code>65% English Speech Recognition Bosnian</code></div>
-<div class="eq" id="eq-E-97"><code>11</code></div>
-<div class="eq" id="eq-E-98"><code>Galician</code></div>
-<div class="eq" id="eq-E-99"><code>8.9</code></div>
-<div class="eq" id="eq-E-100"><code>Albanian</code></div>
-<div class="eq" id="eq-E-101"><code>5.7</code></div>
-<div class="eq" id="eq-E-102"><code>(438,218 hours) Sinhala</code></div>
-<div class="eq" id="eq-E-103"><code>5.4</code></div>
-<div class="eq" id="eq-E-104"><code>Swahili</code></div>
-<div class="eq" id="eq-E-105"><code>5.4</code></div>
-<div class="eq" id="eq-E-106"><code>Telugu</code></div>
-<div class="eq" id="eq-E-107"><code>4.3</code></div>
-<div class="eq" id="eq-E-108"><code>Afrikaans</code></div>
-<div class="eq" id="eq-E-109"><code>4.1</code></div>
-<div class="eq" id="eq-E-110"><code>Kannada</code></div>
-<div class="eq" id="eq-E-111"><code>3.8</code></div>
-<div class="eq" id="eq-E-112"><code>Belarusian</code></div>
-<div class="eq" id="eq-E-113"><code>2.4</code></div>
-<div class="eq" id="eq-E-114"><code>Khmer</code></div>
-<div class="eq" id="eq-E-115"><code>1.3</code></div>
-<div class="eq" id="eq-E-116"><code>Bengali</code></div>
-<div class="eq" id="eq-E-117"><code>1.3</code></div>
-<div class="eq" id="eq-E-118"><code>Maltese</code></div>
-<div class="eq" id="eq-E-119"><code>1.1</code></div>
-<div class="eq" id="eq-E-120"><code>Haitian Creole</code></div>
-<div class="eq" id="eq-E-121"><code>1.0</code></div>
-<div class="eq" id="eq-E-122"><code>Punjabi</code></div>
-<div class="eq" id="eq-E-123"><code>0.8</code></div>
-<div class="eq" id="eq-E-124"><code>Marathi</code></div>
-<div class="eq" id="eq-E-125"><code>0.6</code></div>
-<div class="eq" id="eq-E-126"><code>Nepali</code></div>
-<div class="eq" id="eq-E-127"><code>0.6</code></div>
-<div class="eq" id="eq-E-128"><code>Georgian</code></div>
-<div class="eq" id="eq-E-129"><code>0.6</code></div>
-<div class="eq" id="eq-E-130"><code>Malayalam</code></div>
-<div class="eq" id="eq-E-131"><code>0.5</code></div>
-<div class="eq" id="eq-E-132"><code>Yiddish</code></div>
-<div class="eq" id="eq-E-133"><code>0.4</code></div>
-<div class="eq" id="eq-E-134"><code>Uzbek</code></div>
-<div class="eq" id="eq-E-135"><code>0.3</code></div>
-<div class="eq" id="eq-E-136"><code>Gujarati</code></div>
-<div class="eq" id="eq-E-137"><code>0.3</code></div>
-<div class="eq" id="eq-E-138"><code>Tajik</code></div>
-<div class="eq" id="eq-E-139"><code>0.3</code></div>
-<div class="eq" id="eq-E-140"><code>Malagasy</code></div>
-<div class="eq" id="eq-E-141"><code>0.2</code></div>
-<div class="eq" id="eq-E-142"><code>Burmese</code></div>
-<div class="eq" id="eq-E-143"><code>0.1</code></div>
-<div class="eq" id="eq-E-144"><code>Sundanese</code></div>
-<div class="eq" id="eq-E-145"><code>0.1</code></div>
-<div class="eq" id="eq-E-146"><code>Lao</code></div>
-<div class="eq" id="eq-E-147"><code>0.1 0.1 1 10 100</code></div>
-<div class="eq" id="eq-E-148"><code>1K 10K Hours of audio Turkmen 1 Bashkir</code></div>
-<div class="eq" id="eq-E-149"><code>1</code></div>
-<div class="eq" id="eq-E-150"><code>Malagasy</code></div>
-<div class="eq" id="eq-E-151"><code>2</code></div>
-<div class="eq" id="eq-E-152"><code>Uzbek</code></div>
-<div class="eq" id="eq-E-153"><code>4</code></div>
-<div class="eq" id="eq-E-154"><code>Sundanese</code></div>
-<div class="eq" id="eq-E-155"><code>7</code></div>
-<div class="eq" id="eq-E-156"><code>Hausa</code></div>
-<div class="eq" id="eq-E-157"><code>8</code></div>
-<div class="eq" id="eq-E-158"><code>Luxembourgish</code></div>
-<div class="eq" id="eq-E-159"><code>10</code></div>
-<div class="eq" id="eq-E-160"><code>Tatar</code></div>
-<div class="eq" id="eq-E-161"><code>14</code></div>
-<div class="eq" id="eq-E-162"><code>Tajik</code></div>
-<div class="eq" id="eq-E-163"><code>15</code></div>
-<div class="eq" id="eq-E-164"><code>Lingala</code></div>
-<div class="eq" id="eq-E-165"><code>20</code></div>
-<div class="eq" id="eq-E-166"><code>Lao</code></div>
-<div class="eq" id="eq-E-167"><code>20</code></div>
-<div class="eq" id="eq-E-168"><code>Somali</code></div>
-<div class="eq" id="eq-E-169"><code>21</code></div>
-<div class="eq" id="eq-E-170"><code>Macedonian</code></div>
-<div class="eq" id="eq-E-171"><code>30</code></div>
-<div class="eq" id="eq-E-172"><code>Kazakh</code></div>
-<div class="eq" id="eq-E-173"><code>31</code></div>
-<div class="eq" id="eq-E-174"><code>Amharic</code></div>
-<div class="eq" id="eq-E-175"><code>32</code></div>
-<div class="eq" id="eq-E-176"><code>Georgian</code></div>
-<div class="eq" id="eq-E-177"><code>40</code></div>
-<div class="eq" id="eq-E-178"><code>Maltese</code></div>
-<div class="eq" id="eq-E-179"><code>41</code></div>
-<div class="eq" id="eq-E-180"><code>Sindhi</code></div>
-<div class="eq" id="eq-E-181"><code>46</code></div>
-<div class="eq" id="eq-E-182"><code>Faroese</code></div>
-<div class="eq" id="eq-E-183"><code>46</code></div>
-<div class="eq" id="eq-E-184"><code>Occitan</code></div>
-<div class="eq" id="eq-E-185"><code>49</code></div>
-<div class="eq" id="eq-E-186"><code>Burmese</code></div>
-<div class="eq" id="eq-E-187"><code>59</code></div>
-<div class="eq" id="eq-E-188"><code>Pashto</code></div>
-<div class="eq" id="eq-E-189"><code>63</code></div>
-<div class="eq" id="eq-E-190"><code>Latvian</code></div>
-<div class="eq" id="eq-E-191"><code>68</code></div>
-<div class="eq" id="eq-E-192"><code>Albanian</code></div>
-<div class="eq" id="eq-E-193"><code>72</code></div>
-<div class="eq" id="eq-E-194"><code>Haitian Creole</code></div>
-<div class="eq" id="eq-E-195"><code>74</code></div>
-<div class="eq" id="eq-E-196"><code>Estonian</code></div>
-<div class="eq" id="eq-E-197"><code>79</code></div>
-<div class="eq" id="eq-E-198"><code>Mongolian</code></div>
-<div class="eq" id="eq-E-199"><code>79</code></div>
-<div class="eq" id="eq-E-200"><code>Icelandic</code></div>
-<div class="eq" id="eq-E-201"><code>84</code></div>
-<div class="eq" id="eq-E-202"><code>Yiddish</code></div>
-<div class="eq" id="eq-E-203"><code>85</code></div>
-<div class="eq" id="eq-E-204"><code>Azerbaijani</code></div>
-<div class="eq" id="eq-E-205"><code>86</code></div>
-<div class="eq" id="eq-E-206"><code>Kannada</code></div>
-<div class="eq" id="eq-E-207"><code>90</code></div>
-<div class="eq" id="eq-E-208"><code>Lithuanian</code></div>
-<div class="eq" id="eq-E-209"><code>99</code></div>
-<div class="eq" id="eq-E-210"><code>Armenian</code></div>
-<div class="eq" id="eq-E-211"><code>116</code></div>
-<div class="eq" id="eq-E-212"><code>Punjabi</code></div>
-<div class="eq" id="eq-E-213"><code>117</code></div>
-<div class="eq" id="eq-E-214"><code>Belarusian</code></div>
-<div class="eq" id="eq-E-215"><code>133</code></div>
-<div class="eq" id="eq-E-216"><code>Nepali</code></div>
-<div class="eq" id="eq-E-217"><code>133</code></div>
-<div class="eq" id="eq-E-218"><code>Assamese</code></div>
-<div class="eq" id="eq-E-219"><code>136</code></div>
-<div class="eq" id="eq-E-220"><code>Serbian</code></div>
-<div class="eq" id="eq-E-221"><code>136</code></div>
-<div class="eq" id="eq-E-222"><code>Slovak</code></div>
-<div class="eq" id="eq-E-223"><code>144</code></div>
-<div class="eq" id="eq-E-224"><code>Basque</code></div>
-<div class="eq" id="eq-E-225"><code>168</code></div>
-<div class="eq" id="eq-E-226"><code>Tibetan</code></div>
-<div class="eq" id="eq-E-227"><code>186</code></div>
-<div class="eq" id="eq-E-228"><code>Sanskrit</code></div>
-<div class="eq" id="eq-E-229"><code>195</code></div>
-<div class="eq" id="eq-E-230"><code>Bulgarian</code></div>
-<div class="eq" id="eq-E-231"><code>202</code></div>
-<div class="eq" id="eq-E-232"><code>Gujarati</code></div>
-<div class="eq" id="eq-E-233"><code>208</code></div>
-<div class="eq" id="eq-E-234"><code>Sinhala</code></div>
-<div class="eq" id="eq-E-235"><code>211</code></div>
-<div class="eq" id="eq-E-236"><code>Bosnian</code></div>
-<div class="eq" id="eq-E-237"><code>219</code></div>
-<div class="eq" id="eq-E-238"><code>Catalan</code></div>
-<div class="eq" id="eq-E-239"><code>236</code></div>
-<div class="eq" id="eq-E-240"><code>Croatian</code></div>
-<div class="eq" id="eq-E-241"><code>239</code></div>
-<div class="eq" id="eq-E-242"><code>Breton</code></div>
-<div class="eq" id="eq-E-243"><code>269</code></div>
-<div class="eq" id="eq-E-244"><code>Shona</code></div>
-<div class="eq" id="eq-E-245"><code>279</code></div>
-<div class="eq" id="eq-E-246"><code>Swahili</code></div>
-<div class="eq" id="eq-E-247"><code>282</code></div>
-<div class="eq" id="eq-E-248"><code>Marathi</code></div>
-<div class="eq" id="eq-E-249"><code>288</code></div>
-<div class="eq" id="eq-E-250"><code>Norwegian</code></div>
-<div class="eq" id="eq-E-251"><code>322</code></div>
-<div class="eq" id="eq-E-252"><code>Afrikaans</code></div>
-<div class="eq" id="eq-E-253"><code>330</code></div>
-<div class="eq" id="eq-E-254"><code>Hawaiian</code></div>
-<div class="eq" id="eq-E-255"><code>338</code></div>
-<div class="eq" id="eq-E-256"><code>Galician</code></div>
-<div class="eq" id="eq-E-257"><code>368</code></div>
-<div class="eq" id="eq-E-258"><code>Danish</code></div>
-<div class="eq" id="eq-E-259"><code>386</code></div>
-<div class="eq" id="eq-E-260"><code>Persian</code></div>
-<div class="eq" id="eq-E-261"><code>392</code></div>
-<div class="eq" id="eq-E-262"><code>Slovenian</code></div>
-<div class="eq" id="eq-E-263"><code>395</code></div>
-<div class="eq" id="eq-E-264"><code>Czech</code></div>
-<div class="eq" id="eq-E-265"><code>401</code></div>
-<div class="eq" id="eq-E-266"><code>Hebrew</code></div>
-<div class="eq" id="eq-E-267"><code>418</code></div>
-<div class="eq" id="eq-E-268"><code>Yoruba</code></div>
-<div class="eq" id="eq-E-269"><code>432</code></div>
-<div class="eq" id="eq-E-270"><code>Ukrainian</code></div>
-<div class="eq" id="eq-E-271"><code>509</code></div>
-<div class="eq" id="eq-E-272"><code>Hungarian</code></div>
-<div class="eq" id="eq-E-273"><code>554</code></div>
-<div class="eq" id="eq-E-274"><code>Romanian</code></div>
-<div class="eq" id="eq-E-275"><code>555</code></div>
-<div class="eq" id="eq-E-276"><code>Javanese</code></div>
-<div class="eq" id="eq-E-277"><code>622</code></div>
-<div class="eq" id="eq-E-278"><code>Khmer</code></div>
-<div class="eq" id="eq-E-279"><code>672</code></div>
-<div class="eq" id="eq-E-280"><code>Finnish</code></div>
-<div class="eq" id="eq-E-281"><code>750</code></div>
-<div class="eq" id="eq-E-282"><code>Malayalam</code></div>
-<div class="eq" id="eq-E-283"><code>892</code></div>
-<div class="eq" id="eq-E-284"><code>Tagalog</code></div>
-<div class="eq" id="eq-E-285"><code>894</code></div>
-<div class="eq" id="eq-E-286"><code>Greek</code></div>
-<div class="eq" id="eq-E-287"><code>968</code></div>
-<div class="eq" id="eq-E-288"><code>Telugu</code></div>
-<div class="eq" id="eq-E-289"><code>987</code></div>
-<div class="eq" id="eq-E-290"><code>Swedish</code></div>
-<div class="eq" id="eq-E-291"><code>1055</code></div>
-<div class="eq" id="eq-E-292"><code>Indonesian</code></div>
-<div class="eq" id="eq-E-293"><code>1174</code></div>
-<div class="eq" id="eq-E-294"><code>Maori</code></div>
-<div class="eq" id="eq-E-295"><code>1381</code></div>
-<div class="eq" id="eq-E-296"><code>Tamil</code></div>
-<div class="eq" id="eq-E-297"><code>1484</code></div>
-<div class="eq" id="eq-E-298"><code>Latin</code></div>
-<div class="eq" id="eq-E-299"><code>1614</code></div>
-<div class="eq" id="eq-E-300"><code>Thai</code></div>
-<div class="eq" id="eq-E-301"><code>1635</code></div>
-<div class="eq" id="eq-E-302"><code>Malay</code></div>
-<div class="eq" id="eq-E-303"><code>1691</code></div>
-<div class="eq" id="eq-E-304"><code>Vietnamese</code></div>
-<div class="eq" id="eq-E-305"><code>1719</code></div>
-<div class="eq" id="eq-E-306"><code>Dutch</code></div>
-<div class="eq" id="eq-E-307"><code>1767</code></div>
-<div class="eq" id="eq-E-308"><code>Norwegian Nynorsk</code></div>
-<div class="eq" id="eq-E-309"><code>1889</code></div>
-<div class="eq" id="eq-E-310"><code>Bengali</code></div>
-<div class="eq" id="eq-E-311"><code>1988</code></div>
-<div class="eq" id="eq-E-312"><code>Urdu</code></div>
-<div class="eq" id="eq-E-313"><code>1990</code></div>
-<div class="eq" id="eq-E-314"><code>Italian</code></div>
-<div class="eq" id="eq-E-315"><code>2145</code></div>
-<div class="eq" id="eq-E-316"><code>Polish</code></div>
-<div class="eq" id="eq-E-317"><code>2200</code></div>
-<div class="eq" id="eq-E-318"><code>Turkish</code></div>
-<div class="eq" id="eq-E-319"><code>2241</code></div>
-<div class="eq" id="eq-E-320"><code>Arabic</code></div>
-<div class="eq" id="eq-E-321"><code>2286</code></div>
-<div class="eq" id="eq-E-322"><code>Portuguese</code></div>
-<div class="eq" id="eq-E-323"><code>3620</code></div>
-<div class="eq" id="eq-E-324"><code>German</code></div>
-<div class="eq" id="eq-E-325"><code>4309</code></div>
-<div class="eq" id="eq-E-326"><code>French</code></div>
-<div class="eq" id="eq-E-327"><code>4481</code></div>
-<div class="eq" id="eq-E-328"><code>Hindi</code></div>
-<div class="eq" id="eq-E-329"><code>5438</code></div>
-<div class="eq" id="eq-E-330"><code>Spanish</code></div>
-<div class="eq" id="eq-E-331"><code>6693</code></div>
-<div class="eq" id="eq-E-332"><code>Russian</code></div>
-<div class="eq" id="eq-E-333"><code>7687</code></div>
-<div class="eq" id="eq-E-334"><code>Welsh</code></div>
-<div class="eq" id="eq-E-335"><code>8263</code></div>
-<div class="eq" id="eq-E-336"><code>Japanese</code></div>
-<div class="eq" id="eq-E-337"><code>8860</code></div>
-<div class="eq" id="eq-E-338"><code>Chinese</code></div>
-<div class="eq" id="eq-E-339"><code>11731</code></div>
-<div class="eq" id="eq-E-340"><code>Korean</code></div>
-<div class="eq" id="eq-E-341"><code>19938 1 10 100</code></div>
-<div class="pblk" id="p-E-2">
-          <p class="en-lines"><span class="sent" data-sid="s-E-2-1"><span class="en">1K 10K Hours of audio</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-E-2-1"><span class="zh">（图 E 横轴：音频小时数（1K / 10K）。）</span></span></p>
-          
-        </div>
+      <h2 class="sech lv1" id="sec-E"><span class="secnum">E</span> <span class="t-zh">训练数据集统计</span><span class="t-en">Training Dataset Statistics</span></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-E-1"><img class="fig" src="../assets/figures/2212.04356/fig-E-1.png" loading="lazy" alt="Figure 11. Training dataset statistics"><span class="cap-k">图</span><p class="en">Figure 11. Training dataset statistics</p><p class="zh">图 11. 训练数据集统计。</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-F"><span class="secnum">F</span> <span class="t-zh">超参数</span><span class="t-en">Hyperparameters</span></h2>

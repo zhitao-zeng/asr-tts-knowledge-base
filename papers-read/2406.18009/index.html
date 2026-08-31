@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -262,95 +262,35 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-e2-tts-training"><span class="t-zh">E2 TTS - 训练</span><span class="t-en">E2 TTS - Training</span></h2><div class="pblk" id="p-e2-tts-training-1">
-          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-training-1-1"><span class="en">Training target Masked Masked</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-e2-tts-training-1-1"><span class="zh">训练目标。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-e2-tts-training-1"><code>𝑚⨀Ƹ𝑠</code></div></section>
+      <h2 class="sech lv1" id="sec-e2-tts-training"><span class="t-zh">E2 TTS - 训练</span><span class="t-en">E2 TTS - Training</span></h2>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-flow-matching-transformer"><span class="t-zh">Flow-matching Transformer</span><span class="t-en">Flow-matching Transformer</span></h3><div class="pblk" id="p-flow-matching-transformer-1">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-1-1"><span class="en">(Mel spectrogram generator) Model input Masked</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-1-1"><span class="zh">模型输入。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-1"><code>(1 −𝑚)⨀Ƹ𝑠</code></div>
-<div class="eq" id="eq-flow-matching-transformer-2"><code>ො𝑦</code></div>
-<div class="pblk" id="p-flow-matching-transformer-2">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-1"><span class="en">H i</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-1"><span class="zh">（图内字符序列示意：H i !）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-3"><code>!</code></div>
-<div class="pblk" id="p-flow-matching-transformer-3">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-1"><span class="en">H o w a r e y o u</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-1"><span class="zh">（图内字符序列示意：H o w a r e y o u ?）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-4"><code>?</code></div>
-<div class="pblk" id="p-flow-matching-transformer-4">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-1"><span class="en">&lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; Filler tokens Audio mel spectrogram Ƹ𝑠 Transcription of the audio 𝑦 Hi!</span></span> <span class="sent" data-sid="s-flow-matching-transformer-4-2"><span class="en">How are you?</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-1"><span class="zh">（图 1(a) 标签：⟨F⟩×10 填充 token（Filler tokens）；音频 mel 频谱图 ŝ；音频转写文本 y「Hi!」。）</span></span><span class="sent" data-sid="s-flow-matching-transformer-4-2"><span class="zh">&quot;How are you?&quot;（图示示例转录文字。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-flow-matching-transformer-5">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-5-1"><span class="en">Training data It’s a good day!</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-5-1"><span class="zh">训练数据。</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-flow-matching-transformer"><span class="t-zh">Flow-matching Transformer</span><span class="t-en">Flow-matching Transformer</span></h3>
+
+
+
+
+
+
+
+</section>
 <section>
-      <h2 class="sech lv1" id="sec-e2-tts-inference"><span class="t-zh">E2 TTS - 推理</span><span class="t-en">E2 TTS - Inference</span></h2><div class="pblk" id="p-e2-tts-inference-1">
-          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-inference-1-1"><span class="en">2 sec</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-e2-tts-inference-1-1"><span class="zh">（图内时长标注：2 sec。）</span></span></p>
-          
-        </div></section>
+      <h2 class="sech lv1" id="sec-e2-tts-inference"><span class="t-zh">E2 TTS - 推理</span><span class="t-en">E2 TTS - Inference</span></h2></section>
 <section>
-      <h3 class="sech lv2" id="sec-vocoder"><span class="t-zh">声码器</span><span class="t-en">Vocoder</span></h3><div class="pblk" id="p-vocoder-1">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-1-1"><span class="en">Discarded</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-1-1"><span class="zh">丢弃。</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-vocoder"><span class="t-zh">声码器</span><span class="t-en">Vocoder</span></h3></section>
 <section>
-      <h3 class="sech lv2" id="sec-flow-matching-transformer-2"><span class="t-zh">Flow-matching Transformer</span><span class="t-en">Flow-matching Transformer</span></h3><div class="pblk" id="p-flow-matching-transformer-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-1-1"><span class="en">(Mel spectrogram generator)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-1-1"><span class="zh">（图内模块标签：Mel 频谱生成器。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-2-1"><code>𝑧gen</code></div>
-<div class="eq" id="eq-flow-matching-transformer-2-2"><code>ො𝑦′</code></div>
-<div class="pblk" id="p-flow-matching-transformer-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-2-1"><span class="en">H e l l o</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-2-1"><span class="zh">（图内字符序列示意：H e l l o !）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-2-3"><code>!</code></div>
-<div class="pblk" id="p-flow-matching-transformer-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-3-1"><span class="en">I t</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-3-1"><span class="zh">（图内字符序列示意：I t ‘ s a g o o d d a y !）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-2-4"><code>‘</code></div>
-<div class="pblk" id="p-flow-matching-transformer-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-4-1"><span class="en">s a g o o d d a y</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-4-1"><span class="zh">（图内字符序列示意：I t ‘ s a g o o d d a y !）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-2-5"><code>!</code></div>
-<div class="pblk" id="p-flow-matching-transformer-2-5">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-5-1"><span class="en">&lt;F&gt; &lt;F&gt; &lt;F&gt; Filler tokens Audio mel spectrogram Ƹ𝑠aud Transcription of the audio 𝑦aud Hello!</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-5-1"><span class="zh">（图内标签：⟨F⟩×3 填充 token；音频 mel 频谱图 ŝ_aud；音频转写 y_aud「Hello!」。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-flow-matching-transformer-2-6">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-6-1"><span class="en">It’s a good day!</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-6-1"><span class="zh">（图内文本：It's a good day!）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-flow-matching-transformer-2-7">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-7-1"><span class="en">2 sec Audio prompt Text prompt 𝑦text Duration</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-7-1"><span class="zh">（图内标签：2 sec；Audio prompt；Text prompt y_text；Duration。）</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-flow-matching-transformer-2"><span class="t-zh">Flow-matching Transformer</span><span class="t-en">Flow-matching Transformer</span></h3>
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-flow-matching-transformer-2-1"><img class="fig" src="../assets/figures/2406.18009/fig-flow-matching-transformer-2-1.png" loading="lazy" alt="Fig. 1. An overview of the training (left) and the inference (right) processes of E2 TTS."><span class="cap-k">图</span><p class="en">Fig. 1. An overview of the training (left) and the inference (right) processes of E2 TTS.</p><p class="zh">图 1. E2 TTS 训练（左）与推理（右）过程总览。</p></div>
 <div class="pblk" id="p-flow-matching-transformer-2-8">
           <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-2-8-1"><span class="en">where ci represents the i-th character of the transcription.2 First, we extract its mel-filterbank features ˆs ∈RD×T , where D denotes the feature dimension and T represents the sequence length.</span></span> <span class="sent" data-sid="s-flow-matching-transformer-2-8-2"><span class="en">We then create an extended character sequence ˆy, where a special filler token ⟨F⟩is appended to y to make the length of ˆy equal to T.3 ˆy = (c1, c2, . . . , cM, ⟨F⟩, . . . , ⟨F⟩</span></span></p>
@@ -464,93 +404,33 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-e2-tts-x1-training"><span class="t-zh">声码器</span><span class="t-en">E2 TTS X1 - Training</span></h2><div class="pblk" id="p-e2-tts-x1-training-1">
-          <p class="en-lines"><span class="sent" data-sid="s-e2-tts-x1-training-1-1"><span class="en">E2 TTS X1 - Inference Training target Masked</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-e2-tts-x1-training-1-1"><span class="zh">（图内标签：E2 TTS X1 - Inference；Training target；Masked。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-e2-tts-x1-training-1"><code>𝑚⨀Ƹ𝑠</code></div></section>
+      <h2 class="sech lv1" id="sec-e2-tts-x1-training"><span class="t-zh">声码器</span><span class="t-en">E2 TTS X1 - Training</span></h2>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-flow-matching-transformer-3"><span class="t-zh">Flow-matching Transformer</span><span class="t-en">Flow-matching Transformer</span></h3><div class="pblk" id="p-flow-matching-transformer-3-1">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-1-1"><span class="en">(Mel spectrogram generator) Model input Masked</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-1-1"><span class="zh">模型输入。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-3-1"><code>(1 −𝑚)⨀Ƹ𝑠</code></div>
-<div class="pblk" id="p-flow-matching-transformer-3-2">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-2-1"><span class="en">It’s a good day!</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-2-1"><span class="zh">（图内文本：It's a good day!）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-flow-matching-transformer-3-3">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-3-1"><span class="en">2 sec</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-3-3-1"><span class="zh">（图内时长标注：2 sec。）</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-flow-matching-transformer-3"><span class="t-zh">Flow-matching Transformer</span><span class="t-en">Flow-matching Transformer</span></h3>
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-vocoder-2"><span class="t-zh">声码器</span><span class="t-en">Vocoder</span></h3><div class="pblk" id="p-vocoder-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-vocoder-2-1-1"><span class="en">Discarded</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-vocoder-2-1-1"><span class="zh">丢弃。</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-vocoder-2"><span class="t-zh">声码器</span><span class="t-en">Vocoder</span></h3></section>
 <section>
-      <h3 class="sech lv2" id="sec-flow-matching-transformer-4"><span class="t-zh">Flow-matching Transformer</span><span class="t-en">Flow-matching Transformer</span></h3><div class="pblk" id="p-flow-matching-transformer-4-1">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-1-1"><span class="en">(Mel spectrogram generator)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-1-1"><span class="zh">（图内模块标签：Mel 频谱生成器。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-4-1"><code>𝑧gen</code></div>
-<div class="eq" id="eq-flow-matching-transformer-4-2"><code>ො𝑦′</code></div>
-<div class="pblk" id="p-flow-matching-transformer-4-2">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-2-1"><span class="en">H o w a r e y o u</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-2-1"><span class="zh">（图内字符序列示意：H o w a r e y o u ?）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-4-3"><code>?</code></div>
-<div class="pblk" id="p-flow-matching-transformer-4-3">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-3-1"><span class="en">&lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt;</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-3-1"><span class="zh">&lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt;（图示填充 token 行。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-4-4"><code>ො𝑦</code></div>
-<div class="pblk" id="p-flow-matching-transformer-4-4">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-4-1"><span class="en">Filler tokens Audio mel spectrogram Ƹ𝑠 Transcription of the masked region of the audio 𝑦 How are you?</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-4-1"><span class="zh">&quot;How are you?&quot;（图示示例转录文字。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-flow-matching-transformer-4-5">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-5-1"><span class="en">Training data I t</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-5-1"><span class="zh">训练数据。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-4-5"><code>‘</code></div>
-<div class="pblk" id="p-flow-matching-transformer-4-6">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-6-1"><span class="en">s a g o o d d a y</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-6-1"><span class="zh">（图内字符序列示意：I t ‘ s a g o o d d a y !）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-flow-matching-transformer-4-6"><code>!</code></div>
-<div class="pblk" id="p-flow-matching-transformer-4-7">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-7-1"><span class="en">&lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; &lt;F&gt; Filler tokens Audio mel spectrogram Ƹ𝑠aud It’s a good day!</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-7-1"><span class="zh">（图内标签：⟨F⟩×10 填充 token；音频 mel 频谱图 ŝ_aud；「It's a good day!」。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-flow-matching-transformer-4-8">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-8-1"><span class="en">2 sec Audio prompt Text prompt 𝑦text Duration</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-8-1"><span class="zh">（图内标签：2 sec；Audio prompt；Text prompt y_text；Duration。）</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-flow-matching-transformer-4"><span class="t-zh">Flow-matching Transformer</span><span class="t-en">Flow-matching Transformer</span></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-flow-matching-transformer-4-1"><img class="fig" src="../assets/figures/2406.18009/fig-flow-matching-transformer-4-1.png" loading="lazy" alt="Fig. 2. An overview of the training (left) and the inference (right) processes of E2 TTS X1."><span class="cap-k">图</span><p class="en">Fig. 2. An overview of the training (left) and the inference (right) processes of E2 TTS X1.</p><p class="zh">图 2. E2 TTS X1 训练（左）与推理（右）过程总览。</p></div>
-<div class="pblk" id="p-flow-matching-transformer-4-9">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-9-1"><span class="en">I enjoyed a day in Besiktas, Istanbul.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-9-1"><span class="zh">&quot;I enjoyed a day in Besiktas, Istanbul.&quot;（示例原文，意为&quot;我在伊斯坦布尔的贝西克塔斯度过了愉快的一天&quot;。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-flow-matching-transformer-4-10">
-          <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-10-1"><span class="en">I enjoyed a day in (B EH1 SH IH0 K T AA0 SH), (IH0 S T AA1 N B UH0 L).</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-10-1"><span class="zh">&quot;I enjoyed a day in (B EH1 SH IH0 K T AA0 SH), (IH0 S T AA1 N B UH0 L).&quot;（其中括号内为音素序列。）</span></span></p>
-          
-        </div>
+
+
 <div class="cap" id="fig-flow-matching-transformer-4-2"><img class="fig" src="../assets/figures/2406.18009/fig-flow-matching-transformer-4-2.png" loading="lazy" alt="Fig. 3. Example of the transcription for E2 TTS X2 where words are replaced with phoneme sequences enclosed in parenthes"><span class="cap-k">图</span><p class="en">Fig. 3. Example of the transcription for E2 TTS X2 where words are replaced with phoneme sequences enclosed in parentheses.</p><p class="zh">图 3. E2 TTS X2 的转录示例：单词被替换为括号包裹的音素序列。</p></div>
 <div class="pblk" id="p-flow-matching-transformer-4-11">
           <p class="en-lines"><span class="sent" data-sid="s-flow-matching-transformer-4-11-1"><span class="en">trained to output a vector field vt with the conditional flow-matching objective LCFM.</span></span></p>
@@ -891,49 +771,33 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="eq" id="eq-3-5-1"><code>0.850</code></div>
-<div class="eq" id="eq-3-5-2"><code>SIM-o SIM-o</code></div>
-<div class="eq" id="eq-3-5-3"><code>0.825 4% 0.800 4%</code></div>
-<div class="eq" id="eq-3-5-4"><code>SIM-o WER WER</code></div>
-<div class="eq" id="eq-3-5-5"><code>3% 0.775 3% 2% 0.750 2% 1% 0.725 1% 0.850 0.850</code></div>
-<div class="eq" id="eq-3-5-6"><code>SIM-o</code></div>
-<div class="eq" id="eq-3-5-7"><code>0.825 0.825 0.800 4% 0.800</code></div>
-<div class="eq" id="eq-3-5-8"><code>SIM-o SIM-o WER</code></div>
-<div class="eq" id="eq-3-5-9"><code>0.775 3% 0.775 0.750 2% 0.750 0.725 1% 0.725 [4, 5) [5, 6) [6, 7) [7, 8) [8, 9) [9, 10]</code></div>
-<div class="eq" id="eq-3-5-10"><code>Audio Prompt Length (s)</code></div>
-<div class="eq" id="eq-3-5-11"><code>0% 0.700 0% [4, 5) [5, 6) [6, 7) [7, 8) [8, 9) [9, 10]</code></div>
-<div class="eq" id="eq-3-5-12"><code>Audio Prompt Length (s)</code></div>
-<div class="eq" id="eq-3-5-13"><code>0.700 0% 0.700 [4, 5) [5, 6) [6, 7) [7, 8) [8, 9) [9, 10]</code></div>
-<div class="pblk" id="p-3-5-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-5-4-1"><span class="en">Audio Prompt Length (s) (P2) E2 TTS (P1) E2 TTS (P3) E2 TTS</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-5-4-1"><span class="zh">（图横轴：Audio Prompt Length (s)；图例：(P2) E2 TTS / (P1) E2 TTS / (P3) E2 TTS。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-3-5-1"><img class="fig" src="../assets/figures/2406.18009/fig-3-5-1.png" loading="lazy" alt="Fig. 5. The results of WER and SIM, shown in buckets according to the audio prompt length. The left, middle, and right p"><span class="cap-k">图</span><p class="en">Fig. 5. The results of WER and SIM, shown in buckets according to the audio prompt length. The left, middle, and right plots show E2 TTS with (P1), (P2), and (P3) configurations, respectively.</p><p class="zh">图 5. 按音频提示长度分桶展示的 WER 和 SIM 结果。左、中、右图分别为 (P1)、(P2)、(P3) 配置下的 E2 TTS。</p></div>
-<div class="eq" id="eq-3-5-14"><code>5%</code></div>
-<div class="pblk" id="p-3-5-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-5-5-1"><span class="en">(P1) - E2 TTS (P2) - E2 TTS (P3) - E2 TTS</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-5-5-1"><span class="zh">（图例：(P1) - E2 TTS / (P2) - E2 TTS / (P3) - E2 TTS。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-5-15"><code>4%</code></div>
-<div class="eq" id="eq-3-5-16"><code>WER</code></div>
-<div class="eq" id="eq-3-5-17"><code>3% 2% 1% 0.7 0.8 0.9 1.0 1.1 1.2 1.3</code></div>
-<div class="eq" id="eq-3-5-18"><code>Speech Rate</code></div>
-<div class="eq" id="eq-3-5-19"><code>0.72 0.70 0.68</code></div>
-<div class="eq" id="eq-3-5-20"><code>SIM-o</code></div>
-<div class="eq" id="eq-3-5-21"><code>0.66</code></div>
-<div class="pblk" id="p-3-5-6">
-          <p class="en-lines"><span class="sent" data-sid="s-3-5-6-1"><span class="en">(P1) - E2 TTS (P2) - E2 TTS (P3) - E2 TTS</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-5-6-1"><span class="zh">（图例：(P1) - E2 TTS / (P2) - E2 TTS / (P3) - E2 TTS。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-5-22"><code>0.64 0.62 0.60 0.7 0.8 0.9 1.0 1.1 1.2 1.3</code></div>
-<div class="pblk" id="p-3-5-7">
-          <p class="en-lines"><span class="sent" data-sid="s-3-5-7-1"><span class="en">Speech Rate</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-5-7-1"><span class="zh">（图纵轴：Speech Rate（语速）。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-3-5-2"><img class="fig" src="../assets/figures/2406.18009/fig-3-5-2.png" loading="lazy" alt="Fig. 6. WER and SIM-o of different speech rates between 0.7 to 1.3 for E2TTS with (P1), (P2), and (P3) configurations."><span class="cap-k">图</span><p class="en">Fig. 6. WER and SIM-o of different speech rates between 0.7 to 1.3 for E2TTS with (P1), (P2), and (P3) configurations.</p><p class="zh">图 6. 在 (P1)、(P2)、(P3) 配置下，语速在 0.7 到 1.3 之间变化时 E2 TTS 的 WER 和 SIM-o。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-3-6"><span class="secnum">3.6</span> <span class="t-zh">3.6 系统行为分析</span><span class="t-en">Analysis of the system behavior</span></h3><div class="pblk" id="p-3-6-1">

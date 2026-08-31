@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -601,12 +601,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="eq" id="eq-4-4-1"><code>0.83 0.19 0.96 0.07 0.17 0.81 0.04 0.93</code></div>
-<div class="pblk" id="p-4-4-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-1"><span class="en">standard accented standard accented (a) CTA-TTS (b) S-DiT</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-1"><span class="zh">此外 MegaTTS 3 的 CMOS 与 SMOS 均高于 CTA-TTS，说明语音质量与说话人相似度显著提升；2）其次评估模型能否精确控制「标准口音」（standard accented）。（图：standard accented 0.83/0.19/0.96/0.07/0.17/0.81/0.04/0.93，(a) CTA-TTS 与 (b) S-DiT 对比。）</span></span></p>
-          
-        </div>
+
+
 <div class="cap" id="fig-4-4-1"><img class="fig" src="../assets/figures/2502.18924/fig-4-4-1.png" loading="lazy" alt="Figure 2: The confusion matrices between the perceived and intended accent categories of synthesized speech. The X-axis "><span class="cap-k">图</span><p class="en">Figure 2: The confusion matrices between the perceived and intended accent categories of synthesized speech. The X-axis and Y-axis represent the intended and perceived categories, respectively.</p><p class="zh">图 2：合成语音的感知口音类别与预期口音类别之间的混淆矩阵。X 轴与 Y 轴分别表示预期类别与感知类别。</p></div>
 <div class="pblk" id="p-4-4-3">
           <p class="en-lines"><span class="sent" data-sid="s-4-4-3-1"><span class="en">the accent types of the generated speeches.</span></span> <span class="sent" data-sid="s-4-4-3-2"><span class="en">We follow CTA-TTS to conduct the intensity classification experiment (Liu et al., 2024a).</span></span> <span class="sent" data-sid="s-4-4-3-3"><span class="en">At run-time, we generate speeches with two accent types, and the listeners are instructed to classify the perceived accent categories, including “standard” and “accented”.</span></span> <span class="sent" data-sid="s-4-4-3-4"><span class="en">Figure 2 shows that our MegaTTS 3 significantly surpasses CTA-TTS in terms of accent controllability.</span></span></p>
@@ -1116,11 +1112,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       <h2 class="sech lv1" id="sec-F"><span class="secnum">F</span> <span class="t-zh">附录 F：注意力矩阵可视化</span><span class="t-en">Visualization of Attention Matrices</span></h2>
 <div class="cap" id="fig-F-1"><img class="fig" src="../assets/figures/2502.18924/fig-F-1.png" loading="lazy" alt="Figure 4: Sentence-level duration control."><span class="cap-k">图</span><p class="en">Figure 4: Sentence-level duration control.</p><p class="zh">图 4：句级时长控制。</p></div>
 <div class="cap" id="fig-F-2"><img class="fig" src="../assets/figures/2502.18924/fig-F-2.png" loading="lazy" alt="Figure 5: Phoneme-level duration control."><span class="cap-k">图</span><p class="en">Figure 5: Phoneme-level duration control.</p><p class="zh">图 5：音素级时长控制。</p></div>
-<div class="pblk" id="p-F-2">
-          <p class="en-lines"><span class="sent" data-sid="s-F-2-1"><span class="en">(a) Layer 8 with different timesteps.</span></span> <span class="sent" data-sid="s-F-2-2"><span class="en">(b) Layer 16 with different timesteps.</span></span> <span class="sent" data-sid="s-F-2-3"><span class="en">(c) Layer 27 with different timesteps.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-F-2-1"><span class="zh">（本句为图 6 子图标题：）(a) 第 8 层在不同时间步下的情况。</span></span><span class="sent" data-sid="s-F-2-2"><span class="zh">（本句为图 6 子图标题：）(b) 第 16 层在不同时间步下的情况。</span></span><span class="sent" data-sid="s-F-2-3"><span class="zh">（本句为图 6 子图标题：）(c) 第 27 层在不同时间步下的情况。</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-F-3"><img class="fig" src="../assets/figures/2502.18924/fig-F-3.png" loading="lazy" alt="Figure 6: Visualization of Attention Matrices from different layers in MegaTTS 3."><span class="cap-k">图</span><p class="en">Figure 6: Visualization of Attention Matrices from different layers in MegaTTS 3.</p><p class="zh">图 6：MegaTTS 3 不同层的注意力矩阵可视化。</p></div>
 <div class="pblk" id="p-F-3">
           <p class="en-lines"><span class="sent" data-sid="s-F-3-1"><span class="en">tention matrices remain identical.</span></span> <span class="sent" data-sid="s-F-3-2"><span class="en">In other words, the function of each layer stays consistent across timesteps; 2) the functions of the transformer layers can be categorized into three types.</span><button class="mk feat" data-sid="s-F-3-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-F-3-3"><span class="en">As shown in Figure 6 (a), the bottom layers handle text and audio feature extraction; in Figure 6 (b), the middle layers focus on speech-text alignment; and in</span></span></p>

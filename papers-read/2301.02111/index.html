@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -366,71 +366,43 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="zh">对于来自第二个到最后一个量化器的离散 token c_{:,j}（j∈[2,8]），我们训练一个非自回归（NAR）语言模型。</span></span><span class="sent" data-sid="s-4-2-4-2"><span class="zh">由于 token 之间在 NAR 方式下无法相互访问，为约束说话人身份，声学提示矩阵 C̃ 被用作声学提示。</span></span><span class="sent" data-sid="s-4-2-4-3"><span class="zh">因此，该模型是 NAR 的：（此处抽取混入 Figure 3 的图内标注残片「attend to all tokens 𝒄₀,ⱼ 𝒄₁,ⱼ … 𝒄_T,ⱼ」，意指 NAR 注意力覆盖整行 token。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-4-2-4"><code>𝒋−𝟏 𝒄𝟏</code></div>
-<div class="eq" id="eq-4-2-5"><code>𝒋−𝟏</code></div>
-<div class="eq" id="eq-4-2-6"><code>෩𝑪 𝒙</code></div>
-<div class="eq" id="eq-4-2-7"><code>𝒄𝟎</code></div>
-<div class="eq" id="eq-4-2-8"><code>𝒙</code></div>
-<div class="eq" id="eq-4-2-9"><code>෩𝑪</code></div>
-<div class="eq" id="eq-4-2-10"><code>𝒙</code></div>
-<div class="eq" id="eq-4-2-11"><code>𝒄𝟎,𝒋 𝒄𝟏,𝒋 𝒄𝑻,𝒋 …</code></div></section>
+
+
+
+
+
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-nar-transformer-decoder"><span class="t-zh">NAR Transformer 解码器（Figure 3 图内标注残块）</span><span class="t-en">NAR Transformer Decoder</span></h3><div class="eq" id="eq-nar-transformer-decoder-1"><code>෩𝑪</code></div>
-<div class="pblk" id="p-nar-transformer-decoder-1">
-          <p class="en-lines"><span class="sent" data-sid="s-nar-transformer-decoder-1-1"><span class="en">EnCodec G2P</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-nar-transformer-decoder-1-1"><span class="zh">（此处为 Figure 3 图内标注的抽取残块：EnCodec、G2P、Text；AR：𝑐_i 只注意左侧。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-nar-transformer-decoder-2"><code>𝒋−𝟏</code></div>
-<div class="eq" id="eq-nar-transformer-decoder-3"><code>𝒄𝟎</code></div>
-<div class="eq" id="eq-nar-transformer-decoder-4"><code>𝒋−𝟏</code></div>
-<div class="pblk" id="p-nar-transformer-decoder-2">
-          <p class="en-lines"><span class="sent" data-sid="s-nar-transformer-decoder-2-1"><span class="en">Text</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-nar-transformer-decoder-2-1"><span class="zh">（此处为 Figure 3 图内标注的抽取残块：EnCodec、G2P、Text；AR：𝑐_i 只注意左侧。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-nar-transformer-decoder-5"><code>𝒄𝟏</code></div>
-<div class="pblk" id="p-nar-transformer-decoder-3">
-          <p class="en-lines"><span class="sent" data-sid="s-nar-transformer-decoder-3-1"><span class="en">AR: 𝑐𝑖only attends to left</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-nar-transformer-decoder-3-1"><span class="zh">（此处为 Figure 3 图内标注的抽取残块：EnCodec、G2P、Text；AR：𝑐_i 只注意左侧。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-nar-transformer-decoder-6"><code>𝒙 ෩𝑪</code></div>
-<div class="eq" id="eq-nar-transformer-decoder-7"><code>𝒄𝟎 𝒄𝟏</code></div>
-<div class="eq" id="eq-nar-transformer-decoder-8"><code>𝒙</code></div>
-<div class="eq" id="eq-nar-transformer-decoder-9"><code>෩𝑪</code></div>
-<div class="eq" id="eq-nar-transformer-decoder-10"><code>𝒙</code></div>
-<div class="pblk" id="p-nar-transformer-decoder-4">
-          <p class="en-lines"><span class="sent" data-sid="s-nar-transformer-decoder-4-1"><span class="en">G2P</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-nar-transformer-decoder-4-1"><span class="zh">（此处为 Figure 3 图内标注的抽取残块：EnCodec、G2P、Text；AR：𝑐_i 只注意左侧。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-nar-transformer-decoder-11"><code>෤𝒄𝟎,𝟏</code></div>
-<div class="eq" id="eq-nar-transformer-decoder-12"><code>𝒄𝟎</code></div>
-<div class="eq" id="eq-nar-transformer-decoder-13"><code>𝒄𝟎,𝟏:𝒋−𝟏 𝒄𝟏,𝟏:𝒋−𝟏 𝒄𝑻,𝟏:𝒋−𝟏</code></div>
-<div class="pblk" id="p-nar-transformer-decoder-5">
-          <p class="en-lines"><span class="sent" data-sid="s-nar-transformer-decoder-5-1"><span class="en">NAR ID 𝒋 &lt;EOS&gt;</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-nar-transformer-decoder-5-1"><span class="zh">（Figure 3 图内标注：NAR、第 j 个码本 ID、&lt;EOS&gt;。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-nar-transformer-decoder-14"><code>𝒄𝟏,𝟏 𝒄𝟐,𝟏</code></div>
-<div class="eq" id="eq-nar-transformer-decoder-15"><code>𝒄𝟎,𝟏</code></div></section>
+      <h3 class="sech lv2" id="sec-nar-transformer-decoder"><span class="t-zh">NAR Transformer 解码器（Figure 3 图内标注残块）</span><span class="t-en">NAR Transformer Decoder</span></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-ar-transformer-decoder"><span class="t-zh">AR Transformer 解码器（Figure 3 图内标注残块）</span><span class="t-en">AR Transformer Decoder</span></h3><div class="eq" id="eq-ar-transformer-decoder-1"><code>෤𝒄𝟎,𝟏 ෤𝒄𝑻′,𝟏 …</code></div>
-<div class="eq" id="eq-ar-transformer-decoder-2"><code>𝒄𝟏,𝟏 𝒄𝐓,𝟏</code></div>
-<div class="eq" id="eq-ar-transformer-decoder-3"><code>𝒄𝟎,𝟏</code></div>
-<div class="pblk" id="p-ar-transformer-decoder-1">
-          <p class="en-lines"><span class="sent" data-sid="s-ar-transformer-decoder-1-1"><span class="en">Text EnCodec</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-ar-transformer-decoder-1-1"><span class="zh">（Figure 3 图内标注：生成目标 𝒄_T,₁、Text、EnCodec。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-ar-transformer-decoder-4"><code>𝒄𝟏</code></div></section>
+      <h3 class="sech lv2" id="sec-ar-transformer-decoder"><span class="t-zh">AR Transformer 解码器（Figure 3 图内标注残块）</span><span class="t-en">AR Transformer Decoder</span></h3>
+
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-conditional-codec-language-model"><span class="t-zh">条件 Codec 语言建模（图注与公式残块）</span><span class="t-en">Conditional Codec Language Modeling</span></h3><div class="pblk" id="p-conditional-codec-language-model-1">
-          <p class="en-lines"><span class="sent" data-sid="s-conditional-codec-language-model-1-1"><span class="en">Allow attend Disallow attend</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-conditional-codec-language-model-1-1"><span class="zh">（Figure 3 图内图例：Allow attend 允许注意 / Disallow attend 禁止注意。）</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-conditional-codec-language-model"><span class="t-zh">条件 Codec 语言建模（图注与公式残块）</span><span class="t-en">Conditional Codec Language Modeling</span></h3>
 <div class="cap" id="fig-conditional-codec-language-model-1"><img class="fig" src="../assets/figures/2301.02111/fig-conditional-codec-language-model-1.png" loading="lazy" alt="Figure 3: The structure of the conditional codec language modeling, which is built in a hierarchical manner. In practice"><span class="cap-k">图</span><p class="en">Figure 3: The structure of the conditional codec language modeling, which is built in a hierarchical manner. In practice, the NAR decoder will be called seven times to generate codes in seven quantizers.</p><p class="zh">图 3：条件 codec 语言建模的结构，以层级方式构建。实际中，NAR 解码器会被调用 7 次，生成 7 个量化器上的码。</p></div>
 <div class="pblk" id="p-conditional-codec-language-model-2">
           <p class="en-lines"><span class="sent" data-sid="s-conditional-codec-language-model-2-1"><span class="en">conditioned on the phoneme sequence x, the acoustic prompt ˜C and the predicted acoustic tokens belong to the previous codebooks C:,&lt;j:</span></span></p>
@@ -732,11 +704,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-6-1"><span class="zh">（表格行，对比 VALL-E：YourTTS* 3.70±0.09/-0.23；VALL-E 3.81±0.09/0.00；GroundTruth 4.29±0.09/-0.04。）与 ground truth 对比时的分数差距，主要因为 VCTK 中平均句长更短且部分 ground truth 语音本身带噪声。</span></span><span class="sent" data-sid="s-5-3-6-2"><span class="zh">在说话人相似度上，VCTK 更具挑战性，因为它包含各种口音的说话人，而训练数据和 LibriSpeech 测试数据都不包含口音多样的说话人。（本句末尾为 Figure 4 图内文本的抽取残留：一段 LibriSpeech 样例「夜幕降临后，黄色路灯会在烟花巷各处零零星星亮起」，两个版本的语序不同，展示多样性。）</span></span></p>
           
         </div>
-<div class="pblk" id="p-5-3-7">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-7-1"><span class="en">I must do something about it I must do something about it (b) A VCTK sample: I must do something about it.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-7-1"><span class="zh">（Figure 4 图内文本的抽取残留：一条 VCTK 样例「I must do something about it」（我必须做点什么），两次合成的重音位置不同。）</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-5-3-1"><img class="fig" src="../assets/figures/2301.02111/fig-5-3-1.png" loading="lazy" alt="Figure 4: Diversity analysis of VALL-E. Each utterance is synthesized two times with different random seeds. We can obse"><span class="cap-k">图</span><p class="en">Figure 4: Diversity analysis of VALL-E. Each utterance is synthesized two times with different random seeds. We can observe substantial diversity of the two outputs regarding the same input.</p><p class="zh">图 4：VALL-E 的多样性分析。每条语句用不同的随机种子合成两次。可以观察到，对同一输入，两次输出存在明显的多样性。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-5-4"><span class="secnum">5.4</span> <span class="t-zh">定性分析</span><span class="t-en">Qualitative Analysis</span></h3><div class="pblk" id="p-5-4-1">

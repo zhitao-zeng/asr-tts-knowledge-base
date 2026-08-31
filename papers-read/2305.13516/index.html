@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -215,11 +215,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-1-3-1"><span class="zh">†Apple。</span></span><span class="sent" data-sid="s-1-3-2"><span class="zh">在 Meta AI 工作期间完成。‡Character.AI。</span></span><span class="sent" data-sid="s-1-3-3"><span class="zh">在 Meta AI 工作期间完成。§Meta AI 与耶路撒冷希伯来大学。¶Open AI。</span></span><span class="sent" data-sid="s-1-3-4"><span class="zh">在 Meta AI 工作期间完成。</span></span></p>
           
         </div>
-<div class="pblk" id="p-1-4">
-          <p class="en-lines"><span class="sent" data-sid="s-1-4-1"><span class="en">Speech-to-Text, Text-to-Speech, Language ID Language ID</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-4-1"><span class="zh">语音转文本、文本转语音、语种识别 语种识别</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-1-1"><img class="fig" src="../assets/figures/2305.13516/fig-1-1.png" loading="lazy" alt="Figure 1: Illustration of where the languages supported by MMS are spoken around the world: MMS models support speech-to"><span class="cap-k">图</span><p class="en">Figure 1: Illustration of where the languages supported by MMS are spoken around the world: MMS models support speech-to-text and text-to-speech for 1,107 languages as well as language identification for 4,017 languages.</p><p class="zh">图 1：MMS 所支持语言在全球分布的示意图：MMS 模型支持 1,107 种语言的语音转文本和文本转语音，以及 4,017 种语言的语种识别。</p></div>
 <div class="pblk" id="p-1-5">
           <p class="en-lines"><span class="sent" data-sid="s-1-5-1"><span class="en">progress, prominent recent work still only supports about 100 languages [Radford et al., 2022, Zhang et al., 2023a].</span></span></p>
@@ -292,56 +288,24 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-1"><span class="zh">我们还使用 MMS-lab 的无标注版本进行预训练和语种识别。</span></span><span class="sent" data-sid="s-3-2-2"><span class="zh">它覆盖更多语言，因为我们还可以使用来自数据源的、没有文本的无标注音频（MMS-lab-U；1,362 种语言；55K 小时）。</span></span><span class="sent" data-sid="s-3-2-3"><span class="zh">图 2 将这些数据集与现有语料库进行对比。</span></span><span class="sent" data-sid="s-3-2-4"><span class="zh">所支持语言的完整列表见</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-1"><code>106</code></div>
-<div class="eq" id="eq-3-2"><code>105</code></div>
-<div class="pblk" id="p-3-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-1"><span class="en">MLS MMS-lab # hours CommonVoice</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-1"><span class="zh">MLS MMS-lab # 小时 CommonVoice</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-3"><code>104</code></div>
-<div class="pblk" id="p-3-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-1"><span class="en">CMU Wilderness BABEL VoxPopuli</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-1"><span class="zh">CMU Wilderness BABEL VoxPopuli</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-4"><code>103</code></div>
-<div class="pblk" id="p-3-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-5-1"><span class="en">FLEURS M-AILABS</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-5-1"><span class="zh">FLEURS M-AILABS 10 100 # 语言数 (a) 标注数据集。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-5"><code>10 100 1,000 10,000</code></div>
-<div class="pblk" id="p-3-6">
-          <p class="en-lines"><span class="sent" data-sid="s-3-6-1"><span class="en"># languages (a) Labeled Datasets.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-6-1"><span class="zh">FLEURS M-AILABS 10 100 # 语言数 (a) 标注数据集。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-6"><code>106</code></div>
-<div class="pblk" id="p-3-7">
-          <p class="en-lines"><span class="sent" data-sid="s-3-7-1"><span class="en">VoxPopuli</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-7-1"><span class="zh">无转写的多语言数据集包括覆盖 107 种语言的 VoxLingua107 [Valk and Alumäe, 2020]，以及包含大量欧洲语言无标注数据的 VoxPopuli [Wang et al., 2021]。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-7"><code>105</code></div>
-<div class="pblk" id="p-3-8">
-          <p class="en-lines"><span class="sent" data-sid="s-3-8-1"><span class="en">MMS-lab-U # hours Dhwani MMS-unlab</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-8-1"><span class="zh">MMS-lab-U # 小时 Dhwani MMS-unlab</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-8"><code>104</code></div>
-<div class="pblk" id="p-3-9">
-          <p class="en-lines"><span class="sent" data-sid="s-3-9-1"><span class="en">VoxLingua107</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-9-1"><span class="zh">VoxLingua107</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-9"><code>103</code></div>
-<div class="eq" id="eq-3-10"><code>10 100 1,000 10,000</code></div>
-<div class="pblk" id="p-3-10">
-          <p class="en-lines"><span class="sent" data-sid="s-3-10-1"><span class="en"># languages (b) Unlabeled Datasets.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-10-1"><span class="zh">10 100 # 语言数 (b) 无标注数据集。</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-3-1"><img class="fig" src="../assets/figures/2305.13516/fig-3-1.png" loading="lazy" alt="Figure 2: Dataset Overview. MMS-lab, MMS-lab-U and MMS-unlab compared to existing multilingual speech corpora in terms o"><span class="cap-k">图</span><p class="en">Figure 2: Dataset Overview. MMS-lab, MMS-lab-U and MMS-unlab compared to existing multilingual speech corpora in terms of the supported languages and dataset size. We compare to BABEL [Gales et al., 2014], CMU Wilderness [Black, 2019], CommonVoice [Ardila et al., 2020], Dhwani [Javed et al., 2022], FLEURS [Conneau et al., 2022], M-AILABS [M-AILABS, 2018], MLS [Pratap et al., 2020c], VoxLingua107 [Valk and Alumäe, 2020], and VoxPopuli [Wang et al., 2021] .</p><p class="zh">图 2：数据集概览。MMS-lab、MMS-lab-U 和 MMS-unlab 与现有多语言语音语料库在支持语言数和数据规模上的对比。对比对象包括 BABEL [Gales et al., 2014]、CMU Wilderness [Black, 2019]、CommonVoice [Ardila et al., 2020]、Dhwani [Javed et al., 2022]、FLEURS [Conneau et al., 2022]、M-AILABS [M-AILABS, 2018]、MLS [Pratap et al., 2020c]、VoxLingua107 [Valk and Alumäe, 2020] 和 VoxPopuli [Wang et al., 2021]。</p></div>
 <div class="pblk" id="p-3-11">
           <p class="en-lines"><span class="sent" data-sid="s-3-11-1"><span class="en">languages supported is available at https://github.com/facebookresearch/fairseq/tree/ main/examples/mms.</span></span></p>
@@ -470,26 +434,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-text-normalization-4-1"><span class="zh">10我们从相应的 Unicode 类别获取初始标点字符集合。</span></span></p>
           
         </div>
-<div class="pblk" id="p-text-normalization-5">
-          <p class="en-lines"><span class="sent" data-sid="s-text-normalization-5-1"><span class="en">1This morning Tom was going to school. 2Suddenly, it started raining heavily. 3Tom had to go back home.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-text-normalization-5-1"><span class="zh">1This morning Tom was going to school. 2Suddenly, it started raining heavily. 3Tom had to go back home.</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-text-normalization-6">
-          <p class="en-lines"><span class="sent" data-sid="s-text-normalization-6-1"><span class="en">Alignment Step Splits the long audio file into verse level segments 1This morning Tom was going to school.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-text-normalization-6-1"><span class="zh">对齐步骤将长音频文件切分为经节级片段 1This morning Tom was going to school.</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-text-normalization-7">
-          <p class="en-lines"><span class="sent" data-sid="s-text-normalization-7-1"><span class="en">2Suddenly, it started raining heavily.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-text-normalization-7-1"><span class="zh">2Suddenly, it started raining heavily.</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-text-normalization-8">
-          <p class="en-lines"><span class="sent" data-sid="s-text-normalization-8-1"><span class="en">3Tom had to go back home.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-text-normalization-8-1"><span class="zh">3Tom had to go back home.</span></span></p>
-          
-        </div>
+
+
+
+
 <div class="cap" id="fig-text-normalization-1"><img class="fig" src="../assets/figures/2305.13516/fig-text-normalization-1.png" loading="lazy" alt="Figure 3: Illustration of Data Alignment. Forced alignment enables segmenting audio recordings and corresponding text in"><span class="cap-k">图</span><p class="en">Figure 3: Illustration of Data Alignment. Forced alignment enables segmenting audio recordings and corresponding text into smaller segments that can be used to train machine learning models.</p><p class="zh">图 3：数据对齐示意图。强制对齐能够将音频录音和对应文本切分为更小的片段，用于训练机器学习模型。</p></div>
 <div class="pblk" id="p-text-normalization-9">
           <p class="en-lines"><span class="sent" data-sid="s-text-normalization-9-1"><span class="en">listened to a few instances of each recording to verify whether the text in the brackets is present in the audio or not.</span></span> <span class="sent" data-sid="s-text-normalization-9-2"><span class="en">In many cases, we noticed that the text in the brackets was not spoken and we removed the brackets and the text within.</span></span></p>
@@ -532,33 +480,17 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="eq" id="eq-efficient-forced-alignment-on-gp-1"><code>100</code></div>
-<div class="pblk" id="p-efficient-forced-alignment-on-gp-2">
-          <p class="en-lines"><span class="sent" data-sid="s-efficient-forced-alignment-on-gp-2-1"><span class="en">Wall clock time (sec)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-efficient-forced-alignment-on-gp-2-1"><span class="zh">墙上时钟时间（秒）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-efficient-forced-alignment-on-gp-2"><code>80</code></div>
-<div class="eq" id="eq-efficient-forced-alignment-on-gp-3"><code>60</code></div>
-<div class="eq" id="eq-efficient-forced-alignment-on-gp-4"><code>40</code></div>
-<div class="eq" id="eq-efficient-forced-alignment-on-gp-5"><code>20</code></div>
-<div class="pblk" id="p-efficient-forced-alignment-on-gp-3">
-          <p class="en-lines"><span class="sent" data-sid="s-efficient-forced-alignment-on-gp-3-1"><span class="en">ctc-seg (CPU) Flashlight (CPU) MMS (GPU)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-efficient-forced-alignment-on-gp-3-1"><span class="zh">（图例：ctc-seg (CPU) / Flashlight (CPU) / MMS (GPU)。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-efficient-forced-alignment-on-gp-6"><code>0 100 500 1,000 2,000 0</code></div>
-<div class="pblk" id="p-efficient-forced-alignment-on-gp-4">
-          <p class="en-lines"><span class="sent" data-sid="s-efficient-forced-alignment-on-gp-4-1"><span class="en">Input audio length (sec)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-efficient-forced-alignment-on-gp-4-1"><span class="zh">（图横轴：输入音频长度 Input audio length (sec)。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-efficient-forced-alignment-on-gp-1"><img class="fig" src="../assets/figures/2305.13516/fig-efficient-forced-alignment-on-gp-1.png" loading="lazy" alt="Figure 4: Efficiency of Forced Alignment Implementations. The MMS implementation runs on GPU and can process long audio "><span class="cap-k">图</span><p class="en">Figure 4: Efficiency of Forced Alignment Implementations. The MMS implementation runs on GPU and can process long audio sequences in reasonable time compared to CPU alternatives.</p><p class="zh">图 4：强制对齐实现的效率。MMS 的实现在 GPU 上运行，相比 CPU 替代方案，能在合理时间内处理长音频序列。</p></div>
-<div class="pblk" id="p-efficient-forced-alignment-on-gp-5">
-          <p class="en-lines"><span class="sent" data-sid="s-efficient-forced-alignment-on-gp-5-1"><span class="en">some respectable house provided text i shall rent a room in some respectable house some respectable house i shall rent a room in some respectable house</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-efficient-forced-alignment-on-gp-5-1"><span class="zh">some respectable house provided text i shall rent a room in some respectable house some respectable house i shall rent a room in some respectable house</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-efficient-forced-alignment-on-gp-2"><img class="fig" src="../assets/figures/2305.13516/fig-efficient-forced-alignment-on-gp-2.png" loading="lazy" alt="Figure 5: Illustration of the ⟨∗⟩Token in Forced Alignment. We show the text to which we would like to align the audio a"><span class="cap-k">图</span><p class="en">Figure 5: Illustration of the ⟨∗⟩Token in Forced Alignment. We show the text to which we would like to align the audio at the top and what is actually spoken at the bottom in italics. Left: erroneous alignment when the provided text is incomplete. The word some is aligned incorrectly. Right: using ⟨∗⟩token at the beginning enables correct alignment of the provided text.</p><p class="zh">图 5：强制对齐中 ⟨∗⟩ token 的示意图。顶部展示我们希望对齐音频的目标文本，底部斜体展示实际朗读的内容。左：当所给文本不完整时的错误对齐——单词 some 被错误对齐。右：在开头使用 ⟨∗⟩ token 使所给文本得以正确对齐。</p></div>
 <div class="pblk" id="p-efficient-forced-alignment-on-gp-6">
           <p class="en-lines"><span class="sent" data-sid="s-efficient-forced-alignment-on-gp-6-1"><span class="en">sequences at high speed.</span></span> <span class="sent" data-sid="s-efficient-forced-alignment-on-gp-6-2"><span class="en">Appendix A illustrates the algorithm and an implementation is available as part of TorchAudio [Yang et al., 2021].11</span></span></p>
@@ -714,28 +646,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-1-7-4-1"><span class="zh">最终数据集包含 44.7K 小时的配对语音数据，其中 36.8K 小时用于训练（82.3%），3.5K 小时用于开发（7.8%），4.4K 小时用于测试（9.9%）。</span></span><span class="sent" data-sid="s-3-1-7-4-2"><span class="zh">对每种语言，训练集平均 32 小时（stddev=19），开发集平均 3.1 小时（stddev=1.8），测试集平均 3.9 小时（stddev=2.3）。</span></span><span class="sent" data-sid="s-3-1-7-4-3"><span class="zh">图 6 展示了各语言的数据分布。</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-1-7-1"><code>128 64</code></div>
-<div class="eq" id="eq-3-1-7-2"><code>Luxembourgish North Ndebele</code></div>
-<div class="eq" id="eq-3-1-7-3"><code>32</code></div>
-<div class="eq" id="eq-3-1-7-4"><code>Pampanga Kimbundu Shambala</code></div>
-<div class="eq" id="eq-3-1-7-5"><code>16</code></div>
-<div class="pblk" id="p-3-1-7-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-1-7-5-1"><span class="en">Number of hours Taabwa Urhobo Finnish Danish Fuliiru Welsh Igala</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-1-7-5-1"><span class="zh">（图表纵轴：小时数；语种：Taabwa / Urhobo / Finnish / Danish / Fuliiru / Welsh / Igala。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-1-7-6"><code>8 4 2 1 0.5 0.25</code></div>
-<div class="pblk" id="p-3-1-7-6">
-          <p class="en-lines"><span class="sent" data-sid="s-3-1-7-6-1"><span class="en">Minangkabau Ngambay Slovenian Sena Japanese Dhundari Tamil Czech Bakhtiari Ghomálá' Italian Morisyen Maranao Kirghiz Nyanja Gofa Tulu Halbi</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-1-7-6-1"><span class="zh">（语种续：Minangkabau / Ngambay / Slovenian / Sena / Japanese / Dhundari / Tamil / Czech / Bakhtiari / Ghomálá' / Italian / Morisyen / Maranao / Kirghiz / Nyanja / Gofa / Tulu / Halbi。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-1-7-7"><code>0 500 1000 1500 2000 2500 3000 3500</code></div>
-<div class="pblk" id="p-3-1-7-7">
-          <p class="en-lines"><span class="sent" data-sid="s-3-1-7-7-1"><span class="en">Languages</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-1-7-7-1"><span class="zh">61 128 256 512 模型支持的语言数量</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-3-1-7-1"><img class="fig" src="../assets/figures/2305.13516/fig-3-1-7-1.png" loading="lazy" alt="Figure 7: MMS-unlab: Amount of Speech Data across Languages. We show the size of the training data sets and name a few o"><span class="cap-k">图</span><p class="en">Figure 7: MMS-unlab: Amount of Speech Data across Languages. We show the size of the training data sets and name a few of the 3,809 languages.</p><p class="zh">图 7：MMS-unlab：各语言的语音数据量。我们展示训练数据集的规模，并列出 3,809 种语言中的一部分名称。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-3-2"><span class="secnum">3.2</span> <span class="t-zh">3,809 种语言的非配对数据（MMS-unlab） 数据来源。</span><span class="t-en">Unpaired Data for 3,809 Languages (MMS-unlab) Data Source.</span></h3><div class="pblk" id="p-3-2-1">
@@ -772,40 +692,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-2-1"><span class="zh">16https://globalrecordings.net/</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-3-2"><code>20</code></div>
-<div class="pblk" id="p-3-3-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-3-1"><span class="en">CMU Wilderness MMS-lab</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-3-1"><span class="zh">CMU Wilderness MMS-lab</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-3-3"><code>15</code></div>
-<div class="pblk" id="p-3-3-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-4-1"><span class="en">CER CER</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-4-1"><span class="zh">CER CER</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-3-4"><code>10</code></div>
-<div class="eq" id="eq-3-3-5"><code>5</code></div>
-<div class="pblk" id="p-3-3-5">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-5-1"><span class="en">por eng tel</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-5-1"><span class="zh">por eng tel</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
 <div class="cap" id="fig-3-3-1"><img class="fig" src="../assets/figures/2305.13516/fig-3-3-1.png" loading="lazy" alt="Figure 8: MMS-lab vs. CMU Wilderness. Character Error Rate of ASR models in English (eng), Portuguese (por) and Telugu ("><span class="cap-k">图</span><p class="en">Figure 8: MMS-lab vs. CMU Wilderness. Character Error Rate of ASR models in English (eng), Portuguese (por) and Telugu (tel) on the FLEURS dev set.</p><p class="zh">图 8：MMS-lab 与 CMU Wilderness 对比。英语（eng）、葡萄牙语（por）和泰卢固语（tel）ASR 模型在 FLEURS 开发集上的字错误率。</p></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-3-3-1"><span class="secnum">3.3.1</span> <span class="t-zh">CMU Wilderness 数据集</span><span class="t-en">CMU Wilderness Dataset</span></h3><div class="pblk" id="p-3-3-1-1">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-1-1-1"><span class="en">Common Voice MMS-lab</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-1-1-1"><span class="zh">Common Voice MMS-lab</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-3-1-1"><code>20</code></div>
-<div class="eq" id="eq-3-3-1-2"><code>10</code></div>
-<div class="eq" id="eq-3-3-1-3"><code>0</code></div>
-<div class="pblk" id="p-3-3-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-3-1-2-1"><span class="en">spa deupor ara rus eng cym tam cat tur tha fra fas ukr nld pol swh lug</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-3-1-2-1"><span class="zh">spa deupor ara rus eng cym tam cat tur tha fra fas ukr nld pol swh lug</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-3-3-1"><span class="secnum">3.3.1</span> <span class="t-zh">CMU Wilderness 数据集</span><span class="t-en">CMU Wilderness Dataset</span></h3>
+
+
+
+
 <div class="cap" id="fig-3-3-1-1"><img class="fig" src="../assets/figures/2305.13516/fig-3-3-1-1.png" loading="lazy" alt="Figure 9: MMS-lab vs. Common Voice. Character Error Rate on FLEURS dev set for ASR models trained on Common Voice (CV) d"><span class="cap-k">图</span><p class="en">Figure 9: MMS-lab vs. Common Voice. Character Error Rate on FLEURS dev set for ASR models trained on Common Voice (CV) data and MMS-lab data for 18 languages.</p><p class="zh">图 9：MMS-lab 与 Common Voice 对比。在 Common Voice（CV）数据和 MMS-lab 数据上为 18 种语言训练的 ASR 模型在 FLEURS 开发集上的字错误率。</p></div>
 <div class="pblk" id="p-3-3-1-3">
           <p class="en-lines"><span class="sent" data-sid="s-3-3-1-3-1"><span class="en">The most comparable prior work is the CMU Wilderness project which used data from similar sources [Black, 2019].</span></span> <span class="sent" data-sid="s-3-3-1-3-2"><span class="en">To better understand how our data creation process compares to their method, we conduct a best effort side-by-side reproduction of their process and use the resulting data to train monolingual ASR models under the same settings.17 To compare the effectiveness of their data creation method to ours (§3.1), we take the original data from our data source and apply either our protocol or the protocol of Black [2019].</span></span> <span class="sent" data-sid="s-3-3-1-3-3"><span class="en">For languages where multiple recordings exist, we only use the recordings used in the CMU Wilderness dataset to enable a better comparison.</span></span> <span class="sent" data-sid="s-3-3-1-3-4"><span class="en">Next, we use the resulting data to fine-tune XLS-R models [Babu et al., 2022] for monolingual ASR and then measure accuracy in terms of character error rate on the FLEURS dev set.</span></span></p>
@@ -951,35 +851,19 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-data-3-1"><span class="zh">• Multilingual Librispech（MLS）：8 种欧洲语言的朗读书籍，共 50K 小时 [Pratap et al., 2020c] • CommonVoice（CV）：89 种语言，共 8.8 小时 Wikipedia 朗读文本；我们使用语料的 v9.0 版本 [Ardila et al., 2020]）• VoxLingua-107（VL）：107 种语言，共 5.3K 小时 YouTube 内容 [Valk and Alumäe, 2020] • BABEL（BBL）：17 种非洲和亚洲语言，共约 1K 小时电话会话数据 [Gales et al., 2014] • VoxPopuli（VP）：23 种语言、共 371K 小时源自欧洲议会活动录音的无标注语音数据 [Wang et al., 2021] 预训练只使用语音音频，不使用任何转写，并按 §4.1 所述策略以 βL = βD = 0.5 平衡数据</span></span></p>
           
         </div>
-<div class="eq" id="eq-data-2"><code>18</code></div>
-<div class="eq" id="eq-data-3"><code>16</code></div>
-<div class="pblk" id="p-data-4">
-          <p class="en-lines"><span class="sent" data-sid="s-data-4-1"><span class="en">CER</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-data-4-1"><span class="zh">CER</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-data-4"><code>14</code></div>
-<div class="pblk" id="p-data-5">
-          <p class="en-lines"><span class="sent" data-sid="s-data-5-1"><span class="en">XLS-R MMS 300M 1B</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-data-5-1"><span class="zh">（图内标签：XLS-R 与 MMS 的 300M/1B 参数档对比，12 为图内刻度。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-data-5"><code>12</code></div>
+
+
+
+
+
+
 <div class="cap" id="fig-data-1"><img class="fig" src="../assets/figures/2305.13516/fig-data-1.png" loading="lazy" alt="Figure 10: MMS vs. XLS-R. Character error rate (CER) on 61 FLEURS languages when fine-tuning multilingual ASR models on "><span class="cap-k">图</span><p class="en">Figure 10: MMS vs. XLS-R. Character error rate (CER) on 61 FLEURS languages when fine-tuning multilingual ASR models on MMS-lab data. We report average performance on FLEURS dev data.</p><p class="zh">图 10：MMS 与 XLS-R 对比。在 MMS-lab 数据上微调多语言 ASR 模型时，61 种 FLEURS 语言上的字错误率（CER）。我们报告在 FLEURS 开发数据上的平均性能。</p></div>
-<div class="eq" id="eq-data-6"><code>10</code></div>
-<div class="pblk" id="p-data-6">
-          <p class="en-lines"><span class="sent" data-sid="s-data-6-1"><span class="en">CER MMS - XLS-R</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-data-6-1"><span class="zh">CER MMS - XLS-R</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-data-7"><code>5</code></div>
-<div class="eq" id="eq-data-8"><code>0</code></div>
-<div class="eq" id="eq-data-9"><code>−5</code></div>
-<div class="pblk" id="p-data-7">
-          <p class="en-lines"><span class="sent" data-sid="s-data-7-1"><span class="en">lugurd khm marhinormtelhautamgujvie myajavasmazjtha som benkaztglyor swhfulkorpan amhlaomalnya hun swepor fasfrarusengellspa bulronara heb zlmcebindtur mon ory kanfinnldsna isltgk cym ukrpollavkirdeucat</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-data-7-1"><span class="zh">lugurd khm marhinormtelhautamgujvie myajavasmazjtha som benkaztglyor swhfulkorpan amhlaomalnya hun swepor fasfrarusengellspa bulronara heb zlmcebindtur mon ory kanfinnldsna isltgk cym ukrpollavkirdeucat</span></span></p>
-          
-        </div>
+
+
+
+
+
+
 <div class="cap" id="fig-data-2"><img class="fig" src="../assets/figures/2305.13516/fig-data-2.png" loading="lazy" alt="Figure 11: MMS vs. XLS-R Breakdown. We show the absolute character error rate difference between multilingual ASR models"><span class="cap-k">图</span><p class="en">Figure 11: MMS vs. XLS-R Breakdown. We show the absolute character error rate difference between multilingual ASR models based on XLS-R and MMS models with 1B parameters. Positive values indicate better performance of MMS and negative values better performance of XLS-R. Models are fine-tuned on MMS-lab data and evaluated on the development sets of 61 FLEURS languages.</p><p class="zh">图 11：MMS 与 XLS-R 的逐语言分解。我们展示基于 XLS-R 与 MMS 的 1B 参数多语言 ASR 模型之间的绝对字错误率差值。正值表示 MMS 性能更好，负值表示 XLS-R 更好。模型在 MMS-lab 数据上微调，并在 61 种 FLEURS 语言的开发集上评估。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-3"><span class="secnum">4.3</span> <span class="t-zh">与 XLS-R 的对比</span><span class="t-en">Comparison to XLS-R</span></h3><div class="pblk" id="p-4-3-1">
@@ -1055,20 +939,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="fig-5-2-1-s1"><span class="zh">图 12 表明，没有语言特定参数的稠密模型的性能退化很快：对 FLEURS-61，从 61 种语言扩展到 1,107 种时 CER 上升 5.1；对 CV-49，CER 上升 2.1。这主要是因为语言之间相互混淆，导致某些语言性能大幅下降。语言特定参数（LSAH）缓解了这一问题，仅表现出极小的退化（FLEURS-61 上 0.4 CER，CV-49 上 0.2 CER）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-5-2-1"><code>20</code></div>
-<div class="pblk" id="p-5-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="en">FLEURS-61 (Dense) FLEURS-61 (LSAH) CV-49 (Dense) CV-49 (LSAH) Character Error Rate</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="zh">FLEURS-61 (Dense) FLEURS-61 (LSAH) CV-49 (Dense) CV-49 (LSAH) 字错误率</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-2-2"><code>15</code></div>
-<div class="eq" id="eq-5-2-3"><code>10</code></div>
-<div class="eq" id="eq-5-2-4"><code>61 128 256 512 1,107</code></div>
-<div class="pblk" id="p-5-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-5-2-3-1"><span class="en">Number of Languages supported by Model</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-2-3-1"><span class="zh">61 128 256 512 模型支持的语言数量</span></span></p>
-          
-        </div>
+
+
+
+
+
+
 <div class="cap" id="fig-5-2-2"><img class="fig" src="../assets/figures/2305.13516/fig-5-2-2.png" loading="lazy" alt="Figure 12: Scaling Multilingual ASR to 1,107 Languages. We fine-tune both dense and LSAH models with 61, 128, 256, 512 a"><span class="cap-k">图</span><p class="en">Figure 12: Scaling Multilingual ASR to 1,107 Languages. We fine-tune both dense and LSAH models with 61, 128, 256, 512 and 1,107 languages on MMS-lab data and show average CER on 61 languages of FLEURS and 49 languages of CommonVoice. LSAH models have language-specific adapter modules and output layers.</p><p class="zh">图 12：将多语言 ASR 扩展到 1,107 种语言。我们在 MMS-lab 数据上以 61、128、256、512 和 1,107 种语言分别微调稠密模型和 LSAH 模型，并展示在 61 种 FLEURS 语言和 49 种 CommonVoice 语言上的平均 CER。LSAH 模型具有语言特定的适配器模块和输出层。</p></div>
 
 
@@ -1306,28 +1182,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-6-2-1"><span class="zh">在本节中，我们首先描述构建 LID 模型的方法（§6.1），然后评估用 MMS-lab-U 和 MMS-unlab 数据训练 LID 系统的可行性，并与来自</span></span></p>
           
         </div>
-<div class="eq" id="eq-6-1"><code>100</code></div>
-<div class="eq" id="eq-6-2"><code>-2.1%</code></div>
-<div class="pblk" id="p-6-3">
-          <p class="en-lines"><span class="sent" data-sid="s-6-3-1"><span class="en">Dev Accuracy</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-6-3-1"><span class="zh">-2.1% 开发集准确率</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-6-3"><code>90</code></div>
-<div class="eq" id="eq-6-4"><code>80</code></div>
-<div class="pblk" id="p-6-4">
-          <p class="en-lines"><span class="sent" data-sid="s-6-4-1"><span class="en">Model Trained on FLEURS VoxLingua-107 MMS-lab-U MMS-unlab MMS-lab-U+unlab</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-6-4-1"><span class="zh">模型训练数据 FLEURS VoxLingua-107 MMS-lab-U MMS-unlab MMS-lab-U+unlab -1.6% FLEURS VoxLingua-107 70 评估集</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-6-5"><code>-1.6%</code></div>
-<div class="eq" id="eq-6-6"><code>FLEURS VoxLingua-107</code></div>
-<div class="eq" id="eq-6-7"><code>70</code></div>
-<div class="pblk" id="p-6-5">
-          <p class="en-lines"><span class="sent" data-sid="s-6-5-1"><span class="en">Evaluation Set</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-6-5-1"><span class="zh">模型训练数据 FLEURS VoxLingua-107 MMS-lab-U MMS-unlab MMS-lab-U+unlab -1.6% FLEURS VoxLingua-107 70 评估集</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-6-1"><img class="fig" src="../assets/figures/2305.13516/fig-6-1.png" loading="lazy" alt="Figure 13: LID Performance with Different Training Datasets. Models trained on MMS-labU+unlab are very competitive to mo"><span class="cap-k">图</span><p class="en">Figure 13: LID Performance with Different Training Datasets. Models trained on MMS-labU+unlab are very competitive to models trained on existing data (FLEURS, VoxLingua-107) when evaluated out-of-domain (comparison in dashed line). We train models on data from MMS-lab-U, MMS-unlab, FLEURS and VoxLingua-107 on a common subset of 72 languages and evaluate on FLEURS and VoxLingua-107.</p><p class="zh">图 13：不同训练数据集下的 LID 性能。在分布外评估时，在 MMS-labU+unlab 上训练的模型与在现有数据（FLEURS、VoxLingua-107）上训练的模型相比非常有竞争力（虚线部分为对比）。我们在 72 种语言的公共子集上，用来自 MMS-lab-U、MMS-unlab、FLEURS 和 VoxLingua-107 的数据训练模型，并在 FLEURS 和 VoxLingua-107 上评估。</p></div>
 <div class="pblk" id="p-6-6">
           <p class="en-lines"><span class="sent" data-sid="s-6-6-1"><span class="en">existing corpora (§6.2) and then build LID models with 40x more languages compared to existing systems (§6.3).27</span></span></p>
@@ -1689,25 +1553,13 @@ Prior Work mSLAM [Bapna et al., 2022b]</pre></details></div>
           <p class="zh-lines"><span class="sent" data-sid="s-8-1-1-1"><span class="zh">MMS-lab 数据集中的大多数说话人似乎是男性，这存在这样一种风险：在该数据上训练的机器学习模型对男性说话人表现更好。</span></span><span class="sent" data-sid="s-8-1-1-2"><span class="zh">为理解在我们的数据集（§3）上训练的模型是否表现出性别偏见，我们进行以下实验：我们评估</span></span></p>
           
         </div>
-<div class="eq" id="eq-8-1-1"><code>15</code></div>
-<div class="pblk" id="p-8-1-2">
-          <p class="en-lines"><span class="sent" data-sid="s-8-1-2-1"><span class="en">MMS data FLEURS data</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-8-1-2-1"><span class="zh">MMS 数据 FLEURS 数据</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-8-1-2"><code>10</code></div>
-<div class="pblk" id="p-8-1-3">
-          <p class="en-lines"><span class="sent" data-sid="s-8-1-3-1"><span class="en">CER</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-8-1-3-1"><span class="zh">CER</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-8-1-3"><code>5</code></div>
-<div class="pblk" id="p-8-1-4">
-          <p class="en-lines"><span class="sent" data-sid="s-8-1-4-1"><span class="en">Overall Female Male</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-8-1-4-1"><span class="zh">总体 女性 男性 0</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-8-1-4"><code>0</code></div>
+
+
+
+
+
+
+
 <div class="cap" id="fig-8-1-1"><img class="fig" src="../assets/figures/2305.13516/fig-8-1-1.png" loading="lazy" alt="Figure 14: Analysis of Gender Bias. We compare the character error rate (CER) of automatic speech recognition models tra"><span class="cap-k">图</span><p class="en">Figure 14: Analysis of Gender Bias. We compare the character error rate (CER) of automatic speech recognition models trained on MMS-lab data and FLEURS data for male and female spakers. Results are on the development sets of 27 languages of the FLEURS benchmark for which MMS-lab provides data and for which there are at least 50 samples for each gender.</p><p class="zh">图 14：性别偏见分析。我们比较在 MMS-lab 数据和 FLEURS 数据上训练的自动语音识别模型对男性和女性说话人的字错误率（CER）。结果在 FLEURS 基准中 MMS-lab 提供数据且每种性别至少有 50 个样本的 27 种语言的开发集上。</p></div>
 <div class="pblk" id="p-8-1-5">
           <p class="en-lines"><span class="sent" data-sid="s-8-1-5-1"><span class="en">models on the development set of FLEURS which contains metadata indicating the gender of the speaker and we use this information to report performance for each gender.</span></span> <span class="sent" data-sid="s-8-1-5-2"><span class="en">Using this split, we evaluate the accuracy of ASR models trained on MMS-lab on 27 languages of the FLEURS dataset for which MMS-lab provides data (61 languages), and for which there are at least 50 samples for each gender (27 out of these 61 languages).</span><button class="mk feat" data-sid="s-8-1-5-2" title="查看讲解">解</button></span></p>
@@ -1750,15 +1602,11 @@ Prior Work mSLAM [Bapna et al., 2022b]</pre></details></div>
           <p class="zh-lines"><span class="sent" data-sid="s-results-1-1"><span class="zh">图 15 表明，与训练数据相比，MMS 模型输出中的偏见词比率要低得多（MMS-lab ASR 输出 vs. MMS-lab 训练数据）。</span></span><span class="sent" data-sid="s-results-1-2"><span class="zh">对许多语言，MMS 模型以与 FLEURS 模型相同的比率生成这些词。</span></span><span class="sent" data-sid="s-results-1-3"><span class="zh">平均而言，偏见 MMS-lab 训练数据 MMS-lab ASR 输出 FLEURS ASR 输出 累积相对频率 (%)</span></span></p>
           
         </div>
-<div class="eq" id="eq-results-1"><code>30</code></div>
-<div class="eq" id="eq-results-2"><code>20</code></div>
-<div class="eq" id="eq-results-3"><code>10</code></div>
-<div class="eq" id="eq-results-4"><code>0</code></div>
-<div class="pblk" id="p-results-2">
-          <p class="en-lines"><span class="sent" data-sid="s-results-2-1"><span class="en">ceb cym elleng amhara asm azj fraguj indjav bulcat hau kan ben deu heb hun fas hin fin nldnya pan ory somspa vieyor lavmar swe ron sna mon rus teltgk pol tgl swhtam tur kaz urd ukr kor zlm kir</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-results-2-1"><span class="zh">ceb cym elleng amhara asm azj fraguj indjav bulcat hau kan ben deu heb hun fas hin fin nldnya pan ory somspa vieyor lavmar swe ron sna mon rus teltgk pol tgl swhtam tur kaz urd ukr kor zlm kir</span></span></p>
-          
-        </div>
+
+
+
+
+
 <div class="cap" id="fig-results-1"><img class="fig" src="../assets/figures/2305.13516/fig-results-1.png" loading="lazy" alt="Figure 15: Analysis of Language Produced by MMS ASR Models. MMS models generate biased words at a slightly increased rat"><span class="cap-k">图</span><p class="en">Figure 15: Analysis of Language Produced by MMS ASR Models. MMS models generate biased words at a slightly increased rate of 0.7% absolute compared to models trained on FLEURS data. We focus on words that occur at least twice as often in the MMS-lab training data compared to Common Crawl (in terms of relative frequency). We compare the cumulative relative frequency of these words in the MMS model output and the output of ASR models trained on FLEURS data. ASR outputs are based on transcribing the development sets of 51 languages.</p><p class="zh">图 15：MMS ASR 模型产出语言的分析。与在 FLEURS 数据上训练的模型相比，MMS 模型生成偏见词的比率绝对高出 0.7%，增幅轻微。我们聚焦于在 MMS-lab 训练数据中的出现频率至少为 Common Crawl 两倍的词（按相对频率计）。我们比较这些词在 MMS 模型输出和在 FLEURS 数据上训练的 ASR 模型输出中的累积相对频率。ASR 输出基于对 51 种语言开发集的转写。</p></div>
 <div class="pblk" id="p-results-3">
           <p class="en-lines"><span class="sent" data-sid="s-results-3-1"><span class="en">words is 0.7% absolute higher for MMS compared to the FLEURS model.</span><button class="mk" data-sid="s-results-3-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-results-3-2"><span class="en">We interpret this as a slight bias as the difference between MMS-lab ASR output and FLEURS ASR output in Figure 15 shows.</span></span></p>

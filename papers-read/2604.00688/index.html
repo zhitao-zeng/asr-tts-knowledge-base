@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -224,11 +224,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-1-4-1"><span class="zh">[1] https://github.com/k2-fsa/OmniVoice 预印本。</span></span><span class="sent" data-sid="s-1-4-2"><span class="zh">审稿中。</span></span></p>
           
         </div>
-<div class="pblk" id="p-1-5">
-          <p class="en-lines"><span class="sent" data-sid="s-1-5-1"><span class="en">Text Tokens Acoustic Tokens Predicted Target Bidirectional Transformer Instruct Transcript Prompt Segment Target Masked Segment</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-5-1"><span class="zh">文本 token、声学 token、预测目标、双向 Transformer、指令、转写文本、提示段、目标掩码段。</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-1-1"><img class="fig" src="../assets/figures/2604.00688/fig-1-1.png" loading="lazy" alt="Figure 1: Illustration of OmniVoice architecture."><span class="cap-k">图</span><p class="en">Figure 1: Illustration of OmniVoice architecture.</p><p class="zh">图 1：OmniVoice 架构示意图。</p></div>
 <div class="pblk" id="p-1-6">
           <p class="en-lines"><span class="sent" data-sid="s-1-6-1"><span class="en">To bridge this gap, we introduce OmniVoice, an architecturally streamlined yet highly effective discrete NAR TTS framework.</span></span> <span class="sent" data-sid="s-1-6-2"><span class="en">OmniVoice employs a discrete masked diffusion objective [22] with a bidirectional Transformer [23] to directly map text to multi-codebook acoustic tokens, thereby bypassing the complexity and limitations of cascaded pipelines.</span></span> <span class="sent" data-sid="s-1-6-3"><span class="en">Its core modeling philosophy extends the success of diffusion language models [24, 25] to the speech domain.</span></span> <span class="sent" data-sid="s-1-6-4"><span class="en">We demonstrate that the potential of this minimalist architecture can be fully unleashed through two technical innovations: (1) Full-Codebook Random Masking: Conventional multi-codebook acoustic prediction methods adopt &quot;per-layer&quot; masking schedules [26, 19], suffering from inefficient convergence.</span></span> <span class="sent" data-sid="s-1-6-5"><span class="en">We propose a fully stochastic masking strategy across all codebooks that significantly enhances training efficiency and generative quality.</span></span> <span class="sent" data-sid="s-1-6-6"><span class="en">(2) LLM Initialization: To resolve the intelligibility issues in single-stage discrete NAR models, we initialize our backbone with pre-trained AR LLM weights to inherit linguistic knowledge, making OmniVoice the first NAR TTS model to successfully benefit from LLM initialization [3].</span><button class="mk feat" data-sid="s-1-6-6" title="查看讲解">解</button></span></p>
@@ -823,29 +819,21 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-average-1-1"><span class="zh">（表注：* 粤语（Cantonese）用 SenseVoice-Small ASR 模型评测时 WER 为 2.273%。）（表格行）ur。</span></span></p>
           
         </div>
-<div class="eq" id="eq-average-2"><code>80 40</code></div>
-<div class="eq" id="eq-average-3"><code>lo ur yo lo</code></div>
-<div class="eq" id="eq-average-4"><code>20</code></div>
-<div class="pblk" id="p-average-2">
-          <p class="en-lines"><span class="sent" data-sid="s-average-2-1"><span class="en">yo oc Ground-Truth OmniVoice (CER higher than GT) OmniVoice (CER lower than GT) yue yue ja ny zh ja ny zh CER (%)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-average-2-1"><span class="zh">（图例：Ground-Truth / OmniVoice (CER higher than GT) / OmniVoice (CER lower than GT)；语种：yue / ja / ny / zh；纵轴 CER (%)；yo / oc。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-average-5"><code>10</code></div>
-<div class="eq" id="eq-average-6"><code>oc</code></div>
-<div class="eq" id="eq-average-7"><code>5</code></div>
-<div class="eq" id="eq-average-8"><code>af fr hi hu hi af</code></div>
-<div class="eq" id="eq-average-9"><code>2</code></div>
-<div class="eq" id="eq-average-10"><code>hu</code></div>
-<div class="eq" id="eq-average-11"><code>1</code></div>
-<div class="pblk" id="p-average-3">
-          <p class="en-lines"><span class="sent" data-sid="s-average-3-1"><span class="en">en sl en fr sl pl ca es et et ca es pl</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-average-3-1"><span class="zh">（图内语种标签：en / sl / en / fr / sl / pl / ca / es / et / et / ca / es / pl。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-average-12"><code>2 10 100</code></div>
-<div class="eq" id="eq-average-13"><code>1K 10K 100K Duration (Hours)</code></div>
-<div class="eq" id="eq-average-14"><code>0.5</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-average-1"><img class="fig" src="../assets/figures/2604.00688/fig-average-1.png" loading="lazy" alt="Figure 4: CERs of OmniVoice vs. ground truth across languages with varying training data durations on FLEURS-Multilingua"><span class="cap-k">图</span><p class="en">Figure 4: CERs of OmniVoice vs. ground truth across languages with varying training data durations on FLEURS-Multilingual-102. Hollow circles indicate languages where OmniVoice achieves lower CER than ground-truth, Filled circles indicate higher CER.</p><p class="zh">图 4：在 FLEURS-Multilingual-102 上，不同训练数据时长下 OmniVoice 与真实语音的逐语言 CER 对比。空心圆表示 OmniVoice 的 CER 低于真实语音的语言，实心圆表示 CER 更高的语言。</p></div>
 <div class="cap" id="tab-average-1"><span class="cap-k">表</span><p class="en">Table 4: Evaluation on the FLEURS-Multilingual-102 test set.</p><p class="zh">表 4：FLEURS-Multilingual-102 测试集上的评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>FLEURS-Multilingual-102</th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>Languages with CER ≤</th><th></th></tr><tr><th></th><th>Avg SIM-o ↑</th><th>Avg CER ↓</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td>5%</td><td></td><td>10%</td></tr>
 <tr><td>Ground-truth</td><td>-</td><td>5.11</td><td></td><td>75</td><td></td><td>92</td></tr>

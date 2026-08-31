@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -240,43 +240,19 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-1-5">
-          <p class="en-lines"><span class="sent" data-sid="s-1-5-1"><span class="en">Context representations</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-5-1"><span class="zh">上下文表示</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1-3"><code>C</code></div>
-<div class="eq" id="eq-1-4"><code>`</code></div>
-<div class="pblk" id="p-1-6">
-          <p class="en-lines"><span class="sent" data-sid="s-1-6-1"><span class="en">Contrastive loss</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-6-1"><span class="zh">对比损失</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1-5"><code>L</code></div>
-<div class="pblk" id="p-1-7">
-          <p class="en-lines"><span class="sent" data-sid="s-1-7-1"><span class="en">Transformer</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-7-1"><span class="zh">这些潜在表示被送入一个 Transformer 网络以构建上下文化表示，模型通过一个对比任务来训练：需要从一组干扰项中分辨出真正的潜在表示 [54, 49, 48, 28]（§ 2）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1-6"><code>… …</code></div>
-<div class="pblk" id="p-1-8">
-          <p class="en-lines"><span class="sent" data-sid="s-1-8-1"><span class="en">Masked q q q q q Quantized representations</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-8-1"><span class="zh">图 1 内部标签：掩码（Masked）后的表示经量化得到量化表示（Quantized representations），q 为量化向量。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1-7"><code>Q</code></div>
-<div class="pblk" id="p-1-9">
-          <p class="en-lines"><span class="sent" data-sid="s-1-9-1"><span class="en">Latent speech representations</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-9-1"><span class="zh">潜在语音表示</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-1-8"><code>Z</code></div>
-<div class="eq" id="eq-1-9"><code>X</code></div>
-<div class="pblk" id="p-1-10">
-          <p class="en-lines"><span class="sent" data-sid="s-1-10-1"><span class="en">raw waveform CNN</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-1-10-1"><span class="zh">原始波形 → CNN</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-1-1"><img class="fig" src="../assets/figures/2006.11477/fig-1-1.png" loading="lazy" alt="Figure 1: Illustration of our framework which jointly learns contextualized speech representations and an inventory of d"><span class="cap-k">图</span><p class="en">Figure 1: Illustration of our framework which jointly learns contextualized speech representations and an inventory of discretized speech units.</p><p class="zh">图 1：我们的框架示意图，上下文化语音表示与离散语音单元库是联合学习的。</p></div>
 <div class="pblk" id="p-1-11">
           <p class="en-lines"><span class="sent" data-sid="s-1-11-1"><span class="en">on labeled data with a Connectionist Temporal Classiﬁcation (CTC) loss [14, 4] to be used for downstream speech recognition tasks (§ 3) Previous work learned a quantization of the data followed by a contextualized representations with a self-attention model [5, 4], whereas our approach solves both problems end-to-end.</span></span> <span class="sent" data-sid="s-1-11-2"><span class="en">Masking parts of the input with Transformer networks for speech has been explored [4, 26], but prior work relies either on a two-step pipeline or their model is trained by reconstructing the ﬁlter bank input features.</span></span> <span class="sent" data-sid="s-1-11-3"><span class="en">Other related work includes learning representations from auto-encoding the input data [52, 11] or directly predicting future timesteps [8].</span></span></p>
@@ -1196,16 +1172,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="fig-D-1">
-          <p class="en-lines"><span class="sent" data-sid="fig-D-1-s1"><span class="en">Figure 3 plots P(phoneme|qt) and shows that many discrete latents appear to specialize in speciﬁc phonetic sounds. The silence phoneme (bcl) represents 22% of all human annotated speech data and is therefore also modeled by many different latents.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="fig-D-1-s1"><span class="zh">图 3 绘制了 P(phoneme|qt)，显示许多离散潜在表示确实专门对应特定的语音音类。静音音素（bcl）占全部人工标注语音数据的 22%，因此也被许多不同的潜在表示所建模。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-D-2">
-          <p class="en-lines"><span class="sent" data-sid="s-D-2-1"><span class="en">aa ae ah aw ay b ch d dh dx eh axr ey f g bcl hh ih iy jh k el em en eng ow oy p r s sh t th uh uw v w y z</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-D-2-1"><span class="zh">（Figure 3 坐标轴文字碎块）aa ae ah aw ay b ch d dh dx eh axr ey f g bcl hh ih iy jh k el em en eng ow oy p r s sh t th uh uw v w y z。</span></span></p>
-          
-        </div>
+
+
 <div class="cap" id="fig-D-2"><img class="fig" src="../assets/figures/2006.11477/fig-D-2.png" loading="lazy" alt="Figure 3: Visualization of the co-occurrence between discrete latent speech representations and phonemes. We plot the co"><span class="cap-k">图</span><p class="en">Figure 3: Visualization of the co-occurrence between discrete latent speech representations and phonemes. We plot the conditional probability P(phoneme|qt) on TIMIT train data. The y-axis shows the collapsed 39 classes of phonemes and the x-axis is over the different discrete latents.</p><p class="zh">图 3：离散潜在语音表示与音素共现关系的可视化。我们在 TIMIT 训练数据上绘制条件概率 P(phoneme|qt)；y 轴为折叠后的 39 类音素，x 轴为不同的离散潜在表示。</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-E"><span class="secnum">E</span> <span class="t-zh">附录 E 语音识别错误分析</span><span class="t-en">Speech Recognition Error Analysis</span></h2><div class="pblk" id="p-E-1">

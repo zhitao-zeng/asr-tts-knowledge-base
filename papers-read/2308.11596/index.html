@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -925,28 +925,19 @@ MMS [Pratap et al., 2023] 最近已发布并覆盖了所有这些语言，但在
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-architecture-and-training-setup"><span class="t-zh">架构与训练设置</span><span class="t-en">Architecture and training setup</span></h3><div class="pblk" id="p-architecture-and-training-setup-1">
-          <p class="en-lines"><span class="sent" data-sid="s-architecture-and-training-setup-1-1"><span class="en">We use a novel sentence embedding space developed by Duquenne et al. [2023b], named Sentence-level multimOdal and laNguage-Agnostic Representations—in short, Sonar.</span></span> <span class="sent" data-sid="s-architecture-and-training-setup-1-2"><span class="en">Sonar substantially outperforms the previous Laser Segmented Text from NLLB Arb</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-architecture-and-training-setup-1-1"><span class="zh">我们使用 Duquenne et al. [2023b] 开发的新型句子嵌入空间，名为 Sentence-level multimOdal and laNguage-Agnostic Representations——简称 Sonar。</span></span><span class="sent" data-sid="s-architecture-and-training-setup-1-2"><span class="zh">（图内容：Sonar 大幅超越此前的 Laser。来自 NLLB 的切分文本（Arb/Eng/Vie）经 Sonar 文本编码器、过度切分音频经 Sonar 语音编码器，投射到共享的多语言多模态嵌入空间；随后产出 Arb-Eng、Eng-Vie 等 S2TT 与 S2ST 对齐数据，并与其他资源合并，用于 SeamlessM4T。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-architecture-and-training-setup-1"><code>✏️</code></div>
-<div class="eq" id="eq-architecture-and-training-setup-2"><code>SONAR Text Encoders Eng</code></div>
-<div class="eq" id="eq-architecture-and-training-setup-3"><code>✏️</code></div>
-<div class="eq" id="eq-architecture-and-training-setup-4"><code>Shared multilingual and multimodal embeddings space Vie</code></div>
-<div class="eq" id="eq-architecture-and-training-setup-5"><code>✏️</code></div>
-<div class="eq" id="eq-architecture-and-training-setup-6"><code>Oversegmented Audio SONAR Arb</code></div>
-<div class="eq" id="eq-architecture-and-training-setup-7"><code>🎤</code></div>
-<div class="eq" id="eq-architecture-and-training-setup-8"><code>Speech Encoders Eng</code></div>
-<div class="eq" id="eq-architecture-and-training-setup-9"><code>🎤</code></div>
-<div class="eq" id="eq-architecture-and-training-setup-10"><code>Vie</code></div>
-<div class="eq" id="eq-architecture-and-training-setup-11"><code>🎤</code></div>
-<div class="pblk" id="p-architecture-and-training-setup-2">
-          <p class="en-lines"><span class="sent" data-sid="s-architecture-and-training-setup-2-1"><span class="en">S2TT Aligned Data Other resources Arb - Eng Eng - Vie SeamlessM4T S2ST Aligned Data Arb - Eng Eng - Vie</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-architecture-and-training-setup-2-1"><span class="zh">（页码行：2。）
-S2TT 对齐数据 其他资源 Arb - Eng Eng - Vie SeamlessM4T S2ST 对齐数据 Arb - Eng Eng - Vie</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-architecture-and-training-setup"><span class="t-zh">架构与训练设置</span><span class="t-en">Architecture and training setup</span></h3>
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-architecture-and-training-setup-1"><img class="fig" src="../assets/figures/2308.11596/fig-architecture-and-training-setup-1.png" loading="lazy" alt="Figure 2: Workflow of the Sonar encoding and mining processes."><span class="cap-k">图</span><p class="en">Figure 2: Workflow of the Sonar encoding and mining processes.</p><p class="zh">图 2：Sonar 编码与挖掘过程的工作流程。</p></div>
 <div class="eq" id="eq-architecture-and-training-setup-12"><code>19</code></div>
 <div class="pblk" id="p-architecture-and-training-setup-3">
@@ -987,11 +978,7 @@ X–eng (n=200) eng–X (n=200) X–eng (n=89) eng–X (n=89) Sonar</span></span
           
         </div>
 
-<div class="pblk" id="p-evaluation-for-mining-2">
-          <p class="en-lines"><span class="sent" data-sid="s-evaluation-for-mining-2-1"><span class="en">Multilingual Text Initialized with NLLB 1B Text Decoder decoder text sentence embedding Speech sentence embedding SONAR Embedding Space Initialized with Speech Encoder Text Encoder NLLB 1B encoder Multilingual Speech Multilingual Text</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-evaluation-for-mining-2-1"><span class="zh">（图内容：以 NLLB 1B 初始化的多语言文本编码器与文本解码器、语音编码器，把多语言语音与多语言文本编码为 Sonar 嵌入空间中的文本句子嵌入与语音句子嵌入。）</span></span></p>
-          
-        </div>
+
 
 <div class="cap" id="fig-evaluation-for-mining-1"><img class="fig" src="../assets/figures/2308.11596/fig-evaluation-for-mining-1.png" loading="lazy" alt="Figure 3: SONAR architecture."><span class="cap-k">图</span><p class="en">Figure 3: SONAR architecture.</p><p class="zh">图 3：Sonar 架构。</p></div>
 
@@ -1373,7 +1360,7 @@ USM 超过 300† 12M BEST-RQ [Chiu et al., 2022] MMS</span></span></p>
         </div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-2-2"><span class="secnum">4.2</span> <span class="t-zh">X2T：译为文本与转写</span><span class="t-en">X2T: Into-Text Translation and Transcription</span></h3>
-<div class="eq" id="eq-4-2-2-1"><code>. . . . . . ×4</code></div>
+
 <div class="pblk" id="p-4-2-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-2-2-1"><span class="en">Transformer Text Decoder Conformer Speech Encoder Transformer Text Encoder 80-dimensional filterbank (eng) the cat sat unlabeled speech (2) SEAMLESSM4T- X2T- Stage1+2 finetuning Length Adaptor Conformer Speech Encoder X2T (ASR, T2TT, S2TT) W2V-BERT 2.0 Transformer Text Decoder Knowledge distillation (T2TT/AE→S2TT/ASR) SEAMLESSM4T-NLLB Transformer Text Encoder SEAMLESSM4T-NLLB</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-2-1"><span class="zh">（图内容：Transformer 文本解码器、Conformer 语音编码器、Transformer 文本编码器；80 维 filterbank；(eng) the cat sat；未标注语音；(2) SEAMLESSM4T-X2T 第 1、2 阶段（Stage1+2）微调；长度适配器；Conformer 语音编码器；X2T（ASR、T2TT、S2TT）；W2V-BERT 2.0；Transformer 文本解码器；知识蒸馏（T2TT/AE→S2TT/ASR）；SEAMLESSM4T-NLLB Transformer 文本编码器；SEAMLESSM4T-NLLB。）</span></span></p>
@@ -1393,17 +1380,12 @@ USM 超过 300† 12M BEST-RQ [Chiu et al., 2022] MMS</span></span></p>
 另一个是基于 Transformer 的编码器 [Vaswani et al., 2017] 用于文本输入——两者与同一个文本解码器相连。</span></span><span class="sent" data-sid="s-4-2-2-4-2"><span class="zh">X2T 模型在 S2TT 数据上训练，这类数据把源语言语音音频与目标语言文本配对。</span></span></p>
           
         </div>
-<div class="pblk" id="p-4-2-2-5">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-2-5-1"><span class="en">4.2.1 Preparing X2T data ASR primary S2TT X-eng mined S2TT X-eng Hours of source-side audio</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-5-1"><span class="zh">（页码行：2。）
-4.2.1 准备 X2T 数据 ASR 主要 S2TT X-eng 挖掘 S2TT X-eng 源侧音频小时数</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-4-2-2-3"><code>10,000</code></div>
-<div class="eq" id="eq-4-2-2-4"><code>High-resource</code></div>
-<div class="eq" id="eq-4-2-2-5"><code>1,000</code></div>
-<div class="eq" id="eq-4-2-2-6"><code>Mid-resource</code></div>
-<div class="eq" id="eq-4-2-2-7"><code>500 100</code></div>
+
+
+
+
+
+
 <div class="pblk" id="p-4-2-2-6">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-2-6-1"><span class="en">glg guj npi kat mkd yue som khm isl yor bos srp khk mlt pan heb ary afr swe kir mar bul hye lit ckb arz mal ory zlm mya zul asm ibo amh gle azj lvs tgk nya fra tel tgl cym fin ell ita hrv eus tam bel spa tha pbt est uzn hun lug ind por ben pol lao nor slv hin vie rus slk nld cat cmn deu jpn kor ron kan pes kaz swh dan ces eng tur jav ukr arb urd</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-6-1"><span class="zh">（图 4.2.1：准备 X2T 数据——ASR primary S2TT 与 mined S2TT 的 X-eng 源侧音频小时数分布（100/500/1,000/10,000，高/中资源分档），覆盖数十语种。原始数据照录如下）
@@ -1965,11 +1947,11 @@ S2TT 和 ASR，(2) 浅层 T2U 模型（在 Inaguma et al. [2023] 中称为 T2U �
           <p class="zh-lines"><span class="sent" data-sid="s-model-12-5-1"><span class="zh">由于 SeamlessM4T 模型在源、目标两侧都支持多种语言，我们可以以零样本方式评测非英语中心的方向（记为 X–X）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-model-12-3"><code>24</code></div>
-<div class="eq" id="eq-model-12-4"><code>Target languages</code></div>
-<div class="eq" id="eq-model-12-5"><code>20</code></div>
-<div class="eq" id="eq-model-12-6"><code>Average SPBLEU</code></div>
-<div class="eq" id="eq-model-12-7"><code>16 12 8 4</code></div>
+
+
+
+
+
 <div class="pblk" id="p-model-12-6">
           <p class="en-lines"><span class="sent" data-sid="s-model-12-6-1"><span class="en">asm lit som khm mya cmn fin yor lug jpn kor ibo pbt est luo nya lao pol bel slv nob gle slk sna azj yue gaz zul ceb lvs khk hun ukr pes kaz mar tur kir jav hrv ckb urd tam zlm spa mal cym mkd amh isl ell pan ita rus hin cat tel nld glg ind guj tgk vie tha kat npi snd heb kan ces uzn fra eng bos deu ben ory dan swe swh bul mlt por srp ron arb hye</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-12-6-1"><span class="zh">（图：24 个目标语言的平均 SPBLEU（4/8/12/16/20/24）：asm、lit、som、khm、mya、cmn、fin、yor、lug、jpn、kor、ibo、pbt、est、luo、nya、lao、pol、bel、slv、nob、gle、slk、sna、azj、yue、gaz、zul、ceb、lvs、khk、hun、ukr、pes、kaz、mar、tur、kir、jav、hrv、ckb、urd、tam、zlm、spa、mal、cym、mkd、amh、isl、ell、pan、ita、rus、hin、cat、tel、nld、glg、ind、guj、tgk、vie、tha、kat、npi、snd、heb、kan、ces、uzn、fra、eng、bos、deu、ben、ory、dan、swe、swh、bul、mlt、por、srp、ron、arb、hye。）</span></span></p>
@@ -2826,12 +2808,8 @@ Direction Lang XSTS (calibrated) % XSTS 3+ % XSTS 4+ Items Seamls1 Wspr2 Hum3 Se
         </div>
 <div class="eq" id="eq-xsts-results-for-the-s2tt-task-94"><code>4 3 2</code></div>
 <div class="eq" id="eq-xsts-results-for-the-s2tt-task-95"><code>X-eng (S2TT)</code></div>
-<div class="eq" id="eq-xsts-results-for-the-s2tt-task-96"><code>1</code></div>
-<div class="pblk" id="p-xsts-results-for-the-s2tt-task-7">
-          <p class="en-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-7-1"><span class="en">ita ind rus cat nld hin deu spa fra por ron</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-7-1"><span class="zh">（XSTS 结果图（S2TT）：X-eng 方向各语种（ita、ind、rus、cat、nld、hin、deu、spa、fra、por、ron）纵轴 1/2/3/4 分，5 Average XSTS（calib.）。）</span></span></p>
-          
-        </div>
+
+
 <div class="eq" id="eq-xsts-results-for-the-s2tt-task-97"><code>5</code></div>
 <div class="pblk" id="p-xsts-results-for-the-s2tt-task-8">
           <p class="en-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-8-1"><span class="en">Average XSTS (calib.)</span></span></p>
@@ -2839,15 +2817,9 @@ Direction Lang XSTS (calibrated) % XSTS 3+ % XSTS 4+ Items Seamls1 Wspr2 Hum3 Se
           
         </div>
 <div class="eq" id="eq-xsts-results-for-the-s2tt-task-98"><code>4 3 2</code></div>
-<div class="eq" id="eq-xsts-results-for-the-s2tt-task-99"><code>eng-X (S2TT)</code></div>
-<div class="eq" id="eq-xsts-results-for-the-s2tt-task-100"><code>1</code></div>
-<div class="pblk" id="p-xsts-results-for-the-s2tt-task-9">
-          <p class="en-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-9-1"><span class="en">ind cat nld vie ita spa deu fra tur por ron cmn tgl fin tel kor tha jpn vie ben swh tur arb urd cmn tgl tel fin kor rus hin tha jpn ben swh arb urd WHISPER-LARGE-V2 SEAMLESSM4T-LARGE Ref</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-9-1"><span class="zh">（表格/图内数值行，原始数据照录）
-（原始语料/表格数据照录）
-ind cat nld vie ita spa deu fra tur por ron cmn tgl fin tel kor tha jpn vie ben swh tur arb urd cmn tgl tel fin kor rus hin tha jpn ben swh arb urd WHISPER-LARGE-V2 SEAMLESSM4T-LARGE Ref</span></span></p>
-          
-        </div>
+
+
+
 <div class="cap" id="fig-xsts-results-for-the-s2tt-task-1"><img class="fig" src="../assets/figures/2308.11596/fig-xsts-results-for-the-s2tt-task-1.png" loading="lazy" alt="Figure 10: Language Direction level mean XSTS scores per direction for S2TT modality, after calibration. Bootstrapped 95"><span class="cap-k">图</span><p class="en">Figure 10: Language Direction level mean XSTS scores per direction for S2TT modality, after calibration. Bootstrapped 95% CI is typically within ∼±0.1.</p><p class="zh">图 10：S2TT 模态下、按语言方向校准后的每方向平均 XSTS 分数。Bootstrap 95% 置信区间通常在 ±0.1 内。</p></div>
 <div class="eq" id="eq-xsts-results-for-the-s2tt-task-101"><code>54 5</code></div>
 <div class="pblk" id="p-xsts-results-for-the-s2tt-task-10">
@@ -2855,23 +2827,15 @@ ind cat nld vie ita spa deu fra tur por ron cmn tgl fin tel kor tha jpn vie ben 
           <p class="zh-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-10-1"><span class="zh">53 5 平均 XSTS（校准后）</span></span></p>
           
         </div>
-<div class="eq" id="eq-xsts-results-for-the-s2tt-task-102"><code>4 3 2</code></div>
+
 <div class="eq" id="eq-xsts-results-for-the-s2tt-task-103"><code>X-eng (S2ST)</code></div>
-<div class="eq" id="eq-xsts-results-for-the-s2tt-task-104"><code>1</code></div>
-<div class="pblk" id="p-xsts-results-for-the-s2tt-task-11">
-          <p class="en-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-11-1"><span class="en">ita rus cat nld ind hin deu spa fra ron por</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-11-1"><span class="zh">（XSTS 结果图（S2ST）：X-eng 方向各语种（ita、rus、cat、nld、ind、hin、deu、spa、fra、ron、por）纵轴 1/2/3/4 分，5 Average XSTS（calib.）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-xsts-results-for-the-s2tt-task-105"><code>5</code></div>
-<div class="pblk" id="p-xsts-results-for-the-s2tt-task-12">
-          <p class="en-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-12-1"><span class="en">Average XSTS (calib.)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-12-1"><span class="zh">53 5 平均 XSTS（校准后）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-xsts-results-for-the-s2tt-task-106"><code>4 3 2</code></div>
-<div class="eq" id="eq-xsts-results-for-the-s2tt-task-107"><code>eng-X (S2ST)</code></div>
-<div class="eq" id="eq-xsts-results-for-the-s2tt-task-108"><code>1</code></div>
+
+
+
+
+
+
+
 <div class="pblk" id="p-xsts-results-for-the-s2tt-task-13">
           <p class="en-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-13-1"><span class="en">ita cat hin deu ben spa fra tur por ron cmn tgl tel fin jpn tha kor vie ben swh tur urd arb cmn fin tel tgl nld jpn vie rus tha ind kor swh arb urd WHISPER-LARGE-V2 +YOURTTS SEAMLESSM4T-LARGE Ref</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-13-1"><span class="zh">（表格/图内数值行，原始数据照录）
@@ -3127,7 +3091,7 @@ If truncations are the predominant reason behind the drop in XSTS scores for Sea
 <div class="eq" id="eq-truncation-and-omission-in-s2st--1"><code>58</code></div>
 <div class="eq" id="eq-truncation-and-omission-in-s2st--2"><code>S2TT X-eng S2ST X-eng</code></div>
 <div class="eq" id="eq-truncation-and-omission-in-s2st--3"><code>5 4</code></div>
-<div class="eq" id="eq-truncation-and-omission-in-s2st--4"><code>XSTS</code></div>
+
 <div class="eq" id="eq-truncation-and-omission-in-s2st--5"><code>3 2 0 10 20 30 40 50 1</code></div>
 <div class="eq" id="eq-truncation-and-omission-in-s2st--6"><code>Duration of source audio (seconds)</code></div>
 <div class="eq" id="eq-truncation-and-omission-in-s2st--7"><code>5 4 3 2 0 10 20 30 40 50 1</code></div>
@@ -3163,15 +3127,15 @@ Duration of source audio (seconds) SEAMLESSM4T-LARGE WHISPER-LARGE-V2 WHISPER-LA
         </div>
 <div class="eq" id="eq-mos-results-1"><code>59 5</code></div>
 <div class="eq" id="eq-mos-results-2"><code>Avg MOS (naturalness)</code></div>
-<div class="eq" id="eq-mos-results-3"><code>4 3 2</code></div>
+
 <div class="eq" id="eq-mos-results-4"><code>X-eng (S2ST)</code></div>
-<div class="eq" id="eq-mos-results-5"><code>1</code></div>
+
 <div class="eq" id="eq-mos-results-6"><code>rus fra arb cmn</code></div>
-<div class="eq" id="eq-mos-results-7"><code>5</code></div>
+
 <div class="eq" id="eq-mos-results-8"><code>Avg MOS (naturalness)</code></div>
-<div class="eq" id="eq-mos-results-9"><code>4 3 2</code></div>
+
 <div class="eq" id="eq-mos-results-10"><code>eng-X (S2ST)</code></div>
-<div class="eq" id="eq-mos-results-11"><code>1</code></div>
+
 <div class="pblk" id="p-mos-results-3">
           <p class="en-lines"><span class="sent" data-sid="s-mos-results-3-1"><span class="en">cmn tel ita fin nld ben spa fra swh por urd tel hin spa tur tgl tha rus kor vie hin jpn ind cat deu tur arb ron WHISPER-LARGE-V2 SEAMLESSM4T-LARGE Ref</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-mos-results-3-1"><span class="zh">（表格/图内数值行，原始数据照录）
@@ -3250,38 +3214,16 @@ Direction Metric Pearson Spearman S2TT eng–X Blaser 2.0</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-correlations-between-asr-bleu-bl-3-1"><span class="zh">（图内容：SEAMLESSM4T-LARGE (eng-X)、SEAMLESSM4T-LARGE (X-eng)、WHISPER-LARGE-V2 + YOURTTS (X-eng)；纵轴 mean(median(XSTS))（已校准），刻度至 5。页码 61。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-correlations-between-asr-bleu-bl-4"><code>4 3 2</code></div>
-<div class="pblk" id="p-correlations-between-asr-bleu-bl-4">
-          <p class="en-lines"><span class="sent" data-sid="s-correlations-between-asr-bleu-bl-4-1"><span class="en">Spearman R: 0.561 (0.651 X-eng) Spearman R: 0.736 (0.756 X-eng)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-correlations-between-asr-bleu-bl-4-1"><span class="zh">（表格/图内数值行，原始数据照录）
-（原始语料/表格数据照录）
-Spearman R: 0.561 (0.651 X-eng) Spearman R: 0.736 (0.756 X-eng)</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-correlations-between-asr-bleu-bl-5"><code>1 0 20 40</code></div>
-<div class="pblk" id="p-correlations-between-asr-bleu-bl-5">
-          <p class="en-lines"><span class="sent" data-sid="s-correlations-between-asr-bleu-bl-5-1"><span class="en">ASR-BLEU (S2ST) mean(median(XSTS)) (calib.)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-correlations-between-asr-bleu-bl-5-1"><span class="zh">（页码行：2。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-correlations-between-asr-bleu-bl-6"><code>3 4</code></div>
-<div class="pblk" id="p-correlations-between-asr-bleu-bl-6">
-          <p class="en-lines"><span class="sent" data-sid="s-correlations-between-asr-bleu-bl-6-1"><span class="en">BLASER 2.0 (S2ST) Spearman R: 0.625 (0.776 X-eng) Spearman R: 0.827 (0.871 X-eng)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-correlations-between-asr-bleu-bl-6-1"><span class="zh">（表格/图内数值行，原始数据照录）
-（原始语料/表格数据照录）
-BLASER 2.0 (S2ST) Spearman R: 0.625 (0.776 X-eng) Spearman R: 0.827 (0.871 X-eng)</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-correlations-between-asr-bleu-bl-7"><code>20 40</code></div>
-<div class="eq" id="eq-correlations-between-asr-bleu-bl-8"><code>BLEU (S2TT)</code></div>
-<div class="eq" id="eq-correlations-between-asr-bleu-bl-9"><code>3 4</code></div>
-<div class="pblk" id="p-correlations-between-asr-bleu-bl-7">
-          <p class="en-lines"><span class="sent" data-sid="s-correlations-between-asr-bleu-bl-7-1"><span class="en">BLASER 2.0 (S2TT)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-correlations-between-asr-bleu-bl-7-1"><span class="zh">（表格/图内数值行，原始数据照录）
-（原始语料/表格数据照录）
-BLASER 2.0 (S2TT)</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-correlations-between-asr-bleu-bl-1"><img class="fig" src="../assets/figures/2308.11596/fig-correlations-between-asr-bleu-bl-1.png" loading="lazy" alt="Figure 15: Correlations between XSTS and ASR-BLEU and Blaser 2.0 for S2ST task and between XSTS and BLEU and Blaser 2.0 "><span class="cap-k">图</span><p class="en">Figure 15: Correlations between XSTS and ASR-BLEU and Blaser 2.0 for S2ST task and between XSTS and BLEU and Blaser 2.0 for S2TT task. Blaser 2.0 offers superior correlation with XSTS, most notably for eng–X directions where ASR-BLEU and BLEU correlations are much weaker than for X–eng directions.</p><p class="zh">图 15：S2ST 任务上 XSTS 与 ASR-BLEU、Blaser 2.0 的相关性，以及 S2TT 任务上 XSTS 与 BLEU、Blaser 2.0 的相关性。Blaser 2.0 与 XSTS 的相关性更好，在 eng–X 方向上尤为明显——该方向 ASR-BLEU 与 BLEU 的相关性远弱于 X–eng 方向。</p></div>
 <div class="eq" id="eq-correlations-between-asr-bleu-bl-10"><code>62</code></div>
 <div class="pblk" id="p-correlations-between-asr-bleu-bl-8">
@@ -3589,18 +3531,14 @@ significant scientific attention in recent times (e.g., [Kiritchenko et al., 202
 By comparison, for S2TT in X–eng, Whisper-Large-v2’s added toxicity is 0.31% averaged across languages and is prevalent in 58 languages.</span></span><span class="sent" data-sid="s-automatic-toxicity-detection-on--5-2"><span class="zh">对 Whisper-Large-v2 与 SeamlessM4T-Large 都覆盖的语言，后者的新增毒性下降 63%。</span></span><span class="sent" data-sid="s-automatic-toxicity-detection-on--5-3"><span class="zh">X–eng 方向 S2ST 上，Whisper-Large-v2 + YourTTS 的新增毒性跨语言平均为 0.27%，在 52 种语言中普遍存在。同样地，对级联 S2ST 系统与 SeamlessM4T-Large 都覆盖的语言，我们的毒性 token 减少 62%。</span></span><span class="sent" data-sid="s-automatic-toxicity-detection-on--5-4"><span class="zh">eng–X 方向 S2TT 上，Whisper-Large-v2 + NLLB-3.3B 级联组合的新增毒性跨语言平均为 31%，且在 39 种语言中普遍存在。</span></span><span class="sent" data-sid="s-automatic-toxicity-detection-on--5-5"><span class="zh">对覆盖相同的语言，SeamlessM4T-Large 把这一数值降低 26%。</span></span><span class="sent" data-sid="s-automatic-toxicity-detection-on--5-6"><span class="zh">如第 4.2.1 节所述，对训练数据中不均衡毒性的过滤可能是这一改进的来源。</span></span></p>
           
         </div>
-<div class="pblk" id="p-automatic-toxicity-detection-on--6">
-          <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--6-1"><span class="en">FLEURS Added Toxicity - S2TT eng-X X-eng</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--6-1"><span class="zh">（页码行：2。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--2"><code>0% 1% 2% 0% 1% 2%</code></div>
+
+
 <div class="pblk" id="p-automatic-toxicity-detection-on--7">
           <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--7-1"><span class="en">oci pan kan tel ory lao kor guj mar afr lin cmn lit snd mlt yue zul nya tam swh ben kea khm ast sna ind tha mal jav glg heb est hye gle pes pol tur kir deu dan kaz bul lug fra ukr pbt nld tgk ckb ron uzn cym FLEURS Added Toxicity - S2ST eng-X X-eng</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--7-1"><span class="zh">（页码行：2。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--3"><code>0% 1% 2% 0% 1% 2%</code></div>
+
 <div class="pblk" id="p-automatic-toxicity-detection-on--8">
           <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--8-1"><span class="en">oci afr kan mlt kea ceb ory guj kor mar pan lit mal vie hin yue nya wol tel sna ast snd jpn tam amh azj slk nso khm dan tha mri cmn ind xho cym tur pes est nld ron rus swh deu ita uzn</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--8-1"><span class="zh">（FLEURS 新增毒性（Added Toxicity）自动检测图：S2TT 与 S2ST 的 eng-X / X-eng 方向，0%–2% 刻度，覆盖 50+ 语种。原始数据照录如下）
@@ -3681,35 +3619,20 @@ FLEURS 新增毒性 - S2TT eng-X X-eng 0% 1% 2% 0% 1% 2% oci pan kan tel ory lao
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-automatic-toxicity-detection-on--2-7">
-          <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-7-1"><span class="en">Holistic Bias Toxicity Delta</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-7-1"><span class="zh">（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）
-69 Holistic Bias 毒性增量 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 毒性翻译分布 ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--2-2"><code>0.1% 0.2% 0.3%</code></div>
-<div class="pblk" id="p-automatic-toxicity-detection-on--2-8">
-          <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-8-1"><span class="en">ind dan pes vie cym fra uzn fin por spa tur</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-8-1"><span class="zh">（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）
-Holistic Bias 毒性增量 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh 毒性翻译分布 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--2-3"><code>1.0</code></div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--2-4"><code>ita ron pol deu swe</code></div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--2-5"><code>0.8</code></div>
-<div class="pblk" id="p-automatic-toxicity-detection-on--2-9">
-          <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-9-1"><span class="en">slk nld est tha ukr swh Distribution of toxic translations</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-9-1"><span class="zh">（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）
-Holistic Bias 毒性增量 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh 毒性翻译分布 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--2-6"><code>0.6</code></div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--2-7"><code>tgl urd rus cat ces arb</code></div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--2-8"><code>0.4</code></div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--2-9"><code>jpn hin mlt kor</code></div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--2-10"><code>0.2</code></div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--2-11"><code>tel cmn ben</code></div>
-<div class="eq" id="eq-automatic-toxicity-detection-on--2-12"><code>0.0</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-automatic-toxicity-detection-on--2-10">
           <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-10-1"><span class="en">fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-10-1"><span class="zh">（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）
@@ -3874,45 +3797,19 @@ S2ST model, so we performed translations on only 17 languages for the S2ST task 
 6.3.3 Bias evaluation results This section focuses on analyzing gendered translations when using neutral inputs (eng–X) and the gap in translation performance between inputs that only differ in gender (X–eng).</span></span></p>
           
         </div>
-<div class="pblk" id="p-models-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-models-2-4-1"><span class="en">S2TT eng-X</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-models-2-4-1"><span class="zh">（页码行：2。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-models-2-2"><code>12</code></div>
-<div class="eq" id="eq-models-2-3"><code>(Masculine - Feminine) chrF</code></div>
-<div class="eq" id="eq-models-2-4"><code>8 4 0 –4</code></div>
-<div class="pblk" id="p-models-2-5">
-          <p class="en-lines"><span class="sent" data-sid="s-models-2-5-1"><span class="en">mar bul lit por arb ron ukr urd fra ell ita tam bel nld slv tha cat lvs slk deu rus spa ces dan swe Target language S2ST eng-X</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-models-2-5-1"><span class="zh">（页码行：2。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-models-2-5"><code>12 8 4 0 –4</code></div>
-<div class="pblk" id="p-models-2-6">
-          <p class="en-lines"><span class="sent" data-sid="s-models-2-6-1"><span class="en">swe arb ukr fra por ron urd ita cat slk tha dan ces deu spa rus nld Target language WHISPER-LARGE-V2 (ASR)+ NLLB-3.3B SEAMLESSM4T-LARGE</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-models-2-6-1"><span class="zh">（正文/表格数据句，原始文本照录，数字与年份均保留）
-swe arb ukr fra por ron urd ita cat slk tha dan ces deu spa rus nld Target language WHISPER-LARGE-V2 (ASR)+ NLLB-3.3B SEAMLESSM4T-LARGE</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
 <div class="cap" id="fig-models-2-1"><img class="fig" src="../assets/figures/2308.11596/fig-models-2-1.png" loading="lazy" alt="Figure 20: Left: The chrF points difference between masculine and feminine forms for eng–X S2TT using English speech as "><span class="cap-k">图</span><p class="en">Figure 20: Left: The chrF points difference between masculine and feminine forms for eng–X S2TT using English speech as source and X text translation (masculine or feminine) as reference. Right: The ASR-chrF points difference between masculine and feminine forms for eng–X S2ST using English speech as source and X text translation (masculine or feminine) as reference.</p><p class="zh">图 20：左：eng–X S2TT 以英语语音为源、以 X 文本翻译（阳性或阴性）为参考时，阳性与阴性形式之间的 chrF 分数差。右：eng–X S2ST 以英语语音为源、以 X 文本翻译（阳性或阴性）为参考时，阳性与阴性形式之间的 ASR-chrF 分数差。</p></div>
-<div class="pblk" id="p-models-2-7">
-          <p class="en-lines"><span class="sent" data-sid="s-models-2-7-1"><span class="en">S2TT X-eng (Masculine - Feminine) chrF</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-models-2-7-1"><span class="zh">（页码行：2。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-models-2-6"><code>6 4 2 0</code></div>
-<div class="pblk" id="p-models-2-8">
-          <p class="en-lines"><span class="sent" data-sid="s-models-2-8-1"><span class="en">mar bul por arb ron ukr urd fra ell tam tha cat lvs nld deu rus spa swe Source language S2ST X-eng</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-models-2-8-1"><span class="zh">（页码行：2。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-models-2-7"><code>6 4 2 0</code></div>
-<div class="pblk" id="p-models-2-9">
-          <p class="en-lines"><span class="sent" data-sid="s-models-2-9-1"><span class="en">bul swe mar por arb ron ukr urd fra ell tam lvs tha cat nld deu spa rus Source language WHISPER-LARGE-V2 SEAMLESSM4T-LARGE WHISPER-LARGE-V2 + YOURTTS</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-models-2-9-1"><span class="zh">（正文/表格数据句，原始文本照录，数字与年份均保留）
-bul swe mar por arb ron ukr urd fra ell tam lvs tha cat nld deu spa rus Source language WHISPER-LARGE-V2 SEAMLESSM4T-LARGE WHISPER-LARGE-V2 + YOURTTS</span></span></p>
-          
-        </div>
+
+
+
+
+
 <div class="cap" id="fig-models-2-2"><img class="fig" src="../assets/figures/2308.11596/fig-models-2-2.png" loading="lazy" alt="Figure 21: (left) The chrF points difference between masculine and feminine for X–eng S2TT using X speech synthesized by"><span class="cap-k">图</span><p class="en">Figure 21: (left) The chrF points difference between masculine and feminine for X–eng S2TT using X speech synthesized by the masculine or feminine version of the text and English text as a reference. (right) The ASR-chrF points difference between masculine and feminine forms for X–eng S2ST using X speech synthesized by the masculine or feminine version of text and English text as reference.</p><p class="zh">图 21：（左）X–eng S2TT 以由阳性或阴性文本版本合成的 X 语音为源、以英文文本为参考时，阳性与阴性之间的 chrF 分数差。（右）X–eng S2ST 以由阳性或阴性文本版本合成的 X 语音为源、以英文文本为参考时，阳性与阴性形式之间的 ASR-chrF 分数差。</p></div>
 <div class="pblk" id="p-models-2-10">
           <p class="en-lines"><span class="sent" data-sid="s-models-2-10-1"><span class="en">eng–X.</span></span></p>
@@ -3925,20 +3822,11 @@ bul swe mar por arb ron ukr urd fra ell tam lvs tha cat nld deu spa rus Source l
           
         </div>
 <div class="eq" id="eq-models-2-8"><code>75</code></div>
-<div class="eq" id="eq-models-2-9"><code>S2ST eng-X (Masculine - Feminine) BLASER 2.0</code></div>
+
 <div class="eq" id="eq-models-2-10"><code>0.20 0.16 0.12 0.08 0.04 0.00 –0.04 –0.08</code></div>
-<div class="pblk" id="p-models-2-12">
-          <p class="en-lines"><span class="sent" data-sid="s-models-2-12-1"><span class="en">cat nld tha deu spa rus swe por ukr arb ron urd fra Target language S2ST X-eng</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-models-2-12-1"><span class="zh">（页码行：2。）</span></span></p>
-          
-        </div>
+
 <div class="eq" id="eq-models-2-11"><code>0.20 0.16 0.12 0.08 0.04 0.00 –0.04 –0.08</code></div>
-<div class="pblk" id="p-models-2-13">
-          <p class="en-lines"><span class="sent" data-sid="s-models-2-13-1"><span class="en">ell tam tha cat nld spa deu rus mar swe bul lav por ron arb ukr urd fra Source language WHISPER-LARGE-V2 + YOURTTS SEAMLESSM4T-LARGE</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-models-2-13-1"><span class="zh">（正文/表格数据句，原始文本照录，数字与年份均保留）
-ell tam tha cat nld spa deu rus mar swe bul lav por ron arb ukr urd fra Source language WHISPER-LARGE-V2 + YOURTTS SEAMLESSM4T-LARGE</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-models-2-3"><img class="fig" src="../assets/figures/2308.11596/fig-models-2-3.png" loading="lazy" alt="Figure 22: (left) The supervised Blaser 2.0 points difference between masculine and feminine forms for eng–X S2ST using "><span class="cap-k">图</span><p class="en">Figure 22: (left) The supervised Blaser 2.0 points difference between masculine and feminine forms for eng–X S2ST using English speech as the source and X text translation (masculine and feminine) as reference. The results are averaged from three experiments. (right) The supervised Blaser 2.0 points difference for X–eng S2ST using X speech synthesized by the masculine or feminine version of text and English text as reference.</p><p class="zh">图 22：（左）eng–X S2ST 以英语语音为源、以 X 文本翻译（阳性与阴性）为参考时，阳性与阴性形式之间的有监督 Blaser 2.0 分数差，结果为三次实验的平均。（右）X–eng S2ST 以由阳性或阴性文本版本合成的 X 语音为源、以英文文本为参考时的有监督 Blaser 2.0 分数差。</p></div>
 <div class="pblk" id="p-models-2-14">
           <p class="en-lines"><span class="sent" data-sid="s-models-2-14-1"><span class="en">• In SeamlessM4T-LargeS2TT, the translation quality deteriorates for all the languages except Thai when using the feminine reference, and is especially noticeable in languages like Catalan (with a significant 10.3 chrF points difference), Slovak (10.1), and Spanish (10.0).</span><button class="mk feat" data-sid="s-models-2-14-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-models-2-14-2"><span class="en">For the Whisper-Large-v2 + NLLB-3.3B combination, a decline in translation quality is observed across all languages.</span></span> <span class="sent" data-sid="s-models-2-14-3"><span class="en">The highest differences are found in Catalan (10.7), Spanish (10.3), and Arabic (10.2).</span></span> <span class="sent" data-sid="s-models-2-14-4"><span class="en">It’s worth mentioning that the biases’ distribution over languages is similar between SeamlessM4T-Large and the Whisper-Large-v2 + NLLB-3.3B combination, with Thai being the only exception.</span></span></p>
@@ -4159,18 +4047,14 @@ hand, the highest differences in Whisper-Large-v2 are with Spanish (5.3), Urdu (
           <p class="zh-lines"><span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--5-1"><span class="zh">（接续）79 ……FLORES 数据集。</span></span><span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--5-2"><span class="zh">不过，这种「低呈现」是为让我们方法可规模化到多语言所做的权衡。</span></span><span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--5-3"><span class="zh">这种可规模化的数据刻画工作，潜在上可用于平衡数据集、从而缓解性别偏见。</span></span></p>
           
         </div>
-<div class="eq" id="eq-x-eng-seamlessm4t-whisper-large--9"><code>3.5 3 2.5</code></div>
-<div class="eq" id="eq-x-eng-seamlessm4t-whisper-large--10"><code>MinedData</code></div>
-<div class="eq" id="eq-x-eng-seamlessm4t-whisper-large--11"><code>2</code></div>
-<div class="eq" id="eq-x-eng-seamlessm4t-whisper-large--12"><code>Masculine CoVoST 2</code></div>
-<div class="eq" id="eq-x-eng-seamlessm4t-whisper-large--13"><code>1.5 1 0.5</code></div>
-<div class="eq" id="eq-x-eng-seamlessm4t-whisper-large--14"><code>FLEURS FLORES EuroParl EuroParl LibriSpeech MultilingualLibriSpeech</code></div>
-<div class="eq" id="eq-x-eng-seamlessm4t-whisper-large--15"><code>0 0.5 1 1.5 2 2.5 3 3.5 0</code></div>
-<div class="pblk" id="p-x-eng-seamlessm4t-whisper-large--6">
-          <p class="en-lines"><span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--6-1"><span class="en">Feminine</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--6-1"><span class="zh">（性别极性图：S2TT eng-X（Masculine − Feminine）chrF 差（–4/0/4/8/12，目标语言 mar、bul、lit、por、arb、ron、ukr、urd、fra、ell、ita、tam、bel、nld、slv、tha、cat、lvs、slk、deu、rus、spa、ces、dan、swe）；S2ST eng-X 同口径（swe、arb、ukr、fra、por、ron、urd、ita、cat、slk、tha、dan、ces、deu、spa、rus、nld）；系统：WHISPER-LARGE-V2 (ASR)+NLLB-3.3B 与 SEAMLESSM4T-LARGE。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-x-eng-seamlessm4t-whisper-large--1"><img class="fig" src="../assets/figures/2308.11596/fig-x-eng-seamlessm4t-whisper-large--1.png" loading="lazy" alt="Figure 23: Gender representation of English evaluation datasets (EuroParl, Flores, Fleurs, CoVoST 2, LibriSpeech and Mul"><span class="cap-k">图</span><p class="en">Figure 23: Gender representation of English evaluation datasets (EuroParl, Flores, Fleurs, CoVoST 2, LibriSpeech and MultilingualLibriSpeech), and training mined data (SeamlessAlign). Vertical axis show the percentage of masculine representation and horizontal axis show the percentage of feminine representation.</p><p class="zh">图 23：英语评测数据集（EuroParl、FLORES、Fleurs、CoVoST 2、LibriSpeech、MultilingualLibriSpeech）与训练挖掘数据（SeamlessAlign）的性别呈现。纵轴为阳性呈现百分比，横轴为阴性呈现百分比。</p></div>
 <div class="pblk" id="p-x-eng-seamlessm4t-whisper-large--7">
           <p class="en-lines"><span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--7-1"><span class="en">6.3.5 Bias Key Findings In this section, we conducted a set of comprehensive evaluations on translation biases for S2TT and S2ST.</span></span> <span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--7-2"><span class="en">We demonstrate the following: (1) in the absence of gender information, SeamlessM4T-Large exhibits an average preference of ∼10% towards translating to the masculine form (for both modalities); (2) utilizing feminine form as the source input leads to lower quality English translations compared to its masculine counterpart, showing a lack of robustness against gender inflection by ∼3% ; (3) SeamlessM4T-Large gets comparable bias results to the state-of-the-art, and (4) our gender representation analysis reveals an overrepresentation of masculine lexica compared to feminine in the analyzed datasets.</span></span> <span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--7-3"><span class="en">More</span></span></p>

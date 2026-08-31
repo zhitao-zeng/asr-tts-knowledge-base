@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -885,7 +885,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-6-3-5-1"><span class="zh">• Step-SPQA：Step-Audio 2 中提出的 11 类音频问题/音频回答基准。</span></span></p>
           
         </div>
-<div class="eq" id="eq-6-3-1"><code>2.</code></div>
+
 <div class="cap" id="fig-6-3-1"><img class="fig" src="../assets/figures/2605.23463/fig-6-3-1.png" loading="lazy" alt="Figure 5: Realtime interaction evaluation. Higher is better. Best results are in bold."><span class="cap-k">图</span><p class="en">Figure 5: Realtime interaction evaluation. Higher is better. Best results are in bold.</p><p class="zh">图 5：实时交互评测。越高越好。最优结果加粗。</p></div>
 <div class="pblk" id="p-6-3-6">
           <p class="en-lines"><span class="sent" data-sid="s-6-3-6-1"><span class="en">Results Analysis: As shown in Figure 5, StepAudio 2.5 Realtime consistently outperforms competitive baselines across all five suites.</span></span> <span class="sent" data-sid="s-6-3-6-2"><span class="en">Notably, it achieves a +10.0 margin on the subjective human evaluation compared to the next-best system, validating the efficacy of our persona and naturalness conditioning.</span><button class="mk feat" data-sid="s-6-3-6-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-6-3-6-3"><span class="en">Furthermore, the +16.6 margin on Step-SPQA and strong performance on Step-Dialogue-Understanding indicate that the paralinguistic conditioning enhances acoustic comprehension without degrading general reasoning.</span></span> <span class="sent" data-sid="s-6-3-6-4"><span class="en">The concurrent improvements in both subjective conversational quality and objective audio understanding demonstrate that our rehearsal schedule effectively balances specialized interaction training with foundational capabilities.</span></span></p>

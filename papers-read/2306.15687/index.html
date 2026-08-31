@@ -97,8 +97,8 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
 .cap .en{color:var(--muted);display:block;font-size:12.5px}
-.eq{text-align:center;margin:12px 0;padding:8px;background:#fff;border:1px dashed var(--line);border-radius:10px;overflow:auto}
-.eq code{background:none;font-size:14px}
+.eq{text-align:center;margin:14px auto;padding:12px 18px;background:#fdfcff;border:1px solid #e6e0f3;border-radius:10px;overflow:auto;max-width:720px}
+.eq code{background:none;font-family:"Cambria Math","Latin Modern Math",Georgia,"Times New Roman",serif;font-size:15px;color:#1e1b4b;white-space:pre-wrap}
 .tbwrap{margin:10px 0}
 .tb-note{font-size:13px;color:var(--muted);margin:4px 0}
 .tb summary{font-size:12.5px;color:var(--muted);cursor:pointer}
@@ -219,37 +219,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <section>
       <h3 class="sech lv2" id="sec-zero-shot-tts"><span class="t-zh">零样本 TTS（示意图标签区）</span><span class="t-en">Zero-shot TTS</span></h3></section>
 <section>
-      <h3 class="sech lv2" id="sec-denoising"><span class="t-zh">去噪</span><span class="t-en">Denoising</span></h3><div class="pblk" id="p-denoising-1">
-          <p class="en-lines"><span class="sent" data-sid="s-denoising-1-1"><span class="en">noise</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-denoising-1-1"><span class="zh">（图内标签）噪声</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-denoising"><span class="t-zh">去噪</span><span class="t-en">Denoising</span></h3></section>
 <section>
-      <h3 class="sech lv2" id="sec-text-only-sampling"><span class="t-zh">仅文本采样（示意图区，含图 1）</span><span class="t-en">Text-Only Sampling</span></h3><div class="pblk" id="p-text-only-sampling-1">
-          <p class="en-lines"><span class="sent" data-sid="s-text-only-sampling-1-1"><span class="en">“HIS … GOURMET“ Content Raw data Style “OUTSIDE OF THESE…”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-text-only-sampling-1-1"><span class="zh">（图内文字）「HIS … GOURMET」 内容 原始数据 风格 「OUTSIDE OF THESE…」</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-text-only-sampling-2">
-          <p class="en-lines"><span class="sent" data-sid="s-text-only-sampling-2-1"><span class="en">Model Input “DON’T MOVE AROUND…”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-text-only-sampling-2-1"><span class="zh">（图内文字）模型 输入 「DON'T MOVE AROUND…」</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-text-only-sampling-3">
-          <p class="en-lines"><span class="sent" data-sid="s-text-only-sampling-3-1"><span class="en">“FROM … ALONE“ Ref Concat(“HIS … GOURMET”, “FROM … ALONE“) “OUTSIDE OF THESE…”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-text-only-sampling-3-1"><span class="zh">（图内文字）「FROM … ALONE」 参考音频 拼接（「HIS … GOURMET」＋「FROM … ALONE」） 「OUTSIDE OF THESE…」</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-text-only-sampling-4">
-          <p class="en-lines"><span class="sent" data-sid="s-text-only-sampling-4-1"><span class="en">“DON’T MOVE AROUND…”</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-text-only-sampling-4-1"><span class="zh">（图内文字）「DON'T MOVE AROUND…」</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-text-only-sampling-5">
-          <p class="en-lines"><span class="sent" data-sid="s-text-only-sampling-5-1"><span class="en">Sample #1 Target Ref Model Output Sample #2 Sample #3</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-text-only-sampling-5-1"><span class="zh">（图内文字）样本 #1 目标 参考 模型 输出 样本 #2 样本 #3</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-text-only-sampling"><span class="t-zh">仅文本采样（示意图区，含图 1）</span><span class="t-en">Text-Only Sampling</span></h3>
+
+
+
+
 <div class="cap" id="fig-text-only-sampling-1"><img class="fig" src="../assets/figures/2306.15687/fig-text-only-sampling-1.png" loading="lazy" alt="Figure 1: Voicebox task generalization through in-context learning."><span class="cap-k">图</span><p class="en">Figure 1: Voicebox task generalization through in-context learning.</p><p class="zh">图 1：Voicebox 通过上下文学习实现任务泛化的示意图。</p></div>
 <div class="pblk" id="p-text-only-sampling-6">
           <p class="en-lines"><span class="sent" data-sid="s-text-only-sampling-6-1"><span class="en">Popov et al., 2021, Huang et al., 2022, Tan et al., 2022, Casanova et al., 2021].</span></span> <span class="sent" data-sid="s-text-only-sampling-6-2"><span class="en">Previous works consider highly curated datasets such as VCTK [Yamagishi et al., 2019], which contains only clean audio recorded in studio from about 100 speakers with little speaking style and text variation.</span></span> <span class="sent" data-sid="s-text-only-sampling-6-3"><span class="en">Such models struggle to synthesize speech with rich variation in emotion, voice, background noise, acoustic condition, and have not been tested on the abilities to generalize to tasks not explicitly trained on.</span></span></p>
@@ -432,17 +408,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-voicebox-audio-model"><span class="t-zh">Voicebox 音频模型（图 2）</span><span class="t-en">Voicebox Audio Model</span></h3><div class="pblk" id="p-voicebox-audio-model-1">
-          <p class="en-lines"><span class="sent" data-sid="s-voicebox-audio-model-1-1"><span class="en">H F F Phone embedder Frame-level phone emb Masked speech Noisy speech N Phonemize &amp; Forced alignment Random span masking “How are you doing” N D F Transformer Linear Projection Predicted flow (gradient) N N</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-voicebox-audio-model-1-1"><span class="zh">（图内文字）H F F 音素嵌入器 帧级音素嵌入 被掩蔽语音 含噪语音 N 音素化与强制对齐 随机片段掩蔽 “How are you doing” N D F Transformer 线性投影 预测的流（梯度） N N 1 正弦位置嵌入器 计算 OT 路径上流步 t 处的样本 采样得到的流步 从先验采样的噪声 F</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-voicebox-audio-model-1"><code>1</code></div>
-<div class="pblk" id="p-voicebox-audio-model-2">
-          <p class="en-lines"><span class="sent" data-sid="s-voicebox-audio-model-2-1"><span class="en">Sinusoidal position embedder Compute sample at flow step t for OT path Sampled flow step Sampled noise from the prior F</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-voicebox-audio-model-2-1"><span class="zh">（图内标签）噪声</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-voicebox-audio-model"><span class="t-zh">Voicebox 音频模型（图 2）</span><span class="t-en">Voicebox Audio Model</span></h3>
+
+
 <div class="cap" id="fig-voicebox-audio-model-1"><img class="fig" src="../assets/figures/2306.15687/fig-voicebox-audio-model-1.png" loading="lazy" alt="Figure 2: Illustration of the Voicebox audio model. The lower half illustrates how inputs are created during training. N"><span class="cap-k">图</span><p class="en">Figure 2: Illustration of the Voicebox audio model. The lower half illustrates how inputs are created during training. N denotes the number of frames, H for the phone embedding dimension, F for the spectral feature dimension, and D for the Transformer input dimension. Solid dark gray blocks denote trainable components, and light gray blocks with dashed border are frozen components or operations without trainable parameters.</p><p class="zh">图 2：Voicebox 音频模型示意图。下半部分展示训练时输入的构造方式。N 表示帧数，H 为音素嵌入维度，F 为频谱特征维度，D 为 Transformer 输入维度。深灰色实心块为可训练组件，带虚线边框的浅灰色块为冻结组件或无可训练参数的操作。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-audio-model-fig-2"><span class="t-zh">音频模型（图 2）</span><span class="t-en">Audio Model (Fig. 2)</span></h3><div class="pblk" id="p-audio-model-fig-2-1">
@@ -517,17 +485,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-2-1"><span class="zh">直观地说，ODE 求解器通过在多个 t 处评估 vt，从初始条件 ϕ0(x0) = x0 出发近似 t = 0 到 t = 1 的积分，从而计算 ϕ1(x0)。</span></span><span class="sent" data-sid="s-3-4-2-2"><span class="zh">函数评估次数（NFE）定义为 dϕt(x0)/dt 被评估的次数。</span></span><span class="sent" data-sid="s-3-4-2-3"><span class="zh">更高的 NFE 通常能得到更精确的 ϕ1(x0) 解，代价是运行时间更长。</span></span><span class="sent" data-sid="s-3-4-2-4"><span class="zh">这为用户提供了极大的灵活性，自行决定速度与精度之间的权衡。</span></span><span class="sent" data-sid="s-3-4-2-5"><span class="zh">此外，我们经验上发现 Voicebox 用不到 10 次 NFE 就能生成非常高质量的语音，这使它显著快于自回归模型。</span></span></p>
           
         </div>
-<div class="pblk" id="p-3-4-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="en">Voicebox audio model inference ODE step 1 ODE step 2 ODE step N</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="zh">（图内文字）Voicebox 音频模型推理 ODE 步 1 ODE 步 2 ODE 步 N … 条件输入：Voicebox 音频模型：</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-4-1"><code>…</code></div>
-<div class="pblk" id="p-3-4-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="en">conditionals: Voicebox audio model:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="zh">（图内文字）Voicebox 音频模型推理 ODE 步 1 ODE 步 2 ODE 步 N … 条件输入：Voicebox 音频模型：</span></span></p>
-          
-        </div>
+
+
+
 <div class="cap" id="fig-3-4-1"><img class="fig" src="../assets/figures/2306.15687/fig-3-4-1.png" loading="lazy" alt="Figure 3: Inference is equivalent to solving an ODE with an initial condition x0 sampled from the prior, a derivative dx"><span class="cap-k">图</span><p class="en">Figure 3: Inference is equivalent to solving an ODE with an initial condition x0 sampled from the prior, a derivative dxt</p><p class="zh">图 3：推理等价于求解一个 ODE：初始条件 x0 从先验采样，导数 dxt/dt 由音频模型给出（标题在抽取中截断）。</p></div>
 <div class="pblk" id="p-3-4-5">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-5-1"><span class="en">dt specified by the audio model, and conditional inputs (z, xctx).</span></span> <span class="sent" data-sid="s-3-4-5-2"><span class="en">At each step, the ODE solver estimate xt+1 given t, xt from the previous step, the audio model, and the conditional inputs.</span></span> <span class="sent" data-sid="s-3-4-5-3"><span class="en">In the end, it produces x1, which is a sample drawn from the learned distribution p1.</span></span></p>
@@ -602,44 +562,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-diverse-speech-sampling-alignmen-3-1"><span class="zh">（脚注 5）注意使用 CFG 时，相同 NFE 下计算量翻倍，因为每次评估 ṽt 都需要模型 vt 做两次前向。</span></span></p>
           
         </div>
-<div class="eq" id="eq-diverse-speech-sampling-alignmen-1"><code>[8   3  2  2 1  0   4 5  1 1 10 ]</code></div></section>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-diverse-sampling"><span class="t-zh">多样化采样（示意图）</span><span class="t-en">Diverse sampling</span></h3><div class="pblk" id="p-diverse-sampling-1">
-          <p class="en-lines"><span class="sent" data-sid="s-diverse-sampling-1-1"><span class="en">Duration phonemize model Audio model upsample [SIL HH AH L OW SIL W ER L D SIL] “Hello world” [SIL*8 HH*3 … D*1 SIL*10]</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-diverse-sampling-1-1"><span class="zh">（图内文字）时长模型 音素化 音频模型 上采样 [SIL HH AH L OW SIL W ER L D SIL] “Hello world” [SIL*8 HH*3 … D*1 SIL*10] [0 0 0 0 0 0 0 0 0 0 0] [8 3 2 2 1 7 1 5 2 10]</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-diverse-sampling-1"><code>[0   0  0  0 0  0   0 0  0 0 0  ] [8   3  2  2 1  7   1 5  2 10 ]</code></div></section>
+      <h3 class="sech lv2" id="sec-diverse-sampling"><span class="t-zh">多样化采样（示意图）</span><span class="t-en">Diverse sampling</span></h3>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-editing-infilling"><span class="t-zh">编辑／填充（示意图）</span><span class="t-en">Editing / infilling</span></h3><div class="pblk" id="p-editing-infilling-1">
-          <p class="en-lines"><span class="sent" data-sid="s-editing-infilling-1-1"><span class="en">Duration Forced-align &amp; model Replace Audio model upsample [SIL HH AH L OW SIL T AA M SIL] “Hello world” → “Hello tom” [SIL*8 … AA*5 M*2 SIL*10]</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-editing-infilling-1-1"><span class="zh">（图内文字）时长模型 强制对齐与替换 音频模型 上采样 [SIL HH AH L OW SIL T AA M SIL] “Hello world” → “Hello tom” [SIL*8 … AA*5 M*2 SIL*10] [8 3 2 2 1 7 0 0 0 10]（“Hello world” 的音频）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-editing-infilling-1"><code>[8   3  2  2 1  7   0 0  0 10 ]</code></div>
-<div class="pblk" id="p-editing-infilling-2">
-          <p class="en-lines"><span class="sent" data-sid="s-editing-infilling-2-1"><span class="en">(audio of “Hello world”)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-editing-infilling-2-1"><span class="zh">（图内文字）“world” 片段被移除，插入 8 帧掩蔽（“tom” 的预测时长）[8 3 … 1 1 10 2 4 0 1 5 1 3 4] 时长模型 强制对齐 音频模型 上采样 [SIL HH … L D SIL HH EY SIL F OW K S SIL] “Hello world” [SIL*8 … K*3 S*3 SIL*4] [8 3 … 1 1 10 0 0 0 0 0 0 0 0]（“Hello world” 的音频）长度等于 “Hey folks” 预测时长之和的掩蔽（“Hello world” 的音频）“Hey folks” 音素化</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-editing-infilling"><span class="t-zh">编辑／填充（示意图）</span><span class="t-en">Editing / infilling</span></h3>
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-style-transfer"><span class="t-zh">风格迁移（示意图）</span><span class="t-en">Style transfer</span></h3><div class="pblk" id="p-style-transfer-1">
-          <p class="en-lines"><span class="sent" data-sid="s-style-transfer-1-1"><span class="en">“world” segment removed, insert 8 frames of mask (predicted duration of “tom”)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-style-transfer-1-1"><span class="zh">（图内文字）“world” 片段被移除，插入 8 帧掩蔽（“tom” 的预测时长）[8 3 … 1 1 10 2 4 0 1 5 1 3 4] 时长模型 强制对齐 音频模型 上采样 [SIL HH … L D SIL HH EY SIL F OW K S SIL] “Hello world” [SIL*8 … K*3 S*3 SIL*4] [8 3 … 1 1 10 0 0 0 0 0 0 0 0]（“Hello world” 的音频）长度等于 “Hey folks” 预测时长之和的掩蔽（“Hello world” 的音频）“Hey folks” 音素化</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-style-transfer-1"><code>[8   3  … 1 1 10  2  4  0   1 5  1 3 4  ]</code></div>
-<div class="pblk" id="p-style-transfer-2">
-          <p class="en-lines"><span class="sent" data-sid="s-style-transfer-2-1"><span class="en">Duration Forced-align model Audio model upsample [SIL HH … L D SIL HH EY SIL F OW K S SIL] “Hello world” [SIL*8 … K*3 S*3 SIL*4]</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-style-transfer-2-1"><span class="zh">（图内文字）“world” 片段被移除，插入 8 帧掩蔽（“tom” 的预测时长）[8 3 … 1 1 10 2 4 0 1 5 1 3 4] 时长模型 强制对齐 音频模型 上采样 [SIL HH … L D SIL HH EY SIL F OW K S SIL] “Hello world” [SIL*8 … K*3 S*3 SIL*4] [8 3 … 1 1 10 0 0 0 0 0 0 0 0]（“Hello world” 的音频）长度等于 “Hey folks” 预测时长之和的掩蔽（“Hello world” 的音频）“Hey folks” 音素化</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-style-transfer-2"><code>[8   3  … 1 1 10  0  0  0   0 0  0 0 0  ]</code></div>
-<div class="pblk" id="p-style-transfer-3">
-          <p class="en-lines"><span class="sent" data-sid="s-style-transfer-3-1"><span class="en">(audio of “Hello world”) mask whose length is (audio of “Hello world”) the sum of predicted duration for “Hey folks” “Hey folks” phonemize</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-style-transfer-3-1"><span class="zh">（图内文字）“world” 片段被移除，插入 8 帧掩蔽（“tom” 的预测时长）[8 3 … 1 1 10 2 4 0 1 5 1 3 4] 时长模型 强制对齐 音频模型 上采样 [SIL HH … L D SIL HH EY SIL F OW K S SIL] “Hello world” [SIL*8 … K*3 S*3 SIL*4] [8 3 … 1 1 10 0 0 0 0 0 0 0 0]（“Hello world” 的音频）长度等于 “Hey folks” 预测时长之和的掩蔽（“Hello world” 的音频）“Hey folks” 音素化</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-style-transfer"><span class="t-zh">风格迁移（示意图）</span><span class="t-en">Style transfer</span></h3>
+
+
+
+
 <div class="cap" id="fig-style-transfer-1"><img class="fig" src="../assets/figures/2306.15687/fig-style-transfer-1.png" loading="lazy" alt="Figure 4: Detailed diagrams of diverse speech sampling, content editing, and style transfer. Text in red and blocks in o"><span class="cap-k">图</span><p class="en">Figure 4: Detailed diagrams of diverse speech sampling, content editing, and style transfer. Text in red and blocks in orange at the input of a model denote segments to be predicted. Numbers in blue and spectrogram in cyan at the model output denote predicted duration and spectrogram.</p><p class="zh">图 4：多样化语音采样、内容编辑和风格迁移的详细示意图。模型输入处的红色文字与橙色块表示待预测的片段；模型输出处的蓝色数字与青色频谱图表示预测的时长与频谱图。</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-4"><span class="secnum">4</span> <span class="t-zh">4 评价指标</span><span class="t-en">Metrics</span></h2><div class="pblk" id="p-4-1">
@@ -1135,63 +1071,43 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-7-1-1"><span class="zh">单语：5.2 节的上下文零样本 TTS 使用 3.0 秒提示音频。</span></span><span class="sent" data-sid="s-5-7-1-2"><span class="zh">这里我们考察目标文本使用回归时长模型的时长时，WER／SIM-r 随提示音频量的变化。</span></span><span class="sent" data-sid="s-5-7-1-3"><span class="zh">如果所需提示长于可用音频（……（脚注 6）我们重新实现并经作者确认，我们的重实现更快（6.2 秒对 10 秒））（接上）</span></span></p>
           
         </div>
-<div class="pblk" id="p-5-7-2">
-          <p class="en-lines"><span class="sent" data-sid="s-5-7-2-1"><span class="en">Voicebox</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-7-2-1"><span class="zh">本文提出 Voicebox：迄今功能最全面的规模化文本引导语音生成模型。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-7-1"><code>=0 =0.3 =0.7</code></div>
-<div class="eq" id="eq-5-7-2"><code>VALL-E</code></div>
-<div class="eq" id="eq-5-7-3"><code>6</code></div>
-<div class="eq" id="eq-5-7-4"><code>Inference time (10s audio)</code></div>
-<div class="eq" id="eq-5-7-5"><code>6 5 4</code></div>
-<div class="eq" id="eq-5-7-6"><code>WER</code></div>
-<div class="eq" id="eq-5-7-7"><code>4</code></div>
-<div class="eq" id="eq-5-7-8"><code>20.4X</code></div>
-<div class="eq" id="eq-5-7-9"><code>2 3 2 0.675 0.650 0.625</code></div>
-<div class="eq" id="eq-5-7-10"><code>SIM-r</code></div>
-<div class="eq" id="eq-5-7-11"><code>0.600 0.575 21 22 23 24 25 0 21 22 23 24 25 26</code></div>
-<div class="eq" id="eq-5-7-12"><code>NFE</code></div>
-<div class="eq" id="eq-5-7-13"><code>21 22 23 24 25</code></div>
-<div class="pblk" id="p-5-7-3">
-          <p class="en-lines"><span class="sent" data-sid="s-5-7-3-1"><span class="en">NFE NFE (b) NFE vs WER (Zero-shot TTS) (a) NFE vs time (w/o CFG)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-7-3-1"><span class="zh">（图 7：(a) NFE vs time (w/o CFG)；(b) NFE vs WER (Zero-shot TTS)；横轴 NFE。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-7-14"><code>3.1 3.0</code></div>
-<div class="eq" id="eq-5-7-15"><code>WER</code></div>
-<div class="eq" id="eq-5-7-16"><code>2.9 21 22 23 24 25</code></div>
-<div class="pblk" id="p-5-7-4">
-          <p class="en-lines"><span class="sent" data-sid="s-5-7-4-1"><span class="en">NFE (d) NFE vs WER (Diverse speech sampling) (c) NFE vs SIM-r (Zero-shot TTS)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-7-4-1"><span class="zh">（图 7：(c) NFE vs SIM-r (Zero-shot TTS)；(d) NFE vs WER (Diverse speech sampling)；横轴 NFE。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-7-17"><code>220 200</code></div>
-<div class="eq" id="eq-5-7-18"><code>FSD</code></div>
-<div class="eq" id="eq-5-7-19"><code>180 160 21 22 23 24 25</code></div>
-<div class="pblk" id="p-5-7-5">
-          <p class="en-lines"><span class="sent" data-sid="s-5-7-5-1"><span class="en">NFE (e) NFE vs FSD (Diverse speech sampling)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-7-5-1"><span class="zh">（图 7：(e) NFE vs FSD (Diverse speech sampling)。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-5-7-1"><img class="fig" src="../assets/figures/2306.15687/fig-5-7-1.png" loading="lazy" alt="Figure 5: Trade-off between NFE and different metrics. Inference time will be doubled with CFG."><span class="cap-k">图</span><p class="en">Figure 5: Trade-off between NFE and different metrics. Inference time will be doubled with CFG.</p><p class="zh">图 5：NFE 与不同指标之间的权衡。使用 CFG 时推理时间翻倍。</p></div>
 <div class="pblk" id="p-5-7-6">
           <p class="en-lines"><span class="sent" data-sid="s-5-7-6-1"><span class="en">audio, the shorter audio is used as the prompt.</span></span> <span class="sent" data-sid="s-5-7-6-2"><span class="en">Results are shown in Figure 6.</span></span> <span class="sent" data-sid="s-5-7-6-3"><span class="en">As expected, WER mildly decreases and SIM-r grows quickly and flattens with longer audio prompts.</span></span> <span class="sent" data-sid="s-5-7-6-4"><span class="en">Comparing against VALL-E, Voicebox is more efficient at leveraging an audio prompt, achieving the same speaker similarity as VALL-E with roughly two thirds the input audio.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-7-6-1"><span class="zh">（接上）则以较短的音频作为提示。</span></span><span class="sent" data-sid="s-5-7-6-2"><span class="zh">结果见图 6。</span></span><span class="sent" data-sid="s-5-7-6-3"><span class="zh">符合预期：WER 随提示变长缓慢下降，SIM-r 快速上升后趋平。</span></span><span class="sent" data-sid="s-5-7-6-4"><span class="zh">与 VALL-E 相比，Voicebox 利用提示音频更高效，只需约三分之二的输入音频即可达到与 VALL-E 相同的说话人相似度。</span></span></p>
           
         </div>
-<div class="eq" id="eq-5-7-20"><code>6 5 4</code></div>
-<div class="eq" id="eq-5-7-21"><code>WER</code></div>
-<div class="eq" id="eq-5-7-22"><code>3 2 1 2 3 4 5 6 7 8</code></div>
-<div class="eq" id="eq-5-7-23"><code>Seconds (a) WER</code></div>
-<div class="eq" id="eq-5-7-24"><code>0.7 0.6 0.5</code></div>
-<div class="eq" id="eq-5-7-25"><code>SIM-r</code></div>
-<div class="eq" id="eq-5-7-26"><code>0.4 0.3 0.2 1 2 3 4 5 6 7 8</code></div>
-<div class="pblk" id="p-5-7-7">
-          <p class="en-lines"><span class="sent" data-sid="s-5-7-7-1"><span class="en">Seconds (b) Speaker Similarity</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-7-7-1"><span class="zh">（图 8 横轴：秒（Seconds）；(b) Speaker Similarity。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
+
+
 <div class="cap" id="fig-5-7-2"><img class="fig" src="../assets/figures/2306.15687/fig-5-7-2.png" loading="lazy" alt="Figure 6: WER and SIM-r as a function of prompt audio time in seconds for the Zero-shot TTS task 5.2. Audio is generated"><span class="cap-k">图</span><p class="en">Figure 6: WER and SIM-r as a function of prompt audio time in seconds for the Zero-shot TTS task 5.2. Audio is generated using classifier-free guidance strength (α) of 0.7 and midpoint ODE solver with a NFE of 32. The blue line is for Voicebox and the red star is VALLE at 3 seconds. The speaker similarity (SIM-r) remains same for longer prompts (up to 10s).</p><p class="zh">图 6：零样本 TTS 任务（5.2 节）中 WER 与 SIM-r 随提示音频秒数的变化。音频以分类器自由引导强度（α）0.7、NFE 为 32 的中点 ODE 求解器生成。蓝线为 Voicebox，红色星号为 3 秒处的 VALL-E。更长提示（至 10 秒）时说话人相似度（SIM-r）保持不变。</p></div>
 <div class="pblk" id="p-5-7-8">
           <p class="en-lines"><span class="sent" data-sid="s-5-7-8-1"><span class="en">Cross-lingual: Here we examine the effect of increasing the prompt length for the case of crosslingual zero-shot TTS.</span></span> <span class="sent" data-sid="s-5-7-8-2"><span class="en">As described in 5.2, this setting has a total 36 language transfer directions for each pair of source and target language.</span></span> <span class="sent" data-sid="s-5-7-8-3"><span class="en">For each target text in a given transfer setting, we examine how WER / SIM-o7 vary as the prompt length increases.</span></span> <span class="sent" data-sid="s-5-7-8-4"><span class="en">Similarly, the regression duration model is used for the target text. Fig. 7 and Fig. 8 plot the SIM-o (speaker similarity) and WER trends respectively.</span></span> <span class="sent" data-sid="s-5-7-8-5"><span class="en">When concatenating the prompt to the target for MLS, we find that the samples are quite a bit longer than what the model was trained on (16s max length), because MLS test set 7Same trend is observed with SIM-r.</span></span> <span class="sent" data-sid="s-5-7-8-6"><span class="en">We present SIM-o to be consistent with Table 3 english french german polish portuguese spanish</span></span></p>
@@ -1199,25 +1115,25 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 如 5.2 节所述，该设置对每对源语言和目标语言共有 36 个语言迁移方向。</span></span><span class="sent" data-sid="s-5-7-8-3"><span class="zh">对于给定迁移设置下的每个目标文本，我们考察 WER / SIM-o（脚注 7）随提示长度增加的变化。</span></span><span class="sent" data-sid="s-5-7-8-4"><span class="zh">类似地，目标文本使用回归时长模型。图 7 与图 8 分别绘制 SIM-o（说话人相似度）与 WER 的趋势。</span></span><span class="sent" data-sid="s-5-7-8-5"><span class="zh">在 MLS 上把提示与目标拼接时，我们发现样本比模型训练时长（最长 16s）长不少，因为 MLS 测试集（脚注 7：SIM-r 上也观察到同样趋势）。</span></span><span class="sent" data-sid="s-5-7-8-6"><span class="zh">为与表 3 一致，此处报告 SIM-o。（图表语种：english / french / german / polish / portuguese / spanish。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-5-7-27"><code>0.7 0.6 0.6 0.5 0.5</code></div>
+
 <div class="eq" id="eq-5-7-28"><code>SIM-o SIM-o</code></div>
-<div class="eq" id="eq-5-7-29"><code>0.4 0.4 0.3 0.3 0.7 0.6 0.5</code></div>
+
 <div class="eq" id="eq-5-7-30"><code>SIM-o</code></div>
-<div class="eq" id="eq-5-7-31"><code>0.4 0.3 2 4 6 8 10</code></div>
+
 <div class="eq" id="eq-5-7-32"><code>Prompt (s)</code></div>
-<div class="eq" id="eq-5-7-33"><code>2 4 6 8 10</code></div>
+
 <div class="eq" id="eq-5-7-34"><code>Prompt (s) (a) English (b) French</code></div>
-<div class="eq" id="eq-5-7-35"><code>0.7 0.7 0.6 0.6 0.5</code></div>
+
 <div class="eq" id="eq-5-7-36"><code>SIM-o SIM-o</code></div>
-<div class="eq" id="eq-5-7-37"><code>0.5 0.4 0.4 0.3 0.3 2 4 6 8 10</code></div>
+
 <div class="eq" id="eq-5-7-38"><code>Prompt (s) (c) Spanish</code></div>
-<div class="eq" id="eq-5-7-39"><code>0.7 0.6</code></div>
+
 <div class="eq" id="eq-5-7-40"><code>SIM-o</code></div>
-<div class="eq" id="eq-5-7-41"><code>0.5 0.4 0.3 2 4 6 8 10</code></div>
+
 <div class="eq" id="eq-5-7-42"><code>Prompt (s)</code></div>
-<div class="eq" id="eq-5-7-43"><code>2 4 6 8 10</code></div>
+
 <div class="eq" id="eq-5-7-44"><code>Prompt (s)</code></div>
-<div class="eq" id="eq-5-7-45"><code>2 4 6 8 10</code></div>
+
 <div class="pblk" id="p-5-7-9">
           <p class="en-lines"><span class="sent" data-sid="s-5-7-9-1"><span class="en">Prompt (s) (e) German (d) Portuguese (f) Polish</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-7-9-1"><span class="zh">（图 8 子图：Prompt (s)；(e) German / (d) Portuguese / (f) Polish。）</span></span></p>
@@ -1257,26 +1173,22 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-5-8-2"><code>WER WER</code></div>
 <div class="eq" id="eq-5-8-3"><code>7.5 20 7.0 6.5 10 40 30</code></div>
 <div class="eq" id="eq-5-8-4"><code>WER</code></div>
-<div class="eq" id="eq-5-8-5"><code>20 10 2 4 6 8 10</code></div>
-<div class="eq" id="eq-5-8-6"><code>Prompt (s)</code></div>
-<div class="eq" id="eq-5-8-7"><code>2 4 6 8 10</code></div>
-<div class="eq" id="eq-5-8-8"><code>Prompt (s) (a) English (b) French</code></div>
+
+
+
+
 <div class="eq" id="eq-5-8-9"><code>18 40 16 30 14</code></div>
 <div class="eq" id="eq-5-8-10"><code>WER WER</code></div>
-<div class="eq" id="eq-5-8-11"><code>12 20 10 10 8 2 4 6 8 10</code></div>
-<div class="eq" id="eq-5-8-12"><code>Prompt (s) (c) Spanish</code></div>
+
+
 <div class="eq" id="eq-5-8-13"><code>80 60</code></div>
 <div class="eq" id="eq-5-8-14"><code>WER</code></div>
-<div class="eq" id="eq-5-8-15"><code>40 20 2 4 6 8 10</code></div>
-<div class="eq" id="eq-5-8-16"><code>Prompt (s)</code></div>
-<div class="eq" id="eq-5-8-17"><code>2 4 6 8 10</code></div>
-<div class="eq" id="eq-5-8-18"><code>Prompt (s)</code></div>
-<div class="eq" id="eq-5-8-19"><code>2 4 6 8 10</code></div>
-<div class="pblk" id="p-5-8-3">
-          <p class="en-lines"><span class="sent" data-sid="s-5-8-3-1"><span class="en">Prompt (s) (e) German (d) Portuguese (f) Polish</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-8-3-1"><span class="zh">（图 B 子图：Prompt (s)；(e) German / (d) Portuguese / (f) Polish。）</span></span></p>
-          
-        </div>
+
+
+
+
+
+
 <div class="cap" id="fig-5-8-1"><img class="fig" src="../assets/figures/2306.15687/fig-5-8-1.png" loading="lazy" alt="Figure 8: Each subplot considers one of the six target language and shows WER as a function of prompt audio duration in "><span class="cap-k">图</span><p class="en">Figure 8: Each subplot considers one of the six target language and shows WER as a function of prompt audio duration in seconds for cross-lingual style transfer from different source language. We find WER remain reasonably low for all cases except for “English” to “X” style transfer.We set the classifier-free guidance strength (α) to 1.0 and use midpoint ODE solver with a NFE of 32.</p><p class="zh">图 8：每个子图对应六种目标语言之一，展示跨语言风格迁移下 WER 随提示音频秒数的变化（来自不同源语言）。我们发现除“英语→X”迁移外，所有情况下 WER 都保持在合理低水平。分类器自由引导强度（α）设为 1.0，使用 NFE 为 32 的中点 ODE 求解器。</p></div>
 <div class="cap" id="tab-5-8-1"><span class="cap-k">表</span><p class="en">Table 8: Comparing different objectives on training efficiency. 32 NFEs are used for inference. Each model is evaluated on the monolingual zero-shot TTS task.</p><p class="zh">表 8：不同目标在训练效率上的对比。推理使用 32 次 NFE。每个模型在单语零样本 TTS 任务上评估。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>polish</th><th></th></tr></thead><tbody><tr><td></td><td>40</td><td></td><td>40</td></tr>
 <tr><td>8.5</td><td></td><td></td><td></td></tr>
