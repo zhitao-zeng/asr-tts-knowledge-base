@@ -4,94 +4,7 @@
   "headers": [
    [
     "System",
-    "SIM-O ↑",
-    "WER ↓",
     "",
-    "SMOS ↑",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ]
-  ],
-  "rows": [
-   [
-    "Ground Truth",
-    "0.68",
-    "1.94",
-    "-",
-    "4.05±0.12",
-    "0.00"
-   ],
-   [
-    "VALL-E [2]",
-    "0.50",
-    "5.90",
-    "-",
-    "3.47±0.26",
-    "-0.52±0.22"
-   ],
-   [
-    "VoiceBox [9]",
-    "0.64",
-    "2.03",
-    "0.762",
-    "3.80±0.17",
-    "-0.41±0.13"
-   ],
-   [
-    "NaturalSpeech 3 [8]",
-    "0.67",
-    "1.94",
-    "0.786",
-    "4.26±0.10",
-    "0.16±0.14"
-   ],
-   [
-    "VoiceCraft [5]",
-    "0.45",
-    "4.68",
-    "0.981",
-    "3.52±0.21",
-    "-0.33±0.16"
-   ],
-   [
-    "XTTS-v2 [52]",
-    "0.51",
-    "4.20",
-    "0.945",
-    "3.02±0.22",
-    "-0.98±0.19"
-   ],
-   [
-    "MaskGCT",
-    "",
-    "",
-    "0.886",
-    "4.27±0.14",
-    "0.10±0.16"
-   ],
-   [
-    "MaskGCT (gt length)",
-    "0.697",
-    "2.012",
-    "0.746",
-    "4.33±0.11",
-    "0.13±0.13"
-   ]
-  ]
- },
- "tab-4-2-1-1": {
-  "page": 8,
-  "headers": [
-   [
-    "",
-    "System",
     "SIM-O ↑",
     "",
     "WER ↓",
@@ -112,24 +25,146 @@
   ],
   "rows": [
    [
+    "Ground Truth",
+    "",
+    "0.68",
+    "",
+    "1.94",
+    "-",
+    "4.05±0.12",
+    "0.00"
+   ],
+   [
+    "VALL-E [2]",
+    "",
+    "0.50",
+    "",
+    "5.90",
+    "-",
+    "3.47±0.26",
+    "-0.52±0.22"
+   ],
+   [
+    "VoiceBox [9]",
+    "",
+    "0.64",
+    "",
+    "2.03",
+    "0.762",
+    "3.80±0.17",
+    "-0.41±0.13"
+   ],
+   [
+    "",
+    "NaturalSpeech 3 [8]",
+    "0.67",
+    "",
+    "1.94",
+    "0.786",
+    "4.26±0.10",
+    "0.16±0.14"
+   ],
+   [
+    "VoiceCraft [5]",
+    "",
+    "0.45",
+    "",
+    "4.68",
+    "0.981",
+    "3.52±0.21",
+    "-0.33±0.16"
+   ],
+   [
+    "XTTS-v2 [52]",
+    "",
+    "0.51",
+    "",
+    "4.20",
+    "0.945",
+    "3.02±0.22",
+    "-0.98±0.19"
+   ],
+   [
+    "MaskGCT",
+    "",
+    "0.687(0.723)",
+    "",
+    "2.634(1.976)",
+    "0.886",
+    "4.27±0.14",
+    "0.10±0.16"
+   ],
+   [
+    "",
+    "MaskGCT (gt length)",
+    "0.697",
+    "",
+    "2.012",
+    "0.746",
+    "4.33±0.11",
+    "0.13±0.13"
+   ],
+   [
+    "",
+    "",
+    "",
+    "SeedTTS test-en",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ]
+ },
+ "tab-4-2-1-1": {
+  "page": 8,
+  "headers": [
+   [
+    "System",
+    "",
+    "SIM-O ↑",
+    "WER ↓",
+    "FSD ↓",
+    "SMOS ↑",
+    "CMOS ↑"
+   ],
+   [
+    "",
+    "",
+    "",
+    "LibriSpeech test-clean",
+    "",
+    "",
+    ""
+   ]
+  ],
+  "rows": [
+   [
     "",
     "AR + SoundStorm",
     "0.672",
-    "",
     "3.267",
     "0.998",
     "4.20±0.17",
     "-0.02±0.20"
    ],
    [
-    "",
     "MaskGCT",
-    "0.687",
     "",
+    "0.687",
     "2.634",
     "0.886",
     "4.27±0.14",
     "0.10±0.16"
+   ],
+   [
+    "",
+    "",
+    "",
+    "SeedTTS test-en",
+    "",
+    "",
+    ""
    ]
   ]
  },
@@ -143,12 +178,6 @@
     "Accent Corpus L2-Arctit",
     "",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
     ""
    ]
   ],
@@ -157,91 +186,55 @@
     "Ground Truth",
     "0.747",
     "10.903",
-    "",
-    "",
     "0.633",
-    "",
     "0.00",
-    "",
     "-",
-    "",
-    "",
     "-"
    ],
    [
     "VALL-E",
     "0.403",
     "10.721",
-    "",
-    "",
     "0.485",
-    "",
     "-1.04±0.50",
     "3.12±0.41",
-    "",
-    "",
-    "2.77±0.45",
-    ""
+    "2.77±0.45"
    ],
    [
     "CosyVoice",
     "0.653",
     "6.660",
-    "",
-    "",
     "0.640",
-    "",
     "0.10±0.19",
     "4.23±0.18",
-    "",
-    "",
-    "3.99±0.23",
-    ""
+    "3.99±0.23"
    ],
    [
     "VoiceBox",
     "0.475",
     "6.181",
-    "",
-    "",
     "0.575",
-    "",
     "-0.55±0.22",
     "3.93±0.25",
-    "",
-    "",
-    "3.49±0.29",
-    ""
+    "3.49±0.29"
    ],
    [
     "VoiceCraft",
     "0.438",
     "10.072",
-    "",
-    "",
     "0.517",
-    "",
     "-0.39±0.22",
     "3.51±0.33",
-    "",
-    "",
-    "3.29±0.28",
-    ""
+    "3.29±0.28"
    ],
    [
     "MaskGCT",
     "0.717",
     "6.382",
-    "",
-    "",
     "0.645",
-    "",
     "0.23±0.17",
     "4.24±0.16",
-    "",
-    "",
-    "4.38±0.25",
-    ""
+    "4.38±0.25"
    ]
   ]
  },
@@ -252,12 +245,8 @@
     "",
     "",
     "",
+    "",
     "Emotion Corpus ESD",
-    "",
-    "",
-    "",
-    "",
-    "",
     "",
     "",
     ""
@@ -268,85 +257,61 @@
     "Ground Truth",
     "0.673",
     "11.792",
-    "",
     "0.936",
     "",
     "0.00",
-    "",
     "-",
-    "",
-    "",
     "-"
    ],
    [
     "VALL-E",
     "0.396",
     "15.731",
-    "",
     "0.735",
     "",
     "-1.43±0.33",
     "2.52±0.38",
-    "",
-    "",
-    "2.63±0.36",
-    ""
+    "2.63±0.36"
    ],
    [
     "CosyVoice",
     "0.575",
     "10.139",
-    "",
     "0.839",
     "",
     "-0.45±0.18",
     "3.98±0.19",
-    "",
-    "",
-    "3.66±0.19",
-    ""
+    "3.66±0.19"
    ],
    [
     "VoiceBox",
     "0.451",
     "12.647",
-    "",
     "0.811",
     "",
     "-0.65±0.20",
     "3.81±0.16",
-    "",
-    "",
-    "3.61±0.19",
-    ""
+    "3.61±0.19"
    ],
    [
     "VoiceCraft",
     "0.345",
     "16.042",
-    "",
     "0.788",
     "",
     "-0.60±0.24",
     "3.42±0.31",
-    "",
-    "",
-    "3.52±0.25",
-    ""
+    "3.52±0.25"
    ],
    [
     "MaskGCT",
     "0.600",
     "12.502",
-    "",
     "0.822",
     "",
     "-0.31±0.17",
     "4.07±0.16",
-    "",
-    "",
-    "3.76±0.25",
-    ""
+    "3.76±0.25"
    ]
   ]
  },
@@ -356,18 +321,14 @@
    [
     "System",
     "SIM-O ↑",
-    "",
     "WER ↓",
     "FSD ↓",
-    "#Parameters",
-    ""
+    "#Parameters"
    ],
    [
     "",
     "",
     "SeedTTS test-en",
-    "",
-    "",
     "",
     ""
    ]
@@ -376,20 +337,23 @@
    [
     "T2S-Base",
     "0.714",
-    "",
     "2.514",
     "0.189",
-    "",
     "315M"
    ],
    [
     "T2S-Large",
     "0.728",
-    "",
     "2.466",
     "0.159",
-    "",
     "695M"
+   ],
+   [
+    "",
+    "",
+    "SeedTTS test-zh",
+    "",
+    ""
    ]
   ]
  },
@@ -398,112 +362,104 @@
   "headers": [
    [
     "",
+    ""
+   ],
+   [
+    "[69]",
+    ""
+   ],
+   [
     "",
+    ""
+   ],
+   [
+    "[70]",
+    "Xueyao Zhang, Liumeng Xue, Yuancheng Wang, Yicheng Gu, Xi Chen, Zihao"
+   ],
+   [
     "",
-    "T2S-Base",
-    "T2S-Large",
-    "",
-    "",
-    "",
-    "",
-    "S2A"
+    "Chen, Lexiao Zou, Chaoren Wang, Jun Han, et al. Amphion: An open-source"
    ]
   ],
   "rows": [
    [
-    "Layers",
-    "",
-    "",
-    "16",
-    "",
-    "",
-    "16",
-    "",
-    "",
-    "16"
-   ],
-   [
-    "Model Dimension",
-    "",
-    "",
-    "1,024",
-    "",
-    "1,536",
-    "",
-    "",
-    "1,024",
-    ""
-   ],
-   [
-    "FFN Dimension",
-    "",
-    "",
-    "4,096",
-    "",
-    "6,144",
-    "",
-    "",
-    "4,096",
-    ""
-   ],
-   [
-    "Attention Heads",
-    "",
-    "",
-    "16",
-    "",
-    "",
-    "16",
-    "",
-    "",
-    "16"
-   ],
-   [
-    "Attention Type",
-    "",
-    "Bidirectional",
-    "",
-    "Bidirectional",
-    "",
-    "",
-    "Bidirectional",
     "",
     ""
    ],
    [
-    "Activation Function",
-    "",
-    "",
-    "SwiGLU",
-    "",
-    "",
-    "-",
-    "",
-    "",
-    "-"
+    "[71]",
+    ""
    ],
    [
-    "Positional Embeddings",
-    "RoPE (θ = 10,000)",
     "",
-    "",
-    "",
-    "",
-    "-",
-    "",
-    "",
-    "-"
+    "Emmanuel Mazaré, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert,"
    ],
    [
-    "Number of Parameters",
     "",
+    "et al. Libri-light: A benchmark for asr with limited or no supervision. In ICASSP"
+   ],
+   [
     "",
-    "315M",
+    "IEEE International Conference on Acoustics, Speech and Signal Processing"
+   ],
+   [
     "",
-    "695M",
+    ""
+   ],
+   [
+    "[72]",
+    "Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya,"
+   ],
+   [
     "",
+    "Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat,"
+   ],
+   [
     "",
-    "353M",
+    ""
+   ],
+   [
+    "[73]",
+    "Chenpeng Du, Yiwei Guo, Feiyu Shen, Zhijun Liu, Zheng Liang, Xie Chen, Shuai"
+   ],
+   [
+    "",
+    "Zhang, and Kai Yu. Unicats: A unified context-aware text-to-speech framework"
+   ],
+   [
+    "",
+    "vq-diffusion and vocoding. In Proceedings of the AAAI Conference on Artificial"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "[74]",
+    "Freevc:"
+   ],
+   [
+    "",
+    "conversion. In ICASSP 2023-2023 IEEE International Conference on Acoustics,"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "[75]",
+    "Fabian Mentzer, David Minnen, Eirikur Agustsson, and Michael Tschannen."
+   ],
+   [
+    "",
+    "quantization: Vq-vae made simple. arXiv preprint arXiv:2309.15505, 2023."
+   ],
+   [
+    "A",
+    ""
+   ],
+   [
+    "A.1",
     ""
    ]
   ]
@@ -512,7 +468,7 @@
   "page": 16,
   "headers": [
    [
-    "efficient and effective performance.",
+    "",
     "",
     "",
     "",
@@ -521,9 +477,9 @@
   ],
   "rows": [
    [
-    "",
-    "",
+    "0.8",
     "12",
+    "",
     "0.74",
     ""
    ],
@@ -535,9 +491,9 @@
     ""
    ],
    [
-    "",
     "0.79",
     "10",
+    "",
     "",
     "8"
    ],
@@ -549,23 +505,23 @@
     ""
    ],
    [
-    "",
     "0.78",
     "8",
+    "",
     "",
     ""
    ],
    [
     "SIM",
     "",
-    "",
+    "WER SIM",
     "",
     "6 WER"
    ],
    [
-    "",
     "0.77",
     "6",
+    "",
     "",
     ""
    ],
@@ -584,16 +540,16 @@
     "4"
    ],
    [
-    "",
     "0.76",
     "4",
+    "",
     "",
     ""
    ],
    [
-    "",
     "0.75",
     "2",
+    "",
     "0.68",
     "2"
    ],
@@ -612,6 +568,20 @@
     ""
    ],
    [
+    "",
+    "",
+    "Figure 4: Inference Steps vs. SIM and WER. The results on the left are for SeedTTS test-zh, and the",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "results on the right are for SeedTTS test-en. In this ablation study, we utilize the ground truth speech",
+    "",
+    ""
+   ],
+   [
     "length.",
     "",
     "",
@@ -626,7 +596,42 @@
     ""
    ],
    [
-    "very slight performance loss.",
+    "",
+    "",
+    "The S2A model generates tokens layer by layer during inference. Since the acoustic codec follows",
+    "",
+    ""
+   ],
+   [
+    "",
+    "an RVQ structure, we can view the S2A inference as a process from coarse to fine.",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "more iterations in the initial layers, as the first few layers carry more information. By default, we",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "use inference steps of [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] for each layer, however, we find that the S2A",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "model can also perform well with fewer steps, such as [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], with only a",
+    "",
+    ""
+   ],
+   [
+    "",
     "",
     "",
     "",
@@ -640,15 +645,21 @@
    [
     "",
     "",
-    ""
+    "",
+    "Semantic Codec",
+    "Acoustic Codec"
    ],
    [
     "Input",
     "",
-    ""
+    "",
+    "W2v-BERT 2.0 hidden",
+    "Waveform"
    ],
    [
+    "",
     "Sample Rate",
+    "",
     "16K",
     "24K"
    ]
@@ -656,40 +667,56 @@
   "rows": [
    [
     "Hopsize",
+    "",
+    "",
     "320",
     "480"
    ],
    [
+    "",
+    "",
     "Number of (R)VQ Blocks",
     "1",
     "12"
    ],
    [
+    "",
     "Codebook size",
+    "",
     "8,192",
     "1,024"
    ],
    [
+    "",
+    "",
     "Codebook Dimension",
     "8",
     "8"
    ],
    [
+    "",
+    "",
     "Decoder Hidden Dimension",
     "384",
     "512"
    ],
    [
+    "",
+    "",
     "Decoder Kernel Size",
     "7",
     "7"
    ],
    [
+    "",
+    "",
     "Number of Decoder Blocks",
     "12",
     "30"
    ],
    [
+    "",
+    "",
     "Number of Parameters",
     "44M",
     "170M"
@@ -700,27 +727,31 @@
   "page": 18,
   "headers": [
    [
-    "(G2P) and Byte Pair Encoding (BPE). For G2P, we employ phone-",
     "",
+    "SIM-O ↑",
+    "WER ↓"
+   ],
+   [
     "",
-    "",
+    "SeedTTS test-en",
     ""
    ]
   ],
   "rows": [
    [
-    "Whisper9, with a vocabulary size exceeding 30,000. Table 10 shows",
     "G2P",
-    "",
     "0.728",
     "2.466"
    ],
    [
-    "",
     "BPE",
-    "",
     "0.711",
     "4.036"
+   ],
+   [
+    "",
+    "SeedTTS test-zh",
+    ""
    ]
   ]
  },
@@ -728,7 +759,8 @@
   "page": 19,
   "headers": [
    [
-    "are retrained on the expanded data.",
+    "",
+    "",
     "",
     "",
     "",
@@ -749,22 +781,23 @@
     "",
     "",
     "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
     "",
     ""
    ],
    [
     "",
+    "",
+    "Ja",
+    "",
+    "",
+    "Ko",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
     "System",
     "",
     "",
@@ -773,14 +806,17 @@
     "",
     "",
     "",
+    "",
+    "",
     ""
    ],
    [
     "",
-    "",
     "WER",
+    "",
     "SIM-O",
     "WER",
+    "",
     "SIM-O",
     "WER",
     "SIM-O",
@@ -790,11 +826,12 @@
   ],
   "rows": [
    [
-    "",
     "Emilia-AR",
     "3.6",
+    "",
     "0.625",
     "10.9",
+    "",
     "0.681",
     "8.2",
     "0.589",
@@ -802,11 +839,12 @@
     "0.680"
    ],
    [
-    "",
     "Emilia-NAR",
     "10.8",
+    "",
     "0.562",
     "15.2",
+    "",
     "0.608",
     "17.5",
     "0.550",
@@ -814,11 +852,12 @@
     "0.633"
    ],
    [
-    "",
     "XTTS-v2",
     "2.981",
+    "",
     "0.579",
     "12.45",
+    "",
     "0.617",
     "6.898",
     "0.531",
@@ -826,11 +865,12 @@
     "0.569"
    ],
    [
-    "",
     "MaskGCT",
     "3.903",
+    "",
     "0.678",
     "9.417",
+    "",
     "0.732",
     "5.598",
     "0.667",
@@ -847,9 +887,13 @@
     "",
     "",
     "",
+    "",
     ""
    ],
    [
+    "",
+    "",
+    "",
     "",
     "11https://huggingface.co/pyp1/VoiceCraft/blob/main/830M_TTSEnhanced.pth",
     "",
@@ -857,11 +901,11 @@
     "",
     "",
     "",
-    "",
-    "",
     ""
    ],
    [
+    "",
+    "",
     "",
     "12https://huggingface.co/model-scope/CosyVoice-300M",
     "",
@@ -870,10 +914,10 @@
     "",
     "",
     "",
-    "",
     ""
    ],
    [
+    "",
     "",
     "13ttps://huggingface.co/openai/whisper-medium",
     "",
@@ -887,46 +931,177 @@
    ]
   ]
  },
- "tab-J-1": {
-  "page": 21,
+ "tab-F-1": {
+  "page": 20,
   "headers": [
    [
-    "System",
     "",
-    "SIM-O ↑",
-    "WER ↓"
+    "",
+    "Zh",
+    "",
+    "",
+    "En",
+    "",
+    "",
+    "Ja",
+    "",
+    "",
+    "Ko",
+    "",
+    "",
+    "De",
+    "",
+    "",
+    "Fr",
+    ""
    ],
    [
     "",
-    "SeedTTS test-hard",
+    "WER",
     "",
-    ""
+    "SIM-O",
+    "WER",
+    "",
+    "SIM-O",
+    "WER",
+    "",
+    "SIM-O",
+    "WER",
+    "",
+    "SIM-O",
+    "WER",
+    "",
+    "SIM-O",
+    "WER",
+    "",
+    "SIM-O"
    ]
   ],
   "rows": [
    [
-    "AR + SoundStorm",
+    "Zh",
+    "-",
     "",
-    "0.692",
-    "34.16"
+    "-",
+    "7.466",
+    "",
+    "0.678",
+    "7.864",
+    "",
+    "0.720",
+    "9.751",
+    "",
+    "0.736",
+    "25.54",
+    "",
+    "0.724",
+    "16.21",
+    "",
+    "0.687"
    ],
    [
-    "AR + SoundStorm (rank 5)",
+    "En",
+    "7.411",
     "",
-    "0.739",
-    "17.05"
-   ],
+    "0.535",
+    "-",
+    "",
+    "-",
+    "5.870",
+    "",
+    "0.544",
+    "12.18",
+    "",
+    "0.543",
+    "12.43",
+    "",
+    "0.579",
+    "17.48",
+    "",
+    "0.590"
+   ]
+  ]
+ },
+ "tab-J-1": {
+  "page": 21,
+  "headers": [
    [
-    "MaskGCT",
-    "",
-    "0.748",
-    "10.27"
-   ],
-   [
-    "MaskGCT (rank 5)",
-    "",
-    "0.776",
+    "We show some examples in our demo page.",
     ""
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    "MaskGCT supports zero-shot voice conversion by fine-tuning the S2A with a"
+   ],
+   [
+    "",
+    "a target speaker using a reference speech from the target speaker, without"
+   ],
+   [
+    "",
+    "acoustic tokens Aref extracted from the reference speech to predict the target"
+   ]
+  ],
+  "rows": [
+   [
+    "",
+    "Since Ssrc may retain some timbre information, we perform timbral"
+   ],
+   [
+    "features input to the semantic codec encoder.",
+    ""
+   ],
+   [
+    "",
+    "input mel-spectrogram features of the W2v-BERT 2.0 model, following the"
+   ],
+   [
+    "",
+    "FreeVC [74]. We fine-tune our S2A model using this training strategy. We show"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "Hard Cases Evaluation",
+    ""
+   ],
+   [
+    "",
+    "We evaluate the performance of MaskGCT on some hard cases (SeedTTS"
+   ],
+   [
+    "to instances where large-scale TTS models,",
+    ""
+   ],
+   [
+    "",
+    "hallucinations. These cases include phrases with repeating words, tongue twisters,"
+   ],
+   [
+    "",
+    "linguistic structures. Examples of such cases include: “the great greek grape"
+   ],
+   [
+    "",
+    "greek grapes”, “How many cookies could a good cook cook If a good cook"
+   ],
+   [
+    "",
+    "good cook could cook as much cookies as a good cook who could cook"
+   ],
+   [
+    "",
+    "thought. But the thought I thought wasn’t the thought I thought I thought. If the"
+   ],
+   [
+    "",
+    "thought had been the thought I thought, I wouldn’t have thought so much”."
    ]
   ]
  }

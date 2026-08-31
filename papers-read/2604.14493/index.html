@@ -241,9 +241,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-1"><span class="zh">我们评测了以下模型族，覆盖现代 ASR 的主要范式：</span></span></p>
           
         </div>
-<div class="cap" id="tab-2-1"><span class="cap-k">表</span><p class="en">Table 1: Overview of evaluated model families.</p><p class="zh">表 1：被评测模型族概览。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>Batch</th><th>1.62 GB</th></tr><tr><th>Whisper Small</th><th>Encoder–Decoder</th><th>Chunk/Batch</th><th></th><th>0.97 GB</th></tr><tr><th>Nemotron-0.6B</th><th>Cache-aware Transducer</th><th>Stream/Batch</th><th></th><th>2.47 GB</th></tr><tr><th>Parakeet TDT-0.6B-v3</th><th>TDT Transducer</th><th>Chunk/Batch</th><th></th><th>2.51 GB</th></tr><tr><th>Canary-1B-v2</th><th>AED + AlignAtt</th><th>Chunk/Batch</th><th></th><th>6.36 GB</th></tr></thead><tbody><tr><td>Conformer Trans. XL</td><td>Conformer Transducer</td><td></td><td>Chunk</td><td>2.58 GB</td></tr>
-<tr><td>Qwen3-ASR-1.7B</td><td>LLM-based ASR</td><td>Batch/Chunk</td><td></td><td>4.70 GB</td></tr>
-<tr><td>Qwen3-ASR-0.6B</td><td>LLM-based ASR</td><td>Batch/Chunk</td><td></td><td>1.88 GB</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-2-1"><span class="cap-k">表</span><p class="en">Table 1: Overview of evaluated model families.</p><p class="zh">表 1：被评测模型族概览。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Whisper Large-v3-Turbo</th><th></th><th>Encoder–Decoder</th><th></th><th>Batch</th><th>1.62 GB</th></tr><tr><th>Whisper Small</th><th></th><th></th><th>Encoder–Decoder</th><th></th><th>Chunk/Batch</th><th>0.97 GB</th></tr><tr><th>Nemotron-0.6B</th><th></th><th></th><th></th><th>Cache-aware Transducer</th><th>Stream/Batch</th><th>2.47 GB</th></tr><tr><th></th><th>Parakeet TDT-0.6B-v3</th><th></th><th>TDT Transducer</th><th></th><th>Chunk/Batch</th><th>2.51 GB</th></tr><tr><th>Canary-1B-v2</th><th></th><th></th><th>AED + AlignAtt</th><th></th><th>Chunk/Batch</th><th>6.36 GB</th></tr></thead><tbody><tr><td>Conformer Trans.</td><td></td><td>XL</td><td></td><td>Conformer Transducer</td><td>Chunk</td><td>2.58 GB</td></tr>
+<tr><td>Qwen3-ASR-1.7B</td><td></td><td></td><td>LLM-based ASR</td><td></td><td>Batch/Chunk</td><td>4.70 GB</td></tr>
+<tr><td>Qwen3-ASR-0.6B</td><td></td><td></td><td>LLM-based ASR</td><td></td><td>Batch/Chunk</td><td>1.88 GB</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model"><span class="t-zh">Model</span><span class="t-en">Model</span></h3></section>
 <section>
@@ -295,10 +295,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-1-1-1"><span class="zh">所有模型都在 ESB（End-to-end Speech Benchmark）套件的 8 个标准英文 ASR 基准上评测，覆盖多样的声学条件与说话风格。</span></span><span class="sent" data-sid="s-3-1-1-2"><span class="zh">批处理模式评测使用 Open ASR Leaderboard [9] 框架。</span></span><span class="sent" data-sid="s-3-1-1-3"><span class="zh">为支持流式与分块评测，我们扩展了该框架：把音频按片段喂入模型、再把各片段的输出拼接成最终转录，从而测量流式 WER。</span></span><span class="sent" data-sid="s-3-1-1-4"><span class="zh">我们扩展后的评测代码已公开（脚注 1）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-3-1-1"><span class="cap-k">表</span><p class="en">Table 2: Evaluation benchmark datasets.</p><p class="zh">表 2：评测基准数据集。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Dataset</th><th>Domain</th><th>Characteristics</th></tr><tr><th>AMI</th><th>Meeting transcription</th><th>Overlapping speech, far-field</th></tr><tr><th>Earnings22</th><th>Financial earnings calls</th><th>Domain-specific terminology</th></tr><tr><th>GigaSpeech</th><th>Internet audio</th><th>Diverse topics and acoustics</th></tr><tr><th>LibriSpeech Clean</th><th>Audiobook (clean)</th><th>Read speech, studio quality</th></tr></thead><tbody><tr><td>LibriSpeech Other</td><td>Audiobook (other)</td><td>Read speech, noisier conditions</td></tr>
-<tr><td>SPGISpeech</td><td>Financial transcription</td><td>Professional dictation</td></tr>
-<tr><td>TED-LIUM</td><td>TED talks</td><td>Prepared speech, varied topics</td></tr>
-<tr><td>VoxPopuli</td><td>European Parliament</td><td>Spontaneous speech, accented</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-3-1-1"><span class="cap-k">表</span><p class="en">Table 2: Evaluation benchmark datasets.</p><p class="zh">表 2：评测基准数据集。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Dataset</th><th></th><th>Domain</th><th></th><th></th><th>Characteristics</th><th></th><th></th></tr><tr><th>AMI</th><th></th><th></th><th></th><th>Meeting transcription</th><th></th><th></th><th>Overlapping speech, far-field</th></tr><tr><th>Earnings22</th><th></th><th></th><th></th><th>Financial earnings calls</th><th></th><th></th><th>Domain-specific terminology</th></tr><tr><th>GigaSpeech</th><th></th><th></th><th>Internet audio</th><th></th><th></th><th></th><th>Diverse topics and acoustics</th></tr><tr><th></th><th>LibriSpeech Clean</th><th></th><th></th><th>Audiobook (clean)</th><th></th><th></th><th>Read speech, studio quality</th></tr></thead><tbody><tr><td></td><td>LibriSpeech Other</td><td></td><td></td><td>Audiobook (other)</td><td></td><td></td><td>Read speech, noisier conditions</td></tr>
+<tr><td>SPGISpeech</td><td></td><td></td><td></td><td>Financial transcription</td><td></td><td>Professional dictation</td><td></td></tr>
+<tr><td>TED-LIUM</td><td></td><td>TED talks</td><td></td><td></td><td></td><td></td><td>Prepared speech, varied topics</td></tr>
+<tr><td>VoxPopuli</td><td></td><td></td><td></td><td>European Parliament</td><td></td><td></td><td>Spontaneous speech, accented</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-dataset"><span class="t-zh">数据集</span><span class="t-en">Dataset</span></h3><div class="pblk" id="p-dataset-1">
           <p class="en-lines"><span class="sent" data-sid="s-dataset-1-1"><span class="en">Domain Characteristics AMI Meeting transcription Overlapping speech, far-field Earnings22 Financial earnings calls Domain-specific terminology GigaSpeech Internet audio Diverse topics and acoustics LibriSpeech Clean Audiobook (clean) Read speech, studio quality LibriSpeech Other Audiobook (other) Read speech, noisier conditions SPGISpeech Financial transcription Professional dictation TED-LIUM TED talks Prepared speech, varied topics VoxPopuli European Parliament Spontaneous speech, accented</span></span></p>
@@ -370,14 +370,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-4-1"><span class="cap-k">表</span><p class="en">Table 3: Batch-mode WER (%) comparison across models.</p><p class="zh">表 3：各模型批处理模式 WER（%）对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th>Avg</th><th>AMI</th><th>Earn.</th><th>Giga</th><th>LS-c</th><th>LS-o</th><th>SPGI</th><th>TED</th><th>VoxP.</th></tr></thead><tbody><tr><td>Qwen3-ASR-1.7B</td><td>5.90</td><td>11.76</td><td>10.26</td><td>8.75</td><td>1.60</td><td>3.41</td><td>2.83</td><td>2.28</td><td>6.34</td></tr>
-<tr><td>Qwen3-ASR-0.6B</td><td>6.69</td><td>13.77</td><td>11.03</td><td>9.16</td><td>2.12</td><td>4.47</td><td>3.04</td><td>2.83</td><td>7.09</td></tr>
-<tr><td>Parakeet TDT-0.6B-v3</td><td>6.32</td><td>11.39</td><td>11.19</td><td>9.57</td><td>1.92</td><td>3.59</td><td>3.98</td><td>2.80</td><td>6.09</td></tr>
-<tr><td>Canary-1B-v2</td><td>7.15</td><td>16.01</td><td>11.79</td><td>10.82</td><td>2.18</td><td>3.56</td><td>2.28</td><td>4.29</td><td>6.25</td></tr>
-<tr><td>Nemotron-0.6B</td><td>7.07</td><td>11.16</td><td>12.38</td><td>11.35</td><td>2.28</td><td>4.83</td><td>2.63</td><td>4.42</td><td>7.48</td></tr>
-<tr><td>Whisper-v3-Turbo</td><td>7.83</td><td>16.13</td><td>11.63</td><td>10.14</td><td>2.10</td><td>4.24</td><td>2.97</td><td>3.57</td><td>11.87</td></tr>
-<tr><td>Whisper-v3-Turbo (ORT)</td><td>7.52</td><td>16.36</td><td>11.38</td><td>10.13</td><td>2.17</td><td>4.24</td><td>2.93</td><td>3.62</td><td>9.30</td></tr>
-<tr><td>Whisper Small.en</td><td>8.59</td><td>17.93</td><td>12.97</td><td>11.35</td><td>3.05</td><td>7.25</td><td>3.60</td><td>4.07</td><td>8.50</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-4-1"><span class="cap-k">表</span><p class="en">Table 3: Batch-mode WER (%) comparison across models.</p><p class="zh">表 3：各模型批处理模式 WER（%）对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th></th><th></th><th>Avg</th><th>AMI</th><th>Earn.</th><th>Giga</th><th>LS-c</th><th>LS-o</th><th>SPGI</th><th>TED</th><th>VoxP.</th></tr></thead><tbody><tr><td></td><td>Qwen3-ASR-1.7B</td><td></td><td>5.90</td><td>11.76</td><td>10.26</td><td>8.75</td><td>1.60</td><td>3.41</td><td>2.83</td><td>2.28</td><td>6.34</td></tr>
+<tr><td></td><td>Qwen3-ASR-0.6B</td><td></td><td>6.69</td><td>13.77</td><td>11.03</td><td>9.16</td><td>2.12</td><td>4.47</td><td>3.04</td><td>2.83</td><td>7.09</td></tr>
+<tr><td></td><td></td><td>Parakeet TDT-0.6B-v3</td><td>6.32</td><td>11.39</td><td>11.19</td><td>9.57</td><td>1.92</td><td>3.59</td><td>3.98</td><td>2.80</td><td>6.09</td></tr>
+<tr><td></td><td>Canary-1B-v2</td><td></td><td>7.15</td><td>16.01</td><td>11.79</td><td>10.82</td><td>2.18</td><td>3.56</td><td>2.28</td><td>4.29</td><td>6.25</td></tr>
+<tr><td></td><td>Nemotron-0.6B</td><td></td><td>7.07</td><td>11.16</td><td>12.38</td><td>11.35</td><td>2.28</td><td>4.83</td><td>2.63</td><td>4.42</td><td>7.48</td></tr>
+<tr><td></td><td>Whisper-v3-Turbo</td><td></td><td>7.83</td><td>16.13</td><td>11.63</td><td>10.14</td><td>2.10</td><td>4.24</td><td>2.97</td><td>3.57</td><td>11.87</td></tr>
+<tr><td></td><td></td><td>Whisper-v3-Turbo (ORT)</td><td>7.52</td><td>16.36</td><td>11.38</td><td>10.13</td><td>2.17</td><td>4.24</td><td>2.93</td><td>3.62</td><td>9.30</td></tr>
+<tr><td></td><td>Whisper Small.en</td><td></td><td>8.59</td><td>17.93</td><td>12.97</td><td>11.35</td><td>3.05</td><td>7.25</td><td>3.60</td><td>4.07</td><td>8.50</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-2"><span class="t-zh">Model</span><span class="t-en">Model</span></h3>
 
@@ -450,7 +450,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-5-2-1"><span class="cap-k">表</span><p class="en">Table 4: Nemotron-0.6B streaming configurations.</p><p class="zh">表 4：Nemotron-0.6B 流式配置。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Config</th><th></th><th></th><th></th><th>Avg</th><th>AMI</th><th>Earn.</th><th>Giga</th><th>LS-c</th><th>LS-o</th><th>SPGI</th><th></th><th>VoxP.</th></tr></thead><tbody><tr><td>Batch (offline)</td><td></td><td>–</td><td>–</td><td>7.07</td><td>11.16</td><td>12.38</td><td>11.35</td><td>2.28</td><td>4.83</td><td>2.63</td><td>4.42</td><td>7.48</td></tr>
+<div class="cap" id="tab-5-2-1"><span class="cap-k">表</span><p class="en">Table 4: Nemotron-0.6B streaming configurations.</p><p class="zh">表 4：Nemotron-0.6B 流式配置。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Config</th><th></th><th>Delay</th><th>History</th><th>Avg</th><th>AMI</th><th>Earn.</th><th>Giga</th><th>LS-c</th><th>LS-o</th><th>SPGI</th><th>TED</th><th>VoxP.</th></tr></thead><tbody><tr><td>Batch (offline)</td><td></td><td>–</td><td>–</td><td>7.07</td><td>11.16</td><td>12.38</td><td>11.35</td><td>2.28</td><td>4.83</td><td>2.63</td><td>4.42</td><td>7.48</td></tr>
 <tr><td>(70, 2, 70)</td><td></td><td>5.6 s</td><td>11.2 s</td><td>7.10</td><td>11.31</td><td>12.46</td><td>11.39</td><td>2.28</td><td>4.84</td><td>2.64</td><td>4.42</td><td>7.47</td></tr>
 <tr><td>(14, 2, 14)</td><td></td><td>1.12 s</td><td>2.24 s</td><td>7.46</td><td>11.38</td><td>12.49</td><td>11.39</td><td>2.41</td><td>5.07</td><td>2.71</td><td>4.50</td><td>9.75</td></tr>
 <tr><td>(7, 10, 7)</td><td></td><td>0.56 s</td><td>5.6 s</td><td>7.28</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
@@ -460,18 +460,21 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td></td><td>9.0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Configurations</td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Selected: (7,10,7)</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>(7,2,7)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td>8.5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td>8.0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td>(2,35,2)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>7.5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>7.5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>(7,10,7)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td>7.0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td>6.5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td>1</td><td></td><td>2</td><td></td><td></td><td>4</td><td></td><td></td><td>6</td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>Algorithmic Delay (seconds)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<tr><td></td><td></td><td></td><td>1</td><td></td><td></td><td>3</td><td></td><td>4</td><td></td><td></td><td>6</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Algorithmic Delay (seconds)</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 
 
 
@@ -489,7 +492,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 <div class="eq" id="eq-5-2-14"><code>Average WER (%)</code></div>
-
+<div class="eq" id="eq-5-2-15"><code>8.0 (2,35,2) (14,2,14) 7.5 (7,10,7) 7.0</code></div>
 
 <div class="eq" id="eq-5-2-17"><code>(70,2,70) 0 1 2 3 4 5 6</code></div>
 
@@ -513,12 +516,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-1-1"><span class="zh">为验证 Nemotron 确实是最强的流式候选，我们取每个模型族最好的流式或低延迟配置，用第 3 节定义的批-流退化因子（BSF）进行比较。</span></span><span class="sent" data-sid="s-5-3-1-2"><span class="zh">Table 5 报告了结果。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-3-1"><span class="cap-k">表</span><p class="en">Table 5: Cross-model streaming comparison (batch_size=1, CPU).</p><p class="zh">表 5：跨模型流式对比（batch_size=1，CPU）。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Nemotron-0.6B</td><td></td><td>2.47 GB</td><td>0.56 s</td><td>7.28</td><td>1.03</td><td>2.46</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
-<tr><td>Qwen3-ASR-1.7B</td><td></td><td>4.70 GB</td><td>2.4 s</td><td>10.45</td><td>1.77</td><td>0.49</td><td>16.97</td><td>16.92</td><td>12.29</td><td>4.95</td><td>7.69</td><td>6.70</td><td>6.34</td><td>11.75</td></tr>
-<tr><td>Parakeet TDT-0.6B-v3</td><td></td><td>2.51 GB</td><td>2.4 s</td><td>12.83</td><td>2.03</td><td>1.38</td><td>16.73</td><td>19.81</td><td>15.27</td><td>6.63</td><td>8.25</td><td>17.82</td><td>9.95</td><td>8.19</td></tr>
-<tr><td>Conformer Trans. XL</td><td></td><td>2.58 GB</td><td>2.4 s</td><td>11.06</td><td>–</td><td>1.27</td><td>22.57</td><td>24.44</td><td>14.05</td><td>2.11</td><td>3.83</td><td>7.95</td><td>5.36</td><td>8.18</td></tr>
-<tr><td>Canary-1B-v2</td><td></td><td>6.36 GB</td><td>4.8 s</td><td>12.45</td><td>1.74</td><td>2.93</td><td>22.10</td><td>22.04</td><td>14.60</td><td>4.87</td><td>5.96</td><td>4.42</td><td>7.64</td><td>17.98</td></tr>
-<tr><td></td><td>Key observations:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-5-3-1"><span class="cap-k">表</span><p class="en">Table 5: Cross-model streaming comparison (batch_size=1, CPU).</p><p class="zh">表 5：跨模型流式对比（batch_size=1，CPU）。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>Nemotron-0.6B</td><td></td><td>2.47 GB</td><td>0.56 s</td><td>7.28</td><td>1.03</td><td>2.46</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
+<tr><td></td><td>Qwen3-ASR-1.7B</td><td></td><td>4.70 GB</td><td>2.4 s</td><td>10.45</td><td>1.77</td><td>0.49</td><td>16.97</td><td>16.92</td><td>12.29</td><td>4.95</td><td>7.69</td><td>6.70</td><td>6.34</td><td>11.75</td></tr>
+<tr><td></td><td>Parakeet TDT-0.6B-v3</td><td></td><td>2.51 GB</td><td>2.4 s</td><td>12.83</td><td>2.03</td><td>1.38</td><td>16.73</td><td>19.81</td><td>15.27</td><td>6.63</td><td>8.25</td><td>17.82</td><td>9.95</td><td>8.19</td></tr>
+<tr><td></td><td>Conformer Trans. XL</td><td></td><td>2.58 GB</td><td>2.4 s</td><td>11.06</td><td>–</td><td>1.27</td><td>22.57</td><td>24.44</td><td>14.05</td><td>2.11</td><td>3.83</td><td>7.95</td><td>5.36</td><td>8.18</td></tr>
+<tr><td>Canary-1B-v2</td><td></td><td></td><td>6.36 GB</td><td>4.8 s</td><td>12.45</td><td>1.74</td><td>2.93</td><td>22.10</td><td>22.04</td><td>14.60</td><td>4.87</td><td>5.96</td><td>4.42</td><td>7.64</td><td>17.98</td></tr>
+<tr><td></td><td></td><td>Key observations:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-5-3-2">
           <p class="en-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="en">Model Size Delay Avg BSF RTFx AMI Earn.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="zh">表头：Model｜Size｜Delay｜Avg｜BSF｜RTFx｜AMI｜Earn.。</span></span></p>
@@ -790,31 +793,43 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-7-1-1-s1"><span class="zh">Table 6 报告了所有量化变体的完整评测结果。</span></span></p>
           
         </div>
-<div class="cap" id="tab-7-1-2"><span class="cap-k">表</span><p class="en">Table 6: Nemotron-0.6B quantization results. Streaming config: (7,10,7), 0.56 s delay, 5.6 s history. CPU inference, batch_size=1.</p><p class="zh">表 6：Nemotron-0.6B 量化结果。流式配置：(7,10,7)，0.56 s 延迟，5.6 s 历史。CPU 推理，batch_size=1。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Table 6: Nemotron-0.6B quantization results.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>history. CPU inference, batch_size=1.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Variant</th><th></th><th>Format</th><th>Size</th><th></th><th>Avg</th><th>RTFx</th><th>AMI</th><th>Earn.</th><th>Giga</th><th>LS-c</th><th></th><th>SPGI</th><th>TED</th><th>VoxP.</th></tr></thead><tbody><tr><td>Baseline (PyTorch)</td><td></td><td>PyTorch</td><td>2.47 GB</td><td>CUDA</td><td>7.28</td><td>–</td><td>11.80</td><td>12.64</td><td></td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
-<tr><td>FP32</td><td></td><td>ONNX</td><td>2.47 GB</td><td>CPU</td><td>8.03</td><td>6.73</td><td>16.40</td><td>13.32</td><td>12.00</td><td>2.35</td><td>5.01</td><td>2.61</td><td>4.66</td><td>7.90</td></tr>
-<tr><td>int8 k-quant</td><td></td><td>ONNX</td><td>1.28 GB</td><td>CPU</td><td>8.01</td><td>7.25</td><td>16.37</td><td>13.35</td><td>11.97</td><td>2.36</td><td>4.97</td><td>2.52</td><td>4.62</td><td>7.92</td></tr>
-<tr><td>int4-mixed k-quant</td><td></td><td>ONNX</td><td>0.73 GB</td><td>CPU</td><td>8.12</td><td>7.15</td><td>16.72</td><td>13.52</td><td>12.08</td><td>2.36</td><td>5.02</td><td>2.64</td><td>4.70</td><td>7.88</td></tr>
-<tr><td>int4 k-quant</td><td></td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>8.20</td><td>7.20</td><td>17.05</td><td>13.60</td><td>12.10</td><td>2.38</td><td>5.04</td><td>2.83</td><td>4.65</td><td>7.98</td></tr>
-<tr><td>int4 k-quant w/ ConvInt</td><td></td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>10.14</td><td>8.00</td><td>20.55</td><td>11.68</td><td>14.73</td><td>5.32</td><td></td><td>3.05</td><td>5.64</td><td>9.98</td></tr>
-<tr><td>int4 RTN</td><td></td><td>ONNX</td><td>0.66 GB</td><td>CPU</td><td>8.46</td><td>7.30</td><td>18.94</td><td>13.52</td><td>12.12</td><td>2.42</td><td>5.10</td><td>2.85</td><td>4.72</td><td>8.05</td></tr>
-<tr><td></td><td>9.00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>ONNX Variants</td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>PyTorch Baseline</td><td></td><td></td><td></td></tr>
-<tr><td></td><td>8.75</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>int4 RTN</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>8.50</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>8.25</td><td></td><td></td><td>int4-mix k-quant</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>FP32</td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>8.00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>7.75</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Baseline</td><td></td><td></td><td></td></tr>
-<tr><td></td><td>7.50</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>7.25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>7.00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td>0.5</td><td></td><td>1.0</td><td></td><td>1.5</td><td></td><td>2.0</td><td></td><td></td><td>2.5</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-7-1-2"><span class="cap-k">表</span><p class="en">Table 6: Nemotron-0.6B quantization results. Streaming config: (7,10,7), 0.56 s delay, 5.6 s history. CPU inference, batch_size=1.</p><p class="zh">表 6：Nemotron-0.6B 量化结果。流式配置：(7,10,7)，0.56 s 延迟，5.6 s 历史。CPU 推理，batch_size=1。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Table</th><th>6:</th><th></th><th></th><th></th><th></th><th>results.</th><th></th><th>Streaming</th><th></th><th>config:</th><th>(7,10,7),</th><th></th><th>0.56 s</th><th>delay,</th><th>5.6 s</th></tr><tr><th>history.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Baseline (PyTorch)</td><td></td><td>PyTorch</td><td>2.47 GB</td><td>CUDA</td><td>7.28</td><td>–</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
+<tr><td>FP32</td><td></td><td></td><td>ONNX</td><td>2.47 GB</td><td>CPU</td><td>8.03</td><td>6.73</td><td>16.40</td><td>13.32</td><td>12.00</td><td>2.35</td><td>5.01</td><td>2.61</td><td>4.66</td><td>7.90</td></tr>
+<tr><td>int8 k-quant</td><td></td><td></td><td>ONNX</td><td>1.28 GB</td><td>CPU</td><td>8.01</td><td>7.25</td><td>16.37</td><td>13.35</td><td>11.97</td><td>2.36</td><td>4.97</td><td>2.52</td><td>4.62</td><td>7.92</td></tr>
+<tr><td></td><td>int4-mixed k-quant</td><td></td><td>ONNX</td><td>0.73 GB</td><td>CPU</td><td>8.12</td><td>7.15</td><td>16.72</td><td>13.52</td><td>12.08</td><td>2.36</td><td>5.02</td><td>2.64</td><td>4.70</td><td>7.88</td></tr>
+<tr><td>int4 k-quant</td><td></td><td></td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>8.20</td><td>7.20</td><td>17.05</td><td>13.60</td><td>12.10</td><td>2.38</td><td>5.04</td><td>2.83</td><td>4.65</td><td>7.98</td></tr>
+<tr><td></td><td>int4 k-quant w/ ConvInt</td><td></td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>10.14</td><td>8.00</td><td>20.55</td><td>11.68</td><td>14.73</td><td>5.32</td><td>10.14</td><td>3.05</td><td>5.64</td><td>9.98</td></tr>
+<tr><td>int4 RTN</td><td></td><td></td><td>ONNX</td><td>0.66 GB</td><td>CPU</td><td>8.46</td><td>7.30</td><td>18.94</td><td>13.52</td><td>12.12</td><td>2.42</td><td>5.10</td><td>2.85</td><td>4.72</td><td>8.05</td></tr>
+<tr><td></td><td></td><td>9.00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>ONNX Variants</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>PyTorch Baseline</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>8.75</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>int4 RTN</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>8.50</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>(%)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>8.25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>WER</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>FP32</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>8.00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>int8 k-quant</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>7.75</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Baseline</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>7.50</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>7.25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>7.00</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>0.5</td><td></td><td></td><td></td><td>1.5</td><td></td><td>2.0</td><td></td><td></td><td>2.5</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="pblk" id="p-7-1-1">
+          <p class="en-lines"><span class="sent" data-sid="s-7-1-1-1"><span class="en">Variant Format Size Device Avg RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-7-1-1-1"><span class="zh">表头：Variant（变体）｜Format（格式）｜Size（体积）｜Device（设备）｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-7-1-2">
+          <p class="en-lines"><span class="sent" data-sid="s-7-1-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-7-1-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
+          
+        </div>
 
 
 
@@ -833,10 +848,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-7-1-16"><code>int4 k-quant Average WER (%) int4-mix k-quant</code></div>
 
-
-
+<div class="eq" id="eq-7-1-19"><code>0.0 0.5 1.0 1.5 2.0 2.5</code></div>
 <div class="eq" id="eq-7-1-20"><code>Model Size (GB)</code></div>
 
 <div class="cap" id="fig-7-1-1"><img class="fig" src="../assets/figures/2604.14493/fig-7-1-1.png" loading="lazy" alt="Figure 3: Model size vs. WER for Nemotron quantization variants. The int4 k-quant variant achieves 8.20% WER at 0.67 GB,"><span class="cap-k">图</span><p class="en">Figure 3: Model size vs. WER for Nemotron quantization variants. The int4 k-quant variant achieves 8.20% WER at 0.67 GB, within 0.17% of the ONNX FP32 baseline (8.03%).</p><p class="zh">图 3：Nemotron 各量化变体的模型体积与 WER 关系。int4 k-quant 变体在 0.67 GB 体积下取得 8.20% WER，与 ONNX FP32 基线（8.03%）的差距在 0.17% 以内。</p></div>
@@ -1071,15 +1084,55 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-A-1"><span class="secnum">A.1</span> <span class="t-zh">Whisper — All Configurations</span><span class="t-en">Whisper — All Configurations</span></h3><div class="cap" id="tab-A-1-1"><span class="cap-k">表</span><p class="en">Table 7: All Whisper configurations evaluated.</p><p class="zh">表 7：评测过的全部 Whisper 配置。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>whisper-large-v3-turbo</td><td>PyTorch</td><td></td><td>Batch</td><td>1.62 GB</td><td>7.83</td><td>16.13</td><td>11.63</td><td>10.14</td><td>2.10</td><td>4.24</td><td>2.97</td><td>3.57</td><td>11.87</td></tr>
-<tr><td>whisper-large-v3-turbo</td><td>ORT FP16</td><td></td><td>Batch</td><td>1.75 GB</td><td>7.52</td><td>16.36</td><td>11.38</td><td>10.13</td><td>2.17</td><td>4.24</td><td>2.93</td><td>3.62</td><td>9.30</td></tr>
-<tr><td>whisper-small.en</td><td>PyTorch</td><td></td><td>Batch</td><td>0.97 GB</td><td>(8.59)</td><td>17.93</td><td>12.97</td><td>11.35</td><td>3.05</td><td>7.25</td><td>3.60</td><td>4.07</td><td>8.50</td></tr>
-<tr><td>faster-whisper (small)</td><td>PyTorch</td><td>Chunk (3 s)</td><td></td><td>0.97 GB</td><td>24.74</td><td>32.90</td><td>32.59</td><td>–</td><td>17.23</td><td>22.72</td><td>19.81</td><td>–</td><td>23.18</td></tr></tbody></table></div></div>
+      <h3 class="sech lv2" id="sec-A-1"><span class="secnum">A.1</span> <span class="t-zh">Whisper — All Configurations</span><span class="t-en">Whisper — All Configurations</span></h3><div class="cap" id="tab-A-1-1"><span class="cap-k">表</span><p class="en">Table 7: All Whisper configurations evaluated.</p><p class="zh">表 7：评测过的全部 Whisper 配置。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>whisper-large-v3-turbo</td><td>PyTorch</td><td>Batch</td><td>1.62 GB</td><td>7.83</td><td>16.13</td><td>11.63</td><td>10.14</td><td>2.10</td><td>4.24</td><td>2.97</td><td>3.57</td><td>11.87</td></tr>
+<tr><td></td><td>whisper-large-v3-turbo</td><td>ORT FP16</td><td>Batch</td><td>1.75 GB</td><td>7.52</td><td>16.36</td><td>11.38</td><td>10.13</td><td>2.17</td><td>4.24</td><td>2.93</td><td>3.62</td><td>9.30</td></tr>
+<tr><td></td><td>whisper-small.en</td><td>PyTorch</td><td>Batch</td><td>0.97 GB</td><td>(8.59)</td><td>17.93</td><td>12.97</td><td>11.35</td><td>3.05</td><td>7.25</td><td>3.60</td><td>4.07</td><td>8.50</td></tr>
+<tr><td></td><td>faster-whisper (small)</td><td>PyTorch</td><td>Chunk (3 s)</td><td>0.97 GB</td><td>24.74</td><td>32.90</td><td>32.59</td><td>–</td><td>17.23</td><td>22.72</td><td>19.81</td><td>–</td><td>23.18</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-A-1-1">
           <p class="en-lines"><span class="sent" data-sid="s-A-1-1-1"><span class="en">Model Format Mode Size Avg AMI Earn.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-1-1-1"><span class="zh">表头：Model｜Format｜Mode（模式）｜Size｜Avg｜AMI｜Earn.。</span></span></p>
           
         </div>
+<div class="pblk" id="p-A-1-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-1-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-1-2-1"><span class="zh">1.
+Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB</span></span></p>
+          
+        </div>
+
+
+
+
+
+
+</section>
+<section>
+      <h3 class="sech lv2" id="sec-A-2"><span class="secnum">A.2</span> <span class="t-zh">Nemotron-0.6B — All Streaming Configurations</span><span class="t-en">Nemotron-0.6B — All Streaming Configurations</span></h3><div class="cap" id="tab-A-2-1"><span class="cap-k">表</span><p class="en">Table 8: All Nemotron-0.6B streaming configurations (PyTorch, CUDA, batch_size=16).</p><p class="zh">表 8：全部 Nemotron-0.6B 流式配置（PyTorch，CUDA，batch_size=16）。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Batch (offline)</td><td>–</td><td>–</td><td>7.07</td><td>990.48</td><td>11.16</td><td>12.38</td><td>11.35</td><td>2.28</td><td>4.83</td><td>2.63</td><td>4.42</td><td>7.48</td></tr>
+<tr><td>(70, 2, 70)</td><td>5.6 s</td><td>11.2 s</td><td>7.10</td><td>268.39</td><td>11.31</td><td>12.46</td><td>11.39</td><td>2.28</td><td>4.84</td><td>2.64</td><td>4.42</td><td>7.47</td></tr>
+<tr><td>(14, 2, 14)</td><td>1.12 s</td><td>2.24 s</td><td>7.46</td><td>260.05</td><td>11.38</td><td>12.49</td><td>11.39</td><td>2.41</td><td>5.07</td><td>2.71</td><td>4.50</td><td>9.75</td></tr>
+<tr><td>(7, 10, 7)</td><td>0.56 s</td><td>5.6 s</td><td>7.28</td><td>145.16</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
+<tr><td>(7, 2, 7)</td><td>0.56 s</td><td>1.12 s</td><td>8.51</td><td>144.71</td><td>11.93</td><td>13.93</td><td>11.76</td><td>3.43</td><td>6.00</td><td>3.47</td><td>5.11</td><td>12.49</td></tr>
+<tr><td>(2, 35, 2)</td><td>0.16 s</td><td>5.6 s</td><td>8.04</td><td>45.05</td><td>14.82</td><td>13.66</td><td>12.44</td><td>2.49</td><td>5.52</td><td>2.90</td><td>4.72</td><td>7.79</td></tr>
+<tr><td>(2, 2, 2)</td><td>0.16 s</td><td>0.32 s</td><td>–</td><td>–</td><td>19.75</td><td>26.36</td><td>19.46</td><td>11.86</td><td>17.88</td><td>–</td><td>13.32</td><td>32.42</td></tr>
+<tr><td>(1, 70, 1)</td><td>0.08 s</td><td>5.6 s</td><td>8.91</td><td>–</td><td>17.76</td><td>14.64</td><td>13.33</td><td>2.61</td><td>5.93</td><td>3.73</td><td>5.06</td><td>8.24</td></tr></tbody></table></div></div>
+<div class="pblk" id="p-A-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-2-1-1"><span class="en">Config Delay History Avg RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-2-1-1"><span class="zh">表头：Config｜Delay｜History｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-2-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-2-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
+          
+        </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -1089,17 +1142,33 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-A-2"><span class="secnum">A.2</span> <span class="t-zh">Nemotron-0.6B — All Streaming Configurations</span><span class="t-en">Nemotron-0.6B — All Streaming Configurations</span></h3><div class="cap" id="tab-A-2-1"><span class="cap-k">表</span><p class="en">Table 8: All Nemotron-0.6B streaming configurations (PyTorch, CUDA, batch_size=16).</p><p class="zh">表 8：全部 Nemotron-0.6B 流式配置（PyTorch，CUDA，batch_size=16）。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Batch (offline)</td><td></td><td>–</td><td></td><td>–</td><td>7.07</td><td>990.48</td><td></td><td>11.16</td><td>12.38</td><td>11.35</td><td>2.28</td><td>4.83</td><td></td><td>2.63</td><td>4.42</td><td>7.48</td></tr>
-<tr><td>(70, 2, 70)</td><td></td><td>5.6 s</td><td></td><td>11.2 s</td><td>7.10</td><td>268.39</td><td></td><td>11.31</td><td>12.46</td><td>11.39</td><td>2.28</td><td>4.84</td><td></td><td>2.64</td><td>4.42</td><td>7.47</td></tr>
-<tr><td>(14, 2, 14)</td><td></td><td>1.12 s</td><td></td><td>2.24 s</td><td>7.46</td><td>260.05</td><td></td><td>11.38</td><td>12.49</td><td>11.39</td><td>2.41</td><td>5.07</td><td></td><td>2.71</td><td>4.50</td><td>9.75</td></tr>
-<tr><td>(7, 10, 7)</td><td></td><td>0.56 s</td><td></td><td>5.6 s</td><td>7.28</td><td>145.16</td><td></td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td></td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
-<tr><td>(7, 2, 7)</td><td></td><td>0.56 s</td><td></td><td>1.12 s</td><td>8.51</td><td>144.71</td><td></td><td>11.93</td><td>13.93</td><td>11.76</td><td>3.43</td><td>6.00</td><td></td><td>3.47</td><td>5.11</td><td>12.49</td></tr>
-<tr><td>(2, 35, 2)</td><td></td><td>0.16 s</td><td></td><td>5.6 s</td><td>8.04</td><td></td><td>45.05</td><td>14.82</td><td>13.66</td><td>12.44</td><td>2.49</td><td>5.52</td><td></td><td>2.90</td><td>4.72</td><td>7.79</td></tr>
-<tr><td>(2, 2, 2)</td><td></td><td>0.16 s</td><td></td><td>0.32 s</td><td>–</td><td></td><td>–</td><td>19.75</td><td>26.36</td><td>19.46</td><td>11.86</td><td>17.88</td><td></td><td>–</td><td>13.32</td><td>32.42</td></tr>
-<tr><td>(1, 70, 1)</td><td></td><td>0.08 s</td><td></td><td>5.6 s</td><td>8.91</td><td></td><td>–</td><td>17.76</td><td>14.64</td><td>13.33</td><td>2.61</td><td>5.93</td><td></td><td>3.73</td><td>5.06</td><td>8.24</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-A-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-A-2-1-1"><span class="en">Config Delay History Avg RTFx AMI Earn.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-2-1-1"><span class="zh">表头：Config｜Delay｜History｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
+      <h3 class="sech lv2" id="sec-A-3"><span class="secnum">A.3</span> <span class="t-zh">Parakeet TDT-0.6B-v3 — All Chunking Configurations</span><span class="t-en">Parakeet TDT-0.6B-v3 — All Chunking Configurations</span></h3><div class="cap" id="tab-A-3-1"><span class="cap-k">表</span><p class="en">Table 9: All Parakeet TDT-0.6B-v3 configurations. Batch and chunked modes (CUDA, batch_size=16). Config format: delay (left-current-right = total context).</p><p class="zh">表 9：全部 Parakeet TDT-0.6B-v3 配置。批处理与分块模式（CUDA，batch_size=16）。配置格式：延迟（左-当前-右 = 总上下文）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>batch_size=16).</th><th></th><th></th><th></th><th></th><th>delay (left-current-right = total context).</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Avg</th><th>RTFx</th><th>AMI</th><th>Earn.</th><th>Giga</th><th>LS-c</th><th>LS-o</th></tr></thead><tbody><tr><td></td><td>–</td><td>(6.32)</td><td>(3332.74)</td><td>(11.39)</td><td>(11.19)</td><td>(9.57)</td><td>(1.92)</td><td>(3.59)</td></tr>
+<tr><td>28.8 s (7.2-21.6-7.2=36)</td><td>bf16</td><td>16.94</td><td>211.45</td><td>41.64</td><td>32.38</td><td>20.56</td><td>3.69</td><td>6.10</td></tr>
+<tr><td>13.2 s (8.4-11.6-1.6=21.6)</td><td>bf16</td><td>9.24</td><td>272.39</td><td>15.96</td><td>17.37</td><td>12.10</td><td>2.52</td><td>4.34</td></tr>
+<tr><td>11.6 s (8.4-10.4-1.2=20)</td><td>bf16</td><td>12.13</td><td>358.98</td><td>22.25</td><td>22.61</td><td>18.23</td><td>3.76</td><td>4.82</td></tr>
+<tr><td>10.8 s (8.4-10-0.8=19.2)</td><td>bf16</td><td>16.10</td><td>307.51</td><td>37.21</td><td>30.55</td><td>21.74</td><td>4.17</td><td>5.32</td></tr>
+<tr><td>12.8 s (3.2-9.6-3.2=16)</td><td>bf16</td><td>9.66</td><td>257.87</td><td>15.56</td><td>17.80</td><td>12.39</td><td>3.69</td><td>5.17</td></tr>
+<tr><td>10.4 s (5.6-8.8-1.6=16)</td><td>bf16</td><td>9.22</td><td>250.41</td><td>15.35</td><td>17.12</td><td>12.02</td><td>3.44</td><td>5.27</td></tr>
+<tr><td>9.6 s (5.6-8-1.6=15.2)</td><td>bf16</td><td>9.33</td><td>361.64</td><td>15.26</td><td>17.36</td><td>12.15</td><td>3.59</td><td>5.12</td></tr>
+<tr><td>9.6 s (5.6-8-1.6=15.2)</td><td>fp16</td><td>9.59</td><td>219.76</td><td>15.27</td><td>19.44</td><td>12.16</td><td>3.47</td><td>5.26</td></tr>
+<tr><td>9.2 s (5.6-7.6-1.6=14.8)</td><td>bf16</td><td>11.61</td><td>402.68</td><td>21.72</td><td>21.74</td><td>17.68</td><td>3.35</td><td>4.88</td></tr>
+<tr><td>8.8 s (5.6-8-0.8=14.4)</td><td>bf16</td><td>15.83</td><td>257.07</td><td>35.91</td><td>29.09</td><td>20.56</td><td>6.06</td><td>6.84</td></tr>
+<tr><td>8.8 s (5.6-7.6-1.2=14.4)</td><td>bf16</td><td>15.99</td><td>204.10</td><td>36.08</td><td>29.15</td><td>21.49</td><td>5.07</td><td>6.94</td></tr>
+<tr><td>8 s (5.6-7.2-0.8=13.6)</td><td>bf16</td><td>15.97</td><td>404.98</td><td>35.48</td><td>29.27</td><td>21.84</td><td>5.69</td><td>6.39</td></tr>
+<tr><td>9.6 s (2.4-7.2-2.4=12)</td><td>fp16</td><td>12.55</td><td>323.81</td><td>21.65</td><td>21.53</td><td>18.32</td><td>6.43</td><td>7.37</td></tr>
+<tr><td>9.6 s (2.4-7.2-2.4=12)</td><td>bf16</td><td>16.46</td><td>361.34</td><td>35.60</td><td>29.04</td><td>21.92</td><td>7.45</td><td>8.09</td></tr>
+<tr><td>2.4 s (9.6-0.8-1.6=12)</td><td>bf16</td><td>12.83</td><td>83.68</td><td>16.73</td><td>19.81</td><td>15.27</td><td>6.63</td><td>8.25</td></tr>
+<tr><td>6.4 s (1.6-4.8-1.6=8)</td><td>fp16</td><td>11.54</td><td>228.68</td><td>15.51</td><td>18.91</td><td>13.45</td><td>9.27</td><td>9.73</td></tr>
+<tr><td>6.4 s (1.6-4.8-1.6=8)</td><td>bf16</td><td>11.52</td><td>–</td><td>15.52</td><td>18.91</td><td>13.44</td><td>9.34</td><td>9.57</td></tr>
+<tr><td>3.2 s (0.8-2.4-0.8=4)</td><td>bf16</td><td>32.17</td><td>209.69</td><td>43.08</td><td>38.13</td><td>35.66</td><td>35.62</td><td>30.13</td></tr></tbody></table></div></div>
+<div class="pblk" id="p-A-3-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-3-1-1"><span class="en">Config Precision Avg RTFx AMI Earn.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-3-1-1"><span class="zh">表头：Config｜Precision（精度）｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-3-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-3-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-3-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。</span></span></p>
           
         </div>
 
@@ -1118,45 +1187,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-</section>
-<section>
-      <h3 class="sech lv2" id="sec-A-3"><span class="secnum">A.3</span> <span class="t-zh">Parakeet TDT-0.6B-v3 — All Chunking Configurations</span><span class="t-en">Parakeet TDT-0.6B-v3 — All Chunking Configurations</span></h3><div class="cap" id="tab-A-3-1"><span class="cap-k">表</span><p class="en">Table 9: All Parakeet TDT-0.6B-v3 configurations. Batch and chunked modes (CUDA, batch_size=16). Config format: delay (left-current-right = total context).</p><p class="zh">表 9：全部 Parakeet TDT-0.6B-v3 配置。批处理与分块模式（CUDA，batch_size=16）。配置格式：延迟（左-当前-右 = 总上下文）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>batch_size=16). Config format: delay (left-current-right = total context).</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Config</th><th>Precision</th><th>Avg</th><th>RTFx</th><th>AMI</th><th>Earn.</th><th>Giga</th><th>LS-c</th><th>LS-o</th><th>SPGI</th><th>TED</th><th>VoxP.</th></tr></thead><tbody><tr><td>Batch</td><td>–</td><td>(6.32)</td><td>(3332.74)</td><td>(11.39)</td><td>(11.19)</td><td>(9.57)</td><td>(1.92)</td><td>(3.59)</td><td>(3.98)</td><td>(2.80)</td><td>(6.09)</td></tr>
-<tr><td>28.8 s (7.2-21.6-7.2=36)</td><td>bf16</td><td>16.94</td><td>211.45</td><td>41.64</td><td>32.38</td><td>20.56</td><td>3.69</td><td>6.10</td><td>8.63</td><td>10.73</td><td>11.75</td></tr>
-<tr><td>13.2 s (8.4-11.6-1.6=21.6)</td><td>bf16</td><td>9.24</td><td>272.39</td><td>15.96</td><td>17.37</td><td>12.10</td><td>2.52</td><td>4.34</td><td>7.40</td><td>5.65</td><td>8.59</td></tr>
-<tr><td>11.6 s (8.4-10.4-1.2=20)</td><td>bf16</td><td>12.13</td><td>358.98</td><td>22.25</td><td>22.61</td><td>18.23</td><td>3.76</td><td>4.82</td><td>8.41</td><td>8.36</td><td>8.62</td></tr>
-<tr><td>10.8 s (8.4-10-0.8=19.2)</td><td>bf16</td><td>16.10</td><td>307.51</td><td>37.21</td><td>30.55</td><td>21.74</td><td>4.17</td><td>5.32</td><td>9.14</td><td>10.40</td><td>10.32</td></tr>
-<tr><td>12.8 s (3.2-9.6-3.2=16)</td><td>bf16</td><td>9.66</td><td>257.87</td><td>15.56</td><td>17.80</td><td>12.39</td><td>3.69</td><td>5.17</td><td>7.86</td><td>6.16</td><td>8.66</td></tr>
-<tr><td>10.4 s (5.6-8.8-1.6=16)</td><td>bf16</td><td>9.22</td><td>250.41</td><td>15.35</td><td>17.12</td><td>12.02</td><td>3.44</td><td>5.27</td><td>7.23</td><td>5.32</td><td>8.01</td></tr>
-<tr><td>9.6 s (5.6-8-1.6=15.2)</td><td>bf16</td><td>9.33</td><td>361.64</td><td>15.26</td><td>17.36</td><td>12.15</td><td>3.59</td><td>5.12</td><td>7.41</td><td>5.65</td><td>8.10</td></tr>
-<tr><td>9.6 s (5.6-8-1.6=15.2)</td><td>fp16</td><td>9.59</td><td>219.76</td><td>15.27</td><td>19.44</td><td>12.16</td><td>3.47</td><td>5.26</td><td>7.41</td><td>5.61</td><td>8.07</td></tr>
-<tr><td>9.2 s (5.6-7.6-1.6=14.8)</td><td>bf16</td><td>11.61</td><td>402.68</td><td>21.72</td><td>21.74</td><td>17.68</td><td>3.35</td><td>4.88</td><td>7.97</td><td>7.36</td><td>8.14</td></tr>
-<tr><td>8.8 s (5.6-8-0.8=14.4)</td><td>bf16</td><td>15.83</td><td>257.07</td><td>35.91</td><td>29.09</td><td>20.56</td><td>6.06</td><td>6.84</td><td>8.63</td><td>9.56</td><td>9.95</td></tr>
-<tr><td>8.8 s (5.6-7.6-1.2=14.4)</td><td>bf16</td><td>15.99</td><td>204.10</td><td>36.08</td><td>29.15</td><td>21.49</td><td>5.07</td><td>6.94</td><td>8.66</td><td>10.56</td><td>9.98</td></tr>
-<tr><td>8 s (5.6-7.2-0.8=13.6)</td><td>bf16</td><td>15.97</td><td>404.98</td><td>35.48</td><td>29.27</td><td>21.84</td><td>5.69</td><td>6.39</td><td>8.89</td><td>10.15</td><td>10.04</td></tr>
-<tr><td>9.6 s (2.4-7.2-2.4=12)</td><td>fp16</td><td>12.55</td><td>323.81</td><td>21.65</td><td>21.53</td><td>18.32</td><td>6.43</td><td>7.37</td><td>8.46</td><td>7.95</td><td>8.71</td></tr>
-<tr><td>9.6 s (2.4-7.2-2.4=12)</td><td>bf16</td><td>16.46</td><td>361.34</td><td>35.60</td><td>29.04</td><td>21.92</td><td>7.45</td><td>8.09</td><td>8.92</td><td>10.45</td><td>10.22</td></tr>
-<tr><td>2.4 s (9.6-0.8-1.6=12)</td><td>bf16</td><td>12.83</td><td></td><td>16.73</td><td>19.81</td><td>15.27</td><td>6.63</td><td>8.25</td><td>17.82</td><td>9.95</td><td>8.19</td></tr>
-<tr><td>6.4 s (1.6-4.8-1.6=8)</td><td>fp16</td><td>11.54</td><td>228.68</td><td>15.51</td><td>18.91</td><td>13.45</td><td>9.27</td><td>9.73</td><td>9.39</td><td>7.20</td><td>8.82</td></tr>
-<tr><td>6.4 s (1.6-4.8-1.6=8)</td><td>bf16</td><td>11.52</td><td></td><td>15.52</td><td>18.91</td><td>13.44</td><td>9.34</td><td>9.57</td><td>9.33</td><td>7.26</td><td>8.79</td></tr>
-<tr><td>3.2 s (0.8-2.4-0.8=4)</td><td>bf16</td><td>32.17</td><td>209.69</td><td>43.08</td><td>38.13</td><td>35.66</td><td>35.62</td><td>30.13</td><td>31.28</td><td>30.93</td><td>12.55</td></tr></tbody></table></div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1180,9 +1210,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-A-4"><span class="secnum">A.4</span> <span class="t-zh">Parakeet TDT-0.6B-v3 — ONNX Quantization</span><span class="t-en">Parakeet TDT-0.6B-v3 — ONNX Quantization</span></h3><div class="cap" id="tab-A-4-1"><span class="cap-k">表</span><p class="en">Table 10: Parakeet TDT-0.6B-v3 ONNX quantization variants (batch mode, CUDA, batch_size=16).</p><p class="zh">表 10：Parakeet TDT-0.6B-v3 ONNX 量化变体（批处理模式，CUDA，batch_size=16）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>batch_size=16).</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Format</th><th>Size</th><th>Avg</th><th>RTFx</th><th></th><th>AMI</th><th>Earn.</th><th></th><th>Giga</th><th></th><th>LS-c</th><th>LS-o</th><th>SPGI</th><th></th><th>TED</th><th></th><th>VoxP.</th></tr></thead><tbody><tr><td>ONNX fp16</td><td>1.30 GB</td><td>–</td><td></td><td>–</td><td>21.46</td><td></td><td>–</td><td></td><td>–</td><td>2.21</td><td>3.96</td><td></td><td>–</td><td></td><td>–</td><td>6.82</td></tr>
-<tr><td>ONNX int8</td><td>1.02 GB</td><td>9.92</td><td></td><td>97.10</td><td>18.82</td><td></td><td>21.19</td><td></td><td>12.92</td><td>2.18</td><td>4.25</td><td></td><td>7.17</td><td></td><td>5.79</td><td>7.07</td></tr>
-<tr><td>ONNX int4</td><td>0.74 GB</td><td>11.50</td><td>112.94</td><td></td><td>21.22</td><td></td><td>26.34</td><td></td><td>14.39</td><td>2.16</td><td>4.02</td><td></td><td>8.97</td><td></td><td>8.17</td><td>6.77</td></tr></tbody></table></div></div></section>
+      <h3 class="sech lv2" id="sec-A-4"><span class="secnum">A.4</span> <span class="t-zh">Parakeet TDT-0.6B-v3 — ONNX Quantization</span><span class="t-en">Parakeet TDT-0.6B-v3 — ONNX Quantization</span></h3><div class="cap" id="tab-A-4-1"><span class="cap-k">表</span><p class="en">Table 10: Parakeet TDT-0.6B-v3 ONNX quantization variants (batch mode, CUDA, batch_size=16).</p><p class="zh">表 10：Parakeet TDT-0.6B-v3 ONNX 量化变体（批处理模式，CUDA，batch_size=16）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>batch_size=16).</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Format</th><th></th><th>Size</th><th>Avg</th><th>RTFx</th><th>AMI</th><th>Earn.</th><th></th></tr></thead><tbody><tr><td>ONNX fp16</td><td></td><td>1.30 GB</td><td>–</td><td>–</td><td>21.46</td><td>–</td><td>–</td></tr>
+<tr><td>ONNX int8</td><td></td><td>1.02 GB</td><td>9.92</td><td>97.10</td><td>18.82</td><td>21.19</td><td></td></tr>
+<tr><td>ONNX int4</td><td></td><td>0.74 GB</td><td>11.50</td><td>112.94</td><td>21.22</td><td>26.34</td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-format"><span class="t-zh">Format</span><span class="t-en">Format</span></h3>
 
@@ -1193,31 +1223,50 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-A-5"><span class="secnum">A.5</span> <span class="t-zh">Canary-1B-v2 — All Configurations</span><span class="t-en">Canary-1B-v2 — All Configurations</span></h3><div class="cap" id="tab-A-5-1"><span class="cap-k">表</span><p class="en">Table 11: Canary-1B-v2 configurations (PyTorch bf16, CUDA, batch_size=16).</p><p class="zh">表 11：Canary-1B-v2 配置（PyTorch bf16，CUDA，batch_size=16）。</p></div>
+      <h3 class="sech lv2" id="sec-A-5"><span class="secnum">A.5</span> <span class="t-zh">Canary-1B-v2 — All Configurations</span><span class="t-en">Canary-1B-v2 — All Configurations</span></h3><div class="cap" id="tab-A-5-1"><span class="cap-k">表</span><p class="en">Table 11: Canary-1B-v2 configurations (PyTorch bf16, CUDA, batch_size=16).</p><p class="zh">表 11：Canary-1B-v2 配置（PyTorch bf16，CUDA，batch_size=16）。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>ONNX fp16</td><td>1.30 GB</td><td>–</td><td>–</td><td>21.46</td><td></td><td>–</td><td>–</td><td>2.21</td><td>3.96</td><td>–</td><td>–</td><td>6.82</td></tr>
+<tr><td></td><td>ONNX int8</td><td>1.02 GB</td><td>9.92</td><td>97.10</td><td>18.82</td><td></td><td>21.19</td><td>12.92</td><td>2.18</td><td>4.25</td><td>7.17</td><td>5.79</td><td>7.07</td></tr>
+<tr><td></td><td>ONNX int4</td><td>0.74 GB</td><td>11.50</td><td>112.94</td><td>21.22</td><td></td><td>26.34</td><td>14.39</td><td>2.16</td><td>4.02</td><td>8.97</td><td>8.17</td><td>6.77</td></tr>
+<tr><td>A.5</td><td></td><td>Canary-1B-v2</td><td>—</td><td>All</td><td></td><td>Configurations</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 
 
-<div class="pblk" id="p-A-5-3">
-          <p class="en-lines"><span class="sent" data-sid="s-A-5-3-1"><span class="en">Canary-1B-v2 Batch 6.36 GB</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-5-3-1"><span class="zh">（表格行）Canary-1B-v2 / Batch / 6.36 GB。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-A-5-1"><code>(7.15) (749) (16.01) (11.79) (10.82) (2.18) (3.56) (2.28) (4.29) (6.25)</code></div>
-<div class="eq" id="eq-A-5-2"><code>Canary-1B-v2 Chunk 4.8 s 6.36 GB</code></div>
+
+
+
 <div class="eq" id="eq-A-5-3"><code>12.45 – 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98</code></div>
-<div class="pblk" id="p-A-5-4">
-          <p class="en-lines"><span class="sent" data-sid="s-A-5-4-1"><span class="en">Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-5-4-1"><span class="zh">2.
-Chunked 配置：(10.0-2.4-2.4=14.8)，采用 AlignAtt 流式策略。</span></span></p>
-          
-        </div></section>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-A-6"><span class="secnum">A.6</span> <span class="t-zh">Conformer Transducer XL — All Configurations</span><span class="t-en">Conformer Transducer XL — All Configurations</span></h3><div class="cap" id="tab-A-6-1"><span class="cap-k">表</span><p class="en">Table 12: Conformer Transducer XL chunked configurations (PyTorch bf16, CUDA, batch_size=16). Config: delay (left-current-right = total context).</p><p class="zh">表 12：Conformer Transducer XL 分块配置（PyTorch bf16，CUDA，batch_size=16）。配置：延迟（左-当前-右 = 总上下文）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>batch_size=16). Config: delay (left-current-right = total context).</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Config</th><th>Avg</th><th>RTFx</th><th>AMI</th><th>Earn.</th><th>Giga</th><th>LS-c</th><th>LS-o</th><th>SPGI</th><th>TED</th><th>VoxP.</th></tr></thead><tbody><tr><td>6.4 s (1.6-4.8-1.6=8)</td><td>10.78</td><td>222.90</td><td>22.07</td><td>23.47</td><td>14.21</td><td>2.22</td><td>4.10</td><td>7.93</td><td>5.48</td><td>6.80</td></tr>
-<tr><td>3.2 s (4.8-1.6-1.6=8)</td><td>10.96</td><td>133.69</td><td>22.31</td><td>24.22</td><td>13.99</td><td>2.04</td><td>3.78</td><td>7.86</td><td>5.40</td><td>8.05</td></tr>
-<tr><td>2.4 s (5.6-0.8-1.6=8)</td><td>11.06</td><td>82.03</td><td>22.57</td><td>24.44</td><td>14.05</td><td>2.11</td><td>3.83</td><td>7.95</td><td>5.36</td><td>8.18</td></tr>
-<tr><td>2.4 s (9.6-0.8-1.6=12)</td><td>11.02</td><td>44.28</td><td>22.69</td><td>24.47</td><td>13.97</td><td>1.93</td><td>3.46</td><td>7.86</td><td>5.26</td><td>8.49</td></tr></tbody></table></div></div></section>
+      <h3 class="sech lv2" id="sec-A-6"><span class="secnum">A.6</span> <span class="t-zh">Conformer Transducer XL — All Configurations</span><span class="t-en">Conformer Transducer XL — All Configurations</span></h3><div class="cap" id="tab-A-6-1"><span class="cap-k">表</span><p class="en">Table 12: Conformer Transducer XL chunked configurations (PyTorch bf16, CUDA, batch_size=16). Config: delay (left-current-right = total context).</p><p class="zh">表 12：Conformer Transducer XL 分块配置（PyTorch bf16，CUDA，batch_size=16）。配置：延迟（左-当前-右 = 总上下文）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Canary-1B-v2</th><th>Batch</th><th></th><th>6.36 GB</th><th></th><th>(7.15)</th><th>(749)</th><th></th><th>(16.01)</th><th>(11.79)</th><th>(10.82)</th><th>(2.18)</th><th>(3.56)</th></tr></thead><tbody><tr><td></td><td>Canary-1B-v2</td><td></td><td>Chunk 4.8 s</td><td>6.36 GB</td><td></td><td>12.45</td><td>–</td><td></td><td>22.10</td><td>22.04</td><td>14.60</td><td>4.87</td><td>5.96</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>A.6</td><td></td><td>Conformer</td><td></td><td></td><td>Transducer</td><td></td><td>XL</td><td>—</td><td>All</td><td></td><td>Configurations</td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-config"><span class="t-zh">Config</span><span class="t-en">Config</span></h3>
 
+<div class="pblk" id="p-config-3">
+          <p class="en-lines"><span class="sent" data-sid="s-config-3-1"><span class="en">6.4 s (1.6-4.8-1.6=8)</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-config-3-1"><span class="zh">1.
+6.4 s (1.6-4.8-1.6=8)</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-config-1"><code>10.78 222.90 22.07 23.47 14.21 2.22 4.10 7.93 5.48 6.80</code></div>
+<div class="eq" id="eq-config-2"><code>3.2 s (4.8-1.6-1.6=8)</code></div>
+<div class="eq" id="eq-config-3"><code>10.96 133.69 22.31 24.22 13.99 2.04 3.78 7.86 5.40 8.05</code></div>
+<div class="eq" id="eq-config-4"><code>2.4 s (5.6-0.8-1.6=8)</code></div>
+<div class="eq" id="eq-config-5"><code>11.06 82.03 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18</code></div>
+<div class="eq" id="eq-config-6"><code>2.4 s (9.6-0.8-1.6=12)</code></div>
+<div class="eq" id="eq-config-7"><code>11.02 44.28 22.69 24.47 13.97 1.93 3.46 7.86 5.26 8.49</code></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-A-7"><span class="secnum">A.7</span> <span class="t-zh">Qwen3-ASR — All Configurations</span><span class="t-en">Qwen3-ASR — All Configurations</span></h3><div class="cap" id="tab-A-7-1"><span class="cap-k">表</span><p class="en">Table 13: Qwen3-ASR configurations (PyTorch, CUDA, batch_size=32).</p><p class="zh">表 13：Qwen3-ASR 配置（PyTorch，CUDA，batch_size=32）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th></th><th>Config</th><th></th><th>Avg</th><th>RTFx</th><th>AMI</th><th>Earn.</th><th>Giga</th><th>LS-c</th><th>LS-o</th><th>SPGI</th><th>TED</th><th>VoxP.</th></tr></thead><tbody><tr><td></td><td>Qwen3-ASR-1.7B</td><td>Batch</td><td></td><td>5.90</td><td>187.91</td><td>11.76</td><td>10.26</td><td>8.75</td><td>1.60</td><td>3.41</td><td>2.83</td><td>2.28</td><td>6.34</td></tr>
+<tr><td></td><td>Qwen3-ASR-0.6B</td><td>Batch</td><td></td><td>6.69</td><td>194.71</td><td>13.77</td><td>11.03</td><td>9.16</td><td>2.12</td><td>4.47</td><td>3.04</td><td>2.83</td><td>7.09</td></tr>
+<tr><td></td><td>Qwen3-ASR-1.7B</td><td></td><td>Chunk 3 s (1 s stride)</td><td>9.69</td><td>61.70</td><td>15.54</td><td>14.94</td><td>11.28</td><td>3.58</td><td>5.99</td><td>5.26</td><td>5.03</td><td>9.90</td></tr>
+<tr><td></td><td>Qwen3-ASR-0.6B</td><td></td><td>Chunk 3 s (1 s stride)</td><td>9.81</td><td>64.11</td><td>17.47</td><td>15.05</td><td>11.37</td><td>3.94</td><td>7.02</td><td>5.22</td><td>5.02</td><td>13.41</td></tr>
+<tr><td></td><td>Qwen3-ASR-1.7B</td><td></td><td>Chunk 2.4 s (1.2 s stride)</td><td>10.45</td><td>42.76</td><td>16.97</td><td>16.92</td><td>12.29</td><td>4.95</td><td>7.69</td><td>6.70</td><td>6.34</td><td>11.75</td></tr>
+<tr><td></td><td>Qwen3-ASR-0.6B</td><td></td><td>Chunk 2.4 s (1.2 s stride)</td><td>10.41</td><td>46.32</td><td>18.55</td><td>16.60</td><td>12.00</td><td>4.97</td><td>8.31</td><td>6.13</td><td>5.75</td><td>10.99</td></tr></tbody></table></div></div>
+
+
+
+
+
+
 
 
 
@@ -1227,32 +1276,11 @@ Chunked 配置：(10.0-2.4-2.4=14.8)，采用 AlignAtt 流式策略。</span></s
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-A-7"><span class="secnum">A.7</span> <span class="t-zh">Qwen3-ASR — All Configurations</span><span class="t-en">Qwen3-ASR — All Configurations</span></h3><div class="cap" id="tab-A-7-1"><span class="cap-k">表</span><p class="en">Table 13: Qwen3-ASR configurations (PyTorch, CUDA, batch_size=32).</p><p class="zh">表 13：Qwen3-ASR 配置（PyTorch，CUDA，batch_size=32）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th>Config</th><th>Avg</th><th>RTFx</th><th>AMI</th><th>Earn.</th><th>Giga</th><th>LS-c</th><th>LS-o</th><th>SPGI</th><th>TED</th><th>VoxP.</th></tr></thead><tbody><tr><td>Qwen3-ASR-1.7B</td><td>Batch</td><td>5.90</td><td>187.91</td><td>11.76</td><td>10.26</td><td>8.75</td><td>1.60</td><td>3.41</td><td>2.83</td><td>2.28</td><td>6.34</td></tr>
-<tr><td>Qwen3-ASR-0.6B</td><td>Batch</td><td>6.69</td><td>194.71</td><td>13.77</td><td>11.03</td><td>9.16</td><td>2.12</td><td>4.47</td><td>3.04</td><td>2.83</td><td>7.09</td></tr>
-<tr><td>Qwen3-ASR-1.7B</td><td>Chunk 3 s (1 s stride)</td><td>9.69</td><td>61.70</td><td>15.54</td><td>14.94</td><td>11.28</td><td>3.58</td><td>5.99</td><td>5.26</td><td>5.03</td><td>9.90</td></tr>
-<tr><td>Qwen3-ASR-0.6B</td><td>Chunk 3 s (1 s stride)</td><td>9.81</td><td>64.11</td><td>17.47</td><td>15.05</td><td>11.37</td><td>3.94</td><td>7.02</td><td>5.22</td><td>5.02</td><td>13.41</td></tr>
-<tr><td>Qwen3-ASR-1.7B</td><td>Chunk 2.4 s (1.2 s stride)</td><td>10.45</td><td>42.76</td><td>16.97</td><td>16.92</td><td>12.29</td><td>4.95</td><td>7.69</td><td>6.70</td><td>6.34</td><td>11.75</td></tr>
-<tr><td>Qwen3-ASR-0.6B</td><td>Chunk 2.4 s (1.2 s stride)</td><td>10.41</td><td>46.32</td><td>18.55</td><td>16.60</td><td>12.00</td><td>4.97</td><td>8.31</td><td>6.13</td><td>5.75</td><td>10.99</td></tr></tbody></table></div></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</section>
-<section>
-      <h3 class="sech lv2" id="sec-A-8"><span class="secnum">A.8</span> <span class="t-zh">Cross-Model Streaming Comparison (CPU)</span><span class="t-en">Cross-Model Streaming Comparison (CPU)</span></h3><div class="cap" id="tab-A-8-1"><span class="cap-k">表</span><p class="en">Table 14: Cross-model streaming comparison (CPU, batch_size=1). Best streaming or lowlatency configuration per model.</p><p class="zh">表 14：跨模型流式对比（CPU，batch_size=1）。取每个模型最好的流式或低延迟配置。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>latency configuration per model.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Nemotron-0.6B</td><td>2.47 GB</td><td>0.56 s</td><td>7.28</td><td>1.03</td><td>2.46</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
-<tr><td>Qwen3-ASR-1.7B</td><td>4.70 GB</td><td>2.4 s</td><td>10.45</td><td>1.77</td><td>0.49</td><td>16.97</td><td>16.92</td><td>12.29</td><td>4.95</td><td>7.69</td><td>6.70</td><td>6.34</td><td>11.75</td></tr>
-<tr><td>Parakeet TDT-0.6B-v3</td><td>2.51 GB</td><td>2.4 s</td><td>12.83</td><td>2.03</td><td>1.38</td><td>16.73</td><td>19.81</td><td>15.27</td><td>6.63</td><td>8.25</td><td>17.82</td><td>9.95</td><td>8.19</td></tr>
-<tr><td>Conformer Trans. XL</td><td>2.58 GB</td><td>2.4 s</td><td>11.06</td><td>–</td><td>1.27</td><td>22.57</td><td>24.44</td><td>14.05</td><td>2.11</td><td>3.83</td><td>7.95</td><td>5.36</td><td>8.18</td></tr>
-<tr><td>Canary-1B-v2</td><td>6.36 GB</td><td>4.8 s</td><td>12.45</td><td>1.74</td><td>2.93</td><td>22.10</td><td>22.04</td><td>14.60</td><td>4.87</td><td>5.96</td><td>4.42</td><td>7.64</td><td>17.98</td></tr></tbody></table></div></div>
+      <h3 class="sech lv2" id="sec-A-8"><span class="secnum">A.8</span> <span class="t-zh">Cross-Model Streaming Comparison (CPU)</span><span class="t-en">Cross-Model Streaming Comparison (CPU)</span></h3><div class="cap" id="tab-A-8-1"><span class="cap-k">表</span><p class="en">Table 14: Cross-model streaming comparison (CPU, batch_size=1). Best streaming or lowlatency configuration per model.</p><p class="zh">表 14：跨模型流式对比（CPU，batch_size=1）。取每个模型最好的流式或低延迟配置。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>latency configuration per model.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Nemotron-0.6B</td><td></td><td>2.47 GB</td><td>0.56 s</td><td>7.28</td><td>1.03</td><td>2.46</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
+<tr><td></td><td>Qwen3-ASR-1.7B</td><td></td><td>4.70 GB</td><td>2.4 s</td><td>10.45</td><td>1.77</td><td>0.49</td><td>16.97</td><td>16.92</td><td>12.29</td><td>4.95</td><td>7.69</td><td>6.70</td><td>6.34</td><td>11.75</td></tr>
+<tr><td></td><td>Parakeet TDT-0.6B-v3</td><td></td><td>2.51 GB</td><td>2.4 s</td><td>12.83</td><td>2.03</td><td>1.38</td><td>16.73</td><td>19.81</td><td>15.27</td><td>6.63</td><td>8.25</td><td>17.82</td><td>9.95</td><td>8.19</td></tr>
+<tr><td></td><td>Conformer Trans. XL</td><td></td><td>2.58 GB</td><td>2.4 s</td><td>11.06</td><td>–</td><td>1.27</td><td>22.57</td><td>24.44</td><td>14.05</td><td>2.11</td><td>3.83</td><td>7.95</td><td>5.36</td><td>8.18</td></tr>
+<tr><td>Canary-1B-v2</td><td></td><td></td><td>6.36 GB</td><td>4.8 s</td><td>12.45</td><td>1.74</td><td>2.93</td><td>22.10</td><td>22.04</td><td>14.60</td><td>4.87</td><td>5.96</td><td>4.42</td><td>7.64</td><td>17.98</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-A-8-1">
           <p class="en-lines"><span class="sent" data-sid="s-A-8-1-1"><span class="en">Model Size Delay Avg BSF RTFx AMI Earn.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-8-1-1"><span class="zh">表头：Model｜Size｜Delay｜Avg｜BSF｜RTFx｜AMI｜Earn.。</span></span></p>
@@ -1274,13 +1302,13 @@ Chunked 配置：(10.0-2.4-2.4=14.8)，采用 AlignAtt 流式策略。</span></s
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-A-9"><span class="secnum">A.9</span> <span class="t-zh">Nemotron-0.6B — ONNX Quantization Results</span><span class="t-en">Nemotron-0.6B — ONNX Quantization Results</span></h3><div class="cap" id="tab-A-9-1"><span class="cap-k">表</span><p class="en">Table 15: Nemotron-0.6B ONNX quantization results. Config: (7,10,7), 0.56 s delay, 5.6 s history. CPU inference, batch_size=1.</p><p class="zh">表 15：Nemotron-0.6B ONNX 量化结果。配置：(7,10,7)，0.56 s 延迟，5.6 s 历史。CPU 推理，batch_size=1。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>CPU inference, batch_size=1.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Baseline (PyTorch)</td><td>PyTorch</td><td>2.47 GB</td><td>CUDA</td><td>7.28</td><td>–</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
-<tr><td>FP32</td><td>ONNX</td><td>2.47 GB</td><td>CPU</td><td>8.03</td><td>6.73</td><td>16.40</td><td>13.32</td><td>12.00</td><td>2.35</td><td>5.01</td><td>2.61</td><td>4.66</td><td>7.90</td></tr>
-<tr><td>int8 k-quant</td><td>ONNX</td><td>1.28 GB</td><td>CPU</td><td>8.01</td><td>7.25</td><td>16.37</td><td>13.35</td><td>11.97</td><td>2.36</td><td>4.97</td><td>2.52</td><td>4.62</td><td>7.92</td></tr>
-<tr><td>int4-mixed k-quant</td><td>ONNX</td><td>0.73 GB</td><td>CPU</td><td>8.12</td><td>7.15</td><td>16.72</td><td>13.52</td><td>12.08</td><td>2.36</td><td>5.02</td><td>2.64</td><td>4.70</td><td>7.88</td></tr>
-<tr><td>int4 k-quant</td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>8.20</td><td>7.20</td><td>17.05</td><td>13.60</td><td>12.10</td><td>2.38</td><td>5.04</td><td>2.83</td><td>4.65</td><td>7.98</td></tr>
-<tr><td>int4 k-quant + ConvInt</td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>10.14</td><td>8.00</td><td>20.55</td><td>11.68</td><td>14.73</td><td>5.32</td><td>10.14</td><td>3.05</td><td>5.64</td><td>9.98</td></tr>
-<tr><td>int4 RTN</td><td>ONNX</td><td>0.66 GB</td><td>CPU</td><td>8.46</td><td>7.30</td><td>18.94</td><td>13.52</td><td>12.12</td><td>2.42</td><td>5.10</td><td>2.85</td><td>4.72</td><td>8.05</td></tr></tbody></table></div></div>
+      <h3 class="sech lv2" id="sec-A-9"><span class="secnum">A.9</span> <span class="t-zh">Nemotron-0.6B — ONNX Quantization Results</span><span class="t-en">Nemotron-0.6B — ONNX Quantization Results</span></h3><div class="cap" id="tab-A-9-1"><span class="cap-k">表</span><p class="en">Table 15: Nemotron-0.6B ONNX quantization results. Config: (7,10,7), 0.56 s delay, 5.6 s history. CPU inference, batch_size=1.</p><p class="zh">表 15：Nemotron-0.6B ONNX 量化结果。配置：(7,10,7)，0.56 s 延迟，5.6 s 历史。CPU 推理，batch_size=1。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>CPU inference, batch_size=1.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Baseline (PyTorch)</td><td></td><td>PyTorch</td><td>2.47 GB</td><td>CUDA</td><td>7.28</td><td>–</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
+<tr><td>FP32</td><td></td><td></td><td>ONNX</td><td>2.47 GB</td><td>CPU</td><td>8.03</td><td>6.73</td><td>16.40</td><td>13.32</td><td>12.00</td><td>2.35</td><td>5.01</td><td>2.61</td><td>4.66</td><td>7.90</td></tr>
+<tr><td>int8 k-quant</td><td></td><td></td><td>ONNX</td><td>1.28 GB</td><td>CPU</td><td>8.01</td><td>7.25</td><td>16.37</td><td>13.35</td><td>11.97</td><td>2.36</td><td>4.97</td><td>2.52</td><td>4.62</td><td>7.92</td></tr>
+<tr><td></td><td>int4-mixed k-quant</td><td></td><td>ONNX</td><td>0.73 GB</td><td>CPU</td><td>8.12</td><td>7.15</td><td>16.72</td><td>13.52</td><td>12.08</td><td>2.36</td><td>5.02</td><td>2.64</td><td>4.70</td><td>7.88</td></tr>
+<tr><td>int4 k-quant</td><td></td><td></td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>8.20</td><td>7.20</td><td>17.05</td><td>13.60</td><td>12.10</td><td>2.38</td><td>5.04</td><td>2.83</td><td>4.65</td><td>7.98</td></tr>
+<tr><td></td><td>int4 k-quant + ConvInt</td><td></td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>10.14</td><td>8.00</td><td>20.55</td><td>11.68</td><td>14.73</td><td>5.32</td><td>10.14</td><td>3.05</td><td>5.64</td><td>9.98</td></tr>
+<tr><td>int4 RTN</td><td></td><td></td><td>ONNX</td><td>0.66 GB</td><td>CPU</td><td>8.46</td><td>7.30</td><td>18.94</td><td>13.52</td><td>12.12</td><td>2.42</td><td>5.10</td><td>2.85</td><td>4.72</td><td>8.05</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-A-9-1">
           <p class="en-lines"><span class="sent" data-sid="s-A-9-1-1"><span class="en">Variant Format Size Device Avg RTFx AMI Earn.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-9-1-1"><span class="zh">表头：Variant｜Format｜Size｜Device｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
@@ -1306,14 +1334,14 @@ Chunked 配置：(10.0-2.4-2.4=14.8)，采用 AlignAtt 流式策略。</span></s
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-A-10"><span class="secnum">A.10</span> <span class="t-zh">Nemotron-0.6B — ONNX int4 k-quant at 0.16s Delay</span><span class="t-en">Nemotron-0.6B — ONNX int4 k-quant at 0.16s Delay</span></h3><div class="cap" id="tab-A-10-1"><span class="cap-k">表</span><p class="en">Table 16: Nemotron-0.6B int4 k-quant at 0.16 s algorithmic delay. Config: (2,20,2), 3.2 s history. CPU inference, batch_size=1.</p><p class="zh">表 16：Nemotron-0.6B int4 k-quant 在 0.16 s 算法延迟下的结果。配置：(2,20,2)，3.2 s 历史。CPU 推理，batch_size=1。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Baseline (PyTorch)</td><td></td><td>PyTorch</td><td>2.47 GB</td><td>CUDA</td><td>7.28</td><td>–</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
-<tr><td>FP32</td><td></td><td>ONNX</td><td>2.47 GB</td><td>CPU</td><td>8.03</td><td>6.73</td><td>16.40</td><td>13.32</td><td>12.00</td><td>2.35</td><td>5.01</td><td>2.61</td><td>4.66</td><td>7.90</td></tr>
-<tr><td>int8 k-quant</td><td></td><td>ONNX</td><td>1.28 GB</td><td>CPU</td><td>8.01</td><td>7.25</td><td>16.37</td><td>13.35</td><td>11.97</td><td>2.36</td><td>4.97</td><td>2.52</td><td>4.62</td><td>7.92</td></tr>
-<tr><td>int4-mixed k-quant</td><td></td><td>ONNX</td><td>0.73 GB</td><td>CPU</td><td>8.12</td><td>7.15</td><td>16.72</td><td>13.52</td><td>12.08</td><td>2.36</td><td>5.02</td><td>2.64</td><td>4.70</td><td>7.88</td></tr>
-<tr><td>int4 k-quant</td><td></td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>8.20</td><td>7.20</td><td>17.05</td><td>13.60</td><td>12.10</td><td>2.38</td><td>5.04</td><td>2.83</td><td>4.65</td><td>7.98</td></tr>
-<tr><td>int4 k-quant + ConvInt</td><td></td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>10.14</td><td>8.00</td><td>20.55</td><td>11.68</td><td>14.73</td><td>5.32</td><td>10.14</td><td>3.05</td><td>5.64</td><td>9.98</td></tr>
-<tr><td>int4 RTN</td><td></td><td>ONNX</td><td>0.66 GB</td><td>CPU</td><td>8.46</td><td>7.30</td><td>18.94</td><td>13.52</td><td>12.12</td><td>2.42</td><td>5.10</td><td>2.85</td><td>4.72</td><td>8.05</td></tr>
-<tr><td>A.10</td><td>Nemotron-0.6B — ONNX int4 k-quant at 0.16s Delay</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+      <h3 class="sech lv2" id="sec-A-10"><span class="secnum">A.10</span> <span class="t-zh">Nemotron-0.6B — ONNX int4 k-quant at 0.16s Delay</span><span class="t-en">Nemotron-0.6B — ONNX int4 k-quant at 0.16s Delay</span></h3><div class="cap" id="tab-A-10-1"><span class="cap-k">表</span><p class="en">Table 16: Nemotron-0.6B int4 k-quant at 0.16 s algorithmic delay. Config: (2,20,2), 3.2 s history. CPU inference, batch_size=1.</p><p class="zh">表 16：Nemotron-0.6B int4 k-quant 在 0.16 s 算法延迟下的结果。配置：(2,20,2)，3.2 s 历史。CPU 推理，batch_size=1。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>Baseline (PyTorch)</td><td>PyTorch</td><td>2.47 GB</td><td>CUDA</td><td>7.28</td><td></td><td>–</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
+<tr><td>FP32</td><td></td><td>ONNX</td><td>2.47 GB</td><td>CPU</td><td>8.03</td><td></td><td>6.73</td><td>16.40</td><td>13.32</td><td>12.00</td><td>2.35</td><td>5.01</td><td>2.61</td><td>4.66</td><td>7.90</td></tr>
+<tr><td>int8 k-quant</td><td></td><td>ONNX</td><td>1.28 GB</td><td>CPU</td><td>8.01</td><td></td><td>7.25</td><td>16.37</td><td>13.35</td><td>11.97</td><td>2.36</td><td>4.97</td><td>2.52</td><td>4.62</td><td>7.92</td></tr>
+<tr><td></td><td>int4-mixed k-quant</td><td>ONNX</td><td>0.73 GB</td><td>CPU</td><td>8.12</td><td></td><td>7.15</td><td>16.72</td><td>13.52</td><td>12.08</td><td>2.36</td><td>5.02</td><td>2.64</td><td>4.70</td><td>7.88</td></tr>
+<tr><td>int4 k-quant</td><td></td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>8.20</td><td></td><td>7.20</td><td>17.05</td><td>13.60</td><td>12.10</td><td>2.38</td><td>5.04</td><td>2.83</td><td>4.65</td><td>7.98</td></tr>
+<tr><td></td><td>int4 k-quant + ConvInt</td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>10.14</td><td></td><td>8.00</td><td>20.55</td><td>11.68</td><td>14.73</td><td>5.32</td><td>10.14</td><td>3.05</td><td>5.64</td><td>9.98</td></tr>
+<tr><td>int4 RTN</td><td></td><td>ONNX</td><td>0.66 GB</td><td>CPU</td><td>8.46</td><td></td><td>7.30</td><td>18.94</td><td>13.52</td><td>12.12</td><td>2.42</td><td>5.10</td><td>2.85</td><td>4.72</td><td>8.05</td></tr>
+<tr><td>A.10</td><td></td><td>Nemotron-0.6B</td><td>—</td><td>ONNX</td><td></td><td>int4</td><td></td><td>k-quant</td><td>at</td><td>0.16s</td><td>Delay</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-A-10-1">
           <p class="en-lines"><span class="sent" data-sid="s-A-10-1-1"><span class="en">Variant Format Size Device Avg RTFx AMI Earn.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-10-1-1"><span class="zh">表头：Variant｜Format｜Size｜Device｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>

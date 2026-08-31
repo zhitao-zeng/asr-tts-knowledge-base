@@ -5,17 +5,17 @@
    [
     "",
     "Training Data",
-    "",
-    "",
+    "Sim-O ↑",
+    "Sim-R ↑",
     "WER↓",
-    "",
-    ""
+    "CMOS↑",
+    "SMOS↑"
    ]
   ],
   "rows": [
    [
     "Ground Truth",
-    "",
+    "-",
     "0.68",
     "-",
     "1.94",
@@ -51,7 +51,7 @@
    ],
    [
     "Voicebox♠",
-    "",
+    "Self-Collected (60kh)",
     "0.64",
     "0.67",
     "2.03",
@@ -78,7 +78,7 @@
    ],
    [
     "UniAudio♠",
-    "",
+    "Mixed (165kh)",
     "0.57",
     "0.68",
     "2.49",
@@ -96,7 +96,7 @@
    ],
    [
     "HierSpeech++♣",
-    "",
+    "LT + LL⋆+ EX + MS + NI",
     "0.51",
     "-",
     "6.33",
@@ -113,7 +113,7 @@
     "4.01"
    ],
    [
-    "Evaluation Baselines. We compare NaturalSpeech 3 with baselines: 1) VALL-E [6]. 2) Natural-",
+    "",
     "",
     "",
     "",
@@ -122,7 +122,16 @@
     ""
    ],
    [
-    "Speech 2 [5]. 3) Voicebox [11]. 4) Mega-TTS 2 [62]. 5) UniAudio [35]. 6) StyleTTS 2 [24]. 7)",
+    "Speech 2 [5].",
+    "",
+    "",
+    "5) UniAudio [35].",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
     "",
     "",
     "",
@@ -140,7 +149,6 @@
     "Avg↓",
     "Acc↑",
     "CMOS↑",
-    "",
     "SMOS↑"
    ]
   ],
@@ -149,7 +157,6 @@
     "Ground Truth",
     "0.00",
     "1.00",
-    "",
     "+0.17",
     "4.42"
    ],
@@ -157,7 +164,6 @@
     "VALL-E ♦",
     "5.03",
     "0.34",
-    "",
     "-0.55",
     "3.80"
    ],
@@ -165,7 +171,6 @@
     "NaturalSpeech 2♠",
     "4.56",
     "0.25",
-    "",
     "-0.22",
     "4.04"
    ],
@@ -173,7 +178,6 @@
     "Voicebox♦",
     "4.88",
     "0.34",
-    "",
     "-0.34",
     "3.92"
    ],
@@ -181,7 +185,6 @@
     "Mega-TTS 2♠",
     "4.44",
     "0.39",
-    "",
     "-0.20",
     "4.51"
    ],
@@ -189,7 +192,6 @@
     "StyleTTS 2♣",
     "4.50",
     "0.40",
-    "",
     "-0.25",
     "3.98"
    ],
@@ -197,7 +199,6 @@
     "HierSpeech++♣",
     "6.08",
     "0.30",
-    "",
     "-0.37",
     "3.87"
    ],
@@ -205,7 +206,6 @@
     "NaturalSpeech 3",
     "4.28",
     "0.52",
-    "",
     "0.00",
     "4.72"
    ]
@@ -226,8 +226,8 @@
    [
     "",
     "",
-    "Sim-O / Sim-R ↑",
     "",
+    "Sim-O / Sim-R ↑",
     "WER↓",
     "CMOS↑",
     "SMOS↑"
@@ -236,8 +236,8 @@
   "rows": [
    [
     "",
-    "NaturalSpeech 3",
     "",
+    "NaturalSpeech 3",
     "0.67 / 0.76",
     "1.81",
     "0.00",
@@ -245,8 +245,8 @@
    ],
    [
     "",
-    "- factorization",
     "",
+    "- factorization",
     "0.55 / 0.61",
     "2.49",
     "-0.25",
@@ -278,8 +278,8 @@
    [
     "",
     "",
-    "Sim-O / Sim-R ↑",
     "",
+    "Sim-O / Sim-R ↑",
     "WER↓",
     "CMOS↑",
     "SMOS↑"
@@ -288,8 +288,8 @@
   "rows": [
    [
     "",
-    "NaturalSpeech 3",
     "",
+    "NaturalSpeech 3",
     "0.67 / 0.76",
     "1.81",
     "0.00",
@@ -297,8 +297,8 @@
    ],
    [
     "",
-    "- factorization",
     "",
+    "- factorization",
     "0.55 / 0.61",
     "2.49",
     "-0.25",
@@ -319,9 +319,8 @@
   "page": 10,
   "headers": [
    [
+    "",
     "(Codebook Number).",
-    "",
-    "",
     "",
     "",
     "",
@@ -342,7 +341,6 @@
     "6.0 kbps",
     "3.28",
     "0.94",
-    "",
     "0.99",
     "2.70"
    ],
@@ -355,7 +353,6 @@
     "2.0 kbps",
     "3.17",
     "0.93",
-    "",
     "0.98",
     "3.05"
    ],
@@ -368,7 +365,6 @@
     "4.5 kbps",
     "3.52",
     "0.95",
-    "",
     "0.97",
     "2.65"
    ],
@@ -381,7 +377,6 @@
     "4.8 kbps",
     "3.03",
     "0.90",
-    "",
     "1.07",
     "3.38"
    ],
@@ -394,7 +389,6 @@
     "4.8 kbps",
     "3.47",
     "0.95",
-    "",
     "0.93",
     "2.59"
    ]
@@ -430,8 +424,8 @@
     "3.61"
    ],
    [
-    "",
     "VALL-E♦",
+    "",
     "0.47 / 0.51",
     "6.11",
     "0.00",
@@ -518,13 +512,13 @@
   "headers": [
    [
     "",
-    "",
-    "",
+    "Sim-O ↑",
+    "Sim-R ↑",
     "WER↓",
-    "",
-    "",
-    "",
-    ""
+    "WER⋆↓",
+    "UTMOS ↑",
+    "CMOS↑",
+    "SMOS↑"
    ]
   ],
   "rows": [
@@ -645,13 +639,13 @@
   "headers": [
    [
     "",
-    "",
-    "",
+    "Sim-O ↑",
+    "Sim-R ↑",
     "WER↓",
-    "",
-    "",
-    "",
-    ""
+    "WER⋆↓",
+    "UTMOS ↑",
+    "CMOS↑",
+    "SMOS↑"
    ]
   ],
   "rows": [
@@ -775,8 +769,7 @@
     "Sim-O ↑",
     "Sim-R ↑",
     "WER↓",
-    "UTMOS↑",
-    ""
+    "UTMOS↑"
    ]
   ],
   "rows": [
@@ -785,7 +778,6 @@
     "0.67",
     "0.76",
     "1.94",
-    "",
     "4.30"
    ],
    [
@@ -793,7 +785,6 @@
     "0.62",
     "0.73",
     "1.94",
-    "",
     "4.18"
    ],
    [
@@ -801,7 +792,6 @@
     "0.62",
     "0.72",
     "2.38",
-    "",
     "4.13"
    ],
    [
@@ -809,7 +799,6 @@
     "0.62",
     "0.72",
     "2.49",
-    "",
     "4.11"
    ],
    [
@@ -817,7 +806,6 @@
     "0.61",
     "0.71",
     "2.83",
-    "",
     "4.08"
    ]
   ]
@@ -842,7 +830,7 @@
     "",
     "",
     "",
-    "",
+    "MCD↓",
     "",
     "",
     ""
@@ -856,7 +844,7 @@
     "angry",
     "fearful",
     "disgust",
-    ""
+    "surprised"
    ]
   ],
   "rows": [
@@ -954,9 +942,8 @@
   "page": 20,
   "headers": [
    [
+    "",
     "H (Hop Size), N (Codebook Number).",
-    "",
-    "",
     "",
     "",
     "",
@@ -977,7 +964,6 @@
     "6.0 kbps",
     "3.28",
     "0.94",
-    "",
     "0.99",
     "2.70"
    ],
@@ -990,7 +976,6 @@
     "5.0 kbps",
     "3.10",
     "0.92",
-    "",
     "0.97",
     "3.10"
    ],
@@ -1003,7 +988,6 @@
     "2.0 kbps",
     "3.17",
     "0.93",
-    "",
     "0.98",
     "3.05"
    ],
@@ -1016,7 +1000,6 @@
     "4.5 kbps",
     "3.52",
     "0.95",
-    "",
     "0.97",
     "2.65"
    ],
@@ -1029,7 +1012,6 @@
     "4.8 kbps",
     "3.03",
     "0.90",
-    "",
     "1.07",
     "3.38"
    ],
@@ -1042,7 +1024,6 @@
     "9.6 kbps",
     "3.45",
     "0.94",
-    "",
     "0.92",
     "2.76"
    ],
@@ -1055,32 +1036,31 @@
     "4.8 kbps",
     "3.47",
     "0.95",
-    "",
     "0.93",
     "2.59"
    ]
   ]
  },
- "tab-information-bottleneck-for-disen-1": {
+ "tab-B-3-1": {
   "page": 21,
   "headers": [
    [
-    "",
     "Models",
     "",
+    "Sim-O ↑",
     "WER ↓"
    ]
   ],
   "rows": [
    [
-    "",
     "Ground Truth",
+    "",
     "-",
     "3.25"
    ],
    [
-    "",
     "YourTTS",
+    "",
     "0.72",
     "10.1"
    ],
@@ -1091,37 +1071,126 @@
     "6.20"
    ],
    [
+    "LM-VC",
     "",
+    "0.82",
+    "4.91"
+   ],
+   [
+    "UniAudio",
+    "",
+    "0.87",
+    "4.80"
+   ],
+   [
+    "FACodec",
+    "",
+    "0.86",
+    "3.46"
+   ]
+  ]
+ },
+ "tab-information-bottleneck-for-disen-1": {
+  "page": 21,
+  "headers": [
+   [
+    "Models",
+    "Sim-O ↑",
+    "WER ↓"
+   ]
+  ],
+  "rows": [
+   [
+    "Ground Truth",
+    "-",
+    "3.25"
+   ],
+   [
+    "YourTTS",
+    "0.72",
+    "10.1"
+   ],
+   [
+    "",
+    "0.68",
+    "6.20"
+   ],
+   [
     "LM-VC",
     "0.82",
     "4.91"
    ],
    [
-    "",
     "UniAudio",
     "0.87",
     "4.80"
    ],
    [
-    "",
     "FACodec",
     "0.86",
     "3.46"
    ],
    [
-    "B.4",
     "",
     "",
     ""
    ],
    [
-    "Information Bottleneck for Disentanglement.",
+    "In this subsection, we study 1) the impact of the information bottleneck",
+    "",
+    ""
+   ],
+   [
+    "our FACodec; 2) the effect of gradient reversal on the disentanglement of",
+    "",
+    ""
+   ],
+   [
+    "the acoustic details quantizers; 4) the effects of different prosody",
+    "",
+    ""
+   ],
+   [
     "",
     "",
     ""
    ],
    [
-    "conversion decreases by 0.13.",
+    "We investigate the impact of the information bottleneck on speech",
+    "",
+    ""
+   ],
+   [
+    "analysis. We find that without using information bottleneck (quantize in",
+    "",
+    ""
+   ],
+   [
+    "rather than low dimensional space) can lead to incomplete disentanglement.",
+    "",
+    ""
+   ],
+   [
+    "zero-shot voice conversion in the same experimental setting using the",
+    "",
+    ""
+   ],
+   [
+    "bottleneck, as mentioned in Appendix B.3. We observe that the timbre of",
+    "",
+    ""
+   ],
+   [
+    "interpolation between the source and target, indicating its poor timbre",
+    "",
+    ""
+   ],
+   [
+    "demonstrates that without the information bottleneck, the speaker",
+    "",
+    ""
+   ],
+   [
     "",
     "",
     ""
@@ -1138,53 +1207,43 @@
     "",
     "",
     "",
-    "",
-    "",
     ""
    ],
    [
     "",
     "",
     "Codebook Number",
-    "",
     "PESQ ↑",
     "STOI ↑",
     "MSTFT ↓",
-    "",
     "MCD ↓"
    ]
   ],
   "rows": [
    [
-    "",
     "FACodec",
     "",
     "6",
     "3.47",
     "0.95",
-    "",
     "0.93",
     "2.59"
    ],
    [
     "",
     "- acoustic details quantizers",
-    "",
     "3",
     "3.09",
     "0.92",
-    "",
     "1.08",
     "3.12"
    ],
    [
-    "",
     "SoundStream",
     "",
     "6",
     "3.03",
     "0.90",
-    "",
     "1.07",
     "3.38"
    ]

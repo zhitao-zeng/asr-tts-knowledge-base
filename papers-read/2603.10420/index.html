@@ -431,9 +431,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-3-3-1-s1"><span class="zh">Table 1 汇总了 FireRedASR2 与 FireRedASR 之间的主要差异。总体而言，FireRedASR2 保留了 FireRedASR 中经过验证的模型设计，同时通过更大、更多样的训练语料提升泛化能力，并在 AED 变体中通过事后 CTC 分支实现时间戳生成。</span></span></p>
           
         </div>
-<div class="cap" id="tab-3-3-2"><span class="cap-k">表</span><p class="en">Table 1: Key updates from FireRedASR to FireRedASR2.</p><p class="zh">Table 1：从 FireRedASR 到 FireRedASR2 的关键更新。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>branch in the AED variant.</th><th></th><th></th><th></th></tr><tr><th></th><th>Table 1: Key updates from FireRedASR to FireRedASR2.</th><th></th><th></th></tr><tr><th></th><th>Item</th><th>FireRedASR</th><th>FireRedASR2</th></tr><tr><th></th><th>Training data</th><th>~70k hours</th><th>~200k hours</th></tr></thead><tbody><tr><td></td><td>Vocab size (AED)</td><td>7,832</td><td>8,667</td></tr>
-<tr><td></td><td>Timestamps (AED)</td><td>Not Supported</td><td>Supported</td></tr>
-<tr><td>4</td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-3-3-2"><span class="cap-k">表</span><p class="en">Table 1: Key updates from FireRedASR to FireRedASR2.</p><p class="zh">Table 1：从 FireRedASR 到 FireRedASR2 的关键更新。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>branch in the AED variant.</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>Table 1: Key updates from FireRedASR to FireRedASR2.</th><th></th></tr><tr><th></th><th></th><th>Item</th><th></th><th>FireRedASR</th><th>FireRedASR2</th></tr><tr><th></th><th></th><th></th><th>Training data</th><th>~70k hours</th><th>~200k hours</th></tr></thead><tbody><tr><td></td><td></td><td></td><td>Vocab size (AED)</td><td>7,832</td><td>8,667</td></tr>
+<tr><td></td><td></td><td></td><td>Timestamps (AED)</td><td>Not Supported</td><td>Supported</td></tr>
+<tr><td>4</td><td></td><td></td><td>FireRedVAD: Voice Activity Detection</td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-item"><span class="t-zh">Item</span><span class="t-en">Item</span></h3>
 
@@ -715,14 +715,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-7-1-1"><span class="cap-k">表</span><p class="en">Table 2: Comparison of Character Error Rate (CER%) for FireRedASR2-LLM (FRASR2-LLM), FireRedASR2-AED (FRASR2-AED), and other large ASR baselines on public ASR test sets.</p><p class="zh">Table 2：FireRedASR2-LLM（FRASR2-LLM）、FireRedASR2-AED（FRASR2-AED）与其他大型 ASR 基线在公开 ASR 测试集上的字错误率（CER%）对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Test set \ Model</th><th>FRASR2-LLM FRASR2-AED</th><th></th><th></th><th>Doubao-ASR</th><th></th><th>Qwen3-ASR</th><th></th><th>Fun-ASR</th><th></th></tr></thead><tbody><tr><td>Avg-All-24</td><td></td><td>9.67</td><td>9.80</td><td></td><td>12.98</td><td></td><td>10.12</td><td></td><td>10.92</td></tr>
-<tr><td>Avg-Mandarin-4</td><td></td><td>2.89</td><td>3.05</td><td></td><td>3.69</td><td></td><td>3.76</td><td></td><td>4.16</td></tr>
-<tr><td>Avg-Dialect-19</td><td></td><td>11.55</td><td>11.67</td><td></td><td>15.39</td><td></td><td>11.85</td><td></td><td>12.76</td></tr>
-<tr><td>Sing-1</td><td></td><td>1.12</td><td>1.17</td><td></td><td>4.36</td><td></td><td>2.57</td><td></td><td>3.05</td></tr>
-<tr><td>aishell1</td><td></td><td>0.64</td><td>0.57</td><td></td><td>1.52</td><td></td><td>1.48</td><td></td><td>1.64</td></tr>
-<tr><td>aishell2</td><td></td><td>2.15</td><td>2.51</td><td></td><td>2.77</td><td></td><td>2.71</td><td></td><td>2.38</td></tr>
-<tr><td>ws-net</td><td></td><td>4.44</td><td>4.57</td><td></td><td>5.73</td><td></td><td>4.97</td><td></td><td>6.85</td></tr>
-<tr><td>ws-meeting</td><td></td><td>4.32</td><td>4.53</td><td></td><td>4.74</td><td></td><td>5.88</td><td></td><td>5.78</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-7-1-1"><span class="cap-k">表</span><p class="en">Table 2: Comparison of Character Error Rate (CER%) for FireRedASR2-LLM (FRASR2-LLM), FireRedASR2-AED (FRASR2-AED), and other large ASR baselines on public ASR test sets.</p><p class="zh">Table 2：FireRedASR2-LLM（FRASR2-LLM）、FireRedASR2-AED（FRASR2-AED）与其他大型 ASR 基线在公开 ASR 测试集上的字错误率（CER%）对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Test set \ Model</th><th>FRASR2-LLM</th><th>FRASR2-AED</th><th>Doubao-ASR</th><th>Qwen3-ASR</th><th>Fun-ASR</th></tr></thead><tbody><tr><td>Avg-All-24</td><td>9.67</td><td>9.80</td><td>12.98</td><td>10.12</td><td>10.92</td></tr>
+<tr><td>Avg-Mandarin-4</td><td>2.89</td><td>3.05</td><td>3.69</td><td>3.76</td><td>4.16</td></tr>
+<tr><td>Avg-Dialect-19</td><td>11.55</td><td>11.67</td><td>15.39</td><td>11.85</td><td>12.76</td></tr>
+<tr><td>Sing-1</td><td>1.12</td><td>1.17</td><td>4.36</td><td>2.57</td><td>3.05</td></tr>
+<tr><td>aishell1</td><td>0.64</td><td>0.57</td><td>1.52</td><td>1.48</td><td>1.64</td></tr>
+<tr><td>aishell2</td><td>2.15</td><td>2.51</td><td>2.77</td><td>2.71</td><td>2.38</td></tr>
+<tr><td>ws-net</td><td>4.44</td><td>4.57</td><td>5.73</td><td>4.97</td><td>6.85</td></tr>
+<tr><td>ws-meeting</td><td>4.32</td><td>4.53</td><td>4.74</td><td>5.88</td><td>5.78</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-test-set-model"><span class="t-zh">Test set \ Model</span><span class="t-en">Test set \ Model</span></h3>
 
@@ -795,10 +795,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-7-2-1"><span class="cap-k">表</span><p class="en">Table 3: Frame-level VAD performance on FLEURS-VAD-102. Higher is better for AUC-ROC and F1; lower is better for FAR and MR.</p><p class="zh">Table 3：FLEURS-VAD-102 上的帧级 VAD 性能。AUC-ROC 与 F1 越高越好，FAR 与 MR 越低越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>F1; lower is better for FAR and MR.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Metric \ Model</th><th>FireRedVAD Silero-VAD</th><th></th><th></th><th>TEN-VAD</th><th></th><th>FunASR-VAD</th><th></th><th>WebRTC-VAD</th><th></th></tr></thead><tbody><tr><td>AUC-ROC (%) ↑</td><td></td><td>99.60</td><td>97.99</td><td></td><td>97.81</td><td></td><td>–</td><td></td><td>–</td></tr>
-<tr><td>F1 (%) ↑</td><td></td><td>97.57</td><td>95.95</td><td></td><td>95.19</td><td></td><td>90.91</td><td></td><td>52.30</td></tr>
-<tr><td>FAR (%) ↓</td><td></td><td>2.69</td><td>9.41</td><td></td><td>15.47</td><td></td><td>44.03</td><td></td><td>2.83</td></tr>
-<tr><td>MR (%) ↓</td><td></td><td>3.62</td><td>3.95</td><td></td><td>2.95</td><td></td><td>0.42</td><td></td><td>64.15</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-7-2-1"><span class="cap-k">表</span><p class="en">Table 3: Frame-level VAD performance on FLEURS-VAD-102. Higher is better for AUC-ROC and F1; lower is better for FAR and MR.</p><p class="zh">Table 3：FLEURS-VAD-102 上的帧级 VAD 性能。AUC-ROC 与 F1 越高越好，FAR 与 MR 越低越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>F1; lower is better for FAR and MR.</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Metric \ Model</th><th></th><th>FireRedVAD</th><th>Silero-VAD</th><th>TEN-VAD</th><th>FunASR-VAD</th><th>WebRTC-VAD</th></tr></thead><tbody><tr><td></td><td>AUC-ROC (%) ↑</td><td></td><td>99.60</td><td>97.99</td><td>97.81</td><td>–</td><td>–</td></tr>
+<tr><td>F1 (%) ↑</td><td></td><td></td><td>97.57</td><td>95.95</td><td>95.19</td><td>90.91</td><td>52.30</td></tr>
+<tr><td>FAR (%) ↓</td><td></td><td></td><td>2.69</td><td>9.41</td><td>15.47</td><td>44.03</td><td>2.83</td></tr>
+<tr><td>MR (%) ↓</td><td></td><td></td><td>3.62</td><td>3.95</td><td>2.95</td><td>0.42</td><td>64.15</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-metric-model"><span class="t-zh">Metric \ Model</span><span class="t-en">Metric \ Model</span></h3>
 
@@ -841,9 +841,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-7-3-3-1"><span class="zh">基线：我们与 Whisper [51] 的语种识别、SpeechBrain LID 模型 [52] 以及 Dolphin [53] 对比。</span></span></p>
           
         </div>
-<div class="cap" id="tab-7-3-1"><span class="cap-k">表</span><p class="en">Table 4: Utterance-level LID accuracy (%) on public test sets. Higher is better.</p><p class="zh">Table 4：公开测试集上的句级 LID 准确率（%）。越高越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Test set \ Model</th><th>FireRedLID</th><th></th><th>Whisper</th><th></th><th>SpeechBrain</th><th></th><th>Dolphin</th><th></th></tr></thead><tbody><tr><td>FLEURS test</td><td></td><td>97.18</td><td></td><td>79.41</td><td></td><td>92.91</td><td></td><td>–</td></tr>
-<tr><td>CommonVoice test</td><td></td><td>92.07</td><td></td><td>80.81</td><td></td><td>78.75</td><td></td><td>–</td></tr>
-<tr><td>Chinese dialects</td><td></td><td>88.47</td><td></td><td>–</td><td></td><td>–</td><td></td><td>69.01</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-7-3-1"><span class="cap-k">表</span><p class="en">Table 4: Utterance-level LID accuracy (%) on public test sets. Higher is better.</p><p class="zh">Table 4：公开测试集上的句级 LID 准确率（%）。越高越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Test set \ Model</th><th>FireRedLID</th><th>Whisper</th><th>SpeechBrain</th><th>Dolphin</th></tr></thead><tbody><tr><td>FLEURS test</td><td>97.18</td><td>79.41</td><td>92.91</td><td>–</td></tr>
+<tr><td>CommonVoice test</td><td>92.07</td><td>80.81</td><td>78.75</td><td>–</td></tr>
+<tr><td>Chinese dialects</td><td>88.47</td><td>–</td><td>–</td><td>69.01</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-test-set-model-2"><span class="t-zh">Test set \ Model</span><span class="t-en">Test set \ Model</span></h3>
 
@@ -879,7 +879,17 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-7-4-3-1"><span class="zh">基线：我们与广泛使用的标点模型 FunASR-Punc（CT-Transformer）[30] 对比。</span></span></p>
           
         </div>
-<div class="cap" id="tab-7-4-1"><span class="cap-k">表</span><p class="en">Table 5: Punctuation prediction results on internal test sets (Precision/Recall/F1 in %). Higher is better.</p><p class="zh">Table 5：内部测试集上的标点预测结果（精确率/召回率/F1，单位 %）。越高越好。</p></div></section>
+<div class="cap" id="tab-7-4-1"><span class="cap-k">表</span><p class="en">Table 5: Punctuation prediction results on internal test sets (Precision/Recall/F1 in %). Higher is better.</p><p class="zh">Table 5：内部测试集上的标点预测结果（精确率/召回率/F1，单位 %）。越高越好。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>7.4</td><td></td><td>Evaluation of FireRedPunc</td><td></td></tr>
+<tr><td></td><td></td><td>Test sets: We evaluate FireRedPunc on</td><td></td></tr>
+<tr><td></td><td></td><td>diction benchmarks. The Chinese</td><td></td></tr>
+<tr><td></td><td>contains 28,641 sentences.</td><td></td><td>We will</td></tr>
+<tr><td></td><td></td><td>facilitate reproducible research.</td><td></td></tr>
+<tr><td>Label</td><td>set and</td><td>metric:</td><td>FireRedPunc</td></tr>
+<tr><td></td><td></td><td>punctuation, comma, period, question</td><td></td></tr>
+<tr><td></td><td></td><td>report Precision/Recall/F1 (%) computed</td><td></td></tr>
+<tr><td></td><td></td><td>the Overall score is computed as</td><td></td></tr>
+<tr><td></td><td></td><td>labels. Due to its extremely low</td><td></td></tr>
+<tr><td></td><td></td><td>from the reported Overall score.</td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-test-set-model-3"><span class="t-zh">Test set \ Model</span><span class="t-en">Test set \ Model</span></h3><div class="pblk" id="p-test-set-model-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-test-set-model-3-1-1"><span class="en">FireRedPunc FunASR-Punc Multi-domain Chinese</span></span></p>
@@ -1024,7 +1034,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-A-1-1"><span class="zh">本附录报告第 7.1 节所用全部 24 个公开测试集上的逐测试集 CER（%）。</span></span><span class="sent" data-sid="s-A-1-2"><span class="zh">为完整起见，我们还纳入了 Fun-ASR-Nano，即 FunAudioLLM 发布的开源检查点。</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-1"><span class="cap-k">表</span><p class="en">Table 6: Comparison of Character Error Rate (CER%) for FireRedASR2-LLM (FRASR2-LLM), FireRedASR2-AED (FRASR2-AED), and other large ASR baselines on public ASR test sets.</p><p class="zh">Table 6：FireRedASR2-LLM（FRASR2-LLM）、FireRedASR2-AED（FRASR2-AED）与其他大型 ASR 基线在公开 ASR 测试集上的字错误率（CER%）对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Test set \ Model</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Avg-Mandarin-4</td><td>2.89</td><td>3.05</td><td>3.69</td><td>3.76</td><td>4.16</td><td>4.55</td></tr>
+<div class="cap" id="tab-A-1"><span class="cap-k">表</span><p class="en">Table 6: Comparison of Character Error Rate (CER%) for FireRedASR2-LLM (FRASR2-LLM), FireRedASR2-AED (FRASR2-AED), and other large ASR baselines on public ASR test sets.</p><p class="zh">Table 6：FireRedASR2-LLM（FRASR2-LLM）、FireRedASR2-AED（FRASR2-AED）与其他大型 ASR 基线在公开 ASR 测试集上的字错误率（CER%）对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Avg-Mandarin-4</td><td>2.89</td><td>3.05</td><td>3.69</td><td>3.76</td><td>4.16</td><td>4.55</td></tr>
 <tr><td>Avg-Dialect-19</td><td>11.55</td><td>11.67</td><td>15.39</td><td>11.85</td><td>12.76</td><td>15.07</td></tr>
 <tr><td>Avg-All-24</td><td>9.67</td><td>9.80</td><td>12.98</td><td>10.12</td><td>10.92</td><td>12.81</td></tr>
 <tr><td>aishell1</td><td>0.64</td><td>0.57</td><td>1.52</td><td>1.48</td><td>1.64</td><td>1.96</td></tr>
@@ -1130,18 +1140,19 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <section>
       <h3 class="sech lv2" id="sec-B-1"><span class="secnum">B.1</span> <span class="t-zh">B.1 语种代码完整列表</span><span class="t-en">Full list of language codes</span></h3></section>
 <section>
-      <h3 class="sech lv2" id="sec-B-2"><span class="secnum">B.2</span> <span class="t-zh">B.2 中文方言代码完整列表</span><span class="t-en">Full list of Chinese dialect codes</span></h3><div class="cap" id="tab-B-2-1"><span class="cap-k">表</span><p class="en">Table 7: Full list of language codes supported by FireRedLID.</p><p class="zh">Table 7：FireRedLID 支持的语种代码完整列表。</p></div>
+      <h3 class="sech lv2" id="sec-B-2"><span class="secnum">B.2</span> <span class="t-zh">B.2 中文方言代码完整列表</span><span class="t-en">Full list of Chinese dialect codes</span></h3><div class="cap" id="tab-B-2-1"><span class="cap-k">表</span><p class="en">Table 7: Full list of language codes supported by FireRedLID.</p><p class="zh">Table 7：FireRedLID 支持的语种代码完整列表。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>ta</th><th>Tamil</th><th>泰米尔语</th><th>te</th><th>Telugu</th><th>泰卢固语</th></tr><tr><th>th</th><th>Thai</th><th>泰语</th><th>tr</th><th>Turkish</th><th>土耳其语</th></tr><tr><th>uk</th><th>Ukrainian</th><th>乌克兰语</th><th>ur</th><th>Urdu</th><th>乌尔都语</th></tr></thead><tbody><tr><td>uz</td><td>Uzbek</td><td>乌兹别克语</td><td>vi</td><td>Vietnamese</td><td>越南语</td></tr>
+<tr><td>yi</td><td>Yiddish</td><td>意第绪语</td><td>yo</td><td>Yoruba</td><td>约鲁巴语</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-B-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-B-2-1-1"><span class="en">Code English Name Chinese Name Code English Name Chinese Name zh Chinese 中文 en English 英语 es Spanish 西班牙语 fr French 法语 ja Japanese 日语 ko Korean 韩语 ru Russian 俄语 de German 德语 pt Portuguese 葡萄牙语 ar Arabic 阿拉伯语 ab Abkhazian 阿布哈兹语 af Afrikaans 南非荷兰语 am Amharic 阿姆哈拉语 as Assamese 阿萨姆语 az Azerbaijani 阿塞拜疆语 ba Bashkir 巴什基尔语 be Belarusian 白俄罗斯语 bg Bulgarian 保加利亚语 bn Bengali 孟加拉语 br Breton 布列塔尼语 bs Bosnian 波斯尼亚语 ca Catalan 加泰罗尼亚语 ceb Cebuano 宿务语 cs Czech 捷克语 cy Welsh 威尔士语 da Danish 丹麦语 el Greek 希腊语 eo Esperanto 世界语 et Estonian 爱沙尼亚语 eu Basque 巴斯克语 fa Persian 波斯语 fi Finnish 芬兰语 fo Faroese 法罗语 gl Galician 加利西亚语 gn Guarani 瓜拉尼语 gu Gujarati 古吉拉特语 gv Manx 马恩语 ha Hausa 豪萨语 haw Hawaiian 夏威夷语 hi Hindi 印地语 hr Croatian 克罗地亚语 ht Haitian Creole 海地克里奥尔语 hu Hungarian 匈牙利语 hy Armenian 亚美尼亚语 ia Interlingua 国际语 id Indonesian 印度尼西亚语 is Icelandic 冰岛语 it Italian 意大利语 iw Hebrew 希伯来语 jw Javanese 爪哇语 ka Georgian 格鲁吉亚语 kk Kazakh 哈萨克语 km Khmer 高棉语 kn Kannada 卡纳达语 la Latin 拉丁语 lb Luxembourgish 卢森堡语 ln Lingala 林加拉语 lo Lao 老挝语 lt Lithuanian 立陶宛语 lv Latvian 拉脱维亚语 mg Malagasy 马尔加什语 mi M¯aori 毛利语 mk Macedonian 马其顿语 ml Malayalam 马拉雅拉姆语 mn Mongolian 蒙古语 mr Marathi 马拉地语 ms Malay 马来语 mt Maltese 马耳他语 my Burmese 缅甸语 ne Nepali 尼泊尔语 nl Dutch 荷兰语 no Norwegian 挪威语 oc Occitan 奥克语 pa Punjabi 旁遮普语 pl Polish 波兰语 ps Pashto 普什图语 ro Romanian 罗马尼亚语 sd Sindhi 信德语 si Sinhala 僧伽罗语 sk Slovak 斯洛伐克语 sl Slovenian 斯洛文尼亚语 so Somali 索马里语 sq Albanian 阿尔巴尼亚语 sr Serbian 塞尔维亚语 sv Swedish 瑞典语 sw Swahili 斯瓦希里语 ta Tamil 泰米尔语 te Telugu 泰卢固语 th Thai 泰语 tr Turkish 土耳其语 uk Ukrainian 乌克兰语 ur Urdu 乌尔都语 uz Uzbek 乌兹别克语 vi Vietnamese 越南语 yi Yiddish 意第绪语 yo Yoruba 约鲁巴语</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-2-1-1"><span class="zh">代码 英文名 中文名 代码 英文名 中文名</span></span></p>
           
         </div>
-<div class="cap" id="tab-B-2-2"><span class="cap-k">表</span><p class="en">Table 8: Full list of Chinese dialect codes supported by FireRedLID.</p><p class="zh">Table 8：FireRedLID 支持的中文方言代码完整列表。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>English Name</th><th>Chinese Name</th></tr><tr><th></th><th>Chinese (Mandarin)</th><th>中文(普通话)</th></tr><tr><th>yue</th><th>Chinese (Yue: Guangdong/Hong Kong)</th><th>中文(粤语：广东/香港)</th></tr><tr><th>wu</th><th>Chinese (Wu: Shanghai/Wu)</th><th>中文(吴语：上海/吴语片区)</th></tr><tr><th>min</th><th>Chinese (Min: Fujian)</th><th>中文(闽语：福建)</th></tr></thead><tbody><tr><td>north</td><td>Chinese (Mandarin-North: Shandong/Gansu/N-</td><td>中文(官话-北方：山东/甘肃/宁夏/河</td></tr>
-<tr><td></td><td>ingxia/Hebei/Shanxi/Liaoning/Shaanxi)</td><td>北/山西/辽宁/陕西)</td></tr>
-<tr><td>xinan</td><td>Chinese (Mandarin-Southwest: Sichuan/Yun-</td><td>中文(官话-西南：四川/云南/贵州/湖</td></tr>
-<tr><td></td><td>nan/Guizhou/Hubei/Chongqing)</td><td>北/重庆)</td></tr>
-<tr><td>xiang</td><td>Chinese (Xiang: Hunan)</td><td>中文(湘语：湖南)</td></tr>
-<tr><td>bo</td><td>Tibetan (in Chinese context)</td><td>中文(藏语)</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-B-2-2"><span class="cap-k">表</span><p class="en">Table 8: Full list of Chinese dialect codes supported by FireRedLID.</p><p class="zh">Table 8：FireRedLID 支持的中文方言代码完整列表。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Code</th><th></th><th></th><th></th><th></th><th>Chinese Name</th><th></th><th></th><th></th></tr><tr><th>mandarin</th><th>Chinese (Mandarin)</th><th></th><th></th><th></th><th>中文(普通话)</th><th></th><th></th><th></th></tr><tr><th>yue</th><th></th><th></th><th>Chinese (Yue: Guangdong/Hong Kong)</th><th></th><th></th><th></th><th>中文(粤语：广东/香港)</th><th></th></tr><tr><th>wu</th><th></th><th>Chinese (Wu: Shanghai/Wu)</th><th></th><th></th><th></th><th></th><th>中文(吴语：上海/吴语片区)</th><th></th></tr><tr><th>min</th><th>Chinese (Min: Fujian)</th><th></th><th></th><th></th><th></th><th>中文(闽语：福建)</th><th></th><th></th></tr></thead><tbody><tr><td>north</td><td></td><td></td><td></td><td>Chinese (Mandarin-North: Shandong/Gansu/N-</td><td></td><td></td><td></td><td>中文(官话-北方：山东/甘肃/宁夏/河</td></tr>
+<tr><td></td><td></td><td></td><td>ingxia/Hebei/Shanxi/Liaoning/Shaanxi)</td><td></td><td></td><td>北/山西/辽宁/陕西)</td><td></td><td></td></tr>
+<tr><td>xinan</td><td></td><td></td><td></td><td>Chinese (Mandarin-Southwest: Sichuan/Yun-</td><td></td><td></td><td></td><td>中文(官话-西南：四川/云南/贵州/湖</td></tr>
+<tr><td></td><td></td><td>nan/Guizhou/Hubei/Chongqing)</td><td></td><td></td><td>北/重庆)</td><td></td><td></td><td></td></tr>
+<tr><td>xiang</td><td>Chinese (Xiang: Hunan)</td><td></td><td></td><td></td><td></td><td>中文(湘语：湖南)</td><td></td><td></td></tr>
+<tr><td>bo</td><td></td><td>Tibetan (in Chinese context)</td><td></td><td></td><td>中文(藏语)</td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-B-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-B-2-2-1"><span class="en">Code English Name Chinese Name mandarin Chinese (Mandarin) 中文(普通话) yue Chinese (Yue: Guangdong/Hong Kong) 中文(粤语：广东/香港) wu Chinese (Wu: Shanghai/Wu) 中文(吴语：上海/吴语片区) min Chinese (Min: Fujian) 中文(闽语：福建) north Chinese (Mandarin-North: Shandong/Gansu/N- ingxia/Hebei/Shanxi/Liaoning/Shaanxi) 中文(官话-北方：山东/甘肃/宁夏/河 北/山西/辽宁/陕西) xinan Chinese (Mandarin-Southwest: Sichuan/Yunnan/Guizhou/Hubei/Chongqing) 中文(官话-西南：四川/云南/贵州/湖 北/重庆) xiang Chinese (Xiang: Hunan) 中文(湘语：湖南) bo Tibetan (in Chinese context) 中文(藏语)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-2-2-1"><span class="zh">代码 英文名 中文名</span></span></p>

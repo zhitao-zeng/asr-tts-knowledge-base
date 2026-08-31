@@ -468,14 +468,21 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-direct-preference-optimization-3-1"><span class="zh">（脚注）1https://github.com/mjpost/sacrebleu</span></span></p>
           
         </div>
-<div class="cap" id="tab-direct-preference-optimization-1"><span class="cap-k">表</span><p class="en">Table 1: Summary of Evaluation Benchmarks for Qwen2-Audio.</p><p class="zh">Table 1：Qwen2-Audio 评测基准汇总。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th>test</th><th></th><th>ACC</th></tr><tr><th>VSC</th><th>Vocal Sound Classification</th><th></th><th>VocalSound (Gong et al., 2022)</th><th></th><th>test</th><th></th><th>ACC</th></tr><tr><th></th><th></th><th></th><th>Fisher (Cieri et al., 2004)</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Chat-Benchmark-Speech</th><th></th><th>SpokenWOZ (Si et al., 2023)</th><th>dev | test</th><th></th><th>GPT-4 Eval</th><th></th></tr><tr><th>AIR-Bench</th><th></th><th></th><th>IEMOCAP (Si et al., 2023)</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>(Yang et al., 2024)</td><td></td><td>Common voice (Ardila et al., 2020)</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>Chat-Benchmark-Sound</td><td></td><td>Clotho (Drossos et al., 2020)</td><td>dev | test</td><td></td><td>GPT-4 Eval</td><td></td></tr>
-<tr><td></td><td>Chat-Benchmark-Music</td><td>MusicCaps (Agostinelli et al., 2023)</td><td></td><td>dev | test</td><td></td><td>GPT-4 Eval</td><td></td></tr>
-<tr><td></td><td></td><td>Common voice (Ardila et al., 2020)</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td>AudioCaps (Kim et al., 2019)</td><td>dev | test</td><td></td><td>GPT-4 Eval</td><td></td></tr>
-<tr><td></td><td></td><td>MusicCaps (Agostinelli et al., 2023)</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
-</section>
+<div class="cap" id="tab-direct-preference-optimization-1"><span class="cap-k">表</span><p class="en">Table 1: Summary of Evaluation Benchmarks for Qwen2-Audio.</p><p class="zh">Table 1：Qwen2-Audio 评测基准汇总。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>SER</th><th>Speech Emotion Recognition</th><th>Meld (Poria et al., 2019)</th><th>test</th><th>ACC</th></tr><tr><th>VSC</th><th>Vocal Sound Classification</th><th>VocalSound (Gong et al., 2022)</th><th>test</th><th>ACC</th></tr><tr><th></th><th></th><th>Fisher (Cieri et al., 2004)</th><th></th><th></th></tr><tr><th></th><th></th><th>SpokenWOZ (Si et al., 2023)</th><th></th><th></th></tr><tr><th></th><th>Chat-Benchmark-Speech</th><th></th><th>dev | test</th><th>GPT-4 Eval</th></tr></thead><tbody><tr><td></td><td></td><td>IEMOCAP (Si et al., 2023)</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Common voice (Ardila et al., 2020)</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Chat-Benchmark-Sound</td><td>Clotho (Drossos et al., 2020)</td><td>dev | test</td><td>GPT-4 Eval</td></tr>
+<tr><td></td><td>Chat-Benchmark-Music</td><td>MusicCaps (Agostinelli et al., 2023)</td><td>dev | test</td><td>GPT-4 Eval</td></tr>
+<tr><td></td><td></td><td>Common voice (Ardila et al., 2020)</td><td></td><td></td></tr>
+<tr><td></td><td>Chat-Benchmark-Mixed-Audio</td><td>AudioCaps (Kim et al., 2019)</td><td>dev | test</td><td>GPT-4 Eval</td></tr>
+<tr><td></td><td></td><td>MusicCaps (Agostinelli et al., 2023)</td><td></td><td></td></tr>
+<tr><td>3</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="pblk" id="p-direct-preference-optimization-4">
+          <p class="en-lines"><span class="sent" data-sid="s-direct-preference-optimization-4-1"><span class="en">Task Description Dataset Split Metric Fleurs (Conneau et al., 2022) dev | test WER Aishell2 (Du et al., 2018) test Librispeech (Panayotov et al., 2015) dev | test Common Voice (Ardila et al., 2020) dev | test ASR Automatic Speech Recognition S2TT Speech-to-Text Translation CoVoST2 (Wang et al., 2020) test BLEU 1 (Papineni et al., 2002) SER Speech Emotion Recognition Meld (Poria et al., 2019) test ACC VSC Vocal Sound Classification VocalSound (Gong et al., 2022) test ACC Fisher (Cieri et al., 2004) SpokenWOZ (Si et al., 2023) IEMOCAP (Si et al., 2023) Common voice (Ardila et al., 2020) Chat-Benchmark-Speech AIR-Bench (Yang et al., 2024) dev | test GPT-4 Eval Chat-Benchmark-Sound Clotho (Drossos et al., 2020) dev | test GPT-4 Eval Chat-Benchmark-Music MusicCaps (Agostinelli et al., 2023) dev | test GPT-4 Eval Chat-Benchmark-Mixed-Audio Common voice (Ardila et al., 2020) AudioCaps (Kim et al., 2019) MusicCaps (Agostinelli et al., 2023) dev | test GPT-4 Eval</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-direct-preference-optimization-4-1"><span class="zh">（评测配置表：任务 × 数据集 × 划分 × 指标——ASR（自动语音识别）：Fleurs（Conneau et al., 2022）dev/test、Aishell2（Du et al., 2018）test、Librispeech（Panayotov et al., 2015）dev/test、Common Voice（Ardila et al., 2020）dev/test，指标 WER；S2TT（语音到文本翻译）：CoVoST2（Wang et al., 2020）test，指标 BLEU（Papineni et al., 2002，式 1）；SER（语音情感识别）：Meld（Poria et al., 2019）test，指标 ACC；VSC（声音分类）：VocalSound（Gong et al., 2022）test，指标 ACC；另有 Fisher（Cieri et al., 2004）、SpokenWOZ（Si et al., 2023）、IEMOCAP（Si et al., 2023）、Common voice（Ardila et al., 2020）；Chat-Benchmark-Speech/Sound/Music/Mixed-Audio：AIR-Bench（Yang et al., 2024）、Clotho（Drossos et al., 2020）、MusicCaps（Agostinelli et al., 2023）、AudioCaps（Kim et al., 2019）、Common voice（Ardila et al., 2020）等 dev/test，GPT-4 Eval。）</span></span></p>
+          
+        </div></section>
 <section>
       <h2 class="sech lv1" id="sec-3"><span class="secnum">3</span> <span class="t-zh">实验</span><span class="t-en">Experiments</span></h2></section>
 <section>
@@ -516,19 +523,17 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-1"><span class="zh">最后，为客观评估 Qwen2-Audio 的聊天能力，我们在 AIR-Bench（Yang et al., 2024）的聊天基准上测量了其表现。</span></span></p>
           
         </div>
-<div class="cap" id="tab-3-2-1"><span class="cap-k">表</span><p class="en">Table 2: The results of Automatic Speech Recognition (ASR), Speech-to-Text Translation (S2TT), Speech Emotion Recognition (SER), Vocal Sound Classification (VSC), and AIR-Bench chat benchmark. Note that for Qwen2-Audio, the results for Fleurs are zero-shot, whereas the results for Common Voice are not zero-shot.</p><p class="zh">Table 2：自动语音识别（ASR）、语音到文本翻译（S2TT）、语音情感识别（SER）、人声分类（VSC）以及 AIR-Bench 聊天基准的结果。注意：对 Qwen2-Audio 而言，Fleurs 的结果是零样本的，而 Common Voice 的结果不是零样本的。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>Metrics</th><th>Results</th></tr><tr><th></th><th></th><th></th><th>SpeechT5 (Ao et al., 2021)</th><th></th><th></th><th>2.1 | 5.5 | 2.4 | 5.8</th></tr><tr><th></th><th></th><th></th><th>SpeechNet (Chen et al., 2021)</th><th></th><th></th><th>- | - | 30.7 | -</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>WER ↓</th><th></th></tr></thead><tbody><tr><td>dev-clean | dev-other |</td><td></td><td></td><td>SALMONN (Tang et al., 2024)</td><td></td><td></td><td>- | - | 2.1 | 4.9</td></tr>
-<tr><td>test-clean | test-other</td><td></td><td></td><td>SpeechVerse (Das et al., 2024)</td><td></td><td></td><td>- | - | 2.1 | 4.4</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1.8 | 4.0 | 2.0 | 4.2</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>Qwen2-Audio</td><td></td><td>1.3 | 3.4 | 1.6 | 3.6</td></tr>
-<tr><td>Common Voice 15</td><td></td><td>Whisper-large-v3 (Radford et al., 2023)</td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>WER ↓</td><td></td></tr>
-<tr><td></td><td>en | zh | yue | fr</td><td></td><td></td><td>Qwen2-Audio</td><td></td><td>8.6 | 6.9 | 5.9 | 9.6</td></tr>
-<tr><td></td><td></td><td>Whisper-large-v3 (Radford et al., 2023)</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
-<div class="pblk" id="p-3-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="en">Task Dataset Model Performance Metrics Results SpeechT5 (Ao et al., 2021)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="zh">（Table 2 表格正文抽取残留，含各模型与任务的数值散块：）任务、数据集、模型、性能指标与结果；SpeechT5 (Ao et al., 2021)、SpeechNet (Chen et al., 2021)（数值如 30.7）；SLM-FT (Wang et al., 2023b)（2.6 | 5.0）；SALMONN (Tang et al., 2024)（2.1 | 4.9）；SpeechVerse (Das et al., 2024)（2.1 | 4.4）；Librispeech dev-clean | dev-other | test-clean | test-other；Common Voice 15 en | zh | yue | fr；Whisper-large-v3 (Radford et al., 2023)；ASR Fleurs zh：Whisper-large-v3 (Radford et al., 2023) 7.7、7.5；MMSpeech-base (Zhou et al., 2022)、Paraformer-large (Gao et al., 2023)（2.9）；Aishell2 Mic | iOS | Android；SALMONN (18.6 | 33.1)；SpeechLLaMA (Wu et al., 2023a)（27.1 | 12.3）；BLSP (Wang et al., 2023a)（14.1）；CoVoST2 en-de | de-en | en-zh | zh-en；S2TT BLEU ↑：SpeechLLaMA；CoVoST2 es-en | fr-en | it-en；SER Meld：WavLM-large (Chen et al., 2022) ACC ↑ 0.542、0.557、0.553；CLAP (Elizalde et al., 2022) 0.4945；Pengi (Deshmukh et al., 2023) 0.6035、0.9289、0.9392；VSC VocalSound ACC ↑：SALMONN、BLSP、Pandagpt (Su et al., 2023)、Macaw-LLM (Lyu et al., 2023)、SpeechGPT (Zhang et al., 2023)、Next-gpt (Wu et al., 2023b)、Gemini-1.5-pro (Reid et al., 2024)；聊天基准 Speech | Sound | Music | Mixed-Audio：AIR-Bench（GPT-4 打分 ↑）。</span></span></p>
-          
-        </div>
+<div class="cap" id="tab-3-2-1"><span class="cap-k">表</span><p class="en">Table 2: The results of Automatic Speech Recognition (ASR), Speech-to-Text Translation (S2TT), Speech Emotion Recognition (SER), Vocal Sound Classification (VSC), and AIR-Bench chat benchmark. Note that for Qwen2-Audio, the results for Fleurs are zero-shot, whereas the results for Common Voice are not zero-shot.</p><p class="zh">Table 2：自动语音识别（ASR）、语音到文本翻译（S2TT）、语音情感识别（SER）、人声分类（VSC）以及 AIR-Bench 聊天基准的结果。注意：对 Qwen2-Audio 而言，Fleurs 的结果是零样本的，而 Common Voice 的结果不是零样本的。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Dataset</th><th>Model</th><th></th><th></th></tr><tr><th></th><th></th><th>Metrics</th><th>Results</th></tr><tr><th></th><th>SpeechT5 (Ao et al., 2021)</th><th></th><th>2.1 | 5.5 | 2.4 | 5.8</th></tr><tr><th></th><th>SpeechNet (Chen et al., 2021)</th><th></th><th>- | - | 30.7 | -</th></tr><tr><th></th><th></th><th>WER ↓</th><th></th></tr></thead><tbody><tr><td>dev-clean | dev-other |</td><td>SALMONN (Tang et al., 2024)</td><td></td><td>- | - | 2.1 | 4.9</td></tr>
+<tr><td>test-clean | test-other</td><td>SpeechVerse (Das et al., 2024)</td><td></td><td>- | - | 2.1 | 4.4</td></tr>
+<tr><td></td><td>Qwen-Audio (Chu et al., 2023)</td><td></td><td>1.8 | 4.0 | 2.0 | 4.2</td></tr>
+<tr><td></td><td>Qwen2-Audio</td><td></td><td>1.3 | 3.4 | 1.6 | 3.6</td></tr>
+<tr><td>Common Voice 15</td><td>Whisper-large-v3 (Radford et al., 2023)</td><td></td><td>9.3 | 12.8 | 10.9 | 10.8</td></tr>
+<tr><td></td><td></td><td>WER ↓</td><td></td></tr>
+<tr><td>en | zh | yue | fr</td><td>Qwen2-Audio</td><td></td><td>8.6 | 6.9 | 5.9 | 9.6</td></tr>
+<tr><td>Fleurs</td><td>Whisper-large-v3 (Radford et al., 2023)</td><td></td><td>7.7</td></tr>
+<tr><td></td><td></td><td>WER ↓</td><td></td></tr>
+<tr><td>zh</td><td>Qwen2-Audio</td><td></td><td>7.5</td></tr></tbody></table></div></div>
+
 
 
 
@@ -538,23 +543,23 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-3-2-10"><code>Qwen-Audio (Chu et al., 2023)</code></div>
 
 
 
 
-<div class="eq" id="eq-3-2-14"><code>9.3 | 12.8 | 10.9 | 10.8</code></div>
 
 
 
-<div class="eq" id="eq-3-2-17"><code>7.7</code></div>
 
-<div class="eq" id="eq-3-2-19"><code>7.5</code></div>
+
+
+
+
 <div class="eq" id="eq-3-2-20"><code>MMSpeech-base (Zhou et al., 2022)</code></div>
 <div class="eq" id="eq-3-2-21"><code>4.5 | 3.9 | 4.0</code></div>
 <div class="eq" id="eq-3-2-22"><code>Paraformer-large (Gao et al., 2023)</code></div>
 
-<div class="eq" id="eq-3-2-24"><code>Qwen-Audio (Chu et al., 2023)</code></div>
+
 <div class="eq" id="eq-3-2-25"><code>3.3 | 3.1 | 3.3</code></div>
 
 <div class="eq" id="eq-3-2-27"><code>3.0 | 3.0 | 2.9</code></div>
@@ -568,7 +573,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-3-2-30"><code>- | 27.1 | - | 12.3</code></div>
 <div class="eq" id="eq-3-2-31"><code>BLSP (Wang et al., 2023a)</code></div>
 
-<div class="eq" id="eq-3-2-33"><code>Qwen-Audio (Chu et al., 2023)</code></div>
+
 <div class="eq" id="eq-3-2-34"><code>25.1 | 33.9 | 41.5 | 15.7</code></div>
 
 <div class="eq" id="eq-3-2-36"><code>29.9 | 35.2 | 45.2 | 24.4</code></div>
@@ -578,7 +583,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-3-2-37"><code>27.9 | 25.2 | 25.9</code></div>
-<div class="eq" id="eq-3-2-38"><code>Qwen-Audio (Chu et al., 2023)</code></div>
+
 <div class="eq" id="eq-3-2-39"><code>39.7 | 38.5 | 36.0</code></div>
 
 <div class="eq" id="eq-3-2-41"><code>40.0 | 38.5 | 36.3</code></div>
@@ -588,7 +593,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-3-2-42"><code>0.542</code></div>
-<div class="eq" id="eq-3-2-43"><code>Qwen-Audio (Chu et al., 2023)</code></div>
+
 <div class="eq" id="eq-3-2-44"><code>0.557</code></div>
 
 <div class="eq" id="eq-3-2-46"><code>0.553</code></div>
@@ -596,7 +601,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-3-2-48"><code>0.4945</code></div>
 <div class="eq" id="eq-3-2-49"><code>Pengi (Deshmukh et al., 2023)</code></div>
 <div class="eq" id="eq-3-2-50"><code>0.6035</code></div>
-<div class="eq" id="eq-3-2-51"><code>Qwen-Audio (Chu et al., 2023)</code></div>
+
 <div class="eq" id="eq-3-2-52"><code>0.9289</code></div>
 
 <div class="eq" id="eq-3-2-54"><code>0.9392</code></div>

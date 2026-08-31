@@ -575,24 +575,21 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-3-4-1"><span class="zh">训练设置。</span></span><span class="sent" data-sid="s-2-3-4-2"><span class="zh">模型使用 Adam 优化器（Kingma, 2014）训练，配合余弦退火与 10k 步的 warm-up（RL 阶段除外）。</span></span><span class="sent" data-sid="s-2-3-4-3"><span class="zh">训练语料仅包含普通话、中文方言、英语以及中英混合的 code-switch 语音数据。</span></span><span class="sent" data-sid="s-2-3-4-4"><span class="zh">各阶段的训练数据规模与最大学习率详见 Table 1。</span></span></p>
           
         </div>
-<div class="cap" id="tab-2-3-1"><span class="cap-k">表</span><p class="en">Table 1: Training details for all stages.</p><p class="zh">Table 1：各训练阶段的训练细节。</p></div></section>
+<div class="cap" id="tab-2-3-1"><span class="cap-k">表</span><p class="en">Table 1: Training details for all stages.</p><p class="zh">Table 1：各训练阶段的训练细节。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Stage</th><th></th><th></th><th></th><th>Training Data</th><th>Maximum Learning Rate</th></tr><tr><th></th><th></th><th></th><th>Stage 1 Encoder pretraining</th><th>560k hours</th><th>5 × 10−4</th></tr><tr><th></th><th></th><th>Stage 2 Alignment</th><th></th><th>50k hours</th><th>1 × 10−3</th></tr><tr><th></th><th>Stage 3 IA-SFT</th><th></th><th></th><th>560k hours</th><th>1 × 10−5</th></tr><tr><th></th><th></th><th>Stage 4 Late joint SFT</th><th></th><th>560k hours</th><th>1 × 10−5</th></tr></thead><tbody><tr><td></td><td></td><td>Stage 5 Context SFT</td><td></td><td>50k hours</td><td>1 × 10−6</td></tr>
+<tr><td></td><td>Stage 6 RL</td><td></td><td></td><td>20k samples</td><td>2 × 10−6</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-stage"><span class="t-zh">训练阶段表</span><span class="t-en">Stage</span></h3><div class="pblk" id="p-stage-1">
-          <p class="en-lines"><span class="sent" data-sid="s-stage-1-1"><span class="en">Training Data Maximum Learning Rate Stage 1 Encoder pretraining 560k hours</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-stage-1-1"><span class="zh">表头：Training Data / Maximum Learning Rate——Stage 1 Encoder pretraining：560k 小时（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-stage-1"><code>5 × 10−4</code></div>
-<div class="eq" id="eq-stage-2"><code>Stage 2 Alignment 50k hours</code></div>
-<div class="eq" id="eq-stage-3"><code>1 × 10−3</code></div>
-<div class="eq" id="eq-stage-4"><code>Stage 3 IA-SFT 560k hours</code></div>
-<div class="eq" id="eq-stage-5"><code>1 × 10−5</code></div>
-<div class="eq" id="eq-stage-6"><code>Stage 4 Late joint SFT 560k hours</code></div>
-<div class="eq" id="eq-stage-7"><code>1 × 10−5</code></div>
-<div class="eq" id="eq-stage-8"><code>Stage 5 Context SFT 50k hours</code></div>
-<div class="eq" id="eq-stage-9"><code>1 × 10−6</code></div>
-<div class="eq" id="eq-stage-10"><code>Stage 6 RL 20k samples</code></div>
-<div class="eq" id="eq-stage-11"><code>2 × 10−6</code></div></section>
+      <h3 class="sech lv2" id="sec-stage"><span class="t-zh">训练阶段表</span><span class="t-en">Stage</span></h3>
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-2-4"><span class="secnum">2.4</span> <span class="t-zh">推理</span><span class="t-en">Inference</span></h3></section>
 <section>
@@ -726,13 +723,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-1-1"><span class="zh">（脚注 7：SpeechIO 榜单项目地址）</span></span></p>
           
         </div>
-<div class="cap" id="tab-3-2-2-2"><span class="cap-k">表</span><p class="en">Table 2: Comparison with recent advanced baselines on public benchmarks. All baseline systems are evaluated in offline mode. “N/A” denotes that a reliable result cannot be obtained under the official inference interface.</p><p class="zh">Table 2：与近期先进基线在公开基准上的对比。所有基线均在离线模式下评测。「N/A」表示在官方推理接口下无法得到可靠结果。</p></div>
-<div class="pblk" id="p-3-2-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-2-2-1"><span class="en">Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Mandarin AISHELL-1 dev | test</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-2-1"><span class="zh">1.
-Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream 模型规模 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B 普通话 AISHELL-1 dev | test</span></span></p>
-          
-        </div>
+<div class="cap" id="tab-3-2-2-2"><span class="cap-k">表</span><p class="en">Table 2: Comparison with recent advanced baselines on public benchmarks. All baseline systems are evaluated in offline mode. “N/A” denotes that a reliable result cannot be obtained under the official inference interface.</p><p class="zh">Table 2：与近期先进基线在公开基准上的对比。所有基线均在离线模式下评测。「N/A」表示在官方推理接口下无法得到可靠结果。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>SpeechIO</td><td>2.78</td><td>3.17</td><td>2.55</td><td>2.20</td><td>3.41</td><td>2.33</td><td>2.61</td><td>2.84</td></tr>
+<tr><td>Chinese Dialect</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+
 <div class="eq" id="eq-3-2-2-1"><code>1.59 | 1.81 2.40 | 2.41 1.40 | 1.51 0.60 | 0.64 0.76 | 0.81 0.86 | 0.92 0.43 | 0.57 0.43 | 0.60</code></div>
 <div class="eq" id="eq-3-2-2-2"><code>AISHELL-2-ios dev | test</code></div>
 <div class="eq" id="eq-3-2-2-3"><code>2.62 | 2.73 3.21 | 3.45 2.41 | 2.60 2.07 | 2.08 2.24 | 2.29 2.11 | 2.31 2.28 | 2.43 2.33 | 2.49</code></div>
@@ -740,8 +733,8 @@ Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano
 <div class="eq" id="eq-3-2-2-5"><code>4.75 | 4.29 | 2.33 7.25 | 9.48 | 3.40 4.22 | 3.51 | 1.82 13.40 | 3.92 | 4.68 4.54 | 3.69 | 2.34 5.19 | 3.34 | 1.66 3.12 | 1.51 | 1.81 3.28 | 1.63 | 2.22</code></div>
 <div class="eq" id="eq-3-2-2-6"><code>WeNetSpeech meeting | net</code></div>
 <div class="eq" id="eq-3-2-2-7"><code>4.68 | 5.22 6.87 | 5.72 4.00 | 4.13 3.36 | 3.52 4.23 | 4.63 3.92 | 3.85 4.91 | 4.72 5.71 | 5.00</code></div>
-<div class="eq" id="eq-3-2-2-8"><code>SpeechIO</code></div>
-<div class="eq" id="eq-3-2-2-9"><code>2.78 3.17 2.55 2.20 3.41 2.33 2.61 2.84</code></div>
+
+
 <div class="eq" id="eq-3-2-2-10"><code>Chinese Dialect WeNetSpeech-Chuan easy | hard</code></div>
 <div class="eq" id="eq-3-2-2-11"><code>13.21 | 23.76 20.95 | 33.61 11.18 | 20.35 10.36 | 20.07 13.99 | 25.35 14.13 | 25.16 10.51 | 20.58 11.22 | 20.37</code></div>
 <div class="eq" id="eq-3-2-2-12"><code>WeNetSpeech-Yue short | long</code></div>
@@ -766,20 +759,19 @@ Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano
 <div class="eq" id="eq-3-2-2-31"><code>9.68 8.40 6.39 6.94</code></div>
 <div class="eq" id="eq-3-2-2-32"><code>NIM4-ASR offline vs. Baselines Win : Lose</code></div>
 <div class="eq" id="eq-3-2-2-33"><code>23:2 25:0 18:7 12:12 17:8 14:11 - -</code></div>
-<div class="cap" id="tab-3-2-2-3"><span class="cap-k">表</span><p class="en">Table 3: Comparison with recent advanced baselines on internal benchmarks. All baseline systems are evaluated in offline mode. NIM4-ASR demonstrates consistent performance advantages on most internal benchmarks, as the evaluated content largely consists of long-tail named entities that open-source models rarely encounter during training.</p><p class="zh">Table 3：与近期先进基线在内部基准上的对比。所有基线均在离线模式下评测。NIM4-ASR 在多数内部基准上展现出一致的性能优势，因为评测内容大量由开源模型在训练中几乎见不到的长尾命名实体构成。</p></div>
-<div class="pblk" id="p-3-2-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-2-3-1"><span class="en">Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Point of Interest (POI) City A</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-3-1"><span class="zh">1.
-Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream 模型规模 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B 兴趣点 (POI) City A</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-2-2-34"><code>7.07 14.68 9.14 8.54 9.41 9.67 3.86 3.85</code></div>
-<div class="eq" id="eq-3-2-2-35"><code>City B</code></div>
-<div class="eq" id="eq-3-2-2-36"><code>8.50 15.75 10.59 10.43 11.67 11.73 4.86 4.94</code></div>
-<div class="eq" id="eq-3-2-2-37"><code>City C</code></div>
-<div class="eq" id="eq-3-2-2-38"><code>7.60 17.55 10.01 10.17 11.35 12.18 3.77 3.81</code></div>
-<div class="eq" id="eq-3-2-2-39"><code>City D</code></div>
-<div class="eq" id="eq-3-2-2-40"><code>7.42 17.91 9.77 9.51 11.55 10.86 4.10 4.17</code></div>
+<div class="cap" id="tab-3-2-2-3"><span class="cap-k">表</span><p class="en">Table 3: Comparison with recent advanced baselines on internal benchmarks. All baseline systems are evaluated in offline mode. NIM4-ASR demonstrates consistent performance advantages on most internal benchmarks, as the evaluated content largely consists of long-tail named entities that open-source models rarely encounter during training.</p><p class="zh">Table 3：与近期先进基线在内部基准上的对比。所有基线均在离线模式下评测。NIM4-ASR 在多数内部基准上展现出一致的性能优势，因为评测内容大量由开源模型在训练中几乎见不到的长尾命名实体构成。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>open-source models rarely encounter during training.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Fun-ASR</th><th>GLM-ASR</th><th>Qwen3-ASR</th><th>FireRedASR2S</th><th>Step-Audio2</th><th>Qwen3-Omni</th><th></th><th></th></tr><tr><th></th><th>Nano</th><th>Nano</th><th>1.7B</th><th>LLM</th><th>Mini</th><th>Instruct</th><th>Offline</th><th>Stream</th></tr><tr><th>Model Size</th><th>0.8B</th><th>1.5B</th><th>2.0B</th><th>8B+</th><th>8B+</th><th>30B-A3B</th><th>2.3B</th><th>2.3B</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>City A</td><td>7.07</td><td>14.68</td><td>9.14</td><td>8.54</td><td>9.41</td><td>9.67</td><td>3.86</td><td>3.85</td></tr>
+<tr><td>City B</td><td>8.50</td><td>15.75</td><td>10.59</td><td>10.43</td><td>11.67</td><td>11.73</td><td>4.86</td><td>4.94</td></tr>
+<tr><td>City C</td><td>7.60</td><td>17.55</td><td>10.01</td><td>10.17</td><td>11.35</td><td>12.18</td><td>3.77</td><td>3.81</td></tr>
+<tr><td>City D</td><td>7.42</td><td>17.91</td><td>9.77</td><td>9.51</td><td>11.55</td><td>10.86</td><td>4.10</td><td>4.17</td></tr>
+<tr><td>Media</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-3-2-2-41"><code>Media Music</code></div>
 <div class="eq" id="eq-3-2-2-42"><code>12.60 24.25 12.67 12.13 14.94 15.89 5.75 5.78</code></div>
 <div class="eq" id="eq-3-2-2-43"><code>Video</code></div>
@@ -810,48 +802,50 @@ Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano
       </div></div></div>
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-3-2-3"><span class="secnum">3.2.3</span> <span class="t-zh">热词定制的有效性</span><span class="t-en">Effectiveness of Hotword Customization</span></h3><div class="cap" id="tab-3-2-3-1"><span class="cap-k">表</span><p class="en">Table 4: Effectiveness of phoneme-based hotword RAG on internal entity-intensive POI benchmarks. Recall here refers to the proportion of POI entities correctly recognized in the transcription output.</p><p class="zh">Table 4：基于音素的热词 RAG 在内部实体密集型 POI 基准上的有效性。Recall 指转写输出中被正确识别的 POI 实体所占比例。</p></div></section>
+      <h3 class="sech lv2" id="sec-3-2-3"><span class="secnum">3.2.3</span> <span class="t-zh">热词定制的有效性</span><span class="t-en">Effectiveness of Hotword Customization</span></h3><div class="cap" id="tab-3-2-3-1"><span class="cap-k">表</span><p class="en">Table 4: Effectiveness of phoneme-based hotword RAG on internal entity-intensive POI benchmarks. Recall here refers to the proportion of POI entities correctly recognized in the transcription output.</p><p class="zh">Table 4：基于音素的热词 RAG 在内部实体密集型 POI 基准上的有效性。Recall 指转写输出中被正确识别的 POI 实体所占比例。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Streaming</th><th>Streaming+RAG</th></tr><tr><th></th><th></th><th>CER / Recall</th><th>CER / Recall</th></tr><tr><th>City A POI</th><th></th><th>3.85 / 82.63</th><th>3.33 / 88.07</th></tr><tr><th>City B POI</th><th></th><th>4.94 / 77.48</th><th>4.31 / 83.60</th></tr><tr><th></th><th>Beyond its strong fundamental recognition capability, NIM4-ASR also provides</th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>recognition accuracy for acoustically similar entity names, domain-specific</td><td></td><td></td></tr>
+<tr><td></td><td>emerging expressions. To evaluate the effectiveness of the proposed hotword</td><td></td><td></td></tr>
+<tr><td></td><td>focus on entity-intensive POI recognition scenarios, selecting benchmarks from</td><td></td><td></td></tr>
+<tr><td></td><td>constructing city-specific retrieval databases, each comprising millions of</td><td></td><td></td></tr>
+<tr><td></td><td>pairs. As shown in Table 4, incorporating hotword context consistently</td><td></td><td></td></tr>
+<tr><td></td><td>mance, demonstrating the effectiveness of our phoneme-based RAG retrieval</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-streaming"><span class="t-zh">Streaming</span><span class="t-en">Streaming</span></h3><div class="pblk" id="p-streaming-1">
-          <p class="en-lines"><span class="sent" data-sid="s-streaming-1-1"><span class="en">Streaming+RAG CER / Recall CER / Recall City A POI</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-streaming-1-1"><span class="zh">（表：Streaming+RAG 的 CER / Recall——City A POI：3.85/82.63 → 3.33/88.07；City B POI：4.94/77.48 → 4.31/83.60。）除强大的基础识别能力外，NIM4-ASR 还提供有效的热词定制机制。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-streaming-1"><code>3.85 / 82.63 3.33 / 88.07</code></div>
-<div class="eq" id="eq-streaming-2"><code>City B POI</code></div>
-<div class="eq" id="eq-streaming-3"><code>4.94 / 77.48 4.31 / 83.60</code></div>
-<div class="pblk" id="p-streaming-2">
-          <p class="en-lines"><span class="sent" data-sid="s-streaming-2-1"><span class="en">Beyond its strong fundamental recognition capability, NIM4-ASR also provides an effective hotword customization mechanism.</span></span> <span class="sent" data-sid="s-streaming-2-2"><span class="en">Through contextual hotword conditioning, NIM4-ASR can improve recognition accuracy for acoustically similar entity names, domain-specific terminology, and newly emerging expressions.</span></span> <span class="sent" data-sid="s-streaming-2-3"><span class="en">To evaluate the effectiveness of the proposed hotword RAG mechanism, we focus on entity-intensive POI recognition scenarios, selecting benchmarks from two major cities and constructing city-specific retrieval databases, each comprising millions of location name–phoneme pairs.</span></span> <span class="sent" data-sid="s-streaming-2-4"><span class="en">As shown in Table 4, incorporating hotword context consistently improves streaming performance, demonstrating the effectiveness of our phoneme-based RAG retrieval mechanism and its practical benefit in entity-intensive recognition scenarios.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-streaming-2-1"><span class="zh">（表：Streaming+RAG 的 CER / Recall——City A POI：3.85/82.63 → 3.33/88.07；City B POI：4.94/77.48 → 4.31/83.60。）除强大的基础识别能力外，NIM4-ASR 还提供有效的热词定制机制。</span></span><span class="sent" data-sid="s-streaming-2-2"><span class="zh">通过上下文热词条件化，NIM4-ASR 能提升对「声学相近的实体名、领域术语、新兴表达」的识别准确率。</span></span><span class="sent" data-sid="s-streaming-2-3"><span class="zh">为评估所提热词 RAG 机制的有效性，我们选择实体密集的 POI 识别场景：从两个主要城市抽取基准，并为每个城市构建各自的城市级检索库——每个库包含数百万条「地名–音素」对。</span></span><span class="sent" data-sid="s-streaming-2-4"><span class="zh">如 Table 4 所示，引入热词上下文能稳定提升流式性能，验证了基于音素的 RAG 检索机制的有效性，及其在实体密集识别场景中的实际价值。</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-streaming"><span class="t-zh">Streaming</span><span class="t-en">Streaming</span></h3>
+
+
+
+
 <div class="pblk" id="p-streaming-3">
           <p class="en-lines"><span class="sent" data-sid="s-streaming-3-1"><span class="en">It is worth noting that, unlike previous work, we adopt exact matching rather than edit distance for retrieval.</span></span> <span class="sent" data-sid="s-streaming-3-2"><span class="en">We argue that for the RAG module in LLM-based ASR systems, retrieval precision is more critical than recall, as the model’s strong inherent recognition capability already serves as a reliable fallback when no hotword is retrieved.</span></span> <span class="sent" data-sid="s-streaming-3-3"><span class="en">Moreover, pairing exact matching with the Aho-Corasick algorithm allows the hotword database to scale to millions of entries without additional retrieval overhead, avoiding the latency and precision degradation that typically follows vocabulary expansion.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-streaming-3-1"><span class="zh">值得注意的是，与先前工作不同，我们在检索时采用完全匹配而非编辑距离。</span></span><span class="sent" data-sid="s-streaming-3-2"><span class="zh">我们认为，对 LLM 语音模型中的 RAG 模块而言，检索精度比召回更关键——因为在没有热词命中时，模型本身的强识别能力足以作为可靠的兜底。</span></span><span class="sent" data-sid="s-streaming-3-3"><span class="zh">此外，将完全匹配与 Aho-Corasick 算法结合，可以让热词库扩展到百万级而不引入额外检索开销，避免词表扩张通常带来的延迟上升与精度下降。</span></span></p>
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-3-2-4"><span class="secnum">3.2.4</span> <span class="t-zh">幻觉抑制的效果</span><span class="t-en">Effectiveness on Hallucination Mitigation</span></h3><div class="cap" id="tab-3-2-4-1"><span class="cap-k">表</span><p class="en">Table 5: Hallucination rate on different benchmark scenarios. “w/o RL” and “w/ RL” denote model after joint SFT and after the subsequent RL stage, respectively. For fair comparison, reported results for NIM4-ASR are obtained under offline inference.</p><p class="zh">Table 5：不同基准场景下的幻觉率。「w/o RL」与「w/ RL」分别指联合 SFT 之后的模型、以及再经过 RL 阶段之后的模型。为公平比较，NIM4-ASR 的报告结果均为离线推理获得。</p></div>
-<div class="pblk" id="p-3-2-4-1">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-4-1-1"><span class="en">Model Mandarin Dialect English Code-switch Lyrics Fun-ASR-nano</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-4-1-1"><span class="zh">（表：幻觉率对比（Mandarin/Dialect/English/Code-switch/Lyrics）——Fun-ASR-nano 0.018%/0.217%/0.014%/0.397%/0.153%；GLM-ASR-nano 0.030%/0.201%/0.014%/0.315%/0.580%；Qwen3-ASR-1.7B 0.018%/0.120%/0.014%/0.345%/0.249%；FireRedASR2S-LLM 0.165%/0.298%/0.014%/0.335%/1.775%；Step-Audio2-mini 0.020%/0.194%/0.014%/1.255%/0.390%；Qwen3-Omni-Inst 0.013%/0.370%/0.007%/1.778%/0.129%；NIM4-ASR（offline w/o RL）0.003%/0.122%/0.007%/0.261%/0.215%；NIM4-ASR（offline w/ RL）0.002%/0.117%/0.007%/0.261%/0.081%。）除识别性能外，NIM4-ASR 还展现出很强的幻觉抑制能力。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-2-4-1"><code>0.018% 0.217% 0.014% 0.397% 0.153%</code></div>
-<div class="eq" id="eq-3-2-4-2"><code>GLM-ASR-nano</code></div>
-<div class="eq" id="eq-3-2-4-3"><code>0.030% 0.201% 0.014% 0.315% 0.580%</code></div>
-<div class="eq" id="eq-3-2-4-4"><code>Qwen3-ASR-1.7B</code></div>
-<div class="eq" id="eq-3-2-4-5"><code>0.018% 0.120% 0.014% 0.345% 0.249%</code></div>
-<div class="eq" id="eq-3-2-4-6"><code>FireRedASR2S-LLM</code></div>
-<div class="eq" id="eq-3-2-4-7"><code>0.165% 0.298% 0.014% 0.335% 1.775%</code></div>
-<div class="eq" id="eq-3-2-4-8"><code>Step-Audio2-mini</code></div>
-<div class="eq" id="eq-3-2-4-9"><code>0.020% 0.194% 0.014% 1.255% 0.390%</code></div>
-<div class="eq" id="eq-3-2-4-10"><code>Qwen3-Omni-Inst</code></div>
-<div class="eq" id="eq-3-2-4-11"><code>0.013% 0.370% 0.007% 1.778% 0.129%</code></div>
-<div class="eq" id="eq-3-2-4-12"><code>NIM4-ASR (offline w/o RL)</code></div>
-<div class="eq" id="eq-3-2-4-13"><code>0.003% 0.122% 0.007% 0.261% 0.215%</code></div>
-<div class="eq" id="eq-3-2-4-14"><code>NIM4-ASR (offline w/ RL)</code></div>
-<div class="eq" id="eq-3-2-4-15"><code>0.002% 0.117% 0.007% 0.261% 0.081%</code></div>
+      <h3 class="sech lv2" id="sec-3-2-4"><span class="secnum">3.2.4</span> <span class="t-zh">幻觉抑制的效果</span><span class="t-en">Effectiveness on Hallucination Mitigation</span></h3><div class="cap" id="tab-3-2-4-1"><span class="cap-k">表</span><p class="en">Table 5: Hallucination rate on different benchmark scenarios. “w/o RL” and “w/ RL” denote model after joint SFT and after the subsequent RL stage, respectively. For fair comparison, reported results for NIM4-ASR are obtained under offline inference.</p><p class="zh">Table 5：不同基准场景下的幻觉率。「w/o RL」与「w/ RL」分别指联合 SFT 之后的模型、以及再经过 RL 阶段之后的模型。为公平比较，NIM4-ASR 的报告结果均为离线推理获得。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Mandarin</th><th>Dialect</th><th>English</th><th>Code-switch</th><th>Lyrics</th></tr></thead><tbody><tr><td>Fun-ASR-nano</td><td></td><td>0.018%</td><td>0.217%</td><td>0.014%</td><td>0.397%</td><td>0.153%</td></tr>
+<tr><td>GLM-ASR-nano</td><td></td><td>0.030%</td><td>0.201%</td><td>0.014%</td><td>0.315%</td><td>0.580%</td></tr>
+<tr><td>Qwen3-ASR-1.7B</td><td></td><td>0.018%</td><td>0.120%</td><td>0.014%</td><td>0.345%</td><td>0.249%</td></tr>
+<tr><td>FireRedASR2S-LLM</td><td></td><td>0.165%</td><td>0.298%</td><td>0.014%</td><td>0.335%</td><td>1.775%</td></tr>
+<tr><td>Step-Audio2-mini</td><td></td><td>0.020%</td><td>0.194%</td><td>0.014%</td><td>1.255%</td><td>0.390%</td></tr>
+<tr><td>Qwen3-Omni-Inst</td><td></td><td>0.013%</td><td>0.370%</td><td>0.007%</td><td>1.778%</td><td>0.129%</td></tr>
+<tr><td></td><td>NIM4-ASR (offline w/o RL)</td><td>0.003%</td><td>0.122%</td><td>0.007%</td><td>0.261%</td><td>0.215%</td></tr>
+<tr><td></td><td>NIM4-ASR (offline w/ RL)</td><td>0.002%</td><td>0.117%</td><td>0.007%</td><td>0.261%</td><td>0.081%</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-3-2-4-2">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-4-2-1"><span class="en">Beyond recognition performance, NIM4-ASR demonstrates strong hallucination suppression.</span></span> <span class="sent" data-sid="s-3-2-4-2-2"><span class="en">We compare all baseline models and NIM4-ASR in terms of hallucination rate across five distinct scenarios, where the rate for each scenario is defined as the ratio of hallucinated samples to total samples aggregated over all benchmarks within that scenario.</span></span> <span class="sent" data-sid="s-3-2-4-2-3"><span class="en">Specifically, a sample is classified as hallucinated if its transcription exceeds the ground-truth length by over 50% with negligible lexical overlap.</span></span> <span class="sent" data-sid="s-3-2-4-2-4"><span class="en">Notably, we exclude three benchmarks: WeNetSpeech Meeting, SpeechIO, and MLS-English from this evaluation, as no hallucinated samples are observed across any model; we additionally exclude WeNetSpeech Net, as its prevalence of unreliably annotated short samples inflates hallucination rates across all models.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-4-2-1"><span class="zh">（表：幻觉率对比（Mandarin/Dialect/English/Code-switch/Lyrics）——Fun-ASR-nano 0.018%/0.217%/0.014%/0.397%/0.153%；GLM-ASR-nano 0.030%/0.201%/0.014%/0.315%/0.580%；Qwen3-ASR-1.7B 0.018%/0.120%/0.014%/0.345%/0.249%；FireRedASR2S-LLM 0.165%/0.298%/0.014%/0.335%/1.775%；Step-Audio2-mini 0.020%/0.194%/0.014%/1.255%/0.390%；Qwen3-Omni-Inst 0.013%/0.370%/0.007%/1.778%/0.129%；NIM4-ASR（offline w/o RL）0.003%/0.122%/0.007%/0.261%/0.215%；NIM4-ASR（offline w/ RL）0.002%/0.117%/0.007%/0.261%/0.081%。）除识别性能外，NIM4-ASR 还展现出很强的幻觉抑制能力。</span></span><span class="sent" data-sid="s-3-2-4-2-2"><span class="zh">我们在五个不同场景下比较了所有基线模型和 NIM4-ASR 的幻觉率；每个场景的幻觉率定义为该场景下所有基准中「幻觉样本数 / 总样本数」的比值。</span></span><span class="sent" data-sid="s-3-2-4-2-3"><span class="zh">具体来说，一个样本若转写长度超过参考文本 50% 以上且几乎没有词面重叠，就被判定为幻觉样本。</span></span><span class="sent" data-sid="s-3-2-4-2-4"><span class="zh">值得一提的是，我们剔除了三个基准：WeNetSpeech Meeting、SpeechIO 和 MLS-English——因为所有模型在这三个基准上都没有出现幻觉样本；此外我们还剔除了 WeNetSpeech Net，因为其中大量短样本的标注不可靠，会让所有模型的幻觉率被普遍抬高。</span></span></p>
@@ -870,31 +864,22 @@ Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano
       </div></div></div>
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-3-2-5"><span class="secnum">3.2.5</span> <span class="t-zh">RL 阶段的收益</span><span class="t-en">Effectiveness of RL</span></h3><div class="cap" id="tab-3-2-5-1"><span class="cap-k">表</span><p class="en">Table 6: Effectiveness of the RL stage under different inference settings. “w/o RL” and “w/ RL” correspond to the model after joint SFT and after the RL stage, respectively.</p><p class="zh">Table 6：不同推理设置下 RL 阶段的收益。「w/o RL」与「w/ RL」分别对应联合 SFT 之后与 RL 阶段之后的模型。</p></div>
+      <h3 class="sech lv2" id="sec-3-2-5"><span class="secnum">3.2.5</span> <span class="t-zh">RL 阶段的收益</span><span class="t-en">Effectiveness of RL</span></h3><div class="cap" id="tab-3-2-5-1"><span class="cap-k">表</span><p class="en">Table 6: Effectiveness of the RL stage under different inference settings. “w/o RL” and “w/ RL” correspond to the model after joint SFT and after the RL stage, respectively.</p><p class="zh">Table 6：不同推理设置下 RL 阶段的收益。「w/o RL」与「w/ RL」分别对应联合 SFT 之后与 RL 阶段之后的模型。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>w/o RL</th><th></th><th></th><th>w/ RL</th><th></th><th></th><th>RL Gain (+/-)</th><th></th></tr><tr><th></th><th></th><th>Offline</th><th></th><th>Streaming</th><th>Offline</th><th></th><th>Streaming</th><th>Offline</th><th></th><th>Streaming</th></tr></thead><tbody><tr><td>Open-source Mandarin Avg.</td><td></td><td>2.71</td><td></td><td>2.80</td><td>2.44</td><td></td><td>2.65</td><td>-0.27</td><td></td><td>-0.15</td></tr>
+<tr><td>Open-source English Avg.</td><td></td><td>3.55</td><td></td><td>3.76</td><td>3.48</td><td></td><td>3.68</td><td>-0.07</td><td></td><td>-0.08</td></tr>
+<tr><td></td><td>Mandarin–English Code-switch Avg.</td><td>8.39</td><td></td><td>8.62</td><td>8.08</td><td></td><td>8.38</td><td>-0.31</td><td></td><td>-0.24</td></tr>
+<tr><td>Internal Mandarin Avg.</td><td></td><td>3.57</td><td></td><td>3.69</td><td>3.41</td><td></td><td>3.44</td><td>-0.16</td><td></td><td>-0.25</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-3-2-5-1">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-5-1-1"><span class="en">w/o RL w/ RL RL Gain (+/-) Offline Streaming Offline Streaming Offline Streaming Open-source Mandarin Avg.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-5-1-1"><span class="zh">表头：w/o RL（无 RL）｜w/ RL（有 RL）｜RL Gain（RL 增益 +/-）——Offline/Streaming 两列；开源普通话题材 Avg.。</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-2-5-1"><code>2.71 2.80 2.44 2.65 -0.27 -0.15</code></div>
-<div class="pblk" id="p-3-2-5-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-5-2-1"><span class="en">Open-source English Avg.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-5-2-1"><span class="zh">（表格行）2.71/2.80/2.44/2.65/-0.27/-0.15；开源英语 Avg.（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-2-5-2"><code>3.55 3.76 3.48 3.68 -0.07 -0.08</code></div>
-<div class="pblk" id="p-3-2-5-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-5-3-1"><span class="en">Mandarin–English Code-switch Avg.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-5-3-1"><span class="zh">（表格行）3.55/3.76/3.48/3.68/-0.07/-0.08；中英语码混合 Avg.（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-2-5-3"><code>8.39 8.62 8.08 8.38 -0.31 -0.24</code></div>
-<div class="pblk" id="p-3-2-5-4">
-          <p class="en-lines"><span class="sent" data-sid="s-3-2-5-4-1"><span class="en">Internal Mandarin Avg.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-2-5-4-1"><span class="zh">（表格行）8.39/8.62/8.08/8.38/-0.31/-0.24；内部普通话题材 Avg.（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-3-2-5-4"><code>3.57 3.69 3.41 3.44 -0.16 -0.25</code></div>
+
+
+
+
+
+
+
 <div class="pblk" id="p-3-2-5-5">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-5-5-1"><span class="en">We further ablate the RL stage to assess its contribution.</span></span> <span class="sent" data-sid="s-3-2-5-5-2"><span class="en">As shown in Table 6, incorporating RL yields consistent improvements under both offline and streaming settings, with the most substantial gains observed on Mandarin and code-switching benchmarks.</span></span> <span class="sent" data-sid="s-3-2-5-5-3"><span class="en">A key contributing factor is the high prevalence of homophone and near-homophone confusions in these scenarios, which token-level teacher-forcing does not directly penalize effectively.</span></span> <span class="sent" data-sid="s-3-2-5-5-4"><span class="en">By contrast, RL optimizes sequence-level rewards over complete decoding trajectories, explicitly penalizing sentence-level error propagation induced by phonetic confusion, reinforcing entity and phrase-level consistency, and mitigating exposure bias (Chen et al., 2025).</span></span> <span class="sent" data-sid="s-3-2-5-5-5"><span class="en">In code-switching scenarios, acoustic ambiguity at languageswitch boundaries and cross-lingual entity competition are particularly pronounced; sequence-level feedback from RL can more effectively suppress erroneous language continuation and improve overall transcription consistency under mixed Mandarin–English conditions.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-5-5-1"><span class="zh">（表格行）3.57/3.69/3.41/3.44/-0.16/-0.25。我们进一步消融 RL 阶段以评估其贡献。</span></span><span class="sent" data-sid="s-3-2-5-5-2"><span class="zh">如 Table 6 所示，引入 RL 在离线和流式两种设置下都带来一致的改进，其中提升最显著的是普通话和中英混合基准。</span></span><span class="sent" data-sid="s-3-2-5-5-3"><span class="zh">一个关键原因是这些场景中同音、近音混淆非常普遍，而 token 级 teacher-forcing 并不能直接有效地惩罚这类错误。</span></span><span class="sent" data-sid="s-3-2-5-5-4"><span class="zh">相比之下，RL 在完整解码轨迹上优化序列级奖励，可以显式惩罚由发音混淆引发的句级错误传播，强化实体与短语级一致性，并缓解曝光偏差（Chen et al., 2025）。</span></span><span class="sent" data-sid="s-3-2-5-5-5"><span class="zh">在中英混合场景中，语言切换边界处的声学歧义和跨语言实体竞争尤为突出；RL 提供的序列级反馈可以更有效地抑制「错语言继续」，在中英混合条件下提升整体转写一致性。</span></span></p>

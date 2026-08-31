@@ -370,7 +370,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-II-C-3-1"><span class="zh">提高说话人嵌入的带宽，意味着嵌入同时也编码了大量不期望的信息。</span></span><span class="sent" data-sid="s-II-C-3-2"><span class="zh">参考语句的时长、背景噪声与录音条件等非语音声学属性、提示中所说的具体词句，以及停顿的位置，都存在于 ex 之中。</span></span><span class="sent" data-sid="s-II-C-3-3"><span class="zh">重要的是，这些都不应被带进生成语音——我们期望生成语音在这些维度上有所不同。</span></span><span class="sent" data-sid="s-II-C-3-4"><span class="zh">为减少这类无意的泄漏，嵌入会经过一个线性判别分析（LDA）变换，投影为 1024 维向量 êx。</span></span><span class="sent" data-sid="s-II-C-3-5"><span class="zh">由于 LDA 是在带说话人标签的数据上估计的、目标是最大化说话人间方差相对于说话人内方差，它保留了区分不同说话人的方向，同时衰减了同一说话人不同录音之间变化的因素——例如上文提到的时长、噪声、词汇内容与停顿结构。</span></span></p>
           
         </div>
-<div class="cap" id="tab-I"><span class="cap-k">表</span><p class="en">TABLE I: Representative silent failures in the G2P pre- processing pipeline. The first row shows a Chinese span processed under an English tag; the second shows an over- matched substring or morphology rule; the third shows loss</p><p class="zh">表 I：G2P 预处理流水线的代表性静默失败案例。</p></div>
+<div class="cap" id="tab-I"><span class="cap-k">表</span><p class="en">TABLE I: Representative silent failures in the G2P pre- processing pipeline. The first row shows a Chinese span processed under an English tag; the second shows an over- matched substring or morphology rule; the third shows loss</p><p class="zh">表 I：G2P 预处理流水线的代表性静默失败案例。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Input</th><th></th><th></th><th>G2P pipeline output</th><th></th></tr><tr><th></th><th>en: 电脑is computer</th><th></th><th></th><th>en:Chinese letter Chinese letter is computer</th></tr></thead><tbody><tr><td></td><td>en:alpharetrovirus</td><td></td><td>en:retroretrovirus</td><td></td></tr>
+<tr><td>es:Satoshi</td><td></td><td>es:Satosi</td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-II-C-4">
           <p class="en-lines"><span class="sent" data-sid="s-II-C-4-1"><span class="en">To condition the autoregressive TTS model on this representation, a learned projection of the speaker embedding is placed at the beginning of the sequence:</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-II-C-4-1"><span class="zh">为让自回归 TTS 模型以该表示为条件，把说话人嵌入的学习投影放在序列开头：hspk = Wspk êx + bspk，其中 Wspk ∈ Rdmodel×1024 将说话人嵌入映射到 Transformer 的隐藏维度。</span></span></p>
@@ -675,7 +676,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-V-2-1"><span class="zh">ZTTS1-Eval 的设计以广泛使用的 Seed-TTS-Eval（Anastassiou, Chen, &amp; Chen et al., 2024）为基础。</span></span><span class="sent" data-sid="s-V-2-2"><span class="zh">我们观察到 Seed-TTS-Eval 有三个主要问题。</span></span><span class="sent" data-sid="s-V-2-3"><span class="zh">第一，它只含中文和英语语音，限制了它评估多语种系统的用途。</span></span><span class="sent" data-sid="s-V-2-4"><span class="zh">第二，它依赖过时的模型来计算评测指标，例如用 Whisper Large（Radford, Kim, &amp; Xu et al., 2022）与 Paraformer（Gao, Zhang, &amp; McLoughlin et al., 2023）测 WER 准确度，用 WavLM（Chen, Wang, &amp; Chen et al., 2022）测说话人相似度。</span></span><span class="sent" data-sid="s-V-2-5"><span class="zh">第三，英语音频来自 Common Voice（Ardila, Branson, &amp; Davis et al., 2020）(a) 干净集。</span></span><span class="sent" data-sid="s-V-2-6"><span class="zh">(b) ITW 集。</span></span></p>
           
         </div>
-<div class="cap" id="tab-II"><span class="cap-k">表</span><p class="en">TABLE II: Comparison of Seed-TTS-Eval, CV3-Eval, the MiniMax multilingual test set (MiniMax-ML), and the proposed ZTTS1-Eval. †: MiniMax-ML contains 100 sentences and two reference utterances per language.</p><p class="zh">表 II：Seed-TTS-Eval、CV3-Eval、MiniMax 多语测试集（MiniMax-ML）与本文 ZTTS1-Eval 的对比。</p></div>
+<div class="cap" id="tab-II"><span class="cap-k">表</span><p class="en">TABLE II: Comparison of Seed-TTS-Eval, CV3-Eval, the MiniMax multilingual test set (MiniMax-ML), and the proposed ZTTS1-Eval. †: MiniMax-ML contains 100 sentences and two reference utterances per language.</p><p class="zh">表 II：Seed-TTS-Eval、CV3-Eval、MiniMax 多语测试集（MiniMax-ML）与本文 ZTTS1-Eval 的对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>undesirable characteristics, and increased inter-transcript</th><th></th><th></th><th></th><th></th><th></th><th></th><th>enabled TTS systems, ZTTS1-Eval.</th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>This</td><td>decorrelation</td><td>was</td><td>achieved by</td><td>augmenting</td><td></td><td>the</td><td></td><td></td><td></td><td></td><td></td><td>speaker similarity. Third, audio is sourced from Common</td><td></td><td></td><td></td></tr>
+<tr><td>source</td><td>audio</td><td>before the</td><td>embedding was</td><td>computed.</td><td></td><td>The</td><td></td><td></td><td></td><td></td><td></td><td>Voice (Ardila, Branson, &amp; Davis et al., 2020) for English</td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="cap" id="fig-V-1"><img class="fig" src="../assets/figures/2606.24320/fig-V-1.png" loading="lazy" alt="Fig. 5: Mean Text-to-Speech Distribution Score 2 (TTSDS2) prosody for the English portions of both ZTTS1-Eval sets."><span class="cap-k">图</span><p class="en">Fig. 5: Mean Text-to-Speech Distribution Score 2 (TTSDS2) prosody for the English portions of both ZTTS1-Eval sets.</p><p class="zh">图 5：ZTTS1-Eval 两个集合英文部分的平均 Text-to-Speech Distribution Score 2（TTSDS2）韵律。</p></div>
 <div class="pblk" id="p-V-3">
           <p class="en-lines"><span class="sent" data-sid="s-V-3-1"><span class="en">and DiDiSpeech (Guo, Wen, &amp; Jiang et al., 2021) for Chinese, both of which consist of read speech with varied recording environments which are generally not representative of the use-case of modern TTS systems.</span></span></p>
@@ -818,16 +820,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-VI-8-1"><span class="zh">图 5a 与图 5b 分别给出干净集与 ITW 集英文部分的平均 TTSDS2 韵律。</span></span><span class="sent" data-sid="s-VI-8-2"><span class="zh">在 ITW 集上，ZONOS2 是该指标上表现最好的模型。</span></span><span class="sent" data-sid="s-VI-8-3"><span class="zh">ZONOS2 在干净集上的表现较弱，但仍与头部模型具有竞争力。</span></span><span class="sent" data-sid="s-VI-8-4"><span class="zh">这些结果表明 ZONOS2 能够从源克隆音频中同时保留韵律信息与身份信息。</span></span><span class="sent" data-sid="s-VI-8-5"><span class="zh">图 6 进一步说明了这一点，展示了 ZTTS1-Eval 英文子集的 DS-WED 分数。</span></span><span class="sent" data-sid="s-VI-8-6"><span class="zh">在两个评测集上，ZONOS2 生成结果的韵律多样性都显著高于所有其他模型。</span></span><span class="sent" data-sid="s-VI-8-7"><span class="zh">图 7 展示了以 Allosaurus（Li, Dalmia, &amp; Li et al., 2020）SR 距离衡量的、相对源音频的韵律内容分布；ZONOS2 在这里优势明显，其分布与源音频接近得多。</span></span><span class="sent" data-sid="s-VI-8-8"><span class="zh">ZONOS2 在 CosyVoice 3 与 Seed-TTS 评测集上的表现见表 VII。</span></span></p>
           
         </div>
-<div class="cap" id="tab-III"><span class="cap-k">表</span><p class="en">TABLE III: ZTTS1-Eval Clean zero-shot results across WER, MSR-UTMOS and speaker similarity, segmented by open-source and closed-source models. Best result per language and metric is shown in bold; second-best is underlined.</p><p class="zh">表 III：ZTTS1-Eval Clean 零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Cartesia Sonic 3.5</td><td>WER ↓</td><td>2.56</td><td>0.86</td><td>4.53</td><td>7.66</td><td>3.14</td><td>3.21</td><td>3.41</td><td>3.05</td><td>3.65</td><td>3.24</td><td>6.01</td></tr>
+<div class="cap" id="tab-III"><span class="cap-k">表</span><p class="en">TABLE III: ZTTS1-Eval Clean zero-shot results across WER, MSR-UTMOS and speaker similarity, segmented by open-source and closed-source models. Best result per language and metric is shown in bold; second-best is underlined.</p><p class="zh">表 III：ZTTS1-Eval Clean 零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>WER ↓</td><td>2.56</td><td>0.86</td><td>4.53</td><td>7.66</td><td>3.14</td><td>3.21</td><td>3.41</td><td>3.05</td><td>3.65</td><td>3.24</td><td>6.01</td></tr>
+<tr><td>Cartesia Sonic 3.5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>(Cartesia, 2026)</td><td>UTMOS ↑</td><td>3.62</td><td>3.19</td><td>3.17</td><td>3.01</td><td>3.18</td><td>2.97</td><td>3.29</td><td>2.90</td><td>3.36</td><td>3.11</td><td>3.05</td></tr>
 <tr><td></td><td>Spk. sim. ↑</td><td>79.9</td><td>67.1</td><td>85.4</td><td>80.0</td><td>82.8</td><td>85.9</td><td>83.1</td><td>83.4</td><td>87.5</td><td>86.4</td><td>84.2</td></tr>
-<tr><td>Eleven Labs V3</td><td>WER ↓</td><td>2.35</td><td>0.75</td><td>4.20</td><td>8.31</td><td>3.79</td><td>3.24</td><td>3.62</td><td>2.70</td><td>4.26</td><td>4.57</td><td>5.63</td></tr>
+<tr><td></td><td>WER ↓</td><td>2.35</td><td>0.75</td><td>4.20</td><td>8.31</td><td>3.79</td><td>3.24</td><td>3.62</td><td>2.70</td><td>4.26</td><td>4.57</td><td>5.63</td></tr>
+<tr><td>Eleven Labs V3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>(ElevenLabs, 2026)</td><td>UTMOS ↑</td><td>3.59</td><td>3.53</td><td>3.31</td><td>3.37</td><td>3.54</td><td>3.25</td><td>3.29</td><td>3.19</td><td>3.45</td><td>3.36</td><td>3.15</td></tr>
 <tr><td></td><td>Spk. sim.* ↑</td><td>7.2</td><td>6.8</td><td>36.9</td><td>29.4</td><td>17.1</td><td>18.0</td><td>21.9</td><td>21.9</td><td>36.3</td><td>38.6</td><td>25.4</td></tr>
-<tr><td>Gemini 3.1 Flash</td><td>WER ↓</td><td>2.50</td><td>0.80</td><td>4.09</td><td>5.63</td><td>3.61</td><td>4.41</td><td>4.77</td><td>3.24</td><td>3.79</td><td>3.06</td><td>6.58</td></tr>
-<tr><td>(Google DeepMind, 2026)</td><td>UTMOS ↑</td><td>3.87</td><td>3.79</td><td>3.54</td><td>3.37</td><td>3.71</td><td>3.43</td><td>3.52</td><td>3.39</td><td>3.65</td><td>3.51</td><td>3.37</td></tr>
+<tr><td></td><td>WER ↓</td><td>2.50</td><td>0.80</td><td>4.09</td><td>5.63</td><td>3.61</td><td>4.41</td><td>4.77</td><td>3.24</td><td>3.79</td><td>3.06</td><td>6.58</td></tr>
+<tr><td>Gemini 3.1 Flash</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>UTMOS ↑</td><td>3.87</td><td>3.79</td><td>3.54</td><td>3.37</td><td>3.71</td><td>3.43</td><td>3.52</td><td>3.39</td><td>3.65</td><td>3.51</td><td>3.37</td></tr>
 <tr><td></td><td>Spk. sim.* ↑</td><td>12.7</td><td>9.8</td><td>36.6</td><td>28.6</td><td>17.7</td><td>19.5</td><td>20.9</td><td>20.4</td><td>33.6</td><td>36.2</td><td>23.5</td></tr>
-<tr><td>Inworld TTS 2</td><td>WER ↓</td><td>3.14</td><td>1.96</td><td>4.04</td><td>7.86</td><td>4.05</td><td>4.38</td><td>4.95</td><td>3.98</td><td>5.63</td><td>3.13</td><td>7.08</td></tr>
+<tr><td></td><td>WER ↓</td><td>3.14</td><td>1.96</td><td>4.04</td><td>7.86</td><td>4.05</td><td>4.38</td><td>4.95</td><td>3.98</td><td>5.63</td><td>3.13</td><td>7.08</td></tr>
+<tr><td>Inworld TTS 2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>(Inworld AI, 2026)</td><td>UTMOS ↑</td><td>3.53</td><td>3.15</td><td>3.14</td><td>2.94</td><td>3.27</td><td>3.05</td><td>3.33</td><td>2.95</td><td>3.27</td><td>3.11</td><td>3.01</td></tr>
 <tr><td></td><td>Spk. sim. ↑</td><td>65.8</td><td>54.8</td><td>74.8</td><td>67.1</td><td>68.4</td><td>73.0</td><td>68.5</td><td>70.4</td><td>77.7</td><td>78.3</td><td>69.8</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-VI-9">
@@ -898,9 +904,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
+<div class="eq" id="eq-VI-105"><code>Spk. sim.* ↑10.2 29.9</code></div>
 
-
-
+<div class="eq" id="eq-VI-107"><code>Gemini 3.1 Flash (Google DeepMind, 2026) WER ↓</code></div>
 
 
 
@@ -957,18 +963,22 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         <div class="exp exp-plain">模型学歪了不会报错，而是输出「像人话的噪音」，必须拿 ASR 回听才能发现。</div>
       </div></div></div>
         </div>
-<div class="cap" id="tab-IV"><span class="cap-k">表</span><p class="en">TABLE IV: ZTTS1-Eval In-the-wild zero-shot results across WER, MSR-UTMOS, and speaker similarity segmented by open-source and closed-source models. Best result per language and metric is shown in bold; second-best is underlined.</p><p class="zh">表 IV：ZTTS1-Eval 实景（in-the-wild）零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Cartesia Sonic 3.5</td><td>WER ↓</td><td>1.40 1.17</td><td></td><td>– 3.00 2.37 2.52</td><td>7.87</td><td></td><td>– 2.40</td><td>3.63 3.38</td><td>5.30 2.10</td><td>3.75</td><td></td><td>–</td><td></td><td>–</td><td>4.84</td><td></td></tr>
-<tr><td>(Cartesia, 2026)</td><td>UTMOS ↑</td><td>3.05 2.76</td><td></td><td>– 2.98 2.71 2.69</td><td>2.71</td><td></td><td>– 2.60</td><td>2.69 2.86</td><td>2.73 2.68</td><td>2.64</td><td></td><td>–</td><td></td><td>–</td><td>2.57</td><td></td></tr>
-<tr><td></td><td>Spk. sim. ↑</td><td>70.2 79.1</td><td></td><td>– 76.7 75.4 75.5</td><td>76.1</td><td></td><td>– 77.2</td><td>78.4 77.8</td><td>79.5 77.6</td><td>78.2</td><td></td><td>–</td><td></td><td>–</td><td>78.5</td><td></td></tr>
-<tr><td>Eleven Labs V3</td><td>WER ↓</td><td>1.35 1.22</td><td>12.19 2.50 1.58 2.17</td><td></td><td>7.36</td><td>5.98 2.36</td><td></td><td>2.84 3.93</td><td>4.66 2.06</td><td>4.28</td><td>3.84</td><td></td><td>17.76</td><td></td><td>7.78</td><td></td></tr>
-<tr><td>(ElevenLabs, 2026)</td><td>UTMOS ↑</td><td>3.61 3.36</td><td>3.41 3.57 3.34 3.28</td><td></td><td>3.47</td><td>3.34 3.21</td><td></td><td>3.49 3.40</td><td>3.37 3.39</td><td>3.26</td><td>3.48</td><td></td><td>3.51</td><td></td><td>3.44</td><td></td></tr>
-<tr><td></td><td>Spk. sim.* ↑</td><td>6.3 29.7</td><td>24.4 15.3 16.4 13.6</td><td></td><td>16.3</td><td>26.2 19.6</td><td></td><td>28.6 28.7</td><td>23.6 22.1</td><td>19.7</td><td>33.9</td><td></td><td>13.1</td><td></td><td>26.4</td><td></td></tr>
-<tr><td>Gemini 3.1 Flash</td><td>WER ↓</td><td>2.12 1.45 10.51 2.40 1.94 3.56</td><td></td><td></td><td>8.73</td><td></td><td>– 2.08</td><td>2.72 2.27</td><td>5.33 3.21</td><td>3.77</td><td></td><td>–</td><td></td><td>–</td><td>6.92</td><td></td></tr>
-<tr><td>(Google DeepMind, 2026)</td><td>UTMOS ↑</td><td>3.78 3.55</td><td>3.40 3.67 3.41 3.45</td><td></td><td>3.60</td><td></td><td>– 3.45</td><td>3.56 3.45</td><td>3.47 3.43</td><td>3.36</td><td></td><td>–</td><td></td><td>–</td><td>3.66</td><td></td></tr>
-<tr><td></td><td>Spk. sim.* ↑10.2 29.9</td><td></td><td>26.3 17.5 20.5 15.0</td><td></td><td>18.1</td><td></td><td>– 19.1</td><td>28.3 29.2</td><td>26.2 24.1</td><td>20.9</td><td></td><td>–</td><td></td><td>–</td><td>26.7</td><td></td></tr>
-<tr><td>Inworld TTS 2</td><td>WER ↓</td><td>1.89 1.42</td><td>14.85 3.54 2.67 4.40 10.14</td><td></td><td></td><td></td><td>– 3.46</td><td>6.93 4.16</td><td>7.65 3.87</td><td>5.32</td><td></td><td>–</td><td>19.56</td><td></td><td></td><td>–</td></tr>
-<tr><td>(Inworld AI, 2026)</td><td>UTMOS ↑</td><td>3.02 2.71</td><td>2.70 3.03 2.83 2.76</td><td></td><td>2.65</td><td></td><td>– 2.71</td><td>2.81 2.86</td><td>2.80 2.70</td><td>2.66</td><td></td><td>–</td><td>2.99</td><td></td><td></td><td>–</td></tr>
-<tr><td></td><td>Spk. sim. ↑</td><td>53.0 66.4</td><td>60.5 58.7 56.2 54.9</td><td></td><td>60.5</td><td></td><td>– 56.0</td><td>63.3 62.6</td><td>60.6 61.4</td><td>61.8</td><td></td><td>–</td><td>59.5</td><td></td><td></td><td>–</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-IV"><span class="cap-k">表</span><p class="en">TABLE IV: ZTTS1-Eval In-the-wild zero-shot results across WER, MSR-UTMOS, and speaker similarity segmented by open-source and closed-source models. Best result per language and metric is shown in bold; second-best is underlined.</p><p class="zh">表 IV：ZTTS1-Eval 实景（in-the-wild）零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>WER ↓</td><td>1.40</td><td>1.17</td><td>–</td><td>3.00</td><td>2.37</td><td>2.52</td><td>7.87</td><td>– 2.40</td><td>3.63</td><td>3.38</td><td>5.30</td><td>2.10</td><td>3.75</td><td>–</td><td>–</td><td>4.84</td></tr>
+<tr><td>Cartesia Sonic 3.5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(Cartesia, 2026)</td><td>UTMOS ↑</td><td>3.05</td><td>2.76</td><td>–</td><td>2.98</td><td>2.71</td><td>2.69</td><td>2.71</td><td>– 2.60</td><td>2.69</td><td>2.86</td><td>2.73</td><td>2.68</td><td>2.64</td><td>–</td><td>–</td><td>2.57</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>70.2 79.1</td><td></td><td></td><td></td><td>– 76.7 75.4 75.5</td><td></td><td>76.1</td><td>– 77.2</td><td>78.4 77.8</td><td></td><td>79.5 77.6</td><td></td><td>78.2</td><td>–</td><td>–</td><td>78.5</td></tr>
+<tr><td></td><td>WER ↓</td><td>1.35</td><td>1.22</td><td>12.19</td><td></td><td>2.50 1.58 2.17</td><td></td><td>7.36</td><td>5.98 2.36</td><td>2.84</td><td>3.93</td><td>4.66 2.06</td><td></td><td>4.28</td><td>3.84</td><td>17.76</td><td>7.78</td></tr>
+<tr><td>Eleven Labs V3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(ElevenLabs, 2026)</td><td>UTMOS ↑</td><td>3.61</td><td>3.36</td><td>3.41</td><td>3.57</td><td>3.34</td><td>3.28</td><td>3.47</td><td>3.34 3.21</td><td>3.49</td><td>3.40</td><td>3.37</td><td>3.39</td><td>3.26</td><td>3.48</td><td>3.51</td><td>3.44</td></tr>
+<tr><td></td><td>Spk. sim.* ↑</td><td>6.3</td><td>29.7</td><td>24.4</td><td>15.3</td><td>16.4</td><td>13.6</td><td>16.3</td><td>26.2 19.6</td><td>28.6</td><td>28.7</td><td>23.6</td><td>22.1</td><td>19.7</td><td>33.9</td><td>13.1</td><td>26.4</td></tr>
+<tr><td></td><td>WER ↓</td><td>2.12</td><td></td><td></td><td>2.40</td><td>1.94</td><td>3.56</td><td>8.73</td><td>– 2.08</td><td>2.72 2.27</td><td></td><td>5.33</td><td>3.21</td><td>3.77</td><td>–</td><td>–</td><td>6.92</td></tr>
+<tr><td>Gemini 3.1 Flash</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>UTMOS ↑</td><td>3.78 3.55</td><td></td><td></td><td>3.40 3.67 3.41 3.45</td><td></td><td></td><td>3.60</td><td>– 3.45</td><td>3.56 3.45</td><td></td><td>3.47 3.43</td><td></td><td>3.36</td><td>–</td><td>–</td><td>3.66</td></tr>
+<tr><td></td><td></td><td></td><td>29.9</td><td>26.3</td><td>17.5</td><td>20.5</td><td>15.0</td><td>18.1</td><td>– 19.1</td><td>28.3</td><td>29.2</td><td>26.2</td><td>24.1</td><td>20.9</td><td>–</td><td>–</td><td>26.7</td></tr>
+<tr><td></td><td>WER ↓</td><td>1.89</td><td>1.42</td><td>14.85</td><td>3.54</td><td>2.67</td><td>4.40 10.14</td><td></td><td>– 3.46</td><td>6.93</td><td>4.16</td><td>7.65</td><td>3.87</td><td>5.32</td><td>–</td><td>19.56</td><td>–</td></tr>
+<tr><td>Inworld TTS 2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(Inworld AI, 2026)</td><td>UTMOS ↑</td><td>3.02</td><td>2.71</td><td>2.70</td><td>3.03</td><td>2.83</td><td>2.76</td><td>2.65</td><td>– 2.71</td><td>2.81</td><td>2.86</td><td>2.80</td><td>2.70</td><td>2.66</td><td>–</td><td>2.99</td><td>–</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>53.0</td><td>66.4</td><td>60.5</td><td>58.7</td><td>56.2</td><td>54.9</td><td>60.5</td><td>– 56.0</td><td>63.3</td><td>62.6</td><td>60.6</td><td>61.4</td><td>61.8</td><td>–</td><td>59.5</td><td>–</td></tr></tbody></table></div></div></section>
 <section>
       <h2 class="sech lv1" id="sec-VIII"><span class="secnum">VIII</span> <span class="t-zh">结论</span><span class="t-en">Conclusion</span></h2><div class="pblk" id="p-VIII-1">
           <p class="en-lines"><span class="sent" data-sid="s-VIII-1-1"><span class="en">This work presents ZONOS2, a state-of-the-art TTS system based on an MoE transformer backbone.</span></span> <span class="sent" data-sid="s-VIII-1-2"><span class="en">A complementary new benchmark for the assessment of similar systems, ZTTS1-Eval, is presented.</span></span> <span class="sent" data-sid="s-VIII-1-3"><span class="en">On ZTTS1-Eval and other standard open-source TTS evaluation benchmarks, ZONOS2 shows comparable performance to both openand closed-source systems and exceptional voice cloning capability.</span></span> <span class="sent" data-sid="s-VIII-1-4"><span class="en">Future work will investigate the use of different audio codecs, backbone designs, and post-training strategies.</span></span></p>
@@ -1019,7 +1029,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk plain" id="p-references-29"><p class="refline">MiniMax-Speech: Intrinsic zero-shot text-to-speech with a learnable speaker encoder. arXiv preprint arXiv:2505.07916, 2025. Christoph Minixhofer, Ondřej Klejch. Ttsds2: Resources and benchmark for evaluating human-quality text to speech systems, 2025. URL https://arxiv.org/abs/2506.</p></div>
 <div class="eq" id="eq-references-7"><code>19441.</code></div>
 <div class="pblk plain" id="p-references-30"><p class="refline">Go Nishikawa, Wataru Nakata. Multi-sampling-frequency naturalness mos prediction using self-supervised learning model with sampling-frequency-independent layer, 2025. URL https://arxiv.org/abs/2507.14647. Matteo Pagliardini, Amirkeivan Mohtashami.</p></div>
-
+<div class="pblk plain" id="p-references-31"><p class="refline">Denseformer: Enhancing information flow in transformers via depth weighted averaging, 2024.</p></div>
 <div class="pblk plain" id="p-references-32"><p class="refline">URL https://arxiv. org/abs/2402.02622. Zihan Qiu, Zekun Wang et al. Gated attention for large language models: Non-linearity, sparsity, and attentionsink-free, 2025. URL https://arxiv.org/abs/2505.06708. Alec Radford, Jong Wook Kim. Robust speech recognition via large-scale weak supervision, 2022.</p></div>
 <div class="pblk plain" id="p-references-33"><p class="refline">URL https:// arxiv.org/abs/2212.04356. Noam Shazeer. Glu variants improve transformer, 2020.</p></div>
 <div class="pblk plain" id="p-references-34"><p class="refline">URL https://arxiv.org/abs/2002.05202. Xian Shi, Xiong Wang et al. Qwen3-asr technical report.</p></div>
@@ -1050,17 +1060,21 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-A-6"><code>KV Heads</code></div>
 <div class="eq" id="eq-A-7"><code>4</code></div>
 <div class="eq" id="eq-A-8"><code>Head dimension</code></div>
-
+<div class="eq" id="eq-A-9"><code>128</code></div>
 <div class="pblk" id="p-A-2">
           <p class="en-lines"><span class="sent" data-sid="s-A-2-1"><span class="en">Attention variant GQA (4× grouping) Experts per MoE layer</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-2-1"><span class="zh">表 V：ZONOS2 8B 配置。属性取值——架构：decoder-only MoE Transformer；激活参数 900M；总参数 8B；Transformer 层数 28；隐藏维度 2048；GQA 查询头数 16；KV 头数 4；头维度 128；注意力变体：GQA（4× 分组）；每个 MoE 层专家数 16；路由：top-1（最后一个 MoE 层为 top-2）；专家 FFN 宽度 3072；Qwen 门控位置：逐头（headwise）；路由器潜在维度 128；路由器配置：EDA；位置嵌入：RoPE；分词器：字节级。</span></span></p>
           
         </div>
 <div class="eq" id="eq-A-10"><code>16</code></div>
-
-
-
-
+<div class="pblk" id="p-A-3">
+          <p class="en-lines"><span class="sent" data-sid="s-A-3-1"><span class="en">Routing top-1, top-2 for final MoE Expert FFN width</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-3-1"><span class="zh">表 V：ZONOS2 8B 配置。属性取值——架构：decoder-only MoE Transformer；激活参数 900M；总参数 8B；Transformer 层数 28；隐藏维度 2048；GQA 查询头数 16；KV 头数 4；头维度 128；注意力变体：GQA（4× 分组）；每个 MoE 层专家数 16；路由：top-1（最后一个 MoE 层为 top-2）；专家 FFN 宽度 3072；Qwen 门控位置：逐头（headwise）；路由器潜在维度 128；路由器配置：EDA；位置嵌入：RoPE；分词器：字节级。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-A-11"><code>3072</code></div>
+<div class="eq" id="eq-A-12"><code>Qwen gating location headwise Router latent dimension</code></div>
+<div class="eq" id="eq-A-13"><code>128</code></div>
 <div class="pblk" id="p-A-4">
           <p class="en-lines"></p>
           <p class="zh-lines"></p>
@@ -1074,39 +1088,39 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-language-1-1"><span class="zh">表头：Utterances / Hours——en（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-language-1"><code>120 0.22</code></div>
-<div class="eq" id="eq-language-2"><code>zh</code></div>
-<div class="eq" id="eq-language-3"><code>92 0.14</code></div>
-<div class="eq" id="eq-language-4"><code>de</code></div>
-<div class="eq" id="eq-language-5"><code>104 0.20</code></div>
-<div class="eq" id="eq-language-6"><code>es</code></div>
-<div class="eq" id="eq-language-7"><code>95 0.17</code></div>
-<div class="eq" id="eq-language-8"><code>fr</code></div>
-<div class="eq" id="eq-language-9"><code>92 0.18</code></div>
-<div class="eq" id="eq-language-10"><code>it</code></div>
-<div class="eq" id="eq-language-11"><code>97 0.18</code></div>
-<div class="eq" id="eq-language-12"><code>ja</code></div>
-<div class="eq" id="eq-language-13"><code>91 0.14</code></div>
-<div class="eq" id="eq-language-14"><code>ko</code></div>
-<div class="eq" id="eq-language-15"><code>93 0.13</code></div>
-<div class="eq" id="eq-language-16"><code>ru</code></div>
-<div class="eq" id="eq-language-17"><code>101 0.19</code></div>
-<div class="eq" id="eq-language-18"><code>pt</code></div>
-<div class="eq" id="eq-language-19"><code>93 0.19</code></div>
-<div class="eq" id="eq-language-20"><code>ar</code></div>
-<div class="eq" id="eq-language-21"><code>90 0.15</code></div>
-<div class="eq" id="eq-language-22"><code>hi</code></div>
-<div class="eq" id="eq-language-23"><code>86 0.14</code></div>
-<div class="eq" id="eq-language-24"><code>id</code></div>
-<div class="eq" id="eq-language-25"><code>84 0.16</code></div>
-<div class="eq" id="eq-language-26"><code>tr</code></div>
-<div class="eq" id="eq-language-27"><code>93 0.17</code></div>
-<div class="eq" id="eq-language-28"><code>tl</code></div>
-<div class="eq" id="eq-language-29"><code>89 0.14</code></div>
-<div class="eq" id="eq-language-30"><code>pl</code></div>
-<div class="eq" id="eq-language-31"><code>105 0.21</code></div>
-<div class="eq" id="eq-language-32"><code>th</code></div>
-<div class="eq" id="eq-language-33"><code>93 0.14</code></div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-total"><span class="t-zh">合计</span><span class="t-en">Total</span></h3><div class="eq" id="eq-total-1"><code>1618 2.86</code></div>
 <div class="pblk" id="p-total-1">
@@ -1114,14 +1128,24 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"></p>
           
         </div>
-<div class="cap" id="tab-V"><span class="cap-k">表</span><p class="en">TABLE V: ZONOS2 8B Configuration.</p><p class="zh">表 V：ZONOS2 8B 配置。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th>Routing</th><th>top-1, top-2 for final MoE</th></tr></thead><tbody><tr><td></td><td>ing model with sampling-frequency-independent layer,</td><td></td><td></td><td>Expert FFN width</td><td>3072</td></tr>
-<tr><td></td><td>2025. URL https://arxiv.org/abs/2507.14647.</td><td></td><td></td><td>Qwen gating location</td><td>headwise</td></tr>
-<tr><td>Matteo Pagliardini, Amirkeivan Mohtashami.</td><td></td><td></td><td>Dense-</td><td>Router latent dimension</td><td>128</td></tr>
-<tr><td></td><td>former: Enhancing information flow in transformers via</td><td></td><td></td><td>Router configuration</td><td>EDA</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>Positional embeddings</td><td>RoPE</td></tr>
-<tr><td></td><td>depth weighted averaging, 2024.</td><td>URL https://arxiv.</td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>Tokenizer</td><td>Byte level</td></tr>
-<tr><td></td><td>org/abs/2402.02622.</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-V"><span class="cap-k">表</span><p class="en">TABLE V: ZONOS2 8B Configuration.</p><p class="zh">表 V：ZONOS2 8B 配置。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>2020.</td><td></td><td></td><td>Hours</td></tr>
+<tr><td></td><td>en</td><td>120</td><td>0.22</td></tr>
+<tr><td></td><td>zh</td><td>92</td><td>0.14</td></tr>
+<tr><td></td><td>de</td><td>104</td><td>0.20</td></tr>
+<tr><td></td><td>es</td><td>95</td><td>0.17</td></tr>
+<tr><td></td><td>fr</td><td>92</td><td>0.18</td></tr>
+<tr><td></td><td>it</td><td>97</td><td>0.18</td></tr>
+<tr><td></td><td>ja</td><td>91</td><td>0.14</td></tr>
+<tr><td></td><td>ko</td><td>93</td><td>0.13</td></tr>
+<tr><td></td><td>ru</td><td>101</td><td>0.19</td></tr>
+<tr><td>bal-</td><td>pt</td><td>93</td><td>0.19</td></tr>
+<tr><td>URL</td><td>ar</td><td>90</td><td>0.15</td></tr>
+<tr><td></td><td>hi</td><td>86</td><td>0.14</td></tr>
+<tr><td></td><td>id</td><td>84</td><td>0.16</td></tr>
+<tr><td></td><td>tr</td><td>93</td><td>0.17</td></tr>
+<tr><td></td><td>tl</td><td>89</td><td>0.14</td></tr>
+<tr><td>2024,</td><td>pl</td><td>105</td><td>0.21</td></tr>
+<tr><td></td><td>th</td><td>93</td><td>0.14</td></tr></tbody></table></div></div>
 <div class="cap" id="tab-VI"><span class="cap-k">表</span><p class="en">TABLE VI: ZTTS1-Eval ITW language coverage statis- tics.</p><p class="zh">表 VI：ZTTS1-Eval ITW 语种覆盖统计。</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">模型细节</span><span class="t-en">Model Details</span></h2><div class="pblk" id="p-C-1">
@@ -1248,8 +1272,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="cap" id="fig-D-1"><img class="fig" src="../assets/figures/2606.24320/fig-D-1.png" loading="lazy" alt="Fig. 6: Violin plots of DS-WED scores for the English portions of both ZTTS1-Eval sets."><span class="cap-k">图</span><p class="en">Fig. 6: Violin plots of DS-WED scores for the English portions of both ZTTS1-Eval sets.</p><p class="zh">图 6：ZTTS1-Eval 两个集合英文部分 DS-WED 分数的小提琴图。</p></div>
-<div class="cap" id="tab-VII"><span class="cap-k">表</span><p class="en">TABLE VII: ZONOS2 evaluation results across speaker similarity, DNSMOS, WER, and emotion accuracy on the CosyVoice 3 Eval and Seed-TTS-Eval benchmarks, grouped by task. Emotion accuracy is only reported for the emotion zero-shot task.</p><p class="zh">表 VII：ZONOS2 在 CosyVoice 3 Eval 与 Seed-TTS-Eval 基准上按任务分组的说话人相似度、DNSMOS、WER 与情绪准确率评测结果。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Test-ZH</td><td>58.20</td><td>–</td><td>2.55</td><td>–</td></tr>
-<tr><td>Test-ZH-Hard</td><td>56.2</td><td>–</td><td>11.15</td><td>–</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-VII"><span class="cap-k">表</span><p class="en">TABLE VII: ZONOS2 evaluation results across speaker similarity, DNSMOS, WER, and emotion accuracy on the CosyVoice 3 Eval and Seed-TTS-Eval benchmarks, grouped by task. Emotion accuracy is only reported for the emotion zero-shot task.</p><p class="zh">表 VII：ZONOS2 在 CosyVoice 3 Eval 与 Seed-TTS-Eval 基准上按任务分组的说话人相似度、DNSMOS、WER 与情绪准确率评测结果。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Test-ZH</td><td></td><td>58.20</td><td>–</td><td>2.55</td><td>–</td></tr>
+<tr><td></td><td>Test-ZH-Hard</td><td>56.2</td><td>–</td><td>11.15</td><td>–</td></tr></tbody></table></div></div>
 <div class="cap" id="fig-D-2"><img class="fig" src="../assets/figures/2606.24320/fig-D-2.png" loading="lazy" alt="Fig. 7: Allosaurus SR distributions for the English portions of both ZTTS1-Eval sets."><span class="cap-k">图</span><p class="en">Fig. 7: Allosaurus SR distributions for the English portions of both ZTTS1-Eval sets.</p><p class="zh">图 7：ZTTS1-Eval 两个集合英文部分的 Allosaurus SR 分布。</p></div></section></article>
   <footer class="foot">
     原文来自 arXiv:2606.24320（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。

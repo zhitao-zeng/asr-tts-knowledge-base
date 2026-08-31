@@ -1,4 +1,172 @@
 {
+ "tab-task-1": {
+  "page": 5,
+  "headers": [
+   [
+    "its",
+    "par",
+    "cascaded",
+    "",
+    "the"
+   ],
+   [
+    "",
+    "",
+    "",
+    "SeamlessM4T-Large outperforms strong 3-stage cascaded models (ASR, T2TT and TTS)",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "2-stage cascaded model (Whisper-Large-v2 + YourTTS [Casanova et al., 2022]) by a",
+    ""
+   ],
+   [
+    "",
+    "large margin of 8.5 ASR-BLEU points (a 50% improvement).",
+    "",
+    "",
+    "Preliminary human evalua-"
+   ]
+  ],
+  "rows": [
+   [
+    "",
+    "tions of S2TT outputs evinced similarly impressive results.",
+    "",
+    "",
+    "For translations from English,"
+   ],
+   [
+    "",
+    "",
+    "",
+    "XSTS scores for 24 evaluated languages are consistently above 4 (out of 5); for into English",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "directions, we see significant improvement over Whisper-Large-v2’s baseline for 7 out of",
+    ""
+   ],
+   [
+    "24 languages.",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "In addition, SeamlessM4T-Large further outperforms Whisper-Large-v2 [Radford",
+    ""
+   ],
+   [
+    "al.,",
+    "",
+    "average",
+    "",
+    "reduction"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "model matches the performance of NLLB-3.3B [NLLB Team et al., 2022] when translating",
+    ""
+   ],
+   [
+    "",
+    "",
+    "into English and improves by 1 chrF++ point on average when translating from English.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "further evaluate SeamlessM4T’s performance in S2TT and S2ST, we developed Blaser",
+    ""
+   ],
+   [
+    "a",
+    "modality-agnostic",
+    "",
+    "evaluation",
+    "speech"
+   ],
+   [
+    "",
+    "",
+    "",
+    "Blaser 2.0 enables evaluation across speech and text modalities with similar accuracy to its",
+    ""
+   ],
+   [
+    "",
+    "",
+    "predecessor —BLASER [Chen et al., 2023a]—when it comes to quality estimation.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "evaluated model robustness against background noises and speaker variations by creating",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "robust than Whisper-Large-v2 against background noises and speaker variations with an",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "5",
+    ""
+   ]
+  ]
+ },
  "tab-model-1": {
   "page": 6,
   "headers": [
@@ -10,9 +178,6 @@
     "",
     "",
     "",
-    "",
-    "",
-    "",
     ""
    ],
    [
@@ -20,19 +185,13 @@
     "",
     "",
     "S2TT",
-    "",
     "S2ST",
-    "",
     "ASR",
     "T2TT",
-    "",
-    ""
+    "T2ST"
    ],
    [
     "Proprietary models",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -44,23 +203,17 @@
   ],
   "rows": [
    [
-    "USM [Zhang et al., 2023a]",
     "",
+    "USM [Zhang et al., 2023a]",
     "2B+",
     "21-eng",
-    "",
-    "",
     "-",
     "102",
-    "",
     "-",
     "-"
    ],
    [
     "Rubenstein et al. [2023]",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -74,11 +227,8 @@
     "AudioPaLM-2-8B-AST",
     "8.0B",
     "98-eng",
-    "",
-    "",
     "-",
     "98",
-    "",
     "-",
     "-"
    ],
@@ -87,11 +237,8 @@
     "AudioPaLM-8B-S2ST",
     "8.0B",
     "113-Eng",
-    "",
     "113-eng",
-    "",
     "98",
-    "",
     "-",
     "-"
    ],
@@ -103,17 +250,11 @@
     "",
     "",
     "",
-    "",
-    "",
-    "",
     ""
    ],
    [
+    "",
     "NLLB Team et al. [2022]",
-    "",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -125,39 +266,30 @@
     "",
     "NLLB-600M-Distilled",
     "0.6B",
-    "",
     "-",
-    "",
     "-",
     "-",
     "202-202",
-    "",
     "-"
    ],
    [
-    "",
     "NLLB-1.3B",
+    "",
     "1.3B",
-    "",
     "-",
-    "",
     "-",
     "-",
     "202-202",
-    "",
     "-"
    ],
    [
-    "",
     "NLLB-3.3B",
+    "",
     "3.3B",
-    "",
     "-",
-    "",
     "-",
     "-",
     "202-202",
-    "",
     "-"
    ],
    [
@@ -168,19 +300,13 @@
     "",
     "",
     "",
-    "",
-    "",
-    "",
     ""
    ],
    [
-    "",
     "XLS-R-2B-S2T",
     "",
+    "",
     "21-eng",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -191,11 +317,8 @@
     "",
     "2.6B",
     "",
-    "",
-    "",
     "-",
     "-",
-    "",
     "-",
     ""
    ],
@@ -204,9 +327,6 @@
     "",
     "",
     "eng-15",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -220,9 +340,6 @@
     "",
     "",
     "",
-    "",
-    "",
-    "",
     ""
    ],
    [
@@ -230,11 +347,8 @@
     "Whisper-Medium",
     "0.8B",
     "96-eng",
-    "",
-    "",
     "-",
     "97",
-    "",
     "-",
     "-"
    ],
@@ -243,20 +357,14 @@
     "Whisper-Large-v2",
     "1.6B",
     "96-eng",
-    "",
-    "",
     "-",
     "97",
-    "",
     "-",
     "-"
    ],
    [
+    "",
     "MMS [Pratap et al., 2023]",
-    "",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -268,12 +376,9 @@
     "",
     "MMS-L61-noLM-LSAH",
     "1.0B",
-    "",
     "-",
-    "",
     "-",
     "61",
-    "",
     "-",
     "-"
    ],
@@ -281,21 +386,15 @@
     "",
     "MMS-L1107-CCLM-LSAH",
     "1.0B",
-    "",
     "-",
-    "",
     "-",
     "1107",
-    "",
     "-",
     "-"
    ],
    [
+    "",
     "This work (SeamlessM4T)",
-    "",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -308,13 +407,10 @@
     "SeamlessM4T-Large",
     "",
     "100-eng",
-    "",
     "100-eng",
     "",
-    "",
     "95-eng",
-    "",
-    ""
+    "95-eng"
    ],
    [
     "",
@@ -322,10 +418,7 @@
     "2.3B",
     "",
     "",
-    "",
-    "",
     "96",
-    "",
     "",
     ""
    ],
@@ -334,26 +427,20 @@
     "",
     "",
     "eng-95",
-    "",
     "eng-35",
     "",
-    "",
     "eng-95",
-    "",
-    ""
+    "eng-35"
    ],
    [
     "",
     "SeamlessM4T-Medium",
     "",
     "100-eng",
-    "",
     "100-eng",
     "",
-    "",
     "95-eng",
-    "",
-    ""
+    "95-eng"
    ],
    [
     "",
@@ -361,10 +448,7 @@
     "1.2B",
     "",
     "",
-    "",
-    "",
     "96",
-    "",
     "",
     ""
    ],
@@ -373,13 +457,10 @@
     "",
     "",
     "eng-95",
-    "",
     "eng-35",
     "",
-    "",
     "eng-95",
-    "",
-    ""
+    "eng-35"
    ],
    [
     "",
@@ -388,22 +469,16 @@
     "",
     "",
     "",
-    "",
-    "",
     "95-eng",
-    "",
     ""
    ],
    [
     "",
     "",
     "1.3B",
-    "",
-    "-",
-    "",
     "-",
     "-",
-    "",
+    "-",
     "",
     "-"
    ],
@@ -414,53 +489,410 @@
     "",
     "",
     "",
-    "",
-    "",
     "eng-95",
-    "",
     ""
    ]
   ]
  },
  "tab-script-variance-1": {
   "page": 9,
-  "headers": [
-   [
-    "Cascaded models for S2TT",
-    "",
-    ""
-   ],
-   [
-    "Whisper-Medium + NLLB-600M-Distilled",
-    "2-stage cascaded",
-    ""
-   ],
-   [
-    "Whisper-Large-v2 + NLLB-1.3B",
-    "2-stage cascaded",
-    ""
-   ],
-   [
-    "Cascaded models for S2ST",
-    "",
-    ""
-   ],
-   [
-    "Whisper-Large-v2 + NLLB-1.3B + YourTTS",
-    "3-stage cascaded",
-    ""
-   ]
-  ],
+  "headers": [],
   "rows": [
    [
-    "Whisper-Large-v2 (S2TT) + YourTTS",
-    "2-stage cascaded",
+    "2.2",
+    "",
+    "Translation",
+    "Today",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ],
    [
-    "SeamlessM4T (this work)",
+    "Cascaded",
+    "systems",
     "",
-    "unified"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "years, much attention in speech-based research has been directed at cascaded approaches",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "by chaining subsystems that perform disparate tasks such as ASR, T2TT, and TTS [Lavie",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "For example, in a 3-stage S2ST cascaded",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "scenario, speech input is first transcribed into text through an ASR system, followed by T2TT,",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "and finally synthesized into speech using TTS (see Table 3).",
+    "",
+    "",
+    "",
+    "",
+    "The main benefit of cascaded",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "systems is that they can take advantage of advancements made in areas associated with each",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "subsystem, such as recently released large-scale multilingual T2TT models [NLLB Team et al.,",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "2022; Siddhant et al., 2022; Fan et al., 2020] and weakly-supervised ASR models [Radford",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "That",
+    "",
+    "cascaded",
+    "systems",
+    "have their",
+    "",
+    "limitations.",
+    "the",
+    "output",
+    "2-stage"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "cascaded S2TT system involving ASR and T2TT does not match the quality achievable by",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "a single",
+    "large-scale",
+    "",
+    "model.",
+    "This",
+    "drop in",
+    "performance",
+    "",
+    "the",
+    "of"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "transferring and translating meaning across modalities and can be attributed to many factors,",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "including:",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "(1) poor transcriptions by ASR models for non-English languages, particularly for",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "low-resourced ones, (2) an increased likelihood of error propagation from the ASR model to",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "the T2TT model and other subsequent models in the cascade (the accumulation of errors",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "exacerbates",
+    "",
+    "performance),",
+    "and",
+    "(3) domain",
+    "",
+    "mismatches",
+    "these",
+    "separately",
+    "trained"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "subsystems (for example, if an ASR model trained on Wikipedia is used in conjunction with",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "a T2TT model optimized for conversational data, this formation may lead to a distribution",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "mismatch at the T2TT stage).",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "systems omits paralinguistic features and may not adequately handle elements such as proper",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "names and nouns [Rubenstein et al., 2023].",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Direct",
+    "",
+    "models",
+    "Early",
+    "research",
+    "into",
+    "end-to-end",
+    "translation",
+    "",
+    "with"
+   ],
+   [
+    "producing",
+    "text as",
+    "",
+    "[Chan",
+    "et al.,",
+    "2016;",
+    "Berard",
+    "Bérard",
+    "et",
+    "2018]."
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Since the emergence of multilingual end-to-end S2TT models in 2019 [Gangi et al., 2019;",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Inaguma et al., 2019], S2TT has become an increasingly popular research area, and many",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "existing models today are powered by the emergence of open multilingual speech corpora",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "like MuST-C [Di Gangi et al., 2019], EuroParl-ST [Iranzo-Sánchez et al., 2020], CoVoST",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "2 [Wang",
+    "al.,",
+    "2021c]",
+    "",
+    "VoxPopuli",
+    "[Wang et",
+    "al.,",
+    "End-to-end",
+    "",
+    "today"
+   ],
+   [
+    "have",
+    "significant",
+    "",
+    "progress",
+    "and",
+    "achieved",
+    "parity",
+    "models",
+    "on",
+    "academic"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "9",
+    "",
+    "",
+    "",
+    ""
    ]
   ]
  },
@@ -472,14 +904,14 @@
     "Metric",
     "Type",
     "Area",
-    "Details"
+    ""
    ],
    [
     "",
     "WER",
     "",
     "Quality",
-    "Text normalization follows Whisper⋆"
+    ""
    ],
    [
     "ASR",
@@ -497,16 +929,16 @@
    ],
    [
     "",
-    "chrF++†",
     "",
     "",
-    "SacreBLEU signature:"
+    "",
+    ""
    ]
   ],
   "rows": [
    [
     "T2TT",
-    "",
+    "chrF++†",
     "Automatic",
     "Quality",
     ""
@@ -523,7 +955,7 @@
     "",
     "",
     "",
-    "SacreBLEU signature:"
+    ""
    ],
    [
     "",
@@ -544,7 +976,7 @@
     "",
     "",
     "",
-    "character-level tokenization:"
+    ""
    ],
    [
     "",
@@ -582,10 +1014,10 @@
     ""
    ],
    [
-    "",
+    "S2TT",
     "BLEU",
-    "",
-    "",
+    "Automatic",
+    "Robustness",
     ""
    ]
   ]
@@ -594,396 +1026,78 @@
   "page": 15,
   "headers": [
    [
+    "Code",
+    "",
+    "Language name",
+    "Family",
+    "",
+    "Subgrouping"
+   ],
+   [
     "nld",
     "Dutch",
+    "",
+    "",
     "Indo-European",
-    "Germanic",
-    "Latn",
-    "high",
-    "Sp, Tx",
-    "Sp, Tx"
+    "Germanic"
    ],
    [
     "nno",
+    "",
     "Norwegian Nynorsk",
+    "",
     "Indo-European",
-    "Germanic",
-    "Latn",
-    "low",
-    "Sp, Tx",
-    "Tx"
+    "Germanic"
    ],
    [
     "nob",
+    "",
     "Norwegian Bokmål",
+    "",
     "Indo-European",
-    "Germanic",
-    "Latn",
-    "low",
-    "Sp, Tx",
-    "Tx"
+    "Germanic"
    ],
    [
     "npi",
     "Nepali",
+    "",
+    "",
     "Indo-European",
-    "Indo-Aryan",
-    "Deva",
-    "low",
-    "Sp, Tx",
-    "Tx"
-   ],
-   [
-    "nya",
-    "Nyanja",
-    "Atlantic-Congo",
-    "Benue-Congo",
-    "Latn",
-    "low",
-    "Sp, Tx",
-    "Tx"
+    "Indo-Aryan"
    ]
   ],
   "rows": [
    [
+    "nya",
+    "Nyanja",
+    "",
+    "",
+    "Atlantic-Congo",
+    "Benue-Congo"
+   ],
+   [
     "oci",
     "Occitan",
+    "",
+    "",
     "Indo-European",
-    "Italic",
-    "Latn",
-    "zero-shot",
-    "Sp",
-    "–"
+    "Italic"
    ],
    [
     "ory",
     "Odia",
+    "",
+    "",
     "Indo-European",
-    "Indo-Aryan",
-    "Orya",
-    "low",
-    "Sp, Tx",
-    "Tx"
+    "Indo-Aryan"
    ],
    [
     "pan",
     "Punjabi",
+    "",
+    "",
     "Indo-European",
-    "Indo-Aryan",
-    "Guru",
-    "low",
-    "Sp, Tx",
-    "Tx"
-   ],
-   [
-    "pbt",
-    "Southern Pashto",
-    "Indo-European",
-    "Iranian",
-    "Arab",
-    "medium",
-    "Sp, Tx",
-    "Tx"
-   ],
-   [
-    "pes",
-    "Western Persian",
-    "Indo-European",
-    "Iranian",
-    "Arab",
-    "low",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "pol",
-    "Polish",
-    "Indo-European",
-    "Balto-Slavic",
-    "Latn",
-    "high",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "por",
-    "Portuguese",
-    "Indo-European",
-    "Italic",
-    "Latn",
-    "medium",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "ron",
-    "Romanian",
-    "Indo-European",
-    "Italic",
-    "Latn",
-    "high",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "rus",
-    "Russian",
-    "Indo-European",
-    "Balto-Slavic",
-    "Cyrl",
-    "medium",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "slk",
-    "Slovak",
-    "Indo-European",
-    "Balto-Slavic",
-    "Latn",
-    "medium",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "slv",
-    "Slovenian",
-    "Indo-European",
-    "Balto-Slavic",
-    "Latn",
-    "low",
-    "Sp, Tx",
-    "Tx"
-   ],
-   [
-    "sna",
-    "Shona",
-    "Atlantic-Congo",
-    "Benue-Congo",
-    "Latn",
-    "zero-shot",
-    "Sp, Tx",
-    "Tx"
-   ],
-   [
-    "snd",
-    "Sindhi",
-    "Indo-European",
-    "Indo-Aryan",
-    "Arab",
-    "zero-shot",
-    "Sp, Tx",
-    "Tx"
-   ],
-   [
-    "som",
-    "Somali",
-    "Afro-Asiatic",
-    "Cushitic",
-    "Latn",
-    "low",
-    "Sp, Tx",
-    "Tx"
-   ],
-   [
-    "spa",
-    "Spanish",
-    "Indo-European",
-    "Italic",
-    "Latn",
-    "high",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "srp",
-    "Serbian",
-    "Indo-European",
-    "Balto-Slavic",
-    "Cyrl",
-    "low",
-    "Sp, Tx",
-    "Tx"
-   ],
-   [
-    "swe",
-    "Swedish",
-    "Indo-European",
-    "Germanic",
-    "Latn",
-    "low",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "swh",
-    "Swahili",
-    "Atlantic-Congo",
-    "Benue-Congo",
-    "Latn",
-    "medium",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "tam",
-    "Tamil",
-    "Dravidian",
-    "South Dravidian",
-    "Taml",
-    "medium",
-    "Sp, Tx",
-    "Tx"
-   ],
-   [
-    "tel",
-    "Telugu",
-    "Dravidian",
-    "South Dravidian",
-    "Telu",
-    "medium",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "tgk",
-    "Tajik",
-    "Indo-European",
-    "Iranian",
-    "Cyrl",
-    "low",
-    "Sp, Tx",
-    "Tx"
-   ],
-   [
-    "tgl",
-    "Tagalog",
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Latn",
-    "medium",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "tha",
-    "Thai",
-    "Tai-Kadai",
-    "Kam-Tai",
-    "Thai",
-    "medium",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "tur",
-    "Turkish",
-    "Turkic",
-    "Common Turkic",
-    "Latn",
-    "medium",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "ukr",
-    "Ukrainian",
-    "Indo-European",
-    "Balto-Slavic",
-    "Cyrl",
-    "medium",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "urd",
-    "Urdu",
-    "Indo-European",
-    "Indo-Aryan",
-    "Arab",
-    "medium",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "uzn",
-    "Northern Uzbek",
-    "Turkic",
-    "Common Turkic",
-    "Latn",
-    "medium",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "vie",
-    "Vietnamese",
-    "Austroasiatic",
-    "Vietic",
-    "Latn",
-    "medium",
-    "Sp, Tx",
-    "Sp, Tx"
-   ],
-   [
-    "xho",
-    "Xhosa",
-    "Atlantic-Congo",
-    "Benue-Congo",
-    "Latn",
-    "zero-shot",
-    "Sp",
-    "–"
-   ],
-   [
-    "yor",
-    "Yoruba",
-    "Atlantic-Congo",
-    "Benue-Congo",
-    "Latn",
-    "low",
-    "Sp, Tx",
-    "Tx"
-   ],
-   [
-    "yue",
-    "Cantonese",
-    "Sino-Tibetan",
-    "Sinitic",
-    "Hant",
-    "low",
-    "Sp, Tx",
-    "Tx"
-   ],
-   [
-    "zlm",
-    "Colloquial Malay",
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Latn",
-    "low",
-    "Sp",
-    "–"
-   ],
-   [
-    "zsm",
-    "Standard Malay",
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Latn",
-    "low",
-    "Tx",
-    "Tx"
-   ],
-   [
-    "zul",
-    "Zulu",
-    "Atlantic-Congo",
-    "Benue-Congo",
-    "Latn",
-    "low",
-    "Sp, Tx",
-    "Tx"
+    "Indo-Aryan"
    ]
   ]
  },
@@ -992,65 +1106,203 @@
   "headers": [
    [
     "",
-    "↑F1-micro",
-    "",
-    "↑F1-macro",
+    "that do not support the full 100 scope.",
     "",
     "",
-    "↑F1-micro",
     "",
-    "↑F1-macro",
+    "",
+    "",
+    "",
     ""
    ],
    [
     "",
-    "(n=100)",
-    "",
-    "(n=100)",
     "",
     "",
-    "(n=79)",
     "",
-    "(n=79)",
+    "overall performance for the common set of languages, which is a",
+    "",
+    "",
+    "",
     ""
+   ],
+   [
+    "",
+    "",
+    "presence of a higher number of close languages.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "For example, Zulu"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "with Nyanja (nya), Igbo (ibo) with Yoruba (yor), and Modern",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "Moroccan Arabic (ary) and Egyptian Arabic (arz).",
+    "",
+    "",
+    "",
+    "",
+    "Our model"
    ]
   ],
   "rows": [
    [
-    "VL107 HF",
-    "",
-    "82.3%",
     "",
     "",
-    "-",
     "",
-    "94.1%",
     "",
-    "92.6%"
+    "difference greater than 5%) on 17 languages with an average gain of",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "VL107 baseline",
-    "",
-    "82.5%",
     "",
     "",
-    "-",
     "",
-    "94.4%",
     "",
-    "93.0%"
+    "newly covered languages, while decreasing classification for 12 (with",
+    "",
+    "",
+    "",
+    ""
    ],
    [
+    "3.1.2",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "While it is important to retrieve the maximum amount of data for",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "ensure",
+    "quality",
+    "in",
+    "LID",
+    "labeling.",
+    "Depending",
+    "",
+    "on",
+    "the"
+   ],
+   [
+    "particular",
+    "language,",
+    "it",
+    "may",
+    "be useful",
+    "filter",
+    "it",
+    "to",
+    "retain"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "estimated the Gaussian distribution of the LID scores per language",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "classifications on the development corpus.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "We selected a threshold"
+   ],
+   [
+    "",
+    "p(correct|score) > p(incorrect|score).",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "By rejecting 8% of the data,",
+    ""
+   ],
+   [
+    "",
+    "increase the F1 measure by almost 3%.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "↑F1 micro",
+    "",
+    "",
+    "↑Coverage"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
     "LID100",
     "",
     "86.0%",
     "",
-    "81.9%",
+    ""
+   ],
+   [
     "",
     "",
-    "92.9%",
     "",
-    "91.1%"
+    "",
+    "+filtering",
+    "",
+    "89.5%",
+    "",
+    ""
    ]
   ]
  },
@@ -1059,26 +1311,126 @@
   "headers": [
    [
     "",
-    "↑F1 micro",
     "",
-    "↑Coverage",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ]
   ],
   "rows": [
    [
-    "LID100",
+    "3.2",
     "",
-    "86.0%",
+    "audio",
+    "data",
+    "at",
+    "scale",
     "",
-    "100%"
+    "",
+    ""
    ],
    [
-    "+filtering",
+    "Text",
+    "pre-processing",
     "",
-    "89.5%",
     "",
-    "92.1%"
+    "",
+    "",
+    "On the text side, we rely entirely on the same dataset deployed in",
+    "",
+    ""
+   ],
+   [
+    "",
+    "NLLB [NLLB Team et al., 2022].",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The same data sources, cleaning, and filtering steps are",
+    ""
+   ],
+   [
+    "",
+    "",
+    "used and run at scale with our Stopes library.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Audio",
+    "pre-processing",
+    "",
+    "4",
+    "million",
+    "",
+    "of",
+    "raw",
+    "audio"
+   ],
+   [
+    "",
+    "",
+    "publicly available repository of crawled web data.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Table 10 provides statistics on the amount"
+   ],
+   [
+    "",
+    "of raw audio for each language.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Approximately 1 million hours in this collection are in English.",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "We then applied a series of pre-processing steps to curate and improve the overall speech",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "quality.",
+    "",
+    "",
+    "",
+    "",
+    "Firstly, we deduplicated the audio file URLs found in the repository, downloaded",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "18",
+    "",
+    "",
+    "",
+    ""
    ]
   ]
  },
@@ -1086,14 +1438,6 @@
   "page": 20,
   "headers": [
    [
-    "and Table 8 summarizes the translation evaluation of the Sonar framework.",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "Evaluation for mining",
     "",
     "",
     "",
@@ -1102,28 +1446,36 @@
    [
     "",
     "",
-    "Multilingual Text",
-    "✏️",
+    "",
     ""
    ],
    [
+    "(35.2→32.7)",
     "",
+    "respectively",
+    "This"
+   ],
+   [
+    "",
+    "",
+    "Multilingual Text ✏️",
+    ""
+   ],
+   [
     "",
     "",
     "",
     "Initialized with"
-   ],
-   [
-    "",
-    "",
-    "Text Decoder",
-    "",
-    "NLLB 1B"
    ]
   ],
   "rows": [
    [
     "",
+    "",
+    "Text Decoder",
+    "NLLB 1B"
+   ],
+   [
     "",
     "",
     "",
@@ -1132,19 +1484,10 @@
    [
     "",
     "",
-    "",
-    "",
+    "SONAR",
     ""
    ],
    [
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
     "",
     "",
     "",
@@ -1152,8 +1495,19 @@
    ],
    [
     "",
+    "text sentence embedding",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "Initialized with"
+   ],
+   [
     "Speech Encoder",
-    "Text Encoder",
+    "",
     "",
     "NLLB 1B"
    ],
@@ -1161,27 +1515,23 @@
     "",
     "",
     "",
-    "",
     "encoder"
    ],
    [
+    "Multilingual Speech 🎤",
     "",
-    "Multilingual Speech",
-    "Multilingual Text",
-    "✏️",
+    "Multilingual Text ✏️",
     ""
    ],
    [
     "",
     "",
     "",
-    "",
     ""
    ],
    [
     "",
-    "",
-    "",
+    "20",
     "",
     ""
    ]
@@ -1189,63 +1539,260 @@
  },
  "tab-overall-2-1": {
   "page": 21,
-  "headers": [
+  "headers": [],
+  "rows": [
    [
+    "3.3.2",
+    "Training",
+    "speech",
+    "",
+    "encoders",
     "",
     "",
-    "↓xsim",
-    "↓xsim++",
     "",
-    "",
-    "↓xsim",
-    "↓xsim++",
     ""
    ],
    [
     "",
-    "(n=200)",
-    "",
-    "(n=200)",
-    "",
-    "(n=98)",
     "",
     "",
-    "(n=98)"
-   ]
-  ],
-  "rows": [
-   [
-    "Sonar",
+    "training",
     "",
-    "1.4",
-    "",
-    "15.2",
-    "",
-    "0.1",
-    "",
-    "9.3"
+    "setup",
+    "As a",
+    "second",
+    "and"
    ],
    [
-    "Laser3",
     "",
-    "5.1",
     "",
-    "36.4",
     "",
-    "1.1",
     "",
-    "27.5"
+    "",
+    "",
+    "2021], the new Sonar text embedding space is extended to the speech modality through",
+    "",
+    ""
    ],
    [
-    "LaBSE",
     "",
-    "10.7",
+    "teacher-student training.",
     "",
-    "36.1",
     "",
-    "1.5",
     "",
-    "15.4"
+    "",
+    "",
+    "",
+    "In that work, a fixed-size speech representation was obtained by"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "taking the BOS output of a pretrained XLS-R model [Babu et al., 2022].",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "then fine-tuned to maximize the cosine loss between this pooled speech representation and",
+    "",
+    ""
+   ],
+   [
+    "sentence",
+    "",
+    "in",
+    "the",
+    "same",
+    "languages",
+    "",
+    "(ASR",
+    "transcriptions)"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "We improved this initial recipe by doing the following:",
+    "",
+    ""
+   ],
+   [
+    "•",
+    "",
+    "",
+    "MSE loss instead of a cosine loss was used.",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "•",
+    "w2v-BERT",
+    "",
+    "",
+    "",
+    "",
+    "2.0 speech front-end instead of XLS-R. w2v-BERT",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "on 143 languages (see Section 4.1 for details),",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "•",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Instead of the usual pooling methods (i.e., mean or max-pooling),"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "we implemented a 3-layer sequence-to-sequence model to convert the variable length",
+    ""
+   ],
+   [
+    "",
+    "sequence of",
+    "w2v-BERT",
+    "",
+    "",
+    "",
+    "2.0 to a fixed size vector,",
+    "",
+    ""
+   ],
+   [
+    "•",
+    "",
+    "",
+    "",
+    "Training on human-performed ASR transcriptions only.",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "ASR",
+    "transcriptions",
+    "",
+    "for",
+    "most of",
+    "the",
+    "languages",
+    "(see"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "trained the speech encoders exclusively on them,",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "•",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Following [Heffernan et al., 2022; NLLB Team et al., 2022], we grouped languages by",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "linguistic families (i.e., Germanic or Indian languages) and trained them together in",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Alternative language groupings, which might consider the acoustic"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "characteristics of each language, are left open for future research.",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "21",
+    "",
+    ""
    ]
   ]
  },
@@ -1255,21 +1802,25 @@
    [
     "",
     "",
-    "",
     "Conformer",
+    "",
+    "X2T"
+   ],
+   [
+    "",
+    "SEAMLESSM4T-NLLB",
+    "",
     "",
     ""
    ],
    [
     "",
     "",
-    "",
-    "",
+    "Speech Encoder",
     "",
     "(ASR, T2TT, S2TT)"
    ],
    [
-    "",
     "codebooks",
     "(fra) le chat s’est assis",
     "W2V-BERT 2.0",
@@ -1278,48 +1829,49 @@
    ],
    [
     "",
-    ". . .",
     "",
     "",
     "",
     ""
-   ],
-   [
-    "",
-    "",
-    "Transformer",
-    "",
-    "",
-    "Transformer"
    ]
   ],
   "rows": [
    [
     "",
+    "Transformer",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "Transformer"
+   ],
+   [
     "",
     "Text Decoder",
     "",
     "",
+    ""
+   ],
+   [
+    "Conformer",
+    "",
+    "",
+    "Knowledge distillation",
     "Text Decoder"
    ],
    [
-    "",
-    "Conformer",
-    "",
-    "Knowledge distillation",
-    "",
-    ""
-   ],
-   [
     "Speech Encoder",
-    "",
     "Transformer",
-    "(T2TT/AE→S2TT/ASR)",
     "",
-    ""
+    "(T2TT/AE→S2TT/ASR)",
+    "SEAMLESSM4T-NLLB"
    ],
    [
-    "",
     "",
     "Text Encoder",
     "",
@@ -1330,12 +1882,10 @@
     "80-dimensional filterbank",
     "",
     "",
-    "",
     "Transformer",
     ""
    ],
    [
-    "",
     "",
     "(eng) the cat sat",
     "",
@@ -1343,15 +1893,48 @@
     ""
    ],
    [
-    "",
     "unlabeled speech",
     "",
+    "",
     "SEAMLESSM4T-NLLB",
+    ""
+   ],
+   [
+    "",
+    "Overview of the SeamlessM4T X2T model.",
+    "",
     "",
     ""
    ],
    [
     "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "models with a Conformer-based encoder [Gulati et al., 2020] for speech input",
+    "",
+    ""
+   ],
+   [
     "",
     "",
     "",
@@ -1364,12 +1947,67 @@
   "page": 32,
   "headers": [
    [
-    "4.2.3 Multimodal & multitask into target text",
+    "multitask",
+    "into",
+    "target",
+    "text",
+    ""
+   ],
+   [
+    "",
+    "",
+    "In SeamlessM4T, we leveraged foundational models either pre-trained on unlabeled data",
+    "",
+    ""
+   ],
+   [
+    "encoder",
+    "",
+    "pre-training)",
+    "or",
+    "trained"
+   ],
+   [
+    "T2TT)",
+    "to improve",
+    "the",
+    "quality",
+    "of"
+   ],
+   [
     "",
     "",
     "",
     "",
+    "To fuse these pre-trained components and enable meaning transfer"
+   ]
+  ],
+  "rows": [
+   [
     "",
+    "",
+    "through multiple multimodal tasks, we trained an end-to-end model with (a) a speech encoder",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "2.0) postfixed with a length adapter, (b) text encoder (NLLB encoder), and",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "M-adaptor [Zhao et al., 2022], where we replaced the 3 independent pooling modules for Q,",
     "",
     ""
    ],
@@ -1378,118 +2016,122 @@
     "",
     "",
     "",
-    "",
-    "",
-    "",
     ""
    ],
    [
     "",
     "",
+    "The model is fine-tuned to jointly optimize the following objective functions:",
+    "",
+    ""
+   ],
+   [
     "",
     "|y|",
     "",
     "",
-    "",
     ""
    ],
    [
     "",
-    "LS2TT = −",
     "",
-    "X",
-    "log p(ytext",
+    "LS2TT = − X log p(ytext |ytext , xspeech),",
     "",
-    "|ytext <t , xspeech),",
-    "(3)"
+    ""
    ],
    [
-    "",
-    "",
-    "",
     "",
     "",
     "t",
-    "",
+    "<t",
     ""
-   ]
-  ],
-  "rows": [
+   ],
    [
-    "",
-    "",
     "",
     "t=1",
     "",
     "",
-    "",
     ""
    ],
    [
-    "",
-    "",
     "",
     "|y|",
     "",
     "",
-    "",
     ""
    ],
    [
     "",
-    "LT2TT = −",
     "",
-    "X",
-    "log p(ytext",
+    "LT2TT = − X log p(ytext |ytext , xtext),",
     "",
-    "|ytext <t , xtext),",
-    "(4)"
+    ""
    ],
    [
-    "",
-    "",
-    "",
     "",
     "",
     "t",
-    "",
+    "<t",
     ""
    ],
    [
-    "",
-    "",
     "",
     "t=1",
     "",
     "",
+    ""
+   ],
+   [
+    "the",
+    "source",
+    "text and",
+    "speech",
+    "in"
+   ],
+   [
+    "is the target text in the target language <ℓt>.",
+    "",
+    "",
     "",
     ""
    ],
    [
     "",
     "",
+    "objective function in the form of token-level knowledge distillation (LKD), to further transfer",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "knowledge from the strong MT model to the student speech translation task (S2TT).",
+    "",
+    ""
+   ],
+   [
     "|y|",
     "",
     "",
     "",
+    ""
+   ],
+   [
+    "LKD = X DKL",
     "",
+    "",
+    "p(.|ytext , xtext) ∥p(.|ytext , xspeech)",
     ""
    ],
    [
     "",
     "",
-    "X",
-    "p(.|ytext",
-    "<t , xtext) ∥p(.|ytext",
+    "<t",
     "",
-    "",
-    "(5)"
+    "<t"
    ],
    [
-    "",
-    "",
     "t=1",
-    "",
     "",
     "",
     "",
@@ -1501,43 +2143,6 @@
   "page": 36,
   "headers": [
    [
-    "gap while being parameter-efficient.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "4.3.3 Stage3 Finetuning for S2ST",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "previous stages of fine-tuning remains unchanged.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "4.4 The SeamlessM4T Models",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "zero-shot to reach the coverage described in table 2 of 100-eng.",
     "",
     "",
     "",
@@ -1548,7 +2153,102 @@
   ],
   "rows": [
    [
-    "SeamlessM4T-Medium has the same coverage as SeamlessM4T-Large but builds on",
+    "4.3.3",
+    "Stage3",
+    "Finetuning",
+    "for",
+    "",
+    ""
+   ],
+   [
+    "In the",
+    "last",
+    "",
+    "",
+    "initialized the",
+    "(see"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "with (1) the pre-trained X2T model and (2) the pre-trained T2U model and fine-tuned on a",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "combination of X–eng and eng–X S2ST translation data totaling 121K hours (see breakdown",
+    ""
+   ],
+   [
+    "in figure 8).",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "the T2U component.",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "4.4",
+    "The",
+    "",
+    "Models",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "With all the components laid out in the previous sections, we trained the SeamlessM4T-",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Large model in the outlined three stages.",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "is fine-tuned on T2TT for 95 languages paired with English, on ASR for 96 languages, on",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "S2TT for 89 languages paired with English, and on S2ST for 95 directions into English and",
+    ""
+   ],
+   [
     "",
     "",
     "",
@@ -1558,29 +2258,106 @@
    ],
    [
     "",
+    "in tables 38 and 39.",
     "",
-    "w2v-BERT 2.0∗",
     "",
-    "T2TT",
-    "T2U",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "zero-shot to reach the coverage described in table 2 of 100-eng.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "To provide a reasonably sized model, we followed the same recipe to train SeamlessM4T-",
+    ""
+   ],
+   [
+    "Medium.",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "to be",
+    "an",
+    "test",
+    "to",
+    "fine-tune,",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "SeamlessM4T-Medium has the same coverage as SeamlessM4T-Large but builds on",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "smaller and more parameter-efficient components (see Figure 4).",
+    "",
+    "We pre-trained a smaller"
+   ],
+   [
+    "w2v-BERT",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "[2022] (NLLB-600M-Distilled) to initialize the T2TT modules of the multitask UnitY.",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "See a comparison between SeamlessM4T-Large and SeamlessM4T-Medium in Table 13.",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "w2v-BERT",
     "Total"
    ],
    [
     "",
+    "",
     "SeamlessM4T-Large",
     "",
     "669M",
-    "1370M",
-    "287M",
     "2326M"
    ],
    [
     "",
+    "",
     "SeamlessM4T-Medium",
     "",
     "366M",
-    "615M",
-    "170M",
     "1151M"
    ]
   ]
@@ -1591,30 +2368,6 @@
    [
     "",
     "",
-    "",
-    "",
-    "S2ST X–eng",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "(↑ASR-BLEU)",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "Fleurs",
-    "CVSS"
-   ],
-   [
-    "Model",
-    "",
     "type",
     "size",
     "",
@@ -1626,37 +2379,29 @@
     "",
     "",
     "(n=81)",
-    "(n=21)"
+    "(n=88)"
    ]
   ],
   "rows": [
    [
-    "YourTTS [Casanova et al., 2022]",
+    "Whisper-Medium (ASR)",
+    "+ NLLB-1.3B",
     "",
-    "",
-    "",
-    "",
-    ""
+    "2B",
+    "19.7",
+    "20.5"
    ],
    [
+    "Whisper-Medium (ASR)",
+    "+ NLLB-3.3B",
     "",
-    "+Whisper-Large-v2 (S2TT)",
-    "2-stage",
-    "",
-    "",
-    ""
+    "4B",
+    "20.4",
+    "21.8"
    ],
    [
-    "",
-    "",
-    "",
-    "1.6B",
-    "17.3",
-    "22.6"
-   ],
-   [
-    "",
-    "",
+    "Whisper-Large-v2",
+    "NLLB-1.3B",
     "cascaded",
     "",
     "",
@@ -1664,51 +2409,67 @@
    ],
    [
     "",
-    "+Whisper-Medium (ASR)",
     "",
-    "2.1B",
-    "19.9",
-    ""
+    "",
+    "2.8B",
+    "22.0",
+    "21.0"
    ],
    [
     "",
-    "+Whisper-Medium (ASR)",
-    "3-stage",
-    "4.1B",
-    "20.6",
-    ""
+    "",
+    "",
+    "4.8B",
+    "22.7",
+    "22.2"
+   ],
+   [
+    "Whisper-Large-v2",
+    "",
+    "",
+    "1.5B",
+    "17.9",
+    "-"
    ],
    [
     "",
-    "+Whisper-Large-v2 (ASR)+ NLLB-1.3B",
-    "cascaded",
-    "2.9B",
-    "22.1",
+    "",
+    "direct",
+    "",
+    "",
     ""
    ],
    [
+    "AudioPaLM-2-8B-AST",
     "",
-    "+Whisper-Large-v2 (ASR)+ NLLB-3.3B",
     "",
-    "4.9B",
-    "23.2",
-    ""
+    "8B",
+    "19.7",
+    "-"
    ],
    [
     "SeamlessM4T-Medium",
     "",
-    "unified",
-    "1.2B",
-    "20.4",
-    "28.1"
+    "",
+    "1B",
+    "20.9",
+    "19.2"
    ],
    [
     "SeamlessM4T-Large",
     "",
-    "unified",
-    "2.3B",
-    "25.8",
-    "36.5"
+    "direct",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "2B",
+    "24.0",
+    "21.5"
    ]
   ]
  },
@@ -1716,12 +2477,25 @@
   "page": 38,
   "headers": [
    [
+    "that",
+    "both",
+    "MMS",
+    "and",
+    "",
+    "Whisper",
+    "",
+    "support.",
     "",
     "",
     "",
-    "type",
-    "size",
+    "SeamlessM4T-Large",
     "",
+    "",
+    "",
+    "outperforms",
+    "",
+    "the",
+    "MMS",
     ""
    ],
    [
@@ -1730,23 +2504,18 @@
     "",
     "",
     "",
-    "(n=81)",
-    "(n=21)"
-   ],
-   [
-    "YourTTS [Casanova et al., 2022]",
+    "",
+    "",
+    "that leverage monolingual n-gram language models (5% WER better).",
     "",
     "",
     "",
     "",
     "",
-    ""
-   ],
-   [
     "",
-    "+Whisper-Large-v2 (S2TT)",
     "",
-    "2-stage",
+    "",
+    "",
     "",
     "",
     ""
@@ -1754,76 +2523,180 @@
   ],
   "rows": [
    [
+    "1",
+    "chrF++point.",
+    "",
+    "To",
+    "further",
+    "",
+    "understand",
     "",
     "",
+    "where",
+    "the",
+    "",
+    "improvements",
+    "",
+    "in",
+    "Fleurs",
+    "",
+    "S2TT",
+    "X–eng",
+    ""
+   ],
+   [
+    "",
+    "directions",
+    "are",
+    "coming",
+    "",
+    "from,",
+    "we",
+    "bucket",
     "",
     "",
-    "1.6B",
-    "17.3",
-    "22.6"
+    "languages",
+    "by",
+    "",
+    "resource-level",
+    "",
+    "(see",
+    "the",
+    "exact",
+    "list",
+    "of"
+   ],
+   [
+    "",
+    "languages",
+    "in",
+    "Table",
+    "38)",
+    "and",
+    "report",
+    "",
+    "average",
+    "",
+    "BLEU",
+    "",
+    "scores",
+    "per",
+    "",
+    "resource-level",
+    "",
+    "in",
+    "Table",
+    "17."
    ],
    [
     "",
     "",
     "",
-    "cascaded",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The results show that SeamlessM4T-Large strongly improves the quality of translating",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     "",
     "",
     ""
    ],
    [
     "",
-    "+Whisper-Medium (ASR)",
-    "+ NLLB-1.3B",
     "",
-    "2.1B",
-    "19.9",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "from low-resourced languages with an improvement of +7.4 BLEU (i.e., 40% improvement",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ],
    [
     "",
-    "+Whisper-Medium (ASR)",
-    "+ NLLB-3.3B",
-    "3-stage",
-    "4.1B",
-    "20.6",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "over AudioPaLM-2-8B-AST). We also average in column low†",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "over low-resource directions",
+    "",
+    "",
     ""
    ],
    [
+    "that",
+    "are",
+    "supervised",
     "",
-    "+Whisper-Large-v2 (ASR)+ NLLB-1.3B",
+    "in",
     "",
-    "cascaded",
-    "2.9B",
-    "22.1",
+    "",
+    "",
+    "AudioPaLM-2-8B-AST—the",
+    "",
+    "",
+    "",
+    "gain",
+    "of +5",
+    "BLEU",
+    "in",
+    "that",
+    "",
+    "subset",
+    "of"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "38",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
-   ],
-   [
-    "",
-    "+Whisper-Large-v2 (ASR)+ NLLB-3.3B",
-    "",
-    "",
-    "4.9B",
-    "23.2",
-    ""
-   ],
-   [
-    "SeamlessM4T-Medium",
-    "",
-    "",
-    "unified",
-    "1.2B",
-    "20.4",
-    "28.1"
-   ],
-   [
-    "SeamlessM4T-Large",
-    "",
-    "",
-    "unified",
-    "2.3B",
-    "25.8",
-    "36.5"
    ]
   ]
  },
@@ -1832,12 +2705,12 @@
   "headers": [
    [
     "",
-    "size",
-    "(n=77)",
+    "",
+    "",
+    "",
+    "size (n=77)",
     "",
     "(n=54)",
-    "",
-    "",
     "",
     "",
     ""
@@ -1849,81 +2722,81 @@
     "",
     "",
     "",
-    "(n=95)",
     "",
-    "(n=95)",
+    "",
+    "(n=95) (n=95)",
     ""
    ]
   ],
   "rows": [
    [
     "NLLB-3.3B",
+    "",
+    "",
     "3.3B",
     "",
     "x",
-    "",
     "x",
-    "",
     "60.7",
     "",
     "49.6"
    ],
    [
+    "",
     "Whisper-Large-v2",
+    "",
     "1.5B",
     "",
     "41.7",
-    "",
     "43.7",
-    "",
     "x",
     "",
     "x"
    ],
    [
+    "",
     "MMS-L61-noLM-LSAH",
+    "",
     "1.0B",
     "",
     "x",
-    "",
     "31.0",
-    "",
     "x",
     "",
     "x"
    ],
    [
-    "MMS-L1107-CCLM-LSAH",
-    "1.0B∗",
+    "",
+    "",
+    "MMS-L1107-CCLM-LSAH 1.0B∗",
+    "",
     "",
     "x",
-    "",
     "18.7",
-    "",
     "x",
     "",
     "x"
    ],
    [
+    "",
     "SeamlessM4T-Medium",
+    "",
     "1.2B",
     "",
     "21.9",
-    "",
     "22.0",
-    "",
     "55.4",
     "",
     "48.4"
    ],
    [
+    "",
     "SeamlessM4T-Large",
+    "",
     "2.3B",
     "",
     "23.1",
-    "",
     "23.7",
-    "",
     "60.8",
     "",
     "50.9"
@@ -1937,8 +2810,8 @@
     "",
     "(n=15)",
     "(n=25)",
-    "(n=34)",
-    "(n=23)",
+    "",
+    "(n=34) (n=23)",
     ""
    ]
   ],
@@ -1981,10 +2854,8 @@
   "page": 40,
   "headers": [
    [
-    "decoding options.",
     "",
-    "",
-    "",
+    "size",
     "",
     "",
     "",
@@ -1995,76 +2866,44 @@
    [
     "",
     "",
-    "",
-    "S2ST (↑ASR-BLEU)",
-    "",
-    "",
-    "",
-    "S2ST (↑Blaser 2.0)",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "Fleurs",
-    "",
-    "Fleurs",
-    "Fleurs",
-    "Fleurs",
-    "Fleurs",
-    "Fleurs",
-    "Fleurs"
-   ],
-   [
-    "Model",
-    "",
-    "X–eng",
-    "",
-    "X–eng",
-    "eng–X",
-    "eng–X",
-    "X–eng",
-    "eng–X",
-    "eng–X"
-   ],
-   [
-    "",
-    "(n=101)",
-    "",
-    "",
-    "(n=82)",
-    "(n=35)",
-    "(n=32)",
-    "(n=82)",
-    "(n=35)",
-    "(n=32)"
+    "↑BLEU",
+    "↑spBLEU",
+    "↑Blaser 2.0",
+    "↑BLEU",
+    "↑spBLEU",
+    "↑Blaser 2.0"
    ]
   ],
   "rows": [
    [
-    "SeamlessM4T-Medium",
-    "",
+    "Whisper-Large-v2",
+    "1.5B",
     "17.9",
-    "",
-    "20.8",
-    "14.3",
-    "15.4",
-    "3.62",
-    "3.63",
-    "3.63"
+    "19.9",
+    "3.29",
+    "x",
+    "x",
+    "x"
+   ],
+   [
+    "SeamlessM4T-Medium",
+    "1.2B",
+    "20.9",
+    "23.1",
+    "3.56",
+    "19.2",
+    "26.0",
+    "3.68"
    ],
    [
     "SeamlessM4T-Large",
-    "",
-    "22.7",
-    "",
-    "26.3",
-    "19.8",
+    "2.3B",
+    "24.0",
+    "26.4",
+    "3.66",
     "21.5",
-    "3.85",
-    "3.94",
-    "3.95"
+    "28.9",
+    "3.71"
    ]
   ]
  },
@@ -2073,38 +2912,121 @@
   "headers": [
    [
     "",
-    "(n=101)",
     "",
-    "(n=82)",
-    "(n=35)",
-    "(n=32)",
-    "(n=82)",
-    "(n=35)",
-    "(n=32)"
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "ASR-BLEU scores on 87 X–eng directions (the overlap between Fleurs and the",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "encoders).",
+    "",
+    "report",
+    "average"
+   ],
+   [
+    "",
+    "on 32 eng–X directions (excluding Bengali, Telugu and Northern Uzbek where",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Large-v2 ASR WER is above 100).",
+    "",
+    "",
+    "The X–eng average ASR-BLEU is higher",
+    ""
    ]
   ],
   "rows": [
    [
-    "SeamlessM4T-Medium",
+    "ASR-BLEU of S2ST X–eng (34.9 vs.",
     "",
-    "17.9",
-    "20.8",
-    "14.3",
-    "15.4",
-    "3.62",
-    "3.63",
-    "3.63"
+    "",
+    "24.6) where the eng–X average is similar to",
+    ""
+   ],
+   [
+    "21.5).",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "zero-shot T2ST is on-par with the supervised tasks and (2) that non-English",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "X–eng",
+    "eng–X",
+    "",
+    "eng–X"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "(n=88)",
+    "(n=35)",
+    "",
+    "(n=32)"
+   ],
+   [
+    "",
+    "34.9",
+    "20.7",
+    "",
+    "22.5"
+   ]
+  ]
+ },
+ "tab-model-12-1": {
+  "page": 40,
+  "headers": [],
+  "rows": [
+   [
+    "",
+    "(n=88)",
+    "(n=35)",
+    "(n=32)"
    ],
    [
     "SeamlessM4T-Large",
-    "",
-    "22.7",
-    "26.3",
-    "19.8",
-    "21.5",
-    "3.85",
-    "3.94",
-    "3.95"
+    "34.9",
+    "20.7",
+    "22.5"
    ]
   ]
  },
@@ -2112,10 +3034,22 @@
   "page": 42,
   "headers": [
    [
+    "as zero-shot.",
     "",
     "",
     "",
     "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Results",
+    "",
+    "",
+    "We summarize our ablation results in Table 21.",
     "",
     "",
     "",
@@ -2139,11 +3073,37 @@
     "",
     "",
     "",
-    "S2TT",
     "",
     "",
     "",
-    "S2ST",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "prediction learning objectives with 2 RPQ codebooks helps improve performance (C vs.",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ],
+  "rows": [
+   [
+    "Language",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     "",
     ""
    ],
@@ -2170,20 +3130,6 @@
     "",
     "",
     ""
-   ]
-  ],
-  "rows": [
-   [
-    "",
-    "",
-    "",
-    "",
-    "eng–X",
-    "",
-    "",
-    "",
-    "",
-    ""
    ],
    [
     "",
@@ -2196,6 +3142,18 @@
     "",
     "",
     ""
+   ],
+   [
+    "",
+    "Primary",
+    "Primary",
+    "Mined",
+    "Primary",
+    "Mined",
+    "Primary",
+    "Mined",
+    "Primary",
+    "Mined"
    ],
    [
     "arb",
@@ -2224,13 +3182,13 @@
    [
     "eng",
     "3,845",
-    "",
     "-",
     "-",
     "-",
-    "",
     "-",
-    "",
+    "-",
+    "-",
+    "-",
     "-"
    ],
    [
@@ -2383,10 +3341,6 @@
   "page": 44,
   "headers": [
    [
-    "Data",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -2395,78 +3349,118 @@
     ""
    ],
    [
-    "Task",
-    "S2TT",
-    "ASR∗",
-    "T2TT",
-    "S2TT",
-    "ASR",
-    "T2TT",
-    "S2TT",
-    "ASR",
-    "T2TT"
+    "",
+    "SeamlessAlign is ranked based on Sonar scores and we selected the top",
+    "",
+    "",
+    "",
+    ""
    ],
    [
     "",
-    "(n=28)",
-    "(n=15)",
-    "(n=28)",
-    "(n=28)",
-    "(n=15)",
-    "(n=28)",
-    "(n=28)",
-    "(n=15)",
-    "(n=28)"
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Metric",
-    "↑BLEU",
-    "↓WER",
-    "↑BLEU",
-    "↑BLEU",
-    "↓WER",
-    "↑BLEU",
-    "↑BLEU",
-    "↓WER",
-    "↑BLEU"
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ]
   ],
   "rows": [
    [
-    "L1: LS2TT",
-    "26.5",
-    "36.5",
-    "34.1",
-    "26.7",
-    "16.4",
-    "34.2",
-    "27.6",
-    "15.8",
-    "34.7"
+    "This signals that some filtering of",
+    "",
+    "",
+    "",
+    "SeamlessAlign —e.g.,",
+    ""
    ],
    [
-    "L2: L1 + LT2TT",
+    "",
+    "similarity scores—can improve the quality of the model’s translations",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "setting",
+    "",
+    "↑BLEU",
+    "∆",
+    "↑BLEU",
+    "∆"
+   ],
+   [
+    "",
+    "",
+    "23.9",
+    "",
+    "29.0",
+    ""
+   ],
+   [
+    "+ 200H mined",
+    "",
+    "25.9",
+    "+2.0",
+    "29.4",
+    "+0.4"
+   ],
+   [
+    "+ 400H mined",
+    "",
     "26.6",
-    "36.4",
-    "36.8",
-    "26.7",
-    "16.8",
-    "36.1",
-    "27.6",
-    "16.3",
-    "35.4"
+    "+2.7",
+    "29.8",
+    "+0.8"
    ],
    [
-    "L3: L2 + LKD",
-    "27.1",
-    "35.9",
-    "36.7",
-    "27.2",
-    "16.2",
-    "36.1",
-    "28.3",
-    "15.8",
-    "35.3"
+    "+ 600H mined",
+    "",
+    "26.0",
+    "+2.1",
+    "29.5",
+    "+0.5"
    ]
   ]
  },
@@ -2479,14 +3473,16 @@
     "",
     "",
     "",
+    "D2:",
+    "D1+ASR data",
     "",
-    "",
-    "",
-    "",
+    "D3:",
+    "D2+Mined data",
     ""
    ],
    [
     "Task",
+    "",
     "S2TT",
     "ASR∗",
     "T2TT",
@@ -2498,6 +3494,7 @@
     "T2TT"
    ],
    [
+    "",
     "",
     "(n=28)",
     "(n=15)",
@@ -2511,6 +3508,7 @@
    ],
    [
     "Metric",
+    "",
     "↑BLEU",
     "↓WER",
     "↑BLEU",
@@ -2524,7 +3522,8 @@
   ],
   "rows": [
    [
-    "L1: LS2TT",
+    "L1:",
+    "LS2TT",
     "26.5",
     "36.5",
     "34.1",
@@ -2536,7 +3535,8 @@
     "34.7"
    ],
    [
-    "L2: L1 + LT2TT",
+    "L2:",
+    "L1 + LT2TT",
     "26.6",
     "36.4",
     "36.8",
@@ -2548,7 +3548,8 @@
     "35.4"
    ],
    [
-    "L3: L2 + LKD",
+    "L3:",
+    "L2 + LKD",
     "27.1",
     "35.9",
     "36.7",
@@ -2560,6 +3561,20 @@
     "35.3"
    ],
    [
+    "Table 23:",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Results are reported",
+    ""
+   ],
+   [
+    "",
     "on Fleurs dev.",
     "",
     "",
@@ -2572,8 +3587,35 @@
     ""
    ],
    [
-    "to the desired amount of additional data.",
     "",
+    "",
+    "",
+    "",
+    "",
+    "hours of mined data in each direction, 400 hours in the second and 600 hours in the last.",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "SeamlessAlign is ranked based on Sonar scores and we selected the top ranking pairs up",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "to the desired amount of additional data.",
     "",
     "",
     "",
@@ -2587,31 +3629,80 @@
  },
  "tab-model-13-1": {
   "page": 45,
-  "headers": [
-   [
-    "",
-    "",
-    "",
-    "updates",
-    "",
-    "X–eng",
-    "eng–X"
-   ]
-  ],
+  "headers": [],
   "rows": [
    [
+    "4.6",
+    "Related",
+    "work",
     "",
     "",
     "",
     "",
-    "10K",
-    "6.9",
-    "1.8"
+    "",
+    ""
    ],
    [
-    "M1",
+    "Two-pass",
     "",
-    "T2U from scratch",
+    "sequence",
+    "",
+    "",
+    "",
+    "Two-pass decoding has the advantage of maintaining",
+    "",
+    ""
+   ],
+   [
+    "end-to-end",
+    "",
+    "optimization",
+    "capability",
+    "inheriting",
+    "the",
+    "benefits",
+    "cascading",
+    "approach."
+   ],
+   [
+    "Xia et",
+    "al. [2017]",
+    "and",
+    "al.",
+    "incorporate",
+    "an",
+    "additional",
+    "process",
+    "find"
+   ],
+   [
+    "",
+    "better output.",
+    "",
+    "",
+    "",
+    "Dalmia et al. [2021] re-ranks the intermediate hypotheses using an external",
+    "",
+    "",
+    ""
+   ],
+   [
+    "module",
+    "such",
+    "as a",
+    "model.",
+    "et al.",
+    "[2019]",
+    "injects",
+    "information",
+    "in"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
     "",
     "",
     "",
@@ -2622,45 +3713,378 @@
     "",
     "",
     "",
-    "20K",
-    "23.3",
-    "12.4"
+    "provides an intermediate output to users before generating the final output for streaming",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "applications.",
+    "",
+    "",
+    "",
+    "",
+    "The two-pass approach makes the optimization tractable and results in better",
+    "",
+    "",
+    ""
    ],
    [
     "",
     "",
     "",
     "",
-    "10K",
-    "18.1",
-    "8.8"
-   ],
-   [
-    "M2",
     "",
-    "pre-trained T2U",
     "",
-    "20K",
-    "24.2",
-    "15.2"
+    "",
+    "",
+    ""
    ],
    [
     "",
+    "Codec-based",
+    "audio",
     "",
     "",
     "",
-    "50K†",
-    "26.5",
-    "18.6"
+    "In contrast to acoustic units extracted from SSL-based",
+    "",
+    ""
    ],
    [
-    "M3",
-    "pre-trained T2U + Mined data",
     "",
     "",
-    "80K†",
-    "26.3",
-    "19.1"
+    "",
+    "",
+    "audio representation models (e.g., XLS-R in this work), recent advances in quantized, audio",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "codec auto-encoders enabled successful research combining large, autoregressive language",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "models",
+    "and",
+    "audio",
+    "Open-source",
+    "EnCodec",
+    "[D’efossez",
+    "et",
+    "and",
+    "proprietary"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "SoundStream [Zeghidour et al., 2022] models are widely known examples of quantized audio",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "auto-encoders.",
+    "",
+    "",
+    "",
+    "One advantage of codec-based units is that they can be converted back to",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "the waveform without needing an externally trained vocoder.",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "In speech translation research, VaLLE [Wang et al., 2023a] introduced the conditional",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "autoregressive modeling of EnCodec-based audio data to perform text-to-speech synthesis.",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "45",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ]
+ },
+ "tab-all-data-1": {
+  "page": 47,
+  "headers": [
+   [
+    "",
+    "the test subset.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ],
+  "rows": [
+   [
+    "1.0",
+    "model:",
+    "a",
+    "3-layer",
+    "perceptron",
+    "",
+    "with",
+    "tanh",
+    "",
+    "activations",
+    "on",
+    "top",
+    "of 6",
+    "",
+    "concatenated",
+    "",
+    "vectors"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "of normalized embeddings and their derivatives:",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "[href; hmt; hsrc ⊙hmt; |hsrc −hmt|; href ⊙",
+    "",
+    "",
+    ""
+   ],
+   [
+    "hmt; |href",
+    "",
+    "−hmt|].",
+    "",
+    "",
+    "For the QE version,",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "we used the same settings but with reference-free",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "inputs:",
+    "",
+    "",
+    "",
+    "[hsrc; hmt; hsrc ⊙hmt; |hsrc −hmt|].",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "We used the training code for BLASER 1.0 with a few modifications in the hyperparam-",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "eters intended to mitigate overfitting:",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "50% dropout, 0.1 weight decay, batch size of 1024,",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "and full linear decay of the learning rate by the end of the training.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "To compensate for the",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "increased batch size, we trained for 50 instead of 20 epochs.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Results",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Table 27 presents the performance of unsupervised and supervised BLASER on the",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "BLASER 1.0 test data.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "47",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ]
   ]
  },
@@ -2668,108 +4092,328 @@
   "page": 48,
   "headers": [
    [
+    "on the BLASER 1.0 test data.",
     "",
-    "eng-deu",
     "",
-    "eng-spa",
     "",
-    "eng-fra",
     "",
-    "spa-eng",
     "",
-    "fra-eng",
     "",
-    "rus-eng",
     "",
-    "average",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Because Blaser",
+    "",
+    "",
+    "",
+    "2.0 supports more languages, we used this for evaluations.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ]
   ],
   "rows": [
    [
-    "BLASER 1.0 unsup",
+    "the future. Full Blaser",
+    "2.0",
+    "scores",
+    "for",
+    "SeamlessM4T",
     "",
-    "0.32",
     "",
-    "0.58",
+    "models are",
     "",
-    "0.64",
-    "",
-    "0.50",
-    "",
-    "0.48",
-    "",
-    "0.43",
-    "",
-    "0.49"
+    "reported in",
+    "table",
+    "18."
    ],
    [
-    "Blaser 2.0 unsup",
+    "Additionally, the next",
+    "section",
+    "5.2",
+    "reports the",
     "",
-    "0.37",
+    "corresponding",
     "",
-    "0.75",
     "",
-    "0.71",
-    "",
-    "0.59",
-    "",
-    "0.57",
-    "",
-    "0.49",
-    "",
-    "0.58"
+    "correlations",
+    "of",
+    "Blaser",
+    "2.0"
    ],
    [
-    "Blaser 2.0 QE",
+    "scores with human scores.",
     "",
-    "0.34",
     "",
-    "0.73",
     "",
-    "0.71",
     "",
-    "0.54",
     "",
-    "0.48",
     "",
-    "0.45",
     "",
-    "0.54"
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "BLASER 1.0 sup",
+    "5.2 Human Evaluation",
     "",
-    "0.33",
     "",
-    "0.75",
     "",
-    "0.71",
     "",
-    "0.58",
     "",
-    "0.57",
     "",
-    "0.53",
     "",
-    "0.58"
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Blaser 2.0 sup",
+    "Human evaluation is a",
+    "vital",
+    "tool in",
+    "assessing",
+    "the",
+    "quality",
+    "of",
+    "our",
+    "systems.",
+    "We",
+    "first",
+    "briefly"
+   ],
+   [
+    "describe related work in",
+    "the",
+    "area,",
+    "followed by",
+    "a",
+    "detailed",
     "",
-    "0.36",
+    "description",
+    "of",
+    "the entire",
+    "human",
+    ""
+   ],
+   [
     "",
-    "0.75",
+    "evaluation process, including protocols, data, and calibration.",
     "",
-    "0.73",
     "",
-    "0.58",
     "",
-    "0.56",
     "",
-    "0.50",
     "",
-    "0.58"
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Related work.",
+    "",
+    "",
+    "",
+    "",
+    "Human evaluation has been widely applied to machine translation in the",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "scientific community.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Two of the most popular models of human evaluation are deployed",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "within the context of International Evaluation Campaigns.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The WMT conference [Kocmi",
+    "",
+    ""
+   ],
+   [
+    "et al., 2022] asks participants",
+    "",
+    "to evaluate",
+    "the",
+    "outputs",
+    "",
+    "of",
+    "translation",
+    "",
+    "systems",
+    "using a",
+    "pre-"
+   ],
+   [
+    "defined protocol, typically",
+    "that",
+    "of",
+    "Direct",
+    "Assessment",
+    "",
+    "[Graham",
+    "et",
+    "al.,",
+    "2013].",
+    "Beyond",
+    "this"
+   ],
+   [
+    "",
+    "",
+    "",
+    "text-based evaluation, the IWSLT Evaluation Campaign covers speech translation.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "As an"
+   ],
+   [
+    "example, the speech-to-speech track14",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "evaluates speech output quality in four dimensions.",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "The first one is translation",
+    "",
+    "quality,",
+    "which",
+    "focuses",
+    "on",
+    "capturing",
+    "",
+    "meaning,",
+    "and",
+    "annotators",
+    ""
+   ],
+   [
+    "rank target audio between 1 and 5.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The rest of the dimensions cover naturalness, including",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "voice and pronunciation, clarity of speech for comprehension, and sound quality, which takes",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "into account noise and other artifacts.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "These criteria are used as an alternative to the Mean",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Opinion Score (MOS).",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "14. https://iwslt.org/2023/s2s",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "48",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ]
   ]
  },
@@ -2778,92 +4422,281 @@
   "headers": [
    [
     "",
+    "shared in a later update.",
     "",
     "",
-    "Whisper-Large-v2",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "drawn from the same domain.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "the",
+    "time over",
+    "the",
+    "of",
+    "the",
+    "Fleurs",
+    "test",
+    "",
+    "partition,",
+    "varying",
+    "",
+    "between"
+   ],
+   [
+    "of",
+    "items.",
+    "We",
+    "to limit",
+    "",
+    "human",
+    "",
+    "evaluation",
+    "to 2",
+    "unique",
+    "per",
+    "Fleurs"
+   ],
+   [
+    "",
+    "sentence at most.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ]
   ],
   "rows": [
    [
+    "Language",
+    "",
+    "directions,",
+    "modalities,",
+    "",
+    "and",
+    "systems",
+    "",
+    "evaluated",
+    "",
+    "We list the languages and",
+    ""
+   ],
+   [
+    "modalities",
+    "",
+    "evaluated",
+    "each",
+    "protocol",
+    "in",
+    "Table",
+    "28.",
+    "Language",
+    "",
+    "were",
+    "made"
+   ],
+   [
+    "",
+    "",
+    "",
+    "balancing a mix of resource availability for human annotations.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The final language sample",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "captures a large human population while also representing a mix of high and mid-resource",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "languages.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "For the S2TT and S2ST tasks, we have XSTS evaluations of 24 languages in the X–eng",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "direction",
+    "for",
+    "both the",
+    "",
+    "SeamlessM4T-Large",
+    "",
+    "",
+    "and",
+    "",
+    "Whisper-Large-v2",
+    "models,",
+    "where"
+   ],
+   [
+    "generations",
+    "from",
+    "the",
+    "",
+    "SeamlessM4T-Large",
+    "",
+    "",
+    "model",
+    "were",
+    "made",
+    "slightly",
+    "earlier"
+   ],
+   [
+    "",
+    "version via fairseq (instead of",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Fairseq2) but S2TT performance has less than 0.5 BLEU",
+    "",
+    ""
+   ],
+   [
+    "",
+    "average difference.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "For eng–X, we have evaluations for the same languages but only for the",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "SeamlessM4T-Large model (with fairseq generations).",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "for a human reference system (i.e.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "the Fleurs data itself) for all languages in each direction.",
+    "",
+    ""
+   ],
+   [
+    "We",
+    "only",
+    "evaluated",
+    "",
+    "models",
+    "for",
     "S2TT",
-    "XSTS",
-    "X–eng",
-    "",
-    "242"
-   ],
-   [
-    "",
-    "",
-    "",
-    "SeamlessM4T-Large ∗1",
+    "and",
+    "plan to",
+    "extend",
+    "benchmarking",
     ""
    ],
    [
-    "S2TT",
-    "XSTS",
-    "eng–X",
-    "SeamlessM4T-Large ∗",
-    "24"
-   ],
-   [
-    "",
-    "",
-    "",
-    "Whisper-Large-v2 +YourTTS",
-    ""
-   ],
-   [
-    "S2ST",
-    "XSTS",
-    "X–eng",
-    "SeamlessM4T-Large",
-    "24"
-   ],
-   [
-    "S2ST",
-    "XSTS",
-    "eng–X",
-    "SeamlessM4T-Large",
-    "24"
-   ],
-   [
-    "",
-    "",
-    "",
-    "Whisper-Large-v2 +YourTTS",
-    ""
-   ],
-   [
-    "S2ST",
-    "MOS",
-    "X–eng",
-    "SeamlessM4T-Large",
-    "8 (arb, cmn, fra, hin,"
-   ],
-   [
     "",
     "",
     "",
     "",
-    "rus, spa, tel, tur)"
-   ],
-   [
-    "S2ST",
-    "MOS",
-    "eng–X",
-    "SeamlessM4T-Large",
-    "24"
-   ],
-   [
-    "two.",
+    "",
+    "",
+    "2-stage cascaded systems in future work for eng–X. For S2ST, we do not evaluate eng–X",
+    "",
     "",
     "",
     "",
     ""
    ],
    [
-    "Tagalog, Telugu, Thai, Turkish, Urdu, and Vietnamese.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "51",
+    "",
     "",
     "",
     "",
@@ -2876,59 +4709,117 @@
   "headers": [
    [
     "",
+    ""
+   ],
+   [
     "",
+    ""
+   ],
+   [
     "",
+    ""
+   ],
+   [
     "",
+    ""
+   ],
+   [
     "",
-    "% 3+",
-    "% 4+"
+    ""
    ]
   ],
   "rows": [
    [
-    "eng–X",
-    "",
-    "",
-    "Human reference",
-    "4.69",
-    "95.98",
-    "78.66"
+    "Evaluation",
+    ""
+   ],
+   [
+    "the",
+    ""
    ],
    [
     "",
-    "SeamlessM4T-Large",
-    "",
-    "",
-    "4.53",
-    "87.69",
-    "73.28"
+    ""
    ],
    [
     "",
-    "",
-    "",
-    "Human reference",
-    "4.67",
-    "95.23",
-    "76.86"
+    "models and languages evaluated (for both X–eng and eng–X), which are also enumerated"
    ],
    [
-    "X–eng",
-    "",
-    "Whisper-Large-v2",
-    "",
-    "4.05",
-    "70.11",
-    "58.00"
+    "in Table 30 and summarized in Table 29.",
+    ""
+   ],
+   [
+    "Large quality was above an XSTS score of 315",
+    ""
    ],
    [
     "",
-    "SeamlessM4T-Large",
+    ""
+   ],
+   [
     "",
+    ""
+   ],
+   [
     "",
-    "4.16",
-    "72.51",
-    "59.86"
+    "Notably, in the X–eng direction, we see that SeamlessM4T-Large improves translation"
+   ],
+   [
+    "",
+    "quality considerably over the Whisper-Large-v2 baseline for Swahili (an XSTS improvement"
+   ],
+   [
+    "",
+    "of 2.38), Bengali (an XSTS improvement of 1.19), Telugu (an XSTS improvement of 0.69,"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    "24 languages evaluated X–eng with regressions in 10, but only 2 languages, Japanese and"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    "15. The instructions surrounding an XSTS score of 3 are: “The two sentences are mostly equivalent, but some"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "16. The instructions for an XSTS score of 4 are:",
+    ""
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    "differences in meaning due to differences in expression (e.g., formality level, style, emphasis, potential"
+   ],
+   [
+    "implication, idioms, common metaphors).”",
+    ""
+   ],
+   [
+    "",
+    "52"
    ]
   ]
  },
@@ -2937,15 +4828,20 @@
   "headers": [
    [
     "",
-    "Seamls1",
-    "Wspr2",
-    "Hum3",
-    "Seamls",
-    "Wspr",
-    "Hum",
-    "Seamls",
-    "Wspr",
-    "Hum",
+    "",
+    "XSTS (calibrated)",
+    "",
+    "",
+    "% XSTS 3+",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ]
   ],
@@ -2957,11 +4853,7 @@
     "4.61",
     "90.2",
     "–",
-    "96.8",
-    "71.7",
-    "–",
-    "72.9",
-    "410"
+    "96.8"
    ],
    [
     "ben",
@@ -2970,11 +4862,7 @@
     "4.49",
     "92.1",
     "–",
-    "96.8",
-    "64.2",
-    "–",
-    "73.0",
-    "629"
+    "96.8"
    ],
    [
     "cat",
@@ -2983,11 +4871,7 @@
     "4.82",
     "90.1",
     "–",
-    "95.9",
-    "82.6",
-    "–",
-    "85.0",
-    "638"
+    "95.9"
    ],
    [
     "cmn",
@@ -2996,11 +4880,7 @@
     "4.69",
     "70.1",
     "–",
-    "98.0",
-    "41.7",
-    "–",
-    "69.7",
-    "636"
+    "98.0"
    ],
    [
     "deu",
@@ -3009,11 +4889,7 @@
     "4.75",
     "88.4",
     "–",
-    "96.1",
-    "72.4",
-    "–",
-    "77.5",
-    "612"
+    "96.1"
    ],
    [
     "fin",
@@ -3022,11 +4898,7 @@
     "4.66",
     "75.5",
     "–",
-    "93.0",
-    "52.1",
-    "–",
-    "61.2",
-    "632"
+    "93.0"
    ],
    [
     "fra",
@@ -3035,11 +4907,7 @@
     "4.83",
     "92.0",
     "–",
-    "98.5",
-    "83.3",
-    "–",
-    "83.3",
-    "538"
+    "98.5"
    ],
    [
     "hin",
@@ -3048,11 +4916,7 @@
     "4.51",
     "98.2",
     "–",
-    "97.4",
-    "77.6",
-    "–",
-    "74.5",
-    "388"
+    "97.4"
    ],
    [
     "ind",
@@ -3061,11 +4925,7 @@
     "4.84",
     "97.6",
     "–",
-    "98.5",
-    "83.8",
-    "–",
-    "85.8",
-    "544"
+    "98.5"
    ],
    [
     "ita",
@@ -3074,11 +4934,7 @@
     "4.56",
     "97.1",
     "–",
-    "97.4",
-    "93.8",
-    "–",
-    "90.2",
-    "612"
+    "97.4"
    ],
    [
     "jpn",
@@ -3087,11 +4943,7 @@
     "4.74",
     "66.7",
     "–",
-    "92.6",
-    "53.9",
-    "–",
-    "79.8",
-    "514"
+    "92.6"
    ],
    [
     "kor",
@@ -3100,11 +4952,7 @@
     "4.76",
     "85.7",
     "–",
-    "94.7",
-    "66.3",
-    "–",
-    "76.7",
-    "356"
+    "94.7"
    ],
    [
     "nld",
@@ -3113,11 +4961,7 @@
     "4.67",
     "88.4",
     "–",
-    "94.0",
-    "78.2",
-    "–",
-    "62.7",
-    "335"
+    "94.0"
    ],
    [
     "por",
@@ -3126,11 +4970,7 @@
     "4.8",
     "95.7",
     "–",
-    "97.6",
-    "92.2",
-    "–",
-    "90.8",
-    "632"
+    "97.6"
    ],
    [
     "ron",
@@ -3139,11 +4979,7 @@
     "4.88",
     "89.3",
     "–",
-    "98.4",
-    "77.9",
-    "–",
-    "86.8",
-    "619"
+    "98.4"
    ],
    [
     "rus",
@@ -3152,11 +4988,7 @@
     "4.76",
     "82.9",
     "–",
-    "94.3",
-    "73.2",
-    "–",
-    "78.7",
-    "597"
+    "94.3"
    ],
    [
     "spa",
@@ -3165,11 +4997,7 @@
     "4.59",
     "89.1",
     "–",
-    "96.5",
-    "82.0",
-    "–",
-    "62.9",
-    "623"
+    "96.5"
    ],
    [
     "swh",
@@ -3178,11 +5006,7 @@
     "4.81",
     "82.0",
     "–",
-    "93.1",
-    "76.6",
-    "–",
-    "90.8",
-    "466"
+    "93.1"
    ],
    [
     "tel",
@@ -3191,11 +5015,7 @@
     "4.49",
     "96.6",
     "–",
-    "97.3",
-    "89.8",
-    "–",
-    "88.0",
-    "442"
+    "97.3"
    ],
    [
     "tha",
@@ -3204,11 +5024,7 @@
     "4.65",
     "78.2",
     "–",
-    "94.7",
-    "46.5",
-    "–",
-    "70.0",
-    "643"
+    "94.7"
    ],
    [
     "tur",
@@ -3217,11 +5033,7 @@
     "4.84",
     "88.7",
     "–",
-    "97.9",
-    "74.7",
-    "–",
-    "87.5",
-    "566"
+    "97.9"
    ],
    [
     "urd",
@@ -3230,11 +5042,7 @@
     "4.52",
     "91.2",
     "–",
-    "95.1",
-    "68.9",
-    "–",
-    "76.0",
-    "283"
+    "95.1"
    ],
    [
     "vie",
@@ -3243,11 +5051,7 @@
     "4.65",
     "93.0",
     "–",
-    "95.6",
-    "85.1",
-    "–",
-    "84.6",
-    "611"
+    "95.6"
    ],
    [
     "arb",
@@ -3256,11 +5060,7 @@
     "4.59",
     "81.7",
     "62.7",
-    "95.1",
-    "62.7",
-    "43.4",
-    "72.7",
-    "410"
+    "95.1"
    ],
    [
     "ben",
@@ -3269,11 +5069,7 @@
     "4.51",
     "78.1",
     "37.0",
-    "97.6",
-    "51.8",
-    "16.2",
-    "74.7",
-    "629"
+    "97.6"
    ],
    [
     "cat",
@@ -3282,11 +5078,7 @@
     "4.79",
     "89.3",
     "84.2",
-    "95.3",
-    "81.8",
-    "76.8",
-    "82.0",
-    "638"
+    "95.3"
    ],
    [
     "cmn",
@@ -3295,11 +5087,7 @@
     "4.55",
     "58.5",
     "67.8",
-    "94.0",
-    "37.1",
-    "48.1",
-    "59.7",
-    "636"
+    "94.0"
    ],
    [
     "deu",
@@ -3308,11 +5096,7 @@
     "4.81",
     "88.4",
     "90.2",
-    "97.5",
-    "76.6",
-    "79.7",
-    "82.7",
-    "612"
+    "97.5"
    ],
    [
     "fin",
@@ -3321,11 +5105,7 @@
     "4.66",
     "61.2",
     "46.7",
-    "92.4",
-    "44.8",
-    "30.4",
-    "61.6",
-    "632"
+    "92.4"
    ],
    [
     "fra",
@@ -3334,11 +5114,7 @@
     "4.82",
     "90.0",
     "90.5",
-    "97.8",
-    "81.4",
-    "82.0",
-    "81.6",
-    "538"
+    "97.8"
    ],
    [
     "hin",
@@ -3347,11 +5123,7 @@
     "4.55",
     "87.4",
     "85.8",
-    "96.6",
-    "71.9",
-    "70.4",
-    "80.7",
-    "388"
+    "96.6"
    ],
    [
     "ind",
@@ -3360,11 +5132,7 @@
     "4.81",
     "88.2",
     "87.5",
-    "98.0",
-    "74.3",
-    "72.2",
-    "84.0",
-    "544"
+    "98.0"
    ],
    [
     "ita",
@@ -3373,11 +5141,7 @@
     "4.61",
     "94.8",
     "97.1",
-    "98.5",
-    "92.6",
-    "95.9",
-    "94.0",
-    "612"
+    "98.5"
    ],
    [
     "jpn",
@@ -3386,11 +5150,7 @@
     "4.68",
     "33.3",
     "53.1",
-    "88.9",
-    "26.3",
-    "45.1",
-    "76.8",
-    "514"
+    "88.9"
    ],
    [
     "kor",
@@ -3399,11 +5159,7 @@
     "4.74",
     "72.8",
     "90.4",
-    "96.3",
-    "50.0",
-    "70.8",
-    "72.2",
-    "356"
+    "96.3"
    ],
    [
     "nld",
@@ -3412,11 +5168,7 @@
     "4.63",
     "80.9",
     "80.0",
-    "89.9",
-    "73.1",
-    "69.9",
-    "63.3",
-    "335"
+    "89.9"
    ],
    [
     "por",
@@ -3425,11 +5177,7 @@
     "4.82",
     "92.1",
     "97.2",
-    "98.4",
-    "89.1",
-    "96.2",
-    "92.1",
-    "632"
+    "98.4"
    ],
    [
     "ron",
@@ -3438,11 +5186,7 @@
     "4.84",
     "77.2",
     "76.6",
-    "98.1",
-    "66.4",
-    "66.7",
-    "81.7",
-    "619"
+    "98.1"
    ],
    [
     "rus",
@@ -3451,11 +5195,7 @@
     "4.7",
     "78.6",
     "87.6",
-    "93.1",
-    "69.7",
-    "81.1",
-    "72.7",
-    "597"
+    "93.1"
    ],
    [
     "spa",
@@ -3464,11 +5204,7 @@
     "4.53",
     "86.8",
     "94.7",
-    "95.5",
-    "77.2",
-    "88.8",
-    "58.4",
-    "623"
+    "95.5"
    ],
    [
     "swh",
@@ -3477,11 +5213,7 @@
     "4.86",
     "60.9",
     "2.6",
-    "95.7",
-    "56.7",
-    "2.6",
-    "92.3",
-    "466"
+    "95.7"
    ],
    [
     "tel",
@@ -3490,11 +5222,7 @@
     "4.49",
     "74.4",
     "52.9",
-    "97.3",
-    "60.4",
-    "38.7",
-    "88.2",
-    "442"
+    "97.3"
    ],
    [
     "tha",
@@ -3503,11 +5231,7 @@
     "4.5",
     "47.3",
     "43.2",
-    "92.1",
-    "27.4",
-    "23.3",
-    "57.7",
-    "643"
+    "92.1"
    ],
    [
     "tur",
@@ -3516,11 +5240,7 @@
     "4.8",
     "70.5",
     "84.1",
-    "97.7",
-    "53.9",
-    "68.7",
-    "82.9",
-    "566"
+    "97.7"
    ],
    [
     "urd",
@@ -3529,11 +5249,7 @@
     "4.5",
     "67.5",
     "58.7",
-    "95.1",
-    "49.1",
-    "40.3",
-    "75.3",
-    "283"
+    "95.1"
    ],
    [
     "vie",
@@ -3542,19 +5258,11 @@
     "4.53",
     "46.3",
     "56.1",
-    "91.2",
-    "38.3",
-    "44.8",
-    "77.7",
-    "611"
+    "91.2"
    ],
    [
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "1 SeamlessM4T-Large using fairseq generations",
     "",
     "",
     "",
@@ -3568,17 +5276,9 @@
     "",
     "",
     "",
-    "",
-    "",
-    "",
-    "",
     ""
    ],
    [
-    "",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -3593,60 +5293,156 @@
   "page": 56,
   "headers": [
    [
+    "those presented in Table 29.",
+    "",
+    ""
+   ],
+   [
+    "results",
+    "for",
+    ""
+   ],
+   [
     "",
     "",
+    ""
+   ],
+   [
     "",
     "",
+    "direction, where a Whisper-Large-v2 +YourTTSbaseline has been evaluated, we see that"
+   ],
+   [
     "",
-    "% 3+",
-    "% 4+"
+    "",
+    "exceptions of Bengali, Telugu, and Swahili (where SeamlessM4T-Large scores significantly"
    ]
   ],
   "rows": [
    [
-    "eng–X",
     "",
     "",
-    "Human reference",
-    "4.67",
-    "95.38",
-    "79.45"
+    ""
    ],
    [
     "",
     "",
-    "SeamlessM4T-Large",
+    "Large still performs reasonably well, with the majority of language directions scoring at or"
+   ],
+   [
+    "above an XSTS score of 3.",
     "",
-    "3.73",
-    "58.10",
-    "36.90"
+    ""
+   ],
+   [
+    "",
+    "XSTS S2ST performance of",
+    ""
    ],
    [
     "",
     "",
-    "",
-    "Human reference",
-    "4.66",
-    "95.20",
-    "78.89"
-   ],
-   [
-    "X–eng",
-    "Whisper-Large-v2 +YourTTS",
-    "",
-    "",
-    "4.04",
-    "71.52",
-    "56.18"
+    "one is S2TT performance, where SeamlessM4T-Large is roughly on par with Whisper-"
    ],
    [
     "",
     "",
-    "SeamlessM4T-Large",
+    "Large-v2 and far surpasses performance in a few tested languages (most notably Swahili) in"
+   ],
+   [
     "",
-    "3.87",
-    "60.61",
-    "46.05"
+    "",
+    "both XSTS and automated metrics (Blaser 2.0 and BLEU), the other is S2ST performance"
+   ],
+   [
+    "",
+    "in terms automated metrics (Blaser",
+    ""
+   ],
+   [
+    "",
+    "",
+    "consistently outperforms Whisper-Large-v2 +YourTTSbaseline in the X–eng direction."
+   ],
+   [
+    "moving",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "by an average of 0.29 points for the SeamlessM4T-Large model but remained virtually"
+   ],
+   [
+    "",
+    "",
+    "unchanged (a decrease of only 0.01 points) for the Whisper-Large-v2 +YourTTSbaseline."
+   ],
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "tions much more frequently, by almost an order of magnitude, than Whisper-Large-v2"
+   ],
+   [
+    "",
+    "",
+    "+YourTTSgenerations (on X–eng direction, 206 SeamlessM4T-LargeS2ST generations"
+   ],
+   [
+    "",
+    "as",
+    "at"
+   ],
+   [
+    "",
+    "",
+    "Whisper-Large-v2 +YourTTSS2ST generations and 13 human reference items; in fra"
+   ],
+   [
+    "",
+    "(X–eng) for example, more than 10% of",
+    ""
+   ],
+   [
+    "",
+    "audio issues by at least one annotator).",
+    ""
+   ],
+   [
+    "",
+    "",
+    "least one annotator does not increase SeamlessM4T-Large XSTS scores appreciably (only"
+   ],
+   [
+    "",
+    "",
+    "3 languages X–eng have XSTS score increases of slightly more than 0.1 when audio issue"
+   ],
+   [
+    "",
+    "",
+    "items are removed, and the rest have XSTS increases of less than 0.04), but high incidence of"
+   ],
+   [
+    "reported “audio issues”",
+    "",
+    ""
+   ],
+   [
+    "performance decrease of",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "56"
    ]
   ]
  },
@@ -3655,15 +5451,20 @@
   "headers": [
    [
     "",
-    "Seamls1",
-    "Wspr2",
-    "Hum3",
-    "Seamls",
-    "Wspr",
-    "Hum",
-    "Seamls",
-    "Wspr",
-    "Hum",
+    "",
+    "XSTS (calibrated)",
+    "",
+    "",
+    "% XSTS 3+",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ]
   ],
@@ -3675,11 +5476,7 @@
     "4.59",
     "51.5",
     "–",
-    "95.4",
-    "24.9",
-    "–",
-    "74.6",
-    "410"
+    "95.4"
    ],
    [
     "ben",
@@ -3688,11 +5485,7 @@
     "4.56",
     "80.4",
     "–",
-    "96.8",
-    "41.0",
-    "–",
-    "67.9",
-    "629"
+    "96.8"
    ],
    [
     "cat",
@@ -3701,11 +5494,7 @@
     "4.85",
     "77.7",
     "–",
-    "98.3",
-    "64.3",
-    "–",
-    "90.9",
-    "638"
+    "98.3"
    ],
    [
     "cmn",
@@ -3714,11 +5503,7 @@
     "4.74",
     "31.4",
     "–",
-    "98.3",
-    "7.7",
-    "–",
-    "72.2",
-    "636"
+    "98.3"
    ],
    [
     "deu",
@@ -3727,11 +5512,7 @@
     "4.79",
     "63.4",
     "–",
-    "97.9",
-    "29.4",
-    "–",
-    "72.4",
-    "612"
+    "97.9"
    ],
    [
     "fin",
@@ -3740,11 +5521,7 @@
     "4.84",
     "32.3",
     "–",
-    "95.4",
-    "16.0",
-    "–",
-    "85.9",
-    "632"
+    "95.4"
    ],
    [
     "fra",
@@ -3753,11 +5530,7 @@
     "4.88",
     "64.5",
     "–",
-    "98.5",
-    "44.2",
-    "–",
-    "87.2",
-    "538"
+    "98.5"
    ],
    [
     "hin",
@@ -3766,11 +5539,7 @@
     "4.3",
     "94.6",
     "–",
-    "98.7",
-    "83.0",
-    "–",
-    "95.1",
-    "388"
+    "98.7"
    ],
    [
     "ind",
@@ -3779,11 +5548,7 @@
     "4.8",
     "58.1",
     "–",
-    "98.2",
-    "35.5",
-    "–",
-    "93.0",
-    "544"
+    "98.2"
    ],
    [
     "ita",
@@ -3792,11 +5557,7 @@
     "4.42",
     "86.8",
     "–",
-    "100.0",
-    "75.8",
-    "–",
-    "96.1",
-    "612"
+    "100.0"
    ],
    [
     "jpn",
@@ -3805,11 +5566,7 @@
     "4.79",
     "18.5",
     "–",
-    "91.6",
-    "11.1",
-    "–",
-    "80.5",
-    "514"
+    "91.6"
    ],
    [
     "kor",
@@ -3818,11 +5575,7 @@
     "4.27",
     "40.2",
     "–",
-    "77.0",
-    "13.8",
-    "–",
-    "39.9",
-    "356"
+    "77.0"
    ],
    [
     "nld",
@@ -3831,11 +5584,7 @@
     "4.65",
     "52.2",
     "–",
-    "90.4",
-    "32.8",
-    "–",
-    "58.8",
-    "335"
+    "90.4"
    ],
    [
     "por",
@@ -3844,11 +5593,7 @@
     "4.47",
     "81.6",
     "–",
-    "99.1",
-    "70.7",
-    "–",
-    "94.6",
-    "632"
+    "99.1"
    ],
    [
     "ron",
@@ -3857,11 +5602,7 @@
     "4.87",
     "63.3",
     "–",
-    "97.1",
-    "42.2",
-    "–",
-    "89.2",
-    "619"
+    "97.1"
    ],
    [
     "rus",
@@ -3870,11 +5611,7 @@
     "4.78",
     "40.4",
     "–",
-    "93.6",
-    "29.5",
-    "–",
-    "75.0",
-    "597"
+    "93.6"
    ],
    [
     "spa",
@@ -3883,11 +5620,7 @@
     "4.66",
     "64.2",
     "–",
-    "96.5",
-    "47.2",
-    "–",
-    "63.7",
-    "623"
+    "96.5"
    ],
    [
     "swh",
@@ -3896,11 +5629,7 @@
     "4.8",
     "45.1",
     "–",
-    "91.6",
-    "34.8",
-    "–",
-    "84.5",
-    "466"
+    "91.6"
    ],
    [
     "tel",
@@ -3909,11 +5638,7 @@
     "4.35",
     "60.0",
     "–",
-    "91.9",
-    "24.0",
-    "–",
-    "61.8",
-    "442"
+    "91.9"
    ],
    [
     "tha",
@@ -3922,11 +5647,7 @@
     "4.72",
     "46.7",
     "–",
-    "95.6",
-    "21.5",
-    "–",
-    "86.2",
-    "643"
+    "95.6"
    ],
    [
     "tur",
@@ -3935,11 +5656,7 @@
     "4.89",
     "65.4",
     "–",
-    "98.8",
-    "32.9",
-    "–",
-    "87.8",
-    "566"
+    "98.8"
    ],
    [
     "urd",
@@ -3948,11 +5665,7 @@
     "4.56",
     "71.7",
     "–",
-    "94.3",
-    "40.3",
-    "–",
-    "71.0",
-    "283"
+    "94.3"
    ],
    [
     "vie",
@@ -3961,11 +5674,7 @@
     "4.68",
     "64.5",
     "–",
-    "98.4",
-    "43.2",
-    "–",
-    "91.0",
-    "611"
+    "98.4"
    ],
    [
     "arb",
@@ -3974,11 +5683,7 @@
     "4.61",
     "62.2",
     "68.0",
-    "96.1",
-    "48.5",
-    "50.7",
-    "75.6",
-    "410"
+    "96.1"
    ],
    [
     "ben",
@@ -3987,11 +5692,7 @@
     "4.57",
     "68.0",
     "43.7",
-    "96.5",
-    "38.2",
-    "15.1",
-    "69.6",
-    "629"
+    "96.5"
    ],
    [
     "cat",
@@ -4000,11 +5701,7 @@
     "4.86",
     "77.7",
     "88.7",
-    "98.4",
-    "68.8",
-    "82.4",
-    "91.4",
-    "638"
+    "98.4"
    ],
    [
     "cmn",
@@ -4013,11 +5710,7 @@
     "4.7",
     "51.1",
     "67.6",
-    "97.0",
-    "26.7",
-    "36.6",
-    "68.6",
-    "636"
+    "97.0"
    ],
    [
     "deu",
@@ -4026,11 +5719,7 @@
     "4.77",
     "69.9",
     "85.0",
-    "95.6",
-    "49.3",
-    "60.0",
-    "72.5",
-    "612"
+    "95.6"
    ],
    [
     "fin",
@@ -4039,11 +5728,7 @@
     "4.82",
     "44.3",
     "44.9",
-    "94.6",
-    "33.1",
-    "29.1",
-    "84.7",
-    "632"
+    "94.6"
    ],
    [
     "fra",
@@ -4052,11 +5737,7 @@
     "4.87",
     "75.1",
     "92.2",
-    "98.3",
-    "64.5",
-    "80.9",
-    "85.7",
-    "538"
+    "98.3"
    ],
    [
     "hin",
@@ -4065,11 +5746,7 @@
     "4.32",
     "95.6",
     "95.6",
-    "99.0",
-    "88.4",
-    "89.7",
-    "95.4",
-    "388"
+    "99.0"
    ],
    [
     "ind",
@@ -4078,11 +5755,7 @@
     "4.78",
     "67.3",
     "84.2",
-    "97.6",
-    "57.2",
-    "76.1",
-    "92.5",
-    "544"
+    "97.6"
    ],
    [
     "ita",
@@ -4091,11 +5764,7 @@
     "4.41",
     "82.0",
     "98.4",
-    "99.3",
-    "76.3",
-    "96.4",
-    "96.1",
-    "612"
+    "99.3"
    ],
    [
     "jpn",
@@ -4104,11 +5773,7 @@
     "4.81",
     "26.7",
     "51.0",
-    "92.8",
-    "20.2",
-    "39.9",
-    "81.3",
-    "514"
+    "92.8"
    ],
    [
     "kor",
@@ -4117,11 +5782,7 @@
     "4.32",
     "40.4",
     "66.0",
-    "82.0",
-    "18.5",
-    "37.1",
-    "40.7",
-    "356"
+    "82.0"
    ],
    [
     "nld",
@@ -4130,11 +5791,7 @@
     "4.63",
     "58.5",
     "71.9",
-    "89.6",
-    "49.9",
-    "54.6",
-    "55.8",
-    "335"
+    "89.6"
    ],
    [
     "por",
@@ -4143,11 +5800,7 @@
     "4.49",
     "74.7",
     "98.7",
-    "99.4",
-    "70.1",
-    "96.2",
-    "95.9",
-    "632"
+    "99.4"
    ],
    [
     "ron",
@@ -4156,11 +5809,7 @@
     "4.84",
     "67.9",
     "81.1",
-    "96.4",
-    "52.0",
-    "65.9",
-    "86.9",
-    "619"
+    "96.4"
    ],
    [
     "rus",
@@ -4169,11 +5818,7 @@
     "4.78",
     "55.4",
     "82.6",
-    "92.5",
-    "46.1",
-    "74.2",
-    "76.2",
-    "597"
+    "92.5"
    ],
    [
     "spa",
@@ -4182,11 +5827,7 @@
     "4.62",
     "65.2",
     "93.4",
-    "95.7",
-    "52.5",
-    "83.6",
-    "61.2",
-    "623"
+    "95.7"
    ],
    [
     "swh",
@@ -4195,11 +5836,7 @@
     "4.76",
     "41.2",
     "1.3",
-    "89.7",
-    "32.6",
-    "0.9",
-    "80.0",
-    "466"
+    "89.7"
    ],
    [
     "tel",
@@ -4208,11 +5845,7 @@
     "4.39",
     "72.6",
     "58.1",
-    "94.8",
-    "44.3",
-    "30.1",
-    "62.9",
-    "442"
+    "94.8"
    ],
    [
     "tha",
@@ -4221,11 +5854,7 @@
     "4.72",
     "48.8",
     "56.0",
-    "95.6",
-    "31.9",
-    "33.4",
-    "86.6",
-    "643"
+    "95.6"
    ],
    [
     "tur",
@@ -4234,11 +5863,7 @@
     "4.86",
     "57.8",
     "81.3",
-    "97.3",
-    "37.1",
-    "62.4",
-    "85.5",
-    "566"
+    "97.3"
    ],
    [
     "urd",
@@ -4247,11 +5872,7 @@
     "4.56",
     "66.8",
     "72.4",
-    "92.6",
-    "40.6",
-    "48.4",
-    "72.1",
-    "283"
+    "92.6"
    ],
    [
     "vie",
@@ -4260,17 +5881,9 @@
     "4.69",
     "53.7",
     "73.0",
-    "98.4",
-    "37.6",
-    "57.8",
-    "92.5",
-    "611"
+    "98.4"
    ],
    [
-    "",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -4286,17 +5899,9 @@
     "",
     "",
     "",
-    "",
-    "",
-    "",
-    "",
     ""
    ],
    [
-    "",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -4309,91 +5914,330 @@
  },
  "tab-modality-2-1": {
   "page": 61,
-  "headers": [],
+  "headers": [
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ],
   "rows": [
    [
-    "S2TT",
-    "eng–X",
-    "Blaser 2.0",
-    "0.750",
-    "0.505"
+    "4, and",
+    "11",
+    "",
+    "received",
+    "naturalness",
+    "",
+    "scores",
+    "above",
+    "3.",
+    "we",
+    "also",
+    "measured"
    ],
    [
+    "",
+    "",
+    "",
+    "“Clarity of Speech” and “Sound Quality” MOS aspects.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "We find that for languages where both",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Whisper-Large-v2 +YourTTSand SeamlessM4T-Large were measured (all X–eng),",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "SeamlessM4T-Large averaged 0.67 points higher in sound quality and 0.79 points higher in",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "clarity of speech over Whisper-Large-v2 +YourTTS(SeamlessM4T-Large surpassed",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "the human reference in the “clarity of speech”",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "and “sound quality”",
+    "",
+    "aspects for all 8 X–eng",
+    ""
+   ],
+   [
+    "",
+    "languages measured).",
+    "",
+    "",
+    "",
+    "",
+    "In the eng–X direction, for the “clarity of speech”",
+    "",
+    "",
+    "",
+    "aspect, 20 languages",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "scored above a 3 for SeamlessM4T-Large, with 4 languages scoring above a 4; for the",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "“sound quality”",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "aspect, all languages scored above a 3, with 13 languages scoring above a 4.",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "Correlations",
+    "",
     "",
     "",
     "BLEU",
-    "0.053",
-    "0.355"
-   ],
-   [
     "",
-    "X–eng",
-    "Blaser 2.0",
-    "0.923",
-    "0.871"
-   ],
-   [
+    "and",
+    "XSTS",
     "",
-    "",
-    "BLEU",
-    "0.822",
-    "0.776"
-   ],
-   [
-    "",
-    "All",
-    "Blaser 2.0",
-    "0.913",
-    "0.827"
+    "In Table 33 and visualized in",
+    ""
    ],
    [
     "",
     "",
-    "BLEU",
-    "0.626",
-    "0.625"
-   ],
-   [
-    "S2ST",
-    "eng–X",
-    "Blaser 2.0",
-    "0.727",
-    "0.675"
+    "",
+    "",
+    "",
+    "",
+    "Figure 15, we compare the strength of correlations between automated metrics (ASR-BLEU",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
     "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "ASR-BLEU and BLEU",
+    ""
+   ],
+   [
+    "are",
+    "computed",
+    "",
+    "corpus",
+    "",
+    "",
+    "language",
+    "level",
+    "Blaser",
+    "scores",
+    "are",
+    "computed"
+   ],
+   [
+    "by",
+    "averaging",
+    "sentence-level",
+    "",
+    "(supervised)",
+    "",
+    "Blaser",
+    "2.0",
+    "scores",
+    "",
+    "evaluation",
+    "set."
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "automated metrics are calculated using only the items sent for human evaluation with XSTS",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "2.0 scores on"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "the language level differed only slightly from those used to generate Tables 15 and 14.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "We",
+    "find",
+    "both",
+    "with",
+    "Spearman",
+    "and",
+    "Pearson",
+    "",
+    "correlation",
+    "coefficients,",
+    "Blaser",
+    ""
+   ],
+   [
+    "has a",
+    "superior",
+    "correlation",
+    "",
+    "XSTS",
+    "over",
     "",
     "ASR-BLEU",
-    "0.154",
-    "0.292"
-   ],
-   [
-    "",
-    "X–eng",
-    "Blaser 2.0",
-    "0.854",
-    "0.756"
+    "(for",
+    "task)",
+    "and",
+    "BLEU"
    ],
    [
     "",
     "",
-    "ASR-BLEU",
-    "0.692",
-    "0.651"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "2.0 correlates much better with XSTS in the eng–X direction in",
+    "",
+    "",
+    ""
+   ],
+   [
+    "particular.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
     "",
-    "All",
-    "Blaser 2.0",
-    "0.810",
-    "0.736"
-   ],
-   [
     "",
     "",
-    "ASR-BLEU",
-    "0.514",
-    "0.561"
+    "",
+    "",
+    "",
+    "61",
+    "",
+    "",
+    "",
+    "",
+    ""
    ]
   ]
  },
@@ -4401,45 +6245,215 @@
   "page": 65,
   "headers": [
    [
-    "(≥40 content groups)",
-    "cont. groups",
     "",
-    "chrFMS↑",
     "",
-    "CoefVarMS↓",
     "",
-    "chrFMS↑",
     "",
-    "CoefVarMS↓",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ]
   ],
   "rows": [
    [
-    "X–eng S2TT for 77 langs",
     "",
-    "278",
+    "Results",
     "",
-    "40.8",
+    "Table",
+    "34",
+    "shows",
+    "the",
+    "chrFMS",
+    "and",
+    "CoefVarMS",
     "",
-    "13.7",
+    "of",
     "",
-    "45.3",
     "",
-    "9.1"
+    "SeamlessM4T-Large",
+    "",
+    ""
    ],
    [
-    "ASR for 78 langs",
+    "and",
     "",
-    "280",
     "",
-    "58.7",
+    "Whisper-Large-v2",
     "",
-    "17.0",
     "",
-    "72.5",
+    "on",
+    "Fleurs",
+    "X–eng",
+    "S2TT",
+    "and",
+    "ASR",
+    "test",
+    "sets.",
+    "We",
+    "see",
+    "that"
+   ],
+   [
     "",
-    "6.4"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "SeamlessM4T-Large outperforms Whisper-Large-v2 on CoefVarMS",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "by an average of",
+    ""
+   ],
+   [
+    "",
+    "",
+    "49.4% over the 2 tasks.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Moreover, SeamlessM4T-Large outperforms Whisper-Large-v2",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "on chrFMS",
+    "",
+    "",
+    "",
+    "by an average of 18.3%.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "These suggest the superior robustness of SeamlessM4T-",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Large when it comes to speaker variations.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "6.",
+    "",
+    "Responsible",
+    "",
+    "AI",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "In",
+    "line",
+    "with",
+    "our",
+    "",
+    "expectations",
+    "",
+    "build",
+    "systems",
+    "",
+    "responsibly,",
+    "we",
+    "focus",
+    "our",
+    "efforts",
+    "on",
+    "the"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "evaluation of added toxicity and bias.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Both of these dimensions of responsible AI have drawn",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "65",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ]
   ]
  },
@@ -4447,18 +6461,14 @@
   "page": 74,
   "headers": [
    [
-    "HolisticBias dataset (n=25).",
+    "direction.",
     "",
     "",
-    ""
-   ],
-   [
-    "experiments can be found in Table 35.",
     "",
     "",
-    ""
-   ],
-   [
+    "",
+    "",
+    "",
     "",
     "",
     "",
@@ -4468,51 +6478,283 @@
     "",
     "",
     "",
-    "arb,cat,ces,dan,deu,fra,ita,nld,por,ron,"
-   ],
-   [
     "",
-    "S2ST",
+    "",
+    "HolisticBias dataset.",
+    "",
+    "",
+    "",
+    "This dataset is relatively small",
     "",
     ""
+   ],
+   [
+    "since BLEU",
+    "",
+    "",
+    "not",
+    "enough",
+    "",
+    "lengthy",
+    "n-grams",
+    "are",
+    "matched.",
+    "For",
+    "S2ST,"
+   ],
+   [
+    "we used",
+    "",
+    "",
+    "",
+    "",
+    "proposed",
+    "in",
+    "this",
+    "It",
+    "worth",
+    "noting",
+    "that"
+   ],
+   [
+    "eng–X",
+    "direction",
+    "(overlaps",
+    "the",
+    "languages",
+    "",
+    "from",
+    "the",
+    "generated",
+    "TTS data",
+    "and",
+    "the"
    ]
   ],
   "rows": [
    [
     "",
     "",
-    "",
-    "rus,slk,spa,swe,tha,ukr,urd"
-   ],
-   [
+    "languages available in our S2ST model).",
     "",
     "",
-    "arb,bul,cat,deu,ell,fra,lvs,mar,nld,",
+    "",
+    "",
+    "",
+    "Additionally, since MMS-TTS generations are not",
+    "",
+    "",
     ""
    ],
    [
     "",
     "",
     "",
-    "arb,bel,bul,cat,ces,dan,deu,ell,fra,ita,"
-   ],
-   [
+    "",
+    "deterministic, we repeated the measurements three times for both S2ST and S2TT. The final",
     "",
     "",
-    "por,ron,rus,spa,swe,tam,tha,ukr,urd",
+    "",
+    "",
+    "",
+    "",
     ""
    ],
    [
     "",
-    "S2TT",
     "",
-    "lit,lvs,mar,nld,por,ron,rus,slk,slv,spa,"
+    "",
+    "",
+    "metric values are then averaged to ensure robustness and accuracy in our evaluations.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Models",
+    "",
+    "",
+    "",
+    "",
+    "We used the SeamlessM4T-Large model and several different baselines.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "For"
    ],
    [
     "",
     "",
     "",
-    "swe,tam,tha,ukr,urd"
+    "X–eng S2TT, we employed Whisper-Large-v2 [Radford et al., 2022].",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "As for X–eng S2ST,",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "we used YourTTS [Casanova et al., 2022] to generate synthesized speech from the output",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "of",
+    "Whisper-Large-v2",
+    "",
+    "For",
+    "",
+    "S2TT,",
+    "we",
+    "utilized",
+    "",
+    "",
+    "system:",
+    "ASR"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "from Whisper Large-v2 [Radford et al., 2022], followed by T2TT via NLLB-3.3B [NLLB",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Team et",
+    "al.,",
+    "For",
+    "SeamlessM4T-Large",
+    "",
+    "",
+    "S2TT,",
+    "we",
+    "a",
+    "size",
+    "of ten.",
+    "For"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "SeamlessM4T-Large S2ST, we set the beam size to five for both the first pass decoder and",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "the second pass decoder.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "As for the baseline, we set the beam size to five for NLLB-3.3B",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "and used the default values for Whisper-Large-v2 and YourTTS.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "21. The transcription is done by Whisper-Large-v2 and Whisper-Medium [Radford et al., 2022] for eng–X",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "and X–eng respectively.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "chrF has been calculated the same way as S2TT except that in S2ST the text",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "22. The list of language codes for these 14 languages:",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "arb,cat,deu,eng,fra,nld,por,ron,rus,spa,swe,tha,ukr,urd.",
+    "",
+    "",
+    ""
    ]
   ]
  },
@@ -4523,99 +6765,183 @@
     "",
     "",
     "",
-    "Average",
-    "Count",
-    "Diff"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ]
   ],
   "rows": [
    [
-    "Cultural",
-    "12.2",
-    "10.3",
-    "11.3",
-    "238",
-    "1.9"
+    "that",
+    "mark",
+    "grammatical",
+    "gender",
+    "towards",
+    "",
+    "English.",
+    "Figure",
+    "21",
+    "shows",
+    "the",
+    "results",
+    ""
    ],
    [
-    "Body type",
-    "14.2",
-    "13.0",
-    "13.6",
-    "2550",
-    "1.2"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "language for SeamlessM4T-Large and Whisper-Large-v2 or Whisper-Large-v2 +",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Socioeconomic class",
-    "14.4",
-    "13.1",
-    "13.7",
-    "272",
-    "1.3"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Religion",
-    "16.3",
-    "14.5",
-    "15.4",
-    "1224",
-    "1.9"
+    "•",
+    "In",
+    "the",
+    "performance",
+    "is",
+    "better",
+    "when",
+    "translating",
+    "",
+    "from",
+    "the",
+    "masculine",
+    "reference"
    ],
    [
-    "Gender and sex",
-    "16.7",
-    "15.7",
-    "16.2",
-    "1224",
-    "1.0"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "for most languages (15 out of 18 for SeamlessM4T-Large and 16 out of 18 for the",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Ability",
-    "16.9",
-    "15.5",
-    "16.2",
-    "2244",
-    "1.4"
+    "",
+    "",
+    "Whisper-Large-v2).",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "However, they have different biases towards different languages.",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Age",
-    "17.7",
-    "15.8",
-    "16.7",
-    "612",
-    "1.9"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The highest differences between the masculine and feminine forms in SeamlessM4T-",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Characteristics",
-    "17.7",
-    "15.9",
-    "16.8",
-    "1292",
-    "1.8"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Large are with Tamil (6.4 chrF points difference) and Urdu (5.0).23",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "On the other"
    ],
    [
-    "Race ethnicity",
-    "18.0",
-    "16.4",
-    "17.2",
-    "612",
-    "1.7"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "23. We find that in our experiment, Arabic shows the bias toward the cases when translated from feminine",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Sexual orientation",
-    "18.4",
-    "16.9",
-    "17.7",
-    "476",
-    "1.5"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "version, which contrasts with the findings in the Multilingual HolisticBias [Costa-jussà et al., 2023]",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Nationality",
-    "18.7",
-    "17.3",
-    "18.0",
-    "204",
-    "1.3"
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "77",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ]
   ]
  },
@@ -4626,58 +6952,241 @@
     "",
     "",
     "",
-    "eng–X SeamlessM4T/Whisper-Large-v2 + NLLB-3.3B",
     "",
     "",
-    "",
-    "",
-    "",
+    "feminine (∆= ω(M −F)/ω(min(M, F)), ω ∈{chrF, ASR-chrF, Blaser 2.0}).",
     ""
    ],
    [
     "",
     "",
     "",
-    "Feminine Reference",
     "",
     "",
-    "Masculine Reference",
-    "",
-    "",
-    "∆%"
+    "when considering the difference between masculine and feminine references and",
+    ""
    ],
    [
-    "S2TT",
+    "body",
+    "type,",
+    "religion,",
     "",
-    "chrF",
+    "characteristics",
     "",
-    "45.0/47.4",
+    "observations"
+   ],
+   [
     "",
     "",
-    "49.9/52.7",
+    "",
+    "reported in Costa-jussà et al. [2023] pertaining to T2TT.",
+    "",
     "",
     ""
    ]
   ],
   "rows": [
    [
+    "6.3.4",
+    "Gender",
+    "data",
     "",
-    "ASR-chrF",
+    "representation",
     "",
-    "",
-    "",
-    "44.9",
-    "",
-    "",
-    "49.7",
-    "10.6"
+    ""
    ],
    [
-    "S2ST",
-    "Blaser 2.0",
     "",
     "",
     "",
+    "Based on our concurrent work [Muller et al., 2023],",
+    "",
+    "",
+    "we discuss the"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "several datasets by focusing on how different genders are represented using",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "The closest work that studies gender representation in data is Choubey et al.",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "the authors took on this research question using a synthetic dataset.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "did not share the details of the lexical nouns used to extract this",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "HolisticBias [Smith et al., 2022] provides a list of gendered nouns and",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "rely on this list to track how many sentences in our data sets contain gendered",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "our analysis is only in English, we tokenize for word boundaries using python",
+    ""
+   ],
+   [
+    "",
+    "regular expression (\\b).",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "scalable to multiple languages [Muller et al., 2023].",
+    "",
+    "",
+    ""
+   ],
+   [
+    "nouns25;",
+    "4",
+    "masculine",
+    "pronouns,26;",
+    "",
+    "10",
+    "and 4"
+   ],
+   [
+    "matched",
+    "single",
+    "words,",
+    "hence",
+    "we",
+    "report",
+    "words"
+   ],
+   [
+    "words in",
+    "the",
+    "dataset.",
+    "Figure",
+    "23",
+    "summarizes",
+    "of the"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Results show that masculine"
+   ],
+   [
+    "",
+    "",
+    "is predominant in most of the datasets.",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "matching of gendered words based on our selected vocabulary) are found in",
+    "",
+    ""
+   ],
+   [
+    "25.",
+    "",
+    "",
+    "",
+    "",
+    "man, men, bro, bros, guy, guys, boy, boys, father, fathers, dad, dads, son, sons,",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "grandfather, grandfathers, grandpa, grandpas, brother, brothers.",
+    "",
+    ""
+   ],
+   [
+    "26.",
+    "he, him, his, himself.",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "27. woman, women, lady, ladies, girl, girls, mother, mothers, mom, moms, daughter,",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "grandmother, grandmothers, grandma, grandmas, sister, sisters",
+    "",
+    ""
+   ],
+   [
+    "28.",
+    "she, her, hers, herself.",
     "",
     "",
     "",
@@ -4690,98 +7199,21 @@
     "",
     "",
     "",
-    "3.6",
-    "",
-    "",
-    "3.7",
-    "0.6"
-   ],
-   [
-    "",
-    "",
-    "",
-    "X–eng SeamlessM4T/Whisper-Large-v2 (+ YourTTS)",
-    "",
-    "",
-    "",
-    "",
     "",
     ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "Feminine Source",
-    "",
-    "",
-    "Masculine Source",
-    "",
-    "",
-    "∆%"
-   ],
-   [
-    "S2TT",
-    "",
-    "chrF",
-    "",
-    "52.4/50.4",
-    "",
-    "",
-    "54.3/52.1",
-    "",
-    "3.7/3.4"
-   ],
-   [
-    "",
-    "ASR-chrF",
-    "",
-    "",
-    "53.1/52.2",
-    "",
-    "",
-    "55.0/54.0",
-    "",
-    "3.5/3.5"
-   ],
-   [
-    "S2ST",
-    "Blaser 2.0",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "3.5/2.7",
-    "",
-    "",
-    "3.6/2.8",
-    "2.9/3.7"
    ]
   ]
  },
  "tab-B-1": {
   "page": 108,
-  "headers": [],
-  "rows": [
+  "headers": [
    [
+    "Total",
+    "",
+    "40,012 50,596 12,682",
     "",
     "",
     "",
-    "12,682",
-    "",
-    "",
-    "5,701",
     "",
     "",
     "",
@@ -4790,7 +7222,9 @@
     "",
     "",
     ""
-   ],
+   ]
+  ],
+  "rows": [
    [
     "afr",
     "106",
@@ -4798,13 +7232,12 @@
     "",
     "low",
     "2069",
-    "",
     "lit",
     "40",
     "283",
     "",
-    "",
     "low",
+    "",
     "1920",
     ""
    ],
@@ -4815,7 +7248,6 @@
     "",
     "low",
     "1921",
-    "",
     "ltz",
     "0",
     "0",
@@ -4832,14 +7264,13 @@
     "400",
     "high",
     "1959",
-    "200",
     "lug",
     "369",
     "368",
     "",
     "",
-    "medium",
-    "1890",
+    "medium 1890",
+    "",
     ""
    ],
    [
@@ -4849,14 +7280,13 @@
     "",
     "low",
     "1776",
-    "",
     "luo",
     "0",
     "0",
     "",
-    "zero-shot",
     "",
-    "1975",
+    "zero-shot 1975",
+    "",
     ""
    ],
    [
@@ -4866,13 +7296,12 @@
     "",
     "low",
     "2014",
-    "",
     "lvs",
     "100",
     "98",
     "",
-    "",
     "low",
+    "",
     "1779",
     ""
    ],
@@ -4883,14 +7312,13 @@
     "",
     "low",
     "1698",
-    "",
     "mai",
     "0",
     "0",
     "",
-    "zero-shot",
     "",
-    "2004",
+    "zero-shot 2004",
+    "",
     ""
    ],
    [
@@ -4898,15 +7326,14 @@
     "0",
     "0",
     "",
-    "",
+    "zero-shot",
     "0",
-    "",
     "mal",
     "110",
     "57",
     "",
-    "",
     "low",
+    "",
     "1754",
     ""
    ],
@@ -4917,13 +7344,12 @@
     "",
     "low",
     "1901",
-    "",
     "mar",
     "112",
     "108",
     "",
-    "",
     "low",
+    "",
     "1848",
     ""
    ],
@@ -4934,13 +7360,12 @@
     "",
     "high",
     "1641",
-    "",
     "mkd",
     "145",
     "143",
     "",
-    "",
     "low",
+    "",
     "1918",
     ""
    ],
@@ -4951,13 +7376,12 @@
     "400",
     "high",
     "1987",
-    "200",
-    "mlt",
+    "",
     "157",
     "151",
     "74",
-    "",
     "low",
+    "",
     "1699",
     "200"
    ],
@@ -4968,14 +7392,13 @@
     "",
     "low",
     "2113",
-    "",
     "mni",
     "0",
     "0",
     "",
-    "zero-shot",
     "",
-    "1257",
+    "zero-shot 1257",
+    "",
     ""
    ],
    [
@@ -4985,7 +7408,6 @@
     "",
     "low",
     "1881",
-    "",
     "mri",
     "0",
     "0",
@@ -5002,13 +7424,12 @@
     "400",
     "high",
     "1781",
-    "200",
-    "mya",
+    "",
     "137",
     "125",
     "",
-    "",
     "low",
+    "",
     "1860",
     ""
    ],
@@ -5017,15 +7438,14 @@
     "0",
     "0",
     "",
-    "",
+    "zero-shot",
     "2020",
-    "",
     "nld",
-    "1734",
-    "1780",
-    "400",
     "",
+    "",
+    "400",
     "high",
+    "",
     "2249",
     "200"
    ],
@@ -5036,13 +7456,12 @@
     "400",
     "high",
     "2066",
-    "200",
     "nor",
     "214",
     "193",
     "",
-    "",
     "low",
+    "",
     "2134",
     ""
    ],
@@ -5053,13 +7472,12 @@
     "",
     "low",
     "2001",
-    "",
     "npi",
     "153",
     "129",
     "",
-    "",
     "low",
+    "",
     "1714",
     ""
    ],
@@ -5070,7 +7488,6 @@
     "400",
     "high",
     "1947",
-    "",
     "nso",
     "0",
     "0",
@@ -5087,13 +7504,12 @@
     "400",
     "medium",
     "1676",
-    "",
     "nya",
     "103",
     "99",
     "",
-    "",
     "low",
+    "",
     "2058",
     ""
    ],
@@ -5104,7 +7520,6 @@
     "400",
     "medium",
     "1954",
-    "200",
     "oci",
     "0",
     "0",
@@ -5121,13 +7536,12 @@
     "",
     "high",
     "2043",
-    "200",
     "ory",
     "89",
     "86",
     "",
-    "",
     "low",
+    "",
     "1721",
     ""
    ],
@@ -5138,13 +7552,12 @@
     "",
     "medium",
     "1725",
-    "",
     "pan",
     "196",
     "193",
     "",
-    "",
     "low",
+    "",
     "1641",
     ""
    ],
@@ -5155,14 +7568,13 @@
     "",
     "high",
     "0",
-    "",
     "pbt",
     "131",
     "121",
     "400",
     "",
-    "medium",
-    "1847",
+    "medium 1847",
+    "",
     ""
    ],
    [
@@ -5172,13 +7584,12 @@
     "400",
     "medium",
     "1803",
-    "200",
     "pes",
     "386",
     "68",
     "",
-    "",
     "low",
+    "",
     "1980",
     ""
    ],
@@ -5189,13 +7600,12 @@
     "",
     "medium",
     "1998",
-    "",
     "pol",
     "341",
     "446",
     "400",
-    "",
     "high",
+    "",
     "1914",
     "200"
    ],
@@ -5206,14 +7616,13 @@
     "400",
     "high",
     "1933",
-    "200",
-    "por",
+    "",
     "269",
     "246",
     "400",
     "",
-    "medium",
-    "2250",
+    "medium 2250",
+    "",
     "200"
    ],
    [
@@ -5223,13 +7632,12 @@
     "",
     "high",
     "2304",
-    "200",
     "ron",
     "182",
     "443",
     "400",
-    "",
     "high",
+    "",
     "2131",
     "200"
    ],
@@ -5238,16 +7646,15 @@
     "0",
     "0",
     "",
-    "",
+    "zero-shot",
     "0",
-    "",
     "rus",
     "264",
     "144",
     "400",
     "",
-    "medium",
-    "2161",
+    "medium 2161",
+    "",
     "200"
    ],
    [
@@ -5255,9 +7662,8 @@
     "0",
     "0",
     "",
-    "",
+    "zero-shot",
     "1766",
-    "",
     "sat",
     "0",
     "0",
@@ -5274,14 +7680,13 @@
     "",
     "low",
     "1973",
-    "",
     "slk",
     "142",
     "390",
     "400",
     "",
-    "medium",
-    "1931",
+    "medium 1931",
+    "",
     "200"
    ],
    [
@@ -5291,13 +7696,12 @@
     "",
     "low",
     "2116",
-    "",
     "slv",
     "107",
     "370",
     "",
-    "",
     "low",
+    "",
     "1800",
     ""
    ],
@@ -5308,14 +7712,13 @@
     "",
     "low",
     "1990",
-    "",
     "sna",
     "0",
     "0",
     "",
-    "zero-shot",
     "",
-    "2067",
+    "zero-shot 2067",
+    "",
     ""
    ],
    [
@@ -5323,16 +7726,15 @@
     "0",
     "0",
     "",
-    "",
+    "zero-shot",
     "0",
-    "",
     "snd",
     "0",
     "0",
     "",
-    "zero-shot",
     "",
-    "1958",
+    "zero-shot 1958",
+    "",
     ""
    ],
    [
@@ -5342,13 +7744,12 @@
     "",
     "low",
     "2092",
-    "",
     "som",
     "143",
     "140",
     "",
-    "",
     "low",
+    "",
     "1851",
     ""
    ],
@@ -5359,13 +7760,12 @@
     "400",
     "medium",
     "2066",
-    "200",
     "spa",
-    "1514",
-    "1285",
+    "",
     "",
     "",
     "high",
+    "",
     "2505",
     "200"
    ],
@@ -5376,13 +7776,12 @@
     "",
     "medium",
     "2119",
-    "",
     "srp",
     "101",
     "98",
     "",
-    "",
     "low",
+    "",
     "1910",
     ""
    ],
@@ -5393,13 +7792,12 @@
     "",
     "medium",
     "1900",
-    "",
     "swe",
     "129",
     "91",
     "",
-    "",
     "low",
+    "",
     "1810",
     "200"
    ],
@@ -5410,14 +7808,13 @@
     "",
     "low",
     "1696",
-    "",
     "swh",
     "361",
     "50",
     "400",
     "",
-    "medium",
-    "1930",
+    "medium 1930",
+    "",
     "200"
    ],
    [
@@ -5427,14 +7824,13 @@
     "",
     "low",
     "1738",
-    "",
     "tam",
     "256",
     "64",
     "400",
     "",
-    "medium",
-    "1569",
+    "medium 1569",
+    "",
     ""
    ],
    [
@@ -5444,14 +7840,13 @@
     "400",
     "medium",
     "1818",
-    "200",
     "tel",
     "89",
     "80",
     "400",
     "",
-    "medium",
-    "1934",
+    "medium 1934",
+    "",
     ""
    ],
    [
@@ -5461,13 +7856,12 @@
     "",
     "low",
     "2059",
-    "",
     "tgk",
     "99",
     "98",
     "",
-    "",
     "low",
+    "",
     "1820",
     ""
    ],
@@ -5478,14 +7872,13 @@
     "400",
     "high",
     "2278",
-    "200",
     "tgl",
     "99",
     "93",
     "400",
     "",
-    "medium",
-    "2015",
+    "medium 2015",
+    "",
     ""
    ],
    [
@@ -5495,14 +7888,13 @@
     "",
     "medium",
     "2122",
-    "",
     "tha",
     "189",
     "59",
     "400",
     "",
-    "medium",
-    "1941",
+    "medium 1941",
+    "",
     "101"
    ],
    [
@@ -5512,14 +7904,13 @@
     "400",
     "high",
     "1798",
-    "200",
     "tur",
     "169",
     "100",
     "400",
     "",
-    "medium",
-    "2135",
+    "medium 2135",
+    "",
     "200"
    ],
    [
@@ -5527,9 +7918,8 @@
     "0",
     "0",
     "",
-    "",
+    "zero-shot",
     "0",
-    "",
     "umb",
     "0",
     "0",
@@ -5546,14 +7936,13 @@
     "208",
     "low",
     "1954",
-    "",
     "ukr",
     "132",
     "75",
     "400",
     "",
-    "medium",
-    "2052",
+    "medium 2052",
+    "",
     "200"
    ],
    [
@@ -5563,14 +7952,13 @@
     "",
     "low",
     "1639",
-    "",
     "urd",
     "185",
     "145",
     "400",
     "",
-    "medium",
-    "1844",
+    "medium 1844",
+    "",
     "200"
    ],
    [
@@ -5580,14 +7968,13 @@
     "",
     "medium",
     "1895",
-    "",
     "uzn",
     "166",
     "96",
     "400",
     "",
-    "medium",
-    "1801",
+    "medium 1801",
+    "",
     "200"
    ],
    [
@@ -5595,16 +7982,15 @@
     "0",
     "0",
     "",
-    "",
+    "zero-shot",
     "0",
-    "",
     "vie",
     "194",
     "151",
     "400",
     "",
-    "medium",
-    "2396",
+    "medium 2396",
+    "",
     "200"
    ],
    [
@@ -5614,7 +8000,6 @@
     "",
     "low",
     "1657",
-    "",
     "wol",
     "",
     "",
@@ -5631,7 +8016,6 @@
     "",
     "low",
     "1661",
-    "",
     "xho",
     "0",
     "0",
@@ -5648,13 +8032,12 @@
     "",
     "low",
     "1839",
-    "",
     "yor",
     "132",
     "130",
     "",
-    "",
     "low",
+    "",
     "1384",
     ""
    ],
@@ -5665,13 +8048,12 @@
     "400",
     "medium",
     "2125",
-    "",
     "yue",
     "167",
     "124",
     "",
-    "",
     "low",
+    "",
     "1931",
     ""
    ],
@@ -5682,13 +8064,12 @@
     "",
     "low",
     "1959",
-    "",
     "zlm",
     "155",
     "161",
     "",
-    "",
     "low",
+    "",
     "0",
     ""
    ],
@@ -5697,15 +8078,14 @@
     "0",
     "0",
     "",
-    "",
+    "zero-shot",
     "0",
-    "",
     "zul",
     "62",
     "55",
     "",
-    "",
     "low",
+    "",
     "2063",
     ""
    ]
@@ -5717,7 +8097,7 @@
    [
     "",
     "",
-    "",
+    "Total 26,254 23,171 49,425 21,983",
     "",
     "",
     "",
@@ -5841,8 +8221,8 @@
     "292",
     "246",
     "652",
-    "221",
-    "mya",
+    "",
+    "",
     "123",
     "0",
     "0",
@@ -5855,10 +8235,10 @@
     "0",
     "0",
     "nld",
-    "1,777",
-    "1,061",
-    "1,003",
-    "962"
+    "",
+    "",
+    "",
+    ""
    ],
    [
     "bul",
@@ -5889,8 +8269,8 @@
     "437",
     "522",
     "832",
-    "528",
-    "nya",
+    "",
+    "",
     "99",
     "0",
     "0",
@@ -5910,11 +8290,11 @@
    ],
    [
     "cmn",
-    "350",
-    "1,318",
-    "857",
-    "1,388",
-    "ory",
+    "",
+    "",
+    "350 1,318 857 1,388 ory",
+    "",
+    "",
     "84",
     "0",
     "0",
@@ -5925,8 +8305,8 @@
     "93",
     "197",
     "700",
-    "185",
-    "pan",
+    "",
+    "",
     "188",
     "0",
     "0",
@@ -5937,8 +8317,8 @@
     "368",
     "420",
     "684",
-    "450",
-    "pbt",
+    "",
+    "",
     "114",
     "0",
     "0",
@@ -5946,11 +8326,11 @@
    ],
    [
     "deu",
-    "2,570",
-    "1,661",
-    "962",
-    "1,618",
-    "pes",
+    "",
+    "",
+    "2,570 1,661 962 1,618 pes",
+    "",
+    "",
     "366",
     "0",
     "881",
@@ -5973,8 +8353,8 @@
     "128",
     "502",
     "691",
-    "477",
-    "por",
+    "",
+    "",
     "355",
     "606",
     "983",
@@ -5999,18 +8379,18 @@
     "684",
     "414",
     "rus",
-    "290",
-    "1,093",
-    "959",
-    "1,075"
+    "",
+    "",
+    "",
+    ""
    ],
    [
     "fra",
-    "2,255",
-    "2,438",
-    "937",
-    "2,303",
-    "slk",
+    "",
+    "",
+    "2,255 2,438 937 2,303 slk",
+    "",
+    "",
     "402",
     "427",
     "686",
@@ -6047,10 +8427,10 @@
     "0",
     "0",
     "spa",
-    "1,694",
-    "2,335",
-    "1,035",
-    "2,209"
+    "",
+    "",
+    "",
+    ""
    ],
    [
     "hau",
@@ -6081,8 +8461,8 @@
     "138",
     "466",
     "656",
-    "430",
-    "swh",
+    "",
+    "",
     "342",
     "411",
     "682",
@@ -6141,8 +8521,8 @@
     "248",
     "443",
     "684",
-    "375",
-    "tha",
+    "",
+    "",
     "183",
     "462",
     "641",
@@ -6163,10 +8543,10 @@
    [
     "ita",
     "930",
-    "716",
-    "1,020",
-    "636",
-    "ukr",
+    "",
+    "",
+    "",
+    "",
     "129",
     "349",
     "662",
@@ -6189,8 +8569,8 @@
     "624",
     "993",
     "681",
-    "779",
-    "uzn",
+    "",
+    "",
     "162",
     "139",
     "695",

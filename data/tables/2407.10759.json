@@ -3,32 +3,30 @@
   "page": 5,
   "headers": [
    [
-    "",
-    "",
-    "",
-    "",
-    "",
+    "SER",
+    "Speech Emotion Recognition",
+    "Meld (Poria et al., 2019)",
     "test",
-    "",
     "ACC"
    ],
    [
     "VSC",
     "Vocal Sound Classification",
-    "",
     "VocalSound (Gong et al., 2022)",
-    "",
     "test",
-    "",
     "ACC"
    ],
    [
     "",
     "",
-    "",
     "Fisher (Cieri et al., 2004)",
     "",
+    ""
+   ],
+   [
     "",
+    "",
+    "SpokenWOZ (Si et al., 2023)",
     "",
     ""
    ],
@@ -36,28 +34,33 @@
     "",
     "Chat-Benchmark-Speech",
     "",
-    "SpokenWOZ (Si et al., 2023)",
     "dev | test",
-    "",
-    "GPT-4 Eval",
-    ""
-   ],
-   [
-    "AIR-Bench",
-    "",
-    "",
-    "IEMOCAP (Si et al., 2023)",
-    "",
-    "",
-    "",
-    ""
+    "GPT-4 Eval"
    ]
   ],
   "rows": [
    [
-    "(Yang et al., 2024)",
+    "",
+    "",
+    "IEMOCAP (Si et al., 2023)",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
     "",
     "Common voice (Ardila et al., 2020)",
+    "",
+    ""
+   ],
+   [
     "",
     "",
     "",
@@ -67,58 +70,40 @@
    [
     "",
     "Chat-Benchmark-Sound",
-    "",
     "Clotho (Drossos et al., 2020)",
     "dev | test",
-    "",
-    "GPT-4 Eval",
-    ""
+    "GPT-4 Eval"
    ],
    [
     "",
     "Chat-Benchmark-Music",
     "MusicCaps (Agostinelli et al., 2023)",
-    "",
     "dev | test",
-    "",
-    "GPT-4 Eval",
-    ""
+    "GPT-4 Eval"
    ],
    [
     "",
     "",
     "Common voice (Ardila et al., 2020)",
     "",
-    "",
-    "",
-    "",
     ""
    ],
    [
     "",
-    "",
-    "",
+    "Chat-Benchmark-Mixed-Audio",
     "AudioCaps (Kim et al., 2019)",
     "dev | test",
-    "",
-    "GPT-4 Eval",
-    ""
+    "GPT-4 Eval"
    ],
    [
     "",
     "",
     "MusicCaps (Agostinelli et al., 2023)",
     "",
-    "",
-    "",
-    "",
     ""
    ],
    [
     "3",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -130,18 +115,12 @@
   "page": 6,
   "headers": [
    [
-    "",
-    "",
-    "",
-    "",
-    "",
+    "Dataset",
+    "Model",
     "",
     ""
    ],
    [
-    "",
-    "",
-    "",
     "",
     "",
     "Metrics",
@@ -149,26 +128,17 @@
    ],
    [
     "",
-    "",
-    "",
     "SpeechT5 (Ao et al., 2021)",
-    "",
     "",
     "2.1 | 5.5 | 2.4 | 5.8"
    ],
    [
     "",
-    "",
-    "",
     "SpeechNet (Chen et al., 2021)",
-    "",
     "",
     "- | - | 30.7 | -"
    ],
    [
-    "",
-    "",
-    "",
     "",
     "",
     "WER ↓",
@@ -178,35 +148,23 @@
   "rows": [
    [
     "dev-clean | dev-other |",
-    "",
-    "",
     "SALMONN (Tang et al., 2024)",
-    "",
     "",
     "- | - | 2.1 | 4.9"
    ],
    [
     "test-clean | test-other",
-    "",
-    "",
     "SpeechVerse (Das et al., 2024)",
-    "",
     "",
     "- | - | 2.1 | 4.4"
    ],
    [
     "",
-    "",
-    "",
-    "",
-    "",
+    "Qwen-Audio (Chu et al., 2023)",
     "",
     "1.8 | 4.0 | 2.0 | 4.2"
    ],
    [
-    "",
-    "",
-    "",
     "",
     "Qwen2-Audio",
     "",
@@ -214,39 +172,39 @@
    ],
    [
     "Common Voice 15",
-    "",
     "Whisper-large-v3 (Radford et al., 2023)",
     "",
-    "",
-    "",
-    ""
+    "9.3 | 12.8 | 10.9 | 10.8"
    ],
    [
-    "",
-    "",
-    "",
     "",
     "",
     "WER ↓",
     ""
    ],
    [
-    "",
     "en | zh | yue | fr",
-    "",
-    "",
     "Qwen2-Audio",
     "",
     "8.6 | 6.9 | 5.9 | 9.6"
    ],
    [
-    "",
-    "",
+    "Fleurs",
     "Whisper-large-v3 (Radford et al., 2023)",
     "",
+    "7.7"
+   ],
+   [
     "",
     "",
+    "WER ↓",
     ""
+   ],
+   [
+    "zh",
+    "Qwen2-Audio",
+    "",
+    "7.5"
    ]
   ]
  }

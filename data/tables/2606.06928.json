@@ -1,16 +1,84 @@
 {
+ "tab-3-4-1": {
+  "page": 10,
+  "headers": [
+   [
+    "Mode",
+    "",
+    "Sequence layout",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Basic TTS",
+    "",
+    "",
+    "⟨text⟩→⟨target audio⟩",
+    "",
+    ""
+   ],
+   [
+    "Voice design",
+    "",
+    "",
+    "",
+    "⟨(voice description) text⟩→⟨target audio⟩",
+    ""
+   ],
+   [
+    "",
+    "Reference cloning",
+    "",
+    "",
+    "⟨reference audio⟩| ⟨text⟩→⟨target audio⟩",
+    ""
+   ]
+  ],
+  "rows": [
+   [
+    "",
+    "Controllable cloning",
+    "",
+    "",
+    "",
+    "⟨reference audio⟩| ⟨(style description) text⟩→⟨target audio⟩"
+   ],
+   [
+    "",
+    "Continuation cloning",
+    "",
+    "",
+    "",
+    "⟨prompt text + target text⟩| ⟨prompt audio⟩→⟨target audio⟩"
+   ]
+  ]
+ },
  "tab-4-1-1": {
   "page": 13,
   "headers": [
    [
-    "Model",
     "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Params",
     "OS",
-    "test-EN",
     "",
-    "test-ZH",
     "",
-    "test-ZH-Hard",
+    "",
+    "",
+    "",
     ""
    ],
    [
@@ -18,8 +86,9 @@
     "",
     "",
     "",
+    "WER↓",
     "SIM↑",
-    "",
+    "CER↓",
     "SIM↑",
     "CER↓",
     "SIM↑"
@@ -33,11 +102,13 @@
     "",
     "",
     "",
+    "",
     ""
    ]
   ],
   "rows": [
    [
+    "",
     "MegaTTS3 (Jiang et al., 2025)",
     "0.5B",
     "✗",
@@ -50,6 +121,7 @@
    ],
    [
     "DiTAR (Jia et al., 2025)",
+    "",
     "0.6B",
     "✗",
     "1.69",
@@ -60,6 +132,7 @@
     "–"
    ],
    [
+    "",
     "CosyVoice 3 (Du et al., 2025)",
     "1.5B",
     "✗",
@@ -71,6 +144,7 @@
     "75.8"
    ],
    [
+    "",
     "Seed-TTS (Anastassiou et al., 2024)",
     "–",
     "✗",
@@ -82,6 +156,7 @@
     "77.6"
    ],
    [
+    "",
     "MiniMax-Speech (Zhang et al., 2025a)",
     "–",
     "✗",
@@ -94,6 +169,7 @@
    ],
    [
     "CosyVoice3.5",
+    "",
     "–",
     "✗",
     "1.57",
@@ -112,9 +188,11 @@
     "",
     "",
     "",
+    "",
     ""
    ],
    [
+    "",
     "F5-TTS (Chen et al., 2025b)",
     "0.3B",
     "✓",
@@ -126,6 +204,7 @@
     "71.3"
    ],
    [
+    "",
     "MaskGCT (Wang et al., 2025d)",
     "1B",
     "✓",
@@ -137,6 +216,7 @@
     "–"
    ],
    [
+    "",
     "CosyVoice (Du et al., 2024a)",
     "0.3B",
     "✓",
@@ -148,6 +228,19 @@
     "70.9"
    ],
    [
+    "",
+    "CosyVoice 2 (Du et al., 2024b)",
+    "0.5B",
+    "✓",
+    "3.09",
+    "65.9",
+    "1.38",
+    "75.7",
+    "6.83",
+    "72.4"
+   ],
+   [
+    "",
     "",
     "",
     "✓",
@@ -174,22 +267,46 @@
     "",
     "",
     "",
+    "",
+    "",
+    "",
     ""
    ],
    [
     "",
-    "Inference recipe",
-    "Sequence layout (Sec. 3.4)",
+    "",
+    "",
+    "",
+    "",
     "",
     "test-EN",
     "",
     "",
     "test-ZH",
     "",
+    "",
     "test-ZH-Hard",
     ""
    ],
    [
+    "",
+    "Inference recipe",
+    "",
+    "Sequence layout (Sec. 3.4)",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
     "",
     "",
     "",
@@ -200,6 +317,7 @@
     "",
     "SIM↑",
     "CER↓",
+    "",
     "SIM↑"
    ]
   ],
@@ -207,41 +325,50 @@
    [
     "",
     "Continuation only",
+    "",
     "⟨text | prompt⟩→⟨target⟩",
     "",
     "1.01",
-    "77.7",
     "",
+    "77.7",
     "1.97",
+    "",
     "72.6",
     "8.16",
+    "",
     "72.4"
    ],
    [
     "",
     "Reference only",
+    "",
     "⟨ref⟩| ⟨text⟩→⟨target⟩",
     "",
     "1.10",
-    "75.3",
     "",
+    "75.3",
     "1.81",
+    "",
     "67.0",
     "6.85",
+    "",
     "70.0"
    ],
    [
     "",
     "",
+    "Reference + Continuation",
+    "",
     "⟨ref⟩| ⟨text | prompt⟩→⟨target⟩",
+    "0.99",
     "",
+    "79.5",
+    "1.94",
     "",
+    "75.2",
+    "7.44",
     "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "74.9"
    ]
   ]
  },
@@ -250,10 +377,11 @@
   "headers": [
    [
     "Model",
+    "",
     "zh",
     "en",
-    "hard-zh hard-en",
-    "",
+    "hard-zh",
+    "hard-en",
     "ja",
     "ko",
     "de",
@@ -266,12 +394,13 @@
   "rows": [
    [
     "CosyVoice 2",
-    "4.08 6.32",
     "",
+    "4.08",
+    "6.32",
     "12.58",
     "11.96",
-    "9.13 19.70",
-    "",
+    "9.13",
+    "19.70",
     "–",
     "–",
     "–",
@@ -279,32 +408,49 @@
     "–"
    ],
    [
-    "CosyVoice 3-1.5B 3.91 4.99",
     "",
-    "",
+    "CosyVoice 3-1.5B",
+    "3.91",
+    "4.99",
     "9.77",
     "10.55",
     "7.57",
     "5.69",
-    "6.43 4.47 11.80 10.50 6.64",
-    "",
-    "",
-    "",
-    ""
+    "6.43",
+    "4.47",
+    "11.80",
+    "10.50",
+    "6.64"
    ],
    [
     "Fish Audio S2",
-    "2.65 2.43",
     "",
+    "2.65",
+    "2.43",
     "9.10",
     "4.40",
     "3.96",
     "2.76",
-    "2.22 2.00",
-    "",
+    "2.22",
+    "2.00",
     "6.26",
     "2.04",
     "2.78"
+   ],
+   [
+    "VoxCPM2",
+    "",
+    "3.65",
+    "5.00",
+    "8.55",
+    "8.48",
+    "5.96",
+    "5.69",
+    "4.77",
+    "3.80",
+    "9.85",
+    "4.25",
+    "5.21"
    ]
   ]
  },
@@ -312,7 +458,8 @@
   "page": 15,
   "headers": [
    [
-    "Language",
+    "",
+    "",
     "",
     "",
     "",
@@ -323,6 +470,7 @@
   "rows": [
    [
     "Arabic",
+    "",
     "1.67",
     "1.67",
     "–",
@@ -330,8 +478,9 @@
     "13.05"
    ],
    [
-    "Cantonese",
-    "34.11",
+    "",
+    "Cantonese 34.11",
+    "",
     "51.51",
     "–",
     "30.67",
@@ -339,6 +488,7 @@
    ],
    [
     "Chinese",
+    "",
     "2.25",
     "16.03",
     "0.93",
@@ -347,6 +497,7 @@
    ],
    [
     "Czech",
+    "",
     "3.88",
     "2.11",
     "–",
@@ -355,6 +506,7 @@
    ],
    [
     "Dutch",
+    "",
     "1.14",
     "0.80",
     "–",
@@ -363,6 +515,7 @@
    ],
    [
     "English",
+    "",
     "2.16",
     "2.34",
     "0.93",
@@ -371,6 +524,7 @@
    ],
    [
     "Finnish",
+    "",
     "4.67",
     "2.96",
     "–",
@@ -379,6 +533,7 @@
    ],
    [
     "French",
+    "",
     "4.10",
     "5.22",
     "2.86",
@@ -387,6 +542,7 @@
    ],
    [
     "German",
+    "",
     "1.91",
     "0.57",
     "1.24",
@@ -395,6 +551,7 @@
    ],
    [
     "Greek",
+    "",
     "2.02",
     "0.99",
     "–",
@@ -403,6 +560,7 @@
    ],
    [
     "Hindi",
+    "",
     "6.96",
     "5.83",
     "–",
@@ -410,8 +568,9 @@
     "19.70"
    ],
    [
-    "Indonesian",
-    "1.24",
+    "",
+    "Indonesian 1.24",
+    "",
     "1.06",
     "–",
     "1.46",
@@ -419,6 +578,7 @@
    ],
    [
     "Italian",
+    "",
     "1.54",
     "1.74",
     "0.95",
@@ -427,6 +587,7 @@
    ],
    [
     "Japanese",
+    "",
     "3.52",
     "10.65",
     "3.82",
@@ -435,6 +596,7 @@
    ],
    [
     "Korean",
+    "",
     "1.75",
     "1.87",
     "1.76",
@@ -443,6 +605,7 @@
    ],
    [
     "Polish",
+    "",
     "1.42",
     "0.77",
     "–",
@@ -450,16 +613,18 @@
     "1.14"
    ],
    [
-    "Portuguese",
-    "1.88",
+    "",
+    "Portuguese 1.88",
+    "",
     "1.33",
     "1.53",
     "1.14",
     "1.94"
    ],
    [
-    "Romanian",
-    "2.88",
+    "",
+    "Romanian 2.88",
+    "",
     "1.35",
     "–",
     "10.74",
@@ -467,6 +632,7 @@
    ],
    [
     "Russian",
+    "",
     "4.28",
     "3.88",
     "3.21",
@@ -475,6 +641,7 @@
    ],
    [
     "Spanish",
+    "",
     "1.03",
     "1.08",
     "1.13",
@@ -483,6 +650,7 @@
    ],
    [
     "Thai",
+    "",
     "2.70",
     "73.94",
     "–",
@@ -491,6 +659,7 @@
    ],
    [
     "Turkish",
+    "",
     "1.52",
     "0.70",
     "–",
@@ -499,6 +668,7 @@
    ],
    [
     "Ukrainian",
+    "",
     "1.08",
     "1.00",
     "–",
@@ -506,8 +676,9 @@
     "6.32"
    ],
    [
-    "Vietnamese",
-    "0.88",
+    "",
+    "Vietnamese 0.88",
+    "",
     "73.42",
     "–",
     "7.41",
@@ -527,7 +698,7 @@
     ""
    ],
    [
-    "Language",
+    "",
     "",
     "",
     "",
@@ -625,8 +796,8 @@
     "85.6"
    ],
    [
-    "Indonesian",
-    "72.9",
+    "",
+    "",
     "66.0",
     "–",
     "76.3",
@@ -665,8 +836,8 @@
     "88.4"
    ],
    [
-    "Portuguese",
-    "80.5",
+    "",
+    "",
     "71.1",
     "81.7",
     "78.1",
@@ -721,8 +892,8 @@
     "79.8"
    ],
    [
-    "Vietnamese",
-    "74.3",
+    "",
+    "",
     "36.9",
     "–",
     "74.0",
@@ -736,23 +907,26 @@
   "rows": [
    [
     "Arabic",
+    "",
     "73.6",
     "70.6",
     "–",
     "75.0",
-    ""
+    "79.1"
    ],
    [
-    "Cantonese",
-    "77.8",
+    "",
+    "Cantonese 77.8",
+    "",
     "67.0",
     "–",
     "80.5",
     "83.5"
    ],
    [
-    "Chinese",
-    "78.0",
+    "",
+    "Chinese 78.0",
+    "",
     "67.7",
     "79.9",
     "81.6",
@@ -760,6 +934,7 @@
    ],
    [
     "Czech",
+    "",
     "79.6",
     "68.5",
     "–",
@@ -768,6 +943,7 @@
    ],
    [
     "Dutch",
+    "",
     "73.8",
     "68.0",
     "–",
@@ -776,6 +952,7 @@
    ],
    [
     "English",
+    "",
     "75.6",
     "61.3",
     "77.5",
@@ -784,6 +961,7 @@
    ],
    [
     "Finnish",
+    "",
     "83.5",
     "75.9",
     "–",
@@ -792,6 +970,7 @@
    ],
    [
     "French",
+    "",
     "62.8",
     "53.5",
     "62.8",
@@ -799,8 +978,9 @@
     "73.5"
    ],
    [
-    "German",
-    "73.3",
+    "",
+    "German 73.3",
+    "",
     "61.4",
     "77.5",
     "76.7",
@@ -808,6 +988,7 @@
    ],
    [
     "Greek",
+    "",
     "82.6",
     "73.3",
     "–",
@@ -816,6 +997,7 @@
    ],
    [
     "Hindi",
+    "",
     "81.8",
     "73.0",
     "–",
@@ -823,8 +1005,9 @@
     "85.6"
    ],
    [
-    "Indonesian",
-    "72.9",
+    "",
+    "Indonesian 72.9",
+    "",
     "66.0",
     "–",
     "76.3",
@@ -832,6 +1015,7 @@
    ],
    [
     "Italian",
+    "",
     "69.9",
     "57.9",
     "81.7",
@@ -839,8 +1023,9 @@
     "78.0"
    ],
    [
-    "Japanese",
-    "77.6",
+    "",
+    "Japanese 77.6",
+    "",
     "73.8",
     "78.8",
     "79.6",
@@ -848,6 +1033,7 @@
    ],
    [
     "Korean",
+    "",
     "77.6",
     "70.0",
     "79.9",
@@ -856,6 +1042,7 @@
    ],
    [
     "Polish",
+    "",
     "80.2",
     "72.9",
     "–",
@@ -863,32 +1050,36 @@
     "88.4"
    ],
    [
-    "Portuguese",
-    "80.5",
+    "",
+    "Portuguese 80.5",
+    "",
     "71.1",
     "81.7",
     "78.1",
     "83.7"
    ],
    [
-    "Romanian",
-    "80.9",
+    "",
+    "Romanian 80.9",
+    "",
     "69.9",
     "–",
     "73.3",
     "79.7"
    ],
    [
-    "Russian",
-    "76.1",
+    "",
+    "Russian 76.1",
+    "",
     "67.6",
     "79.2",
     "79.0",
     "81.1"
    ],
    [
-    "Spanish",
-    "76.2",
+    "",
+    "Spanish 76.2",
+    "",
     "61.5",
     "81.4",
     "77.6",
@@ -896,6 +1087,7 @@
    ],
    [
     "Thai",
+    "",
     "80.0",
     "58.8",
     "–",
@@ -904,6 +1096,7 @@
    ],
    [
     "Turkish",
+    "",
     "77.9",
     "59.6",
     "–",
@@ -911,16 +1104,18 @@
     "87.1"
    ],
    [
-    "Ukrainian",
-    "73.0",
+    "",
+    "Ukrainian 73.0",
+    "",
     "64.7",
     "–",
     "74.7",
     "79.8"
    ],
    [
-    "Vietnamese",
-    "74.3",
+    "",
+    "Vietnamese 74.3",
+    "",
     "36.9",
     "–",
     "74.0",
@@ -934,6 +1129,8 @@
    [
     "",
     "",
+    "tion, DSD = descriptive-style directive, RP = role-play.",
+    "",
     "",
     "",
     "",
@@ -941,27 +1138,44 @@
     ""
    ],
    [
-    "Model",
+    "",
+    "",
+    "",
+    "",
     "InstructTTSEval-ZH",
     "",
     "",
     "InstructTTSEval-EN",
+    ""
+   ],
+   [
+    "Model",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     "",
     ""
    ],
    [
     "",
-    "APS↑",
     "",
+    "",
+    "APS↑",
+    "DSD↑",
     "RP↑",
     "APS↑",
-    "",
+    "DSD↑",
     "RP↑"
    ]
   ],
   "rows": [
    [
     "Hume",
+    "",
+    "",
     "–",
     "–",
     "–",
@@ -970,7 +1184,9 @@
     "54.3"
    ],
    [
-    "GPT-4o-mini-TTS",
+    "",
+    "",
+    "",
     "54.9",
     "52.3",
     "46.0",
@@ -979,7 +1195,9 @@
     "54.8"
    ],
    [
-    "Gemini-TTS-Pro",
+    "",
+    "",
+    "",
     "89.0",
     "90.1",
     "75.5",
@@ -988,7 +1206,9 @@
     "67.2"
    ],
    [
+    "",
     "PromptTTS (Guo et al., 2023)",
+    "",
     "–",
     "–",
     "–",
@@ -997,7 +1217,9 @@
     "31.4"
    ],
    [
+    "",
     "PromptStyle (Liu et al., 2023)",
+    "",
     "–",
     "–",
     "–",
@@ -1006,7 +1228,9 @@
     "30.9"
    ],
    [
+    "",
     "Parler-TTS-large (Lyth & King, 2024)",
+    "",
     "–",
     "–",
     "–",
@@ -1015,7 +1239,9 @@
     "31.2"
    ],
    [
+    "",
     "VoxInstruct (Zhou et al., 2024)",
+    "",
     "47.5",
     "52.3",
     "42.6",
@@ -1024,7 +1250,9 @@
     "39.3"
    ],
    [
+    "",
     "VoiceSculptor (Hu et al., 2026b)",
+    "",
     "75.7",
     "64.7",
     "61.5",
@@ -1033,6 +1261,8 @@
     "–"
    ],
    [
+    "",
+    "",
     "Mimo-Audio-7B-Instruct (Zhang et al., 2025b)",
     "75.7",
     "74.3",
@@ -1042,6 +1272,8 @@
     "59.5"
    ],
    [
+    "",
+    "",
     "Qwen3-TTS-12Hz-1.7B-VD (Hu et al., 2026a)",
     "85.2",
     "81.1",
@@ -1051,6 +1283,8 @@
     "68.4"
    ],
    [
+    "",
+    "",
     "MOSS-VoiceGenerator (Huang et al., 2026)",
     "78.0",
     "80.0",
@@ -1058,6 +1292,17 @@
     "68.2",
     "82.0",
     "68.7"
+   ],
+   [
+    "VoxCPM2",
+    "",
+    "",
+    "85.2",
+    "71.5",
+    "60.8",
+    "84.2",
+    "83.2",
+    "71.4"
    ]
   ]
  },
@@ -1066,8 +1311,8 @@
   "headers": [
    [
     "VAE",
-    "Sample Rate",
     "",
+    "Sample Rate",
     "",
     "",
     "",
@@ -1075,61 +1320,49 @@
     "",
     "",
     "",
-    "",
     "Song Describer (44kHz)",
-    "",
-    "",
     ""
    ],
    [
     "Model",
     "",
     "",
-    "MelD-48k↓",
     "",
-    "MelD-16k↓",
     "",
-    "STOI-16k↑",
     "",
-    "PESQ-16k↑",
     "",
-    "MelD-48k↓",
     "",
-    "MelD-16k↓",
+    "",
+    "",
+    "",
     ""
    ],
    [
     "",
     "Input",
+    "",
     "Output",
+    "MelD-48k↓",
+    "MelD-16k↓",
     "",
+    "STOI-16k↑",
+    "PESQ-16k↑",
+    "MelD-48k↓",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "MelD-16k↓"
    ]
   ],
   "rows": [
    [
     "VoxCPM",
     "16kHz",
+    "",
     "16kHz",
-    "",
     "1.787",
-    "",
     "0.801",
     "",
     "0.911",
-    "",
     "3.940",
-    "",
     "2.371",
     "",
     "1.246"
@@ -1137,19 +1370,30 @@
    [
     "VoxCPM1.5",
     "44kHz",
+    "",
     "44kHz",
-    "",
     "1.139",
-    "",
     "0.926",
     "",
     "0.836",
-    "",
     "3.148",
-    "",
     "1.267",
     "",
     "1.311"
+   ],
+   [
+    "VoxCPM2",
+    "16kHz",
+    "",
+    "48kHz",
+    "1.335",
+    "0.813",
+    "",
+    "0.907",
+    "3.906",
+    "1.334",
+    "",
+    "1.133"
    ]
   ]
  },
@@ -1161,14 +1405,12 @@
     "",
     "",
     "",
-    "",
     ""
    ],
    [
     "",
     "Inference path",
     "Params",
-    "",
     "RTF ↓",
     "VRAM"
    ]
@@ -1177,7 +1419,6 @@
    [
     "",
     "VoxCPM2 (PyTorch)",
-    "",
     "2B",
     "0.30",
     "∼8 GB"
@@ -1185,7 +1426,6 @@
    [
     "",
     "VoxCPM2 (Nano-vLLM)",
-    "",
     "2B",
     "0.13",
     "∼8 GB"
@@ -1193,7 +1433,6 @@
    [
     "",
     "VoxCPM1.5 (PyTorch)",
-    "",
     "0.8B",
     "0.15",
     "∼6 GB"
@@ -1201,7 +1440,6 @@
    [
     "",
     "VoxCPM (PyTorch)",
-    "",
     "0.6B",
     "0.17",
     "∼5 GB"
@@ -1212,32 +1450,32 @@
   "page": 18,
   "headers": [
    [
-    "confidence intervals.",
+    "",
     "",
     "",
     ""
    ],
    [
-    "",
     "System",
+    "",
     "N-MOS↑",
     "S-MOS↑"
    ],
    [
-    "",
     "IndexTTS2",
+    "",
     "4.78 ± 0.02",
     "4.71 ± 0.03"
    ],
    [
-    "",
     "Qwen3-TTS",
+    "",
     "4.80 ± 0.02",
     "4.69 ± 0.03"
    ],
    [
-    "",
     "Fish Audio S2",
+    "",
     "4.77 ± 0.02",
     "4.69 ± 0.03"
    ]
@@ -1250,13 +1488,31 @@
     "4.65 ± 0.03"
    ],
    [
-    "",
     "VoxCPM2",
+    "",
     "4.78 ± 0.02",
     "4.74 ± 0.03"
    ],
    [
-    "generation.",
+    "",
+    "challenging super-resolution setting: it encodes 16 kHz audio but reconstructs at 48",
+    "",
+    ""
+   ],
+   [
+    "",
+    "the asymmetric codec design introduced in Section 3.2, which gives VoxCPM2",
+    "",
+    ""
+   ],
+   [
+    "",
+    "the autoregressive backbone in a compact low-rate latent space while still enabling",
+    "",
+    ""
+   ],
+   [
+    "",
     "",
     "",
     ""
@@ -1268,101 +1524,107 @@
   "headers": [
    [
     "",
-    "",
     "OmniVoice",
-    "",
-    "",
-    "",
-    ""
+    "4.76 ± 0.02"
    ],
    [
-    "",
     "",
     "Qwen3-TTS",
-    "4.77 ± 0.02",
-    "",
-    "4.60 ± 0.03",
-    ""
+    "4.77 ± 0.02"
    ],
    [
-    "",
     "",
     "Fish Audio S2",
-    "4.76 ± 0.02",
-    "",
-    "4.70 ± 0.03",
-    ""
+    "4.76 ± 0.02"
    ],
    [
-    "",
     "",
     "VoxCPM2",
-    "4.78 ± 0.02",
-    "",
-    "4.66 ± 0.03",
-    ""
+    "4.78 ± 0.02"
    ],
    [
-    "based voice design instructions.",
     "",
-    "",
-    "",
-    "",
-    "",
+    "Table 14: Subjective results on controllable generation. I-MOS rates how well the",
     ""
    ]
   ],
   "rows": [
    [
     "",
-    "System",
     "",
-    "",
-    "N-MOS↑",
-    "",
-    "I-MOS↑"
+    ""
    ],
    [
+    "System",
     "",
+    ""
+   ],
+   [
     "VoiceSculptor",
     "",
-    "",
-    "3.69 ± 0.07",
-    "",
-    "3.56 ± 0.07"
+    ""
    ],
    [
     "",
     "Qwen3-TTS-VD",
-    "",
-    "",
-    "4.61 ± 0.03",
-    "",
-    "4.41 ± 0.04"
+    ""
    ],
    [
     "",
     "MOSS-VoiceGenerator",
-    "",
-    "",
-    "4.31 ± 0.05",
-    "",
-    "4.15 ± 0.05"
+    ""
    ],
    [
-    "",
     "VoxCPM2",
     "",
-    "",
-    "4.48 ± 0.04",
-    "",
-    "4.50 ± 0.03"
+    ""
    ],
    [
-    "Setup.",
     "",
+    "We prepare about 100 audio samples covering zero-shot voice cloning",
+    ""
+   ],
+   [
     "",
+    "Seed-TTS-Eval), multilingual synthesis (8 languages from MiniMax-MLS-Test), and",
+    ""
+   ],
+   [
     "",
+    "with diverse natural-language instructions (written by LLM). We compare VoxCPM2",
+    ""
+   ],
+   [
+    "open-source baselines drawn from Sections 4.2–4.4.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "double-blind evaluation, and the three scoring metrics are defined as follows:",
+    ""
+   ],
+   [
+    "",
+    "N-MOS (Naturalness MOS): Rates how natural and human-like the",
+    ""
+   ],
+   [
+    "",
+    "S-MOS (Similarity MOS): Rates how closely the voice matches the",
+    ""
+   ],
+   [
+    "timbre, accent and speaking styles.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "I-MOS (Instruction MOS): Rates how accurately the audio follows the",
+    ""
+   ],
+   [
     "",
     "",
     ""
@@ -1370,37 +1632,66 @@
    [
     "",
     "",
+    "The baseline selections and MOS results are shown in"
+   ],
+   [
     "",
+    "shown in Table 12, VoxCPM2 achieves strong performance in zero-shot cloning with",
+    ""
+   ],
+   [
     "",
+    "highest S-MOS of 4.74, demonstrating excellent naturalness and speaker fidelity. For",
+    ""
+   ],
+   [
     "",
+    "(Table 13), VoxCPM2 attains the highest average N-MOS of 4.78 while",
+    ""
+   ],
+   [
     "",
+    "(4.66) across eight languages. In controllable generation (Table 14), VoxCPM2",
+    ""
+   ],
+   [
+    "",
+    "(4.48) and the highest I-MOS (4.50), showing superior instruction adherence.",
+    ""
+   ],
+   [
+    "",
+    "are largely consistent with the trends observed in the objective metrics.",
+    ""
+   ],
+   [
+    "",
+    "curriculum, VoxCPM2 successfully integrates multilingual, zero-shot cloning, and",
+    ""
+   ],
+   [
+    "",
+    "within a single unified model, achieving performance comparable to or better than",
     ""
    ],
    [
     "",
     "",
+    "At the same time, these results also indicate that objective"
+   ],
+   [
     "",
-    "",
-    "",
-    "",
+    "embedding cosine similarity (SIM) do not always fully reflect perceived cloning",
     ""
    ],
    [
-    "Results and Analysis.",
     "",
-    "",
-    "",
-    "",
-    "",
+    "tend to be more sensitive to some fine-grained personal characteristics and speaking",
     ""
    ],
    [
-    "5",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "and Future",
+    "Work",
     ""
    ]
   ]
@@ -1409,35 +1700,30 @@
   "page": 19,
   "headers": [
    [
-    "based voice design instructions.",
     "",
     "",
     "",
     ""
    ],
    [
-    "",
-    "",
     "System",
+    "",
     "N-MOS↑",
     "I-MOS↑"
    ],
    [
-    "",
-    "",
     "VoiceSculptor",
+    "",
     "3.69 ± 0.07",
     "3.56 ± 0.07"
    ],
    [
-    "",
     "",
     "Qwen3-TTS-VD",
     "4.61 ± 0.03",
     "4.41 ± 0.04"
    ],
    [
-    "",
     "",
     "MOSS-VoiceGenerator",
     "4.31 ± 0.05",
@@ -1446,21 +1732,54 @@
   ],
   "rows": [
    [
-    "",
-    "",
     "VoxCPM2",
+    "",
     "4.48 ± 0.04",
     "4.50 ± 0.03"
    ],
    [
-    "Setup.",
     "",
+    "We prepare about 100 audio samples covering zero-shot voice cloning",
+    "",
+    ""
+   ],
+   [
+    "",
+    "Seed-TTS-Eval), multilingual synthesis (8 languages from MiniMax-MLS-Test), and",
+    "",
+    ""
+   ],
+   [
+    "",
+    "with diverse natural-language instructions (written by LLM). We compare VoxCPM2",
+    "",
+    ""
+   ],
+   [
+    "open-source baselines drawn from Sections 4.2–4.4.",
     "",
     "",
     ""
    ],
    [
     "",
+    "double-blind evaluation, and the three scoring metrics are defined as follows:",
+    "",
+    ""
+   ],
+   [
+    "",
+    "N-MOS (Naturalness MOS): Rates how natural and human-like the",
+    "",
+    ""
+   ],
+   [
+    "",
+    "S-MOS (Similarity MOS): Rates how closely the voice matches the",
+    "",
+    ""
+   ],
+   [
     "timbre, accent and speaking styles.",
     "",
     "",
@@ -1468,22 +1787,91 @@
    ],
    [
     "",
-    "instructions.",
+    "I-MOS (Instruction MOS): Rates how accurately the audio follows the",
+    "",
+    ""
+   ],
+   [
+    "",
     "",
     "",
     ""
    ],
    [
-    "Results and Analysis.",
     "",
     "",
     "",
     ""
    ],
    [
-    "5",
+    "",
+    "shown in Table 12, VoxCPM2 achieves strong performance in zero-shot cloning with",
+    "",
+    ""
+   ],
+   [
+    "",
+    "highest S-MOS of 4.74, demonstrating excellent naturalness and speaker fidelity. For",
+    "",
+    ""
+   ],
+   [
+    "",
+    "(Table 13), VoxCPM2 attains the highest average N-MOS of 4.78 while",
+    "",
+    ""
+   ],
+   [
+    "",
+    "(4.66) across eight languages. In controllable generation (Table 14), VoxCPM2",
+    "",
+    ""
+   ],
+   [
+    "",
+    "(4.48) and the highest I-MOS (4.50), showing superior instruction adherence.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "are largely consistent with the trends observed in the objective metrics.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "curriculum, VoxCPM2 successfully integrates multilingual, zero-shot cloning, and",
+    "",
+    ""
+   ],
+   [
+    "",
+    "within a single unified model, achieving performance comparable to or better than",
+    "",
+    ""
+   ],
+   [
     "",
     "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "embedding cosine similarity (SIM) do not always fully reflect perceived cloning",
+    "",
+    ""
+   ],
+   [
+    "",
+    "tend to be more sensitive to some fine-grained personal characteristics and speaking",
+    "",
+    ""
+   ],
+   [
+    "and Future",
+    "Work",
     "",
     ""
    ]

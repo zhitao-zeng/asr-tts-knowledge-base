@@ -449,14 +449,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-1-3-1"><span class="zh">基线。</span></span><span class="sent" data-sid="s-4-1-3-2"><span class="zh">我们将模型与最先进的零样本 TTS 系统对比，包括 NaturalSpeech 3 [8]、VALL-E [2]、VoiceBox [9]、VoiceCraft [5]、XTTS-v2 [52] 和 CosyVoice [53]。</span></span><span class="sent" data-sid="s-4-1-3-3"><span class="zh">更多（原文脚注残留，原文为：2https://github.com/microsoft/UniSpeech/tree/main/downstreams/speaker_ verification，3https://huggingface.co/facebook/hubert-large-ls960-ft）</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-1-1"><span class="cap-k">表</span><p class="en">Table 2: Evaluation results for MaskGCT and the baseline methods on LibriSpeech test-clean, SeedTTS test-en, SeedTTS test-zh. The boldface denotes the best result, the underline denotes the second best. gt length denotes the result obtained by using ground truth total speech length. The results in ‘()’ means the result is the best one selected from five random samples (rerank 5).</p><p class="zh">表 2：MaskGCT 与基线方法在 LibriSpeech test-clean、SeedTTS test-en、SeedTTS test-zh 上的评估结果。粗体表示最优结果，下划线表示次优。gt length 表示使用真实语音总长度得到的结果。「()」中的结果表示从 5 个随机样本中选出的最佳结果（rerank 5）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>System</th><th>SIM-O ↑</th><th>WER ↓</th><th></th><th>SMOS ↑</th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.68</td><td>1.94</td><td>-</td><td>4.05±0.12</td><td>0.00</td></tr>
-<tr><td>VALL-E [2]</td><td>0.50</td><td>5.90</td><td>-</td><td>3.47±0.26</td><td>-0.52±0.22</td></tr>
-<tr><td>VoiceBox [9]</td><td>0.64</td><td>2.03</td><td>0.762</td><td>3.80±0.17</td><td>-0.41±0.13</td></tr>
-<tr><td>NaturalSpeech 3 [8]</td><td>0.67</td><td>1.94</td><td>0.786</td><td>4.26±0.10</td><td>0.16±0.14</td></tr>
-<tr><td>VoiceCraft [5]</td><td>0.45</td><td>4.68</td><td>0.981</td><td>3.52±0.21</td><td>-0.33±0.16</td></tr>
-<tr><td>XTTS-v2 [52]</td><td>0.51</td><td>4.20</td><td>0.945</td><td>3.02±0.22</td><td>-0.98±0.19</td></tr>
-<tr><td>MaskGCT</td><td></td><td></td><td>0.886</td><td>4.27±0.14</td><td>0.10±0.16</td></tr>
-<tr><td>MaskGCT (gt length)</td><td>0.697</td><td>2.012</td><td>0.746</td><td>4.33±0.11</td><td>0.13±0.13</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-4-1-1"><span class="cap-k">表</span><p class="en">Table 2: Evaluation results for MaskGCT and the baseline methods on LibriSpeech test-clean, SeedTTS test-en, SeedTTS test-zh. The boldface denotes the best result, the underline denotes the second best. gt length denotes the result obtained by using ground truth total speech length. The results in ‘()’ means the result is the best one selected from five random samples (rerank 5).</p><p class="zh">表 2：MaskGCT 与基线方法在 LibriSpeech test-clean、SeedTTS test-en、SeedTTS test-zh 上的评估结果。粗体表示最优结果，下划线表示次优。gt length 表示使用真实语音总长度得到的结果。「()」中的结果表示从 5 个随机样本中选出的最佳结果（rerank 5）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>System</th><th></th><th>SIM-O ↑</th><th></th><th>WER ↓</th><th>FSD ↓</th><th>SMOS ↑</th><th>CMOS ↑</th></tr><tr><th></th><th></th><th></th><th>LibriSpeech test-clean</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td></td><td>0.68</td><td></td><td>1.94</td><td>-</td><td>4.05±0.12</td><td>0.00</td></tr>
+<tr><td>VALL-E [2]</td><td></td><td>0.50</td><td></td><td>5.90</td><td>-</td><td>3.47±0.26</td><td>-0.52±0.22</td></tr>
+<tr><td>VoiceBox [9]</td><td></td><td>0.64</td><td></td><td>2.03</td><td>0.762</td><td>3.80±0.17</td><td>-0.41±0.13</td></tr>
+<tr><td></td><td>NaturalSpeech 3 [8]</td><td>0.67</td><td></td><td>1.94</td><td>0.786</td><td>4.26±0.10</td><td>0.16±0.14</td></tr>
+<tr><td>VoiceCraft [5]</td><td></td><td>0.45</td><td></td><td>4.68</td><td>0.981</td><td>3.52±0.21</td><td>-0.33±0.16</td></tr>
+<tr><td>XTTS-v2 [52]</td><td></td><td>0.51</td><td></td><td>4.20</td><td>0.945</td><td>3.02±0.22</td><td>-0.98±0.19</td></tr>
+<tr><td>MaskGCT</td><td></td><td>0.687(0.723)</td><td></td><td>2.634(1.976)</td><td>0.886</td><td>4.27±0.14</td><td>0.10±0.16</td></tr>
+<tr><td></td><td>MaskGCT (gt length)</td><td>0.697</td><td></td><td>2.012</td><td>0.746</td><td>4.33±0.11</td><td>0.13±0.13</td></tr>
+<tr><td></td><td></td><td></td><td>SeedTTS test-en</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-system"><span class="t-zh">System</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-1">
           <p class="en-lines"><span class="sent" data-sid="s-system-1-1"><span class="en">SIM-O ↑ WER ↓ FSD ↓ SMOS ↑ CMOS ↑ LibriSpeech test-clean Ground Truth</span></span></p>
@@ -475,10 +476,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-system-13"><code>0.687(0.723) 2.634(1.976) 0.886 4.27±0.14 0.10±0.16</code></div>
 
 
-<div class="eq" id="eq-system-16"><code>SeedTTS test-en Ground Truth</code></div>
+
+
 <div class="eq" id="eq-system-17"><code>0.730 2.143 - 3.92±0.15 0.00</code></div>
 <div class="eq" id="eq-system-18"><code>CosyVoice [53]</code></div>
 <div class="eq" id="eq-system-19"><code>0.643 4.079 0.316 3.52±0.17 -0.41±0.18</code></div>
@@ -548,8 +549,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-4-2-1-1"><span class="cap-k">表</span><p class="en">Table 3: Comparison results of the evaluation of MaskGCT and AR+SoundStorm. AR+SoundStorm can be regarded as replacing the T2S MaskGCT with the AR T2S model.</p><p class="zh">表 3：MaskGCT 与 AR+SoundStorm 的评估对比结果。AR+SoundStorm 可视为把 MaskGCT 的 T2S 换成 AR T2S 模型。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>System</th><th>SIM-O ↑</th><th></th><th>WER ↓</th><th>FSD ↓</th><th>SMOS ↑</th><th>CMOS ↑</th></tr><tr><th></th><th></th><th></th><th>LibriSpeech test-clean</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>AR + SoundStorm</td><td>0.672</td><td></td><td>3.267</td><td>0.998</td><td>4.20±0.17</td><td>-0.02±0.20</td></tr>
-<tr><td></td><td>MaskGCT</td><td>0.687</td><td></td><td>2.634</td><td>0.886</td><td>4.27±0.14</td><td>0.10±0.16</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-4-2-1-1"><span class="cap-k">表</span><p class="en">Table 3: Comparison results of the evaluation of MaskGCT and AR+SoundStorm. AR+SoundStorm can be regarded as replacing the T2S MaskGCT with the AR T2S model.</p><p class="zh">表 3：MaskGCT 与 AR+SoundStorm 的评估对比结果。AR+SoundStorm 可视为把 MaskGCT 的 T2S 换成 AR T2S 模型。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>System</th><th></th><th>SIM-O ↑</th><th>WER ↓</th><th>FSD ↓</th><th>SMOS ↑</th><th>CMOS ↑</th></tr><tr><th></th><th></th><th></th><th>LibriSpeech test-clean</th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>AR + SoundStorm</td><td>0.672</td><td>3.267</td><td>0.998</td><td>4.20±0.17</td><td>-0.02±0.20</td></tr>
+<tr><td>MaskGCT</td><td></td><td>0.687</td><td>2.634</td><td>0.886</td><td>4.27±0.14</td><td>0.10±0.16</td></tr>
+<tr><td></td><td></td><td></td><td>SeedTTS test-en</td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-system-2"><span class="t-zh">System</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-system-2-1-1"><span class="en">SIM-O ↑ WER ↓ FSD ↓ SMOS ↑ CMOS ↑ LibriSpeech test-clean AR + SoundStorm</span></span></p>
@@ -559,11 +561,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-system-2-4"><code>SeedTTS test-en AR + SoundStorm</code></div>
+
 <div class="eq" id="eq-system-2-5"><code>0.683 2.846 0.323 4.03±0.23 -0.05±0.22</code></div>
 
 <div class="eq" id="eq-system-2-7"><code>0.717 2.623 0.188 4.24±0.12 0.03±0.14</code></div>
-<div class="eq" id="eq-system-2-8"><code>SeedTTS test-zh AR + SoundStorm</code></div>
+
 <div class="eq" id="eq-system-2-9"><code>0.747 3.865 0.238 3.78±0.23 -0.32±0.19</code></div>
 
 <div class="eq" id="eq-system-2-11"><code>0.774 2.273 0.106 4.09±0.12 0.05±0.17</code></div></section>
@@ -618,18 +620,18 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-2-1"><span class="zh">实验表明，MaskGCT 具有强大的风格克隆能力。</span></span><span class="sent" data-sid="s-4-3-2-2"><span class="zh">口音模仿上，MaskGCT 取得最高的 SIM-O 0.717，接近真实语音的 0.747。</span></span><span class="sent" data-sid="s-4-3-2-3"><span class="zh">它还保持了有竞争力的 WER 6.382，以及最好的 Accent SIM 0.645。</span></span><span class="sent" data-sid="s-4-3-2-4"><span class="zh">此外，MaskGCT 的 CMOS 0.23、SMOS 4.24、Accent SMOS 4.38 均领先。</span></span><span class="sent" data-sid="s-4-3-2-5"><span class="zh">情感模仿上，MaskGCT 取得最高的 SIM-O 0.600。</span></span><span class="sent" data-sid="s-4-3-2-6"><span class="zh">它还取得了有竞争力的 WER 12.502 和很强的 Emotion SIM 0.822。</span></span><span class="sent" data-sid="s-4-3-2-7"><span class="zh">此外，MaskGCT 在所有主观指标上领先：CMOS -0.31、SMOS 4.07、Emotion SMOS 3.76，说明其情感模仿自然且悦耳。</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-3-1"><span class="cap-k">表</span><p class="en">Table 4: Evaluation results for MaskGCT and the baseline methods on accent imitation. System SIM-O ↑ WER ↓ Accent SIM ↑ CMOS ↑ SMOS ↑ Accent SMOS ↑ Accent Corpus L2-Arctit Ground Truth 0.747 10.903 0.633 0.00 - - VALL-E 0.403 10.721 0.485 -1.04±0.50 3.12±0.41 2.77±0.45 CosyVoice 0.653 6.660 0.640 0.10±0.19 4.23±0.18 3.99±0.23 VoiceBox 0.475 6.181 0.575 -0.55±0.22 3.93±0.25 3.49±0.29 VoiceCraft 0.438 10.072 0.517 -0.39±0.22 3.51±0.33 3.29±0.28 MaskGCT 0.717 6.382 0.645 0.23±0.17 4.24±0.16 4.38±0.25</p><p class="zh">表 4：MaskGCT 与基线在口音模仿（accent imitation）上的评测结果。表头：System × SIM-O↑ × WER↓ × Accent SIM↑ × CMOS↑ × SMOS↑ × Accent SMOS↑——Accent Corpus L2-Arctic：Ground Truth 0.747/10.903/0.633/0.00/-/-；VALL-E 0.403/10.721/0.485/-1.04±0.50/3.12±0.41/2.77±0.45；CosyVoice 0.653/6.660/0.640/0.10±0.19/4.23±0.18/3.99±0.23；VoiceBox 0.475/6.181/0.575/-0.55±0.22/3.93±0.25/3.49±0.29；VoiceCraft 0.438/10.072/0.517/-0.39±0.22/3.51±0.33/3.29±0.28；MaskGCT 0.717/6.382/0.645/0.23±0.17/4.24±0.16/4.38±0.25。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>Accent Corpus L2-Arctit</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.747</td><td>10.903</td><td></td><td></td><td>0.633</td><td></td><td>0.00</td><td></td><td>-</td><td></td><td></td><td>-</td></tr>
-<tr><td>VALL-E</td><td>0.403</td><td>10.721</td><td></td><td></td><td>0.485</td><td></td><td>-1.04±0.50</td><td>3.12±0.41</td><td></td><td></td><td>2.77±0.45</td><td></td></tr>
-<tr><td>CosyVoice</td><td>0.653</td><td>6.660</td><td></td><td></td><td>0.640</td><td></td><td>0.10±0.19</td><td>4.23±0.18</td><td></td><td></td><td>3.99±0.23</td><td></td></tr>
-<tr><td>VoiceBox</td><td>0.475</td><td>6.181</td><td></td><td></td><td>0.575</td><td></td><td>-0.55±0.22</td><td>3.93±0.25</td><td></td><td></td><td>3.49±0.29</td><td></td></tr>
-<tr><td>VoiceCraft</td><td>0.438</td><td>10.072</td><td></td><td></td><td>0.517</td><td></td><td>-0.39±0.22</td><td>3.51±0.33</td><td></td><td></td><td>3.29±0.28</td><td></td></tr>
-<tr><td>MaskGCT</td><td>0.717</td><td>6.382</td><td></td><td></td><td>0.645</td><td></td><td>0.23±0.17</td><td>4.24±0.16</td><td></td><td></td><td>4.38±0.25</td><td></td></tr></tbody></table></div></div>
-<div class="cap" id="tab-4-3-2"><span class="cap-k">表</span><p class="en">Table 5: Evaluation results for MaskGCT and the baseline methods on emotion imitation. System SIM-O ↑ WER ↓ Emotion SIM ↑ CMOS ↑ SMOS ↑ Emotion SMOS ↑ Emotion Corpus ESD Ground Truth 0.673 11.792 0.936 0.00 - - VALL-E 0.396 15.731 0.735 -1.43±0.33 2.52±0.38 2.63±0.36 CosyVoice 0.575 10.139 0.839 -0.45±0.18 3.98±0.19 3.66±0.19 VoiceBox 0.451 12.647 0.811 -0.65±0.20 3.81±0.16 3.61±0.19 VoiceCraft 0.345 16.042 0.788 -0.60±0.24 3.42±0.31 3.52±0.25 MaskGCT 0.600 12.502 0.822 -0.31±0.17 4.07±0.16 3.76±0.25</p><p class="zh">表 5：MaskGCT 与基线在情绪模仿（emotion imitation）上的评测结果。表头同上——Emotion Corpus ESD：Ground Truth 0.673/11.792/0.936/0.00/-/-；VALL-E 0.396/15.731/0.735/-1.43±0.33/2.52±0.38/2.63±0.36；CosyVoice 0.575/10.139/0.839/-0.45±0.18/3.98±0.19/3.66±0.19；VoiceBox 0.451/12.647/0.811/-0.65±0.20/3.81±0.16/3.61±0.19；VoiceCraft 0.345/16.042/0.788/-0.60±0.24/3.42±0.31/3.52±0.25；MaskGCT 0.600/12.502/0.822/-0.31±0.17/4.07±0.16/3.76±0.25。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>Emotion Corpus ESD</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.673</td><td>11.792</td><td></td><td>0.936</td><td></td><td>0.00</td><td></td><td>-</td><td></td><td></td><td>-</td></tr>
-<tr><td>VALL-E</td><td>0.396</td><td>15.731</td><td></td><td>0.735</td><td></td><td>-1.43±0.33</td><td>2.52±0.38</td><td></td><td></td><td>2.63±0.36</td><td></td></tr>
-<tr><td>CosyVoice</td><td>0.575</td><td>10.139</td><td></td><td>0.839</td><td></td><td>-0.45±0.18</td><td>3.98±0.19</td><td></td><td></td><td>3.66±0.19</td><td></td></tr>
-<tr><td>VoiceBox</td><td>0.451</td><td>12.647</td><td></td><td>0.811</td><td></td><td>-0.65±0.20</td><td>3.81±0.16</td><td></td><td></td><td>3.61±0.19</td><td></td></tr>
-<tr><td>VoiceCraft</td><td>0.345</td><td>16.042</td><td></td><td>0.788</td><td></td><td>-0.60±0.24</td><td>3.42±0.31</td><td></td><td></td><td>3.52±0.25</td><td></td></tr>
-<tr><td>MaskGCT</td><td>0.600</td><td>12.502</td><td></td><td>0.822</td><td></td><td>-0.31±0.17</td><td>4.07±0.16</td><td></td><td></td><td>3.76±0.25</td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-4-3-1"><span class="cap-k">表</span><p class="en">Table 4: Evaluation results for MaskGCT and the baseline methods on accent imitation. System SIM-O ↑ WER ↓ Accent SIM ↑ CMOS ↑ SMOS ↑ Accent SMOS ↑ Accent Corpus L2-Arctit Ground Truth 0.747 10.903 0.633 0.00 - - VALL-E 0.403 10.721 0.485 -1.04±0.50 3.12±0.41 2.77±0.45 CosyVoice 0.653 6.660 0.640 0.10±0.19 4.23±0.18 3.99±0.23 VoiceBox 0.475 6.181 0.575 -0.55±0.22 3.93±0.25 3.49±0.29 VoiceCraft 0.438 10.072 0.517 -0.39±0.22 3.51±0.33 3.29±0.28 MaskGCT 0.717 6.382 0.645 0.23±0.17 4.24±0.16 4.38±0.25</p><p class="zh">表 4：MaskGCT 与基线在口音模仿（accent imitation）上的评测结果。表头：System × SIM-O↑ × WER↓ × Accent SIM↑ × CMOS↑ × SMOS↑ × Accent SMOS↑——Accent Corpus L2-Arctic：Ground Truth 0.747/10.903/0.633/0.00/-/-；VALL-E 0.403/10.721/0.485/-1.04±0.50/3.12±0.41/2.77±0.45；CosyVoice 0.653/6.660/0.640/0.10±0.19/4.23±0.18/3.99±0.23；VoiceBox 0.475/6.181/0.575/-0.55±0.22/3.93±0.25/3.49±0.29；VoiceCraft 0.438/10.072/0.517/-0.39±0.22/3.51±0.33/3.29±0.28；MaskGCT 0.717/6.382/0.645/0.23±0.17/4.24±0.16/4.38±0.25。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>Accent Corpus L2-Arctit</th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.747</td><td>10.903</td><td>0.633</td><td>0.00</td><td>-</td><td>-</td></tr>
+<tr><td>VALL-E</td><td>0.403</td><td>10.721</td><td>0.485</td><td>-1.04±0.50</td><td>3.12±0.41</td><td>2.77±0.45</td></tr>
+<tr><td>CosyVoice</td><td>0.653</td><td>6.660</td><td>0.640</td><td>0.10±0.19</td><td>4.23±0.18</td><td>3.99±0.23</td></tr>
+<tr><td>VoiceBox</td><td>0.475</td><td>6.181</td><td>0.575</td><td>-0.55±0.22</td><td>3.93±0.25</td><td>3.49±0.29</td></tr>
+<tr><td>VoiceCraft</td><td>0.438</td><td>10.072</td><td>0.517</td><td>-0.39±0.22</td><td>3.51±0.33</td><td>3.29±0.28</td></tr>
+<tr><td>MaskGCT</td><td>0.717</td><td>6.382</td><td>0.645</td><td>0.23±0.17</td><td>4.24±0.16</td><td>4.38±0.25</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-4-3-2"><span class="cap-k">表</span><p class="en">Table 5: Evaluation results for MaskGCT and the baseline methods on emotion imitation. System SIM-O ↑ WER ↓ Emotion SIM ↑ CMOS ↑ SMOS ↑ Emotion SMOS ↑ Emotion Corpus ESD Ground Truth 0.673 11.792 0.936 0.00 - - VALL-E 0.396 15.731 0.735 -1.43±0.33 2.52±0.38 2.63±0.36 CosyVoice 0.575 10.139 0.839 -0.45±0.18 3.98±0.19 3.66±0.19 VoiceBox 0.451 12.647 0.811 -0.65±0.20 3.81±0.16 3.61±0.19 VoiceCraft 0.345 16.042 0.788 -0.60±0.24 3.42±0.31 3.52±0.25 MaskGCT 0.600 12.502 0.822 -0.31±0.17 4.07±0.16 3.76±0.25</p><p class="zh">表 5：MaskGCT 与基线在情绪模仿（emotion imitation）上的评测结果。表头同上——Emotion Corpus ESD：Ground Truth 0.673/11.792/0.936/0.00/-/-；VALL-E 0.396/15.731/0.735/-1.43±0.33/2.52±0.38/2.63±0.36；CosyVoice 0.575/10.139/0.839/-0.45±0.18/3.98±0.19/3.66±0.19；VoiceBox 0.451/12.647/0.811/-0.65±0.20/3.81±0.16/3.61±0.19；VoiceCraft 0.345/16.042/0.788/-0.60±0.24/3.42±0.31/3.52±0.25；MaskGCT 0.600/12.502/0.822/-0.31±0.17/4.07±0.16/3.76±0.25。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th>Emotion Corpus ESD</th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.673</td><td>11.792</td><td>0.936</td><td></td><td>0.00</td><td>-</td><td>-</td></tr>
+<tr><td>VALL-E</td><td>0.396</td><td>15.731</td><td>0.735</td><td></td><td>-1.43±0.33</td><td>2.52±0.38</td><td>2.63±0.36</td></tr>
+<tr><td>CosyVoice</td><td>0.575</td><td>10.139</td><td>0.839</td><td></td><td>-0.45±0.18</td><td>3.98±0.19</td><td>3.66±0.19</td></tr>
+<tr><td>VoiceBox</td><td>0.451</td><td>12.647</td><td>0.811</td><td></td><td>-0.65±0.20</td><td>3.81±0.16</td><td>3.61±0.19</td></tr>
+<tr><td>VoiceCraft</td><td>0.345</td><td>16.042</td><td>0.788</td><td></td><td>-0.60±0.24</td><td>3.42±0.31</td><td>3.52±0.25</td></tr>
+<tr><td>MaskGCT</td><td>0.600</td><td>12.502</td><td>0.822</td><td></td><td>-0.31±0.17</td><td>4.07±0.16</td><td>3.76±0.25</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-4"><span class="secnum">4.4</span> <span class="t-zh">消融实验</span><span class="t-en">Ablation Study</span></h3><div class="pblk" id="p-4-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-4-1-1"><span class="en">Inference Timesteps.</span></span> <span class="sent" data-sid="s-4-4-1-2"><span class="en">We explore the impact of inference steps of the T2S model on the results, ranging from 5 steps to 75 steps.</span></span> <span class="sent" data-sid="s-4-4-1-3"><span class="en">Initially, SIM increases significantly and stabilizes after 25 steps.</span></span> <span class="sent" data-sid="s-4-4-1-4"><span class="en">For test-zh, it rises from 0.761 at 5 steps to 0.771 at 75 steps, and for test-en, from 0.696 to 0.715.</span></span> <span class="sent" data-sid="s-4-4-1-5"><span class="en">SIM peaks around 25 steps.</span></span> <span class="sent" data-sid="s-4-4-1-6"><span class="en">WER improves more dramatically, especially up to 25 steps.</span></span> <span class="sent" data-sid="s-4-4-1-7"><span class="en">For test-zh, 4https://huggingface.co/Jzuluaga/accent-id-commonaccent_ecapa 5https://github.com/ddlBoJack/emotion2vec</span></span></p>
@@ -661,14 +663,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-4-4-1"><span class="cap-k">表</span><p class="en">Table 6: Comparison results between T2S-Large and T2S-Base.</p><p class="zh">表 6：T2S-Large 与 T2S-Base 的对比结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>System</th><th>SIM-O ↑</th><th></th><th>WER ↓</th><th>FSD ↓</th><th>#Parameters</th><th></th></tr><tr><th></th><th></th><th>SeedTTS test-en</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>T2S-Base</td><td>0.714</td><td></td><td>2.514</td><td>0.189</td><td></td><td>315M</td></tr>
-<tr><td>T2S-Large</td><td>0.728</td><td></td><td>2.466</td><td>0.159</td><td></td><td>695M</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-4-4-1"><span class="cap-k">表</span><p class="en">Table 6: Comparison results between T2S-Large and T2S-Base.</p><p class="zh">表 6：T2S-Large 与 T2S-Base 的对比结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>System</th><th>SIM-O ↑</th><th>WER ↓</th><th>FSD ↓</th><th>#Parameters</th></tr><tr><th></th><th></th><th>SeedTTS test-en</th><th></th><th></th></tr></thead><tbody><tr><td>T2S-Base</td><td>0.714</td><td>2.514</td><td>0.189</td><td>315M</td></tr>
+<tr><td>T2S-Large</td><td>0.728</td><td>2.466</td><td>0.159</td><td>695M</td></tr>
+<tr><td></td><td></td><td>SeedTTS test-zh</td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-system-3"><span class="t-zh">System</span><span class="t-en">System</span></h3>
 
 
 
-<div class="eq" id="eq-system-3-4"><code>695M SeedTTS test-zh T2S-Base</code></div>
+
 <div class="eq" id="eq-system-3-5"><code>0.769 2.216 0.123</code></div>
 
 <div class="eq" id="eq-system-3-7"><code>0.777 2.183 0.101</code></div>
@@ -774,8 +777,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk plain" id="p-references-81"><p class="refline">[71] Jacob Kahn, Morgane Riviere, Weiyi Zheng, Evgeny Kharitonov, Qiantong Xu, PierreEmmanuel Mazaré, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert, Christian Fuegen, et al. Libri-light: A benchmark for asr with limited or no supervision. In ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 7669–7673. IEEE, 2020.</p></div>
 <div class="pblk plain" id="p-references-82"><p class="refline">[72] Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, et al. Gpt-4 technical report. arXiv preprint arXiv:2303.08774, 2023.</p></div>
 <div class="pblk plain" id="p-references-83"><p class="refline">[73] Chenpeng Du, Yiwei Guo, Feiyu Shen, Zhijun Liu, Zheng Liang, Xie Chen, Shuai Wang, Hui Zhang, and Kai Yu. Unicats: A unified context-aware text-to-speech framework with contextual vq-diffusion and vocoding. In Proceedings of the AAAI Conference on Artificial Intelligence, volume 38, pages 17924–17932, 2024.</p></div>
-<div class="pblk plain" id="p-references-84"><p class="refline">[74] Jingyi Li, Weiping Tu, and Li Xiao. Freevc: Towards high-quality text-free one-shot voice conversion. In ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), pages 1–5. IEEE, 2023.</p></div>
-<div class="pblk plain" id="p-references-85"><p class="refline">[75] Fabian Mentzer, David Minnen, Eirikur Agustsson, and Michael Tschannen. Finite scalar quantization: Vq-vae made simple. arXiv preprint arXiv:2309.15505, 2023.</p></div></section>
+
+</section>
 <section>
       <h2 class="sech lv1" id="sec-A"><span class="secnum">A</span> <span class="t-zh">Details of MaskGCT</span><span class="t-en">Details of MaskGCT</span></h2></section>
 <section>
@@ -784,28 +787,48 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-A-1-1-1"><span class="zh">我们使用 Llama 风格 [41] 的 Transformer 架构作为模型骨干，结合带 GELU [42] 激活（SwiGLU）的门控线性单元、旋转位置编码 [43] 等，但把因果注意力替换为双向注意力。</span></span><span class="sent" data-sid="s-A-1-1-2"><span class="zh">我们还使用自适应 RMSNorm [44]，它接受时间步 t 作为条件。</span></span><span class="sent" data-sid="s-A-1-1-3"><span class="zh">Table 7 列出了模型的关键超参数。</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-1-1"><span class="cap-k">表</span><p class="en">Table 7: Overview of the key hyperparameters of MaskGCT.</p><p class="zh">表 7：MaskGCT 关键超参数总览。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>T2S-Base</th><th>T2S-Large</th><th></th><th></th><th></th><th></th><th>S2A</th></tr></thead><tbody><tr><td>Layers</td><td></td><td></td><td>16</td><td></td><td></td><td>16</td><td></td><td></td><td>16</td></tr>
-<tr><td>Model Dimension</td><td></td><td></td><td>1,024</td><td></td><td>1,536</td><td></td><td></td><td>1,024</td><td></td></tr>
-<tr><td>FFN Dimension</td><td></td><td></td><td>4,096</td><td></td><td>6,144</td><td></td><td></td><td>4,096</td><td></td></tr>
-<tr><td>Attention Heads</td><td></td><td></td><td>16</td><td></td><td></td><td>16</td><td></td><td></td><td>16</td></tr>
-<tr><td>Attention Type</td><td></td><td>Bidirectional</td><td></td><td>Bidirectional</td><td></td><td></td><td>Bidirectional</td><td></td><td></td></tr>
-<tr><td>Activation Function</td><td></td><td></td><td>SwiGLU</td><td></td><td></td><td>-</td><td></td><td></td><td>-</td></tr>
-<tr><td>Positional Embeddings</td><td>RoPE (θ = 10,000)</td><td></td><td></td><td></td><td></td><td>-</td><td></td><td></td><td>-</td></tr>
-<tr><td>Number of Parameters</td><td></td><td></td><td>315M</td><td></td><td>695M</td><td></td><td></td><td>353M</td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-A-1-1"><span class="cap-k">表</span><p class="en">Table 7: Overview of the key hyperparameters of MaskGCT.</p><p class="zh">表 7：MaskGCT 关键超参数总览。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th></tr><tr><th>[69]</th><th></th></tr><tr><th></th><th></th></tr><tr><th>[70]</th><th>Xueyao Zhang, Liumeng Xue, Yuancheng Wang, Yicheng Gu, Xi Chen, Zihao</th></tr><tr><th></th><th>Chen, Lexiao Zou, Chaoren Wang, Jun Han, et al. Amphion: An open-source</th></tr></thead><tbody><tr><td></td><td></td></tr>
+<tr><td>[71]</td><td></td></tr>
+<tr><td></td><td>Emmanuel Mazaré, Julien Karadayi, Vitaliy Liptchinsky, Ronan Collobert,</td></tr>
+<tr><td></td><td>et al. Libri-light: A benchmark for asr with limited or no supervision. In ICASSP</td></tr>
+<tr><td></td><td>IEEE International Conference on Acoustics, Speech and Signal Processing</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>[72]</td><td>Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya,</td></tr>
+<tr><td></td><td>Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat,</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>[73]</td><td>Chenpeng Du, Yiwei Guo, Feiyu Shen, Zhijun Liu, Zheng Liang, Xie Chen, Shuai</td></tr>
+<tr><td></td><td>Zhang, and Kai Yu. Unicats: A unified context-aware text-to-speech framework</td></tr>
+<tr><td></td><td>vq-diffusion and vocoding. In Proceedings of the AAAI Conference on Artificial</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>[74]</td><td>Freevc:</td></tr>
+<tr><td></td><td>conversion. In ICASSP 2023-2023 IEEE International Conference on Acoustics,</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>[75]</td><td>Fabian Mentzer, David Minnen, Eirikur Agustsson, and Michael Tschannen.</td></tr>
+<tr><td></td><td>quantization: Vq-vae made simple. arXiv preprint arXiv:2309.15505, 2023.</td></tr>
+<tr><td>A</td><td></td></tr>
+<tr><td>A.1</td><td></td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-t2s-base"><span class="t-zh">T2S-Base</span><span class="t-en">T2S-Base</span></h3>
-
-
-
-
-
-
-
-
-
-
-
-</section>
+      <h3 class="sech lv2" id="sec-t2s-base"><span class="t-zh">T2S-Base</span><span class="t-en">T2S-Base</span></h3><div class="pblk" id="p-t2s-base-1">
+          <p class="en-lines"><span class="sent" data-sid="s-t2s-base-1-1"><span class="en">T2S-Large S2A Layers</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-t2s-base-1-1"><span class="zh">表头：T2S-Large / S2A / Layers（后续照原文）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-t2s-base-1"><code>16 16 16</code></div>
+<div class="eq" id="eq-t2s-base-2"><code>Model Dimension</code></div>
+<div class="eq" id="eq-t2s-base-3"><code>1,024 1,536 1,024</code></div>
+<div class="eq" id="eq-t2s-base-4"><code>FFN Dimension</code></div>
+<div class="eq" id="eq-t2s-base-5"><code>4,096 6,144 4,096</code></div>
+<div class="eq" id="eq-t2s-base-6"><code>Attention Heads</code></div>
+<div class="eq" id="eq-t2s-base-7"><code>16 16 16</code></div>
+<div class="eq" id="eq-t2s-base-8"><code>Attention Type Bidirectional Bidirectional Bidirectional Activation Function SwiGLU</code></div>
+<div class="eq" id="eq-t2s-base-9"><code>- -</code></div>
+<div class="eq" id="eq-t2s-base-10"><code>Positional Embeddings</code></div>
+<div class="eq" id="eq-t2s-base-11"><code>RoPE (θ = 10,000) - -</code></div>
+<div class="pblk" id="p-t2s-base-2">
+          <p class="en-lines"><span class="sent" data-sid="s-t2s-base-2-1"><span class="en">Number of Parameters 315M 695M 353M</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-t2s-base-2-1"><span class="zh">（表格行）- / -；参数量（Number of Parameters）：315M / 695M / 353M。</span></span></p>
+          
+        </div></section>
 <section>
       <h3 class="sech lv2" id="sec-A-2"><span class="secnum">A.2</span> <span class="t-zh">Inference Steps for the T2S model</span><span class="t-en">Inference Steps for the T2S model</span></h3><div class="pblk" id="fig-A-2-1">
           <p class="en-lines"><span class="sent" data-sid="fig-A-2-1-s1"><span class="en">Figure 4 shows the relationship between inference steps and metrics SIM and WER for SeedTTS test-zh (left) and test-en (right). Initially, SIM increases significantly, stabilizing after 25 steps. For test-zh, SIM rises from 0.761 at 5 steps to 0.771 at 75 steps, and for test-en, from 0.696 to 0.715. SIM reaches high values with just 10 steps but peaks around 25 steps. WER improves more dramatically,</span></span></p>
@@ -819,7 +842,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 
-<div class="eq" id="eq-A-2-3"><code>0.8</code></div>
+
 
 
 
@@ -832,11 +855,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 <div class="eq" id="eq-A-2-12"><code>5 10 25 50 75 0.75</code></div>
 
-<div class="pblk" id="p-A-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-A-2-4-1"><span class="en">Inference Steps</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-2-4-1"><span class="zh">推理步数</span></span></p>
-          
-        </div>
+
 
 
 
@@ -848,43 +867,42 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 <div class="eq" id="eq-A-2-20"><code>5 10 25 50 75 0.68</code></div>
 
-<div class="pblk" id="p-A-2-8">
-          <p class="en-lines"><span class="sent" data-sid="s-A-2-8-1"><span class="en">Inference Steps</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-2-8-1"><span class="zh">推理步数</span></span></p>
-          
-        </div>
+
 <div class="cap" id="fig-A-2-2"><img class="fig" src="../assets/figures/2409.00750/fig-A-2-2.png" loading="lazy" alt="Figure 4: Inference Steps vs. SIM and WER. The results on the left are for SeedTTS test-zh, and the results on the right"><span class="cap-k">图</span><p class="en">Figure 4: Inference Steps vs. SIM and WER. The results on the left are for SeedTTS test-zh, and the results on the right are for SeedTTS test-en. In this ablation study, we utilize the ground truth speech length.</p><p class="zh">图 4：推理步数与 SIM、WER 的关系。左侧结果为 SeedTTS test-zh，右侧为 SeedTTS test-en。本消融实验使用真实语音长度。</p></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-A-3"><span class="secnum">A.3</span> <span class="t-zh">Inference Steps for the S2A model</span><span class="t-en">Inference Steps for the S2A model</span></h3><div class="pblk" id="p-A-3-1">
-          <p class="en-lines"><span class="sent" data-sid="s-A-3-1-1"><span class="en">The S2A model generates tokens layer by layer during inference.</span></span> <span class="sent" data-sid="s-A-3-1-2"><span class="en">Since the acoustic codec follows an RVQ structure, we can view the S2A inference as a process from coarse to fine.</span></span> <span class="sent" data-sid="s-A-3-1-3"><span class="en">We also use more iterations in the initial layers, as the first few layers carry more information.</span></span> <span class="sent" data-sid="s-A-3-1-4"><span class="en">By default, we use inference steps of [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] for each layer, however, we find that the S2A model can also perform well with fewer steps, such as [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], with only a very slight performance loss.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-3-1-1"><span class="zh">S2A 模型的推理步数 S2A 模型在推理时逐层生成 token。</span></span><span class="sent" data-sid="s-A-3-1-2"><span class="zh">由于声学 codec 采用 RVQ 结构，我们可以把 S2A 推理看作从粗到细的过程。</span></span><span class="sent" data-sid="s-A-3-1-3"><span class="zh">我们在最初的若干层使用更多迭代步，因为前几层承载更多信息。</span></span><span class="sent" data-sid="s-A-3-1-4"><span class="zh">默认对各层使用推理步数 [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]；但我们发现 S2A 模型用更少的步数如 [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 也能表现良好，性能损失非常轻微。</span></span></p>
-          
-        </div>
-<div class="cap" id="tab-A-3-1"><span class="cap-k">表</span><p class="en">Table 8: Evaluation results of different inference steps for the S2A model.</p><p class="zh">表 8：S2A 模型不同推理步数的评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>efficient and effective performance.</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td>12</td><td>0.74</td><td></td></tr>
+      <h3 class="sech lv2" id="sec-A-3"><span class="secnum">A.3</span> <span class="t-zh">Inference Steps for the S2A model</span><span class="t-en">Inference Steps for the S2A model</span></h3>
+<div class="cap" id="tab-A-3-1"><span class="cap-k">表</span><p class="en">Table 8: Evaluation results of different inference steps for the S2A model.</p><p class="zh">表 8：S2A 模型不同推理步数的评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>0.8</td><td>12</td><td></td><td>0.74</td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>0.79</td><td>10</td><td></td><td>8</td></tr>
+<tr><td>0.79</td><td>10</td><td></td><td></td><td>8</td></tr>
 <tr><td></td><td></td><td></td><td>0.72</td><td></td></tr>
-<tr><td></td><td>0.78</td><td>8</td><td></td><td></td></tr>
-<tr><td>SIM</td><td></td><td></td><td></td><td>6 WER</td></tr>
-<tr><td></td><td>0.77</td><td>6</td><td></td><td></td></tr>
+<tr><td>0.78</td><td>8</td><td></td><td></td><td></td></tr>
+<tr><td>SIM</td><td></td><td>WER SIM</td><td></td><td>6 WER</td></tr>
+<tr><td>0.77</td><td>6</td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td>0.7</td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td>4</td></tr>
-<tr><td></td><td>0.76</td><td>4</td><td></td><td></td></tr>
-<tr><td></td><td>0.75</td><td>2</td><td>0.68</td><td>2</td></tr>
+<tr><td>0.76</td><td>4</td><td></td><td></td><td></td></tr>
+<tr><td>0.75</td><td>2</td><td></td><td>0.68</td><td>2</td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Figure 4: Inference Steps vs. SIM and WER. The results on the left are for SeedTTS test-zh, and the</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>results on the right are for SeedTTS test-en. In this ablation study, we utilize the ground truth speech</td><td></td><td></td></tr>
 <tr><td>length.</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>A.3</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>very slight performance loss.</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
+<tr><td></td><td></td><td>The S2A model generates tokens layer by layer during inference. Since the acoustic codec follows</td><td></td><td></td></tr>
+<tr><td></td><td>an RVQ structure, we can view the S2A inference as a process from coarse to fine.</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>more iterations in the initial layers, as the first few layers carry more information. By default, we</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>use inference steps of [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] for each layer, however, we find that the S2A</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>model can also perform well with fewer steps, such as [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], with only a</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-inference-steps"><span class="t-zh">推理步数</span><span class="t-en">Inference Steps</span></h3><div class="pblk" id="p-inference-steps-1">
           <p class="en-lines"><span class="sent" data-sid="s-inference-steps-1-1"><span class="en">SIM-O ↑ WER ↓ FSD ↓ SeedTTS test-en</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-inference-steps-1-1"><span class="zh">(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。</span></span></p>
           
         </div>
-<div class="eq" id="eq-inference-steps-1"><code>[10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.709 2.796 0.164 [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.728 2.466</code></div></section>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-0-159"><span class="secnum">0.159</span> <span class="t-zh">SeedTTS test-zh</span><span class="t-en">SeedTTS test-zh</span></h3><div class="eq" id="eq-0-159-1"><code>[10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.766 2.268 0.111 [40, 16, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] 0.777 2.183 0.101</code></div></section>
+      <h3 class="sech lv2" id="sec-0-159"><span class="secnum">0.159</span> <span class="t-zh">SeedTTS test-zh</span><span class="t-en">SeedTTS test-zh</span></h3></section>
 <section>
       <h3 class="sech lv2" id="sec-A-4"><span class="secnum">A.4</span> <span class="t-zh">语义与声学 Codec 的细节</span><span class="t-en">Details of Semantic and Acoustic Codec</span></h3><div class="pblk" id="p-A-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-A-4-1-1"><span class="en">For semantic codec, we train a VQ-VAE model using the hidden features from the 17th layer of W2v-BERT 2.0, incorporating factorized codec [32] technology.</span></span> <span class="sent" data-sid="s-A-4-1-2"><span class="en">The original hidden dimension of 1,024 is projected into a lower-dimensional space for quantization.</span></span> <span class="sent" data-sid="s-A-4-1-3"><span class="en">The codebook size is set to 8,192, with a codebook dimension of 8.</span></span> <span class="sent" data-sid="s-A-4-1-4"><span class="en">We employ only the L1 loss as the reconstruction target, optimizing the codebook with codebook loss and commitment loss.</span></span> <span class="sent" data-sid="s-A-4-1-5"><span class="en">The input features are normalized to have a mean of 0 and a variance of 1, based on the statistics of the training dataset.</span></span> <span class="sent" data-sid="s-A-4-1-6"><span class="en">The encoder and the decoder are each composed of 12 mirrored ConvNext blocks, featuring a kernel size of 7 and a hidden size of 384.</span></span></p>
@@ -916,20 +934,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       <h2 class="sech lv1" id="sec-rvq"><span class="t-zh">RVQ</span><span class="t-en">RVQ</span></h2></section>
 <section>
       <h2 class="sech lv1" id="sec-encoder-2"><span class="t-zh">编码器</span><span class="t-en">Encoder</span></h2><div class="cap" id="fig-encoder-2-1"><img class="fig" src="../assets/figures/2409.00750/fig-encoder-2-1.png" loading="lazy" alt="Figure 5: An overview of the semantic codec (left) and acoustic codec (right). The semantic codec is trained to quantize"><span class="cap-k">图</span><p class="en">Figure 5: An overview of the semantic codec (left) and acoustic codec (right). The semantic codec is trained to quantize semantic features with a single codebook and reconstruct semantic features. The acoustic codec is trained to quantize and reconstruct the speech waveform using RVQ, with time and spectral discriminators to enhance the reconstruction quality further.</p><p class="zh">图 5：语义 codec（左）与声学 codec（右）总览。语义 codec 学习用单一码本量化语义特征并重建语义特征；声学 codec 学习用 RVQ 量化并重建语音波形，并借助时域与频域判别器进一步提升重建质量。</p></div>
-<div class="cap" id="tab-encoder-2-1"><span class="cap-k">表</span><p class="en">Table 9: The detailed model configurations of semantic codec and acoustic codec.</p><p class="zh">表 9：语义 codec 与声学 codec 的详细模型配置。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th></tr><tr><th>Input</th><th></th><th></th></tr><tr><th>Sample Rate</th><th>16K</th><th>24K</th></tr></thead><tbody><tr><td>Hopsize</td><td>320</td><td>480</td></tr>
-<tr><td>Number of (R)VQ Blocks</td><td>1</td><td>12</td></tr>
-<tr><td>Codebook size</td><td>8,192</td><td>1,024</td></tr>
-<tr><td>Codebook Dimension</td><td>8</td><td>8</td></tr>
-<tr><td>Decoder Hidden Dimension</td><td>384</td><td>512</td></tr>
-<tr><td>Decoder Kernel Size</td><td>7</td><td>7</td></tr>
-<tr><td>Number of Decoder Blocks</td><td>12</td><td>30</td></tr>
-<tr><td>Number of Parameters</td><td>44M</td><td>170M</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-encoder-2-1"><span class="cap-k">表</span><p class="en">Table 9: The detailed model configurations of semantic codec and acoustic codec.</p><p class="zh">表 9：语义 codec 与声学 codec 的详细模型配置。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>Semantic Codec</th><th>Acoustic Codec</th></tr><tr><th>Input</th><th></th><th></th><th>W2v-BERT 2.0 hidden</th><th>Waveform</th></tr><tr><th></th><th>Sample Rate</th><th></th><th>16K</th><th>24K</th></tr></thead><tbody><tr><td>Hopsize</td><td></td><td></td><td>320</td><td>480</td></tr>
+<tr><td></td><td></td><td>Number of (R)VQ Blocks</td><td>1</td><td>12</td></tr>
+<tr><td></td><td>Codebook size</td><td></td><td>8,192</td><td>1,024</td></tr>
+<tr><td></td><td></td><td>Codebook Dimension</td><td>8</td><td>8</td></tr>
+<tr><td></td><td></td><td>Decoder Hidden Dimension</td><td>384</td><td>512</td></tr>
+<tr><td></td><td></td><td>Decoder Kernel Size</td><td>7</td><td>7</td></tr>
+<tr><td></td><td></td><td>Number of Decoder Blocks</td><td>12</td><td>30</td></tr>
+<tr><td></td><td></td><td>Number of Parameters</td><td>44M</td><td>170M</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-semantic-codec"><span class="t-zh">语义 Codec</span><span class="t-en">Semantic Codec</span></h3><div class="pblk" id="p-semantic-codec-1">
-          <p class="en-lines"><span class="sent" data-sid="s-semantic-codec-1-1"><span class="en">Acoustic Codec Input W2v-BERT 2.0 hidden Waveform Sample Rate 16K 24K Hopsize</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-semantic-codec-1-1"><span class="zh">（表：Acoustic Codec 对比——Input：W2v-BERT 2.0 hidden / Waveform；Sample Rate 16K/24K；Hopsize 320/480；(R)VQ Blocks 数 1/12；Codebook size 8,192/1,024；Codebook Dimension 8/8；Decoder Hidden Dimension 384/512；Decoder Kernel Size 7/7；Decoder Blocks 数 12/30；参数量 44M/170M。）无需上采样的逆 STFT 变换。</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-semantic-codec"><span class="t-zh">语义 Codec</span><span class="t-en">Semantic Codec</span></h3>
 
 
 
@@ -967,18 +981,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-A-6-1"><span class="cap-k">表</span><p class="en">Table 10: G2P vs. BPE.</p><p class="zh">表 10：G2P 与 BPE 的对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>(G2P) and Byte Pair Encoding (BPE). For G2P, we employ phone-</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Whisper9, with a vocabulary size exceeding 30,000. Table 10 shows</td><td>G2P</td><td></td><td>0.728</td><td>2.466</td></tr>
-<tr><td></td><td>BPE</td><td></td><td>0.711</td><td>4.036</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-A-6-2">
-          <p class="en-lines"><span class="sent" data-sid="s-A-6-2-1"><span class="en">SIM-O ↑ WER ↓ SeedTTS test-en G2P</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-6-2-1"><span class="zh">(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。
-SIM-O ↑ WER ↓ SeedTTS test-en G2P</span></span></p>
-          
-        </div>
+<div class="cap" id="tab-A-6-1"><span class="cap-k">表</span><p class="en">Table 10: G2P vs. BPE.</p><p class="zh">表 10：G2P 与 BPE 的对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>SIM-O ↑</th><th>WER ↓</th></tr><tr><th></th><th>SeedTTS test-en</th><th></th></tr></thead><tbody><tr><td>G2P</td><td>0.728</td><td>2.466</td></tr>
+<tr><td>BPE</td><td>0.711</td><td>4.036</td></tr>
+<tr><td></td><td>SeedTTS test-zh</td><td></td></tr></tbody></table></div></div>
 
 
 
-<div class="eq" id="eq-A-6-4"><code>SeedTTS test-zh G2P</code></div>
+
+
 <div class="eq" id="eq-A-6-5"><code>0.777 2.183</code></div>
 
 <div class="eq" id="eq-A-6-7"><code>0.769 1.921</code></div></section>
@@ -1057,14 +1067,14 @@ SIM-O ↑ WER ↓ SeedTTS test-en G2P</span></span></p>
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-E-1"><span class="cap-k">表</span><p class="en">Table 11: Evaluation results for MaskGCT and baseline methods on the test sets for Japanese, Korean, German, and French.</p><p class="zh">表 11：MaskGCT 与基线方法在日语、韩语、德语、法语测试集上的评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>are retrained on the expanded data.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>German, and French.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>System</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>WER</th><th>SIM-O</th><th>WER</th><th>SIM-O</th><th>WER</th><th>SIM-O</th><th>WER</th><th>SIM-O</th></tr></thead><tbody><tr><td></td><td>Emilia-AR</td><td>3.6</td><td>0.625</td><td>10.9</td><td>0.681</td><td>8.2</td><td>0.589</td><td>6.8</td><td>0.680</td></tr>
-<tr><td></td><td>Emilia-NAR</td><td>10.8</td><td>0.562</td><td>15.2</td><td>0.608</td><td>17.5</td><td>0.550</td><td>13.3</td><td>0.633</td></tr>
-<tr><td></td><td>XTTS-v2</td><td>2.981</td><td>0.579</td><td>12.45</td><td>0.617</td><td>6.898</td><td>0.531</td><td>9.168</td><td>0.569</td></tr>
-<tr><td></td><td>MaskGCT</td><td>3.903</td><td>0.678</td><td>9.417</td><td>0.732</td><td>5.598</td><td>0.667</td><td>5.126</td><td>0.745</td></tr>
-<tr><td></td><td>10https://huggingface.co/coqui/XTTS-v2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>11https://huggingface.co/pyp1/VoiceCraft/blob/main/830M_TTSEnhanced.pth</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>12https://huggingface.co/model-scope/CosyVoice-300M</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>13ttps://huggingface.co/openai/whisper-medium</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-E-1"><span class="cap-k">表</span><p class="en">Table 11: Evaluation results for MaskGCT and baseline methods on the test sets for Japanese, Korean, German, and French.</p><p class="zh">表 11：MaskGCT 与基线方法在日语、韩语、德语、法语测试集上的评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>German, and French.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Ja</th><th></th><th></th><th>Ko</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>System</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>WER</th><th></th><th>SIM-O</th><th>WER</th><th></th><th>SIM-O</th><th>WER</th><th>SIM-O</th><th>WER</th><th>SIM-O</th></tr></thead><tbody><tr><td>Emilia-AR</td><td>3.6</td><td></td><td>0.625</td><td>10.9</td><td></td><td>0.681</td><td>8.2</td><td>0.589</td><td>6.8</td><td>0.680</td></tr>
+<tr><td>Emilia-NAR</td><td>10.8</td><td></td><td>0.562</td><td>15.2</td><td></td><td>0.608</td><td>17.5</td><td>0.550</td><td>13.3</td><td>0.633</td></tr>
+<tr><td>XTTS-v2</td><td>2.981</td><td></td><td>0.579</td><td>12.45</td><td></td><td>0.617</td><td>6.898</td><td>0.531</td><td>9.168</td><td>0.569</td></tr>
+<tr><td>MaskGCT</td><td>3.903</td><td></td><td>0.678</td><td>9.417</td><td></td><td>0.732</td><td>5.598</td><td>0.667</td><td>5.126</td><td>0.745</td></tr>
+<tr><td></td><td>10https://huggingface.co/coqui/XTTS-v2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>11https://huggingface.co/pyp1/VoiceCraft/blob/main/830M_TTSEnhanced.pth</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>12https://huggingface.co/model-scope/CosyVoice-300M</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>13ttps://huggingface.co/openai/whisper-medium</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-system-4"><span class="t-zh">System</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-system-4-1-1"><span class="en">Ja Ko Fr De</span></span></p>
@@ -1094,22 +1104,23 @@ SIM-O ↑ WER ↓ SeedTTS test-en G2P</span></span></p>
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-F-1"><span class="cap-k">表</span><p class="en">Table 12: Evaluation results in cross-lingual speech translation with consistent total duration.</p><p class="zh">表 12：总时长一致的跨语言语音翻译评估结果。</p></div>
+<div class="cap" id="tab-F-1"><span class="cap-k">表</span><p class="en">Table 12: Evaluation results in cross-lingual speech translation with consistent total duration.</p><p class="zh">表 12：总时长一致的跨语言语音翻译评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Zh</th><th></th><th></th><th>En</th><th></th><th></th><th>Ja</th><th></th><th></th><th>Ko</th><th></th><th></th><th>De</th><th></th><th></th><th>Fr</th><th></th></tr><tr><th></th><th>WER</th><th></th><th>SIM-O</th><th>WER</th><th></th><th>SIM-O</th><th>WER</th><th></th><th>SIM-O</th><th>WER</th><th></th><th>SIM-O</th><th>WER</th><th></th><th>SIM-O</th><th>WER</th><th></th><th>SIM-O</th></tr></thead><tbody><tr><td>Zh</td><td>-</td><td></td><td>-</td><td>7.466</td><td></td><td>0.678</td><td>7.864</td><td></td><td>0.720</td><td>9.751</td><td></td><td>0.736</td><td>25.54</td><td></td><td>0.724</td><td>16.21</td><td></td><td>0.687</td></tr>
+<tr><td>En</td><td>7.411</td><td></td><td>0.535</td><td>-</td><td></td><td>-</td><td>5.870</td><td></td><td>0.544</td><td>12.18</td><td></td><td>0.543</td><td>12.43</td><td></td><td>0.579</td><td>17.48</td><td></td><td>0.590</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-F-2">
           <p class="en-lines"><span class="sent" data-sid="s-F-2-1"><span class="en">Zh En Ja Ko De Fr WER SIM-O WER SIM-O WER SIM-O WER SIM-O WER SIM-O WER SIM-O Zh</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-F-2-1"><span class="zh">(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。</span></span></p>
           
         </div>
-<div class="eq" id="eq-F-1"><code>- - 7.466 0.678 7.864 0.720 9.751 0.736 25.54 0.724 16.21 0.687</code></div>
-<div class="eq" id="eq-F-2"><code>En</code></div>
-<div class="eq" id="eq-F-3"><code>7.411 0.535 - - 5.870 0.544 12.18 0.543 12.43 0.579 17.48 0.590</code></div>
-<div class="eq" id="eq-F-4"><code>Ja</code></div>
+
+
+
+
 <div class="eq" id="eq-F-5"><code>13.93 0.647 7.387 0.642 - - 10.98 0.703 12.85 0.649 14.61 0.645</code></div>
-<div class="eq" id="eq-F-6"><code>Ko</code></div>
+
 <div class="eq" id="eq-F-7"><code>31.30 0.734 14.61 0.697 12.79 0.749 - - 26.58 0.722 33.96 0.712</code></div>
-<div class="eq" id="eq-F-8"><code>De</code></div>
+
 <div class="eq" id="eq-F-9"><code>19.54 0.714 5.148 0.740 6.072 0.678 12.02 0.667 - - 14.53 0.672</code></div>
-<div class="eq" id="eq-F-10"><code>Fr</code></div>
+
 <div class="eq" id="eq-F-11"><code>32.84 0.672 12.17 0.682 6.076 0.640 12.07 0.582 21.65 0.682 - -</code></div></section>
 <section>
       <h2 class="sech lv1" id="sec-G"><span class="secnum">G</span> <span class="t-zh">情感控制的后训练</span><span class="t-en">Post-Training for Emotion Control</span></h2><div class="pblk" id="p-G-1">
@@ -1131,11 +1142,7 @@ SIM-O ↑ WER ↓ SeedTTS test-en G2P</span></span></p>
       </div></div></div>
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-I"><span class="secnum">I</span> <span class="t-zh">声音转换</span><span class="t-en">Voice Conversion</span></h2><div class="pblk" id="p-I-1">
-          <p class="en-lines"><span class="sent" data-sid="s-I-1-1"><span class="en">MaskGCT supports zero-shot voice conversion by fine-tuning the S2A with a modified training strategy.</span></span> <span class="sent" data-sid="s-I-1-2"><span class="en">The zero-shot voice conversion task aims to alter the source speech to sound like that of a target speaker using a reference speech from the target speaker, without changing the semantic content.</span></span> <span class="sent" data-sid="s-I-1-3"><span class="en">We can directly use the semantic tokens Ssrc extracted from the source speech and the prompt acoustic tokens Aref extracted from the reference speech to predict the target acoustic tokens Atgt.</span></span> <span class="sent" data-sid="s-I-1-4"><span class="en">Since Ssrc may retain some timbre information, we perform timbral perturbation on the semantic features input to the semantic codec encoder.</span></span> <span class="sent" data-sid="s-I-1-5"><span class="en">Specifically, we apply timbral perturbation to the input mel-spectrogram features of the W2v-BERT 2.0 model, following the method outlined in FreeVC [74].</span></span> <span class="sent" data-sid="s-I-1-6"><span class="en">We fine-tune our S2A model using this training strategy.</span></span> <span class="sent" data-sid="s-I-1-7"><span class="en">We show some examples in our demo page.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-I-1-1"><span class="zh">通过以改进的训练策略微调 S2A，MaskGCT 支持零样本声音转换。</span></span><span class="sent" data-sid="s-I-1-2"><span class="zh">零样本声音转换任务的目标是：在不改变语义内容的前提下，用目标说话人的一段参考语音，把源语音变得听起来像目标说话人。</span></span><span class="sent" data-sid="s-I-1-3"><span class="zh">我们可以直接用从源语音提取的语义 token Ssrc 和从参考语音提取的提示声学 token Aref 来预测目标声学 token Atgt。</span></span><span class="sent" data-sid="s-I-1-4"><span class="zh">由于 Ssrc 可能保留部分音色信息，我们对输入语义 codec 编码器的语义特征做音色扰动。</span></span><span class="sent" data-sid="s-I-1-5"><span class="zh">具体来说，沿用 FreeVC [74] 的方法，我们对 W2v-BERT 2.0 模型的输入 Mel 频谱图特征施加音色扰动。</span></span><span class="sent" data-sid="s-I-1-6"><span class="zh">我们用这种训练策略微调 S2A 模型。</span></span><span class="sent" data-sid="s-I-1-7"><span class="zh">我们在演示页面展示了一些样例。</span></span></p>
-          
-        </div></section>
+      <h2 class="sech lv1" id="sec-I"><span class="secnum">I</span> <span class="t-zh">声音转换</span><span class="t-en">Voice Conversion</span></h2></section>
 <section>
       <h2 class="sech lv1" id="sec-J"><span class="secnum">J</span> <span class="t-zh">难例评估</span><span class="t-en">Hard Cases Evaluation</span></h2><div class="pblk" id="p-J-1">
           <p class="en-lines"><span class="sent" data-sid="s-J-1-1"><span class="en">We evaluate the performance of MaskGCT on some hard cases (SeedTTS test-hard), which refer to instances where large-scale TTS models, particularly those AR-based models, often exhibit hallucinations.</span><button class="mk" data-sid="s-J-1-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-J-1-2"><span class="en">These cases include phrases with repeating words, tongue twisters, and other complex linguistic structures.</span></span> <span class="sent" data-sid="s-J-1-3"><span class="en">Examples of such cases include: “the great greek grape growers grow great greek grapes”, “How many cookies could a good cook cook If a good cook could cook cookies?</span></span> <span class="sent" data-sid="s-J-1-4"><span class="en">A good cook could cook as much cookies as a good cook who could cook cookies”, and “ thought a thought.</span></span> <span class="sent" data-sid="s-J-1-5"><span class="en">But the thought I thought wasn’t the thought I thought I thought.</span></span> <span class="sent" data-sid="s-J-1-6"><span class="en">If the thought I thought I thought had been the thought I thought, I wouldn’t have thought so much”.</span></span></p>
@@ -1149,18 +1156,32 @@ SIM-O ↑ WER ↓ SeedTTS test-en G2P</span></span></p>
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-J-1"><span class="cap-k">表</span><p class="en">Table 13: The evaluation results of MaskGCT and AR + SoundStorm on SeedTTS test-hard.</p><p class="zh">表 13：MaskGCT 与 AR + SoundStorm 在 SeedTTS test-hard 上的评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>System</th><th></th><th>SIM-O ↑</th><th>WER ↓</th></tr><tr><th></th><th>SeedTTS test-hard</th><th></th><th></th></tr></thead><tbody><tr><td>AR + SoundStorm</td><td></td><td>0.692</td><td>34.16</td></tr>
-<tr><td>AR + SoundStorm (rank 5)</td><td></td><td>0.739</td><td>17.05</td></tr>
-<tr><td>MaskGCT</td><td></td><td>0.748</td><td>10.27</td></tr>
-<tr><td>MaskGCT (rank 5)</td><td></td><td>0.776</td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-J-1"><span class="cap-k">表</span><p class="en">Table 13: The evaluation results of MaskGCT and AR + SoundStorm on SeedTTS test-hard.</p><p class="zh">表 13：MaskGCT 与 AR + SoundStorm 在 SeedTTS test-hard 上的评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>We show some examples in our demo page.</th><th></th></tr><tr><th></th><th></th></tr><tr><th></th><th>MaskGCT supports zero-shot voice conversion by fine-tuning the S2A with a</th></tr><tr><th></th><th>a target speaker using a reference speech from the target speaker, without</th></tr><tr><th></th><th>acoustic tokens Aref extracted from the reference speech to predict the target</th></tr></thead><tbody><tr><td></td><td>Since Ssrc may retain some timbre information, we perform timbral</td></tr>
+<tr><td>features input to the semantic codec encoder.</td><td></td></tr>
+<tr><td></td><td>input mel-spectrogram features of the W2v-BERT 2.0 model, following the</td></tr>
+<tr><td></td><td>FreeVC [74]. We fine-tune our S2A model using this training strategy. We show</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>Hard Cases Evaluation</td><td></td></tr>
+<tr><td></td><td>We evaluate the performance of MaskGCT on some hard cases (SeedTTS</td></tr>
+<tr><td>to instances where large-scale TTS models,</td><td></td></tr>
+<tr><td></td><td>hallucinations. These cases include phrases with repeating words, tongue twisters,</td></tr>
+<tr><td></td><td>linguistic structures. Examples of such cases include: “the great greek grape</td></tr>
+<tr><td></td><td>greek grapes”, “How many cookies could a good cook cook If a good cook</td></tr>
+<tr><td></td><td>good cook could cook as much cookies as a good cook who could cook</td></tr>
+<tr><td></td><td>thought. But the thought I thought wasn’t the thought I thought I thought. If the</td></tr>
+<tr><td></td><td>thought had been the thought I thought, I wouldn’t have thought so much”.</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-system-5"><span class="t-zh">System</span><span class="t-en">System</span></h3>
+      <h3 class="sech lv2" id="sec-system-5"><span class="t-zh">System</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-5-1">
+          <p class="en-lines"><span class="sent" data-sid="s-system-5-1-1"><span class="en">SIM-O ↑ WER ↓ SeedTTS test-hard AR + SoundStorm</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-system-5-1-1"><span class="zh">(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-system-5-1"><code>0.692 34.16</code></div>
+<div class="eq" id="eq-system-5-2"><code>AR + SoundStorm (rank 5)</code></div>
+<div class="eq" id="eq-system-5-3"><code>0.739 17.05</code></div>
 
-
-
-
-
-
+<div class="eq" id="eq-system-5-5"><code>0.748 10.27</code></div>
+<div class="eq" id="eq-system-5-6"><code>MaskGCT (rank 5)</code></div>
 <div class="eq" id="eq-system-5-7"><code>0.776 6.258</code></div></section>
 <section>
       <h2 class="sech lv1" id="sec-K"><span class="secnum">K</span> <span class="t-zh">关于同期工作的讨论</span><span class="t-en">Discussion about Concurrent Works</span></h2><div class="pblk" id="p-K-1">

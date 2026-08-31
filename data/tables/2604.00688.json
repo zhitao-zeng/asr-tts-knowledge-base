@@ -1,10 +1,54 @@
 {
+ "tab-4-2-1": {
+  "page": 8,
+  "headers": [
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "LibriSpeech-PC test-clean",
+    ""
+   ],
+   [
+    "Model",
+    "",
+    "Params.",
+    "Training Data (hours)",
+    "",
+    "",
+    ""
+   ]
+  ],
+  "rows": [
+   [
+    "",
+    "",
+    "",
+    "",
+    "SIM-o ↑",
+    "WER ↓",
+    "UTMOS ↑"
+   ],
+   [
+    "",
+    "Ground-truth",
+    "-",
+    "-",
+    "0.690",
+    "1.87",
+    "4.10"
+   ]
+  ]
+ },
  "tab-3-46-1": {
   "page": 8,
   "headers": [],
   "rows": [
    [
     "F5-TTS",
+    "",
     "0.664",
     "1.85",
     "3.72",
@@ -14,6 +58,7 @@
    ],
    [
     "ZipVoice",
+    "",
     "0.697",
     "1.70",
     "3.82",
@@ -23,6 +68,7 @@
    ],
    [
     "MaskGCT",
+    "",
     "0.713",
     "2.88",
     "3.55",
@@ -31,8 +77,9 @@
     "2.63"
    ],
    [
-    "OmniVoice-Emilia",
-    "0.717",
+    "",
+    "OmniVoice-Emilia 0.717",
+    "",
     "1.72",
     "3.88",
     "0.765",
@@ -41,6 +88,7 @@
    ],
    [
     "OmniVoice",
+    "",
     "0.741",
     "1.60",
     "3.91",
@@ -74,10 +122,10 @@
    [
     "",
     "",
-    "MiniMax",
     "",
     "",
-    "MiniMax",
+    "",
+    "",
     ""
    ]
   ],
@@ -92,10 +140,10 @@
     "0.706"
    ],
    [
-    "Cantonese",
-    "17.709*",
-    "34.111",
-    "51.513",
+    "",
+    "",
+    "",
+    "",
     "0.838",
     "0.778",
     "0.670"
@@ -182,8 +230,8 @@
     "0.730"
    ],
    [
-    "Indonesian",
-    "1.973",
+    "",
+    "",
     "1.237",
     "1.059",
     "0.805",
@@ -227,8 +275,8 @@
     "0.729"
    ],
    [
-    "Portuguese",
-    "2.511",
+    "",
+    "",
     "1.877",
     "1.331",
     "0.859",
@@ -290,8 +338,8 @@
     "0.647"
    ],
    [
-    "Vietnamese",
-    "1.373",
+    "",
+    "",
     "0.880",
     "73.415",
     "0.804",
@@ -307,9 +355,7 @@
     "",
     "",
     "",
-    "",
     "FLEURS-Multilingual-102",
-    "",
     "",
     "",
     ""
@@ -321,6 +367,13 @@
     "",
     "",
     "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
     "",
     "Languages with CER ≤",
     ""
@@ -328,10 +381,8 @@
    [
     "",
     "Avg SIM-o ↑",
-    "",
-    "",
-    "",
     "Avg CER ↓",
+    "",
     "",
     "",
     ""
@@ -343,32 +394,26 @@
     "",
     "",
     "",
-    "",
-    "",
-    "",
     "5%",
+    "",
     "10%"
    ],
    [
     "Ground-truth",
-    "",
-    "",
     "-",
-    "",
-    "",
     "5.11",
+    "",
     "75",
+    "",
     "92"
    ],
    [
     "OmniVoice",
-    "",
     "0.788",
-    "",
-    "",
-    "",
     "4.00",
+    "",
     "82",
+    "",
     "95"
    ]
   ]
@@ -383,17 +428,13 @@
     "",
     "",
     "",
-    "",
-    "",
     "Languages with CER ≤",
     ""
    ],
    [
     "",
     "",
-    "",
     "Avg SIM-o ↑",
-    "",
     "",
     "Avg CER ↓",
     "",
@@ -408,34 +449,28 @@
     "",
     "",
     "",
-    "",
-    "",
-    "",
     "5%",
+    "",
     "10%"
    ],
    [
     "",
-    "",
     "Ground-truth",
-    "",
-    "",
     "-",
     "",
     "5.11",
     "75",
+    "",
     "92"
    ],
    [
     "",
-    "",
     "OmniVoice",
-    "",
     "0.788",
-    "",
     "",
     "4.00",
     "82",
+    "",
     "95"
    ],
    [
@@ -446,15 +481,31 @@
     "",
     "",
     "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "To validate the effectiveness of our core designs, we conduct ablation experiments on the",
+    "",
     "",
     "",
     ""
    ],
    [
+    "dataset.",
+    "",
+    "",
+    "All models are trained for 300k updates with the same hyperparameters, with",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
     "noising disabled unless otherwise specified.",
-    "",
-    "",
-    "",
     "",
     "",
     "",
@@ -482,8 +533,8 @@
     ""
    ],
    [
-    "Model",
     "",
+    "Learning Rate",
     "",
     "",
     ""
@@ -547,9 +598,8 @@
    [
     "",
     "",
+    "",
     "Librispeech-PC test-clean",
-    "",
-    "",
     ""
    ],
    [
@@ -557,33 +607,29 @@
     "",
     "",
     "",
-    "",
     ""
    ],
    [
     "",
-    "SIM-o ↑",
     "",
+    "SIM-o ↑",
     "WER ↓",
-    "UTMOS ↑",
-    ""
+    "UTMOS ↑"
    ]
   ],
   "rows": [
    [
-    "w/o prompt denoise",
     "",
+    "w/o prompt denoise",
     "0.697",
     "1.57",
-    "",
     "4.23"
    ],
    [
-    "w/ prompt denoise",
     "",
+    "w/ prompt denoise",
     "0.668",
     "1.56",
-    "",
     "4.32"
    ]
   ]
@@ -595,75 +641,109 @@
     "",
     "",
     "",
-    "",
-    "",
-    "",
-    "Batch Size",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "Inference Steps",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "SIM-o ↑",
+    "WER ↓",
+    "UTMOS ↑"
    ]
   ],
   "rows": [
    [
     "",
+    "w/o prompt denoise",
     "",
-    "",
-    "",
-    "1",
-    "",
-    "2",
-    "",
-    "4",
-    "",
-    "8"
+    "0.697",
+    "1.57",
+    "4.23"
    ],
    [
     "",
+    "w/ prompt denoise",
     "",
-    "16",
-    "0.0319",
+    "0.668",
+    "1.56",
+    "4.32"
+   ],
+   [
+    "Inference Speed",
     "",
-    "0.0263",
     "",
-    "0.0235",
     "",
-    "0.0224",
+    "",
     ""
    ],
    [
     "",
     "",
-    "32",
-    "0.0598",
+    "We evaluate the inference speed of OmniVoice on an H20 GPU using PyTorch",
     "",
-    "0.0486",
     "",
-    "0.0436",
-    "",
-    "0.0414",
     ""
    ],
    [
-    "5",
+    "",
+    "",
+    "framework. Following the identical experimental setup in [16, 14], we use a",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "to generate 10-second audio clips, and report the real-time factor (RTF) across",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "and inference steps. As shown in Table 8, OmniVoice achieves an RTF of 0.0319",
+    "",
+    "",
+    ""
+   ],
+   [
+    "steps and a batch size of 1,",
+    "",
+    "",
+    "",
+    "outperforming the corresponding results of ZipVoice",
+    ""
+   ],
+   [
     "",
     "",
     "",
     "",
+    "Notably, OmniVoice also yields better",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "attains an even lower RTF of 0.022. In addition, its inference efficiency can be further",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "acceleration techniques such as TensorRT. These results demonstrate the high",
+    "",
+    "",
+    ""
+   ],
+   [
     "",
     "",
     "",
@@ -678,10 +758,34 @@
   "headers": [
    [
     "",
-    "LibriSpeech-PC test-clean",
     "",
     "",
     "",
+    "resourced Languages@ LREC-COLING 2024, pages 222–226, 2024.",
+    "",
+    ""
+   ],
+   [
+    "[92]",
+    "",
+    "Kak Soky, Zhuo Gong, and Sheng Li.",
+    "",
+    "",
+    "",
+    "NICT-Tib1: A Public Speech"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "for Benchmarking Tibetan Language Speech Recognition Systems.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "pages 1–5, 2022.",
     "",
     "",
     "",
@@ -689,143 +793,197 @@
     ""
    ],
    [
-    "Steps",
     "",
-    "WER ↓",
     "",
-    "SIM-o ↑",
-    "WER ↓",
     "",
-    "SIM-o ↑",
-    "WER ↓",
+    "",
+    "speech resource for tibetan multi-dialect and multitask recognition.",
+    "",
     ""
    ]
   ],
   "rows": [
    [
-    "64",
-    "0.729",
-    "1.28",
-    "4.30",
-    "0.742",
-    "1.60",
-    "3.92",
-    "0.777",
-    "0.81",
-    "3.13"
+    "",
+    "",
+    "",
+    "",
+    "Computational Science and Engineering, 22(2/3):297–304, 2020.",
+    "",
+    ""
    ],
    [
-    "32",
-    "0.729",
-    "1.30",
-    "4.28",
-    "0.741",
-    "1.53",
-    "3.91",
-    "0.777",
-    "0.84",
-    "3.11"
+    "[94]",
+    "",
+    "",
+    "Senyan Li, Guanyu Li, and Jiewen Ning.",
+    "",
+    "",
+    "Xbmu-amdo31:"
    ],
    [
-    "16",
-    "0.728",
-    "1.50",
-    "4.23",
-    "0.735",
-    "1.72",
-    "3.92",
-    "0.773",
-    "0.99",
-    "3.00"
+    "",
+    "",
+    "",
+    "",
+    "speech database and speech recognition baseline system.",
+    "",
+    ""
    ],
    [
-    "8",
-    "0.713",
-    "2.02",
-    "4.02",
-    "0.716",
-    "1.94",
-    "3.59",
-    "0.756",
-    "1.58",
-    "2.72"
+    "",
+    "",
+    "",
+    "Machine Speech Communication, NCMMSC2022, 2022.",
+    "",
+    "",
+    ""
    ],
    [
-    "2https://huggingface.co/datasets/capleaf/viVoice",
+    "[95]",
     "",
     "",
     "",
+    "Linfei Lu, Jiaxin Pang, Stansencuo, Buwonglam, and Linting Huang.",
+    "",
+    ""
+   ],
+   [
     "",
     "",
+    "//www.openslr.org/149/.",
     "",
     "",
     "",
     ""
    ],
    [
-    "3https://www.openslr.org/96/",
+    "A",
     "",
     "",
-    "",
-    "",
-    "",
-    "",
+    "Complete List of Multilingual Training Data",
     "",
     "",
     ""
    ],
    [
-    "4https://huggingface.co/datasets/Paradoxia/opendata-iisys-hui",
     "",
     "",
     "",
-    "",
-    "",
-    "",
+    "We used the following datasets to train OmniVoice:",
     "",
     "",
     ""
    ],
    [
-    "5https://huggingface.co/datasets/adiren7/darija_speech_to_text",
+    "Emilia [46],",
+    "",
+    "Emilia-YODAS [46],",
+    "",
+    "",
+    "LibriTTS [61],",
+    ""
+   ],
+   [
+    "nilingual",
+    "ASR",
+    "Corpus",
+    "[57],",
+    "FLEURS",
+    "[52],",
+    "GigaSpeech"
+   ],
+   [
     "",
     "",
     "",
     "",
+    "roSpeech [65], IndicVoices-R [66], IndicTTS [67], Rasa [68], PhoAudiobook",
+    "",
+    ""
+   ],
+   [
     "",
     "",
+    "",
+    "",
+    "TTS [70], Wenetspeech-yue [71], Wenetspeech-chuan [72], Kespeech [73],",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "speech [75], Reazonspeech [76], AISHELL6-whisper [77], ParaSpeechCaps",
+    "",
+    ""
+   ],
+   [
+    "",
+    "NonVerbalSpeech-38K",
+    "",
+    "[45],",
+    "SeniorTalk",
+    "[79],",
+    "ChildMandarin"
+   ],
+   [
+    "ArVoice",
+    "[83],",
+    "KazakhTTS2",
+    "[84],",
+    "RuLS3,",
+    "",
+    "[85],"
+   ],
+   [
+    "2 [86],",
+    "MGB-3 [87],",
+    "",
+    "MGB-5 [88],",
+    "",
+    "SADA [89],",
+    "MASC [90],"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "from [37] (darija speech to text5, DarijaTTS-clean6, Jordan-Audio7, UAE",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "TIBMD@MUC [93], XBMU-AMDO3 [94], Tibetan-Greetings [95].",
+    "",
+    ""
+   ],
+   [
+    "B",
+    "",
+    "",
+    "Results of Different Inference Steps",
     "",
     "",
     ""
    ],
    [
-    "6https://huggingface.co/datasets/KandirResearch/DarijaTTS-clean",
     "",
     "",
     "",
     "",
-    "",
-    "",
-    "",
+    "In Table 9, we evaluate the multilingual version OmniVoice model with different",
     "",
     ""
    ],
    [
-    "7https://huggingface.co/datasets/nadsoft/Jordan-Audio",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "8https://huggingface.co/datasets/AhmedBadawy11/UAE_100K",
-    "",
-    "",
     "",
     "",
     "",
@@ -840,10 +998,10 @@
   "page": 19,
   "headers": [
    [
-    "Language",
     "",
     "",
-    "Language",
+    "",
+    "",
     "",
     ""
    ]
@@ -868,8 +1026,8 @@
    [
     "Asturian",
     "3.79",
-    "2.07",
-    "Azerbaijani",
+    "",
+    "",
     "2.60",
     "3.20"
    ],
@@ -892,10 +1050,10 @@
    [
     "Burmese",
     "6.77",
-    "12.20",
-    "Cantonese",
-    "11.01",
-    "21.92"
+    "",
+    "",
+    "",
+    ""
    ],
    [
     "Catalan",
@@ -907,7 +1065,7 @@
    ],
    [
     "",
-    "3.92",
+    "",
     "2.97",
     "Chichewa",
     "4.63",
@@ -1027,7 +1185,7 @@
    ],
    [
     "",
-    "3.29",
+    "",
     "2.10",
     "Kamba",
     "8.81",
@@ -1054,8 +1212,8 @@
     "3.72",
     "3.78",
     "Lao",
-    "22.87",
-    "25.51"
+    "",
+    ""
    ],
    [
     "Latvian",
@@ -1067,7 +1225,7 @@
    ],
    [
     "",
-    "2.98",
+    "",
     "2.05",
     "Luo",
     "3.58",
@@ -1075,8 +1233,8 @@
    ],
    [
     "",
-    "5.48",
-    "4.52",
+    "",
+    "",
     "",
     "1.05",
     "0.89"
@@ -1108,9 +1266,9 @@
    [
     "Nepali",
     "4.76",
-    "3.43",
     "",
-    "1.50",
+    "3.43 Norwegian Bokmål 1.50",
+    "",
     "1.14"
    ],
    [
@@ -1187,7 +1345,7 @@
    ],
    [
     "",
-    "2.58",
+    "",
     "1.92",
     "Swahili",
     "2.41",
@@ -1227,15 +1385,15 @@
    ],
    [
     "Urdu",
-    "80.27",
-    "28.73",
+    "",
+    "",
     "Uzbek",
     "3.31",
     "2.23"
    ],
    [
     "",
-    "3.49",
+    "",
     "2.63",
     "Welsh",
     "3.91",
@@ -1251,8 +1409,8 @@
    ],
    [
     "Yoruba",
-    "17.97",
-    "21.37",
+    "",
+    "",
     "Zulu",
     "3.33",
     "2.03"
@@ -1264,1415 +1422,663 @@
   "headers": [
    [
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "code, and training data duration (hours).",
     "",
     "",
     ""
    ],
    [
     "Language",
-    "ID",
-    "ISO",
+    "ID ISO",
     "Hours",
     "Language",
-    "",
-    "ID",
-    "ISO",
-    "Hours",
-    "Language",
-    "ID",
-    "ISO",
-    "Hours"
+    "ID"
    ]
   ],
   "rows": [
    [
     "Abadi",
-    "kbt",
-    "kbt",
+    "kbt kbt",
     "9.73",
     "Abkhazian",
-    "",
-    "ab",
-    "abk",
-    "57.27",
-    "Abron",
-    "abr",
-    "abr",
-    "9.22"
+    "ab"
    ],
    [
     "Abua",
-    "abn",
-    "abn",
+    "abn abn",
     "10.27",
-    "",
-    "",
-    "fub",
-    "fub",
-    "13.12",
-    "Adyghe",
-    "ady",
-    "ady",
-    "32.6"
+    "Adamawa Fulfulde",
+    "fub"
    ],
    [
     "Afade",
-    "aal",
-    "aal",
+    "aal aal",
     "10.19",
-    "",
     "Afrikaans",
-    "af",
-    "afr",
-    "4.4",
-    "Agwagwune",
-    "yay",
-    "yay",
-    "8.26"
+    "af"
    ],
    [
     "Aja (Benin)",
-    "ajg",
-    "ajg",
+    "ajg ajg",
     "5.63",
-    "",
     "Akebu",
-    "keu keu",
-    "",
-    "9.1",
-    "Alago",
-    "ala",
-    "ala",
-    "11.04"
+    "keu"
    ],
    [
     "Albanian",
-    "sq",
-    "sqi",
+    "sq sqi",
     "8.59",
     "Algerian Arabic",
-    "",
-    "arq",
-    "arq",
-    "9.64",
-    "",
-    "aao",
-    "aao",
-    "2.02"
+    "arq"
    ],
    [
-    "",
-    "qva",
-    "qva",
+    "Ambo-Pasco Quechua",
+    "qva qva",
     "9.59",
     "Ambonese Malay",
-    "",
-    "abs",
-    "abs",
-    "10.03",
-    "Amdo Tibetan",
-    "adx",
-    "adx",
-    "56.94"
+    "abs"
    ],
    [
     "Amharic",
-    "am",
-    "amh",
+    "am amh",
     "12.83",
-    "",
     "Anaang",
-    "anw anw",
-    "",
-    "9.65",
-    "Angika",
-    "anp",
-    "anp",
-    "10.65"
+    "anw"
    ],
    [
-    "",
+    "Antankarana Malagasy",
     "xmv xmv",
-    "",
     "17.9",
     "Aragonese",
-    "",
-    "an",
-    "arg",
-    "16.4",
-    "",
-    "aae",
-    "aae",
-    "6.11"
+    "an"
    ],
    [
-    "",
-    "qxu",
-    "qxu",
+    "Arequipa-La Unión Quechua",
+    "qxu qxu",
     "10.12",
-    "",
     "Armenian",
-    "hy",
-    "hye",
-    "42.15",
-    "Ashe",
-    "ahs",
-    "ahs",
-    "10.62"
+    "hy"
    ],
    [
-    "",
-    "prq",
-    "prq",
+    "Ashéninka Perenë",
+    "prq prq",
     "7.16",
-    "",
     "Askopan",
-    "eiv",
-    "eiv",
-    "10.44",
-    "Assamese",
-    "as",
-    "asm",
-    "270.85"
+    "eiv"
    ],
    [
     "Asturian",
-    "ast",
-    "ast",
+    "ast ast",
     "8.48",
-    "",
     "Atayal",
-    "tay",
-    "tay",
-    "7.02",
-    "Awak",
-    "awo awo",
-    "",
-    "10.22"
+    "tay"
    ],
    [
-    "",
-    "quy",
-    "quy",
+    "Ayacucho Quechua",
+    "quy quy",
     "0.05",
     "Azerbaijani",
-    "",
-    "az",
-    "aze",
-    "9.84",
-    "Baatonum",
-    "bba",
-    "bba",
-    "10.53"
+    "az"
    ],
    [
     "Bacama",
-    "bcy",
-    "bcy",
+    "bcy bcy",
     "9.94",
-    "",
     "Bade",
-    "bde bde",
-    "",
-    "9.89",
-    "Bafia",
-    "ksf",
-    "ksf",
-    "16.43"
+    "bde"
    ],
    [
     "Bafut",
-    "bfd",
-    "bfd",
+    "bfd bfd",
     "9.03",
     "Bagirmi Fulfulde",
-    "",
-    "fui",
-    "fui",
-    "15.04",
-    "Bago-Kusuntu",
-    "bqg",
-    "bqg",
-    "8.86"
+    "fui"
    ],
    [
-    "",
-    "abv",
-    "abv",
+    "Baharna Arabic",
+    "abv abv",
     "10.41",
-    "",
     "Bakoko",
-    "bkh bkh",
-    "",
-    "6.0",
-    "Balanta-Ganja",
-    "bjt",
-    "bjt",
-    "9.41"
+    "bkh"
    ],
    [
     "Balti",
-    "bft",
-    "bft",
+    "bft bft",
     "16.28",
     "Bamenyam",
-    "",
-    "bce",
-    "bce",
-    "9.9",
-    "Bamun",
-    "bax",
-    "bax",
-    "10.24"
+    "bce"
    ],
    [
     "Bangwinji",
-    "bsj",
-    "bsj",
+    "bsj bsj",
     "10.0",
-    "",
     "Banjar",
-    "bjn",
-    "bjn",
-    "11.68",
-    "Bankon",
-    "abb",
-    "abb",
-    "11.2"
+    "bjn"
    ],
    [
     "Baoulé",
-    "bci",
-    "bci",
+    "bci bci",
     "10.21",
     "Bara Malagasy",
-    "",
-    "bhr",
-    "bhr",
-    "12.14",
-    "Barok",
-    "bjk",
-    "bjk",
-    "10.16"
+    "bhr"
    ],
    [
-    "",
-    "bas",
-    "bas",
+    "Basa (Cameroon)",
+    "bas bas",
     "10.66",
     "Basa (Nigeria)",
-    "",
-    "bzw bzw",
-    "",
-    "10.27",
-    "Bashkir",
-    "ba",
-    "bak",
-    "249.1"
+    "bzw"
    ],
    [
     "Basque",
-    "eu",
-    "eus",
+    "eu eus",
     "479.86",
     "Batak Mandailing",
-    "",
-    "btm btm",
-    "",
-    "11.09",
-    "Batanga",
-    "bnm bnm",
-    "",
-    "15.01"
+    "btm"
    ],
    [
     "Bateri",
-    "btv",
-    "btv",
+    "btv btv",
     "9.8",
-    "",
     "Bats",
-    "bbl",
-    "bbl",
-    "11.22",
-    "Bayot",
-    "bda",
-    "bda",
-    "9.47"
+    "bbl"
    ],
    [
     "Bebele",
-    "beb",
-    "beb",
+    "beb beb",
     "7.52",
     "Belarusian",
-    "",
-    "be",
-    "bel",
-    "1809.43",
-    "Bengali",
-    "bn",
-    "ben",
-    "271.76"
+    "be"
    ],
    [
     "Betawi",
     "bew bew",
-    "",
     "11.15",
-    "",
     "Bhili",
-    "bhb bhb",
-    "",
-    "9.98",
-    "Bhojpuri",
-    "bho",
-    "bho",
-    "10.05"
+    "bhb"
    ],
    [
     "Bilur",
-    "bxf",
-    "bxf",
+    "bxf bxf",
     "10.84",
-    "",
     "Bima",
-    "bhp bhp",
-    "",
-    "10.67",
-    "Bodo",
-    "brx",
-    "brx",
-    "231.57"
+    "bhp"
    ],
    [
     "Boghom",
-    "bux",
-    "bux",
+    "bux bux",
     "10.48",
-    "",
     "Bokyi",
-    "bky bky",
-    "",
-    "9.85",
-    "Bomu",
-    "bmq bmq",
-    "",
-    "10.68"
+    "bky"
    ],
    [
     "Bondei",
-    "bou",
-    "bou",
+    "bou bou",
     "9.98",
     "Borgu Fulfulde",
-    "",
-    "fue",
-    "fue",
-    "20.1",
-    "Bosnian",
-    "bs",
-    "bos",
-    "690.73"
+    "fue"
    ],
    [
     "Brahui",
-    "brh",
-    "brh",
+    "brh brh",
     "19.89",
-    "",
     "Braj",
-    "bra",
-    "bra",
-    "10.68",
-    "Breton",
-    "br",
-    "bre",
-    "25.48"
+    "bra"
    ],
    [
     "Buduma",
     "bdm bdm",
-    "",
     "10.17",
-    "",
     "Buginese",
-    "bug bug",
-    "",
-    "11.09",
-    "Bukharic",
-    "bhh",
-    "bhh",
-    "11.38"
+    "bug"
    ],
    [
     "Bulgarian",
-    "bg",
-    "bul",
+    "bg bul",
     "2190.76",
     "Bulu (Cameroon)",
-    "",
-    "bum bum",
-    "",
-    "9.06",
-    "Bundeli",
-    "bns",
-    "bns",
-    "10.88"
+    "bum"
    ],
    [
     "Bunun",
-    "bnn",
-    "bnn",
+    "bnn bnn",
     "9.26",
     "Bura-Pabir",
-    "",
-    "bwr bwr",
-    "",
-    "10.4",
-    "Burak",
-    "bys",
-    "bys",
-    "9.92"
+    "bwr"
    ],
    [
     "Burmese",
-    "my",
-    "mya",
+    "my mya",
     "12.14",
     "Burushaski",
-    "",
-    "bsk",
-    "bsk",
-    "9.14",
-    "",
-    "miu",
-    "miu",
-    "9.18"
+    "bsk"
    ],
    [
-    "",
-    "qvl",
-    "qvl",
+    "Cajatambo North Lima Quechua",
+    "qvl qvl",
     "9.95",
     "Cakfem-Mushere",
-    "",
-    "cky cky",
-    "",
-    "8.96",
-    "Cameroon Pidgin",
-    "wes",
-    "wes",
-    "10.06"
+    "cky"
    ],
    [
-    "",
-    "sro",
-    "sro",
+    "Campidanese Sardinian",
+    "sro sro",
     "10.16",
     "Cantonese",
-    "",
-    "yue yue 13302.38",
-    "",
-    "",
-    "Catalan",
-    "ca",
-    "cat",
-    "3358.6"
+    "yue"
    ],
    [
     "Cebuano",
-    "ceb",
-    "ceb",
+    "ceb ceb",
     "12.17",
-    "",
     "Cen",
-    "cen",
-    "cen",
-    "9.85",
-    "Central Kurdish",
-    "ckb",
-    "ckb",
-    "137.52"
+    "cen"
    ],
    [
-    "",
-    "nhn",
-    "nhn",
+    "Central Nahuatl",
+    "nhn nhn",
     "9.51",
     "Central Pame",
-    "",
-    "pbs",
-    "pbs",
-    "9.69",
-    "Central Pashto",
-    "pst",
-    "pst",
-    "11.4"
+    "pbs"
    ],
    [
-    "",
-    "ncx",
-    "ncx",
+    "Central Puebla Nahuatl",
+    "ncx ncx",
     "9.86",
-    "",
-    "",
-    "tar",
-    "tar",
-    "9.73",
-    "Central Yupik",
-    "esu",
-    "esu",
-    "2.18"
+    "Central Tarahumara",
+    "tar"
    ],
    [
-    "",
-    "fuq",
-    "fuq",
+    "Central-Eastern Niger Fulfulde",
+    "fuq fuq",
     "9.28",
     "Chadian Arabic",
-    "",
-    "shu",
-    "shu",
-    "2.29",
-    "Chichewa",
-    "ny",
-    "nya",
-    "10.8"
+    "shu"
    ],
    [
-    "",
-    "zpv",
-    "zpv",
+    "Chichicapan Zapotec",
+    "zpv zpv",
     "9.85",
-    "",
     "Chiga",
-    "cgg cgg",
-    "",
-    "10.84",
-    "Chimalapa Zoque",
-    "zoh",
-    "zoh",
-    "9.35"
+    "cgg"
    ],
    [
-    "",
-    "qug",
-    "qug",
+    "Chimborazo Highland Quichua",
+    "qug qug",
     "10.12",
-    "",
     "Chinese",
-    "zh",
-    "cmn 111343.3",
-    "",
-    "",
-    "qxa",
-    "qxa",
-    "9.99"
+    "zh"
    ],
    [
-    "",
-    "the",
-    "the",
+    "Chitwania Tharu",
+    "the the",
     "10.06",
-    "",
     "Chokwe",
-    "cjk",
-    "cjk",
-    "11.01",
-    "Chuvash",
-    "cv",
-    "chv",
-    "23.96"
+    "cjk"
    ],
    [
     "Cibak",
-    "ckl",
-    "ckl",
+    "ckl ckl",
     "10.91",
     "Coastal Konjo",
-    "",
-    "kjc",
-    "kjc",
-    "10.18",
-    "Copainalá Zoque",
-    "zoc",
-    "zoc",
-    "10.07"
+    "kjc"
    ],
    [
     "Cornish",
-    "kw",
-    "cor",
+    "kw cor",
     "12.15",
-    "",
-    "",
-    "qwa qwa",
-    "",
-    "9.72",
-    "Croatian",
-    "hr",
-    "hrv",
-    "2795.31"
+    "Corongo Ancash Quechua",
+    "qwa"
    ],
    [
-    "",
+    "Cross River Mbembe",
     "mfn mfn",
-    "",
     "10.03",
-    "",
-    "",
-    "xtu",
-    "xtu",
-    "9.4",
-    "Czech",
-    "cs",
-    "ces",
-    "148.13"
+    "Cuyamecalco Mixtec",
+    "xtu"
    ],
    [
     "Dadiya",
-    "dbd",
-    "dbd",
+    "dbd dbd",
     "9.61",
-    "",
     "Dagbani",
-    "dag dag",
-    "",
-    "10.14",
-    "Dameli",
-    "dml",
-    "dml",
-    "9.18"
+    "dag"
    ],
    [
     "Danish",
-    "da",
-    "dan",
+    "da dan",
     "1665.98",
-    "",
     "Dargwa",
-    "dar",
-    "dar",
-    "1.22",
-    "Dazaga",
-    "dzg",
-    "dzg",
-    "9.96"
+    "dar"
    ],
    [
     "Deccan",
-    "dcc",
-    "dcc",
+    "dcc dcc",
     "10.38",
-    "",
     "Degema",
-    "deg deg",
-    "",
-    "11.07",
-    "Dera (Nigeria)",
-    "kna",
-    "kna",
-    "11.91"
+    "deg"
    ],
    [
     "Dghwede",
-    "dgh",
-    "dgh",
+    "dgh dgh",
     "9.95",
-    "",
     "Dhatki",
-    "mki mki",
-    "",
-    "8.83",
-    "Dhivehi",
-    "dv",
-    "div",
-    "38.61"
+    "mki"
    ],
    [
     "Dhofari Arabic",
-    "adf",
-    "adf",
+    "adf adf",
     "0.31",
     "Dijim-Bwilim",
-    "",
-    "cfa",
-    "cfa",
-    "10.32",
-    "Dogri",
-    "dgo",
-    "dgo",
-    "117.04"
+    "cfa"
    ],
    [
     "Domaaki",
     "dmk dmk",
-    "",
     "6.38",
-    "",
     "Dotyali",
-    "dty",
-    "dty",
-    "10.85",
-    "Duala",
-    "dua",
-    "dua",
-    "12.13"
+    "dty"
    ],
    [
     "Dutch",
-    "nl",
-    "nld",
+    "nl nld",
     "2264.13",
-    "",
     "D˜uya",
-    "ldb",
-    "ldb",
-    "11.31",
-    "Dyula",
-    "dyu",
-    "dyu",
-    "0.34"
+    "ldb"
    ],
    [
-    "",
-    "bgp",
-    "bgp",
+    "Eastern Balochi",
+    "bgp bgp",
     "10.98",
-    "",
-    "",
-    "gui",
-    "gui",
-    "22.72",
-    "",
-    "avl",
-    "avl",
-    "1.86"
+    "Eastern Bolivian Guaraní",
+    "gui"
    ],
    [
     "Eastern Krahn",
-    "kqo",
-    "kqo",
+    "kqo kqo",
     "9.28",
     "Eastern Mari",
-    "",
-    "mhr mhr",
-    "",
-    "272.31",
-    "Eastern Yiddish",
-    "ydd",
-    "ydd",
-    "18.43"
+    "mhr"
    ],
    [
     "Ebrié",
-    "ebr",
-    "ebr",
+    "ebr ebr",
     "1.5",
-    "",
     "Eggon",
-    "ego ego",
-    "",
-    "9.95",
-    "Egyptian Arabic",
-    "arz",
-    "arz",
-    "23.23"
+    "ego"
    ],
    [
     "Ejagham",
-    "etu",
-    "etu",
+    "etu etu",
     "10.3",
-    "",
     "Eleme",
-    "elm elm",
-    "",
-    "11.27",
-    "Eloyi",
-    "afo",
-    "afo",
-    "11.21"
+    "elm"
    ],
    [
     "Embu",
-    "ebu",
-    "ebu",
+    "ebu ebu",
     "9.81",
-    "",
     "English",
-    "en",
-    "eng 206061.1",
-    "",
-    "Erzya",
-    "myv myv",
-    "",
-    "3.1"
+    "en"
    ],
    [
     "Esan",
-    "ish",
-    "ish",
+    "ish ish",
     "10.05",
-    "",
     "Esperanto",
-    "eo",
-    "epo",
-    "1396.64",
-    "Estonian",
-    "et",
-    "est",
-    "960.37"
+    "eo"
    ],
    [
-    "",
-    "eto",
-    "eto",
+    "Eton (Cameroon)",
+    "eto eto",
     "7.43",
-    "",
     "Ewondo",
-    "ewo ewo",
-    "",
-    "12.71",
-    "Extremaduran",
-    "ext",
-    "ext",
-    "13.59"
+    "ewo"
    ],
    [
-    "",
-    "fan",
-    "fan",
+    "Fang (Equatorial Guinea)",
+    "fan fan",
     "3.51",
-    "",
     "Fanti",
-    "fat",
-    "fat",
-    "11.38",
-    "Farefare",
-    "gur",
-    "gur",
-    "9.24"
+    "fat"
    ],
    [
     "Fe’fe’",
     "fmp fmp",
-    "",
     "9.86",
-    "",
     "Filipino",
-    "fil",
-    "fil",
-    "7.71",
-    "",
-    "tlp",
-    "tlp",
-    "11.35"
+    "fil"
    ],
    [
     "Finnish",
-    "fi",
-    "fin",
+    "fi fin",
     "468.62",
-    "",
     "Fipa",
-    "fip",
-    "fip",
-    "10.55",
-    "French",
-    "fr",
-    "fra",
-    "23675.32"
+    "fip"
    ],
    [
     "Fulah",
-    "ff",
-    "ful",
+    "ff ful",
     "13.84",
-    "",
     "Galician",
-    "gl",
-    "glg",
-    "208.81",
-    "Gambian Wolof",
-    "wof",
-    "wof",
-    "9.46"
+    "gl"
    ],
    [
     "Ganda",
-    "lg",
-    "lug",
+    "lg lug",
     "447.82",
-    "",
     "Garhwali",
-    "gbm gbm",
-    "",
-    "19.14",
-    "Gawar-Bati",
-    "gwt",
-    "gwt",
-    "12.16"
+    "gbm"
    ],
    [
     "Gawri",
     "gwc gwc",
-    "",
     "10.83",
-    "",
     "Gbagyi",
-    "gbr",
-    "gbr",
-    "12.12",
-    "Gbari",
-    "gby",
-    "gby",
-    "12.59"
+    "gbr"
    ],
    [
     "Geji",
-    "gyz",
-    "gyz",
+    "gyz gyz",
     "10.49",
-    "",
     "Gen",
-    "gej",
-    "gej",
-    "5.39",
-    "Georgian",
-    "ka",
-    "kat",
-    "156.96"
+    "gej"
    ],
    [
     "German",
     "de",
     "deu 21927.13",
-    "",
     "Geser-Gorom",
-    "",
-    "ges",
-    "ges",
-    "10.08",
-    "Gheg Albanian",
-    "aln",
-    "aln",
-    "3.92"
+    "ges"
    ],
    [
     "Ghomálá’",
-    "bbj",
-    "bbj",
+    "bbj bbj",
     "7.32",
-    "",
     "Gidar",
-    "gid",
-    "gid",
-    "10.06",
-    "Glavda",
-    "glw",
-    "glw",
-    "10.51"
+    "gid"
    ],
    [
     "Goan Konkani",
     "gom gom",
-    "",
     "9.82",
-    "",
     "Goaria",
-    "gig",
-    "gig",
-    "9.41",
-    "Goemai",
-    "ank",
-    "ank",
-    "10.0"
+    "gig"
    ],
    [
     "Gola",
-    "gol",
-    "gol",
+    "gol gol",
     "9.26",
-    "",
     "Greek",
-    "el",
-    "ell",
-    "2412.54",
-    "Guarani",
-    "gn",
-    "grn",
-    "4.06"
+    "el"
    ],
    [
     "Guduf-Gava",
-    "gdf",
-    "gdf",
+    "gdf gdf",
     "12.21",
-    "",
-    "",
-    "amu amu",
-    "",
-    "10.1",
-    "Gujarati",
-    "gu",
-    "guj",
-    "91.18"
+    "Guerrero Amuzgo",
+    "amu"
    ],
    [
     "Gujari",
-    "gju",
-    "gju",
+    "gju gju",
     "8.66",
     "Gulf Arabic",
-    "",
-    "afb",
-    "afb",
-    "98.55",
-    "Gurgula",
-    "ggg",
-    "ggg",
-    "7.12"
+    "afb"
    ],
    [
     "Gusii",
-    "guz",
-    "guz",
+    "guz guz",
     "9.5",
-    "",
     "Gusilay",
-    "gsl",
-    "gsl",
-    "10.0",
-    "Gweno",
-    "gwe gwe",
-    "",
-    "8.87"
+    "gsl"
    ],
    [
     "Güilá Zapotec",
-    "ztu",
-    "ztu",
+    "ztu ztu",
     "9.17",
-    "",
     "Hadothi",
-    "hoj",
-    "hoj",
-    "10.08",
-    "Hahon",
-    "hah",
-    "hah",
-    "9.64"
+    "hoj"
    ],
    [
     "Haitian",
-    "ht",
-    "hat",
+    "ht hat",
     "0.04",
     "Hakha Chin",
-    "",
-    "cnh cnh",
-    "",
-    "2.24",
-    "Hakö",
-    "hao",
-    "hao",
-    "8.56"
+    "cnh"
    ],
    [
     "Halia",
-    "hla",
-    "hla",
+    "hla hla",
     "9.86",
-    "",
     "Hausa",
-    "ha",
-    "hau",
-    "17.75",
-    "Hawaiian",
-    "haw haw",
-    "",
-    "11.79"
+    "ha"
    ],
    [
     "Hazaragi",
-    "haz",
-    "haz",
+    "haz haz",
     "9.69",
-    "",
     "Hebrew",
-    "he",
-    "heb",
-    "13.4",
-    "Hemba",
-    "hem hem",
-    "",
-    "9.53"
+    "he"
    ],
    [
     "Herero",
-    "hz",
-    "her",
+    "hz her",
     "9.59",
     "Highland Konjo",
-    "",
-    "kjk",
-    "kjk",
-    "10.21",
-    "Hijazi Arabic",
-    "acw acw",
-    "",
-    "22.32"
+    "kjk"
    ],
    [
     "Hindi",
-    "hi",
-    "hin",
+    "hi hin",
     "117.17",
-    "",
     "Huarijio",
-    "var",
-    "var",
-    "9.28",
-    "Huautla Mazatec",
-    "mau mau",
-    "",
-    "6.39"
+    "var"
    ],
    [
-    "",
-    "nhq",
-    "nhq",
+    "Huaxcaleca Nahuatl",
+    "nhq nhq",
     "5.07",
-    "",
     "Huba",
-    "hbb hbb",
-    "",
-    "10.7",
-    "Huitepec Mixtec",
-    "mxs mxs",
-    "",
-    "9.64"
+    "hbb"
    ],
    [
     "Hula",
-    "hul",
-    "hul",
+    "hul hul",
     "10.33",
     "Hungarian",
-    "",
-    "hu",
-    "hun",
-    "255.83",
-    "",
-    "hkk",
-    "hkk",
-    "8.69"
+    "hu"
    ],
    [
     "Hwana",
     "hwo hwo",
-    "",
     "11.23",
-    "",
     "Ibibio",
-    "ibb",
-    "ibb",
-    "7.38",
-    "Icelandic",
-    "is",
-    "isl",
-    "647.29"
+    "ibb"
    ],
    [
-    "",
-    "ida",
-    "ida",
+    "Idakho-Isukha-Tiriki",
+    "ida ida",
     "9.31",
-    "",
     "Idoma",
-    "idu",
-    "idu",
-    "11.16",
-    "Igbo",
-    "ig",
-    "ibo",
-    "13.69"
+    "idu"
    ],
    [
     "Igo",
-    "ahl",
-    "ahl",
+    "ahl ahl",
     "9.22",
-    "",
     "Ikposo",
-    "kpo kpo",
-    "",
-    "7.83",
-    "Ikwere",
-    "ikw",
-    "ikw",
-    "10.0"
+    "kpo"
    ],
    [
-    "",
-    "qvi",
-    "qvi",
+    "Imbabura Highland Quichua",
+    "qvi qvi",
     "11.0",
     "Indonesian",
-    "",
-    "id",
-    "ind",
-    "6327.87",
-    "Indus Kohistani",
-    "mvy mvy",
-    "",
-    "21.64"
+    "id"
    ],
    [
     "Interlingua",
-    "ia",
-    "ina",
+    "ia ina",
     "13.48",
-    "",
     "Inupiaq",
-    "ik",
-    "ipk",
-    "2.11",
-    "Irish",
-    "ga",
-    "gle",
-    "21.4"
+    "ik"
    ],
    [
     "Iron Ossetic",
-    "os",
-    "oss",
+    "os oss",
     "1.38",
-    "",
     "Isekiri",
-    "its",
-    "its",
-    "11.85",
-    "Isoko",
-    "iso",
-    "iso",
-    "10.33"
+    "its"
    ],
    [
     "Italian",
-    "it",
-    "ita",
+    "it ita",
     "9402.46",
-    "",
     "Ito",
-    "itw",
-    "itw",
-    "9.19",
-    "Itzá",
-    "itz",
-    "itz",
-    "7.08"
+    "itw"
    ],
    [
-    "",
-    "vmj",
-    "vmj",
+    "Ixtayutla Mixtec",
+    "vmj vmj",
     "10.17",
-    "",
     "Izon",
-    "ijc",
-    "ijc",
-    "9.95",
-    "Jambi Malay",
-    "jax",
-    "jax",
-    "10.29"
+    "ijc"
    ],
    [
     "Japanese",
-    "ja",
-    "jpn",
+    "ja jpn",
     "36914.4",
-    "",
     "Jaqaru",
-    "jqr",
-    "jqr",
-    "9.32",
-    "",
-    "qxw qxw",
-    "",
-    "11.42"
+    "jqr"
    ],
    [
     "Jaunsari",
-    "jns",
-    "jns",
+    "jns jns",
     "11.25",
-    "",
     "Javanese",
-    "jv",
-    "jav",
-    "11.19",
-    "Jiba",
-    "juo",
-    "juo",
-    "10.43"
+    "jv"
    ],
    [
     "Jju",
-    "kaj",
-    "kaj",
+    "kaj kaj",
     "10.16",
-    "",
-    "",
-    "aju",
-    "aju",
-    "7.21",
-    "",
-    "vmc vmc",
-    "",
-    "9.43"
+    "Judeo-Moroccan Arabic",
+    "aju"
    ],
    [
     "Kabardian",
-    "kbd",
-    "kbd",
+    "kbd kbd",
     "108.35",
-    "",
     "Kabras",
-    "lkb",
-    "lkb",
-    "9.99",
-    "Kabuverdianu",
-    "kea",
-    "kea",
-    "10.51"
+    "lkb"
    ],
    [
     "Kabyle",
-    "kab",
-    "kab",
+    "kab kab",
     "529.52",
     "Kachi Koli",
-    "",
-    "gjk",
-    "gjk",
-    "20.83",
-    "Kairak",
-    "ckr",
-    "ckr",
-    "10.51"
+    "gjk"
    ]
   ]
  }

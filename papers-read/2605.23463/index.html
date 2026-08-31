@@ -474,15 +474,17 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-5-1"><span class="zh">MTP 接受行为。</span></span><span class="sent" data-sid="s-4-3-5-2"><span class="zh">实验在 WenetSpeech 会议集 [33] 上评估严格的逐位置接受率。</span></span><span class="sent" data-sid="s-4-3-5-3"><span class="zh">为确定最优前瞻范围，比较了三种配置：MTP-3、MTP-5 和 MTP-7。</span></span><span class="sent" data-sid="s-4-3-5-4"><span class="zh">表 3（Table 3）的结果揭示了两个主要趋势。</span></span><span class="sent" data-sid="s-4-3-5-5"><span class="zh">第一，较早位置的接受率几乎不随分支总数变化，这表明（脚注 1：WenetSpeech testnet long 是把相邻的 WenetSpeech testnet 片段合并成长录音构造的）</span></span><span class="sent" data-sid="s-4-3-5-6"><span class="zh">我们开源了 https://github.com/lawlict/wenetspeech-testnet-long.git 用于生成该语料。</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-3-1"><span class="cap-k">表</span><p class="en">Table 1: ASR results on Chinese, English, and long-form benchmarks (Error Rate, %). Lower is better. The second-best results are underlined.</p><p class="zh">表 1：中文、英文和长音频基准上的 ASR 结果（错误率，%）。越低越好。次优结果加下划线。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>underlined.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Category</th><th>Test set</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>AISHELL-1</td><td>5.19</td><td>1.88</td><td>2.07</td><td>1.49</td><td>0.71</td><td>0.79</td></tr>
+<div class="cap" id="tab-4-3-1"><span class="cap-k">表</span><p class="en">Table 1: ASR results on Chinese, English, and long-form benchmarks (Error Rate, %). Lower is better. The second-best results are underlined.</p><p class="zh">表 1：中文、英文和长音频基准上的 ASR 结果（错误率，%）。越低越好。次优结果加下划线。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>underlined.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>StepAudio 2.5 ASR</th></tr></thead><tbody><tr><td></td><td>AISHELL-1</td><td>5.19</td><td>1.88</td><td>2.07</td><td>1.49</td><td>0.71</td><td>0.79</td></tr>
 <tr><td></td><td>AISHELL-2 ios</td><td>5.10</td><td>2.61</td><td>2.70</td><td>2.50</td><td>2.29</td><td>2.30</td></tr>
-<tr><td>Chinese</td><td>WenetSpeech testnet</td><td>14.79</td><td>5.30</td><td>4.03</td><td>4.44</td><td>4.54</td><td>4.57</td></tr>
+<tr><td></td><td>WenetSpeech testnet</td><td>14.79</td><td>5.30</td><td>4.03</td><td>4.44</td><td>4.54</td><td>4.57</td></tr>
+<tr><td>Chinese</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td>WenetSpeech testmeeting</td><td>17.09</td><td>5.31</td><td>5.09</td><td>4.66</td><td>4.70</td><td>4.73</td></tr>
 <tr><td></td><td>FLEURS zh</td><td>8.77</td><td>3.19</td><td>2.83</td><td>2.74</td><td>2.63</td><td>2.63</td></tr>
 <tr><td></td><td>Average</td><td>10.19</td><td>3.66</td><td>3.34</td><td>3.17</td><td>2.97</td><td>3.00</td></tr>
 <tr><td></td><td>LibriSpeech clean</td><td>2.30</td><td>1.80</td><td>2.94</td><td>1.69</td><td>1.38</td><td>1.40</td></tr>
 <tr><td></td><td>LibriSpeech other</td><td>5.79</td><td>4.43</td><td>5.98</td><td>3.57</td><td>3.16</td><td>3.14</td></tr>
-<tr><td>English</td><td>Common Voice v11 en</td><td>20.03</td><td>11.05</td><td>14.06</td><td>7.50</td><td>7.57</td><td>7.62</td></tr>
+<tr><td></td><td>Common Voice v11 en</td><td>20.03</td><td>11.05</td><td>14.06</td><td>7.50</td><td>7.57</td><td>7.62</td></tr>
+<tr><td>English</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td>FLEURS en</td><td>5.20</td><td>4.96</td><td>6.74</td><td>3.23</td><td>3.55</td><td>3.74</td></tr>
 <tr><td></td><td>VoxPopuli cleaned AA</td><td>2.38</td><td>3.97</td><td>3.61</td><td>3.28</td><td>2.76</td><td>3.23</td></tr>
 <tr><td></td><td>Average</td><td>7.14</td><td>5.24</td><td>6.67</td><td>3.85</td><td>3.68</td><td>3.83</td></tr>
@@ -491,14 +493,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>Long-form</td><td>WenetSpeech testnet long</td><td>8.73</td><td>4.74</td><td>3.72</td><td>4.15</td><td>4.09</td><td>4.09</td></tr>
 <tr><td></td><td>Earnings22 cleaned AA</td><td>5.62</td><td>10.38</td><td>12.33</td><td>6.90</td><td>6.52</td><td>6.34</td></tr>
 <tr><td></td><td>Average</td><td>4.87</td><td>5.59</td><td>6.11</td><td>4.20</td><td>3.70</td><td>3.63</td></tr>
-<tr><td></td><td></td><td></td><td>Table 2: RTF comparison.</td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>Model</td><td>FunASR-Nano</td><td></td><td></td><td></td><td>StepAudio 2.5 ASR</td><td></td></tr>
-<tr><td></td><td>RTF</td><td></td><td></td><td></td><td>0.0094</td><td></td><td></td></tr></tbody></table></div></div>
-<div class="pblk" id="p-4-3-6">
-          <p class="en-lines"><span class="sent" data-sid="s-4-3-6-1"><span class="en">Category Test set VibeVoice-ASR FunASR-Nano Doubao-ASR-2603 Qwen3-ASR-1.7B StepAudio 2.5 ASR StepAudio 2.5 ASR w/o MTP training AISHELL-1</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-3-6-1"><span class="zh">表头：Category / Test set × VibeVoice-ASR / FunASR-Nano / Doubao-ASR-2603 / Qwen3-ASR-1.7B / StepAudio 2.5 ASR / StepAudio 2.5 ASR w/o MTP training——AISHELL-1（后续照原文）。</span></span></p>
-          
-        </div>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td></td><td>Qwen3-ASR-1.7B</td><td></td><td></td></tr>
+<tr><td>RTF</td><td></td><td></td><td></td><td></td><td>0.0094</td><td></td><td></td></tr></tbody></table></div></div>
 
 
 
@@ -532,15 +529,18 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-4-3-2"><span class="cap-k">表</span><p class="en">Table 2: RTF comparison.</p><p class="zh">表 2：RTF（实时因子）对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Category</th><th>Test set</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>AISHELL-1</td><td>5.19</td><td>1.88</td><td>2.07</td><td>1.49</td><td>0.71</td><td>0.79</td></tr>
+
+<div class="cap" id="tab-4-3-2"><span class="cap-k">表</span><p class="en">Table 2: RTF comparison.</p><p class="zh">表 2：RTF（实时因子）对比。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>AISHELL-1</td><td>5.19</td><td>1.88</td><td>2.07</td><td>1.49</td><td>0.71</td><td>0.79</td></tr>
 <tr><td></td><td>AISHELL-2 ios</td><td>5.10</td><td>2.61</td><td>2.70</td><td>2.50</td><td>2.29</td><td>2.30</td></tr>
-<tr><td>Chinese</td><td>WenetSpeech testnet</td><td>14.79</td><td>5.30</td><td>4.03</td><td>4.44</td><td>4.54</td><td>4.57</td></tr>
+<tr><td></td><td>WenetSpeech testnet</td><td>14.79</td><td>5.30</td><td>4.03</td><td>4.44</td><td>4.54</td><td>4.57</td></tr>
+<tr><td>Chinese</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td>WenetSpeech testmeeting</td><td>17.09</td><td>5.31</td><td>5.09</td><td>4.66</td><td>4.70</td><td>4.73</td></tr>
 <tr><td></td><td>FLEURS zh</td><td>8.77</td><td>3.19</td><td>2.83</td><td>2.74</td><td>2.63</td><td>2.63</td></tr>
 <tr><td></td><td>Average</td><td>10.19</td><td>3.66</td><td>3.34</td><td>3.17</td><td>2.97</td><td>3.00</td></tr>
 <tr><td></td><td>LibriSpeech clean</td><td>2.30</td><td>1.80</td><td>2.94</td><td>1.69</td><td>1.38</td><td>1.40</td></tr>
 <tr><td></td><td>LibriSpeech other</td><td>5.79</td><td>4.43</td><td>5.98</td><td>3.57</td><td>3.16</td><td>3.14</td></tr>
-<tr><td>English</td><td>Common Voice v11 en</td><td>20.03</td><td>11.05</td><td>14.06</td><td>7.50</td><td>7.57</td><td>7.62</td></tr>
+<tr><td></td><td>Common Voice v11 en</td><td>20.03</td><td>11.05</td><td>14.06</td><td>7.50</td><td>7.57</td><td>7.62</td></tr>
+<tr><td>English</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td>FLEURS en</td><td>5.20</td><td>4.96</td><td>6.74</td><td>3.23</td><td>3.55</td><td>3.74</td></tr>
 <tr><td></td><td>VoxPopuli cleaned AA</td><td>2.38</td><td>3.97</td><td>3.61</td><td>3.28</td><td>2.76</td><td>3.23</td></tr>
 <tr><td></td><td>Average</td><td>7.14</td><td>5.24</td><td>6.67</td><td>3.85</td><td>3.68</td><td>3.83</td></tr>
@@ -549,11 +549,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>Long-form</td><td>WenetSpeech testnet long</td><td>8.73</td><td>4.74</td><td>3.72</td><td>4.15</td><td>4.09</td><td>4.09</td></tr>
 <tr><td></td><td>Earnings22 cleaned AA</td><td>5.62</td><td>10.38</td><td>12.33</td><td>6.90</td><td>6.52</td><td>6.34</td></tr>
 <tr><td></td><td>Average</td><td>4.87</td><td>5.59</td><td>6.11</td><td>4.20</td><td>3.70</td><td>3.63</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-4-3-7">
-          <p class="en-lines"><span class="sent" data-sid="s-4-3-7-1"><span class="en">Model VibeVoice-ASR FunASR-Nano Doubao-ASR-2603 Qwen3-ASR-1.7B StepAudio 2.5 ASR RTF</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-3-7-1"><span class="zh">（抽取自表 2 主体的原始数值流，模型顺序为 VibeVoice-ASR、FunASR-Nano、Doubao-ASR-2603、Qwen3-ASR-1.7B、StepAudio 2.5 ASR，RTF 分别为 0.1039、0.0591、0.0640、0.0094、0.0053；末句承接正文第 4.3.5 节）每个 MTP 头学到的是一个稳定、独立的预测任务。</span></span></p>
-          
-        </div>
+
 <div class="eq" id="eq-4-3-34"><code>0.1039 0.0591 0.0640 0.0094 0.0053</code></div>
 <div class="pblk" id="p-4-3-8">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-8-1"><span class="en">that each MTP head learns a stable, independent prediction task.</span></span> <span class="sent" data-sid="s-4-3-8-2"><span class="en">Second, starting from the second position, the acceptance rate decays at a consistent factor of approximately 0.9 per branch.</span></span> <span class="sent" data-sid="s-4-3-8-3"><span class="en">While increasing branches from three to five yields a substantial 39% gain in average accepted length, the additional step to MTP-7 provides a more modest improvement about 22%.</span><button class="mk feat" data-sid="s-4-3-8-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-3-8-4"><span class="en">This diminishing return is driven by the high failure rates of the sixth and seventh positions, which frequently trigger KV cache rollbacks and interrupt the decoding stream, and finally offset the marginal utility of a longer lookahead.</span></span> <span class="sent" data-sid="s-4-3-8-5"><span class="en">Consequently, MTP-5 represents a deliberate choice for the optimal efficiency-complexity trade-off.</span></span></p>
@@ -567,36 +563,45 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-4-3-3"><span class="cap-k">表</span><p class="en">Table 3: Strict per-position MTP acceptance rate and average accepted length.</p><p class="zh">表 3：严格的逐位置 MTP 接受率与平均接受长度。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Category</th><th>Test set</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>AISHELL-1</td><td>5.19</td><td>1.88</td><td>2.07</td><td>1.49</td><td>0.71</td><td>0.79</td></tr>
-<tr><td></td><td>AISHELL-2 ios</td><td>5.10</td><td>2.61</td><td>2.70</td><td>2.50</td><td>2.29</td><td>2.30</td></tr>
-<tr><td>Chinese</td><td>WenetSpeech testnet</td><td>14.79</td><td>5.30</td><td>4.03</td><td>4.44</td><td>4.54</td><td>4.57</td></tr>
-<tr><td></td><td>WenetSpeech testmeeting</td><td>17.09</td><td>5.31</td><td>5.09</td><td>4.66</td><td>4.70</td><td>4.73</td></tr>
-<tr><td></td><td>FLEURS zh</td><td>8.77</td><td>3.19</td><td>2.83</td><td>2.74</td><td>2.63</td><td>2.63</td></tr>
-<tr><td></td><td>Average</td><td>10.19</td><td>3.66</td><td>3.34</td><td>3.17</td><td>2.97</td><td>3.00</td></tr>
-<tr><td></td><td>LibriSpeech clean</td><td>2.30</td><td>1.80</td><td>2.94</td><td>1.69</td><td>1.38</td><td>1.40</td></tr>
-<tr><td></td><td>LibriSpeech other</td><td>5.79</td><td>4.43</td><td>5.98</td><td>3.57</td><td>3.16</td><td>3.14</td></tr>
-<tr><td>English</td><td>Common Voice v11 en</td><td>20.03</td><td>11.05</td><td>14.06</td><td>7.50</td><td>7.57</td><td>7.62</td></tr>
-<tr><td></td><td>FLEURS en</td><td>5.20</td><td>4.96</td><td>6.74</td><td>3.23</td><td>3.55</td><td>3.74</td></tr>
-<tr><td></td><td>VoxPopuli cleaned AA</td><td>2.38</td><td>3.97</td><td>3.61</td><td>3.28</td><td>2.76</td><td>3.23</td></tr>
-<tr><td></td><td>Average</td><td>7.14</td><td>5.24</td><td>6.67</td><td>3.85</td><td>3.68</td><td>3.83</td></tr>
-<tr><td></td><td>LibriSpeech clean long</td><td>1.66</td><td>2.34</td><td>2.81</td><td>1.95</td><td>1.27</td><td>1.27</td></tr>
-<tr><td></td><td>LibriSpeech other long</td><td>3.48</td><td>4.89</td><td>5.59</td><td>3.81</td><td>2.90</td><td>2.81</td></tr>
-<tr><td>Long-form</td><td>WenetSpeech testnet long</td><td>8.73</td><td>4.74</td><td>3.72</td><td>4.15</td><td>4.09</td><td>4.09</td></tr>
-<tr><td></td><td>Earnings22 cleaned AA</td><td>5.62</td><td>10.38</td><td>12.33</td><td>6.90</td><td>6.52</td><td>6.34</td></tr>
-<tr><td></td><td>Average</td><td>4.87</td><td>5.59</td><td>6.11</td><td>4.20</td><td>3.70</td><td>3.63</td></tr>
-<tr><td></td><td></td><td></td><td>Table 2: RTF comparison.</td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>Model</td><td>FunASR-Nano</td><td></td><td></td><td></td><td>StepAudio 2.5 ASR</td><td></td></tr>
-<tr><td></td><td>RTF</td><td></td><td></td><td></td><td>0.0094</td><td></td><td></td></tr>
-<tr><td>efficiency-complexity trade-off.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-4-3-3"><span class="cap-k">表</span><p class="en">Table 3: Strict per-position MTP acceptance rate and average accepted length.</p><p class="zh">表 3：严格的逐位置 MTP 接受率与平均接受长度。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>AISHELL-1</td><td>5.19</td><td>1.88</td><td></td><td>2.07</td><td>1.49</td><td>0.71</td><td>0.79</td></tr>
+<tr><td></td><td>AISHELL-2 ios</td><td>5.10</td><td>2.61</td><td></td><td>2.70</td><td>2.50</td><td>2.29</td><td>2.30</td></tr>
+<tr><td></td><td>WenetSpeech testnet</td><td>14.79</td><td>5.30</td><td></td><td>4.03</td><td>4.44</td><td>4.54</td><td>4.57</td></tr>
+<tr><td>Chinese</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>WenetSpeech testmeeting</td><td>17.09</td><td>5.31</td><td></td><td>5.09</td><td>4.66</td><td>4.70</td><td>4.73</td></tr>
+<tr><td></td><td>FLEURS zh</td><td>8.77</td><td>3.19</td><td></td><td>2.83</td><td>2.74</td><td>2.63</td><td>2.63</td></tr>
+<tr><td></td><td>Average</td><td>10.19</td><td>3.66</td><td></td><td>3.34</td><td>3.17</td><td>2.97</td><td>3.00</td></tr>
+<tr><td></td><td>LibriSpeech clean</td><td>2.30</td><td>1.80</td><td></td><td>2.94</td><td>1.69</td><td>1.38</td><td>1.40</td></tr>
+<tr><td></td><td>LibriSpeech other</td><td>5.79</td><td>4.43</td><td></td><td>5.98</td><td>3.57</td><td>3.16</td><td>3.14</td></tr>
+<tr><td></td><td>Common Voice v11 en</td><td>20.03</td><td>11.05</td><td></td><td>14.06</td><td>7.50</td><td>7.57</td><td>7.62</td></tr>
+<tr><td>English</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>FLEURS en</td><td>5.20</td><td>4.96</td><td></td><td>6.74</td><td>3.23</td><td>3.55</td><td>3.74</td></tr>
+<tr><td></td><td>VoxPopuli cleaned AA</td><td>2.38</td><td>3.97</td><td></td><td>3.61</td><td>3.28</td><td>2.76</td><td>3.23</td></tr>
+<tr><td></td><td>Average</td><td>7.14</td><td>5.24</td><td></td><td>6.67</td><td>3.85</td><td>3.68</td><td>3.83</td></tr>
+<tr><td></td><td>LibriSpeech clean long</td><td>1.66</td><td>2.34</td><td></td><td>2.81</td><td>1.95</td><td>1.27</td><td>1.27</td></tr>
+<tr><td></td><td>LibriSpeech other long</td><td>3.48</td><td>4.89</td><td></td><td>5.59</td><td>3.81</td><td>2.90</td><td>2.81</td></tr>
+<tr><td>Long-form</td><td>WenetSpeech testnet long</td><td>8.73</td><td>4.74</td><td></td><td>3.72</td><td>4.15</td><td>4.09</td><td>4.09</td></tr>
+<tr><td></td><td>Earnings22 cleaned AA</td><td>5.62</td><td>10.38</td><td></td><td>12.33</td><td>6.90</td><td>6.52</td><td>6.34</td></tr>
+<tr><td></td><td>Average</td><td>4.87</td><td>5.59</td><td></td><td>6.11</td><td>4.20</td><td>3.70</td><td>3.63</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>Table 2: RTF comparison.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Model</td><td></td><td></td><td></td><td>Doubao-ASR-2603</td><td></td><td>Qwen3-ASR-1.7B</td><td></td><td></td></tr>
+<tr><td>RTF</td><td></td><td></td><td></td><td>0.0640</td><td></td><td>0.0094</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>that each MTP head learns a stable, independent prediction task. Second, starting from the second</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>position, the acceptance rate decays at a consistent factor of approximately 0.9 per branch. While</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>increasing branches from three to five yields a substantial 39% gain in average accepted length,</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>the additional step to MTP-7 provides a more modest improvement about 22%. This diminishing</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>return is</td><td>driven</td><td></td><td>rates</td><td>the</td><td>sixth</td><td>seventh</td><td></td><td>frequently</td></tr>
+<tr><td>trigger KV</td><td>cache</td><td>and</td><td>interrupt</td><td></td><td>decoding</td><td>and</td><td></td><td>marginal</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>utility of a longer lookahead. Consequently, MTP-5 represents a deliberate choice for the optimal</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>efficiency-complexity trade-off.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-4-3-9">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-9-1"><span class="en">Config 1st 2nd 3rd 4th 5th 6th 7th Avg.</span></span> <span class="sent" data-sid="s-4-3-9-2"><span class="en">Length MTP-3</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-9-1"><span class="zh">表头：Config × 1st/2nd/3rd/4th/5th/6th/7th × Avg.。</span></span><span class="sent" data-sid="s-4-3-9-2"><span class="zh">（表格行）Length：MTP-3 0.96/0.88/0.80/–/–/–/–（3.6/4）；MTP-5 0.95/0.88/0.80/0.71/0.64/–/–（5.0/6）；MTP-7 0.96/0.88/0.80/0.72/0.65/0.59/0.53（6.1/8）。Insight（解读见正文）。</span></span></p>
           
         </div>
 <div class="eq" id="eq-4-3-35"><code>0.96 0.88 0.80 – – – – 3.6 / 4</code></div>
-<div class="eq" id="eq-4-3-36"><code>MTP-5</code></div>
+
 <div class="eq" id="eq-4-3-37"><code>0.95 0.88 0.80 0.71 0.64 – – 5.0 / 6</code></div>
-<div class="eq" id="eq-4-3-38"><code>MTP-7</code></div>
+
 <div class="eq" id="eq-4-3-39"><code>0.96 0.88 0.80 0.72 0.65 0.59 0.53 6.1 / 8</code></div>
 <div class="pblk" id="p-4-3-10">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-10-1"><span class="en">Insight.</span></span> <span class="sent" data-sid="s-4-3-10-2"><span class="en">The ASR branch suggests a useful general lesson for multimodal systems: grounded generation tasks can sometimes be accelerated more aggressively than free-form text generation, precisely because the external modality reduces semantic branching.</span><button class="mk" data-sid="s-4-3-10-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-3-10-3"><span class="en">In other words, grounding is not only a source of information; it is also a source of algorithmic structure.</span></span></p>

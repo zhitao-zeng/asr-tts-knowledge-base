@@ -795,26 +795,49 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-baselines-1-1"><span class="zh">我们考虑三个基线：1) VALL-E [Wang et al., 2023]，在 Librilight 上训练的英语零样本 TTS 当前最佳模型。2) YourTTS [Casanova et al., 2021]，在 VCTK、LibriTTS、TTS-Portugese [Casanova et al., 2022] 与 M-AILABS French 上训练的多语言（英语、法语、葡萄牙语）零样本 TTS 当前最佳模型。</span></span><span class="sent" data-sid="s-baselines-1-2"><span class="zh">它是基于 VITS [Kim et al., 2021] 改造的流模型，使用预训练的多语言说话人嵌入器进行音色条件化。3) A3T [Bai et al., 2022]，在 VCTK 上以回归损失训练的 NAR 语音编辑与填充当前最佳模型。</span></span><span class="sent" data-sid="s-baselines-1-3"><span class="zh">在去噪实验中，我们还考虑 Demucs [Défossez et al., 2020]——一个以回归与对抗损失训练的语音增强当前最佳模型。</span></span><span class="sent" data-sid="s-baselines-1-4"><span class="zh">表 1 总结了各基线能够解决的任务。</span></span></p>
           
         </div>
-<div class="cap" id="tab-baselines-1"><span class="cap-k">表</span><p class="en">Table 1: Comparing Voicebox with baselines on task capabilities. “Sampling” refers to the ability of generating diverse audio clips without conditioning on any audio. Through infilling, A3T and Voicebox can remove transient noise but not stationary background noise. VALL-E can only generate speech conditioning on the past context. Hence, the generated segment would only be coherent to the past context but will not have a smooth transition to the future context. With that, we label VALL-E as incapable of denoising or editing.</p><p class="zh">表 1：Voicebox 与各基线在任务能力上的对比。“采样”指不以任何音频为条件生成多样化音频片段的能力。通过填充，A3T 与 Voicebox 可以移除瞬态噪声，但不能移除平稳背景噪声。VALL-E 只能以过去上下文为条件生成语音，因此生成片段只与过去上下文连贯，无法与未来上下文平滑衔接，据此我们将 VALL-E 标记为不具备去噪或编辑能力。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>as incapable of denoising or editing.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Model</th><th>ZS TTS</th><th></th><th>Denoise</th><th></th><th>Partial Edit</th><th></th><th>Sampling</th><th></th></tr></thead><tbody><tr><td></td><td>VALL-E</td><td></td><td>✓</td><td></td><td>✗</td><td></td><td>✗</td><td></td><td>✓</td></tr>
-<tr><td></td><td>YourTTS</td><td></td><td>✓</td><td></td><td>✗</td><td></td><td>✗</td><td></td><td>✓</td></tr>
-<tr><td></td><td>A3T</td><td></td><td>✓</td><td>✓(short)</td><td></td><td></td><td>✓</td><td></td><td>✗</td></tr>
-<tr><td></td><td>Demucs</td><td></td><td>✗</td><td></td><td>✓</td><td></td><td>✗</td><td></td><td>✗</td></tr>
-<tr><td></td><td>Voicebox</td><td></td><td>✓</td><td>✓(short)</td><td></td><td></td><td>✓</td><td></td><td>✓</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-baselines-1"><span class="cap-k">表</span><p class="en">Table 1: Comparing Voicebox with baselines on task capabilities. “Sampling” refers to the ability of generating diverse audio clips without conditioning on any audio. Through infilling, A3T and Voicebox can remove transient noise but not stationary background noise. VALL-E can only generate speech conditioning on the past context. Hence, the generated segment would only be coherent to the past context but will not have a smooth transition to the future context. With that, we label VALL-E as incapable of denoising or editing.</p><p class="zh">表 1：Voicebox 与各基线在任务能力上的对比。“采样”指不以任何音频为条件生成多样化音频片段的能力。通过填充，A3T 与 Voicebox 可以移除瞬态噪声，但不能移除平稳背景噪声。VALL-E 只能以过去上下文为条件生成语音，因此生成片段只与过去上下文连贯，无法与未来上下文平滑衔接，据此我们将 VALL-E 标记为不具备去噪或编辑能力。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th>Transformer [Vaswani et al., 2017] with convolutional positional</th></tr><tr><th></th><th>2020] and symmetric bi-directional ALiBi self-attention bias [Press et al., 2021]</th></tr><tr><th></th><th>A.6. The audio model has 24 layers, 16 attention heads, 1024/4096</th></tr><tr><th></th><th>(FFN) dimension, 330M parameters. We add skip connections connecting</th></tr><tr><th></th><th>layer to last layer, second layer to second-to-last layer, etc.)</th></tr></thead><tbody><tr><td></td><td>States are concatenated channel-wise and then combined using a linear layer.</td></tr>
+<tr><td></td><td>has 8 heads, 512/2048 embedding/FFN dimensions, with 8/10 layers for</td></tr>
+<tr><td></td><td>(28M/34M parameters in total). All models are trained in FP16.</td></tr>
+<tr><td>Training</td><td></td></tr>
+<tr><td></td><td>size of 240K frames. For training efficiency, audio length is capped at 1,600</td></tr>
+<tr><td></td><td>randomly if the length exceeds this threshold. Duration models are trained for</td></tr>
+<tr><td></td><td>effective batch size of 60K frames. The Adam [Kingma and Ba, 2014] optimizer</td></tr>
+<tr><td></td><td>learning rate of 1e-4, linearly warmed up for 5K steps and linearly decays over</td></tr>
+<tr><td></td><td>For audio models, we clip the gradient norm to 0.2 for training stability. The</td></tr>
+<tr><td></td><td>is masked with pdrop = 0.3/0.2, and otherwise a segment of r% sequence</td></tr>
+<tr><td></td><td>r ∼U[70, 100]/U[10, 100]. puncond is set to 0.2 for audio/duration models.</td></tr>
+<tr><td>Inference</td><td>The torchdiffeq [Chen, 2018] package is used, which</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td>(NFE=32). The regression duration model is used by default. Silence at both</td></tr>
+<tr><td>second max.</td><td></td></tr>
+<tr><td>Baselines</td><td></td></tr>
+<tr><td></td><td>TTS trained on Librilight. 2) YourTTS [Casanova et al., 2021], SOTA</td></tr>
+<tr><td></td><td>and Portuguese) zero-shot TTS model trained on VCTK, LibriTTS,</td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td>using a pre-trained multilingual speaker embedder for voice conditioning. 3)</td></tr>
+<tr><td></td><td>SOTA for NAR speech editing and infilling trained with a regression loss on</td></tr>
+<tr><td></td><td>Demucs [Défossez et al., 2020], a SOTA speech enhancement model trained</td></tr>
+<tr><td></td><td>adversarial losses for denoising experiments. Table 1 summarizes the tasks each</td></tr>
+<tr><td>of solving.</td><td></td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-model-2"><span class="t-zh">模型结果（表 5 残留）</span><span class="t-en">Model</span></h3>
+      <h3 class="sech lv2" id="sec-model-2"><span class="t-zh">模型结果（表 5 残留）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-2-1">
+          <p class="en-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="en">ZS TTS Denoise Partial Edit Sampling VALL-E</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="zh">（图内标签）噪声</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-model-2-1"><code>✓ ✗ ✗ ✓</code></div>
 
+<div class="eq" id="eq-model-2-3"><code>✓ ✗ ✗ ✓</code></div>
+<div class="eq" id="eq-model-2-4"><code>A3T</code></div>
+<div class="eq" id="eq-model-2-5"><code>✓</code></div>
+<div class="eq" id="eq-model-2-6"><code>✓(short)</code></div>
+<div class="eq" id="eq-model-2-7"><code>✓ ✗</code></div>
 
-
-
-
-
-
-
-
-
-
-
-</section>
+<div class="eq" id="eq-model-2-9"><code>✗ ✓ ✗ ✗</code></div>
+<div class="eq" id="eq-model-2-10"><code>Voicebox</code></div>
+<div class="eq" id="eq-model-2-11"><code>✓</code></div>
+<div class="eq" id="eq-model-2-12"><code>✓(short)</code></div>
+<div class="eq" id="eq-model-2-13"><code>✓ ✓</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-5-2"><span class="secnum">5.2</span> <span class="t-zh">5.2 单语零样本 TTS</span><span class="t-en">Monolingual zero-shot TTS</span></h3><div class="pblk" id="tab-5-2-1">
           <p class="en-lines"><span class="sent" data-sid="tab-5-2-1-s1"><span class="en">Table 2 presents the zero-shot TTS results of the English model VB-En. Following [Wang et al., 2023], the test set is constructed by selecting 4 to 10 second long samples from Librispeech test-clean.</span></span></p>
@@ -838,16 +861,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-5-2-2"><span class="cap-k">表</span><p class="en">Table 2: English zero-shot TTS results on filtered LS test-clean. &quot;-&quot; results are not available. We obtain VALL-E continuation SIM result through communication with the authors.</p><p class="zh">表 2：过滤后 LS test-clean 上的英语零样本 TTS 结果。“-”表示结果不可得。VALL-E 续写 SIM 结果来自与作者的沟通。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th>WER</th><th>SIM-o</th><th>SIM-r</th><th>QMOS</th><th></th><th>SMOS</th><th></th></tr></thead><tbody><tr><td>Ground truth</td><td>2.2</td><td>0.754</td><td>n/a</td><td>3.98± 0.14</td><td></td><td>4.01±0.09</td><td></td></tr>
-<tr><td>cross-sentence</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>A3T</td><td>63.3</td><td>0.046</td><td>0.146</td><td></td><td>-</td><td></td><td>-</td></tr>
-<tr><td>YourTTS</td><td>7.7</td><td>0.337</td><td>n/a</td><td>3.27± 0.13</td><td></td><td>3.19±0.14</td><td></td></tr>
-<tr><td>VALL-E</td><td>5.9</td><td></td><td>0.580</td><td></td><td>-</td><td></td><td>-</td></tr>
-<tr><td>VB-En</td><td>1.9</td><td>0.662</td><td>0.681</td><td>3.78± 0.10</td><td></td><td>3.71±0.11</td><td></td></tr>
-<tr><td>continuation</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>A3T</td><td>18.7</td><td>0.058</td><td>0.144</td><td></td><td>-</td><td></td><td>-</td></tr>
-<tr><td>VALL-E</td><td>3.8</td><td>0.452∗</td><td>0.508</td><td></td><td>-</td><td></td><td>-</td></tr>
-<tr><td>VB-En (α = 0.7)</td><td>2.0</td><td>0.593</td><td>0.616</td><td></td><td>-</td><td></td><td>-</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-5-2-2"><span class="cap-k">表</span><p class="en">Table 2: English zero-shot TTS results on filtered LS test-clean. &quot;-&quot; results are not available. We obtain VALL-E continuation SIM result through communication with the authors.</p><p class="zh">表 2：过滤后 LS test-clean 上的英语零样本 TTS 结果。“-”表示结果不可得。VALL-E 续写 SIM 结果来自与作者的沟通。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th>WER</th><th>SIM-o</th><th>SIM-r</th><th>QMOS</th><th>SMOS</th></tr></thead><tbody><tr><td>Ground truth</td><td>2.2</td><td>0.754</td><td>n/a</td><td>3.98± 0.14</td><td>4.01±0.09</td></tr>
+<tr><td>cross-sentence</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>A3T</td><td>63.3</td><td>0.046</td><td>0.146</td><td>-</td><td>-</td></tr>
+<tr><td>YourTTS</td><td>7.7</td><td>0.337</td><td>n/a</td><td>3.27± 0.13</td><td>3.19±0.14</td></tr>
+<tr><td>VALL-E</td><td>5.9</td><td>-</td><td>0.580</td><td>-</td><td>-</td></tr>
+<tr><td>VB-En</td><td>1.9</td><td>0.662</td><td>0.681</td><td>3.78± 0.10</td><td>3.71±0.11</td></tr>
+<tr><td>continuation</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>A3T</td><td>18.7</td><td>0.058</td><td>0.144</td><td>-</td><td>-</td></tr>
+<tr><td>VALL-E</td><td>3.8</td><td>0.452∗</td><td>0.508</td><td>-</td><td>-</td></tr>
+<tr><td>VB-En (α = 0.7)</td><td>2.0</td><td>0.593</td><td>0.616</td><td>-</td><td>-</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-3"><span class="t-zh">模型结果（表 5 残留）</span><span class="t-en">Model</span></h3>
 
@@ -868,11 +891,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-5-3"><span class="secnum">5.3</span> <span class="t-zh">5.3 跨语言零样本 TTS</span><span class="t-en">Cross-lingual zero-shot TTS</span></h3><div class="pblk" id="p-5-3-1">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-1-1"><span class="en">Tables 3 and 4 presents cross-lingual zero-shot TTS results, where the audio context and the target text are in different languages.</span></span> <span class="sent" data-sid="s-5-3-1-2"><span class="en">Note that VB-Multi is not trained on any sample with multiple languages in an utterance spoken by the same speaker.</span></span> <span class="sent" data-sid="s-5-3-1-3"><span class="en">The test set is constructed using filtered MLS test split described in Appendix A.4.</span></span> <span class="sent" data-sid="s-5-3-1-4"><span class="en">For each target text, we sample one 3-second long audio context from each language, which creates 36 language transfer directions in total.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-1-1"><span class="zh">表 3 与表 4 给出跨语言零样本 TTS 结果，其中音频上下文与目标文本属于不同语言。</span></span><span class="sent" data-sid="s-5-3-1-2"><span class="zh">注意，VB-Multi 的训练数据中不存在同一说话人在一条语音内说多种语言的样本。</span></span><span class="sent" data-sid="s-5-3-1-3"><span class="zh">测试集按附录 A.4 所述的过滤后 MLS 测试划分构建。</span></span><span class="sent" data-sid="s-5-3-1-4"><span class="zh">对每个目标文本，我们从每种语言各采样一段 3 秒音频上下文，共构成 36 个语言迁移方向。</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-5-3"><span class="secnum">5.3</span> <span class="t-zh">5.3 跨语言零样本 TTS</span><span class="t-en">Cross-lingual zero-shot TTS</span></h3>
 <div class="pblk" id="p-5-3-2">
           <p class="en-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="en">Voicebox yields better performance than YourTTS everywhere.</span></span> <span class="sent" data-sid="s-5-3-2-2"><span class="en">Specifically, on En/Fr/Pt which YourTTS supports, Voicebox obtains 3.1%/5.9%/8.1% lower WERs and 0.136/0.141/0.160 higher similarity averaged across audio context in six languages.</span><button class="mk" data-sid="s-5-3-2-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-3-2-3"><span class="en">The average audio similarity MOS is 0.59 (3.89 vs 3.30) higher for Voicebox and the average quality MOS is 0.27 (3.50 vs. 3.23) higher.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="zh">Voicebox 在所有方向上都优于 YourTTS。</span></span><span class="sent" data-sid="s-5-3-2-2"><span class="zh">具体而言，在 YourTTS 支持的 En/Fr/Pt 上，Voicebox 的 WER 分别低 3.1%/5.9%/8.1%，在六种语言的音频上下文上平均相似度分别高 0.136/0.141/0.160。</span><button class="mk" data-sid="s-5-3-2-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-3-2-3"><span class="zh">Voicebox 的平均音频相似度 MOS 高 0.59（3.89 对 3.30），平均质量 MOS 高 0.27（3.50 对 3.23）。</span></span></p>
@@ -885,82 +904,91 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-5-3-1"><span class="cap-k">表</span><p class="en">Table 3: Multilingual zero-shot TTS results on filtered MLS test sets. GT/YT/VB-Multi refers to ground truth/YourTTS/multilingual Voicebox. “Ref” column shows the audio context language.</p><p class="zh">表 3：过滤后 MLS 测试集上的多语言零样本 TTS 结果。GT/YT/VB-Multi 分别指真实语音／YourTTS／多语言 Voicebox。“Ref”列表示音频上下文的语言。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Ref</th><th></th><th>De</th><th></th><th></th><th>En</th><th></th><th>Es</th><th></th><th></th><th>Fr</th><th></th><th>Pl</th><th></th><th></th><th>Pt</th></tr><tr><th></th><th></th><th>WER</th><th></th><th>SIM-o</th><th>WER</th><th>SIM-o</th><th>WER</th><th></th><th>SIM-o</th><th>WER</th><th>SIM-o</th><th>WER</th><th></th><th>SIM-o</th><th>WER</th><th>SIM-o</th></tr></thead><tbody><tr><td>GT</td><td>-</td><td>5.9</td><td></td><td>0.725</td><td>5.0</td><td>0.636</td><td>4.1</td><td></td><td>0.729</td><td>5.2</td><td>0.714</td><td>4.9</td><td></td><td>0.743</td><td>5.8</td><td>0.725</td></tr>
-<tr><td></td><td>De</td><td>n/a</td><td></td><td>n/a</td><td>7.3</td><td>0.373</td><td>n/a</td><td></td><td>n/a</td><td>11.3</td><td>0.361</td><td>n/a</td><td></td><td>n/a</td><td>13.7</td><td>0.263</td></tr>
-<tr><td></td><td>En</td><td>n/a</td><td></td><td>n/a</td><td>7.0</td><td>0.403</td><td>n/a</td><td></td><td>n/a</td><td>11.4</td><td>0.298</td><td>n/a</td><td></td><td>n/a</td><td>14.1</td><td>0.234</td></tr>
-<tr><td></td><td>Es</td><td>n/a</td><td></td><td>n/a</td><td>7.6</td><td>0.327</td><td>n/a</td><td></td><td>n/a</td><td>11.6</td><td>0.316</td><td>n/a</td><td></td><td>n/a</td><td>13.5</td><td>0.256</td></tr>
-<tr><td>YT</td><td>Fr</td><td>n/a</td><td></td><td>n/a</td><td>7.6</td><td>0.363</td><td>n/a</td><td></td><td>n/a</td><td>10.7</td><td>0.459</td><td>n/a</td><td></td><td>n/a</td><td>13.1</td><td>0.299</td></tr>
-<tr><td></td><td>Pl</td><td>n/a</td><td></td><td>n/a</td><td>7.8</td><td>0.349</td><td>n/a</td><td></td><td>n/a</td><td>11.8</td><td>0.370</td><td>n/a</td><td></td><td>n/a</td><td>15.1</td><td>0.308</td></tr>
-<tr><td></td><td>Pt</td><td>n/a</td><td></td><td>n/a</td><td>7.6</td><td>0.322</td><td>n/a</td><td></td><td>n/a</td><td>11.8</td><td>0.297</td><td>n/a</td><td></td><td>n/a</td><td>13.6</td><td>0.436</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-5-3-1"><span class="cap-k">表</span><p class="en">Table 3: Multilingual zero-shot TTS results on filtered MLS test sets. GT/YT/VB-Multi refers to ground truth/YourTTS/multilingual Voicebox. “Ref” column shows the audio context language.</p><p class="zh">表 3：过滤后 MLS 测试集上的多语言零样本 TTS 结果。GT/YT/VB-Multi 分别指真实语音／YourTTS／多语言 Voicebox。“Ref”列表示音频上下文的语言。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Ground truth</td><td>2.2</td><td></td><td>0.754</td><td>n/a</td><td>3.98± 0.14</td><td>4.01±0.09</td></tr>
+<tr><td>cross-sentence</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>A3T</td><td>63.3</td><td></td><td>0.046</td><td>0.146</td><td>-</td><td>-</td></tr>
+<tr><td>YourTTS</td><td>7.7</td><td></td><td>0.337</td><td>n/a</td><td>3.27± 0.13</td><td>3.19±0.14</td></tr>
+<tr><td>VALL-E</td><td>5.9</td><td></td><td>-</td><td>0.580</td><td>-</td><td>-</td></tr>
+<tr><td>VB-En</td><td>1.9</td><td></td><td>0.662</td><td>0.681</td><td>3.78± 0.10</td><td>3.71±0.11</td></tr>
+<tr><td>continuation</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>A3T</td><td>18.7</td><td></td><td>0.058</td><td>0.144</td><td>-</td><td>-</td></tr>
+<tr><td>VALL-E</td><td>3.8</td><td></td><td>0.452∗</td><td>0.508</td><td>-</td><td>-</td></tr>
+<tr><td>VB-En (α = 0.7)</td><td>2.0</td><td></td><td>0.593</td><td>0.616</td><td>-</td><td>-</td></tr>
+<tr><td>Cross-lingual zero-shot TTS</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Tables 3 and 4 presents cross-lingual zero-shot TTS results, where the audio context and the</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>are in different languages. Note that VB-Multi is not trained on any sample with multiple</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>in an utterance spoken by the same speaker. The test set is constructed using filtered MLS</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>described in Appendix A.4. For each target text, we sample one 3-second long audio</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-5-3-3">
           <p class="en-lines"><span class="sent" data-sid="s-5-3-3-1"><span class="en">Ref De En Es Fr Pl Pt WER SIM-o WER SIM-o WER SIM-o WER SIM-o WER SIM-o WER SIM-o GT</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-3-1"><span class="zh">表头：Ref=De/En/Es/Fr/Pl/Pt 各参考语下的 WER / SIM-o——GT（后续照原文）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-5-3-1"><code>- 5.9 0.725 5.0 0.636 4.1 0.729 5.2 0.714 4.9 0.743 5.8 0.725</code></div>
+<div class="eq" id="eq-5-3-2"><code>De n/a n/a</code></div>
+<div class="eq" id="eq-5-3-3"><code>7.3 0.373</code></div>
 
+<div class="eq" id="eq-5-3-5"><code>11.3 0.361</code></div>
 
+<div class="eq" id="eq-5-3-7"><code>13.7 0.263</code></div>
+<div class="eq" id="eq-5-3-8"><code>En n/a n/a</code></div>
+<div class="eq" id="eq-5-3-9"><code>7.0 0.403</code></div>
 
+<div class="eq" id="eq-5-3-11"><code>11.4 0.298</code></div>
 
+<div class="eq" id="eq-5-3-13"><code>14.1 0.234</code></div>
+<div class="eq" id="eq-5-3-14"><code>Es n/a n/a</code></div>
+<div class="eq" id="eq-5-3-15"><code>7.6 0.327</code></div>
 
+<div class="eq" id="eq-5-3-17"><code>11.6 0.316</code></div>
 
+<div class="eq" id="eq-5-3-19"><code>13.5 0.256</code></div>
+<div class="eq" id="eq-5-3-20"><code>Fr n/a n/a</code></div>
+<div class="eq" id="eq-5-3-21"><code>7.6 0.363</code></div>
 
+<div class="eq" id="eq-5-3-23"><code>10.7 0.459</code></div>
 
+<div class="eq" id="eq-5-3-25"><code>13.1 0.299</code></div>
+<div class="eq" id="eq-5-3-26"><code>Pl n/a n/a</code></div>
+<div class="eq" id="eq-5-3-27"><code>7.8 0.349</code></div>
 
+<div class="eq" id="eq-5-3-29"><code>11.8 0.370</code></div>
 
+<div class="eq" id="eq-5-3-31"><code>15.1 0.308</code></div>
+<div class="eq" id="eq-5-3-32"><code>Pt n/a n/a</code></div>
+<div class="eq" id="eq-5-3-33"><code>7.6 0.322</code></div>
 
+<div class="eq" id="eq-5-3-35"><code>11.8 0.297</code></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="eq" id="eq-5-3-37"><code>13.6 0.436</code></div>
 <div class="eq" id="eq-5-3-38"><code>YT AVG n/a n/a</code></div>
 <div class="eq" id="eq-5-3-39"><code>7.5 0.356</code></div>
 
 <div class="eq" id="eq-5-3-41"><code>11.4 0.350</code></div>
 
 <div class="eq" id="eq-5-3-43"><code>13.9 0.299</code></div>
-
+<div class="eq" id="eq-5-3-44"><code>De</code></div>
 <div class="eq" id="eq-5-3-45"><code>4.8 0.632 4.8 0.522 3.6 0.442 5.3 0.489 5.5 0.449 5.4 0.420</code></div>
-
+<div class="eq" id="eq-5-3-46"><code>En</code></div>
 <div class="eq" id="eq-5-3-47"><code>5.9 0.435 4.2 0.535 4.1 0.423 6.8 0.423 8.3 0.402 7.6 0.385</code></div>
-
+<div class="eq" id="eq-5-3-48"><code>Es</code></div>
 <div class="eq" id="eq-5-3-49"><code>4.9 0.460 4.3 0.479 3.6 0.613 5.3 0.473 5.2 0.436 5.4 0.435</code></div>
-
+<div class="eq" id="eq-5-3-50"><code>Fr</code></div>
 <div class="eq" id="eq-5-3-51"><code>4.9 0.476 4.3 0.485 3.7 0.479 5.1 0.602 4.8 0.408 5.4 0.418</code></div>
-
+<div class="eq" id="eq-5-3-52"><code>Pl</code></div>
 <div class="eq" id="eq-5-3-53"><code>4.7 0.491 3.8 0.503 3.5 0.528 5.1 0.503 4.0 0.641 4.9 0.476</code></div>
-
+<div class="eq" id="eq-5-3-54"><code>Pt</code></div>
 <div class="eq" id="eq-5-3-55"><code>4.9 0.422 4.6 0.426 3.7 0.476 5.5 0.453 4.8 0.406 5.2 0.620</code></div>
-<div class="eq" id="eq-5-3-56"><code>VB-Multi</code></div>
+
 <div class="eq" id="eq-5-3-57"><code>(α = 1.0)</code></div>
 <div class="eq" id="eq-5-3-58"><code>AVG</code></div>
 <div class="eq" id="eq-5-3-59"><code>5.0 0.486 4.4 0.492 3.7 0.494 5.5 0.491 5.5 0.457 5.7 0.459</code></div>
-<div class="cap" id="tab-5-3-2"><span class="cap-k">表</span><p class="en">Table 4: Multilingual zero-shot TTS SMOS/QMOS results on filtered MLS English test set with prompts in different languages. YT/VB-Multi refers to YourTTS/multilingual Voicebox. “Ref” shows the audio context language.</p><p class="zh">表 4：过滤后 MLS 英语测试集上、提示为不同语言时的多语言零样本 TTS SMOS/QMOS 结果。YT/VB-Multi 指 YourTTS／多语言 Voicebox，“Ref”表示音频上下文语言。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>the audio context language.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>Ref=De</th><th>Ref=En</th><th></th><th>Ref=Es</th><th>Ref=Fr</th><th>Ref=Pl</th><th>Ref=Pt</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>SMOS (target text = En)</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td>YT</td><td>3.26±0.11</td><td>3.24±0.11</td><td></td><td>3.22±0.12</td><td>3.48±0.10</td><td>3.26±0.09</td><td>3.38±0.11</td></tr>
-<tr><td></td><td>VB-Multi (α = 1.0)</td><td></td><td>3.89±0.10</td><td>3.93±0.08</td><td></td><td>3.84±0.10</td><td>3.92±0.09</td><td>3.81±0.08</td><td>3.96±0.09</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>QMOS (target text = En)</td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td>YT</td><td>3.29±0.12</td><td>3.17±0.13</td><td></td><td>3.29±0.12</td><td>3.08±0.12</td><td>3.35±0.12</td><td>3.21±0.12</td></tr>
-<tr><td></td><td>VB-Multi (α = 1.0)</td><td></td><td>3.67±0.09</td><td>3.48±0.09</td><td></td><td>3.45±0.11</td><td>3.31±0.12</td><td>3.75±0.11</td><td>3.35±0.13</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-5-3-2"><span class="cap-k">表</span><p class="en">Table 4: Multilingual zero-shot TTS SMOS/QMOS results on filtered MLS English test set with prompts in different languages. YT/VB-Multi refers to YourTTS/multilingual Voicebox. “Ref” shows the audio context language.</p><p class="zh">表 4：过滤后 MLS 英语测试集上、提示为不同语言时的多语言零样本 TTS SMOS/QMOS 结果。YT/VB-Multi 指 YourTTS／多语言 Voicebox，“Ref”表示音频上下文语言。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>the audio context language.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Ref=De</th><th>Ref=En</th><th>Ref=Es</th><th></th><th>Ref=Fr</th><th>Ref=Pl</th><th>Ref=Pt</th></tr><tr><th></th><th></th><th></th><th></th><th>SMOS (target text = En)</th><th></th><th></th><th></th></tr></thead><tbody><tr><td>YT</td><td>3.26±0.11</td><td>3.24±0.11</td><td>3.22±0.12</td><td></td><td>3.48±0.10</td><td>3.26±0.09</td><td>3.38±0.11</td></tr>
+<tr><td>VB-Multi (α = 1.0)</td><td>3.89±0.10</td><td>3.93±0.08</td><td>3.84±0.10</td><td></td><td>3.92±0.09</td><td>3.81±0.08</td><td>3.96±0.09</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>QMOS (target text = En)</td><td></td><td></td><td></td></tr>
+<tr><td>YT</td><td>3.29±0.12</td><td>3.17±0.13</td><td>3.29±0.12</td><td></td><td>3.08±0.12</td><td>3.35±0.12</td><td>3.21±0.12</td></tr>
+<tr><td>VB-Multi (α = 1.0)</td><td>3.67±0.09</td><td>3.48±0.09</td><td>3.45±0.11</td><td></td><td>3.31±0.12</td><td>3.75±0.11</td><td>3.35±0.13</td></tr></tbody></table></div></div>
 
 
 
@@ -976,12 +1004,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-5-4-1-s1"><span class="zh">表 5 给出 Voicebox 与 A3T、Demucs 的对比结果。需要指出，A3T 与 Voicebox 利用了转写文本与噪声位置，而 Demucs 没有。尽管如此，本研究的目的是提出一种新范式，证明 Voicebox 无需显式训练即可去噪。与基线相比，Voicebox 在这一苛刻噪声条件下生成的样本可懂度更高（2.0% WER）、与音频干净部分更相似（0.612 SIM-o）、质量更高（3.87 MOS）。A3T 在可懂度与质量上优于 Demucs，但填充语音不连贯，因为它仅在 VCTK 上训练，无法泛化到新的音频风格。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-4-2"><span class="cap-k">表</span><p class="en">Table 5: Transient noise removal where noise overlaps with 50% of the speech at a -10dB SNR.</p><p class="zh">表 5：瞬态噪声移除，噪声以 -10dB 信噪比与 50% 的语音重叠。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>the audio context language.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>Ref=De</th><th>Ref=En</th><th></th><th>Ref=Es</th><th>Ref=Fr</th><th>Ref=Pl</th><th>Ref=Pt</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>SMOS (target text = En)</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td>YT</td><td>3.26±0.11</td><td>3.24±0.11</td><td></td><td>3.22±0.12</td><td>3.48±0.10</td><td>3.26±0.09</td><td>3.38±0.11</td></tr>
-<tr><td></td><td>VB-Multi (α = 1.0)</td><td></td><td>3.89±0.10</td><td>3.93±0.08</td><td></td><td>3.84±0.10</td><td>3.92±0.09</td><td>3.81±0.08</td><td>3.96±0.09</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>QMOS (target text = En)</td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td>YT</td><td>3.29±0.12</td><td>3.17±0.13</td><td></td><td>3.29±0.12</td><td>3.08±0.12</td><td>3.35±0.12</td><td>3.21±0.12</td></tr>
-<tr><td></td><td>VB-Multi (α = 1.0)</td><td></td><td>3.67±0.09</td><td>3.48±0.09</td><td></td><td>3.45±0.11</td><td>3.31±0.12</td><td>3.75±0.11</td><td>3.35±0.13</td></tr>
-<tr><td>5.4</td><td>Transient noise removal</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-5-4-2"><span class="cap-k">表</span><p class="en">Table 5: Transient noise removal where noise overlaps with 50% of the speech at a -10dB SNR.</p><p class="zh">表 5：瞬态噪声移除，噪声以 -10dB 信噪比与 50% 的语音重叠。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>the audio context language.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>Ref=De</th><th>Ref=En</th><th>Ref=Es</th><th></th><th>Ref=Fr</th><th>Ref=Pl</th><th>Ref=Pt</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th>SMOS (target text = En)</th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>YT</td><td></td><td>3.26±0.11</td><td>3.24±0.11</td><td>3.22±0.12</td><td></td><td>3.48±0.10</td><td>3.26±0.09</td><td>3.38±0.11</td></tr>
+<tr><td></td><td>VB-Multi (α = 1.0)</td><td></td><td>3.89±0.10</td><td>3.93±0.08</td><td>3.84±0.10</td><td></td><td>3.92±0.09</td><td>3.81±0.08</td><td>3.96±0.09</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>QMOS (target text = En)</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>YT</td><td></td><td>3.29±0.12</td><td>3.17±0.13</td><td>3.29±0.12</td><td></td><td>3.08±0.12</td><td>3.35±0.12</td><td>3.21±0.12</td></tr>
+<tr><td></td><td>VB-Multi (α = 1.0)</td><td></td><td>3.67±0.09</td><td>3.48±0.09</td><td>3.45±0.11</td><td></td><td>3.31±0.12</td><td>3.75±0.11</td><td>3.35±0.13</td></tr>
+<tr><td>5.4</td><td></td><td>Transient noise removal</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-4"><span class="t-zh">模型结果（表 5 残留）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-4-1-1"><span class="en">WER SIM-o QMOS Clean speech</span></span></p>
@@ -1018,40 +1046,44 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-5-2-1"><span class="zh">接下来我们只用合成语音训练 ASR 模型并在真实语音上评测——此前这从未成功过，因为合成数据不够真实、不够有代表性。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-5-2"><span class="cap-k">表</span><p class="en">Table 6: Diverse speech generation from LS test-other text.</p><p class="zh">表 6：从 LS test-other 文本生成多样化语音。</p></div>
-<div class="pblk" id="p-5-5-3">
-          <p class="en-lines"><span class="sent" data-sid="s-5-5-3-1"><span class="en">Model WER FSD Ground truth</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-5-3-1"><span class="zh">表头：Model / WER / FSD——Ground truth（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-5-1"><code>4.3 171.1</code></div>
-<div class="eq" id="eq-5-5-2"><code>require additional input VITS-VCTK</code></div>
-<div class="eq" id="eq-5-5-3"><code>10.6 306.6</code></div>
-<div class="eq" id="eq-5-5-4"><code>YourTTS (ref=LS train)</code></div>
+<div class="cap" id="tab-5-5-2"><span class="cap-k">表</span><p class="en">Table 6: Diverse speech generation from LS test-other text.</p><p class="zh">表 6：从 LS test-other 文本生成多样化语音。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>test-other text.</th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>WER</th><th>FSD</th></tr></thead><tbody><tr><td>Ground truth</td><td></td><td>4.3</td><td>171.1</td></tr>
+<tr><td></td><td>require additional input</td><td></td><td></td></tr>
+<tr><td>VITS-VCTK</td><td></td><td>10.6</td><td>306.6</td></tr></tbody></table></div></div>
+
+
+
+
+
 <div class="eq" id="eq-5-5-5"><code>9.0 277.9</code></div>
 <div class="eq" id="eq-5-5-6"><code>text-only A3T</code></div>
 <div class="eq" id="eq-5-5-7"><code>37.9 373.0</code></div>
-<div class="eq" id="eq-5-5-8"><code>VITS-LJ</code></div>
+
 <div class="eq" id="eq-5-5-9"><code>5.6 344.2</code></div>
-<div class="eq" id="eq-5-5-10"><code>VB-En (α = 0, dur=regr)</code></div>
+
 <div class="eq" id="eq-5-5-11"><code>3.1 155.7 VB-En (α = 0, dur=FM, αdur = 0) 5.6 159.8</code></div>
-<div class="cap" id="tab-5-5-3"><span class="cap-k">表</span><p class="en">Table 7: Performance of ASR models trained on real or synthetic speech, tested on real speech and decoded with or without a 4-gram language model.</p><p class="zh">表 7：在真实语音或合成语音上训练的 ASR 模型性能，测试于真实语音，分别在有／无 4-gram 语言模型下解码。</p></div>
+<div class="cap" id="tab-5-5-3"><span class="cap-k">表</span><p class="en">Table 7: Performance of ASR models trained on real or synthetic speech, tested on real speech and decoded with or without a 4-gram language model.</p><p class="zh">表 7：在真实语音或合成语音上训练的 ASR 模型性能，测试于真实语音，分别在有／无 4-gram 语言模型下解码。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>real or synthetic speech, tested on real speech and</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>decoded with or without a 4-gram language model.</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>ASR training data</th><th></th><th>test-c</th><th>test-o</th><th>test-c</th><th>test-o</th></tr></thead><tbody><tr><td></td><td>Real audio (100hr)</td><td></td><td>9.0</td><td>21.5</td><td>6.1</td><td>16.2</td></tr>
+<tr><td></td><td>Real audio (960hr)</td><td></td><td>2.6</td><td>6.3</td><td>2.2</td><td>5.0</td></tr>
+<tr><td>VITS-LJ</td><td></td><td></td><td>58.0</td><td>81.2</td><td>51.6</td><td>78.1</td></tr>
+<tr><td>VITS-VCTK</td><td></td><td></td><td>33.8</td><td>55.5</td><td>30.2</td><td>53.1</td></tr>
+<tr><td></td><td>YourTTS (ref=LS train)</td><td></td><td>25.0</td><td>54.6</td><td>20.4</td><td>51.2</td></tr>
+<tr><td></td><td>VB-En (α = 0, dur=regr)</td><td></td><td>7.1</td><td>17.6</td><td>6.5</td><td>14.6</td></tr>
+<tr><td></td><td></td><td></td><td>3.1</td><td>8.3</td><td>2.6</td><td>6.7</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-5-5-4">
           <p class="en-lines"><span class="sent" data-sid="s-5-5-4-1"><span class="en">WER on real data No LM 4-gram LM ASR training data test-c test-o test-c test-o Real audio (100hr)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-5-4-1"><span class="zh">表头：WER on real data × No LM / 4-gram LM；ASR training data × test-c / test-o / test-c / test-o；Real audio (100hr)（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-5-5-12"><code>9.0 21.5 6.1 16.2</code></div>
-<div class="eq" id="eq-5-5-13"><code>Real audio (960hr)</code></div>
-<div class="eq" id="eq-5-5-14"><code>2.6 6.3 2.2 5.0</code></div>
-<div class="eq" id="eq-5-5-15"><code>VITS-LJ</code></div>
-<div class="eq" id="eq-5-5-16"><code>58.0 81.2 51.6 78.1</code></div>
-<div class="eq" id="eq-5-5-17"><code>VITS-VCTK</code></div>
-<div class="eq" id="eq-5-5-18"><code>33.8 55.5 30.2 53.1</code></div>
-<div class="eq" id="eq-5-5-19"><code>YourTTS (ref=LS train)</code></div>
-<div class="eq" id="eq-5-5-20"><code>25.0 54.6 20.4 51.2</code></div>
-<div class="eq" id="eq-5-5-21"><code>VB-En (α = 0, dur=regr)</code></div>
-<div class="eq" id="eq-5-5-22"><code>7.1 17.6 6.5 14.6 VB-En (α = 0, dur=FM, αdur = 0) 3.1 8.3 2.6 6.7</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="tab-5-5-4">
           <p class="en-lines"><span class="sent" data-sid="tab-5-5-4-s1"><span class="en">Table 7 compares real and synthetic data from Voicebox and three baseline models. Each TTS model generates one sample per text from the Librispeech training set, resulting in 281K utterances per system. For real data, we consider train-960 and train-clean-100. Details about the ASR model and training configurations are in Appendix A.5.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="tab-5-5-4-s1"><span class="zh">表 7 对比了真实数据与来自 Voicebox 及三个基线模型的合成数据。每个 TTS 模型为 Librispeech 训练集中的每段文本生成一条样本，每个系统共 281K 条语音。真实数据取 train-960 与 train-clean-100。ASR 模型与训练配置的细节见附录 A.5。</span></span></p>
@@ -1246,29 +1278,32 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="cap" id="fig-5-8-1"><img class="fig" src="../assets/figures/2306.15687/fig-5-8-1.png" loading="lazy" alt="Figure 8: Each subplot considers one of the six target language and shows WER as a function of prompt audio duration in "><span class="cap-k">图</span><p class="en">Figure 8: Each subplot considers one of the six target language and shows WER as a function of prompt audio duration in seconds for cross-lingual style transfer from different source language. We find WER remain reasonably low for all cases except for “English” to “X” style transfer.We set the classifier-free guidance strength (α) to 1.0 and use midpoint ODE solver with a NFE of 32.</p><p class="zh">图 8：每个子图对应六种目标语言之一，展示跨语言风格迁移下 WER 随提示音频秒数的变化（来自不同源语言）。我们发现除“英语→X”迁移外，所有情况下 WER 都保持在合理低水平。分类器自由引导强度（α）设为 1.0，使用 NFE 为 32 的中点 ODE 求解器。</p></div>
-<div class="cap" id="tab-5-8-1"><span class="cap-k">表</span><p class="en">Table 8: Comparing different objectives on training efficiency. 32 NFEs are used for inference. Each model is evaluated on the monolingual zero-shot TTS task.</p><p class="zh">表 8：不同目标在训练效率上的对比。推理使用 32 次 NFE。每个模型在单语零样本 TTS 任务上评估。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td>40</td><td></td><td></td><td>40</td><td></td><td></td></tr>
-<tr><td>8.5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>8.0</td><td></td><td></td><td>30</td><td></td><td></td><td>30</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>7.5</td><td></td><td></td><td></td><td></td><td></td><td>20</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td>20</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>7.0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>10</td><td></td><td></td></tr>
-<tr><td>6.5</td><td></td><td></td><td>10</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>2</td><td>4</td><td></td><td>2</td><td>4</td><td></td><td>2</td><td>4</td></tr>
-<tr><td></td><td></td><td>Prompt (s)</td><td></td><td></td><td>Prompt (s)</td><td></td><td></td><td>Prompt (s)</td></tr>
-<tr><td></td><td>(a) English</td><td></td><td></td><td>(b) French</td><td></td><td></td><td>(c) Spanish</td><td></td></tr>
-<tr><td>40</td><td></td><td></td><td>18</td><td></td><td></td><td>80</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td>16</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>60</td><td></td><td></td></tr>
-<tr><td>30</td><td></td><td></td><td>14</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>40</td><td></td><td></td></tr>
-<tr><td>20</td><td></td><td></td><td>12</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td>10</td><td></td><td></td><td>20</td><td></td><td></td></tr>
-<tr><td>10</td><td></td><td></td><td>8</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>2</td><td>4</td><td></td><td>2</td><td>4</td><td></td><td>2</td><td>4</td></tr>
-<tr><td></td><td></td><td>Prompt (s)</td><td></td><td></td><td>Prompt (s)</td><td></td><td></td><td>Prompt (s)</td></tr>
-<tr><td></td><td>(d) Portuguese</td><td></td><td></td><td>(e) German</td><td></td><td></td><td>(f) Polish</td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-5-8-1"><span class="cap-k">表</span><p class="en">Table 8: Comparing different objectives on training efficiency. 32 NFEs are used for inference. Each model is evaluated on the monolingual zero-shot TTS task.</p><p class="zh">表 8：不同目标在训练效率上的对比。推理使用 32 次 NFE。每个模型在单语零样本 TTS 任务上评估。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>polish</th><th></th></tr></thead><tbody><tr><td></td><td>40</td><td></td><td>40</td></tr>
+<tr><td>8.5</td><td></td><td></td><td></td></tr>
+<tr><td>8.0</td><td>30</td><td></td><td>30</td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td>7.5</td><td></td><td></td><td>20</td></tr>
+<tr><td></td><td>20</td><td></td><td></td></tr>
+<tr><td>7.0</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>10</td></tr>
+<tr><td>6.5</td><td>10</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>6</td><td></td></tr>
+<tr><td></td><td></td><td>Prompt (s)</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td>40</td><td>18</td><td></td><td>80</td></tr>
+<tr><td></td><td>16</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>60</td></tr>
+<tr><td>30</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>14</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>12</td><td></td><td>40</td></tr>
+<tr><td>20</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>10</td><td></td><td>20</td></tr>
+<tr><td>10</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>8</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>6</td><td></td></tr>
+<tr><td></td><td></td><td>Prompt (s)</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-5-8-4">
           <p class="en-lines"><span class="sent" data-sid="s-5-8-4-1"><span class="en">Method upd=50K upd=100K upd=150K WER Sim-o WER Sim-o WER Sim-o FM w/ OT (proposed)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-8-4-1"><span class="zh">表头：Method × upd=50K / upd=100K / upd=150K 的 WER / Sim-o——FM w/ OT (proposed)（后续照原文）。</span></span></p>
@@ -1302,9 +1337,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-6-3-1"><span class="zh">模型在 Librispeech 的 dev-clean 划分上测试。</span></span><span class="sent" data-sid="s-6-3-2"><span class="zh">我们从 60K 小时英语数据中抽取 100 小时子集，留出 2,703 条随机语音（与 dev-clean 规模一致）作为验证集。</span></span><span class="sent" data-sid="s-6-3-3"><span class="zh">100 小时子集中的其余语音用作训练的真实语音。</span></span><span class="sent" data-sid="s-6-3-4"><span class="zh">对每个划分，我们以该划分中的每条语音为条件合成音频（接上）</span></span></p>
           
         </div>
-<div class="cap" id="tab-6-1"><span class="cap-k">表</span><p class="en">Table 9: Comparing different objectives on inference efficiency. All models are trained for 150K updates. Each model is evaluated on the monolingual zero-shot TTS task.</p><p class="zh">表 9：不同目标在推理效率上的对比。所有模型训练 150K 次更新，均在单语零样本 TTS 任务上评估。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>updates. Each model is evaluated on the monolingual zero-shot TTS task.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>NFE=4</th><th></th><th></th><th>NFE=8</th><th></th><th></th><th>NFE=16</th><th></th><th></th><th>NFE=32</th><th></th></tr><tr><th></th><th>Method</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>WER</th><th></th><th>Sim-o</th><th>WER</th><th></th><th>Sim-o</th><th>WER</th><th></th><th>Sim-o</th><th>WER</th><th></th><th>Sim-o</th></tr></thead><tbody><tr><td></td><td>FM w/ OT (proposed)</td><td>2.4</td><td></td><td>0.410</td><td></td><td>2.2</td><td>0.481</td><td></td><td>2.2</td><td>0.503</td><td></td><td>2.1</td><td>0.508</td></tr>
-<tr><td></td><td>FM w/ diff</td><td>11.5</td><td></td><td>0.171</td><td>3.0</td><td></td><td>0.359</td><td></td><td>2.7</td><td>0.447</td><td></td><td>2.6</td><td>0.478</td></tr>
-<tr><td></td><td>SM w/ diff</td><td>94.5</td><td></td><td>0.054</td><td>42.3</td><td></td><td>0.076</td><td>11.5</td><td></td><td>0.218</td><td></td><td>5.1</td><td>0.349</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-6-1"><span class="cap-k">表</span><p class="en">Table 9: Comparing different objectives on inference efficiency. All models are trained for 150K updates. Each model is evaluated on the monolingual zero-shot TTS task.</p><p class="zh">表 9：不同目标在推理效率上的对比。所有模型训练 150K 次更新，均在单语零样本 TTS 任务上评估。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>updates. Each model is evaluated on the monolingual zero-shot TTS task.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>NFE=4</th><th></th><th></th><th>NFE=8</th><th></th><th></th><th>NFE=16</th><th></th><th></th><th>NFE=32</th><th></th></tr><tr><th>Method</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>WER</th><th></th><th>Sim-o</th><th>WER</th><th></th><th>Sim-o</th><th>WER</th><th></th><th>Sim-o</th><th>WER</th><th></th><th>Sim-o</th></tr></thead><tbody><tr><td></td><td>FM w/ OT (proposed)</td><td>2.4</td><td></td><td>0.410</td><td>2.2</td><td></td><td>0.481</td><td>2.2</td><td></td><td>0.503</td><td>2.1</td><td></td><td>0.508</td></tr>
+<tr><td>FM w/ diff</td><td></td><td>11.5</td><td></td><td>0.171</td><td>3.0</td><td></td><td>0.359</td><td>2.7</td><td></td><td>0.447</td><td>2.6</td><td></td><td>0.478</td></tr>
+<tr><td>SM w/ diff</td><td></td><td>94.5</td><td></td><td>0.054</td><td>42.3</td><td></td><td>0.076</td><td>11.5</td><td></td><td>0.218</td><td>5.1</td><td></td><td>0.349</td></tr></tbody></table></div></div>
 
 
 
@@ -1326,10 +1361,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-6-2-s1"><span class="zh">表 10 给出各设置下的结果。模型可以轻易地区分原始音频与 Voicebox 生成的音频——这源于模型同样能轻易地区分原始音频与重合成音频（很可能是通过识别声码器产生的伪影）。区分 Voicebox 生成音频与重合成音频要难得多。当 90% 的音频被掩蔽时，模型能可靠地判定音频为 Voicebox 生成；在较低的掩蔽比例下准确率有所下降，但这很可能是因为取所有滑动窗口输出平均的朴素推理方式：由于大多数窗口并非合成，从而导致误分类。</span></span></p>
           
         </div>
-<div class="cap" id="tab-6-3"><span class="cap-k">表</span><p class="en">Table 10: Synthetic speech detection metrics % Mask Accuracy Precision Recall</p><p class="zh">表 10：合成语音检测指标。% Mask 为掩蔽比例，列为准确率（Accuracy）、精确率（Precision）、召回率（Recall）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>NFE=4</th><th></th><th></th><th>NFE=8</th><th></th><th></th><th>NFE=16</th><th></th><th></th><th>NFE=32</th><th></th></tr><tr><th></th><th>Method</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>WER</th><th></th><th>Sim-o</th><th>WER</th><th></th><th>Sim-o</th><th>WER</th><th></th><th>Sim-o</th><th>WER</th><th></th><th>Sim-o</th></tr></thead><tbody><tr><td></td><td>FM w/ OT (proposed)</td><td>2.4</td><td></td><td>0.410</td><td></td><td>2.2</td><td>0.481</td><td></td><td>2.2</td><td>0.503</td><td></td><td>2.1</td><td>0.508</td></tr>
-<tr><td></td><td>FM w/ diff</td><td>11.5</td><td></td><td>0.171</td><td>3.0</td><td></td><td>0.359</td><td></td><td>2.7</td><td>0.447</td><td></td><td>2.6</td><td>0.478</td></tr>
-<tr><td></td><td>SM w/ diff</td><td>94.5</td><td></td><td>0.054</td><td>42.3</td><td></td><td>0.076</td><td>11.5</td><td></td><td>0.218</td><td></td><td>5.1</td><td>0.349</td></tr>
-<tr><td>vocoding it with the HiFi-GAN vocoder.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-6-3"><span class="cap-k">表</span><p class="en">Table 10: Synthetic speech detection metrics % Mask Accuracy Precision Recall</p><p class="zh">表 10：合成语音检测指标。% Mask 为掩蔽比例，列为准确率（Accuracy）、精确率（Precision）、召回率（Recall）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Method</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>WER</th><th>Sim-o</th><th>WER</th><th>Sim-o</th><th>WER</th><th>Sim-o</th><th>WER</th><th>Sim-o</th></tr></thead><tbody><tr><td></td><td>2.4</td><td>0.410</td><td>2.2</td><td>0.481</td><td>2.2</td><td>0.503</td><td>2.1</td><td>0.508</td></tr>
+<tr><td>FM w/ diff</td><td>11.5</td><td>0.171</td><td>3.0</td><td>0.359</td><td>2.7</td><td>0.447</td><td>2.6</td><td>0.478</td></tr>
+<tr><td>SM w/ diff</td><td>94.5</td><td>0.054</td><td>42.3</td><td>0.076</td><td>11.5</td><td>0.218</td><td>5.1</td><td>0.349</td></tr>
+<tr><td></td><td></td><td></td><td>the split by masking out frames in the spectrogram corresponding to 90%, 50%, and 30% of the</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>phonemes of the utterance. All samples are generated using classifier-free guidance with w = 0.7,</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>We consider two detection tasks. The first one is to distinguish between original audio and Voicebox-</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>generated audio. The second one is to distinguish resynthesized audio and Voicebox-generated audio.</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>The resynthesized audio is created by extracting the Mel Spectrogram from original audio and then</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-6-7">
           <p class="en-lines"><span class="sent" data-sid="s-6-7-1"><span class="en">Original audio vs Voicebox-generated audio</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-6-7-1"><span class="zh">（图 10 标题：原始音频 vs Voicebox 生成音频的对比。）</span></span></p>

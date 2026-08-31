@@ -239,7 +239,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-1-1"><span class="cap-k">表</span><p class="en">Table 1: A comparison between VALL-E and current cascaded TTS systems.</p><p class="zh">表 1：VALL-E 与当前级联式 TTS 系统的对比。</p></div></section>
+<div class="cap" id="tab-1-1"><span class="cap-k">表</span><p class="en">Table 1: A comparison between VALL-E and current cascaded TTS systems.</p><p class="zh">表 1：VALL-E 与当前级联式 TTS 系统的对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Current Systems</th><th>VALL-E</th></tr><tr><th>Intermediate representation</th><th>mel spectrogram</th><th>audio codec code</th></tr><tr><th>Objective function</th><th>continuous signal regression</th><th>language model</th></tr></thead><tbody><tr><td>Training data</td><td>≤600 hours</td><td>60K hours</td></tr>
+<tr><td>In-context learning</td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-current-systems"><span class="t-zh">当前系统</span><span class="t-en">Current Systems</span></h3><div class="pblk" id="p-current-systems-1">
           <p class="en-lines"><span class="sent" data-sid="s-current-systems-1-1"><span class="en">VALL-E Intermediate representation mel spectrogram audio codec code Objective function continuous signal regression language model Training data ≤600 hours 60K hours In-context learning We evaluate VALL-E on LibriSpeech [Panayotov et al., 2015] and VCTK [Veaux et al., 2016] datasets, where all test speakers are unseen in the training corpus.</span></span> <span class="sent" data-sid="s-current-systems-1-2"><span class="en">VALL-E signiﬁcantly outperforms the state-of-the-art zero-shot TTS system [Casanova et al., 2022b] in terms of speech naturalness and speaker similarity, with +0.12 comparative mean option score (CMOS) and +0.93 similarity mean option score (SMOS) improvement on LibriSpeech.</span></span> <span class="sent" data-sid="s-current-systems-1-3"><span class="en">VALL-E also beats the baseline on VCTK with +0.11 SMOS and +0.23 CMOS improvements.</span></span> <span class="sent" data-sid="s-current-systems-1-4"><span class="en">It even achieves a +0.04 CMOS score against ground truth, showing the synthesized speech of unseen speakers is as natural as human recordings on VCTK.</span></span> <span class="sent" data-sid="s-current-systems-1-5"><span class="en">Moreover, the qualitative analysis shows that VALL-E is able to synthesize diverse outputs with the same text and target speaker, which could beneﬁt pseudo-data creation for the speech recognition task.</span></span> <span class="sent" data-sid="s-current-systems-1-6"><span class="en">We also ﬁnd that VALL-E could keep the acoustic environment (e.g., reverberation) and emotion (e.g. anger) of the acoustic prompt.</span></span></p>
@@ -573,23 +574,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-2-1"><span class="zh">（原文为脚注）∗https://github.com/Edresson/YourTTS</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-2-2"><span class="cap-k">表</span><p class="en">Table 2: Evaluation results on audio generation. YourTTS and VALL-E are text-to-speech models using phonemes as inputs, while GSLM and AudioLM are speech-to-speech models using latent code as inputs. The WER result of AudioLM is obtained by a Conformer Transducer model [Borsos et al., 2022]. Since AudioLM* is not open-source, we cannot evaluate its speaker score with our tool.</p><p class="zh">表 2：音频生成评估结果。YourTTS 和 VALL-E 是以音素为输入的文本到语音模型，而 GSLM 和 AudioLM 是以潜码为输入的语音到语音模型。AudioLM 的 WER 结果由 Conformer Transducer 模型 [Borsos et al., 2022] 得到。由于 AudioLM* 未开源，我们无法用自己的工具评估其说话人得分。</p></div>
-<div class="pblk" id="p-5-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-5-2-3-1"><span class="en">model WER SPK GroundTruth</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-2-3-1"><span class="zh">（表格：model × WER × SPK——GroundTruth 2.2/0.754；语音到语音系统 GSLM 12.4/0.126、AudioLM* 6.0/-；TTS 系统 YourTTS 7.7/0.337、VALL-E 5.9/0.580、VALL-E-continual 3.8/0.508。）模型在鲁棒性与说话人相似度上都显著更好，说明生成语音对给定文本与给定注册语音都高度忠实。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-2-1"><code>2.2 0.754</code></div>
-<div class="eq" id="eq-5-2-2"><code>Speech-to-Speech Systems GSLM</code></div>
+<div class="cap" id="tab-5-2-2"><span class="cap-k">表</span><p class="en">Table 2: Evaluation results on audio generation. YourTTS and VALL-E are text-to-speech models using phonemes as inputs, while GSLM and AudioLM are speech-to-speech models using latent code as inputs. The WER result of AudioLM is obtained by a Conformer Transducer model [Borsos et al., 2022]. Since AudioLM* is not open-source, we cannot evaluate its speaker score with our tool.</p><p class="zh">表 2：音频生成评估结果。YourTTS 和 VALL-E 是以音素为输入的文本到语音模型，而 GSLM 和 AudioLM 是以潜码为输入的语音到语音模型。AudioLM 的 WER 结果由 Conformer Transducer 模型 [Borsos et al., 2022] 得到。由于 AudioLM* 未开源，我们无法用自己的工具评估其说话人得分。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>model</th><th></th><th></th><th>WER</th><th>SPK</th></tr></thead><tbody><tr><td></td><td>GroundTruth</td><td></td><td>2.2</td><td>0.754</td></tr>
+<tr><td></td><td></td><td>Speech-to-Speech Systems</td><td></td><td></td></tr></tbody></table></div></div>
+
+
+
 <div class="eq" id="eq-5-2-3"><code>12.4 0.126</code></div>
 <div class="eq" id="eq-5-2-4"><code>AudioLM*</code></div>
 <div class="eq" id="eq-5-2-5"><code>6.0 -</code></div>
 <div class="eq" id="eq-5-2-6"><code>TTS Systems YourTTS</code></div>
-<div class="eq" id="eq-5-2-7"><code>7.7 0.337</code></div>
 
-<div class="eq" id="eq-5-2-9"><code>5.9 0.580</code></div>
-<div class="eq" id="eq-5-2-10"><code>VALL-E-continual</code></div>
-<div class="eq" id="eq-5-2-11"><code>3.8 0.508</code></div>
+
+
+
+
 <div class="pblk" id="p-5-2-4">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-4-1"><span class="en">model is signiﬁcantly better in both robustness and speaker similarity, showing that our generated speech is highly faithful to the given text and the given enrolled speech.</span></span> <span class="sent" data-sid="s-5-2-4-2"><span class="en">Furthermore, the word error rate can be further reduced in VALL-E-continual setting, because the acoustic tokens for the ﬁrst 3 seconds are extracted from the ground truth.</span></span> <span class="sent" data-sid="s-5-2-4-3"><span class="en">We also compare the robustness with other speech-to-speech LM-based generation models, GSLM and AudioLM, which use audio latent codes as input.</span></span> <span class="sent" data-sid="s-5-2-4-4"><span class="en">GSLM uses HuBERT code as input and reconstructs the waveform with the Tacotron2 [Shen et al., 2018] model and the WaveGlow [Prenger et al., 2019] vocoder.</span></span> <span class="sent" data-sid="s-5-2-4-5"><span class="en">We run their open-sourced code using the released model and evaluate the results.</span></span> <span class="sent" data-sid="s-5-2-4-6"><span class="en">Since the HuBERT codes discard the speaker identity, it achieves a poor speaker score.</span></span> <span class="sent" data-sid="s-5-2-4-7"><span class="en">For the AudioLM, we list their WER score reported in their paper, which is obtained by a Conformer Transducer model.</span></span> <span class="sent" data-sid="s-5-2-4-8"><span class="en">The experiment results show that VALL-E is better than other speech-to-speech LM-based generative systems in terms of robustness.</span></span> <span class="sent" data-sid="s-5-2-4-9"><span class="en">One major reason is VALL-E trained with pseudo-phoneme instead of HuBERT/w2v-BERT codes, which enjoys better alignment quality with the input text.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-4-1"><span class="zh">（表格：model × WER × SPK——GroundTruth 2.2/0.754；语音到语音系统 GSLM 12.4/0.126、AudioLM* 6.0/-；TTS 系统 YourTTS 7.7/0.337、VALL-E 5.9/0.580、VALL-E-continual 3.8/0.508。）模型在鲁棒性与说话人相似度上都显著更好，说明生成语音对给定文本与给定注册语音都高度忠实。</span></span><span class="sent" data-sid="s-5-2-4-2"><span class="zh">此外，在 VALL-E-continual 设定下词错误率可进一步降低，因为前 3 秒的声学 token 提取自真实语音。</span></span><span class="sent" data-sid="s-5-2-4-3"><span class="zh">我们还将鲁棒性与其他基于语言模型的语音到语音生成模型 GSLM 和 AudioLM 进行了比较，它们使用音频潜码作为输入。</span></span><span class="sent" data-sid="s-5-2-4-4"><span class="zh">GSLM 使用 HuBERT 码作为输入，并用 Tacotron2 [Shen et al., 2018] 模型和 WaveGlow [Prenger et al., 2019] 声码器重建波形。</span></span><span class="sent" data-sid="s-5-2-4-5"><span class="zh">我们用他们发布的模型运行其开源代码并评估结果。</span></span><span class="sent" data-sid="s-5-2-4-6"><span class="zh">由于 HuBERT 码丢弃了说话人身份，其说话人得分很差。</span></span><span class="sent" data-sid="s-5-2-4-7"><span class="zh">对 AudioLM，我们列出其论文报告的 WER 分数，该分数由 Conformer Transducer 模型得到。</span></span><span class="sent" data-sid="s-5-2-4-8"><span class="zh">实验结果表明，在鲁棒性上 VALL-E 优于其他基于语言模型的语音到语音生成系统。</span></span><span class="sent" data-sid="s-5-2-4-9"><span class="zh">一个主要原因是 VALL-E 用伪音素训练，而非 HuBERT/w2v-BERT 码，从而与输入文本有更好的对齐质量。</span></span></p>
@@ -607,15 +605,39 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-5-2-3"><span class="cap-k">表</span><p class="en">Table 3: Human evaluation with 40 speakers on LibriSpeech test-clean with 3-second enrolled recording for each.</p><p class="zh">表 3：在 LibriSpeech test-clean 上对 40 位说话人（每人一段 3 秒注册录音）的人工评估。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>recording for each.</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>SMOS</th><th>CMOS (v.s. VALL-E)</th><th></th></tr></thead><tbody><tr><td></td><td>YourTTS</td><td>3.45±0.09</td><td></td><td>-0.12</td></tr>
-<tr><td></td><td>VALL-E</td><td>4.38±0.10</td><td></td><td>0.00</td></tr>
-<tr><td></td><td>GroundTruth</td><td>4.5±0.10</td><td></td><td>+0.17</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-5-2-3"><span class="cap-k">表</span><p class="en">Table 3: Human evaluation with 40 speakers on LibriSpeech test-clean with 3-second enrolled recording for each.</p><p class="zh">表 3：在 LibriSpeech test-clean 上对 40 位说话人（每人一段 3 秒注册录音）的人工评估。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>YourTTS</td><td>7.7</td><td>0.337</td></tr>
+<tr><td>VALL-E</td><td>5.9</td><td>0.580</td></tr>
+<tr><td></td><td>3.8</td><td>0.508</td></tr>
+<tr><td>model is signiﬁcantly better in both robustness and speaker similarity,</td><td></td><td></td></tr>
+<tr><td>speech is highly faithful to the given text and the given enrolled</td><td></td><td></td></tr>
+<tr><td>error rate can be further reduced in VALL-E-continual setting, because</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>We also compare</td></tr>
+<tr><td>speech-to-speech LM-based generation models, GSLM and AudioLM,</td><td></td><td></td></tr>
+<tr><td>as input. GSLM uses HuBERT code as input and reconstructs the waveform</td><td></td><td></td></tr>
+<tr><td>et al., 2018] model and the WaveGlow [Prenger et al., 2019] vocoder.</td><td></td><td></td></tr>
+<tr><td>code using the released model and evaluate the results. Since the HuBERT</td><td></td><td></td></tr>
+<tr><td></td><td>For the AudioLM, we list</td><td></td></tr>
+<tr><td>their paper, which is obtained by a Conformer Transducer model. The</td><td></td><td></td></tr>
+<tr><td>VALL-E is better than other speech-to-speech LM-based generative</td><td></td><td></td></tr>
+<tr><td>One major reason is VALL-E trained with pseudo-phoneme instead of</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td>We randomly sample one utterance for each speaker in LibriSpeech</td><td></td><td></td></tr>
+<tr><td>tion, resulting in 40 test cases. Table 3 shows the human evaluation</td><td></td><td></td></tr>
+<tr><td>to ground truth in terms of SMOS, indicating the synthesized speech is</td><td></td><td></td></tr>
+<tr><td>speaker in testing. It signiﬁcantly outperforms the baseline with +0.93</td><td></td><td></td></tr>
+<tr><td>effectiveness of VALL-E in zero-shot scenarios. Regarding naturalness,</td><td></td><td></td></tr>
+<tr><td>with +0.12 CMOS, indicating the proposed method could synthesize more</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="pblk" id="p-5-2-6">
+          <p class="en-lines"><span class="sent" data-sid="s-5-2-6-1"><span class="en">SMOS CMOS (v.s.</span></span> <span class="sent" data-sid="s-5-2-6-2"><span class="en">VALL-E) YourTTS</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-2-6-1"><span class="zh">（本句开头为 Table 7 表格体的抽取残留：SMOS / CMOS（对比 VALL-E）；YourTTS*：-0.23；VALL-E：0.00；Ground truth：-0.04。）</span></span><span class="sent" data-sid="s-5-2-6-2"><span class="zh">（表格行，对比 VALL-E：YourTTS 3.45±0.09/-0.12；VALL-E 4.38±0.10/0.00；GroundTruth 4.5±0.10/+0.17。）消融研究：本节进行详细的消融实验。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-5-2-12"><code>3.45±0.09 -0.12</code></div>
 
+<div class="eq" id="eq-5-2-14"><code>4.38±0.10 0.00</code></div>
 
-
-
-
-
+<div class="eq" id="eq-5-2-16"><code>4.5±0.10 +0.17</code></div>
 <div class="pblk" id="p-5-2-7">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-7-1"><span class="en">Ablation study: In this section, we perform detailed ablation experiments.</span></span> <span class="sent" data-sid="s-5-2-7-2"><span class="en">We ﬁrst study the NAR model.</span></span> <span class="sent" data-sid="s-5-2-7-3"><span class="en">We train three NAR models with different numbers of prompts.</span></span> <span class="sent" data-sid="s-5-2-7-4"><span class="en">The setting NAR-no prompt is trained without any prompts.</span></span> <span class="sent" data-sid="s-5-2-7-5"><span class="en">The setting NAR-phn prompt is trained with only phoneme sequence as prompt and the setting NAR-2 prompts uses both phoneme prompt and acoustic token prompt as conditions.</span></span> <span class="sent" data-sid="s-5-2-7-6"><span class="en">In evaluation, we use the ground-truth ﬁrst-level acoustic tokens as the model input and compute the WER and speaker similarity scores.</span></span> <span class="sent" data-sid="s-5-2-7-7"><span class="en">The results are listed in Table 4.</span></span> <span class="sent" data-sid="s-5-2-7-8"><span class="en">Results show that the model without any prompts performs poorly on both ASR and speaker similarity evaluations, even though the acoustic input token is ground truth.</span></span> <span class="sent" data-sid="s-5-2-7-9"><span class="en">When adding the phoneme prompt, the WER is reduced by a large margin from 19.6 to 3.0.</span><button class="mk" data-sid="s-5-2-7-9" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-2-7-10"><span class="en">It shows the phoneme prompt mainly contributes to the content of the generation.</span></span> <span class="sent" data-sid="s-5-2-7-11"><span class="en">In the NAR-2 prompts, the model can learn speaker information from the acoustic token prompt and thus improve the speaker evaluation quality.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-7-1"><span class="zh">（表格行，对比 VALL-E：YourTTS 3.45±0.09/-0.12；VALL-E 4.38±0.10/0.00；GroundTruth 4.5±0.10/+0.17。）消融研究：本节进行详细的消融实验。</span></span><span class="sent" data-sid="s-5-2-7-2"><span class="zh">我们首先研究 NAR 模型。</span></span><span class="sent" data-sid="s-5-2-7-3"><span class="zh">我们训练了三个使用不同数量提示的 NAR 模型。</span></span><span class="sent" data-sid="s-5-2-7-4"><span class="zh">NAR-no prompt 设定在训练时不使用任何提示。</span></span><span class="sent" data-sid="s-5-2-7-5"><span class="zh">NAR-phn prompt 设定只使用音素序列作为提示，NAR-2 prompts 设定同时使用音素提示和声学 token 提示作为条件。</span></span><span class="sent" data-sid="s-5-2-7-6"><span class="zh">评估时，我们用真实的第一层声学 token 作为模型输入，计算 WER 和说话人相似度分数。</span></span><span class="sent" data-sid="s-5-2-7-7"><span class="zh">结果列于 Table 4。</span></span><span class="sent" data-sid="s-5-2-7-8"><span class="zh">结果表明，即使声学输入 token 是真实的，不带任何提示的模型在 ASR 和说话人相似度评估上都表现很差。</span></span><span class="sent" data-sid="s-5-2-7-9"><span class="zh">加入音素提示后，WER 从 19.6 大幅降至 3.0。</span><button class="mk" data-sid="s-5-2-7-9" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-2-7-10"><span class="zh">这说明音素提示主要贡献于生成内容。</span></span><span class="sent" data-sid="s-5-2-7-11"><span class="zh">在 NAR-2 prompts 中，模型能从声学 token 提示中学习说话人信息，从而改善说话人评估质量。</span></span></p>
@@ -628,8 +650,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-5-2-4"><span class="cap-k">表</span><p class="en">Table 4: Ablation study of the NAR model. The inputs of the NAR models are the ground-truth for the ablation study.</p><p class="zh">表 4：NAR 模型的消融研究。消融中 NAR 模型的输入为真实码。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>the ablation study.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>NAR-no prompt</th><th></th><th>NAR-phn prompt</th><th></th><th>NAR-2 prompts</th><th></th></tr></thead><tbody><tr><td></td><td>WER</td><td></td><td>19.6</td><td></td><td>3.0</td><td></td><td>2.8</td></tr>
-<tr><td></td><td>SPK</td><td></td><td>0.518</td><td></td><td>0.541</td><td></td><td>0.732</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-5-2-4"><span class="cap-k">表</span><p class="en">Table 4: Ablation study of the NAR model. The inputs of the NAR models are the ground-truth for the ablation study.</p><p class="zh">表 4：NAR 模型的消融研究。消融中 NAR 模型的输入为真实码。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>the ablation study.</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>NAR-no prompt</th><th>NAR-phn prompt</th><th>NAR-2 prompts</th></tr></thead><tbody><tr><td></td><td>WER</td><td>19.6</td><td>3.0</td><td>2.8</td></tr>
+<tr><td></td><td>SPK</td><td>0.518</td><td>0.541</td><td>0.732</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-nar-no-prompt"><span class="t-zh">NAR-no prompt（表格残块所在节）</span><span class="t-en">NAR-no prompt</span></h3>
 
@@ -647,37 +669,38 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-nar-no-prompt-1"><span class="cap-k">表</span><p class="en">Table 5: Ablation study of the AR model.</p><p class="zh">表 5：AR 模型的消融研究。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>WER</th><th>SPK</th></tr></thead><tbody><tr><td></td><td>VALL-E</td><td>5.9</td><td>0.585</td></tr>
-<tr><td>w/o acoustic prompt</td><td></td><td>5.9</td><td>0.236</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-nar-no-prompt-1"><span class="cap-k">表</span><p class="en">Table 5: Ablation study of the AR model.</p><p class="zh">表 5：AR 模型的消融研究。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>WER</td><td>19.6</td><td>3.0</td><td>2.8</td></tr>
+<tr><td>SPK</td><td>0.518</td><td>0.541</td><td>0.732</td></tr></tbody></table></div></div>
 
 
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-5-3"><span class="secnum">5.3</span> <span class="t-zh">VCTK 评估</span><span class="t-en">VCTK Evaluation</span></h3><div class="pblk" id="p-5-3-1">
-          <p class="en-lines"><span class="sent" data-sid="s-5-3-1-1"><span class="en">We evaluate our model on VCTK consisting of 108 speakers, where none of the speakers are observed during training.</span></span> <span class="sent" data-sid="s-5-3-1-2"><span class="en">Since YourTTS has seen 97 speakers in VCTK as training, we evaluate YourTTS performance on the full 107 speakers and 11 unseen speakers, respectively.</span></span> <span class="sent" data-sid="s-5-3-1-3"><span class="en">For each speaker, we randomly selected three utterances of 3s/5s/10s as the prompts and the text of another utterance as the text prompt.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-3-1-1"><span class="zh">我们在 VCTK 上评估模型，VCTK 包含 108 位说话人，他们在训练中都未出现过。</span></span><span class="sent" data-sid="s-5-3-1-2"><span class="zh">由于 YourTTS 在训练时见过 VCTK 的 97 位说话人，我们分别评估 YourTTS 在全部 107 位说话人和 11 位未见说话人上的表现。</span></span><span class="sent" data-sid="s-5-3-1-3"><span class="zh">对每位说话人，我们随机选取 3 条 3s/5s/10s 的语句作为提示，并用另一条语句的文本作为文本提示。</span></span></p>
+      <h3 class="sech lv2" id="sec-5-3"><span class="secnum">5.3</span> <span class="t-zh">VCTK 评估</span><span class="t-en">VCTK Evaluation</span></h3>
+<div class="cap" id="tab-5-3-1"><span class="cap-k">表</span><p class="en">Table 6: Automatic evaluation of speaker similarity with 108 speakers on VCTK. *YourTTS has observed 97 speakers during training, while VALL-E observed none of them.</p><p class="zh">表 6：在 VCTK 108 位说话人上的说话人相似度自动评估。*YourTTS 在训练中见过 97 位说话人，而 VALL-E 一位都没见过。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th>WER</th><th>SPK</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td>VALL-E</td><td>5.9</td><td>0.585</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>w/o acoustic prompt</td><td>5.9</td><td>0.236</td></tr>
+<tr><td>5.3</td><td></td><td>VCTK Evaluation</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>We evaluate our model on VCTK consisting of 108 speakers, where none of</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>during training. Since YourTTS has seen 97 speakers in VCTK as</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>performance on the full 107 speakers and 11 unseen speakers,</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>randomly selected three utterances of 3s/5s/10s as the prompts and the</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>the text prompt.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="pblk" id="p-5-3-2">
+          <p class="en-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="en">3s prompt 5s prompt 10s prompt 108 full speakers YourTTS*</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-5-3-2-1"><span class="zh">（表格：3s/5s/10s prompt 三档——108 个完整说话人：YourTTS* 0.357/0.377/0.394，VALL-E 0.382/0.423/0.484，GroundTruth 0.546/0.591/0.620；11 个未见说话人：YourTTS 0.331/0.337/0.344，VALL-E 0.389/0.380/0.414，GroundTruth 0.528/0.556/0.586。）我们首先用前述说话人验证指标评测两个模型。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-3-1"><span class="cap-k">表</span><p class="en">Table 6: Automatic evaluation of speaker similarity with 108 speakers on VCTK. *YourTTS has observed 97 speakers during training, while VALL-E observed none of them.</p><p class="zh">表 6：在 VCTK 108 位说话人上的说话人相似度自动评估。*YourTTS 在训练中见过 97 位说话人，而 VALL-E 一位都没见过。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th></tr><tr><th></th><th>3s prompt</th><th>5s prompt</th><th></th></tr><tr><th></th><th>108 full speakers</th><th></th><th></th></tr></thead><tbody><tr><td>YourTTS*</td><td>0.357</td><td>0.377</td><td>0.394</td></tr>
-<tr><td>VALL-E</td><td>0.382</td><td>0.423</td><td>0.484</td></tr>
-<tr><td>GroundTruth</td><td>0.546</td><td>0.591</td><td>0.620</td></tr>
-<tr><td></td><td>11 unseen speakers</td><td></td><td></td></tr>
-<tr><td>YourTTS</td><td>0.331</td><td>0.337</td><td>0.344</td></tr>
-<tr><td>VALL-E</td><td>0.389</td><td>0.380</td><td>0.414</td></tr>
-<tr><td>GroundTruth</td><td>0.528</td><td>0.556</td><td>0.586</td></tr></tbody></table></div></div>
+<div class="eq" id="eq-5-3-1"><code>0.357 0.377 0.394</code></div>
 
+<div class="eq" id="eq-5-3-3"><code>0.382 0.423 0.484</code></div>
+<div class="eq" id="eq-5-3-4"><code>GroundTruth</code></div>
+<div class="eq" id="eq-5-3-5"><code>0.546 0.591 0.620</code></div>
 
+<div class="eq" id="eq-5-3-7"><code>0.331 0.337 0.344</code></div>
 
-
-
-
-
-
-
-
-
-
+<div class="eq" id="eq-5-3-9"><code>0.389 0.380 0.414</code></div>
+<div class="eq" id="eq-5-3-10"><code>GroundTruth</code></div>
+<div class="eq" id="eq-5-3-11"><code>0.528 0.556 0.586</code></div>
 <div class="pblk" id="p-5-3-3">
           <p class="en-lines"><span class="sent" data-sid="s-5-3-3-1"><span class="en">We ﬁrst evaluate two models with the speaker veriﬁcation metric as described before.</span></span> <span class="sent" data-sid="s-5-3-3-2"><span class="en">From Table 6, we can see that VALL-E outperforms the baseline even if the baseline has seen 97 speakers in training, indicating our model is able to synthesize speech with higher speaker similarity.</span><button class="mk feat" data-sid="s-5-3-3-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-3-3-3"><span class="en">When we compare with the baseline in a fair setting (11 speakers), the performance gap becomes larger, especially when only 3s prompts are available.</span></span> <span class="sent" data-sid="s-5-3-3-4"><span class="en">By comparing different lengths of the prompt, we can see our model is able to generate more similar speech when the prompt becomes longer, which is consistent with our intuition.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-3-1"><span class="zh">（表格：3s/5s/10s prompt 三档——108 个完整说话人：YourTTS* 0.357/0.377/0.394，VALL-E 0.382/0.423/0.484，GroundTruth 0.546/0.591/0.620；11 个未见说话人：YourTTS 0.331/0.337/0.344，VALL-E 0.389/0.380/0.414，GroundTruth 0.528/0.556/0.586。）我们首先用前述说话人验证指标评测两个模型。</span></span><span class="sent" data-sid="s-5-3-3-2"><span class="zh">从 Table 6 可以看到，即使基线在训练中见过 97 位说话人，VALL-E 仍然优于它，表明我们的模型能合成说话人相似度更高的语音。</span><button class="mk feat" data-sid="s-5-3-3-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-3-3-3"><span class="zh">当我们在公平设定下（11 位说话人）与基线比较时，性能差距变得更大，尤其是只有 3s 提示可用时。</span></span><span class="sent" data-sid="s-5-3-3-4"><span class="zh">通过比较不同长度的提示，可以看到提示越长，我们的模型能生成相似度越高的语音，这与直觉一致。</span></span></p>
@@ -695,9 +718,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-4-1"><span class="zh">我们抽取 60 位说话人做人工评估，每人一条语句，其中 11 位是未见说话人，49 位对 YourTTS 来说是见过的。</span></span><span class="sent" data-sid="s-5-3-4-2"><span class="zh">VALL-E 未见过这 60 位说话人中的任何一位。</span></span><span class="sent" data-sid="s-5-3-4-3"><span class="zh">模型合成时，每位说话人有一段 3 秒注册录音。</span></span><span class="sent" data-sid="s-5-3-4-4"><span class="zh">Table 7 给出了我们的方法与基线及真实录音的对比。</span></span><span class="sent" data-sid="s-5-3-4-5"><span class="zh">SMOS 对比显示，即使基线在训练中见过部分说话人，VALL-E 的说话人相似度仍优于基线。</span></span><span class="sent" data-sid="s-5-3-4-6"><span class="zh">并排对比的 CMOS 评估显示 VALL-E 比 YourTTS 高 +0.23，表明在自然度上显著更好。</span></span><span class="sent" data-sid="s-5-3-4-7"><span class="zh">此外，VALL-E 相对真实录音取得了 +0.04 CMOS，表明在该数据集上与真人录音没有统计学上的显著差异。</span></span><span class="sent" data-sid="s-5-3-4-8"><span class="zh">与 LibriSpeech 上的评估结果相比，VALL-E 在与真实录音的对比中表现出更好的 CMOS</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-3-2"><span class="cap-k">表</span><p class="en">Table 7: Human evaluation with 60 speakers on VCTK with 3-second enrolled recording for each.</p><p class="zh">表 7：在 VCTK 上对 60 位说话人（每人一段 3 秒注册录音）的人工评估。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>SMOS</th><th>CMOS (v.s. VALL-E)</th><th></th></tr></thead><tbody><tr><td>YourTTS*</td><td>3.70±0.09</td><td></td><td>-0.23</td></tr>
-<tr><td>VALL-E</td><td>3.81±0.09</td><td></td><td>0.00</td></tr>
-<tr><td>GroundTruth</td><td>4.29±0.09</td><td></td><td>-0.04</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-5-3-2"><span class="cap-k">表</span><p class="en">Table 7: Human evaluation with 60 speakers on VCTK with 3-second enrolled recording for each.</p><p class="zh">表 7：在 VCTK 上对 60 位说话人（每人一段 3 秒注册录音）的人工评估。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>SMOS</th><th>CMOS (v.s. VALL-E)</th></tr></thead><tbody><tr><td>YourTTS*</td><td>3.70±0.09</td><td>-0.23</td></tr>
+<tr><td>VALL-E</td><td>3.81±0.09</td><td>0.00</td></tr>
+<tr><td>GroundTruth</td><td>4.29±0.09</td><td>-0.04</td></tr></tbody></table></div></div>
 
 
 

@@ -596,51 +596,48 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-1-6-1"><span class="zh">（脚注）4 https://github.com/microsoft/UniSpeech/tree/main/downstreams/speaker_verification；5 https://huggingface.co/facebook/hubert-large-ls960-ft；6 https://huggingface.co/nvidia/stt_en_conformer_transducer_xlarge</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-1-1"><span class="cap-k">表</span><p class="en">Table 1: The evaluation results for NaturalSpeech 3 and the baseline methods on LibriSpeech testclean. ♠means the results are obtained from the authors. ♥means the results directly obtained from the paper. ♣means the results are infered from offical checkpoints. ♦means the reproduced results. Abbreviation: LT (LibriTTS), V (VCTK), LJ (LJSpeech), LL⋆(Librilight Small, Medium), EX (Expresso), MS (MSSS Kor), NI (NIKL Kor). Please refer to Appendix A.4 for more results on 1) WER inferred by an advanced ASR system, and 2) UTMOS, an automatic metric for MOS.</p><p class="zh">表 1：NaturalSpeech 3 与各基线方法在 LibriSpeech test-clean 上的评测结果。♠表示结果来自作者；♥表示结果直接取自论文；♣表示结果由官方 checkpoint 推理得到；♦表示复现结果。缩写：LT（LibriTTS）、V（VCTK）、LJ（LJSpeech）、LL⋆（Librilight Small/Medium）、EX（Expresso）、MS（MSSS Kor）、NI（NIKL Kor）。更多结果见 Appendix A.4：1）由更先进 ASR 系统推理的 WER；2）MOS 的自动指标 UTMOS。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Training Data</th><th></th><th></th><th>WER↓</th><th></th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td></td><td>0.68</td><td>-</td><td>1.94</td><td>+0.08</td><td>3.85</td></tr>
+<div class="cap" id="tab-4-1-1"><span class="cap-k">表</span><p class="en">Table 1: The evaluation results for NaturalSpeech 3 and the baseline methods on LibriSpeech testclean. ♠means the results are obtained from the authors. ♥means the results directly obtained from the paper. ♣means the results are infered from offical checkpoints. ♦means the reproduced results. Abbreviation: LT (LibriTTS), V (VCTK), LJ (LJSpeech), LL⋆(Librilight Small, Medium), EX (Expresso), MS (MSSS Kor), NI (NIKL Kor). Please refer to Appendix A.4 for more results on 1) WER inferred by an advanced ASR system, and 2) UTMOS, an automatic metric for MOS.</p><p class="zh">表 1：NaturalSpeech 3 与各基线方法在 LibriSpeech test-clean 上的评测结果。♠表示结果来自作者；♥表示结果直接取自论文；♣表示结果由官方 checkpoint 推理得到；♦表示复现结果。缩写：LT（LibriTTS）、V（VCTK）、LJ（LJSpeech）、LL⋆（Librilight Small/Medium）、EX（Expresso）、MS（MSSS Kor）、NI（NIKL Kor）。更多结果见 Appendix A.4：1）由更先进 ASR 系统推理的 WER；2）MOS 的自动指标 UTMOS。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Training Data</th><th>Sim-O ↑</th><th>Sim-R ↑</th><th>WER↓</th><th>CMOS↑</th><th>SMOS↑</th></tr></thead><tbody><tr><td>Ground Truth</td><td>-</td><td>0.68</td><td>-</td><td>1.94</td><td>+0.08</td><td>3.85</td></tr>
 <tr><td>VALL-E ♥</td><td>Librilight</td><td>-</td><td>0.58</td><td>5.90</td><td>-</td><td>-</td></tr>
 <tr><td>VALL-E ♦</td><td>Librilight</td><td>0.47</td><td>0.51</td><td>6.11</td><td>-0.60</td><td>3.46</td></tr>
 <tr><td>NaturalSpeech 2♠</td><td>Librilight</td><td>0.55</td><td>0.62</td><td>1.94</td><td>-0.18</td><td>3.65</td></tr>
-<tr><td>Voicebox♠</td><td></td><td>0.64</td><td>0.67</td><td>2.03</td><td>-0.23</td><td>3.69</td></tr>
+<tr><td>Voicebox♠</td><td>Self-Collected (60kh)</td><td>0.64</td><td>0.67</td><td>2.03</td><td>-0.23</td><td>3.69</td></tr>
 <tr><td>Voicebox♦</td><td>Librilight</td><td>0.48</td><td>0.50</td><td>2.14</td><td>-0.32</td><td>3.52</td></tr>
 <tr><td>Mega-TTS 2♠</td><td>Librilight</td><td>0.53</td><td>-</td><td>2.32</td><td>-0.20</td><td>3.63</td></tr>
-<tr><td>UniAudio♠</td><td></td><td>0.57</td><td>0.68</td><td>2.49</td><td>-0.25</td><td>3.71</td></tr>
+<tr><td>UniAudio♠</td><td>Mixed (165kh)</td><td>0.57</td><td>0.68</td><td>2.49</td><td>-0.25</td><td>3.71</td></tr>
 <tr><td>StyleTTS 2♣</td><td>LT + V + LJ</td><td>0.38</td><td>-</td><td>2.49</td><td>-0.21</td><td>3.07</td></tr>
-<tr><td>HierSpeech++♣</td><td></td><td>0.51</td><td>-</td><td>6.33</td><td>-0.41</td><td>3.50</td></tr>
+<tr><td>HierSpeech++♣</td><td>LT + LL⋆+ EX + MS + NI</td><td>0.51</td><td>-</td><td>6.33</td><td>-0.41</td><td>3.50</td></tr>
 <tr><td>NaturalSpeech 3</td><td>Librilight</td><td>0.67</td><td>0.76</td><td>1.81</td><td>0.00</td><td>4.01</td></tr>
-<tr><td>Evaluation Baselines. We compare NaturalSpeech 3 with baselines: 1) VALL-E [6]. 2) Natural-</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Speech 2 [5]. 3) Voicebox [11]. 4) Mega-TTS 2 [62]. 5) UniAudio [35]. 6) StyleTTS 2 [24]. 7)</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
-<div class="pblk" id="p-4-1-7">
-          <p class="en-lines"><span class="sent" data-sid="s-4-1-7-1"><span class="en">Training Data Sim-O ↑ Sim-R ↑ WER↓ CMOS↑ SMOS↑ Ground Truth</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-1-7-1"><span class="zh">表头：Training Data / Sim-O ↑ / Sim-R ↑ / WER↓ / CMOS↑ / SMOS↑——Ground Truth（后续照原文）。</span></span></p>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Speech 2 [5].</td><td></td><td></td><td>5) UniAudio [35].</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="pblk" id="p-4-1-9">
+          <p class="en-lines"><span class="sent" data-sid="s-4-1-9-1"><span class="en">Evaluation Baselines.</span></span> <span class="sent" data-sid="s-4-1-9-2"><span class="en">We compare NaturalSpeech 3 with baselines: 1) VALL-E [6]. 2) Natural-</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-4-1-9-1"><span class="zh">（小标题：评测基线（Evaluation Baselines）。）</span></span><span class="sent" data-sid="s-4-1-9-2"><span class="zh">我们将 NaturalSpeech 3 与以下基线对比：1) VALL-E [6]；2) Natural-（后接原文）。</span></span></p>
           
         </div>
-
-
-
-
-
-
-
-<div class="eq" id="eq-4-1-9"><code>Voicebox♠ Self-Collected (60kh)</code></div>
-
-
-
-
-
-<div class="eq" id="eq-4-1-15"><code>UniAudio♠ Mixed (165kh)</code></div>
-
-
-
-<div class="pblk" id="p-4-1-8">
-          <p class="en-lines"><span class="sent" data-sid="s-4-1-8-1"><span class="en">HierSpeech++♣ LT + LL⋆+ EX + MS + NI</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-1-8-1"><span class="zh">（表格行）HierSpeech++♣；配置 LT + LL⋆+ EX + MS + NI（后续照原文）。</span></span></p>
-          
-        </div>
-
-
-
-
-
+<div class="eq" id="eq-4-1-22"><code>Speech 2 [5]. 3) Voicebox [11]. 4) Mega-TTS 2 [62]. 5) UniAudio [35]. 6) StyleTTS 2 [24]. 7)</code></div>
 <div class="pblk" id="p-4-1-10">
           <p class="en-lines"><span class="sent" data-sid="s-4-1-10-1"><span class="en">HierSpeech++ [25].</span></span> <span class="sent" data-sid="s-4-1-10-2"><span class="en">Please refer to Appendix A.3 for details.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-1-10-1"><span class="zh">评测基线。我们将 NaturalSpeech 3 与以下基线比较：1）VALL-E [6]；2）NaturalSpeech 2 [5]；3）Voicebox [11]；4）Mega-TTS 2 [62]；5）UniAudio [35]；6）StyleTTS 2 [24]；7）HierSpeech++ [25]。</span></span><span class="sent" data-sid="s-4-1-10-2"><span class="zh">细节见 Appendix A.3。</span></span></p>
@@ -669,14 +666,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-2-1"><span class="zh">韵律相似度。</span></span><span class="sent" data-sid="s-4-2-2-2-2"><span class="zh">我们在 RAVDESS 基准上用客观指标（MCD 与 MCD-Acc）和主观指标（SMOS）评测韵律相似度。</span></span><span class="sent" data-sid="s-4-2-2-2-3"><span class="zh">SMOS 测试随机选取 10 条语句。</span></span><span class="sent" data-sid="s-4-2-2-2-4"><span class="zh">如 Table 2 所示，NaturalSpeech 3 在平均 MCD、MCD-Acc 与 SMOS 上一致地以显著优势超过基线。</span></span><span class="sent" data-sid="s-4-2-2-2-5"><span class="zh">这表明 NaturalSpeech 3 在韵律相似度上取得了显著提升。</span></span><span class="sent" data-sid="s-4-2-2-2-6"><span class="zh">8 种情感各自的 MCD 分数见 Appendix A.7。</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-2-2-1"><span class="cap-k">表</span><p class="en">Table 2: The evaluation results for NaturalSpeech 3 and the baseline methods on RAVDESS. ♠means the results are obtained from the authors. ♣means the results are inferred from official checkpoints. ♦means the reproduced results. Abbreviation: Avg (average MCD), Acc (MCD-Acc). Avg↓ Acc↑ CMOS↑ SMOS↑</p><p class="zh">表 2：NaturalSpeech 3 与基线方法在 RAVDESS 上的评测结果。♠表示结果来自原作者；♣表示由官方 checkpoint 推理得到；♦表示复现结果。缩写：Avg（平均 MCD）、Acc（MCD-Acc）。表头：Avg↓ / Acc↑ / CMOS↑ / SMOS↑。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Avg↓</th><th>Acc↑</th><th>CMOS↑</th><th></th><th>SMOS↑</th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.00</td><td>1.00</td><td></td><td>+0.17</td><td>4.42</td></tr>
-<tr><td>VALL-E ♦</td><td>5.03</td><td>0.34</td><td></td><td>-0.55</td><td>3.80</td></tr>
-<tr><td>NaturalSpeech 2♠</td><td>4.56</td><td>0.25</td><td></td><td>-0.22</td><td>4.04</td></tr>
-<tr><td>Voicebox♦</td><td>4.88</td><td>0.34</td><td></td><td>-0.34</td><td>3.92</td></tr>
-<tr><td>Mega-TTS 2♠</td><td>4.44</td><td>0.39</td><td></td><td>-0.20</td><td>4.51</td></tr>
-<tr><td>StyleTTS 2♣</td><td>4.50</td><td>0.40</td><td></td><td>-0.25</td><td>3.98</td></tr>
-<tr><td>HierSpeech++♣</td><td>6.08</td><td>0.30</td><td></td><td>-0.37</td><td>3.87</td></tr>
-<tr><td>NaturalSpeech 3</td><td>4.28</td><td>0.52</td><td></td><td>0.00</td><td>4.72</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-4-2-2-1"><span class="cap-k">表</span><p class="en">Table 2: The evaluation results for NaturalSpeech 3 and the baseline methods on RAVDESS. ♠means the results are obtained from the authors. ♣means the results are inferred from official checkpoints. ♦means the reproduced results. Abbreviation: Avg (average MCD), Acc (MCD-Acc). Avg↓ Acc↑ CMOS↑ SMOS↑</p><p class="zh">表 2：NaturalSpeech 3 与基线方法在 RAVDESS 上的评测结果。♠表示结果来自原作者；♣表示由官方 checkpoint 推理得到；♦表示复现结果。缩写：Avg（平均 MCD）、Acc（MCD-Acc）。表头：Avg↓ / Acc↑ / CMOS↑ / SMOS↑。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Avg↓</th><th>Acc↑</th><th>CMOS↑</th><th>SMOS↑</th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.00</td><td>1.00</td><td>+0.17</td><td>4.42</td></tr>
+<tr><td>VALL-E ♦</td><td>5.03</td><td>0.34</td><td>-0.55</td><td>3.80</td></tr>
+<tr><td>NaturalSpeech 2♠</td><td>4.56</td><td>0.25</td><td>-0.22</td><td>4.04</td></tr>
+<tr><td>Voicebox♦</td><td>4.88</td><td>0.34</td><td>-0.34</td><td>3.92</td></tr>
+<tr><td>Mega-TTS 2♠</td><td>4.44</td><td>0.39</td><td>-0.20</td><td>4.51</td></tr>
+<tr><td>StyleTTS 2♣</td><td>4.50</td><td>0.40</td><td>-0.25</td><td>3.98</td></tr>
+<tr><td>HierSpeech++♣</td><td>6.08</td><td>0.30</td><td>-0.37</td><td>3.87</td></tr>
+<tr><td>NaturalSpeech 3</td><td>4.28</td><td>0.52</td><td>0.00</td><td>4.72</td></tr></tbody></table></div></div>
 
 
 
@@ -749,8 +746,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-1-5-1"><span class="zh">Table 3 显示，去掉无分类器引导后性能显著退化：Sim-O 下降 0.03，Sim-R 下降 0.04，CMOS 下降 0.06，SMOS 下降 0.21，证明无分类器引导能大幅提升说话人相似度与质量。</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-3-1-1"><span class="cap-k">表</span><p class="en">Table 3: The ablation study of factorization and classifier-free guidance (cfg) on LibriSpeech testclean.</p><p class="zh">表 3：在 LibriSpeech test-clean 上关于分解与无分类器引导（cfg）的消融研究。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>clean.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Sim-O / Sim-R ↑</th><th></th><th>WER↓</th><th>CMOS↑</th><th>SMOS↑</th></tr></thead><tbody><tr><td></td><td>NaturalSpeech 3</td><td></td><td>0.67 / 0.76</td><td>1.81</td><td>0.00</td><td>4.01</td></tr>
-<tr><td></td><td>- factorization</td><td></td><td>0.55 / 0.61</td><td>2.49</td><td>-0.25</td><td>3.59</td></tr>
+<div class="cap" id="tab-4-3-1-1"><span class="cap-k">表</span><p class="en">Table 3: The ablation study of factorization and classifier-free guidance (cfg) on LibriSpeech testclean.</p><p class="zh">表 3：在 LibriSpeech test-clean 上关于分解与无分类器引导（cfg）的消融研究。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>clean.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>Sim-O / Sim-R ↑</th><th>WER↓</th><th>CMOS↑</th><th>SMOS↑</th></tr></thead><tbody><tr><td></td><td></td><td>NaturalSpeech 3</td><td>0.67 / 0.76</td><td>1.81</td><td>0.00</td><td>4.01</td></tr>
+<tr><td></td><td></td><td>- factorization</td><td>0.55 / 0.61</td><td>2.49</td><td>-0.25</td><td>3.59</td></tr>
 <tr><td></td><td>- cfg</td><td></td><td>0.64 / 0.72</td><td>1.81</td><td>-0.06</td><td>3.80</td></tr></tbody></table></div></div>
 </section>
 <section>
@@ -759,8 +756,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-0-67-1"><span class="cap-k">表</span><p class="en">Table 4: The ablation study of prosody representation on RAVDESS. Denote “Mel 20 Bins” using the first 20 bins in the mel-spectrogram as the prosody representation.</p><p class="zh">表 4：在 RAVDESS 上关于韵律表示的消融研究。其中「Mel 20 Bins」表示用 Mel 频谱图的前 20 个频带作为韵律表示。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>clean.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Sim-O / Sim-R ↑</th><th></th><th>WER↓</th><th>CMOS↑</th><th>SMOS↑</th></tr></thead><tbody><tr><td></td><td>NaturalSpeech 3</td><td></td><td>0.67 / 0.76</td><td>1.81</td><td>0.00</td><td>4.01</td></tr>
-<tr><td></td><td>- factorization</td><td></td><td>0.55 / 0.61</td><td>2.49</td><td>-0.25</td><td>3.59</td></tr>
+<div class="cap" id="tab-0-67-1"><span class="cap-k">表</span><p class="en">Table 4: The ablation study of prosody representation on RAVDESS. Denote “Mel 20 Bins” using the first 20 bins in the mel-spectrogram as the prosody representation.</p><p class="zh">表 4：在 RAVDESS 上关于韵律表示的消融研究。其中「Mel 20 Bins」表示用 Mel 频谱图的前 20 个频带作为韵律表示。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>clean.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>Sim-O / Sim-R ↑</th><th>WER↓</th><th>CMOS↑</th><th>SMOS↑</th></tr></thead><tbody><tr><td></td><td></td><td>NaturalSpeech 3</td><td>0.67 / 0.76</td><td>1.81</td><td>0.00</td><td>4.01</td></tr>
+<tr><td></td><td></td><td>- factorization</td><td>0.55 / 0.61</td><td>2.49</td><td>-0.25</td><td>3.59</td></tr>
 <tr><td></td><td>- cfg</td><td></td><td>0.64 / 0.72</td><td>1.81</td><td>-0.06</td><td>3.80</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-0-67-1">
           <p class="en-lines"><span class="sent" data-sid="s-0-67-1-1"><span class="en">MCD Avg↓ MCD-Acc↑ NaturalSpeech 3</span></span></p>
@@ -775,11 +772,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-0-67-2-1"><span class="zh">（表格行：MCD Avg↓ / MCD-Acc↑——NaturalSpeech 3 4.28/0.52；Mel 20 Bins 4.34/0.46。）韵律表示（Prosody Representation）。</span></span><span class="sent" data-sid="s-0-67-2-2"><span class="zh">我们在零样本 TTS 任务上比较不同的韵律表示。</span></span><span class="sent" data-sid="s-0-67-2-3"><span class="zh">具体来说，我们选取人工设计的韵律特征（如 Mel 频谱图的前 20 个频带 [7, 63, 64]）作为基线。</span></span><span class="sent" data-sid="s-0-67-2-4"><span class="zh">我们移除韵律 FVQ 模块，直接量化 Mel 频谱图的前 20 个频带，且不使用归一化 F0 损失。</span></span><span class="sent" data-sid="s-0-67-2-5"><span class="zh">Table 4 显示，与 codec 学出的韵律表示相比，用「Mel 20 Bins」作为韵律表示在韵律相似度上更差（平均 MCD 4.34 对 4.28，MCD-Acc 0.46 对 0.52）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-0-67-2"><span class="cap-k">表</span><p class="en">Table 5: The reconstruction quality evaluation of codecs. ♣means results are infered from offical checkpoints. ⋆means the reproduced checkpoint. ♦means the reproduced model following the original paper’s implementation and experimental setup. All models use a codebook size of 1024. Bold for the best result and underline for the second-best result. Abbreviation: H (Hop Size), N (Codebook Number).</p><p class="zh">表 5：codec 的重构质量评测。♣表示结果由官方 checkpoint 推理得到；⋆表示复现的 checkpoint；♦表示按原论文实现与实验设置复现的模型。所有模型的码本大小为 1024。加粗为最优、下划线为次优。缩写：H（Hop Size）、N（码本数量）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>(Codebook Number).</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>EnCodec♣</td><td></td><td>24kHz</td><td>320</td><td>8</td><td>6.0 kbps</td><td>3.28</td><td>0.94</td><td></td><td>0.99</td><td>2.70</td></tr>
-<tr><td>HiFi-Codec♣</td><td></td><td>16kHz</td><td>320</td><td>4</td><td>2.0 kbps</td><td>3.17</td><td>0.93</td><td></td><td>0.98</td><td>3.05</td></tr>
-<tr><td>DAC♣</td><td></td><td>16kHz</td><td>320</td><td>9</td><td>4.5 kbps</td><td>3.52</td><td>0.95</td><td></td><td>0.97</td><td>2.65</td></tr>
-<tr><td>SoundStream♦</td><td></td><td>16kHz</td><td>200</td><td>6</td><td>4.8 kbps</td><td>3.03</td><td>0.90</td><td></td><td>1.07</td><td>3.38</td></tr>
-<tr><td>FACodec</td><td></td><td>16kHz</td><td>200</td><td>6</td><td>4.8 kbps</td><td>3.47</td><td>0.95</td><td></td><td>0.93</td><td>2.59</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-0-67-2"><span class="cap-k">表</span><p class="en">Table 5: The reconstruction quality evaluation of codecs. ♣means results are infered from offical checkpoints. ⋆means the reproduced checkpoint. ♦means the reproduced model following the original paper’s implementation and experimental setup. All models use a codebook size of 1024. Bold for the best result and underline for the second-best result. Abbreviation: H (Hop Size), N (Codebook Number).</p><p class="zh">表 5：codec 的重构质量评测。♣表示结果由官方 checkpoint 推理得到；⋆表示复现的 checkpoint；♦表示按原论文实现与实验设置复现的模型。所有模型的码本大小为 1024。加粗为最优、下划线为次优。缩写：H（Hop Size）、N（码本数量）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>(Codebook Number).</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>EnCodec♣</td><td></td><td>24kHz</td><td>320</td><td>8</td><td>6.0 kbps</td><td>3.28</td><td>0.94</td><td>0.99</td><td>2.70</td></tr>
+<tr><td>HiFi-Codec♣</td><td></td><td>16kHz</td><td>320</td><td>4</td><td>2.0 kbps</td><td>3.17</td><td>0.93</td><td>0.98</td><td>3.05</td></tr>
+<tr><td>DAC♣</td><td></td><td>16kHz</td><td>320</td><td>9</td><td>4.5 kbps</td><td>3.52</td><td>0.95</td><td>0.97</td><td>2.65</td></tr>
+<tr><td>SoundStream♦</td><td></td><td>16kHz</td><td>200</td><td>6</td><td>4.8 kbps</td><td>3.03</td><td>0.90</td><td>1.07</td><td>3.38</td></tr>
+<tr><td>FACodec</td><td></td><td>16kHz</td><td>200</td><td>6</td><td>4.8 kbps</td><td>3.47</td><td>0.95</td><td>0.93</td><td>2.59</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-0-67-3">
           <p class="en-lines"><span class="sent" data-sid="s-0-67-3-1"><span class="en">Models Sampling Rate H N Bandwidth PESQ ↑ STOI ↑ MSTFT ↓ MCD ↓ EnCodec♣ 24kHz</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-0-67-3-1"><span class="zh">表头：Models / Sampling Rate / H / N / Bandwidth / PESQ ↑ / STOI ↑ / MSTFT ↓ / MCD ↓——EnCodec♣ 24kHz（后续照原文）。</span></span></p>
@@ -828,7 +825,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="cap" id="tab-4-3-2-1"><span class="cap-k">表</span><p class="en">Table 6: The comparison between autoregressive approach with (VALL-E + FACodec) and without (VALL-E) our proposed factorization on LibriSpeech test-clean. ♦means the reproduced results. Abbreviation: Sim-O/R (Sim-O / Sim-R).</p><p class="zh">表 6：在 LibriSpeech test-clean 上，自回归路线在采用（VALL-E + FACodec）与不采用（VALL-E）我们所提分解设计时的比较。♦表示复现结果。缩写：Sim-O/R（Sim-O / Sim-R）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Abbreviation: Sim-O/R (Sim-O / Sim-R).</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Sim-O / R ↑</th><th>WER↓</th><th>CMOS↑</th><th>SMOS↑</th></tr></thead><tbody><tr><td></td><td>VALL-E + FACodec</td><td>0.57 / 0.65</td><td>5.60</td><td>+0.24</td><td>3.61</td></tr>
-<tr><td></td><td>VALL-E♦</td><td>0.47 / 0.51</td><td>6.11</td><td>0.00</td><td>3.46</td></tr></tbody></table></div></div>
+<tr><td>VALL-E♦</td><td></td><td>0.47 / 0.51</td><td>6.11</td><td>0.00</td><td>3.46</td></tr></tbody></table></div></div>
 
 </section>
 <section>
@@ -1102,7 +1099,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-A-3-11-1"><span class="zh">（脚注）8 https://github.com/yl4579/StyleTTS2；9 https://github.com/sh-lee-prml/HierSpeechpp</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-3-1"><span class="cap-k">表</span><p class="en">Table 9: The evaluation results for NaturalSpeech 3 and the baseline methods on LibriSpeech testclean. ♠means the results are obtained from the authors. ♥means the results directly obtained from the paper. ♣means the results are inferred from offical checkpoints. ♦means the reproduced results. WER⋆means the word error rate calculated by an advanced ASR system mentioned in A.4.</p><p class="zh">表 9：NaturalSpeech 3 与各基线方法在 LibriSpeech test-clean 上的评测结果。♠表示结果来自作者；♥表示结果直接取自论文；♣表示结果由官方 checkpoint 推理得到；♦表示复现结果。WER⋆表示由 A.4 提到的更先进 ASR 系统计算的词错误率。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>WER↓</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.68</td><td>-</td><td>1.94</td><td>0.68</td><td>4.14</td><td>+0.08</td><td>3.85</td></tr>
+<div class="cap" id="tab-A-3-1"><span class="cap-k">表</span><p class="en">Table 9: The evaluation results for NaturalSpeech 3 and the baseline methods on LibriSpeech testclean. ♠means the results are obtained from the authors. ♥means the results directly obtained from the paper. ♣means the results are inferred from offical checkpoints. ♦means the reproduced results. WER⋆means the word error rate calculated by an advanced ASR system mentioned in A.4.</p><p class="zh">表 9：NaturalSpeech 3 与各基线方法在 LibriSpeech test-clean 上的评测结果。♠表示结果来自作者；♥表示结果直接取自论文；♣表示结果由官方 checkpoint 推理得到；♦表示复现结果。WER⋆表示由 A.4 提到的更先进 ASR 系统计算的词错误率。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Sim-O ↑</th><th>Sim-R ↑</th><th>WER↓</th><th>WER⋆↓</th><th>UTMOS ↑</th><th>CMOS↑</th><th>SMOS↑</th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.68</td><td>-</td><td>1.94</td><td>0.68</td><td>4.14</td><td>+0.08</td><td>3.85</td></tr>
 <tr><td>VALL-E ♥</td><td>-</td><td>0.58</td><td>5.90</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>VALL-E ♦</td><td>0.47</td><td>0.51</td><td>6.11</td><td>4.87</td><td>3.68</td><td>-0.60</td><td>3.46</td></tr>
 <tr><td>NaturalSpeech 2♠</td><td>0.55</td><td>0.62</td><td>1.94</td><td>1.24</td><td>3.88</td><td>-0.18</td><td>3.65</td></tr>
@@ -1113,11 +1110,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>StyleTTS 2♣</td><td>0.38</td><td>-</td><td>2.49</td><td>1.58</td><td>3.94</td><td>-0.21</td><td>3.07</td></tr>
 <tr><td>HierSpeech++♣</td><td>0.51</td><td>-</td><td>6.33</td><td>4.97</td><td>3.80</td><td>-0.41</td><td>3.50</td></tr>
 <tr><td>NaturalSpeech 3</td><td>0.67</td><td>0.76</td><td>1.81</td><td>1.13</td><td>4.30</td><td>0.00</td><td>4.01</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-A-3-12">
-          <p class="en-lines"><span class="sent" data-sid="s-A-3-12-1"><span class="en">Sim-O ↑ Sim-R ↑ WER↓ WER⋆↓ UTMOS ↑ CMOS↑ SMOS↑ Ground Truth</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-A-3-12-1"><span class="zh">表头：Sim-O ↑ / Sim-R ↑ / WER↓ / WER⋆↓ / UTMOS ↑ / CMOS↑ / SMOS↑——Ground Truth（后续照原文）。</span></span></p>
-          
-        </div>
 
 
 
@@ -1139,7 +1131,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-A-3-2"><span class="cap-k">表</span><p class="en">Table 10: The latency study on LibriSpeech test-clean. NaturalSpeech 3 one-step denotes using only 1 iteration in each diffusion process instead of original 4. Abbreviation: NFE (number of function evaluation).</p><p class="zh">表 10：在 LibriSpeech test-clean 上的延迟研究。NaturalSpeech 3 one-step 表示每个扩散过程只用 1 次迭代，而非原来的 4 次。缩写：NFE（函数评估次数）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>WER↓</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.68</td><td>-</td><td>1.94</td><td>0.68</td><td>4.14</td><td>+0.08</td><td>3.85</td></tr>
+
+<div class="cap" id="tab-A-3-2"><span class="cap-k">表</span><p class="en">Table 10: The latency study on LibriSpeech test-clean. NaturalSpeech 3 one-step denotes using only 1 iteration in each diffusion process instead of original 4. Abbreviation: NFE (number of function evaluation).</p><p class="zh">表 10：在 LibriSpeech test-clean 上的延迟研究。NaturalSpeech 3 one-step 表示每个扩散过程只用 1 次迭代，而非原来的 4 次。缩写：NFE（函数评估次数）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Sim-O ↑</th><th>Sim-R ↑</th><th>WER↓</th><th>WER⋆↓</th><th>UTMOS ↑</th><th>CMOS↑</th><th>SMOS↑</th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.68</td><td>-</td><td>1.94</td><td>0.68</td><td>4.14</td><td>+0.08</td><td>3.85</td></tr>
 <tr><td>VALL-E ♥</td><td>-</td><td>0.58</td><td>5.90</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>VALL-E ♦</td><td>0.47</td><td>0.51</td><td>6.11</td><td>4.87</td><td>3.68</td><td>-0.60</td><td>3.46</td></tr>
 <tr><td>NaturalSpeech 2♠</td><td>0.55</td><td>0.62</td><td>1.94</td><td>1.24</td><td>3.88</td><td>-0.18</td><td>3.65</td></tr>
@@ -1187,11 +1180,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-A-6-1-1"><span class="zh">时长扩散模型消融。本小节通过消融比较我们的时长离散扩散模型与传统时长预测器（在对数域回归时长）。</span></span><span class="sent" data-sid="s-A-6-1-2"><span class="zh">（此为抽取误切的脚注碎块）10 https://huggingface.co/nvidia/stt_en_conformer_transducer_xlarge；11 https://github.com/tarepan/SpeechMOS</span></span></p>
           
         </div>
-<div class="cap" id="tab-A-6-1"><span class="cap-k">表</span><p class="en">Table 11: The ablation results of the design of the duration predictor on LibriSpeech test-clean.</p><p class="zh">表 11：在 LibriSpeech test-clean 上关于时长预测器设计的消融结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Sim-O ↑</th><th>Sim-R ↑</th><th>WER↓</th><th>UTMOS↑</th><th></th></tr></thead><tbody><tr><td>NaturalSpeech 3</td><td>0.67</td><td>0.76</td><td>1.94</td><td></td><td>4.30</td></tr>
-<tr><td>Generation ablation</td><td>0.62</td><td>0.73</td><td>1.94</td><td></td><td>4.18</td></tr>
-<tr><td>Objective ablation</td><td>0.62</td><td>0.72</td><td>2.38</td><td></td><td>4.13</td></tr>
-<tr><td>Conditioning ablation</td><td>0.62</td><td>0.72</td><td>2.49</td><td></td><td>4.11</td></tr>
-<tr><td>Prompting ablation</td><td>0.61</td><td>0.71</td><td>2.83</td><td></td><td>4.08</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-A-6-1"><span class="cap-k">表</span><p class="en">Table 11: The ablation results of the design of the duration predictor on LibriSpeech test-clean.</p><p class="zh">表 11：在 LibriSpeech test-clean 上关于时长预测器设计的消融结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Sim-O ↑</th><th>Sim-R ↑</th><th>WER↓</th><th>UTMOS↑</th></tr></thead><tbody><tr><td>NaturalSpeech 3</td><td>0.67</td><td>0.76</td><td>1.94</td><td>4.30</td></tr>
+<tr><td>Generation ablation</td><td>0.62</td><td>0.73</td><td>1.94</td><td>4.18</td></tr>
+<tr><td>Objective ablation</td><td>0.62</td><td>0.72</td><td>2.38</td><td>4.13</td></tr>
+<tr><td>Conditioning ablation</td><td>0.62</td><td>0.72</td><td>2.49</td><td>4.11</td></tr>
+<tr><td>Prompting ablation</td><td>0.61</td><td>0.71</td><td>2.83</td><td>4.08</td></tr></tbody></table></div></div>
 
 
 
@@ -1202,7 +1195,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-A-6-2"><span class="cap-k">表</span><p class="en">Table 12: The MCD scores on 8 different emotions of NaturalSpeech 3 and the baseline methods on RAVDESS. ♠means the results are obtained from the authors. ♣means the results are inferred from official checkpoints. ♦means the reproduced results. We use bold to indicate the best result and underline to indicate the second-best result.</p><p class="zh">表 12：NaturalSpeech 3 与各基线方法在 RAVDESS 上 8 种不同情感的 MCD 分数。♠表示结果来自作者；♣表示结果由官方 checkpoint 推理得到；♦表示复现结果。加粗为最优、下划线为次优。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>neutral</th><th>calm</th><th>happy</th><th>sad</th><th>angry</th><th>fearful</th><th>disgust</th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+<div class="cap" id="tab-A-6-2"><span class="cap-k">表</span><p class="en">Table 12: The MCD scores on 8 different emotions of NaturalSpeech 3 and the baseline methods on RAVDESS. ♠means the results are obtained from the authors. ♣means the results are inferred from official checkpoints. ♦means the reproduced results. We use bold to indicate the best result and underline to indicate the second-best result.</p><p class="zh">表 12：NaturalSpeech 3 与各基线方法在 RAVDESS 上 8 种不同情感的 MCD 分数。♠表示结果来自作者；♣表示结果由官方 checkpoint 推理得到；♦表示复现结果。加粗为最优、下划线为次优。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>MCD↓</th><th></th><th></th><th></th></tr><tr><th></th><th>neutral</th><th>calm</th><th>happy</th><th>sad</th><th>angry</th><th>fearful</th><th>disgust</th><th>surprised</th></tr></thead><tbody><tr><td>Ground Truth</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
 <tr><td>VALL-E ♦</td><td>3.97</td><td>4.75</td><td>4.83</td><td>5.51</td><td>5.19</td><td>5.29</td><td>5.45</td><td>5.29</td></tr>
 <tr><td>Voicebox♦</td><td>3.93</td><td>4.90</td><td>4.96</td><td>4.93</td><td>5.01</td><td>5.03</td><td>5.34</td><td>4.89</td></tr>
 <tr><td>NaturalSpeech 2♠</td><td>2.77</td><td>3.51</td><td>4.85</td><td>4.88</td><td>5.42</td><td>5.23</td><td>5.31</td><td>4.52</td></tr>
@@ -1262,13 +1255,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-B-2-1-1"><span class="zh">我们用以下客观指标评估重构性能：感知语音质量评估（PESQ）、短时客观可懂度（STOI）、多分辨率 STFT 距离（MSTFT）与梅尔倒谱失真（MCD）。</span></span><span class="sent" data-sid="s-B-2-1-2"><span class="zh">这些指标共同衡量原始样本与重构样本之间的差异。</span></span><span class="sent" data-sid="s-B-2-1-3"><span class="zh">我们选取以下开源 codec 模型作为基线：EnCodec [15]12、HiFi-Codec [65]13 与 Descript-AudioCodec（DAC）[32]14。</span></span><span class="sent" data-sid="s-B-2-1-4"><span class="zh">此外，我们按照原论文的实现与实验设置复现了 SoundStream [14]。</span></span><span class="sent" data-sid="s-B-2-1-5"><span class="zh">Table 13 表明：1）在相同带宽设置下，FACodec 显著超越 SoundStream（PESQ 高 0.44，STOI 高 0.05，MSTFT 低 0.14，MCD 低 0.79）。</span></span><span class="sent" data-sid="s-B-2-1-6"><span class="zh">此外，即使 SoundStream 的带宽翻倍，FACodec 仍取得与之持平的表现（PESQ 差 0.02，STOI 差 0.01，MSTFT 好 −0.01，MCD 差 0.17）。2）为公平比较，我们在相近带宽下将 FACodec 与其他基线对比。</span></span><span class="sent" data-sid="s-B-2-1-7"><span class="zh">FACodec 在多数指标上取得与这些强基线相当或更好的结果，这说明我们在解耦语音属性的同时仍能实现出色的重构语音质量。</span></span></p>
           
         </div>
-<div class="cap" id="tab-B-2-1"><span class="cap-k">表</span><p class="en">Table 13: The reconstruction quality evaluation of codecs. ♣means results are infered from offical checkpoints. ⋆means the reproduced checkpoint. ♦means the reproduced model following the original paper’s implementation and experimental setup. All models use a codebook size of 1024. We use bold to indicate the best result and underline to indicate the second-best result. Abbreviation: H (Hop Size), N (Codebook Number).</p><p class="zh">表 13：codec 的重构质量评测。♣表示结果由官方 checkpoint 推理得到；⋆表示复现的 checkpoint；♦表示按原论文实现与实验设置复现的模型。所有模型的码本大小均为 1024。加粗表示最优结果，下划线表示次优结果。缩写：H（跳跃长度，Hop Size）、N（码本个数）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>H (Hop Size), N (Codebook Number).</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>EnCodec♣</td><td></td><td>24kHz</td><td>320</td><td>8</td><td>6.0 kbps</td><td>3.28</td><td>0.94</td><td></td><td>0.99</td><td>2.70</td></tr>
-<tr><td>EnCodec⋆</td><td></td><td>16kHz</td><td>320</td><td>10</td><td>5.0 kbps</td><td>3.10</td><td>0.92</td><td></td><td>0.97</td><td>3.10</td></tr>
-<tr><td>HiFi-Codec♣</td><td></td><td>16kHz</td><td>320</td><td>4</td><td>2.0 kbps</td><td>3.17</td><td>0.93</td><td></td><td>0.98</td><td>3.05</td></tr>
-<tr><td>DAC♣</td><td></td><td>16kHz</td><td>320</td><td>9</td><td>4.5 kbps</td><td>3.52</td><td>0.95</td><td></td><td>0.97</td><td>2.65</td></tr>
-<tr><td>SoundStream♦</td><td></td><td>16kHz</td><td>200</td><td>6</td><td>4.8 kbps</td><td>3.03</td><td>0.90</td><td></td><td>1.07</td><td>3.38</td></tr>
-<tr><td>SoundStream♦</td><td></td><td>16kHz</td><td>200</td><td>12</td><td>9.6 kbps</td><td>3.45</td><td>0.94</td><td></td><td>0.92</td><td>2.76</td></tr>
-<tr><td>FACodec</td><td></td><td>16kHz</td><td>200</td><td>6</td><td>4.8 kbps</td><td>3.47</td><td>0.95</td><td></td><td>0.93</td><td>2.59</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-B-2-1"><span class="cap-k">表</span><p class="en">Table 13: The reconstruction quality evaluation of codecs. ♣means results are infered from offical checkpoints. ⋆means the reproduced checkpoint. ♦means the reproduced model following the original paper’s implementation and experimental setup. All models use a codebook size of 1024. We use bold to indicate the best result and underline to indicate the second-best result. Abbreviation: H (Hop Size), N (Codebook Number).</p><p class="zh">表 13：codec 的重构质量评测。♣表示结果由官方 checkpoint 推理得到；⋆表示复现的 checkpoint；♦表示按原论文实现与实验设置复现的模型。所有模型的码本大小均为 1024。加粗表示最优结果，下划线表示次优结果。缩写：H（跳跃长度，Hop Size）、N（码本个数）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>H (Hop Size), N (Codebook Number).</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>EnCodec♣</td><td></td><td>24kHz</td><td>320</td><td>8</td><td>6.0 kbps</td><td>3.28</td><td>0.94</td><td>0.99</td><td>2.70</td></tr>
+<tr><td>EnCodec⋆</td><td></td><td>16kHz</td><td>320</td><td>10</td><td>5.0 kbps</td><td>3.10</td><td>0.92</td><td>0.97</td><td>3.10</td></tr>
+<tr><td>HiFi-Codec♣</td><td></td><td>16kHz</td><td>320</td><td>4</td><td>2.0 kbps</td><td>3.17</td><td>0.93</td><td>0.98</td><td>3.05</td></tr>
+<tr><td>DAC♣</td><td></td><td>16kHz</td><td>320</td><td>9</td><td>4.5 kbps</td><td>3.52</td><td>0.95</td><td>0.97</td><td>2.65</td></tr>
+<tr><td>SoundStream♦</td><td></td><td>16kHz</td><td>200</td><td>6</td><td>4.8 kbps</td><td>3.03</td><td>0.90</td><td>1.07</td><td>3.38</td></tr>
+<tr><td>SoundStream♦</td><td></td><td>16kHz</td><td>200</td><td>12</td><td>9.6 kbps</td><td>3.45</td><td>0.94</td><td>0.92</td><td>2.76</td></tr>
+<tr><td>FACodec</td><td></td><td>16kHz</td><td>200</td><td>6</td><td>4.8 kbps</td><td>3.47</td><td>0.95</td><td>0.93</td><td>2.59</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-B-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-B-2-2-1"><span class="en">Models Sampling Rate H N Bandwidth PESQ ↑ STOI ↑ MSTFT ↓ MCD ↓ EnCodec♣ 24kHz</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-2-2-1"><span class="zh">表头：Models / Sampling Rate / H / N / Bandwidth / PESQ ↑ / STOI ↑ / MSTFT ↓ / MCD ↓——EnCodec♣ 24kHz（后续照原文）。</span></span></p>
@@ -1307,12 +1300,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-B-3-1-1"><span class="zh">语音转换旨在把源说话人的语音变换为目标说话人的语音，在保留内容的同时改变音色。</span></span><span class="sent" data-sid="s-B-3-1-2"><span class="zh">零样本语音转换通过利用来自目标说话人的一段提示语音样本，来转换源说话人的语音，从而实现这一目标。（脚注 12 https://github.com/facebookresearch/encodec；13 https://github.com/yangdongchao/AcademiCodec；14 https://github.com/descriptinc/descript-audio-codec——抽取时误嵌入此句）</span></span><span class="sent" data-sid="s-B-3-1-3"><span class="zh">FACodec 实现零样本语音转换的方式是：从提示语音中提取说话人嵌入 hprompt t，替换源语音的说话人嵌入 hsource t，并利用源说话人的内容 token zsource c、韵律 token zsource p 与细节 token zsource d 重构出目标语音 D(zsource c, zsource p, zsource d, hprompt t)。</span></span><span class="sent" data-sid="s-B-3-1-4"><span class="zh">我们将 FACodec 与此前的一些 SOTA 模型比较：YourTTS [71]、Make-A-Voice (VC) [20]、LM-VC [72] 与 UniAudio [35]。</span></span><span class="sent" data-sid="s-B-3-1-5"><span class="zh">我们使用 VCTK 数据集进行比较。</span></span><span class="sent" data-sid="s-B-3-1-6"><span class="zh">我们用 Sim-O15 与基线比较说话人相似度，用 WER 评估语音质量。</span></span><span class="sent" data-sid="s-B-3-1-7"><span class="zh">Table 14 给出了评测结果。</span></span><span class="sent" data-sid="s-B-3-1-8"><span class="zh">实验结果表明，FACodec 仅凭自身就取得了与 SOTA 零样本 VC 模型相当的相似度与更优的可懂度，而那些模型需要在该任务上额外训练。</span></span><span class="sent" data-sid="s-B-3-1-9"><span class="zh">这意味着 FACodec 实现了优越的解耦能力，尤其是在音色方面。</span></span></p>
           
         </div>
-<div class="cap" id="tab-B-3-1"><span class="cap-k">表</span><p class="en">Table 14: The zero-shot voice conversion evaluation results for FACodec with previous SOTA methods. We use bold to indicate the best result and underline to indicate the second-best result.</p><p class="zh">表 14：FACodec 与此前 SOTA 方法的零样本语音转换评测结果。加粗表示最优结果，下划线表示次优结果。</p></div>
-<div class="pblk" id="p-B-3-2">
-          <p class="en-lines"><span class="sent" data-sid="s-B-3-2-1"><span class="en">Models Sim-O ↑ WER ↓ Ground Truth</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-3-2-1"><span class="zh">表头：Models / Sim-O ↑ / WER ↓——Ground Truth（后续照原文）。</span></span></p>
-          
-        </div>
+<div class="cap" id="tab-B-3-1"><span class="cap-k">表</span><p class="en">Table 14: The zero-shot voice conversion evaluation results for FACodec with previous SOTA methods. We use bold to indicate the best result and underline to indicate the second-best result.</p><p class="zh">表 14：FACodec 与此前 SOTA 方法的零样本语音转换评测结果。加粗表示最优结果，下划线表示次优结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Models</th><th></th><th>Sim-O ↑</th><th>WER ↓</th></tr></thead><tbody><tr><td>Ground Truth</td><td></td><td>-</td><td>3.25</td></tr>
+<tr><td>YourTTS</td><td></td><td>0.72</td><td>10.1</td></tr>
+<tr><td></td><td>Make-A-Voice (VC)</td><td>0.68</td><td>6.20</td></tr>
+<tr><td>LM-VC</td><td></td><td>0.82</td><td>4.91</td></tr>
+<tr><td>UniAudio</td><td></td><td>0.87</td><td>4.80</td></tr>
+<tr><td>FACodec</td><td></td><td>0.86</td><td>3.46</td></tr></tbody></table></div></div>
+
 
 
 
@@ -1325,31 +1319,33 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-B-4"><span class="secnum">B.4</span> <span class="t-zh">消融研究</span><span class="t-en">Ablation Study</span></h3><div class="pblk" id="p-B-4-1">
-          <p class="en-lines"><span class="sent" data-sid="s-B-4-1-1"><span class="en">In this subsection, we study 1) the impact of the information bottleneck on the disentanglement of our FACodec; 2) the effect of gradient reversal on the disentanglement of our FACodec; 3) the role of the acoustic details quantizers; 4) the effects of different prosody representations for TTS generation.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-4-1-1"><span class="zh">本小节研究：1）信息瓶颈对 FACodec 解耦能力的影响；2）梯度反转对 FACodec 解耦能力的影响；3）声学细节量化器的作用；4）不同韵律表示对 TTS 生成的影响。</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-B-4"><span class="secnum">B.4</span> <span class="t-zh">消融研究</span><span class="t-en">Ablation Study</span></h3></section>
 <section>
       <h3 class="sech lv2" id="sec-information-bottleneck-for-disen"><span class="t-zh">用于解耦的信息瓶颈</span><span class="t-en">Information Bottleneck for Disentanglement.</span></h3><div class="pblk" id="p-information-bottleneck-for-disen-1">
           <p class="en-lines"><span class="sent" data-sid="s-information-bottleneck-for-disen-1-1"><span class="en">We investigate the impact of the information bottleneck on speech disentanglement through qualitative analysis.</span></span> <span class="sent" data-sid="s-information-bottleneck-for-disen-1-2"><span class="en">We find that without using information bottleneck (quantize in original dimensional space rather than low dimensional space) can lead to incomplete disentanglement.</span></span> <span class="sent" data-sid="s-information-bottleneck-for-disen-1-3"><span class="en">For example, we conduct zero-shot voice conversion in the same experimental setting using the FACodec without information bottleneck, as mentioned in Appendix B.3.</span></span> <span class="sent" data-sid="s-information-bottleneck-for-disen-1-4"><span class="en">We observe that the timbre of the converted speech is the interpolation between the source and target, indicating its poor timbre disentanglement.</span></span> <span class="sent" data-sid="s-information-bottleneck-for-disen-1-5"><span class="en">Table 15 demonstrates that without the information bottleneck, the speaker similarity of zero-shot voice conversion decreases by 0.13.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-information-bottleneck-for-disen-1-1"><span class="zh">我们通过定性分析研究信息瓶颈对语音解耦的影响。</span></span><span class="sent" data-sid="s-information-bottleneck-for-disen-1-2"><span class="zh">我们发现，不使用信息瓶颈（即在原始维度空间而非低维空间中量化）会导致解耦不完全。</span></span><span class="sent" data-sid="s-information-bottleneck-for-disen-1-3"><span class="zh">例如，如附录 B.3 所述，我们用不带信息瓶颈的 FACodec 在相同实验设置下进行零样本语音转换。</span></span><span class="sent" data-sid="s-information-bottleneck-for-disen-1-4"><span class="zh">我们观察到，转换后语音的音色是源说话人与目标说话人之间的插值，表明其音色解耦能力较差。</span></span><span class="sent" data-sid="s-information-bottleneck-for-disen-1-5"><span class="zh">Table 15 表明，没有信息瓶颈时，零样本语音转换的说话人相似度下降 0.13。</span></span></p>
           
         </div>
-<div class="cap" id="tab-information-bottleneck-for-disen-1"><span class="cap-k">表</span><p class="en">Table 15: Comparison of zero-shot voice conversion evaluation results for FACodec with and without using information bottleneck.</p><p class="zh">表 15：FACodec 在使用与不使用信息瓶颈两种情况下的零样本语音转换评测结果比较。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Models</th><th></th><th>WER ↓</th></tr></thead><tbody><tr><td></td><td>Ground Truth</td><td>-</td><td>3.25</td></tr>
-<tr><td></td><td>YourTTS</td><td>0.72</td><td>10.1</td></tr>
-<tr><td></td><td>Make-A-Voice (VC)</td><td>0.68</td><td>6.20</td></tr>
-<tr><td></td><td>LM-VC</td><td>0.82</td><td>4.91</td></tr>
-<tr><td></td><td>UniAudio</td><td>0.87</td><td>4.80</td></tr>
-<tr><td></td><td>FACodec</td><td>0.86</td><td>3.46</td></tr>
-<tr><td>B.4</td><td></td><td></td><td></td></tr>
-<tr><td>Information Bottleneck for Disentanglement.</td><td></td><td></td><td></td></tr>
-<tr><td>conversion decreases by 0.13.</td><td></td><td></td><td></td></tr></tbody></table></div></div>
-<div class="pblk" id="p-information-bottleneck-for-disen-2">
-          <p class="en-lines"><span class="sent" data-sid="s-information-bottleneck-for-disen-2-1"><span class="en">Sim-O ↑ w. information bottleneck</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-information-bottleneck-for-disen-2-1"><span class="zh">（此为 Table 15 的表格碎块抽取）有信息瓶颈：0.86；无信息瓶颈：0.73。</span></span></p>
-          
-        </div>
+<div class="cap" id="tab-information-bottleneck-for-disen-1"><span class="cap-k">表</span><p class="en">Table 15: Comparison of zero-shot voice conversion evaluation results for FACodec with and without using information bottleneck.</p><p class="zh">表 15：FACodec 在使用与不使用信息瓶颈两种情况下的零样本语音转换评测结果比较。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Models</th><th>Sim-O ↑</th><th>WER ↓</th></tr></thead><tbody><tr><td>Ground Truth</td><td>-</td><td>3.25</td></tr>
+<tr><td>YourTTS</td><td>0.72</td><td>10.1</td></tr>
+<tr><td></td><td>0.68</td><td>6.20</td></tr>
+<tr><td>LM-VC</td><td>0.82</td><td>4.91</td></tr>
+<tr><td>UniAudio</td><td>0.87</td><td>4.80</td></tr>
+<tr><td>FACodec</td><td>0.86</td><td>3.46</td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td>In this subsection, we study 1) the impact of the information bottleneck</td><td></td><td></td></tr>
+<tr><td>our FACodec; 2) the effect of gradient reversal on the disentanglement of</td><td></td><td></td></tr>
+<tr><td>the acoustic details quantizers; 4) the effects of different prosody</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td>We investigate the impact of the information bottleneck on speech</td><td></td><td></td></tr>
+<tr><td>analysis. We find that without using information bottleneck (quantize in</td><td></td><td></td></tr>
+<tr><td>rather than low dimensional space) can lead to incomplete disentanglement.</td><td></td><td></td></tr>
+<tr><td>zero-shot voice conversion in the same experimental setting using the</td><td></td><td></td></tr>
+<tr><td>bottleneck, as mentioned in Appendix B.3. We observe that the timbre of</td><td></td><td></td></tr>
+<tr><td>interpolation between the source and target, indicating its poor timbre</td><td></td><td></td></tr>
+<tr><td>demonstrates that without the information bottleneck, the speaker</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr></tbody></table></div></div>
+
 
 <div class="eq" id="eq-information-bottleneck-for-disen-2"><code>w.o. information bottleneck</code></div>
 <div class="eq" id="eq-information-bottleneck-for-disen-3"><code>0.73</code></div></section>
@@ -1365,9 +1361,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-role-of-acoustic-details-quantiz-1-1"><span class="zh">（脚注 15 https://huggingface.co/microsoft/wavlm-base-plus-sv——抽取时误嵌入此句）尽管内容、韵律与音色信息已经涵盖了语音的绝大部分信息，Table 16 表明，采用声学细节量化器可以提升 FACodec 的语音重构质量。</span></span><span class="sent" data-sid="s-role-of-acoustic-details-quantiz-1-2"><span class="zh">我们发现：1）不使用声学细节量化器（只用三个码本）时，FACodec 相比使用三个码本的 SoundStream 取得了相当或更好的结果，这意味着内容 token、韵律 token 与音色嵌入已经包含了语音重构所需的大部分必要信息；2）加入声学细节能取得更好的重构质量，这说明声学细节 token 主要用于补充高频细节。</span></span></p>
           
         </div>
-<div class="cap" id="tab-role-of-acoustic-details-quantiz-1"><span class="cap-k">表</span><p class="en">Table 16: The reconstruction quality comparison between our FACodec with and without using acoustic details quantizers.</p><p class="zh">表 16：我们的 FACodec 在使用与不使用声学细节量化器两种情况下的重构质量比较。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>acoustic details quantizers.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Codebook Number</th><th></th><th>PESQ ↑</th><th>STOI ↑</th><th>MSTFT ↓</th><th></th><th>MCD ↓</th></tr></thead><tbody><tr><td></td><td>FACodec</td><td></td><td>6</td><td>3.47</td><td>0.95</td><td></td><td>0.93</td><td>2.59</td></tr>
-<tr><td></td><td>- acoustic details quantizers</td><td></td><td>3</td><td>3.09</td><td>0.92</td><td></td><td>1.08</td><td>3.12</td></tr>
-<tr><td></td><td>SoundStream</td><td></td><td>6</td><td>3.03</td><td>0.90</td><td></td><td>1.07</td><td>3.38</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-role-of-acoustic-details-quantiz-1"><span class="cap-k">表</span><p class="en">Table 16: The reconstruction quality comparison between our FACodec with and without using acoustic details quantizers.</p><p class="zh">表 16：我们的 FACodec 在使用与不使用声学细节量化器两种情况下的重构质量比较。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>acoustic details quantizers.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Codebook Number</th><th>PESQ ↑</th><th>STOI ↑</th><th>MSTFT ↓</th><th>MCD ↓</th></tr></thead><tbody><tr><td>FACodec</td><td></td><td>6</td><td>3.47</td><td>0.95</td><td>0.93</td><td>2.59</td></tr>
+<tr><td></td><td>- acoustic details quantizers</td><td>3</td><td>3.09</td><td>0.92</td><td>1.08</td><td>3.12</td></tr>
+<tr><td>SoundStream</td><td></td><td>6</td><td>3.03</td><td>0.90</td><td>1.07</td><td>3.38</td></tr></tbody></table></div></div>
 
 
 

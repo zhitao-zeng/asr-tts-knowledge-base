@@ -704,31 +704,43 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-4-1"><span class="zh">6我们实验中使用的测试集可在以下地址获取：https://github.com/microsoft/e2tts-test-suite。</span></span></p>
           
         </div>
-<div class="cap" id="tab-3-3-1"><span class="cap-k">表</span><p class="en">Table 1. Objective results for LibriSpeech-PC test-clean evaluation set. WER is expressed in percentage. † Our reproduction. LL, LH, and PP stand for Librilight, Libriheavy, and Proprietary, respectively.</p><p class="zh">Table 1. LibriSpeech-PC test-clean 评测集的客观结果。WER 以百分比表示。† 我们的复现。LL、LH、PP 分别表示 Librilight、Libriheavy 和专有数据（Proprietary）。</p></div></section>
+<div class="cap" id="tab-3-3-1"><span class="cap-k">表</span><p class="en">Table 1. Objective results for LibriSpeech-PC test-clean evaluation set. WER is expressed in percentage. † Our reproduction. LL, LH, and PP stand for Librilight, Libriheavy, and Proprietary, respectively.</p><p class="zh">Table 1. LibriSpeech-PC test-clean 评测集的客观结果。WER 以百分比表示。† 我们的复现。LL、LH、PP 分别表示 Librilight、Libriheavy 和专有数据（Proprietary）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>set. WER is expressed in percentage. † Our reproduction. LL, LH,</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>and PP stand for Librilight, Libriheavy, and Proprietary, respectively.</th><th></th><th></th><th></th></tr><tr><th>ID</th><th>Model</th><th>Data (hours) Init</th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>(GT) Ground Truth</td><td></td><td></td><td>2.0</td><td>0.695</td></tr>
+<tr><td>(B1)</td><td>VALL-E [8]</td><td>LL (60K)</td><td>Random</td><td>4.9</td><td>0.500</td></tr>
+<tr><td>(B2)</td><td></td><td></td><td>Random</td><td>2.6</td><td>0.632</td></tr>
+<tr><td>(B3)</td><td>Voicebox [18]†</td><td>LL (60K)</td><td>Random</td><td>2.1</td><td>0.658</td></tr>
+<tr><td>(B4)</td><td>Voicebox [18]†</td><td>LH (50K)</td><td>Random</td><td>2.2</td><td>0.667</td></tr>
+<tr><td>(B5)</td><td>Voicebox [18]†</td><td>LH (50K)</td><td>Pretrain [34]</td><td>2.2</td><td>0.695</td></tr>
+<tr><td>(P1)</td><td>E2 TTS</td><td>LH (50K)</td><td>Random</td><td>2.0</td><td>0.675</td></tr>
+<tr><td>(P2)</td><td>E2 TTS</td><td>LH (50K)</td><td>Pretrain [34]</td><td>1.9</td><td>0.708</td></tr>
+<tr><td>(P3)</td><td>E2 TTS</td><td>PP (200K)</td><td>Random</td><td>1.9</td><td>0.707</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-id"><span class="t-zh">ID</span><span class="t-en">ID</span></h3><div class="pblk" id="p-id-1">
-          <p class="en-lines"><span class="sent" data-sid="s-id-1-1"><span class="en">Model Data (hours) Init WER↓SIM-o↑ (GT) Ground Truth</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-id-1-1"><span class="zh">表头：Model / Data (hours) / Init / WER↓ / SIM-o↑——(GT) Ground Truth（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-id-1"><code>- - 2.0 0.695</code></div>
-<div class="eq" id="eq-id-2"><code>(B1) VALL-E [8] LL (60K) Random</code></div>
-<div class="eq" id="eq-id-3"><code>4.9 0.500</code></div>
-<div class="eq" id="eq-id-4"><code>(B2) NaturalSpeech 3 [15] LL (60K) Random</code></div>
-<div class="eq" id="eq-id-5"><code>2.6 0.632</code></div>
-<div class="eq" id="eq-id-6"><code>(B3) Voicebox [18]† LL (60K) Random</code></div>
-<div class="eq" id="eq-id-7"><code>2.1 0.658</code></div>
-<div class="eq" id="eq-id-8"><code>(B4) Voicebox [18]† LH (50K) Random</code></div>
-<div class="eq" id="eq-id-9"><code>2.2 0.667</code></div>
-<div class="eq" id="eq-id-10"><code>(B5) Voicebox [18]† LH (50K) Pretrain [34]</code></div>
-<div class="eq" id="eq-id-11"><code>2.2 0.695</code></div>
-<div class="eq" id="eq-id-12"><code>(P1) E2 TTS LH (50K) Random</code></div>
-<div class="eq" id="eq-id-13"><code>2.0 0.675</code></div>
-<div class="eq" id="eq-id-14"><code>(P2) E2 TTS LH (50K) Pretrain [34]</code></div>
-<div class="eq" id="eq-id-15"><code>1.9 0.708</code></div>
-<div class="eq" id="eq-id-16"><code>(P3) E2 TTS PP (200K) Random</code></div>
-<div class="eq" id="eq-id-17"><code>1.9 0.707</code></div>
-<div class="cap" id="tab-id-1"><span class="cap-k">表</span><p class="en">Table 2. Subjective results for LibriSpeech-PC test-clean evaluation set. † Our reproduction.</p><p class="zh">Table 2. LibriSpeech-PC test-clean 评测集的主观结果。† 我们的复现。</p></div></section>
+      <h3 class="sech lv2" id="sec-id"><span class="t-zh">ID</span><span class="t-en">ID</span></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-id-1"><span class="cap-k">表</span><p class="en">Table 2. Subjective results for LibriSpeech-PC test-clean evaluation set. † Our reproduction.</p><p class="zh">Table 2. LibriSpeech-PC test-clean 评测集的主观结果。† 我们的复现。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>(GT) Ground Truth</td><td></td><td>-</td><td></td><td>-</td><td></td><td>2.0</td><td>0.695</td></tr>
+<tr><td>(B1)</td><td>VALL-E [8]</td><td></td><td></td><td>LL (60K)</td><td></td><td>Random</td><td>4.9</td><td>0.500</td></tr>
+<tr><td>(B2)</td><td></td><td>NaturalSpeech 3 [15] LL (60K)</td><td></td><td></td><td></td><td>Random</td><td>2.6</td><td>0.632</td></tr>
+<tr><td>(B3)</td><td>Voicebox [18]†</td><td></td><td></td><td>LL (60K)</td><td></td><td>Random</td><td>2.1</td><td>0.658</td></tr>
+<tr><td>(B4)</td><td>Voicebox [18]†</td><td></td><td></td><td>LH (50K)</td><td></td><td>Random</td><td>2.2</td><td>0.667</td></tr>
+<tr><td>(B5)</td><td>Voicebox [18]†</td><td></td><td></td><td>LH (50K)</td><td></td><td>Pretrain [34]</td><td>2.2</td><td>0.695</td></tr>
+<tr><td>(P1)</td><td>E2 TTS</td><td></td><td></td><td>LH (50K)</td><td></td><td>Random</td><td>2.0</td><td>0.675</td></tr>
+<tr><td>(P2)</td><td>E2 TTS</td><td></td><td></td><td>LH (50K)</td><td></td><td>Pretrain [34]</td><td>1.9</td><td>0.708</td></tr>
+<tr><td>(P3)</td><td>E2 TTS</td><td></td><td></td><td>PP (200K)</td><td></td><td>Random</td><td>1.9</td><td>0.707</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-id-2"><span class="t-zh">ID</span><span class="t-en">ID</span></h3><div class="pblk" id="p-id-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-id-2-1-1"><span class="en">Model CMOS↑ SMOS↑ (GT) Ground Truth</span></span></p>
@@ -736,15 +748,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-id-2-1"><code>0.00 3.91±0.13</code></div>
-<div class="eq" id="eq-id-2-2"><code>(B2) NaturalSpeech 3 [15]</code></div>
+
 <div class="eq" id="eq-id-2-3"><code>-0.98 4.76±0.06</code></div>
-<div class="eq" id="eq-id-2-4"><code>(B4) Voicebox [18]†</code></div>
+
 <div class="eq" id="eq-id-2-5"><code>-0.78 4.73±0.06</code></div>
-<div class="eq" id="eq-id-2-6"><code>(P1) E2 TTS</code></div>
+
 <div class="eq" id="eq-id-2-7"><code>-0.14 4.66±0.07</code></div>
-<div class="eq" id="eq-id-2-8"><code>(P2) E2 TTS</code></div>
+
 <div class="eq" id="eq-id-2-9"><code>-0.05 4.65±0.08</code></div>
-<div class="eq" id="eq-id-2-10"><code>(P3) E2 TTS</code></div>
+
 <div class="eq" id="eq-id-2-11"><code>-0.18 4.64±0.08</code></div>
 <div class="pblk" id="p-id-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-id-2-2-1"><span class="en">For the subjective assessments, we conducted two tests: the Comparative Mean Opinion Score (CMOS) and the Speaker Similarity Mean Opinion Score (SMOS).</span></span> <span class="sent" data-sid="s-id-2-2-2"><span class="en">We evaluated 39 samples for both tests, with one sample per speaker from our test-clean set.</span></span> <span class="sent" data-sid="s-id-2-2-3"><span class="en">Each sample was assessed by 12 Native English evaluators.</span></span> <span class="sent" data-sid="s-id-2-2-4"><span class="en">In the CMOS test [15], evaluators were shown the ground-truth sample and the generated sample side-by-side without knowing which was the ground-truth, and were asked to rate the naturalness on a 7-point scale (from -3 to 3), where a negative value indicates a preference for the ground-truth and a positive value indicates the opposite.</span></span> <span class="sent" data-sid="s-id-2-2-5"><span class="en">In the SMOS test, evaluators were presented with the audio prompt and the generated sample, and asked to rate the speaker similarity on a scale of 1 (not similar at all) to 5 (identical), with increments of 1.</span></span></p>
@@ -763,27 +775,23 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-3-4-1"><code>16% 12%</code></div>
-<div class="eq" id="eq-3-4-2"><code>WER</code></div>
+
 <div class="eq" id="eq-3-4-3"><code>8% 4% 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</code></div>
 <div class="eq" id="eq-3-4-4"><code>Training Progress</code></div>
 <div class="eq" id="eq-3-4-5"><code>0.74 0.70 0.66</code></div>
 <div class="eq" id="eq-3-4-6"><code>SIM-o</code></div>
 <div class="eq" id="eq-3-4-7"><code>0.62</code></div>
-<div class="eq" id="eq-3-4-8"><code>(B4) - Voicebox (P1) - E2 TTS</code></div>
+
 <div class="eq" id="eq-3-4-9"><code>0.58 0.54 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</code></div>
-<div class="pblk" id="p-3-4-3">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="en">Training Progress (B5) - Voicebox (P2) - E2 TTS</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-3-1"><span class="zh">（图横轴：Training Progress（训练进度）；图例：(B5) - Voicebox / (P2) - E2 TTS。）</span></span></p>
-          
-        </div>
+
 <div class="eq" id="eq-3-4-10"><code>16% 12%</code></div>
-<div class="eq" id="eq-3-4-11"><code>WER</code></div>
+
 <div class="eq" id="eq-3-4-12"><code>8% 4% 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</code></div>
 <div class="eq" id="eq-3-4-13"><code>Training Progress</code></div>
 <div class="eq" id="eq-3-4-14"><code>0.74 0.70 0.66</code></div>
 <div class="eq" id="eq-3-4-15"><code>SIM-o</code></div>
 <div class="eq" id="eq-3-4-16"><code>0.62</code></div>
-<div class="eq" id="eq-3-4-17"><code>(B5) - Voicebox (P2) - E2 TTS</code></div>
+
 <div class="eq" id="eq-3-4-18"><code>0.58 0.54 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</code></div>
 <div class="pblk" id="p-3-4-4">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-4-1"><span class="en">Training Progress</span></span></p>
@@ -791,11 +799,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="cap" id="fig-3-4-1"><img class="fig" src="../assets/figures/2406.18009/fig-3-4-1.png" loading="lazy" alt="Fig. 4. The training progress of Voicebox and E2TTS models. The top row shows WER and the bottom row shows SIM progressi"><span class="cap-k">图</span><p class="en">Fig. 4. The training progress of Voicebox and E2TTS models. The top row shows WER and the bottom row shows SIM progressions.</p><p class="zh">图 4. Voicebox 和 E2 TTS 模型的训练过程。上排为 WER，下排为 SIM 的变化曲线。</p></div>
-<div class="cap" id="tab-3-4-1"><span class="cap-k">表</span><p class="en">Table 3. Comparison between the basic E2 TTS and E2 TTS X1. While the basic E2 TTS requires the transcription of the audio prompt during inference, E2 TTS X1 does not require it. WER is expressed in percentage.</p><p class="zh">Table 3. 基础版 E2 TTS 与 E2 TTS X1 的比较。基础版 E2 TTS 在推理时需要音频提示的转录，E2 TTS X1 则不需要。WER 以百分比表示。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>(P1)</td><td>E2 TTS</td><td>Random</td><td>2.0</td><td>0.675</td><td>ID</td><td>Model</td><td>Init</td><td>Phoneme %</td><td></td><td>WER↓</td><td>SIM-o↑</td></tr>
-<tr><td></td><td>(P2)</td><td>E2 TTS</td><td>Pre-trained [34]</td><td>1.9</td><td>0.708</td><td>(P1)</td><td>E2 TTS</td><td>Random</td><td></td><td>0%</td><td>2.0</td><td>0.675</td></tr>
-<tr><td></td><td>(P1-X1)</td><td>E2 TTS X1</td><td>Random</td><td>2.0</td><td>0.664</td><td></td><td></td><td></td><td></td><td>0%</td><td>2.0</td><td>0.679</td></tr>
-<tr><td></td><td>(P2-X1)</td><td>E2 TTS X1</td><td>Pre-trained [34]</td><td>2.0</td><td>0.705</td><td>(P1-X2)</td><td>E2 TTS X2</td><td>Random</td><td></td><td>25%</td><td>2.0</td><td>0.678</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>50%</td><td>2.1</td><td>0.679</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-3-4-1"><span class="cap-k">表</span><p class="en">Table 3. Comparison between the basic E2 TTS and E2 TTS X1. While the basic E2 TTS requires the transcription of the audio prompt during inference, E2 TTS X1 does not require it. WER is expressed in percentage.</p><p class="zh">Table 3. 基础版 E2 TTS 与 E2 TTS X1 的比较。基础版 E2 TTS 在推理时需要音频提示的转录，E2 TTS X1 则不需要。WER 以百分比表示。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>expressed in percentage.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>TTS X2</th><th></th></tr><tr><th></th><th>ID</th><th></th><th>Model</th><th></th><th>Init</th><th></th><th>WER↓</th><th>SIM-o↑</th><th></th><th>the</th><th></th></tr></thead><tbody><tr><td></td><td>(P1)</td><td></td><td>E2 TTS</td><td></td><td>Random</td><td></td><td>2.0</td><td>0.675</td><td></td><td>ID</td><td></td></tr>
+<tr><td></td><td>(P2)</td><td></td><td>E2 TTS</td><td></td><td></td><td>Pre-trained [34]</td><td>1.9</td><td>0.708</td><td></td><td>(P1)</td><td>E2</td></tr>
+<tr><td></td><td>(P1-X1)</td><td></td><td>E2 TTS X1</td><td></td><td>Random</td><td></td><td>2.0</td><td>0.664</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>(P2-X1)</td><td></td><td>E2 TTS X1</td><td></td><td></td><td>Pre-trained [34]</td><td>2.0</td><td>0.705</td><td></td><td>(P1-X2)</td><td>E2</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-id-3"><span class="t-zh">ID</span><span class="t-en">ID</span></h3>
 
@@ -844,11 +851,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-id-3-6-1"><span class="zh">8在 LibriSpeech 中，一些说话人为书中的不同角色使用了不同的声音特征，导致真实样本的 SMOS 偏低。</span></span></p>
           
         </div>
-<div class="cap" id="tab-id-3-1"><span class="cap-k">表</span><p class="en">Table 4. The WER (%) and SIM-o of E2 TTS X2 where a word is randomly replaced with the phoneme sequence during inference. Even when we replaced 50% of words into phoneme sequences, E2 TTS X2 worked reasonably well. This indicates that we can specify the pronunciation of a new term without retraining.</p><p class="zh">Table 4. E2 TTS X2 的 WER（%）与 SIM-o：推理时随机将单词替换为音素序列。即使我们把 50% 的单词替换为音素序列，E2 TTS X2 仍能正常工作。这表明我们可以在不重新训练的情况下指定新术语的发音。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>(P1)</td><td>E2 TTS</td><td>Random</td><td>2.0</td><td>0.675</td><td>ID</td><td>Model</td><td>Init</td><td>Phoneme %</td><td></td><td>WER↓</td><td>SIM-o↑</td></tr>
-<tr><td></td><td>(P2)</td><td>E2 TTS</td><td>Pre-trained [34]</td><td>1.9</td><td>0.708</td><td>(P1)</td><td>E2 TTS</td><td>Random</td><td></td><td>0%</td><td>2.0</td><td>0.675</td></tr>
-<tr><td></td><td>(P1-X1)</td><td>E2 TTS X1</td><td>Random</td><td>2.0</td><td>0.664</td><td></td><td></td><td></td><td></td><td>0%</td><td>2.0</td><td>0.679</td></tr>
-<tr><td></td><td>(P2-X1)</td><td>E2 TTS X1</td><td>Pre-trained [34]</td><td>2.0</td><td>0.705</td><td>(P1-X2)</td><td>E2 TTS X2</td><td>Random</td><td></td><td>25%</td><td>2.0</td><td>0.678</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>50%</td><td>2.1</td><td>0.679</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-id-3-1"><span class="cap-k">表</span><p class="en">Table 4. The WER (%) and SIM-o of E2 TTS X2 where a word is randomly replaced with the phoneme sequence during inference. Even when we replaced 50% of words into phoneme sequences, E2 TTS X2 worked reasonably well. This indicates that we can specify the pronunciation of a new term without retraining.</p><p class="zh">Table 4. E2 TTS X2 的 WER（%）与 SIM-o：推理时随机将单词替换为音素序列。即使我们把 50% 的单词替换为音素序列，E2 TTS X2 仍能正常工作。这表明我们可以在不重新训练的情况下指定新术语的发音。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th>is randomly replaced with the phoneme sequence during inference.</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>Even when we replaced 50% of words into phoneme sequences, E2</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>TTS X2 worked reasonably well. This indicates that we can specify</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>the pronunciation of a new term without retraining.</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>ID</th><th>Model</th><th>Init</th><th></th><th></th><th>Phoneme %</th><th>WER↓</th><th>SIM-o↑</th></tr></thead><tbody><tr><td>(P1)</td><td>E2 TTS</td><td>Random</td><td></td><td></td><td>0%</td><td>2.0</td><td>0.675</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>0%</td><td>2.0</td><td>0.679</td></tr>
+<tr><td>(P1-X2)</td><td>E2 TTS X2</td><td>Random</td><td></td><td></td><td>25%</td><td>2.0</td><td>0.678</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>50%</td><td>2.1</td><td>0.679</td></tr>
+<tr><td>(P2)</td><td>E2 TTS</td><td></td><td>Pre-trained [34]</td><td></td><td>0%</td><td>1.9</td><td>0.708</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>0%</td><td>1.9</td><td>0.708</td></tr>
+<tr><td>(P2-X2)</td><td>E2 TTS X2</td><td></td><td>Pre-trained [34]</td><td></td><td>25%</td><td>2.0</td><td>0.708</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>50%</td><td>2.1</td><td>0.707</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-id-4"><span class="t-zh">ID</span><span class="t-en">ID</span></h3>
 

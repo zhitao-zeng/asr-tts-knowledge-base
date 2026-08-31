@@ -4,7 +4,7 @@
   "headers": [
    [
     "",
-    "",
+    "Unlabeled",
     "",
     "",
     "",
@@ -158,22 +158,22 @@
     "14.1"
    ],
    [
-    "Iter. pseudo-labeling [58]",
+    "",
     "LS-960",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "4-gram+Transf.",
+    "23.51",
+    "25.48",
+    "24.37",
+    "26.02"
    ],
    [
     "",
     "LV-60k",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "4-gram+Transf.",
+    "17.00",
+    "19.34",
+    "18.03",
+    "19.92"
    ],
    [
     "BASE",
@@ -221,7 +221,7 @@
     ""
    ],
    [
-    "Hybrid DNN/HMM [34]",
+    "",
     "-",
     "4-gram",
     "5.0",
@@ -248,9 +248,9 @@
     "12.1"
    ],
    [
-    "Iter. pseudo-labeling [58]",
-    "LS-860",
     "",
+    "LS-860",
+    "4-gram+Transf.",
     "4.98",
     "7.97",
     "5.59",
@@ -259,7 +259,7 @@
    [
     "",
     "LV-60k",
-    "",
+    "4-gram+Transf.",
     "3.19",
     "6.14",
     "3.72",
@@ -317,13 +317,13 @@
   "headers": [
    [
     "",
+    "",
+    "",
+    "",
     "Unlabeled",
     "",
     "",
-    "",
-    "",
     "dev",
-    "",
     "",
     "",
     "test",
@@ -334,8 +334,8 @@
     "",
     "",
     "",
-    "LM",
     "",
+    "LM",
     "",
     "",
     "",
@@ -346,20 +346,20 @@
    [
     "",
     "",
-    "data",
     "",
+    "",
+    "data",
     "",
     "clean",
     "",
     "other",
-    "",
     "clean",
     "",
     "other"
    ],
    [
-    "Supervised",
     "",
+    "Supervised",
     "",
     "",
     "",
@@ -374,40 +374,40 @@
   ],
   "rows": [
    [
+    "",
     "CTC Transf [51]",
+    "",
     "",
     "-",
     "CLM+Transf.",
-    "",
     "2.20",
     "",
     "4.94",
-    "",
     "2.47",
     "",
     "5.45"
    ],
    [
-    "S2S Transf. [51]",
     "",
+    "S2S Transf.",
+    "",
+    "[51]",
     "-",
     "CLM+Transf.",
-    "",
     "2.10",
     "",
     "4.79",
-    "",
     "2.33",
     "",
     "5.17"
    ],
    [
+    "",
+    "",
     "Transf. Transducer [60]",
     "",
     "-",
-    "",
     "Transf.",
-    "",
     "-",
     "",
     "-",
@@ -416,29 +416,29 @@
     "4.6"
    ],
    [
+    "",
     "ContextNet [17]",
     "",
-    "-",
     "",
+    "-",
     "LSTM",
     "1.9",
     "",
     "3.9",
-    "",
     "1.9",
     "",
     "4.1"
    ],
    [
+    "",
     "Conformer [15]",
     "",
-    "-",
     "",
+    "-",
     "LSTM",
     "2.1",
     "",
     "4.3",
-    "",
     "1.9",
     "",
     "3.9"
@@ -450,52 +450,40 @@
   "headers": [
    [
     "",
+    "",
     "dev PER",
-    "",
-    "",
-    "test PER",
-    ""
+    "test PER"
    ]
   ],
   "rows": [
    [
+    "",
     "CNN + TD-ﬁlterbanks [59]",
-    "",
     "15.6",
-    "",
-    "",
     "18.0"
    ],
    [
     "PASE+ [47]",
     "",
-    "",
     "-",
-    "",
     "17.2"
    ],
    [
+    "",
     "Li-GRU + fMLLR [46]",
-    "",
-    "",
     "–",
-    "",
     "14.9"
    ],
    [
     "wav2vec [49]",
     "",
     "12.9",
-    "",
-    "",
     "14.7"
    ],
    [
     "vq-wav2vec [5]",
     "",
-    "",
     "9.6",
-    "",
     "11.6"
    ]
   ]
@@ -505,15 +493,15 @@
   "headers": [
    [
     "",
-    "avg. WER",
     "",
+    "avg. WER",
     "std."
    ]
   ],
   "rows": [
    [
-    "Continuous inputs, quantized targets (Baseline)",
     "",
+    "Continuous inputs, quantized targets (Baseline)",
     "7.97",
     "0.02"
    ],
@@ -539,78 +527,79 @@
  },
  "tab-A-1": {
   "page": 12,
-  "headers": [
+  "headers": [],
+  "rows": [
    [
+    "0.25",
+    "",
+    "",
     "",
     "",
     ""
    ],
    [
+    "spans 0.20",
     "",
     "",
-    "std"
-   ]
-  ],
-  "rows": [
-   [
-    "Baseline (p = 0.075)",
-    "7.97",
-    "0.02"
+    "",
+    "",
+    ""
    ],
    [
-    "Mask length M = 8",
-    "8.33",
-    "0.05"
+    "all 0.15",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Mask length M = 12",
-    "8.19",
-    "0.08"
+    "of",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Mask length M = 15",
-    "8.43",
-    "0.19"
+    "Percent",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Mask probability p = 0.065",
-    "7.95",
-    "0.08"
+    "0.10",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Mask probability p = 0.06",
-    "8.14",
-    "0.22"
+    "0.05",
+    "",
+    "",
+    "",
+    "",
+    ""
    ],
    [
-    "Mask w/o overlap, uniform(1,31)",
-    "8.39",
-    "0.02"
+    "0.00",
+    "20",
+    "40",
+    "60",
+    "80",
+    "100"
    ],
    [
-    "Mask w/o overlap, uniform(10,30)",
-    "9.17",
-    "0.05"
-   ],
-   [
-    "Mask w/o overlap, poisson(15)",
-    "8.13",
-    "0.04"
-   ],
-   [
-    "Mask w/o overlap, normal(15, 10)",
-    "8.37",
-    "0.03"
-   ],
-   [
-    "Mask w/o overlap, length 10",
-    "9.15",
-    "0.02"
-   ],
-   [
-    "Mask w/o overlap, length 15",
-    "9.43",
-    "0.26"
+    "",
+    "",
+    "",
+    "Span length",
+    "",
+    ""
    ]
   ]
  },
@@ -619,9 +608,8 @@
   "headers": [
    [
     "",
+    "",
     "Table 6: Fine-tuning hyperparameters",
-    "",
-    "",
     "",
     "",
     ""
@@ -632,8 +620,7 @@
     "",
     "channel mask prob.",
     "",
-    "updates",
-    ""
+    "updates"
    ]
   ],
   "rows": [
@@ -643,7 +630,6 @@
     "0.075",
     "",
     "0.008",
-    "",
     "12k"
    ],
    [
@@ -652,7 +638,6 @@
     "0.075",
     "",
     "0.004",
-    "",
     "13k"
    ],
    [
@@ -661,7 +646,6 @@
     "0.065",
     "",
     "0.004",
-    "",
     "20k"
    ],
    [
@@ -670,7 +654,6 @@
     "0.05",
     "",
     "0.008",
-    "",
     "50k"
    ],
    [
@@ -679,7 +662,6 @@
     "0.05",
     "",
     "0.0016",
-    "",
     "320k"
    ],
    [
@@ -688,7 +670,6 @@
     "0.065",
     "",
     "0.012",
-    "",
     "40k"
    ]
   ]
@@ -698,9 +679,8 @@
   "headers": [
    [
     "",
+    "",
     "Table 6: Fine-tuning hyperparameters",
-    "",
-    "",
     "",
     "",
     ""
@@ -711,8 +691,7 @@
     "",
     "channel mask prob.",
     "",
-    "updates",
-    ""
+    "updates"
    ]
   ],
   "rows": [
@@ -722,7 +701,6 @@
     "0.075",
     "",
     "0.008",
-    "",
     "12k"
    ],
    [
@@ -731,7 +709,6 @@
     "0.075",
     "",
     "0.004",
-    "",
     "13k"
    ],
    [
@@ -740,7 +717,6 @@
     "0.065",
     "",
     "0.004",
-    "",
     "20k"
    ],
    [
@@ -749,7 +725,6 @@
     "0.05",
     "",
     "0.008",
-    "",
     "50k"
    ],
    [
@@ -758,7 +733,6 @@
     "0.05",
     "",
     "0.0016",
-    "",
     "320k"
    ],
    [
@@ -767,7 +741,6 @@
     "0.065",
     "",
     "0.012",
-    "",
     "40k"
    ]
   ]
@@ -859,7 +832,7 @@
    ],
    [
     "",
-    "",
+    "Unlabeled",
     "",
     "",
     "",
@@ -879,10 +852,10 @@
     "",
     "data",
     "",
-    "clean",
-    "other",
-    "clean",
-    "other"
+    "",
+    "",
+    "",
+    ""
    ],
    [
     "10 min labeled",
@@ -1253,7 +1226,7 @@
   "headers": [
    [
     "",
-    "",
+    "Unlabeled",
     "",
     "",
     "",
@@ -1273,15 +1246,15 @@
     "",
     "data",
     "",
-    "clean",
-    "other",
-    "clean",
-    "other"
+    "",
+    "",
+    "",
+    ""
    ]
   ],
   "rows": [
    [
-    "LARGE - from scratch",
+    "",
     "-",
     "None",
     "2.8",
@@ -1447,15 +1420,244 @@
    ]
   ]
  },
+ "tab-E-2": {
+  "page": 18,
+  "headers": [
+   [
+    "10m LV-60k",
+    "FEABY MEARLY glanced at it and gave it BAK",
+    "",
+    ""
+   ],
+   [
+    "1h LV-60k",
+    "FIEABY merely glanced at it and gave it back",
+    "",
+    ""
+   ],
+   [
+    "10h LV-60k",
+    "FEEBY merely glanced at it and gave it back",
+    "",
+    ""
+   ],
+   [
+    "100h LV-60k",
+    "BEBE merely glanced at it and gave it back",
+    "",
+    ""
+   ],
+   [
+    "960h LV-60k",
+    "phoebe merely glanced at it and gave it back",
+    "",
+    ""
+   ]
+  ],
+  "rows": [
+   [
+    "960h scratch",
+    "phoebe merely glanced at it and gave it back",
+    "",
+    ""
+   ],
+   [
+    "Reference",
+    "",
+    "",
+    "sauterne is a white bordeaux a strong luscious wine the best known varieties being"
+   ],
+   [
+    "10m LV-60k",
+    "",
+    "",
+    "SULTERIN is a white BORDOE a strong LUCHOUS WIN the best NOWN"
+   ],
+   [
+    "1h LV-60k",
+    "",
+    "",
+    "CLTEREN is a white BORDO a strong LUCHIOUS wine the best known"
+   ],
+   [
+    "10h LV-60k",
+    "",
+    "SOTERN is a white BOURDO a strong LUCIOUS wine the best known",
+    ""
+   ],
+   [
+    "100h LV-60k",
+    "",
+    "",
+    "SOTERN is a white BORDAUX a strong LUCIOUS wine the best known"
+   ],
+   [
+    "960h LV-60k",
+    "",
+    "",
+    "SOTERN is a white bordeaux a strong luscious wine the best known varieties"
+   ],
+   [
+    "960h scratch",
+    "",
+    "",
+    "SOTERAN is a white bordeaux a strong luscious wine the best known varieties"
+   ],
+   [
+    "Reference",
+    "",
+    "",
+    "i happen to have mac connell’s box for tonight or there’d be no chance of our"
+   ],
+   [
+    "10m LV-60k",
+    "",
+    "",
+    "i HAPEND to have MECONALES BOXS for TONIT ORE THIRLD be no"
+   ],
+   [
+    "1h LV-60k",
+    "",
+    "",
+    "i happen to have MACCONNEL’S BOCXS for tonight or TE’ELD be no chance"
+   ],
+   [
+    "10h LV-60k",
+    "",
+    "",
+    "i HAPPENED to have MUKONNEL’S box for tonight or THERED be no chance"
+   ],
+   [
+    "100h LV-60k",
+    "",
+    "",
+    "i HAPPENED to have MC CONNEL’S box for TO NIGHT or there’d be no"
+   ],
+   [
+    "960h LV-60k",
+    "",
+    "",
+    "i happen to have MC CONALL’S box for TO NIGHT or there’d be no chance of"
+   ],
+   [
+    "960h scratch",
+    "",
+    "",
+    "i HAPPENE to have MACONEL’S box for TO NIGHT or there’d be no chance of"
+   ],
+   [
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "Table 13 ablates various hyperparameter choices of our architecture.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "model is described in § 5.4. First, we tried to improve the continuous input",
+    ""
+   ],
+   [
+    "",
+    "",
+    "model (§ 5.4) by adding an MLP on top of the continuous target representation",
+    ""
+   ],
+   [
+    "",
+    "",
+    "use a separate set of encoder parameters for the representations used as input",
+    ""
+   ],
+   [
+    "",
+    "encoders). Both did not lead to meaningful improvements.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Increasing the receptive ﬁeld size from 25ms to 30ms had little effect. Setting",
+    ""
+   ],
+   [
+    "",
+    "",
+    "weight (α) too low results in lower codebook usage and lower performance.",
+    ""
+   ],
+   [
+    "",
+    "",
+    "to slight instability. Doubling the number of relative positional embeddings to",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Stopping gradients from the quantizer to the encoder shows that the encoder",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Next, increasing the number of negatives did not result in better performance (K",
+    ""
+   ],
+   [
+    "",
+    "",
+    "negatives from the entire batch of utterances hurt performance, likely because",
+    ""
+   ],
+   [
+    "",
+    "",
+    "utterances are easy to distinguish. Sampling negatives from any time step in",
+    ""
+   ],
+   [
+    "",
+    "",
+    "or unmasked, does not help and is more computationally expensive. Gumbel",
+    ""
+   ],
+   [
+    "",
+    "",
+    "increasing the number of codebooks did not result in better performance.",
+    ""
+   ]
+  ]
+ },
  "tab-F-2": {
   "page": 19,
   "headers": [
    [
     "",
     "",
+    "",
+    "on combined dev-clean/other of Librispeech for three seeds of training.",
+    "",
     ""
    ],
    [
+    "",
+    "",
+    "",
     "",
     "",
     "std."
@@ -1463,52 +1665,82 @@
   ],
   "rows": [
    [
+    "",
+    "",
     "Baseline (p = 0.075, α = 0.1)",
+    "",
     "7.97",
     "0.02"
    ],
    [
+    "",
+    "",
+    "",
     "Continuous inputs, continuous targets",
     "8.58",
     "0.08"
    ],
    [
+    "",
     "+ MLP on targets",
+    "",
+    "",
     "8.51",
     "0.05"
    ],
    [
+    "",
     "+ Separate encoders",
+    "",
+    "",
     "8.90",
     "0.01"
    ],
    [
+    "",
     "receptive ﬁeld 30ms",
+    "",
+    "",
     "7.99",
     "0.06"
    ],
    [
+    "",
     "diversity penalty",
+    "",
+    "",
     "",
     ""
    ],
    [
     "α = 0",
+    "",
+    "",
+    "",
     "8.48",
     "0.08"
    ],
    [
     "α = 0.05",
+    "",
+    "",
+    "",
     "8.34",
     "0.08"
    ],
    [
     "α = 0.2",
+    "",
+    "",
+    "",
     "8.58",
     "0.45"
    ],
    [
+    "",
+    "",
     "Conv pos emb, kernel 256",
+    "",
     "8.14",
     "0.05"
    ]

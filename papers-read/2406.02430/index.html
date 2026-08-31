@@ -355,12 +355,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-system-1"><span class="cap-k">表</span><p class="en">Table 1: Evaluation results of Seed-TTS against resynthesized and real human speech.</p><p class="zh">表 1：Seed-TTS 与重合成语音及真人真实语音的评测结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>WER (↓)</th><th>SIM (↑)</th><th>CMOS (↑) vs. Human</th><th></th></tr></thead><tbody><tr><td>Seed-TTS</td><td>EN</td><td>2.249</td><td>0.762</td><td></td><td>-0.07</td></tr>
-<tr><td>Vocoder resynthesized</td><td>EN</td><td>2.165</td><td>0.702</td><td></td><td>-</td></tr>
-<tr><td>Human</td><td>EN</td><td>2.143</td><td>0.730</td><td></td><td>-</td></tr>
-<tr><td>Seed-TTS</td><td>ZH</td><td>1.115</td><td>0.796</td><td></td><td>-0.08</td></tr>
-<tr><td>Vocoder resynthesized</td><td>ZH</td><td>1.342</td><td>0.733</td><td></td><td>-</td></tr>
-<tr><td>Human</td><td>ZH</td><td>1.254</td><td>0.750</td><td></td><td>-</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-system-1"><span class="cap-k">表</span><p class="en">Table 1: Evaluation results of Seed-TTS against resynthesized and real human speech.</p><p class="zh">表 1：Seed-TTS 与重合成语音及真人真实语音的评测结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>WER (↓)</th><th>SIM (↑)</th><th>CMOS (↑) vs. Human</th></tr></thead><tbody><tr><td>Seed-TTS</td><td></td><td>EN</td><td>2.249</td><td>0.762</td><td>-0.07</td></tr>
+<tr><td></td><td>Vocoder resynthesized</td><td>EN</td><td>2.165</td><td>0.702</td><td>-</td></tr>
+<tr><td>Human</td><td></td><td>EN</td><td>2.143</td><td>0.730</td><td>-</td></tr>
+<tr><td>Seed-TTS</td><td></td><td>ZH</td><td>1.115</td><td>0.796</td><td>-0.08</td></tr>
+<tr><td></td><td>Vocoder resynthesized</td><td>ZH</td><td>1.342</td><td>0.733</td><td>-</td></tr>
+<tr><td>Human</td><td></td><td>ZH</td><td>1.254</td><td>0.750</td><td>-</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-in-context-learning-results"><span class="t-zh">上下文学习结果</span><span class="t-en">In-context learning results.</span></h3><div class="pblk" id="p-in-context-learning-results-1">
           <p class="en-lines"><span class="sent" data-sid="s-in-context-learning-results-1-1"><span class="en">From Table 1, we observe that Seed-TTS achieves a WER similar to ground truth human speech with significantly higher speaker similarity.</span></span> <span class="sent" data-sid="s-in-context-learning-results-1-2"><span class="en">This result may be explained by the observation that the ground truth and reference utterances can still differ in speaking style and background environment, even when spoken by the same speaker.</span></span> <span class="sent" data-sid="s-in-context-learning-results-1-3"><span class="en">In contrast, Seed-TTS accurately captures the characteristics of the reference speech when generating the target utterance, resulting in a more consistent and faithful reproduction of the enrollment clip.</span></span> <span class="sent" data-sid="s-in-context-learning-results-1-4"><span class="en">We showcase the ICL examples at this page.</span></span></p>
@@ -438,8 +438,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-training-data-1"><span class="cap-k">表</span><p class="en">Table 2. Comparison of WER (↓) between models trained on synthesized data and real data in the ASR task.</p><p class="zh">表 2：在 ASR 任务上，用合成数据与真实数据训练的模型之间 WER (↓) 的对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>dev_clean</th><th></th><th>dev_other</th><th></th><th>test_clean</th><th></th><th>test_other</th><th></th></tr></thead><tbody><tr><td>Synthetic data</td><td></td><td>2.59</td><td></td><td>7.78</td><td></td><td>2.76</td><td></td><td>7.58</td></tr>
-<tr><td>Real data</td><td></td><td>2.26</td><td></td><td>5.97</td><td></td><td>2.45</td><td></td><td>5.98</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-training-data-1"><span class="cap-k">表</span><p class="en">Table 2. Comparison of WER (↓) between models trained on synthesized data and real data in the ASR task.</p><p class="zh">表 2：在 ASR 任务上，用合成数据与真实数据训练的模型之间 WER (↓) 的对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Training data</th><th>dev_clean</th><th>dev_other</th><th>test_clean</th><th>test_other</th></tr></thead><tbody><tr><td>Synthetic data</td><td>2.59</td><td>7.78</td><td>2.76</td><td>7.58</td></tr>
+<tr><td>Real data</td><td>2.26</td><td>5.97</td><td>2.45</td><td>5.98</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-training-data-2">
           <p class="en-lines"><span class="sent" data-sid="s-training-data-2-1"><span class="en">We observe that for the clean sets, i.e., dev_clean and test_clean, the model trained with synthetic data achieves very similar ASR performance to the model trained with real data. 1.81% and 1.6% absolute WER drops are observed on the noisy dev_other and test_other sets, respectively, which we speculate are due to Seed-TTS’s tendency to reduce the background noise during the generation process, resulting in less robustness to noise.</span><button class="mk" data-sid="s-training-data-2-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-training-data-2-2"><span class="en">With data enhancement [Chen et al., 2022c, Li et al., 2018], we believe the gap will be reduced.</span></span> <span class="sent" data-sid="s-training-data-2-3"><span class="en">This result suggests the potential for using synthetic data in the development of speech understanding models, which further pushes the unification of speech understanding and generation.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-training-data-2-1"><span class="zh">我们观察到，在干净子集（即 dev_clean 与 test_clean）上，用合成数据训练的模型与用真实数据训练的模型 ASR 性能非常接近；而在含噪的 dev_other 与 test_other 子集上分别出现了 1.81% 和 1.6% 的绝对 WER 上升，我们推测这是因为 Seed-TTS 在生成过程中倾向于压低背景噪声，从而导致对噪声的鲁棒性变差。</span><button class="mk" data-sid="s-training-data-2-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-training-data-2-2"><span class="zh">我们相信，借助数据增强 [Chen et al., 2022c, Li et al., 2018]，这一差距将会缩小。</span></span><span class="sent" data-sid="s-training-data-2-3"><span class="zh">这一结果表明，合成数据有潜力用于语音理解模型的开发，进一步推进了语音理解与语音生成的统一。</span></span></p>
@@ -497,8 +497,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-0-789"><span class="secnum">0.789</span> <span class="t-zh">（本小节标题为表格数字抽取残留，原文为 Table 3 中 0.789、+0.37 等数值碎片）</span><span class="t-en">+0.37</span></h3><div class="cap" id="tab-0-789-1"><span class="cap-k">表</span><p class="en">Table 3: Comparison between Seed-TTSICL and Seed-TTSSFT.</p><p class="zh">表 3：Seed-TTSICL 与 Seed-TTSSFT 的对比。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Seed-TTSICL (Zero-shot in-context learning)</td><td>3.15</td><td>0.779</td><td></td><td>-</td></tr>
-<tr><td>Seed-TTSSFT (Speaker fine-tuned)</td><td>2.83</td><td>0.789</td><td>+0.37</td><td></td></tr></tbody></table></div></div></section>
+      <h3 class="sech lv2" id="sec-0-789"><span class="secnum">0.789</span> <span class="t-zh">（本小节标题为表格数字抽取残留，原文为 Table 3 中 0.789、+0.37 等数值碎片）</span><span class="t-en">+0.37</span></h3><div class="cap" id="tab-0-789-1"><span class="cap-k">表</span><p class="en">Table 3: Comparison between Seed-TTSICL and Seed-TTSSFT.</p><p class="zh">表 3：Seed-TTSICL 与 Seed-TTSSFT 的对比。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>Seed-TTSICL (Zero-shot in-context learning)</td><td>3.15</td><td>0.779</td><td>-</td></tr>
+<tr><td>Seed-TTSSFT (Speaker fine-tuned)</td><td></td><td>2.83</td><td>0.789</td><td>+0.37</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-controllability-through-instruct"><span class="t-zh">通过指令微调实现可控性</span><span class="t-en">Controllability through instruction fine-tuning.</span></h3><div class="pblk" id="p-controllability-through-instruct-1">
           <p class="en-lines"><span class="sent" data-sid="s-controllability-through-instruct-1-1"><span class="en">To enable further controllability of our speaker fine-tuned model, we experiment with integrating additional instruction fine-tuning (IFT) [Yi et al., 2022b, 2019, Zhuang et al., 2021, Deng et al., 2023].</span></span> <span class="sent" data-sid="s-controllability-through-instruct-1-2"><span class="en">IFT enables the model to flexibly control each aspect of generated speech such as expressiveness, speaking rate, style, emotion, and so on.</span></span> <span class="sent" data-sid="s-controllability-through-instruct-1-3"><span class="en">We showcase emotion control just as an example in this report.</span></span></p>
@@ -620,22 +620,22 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
+<div class="eq" id="eq-system-5-4"><code>Seed-TTS (Ours) w/o self-distillation</code></div>
 
+<div class="eq" id="eq-system-5-6"><code>Seed-TTS (Ours) with self-distillation</code></div>
 
+<div class="eq" id="eq-system-5-8"><code>Before conversion</code></div>
 
+<div class="cap" id="tab-system-5-1"><span class="cap-k">表</span><p class="en">Table 6. Evaluation results on zero-shot voice conversion. The results of DiffVC [Popov et al., 2021] and HierSpeech++ [Lee et al., 2023] are obtained via their respective released official checkpoints.</p><p class="zh">表 6. 零样本语音转换的评测结果。DiffVC [Popov et al., 2021] 与 HierSpeech++ [Lee et al., 2023] 的结果通过其各自公开发布的官方检查点获得。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Specifically, we use REINFORCE to fine-tune two versions based on the</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>model (Seed-TTSICL) using different reward functions: Seed-TTSRL-SIM-WER, which</th><th></th><th></th><th></th></tr><tr><th></th><th>WER objective metrics as rewards to improve speaker similarity and robustness, and</th><th></th><th></th><th></th></tr><tr><th></th><th>400 sentences with especially challenging patterns for autoregressive models such as</th><th></th><th></th><th></th></tr></thead><tbody><tr><td>tongue twisters, and so on. We report the results of objective and subjective</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Test set</td><td>WER (↓)</td><td>SIM (↑)</td></tr>
+<tr><td></td><td></td><td>ZH</td><td>1.115</td><td>0.796</td></tr>
+<tr><td></td><td></td><td>EN</td><td>2.249</td><td>0.762</td></tr>
+<tr><td></td><td></td><td>“Hard”</td><td>7.585</td><td>0.776</td></tr>
+<tr><td></td><td></td><td>ZH</td><td>1.002</td><td>0.801</td></tr>
+<tr><td></td><td></td><td>EN</td><td>1.945</td><td>0.766</td></tr>
+<tr><td></td><td></td><td>“Hard”</td><td>6.423</td><td>0.782</td></tr></tbody></table></div></div>
 
-
-
-<div class="cap" id="tab-system-5-1"><span class="cap-k">表</span><p class="en">Table 6. Evaluation results on zero-shot voice conversion. The results of DiffVC [Popov et al., 2021] and HierSpeech++ [Lee et al., 2023] are obtained via their respective released official checkpoints.</p><p class="zh">表 6. 零样本语音转换的评测结果。DiffVC [Popov et al., 2021] 与 HierSpeech++ [Lee et al., 2023] 的结果通过其各自公开发布的官方检查点获得。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>WER (↓)</th><th></th><th>SIM (↑)</th><th></th><th>WER (↓)</th><th>SIM (↑)</th><th></th></tr></thead><tbody><tr><td>DiffVC [Popov et al., 2021]</td><td></td><td>-</td><td></td><td>-</td><td>16.861</td><td>0.311</td><td></td></tr>
-<tr><td>HierSpeech++ [Lee et al., 2023]</td><td></td><td>-</td><td></td><td>-</td><td>5.469</td><td>0.387</td><td></td></tr>
-<tr><td>Seed-TTS (Ours) w/o self-distillation</td><td>1.489</td><td></td><td>0.636</td><td></td><td>2.366</td><td>0.491</td><td></td></tr>
-<tr><td>Seed-TTS (Ours) with self-distillation</td><td>1.216</td><td></td><td>0.791</td><td></td><td>2.121</td><td>0.753</td><td></td></tr>
-<tr><td>Before conversion</td><td>1.254</td><td></td><td></td><td>-</td><td>2.143</td><td></td><td>-</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-system-5-2">
-          <p class="en-lines"><span class="sent" data-sid="s-system-5-2-1"><span class="en">Inspired by these findings, we explore RL methods similar to those in previous studies [Ahmadian et al., 2024, Prabhavalkar et al., 2018, Wang et al., 2024b, Sutton et al., 1999, Schulman et al., 2017] to enhance various aspects of Seed-TTS.</span></span> <span class="sent" data-sid="s-system-5-2-2"><span class="en">We compare RL methods utilizing external reward models, such as Proximal Policy Optimization and REINFORCE, with those that do not, such as DPO.</span></span> <span class="sent" data-sid="s-system-5-2-3"><span class="en">Our findings indicate that both approaches are effective.</span></span> <span class="sent" data-sid="s-system-5-2-4"><span class="en">The former allows for clear control over specific speech attributes, while the latter benefits from a simpler implementation.</span></span> <span class="sent" data-sid="s-system-5-2-5"><span class="en">In this report, we showcase the effectiveness of the former method.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-system-5-2-1"><span class="zh">受这些发现的启发，我们探索了与既往研究类似的 RL 方法 [Ahmadian et al., 2024, Prabhavalkar et al., 2018, Wang et al., 2024b, Sutton et al., 1999, Schulman et al., 2017]，以增强 Seed-TTS 的多个方面。</span></span><span class="sent" data-sid="s-system-5-2-2"><span class="zh">我们比较了借助外部奖励模型的 RL 方法（如近端策略优化 PPO 与 REINFORCE）与不借助外部奖励模型的方法（如 DPO）。</span></span><span class="sent" data-sid="s-system-5-2-3"><span class="zh">我们的结果表明两类方法都有效。</span></span><span class="sent" data-sid="s-system-5-2-4"><span class="zh">前者能对特定语音属性实现明确的控制，后者则胜在实现更简单。</span></span><span class="sent" data-sid="s-system-5-2-5"><span class="zh">本报告展示前一类方法的有效性。</span></span></p>
-          
-        </div>
 <div class="pblk" id="p-system-5-3">
           <p class="en-lines"><span class="sent" data-sid="s-system-5-3-1"><span class="en">Specifically, we use REINFORCE to fine-tune two versions based on the original zero-shot ICL model (Seed-TTSICL) using different reward functions: Seed-TTSRL-SIM-WER, which uses the SIM and WER objective metrics as rewards to improve speaker similarity and robustness, and Seed-TTSRL-SER, which uses the accuracy of the SER model as a reward to improve emotion controllability.</span></span> <span class="sent" data-sid="s-system-5-3-2"><span class="en">We again use the same objective and subjective test sets mentioned in §3.1 to verify the contributions of RL in our system.</span></span> <span class="sent" data-sid="s-system-5-3-3"><span class="en">Additionally, a new “hard” textual test set was prepared for the evaluation, consisting of 400 sentences with especially challenging patterns for autoregressive models such as word repetitions, tongue twisters, and so on.</span><button class="mk" data-sid="s-system-5-3-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-system-5-3-4"><span class="en">We report the results of objective and subjective evaluations in Table 7, Table 8, and Table 9.</span></span> <span class="sent" data-sid="s-system-5-3-5"><span class="en">Audio examples can be found at this page.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-system-5-3-1"><span class="zh">具体来说，我们在原始零样本 ICL 模型（Seed-TTSICL）的基础上，用 REINFORCE 配合不同奖励函数微调出两个版本：Seed-TTSRL-SIM-WER 以 SIM 和 WER 客观指标作为奖励，用于提升说话人相似度与鲁棒性；Seed-TTSRL-SER 以 SER 模型的准确率作为奖励，用于提升情感可控性。</span></span><span class="sent" data-sid="s-system-5-3-2"><span class="zh">我们再次使用 §3.1 中提到的同一套客观与主观测试集，验证 RL 在我们系统中的贡献。</span></span><span class="sent" data-sid="s-system-5-3-3"><span class="zh">此外，我们还为评测准备了一个新的“困难”文本测试集，包含 400 个对自回归模型尤其有挑战的句子，例如词语重复、绕口令等。</span><button class="mk" data-sid="s-system-5-3-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-system-5-3-4"><span class="zh">客观与主观评测结果见 Table 7、Table 8 和 Table 9。</span></span><span class="sent" data-sid="s-system-5-3-5"><span class="zh">音频示例见演示页。</span></span></p>
@@ -649,11 +649,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-system-6"><span class="t-zh">System</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-6-1">
-          <p class="en-lines"><span class="sent" data-sid="s-system-6-1-1"><span class="en">Test set WER (↓) SIM (↑) Seed-TTSICL Seed-TTSRL-SIM-WER ZH</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-system-6-1-1"><span class="zh">表头：Test set × WER (↓) / SIM (↑)——Seed-TTS_ICL / Seed-TTS_RL-SIM-WER；ZH（后续照原文）。</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-system-6"><span class="t-zh">System</span><span class="t-en">System</span></h3>
 
 
 
@@ -665,12 +661,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-system-6-1"><span class="cap-k">表</span><p class="en">Table 7: Objective evaluation results between Seed-TTSRL-SIM-WER and Seed-TTSICL.</p><p class="zh">表 7：Seed-TTSRL-SIM-WER 与 Seed-TTSICL 之间的客观评测结果。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>ZH</td><td>1.115</td><td>0.796</td></tr>
-<tr><td>Seed-TTSICL</td><td>EN</td><td>2.249</td><td>0.762</td></tr>
-<tr><td></td><td>“Hard”</td><td>7.585</td><td>0.776</td></tr>
-<tr><td></td><td>ZH</td><td>1.002</td><td>0.801</td></tr>
-<tr><td>Seed-TTSRL-SIM-WER</td><td>EN</td><td>1.945</td><td>0.766</td></tr>
-<tr><td></td><td>“Hard”</td><td>6.423</td><td>0.782</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-system-6-1"><span class="cap-k">表</span><p class="en">Table 7: Objective evaluation results between Seed-TTSRL-SIM-WER and Seed-TTSICL.</p><p class="zh">表 7：Seed-TTSRL-SIM-WER 与 Seed-TTSICL 之间的客观评测结果。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td></td><td>ZH</td><td>1.115</td><td>0.796</td></tr>
+<tr><td>Seed-TTSICL</td><td></td><td>EN</td><td>2.249</td><td>0.762</td></tr>
+<tr><td></td><td></td><td>“Hard”</td><td>7.585</td><td>0.776</td></tr>
+<tr><td></td><td></td><td>ZH</td><td>1.002</td><td>0.801</td></tr>
+<tr><td></td><td>Seed-TTSRL-SIM-WER</td><td>EN</td><td>1.945</td><td>0.766</td></tr>
+<tr><td></td><td></td><td>“Hard”</td><td>6.423</td><td>0.782</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-systems"><span class="t-zh">系统对比</span><span class="t-en">Systems</span></h3><div class="pblk" id="p-systems-1">
           <p class="en-lines"><span class="sent" data-sid="s-systems-1-1"><span class="en">CMOS (↑) Preference (%) Win Tie Loss Seed-TTSRL-SIM-WER vs. Seed-TTSICL</span></span></p>
@@ -678,12 +674,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-systems-1"><code>+0.14 44.1% 25% 30.9%</code></div>
-<div class="cap" id="tab-systems-1"><span class="cap-k">表</span><p class="en">Table 8: Subjective evaluation results between Seed-TTSRL-SIM-WER and Seed-TTSICL.</p><p class="zh">表 8：Seed-TTSRL-SIM-WER 与 Seed-TTSICL 之间的主观评测结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>WER (↓)</th><th></th><th>SIM (↑)</th><th></th><th>WER (↓)</th><th>SIM (↑)</th><th></th></tr></thead><tbody><tr><td></td><td>DiffVC [Popov et al., 2021]</td><td></td><td>-</td><td></td><td>-</td><td>16.861</td><td>0.311</td><td></td></tr>
-<tr><td></td><td>HierSpeech++ [Lee et al., 2023]</td><td></td><td>-</td><td></td><td>-</td><td>5.469</td><td>0.387</td><td></td></tr>
-<tr><td></td><td>Seed-TTS (Ours) w/o self-distillation</td><td>1.489</td><td></td><td>0.636</td><td></td><td>2.366</td><td>0.491</td><td></td></tr>
-<tr><td></td><td>Seed-TTS (Ours) with self-distillation</td><td>1.216</td><td></td><td>0.791</td><td></td><td>2.121</td><td>0.753</td><td></td></tr>
-<tr><td></td><td>Before conversion</td><td>1.254</td><td></td><td></td><td>-</td><td>2.143</td><td></td><td>-</td></tr>
-<tr><td>the effectiveness of the former method.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-systems-1"><span class="cap-k">表</span><p class="en">Table 8: Subjective evaluation results between Seed-TTSRL-SIM-WER and Seed-TTSICL.</p><p class="zh">表 8：Seed-TTSRL-SIM-WER 与 Seed-TTSICL 之间的主观评测结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>WER (↓)</th><th>SIM (↑)</th><th>WER (↓)</th><th>SIM (↑)</th></tr></thead><tbody><tr><td></td><td>-</td><td>-</td><td>16.861</td><td>0.311</td></tr>
+<tr><td></td><td>-</td><td>-</td><td>5.469</td><td>0.387</td></tr>
+<tr><td></td><td>1.489</td><td>0.636</td><td>2.366</td><td>0.491</td></tr>
+<tr><td></td><td>1.216</td><td>0.791</td><td>2.121</td><td>0.753</td></tr>
+<tr><td></td><td>1.254</td><td>-</td><td>2.143</td><td>-</td></tr>
+<tr><td>Table 6. Evaluation results on zero-shot voice conversion. The results of DiffVC [Popov et al., 2021]</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>and HierSpeech++ [Lee et al., 2023] are obtained via their respective released official checkpoints.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Inspired by these findings, we explore RL methods similar to those in previous studies</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>et al., 2024, Prabhavalkar et al., 2018, Wang et al., 2024b, Sutton et al., 1999, Schulman et al.,</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>to enhance various aspects of Seed-TTS. We compare RL methods utilizing external reward</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>such as Proximal Policy Optimization and REINFORCE, with those that do not, such as DPO.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>findings indicate that both approaches are effective. The former allows for clear control over</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>speech attributes, while the latter benefits from a simpler implementation. In this report, we</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-systems-2">
           <p class="en-lines"><span class="sent" data-sid="s-systems-2-1"><span class="en">From Table 7 and Table 8, we observe the benefits of RL in both subjective and objective tests, resulting in improved stability and speaker similarity in the voice ICL task.</span></span> <span class="sent" data-sid="s-systems-2-2"><span class="en">In Table 9, we find that although there is a decrease in emotion controllability in the zero-shot Seed-TTSRL-SER model compared to the speaker fine-tuned Seed-TTSSFT model in §3.2, the application of RL significantly improves the emotion controlled accuracy across various emotions compared to Seed-TTSICL.</span></span> <span class="sent" data-sid="s-systems-2-3"><span class="en">This enhancement highlights the efficacy of integrating RL techniques to boost performance in emotional expressiveness and control within speech synthesis models.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-systems-2-1"><span class="zh">从 Table 7 与 Table 8 可见，RL 在客观与主观测试上都带来了收益，使语音 ICL 任务的稳定性与说话人相似度得到提升。</span></span><span class="sent" data-sid="s-systems-2-2"><span class="zh">在 Table 9 中我们发现：尽管零样本 Seed-TTSRL-SER 模型的情感可控性相较 §3.2 中说话人微调的 Seed-TTSSFT 有所下降，但与 Seed-TTSICL 相比，RL 的应用显著提升了各类情感的控制准确率。</span></span><span class="sent" data-sid="s-systems-2-3"><span class="zh">这一提升凸显了引入 RL 技术对增强语音合成模型情感表现力与可控性的效果。</span></span></p>
@@ -795,16 +799,17 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-system-8-13"><code>1.115 0.796</code></div>
 <div class="eq" id="eq-system-8-14"><code>Seed-TTSDiT ZH</code></div>
 <div class="eq" id="eq-system-8-15"><code>1.178 0.809</code></div>
-<div class="cap" id="tab-system-8-1"><span class="cap-k">表</span><p class="en">Table 10. Objective evaluation results on zero-shot TTS. Seed-TTSDiT demonstrates superiority in both stability and speaker similarity.</p><p class="zh">表 10. 零样本 TTS 的客观评测结果。Seed-TTSDiT 在稳定性与说话人相似度两方面都展现出优势。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>SIM</th><th></th></tr></thead><tbody><tr><td>3.50</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.98</td></tr>
-<tr><td>3.10</td><td>0.940</td><td>0.940</td><td>0.936</td><td></td><td></td><td></td><td></td><td>0.95</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>0.930</td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>0.921</td><td></td><td></td><td></td></tr>
-<tr><td>2.70</td><td></td><td></td><td></td><td></td><td></td><td>0.911</td><td>0.901</td><td>0.92</td></tr>
-<tr><td>2.30</td><td>2.165</td><td>2.190</td><td>2.201</td><td>2.194</td><td>2.101</td><td>2.134</td><td>2.079</td><td>0.89</td></tr>
-<tr><td>1.90</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.86</td></tr>
-<tr><td>1.50</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.83</td></tr>
-<tr><td></td><td>0%</td><td>10%</td><td>20%</td><td>30%</td><td>40%</td><td>50%</td><td>60%</td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>Mask Ratio</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-system-8-1"><span class="cap-k">表</span><p class="en">Table 10. Objective evaluation results on zero-shot TTS. Seed-TTSDiT demonstrates superiority in both stability and speaker similarity.</p><p class="zh">表 10. 零样本 TTS 的客观评测结果。Seed-TTSDiT 在稳定性与说话人相似度两方面都展现出优势。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>stability and speaker similarity.</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>the original utterance duration.</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>objective evaluation metrics. The results are shown in Figure 7.</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>this way, the output speech produces improved naturalness and speaker similarity compared</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>SIM</th><th></th></tr></thead><tbody><tr><td>3.50</td><td></td><td></td><td></td><td></td><td>0.98</td></tr>
+<tr><td>3.10</td><td>0.940</td><td></td><td></td><td></td><td>0.95</td></tr>
+<tr><td></td><td></td><td></td><td>0.930</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>2.70</td><td></td><td></td><td></td><td>0.901</td><td>0.92</td></tr>
+<tr><td>2.30</td><td>2.190</td><td></td><td>2.194</td><td></td><td>0.89</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>2.079</td><td></td></tr>
+<tr><td>1.90</td><td></td><td></td><td></td><td></td><td>0.86</td></tr>
+<tr><td>1.50</td><td></td><td></td><td></td><td></td><td>0.83</td></tr>
+<tr><td></td><td>10%</td><td></td><td>30%</td><td>60%</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Mask Ratio</td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-system-8-3">
           <p class="en-lines"><span class="sent" data-sid="s-system-8-3-1"><span class="en">In the speaking rate editing task, we simply re-synthesize each test example with the modified total duration.</span></span> <span class="sent" data-sid="s-system-8-3-2"><span class="en">Specifically, we obtain the final duration of the sentence by multiplying a speed rate with the original utterance duration.</span></span> <span class="sent" data-sid="s-system-8-3-3"><span class="en">Identical to the content editing task, we utilize WER and SIM as objective evaluation metrics.</span></span> <span class="sent" data-sid="s-system-8-3-4"><span class="en">The results are shown in Figure 7.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-system-8-3-1"><span class="zh">在语速编辑任务中，我们只需用修改后的总时长重新合成每个测试样本。</span></span><span class="sent" data-sid="s-system-8-3-2"><span class="zh">具体来说，将原始话语时长乘以一个速率系数，即可得到句子的最终时长。</span></span><span class="sent" data-sid="s-system-8-3-3"><span class="zh">与内容编辑任务相同，我们以 WER 和 SIM 作为客观评测指标。</span></span><span class="sent" data-sid="s-system-8-3-4"><span class="zh">结果见 Figure 7。</span></span></p>
@@ -824,11 +829,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 
 <div class="eq" id="eq-system-8-17"><code>WER SIM</code></div>
-
+<div class="eq" id="eq-system-8-18"><code>0.98 0.95 0.921 0.911 0.901 0.92 2.165 2.190 2.201 2.194 2.101 2.134 2.079</code></div>
 <div class="eq" id="eq-system-8-19"><code>WER (EN)</code></div>
 
 <div class="eq" id="eq-system-8-21"><code>SIM (EN)</code></div>
-
+<div class="eq" id="eq-system-8-22"><code>0.89 0.86 0.83 0% 10% 20% 30% 40% 50% 60%</code></div>
 
 <div class="cap" id="fig-system-8-1"><img class="fig" src="../assets/figures/2406.02430/fig-system-8-1.png" loading="lazy" alt="Figure 6: Seed-TTSDiT exhibits robustness across various masked rates in content editing."><span class="cap-k">图</span><p class="en">Figure 6: Seed-TTSDiT exhibits robustness across various masked rates in content editing.</p><p class="zh">图 6：Seed-TTSDiT 在内容编辑中对不同掩蔽比例都表现出鲁棒性。</p></div>
 

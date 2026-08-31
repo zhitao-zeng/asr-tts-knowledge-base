@@ -526,7 +526,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-1-3-1"><span class="zh">脚注 3：https://github.com/facebook/Ax</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 1: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech. Models use either the audio of Librispeech (LS-960) or the larger LibriVox (LV-60k) as unlabeled data. We consider two model sizes: BASE (95m parameters) and LARGE (317m parameters). Prior work used 860 unlabeled hours (LS-860) but the total with labeled data is 960 hours and comparable to our setup.</p><p class="zh">表 1：在 Libri-light 低资源标注数据设置（10 分钟、1 小时、10 小时）以及 Librispeech 的 clean 100h 子集上训练时，Librispeech dev/test 集上的 WER。模型分别以 Librispeech 音频（LS-960）或更大的 LibriVox（LV-60k）作为无标注数据。我们考察两种模型规模：BASE（95m 参数）与 LARGE（317m 参数）。先前工作使用 860 小时无标注数据（LS-860），但加上标注数据后总量为 960 小时，与我们的设置相当。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th>clean</th><th>other</th><th>clean</th><th>other</th></tr><tr><th>10 min labeled</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Discrete BERT [4]</td><td>LS-960</td><td>4-gram</td><td>15.7</td><td>24.1</td><td>16.3</td><td>25.2</td></tr>
+<div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 1: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech. Models use either the audio of Librispeech (LS-960) or the larger LibriVox (LV-60k) as unlabeled data. We consider two model sizes: BASE (95m parameters) and LARGE (317m parameters). Prior work used 860 unlabeled hours (LS-860) but the total with labeled data is 960 hours and comparable to our setup.</p><p class="zh">表 1：在 Libri-light 低资源标注数据设置（10 分钟、1 小时、10 小时）以及 Librispeech 的 clean 100h 子集上训练时，Librispeech dev/test 集上的 WER。模型分别以 Librispeech 音频（LS-960）或更大的 LibriVox（LV-60k）作为无标注数据。我们考察两种模型规模：BASE（95m 参数）与 LARGE（317m 参数）。先前工作使用 860 小时无标注数据（LS-860），但加上标注数据后总量为 960 小时，与我们的设置相当。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Unlabeled</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th>clean</th><th>other</th><th>clean</th><th>other</th></tr><tr><th>10 min labeled</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Discrete BERT [4]</td><td>LS-960</td><td>4-gram</td><td>15.7</td><td>24.1</td><td>16.3</td><td>25.2</td></tr>
 <tr><td>BASE</td><td>LS-960</td><td>4-gram</td><td>8.9</td><td>15.7</td><td>9.1</td><td>15.6</td></tr>
 <tr><td></td><td></td><td>Transf.</td><td>6.6</td><td>13.2</td><td>6.9</td><td>12.9</td></tr>
 <tr><td>LARGE</td><td>LS-960</td><td>Transf.</td><td>6.6</td><td>10.6</td><td>6.8</td><td>10.8</td></tr>
@@ -539,28 +539,24 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td></td><td>LV-60k</td><td>Transf.</td><td>2.9</td><td>5.4</td><td>2.9</td><td>5.8</td></tr>
 <tr><td>10h labeled</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Discrete BERT [4]</td><td>LS-960</td><td>4-gram</td><td>5.3</td><td>13.2</td><td>5.9</td><td>14.1</td></tr>
-<tr><td>Iter. pseudo-labeling [58]</td><td>LS-960</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>LV-60k</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>LS-960</td><td>4-gram+Transf.</td><td>23.51</td><td>25.48</td><td>24.37</td><td>26.02</td></tr>
+<tr><td></td><td>LV-60k</td><td>4-gram+Transf.</td><td>17.00</td><td>19.34</td><td>18.03</td><td>19.92</td></tr>
 <tr><td>BASE</td><td>LS-960</td><td>4-gram</td><td>3.8</td><td>9.1</td><td>4.3</td><td>9.5</td></tr>
 <tr><td></td><td></td><td>Transf.</td><td>2.9</td><td>7.4</td><td>3.2</td><td>7.8</td></tr>
 <tr><td>LARGE</td><td>LS-960</td><td>Transf.</td><td>2.9</td><td>5.7</td><td>3.2</td><td>6.1</td></tr>
 <tr><td></td><td>LV-60k</td><td>Transf.</td><td>2.4</td><td>4.8</td><td>2.6</td><td>4.9</td></tr>
 <tr><td>100h labeled</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>Hybrid DNN/HMM [34]</td><td>-</td><td>4-gram</td><td>5.0</td><td>19.5</td><td>5.8</td><td>18.6</td></tr>
+<tr><td></td><td>-</td><td>4-gram</td><td>5.0</td><td>19.5</td><td>5.8</td><td>18.6</td></tr>
 <tr><td>TTS data augm. [30]</td><td>-</td><td>LSTM</td><td></td><td></td><td>4.3</td><td>13.5</td></tr>
 <tr><td>Discrete BERT [4]</td><td>LS-960</td><td>4-gram</td><td>4.0</td><td>10.9</td><td>4.5</td><td>12.1</td></tr>
-<tr><td>Iter. pseudo-labeling [58]</td><td>LS-860</td><td></td><td>4.98</td><td>7.97</td><td>5.59</td><td>8.95</td></tr>
-<tr><td></td><td>LV-60k</td><td></td><td>3.19</td><td>6.14</td><td>3.72</td><td>7.11</td></tr>
+<tr><td></td><td>LS-860</td><td>4-gram+Transf.</td><td>4.98</td><td>7.97</td><td>5.59</td><td>8.95</td></tr>
+<tr><td></td><td>LV-60k</td><td>4-gram+Transf.</td><td>3.19</td><td>6.14</td><td>3.72</td><td>7.11</td></tr>
 <tr><td>Noisy student [42]</td><td>LS-860</td><td>LSTM</td><td>3.9</td><td>8.8</td><td>4.2</td><td>8.6</td></tr>
 <tr><td>BASE</td><td>LS-960</td><td>4-gram</td><td>2.7</td><td>7.9</td><td>3.4</td><td>8.0</td></tr>
 <tr><td></td><td></td><td>Transf.</td><td>2.2</td><td>6.3</td><td>2.6</td><td>6.3</td></tr>
 <tr><td>LARGE</td><td>LS-960</td><td>Transf.</td><td>2.1</td><td>4.8</td><td>2.3</td><td>5.0</td></tr>
 <tr><td></td><td>LV-60k</td><td>Transf.</td><td>1.9</td><td>4.0</td><td>2.0</td><td>4.0</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-5-1-4">
-          <p class="en-lines"><span class="sent" data-sid="s-5-1-4-1"><span class="en">Model Unlabeled LM dev test data clean other clean other</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-1-4-1"><span class="zh">表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。</span></span></p>
-          
-        </div></section>
+</section>
 <section>
       <h2 class="sech lv1" id="sec-10"><span class="secnum">10</span> <span class="t-zh">10 分钟标注（附录表格碎片）</span><span class="t-en">min labeled</span></h2>
 
@@ -586,14 +582,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <section>
       <h3 class="sech lv2" id="sec-10h-labeled"><span class="t-zh">10h labeled</span><span class="t-en">10h labeled</span></h3>
 
-
-<div class="eq" id="eq-10h-labeled-2"><code>23.51 25.48 24.37 26.02</code></div>
-<div class="pblk" id="p-10h-labeled-3">
-          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-3-1"><span class="en">LV-60k 4-gram+Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-3-1"><span class="zh">（表格行）23.51 25.48 24.37 26.02｜LV-60k｜4-gram+Transf.。</span></span></p>
+<div class="pblk" id="p-10h-labeled-2">
+          <p class="en-lines"><span class="sent" data-sid="s-10h-labeled-2-1"><span class="en">Iter. pseudo-labeling [58] LS-960 4-gram+Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-10h-labeled-2-1"><span class="zh">（表格行）Discrete BERT [4]｜LS-960｜4-gram：5.3 13.2 5.9 14.1；Iter. pseudo-labeling [58]｜LS-960｜4-gram+Transf.。</span></span></p>
           
         </div>
-<div class="eq" id="eq-10h-labeled-3"><code>17.00 19.34 18.03 19.92</code></div>
+
+
+
 
 
 
@@ -603,23 +599,27 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-100h-labeled"><span class="t-zh">100h labeled</span><span class="t-en">100h labeled</span></h3>
-
-
-
-
-
-
-
-
-
-
-
-<div class="pblk" id="p-100h-labeled-3">
-          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-3-1"><span class="en">LV-60k 4-gram+Transf.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-3-1"><span class="zh">（表格行）23.51 25.48 24.37 26.02｜LV-60k｜4-gram+Transf.。</span></span></p>
+      <h3 class="sech lv2" id="sec-100h-labeled"><span class="t-zh">100h labeled</span><span class="t-en">100h labeled</span></h3><div class="pblk" id="p-100h-labeled-1">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-1-1"><span class="en">Hybrid DNN/HMM [34]</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-1-1"><span class="zh">（表格行）Hybrid DNN/HMM [34]｜-｜4-gram：5.0 19.5 5.8 18.6；TTS data augm.。</span></span></p>
           
         </div>
+
+
+
+
+
+
+
+
+
+<div class="pblk" id="p-100h-labeled-2">
+          <p class="en-lines"><span class="sent" data-sid="s-100h-labeled-2-1"><span class="en">Iter. pseudo-labeling [58] LS-860 4-gram+Transf.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-2-1"><span class="zh">（表格行）[30]｜-｜LSTM：4.3 13.5；Discrete BERT [4]｜LS-960｜4-gram：4.0 10.9 4.5 12.1；Iter. pseudo-labeling [58]｜LS-860｜4-gram+Transf.。</span></span></p>
+          
+        </div>
+
+
 
 
 
@@ -653,11 +653,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-100h-labeled-9-1"><span class="zh">当 LARGE 模型使用少一个数量级的标注数据（10 小时标注）时，仍取得 WER 3.2/6.1，相对迭代式自训练的错误率降幅为 24%/29%。</span></span><span class="sent" data-sid="s-100h-labeled-9-2"><span class="zh">只用 1 小时标注数据，同一模型取得 WER 3.9/7.6，在 test-clean 和 test-other 上分别提升 7%/12%——而标注数据少了两个数量级。</span></span><span class="sent" data-sid="s-100h-labeled-9-3"><span class="zh">我们注意到 Libri-（原文在此断行，接下页「light data splits…」）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-100h-labeled-1"><span class="cap-k">表</span><p class="en">Table 2: WER on Librispeech when using all 960 hours of labeled data (cf. Table 1).</p><p class="zh">表 2：使用全部 960 小时标注数据时 Librispeech 上的 WER（参见 Table 1）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Unlabeled</th><th></th><th></th><th></th><th></th><th>dev</th><th></th><th></th><th></th><th>test</th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th>LM</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>data</th><th></th><th></th><th>clean</th><th></th><th>other</th><th></th><th>clean</th><th></th><th>other</th></tr><tr><th>Supervised</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>CTC Transf [51]</td><td></td><td>-</td><td>CLM+Transf.</td><td></td><td>2.20</td><td></td><td>4.94</td><td></td><td>2.47</td><td></td><td>5.45</td></tr>
-<tr><td>S2S Transf. [51]</td><td></td><td>-</td><td>CLM+Transf.</td><td></td><td>2.10</td><td></td><td>4.79</td><td></td><td>2.33</td><td></td><td>5.17</td></tr>
-<tr><td>Transf. Transducer [60]</td><td></td><td>-</td><td></td><td>Transf.</td><td></td><td>-</td><td></td><td>-</td><td>2.0</td><td></td><td>4.6</td></tr>
-<tr><td>ContextNet [17]</td><td></td><td>-</td><td></td><td>LSTM</td><td>1.9</td><td></td><td>3.9</td><td></td><td>1.9</td><td></td><td>4.1</td></tr>
-<tr><td>Conformer [15]</td><td></td><td>-</td><td></td><td>LSTM</td><td>2.1</td><td></td><td>4.3</td><td></td><td>1.9</td><td></td><td>3.9</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-100h-labeled-1"><span class="cap-k">表</span><p class="en">Table 2: WER on Librispeech when using all 960 hours of labeled data (cf. Table 1).</p><p class="zh">表 2：使用全部 960 小时标注数据时 Librispeech 上的 WER（参见 Table 1）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th>Unlabeled</th><th></th><th></th><th>dev</th><th></th><th></th><th>test</th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th>LM</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>data</th><th></th><th>clean</th><th></th><th>other</th><th>clean</th><th></th><th>other</th></tr><tr><th></th><th>Supervised</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>CTC Transf [51]</td><td></td><td></td><td>-</td><td>CLM+Transf.</td><td>2.20</td><td></td><td>4.94</td><td>2.47</td><td></td><td>5.45</td></tr>
+<tr><td></td><td>S2S Transf.</td><td></td><td>[51]</td><td>-</td><td>CLM+Transf.</td><td>2.10</td><td></td><td>4.79</td><td>2.33</td><td></td><td>5.17</td></tr>
+<tr><td></td><td></td><td>Transf. Transducer [60]</td><td></td><td>-</td><td>Transf.</td><td>-</td><td></td><td>-</td><td>2.0</td><td></td><td>4.6</td></tr>
+<tr><td></td><td>ContextNet [17]</td><td></td><td></td><td>-</td><td>LSTM</td><td>1.9</td><td></td><td>3.9</td><td>1.9</td><td></td><td>4.1</td></tr>
+<tr><td></td><td>Conformer [15]</td><td></td><td></td><td>-</td><td>LSTM</td><td>2.1</td><td></td><td>4.3</td><td>1.9</td><td></td><td>3.9</td></tr></tbody></table></div></div>
 </section>
 <section>
       <h3 class="sech lv2" id="sec-supervised"><span class="t-zh">有监督（表格碎片）</span><span class="t-en">Supervised</span></h3>
@@ -762,11 +762,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-1-1"><span class="zh">接下来，我们在带标注的 TIMIT 训练数据上微调预训练模型，评测 TIMIT 音素识别的准确率。</span></span><span class="sent" data-sid="s-5-3-1-2"><span class="zh">微调方式与 Libri-light 的 10 小时子集相同，但不使用语言模型。</span></span><span class="sent" data-sid="s-5-3-1-3"><span class="zh">Table 3 显示，我们的方法在该数据集上取得新的最佳水平，在 dev/test 集上把 PER 相对降低了 23%/29%。</span></span><span class="sent" data-sid="s-5-3-1-4"><span class="zh">附录 D 分析了离散潜在语音表示与音素之间的关系。</span></span><span class="sent" data-sid="s-5-3-1-5"><span class="zh">其他在 TIMIT 上评测的近期预训练工作还有 [47]，他们通过求解多个任务来学习良好的语音表示。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-3-1"><span class="cap-k">表</span><p class="en">Table 3: TIMIT phoneme recognition accuracy in terms of phoneme error rate (PER).</p><p class="zh">表 3：以音素错误率（PER）衡量的 TIMIT 音素识别准确率。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>dev PER</th><th></th><th></th><th>test PER</th><th></th></tr></thead><tbody><tr><td>CNN + TD-ﬁlterbanks [59]</td><td></td><td>15.6</td><td></td><td></td><td>18.0</td></tr>
-<tr><td>PASE+ [47]</td><td></td><td></td><td>-</td><td></td><td>17.2</td></tr>
-<tr><td>Li-GRU + fMLLR [46]</td><td></td><td></td><td>–</td><td></td><td>14.9</td></tr>
-<tr><td>wav2vec [49]</td><td></td><td>12.9</td><td></td><td></td><td>14.7</td></tr>
-<tr><td>vq-wav2vec [5]</td><td></td><td></td><td>9.6</td><td></td><td>11.6</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-5-3-1"><span class="cap-k">表</span><p class="en">Table 3: TIMIT phoneme recognition accuracy in terms of phoneme error rate (PER).</p><p class="zh">表 3：以音素错误率（PER）衡量的 TIMIT 音素识别准确率。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>dev PER</th><th>test PER</th></tr></thead><tbody><tr><td></td><td>CNN + TD-ﬁlterbanks [59]</td><td>15.6</td><td>18.0</td></tr>
+<tr><td>PASE+ [47]</td><td></td><td>-</td><td>17.2</td></tr>
+<tr><td></td><td>Li-GRU + fMLLR [46]</td><td>–</td><td>14.9</td></tr>
+<tr><td>wav2vec [49]</td><td></td><td>12.9</td><td>14.7</td></tr>
+<tr><td>vq-wav2vec [5]</td><td></td><td>9.6</td><td>11.6</td></tr></tbody></table></div></div>
 
 
 
@@ -784,7 +784,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-this-work-no-lm-1"><code>7.4 8.3</code></div>
-<div class="cap" id="tab-this-work-no-lm-1"><span class="cap-k">表</span><p class="en">Table 4: Average WER and standard deviation on combined dev-clean/other of Librispeech for three training seeds. We ablate quantizing the context network input and the targets in the contrastive loss.</p><p class="zh">表 4：三种训练种子在 Librispeech dev-clean/other 合并集上的平均 WER 与标准差。我们对「上下文网络的输入是否量化」与「对比损失的目标是否量化」做了消融。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>avg. WER</th><th></th><th>std.</th></tr></thead><tbody><tr><td>Continuous inputs, quantized targets (Baseline)</td><td></td><td>7.97</td><td>0.02</td></tr>
+<div class="cap" id="tab-this-work-no-lm-1"><span class="cap-k">表</span><p class="en">Table 4: Average WER and standard deviation on combined dev-clean/other of Librispeech for three training seeds. We ablate quantizing the context network input and the targets in the contrastive loss.</p><p class="zh">表 4：三种训练种子在 Librispeech dev-clean/other 合并集上的平均 WER 与标准差。我们对「上下文网络的输入是否量化」与「对比损失的目标是否量化」做了消融。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>avg. WER</th><th>std.</th></tr></thead><tbody><tr><td></td><td>Continuous inputs, quantized targets (Baseline)</td><td>7.97</td><td>0.02</td></tr>
 <tr><td>Quantized inputs, quantized targets</td><td></td><td>12.18</td><td>0.41</td></tr>
 <tr><td>Quantized inputs, continuous targets</td><td></td><td>11.18</td><td>0.16</td></tr>
 <tr><td>Continuous inputs, continuous targets</td><td></td><td>8.58</td><td>0.08</td></tr></tbody></table></div></div>
@@ -912,52 +912,49 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="eq" id="eq-A-1"><code>0.25 0.20</code></div>
-<div class="eq" id="eq-A-2"><code>Percent of all spans</code></div>
-<div class="eq" id="eq-A-3"><code>0.15 0.10 0.05 20 40 60 80 100</code></div>
-<div class="eq" id="eq-A-4"><code>Span length</code></div>
-<div class="eq" id="eq-A-5"><code>0.00</code></div>
+
+
+
+
+
 <div class="cap" id="fig-A-1"><img class="fig" src="../assets/figures/2006.11477/fig-A-1.png" loading="lazy" alt="Figure 2: Mask length distribution for a 15 second sample with p = 0.065 and M = 10."><span class="cap-k">图</span><p class="en">Figure 2: Mask length distribution for a 15 second sample with p = 0.065 and M = 10.</p><p class="zh">图 2：对 15 秒样本、p = 0.065、M = 10 时的掩码长度分布。</p></div>
-<div class="cap" id="tab-A-1"><span class="cap-k">表</span><p class="en">Table 5: Ablations on settings for the masking strategy during pre-training. When masking without overlap, we choose starting time steps with p = 0.037 which results in the total number of masked tokens to match the baseline.</p><p class="zh">表 5：预训练掩码策略各项设置的消融。当采用无重叠掩码时，我们以 p = 0.037 选取起始时间步，使被掩码 token 总数与基线一致。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th></tr><tr><th></th><th></th><th>std</th></tr></thead><tbody><tr><td>Baseline (p = 0.075)</td><td>7.97</td><td>0.02</td></tr>
-<tr><td>Mask length M = 8</td><td>8.33</td><td>0.05</td></tr>
-<tr><td>Mask length M = 12</td><td>8.19</td><td>0.08</td></tr>
-<tr><td>Mask length M = 15</td><td>8.43</td><td>0.19</td></tr>
-<tr><td>Mask probability p = 0.065</td><td>7.95</td><td>0.08</td></tr>
-<tr><td>Mask probability p = 0.06</td><td>8.14</td><td>0.22</td></tr>
-<tr><td>Mask w/o overlap, uniform(1,31)</td><td>8.39</td><td>0.02</td></tr>
-<tr><td>Mask w/o overlap, uniform(10,30)</td><td>9.17</td><td>0.05</td></tr>
-<tr><td>Mask w/o overlap, poisson(15)</td><td>8.13</td><td>0.04</td></tr>
-<tr><td>Mask w/o overlap, normal(15, 10)</td><td>8.37</td><td>0.03</td></tr>
-<tr><td>Mask w/o overlap, length 10</td><td>9.15</td><td>0.02</td></tr>
-<tr><td>Mask w/o overlap, length 15</td><td>9.43</td><td>0.26</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-A-1"><span class="cap-k">表</span><p class="en">Table 5: Ablations on settings for the masking strategy during pre-training. When masking without overlap, we choose starting time steps with p = 0.037 which results in the total number of masked tokens to match the baseline.</p><p class="zh">表 5：预训练掩码策略各项设置的消融。当采用无重叠掩码时，我们以 p = 0.037 选取起始时间步，使被掩码 token 总数与基线一致。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>0.25</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>spans 0.20</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>all 0.15</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>of</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Percent</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>0.10</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>0.05</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>0.00</td><td>20</td><td>40</td><td>60</td><td>80</td><td>100</td></tr>
+<tr><td></td><td></td><td></td><td>Span length</td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-A-3">
           <p class="en-lines"><span class="sent" data-sid="s-A-3-1"><span class="en">avg WER std Baseline (p = 0.075)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-3-1"><span class="zh">表头：avg WER / std；Baseline（p = 0.075，掩码概率）。</span></span></p>
           
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</section>
+<div class="eq" id="eq-A-6"><code>7.97 0.02</code></div>
+<div class="eq" id="eq-A-7"><code>Mask length M = 8</code></div>
+<div class="eq" id="eq-A-8"><code>8.33 0.05</code></div>
+<div class="eq" id="eq-A-9"><code>Mask length M = 12</code></div>
+<div class="eq" id="eq-A-10"><code>8.19 0.08</code></div>
+<div class="eq" id="eq-A-11"><code>Mask length M = 15</code></div>
+<div class="eq" id="eq-A-12"><code>8.43 0.19</code></div>
+<div class="eq" id="eq-A-13"><code>Mask probability p = 0.065</code></div>
+<div class="eq" id="eq-A-14"><code>7.95 0.08</code></div>
+<div class="eq" id="eq-A-15"><code>Mask probability p = 0.06</code></div>
+<div class="eq" id="eq-A-16"><code>8.14 0.22</code></div>
+<div class="eq" id="eq-A-17"><code>Mask w/o overlap, uniform(1,31)</code></div>
+<div class="eq" id="eq-A-18"><code>8.39 0.02</code></div>
+<div class="eq" id="eq-A-19"><code>Mask w/o overlap, uniform(10,30)</code></div>
+<div class="eq" id="eq-A-20"><code>9.17 0.05</code></div>
+<div class="eq" id="eq-A-21"><code>Mask w/o overlap, poisson(15)</code></div>
+<div class="eq" id="eq-A-22"><code>8.13 0.04</code></div>
+<div class="eq" id="eq-A-23"><code>Mask w/o overlap, normal(15, 10)</code></div>
+<div class="eq" id="eq-A-24"><code>8.37 0.03</code></div>
+<div class="eq" id="eq-A-25"><code>Mask w/o overlap, length 10</code></div>
+<div class="eq" id="eq-A-26"><code>9.15 0.02</code></div>
+<div class="eq" id="eq-A-27"><code>Mask w/o overlap, length 15</code></div>
+<div class="eq" id="eq-A-28"><code>9.43 0.26</code></div></section>
 <section>
       <h2 class="sech lv1" id="sec-B"><span class="secnum">B</span> <span class="t-zh">附录 B 微调设置</span><span class="t-en">Fine-tuning Setup</span></h2><div class="pblk" id="p-B-1">
           <p class="en-lines"><span class="sent" data-sid="s-B-1-1"><span class="en">During ﬁne-tuning we apply a masking strategy to the feature encoder outputs similar to SpecAugment [41]: we randomly choose a number of starting time steps for which a span of ten subsequent time-steps is replaced with a mask embedding; spans may overlap and we use the same masked time step embedding as during pre-training.</span></span> <span class="sent" data-sid="s-B-1-2"><span class="en">We also mask channels by choosing a number of channels as starting indices and then expand each one to cover the subsequent 64 channels.</span></span> <span class="sent" data-sid="s-B-1-3"><span class="en">Spans may overlap and the selected channel spans are set to zero value.</span></span> <span class="sent" data-sid="s-B-1-4"><span class="en">We use LayerDrop [22, 12] at a rate of 0.05 for BASE and 0.1 for LARGE during ﬁne-tuning.</span></span></p>
@@ -969,12 +966,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-B-1-s1"><span class="zh">表 6 总结了各标注数据设置所用的微调超参数；Table 7 给出 Librispeech 预训练模型在各标注数据设置下做最终评测的解码参数；Table 8 给出 LibriVox 的解码参数。</span></span></p>
           
         </div>
-<div class="cap" id="tab-B-2"><span class="cap-k">表</span><p class="en">Table 6: Fine-tuning hyperparameters timestep mask prob. channel mask prob. updates</p><p class="zh">表 6：微调超参数（时间步掩码概率、通道掩码概率、更新次数）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Table 6: Fine-tuning hyperparameters</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>timestep mask prob.</th><th></th><th>channel mask prob.</th><th></th><th>updates</th><th></th></tr></thead><tbody><tr><td>10 min</td><td></td><td>0.075</td><td></td><td>0.008</td><td></td><td>12k</td></tr>
-<tr><td>1 hour</td><td></td><td>0.075</td><td></td><td>0.004</td><td></td><td>13k</td></tr>
-<tr><td>10 hours</td><td></td><td>0.065</td><td></td><td>0.004</td><td></td><td>20k</td></tr>
-<tr><td>100 hours</td><td></td><td>0.05</td><td></td><td>0.008</td><td></td><td>50k</td></tr>
-<tr><td>960 hours</td><td></td><td>0.05</td><td></td><td>0.0016</td><td></td><td>320k</td></tr>
-<tr><td>TIMIT</td><td></td><td>0.065</td><td></td><td>0.012</td><td></td><td>40k</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-B-2"><span class="cap-k">表</span><p class="en">Table 6: Fine-tuning hyperparameters timestep mask prob. channel mask prob. updates</p><p class="zh">表 6：微调超参数（时间步掩码概率、通道掩码概率、更新次数）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Table 6: Fine-tuning hyperparameters</th><th></th><th></th><th></th></tr><tr><th></th><th>timestep mask prob.</th><th></th><th>channel mask prob.</th><th></th><th>updates</th></tr></thead><tbody><tr><td>10 min</td><td></td><td>0.075</td><td></td><td>0.008</td><td>12k</td></tr>
+<tr><td>1 hour</td><td></td><td>0.075</td><td></td><td>0.004</td><td>13k</td></tr>
+<tr><td>10 hours</td><td></td><td>0.065</td><td></td><td>0.004</td><td>20k</td></tr>
+<tr><td>100 hours</td><td></td><td>0.05</td><td></td><td>0.008</td><td>50k</td></tr>
+<tr><td>960 hours</td><td></td><td>0.05</td><td></td><td>0.0016</td><td>320k</td></tr>
+<tr><td>TIMIT</td><td></td><td>0.065</td><td></td><td>0.012</td><td>40k</td></tr></tbody></table></div></div>
 
 
 
@@ -988,12 +985,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-B-3"><span class="cap-k">表</span><p class="en">Table 7: Decoding parameters for Librispeech subsets for models pre-trained on Librispeech</p><p class="zh">表 7：在 Librispeech 上预训练的模型，于 Librispeech 各子集上的解码参数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Table 6: Fine-tuning hyperparameters</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>timestep mask prob.</th><th></th><th>channel mask prob.</th><th></th><th>updates</th><th></th></tr></thead><tbody><tr><td>10 min</td><td></td><td>0.075</td><td></td><td>0.008</td><td></td><td>12k</td></tr>
-<tr><td>1 hour</td><td></td><td>0.075</td><td></td><td>0.004</td><td></td><td>13k</td></tr>
-<tr><td>10 hours</td><td></td><td>0.065</td><td></td><td>0.004</td><td></td><td>20k</td></tr>
-<tr><td>100 hours</td><td></td><td>0.05</td><td></td><td>0.008</td><td></td><td>50k</td></tr>
-<tr><td>960 hours</td><td></td><td>0.05</td><td></td><td>0.0016</td><td></td><td>320k</td></tr>
-<tr><td>TIMIT</td><td></td><td>0.065</td><td></td><td>0.012</td><td></td><td>40k</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-B-3"><span class="cap-k">表</span><p class="en">Table 7: Decoding parameters for Librispeech subsets for models pre-trained on Librispeech</p><p class="zh">表 7：在 Librispeech 上预训练的模型，于 Librispeech 各子集上的解码参数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Table 6: Fine-tuning hyperparameters</th><th></th><th></th><th></th></tr><tr><th></th><th>timestep mask prob.</th><th></th><th>channel mask prob.</th><th></th><th>updates</th></tr></thead><tbody><tr><td>10 min</td><td></td><td>0.075</td><td></td><td>0.008</td><td>12k</td></tr>
+<tr><td>1 hour</td><td></td><td>0.075</td><td></td><td>0.004</td><td>13k</td></tr>
+<tr><td>10 hours</td><td></td><td>0.065</td><td></td><td>0.004</td><td>20k</td></tr>
+<tr><td>100 hours</td><td></td><td>0.05</td><td></td><td>0.008</td><td>50k</td></tr>
+<tr><td>960 hours</td><td></td><td>0.05</td><td></td><td>0.0016</td><td>320k</td></tr>
+<tr><td>TIMIT</td><td></td><td>0.065</td><td></td><td>0.012</td><td>40k</td></tr></tbody></table></div></div>
 
 
 
@@ -1024,7 +1021,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 <div class="eq" id="eq-B-29"><code>1.57 -0.64 0.90 -0.31</code></div></section>
 <section>
-      <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">附录 C Libri-light 与 Librispeech 的完整结果</span><span class="t-en">Full results for Libri-light and Librispeech</span></h2><div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 9: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups (cf. Table 1).</p><p class="zh">表 9：在 Libri-light 低资源标注数据设置上训练时，Librispeech dev/test 集上的 WER（参见 Table 1）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th>clean</th><th>other</th><th>clean</th><th>other</th></tr><tr><th>10 min labeled</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>BASE</td><td>LS-960</td><td>None</td><td>46.1</td><td>51.5</td><td>46.9</td><td>50.9</td></tr>
+      <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">附录 C Libri-light 与 Librispeech 的完整结果</span><span class="t-en">Full results for Libri-light and Librispeech</span></h2><div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 9: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups (cf. Table 1).</p><p class="zh">表 9：在 Libri-light 低资源标注数据设置上训练时，Librispeech dev/test 集上的 WER（参见 Table 1）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Unlabeled</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>10 min labeled</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>BASE</td><td>LS-960</td><td>None</td><td>46.1</td><td>51.5</td><td>46.9</td><td>50.9</td></tr>
 <tr><td></td><td></td><td>4-gram</td><td>8.9</td><td>15.7</td><td>9.1</td><td>15.6</td></tr>
 <tr><td></td><td></td><td>Transf.</td><td>6.6</td><td>13.2</td><td>6.9</td><td>12.9</td></tr>
 <tr><td>LARGE</td><td>LS-960</td><td>None</td><td>43.0</td><td>46.3</td><td>43.5</td><td>45.3</td></tr>
@@ -1144,7 +1141,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-100h-labeled-2-1"><span class="cap-k">表</span><p class="en">Table 10: WER on Librispeech when using all 960 hours of Librispeech as labeled data (cf. Table 2).</p><p class="zh">表 10：使用 Librispeech 全部 960 小时作为标注数据时 Librispeech 上的 WER（参见 Table 2）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th>clean</th><th>other</th><th>clean</th><th>other</th></tr></thead><tbody><tr><td>LARGE - from scratch</td><td>-</td><td>None</td><td>2.8</td><td>7.6</td><td>3.0</td><td>7.7</td></tr>
+<div class="cap" id="tab-100h-labeled-2-1"><span class="cap-k">表</span><p class="en">Table 10: WER on Librispeech when using all 960 hours of Librispeech as labeled data (cf. Table 2).</p><p class="zh">表 10：使用 Librispeech 全部 960 小时作为标注数据时 Librispeech 上的 WER（参见 Table 2）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Unlabeled</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>-</td><td>None</td><td>2.8</td><td>7.6</td><td>3.0</td><td>7.7</td></tr>
 <tr><td></td><td>-</td><td>4-gram</td><td>1.8</td><td>5.4</td><td>2.6</td><td>5.8</td></tr>
 <tr><td></td><td>-</td><td>Transf.</td><td>1.7</td><td>4.3</td><td>2.1</td><td>4.6</td></tr>
 <tr><td>BASE</td><td>LS-960</td><td>None</td><td>3.2</td><td>8.9</td><td>3.4</td><td>8.5</td></tr>
@@ -1264,19 +1261,40 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 10m LARGE LV-60k 1h LARGE LV-60k 10h LARGE LV-60k 最常见的替换错误（正确词 → 模型误词（次数））：all →al (181) too →to (26) in →and (15) are →ar (115) until →untill (24) a →the (11) will →wil (100) new →knew (22) o →oh (10) you →yo (90) door →dor (18) and →in (9) one →on (89) says →sais (18) mode →mod (9) two →to (81) soul →sol (17) ursus →ersus (9) well →wel (80) bread →bred (16) tom →tome (8) been →ben (73) poor →pore (16) randal →randol (7) upon →apon (73) a →the (13) the →a (7) good →god (67) either →ither (13) color →colour (6) see →se (66) food →fud (13) flour →flower (6) we →whe (60) doubt →dout (12) phoebe →feeby (6) little →litle (54) earth →erth (12) an →and (5) great →grate (53) led →lead (12) cucumbers →cucombers (5) your →yor (53) sea →see (12) egg →eg (5) could →coud (51) thee →the (12) macklewain →macklewaine (5) here →hear (51) tom →tome (12) magpie →magpi (5) know →now (45) add →ad (11) milner →millner (5) there →ther (45) good →god (11) stacy →staci (5) three →thre (45) heaven →heven (11) trevelyan →trevellion (5) still →stil (42) mary →marry (11) verloc →verlock (5) off →of (40) randal →randel (11) ann →an (4) don't →dont (37) answered →ansered (10) anyone →one (4) shall →shal (36) blood →blod (10) apartment →appartment (4) little →litl (35) bozzle →bosel (10) basin →bason (4) 100h LARGE LV-60k 960h LARGE LV-60k 960h LARGE from scratch a →the (13) a →the (12) and →in (20) and →in (10) and →in (9) a →the (16) in →and (10) macklewain →mackelwaine (7) in →and (13) o →oh (8) in →and (6) the →a (10) minnetaki →minnitaki (7) o →oh (6) in →an (8) randal →randall (7) bozzle →bosell (5) and →an (5) christie →cristy (6) criss →chris (5) clarke →clark (4) macklewain →mackelwane (6) bozzle →bosel (4) grethel →gretel (4) randal →randoll (6) clarke →clark (4) macklewain →mackelwaine (4) bozzle →bosall (5) colored →coloured (4) this →the (4) kaliko →calico (5) grethel →gretel (4) an →and (3) trevelyan →trevelian (5) lige →lyge (4) anyone →one (3) an →and (4) the →a (4) bozzle →basell (3) and →an (4) and →an (3) buns →bunds (3) anyone →one (4) ann →marianne (3) carrie →carry (3) bozzle →bozall (4) butte →bute (3) criss →chris (3) clarke →clark (4) color →colour (3) he's →is (3) gryce →grice (4) deucalion →ducalion (3) his →is (3) i'm →am (4) forcemeat →meat (3) honor →honour (3) in →ind (4) gryce →grice (3) lattimer →latimer (3) letty →lettie (4) honor →honour (3) millet →mellet (3) phoebe →phebe (4) kearny →kirney (3) pyncheon →pension (3) the →a (4) nuova →noiva (3) tad →ted (3) ann →anne (3) thing →anything (3) thing →anything (3) awhile →while (3) this →the (3) trevelyan →trevelian (3)</span></span></p>
           
         </div>
-<div class="cap" id="tab-E-2"><span class="cap-k">表</span><p class="en">Table 12: Examples of transcription of selected utterances from the dev-clean subset by various models without a language model or lexicon. Capitalized words indicate errors.</p><p class="zh">表 12：不同模型在不用语言模型与词表的情况下，对 dev-clean 子集若干选定语音的转写示例；大写单词表示错误。</p></div>
-<div class="pblk" id="p-E-9">
-          <p class="en-lines"><span class="sent" data-sid="s-E-9-1"><span class="en">Model Transcription Reference i’m mister christopher from london 10m LV-60k IM mister CRESTIFER FROME LUNDEN 1h LV-60k IM mister CRISTIFFHER from LOUNDEN 10h LV-60k i’m mister CHRYSTEPHER from london 100h LV-60k i’m mister christopher from london 960h LV-60k i’m mister christopher from london 960h scratch I MISSTER christopher from london Reference il popolo e una bestia 10m LV-60k ILPOPULAR ONABESTIA 1h LV-60k O POPOLAONABASTIA 10h LV-60k U POPULAONABASTIAR 100h LV-60k O POPALOON A BASTYA 960h LV-60k YOU’LL POP A LAWYE ON A BAISTYE 960h scratch OL POPALOY ON ABESTIA Reference he smelt the nutty aroma of the spirit 10m LV-60k he SMELTD the NUDY aroma of the spirit 1h LV-60k he SMELTD the NUDDY ARROMA of the spirit 10h LV-60k he smelt the NUDDY ERROMA of the spirit 100h LV-60k he smelt the NUDDY aroma of the spirit 960h LV-60k he smelt the NUTTIE aroma of the spirit 960h scratch he smelt the nutty EROMA of the spirit Reference phoebe merely glanced at it and gave it back 10m LV-60k FEABY MEARLY glanced at it and gave it BAK 1h LV-60k FIEABY merely glanced at it and gave it back 10h LV-60k FEEBY merely glanced at it and gave it back 100h LV-60k BEBE merely glanced at it and gave it back 960h LV-60k phoebe merely glanced at it and gave it back 960h scratch phoebe merely glanced at it and gave it back Reference sauterne is a white bordeaux a strong luscious wine the best known varieties being 10m LV-60k SULTERIN is a white BORDOE a strong LUCHOUS WIN the best NOWN VERIATYS being 1h LV-60k CLTEREN is a white BORDO a strong LUCHIOUS wine the best known VERIETIES being 10h LV-60k SOTERN is a white BOURDO a strong LUCIOUS wine the best known VORIETIES being 100h LV-60k SOTERN is a white BORDAUX a strong LUCIOUS wine the best known varieties being 960h LV-60k SOTERN is a white bordeaux a strong luscious wine the best known varieties being 960h scratch SOTERAN is a white bordeaux a strong luscious wine the best known varieties being Reference i happen to have mac connell’s box for tonight or there’d be no chance of our getting places 10m LV-60k i HAPEND to have MECONALES BOXS for TONIT ORE THIRLD be no chance of OR GETING places 1h LV-60k i happen to have MACCONNEL’S BOCXS for tonight or TE’ELD be no chance of our getting places 10h LV-60k i HAPPENED to have MUKONNEL’S box for tonight or THERED be no chance of our getting places 100h LV-60k i HAPPENED to have MC CONNEL’S box for TO NIGHT or there’d be no chance of our getting places 960h LV-60k i happen to have MC CONALL’S box for TO NIGHT or there’d be no chance of our getting places 960h scratch i HAPPENE to have MACONEL’S box for TO NIGHT or there’d be no chance of our getting places</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-E-9-1"><span class="zh">（附录 E 转写样例对照表：Reference 标准答案与各配置（10m/1h/10h/100h/960h/960h-scratch）模型转写对比，错误词以大写标出。原始数据照录如下）
-模型转写样例对照（Reference 为标准答案，错误词以大写标出）：Reference i'm mister christopher from london 10m LV-60k IM mister CRESTIFER FROME LUNDEN 1h LV-60k IM mister CRISTIFFHER from LOUNDEN 10h LV-60k i'm mister CHRYSTEPHER from london 100h LV-60k i'm mister christopher from london 960h LV-60k i'm mister christopher from london 960h scratch I MISSTER christopher from london Reference il popolo e una bestia 10m LV-60k ILPOPULAR ONABESTIA 1h LV-60k O POPOLAONABASTIA 10h LV-60k U POPULAONABASTIAR 100h LV-60k O POPALOON A BASTYA 960h LV-60k YOU'LL POP A LAWYE ON A BAISTYE 960h scratch OL POPALOY ON ABESTIA Reference he smelt the nutty aroma of the spirit 10m LV-60k he SMELTD the NUDY aroma of the spirit 1h LV-60k he SMELTD the NUDDY ARROMA of the spirit 10h LV-60k he smelt the NUDDY ERROMA of the spirit 100h LV-60k he smelt the NUDDY aroma of the spirit 960h LV-60k he smelt the NUTTIE aroma of the spirit 960h scratch he smelt the nutty EROMA of the spirit Reference phoebe merely glanced at it and gave it back 10m LV-60k FEABY MEARLY glanced at it and gave it BAK 1h LV-60k FIEABY merely glanced at it and gave it back 10h LV-60k FEEBY merely glanced at it and gave it back 100h LV-60k BEBE merely glanced at it and gave it back 960h LV-60k phoebe merely glanced at it and gave it back 960h scratch phoebe merely glanced at it and gave it back Reference sauterne is a white bordeaux a strong luscious wine the best known varieties being 10m LV-60k SULTERIN is a white BORDOE a strong LUCHOUS WIN the best NOWN VERIATYS being 1h LV-60k CLTEREN is a white BORDO a strong LUCHIOUS wine the best known VERIETIES being 10h LV-60k SOTERN is a white BOURDO a strong LUCIOUS wine the best known VORIETIES being 100h LV-60k SOTERN is a white BORDAUX a strong LUCIOUS wine the best known varieties being 960h LV-60k SOTERN is a white bordeaux a strong luscious wine the best known varieties being 960h scratch SOTERAN is a white bordeaux a strong luscious wine the best known varieties being Reference i happen to have mac connell's box for tonight or there'd be no chance of our getting places 10m LV-60k i HAPEND to have MECONALES BOXS for TONIT ORE THIRLD be no chance of OR GETING places 1h LV-60k i happen to have MACCONNEL'S BOCXS for tonight or TE'ELD be no chance of our getting places 10h LV-60k i HAPPENED to have MUKONNEL'S box for tonight or THERED be no chance of our getting places 100h LV-60k i HAPPENED to have MC CONNEL'S box for TO NIGHT or there'd be no chance of our getting places 960h LV-60k i happen to have MC CONALL'S box for TO NIGHT or there'd be no chance of our getting places 960h scratch i HAPPENE to have MACONEL'S box for TO NIGHT or there'd be no chance of our getting places</span></span></p>
-          
-        </div></section>
+<div class="cap" id="tab-E-2"><span class="cap-k">表</span><p class="en">Table 12: Examples of transcription of selected utterances from the dev-clean subset by various models without a language model or lexicon. Capitalized words indicate errors.</p><p class="zh">表 12：不同模型在不用语言模型与词表的情况下，对 dev-clean 子集若干选定语音的转写示例；大写单词表示错误。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>10m LV-60k</th><th>FEABY MEARLY glanced at it and gave it BAK</th><th></th><th></th></tr><tr><th>1h LV-60k</th><th>FIEABY merely glanced at it and gave it back</th><th></th><th></th></tr><tr><th>10h LV-60k</th><th>FEEBY merely glanced at it and gave it back</th><th></th><th></th></tr><tr><th>100h LV-60k</th><th>BEBE merely glanced at it and gave it back</th><th></th><th></th></tr><tr><th>960h LV-60k</th><th>phoebe merely glanced at it and gave it back</th><th></th><th></th></tr></thead><tbody><tr><td>960h scratch</td><td>phoebe merely glanced at it and gave it back</td><td></td><td></td></tr>
+<tr><td>Reference</td><td></td><td></td><td>sauterne is a white bordeaux a strong luscious wine the best known varieties being</td></tr>
+<tr><td>10m LV-60k</td><td></td><td></td><td>SULTERIN is a white BORDOE a strong LUCHOUS WIN the best NOWN</td></tr>
+<tr><td>1h LV-60k</td><td></td><td></td><td>CLTEREN is a white BORDO a strong LUCHIOUS wine the best known</td></tr>
+<tr><td>10h LV-60k</td><td></td><td>SOTERN is a white BOURDO a strong LUCIOUS wine the best known</td><td></td></tr>
+<tr><td>100h LV-60k</td><td></td><td></td><td>SOTERN is a white BORDAUX a strong LUCIOUS wine the best known</td></tr>
+<tr><td>960h LV-60k</td><td></td><td></td><td>SOTERN is a white bordeaux a strong luscious wine the best known varieties</td></tr>
+<tr><td>960h scratch</td><td></td><td></td><td>SOTERAN is a white bordeaux a strong luscious wine the best known varieties</td></tr>
+<tr><td>Reference</td><td></td><td></td><td>i happen to have mac connell’s box for tonight or there’d be no chance of our</td></tr>
+<tr><td>10m LV-60k</td><td></td><td></td><td>i HAPEND to have MECONALES BOXS for TONIT ORE THIRLD be no</td></tr>
+<tr><td>1h LV-60k</td><td></td><td></td><td>i happen to have MACCONNEL’S BOCXS for tonight or TE’ELD be no chance</td></tr>
+<tr><td>10h LV-60k</td><td></td><td></td><td>i HAPPENED to have MUKONNEL’S box for tonight or THERED be no chance</td></tr>
+<tr><td>100h LV-60k</td><td></td><td></td><td>i HAPPENED to have MC CONNEL’S box for TO NIGHT or there’d be no</td></tr>
+<tr><td>960h LV-60k</td><td></td><td></td><td>i happen to have MC CONALL’S box for TO NIGHT or there’d be no chance of</td></tr>
+<tr><td>960h scratch</td><td></td><td></td><td>i HAPPENE to have MACONEL’S box for TO NIGHT or there’d be no chance of</td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Table 13 ablates various hyperparameter choices of our architecture.</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>model is described in § 5.4. First, we tried to improve the continuous input</td><td></td></tr>
+<tr><td></td><td></td><td>model (§ 5.4) by adding an MLP on top of the continuous target representation</td><td></td></tr>
+<tr><td></td><td></td><td>use a separate set of encoder parameters for the representations used as input</td><td></td></tr>
+<tr><td></td><td>encoders). Both did not lead to meaningful improvements.</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Increasing the receptive ﬁeld size from 25ms to 30ms had little effect. Setting</td><td></td></tr>
+<tr><td></td><td></td><td>weight (α) too low results in lower codebook usage and lower performance.</td><td></td></tr>
+<tr><td></td><td></td><td>to slight instability. Doubling the number of relative positional embeddings to</td><td></td></tr>
+<tr><td></td><td></td><td>Stopping gradients from the quantizer to the encoder shows that the encoder</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Next, increasing the number of negatives did not result in better performance (K</td><td></td></tr>
+<tr><td></td><td></td><td>negatives from the entire batch of utterances hurt performance, likely because</td><td></td></tr>
+<tr><td></td><td></td><td>utterances are easy to distinguish. Sampling negatives from any time step in</td><td></td></tr>
+<tr><td></td><td></td><td>or unmasked, does not help and is more computationally expensive. Gumbel</td><td></td></tr>
+<tr><td></td><td></td><td>increasing the number of codebooks did not result in better performance.</td><td></td></tr></tbody></table></div></div>
+</section>
 <section>
-      <h2 class="sech lv1" id="sec-F"><span class="secnum">F</span> <span class="t-zh">附录 F 消融</span><span class="t-en">Ablations</span></h2><div class="pblk" id="tab-F-1">
-          <p class="en-lines"><span class="sent" data-sid="tab-F-1-s1"><span class="en">Table 13 ablates various hyperparameter choices of our architecture. The setup for the baseline model is described in § 5.4. First, we tried to improve the continuous input and continuous target model (§ 5.4) by adding an MLP on top of the continuous target representation and we also tried to use a separate set of encoder parameters for the representations used as input and targets (Separate encoders). Both did not lead to meaningful improvements.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="tab-F-1-s1"><span class="zh">表 13 消融了我们架构的各种超参数选择。基线模型的设置见 § 5.4。我们首先尝试改进「连续输入 + 连续目标」模型（§ 5.4）：在连续目标表示之上加一个 MLP；也尝试对用作输入与目标的表示使用两套独立的编码器参数（Separate encoders）。两者都没有带来有实际意义的提升。</span></span></p>
-          
-        </div>
+      <h2 class="sech lv1" id="sec-F"><span class="secnum">F</span> <span class="t-zh">附录 F 消融</span><span class="t-en">Ablations</span></h2>
 <div class="pblk" id="p-F-1">
           <p class="en-lines"><span class="sent" data-sid="s-F-1-1"><span class="en">Increasing the receptive ﬁeld size from 25ms to 30ms had little effect.</span></span> <span class="sent" data-sid="s-F-1-2"><span class="en">Setting the diversity penalty weight (α) too low results in lower codebook usage and lower performance.</span></span> <span class="sent" data-sid="s-F-1-3"><span class="en">Setting it too high leads to slight instability.</span></span> <span class="sent" data-sid="s-F-1-4"><span class="en">Doubling the number of relative positional embeddings to 256 also did not help.</span></span> <span class="sent" data-sid="s-F-1-5"><span class="en">Stopping gradients from the quantizer to the encoder shows that the encoder requires training signal from the quantizer as well.</span><button class="mk" data-sid="s-F-1-5" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-F-1-1"><span class="zh">把感受野从 25ms 增大到 30ms 几乎没有影响。</span></span><span class="sent" data-sid="s-F-1-2"><span class="zh">多样性惩罚权重（α）设得太低会导致码本使用率下降、性能变差。</span></span><span class="sent" data-sid="s-F-1-3"><span class="zh">设得太高则会带来轻微的训练不稳定。</span></span><span class="sent" data-sid="s-F-1-4"><span class="zh">把相对位置嵌入的数量翻倍到 256 同样没有帮助。</span></span><span class="sent" data-sid="s-F-1-5"><span class="zh">切断从量化器到编码器的梯度后性能变差，说明编码器也需要来自量化器的训练信号。</span><button class="mk" data-sid="s-F-1-5" title="查看讲解">解</button></span></p>
@@ -1301,16 +1319,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-F-2"><span class="cap-k">表</span><p class="en">Table 13: Ablation of various hyper-parmeter choices. We report average WER and standard deviation on combined dev-clean/other of Librispeech for three seeds of training.</p><p class="zh">表 13：各项超参数选择的消融。报告三次训练种子在 Librispeech dev-clean/other 合并集上的平均 WER 与标准差。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th></tr><tr><th></th><th></th><th>std.</th></tr></thead><tbody><tr><td>Baseline (p = 0.075, α = 0.1)</td><td>7.97</td><td>0.02</td></tr>
-<tr><td>Continuous inputs, continuous targets</td><td>8.58</td><td>0.08</td></tr>
-<tr><td>+ MLP on targets</td><td>8.51</td><td>0.05</td></tr>
-<tr><td>+ Separate encoders</td><td>8.90</td><td>0.01</td></tr>
-<tr><td>receptive ﬁeld 30ms</td><td>7.99</td><td>0.06</td></tr>
-<tr><td>diversity penalty</td><td></td><td></td></tr>
-<tr><td>α = 0</td><td>8.48</td><td>0.08</td></tr>
-<tr><td>α = 0.05</td><td>8.34</td><td>0.08</td></tr>
-<tr><td>α = 0.2</td><td>8.58</td><td>0.45</td></tr>
-<tr><td>Conv pos emb, kernel 256</td><td>8.14</td><td>0.05</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-F-2"><span class="cap-k">表</span><p class="en">Table 13: Ablation of various hyper-parmeter choices. We report average WER and standard deviation on combined dev-clean/other of Librispeech for three seeds of training.</p><p class="zh">表 13：各项超参数选择的消融。报告三次训练种子在 Librispeech dev-clean/other 合并集上的平均 WER 与标准差。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>on combined dev-clean/other of Librispeech for three seeds of training.</th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>std.</th></tr></thead><tbody><tr><td></td><td></td><td>Baseline (p = 0.075, α = 0.1)</td><td></td><td>7.97</td><td>0.02</td></tr>
+<tr><td></td><td></td><td></td><td>Continuous inputs, continuous targets</td><td>8.58</td><td>0.08</td></tr>
+<tr><td></td><td>+ MLP on targets</td><td></td><td></td><td>8.51</td><td>0.05</td></tr>
+<tr><td></td><td>+ Separate encoders</td><td></td><td></td><td>8.90</td><td>0.01</td></tr>
+<tr><td></td><td>receptive ﬁeld 30ms</td><td></td><td></td><td>7.99</td><td>0.06</td></tr>
+<tr><td></td><td>diversity penalty</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>α = 0</td><td></td><td></td><td></td><td>8.48</td><td>0.08</td></tr>
+<tr><td>α = 0.05</td><td></td><td></td><td></td><td>8.34</td><td>0.08</td></tr>
+<tr><td>α = 0.2</td><td></td><td></td><td></td><td>8.58</td><td>0.45</td></tr>
+<tr><td></td><td></td><td>Conv pos emb, kernel 256</td><td></td><td>8.14</td><td>0.05</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-F-3">
           <p class="en-lines"><span class="sent" data-sid="s-F-3-1"><span class="en">avg.</span></span> <span class="sent" data-sid="s-F-3-2"><span class="en">WER std.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-F-3-1"><span class="zh">平均值</span></span><span class="sent" data-sid="s-F-3-2"><span class="zh">WER 标准差</span></span></p>

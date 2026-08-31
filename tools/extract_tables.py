@@ -29,7 +29,7 @@ from pathlib import Path
 import fitz
 
 ROOT = Path(__file__).resolve().parent.parent
-NUM_RE = re.compile(r"^-?[\d.,]+%?$|^[–—-]$|^[±]?[\d.,]+±[\d.,]+$|^✓$|^✗$")
+NUM_RE = re.compile(r"^-?[\d.,]+%?$|^[–—-]$|^[±]?[\d.,]+±[\d.,]+$|^[✓✗\x13\x17]$")
 ROW_TOL = 5.0      # 行 y 聚类容差
 COL_TOL = 9.0      # 列 x0 聚类容差
 MAX_ROWS_PER_CAPTION = 3000  # 安全闸：单元格逐行拆分的大表轻松破 200 行（VibeVoice 表 2 ≈230）
@@ -87,60 +87,107 @@ def looks_prose(cells):
     return False
 
 
-def find_caption_y(lines, caption_text):
+def find_caption_pos(lines, caption_text):
+    """返回 (y0, x0, x1)；匹配 "Table 2"/"TABLE II" 前缀。"""
     m = re.match(r"^(Table|TABLE)\s*([IVXLC]{1,6}|\d+[A-Z]?)(?![A-Z0-9])", caption_text)
     if not m:
         return None
     prefix = m.group(0)
     for y0, x0, x1, t, size, bold in lines:
         if t.startswith(prefix) and not t[len(prefix):len(prefix)+1].isalnum():
-            return y0
+            return (y0, x0, x1)
     return None
 
 
-def build_grid(region_lines):
-    """region_lines: [(y0,x0,x1,text,size,bold)] → (headers, rows)。"""
-    # 行聚类
-    rows = []
-    for ln in sorted(region_lines):
-        y0 = ln[0]
-        if rows and y0 - rows[-1][0] <= ROW_TOL:
-            rows[-1][1].append(ln)
-            rows[-1][0] = min(rows[-1][0], y0)
+def column_filter(lines, cap_x0, cap_x1, page_w):
+    """若页面在 caption 附近呈双栏（caption 不跨栏且两侧都有内容），
+    则只保留 caption 所在栏的行，防止邻栏正文干扰表区扩展（Whisper 表 1 的
+    左栏表格 + 右栏正文被行交错，之前向上扩展一上来就被正文句中断）。"""
+    mid = page_w / 2
+    cap_cx = (cap_x0 + cap_x1) / 2
+    if cap_x0 < mid - 40 and cap_x1 > mid + 40:
+        return lines  # caption 跨栏：不过滤
+    has_left = any((ln[1] + ln[2]) / 2 < mid - 40 for ln in lines)
+    has_right = any((ln[1] + ln[2]) / 2 > mid + 40 for ln in lines)
+    if not (has_left and has_right):
+        return lines
+    if cap_cx < mid:
+        return [ln for ln in lines if (ln[1] + ln[2]) / 2 < mid + 30]
+    return [ln for ln in lines if (ln[1] + ln[2]) / 2 >= mid - 30]
+
+
+def build_grid(pg, region_lines):
+    """region_lines 定 y/x 范围后，改用词级坐标 + x 间隙切分重建网格。
+    （行级切分对「整行一行」的 PDF 会塌成 1 列；词级 + gap 切分两种排版通吃。）"""
+    if not region_lines:
+        return [], []
+    y_min = min(l[0] for l in region_lines) - 3
+    # line 元组是 (y0, x0, x1, text, size, bold)，没有 y1；用上界 y0+12 近似行高
+    y_max = max(l[0] for l in region_lines) + 12
+    x_min = min(l[1] for l in region_lines) - 6
+    x_max = max(l[2] for l in region_lines) + 6
+    words = [w for w in pg.get_text("words")
+             if w[1] >= y_min and w[1] <= y_max and w[0] >= x_min and w[2] <= x_max + 20]
+    if not words:
+        return [], []
+    # 行聚类（词 y0 容差 4pt）
+    rows_w = []
+    for w in sorted(words, key=lambda w: (w[1], w[0])):
+        if rows_w and w[1] - rows_w[-1][0] <= 4.0:
+            rows_w[-1][1].append(w)
+            rows_w[-1][0] = min(rows_w[-1][0], w[1])
         else:
-            rows.append([y0, [ln]])
-    # 列左缘聚类
-    xs = sorted(x0 for _, (y, cells) in enumerate(rows) for (y0, x0, x1, t, s, b) in cells)
-    col_edges = []
+            rows_w.append([w[1], [w]])
+    # 行内按 x 间隙切单元格：阈值取词间隙分布的 p10 再留 0.5pt 余量
+    # （词内空格 ~2-4pt、列间槽 ≥6pt；VibeVoice 表 2 最小列槽 6.0pt，均值法会被拉到 18 误并）
+    gaps = []
+    for y, ws in rows_w:
+        ws = sorted(ws, key=lambda w: w[0])
+        for a, b in zip(ws, ws[1:]):
+            gaps.append(b[0] - a[2])
+    GAP = max(4.0, sorted(gaps)[len(gaps) // 10] - 0.5) if gaps else 5.5
+    row_cells = []  # [[(text, x_center)], ...]
+    for y, ws in rows_w:
+        ws = sorted(ws, key=lambda w: w[0])
+        cells, cur, cur_x0, cur_x1 = [], [], None, None
+        for w in ws:
+            if cur and w[0] - cur_x1 > GAP:
+                cells.append((" ".join(cur), (cur_x0 + cur_x1) / 2))
+                cur = []
+            if not cur:
+                cur_x0 = w[0]
+            cur.append(w[4])
+            cur_x1 = w[2]
+        if cur:
+            cells.append((" ".join(cur), (cur_x0 + cur_x1) / 2))
+        row_cells.append(cells)
+    # 列聚类按单元格 x 中心（对右对齐数字列稳健），容差 10pt
+    xs = sorted(cx for cells in row_cells for (t, cx) in cells)
+    col_centers = []
     for x in xs:
-        if col_edges and x - col_edges[-1] <= COL_TOL:
-            pass
+        if not (col_centers and x - col_centers[-1] <= 10.0):
+            col_centers.append(x)
         else:
-            col_edges.append(x)
-    # 分配单元格到列
+            col_centers[-1] = (col_centers[-1] + x) / 2  # 滑动均值，防长链漂移
     grid = []
-    for y, cells in rows:
-        cells = sorted(cells, key=lambda c: c[1])
-        row = [""] * len(col_edges)
-        for (y0, x0, x1, t, s, b) in cells:
-            ci = 0
-            for k in range(len(col_edges) - 1, -1, -1):
-                if x0 >= col_edges[k] - COL_TOL:
-                    ci = k
-                    break
+    for cells in row_cells:
+        row = [""] * len(col_centers)
+        for (t, cx) in cells:
+            ci = min(range(len(col_centers)), key=lambda k: abs(col_centers[k] - cx))
             row[ci] = (row[ci] + " " + t).strip() if row[ci] else t
-        grid.append((row, cells))
+        grid.append(row)
     # 去掉全空行；列只保留 ≥20% 行有内容的（双栏表的列间空隙会产生幽灵列）
-    grid = [g for g in grid if any(c for c in g[0])]
+    grid = [r for r in grid if any(c for c in r)]
     if not grid:
         return [], []
     n_rows = len(grid)
-    keep_cols = [k for k in range(len(col_edges))
-                 if sum(1 for g in grid if g[0][k]) >= max(1, int(n_rows * 0.2))]
-    rows_out = [[g[0][k] for k in keep_cols] for g in grid]
-    # 表头：开头连续的非数字行（跳过 caption 下脚注等长行，它们以缓冲行混进来）
+    keep_cols = [k for k in range(len(col_centers))
+                 if sum(1 for r in grid if r[k]) >= max(1, int(n_rows * 0.2))]
+    rows_out = [[r[k] for k in keep_cols] for r in grid]
+    # 表头：开头连续的非数字行（跳过 caption 下脚注等长行，它们以缓冲行混进来）；
+    # 至少留 2 行数据（全文字表格如 VALL-E 对比表没有数字行，防全被当表头弹空）
     headers = []
-    while rows_out and sum(1 for c in rows_out[0] if is_num(c)) == 0:
+    while len(rows_out) > 2 and sum(1 for c in rows_out[0] if is_num(c)) == 0:
         row0 = rows_out.pop(0)
         if len(" ".join(row0).split()) <= 12:
             headers.append(row0)
@@ -207,15 +254,26 @@ def process(pdf_path, captions):
             continue
         pg = doc[page_no - 1]
         lines = line_cells(pg)
-        cap_y = find_caption_y(lines, text)
-        if cap_y is None:
+        cpos = find_caption_pos(lines, text)
+        if cpos is None:
             continue
-        up = expand_region(lines, cap_y, "up", pg.rect.height)
-        down = expand_region(lines, cap_y, "down", pg.rect.height)
-        region = up if len(up) >= len(down) else down
-        # 行内多单元格：PyMuPDF 可能把一格一词拆成多行——按 y 近似先并一次
-        headers, rows = build_grid(region)
-        if len(rows) >= 2 and rows[0] and max(len(r) for r in rows) >= 3:
+        cap_y, cap_x0, cap_x1 = cpos
+        col_lines = column_filter(lines, cap_x0, cap_x1, pg.rect.width)
+        up = expand_region(col_lines, cap_y, "up", pg.rect.height)
+        down = expand_region(col_lines, cap_y, "down", pg.rect.height)
+        # 两个方向都建网格，选产出更好的。单列网格视为无效（正文行误聚），
+        # 两列及以上按 行×列 计分
+        h_up, r_up = build_grid(pg, up)
+        h_down, r_down = build_grid(pg, down)
+        def grid_score(rows):
+            cols = max((len(x) for x in rows), default=0)
+            return len(rows) * cols if cols >= 2 else 0
+        score_up, score_down = grid_score(r_up), grid_score(r_down)
+        if score_up >= score_down and r_up:
+            headers, rows, region = h_up, r_up, up
+        else:
+            headers, rows, region = h_down, r_down, down
+        if rows and len(rows) >= 2 and max(len(r) for r in rows) >= 2:
             results[bid] = {"page": page_no, "headers": headers, "rows": rows}
     return results
 
@@ -228,6 +286,10 @@ def main():
     for pid in ids:
         jf = ROOT / ".cache" / "papers" / f"{pid}.json"
         pdf = ROOT / "papers" / f"{pid}.pdf"
+        # 许可下架的 PDF（如 2604.18105 NIM4）可在 .cache/papers/ 放一份仅作抽取用，
+        # 不入库不再分发；网格数字与已托管的全文译文同等暴露级别
+        if not pdf.exists() and (ROOT / ".cache" / "papers" / f"{pid}.pdf").exists():
+            pdf = ROOT / ".cache" / "papers" / f"{pid}.pdf"
         if not jf.exists() or not pdf.exists():
             continue
         d = json.load(open(jf, encoding="utf-8"))

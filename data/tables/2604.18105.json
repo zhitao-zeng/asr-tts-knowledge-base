@@ -1,0 +1,477 @@
+{
+ "tab-2-3-1": {
+  "page": 8,
+  "headers": [
+   [
+    "Stage",
+    "",
+    "",
+    "",
+    "Training Data",
+    "Maximum Learning Rate"
+   ],
+   [
+    "",
+    "",
+    "",
+    "Stage 1 Encoder pretraining",
+    "560k hours",
+    "5 × 10−4"
+   ],
+   [
+    "",
+    "",
+    "Stage 2 Alignment",
+    "",
+    "50k hours",
+    "1 × 10−3"
+   ],
+   [
+    "",
+    "Stage 3 IA-SFT",
+    "",
+    "",
+    "560k hours",
+    "1 × 10−5"
+   ],
+   [
+    "",
+    "",
+    "Stage 4 Late joint SFT",
+    "",
+    "560k hours",
+    "1 × 10−5"
+   ]
+  ],
+  "rows": [
+   [
+    "",
+    "",
+    "Stage 5 Context SFT",
+    "",
+    "50k hours",
+    "1 × 10−6"
+   ],
+   [
+    "",
+    "Stage 6 RL",
+    "",
+    "",
+    "20k samples",
+    "2 × 10−6"
+   ]
+  ]
+ },
+ "tab-3-2-2-2": {
+  "page": 12,
+  "headers": [],
+  "rows": [
+   [
+    "SpeechIO",
+    "2.78",
+    "3.17",
+    "2.55",
+    "2.20",
+    "3.41",
+    "2.33",
+    "2.61",
+    "2.84"
+   ],
+   [
+    "Chinese Dialect",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ]
+ },
+ "tab-3-2-2-3": {
+  "page": 12,
+  "headers": [
+   [
+    "",
+    "open-source models rarely encounter during training.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "Fun-ASR",
+    "GLM-ASR",
+    "Qwen3-ASR",
+    "FireRedASR2S",
+    "Step-Audio2",
+    "Qwen3-Omni",
+    "",
+    ""
+   ],
+   [
+    "",
+    "Nano",
+    "Nano",
+    "1.7B",
+    "LLM",
+    "Mini",
+    "Instruct",
+    "Offline",
+    "Stream"
+   ],
+   [
+    "Model Size",
+    "0.8B",
+    "1.5B",
+    "2.0B",
+    "8B+",
+    "8B+",
+    "30B-A3B",
+    "2.3B",
+    "2.3B"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ],
+  "rows": [
+   [
+    "City A",
+    "7.07",
+    "14.68",
+    "9.14",
+    "8.54",
+    "9.41",
+    "9.67",
+    "3.86",
+    "3.85"
+   ],
+   [
+    "City B",
+    "8.50",
+    "15.75",
+    "10.59",
+    "10.43",
+    "11.67",
+    "11.73",
+    "4.86",
+    "4.94"
+   ],
+   [
+    "City C",
+    "7.60",
+    "17.55",
+    "10.01",
+    "10.17",
+    "11.35",
+    "12.18",
+    "3.77",
+    "3.81"
+   ],
+   [
+    "City D",
+    "7.42",
+    "17.91",
+    "9.77",
+    "9.51",
+    "11.55",
+    "10.86",
+    "4.10",
+    "4.17"
+   ],
+   [
+    "Media",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ]
+ },
+ "tab-3-2-3-1": {
+  "page": 13,
+  "headers": [
+   [
+    "",
+    "",
+    "Streaming",
+    "Streaming+RAG"
+   ],
+   [
+    "",
+    "",
+    "CER / Recall",
+    "CER / Recall"
+   ],
+   [
+    "City A POI",
+    "",
+    "3.85 / 82.63",
+    "3.33 / 88.07"
+   ],
+   [
+    "City B POI",
+    "",
+    "4.94 / 77.48",
+    "4.31 / 83.60"
+   ],
+   [
+    "",
+    "Beyond its strong fundamental recognition capability, NIM4-ASR also provides",
+    "",
+    ""
+   ]
+  ],
+  "rows": [
+   [
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "recognition accuracy for acoustically similar entity names, domain-specific",
+    "",
+    ""
+   ],
+   [
+    "",
+    "emerging expressions. To evaluate the effectiveness of the proposed hotword",
+    "",
+    ""
+   ],
+   [
+    "",
+    "focus on entity-intensive POI recognition scenarios, selecting benchmarks from",
+    "",
+    ""
+   ],
+   [
+    "",
+    "constructing city-specific retrieval databases, each comprising millions of",
+    "",
+    ""
+   ],
+   [
+    "",
+    "pairs. As shown in Table 4, incorporating hotword context consistently",
+    "",
+    ""
+   ],
+   [
+    "",
+    "mance, demonstrating the effectiveness of our phoneme-based RAG retrieval",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    ""
+   ]
+  ]
+ },
+ "tab-3-2-4-1": {
+  "page": 13,
+  "headers": [
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Mandarin",
+    "Dialect",
+    "English",
+    "Code-switch",
+    "Lyrics"
+   ]
+  ],
+  "rows": [
+   [
+    "Fun-ASR-nano",
+    "",
+    "0.018%",
+    "0.217%",
+    "0.014%",
+    "0.397%",
+    "0.153%"
+   ],
+   [
+    "GLM-ASR-nano",
+    "",
+    "0.030%",
+    "0.201%",
+    "0.014%",
+    "0.315%",
+    "0.580%"
+   ],
+   [
+    "Qwen3-ASR-1.7B",
+    "",
+    "0.018%",
+    "0.120%",
+    "0.014%",
+    "0.345%",
+    "0.249%"
+   ],
+   [
+    "FireRedASR2S-LLM",
+    "",
+    "0.165%",
+    "0.298%",
+    "0.014%",
+    "0.335%",
+    "1.775%"
+   ],
+   [
+    "Step-Audio2-mini",
+    "",
+    "0.020%",
+    "0.194%",
+    "0.014%",
+    "1.255%",
+    "0.390%"
+   ],
+   [
+    "Qwen3-Omni-Inst",
+    "",
+    "0.013%",
+    "0.370%",
+    "0.007%",
+    "1.778%",
+    "0.129%"
+   ],
+   [
+    "",
+    "NIM4-ASR (offline w/o RL)",
+    "0.003%",
+    "0.122%",
+    "0.007%",
+    "0.261%",
+    "0.215%"
+   ],
+   [
+    "",
+    "NIM4-ASR (offline w/ RL)",
+    "0.002%",
+    "0.117%",
+    "0.007%",
+    "0.261%",
+    "0.081%"
+   ]
+  ]
+ },
+ "tab-3-2-5-1": {
+  "page": 14,
+  "headers": [
+   [
+    "",
+    "",
+    "",
+    "w/o RL",
+    "",
+    "",
+    "w/ RL",
+    "",
+    "",
+    "RL Gain (+/-)",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Offline",
+    "",
+    "Streaming",
+    "Offline",
+    "",
+    "Streaming",
+    "Offline",
+    "",
+    "Streaming"
+   ]
+  ],
+  "rows": [
+   [
+    "Open-source Mandarin Avg.",
+    "",
+    "2.71",
+    "",
+    "2.80",
+    "2.44",
+    "",
+    "2.65",
+    "-0.27",
+    "",
+    "-0.15"
+   ],
+   [
+    "Open-source English Avg.",
+    "",
+    "3.55",
+    "",
+    "3.76",
+    "3.48",
+    "",
+    "3.68",
+    "-0.07",
+    "",
+    "-0.08"
+   ],
+   [
+    "",
+    "Mandarin–English Code-switch Avg.",
+    "8.39",
+    "",
+    "8.62",
+    "8.08",
+    "",
+    "8.38",
+    "-0.31",
+    "",
+    "-0.24"
+   ],
+   [
+    "Internal Mandarin Avg.",
+    "",
+    "3.57",
+    "",
+    "3.69",
+    "3.41",
+    "",
+    "3.44",
+    "-0.16",
+    "",
+    "-0.25"
+   ]
+  ]
+ }
+}

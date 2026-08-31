@@ -6,8 +6,7 @@
    [
     "GT",
     "-",
-    "",
-    "",
+    "-",
     "0.68",
     "-",
     "1.94%",
@@ -18,7 +17,6 @@
    [
     "VALL-E 2∗",
     "0.4B",
-    "",
     "LibriHeavy",
     "0.64",
     "0.68",
@@ -31,7 +29,6 @@
     "VoiceBox†",
     "0.4B",
     "Collected (60kh)",
-    "",
     "0.64",
     "0.67",
     "2.03%",
@@ -43,7 +40,6 @@
     "DiTTo-TTS∗",
     "0.7B",
     "Collected (55kh)",
-    "",
     "0.62",
     "0.65",
     "2.56%",
@@ -54,7 +50,6 @@
    [
     "NaturalSpeech 3†",
     "0.5B",
-    "",
     "LibriLight",
     "0.67",
     "0.76",
@@ -67,7 +62,6 @@
     "CosyVoice",
     "0.4B",
     "Collected (172kh)",
-    "",
     "0.62",
     "-",
     "2.24%",
@@ -78,7 +72,6 @@
    [
     "MaskGCT",
     "1.0B",
-    "",
     "Emilia (100kh)",
     "0.69",
     "-",
@@ -90,7 +83,6 @@
    [
     "F5-TTS",
     "0.3B",
-    "",
     "Emilia (100kh)",
     "0.66",
     "-",
@@ -102,7 +94,6 @@
    [
     "MegaTTS 3",
     "0.3B",
-    "",
     "LibriLight",
     "0.71",
     "0.78",
@@ -112,9 +103,8 @@
     "0.188"
    ],
    [
-    "MegaTTS 3-accelerated",
-    "0.3B",
     "",
+    "0.3B",
     "LibriLight",
     "0.70",
     "0.78",
@@ -125,12 +115,56 @@
    ]
   ]
  },
+ "tab-subjective-metrics-2": {
+  "page": 6,
+  "headers": [
+   [
+    "Model",
+    "#Params",
+    "SIM-O↑",
+    "WER↓"
+   ]
+  ],
+  "rows": [
+   [
+    "GT",
+    "-",
+    "0.69",
+    "2.23%"
+   ],
+   [
+    "CosyVoice",
+    "0.3B",
+    "0.66",
+    "3.59%"
+   ],
+   [
+    "E2 TTS",
+    "0.3B",
+    "0.69",
+    "2.95%"
+   ],
+   [
+    "F5-TTS",
+    "0.3B",
+    "0.66",
+    "2.42%"
+   ],
+   [
+    "MegaTTS 3",
+    "0.3B",
+    "0.70",
+    "2.31%"
+   ]
+  ]
+ },
  "tab-4-3-1": {
   "page": 7,
   "headers": [],
   "rows": [
    [
     "GT",
+    "",
     "-",
     "45.1",
     "0.591",
@@ -140,6 +174,7 @@
     "3.95"
    ],
    [
+    "",
     "CTA-TTS",
     "5.98",
     "41.1",
@@ -150,6 +185,7 @@
     "3.64"
    ],
    [
+    "",
     "MegaTTS 3",
     "5.69",
     "42.3",
@@ -165,44 +201,21 @@
   "page": 7,
   "headers": [
    [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "standard",
-    "",
-    "",
-    "standard",
-    "",
-    ""
+    "Method",
+    "MCD↓",
+    "GPE↓",
+    "VDE↓",
+    "FFE↓",
+    "standard"
    ]
   ],
   "rows": [
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "0.83",
-    "0.19",
-    "",
-    "0.96",
-    "0.07"
-   ],
    [
     "NaturalSpeech 3",
     "4.45",
     "0.44",
     "0.33",
     "0.37",
-    "",
-    "",
-    "",
-    "",
-    "",
     ""
    ],
    [
@@ -211,12 +224,15 @@
     "0.44",
     "0.35",
     "0.40",
-    "",
-    "",
-    "",
-    "",
-    "",
     ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "accented"
    ],
    [
     "Ours w/ S.A.",
@@ -224,25 +240,7 @@
     "0.31",
     "0.29",
     "0.34",
-    "accented",
-    "",
-    "",
-    "accented",
-    "",
     ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "0.17",
-    "0.81",
-    "",
-    "0.04",
-    "0.93"
    ]
   ]
  },
@@ -255,6 +253,7 @@
     "600",
     "8",
     "Discrete",
+    "",
     "3.16",
     "0.94",
     "4.31",
@@ -266,6 +265,7 @@
     "450",
     "9",
     "Discrete",
+    "",
     "4.13",
     "0.97",
     "4.68",
@@ -277,6 +277,7 @@
     "75",
     "1",
     "Discrete",
+    "",
     "2.55",
     "0.88",
     "3.83",
@@ -288,6 +289,7 @@
     "50",
     "1",
     "Discrete",
+    "",
     "3.03",
     "0.91",
     "4.12",
@@ -298,12 +300,411 @@
     "WaveVAE",
     "25",
     "1",
-    "Continuous",
-    "3.84",
+    "",
+    "Continuous 3.84",
+    "",
     "0.96",
     "4.71",
     "1.03",
     "4.10"
+   ]
+  ]
+ },
+ "tab-4-5-2": {
+  "page": 8,
+  "headers": [
+   [
+    "",
+    "",
+    "MegaTTS 3 using different speech compression models",
+    "",
+    ""
+   ],
+   [
+    "",
+    "on the LibriSpeech test-clean set.",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Setting",
+    "SIM-O↑",
+    "WER↓",
+    "CMOS↑",
+    "SMOS↑"
+   ]
+  ],
+  "rows": [
+   [
+    "Ours",
+    "0.71",
+    "1.82%",
+    "0.00",
+    "3.94"
+   ],
+   [
+    "w/ F.A.",
+    "0.70",
+    "1.80%",
+    "-0.17",
+    "3.94"
+   ],
+   [
+    "w/o A.",
+    "0.67",
+    "2.14%",
+    "-0.12",
+    "3.88"
+   ],
+   [
+    "w/ CFG",
+    "0.68",
+    "1.79%",
+    "-0.02",
+    "3.89"
+   ],
+   [
+    "w/o CFG",
+    "0.43",
+    "6.85%",
+    "-0.56",
+    "3.35"
+   ]
+  ]
+ },
+ "tab-4-5-3": {
+  "page": 8,
+  "headers": [],
+  "rows": [
+   [
+    "Discrete",
+    "3.16",
+    "0.94",
+    "4.31",
+    "",
+    "1.63",
+    "3.07"
+   ],
+   [
+    "Discrete",
+    "4.13",
+    "0.97",
+    "4.68",
+    "",
+    "1.05",
+    "4.01"
+   ],
+   [
+    "Discrete",
+    "2.55",
+    "0.88",
+    "3.83",
+    "",
+    "1.99",
+    "4.07"
+   ],
+   [
+    "Discrete",
+    "3.03",
+    "0.91",
+    "4.12",
+    "",
+    "1.72",
+    "4.13"
+   ],
+   [
+    "Continuous",
+    "3.84",
+    "0.96",
+    "4.71",
+    "",
+    "1.03",
+    "4.10"
+   ],
+   [
+    "quality.",
+    "",
+    "The sampling rate are set to 16 kHz.",
+    "",
+    "",
+    "",
+    "Bold and Underline"
+   ],
+   [
+    "",
+    "",
+    "",
+    "“Tokens/s” means how many tokens a one-second speech will be",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "defined alignments and modeling the duration infor-",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "mation implicitly; 3) w/ CFG, we use the standard",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "CFG following the common practice in Diffusion-",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "based TTS; 4) w/o CFG, we do not use the CFG",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "mechanism. All tests follow the experimental setup",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "described in Section 4.2. The results are shown in",
+    "",
+    ""
+   ],
+   [
+    "models",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ]
+ },
+ "tab-results-1": {
+  "page": 16,
+  "headers": [
+   [
+    "",
+    "",
+    "linguistic capabilities, with specific audio examples",
+    "",
+    ""
+   ],
+   [
+    "",
+    "available on the demo page.",
+    "",
+    "",
+    ""
+   ],
+   [
+    "E",
+    "",
+    "Duration Controllability of MegaTTS 3",
+    "",
+    ""
+   ],
+   [
+    "In",
+    "section,",
+    "to",
+    "MegaTTS",
+    "3’s"
+   ],
+   [
+    "",
+    "control",
+    "capabilities",
+    "case",
+    "stud-"
+   ]
+  ],
+  "rows": [
+   [
+    "",
+    "",
+    "ies. We randomly selected a speech prompt from",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "the test set and used the sentence “Notably, rais-",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "ing questions about both the size of the perimeter",
+    "",
+    ""
+   ],
+   [
+    "and",
+    "to",
+    "and",
+    "the",
+    "target"
+   ],
+   [
+    "",
+    "sentence to generate speeches.",
+    "",
+    "In the generation",
+    ""
+   ],
+   [
+    "",
+    "",
+    "process, we first control the sentence-level dura-",
+    "",
+    ""
+   ],
+   [
+    "tion",
+    "multiplying",
+    "the time",
+    "of",
+    "the"
+   ],
+   [
+    "",
+    "anchors",
+    "described",
+    "3.2",
+    "by a"
+   ],
+   [
+    "",
+    "",
+    "fixed value. As shown in Figure 4, our MegaTTS",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "3 demonstrates good sentence-level duration con-",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "trol. Moreover, our MegaTTS 3 is also capable of",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "fine-grained phoneme-level duration control.",
+    "",
+    "As"
+   ],
+   [
+    "",
+    "",
+    "illustrated in Figure 5, we multiplied the anchor",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "coordinates of the phoneme within the red box by",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "a fixed value while keeping the relative positions",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "of other phoneme anchors unchanged. The figure",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "shows that our MegaTTS 3 also exhibits good fine-",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "grained phoneme-level duration controllability.",
+    "",
+    ""
+   ],
+   [
+    "F",
+    "",
+    "Visualization of Attention Matrices",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "We visualize the attention matrices from all lay-",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "ers in the 1.4B MegaTTS 3 model, using 8 sam-",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "pling steps. From Figure 6, we observe: 1) within",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "the same layer, despite different timesteps, the at-",
+    "",
+    ""
    ]
   ]
  },
@@ -313,7 +714,7 @@
   "rows": [
    [
     "Ours w/ Sparse Alignment",
-    "",
+    "4.56",
     "0.52",
     "0.62",
     "0.34",
@@ -346,6 +747,234 @@
     "0.36",
     "0.31",
     "0.36"
+   ]
+  ]
+ },
+ "tab-G-2": {
+  "page": 18,
+  "headers": [
+   [
+    "following Section 3.1, we randomly divide the sam-",
+    ""
+   ],
+   [
+    "",
+    "conducted experiemnts for a test set with longer"
+   ],
+   [
+    "pled sequence into a prompt region and a target",
+    ""
+   ],
+   [
+    "",
+    "samples. Specifically, we randomly select 10 sen-"
+   ],
+   [
+    "",
+    ""
+   ]
+  ],
+  "rows": [
+   [
+    "",
+    "tences, each containing more than 50 words."
+   ],
+   [
+    "our experiments in order to make a fair compari-",
+    ""
+   ],
+   [
+    "",
+    "each speaker in the LibriSpeech test-clean set, we"
+   ],
+   [
+    "son with other methods, this strategy is effective in",
+    ""
+   ],
+   [
+    "",
+    "randomly chose a 3-second clip as a prompt, re-"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "Experiments of Prosodic Naturalness",
+    ""
+   ],
+   [
+    "",
+    "performing TTS models, VoiceCraft (Peng et al.,"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    "2024) and CosyVoice (AR+NAR) (Du et al., 2024),"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "We also conduct the ablation studies using the ob-",
+    ""
+   ],
+   [
+    "",
+    "are presented in Table 10. As shown, compared to"
+   ],
+   [
+    "jective metrics MCD, SSIM, STOI, GPE, VDE, and",
+    ""
+   ],
+   [
+    "",
+    "the baseline systems, MegaTTS 3 does not exhibit"
+   ],
+   [
+    "FFE following InstructTTS (Yang et al., 2024c)",
+    ""
+   ],
+   [
+    "",
+    "a significant decline in speech intelligibility when"
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    "generating longer sentences, illustrating the effec-"
+   ],
+   [
+    "conduct",
+    ""
+   ],
+   [
+    "",
+    "tiveness of the combination of F-LM and MegaTTS"
+   ],
+   [
+    "LibriSpeech test-clean 2.2-hour subset (following",
+    ""
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "2 and",
+    ""
+   ]
+  ]
+ },
+ "tab-J-1": {
+  "page": 19,
+  "headers": [
+   [
+    "",
+    "pronunciations align with the speaker’s accent. Fi-",
+    ""
+   ],
+   [
+    "",
+    "",
+    "dataset, which is described in detail in Appendix D;"
+   ],
+   [
+    "models.",
+    "",
+    "carefully set random seeds in our experiments and"
+   ],
+   [
+    "",
+    "",
+    "the random seeds are provided in Appendix A.2."
+   ],
+   [
+    "",
+    "",
+    "All objective results reported are based on the aver-"
+   ]
+  ],
+  "rows": [
+   [
+    "L",
+    "",
+    ""
+   ],
+   [
+    "",
+    "The proposed model, MegaTTS 3, is designed to",
+    ""
+   ],
+   [
+    "advance",
+    "",
+    ""
+   ],
+   [
+    "",
+    "easier for users to generate personalized speech.",
+    ""
+   ],
+   [
+    "",
+    "When used responsibly and legally, this technique",
+    ""
+   ],
+   [
+    "",
+    "can enhance applications such as movies, games,",
+    ""
+   ],
+   [
+    "",
+    "podcasts, and various other services, contributing",
+    ""
+   ],
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "ever, we acknowledge the potential risks of misuse,",
+    ""
+   ],
+   [
+    "",
+    "such as voice cloning for malicious purposes. To",
+    ""
+   ],
+   [
+    "",
+    "mitigate this risk, solutions like building a corre-",
+    ""
+   ],
+   [
+    "",
+    "sponding deepfake detection model will be consid-",
+    ""
+   ],
+   [
+    "ered.",
+    "",
+    ""
    ]
   ]
  }

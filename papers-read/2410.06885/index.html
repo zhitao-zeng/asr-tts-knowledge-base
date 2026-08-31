@@ -545,15 +545,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-5-1"><span class="cap-k">表</span><p class="en">Table 1: Comparison results on LibriSpeech(-PC) testclean. The Real-Time Factor (RTF) is computed with the inference time of 10s speech on NVIDIA RTX 3090. #Param. stands for the number of learnable parameters and #Data refers to the used training dataset in hours.</p><p class="zh">表 1：LibriSpeech(-PC) test-clean 上的对比结果。实时因子（RTF）按在 NVIDIA RTX 3090 上推理 10 秒语音的耗时计算。#Param. 表示可学习参数数量，#Data 表示所用训练数据的小时数。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Ground Truth</td><td>1.26</td><td>0.76</td><td>0.00</td><td>3.72</td></tr>
-<tr><td>Ground Truth (1127 samples 2 hrs)</td><td></td><td></td><td>2.23</td><td>0.69</td><td>-</td><td>Vocoder Resynthesized</td><td>1.27</td><td>0.72</td><td>-</td><td>-</td></tr>
-<tr><td>Vocoder Resynthesized</td><td></td><td></td><td>2.32</td><td>0.66</td><td>-</td><td>CosyVoice</td><td>3.10</td><td>0.75</td><td>-0.06</td><td>3.54</td></tr>
-<tr><td>CosyVoice</td><td>∼300M</td><td>170K Multi.</td><td>3.59</td><td>0.66</td><td>0.92</td><td>FireRedTTS</td><td>1.51</td><td>0.63</td><td>-0.49</td><td>3.28</td></tr>
-<tr><td>FireRedTTS</td><td>∼580M</td><td>248K Multi.</td><td>2.69</td><td>0.47</td><td>0.84</td><td>MaskGCT</td><td>2.273*</td><td>0.774*</td><td>-</td><td>-</td></tr>
-<tr><td>E2 TTS (32 NFE)</td><td>333M</td><td>100K Multi.</td><td>2.95</td><td>0.69</td><td>0.68</td><td>Seed-TTSDiT</td><td>1.178*</td><td>0.809*</td><td>-</td><td>-</td></tr>
-<tr><td>F5-TTS (16 NFE)</td><td>336M</td><td>100K Multi.</td><td>2.53</td><td>0.66</td><td>0.15</td><td>E2 TTS (32 NFE)</td><td>1.97</td><td>0.73</td><td>-0.04</td><td>3.44</td></tr>
-<tr><td>F5-TTS (32 NFE)</td><td>336M</td><td>100K Multi.</td><td>2.42</td><td>0.66</td><td>0.31</td><td>F5-TTS (16 NFE)</td><td>1.74</td><td>0.75</td><td>0.02</td><td>3.72</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>F5-TTS (32 NFE)</td><td>1.56</td><td>0.76</td><td>0.21</td><td>3.83</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-5-1"><span class="cap-k">表</span><p class="en">Table 1: Comparison results on LibriSpeech(-PC) testclean. The Real-Time Factor (RTF) is computed with the inference time of 10s speech on NVIDIA RTX 3090. #Param. stands for the number of learnable parameters and #Data refers to the used training dataset in hours.</p><p class="zh">表 1：LibriSpeech(-PC) test-clean 上的对比结果。实时因子（RTF）按在 NVIDIA RTX 3090 上推理 10 秒语音的耗时计算。#Param. 表示可学习参数数量，#Data 表示所用训练数据的小时数。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>Ground Truth (1127 samples 2 hrs)</td><td></td><td></td><td>2.23</td><td>0.69</td><td>-</td></tr>
+<tr><td>Vocoder Resynthesized</td><td></td><td></td><td></td><td>2.32</td><td>0.66</td><td>-</td></tr>
+<tr><td>CosyVoice</td><td></td><td>∼300M</td><td>170K Multi.</td><td>3.59</td><td>0.66</td><td>0.92</td></tr>
+<tr><td>FireRedTTS</td><td></td><td>∼580M</td><td>248K Multi.</td><td>2.69</td><td>0.47</td><td>0.84</td></tr>
+<tr><td>E2 TTS (32 NFE)</td><td></td><td>333M</td><td>100K Multi.</td><td>2.95</td><td>0.69</td><td>0.68</td></tr>
+<tr><td>F5-TTS (16 NFE)</td><td></td><td>336M</td><td>100K Multi.</td><td>2.53</td><td>0.66</td><td>0.15</td></tr>
+<tr><td>F5-TTS (32 NFE)</td><td></td><td>336M</td><td>100K Multi.</td><td>2.42</td><td>0.66</td><td>0.31</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-5-11">
           <p class="en-lines"><span class="sent" data-sid="s-5-11-1"><span class="en">of 3.89 (3.83) on Seed-TTS test-en (test-zh), and surpasses some baseline models trained with larger scales.</span></span> <span class="sent" data-sid="s-5-11-2"><span class="en">As stated in Sec.3.1, we simply estimate duration based on the ratio of the audio prompt’s transcript length and the text prompt length, rather than relying on an extra duration predictor.</span></span> <span class="sent" data-sid="s-5-11-3"><span class="en">It is also worth mentioning that Seed-TTS with the best result is trained with orders of larger model size and dataset (several million hours) than ours.</span><button class="mk feat" data-sid="s-5-11-3" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-11-1"><span class="zh">……在 Seed-TTS test-en（test-zh）上 SMOS 为 3.89（3.83），并超过了一些以更大数据规模训练的基线模型。（此句因表格穿插而断行，与 Tab.1 数值块穿插，其列 #Data / WER(%)↓ / SIM-o↑ / RTF↓ 的完整转写见 Tab.1 残块句，含 LibriSpeech test-clean 2.2 小时子集 Ground Truth 2.2 / 0.754、1127 条约 2 小时子集 2.23 / 0.69、E2 TTS 32 NFE 2.95 / 0.69 / 0.68、F5-TTS 16 NFE 2.53 / 0.66 / 0.15 与 32 NFE 2.42 / 0.66 / 0.31 等，数字与原文一致。）</span></span><span class="sent" data-sid="s-5-11-2"><span class="zh">如 Sec.3.1 所述，我们简单地按音频提示转写长度与文本提示长度之比估计时长，而不依赖额外的时长预测器。</span></span><span class="sent" data-sid="s-5-11-3"><span class="zh">值得一提的是，取得最好结果的 Seed-TTS 使用了比我们大若干数量级的模型规模和数据（数百万小时）。</span><button class="mk feat" data-sid="s-5-11-3" title="查看讲解">解</button></span></p>
@@ -617,16 +615,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 2: Results on two test sets, Seed-TTS test-en and test-zh. The boldface indicates the best result, the underline denotes the second best, and * denotes scores reported in baseline papers.</p><p class="zh">表 2：Seed-TTS test-en 与 test-zh 两个测试集上的结果。加粗为最佳结果，下划线为次佳，* 表示基线论文中报告的分数。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>Ground Truth</td><td>1.26</td><td>0.76</td><td>0.00</td><td>3.72</td></tr>
-<tr><td>Ground Truth (1127 samples 2 hrs)</td><td></td><td></td><td>2.23</td><td>0.69</td><td>-</td><td>Vocoder Resynthesized</td><td>1.27</td><td>0.72</td><td>-</td><td>-</td></tr>
-<tr><td>Vocoder Resynthesized</td><td></td><td></td><td>2.32</td><td>0.66</td><td>-</td><td>CosyVoice</td><td>3.10</td><td>0.75</td><td>-0.06</td><td>3.54</td></tr>
-<tr><td>CosyVoice</td><td>∼300M</td><td>170K Multi.</td><td>3.59</td><td>0.66</td><td>0.92</td><td>FireRedTTS</td><td>1.51</td><td>0.63</td><td>-0.49</td><td>3.28</td></tr>
-<tr><td>FireRedTTS</td><td>∼580M</td><td>248K Multi.</td><td>2.69</td><td>0.47</td><td>0.84</td><td>MaskGCT</td><td>2.273*</td><td>0.774*</td><td>-</td><td>-</td></tr>
-<tr><td>E2 TTS (32 NFE)</td><td>333M</td><td>100K Multi.</td><td>2.95</td><td>0.69</td><td>0.68</td><td>Seed-TTSDiT</td><td>1.178*</td><td>0.809*</td><td>-</td><td>-</td></tr>
-<tr><td>F5-TTS (16 NFE)</td><td>336M</td><td>100K Multi.</td><td>2.53</td><td>0.66</td><td>0.15</td><td>E2 TTS (32 NFE)</td><td>1.97</td><td>0.73</td><td>-0.04</td><td>3.44</td></tr>
-<tr><td>F5-TTS (32 NFE)</td><td>336M</td><td>100K Multi.</td><td>2.42</td><td>0.66</td><td>0.31</td><td>F5-TTS (16 NFE)</td><td>1.74</td><td>0.75</td><td>0.02</td><td>3.72</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>F5-TTS (32 NFE)</td><td>1.56</td><td>0.76</td><td>0.21</td><td>3.83</td></tr>
-<tr><td>Table 1: Comparison results on LibriSpeech(-PC) test-</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 2: Results on two test sets, Seed-TTS test-en and test-zh. The boldface indicates the best result, the underline denotes the second best, and * denotes scores reported in baseline papers.</p><p class="zh">表 2：Seed-TTS test-en 与 test-zh 两个测试集上的结果。加粗为最佳结果，下划线为次佳，* 表示基线论文中报告的分数。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>Ground Truth</td><td>1.26</td><td>0.76</td><td>0.00</td><td>3.72</td></tr>
+<tr><td>-</td><td>Vocoder Resynthesized</td><td>1.27</td><td>0.72</td><td>-</td><td>-</td></tr>
+<tr><td>-</td><td>CosyVoice</td><td>3.10</td><td>0.75</td><td>-0.06</td><td>3.54</td></tr>
+<tr><td>0.92</td><td>FireRedTTS</td><td>1.51</td><td>0.63</td><td>-0.49</td><td>3.28</td></tr>
+<tr><td>0.84</td><td>MaskGCT</td><td>2.273*</td><td>0.774*</td><td>-</td><td>-</td></tr>
+<tr><td>0.68</td><td>Seed-TTSDiT</td><td>1.178*</td><td>0.809*</td><td>-</td><td>-</td></tr>
+<tr><td>0.15</td><td>E2 TTS (32 NFE)</td><td>1.97</td><td>0.73</td><td>-0.04</td><td>3.44</td></tr>
+<tr><td>0.31</td><td>F5-TTS (16 NFE)</td><td>1.74</td><td>0.75</td><td>0.02</td><td>3.72</td></tr>
+<tr><td></td><td>F5-TTS (32 NFE)</td><td>1.56</td><td>0.76</td><td>0.21</td><td>3.83</td></tr></tbody></table></div></div>
 <div class="cap" id="fig-5-1-1"><img class="fig" src="../assets/figures/2410.06885/fig-5-1-1.png" loading="lazy" alt="Figure 2: Seed-TTS test-zh evaluation results of 155M small models trained with WenetSpeech4TTS Premium a 945 hours Mand"><span class="cap-k">图</span><p class="en">Figure 2: Seed-TTS test-zh evaluation results of 155M small models trained with WenetSpeech4TTS Premium a 945 hours Mandarin Corpus.</p><p class="zh">图 2：在 WenetSpeech4TTS Premium（945 小时普通话语料）上训练的 155M 小模型，于 Seed-TTS test-zh 上的评测结果。</p></div>
 <div class="pblk" id="p-5-1-3">
           <p class="en-lines"><span class="sent" data-sid="s-5-1-3-1"><span class="en">dates, while E2 TTS is 9.63 and 0.53.</span></span> <span class="sent" data-sid="s-5-1-3-2"><span class="en">We were first faced with unsatisfactory results with reproduced E2 TTS in Mandarin.</span></span> <span class="sent" data-sid="s-5-1-3-3"><span class="en">On the one hand, E2 TTS converges slowly; on the other hand, we found that E2 TTS consistently failed (unable to solve with re-ranking) on 7% test samples (WER&gt;50%) all along the training process, speculated of larger distribution gap with train set.</span><button class="mk feat" data-sid="s-5-1-3-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-1-3-4"><span class="en">To disclose the possible reasons for E2 TTS’s deficiency, we investigate the models’ behaviors with different inputs.</span></span> <span class="sent" data-sid="s-5-1-3-5"><span class="en">See from Tab.4 in Appendix B.2, by dropping the audio prompt, and synthesizing speech solely with the text prompt, E2 TTS is free of failures (F5-TTS also benefits but because of more standard output that is easier to be recognized by the ASR model).</span></span> <span class="sent" data-sid="s-5-1-3-6"><span class="en">This phenomenon implied a deep entanglement of semantic and acoustic features within E2 TTS’s model design, and it greatly hinders real-world application as the failed generation cannot be solved with re-ranking.</span><button class="mk" data-sid="s-5-1-3-6" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-1-3-7"><span class="en">Supervised fine-tuning facing outof-domain data or a tremendous pretraining scale under the slow convergence speed is mandatory for E2 TTS, which is inconvenient for industrial deployment and a crushing burden for individuals.</span></span></p>
@@ -973,11 +970,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-B-1-9"><code>512,4,2</code></div>
 <div class="eq" id="eq-B-1-10"><code>163M</code></div>
 <div class="eq" id="eq-B-1-11"><code>181</code></div>
-<div class="eq" id="eq-B-1-12"><code>F5-TTS+LongSkip</code></div>
+
 <div class="eq" id="eq-B-1-13"><code>768,18,12,2 512,4,2</code></div>
 <div class="eq" id="eq-B-1-14"><code>159M</code></div>
 <div class="eq" id="eq-B-1-15"><code>175</code></div>
-<div class="eq" id="eq-B-1-16"><code>E2 TTS</code></div>
+
 <div class="eq" id="eq-B-1-17"><code>768,20,12,4 -</code></div>
 <div class="eq" id="eq-B-1-18"><code>157M</code></div>
 <div class="eq" id="eq-B-1-19"><code>293</code></div>
@@ -985,24 +982,39 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-B-1-21"><code>768,20,12,4 512,4,2</code></div>
 <div class="eq" id="eq-B-1-22"><code>161M</code></div>
 <div class="eq" id="eq-B-1-23"><code>301</code></div>
-
-
-
-
-<div class="cap" id="tab-B-1-1"><span class="cap-k">表</span><p class="en">Table 3: Details of small model configurations.</p><p class="zh">表 3：小模型配置详情。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>MMDiT</td><td>512,16,16,2</td><td>-</td><td>151M</td><td>104</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>Ground Truth</td><td>2.06</td><td>0.73</td><td>3.53</td><td>-</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>Vocoder Resynthesized</td><td>2.09</td><td>0.70</td><td>3.33</td><td>-</td></tr></tbody></table></div></div></section>
+<div class="eq" id="eq-B-1-24"><code>MMDiT</code></div>
+<div class="eq" id="eq-B-1-25"><code>512,16,16,2 -</code></div>
+<div class="eq" id="eq-B-1-26"><code>151M</code></div>
+<div class="eq" id="eq-B-1-27"><code>104</code></div>
+<div class="cap" id="tab-B-1-1"><span class="cap-k">表</span><p class="en">Table 3: Details of small model configurations.</p><p class="zh">表 3：小模型配置详情。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>B.2</th><th></th><th>Ablation study on Input Condition</th><th></th><th>F5-TTS (16 NFE</th></tr><tr><th></th><th></th><th></th><th></th><th>F5-TTS (32 NFE</th></tr><tr><th></th><th></th><th>The ablation study on different input conditions is</th><th></th><th>F5-TTS (32 NFE</th></tr><tr><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>Ground Truth</th></tr></thead><tbody><tr><td>•</td><td></td><td>Common input with text and audio prompts.</td><td></td><td>Vocoder</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>E2 TTS (16 NFE</td></tr>
+<tr><td>•</td><td></td><td>Providing ground truth duration information</td><td></td><td>E2 TTS (32 NFE</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>E2 TTS (32 NFE</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>F5-TTS (16 NFE</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>F5-TTS (32 NFE</td></tr>
+<tr><td>•</td><td>only</td><td>text</td><td>input,</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>F5-TTS (32 NFE</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>Table 5: Base</td></tr>
+<tr><td></td><td></td><td>In Tab.4, all evaluations take the 155M small mod-</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>PC test-clean,</td></tr>
+<tr><td></td><td></td><td>els’ checkpoints trained on WenetSpeech4TTS Pre-</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>without</td></tr>
+<tr><td></td><td>mium at 800K updates. Analysis see Sec.5.1.</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>coefficient s</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>erations</td></tr>
+<tr><td>Model</td><td>Common Input</td><td></td><td>GT Duration</td><td>ablation.</td></tr>
+<tr><td></td><td></td><td></td><td>WER↓SIM↑WER↓SIM↑WER↓SIM↑</td><td></td></tr>
+<tr><td>F5-TTS</td><td>4.17</td><td>0.54</td><td>3.87</td><td></td></tr>
+<tr><td></td><td></td><td>0.55</td><td>5.28</td><td></td></tr>
+<tr><td></td><td>5.17</td><td>0.53</td><td>5.03</td><td>B.4</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-B-2"><span class="secnum">B.2</span> <span class="t-zh">Ablation study on Input Condition</span><span class="t-en">Ablation study on Input Condition</span></h3><div class="pblk" id="p-B-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-B-2-1-1"><span class="en">The ablation study on different input conditions is conducted with three settings:</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-2-1-1"><span class="zh">输入条件消融：对不同输入条件的消融研究在三种设置下进行：</span></span></p>
           
         </div>
-<div class="pblk" id="p-B-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-B-2-2-1"><span class="en">• Common input with text and audio prompts.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-2-2-1"><span class="zh">• 常规输入：同时使用文本与音频提示。</span></span></p>
-          
-        </div>
+
 <div class="pblk" id="p-B-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-B-2-3-1"><span class="en">• Providing ground truth duration information rather than an estimate.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-2-3-1"><span class="zh">• 提供真实（ground truth）时长信息而非估计值。</span></span></p>
@@ -1013,28 +1025,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-B-2-4-1"><span class="zh">• 只保留文本输入，丢弃音频提示（使用空白）。</span></span></p>
           
         </div>
-<div class="pblk" id="p-B-2-5">
-          <p class="en-lines"><span class="sent" data-sid="s-B-2-5-1"><span class="en">In Tab.4, all evaluations take the 155M small models’ checkpoints trained on WenetSpeech4TTS Premium at 800K updates.</span></span> <span class="sent" data-sid="s-B-2-5-2"><span class="en">Analysis see Sec.5.1.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-2-5-1"><span class="zh">Tab.4 中的所有评测均取在 WenetSpeech4TTS Premium 上训练至 800K 步更新的 155M 小模型检查点。</span></span><span class="sent" data-sid="s-B-2-5-2"><span class="zh">分析见 Sec.5.1。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-B-2-6">
-          <p class="en-lines"><span class="sent" data-sid="s-B-2-6-1"><span class="en">Model Common Input GT Duration Text-Only WER↓SIM↑WER↓SIM↑WER↓SIM↑ F5-TTS</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-2-6-1"><span class="zh">表头：Model × Common / Input GT Duration / Text-Only（WER↓/SIM↑ 各组）——F5-TTS（后续照原文）。</span></span></p>
-          
-        </div>
 
 
 
-<div class="eq" id="eq-B-2-4"><code>F5-TTS+LongSkip</code></div>
-<div class="eq" id="eq-B-2-5"><code>5.17 0.53 5.03 0.53 3.35 0.21</code></div>
-<div class="eq" id="eq-B-2-6"><code>E2 TTS</code></div>
-<div class="eq" id="eq-B-2-7"><code>9.63 0.53 9.48 0.53 3.48 0.21</code></div>
+<div class="eq" id="eq-B-2-2"><code>F5-TTS+Conv2Audio 5.78</code></div>
 
 
-<div class="cap" id="tab-B-2-1"><span class="cap-k">表</span><p class="en">Table 4: Ablation study on different input conditions. The boldface indicates the best result, and the underline denotes the second best. All scores are the average of three random seed results.</p><p class="zh">表 4：不同输入条件的消融研究。加粗为最佳结果，下划线为次佳。所有分数均为 3 个随机种子结果的平均值。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>E2 TTS+Conv2Text 18.10</td><td>0.49</td><td>17.94</td><td>0.49</td><td>3.06</td><td>0.21</td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>order), midpoint (second-order), or improved Heun</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>(third-order, Heun-3) ODE solver during F5-TTS</td></tr></tbody></table></div></div></section>
+
+
+
+
+
+<div class="cap" id="tab-B-2-1"><span class="cap-k">表</span><p class="en">Table 4: Ablation study on different input conditions. The boldface indicates the best result, and the underline denotes the second best. All scores are the average of three random seed results.</p><p class="zh">表 4：不同输入条件的消融研究。加粗为最佳结果，下划线为次佳。所有分数均为 3 个随机种子结果的平均值。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>F5-TTS+LongSkip</td><td>5.17</td><td>0.53</td><td>5.03</td><td>0.53</td><td>3.35</td><td>0.21</td></tr>
+<tr><td>E2 TTS</td><td></td><td>9.63</td><td>0.53</td><td>9.48</td><td>0.53</td><td>3.48</td><td>0.21</td></tr>
+<tr><td></td><td>E2 TTS+Conv2Text</td><td>18.10</td><td>0.49</td><td>17.94</td><td>0.49</td><td>3.06</td><td>0.21</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-B-3"><span class="secnum">B.3</span> <span class="t-zh">Sway Sampling Effectiveness on Base Models</span><span class="t-en">Sway Sampling Effectiveness on Base Models</span></h3><div class="pblk" id="p-B-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-B-3-1-1"><span class="en">From Tab.5, it is clear that our Sway Sampling strategy for test-time flow steps consistently improves the zero-shot generation performance in aspects of faithfulness to prompt text (WER), speaker similarity (SIM), and naturalness (UTMOS).</span></span> <span class="sent" data-sid="s-B-3-1-2"><span class="en">The gain of applying Sway Sampling to E2 TTS (Eskimez et al., 2024) proves that our Sway Sampling strategy is universally applicable to existing flow matching based TTS models.</span></span></p>
@@ -1047,7 +1051,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-B-3-1"><code>2.23 0.69 4.09 -</code></div>
-
+<div class="eq" id="eq-B-3-2"><code>Vocoder Resynthesized</code></div>
 <div class="eq" id="eq-B-3-3"><code>2.32 0.66 3.64 -</code></div>
 <div class="eq" id="eq-B-3-4"><code>E2 TTS (16 NFE w/ SS)</code></div>
 <div class="eq" id="eq-B-3-5"><code>2.86 0.71 3.66 0.34</code></div>
@@ -1062,9 +1066,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-B-3-14"><code>F5-TTS (32 NFE w/o SS)</code></div>
 <div class="eq" id="eq-B-3-15"><code>2.84 0.62 3.70 0.53</code></div>
 
-
-
-
+<div class="eq" id="eq-B-3-17"><code>2.06 0.73 3.53 -</code></div>
+<div class="eq" id="eq-B-3-18"><code>Vocoder Resynthesized</code></div>
+<div class="eq" id="eq-B-3-19"><code>2.09 0.70 3.33 -</code></div>
 <div class="eq" id="eq-B-3-20"><code>E2 TTS (16 NFE w/ SS)</code></div>
 <div class="eq" id="eq-B-3-21"><code>1.99 0.72 3.55 0.34</code></div>
 <div class="eq" id="eq-B-3-22"><code>E2 TTS (32 NFE w/ SS)</code></div>
@@ -1079,7 +1083,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-B-3-31"><code>1.93 0.63 3.51 0.53</code></div>
 <div class="eq" id="eq-B-3-32"><code>Seed-TTS test-zh Ground Truth</code></div>
 <div class="eq" id="eq-B-3-33"><code>1.26 0.76 2.78 -</code></div>
-
+<div class="eq" id="eq-B-3-34"><code>Vocoder Resynthesized</code></div>
 <div class="eq" id="eq-B-3-35"><code>1.27 0.72 2.61 -</code></div>
 <div class="eq" id="eq-B-3-36"><code>E2 TTS (16 NFE w/ SS)</code></div>
 <div class="eq" id="eq-B-3-37"><code>1.80 0.78 2.84 0.34</code></div>
@@ -1093,10 +1097,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-B-3-45"><code>1.58 0.75 2.91 0.53</code></div>
 <div class="eq" id="eq-B-3-46"><code>F5-TTS (32 NFE w/o SS)</code></div>
 <div class="eq" id="eq-B-3-47"><code>1.93 0.69 2.58 0.53</code></div>
-<div class="cap" id="tab-B-3-1"><span class="cap-k">表</span><p class="en">Table 5: Base model evaluation results on LibriSpeechPC test-clean, Seed-TTS test-en and test-zh, with and without proposed test-time Sway Sampling (SS, with coefficient s = −1) strategy for flow steps. All generations leverage the midpoint ODE solver for ease of ablation.</p><p class="zh">表 5：基础模型在 LibriSpeech-PC test-clean、Seed-TTS test-en 与 test-zh 上，使用与不使用测试期 Sway Sampling（SS，系数 s = −1）的评测结果。为便于消融，所有生成均使用中点 ODE 求解器。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>In Tab.4, all evaluations take the 155M small mod-</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>PC test-clean, Seed-TTS test-en and test-zh, with and</th></tr><tr><th>els’ checkpoints trained on WenetSpeech4TTS Pre-</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>without proposed test-time Sway Sampling (SS, with</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>erations leverage the midpoint ODE solver for ease of</th></tr></thead><tbody><tr><td>Model</td><td></td><td></td><td>GT Duration</td><td></td><td>Text-Only</td><td></td><td>ablation.</td></tr>
-<tr><td></td><td>WER↓SIM↑WER↓SIM↑WER↓SIM↑</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>F5-TTS</td><td>4.17</td><td>0.54</td><td>3.87</td><td>0.54</td><td>3.22</td><td>0.21</td><td></td></tr>
-<tr><td>F5-TTS+Conv2Audio 5.78</td><td></td><td>0.55</td><td>5.28</td><td>0.55</td><td>3.78</td><td>0.21</td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-B-3-1"><span class="cap-k">表</span><p class="en">Table 5: Base model evaluation results on LibriSpeechPC test-clean, Seed-TTS test-en and test-zh, with and without proposed test-time Sway Sampling (SS, with coefficient s = −1) strategy for flow steps. All generations leverage the midpoint ODE solver for ease of ablation.</p><p class="zh">表 5：基础模型在 LibriSpeech-PC test-clean、Seed-TTS test-en 与 test-zh 上，使用与不使用测试期 Sway Sampling（SS，系数 s = −1）的评测结果。为便于消融，所有生成均使用中点 ODE 求解器。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th>PC test-clean, Seed-TTS test-en and test-zh, with and</th><th></th><th></th></tr><tr><th>Pre-</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>without proposed test-time Sway Sampling (SS, with</th><th></th><th></th></tr><tr><th></th><th></th><th>coefficient s</th><th>=</th><th></th><th></th><th>−1) strategy for flow steps.</th><th>All gen-</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>erations leverage the midpoint ODE solver for ease of</th><th></th><th></th></tr></thead><tbody><tr><td></td><td>ablation.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>0.21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>0.21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>0.21</td><td>B.4</td><td></td><td></td><td>Comparison of ODE Solvers</td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-B-4"><span class="secnum">B.4</span> <span class="t-zh">Comparison of ODE Solvers</span><span class="t-en">Comparison of ODE Solvers</span></h3><div class="pblk" id="p-B-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-B-4-1-1"><span class="en">The comparison results of using the Euler (firstorder), midpoint (second-order), or improved Heun (third-order, Heun-3) ODE solver during F5-TTS inference are shown in Tab.6.</span></span> <span class="sent" data-sid="s-B-4-1-2"><span class="en">The Euler is inherently faster and performs slightly better typically for larger NFE inference with Sway Sampling (otherwise the Euler solver results in degradation).</span></span></p>
@@ -1148,26 +1152,23 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-B-5-1-1"><span class="zh">ELLA-V 困难句评测：ELLA-V（Song et al., 2024）提出了一组包含 100 种困难文本模式的挑战性测试集，用于评测 TTS 模型的鲁棒性。</span></span><span class="sent" data-sid="s-B-5-1-2"><span class="zh">沿用以往工作（Chen et al., 2024; Meng et al., 2024; Eskimez et al., 2024），我们把生成样本放在演示页面（见脚注 8）。</span></span><span class="sent" data-sid="s-B-5-1-3"><span class="zh">我们另外与 E1 TTS（Liu et al., 2024b）报告的客观评测结果比较。</span></span></p>
           
         </div>
-<div class="pblk" id="p-B-5-2">
-          <p class="en-lines"><span class="sent" data-sid="s-B-5-2-1"><span class="en">StyleTTS 2 is a TTS model leveraging style diffusion and adversarial training with large speech language models.</span></span> <span class="sent" data-sid="s-B-5-2-2"><span class="en">CosyVoice is a two-stage largescale TTS system, consisting of a text-to-token AR model and a token-to-speech flow matching model.</span></span> <span class="sent" data-sid="s-B-5-2-3"><span class="en">Concurrent with our work, E1 TTSDMD is a diffusion-based NAR model with a distribution matching distillation technique to achieve one-step TTS generation.</span></span> <span class="sent" data-sid="s-B-5-2-4"><span class="en">Since the prompts used by E1 TTSDMD are not released, we randomly sample 3-second-long speeches in our LibriSpeech-PC testclean set as audio prompts.</span></span> <span class="sent" data-sid="s-B-5-2-5"><span class="en">The evaluation result is in Tab.7.</span></span> <span class="sent" data-sid="s-B-5-2-6"><span class="en">We evaluate the reproduced E2 TTS and our F5-TTS with 32 NFE and Sway Sampling and report the averaged score of three random seed results.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-5-2-1"><span class="zh">StyleTTS 2 是一个利用风格扩散并与大型语音语言模型进行对抗训练的 TTS 模型。</span></span><span class="sent" data-sid="s-B-5-2-2"><span class="zh">CosyVoice 是一个两阶段大规模 TTS 系统，由文本到 token 的 AR 模型和 token 到语音的流匹配模型组成。</span></span><span class="sent" data-sid="s-B-5-2-3"><span class="zh">与我们同期的工作 E1 TTS_DMD 是一个基于扩散的 NAR 模型，用分布匹配蒸馏技术实现一步 TTS 生成。</span></span><span class="sent" data-sid="s-B-5-2-4"><span class="zh">由于 E1 TTS_DMD 所用的提示未公开，我们从 LibriSpeech-PC test-clean 集中随机抽取 3 秒语音作为音频提示。</span></span><span class="sent" data-sid="s-B-5-2-5"><span class="zh">评测结果见 Tab.7。</span></span><span class="sent" data-sid="s-B-5-2-6"><span class="zh">我们以 32 NFE 加 Sway Sampling 评测复现的 E2 TTS 与我们的 F5-TTS，报告 3 个随机种子的平均分。</span></span></p>
-          
-        </div>
+
 <div class="pblk" id="p-B-5-3">
           <p class="en-lines"><span class="sent" data-sid="s-B-5-3-1"><span class="en">We note that a higher WER compared to the results on commonly used test sets is partially due to mispronunciation (yogis to yojus, cavorts to caverts, etc.).</span></span> <span class="sent" data-sid="s-B-5-3-2"><span class="en">The high Deletion rate indicates a word-skipping phenomenon when our model encounters a stack of repeating words.</span></span> <span class="sent" data-sid="s-B-5-3-3"><span class="en">The low Insertion rate makes it clear that our model is free of endless repetition.</span></span> <span class="sent" data-sid="s-B-5-3-4"><span class="en">We further emphasize that prompts from different speakers will spell very distinct utter8https://SWivid.github.io/F5-TTS/ Model WER(%)↓ Sub.(%)↓ Del.(%)↓ Ins.(%)↓ StyleTTS 2</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-5-3-1"><span class="zh">我们注意到，相比常用测试集上的结果，此处更高的 WER 部分源于误发音（如 yogis 读成 yojus、cavorts 读成 caverts 等）。</span></span><span class="sent" data-sid="s-B-5-3-2"><span class="zh">较高的删除率（Deletion）表明模型在遇到一连串重复词时存在跳词现象。</span></span><span class="sent" data-sid="s-B-5-3-3"><span class="zh">较低的插入率（Insertion）则说明我们的模型不会出现无休止重复。</span></span><span class="sent" data-sid="s-B-5-3-4"><span class="zh">我们进一步强调，不同说话人的提示会产生差异极大的发音（脚注 8：https://SWivid.github.io/F5-TTS/）。（表格：Model × WER(%)↓ × Sub.(%)↓ × Del.(%)↓ × Ins.(%)↓——StyleTTS 2 4.83*/2.17*/2.03*/0.61*；CosyVoice 8.30*/3.47*/2.74*/1.93*；E1 TTS_DMD 4.29*/1.89*/1.62*/0.74*；E2 TTS 8.58/3.70/4.82/0.06；F5-TTS 4.40/1.81/2.40/0.18。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-B-5-1"><code>4.83* 2.17* 2.03* 0.61*</code></div>
-<div class="eq" id="eq-B-5-2"><code>CosyVoice</code></div>
-<div class="eq" id="eq-B-5-3"><code>8.30* 3.47* 2.74* 1.93*</code></div>
-<div class="eq" id="eq-B-5-4"><code>E1 TTSDMD</code></div>
-<div class="eq" id="eq-B-5-5"><code>4.29* 1.89* 1.62* 0.74*</code></div>
-<div class="eq" id="eq-B-5-6"><code>E2 TTS</code></div>
-<div class="eq" id="eq-B-5-7"><code>8.58 3.70 4.82 0.06</code></div>
-<div class="eq" id="eq-B-5-8"><code>F5-TTS</code></div>
-<div class="eq" id="eq-B-5-9"><code>4.40 1.81 2.40 0.18</code></div>
-<div class="cap" id="tab-B-5-1"><span class="cap-k">表</span><p class="en">Table 7: Results of zero-shot TTS WER on ELLA-V hard sentences. The asterisk * denotes the score reported in E1 TTS. Sub. for Substitution, Del. for Deletion, and Ins. for Insertion.</p><p class="zh">表 7：ELLA-V 困难句上的零样本 TTS WER 结果。星号 * 表示 E1 TTS 报告的分数。Sub. 为替换错误，Del. 为删除错误，Ins. 为插入错误。</p></div>
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-B-5-1"><span class="cap-k">表</span><p class="en">Table 7: Results of zero-shot TTS WER on ELLA-V hard sentences. The asterisk * denotes the score reported in E1 TTS. Sub. for Substitution, Del. for Deletion, and Ins. for Insertion.</p><p class="zh">表 7：ELLA-V 困难句上的零样本 TTS WER 结果。星号 * 表示 E1 TTS 报告的分数。Sub. 为替换错误，Del. 为删除错误，Ins. 为插入错误。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>StyleTTS 2</th><th>4.83*</th><th>2.17*</th><th>2.03*</th><th>0.61*</th></tr><tr><th>CosyVoice</th><th>8.30*</th><th>3.47*</th><th>2.74*</th><th>1.93*</th></tr><tr><th>E1 TTSDMD</th><th>4.29*</th><th>1.89*</th><th>1.62*</th><th>0.74*</th></tr></thead><tbody><tr><td>E2 TTS</td><td>8.58</td><td>3.70</td><td>4.82</td><td>0.06</td></tr>
+<tr><td>F5-TTS</td><td>4.40</td><td>1.81</td><td>2.40</td><td>0.18</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-B-5-4">
           <p class="en-lines"><span class="sent" data-sid="s-B-5-4-1"><span class="en">ances, where the ASR model transcribes correctly for one, and fails for another (e.g. quokkas to Cocos).</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-5-4-1"><span class="zh">ASR 模型可能转写对其中一个、却转写错另一个（如 quokkas 转写为 Cocos）。</span></span></p>
@@ -1198,14 +1199,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 <div class="eq" id="eq-B-6-8"><code>32 NFE - BigVGAN</code></div>
 <div class="eq" id="eq-B-6-9"><code>2.11 (1.81) 0.67 2.28 (2.03) 0.67 1.62 0.66 1.53 0.74</code></div>
-<div class="cap" id="tab-B-6-1"><span class="cap-k">表</span><p class="en">Table 8: F5-TTS Base model evaluation results on LibriSpeech-PC test-clean, LibriSpeech-non-PC test-clean, Seed-TTS test-en and test-zh with BigVGAN and Vocos, default setting as in Sec.5. The WER scores in brackets indicate results leveraging the Hubert-large-based ASR model.</p><p class="zh">表 8：F5-TTS 基础模型在 LibriSpeech-PC test-clean、LibriSpeech-non-PC test-clean、Seed-TTS test-en 与 test-zh 上分别使用 BigVGAN 与 Vocos 的评测结果，默认设置同 Sec.5。括号内 WER 为使用 Hubert-large ASR 模型的结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Train Set</th><th></th><th></th><th>LibriTTS - 585 hours</th><th></th><th></th><th></th><th>LJSpeech - 24 hours</th><th></th><th></th></tr><tr><th></th><th>Test Set</th><th></th><th></th><th>LibriSpeech-PC test-clean</th><th></th><th></th><th></th><th>LJSpeech in-set tests</th><th></th><th></th></tr><tr><th>Model (#Param.)</th><th></th><th></th><th></th><th></th><th>SIM-o ↑</th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td></td><td>-</td><td>2.23</td><td></td><td>0.69</td><td>4.09</td><td>2.36</td><td></td><td>0.72</td><td>4.36</td></tr>
-<tr><td>USLM (361M)</td><td></td><td>-</td><td>6.1</td><td></td><td>0.43</td><td>-</td><td>-</td><td></td><td>-</td><td>-</td></tr>
-<tr><td></td><td></td><td>100K</td><td>29.5</td><td></td><td>0.53</td><td>3.78</td><td>5.64</td><td></td><td>0.72</td><td>4.17</td></tr>
-<tr><td></td><td></td><td>200K</td><td>4.58</td><td></td><td>0.59</td><td>4.07</td><td>2.93</td><td></td><td>0.72</td><td>4.18</td></tr>
-<tr><td>F5-TTS small</td><td></td><td>300K</td><td>2.71</td><td></td><td>0.60</td><td>4.11</td><td>3.26</td><td></td><td>0.71</td><td>4.12</td></tr>
-<tr><td></td><td></td><td>400K</td><td>2.44</td><td></td><td>0.60</td><td>4.11</td><td>3.90</td><td></td><td>0.70</td><td>4.05</td></tr>
-<tr><td></td><td></td><td>500K</td><td>2.20</td><td></td><td>0.60</td><td>4.10</td><td>4.68</td><td></td><td>0.70</td><td>3.99</td></tr>
-<tr><td></td><td></td><td>600K</td><td>2.23</td><td></td><td>0.59</td><td>4.10</td><td>5.25</td><td></td><td>0.69</td><td>3.93</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-B-6-1"><span class="cap-k">表</span><p class="en">Table 8: F5-TTS Base model evaluation results on LibriSpeech-PC test-clean, LibriSpeech-non-PC test-clean, Seed-TTS test-en and test-zh with BigVGAN and Vocos, default setting as in Sec.5. The WER scores in brackets indicate results leveraging the Hubert-large-based ASR model.</p><p class="zh">表 8：F5-TTS 基础模型在 LibriSpeech-PC test-clean、LibriSpeech-non-PC test-clean、Seed-TTS test-en 与 test-zh 上分别使用 BigVGAN 与 Vocos 的评测结果，默认设置同 Sec.5。括号内 WER 为使用 Hubert-large ASR 模型的结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>indicate results leveraging the Hubert-large-based ASR model.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Train Set</th><th></th><th></th><th>LibriTTS - 585 hours</th><th></th><th></th><th>LJSpeech - 24 hours</th><th></th></tr><tr><th></th><th>Test Set</th><th></th><th></th><th>LibriSpeech-PC test-clean</th><th></th><th></th><th>LJSpeech in-set tests</th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td></td><td>-</td><td>2.23</td><td>0.69</td><td>4.09</td><td>2.36</td><td>0.72</td><td>4.36</td></tr>
+<tr><td>USLM (361M)</td><td></td><td>-</td><td>6.1</td><td>0.43</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td></td><td></td><td>100K</td><td>29.5</td><td>0.53</td><td>3.78</td><td>5.64</td><td>0.72</td><td>4.17</td></tr>
+<tr><td></td><td></td><td>200K</td><td>4.58</td><td>0.59</td><td>4.07</td><td>2.93</td><td>0.72</td><td>4.18</td></tr>
+<tr><td>F5-TTS small</td><td></td><td>300K</td><td>2.71</td><td>0.60</td><td>4.11</td><td>3.26</td><td>0.71</td><td>4.12</td></tr>
+<tr><td>(158M)</td><td></td><td>400K</td><td>2.44</td><td>0.60</td><td>4.11</td><td>3.90</td><td>0.70</td><td>4.05</td></tr>
+<tr><td></td><td></td><td>500K</td><td>2.20</td><td>0.60</td><td>4.10</td><td>4.68</td><td>0.70</td><td>3.99</td></tr>
+<tr><td></td><td></td><td>600K</td><td>2.23</td><td>0.59</td><td>4.10</td><td>5.25</td><td>0.69</td><td>3.93</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-B-6-4">
           <p class="en-lines"><span class="sent" data-sid="s-B-6-4-1"><span class="en">Train Set LibriTTS - 585 hours LJSpeech - 24 hours Test Set LibriSpeech-PC test-clean LJSpeech in-set tests Model (#Param.)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-6-4-1"><span class="zh">（附录表头：训练集 LibriTTS 585 小时、LJSpeech 24 小时；测试集 LibriSpeech-PC test-clean、LJSpeech 集内测试；Model（#Param.）。）</span></span></p>
@@ -1232,11 +1233,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 <div class="cap" id="tab-B-6-2"><span class="cap-k">表</span><p class="en">Table 9: F5-TTS small models evaluation results on LibriSpeech-PC test-clean (model trained on LibriTTS 585 hours multi-speaker dataset), and on LJSpeech in-set test samples (model trained on 24 hours single-speaker LJSpeech); Vocos as vocoder, Whisper-large-v3 as ASR model. The scores of USLM (Zhang et al., 2023a) are evaluated with the official checkpoint pre-trained on LibriTTS.</p><p class="zh">表 9：F5-TTS 小模型评测结果：在 LibriSpeech-PC test-clean 上（模型于 LibriTTS 585 小时多说话人数据集训练），以及在 LJSpeech 集内测试样本上（模型于 24 小时单说话人 LJSpeech 训练）；声码器为 Vocos，ASR 模型为 Whisper-large-v3。USLM（Zhang et al., 2023a）的分数由其在 LibriTTS 上预训练的官方权重评测得到。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Ground Truth</td><td></td><td>-</td><td>2.23</td><td>0.69</td><td>4.09</td><td>2.36</td><td>0.72</td><td>4.36</td></tr>
-<tr><td>USLM (361M)</td><td></td><td>-</td><td>6.1</td><td>0.43</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td></td><td>USLM (361M) -</td><td></td><td>6.1</td><td>0.43</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td></td><td></td><td>100K</td><td>29.5</td><td>0.53</td><td>3.78</td><td>5.64</td><td>0.72</td><td>4.17</td></tr>
 <tr><td></td><td></td><td>200K</td><td>4.58</td><td>0.59</td><td>4.07</td><td>2.93</td><td>0.72</td><td>4.18</td></tr>
-<tr><td>F5-TTS small</td><td></td><td>300K</td><td>2.71</td><td>0.60</td><td>4.11</td><td>3.26</td><td>0.71</td><td>4.12</td></tr>
-<tr><td></td><td>(158M)</td><td>400K</td><td>2.44</td><td>0.60</td><td>4.11</td><td>3.90</td><td>0.70</td><td>4.05</td></tr>
+<tr><td></td><td>F5-TTS small 300K</td><td></td><td>2.71</td><td>0.60</td><td>4.11</td><td>3.26</td><td>0.71</td><td>4.12</td></tr>
+<tr><td>(158M)</td><td></td><td>400K</td><td>2.44</td><td>0.60</td><td>4.11</td><td>3.90</td><td>0.70</td><td>4.05</td></tr>
 <tr><td></td><td></td><td>500K</td><td>2.20</td><td>0.60</td><td>4.10</td><td>4.68</td><td>0.70</td><td>3.99</td></tr>
 <tr><td></td><td></td><td>600K</td><td>2.23</td><td>0.59</td><td>4.10</td><td>5.25</td><td>0.69</td><td>3.93</td></tr></tbody></table></div></div></section>
 <section>

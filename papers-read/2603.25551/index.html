@@ -361,15 +361,16 @@ Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-adversarial-training-5-1"><span class="zh">（公式片段：Σ_{n=1} ‖Dm_n(x) − Dm_n(x̂)‖₁（式 2）。其中 Dm_n 表示第 n 个判别器的第 m 层，N 个判别器各有 M 层。）</span></span><span class="sent" data-sid="s-adversarial-training-5-2"><span class="zh">沿用 Défossez et al. [2024]、Parker et al. [2024]，我们用这一特征匹配</span></span></p>
           
         </div>
-<div class="cap" id="tab-adversarial-training-1"><span class="cap-k">表</span><p class="en">Table 1: Key hyperparameters of the Voxtral Codec.</p><p class="zh">表 1：Voxtral Codec 的关键超参数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Parameter</th><th>Value</th></tr><tr><th>Input / Preprocessing</th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Sampling rate</td><td>24000</td></tr>
-<tr><td></td><td>Patch size</td><td>240</td></tr>
-<tr><td>AutoEncoder</td><td></td><td></td></tr>
-<tr><td></td><td>Encoder patch projection kernel size</td><td>7</td></tr>
-<tr><td></td><td>Encoder patch projection dimension</td><td>1024</td></tr>
-<tr><td></td><td>Encoder transformer layers1</td><td>2 →2 →2 →2</td></tr>
-<tr><td></td><td>Encoder sliding window size</td><td>16 →8 →4 →2</td></tr>
-<tr><td></td><td>Encoder conv kernels</td><td>4 →4 →4 →3</td></tr>
-<tr><td></td><td>Encoder conv strides</td><td>2 →2 →2 →1</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-adversarial-training-1"><span class="cap-k">表</span><p class="en">Table 1: Key hyperparameters of the Voxtral Codec.</p><p class="zh">表 1：Voxtral Codec 的关键超参数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Parameter</th><th></th><th></th><th></th><th>Value</th><th></th></tr><tr><th>Input / Preprocessing</th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Sampling rate</td><td></td><td></td><td></td><td>24000</td><td></td></tr>
+<tr><td>Patch size</td><td></td><td></td><td></td><td>240</td><td></td></tr>
+<tr><td>AutoEncoder</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Encoder patch projection kernel size</td><td>7</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Encoder patch projection dimension</td><td>1024</td><td></td></tr>
+<tr><td></td><td></td><td>Encoder transformer layers1</td><td></td><td></td><td>2 →2 →2 →2</td></tr>
+<tr><td></td><td></td><td>Encoder sliding window size</td><td></td><td></td><td>16 →8 →4 →2</td></tr>
+<tr><td></td><td>Encoder conv kernels</td><td></td><td></td><td></td><td>4 →4 →4 →3</td></tr>
+<tr><td></td><td>Encoder conv strides</td><td></td><td></td><td></td><td>2 →2 →2 →1</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-parameter"><span class="t-zh">参数</span><span class="t-en">Parameter</span></h3>
 
@@ -622,10 +623,10 @@ Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-1-1-1"><span class="zh">1https://docs.mistral.ai/models/mistral-small-creative-25-12 码本方面，Mimi 采用 RVQ 设计，因此可以灵活选取码本子集，在码率与质量之间做权衡。</span></span><span class="sent" data-sid="s-4-1-1-2"><span class="zh">当 Voxtral Codec 与 Mimi 在 16 码本配置下比较（此时码率相近）时，Voxtral Codec 在所有客观指标上都更优。</span></span><span class="sent" data-sid="s-4-1-1-3"><span class="zh">在内部主观评估中，我们发现 Voxtral Codec 在语音音频（我们的主要关注点）上可与 16 码本的 Mimi 相当或更好。</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-1-2"><span class="cap-k">表</span><p class="en">Table 2: Comparison of Voxtral Codec and Mimi on the Expresso dataset.</p><p class="zh">表 2：Voxtral Codec 与 Mimi 在 Expresso 数据集上的对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th>fps</th><th></th><th>token/frame ×</th><th>bitrate</th><th>Reconstruction (↓)</th><th></th><th>Intrusive (↑)</th><th></th><th></th><th></th><th>Perceptual</th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>vocab. size</th><th>(kbps)</th><th>Mel</th><th>STFT</th><th>PESQ</th><th>ESTOI</th><th>ASR-WER (%)↓</th><th></th><th></th><th>Speaker Sim↑</th><th></th></tr></thead><tbody><tr><td>Mimi – 8cb (Moshi)</td><td>12.5</td><td></td><td>8 × (2048)</td><td>1.1</td><td>0.702</td><td>1.177</td><td>2.07</td><td>0.803</td><td></td><td>11.75</td><td></td><td></td><td>0.672</td></tr>
-<tr><td>Mimi – 16cb</td><td>12.5</td><td></td><td>16 × (2048)</td><td>2.2</td><td>0.618</td><td>1.100</td><td>2.67</td><td>0.865</td><td></td><td>11.01</td><td></td><td></td><td>0.829</td></tr>
-<tr><td>Mimi – full 32cb</td><td>12.5</td><td></td><td>32 × (2048)</td><td>4.4</td><td>0.552</td><td>1.040</td><td>3.18</td><td>0.910</td><td></td><td>10.25</td><td></td><td></td><td>0.902</td></tr>
-<tr><td>Voxtral Codec</td><td>12.5</td><td>1 × (8192) + 36 × (21)</td><td></td><td>2.1</td><td>0.545</td><td>0.982</td><td>3.05</td><td>0.882</td><td></td><td>10.66</td><td></td><td></td><td>0.843</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-4-1-2"><span class="cap-k">表</span><p class="en">Table 2: Comparison of Voxtral Codec and Mimi on the Expresso dataset.</p><p class="zh">表 2：Voxtral Codec 与 Mimi 在 Expresso 数据集上的对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th></th><th>token/frame ×</th><th>bitrate</th><th></th><th>Reconstruction (↓)</th><th></th><th></th><th>Intrusive (↑)</th><th></th><th></th><th>Perceptual</th><th></th></tr><tr><th></th><th>fps</th><th>vocab. size</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>(kbps)</th><th>Mel</th><th></th><th>STFT</th><th>PESQ</th><th></th><th>ESTOI</th><th>ASR-WER (%)↓</th><th></th><th>Speaker Sim↑</th></tr></thead><tbody><tr><td>Mimi – 8cb (Moshi)</td><td>12.5</td><td>8 × (2048)</td><td>1.1</td><td>0.702</td><td></td><td>1.177</td><td>2.07</td><td></td><td>0.803</td><td>11.75</td><td></td><td>0.672</td></tr>
+<tr><td>Mimi – 16cb</td><td>12.5</td><td>16 × (2048)</td><td>2.2</td><td>0.618</td><td></td><td>1.100</td><td>2.67</td><td></td><td>0.865</td><td>11.01</td><td></td><td>0.829</td></tr>
+<tr><td>Mimi – full 32cb</td><td>12.5</td><td>32 × (2048)</td><td>4.4</td><td>0.552</td><td></td><td>1.040</td><td>3.18</td><td></td><td>0.910</td><td>10.25</td><td></td><td>0.902</td></tr>
+<tr><td>Voxtral Codec</td><td>12.5</td><td>1 × (8192) + 36 × (21)</td><td>2.1</td><td>0.545</td><td></td><td>0.982</td><td>3.05</td><td></td><td>0.882</td><td>10.66</td><td></td><td>0.843</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-4-1-2">
           <p class="en-lines"><span class="sent" data-sid="s-4-1-2-1"><span class="en">Model fps token/frame × vocab. size bitrate Reconstruction (↓) Intrusive (↑) Perceptual (kbps) Mel STFT PESQ ESTOI ASR-WER (%)↓ Speaker Sim↑ Mimi – 8cb (Moshi)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-1-2-1"><span class="zh">表头：Model / fps token/frame × vocab. size / bitrate / Reconstruction (↓) / Intrusive (↑) / Perceptual (kbps) / Mel / STFT / PESQ / ESTOI / ASR-WER (%)↓ / Speaker Sim↑——Mimi – 8cb (Moshi)（后续照原文）。</span></span></p>
@@ -639,11 +640,7 @@ Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-4-2"><span class="secnum">4.2</span> <span class="t-zh">4.2 自动评测</span><span class="t-en">Automatic Evaluations</span></h3><div class="pblk" id="p-4-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-1-1"><span class="en">We evaluate Voxtral TTS, ElevenLabs v3 and ElevenLabs Flash v2.5 on SEED-TTS [Anastassiou et al., 2024] and the nine supported languages in MiniMax-TTS [Zhang et al., 2025] using automated metrics:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-1-1"><span class="zh">我们用自动指标在 SEED-TTS [Anastassiou et al., 2024] 以及 MiniMax-TTS [Zhang et al., 2025] 涵盖的 9 种受支持语言上评测 Voxtral TTS、ElevenLabs v3 和 ElevenLabs Flash v2.5：</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-4-2"><span class="secnum">4.2</span> <span class="t-zh">4.2 自动评测</span><span class="t-en">Automatic Evaluations</span></h3>
 <div class="pblk" id="p-4-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-2-1"><span class="en">1.</span></span> <span class="sent" data-sid="s-4-2-2-2"><span class="en">Word Error Rate (WER): Measured by Voxtral Mini Transcribe v2 to capture the intelligibility of speech.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-1"><span class="zh">1.</span></span><span class="sent" data-sid="s-4-2-2-2"><span class="zh">词错误率（WER）：由 Voxtral Mini Transcribe v2 测得，用于刻画语音的可懂度。</span></span></p>
@@ -671,40 +668,42 @@ Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-4-2-1"><span class="cap-k">表</span><p class="en">Table 3: WER, UTMOS, and Speaker Similarity scores for Voxtral TTS, ElevenLabs v3, and ElevenLabs Flash v2.5.</p><p class="zh">表 3：Voxtral TTS、ElevenLabs v3 与 ElevenLabs Flash v2.5 的 WER、UTMOS 与说话人相似度得分。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>v2.5.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>WER (%) ↓</th><th></th><th></th><th>UTMOS ↑</th><th></th><th></th><th>Speaker Sim ↑</th><th></th></tr><tr><th>Task</th><th>Voxtral</th><th></th><th></th><th>Voxtral</th><th></th><th></th><th>Voxtral</th><th></th><th></th></tr><tr><th>MiniMax</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Arabic</td><td>2.68</td><td>3.67</td><td>2.86</td><td>3.07</td><td>2.50</td><td>2.89</td><td>0.746</td><td>0.546</td><td>0.539</td></tr>
-<tr><td>German</td><td>0.83</td><td>0.45</td><td>1.08</td><td>3.12</td><td>2.90</td><td>3.27</td><td>0.721</td><td>0.457</td><td>0.489</td></tr>
-<tr><td>English</td><td>0.63</td><td>0.48</td><td>0.33</td><td>4.30</td><td>4.27</td><td>4.27</td><td>0.786</td><td>0.484</td><td>0.489</td></tr>
-<tr><td>Spanish</td><td>0.51</td><td>0.87</td><td>0.49</td><td>3.41</td><td>3.18</td><td>2.99</td><td>0.762</td><td>0.443</td><td>0.541</td></tr>
-<tr><td>French</td><td>3.22</td><td>2.34</td><td>2.26</td><td>2.83</td><td>2.90</td><td>2.94</td><td>0.587</td><td>0.339</td><td>0.378</td></tr>
-<tr><td>Hindi</td><td>4.99</td><td>8.71</td><td>5.08</td><td>3.56</td><td>3.56</td><td>3.35</td><td>0.839</td><td>0.707</td><td>0.679</td></tr>
-<tr><td>Italian</td><td>1.32</td><td>0.58</td><td>0.55</td><td>3.43</td><td>3.08</td><td>3.09</td><td>0.739</td><td>0.527</td><td>0.485</td></tr>
-<tr><td>Dutch</td><td>1.99</td><td>1.52</td><td>0.83</td><td>3.89</td><td>3.53</td><td>3.68</td><td>0.720</td><td>0.397</td><td>0.598</td></tr>
-<tr><td>Portuguese</td><td>1.02</td><td>0.92</td><td>1.15</td><td>3.66</td><td>3.41</td><td>3.41</td><td>0.785</td><td>0.571</td><td>0.642</td></tr>
-<tr><td>Seed TTS</td><td>1.23</td><td>1.26</td><td>0.86</td><td>4.11</td><td>3.92</td><td>4.09</td><td>0.628</td><td>0.392</td><td>0.413</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-4-2-6">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-6-1"><span class="en">WER (%) ↓ UTMOS ↑ Speaker Sim ↑ Task Voxtral ElevenLabs v3 ElevenLabs Flash Voxtral ElevenLabs v3 ElevenLabs Flash Voxtral ElevenLabs v3 ElevenLabs Flash MiniMax Arabic</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-6-1"><span class="zh">表头：WER (%) ↓ / UTMOS ↑ / Speaker Sim ↑ × Task（Voxtral / ElevenLabs v3 / ElevenLabs Flash 各列）——MiniMax / Arabic（后续照原文）。</span></span></p>
-          
-        </div>
+<div class="cap" id="tab-4-2-1"><span class="cap-k">表</span><p class="en">Table 3: WER, UTMOS, and Speaker Similarity scores for Voxtral TTS, ElevenLabs v3, and ElevenLabs Flash v2.5.</p><p class="zh">表 3：Voxtral TTS、ElevenLabs v3 与 ElevenLabs Flash v2.5 的 WER、UTMOS 与说话人相似度得分。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th>fps</th><th>vocab. size</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>(kbps)</th><th>Mel</th><th>STFT</th><th>PESQ</th><th>ESTOI</th><th>ASR-WER (%)↓</th><th>Speaker Sim↑</th></tr></thead><tbody><tr><td>Mimi – 8cb (Moshi)</td><td>12.5</td><td>8 × (2048)</td><td>1.1</td><td>0.702</td><td>1.177</td><td>2.07</td><td>0.803</td><td>11.75</td><td>0.672</td></tr>
+<tr><td>Mimi – 16cb</td><td>12.5</td><td>16 × (2048)</td><td>2.2</td><td>0.618</td><td>1.100</td><td>2.67</td><td>0.865</td><td>11.01</td><td>0.829</td></tr>
+<tr><td>Mimi – full 32cb</td><td>12.5</td><td>32 × (2048)</td><td>4.4</td><td>0.552</td><td>1.040</td><td>3.18</td><td>0.910</td><td>10.25</td><td>0.902</td></tr>
+<tr><td>Voxtral Codec</td><td>12.5</td><td>1 × (8192) + 36 × (21)</td><td>2.1</td><td>0.545</td><td>0.982</td><td>3.05</td><td>0.882</td><td>10.66</td><td>0.843</td></tr>
+<tr><td>4.2</td><td>Automatic Evaluations</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>We evaluate Voxtral TTS, ElevenLabs v3 and ElevenLabs Flash v2.5 on SEED-TTS [Anastassiou</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>et al., 2024] and the nine supported languages in MiniMax-TTS [Zhang et al., 2025] using automated</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>metrics:</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>1.</td><td></td><td></td><td></td><td></td><td>Word Error Rate (WER): Measured by Voxtral Mini Transcribe v2 to capture the intelligi-</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>bility of speech.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>2.</td><td></td><td></td><td></td><td></td><td></td><td></td><td>Predicts the Mean Opinion Score (MOS) of generated</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>3.</td><td></td><td></td><td></td><td>embeddings</td><td>are</td><td>predicted</td><td></td><td>the</td><td>ECAPA-TDNN</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>model [Desplanques et al., 2020] and the cosine similarity is computed against the ref-</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>erence embedding.</td><td></td><td></td><td></td><td></td><td>This evaluates how closely generated speech emulates the provided</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>voice reference.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</section>
+<div class="eq" id="eq-4-2-1"><code>2.68 3.67 2.86 3.07 2.50 2.89 0.746 0.546 0.539</code></div>
+<div class="eq" id="eq-4-2-2"><code>German</code></div>
+<div class="eq" id="eq-4-2-3"><code>0.83 0.45 1.08 3.12 2.90 3.27 0.721 0.457 0.489</code></div>
+<div class="eq" id="eq-4-2-4"><code>English</code></div>
+<div class="eq" id="eq-4-2-5"><code>0.63 0.48 0.33 4.30 4.27 4.27 0.786 0.484 0.489</code></div>
+<div class="eq" id="eq-4-2-6"><code>Spanish</code></div>
+<div class="eq" id="eq-4-2-7"><code>0.51 0.87 0.49 3.41 3.18 2.99 0.762 0.443 0.541</code></div>
+<div class="eq" id="eq-4-2-8"><code>French</code></div>
+<div class="eq" id="eq-4-2-9"><code>3.22 2.34 2.26 2.83 2.90 2.94 0.587 0.339 0.378</code></div>
+<div class="eq" id="eq-4-2-10"><code>Hindi</code></div>
+<div class="eq" id="eq-4-2-11"><code>4.99 8.71 5.08 3.56 3.56 3.35 0.839 0.707 0.679</code></div>
+<div class="eq" id="eq-4-2-12"><code>Italian</code></div>
+<div class="eq" id="eq-4-2-13"><code>1.32 0.58 0.55 3.43 3.08 3.09 0.739 0.527 0.485</code></div>
+<div class="eq" id="eq-4-2-14"><code>Dutch</code></div>
+<div class="eq" id="eq-4-2-15"><code>1.99 1.52 0.83 3.89 3.53 3.68 0.720 0.397 0.598</code></div>
+<div class="eq" id="eq-4-2-16"><code>Portuguese</code></div>
+<div class="eq" id="eq-4-2-17"><code>1.02 0.92 1.15 3.66 3.41 3.41 0.785 0.571 0.642</code></div>
+<div class="eq" id="eq-4-2-18"><code>Seed TTS</code></div>
+<div class="eq" id="eq-4-2-19"><code>1.23 1.26 0.86 4.11 3.92 4.09 0.628 0.392 0.413</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-3"><span class="secnum">4.3</span> <span class="t-zh">4.3 人工评测</span><span class="t-en">Human Evaluations</span></h3><div class="pblk" id="p-4-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-1-1"><span class="en">Automated metrics cannot measure the naturalness and expressivity of a TTS model, especially the ability of the model to speak with a specific emotion.</span></span> <span class="sent" data-sid="s-4-3-1-2"><span class="en">We find that UTMOS is only a loose proxy, not well calibrated across languages and only weakly correlated with human preference.</span><button class="mk" data-sid="s-4-3-1-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-3-1-3"><span class="en">Hence, we perform two sets of human evaluations in which annotators compare generations between two models without knowing their identities.</span></span> <span class="sent" data-sid="s-4-3-1-4"><span class="en">The evaluation consists of 77 prompts, with 11 of them neutral while 66 of them have an associated expected emotion.</span></span> <span class="sent" data-sid="s-4-3-1-5"><span class="en">For all evaluations, annotators are instructed to choose whether one of the generations is &quot;slightly better&quot;, &quot;much better&quot; or if they are &quot;both good&quot; or &quot;both bad&quot;.</span></span> <span class="sent" data-sid="s-4-3-1-6"><span class="en">During labeling, all audio samples are resampled to 24 kHz WAV format (even the reference samples) to ensure there is no bias due to audio quality.</span></span></p>
@@ -746,29 +745,36 @@ Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-1-4-1"><span class="zh">「这是我一生中最美好的一天！」）。</span></span><span class="sent" data-sid="s-4-3-1-4-2"><span class="zh">不向模型提供任何情感标签或指令。</span></span><span class="sent" data-sid="s-4-3-1-4-3"><span class="zh">对 Voxtral TTS，我们使用中性语音提示。</span></span></p>
           
         </div>
-<div class="pblk" id="p-4-3-1-5">
-          <p class="en-lines"><span class="sent" data-sid="s-4-3-1-5-1"><span class="en">We use three annotators who are native speakers of the same dialect for each language per pair.</span></span> <span class="sent" data-sid="s-4-3-1-5-2"><span class="en">The win rates of Voxtral TTS (excluding ties) are presented in Table 4.</span></span> <span class="sent" data-sid="s-4-3-1-5-3"><span class="en">Gemini 2.5 Flash TTS is the strongest model, and Voxtral TTS is competitive against ElevenLabs v3.</span></span> <span class="sent" data-sid="s-4-3-1-5-4"><span class="en">In the implicit steering setting, Voxtral TTS consistently outperforms both ElevenLabs models.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-3-1-5-1"><span class="zh">每种语言、每个模型对，我们使用三名以该方言为母语的标注者。</span></span><span class="sent" data-sid="s-4-3-1-5-2"><span class="zh">Voxtral TTS 的胜率（不计平局）见 Table 4。</span></span><span class="sent" data-sid="s-4-3-1-5-3"><span class="zh">Gemini 2.5 Flash TTS 是最强的模型，Voxtral TTS 则与 ElevenLabs v3 相当。</span></span><span class="sent" data-sid="s-4-3-1-5-4"><span class="zh">在隐式引导设置下，Voxtral TTS 稳定优于两个 ElevenLabs 模型。</span></span></p>
+
+<div class="cap" id="tab-4-3-1-1"><span class="cap-k">表</span><p class="en">Table 4: Voxtral TTS win rates by steering type. In the explicit steering setting, Voxtral TTS is competitive with ElevenLabs v3, while having a higher win rate compared to both ElevenLabs models in the implicit steering setting.</p><p class="zh">表 4：按引导类型分列的 Voxtral TTS 胜率。显式引导设置下 Voxtral TTS 与 ElevenLabs v3 相当；隐式引导设置下对两个 ElevenLabs 模型都有更高胜率。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>First, we compare our flagship voices (British-Female, British-Male,</th><th></th></tr><tr><th>the</th><th>voices</th><th>of same</th><th>gender</th></tr><tr><th>sub-evaluations:</th><th></th><th></th><th></th></tr></thead><tbody><tr><td>1.</td><td></td><td></td><td>Explicit steering: We test the ability to bias a TTS model’s</td></tr>
+<tr><td></td><td></td><td></td><td>emotion. The TTS prompts which have an associated emotion (not</td></tr>
+<tr><td></td><td></td><td></td><td>as free-form instruction to Gemini 2.5 Flash TTS as it supports</td></tr>
+<tr><td></td><td>as &quot;Speak in an angry tone.&quot;.</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>brackets 2. While Voxtral TTS does not support emotion</td></tr>
+<tr><td></td><td></td><td></td><td>generation by leveraging a different voice prompt provided from</td></tr>
+<tr><td></td><td>embodies the requested emotion.</td><td></td><td></td></tr>
+<tr><td>2.</td><td></td><td></td><td>Implicit steering: We test the model’s capabilities to infer emotion</td></tr>
+<tr><td></td><td></td><td></td><td>&quot;This is the best day of my life!&quot;). No emotion label or instruction is</td></tr>
+<tr><td></td><td></td><td>For Voxtral TTS, we use a neutral voice prompt.</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>We use three annotators who are native speakers of the same dialect for each</td></tr>
+<tr><td></td><td></td><td>win rates of Voxtral TTS (excluding ties) are presented in Table 4.</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>strongest model, and Voxtral TTS is competitive against ElevenLabs v3.</td></tr>
+<tr><td></td><td></td><td>setting, Voxtral TTS consistently outperforms both ElevenLabs models.</td><td></td></tr></tbody></table></div></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-emotion-steering"><span class="t-zh">情感引导</span><span class="t-en">Emotion steering</span></h3><div class="pblk" id="p-emotion-steering-1">
+          <p class="en-lines"><span class="sent" data-sid="s-emotion-steering-1-1"><span class="en">Opponent Model Voxtral TTS Win Rate (%) Explicit ElevenLabs v3</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-emotion-steering-1-1"><span class="zh">表头：Opponent Model × Voxtral TTS Win Rate (%)——Explicit / ElevenLabs v3（后续照原文）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-3-1-1"><span class="cap-k">表</span><p class="en">Table 4: Voxtral TTS win rates by steering type. In the explicit steering setting, Voxtral TTS is competitive with ElevenLabs v3, while having a higher win rate compared to both ElevenLabs models in the implicit steering setting.</p><p class="zh">表 4：按引导类型分列的 Voxtral TTS 胜率。显式引导设置下 Voxtral TTS 与 ElevenLabs v3 相当；隐式引导设置下对两个 ElevenLabs 模型都有更高胜率。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>setting.</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Emotion steering</th><th>Opponent Model</th><th>Voxtral TTS Win Rate (%)</th><th></th></tr></thead><tbody><tr><td></td><td></td><td>ElevenLabs v3</td><td></td><td>51.0</td></tr>
-<tr><td></td><td>Explicit</td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td>Gemini 2.5 Flash TTS</td><td></td><td>35.4</td></tr>
-<tr><td></td><td></td><td>ElevenLabs Flash v2.5</td><td></td><td>58.3</td></tr>
-<tr><td></td><td>Implicit</td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td>ElevenLabs v3</td><td></td><td>55.4</td></tr>
-<tr><td></td><td></td><td>Gemini 2.5 Flash TTS</td><td></td><td>37.1</td></tr></tbody></table></div></div></section>
-<section>
-      <h3 class="sech lv2" id="sec-emotion-steering"><span class="t-zh">情感引导</span><span class="t-en">Emotion steering</span></h3>
+<div class="eq" id="eq-emotion-steering-1"><code>51.0</code></div>
 
+<div class="eq" id="eq-emotion-steering-3"><code>35.4</code></div>
+<div class="eq" id="eq-emotion-steering-4"><code>Implicit ElevenLabs Flash v2.5</code></div>
+<div class="eq" id="eq-emotion-steering-5"><code>58.3</code></div>
+<div class="eq" id="eq-emotion-steering-6"><code>ElevenLabs v3</code></div>
+<div class="eq" id="eq-emotion-steering-7"><code>55.4</code></div>
 
-
-
-
-
-
-
-</section>
+<div class="eq" id="eq-emotion-steering-9"><code>37.1</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-3-2"><span class="secnum">4.3.2</span> <span class="t-zh">4.3.2 零样本声音克隆</span><span class="t-en">Zero-Shot Voice Cloning</span></h3><div class="pblk" id="p-4-3-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-2-1-1"><span class="en">To evaluate voice cloning capabilities, we source high quality audios from two recognized speakers in each language.</span><button class="mk feat" data-sid="s-4-3-2-1-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-3-2-1-2"><span class="en">We generate speech from each model in a zero-shot setting, and instruct annotators to rate the generations based on (a) likeness of the generated audio to voice prompt and (b) naturalness of speech and expressivity.</span></span></p>
@@ -798,30 +804,34 @@ Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-1"><span class="zh">2https://elevenlabs.io/blog/eleven-v3-audio-tags-expressing-emotional-context-i n-speech（脚注 2 链接，抽取时在 URL 中出现换行断词。）</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-1"><span class="cap-k">表</span><p class="en">Table 5: Voxtral TTS win rate against ElevenLabs Flash v2.5 across languages. Voxtral TTS matches or outperforms ElevenLabs Flash v2.5 on every language, and has an overall micro-average win rate of 68.4%.</p><p class="zh">表 5：Voxtral TTS 对 ElevenLabs Flash v2.5 在各语言上的胜率。Voxtral TTS 在每种语言上都追平或超过 ElevenLabs Flash v2.5，整体微平均胜率为 68.4%。</p></div></section>
+<div class="cap" id="tab-5-1"><span class="cap-k">表</span><p class="en">Table 5: Voxtral TTS win rate against ElevenLabs Flash v2.5 across languages. Voxtral TTS matches or outperforms ElevenLabs Flash v2.5 on every language, and has an overall micro-average win rate of 68.4%.</p><p class="zh">表 5：Voxtral TTS 对 ElevenLabs Flash v2.5 在各语言上的胜率。Voxtral TTS 在每种语言上都追平或超过 ElevenLabs Flash v2.5，整体微平均胜率为 68.4%。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Language</th><th>Voxtral TTS Win Rate (%)</th></tr></thead><tbody><tr><td>Arabic</td><td>72.9</td></tr>
+<tr><td>Dutch</td><td>49.4</td></tr>
+<tr><td>English</td><td>60.8</td></tr>
+<tr><td>French</td><td>54.4</td></tr>
+<tr><td>German</td><td>72.0</td></tr>
+<tr><td>Hindi</td><td>79.8</td></tr>
+<tr><td>Italian</td><td>57.1</td></tr>
+<tr><td>Portuguese</td><td>74.4</td></tr>
+<tr><td>Spanish</td><td>87.8</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-language"><span class="t-zh">语言</span><span class="t-en">Language</span></h3><div class="pblk" id="p-language-1">
-          <p class="en-lines"><span class="sent" data-sid="s-language-1-1"><span class="en">Voxtral TTS Win Rate (%) Arabic</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-language-1-1"><span class="zh">表头：Voxtral TTS Win Rate (%)——Arabic（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-language-1"><code>72.9</code></div>
+      <h3 class="sech lv2" id="sec-language"><span class="t-zh">语言</span><span class="t-en">Language</span></h3>
 
-<div class="eq" id="eq-language-3"><code>49.4</code></div>
 
-<div class="eq" id="eq-language-5"><code>60.8</code></div>
 
-<div class="eq" id="eq-language-7"><code>54.4</code></div>
 
-<div class="eq" id="eq-language-9"><code>72.0</code></div>
 
-<div class="eq" id="eq-language-11"><code>79.8</code></div>
 
-<div class="eq" id="eq-language-13"><code>57.1</code></div>
 
-<div class="eq" id="eq-language-15"><code>74.4</code></div>
 
-<div class="eq" id="eq-language-17"><code>87.8</code></div></section>
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-overall"><span class="t-zh">整体</span><span class="t-en">Overall</span></h3><div class="eq" id="eq-overall-1"><code>68.4</code></div></section>
 <section>
@@ -830,7 +840,7 @@ Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="tab-5-1-1-s1"><span class="zh">表 6 给出了预训练检查点与 DPO 检查点的 WER 与 UTMOS 指标。总体上 DPO 在两项指标上都有提升，其中德语和法语收益最大，仅印地语有回退。定性上，我们发现 DPO 模型的幻觉更少、漏词更少；DPO 还缓解了预训练模型偶尔出现的、整段音频中音量逐渐衰弱的倾向。有趣的是，DPO 对说话人相似度几乎无影响，变化在预训练检查点的 ±0.01 以内（此处从略未列）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-1-2"><span class="cap-k">表</span><p class="en">Table 6: DPO improves WER and UTMOS across languages.</p><p class="zh">表 6：DPO 在各语言上改进 WER 与 UTMOS。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>WER (%) ↓</th><th></th><th></th><th></th></tr><tr><th>Task</th><th></th><th></th><th></th><th></th></tr><tr><th>MiniMax</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Arabic</td><td>2.80</td><td>2.68 (-0.12)</td><td>3.01</td><td>3.07 (+0.06)</td></tr>
+<div class="cap" id="tab-5-1-2"><span class="cap-k">表</span><p class="en">Table 6: DPO improves WER and UTMOS across languages.</p><p class="zh">表 6：DPO 在各语言上改进 WER 与 UTMOS。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Table 6: DPO improves WER and UTMOS across languages.</th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Task</th><th>Pretrain</th><th></th><th>Pretrain</th><th></th></tr><tr><th>MiniMax</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Arabic</td><td>2.80</td><td>2.68 (-0.12)</td><td>3.01</td><td>3.07 (+0.06)</td></tr>
 <tr><td>German</td><td>4.08</td><td>0.83 (-3.25)</td><td>3.05</td><td>3.12 (+0.07)</td></tr>
 <tr><td>English</td><td>0.84</td><td>0.63 (-0.21)</td><td>4.25</td><td>4.30 (+0.05)</td></tr>
 <tr><td>Spanish</td><td>0.56</td><td>0.51 (-0.06)</td><td>3.38</td><td>3.41 (+0.04)</td></tr>
@@ -840,11 +850,7 @@ Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
 <tr><td>Dutch</td><td>3.10</td><td>1.99 (-1.11)</td><td>3.85</td><td>3.89 (+0.04)</td></tr>
 <tr><td>Portuguese</td><td>1.17</td><td>1.02 (-0.15)</td><td>3.60</td><td>3.66 (+0.06)</td></tr>
 <tr><td>Seed TTS</td><td>1.58</td><td>1.23 (-0.35)</td><td>4.07</td><td>4.11 (+0.04)</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-5-1-1">
-          <p class="en-lines"><span class="sent" data-sid="s-5-1-1-1"><span class="en">WER (%) ↓ UTMOS ↑ Task Pretrain DPO Pretrain DPO MiniMax Arabic</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-1-1-1"><span class="zh">表头：WER (%) ↓ / UTMOS ↑ × Task（Pretrain / DPO）——MiniMax / Arabic（后续照原文）。</span></span></p>
-          
-        </div>
+
 
 
 
@@ -938,18 +944,25 @@ Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-6-1-3">
-          <p class="en-lines"><span class="sent" data-sid="s-6-1-3-1"><span class="en">To evaluate the effect of CUDA graph acceleration, we compare the latency and real-time factor (RTF) when decoding with eager mode and CUDA graphs.</span></span> <span class="sent" data-sid="s-6-1-3-2"><span class="en">Table 7 reports results for a 500-character text input, a 10-second audio reference and concurrency 1 on a single H200.</span></span> <span class="sent" data-sid="s-6-1-3-3"><span class="en">Enabling CUDA graphs results in a 47% improvement to latency and reduces the RTF by 2.5x.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-6-1-3-1"><span class="zh">为评估 CUDA graph 加速的效果，我们比较了 eager 模式与 CUDA graph 解码下的延迟与 RTF（实时因子）。</span></span><span class="sent" data-sid="s-6-1-3-2"><span class="zh">Table 7 报告了在单张 H200 上、500 字符文本输入、10 秒音频参考、并发为 1 时的结果。</span></span><span class="sent" data-sid="s-6-1-3-3"><span class="zh">启用 CUDA graph 使延迟改善 47%，并把 RTF 降低 2.5 倍。</span></span></p>
+
+<div class="cap" id="tab-6-1-1"><span class="cap-k">表</span><p class="en">Table 7: Effect of CUDA graph acceleration on the flow-matching transformer.</p><p class="zh">表 7：CUDA graph 加速对流匹配 Transformer 的影响。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th></tr><tr><th></th><th>CUDA Graph Acceleration for Flow-Matching Transformer</th></tr><tr><th></th><th>The flow-matching transformer is the computational bottleneck of the</th></tr><tr><th></th><th>step requires N function evaluations with CFG, requiring 2 × N forward</th></tr><tr><th></th><th>To eliminate Python-level overhead and kernel-launch latency, the entire</th></tr></thead><tbody><tr><td></td><td></td></tr>
+<tr><td></td><td>corresponding CUDA graph is then captured. During inference, the actual</td></tr>
+<tr><td></td><td>the nearest bucket by padding the input with zeros. Next, the CUDA graph</td></tr>
+<tr><td>are sliced back to the actual batch size.</td><td></td></tr>
+<tr><td>model falls back to eager execution.</td><td></td></tr>
+<tr><td></td><td>To evaluate the effect of CUDA graph acceleration, we compare the</td></tr>
+<tr><td></td><td>(RTF) when decoding with eager mode and CUDA graphs. Table 7 reports</td></tr>
+<tr><td></td><td>text input, a 10-second audio reference and concurrency 1 on a single H200.</td></tr>
+<tr><td></td><td>results in a 47% improvement to latency and reduces the RTF by 2.5x.</td></tr></tbody></table></div></div></section>
+<section>
+      <h3 class="sech lv2" id="sec-configuration"><span class="t-zh">配置</span><span class="t-en">Configuration</span></h3><div class="pblk" id="p-configuration-1">
+          <p class="en-lines"><span class="sent" data-sid="s-configuration-1-1"><span class="en">Latency RTF Eager mode 133 ms</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-configuration-1-1"><span class="zh">（表格：延迟/RTF——Eager 模式 133 ms/0.258；CUDA graph 70 ms/0.103。）</span></span></p>
           
         </div>
-<div class="cap" id="tab-6-1-1"><span class="cap-k">表</span><p class="en">Table 7: Effect of CUDA graph acceleration on the flow-matching transformer.</p><p class="zh">表 7：CUDA graph 加速对流匹配 Transformer 的影响。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Configuration</th><th>Latency</th><th>RTF</th></tr></thead><tbody><tr><td>Eager mode</td><td>133 ms</td><td>0.258</td></tr>
-<tr><td>CUDA graph</td><td>70 ms</td><td>0.103</td></tr></tbody></table></div></div></section>
-<section>
-      <h3 class="sech lv2" id="sec-configuration"><span class="t-zh">配置</span><span class="t-en">Configuration</span></h3>
-
-
-</section>
+<div class="eq" id="eq-configuration-1"><code>0.258</code></div>
+<div class="eq" id="eq-configuration-2"><code>CUDA graph 70 ms</code></div>
+<div class="eq" id="eq-configuration-3"><code>0.103</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-6-2"><span class="secnum">6.2</span> <span class="t-zh">6.2 异步分块流式</span><span class="t-en">Asynchronous Chunked Streaming</span></h3><div class="pblk" id="p-6-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-6-2-1-1"><span class="en">The two pipeline stages run in separate scheduling loops.</span></span> <span class="sent" data-sid="s-6-2-1-2"><span class="en">To overlap the autoregressive generation stage decoding with codec decoding stage waveform synthesis, an asynchronous chunked streaming protocol is introduced.</span></span></p>
@@ -979,10 +992,10 @@ Win Rate Voxtral TTS ElevenLabs Flash v2.5</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-6-3-2-1"><span class="zh">这些结果表明 Voxtral TTS 适合生产部署：单张 H200 就能以不间断的流式输出与亚秒级首包音频时间服务超过 30 个并发用户。</span></span></p>
           
         </div>
-<div class="cap" id="tab-6-3-1"><span class="cap-k">表</span><p class="en">Table 8: Serving performance of Voxtral TTS on a single H200.</p><p class="zh">表 8：Voxtral TTS 在单张 H200 上的服务性能。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Concurrency</th><th></th><th>Latency</th><th>RTF</th><th>Throughput (char/s/GPU)</th><th></th><th>Wait Rate</th><th></th></tr></thead><tbody><tr><td></td><td></td><td>1</td><td>70 ms</td><td>0.103</td><td></td><td>119.14</td><td></td><td>0%</td></tr>
-<tr><td></td><td></td><td>16</td><td>331 ms</td><td>0.237</td><td></td><td>879.11</td><td></td><td>0%</td></tr>
-<tr><td></td><td></td><td>32</td><td>552 ms</td><td>0.302</td><td></td><td>1430.78</td><td></td><td>0%</td></tr>
-<tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-6-3-1"><span class="cap-k">表</span><p class="en">Table 8: Serving performance of Voxtral TTS on a single H200.</p><p class="zh">表 8：Voxtral TTS 在单张 H200 上的服务性能。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Concurrency</th><th>Latency</th><th>RTF</th><th>Throughput (char/s/GPU)</th><th>Wait Rate</th></tr></thead><tbody><tr><td></td><td></td><td>1</td><td>70 ms</td><td>0.103</td><td>119.14</td><td>0%</td></tr>
+<tr><td></td><td></td><td>16</td><td>331 ms</td><td>0.237</td><td>879.11</td><td>0%</td></tr>
+<tr><td></td><td></td><td>32</td><td>552 ms</td><td>0.302</td><td>1430.78</td><td>0%</td></tr>
+<tr><td>7</td><td>Conclusion</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-concurrency"><span class="t-zh">并发</span><span class="t-en">Concurrency</span></h3>
 
