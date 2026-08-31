@@ -137,10 +137,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "fig-1-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 2,
-     "original": "Figure 1 Audiobox model diagram",
-     "zh": "图 1 Audiobox 模型结构示意图"
+     "sentences": [
+      {
+       "id": "fig-1-1-s1",
+       "original": "Figure 1 Audiobox model diagram",
+       "zh": "图 1 Audiobox 模型结构示意图"
+      }
+     ]
     },
     {
      "id": "p-1-2",
@@ -1912,10 +1917,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-5-4-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 10,
-     "original": "Table 1 In-context TTS style similarity and content correctness. We cite Yang et al. (2023b) for the NS2 results which are not in the original paper(Shen et al., 2023). WER with ∗are computed using HuBERT-L ASR that is not comparable with the other numbers.",
-     "zh": "Table 1 上下文内 TTS 的风格相似度与内容正确性。NS2 结果引自 Yang et al. (2023b)，原论文（Shen et al., 2023）未包含。带 ∗ 的 WER 使用 HuBERT-L ASR 计算，与其他数字不可比。"
+     "sentences": [
+      {
+       "id": "tab-5-4-1-s1",
+       "original": "Table 1 In-context TTS style similarity and content correctness. We cite Yang et al. (2023b) for the NS2 results which are not in the original paper(Shen et al., 2023). WER with ∗are computed using HuBERT-L ASR that is not comparable with the other numbers.",
+       "zh": "Table 1 上下文内 TTS 的风格相似度与内容正确性。NS2 结果引自 Yang et al. (2023b)，原论文（Shen et al., 2023）未包含。带 ∗ 的 WER 使用 HuBERT-L ASR 计算，与其他数字不可比。"
+      }
+     ]
     },
     {
      "id": "p-5-4-3",
@@ -1997,10 +2007,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-5-4-2",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 10,
-     "original": "Table 2 In-context TTS style similarity and quality subjective evaluation",
-     "zh": "Table 2 上下文内 TTS 的风格相似度与质量主观评测"
+     "sentences": [
+      {
+       "id": "tab-5-4-2-s1",
+       "original": "Table 2 In-context TTS style similarity and quality subjective evaluation",
+       "zh": "Table 2 上下文内 TTS 的风格相似度与质量主观评测"
+      }
+     ]
     },
     {
      "id": "p-5-4-4",
@@ -2171,10 +2186,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-5-5-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 11,
-     "original": "Table 3 Ablation study for in-context TTS. PT and FT data denote the data used for pre-training and fine-tuning repsectively. FT method denotes whether LoRA or full fine-tuning (full) is adopted. “has sil” denote whether the conditioned audio prompt contains silence.",
-     "zh": "Table 3 上下文内 TTS 的消融研究。PT 和 FT data 分别表示预训练与微调所用数据。FT method 表示采用 LoRA 还是全量微调（full）。「has sil」表示条件音频提示是否包含静音。"
+     "sentences": [
+      {
+       "id": "tab-5-5-1-s1",
+       "original": "Table 3 Ablation study for in-context TTS. PT and FT data denote the data used for pre-training and fine-tuning repsectively. FT method denotes whether LoRA or full fine-tuning (full) is adopted. “has sil” denote whether the conditioned audio prompt contains silence.",
+       "zh": "Table 3 上下文内 TTS 的消融研究。PT 和 FT data 分别表示预训练与微调所用数据。FT method 表示采用 LoRA 还是全量微调（full）。「has sil」表示条件音频提示是否包含静音。"
+      }
+     ]
     },
     {
      "id": "p-5-5-4",
@@ -2670,10 +2690,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-6-3-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 13,
-     "original": "Table 4 Examples of audio descriptions in tag-based and caption-based datasets (Note: the two columns of each row are unaligned.)",
-     "zh": "Table 4 基于标签与基于字幕数据集中的音频描述示例（注：每行两列并不对应。）"
+     "sentences": [
+      {
+       "id": "tab-6-3-1-s1",
+       "original": "Table 4 Examples of audio descriptions in tag-based and caption-based datasets (Note: the two columns of each row are unaligned.)",
+       "zh": "Table 4 基于标签与基于字幕数据集中的音频描述示例（注：每行两列并不对应。）"
+      }
+     ]
     },
     {
      "id": "p-6-3-2",
@@ -2839,10 +2864,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-6-4-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 14,
-     "original": "Table 5 Text-to-audio generation results on AudioCaps evaluation set. Baselines are evaluated based on the respective official repos. Subjective scores are computed based on 95% confidence interval.",
-     "zh": "Table 5 AudioCaps 评测集上的文生音频结果。基线基于各自官方仓库评测。主观分数按 95% 置信区间计算。"
+     "sentences": [
+      {
+       "id": "tab-6-4-1-s1",
+       "original": "Table 5 Text-to-audio generation results on AudioCaps evaluation set. Baselines are evaluated based on the respective official repos. Subjective scores are computed based on 95% confidence interval.",
+       "zh": "Table 5 AudioCaps 评测集上的文生音频结果。基线基于各自官方仓库评测。主观分数按 95% 置信区间计算。"
+      }
+     ]
     },
     {
      "id": "p-6-4-4",
@@ -2936,10 +2966,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-6-4-2",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 14,
-     "original": "Table 6 Text-to-audio infilling results on AudioCaps evaluation set. Baselines are evaluated based on the respective official repos. Subjective scores are computed based on 95% confidence interval.",
-     "zh": "Table 6 AudioCaps 评测集上的文生音频填充结果。基线基于各自官方仓库评测。主观分数按 95% 置信区间计算。"
+     "sentences": [
+      {
+       "id": "tab-6-4-2-s1",
+       "original": "Table 6 Text-to-audio infilling results on AudioCaps evaluation set. Baselines are evaluated based on the respective official repos. Subjective scores are computed based on 95% confidence interval.",
+       "zh": "Table 6 AudioCaps 评测集上的文生音频填充结果。基线基于各自官方仓库评测。主观分数按 95% 置信区间计算。"
+      }
+     ]
     },
     {
      "id": "p-6-4-5",
@@ -2949,7 +2984,7 @@ globalThis.PAPER_2312_15821 = {
       {
        "id": "s-6-4-5-1",
        "original": "objective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ CLAP-aa ↑ OVL ↑ REL ↑ Ground-truth",
-       "zh": "（表：objective（FAD↓/FD↓/KLD↓/IS↑/CLAP↑/CLAP-aa↑）× subjective（OVL↑/REL↑）——Ground-truth、AudioLDM-L-Full、TANGO、TANGO-full-FT、Audiobox Sound 各行的完整数值。原始数据照录如下）\n（原始数据照录）\nobjective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ CLAP-aa ↑ OVL ↑ REL ↑ Ground-truth - - - 13.28 0.49 - 3.13± 0.13 4.21± 0.15 AudioLDM-L-Full Liu et al. (2023b) 2.65 21.27 0.84 8.27 0.51 0.76 2.58± 0.12 3.58± 0.17 TANGO Ghosal et al. (2023) 1.25 18.02 0.78 8.53 0.53 0.78 2.75± 0.12 3.94± 0.15 TANGO-full-FT Ghosal et al. (2023) 1.86 15.00 0.71 8.95 0.56 0.78 2.79± 0.12 4.07± 0.14 Audiobox Sound 1.29 7.19 0.65 12.05 0.63 0.77 2.95± 0.12 4.20± 0.12 the ODE solver for our model and the number of DDIM steps in TANGO and AudioLDM2."
+       "zh": "（表：objective（FAD↓/FD↓/KLD↓/IS↑/CLAP↑/CLAP-aa↑）× subjective（OVL↑/REL↑）——Ground-truth、AudioLDM-L-Full、TANGO、TANGO-full-FT、Audiobox Sound 各行的完整数值。原始数据照录如下）\n客观 主观 FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ CLAP-aa ↑ OVL ↑ REL ↑ Ground-truth - - - 13.28 0.49 - 3.13± 0.13 4.21± 0.15 AudioLDM-L-Full Liu et al. (2023b) 2.65 21.27 0.84 8.27 0.51 0.76 2.58± 0.12 3.58± 0.17 TANGO Ghosal et al. (2023) 1.25 18.02 0.78 8.53 0.53 0.78 2.75± 0.12 3.94± 0.15 TANGO-full-FT Ghosal et al. (2023) 1.86 15.00 0.71 8.95 0.56 0.78 2.79± 0.12 4.07± 0.14 Audiobox Sound 1.29 7.19 0.65 12.05 0.63 0.77 2.95± 0.12 4.20± 0.12 我们模型的 ODE 求解器以及 TANGO 和 AudioLDM2 中的 DDIM 步数。"
       }
      ]
     },
@@ -3015,7 +3050,7 @@ globalThis.PAPER_2312_15821 = {
       {
        "id": "s-6-4-6-1",
        "original": "the ODE solver for our model and the number of DDIM steps in TANGO and AudioLDM2.",
-       "zh": "（表：objective（FAD↓/FD↓/KLD↓/IS↑/CLAP↑/CLAP-aa↑）× subjective（OVL↑/REL↑）——Ground-truth、AudioLDM-L-Full、TANGO、TANGO-full-FT、Audiobox Sound 各行的完整数值。原始数据照录如下）\n（原始数据照录）\nobjective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ CLAP-aa ↑ OVL ↑ REL ↑ Ground-truth - - - 13.28 0.49 - 3.13± 0.13 4.21± 0.15 AudioLDM-L-Full Liu et al. (2023b) 2.65 21.27 0.84 8.27 0.51 0.76 2.58± 0.12 3.58± 0.17 TANGO Ghosal et al. (2023) 1.25 18.02 0.78 8.53 0.53 0.78 2.75± 0.12 3.94± 0.15 TANGO-full-FT Ghosal et al. (2023) 1.86 15.00 0.71 8.95 0.56 0.78 2.79± 0.12 4.07± 0.14 Audiobox Sound 1.29 7.19 0.65 12.05 0.63 0.77 2.95± 0.12 4.20± 0.12 the ODE solver for our model and the number of DDIM steps in TANGO and AudioLDM2."
+       "zh": "（表：objective（FAD↓/FD↓/KLD↓/IS↑/CLAP↑/CLAP-aa↑）× subjective（OVL↑/REL↑）——Ground-truth、AudioLDM-L-Full、TANGO、TANGO-full-FT、Audiobox Sound 各行的完整数值。原始数据照录如下）\n客观 主观 FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ CLAP-aa ↑ OVL ↑ REL ↑ Ground-truth - - - 13.28 0.49 - 3.13± 0.13 4.21± 0.15 AudioLDM-L-Full Liu et al. (2023b) 2.65 21.27 0.84 8.27 0.51 0.76 2.58± 0.12 3.58± 0.17 TANGO Ghosal et al. (2023) 1.25 18.02 0.78 8.53 0.53 0.78 2.75± 0.12 3.94± 0.15 TANGO-full-FT Ghosal et al. (2023) 1.86 15.00 0.71 8.95 0.56 0.78 2.79± 0.12 4.07± 0.14 Audiobox Sound 1.29 7.19 0.65 12.05 0.63 0.77 2.95± 0.12 4.20± 0.12 我们模型的 ODE 求解器以及 TANGO 和 AudioLDM2 中的 DDIM 步数。"
       },
       {
        "id": "s-6-4-6-2",
@@ -3134,17 +3169,27 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "fig-6-5-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 15,
-     "original": "Figure 2 Quality-speed trade-off of Audiobox Sound, Tango and AudioLDM2. NFE: Number of function evaluations.",
-     "zh": "Figure 2 Audiobox Sound、Tango 与 AudioLDM2 的质量-速度权衡。NFE：函数评估次数。"
+     "sentences": [
+      {
+       "id": "fig-6-5-1-s1",
+       "original": "Figure 2 Quality-speed trade-off of Audiobox Sound, Tango and AudioLDM2. NFE: Number of function evaluations.",
+       "zh": "Figure 2 Audiobox Sound、Tango 与 AudioLDM2 的质量-速度权衡。NFE：函数评估次数。"
+      }
+     ]
     },
     {
      "id": "tab-6-5-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 15,
-     "original": "Table 7 Ablation for sound generation on AudioCaps evaluation set. Tag: audio tagging data, Cap: captioning data. Note the results of this table are based on the midpoint solver with a step size of 1/32 (equivalent to 64 NFE) for the purpose of inference speed-up.",
-     "zh": "Table 7 AudioCaps 评测集上音效生成的消融。Tag：音频标注数据；Cap：字幕数据。注：为加快推理速度，本表结果基于 midpoint 求解器、步长 1/32（等效 64 次 NFE）。"
+     "sentences": [
+      {
+       "id": "tab-6-5-1-s1",
+       "original": "Table 7 Ablation for sound generation on AudioCaps evaluation set. Tag: audio tagging data, Cap: captioning data. Note the results of this table are based on the midpoint solver with a step size of 1/32 (equivalent to 64 NFE) for the purpose of inference speed-up.",
+       "zh": "Table 7 AudioCaps 评测集上音效生成的消融。Tag：音频标注数据；Cap：字幕数据。注：为加快推理速度，本表结果基于 midpoint 求解器、步长 1/32（等效 64 次 NFE）。"
+      }
+     ]
     },
     {
      "id": "p-6-5-4",
@@ -4119,10 +4164,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-7-3-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 19,
-     "original": "Table 8 Comparison between Speech-CLAP and public CLAP models on retrieval performance in sound and speech.",
-     "zh": "Table 8 Speech-CLAP 与公开 CLAP 模型在音效与语音检索性能上的对比。"
+     "sentences": [
+      {
+       "id": "tab-7-3-1-s1",
+       "original": "Table 8 Comparison between Speech-CLAP and public CLAP models on retrieval performance in sound and speech.",
+       "zh": "Table 8 Speech-CLAP 与公开 CLAP 模型在音效与语音检索性能上的对比。"
+      }
+     ]
     },
     {
      "id": "p-7-3-9",
@@ -4132,7 +4182,7 @@ globalThis.PAPER_2312_15821 = {
       {
        "id": "s-7-3-9-1",
        "original": "Speech Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023)",
-       "zh": "（表：Speech/Sound 下 Text→Audio 与 Audio→Text 的 R@1/R@5/R@10——CLAP (general audio)、CLAP (w/ speech)、Speech-CLAP 三系统完整数值。原始数据照录如下）\n（原始数据照录）\nSpeech Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023) 0.36 1.29 2.29 0.64 2.26 3.55 CLAP (w/ speech) Wu et al. (2023) 0.82 2.42 3.37 0.51 1.90 2.60 Speech-CLAP 7.10 16.30 22.01 5.96 16.07 22.34 Sound Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023) 11.03 45.33 63.64 9.45 44.36 61.70 CLAP (w/ speech) Wu et al. (2023) 11.15 42.42 60.36 9.70 43.15 59.03 Speech-CLAP 13.33 51.88 67.64 11.27 47.27 64.48 Correlation between Joint-CLAP scores and human opionion scores In practice, we also notice the Joint-CLAP model is more closely correlated to human-perceived text-audio similarity, as opposed to the public CLAP model (see Figure 3)."
+       "zh": "（表：Speech/Sound 下 Text→Audio 与 Audio→Text 的 R@1/R@5/R@10——CLAP (general audio)、CLAP (w/ speech)、Speech-CLAP 三系统完整数值。原始数据照录如下）\n语音 文本→音频 音频→文本 R@1 R@5 R@10 R@1 R@5 R@10 CLAP（通用音频） Wu et al. (2023) 0.36 1.29 2.29 0.64 2.26 3.55 CLAP（含语音） Wu et al. (2023) 0.82 2.42 3.37 0.51 1.90 2.60 Speech-CLAP 7.10 16.30 22.01 5.96 16.07 22.34 声音 文本→音频 音频→文本 R@1 R@5 R@10 R@1 R@5 R@10 CLAP（通用音频） Wu et al. (2023) 11.03 45.33 63.64 9.45 44.36 61.70 CLAP（含语音） Wu et al. (2023) 11.15 42.42 60.36 9.70 43.15 59.03 Speech-CLAP 13.33 51.88 67.64 11.27 47.27 64.48 Joint-CLAP 分数与人类主观评分的相关性 在实践中，我们还注意到 Joint-CLAP 模型与人类感知的文本-音频相似性更相关，而公开 CLAP 模型则不然（见图 3）。"
       }
      ]
     },
@@ -4174,7 +4224,7 @@ globalThis.PAPER_2312_15821 = {
       {
        "id": "s-7-3-10-1",
        "original": "Sound Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023)",
-       "zh": "（表：Speech/Sound 下 Text→Audio 与 Audio→Text 的 R@1/R@5/R@10——CLAP (general audio)、CLAP (w/ speech)、Speech-CLAP 三系统完整数值。原始数据照录如下）\n（原始数据照录）\nSpeech Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023) 0.36 1.29 2.29 0.64 2.26 3.55 CLAP (w/ speech) Wu et al. (2023) 0.82 2.42 3.37 0.51 1.90 2.60 Speech-CLAP 7.10 16.30 22.01 5.96 16.07 22.34 Sound Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023) 11.03 45.33 63.64 9.45 44.36 61.70 CLAP (w/ speech) Wu et al. (2023) 11.15 42.42 60.36 9.70 43.15 59.03 Speech-CLAP 13.33 51.88 67.64 11.27 47.27 64.48 Correlation between Joint-CLAP scores and human opionion scores In practice, we also notice the Joint-CLAP model is more closely correlated to human-perceived text-audio similarity, as opposed to the public CLAP model (see Figure 3)."
+       "zh": "（表：Speech/Sound 下 Text→Audio 与 Audio→Text 的 R@1/R@5/R@10——CLAP (general audio)、CLAP (w/ speech)、Speech-CLAP 三系统完整数值。原始数据照录如下）\n语音 文本→音频 音频→文本 R@1 R@5 R@10 R@1 R@5 R@10 CLAP（通用音频） Wu et al. (2023) 0.36 1.29 2.29 0.64 2.26 3.55 CLAP（含语音） Wu et al. (2023) 0.82 2.42 3.37 0.51 1.90 2.60 Speech-CLAP 7.10 16.30 22.01 5.96 16.07 22.34 声音 文本→音频 音频→文本 R@1 R@5 R@10 R@1 R@5 R@10 CLAP（通用音频） Wu et al. (2023) 11.03 45.33 63.64 9.45 44.36 61.70 CLAP（含语音） Wu et al. (2023) 11.15 42.42 60.36 9.70 43.15 59.03 Speech-CLAP 13.33 51.88 67.64 11.27 47.27 64.48 Joint-CLAP 分数与人类主观评分的相关性 在实践中，我们还注意到 Joint-CLAP 模型与人类感知的文本-音频相似性更相关，而公开 CLAP 模型则不然（见图 3）。"
       }
      ]
     },
@@ -4216,7 +4266,7 @@ globalThis.PAPER_2312_15821 = {
       {
        "id": "s-7-3-11-1",
        "original": "Correlation between Joint-CLAP scores and human opionion scores In practice, we also notice the Joint-CLAP model is more closely correlated to human-perceived text-audio similarity, as opposed to the public CLAP model (see Figure 3).",
-       "zh": "（表：Speech/Sound 下 Text→Audio 与 Audio→Text 的 R@1/R@5/R@10——CLAP (general audio)、CLAP (w/ speech)、Speech-CLAP 三系统完整数值。原始数据照录如下）\n（原始数据照录）\nSpeech Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023) 0.36 1.29 2.29 0.64 2.26 3.55 CLAP (w/ speech) Wu et al. (2023) 0.82 2.42 3.37 0.51 1.90 2.60 Speech-CLAP 7.10 16.30 22.01 5.96 16.07 22.34 Sound Text→Audio Audio→Text R@1 R@5 R@10 R@1 R@5 R@10 CLAP (general audio) Wu et al. (2023) 11.03 45.33 63.64 9.45 44.36 61.70 CLAP (w/ speech) Wu et al. (2023) 11.15 42.42 60.36 9.70 43.15 59.03 Speech-CLAP 13.33 51.88 67.64 11.27 47.27 64.48 Correlation between Joint-CLAP scores and human opionion scores In practice, we also notice the Joint-CLAP model is more closely correlated to human-perceived text-audio similarity, as opposed to the public CLAP model (see Figure 3)."
+       "zh": "（表：Speech/Sound 下 Text→Audio 与 Audio→Text 的 R@1/R@5/R@10——CLAP (general audio)、CLAP (w/ speech)、Speech-CLAP 三系统完整数值。原始数据照录如下）\n语音 文本→音频 音频→文本 R@1 R@5 R@10 R@1 R@5 R@10 CLAP（通用音频） Wu et al. (2023) 0.36 1.29 2.29 0.64 2.26 3.55 CLAP（含语音） Wu et al. (2023) 0.82 2.42 3.37 0.51 1.90 2.60 Speech-CLAP 7.10 16.30 22.01 5.96 16.07 22.34 声音 文本→音频 音频→文本 R@1 R@5 R@10 R@1 R@5 R@10 CLAP（通用音频） Wu et al. (2023) 11.03 45.33 63.64 9.45 44.36 61.70 CLAP（含语音） Wu et al. (2023) 11.15 42.42 60.36 9.70 43.15 59.03 Speech-CLAP 13.33 51.88 67.64 11.27 47.27 64.48 Joint-CLAP 分数与人类主观评分的相关性 在实践中，我们还注意到 Joint-CLAP 模型与人类感知的文本-音频相似性更相关，而公开 CLAP 模型则不然（见图 3）。"
       },
       {
        "id": "s-7-3-11-2",
@@ -4232,10 +4282,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "fig-7-3-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 19,
-     "original": "Figure 3 Correlation between text-audio similarity and REL score in different CLAP models. r: Pearson correlation coefficient.",
-     "zh": "Figure 3 不同 CLAP 模型中文本-音频相似度与 REL 分数的相关性。r：Pearson 相关系数。"
+     "sentences": [
+      {
+       "id": "fig-7-3-1-s1",
+       "original": "Figure 3 Correlation between text-audio similarity and REL score in different CLAP models. r: Pearson correlation coefficient.",
+       "zh": "Figure 3 不同 CLAP 模型中文本-音频相似度与 REL 分数的相关性。r：Pearson 相关系数。"
+      }
+     ]
     }
    ]
   },
@@ -4347,10 +4402,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-7-4-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 20,
-     "original": "Table 9 Drop-out probabilities for context (ctx), voice prompt (vp), and caption (cap). “F” (false) / “T” (true) refers whether the input is used.",
-     "zh": "Table 9 context（ctx）、voice prompt（vp）与 caption（cap）的 drop-out 概率。「F」（false）/「T」（true）指该输入是否被使用。"
+     "sentences": [
+      {
+       "id": "tab-7-4-1-s1",
+       "original": "Table 9 Drop-out probabilities for context (ctx), voice prompt (vp), and caption (cap). “F” (false) / “T” (true) refers whether the input is used.",
+       "zh": "Table 9 context（ctx）、voice prompt（vp）与 caption（cap）的 drop-out 概率。「F」（false）/「T」（true）指该输入是否被使用。"
+      }
+     ]
     },
     {
      "id": "p-7-4-4",
@@ -4421,10 +4481,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-7-4-2",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 20,
-     "original": "Table 10 Derived joint probabilities for context, voice prompt, and caption for different use cases.",
-     "zh": "Table 10 不同用例下 context、voice prompt 与 caption 的导出联合概率。"
+     "sentences": [
+      {
+       "id": "tab-7-4-2-s1",
+       "original": "Table 10 Derived joint probabilities for context, voice prompt, and caption for different use cases.",
+       "zh": "Table 10 不同用例下 context、voice prompt 与 caption 的导出联合概率。"
+      }
+     ]
     },
     {
      "id": "p-7-4-7",
@@ -4744,10 +4809,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-7-5-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 21,
-     "original": "Table 11 compares Audiobox with VoiceLDM Lee et al. (2023) and AudioLDM2 Liu et al. (2023c) models on description-guided TTS and description-guided TTS with voice prompt (voice restylization) tasks. We find that Audiobox outperforms both baselines on all datasets and metrics. In particular, Audiobox is able",
-     "zh": "Table 11 在描述引导 TTS 与带声音提示的描述引导 TTS（声音风格重塑）任务上对比 Audiobox 与 VoiceLDM Lee et al. (2023)、AudioLDM2 Liu et al. (2023c) 模型。我们发现 Audiobox 在所有数据集和指标上都优于两个基线。特别地，Audiobox 能够"
+     "sentences": [
+      {
+       "id": "tab-7-5-1-s1",
+       "original": "Table 11 compares Audiobox with VoiceLDM Lee et al. (2023) and AudioLDM2 Liu et al. (2023c) models on description-guided TTS and description-guided TTS with voice prompt (voice restylization) tasks. We find that Audiobox outperforms both baselines on all datasets and metrics. In particular, Audiobox is able",
+       "zh": "Table 11 在描述引导 TTS 与带声音提示的描述引导 TTS（声音风格重塑）任务上对比 Audiobox 与 VoiceLDM Lee et al. (2023)、AudioLDM2 Liu et al. (2023c) 模型。我们发现 Audiobox 在所有数据集和指标上都优于两个基线。特别地，Audiobox 能够"
+      }
+     ]
     },
     {
      "id": "p-7-5-3",
@@ -4763,10 +4833,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-7-5-2",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 22,
-     "original": "Table 11 Description-based control for speech generation. Audiobox outperforms both AudioLDM2 and VoiceLDM on all datasets and metrics. VoiceLDM and AudioLDM2 models struggle in particular of Expr and Accent+ datasets with expressive audios.",
-     "zh": "Table 11 语音生成的描述式控制。Audiobox 在所有数据集和指标上都优于 AudioLDM2 与 VoiceLDM。VoiceLDM 与 AudioLDM2 模型在 Expr 与 Accent+ 这类表现力音频数据集上尤为吃力。"
+     "sentences": [
+      {
+       "id": "tab-7-5-2-s1",
+       "original": "Table 11 Description-based control for speech generation. Audiobox outperforms both AudioLDM2 and VoiceLDM on all datasets and metrics. VoiceLDM and AudioLDM2 models struggle in particular of Expr and Accent+ datasets with expressive audios.",
+       "zh": "Table 11 语音生成的描述式控制。Audiobox 在所有数据集和指标上都优于 AudioLDM2 与 VoiceLDM。VoiceLDM 与 AudioLDM2 模型在 Expr 与 Accent+ 这类表现力音频数据集上尤为吃力。"
+      }
+     ]
     },
     {
      "id": "p-7-5-4",
@@ -4776,7 +4851,7 @@ globalThis.PAPER_2312_15821 = {
       {
        "id": "s-7-5-4-1",
        "original": "JointCLAP ↑ WER (%) ↓ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth",
-       "zh": "（表：JointCLAP↑ × WER(%)↓（SC/AC-filt/Expr/Accent+）与 QMOS↑/REL↑——ground truth、VoiceLDM、AudioLDM2-SP、Audiobox 各行完整数值。原始数据照录如下）\n（原始数据照录）\nJointCLAP ↑ WER (%) ↓ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 0.403 0.479 0.548 0.561 8.4 23.5 5.8 13.5 VoiceLDM 0.245 0.449 0.060 0.235 8.0 6.8 5.3 4.4 AudioLDM2-SP 0.241 0.225 0.066 0.110 32.5 26.3 33.8 23.9 Audiobox 0.430 0.489 0.387 0.596 7.2 5.2 4.5 2.6 QMOS ↑ REL ↑ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 3.60± 0.11 3.25± 0.14 4.00± 0.09 3.24± 0.13 3.66± 0.10 3.86± 0.12 4.01± 0.10 3.51± 0.11 VoiceLDM 3.01± 0.10 2.95± 0.13 2.92± 0.12 2.87± 0.12 2.90± 0.10 3.08± 0.14 2.78± 0.11 3.2± 0.11 AudioLDM2-SP 2.19± 0.11 2.17± 0.12 2.47± 0.11 2.25± 0.10 2.37± 0.11 2.11± 0.12 2.48± 0.11 2.22± 0.10 Audiobox 3.58± 0.10 3.38± 0.12 3.82± 0.09 3.54± 0.12 3.74± 0.09 3.61± 0.12 3.94± 0.11 3.61± 0.10 We also note that AudioLDM2 and VoiceLDM struggle in particular on expressive datasets (Expr and Accent+)."
+       "zh": "（表：JointCLAP↑ × WER(%)↓（SC/AC-filt/Expr/Accent+）与 QMOS↑/REL↑——ground truth、VoiceLDM、AudioLDM2-SP、Audiobox 各行完整数值。原始数据照录如下）\nJointCLAP ↑ WER (%) ↓ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 0.403 0.479 0.548 0.561 8.4 23.5 5.8 13.5 VoiceLDM 0.245 0.449 0.060 0.235 8.0 6.8 5.3 4.4 AudioLDM2-SP 0.241 0.225 0.066 0.110 32.5 26.3 33.8 23.9 Audiobox 0.430 0.489 0.387 0.596 7.2 5.2 4.5 2.6 QMOS ↑ REL ↑ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 3.60± 0.11 3.25± 0.14 4.00± 0.09 3.24± 0.13 3.66± 0.10 3.86± 0.12 4.01± 0.10 3.51± 0.11 VoiceLDM 3.01± 0.10 2.95± 0.13 2.92± 0.12 2.87± 0.12 2.90± 0.10 3.08± 0.14 2.78± 0.11 3.2± 0.11 AudioLDM2-SP 2.19± 0.11 2.17± 0.12 2.47± 0.11 2.25± 0.10 2.37± 0.11 2.11± 0.12 2.48± 0.11 2.22± 0.10 Audiobox 3.58± 0.10 3.38± 0.12 3.82± 0.09 3.54± 0.12 3.74± 0.09 3.61± 0.12 3.94± 0.11 3.61± 0.10 我们还注意到 AudioLDM2 和 VoiceLDM 在表现力数据集（Expr 和 Accent+）上尤其困难。"
       }
      ]
     },
@@ -4830,7 +4905,7 @@ globalThis.PAPER_2312_15821 = {
       {
        "id": "s-7-5-5-1",
        "original": "QMOS ↑ REL ↑ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth",
-       "zh": "（表：JointCLAP↑ × WER(%)↓（SC/AC-filt/Expr/Accent+）与 QMOS↑/REL↑——ground truth、VoiceLDM、AudioLDM2-SP、Audiobox 各行完整数值。原始数据照录如下）\n（原始数据照录）\nJointCLAP ↑ WER (%) ↓ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 0.403 0.479 0.548 0.561 8.4 23.5 5.8 13.5 VoiceLDM 0.245 0.449 0.060 0.235 8.0 6.8 5.3 4.4 AudioLDM2-SP 0.241 0.225 0.066 0.110 32.5 26.3 33.8 23.9 Audiobox 0.430 0.489 0.387 0.596 7.2 5.2 4.5 2.6 QMOS ↑ REL ↑ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 3.60± 0.11 3.25± 0.14 4.00± 0.09 3.24± 0.13 3.66± 0.10 3.86± 0.12 4.01± 0.10 3.51± 0.11 VoiceLDM 3.01± 0.10 2.95± 0.13 2.92± 0.12 2.87± 0.12 2.90± 0.10 3.08± 0.14 2.78± 0.11 3.2± 0.11 AudioLDM2-SP 2.19± 0.11 2.17± 0.12 2.47± 0.11 2.25± 0.10 2.37± 0.11 2.11± 0.12 2.48± 0.11 2.22± 0.10 Audiobox 3.58± 0.10 3.38± 0.12 3.82± 0.09 3.54± 0.12 3.74± 0.09 3.61± 0.12 3.94± 0.11 3.61± 0.10 We also note that AudioLDM2 and VoiceLDM struggle in particular on expressive datasets (Expr and Accent+)."
+       "zh": "（表：JointCLAP↑ × WER(%)↓（SC/AC-filt/Expr/Accent+）与 QMOS↑/REL↑——ground truth、VoiceLDM、AudioLDM2-SP、Audiobox 各行完整数值。原始数据照录如下）\nJointCLAP ↑ WER (%) ↓ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 0.403 0.479 0.548 0.561 8.4 23.5 5.8 13.5 VoiceLDM 0.245 0.449 0.060 0.235 8.0 6.8 5.3 4.4 AudioLDM2-SP 0.241 0.225 0.066 0.110 32.5 26.3 33.8 23.9 Audiobox 0.430 0.489 0.387 0.596 7.2 5.2 4.5 2.6 QMOS ↑ REL ↑ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 3.60± 0.11 3.25± 0.14 4.00± 0.09 3.24± 0.13 3.66± 0.10 3.86± 0.12 4.01± 0.10 3.51± 0.11 VoiceLDM 3.01± 0.10 2.95± 0.13 2.92± 0.12 2.87± 0.12 2.90± 0.10 3.08± 0.14 2.78± 0.11 3.2± 0.11 AudioLDM2-SP 2.19± 0.11 2.17± 0.12 2.47± 0.11 2.25± 0.10 2.37± 0.11 2.11± 0.12 2.48± 0.11 2.22± 0.10 Audiobox 3.58± 0.10 3.38± 0.12 3.82± 0.09 3.54± 0.12 3.74± 0.09 3.61± 0.12 3.94± 0.11 3.61± 0.10 我们还注意到 AudioLDM2 和 VoiceLDM 在表现力数据集（Expr 和 Accent+）上尤其困难。"
       }
      ]
     },
@@ -4884,7 +4959,7 @@ globalThis.PAPER_2312_15821 = {
       {
        "id": "s-7-5-6-1",
        "original": "We also note that AudioLDM2 and VoiceLDM struggle in particular on expressive datasets (Expr and Accent+).",
-       "zh": "（表：JointCLAP↑ × WER(%)↓（SC/AC-filt/Expr/Accent+）与 QMOS↑/REL↑——ground truth、VoiceLDM、AudioLDM2-SP、Audiobox 各行完整数值。原始数据照录如下）\n（原始数据照录）\nJointCLAP ↑ WER (%) ↓ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 0.403 0.479 0.548 0.561 8.4 23.5 5.8 13.5 VoiceLDM 0.245 0.449 0.060 0.235 8.0 6.8 5.3 4.4 AudioLDM2-SP 0.241 0.225 0.066 0.110 32.5 26.3 33.8 23.9 Audiobox 0.430 0.489 0.387 0.596 7.2 5.2 4.5 2.6 QMOS ↑ REL ↑ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 3.60± 0.11 3.25± 0.14 4.00± 0.09 3.24± 0.13 3.66± 0.10 3.86± 0.12 4.01± 0.10 3.51± 0.11 VoiceLDM 3.01± 0.10 2.95± 0.13 2.92± 0.12 2.87± 0.12 2.90± 0.10 3.08± 0.14 2.78± 0.11 3.2± 0.11 AudioLDM2-SP 2.19± 0.11 2.17± 0.12 2.47± 0.11 2.25± 0.10 2.37± 0.11 2.11± 0.12 2.48± 0.11 2.22± 0.10 Audiobox 3.58± 0.10 3.38± 0.12 3.82± 0.09 3.54± 0.12 3.74± 0.09 3.61± 0.12 3.94± 0.11 3.61± 0.10 We also note that AudioLDM2 and VoiceLDM struggle in particular on expressive datasets (Expr and Accent+)."
+       "zh": "（表：JointCLAP↑ × WER(%)↓（SC/AC-filt/Expr/Accent+）与 QMOS↑/REL↑——ground truth、VoiceLDM、AudioLDM2-SP、Audiobox 各行完整数值。原始数据照录如下）\nJointCLAP ↑ WER (%) ↓ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 0.403 0.479 0.548 0.561 8.4 23.5 5.8 13.5 VoiceLDM 0.245 0.449 0.060 0.235 8.0 6.8 5.3 4.4 AudioLDM2-SP 0.241 0.225 0.066 0.110 32.5 26.3 33.8 23.9 Audiobox 0.430 0.489 0.387 0.596 7.2 5.2 4.5 2.6 QMOS ↑ REL ↑ SC AC-filt Expr Accent+ SC AC-filt Expr Accent+ ground truth 3.60± 0.11 3.25± 0.14 4.00± 0.09 3.24± 0.13 3.66± 0.10 3.86± 0.12 4.01± 0.10 3.51± 0.11 VoiceLDM 3.01± 0.10 2.95± 0.13 2.92± 0.12 2.87± 0.12 2.90± 0.10 3.08± 0.14 2.78± 0.11 3.2± 0.11 AudioLDM2-SP 2.19± 0.11 2.17± 0.12 2.47± 0.11 2.25± 0.10 2.37± 0.11 2.11± 0.12 2.48± 0.11 2.22± 0.10 Audiobox 3.58± 0.10 3.38± 0.12 3.82± 0.09 3.54± 0.12 3.74± 0.09 3.61± 0.12 3.94± 0.11 3.61± 0.10 我们还注意到 AudioLDM2 和 VoiceLDM 在表现力数据集（Expr 和 Accent+）上尤其困难。"
       },
       {
        "id": "s-7-5-6-2",
@@ -4992,10 +5067,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-7-5-3",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 22,
-     "original": "Table 13 compares the unified Audiobox and speech only Audiobox Speech models for zero-shot TTS on 5 different datasets. We use the same duration model for both acoustic models for this task. We find that the unified Audiobox model gives higher speaker similarity but performs marginally worse on the word error rate. This is also confirmed by subjective evaluations where we find only minor differences between the Audiobox and Audiobox Speech models.",
-     "zh": "Table 13 在 5 个不同数据集上对比统一 Audiobox 与纯语音的 Audiobox Speech 模型的零样本 TTS。该任务中两个声学模型使用同一时长模型。我们发现统一 Audiobox 模型的说话人相似度更高，但词错误率略差；主观评测也证实了这一点，两个模型之间只有细微差别。"
+     "sentences": [
+      {
+       "id": "tab-7-5-3-s1",
+       "original": "Table 13 compares the unified Audiobox and speech only Audiobox Speech models for zero-shot TTS on 5 different datasets. We use the same duration model for both acoustic models for this task. We find that the unified Audiobox model gives higher speaker similarity but performs marginally worse on the word error rate. This is also confirmed by subjective evaluations where we find only minor differences between the Audiobox and Audiobox Speech models.",
+       "zh": "Table 13 在 5 个不同数据集上对比统一 Audiobox 与纯语音的 Audiobox Speech 模型的零样本 TTS。该任务中两个声学模型使用同一时长模型。我们发现统一 Audiobox 模型的说话人相似度更高，但词错误率略差；主观评测也证实了这一点，两个模型之间只有细微差别。"
+      }
+     ]
     },
     {
      "id": "p-7-5-10",
@@ -5026,10 +5106,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-7-5-4",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 23,
-     "original": "Table 12 Description-based control with extra voice conditioning for speech generation",
-     "zh": "Table 12 带额外声音条件的语音生成描述式控制"
+     "sentences": [
+      {
+       "id": "tab-7-5-4-s1",
+       "original": "Table 12 Description-based control with extra voice conditioning for speech generation",
+       "zh": "Table 12 带额外声音条件的语音生成描述式控制"
+      }
+     ]
     },
     {
      "id": "p-7-5-11",
@@ -5177,10 +5262,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-7-5-5",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 23,
-     "original": "Table 13 Comparing Audiobox and Audiobox Speech model for In-context TTS application. Both model use the same regression based duration model",
-     "zh": "Table 13 在上下文 TTS 应用上对比 Audiobox 与 Audiobox Speech 模型。两个模型使用相同的回归式时长模型"
+     "sentences": [
+      {
+       "id": "tab-7-5-5-s1",
+       "original": "Table 13 Comparing Audiobox and Audiobox Speech model for In-context TTS application. Both model use the same regression based duration model",
+       "zh": "Table 13 在上下文 TTS 应用上对比 Audiobox 与 Audiobox Speech 模型。两个模型使用相同的回归式时长模型"
+      }
+     ]
     },
     {
      "id": "p-7-5-16",
@@ -5347,10 +5437,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-8-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 24,
-     "original": "Table 14 Comparing unified Audiobox for Text-to-audio generation results on AudioCaps evaluation set. We find that Audiobox outperforms all baselines except the sound only Audiobox Sound. Most notably it even outperforms TANGO-full-FT model on most metrics by significant margin.",
-     "zh": "Table 14 在 AudioCaps 评测集上对比统一 Audiobox 的文生音频生成结果。我们发现 Audiobox 优于除纯音效 Audiobox Sound 外的所有基线。最值得注意的是，它甚至在多数指标上以显著优势超过 TANGO-full-FT 模型。"
+     "sentences": [
+      {
+       "id": "tab-8-1-s1",
+       "original": "Table 14 Comparing unified Audiobox for Text-to-audio generation results on AudioCaps evaluation set. We find that Audiobox outperforms all baselines except the sound only Audiobox Sound. Most notably it even outperforms TANGO-full-FT model on most metrics by significant margin.",
+       "zh": "Table 14 在 AudioCaps 评测集上对比统一 Audiobox 的文生音频生成结果。我们发现 Audiobox 优于除纯音效 Audiobox Sound 外的所有基线。最值得注意的是，它甚至在多数指标上以显著优势超过 TANGO-full-FT 模型。"
+      }
+     ]
     },
     {
      "id": "p-8-4",
@@ -5360,7 +5455,7 @@ globalThis.PAPER_2312_15821 = {
       {
        "id": "s-8-4-1",
        "original": "objective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ ground truth",
-       "zh": "（表：objective（FAD↓/FD↓/KLD↓/IS↑/CLAP↑）× subjective（OVL↑/REL↑）——ground truth、VoiceLDM、UniAudio、Audiobox (ours)、TANGO-full-FT、Audiobox Sound (ours) 各行完整数值。原始数据照录如下）\n（原始数据照录）\nobjective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ ground truth - - - 13.28 0.49 3.36± 0.18 3.86± 0.18 Unified Models VoiceLDM Lee et al. (2023) 10.28 49.48 2.95 4.79 0.37 2.07± 0.16 2.62± 0.22 UniAudio Yang et al. (2023b) 3.12 - 2.60 - - - - Audiobox (ours) 1.10 10.14 1.19 11.90 0.70 3.19± 0.14 3.94± 0.14 Sound-only models TANGO-full-FT Ghosal et al. (2023) 2.19 18.47 1.20 8.80 0.56 3.04± 0.13 3.78± 0.15 Audiobox Sound (ours) 0.77 8.30 1.15 12.70 0.71 3.43± 0.15 4.09± 0.15 very small and minimize the global truncation error (sum of local truncation error) between approximate sample xθ n and ground truth data point x(1) in the following formula: Ex0∼p(x0)∥x(1) −xθ n∥, where xθ n is the output of the solver stepθ."
+       "zh": "（表：objective（FAD↓/FD↓/KLD↓/IS↑/CLAP↑）× subjective（OVL↑/REL↑）——ground truth、VoiceLDM、UniAudio、Audiobox (ours)、TANGO-full-FT、Audiobox Sound (ours) 各行完整数值。原始数据照录如下）\n客观 主观 FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ ground truth - - - 13.28 0.49 3.36± 0.18 3.86± 0.18 统一模型 VoiceLDM Lee et al. (2023) 10.28 49.48 2.95 4.79 0.37 2.07± 0.16 2.62± 0.22 UniAudio Yang et al. (2023b) 3.12 - 2.60 - - - - Audiobox（本文） 1.10 10.14 1.19 11.90 0.70 3.19± 0.14 3.94± 0.14 仅声音模型 TANGO-full-FT Ghosal et al. (2023) 2.19 18.47 1.20 8.80 0.56 3.04± 0.13 3.78± 0.15 Audiobox Sound（本文） 0.77 8.30 1.15 12.70 0.71 3.43± 0.15 4.09± 0.15 非常小，并在以下公式中最小化近似样本 xθ n 与真实数据点 x(1) 之间的全局截断误差（局部截断误差之和）：Ex0∼p(x0)∥x(1) −xθ n∥，其中 xθ n 是求解器步骤 θ 的输出。"
       }
      ]
     },
@@ -5438,7 +5533,7 @@ globalThis.PAPER_2312_15821 = {
       {
        "id": "s-8-5-1",
        "original": "very small and minimize the global truncation error (sum of local truncation error) between approximate sample xθ n and ground truth data point x(1) in the following formula: Ex0∼p(x0)∥x(1) −xθ n∥, where xθ n is the output of the solver stepθ.",
-       "zh": "（表：objective（FAD↓/FD↓/KLD↓/IS↑/CLAP↑）× subjective（OVL↑/REL↑）——ground truth、VoiceLDM、UniAudio、Audiobox (ours)、TANGO-full-FT、Audiobox Sound (ours) 各行完整数值。原始数据照录如下）\n（原始数据照录）\nobjective subjective FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ ground truth - - - 13.28 0.49 3.36± 0.18 3.86± 0.18 Unified Models VoiceLDM Lee et al. (2023) 10.28 49.48 2.95 4.79 0.37 2.07± 0.16 2.62± 0.22 UniAudio Yang et al. (2023b) 3.12 - 2.60 - - - - Audiobox (ours) 1.10 10.14 1.19 11.90 0.70 3.19± 0.14 3.94± 0.14 Sound-only models TANGO-full-FT Ghosal et al. (2023) 2.19 18.47 1.20 8.80 0.56 3.04± 0.13 3.78± 0.15 Audiobox Sound (ours) 0.77 8.30 1.15 12.70 0.71 3.43± 0.15 4.09± 0.15 very small and minimize the global truncation error (sum of local truncation error) between approximate sample xθ n and ground truth data point x(1) in the following formula: Ex0∼p(x0)∥x(1) −xθ n∥, where xθ n is the output of the solver stepθ."
+       "zh": "（表：objective（FAD↓/FD↓/KLD↓/IS↑/CLAP↑）× subjective（OVL↑/REL↑）——ground truth、VoiceLDM、UniAudio、Audiobox (ours)、TANGO-full-FT、Audiobox Sound (ours) 各行完整数值。原始数据照录如下）\n客观 主观 FAD ↓ FD ↓ KLD ↓ IS ↑ CLAP ↑ OVL ↑ REL ↑ ground truth - - - 13.28 0.49 3.36± 0.18 3.86± 0.18 统一模型 VoiceLDM Lee et al. (2023) 10.28 49.48 2.95 4.79 0.37 2.07± 0.16 2.62± 0.22 UniAudio Yang et al. (2023b) 3.12 - 2.60 - - - - Audiobox（本文） 1.10 10.14 1.19 11.90 0.70 3.19± 0.14 3.94± 0.14 仅声音模型 TANGO-full-FT Ghosal et al. (2023) 2.19 18.47 1.20 8.80 0.56 3.04± 0.13 3.78± 0.15 Audiobox Sound（本文） 0.77 8.30 1.15 12.70 0.71 3.43± 0.15 4.09± 0.15 非常小，并在以下公式中最小化近似样本 xθ n 与真实数据点 x(1) 之间的全局截断误差（局部截断误差之和）：Ex0∼p(x0)∥x(1) −xθ n∥，其中 xθ n 是求解器步骤 θ 的输出。"
       }
      ]
     },
@@ -5532,10 +5627,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-8-2",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 24,
-     "original": "Table 15 Comparison between the standard ODE solver using midpoint, dopri5 and parameterized Bespoke solver in term of NFE, speaker similarity and WER.",
-     "zh": "Table 15 标准 ODE 求解器（midpoint、dopri5）与参数化 Bespoke solver 在 NFE、说话人相似度与 WER 上的对比。"
+     "sentences": [
+      {
+       "id": "tab-8-2-s1",
+       "original": "Table 15 Comparison between the standard ODE solver using midpoint, dopri5 and parameterized Bespoke solver in term of NFE, speaker similarity and WER.",
+       "zh": "Table 15 标准 ODE 求解器（midpoint、dopri5）与参数化 Bespoke solver 在 NFE、说话人相似度与 WER 上的对比。"
+      }
+     ]
     },
     {
      "id": "p-8-10",
@@ -5737,10 +5837,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "fig-9-1-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 25,
-     "original": "Figure 4a shows average WER and Figure 4b shows average speaker similarity across different gender group. We observed that the number are very similar and the speaker similary mean fall between ± 1 standard deviation. Figure 5a shows average WER and Figure 5b shows average speaker similarity across different accent group. Similar with the gender groups, WER over all accents remain similar and each group speaker similarity falls within ± 1 standard deviation. Across gender and accent, WER remains very low around 1.5% which means 1 mistake for every 66 words in the transcript. We come to the conclusion that our model has no significant performance difference given different group of gender and accents.",
-     "zh": "Figure 4a 给出不同性别组的平均 WER，Figure 4b 给出不同性别组的平均说话人相似度。我们观察到数值非常接近，说话人相似度均值落在 ± 1 个标准差之内。Figure 5a 给出不同口音组的平均 WER，Figure 5b 给出不同口音组的平均说话人相似度。与性别组类似，所有口音上的 WER 保持相近，各组说话人相似度都落在 ± 1 个标准差之内。跨性别和口音，WER 都保持在约 1.5% 的很低水平，即转写中每 66 个词错 1 个。我们得出结论：模型在不同性别和口音群体上没有显著的表现差异。"
+     "sentences": [
+      {
+       "id": "fig-9-1-1-s1",
+       "original": "Figure 4a shows average WER and Figure 4b shows average speaker similarity across different gender group. We observed that the number are very similar and the speaker similary mean fall between ± 1 standard deviation. Figure 5a shows average WER and Figure 5b shows average speaker similarity across different accent group. Similar with the gender groups, WER over all accents remain similar and each group speaker similarity falls within ± 1 standard deviation. Across gender and accent, WER remains very low around 1.5% which means 1 mistake for every 66 words in the transcript. We come to the conclusion that our model has no significant performance difference given different group of gender and accents.",
+       "zh": "Figure 4a 给出不同性别组的平均 WER，Figure 4b 给出不同性别组的平均说话人相似度。我们观察到数值非常接近，说话人相似度均值落在 ± 1 个标准差之内。Figure 5a 给出不同口音组的平均 WER，Figure 5b 给出不同口音组的平均说话人相似度。与性别组类似，所有口音上的 WER 保持相近，各组说话人相似度都落在 ± 1 个标准差之内。跨性别和口音，WER 都保持在约 1.5% 的很低水平，即转写中每 66 个词错 1 个。我们得出结论：模型在不同性别和口音群体上没有显著的表现差异。"
+      }
+     ]
     }
    ]
   },
@@ -5827,10 +5932,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-9-2-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 26,
-     "original": "Table 16 shows the average FPR and FNR over all tasks for each data augmentations. We observed very low FPR and FNR, close to 0%, which means the watermark works very robustly against various type of generated audio and speech and data augmentations. Simultaneously, the watermarked audio also have very low scale-invariant signal-to-noise ratio (SI-SNR) -20.6db, which means the watermarks residual is in-perceivable from human perspective.",
-     "zh": "Table 16 给出每种数据增强在所有任务上的平均 FPR 与 FNR。我们观察到 FPR 与 FNR 都非常低，接近 0%，说明水印对各类生成音频、语音和数据增强都非常鲁棒。同时，带水印音频的尺度不变信噪比（SI-SNR）也很低，为 -20.6db，即从人的角度看水印残差不可感知。"
+     "sentences": [
+      {
+       "id": "tab-9-2-1-s1",
+       "original": "Table 16 shows the average FPR and FNR over all tasks for each data augmentations. We observed very low FPR and FNR, close to 0%, which means the watermark works very robustly against various type of generated audio and speech and data augmentations. Simultaneously, the watermarked audio also have very low scale-invariant signal-to-noise ratio (SI-SNR) -20.6db, which means the watermarks residual is in-perceivable from human perspective.",
+       "zh": "Table 16 给出每种数据增强在所有任务上的平均 FPR 与 FNR。我们观察到 FPR 与 FNR 都非常低，接近 0%，说明水印对各类生成音频、语音和数据增强都非常鲁棒。同时，带水印音频的尺度不变信噪比（SI-SNR）也很低，为 -20.6db，即从人的角度看水印残差不可感知。"
+      }
+     ]
     }
    ]
   },
@@ -6041,10 +6151,15 @@ globalThis.PAPER_2312_15821 = {
     },
     {
      "id": "tab-10-1-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 27,
-     "original": "Table 16 List of audio augmentation technique applied on top of watermarked audio with their detection performance respectively averaged on all scenarios.",
-     "zh": "Table 16 施加在水印音频上的各种音频增强技术，及其在所有场景上取平均后的检测性能。"
+     "sentences": [
+      {
+       "id": "tab-10-1-1-s1",
+       "original": "Table 16 List of audio augmentation technique applied on top of watermarked audio with their detection performance respectively averaged on all scenarios.",
+       "zh": "Table 16 施加在水印音频上的各种音频增强技术，及其在所有场景上取平均后的检测性能。"
+      }
+     ]
     },
     {
      "id": "p-10-1-4",

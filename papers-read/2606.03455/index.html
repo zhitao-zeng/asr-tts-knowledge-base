@@ -92,6 +92,7 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 }
 /* 图/表标题、公式、表格主体 */
 .cap{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:12px 0;font-size:13px}
+.cap img.fig{display:block;max-width:100%;margin:2px auto 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .cap-k{display:inline-block;font-size:11px;font-weight:700;color:#0f766e;background:#ccfbf1;border-radius:6px;padding:1px 7px;margin-right:6px}
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
@@ -248,7 +249,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-1"><span class="zh">基于扩散的 TTS。</span></span><span class="sent" data-sid="s-2-1-2"><span class="zh">基于扩散的生成模型已成为 NAR 语音合成的主流范式 [39, 71]。</span></span><span class="sent" data-sid="s-2-1-3"><span class="zh">早期方法如 Diff-TTS [36]、Grad-TTS [65] 与 ProDiff [34]，主要依赖采用分数匹配（score-matching）目标的去噪扩散概率模型（DDPM）[28, 76]。</span></span><span class="sent" data-sid="s-2-1-4"><span class="zh">更近的研究则转向流匹配 [24, 47, 51, 56]，代表性系统如 Voicebox [46] 与 Matcha-TTS [56] 利用最优传输与连续时间流来提升生成质量。</span></span></p>
           
         </div>
-<div class="cap" id="fig-2-1"><span class="cap-k">图</span><p class="en">Figure 1 Diffusion paradigms across different representation spaces in text-to-speech synthesis. (a) Latent Diffusion modeling on highly compressed VAE representations. (b) Mel-Spectrogram Diffusion modeling on spectrograms with discarded phase information. (c) Raw Waveform Diffusion modeling directly on lossless audio waveforms.</p><p class="zh">图 1. 文本转语音合成中不同表征空间上的扩散范式。(a) 在高度压缩的 VAE 表征上建模的潜空间扩散。(b) 在丢弃相位信息的频谱图上建模的 mel 频谱图扩散。(c) 直接在无损音频波形上建模的原始波形扩散。</p></div>
+<div class="pblk" id="fig-2-1">
+          <p class="en-lines"><span class="sent" data-sid="fig-2-1-s1"><span class="en">Figure 1 Diffusion paradigms across different representation spaces in text-to-speech synthesis. (a) Latent Diffusion modeling on highly compressed VAE representations. (b) Mel-Spectrogram Diffusion modeling on spectrograms with discarded phase information. (c) Raw Waveform Diffusion modeling directly on lossless audio waveforms.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="fig-2-1-s1"><span class="zh">图 1. 文本转语音合成中不同表征空间上的扩散范式。(a) 在高度压缩的 VAE 表征上建模的潜空间扩散。(b) 在丢弃相位信息的频谱图上建模的 mel 频谱图扩散。(c) 直接在无损音频波形上建模的原始波形扩散。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-2-2-1"><span class="en">while enabling efficient ODE-based sampling.</span></span> <span class="sent" data-sid="s-2-2-2"><span class="en">In terms of acoustic representation, most existing diffusion-based TTS models operate in compressed continuous spaces, specifically VAE latents [38, 63, 85, 92] (Figure 1(a)) and mel-spectrograms [8, 17, 108] (Figure 1(b)).</span></span> <span class="sent" data-sid="s-2-2-3"><span class="en">These representations substantially reduce sequence length and computational cost.</span></span> <span class="sent" data-sid="s-2-2-4"><span class="en">However, they are inherently lossy and rely on pre-trained autoencoders [41, 59] or vocoders [48, 72], leading to a multi-stage generation pipeline that may introduce compounding errors and reconstruction artifacts.</span></span> <span class="sent" data-sid="s-2-2-5"><span class="en">This motivates us to revisit end-to-end raw waveform generation under modern diffusion-based TTS frameworks, as illustrated in Figure 1(c), aiming to eliminate lossy intermediate acoustic representations while retaining the efficiency and scalability of NAR generation.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-2-1"><span class="zh">同时，流匹配还支持高效的基于 ODE 的采样。</span></span><span class="sent" data-sid="s-2-2-2"><span class="zh">在声学表征方面，绝大多数基于扩散的 TTS 模型工作在压缩的连续空间中，具体包括 VAE 潜空间 [38, 63, 85, 92]（Figure 1(a)）与 mel 频谱图 [8, 17, 108]（Figure 1(b)）。</span></span><span class="sent" data-sid="s-2-2-3"><span class="zh">这些表征大幅缩短了序列长度、降低了计算成本。</span></span><span class="sent" data-sid="s-2-2-4"><span class="zh">然而，它们本质上是有损的，并且依赖预训练的自编码器 [41, 59] 或声码器 [48, 72]，由此形成的多阶段生成流水线可能引入累积误差与重建伪影。</span></span><span class="sent" data-sid="s-2-2-5"><span class="zh">这促使我们在现代扩散式 TTS 框架下重新审视端到端原始波形生成，如 Figure 1(c) 所示，目标是在保留 NAR 生成的效率与可扩展性的同时，消除有损的中间声学表征。</span></span></p>
@@ -269,7 +274,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-5-1"><span class="zh">来自像素空间扩散的启示。</span></span><span class="sent" data-sid="s-2-5-2"><span class="zh">在计算机视觉领域，对高维像素空间扩散模型 [12, 28, 58, 75] 的探索早于潜空间扩散。</span></span><span class="sent" data-sid="s-2-5-3"><span class="zh">早期架构 [29] 通常依赖带有密集卷积与长残差连接的 U-Net [69]，计算开销大得难以承受，严重限制了模型扩展。</span></span><span class="sent" data-sid="s-2-5-4"><span class="zh">为缓解这一负担，后续研究探索了多个方向，例如将扩散过程分解到多个分辨率尺度 [6, 81]、将自回归架构与归一化流相结合</span></span></p>
           
         </div>
-<div class="cap" id="fig-2-2"><span class="cap-k">图</span><p class="en">Figure 2 Illustration of WavTTS training (left) and inference (right).</p><p class="zh">图 2. WavTTS 训练（左）与推理（右）示意图。</p></div>
+<div class="pblk" id="fig-2-2">
+          <p class="en-lines"><span class="sent" data-sid="fig-2-2-s1"><span class="en">Figure 2 Illustration of WavTTS training (left) and inference (right).</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="fig-2-2-s1"><span class="zh">图 2. WavTTS 训练（左）与推理（右）示意图。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-2-6">
           <p class="en-lines"><span class="sent" data-sid="s-2-6-1"><span class="en">architectures with normalizing flows [100, 103], or introducing auxiliary decoders to recover high-frequency details [10, 54, 84, 97].</span></span> <span class="sent" data-sid="s-2-6-2"><span class="en">Alongside the rise of patch-based architectures, recent works have also re-examined diffusion objectives for high-dimensional generation.</span></span> <span class="sent" data-sid="s-2-6-3"><span class="en">JiT [49] proposes directly predicting the clean image, i.e., x-prediction, to improve modeling in pixel space, while PixelGen [55] further incorporates perceptual loss to better capture the perceptual manifold of pixels.</span></span> <span class="sent" data-sid="s-2-6-4"><span class="en">These advances in visual generation inspire our waveform modeling design: we adopt an x-prediction objective and combine it with multi-scale mel-spectrogram supervision as a perceptual training signal, enabling high-quality raw waveform generation.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-6-1"><span class="zh">（接上句）…… [100, 103]，或引入辅助解码器来恢复高频细节 [10, 54, 84, 97]。</span></span><span class="sent" data-sid="s-2-6-2"><span class="zh">随着基于 patch 的架构兴起，近期研究也重新审视了高维生成的扩散目标。</span></span><span class="sent" data-sid="s-2-6-3"><span class="zh">JiT [49] 提出直接预测干净图像，即 x-prediction，以改进像素空间建模；PixelGen [55] 则进一步引入感知损失，以更好地捕捉像素的感知流形。</span></span><span class="sent" data-sid="s-2-6-4"><span class="zh">视觉生成领域的这些进展启发了我们的波形建模设计：我们采用 x-prediction 目标，并将其与多尺度 mel 频谱图监督相结合作为感知训练信号，从而实现高质量的原始波形生成。</span></span></p>
@@ -446,7 +455,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-1-3-1"><span class="zh">近来，工作在 VAE 潜空间或 mel 频谱图上的扩散模型已成为零样本（zero-shot）TTS 的主流范式。</span></span></p>
           
         </div>
-<div class="cap" id="fig-3-3-1-1"><span class="cap-k">图</span><p class="en">Figure 3 Log-SNR curves under different waveform scaling factors, assuming σx1 = 0.1.</p><p class="zh">图 3. 不同波形缩放系数下的 Log-SNR 曲线，假设 σx1 = 0.1。</p></div>
+<div class="pblk" id="fig-3-3-1-1">
+          <p class="en-lines"><span class="sent" data-sid="fig-3-3-1-1-s1"><span class="en">Figure 3 Log-SNR curves under different waveform scaling factors, assuming σx1 = 0.1.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="fig-3-3-1-1-s1"><span class="zh">图 3. 不同波形缩放系数下的 Log-SNR 曲线，假设 σx1 = 0.1。</span></span></p>
+          
+        </div>
 <div class="eq" id="eq-3-3-1-6"><code>σx1</code></div>
 <div class="pblk" id="p-3-3-1-4">
           <p class="en-lines"><span class="sent" data-sid="s-3-3-1-4-1"><span class="en">= 20 log10 t 1 −t + 20 log10</span></span></p>
@@ -502,7 +515,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-1-9-1"><span class="zh">（图 4(b)：Uniform 与 LogitNormal（µ=0.0、σ=1.0；µ=0.8、σ=0.8）调度曲线；纵轴 log(π(t)/(1−t)^2)，刻度 -4/0/2/6；Hard Phase（低 SNR）/ Easy Phase（高 SNR）；横轴 t（0.0/0.2/0.4/0.6/0.8/1.0）。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-3-3-1-2"><span class="cap-k">图</span><p class="en">Figure 4 Illustration of timestep sampling densities and their corresponding implicit loss weights under the x-prediction objective. The noise-shifted schedule emphasizes low-SNR regions while reducing the excessive loss weight near t →1.</p><p class="zh">图 4. x-prediction 目标下时刻采样密度及其对应隐式损失权重的示意图。噪声偏移调度强调低信噪比区域，同时降低 t → 1 附近过大的损失权重。</p></div></section>
+<div class="pblk" id="fig-3-3-1-2">
+          <p class="en-lines"><span class="sent" data-sid="fig-3-3-1-2-s1"><span class="en">Figure 4 Illustration of timestep sampling densities and their corresponding implicit loss weights under the x-prediction objective. The noise-shifted schedule emphasizes low-SNR regions while reducing the excessive loss weight near t →1.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="fig-3-3-1-2-s1"><span class="zh">图 4. x-prediction 目标下时刻采样密度及其对应隐式损失权重的示意图。噪声偏移调度强调低信噪比区域，同时降低 t → 1 附近过大的损失权重。</span></span></p>
+          
+        </div></section>
 <section>
       <h3 class="sech lv2" id="sec-3-3-2"><span class="secnum">3.3.2</span> <span class="t-zh">噪声偏移时间调度</span><span class="t-en">Noise-Shifted Temporal Scheduling</span></h3><div class="pblk" id="p-3-3-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-3-3-2-1-1"><span class="en">During training, existing flow-matching-based TTS models [8, 108] typically adopt uniform timestep sampling, i.e., t ∼U(0, 1).</span></span> <span class="sent" data-sid="s-3-3-2-1-2"><span class="en">However, under the x-prediction objective, predicting the raw waveform x′ 1 from the interpolated state xt = (1 −t)x0 + tx′ 1 leads to highly imbalanced modeling difficulty across timesteps.</span></span> <span class="sent" data-sid="s-3-3-2-1-3"><span class="en">When t →0, the input is dominated by Gaussian noise, forcing the model to reconstruct the waveform under extremely low-SNR conditions.</span></span> <span class="sent" data-sid="s-3-3-2-1-4"><span class="en">In contrast, when t →1, the input is already close to the target, and the model only needs to remove minor residual noise.</span></span> <span class="sent" data-sid="s-3-3-2-1-5"><span class="en">To mitigate this issue, following practices in image generation [18, 49], we sample training timesteps from a logit-normal distribution.</span></span> <span class="sent" data-sid="s-3-3-2-1-6"><span class="en">Formally, we draw u ∼N(µ, σ2) and set t = sigmoid(u), yielding t ∼LogitNormal(µ, σ2).</span></span> <span class="sent" data-sid="s-3-3-2-1-7"><span class="en">In practice, we set µ &lt; 0 to shift the sampling density π(t) toward high-noise regions, as shown in Figure 4a.</span></span> <span class="sent" data-sid="s-3-3-2-1-8"><span class="en">From the perspective of the x-prediction objective, non-uniform timestep sampling can be equivalently interpreted as implicit loss re-weighting [18] under uniform sampling:</span></span></p>
@@ -588,7 +605,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-4-1"><span class="zh">评测指标。</span></span><span class="sent" data-sid="s-4-4-2"><span class="zh">我们采用三个可复现的模型化指标进行客观评测。</span></span><span class="sent" data-sid="s-4-4-3"><span class="zh">可懂度以词错误率（WER）衡量，使用 ASR 模型转写：英语用 Whisper-large-v3 [66]，中文用 Paraformer-zh [20]。</span></span><span class="sent" data-sid="s-4-4-4"><span class="zh">说话人相似度以 SIM-o 衡量：用基于 WavLM 的说话人验证模型 [9] 分别从生成语音与参考提示中提取说话人表征，再计算余弦相似度。</span></span><span class="sent" data-sid="s-4-4-5"><span class="zh">自然度由 UTMOS [70] 评估，它预测合成语音的平均意见分（MOS）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-1"><span class="cap-k">表</span><p class="en">Table 1 Zero-shot TTS results on the Seed-TTS benchmark. Best results are highlighted in bold, and second-best are underlined. “Multi.” denotes multilingual training data. †Results are taken from the original papers.</p><p class="zh">表 1. Seed-TTS 基准上的零样本 TTS 结果。最优结果加粗，次优加下划线。「Multi.」表示多语言训练数据。†结果摘自原论文。</p></div>
+<div class="pblk" id="tab-4-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-4-1-s1"><span class="en">Table 1 Zero-shot TTS results on the Seed-TTS benchmark. Best results are highlighted in bold, and second-best are underlined. “Multi.” denotes multilingual training data. †Results are taken from the original papers.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-4-1-s1"><span class="zh">表 1. Seed-TTS 基准上的零样本 TTS 结果。最优结果加粗，次优加下划线。「Multi.」表示多语言训练数据。†结果摘自原论文。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-4-5">
           <p class="en-lines"><span class="sent" data-sid="s-4-5-1"><span class="en">Model Params Data (hrs) Seed-TTS test-en Seed-TTS test-zh WER(%) ↓ SIM-o ↑ UTMOS ↑ CER(%) ↓ SIM-o ↑ UTMOS ↑ Ground Truth</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-5-1"><span class="zh">表头：Model × Params × Data (hrs) × Seed-TTS test-en（WER(%)↓/SIM-o↑/UTMOS↑）× Seed-TTS test-zh（CER(%)↓/SIM-o↑/UTMOS↑）——Ground Truth –/–：1.79/0.73/3.53、1.25/0.75/2.78；AR Models†：CosyVoice 416M、170K 小时、Multi.（后续照原文）。</span></span></p>
@@ -670,7 +691,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-1-2-1-1"><span class="zh">由于以往大多数端到端语音生成模型不支持零样本 TTS，我们的比较聚焦于可懂度（WER）与客观自然度（UTMOS）。</span></span><span class="sent" data-sid="s-5-1-2-1-2"><span class="zh">这些基线除 VITSVCTK 外，均在单说话人的 LJSpeech [35] 数据集上训练。</span></span><span class="sent" data-sid="s-5-1-2-1-3"><span class="zh">为降低说话人音色差异对 UTMOS 指标的影响、保证更公平的自然度评测，我们从 LJSpeech 中随机选取一段固定音频作为提示，让 WavTTS 做零样本合成。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-1-2-1"><span class="cap-k">表</span><p class="en">Table 2 Comparison of TTS performance with previous endto-end speech generation models.</p><p class="zh">表 2. 与以往端到端语音生成模型的 TTS 性能比较。</p></div>
+<div class="pblk" id="tab-5-1-2-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-5-1-2-1-s1"><span class="en">Table 2 Comparison of TTS performance with previous endto-end speech generation models.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-5-1-2-1-s1"><span class="zh">表 2. 与以往端到端语音生成模型的 TTS 性能比较。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-5-1-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-5-1-2-2-1"><span class="en">Model LJSpeech LibriSpeech-PC WER(%) ↓ UTMOS ↑ WER(%) ↓ UTMOS ↑ Ground Truth</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-1-2-2-1"><span class="zh">（表 2：Model × LJSpeech（WER(%)↓/UTMOS↑）× LibriSpeech-PC（WER(%)↓/UTMOS↑）——Ground Truth 3.42/4.36/2.23/4.10；WaveGrad 2 25.19/3.24/33.77/3.05；VITS_VCTK 9.34/4.06/10.23/4.03；VITS_LJ 3.72/4.37/2.23/4.36；JETS 3.73/4.36/3.00/4.34；WavTTS 3.43/4.39/2.02/4.36。）如表 2 所示，WavTTS 在两个测试集上都取得最低 WER 与最高 UTMOS。</span></span></p>
@@ -709,7 +734,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-1-1-1"><span class="zh">如 Table 3 所示，我们研究流匹配预测目标与多尺度 mel 频谱图损失权重 λmel 的影响。</span></span><span class="sent" data-sid="s-5-2-1-1-2"><span class="zh">与 v-prediction 相比，x-prediction 的可懂度略优，且说话人相似度提升明显，说明对原始波形建模而言，直接预测干净波形比预测向量场是更有效的学习目标。</span></span><span class="sent" data-sid="s-5-2-1-1-3"><span class="zh">此外，x-prediction 与辅助的 mel 频谱图监督天然契合，因为 mel 损失可以直接施加在预测波形上。</span></span><span class="sent" data-sid="s-5-2-1-1-4"><span class="zh">相比之下，v-prediction 需要先由估计的速度重建出波形预测，才能计算 mel 损失。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-2-1-1"><span class="cap-k">表</span><p class="en">Table 3 Ablations on the prediction objective and melspectrogram loss weight. Default settings are marked in gray .</p><p class="zh">表 3. 预测目标与 mel 频谱图损失权重的消融。默认设置以灰色标出。</p></div>
+<div class="pblk" id="tab-5-2-1-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-5-2-1-1-s1"><span class="en">Table 3 Ablations on the prediction objective and melspectrogram loss weight. Default settings are marked in gray .</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-5-2-1-1-s1"><span class="zh">表 3. 预测目标与 mel 频谱图损失权重的消融。默认设置以灰色标出。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-5-2-1-2">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-1-2-1"><span class="en">Prediction Target λmel WER (%) ↓ SIM-o ↑ UTMOS ↑ v-prediction</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-1-2-1"><span class="zh">（表：Prediction Target × λ_mel × WER(%)↓ × SIM-o↑ × UTMOS↑——v-prediction：0.05→1.67/0.61/3.94；0→1.92/0.56/3.77；0.01→1.77/0.60/3.87；0.05→1.65/0.65/3.93；0.2→1.74/0.60/3.89；0.5→1.81/0.55/3.82；x-prediction（对照）。）λ_mel 的消融凸显适当感知监督的关键作用。</span></span></p>
@@ -729,8 +758,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-5-2-2"><span class="secnum">5.2.2</span> <span class="t-zh">噪声调度</span><span class="t-en">Noise Scheduling</span></h3><div class="cap" id="tab-5-2-2-1"><span class="cap-k">表</span><p class="en">Table 4 investigates the impact of the waveform scaling factor k on model performance. Without amplitude scaling (k = 1), the model suffers from severe degradation, with SIM-o and UTMOS scores substantially lower than those of the scaled variants. This indicates that, without proper scaling, the target waveform remains overwhelmed by Gaussian noise over a large portion of the diffusion trajectory, leading to inefficient learning in the raw waveform space during training. By employing the proposed Signal-Noise Variance Alignment strategy (k = 9), the model achieves the highest SIM-o and UTMOS scores while maintaining a competitive WER. Interestingly, a smaller scaling factor (k = 5) slightly improves intelligibility and yields faster WER convergence. We hypothesize that a relatively higher noise ratio forces the model to prioritize coarse-grained linguistic structures. However, this intelligibility gain comes at the expense of speaker similarity and naturalness;</p><p class="zh">表 4（正文说明部分）：考察波形缩放系数 k 对模型性能的影响。不做幅度缩放（k = 1）时模型性能严重退化，SIM-o 与 UTMOS 远低于缩放变体，说明缺乏适当缩放时目标波形在扩散轨迹的大部分区段被高斯噪声淹没，导致原始波形空间中的低效学习。采用提出的信号-噪声方差对齐（k = 9）后，模型取得最高的 SIM-o 与 UTMOS，WER 保持有竞争力。有趣的是，较小的缩放系数（k = 5）略微改善可懂度并加快 WER 收敛，我们推测是较高的噪声比例迫使模型优先学习粗粒度语言结构；但这种可懂度收益以说话人相似度与自然度为代价。</p></div>
-<div class="cap" id="tab-5-2-2-2"><span class="cap-k">表</span><p class="en">Table 4 Ablations on the scaling factor k. Default settings are marked in gray .</p><p class="zh">表 4. 缩放系数 k 的消融。默认设置以灰色标出。</p></div>
+      <h3 class="sech lv2" id="sec-5-2-2"><span class="secnum">5.2.2</span> <span class="t-zh">噪声调度</span><span class="t-en">Noise Scheduling</span></h3><div class="pblk" id="tab-5-2-2-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-5-2-2-1-s1"><span class="en">Table 4 investigates the impact of the waveform scaling factor k on model performance. Without amplitude scaling (k = 1), the model suffers from severe degradation, with SIM-o and UTMOS scores substantially lower than those of the scaled variants. This indicates that, without proper scaling, the target waveform remains overwhelmed by Gaussian noise over a large portion of the diffusion trajectory, leading to inefficient learning in the raw waveform space during training. By employing the proposed Signal-Noise Variance Alignment strategy (k = 9), the model achieves the highest SIM-o and UTMOS scores while maintaining a competitive WER. Interestingly, a smaller scaling factor (k = 5) slightly improves intelligibility and yields faster WER convergence. We hypothesize that a relatively higher noise ratio forces the model to prioritize coarse-grained linguistic structures. However, this intelligibility gain comes at the expense of speaker similarity and naturalness;</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-5-2-2-1-s1"><span class="zh">表 4（正文说明部分）：考察波形缩放系数 k 对模型性能的影响。不做幅度缩放（k = 1）时模型性能严重退化，SIM-o 与 UTMOS 远低于缩放变体，说明缺乏适当缩放时目标波形在扩散轨迹的大部分区段被高斯噪声淹没，导致原始波形空间中的低效学习。采用提出的信号-噪声方差对齐（k = 9）后，模型取得最高的 SIM-o 与 UTMOS，WER 保持有竞争力。有趣的是，较小的缩放系数（k = 5）略微改善可懂度并加快 WER 收敛，我们推测是较高的噪声比例迫使模型优先学习粗粒度语言结构；但这种可懂度收益以说话人相似度与自然度为代价。</span></span></p>
+          
+        </div>
+<div class="pblk" id="tab-5-2-2-2">
+          <p class="en-lines"><span class="sent" data-sid="tab-5-2-2-2-s1"><span class="en">Table 4 Ablations on the scaling factor k. Default settings are marked in gray .</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-5-2-2-2-s1"><span class="zh">表 4. 缩放系数 k 的消融。默认设置以灰色标出。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-5-2-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-2-1-1"><span class="en">k WER (%) ↓ SIM-o ↑ UTMOS ↑</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-2-1-1"><span class="zh">（表格行：k × WER(%)↓ × SIM-o↑ × UTMOS↑——1：4.18/0.32/2.40；5：1.51/0.59/3.81；9：1.65/0.65/3.93；10：1.82/0.64/3.87。）主观试听进一步发现电子噪声、去噪不完全等可闻伪影。</span></span></p>
@@ -755,7 +792,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-5-2-2-9"><code>LogitNormal (μ = 0.0, σ = 1.0) LogitNormal (μ = −0.8, σ = 0.8) LogitNormal (μ = −1.2, σ = 1.0)</code></div>
-<div class="cap" id="fig-5-2-2-1"><span class="cap-k">图</span><p class="en">Figure 5 Comparison of zero-shot TTS performance under different training noise schedules.</p><p class="zh">图 5. 不同训练噪声调度下零样本 TTS 性能的对比。</p></div>
+<div class="pblk" id="fig-5-2-2-1">
+          <p class="en-lines"><span class="sent" data-sid="fig-5-2-2-1-s1"><span class="en">Figure 5 Comparison of zero-shot TTS performance under different training noise schedules.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="fig-5-2-2-1-s1"><span class="zh">图 5. 不同训练噪声调度下零样本 TTS 性能的对比。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-5-2-2-4">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-2-4-1"><span class="en">To validate the noise-shifted temporal scheduling introduced in Section 3.3.2, we compare different timestep sampling strategies during training.</span></span> <span class="sent" data-sid="s-5-2-2-4-2"><span class="en">Specifically, we evaluate the three distributions illustrated in Figure 4a, together with a more aggressive noise-shifted variant, t ∼LogitNormal(µ = −1.2, σ = 1.0), which further biases the sampling density toward high-noise regions compared with µ = −0.8.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-2-4-1"><span class="zh">为验证 Section 3.3.2 引入的噪声偏移时间调度，我们比较训练期的不同时刻采样策略。</span></span><span class="sent" data-sid="s-5-2-2-4-2"><span class="zh">具体而言，我们评测 Figure 4a 所示的三种分布，外加一个更激进的噪声偏移变体 t ∼ LogitNormal(µ = −1.2, σ = 1.0)，它比 µ = −0.8 更偏向高噪声区域。</span></span></p>
@@ -779,7 +820,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-3-1-1"><span class="zh">我们在 NFE 设为 50 的条件下，用各种时刻调度评测训练了 1M 步的模型。</span></span><span class="sent" data-sid="s-5-2-3-1-2"><span class="zh">如 Table 5 所示，噪声偏移调度（如 Sway Sampling 与我们提出的 PolyShift）在整体零样本 TTS 性能上显著优于均匀采样。</span></span><span class="sent" data-sid="s-5-2-3-1-3"><span class="zh">这说明把更多时刻分配给高噪声区间——即 ODE 轨迹的初始阶段——对最终语音合成质量至关重要。</span></span><span class="sent" data-sid="s-5-2-3-1-4"><span class="zh">此外，用 PolyShift 替换 Sway Sampling 这一更激进的偏移策略，在 SIM-o 与 UTMOS 上带来了进一步提升。</span></span><span class="sent" data-sid="s-5-2-3-1-5"><span class="zh">这表明在原始波形空间做流匹配，需要在早期阶段布置更密集的时刻，以形成更好的生成轨迹原型。</span></span><span class="sent" data-sid="s-5-2-3-1-6"><span class="zh">值得注意的是，过大的偏移（如 PolyShift 取 p = 2.0、s = 5.0）虽能略微降低 WER，但在主观试听中引入了更明显的背景噪声。</span></span><span class="sent" data-sid="s-5-2-3-1-7"><span class="zh">我们将这种伪影归因于细粒度细化不足——由分配给后期阶段的时刻稀缺所致（该句在抽取文本中被表格截断，后半句见下）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-2-3-1"><span class="cap-k">表</span><p class="en">Table 5 Comparison of inference timestep schedules. Default settings are marked in gray .</p><p class="zh">表 5. 推理时刻调度的对比。默认设置以灰色标出。</p></div>
+<div class="pblk" id="tab-5-2-3-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-5-2-3-1-s1"><span class="en">Table 5 Comparison of inference timestep schedules. Default settings are marked in gray .</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-5-2-3-1-s1"><span class="zh">表 5. 推理时刻调度的对比。默认设置以灰色标出。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-5-2-3-2">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-3-2-1"><span class="en">Inference Schedule WER (%) ↓ SIM-o ↑ UTMOS ↑ Uniform</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-3-2-1"><span class="zh">（表格：Inference Schedule × WER(%)↓ × SIM-o↑ × UTMOS↑——Uniform 1.78/0.63/3.77；Sway Sampling（s′=−1.0）1.68/0.64/3.88；PolyShift（p=2.0, s=1.0）1.60/0.64/3.88；PolyShift（p=2.0, s=3.0）1.65/0.65/3.93；PolyShift（p=2.0, s=5.0）1.58/0.65/3.92。）后期阶段分配的时间步不足导致细化（refinement）不够。</span></span></p>
@@ -815,7 +860,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-4-3-1"><span class="zh">在 LibriTTS 上训练时，两个模型在领域外的 Seed-TTS test-en 集上零样本泛化都很差，SIM-o 仅约 0.3。</span></span><span class="sent" data-sid="s-5-2-4-3-2"><span class="zh">相比之下，扩展到 100K 小时的 Emilia 数据集后，两种大小的模型说话人相似度都明显提升，WER 也都降到 2% 以下。</span></span><span class="sent" data-sid="s-5-2-4-3-3"><span class="zh">这说明，要在高维波形空间中直接学习到稳健的说话人特征与语言内容，大规模且多样的数据是必不可少的。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-2-4-1"><span class="cap-k">表</span><p class="en">Table 6 Scaling behavior of WavTTS under different training data scales and model sizes.</p><p class="zh">表 6. WavTTS 在不同训练数据规模与模型大小下的缩放行为。</p></div>
+<div class="pblk" id="tab-5-2-4-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-5-2-4-1-s1"><span class="en">Table 6 Scaling behavior of WavTTS under different training data scales and model sizes.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-5-2-4-1-s1"><span class="zh">表 6. WavTTS 在不同训练数据规模与模型大小下的缩放行为。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-5-2-4-4">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-4-4-1"><span class="en">Training Data Model Size WER (%) ↓ SIM-o ↑ UTMOS ↑ LibriTTS (585 hrs) 340M</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-4-4-1"><span class="zh">（表格：Training Data × Model Size × WER(%)↓ × SIM-o↑ × UTMOS↑——LibriTTS（585 小时）：340M 2.16/0.35/3.95，673M 2.12/0.31/3.94；Emilia（100K 小时）：340M 1.74/0.56/3.87，673M 1.65/0.65/3.93。）在 Emilia 上把模型从 340M 增至 673M 进一步改善 WER 与 SIM-o，说话人相似度提升尤其明显。</span></span></p>
@@ -852,14 +901,22 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-4-6-1"><span class="zh">（图横轴：Training Steps（200K / 400K / 600K / 800K / 1M，三组）；Mel-Spectrogram / Waveform (Ours) / STFT / MDCT。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-5-2-4-1"><span class="cap-k">图</span><p class="en">Figure 6 Comparison of zero-shot TTS performance curves using different acoustic representations. Waveform, STFT, and MDCT are lossless (or nearly lossless) representations, while mel-spectrograms are lossy and require an additional pre-trained vocoder [72] for waveform reconstruction.</p><p class="zh">图 6. 使用不同声学表征的零样本 TTS 性能曲线对比。Waveform、STFT 与 MDCT 为无损（或接近无损）表征，而 mel 频谱图是有损表征，需要额外的预训练声码器 [72] 来重建波形。</p></div></section>
+<div class="pblk" id="fig-5-2-4-1">
+          <p class="en-lines"><span class="sent" data-sid="fig-5-2-4-1-s1"><span class="en">Figure 6 Comparison of zero-shot TTS performance curves using different acoustic representations. Waveform, STFT, and MDCT are lossless (or nearly lossless) representations, while mel-spectrograms are lossy and require an additional pre-trained vocoder [72] for waveform reconstruction.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="fig-5-2-4-1-s1"><span class="zh">图 6. 使用不同声学表征的零样本 TTS 性能曲线对比。Waveform、STFT 与 MDCT 为无损（或接近无损）表征，而 mel 频谱图是有损表征，需要额外的预训练声码器 [72] 来重建波形。</span></span></p>
+          
+        </div></section>
 <section>
       <h3 class="sech lv2" id="sec-5-2-5"><span class="secnum">5.2.5</span> <span class="t-zh">声学表征的比较</span><span class="t-en">Comparison of Acoustic Representations</span></h3><div class="pblk" id="p-5-2-5-1">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-5-1-1"><span class="en">Raw waveforms preserve speech signals directly in the time domain, while speech can also be represented by lossless or nearly lossless time-frequency transforms, such as short-time Fourier transform (STFT) and modified discrete cosine transform (MDCT) coefficients, which support waveform reconstruction through corresponding inverse transforms.</span></span> <span class="sent" data-sid="s-5-2-5-1-2"><span class="en">To examine whether frequency-domain modeling offers advantages over direct waveform modeling, we compare these representations under the same flow matching framework.</span></span> <span class="sent" data-sid="s-5-2-5-1-3"><span class="en">For reference, we additionally include mel-spectrograms as a standard lossy acoustic representation.</span></span> <span class="sent" data-sid="s-5-2-5-1-4"><span class="en">Details of STFT- and MDCT-based diffusion modeling are provided in Appendix C.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-5-1-1"><span class="zh">原始波形直接在时域保留语音信号；语音也可以用无损或近无损的时频变换表征，例如短时傅里叶变换（STFT）与改进离散余弦变换（MDCT）系数，它们都支持通过相应的逆变换重建波形。</span></span><span class="sent" data-sid="s-5-2-5-1-2"><span class="zh">为考察频域建模是否优于直接波形建模，我们在同一流匹配框架下比较这些表征。</span></span><span class="sent" data-sid="s-5-2-5-1-3"><span class="zh">作为参照，我们还加入了 mel 频谱图这一标准的有损声学表征。</span></span><span class="sent" data-sid="s-5-2-5-1-4"><span class="zh">基于 STFT 与 MDCT 的扩散建模细节见 Appendix C。</span></span></p>
           
         </div>
-<div class="cap" id="fig-5-2-5-1"><span class="cap-k">图</span><p class="en">Figure 6 compares zero-shot TTS performance across different acoustic representations. Overall, both raw waveform and mel-spectrogram models converge efficiently, achieving under 10% WER and over 0.5 SIM-o at 200K training steps. Notably, waveform modeling outperforms mel-spectrograms with faster early intelligibility convergence (4.10% vs. 9.76% WER at 200K steps) and better objective naturalness (3.93 vs. 3.68 UTMOS at 1M steps), while maintaining comparable speaker similarity. These results suggest that WavTTS can effectively model high-dimensional waveform structures and benefit from the lossless nature of raw waveforms for natural speech synthesis.</p><p class="zh">图 6 对比了不同声学表征下的零样本 TTS 性能。总体而言，原始波形与 mel 频谱图模型都能高效收敛，在 200K 训练步时 WER 已低于 10%、SIM-o 超过 0.5。值得注意的是，波形建模在早期可懂度收敛上优于 mel 频谱图（200K 步时 WER 4.10% 对 9.76%），客观自然度也更好（1M 步时 UTMOS 3.93 对 3.68），说话人相似度则相当。这些结果表明 WavTTS 能有效建模高维波形结构，并从原始波形的无损特性中受益，产出自然的合成语音。</p></div>
+<div class="pblk" id="fig-5-2-5-1">
+          <p class="en-lines"><span class="sent" data-sid="fig-5-2-5-1-s1"><span class="en">Figure 6 compares zero-shot TTS performance across different acoustic representations. Overall, both raw waveform and mel-spectrogram models converge efficiently, achieving under 10% WER and over 0.5 SIM-o at 200K training steps. Notably, waveform modeling outperforms mel-spectrograms with faster early intelligibility convergence (4.10% vs. 9.76% WER at 200K steps) and better objective naturalness (3.93 vs. 3.68 UTMOS at 1M steps), while maintaining comparable speaker similarity. These results suggest that WavTTS can effectively model high-dimensional waveform structures and benefit from the lossless nature of raw waveforms for natural speech synthesis.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="fig-5-2-5-1-s1"><span class="zh">图 6 对比了不同声学表征下的零样本 TTS 性能。总体而言，原始波形与 mel 频谱图模型都能高效收敛，在 200K 训练步时 WER 已低于 10%、SIM-o 超过 0.5。值得注意的是，波形建模在早期可懂度收敛上优于 mel 频谱图（200K 步时 WER 4.10% 对 9.76%），客观自然度也更好（1M 步时 UTMOS 3.93 对 3.68），说话人相似度则相当。这些结果表明 WavTTS 能有效建模高维波形结构，并从原始波形的无损特性中受益，产出自然的合成语音。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-5-2-5-2">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-5-2-1"><span class="en">In contrast, STFT and MDCT representations exhibit significantly slower convergence and inferior final zero-shot TTS performance.</span></span> <span class="sent" data-sid="s-5-2-5-2-2"><span class="en">The MDCT-based model begins to generate recognizable speech after 400K steps, while the STFT-based model requires around 600K steps.</span><button class="mk" data-sid="s-5-2-5-2-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-2-5-2-3"><span class="en">We hypothesize that this stems from the inherent complexity of these time-frequency representations.</span></span> <span class="sent" data-sid="s-5-2-5-2-4"><span class="en">STFT requires modeling complex-valued coefficients with coupled magnitude-phase structures, while MDCT exhibits an unfavorable feature distribution for flow matching.</span></span> <span class="sent" data-sid="s-5-2-5-2-5"><span class="en">For example, on sampled Emilia data, MDCT features have a standard deviation of only about 0.005 but a maximum value of 0.15, indicating a sharply peaked distribution with extreme outliers that may hinder effective learning.</span><button class="mk" data-sid="s-5-2-5-2-5" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-2-5-2-6"><span class="en">Consequently, developing flow-matching TTS in such frequency-domain spaces may necessitate more delicate feature preprocessing and architectural modifications.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-5-2-1"><span class="zh">相比之下，STFT 与 MDCT 表征的收敛明显更慢，最终零样本 TTS 性能也较差。</span></span><span class="sent" data-sid="s-5-2-5-2-2"><span class="zh">基于 MDCT 的模型要到 400K 步之后才开始生成可辨认的语音，而基于 STFT 的模型则需要约 600K 步。</span><button class="mk" data-sid="s-5-2-5-2-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-2-5-2-3"><span class="zh">我们推测这源于这些时频表征内在的复杂性。</span></span><span class="sent" data-sid="s-5-2-5-2-4"><span class="zh">STFT 需要建模幅度与相位结构相互耦合的复数系数，而 MDCT 的特征分布对流匹配不利。</span></span><span class="sent" data-sid="s-5-2-5-2-5"><span class="zh">例如，在抽样的 Emilia 数据上，MDCT 特征的标准差仅约 0.005，但最大值达 0.15，说明其分布尖峰明显、极端离群值多，可能妨碍有效学习。</span><button class="mk" data-sid="s-5-2-5-2-5" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-2-5-2-6"><span class="zh">因此，在这类频域空间中开发流匹配 TTS，可能需要更精细的特征预处理与架构改造。</span></span></p>
@@ -1061,7 +1118,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-B-3-1"><span class="zh">近来，工作在 VAE 潜空间或 mel 频谱图上的扩散模型已成为零样本（zero-shot）TTS 的主流范式。</span></span></p>
           
         </div>
-<div class="cap" id="fig-B-1"><span class="cap-k">图</span><p class="en">Figure 7 Timestep sampling densities under different inference schedules.</p><p class="zh">图 7. 不同推理调度下的时刻采样密度。</p></div></section>
+<div class="pblk" id="fig-B-1">
+          <p class="en-lines"><span class="sent" data-sid="fig-B-1-s1"><span class="en">Figure 7 Timestep sampling densities under different inference schedules.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="fig-B-1-s1"><span class="zh">图 7. 不同推理调度下的时刻采样密度。</span></span></p>
+          
+        </div></section>
 <section>
       <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">STFT 与 MDCT 表征的扩散建模</span><span class="t-en">Diffusion Modeling with STFT and MDCT Representations</span></h2><div class="pblk" id="p-C-1">
           <p class="en-lines"><span class="sent" data-sid="s-C-1-1"><span class="en">To ensure a fair comparison with direct waveform modeling, we adapt the STFT and MDCT representations to the same flow matching framework with a comparable parameter count.</span></span> <span class="sent" data-sid="s-C-1-2"><span class="en">Specifically, we use the same DiT backbone as the larger configuration described in Appendix A.</span></span> <span class="sent" data-sid="s-C-1-3"><span class="en">The model retains the x-prediction objective, with the prediction space changed from raw waveforms to STFT or MDCT coefficients.</span></span> <span class="sent" data-sid="s-C-1-4"><span class="en">Since the prediction targets inherently capture time-frequency information, we omit the auxiliary multi-scale mel-spectrogram loss.</span></span></p>

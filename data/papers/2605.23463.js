@@ -346,10 +346,15 @@ globalThis.PAPER_2605_23463 = {
     },
     {
      "id": "fig-2-1-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 3,
-     "original": "Figure 1 summarizes the structural organization used throughout this report. At the center is the shared StepAudio 2.5 foundation model, which supports three model-level specializations: ASR, TTS, and Realtime. These three systems share the same audio-language stack while serving different deployment regimes, making the figure a compact summary of how one foundation is specialized for recognition, synthesis, and live spoken interaction.",
-     "zh": "图 1 概括了本报告通篇使用的结构组织方式：中心是共享的 StepAudio 2.5 基础模型，它支撑三个模型级专门化——ASR、TTS 和 Realtime。这三套系统共享同一套音频-语言栈，但服务于不同的部署域，因此该图是对「一个基础模型如何被专门化为识别、合成和实时语音交互」的紧凑总结。"
+     "sentences": [
+      {
+       "id": "fig-2-1-1-s1",
+       "original": "Figure 1 summarizes the structural organization used throughout this report. At the center is the shared StepAudio 2.5 foundation model, which supports three model-level specializations: ASR, TTS, and Realtime. These three systems share the same audio-language stack while serving different deployment regimes, making the figure a compact summary of how one foundation is specialized for recognition, synthesis, and live spoken interaction.",
+       "zh": "图 1 概括了本报告通篇使用的结构组织方式：中心是共享的 StepAudio 2.5 基础模型，它支撑三个模型级专门化——ASR、TTS 和 Realtime。这三套系统共享同一套音频-语言栈，但服务于不同的部署域，因此该图是对「一个基础模型如何被专门化为识别、合成和实时语音交互」的紧凑总结。"
+      }
+     ]
     }
    ]
   },

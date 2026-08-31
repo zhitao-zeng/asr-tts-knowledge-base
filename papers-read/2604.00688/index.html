@@ -92,6 +92,7 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 }
 /* 图/表标题、公式、表格主体 */
 .cap{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:12px 0;font-size:13px}
+.cap img.fig{display:block;max-width:100%;margin:2px auto 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .cap-k{display:inline-block;font-size:11px;font-weight:700;color:#0f766e;background:#ccfbf1;border-radius:6px;padding:1px 7px;margin-right:6px}
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
@@ -221,7 +222,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-1-5-1"><span class="zh">文本 token、声学 token、预测目标、双向 Transformer、指令、转写文本、提示段、目标掩码段。</span></span></p>
           
         </div>
-<div class="cap" id="fig-1-1"><span class="cap-k">图</span><p class="en">Figure 1: Illustration of OmniVoice architecture.</p><p class="zh">图 1：OmniVoice 架构示意图。</p></div>
+<div class="cap" id="fig-1-1"><img class="fig" src="../assets/figures/2604.00688/fig-1-1.png" loading="lazy" alt="Figure 1: Illustration of OmniVoice architecture."><span class="cap-k">图</span><p class="en">Figure 1: Illustration of OmniVoice architecture.</p><p class="zh">图 1：OmniVoice 架构示意图。</p></div>
 <div class="pblk" id="p-1-6">
           <p class="en-lines"><span class="sent" data-sid="s-1-6-1"><span class="en">To bridge this gap, we introduce OmniVoice, an architecturally streamlined yet highly effective discrete NAR TTS framework.</span></span> <span class="sent" data-sid="s-1-6-2"><span class="en">OmniVoice employs a discrete masked diffusion objective [22] with a bidirectional Transformer [23] to directly map text to multi-codebook acoustic tokens, thereby bypassing the complexity and limitations of cascaded pipelines.</span></span> <span class="sent" data-sid="s-1-6-3"><span class="en">Its core modeling philosophy extends the success of diffusion language models [24, 25] to the speech domain.</span></span> <span class="sent" data-sid="s-1-6-4"><span class="en">We demonstrate that the potential of this minimalist architecture can be fully unleashed through two technical innovations: (1) Full-Codebook Random Masking: Conventional multi-codebook acoustic prediction methods adopt &quot;per-layer&quot; masking schedules [26, 19], suffering from inefficient convergence.</span></span> <span class="sent" data-sid="s-1-6-5"><span class="en">We propose a fully stochastic masking strategy across all codebooks that significantly enhances training efficiency and generative quality.</span></span> <span class="sent" data-sid="s-1-6-6"><span class="en">(2) LLM Initialization: To resolve the intelligibility issues in single-stage discrete NAR models, we initialize our backbone with pre-trained AR LLM weights to inherit linguistic knowledge, making OmniVoice the first NAR TTS model to successfully benefit from LLM initialization [3].</span><button class="mk feat" data-sid="s-1-6-6" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-6-1"><span class="zh">为弥合这一差距，我们提出 OmniVoice——一个架构精简但高度有效的离散 NAR TTS 框架。</span></span><span class="sent" data-sid="s-1-6-2"><span class="zh">OmniVoice 采用离散掩码扩散目标 [22]，配合双向 Transformer [23]，直接将文本映射到多码本声学 token，从而绕开级联流水线的复杂性与固有局限。</span></span><span class="sent" data-sid="s-1-6-3"><span class="zh">其建模理念的核心，是把扩散语言模型 [24, 25] 的成功经验延伸到语音领域。</span></span><span class="sent" data-sid="s-1-6-4"><span class="zh">我们证明，通过两项技术创新可以充分释放这种极简架构的潜力：(1) 全码本随机掩码：传统的多码本声学预测方法采用「逐层」掩码调度 [26, 19]，收敛效率低下。</span></span><span class="sent" data-sid="s-1-6-5"><span class="zh">我们提出一种跨全部码本的完全随机掩码策略，显著提升了训练效率与生成质量。</span></span><span class="sent" data-sid="s-1-6-6"><span class="zh">(2) LLM 初始化：为解决单阶段离散 NAR 模型的可懂度问题，我们用预训练 AR LLM 的权重初始化骨干网络以继承语言知识，使 OmniVoice 成为首个成功受益于 LLM 初始化的 NAR TTS 模型 [3]。</span><button class="mk feat" data-sid="s-1-6-6" title="查看讲解">解</button></span></p>
@@ -261,7 +262,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-1-1"><span class="zh">OmniVoice 是一个单阶段 NAR TTS 模型，采用扩散语言模型风格的架构 [24, 25]。</span></span><span class="sent" data-sid="s-2-1-1-2"><span class="zh">具体而言，模型以离散扩散目标进行训练，并采用双向 Transformer 骨干。</span></span><span class="sent" data-sid="s-2-1-1-3"><span class="zh">OmniVoice 直接将文本映射到多码本声学 token，(a) 逐层掩码 (b) 全码本随机掩码。</span></span></p>
           
         </div>
-<div class="cap" id="fig-2-1-1"><span class="cap-k">图</span><p class="en">Figure 2: Comparison of per-layer masking and full-codebook random masking. The x-axis denotes the time dimension, the y-axis the codebook dimension, and white blocks indicate masked tokens.</p><p class="zh">图 2：逐层掩码与全码本随机掩码的对比。横轴为时间维度，纵轴为码本维度，白色方块表示被掩码的 token。</p></div>
+<div class="cap" id="fig-2-1-1"><img class="fig" src="../assets/figures/2604.00688/fig-2-1-1.png" loading="lazy" alt="Figure 2: Comparison of per-layer masking and full-codebook random masking. The x-axis denotes the time dimension, the y"><span class="cap-k">图</span><p class="en">Figure 2: Comparison of per-layer masking and full-codebook random masking. The x-axis denotes the time dimension, the y-axis the codebook dimension, and white blocks indicate masked tokens.</p><p class="zh">图 2：逐层掩码与全码本随机掩码的对比。横轴为时间维度，纵轴为码本维度，白色方块表示被掩码的 token。</p></div>
 <div class="pblk" id="p-2-1-2">
           <p class="en-lines"><span class="sent" data-sid="s-2-1-2-1"><span class="en">eliminating the error propagation and information bottlenecks issues in conventional two-stage cascaded pipelines.</span></span> <span class="sent" data-sid="s-2-1-2-2"><span class="en">This end-to-end streamlined architecture lays the foundation for large-scale multilingual modeling, with targeted optimizations and scaling strategies detailed in the subsequent sections.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-2-1"><span class="zh">从而消除了传统两阶段级联流水线中的误差传播与信息瓶颈问题。</span></span><span class="sent" data-sid="s-2-1-2-2"><span class="zh">这种端到端的精简架构为大规模多语种建模奠定了基础，后续章节将详细介绍针对性的优化与规模化策略。</span></span></p>
@@ -316,7 +317,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-2-1-1-2"><code>1 100 200 300 400 500 600 646</code></div>
 <div class="eq" id="eq-2-1-1-3"><code>Language Rank</code></div>
 <div class="eq" id="eq-2-1-1-4"><code>0.01</code></div>
-<div class="cap" id="fig-2-1-1-1"><span class="cap-k">图</span><p class="en">Figure 3: Statistics of the multilingual training dataset.</p><p class="zh">图 3：多语训练数据集的统计信息。</p></div>
+<div class="cap" id="fig-2-1-1-1"><img class="fig" src="../assets/figures/2604.00688/fig-2-1-1-1.png" loading="lazy" alt="Figure 3: Statistics of the multilingual training dataset."><span class="cap-k">图</span><p class="en">Figure 3: Statistics of the multilingual training dataset.</p><p class="zh">图 3：多语训练数据集的统计信息。</p></div>
 <div class="pblk" id="p-2-1-1-4">
           <p class="en-lines"><span class="sent" data-sid="s-2-1-1-4-1"><span class="en">loss computation, C times more than per-layer masking strategy, significantly accelerating convergence and boosting generative quality.</span><button class="mk feat" data-sid="s-2-1-1-4-1" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-1-4-1"><span class="zh">损失计算的 token 数约为逐层掩码策略的 C 倍，显著加速了收敛并提升了生成质量。</span><button class="mk feat" data-sid="s-2-1-1-4-1" title="查看讲解">解</button></span></p>
@@ -558,7 +559,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <section>
       <h2 class="sech lv1" id="sec-4"><span class="secnum">4</span> <span class="t-zh">4 实验结果</span><span class="t-en">Experimental Results</span></h2></section>
 <section>
-      <h3 class="sech lv2" id="sec-4-1"><span class="secnum">4.1</span> <span class="t-zh">4.1 英文与中文评估</span><span class="t-en">Evaluation on English and Chinese</span></h3><div class="cap" id="tab-4-1-1"><span class="cap-k">表</span><p class="en">Table 1 and Table 2 summarize the Chinese and English performance of OmniVoice in comparison with SOTA AR/NAR TTS models.</p><p class="zh">表 1 与表 2 汇总了 OmniVoice 与 SOTA AR/NAR TTS 模型在中文和英文上的性能对比。</p></div>
+      <h3 class="sech lv2" id="sec-4-1"><span class="secnum">4.1</span> <span class="t-zh">4.1 英文与中文评估</span><span class="t-en">Evaluation on English and Chinese</span></h3><div class="pblk" id="tab-4-1-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-4-1-1-s1"><span class="en">Table 1 and Table 2 summarize the Chinese and English performance of OmniVoice in comparison with SOTA AR/NAR TTS models.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-4-1-1-s1"><span class="zh">表 1 与表 2 汇总了 OmniVoice 与 SOTA AR/NAR TTS 模型在中文和英文上的性能对比。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-4-1-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-1-1-1"><span class="en">OmniVoice-Emilia surpasses all NAR baselines (F5-TTS [14], ZipVoice [16], MaskGCT [19]) trained on the same Emilia corpus, verifying the effectiveness of our proposed architecture.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-1-1-1"><span class="zh">OmniVoice-Emilia 超越了所有同样在 Emilia 语料上训练的 NAR 基线（F5-TTS [14]、ZipVoice [16]、MaskGCT [19]），验证了我们所提架构的有效性。</span></span></p>
@@ -818,7 +823,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-average-12"><code>2 10 100</code></div>
 <div class="eq" id="eq-average-13"><code>1K 10K 100K Duration (Hours)</code></div>
 <div class="eq" id="eq-average-14"><code>0.5</code></div>
-<div class="cap" id="fig-average-1"><span class="cap-k">图</span><p class="en">Figure 4: CERs of OmniVoice vs. ground truth across languages with varying training data durations on FLEURS-Multilingual-102. Hollow circles indicate languages where OmniVoice achieves lower CER than ground-truth, Filled circles indicate higher CER.</p><p class="zh">图 4：在 FLEURS-Multilingual-102 上，不同训练数据时长下 OmniVoice 与真实语音的逐语言 CER 对比。空心圆表示 OmniVoice 的 CER 低于真实语音的语言，实心圆表示 CER 更高的语言。</p></div>
+<div class="cap" id="fig-average-1"><img class="fig" src="../assets/figures/2604.00688/fig-average-1.png" loading="lazy" alt="Figure 4: CERs of OmniVoice vs. ground truth across languages with varying training data durations on FLEURS-Multilingua"><span class="cap-k">图</span><p class="en">Figure 4: CERs of OmniVoice vs. ground truth across languages with varying training data durations on FLEURS-Multilingual-102. Hollow circles indicate languages where OmniVoice achieves lower CER than ground-truth, Filled circles indicate higher CER.</p><p class="zh">图 4：在 FLEURS-Multilingual-102 上，不同训练数据时长下 OmniVoice 与真实语音的逐语言 CER 对比。空心圆表示 OmniVoice 的 CER 低于真实语音的语言，实心圆表示 CER 更高的语言。</p></div>
 <div class="cap" id="tab-average-1"><span class="cap-k">表</span><p class="en">Table 4: Evaluation on the FLEURS-Multilingual-102 test set.</p><p class="zh">表 4：FLEURS-Multilingual-102 测试集上的评估结果。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-4"><span class="t-zh">Model</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-4-1">

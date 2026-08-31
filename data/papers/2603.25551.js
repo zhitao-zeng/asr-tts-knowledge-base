@@ -102,7 +102,7 @@ globalThis.PAPER_2603_25551 = {
       {
        "id": "s-webpage-2-1",
        "original": "Win Rate Voxtral TTS ElevenLabs Flash v2.5",
-       "zh": "2.\n（原始数据照录）\nWin Rate Voxtral TTS ElevenLabs Flash v2.5"
+       "zh": "2.\nWin Rate Voxtral TTS ElevenLabs Flash v2.5"
       }
      ]
     },
@@ -247,10 +247,15 @@ globalThis.PAPER_2603_25551 = {
    "blocks": [
     {
      "id": "fig-2-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 2,
-     "original": "Figure 2 highlights the architecture of Voxtral TTS. It consists of a novel audio codec—Voxtral Codec—which encodes a reference voice sample into audio tokens consisting of semantic and acoustic tokens. The audio tokens are combined with text tokens to form the input to the LM decoder backbone. To generate speech, the decoder backbone auto-regressively generates semantic token outputs. A flow-matching transformer generates the acoustic tokens. The codec decoder maps the output tokens to the corresponding audio waveform.",
-     "zh": "图 2 展示了 Voxtral TTS 的架构要点。它包含一个全新的音频 codec——Voxtral Codec，把参考语音样本编码为由语义 token 和声学 token 组成的音频 token。音频 token 与文本 token 拼接后构成 LM 解码器主干的输入。生成语音时，解码器主干自回归地生成语义 token 输出；一个流匹配 Transformer 生成声学 token；codec 解码器再把输出 token 映射为对应的音频波形。"
+     "sentences": [
+      {
+       "id": "fig-2-1-s1",
+       "original": "Figure 2 highlights the architecture of Voxtral TTS. It consists of a novel audio codec—Voxtral Codec—which encodes a reference voice sample into audio tokens consisting of semantic and acoustic tokens. The audio tokens are combined with text tokens to form the input to the LM decoder backbone. To generate speech, the decoder backbone auto-regressively generates semantic token outputs. A flow-matching transformer generates the acoustic tokens. The codec decoder maps the output tokens to the corresponding audio waveform.",
+       "zh": "图 2 展示了 Voxtral TTS 的架构要点。它包含一个全新的音频 codec——Voxtral Codec，把参考语音样本编码为由语义 token 和声学 token 组成的音频 token。音频 token 与文本 token 拼接后构成 LM 解码器主干的输入。生成语音时，解码器主干自回归地生成语义 token 输出；一个流匹配 Transformer 生成声学 token；codec 解码器再把输出 token 映射为对应的音频波形。"
+      }
+     ]
     }
    ]
   },
@@ -1004,10 +1009,15 @@ globalThis.PAPER_2603_25551 = {
     },
     {
      "id": "tab-training-objective-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 5,
-     "original": "Table 1 presents a summary of the Voxtral Codec configuration. The full model has approximately 300M parameters. All decisions are ablated and the final configuration achieves stable optimization with the best audio quality.",
-     "zh": "表 1 总结了 Voxtral Codec 的配置。完整模型约 300M 参数。所有设计决策都经过消融，最终配置实现了稳定优化与最佳音质。"
+     "sentences": [
+      {
+       "id": "tab-training-objective-1-s1",
+       "original": "Table 1 presents a summary of the Voxtral Codec configuration. The full model has approximately 300M parameters. All decisions are ablated and the final configuration achieves stable optimization with the best audio quality.",
+       "zh": "表 1 总结了 Voxtral Codec 的配置。完整模型约 300M 参数。所有设计决策都经过消融，最终配置实现了稳定优化与最佳音质。"
+      }
+     ]
     }
    ]
   },
@@ -1604,10 +1614,15 @@ globalThis.PAPER_2603_25551 = {
    "blocks": [
     {
      "id": "tab-4-1-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 7,
-     "original": "Table 2 shows a comparison between Voxtral Codec and Mimi on the Expresso dataset [Nguyen et al., 2023]. We evaluate on the following objective metrics: Mel distance, STFT distance, perceptual evaluation of speech quality (PESQ), extended short-time objective intelligibility (ESTOI), word error rate between transcriptions generated using an ASR model corresponding to the source and reconstruction (ASR-WER), speaker similarity score computed using a speaker embedding model. We also report the bitrates and frames per second (fps), which are relevant as these codecs are used in the context of auto-regressive decoder models. Given Mimi uses an RVQ design for acoustic",
-     "zh": "表 2 展示了 Voxtral Codec 与 Mimi 在 Expresso 数据集 [Nguyen et al., 2023] 上的对比。我们评估以下客观指标：Mel 距离、STFT 距离、语音质量感知评估（PESQ）、扩展短时客观可懂度（ESTOI）、用 ASR 模型分别转写源音频与重建音频所得的词错误率（ASR-WER），以及用说话人嵌入模型计算的说话人相似度得分。我们还报告码率和每秒帧数（fps），因为在自回归解码器模型的语境下这些指标很重要。鉴于 Mimi 对声学"
+     "sentences": [
+      {
+       "id": "tab-4-1-1-s1",
+       "original": "Table 2 shows a comparison between Voxtral Codec and Mimi on the Expresso dataset [Nguyen et al., 2023]. We evaluate on the following objective metrics: Mel distance, STFT distance, perceptual evaluation of speech quality (PESQ), extended short-time objective intelligibility (ESTOI), word error rate between transcriptions generated using an ASR model corresponding to the source and reconstruction (ASR-WER), speaker similarity score computed using a speaker embedding model. We also report the bitrates and frames per second (fps), which are relevant as these codecs are used in the context of auto-regressive decoder models. Given Mimi uses an RVQ design for acoustic",
+       "zh": "表 2 展示了 Voxtral Codec 与 Mimi 在 Expresso 数据集 [Nguyen et al., 2023] 上的对比。我们评估以下客观指标：Mel 距离、STFT 距离、语音质量感知评估（PESQ）、扩展短时客观可懂度（ESTOI）、用 ASR 模型分别转写源音频与重建音频所得的词错误率（ASR-WER），以及用说话人嵌入模型计算的说话人相似度得分。我们还报告码率和每秒帧数（fps），因为在自回归解码器模型的语境下这些指标很重要。鉴于 Mimi 对声学"
+      }
+     ]
     },
     {
      "id": "p-4-1-1",
@@ -2224,10 +2239,15 @@ globalThis.PAPER_2603_25551 = {
     },
     {
      "id": "tab-4-3-2-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 9,
-     "original": "Table 5 shows the Voxtral TTS win rates against ElevenLabs Flash v2.5 across languages. Overall, Voxtral TTS has a win rate of 68.4%, with significantly better results across both high and lowresource languages (such as Arabic and Hindi). Notably, the Voxtral TTS win rate is much higher in the zero-shot setting (68.4%) compared with flagship voices (58.3%), highlighting that Voxtral TTS is a far more generalizable model, capturing a diverse range of user-voices.",
-     "zh": "表 5 展示了 Voxtral TTS 对 ElevenLabs Flash v2.5 在各语言上的胜率。总体上，Voxtral TTS 的胜率为 68.4%，在高资源语言与低资源语言（如阿拉伯语和印地语）上都明显更好。值得注意的是，Voxtral TTS 在零样本设置下的胜率（68.4%）远高于旗舰音色设置（58.3%），凸显它是一个泛化性强得多的模型，能捕捉多样的用户声音。"
+     "sentences": [
+      {
+       "id": "tab-4-3-2-1-s1",
+       "original": "Table 5 shows the Voxtral TTS win rates against ElevenLabs Flash v2.5 across languages. Overall, Voxtral TTS has a win rate of 68.4%, with significantly better results across both high and lowresource languages (such as Arabic and Hindi). Notably, the Voxtral TTS win rate is much higher in the zero-shot setting (68.4%) compared with flagship voices (58.3%), highlighting that Voxtral TTS is a far more generalizable model, capturing a diverse range of user-voices.",
+       "zh": "表 5 展示了 Voxtral TTS 对 ElevenLabs Flash v2.5 在各语言上的胜率。总体上，Voxtral TTS 的胜率为 68.4%，在高资源语言与低资源语言（如阿拉伯语和印地语）上都明显更好。值得注意的是，Voxtral TTS 在零样本设置下的胜率（68.4%）远高于旗舰音色设置（58.3%），凸显它是一个泛化性强得多的模型，能捕捉多样的用户声音。"
+      }
+     ]
     }
    ]
   },
@@ -2430,10 +2450,15 @@ globalThis.PAPER_2603_25551 = {
    "blocks": [
     {
      "id": "tab-5-1-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 10,
-     "original": "Table 6 shows the WER and UTMOS metrics for the pretrained and DPO checkpoints. Overall, DPO improves on both metrics, with the largest gains in German and French and regressions only on Hindi. Qualitatively, we find that the DPO model hallucinates less and skips fewer words. DPO also ameliorates the pretrained model’s occasional tendency to significantly taper in volume throughout the audio. Interestingly, DPO has minimal effect on speaker similarity, which is within ±0.01 of the pretrained checkpoint (not presented here for brevity).",
-     "zh": "表 6 给出了预训练检查点与 DPO 检查点的 WER 与 UTMOS 指标。总体上 DPO 在两项指标上都有提升，其中德语和法语收益最大，仅印地语有回退。定性上，我们发现 DPO 模型的幻觉更少、漏词更少；DPO 还缓解了预训练模型偶尔出现的、整段音频中音量逐渐衰弱的倾向。有趣的是，DPO 对说话人相似度几乎无影响，变化在预训练检查点的 ±0.01 以内（此处从略未列）。"
+     "sentences": [
+      {
+       "id": "tab-5-1-1-s1",
+       "original": "Table 6 shows the WER and UTMOS metrics for the pretrained and DPO checkpoints. Overall, DPO improves on both metrics, with the largest gains in German and French and regressions only on Hindi. Qualitatively, we find that the DPO model hallucinates less and skips fewer words. DPO also ameliorates the pretrained model’s occasional tendency to significantly taper in volume throughout the audio. Interestingly, DPO has minimal effect on speaker similarity, which is within ±0.01 of the pretrained checkpoint (not presented here for brevity).",
+       "zh": "表 6 给出了预训练检查点与 DPO 检查点的 WER 与 UTMOS 指标。总体上 DPO 在两项指标上都有提升，其中德语和法语收益最大，仅印地语有回退。定性上，我们发现 DPO 模型的幻觉更少、漏词更少；DPO 还缓解了预训练模型偶尔出现的、整段音频中音量逐渐衰弱的倾向。有趣的是，DPO 对说话人相似度几乎无影响，变化在预训练检查点的 ±0.01 以内（此处从略未列）。"
+      }
+     ]
     },
     {
      "id": "tab-5-1-2",
@@ -2582,10 +2607,15 @@ globalThis.PAPER_2603_25551 = {
    "blocks": [
     {
      "id": "fig-5-2-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 10,
-     "original": "Figure 4 demonstrates the effect on the automatic evaluation metrics as the number of functional evaluations (NFEs) and choice of CFG α are varied. There are marked improvements across metrics as the NFEs is increased from 2 to 8. We find that increasing number of NFEs beyond 8 yields marginal improvement in speaker similarity and minor degradations in WER. Thus, we chose 8 NFEs as our default inference setting.",
-     "zh": "图 4 展示了函数评估次数（NFE）与 CFG α 取值变化对自动评测指标的影响。当 NFE 从 2 增加到 8 时，各项指标都有明显改善。我们发现，把 NFE 增加到 8 以上只能带来说话人相似度的边际提升，并会让 WER 轻微变差。因此我们选择 8 个 NFE 作为默认推理设置。"
+     "sentences": [
+      {
+       "id": "fig-5-2-1-s1",
+       "original": "Figure 4 demonstrates the effect on the automatic evaluation metrics as the number of functional evaluations (NFEs) and choice of CFG α are varied. There are marked improvements across metrics as the NFEs is increased from 2 to 8. We find that increasing number of NFEs beyond 8 yields marginal improvement in speaker similarity and minor degradations in WER. Thus, we chose 8 NFEs as our default inference setting.",
+       "zh": "图 4 展示了函数评估次数（NFE）与 CFG α 取值变化对自动评测指标的影响。当 NFE 从 2 增加到 8 时，各项指标都有明显改善。我们发现，把 NFE 增加到 8 以上只能带来说话人相似度的边际提升，并会让 WER 轻微变差。因此我们选择 8 个 NFE 作为默认推理设置。"
+      }
+     ]
     },
     {
      "id": "p-5-2-1",

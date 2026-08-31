@@ -1456,10 +1456,15 @@ globalThis.PAPER_2604_00688 = {
    "blocks": [
     {
      "id": "tab-4-1-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 7,
-     "original": "Table 1 and Table 2 summarize the Chinese and English performance of OmniVoice in comparison with SOTA AR/NAR TTS models.",
-     "zh": "表 1 与表 2 汇总了 OmniVoice 与 SOTA AR/NAR TTS 模型在中文和英文上的性能对比。"
+     "sentences": [
+      {
+       "id": "tab-4-1-1-s1",
+       "original": "Table 1 and Table 2 summarize the Chinese and English performance of OmniVoice in comparison with SOTA AR/NAR TTS models.",
+       "zh": "表 1 与表 2 汇总了 OmniVoice 与 SOTA AR/NAR TTS 模型在中文和英文上的性能对比。"
+      }
+     ]
     },
     {
      "id": "p-4-1-1",

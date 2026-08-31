@@ -357,10 +357,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "fig-2-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 3,
-     "original": "Figure 1 Diffusion paradigms across different representation spaces in text-to-speech synthesis. (a) Latent Diffusion modeling on highly compressed VAE representations. (b) Mel-Spectrogram Diffusion modeling on spectrograms with discarded phase information. (c) Raw Waveform Diffusion modeling directly on lossless audio waveforms.",
-     "zh": "图 1. 文本转语音合成中不同表征空间上的扩散范式。(a) 在高度压缩的 VAE 表征上建模的潜空间扩散。(b) 在丢弃相位信息的频谱图上建模的 mel 频谱图扩散。(c) 直接在无损音频波形上建模的原始波形扩散。"
+     "sentences": [
+      {
+       "id": "fig-2-1-s1",
+       "original": "Figure 1 Diffusion paradigms across different representation spaces in text-to-speech synthesis. (a) Latent Diffusion modeling on highly compressed VAE representations. (b) Mel-Spectrogram Diffusion modeling on spectrograms with discarded phase information. (c) Raw Waveform Diffusion modeling directly on lossless audio waveforms.",
+       "zh": "图 1. 文本转语音合成中不同表征空间上的扩散范式。(a) 在高度压缩的 VAE 表征上建模的潜空间扩散。(b) 在丢弃相位信息的频谱图上建模的 mel 频谱图扩散。(c) 直接在无损音频波形上建模的原始波形扩散。"
+      }
+     ]
     },
     {
      "id": "p-2-2",
@@ -492,10 +497,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "fig-2-2",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 4,
-     "original": "Figure 2 Illustration of WavTTS training (left) and inference (right).",
-     "zh": "图 2. WavTTS 训练（左）与推理（右）示意图。"
+     "sentences": [
+      {
+       "id": "fig-2-2-s1",
+       "original": "Figure 2 Illustration of WavTTS training (left) and inference (right).",
+       "zh": "图 2. WavTTS 训练（左）与推理（右）示意图。"
+      }
+     ]
     },
     {
      "id": "p-2-6",
@@ -1196,10 +1206,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "fig-3-3-1-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 6,
-     "original": "Figure 3 Log-SNR curves under different waveform scaling factors, assuming σx1 = 0.1.",
-     "zh": "图 3. 不同波形缩放系数下的 Log-SNR 曲线，假设 σx1 = 0.1。"
+     "sentences": [
+      {
+       "id": "fig-3-3-1-1-s1",
+       "original": "Figure 3 Log-SNR curves under different waveform scaling factors, assuming σx1 = 0.1.",
+       "zh": "图 3. 不同波形缩放系数下的 Log-SNR 曲线，假设 σx1 = 0.1。"
+      }
+     ]
     },
     {
      "id": "eq-3-3-1-6",
@@ -1418,10 +1433,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "fig-3-3-1-2",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 7,
-     "original": "Figure 4 Illustration of timestep sampling densities and their corresponding implicit loss weights under the x-prediction objective. The noise-shifted schedule emphasizes low-SNR regions while reducing the excessive loss weight near t →1.",
-     "zh": "图 4. x-prediction 目标下时刻采样密度及其对应隐式损失权重的示意图。噪声偏移调度强调低信噪比区域，同时降低 t → 1 附近过大的损失权重。"
+     "sentences": [
+      {
+       "id": "fig-3-3-1-2-s1",
+       "original": "Figure 4 Illustration of timestep sampling densities and their corresponding implicit loss weights under the x-prediction objective. The noise-shifted schedule emphasizes low-SNR regions while reducing the excessive loss weight near t →1.",
+       "zh": "图 4. x-prediction 目标下时刻采样密度及其对应隐式损失权重的示意图。噪声偏移调度强调低信噪比区域，同时降低 t → 1 附近过大的损失权重。"
+      }
+     ]
     }
    ]
   },
@@ -1807,10 +1827,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "tab-4-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 9,
-     "original": "Table 1 Zero-shot TTS results on the Seed-TTS benchmark. Best results are highlighted in bold, and second-best are underlined. “Multi.” denotes multilingual training data. †Results are taken from the original papers.",
-     "zh": "表 1. Seed-TTS 基准上的零样本 TTS 结果。最优结果加粗，次优加下划线。「Multi.」表示多语言训练数据。†结果摘自原论文。"
+     "sentences": [
+      {
+       "id": "tab-4-1-s1",
+       "original": "Table 1 Zero-shot TTS results on the Seed-TTS benchmark. Best results are highlighted in bold, and second-best are underlined. “Multi.” denotes multilingual training data. †Results are taken from the original papers.",
+       "zh": "表 1. Seed-TTS 基准上的零样本 TTS 结果。最优结果加粗，次优加下划线。「Multi.」表示多语言训练数据。†结果摘自原论文。"
+      }
+     ]
     },
     {
      "id": "p-4-5",
@@ -2104,10 +2129,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "tab-5-1-2-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 9,
-     "original": "Table 2 Comparison of TTS performance with previous endto-end speech generation models.",
-     "zh": "表 2. 与以往端到端语音生成模型的 TTS 性能比较。"
+     "sentences": [
+      {
+       "id": "tab-5-1-2-1-s1",
+       "original": "Table 2 Comparison of TTS performance with previous endto-end speech generation models.",
+       "zh": "表 2. 与以往端到端语音生成模型的 TTS 性能比较。"
+      }
+     ]
     },
     {
      "id": "p-5-1-2-2",
@@ -2306,10 +2336,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "tab-5-2-1-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 10,
-     "original": "Table 3 Ablations on the prediction objective and melspectrogram loss weight. Default settings are marked in gray .",
-     "zh": "表 3. 预测目标与 mel 频谱图损失权重的消融。默认设置以灰色标出。"
+     "sentences": [
+      {
+       "id": "tab-5-2-1-1-s1",
+       "original": "Table 3 Ablations on the prediction objective and melspectrogram loss weight. Default settings are marked in gray .",
+       "zh": "表 3. 预测目标与 mel 频谱图损失权重的消融。默认设置以灰色标出。"
+      }
+     ]
     },
     {
      "id": "p-5-2-1-2",
@@ -2375,17 +2410,27 @@ globalThis.PAPER_2606_03455 = {
    "blocks": [
     {
      "id": "tab-5-2-2-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 10,
-     "original": "Table 4 investigates the impact of the waveform scaling factor k on model performance. Without amplitude scaling (k = 1), the model suffers from severe degradation, with SIM-o and UTMOS scores substantially lower than those of the scaled variants. This indicates that, without proper scaling, the target waveform remains overwhelmed by Gaussian noise over a large portion of the diffusion trajectory, leading to inefficient learning in the raw waveform space during training. By employing the proposed Signal-Noise Variance Alignment strategy (k = 9), the model achieves the highest SIM-o and UTMOS scores while maintaining a competitive WER. Interestingly, a smaller scaling factor (k = 5) slightly improves intelligibility and yields faster WER convergence. We hypothesize that a relatively higher noise ratio forces the model to prioritize coarse-grained linguistic structures. However, this intelligibility gain comes at the expense of speaker similarity and naturalness;",
-     "zh": "表 4（正文说明部分）：考察波形缩放系数 k 对模型性能的影响。不做幅度缩放（k = 1）时模型性能严重退化，SIM-o 与 UTMOS 远低于缩放变体，说明缺乏适当缩放时目标波形在扩散轨迹的大部分区段被高斯噪声淹没，导致原始波形空间中的低效学习。采用提出的信号-噪声方差对齐（k = 9）后，模型取得最高的 SIM-o 与 UTMOS，WER 保持有竞争力。有趣的是，较小的缩放系数（k = 5）略微改善可懂度并加快 WER 收敛，我们推测是较高的噪声比例迫使模型优先学习粗粒度语言结构；但这种可懂度收益以说话人相似度与自然度为代价。"
+     "sentences": [
+      {
+       "id": "tab-5-2-2-1-s1",
+       "original": "Table 4 investigates the impact of the waveform scaling factor k on model performance. Without amplitude scaling (k = 1), the model suffers from severe degradation, with SIM-o and UTMOS scores substantially lower than those of the scaled variants. This indicates that, without proper scaling, the target waveform remains overwhelmed by Gaussian noise over a large portion of the diffusion trajectory, leading to inefficient learning in the raw waveform space during training. By employing the proposed Signal-Noise Variance Alignment strategy (k = 9), the model achieves the highest SIM-o and UTMOS scores while maintaining a competitive WER. Interestingly, a smaller scaling factor (k = 5) slightly improves intelligibility and yields faster WER convergence. We hypothesize that a relatively higher noise ratio forces the model to prioritize coarse-grained linguistic structures. However, this intelligibility gain comes at the expense of speaker similarity and naturalness;",
+       "zh": "表 4（正文说明部分）：考察波形缩放系数 k 对模型性能的影响。不做幅度缩放（k = 1）时模型性能严重退化，SIM-o 与 UTMOS 远低于缩放变体，说明缺乏适当缩放时目标波形在扩散轨迹的大部分区段被高斯噪声淹没，导致原始波形空间中的低效学习。采用提出的信号-噪声方差对齐（k = 9）后，模型取得最高的 SIM-o 与 UTMOS，WER 保持有竞争力。有趣的是，较小的缩放系数（k = 5）略微改善可懂度并加快 WER 收敛，我们推测是较高的噪声比例迫使模型优先学习粗粒度语言结构；但这种可懂度收益以说话人相似度与自然度为代价。"
+      }
+     ]
     },
     {
      "id": "tab-5-2-2-2",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 10,
-     "original": "Table 4 Ablations on the scaling factor k. Default settings are marked in gray .",
-     "zh": "表 4. 缩放系数 k 的消融。默认设置以灰色标出。"
+     "sentences": [
+      {
+       "id": "tab-5-2-2-2-s1",
+       "original": "Table 4 Ablations on the scaling factor k. Default settings are marked in gray .",
+       "zh": "表 4. 缩放系数 k 的消融。默认设置以灰色标出。"
+      }
+     ]
     },
     {
      "id": "p-5-2-2-1",
@@ -2484,10 +2529,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "fig-5-2-2-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 11,
-     "original": "Figure 5 Comparison of zero-shot TTS performance under different training noise schedules.",
-     "zh": "图 5. 不同训练噪声调度下零样本 TTS 性能的对比。"
+     "sentences": [
+      {
+       "id": "fig-5-2-2-1-s1",
+       "original": "Figure 5 Comparison of zero-shot TTS performance under different training noise schedules.",
+       "zh": "图 5. 不同训练噪声调度下零样本 TTS 性能的对比。"
+      }
+     ]
     },
     {
      "id": "p-5-2-2-4",
@@ -2609,10 +2659,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "tab-5-2-3-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 11,
-     "original": "Table 5 Comparison of inference timestep schedules. Default settings are marked in gray .",
-     "zh": "表 5. 推理时刻调度的对比。默认设置以灰色标出。"
+     "sentences": [
+      {
+       "id": "tab-5-2-3-1-s1",
+       "original": "Table 5 Comparison of inference timestep schedules. Default settings are marked in gray .",
+       "zh": "表 5. 推理时刻调度的对比。默认设置以灰色标出。"
+      }
+     ]
     },
     {
      "id": "p-5-2-3-2",
@@ -2762,10 +2817,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "tab-5-2-4-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 12,
-     "original": "Table 6 Scaling behavior of WavTTS under different training data scales and model sizes.",
-     "zh": "表 6. WavTTS 在不同训练数据规模与模型大小下的缩放行为。"
+     "sentences": [
+      {
+       "id": "tab-5-2-4-1-s1",
+       "original": "Table 6 Scaling behavior of WavTTS under different training data scales and model sizes.",
+       "zh": "表 6. WavTTS 在不同训练数据规模与模型大小下的缩放行为。"
+      }
+     ]
     },
     {
      "id": "p-5-2-4-4",
@@ -2904,10 +2964,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "fig-5-2-4-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 12,
-     "original": "Figure 6 Comparison of zero-shot TTS performance curves using different acoustic representations. Waveform, STFT, and MDCT are lossless (or nearly lossless) representations, while mel-spectrograms are lossy and require an additional pre-trained vocoder [72] for waveform reconstruction.",
-     "zh": "图 6. 使用不同声学表征的零样本 TTS 性能曲线对比。Waveform、STFT 与 MDCT 为无损（或接近无损）表征，而 mel 频谱图是有损表征，需要额外的预训练声码器 [72] 来重建波形。"
+     "sentences": [
+      {
+       "id": "fig-5-2-4-1-s1",
+       "original": "Figure 6 Comparison of zero-shot TTS performance curves using different acoustic representations. Waveform, STFT, and MDCT are lossless (or nearly lossless) representations, while mel-spectrograms are lossy and require an additional pre-trained vocoder [72] for waveform reconstruction.",
+       "zh": "图 6. 使用不同声学表征的零样本 TTS 性能曲线对比。Waveform、STFT 与 MDCT 为无损（或接近无损）表征，而 mel 频谱图是有损表征，需要额外的预训练声码器 [72] 来重建波形。"
+      }
+     ]
     }
    ]
   },
@@ -2950,10 +3015,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "fig-5-2-5-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 13,
-     "original": "Figure 6 compares zero-shot TTS performance across different acoustic representations. Overall, both raw waveform and mel-spectrogram models converge efficiently, achieving under 10% WER and over 0.5 SIM-o at 200K training steps. Notably, waveform modeling outperforms mel-spectrograms with faster early intelligibility convergence (4.10% vs. 9.76% WER at 200K steps) and better objective naturalness (3.93 vs. 3.68 UTMOS at 1M steps), while maintaining comparable speaker similarity. These results suggest that WavTTS can effectively model high-dimensional waveform structures and benefit from the lossless nature of raw waveforms for natural speech synthesis.",
-     "zh": "图 6 对比了不同声学表征下的零样本 TTS 性能。总体而言，原始波形与 mel 频谱图模型都能高效收敛，在 200K 训练步时 WER 已低于 10%、SIM-o 超过 0.5。值得注意的是，波形建模在早期可懂度收敛上优于 mel 频谱图（200K 步时 WER 4.10% 对 9.76%），客观自然度也更好（1M 步时 UTMOS 3.93 对 3.68），说话人相似度则相当。这些结果表明 WavTTS 能有效建模高维波形结构，并从原始波形的无损特性中受益，产出自然的合成语音。"
+     "sentences": [
+      {
+       "id": "fig-5-2-5-1-s1",
+       "original": "Figure 6 compares zero-shot TTS performance across different acoustic representations. Overall, both raw waveform and mel-spectrogram models converge efficiently, achieving under 10% WER and over 0.5 SIM-o at 200K training steps. Notably, waveform modeling outperforms mel-spectrograms with faster early intelligibility convergence (4.10% vs. 9.76% WER at 200K steps) and better objective naturalness (3.93 vs. 3.68 UTMOS at 1M steps), while maintaining comparable speaker similarity. These results suggest that WavTTS can effectively model high-dimensional waveform structures and benefit from the lossless nature of raw waveforms for natural speech synthesis.",
+       "zh": "图 6 对比了不同声学表征下的零样本 TTS 性能。总体而言，原始波形与 mel 频谱图模型都能高效收敛，在 200K 训练步时 WER 已低于 10%、SIM-o 超过 0.5。值得注意的是，波形建模在早期可懂度收敛上优于 mel 频谱图（200K 步时 WER 4.10% 对 9.76%），客观自然度也更好（1M 步时 UTMOS 3.93 对 3.68），说话人相似度则相当。这些结果表明 WavTTS 能有效建模高维波形结构，并从原始波形的无损特性中受益，产出自然的合成语音。"
+      }
+     ]
     },
     {
      "id": "p-5-2-5-2",
@@ -5282,10 +5352,15 @@ globalThis.PAPER_2606_03455 = {
     },
     {
      "id": "fig-B-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 20,
-     "original": "Figure 7 Timestep sampling densities under different inference schedules.",
-     "zh": "图 7. 不同推理调度下的时刻采样密度。"
+     "sentences": [
+      {
+       "id": "fig-B-1-s1",
+       "original": "Figure 7 Timestep sampling densities under different inference schedules.",
+       "zh": "图 7. 不同推理调度下的时刻采样密度。"
+      }
+     ]
     }
    ]
   },

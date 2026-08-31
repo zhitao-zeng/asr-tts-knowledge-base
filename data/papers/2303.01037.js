@@ -2352,7 +2352,7 @@ globalThis.PAPER_2303_01037 = {
       {
        "id": "s-3-3-1-5-1",
        "original": "Task Multilingual Long-form ASR Multidomain en-US Multilingual ASR AST Dataset YouTube CORAAL SpeechStew FLEURS CoVoST 2 Langauges en-US",
-       "zh": "（表 7 全表：多语种长音频 ASR / 多领域 en-US / 多语种 ASR / AST 各任务在 YouTube、CORAAL、SpeechStew、FLEURS、CoVoST 2 上，Whisper-longform/shortform、USM-LAS/USM-CTC、BigSSL/Maestro/Maestro-U、USM/USM-M、USM-M-adapter 的数值对比。原始数据照录如下）\n（原始数据照录）\nTask Multilingual Long-form ASR Multidomain en-US Multilingual ASR AST Dataset YouTube CORAAL SpeechStew FLEURS CoVoST 2 Langauges en-US 18 73 en-US en-US 62 102 21 Prior Work (single model) Whisper-longform 17.7 27.8 - 23.9 12.8 Whisper-shortform† - - - 13.2‡ 11.5 36.6 - 29.1 Our Work (single model) USM-LAS 14.4 19.0 29.8 11.2 10.5 12.5 - - USM-CTC 13.7 18.7 26.7 12.1 10.8 15.5 - - Prior Work (in-domain fine-tuning) BigSSL [3] 14.8 - - - 7.5 - - - Maestro [67] 7.2 25.2 Maestro-U [67] 26.0 (8.7) Our Work (in-domain fine-tuning) USM 13.2 - - - 7.4 13.5 19.2 (6.9) 28.7 USM-M 12.5 - - - 7.0 11.8 17.4 (6.5) 30.7 Our Work (frozen encoder) USM-M-adapter§ - - - - 7.5 12.4 17.6 (6.7) 29.6 performance for some languages."
+       "zh": "（表 7 全表：多语种长音频 ASR / 多领域 en-US / 多语种 ASR / AST 各任务在 YouTube、CORAAL、SpeechStew、FLEURS、CoVoST 2 上，Whisper-longform/shortform、USM-LAS/USM-CTC、BigSSL/Maestro/Maestro-U、USM/USM-M、USM-M-adapter 的数值对比。原始数据照录如下）\n任务 多语种长音频 ASR 多领域 en-US 多语种 ASR AST 数据集 YouTube CORAAL SpeechStew FLEURS CoVoST 2 语言数 en-US 18 73 en-US en-US 62 102 21 先前工作（单模型） Whisper-longform 17.7 27.8 - 23.9 12.8 Whisper-shortform† - - - 13.2‡ 11.5 36.6 - 29.1 本文（单模型） USM-LAS 14.4 19.0 29.8 11.2 10.5 12.5 - - USM-CTC 13.7 18.7 26.7 12.1 10.8 15.5 - - 先前工作（领域内微调） BigSSL [3] 14.8 - - - 7.5 - - - Maestro [67] 7.2 25.2 Maestro-U [67] 26.0 (8.7) 本文（领域内微调） USM 13.2 - - - 7.4 13.5 19.2 (6.9) 28.7 USM-M 12.5 - - - 7.0 11.8 17.4 (6.5) 30.7 本文（冻结编码器） USM-M-adapter§ - - - - 7.5 12.4 17.6 (6.7) 29.6 某些语言的性能。"
       }
      ]
     },
@@ -2502,7 +2502,7 @@ globalThis.PAPER_2303_01037 = {
       {
        "id": "s-3-3-1-6-1",
        "original": "performance for some languages.",
-       "zh": "（表 7 全表：多语种长音频 ASR / 多领域 en-US / 多语种 ASR / AST 各任务在 YouTube、CORAAL、SpeechStew、FLEURS、CoVoST 2 上，Whisper-longform/shortform、USM-LAS/USM-CTC、BigSSL/Maestro/Maestro-U、USM/USM-M、USM-M-adapter 的数值对比。原始数据照录如下）\n（原始数据照录）\nTask Multilingual Long-form ASR Multidomain en-US Multilingual ASR AST Dataset YouTube CORAAL SpeechStew FLEURS CoVoST 2 Langauges en-US 18 73 en-US en-US 62 102 21 Prior Work (single model) Whisper-longform 17.7 27.8 - 23.9 12.8 Whisper-shortform† - - - 13.2‡ 11.5 36.6 - 29.1 Our Work (single model) USM-LAS 14.4 19.0 29.8 11.2 10.5 12.5 - - USM-CTC 13.7 18.7 26.7 12.1 10.8 15.5 - - Prior Work (in-domain fine-tuning) BigSSL [3] 14.8 - - - 7.5 - - - Maestro [67] 7.2 25.2 Maestro-U [67] 26.0 (8.7) Our Work (in-domain fine-tuning) USM 13.2 - - - 7.4 13.5 19.2 (6.9) 28.7 USM-M 12.5 - - - 7.0 11.8 17.4 (6.5) 30.7 Our Work (frozen encoder) USM-M-adapter§ - - - - 7.5 12.4 17.6 (6.7) 29.6 performance for some languages."
+       "zh": "（表 7 全表：多语种长音频 ASR / 多领域 en-US / 多语种 ASR / AST 各任务在 YouTube、CORAAL、SpeechStew、FLEURS、CoVoST 2 上，Whisper-longform/shortform、USM-LAS/USM-CTC、BigSSL/Maestro/Maestro-U、USM/USM-M、USM-M-adapter 的数值对比。原始数据照录如下）\n任务 多语种长音频 ASR 多领域 en-US 多语种 ASR AST 数据集 YouTube CORAAL SpeechStew FLEURS CoVoST 2 语言数 en-US 18 73 en-US en-US 62 102 21 先前工作（单模型） Whisper-longform 17.7 27.8 - 23.9 12.8 Whisper-shortform† - - - 13.2‡ 11.5 36.6 - 29.1 本文（单模型） USM-LAS 14.4 19.0 29.8 11.2 10.5 12.5 - - USM-CTC 13.7 18.7 26.7 12.1 10.8 15.5 - - 先前工作（领域内微调） BigSSL [3] 14.8 - - - 7.5 - - - Maestro [67] 7.2 25.2 Maestro-U [67] 26.0 (8.7) 本文（领域内微调） USM 13.2 - - - 7.4 13.5 19.2 (6.9) 28.7 USM-M 12.5 - - - 7.0 11.8 17.4 (6.5) 30.7 本文（冻结编码器） USM-M-adapter§ - - - - 7.5 12.4 17.6 (6.7) 29.6 某些语言的性能。"
       },
       {
        "id": "s-3-3-1-6-2",
@@ -3179,10 +3179,15 @@ globalThis.PAPER_2303_01037 = {
    "blocks": [
     {
      "id": "fig-5-4-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 14,
-     "original": "Fig. 7 depicts the long-form performance degradation issue as described in section 2.4. In the figure, we see that for the shallow Conformer model with 17 layers, using a small local self attention context",
-     "zh": "图 7（上接说明文字）：描绘了 2.4 节所述的长音频性能退化问题。图中可见，对于有 17 层的浅层 Conformer 模型，在使用较小的局部自注意力上下文……（图注剩余部分在后续段落继续）"
+     "sentences": [
+      {
+       "id": "fig-5-4-1-s1",
+       "original": "Fig. 7 depicts the long-form performance degradation issue as described in section 2.4. In the figure, we see that for the shallow Conformer model with 17 layers, using a small local self attention context",
+       "zh": "图 7（上接说明文字）：描绘了 2.4 节所述的长音频性能退化问题。图中可见，对于有 17 层的浅层 Conformer 模型，在使用较小的局部自注意力上下文……（图注剩余部分在后续段落继续）"
+      }
+     ]
     },
     {
      "id": "tab-5-4-1",
@@ -3367,10 +3372,15 @@ globalThis.PAPER_2303_01037 = {
     },
     {
      "id": "tab-conformer-2b-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 15,
-     "original": "Table 7 demonstrates that chunk-wise attention is able to address the long-form degradation issue and show robust performance across four different languages—en-US (English), ru-RU (Russian), ko-KR (Korean), and uk-UA (Ukrainian). We compare chunk-wise attention models with an 8-second chunk size (CW-8s in Table 7) against local self attention models which uses 128 context frames in each conformer layer (LSA-128). We note that further increasing the context window size of the local self attention model results in high deletion error rates on all languages of the YouTube long-form test sets. These results show that the chunk-wise attention models do not exhibit long-form performance degradation and are able to improve upon the performance of the local self attention models operating at the maximum allowed receptive field length.",
-     "zh": "表 7（文字说明部分）：证明分块注意力能解决长音频退化问题，并在四种不同语言——en-US（英语）、ru-RU（俄语）、ko-KR（韩语）和 uk-UA（乌克兰语）——上表现鲁棒。我们把块长为 8 秒的分块注意力模型（Table 7 中的 CW-8s）与每个 Conformer 层使用 128 帧上下文的局部自注意力模型（LSA-128）对比。我们注意到，进一步增大局部自注意力模型的上下文窗口，会在 YouTube 长音频测试集的所有语言上导致高删除错误率。这些结果表明：分块注意力模型不出现长音频性能退化，且能优于工作在最大允许感受野长度下的局部自注意力模型。"
+     "sentences": [
+      {
+       "id": "tab-conformer-2b-1-s1",
+       "original": "Table 7 demonstrates that chunk-wise attention is able to address the long-form degradation issue and show robust performance across four different languages—en-US (English), ru-RU (Russian), ko-KR (Korean), and uk-UA (Ukrainian). We compare chunk-wise attention models with an 8-second chunk size (CW-8s in Table 7) against local self attention models which uses 128 context frames in each conformer layer (LSA-128). We note that further increasing the context window size of the local self attention model results in high deletion error rates on all languages of the YouTube long-form test sets. These results show that the chunk-wise attention models do not exhibit long-form performance degradation and are able to improve upon the performance of the local self attention models operating at the maximum allowed receptive field length.",
+       "zh": "表 7（文字说明部分）：证明分块注意力能解决长音频退化问题，并在四种不同语言——en-US（英语）、ru-RU（俄语）、ko-KR（韩语）和 uk-UA（乌克兰语）——上表现鲁棒。我们把块长为 8 秒的分块注意力模型（Table 7 中的 CW-8s）与每个 Conformer 层使用 128 帧上下文的局部自注意力模型（LSA-128）对比。我们注意到，进一步增大局部自注意力模型的上下文窗口，会在 YouTube 长音频测试集的所有语言上导致高删除错误率。这些结果表明：分块注意力模型不出现长音频性能退化，且能优于工作在最大允许感受野长度下的局部自注意力模型。"
+      }
+     ]
     },
     {
      "id": "tab-conformer-2b-2",
@@ -3453,7 +3463,7 @@ globalThis.PAPER_2303_01037 = {
       {
        "id": "s-5-5-2-1",
        "original": "Model bf-16 Streaming # Params (B) TPU [88] Batch Size 1.0/RTF Conformer-0.1B Y Y",
-       "zh": "1.\n（原始数据照录）\nModel bf-16 Streaming # Params (B) TPU [88] Batch Size 1.0/RTF Conformer-0.1B Y Y"
+       "zh": "1.\n模型 bf-16 流式 # 参数量 (B) TPU [88] Batch Size 1.0/RTF Conformer-0.1B Y Y"
       }
      ]
     },

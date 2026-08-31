@@ -2811,10 +2811,15 @@ globalThis.PAPER_2306_15687 = {
    "blocks": [
     {
      "id": "tab-5-2-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 11,
-     "original": "Table 2 presents the zero-shot TTS results of the English model VB-En. Following [Wang et al., 2023], the test set is constructed by selecting 4 to 10 second long samples from Librispeech test-clean.",
-     "zh": "表 2 给出英语模型 VB-En 的零样本 TTS 结果。遵循 [Wang et al., 2023]，测试集从 Librispeech test-clean 中选取 4 到 10 秒长的样本构建。"
+     "sentences": [
+      {
+       "id": "tab-5-2-1-s1",
+       "original": "Table 2 presents the zero-shot TTS results of the English model VB-En. Following [Wang et al., 2023], the test set is constructed by selecting 4 to 10 second long samples from Librispeech test-clean.",
+       "zh": "表 2 给出英语模型 VB-En 的零样本 TTS 结果。遵循 [Wang et al., 2023]，测试集从 Librispeech test-clean 中选取 4 到 10 秒长的样本构建。"
+      }
+     ]
     },
     {
      "id": "p-5-2-1",
@@ -3500,10 +3505,15 @@ globalThis.PAPER_2306_15687 = {
     },
     {
      "id": "tab-5-4-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 13,
-     "original": "Table 5 presents the results comparing Voicebox with A3T and Demucs. It should be noted that A3T and Voicebox utilize transcript and location of the noise while Demucs does not. Nevertheless the goal of the study is to present a new paradigm and show Voicebox can perform denoising without being explicitly trained. Compared to the baselines, Voicebox generates samples that are much more intelligible (2.0% WER), more similar to the clean parts of the audio (0.612 SIM-o), and of higher quality (3.87 MOS) in this challenging noise condition. A3T is better than Demucs on intelligibilty and quality, but the infilled speech is not coherent because it is only trained on VCTK and cannot generalize to new audio styles.",
-     "zh": "表 5 给出 Voicebox 与 A3T、Demucs 的对比结果。需要指出，A3T 与 Voicebox 利用了转写文本与噪声位置，而 Demucs 没有。尽管如此，本研究的目的是提出一种新范式，证明 Voicebox 无需显式训练即可去噪。与基线相比，Voicebox 在这一苛刻噪声条件下生成的样本可懂度更高（2.0% WER）、与音频干净部分更相似（0.612 SIM-o）、质量更高（3.87 MOS）。A3T 在可懂度与质量上优于 Demucs，但填充语音不连贯，因为它仅在 VCTK 上训练，无法泛化到新的音频风格。"
+     "sentences": [
+      {
+       "id": "tab-5-4-1-s1",
+       "original": "Table 5 presents the results comparing Voicebox with A3T and Demucs. It should be noted that A3T and Voicebox utilize transcript and location of the noise while Demucs does not. Nevertheless the goal of the study is to present a new paradigm and show Voicebox can perform denoising without being explicitly trained. Compared to the baselines, Voicebox generates samples that are much more intelligible (2.0% WER), more similar to the clean parts of the audio (0.612 SIM-o), and of higher quality (3.87 MOS) in this challenging noise condition. A3T is better than Demucs on intelligibilty and quality, but the infilled speech is not coherent because it is only trained on VCTK and cannot generalize to new audio styles.",
+       "zh": "表 5 给出 Voicebox 与 A3T、Demucs 的对比结果。需要指出，A3T 与 Voicebox 利用了转写文本与噪声位置，而 Demucs 没有。尽管如此，本研究的目的是提出一种新范式，证明 Voicebox 无需显式训练即可去噪。与基线相比，Voicebox 在这一苛刻噪声条件下生成的样本可懂度更高（2.0% WER）、与音频干净部分更相似（0.612 SIM-o）、质量更高（3.87 MOS）。A3T 在可懂度与质量上优于 Demucs，但填充语音不连贯，因为它仅在 VCTK 上训练，无法泛化到新的音频风格。"
+      }
+     ]
     },
     {
      "id": "tab-5-4-2",
@@ -3592,10 +3602,15 @@ globalThis.PAPER_2306_15687 = {
    "blocks": [
     {
      "id": "tab-5-5-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 13,
-     "original": "Table 6 compares the ability to generate diverse samples for Librispeech test-other text. We consider English Voicebox (VB-En) with regression (regr) or flow-matching (FM) duration models. VITS- VCTK additionally conditions on a speaker ID, which we randomly sample for each sentence. YourTTS conditions on text and a reference audio, which we draw from the LS train splits.",
-     "zh": "表 6 对比了针对 Librispeech test-other 文本生成多样样本的能力。我们考虑带回归（regr）或流匹配（FM）时长模型的英语 Voicebox（VB-En）。VITS-VCTK 额外以说话人 ID 为条件，我们为每句随机采样一个；YourTTS 以文本和一段参考音频为条件，参考音频取自 LS 训练划分。"
+     "sentences": [
+      {
+       "id": "tab-5-5-1-s1",
+       "original": "Table 6 compares the ability to generate diverse samples for Librispeech test-other text. We consider English Voicebox (VB-En) with regression (regr) or flow-matching (FM) duration models. VITS- VCTK additionally conditions on a speaker ID, which we randomly sample for each sentence. YourTTS conditions on text and a reference audio, which we draw from the LS train splits.",
+       "zh": "表 6 对比了针对 Librispeech test-other 文本生成多样样本的能力。我们考虑带回归（regr）或流匹配（FM）时长模型的英语 Voicebox（VB-En）。VITS-VCTK 额外以说话人 ID 为条件，我们为每句随机采样一个；YourTTS 以文本和一段参考音频为条件，参考音频取自 LS 训练划分。"
+      }
+     ]
     },
     {
      "id": "p-5-5-1",
@@ -3813,10 +3828,15 @@ globalThis.PAPER_2306_15687 = {
     },
     {
      "id": "tab-5-5-4",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 14,
-     "original": "Table 7 compares real and synthetic data from Voicebox and three baseline models. Each TTS model generates one sample per text from the Librispeech training set, resulting in 281K utterances per system. For real data, we consider train-960 and train-clean-100. Details about the ASR model and training configurations are in Appendix A.5.",
-     "zh": "表 7 对比了真实数据与来自 Voicebox 及三个基线模型的合成数据。每个 TTS 模型为 Librispeech 训练集中的每段文本生成一条样本，每个系统共 281K 条语音。真实数据取 train-960 与 train-clean-100。ASR 模型与训练配置的细节见附录 A.5。"
+     "sentences": [
+      {
+       "id": "tab-5-5-4-s1",
+       "original": "Table 7 compares real and synthetic data from Voicebox and three baseline models. Each TTS model generates one sample per text from the Librispeech training set, resulting in 281K utterances per system. For real data, we consider train-960 and train-clean-100. Details about the ASR model and training configurations are in Appendix A.5.",
+       "zh": "表 7 对比了真实数据与来自 Voicebox 及三个基线模型的合成数据。每个 TTS 模型为 Librispeech 训练集中的每段文本生成一条样本，每个系统共 281K 条语音。真实数据取 train-960 与 train-clean-100。ASR 模型与训练配置的细节见附录 A.5。"
+      }
+     ]
     },
     {
      "id": "p-5-5-5",
@@ -4274,7 +4294,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-5-7-8-2",
        "original": "As described in 5.2, this setting has a total 36 language transfer directions for each pair of source and target language.",
-       "zh": "5.\n（原始数据照录）\nAs described in 5.2, this setting has a total 36 language transfer directions for each pair of source and target language."
+       "zh": "5.\n如 5.2 节所述，该设置对每对源语言和目标语言共有 36 个语言迁移方向。"
       },
       {
        "id": "s-5-7-8-3",
@@ -4537,7 +4557,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-5-8-2-1",
        "original": "We vary the number of training and inference steps, and evaluate models on the zero-shot TTS task( Section 5.2).",
-       "zh": "5.\n（原始数据照录）\nWe vary the number of training and inference steps, and evaluate models on the zero-shot TTS task( Section 5.2)."
+       "zh": "5.\n我们改变训练和推理步数，并在零样本 TTS 任务（第 5.2 节）上评估模型。"
       },
       {
        "id": "s-5-8-2-2",
@@ -4926,10 +4946,15 @@ globalThis.PAPER_2306_15687 = {
     },
     {
      "id": "tab-6-2",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 18,
-     "original": "Table 10 presents the results for each setting. The model can trivially distinguish original audio from Voicebox-generated audio. This results from the fact that a model can also trivially distinguish original audio from resynthesized audio, most likely by recognizing artifacts produced by the vocoder. The task of differentiating Voicebox-generated audio from resynthesized audio is much harder. When 90% of the audio is masked, the model is able to reliably classify the audio as Voicebox-generated. In lower masking regimes this decreases a bit, but this is likely due to a naive inference method of averaging the outputs of all sliding windows. Since the majority of windows are non-synthetic, this leads to mis-classifications.",
-     "zh": "表 10 给出各设置下的结果。模型可以轻易地区分原始音频与 Voicebox 生成的音频——这源于模型同样能轻易地区分原始音频与重合成音频（很可能是通过识别声码器产生的伪影）。区分 Voicebox 生成音频与重合成音频要难得多。当 90% 的音频被掩蔽时，模型能可靠地判定音频为 Voicebox 生成；在较低的掩蔽比例下准确率有所下降，但这很可能是因为取所有滑动窗口输出平均的朴素推理方式：由于大多数窗口并非合成，从而导致误分类。"
+     "sentences": [
+      {
+       "id": "tab-6-2-s1",
+       "original": "Table 10 presents the results for each setting. The model can trivially distinguish original audio from Voicebox-generated audio. This results from the fact that a model can also trivially distinguish original audio from resynthesized audio, most likely by recognizing artifacts produced by the vocoder. The task of differentiating Voicebox-generated audio from resynthesized audio is much harder. When 90% of the audio is masked, the model is able to reliably classify the audio as Voicebox-generated. In lower masking regimes this decreases a bit, but this is likely due to a naive inference method of averaging the outputs of all sliding windows. Since the majority of windows are non-synthetic, this leads to mis-classifications.",
+       "zh": "表 10 给出各设置下的结果。模型可以轻易地区分原始音频与 Voicebox 生成的音频——这源于模型同样能轻易地区分原始音频与重合成音频（很可能是通过识别声码器产生的伪影）。区分 Voicebox 生成音频与重合成音频要难得多。当 90% 的音频被掩蔽时，模型能可靠地判定音频为 Voicebox 生成；在较低的掩蔽比例下准确率有所下降，但这很可能是因为取所有滑动窗口输出平均的朴素推理方式：由于大多数窗口并非合成，从而导致误分类。"
+      }
+     ]
     },
     {
      "id": "tab-6-3",
@@ -11362,7 +11387,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-quality-2-1",
        "original": "ratio(%) ratio(%) Figure C1: FSD based on different layers of wav2vec 2.0 BASE. utt: utterance-based sampling, spk: speaker-based sampling.",
-       "zh": "2.\n（原始数据照录）\nratio(%) ratio(%) Figure C1: FSD based on different layers of wav2vec 2.0 BASE. utt: utterance-based sampling, spk: speaker-based sampling."
+       "zh": "2.\nratio(%) ratio(%) 图 C1：基于 wav2vec 2.0 BASE 不同层的 FSD。utt：基于句子的采样，spk：基于说话人的采样。"
       },
       {
        "id": "s-quality-2-2",
@@ -11379,7 +11404,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-quality-3-1",
        "original": "Wav2vec 2.0-layer 6 WavLM-TDCNN",
-       "zh": "2.\n（原始数据照录）\nWav2vec 2.0-layer 6 WavLM-TDCNN"
+       "zh": "2.\nWav2vec 2.0-第 6 层 WavLM-TDCNN"
       }
      ]
     },
@@ -11445,7 +11470,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-quality-4-1",
        "original": "ratio(%) ratio(%) Figure C2: FSD with different sample size using supervised WavLM-TDCNN, self-supervised wav2vec 2.0, and supervised audio event classifier features. utt: utterance-based sampling, spk: speaker-based sampling.",
-       "zh": "2.\n（原始数据照录）\nratio(%) ratio(%) Figure C2: FSD with different sample size using supervised WavLM-TDCNN, self-supervised wav2vec 2.0, and supervised audio event classifier features. utt: utterance-based sampling, spk: speaker-based sampling."
+       "zh": "2.\nratio(%) ratio(%) 图 C2：使用监督 WavLM-TDCNN、自监督 wav2vec 2.0 和监督音频事件分类器特征在不同样本量下的 FSD。utt：基于句子的采样，spk：基于说话人的采样。"
       },
       {
        "id": "s-quality-4-2",
@@ -11589,7 +11614,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-duration-correctness-ms-mae-2-2",
        "original": "Feature: Wav2vec 2.0 layer-6 feature.",
-       "zh": "2.\n（原始数据照录）\nFeature: Wav2vec 2.0 layer-6 feature."
+       "zh": "2.\n特征：Wav2vec 2.0 第 6 层特征。"
       },
       {
        "id": "s-duration-correctness-ms-mae-2-3",
@@ -12399,7 +12424,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-D-2-1",
        "original": "VB-En VB-Multi Model Parameters Model Dimension",
-       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\n（原始数据照录）\nVB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking true true Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones true true Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β - 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments."
+       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\nVB-En VB-Multi 模型参数 模型维度 1024 1024 头数 16 16 层数 24 24 前馈维度 4096 4096 注意力 Dropout 0.0 0.0 激活 Dropout 0.1 0.1 ConvPos 宽度 31 31 ConvPos 组数 16 16 ConvPos 深度 2 2 跳跃连接 true true Alibi 偏置 true true 训练参数 迭代次数 500000 750000 GPU 数量 32 32 学习率 (LR) 0.0001 0.0001 梯度裁剪值 0.2 0.2 LR 调度器 Warmup 步数 5000 5000 损失掩码 true true 数据参数 每 batch token 数 7500 7500 条件 Dropout 0.2 0.2 位置相关音素 true true 音素掩码比例 0.0, 0.0 0.0, 0.0 频谱掩码比例 0.7, 1.0 0.7, 1.0 频谱丢弃比例 0.3 0.3 Chunk 长度 1600 1600 变换类型 normalize normalize 均值 -5.884 -5.884 标准差 2.261 2.261 上采样 β - 0.25 表 D14：我们实验中使用的基于条件流匹配的时长模型的详细配置。"
       }
      ]
     },
@@ -12513,7 +12538,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-D-3-1",
        "original": "Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations",
-       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\n（原始数据照录）\nVB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking true true Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones true true Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β - 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments."
+       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\nVB-En VB-Multi 模型参数 模型维度 1024 1024 头数 16 16 层数 24 24 前馈维度 4096 4096 注意力 Dropout 0.0 0.0 激活 Dropout 0.1 0.1 ConvPos 宽度 31 31 ConvPos 组数 16 16 ConvPos 深度 2 2 跳跃连接 true true Alibi 偏置 true true 训练参数 迭代次数 500000 750000 GPU 数量 32 32 学习率 (LR) 0.0001 0.0001 梯度裁剪值 0.2 0.2 LR 调度器 Warmup 步数 5000 5000 损失掩码 true true 数据参数 每 batch token 数 7500 7500 条件 Dropout 0.2 0.2 位置相关音素 true true 音素掩码比例 0.0, 0.0 0.0, 0.0 频谱掩码比例 0.7, 1.0 0.7, 1.0 频谱丢弃比例 0.3 0.3 Chunk 长度 1600 1600 变换类型 normalize normalize 均值 -5.884 -5.884 标准差 2.261 2.261 上采样 β - 0.25 表 D14：我们实验中使用的基于条件流匹配的时长模型的详细配置。"
       }
      ]
     },
@@ -12579,7 +12604,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-D-4-1",
        "original": "Loss Masking true true Data Parameters Tokens per Batch",
-       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\n（原始数据照录）\nVB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking true true Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones true true Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β - 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments."
+       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\nVB-En VB-Multi 模型参数 模型维度 1024 1024 头数 16 16 层数 24 24 前馈维度 4096 4096 注意力 Dropout 0.0 0.0 激活 Dropout 0.1 0.1 ConvPos 宽度 31 31 ConvPos 组数 16 16 ConvPos 深度 2 2 跳跃连接 true true Alibi 偏置 true true 训练参数 迭代次数 500000 750000 GPU 数量 32 32 学习率 (LR) 0.0001 0.0001 梯度裁剪值 0.2 0.2 LR 调度器 Warmup 步数 5000 5000 损失掩码 true true 数据参数 每 batch token 数 7500 7500 条件 Dropout 0.2 0.2 位置相关音素 true true 音素掩码比例 0.0, 0.0 0.0, 0.0 频谱掩码比例 0.7, 1.0 0.7, 1.0 频谱丢弃比例 0.3 0.3 Chunk 长度 1600 1600 变换类型 normalize normalize 均值 -5.884 -5.884 标准差 2.261 2.261 上采样 β - 0.25 表 D14：我们实验中使用的基于条件流匹配的时长模型的详细配置。"
       }
      ]
     },
@@ -12693,7 +12718,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-D-5-1",
        "original": "Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments.",
-       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\n（原始数据照录）\nVB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking true true Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones true true Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β - 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments."
+       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\nVB-En VB-Multi 模型参数 模型维度 1024 1024 头数 16 16 层数 24 24 前馈维度 4096 4096 注意力 Dropout 0.0 0.0 激活 Dropout 0.1 0.1 ConvPos 宽度 31 31 ConvPos 组数 16 16 ConvPos 深度 2 2 跳跃连接 true true Alibi 偏置 true true 训练参数 迭代次数 500000 750000 GPU 数量 32 32 学习率 (LR) 0.0001 0.0001 梯度裁剪值 0.2 0.2 LR 调度器 Warmup 步数 5000 5000 损失掩码 true true 数据参数 每 batch token 数 7500 7500 条件 Dropout 0.2 0.2 位置相关音素 true true 音素掩码比例 0.0, 0.0 0.0, 0.0 频谱掩码比例 0.7, 1.0 0.7, 1.0 频谱丢弃比例 0.3 0.3 Chunk 长度 1600 1600 变换类型 normalize normalize 均值 -5.884 -5.884 标准差 2.261 2.261 上采样 β - 0.25 表 D14：我们实验中使用的基于条件流匹配的时长模型的详细配置。"
       },
       {
        "id": "s-D-5-2",
@@ -12710,7 +12735,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-D-6-1",
        "original": "VB-En VB-Multi Model Parameters Model Dimension",
-       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\n（原始数据照录）\nVB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking true true Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones true true Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β - 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments."
+       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\nVB-En VB-Multi 模型参数 模型维度 1024 1024 头数 16 16 层数 24 24 前馈维度 4096 4096 注意力 Dropout 0.0 0.0 激活 Dropout 0.1 0.1 ConvPos 宽度 31 31 ConvPos 组数 16 16 ConvPos 深度 2 2 跳跃连接 true true Alibi 偏置 true true 训练参数 迭代次数 500000 750000 GPU 数量 32 32 学习率 (LR) 0.0001 0.0001 梯度裁剪值 0.2 0.2 LR 调度器 Warmup 步数 5000 5000 损失掩码 true true 数据参数 每 batch token 数 7500 7500 条件 Dropout 0.2 0.2 位置相关音素 true true 音素掩码比例 0.0, 0.0 0.0, 0.0 频谱掩码比例 0.7, 1.0 0.7, 1.0 频谱丢弃比例 0.3 0.3 Chunk 长度 1600 1600 变换类型 normalize normalize 均值 -5.884 -5.884 标准差 2.261 2.261 上采样 β - 0.25 表 D14：我们实验中使用的基于条件流匹配的时长模型的详细配置。"
       }
      ]
     },
@@ -12812,7 +12837,7 @@ globalThis.PAPER_2306_15687 = {
       {
        "id": "s-D-7-1",
        "original": "Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations",
-       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\n（原始数据照录）\nVB-En VB-Multi Model Parameters Model Dimension 1024 1024 Number of Heads 16 16 Number of Layers 24 24 Feedforward Dimension 4096 4096 Attention Dropout 0.0 0.0 Activation Dropout 0.1 0.1 ConvPos Width 31 31 ConvPos Groups 16 16 ConvPos Depth 2 2 Skip Connections true true Alibi Bias true true Training Parameters Number of Iterations 500000 750000 Number of GPUs 32 32 Learning Rate (LR) 0.0001 0.0001 Gradient Clipping Value 0.2 0.2 LR Scheduler Warmup Steps 5000 5000 Loss Masking true true Data Parameters Tokens per Batch 7500 7500 Conditional Dropout 0.2 0.2 Position Dependent Phones true true Phoneme Mask Percent 0.0, 0.0 0.0, 0.0 Spectrogram Mask Percent 0.7, 1.0 0.7, 1.0 Spectrogram Drop Percentage 0.3 0.3 Chunk Length 1600 1600 Transform Type normalize normalize Mean -5.884 -5.884 Standard Deviation 2.261 2.261 Upsampling β - 0.25 Table D14: Detailed configurations for conditional flow matching based duration models used in our experiments."
+       "zh": "（表 D14 全表：条件流匹配时长模型的详细配置——VB-En 与 VB-Multi 两列：模型维度 1024/1024、头数 16/16、层数 24/24、FFN 维度 4096/4096、迭代 500000/750000、GPU 32/32、学习率 0.0001/0.0001、warmup 5000/5000、每 batch token 7500/7500、条件 dropout 0.2/0.2、频谱掩码 0.7,1.0/0.7,1.0、chunk 1600/1600、均值 -5.884/-5.884、标准差 2.261/2.261、上采样 β -/0.25 等。原始数据照录如下）\nVB-En VB-Multi 模型参数 模型维度 1024 1024 头数 16 16 层数 24 24 前馈维度 4096 4096 注意力 Dropout 0.0 0.0 激活 Dropout 0.1 0.1 ConvPos 宽度 31 31 ConvPos 组数 16 16 ConvPos 深度 2 2 跳跃连接 true true Alibi 偏置 true true 训练参数 迭代次数 500000 750000 GPU 数量 32 32 学习率 (LR) 0.0001 0.0001 梯度裁剪值 0.2 0.2 LR 调度器 Warmup 步数 5000 5000 损失掩码 true true 数据参数 每 batch token 数 7500 7500 条件 Dropout 0.2 0.2 位置相关音素 true true 音素掩码比例 0.0, 0.0 0.0, 0.0 频谱掩码比例 0.7, 1.0 0.7, 1.0 频谱丢弃比例 0.3 0.3 Chunk 长度 1600 1600 变换类型 normalize normalize 均值 -5.884 -5.884 标准差 2.261 2.261 上采样 β - 0.25 表 D14：我们实验中使用的基于条件流匹配的时长模型的详细配置。"
       }
      ]
     },

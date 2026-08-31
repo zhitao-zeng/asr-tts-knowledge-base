@@ -92,6 +92,7 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 }
 /* 图/表标题、公式、表格主体 */
 .cap{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:12px 0;font-size:13px}
+.cap img.fig{display:block;max-width:100%;margin:2px auto 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .cap-k{display:inline-block;font-size:11px;font-weight:700;color:#0f766e;background:#ccfbf1;border-radius:6px;padding:1px 7px;margin-right:6px}
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
@@ -227,7 +228,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-I-4-1"><span class="zh">最后，受现有 TTS 评测基准局限性的驱使，我们还提出了一个新基准 ZTTS1-Eval。</span></span><span class="sent" data-sid="s-I-4-2"><span class="zh">目前采用最广的 TTS 基准 Seed-TTS-Eval（Anastassiou, Chen, &amp; Chen et al., 2024）只覆盖英语和中文，用已经过时的模型来评估可懂度与说话人相似度，而且只使用朗读语音。</span></span><span class="sent" data-sid="s-I-4-3"><span class="zh">后续工作如 CV3-Eval（Du, Gao, &amp; Wang et al., 2025）虽然拓宽了语言与任务覆盖，但仍沿用同一套评分栈，且大体上仍以有准备的朗读语音为主。</span></span><span class="sent" data-sid="s-I-4-4"><span class="zh">随着现代系统的可懂度逼近人类，单凭词错误率（WER）已无法区分最强的系统，而常用的零样本基准中，没有一个能衡量生成语音是否复现了真实语音的韵律。</span></span><span class="sent" data-sid="s-I-4-5"><span class="zh">ZTTS1-Eval 正是为解决这一问题而生。</span></span><span class="sent" data-sid="s-I-4-6"><span class="zh">它将一个覆盖 9 种语言的干净朗读语音集与一个覆盖 17 种语言的野外自发语音集配对，用当前较新的模型为内容、说话人与质量打分（Qwen3-ASR（Shi, Wang, &amp; Guo et al., 2026）、ReDimNet（Yakovlev, Makarov, &amp; Balykin et al., 2024）与 MSR-UTMOS（Nishikawa, Nakata, &amp; Saito et al., 2025）），并增加了分布式的韵律与生成多样性维度（TTSDS2（Minixhofer, Klejch &amp; Bell, 2025）与离散语音加权编辑距离 DS-WED（Yang, Han, &amp; Wang et al., 2026））。</span></span><span class="sent" data-sid="s-I-4-7"><span class="zh">我们</span></span></p>
           
         </div>
-<div class="cap" id="fig-I-1"><span class="cap-k">图</span><p class="en">Fig. 1: Overview of ZONOS2 inference pipeline, showing the text and conditioning inputs as well as the delay pattern approach to audio codec token generation.</p><p class="zh">图 1：ZONOS2 推理管线概览，展示文本与条件化输入，以及音频 codec token 生成所采用的延迟模式。</p></div>
+<div class="cap" id="fig-I-1"><img class="fig" src="../assets/figures/2606.24320/fig-I-1.png" loading="lazy" alt="Fig. 1: Overview of ZONOS2 inference pipeline, showing the text and conditioning inputs as well as the delay pattern app"><span class="cap-k">图</span><p class="en">Fig. 1: Overview of ZONOS2 inference pipeline, showing the text and conditioning inputs as well as the delay pattern approach to audio codec token generation.</p><p class="zh">图 1：ZONOS2 推理管线概览，展示文本与条件化输入，以及音频 codec token 生成所采用的延迟模式。</p></div>
 <div class="pblk" id="p-I-5">
           <p class="en-lines"><span class="sent" data-sid="s-I-5-1"><span class="en">describe the full details of our ZTTS1-Eval benchmark in Section V.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-I-5-1"><span class="zh">在第五节介绍 ZTTS1-Eval 基准的全部细节。</span></span></p>
@@ -409,7 +410,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-II-E-1-1"><span class="zh">在初期测试中我们发现，模型对声音克隆音频的声学内容高度敏感，这会降低低质量说话人样本的生成</span></span></p>
           
         </div>
-<div class="cap" id="fig-II-E-1"><span class="cap-k">图</span><p class="en">Fig. 2: Schematic of the ZONOS2 transformer MoE architecture.</p><p class="zh">图 2：ZONOS2 Transformer MoE 架构示意图。</p></div>
+<div class="cap" id="fig-II-E-1"><img class="fig" src="../assets/figures/2606.24320/fig-II-E-1.png" loading="lazy" alt="Fig. 2: Schematic of the ZONOS2 transformer MoE architecture."><span class="cap-k">图</span><p class="en">Fig. 2: Schematic of the ZONOS2 transformer MoE architecture.</p><p class="zh">图 2：ZONOS2 Transformer MoE 架构示意图。</p></div>
 <div class="pblk" id="p-II-E-2">
           <p class="en-lines"><span class="sent" data-sid="s-II-E-2-1"><span class="en">quality speaker samples.</span></span> <span class="sent" data-sid="s-II-E-2-2"><span class="en">To produce consistently highquality generations regardless of the acoustic properties of the clone audio, two forms of quality conditioning are introduced.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-II-E-2-1"><span class="zh">质量。</span></span><span class="sent" data-sid="s-II-E-2-2"><span class="zh">为让生成质量不随克隆音频的声学属性波动而始终保持高水平，我们引入了两种形式的质量条件化。</span></span></p>
@@ -499,7 +500,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-II-G-9-1"><span class="zh">（公式片段：……其中 m_{t,j} = 1 仅当目标 y_{t,j} 不是 p 时，M_aud = Σ_{t,j} m_{t,j}。）</span></span><span class="sent" data-sid="s-II-G-9-2"><span class="zh">因此，文本 token 以及可选的说话人条件化、语速与质量位置都被用作上下文，但不作为被重建的目标。</span></span></p>
           
         </div>
-<div class="cap" id="fig-II-G-1"><span class="cap-k">图</span><p class="en">Fig. 3: A breakdown of the training dataset for ZONOS2 by language.</p><p class="zh">图 3：ZONOS2 训练数据集按语言的构成拆分。</p></div>
+<div class="cap" id="fig-II-G-1"><img class="fig" src="../assets/figures/2606.24320/fig-II-G-1.png" loading="lazy" alt="Fig. 3: A breakdown of the training dataset for ZONOS2 by language."><span class="cap-k">图</span><p class="en">Fig. 3: A breakdown of the training dataset for ZONOS2 by language.</p><p class="zh">图 3：ZONOS2 训练数据集按语言的构成拆分。</p></div>
 <div class="pblk" id="p-II-G-10">
           <p class="en-lines"><span class="sent" data-sid="s-II-G-10-1"><span class="en">For mixture-of-experts layers, a router balancing objective is used during training.</span></span> <span class="sent" data-sid="s-II-G-10-2"><span class="en">Let uℓ,e be the empirical fraction of routed tokens assigned to expert e in MoE layer ℓ, and let ¯ue = 1/E be the uniform expert usage for E experts (Wang, Gao, &amp; Zhao et al., 2024).</span></span> <span class="sent" data-sid="s-II-G-10-3"><span class="en">Each MoE layer maintains a zero-mean balancing bias vector bℓ.</span></span> <span class="sent" data-sid="s-II-G-10-4"><span class="en">The auxiliary loss is</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-II-G-10-1"><span class="zh">对混合专家层，训练时使用一个路由均衡目标。</span></span><span class="sent" data-sid="s-II-G-10-2"><span class="zh">记 uℓ,e 为 MoE 层 ℓ 中被路由到专家 e 的 token 的经验占比，记 ūe = 1/E 为 E 个专家下的均匀使用率（Wang, Gao, &amp; Zhao et al., 2024）。</span></span><span class="sent" data-sid="s-II-G-10-3"><span class="zh">每个 MoE 层维护一个零均值的均衡偏置向量 bℓ。</span></span><span class="sent" data-sid="s-II-G-10-4"><span class="zh">辅助损失为</span></span></p>
@@ -529,7 +530,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-III-1-1"><span class="zh">高质量 TTS 训练数据的关键在于音频与其转写之间的强对齐。</span></span><span class="sent" data-sid="s-III-1-2"><span class="zh">为此，我们实现了一个两阶段的数据处理管线。</span></span><span class="sent" data-sid="s-III-1-3"><span class="zh">第一阶段，我们对所有原始音频应用语音活动检测（VAD）系统，产出语句级</span></span></p>
           
         </div>
-<div class="cap" id="fig-III-1"><span class="cap-k">图</span><p class="en">Fig. 4: Learning rate and MoE router entropy over each stage of training.</p><p class="zh">图 4：训练各阶段的学习率与 MoE 路由器熵。</p></div>
+<div class="cap" id="fig-III-1"><img class="fig" src="../assets/figures/2606.24320/fig-III-1.png" loading="lazy" alt="Fig. 4: Learning rate and MoE router entropy over each stage of training."><span class="cap-k">图</span><p class="en">Fig. 4: Learning rate and MoE router entropy over each stage of training.</p><p class="zh">图 4：训练各阶段的学习率与 MoE 路由器熵。</p></div>
 <div class="pblk" id="p-III-2">
           <p class="en-lines"><span class="sent" data-sid="s-III-2-1"><span class="en">segments.</span></span> <span class="sent" data-sid="s-III-2-2"><span class="en">In the second stage, we used multiple Automatic Speech Recognition (ASR) systems to independently transcribe each utterance (Koluguri, Sekoyan, &amp; Zelenfroynd et al., 2025).</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-III-2-1"><span class="zh">片段。</span></span><span class="sent" data-sid="s-III-2-2"><span class="zh">第二阶段，我们用多个自动语音识别（ASR）系统独立转写每条语句（Koluguri, Sekoyan, &amp; Zelenfroynd et al., 2025）。</span></span></p>
@@ -577,8 +578,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk" id="p-IV-A-3">
           <p class="en-lines"><span class="sent" data-sid="s-IV-A-3-1"><span class="en">We trained with the Muon optimizer (Jordan, Jin, &amp; Boza et al., 2024; Liu, Su, &amp; Yao et al., 2025) with a base learning rate of 5×10−4, a Muon learning rate of 5×10−3, Seed-TTS-Eval CV3-Eval MiniMax-ML ZTTS1-Eval Languages up to 17 Audio read read/expressive read read and ITW spontaneous Duration</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-IV-A-3-1"><span class="zh">我们
-（原始数据照录）
-We trained with the Muon optimizer (Jordan, Jin, &amp; Boza et al., 2024; Liu, Su, &amp; Yao et al., 2025) with a base learning rate of 5×10−4, a Muon learning rate of 5×10−3, Seed-TTS-Eval CV3-Eval MiniMax-ML ZTTS1-Eval Languages up to 17 Audio read read/expressive read read and ITW spontaneous Duration</span></span></p>
+我们使用 Muon 优化器（Jordan, Jin, &amp; Boza et al., 2024; Liu, Su, &amp; Yao et al., 2025）进行训练，基础学习率为 5×10−4，Muon 学习率为 5×10−3，Seed-TTS-Eval CV3-Eval MiniMax-ML ZTTS1-Eval 语言 最多 17 种 音频 朗读 朗读/表现力朗读 朗读及 ITW 自发 时长</span></span></p>
           
         </div>
 <div class="eq" id="eq-IV-A-1"><code>–†</code></div>
@@ -667,7 +667,7 @@ We trained with the Muon optimizer (Jordan, Jin, &amp; Boza et al., 2024; Liu, S
           <p class="zh-lines"><span class="sent" data-sid="s-V-2-1"><span class="zh">ZTTS1-Eval 的设计以广泛使用的 Seed-TTS-Eval（Anastassiou, Chen, &amp; Chen et al., 2024）为基础。</span></span><span class="sent" data-sid="s-V-2-2"><span class="zh">我们观察到 Seed-TTS-Eval 有三个主要问题。</span></span><span class="sent" data-sid="s-V-2-3"><span class="zh">第一，它只含中文和英语语音，限制了它评估多语种系统的用途。</span></span><span class="sent" data-sid="s-V-2-4"><span class="zh">第二，它依赖过时的模型来计算评测指标，例如用 Whisper Large（Radford, Kim, &amp; Xu et al., 2022）与 Paraformer（Gao, Zhang, &amp; McLoughlin et al., 2023）测 WER 准确度，用 WavLM（Chen, Wang, &amp; Chen et al., 2022）测说话人相似度。</span></span><span class="sent" data-sid="s-V-2-5"><span class="zh">第三，英语音频来自 Common Voice（Ardila, Branson, &amp; Davis et al., 2020）(a) 干净集。</span></span><span class="sent" data-sid="s-V-2-6"><span class="zh">(b) ITW 集。</span></span></p>
           
         </div>
-<div class="cap" id="fig-V-1"><span class="cap-k">图</span><p class="en">Fig. 5: Mean Text-to-Speech Distribution Score 2 (TTSDS2) prosody for the English portions of both ZTTS1-Eval sets.</p><p class="zh">图 5：ZTTS1-Eval 两个集合英文部分的平均 Text-to-Speech Distribution Score 2（TTSDS2）韵律。</p></div>
+<div class="cap" id="fig-V-1"><img class="fig" src="../assets/figures/2606.24320/fig-V-1.png" loading="lazy" alt="Fig. 5: Mean Text-to-Speech Distribution Score 2 (TTSDS2) prosody for the English portions of both ZTTS1-Eval sets."><span class="cap-k">图</span><p class="en">Fig. 5: Mean Text-to-Speech Distribution Score 2 (TTSDS2) prosody for the English portions of both ZTTS1-Eval sets.</p><p class="zh">图 5：ZTTS1-Eval 两个集合英文部分的平均 Text-to-Speech Distribution Score 2（TTSDS2）韵律。</p></div>
 <div class="pblk" id="p-V-3">
           <p class="en-lines"><span class="sent" data-sid="s-V-3-1"><span class="en">and DiDiSpeech (Guo, Wen, &amp; Jiang et al., 2021) for Chinese, both of which consist of read speech with varied recording environments which are generally not representative of the use-case of modern TTS systems.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-V-3-1"><span class="zh">中文音频来自 DiDiSpeech（Guo, Wen, &amp; Jiang et al., 2021），两者都由朗读语音构成，录音环境各异，总体上不能代表现代 TTS 系统的使用场景。</span></span></p>
@@ -1209,8 +1209,8 @@ We trained with the Muon optimizer (Jordan, Jin, &amp; Boza et al., 2024; Liu, S
           <p class="zh-lines"><span class="sent" data-sid="s-D-4-1"><span class="zh">表 VII：ZONOS2 在 CosyVoice 3 Eval 与 Seed-TTS-Eval 基准上按任务分组的说话人相似度、DNSMOS、WER 与情绪准确率评测结果。</span></span><span class="sent" data-sid="s-D-4-2"><span class="zh">情绪准确率仅在情绪零样本任务上报告。</span></span></p>
           
         </div>
-<div class="cap" id="fig-D-1"><span class="cap-k">图</span><p class="en">Fig. 6: Violin plots of DS-WED scores for the English portions of both ZTTS1-Eval sets.</p><p class="zh">图 6：ZTTS1-Eval 两个集合英文部分 DS-WED 分数的小提琴图。</p></div>
-<div class="cap" id="fig-D-2"><span class="cap-k">图</span><p class="en">Fig. 7: Allosaurus SR distributions for the English portions of both ZTTS1-Eval sets.</p><p class="zh">图 7：ZTTS1-Eval 两个集合英文部分的 Allosaurus SR 分布。</p></div></section></article>
+<div class="cap" id="fig-D-1"><img class="fig" src="../assets/figures/2606.24320/fig-D-1.png" loading="lazy" alt="Fig. 6: Violin plots of DS-WED scores for the English portions of both ZTTS1-Eval sets."><span class="cap-k">图</span><p class="en">Fig. 6: Violin plots of DS-WED scores for the English portions of both ZTTS1-Eval sets.</p><p class="zh">图 6：ZTTS1-Eval 两个集合英文部分 DS-WED 分数的小提琴图。</p></div>
+<div class="cap" id="fig-D-2"><img class="fig" src="../assets/figures/2606.24320/fig-D-2.png" loading="lazy" alt="Fig. 7: Allosaurus SR distributions for the English portions of both ZTTS1-Eval sets."><span class="cap-k">图</span><p class="en">Fig. 7: Allosaurus SR distributions for the English portions of both ZTTS1-Eval sets.</p><p class="zh">图 7：ZTTS1-Eval 两个集合英文部分的 Allosaurus SR 分布。</p></div></section></article>
   <footer class="foot">
     原文来自 arXiv:2606.24320（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。
     本地 PDF：<a href="../../papers/2606.24320.pdf">papers/2606.24320.pdf</a>。

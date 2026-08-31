@@ -345,10 +345,15 @@ globalThis.PAPER_2601_18184 = {
    "blocks": [
     {
      "id": "fig-2-1-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 3,
-     "original": "Figure 2 presents the architectural overview of VIBEVOICE-ASR. We formulate long-form speech understanding as a language modeling task. The model takes a sequence of continuous audio embeddings, encoded from from the pre-trained Acoustic and Semantic encoders, as its primary input. To enable context-aware capabilities, optional text prompts (e.g., hotwords or background information) can be prepended to the audio sequence.",
-     "zh": "Figure 2 展示了 VIBEVOICE-ASR 的架构总览。我们把长音频语音理解表述为一个语言建模任务。模型以一串连续音频嵌入作为主要输入，这些嵌入由预训练的声学（Acoustic）与语义（Semantic）编码器编码得到。为获得上下文感知能力，可在音频序列之前拼接可选的文本提示（例如热词或背景信息）。"
+     "sentences": [
+      {
+       "id": "fig-2-1-1-s1",
+       "original": "Figure 2 presents the architectural overview of VIBEVOICE-ASR. We formulate long-form speech understanding as a language modeling task. The model takes a sequence of continuous audio embeddings, encoded from from the pre-trained Acoustic and Semantic encoders, as its primary input. To enable context-aware capabilities, optional text prompts (e.g., hotwords or background information) can be prepended to the audio sequence.",
+       "zh": "Figure 2 展示了 VIBEVOICE-ASR 的架构总览。我们把长音频语音理解表述为一个语言建模任务。模型以一串连续音频嵌入作为主要输入，这些嵌入由预训练的声学（Acoustic）与语义（Semantic）编码器编码得到。为获得上下文感知能力，可在音频序列之前拼接可选的文本提示（例如热词或背景信息）。"
+      }
+     ]
     },
     {
      "id": "p-2-1-1",

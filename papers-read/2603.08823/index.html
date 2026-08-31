@@ -92,6 +92,7 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 }
 /* 图/表标题、公式、表格主体 */
 .cap{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:12px 0;font-size:13px}
+.cap img.fig{display:block;max-width:100%;margin:2px auto 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .cap-k{display:inline-block;font-size:11px;font-weight:700;color:#0f766e;background:#ccfbf1;border-radius:6px;padding:1px 7px;margin-right:6px}
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
@@ -175,7 +176,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-1"><span class="secnum">1</span> <span class="t-zh">1 引言</span><span class="t-en">Introduction</span></h2><div class="cap" id="fig-1-1"><span class="cap-k">图</span><p class="en">Figure 1: Fish Audio S2 is a multilingual, controllable, and expressive TTS system supporting long-form, multi-speaker, multi-turn generation with ultra-low TTFA and RTF.</p><p class="zh">图 1：Fish Audio S2 是一个多语言、可控、富有表现力的 TTS 系统，支持长音频、多说话人、多轮生成，并具有超低的 TTFA 和 RTF。</p></div>
+      <h2 class="sech lv1" id="sec-1"><span class="secnum">1</span> <span class="t-zh">1 引言</span><span class="t-en">Introduction</span></h2><div class="cap" id="fig-1-1"><img class="fig" src="../assets/figures/2603.08823/fig-1-1.png" loading="lazy" alt="Figure 1: Fish Audio S2 is a multilingual, controllable, and expressive TTS system supporting long-form, multi-speaker, "><span class="cap-k">图</span><p class="en">Figure 1: Fish Audio S2 is a multilingual, controllable, and expressive TTS system supporting long-form, multi-speaker, multi-turn generation with ultra-low TTFA and RTF.</p><p class="zh">图 1：Fish Audio S2 是一个多语言、可控、富有表现力的 TTS 系统，支持长音频、多说话人、多轮生成，并具有超低的 TTFA 和 RTF。</p></div>
 <div class="pblk" id="p-1-1">
           <p class="en-lines"><span class="sent" data-sid="s-1-1-1"><span class="en">High-quality, controllable text-to-speech (TTS) has become increasingly important in modern AI systems, enabling scalable audio content creation and natural conversational experiences across applications such as audiobook narration, video dubbing, and personalized chatbots.</span></span> <span class="sent" data-sid="s-1-1-2"><span class="en">Recent progress in TTS has been driven by large-scale models (Zhang et al., 2025; Du et al., 2025; Li et al., 2026; Hu et al., 2026).</span></span> <span class="sent" data-sid="s-1-1-3"><span class="en">Many of these works follow a two-stage paradigm: conditioned on text, the model first produces high-level discrete speech tokens, which are then decoded into the full waveform by a separate acoustic decoder (Wang et al., 2023; D´efossez et al., 2022; Kong et al., 2020; Anastassiou et al., 2024).</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-1-1"><span class="zh">高质量、可控的文本转语音（TTS）在现代 AI 系统中越来越重要，它支撑了有声书朗读、视频配音、个性化聊天机器人等应用中的规模化音频内容创作和自然对话体验。</span></span><span class="sent" data-sid="s-1-1-2"><span class="zh">TTS 近期的进展由大规模模型推动（Zhang et al., 2025; Du et al., 2025; Li et al., 2026; Hu et al., 2026）。</span></span><span class="sent" data-sid="s-1-1-3"><span class="zh">其中许多工作遵循两阶段范式：以文本为条件，模型首先生成高层离散语音 token，再由独立的声学解码器将其解码为完整波形（Wang et al., 2023; Défossez et al., 2022; Kong et al., 2020; Anastassiou et al., 2024）。</span></span></p>
@@ -221,7 +222,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-1-9-1"><span class="zh">本文其余部分组织如下：第 2 节详述模型架构；第 3 节介绍数据策展流水线；第 4 节介绍预训练与基于 RL 的后训练；第 5 节介绍我们的推理引擎及其性能；第 6 节给出实验设置与全面评测结果；最后第 7 节总结并讨论局限与未来方向。</span></span></p>
           
         </div>
-<div class="cap" id="fig-1-2"><span class="cap-k">图</span><p class="en">Figure 2: Fish Audio S2 architecture.</p><p class="zh">图 2：Fish Audio S2 架构。</p></div></section>
+<div class="cap" id="fig-1-2"><img class="fig" src="../assets/figures/2603.08823/fig-1-2.png" loading="lazy" alt="Figure 2: Fish Audio S2 architecture."><span class="cap-k">图</span><p class="en">Figure 2: Fish Audio S2 architecture.</p><p class="zh">图 2：Fish Audio S2 架构。</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-2"><span class="secnum">2</span> <span class="t-zh">2 架构</span><span class="t-en">Architecture</span></h2></section>
 <section>
@@ -323,7 +324,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-1-1"><span class="zh">扩大 TTS 系统规模需要海量、高质量的数据集。</span></span><span class="sent" data-sid="s-3-1-2"><span class="zh">除了基础的降噪之外，主要瓶颈在于把细微的声学属性（如情绪和韵律）以及说话人轮次映射为自然语言指令——这一过程无法靠人工规模化。</span></span><span class="sent" data-sid="s-3-1-3"><span class="zh">此外，TTS 的 RL 对齐通常依赖独立于预训练流水线训练的奖励模型，这会在预训练数据与后训练目标之间引入分布偏移。</span></span></p>
           
         </div>
-<div class="cap" id="fig-3-1"><span class="cap-k">图</span><p class="en">Figure 3: Fish Audio S2 data pipeline.</p><p class="zh">图 3：Fish Audio S2 数据流水线。</p></div>
+<div class="cap" id="fig-3-1"><img class="fig" src="../assets/figures/2603.08823/fig-3-1.png" loading="lazy" alt="Figure 3: Fish Audio S2 data pipeline."><span class="cap-k">图</span><p class="en">Figure 3: Fish Audio S2 data pipeline.</p><p class="zh">图 3：Fish Audio S2 数据流水线。</p></div>
 <div class="pblk" id="p-3-2">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-1"><span class="en">To address both challenges, we design a three-stage data curation pipeline built around two core evaluation engines: a speech quality model and a rich-transcription ASR model.</span></span> <span class="sent" data-sid="s-3-2-2"><span class="en">During pre-training, these engines act as strict filters and annotators; during RL-based post-training, they are directly reused as reward models.</span></span> <span class="sent" data-sid="s-3-2-3"><span class="en">This dual-purpose design eliminates distribution shift between pre-training and post-training by construction, while enabling fine-grained vocal annotation in natural language to scale automatically without human intervention.</span><button class="mk feat" data-sid="s-3-2-3" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-1"><span class="zh">为同时应对这两个挑战，我们围绕两个核心评估引擎设计了一条三阶段数据策展流水线：一个语音质量模型和一个富转录 ASR 模型。</span></span><span class="sent" data-sid="s-3-2-2"><span class="zh">在预训练阶段，这两个引擎充当严格的过滤器和标注器；在基于 RL 的后训练阶段，它们被直接复用为奖励模型。</span></span><span class="sent" data-sid="s-3-2-3"><span class="zh">这种双用途设计在构造上消除了预训练与后训练之间的分布偏移，同时让自然语言的细粒度声音标注无需人工干预即可自动规模化。</span><button class="mk feat" data-sid="s-3-2-3" title="查看讲解">解</button></span></p>
@@ -385,7 +386,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-3-1"><span class="zh">与我们的双用途设计一致，该模型在基于 RL 的后训练中被复用为可懂度与指令跟随奖励。</span></span><span class="sent" data-sid="s-3-2-3-2"><span class="zh">通过对生成音频做再转写，并将其与</span></span></p>
           
         </div>
-<div class="cap" id="fig-3-2-1"><span class="cap-k">图</span><p class="en">Figure 4: Fish Audio S2 supports multi-speaker generation with fine-grained natural language control over prosody, emotion, and speaking style.</p><p class="zh">图 4：Fish Audio S2 支持多说话人生成，并可对韵律、情绪和说话风格做细粒度自然语言控制。</p></div>
+<div class="cap" id="fig-3-2-1"><img class="fig" src="../assets/figures/2603.08823/fig-3-2-1.png" loading="lazy" alt="Figure 4: Fish Audio S2 supports multi-speaker generation with fine-grained natural language control over prosody, emoti"><span class="cap-k">图</span><p class="en">Figure 4: Fish Audio S2 supports multi-speaker generation with fine-grained natural language control over prosody, emotion, and speaking style.</p><p class="zh">图 4：Fish Audio S2 支持多说话人生成，并可对韵律、情绪和说话风格做细粒度自然语言控制。</p></div>
 <div class="pblk" id="p-3-2-4">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-4-1"><span class="en">original prompt, it provides reward signals that penalize hallucinations, missing words, and ignored vocal instructions.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-4-1"><span class="zh">原始提示进行比对，它提供的奖励信号会惩罚幻觉、漏词和被忽略的声音指令。</span></span></p>
@@ -537,7 +538,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-5-1"><span class="zh">（公式片段：L^RL_slow = −(1/|T|)·Σ_{t=1..|T|} A_i·log π_θ(x_t | x_{&lt;t}) + β·D_KL(t)（式 6）。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-4-3-1"><span class="cap-k">图</span><p class="en">Figure 5: Training reward curves during RL-based post-training.</p><p class="zh">图 5：基于 RL 的后训练期间的训练奖励曲线。</p></div>
+<div class="cap" id="fig-4-3-1"><img class="fig" src="../assets/figures/2603.08823/fig-4-3-1.png" loading="lazy" alt="Figure 5: Training reward curves during RL-based post-training."><span class="cap-k">图</span><p class="en">Figure 5: Training reward curves during RL-based post-training.</p><p class="zh">图 5：基于 RL 的后训练期间的训练奖励曲线。</p></div>
 <div class="pblk" id="p-4-3-6">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-6-1"><span class="en">where D(t) KL is the per-token KL divergence between the current policy and the reference policy, computed via the Schulman estimator.</span></span> <span class="sent" data-sid="s-4-3-6-2"><span class="en">The Fast AR loss follows the same formulation but operates independently over each audio token q(k) t , sharing the same advantage signal:</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-6-1"><span class="zh">其中 D(t)_KL 是当前策略与参考策略之间的逐 token KL 散度，用 Schulman 估计量计算。</span></span><span class="sent" data-sid="s-4-3-6-2"><span class="zh">/ T</span></span></p>

@@ -1619,10 +1619,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "fig-efficient-forced-alignment-on-gp-3",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 7,
-     "original": "Figure 4 shows that the forced alignment implementation scales much better to longer sequences than CPU alternatives such as ctc-segmentation [Kürzinger et al., 2020], a popular segmentation library used in ESPNet [Watanabe et al., 2018], SpeechBrain [Ravanelli et al., 2021] and Flashlight [Kahn et al., 2022].",
-     "zh": "图 4 表明，强制对齐实现对长序列的扩展性远好于 CPU 替代方案，例如 ctc-segmentation [Kürzinger et al., 2020]——这是 ESPNet [Watanabe et al., 2018]、SpeechBrain [Ravanelli et al., 2021] 中常用的切分库——以及 Flashlight [Kahn et al., 2022]。"
+     "sentences": [
+      {
+       "id": "fig-efficient-forced-alignment-on-gp-3-s1",
+       "original": "Figure 4 shows that the forced alignment implementation scales much better to longer sequences than CPU alternatives such as ctc-segmentation [Kürzinger et al., 2020], a popular segmentation library used in ESPNet [Watanabe et al., 2018], SpeechBrain [Ravanelli et al., 2021] and Flashlight [Kahn et al., 2022].",
+       "zh": "图 4 表明，强制对齐实现对长序列的扩展性远好于 CPU 替代方案，例如 ctc-segmentation [Kürzinger et al., 2020]——这是 ESPNet [Watanabe et al., 2018]、SpeechBrain [Ravanelli et al., 2021] 中常用的切分库——以及 Flashlight [Kahn et al., 2022]。"
+      }
+     ]
     }
    ]
   },
@@ -2646,10 +2651,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "fig-3-3-1-2",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 11,
-     "original": "Figure 8 shows that the MMS-lab data preparation process results in better quality ASR models compared to CMU Wilderness with improvements between 2.1%-4.7% CER, depending on the language. Our alignment procedure also retains a much larger amount of the training data compared to the CMU Wilderness protocol: for Telugu, there are 26.5 hours of data, MMS-lab retains 26.2 hours compared to 11.1 hours for the CMU Wilderness process. For English, we start with 17.3 hours, MMS-lab retains 17 hours vs. 10.6 hours for CMU Wilderness.",
-     "zh": "图 8 表明，与 CMU Wilderness 相比，MMS-lab 的数据准备流程能产出质量更好的 ASR 模型，CER 改善幅度在 2.1%-4.7% 之间，因语言而异。与 CMU Wilderness 流程相比，我们的对齐流程也保留了多得多的训练数据：泰卢固语原有 26.5 小时数据，MMS-lab 保留 26.2 小时，而 CMU Wilderness 流程只保留 11.1 小时。英语原有 17.3 小时，MMS-lab 保留 17 小时，而 CMU Wilderness 为 10.6 小时。"
+     "sentences": [
+      {
+       "id": "fig-3-3-1-2-s1",
+       "original": "Figure 8 shows that the MMS-lab data preparation process results in better quality ASR models compared to CMU Wilderness with improvements between 2.1%-4.7% CER, depending on the language. Our alignment procedure also retains a much larger amount of the training data compared to the CMU Wilderness protocol: for Telugu, there are 26.5 hours of data, MMS-lab retains 26.2 hours compared to 11.1 hours for the CMU Wilderness process. For English, we start with 17.3 hours, MMS-lab retains 17 hours vs. 10.6 hours for CMU Wilderness.",
+       "zh": "图 8 表明，与 CMU Wilderness 相比，MMS-lab 的数据准备流程能产出质量更好的 ASR 模型，CER 改善幅度在 2.1%-4.7% 之间，因语言而异。与 CMU Wilderness 流程相比，我们的对齐流程也保留了多得多的训练数据：泰卢固语原有 26.5 小时数据，MMS-lab 保留 26.2 小时，而 CMU Wilderness 流程只保留 11.1 小时。英语原有 17.3 小时，MMS-lab 保留 17 小时，而 CMU Wilderness 为 10.6 小时。"
+      }
+     ]
     }
    ]
   },
@@ -2775,10 +2785,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "fig-3-3-3-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 12,
-     "original": "Figure 9 shows that models trained on CommonVoice perform better on 18 languages of FLEURS (average CER 9.3 vs. 12.2) but the models MMS-lab still enable good performance.19 This is despite the fact that MMS-lab utterances are often from a single speaker and are from a very narrow domain. While there is certainly higher quality data for head languages, this result suggests that the quality of the MMS-lab data can enable high quality speech systems for a large number of other languages.",
-     "zh": "图 9 表明，在 CommonVoice 上训练的模型在 FLEURS 的 18 种语言上表现更好（平均 CER 9.3 对 12.2），但在 MMS-lab 上训练的模型仍能取得不错的性能。19 尽管 MMS-lab 的语句往往来自单一说话人且领域非常狭窄。虽然头部语言确实存在更高质量的数据，这一结果表明 MMS-lab 数据的质量足以为大量其他语言构建高质量的语音系统。"
+     "sentences": [
+      {
+       "id": "fig-3-3-3-1-s1",
+       "original": "Figure 9 shows that models trained on CommonVoice perform better on 18 languages of FLEURS (average CER 9.3 vs. 12.2) but the models MMS-lab still enable good performance.19 This is despite the fact that MMS-lab utterances are often from a single speaker and are from a very narrow domain. While there is certainly higher quality data for head languages, this result suggests that the quality of the MMS-lab data can enable high quality speech systems for a large number of other languages.",
+       "zh": "图 9 表明，在 CommonVoice 上训练的模型在 FLEURS 的 18 种语言上表现更好（平均 CER 9.3 对 12.2），但在 MMS-lab 上训练的模型仍能取得不错的性能。19 尽管 MMS-lab 的语句往往来自单一说话人且领域非常狭窄。虽然头部语言确实存在更高质量的数据，这一结果表明 MMS-lab 数据的质量足以为大量其他语言构建高质量的语音系统。"
+      }
+     ]
     }
    ]
   },
@@ -3387,10 +3402,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "fig-4-3-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 14,
-     "original": "Figure 10 shows that the MMS models perform better: for the 300B size, MMS has 0.6 lower CER than XLS-R, and for the 1B size, the difference is 0.7 CER. More capacity helps to improve performance: for XLS-R the error rate decreases by 3.2 CER absolute when scaling the number of parameters from 300M to 1B and for MMS-lab there is a 3.0 CER improvement.",
-     "zh": "图 10 表明 MMS 模型表现更好：300M 规模下，MMS 的 CER 比 XLS-R 低 0.6；1B 规模下，差距为 0.7 CER。更大容量有助于提升性能：XLS-R 参数量从 300M 扩展到 1B 时，错误率绝对下降 3.2 CER；MMS-lab 则有 3.0 CER 的提升。"
+     "sentences": [
+      {
+       "id": "fig-4-3-1-s1",
+       "original": "Figure 10 shows that the MMS models perform better: for the 300B size, MMS has 0.6 lower CER than XLS-R, and for the 1B size, the difference is 0.7 CER. More capacity helps to improve performance: for XLS-R the error rate decreases by 3.2 CER absolute when scaling the number of parameters from 300M to 1B and for MMS-lab there is a 3.0 CER improvement.",
+       "zh": "图 10 表明 MMS 模型表现更好：300M 规模下，MMS 的 CER 比 XLS-R 低 0.6；1B 规模下，差距为 0.7 CER。更大容量有助于提升性能：XLS-R 参数量从 300M 扩展到 1B 时，错误率绝对下降 3.2 CER；MMS-lab 则有 3.0 CER 的提升。"
+      }
+     ]
     },
     {
      "id": "p-4-3-2",
@@ -3643,10 +3663,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "fig-5-2-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 15,
-     "original": "Figure 12 shows that performance degrades quickly for dense models which have no language-specific parameters: for FLEURS-61, CER increases by 5.1 when moving from 61 to 1,107 languages and for CV-49, there is a 2.1 CER increase. This is mainly due to languages being confused with each other which results in large performance drops for certain languages. Language-specific parameters (LSAH) alleviate this issue and show only very little degradation (0.4 CER for FLEURS-61 and 0.2 CER for CV-49).",
-     "zh": "图 12 表明，没有语言特定参数的稠密模型的性能退化很快：对 FLEURS-61，从 61 种语言扩展到 1,107 种时 CER 上升 5.1；对 CV-49，CER 上升 2.1。这主要是因为语言之间相互混淆，导致某些语言性能大幅下降。语言特定参数（LSAH）缓解了这一问题，仅表现出极小的退化（FLEURS-61 上 0.4 CER，CV-49 上 0.2 CER）。"
+     "sentences": [
+      {
+       "id": "fig-5-2-1-s1",
+       "original": "Figure 12 shows that performance degrades quickly for dense models which have no language-specific parameters: for FLEURS-61, CER increases by 5.1 when moving from 61 to 1,107 languages and for CV-49, there is a 2.1 CER increase. This is mainly due to languages being confused with each other which results in large performance drops for certain languages. Language-specific parameters (LSAH) alleviate this issue and show only very little degradation (0.4 CER for FLEURS-61 and 0.2 CER for CV-49).",
+       "zh": "图 12 表明，没有语言特定参数的稠密模型的性能退化很快：对 FLEURS-61，从 61 种语言扩展到 1,107 种时 CER 上升 5.1；对 CV-49，CER 上升 2.1。这主要是因为语言之间相互混淆，导致某些语言性能大幅下降。语言特定参数（LSAH）缓解了这一问题，仅表现出极小的退化（FLEURS-61 上 0.4 CER，CV-49 上 0.2 CER）。"
+      }
+     ]
     },
     {
      "id": "eq-5-2-1",
@@ -4323,10 +4348,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "tab-5-3-2-2",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 18,
-     "original": "Table 4 shows that MMS performs very competitively compared to USM. We note that the approaches have significant differences in the model architecture and uses of unlabeled/labeled data, however, we believe that the result convinces the reader that a simple CTC model paired with n-gram models can perform very competitively to more advanced architectures and more elaborate pre-training procedures. Appendix D shows a per-language breakdown of the results.",
-     "zh": "表 4 表明，MMS 相比 USM 非常有竞争力。我们注意到，这些方法在模型架构和无标注/标注数据的使用上存在显著差异；然而，我们相信这一结果足以让读者信服：一个简单的 CTC 模型搭配 n-gram 模型，就能与更先进的架构和更精细的预训练流程相媲美。附录 D 展示结果的逐语言分解。"
+     "sentences": [
+      {
+       "id": "tab-5-3-2-2-s1",
+       "original": "Table 4 shows that MMS performs very competitively compared to USM. We note that the approaches have significant differences in the model architecture and uses of unlabeled/labeled data, however, we believe that the result convinces the reader that a simple CTC model paired with n-gram models can perform very competitively to more advanced architectures and more elaborate pre-training procedures. Appendix D shows a per-language breakdown of the results.",
+       "zh": "表 4 表明，MMS 相比 USM 非常有竞争力。我们注意到，这些方法在模型架构和无标注/标注数据的使用上存在显著差异；然而，我们相信这一结果足以让读者信服：一个简单的 CTC 模型搭配 n-gram 模型，就能与更先进的架构和更精细的预训练流程相媲美。附录 D 展示结果的逐语言分解。"
+      }
+     ]
     }
    ]
   },
@@ -4391,10 +4421,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "tab-5-4-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 18,
-     "original": "Table 5 shows that the multi-domain model (MMS-lab+FL+CV+VP+MLS) can perform very competitively in several settings: For both FLEURS and CommonVoice it outperforms prior work as well the single-domain baselines and for VoxPopuli and MLS it is slightly worse than the single-domain baselines. For VoxPopuli, the MMS model it is outperformed by Maestro which supports a much",
-     "zh": "表 5 表明，多域模型（MMS-lab+FL+CV+VP+MLS）在多个设置下都很有竞争力：在 FLEURS 和 CommonVoice 上，它超过先前工作和单域基线；在 VoxPopuli 和 MLS 上，它略逊于单域基线。在 VoxPopuli 上，MMS 模型被 Maestro 超越——后者支持的语言数量要少得多"
+     "sentences": [
+      {
+       "id": "tab-5-4-1-s1",
+       "original": "Table 5 shows that the multi-domain model (MMS-lab+FL+CV+VP+MLS) can perform very competitively in several settings: For both FLEURS and CommonVoice it outperforms prior work as well the single-domain baselines and for VoxPopuli and MLS it is slightly worse than the single-domain baselines. For VoxPopuli, the MMS model it is outperformed by Maestro which supports a much",
+       "zh": "表 5 表明，多域模型（MMS-lab+FL+CV+VP+MLS）在多个设置下都很有竞争力：在 FLEURS 和 CommonVoice 上，它超过先前工作和单域基线；在 VoxPopuli 和 MLS 上，它略逊于单域基线。在 VoxPopuli 上，MMS 模型被 Maestro 超越——后者支持的语言数量要少得多"
+      }
+     ]
     },
     {
      "id": "p-5-4-3",
@@ -4416,7 +4451,7 @@ globalThis.PAPER_2305_13516 = {
       {
        "id": "s-5-4-4-1",
        "original": "#lang CER CER ≤5",
-       "zh": "CER CER\n（原始数据照录）\n#lang CER CER ≤5"
+       "zh": "CER CER\n#语言 CER CER ≤5"
       }
      ]
     },
@@ -4573,10 +4608,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "tab-5-5-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 19,
-     "original": "Table 6 shows that our model meets the CER quality threshold for 96% of the 1,107 languages. The region with the lowest rate is Africa at 91% and we attribute this in part to different writing scripts. We note that this metric is by far not perfect as it imposes the same threshold for every language which may not be appropriate due to different character sets etc. Also, many of the recordings in MMS-lab are single speaker which means that both the training data and the test data contains utterances with the same voice for a particular language. While this makes evaluation challenging, we hope that this analysis gives a sense that the model can be used to transcribe a wide variety of languages.",
-     "zh": "表 6 表明，我们的模型在 1,107 种语言中的 96% 达到了 CER 质量阈值。比例最低的区域是非洲，为 91%，我们将这部分归因于不同的书写文字。我们注意到，这一度量远非完美，因为它对每种语言施加相同的阈值，而由于字符集不同等原因，这可能并不合适。此外，MMS-lab 中的许多录音是单一说话人，这意味着对特定语言而言，训练数据和测试数据包含相同声音的语句。尽管这使评估具有挑战性，我们希望这一分析能让人感觉到：该模型可用于转写种类繁多的语言。"
+     "sentences": [
+      {
+       "id": "tab-5-5-1-s1",
+       "original": "Table 6 shows that our model meets the CER quality threshold for 96% of the 1,107 languages. The region with the lowest rate is Africa at 91% and we attribute this in part to different writing scripts. We note that this metric is by far not perfect as it imposes the same threshold for every language which may not be appropriate due to different character sets etc. Also, many of the recordings in MMS-lab are single speaker which means that both the training data and the test data contains utterances with the same voice for a particular language. While this makes evaluation challenging, we hope that this analysis gives a sense that the model can be used to transcribe a wide variety of languages.",
+       "zh": "表 6 表明，我们的模型在 1,107 种语言中的 96% 达到了 CER 质量阈值。比例最低的区域是非洲，为 91%，我们将这部分归因于不同的书写文字。我们注意到，这一度量远非完美，因为它对每种语言施加相同的阈值，而由于字符集不同等原因，这可能并不合适。此外，MMS-lab 中的许多录音是单一说话人，这意味着对特定语言而言，训练数据和测试数据包含相同声音的语句。尽管这使评估具有挑战性，我们希望这一分析能让人感觉到：该模型可用于转写种类繁多的语言。"
+      }
+     ]
     }
    ]
   },
@@ -5126,10 +5166,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "tab-6-3-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 22,
-     "original": "Table 7 shows that MMS models scale very well: increasing the number of languages from 126 to 4,017 results in a modest performance drop of just 0.3% on FLEURS and no drop on VoxLingua-107. Out-of-domain we observe a drop of 3.6% on BABEL and 0.2% on VoxPopuli. The results are also competitive to models trained only on in-domain data: On FLEURS evaluation data, the 4,017 language MMS model performs 1% better than the baseline trained only on FLEURS data and is only 0.2% behind the baseline trained on both FLEURS and VoxLingua-107. On VoxLingua-107 evaluation data, the gap is 0.4-0.8%. This shows that scaling LID to 4,017 can result in models with competitive performance to models trained on much fewer languages.",
-     "zh": "表 7 表明 MMS 模型的扩展性非常好：将语言数量从 126 增加到 4,017，在 FLEURS 上仅有 0.3% 的小幅性能下降，在 VoxLingua-107 上没有下降。在分布外，我们观察到 BABEL 上下降 3.6%，VoxPopuli 上下降 0.2%。这些结果与仅在域内数据上训练的模型相比也有竞争力：在 FLEURS 评估数据上，4,017 语言的 MMS 模型比仅在 FLEURS 数据上训练的基线好 1%，仅落后于在 FLEURS 和 VoxLingua-107 上共同训练的基线 0.2%。在 VoxLingua-107 评估数据上，差距为 0.4-0.8%。这表明，将 LID 扩展到 4,017 种语言可以得到与在少得多的语言上训练的模型性能相竞争的模型。"
+     "sentences": [
+      {
+       "id": "tab-6-3-1-s1",
+       "original": "Table 7 shows that MMS models scale very well: increasing the number of languages from 126 to 4,017 results in a modest performance drop of just 0.3% on FLEURS and no drop on VoxLingua-107. Out-of-domain we observe a drop of 3.6% on BABEL and 0.2% on VoxPopuli. The results are also competitive to models trained only on in-domain data: On FLEURS evaluation data, the 4,017 language MMS model performs 1% better than the baseline trained only on FLEURS data and is only 0.2% behind the baseline trained on both FLEURS and VoxLingua-107. On VoxLingua-107 evaluation data, the gap is 0.4-0.8%. This shows that scaling LID to 4,017 can result in models with competitive performance to models trained on much fewer languages.",
+       "zh": "表 7 表明 MMS 模型的扩展性非常好：将语言数量从 126 增加到 4,017，在 FLEURS 上仅有 0.3% 的小幅性能下降，在 VoxLingua-107 上没有下降。在分布外，我们观察到 BABEL 上下降 3.6%，VoxPopuli 上下降 0.2%。这些结果与仅在域内数据上训练的模型相比也有竞争力：在 FLEURS 评估数据上，4,017 语言的 MMS 模型比仅在 FLEURS 数据上训练的基线好 1%，仅落后于在 FLEURS 和 VoxLingua-107 上共同训练的基线 0.2%。在 VoxLingua-107 评估数据上，差距为 0.4-0.8%。这表明，将 LID 扩展到 4,017 种语言可以得到与在少得多的语言上训练的模型性能相竞争的模型。"
+      }
+     ]
     }
    ]
   },
@@ -5892,10 +5937,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "tab-7-4-1-2",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 25,
-     "original": "Table 8 shows that our reduced setup (row 5) generally performs less well than the highly optimized setup of VITS for LJSpeech (row 2; Kim et al. 2021) and each design choice (fewer training updates, MMS-lab training data and character inputs) leads to a reduction in quality. In terms of character error rate, the degradation is most pronounced on out-of-domain settings with respect to our reduced setup (row 5) and less so on the in-dmain MMS-lab development set. We stress that these choices enable scaling TTS to over 1,000 languages at manageable compute requirements and no need for language-specific text processing tools.",
-     "zh": "表 8 表明，我们的精简设置（第 5 行）总体上不如为 LJSpeech 高度优化的 VITS 设置（第 2 行；Kim et al. 2021），且每一项设计选择（更少的训练更新、MMS-lab 训练数据和字符输入）都导致质量下降。就字错误率而言，退化在相对我们精简设置（第 5 行）的域外场景中最为明显，在域内的 MMS-lab 开发集上则较小。我们强调，这些选择使得以可控的算力需求将 TTS 扩展到 1,000 多种语言成为可能，且无需语言特定的文本处理工具。"
+     "sentences": [
+      {
+       "id": "tab-7-4-1-2-s1",
+       "original": "Table 8 shows that our reduced setup (row 5) generally performs less well than the highly optimized setup of VITS for LJSpeech (row 2; Kim et al. 2021) and each design choice (fewer training updates, MMS-lab training data and character inputs) leads to a reduction in quality. In terms of character error rate, the degradation is most pronounced on out-of-domain settings with respect to our reduced setup (row 5) and less so on the in-dmain MMS-lab development set. We stress that these choices enable scaling TTS to over 1,000 languages at manageable compute requirements and no need for language-specific text processing tools.",
+       "zh": "表 8 表明，我们的精简设置（第 5 行）总体上不如为 LJSpeech 高度优化的 VITS 设置（第 2 行；Kim et al. 2021），且每一项设计选择（更少的训练更新、MMS-lab 训练数据和字符输入）都导致质量下降。就字错误率而言，退化在相对我们精简设置（第 5 行）的域外场景中最为明显，在域内的 MMS-lab 开发集上则较小。我们强调，这些选择使得以可控的算力需求将 TTS 扩展到 1,000 多种语言成为可能，且无需语言特定的文本处理工具。"
+      }
+     ]
     },
     {
      "id": "p-7-4-1-5",
@@ -6016,10 +6066,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "tab-7-5-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 25,
-     "original": "Table 10 shows that MMS models are robust to domain shift: the CER of synthesized speech (TTS) is only slightly higher out-of-domain compared to in-domain and MOS scores for the synthesized",
-     "zh": "表 10 表明，MMS 模型对领域偏移具有稳健性：合成语音（TTS）的 CER 在域外仅略高于域内，且合成样本的 MOS 分数"
+     "sentences": [
+      {
+       "id": "tab-7-5-1-s1",
+       "original": "Table 10 shows that MMS models are robust to domain shift: the CER of synthesized speech (TTS) is only slightly higher out-of-domain compared to in-domain and MOS scores for the synthesized",
+       "zh": "表 10 表明，MMS 模型对领域偏移具有稳健性：合成语音（TTS）的 CER 在域外仅略高于域内，且合成样本的 MOS 分数"
+      }
+     ]
     },
     {
      "id": "p-7-5-2",
@@ -6237,10 +6292,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "tab-7-6-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 26,
-     "original": "Table 11 shows that about 85% of the 1,107 languages meet the CER quality threshold. South American and European languages achieve the highest rate at 95% and African languages the lowest rate of 76%. This is in part driven by different writing scripts. The ASR character error rates are generally low because the error rates are based on ASR models trained on MMS-lab data.",
-     "zh": "表 11 表明，1,107 种语言中约 85% 达到 CER 质量阈值。南美洲和欧洲语言达标率最高，为 95%，非洲语言最低，为 76%。这部分由不同的书写文字造成。ASR 字错误率总体较低，因为错误率是基于在 MMS-lab 数据上训练的 ASR 模型计算的。"
+     "sentences": [
+      {
+       "id": "tab-7-6-1-s1",
+       "original": "Table 11 shows that about 85% of the 1,107 languages meet the CER quality threshold. South American and European languages achieve the highest rate at 95% and African languages the lowest rate of 76%. This is in part driven by different writing scripts. The ASR character error rates are generally low because the error rates are based on ASR models trained on MMS-lab data.",
+       "zh": "表 11 表明，1,107 种语言中约 85% 达到 CER 质量阈值。南美洲和欧洲语言达标率最高，为 95%，非洲语言最低，为 76%。这部分由不同的书写文字造成。ASR 字错误率总体较低，因为错误率是基于在 MMS-lab 数据上训练的 ASR 模型计算的。"
+      }
+     ]
     }
    ]
   },
@@ -6390,10 +6450,15 @@ globalThis.PAPER_2305_13516 = {
     },
     {
      "id": "fig-8-1-2",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 27,
-     "original": "Figure 14 shows that the average character error rate over these 27 languages is very similar, both for the MMS model and the model trained on FLEURS data. There can be significant differences between genders within a particular language, but both models appear to be equally affected (see Table A4). On a per language basis, male speakers have a higher error rate for 14 languages while as female speakers have a higher error rate for the remaining 13 languages. We conclude that our models exhibit similar gender bias to models trained on FLEURS data which is general domain data.",
-     "zh": "图 14 表明，这 27 种语言上的平均字错误率非常接近，无论对 MMS 模型还是在 FLEURS 数据上训练的模型都是如此。在特定语言内部，性别之间可能存在显著差异，但两个模型似乎受到同等程度的影响（见表 A4）。按语言逐一来看，男性说话人在 14 种语言上错误率更高，而女性说话人在其余 13 种语言上错误率更高。我们的结论是，我们的模型表现出的性别偏见与在通用领域数据 FLEURS 上训练的模型相似。"
+     "sentences": [
+      {
+       "id": "fig-8-1-2-s1",
+       "original": "Figure 14 shows that the average character error rate over these 27 languages is very similar, both for the MMS model and the model trained on FLEURS data. There can be significant differences between genders within a particular language, but both models appear to be equally affected (see Table A4). On a per language basis, male speakers have a higher error rate for 14 languages while as female speakers have a higher error rate for the remaining 13 languages. We conclude that our models exhibit similar gender bias to models trained on FLEURS data which is general domain data.",
+       "zh": "图 14 表明，这 27 种语言上的平均字错误率非常接近，无论对 MMS 模型还是在 FLEURS 数据上训练的模型都是如此。在特定语言内部，性别之间可能存在显著差异，但两个模型似乎受到同等程度的影响（见表 A4）。按语言逐一来看，男性说话人在 14 种语言上错误率更高，而女性说话人在其余 13 种语言上错误率更高。我们的结论是，我们的模型表现出的性别偏见与在通用领域数据 FLEURS 上训练的模型相似。"
+      }
+     ]
     }
    ]
   },
@@ -13437,7 +13502,7 @@ globalThis.PAPER_2305_13516 = {
       {
        "id": "s-C-3-2",
        "original": "We report WER for each of the 54 languages supported by both MMS and Whisper, except for Thai (tha), Lao (lao), Burmese (mya) and Khmer (khm) where we report CER.",
-       "zh": "CER\n（原始数据照录）\nWe report WER for each of the 54 languages supported by both MMS and Whisper, except for Thai (tha), Lao (lao), Burmese (mya) and Khmer (khm) where we report CER."
+       "zh": "CER\n我们报告了 MMS 和 Whisper 共同支持的 54 种语言的 WER，除了泰语 (tha)、老挝语 (lao)、缅甸语 (mya) 和高棉语 (khm) 报告 CER。"
       },
       {
        "id": "s-C-3-3",
@@ -14976,7 +15041,7 @@ globalThis.PAPER_2305_13516 = {
       {
        "id": "s-D-2-1",
        "original": "Table A3: Results on FLEURS-102.",
-       "zh": "2.\n（原始数据照录）\nTable A3: Results on FLEURS-102."
+       "zh": "2.\n表 A3：FLEURS-102 上的结果。"
       },
       {
        "id": "s-D-2-2",
@@ -15367,7 +15432,7 @@ globalThis.PAPER_2305_13516 = {
       {
        "id": "s-E-2-3",
        "original": "We report dev CER per gender of the speakers for 27 languages of FLEURS for which MMS-lab provides data and for which there are at least 50 samples for each gender.",
-       "zh": "CER\n（原始数据照录）\nWe report dev CER per gender of the speakers for 27 languages of FLEURS for which MMS-lab provides data and for which there are at least 50 samples for each gender."
+       "zh": "CER\n我们报告了 FLEURS 中 27 种语言的 dev CER（按说话人性别分组），这些语言在 MMS-lab 中有数据且每种性别至少有 50 条样本。"
       }
      ]
     }

@@ -92,6 +92,7 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 }
 /* 图/表标题、公式、表格主体 */
 .cap{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:12px 0;font-size:13px}
+.cap img.fig{display:block;max-width:100%;margin:2px auto 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .cap-k{display:inline-block;font-size:11px;font-weight:700;color:#0f766e;background:#ccfbf1;border-radius:6px;padding:1px 7px;margin-right:6px}
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
@@ -420,7 +421,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-5-1-7"><code>5 10 15 20 25 30 35</code></div>
 <div class="eq" id="eq-5-1-8"><code>Total Context Window (seconds)</code></div>
 <div class="eq" id="eq-5-1-9"><code>5</code></div>
-<div class="cap" id="fig-5-1-1"><span class="cap-k">图</span><p class="en">Figure 1: Parakeet TDT-0.6B-v3: WER vs. total context window across 18 chunking configurations. Even the best chunked configuration (9.22%) degrades substantially from the 6.32% batch baseline.</p><p class="zh">图 1：Parakeet TDT-0.6B-v3：在 18 种分块配置下 WER 随总上下文窗口的变化。即使是最好的分块配置（9.22%），相比 6.32% 的批处理基线也有明显退化。</p></div>
+<div class="cap" id="fig-5-1-1"><img class="fig" src="../assets/figures/2604.14493/fig-5-1-1.png" loading="lazy" alt="Figure 1: Parakeet TDT-0.6B-v3: WER vs. total context window across 18 chunking configurations. Even the best chunked co"><span class="cap-k">图</span><p class="en">Figure 1: Parakeet TDT-0.6B-v3: WER vs. total context window across 18 chunking configurations. Even the best chunked configuration (9.22%) degrades substantially from the 6.32% batch baseline.</p><p class="zh">图 1：Parakeet TDT-0.6B-v3：在 18 种分块配置下 WER 随总上下文窗口的变化。即使是最好的分块配置（9.22%），相比 6.32% 的批处理基线也有明显退化。</p></div>
 <div class="pblk" id="p-5-1-2">
           <p class="en-lines"><span class="sent" data-sid="s-5-1-2-1"><span class="en">The best Parakeet chunked configuration achieves 9.22% WER, a 46% relative increase over its 6.32% batch WER.</span><button class="mk feat" data-sid="s-5-1-2-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-5-1-2-2"><span class="en">This analysis confirms that models not specifically designed for streaming incur substantial penalties when adapted to chunked operation, motivating our focus on natively streaming architectures.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-1-2-1"><span class="zh">最好的 Parakeet 分块配置取得 9.22% 的 WER，相对其 6.32% 的批处理 WER 上升了 46%。</span><button class="mk feat" data-sid="s-5-1-2-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-5-1-2-2"><span class="zh">这一分析证实：未针对流式专门设计的模型在被改造为分块运行时会付出很大代价，这也促使我们把重点转向原生流式架构。</span></span></p>
@@ -481,7 +482,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-5-2-17"><code>(70,2,70) 0 1 2 3 4 5 6</code></div>
 <div class="eq" id="eq-5-2-18"><code>Algorithmic Delay (seconds)</code></div>
 <div class="eq" id="eq-5-2-19"><code>6.5</code></div>
-<div class="cap" id="fig-5-2-1"><span class="cap-k">图</span><p class="en">Figure 2: Nemotron-0.6B: Delay vs. WER trade-off across streaming configurations. The configuration (7,10,7) with 0.56 s delay and 5.6 s history achieves the best balance, reaching 7.28% WER, only 0.21% above the batch baseline.</p><p class="zh">图 2：Nemotron-0.6B：不同流式配置下延迟与 WER 的权衡。配置 (7,10,7) 以 0.56 s 延迟和 5.6 s 历史取得最佳平衡，WER 达 7.28%，仅比批处理基线高 0.21%。</p></div>
+<div class="cap" id="fig-5-2-1"><img class="fig" src="../assets/figures/2604.14493/fig-5-2-1.png" loading="lazy" alt="Figure 2: Nemotron-0.6B: Delay vs. WER trade-off across streaming configurations. The configuration (7,10,7) with 0.56 s"><span class="cap-k">图</span><p class="en">Figure 2: Nemotron-0.6B: Delay vs. WER trade-off across streaming configurations. The configuration (7,10,7) with 0.56 s delay and 5.6 s history achieves the best balance, reaching 7.28% WER, only 0.21% above the batch baseline.</p><p class="zh">图 2：Nemotron-0.6B：不同流式配置下延迟与 WER 的权衡。配置 (7,10,7) 以 0.56 s 延迟和 5.6 s 历史取得最佳平衡，WER 达 7.28%，仅比批处理基线高 0.21%。</p></div>
 <div class="pblk" id="p-5-2-5">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-5-1"><span class="en">The configuration (7, 10, 7) emerges as the optimal operating point: it provides only 0.56 s of algorithmic delay while achieving 7.28% average WER, merely 0.21% absolute above the offline batch baseline.</span></span> <span class="sent" data-sid="s-5-2-5-2"><span class="en">In contrast, the best Parakeet chunked result (9.22%) is 1.94 percentage points worse at 4× higher latency.</span></span> <span class="sent" data-sid="s-5-2-5-3"><span class="en">The key insight is that sufficient history context (5.6 s via 10 left chunks) is critical.</span></span> <span class="sent" data-sid="s-5-2-5-4"><span class="en">It’s interesting to compare (7, 10, 7) at 7.28% WER with (7, 2, 7) at 8.51% WER, where the only difference is reduced history.</span><button class="mk feat" data-sid="s-5-2-5-4" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-2-5-1"><span class="zh">配置 (7, 10, 7) 成为最优工作点：算法延迟仅 0.56 s，同时平均 WER 为 7.28%，只比离线批处理基线高 0.21%（绝对值）。</span></span><span class="sent" data-sid="s-5-2-5-2"><span class="zh">相比之下，Parakeet 最好的分块结果（9.22%）要差 1.94 个百分点，且延迟是其 4×。</span></span><span class="sent" data-sid="s-5-2-5-3"><span class="zh">关键洞察在于：充足的历史上下文（通过 10 个左侧块提供 5.6 s 历史）至关重要。</span></span><span class="sent" data-sid="s-5-2-5-4"><span class="zh">有趣的是，把 (7, 10, 7) 的 7.28% WER 与 (7, 2, 7) 的 8.51% WER 对比，二者唯一的差别就是历史被缩短了。</span><button class="mk feat" data-sid="s-5-2-5-4" title="查看讲解">解</button></span></p>
@@ -514,7 +515,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk" id="p-5-3-4">
           <p class="en-lines"><span class="sent" data-sid="s-5-3-4-1"><span class="en">Nemotron-0.6B 2.47 GB 0.56 s</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-4-1"><span class="zh">2.
-（原始数据照录）
 Nemotron-0.6B 2.47 GB 0.56 s</span></span></p>
           
         </div>
@@ -777,7 +777,11 @@ Nemotron-0.6B 2.47 GB 0.56 s</span></span></p>
 <section>
       <h2 class="sech lv1" id="sec-7"><span class="secnum">7</span> <span class="t-zh">结果</span><span class="t-en">Results</span></h2></section>
 <section>
-      <h3 class="sech lv2" id="sec-7-1"><span class="secnum">7.1</span> <span class="t-zh">量化结果</span><span class="t-en">Quantization Results</span></h3><div class="cap" id="tab-7-1-1"><span class="cap-k">表</span><p class="en">Table 6 reports the full evaluation results across all quantization variants.</p><p class="zh">Table 6 报告了所有量化变体的完整评测结果。</p></div>
+      <h3 class="sech lv2" id="sec-7-1"><span class="secnum">7.1</span> <span class="t-zh">量化结果</span><span class="t-en">Quantization Results</span></h3><div class="pblk" id="tab-7-1-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-7-1-1-s1"><span class="en">Table 6 reports the full evaluation results across all quantization variants.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-7-1-1-s1"><span class="zh">Table 6 报告了所有量化变体的完整评测结果。</span></span></p>
+          
+        </div>
 <div class="cap" id="tab-7-1-2"><span class="cap-k">表</span><p class="en">Table 6: Nemotron-0.6B quantization results. Streaming config: (7,10,7), 0.56 s delay, 5.6 s history. CPU inference, batch_size=1.</p><p class="zh">表 6：Nemotron-0.6B 量化结果。流式配置：(7,10,7)，0.56 s 延迟，5.6 s 历史。CPU 推理，batch_size=1。</p></div>
 <div class="pblk" id="p-7-1-1">
           <p class="en-lines"><span class="sent" data-sid="s-7-1-1-1"><span class="en">Variant Format Size Device Avg RTFx AMI Earn.</span></span></p>
@@ -792,7 +796,6 @@ Nemotron-0.6B 2.47 GB 0.56 s</span></span></p>
 <div class="pblk" id="p-7-1-3">
           <p class="en-lines"><span class="sent" data-sid="s-7-1-3-1"><span class="en">Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-7-1-3-1"><span class="zh">2.
-（原始数据照录）
 Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
           
         </div>
@@ -817,7 +820,7 @@ Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
 <div class="eq" id="eq-7-1-19"><code>0.0 0.5 1.0 1.5 2.0 2.5</code></div>
 <div class="eq" id="eq-7-1-20"><code>Model Size (GB)</code></div>
 <div class="eq" id="eq-7-1-21"><code>7.00</code></div>
-<div class="cap" id="fig-7-1-1"><span class="cap-k">图</span><p class="en">Figure 3: Model size vs. WER for Nemotron quantization variants. The int4 k-quant variant achieves 8.20% WER at 0.67 GB, within 0.17% of the ONNX FP32 baseline (8.03%).</p><p class="zh">图 3：Nemotron 各量化变体的模型体积与 WER 关系。int4 k-quant 变体在 0.67 GB 体积下取得 8.20% WER，与 ONNX FP32 基线（8.03%）的差距在 0.17% 以内。</p></div>
+<div class="cap" id="fig-7-1-1"><img class="fig" src="../assets/figures/2604.14493/fig-7-1-1.png" loading="lazy" alt="Figure 3: Model size vs. WER for Nemotron quantization variants. The int4 k-quant variant achieves 8.20% WER at 0.67 GB,"><span class="cap-k">图</span><p class="en">Figure 3: Model size vs. WER for Nemotron quantization variants. The int4 k-quant variant achieves 8.20% WER at 0.67 GB, within 0.17% of the ONNX FP32 baseline (8.03%).</p><p class="zh">图 3：Nemotron 各量化变体的模型体积与 WER 关系。int4 k-quant 变体在 0.67 GB 体积下取得 8.20% WER，与 ONNX FP32 基线（8.03%）的差距在 0.17% 以内。</p></div>
 <div class="eq" id="eq-7-1-22"><code>9.0 8.8 8.6</code></div>
 <div class="eq" id="eq-7-1-23"><code>Average WER (%)</code></div>
 <div class="eq" id="eq-7-1-24"><code>8.4</code></div>
@@ -832,7 +835,7 @@ Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-7-1-4-1"><span class="zh">（图注行）CPU RTFx (batch_size=1)。</span></span></p>
           
         </div>
-<div class="cap" id="fig-7-1-2"><span class="cap-k">图</span><p class="en">Figure 4: CPU RTFx vs. WER. All ONNX variants achieve RTFx &gt; 6× real-time on CPU, with quantized variants slightly faster than FP32.</p><p class="zh">图 4：CPU RTFx 与 WER 的关系。所有 ONNX 变体在 CPU 上都达到 RTFx &gt; 6× 实时，量化变体略快于 FP32。</p></div></section>
+<div class="cap" id="fig-7-1-2"><img class="fig" src="../assets/figures/2604.14493/fig-7-1-2.png" loading="lazy" alt="Figure 4: CPU RTFx vs. WER. All ONNX variants achieve RTFx &gt; 6× real-time on CPU, with quantized variants slightly faste"><span class="cap-k">图</span><p class="en">Figure 4: CPU RTFx vs. WER. All ONNX variants achieve RTFx &gt; 6× real-time on CPU, with quantized variants slightly faster than FP32.</p><p class="zh">图 4：CPU RTFx 与 WER 的关系。所有 ONNX 变体在 CPU 上都达到 RTFx &gt; 6× 实时，量化变体略快于 FP32。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-7-2"><span class="secnum">7.2</span> <span class="t-zh">关键发现</span><span class="t-en">Key Findings</span></h3><div class="pblk" id="p-7-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-7-2-1-1"><span class="en">1.</span></span> <span class="sent" data-sid="s-7-2-1-2"><span class="en">Quantization preserves accuracy remarkably well.</span></span> <span class="sent" data-sid="s-7-2-1-3"><span class="en">The int8 k-quant variant achieves 8.01% average WER, essentially matching the ONNX FP32 baseline (8.03%), with a 48% reduction in model size.</span></span> <span class="sent" data-sid="s-7-2-1-4"><span class="en">Even at int4 precision with a model size of just 0.67 GB (73% smaller), the WER degrades by only 0.17% absolute (2.1% relative), demonstrating that aggressive 4-bit compression is viable for streaming ASR.</span><button class="mk feat" data-sid="s-7-2-1-4" title="查看讲解">解</button></span></p>
@@ -908,7 +911,7 @@ Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
 <div class="eq" id="eq-7-3-10"><code>0.0 0.2 0.4 0.6 0.8 1.0 1.2</code></div>
 <div class="eq" id="eq-7-3-11"><code>Algorithmic Delay (s)</code></div>
 <div class="eq" id="eq-7-3-12"><code>0</code></div>
-<div class="cap" id="fig-7-3-1"><span class="cap-k">图</span><p class="en">Figure 5: Effective latency vs. algorithmic delay for Nemotron-0.6B int4 k-quant on CPU. The red shaded region indicates where RTFx drops below 1× (audio dropout).</p><p class="zh">图 5：Nemotron-0.6B int4 k-quant 在 CPU 上有效延迟与算法延迟的关系。红色阴影区域表示 RTFx 跌破 1×（音频丢帧）的位置。</p></div></section>
+<div class="cap" id="fig-7-3-1"><img class="fig" src="../assets/figures/2604.14493/fig-7-3-1.png" loading="lazy" alt="Figure 5: Effective latency vs. algorithmic delay for Nemotron-0.6B int4 k-quant on CPU. The red shaded region indicates"><span class="cap-k">图</span><p class="en">Figure 5: Effective latency vs. algorithmic delay for Nemotron-0.6B int4 k-quant on CPU. The red shaded region indicates where RTFx drops below 1× (audio dropout).</p><p class="zh">图 5：Nemotron-0.6B int4 k-quant 在 CPU 上有效延迟与算法延迟的关系。红色阴影区域表示 RTFx 跌破 1×（音频丢帧）的位置。</p></div></section>
 <section>
       <h2 class="sech lv1" id="sec-8"><span class="secnum">8</span> <span class="t-zh">推荐与选定配置</span><span class="t-en">Recommendation and Selected Configuration</span></h2><div class="pblk" id="p-8-1">
           <p class="en-lines"><span class="sent" data-sid="s-8-1-1"><span class="en">Based on our evaluation, we selected the Nemotron-0.6B int4 k-quant variant with the (7, 10, 7) streaming configuration and 0.56 s algorithmic delay as our recommended on-device streaming ASR model.</span></span> <span class="sent" data-sid="s-8-1-2"><span class="en">The optimized model is available through Microsoft’s Foundry Local platform, with streaming inference support across C#, Python, JavaScript, C++, and Rust via the ONNX Runtime GenAI SDK.</span><button class="mk feat" data-sid="s-8-1-2" title="查看讲解">解</button></span></p>
@@ -1058,7 +1061,6 @@ Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
 <div class="pblk" id="p-A-1-2">
           <p class="en-lines"><span class="sent" data-sid="s-A-1-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-1-2-1"><span class="zh">1.
-（原始数据照录）
 Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB</span></span></p>
           
         </div>
@@ -1171,7 +1173,6 @@ Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB</span
 <div class="pblk" id="p-format-3">
           <p class="en-lines"><span class="sent" data-sid="s-format-3-1"><span class="en">ONNX fp16 1.30 GB</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-format-3-1"><span class="zh">1.
-（原始数据照录）
 ONNX fp16 1.30 GB</span></span></p>
           
         </div>
@@ -1203,8 +1204,7 @@ ONNX fp16 1.30 GB</span></span></p>
 <div class="pblk" id="p-A-5-4">
           <p class="en-lines"><span class="sent" data-sid="s-A-5-4-1"><span class="en">Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-5-4-1"><span class="zh">2.
-（原始数据照录）
-Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.</span></span></p>
+Chunked 配置：(10.0-2.4-2.4=14.8)，采用 AlignAtt 流式策略。</span></span></p>
           
         </div></section>
 <section>
@@ -1223,7 +1223,6 @@ Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.</span></span
 <div class="pblk" id="p-config-3">
           <p class="en-lines"><span class="sent" data-sid="s-config-3-1"><span class="en">6.4 s (1.6-4.8-1.6=8)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-config-3-1"><span class="zh">1.
-（原始数据照录）
 6.4 s (1.6-4.8-1.6=8)</span></span></p>
           
         </div>
@@ -1249,7 +1248,6 @@ Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.</span></span
 <div class="pblk" id="p-A-7-3">
           <p class="en-lines"><span class="sent" data-sid="s-A-7-3-1"><span class="en">Qwen3-ASR-1.7B Batch</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-7-3-1"><span class="zh">1.
-（原始数据照录）
 Qwen3-ASR-1.7B Batch</span></span></p>
           
         </div>
@@ -1279,7 +1277,6 @@ Qwen3-ASR-1.7B Batch</span></span></p>
 <div class="pblk" id="p-A-8-3">
           <p class="en-lines"><span class="sent" data-sid="s-A-8-3-1"><span class="en">Nemotron-0.6B 2.47 GB 0.56 s</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-8-3-1"><span class="zh">2.
-（原始数据照录）
 Nemotron-0.6B 2.47 GB 0.56 s</span></span></p>
           
         </div>
@@ -1307,7 +1304,6 @@ Nemotron-0.6B 2.47 GB 0.56 s</span></span></p>
 <div class="pblk" id="p-A-9-3">
           <p class="en-lines"><span class="sent" data-sid="s-A-9-3-1"><span class="en">Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-9-3-1"><span class="zh">2.
-（原始数据照录）
 Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
           
         </div>
@@ -1334,7 +1330,6 @@ Baseline (PyTorch) PyTorch 2.47 GB CUDA</span></span></p>
 <div class="pblk" id="p-A-10-2">
           <p class="en-lines"><span class="sent" data-sid="s-A-10-2-1"><span class="en">Giga LS-c LS-o SPGI TED VoxP. int4 k-quant ONNX 0.67 GB CPU</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-10-2-1"><span class="zh">表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。
-（原始数据照录）
 Giga LS-c LS-o SPGI TED VoxP. int4 k-quant ONNX 0.67 GB CPU</span></span></p>
           
         </div>

@@ -1879,10 +1879,15 @@ globalThis.PAPER_2301_02111 = {
     },
     {
      "id": "tab-5-2-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 8,
-     "original": "Table 2 shows the objective evaluation results. We ﬁrst compute the WER score and the speaker similarity score of the ground truth speech as the upper bound. To compare the speaker similarity, we use speech pairs from the same speaker in the test set. Compared with the YourTTS baseline, our",
-     "zh": "表 2 说明文字（抽取残留片段）：Table 2 展示了客观评估结果。我们首先计算真实语音的 WER 分数和说话人相似度分数作为上限；为比较说话人相似度，我们使用测试集中来自同一说话人的语音对。与 YourTTS 基线相比，我们的……（下文接入正文）。"
+     "sentences": [
+      {
+       "id": "tab-5-2-1-s1",
+       "original": "Table 2 shows the objective evaluation results. We ﬁrst compute the WER score and the speaker similarity score of the ground truth speech as the upper bound. To compare the speaker similarity, we use speech pairs from the same speaker in the test set. Compared with the YourTTS baseline, our",
+       "zh": "表 2 说明文字（抽取残留片段）：Table 2 展示了客观评估结果。我们首先计算真实语音的 WER 分数和说话人相似度分数作为上限；为比较说话人相似度，我们使用测试集中来自同一说话人的语音对。与 YourTTS 基线相比，我们的……（下文接入正文）。"
+      }
+     ]
     },
     {
      "id": "p-5-2-2",

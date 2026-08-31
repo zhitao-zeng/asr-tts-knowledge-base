@@ -167,10 +167,15 @@ globalThis.PAPER_2603_29339 = {
     },
     {
      "id": "fig-1-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 2,
-     "original": "Figure 1 | Overview of LongCat-AudioDiT. Our architecture generates continuous waveform latents directly, thereby avoiding the compounding errors that inherently arise when predicting and subsequently converting intermediate representations (e.g., mel-spectrograms) into waveforms.",
-     "zh": "图 1 | LongCat-AudioDiT 概览。我们的架构直接生成连续波形潜变量，从而避免了先预测中间表征（如梅尔频谱图）、再将其转换为波形时固有的误差累积。"
+     "sentences": [
+      {
+       "id": "fig-1-1-s1",
+       "original": "Figure 1 | Overview of LongCat-AudioDiT. Our architecture generates continuous waveform latents directly, thereby avoiding the compounding errors that inherently arise when predicting and subsequently converting intermediate representations (e.g., mel-spectrograms) into waveforms.",
+       "zh": "图 1 | LongCat-AudioDiT 概览。我们的架构直接生成连续波形潜变量，从而避免了先预测中间表征（如梅尔频谱图）、再将其转换为波形时固有的误差累积。"
+      }
+     ]
     },
     {
      "id": "p-1-2",
@@ -788,10 +793,15 @@ globalThis.PAPER_2603_29339 = {
     },
     {
      "id": "fig-3-1-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 5,
-     "original": "Figure 2 | Architecture of LongCat-AudioDiT. Middle: The overall architecture. Left: Detailed structure of the DiT block. Right: Detailed structure of the text encoder.",
-     "zh": "图 2 | LongCat-AudioDiT 的架构。中：整体架构。左：DiT 模块的细节结构。右：文本编码器的细节结构。"
+     "sentences": [
+      {
+       "id": "fig-3-1-1-s1",
+       "original": "Figure 2 | Architecture of LongCat-AudioDiT. Middle: The overall architecture. Left: Detailed structure of the DiT block. Right: Detailed structure of the text encoder.",
+       "zh": "图 2 | LongCat-AudioDiT 的架构。中：整体架构。左：DiT 模块的细节结构。右：文本编码器的细节结构。"
+      }
+     ]
     }
    ]
   },
@@ -1803,10 +1813,15 @@ globalThis.PAPER_2603_29339 = {
     },
     {
      "id": "tab-evaluation-metrics-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 9,
-     "original": "Table 1 | Objective evaluation results of LongCat-AudioDiT on the Seed benchmark [Anastassiou et al., 2024]. The results of other methods are taken from the original paper or, if open-sourced, evaluated by us. Bold indicates the best score. Underline indicates the second-best score.",
-     "zh": "表 1 ｜ LongCat-AudioDiT 在 Seed 基准 [Anastassiou et al., 2024] 上的客观评测结果。其他方法的结果取自原始论文；若已开源，则由我们自行评测。加粗表示最佳得分，下划线表示次佳得分。"
+     "sentences": [
+      {
+       "id": "tab-evaluation-metrics-1-s1",
+       "original": "Table 1 | Objective evaluation results of LongCat-AudioDiT on the Seed benchmark [Anastassiou et al., 2024]. The results of other methods are taken from the original paper or, if open-sourced, evaluated by us. Bold indicates the best score. Underline indicates the second-best score.",
+       "zh": "表 1 ｜ LongCat-AudioDiT 在 Seed 基准 [Anastassiou et al., 2024] 上的客观评测结果。其他方法的结果取自原始论文；若已开源，则由我们自行评测。加粗表示最佳得分，下划线表示次佳得分。"
+      }
+     ]
     }
    ]
   },
@@ -2234,10 +2249,15 @@ globalThis.PAPER_2603_29339 = {
     },
     {
      "id": "tab-tts-synthesis-performance-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 10,
-     "original": "Table 2 | Objective evaluation results of the proposed Wav-VAE on the LibriTTS Zen et al. [2019] test-clean subset. Bold indicates the best score among continuous VAEs. Nq is the number of codebooks for discrete codecs. For codecs, frame per second (FPS) denotes the number of tokens per second.",
-     "zh": "表 2 ｜ 所提 Wav-VAE 在 LibriTTS（Zen et al. [2019]）test-clean 子集上的客观评测结果。加粗表示连续 VAE 中的最佳得分。Nq 为离散编解码器的码本数量。对编解码器而言，帧率（FPS）表示每秒的 token 数。"
+     "sentences": [
+      {
+       "id": "tab-tts-synthesis-performance-1-s1",
+       "original": "Table 2 | Objective evaluation results of the proposed Wav-VAE on the LibriTTS Zen et al. [2019] test-clean subset. Bold indicates the best score among continuous VAEs. Nq is the number of codebooks for discrete codecs. For codecs, frame per second (FPS) denotes the number of tokens per second.",
+       "zh": "表 2 ｜ 所提 Wav-VAE 在 LibriTTS（Zen et al. [2019]）test-clean 子集上的客观评测结果。加粗表示连续 VAE 中的最佳得分。Nq 为离散编解码器的码本数量。对编解码器而言，帧率（FPS）表示每秒的 token 数。"
+      }
+     ]
     }
    ]
   },
@@ -2682,17 +2702,27 @@ globalThis.PAPER_2603_29339 = {
     },
     {
      "id": "fig-5-3-1-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 11,
-     "original": "Figure 3 | Objective evaluation results for both Wav-VAE reconstruction and TTS synthesis under varying latent dimensions. For ease of reading, we negate WER-TTS.",
-     "zh": "图 3 ｜ 不同潜变量维度下 Wav-VAE 重建与 TTS 合成的客观评测结果。为便于阅读，我们对 WER-TTS 取了负号。"
+     "sentences": [
+      {
+       "id": "fig-5-3-1-1-s1",
+       "original": "Figure 3 | Objective evaluation results for both Wav-VAE reconstruction and TTS synthesis under varying latent dimensions. For ease of reading, we negate WER-TTS.",
+       "zh": "图 3 ｜ 不同潜变量维度下 Wav-VAE 重建与 TTS 合成的客观评测结果。为便于阅读，我们对 WER-TTS 取了负号。"
+      }
+     ]
     },
     {
      "id": "tab-5-3-1-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 11,
-     "original": "Table 3 | Objective evaluation results of TTS models based on Wav-VAE and Mel-VAE on the Seed benchmark [Anastassiou et al., 2024]. Bold indicates the best score.",
-     "zh": "表 3 ｜ 基于 Wav-VAE 与 Mel-VAE 的 TTS 模型在 Seed 基准 [Anastassiou et al., 2024] 上的客观评测结果。加粗表示最佳得分。"
+     "sentences": [
+      {
+       "id": "tab-5-3-1-1-s1",
+       "original": "Table 3 | Objective evaluation results of TTS models based on Wav-VAE and Mel-VAE on the Seed benchmark [Anastassiou et al., 2024]. Bold indicates the best score.",
+       "zh": "表 3 ｜ 基于 Wav-VAE 与 Mel-VAE 的 TTS 模型在 Seed 基准 [Anastassiou et al., 2024] 上的客观评测结果。加粗表示最佳得分。"
+      }
+     ]
     }
    ]
   },
@@ -2957,10 +2987,15 @@ globalThis.PAPER_2603_29339 = {
     },
     {
      "id": "fig-5-3-2-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 12,
-     "original": "Figure 4 | Objective evaluation results for both Wav-VAE reconstruction and TTS synthesis across varying latent frame rates (FPS). For ease of reading, we negate WER-TTS.",
-     "zh": "图 4 ｜ 不同潜变量帧率（FPS）下 Wav-VAE 重建与 TTS 合成的客观评测结果。为便于阅读，我们对 WER-TTS 取了负号。"
+     "sentences": [
+      {
+       "id": "fig-5-3-2-1-s1",
+       "original": "Figure 4 | Objective evaluation results for both Wav-VAE reconstruction and TTS synthesis across varying latent frame rates (FPS). For ease of reading, we negate WER-TTS.",
+       "zh": "图 4 ｜ 不同潜变量帧率（FPS）下 Wav-VAE 重建与 TTS 合成的客观评测结果。为便于阅读，我们对 WER-TTS 取了负号。"
+      }
+     ]
     },
     {
      "id": "p-5-3-2-3",
@@ -3094,10 +3129,15 @@ globalThis.PAPER_2603_29339 = {
     },
     {
      "id": "tab-5-3-2-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 13,
-     "original": "Table 4 | Objective evaluation results of the ablation studies on noise-prompt dual masking and APG on the Seed-ZH benchmark [Anastassiou et al., 2024]. Bold indicates the best score.",
-     "zh": "表 4 ｜ 噪声-提示双重掩码与 APG 在 Seed-ZH 基准 [Anastassiou et al., 2024] 上的消融研究客观评测结果。加粗表示最佳得分。"
+     "sentences": [
+      {
+       "id": "tab-5-3-2-1-s1",
+       "original": "Table 4 | Objective evaluation results of the ablation studies on noise-prompt dual masking and APG on the Seed-ZH benchmark [Anastassiou et al., 2024]. Bold indicates the best score.",
+       "zh": "表 4 ｜ 噪声-提示双重掩码与 APG 在 Seed-ZH 基准 [Anastassiou et al., 2024] 上的消融研究客观评测结果。加粗表示最佳得分。"
+      }
+     ]
     }
    ]
   },

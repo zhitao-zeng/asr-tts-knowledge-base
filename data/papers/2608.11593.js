@@ -1569,10 +1569,15 @@ globalThis.PAPER_2608_11593 = {
    "blocks": [
     {
      "id": "tab-2-7-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 7,
-     "original": "Table 1 summarizes the three-way comparison that Luna-TTS Family makes explicit. We regard neither variant as dominant: they are two operating points of one model family, exposed because production workloads genuinely bifurcate into throughput-bound offline synthesis and latency-bound interactive synthesis.",
-     "zh": "表 1（正文表）总结了 Luna-TTS 系列明确呈现的三方对比。我们认为两个变体没有优劣之分：它们是同一模型族的两个运行点，之所以同时暴露，是因为生产负载确实分化为受吞吐约束的离线合成与受延迟约束的交互式合成。"
+     "sentences": [
+      {
+       "id": "tab-2-7-1-s1",
+       "original": "Table 1 summarizes the three-way comparison that Luna-TTS Family makes explicit. We regard neither variant as dominant: they are two operating points of one model family, exposed because production workloads genuinely bifurcate into throughput-bound offline synthesis and latency-bound interactive synthesis.",
+       "zh": "表 1（正文表）总结了 Luna-TTS 系列明确呈现的三方对比。我们认为两个变体没有优劣之分：它们是同一模型族的两个运行点，之所以同时暴露，是因为生产负载确实分化为受吞吐约束的离线合成与受延迟约束的交互式合成。"
+      }
+     ]
     },
     {
      "id": "tab-2-7-2",
@@ -3137,10 +3142,15 @@ globalThis.PAPER_2608_11593 = {
    "blocks": [
     {
      "id": "tab-5-3-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 12,
-     "original": "Table 6 places our measured serving results alongside published inference results from representative open-source TTS systems. The configuration and hardware columns retain the operating point reported by each source.",
-     "zh": "表 6（正文表）把我们实测的服务结果与代表性开源 TTS 系统已发表的推理结果并列。配置与硬件列保留各来源报告的运行点。"
+     "sentences": [
+      {
+       "id": "tab-5-3-1-s1",
+       "original": "Table 6 places our measured serving results alongside published inference results from representative open-source TTS systems. The configuration and hardware columns retain the operating point reported by each source.",
+       "zh": "表 6（正文表）把我们实测的服务结果与代表性开源 TTS 系统已发表的推理结果并列。配置与硬件列保留各来源报告的运行点。"
+      }
+     ]
     },
     {
      "id": "tab-5-3-2",
@@ -3318,10 +3328,15 @@ globalThis.PAPER_2608_11593 = {
     },
     {
      "id": "tab-luna-tts-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 12,
-     "original": "Table 7 compares published first-output latency from leading commercial and open-source TTS systems.",
-     "zh": "表 7（正文表）对比领先商用与开源 TTS 系统已发表的首包延迟。"
+     "sentences": [
+      {
+       "id": "tab-luna-tts-1-s1",
+       "original": "Table 7 compares published first-output latency from leading commercial and open-source TTS systems.",
+       "zh": "表 7（正文表）对比领先商用与开源 TTS 系统已发表的首包延迟。"
+      }
+     ]
     },
     {
      "id": "tab-luna-tts-2",
@@ -4682,10 +4697,15 @@ globalThis.PAPER_2608_11593 = {
     },
     {
      "id": "tab-6-3-2",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 16,
-     "original": "Table 15 reports Luna-TTS’s direct results against each competing system. Luna-TTS achieves a positive win rate in all five head-to-head comparisons. Its largest margin is observed against Inworld TTS 2, while its comparison with Gemini is nearly balanced.",
-     "zh": "表 15（正文表）报告 Luna-TTS 对每个对手的直面对决结果。Luna-TTS 在五场对擂中全部取得正胜率，最大优势来自对 Inworld TTS 2，与 Gemini 的对比则几乎打平。"
+     "sentences": [
+      {
+       "id": "tab-6-3-2-s1",
+       "original": "Table 15 reports Luna-TTS’s direct results against each competing system. Luna-TTS achieves a positive win rate in all five head-to-head comparisons. Its largest margin is observed against Inworld TTS 2, while its comparison with Gemini is nearly balanced.",
+       "zh": "表 15（正文表）报告 Luna-TTS 对每个对手的直面对决结果。Luna-TTS 在五场对擂中全部取得正胜率，最大优势来自对 Inworld TTS 2，与 Gemini 的对比则几乎打平。"
+      }
+     ]
     },
     {
      "id": "tab-6-3-3",

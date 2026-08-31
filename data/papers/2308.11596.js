@@ -635,7 +635,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-1-4-5",
        "original": "Drawing on this assembled dataset, we developed the first multitasking system that performs S2ST from 100 languages to English (100-eng) and from English to 35 languages (eng-35), S2TT for 100-eng and eng-95 languages,",
-       "zh": "（页码行：2。）\n（原始数据照录）\nDrawing on this assembled dataset, we developed the first multitasking system that performs S2ST from 100 languages to English (100-eng) and from English to 35 languages (eng-35), S2TT for 100-eng and eng-95 languages,"
+       "zh": "（页码行：2。）\n基于这个组装的数据集，我们开发了首个多任务系统，支持从 100 种语言到英语（100-eng）以及从英语到 35 种语言（eng-35）的 S2ST，100-eng 和 eng-95 种语言的 S2TT，"
       }
      ]
     },
@@ -653,7 +653,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-1-5-1",
        "original": "ASR for 96, zero-shot T2ST for 95-eng and eng-35 languages, as well as T2TT for 95-eng and eng-95 (see Table 2 for an overview).",
-       "zh": "（页码行：2。）\n（原始数据照录）\nASR for 96, zero-shot T2ST for 95-eng and eng-35 languages, as well as T2TT for 95-eng and eng-95 (see Table 2 for an overview)."
+       "zh": "（页码行：2。）\n96 种语言的 ASR、95-eng 和 eng-35 种语言的零样本 T2ST，以及 95-eng 和 eng-95 的 T2TT（见表 2 概览）。"
       }
      ]
     }
@@ -800,7 +800,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-1-1",
        "original": "size Task Language Coverage† S2TT S2ST ASR T2TT T2ST Proprietary models USM [Zhang et al., 2023a] 2B+ 21-eng",
-       "zh": "（页码行：2。）\n（原始数据照录）\nsize Task Language Coverage† S2TT S2ST ASR T2TT T2ST Proprietary models USM [Zhang et al., 2023a] 2B+ 21-eng"
+       "zh": "（页码行：2。）\n规模 任务 语言覆盖† S2TT S2ST ASR T2TT T2ST 专有模型 USM [Zhang et al., 2023a] 2B+ 21-eng"
       }
      ]
     },
@@ -842,7 +842,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-2-1",
        "original": "Open models NLLB Team et al. [2022] NLLB-600M-Distilled 0.6B",
-       "zh": "（页码行：2。）\n（原始数据照录）\nOpen models NLLB Team et al. [2022] NLLB-600M-Distilled 0.6B"
+       "zh": "（页码行：2。）\n开放模型 NLLB Team et al. [2022] NLLB-600M-Distilled 0.6B"
       }
      ]
     },
@@ -944,7 +944,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-3-1",
        "original": "This work (SeamlessM4T) SeamlessM4T-Large 2.3B 100-eng eng-95 100-eng eng-35",
-       "zh": "（页码行：2。）\n（原始数据照录）\nThis work (SeamlessM4T) SeamlessM4T-Large 2.3B 100-eng eng-95 100-eng eng-35"
+       "zh": "（页码行：2。）\n本文（SeamlessM4T） SeamlessM4T-Large 2.3B 100-eng eng-95 100-eng eng-35"
       }
      ]
     },
@@ -962,7 +962,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-4-1",
        "original": "95-eng eng-95 95-eng eng-35 SeamlessM4T-Medium 1.2B 100-eng eng-95 100-eng eng-35",
-       "zh": "（页码行：2。）\n（原始数据照录）\n95-eng eng-95 95-eng eng-35 SeamlessM4T-Medium 1.2B 100-eng eng-95 100-eng eng-35"
+       "zh": "（页码行：2。）\n95-eng eng-95 95-eng eng-35 SeamlessM4T-Medium 1.2B 100-eng eng-95 100-eng eng-35"
       }
      ]
     },
@@ -1185,7 +1185,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-2-1-2-1",
        "original": "1. https://github.com/facebookresearch/fairseq2 2. https://github.com/facebookresearch/stopes 3. https://github.com/facebookresearch/SONAR",
-       "zh": "（页码行：2。）\n（原始数据照录）\n1. https://github.com/facebookresearch/fairseq2 2. https://github.com/facebookresearch/stopes 3. https://github.com/facebookresearch/SONAR"
+       "zh": "（页码行：2。）\n1. https://github.com/facebookresearch/fairseq2 2. https://github.com/facebookresearch/stopes 3. https://github.com/facebookresearch/SONAR"
       }
      ]
     },
@@ -1371,7 +1371,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-script-variance-2-1",
        "original": "Cascaded models for S2TT Whisper-Medium + NLLB-600M-Distilled 2-stage cascaded Whisper-Large-v2 + NLLB-1.3B 2-stage cascaded Cascaded models for S2ST Whisper-Large-v2 + NLLB-1.3B + YourTTS 3-stage cascaded Whisper-Large-v2 (S2TT) + YourTTS 2-stage cascaded SeamlessM4T (this work) unified",
-       "zh": "（页码行：2。）\n（原始数据照录）\nCascaded models for S2TT Whisper-Medium + NLLB-600M-Distilled 2-stage cascaded Whisper-Large-v2 + NLLB-1.3B 2-stage cascaded Cascaded models for S2ST Whisper-Large-v2 + NLLB-1.3B + YourTTS 3-stage cascaded Whisper-Large-v2 (S2TT) + YourTTS 2-stage cascaded SeamlessM4T (this work) unified"
+       "zh": "（页码行：2。）\nS2TT 级联模型 Whisper-Medium + NLLB-600M-Distilled 2 阶段级联 Whisper-Large-v2 + NLLB-1.3B 2 阶段级联 S2ST 级联模型 Whisper-Large-v2 + NLLB-1.3B + YourTTS 3 阶段级联 Whisper-Large-v2 (S2TT) + YourTTS 2 阶段级联 SeamlessM4T（本文） 统一"
       }
      ]
     },
@@ -1509,7 +1509,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-direct-s2tt-models-3-1",
        "original": "benchmarks in several contexts (e.g., constrained data, in-domain settings, specific language pairs, etc.) [Ansari et al., 2020; Potapczyk and Przybysz, 2020b] While recent state-of-the-art pre-trained models have seen rapid improvements in language coverage, going from 128 in Babu et al. [2022] to more than 1,400 in Pratap et al. [2023], they only translate into English and not the other way around.",
-       "zh": "（页码行：2。）\n（原始数据照录）\nbenchmarks in several contexts (e.g., constrained data, in-domain settings, specific language pairs, etc.) [Ansari et al., 2020; Potapczyk and Przybysz, 2020b] While recent state-of-the-art pre-trained models have seen rapid improvements in language coverage, going from 128 in Babu et al. [2022] to more than 1,400 in Pratap et al. [2023], they only translate into English and not the other way around."
+       "zh": "（页码行：2。）\n在多个场景（例如受限数据、领域内设置、特定语言对等）的基准测试 [Ansari et al., 2020; Potapczyk and Przybysz, 2020b] 虽然最近最先进的预训练模型在语言覆盖方面取得了快速进展，从 Babu et al. [2022] 的 128 种增加到 Pratap et al. [2023] 的 1,400 多种，但它们只翻译成英语，而不是相反方向。"
       },
       {
        "id": "s-direct-s2tt-models-3-2",
@@ -2735,7 +2735,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-results-1-4",
        "original": "MMS [Pratap et al., 2023] has recently been released and covers them all, but it was not available when this project started 5. https://huggingface.co/TalTechNLP/voxlingua107-epaca-tdnn 6. http://vaani.iisc.ac.in 7. https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6N5V1K",
-       "zh": "（页码行：2。）\n（原始数据照录）\nMMS [Pratap et al., 2023] has recently been released and covers them all, but it was not available when this project started 5. https://huggingface.co/TalTechNLP/voxlingua107-epaca-tdnn 6. http://vaani.iisc.ac.in 7. https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6N5V1K"
+       "zh": "（页码行：2。）\nMMS [Pratap et al., 2023] 最近已发布并覆盖了所有这些语言，但在本项目启动时尚不可用 5. https://huggingface.co/TalTechNLP/voxlingua107-epaca-tdnn 6. http://vaani.iisc.ac.in 7. https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6N5V1K"
       }
      ]
     },
@@ -3229,7 +3229,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-architecture-and-training-setup-2-1",
        "original": "S2TT Aligned Data Other resources Arb - Eng Eng - Vie SeamlessM4T S2ST Aligned Data Arb - Eng Eng - Vie",
-       "zh": "（页码行：2。）\n（原始数据照录）\nS2TT Aligned Data Other resources Arb - Eng Eng - Vie SeamlessM4T S2ST Aligned Data Arb - Eng Eng - Vie"
+       "zh": "（页码行：2。）\nS2TT 对齐数据 其他资源 Arb - Eng Eng - Vie SeamlessM4T S2ST 对齐数据 Arb - Eng Eng - Vie"
       }
      ]
     },
@@ -3278,7 +3278,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-2-1-1",
        "original": "X–eng (n=200) eng–X (n=200) X–eng (n=89) eng–X (n=89) Sonar",
-       "zh": "（页码行：2。）\n（原始数据照录）\nX–eng (n=200) eng–X (n=200) X–eng (n=89) eng–X (n=89) Sonar"
+       "zh": "（页码行：2。）\nX–eng (n=200) eng–X (n=200) X–eng (n=89) eng–X (n=89) Sonar"
       }
      ]
     },
@@ -3486,7 +3486,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-overall-2-1-1",
        "original": "Intersection ↓xsim (n=200) ↓xsim++ (n=200) ↓xsim (n=98) ↓xsim++ (n=98) Sonar",
-       "zh": "（页码行：2。）\n（原始数据照录）\nIntersection ↓xsim (n=200) ↓xsim++ (n=200) ↓xsim (n=98) ↓xsim++ (n=98) Sonar"
+       "zh": "（页码行：2。）\n交集 ↓xsim (n=200) ↓xsim++ (n=200) ↓xsim (n=98) ↓xsim++ (n=98) Sonar"
       }
      ]
     },
@@ -4547,7 +4547,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-3-4-1-6",
        "original": "More complex architectures such as convolutional neural networks or Bi-LSTMs prove to be more efficient in capturing information from the speech input [Lozano-Diez et al., 2015; Fernando 9. available at https://github.com/facebookresearch/seamless_communication",
-       "zh": "（页码行：2。）\n（原始数据照录）\nMore complex architectures such as convolutional neural networks or Bi-LSTMs prove to be more efficient in capturing information from the speech input [Lozano-Diez et al., 2015; Fernando 9. available at https://github.com/facebookresearch/seamless_communication"
+       "zh": "（页码行：2。）\n更复杂的架构如卷积神经网络或 Bi-LSTM 被证明在从语音输入中捕获信息方面更高效 [Lozano-Diez et al., 2015; Fernando 9. 可在 https://github.com/facebookresearch/seamless_communication 获取"
       }
      ]
     },
@@ -4565,7 +4565,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-3-4-2-1",
        "original": "et al., 2017].",
-       "zh": "（页码行：2。）\n（原始数据照录）\net al., 2017]."
+       "zh": "（页码行：2。）\net al., 2017]。"
       },
       {
        "id": "s-3-4-2-2",
@@ -4711,7 +4711,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-3-4-5-5",
        "original": "Another direction of research is to first train an English sentence representation (e.g., sentence-BERT [Reimers and Gurevych, 2019]) and in a second step, extend it to more languages using teacher-student training [Reimers and Gurevych,",
-       "zh": "（页码行：2。）\n（原始数据照录）\nAnother direction of research is to first train an English sentence representation (e.g., sentence-BERT [Reimers and Gurevych, 2019]) and in a second step, extend it to more languages using teacher-student training [Reimers and Gurevych,"
+       "zh": "（页码行：2。）\n另一个研究方向是首先训练英语句子表示（例如 sentence-BERT [Reimers and Gurevych, 2019]），然后在第二步通过师生训练将其扩展到更多语言 [Reimers and Gurevych,"
       }
      ]
     },
@@ -4729,7 +4729,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-3-4-6-1",
        "original": "2020].",
-       "zh": "（页码行：2。）\n（原始数据照录）\n2020]."
+       "zh": "（页码行：2。）\n2020]。"
       },
       {
        "id": "s-3-4-6-2",
@@ -4922,7 +4922,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-4-2-3-8",
        "original": "There are two views of what constitutes a direct model in speech-to-speech translation literature: (1) A model that does not use intermediate text representation [Lee et al., 2022a] and (2) A model that directly predicts the target spectrogram [Jia et al., 2022a]",
-       "zh": "（页码行：2。）\n（原始数据照录）\nThere are two views of what constitutes a direct model in speech-to-speech translation literature: (1) A model that does not use intermediate text representation [Lee et al., 2022a] and (2) A model that directly predicts the target spectrogram [Jia et al., 2022a]"
+       "zh": "（页码行：2。）\n语音到语音翻译文献中对直接模型的构成有两种观点：(1) 不使用中间文本表示的模型 [Lee et al., 2022a]；(2) 直接预测目标频谱图的模型 [Jia et al., 2022a]"
       }
      ]
     },
@@ -4940,7 +4940,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-4-2-4-1",
        "original": "(1) Pre-trained models W2V-BERT 2.0 SEAMLESSM4T-NLLB Unsupervised speech pre-training T2TT encoder-decoder (2) Multitasking UNITY Length adaptor Conformer Speech Encoder Transformer Text Encoder T2U Text-to-Unit encoder-decoder Vocoder Speech resynthesis S2ST HiFi-GAN Unit Vocoder X2T (ASR, T2TT, S2TT) Transformer Unit Decoder Transformer Text-to-Unit Encoder Transformer Text Decoder",
-       "zh": "（页码行：2。）\n（原始数据照录）\n(1) Pre-trained models W2V-BERT 2.0 SEAMLESSM4T-NLLB Unsupervised speech pre-training T2TT encoder-decoder (2) Multitasking UNITY Length adaptor Conformer Speech Encoder Transformer Text Encoder T2U Text-to-Unit encoder-decoder Vocoder Speech resynthesis S2ST HiFi-GAN Unit Vocoder X2T (ASR, T2TT, S2TT) Transformer Unit Decoder Transformer Text-to-Unit Encoder Transformer Text Decoder"
+       "zh": "（页码行：2。）\n(1) 预训练模型 W2V-BERT 2.0 SEAMLESSM4T-NLLB 无监督语音预训练 T2TT 编码器-解码器 (2) 多任务 UNITY 长度适配器 Conformer 语音编码器 Transformer 文本编码器 T2U 文本到单元编码器-解码器 声码器 语音重合成 S2ST HiFi-GAN 单元声码器 X2T (ASR, T2TT, S2TT) Transformer 单元解码器 Transformer 文本到单元编码器 Transformer 文本解码器"
       }
      ]
     },
@@ -5100,7 +5100,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-3-2-1",
        "original": "USM over 300† 12M BEST-RQ [Chiu et al., 2022] MMS",
-       "zh": "（页码行：2。）\n（原始数据照录）\nUSM over 300† 12M BEST-RQ [Chiu et al., 2022] MMS"
+       "zh": "（页码行：2。）\nUSM 超过 300† 12M BEST-RQ [Chiu et al., 2022] MMS"
       }
      ]
     },
@@ -5270,7 +5270,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-4-2-2-3-1",
        "original": "The core of our multitask UnitY framework is the X2T model, a multi-encoder sequenceto-sequence models with a Conformer-based encoder [Gulati et al., 2020] for speech input",
-       "zh": "（页码行：2。）\n（原始数据照录）\nThe core of our multitask UnitY framework is the X2T model, a multi-encoder sequenceto-sequence models with a Conformer-based encoder [Gulati et al., 2020] for speech input"
+       "zh": "（页码行：2。）\n我们多任务 UnitY 框架的核心是 X2T 模型，一个多编码器序列到序列模型，语音输入使用基于 Conformer 的编码器 [Gulati et al., 2020]"
       }
      ]
     },
@@ -5288,7 +5288,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-4-2-2-4-1",
        "original": "and another for Transformer-based encoder [Vaswani et al., 2017] for text input—both of which are joined with the same text decoder.",
-       "zh": "（页码行：2。）\n（原始数据照录）\nand another for Transformer-based encoder [Vaswani et al., 2017] for text input—both of which are joined with the same text decoder."
+       "zh": "（页码行：2。）\n另一个是基于 Transformer 的编码器 [Vaswani et al., 2017] 用于文本输入——两者与同一个文本解码器相连。"
       },
       {
        "id": "s-4-2-2-4-2",
@@ -5305,7 +5305,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-4-2-2-5-1",
        "original": "4.2.1 Preparing X2T data ASR primary S2TT X-eng mined S2TT X-eng Hours of source-side audio",
-       "zh": "（页码行：2。）\n（原始数据照录）\n4.2.1 Preparing X2T data ASR primary S2TT X-eng mined S2TT X-eng Hours of source-side audio"
+       "zh": "（页码行：2。）\n4.2.1 准备 X2T 数据 ASR 主要 S2TT X-eng 挖掘 S2TT X-eng 源侧音频小时数"
       }
      ]
     },
@@ -5347,7 +5347,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-4-2-2-6-1",
        "original": "glg guj npi kat mkd yue som khm isl yor bos srp khk mlt pan heb ary afr swe kir mar bul hye lit ckb arz mal ory zlm mya zul asm ibo amh gle azj lvs tgk nya fra tel tgl cym fin ell ita hrv eus tam bel spa tha pbt est uzn hun lug ind por ben pol lao nor slv hin vie rus slk nld cat cmn deu jpn kor ron kan pes kaz swh dan ces eng tur jav ukr arb urd",
-       "zh": "（图 4.2.1：准备 X2T 数据——ASR primary S2TT 与 mined S2TT 的 X-eng 源侧音频小时数分布（100/500/1,000/10,000，高/中资源分档），覆盖数十语种。原始数据照录如下）\n（原始数据照录）\n4.2.1 Preparing X2T data ASR primary S2TT X-eng mined S2TT X-eng Hours of source-side audio 10,000 High-resource 1,000 Mid-resource 500 100 glg guj npi kat mkd yue som khm isl yor bos srp khk mlt pan heb ary afr swe kir mar bul hye lit ckb arz mal ory zlm mya zul asm ibo amh gle azj lvs tgk nya fra tel tgl cym fin ell ita hrv eus tam bel spa tha pbt est uzn hun lug ind por ben pol lao nor slv hin vie rus slk nld cat cmn deu jpn kor ron kan pes kaz swh dan ces eng tur jav ukr arb urd"
+       "zh": "（图 4.2.1：准备 X2T 数据——ASR primary S2TT 与 mined S2TT 的 X-eng 源侧音频小时数分布（100/500/1,000/10,000，高/中资源分档），覆盖数十语种。原始数据照录如下）\n4.2.1 准备 X2T 数据 ASR 主要 S2TT X-eng 挖掘 S2TT X-eng 源侧音频小时数 10,000 高资源 1,000 中资源 500 100 glg guj npi kat mkd yue som khm isl yor bos srp khk mlt pan heb ary afr swe kir mar bul hye lit ckb arz mal ory zlm mya zul asm ibo amh gle azj lvs tgk nya fra tel tgl cym fin ell ita hrv eus tam bel spa tha pbt est uzn hun lug ind por ben pol lao nor slv hin vie rus slk nld cat cmn deu jpn kor ron kan pes kaz swh dan ces eng tur jav ukr arb urd"
       }
      ]
     },
@@ -5688,7 +5688,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-training-a-text-tokenizer-4-1",
        "original": "11. https://lingua.mtsu.edu/chinese-computing/statistics/index.html",
-       "zh": "1.\n（原始数据照录）\n11. https://lingua.mtsu.edu/chinese-computing/statistics/index.html"
+       "zh": "1.\n11. https://lingua.mtsu.edu/chinese-computing/statistics/index.html"
       }
      ]
     },
@@ -5730,7 +5730,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-4-1-1",
        "original": "X–eng (n=95) eng–X (n=95) NLLB Team et al. [2022] - 3.3B",
-       "zh": "（页码行：2。）\n（原始数据照录）\nX–eng (n=95) eng–X (n=95) NLLB Team et al. [2022] - 3.3B"
+       "zh": "（页码行：2。）\nX–eng (n=95) eng–X (n=95) NLLB Team et al. [2022] - 3.3B"
       }
      ]
     },
@@ -5760,7 +5760,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-4-2-1",
        "original": "- 1.3B-distil.",
-       "zh": "1.\n（原始数据照录）\n- 1.3B-distil."
+       "zh": "1.\n- 1.3B-distil."
       }
      ]
     },
@@ -5901,7 +5901,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-4-7-2",
        "original": "We additionally optimize an auxiliary objective function in the form of token-level knowledge distillation (LKD), to further transfer knowledge from the strong MT model to the student speech translation task (S2TT). t=1 DKL p(.|ytext <t , xtext) ∥p(.|ytext <t , xspeech)",
-       "zh": "（页码行：2。）\n（原始数据照录）\nWe additionally optimize an auxiliary objective function in the form of token-level knowledge distillation (LKD), to further transfer knowledge from the strong MT model to the student speech translation task (S2TT). t=1 DKL p(.|ytext <t , xtext) ∥p(.|ytext <t , xspeech)"
+       "zh": "（页码行：2。）\n我们还优化了一个辅助目标函数，形式为 token 级知识蒸馏（LKD），以进一步将强 MT 模型的知识迁移到学生语音翻译任务（S2TT）。t=1 DKL p(.|ytext <t , xtext) ∥p(.|ytext <t , xspeech)"
       }
      ]
     },
@@ -6045,7 +6045,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-4-3-2-3",
        "original": "Compared to the vanilla UnitY model [Inaguma et al., 2023], (1) the core S2TT model initialized from scratch is replaced with an X2T model pre-trained to jointly optimize T2TT,",
-       "zh": "（页码行：2。）\n（原始数据照录）\nCompared to the vanilla UnitY model [Inaguma et al., 2023], (1) the core S2TT model initialized from scratch is replaced with an X2T model pre-trained to jointly optimize T2TT,"
+       "zh": "（页码行：2。）\n与原始 UnitY 模型 [Inaguma et al., 2023] 相比，(1) 从头初始化的核心 S2TT 模型被替换为预训练以联合优化 T2TT 的 X2T 模型，"
       }
      ]
     },
@@ -6063,7 +6063,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-4-3-3-1",
        "original": "S2TT, and ASR, (2) the shallow T2U model (referred to as T2U unit encoder and second-pass unit decoder in Inaguma et al. [2023]) is replaced with a deeper Transformer-based encoderdecoder model with 6 transformer layers, (3) the T2U model is also pre-trained on the T2U task rather than trained from scratch.",
-       "zh": "（页码行：2。）\n（原始数据照录）\nS2TT, and ASR, (2) the shallow T2U model (referred to as T2U unit encoder and second-pass unit decoder in Inaguma et al. [2023]) is replaced with a deeper Transformer-based encoderdecoder model with 6 transformer layers, (3) the T2U model is also pre-trained on the T2U task rather than trained from scratch."
+       "zh": "（页码行：2。）\nS2TT 和 ASR，(2) 浅层 T2U 模型（在 Inaguma et al. [2023] 中称为 T2U 单元编码器和第二遍单元解码器）被替换为更深的基于 Transformer 的编码器-解码器模型（含 6 个 transformer 层），(3) T2U 模型也在 T2U 任务上预训练而非从头训练。"
       },
       {
        "id": "s-4-3-3-2",
@@ -6787,7 +6787,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-5-1-1",
        "original": "type size X–eng (n=81) eng–X (n=88) 2B",
-       "zh": "（页码行：2。）\n（原始数据照录）\ntype size X–eng (n=81) eng–X (n=88) 2B"
+       "zh": "（页码行：2。）\n类型 规模 X–eng (n=81) eng–X (n=88) 2B"
       }
      ]
     },
@@ -6932,7 +6932,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-6-1-1",
        "original": "type size Fleurs (n=81) CVSS (n=21) YourTTS [Casanova et al., 2022] +Whisper-Large-v2 (S2TT) 2-stage cascaded 1.6B",
-       "zh": "（页码行：2。）\n（原始数据照录）\ntype size Fleurs (n=81) CVSS (n=21) YourTTS [Casanova et al., 2022] +Whisper-Large-v2 (S2TT) 2-stage cascaded 1.6B"
+       "zh": "（页码行：2。）\n类型 规模 Fleurs (n=81) CVSS (n=21) YourTTS [Casanova et al., 2022] +Whisper-Large-v2 (S2TT) 2 阶段级联 1.6B"
       }
      ]
     },
@@ -7073,7 +7073,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-6-4-4",
        "original": "We also average in column low† over low-resource directions that are supervised in AudioPaLM-2-8B-AST—the gain of +5 BLEU in that subset of",
-       "zh": "（页码行：2。）\n（原始数据照录）\nWe also average in column low† over low-resource directions that are supervised in AudioPaLM-2-8B-AST—the gain of +5 BLEU in that subset of"
+       "zh": "（页码行：2。）\n我们还在 low† 列中对 AudioPaLM-2-8B-AST 监督的低资源方向取平均——在该子集中获得 +5 BLEU 的提升"
       }
      ]
     },
@@ -7115,7 +7115,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-7-1-1",
        "original": "size S2TT (↑BLEU) Fleurs eng–X (n=88) CoVoST 2 X–eng (n=21) CoVoST 2 eng–X (n=15) XLS-R-2B-S2T 2.6B x",
-       "zh": "（页码行：2。）\n（原始数据照录）\nsize S2TT (↑BLEU) Fleurs eng–X (n=88) CoVoST 2 X–eng (n=21) CoVoST 2 eng–X (n=15) XLS-R-2B-S2T 2.6B x"
+       "zh": "（页码行：2。）\n规模 S2TT (↑BLEU) Fleurs eng–X (n=88) CoVoST 2 X–eng (n=21) CoVoST 2 eng–X (n=15) XLS-R-2B-S2T 2.6B x"
       }
      ]
     },
@@ -7229,7 +7229,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-8-1-1",
        "original": "size Fleurs (n=77) Fleurs-54 (n=54) Flores X–eng (n=95) Flores eng–X (n=95) NLLB-3.3B 3.3B x x",
-       "zh": "5\n（原始数据照录）\nsize Fleurs (n=77) Fleurs-54 (n=54) Flores X–eng (n=95) Flores eng–X (n=95) NLLB-3.3B 3.3B x x"
+       "zh": "5\n规模 Fleurs (n=77) Fleurs-54 (n=54) Flores X–eng (n=95) Flores eng–X (n=95) NLLB-3.3B 3.3B x x"
       }
      ]
     },
@@ -7338,7 +7338,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-9-1-1",
        "original": "High (n=15) Medium (n=25) Low (n=34) Low† (n=23) Whisper-Large-v2",
-       "zh": "（页码行：2。）\n（原始数据照录）\nHigh (n=15) Medium (n=25) Low (n=34) Low† (n=23) Whisper-Large-v2"
+       "zh": "（页码行：2。）\n高 (n=15) 中 (n=25) 低 (n=34) 低† (n=23) Whisper-Large-v2"
       }
      ]
     },
@@ -7429,7 +7429,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-model-10-1-1",
        "original": "size Fleurs X–eng(n=81) Fleurs eng–X(n=88) ↑BLEU ↑spBLEU ↑Blaser 2.0 ↑BLEU ↑spBLEU ↑Blaser 2.0 Whisper-Large-v2 1.5B",
-       "zh": "（页码行：2。）\n（原始数据照录）\nsize Fleurs X–eng(n=81) Fleurs eng–X(n=88) ↑BLEU ↑spBLEU ↑Blaser 2.0 ↑BLEU ↑spBLEU ↑Blaser 2.0 Whisper-Large-v2 1.5B"
+       "zh": "（页码行：2。）\n规模 Fleurs X–eng(n=81) Fleurs eng–X(n=88) ↑BLEU ↑spBLEU ↑Blaser 2.0 ↑BLEU ↑spBLEU ↑Blaser 2.0 Whisper-Large-v2 1.5B"
       }
      ]
     },
@@ -14447,7 +14447,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-automatic-toxicity-detection-on--8-1",
        "original": "oci afr kan mlt kea ceb ory guj kor mar pan lit mal vie hin yue nya wol tel sna ast snd jpn tam amh azj slk nso khm dan tha mri cmn ind xho cym tur pes est nld ron rus swh deu ita uzn",
-       "zh": "（FLEURS 新增毒性（Added Toxicity）自动检测图：S2TT 与 S2ST 的 eng-X / X-eng 方向，0%–2% 刻度，覆盖 50+ 语种。原始数据照录如下）\n（原始数据照录）\nFLEURS Added Toxicity - S2TT eng-X X-eng 0% 1% 2% 0% 1% 2% oci pan kan tel ory lao kor guj mar afr lin cmn lit snd mlt yue zul nya tam swh ben kea khm ast sna ind tha mal jav glg heb est hye gle pes pol tur kir deu dan kaz bul lug fra ukr pbt nld tgk ckb ron uzn cym FLEURS Added Toxicity - S2ST eng-X X-eng 0% 1% 2% 0% 1% 2% oci afr kan mlt kea ceb ory guj kor mar pan lit mal vie hin yue nya wol tel sna ast snd jpn tam amh azj slk nso khm dan tha mri cmn ind xho cym tur pes est nld ron rus swh deu ita uzn"
+       "zh": "（FLEURS 新增毒性（Added Toxicity）自动检测图：S2TT 与 S2ST 的 eng-X / X-eng 方向，0%–2% 刻度，覆盖 50+ 语种。原始数据照录如下）\nFLEURS 新增毒性 - S2TT eng-X X-eng 0% 1% 2% 0% 1% 2% oci pan kan tel ory lao kor guj mar afr lin cmn lit snd mlt yue zul nya tam swh ben kea khm ast sna ind tha mal jav glg heb est hye gle pes pol tur kir deu dan kaz bul lug fra ukr pbt nld tgk ckb ron uzn cym FLEURS 新增毒性 - S2ST eng-X X-eng 0% 1% 2% 0% 1% 2% oci afr kan mlt kea ceb ory guj kor mar pan lit mal vie hin yue nya wol tel sna ast snd jpn tam amh azj slk nso khm dan tha mri cmn ind xho cym tur pes est nld ron rus swh deu ita uzn"
       }
      ]
     },
@@ -14484,7 +14484,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-automatic-toxicity-detection-on--9-1",
        "original": "ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya",
-       "zh": "（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）\n（原始数据照录）\n69 Holistic Bias Toxicity Delta 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 Distribution of toxic translations ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd"
+       "zh": "（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）\n69 Holistic Bias 毒性增量 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 毒性翻译分布 ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd"
       }
      ]
     },
@@ -14562,7 +14562,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-automatic-toxicity-detection-on--10-1",
        "original": "ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd",
-       "zh": "（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）\n（原始数据照录）\n69 Holistic Bias Toxicity Delta 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 Distribution of toxic translations ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd"
+       "zh": "（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）\n69 Holistic Bias 毒性增量 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 毒性翻译分布 ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd"
       }
      ]
     },
@@ -14756,7 +14756,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-automatic-toxicity-detection-on--2-7-1",
        "original": "Holistic Bias Toxicity Delta",
-       "zh": "（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）\n（原始数据照录）\n69 Holistic Bias Toxicity Delta 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 Distribution of toxic translations ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd"
+       "zh": "（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）\n69 Holistic Bias 毒性增量 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 毒性翻译分布 ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd"
       }
      ]
     },
@@ -14774,7 +14774,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-automatic-toxicity-detection-on--2-8-1",
        "original": "ind dan pes vie cym fra uzn fin por spa tur",
-       "zh": "（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）\n（原始数据照录）\nHolistic Bias Toxicity Delta 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh Distribution of toxic translations 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd"
+       "zh": "（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）\nHolistic Bias 毒性增量 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh 毒性翻译分布 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd"
       }
      ]
     },
@@ -14804,7 +14804,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-automatic-toxicity-detection-on--2-9-1",
        "original": "slk nld est tha ukr swh Distribution of toxic translations",
-       "zh": "（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）\n（原始数据照录）\nHolistic Bias Toxicity Delta 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh Distribution of toxic translations 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd"
+       "zh": "（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）\nHolistic Bias 毒性增量 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh 毒性翻译分布 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd"
       }
      ]
     },
@@ -14858,7 +14858,7 @@ globalThis.PAPER_2308_11596 = {
       {
        "id": "s-automatic-toxicity-detection-on--2-10-1",
        "original": "fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd",
-       "zh": "（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）\n（原始数据照录）\nHolistic Bias Toxicity Delta 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh Distribution of toxic translations 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd"
+       "zh": "（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）\nHolistic Bias 毒性增量 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh 毒性翻译分布 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd"
       }
      ]
     },

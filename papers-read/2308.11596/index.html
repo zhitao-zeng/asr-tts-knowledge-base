@@ -92,6 +92,7 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 }
 /* 图/表标题、公式、表格主体 */
 .cap{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:12px 0;font-size:13px}
+.cap img.fig{display:block;max-width:100%;margin:2px auto 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .cap-k{display:inline-block;font-size:11px;font-weight:700;color:#0f766e;background:#ccfbf1;border-radius:6px;padding:1px 7px;margin-right:6px}
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
@@ -267,16 +268,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk" id="p-1-4">
           <p class="en-lines"><span class="sent" data-sid="s-1-4-1"><span class="en">To address these limitations, we introduce SeamlessM4T (Massively Multilingual &amp; Multimodal Machine Translation), a unified system that supports ASR, T2TT, speechto-text translation (S2TT), text-to-speech translation (T2ST), and S2ST (see Table 1 for an overview).</span></span> <span class="sent" data-sid="s-1-4-2"><span class="en">To build this, we used 1 million hours of open speech audio data to learn self-supervised speech representations with w2v-BERT 2.0.</span></span> <span class="sent" data-sid="s-1-4-3"><span class="en">Subsequently, we created a multimodal corpus of automatically aligned speech translations of more than 470,000 hours, dubbed SeamlessAlign.</span></span> <span class="sent" data-sid="s-1-4-4"><span class="en">We then combined a filtered subset of this corpus with humanlabeled and pseudo-labeled data, totaling 406,000 hours.</span></span> <span class="sent" data-sid="s-1-4-5"><span class="en">Drawing on this assembled dataset, we developed the first multitasking system that performs S2ST from 100 languages to English (100-eng) and from English to 35 languages (eng-35), S2TT for 100-eng and eng-95 languages,</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-4-1"><span class="zh">为弥补这些局限，我们提出 SeamlessM4T（大规模多语言多模态机器翻译，Massively Multilingual &amp; Multimodal Machine Translation），一个同时支持 ASR、T2TT、语音到文本翻译（S2TT）、文本到语音翻译（T2ST）和 S2ST 的统一系统（概览见 Table 1）。</span></span><span class="sent" data-sid="s-1-4-2"><span class="zh">为构建该系统，我们使用 100 万（1 million）小时的开放语音音频数据，通过 w2v-BERT 2.0 学习自监督语音表征。</span></span><span class="sent" data-sid="s-1-4-3"><span class="zh">随后，我们创建了一个自动对齐的语音翻译多模态语料库，规模超过 470,000 小时，命名为 SeamlessAlign。</span></span><span class="sent" data-sid="s-1-4-4"><span class="zh">我们再把该语料库的一个过滤子集与人工标注及伪标注数据合并，总计 406,000 小时。</span></span><span class="sent" data-sid="s-1-4-5"><span class="zh">（页码行：2。）
-（原始数据照录）
-Drawing on this assembled dataset, we developed the first multitasking system that performs S2ST from 100 languages to English (100-eng) and from English to 35 languages (eng-35), S2TT for 100-eng and eng-95 languages,</span></span></p>
+基于这个组装的数据集，我们开发了首个多任务系统，支持从 100 种语言到英语（100-eng）以及从英语到 35 种语言（eng-35）的 S2ST，100-eng 和 eng-95 种语言的 S2TT，</span></span></p>
           
         </div>
 <div class="eq" id="eq-1-1"><code>4</code></div>
 <div class="pblk" id="p-1-5">
           <p class="en-lines"><span class="sent" data-sid="s-1-5-1"><span class="en">ASR for 96, zero-shot T2ST for 95-eng and eng-35 languages, as well as T2TT for 95-eng and eng-95 (see Table 2 for an overview).</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-5-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-ASR for 96, zero-shot T2ST for 95-eng and eng-35 languages, as well as T2TT for 95-eng and eng-95 (see Table 2 for an overview).</span></span></p>
+96 种语言的 ASR、95-eng 和 eng-35 种语言的零样本 T2ST，以及 95-eng 和 eng-95 的 T2TT（见表 2 概览）。</span></span></p>
           
         </div></section>
 <section>
@@ -327,8 +326,7 @@ ASR for 96, zero-shot T2ST for 95-eng and eng-35 languages, as well as T2TT for 
       <h3 class="sech lv2" id="sec-model"><span class="t-zh">模型</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-1-1"><span class="en">size Task Language Coverage† S2TT S2ST ASR T2TT T2ST Proprietary models USM [Zhang et al., 2023a] 2B+ 21-eng</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-1-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-size Task Language Coverage† S2TT S2ST ASR T2TT T2ST Proprietary models USM [Zhang et al., 2023a] 2B+ 21-eng</span></span></p>
+规模 任务 语言覆盖† S2TT S2ST ASR T2TT T2ST 专有模型 USM [Zhang et al., 2023a] 2B+ 21-eng</span></span></p>
           
         </div>
 <div class="eq" id="eq-model-1"><code>- 102 - -</code></div>
@@ -339,8 +337,7 @@ size Task Language Coverage† S2TT S2ST ASR T2TT T2ST Proprietary models USM [Z
 <div class="pblk" id="p-model-2">
           <p class="en-lines"><span class="sent" data-sid="s-model-2-1"><span class="en">Open models NLLB Team et al. [2022] NLLB-600M-Distilled 0.6B</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-2-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-Open models NLLB Team et al. [2022] NLLB-600M-Distilled 0.6B</span></span></p>
+开放模型 NLLB Team et al. [2022] NLLB-600M-Distilled 0.6B</span></span></p>
           
         </div>
 <div class="eq" id="eq-model-6"><code>- - - 202-202 -</code></div>
@@ -361,15 +358,13 @@ Open models NLLB Team et al. [2022] NLLB-600M-Distilled 0.6B</span></span></p>
 <div class="pblk" id="p-model-3">
           <p class="en-lines"><span class="sent" data-sid="s-model-3-1"><span class="en">This work (SeamlessM4T) SeamlessM4T-Large 2.3B 100-eng eng-95 100-eng eng-35</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-3-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-This work (SeamlessM4T) SeamlessM4T-Large 2.3B 100-eng eng-95 100-eng eng-35</span></span></p>
+本文（SeamlessM4T） SeamlessM4T-Large 2.3B 100-eng eng-95 100-eng eng-35</span></span></p>
           
         </div>
 <div class="eq" id="eq-model-21"><code>96</code></div>
 <div class="pblk" id="p-model-4">
           <p class="en-lines"><span class="sent" data-sid="s-model-4-1"><span class="en">95-eng eng-95 95-eng eng-35 SeamlessM4T-Medium 1.2B 100-eng eng-95 100-eng eng-35</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-4-1"><span class="zh">（页码行：2。）
-（原始数据照录）
 95-eng eng-95 95-eng eng-35 SeamlessM4T-Medium 1.2B 100-eng eng-95 100-eng eng-35</span></span></p>
           
         </div>
@@ -418,7 +413,6 @@ This work (SeamlessM4T) SeamlessM4T-Large 2.3B 100-eng eng-95 100-eng eng-35</sp
 <div class="pblk" id="p-2-1-2">
           <p class="en-lines"><span class="sent" data-sid="s-2-1-2-1"><span class="en">1. https://github.com/facebookresearch/fairseq2 2. https://github.com/facebookresearch/stopes 3. https://github.com/facebookresearch/SONAR</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-2-1"><span class="zh">（页码行：2。）
-（原始数据照录）
 1. https://github.com/facebookresearch/fairseq2 2. https://github.com/facebookresearch/stopes 3. https://github.com/facebookresearch/SONAR</span></span></p>
           
         </div>
@@ -445,8 +439,7 @@ This work (SeamlessM4T) SeamlessM4T-Large 2.3B 100-eng eng-95 100-eng eng-35</sp
 <div class="pblk" id="p-script-variance-2">
           <p class="en-lines"><span class="sent" data-sid="s-script-variance-2-1"><span class="en">Cascaded models for S2TT Whisper-Medium + NLLB-600M-Distilled 2-stage cascaded Whisper-Large-v2 + NLLB-1.3B 2-stage cascaded Cascaded models for S2ST Whisper-Large-v2 + NLLB-1.3B + YourTTS 3-stage cascaded Whisper-Large-v2 (S2TT) + YourTTS 2-stage cascaded SeamlessM4T (this work) unified</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-script-variance-2-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-Cascaded models for S2TT Whisper-Medium + NLLB-600M-Distilled 2-stage cascaded Whisper-Large-v2 + NLLB-1.3B 2-stage cascaded Cascaded models for S2ST Whisper-Large-v2 + NLLB-1.3B + YourTTS 3-stage cascaded Whisper-Large-v2 (S2TT) + YourTTS 2-stage cascaded SeamlessM4T (this work) unified</span></span></p>
+S2TT 级联模型 Whisper-Medium + NLLB-600M-Distilled 2 阶段级联 Whisper-Large-v2 + NLLB-1.3B 2 阶段级联 S2ST 级联模型 Whisper-Large-v2 + NLLB-1.3B + YourTTS 3 阶段级联 Whisper-Large-v2 (S2TT) + YourTTS 2 阶段级联 SeamlessM4T（本文） 统一</span></span></p>
           
         </div>
 <div class="cap" id="tab-script-variance-1"><span class="cap-k">表</span><p class="en">Table 3: Options for 2-stage and 3-stage cascaded systems for S2TT and S2ST. These cascades pair Whisper ASR models [Radford et al., 2022] with NLLB’s T2TT models [NLLB Team et al., 2022].</p><p class="zh">表 3：用于 S2TT 和 S2ST 的 2 段式与 3 段式（2-stage / 3-stage）级联系统选项。这些级联将 Whisper ASR 模型 [Radford et al., 2022] 与 NLLB 的 T2TT 模型 [NLLB Team et al., 2022] 组合。</p></div></section>
@@ -478,8 +471,7 @@ Cascaded models for S2TT Whisper-Medium + NLLB-600M-Distilled 2-stage cascaded W
 <div class="pblk" id="p-direct-s2tt-models-3">
           <p class="en-lines"><span class="sent" data-sid="s-direct-s2tt-models-3-1"><span class="en">benchmarks in several contexts (e.g., constrained data, in-domain settings, specific language pairs, etc.) [Ansari et al., 2020; Potapczyk and Przybysz, 2020b] While recent state-of-the-art pre-trained models have seen rapid improvements in language coverage, going from 128 in Babu et al. [2022] to more than 1,400 in Pratap et al. [2023], they only translate into English and not the other way around.</span></span> <span class="sent" data-sid="s-direct-s2tt-models-3-2"><span class="en">Another prominent model, Google’s Universal Speech Model [Zhang et al., 2023a], is pre-trained in more than 300 languages and can perform ASR on more than 100 languages.</span></span> <span class="sent" data-sid="s-direct-s2tt-models-3-3"><span class="en">Technically, USM can also be adapted to perform ASR and S2TT tasks in any of the 300+ covered languages once given supervised data (but the model was fine-tuned and evaluated on CoVoST 2, which only covers translations from 21 languages into English).</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-direct-s2tt-models-3-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-benchmarks in several contexts (e.g., constrained data, in-domain settings, specific language pairs, etc.) [Ansari et al., 2020; Potapczyk and Przybysz, 2020b] While recent state-of-the-art pre-trained models have seen rapid improvements in language coverage, going from 128 in Babu et al. [2022] to more than 1,400 in Pratap et al. [2023], they only translate into English and not the other way around.</span></span><span class="sent" data-sid="s-direct-s2tt-models-3-2"><span class="zh">另一个代表性模型是 Google 的 Universal Speech Model [Zhang et al., 2023a]，它在 300 多种语言上预训练，可对 100 多种语言执行 ASR。</span></span><span class="sent" data-sid="s-direct-s2tt-models-3-3"><span class="zh">从技术上讲，只要提供有监督数据，USM 也可以适配到其覆盖的 300+ 种语言中任意一种的 ASR 与 S2TT 任务（但该模型是在 CoVoST 2 上微调和评测的，仅覆盖 21 种语言译入英语）。</span></span></p>
+在多个场景（例如受限数据、领域内设置、特定语言对等）的基准测试 [Ansari et al., 2020; Potapczyk and Przybysz, 2020b] 虽然最近最先进的预训练模型在语言覆盖方面取得了快速进展，从 Babu et al. [2022] 的 128 种增加到 Pratap et al. [2023] 的 1,400 多种，但它们只翻译成英语，而不是相反方向。</span></span><span class="sent" data-sid="s-direct-s2tt-models-3-2"><span class="zh">另一个代表性模型是 Google 的 Universal Speech Model [Zhang et al., 2023a]，它在 300 多种语言上预训练，可对 100 多种语言执行 ASR。</span></span><span class="sent" data-sid="s-direct-s2tt-models-3-3"><span class="zh">从技术上讲，只要提供有监督数据，USM 也可以适配到其覆盖的 300+ 种语言中任意一种的 ASR 与 S2TT 任务（但该模型是在 CoVoST 2 上微调和评测的，仅覆盖 21 种语言译入英语）。</span></span></p>
           
         </div>
 <div class="pblk" id="p-direct-s2tt-models-4">
@@ -753,7 +745,7 @@ benchmarks in several contexts (e.g., constrained data, in-domain settings, spec
           <p class="zh-lines"><span class="sent" data-sid="s-3-1-2-1"><span class="zh">（图内容：原始音频 → 切分 → LID；对切分后的音频分别做 Arb、Eng、Vie 等语种的过度切分，得到各语种的音频片段；输入片段经过度切分产生输出。页码 16。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-3-1-1"><span class="cap-k">图</span><p class="en">Figure 1: Workflow of speech processing.</p><p class="zh">图 1：语音处理的工作流程。</p></div>
+<div class="cap" id="fig-3-1-1"><img class="fig" src="../assets/figures/2308.11596/fig-3-1-1.png" loading="lazy" alt="Figure 1: Workflow of speech processing."><span class="cap-k">图</span><p class="en">Figure 1: Workflow of speech processing.</p><p class="zh">图 1：语音处理的工作流程。</p></div>
 <div class="pblk" id="p-3-1-3">
           <p class="en-lines"><span class="sent" data-sid="s-3-1-3-1"><span class="en">While numerous off-the-shelf LID models exist, none could cover our target list of 100 languages.4 Therefore, we trained our own model, following the ECAPA-TDNN architecture introduced in [Desplanques et al., 2020], for which an open-source model trained on VoxLingua107 [Valk and Alumäe, 2021] is available.</span></span> <span class="sent" data-sid="s-3-1-3-2"><span class="en">The new model adds support for several new languages, including Moroccan Arabic, Egyptian Arabic, Central Kurdish, West Central Oromo, Irish, Igbo, Kyrgyz, Ganda, Maithili, Meitei, Nyanja, Odia, Cantonese, and Zulu.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-1-3-1"><span class="zh">尽管有许多现成的 LID 模型，但没有一个能覆盖我们 100 种目标语言的清单[4]。因此，我们参照 [Desplanques et al., 2020] 提出的 ECAPA-TDNN 架构训练了自己的模型——该架构有一个在 VoxLingua107 [Valk and Alumäe, 2021] 上训练的开源模型。</span></span><span class="sent" data-sid="s-3-1-3-2"><span class="zh">新模型增加了对若干新语言的支持，包括摩洛哥阿拉伯语、埃及阿拉伯语、中库尔德语、西中奥罗莫语、爱尔兰语、伊博语、吉尔吉斯语、干达语、迈蒂利语、梅泰语、尼扬加语、奥里亚语、粤语和祖鲁语。</span></span></p>
@@ -780,8 +772,7 @@ benchmarks in several contexts (e.g., constrained data, in-domain settings, spec
       <h3 class="sech lv2" id="sec-results"><span class="t-zh">结果</span><span class="t-en">Results</span></h3><div class="pblk" id="p-results-1">
           <p class="en-lines"><span class="sent" data-sid="s-results-1-1"><span class="en">The F1 scores on the test data for all models are presented in Table 6.</span></span> <span class="sent" data-sid="s-results-1-2"><span class="en">The results are given for the 100 SeamlessM4T languages, and the 79 languages in common with VoxLingua107.</span></span> <span class="sent" data-sid="s-results-1-3"><span class="en">We can see that training on the additional languages slightly decreases the 4.</span></span> <span class="sent" data-sid="s-results-1-4"><span class="en">MMS [Pratap et al., 2023] has recently been released and covers them all, but it was not available when this project started 5. https://huggingface.co/TalTechNLP/voxlingua107-epaca-tdnn 6. http://vaani.iisc.ac.in 7. https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6N5V1K</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-results-1-1"><span class="zh">所有模型在测试数据上的 F1 分数见 Table 6。</span></span><span class="sent" data-sid="s-results-1-2"><span class="zh">结果分别给出 100 种 SeamlessM4T 语言，以及与 VoxLingua107 共有的 79 种语言。</span></span><span class="sent" data-sid="s-results-1-3"><span class="zh">可以看到，在额外语言上训练会略微降低（原有语言的 F1）[4]。</span></span><span class="sent" data-sid="s-results-1-4"><span class="zh">（页码行：2。）
-（原始数据照录）
-MMS [Pratap et al., 2023] has recently been released and covers them all, but it was not available when this project started 5. https://huggingface.co/TalTechNLP/voxlingua107-epaca-tdnn 6. http://vaani.iisc.ac.in 7. https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6N5V1K</span></span></p>
+MMS [Pratap et al., 2023] 最近已发布并覆盖了所有这些语言，但在本项目启动时尚不可用 5. https://huggingface.co/TalTechNLP/voxlingua107-epaca-tdnn 6. http://vaani.iisc.ac.in 7. https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/6N5V1K</span></span></p>
           
         </div>
 <div class="eq" id="eq-results-1"><code>17</code></div></section>
@@ -878,11 +869,10 @@ MMS [Pratap et al., 2023] has recently been released and covers them all, but it
 <div class="pblk" id="p-architecture-and-training-setup-2">
           <p class="en-lines"><span class="sent" data-sid="s-architecture-and-training-setup-2-1"><span class="en">S2TT Aligned Data Other resources Arb - Eng Eng - Vie SeamlessM4T S2ST Aligned Data Arb - Eng Eng - Vie</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-architecture-and-training-setup-2-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-S2TT Aligned Data Other resources Arb - Eng Eng - Vie SeamlessM4T S2ST Aligned Data Arb - Eng Eng - Vie</span></span></p>
+S2TT 对齐数据 其他资源 Arb - Eng Eng - Vie SeamlessM4T S2ST 对齐数据 Arb - Eng Eng - Vie</span></span></p>
           
         </div>
-<div class="cap" id="fig-architecture-and-training-setup-1"><span class="cap-k">图</span><p class="en">Figure 2: Workflow of the Sonar encoding and mining processes.</p><p class="zh">图 2：Sonar 编码与挖掘过程的工作流程。</p></div>
+<div class="cap" id="fig-architecture-and-training-setup-1"><img class="fig" src="../assets/figures/2308.11596/fig-architecture-and-training-setup-1.png" loading="lazy" alt="Figure 2: Workflow of the Sonar encoding and mining processes."><span class="cap-k">图</span><p class="en">Figure 2: Workflow of the Sonar encoding and mining processes.</p><p class="zh">图 2：Sonar 编码与挖掘过程的工作流程。</p></div>
 <div class="eq" id="eq-architecture-and-training-setup-12"><code>19</code></div>
 <div class="pblk" id="p-architecture-and-training-setup-3">
           <p class="en-lines"><span class="sent" data-sid="s-architecture-and-training-setup-3-1"><span class="en">↑spBLEU ↑COMET</span></span></p>
@@ -893,7 +883,6 @@ S2TT Aligned Data Other resources Arb - Eng Eng - Vie SeamlessM4T S2ST Aligned D
       <h3 class="sech lv2" id="sec-model-2"><span class="t-zh">模型</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="en">X–eng (n=200) eng–X (n=200) X–eng (n=89) eng–X (n=89) Sonar</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="zh">（页码行：2。）
-（原始数据照录）
 X–eng (n=200) eng–X (n=200) X–eng (n=89) eng–X (n=89) Sonar</span></span></p>
           
         </div>
@@ -919,7 +908,7 @@ X–eng (n=200) eng–X (n=200) X–eng (n=89) eng–X (n=89) Sonar</span></span
           
         </div>
 <div class="eq" id="eq-evaluation-for-mining-2"><code>🎤 ✏️</code></div>
-<div class="cap" id="fig-evaluation-for-mining-1"><span class="cap-k">图</span><p class="en">Figure 3: SONAR architecture.</p><p class="zh">图 3：Sonar 架构。</p></div>
+<div class="cap" id="fig-evaluation-for-mining-1"><img class="fig" src="../assets/figures/2308.11596/fig-evaluation-for-mining-1.png" loading="lazy" alt="Figure 3: SONAR architecture."><span class="cap-k">图</span><p class="en">Figure 3: SONAR architecture.</p><p class="zh">图 3：Sonar 架构。</p></div>
 <div class="eq" id="eq-evaluation-for-mining-3"><code>20</code></div>
 <div class="pblk" id="p-evaluation-for-mining-3">
           <p class="en-lines"><span class="sent" data-sid="s-evaluation-for-mining-3-1"><span class="en">interesting result, given that the use of attention is commonly considered mandatory to achieve reasonable performance.</span></span></p>
@@ -940,8 +929,7 @@ X–eng (n=200) eng–X (n=200) X–eng (n=89) eng–X (n=89) Sonar</span></span
       <h3 class="sech lv2" id="sec-overall-2"><span class="t-zh">总体结果</span><span class="t-en">Overall</span></h3><div class="pblk" id="p-overall-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-overall-2-1-1"><span class="en">Intersection ↓xsim (n=200) ↓xsim++ (n=200) ↓xsim (n=98) ↓xsim++ (n=98) Sonar</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-overall-2-1-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-Intersection ↓xsim (n=200) ↓xsim++ (n=200) ↓xsim (n=98) ↓xsim++ (n=98) Sonar</span></span></p>
+交集 ↓xsim (n=200) ↓xsim++ (n=200) ↓xsim (n=98) ↓xsim++ (n=98) Sonar</span></span></p>
           
         </div>
 <div class="eq" id="eq-overall-2-1"><code>1.4 15.2 0.1 9.3</code></div>
@@ -1140,16 +1128,14 @@ Intersection ↓xsim (n=200) ↓xsim++ (n=200) ↓xsim (n=98) ↓xsim++ (n=98) S
       <h3 class="sech lv2" id="sec-3-4"><span class="secnum">3.4</span> <span class="t-zh">相关工作</span><span class="t-en">Related work</span></h3><div class="pblk" id="p-3-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-1-1"><span class="en">3.4.1 Speech LID Spoken language identification has been traditionally approached in a two-stage workflow: a classifier is trained on top of conventional representations like the i-vector or x-vector, extracted from the raw audio signal [Dehak et al., 2011; Snyder et al., 2018].</span></span> <span class="sent" data-sid="s-3-4-1-2"><span class="en">The same idea has been revisited in end-to-end, integrated neural architectures [Cai et al., 2019; Miao et al., 2019; Wan et al., 2019].</span></span> <span class="sent" data-sid="s-3-4-1-3"><span class="en">These approaches typically fall short as the input audio goes shorter, which can be an issue with speech recordings involving multiple speakers talking to each other in turn.</span></span> <span class="sent" data-sid="s-3-4-1-4"><span class="en">New methods were developed to tackle this very problem.</span></span> <span class="sent" data-sid="s-3-4-1-5"><span class="en">Lopez-Moreno et al. [2014] show that a simple feed-forward network can outperform i-vectors on this task.</span></span> <span class="sent" data-sid="s-3-4-1-6"><span class="en">More complex architectures such as convolutional neural networks or Bi-LSTMs prove to be more efficient in capturing information from the speech input [Lozano-Diez et al., 2015; Fernando 9. available at https://github.com/facebookresearch/seamless_communication</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-1-1"><span class="zh">3.4.1 语音语种识别 口语语种识别传统上采用两阶段工作流：在从原始音频信号中提取的 i-vector 或 x-vector 等传统表征之上训练一个分类器 [Dehak et al., 2011; Snyder et al., 2018]。</span></span><span class="sent" data-sid="s-3-4-1-2"><span class="zh">同样的思路后来在端到端的集成神经架构中被重新审视 [Cai et al., 2019; Miao et al., 2019; Wan et al., 2019]。</span></span><span class="sent" data-sid="s-3-4-1-3"><span class="zh">这类方法通常在输入音频变短时表现不佳——当语音录音中多位说话人轮流交谈时，这会成为一个问题。</span></span><span class="sent" data-sid="s-3-4-1-4"><span class="zh">针对这一具体问题，人们发展出了新方法。</span></span><span class="sent" data-sid="s-3-4-1-5"><span class="zh">Lopez-Moreno et al. [2014] 表明，一个简单的前馈网络就能在该任务上超过 i-vector。</span></span><span class="sent" data-sid="s-3-4-1-6"><span class="zh">（页码行：2。）
-（原始数据照录）
-More complex architectures such as convolutional neural networks or Bi-LSTMs prove to be more efficient in capturing information from the speech input [Lozano-Diez et al., 2015; Fernando 9. available at https://github.com/facebookresearch/seamless_communication</span></span></p>
+更复杂的架构如卷积神经网络或 Bi-LSTM 被证明在从语音输入中捕获信息方面更高效 [Lozano-Diez et al., 2015; Fernando 9. 可在 https://github.com/facebookresearch/seamless_communication 获取</span></span></p>
           
         </div>
 <div class="eq" id="eq-3-4-1"><code>24</code></div>
 <div class="pblk" id="p-3-4-2">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-2-1"><span class="en">et al., 2017].</span></span> <span class="sent" data-sid="s-3-4-2-2"><span class="en">Some other approaches try to bridge the gap with models focused on longer segments through teacher-student training [Shen et al., 2018, 2019].</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-2-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-et al., 2017].</span></span><span class="sent" data-sid="s-3-4-2-2"><span class="zh">另一些方法尝试通过师生训练（teacher-student training），用专注于长片段的模型来弥补差距 [Shen et al., 2018, 2019]。</span></span></p>
+et al., 2017]。</span></span><span class="sent" data-sid="s-3-4-2-2"><span class="zh">另一些方法尝试通过师生训练（teacher-student training），用专注于长片段的模型来弥补差距 [Shen et al., 2018, 2019]。</span></span></p>
           
         </div>
 <div class="pblk" id="p-3-4-3">
@@ -1165,16 +1151,14 @@ et al., 2017].</span></span><span class="sent" data-sid="s-3-4-2-2"><span class=
 <div class="pblk" id="p-3-4-5">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-5-1"><span class="en">3.4.3 Multilingual and multimodal representations Several works have studied how to learn multilingual sentence representations.</span></span> <span class="sent" data-sid="s-3-4-5-2"><span class="en">Well known approaches are Laser [Artetxe and Schwenk, 2019b], LaBSE [Feng et al., 2022], or [Yang et al., 2019; Ramesh et al., 2022].</span></span> <span class="sent" data-sid="s-3-4-5-3"><span class="en">While Laser was trained with an MT translation objective, a decoder compatible with the Laser embedding space is not freely available.</span></span> <span class="sent" data-sid="s-3-4-5-4"><span class="en">To the best of our knowledge, Sonar is the first sentence embedding space for which an efficient and multilingual decoder is available.</span></span> <span class="sent" data-sid="s-3-4-5-5"><span class="en">Another direction of research is to first train an English sentence representation (e.g., sentence-BERT [Reimers and Gurevych, 2019]) and in a second step, extend it to more languages using teacher-student training [Reimers and Gurevych,</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-5-1"><span class="zh">3.4.3 多语言与多模态表征 已有多项工作研究如何学习多语言句子表征。</span></span><span class="sent" data-sid="s-3-4-5-2"><span class="zh">知名的方法有 Laser [Artetxe and Schwenk, 2019b]、LaBSE [Feng et al., 2022]，以及 [Yang et al., 2019; Ramesh et al., 2022]。</span></span><span class="sent" data-sid="s-3-4-5-3"><span class="zh">Laser 虽以 MT 翻译目标训练，但并没有自由可用的、与 Laser 嵌入空间兼容的解码器。</span></span><span class="sent" data-sid="s-3-4-5-4"><span class="zh">据我们所知，Sonar 是第一个配有高效多语言解码器的句子嵌入空间。</span></span><span class="sent" data-sid="s-3-4-5-5"><span class="zh">（页码行：2。）
-（原始数据照录）
-Another direction of research is to first train an English sentence representation (e.g., sentence-BERT [Reimers and Gurevych, 2019]) and in a second step, extend it to more languages using teacher-student training [Reimers and Gurevych,</span></span></p>
+另一个研究方向是首先训练英语句子表示（例如 sentence-BERT [Reimers and Gurevych, 2019]），然后在第二步通过师生训练将其扩展到更多语言 [Reimers and Gurevych,</span></span></p>
           
         </div>
 <div class="eq" id="eq-3-4-2"><code>25</code></div>
 <div class="pblk" id="p-3-4-6">
           <p class="en-lines"><span class="sent" data-sid="s-3-4-6-1"><span class="en">2020].</span></span> <span class="sent" data-sid="s-3-4-6-2"><span class="en">The same approach was used to extend Laser to 200 languages, named Laser3 [Heffernan et al., 2022].</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-4-6-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-2020].</span></span><span class="sent" data-sid="s-3-4-6-2"><span class="zh">同样的方法也被用于把 Laser 扩展到 200 种语言，即 Laser3 [Heffernan et al., 2022]。</span></span></p>
+2020]。</span></span><span class="sent" data-sid="s-3-4-6-2"><span class="zh">同样的方法也被用于把 Laser 扩展到 200 种语言，即 Laser3 [Heffernan et al., 2022]。</span></span></p>
           
         </div>
 <div class="pblk" id="p-3-4-7">
@@ -1202,19 +1186,17 @@ Another direction of research is to first train an English sentence representati
 <div class="pblk" id="p-4-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-3-1"><span class="en">The SeamlessM4T multitask UnitY model integrates components from the first three building blocks and is fine-tuned in three stages, starting from an X2T model (1,2) with English target only and ending with a full-fledged multitask UnitY (1,2,3) system capable of performing T2TT, S2TT and S2ST, as well as ASR.</span></span> <span class="sent" data-sid="s-4-2-3-2"><span class="en">In what follows, we first describe unsupervised speech pre-training (w2v-BERT 2.0) in Section 4.1.</span></span> <span class="sent" data-sid="s-4-2-3-3"><span class="en">We then introduce the X2T model in Section 4.2, starting with the data preparation pipeline in Section 4.2.1.</span></span> <span class="sent" data-sid="s-4-2-3-4"><span class="en">Section 4.2.2 describes our multilingual T2TT model, and Section 4.2.3 details how the speech encoder and the T2TT model are jointly fine-tuned for X2T with multimodal and multitask capabilities.</span></span> <span class="sent" data-sid="s-4-2-3-5"><span class="en">Next, we look at the S2ST task, starting from the acoustic unit extraction pipeline and vocoder design to map units back to speech waveforms in Section 4.3.1 Then, we describe T2U pre-training in Section 4.3.2.</span></span> <span class="sent" data-sid="s-4-2-3-6"><span class="en">Section 4.3.3 ultimately outlines how all these components come together in the third and final stage of fine-tuning.</span></span> <span class="sent" data-sid="s-4-2-3-7"><span class="en">We evaluated 10.</span></span> <span class="sent" data-sid="s-4-2-3-8"><span class="en">There are two views of what constitutes a direct model in speech-to-speech translation literature: (1) A model that does not use intermediate text representation [Lee et al., 2022a] and (2) A model that directly predicts the target spectrogram [Jia et al., 2022a]</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-3-1"><span class="zh">SeamlessM4T 多任务 UnitY 模型整合了前三个组成部分，并分三个阶段微调：从一个只支持英语目标的 X2T 模型 (1,2) 出发，最终成为能够执行 T2TT、S2TT、S2ST 以及 ASR 的完整多任务 UnitY (1,2,3) 系统。</span></span><span class="sent" data-sid="s-4-2-3-2"><span class="zh">下面，我们先在第 4.1 节介绍无监督语音预训练（w2v-BERT 2.0）。</span></span><span class="sent" data-sid="s-4-2-3-3"><span class="zh">随后在第 4.2 节引入 X2T 模型，从第 4.2.1 节的数据准备管线讲起。</span></span><span class="sent" data-sid="s-4-2-3-4"><span class="zh">第 4.2.2 节介绍我们的多语言 T2TT 模型，第 4.2.3 节详述语音编码器与 T2TT 模型如何联合微调出具备多模态多任务能力的 X2T。</span></span><span class="sent" data-sid="s-4-2-3-5"><span class="zh">接着看 S2ST 任务：第 4.3.1 节从声学单元提取管线讲起，直到把单元映射回语音波形的声码器设计；随后在第 4.3.2 节介绍 T2U 预训练。</span></span><span class="sent" data-sid="s-4-2-3-6"><span class="zh">第 4.3.3 节最终概述所有这些组件如何在第三阶段、即最后一个微调阶段汇合。</span></span><span class="sent" data-sid="s-4-2-3-7"><span class="zh">我们在第 4.4 节评测 10。</span></span><span class="sent" data-sid="s-4-2-3-8"><span class="zh">（页码行：2。）
-（原始数据照录）
-There are two views of what constitutes a direct model in speech-to-speech translation literature: (1) A model that does not use intermediate text representation [Lee et al., 2022a] and (2) A model that directly predicts the target spectrogram [Jia et al., 2022a]</span></span></p>
+语音到语音翻译文献中对直接模型的构成有两种观点：(1) 不使用中间文本表示的模型 [Lee et al., 2022a]；(2) 直接预测目标频谱图的模型 [Jia et al., 2022a]</span></span></p>
           
         </div>
 <div class="eq" id="eq-4-2-1"><code>27</code></div>
 <div class="pblk" id="p-4-2-4">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="en">(1) Pre-trained models W2V-BERT 2.0 SEAMLESSM4T-NLLB Unsupervised speech pre-training T2TT encoder-decoder (2) Multitasking UNITY Length adaptor Conformer Speech Encoder Transformer Text Encoder T2U Text-to-Unit encoder-decoder Vocoder Speech resynthesis S2ST HiFi-GAN Unit Vocoder X2T (ASR, T2TT, S2TT) Transformer Unit Decoder Transformer Text-to-Unit Encoder Transformer Text Decoder</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-(1) Pre-trained models W2V-BERT 2.0 SEAMLESSM4T-NLLB Unsupervised speech pre-training T2TT encoder-decoder (2) Multitasking UNITY Length adaptor Conformer Speech Encoder Transformer Text Encoder T2U Text-to-Unit encoder-decoder Vocoder Speech resynthesis S2ST HiFi-GAN Unit Vocoder X2T (ASR, T2TT, S2TT) Transformer Unit Decoder Transformer Text-to-Unit Encoder Transformer Text Decoder</span></span></p>
+(1) 预训练模型 W2V-BERT 2.0 SEAMLESSM4T-NLLB 无监督语音预训练 T2TT 编码器-解码器 (2) 多任务 UNITY 长度适配器 Conformer 语音编码器 Transformer 文本编码器 T2U 文本到单元编码器-解码器 声码器 语音重合成 S2ST HiFi-GAN 单元声码器 X2T (ASR, T2TT, S2TT) Transformer 单元解码器 Transformer 文本到单元编码器 Transformer 文本解码器</span></span></p>
           
         </div>
-<div class="cap" id="fig-4-2-1"><span class="cap-k">图</span><p class="en">Figure 4: Overview of SeamlessM4T. (1) shows the pre-trained models used when finetuning multitasking UnitY. (2) outlines multitasking UnitY with its two encoders, text decoder, T2U encoder-decoder, and the supporting vocoders for synthesizing output speech in S2ST.</p><p class="zh">图 4：SeamlessM4T 总览。(1) 展示微调多任务 UnitY 时使用的预训练模型。(2) 概述多任务 UnitY：两个编码器、文本解码器、T2U 编码器-解码器，以及支持 S2ST 输出语音合成的声码器。</p></div>
+<div class="cap" id="fig-4-2-1"><img class="fig" src="../assets/figures/2308.11596/fig-4-2-1.png" loading="lazy" alt="Figure 4: Overview of SeamlessM4T. (1) shows the pre-trained models used when finetuning multitasking UnitY. (2) outline"><span class="cap-k">图</span><p class="en">Figure 4: Overview of SeamlessM4T. (1) shows the pre-trained models used when finetuning multitasking UnitY. (2) outlines multitasking UnitY with its two encoders, text decoder, T2U encoder-decoder, and the supporting vocoders for synthesizing output speech in S2ST.</p><p class="zh">图 4：SeamlessM4T 总览。(1) 展示微调多任务 UnitY 时使用的预训练模型。(2) 概述多任务 UnitY：两个编码器、文本解码器、T2U 编码器-解码器，以及支持 S2ST 输出语音合成的声码器。</p></div>
 <div class="pblk" id="p-4-2-5">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-5-1"><span class="en">our model using standard automatic metrics in Section 4.4 and compared its performance with state-of-the-art speech translation models.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-5-1"><span class="zh">在第 4.4 节中，我们的模型采用标准自动指标，并与最先进的语音翻译模型比较了性能。</span></span></p>
@@ -1244,8 +1226,7 @@ There are two views of what constitutes a direct model in speech-to-speech trans
 <div class="pblk" id="p-model-3-2">
           <p class="en-lines"><span class="sent" data-sid="s-model-3-2-1"><span class="en">USM over 300† 12M BEST-RQ [Chiu et al., 2022] MMS</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-3-2-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-USM over 300† 12M BEST-RQ [Chiu et al., 2022] MMS</span></span></p>
+USM 超过 300† 12M BEST-RQ [Chiu et al., 2022] MMS</span></span></p>
           
         </div>
 <div class="eq" id="eq-model-3-4"><code>1406</code></div>
@@ -1289,27 +1270,24 @@ USM over 300† 12M BEST-RQ [Chiu et al., 2022] MMS</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-2-1"><span class="zh">（图内容：Transformer 文本解码器、Conformer 语音编码器、Transformer 文本编码器；80 维 filterbank；(eng) the cat sat；未标注语音；(2) SEAMLESSM4T-X2T 第 1、2 阶段（Stage1+2）微调；长度适配器；Conformer 语音编码器；X2T（ASR、T2TT、S2TT）；W2V-BERT 2.0；Transformer 文本解码器；知识蒸馏（T2TT/AE→S2TT/ASR）；SEAMLESSM4T-NLLB Transformer 文本编码器；SEAMLESSM4T-NLLB。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-4-2-2-1"><span class="cap-k">图</span><p class="en">Figure 5: Overview of the SeamlessM4T X2T model. (1) describes the main two building blocks: w2v-BERT 2.0 and SeamlessM4T-NLLB. (2) describes the training of the X2T model. In Stage1, the model is trained on X–eng directions and in Stage2, eng–X directions are added.</p><p class="zh">图 5：SeamlessM4T X2T 模型总览。(1) 介绍两个主要组成部分：w2v-BERT 2.0 与 SeamlessM4T-NLLB。(2) 介绍 X2T 模型的训练：第一阶段在 X–eng 方向上训练，第二阶段加入 eng–X 方向。</p></div>
+<div class="cap" id="fig-4-2-2-1"><img class="fig" src="../assets/figures/2308.11596/fig-4-2-2-1.png" loading="lazy" alt="Figure 5: Overview of the SeamlessM4T X2T model. (1) describes the main two building blocks: w2v-BERT 2.0 and SeamlessM4"><span class="cap-k">图</span><p class="en">Figure 5: Overview of the SeamlessM4T X2T model. (1) describes the main two building blocks: w2v-BERT 2.0 and SeamlessM4T-NLLB. (2) describes the training of the X2T model. In Stage1, the model is trained on X–eng directions and in Stage2, eng–X directions are added.</p><p class="zh">图 5：SeamlessM4T X2T 模型总览。(1) 介绍两个主要组成部分：w2v-BERT 2.0 与 SeamlessM4T-NLLB。(2) 介绍 X2T 模型的训练：第一阶段在 X–eng 方向上训练，第二阶段加入 eng–X 方向。</p></div>
 <div class="pblk" id="p-4-2-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-2-3-1"><span class="en">The core of our multitask UnitY framework is the X2T model, a multi-encoder sequenceto-sequence models with a Conformer-based encoder [Gulati et al., 2020] for speech input</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-3-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-The core of our multitask UnitY framework is the X2T model, a multi-encoder sequenceto-sequence models with a Conformer-based encoder [Gulati et al., 2020] for speech input</span></span></p>
+我们多任务 UnitY 框架的核心是 X2T 模型，一个多编码器序列到序列模型，语音输入使用基于 Conformer 的编码器 [Gulati et al., 2020]</span></span></p>
           
         </div>
 <div class="eq" id="eq-4-2-2-2"><code>29</code></div>
 <div class="pblk" id="p-4-2-2-4">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-2-4-1"><span class="en">and another for Transformer-based encoder [Vaswani et al., 2017] for text input—both of which are joined with the same text decoder.</span></span> <span class="sent" data-sid="s-4-2-2-4-2"><span class="en">Our X2T model is trained on S2TT data pairing speech audio in a source language with text in a target language.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-4-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-and another for Transformer-based encoder [Vaswani et al., 2017] for text input—both of which are joined with the same text decoder.</span></span><span class="sent" data-sid="s-4-2-2-4-2"><span class="zh">X2T 模型在 S2TT 数据上训练，这类数据把源语言语音音频与目标语言文本配对。</span></span></p>
+另一个是基于 Transformer 的编码器 [Vaswani et al., 2017] 用于文本输入——两者与同一个文本解码器相连。</span></span><span class="sent" data-sid="s-4-2-2-4-2"><span class="zh">X2T 模型在 S2TT 数据上训练，这类数据把源语言语音音频与目标语言文本配对。</span></span></p>
           
         </div>
 <div class="pblk" id="p-4-2-2-5">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-2-5-1"><span class="en">4.2.1 Preparing X2T data ASR primary S2TT X-eng mined S2TT X-eng Hours of source-side audio</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-5-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-4.2.1 Preparing X2T data ASR primary S2TT X-eng mined S2TT X-eng Hours of source-side audio</span></span></p>
+4.2.1 准备 X2T 数据 ASR 主要 S2TT X-eng 挖掘 S2TT X-eng 源侧音频小时数</span></span></p>
           
         </div>
 <div class="eq" id="eq-4-2-2-3"><code>10,000</code></div>
@@ -1320,11 +1298,10 @@ and another for Transformer-based encoder [Vaswani et al., 2017] for text input�
 <div class="pblk" id="p-4-2-2-6">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-2-6-1"><span class="en">glg guj npi kat mkd yue som khm isl yor bos srp khk mlt pan heb ary afr swe kir mar bul hye lit ckb arz mal ory zlm mya zul asm ibo amh gle azj lvs tgk nya fra tel tgl cym fin ell ita hrv eus tam bel spa tha pbt est uzn hun lug ind por ben pol lao nor slv hin vie rus slk nld cat cmn deu jpn kor ron kan pes kaz swh dan ces eng tur jav ukr arb urd</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-6-1"><span class="zh">（图 4.2.1：准备 X2T 数据——ASR primary S2TT 与 mined S2TT 的 X-eng 源侧音频小时数分布（100/500/1,000/10,000，高/中资源分档），覆盖数十语种。原始数据照录如下）
-（原始数据照录）
-4.2.1 Preparing X2T data ASR primary S2TT X-eng mined S2TT X-eng Hours of source-side audio 10,000 High-resource 1,000 Mid-resource 500 100 glg guj npi kat mkd yue som khm isl yor bos srp khk mlt pan heb ary afr swe kir mar bul hye lit ckb arz mal ory zlm mya zul asm ibo amh gle azj lvs tgk nya fra tel tgl cym fin ell ita hrv eus tam bel spa tha pbt est uzn hun lug ind por ben pol lao nor slv hin vie rus slk nld cat cmn deu jpn kor ron kan pes kaz swh dan ces eng tur jav ukr arb urd</span></span></p>
+4.2.1 准备 X2T 数据 ASR 主要 S2TT X-eng 挖掘 S2TT X-eng 源侧音频小时数 10,000 高资源 1,000 中资源 500 100 glg guj npi kat mkd yue som khm isl yor bos srp khk mlt pan heb ary afr swe kir mar bul hye lit ckb arz mal ory zlm mya zul asm ibo amh gle azj lvs tgk nya fra tel tgl cym fin ell ita hrv eus tam bel spa tha pbt est uzn hun lug ind por ben pol lao nor slv hin vie rus slk nld cat cmn deu jpn kor ron kan pes kaz swh dan ces eng tur jav ukr arb urd</span></span></p>
           
         </div>
-<div class="cap" id="fig-4-2-2-2"><span class="cap-k">图</span><p class="en">Figure 6: Statistics of ASR and X–eng S2TT data used to train our SeamlessM4T model. We show the data size in hours of speech (log-scale) between ASR, S2TT primary and mined. Languages are sorted in ascending resource-level. For numerical statistics see Table 38</p><p class="zh">图 6：用于训练 SeamlessM4T 模型的 ASR 与 X–eng S2TT 数据统计。我们以语音小时数（对数刻度）展示 ASR、S2TT primary 与 mined 三类数据的数据量。语言按资源水平升序排列。数值统计见 Table 38。</p></div></section>
+<div class="cap" id="fig-4-2-2-2"><img class="fig" src="../assets/figures/2308.11596/fig-4-2-2-2.png" loading="lazy" alt="Figure 6: Statistics of ASR and X–eng S2TT data used to train our SeamlessM4T model. We show the data size in hours of s"><span class="cap-k">图</span><p class="en">Figure 6: Statistics of ASR and X–eng S2TT data used to train our SeamlessM4T model. We show the data size in hours of speech (log-scale) between ASR, S2TT primary and mined. Languages are sorted in ascending resource-level. For numerical statistics see Table 38</p><p class="zh">图 6：用于训练 SeamlessM4T 模型的 ASR 与 X–eng S2TT 数据统计。我们以语音小时数（对数刻度）展示 ASR、S2TT primary 与 mined 三类数据的数据量。语言按资源水平升序排列。数值统计见 Table 38。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-processing-human-labeled-data"><span class="t-zh">处理人工标注数据</span><span class="t-en">Processing human-labeled data</span></h3><div class="pblk" id="p-processing-human-labeled-data-1">
           <p class="en-lines"><span class="sent" data-sid="s-processing-human-labeled-data-1-1"><span class="en">When using human-labeled data, we removed special tokens such as &lt;silence&gt; and &lt;no-speech&gt; from the verbatim transcriptions.</span></span> <span class="sent" data-sid="s-processing-human-labeled-data-1-2"><span class="en">We additionally perform length filtering to remove examples exceeding a maximum text length of 100 sub-word tokens (based on the text tokenizer described below) and pairs with a skewed text-to-audio length ratio that exceeds 5 sub-words per second.</span></span> <span class="sent" data-sid="s-processing-human-labeled-data-1-3"><span class="en">Doing so improves the batching efficiency when training and eliminates pairs that are likely to be noisy or misaligned.</span></span></p>
@@ -1381,7 +1358,6 @@ and another for Transformer-based encoder [Vaswani et al., 2017] for text input�
 <div class="pblk" id="p-training-a-text-tokenizer-4">
           <p class="en-lines"><span class="sent" data-sid="s-training-a-text-tokenizer-4-1"><span class="en">11. https://lingua.mtsu.edu/chinese-computing/statistics/index.html</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-training-a-text-tokenizer-4-1"><span class="zh">1.
-（原始数据照录）
 11. https://lingua.mtsu.edu/chinese-computing/statistics/index.html</span></span></p>
           
         </div>
@@ -1395,7 +1371,6 @@ and another for Transformer-based encoder [Vaswani et al., 2017] for text input�
       <h3 class="sech lv2" id="sec-model-4"><span class="t-zh">模型</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-4-1-1"><span class="en">X–eng (n=95) eng–X (n=95) NLLB Team et al. [2022] - 3.3B</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-4-1-1"><span class="zh">（页码行：2。）
-（原始数据照录）
 X–eng (n=95) eng–X (n=95) NLLB Team et al. [2022] - 3.3B</span></span></p>
           
         </div>
@@ -1405,7 +1380,6 @@ X–eng (n=95) eng–X (n=95) NLLB Team et al. [2022] - 3.3B</span></span></p>
 <div class="pblk" id="p-model-4-2">
           <p class="en-lines"><span class="sent" data-sid="s-model-4-2-1"><span class="en">- 1.3B-distil.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-4-2-1"><span class="zh">1.
-（原始数据照录）
 - 1.3B-distil.</span></span></p>
           
         </div>
@@ -1442,8 +1416,7 @@ X–eng (n=95) eng–X (n=95) NLLB Team et al. [2022] - 3.3B</span></span></p>
 <div class="pblk" id="p-model-4-7">
           <p class="en-lines"><span class="sent" data-sid="s-model-4-7-1"><span class="en">where xtext and xspeech are the source text and speech in the source language &lt;ℓs&gt; and ytext is the target text in the target language &lt;ℓt&gt;.</span></span> <span class="sent" data-sid="s-model-4-7-2"><span class="en">We additionally optimize an auxiliary objective function in the form of token-level knowledge distillation (LKD), to further transfer knowledge from the strong MT model to the student speech translation task (S2TT). t=1 DKL p(.|ytext &lt;t , xtext) ∥p(.|ytext &lt;t , xspeech)</span><button class="mk feat" data-sid="s-model-4-7-2" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-4-7-1"><span class="zh">其中 xtext 和 xspeech 分别是源语言 &lt;ℓs&gt; 的源文本与源语音，ytext 是目标语言 &lt;ℓt&gt; 的目标文本。</span></span><span class="sent" data-sid="s-model-4-7-2"><span class="zh">（页码行：2。）
-（原始数据照录）
-We additionally optimize an auxiliary objective function in the form of token-level knowledge distillation (LKD), to further transfer knowledge from the strong MT model to the student speech translation task (S2TT). t=1 DKL p(.|ytext &lt;t , xtext) ∥p(.|ytext &lt;t , xspeech)</span><button class="mk feat" data-sid="s-model-4-7-2" title="查看讲解">解</button></span></p>
+我们还优化了一个辅助目标函数，形式为 token 级知识蒸馏（LKD），以进一步将强 MT 模型的知识迁移到学生语音翻译任务（S2TT）。t=1 DKL p(.|ytext &lt;t , xtext) ∥p(.|ytext &lt;t , xspeech)</span><button class="mk feat" data-sid="s-model-4-7-2" title="查看讲解">解</button></span></p>
           <div class="ann-zone"><div class="ann-panel" data-sid="s-model-4-7-2">
       <div class="ann-card kind-engineering">
         <div class="ann-kind">工程启发</div>
@@ -1479,12 +1452,11 @@ We additionally optimize an auxiliary objective function in the form of token-le
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-1-1"><span class="zh">（图内容：(1) 预训练模型；(eng) u10, u93, … u609；Transformer 单元解码器；S2ST；Transformer 文本到单元编码器；HiFi-GAN 单元声码器；嵌入；(eng) u10, u93, … u609；(eng) the cat sat；T2U；声码器；多任务 UNITY；长度适配器；Conformer 语音编码器；Transformer 文本编码器；HiFi-GAN 单元声码器；X2T（ASR、T2TT、S2TT）；声码器；Transformer 单元解码器；Transformer 文本到单元编码器；Transformer 文本解码器；T2U；冻结的 X2T；(2) SEAMLESSM4T 第 3 阶段（Stage3）微调；页码 34。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-4-3-1"><span class="cap-k">图</span><p class="en">Figure 7: Overview of the SeamlessM4T multitask UnitY model. (1) describes the additional two building blocks on top of X2T: T2U encoder-decoder and unit vocoder. (2) describes the training of the UnitY model. In Stage3, the model is trained on S2ST data.</p><p class="zh">图 7：SeamlessM4T 多任务 UnitY 模型总览。(1) 介绍 X2T 之上新增的两个组成部分：T2U 编码器-解码器与单元声码器。(2) 介绍 UnitY 模型的训练：第 3 阶段（Stage3）在 S2ST 数据上训练。</p></div>
+<div class="cap" id="fig-4-3-1"><img class="fig" src="../assets/figures/2308.11596/fig-4-3-1.png" loading="lazy" alt="Figure 7: Overview of the SeamlessM4T multitask UnitY model. (1) describes the additional two building blocks on top of "><span class="cap-k">图</span><p class="en">Figure 7: Overview of the SeamlessM4T multitask UnitY model. (1) describes the additional two building blocks on top of X2T: T2U encoder-decoder and unit vocoder. (2) describes the training of the UnitY model. In Stage3, the model is trained on S2ST data.</p><p class="zh">图 7：SeamlessM4T 多任务 UnitY 模型总览。(1) 介绍 X2T 之上新增的两个组成部分：T2U 编码器-解码器与单元声码器。(2) 介绍 UnitY 模型的训练：第 3 阶段（Stage3）在 S2ST 数据上训练。</p></div>
 <div class="pblk" id="p-4-3-2">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-2-1"><span class="en">The key to our proposed speech-to-speech translation model is the use of self-supervised discrete acoustic units to represent target speech, thereby decomposing the S2ST problem into a speech-to-unit translation (S2UT) step and a unit-to-speech (U2S) conversion step.</span></span> <span class="sent" data-sid="s-4-3-2-2"><span class="en">For S2UT, the SeamlessM4T model depicted in Figure 4 uses UnitY as a two-pass decoding framework which first generates text and subsequently predicts discrete acoustic units.</span><button class="mk feat" data-sid="s-4-3-2-2" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-3-2-3"><span class="en">Compared to the vanilla UnitY model [Inaguma et al., 2023], (1) the core S2TT model initialized from scratch is replaced with an X2T model pre-trained to jointly optimize T2TT,</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-2-1"><span class="zh">我们所提语音到语音翻译模型的关键，是使用自监督离散声学单元来表征目标语音，从而把 S2ST 问题分解为语音到单元翻译（S2UT）步骤和单元到语音（U2S）转换步骤。</span></span><span class="sent" data-sid="s-4-3-2-2"><span class="zh">对 S2UT，Figure 4 所示的 SeamlessM4T 模型把 UnitY 用作两段式解码框架：先生成文本，再预测离散声学单元。</span><button class="mk feat" data-sid="s-4-3-2-2" title="查看讲解">解</button></span><span class="sent" data-sid="s-4-3-2-3"><span class="zh">（页码行：2。）
-（原始数据照录）
-Compared to the vanilla UnitY model [Inaguma et al., 2023], (1) the core S2TT model initialized from scratch is replaced with an X2T model pre-trained to jointly optimize T2TT,</span></span></p>
+与原始 UnitY 模型 [Inaguma et al., 2023] 相比，(1) 从头初始化的核心 S2TT 模型被替换为预训练以联合优化 T2TT 的 X2T 模型，</span></span></p>
           <div class="ann-zone"><div class="ann-panel" data-sid="s-4-3-2-2">
       <div class="ann-card kind-concept">
         <div class="ann-kind">概念</div>
@@ -1498,8 +1470,7 @@ Compared to the vanilla UnitY model [Inaguma et al., 2023], (1) the core S2TT mo
 <div class="pblk" id="p-4-3-3">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-3-1"><span class="en">S2TT, and ASR, (2) the shallow T2U model (referred to as T2U unit encoder and second-pass unit decoder in Inaguma et al. [2023]) is replaced with a deeper Transformer-based encoderdecoder model with 6 transformer layers, (3) the T2U model is also pre-trained on the T2U task rather than trained from scratch.</span></span> <span class="sent" data-sid="s-4-3-3-2"><span class="en">The pre-training of X2T yields a stronger speech encoder and a higher quality first-pass text decoder, while the scaling and pre-training of the T2U model allowed us to better handle multilingual unit generation without interference.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-3-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-S2TT, and ASR, (2) the shallow T2U model (referred to as T2U unit encoder and second-pass unit decoder in Inaguma et al. [2023]) is replaced with a deeper Transformer-based encoderdecoder model with 6 transformer layers, (3) the T2U model is also pre-trained on the T2U task rather than trained from scratch.</span></span><span class="sent" data-sid="s-4-3-3-2"><span class="zh">X2T 的预训练带来了更强的语音编码器和更高质量的第一遍文本解码器；而 T2U 模型的扩大与预训练使我们能更好地处理多语言单元生成而不受干扰。</span></span></p>
+S2TT 和 ASR，(2) 浅层 T2U 模型（在 Inaguma et al. [2023] 中称为 T2U 单元编码器和第二遍单元解码器）被替换为更深的基于 Transformer 的编码器-解码器模型（含 6 个 transformer 层），(3) T2U 模型也在 T2U 任务上预训练而非从头训练。</span></span><span class="sent" data-sid="s-4-3-3-2"><span class="zh">X2T 的预训练带来了更强的语音编码器和更高质量的第一遍文本解码器；而 T2U 模型的扩大与预训练使我们能更好地处理多语言单元生成而不受干扰。</span></span></p>
           
         </div>
 <div class="pblk" id="p-4-3-4">
@@ -1548,7 +1519,7 @@ S2TT, and ASR, (2) the shallow T2U model (referred to as T2U unit encoder and se
           <p class="zh-lines"><span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-4-1"><span class="zh">这种两步单元抽取流程很慢、难以规模化。（图 34：X-eng 与 eng-X 方向源侧音频小时数分布（0/2,000/4,000），primary S2ST 与 mined S2ST 对比，涵盖 ckb、arz、lin、gle、ltz、isl、yor、mal、mar、zlm、hau、ory、azj、ary、bos、srp、pbt、kir、mya、zul、lvs、heb、tgk、nya、npi、kat、ibo、glg、asm、guj、yue、mkd、som、amh、xho、khk、afr、swe、wol、hye、bul、tha、pes、ben、swh、uzn、swe、ukr、mlt、tel、tgl、fin、ind、slk、cat、hin、cym、nor、lit、urd、arb、mlt、fin、kor、tam、ces、por、ron、fra、tgl、ell、lug、pes、ita、cmn、tel、tur、hrv、eus、pol、lao、bel、slk、ben、cat、hin、est、tha、ind、nld、spa、kan、cym、slv、vie、jpn、khm、pan、swh、uzn、hun、dan、kaz、rus、deu、jav、ukr、kor、ces、dan、rus、spa、deu、tur、ron、por、fra、urd、arb、ita、est、pol、nld、jpn、vie、cmn 等语种。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-pseudo-labeling-with-text-to-uni-1"><span class="cap-k">图</span><p class="en">Figure 8: Statistics of S2ST data used in Stage3 of training SeamlessM4T model. We show the data size in hours of speech between primary and mined. Languages are sorted in ascending resource-level. For numerical statistics see Table 39</p><p class="zh">图 8：训练 SeamlessM4T 模型第 3 阶段（Stage3）所用 S2ST 数据统计。我们以语音小时数展示 primary 与 mined 两类数据的数据量。语言按资源水平升序排列。数值统计见 Table 39。</p></div>
+<div class="cap" id="fig-pseudo-labeling-with-text-to-uni-1"><img class="fig" src="../assets/figures/2308.11596/fig-pseudo-labeling-with-text-to-uni-1.png" loading="lazy" alt="Figure 8: Statistics of S2ST data used in Stage3 of training SeamlessM4T model. We show the data size in hours of speech"><span class="cap-k">图</span><p class="en">Figure 8: Statistics of S2ST data used in Stage3 of training SeamlessM4T model. We show the data size in hours of speech between primary and mined. Languages are sorted in ascending resource-level. For numerical statistics see Table 39</p><p class="zh">图 8：训练 SeamlessM4T 模型第 3 阶段（Stage3）所用 S2ST 数据统计。我们以语音小时数展示 primary 与 mined 两类数据的数据量。语言按资源水平升序排列。数值统计见 Table 39。</p></div>
 <div class="pblk" id="p-pseudo-labeling-with-text-to-uni-5">
           <p class="en-lines"><span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-1"><span class="en">given the dependencies on TTS models.</span></span> <span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-2"><span class="en">High-quality off-the-shelf TTS models are hard to come by for all languages, especially for low-resource ones.</span></span> <span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-3"><span class="en">Training reliable monolingual or multilingual in-house TTS models is also not scalable given the challenges around gathering high-quality clean speech data.</span></span> <span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-4"><span class="en">To overcome these challenges, we circumvented the need for synthesizing speech and trained multilingual text-to-unit (T2U) models on all the 36 target speech languages.</span></span> <span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-5"><span class="en">These models can directly convert the text into target discrete units and can be trained on ASR datasets that are readily available.</span></span> <span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-6"><span class="en">The multilingual training benefits from cross-lingual transfer between high-resource and low-resource languages, thereby also improving the quality of the pseudo-labeled data.</span></span> <span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-7"><span class="en">To remove outlier samples from our paired data, we filtered based on the number of seconds of audio generated per text token length ratio, discarding any pair with a ratio exceeding 0.5.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-1"><span class="zh">因为要依赖 TTS 模型。</span></span><span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-2"><span class="zh">高质量的现成 TTS 模型很难在所有语言上获得，低资源语言尤其如此。</span></span><span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-3"><span class="zh">自训可靠的单语言或多语言 TTS 模型也不具扩展性，因为收集高质量干净语音数据本身就很困难。</span></span><span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-4"><span class="zh">为克服这些挑战，我们绕开了合成语音这一步：在全部 36 种目标语音语言上训练多语言文本到单元（text-to-unit, T2U）模型。</span></span><span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-5"><span class="zh">这些模型可以直接把文本转换为目标离散单元，且可以在现成可得的 ASR 数据集上训练。</span></span><span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-6"><span class="zh">多语言训练得益于高资源与低资源语言之间的跨语言迁移，因此也提升了伪标注数据的质量。</span></span><span class="sent" data-sid="s-pseudo-labeling-with-text-to-uni-5-7"><span class="zh">为剔除配对数据中的离群样本，我们按「每个文本 token 生成的音频秒数」这一比率进行过滤，丢弃比率超过 0.5 的任何配对。</span></span></p>
@@ -1644,8 +1615,7 @@ S2TT, and ASR, (2) the shallow T2U model (referred to as T2U unit encoder and se
       <h3 class="sech lv2" id="sec-model-5"><span class="t-zh">模型</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-5-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-5-1-1"><span class="en">type size X–eng (n=81) eng–X (n=88) 2B</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-5-1-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-type size X–eng (n=81) eng–X (n=88) 2B</span></span></p>
+类型 规模 X–eng (n=81) eng–X (n=88) 2B</span></span></p>
           
         </div>
 <div class="eq" id="eq-model-5-1"><code>19.7 20.5</code></div>
@@ -1674,8 +1644,7 @@ type size X–eng (n=81) eng–X (n=88) 2B</span></span></p>
       <h3 class="sech lv2" id="sec-model-6"><span class="t-zh">模型</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-6-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-6-1-1"><span class="en">type size Fleurs (n=81) CVSS (n=21) YourTTS [Casanova et al., 2022] +Whisper-Large-v2 (S2TT) 2-stage cascaded 1.6B</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-6-1-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-type size Fleurs (n=81) CVSS (n=21) YourTTS [Casanova et al., 2022] +Whisper-Large-v2 (S2TT) 2-stage cascaded 1.6B</span></span></p>
+类型 规模 Fleurs (n=81) CVSS (n=21) YourTTS [Casanova et al., 2022] +Whisper-Large-v2 (S2TT) 2 阶段级联 1.6B</span></span></p>
           
         </div>
 <div class="eq" id="eq-model-6-1"><code>17.3 22.6</code></div>
@@ -1705,8 +1674,7 @@ type size Fleurs (n=81) CVSS (n=21) YourTTS [Casanova et al., 2022] +Whisper-Lar
 <div class="pblk" id="p-model-6-4">
           <p class="en-lines"><span class="sent" data-sid="s-model-6-4-1"><span class="en">In the T2TT support task, our SeamlessM4T model matches the performance of NLLB- 3.3B [NLLB Team et al., 2022] in X–eng directions and improves on eng–X directions by 1 chrF++point.</span></span> <span class="sent" data-sid="s-model-6-4-2"><span class="en">To further understand where the improvements in Fleurs S2TT X–eng directions are coming from, we bucket languages by resource-level (see the exact list of languages in Table 38) and report average BLEU scores per resource-level in Table 17.</span></span> <span class="sent" data-sid="s-model-6-4-3"><span class="en">The results show that SeamlessM4T-Large strongly improves the quality of translating from low-resourced languages with an improvement of +7.4 BLEU (i.e., 40% improvement over AudioPaLM-2-8B-AST).</span></span> <span class="sent" data-sid="s-model-6-4-4"><span class="en">We also average in column low† over low-resource directions that are supervised in AudioPaLM-2-8B-AST—the gain of +5 BLEU in that subset of</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-6-4-1"><span class="zh">在 T2TT 支持任务上，我们的 SeamlessM4T 模型在 X–eng 方向上与 NLLB-3.3B [NLLB Team et al., 2022] 打平，并在 eng–X 方向上提升 1 个 chrF++ 点。</span></span><span class="sent" data-sid="s-model-6-4-2"><span class="zh">为进一步弄清 Fleurs S2TT X–eng 方向上的提升来自何处，我们按资源水平给语言分桶（语言的准确清单见 Table 38），并在 Table 17 中报告每个资源水平的平均 BLEU。</span></span><span class="sent" data-sid="s-model-6-4-3"><span class="zh">结果显示，SeamlessM4T-Large 大幅提升了从低资源语言译出的质量：+7.4 BLEU（即相对 AudioPaLM-2-8B-AST 提升 40%）。</span></span><span class="sent" data-sid="s-model-6-4-4"><span class="zh">（页码行：2。）
-（原始数据照录）
-We also average in column low† over low-resource directions that are supervised in AudioPaLM-2-8B-AST—the gain of +5 BLEU in that subset of</span></span></p>
+我们还在 low† 列中对 AudioPaLM-2-8B-AST 监督的低资源方向取平均——在该子集中获得 +5 BLEU 的提升</span></span></p>
           
         </div>
 <div class="eq" id="eq-model-6-14"><code>38</code></div>
@@ -1719,8 +1687,7 @@ We also average in column low† over low-resource directions that are supervise
       <h3 class="sech lv2" id="sec-model-7"><span class="t-zh">模型</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-7-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-7-1-1"><span class="en">size S2TT (↑BLEU) Fleurs eng–X (n=88) CoVoST 2 X–eng (n=21) CoVoST 2 eng–X (n=15) XLS-R-2B-S2T 2.6B x</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-7-1-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-size S2TT (↑BLEU) Fleurs eng–X (n=88) CoVoST 2 X–eng (n=21) CoVoST 2 eng–X (n=15) XLS-R-2B-S2T 2.6B x</span></span></p>
+规模 S2TT (↑BLEU) Fleurs eng–X (n=88) CoVoST 2 X–eng (n=21) CoVoST 2 eng–X (n=15) XLS-R-2B-S2T 2.6B x</span></span></p>
           
         </div>
 <div class="eq" id="eq-model-7-1"><code>22.1 27.8</code></div>
@@ -1745,8 +1712,7 @@ size S2TT (↑BLEU) Fleurs eng–X (n=88) CoVoST 2 X–eng (n=21) CoVoST 2 eng�
       <h3 class="sech lv2" id="sec-model-8"><span class="t-zh">模型</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-8-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-8-1-1"><span class="en">size Fleurs (n=77) Fleurs-54 (n=54) Flores X–eng (n=95) Flores eng–X (n=95) NLLB-3.3B 3.3B x x</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-8-1-1"><span class="zh">5
-（原始数据照录）
-size Fleurs (n=77) Fleurs-54 (n=54) Flores X–eng (n=95) Flores eng–X (n=95) NLLB-3.3B 3.3B x x</span></span></p>
+规模 Fleurs (n=77) Fleurs-54 (n=54) Flores X–eng (n=95) Flores eng–X (n=95) NLLB-3.3B 3.3B x x</span></span></p>
           
         </div>
 <div class="eq" id="eq-model-8-1"><code>60.7 49.6</code></div>
@@ -1770,8 +1736,7 @@ size Fleurs (n=77) Fleurs-54 (n=54) Flores X–eng (n=95) Flores eng–X (n=95) 
       <h3 class="sech lv2" id="sec-model-9"><span class="t-zh">模型</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-9-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-9-1-1"><span class="en">High (n=15) Medium (n=25) Low (n=34) Low† (n=23) Whisper-Large-v2</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-9-1-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-High (n=15) Medium (n=25) Low (n=34) Low† (n=23) Whisper-Large-v2</span></span></p>
+高 (n=15) 中 (n=25) 低 (n=34) 低† (n=23) Whisper-Large-v2</span></span></p>
           
         </div>
 <div class="eq" id="eq-model-9-1"><code>24.2 19.4 16.1 18.1</code></div>
@@ -1792,8 +1757,7 @@ High (n=15) Medium (n=25) Low (n=34) Low† (n=23) Whisper-Large-v2</span></span
       <h3 class="sech lv2" id="sec-model-10"><span class="t-zh">模型</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-10-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-10-1-1"><span class="en">size Fleurs X–eng(n=81) Fleurs eng–X(n=88) ↑BLEU ↑spBLEU ↑Blaser 2.0 ↑BLEU ↑spBLEU ↑Blaser 2.0 Whisper-Large-v2 1.5B</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-10-1-1"><span class="zh">（页码行：2。）
-（原始数据照录）
-size Fleurs X–eng(n=81) Fleurs eng–X(n=88) ↑BLEU ↑spBLEU ↑Blaser 2.0 ↑BLEU ↑spBLEU ↑Blaser 2.0 Whisper-Large-v2 1.5B</span></span></p>
+规模 Fleurs X–eng(n=81) Fleurs eng–X(n=88) ↑BLEU ↑spBLEU ↑Blaser 2.0 ↑BLEU ↑spBLEU ↑Blaser 2.0 Whisper-Large-v2 1.5B</span></span></p>
           
         </div>
 <div class="eq" id="eq-model-10-1"><code>17.9 19.9 3.29</code></div>
@@ -1872,7 +1836,7 @@ X–eng (n=88) eng–X (n=35) eng–X (n=32) SeamlessM4T-Large</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-12-6-1"><span class="zh">（图：24 个目标语言的平均 SPBLEU（4/8/12/16/20/24）：asm、lit、som、khm、mya、cmn、fin、yor、lug、jpn、kor、ibo、pbt、est、luo、nya、lao、pol、bel、slv、nob、gle、slk、sna、azj、yue、gaz、zul、ceb、lvs、khk、hun、ukr、pes、kaz、mar、tur、kir、jav、hrv、ckb、urd、tam、zlm、spa、mal、cym、mkd、amh、isl、ell、pan、ita、rus、hin、cat、tel、nld、glg、ind、guj、tgk、vie、tha、kat、npi、snd、heb、kan、ces、uzn、fra、eng、bos、deu、ben、ory、dan、swe、swh、bul、mlt、por、srp、ron、arb、hye。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-model-12-1"><span class="cap-k">图</span><p class="en">Figure 9: S2TT Fleurs X–X results. We evaluate X–X directions from Fleurs and average spBLEU scores. For a given target text language, we average scores over 100 source languages.</p><p class="zh">图 9：S2TT Fleurs X–X 结果。我们评测 Fleurs 的 X–X 方向并平均 spBLEU 分数。对给定目标文本语言，在 100 种源语言上取平均。</p></div></section>
+<div class="cap" id="fig-model-12-1"><img class="fig" src="../assets/figures/2308.11596/fig-model-12-1.png" loading="lazy" alt="Figure 9: S2TT Fleurs X–X results. We evaluate X–X directions from Fleurs and average spBLEU scores. For a given target "><span class="cap-k">图</span><p class="en">Figure 9: S2TT Fleurs X–X results. We evaluate X–X directions from Fleurs and average spBLEU scores. For a given target text language, we average scores over 100 source languages.</p><p class="zh">图 9：S2TT Fleurs X–X 结果。我们评测 Fleurs 的 X–X 方向并平均 spBLEU 分数。对给定目标文本语言，在 100 种源语言上取平均。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-5"><span class="secnum">4.5</span> <span class="t-zh">分析与消融</span><span class="t-en">Analysis and Ablations</span></h3><div class="pblk" id="p-4-5-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-5-1-1"><span class="en">4.5.1 Unsupervised speech pre-training We explored various techniques to enhance the quality of our encoders’ representations, including algorithm-wise improvements and pre-training data scaling.</span></span></p>
@@ -2655,7 +2619,7 @@ Direction Lang XSTS (calibrated) % XSTS 3+ % XSTS 4+ Items Seamls1 Wspr2 Hum3 Se
 ind cat nld vie ita spa deu fra tur por ron cmn tgl fin tel kor tha jpn vie ben swh tur arb urd cmn tgl tel fin kor rus hin tha jpn ben swh arb urd WHISPER-LARGE-V2 SEAMLESSM4T-LARGE Ref</span></span></p>
           
         </div>
-<div class="cap" id="fig-xsts-results-for-the-s2tt-task-1"><span class="cap-k">图</span><p class="en">Figure 10: Language Direction level mean XSTS scores per direction for S2TT modality, after calibration. Bootstrapped 95% CI is typically within ∼±0.1.</p><p class="zh">图 10：S2TT 模态下、按语言方向校准后的每方向平均 XSTS 分数。Bootstrap 95% 置信区间通常在 ±0.1 内。</p></div>
+<div class="cap" id="fig-xsts-results-for-the-s2tt-task-1"><img class="fig" src="../assets/figures/2308.11596/fig-xsts-results-for-the-s2tt-task-1.png" loading="lazy" alt="Figure 10: Language Direction level mean XSTS scores per direction for S2TT modality, after calibration. Bootstrapped 95"><span class="cap-k">图</span><p class="en">Figure 10: Language Direction level mean XSTS scores per direction for S2TT modality, after calibration. Bootstrapped 95% CI is typically within ∼±0.1.</p><p class="zh">图 10：S2TT 模态下、按语言方向校准后的每方向平均 XSTS 分数。Bootstrap 95% 置信区间通常在 ±0.1 内。</p></div>
 <div class="eq" id="eq-xsts-results-for-the-s2tt-task-101"><code>54 5</code></div>
 <div class="pblk" id="p-xsts-results-for-the-s2tt-task-10">
           <p class="en-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-10-1"><span class="en">Average XSTS (calib.)</span></span></p>
@@ -2686,7 +2650,7 @@ ind cat nld vie ita spa deu fra tur por ron cmn tgl fin tel kor tha jpn vie ben 
 ita cat hin deu ben spa fra tur por ron cmn tgl tel fin jpn tha kor vie ben swh tur urd arb cmn fin tel tgl nld jpn vie rus tha ind kor swh arb urd WHISPER-LARGE-V2 +YOURTTS SEAMLESSM4T-LARGE Ref</span></span></p>
           
         </div>
-<div class="cap" id="fig-xsts-results-for-the-s2tt-task-2"><span class="cap-k">图</span><p class="en">Figure 11: Language Direction level mean XSTS scores per direction for S2ST modality, after calibration. Bootstrapped 95% CI is typically within ∼±0.1.</p><p class="zh">图 11：S2ST 模态下、按语言方向校准后的每方向平均 XSTS 分数。Bootstrap 95% 置信区间通常在 ±0.1 内。</p></div>
+<div class="cap" id="fig-xsts-results-for-the-s2tt-task-2"><img class="fig" src="../assets/figures/2308.11596/fig-xsts-results-for-the-s2tt-task-2.png" loading="lazy" alt="Figure 11: Language Direction level mean XSTS scores per direction for S2ST modality, after calibration. Bootstrapped 95"><span class="cap-k">图</span><p class="en">Figure 11: Language Direction level mean XSTS scores per direction for S2ST modality, after calibration. Bootstrapped 95% CI is typically within ∼±0.1.</p><p class="zh">图 11：S2ST 模态下、按语言方向校准后的每方向平均 XSTS 分数。Bootstrap 95% 置信区间通常在 ±0.1 内。</p></div>
 <div class="pblk" id="p-xsts-results-for-the-s2tt-task-14">
           <p class="en-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-14-1"><span class="en">When averaging over language directions, SeamlessM4T-Large demonstrates superior performance on both average XSTS score and percentage of sentences above XSTS thresholds of 3 and 4 compared to the Whisper-Large-v2’s baseline on X–eng (see Table 29).</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-xsts-results-for-the-s2tt-task-14-1"><span class="zh">在语言方向上取平均后，X–eng 上 SeamlessM4T-Large 在平均 XSTS 分数以及 XSTS ≥3、≥4 的句子百分比两项上均优于 Whisper-Large-v2 基线（见 Table 29）。</span></span></p>
@@ -2852,7 +2816,7 @@ Direction Lang XSTS (calibrated) % XSTS 3+ % XSTS 4+ Items Seamls1 Wspr2 Hum3 Se
 S2ST XSTS - S2TT XSTS Number of items SEAMLESSM4T-LARGE WHISPER-LARGE-V2 (+YOURTTS)</span></span></p>
           
         </div>
-<div class="cap" id="fig-xsts-results-for-s2st-task-1"><span class="cap-k">图</span><p class="en">Figure 12: XSTS score differences between S2ST and S2TT generations at the item level. A higher proportion of SeamlessM4T-LargeS2ST generations received XSTS scores that are 2 or more points behind the S2TT generation compared to Whisper-Large-v2 (+YourTTS).</p><p class="zh">图 12：条目级 S2ST 与 S2TT 生成的 XSTS 分差。相比 Whisper-Large-v2（+YourTTS），SeamlessM4T-Large 的 S2ST 生成中，XSTS 落后 S2TT 生成 2 分及以上的比例更高。</p></div></section>
+<div class="cap" id="fig-xsts-results-for-s2st-task-1"><img class="fig" src="../assets/figures/2308.11596/fig-xsts-results-for-s2st-task-1.png" loading="lazy" alt="Figure 12: XSTS score differences between S2ST and S2TT generations at the item level. A higher proportion of SeamlessM4"><span class="cap-k">图</span><p class="en">Figure 12: XSTS score differences between S2ST and S2TT generations at the item level. A higher proportion of SeamlessM4T-LargeS2ST generations received XSTS scores that are 2 or more points behind the S2TT generation compared to Whisper-Large-v2 (+YourTTS).</p><p class="zh">图 12：条目级 S2ST 与 S2TT 生成的 XSTS 分差。相比 Whisper-Large-v2（+YourTTS），SeamlessM4T-Large 的 S2ST 生成中，XSTS 落后 S2TT 生成 2 分及以上的比例更高。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-truncation-and-omission-in-s2st-"><span class="t-zh">S2ST 输出中的截断与遗漏</span><span class="t-en">Truncation and omission in S2ST output</span></h3><div class="pblk" id="p-truncation-and-omission-in-s2st--1">
           <p class="en-lines"><span class="sent" data-sid="s-truncation-and-omission-in-s2st--1-1"><span class="en">Figure 12 shows a histogram of performance deltas between S2ST and S2TT generations for both SeamlessM4T-Large and WhisperLarge-v2 (+YourTTS).</span></span> <span class="sent" data-sid="s-truncation-and-omission-in-s2st--1-2"><span class="en">We see that SeamlessM4T-Large has a higher proportion of items with S2ST generations 2 or more XSTS points behind the S2TT generation.</span></span></p>
@@ -2885,7 +2849,7 @@ If truncations are the predominant reason behind the drop in XSTS scores for Sea
 Duration of source audio (seconds) SEAMLESSM4T-LARGE WHISPER-LARGE-V2 WHISPER-LARGE-V2 + YOURTTS</span></span></p>
           
         </div>
-<div class="cap" id="fig-truncation-and-omission-in-s2st--1"><span class="cap-k">图</span><p class="en">Figure 13: S2TT and S2ST item-level XSTS scores as a function of the duration of the source speech audio file. Error-bars are standard errors around the mean in each source duration bucket.</p><p class="zh">图 13：S2TT 与 S2ST 条目级 XSTS 分数随源语音音频时长的变化。误差线为各源时长桶内均值的标准误。</p></div>
+<div class="cap" id="fig-truncation-and-omission-in-s2st--1"><img class="fig" src="../assets/figures/2308.11596/fig-truncation-and-omission-in-s2st--1.png" loading="lazy" alt="Figure 13: S2TT and S2ST item-level XSTS scores as a function of the duration of the source speech audio file. Error-bar"><span class="cap-k">图</span><p class="en">Figure 13: S2TT and S2ST item-level XSTS scores as a function of the duration of the source speech audio file. Error-bars are standard errors around the mean in each source duration bucket.</p><p class="zh">图 13：S2TT 与 S2ST 条目级 XSTS 分数随源语音音频时长的变化。误差线为各源时长桶内均值的标准误。</p></div>
 <div class="pblk" id="p-truncation-and-omission-in-s2st--5">
           <p class="en-lines"><span class="sent" data-sid="s-truncation-and-omission-in-s2st--5-1"><span class="en">reflect on the quality of the entire translation and may further exacerbate the effect of recency bias.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-truncation-and-omission-in-s2st--5-1"><span class="zh">（接续）……整个翻译质量的能力，并进一步加剧近因偏差的影响。</span></span></p>
@@ -2926,7 +2890,7 @@ Duration of source audio (seconds) SEAMLESSM4T-LARGE WHISPER-LARGE-V2 WHISPER-LA
 cmn tel ita fin nld ben spa fra swh por urd tel hin spa tur tgl tha rus kor vie hin jpn ind cat deu tur arb ron WHISPER-LARGE-V2 SEAMLESSM4T-LARGE Ref</span></span></p>
           
         </div>
-<div class="cap" id="fig-mos-results-1"><span class="cap-k">图</span><p class="en">Figure 14: Language Direction level mean MOS (naturalness) scores per direction for S2ST modality, after calibration. Bootstrapped 95% CI widths are ∼±0.1 on average.</p><p class="zh">图 14：S2ST 模态下、按语言方向校准后的每方向 MOS（自然度）平均分。Bootstrap 95% 置信区间宽度平均约 ±0.1。</p></div>
+<div class="cap" id="fig-mos-results-1"><img class="fig" src="../assets/figures/2308.11596/fig-mos-results-1.png" loading="lazy" alt="Figure 14: Language Direction level mean MOS (naturalness) scores per direction for S2ST modality, after calibration. Bo"><span class="cap-k">图</span><p class="en">Figure 14: Language Direction level mean MOS (naturalness) scores per direction for S2ST modality, after calibration. Bootstrapped 95% CI widths are ∼±0.1 on average.</p><p class="zh">图 14：S2ST 模态下、按语言方向校准后的每方向 MOS（自然度）平均分。Bootstrap 95% 置信区间宽度平均约 ±0.1。</p></div>
 <div class="eq" id="eq-mos-results-12"><code>60</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-modality-2"><span class="t-zh">模态</span><span class="t-en">Modality</span></h3><div class="pblk" id="p-modality-2-1">
@@ -3016,7 +2980,7 @@ BLASER 2.0 (S2ST) Spearman R: 0.625 (0.776 X-eng) Spearman R: 0.827 (0.871 X-eng
 BLASER 2.0 (S2TT)</span></span></p>
           
         </div>
-<div class="cap" id="fig-correlations-between-asr-bleu-bl-1"><span class="cap-k">图</span><p class="en">Figure 15: Correlations between XSTS and ASR-BLEU and Blaser 2.0 for S2ST task and between XSTS and BLEU and Blaser 2.0 for S2TT task. Blaser 2.0 offers superior correlation with XSTS, most notably for eng–X directions where ASR-BLEU and BLEU correlations are much weaker than for X–eng directions.</p><p class="zh">图 15：S2ST 任务上 XSTS 与 ASR-BLEU、Blaser 2.0 的相关性，以及 S2TT 任务上 XSTS 与 BLEU、Blaser 2.0 的相关性。Blaser 2.0 与 XSTS 的相关性更好，在 eng–X 方向上尤为明显——该方向 ASR-BLEU 与 BLEU 的相关性远弱于 X–eng 方向。</p></div>
+<div class="cap" id="fig-correlations-between-asr-bleu-bl-1"><img class="fig" src="../assets/figures/2308.11596/fig-correlations-between-asr-bleu-bl-1.png" loading="lazy" alt="Figure 15: Correlations between XSTS and ASR-BLEU and Blaser 2.0 for S2ST task and between XSTS and BLEU and Blaser 2.0 "><span class="cap-k">图</span><p class="en">Figure 15: Correlations between XSTS and ASR-BLEU and Blaser 2.0 for S2ST task and between XSTS and BLEU and Blaser 2.0 for S2TT task. Blaser 2.0 offers superior correlation with XSTS, most notably for eng–X directions where ASR-BLEU and BLEU correlations are much weaker than for X–eng directions.</p><p class="zh">图 15：S2ST 任务上 XSTS 与 ASR-BLEU、Blaser 2.0 的相关性，以及 S2TT 任务上 XSTS 与 BLEU、Blaser 2.0 的相关性。Blaser 2.0 与 XSTS 的相关性更好，在 eng–X 方向上尤为明显——该方向 ASR-BLEU 与 BLEU 的相关性远弱于 X–eng 方向。</p></div>
 <div class="eq" id="eq-correlations-between-asr-bleu-bl-10"><code>62</code></div>
 <div class="pblk" id="p-correlations-between-asr-bleu-bl-8">
           <p class="en-lines"><span class="sent" data-sid="s-correlations-between-asr-bleu-bl-8-1"><span class="en">5.2.4 Limitations Test set limitations The Fleurs [Conneau et al., 2022] test set is limited in that the different language pairs contain slightly different sets of sentences.</span></span> <span class="sent" data-sid="s-correlations-between-asr-bleu-bl-8-2"><span class="en">Due to the limitations in both the dataset (which contains a maximum of 3 speakers) and timing and cost considerations on the human evaluation front (we evaluated a maximum of two speakers per sentence), we have a lack of diversity in our speaker set per language, which may introduce bias relative to a test set with a larger number of speakers.</span></span> <span class="sent" data-sid="s-correlations-between-asr-bleu-bl-8-3"><span class="en">Limited sample size of human annotators per language We only have a maximum of 5 (but typically 3) annotator evaluations per sentence for each language in our XSTS evaluations.</span></span> <span class="sent" data-sid="s-correlations-between-asr-bleu-bl-8-4"><span class="en">Relatively small samples of annotators mean annotator bias is important to consider.</span></span> <span class="sent" data-sid="s-correlations-between-asr-bleu-bl-8-5"><span class="en">We try to mitigate this by (1) using the median score per sentence for each language to be robust to outliers, (2) using bootstrap re-sampling of annotator scores to estimate language score uncertainty due to finite annotators, and (3) approximate and correct annotator bias with a cross-lingual calibration set.</span></span> <span class="sent" data-sid="s-correlations-between-asr-bleu-bl-8-6"><span class="en">For MOS, several language directions only have a single annotator per item, with no calibration set—this exacerbates issues related to annotator bias.</span></span> <span class="sent" data-sid="s-correlations-between-asr-bleu-bl-8-7"><span class="en">Challenges of implementing reliable human measures of performance Obtaining human measures of translation performance offers several advantages over automated metrics (e.g. while BLEU-like metrics are trivial to “game”, humans are not as easily fooled, and humans are better judges of target translations of high quality but for which word content differs from available reference translations), but human measures of translation quality suffer from their own limitations that are not shared by automated metrics.</span></span> <span class="sent" data-sid="s-correlations-between-asr-bleu-bl-8-8"><span class="en">XSTS was designed to mitigate some of these limitations (annotator bias and variance) but, e.g., recency bias and other human biases may still persist.</span></span> <span class="sent" data-sid="s-correlations-between-asr-bleu-bl-8-9"><span class="en">We continue to develop additional recommendations and clarifications, improve annotator trainings and reduce cognitive load, but obtaining reliable human measures of translation quality continues to be an active area of research and development.</span></span></p>
@@ -3070,7 +3034,7 @@ We build a replicable noise-robustness evaluation benchmark based on Fleurs (&qu
 SNR (dB) SNR (dB) WHISPER-LARGE-V2 SEAMLESSM4T-LARGE</span></span></p>
           
         </div>
-<div class="cap" id="fig-experimental-framework-1"><span class="cap-k">图</span><p class="en">Figure 16: Evaluation results of model robustness against background noises. We report average test BLEU and test WER over 4 languages (3 language families) for X–eng S2TT and ASR on Fleurs with low-to-high input noise level (high-to-low SNR). Simulated noises are sampled from MUSAN [Snyder et al., 2015] on the “noise” and “music” categories.</p><p class="zh">图 16：模型对背景噪声鲁棒性的评测结果。报告 X–eng S2TT 与 ASR 在 4 种语言（3 个语系）上的平均 test BLEU 与 test WER，输入噪声从低到高（SNR 从高到低）。模拟噪声采样自 MUSAN [Snyder et al., 2015] 的「noise」与「music」类别。</p></div>
+<div class="cap" id="fig-experimental-framework-1"><img class="fig" src="../assets/figures/2308.11596/fig-experimental-framework-1.png" loading="lazy" alt="Figure 16: Evaluation results of model robustness against background noises. We report average test BLEU and test WER ov"><span class="cap-k">图</span><p class="en">Figure 16: Evaluation results of model robustness against background noises. We report average test BLEU and test WER over 4 languages (3 language families) for X–eng S2TT and ASR on Fleurs with low-to-high input noise level (high-to-low SNR). Simulated noises are sampled from MUSAN [Snyder et al., 2015] on the “noise” and “music” categories.</p><p class="zh">图 16：模型对背景噪声鲁棒性的评测结果。报告 X–eng S2TT 与 ASR 在 4 种语言（3 个语系）上的平均 test BLEU 与 test WER，输入噪声从低到高（SNR 从高到低）。模拟噪声采样自 MUSAN [Snyder et al., 2015] 的「noise」与「music」类别。</p></div>
 <div class="pblk" id="p-experimental-framework-4">
           <p class="en-lines"><span class="sent" data-sid="s-experimental-framework-4-1"><span class="en">audios, we sampled audio clips from MUSAN [Snyder et al., 2015] on the “noise” and “music” categories, and mixed them with the original Fleurs speech audios under different signalto-noise ratio (SNR): 10, 5, 0, -5, -10, -15 and -20.</span></span> <span class="sent" data-sid="s-experimental-framework-4-2"><span class="en">We compare models by BLEU-SNR curves (for S2TT) or WER-SNR curves (for ASR), which illustrate the degree of model performance degradation when the noise level of speech inputs increases (i.e., when SNR decreases).</span></span> <span class="sent" data-sid="s-experimental-framework-4-3"><span class="en">Both SeamlessM4T-Large and Whisper-Large-v2 achieve high performance mostly in high-resource languages, where stress tests in the noisy speech setup are more necessary and informative.</span></span> <span class="sent" data-sid="s-experimental-framework-4-4"><span class="en">For low-resource languages, the clean speech setup is already challenging, let alone the noisy one.</span></span> <span class="sent" data-sid="s-experimental-framework-4-5"><span class="en">We hence focus on 4 high-resource languages (French, Spanish, Modern Standard Arabic, and Russian) from 3 different language families for our noise-robustness analysis on SeamlessM4T-Large and Whisper-Large-v2.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-experimental-framework-4-1"><span class="zh">生成模拟噪声 63 音频时，我们从 MUSAN [Snyder et al., 2015] 的「noise」与「music」类别采样音频片段，按不同信噪比（SNR）混入原始 Fleurs 语音：10、5、0、-5、-10、-15、-20 dB。</span></span><span class="sent" data-sid="s-experimental-framework-4-2"><span class="zh">我们用 BLEU-SNR 曲线（S2TT）或 WER-SNR 曲线（ASR）对比模型——曲线展示语音输入噪声增大（即 SNR 下降）时模型性能下降的程度。</span></span><span class="sent" data-sid="s-experimental-framework-4-3"><span class="zh">SeamlessM4T-Large 与 Whisper-Large-v2 都主要在高资源语言上取得较高性能，这些语言上做噪声压力测试更必要、也更有信息量。</span></span><span class="sent" data-sid="s-experimental-framework-4-4"><span class="zh">对低资源语言，仅干净语音场景就已具挑战性，更不必说噪声场景。</span></span><span class="sent" data-sid="s-experimental-framework-4-5"><span class="zh">因此，我们在噪声鲁棒性分析中聚焦于 4 种来自 3 个不同语系的高资源语言（法语、西班牙语、现代标准阿拉伯语、俄语），评测对象为 SeamlessM4T-Large 与 Whisper-Large-v2 两个模型。</span></span></p>
@@ -3333,19 +3297,17 @@ By comparison, for S2TT in X–eng, Whisper-Large-v2’s added toxicity is 0.31%
 <div class="pblk" id="p-automatic-toxicity-detection-on--8">
           <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--8-1"><span class="en">oci afr kan mlt kea ceb ory guj kor mar pan lit mal vie hin yue nya wol tel sna ast snd jpn tam amh azj slk nso khm dan tha mri cmn ind xho cym tur pes est nld ron rus swh deu ita uzn</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--8-1"><span class="zh">（FLEURS 新增毒性（Added Toxicity）自动检测图：S2TT 与 S2ST 的 eng-X / X-eng 方向，0%–2% 刻度，覆盖 50+ 语种。原始数据照录如下）
-（原始数据照录）
-FLEURS Added Toxicity - S2TT eng-X X-eng 0% 1% 2% 0% 1% 2% oci pan kan tel ory lao kor guj mar afr lin cmn lit snd mlt yue zul nya tam swh ben kea khm ast sna ind tha mal jav glg heb est hye gle pes pol tur kir deu dan kaz bul lug fra ukr pbt nld tgk ckb ron uzn cym FLEURS Added Toxicity - S2ST eng-X X-eng 0% 1% 2% 0% 1% 2% oci afr kan mlt kea ceb ory guj kor mar pan lit mal vie hin yue nya wol tel sna ast snd jpn tam amh azj slk nso khm dan tha mri cmn ind xho cym tur pes est nld ron rus swh deu ita uzn</span></span></p>
+FLEURS 新增毒性 - S2TT eng-X X-eng 0% 1% 2% 0% 1% 2% oci pan kan tel ory lao kor guj mar afr lin cmn lit snd mlt yue zul nya tam swh ben kea khm ast sna ind tha mal jav glg heb est hye gle pes pol tur kir deu dan kaz bul lug fra ukr pbt nld tgk ckb ron uzn cym FLEURS 新增毒性 - S2ST eng-X X-eng 0% 1% 2% 0% 1% 2% oci afr kan mlt kea ceb ory guj kor mar pan lit mal vie hin yue nya wol tel sna ast snd jpn tam amh azj slk nso khm dan tha mri cmn ind xho cym tur pes est nld ron rus swh deu ita uzn</span></span></p>
           
         </div>
-<div class="cap" id="fig-automatic-toxicity-detection-on--1"><span class="cap-k">图</span><p class="en">Figure 17: Added toxicity for X–eng and eng–X for S2TT (left) and S2ST (right) in Fleurs. The figure shows the number of outputs with added toxicity per language both for SeamlessM4T-Large (orange) and Whisper-Large-v2 and Whisper-Large-v2 + YourTTSsystems when available (blue).</p><p class="zh">图 17：Fleurs 上 X–eng 与 eng–X 方向的 S2TT（左）与 S2ST（右）新增毒性。图中给出每种语言下含新增毒性的输出数量，分别对应 SeamlessM4T-Large（橙）与可对比的 Whisper-Large-v2、Whisper-Large-v2 + YourTTS 系统（蓝）。</p></div>
+<div class="cap" id="fig-automatic-toxicity-detection-on--1"><img class="fig" src="../assets/figures/2308.11596/fig-automatic-toxicity-detection-on--1.png" loading="lazy" alt="Figure 17: Added toxicity for X–eng and eng–X for S2TT (left) and S2ST (right) in Fleurs. The figure shows the number of"><span class="cap-k">图</span><p class="en">Figure 17: Added toxicity for X–eng and eng–X for S2TT (left) and S2ST (right) in Fleurs. The figure shows the number of outputs with added toxicity per language both for SeamlessM4T-Large (orange) and Whisper-Large-v2 and Whisper-Large-v2 + YourTTSsystems when available (blue).</p><p class="zh">图 17：Fleurs 上 X–eng 与 eng–X 方向的 S2TT（左）与 S2ST（右）新增毒性。图中给出每种语言下含新增毒性的输出数量，分别对应 SeamlessM4T-Large（橙）与可对比的 Whisper-Large-v2、Whisper-Large-v2 + YourTTS 系统（蓝）。</p></div>
 <div class="eq" id="eq-automatic-toxicity-detection-on--4"><code>69</code></div>
 <div class="eq" id="eq-automatic-toxicity-detection-on--5"><code>Holistic Bias Toxicity Delta</code></div>
 <div class="eq" id="eq-automatic-toxicity-detection-on--6"><code>1% 2% 3% 4%</code></div>
 <div class="pblk" id="p-automatic-toxicity-detection-on--9">
           <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--9-1"><span class="en">ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--9-1"><span class="zh">（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）
-（原始数据照录）
-69 Holistic Bias Toxicity Delta 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 Distribution of toxic translations ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd</span></span></p>
+69 Holistic Bias 毒性增量 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 毒性翻译分布 ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd</span></span></p>
           
         </div>
 <div class="eq" id="eq-automatic-toxicity-detection-on--7"><code>1.0</code></div>
@@ -3362,11 +3324,10 @@ FLEURS Added Toxicity - S2TT eng-X X-eng 0% 1% 2% 0% 1% 2% oci pan kan tel ory l
 <div class="pblk" id="p-automatic-toxicity-detection-on--10">
           <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--10-1"><span class="en">ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--10-1"><span class="zh">（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）
-（原始数据照录）
-69 Holistic Bias Toxicity Delta 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 Distribution of toxic translations ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd</span></span></p>
+69 Holistic Bias 毒性增量 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 毒性翻译分布 ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd</span></span></p>
           
         </div>
-<div class="cap" id="fig-automatic-toxicity-detection-on--2"><span class="cap-k">图</span><p class="en">Figure 18: (left) Added toxicity for eng–X, S2TT in HolisticBias. Showing top 40 languages. The plotted languages are above 500 samples of added toxicity—0.1% of the dataset. (right) Different languages differ in distributions of toxic terms as a function of demographic axes, with some languages’ toxicity being dominated by only one or two axes. The figure shows the number of outputs with added toxicity per language both for SeamlessM4T-Large (orange) and Whisper-Large-v2 + NLLB-3.3B cascaded systems (blue).</p><p class="zh">图 18：（左）HolisticBias 中 eng–X、S2TT 的新增毒性，展示前 40 种语言。所绘语言的新增毒性样本数均超过 500（占数据集 0.1%）。（右）不同语言在人口统计学维度上的毒性词分布存在差异，部分语言的毒性仅由一两个维度主导。图中给出每种语言下含新增毒性的输出数量，分别对应 SeamlessM4T-Large（橙）与 Whisper-Large-v2 + NLLB-3.3B 级联系统（蓝）。</p></div></section>
+<div class="cap" id="fig-automatic-toxicity-detection-on--2"><img class="fig" src="../assets/figures/2308.11596/fig-automatic-toxicity-detection-on--2.png" loading="lazy" alt="Figure 18: (left) Added toxicity for eng–X, S2TT in HolisticBias. Showing top 40 languages. The plotted languages are ab"><span class="cap-k">图</span><p class="en">Figure 18: (left) Added toxicity for eng–X, S2TT in HolisticBias. Showing top 40 languages. The plotted languages are above 500 samples of added toxicity—0.1% of the dataset. (right) Different languages differ in distributions of toxic terms as a function of demographic axes, with some languages’ toxicity being dominated by only one or two axes. The figure shows the number of outputs with added toxicity per language both for SeamlessM4T-Large (orange) and Whisper-Large-v2 + NLLB-3.3B cascaded systems (blue).</p><p class="zh">图 18：（左）HolisticBias 中 eng–X、S2TT 的新增毒性，展示前 40 种语言。所绘语言的新增毒性样本数均超过 500（占数据集 0.1%）。（右）不同语言在人口统计学维度上的毒性词分布存在差异，部分语言的毒性仅由一两个维度主导。图中给出每种语言下含新增毒性的输出数量，分别对应 SeamlessM4T-Large（橙）与 Whisper-Large-v2 + NLLB-3.3B 级联系统（蓝）。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-automatic-toxicity-detection-on--2"><span class="t-zh">HolisticBias 数据集上的自动毒性检测</span><span class="t-en">Automatic Toxicity Detection on HolisticBias Dataset</span></h3><div class="pblk" id="p-automatic-toxicity-detection-on--2-1">
           <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-1-1"><span class="en">Figure 18 (left) shows results for S2TT languages with the highest added toxicity when translating HolisticBias from eng–X (note that HolisticBias is only available in English).Here, we observe a slightly higher amount of added toxicity compared to Fleurs for S2TT and a slightly lower amount for S2ST.</span></span> <span class="sent" data-sid="s-automatic-toxicity-detection-on--2-1-2"><span class="en">Overall, HolisticBias shows a prevalence of added toxicity of 0.19% for S2TT and 0.13% for S2ST, averaged across languages.</span></span> <span class="sent" data-sid="s-automatic-toxicity-detection-on--2-1-3"><span class="en">For S2TT, there are 84 languages that are affected by added toxicity.</span></span> <span class="sent" data-sid="s-automatic-toxicity-detection-on--2-1-4"><span class="en">When looking at added toxicity per sentence, less than 0.003 % of the outputs contain more than one added toxicity token.</span></span> <span class="sent" data-sid="s-automatic-toxicity-detection-on--2-1-5"><span class="en">Figure 19 (left) shows results for S2ST languages when translating the HolisticBias dataset.</span></span> <span class="sent" data-sid="s-automatic-toxicity-detection-on--2-1-6"><span class="en">In total, there are 34 languages with added toxicity.</span></span></p>
@@ -3416,16 +3377,14 @@ FLEURS Added Toxicity - S2TT eng-X X-eng 0% 1% 2% 0% 1% 2% oci pan kan tel ory l
 <div class="pblk" id="p-automatic-toxicity-detection-on--2-7">
           <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-7-1"><span class="en">Holistic Bias Toxicity Delta</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-7-1"><span class="zh">（图 69：Holistic Bias 毒性增量 1%–4% 刻度及毒性翻译维度分布。原始数据照录如下）
-（原始数据照录）
-69 Holistic Bias Toxicity Delta 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 Distribution of toxic translations ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd</span></span></p>
+69 Holistic Bias 毒性增量 1% 2% 3% 4% ind luo yor ell fin hye ben vie lvs pes eus snd nob pol ckb heb nya 1.0 glg dan hun mkd 0.8 毒性翻译分布 ita tur por spa 0.6 ron deu hrv bos swe 0.4 ces nno mni kir arb swh 0.2 fra mai urd ukr 0.0 ind fin nob ben snd yor ell pes vie luo hye lvs eus ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron arb glg fra dan spa por ita pol nya ckb heb deu hrv tur mai bos kir ukr mkd hun nno mni ces swh swe urd</span></span></p>
           
         </div>
 <div class="eq" id="eq-automatic-toxicity-detection-on--2-2"><code>0.1% 0.2% 0.3%</code></div>
 <div class="pblk" id="p-automatic-toxicity-detection-on--2-8">
           <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-8-1"><span class="en">ind dan pes vie cym fra uzn fin por spa tur</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-8-1"><span class="zh">（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）
-（原始数据照录）
-Holistic Bias Toxicity Delta 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh Distribution of toxic translations 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd</span></span></p>
+Holistic Bias 毒性增量 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh 毒性翻译分布 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd</span></span></p>
           
         </div>
 <div class="eq" id="eq-automatic-toxicity-detection-on--2-3"><code>1.0</code></div>
@@ -3434,8 +3393,7 @@ Holistic Bias Toxicity Delta 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por 
 <div class="pblk" id="p-automatic-toxicity-detection-on--2-9">
           <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-9-1"><span class="en">slk nld est tha ukr swh Distribution of toxic translations</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-9-1"><span class="zh">（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）
-（原始数据照录）
-Holistic Bias Toxicity Delta 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh Distribution of toxic translations 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd</span></span></p>
+Holistic Bias 毒性增量 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh 毒性翻译分布 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd</span></span></p>
           
         </div>
 <div class="eq" id="eq-automatic-toxicity-detection-on--2-6"><code>0.6</code></div>
@@ -3448,11 +3406,10 @@ Holistic Bias Toxicity Delta 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por 
 <div class="pblk" id="p-automatic-toxicity-detection-on--2-10">
           <p class="en-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-10-1"><span class="en">fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-automatic-toxicity-detection-on--2-10-1"><span class="zh">（Holistic Bias 毒性增量图：Toxicity Delta 0.1%–1.0%，以及毒性翻译在 ability/age/body_type/characteristics/cultural/gender_and_sex/nationality/nonce/political_ideologies/race_ethnicity/religion/sexual_orientation/socioeconomic_class 各维度的分布。原始数据照录如下）
-（原始数据照录）
-Holistic Bias Toxicity Delta 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh Distribution of toxic translations 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd</span></span></p>
+Holistic Bias 毒性增量 0.1% 0.2% 0.3% ind dan pes vie cym fra uzn fin por spa tur 1.0 ita ron pol deu swe 0.8 slk nld est tha ukr swh 毒性翻译分布 0.6 tgl urd rus cat ces arb 0.4 jpn hin mlt kor 0.2 tel cmn ben 0.0 fra dan spa por ind fin uzn pes vie cym ability age body_type characteristics cultural gender_and_sex nationality nonce political_ideologies race_ethnicity religion sexual_orientation socioeconomic_class ron kor arb cat tgl ita nld pol tha deu tur hin ukr rus mlt ces est slk swh swe urd</span></span></p>
           
         </div>
-<div class="cap" id="fig-automatic-toxicity-detection-on--2-1"><span class="cap-k">图</span><p class="en">Figure 19: (left) Added toxicity for eng–X, S2ST in HolisticBias. Showing all target languages. (right) Similarly to S2TT, different languages differ in distributions of toxic terms as a function of the demographic axis, with some languages’ toxicity being dominated by only one or two axes.</p><p class="zh">图 19：（左）HolisticBias 中 eng–X、S2ST 的新增毒性，展示所有目标语言。（右）与 S2TT 类似，不同语言在人口统计学维度上的毒性词分布存在差异，部分语言的毒性仅由一两个维度主导。</p></div></section>
+<div class="cap" id="fig-automatic-toxicity-detection-on--2-1"><img class="fig" src="../assets/figures/2308.11596/fig-automatic-toxicity-detection-on--2-1.png" loading="lazy" alt="Figure 19: (left) Added toxicity for eng–X, S2ST in HolisticBias. Showing all target languages. (right) Similarly to S2T"><span class="cap-k">图</span><p class="en">Figure 19: (left) Added toxicity for eng–X, S2ST in HolisticBias. Showing all target languages. (right) Similarly to S2TT, different languages differ in distributions of toxic terms as a function of the demographic axis, with some languages’ toxicity being dominated by only one or two axes.</p><p class="zh">图 19：（左）HolisticBias 中 eng–X、S2ST 的新增毒性，展示所有目标语言。（右）与 S2TT 类似，不同语言在人口统计学维度上的毒性词分布存在差异，部分语言的毒性仅由一两个维度主导。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-human-evaluation-of-added-toxici"><span class="t-zh">新增毒性检测的人工评测</span><span class="t-en">Human evaluation of added toxicity detection</span></h3><div class="pblk" id="p-human-evaluation-of-added-toxici-1">
           <p class="en-lines"><span class="sent" data-sid="s-human-evaluation-of-added-toxici-1-1"><span class="en">As explained in Section 6.4, wordlist-based toxicity detection techniques are known to produce a substantial number of false positives.</span></span> <span class="sent" data-sid="s-human-evaluation-of-added-toxici-1-2"><span class="en">These are typically due to one of two main factors: tokenization issues and toxicity list items that are only toxic in certain contexts.</span></span></p>
@@ -3623,7 +3580,7 @@ S2ST model, so we performed translations on only 17 languages for the S2ST task 
 swe arb ukr fra por ron urd ita cat slk tha dan ces deu spa rus nld Target language WHISPER-LARGE-V2 (ASR)+ NLLB-3.3B SEAMLESSM4T-LARGE</span></span></p>
           
         </div>
-<div class="cap" id="fig-models-2-1"><span class="cap-k">图</span><p class="en">Figure 20: Left: The chrF points difference between masculine and feminine forms for eng–X S2TT using English speech as source and X text translation (masculine or feminine) as reference. Right: The ASR-chrF points difference between masculine and feminine forms for eng–X S2ST using English speech as source and X text translation (masculine or feminine) as reference.</p><p class="zh">图 20：左：eng–X S2TT 以英语语音为源、以 X 文本翻译（阳性或阴性）为参考时，阳性与阴性形式之间的 chrF 分数差。右：eng–X S2ST 以英语语音为源、以 X 文本翻译（阳性或阴性）为参考时，阳性与阴性形式之间的 ASR-chrF 分数差。</p></div>
+<div class="cap" id="fig-models-2-1"><img class="fig" src="../assets/figures/2308.11596/fig-models-2-1.png" loading="lazy" alt="Figure 20: Left: The chrF points difference between masculine and feminine forms for eng–X S2TT using English speech as "><span class="cap-k">图</span><p class="en">Figure 20: Left: The chrF points difference between masculine and feminine forms for eng–X S2TT using English speech as source and X text translation (masculine or feminine) as reference. Right: The ASR-chrF points difference between masculine and feminine forms for eng–X S2ST using English speech as source and X text translation (masculine or feminine) as reference.</p><p class="zh">图 20：左：eng–X S2TT 以英语语音为源、以 X 文本翻译（阳性或阴性）为参考时，阳性与阴性形式之间的 chrF 分数差。右：eng–X S2ST 以英语语音为源、以 X 文本翻译（阳性或阴性）为参考时，阳性与阴性形式之间的 ASR-chrF 分数差。</p></div>
 <div class="pblk" id="p-models-2-7">
           <p class="en-lines"><span class="sent" data-sid="s-models-2-7-1"><span class="en">S2TT X-eng (Masculine - Feminine) chrF</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-models-2-7-1"><span class="zh">（页码行：2。）</span></span></p>
@@ -3642,7 +3599,7 @@ swe arb ukr fra por ron urd ita cat slk tha dan ces deu spa rus nld Target langu
 bul swe mar por arb ron ukr urd fra ell tam lvs tha cat nld deu spa rus Source language WHISPER-LARGE-V2 SEAMLESSM4T-LARGE WHISPER-LARGE-V2 + YOURTTS</span></span></p>
           
         </div>
-<div class="cap" id="fig-models-2-2"><span class="cap-k">图</span><p class="en">Figure 21: (left) The chrF points difference between masculine and feminine for X–eng S2TT using X speech synthesized by the masculine or feminine version of the text and English text as a reference. (right) The ASR-chrF points difference between masculine and feminine forms for X–eng S2ST using X speech synthesized by the masculine or feminine version of text and English text as reference.</p><p class="zh">图 21：（左）X–eng S2TT 以由阳性或阴性文本版本合成的 X 语音为源、以英文文本为参考时，阳性与阴性之间的 chrF 分数差。（右）X–eng S2ST 以由阳性或阴性文本版本合成的 X 语音为源、以英文文本为参考时，阳性与阴性形式之间的 ASR-chrF 分数差。</p></div>
+<div class="cap" id="fig-models-2-2"><img class="fig" src="../assets/figures/2308.11596/fig-models-2-2.png" loading="lazy" alt="Figure 21: (left) The chrF points difference between masculine and feminine for X–eng S2TT using X speech synthesized by"><span class="cap-k">图</span><p class="en">Figure 21: (left) The chrF points difference between masculine and feminine for X–eng S2TT using X speech synthesized by the masculine or feminine version of the text and English text as a reference. (right) The ASR-chrF points difference between masculine and feminine forms for X–eng S2ST using X speech synthesized by the masculine or feminine version of text and English text as reference.</p><p class="zh">图 21：（左）X–eng S2TT 以由阳性或阴性文本版本合成的 X 语音为源、以英文文本为参考时，阳性与阴性之间的 chrF 分数差。（右）X–eng S2ST 以由阳性或阴性文本版本合成的 X 语音为源、以英文文本为参考时，阳性与阴性形式之间的 ASR-chrF 分数差。</p></div>
 <div class="pblk" id="p-models-2-10">
           <p class="en-lines"><span class="sent" data-sid="s-models-2-10-1"><span class="en">eng–X.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-models-2-10-1"><span class="zh">eng–X。</span></span></p>
@@ -3668,7 +3625,7 @@ bul swe mar por arb ron ukr urd fra ell tam lvs tha cat nld deu spa rus Source l
 ell tam tha cat nld spa deu rus mar swe bul lav por ron arb ukr urd fra Source language WHISPER-LARGE-V2 + YOURTTS SEAMLESSM4T-LARGE</span></span></p>
           
         </div>
-<div class="cap" id="fig-models-2-3"><span class="cap-k">图</span><p class="en">Figure 22: (left) The supervised Blaser 2.0 points difference between masculine and feminine forms for eng–X S2ST using English speech as the source and X text translation (masculine and feminine) as reference. The results are averaged from three experiments. (right) The supervised Blaser 2.0 points difference for X–eng S2ST using X speech synthesized by the masculine or feminine version of text and English text as reference.</p><p class="zh">图 22：（左）eng–X S2ST 以英语语音为源、以 X 文本翻译（阳性与阴性）为参考时，阳性与阴性形式之间的有监督 Blaser 2.0 分数差，结果为三次实验的平均。（右）X–eng S2ST 以由阳性或阴性文本版本合成的 X 语音为源、以英文文本为参考时的有监督 Blaser 2.0 分数差。</p></div>
+<div class="cap" id="fig-models-2-3"><img class="fig" src="../assets/figures/2308.11596/fig-models-2-3.png" loading="lazy" alt="Figure 22: (left) The supervised Blaser 2.0 points difference between masculine and feminine forms for eng–X S2ST using "><span class="cap-k">图</span><p class="en">Figure 22: (left) The supervised Blaser 2.0 points difference between masculine and feminine forms for eng–X S2ST using English speech as the source and X text translation (masculine and feminine) as reference. The results are averaged from three experiments. (right) The supervised Blaser 2.0 points difference for X–eng S2ST using X speech synthesized by the masculine or feminine version of text and English text as reference.</p><p class="zh">图 22：（左）eng–X S2ST 以英语语音为源、以 X 文本翻译（阳性与阴性）为参考时，阳性与阴性形式之间的有监督 Blaser 2.0 分数差，结果为三次实验的平均。（右）X–eng S2ST 以由阳性或阴性文本版本合成的 X 语音为源、以英文文本为参考时的有监督 Blaser 2.0 分数差。</p></div>
 <div class="pblk" id="p-models-2-14">
           <p class="en-lines"><span class="sent" data-sid="s-models-2-14-1"><span class="en">• In SeamlessM4T-LargeS2TT, the translation quality deteriorates for all the languages except Thai when using the feminine reference, and is especially noticeable in languages like Catalan (with a significant 10.3 chrF points difference), Slovak (10.1), and Spanish (10.0).</span><button class="mk feat" data-sid="s-models-2-14-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-models-2-14-2"><span class="en">For the Whisper-Large-v2 + NLLB-3.3B combination, a decline in translation quality is observed across all languages.</span></span> <span class="sent" data-sid="s-models-2-14-3"><span class="en">The highest differences are found in Catalan (10.7), Spanish (10.3), and Arabic (10.2).</span></span> <span class="sent" data-sid="s-models-2-14-4"><span class="en">It’s worth mentioning that the biases’ distribution over languages is similar between SeamlessM4T-Large and the Whisper-Large-v2 + NLLB-3.3B combination, with Thai being the only exception.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-models-2-14-1"><span class="zh">• 在 SeamlessM4T-Large 的 S2TT 中，除泰语外所有语言在使用阴性参考时翻译质量都会变差，在 Catalan（chrF 差高达 10.3 分）、Slovak（10.1）与 Spanish（10.0）等语言中尤为明显。</span><button class="mk feat" data-sid="s-models-2-14-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-models-2-14-2"><span class="zh">对 Whisper-Large-v2 + NLLB-3.3B 组合，所有语言也都出现翻译质量下降。</span></span><span class="sent" data-sid="s-models-2-14-3"><span class="zh">差距最大的是 Catalan（10.7）、Spanish（10.3）与 Arabic（10.2）。</span></span><span class="sent" data-sid="s-models-2-14-4"><span class="zh">值得一提的是，偏见在各语言上的分布在 SeamlessM4T-Large 与 Whisper-Large-v2 + NLLB-3.3B 组合之间相似，泰语是唯一例外。</span></span></p>
@@ -3884,7 +3841,7 @@ hand, the highest differences in Whisper-Large-v2 are with Spanish (5.3), Urdu (
           <p class="zh-lines"><span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--6-1"><span class="zh">（性别极性图：S2TT eng-X（Masculine − Feminine）chrF 差（–4/0/4/8/12，目标语言 mar、bul、lit、por、arb、ron、ukr、urd、fra、ell、ita、tam、bel、nld、slv、tha、cat、lvs、slk、deu、rus、spa、ces、dan、swe）；S2ST eng-X 同口径（swe、arb、ukr、fra、por、ron、urd、ita、cat、slk、tha、dan、ces、deu、spa、rus、nld）；系统：WHISPER-LARGE-V2 (ASR)+NLLB-3.3B 与 SEAMLESSM4T-LARGE。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-x-eng-seamlessm4t-whisper-large--1"><span class="cap-k">图</span><p class="en">Figure 23: Gender representation of English evaluation datasets (EuroParl, Flores, Fleurs, CoVoST 2, LibriSpeech and MultilingualLibriSpeech), and training mined data (SeamlessAlign). Vertical axis show the percentage of masculine representation and horizontal axis show the percentage of feminine representation.</p><p class="zh">图 23：英语评测数据集（EuroParl、FLORES、Fleurs、CoVoST 2、LibriSpeech、MultilingualLibriSpeech）与训练挖掘数据（SeamlessAlign）的性别呈现。纵轴为阳性呈现百分比，横轴为阴性呈现百分比。</p></div>
+<div class="cap" id="fig-x-eng-seamlessm4t-whisper-large--1"><img class="fig" src="../assets/figures/2308.11596/fig-x-eng-seamlessm4t-whisper-large--1.png" loading="lazy" alt="Figure 23: Gender representation of English evaluation datasets (EuroParl, Flores, Fleurs, CoVoST 2, LibriSpeech and Mul"><span class="cap-k">图</span><p class="en">Figure 23: Gender representation of English evaluation datasets (EuroParl, Flores, Fleurs, CoVoST 2, LibriSpeech and MultilingualLibriSpeech), and training mined data (SeamlessAlign). Vertical axis show the percentage of masculine representation and horizontal axis show the percentage of feminine representation.</p><p class="zh">图 23：英语评测数据集（EuroParl、FLORES、Fleurs、CoVoST 2、LibriSpeech、MultilingualLibriSpeech）与训练挖掘数据（SeamlessAlign）的性别呈现。纵轴为阳性呈现百分比，横轴为阴性呈现百分比。</p></div>
 <div class="pblk" id="p-x-eng-seamlessm4t-whisper-large--7">
           <p class="en-lines"><span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--7-1"><span class="en">6.3.5 Bias Key Findings In this section, we conducted a set of comprehensive evaluations on translation biases for S2TT and S2ST.</span></span> <span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--7-2"><span class="en">We demonstrate the following: (1) in the absence of gender information, SeamlessM4T-Large exhibits an average preference of ∼10% towards translating to the masculine form (for both modalities); (2) utilizing feminine form as the source input leads to lower quality English translations compared to its masculine counterpart, showing a lack of robustness against gender inflection by ∼3% ; (3) SeamlessM4T-Large gets comparable bias results to the state-of-the-art, and (4) our gender representation analysis reveals an overrepresentation of masculine lexica compared to feminine in the analyzed datasets.</span></span> <span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--7-3"><span class="en">More</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--7-1"><span class="zh">6.3.5 偏见关键发现 本节中，我们对 S2TT 与 S2ST 的翻译偏见做了一组综合评测。</span></span><span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--7-2"><span class="zh">我们证明：(1) 在缺乏性别信息时，SeamlessM4T-Large 平均约有 10% 倾向译成阳性形式（两个模态均如此）；(2) 以阴性形式为源输入，会导致英译质量较对应阳性更低，对性别变化缺乏约 3% 的鲁棒性；(3) SeamlessM4T-Large 的偏见结果可与最先进水平相比；以及 (4) 我们的性别呈现分析揭示：所分析数据集中阳性词汇相对阴性词汇呈现过度。</span></span><span class="sent" data-sid="s-x-eng-seamlessm4t-whisper-large--7-3"><span class="zh">更具体地说，传统的语音到语音翻译系统依赖由多个子系统逐级完成翻译的级联系统，使可扩展、高性能的统一语音翻译系统遥不可及。</span></span></p>

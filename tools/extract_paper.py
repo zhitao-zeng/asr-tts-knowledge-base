@@ -43,7 +43,8 @@ SEC_NUM_RE = re.compile(r"^(\d+(?:\.\d+)*)\.?\s+\S")   # "1. Introduction" / "2.
 SEC_NUM_ONLY_RE = re.compile(r"^(\d+(?:\.\d+)*)\.?$")  # "2" / "2.1"（编号独占一行）
 APPX_INLINE_RE = re.compile(r"^([A-Z])(?:\.(\d+(?:\.\d+)*))?\.?\s+\S")  # "C. Text Standardization" / "A.1 xxx"
 APPX_NUM_ONLY_RE = re.compile(r"^[A-Z](?:\.\d+(?:\.\d+)*)?\.?$")        # "C" / "A.1"（独占一行）
-CAPTION_RE = re.compile(r"^(Figure|Table|Fig\.?|TABLE|FIGURE)\s*\d+\s*[:.]?", re.I)
+CAPTION_RE = re.compile(r"^(Figure|Table|Fig\.?|TABLE|FIGURE)\s*\d+[A-Z]?\s*[:.;]", re.I)  # 真 caption 编号后必有标点；"Figure 2 shows/presents…" 是正文引用，不是 caption
+CAPTION_VERB_RE = re.compile(r"^(Figure|Table|Fig\.?)\s*\d+[A-Z]?\s+(shows?|presents?|plots?|depicts?|illustrates?|demonstrates?|summarizes?|reports?|compares?|lists?|gives?|provides?|describes?|displays?|visualizes?|plots?)\b", re.I)  # 双保险：编号后紧跟小写动词必为正文引用
 EQNUM_RE = re.compile(r"\((\d+)\)\s*$")                # 行尾公式编号 "(1)"
 PSEUDO_H1 = {"abstract", "references", "bibliography", "acknowledgements", "acknowledgments", "appendix"}
 # IEEEtran 风格：H1 "II. METHOD"（罗马数字+全大写，常规字重）、H2 "A. Learning ..."（斜体）
@@ -407,8 +408,8 @@ def extract(pdf_path):
                 blocks.append({"type": "heading", "level": 2, "num": None, "page": l["page"], "text": t})
                 i += 1
                 continue
-        # 3.5 图表标题：块首行匹配 Figure/Table N:
-        if l["block_first"] and CAPTION_RE.match(t):
+        # 3.5 图表标题：块首行匹配 Figure/Table N:（编号后必须有标点；动词开头是正文引用）
+        if l["block_first"] and CAPTION_RE.match(t) and not CAPTION_VERB_RE.match(t):
             flush_para()
             cap_lines = [x["text"] for x in lines[i:i + l["block_lines"]]]
             kind = "figure_caption" if re.match(r"^(Figure|Fig\.?|FIGURE)", t, re.I) else "table_caption"

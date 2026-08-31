@@ -92,6 +92,7 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 }
 /* 图/表标题、公式、表格主体 */
 .cap{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:12px 0;font-size:13px}
+.cap img.fig{display:block;max-width:100%;margin:2px auto 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .cap-k{display:inline-block;font-size:11px;font-weight:700;color:#0f766e;background:#ccfbf1;border-radius:6px;padding:1px 7px;margin-right:6px}
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
@@ -133,7 +134,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
     <h1>NIM4-ASR：迈向高效、鲁棒、可定制的实时 LLM 语音识别</h1>
     <div class="en-title">NIM4-ASR: Towards Efficient, Robust, and Customizable Real-Time LLM-Based ASR</div>
     <div class="meta">
-      关联模型：<a href="../../index.html#/model/nim4_asr">NIM4-ASR</a>（NVIDIA · 2026-04） ·
+      关联模型：<a href="../../index.html#/model/nim4_asr">NIM4-ASR</a>（NIO / 蔚来 · 2026-04） ·
       全文 268 个语块 · 讲解 22 条（精选 12 条）
     </div>
   </div>
@@ -254,7 +255,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-3-1"><span class="zh">（图 1 架构标签：语音嵌入 → 语音适配器；示例请求「Give me your top picks for delicious lattes at NIO House」；流式语音编码器；NIO House 检索；音素假设（Phoneme hypos）；音素头；热词库；编码器表示。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-2-1-1"><span class="cap-k">图</span><p class="en">Figure 1: The overall architecture of NIM4-ASR.</p><p class="zh">图 1：NIM4-ASR 的整体架构。</p></div>
+<div class="cap" id="fig-2-1-1"><img class="fig" src="../assets/figures/2604.18105/fig-2-1-1.png" loading="lazy" alt="Figure 1: The overall architecture of NIM4-ASR."><span class="cap-k">图</span><p class="en">Figure 1: The overall architecture of NIM4-ASR.</p><p class="zh">图 1：NIM4-ASR 的整体架构。</p></div>
 <div class="pblk" id="p-2-1-4">
           <p class="en-lines"><span class="sent" data-sid="s-2-1-4-1"><span class="en">As shown in Figure 1, NIM4-ASR follows a modular encoder–adaptor–LLM architecture comprising four components.</span></span> <span class="sent" data-sid="s-2-1-4-2"><span class="en">Before being fed into the model, raw speech is first converted into 80-dimensional log-Mel spectrograms using a 25 ms window with a 10 ms frame shift, followed by global mean and variance normalization.</span></span> <span class="sent" data-sid="s-2-1-4-3"><span class="en">The details of the four main components are described below:</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-4-1"><span class="zh">如图 1 所示，NIM4-ASR 采用模块化的「编码器–适配器–LLM」架构，由四个组件构成。</span></span><span class="sent" data-sid="s-2-1-4-2"><span class="zh">在进入模型之前，原始语音先被转换成 80 维 log-Mel 频谱图：25 ms 窗长、10 ms 帧移，再做全局均值方差归一化。</span></span><span class="sent" data-sid="s-2-1-4-3"><span class="zh">下面分别介绍这四个主要组件。</span></span></p>
@@ -312,7 +313,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-2-4-1"><span class="zh">（图 2 下：NIM4-ASR 六阶段——Stage 2 Alignment：🔥LLM 后 ❄LLM（Frozen）；🔥Adaptor；❄Encoder_init；Stage 3 IA-SFT（迭代更新）；Stage 4 Late joint SFT：🔥LLM/🔥Adaptor/🔥Encoder_Final；❄Encoder_mid；Initialize/Update；Stage 1 Pre-training：🔥CTC head；RAG 模块微调：🔥Phoneme head；CKA-Triggered 触发最终更新。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-2-2-1"><span class="cap-k">图</span><p class="en">Figure 2: Comparison of training pipelines from encoder pretraining to joint SFT for conventional LLM-based ASR and our NIM4-ASR.</p><p class="zh">图 2：传统 LLM 语音模型与 NIM4-ASR 从编码器预训练到联合 SFT 的训练流水线对比。</p></div></section>
+<div class="cap" id="fig-2-2-1"><img class="fig" src="../assets/figures/2604.18105/fig-2-2-1.png" loading="lazy" alt="Figure 2: Comparison of training pipelines from encoder pretraining to joint SFT for conventional LLM-based ASR and our "><span class="cap-k">图</span><p class="en">Figure 2: Comparison of training pipelines from encoder pretraining to joint SFT for conventional LLM-based ASR and our NIM4-ASR.</p><p class="zh">图 2：传统 LLM 语音模型与 NIM4-ASR 从编码器预训练到联合 SFT 的训练流水线对比。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-2-2-1"><span class="secnum">2.2.1</span> <span class="t-zh">阶段 1：编码器预训练</span><span class="t-en">Stage 1: Encoder Pre-training</span></h3><div class="pblk" id="p-2-2-1-1">
           <p class="en-lines"><span class="sent" data-sid="s-2-2-1-1-1"><span class="en">To reduce the modality gap between encoder representations and the LLM embedding space, we adopt an improved variant of Connectionist Temporal Classification (CTC) (Graves et al., 2006)—namely CR-CTC (Yao et al., 2024)—as the pretraining objective.</span></span> <span class="sent" data-sid="s-2-2-1-1-2"><span class="en">As illustrated in Figure 2, the model architecture during pretraining consists of the encoder paired with a CTC head.</span></span> <span class="sent" data-sid="s-2-2-1-1-3"><span class="en">In contrast to the Attention-based Encoder-Decoder (AED) commonly used in prior work (Xu et al., 2025b, 2026), CTC encourages the encoder to produce low-entropy, phoneme-discriminative representations that align more naturally with the LLM’s embedding space, thereby reducing cross-modal alignment overhead and reserving more model capacity for the ASR task.</span><button class="mk feat" data-sid="s-2-2-1-1-3" title="查看讲解">解</button></span></p>
@@ -685,7 +686,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <section>
       <h3 class="sech lv2" id="sec-3-2"><span class="secnum">3.2</span> <span class="t-zh">评测结果</span><span class="t-en">Evaluation Results</span></h3></section>
 <section>
-      <h3 class="sech lv2" id="sec-3-2-1"><span class="secnum">3.2.1</span> <span class="t-zh">公开基准结果</span><span class="t-en">Public Benchmarks</span></h3><div class="cap" id="tab-3-2-1-1"><span class="cap-k">表</span><p class="en">Table 2 reports the comparison results on public benchmarks. For NIM4-ASR, we report both offline and streaming inference results. The offline setting reflects the upper-bound performance when full acoustic context is available, while the streaming setting evaluates real-time recognition.</p><p class="zh">Table 2 报告了公开基准上的对比结果。对 NIM4-ASR，我们同时汇报离线和流式两种推理设置：离线代表在有完整声学上下文时的性能上限，流式则反映实时识别能力。</p></div>
+      <h3 class="sech lv2" id="sec-3-2-1"><span class="secnum">3.2.1</span> <span class="t-zh">公开基准结果</span><span class="t-en">Public Benchmarks</span></h3><div class="pblk" id="tab-3-2-1-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-3-2-1-1-s1"><span class="en">Table 2 reports the comparison results on public benchmarks. For NIM4-ASR, we report both offline and streaming inference results. The offline setting reflects the upper-bound performance when full acoustic context is available, while the streaming setting evaluates real-time recognition.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-3-2-1-1-s1"><span class="zh">Table 2 报告了公开基准上的对比结果。对 NIM4-ASR，我们同时汇报离线和流式两种推理设置：离线代表在有完整声学上下文时的性能上限，流式则反映实时识别能力。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-3-2-1-1">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-1-1-1"><span class="en">Overall, NIM4-ASR shows strong competitiveness in the offline setting.</span></span> <span class="sent" data-sid="s-3-2-1-1-2"><span class="en">It consistently outperforms baselines with smaller model sizes and achieves comparable or superior results against systems with more than 8B parameters.</span></span> <span class="sent" data-sid="s-3-2-1-1-3"><span class="en">Across open-source benchmarks, NIM4-ASR delivers robust performance on Mandarin, dialectal speech, English, and code-switching.</span></span> <span class="sent" data-sid="s-3-2-1-1-4"><span class="en">The main exception is meeting-style benchmarks, such as WeNetSpeech Meeting, where it performs slightly worse than competing models.</span><button class="mk" data-sid="s-3-2-1-1-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-2-1-1-5"><span class="en">This behavior is expected because NIM4-ASR is primarily optimized for streaming speech interaction scenarios that require low-latency responses to short and medium-length utterances.</span></span> <span class="sent" data-sid="s-3-2-1-1-6"><span class="en">In contrast, longform meeting transcription lies outside the primary design scope of the system and is correspondingly less represented in the training data.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-1-1-1"><span class="zh">总体而言，NIM4-ASR 在离线设置下表现非常有竞争力。</span></span><span class="sent" data-sid="s-3-2-1-1-2"><span class="zh">它稳定优于同等或更小规模的基线，并且在与参数量超过 8B 的系统对比时也能取得可比甚至更优的结果。</span></span><span class="sent" data-sid="s-3-2-1-1-3"><span class="zh">在开源基准上，NIM4-ASR 在普通话、方言、英文和中英混合上都有稳健表现。</span></span><span class="sent" data-sid="s-3-2-1-1-4"><span class="zh">主要的例外是会议类基准，例如 WeNetSpeech Meeting，在这些集合上它略逊于部分竞品。</span><button class="mk" data-sid="s-3-2-1-1-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-3-2-1-1-5"><span class="zh">这符合预期：NIM4-ASR 的主要优化目标是流式语音交互场景——对短到中等长度的语句做低延迟响应。</span></span><span class="sent" data-sid="s-3-2-1-1-6"><span class="zh">相比之下，长音频会议转写本就不在系统的主设计目标之内，在训练数据中的占比也相应较低。</span></span></p>
@@ -704,7 +709,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-3-2-2"><span class="secnum">3.2.2</span> <span class="t-zh">内部基准结果</span><span class="t-en">Internal Benchmarks</span></h3><div class="cap" id="tab-3-2-2-1"><span class="cap-k">表</span><p class="en">Table 3 reports results on our internal benchmarks. Two benchmarks, POI and Media, are entityintensive, comprising dense location names and media-related entities respectively. A key challenge in these domains is that many entities share similar or identical pronunciations, requiring the model to simultaneously resolve subtle acoustic differences and leverage contextual semantics to disambiguate competing candidates. NIM4-ASR achieves particularly strong performance on these benchmarks, driven primarily by comprehensive in-domain training data coverage, but also indicating that our</p><p class="zh">Table 3 报告内部基准上的结果。POI 与 Media 两个基准属于实体密集型，分别包含密集的地名和媒体相关实体。这些领域的关键挑战是许多实体发音相近甚至相同，模型需要同时分辨细微的声学差异并利用上下文语义来消解候选竞争。NIM4-ASR 在这两个基准上表现尤为突出，这主要得益于其充分的 in-domain 训练数据覆盖，但同时也表明我们的……（转下页）</p></div>
+      <h3 class="sech lv2" id="sec-3-2-2"><span class="secnum">3.2.2</span> <span class="t-zh">内部基准结果</span><span class="t-en">Internal Benchmarks</span></h3><div class="pblk" id="tab-3-2-2-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-3-2-2-1-s1"><span class="en">Table 3 reports results on our internal benchmarks. Two benchmarks, POI and Media, are entityintensive, comprising dense location names and media-related entities respectively. A key challenge in these domains is that many entities share similar or identical pronunciations, requiring the model to simultaneously resolve subtle acoustic differences and leverage contextual semantics to disambiguate competing candidates. NIM4-ASR achieves particularly strong performance on these benchmarks, driven primarily by comprehensive in-domain training data coverage, but also indicating that our</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-3-2-2-1-s1"><span class="zh">Table 3 报告内部基准上的结果。POI 与 Media 两个基准属于实体密集型，分别包含密集的地名和媒体相关实体。这些领域的关键挑战是许多实体发音相近甚至相同，模型需要同时分辨细微的声学差异并利用上下文语义来消解候选竞争。NIM4-ASR 在这两个基准上表现尤为突出，这主要得益于其充分的 in-domain 训练数据覆盖，但同时也表明我们的……（转下页）</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-3-2-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-2-1-1"><span class="en">7https://github.com/SpeechColab/Leaderboard</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-1-1"><span class="zh">（脚注 7：SpeechIO 榜单项目地址）</span></span></p>
@@ -714,8 +723,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="pblk" id="p-3-2-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-2-2-1"><span class="en">Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Mandarin AISHELL-1 dev | test</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-2-1"><span class="zh">1.
-（原始数据照录）
-Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Mandarin AISHELL-1 dev | test</span></span></p>
+Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream 模型规模 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B 普通话 AISHELL-1 dev | test</span></span></p>
           
         </div>
 <div class="eq" id="eq-3-2-2-1"><code>1.59 | 1.81 2.40 | 2.41 1.40 | 1.51 0.60 | 0.64 0.76 | 0.81 0.86 | 0.92 0.43 | 0.57 0.43 | 0.60</code></div>
@@ -755,8 +763,7 @@ Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano
 <div class="pblk" id="p-3-2-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-2-3-1"><span class="en">Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Point of Interest (POI) City A</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-3-1"><span class="zh">1.
-（原始数据照录）
-Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Point of Interest (POI) City A</span></span></p>
+Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream 模型规模 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B 兴趣点 (POI) City A</span></span></p>
           
         </div>
 <div class="eq" id="eq-3-2-2-34"><code>7.07 14.68 9.14 8.54 9.41 9.67 3.86 3.85</code></div>

@@ -1348,7 +1348,7 @@ globalThis.PAPER_2604_14493 = {
       {
        "id": "s-5-3-4-1",
        "original": "Nemotron-0.6B 2.47 GB 0.56 s",
-       "zh": "2.\n（原始数据照录）\nNemotron-0.6B 2.47 GB 0.56 s"
+       "zh": "2.\nNemotron-0.6B 2.47 GB 0.56 s"
       }
      ]
     },
@@ -2181,10 +2181,15 @@ globalThis.PAPER_2604_14493 = {
    "blocks": [
     {
      "id": "tab-7-1-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 10,
-     "original": "Table 6 reports the full evaluation results across all quantization variants.",
-     "zh": "Table 6 报告了所有量化变体的完整评测结果。"
+     "sentences": [
+      {
+       "id": "tab-7-1-1-s1",
+       "original": "Table 6 reports the full evaluation results across all quantization variants.",
+       "zh": "Table 6 报告了所有量化变体的完整评测结果。"
+      }
+     ]
     },
     {
      "id": "tab-7-1-2",
@@ -2225,7 +2230,7 @@ globalThis.PAPER_2604_14493 = {
       {
        "id": "s-7-1-3-1",
        "original": "Baseline (PyTorch) PyTorch 2.47 GB CUDA",
-       "zh": "2.\n（原始数据照录）\nBaseline (PyTorch) PyTorch 2.47 GB CUDA"
+       "zh": "2.\nBaseline (PyTorch) PyTorch 2.47 GB CUDA"
       }
      ]
     },
@@ -3456,7 +3461,7 @@ globalThis.PAPER_2604_14493 = {
       {
        "id": "s-A-1-2-1",
        "original": "Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB",
-       "zh": "1.\n（原始数据照录）\nGiga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB"
+       "zh": "1.\nGiga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB"
       }
      ]
     },
@@ -3987,7 +3992,7 @@ globalThis.PAPER_2604_14493 = {
       {
        "id": "s-format-3-1",
        "original": "ONNX fp16 1.30 GB",
-       "zh": "1.\n（原始数据照录）\nONNX fp16 1.30 GB"
+       "zh": "1.\nONNX fp16 1.30 GB"
       }
      ]
     },
@@ -4102,7 +4107,7 @@ globalThis.PAPER_2604_14493 = {
       {
        "id": "s-A-5-4-1",
        "original": "Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.",
-       "zh": "2.\n（原始数据照录）\nChunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy."
+       "zh": "2.\nChunked 配置：(10.0-2.4-2.4=14.8)，采用 AlignAtt 流式策略。"
       }
      ]
     }
@@ -4169,7 +4174,7 @@ globalThis.PAPER_2604_14493 = {
       {
        "id": "s-config-3-1",
        "original": "6.4 s (1.6-4.8-1.6=8)",
-       "zh": "1.\n（原始数据照录）\n6.4 s (1.6-4.8-1.6=8)"
+       "zh": "1.\n6.4 s (1.6-4.8-1.6=8)"
       }
      ]
     },
@@ -4266,7 +4271,7 @@ globalThis.PAPER_2604_14493 = {
       {
        "id": "s-A-7-3-1",
        "original": "Qwen3-ASR-1.7B Batch",
-       "zh": "1.\n（原始数据照录）\nQwen3-ASR-1.7B Batch"
+       "zh": "1.\nQwen3-ASR-1.7B Batch"
       }
      ]
     },
@@ -4387,7 +4392,7 @@ globalThis.PAPER_2604_14493 = {
       {
        "id": "s-A-8-3-1",
        "original": "Nemotron-0.6B 2.47 GB 0.56 s",
-       "zh": "2.\n（原始数据照录）\nNemotron-0.6B 2.47 GB 0.56 s"
+       "zh": "2.\nNemotron-0.6B 2.47 GB 0.56 s"
       }
      ]
     },
@@ -4496,7 +4501,7 @@ globalThis.PAPER_2604_14493 = {
       {
        "id": "s-A-9-3-1",
        "original": "Baseline (PyTorch) PyTorch 2.47 GB CUDA",
-       "zh": "2.\n（原始数据照录）\nBaseline (PyTorch) PyTorch 2.47 GB CUDA"
+       "zh": "2.\nBaseline (PyTorch) PyTorch 2.47 GB CUDA"
       }
      ]
     },
@@ -4617,7 +4622,7 @@ globalThis.PAPER_2604_14493 = {
       {
        "id": "s-A-10-2-1",
        "original": "Giga LS-c LS-o SPGI TED VoxP. int4 k-quant ONNX 0.67 GB CPU",
-       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。\n（原始数据照录）\nGiga LS-c LS-o SPGI TED VoxP. int4 k-quant ONNX 0.67 GB CPU"
+       "zh": "表头续：Giga｜LS-c｜LS-o｜SPGI｜TED｜VoxP.。\nGiga LS-c LS-o SPGI TED VoxP. int4 k-quant ONNX 0.67 GB CPU"
       }
      ]
     },

@@ -100,7 +100,12 @@ function renderPaper(paper) {
       }
       if (b.type === "figure_caption" || b.type === "table_caption") {
         const kind = b.type === "figure_caption" ? "图" : "表";
-        return `<div class="cap" id="${esc(b.id)}"><span class="cap-k">${kind}</span><p class="en">${esc(b.original)}</p>${b.zh ? `<p class="zh">${esc(b.zh)}</p>` : ""}</div>`;
+        // 图本体 PNG（由 tools/extract_figures.py 生成，可再生）；存在才插图，缺图退回纯标题
+        const png = path.join(ROOT, "papers-read", "assets", "figures", paper.paper_id, b.id + ".png");
+        const img = (b.type === "figure_caption" && fs.existsSync(png))
+          ? `<img class="fig" src="../assets/figures/${esc(paper.paper_id)}/${esc(b.id)}.png" loading="lazy" alt="${esc(b.original.slice(0, 120))}">`
+          : "";
+        return `<div class="cap" id="${esc(b.id)}">${img}<span class="cap-k">${kind}</span><p class="en">${esc(b.original)}</p>${b.zh ? `<p class="zh">${esc(b.zh)}</p>` : ""}</div>`;
       }
       if (b.type === "equation") {
         return `<div class="eq" id="${esc(b.id)}"><code>${esc(b.original)}</code></div>`;
@@ -239,6 +244,7 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 }
 /* 图/表标题、公式、表格主体 */
 .cap{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:12px 0;font-size:13px}
+.cap img.fig{display:block;max-width:100%;margin:2px auto 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .cap-k{display:inline-block;font-size:11px;font-weight:700;color:#0f766e;background:#ccfbf1;border-radius:6px;padding:1px 7px;margin-right:6px}
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}

@@ -1604,7 +1604,7 @@ globalThis.PAPER_2606_24320 = {
       {
        "id": "s-IV-A-3-1",
        "original": "We trained with the Muon optimizer (Jordan, Jin, & Boza et al., 2024; Liu, Su, & Yao et al., 2025) with a base learning rate of 5×10−4, a Muon learning rate of 5×10−3, Seed-TTS-Eval CV3-Eval MiniMax-ML ZTTS1-Eval Languages up to 17 Audio read read/expressive read read and ITW spontaneous Duration",
-       "zh": "我们\n（原始数据照录）\nWe trained with the Muon optimizer (Jordan, Jin, & Boza et al., 2024; Liu, Su, & Yao et al., 2025) with a base learning rate of 5×10−4, a Muon learning rate of 5×10−3, Seed-TTS-Eval CV3-Eval MiniMax-ML ZTTS1-Eval Languages up to 17 Audio read read/expressive read read and ITW spontaneous Duration"
+       "zh": "我们\n我们使用 Muon 优化器（Jordan, Jin, & Boza et al., 2024; Liu, Su, & Yao et al., 2025）进行训练，基础学习率为 5×10−4，Muon 学习率为 5×10−3，Seed-TTS-Eval CV3-Eval MiniMax-ML ZTTS1-Eval 语言 最多 17 种 音频 朗读 朗读/表现力朗读 朗读及 ITW 自发 时长"
       }
      ]
     },

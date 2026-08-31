@@ -918,10 +918,15 @@ globalThis.PAPER_2603_10420 = {
    "blocks": [
     {
      "id": "tab-3-3-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 5,
-     "original": "Table 1 summarizes the major differences between FireRedASR2 and FireRedASR. Overall, FireRedASR2 retains the proven model designs in FireRedASR, while improving generalization via a larger and more diverse training corpus and enabling timestamp generation via a post-hoc CTC branch in the AED variant.",
-     "zh": "Table 1 汇总了 FireRedASR2 与 FireRedASR 之间的主要差异。总体而言，FireRedASR2 保留了 FireRedASR 中经过验证的模型设计，同时通过更大、更多样的训练语料提升泛化能力，并在 AED 变体中通过事后 CTC 分支实现时间戳生成。"
+     "sentences": [
+      {
+       "id": "tab-3-3-1-s1",
+       "original": "Table 1 summarizes the major differences between FireRedASR2 and FireRedASR. Overall, FireRedASR2 retains the proven model designs in FireRedASR, while improving generalization via a larger and more diverse training corpus and enabling timestamp generation via a post-hoc CTC branch in the AED variant.",
+       "zh": "Table 1 汇总了 FireRedASR2 与 FireRedASR 之间的主要差异。总体而言，FireRedASR2 保留了 FireRedASR 中经过验证的模型设计，同时通过更大、更多样的训练语料提升泛化能力，并在 AED 变体中通过事后 CTC 分支实现时间戳生成。"
+      }
+     ]
     },
     {
      "id": "tab-3-3-2",

@@ -5239,10 +5239,15 @@ globalThis.PAPER_2502_18924 = {
     },
     {
      "id": "fig-F-4",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 17,
-     "original": "Figure 6 (c), the top layers refine the target latent features.",
-     "zh": "（抽取残块：「Figure 6 (c), the top layers refine the target latent features.」——图 6 (c) 中，顶层对目标潜在特征进行细化。）"
+     "sentences": [
+      {
+       "id": "fig-F-4-s1",
+       "original": "Figure 6 (c), the top layers refine the target latent features.",
+       "zh": "（抽取残块：「Figure 6 (c), the top layers refine the target latent features.」——图 6 (c) 中，顶层对目标潜在特征进行细化。）"
+      }
+     ]
     }
    ]
   },

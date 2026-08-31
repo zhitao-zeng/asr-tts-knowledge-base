@@ -940,7 +940,7 @@ globalThis.PAPER_2606_06928 = {
       {
        "id": "s-discrete-token-language-modeling-4-5",
        "original": "The same LM-plus-flow-matching pipeline has also been adopted as the speech-generation component of broader audio foundation models, including GLM-4-Voice (Zeng et al., 2024), Step-Audio (Huang et al., 2025a) and Kimi-Audio (Kimi Team,",
-       "zh": "（目录残留页码 4。）\n（原始数据照录）\nThe same LM-plus-flow-matching pipeline has also been adopted as the speech-generation component of broader audio foundation models, including GLM-4-Voice (Zeng et al., 2024), Step-Audio (Huang et al., 2025a) and Kimi-Audio (Kimi Team,"
+       "zh": "（目录残留页码 4。）\n同样的 LM 加流匹配流水线也被更广泛音频基础模型采用为语音生成组件，包括 GLM-4-Voice (Zeng et al., 2024)、Step-Audio (Huang et al., 2025a) 和 Kimi-Audio (Kimi Team,"
       }
      ]
     },
@@ -1542,7 +1542,7 @@ globalThis.PAPER_2606_06928 = {
       {
        "id": "s-3-1-6-1",
        "original": "and (ii) the fusion operator ⊕before the RALM is replaced by a learnable concatenation-projection (detailed in Section 3.3.1).",
-       "zh": "3.\n（原始数据照录）\nand (ii) the fusion operator ⊕before the RALM is replaced by a learnable concatenation-projection (detailed in Section 3.3.1)."
+       "zh": "3.\n以及 (ii) RALM 之前的融合算子 ⊕ 被替换为可学习的拼接-投影（详见第 3.3.1 节）。"
       },
       {
        "id": "s-3-1-6-2",
@@ -2008,7 +2008,7 @@ globalThis.PAPER_2606_06928 = {
       {
        "id": "s-3-3-3-2-1",
        "original": "Component VoxCPM VoxCPM1.5 VoxCPM2 Backbone parameters ∼0.6B ∼0.8B ∼2B LocEnc 4L, H=1024 8L, H=1024 12L, H=1024 TSLM MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-1B (28L, H=2048) FSQ latent dim",
-       "zh": "（目录残留页码 4。）\n（原始数据照录）\nComponent VoxCPM VoxCPM1.5 VoxCPM2 Backbone parameters ∼0.6B ∼0.8B ∼2B LocEnc 4L, H=1024 8L, H=1024 12L, H=1024 TSLM MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-1B (28L, H=2048) FSQ latent dim"
+       "zh": "（目录残留页码 4。）\n组件 VoxCPM VoxCPM1.5 VoxCPM2 骨干参数量 ∼0.6B ∼0.8B ∼2B LocEnc 4L, H=1024 8L, H=1024 12L, H=1024 TSLM MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-0.5B (24L, H=1024) MiniCPM-4-1B (28L, H=2048) FSQ 潜在维度"
       }
      ]
     },
@@ -2026,7 +2026,7 @@ globalThis.PAPER_2606_06928 = {
       {
        "id": "s-3-3-3-3-1",
        "original": "RALM 6L, H=1024 8L, H=1024 8L, H=2048 LocDiT 4L, H=1024 8L, H=1024 12L, H=1024 Patch size P",
-       "zh": "（目录残留页码 4。）\n（原始数据照录）\nRALM 6L, H=1024 8L, H=1024 8L, H=2048 LocDiT 4L, H=1024 8L, H=1024 12L, H=1024 Patch size P"
+       "zh": "（目录残留页码 4。）\nRALM 6L, H=1024 8L, H=1024 8L, H=2048 LocDiT 4L, H=1024 8L, H=1024 12L, H=1024 Patch 大小 P"
       }
      ]
     },
@@ -2044,7 +2044,7 @@ globalThis.PAPER_2606_06928 = {
       {
        "id": "s-3-3-3-4-1",
        "original": "LM-side token rate 12.5 Hz 6.25 Hz 6.25 Hz Max sequence length",
-       "zh": "（目录残留页码 6。）\n（原始数据照录）\nLM-side token rate 12.5 Hz 6.25 Hz 6.25 Hz Max sequence length"
+       "zh": "（目录残留页码 6。）\nLM 侧 token 速率 12.5 Hz 6.25 Hz 6.25 Hz 最大序列长度"
       }
      ]
     },
@@ -2821,7 +2821,7 @@ globalThis.PAPER_2606_06928 = {
       {
        "id": "s-model-1-1",
        "original": "Params OS test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Closed-source MegaTTS3 (Jiang et al., 2025) 0.5B",
-       "zh": "（目录残留页码 20。）\n（原始数据照录）\nParams OS test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Closed-source MegaTTS3 (Jiang et al., 2025) 0.5B"
+       "zh": "（目录残留页码 20。）\n参数量 OS test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ 闭源 MegaTTS3 (Jiang et al., 2025) 0.5B"
       }
      ]
     },
@@ -3249,10 +3249,15 @@ globalThis.PAPER_2606_06928 = {
    "blocks": [
     {
      "id": "tab-4-2-2-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 13,
-     "original": "Table 3 presents zero-shot voice cloning results on Seed-TTS-Eval. At 2B parameters, VoxCPM2 achieves competitive performance among both open-source and closed-source systems, attaining 1.84/75.3 (WER/SIM) on test-EN, 0.97/79.5 on test-ZH, and 8.13/75.3 on the challenging test-ZH-Hard subset. As a hierarchical continuous-latent model, VoxCPM2 demonstrates strong speaker similarity while maintaining good intelli-",
-     "zh": "表 3：Seed-TTS-Eval 上的零样本语音克隆结果。在 2B 参数规模下，VoxCPM2 在开源与闭源系统中均取得有竞争力的表现：test-EN 上 WER/SIM 为 1.84/75.3，test-ZH 上为 0.97/79.5，在更具挑战的 test-ZH-Hard 子集上为 8.13/75.3。作为分层连续隐空间模型，VoxCPM2 在保持良好可懂度的同时展现出很强的说话人相似度。"
+     "sentences": [
+      {
+       "id": "tab-4-2-2-1-s1",
+       "original": "Table 3 presents zero-shot voice cloning results on Seed-TTS-Eval. At 2B parameters, VoxCPM2 achieves competitive performance among both open-source and closed-source systems, attaining 1.84/75.3 (WER/SIM) on test-EN, 0.97/79.5 on test-ZH, and 8.13/75.3 on the challenging test-ZH-Hard subset. As a hierarchical continuous-latent model, VoxCPM2 demonstrates strong speaker similarity while maintaining good intelli-",
+       "zh": "表 3：Seed-TTS-Eval 上的零样本语音克隆结果。在 2B 参数规模下，VoxCPM2 在开源与闭源系统中均取得有竞争力的表现：test-EN 上 WER/SIM 为 1.84/75.3，test-ZH 上为 0.97/79.5，在更具挑战的 test-ZH-Hard 子集上为 8.13/75.3。作为分层连续隐空间模型，VoxCPM2 在保持良好可懂度的同时展现出很强的说话人相似度。"
+      }
+     ]
     },
     {
      "id": "tab-4-2-2-2",
@@ -3281,7 +3286,7 @@ globalThis.PAPER_2606_06928 = {
       {
        "id": "s-inference-recipe-1-1",
        "original": "Sequence layout (Sec. 3.4) test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Continuation only ⟨text | prompt⟩→⟨target⟩",
-       "zh": "（目录残留页码 4。）\n（原始数据照录）\nSequence layout (Sec. 3.4) test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ Continuation only ⟨text | prompt⟩→⟨target⟩"
+       "zh": "（目录残留页码 4。）\n序列布局（第 3.4 节） test-EN test-ZH test-ZH-Hard WER↓ SIM↑ CER↓ SIM↑ CER↓ SIM↑ 仅续写 ⟨text | prompt⟩→⟨target⟩"
       }
      ]
     },
@@ -4967,7 +4972,7 @@ globalThis.PAPER_2606_06928 = {
       {
        "id": "s-input-1-1",
        "original": "Output MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ MelD-48k↓ MelD-16k↓ VoxCPM 16kHz 16kHz",
-       "zh": "（目录残留页码 4。）\n（原始数据照录）\nOutput MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ MelD-48k↓ MelD-16k↓ VoxCPM 16kHz 16kHz"
+       "zh": "（目录残留页码 4。）\n输出 MelD-48k↓ MelD-16k↓ STOI-16k↑ PESQ-16k↑ MelD-48k↓ MelD-16k↓ VoxCPM 16kHz 16kHz"
       }
      ]
     },
@@ -5009,7 +5014,7 @@ globalThis.PAPER_2606_06928 = {
       {
        "id": "s-input-2-1",
        "original": "/ 71.4 on APS, DSD, and RP respectively, outperforming all compared systems.",
-       "zh": "（目录残留页码 4。）\n（原始数据照录）\n/ 71.4 on APS, DSD, and RP respectively, outperforming all compared systems."
+       "zh": "（目录残留页码 4。）\n/ 71.4，分别在 APS、DSD 和 RP 上，优于所有对比系统。"
       },
       {
        "id": "s-input-2-2",
@@ -5086,10 +5091,15 @@ globalThis.PAPER_2606_06928 = {
     },
     {
      "id": "tab-4-5-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 17,
-     "original": "Table 10 compares the Audio VAE used in VoxCPM, VoxCPM1.5, and AudioVAE V2 in VoxCPM2 on held-out speech (VCTK) and singing (Song Describer) reconstruction sets. The models differ in both input and output sample rate: VoxCPM reconstructs 16 kHz audio, VoxCPM1.5 operates at 44 kHz, and VoxCPM2 uses a 16 kHz encoder with a 48 kHz decoder. We report Mel-distance at both full-band and 16 kHz bandwidths, together with 16 kHz speech quality (PESQ) and intelligibility metrics (STOI) on VCTK.",
-     "zh": "表 10 说明：在留出语音（VCTK）与歌唱（Song Describer）重建集上对比 VoxCPM、VoxCPM1.5 所用的 Audio VAE 与 VoxCPM2 的 AudioVAE V2。各模型的输入/输出采样率不同：VoxCPM 重建 16 kHz 音频，VoxCPM1.5 工作在 44 kHz，VoxCPM2 使用 16 kHz 编码器配 48 kHz 解码器。我们报告全频带与 16 kHz 频带的梅尔距离，以及 VCTK 上 16 kHz 的语音质量（PESQ）与可懂度（STOI）指标。"
+     "sentences": [
+      {
+       "id": "tab-4-5-1-s1",
+       "original": "Table 10 compares the Audio VAE used in VoxCPM, VoxCPM1.5, and AudioVAE V2 in VoxCPM2 on held-out speech (VCTK) and singing (Song Describer) reconstruction sets. The models differ in both input and output sample rate: VoxCPM reconstructs 16 kHz audio, VoxCPM1.5 operates at 44 kHz, and VoxCPM2 uses a 16 kHz encoder with a 48 kHz decoder. We report Mel-distance at both full-band and 16 kHz bandwidths, together with 16 kHz speech quality (PESQ) and intelligibility metrics (STOI) on VCTK.",
+       "zh": "表 10 说明：在留出语音（VCTK）与歌唱（Song Describer）重建集上对比 VoxCPM、VoxCPM1.5 所用的 Audio VAE 与 VoxCPM2 的 AudioVAE V2。各模型的输入/输出采样率不同：VoxCPM 重建 16 kHz 音频，VoxCPM1.5 工作在 44 kHz，VoxCPM2 使用 16 kHz 编码器配 48 kHz 解码器。我们报告全频带与 16 kHz 频带的梅尔距离，以及 VCTK 上 16 kHz 的语音质量（PESQ）与可懂度（STOI）指标。"
+      }
+     ]
     },
     {
      "id": "p-4-5-2",
@@ -5291,7 +5301,7 @@ globalThis.PAPER_2606_06928 = {
       {
        "id": "s-system-2-1",
        "original": "challenging super-resolution setting: it encodes 16 kHz audio but reconstructs at 48 kHz.",
-       "zh": "（目录残留页码 4。）\n（原始数据照录）\nchallenging super-resolution setting: it encodes 16 kHz audio but reconstructs at 48 kHz."
+       "zh": "（目录残留页码 4。）\n具有挑战性的超分辨率设置：它编码 16 kHz 音频但以 48 kHz 重建。"
       },
       {
        "id": "s-system-2-2",

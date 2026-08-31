@@ -2197,10 +2197,15 @@ globalThis.PAPER_2604_18105 = {
    "blocks": [
     {
      "id": "tab-3-2-1-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 11,
-     "original": "Table 2 reports the comparison results on public benchmarks. For NIM4-ASR, we report both offline and streaming inference results. The offline setting reflects the upper-bound performance when full acoustic context is available, while the streaming setting evaluates real-time recognition.",
-     "zh": "Table 2 报告了公开基准上的对比结果。对 NIM4-ASR，我们同时汇报离线和流式两种推理设置：离线代表在有完整声学上下文时的性能上限，流式则反映实时识别能力。"
+     "sentences": [
+      {
+       "id": "tab-3-2-1-1-s1",
+       "original": "Table 2 reports the comparison results on public benchmarks. For NIM4-ASR, we report both offline and streaming inference results. The offline setting reflects the upper-bound performance when full acoustic context is available, while the streaming setting evaluates real-time recognition.",
+       "zh": "Table 2 报告了公开基准上的对比结果。对 NIM4-ASR，我们同时汇报离线和流式两种推理设置：离线代表在有完整声学上下文时的性能上限，流式则反映实时识别能力。"
+      }
+     ]
     },
     {
      "id": "p-3-2-1-1",
@@ -2270,10 +2275,15 @@ globalThis.PAPER_2604_18105 = {
    "blocks": [
     {
      "id": "tab-3-2-2-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 11,
-     "original": "Table 3 reports results on our internal benchmarks. Two benchmarks, POI and Media, are entityintensive, comprising dense location names and media-related entities respectively. A key challenge in these domains is that many entities share similar or identical pronunciations, requiring the model to simultaneously resolve subtle acoustic differences and leverage contextual semantics to disambiguate competing candidates. NIM4-ASR achieves particularly strong performance on these benchmarks, driven primarily by comprehensive in-domain training data coverage, but also indicating that our",
-     "zh": "Table 3 报告内部基准上的结果。POI 与 Media 两个基准属于实体密集型，分别包含密集的地名和媒体相关实体。这些领域的关键挑战是许多实体发音相近甚至相同，模型需要同时分辨细微的声学差异并利用上下文语义来消解候选竞争。NIM4-ASR 在这两个基准上表现尤为突出，这主要得益于其充分的 in-domain 训练数据覆盖，但同时也表明我们的……（转下页）"
+     "sentences": [
+      {
+       "id": "tab-3-2-2-1-s1",
+       "original": "Table 3 reports results on our internal benchmarks. Two benchmarks, POI and Media, are entityintensive, comprising dense location names and media-related entities respectively. A key challenge in these domains is that many entities share similar or identical pronunciations, requiring the model to simultaneously resolve subtle acoustic differences and leverage contextual semantics to disambiguate competing candidates. NIM4-ASR achieves particularly strong performance on these benchmarks, driven primarily by comprehensive in-domain training data coverage, but also indicating that our",
+       "zh": "Table 3 报告内部基准上的结果。POI 与 Media 两个基准属于实体密集型，分别包含密集的地名和媒体相关实体。这些领域的关键挑战是许多实体发音相近甚至相同，模型需要同时分辨细微的声学差异并利用上下文语义来消解候选竞争。NIM4-ASR 在这两个基准上表现尤为突出，这主要得益于其充分的 in-domain 训练数据覆盖，但同时也表明我们的……（转下页）"
+      }
+     ]
     },
     {
      "id": "p-3-2-2-1",
@@ -2302,7 +2312,7 @@ globalThis.PAPER_2604_18105 = {
       {
        "id": "s-3-2-2-2-1",
        "original": "Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Mandarin AISHELL-1 dev | test",
-       "zh": "1.\n（原始数据照录）\nFun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Mandarin AISHELL-1 dev | test"
+       "zh": "1.\nFun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream 模型规模 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B 普通话 AISHELL-1 dev | test"
       }
      ]
     },
@@ -2519,7 +2529,7 @@ globalThis.PAPER_2604_18105 = {
       {
        "id": "s-3-2-2-3-1",
        "original": "Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Point of Interest (POI) City A",
-       "zh": "1.\n（原始数据照录）\nFun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Point of Interest (POI) City A"
+       "zh": "1.\nFun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream 模型规模 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B 兴趣点 (POI) City A"
       }
      ]
     },

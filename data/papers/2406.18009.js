@@ -764,10 +764,15 @@ globalThis.PAPER_2406_18009 = {
    "blocks": [
     {
      "id": "fig-2-2-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 2,
-     "original": "Fig. 1 (b) provides an overview of the inference with E2 TTS. Suppose we have an audio prompt saud and its transcription yaud = (c′ 1, c′ 2, ..., c′ Maud) to mimic the speaker characteristics. We also suppose a text prompt ytext = (c′′ 1, c′′ 2, ..., c′′ Mtext). In the E2 TTS framework, we also require the target duration of the speech that we want to generate, which may be determined arbitrarily. The target duration is internally represented by the frame length T gen. First, we extract the mel-filterbank features ˆsaud ∈RD×T aud",
-     "zh": "图 1(b) 给出 E2 TTS 推理过程概览。设有音频提示 s_aud 及其转写 y_aud = (c′1, c′2, …, c′M_aud) 用于模仿说话人特征；另有文本提示 y_text = (c′′1, c′′2, …, c′′M_text)。E2 TTS 框架还需指定目标语音时长，可任意给定，内部以帧长 T_gen 表示。首先从 s_aud 提取 mel 滤波组特征 ŝ_aud ∈ R^{D×T_aud}（式见原文）。"
+     "sentences": [
+      {
+       "id": "fig-2-2-1-s1",
+       "original": "Fig. 1 (b) provides an overview of the inference with E2 TTS. Suppose we have an audio prompt saud and its transcription yaud = (c′ 1, c′ 2, ..., c′ Maud) to mimic the speaker characteristics. We also suppose a text prompt ytext = (c′′ 1, c′′ 2, ..., c′′ Mtext). In the E2 TTS framework, we also require the target duration of the speech that we want to generate, which may be determined arbitrarily. The target duration is internally represented by the frame length T gen. First, we extract the mel-filterbank features ˆsaud ∈RD×T aud",
+       "zh": "图 1(b) 给出 E2 TTS 推理过程概览。设有音频提示 s_aud 及其转写 y_aud = (c′1, c′2, …, c′M_aud) 用于模仿说话人特征；另有文本提示 y_text = (c′′1, c′′2, …, c′′M_text)。E2 TTS 框架还需指定目标语音时长，可任意给定，内部以帧长 T_gen 表示。首先从 s_aud 提取 mel 滤波组特征 ŝ_aud ∈ R^{D×T_aud}（式见原文）。"
+      }
+     ]
     },
     {
      "id": "p-2-2-1",
@@ -2874,10 +2879,15 @@ globalThis.PAPER_2406_18009 = {
     },
     {
      "id": "fig-3-6-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 6,
-     "original": "Fig. 4 illustrates the training progress of the (B4)-Voicebox, (B5)- Voicebox, (P1)-E2 TTS, and (P2)-E2 TTS models. The upper graphs represent the training progress as measured by WER, while the lower graphs depict the progress as measured by SIM-o. We present a comparison between (B4)-Voicebox and (P1)-E2 TTS, as well as between (B5)-Voicebox and (P2)-E2 TTS. The former pair was trained from scratch, while the latter was initialized by unsupervised pretraining [34]. From the WER graphs, we observe that the Voicebox models demonstrated a good WER even at the 10% training point, owing to the use of frame-wise phoneme alignment. On the other hand, E2 TTS required significantly more training to converge. Interestingly, E2 TTS achieved a better WER at the end of the training. We speculate this is because the E2 TTS model learned a more effective grapheme-to-phoneme mapping based on the large training data, compared to what was used for Voicebox. From the SIM-o graphs, we also observed that E2 TTS required more training iteration, but it ultimately achieved a better result at the end of the training. We believe this suggests the superiority of E2 TTS, where the audio model and duration model are jointly learned as a single flow-matching Transformer.",
-     "zh": "图 4 展示了 (B4)-Voicebox、(B5)-Voicebox、(P1)-E2 TTS 和 (P2)-E2 TTS 模型的训练过程。上方图表以 WER 衡量训练进程，下方图表以 SIM-o 衡量。我们比较了 (B4)-Voicebox 与 (P1)-E2 TTS，以及 (B5)-Voicebox 与 (P2)-E2 TTS。前一对从头训练，后一对由无监督预训练 [34] 初始化。从 WER 图可见，得益于帧级音素对齐，Voicebox 模型在训练到 10% 时就已表现出良好的 WER。另一方面，E2 TTS 需要明显更多的训练才能收敛。有趣的是，E2 TTS 在训练结束时取得了更好的 WER。我们推测这是因为 E2 TTS 模型基于大规模训练数据学到了比 Voicebox 所用方式更有效的字位到音素映射。从 SIM-o 图也观察到，E2 TTS 需要更多训练迭代，但最终取得了更好的结果。我们认为这表明 E2 TTS 的优越性：音频模型和时长模型以单一流匹配 Transformer 的形式联合学习。"
+     "sentences": [
+      {
+       "id": "fig-3-6-1-s1",
+       "original": "Fig. 4 illustrates the training progress of the (B4)-Voicebox, (B5)- Voicebox, (P1)-E2 TTS, and (P2)-E2 TTS models. The upper graphs represent the training progress as measured by WER, while the lower graphs depict the progress as measured by SIM-o. We present a comparison between (B4)-Voicebox and (P1)-E2 TTS, as well as between (B5)-Voicebox and (P2)-E2 TTS. The former pair was trained from scratch, while the latter was initialized by unsupervised pretraining [34]. From the WER graphs, we observe that the Voicebox models demonstrated a good WER even at the 10% training point, owing to the use of frame-wise phoneme alignment. On the other hand, E2 TTS required significantly more training to converge. Interestingly, E2 TTS achieved a better WER at the end of the training. We speculate this is because the E2 TTS model learned a more effective grapheme-to-phoneme mapping based on the large training data, compared to what was used for Voicebox. From the SIM-o graphs, we also observed that E2 TTS required more training iteration, but it ultimately achieved a better result at the end of the training. We believe this suggests the superiority of E2 TTS, where the audio model and duration model are jointly learned as a single flow-matching Transformer.",
+       "zh": "图 4 展示了 (B4)-Voicebox、(B5)-Voicebox、(P1)-E2 TTS 和 (P2)-E2 TTS 模型的训练过程。上方图表以 WER 衡量训练进程，下方图表以 SIM-o 衡量。我们比较了 (B4)-Voicebox 与 (P1)-E2 TTS，以及 (B5)-Voicebox 与 (P2)-E2 TTS。前一对从头训练，后一对由无监督预训练 [34] 初始化。从 WER 图可见，得益于帧级音素对齐，Voicebox 模型在训练到 10% 时就已表现出良好的 WER。另一方面，E2 TTS 需要明显更多的训练才能收敛。有趣的是，E2 TTS 在训练结束时取得了更好的 WER。我们推测这是因为 E2 TTS 模型基于大规模训练数据学到了比 Voicebox 所用方式更有效的字位到音素映射。从 SIM-o 图也观察到，E2 TTS 需要更多训练迭代，但最终取得了更好的结果。我们认为这表明 E2 TTS 的优越性：音频模型和时长模型以单一流匹配 Transformer 的形式联合学习。"
+      }
+     ]
     },
     {
      "id": "p-3-6-2",
@@ -3129,7 +3139,7 @@ globalThis.PAPER_2406_18009 = {
       {
        "id": "s-5-4-2",
        "original": "NeurIPS, vol. 33, pp. 17022–17033,",
-       "zh": "NeurIPS, vol. 33, pp.\n（原始数据照录）\nNeurIPS, vol. 33, pp. 17022–17033,"
+       "zh": "NeurIPS, vol. 33, pp.\nNeurIPS, vol. 33, pp. 17022–17033,"
       }
      ]
     },

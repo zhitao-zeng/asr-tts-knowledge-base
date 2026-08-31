@@ -445,10 +445,15 @@ globalThis.PAPER_2607_23938 = {
     },
     {
      "id": "fig-1-3",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 3,
-     "original": "Figure 1 provides the snapshot of Artificial Analysis Text-to-Speech Arena leaderboard1 on July 16, 2026, which evaluates provider-native voices through blind pairwise preference tests with comparable gender and accent. The provider label Qwen-Audio-3.0-TTS-Plus corresponds to the model reported as Qwen-Audio-3.0-TTS in this paper. Qwen-Audio-3.0-TTS-Plus ranks first with an Elo score of 1,237 from 1,427 samples. It has a displayed rank range of 1–2, and its 95% confidence interval overlaps that of Simba 3.2; the leaderboard therefore places Qwen-Audio-3.0-TTS-Plus first by point estimate and within the statistically leading group.",
-     "zh": "图 1 提供了 2026 年 7 月 16 日 Artificial Analysis 文本转语音竞技场榜单（见脚注 1）的快照，该榜单通过性别与口音可比的盲测成对偏好测试评估各提供商的原生音色。提供商标签 Qwen-Audio-3.0-TTS-Plus 对应本文所称的 Qwen-Audio-3.0-TTS 模型。Qwen-Audio-3.0-TTS-Plus 以 1,237 的 Elo 分数排名第一（样本量 1,427），显示名次区间为 1–2，其 95% 置信区间与 Simba 3.2 存在重叠；因此榜单按点估计将其列为第一，且它处于统计上的领先集团之内。"
+     "sentences": [
+      {
+       "id": "fig-1-3-s1",
+       "original": "Figure 1 provides the snapshot of Artificial Analysis Text-to-Speech Arena leaderboard1 on July 16, 2026, which evaluates provider-native voices through blind pairwise preference tests with comparable gender and accent. The provider label Qwen-Audio-3.0-TTS-Plus corresponds to the model reported as Qwen-Audio-3.0-TTS in this paper. Qwen-Audio-3.0-TTS-Plus ranks first with an Elo score of 1,237 from 1,427 samples. It has a displayed rank range of 1–2, and its 95% confidence interval overlaps that of Simba 3.2; the leaderboard therefore places Qwen-Audio-3.0-TTS-Plus first by point estimate and within the statistically leading group.",
+       "zh": "图 1 提供了 2026 年 7 月 16 日 Artificial Analysis 文本转语音竞技场榜单（见脚注 1）的快照，该榜单通过性别与口音可比的盲测成对偏好测试评估各提供商的原生音色。提供商标签 Qwen-Audio-3.0-TTS-Plus 对应本文所称的 Qwen-Audio-3.0-TTS 模型。Qwen-Audio-3.0-TTS-Plus 以 1,237 的 Elo 分数排名第一（样本量 1,427），显示名次区间为 1–2，其 95% 置信区间与 Simba 3.2 存在重叠；因此榜单按点估计将其列为第一，且它处于统计上的领先集团之内。"
+      }
+     ]
     },
     {
      "id": "p-1-15",
@@ -2113,10 +2118,15 @@ globalThis.PAPER_2607_23938 = {
     },
     {
      "id": "tab-4-2-2",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 9,
-     "original": "Table 3 compares Qwen-Audio-3.0-TTS with recent state-of-the-art zero-shot TTS models. Content consistency is evaluated using CER/WER, and speaker similarity is measured by WavLM and ERes2Net. For methods marked with †, we compute the ERes2Net scores using their publicly released models after verifying that the reproduced CER/WER and WavLM results closely match those reported in the original papers.",
-     "zh": "表 3 将 Qwen-Audio-3.0-TTS 与近期的 SOTA 零样本 TTS 模型进行了比较。内容一致性用 CER/WER 评估，说话人相似度用 WavLM 与 ERes2Net 衡量。对标有 † 的方法，我们在验证复现的 CER/WER 与 WavLM 结果与原论文报告值高度吻合后，使用其公开发布的模型计算 ERes2Net 分数。"
+     "sentences": [
+      {
+       "id": "tab-4-2-2-s1",
+       "original": "Table 3 compares Qwen-Audio-3.0-TTS with recent state-of-the-art zero-shot TTS models. Content consistency is evaluated using CER/WER, and speaker similarity is measured by WavLM and ERes2Net. For methods marked with †, we compute the ERes2Net scores using their publicly released models after verifying that the reproduced CER/WER and WavLM results closely match those reported in the original papers.",
+       "zh": "表 3 将 Qwen-Audio-3.0-TTS 与近期的 SOTA 零样本 TTS 模型进行了比较。内容一致性用 CER/WER 评估，说话人相似度用 WavLM 与 ERes2Net 衡量。对标有 † 的方法，我们在验证复现的 CER/WER 与 WavLM 结果与原论文报告值高度吻合后，使用其公开发布的模型计算 ERes2Net 分数。"
+      }
+     ]
     },
     {
      "id": "p-4-2-3",
@@ -2379,10 +2389,15 @@ globalThis.PAPER_2607_23938 = {
    "blocks": [
     {
      "id": "tab-4-3-2-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 10,
-     "original": "Table 6 reports the WER/CER results on the CV3-Eval Cross-lingual Voice Cloning subset, comparing recent commercial API systems and open-source models. For readability, a few substantially higher results are omitted and denoted by “-” in the table. Across all 12 transfer directions, QwenAudio-3.0-TTS achieves the best result in eight and the second-best result in the remaining four, consistently ranking among the strongest systems across all evaluated language pairs. It also outperforms CosyVoice3-1.5B in every direction and reduces the average error from 10.09% to 4.05%, a relative reduction of approximately 60%, demonstrating strong cross-lingual stability across diverse source and target languages.",
-     "zh": "表 6 报告了 CV3-Eval 跨语言声音克隆子集上的 WER/CER 结果，对比了近期商业 API 系统与开源模型。为可读性，少数显著偏高的结果被省略并以「-」标注。在全部 12 个迁移方向上，Qwen-Audio-3.0-TTS 在 8 个方向上取得最佳、在其余 4 个方向上取得次佳，稳定地位居所有被评语言对中的最强系统之列。它还在每个方向上都优于 CosyVoice3-1.5B，把平均错误率从 10.09% 降到 4.05%，相对降低约 60%，展现了跨源语言与目标语言的强大跨语言稳定性。"
+     "sentences": [
+      {
+       "id": "tab-4-3-2-1-s1",
+       "original": "Table 6 reports the WER/CER results on the CV3-Eval Cross-lingual Voice Cloning subset, comparing recent commercial API systems and open-source models. For readability, a few substantially higher results are omitted and denoted by “-” in the table. Across all 12 transfer directions, QwenAudio-3.0-TTS achieves the best result in eight and the second-best result in the remaining four, consistently ranking among the strongest systems across all evaluated language pairs. It also outperforms CosyVoice3-1.5B in every direction and reduces the average error from 10.09% to 4.05%, a relative reduction of approximately 60%, demonstrating strong cross-lingual stability across diverse source and target languages.",
+       "zh": "表 6 报告了 CV3-Eval 跨语言声音克隆子集上的 WER/CER 结果，对比了近期商业 API 系统与开源模型。为可读性，少数显著偏高的结果被省略并以「-」标注。在全部 12 个迁移方向上，Qwen-Audio-3.0-TTS 在 8 个方向上取得最佳、在其余 4 个方向上取得次佳，稳定地位居所有被评语言对中的最强系统之列。它还在每个方向上都优于 CosyVoice3-1.5B，把平均错误率从 10.09% 降到 4.05%，相对降低约 60%，展现了跨源语言与目标语言的强大跨语言稳定性。"
+      }
+     ]
     },
     {
      "id": "p-4-3-2-1",
@@ -2666,10 +2681,15 @@ globalThis.PAPER_2607_23938 = {
     },
     {
      "id": "tab-4-4-1-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 11,
-     "original": "Table 7 summarizes the overall and category-level results. Qwen-Audio-3.0-TTS achieves the best overall accuracy on both Chinese (68.7%) and English (65.7%) evaluation sets. It also shows competitive performance across different categories, demonstrating its ability to handle diverse text normalization scenarios.",
-     "zh": "表 7 汇总了整体与各类别的结果。Qwen-Audio-3.0-TTS 在中文（68.7%）与英文（65.7%）评测集上都取得最佳整体准确率。它在不同类别上也表现出有竞争力的性能，展示了处理多样文本规整场景的能力。"
+     "sentences": [
+      {
+       "id": "tab-4-4-1-1-s1",
+       "original": "Table 7 summarizes the overall and category-level results. Qwen-Audio-3.0-TTS achieves the best overall accuracy on both Chinese (68.7%) and English (65.7%) evaluation sets. It also shows competitive performance across different categories, demonstrating its ability to handle diverse text normalization scenarios.",
+       "zh": "表 7 汇总了整体与各类别的结果。Qwen-Audio-3.0-TTS 在中文（68.7%）与英文（65.7%）评测集上都取得最佳整体准确率。它在不同类别上也表现出有竞争力的性能，展示了处理多样文本规整场景的能力。"
+      }
+     ]
     }
    ]
   },
@@ -2702,10 +2722,15 @@ globalThis.PAPER_2607_23938 = {
     },
     {
      "id": "tab-4-4-2-1",
-     "type": "table_caption",
+     "type": "paragraph",
      "page": 11,
-     "original": "Table 8 shows that Qwen-Audio-3.0-TTS maintains competitive content accuracy and strong speaker consistency in both Chinese and English during one-pass long-form synthesis. It substantially",
-     "zh": "表 8 显示，Qwen-Audio-3.0-TTS 在中英文单次长音频合成中都保持了有竞争力的内容准确性与很强的说话人一致性。它大幅（接 Table 8 标题块的下一段续文）。"
+     "sentences": [
+      {
+       "id": "tab-4-4-2-1-s1",
+       "original": "Table 8 shows that Qwen-Audio-3.0-TTS maintains competitive content accuracy and strong speaker consistency in both Chinese and English during one-pass long-form synthesis. It substantially",
+       "zh": "表 8 显示，Qwen-Audio-3.0-TTS 在中英文单次长音频合成中都保持了有竞争力的内容准确性与很强的说话人一致性。它大幅（接 Table 8 标题块的下一段续文）。"
+      }
+     ]
     },
     {
      "id": "tab-4-4-2-2",

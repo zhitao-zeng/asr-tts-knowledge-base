@@ -2431,7 +2431,7 @@ globalThis.PAPER_2409_00750 = {
       {
        "id": "s-system-3-1-1",
        "original": "SIM-O ↑ WER ↓ FSD ↓ #Parameters SeedTTS test-en T2S-Base",
-       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。\n（原始数据照录）\nSIM-O ↑ WER ↓ FSD ↓ #Parameters SeedTTS test-en T2S-Base"
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。\nSIM-O ↑ WER ↓ FSD ↓ #Parameters SeedTTS test-en T2S-Base"
       }
      ]
     },
@@ -4035,10 +4035,15 @@ globalThis.PAPER_2409_00750 = {
    "blocks": [
     {
      "id": "fig-A-2-1",
-     "type": "figure_caption",
+     "type": "paragraph",
      "page": 15,
-     "original": "Figure 4 shows the relationship between inference steps and metrics SIM and WER for SeedTTS test-zh (left) and test-en (right). Initially, SIM increases significantly, stabilizing after 25 steps. For test-zh, SIM rises from 0.761 at 5 steps to 0.771 at 75 steps, and for test-en, from 0.696 to 0.715. SIM reaches high values with just 10 steps but peaks around 25 steps. WER improves more dramatically,",
-     "zh": "图 4（文字在抽取层拆散到正文）展示了推理步数与指标 SIM、WER 的关系，左为 SeedTTS test-zh，右为 test-en：起初 SIM 显著上升并在 25 步后趋于稳定；test-zh 的 SIM 从 5 步时的 0.761 升到 75 步时的 0.771，test-en 从 0.696 升到 0.715；SIM 仅 10 步就能达到较高值并在 25 步左右达到峰值；WER 的改善更为显著——"
+     "sentences": [
+      {
+       "id": "fig-A-2-1-s1",
+       "original": "Figure 4 shows the relationship between inference steps and metrics SIM and WER for SeedTTS test-zh (left) and test-en (right). Initially, SIM increases significantly, stabilizing after 25 steps. For test-zh, SIM rises from 0.761 at 5 steps to 0.771 at 75 steps, and for test-en, from 0.696 to 0.715. SIM reaches high values with just 10 steps but peaks around 25 steps. WER improves more dramatically,",
+       "zh": "图 4（文字在抽取层拆散到正文）展示了推理步数与指标 SIM、WER 的关系，左为 SeedTTS test-zh，右为 test-en：起初 SIM 显著上升并在 25 步后趋于稳定；test-zh 的 SIM 从 5 步时的 0.761 升到 75 步时的 0.771，test-en 从 0.696 升到 0.715；SIM 仅 10 步就能达到较高值并在 25 步左右达到峰值；WER 的改善更为显著——"
+      }
+     ]
     },
     {
      "id": "eq-A-2-1",
@@ -4888,7 +4893,7 @@ globalThis.PAPER_2409_00750 = {
       {
        "id": "s-A-6-2-1",
        "original": "SIM-O ↑ WER ↓ SeedTTS test-en G2P",
-       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。\n（原始数据照录）\nSIM-O ↑ WER ↓ SeedTTS test-en G2P"
+       "zh": "(3) 它在三个基准上的 WER 与真人相当，且在合理的语音时长范围内表现稳定，这也说明生成语音兼具多样性与可控性。\nSIM-O ↑ WER ↓ SeedTTS test-en G2P"
       }
      ]
     },

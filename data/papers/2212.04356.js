@@ -6792,7 +6792,7 @@ globalThis.PAPER_2212_04356 = {
       {
        "id": "s-D-1-1-2",
        "original": "GREEDY DECODING LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 CallHome WSJ Model CommonVoice5.1 VoxPopuli.en Switchboard Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en",
-       "zh": "5.\n（原始数据照录）\nGREEDY DECODING LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 CallHome WSJ Model CommonVoice5.1 VoxPopuli.en Switchboard Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en"
+       "zh": "5.\n贪心解码 LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 CallHome WSJ 模型 CommonVoice5.1 VoxPopuli.en Switchboard Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en"
       }
      ]
     },
@@ -7098,7 +7098,7 @@ globalThis.PAPER_2212_04356 = {
       {
        "id": "s-D-1-2-2",
        "original": "BEAM SEARCH WITH TEMPERATURE FALLBACK LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 Switchboard CallHome WSJ Model CommonVoice5.1 VoxPopuli.en Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en",
-       "zh": "5.\n（原始数据照录）\nBEAM SEARCH WITH TEMPERATURE FALLBACK LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 Switchboard CallHome WSJ Model CommonVoice5.1 VoxPopuli.en Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en"
+       "zh": "5.\n带回退的束搜索 LibriSpeech.test-clean LibriSpeech.test-other TED-LIUM3 Switchboard CallHome WSJ 模型 CommonVoice5.1 VoxPopuli.en Fleurs.en us AMI-SDM1 AMI-IHM CORAAL CHiME6 Artie Whisper tiny.en"
       }
      ]
     },
@@ -8191,7 +8191,7 @@ globalThis.PAPER_2212_04356 = {
       {
        "id": "s-D-3-1-1",
        "original": "D.3.1.",
-       "zh": "3.\n（原始数据照录）\nD.3.1."
+       "zh": "3.\nD.3.1."
       },
       {
        "id": "s-D-3-1-2",
@@ -8671,7 +8671,7 @@ globalThis.PAPER_2212_04356 = {
       {
        "id": "s-D-3-7-1",
        "original": "D.3.2.",
-       "zh": "3.\n（原始数据照录）\nD.3.2."
+       "zh": "3.\nD.3.2."
       },
       {
        "id": "s-D-3-7-2",

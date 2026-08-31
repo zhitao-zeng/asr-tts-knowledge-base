@@ -92,6 +92,7 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 }
 /* 图/表标题、公式、表格主体 */
 .cap{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:12px 0;font-size:13px}
+.cap img.fig{display:block;max-width:100%;margin:2px auto 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .cap-k{display:inline-block;font-size:11px;font-weight:700;color:#0f766e;background:#ccfbf1;border-radius:6px;padding:1px 7px;margin-right:6px}
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
@@ -290,7 +291,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-5-1"><span class="zh">（图 1 流水线标签：ASR Timestamps: [0.2,0.6][0.7,1.2]；ASR Confidence: 0.99；VAD &amp; AED Info: [0.1, 1.4] speech；LID Info: English/0.98；ASR FireRedASR2；Punc FireRedPunc。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-2-1"><span class="cap-k">图</span><p class="en">Figure 1: Overview of FireRedASR2S. The input waveform is processed sequentially by FireRedVAD (VAD), FireRedLID (LID), FireRedASR2 (ASR), and FireRedPunc (Punc) to produce structured transcription outputs, including punctuated text, timestamps, confidence scores, and language labels.</p><p class="zh">Figure 1：FireRedASR2S 概览。输入波形依次经过 FireRedVAD（VAD）、FireRedLID（LID）、FireRedASR2（ASR）和 FireRedPunc（Punc）处理，产出结构化转写输出，包括带标点文本、时间戳、置信度分数和语种标签。</p></div>
+<div class="cap" id="fig-2-1"><img class="fig" src="../assets/figures/2603.10420/fig-2-1.png" loading="lazy" alt="Figure 1: Overview of FireRedASR2S. The input waveform is processed sequentially by FireRedVAD (VAD), FireRedLID (LID), "><span class="cap-k">图</span><p class="en">Figure 1: Overview of FireRedASR2S. The input waveform is processed sequentially by FireRedVAD (VAD), FireRedLID (LID), FireRedASR2 (ASR), and FireRedPunc (Punc) to produce structured transcription outputs, including punctuated text, timestamps, confidence scores, and language labels.</p><p class="zh">Figure 1：FireRedASR2S 概览。输入波形依次经过 FireRedVAD（VAD）、FireRedLID（LID）、FireRedASR2（ASR）和 FireRedPunc（Punc）处理，产出结构化转写输出，包括带标点文本、时间戳、置信度分数和语种标签。</p></div>
 <div class="pblk" id="p-2-6">
           <p class="en-lines"><span class="sent" data-sid="s-2-6-1"><span class="en">Structured outputs: FireRedASR2S returns structured outputs containing (1) the final transcription text, (2) a list of sentence-level segments with start/end timestamps, recognized text, ASR confidence, and optional language labels with confidence, and (3) VAD segmentation results.</span></span> <span class="sent" data-sid="s-2-6-2"><span class="en">When ASR timestamping is enabled, the system can further derive sentence-level timestamps by leveraging punctuation prediction.</span></span> <span class="sent" data-sid="s-2-6-3"><span class="en">All timestamps are reported on the original waveform timeline.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-6-1"><span class="zh">结构化输出：FireRedASR2S 返回的结构化输出包含（1）最终转写文本，（2）句级分段列表（含起止时间戳、识别文本、ASR 置信度，以及可选的带置信度语种标签），以及（3）VAD 切分结果。</span></span><span class="sent" data-sid="s-2-6-2"><span class="zh">当启用 ASR 时间戳时，系统还可以借助标点预测进一步导出句级时间戳。</span></span><span class="sent" data-sid="s-2-6-3"><span class="zh">所有时间戳都在原始波形时间轴上报告。</span></span></p>
@@ -324,7 +325,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-1"><span class="zh">（图 2 架构标签：Adapter（可训练参数 Linear / 固定参数 Linear+ReLU / LoRA）；Hidden vector；Frame Splice；语音「Hello World」&lt;eos&gt;；Timestamps prompt；CTC；Transformer Attention Decoder；&lt;sos&gt;；初始化 Conformer Encoder；Large Language Model；输出文本转写；语音表示 Adapter。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-3-1"><span class="cap-k">图</span><p class="en">Figure 2: Architecture of FireRedASR2-AED (bottom left), FireRedASR2-LLM (right), and Adapter.</p><p class="zh">Figure 2：FireRedASR2-AED（左下）、FireRedASR2-LLM（右）与 Adapter 的架构。</p></div></section>
+<div class="cap" id="fig-3-1"><img class="fig" src="../assets/figures/2603.10420/fig-3-1.png" loading="lazy" alt="Figure 2: Architecture of FireRedASR2-AED (bottom left), FireRedASR2-LLM (right), and Adapter."><span class="cap-k">图</span><p class="en">Figure 2: Architecture of FireRedASR2-AED (bottom left), FireRedASR2-LLM (right), and Adapter.</p><p class="zh">Figure 2：FireRedASR2-AED（左下）、FireRedASR2-LLM（右）与 Adapter 的架构。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-3-1"><span class="secnum">3.1</span> <span class="t-zh">3.1 FireRedASR2-AED：基于注意力的编码器-解码器 ASR 模型</span><span class="t-en">FireRedASR2-AED: Attention-based Encoder-Decoder ASR model</span></h3><div class="pblk" id="p-3-1-1">
           <p class="en-lines"><span class="sent" data-sid="s-3-1-1-1"><span class="en">The overall architecture of FireRedASR2-AED is illustrated in Figure 2 (bottom left).</span></span></p>
@@ -418,7 +419,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-3-3"><span class="secnum">3.3</span> <span class="t-zh">3.3 与 FireRedASR 的差异小结</span><span class="t-en">Summary of differences from FireRedASR</span></h3><div class="cap" id="tab-3-3-1"><span class="cap-k">表</span><p class="en">Table 1 summarizes the major differences between FireRedASR2 and FireRedASR. Overall, FireRedASR2 retains the proven model designs in FireRedASR, while improving generalization via a larger and more diverse training corpus and enabling timestamp generation via a post-hoc CTC branch in the AED variant.</p><p class="zh">Table 1 汇总了 FireRedASR2 与 FireRedASR 之间的主要差异。总体而言，FireRedASR2 保留了 FireRedASR 中经过验证的模型设计，同时通过更大、更多样的训练语料提升泛化能力，并在 AED 变体中通过事后 CTC 分支实现时间戳生成。</p></div>
+      <h3 class="sech lv2" id="sec-3-3"><span class="secnum">3.3</span> <span class="t-zh">3.3 与 FireRedASR 的差异小结</span><span class="t-en">Summary of differences from FireRedASR</span></h3><div class="pblk" id="tab-3-3-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-3-3-1-s1"><span class="en">Table 1 summarizes the major differences between FireRedASR2 and FireRedASR. Overall, FireRedASR2 retains the proven model designs in FireRedASR, while improving generalization via a larger and more diverse training corpus and enabling timestamp generation via a post-hoc CTC branch in the AED variant.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-3-3-1-s1"><span class="zh">Table 1 汇总了 FireRedASR2 与 FireRedASR 之间的主要差异。总体而言，FireRedASR2 保留了 FireRedASR 中经过验证的模型设计，同时通过更大、更多样的训练语料提升泛化能力，并在 AED 变体中通过事后 CTC 分支实现时间戳生成。</span></span></p>
+          
+        </div>
 <div class="cap" id="tab-3-3-2"><span class="cap-k">表</span><p class="en">Table 1: Key updates from FireRedASR to FireRedASR2.</p><p class="zh">Table 1：从 FireRedASR 到 FireRedASR2 的关键更新。</p></div></section>
 <section>
       <h3 class="sech lv2" id="sec-item"><span class="t-zh">Item</span><span class="t-en">Item</span></h3><div class="pblk" id="p-item-1">

@@ -92,6 +92,7 @@ body.depth-plain .exp-tech:only-child,body.depth-plain .ann-card:not(:has(.exp-p
 }
 /* 图/表标题、公式、表格主体 */
 .cap{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:9px 13px;margin:12px 0;font-size:13px}
+.cap img.fig{display:block;max-width:100%;margin:2px auto 8px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .cap-k{display:inline-block;font-size:11px;font-weight:700;color:#0f766e;background:#ccfbf1;border-radius:6px;padding:1px 7px;margin-right:6px}
 .cap p{margin:3px 0;display:inline}
 .cap .zh{display:block;color:#0f172a}
@@ -206,7 +207,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="fig-1-1"><span class="cap-k">图</span><p class="en">Figure 1 | Overview of LongCat-AudioDiT. Our architecture generates continuous waveform latents directly, thereby avoiding the compounding errors that inherently arise when predicting and subsequently converting intermediate representations (e.g., mel-spectrograms) into waveforms.</p><p class="zh">图 1 | LongCat-AudioDiT 概览。我们的架构直接生成连续波形潜变量，从而避免了先预测中间表征（如梅尔频谱图）、再将其转换为波形时固有的误差累积。</p></div>
+<div class="pblk" id="fig-1-1">
+          <p class="en-lines"><span class="sent" data-sid="fig-1-1-s1"><span class="en">Figure 1 | Overview of LongCat-AudioDiT. Our architecture generates continuous waveform latents directly, thereby avoiding the compounding errors that inherently arise when predicting and subsequently converting intermediate representations (e.g., mel-spectrograms) into waveforms.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="fig-1-1-s1"><span class="zh">图 1 | LongCat-AudioDiT 概览。我们的架构直接生成连续波形潜变量，从而避免了先预测中间表征（如梅尔频谱图）、再将其转换为波形时固有的误差累积。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-1-2">
           <p class="en-lines"><span class="sent" data-sid="s-1-2-1"><span class="en">of Seed-DiT remain undisclosed, leaving a critical gap regarding how to construct a pure, highly performant diffusion-based TTS system.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-2-1"><span class="zh">始终未被公开，这就留下了一个关键空白：如何构建一个纯粹的、高性能的扩散式 TTS 系统。</span></span></p>
@@ -356,7 +361,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-1-9-1"><span class="zh">（此处为图 2 右侧文本编码器部分的抽取残留，按图内标签如实译出：）Layer Norm、Layer Norm、提示、掩码、原始词嵌入、干净潜变量、UMT5、文本、用于预测、加噪提示、加噪潜变量。</span></span></p>
           
         </div>
-<div class="cap" id="fig-3-1-1"><span class="cap-k">图</span><p class="en">Figure 2 | Architecture of LongCat-AudioDiT. Middle: The overall architecture. Left: Detailed structure of the DiT block. Right: Detailed structure of the text encoder.</p><p class="zh">图 2 | LongCat-AudioDiT 的架构。中：整体架构。左：DiT 模块的细节结构。右：文本编码器的细节结构。</p></div></section>
+<div class="pblk" id="fig-3-1-1">
+          <p class="en-lines"><span class="sent" data-sid="fig-3-1-1-s1"><span class="en">Figure 2 | Architecture of LongCat-AudioDiT. Middle: The overall architecture. Left: Detailed structure of the DiT block. Right: Detailed structure of the text encoder.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="fig-3-1-1-s1"><span class="zh">图 2 | LongCat-AudioDiT 的架构。中：整体架构。左：DiT 模块的细节结构。右：文本编码器的细节结构。</span></span></p>
+          
+        </div></section>
 <section>
       <h3 class="sech lv2" id="sec-3-2"><span class="secnum">3.2</span> <span class="t-zh">3.2 训练目标</span><span class="t-en">Training Objective</span></h3><div class="pblk" id="p-3-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-1-1"><span class="en">The Wav-VAE is optimized via a two-stage adversarial training procedure.</span></span> <span class="sent" data-sid="s-3-2-1-2"><span class="en">The generator (i.e., the autoencoder) minimizes a combined loss function formulated as:</span></span></p>
@@ -654,7 +663,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-evaluation-metrics-1"><span class="cap-k">表</span><p class="en">Table 1 | Objective evaluation results of LongCat-AudioDiT on the Seed benchmark [Anastassiou et al., 2024]. The results of other methods are taken from the original paper or, if open-sourced, evaluated by us. Bold indicates the best score. Underline indicates the second-best score.</p><p class="zh">表 1 ｜ LongCat-AudioDiT 在 Seed 基准 [Anastassiou et al., 2024] 上的客观评测结果。其他方法的结果取自原始论文；若已开源，则由我们自行评测。加粗表示最佳得分，下划线表示次佳得分。</p></div></section>
+<div class="pblk" id="tab-evaluation-metrics-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-evaluation-metrics-1-s1"><span class="en">Table 1 | Objective evaluation results of LongCat-AudioDiT on the Seed benchmark [Anastassiou et al., 2024]. The results of other methods are taken from the original paper or, if open-sourced, evaluated by us. Bold indicates the best score. Underline indicates the second-best score.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-evaluation-metrics-1-s1"><span class="zh">表 1 ｜ LongCat-AudioDiT 在 Seed 基准 [Anastassiou et al., 2024] 上的客观评测结果。其他方法的结果取自原始论文；若已开源，则由我们自行评测。加粗表示最佳得分，下划线表示次佳得分。</span></span></p>
+          
+        </div></section>
 <section>
       <h3 class="sech lv2" id="sec-model"><span class="t-zh">模型（表 2 表头与 GT 行抽取残留）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-1-1"><span class="en">ZH EN ZH-Hard CER (%) ↓ SIM ↑ WER (%) ↓ SIM ↑ CER (%) ↓ SIM ↑ GT</span></span></p>
@@ -743,7 +756,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-tts-synthesis-performance-1-1"><span class="zh">如表 1 所示，我们提出的 TTS 模型持续优于绝大多数先前工作，尤其在说话人相似度（SIM）上相对极具竞争力的 Seed-DiT 架构 [Anastassiou et al., 2024] 取得了显著增益。</span></span><span class="sent" data-sid="s-tts-synthesis-performance-1-2"><span class="zh">具体而言，LongCat-AudioDiT 在要求严苛的 Seed-ZH 与 Seed-Hard 基准上建立了新的 SOTA SIM 得分，并在 Seed-EN 上取得次佳 SIM。</span></span><span class="sent" data-sid="s-tts-synthesis-performance-1-3"><span class="zh">最引人注目的是，我们的端到端框架明确超越了所有以往依赖中间梅尔频谱图的扩散式范式——如 F5-TTS [Chen et al., 2024a]。（此处串入脚注 2 的 URL 抽取残留：https://github.com/microsoft/UniSpeech/tree/main/downstreams/speaker_verification）</span></span></p>
           
         </div>
-<div class="cap" id="tab-tts-synthesis-performance-1"><span class="cap-k">表</span><p class="en">Table 2 | Objective evaluation results of the proposed Wav-VAE on the LibriTTS Zen et al. [2019] test-clean subset. Bold indicates the best score among continuous VAEs. Nq is the number of codebooks for discrete codecs. For codecs, frame per second (FPS) denotes the number of tokens per second.</p><p class="zh">表 2 ｜ 所提 Wav-VAE 在 LibriTTS（Zen et al. [2019]）test-clean 子集上的客观评测结果。加粗表示连续 VAE 中的最佳得分。Nq 为离散编解码器的码本数量。对编解码器而言，帧率（FPS）表示每秒的 token 数。</p></div></section>
+<div class="pblk" id="tab-tts-synthesis-performance-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-tts-synthesis-performance-1-s1"><span class="en">Table 2 | Objective evaluation results of the proposed Wav-VAE on the LibriTTS Zen et al. [2019] test-clean subset. Bold indicates the best score among continuous VAEs. Nq is the number of codebooks for discrete codecs. For codecs, frame per second (FPS) denotes the number of tokens per second.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-tts-synthesis-performance-1-s1"><span class="zh">表 2 ｜ 所提 Wav-VAE 在 LibriTTS（Zen et al. [2019]）test-clean 子集上的客观评测结果。加粗表示连续 VAE 中的最佳得分。Nq 为离散编解码器的码本数量。对编解码器而言，帧率（FPS）表示每秒的 token 数。</span></span></p>
+          
+        </div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-2"><span class="t-zh">模型（表 2 表头与 GT 行抽取残留）</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-2-1-1"><span class="en">Nq FPS PESQ ↑ STOI ↑ UTMOS ↑ GT</span></span></p>
@@ -844,8 +861,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-1-3-1"><span class="zh">（图横轴：Latent dim（潜变量维度）。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-5-3-1-1"><span class="cap-k">图</span><p class="en">Figure 3 | Objective evaluation results for both Wav-VAE reconstruction and TTS synthesis under varying latent dimensions. For ease of reading, we negate WER-TTS.</p><p class="zh">图 3 ｜ 不同潜变量维度下 Wav-VAE 重建与 TTS 合成的客观评测结果。为便于阅读，我们对 WER-TTS 取了负号。</p></div>
-<div class="cap" id="tab-5-3-1-1"><span class="cap-k">表</span><p class="en">Table 3 | Objective evaluation results of TTS models based on Wav-VAE and Mel-VAE on the Seed benchmark [Anastassiou et al., 2024]. Bold indicates the best score.</p><p class="zh">表 3 ｜ 基于 Wav-VAE 与 Mel-VAE 的 TTS 模型在 Seed 基准 [Anastassiou et al., 2024] 上的客观评测结果。加粗表示最佳得分。</p></div></section>
+<div class="pblk" id="fig-5-3-1-1">
+          <p class="en-lines"><span class="sent" data-sid="fig-5-3-1-1-s1"><span class="en">Figure 3 | Objective evaluation results for both Wav-VAE reconstruction and TTS synthesis under varying latent dimensions. For ease of reading, we negate WER-TTS.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="fig-5-3-1-1-s1"><span class="zh">图 3 ｜ 不同潜变量维度下 Wav-VAE 重建与 TTS 合成的客观评测结果。为便于阅读，我们对 WER-TTS 取了负号。</span></span></p>
+          
+        </div>
+<div class="pblk" id="tab-5-3-1-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-5-3-1-1-s1"><span class="en">Table 3 | Objective evaluation results of TTS models based on Wav-VAE and Mel-VAE on the Seed benchmark [Anastassiou et al., 2024]. Bold indicates the best score.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-5-3-1-1-s1"><span class="zh">表 3 ｜ 基于 Wav-VAE 与 Mel-VAE 的 TTS 模型在 Seed 基准 [Anastassiou et al., 2024] 上的客观评测结果。加粗表示最佳得分。</span></span></p>
+          
+        </div></section>
 <section>
       <h3 class="sech lv2" id="sec-tts-latent-model"><span class="t-zh">TTS 潜变量模型（表 3 行抽取残留）</span><span class="t-en">TTS Latent Model</span></h3><div class="pblk" id="p-tts-latent-model-1">
           <p class="en-lines"><span class="sent" data-sid="s-tts-latent-model-1-1"><span class="en">ZH EN ZH-Hard CER (%) ↓ SIM ↑ WER (%) ↓ SIM ↑ CER (%) ↓ SIM ↑ Mel-VAE</span></span></p>
@@ -895,7 +920,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-2-2-1"><span class="zh">（图横轴：Latent FPS（潜变量帧率）。）</span></span></p>
           
         </div>
-<div class="cap" id="fig-5-3-2-1"><span class="cap-k">图</span><p class="en">Figure 4 | Objective evaluation results for both Wav-VAE reconstruction and TTS synthesis across varying latent frame rates (FPS). For ease of reading, we negate WER-TTS.</p><p class="zh">图 4 ｜ 不同潜变量帧率（FPS）下 Wav-VAE 重建与 TTS 合成的客观评测结果。为便于阅读，我们对 WER-TTS 取了负号。</p></div>
+<div class="pblk" id="fig-5-3-2-1">
+          <p class="en-lines"><span class="sent" data-sid="fig-5-3-2-1-s1"><span class="en">Figure 4 | Objective evaluation results for both Wav-VAE reconstruction and TTS synthesis across varying latent frame rates (FPS). For ease of reading, we negate WER-TTS.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="fig-5-3-2-1-s1"><span class="zh">图 4 ｜ 不同潜变量帧率（FPS）下 Wav-VAE 重建与 TTS 合成的客观评测结果。为便于阅读，我们对 WER-TTS 取了负号。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-5-3-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-5-3-2-3-1"><span class="en">we select latent dimensions from the set {64, 128, 256} and frame rates from {7.81, 11.72, 23.44}, yielding a total of 6 unique Wav-VAE models and 6 paired TTS models.</span></span> <span class="sent" data-sid="s-5-3-2-3-2"><span class="en">For the dimension ablation (3 models), we fix the frame rate at 20 Hz; conversely, for the frame rate ablation (3 models), we fix the latent dimension at 64.</span></span> <span class="sent" data-sid="s-5-3-2-3-3"><span class="en">All TTS models in this ablation are trained using the exact configurations as the LongCat-AudioDiT-1B baseline.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-2-3-1"><span class="zh">我们从集合 {64, 128, 256} 中选取潜变量维度，从 {7.81, 11.72, 23.44} 中选取帧率，共得到 6 个独特的 Wav-VAE 模型与 6 个配对的 TTS 模型。</span></span><span class="sent" data-sid="s-5-3-2-3-2"><span class="zh">在维度消融（3 个模型）中，我们把帧率固定为 20 Hz；反之，在帧率消融（3 个模型）中，我们把潜变量维度固定为 64。</span></span><span class="sent" data-sid="s-5-3-2-3-3"><span class="zh">本消融中的所有 TTS 模型均采用与 LongCat-AudioDiT-1B 基线完全相同的配置训练。</span></span></p>
@@ -935,7 +964,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-3-2-7-1"><span class="zh">综合这两项关键观察，我们从实证上认定 64 维、11.72 Hz 的 Wav-VAE 为最优的表征目标，并将其作为所有 LongCat-AudioDiT 模型的默认配置。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-3-2-1"><span class="cap-k">表</span><p class="en">Table 4 | Objective evaluation results of the ablation studies on noise-prompt dual masking and APG on the Seed-ZH benchmark [Anastassiou et al., 2024]. Bold indicates the best score.</p><p class="zh">表 4 ｜ 噪声-提示双重掩码与 APG 在 Seed-ZH 基准 [Anastassiou et al., 2024] 上的消融研究客观评测结果。加粗表示最佳得分。</p></div></section>
+<div class="pblk" id="tab-5-3-2-1">
+          <p class="en-lines"><span class="sent" data-sid="tab-5-3-2-1-s1"><span class="en">Table 4 | Objective evaluation results of the ablation studies on noise-prompt dual masking and APG on the Seed-ZH benchmark [Anastassiou et al., 2024]. Bold indicates the best score.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="tab-5-3-2-1-s1"><span class="zh">表 4 ｜ 噪声-提示双重掩码与 APG 在 Seed-ZH 基准 [Anastassiou et al., 2024] 上的消融研究客观评测结果。加粗表示最佳得分。</span></span></p>
+          
+        </div></section>
 <section>
       <h3 class="sech lv2" id="sec-experiment"><span class="t-zh">实验（表 4 行抽取残留）</span><span class="t-en">Experiment</span></h3><div class="pblk" id="p-experiment-1">
           <p class="en-lines"><span class="sent" data-sid="s-experiment-1-1"><span class="en">CER (%) ↓ SIM ↑ UTMOS ↑ DNSMOS ↑ LongCat-AudioDiT-1B</span></span></p>
