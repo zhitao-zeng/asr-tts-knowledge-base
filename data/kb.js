@@ -5422,7 +5422,14 @@ globalThis.BENCHMARKS = [
         "v": 0.73,
         "note": "CER 0.73 / SIM 79.7"
       },
-     {"id": "voxcpm2", "v": 0.97, "note": "test-zh CER 0.97 / SIM 79.5（论文表 3）"}
+     {"id": "voxcpm2", "v": 0.97, "note": "test-zh CER 0.97 / SIM 79.5（论文表 3）"},
+     {"id": "f5_tts", "v": 1.56, "note": "F5-TTS (32 NFE) [8]（论文重建表）"},
+     {"id": "longcat_audiodit", "v": 1.09, "note": "LongCat-AudioDiT-3.5B [35]（论文重建表）"},
+     {"id": "seed_tts", "v": 1.12, "note": "Seed-TTS [2]（论文重建表）"},
+     {"id": "qwen3_tts", "v": 0.77, "note": "Qwen3-TTS-12Hz-1.7B-Base [6]（论文重建表）"},
+     {"id": "minimax28", "v": 0.99, "note": "MiniMax-Speech [40]（论文重建表）"},
+     {"id": "cosyvoice3", "v": 1.12, "note": "CosyVoice3-1.5B [4]（论文重建表）"},
+     {"id": "qwen_audio_tts", "v": 0.84, "note": "Qwen-Audio-3.0-TTS（论文重建表）"}
   ]
   },
   {
@@ -5443,7 +5450,8 @@ globalThis.BENCHMARKS = [
         "v": 81.8,
         "note": "Seed-ZH SIM 0.818"
       },
-     {"id": "voxcpm2", "v": 79.5, "note": "test-zh SIM 79.5 / CER 0.97（论文表 3）"}
+     {"id": "voxcpm2", "v": 79.5, "note": "test-zh SIM 79.5 / CER 0.97（论文表 3）"},
+     {"id": "seed_tts", "v": 76.2, "note": "Seed-TTS（论文重建表）"}
   ]
   },
   {
@@ -5459,7 +5467,14 @@ globalThis.BENCHMARKS = [
         "v": 1.49,
         "note": "WER 1.49 / SIM 76.8"
       },
-     {"id": "voxcpm2", "v": 1.84, "note": "test-en WER 1.84 / SIM 75.3（论文表 3）"}
+     {"id": "voxcpm2", "v": 1.84, "note": "test-en WER 1.84 / SIM 75.3（论文表 3）"},
+     {"id": "seed_tts", "v": 2.249, "note": "Seed-TTS（论文重建表）"},
+     {"id": "f5_tts", "v": 1.83, "note": "F5-TTS (32 NFE) [8]（论文重建表）"},
+     {"id": "longcat_audiodit", "v": 1.5, "note": "LongCat-AudioDiT-3.5B [35]（论文重建表）"},
+     {"id": "qwen3_tts", "v": 1.24, "note": "Qwen3-TTS-12Hz-1.7B-Base [6]（论文重建表）"},
+     {"id": "minimax28", "v": 1.9, "note": "MiniMax-Speech [40]（论文重建表）"},
+     {"id": "cosyvoice3", "v": 2.21, "note": "CosyVoice3-1.5B [4]（论文重建表）"},
+     {"id": "qwen_audio_tts", "v": 1.54, "note": "Qwen-Audio-3.0-TTS（论文重建表）"}
   ]
   },
   {
@@ -5475,7 +5490,8 @@ globalThis.BENCHMARKS = [
         "v": 76.8,
         "note": "Luna-TTS"
       },
-     {"id": "voxcpm2", "v": 75.3, "note": "test-en SIM 75.3 / WER 1.84（论文表 3）"}
+     {"id": "voxcpm2", "v": 75.3, "note": "test-en SIM 75.3 / WER 1.84（论文表 3）"},
+     {"id": "seed_tts", "v": 76.2, "note": "Seed-TTS（论文重建表）"}
   ]
   },
   {

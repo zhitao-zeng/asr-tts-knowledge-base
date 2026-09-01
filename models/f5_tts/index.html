@@ -42,7 +42,7 @@
   </div>
   <div class="sec"><div class="h">一句话</div><p>基于流匹配与 Diffusion Transformer 的全非自回归 TTS，用 ConvNeXt 细化文本并引入 Sway Sampling。</p></div>
   <div class="sec"><div class="h">所属主线</div><div class="tags"><span class="tag">全非自回归扩散系</span></div></div>
-  <div class="sec"><div class="h">关键指标（统一基准）</div><p class="muted">本模型暂未纳入统一基准对比表。</p></div>
+  <div class="sec"><div class="h">关键指标（统一基准）</div><table class="bench"><thead><tr><th>基准</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>Seed-TTS-Eval test-zh (CER%)</td><td>CER (%)</td><td class="v">1.56</td><td>F5-TTS (32 NFE) [8]（论文重建表）</td></tr><tr><td>Seed-TTS-Eval test-en (WER%)</td><td>WER (%)</td><td class="v">1.83</td><td>F5-TTS (32 NFE) [8]（论文重建表）</td></tr></tbody></table></div>
   <div class="sec"><div class="h acc">架构细节 · 设计动机与机制</div><h3>DiT + 流匹配</h3><p>F5-TTS 以流匹配与 Diffusion Transformer（DiT）为骨干，无需时长模型、文本编码器或音素对齐。</p><h3>ConvNeXt 文本细化</h3><p>文本先经 ConvNeXt V2 模块细化表示，再与填充 token 拼接到与语音等长，便于与语音对齐。</p><h3>Sway Sampling</h3><p>推理期提出 Sway Sampling 调整流步骤采样权重，显著提升自然度与可懂度，且可免重训应用于其它流匹配模型。</p></div>
   <div class="sec"><div class="h acc">训练数据与目标 · 配方</div><h3>数据</h3><p>在公开约 10 万小时多语言数据集（如 Emilia）上训练。</p><h3>对齐改进</h3><p>ConvNeXt 细化让文本表示更易与语音对齐，缓解 E2-TTS 收敛慢的问题；Sway Sampling 作为推理策略进一步提升质量与效率。</p></div>
   <div class="sec"><div class="h">关键实验结果</div><table class="bench"><thead><tr><th>数据集</th><th>指标</th><th>数值</th><th>说明</th></tr></thead><tbody><tr><td>LibriSpeech-PC</td><td>WER</td><td class="v">2.42（32 NFE）</td><td>论文报告值</td></tr><tr><td>推理</td><td>RTF</td><td class="v">0.15</td><td>相较扩散类 SOTA TTS 大幅提升</td></tr></tbody></table></div>
