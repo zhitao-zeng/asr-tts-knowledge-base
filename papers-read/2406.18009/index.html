@@ -584,49 +584,135 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-4-1"><span class="zh">6我们实验中使用的测试集可在以下地址获取：https://github.com/microsoft/e2tts-test-suite。</span></span></p>
           
         </div>
-<div class="cap" id="tab-3-3-1"><span class="cap-k">表</span><p class="en">Table 1. Objective results for LibriSpeech-PC test-clean evaluation set. WER is expressed in percentage. † Our reproduction. LL, LH, and PP stand for Librilight, Libriheavy, and Proprietary, respectively.</p><p class="zh">Table 1. LibriSpeech-PC test-clean 评测集的客观结果。WER 以百分比表示。† 我们的复现。LL、LH、PP 分别表示 Librilight、Libriheavy 和专有数据（Proprietary）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>set. WER is expressed in percentage. † Our reproduction. LL, LH,</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>and PP stand for Librilight, Libriheavy, and Proprietary, respectively.</th><th></th><th></th><th></th></tr><tr><th>ID</th><th>Model</th><th>Data (hours) Init</th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>(GT) Ground Truth</td><td></td><td></td><td>2.0</td><td>0.695</td></tr>
-<tr><td>(B1)</td><td>VALL-E [8]</td><td>LL (60K)</td><td>Random</td><td>4.9</td><td>0.500</td></tr>
-<tr><td>(B2)</td><td></td><td></td><td>Random</td><td>2.6</td><td>0.632</td></tr>
-<tr><td>(B3)</td><td>Voicebox [18]†</td><td>LL (60K)</td><td>Random</td><td>2.1</td><td>0.658</td></tr>
-<tr><td>(B4)</td><td>Voicebox [18]†</td><td>LH (50K)</td><td>Random</td><td>2.2</td><td>0.667</td></tr>
-<tr><td>(B5)</td><td>Voicebox [18]†</td><td>LH (50K)</td><td>Pretrain [34]</td><td>2.2</td><td>0.695</td></tr>
-<tr><td>(P1)</td><td>E2 TTS</td><td>LH (50K)</td><td>Random</td><td>2.0</td><td>0.675</td></tr>
-<tr><td>(P2)</td><td>E2 TTS</td><td>LH (50K)</td><td>Pretrain [34]</td><td>1.9</td><td>0.708</td></tr>
-<tr><td>(P3)</td><td>E2 TTS</td><td>PP (200K)</td><td>Random</td><td>1.9</td><td>0.707</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-3-3-1"><span class="cap-k">表</span><p class="en">Table 1. Objective results for LibriSpeech-PC test-clean evaluation set. WER is expressed in percentage. † Our reproduction. LL, LH, and PP stand for Librilight, Libriheavy, and Proprietary, respectively.</p><p class="zh">Table 1. LibriSpeech-PC test-clean 评测集的客观结果。WER 以百分比表示。† 我们的复现。LL、LH、PP 分别表示 Librilight、Libriheavy 和专有数据（Proprietary）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>set. WER is expressed in percentage. † Our reproduction. LL, LH,</th><th></th><th></th></tr><tr><th></th><th></th><th>and PP stand for Librilight, Libriheavy, and Proprietary, respectively.</th><th></th><th></th></tr><tr><th>ID</th><th>Model</th><th>Data (hours) Init</th><th></th><th></th></tr></thead><tbody><tr><td>style skip</td><td>(GT) Ground Truth</td><td></td><td></td><td>0.695</td></tr>
+<tr><td>dimension</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(B1)</td><td>VALL-E [8]</td><td>LL (60K)</td><td>Random</td><td>0.500</td></tr>
+<tr><td>embedding</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(B2)</td><td>NaturalSpeech 3 [15] LL (60K)</td><td></td><td>Random</td><td>0.632</td></tr>
+<tr><td>amounted (B3)</td><td>Voicebox [18]†</td><td>LL (60K)</td><td>Random</td><td>0.658</td></tr>
+<tr><td>(B4)</td><td>Voicebox [18]†</td><td>LH (50K)</td><td>Random</td><td>0.667</td></tr>
+<tr><td>with</td><td>[18]†</td><td></td><td></td><td></td></tr>
+<tr><td>(B5)</td><td>Voicebox</td><td>LH (50K)</td><td>Pretrain [34]</td><td>0.695</td></tr>
+<tr><td>was em-</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(P1)</td><td>E2 TTS</td><td>LH (50K)</td><td>Random</td><td>0.675</td></tr>
+<tr><td>70% (P2)</td><td>E2 TTS</td><td>LH (50K)</td><td>Pretrain [34]</td><td>0.708</td></tr>
+<tr><td>(P3)</td><td>E2 TTS</td><td>PP (200K)</td><td>Random</td><td>0.707</td></tr>
+<tr><td>training.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>[33]. All</td><td></td><td>Table 2. Subjective results for LibriSpeech-PC test-clean evaluation</td><td></td><td></td></tr>
+<tr><td>an effec-</td><td>set. † Our reproduction.</td><td></td><td></td><td></td></tr>
+<tr><td>a linear ID</td><td>Model</td><td></td><td></td><td></td></tr>
+<tr><td>10−5</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(GT)</td><td>Ground Truth</td><td></td><td></td><td></td></tr>
+<tr><td>We</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(B2)</td><td>NaturalSpeech 3 [15]</td><td></td><td></td><td></td></tr>
+<tr><td>models (B4)</td><td>Voicebox [18]†</td><td></td><td></td><td></td></tr>
+<tr><td>This pre- (P1)</td><td>E2 TTS</td><td></td><td></td><td></td></tr>
+<tr><td>(P2)</td><td>E2 TTS</td><td></td><td></td><td></td></tr>
+<tr><td>consisted</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(P3)</td><td>E2 TTS</td><td></td><td></td><td></td></tr>
+<tr><td>which</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>For the subjective assessments,</td><td></td><td>we conducted two tests:</td><td>the</td></tr>
+<tr><td>model by</td><td></td><td>Comparative Mean Opinion Score (CMOS) and the Speaker Simi-</td><td></td><td></td></tr>
+<tr><td>ar-</td><td></td><td>larity Mean Opinion Score (SMOS). We evaluated 39 samples for</td><td></td><td></td></tr>
+<tr><td>embedding both</td><td>tests, with one</td><td>per</td><td>from</td><td>set.</td></tr>
+<tr><td>training</td><td></td><td></td><td></td><td>In the</td></tr>
+<tr><td>frames.</td><td>CMOS test [15],</td><td></td><td>evaluators were shown the ground-truth sample</td><td></td></tr>
+<tr><td>for a fair</td><td></td><td>and the generated sample side-by-side without knowing which was</td><td></td><td></td></tr>
+<tr><td>also show</td><td></td><td>the ground-truth, and were asked to rate the naturalness on a 7-point</td><td></td><td></td></tr>
+<tr><td>3.6.</td><td></td><td>scale (from -3 to 3), where a negative value indicates a preference</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>for the ground-truth and a positive value indicates the opposite.</td><td></td><td>In</td></tr>
+<tr><td></td><td></td><td>the SMOS test, evaluators were presented with the audio prompt and</td><td></td><td></td></tr>
+<tr><td>of the</td><td></td><td>the generated sample, and asked to rate the speaker similarity on a</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>scale of 1 (not similar at all) to 5 (identical), with increments of 1.</td><td></td><td></td></tr>
+<tr><td>We</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>a duration 3.4.</td><td>Main results</td><td></td><td></td><td></td></tr>
+<tr><td>some of</td><td>In our experiments,</td><td></td><td>we conducted a comparison between our E2</td><td></td></tr>
+<tr><td>was</td><td>TTS models and three other models:</td><td></td><td></td><td></td></tr>
+<tr><td>prompt,</td><td>and NaturalSpeech 3 [15].</td><td></td><td>We utilized our own reimplementation</td><td></td></tr>
+<tr><td>speech</td><td></td><td>of the Voicebox model, which was based on the same model config-</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>uration with E2 TTS except that the Vicebox model is trained with</td><td></td><td></td></tr>
+<tr><td>For</td><td></td><td>frame-wise phoneme alignment. During the inference, we used CFG</td><td></td><td></td></tr>
+<tr><td>three ran-</td><td></td><td>with a guidance strength of 1.0 for both E2 TTS and Voicebox. We</td><td></td><td></td></tr>
+<tr><td>then cal-</td><td></td><td>employed the midpoint ODE solver with a number of function eval-</td><td></td><td></td></tr>
+<tr><td>and uations of 32.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>intelligi-</td><td></td><td>Table 1 presents the objective evaluation results for the baseline</td><td></td><td></td></tr>
+<tr><td>utilized</td><td></td><td>and E2 TTS models across various configurations. By comparing the</td><td></td><td></td></tr>
+<tr><td>the</td><td></td><td>(B4) and (P1) systems, we observe that the E2 TTS model achieved</td><td></td><td></td></tr>
+<tr><td>sam-</td><td></td><td>better WER and SIM-o than the Voicebox model when both were</td><td></td><td></td></tr>
+<tr><td>between</td><td>trained on the Libriheavy dataset.</td><td></td><td></td><td></td></tr>
+<tr><td>SIM-o, we</td><td></td><td>initialize the model with unsupervised pre-training [34] ((B5) vs.</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>(P2)), where the (P2) system achieved the best WER (1.9%) and</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>SIM-o (0.708) which are better than those of the ground-truth audio.</td><td></td><td></td></tr>
+<tr><td>data</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Finally, by using larger training data (P3), E2 TTS achieved the same</td><td></td><td></td></tr>
+<tr><td>https://</td><td></td><td>best WER (1.9%) and the second best SIM-o (0.707) even when the</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>model is trained from scratch, showcasing the scalability of E2 TTS.</td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-id"><span class="t-zh">ID</span><span class="t-en">ID</span></h3>
+<div class="eq" id="eq-id-1"><code>- - 2.0 0.695</code></div>
 
+<div class="eq" id="eq-id-3"><code>4.9 0.500</code></div>
 
+<div class="eq" id="eq-id-5"><code>2.6 0.632</code></div>
 
+<div class="eq" id="eq-id-7"><code>2.1 0.658</code></div>
 
+<div class="eq" id="eq-id-9"><code>2.2 0.667</code></div>
 
+<div class="eq" id="eq-id-11"><code>2.2 0.695</code></div>
 
+<div class="eq" id="eq-id-13"><code>2.0 0.675</code></div>
 
+<div class="eq" id="eq-id-15"><code>1.9 0.708</code></div>
 
-
-
-
-
-
-
-
-
-
-<div class="cap" id="tab-id-1"><span class="cap-k">表</span><p class="en">Table 2. Subjective results for LibriSpeech-PC test-clean evaluation set. † Our reproduction.</p><p class="zh">Table 2. LibriSpeech-PC test-clean 评测集的主观结果。† 我们的复现。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>(GT) Ground Truth</td><td></td><td>-</td><td></td><td>-</td><td></td><td>2.0</td><td>0.695</td></tr>
-<tr><td>(B1)</td><td>VALL-E [8]</td><td></td><td></td><td>LL (60K)</td><td></td><td>Random</td><td>4.9</td><td>0.500</td></tr>
-<tr><td>(B2)</td><td></td><td>NaturalSpeech 3 [15] LL (60K)</td><td></td><td></td><td></td><td>Random</td><td>2.6</td><td>0.632</td></tr>
-<tr><td>(B3)</td><td>Voicebox [18]†</td><td></td><td></td><td>LL (60K)</td><td></td><td>Random</td><td>2.1</td><td>0.658</td></tr>
-<tr><td>(B4)</td><td>Voicebox [18]†</td><td></td><td></td><td>LH (50K)</td><td></td><td>Random</td><td>2.2</td><td>0.667</td></tr>
-<tr><td>(B5)</td><td>Voicebox [18]†</td><td></td><td></td><td>LH (50K)</td><td></td><td>Pretrain [34]</td><td>2.2</td><td>0.695</td></tr>
-<tr><td>(P1)</td><td>E2 TTS</td><td></td><td></td><td>LH (50K)</td><td></td><td>Random</td><td>2.0</td><td>0.675</td></tr>
-<tr><td>(P2)</td><td>E2 TTS</td><td></td><td></td><td>LH (50K)</td><td></td><td>Pretrain [34]</td><td>1.9</td><td>0.708</td></tr>
-<tr><td>(P3)</td><td>E2 TTS</td><td></td><td></td><td>PP (200K)</td><td></td><td>Random</td><td>1.9</td><td>0.707</td></tr></tbody></table></div></div></section>
+<div class="eq" id="eq-id-17"><code>1.9 0.707</code></div>
+<div class="cap" id="tab-id-1"><span class="cap-k">表</span><p class="en">Table 2. Subjective results for LibriSpeech-PC test-clean evaluation set. † Our reproduction.</p><p class="zh">Table 2. LibriSpeech-PC test-clean 评测集的主观结果。† 我们的复现。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>an effec-</th><th></th><th>set. † Our reproduction.</th><th></th><th></th></tr><tr><th>a linear</th><th>ID</th><th>Model</th><th></th><th>CMOS↑</th></tr><tr><th>10−5</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>(GT)</td><td></td><td></td><td>0.00</td></tr>
+<tr><td>We</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>(B2)</td><td></td><td></td><td>-0.98</td></tr>
+<tr><td>models</td><td>(B4)</td><td></td><td></td><td>-0.78</td></tr>
+<tr><td>This pre-</td><td>(P1)</td><td>E2 TTS</td><td></td><td>-0.14</td></tr>
+<tr><td></td><td>(P2)</td><td>E2 TTS</td><td></td><td>-0.05</td></tr>
+<tr><td>consisted</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>(P3)</td><td>E2 TTS</td><td></td><td>-0.18</td></tr>
+<tr><td>which</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>model by</td><td></td><td></td><td>Comparative Mean Opinion Score (CMOS) and the Speaker Simi-</td><td></td></tr>
+<tr><td>ar-</td><td></td><td></td><td>larity Mean Opinion Score (SMOS). We evaluated 39 samples for</td><td></td></tr>
+<tr><td>embedding</td><td>both</td><td>tests, with</td><td>per</td><td>from</td></tr>
+<tr><td>training</td><td></td><td></td><td>Each sample was assessed by 12 Native English evaluators.</td><td></td></tr>
+<tr><td>frames.</td><td></td><td>CMOS test [15],</td><td></td><td>evaluators were shown the ground-truth sample</td></tr>
+<tr><td>for a fair</td><td></td><td></td><td>and the generated sample side-by-side without knowing which was</td><td></td></tr>
+<tr><td>also show</td><td></td><td></td><td>the ground-truth, and were asked to rate the naturalness on a 7-point</td><td></td></tr>
+<tr><td>3.6.</td><td></td><td></td><td>scale (from -3 to 3), where a negative value indicates a preference</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>for the ground-truth and a positive value indicates the opposite.</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>the SMOS test, evaluators were presented with the audio prompt and</td><td></td></tr>
+<tr><td>of the</td><td></td><td></td><td>the generated sample, and asked to rate the speaker similarity on a</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>scale of 1 (not similar at all) to 5 (identical), with increments of 1.</td><td></td></tr>
+<tr><td>We</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>a duration</td><td>3.4.</td><td>Main results</td><td></td><td></td></tr>
+<tr><td>some of</td><td></td><td>In our experiments,</td><td></td><td>we conducted a comparison between our E2</td></tr>
+<tr><td>was</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>prompt,</td><td></td><td>and NaturalSpeech 3 [15].</td><td></td><td>We utilized our own reimplementation</td></tr>
+<tr><td>speech</td><td></td><td></td><td>of the Voicebox model, which was based on the same model config-</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>uration with E2 TTS except that the Vicebox model is trained with</td><td></td></tr>
+<tr><td>For</td><td></td><td></td><td>frame-wise phoneme alignment. During the inference, we used CFG</td><td></td></tr>
+<tr><td>three ran-</td><td></td><td></td><td>with a guidance strength of 1.0 for both E2 TTS and Voicebox. We</td><td></td></tr>
+<tr><td>then cal-</td><td></td><td></td><td>employed the midpoint ODE solver with a number of function eval-</td><td></td></tr>
+<tr><td>and</td><td>uations of 32.</td><td></td><td></td><td></td></tr>
+<tr><td>intelligi-</td><td></td><td></td><td>Table 1 presents the objective evaluation results for the baseline</td><td></td></tr>
+<tr><td>utilized</td><td></td><td></td><td>and E2 TTS models across various configurations. By comparing the</td><td></td></tr>
+<tr><td>the</td><td></td><td></td><td>(B4) and (P1) systems, we observe that the E2 TTS model achieved</td><td></td></tr>
+<tr><td>sam-</td><td></td><td></td><td>better WER and SIM-o than the Voicebox model when both were</td><td></td></tr>
+<tr><td>between</td><td></td><td>trained on the Libriheavy dataset.</td><td></td><td></td></tr>
+<tr><td>SIM-o, we</td><td></td><td></td><td>initialize the model with unsupervised pre-training [34] ((B5) vs.</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>(P2)), where the (P2) system achieved the best WER (1.9%) and</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>SIM-o (0.708) which are better than those of the ground-truth audio.</td><td></td></tr>
+<tr><td>data</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Finally, by using larger training data (P3), E2 TTS achieved the same</td><td></td></tr>
+<tr><td>https://</td><td></td><td></td><td>best WER (1.9%) and the second best SIM-o (0.707) even when the</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>model is trained from scratch, showcasing the scalability of E2 TTS.</td><td></td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-id-2"><span class="t-zh">ID</span><span class="t-en">ID</span></h3><div class="pblk" id="p-id-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-id-2-1-1"><span class="en">Model CMOS↑ SMOS↑ (GT) Ground Truth</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-id-2-1-1"><span class="zh">（表：Model × CMOS↑ × SMOS↑——(GT) Ground Truth 0.00/3.91±0.13；(B2) NaturalSpeech 3 [15] -0.98/4.76±0.06；(B4) Voicebox [18]† -0.78/4.73±0.06；(P1) E2 TTS -0.14/4.66±0.07；(P2) E2 TTS -0.05/4.65±0.08；(P3) E2 TTS -0.18/4.64±0.08。）主观评测包含两项：比较平均意见分（CMOS）与说话人相似度平均意见分（SMOS）。</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-id-2"><span class="t-zh">ID</span><span class="t-en">ID</span></h3>
 <div class="eq" id="eq-id-2-1"><code>0.00 3.91±0.13</code></div>
 
 <div class="eq" id="eq-id-2-3"><code>-0.98 4.76±0.06</code></div>
@@ -638,28 +724,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-id-2-9"><code>-0.05 4.65±0.08</code></div>
 
 <div class="eq" id="eq-id-2-11"><code>-0.18 4.64±0.08</code></div>
-<div class="pblk" id="p-id-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-id-2-2-1"><span class="en">For the subjective assessments, we conducted two tests: the Comparative Mean Opinion Score (CMOS) and the Speaker Similarity Mean Opinion Score (SMOS).</span></span> <span class="sent" data-sid="s-id-2-2-2"><span class="en">We evaluated 39 samples for both tests, with one sample per speaker from our test-clean set.</span></span> <span class="sent" data-sid="s-id-2-2-3"><span class="en">Each sample was assessed by 12 Native English evaluators.</span></span> <span class="sent" data-sid="s-id-2-2-4"><span class="en">In the CMOS test [15], evaluators were shown the ground-truth sample and the generated sample side-by-side without knowing which was the ground-truth, and were asked to rate the naturalness on a 7-point scale (from -3 to 3), where a negative value indicates a preference for the ground-truth and a positive value indicates the opposite.</span></span> <span class="sent" data-sid="s-id-2-2-5"><span class="en">In the SMOS test, evaluators were presented with the audio prompt and the generated sample, and asked to rate the speaker similarity on a scale of 1 (not similar at all) to 5 (identical), with increments of 1.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-id-2-2-1"><span class="zh">（表：Model × CMOS↑ × SMOS↑——(GT) Ground Truth 0.00/3.91±0.13；(B2) NaturalSpeech 3 [15] -0.98/4.76±0.06；(B4) Voicebox [18]† -0.78/4.73±0.06；(P1) E2 TTS -0.14/4.66±0.07；(P2) E2 TTS -0.05/4.65±0.08；(P3) E2 TTS -0.18/4.64±0.08。）主观评测包含两项：比较平均意见分（CMOS）与说话人相似度平均意见分（SMOS）。</span></span><span class="sent" data-sid="s-id-2-2-2"><span class="zh">两项测试各评测 39 个样本，每个样本来自我们 test-clean 集中的一位说话人。</span></span><span class="sent" data-sid="s-id-2-2-3"><span class="zh">每个样本由 12 位以英语为母语的评测者评分。</span></span><span class="sent" data-sid="s-id-2-2-4"><span class="zh">在 CMOS 测试 [15] 中，评测者并排看到真实样本与生成样本，但不知道哪个是真实样本，并被要求在 7 分制（-3 到 3）上评价自然度，负值表示偏好真实样本，正值表示相反。</span></span><span class="sent" data-sid="s-id-2-2-5"><span class="zh">在 SMOS 测试中，评测者看到音频提示和生成样本，并被要求按 1（完全不相似）到 5（完全相同）的尺度评价说话人相似度，步长为 1。</span></span></p>
-          
-        </div></section>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-3-4"><span class="secnum">3.4</span> <span class="t-zh">3.4 主要结果</span><span class="t-en">Main results</span></h3><div class="pblk" id="p-3-4-1">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-1-1"><span class="en">In our experiments, we conducted a comparison between our E2 TTS models and three other models: Voicebox [18], VALL-E [8], and NaturalSpeech 3 [15].</span></span> <span class="sent" data-sid="s-3-4-1-2"><span class="en">We utilized our own reimplementation of the Voicebox model, which was based on the same model configuration with E2 TTS except that the Vicebox model is trained with frame-wise phoneme alignment.</span></span> <span class="sent" data-sid="s-3-4-1-3"><span class="en">During the inference, we used CFG with a guidance strength of 1.0 for both E2 TTS and Voicebox.</span></span> <span class="sent" data-sid="s-3-4-1-4"><span class="en">We employed the midpoint ODE solver with a number of function evaluations of 32.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-1-1"><span class="zh">在实验中，我们将 E2 TTS 模型与另外三个模型进行了比较：Voicebox [18]、VALL-E [8] 和 NaturalSpeech 3 [15]。</span></span><span class="sent" data-sid="s-3-4-1-2"><span class="zh">我们使用了我们自己重新实现的 Voicebox 模型，它与 E2 TTS 采用相同的模型配置，只是 Voicebox 模型使用帧级音素对齐进行训练。</span></span><span class="sent" data-sid="s-3-4-1-3"><span class="zh">推理时，我们对 E2 TTS 和 Voicebox 都使用 CFG，引导强度为 1.0。</span></span><span class="sent" data-sid="s-3-4-1-4"><span class="zh">我们采用中点 ODE 求解器，函数评估次数（NFE）为 32。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-4-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-4-2-1"><span class="en">Table 1 presents the objective evaluation results for the baseline and E2 TTS models across various configurations.</span></span> <span class="sent" data-sid="s-3-4-2-2"><span class="en">By comparing the (B4) and (P1) systems, we observe that the E2 TTS model achieved better WER and SIM-o than the Voicebox model when both were trained on the Libriheavy dataset.</span></span> <span class="sent" data-sid="s-3-4-2-3"><span class="en">This trend holds even when we initialize the model with unsupervised pre-training [34] ((B5) vs. (P2)), where the (P2) system achieved the best WER (1.9%) and SIM-o (0.708) which are better than those of the ground-truth audio.</span></span> <span class="sent" data-sid="s-3-4-2-4"><span class="en">Finally, by using larger training data (P3), E2 TTS achieved the same best WER (1.9%) and the second best SIM-o (0.707) even when the model is trained from scratch, showcasing the scalability of E2 TTS.</span></span> <span class="sent" data-sid="s-3-4-2-5"><span class="en">(B4) - Voicebox (P1) - E2 TTS</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-4-2-1"><span class="zh">表 1 给出基线与 E2 TTS 模型在多种配置下的客观评测结果。</span></span><span class="sent" data-sid="s-3-4-2-2"><span class="zh">对比 (B4) 与 (P1) 系统可见，同样在 Libriheavy 数据集上训练时，E2 TTS 的 WER 与 SIM-o 优于 Voicebox。</span></span><span class="sent" data-sid="s-3-4-2-3"><span class="zh">即使用无监督预训练初始化 [34]（(B5) vs. (P2)），这一趋势依然成立：(P2) 系统取得最佳 WER (1.9%) 与 SIM-o (0.708)，甚至优于真实音频。</span></span><span class="sent" data-sid="s-3-4-2-4"><span class="zh">最后，使用更大训练数据 (P3) 时，即使从头训练，E2 TTS 也取得相同的最佳 WER (1.9%) 与第二好的 SIM-o (0.707)，展示了其可扩展性。</span></span><span class="sent" data-sid="s-3-4-2-5"><span class="zh">（图例：(B4) - Voicebox / (P1) - E2 TTS。）</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-3-4"><span class="secnum">3.4</span> <span class="t-zh">3.4 主要结果</span><span class="t-en">Main results</span></h3>
+
 <div class="eq" id="eq-3-4-1"><code>16% 12%</code></div>
 
 <div class="eq" id="eq-3-4-3"><code>8% 4% 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</code></div>
 <div class="eq" id="eq-3-4-4"><code>Training Progress</code></div>
 <div class="eq" id="eq-3-4-5"><code>0.74 0.70 0.66</code></div>
-<div class="eq" id="eq-3-4-6"><code>SIM-o</code></div>
+
 <div class="eq" id="eq-3-4-7"><code>0.62</code></div>
 
 <div class="eq" id="eq-3-4-9"><code>0.58 0.54 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</code></div>
@@ -669,7 +743,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-3-4-12"><code>8% 4% 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</code></div>
 <div class="eq" id="eq-3-4-13"><code>Training Progress</code></div>
 <div class="eq" id="eq-3-4-14"><code>0.74 0.70 0.66</code></div>
-<div class="eq" id="eq-3-4-15"><code>SIM-o</code></div>
+
 <div class="eq" id="eq-3-4-16"><code>0.62</code></div>
 
 <div class="eq" id="eq-3-4-18"><code>0.58 0.54 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</code></div>
@@ -679,19 +753,50 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="cap" id="fig-3-4-1"><img class="fig" src="../assets/figures/2406.18009/fig-3-4-1.png" loading="lazy" alt="Fig. 4. The training progress of Voicebox and E2TTS models. The top row shows WER and the bottom row shows SIM progressi"><span class="cap-k">图</span><p class="en">Fig. 4. The training progress of Voicebox and E2TTS models. The top row shows WER and the bottom row shows SIM progressions.</p><p class="zh">图 4. Voicebox 和 E2 TTS 模型的训练过程。上排为 WER，下排为 SIM 的变化曲线。</p></div>
-<div class="cap" id="tab-3-4-1"><span class="cap-k">表</span><p class="en">Table 3. Comparison between the basic E2 TTS and E2 TTS X1. While the basic E2 TTS requires the transcription of the audio prompt during inference, E2 TTS X1 does not require it. WER is expressed in percentage.</p><p class="zh">Table 3. 基础版 E2 TTS 与 E2 TTS X1 的比较。基础版 E2 TTS 在推理时需要音频提示的转录，E2 TTS X1 则不需要。WER 以百分比表示。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>expressed in percentage.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>TTS X2</th><th></th></tr><tr><th></th><th>ID</th><th></th><th>Model</th><th></th><th>Init</th><th></th><th>WER↓</th><th>SIM-o↑</th><th></th><th>the</th><th></th></tr></thead><tbody><tr><td></td><td>(P1)</td><td></td><td>E2 TTS</td><td></td><td>Random</td><td></td><td>2.0</td><td>0.675</td><td></td><td>ID</td><td></td></tr>
-<tr><td></td><td>(P2)</td><td></td><td>E2 TTS</td><td></td><td></td><td>Pre-trained [34]</td><td>1.9</td><td>0.708</td><td></td><td>(P1)</td><td>E2</td></tr>
-<tr><td></td><td>(P1-X1)</td><td></td><td>E2 TTS X1</td><td></td><td>Random</td><td></td><td>2.0</td><td>0.664</td><td></td><td></td><td></td></tr>
-<tr><td></td><td>(P2-X1)</td><td></td><td>E2 TTS X1</td><td></td><td></td><td>Pre-trained [34]</td><td>2.0</td><td>0.705</td><td></td><td>(P1-X2)</td><td>E2</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-3-4-1"><span class="cap-k">表</span><p class="en">Table 3. Comparison between the basic E2 TTS and E2 TTS X1. While the basic E2 TTS requires the transcription of the audio prompt during inference, E2 TTS X1 does not require it. WER is expressed in percentage.</p><p class="zh">Table 3. 基础版 E2 TTS 与 E2 TTS X1 的比较。基础版 E2 TTS 在推理时需要音频提示的转录，E2 TTS X1 则不需要。WER 以百分比表示。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>the basic</th><th>E2 TTS</th><th>requires the</th><th>is randomly</th></tr><tr><th>expressed in percentage.</th><th></th><th></th><th>TTS X2</th></tr><tr><th></th><th>Model</th><th>Init</th><th>the</th></tr><tr><th>(P1)</th><th>E2 TTS</th><th>Random</th><th>ID</th></tr><tr><th>(P2)</th><th>E2 TTS</th><th>Pre-trained [34]</th><th>(P1)</th></tr></thead><tbody><tr><td>(P1-X1)</td><td>E2 TTS X1</td><td>Random</td><td></td></tr>
+<tr><td>(P2-X1)</td><td>E2 TTS X1</td><td>Pre-trained [34]</td><td>(P1-X2)</td></tr>
+<tr><td></td><td></td><td>It is noteworthy that E2 TTS achieved superior performance com-</td><td>(P2)</td></tr>
+<tr><td></td><td></td><td>pared to all strong baselines, including VALL-E, NaturalSpeech 3,</td><td></td></tr>
+<tr><td></td><td>and Voicebox, despite its extremely simple framework.</td><td></td><td>(P2-X2)</td></tr>
+<tr><td></td><td></td><td>Table 2 illustrated the subjective evaluation results for Natural-</td><td></td></tr>
+<tr><td></td><td></td><td>Speech 3, Voicebox, and E2 TTS. Firstly, all variants of E2 TTS,</td><td></td></tr>
+<tr><td></td><td></td><td>from (P1) to (P3), showed a better CMOS score compared to Natu-</td><td>3.5.</td></tr>
+<tr><td></td><td></td><td>ralSpeech 3 and Voicebox. In particular, the (P2) model achieved a</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>3.5.1.</td></tr>
+<tr><td></td><td></td><td>CMOS score of -0.05, which is considered to have a level of natural-</td><td></td></tr>
+<tr><td></td><td></td><td>ness indistinguishable from the ground truth [15, 24].7 The compar-</td><td></td></tr>
+<tr><td></td><td></td><td>ison between (B4) and (P1) suggests that the use of phoneme align-</td><td>results indicate</td></tr>
+<tr><td></td><td></td><td>ment was the major bottleneck in achieving better naturalness.</td><td>identical to</td></tr>
+<tr><td></td><td></td><td>garding speaker similarity, all the models we tested showed a better</td><td>was initialized</td></tr>
+<tr><td></td><td></td><td>SMOS compared to the ground truth, a phenomenon also observed in</td><td>not require the</td></tr>
+<tr><td></td><td></td><td>NaturalSpeech 3 [15].8 Among the tested systems, E2 TTS achieved</td><td></td></tr>
+<tr><td></td><td>a comparable SMOS to Voicebox and NaturalSpeech 3.</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Overall, E2 TTS demonstrated a robust zero-shot TTS capabil-</td><td></td></tr>
+<tr><td></td><td></td><td>ity that is either superior or comparable to strong baselines, including</td><td>3.5.2.</td></tr>
+<tr><td></td><td></td><td>Voicebox and NaturalSpeech 3. The comparison between Voicebox</td><td></td></tr>
+<tr><td></td><td></td><td>and E2 TTS revealed that the use of phoneme alignment was the pri-</td><td>In this</td></tr>
+<tr><td></td><td>mary obstacle in achieving natural-sounding audio.</td><td></td><td>phoneme</td></tr>
+<tr><td></td><td></td><td>training scheme, E2 TTS can be easily scaled up to accommodate</td><td>replaced words</td></tr>
+<tr><td>large training data.</td><td></td><td></td><td>with a</td></tr>
+<tr><td></td><td></td><td>ity, intelligibility, and a level of naturalness that is indistinguishable</td><td>Table 4</td></tr>
+<tr><td></td><td></td><td>from a human’s voice in the zero-shot TTS setting, despite the frame-</td><td>achieved parity</td></tr>
+<tr><td>work’s extreme simplicity.</td><td></td><td></td><td>sequences.</td></tr>
+<tr><td></td><td></td><td></td><td>any drawbacks.</td></tr>
+<tr><td></td><td></td><td>7In the evaluation, E2 TTS was judged to be better in 33% of samples,</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>only marginal</td></tr>
+<tr><td></td><td></td><td>while the ground truth was better in another 33% of samples. The remaining</td><td></td></tr>
+<tr><td></td><td>samples were judged to be of equal quality.</td><td></td><td>words with</td></tr>
+<tr><td></td><td></td><td>8In LibriSpeech, some speakers utilized varying voice characteristics for</td><td>specify the</td></tr>
+<tr><td></td><td></td><td>different characters in the book, leading to a low SMOS for the ground truth.</td><td>TTS model.</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-id-3"><span class="t-zh">ID</span><span class="t-en">ID</span></h3>
 
 
 
 
+<div class="eq" id="eq-id-3-5"><code>2.0 0.664</code></div>
 
-
-
+<div class="eq" id="eq-id-3-7"><code>2.0 0.705</code></div>
 <div class="pblk" id="p-id-3-2">
           <p class="en-lines"><span class="sent" data-sid="s-id-3-2-1"><span class="en">It is noteworthy that E2 TTS achieved superior performance compared to all strong baselines, including VALL-E, NaturalSpeech 3, and Voicebox, despite its extremely simple framework.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-id-3-2-1"><span class="zh">（表：Model × Init × WER↓ × SIM-o↑——(P1) E2 TTS 随机初始化 2.0/0.675；(P2) E2 TTS 预训练 [34] 1.9/0.708；(P1-X1) E2 TTS X1 随机 2.0/0.664；(P2-X1) E2 TTS X1 预训练 [34] 2.0/0.705。）值得注意的是，尽管框架极其简单，E2 TTS 仍超过了 VALL-E、NaturalSpeech 3、Voicebox 等所有强基线。</span></span></p>
@@ -721,24 +826,41 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="pblk" id="p-id-3-5">
-          <p class="en-lines"><span class="sent" data-sid="s-id-3-5-1"><span class="en">7In the evaluation, E2 TTS was judged to be better in 33% of samples, while the ground truth was better in another 33% of samples.</span></span> <span class="sent" data-sid="s-id-3-5-2"><span class="en">The remaining samples were judged to be of equal quality.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-id-3-5-1"><span class="zh">7在评测中，E2 TTS 在 33% 的样本上被评为更好，真实样本在另外 33% 的样本上被评为更好。</span></span><span class="sent" data-sid="s-id-3-5-2"><span class="zh">其余样本被评为质量相当。</span></span></p>
-          
-        </div>
+
 <div class="pblk" id="p-id-3-6">
           <p class="en-lines"><span class="sent" data-sid="s-id-3-6-1"><span class="en">8In LibriSpeech, some speakers utilized varying voice characteristics for different characters in the book, leading to a low SMOS for the ground truth.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-id-3-6-1"><span class="zh">8在 LibriSpeech 中，一些说话人为书中的不同角色使用了不同的声音特征，导致真实样本的 SMOS 偏低。</span></span></p>
           
         </div>
-<div class="cap" id="tab-id-3-1"><span class="cap-k">表</span><p class="en">Table 4. The WER (%) and SIM-o of E2 TTS X2 where a word is randomly replaced with the phoneme sequence during inference. Even when we replaced 50% of words into phoneme sequences, E2 TTS X2 worked reasonably well. This indicates that we can specify the pronunciation of a new term without retraining.</p><p class="zh">Table 4. E2 TTS X2 的 WER（%）与 SIM-o：推理时随机将单词替换为音素序列。即使我们把 50% 的单词替换为音素序列，E2 TTS X2 仍能正常工作。这表明我们可以在不重新训练的情况下指定新术语的发音。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th>is randomly replaced with the phoneme sequence during inference.</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>Even when we replaced 50% of words into phoneme sequences, E2</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>TTS X2 worked reasonably well. This indicates that we can specify</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>the pronunciation of a new term without retraining.</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>ID</th><th>Model</th><th>Init</th><th></th><th></th><th>Phoneme %</th><th>WER↓</th><th>SIM-o↑</th></tr></thead><tbody><tr><td>(P1)</td><td>E2 TTS</td><td>Random</td><td></td><td></td><td>0%</td><td>2.0</td><td>0.675</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>0%</td><td>2.0</td><td>0.679</td></tr>
-<tr><td>(P1-X2)</td><td>E2 TTS X2</td><td>Random</td><td></td><td></td><td>25%</td><td>2.0</td><td>0.678</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>50%</td><td>2.1</td><td>0.679</td></tr>
-<tr><td>(P2)</td><td>E2 TTS</td><td></td><td>Pre-trained [34]</td><td></td><td>0%</td><td>1.9</td><td>0.708</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>0%</td><td>1.9</td><td>0.708</td></tr>
-<tr><td>(P2-X2)</td><td>E2 TTS X2</td><td></td><td>Pre-trained [34]</td><td></td><td>25%</td><td>2.0</td><td>0.708</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>50%</td><td>2.1</td><td>0.707</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-id-3-1"><span class="cap-k">表</span><p class="en">Table 4. The WER (%) and SIM-o of E2 TTS X2 where a word is randomly replaced with the phoneme sequence during inference. Even when we replaced 50% of words into phoneme sequences, E2 TTS X2 worked reasonably well. This indicates that we can specify the pronunciation of a new term without retraining.</p><p class="zh">Table 4. E2 TTS X2 的 WER（%）与 SIM-o：推理时随机将单词替换为音素序列。即使我们把 50% 的单词替换为音素序列，E2 TTS X2 仍能正常工作。这表明我们可以在不重新训练的情况下指定新术语的发音。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>is randomly replaced with the phoneme sequence during inference.</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>Even when we replaced 50% of words into phoneme sequences, E2</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>TTS X2 worked reasonably well. This indicates that we can specify</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>the pronunciation of a new term without retraining.</th><th></th><th></th><th></th><th></th></tr><tr><th>ID</th><th>Model</th><th>Init</th><th></th><th>Phoneme %</th><th>WER↓</th><th>SIM-o↑</th></tr></thead><tbody><tr><td>(P1)</td><td>E2 TTS</td><td>Random</td><td></td><td>0%</td><td>2.0</td><td>0.675</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>0%</td><td>2.0</td><td>0.679</td></tr>
+<tr><td>(P1-X2)</td><td>E2 TTS X2</td><td>Random</td><td></td><td>25%</td><td>2.0</td><td>0.678</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>50%</td><td>2.1</td><td>0.679</td></tr>
+<tr><td>(P2)</td><td>E2 TTS</td><td></td><td></td><td>0%</td><td>1.9</td><td>0.708</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>0%</td><td>1.9</td><td>0.708</td></tr>
+<tr><td>(P2-X2)</td><td>E2 TTS X2</td><td></td><td></td><td>25%</td><td>2.0</td><td>0.708</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>50%</td><td>2.1</td><td>0.707</td></tr>
+<tr><td>3.5.</td><td></td><td>Evaluation of E2 TTS extensions</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>3.5.1.</td><td></td><td>Evaluation of the extension 1</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>The results for the E2 TTS X1 models are shown in Table 3. These</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>results indicate that the E2 TTS X1 model has achieved results nearly</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>identical to those of the E2 TTS model, especially when the model</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>was initialized by unsupervised pre-training [34]. E2 TTS X1 does</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>not require the transcription of the audio prompt, which greatly en-</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>3.5.2.</td><td></td><td>Evaluation of the extension 2</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>In this</td><td>experiment,</td><td>we</td><td>the</td><td>TTS</td><td>models</td><td>with</td></tr>
+<tr><td></td><td></td><td></td><td>phoneme replacement rate of 15%. During inference, we randomly</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>replaced words in the test-clean dataset with phoneme sequences,</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>with a probability ranging from 0% to 50%.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Table 4 shows the result.</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>achieved parity results when no words were replaced with phoneme</td><td></td><td></td><td></td></tr>
+<tr><td>sequences.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>any drawbacks. We also observed that the E2 TTS X2 model showed</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>only marginal degradation of WER, even when we replaced 50% of</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>words with phoneme sequences.</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>specify the pronunciation of a new term without retraining the E2</td><td></td><td></td><td></td></tr>
+<tr><td>TTS model.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-id-4"><span class="t-zh">ID</span><span class="t-en">ID</span></h3>
 
@@ -749,16 +871,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-3-5"><span class="secnum">3.5</span> <span class="t-zh">3.5 E2 TTS 扩展的评测</span><span class="t-en">Evaluation of E2 TTS extensions</span></h3><div class="pblk" id="p-3-5-1">
-          <p class="en-lines"><span class="sent" data-sid="s-3-5-1-1"><span class="en">3.5.1.</span></span> <span class="sent" data-sid="s-3-5-1-2"><span class="en">Evaluation of the extension 1 The results for the E2 TTS X1 models are shown in Table 3.</span></span> <span class="sent" data-sid="s-3-5-1-3"><span class="en">These results indicate that the E2 TTS X1 model has achieved results nearly identical to those of the E2 TTS model, especially when the model was initialized by unsupervised pre-training [34].</span></span> <span class="sent" data-sid="s-3-5-1-4"><span class="en">E2 TTS X1 does not require the transcription of the audio prompt, which greatly enhances its usability.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-5-1-1"><span class="zh">3.5.1.</span></span><span class="sent" data-sid="s-3-5-1-2"><span class="zh">扩展 1 的评测。E2 TTS X1 模型的结果见 Table 3。</span></span><span class="sent" data-sid="s-3-5-1-3"><span class="zh">这些结果表明，E2 TTS X1 模型取得了与 E2 TTS 模型几乎相同的结果，尤其是在模型由无监督预训练 [34] 初始化时。</span></span><span class="sent" data-sid="s-3-5-1-4"><span class="zh">E2 TTS X1 不需要音频提示的转录，这极大地增强了其易用性。</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-3-5-2">
-          <p class="en-lines"><span class="sent" data-sid="s-3-5-2-1"><span class="en">3.5.2.</span></span> <span class="sent" data-sid="s-3-5-2-2"><span class="en">Evaluation of the extension 2 In this experiment, we trained the E2 TTS X2 models with a phoneme replacement rate of 15%.</span></span> <span class="sent" data-sid="s-3-5-2-3"><span class="en">During inference, we randomly replaced words in the test-clean dataset with phoneme sequences, with a probability ranging from 0% to 50%.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-3-5-2-1"><span class="zh">3.5.2.</span></span><span class="sent" data-sid="s-3-5-2-2"><span class="zh">扩展 2 的评测。在本实验中，我们以 15% 的音素替换率训练 E2 TTS X2 模型。</span></span><span class="sent" data-sid="s-3-5-2-3"><span class="zh">推理时，我们以 0% 到 50% 的概率随机将 test-clean 数据集中的单词替换为音素序列。</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-3-5"><span class="secnum">3.5</span> <span class="t-zh">3.5 E2 TTS 扩展的评测</span><span class="t-en">Evaluation of E2 TTS extensions</span></h3>
+
 <div class="pblk" id="p-3-5-3">
           <p class="en-lines"><span class="sent" data-sid="s-3-5-3-1"><span class="en">Table 4 shows the result.</span></span> <span class="sent" data-sid="s-3-5-3-2"><span class="en">We first observed that E2 TTS X2 achieved parity results when no words were replaced with phoneme sequences.</span></span> <span class="sent" data-sid="s-3-5-3-3"><span class="en">This shows that we can introduce extension 2 without any drawbacks.</span></span> <span class="sent" data-sid="s-3-5-3-4"><span class="en">We also observed that the E2 TTS X2 model showed only marginal degradation of WER, even when we replaced 50% of words with phoneme sequences.</span><button class="mk feat" data-sid="s-3-5-3-4" title="查看讲解">解</button></span> <span class="sent" data-sid="s-3-5-3-5"><span class="en">This result indicates that we can specify the pronunciation of a new term without retraining the E2 TTS model.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-5-3-1"><span class="zh">Table 4 展示了结果。</span></span><span class="sent" data-sid="s-3-5-3-2"><span class="zh">我们首先观察到，当没有单词被替换为音素序列时，E2 TTS X2 取得了与基础版持平的结果。</span></span><span class="sent" data-sid="s-3-5-3-3"><span class="zh">这表明我们可以在不带来任何损失的情况下引入扩展 2。</span></span><span class="sent" data-sid="s-3-5-3-4"><span class="zh">我们还观察到，即使将 50% 的单词替换为音素序列，E2 TTS X2 模型的 WER 也只有轻微下降。</span><button class="mk feat" data-sid="s-3-5-3-4" title="查看讲解">解</button></span><span class="sent" data-sid="s-3-5-3-5"><span class="zh">该结果表明，我们可以在不重新训练 E2 TTS 模型的情况下指定新术语的发音。</span></span></p>

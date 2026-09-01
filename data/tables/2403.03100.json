@@ -319,8 +319,7 @@
   "page": 10,
   "headers": [
    [
-    "",
-    "(Codebook Number).",
+    "clean.",
     "",
     "",
     "",
@@ -329,68 +328,85 @@
     "",
     "",
     ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "Sim-O / Sim-R ↑",
+    "",
+    "WER↓",
+    "CMOS↑",
+    "SMOS↑"
    ]
   ],
   "rows": [
    [
-    "EnCodec♣",
     "",
-    "24kHz",
-    "320",
-    "8",
-    "6.0 kbps",
-    "3.28",
-    "0.94",
-    "0.99",
-    "2.70"
+    "",
+    "NaturalSpeech 3",
+    "",
+    "0.67 / 0.76",
+    "",
+    "1.81",
+    "0.00",
+    "4.01"
    ],
    [
-    "HiFi-Codec♣",
     "",
-    "16kHz",
-    "320",
-    "4",
-    "2.0 kbps",
-    "3.17",
-    "0.93",
-    "0.98",
-    "3.05"
+    "",
+    "- factorization",
+    "",
+    "0.55 / 0.61",
+    "",
+    "2.49",
+    "-0.25",
+    "3.59"
    ],
    [
-    "DAC♣",
     "",
-    "16kHz",
-    "320",
-    "9",
-    "4.5 kbps",
-    "3.52",
-    "0.95",
-    "0.97",
-    "2.65"
+    "- cfg",
+    "",
+    "",
+    "0.64 / 0.72",
+    "",
+    "1.81",
+    "-0.06",
+    "3.80"
    ],
    [
-    "SoundStream♦",
     "",
-    "16kHz",
-    "200",
-    "6",
-    "4.8 kbps",
-    "3.03",
-    "0.90",
-    "1.07",
-    "3.38"
+    "",
+    "",
+    "",
+    "",
+    "MCD Avg↓",
+    "",
+    "MCD-Acc↑",
+    ""
    ],
    [
-    "FACodec",
     "",
-    "16kHz",
-    "200",
-    "6",
-    "4.8 kbps",
-    "3.47",
-    "0.95",
-    "0.93",
-    "2.59"
+    "",
+    "",
+    "NaturalSpeech 3",
+    "",
+    "4.28",
+    "",
+    "0.52",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "Mel 20 Bins",
+    "",
+    "4.34",
+    "",
+    "0.46",
+    ""
    ]
   ]
  },
@@ -1094,6 +1110,7 @@
   "page": 21,
   "headers": [
    [
+    "",
     "Models",
     "Sim-O ↑",
     "WER ↓"
@@ -1101,96 +1118,55 @@
   ],
   "rows": [
    [
+    "",
     "Ground Truth",
     "-",
     "3.25"
    ],
    [
+    "",
     "YourTTS",
     "0.72",
     "10.1"
    ],
    [
     "",
+    "",
     "0.68",
     "6.20"
    ],
    [
+    "",
     "LM-VC",
     "0.82",
     "4.91"
    ],
    [
+    "",
     "UniAudio",
     "0.87",
     "4.80"
    ],
    [
+    "",
     "FACodec",
     "0.86",
     "3.46"
    ],
    [
+    "Ablation Study",
     "",
     "",
     ""
    ],
    [
-    "In this subsection, we study 1) the impact of the information bottleneck",
     "",
-    ""
-   ],
-   [
-    "our FACodec; 2) the effect of gradient reversal on the disentanglement of",
-    "",
-    ""
-   ],
-   [
-    "the acoustic details quantizers; 4) the effects of different prosody",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     ""
    ],
    [
-    "We investigate the impact of the information bottleneck on speech",
-    "",
-    ""
-   ],
-   [
-    "analysis. We find that without using information bottleneck (quantize in",
-    "",
-    ""
-   ],
-   [
-    "rather than low dimensional space) can lead to incomplete disentanglement.",
-    "",
-    ""
-   ],
-   [
-    "zero-shot voice conversion in the same experimental setting using the",
-    "",
-    ""
-   ],
-   [
-    "bottleneck, as mentioned in Appendix B.3. We observe that the timbre of",
-    "",
-    ""
-   ],
-   [
-    "interpolation between the source and target, indicating its poor timbre",
-    "",
-    ""
-   ],
-   [
-    "demonstrates that without the information bottleneck, the speaker",
-    "",
-    ""
-   ],
-   [
+    "conversion decreases by 0.13.",
     "",
     "",
     ""

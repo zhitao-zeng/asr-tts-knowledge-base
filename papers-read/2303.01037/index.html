@@ -264,7 +264,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 
-
+<div class="pblk" id="p-1-1-3">
+          <p class="en-lines"><span class="sent" data-sid="s-1-1-3-1"><span class="en">– YT-NTL-U: A large unlabeled multilingual dataset consisting of 12M hours of YouTube-based audio covering over 300 languages. – Pub-U: 429k hours of unlabeled speech in 51 languages based on public datasets.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-1-3-1"><span class="zh">– YT-NTL-U：一个大型无标注多语音语种数据集，由 1200 万小时（12M）基于 YouTube 的音频组成，覆盖 300 多种语言。– Pub-U：基于公开数据集的 429k 小时无标注语音，覆盖 51 种语言。</span></span></p>
+          
+        </div>
 
 <div class="pblk" id="p-1-1-5">
           <p class="en-lines"><span class="sent" data-sid="s-1-1-5-1"><span class="en">– Web-NTL: A large multilingual text-only corpus with 28B sentences spanning over 1140 languages.</span></span></p>
@@ -298,7 +302,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-
+<div class="pblk" id="p-1-1-10">
+          <p class="en-lines"><span class="sent" data-sid="s-1-1-10-1"><span class="en">2.</span></span> <span class="sent" data-sid="s-1-1-10-2"><span class="en">MOST (Multi-Objective Supervised pre-Training): The model can optionally be further prepared by a multi-objective supervised pre-training pipeline that utilizes all three kinds of datasets: YT-NTL-U, Pub-U, Web-NTL and Pub-S.</span></span> <span class="sent" data-sid="s-1-1-10-3"><span class="en">Here, a weighted sum of the BEST- RQ masked language model loss [11], along with the text-injection losses (including the supervised ASR loss and modality matching losses) [12,13] is optimized during training.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-1-1-10-1"><span class="zh">2.</span></span><span class="sent" data-sid="s-1-1-10-2"><span class="zh">MOST（多目标监督预训练，Multi-Objective Supervised pre-Training）：还可以选择性地通过一个多目标监督预训练流水线进一步准备模型，该流水线利用全部三类数据集：YT-NTL-U、Pub-U、Web-NTL 和 Pub-S。</span></span><span class="sent" data-sid="s-1-1-10-3"><span class="zh">在这一步中，训练时优化的是 BEST-RQ 掩码语言模型损失 [11] 与文本注入（text-injection）损失（包括监督 ASR 损失和模态匹配损失）[12,13] 的加权和。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-1-1-11">
           <p class="en-lines"><span class="sent" data-sid="s-1-1-11-1"><span class="en">3.</span></span> <span class="sent" data-sid="s-1-1-11-2"><span class="en">Supervised ASR Training: We produce generic ASR models trained with connectionist temporal classification (CTC) [14] and Listen, Attend, and Spell (LAS) [15] tranducers for downstream tasks.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-1-11-1"><span class="zh">3.</span></span><span class="sent" data-sid="s-1-1-11-2"><span class="zh">监督 ASR 训练：我们产出使用连接时序分类（connectionist temporal classification，CTC）[14] 和 Listen, Attend, and Spell（LAS）[15] Transducer 训练的通用 ASR 模型，用于下游任务。</span></span></p>
@@ -309,34 +317,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-1-1-12-1"><span class="zh">这条流水线性地产出两类模型：可在下游任务上微调的预训练模型；以及我们假定不再进行下游微调的通用 ASR 模型。</span></span><span class="sent" data-sid="s-1-1-12-2"><span class="zh">通用 ASR 模型使用分块注意力（chunk-wise attention）训练，我们将在后文中介绍。</span></span></p>
           
         </div>
-<div class="cap" id="tab-1-1-1"><span class="cap-k">表</span><p class="en">Table 1: USM models prepared in this work. The generic ASR models are trained on a large &quot;upstream&quot; ASR corpus and not finetuned further, while the pre-trained models are fine-tuned on downstream tasks.</p><p class="zh">表 1：本工作准备的 USM 模型。通用 ASR 模型在大规模“上游”ASR 语料上训练且不再微调，而预训练模型则在下游任务上微调。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Our approach</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>We produce large “Universal Speech Models&quot; (USMs) through a</th><th></th></tr><tr><th>types of datasets:</th><th></th><th></th><th></th><th></th></tr><tr><th>•</th><th></th><th>Unpaired Audio:</th><th></th><th></th></tr></thead><tbody><tr><td></td><td>–</td><td>YT-NTL-U:</td><td>A large</td><td>unlabeled</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>YouTube-based audio covering over 300 languages.</td></tr>
-<tr><td></td><td>–</td><td></td><td></td><td>Pub-U: 429k hours of unlabeled speech in 51 languages</td></tr>
-<tr><td>•</td><td></td><td>Unpaired Text:</td><td></td><td></td></tr>
-<tr><td></td><td>–</td><td></td><td></td><td>Web-NTL: A large multilingual text-only corpus with</td></tr>
-<tr><td></td><td></td><td>1140 languages.</td><td></td><td></td></tr>
-<tr><td>•</td><td></td><td></td><td>Paired ASR Data: We utilize two corpora of paired</td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>–</td><td></td><td></td><td>YT-SUP+: 90k hours of labeled multilingual data covering</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>of en-US pseudo-labeled data generated by noisy</td></tr>
-<tr><td></td><td></td><td>YT-NTL-U.</td><td></td><td></td></tr>
-<tr><td></td><td>–</td><td></td><td></td><td>Pub-S: 10k hours of labeled multi-domain en-US public</td></tr>
-<tr><td></td><td></td><td></td><td>gual public data covering 102 languages.</td><td></td></tr>
-<tr><td></td><td></td><td></td><td>2B-parameter Conformer [9] models are built using these datasets</td><td></td></tr>
-<tr><td>1.</td><td></td><td></td><td></td><td>Unsupervised Pre-training: BEST-RQ (BERT-based Speech</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>projection Quantizer) [10] is used to pre-train the encoder of</td></tr>
-<tr><td>2.</td><td></td><td></td><td></td><td>MOST (Multi-Objective Supervised pre-Training): The</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>prepared by a multi-objective supervised pre-training pipeline</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>of datasets: YT-NTL-U, Pub-U, Web-NTL and Pub-S. Here, a</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>RQ masked language model loss [11], along with the</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>supervised ASR loss and modality matching losses) [12,13] is</td></tr>
-<tr><td>3.</td><td></td><td></td><td></td><td>Supervised ASR Training: We produce generic ASR</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>temporal classification (CTC) [14] and Listen, Attend, and</td></tr>
-<tr><td></td><td></td><td>downstream tasks.</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td>Two types of models are produced through this pipeline—pre-trained</td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>on downstream tasks, and generic ASR models for which we assume</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>occurs. The generic ASR models are trained with chunk-wise attention,</td></tr>
-<tr><td>this report.</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-1-1-1"><span class="cap-k">表</span><p class="en">Table 1: USM models prepared in this work. The generic ASR models are trained on a large &quot;upstream&quot; ASR corpus and not finetuned further, while the pre-trained models are fine-tuned on downstream tasks.</p><p class="zh">表 1：本工作准备的 USM 模型。通用 ASR 模型在大规模“上游”ASR 语料上训练且不再微调，而预训练模型则在下游任务上微调。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>training a single large universal ASR model.</th></tr><tr><th></th><th></th><th></th></tr><tr><th>types of datasets:</th><th></th><th></th></tr><tr><th>•</th><th>Unpaired Audio:</th><th></th></tr><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>•</td><td>Unpaired Text:</td><td></td></tr>
+<tr><td></td><td></td><td>1140 languages.</td></tr>
+<tr><td></td><td></td><td>audio for supervised training.</td></tr>
+<tr><td></td><td>YT-NTL-U.</td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td>downstream tasks.</td><td></td></tr>
+<tr><td>this report.</td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-1-1-13">
           <p class="en-lines"><span class="sent" data-sid="s-1-1-13-1"><span class="en">Model BEST-RQ MOST Model-Type Decoder Upstream Chunk-wise ASR Dataset Attention USM YT-NTL-U N Pre-trained Downstream Dependent</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-1-1-13-1"><span class="zh">（表 1 模型谱系：Model × BEST-RQ/MOST × Model-Type × Decoder × Upstream × Chunk-wise ASR Dataset × Attention——USM（YT-NTL-U，预训练）、USM-M（Y，预训练，-M 表示使用了 MOST）、USM-LAS（N，通用 ASR，LAS，YT-SUP+）、USM-CTC（N，通用 ASR，CTC，YT-SUP+）。）我们把预训练模型记为 USM 与 USM-M，后缀 -M 表示该模型在准备阶段使用了 MOST。</span></span></p>
@@ -465,27 +452,26 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <section>
       <h2 class="sech lv1" id="sec-2"><span class="secnum">2</span> <span class="t-zh">方法</span><span class="t-en">Methods</span></h2></section>
 <section>
-      <h3 class="sech lv2" id="sec-2-1"><span class="secnum">2.1</span> <span class="t-zh">模型架构：Conformer</span><span class="t-en">Model Architecture: Conformer</span></h3>
+      <h3 class="sech lv2" id="sec-2-1"><span class="secnum">2.1</span> <span class="t-zh">模型架构：Conformer</span><span class="t-en">Model Architecture: Conformer</span></h3><div class="pblk" id="p-2-1-1">
+          <p class="en-lines"><span class="sent" data-sid="s-2-1-1-1"><span class="en">We use the convolution-augmented transformer [9], or Conformer, with relative attention [58] as an encoder model.</span></span> <span class="sent" data-sid="s-2-1-1-2"><span class="en">For downstream speech tasks such as ASR or AST, the features produced by the Conformer are either used as an input to a connectionist temporal classification (CTC) [14], RNN transducer (RNN-T) [59] or a Listen, Attend, and Spell (LAS) [15] unit after additional projection.</span></span> <span class="sent" data-sid="s-2-1-1-3"><span class="en">As will be discussed further, BEST-RQ pre-training is exclusively applied to the encoder, while other forms of training (e.g., T5 [60]) train the entire task network as a whole.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-2-1-1-1"><span class="zh">我们使用卷积增强 Transformer（convolution-augmented transformer）[9]——即 Conformer——配合相对注意力（relative attention）[58] 作为编码器模型。</span></span><span class="sent" data-sid="s-2-1-1-2"><span class="zh">对于 ASR 或 AST 等下游语音任务，Conformer 产生的特征经过额外投影后，作为连接时序分类（CTC）[14]、RNN Transducer（RNN-T）[59] 或 Listen, Attend, and Spell（LAS）[15] 单元的输入。</span></span><span class="sent" data-sid="s-2-1-1-3"><span class="zh">后文将进一步讨论：BEST-RQ 预训练只作用于编码器，而其他形式的训练（例如 T5 [60]）会把整个任务网络作为一个整体来训练。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-2-1-2">
           <p class="en-lines"><span class="sent" data-sid="s-2-1-2-1"><span class="en">For our experiments, we consider two models with 600M and 2B parameters respectively.</span></span> <span class="sent" data-sid="s-2-1-2-2"><span class="en">While the main results presented have been obtained using the 2B model, the 600M model is utilized for ablation studies and observing model scaling behavior.</span></span> <span class="sent" data-sid="s-2-1-2-3"><span class="en">Some features of the models are listed in Table 2.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-2-1"><span class="zh">在实验中，我们考虑两个模型，参数量分别为 600M 和 2B。</span></span><span class="sent" data-sid="s-2-1-2-2"><span class="zh">主要结果均使用 2B 模型获得，而 600M 模型用于消融实验和观察模型规模扩展行为。</span></span><span class="sent" data-sid="s-2-1-2-3"><span class="zh">模型的一些特性列于 Table 2。</span></span></p>
           
         </div>
-<div class="cap" id="tab-2-1-1"><span class="cap-k">表</span><p class="en">Table 2: Conformer model parameters.</p><p class="zh">表 2：Conformer 模型参数。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>2.1</td><td></td><td>Model Architecture: Conformer</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td>We use the convolution-augmented transformer [9], or Conformer, with</td><td></td></tr>
-<tr><td></td><td>encoder model.</td><td></td><td></td><td>For downstream speech tasks such as ASR or AST, the</td></tr>
-<tr><td></td><td></td><td></td><td>Conformer are either used as an input to a connectionist temporal</td><td></td></tr>
-<tr><td></td><td></td><td></td><td>transducer (RNN-T) [59] or a Listen, Attend, and Spell (LAS) [15] unit after</td><td></td></tr>
-<tr><td></td><td></td><td></td><td>As will be discussed further, BEST-RQ pre-training is exclusively applied to</td><td></td></tr>
-<tr><td></td><td></td><td></td><td>forms of training (e.g., T5 [60]) train the entire task network as a whole.</td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-2-1-1"><span class="cap-k">表</span><p class="en">Table 2: Conformer model parameters.</p><p class="zh">表 2：Conformer 模型参数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th>Table 2: Conformer model parameters.</th><th></th><th></th></tr><tr><th>Model</th><th></th><th># Params (B)</th><th># Layers</th><th></th><th>Dimension</th><th>Att. Heads</th></tr></thead><tbody><tr><td></td><td>Conformer-0.6</td><td>0.6</td><td>24</td><td></td><td>1024</td><td>8</td></tr>
+<tr><td></td><td>Conformer-2B</td><td>2.0</td><td>32</td><td></td><td>1536</td><td>16</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-2-1-3">
           <p class="en-lines"><span class="sent" data-sid="s-2-1-3-1"><span class="en">Model # Params (B) # Layers Dimension Att.</span></span> <span class="sent" data-sid="s-2-1-3-2"><span class="en">Heads Conv.</span></span> <span class="sent" data-sid="s-2-1-3-3"><span class="en">Kernel Size Conformer-0.6</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-2-1-3-1"><span class="zh">表头：Model / # Params (B) / # Layers / Dimension / Att.（后续照原文）。</span></span><span class="sent" data-sid="s-2-1-3-2"><span class="zh">表头续：Heads / Conv.。</span></span><span class="sent" data-sid="s-2-1-3-3"><span class="zh">表头续：Kernel Size——Conformer-0.6（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-2-1-1"><code>0.6 24 1024 8 5</code></div>
-<div class="eq" id="eq-2-1-2"><code>Conformer-2B</code></div>
-<div class="eq" id="eq-2-1-3"><code>2.0 32 1536 16 5</code></div></section>
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-2-2"><span class="secnum">2.2</span> <span class="t-zh">预训练：BEST-RQ</span><span class="t-en">Pre-training: BEST-RQ</span></h3><div class="pblk" id="p-2-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-2-2-1-1"><span class="en">We select BEST-RQ [10] as the method to pre-train our networks with speech audio.</span></span> <span class="sent" data-sid="s-2-2-1-2"><span class="en">BEST-RQ provides a simple framework with a small number of hyperparameters for unsupervised training on</span></span></p>
@@ -823,8 +809,22 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-1-4-1"><span class="zh">（脚注4：LDC 数据集 LDC2004T19、LDC2005T19、LDC2004S13、LDC2005S13 和 LDC97S62。脚注5：LDC 数据集 LDC93S6B 和 LDC94S13B。）</span></span></p>
           
         </div>
-<div class="cap" id="tab-3-3-1-1"><span class="cap-k">表</span><p class="en">Table 3: WERs (%) across multiple tasks for multiple settings compared against pre-existing baselines, with the exception of CoVoST 2, for which the BLEU score is presented. For the YouTube long-form set, we select the top-25 languages Whisper was trained on and exclude all languages for which Whisper produces &gt; 40% WER to reduce the noise introduced by LAS hallucination in the Whisper model. For FLEURS, we report both the WER and the CER for our models. †Results omitted for the Whisper-shortform model on the YouTube long-form dataset as the model has a high deletion problem on this set. ‡The Whisper-shortform model uses segmented decoding to reduce its hallucination problem on CORAAL. §Our adapter setup adds about 2.3% of the total parameters while keeping the encoder frozen from pre-training.</p><p class="zh">表 3：多种设定下多个任务上的 WER（%），与已有基线比较；CoVoST 2 除外，报告的是 BLEU 分数。对于 YouTube 长音频集，我们选取 Whisper 训练时覆盖的前 25 种语言，并排除所有 Whisper 产出 &gt; 40% WER 的语言，以降低 Whisper 模型 LAS 幻觉带来的噪声。对于 FLEURS，我们同时报告模型的 WER 与 CER。†Whisper-shortform 模型在 YouTube 长音频数据集上的结果省略，因为该模型在此集合上存在严重删除问题。‡Whisper-shortform 模型使用分段解码，以减少其在 CORAAL 上的幻觉问题。§我们的适配器设置在保持编码器自预训练起冻结的前提下，增加约 2.3% 的总参数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>encoder frozen from pre-training.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Task</th><th></th><th></th><th></th><th></th><th></th><th>Multilingual Long-form ASR</th><th></th><th>Multidomain en-US</th><th></th><th>Multilingual ASR</th><th></th><th>AST</th></tr><tr><th></th><th>Dataset</th><th></th><th></th><th></th><th>YouTube</th><th></th><th>CORAAL</th><th>SpeechStew</th><th></th><th>FLEURS</th><th></th><th>CoVoST 2</th></tr></thead><tbody><tr><td></td><td>Langauges</td><td></td><td></td><td>en-US</td><td>18</td><td>73</td><td>en-US</td><td>en-US</td><td>62</td><td></td><td>102</td><td>21</td></tr>
-<tr><td></td><td></td><td>Prior Work (single model)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-3-3-1-1"><span class="cap-k">表</span><p class="en">Table 3: WERs (%) across multiple tasks for multiple settings compared against pre-existing baselines, with the exception of CoVoST 2, for which the BLEU score is presented. For the YouTube long-form set, we select the top-25 languages Whisper was trained on and exclude all languages for which Whisper produces &gt; 40% WER to reduce the noise introduced by LAS hallucination in the Whisper model. For FLEURS, we report both the WER and the CER for our models. †Results omitted for the Whisper-shortform model on the YouTube long-form dataset as the model has a high deletion problem on this set. ‡The Whisper-shortform model uses segmented decoding to reduce its hallucination problem on CORAAL. §Our adapter setup adds about 2.3% of the total parameters while keeping the encoder frozen from pre-training.</p><p class="zh">表 3：多种设定下多个任务上的 WER（%），与已有基线比较；CoVoST 2 除外，报告的是 BLEU 分数。对于 YouTube 长音频集，我们选取 Whisper 训练时覆盖的前 25 种语言，并排除所有 Whisper 产出 &gt; 40% WER 的语言，以降低 Whisper 模型 LAS 幻觉带来的噪声。对于 FLEURS，我们同时报告模型的 WER 与 CER。†Whisper-shortform 模型在 YouTube 长音频数据集上的结果省略，因为该模型在此集合上存在严重删除问题。‡Whisper-shortform 模型使用分段解码，以减少其在 CORAAL 上的幻觉问题。§我们的适配器设置在保持编码器自预训练起冻结的前提下，增加约 2.3% 的总参数。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>encoder frozen from pre-training.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Task</th><th></th><th></th><th></th><th>Multilingual Long-form ASR</th><th></th><th>Multidomain en-US</th><th></th><th></th><th>AST</th></tr><tr><th>Dataset</th><th></th><th></th><th>YouTube</th><th></th><th>CORAAL</th><th>SpeechStew</th><th></th><th></th><th>CoVoST 2</th></tr></thead><tbody><tr><td>Langauges</td><td></td><td>en-US</td><td>18</td><td>73</td><td>en-US</td><td>en-US</td><td>62</td><td>102</td><td>21</td></tr>
+<tr><td>Prior Work (single model)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Whisper-longform</td><td></td><td>17.7</td><td>27.8</td><td>-</td><td>23.9</td><td>12.8</td><td></td><td></td><td></td></tr>
+<tr><td>Whisper-shortform†</td><td></td><td>-</td><td>-</td><td>-</td><td>13.2‡</td><td>11.5</td><td>36.6</td><td>-</td><td>29.1</td></tr>
+<tr><td>Our Work (single model)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>USM-LAS</td><td></td><td>14.4</td><td>19.0</td><td>29.8</td><td>11.2</td><td>10.5</td><td>12.5</td><td>-</td><td>-</td></tr>
+<tr><td>USM-CTC</td><td></td><td>13.7</td><td>18.7</td><td>26.7</td><td>12.1</td><td>10.8</td><td>15.5</td><td>-</td><td>-</td></tr>
+<tr><td></td><td>Prior Work (in-domain fine-tuning)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>BigSSL [3]</td><td></td><td>14.8</td><td>-</td><td>-</td><td>-</td><td>7.5</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>Maestro [67]</td><td></td><td></td><td></td><td></td><td></td><td>7.2</td><td></td><td></td><td>25.2</td></tr>
+<tr><td>Maestro-U [67]</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>26.0 (8.7)</td><td></td></tr>
+<tr><td></td><td>Our Work (in-domain fine-tuning)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>USM</td><td></td><td>13.2</td><td>-</td><td>-</td><td>-</td><td>7.4</td><td>13.5</td><td>19.2 (6.9)</td><td>28.7</td></tr>
+<tr><td>USM-M</td><td></td><td>12.5</td><td>-</td><td>-</td><td>-</td><td>7.0</td><td>11.8</td><td>17.4 (6.5)</td><td>30.7</td></tr>
+<tr><td>Our Work (frozen encoder)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>USM-M-adapter§</td><td></td><td>-</td><td>-</td><td>-</td><td>-</td><td>7.5</td><td>12.4</td><td>17.6 (6.7)</td><td>29.6</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-3-3-1-5">
           <p class="en-lines"><span class="sent" data-sid="s-3-3-1-5-1"><span class="en">Task Multilingual Long-form ASR Multidomain en-US Multilingual ASR AST Dataset YouTube CORAAL SpeechStew FLEURS CoVoST 2 Langauges en-US</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-1-5-1"><span class="zh">（表 7 全表：多语种长音频 ASR / 多领域 en-US / 多语种 ASR / AST 各任务在 YouTube、CORAAL、SpeechStew、FLEURS、CoVoST 2 上，Whisper-longform/shortform、USM-LAS/USM-CTC、BigSSL/Maestro/Maestro-U、USM/USM-M、USM-M-adapter 的数值对比。原始数据照录如下）
@@ -835,25 +835,25 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-3-3-1-5"><code>17.7 27.8 - 23.9 12.8</code></div>
-<div class="eq" id="eq-3-3-1-6"><code>Whisper-shortform†</code></div>
-<div class="eq" id="eq-3-3-1-7"><code>- - - 13.2‡ 11.5 36.6 - 29.1</code></div>
-<div class="eq" id="eq-3-3-1-8"><code>Our Work (single model) USM-LAS</code></div>
-<div class="eq" id="eq-3-3-1-9"><code>14.4 19.0 29.8 11.2 10.5 12.5 - -</code></div>
-<div class="eq" id="eq-3-3-1-10"><code>USM-CTC</code></div>
-<div class="eq" id="eq-3-3-1-11"><code>13.7 18.7 26.7 12.1 10.8 15.5 - -</code></div>
-<div class="eq" id="eq-3-3-1-12"><code>Prior Work (in-domain fine-tuning) BigSSL [3]</code></div>
-<div class="eq" id="eq-3-3-1-13"><code>14.8 - - - 7.5 - - -</code></div>
-<div class="eq" id="eq-3-3-1-14"><code>Maestro [67]</code></div>
-<div class="eq" id="eq-3-3-1-15"><code>7.2 25.2</code></div>
-<div class="eq" id="eq-3-3-1-16"><code>Maestro-U [67]</code></div>
-<div class="eq" id="eq-3-3-1-17"><code>26.0 (8.7)</code></div>
-<div class="eq" id="eq-3-3-1-18"><code>Our Work (in-domain fine-tuning) USM</code></div>
-<div class="eq" id="eq-3-3-1-19"><code>13.2 - - - 7.4 13.5 19.2 (6.9) 28.7</code></div>
-<div class="eq" id="eq-3-3-1-20"><code>USM-M</code></div>
-<div class="eq" id="eq-3-3-1-21"><code>12.5 - - - 7.0 11.8 17.4 (6.5) 30.7</code></div>
-<div class="eq" id="eq-3-3-1-22"><code>Our Work (frozen encoder) USM-M-adapter§</code></div>
-<div class="eq" id="eq-3-3-1-23"><code>- - - - 7.5 12.4 17.6 (6.7) 29.6</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-3-3-1-6">
           <p class="en-lines"><span class="sent" data-sid="s-3-3-1-6-1"><span class="en">performance for some languages.</span></span> <span class="sent" data-sid="s-3-3-1-6-2"><span class="en">When presenting the error rate metrics, we use CER for Chinese, Japanese, Thai, Lao, and Burmese to be consistent with Whisper [1].</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-3-1-6-1"><span class="zh">（表 7 全表：多语种长音频 ASR / 多领域 en-US / 多语种 ASR / AST 各任务在 YouTube、CORAAL、SpeechStew、FLEURS、CoVoST 2 上，Whisper-longform/shortform、USM-LAS/USM-CTC、BigSSL/Maestro/Maestro-U、USM/USM-M、USM-M-adapter 的数值对比。原始数据照录如下）
@@ -1031,9 +1031,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="fig-5-4-1-s1"><span class="zh">图 7（上接说明文字）：描绘了 2.4 节所述的长音频性能退化问题。图中可见，对于有 17 层的浅层 Conformer 模型，在使用较小的局部自注意力上下文……（图注剩余部分在后续段落继续）</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-4-1"><span class="cap-k">表</span><p class="en">Table 6: BLEU scores for the CoVoST 2 X →En task to compare BEST-RQ against W2v-BERT. Higher is better.</p><p class="zh">表 6：CoVoST 2 X→英语任务上 BEST-RQ 与 W2v-BERT 的 BLEU 分数对比。越高越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Higher is better.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>X →English</th><th></th><th>high</th><th>mid</th><th>low</th><th>all</th></tr><tr><th></th><th>Previous Work</th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td>XLS-R (0.3B) [33]</td><td>30.6</td><td>18.9</td><td>5.1</td><td>13.2</td></tr>
-<tr><td></td><td></td><td>XLS-R (1B) [33]</td><td>34.3</td><td>25.5</td><td>11.7</td><td>19.3</td></tr>
-<tr><td></td><td></td><td>XLS-R (2B) [33]</td><td>36.1</td><td>27.7</td><td>15.1</td><td>22.1</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-5-4-1"><span class="cap-k">表</span><p class="en">Table 6: BLEU scores for the CoVoST 2 X →En task to compare BEST-RQ against W2v-BERT. Higher is better.</p><p class="zh">表 6：CoVoST 2 X→英语任务上 BEST-RQ 与 W2v-BERT 的 BLEU 分数对比。越高越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th></tr><tr><th>X →English</th><th>high</th><th>mid</th><th>low</th><th>all</th></tr><tr><th>Previous Work</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>XLS-R (0.3B) [33]</td><td>30.6</td><td>18.9</td><td>5.1</td><td>13.2</td></tr>
+<tr><td>XLS-R (1B) [33]</td><td>34.3</td><td>25.5</td><td>11.7</td><td>19.3</td></tr>
+<tr><td>XLS-R (2B) [33]</td><td>36.1</td><td>27.7</td><td>15.1</td><td>22.1</td></tr>
+<tr><td>Conformer-0.6B</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>W2v-BERT</td><td>35.6</td><td>25.3</td><td>13.4</td><td>20.4</td></tr>
+<tr><td>BEST-RQ</td><td>32.5</td><td>25.6</td><td>14.7</td><td>20.7</td></tr>
+<tr><td>Conformer-2B</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>W2v-BERT</td><td>36.0</td><td>27.8</td><td>15.6</td><td>22.4</td></tr>
+<tr><td>BEST-RQ</td><td>35.8</td><td>31.3</td><td>21.5</td><td>26.6</td></tr></tbody></table></div></div>
 </section>
 <section>
       <h3 class="sech lv2" id="sec-previous-work"><span class="t-zh">已有工作（Table 6 基线行）</span><span class="t-en">Previous Work</span></h3>
@@ -1063,10 +1069,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-conformer-2b-1-s1"><span class="zh">表 7（文字说明部分）：证明分块注意力能解决长音频退化问题，并在四种不同语言——en-US（英语）、ru-RU（俄语）、ko-KR（韩语）和 uk-UA（乌克兰语）——上表现鲁棒。我们把块长为 8 秒的分块注意力模型（Table 7 中的 CW-8s）与每个 Conformer 层使用 128 帧上下文的局部自注意力模型（LSA-128）对比。我们注意到，进一步增大局部自注意力模型的上下文窗口，会在 YouTube 长音频测试集的所有语言上导致高删除错误率。这些结果表明：分块注意力模型不出现长音频性能退化，且能优于工作在最大允许感受野长度下的局部自注意力模型。</span></span></p>
           
         </div>
-<div class="cap" id="tab-conformer-2b-2"><span class="cap-k">表</span><p class="en">Table 7: Chunk-wise attention. WER (%) is reported on the YouTube long-form set.</p><p class="zh">表 7：分块注意力。报告 YouTube 长音频集上的 WER（%）。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>W2v-BERT</td><td></td><td>36.0</td><td>27.8</td><td>15.6</td><td>22.4</td></tr>
-<tr><td></td><td>BEST-RQ</td><td></td><td>35.8</td><td>31.3</td><td>21.5</td><td>26.6</td></tr>
-<tr><td></td><td></td><td>Figure 7: The word error rate measured on the YouTube en-US long-form test</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>models with varying depth.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-conformer-2b-2"><span class="cap-k">表</span><p class="en">Table 7: Chunk-wise attention. WER (%) is reported on the YouTube long-form set.</p><p class="zh">表 7：分块注意力。报告 YouTube 长音频集上的 WER（%）。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>XLS-R (0.3B) [33]</td><td>30.6</td><td>18.9</td><td>5.1</td><td>13.2</td></tr>
+<tr><td>XLS-R (1B) [33]</td><td>34.3</td><td>25.5</td><td>11.7</td><td>19.3</td></tr>
+<tr><td>XLS-R (2B) [33]</td><td>36.1</td><td>27.7</td><td>15.1</td><td>22.1</td></tr>
+<tr><td>Conformer-0.6B</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>W2v-BERT</td><td>35.6</td><td>25.3</td><td>13.4</td><td>20.4</td></tr>
+<tr><td>BEST-RQ</td><td>32.5</td><td>25.6</td><td>14.7</td><td>20.7</td></tr>
+<tr><td>Conformer-2B</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>W2v-BERT</td><td>36.0</td><td>27.8</td><td>15.6</td><td>22.4</td></tr>
+<tr><td>BEST-RQ</td><td>35.8</td><td>31.3</td><td>21.5</td><td>26.6</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-conformer-2b-3">
           <p class="en-lines"><span class="sent" data-sid="s-conformer-2b-3-1"><span class="en">Model # Params (B) # Layers en-US ru-RU ko-KR uk-UA LSA-128</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-conformer-2b-3-1"><span class="zh">表头：Model / # Params (B) / # Layers / en-US / ru-RU / ko-KR / uk-UA / LSA-128。</span></span></p>
@@ -1081,9 +1093,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-5-1-1"><span class="zh">在第 4 节中，我们已证明 USM-CTC 模型是强大的通用 ASR 模型，具备可靠的长音频转录性能与优秀的泛化特性。</span></span><span class="sent" data-sid="s-5-5-1-2"><span class="zh">此处我们（下接）</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-5-1"><span class="cap-k">表</span><p class="en">Table 8: RTF for USM-2B.</p><p class="zh">表 8：USM-2B 的 RTF。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th></th><th>bf-16</th><th>Streaming</th><th># Params (B)</th><th>TPU [88]</th><th>Batch Size</th><th>1.0/RTF</th></tr></thead><tbody><tr><td></td><td>Conformer-0.1B</td><td>Y</td><td>Y</td><td>0.1</td><td>TPUv4i</td><td>64</td><td>3047</td></tr>
-<tr><td></td><td>Conformer-0.6B</td><td>N</td><td>N</td><td>0.6</td><td>TPUv4i</td><td>64</td><td>1920</td></tr>
-<tr><td></td><td>Conformer-2B</td><td>N</td><td>N</td><td>2.0</td><td>TPUv4i</td><td>32</td><td>827</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-5-5-1"><span class="cap-k">表</span><p class="en">Table 8: RTF for USM-2B.</p><p class="zh">表 8：USM-2B 的 RTF。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th></th><th></th><th>bf-16</th><th>Streaming</th><th># Params (B)</th><th>TPU [88]</th><th>Batch Size</th><th>1.0/RTF</th></tr></thead><tbody><tr><td></td><td>Conformer-0.1B</td><td></td><td>Y</td><td>Y</td><td>0.1</td><td>TPUv4i</td><td>64</td><td>3047</td></tr>
+<tr><td></td><td>Conformer-0.6B</td><td></td><td>N</td><td>N</td><td>0.6</td><td>TPUv4i</td><td>64</td><td>1920</td></tr>
+<tr><td></td><td>Conformer-2B</td><td></td><td>N</td><td>N</td><td>2.0</td><td>TPUv4i</td><td>32</td><td>827</td></tr>
+<tr><td></td><td></td><td>no. 6, pp. 1519–1532, 2022.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 
 
 

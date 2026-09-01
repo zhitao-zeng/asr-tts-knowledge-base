@@ -829,9 +829,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-7-3-3-1"><span class="zh">基线：我们与 Whisper [51] 的语种识别、SpeechBrain LID 模型 [52] 以及 Dolphin [53] 对比。</span></span></p>
           
         </div>
-<div class="cap" id="tab-7-3-1"><span class="cap-k">表</span><p class="en">Table 4: Utterance-level LID accuracy (%) on public test sets. Higher is better.</p><p class="zh">Table 4：公开测试集上的句级 LID 准确率（%）。越高越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Test set \ Model</th><th>FireRedLID</th><th>Whisper</th><th>SpeechBrain</th><th>Dolphin</th></tr></thead><tbody><tr><td>FLEURS test</td><td>97.18</td><td>79.41</td><td>92.91</td><td>–</td></tr>
-<tr><td>CommonVoice test</td><td>92.07</td><td>80.81</td><td>78.75</td><td>–</td></tr>
-<tr><td>Chinese dialects</td><td>88.47</td><td>–</td><td>–</td><td>69.01</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-7-3-1"><span class="cap-k">表</span><p class="en">Table 4: Utterance-level LID accuracy (%) on public test sets. Higher is better.</p><p class="zh">Table 4：公开测试集上的句级 LID 准确率（%）。越高越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Test set \ Model</th><th></th><th>FireRedLID</th><th></th><th>Whisper</th><th>SpeechBrain</th><th></th><th>Dolphin</th></tr></thead><tbody><tr><td>FLEURS test</td><td></td><td>97.18</td><td></td><td>79.41</td><td>92.91</td><td></td><td>–</td></tr>
+<tr><td>CommonVoice test</td><td></td><td>92.07</td><td></td><td>80.81</td><td>78.75</td><td></td><td>–</td></tr>
+<tr><td>Chinese dialects</td><td></td><td>88.47</td><td></td><td>–</td><td>–</td><td></td><td>69.01</td></tr>
+<tr><td></td><td>Multi-domain Chinese</td><td></td><td>82.84 / 83.08 / 82.96</td><td></td><td></td><td>77.27 / 74.03 / 75.62</td><td></td></tr>
+<tr><td></td><td>Multi-domain English</td><td></td><td>78.40 / 71.57 / 74.83</td><td></td><td></td><td>55.79 / 45.15 / 49.91</td><td></td></tr>
+<tr><td>Average F1</td><td></td><td></td><td>78.90</td><td></td><td></td><td>62.77</td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-test-set-model-2"><span class="t-zh">Test set \ Model</span><span class="t-en">Test set \ Model</span></h3>
 
@@ -867,17 +870,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-7-4-3-1"><span class="zh">基线：我们与广泛使用的标点模型 FunASR-Punc（CT-Transformer）[30] 对比。</span></span></p>
           
         </div>
-<div class="cap" id="tab-7-4-1"><span class="cap-k">表</span><p class="en">Table 5: Punctuation prediction results on internal test sets (Precision/Recall/F1 in %). Higher is better.</p><p class="zh">Table 5：内部测试集上的标点预测结果（精确率/召回率/F1，单位 %）。越高越好。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>7.4</td><td></td><td>Evaluation of FireRedPunc</td><td></td></tr>
-<tr><td></td><td></td><td>Test sets: We evaluate FireRedPunc on</td><td></td></tr>
-<tr><td></td><td></td><td>diction benchmarks. The Chinese</td><td></td></tr>
-<tr><td></td><td>contains 28,641 sentences.</td><td></td><td>We will</td></tr>
-<tr><td></td><td></td><td>facilitate reproducible research.</td><td></td></tr>
-<tr><td>Label</td><td>set and</td><td>metric:</td><td>FireRedPunc</td></tr>
-<tr><td></td><td></td><td>punctuation, comma, period, question</td><td></td></tr>
-<tr><td></td><td></td><td>report Precision/Recall/F1 (%) computed</td><td></td></tr>
-<tr><td></td><td></td><td>the Overall score is computed as</td><td></td></tr>
-<tr><td></td><td></td><td>labels. Due to its extremely low</td><td></td></tr>
-<tr><td></td><td></td><td>from the reported Overall score.</td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-7-4-1"><span class="cap-k">表</span><p class="en">Table 5: Punctuation prediction results on internal test sets (Precision/Recall/F1 in %). Higher is better.</p><p class="zh">Table 5：内部测试集上的标点预测结果（精确率/召回率/F1，单位 %）。越高越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>modeling for fine-grained Chinese dialect identification.</th></tr></thead><tbody><tr><td>7.4</td><td></td><td>Evaluation of FireRedPunc</td><td></td></tr>
+<tr><td></td><td>facilitate reproducible research.</td><td></td><td></td></tr>
+<tr><td></td><td>from the reported Overall score.</td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-test-set-model-3"><span class="t-zh">Test set \ Model</span><span class="t-en">Test set \ Model</span></h3><div class="pblk" id="p-test-set-model-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-test-set-model-3-1-1"><span class="en">FireRedPunc FunASR-Punc Multi-domain Chinese</span></span></p>
@@ -885,16 +880,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-82-84"><span class="secnum">82.84</span> <span class="t-zh">/ 83.08 / 82.96</span><span class="t-en">/ 83.08 / 82.96</span></h3><div class="eq" id="eq-82-84-1"><code>77.27 / 74.03 / 75.62</code></div>
-<div class="pblk" id="p-82-84-1">
-          <p class="en-lines"><span class="sent" data-sid="s-82-84-1-1"><span class="en">Multi-domain English</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-82-84-1-1"><span class="zh">（表头行）Multi-domain English（多领域英文）。</span></span></p>
-          
-        </div></section>
+      <h3 class="sech lv2" id="sec-82-84"><span class="secnum">82.84</span> <span class="t-zh">/ 83.08 / 82.96</span><span class="t-en">/ 83.08 / 82.96</span></h3>
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-78-40"><span class="secnum">78.40</span> <span class="t-zh">/ 71.57 / 74.83</span><span class="t-en">/ 71.57 / 74.83</span></h3><div class="eq" id="eq-78-40-1"><code>55.79 / 45.15 / 49.91</code></div>
-<div class="eq" id="eq-78-40-2"><code>Average F1</code></div>
-<div class="eq" id="eq-78-40-3"><code>78.90 62.77</code></div>
+      <h3 class="sech lv2" id="sec-78-40"><span class="secnum">78.40</span> <span class="t-zh">/ 71.57 / 74.83</span><span class="t-en">/ 71.57 / 74.83</span></h3>
+
+
 <div class="pblk" id="p-78-40-1">
           <p class="en-lines"><span class="sent" data-sid="s-78-40-1-1"><span class="en">Results and analysis: As shown in Table 5, FireRedPunc consistently outperforms the baseline on both Chinese and English benchmarks.</span></span> <span class="sent" data-sid="s-78-40-1-2"><span class="en">In particular, FireRedPunc achieves 82.96% F1 on Chinese and 74.83% F1 on English, resulting in a 78.90% average F1.</span></span> <span class="sent" data-sid="s-78-40-1-3"><span class="en">The large gain on English suggests that our LERT-initialized BERT-style encoder and large-scale multi-domain training data are effective for punctuation prediction on ASR-like text.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-78-40-1-1"><span class="zh">（表格行）Average F1：78.90 / 62.77。结果与分析：如表 5 所示，FireRedPunc 在中英文基准上均持续优于基线。</span></span><span class="sent" data-sid="s-78-40-1-2"><span class="zh">具体而言，FireRedPunc 在中文上取得 82.96% F1、在英文上取得 74.83% F1，平均 F1 为 78.90%。</span></span><span class="sent" data-sid="s-78-40-1-3"><span class="zh">英文上的大幅领先说明，我们以 LERT 初始化的 BERT 式编码器与大规模多领域训练数据对 ASR 风格文本的标点预测是有效的。</span></span></p>

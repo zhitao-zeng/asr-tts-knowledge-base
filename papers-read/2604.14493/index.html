@@ -467,7 +467,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td>7.5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td>(7,10,7)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -1064,10 +1063,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-A-1"><span class="secnum">A.1</span> <span class="t-zh">Whisper — All Configurations</span><span class="t-en">Whisper — All Configurations</span></h3><div class="cap" id="tab-A-1-1"><span class="cap-k">表</span><p class="en">Table 7: All Whisper configurations evaluated.</p><p class="zh">表 7：评测过的全部 Whisper 配置。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>whisper-large-v3-turbo</td><td>PyTorch</td><td>Batch</td><td>1.62 GB</td><td>7.83</td><td>16.13</td><td>11.63</td><td>10.14</td><td>2.10</td><td>4.24</td><td>2.97</td><td>3.57</td><td>11.87</td></tr>
-<tr><td></td><td>whisper-large-v3-turbo</td><td>ORT FP16</td><td>Batch</td><td>1.75 GB</td><td>7.52</td><td>16.36</td><td>11.38</td><td>10.13</td><td>2.17</td><td>4.24</td><td>2.93</td><td>3.62</td><td>9.30</td></tr>
-<tr><td></td><td>whisper-small.en</td><td>PyTorch</td><td>Batch</td><td>0.97 GB</td><td>(8.59)</td><td>17.93</td><td>12.97</td><td>11.35</td><td>3.05</td><td>7.25</td><td>3.60</td><td>4.07</td><td>8.50</td></tr>
-<tr><td></td><td>faster-whisper (small)</td><td>PyTorch</td><td>Chunk (3 s)</td><td>0.97 GB</td><td>24.74</td><td>32.90</td><td>32.59</td><td>–</td><td>17.23</td><td>22.72</td><td>19.81</td><td>–</td><td>23.18</td></tr></tbody></table></div></div>
+      <h3 class="sech lv2" id="sec-A-1"><span class="secnum">A.1</span> <span class="t-zh">Whisper — All Configurations</span><span class="t-en">Whisper — All Configurations</span></h3><div class="cap" id="tab-A-1-1"><span class="cap-k">表</span><p class="en">Table 7: All Whisper configurations evaluated.</p><p class="zh">表 7：评测过的全部 Whisper 配置。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>whisper-large-v3-turbo</td><td></td><td>PyTorch</td><td></td><td>Batch</td><td>1.62 GB</td><td>7.83</td><td>16.13</td><td>11.63</td><td>10.14</td><td>2.10</td><td>4.24</td><td>2.97</td><td>3.57</td><td>11.87</td></tr>
+<tr><td></td><td>whisper-large-v3-turbo</td><td></td><td>ORT FP16</td><td></td><td>Batch</td><td>1.75 GB</td><td>7.52</td><td>16.36</td><td>11.38</td><td>10.13</td><td>2.17</td><td>4.24</td><td>2.93</td><td>3.62</td><td>9.30</td></tr>
+<tr><td></td><td>whisper-small.en</td><td></td><td>PyTorch</td><td></td><td>Batch</td><td>0.97 GB</td><td>(8.59)</td><td>17.93</td><td>12.97</td><td>11.35</td><td>3.05</td><td>7.25</td><td>3.60</td><td>4.07</td><td>8.50</td></tr>
+<tr><td></td><td>faster-whisper (small)</td><td></td><td>PyTorch</td><td></td><td>Chunk (3 s)</td><td>0.97 GB</td><td>24.74</td><td>32.90</td><td>32.59</td><td>–</td><td>17.23</td><td>22.72</td><td>19.81</td><td>–</td><td>23.18</td></tr>
+<tr><td>A.2</td><td></td><td>Nemotron-0.6B</td><td></td><td>—</td><td>All</td><td>Streaming</td><td></td><td></td><td>Configurations</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-A-1-1">
           <p class="en-lines"><span class="sent" data-sid="s-A-1-1-1"><span class="en">Model Format Mode Size Avg AMI Earn.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-1-1-1"><span class="zh">表头：Model｜Format｜Mode（模式）｜Size｜Avg｜AMI｜Earn.。</span></span></p>
@@ -1094,7 +1094,8 @@ Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB</span
 <tr><td>(7, 2, 7)</td><td>0.56 s</td><td>1.12 s</td><td>8.51</td><td>144.71</td><td>11.93</td><td>13.93</td><td>11.76</td><td>3.43</td><td>6.00</td><td>3.47</td><td>5.11</td><td>12.49</td></tr>
 <tr><td>(2, 35, 2)</td><td>0.16 s</td><td>5.6 s</td><td>8.04</td><td>45.05</td><td>14.82</td><td>13.66</td><td>12.44</td><td>2.49</td><td>5.52</td><td>2.90</td><td>4.72</td><td>7.79</td></tr>
 <tr><td>(2, 2, 2)</td><td>0.16 s</td><td>0.32 s</td><td>–</td><td>–</td><td>19.75</td><td>26.36</td><td>19.46</td><td>11.86</td><td>17.88</td><td>–</td><td>13.32</td><td>32.42</td></tr>
-<tr><td>(1, 70, 1)</td><td>0.08 s</td><td>5.6 s</td><td>8.91</td><td>–</td><td>17.76</td><td>14.64</td><td>13.33</td><td>2.61</td><td>5.93</td><td>3.73</td><td>5.06</td><td>8.24</td></tr></tbody></table></div></div>
+<tr><td>(1, 70, 1)</td><td>0.08 s</td><td>5.6 s</td><td>8.91</td><td>–</td><td>17.76</td><td>14.64</td><td>13.33</td><td>2.61</td><td>5.93</td><td>3.73</td><td>5.06</td><td>8.24</td></tr>
+<tr><td>A.3</td><td></td><td></td><td></td><td>—</td><td></td><td>Chunking</td><td></td><td>Configurations</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-A-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-A-2-1-1"><span class="en">Config Delay History Avg RTFx AMI Earn.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-2-1-1"><span class="zh">表头：Config｜Delay｜History｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>
@@ -1190,9 +1191,10 @@ Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB</span
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-A-4"><span class="secnum">A.4</span> <span class="t-zh">Parakeet TDT-0.6B-v3 — ONNX Quantization</span><span class="t-en">Parakeet TDT-0.6B-v3 — ONNX Quantization</span></h3><div class="cap" id="tab-A-4-1"><span class="cap-k">表</span><p class="en">Table 10: Parakeet TDT-0.6B-v3 ONNX quantization variants (batch mode, CUDA, batch_size=16).</p><p class="zh">表 10：Parakeet TDT-0.6B-v3 ONNX 量化变体（批处理模式，CUDA，batch_size=16）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>batch_size=16).</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Format</th><th></th><th>Size</th><th>Avg</th><th>RTFx</th><th>AMI</th><th>Earn.</th><th></th></tr></thead><tbody><tr><td>ONNX fp16</td><td></td><td>1.30 GB</td><td>–</td><td>–</td><td>21.46</td><td>–</td><td>–</td></tr>
-<tr><td>ONNX int8</td><td></td><td>1.02 GB</td><td>9.92</td><td>97.10</td><td>18.82</td><td>21.19</td><td></td></tr>
-<tr><td>ONNX int4</td><td></td><td>0.74 GB</td><td>11.50</td><td>112.94</td><td>21.22</td><td>26.34</td><td></td></tr></tbody></table></div></div></section>
+      <h3 class="sech lv2" id="sec-A-4"><span class="secnum">A.4</span> <span class="t-zh">Parakeet TDT-0.6B-v3 — ONNX Quantization</span><span class="t-en">Parakeet TDT-0.6B-v3 — ONNX Quantization</span></h3><div class="cap" id="tab-A-4-1"><span class="cap-k">表</span><p class="en">Table 10: Parakeet TDT-0.6B-v3 ONNX quantization variants (batch mode, CUDA, batch_size=16).</p><p class="zh">表 10：Parakeet TDT-0.6B-v3 ONNX 量化变体（批处理模式，CUDA，batch_size=16）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>batch_size=16).</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Format</th><th></th><th></th><th>Size</th><th>Avg</th><th>RTFx</th><th>AMI</th><th></th><th>Earn.</th><th></th></tr></thead><tbody><tr><td></td><td>ONNX fp16</td><td></td><td>1.30 GB</td><td>–</td><td>–</td><td>21.46</td><td></td><td>–</td><td>–</td></tr>
+<tr><td></td><td>ONNX int8</td><td></td><td>1.02 GB</td><td>9.92</td><td>97.10</td><td>18.82</td><td></td><td>21.19</td><td></td></tr>
+<tr><td></td><td>ONNX int4</td><td></td><td>0.74 GB</td><td>11.50</td><td>112.94</td><td>21.22</td><td></td><td>26.34</td><td></td></tr>
+<tr><td>A.5</td><td></td><td></td><td>Canary-1B-v2</td><td>—</td><td>All</td><td></td><td>Configurations</td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-format"><span class="t-zh">Format</span><span class="t-en">Format</span></h3>
 
@@ -1209,31 +1211,37 @@ Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB</span
 <tr><td>A.5</td><td></td><td>Canary-1B-v2</td><td>—</td><td>All</td><td></td><td>Configurations</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 
 
-
-
-
+<div class="pblk" id="p-A-5-3">
+          <p class="en-lines"><span class="sent" data-sid="s-A-5-3-1"><span class="en">Canary-1B-v2 Batch 6.36 GB</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-5-3-1"><span class="zh">（表格行）Canary-1B-v2 / Batch / 6.36 GB。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-A-5-1"><code>(7.15) (749) (16.01) (11.79) (10.82) (2.18) (3.56) (2.28) (4.29) (6.25)</code></div>
+<div class="eq" id="eq-A-5-2"><code>Canary-1B-v2 Chunk 4.8 s 6.36 GB</code></div>
 <div class="eq" id="eq-A-5-3"><code>12.45 – 22.10 22.04 14.60 4.87 5.96 4.42 7.64 17.98</code></div>
-</section>
+<div class="pblk" id="p-A-5-4">
+          <p class="en-lines"><span class="sent" data-sid="s-A-5-4-1"><span class="en">Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-5-4-1"><span class="zh">2.
+Chunked 配置：(10.0-2.4-2.4=14.8)，采用 AlignAtt 流式策略。</span></span></p>
+          
+        </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-A-6"><span class="secnum">A.6</span> <span class="t-zh">Conformer Transducer XL — All Configurations</span><span class="t-en">Conformer Transducer XL — All Configurations</span></h3><div class="cap" id="tab-A-6-1"><span class="cap-k">表</span><p class="en">Table 12: Conformer Transducer XL chunked configurations (PyTorch bf16, CUDA, batch_size=16). Config: delay (left-current-right = total context).</p><p class="zh">表 12：Conformer Transducer XL 分块配置（PyTorch bf16，CUDA，batch_size=16）。配置：延迟（左-当前-右 = 总上下文）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Canary-1B-v2</th><th>Batch</th><th></th><th>6.36 GB</th><th></th><th>(7.15)</th><th>(749)</th><th></th><th>(16.01)</th><th>(11.79)</th><th>(10.82)</th><th>(2.18)</th><th>(3.56)</th></tr></thead><tbody><tr><td></td><td>Canary-1B-v2</td><td></td><td>Chunk 4.8 s</td><td>6.36 GB</td><td></td><td>12.45</td><td>–</td><td></td><td>22.10</td><td>22.04</td><td>14.60</td><td>4.87</td><td>5.96</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Chunked config: (10.0-2.4-2.4=14.8) with AlignAtt streaming policy.</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>A.6</td><td></td><td>Conformer</td><td></td><td></td><td>Transducer</td><td></td><td>XL</td><td>—</td><td>All</td><td></td><td>Configurations</td><td></td><td></td></tr></tbody></table></div></div></section>
+      <h3 class="sech lv2" id="sec-A-6"><span class="secnum">A.6</span> <span class="t-zh">Conformer Transducer XL — All Configurations</span><span class="t-en">Conformer Transducer XL — All Configurations</span></h3><div class="cap" id="tab-A-6-1"><span class="cap-k">表</span><p class="en">Table 12: Conformer Transducer XL chunked configurations (PyTorch bf16, CUDA, batch_size=16). Config: delay (left-current-right = total context).</p><p class="zh">表 12：Conformer Transducer XL 分块配置（PyTorch bf16，CUDA，batch_size=16）。配置：延迟（左-当前-右 = 总上下文）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>batch_size=16).</th><th></th><th>Config:</th><th></th><th></th><th></th><th></th><th>delay (left-current-right = total context).</th><th></th><th></th><th></th></tr><tr><th>Config</th><th></th><th></th><th></th><th>Avg</th><th></th><th>RTFx</th><th>AMI</th><th>Earn.</th><th>Giga</th><th>LS-c</th><th>LS-o</th></tr></thead><tbody><tr><td></td><td>6.4 s (1.6-4.8-1.6=8)</td><td></td><td></td><td>10.78</td><td></td><td>222.90</td><td>22.07</td><td>23.47</td><td>14.21</td><td>2.22</td><td>4.10</td></tr>
+<tr><td></td><td>3.2 s (4.8-1.6-1.6=8)</td><td></td><td></td><td>10.96</td><td></td><td>133.69</td><td>22.31</td><td>24.22</td><td>13.99</td><td>2.04</td><td>3.78</td></tr>
+<tr><td></td><td>2.4 s (5.6-0.8-1.6=8)</td><td></td><td></td><td>11.06</td><td></td><td>82.03</td><td>22.57</td><td>24.44</td><td>14.05</td><td>2.11</td><td>3.83</td></tr>
+<tr><td></td><td>2.4 s (9.6-0.8-1.6=12)</td><td></td><td></td><td>11.02</td><td></td><td>44.28</td><td>22.69</td><td>24.47</td><td>13.97</td><td>1.93</td><td>3.46</td></tr>
+<tr><td>A.7</td><td></td><td>Qwen3-ASR</td><td></td><td>—</td><td>All</td><td></td><td>Configurations</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-config"><span class="t-zh">Config</span><span class="t-en">Config</span></h3>
 
-<div class="pblk" id="p-config-3">
-          <p class="en-lines"><span class="sent" data-sid="s-config-3-1"><span class="en">6.4 s (1.6-4.8-1.6=8)</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-config-3-1"><span class="zh">1.
-6.4 s (1.6-4.8-1.6=8)</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-config-1"><code>10.78 222.90 22.07 23.47 14.21 2.22 4.10 7.93 5.48 6.80</code></div>
-<div class="eq" id="eq-config-2"><code>3.2 s (4.8-1.6-1.6=8)</code></div>
-<div class="eq" id="eq-config-3"><code>10.96 133.69 22.31 24.22 13.99 2.04 3.78 7.86 5.40 8.05</code></div>
-<div class="eq" id="eq-config-4"><code>2.4 s (5.6-0.8-1.6=8)</code></div>
-<div class="eq" id="eq-config-5"><code>11.06 82.03 22.57 24.44 14.05 2.11 3.83 7.95 5.36 8.18</code></div>
-<div class="eq" id="eq-config-6"><code>2.4 s (9.6-0.8-1.6=12)</code></div>
-<div class="eq" id="eq-config-7"><code>11.02 44.28 22.69 24.47 13.97 1.93 3.46 7.86 5.26 8.49</code></div></section>
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-A-7"><span class="secnum">A.7</span> <span class="t-zh">Qwen3-ASR — All Configurations</span><span class="t-en">Qwen3-ASR — All Configurations</span></h3><div class="cap" id="tab-A-7-1"><span class="cap-k">表</span><p class="en">Table 13: Qwen3-ASR configurations (PyTorch, CUDA, batch_size=32).</p><p class="zh">表 13：Qwen3-ASR 配置（PyTorch，CUDA，batch_size=32）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Model</th><th></th><th>Config</th><th></th><th>Avg</th><th>RTFx</th><th>AMI</th><th>Earn.</th><th>Giga</th><th>LS-c</th><th>LS-o</th><th>SPGI</th><th>TED</th><th>VoxP.</th></tr></thead><tbody><tr><td></td><td>Qwen3-ASR-1.7B</td><td>Batch</td><td></td><td>5.90</td><td>187.91</td><td>11.76</td><td>10.26</td><td>8.75</td><td>1.60</td><td>3.41</td><td>2.83</td><td>2.28</td><td>6.34</td></tr>
 <tr><td></td><td>Qwen3-ASR-0.6B</td><td>Batch</td><td></td><td>6.69</td><td>194.71</td><td>13.77</td><td>11.03</td><td>9.16</td><td>2.12</td><td>4.47</td><td>3.04</td><td>2.83</td><td>7.09</td></tr>
@@ -1256,11 +1264,12 @@ Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB</span
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-A-8"><span class="secnum">A.8</span> <span class="t-zh">Cross-Model Streaming Comparison (CPU)</span><span class="t-en">Cross-Model Streaming Comparison (CPU)</span></h3><div class="cap" id="tab-A-8-1"><span class="cap-k">表</span><p class="en">Table 14: Cross-model streaming comparison (CPU, batch_size=1). Best streaming or lowlatency configuration per model.</p><p class="zh">表 14：跨模型流式对比（CPU，batch_size=1）。取每个模型最好的流式或低延迟配置。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>latency configuration per model.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Nemotron-0.6B</td><td></td><td>2.47 GB</td><td>0.56 s</td><td>7.28</td><td>1.03</td><td>2.46</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
-<tr><td></td><td>Qwen3-ASR-1.7B</td><td></td><td>4.70 GB</td><td>2.4 s</td><td>10.45</td><td>1.77</td><td>0.49</td><td>16.97</td><td>16.92</td><td>12.29</td><td>4.95</td><td>7.69</td><td>6.70</td><td>6.34</td><td>11.75</td></tr>
-<tr><td></td><td>Parakeet TDT-0.6B-v3</td><td></td><td>2.51 GB</td><td>2.4 s</td><td>12.83</td><td>2.03</td><td>1.38</td><td>16.73</td><td>19.81</td><td>15.27</td><td>6.63</td><td>8.25</td><td>17.82</td><td>9.95</td><td>8.19</td></tr>
-<tr><td></td><td>Conformer Trans. XL</td><td></td><td>2.58 GB</td><td>2.4 s</td><td>11.06</td><td>–</td><td>1.27</td><td>22.57</td><td>24.44</td><td>14.05</td><td>2.11</td><td>3.83</td><td>7.95</td><td>5.36</td><td>8.18</td></tr>
-<tr><td>Canary-1B-v2</td><td></td><td></td><td>6.36 GB</td><td>4.8 s</td><td>12.45</td><td>1.74</td><td>2.93</td><td>22.10</td><td>22.04</td><td>14.60</td><td>4.87</td><td>5.96</td><td>4.42</td><td>7.64</td><td>17.98</td></tr></tbody></table></div></div>
+      <h3 class="sech lv2" id="sec-A-8"><span class="secnum">A.8</span> <span class="t-zh">Cross-Model Streaming Comparison (CPU)</span><span class="t-en">Cross-Model Streaming Comparison (CPU)</span></h3><div class="cap" id="tab-A-8-1"><span class="cap-k">表</span><p class="en">Table 14: Cross-model streaming comparison (CPU, batch_size=1). Best streaming or lowlatency configuration per model.</p><p class="zh">表 14：跨模型流式对比（CPU，batch_size=1）。取每个模型最好的流式或低延迟配置。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>latency configuration per model.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Nemotron-0.6B</td><td></td><td>2.47 GB</td><td>0.56 s</td><td>7.28</td><td>1.03</td><td>2.46</td><td></td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
+<tr><td></td><td>Qwen3-ASR-1.7B</td><td></td><td>4.70 GB</td><td>2.4 s</td><td>10.45</td><td>1.77</td><td>0.49</td><td></td><td>16.97</td><td>16.92</td><td>12.29</td><td>4.95</td><td>7.69</td><td>6.70</td><td>6.34</td><td>11.75</td></tr>
+<tr><td></td><td>Parakeet TDT-0.6B-v3</td><td></td><td>2.51 GB</td><td>2.4 s</td><td>12.83</td><td>2.03</td><td>1.38</td><td></td><td>16.73</td><td>19.81</td><td>15.27</td><td>6.63</td><td>8.25</td><td>17.82</td><td>9.95</td><td>8.19</td></tr>
+<tr><td></td><td>Conformer Trans. XL</td><td></td><td>2.58 GB</td><td>2.4 s</td><td>11.06</td><td>–</td><td>1.27</td><td></td><td>22.57</td><td>24.44</td><td>14.05</td><td>2.11</td><td>3.83</td><td>7.95</td><td>5.36</td><td>8.18</td></tr>
+<tr><td></td><td>Canary-1B-v2</td><td></td><td>6.36 GB</td><td>4.8 s</td><td>12.45</td><td>1.74</td><td>2.93</td><td></td><td>22.10</td><td>22.04</td><td>14.60</td><td>4.87</td><td>5.96</td><td>4.42</td><td>7.64</td><td>17.98</td></tr>
+<tr><td>A.9</td><td></td><td>Nemotron-0.6B</td><td></td><td>—</td><td>ONNX</td><td></td><td></td><td>Quantization</td><td></td><td></td><td>Results</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-A-8-1">
           <p class="en-lines"><span class="sent" data-sid="s-A-8-1-1"><span class="en">Model Size Delay Avg BSF RTFx AMI Earn.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-8-1-1"><span class="zh">表头：Model｜Size｜Delay｜Avg｜BSF｜RTFx｜AMI｜Earn.。</span></span></p>
@@ -1282,13 +1291,14 @@ Giga LS-c LS-o SPGI TED VoxP. whisper-large-v3-turbo PyTorch Batch 1.62 GB</span
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-A-9"><span class="secnum">A.9</span> <span class="t-zh">Nemotron-0.6B — ONNX Quantization Results</span><span class="t-en">Nemotron-0.6B — ONNX Quantization Results</span></h3><div class="cap" id="tab-A-9-1"><span class="cap-k">表</span><p class="en">Table 15: Nemotron-0.6B ONNX quantization results. Config: (7,10,7), 0.56 s delay, 5.6 s history. CPU inference, batch_size=1.</p><p class="zh">表 15：Nemotron-0.6B ONNX 量化结果。配置：(7,10,7)，0.56 s 延迟，5.6 s 历史。CPU 推理，batch_size=1。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>CPU inference, batch_size=1.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Baseline (PyTorch)</td><td></td><td>PyTorch</td><td>2.47 GB</td><td>CUDA</td><td>7.28</td><td>–</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
-<tr><td>FP32</td><td></td><td></td><td>ONNX</td><td>2.47 GB</td><td>CPU</td><td>8.03</td><td>6.73</td><td>16.40</td><td>13.32</td><td>12.00</td><td>2.35</td><td>5.01</td><td>2.61</td><td>4.66</td><td>7.90</td></tr>
-<tr><td>int8 k-quant</td><td></td><td></td><td>ONNX</td><td>1.28 GB</td><td>CPU</td><td>8.01</td><td>7.25</td><td>16.37</td><td>13.35</td><td>11.97</td><td>2.36</td><td>4.97</td><td>2.52</td><td>4.62</td><td>7.92</td></tr>
-<tr><td></td><td>int4-mixed k-quant</td><td></td><td>ONNX</td><td>0.73 GB</td><td>CPU</td><td>8.12</td><td>7.15</td><td>16.72</td><td>13.52</td><td>12.08</td><td>2.36</td><td>5.02</td><td>2.64</td><td>4.70</td><td>7.88</td></tr>
-<tr><td>int4 k-quant</td><td></td><td></td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>8.20</td><td>7.20</td><td>17.05</td><td>13.60</td><td>12.10</td><td>2.38</td><td>5.04</td><td>2.83</td><td>4.65</td><td>7.98</td></tr>
-<tr><td></td><td>int4 k-quant + ConvInt</td><td></td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>10.14</td><td>8.00</td><td>20.55</td><td>11.68</td><td>14.73</td><td>5.32</td><td>10.14</td><td>3.05</td><td>5.64</td><td>9.98</td></tr>
-<tr><td>int4 RTN</td><td></td><td></td><td>ONNX</td><td>0.66 GB</td><td>CPU</td><td>8.46</td><td>7.30</td><td>18.94</td><td>13.52</td><td>12.12</td><td>2.42</td><td>5.10</td><td>2.85</td><td>4.72</td><td>8.05</td></tr></tbody></table></div></div>
+      <h3 class="sech lv2" id="sec-A-9"><span class="secnum">A.9</span> <span class="t-zh">Nemotron-0.6B — ONNX Quantization Results</span><span class="t-en">Nemotron-0.6B — ONNX Quantization Results</span></h3><div class="cap" id="tab-A-9-1"><span class="cap-k">表</span><p class="en">Table 15: Nemotron-0.6B ONNX quantization results. Config: (7,10,7), 0.56 s delay, 5.6 s history. CPU inference, batch_size=1.</p><p class="zh">表 15：Nemotron-0.6B ONNX 量化结果。配置：(7,10,7)，0.56 s 延迟，5.6 s 历史。CPU 推理，batch_size=1。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Baseline (PyTorch)</td><td>PyTorch</td><td>2.47 GB</td><td>CUDA</td><td>7.28</td><td>–</td><td>11.80</td><td>12.64</td><td>11.50</td><td>2.33</td><td>5.08</td><td>2.72</td><td>4.46</td><td>7.69</td></tr>
+<tr><td>FP32</td><td></td><td>ONNX</td><td>2.47 GB</td><td>CPU</td><td>8.03</td><td>6.73</td><td>16.40</td><td>13.32</td><td>12.00</td><td>2.35</td><td>5.01</td><td>2.61</td><td>4.66</td><td>7.90</td></tr>
+<tr><td>int8 k-quant</td><td></td><td>ONNX</td><td>1.28 GB</td><td>CPU</td><td>8.01</td><td>7.25</td><td>16.37</td><td>13.35</td><td>11.97</td><td>2.36</td><td>4.97</td><td>2.52</td><td>4.62</td><td>7.92</td></tr>
+<tr><td></td><td>int4-mixed k-quant</td><td>ONNX</td><td>0.73 GB</td><td>CPU</td><td>8.12</td><td>7.15</td><td>16.72</td><td>13.52</td><td>12.08</td><td>2.36</td><td>5.02</td><td>2.64</td><td>4.70</td><td>7.88</td></tr>
+<tr><td>int4 k-quant</td><td></td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>8.20</td><td>7.20</td><td>17.05</td><td>13.60</td><td>12.10</td><td>2.38</td><td>5.04</td><td>2.83</td><td>4.65</td><td>7.98</td></tr>
+<tr><td></td><td>int4 k-quant + ConvInt</td><td>ONNX</td><td>0.67 GB</td><td>CPU</td><td>10.14</td><td>8.00</td><td>20.55</td><td>11.68</td><td>14.73</td><td>5.32</td><td>10.14</td><td>3.05</td><td>5.64</td><td>9.98</td></tr>
+<tr><td>int4 RTN</td><td></td><td>ONNX</td><td>0.66 GB</td><td>CPU</td><td>8.46</td><td>7.30</td><td>18.94</td><td>13.52</td><td>12.12</td><td>2.42</td><td>5.10</td><td>2.85</td><td>4.72</td><td>8.05</td></tr>
+<tr><td>A.10</td><td></td><td>Nemotron-0.6B</td><td>—</td><td>ONNX</td><td></td><td></td><td>k-quant</td><td>at</td><td>0.16s</td><td>Delay</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-A-9-1">
           <p class="en-lines"><span class="sent" data-sid="s-A-9-1-1"><span class="en">Variant Format Size Device Avg RTFx AMI Earn.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-A-9-1-1"><span class="zh">表头：Variant｜Format｜Size｜Device｜Avg｜RTFx｜AMI｜Earn.。</span></span></p>

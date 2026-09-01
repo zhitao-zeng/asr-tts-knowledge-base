@@ -485,6 +485,18 @@
     "",
     "9.6",
     "11.6"
+   ],
+   [
+    "This work (no LM)",
+    "",
+    "",
+    ""
+   ],
+   [
+    "LARGE (LS-960)",
+    "",
+    "7.4",
+    "8.3"
    ]
   ]
  },
@@ -494,42 +506,71 @@
    [
     "",
     "",
-    "avg. WER",
-    "std."
+    "dev PER",
+    "test PER"
    ]
   ],
   "rows": [
    [
     "",
-    "Continuous inputs, quantized targets (Baseline)",
-    "7.97",
-    "0.02"
+    "CNN + TD-ﬁlterbanks [59]",
+    "15.6",
+    "18.0"
    ],
    [
-    "Quantized inputs, quantized targets",
+    "PASE+ [47]",
     "",
-    "12.18",
-    "0.41"
+    "-",
+    "17.2"
    ],
    [
-    "Quantized inputs, continuous targets",
     "",
-    "11.18",
-    "0.16"
+    "Li-GRU + fMLLR [46]",
+    "–",
+    "14.9"
    ],
    [
-    "Continuous inputs, continuous targets",
+    "wav2vec [49]",
     "",
-    "8.58",
-    "0.08"
+    "12.9",
+    "14.7"
+   ],
+   [
+    "vq-wav2vec [5]",
+    "",
+    "9.6",
+    "11.6"
+   ],
+   [
+    "This work (no LM)",
+    "",
+    "",
+    ""
+   ],
+   [
+    "LARGE (LS-960)",
+    "",
+    "7.4",
+    "8.3"
    ]
   ]
  },
  "tab-A-1": {
   "page": 12,
-  "headers": [],
+  "headers": [
+   [
+    "σ) sample M s from Poisson and normal distributions.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ],
   "rows": [
    [
+    "",
     "0.25",
     "",
     "",
@@ -538,6 +579,7 @@
     ""
    ],
    [
+    "",
     "spans 0.20",
     "",
     "",
@@ -546,6 +588,7 @@
     ""
    ],
    [
+    "",
     "all 0.15",
     "",
     "",
@@ -554,6 +597,7 @@
     ""
    ],
    [
+    "",
     "of",
     "",
     "",
@@ -562,14 +606,7 @@
     ""
    ],
    [
-    "Percent",
     "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
     "0.10",
     "",
     "",
@@ -578,6 +615,7 @@
     ""
    ],
    [
+    "",
     "0.05",
     "",
     "",
@@ -586,6 +624,7 @@
     ""
    ],
    [
+    "",
     "0.00",
     "20",
     "40",
@@ -594,6 +633,7 @@
     "100"
    ],
    [
+    "",
     "",
     "",
     "",
@@ -1426,31 +1466,26 @@
    [
     "10m LV-60k",
     "FEABY MEARLY glanced at it and gave it BAK",
-    "",
     ""
    ],
    [
     "1h LV-60k",
     "FIEABY merely glanced at it and gave it back",
-    "",
     ""
    ],
    [
     "10h LV-60k",
     "FEEBY merely glanced at it and gave it back",
-    "",
     ""
    ],
    [
     "100h LV-60k",
     "BEBE merely glanced at it and gave it back",
-    "",
     ""
    ],
    [
     "960h LV-60k",
     "phoebe merely glanced at it and gave it back",
-    "",
     ""
    ]
   ],
@@ -1458,155 +1493,89 @@
    [
     "960h scratch",
     "phoebe merely glanced at it and gave it back",
-    "",
     ""
    ],
    [
     "Reference",
-    "",
     "",
     "sauterne is a white bordeaux a strong luscious wine the best known varieties being"
    ],
    [
     "10m LV-60k",
     "",
-    "",
     "SULTERIN is a white BORDOE a strong LUCHOUS WIN the best NOWN"
    ],
    [
     "1h LV-60k",
-    "",
     "",
     "CLTEREN is a white BORDO a strong LUCHIOUS wine the best known"
    ],
    [
     "10h LV-60k",
     "",
-    "SOTERN is a white BOURDO a strong LUCIOUS wine the best known",
-    ""
+    "SOTERN is a white BOURDO a strong LUCIOUS wine the best known"
    ],
    [
     "100h LV-60k",
-    "",
     "",
     "SOTERN is a white BORDAUX a strong LUCIOUS wine the best known"
    ],
    [
     "960h LV-60k",
     "",
-    "",
     "SOTERN is a white bordeaux a strong luscious wine the best known varieties"
    ],
    [
     "960h scratch",
-    "",
     "",
     "SOTERAN is a white bordeaux a strong luscious wine the best known varieties"
    ],
    [
     "Reference",
     "",
-    "",
     "i happen to have mac connell’s box for tonight or there’d be no chance of our"
    ],
    [
     "10m LV-60k",
-    "",
     "",
     "i HAPEND to have MECONALES BOXS for TONIT ORE THIRLD be no"
    ],
    [
     "1h LV-60k",
     "",
-    "",
     "i happen to have MACCONNEL’S BOCXS for tonight or TE’ELD be no chance"
    ],
    [
     "10h LV-60k",
-    "",
     "",
     "i HAPPENED to have MUKONNEL’S box for tonight or THERED be no chance"
    ],
    [
     "100h LV-60k",
     "",
-    "",
     "i HAPPENED to have MC CONNEL’S box for TO NIGHT or there’d be no"
    ],
    [
     "960h LV-60k",
-    "",
     "",
     "i happen to have MC CONALL’S box for TO NIGHT or there’d be no chance of"
    ],
    [
     "960h scratch",
     "",
-    "",
     "i HAPPENE to have MACONEL’S box for TO NIGHT or there’d be no chance of"
    ],
    [
     "",
     "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "Table 13 ablates various hyperparameter choices of our architecture.",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "model is described in § 5.4. First, we tried to improve the continuous input",
-    ""
-   ],
-   [
-    "",
-    "",
-    "model (§ 5.4) by adding an MLP on top of the continuous target representation",
-    ""
-   ],
-   [
-    "",
-    "",
-    "use a separate set of encoder parameters for the representations used as input",
     ""
    ],
    [
     "",
     "encoders). Both did not lead to meaningful improvements.",
-    "",
     ""
    ],
    [
-    "",
-    "",
-    "Increasing the receptive ﬁeld size from 25ms to 30ms had little effect. Setting",
-    ""
-   ],
-   [
-    "",
-    "",
-    "weight (α) too low results in lower codebook usage and lower performance.",
-    ""
-   ],
-   [
-    "",
-    "",
-    "to slight instability. Doubling the number of relative positional embeddings to",
-    ""
-   ],
-   [
-    "",
-    "",
-    "Stopping gradients from the quantizer to the encoder shows that the encoder",
-    ""
-   ],
-   [
-    "",
     "",
     "",
     ""
@@ -1614,31 +1583,6 @@
    [
     "",
     "",
-    "Next, increasing the number of negatives did not result in better performance (K",
-    ""
-   ],
-   [
-    "",
-    "",
-    "negatives from the entire batch of utterances hurt performance, likely because",
-    ""
-   ],
-   [
-    "",
-    "",
-    "utterances are easy to distinguish. Sampling negatives from any time step in",
-    ""
-   ],
-   [
-    "",
-    "",
-    "or unmasked, does not help and is more computationally expensive. Gumbel",
-    ""
-   ],
-   [
-    "",
-    "",
-    "increasing the number of codebooks did not result in better performance.",
     ""
    ]
   ]
@@ -1647,7 +1591,6 @@
   "page": 19,
   "headers": [
    [
-    "",
     "",
     "",
     "on combined dev-clean/other of Librispeech for three seeds of training.",
@@ -1659,7 +1602,6 @@
     "",
     "",
     "",
-    "",
     "std."
    ]
   ],
@@ -1667,13 +1609,11 @@
    [
     "",
     "",
-    "Baseline (p = 0.075, α = 0.1)",
     "",
     "7.97",
     "0.02"
    ],
    [
-    "",
     "",
     "",
     "Continuous inputs, continuous targets",
@@ -1684,7 +1624,6 @@
     "",
     "+ MLP on targets",
     "",
-    "",
     "8.51",
     "0.05"
    ],
@@ -1692,14 +1631,12 @@
     "",
     "+ Separate encoders",
     "",
-    "",
     "8.90",
     "0.01"
    ],
    [
     "",
     "receptive ﬁeld 30ms",
-    "",
     "",
     "7.99",
     "0.06"
@@ -1709,12 +1646,10 @@
     "diversity penalty",
     "",
     "",
-    "",
     ""
    ],
    [
     "α = 0",
-    "",
     "",
     "",
     "8.48",
@@ -1724,13 +1659,11 @@
     "α = 0.05",
     "",
     "",
-    "",
     "8.34",
     "0.08"
    ],
    [
     "α = 0.2",
-    "",
     "",
     "",
     "8.58",
@@ -1739,10 +1672,114 @@
    [
     "",
     "",
-    "Conv pos emb, kernel 256",
     "",
     "8.14",
     "0.05"
+   ],
+   [
+    "",
+    "",
+    "No gradient to encoder from quantizer",
+    "8.41",
+    "0.08"
+   ],
+   [
+    "Negatives",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "8.12",
+    "0.05"
+   ],
+   [
+    "",
+    "",
+    "",
+    "8.79",
+    "0.06"
+   ],
+   [
+    "",
+    "",
+    "Sample negatives from any time step",
+    "8.07",
+    "0.02"
+   ],
+   [
+    "",
+    "No Gumbel noise",
+    "",
+    "8.73",
+    "0.42"
+   ],
+   [
+    "Codebook",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "G=4, V=18",
+    "",
+    "",
+    "9.02",
+    "0.38"
+   ],
+   [
+    "G=8, V=8",
+    "",
+    "",
+    "8.13",
+    "0.07"
+   ],
+   [
+    "",
+    "",
+    "Predict exactly U time steps from edges",
+    "",
+    ""
+   ],
+   [
+    "U = 1",
+    "",
+    "",
+    "9.53",
+    "0.91"
+   ],
+   [
+    "U = 5",
+    "",
+    "",
+    "8.19",
+    "0.07"
+   ],
+   [
+    "U = 10",
+    "",
+    "",
+    "8.07",
+    "0.07"
+   ],
+   [
+    "U = 15",
+    "",
+    "",
+    "7.89",
+    "0.10"
+   ],
+   [
+    "U = 20",
+    "",
+    "",
+    "7.90",
+    "0.01"
    ]
   ]
  }

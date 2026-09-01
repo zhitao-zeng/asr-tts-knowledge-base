@@ -3,122 +3,62 @@
   "page": 11,
   "headers": [
    [
+    "as incapable of denoising or editing.",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
     "Model",
-    "Transformer [Vaswani et al., 2017] with convolutional positional"
-   ],
-   [
-    "",
-    "2020] and symmetric bi-directional ALiBi self-attention bias [Press et al., 2021]"
-   ],
-   [
-    "",
-    "A.6. The audio model has 24 layers, 16 attention heads, 1024/4096"
-   ],
-   [
-    "",
-    "(FFN) dimension, 330M parameters. We add skip connections connecting"
-   ],
-   [
-    "",
-    "layer to last layer, second layer to second-to-last layer, etc.)"
+    "ZS TTS",
+    "Denoise",
+    "Partial Edit",
+    "Sampling"
    ]
   ],
   "rows": [
    [
     "",
-    "States are concatenated channel-wise and then combined using a linear layer."
+    "VALL-E",
+    "✓",
+    "✗",
+    "✗",
+    "✓"
    ],
    [
     "",
-    "has 8 heads, 512/2048 embedding/FFN dimensions, with 8/10 layers for"
+    "YourTTS",
+    "✓",
+    "✗",
+    "✗",
+    "✓"
    ],
    [
     "",
-    "(28M/34M parameters in total). All models are trained in FP16."
-   ],
-   [
-    "Training",
-    ""
-   ],
-   [
-    "",
-    "size of 240K frames. For training efficiency, audio length is capped at 1,600"
+    "A3T",
+    "✓",
+    "✓(short)",
+    "✓",
+    "✗"
    ],
    [
     "",
-    "randomly if the length exceeds this threshold. Duration models are trained for"
+    "Demucs",
+    "✗",
+    "✓",
+    "✗",
+    "✗"
    ],
    [
     "",
-    "effective batch size of 60K frames. The Adam [Kingma and Ba, 2014] optimizer"
-   ],
-   [
-    "",
-    "learning rate of 1e-4, linearly warmed up for 5K steps and linearly decays over"
-   ],
-   [
-    "",
-    "For audio models, we clip the gradient norm to 0.2 for training stability. The"
-   ],
-   [
-    "",
-    "is masked with pdrop = 0.3/0.2, and otherwise a segment of r% sequence"
-   ],
-   [
-    "",
-    "r ∼U[70, 100]/U[10, 100]. puncond is set to 0.2 for audio/duration models."
-   ],
-   [
-    "Inference",
-    "The torchdiffeq [Chen, 2018] package is used, which"
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    "(NFE=32). The regression duration model is used by default. Silence at both"
-   ],
-   [
-    "second max.",
-    ""
-   ],
-   [
-    "Baselines",
-    ""
-   ],
-   [
-    "",
-    "TTS trained on Librilight. 2) YourTTS [Casanova et al., 2021], SOTA"
-   ],
-   [
-    "",
-    "and Portuguese) zero-shot TTS model trained on VCTK, LibriTTS,"
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    "using a pre-trained multilingual speaker embedder for voice conditioning. 3)"
-   ],
-   [
-    "",
-    "SOTA for NAR speech editing and infilling trained with a regression loss on"
-   ],
-   [
-    "",
-    "Demucs [Défossez et al., 2020], a SOTA speech enhancement model trained"
-   ],
-   [
-    "",
-    "adversarial losses for denoising experiments. Table 1 summarizes the tasks each"
-   ],
-   [
-    "of solving.",
-    ""
+    "Voicebox",
+    "✓",
+    "✓(short)",
+    "✓",
+    "✓"
    ]
   ]
  },
@@ -219,151 +159,206 @@
  },
  "tab-5-3-1": {
   "page": 12,
-  "headers": [],
+  "headers": [
+   [
+    "",
+    "Ref",
+    "",
+    "De",
+    "",
+    "",
+    "En",
+    "",
+    "",
+    "Es",
+    "",
+    "",
+    "Fr",
+    "",
+    "",
+    "Pl",
+    "",
+    "",
+    "Pt",
+    ""
+   ],
+   [
+    "",
+    "",
+    "WER",
+    "",
+    "SIM-o",
+    "WER",
+    "",
+    "SIM-o",
+    "WER",
+    "",
+    "SIM-o",
+    "WER",
+    "",
+    "SIM-o",
+    "WER",
+    "",
+    "SIM-o",
+    "WER",
+    "",
+    "SIM-o"
+   ]
+  ],
   "rows": [
    [
-    "Ground truth",
-    "2.2",
-    "",
-    "0.754",
-    "n/a",
-    "3.98± 0.14",
-    "4.01±0.09"
-   ],
-   [
-    "cross-sentence",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "A3T",
-    "63.3",
-    "",
-    "0.046",
-    "0.146",
+    "GT",
     "-",
-    "-"
-   ],
-   [
-    "YourTTS",
-    "7.7",
-    "",
-    "0.337",
-    "n/a",
-    "3.27± 0.13",
-    "3.19±0.14"
-   ],
-   [
-    "VALL-E",
     "5.9",
     "",
-    "-",
-    "0.580",
-    "-",
-    "-"
-   ],
-   [
-    "VB-En",
-    "1.9",
+    "0.725",
+    "5.0",
     "",
-    "0.662",
-    "0.681",
-    "3.78± 0.10",
-    "3.71±0.11"
-   ],
-   [
-    "continuation",
+    "0.636",
+    "4.1",
     "",
+    "0.729",
+    "5.2",
     "",
+    "0.714",
+    "4.9",
     "",
+    "0.743",
+    "5.8",
     "",
-    "",
-    ""
-   ],
-   [
-    "A3T",
-    "18.7",
-    "",
-    "0.058",
-    "0.144",
-    "-",
-    "-"
-   ],
-   [
-    "VALL-E",
-    "3.8",
-    "",
-    "0.452∗",
-    "0.508",
-    "-",
-    "-"
-   ],
-   [
-    "VB-En (α = 0.7)",
-    "2.0",
-    "",
-    "0.593",
-    "0.616",
-    "-",
-    "-"
-   ],
-   [
-    "Cross-lingual zero-shot TTS",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "0.725"
    ],
    [
     "",
+    "De",
+    "n/a",
     "",
-    "Tables 3 and 4 presents cross-lingual zero-shot TTS results, where the audio context and the",
+    "n/a",
+    "7.3",
     "",
+    "0.373",
+    "n/a",
     "",
+    "n/a",
+    "11.3",
     "",
-    ""
+    "0.361",
+    "n/a",
+    "",
+    "n/a",
+    "13.7",
+    "",
+    "0.263"
    ],
    [
     "",
+    "En",
+    "n/a",
     "",
-    "are in different languages. Note that VB-Multi is not trained on any sample with multiple",
+    "n/a",
+    "7.0",
     "",
+    "0.403",
+    "n/a",
     "",
+    "n/a",
+    "11.4",
     "",
-    ""
+    "0.298",
+    "n/a",
+    "",
+    "n/a",
+    "14.1",
+    "",
+    "0.234"
    ],
    [
     "",
+    "Es",
+    "n/a",
     "",
-    "in an utterance spoken by the same speaker. The test set is constructed using filtered MLS",
+    "n/a",
+    "7.6",
     "",
+    "0.327",
+    "n/a",
     "",
+    "n/a",
+    "11.6",
     "",
-    ""
+    "0.316",
+    "n/a",
+    "",
+    "n/a",
+    "13.5",
+    "",
+    "0.256"
+   ],
+   [
+    "YT",
+    "Fr",
+    "n/a",
+    "",
+    "n/a",
+    "7.6",
+    "",
+    "0.363",
+    "n/a",
+    "",
+    "n/a",
+    "10.7",
+    "",
+    "0.459",
+    "n/a",
+    "",
+    "n/a",
+    "13.1",
+    "",
+    "0.299"
    ],
    [
     "",
+    "Pl",
+    "n/a",
     "",
-    "described in Appendix A.4. For each target text, we sample one 3-second long audio",
+    "n/a",
+    "7.8",
     "",
+    "0.349",
+    "n/a",
     "",
+    "n/a",
+    "11.8",
     "",
-    ""
+    "0.370",
+    "n/a",
+    "",
+    "n/a",
+    "15.1",
+    "",
+    "0.308"
    ],
    [
     "",
+    "Pt",
+    "n/a",
     "",
+    "n/a",
+    "7.6",
     "",
+    "0.322",
+    "n/a",
     "",
+    "n/a",
+    "11.8",
     "",
+    "0.297",
+    "n/a",
     "",
-    ""
+    "n/a",
+    "13.6",
+    "",
+    "0.436"
    ]
   ]
  },
@@ -576,13 +571,17 @@
     "test-other text.",
     "",
     "",
-    ""
+    "",
+    "",
+    "real or synthetic"
    ],
    [
     "Model",
     "",
     "WER",
-    "FSD"
+    "FSD",
+    "",
+    "decoded with or"
    ]
   ],
   "rows": [
@@ -590,19 +589,81 @@
     "Ground truth",
     "",
     "4.3",
-    "171.1"
+    "171.1",
+    "",
+    ""
    ],
    [
     "",
     "require additional input",
     "",
-    ""
+    "",
+    "",
+    "ASR training data"
    ],
    [
     "VITS-VCTK",
     "",
     "10.6",
-    "306.6"
+    "306.6",
+    "",
+    ""
+   ],
+   [
+    "",
+    "YourTTS (ref=LS train)",
+    "9.0",
+    "277.9",
+    "",
+    "Real audio (100hr)"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Real audio (960hr)"
+   ],
+   [
+    "text-only",
+    "",
+    "",
+    "",
+    "VITS-LJ",
+    ""
+   ],
+   [
+    "A3T",
+    "",
+    "37.9",
+    "373.0",
+    "VITS-VCTK",
+    ""
+   ],
+   [
+    "VITS-LJ",
+    "",
+    "5.6",
+    "344.2",
+    "",
+    "YourTTS (ref=LS train)"
+   ],
+   [
+    "",
+    "VB-En (α = 0, dur=regr)",
+    "3.1",
+    "155.7",
+    "",
+    "VB-En (α = 0, dur=regr)"
+   ],
+   [
+    "",
+    "",
+    "5.6",
+    "159.8",
+    "",
+    "VB-En (α = 0, dur=FM,"
    ]
   ]
  },
@@ -1017,10 +1078,16 @@
     "",
     "",
     "",
+    "NFE=4",
     "",
     "",
+    "NFE=8",
     "",
     "",
+    "NFE=16",
+    "",
+    "",
+    "NFE=32",
     ""
    ],
    [
@@ -1032,121 +1099,91 @@
     "",
     "",
     "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ],
    [
     "",
+    "",
+    "",
     "WER",
+    "",
     "Sim-o",
     "WER",
+    "",
     "Sim-o",
     "WER",
+    "",
     "Sim-o",
     "WER",
+    "",
     "Sim-o"
    ]
   ],
   "rows": [
    [
     "",
+    "FM w/ OT (proposed)",
+    "",
     "2.4",
+    "",
     "0.410",
     "2.2",
+    "",
     "0.481",
     "2.2",
+    "",
     "0.503",
     "2.1",
+    "",
     "0.508"
    ],
    [
     "FM w/ diff",
+    "",
+    "",
     "11.5",
+    "",
     "0.171",
     "3.0",
+    "",
     "0.359",
     "2.7",
+    "",
     "0.447",
     "2.6",
+    "",
     "0.478"
    ],
    [
     "SM w/ diff",
+    "",
+    "",
     "94.5",
+    "",
     "0.054",
     "42.3",
+    "",
     "0.076",
     "11.5",
+    "",
     "0.218",
     "5.1",
+    "",
     "0.349"
    ],
    [
     "",
     "",
-    "",
-    "the split by masking out frames in the spectrogram corresponding to 90%, 50%, and 30% of the",
-    "",
+    "vocoding it with the HiFi-GAN vocoder.",
     "",
     "",
     "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "phonemes of the utterance. All samples are generated using classifier-free guidance with w = 0.7,",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "We consider two detection tasks. The first one is to distinguish between original audio and Voicebox-",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "generated audio. The second one is to distinguish resynthesized audio and Voicebox-generated audio.",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "The resynthesized audio is created by extracting the Mel Spectrogram from original audio and then",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",

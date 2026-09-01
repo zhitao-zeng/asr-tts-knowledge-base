@@ -6,13 +6,11 @@
     "Parameter",
     "",
     "",
-    "",
     "Value",
     ""
    ],
    [
     "Input / Preprocessing",
-    "",
     "",
     "",
     "",
@@ -24,13 +22,11 @@
     "Sampling rate",
     "",
     "",
-    "",
     "24000",
     ""
    ],
    [
     "Patch size",
-    "",
     "",
     "",
     "240",
@@ -41,11 +37,9 @@
     "",
     "",
     "",
-    "",
     ""
    ],
    [
-    "",
     "",
     "",
     "Encoder patch projection kernel size",
@@ -55,13 +49,11 @@
    [
     "",
     "",
-    "",
     "Encoder patch projection dimension",
     "1024",
     ""
    ],
    [
-    "",
     "",
     "Encoder transformer layers1",
     "",
@@ -70,7 +62,6 @@
    ],
    [
     "",
-    "",
     "Encoder sliding window size",
     "",
     "",
@@ -78,7 +69,6 @@
    ],
    [
     "",
-    "Encoder conv kernels",
     "",
     "",
     "",
@@ -86,7 +76,6 @@
    ],
    [
     "",
-    "Encoder conv strides",
     "",
     "",
     "",
@@ -96,7 +85,55 @@
     "",
     "",
     "",
+    "(Decoder flips all →to ←and uses transposed convolutions)",
+    ""
+   ],
+   [
+    "Discrete bottleneck",
     "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "Semantic VQ2 codebook size",
+    "",
+    "8192",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Acoustic FSQ3 codebook count×size",
+    "36 × 21",
+    ""
+   ],
+   [
+    "Discriminator",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "FFT sizes",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "Channels",
+    "",
+    "",
+    "256",
+    ""
+   ],
+   [
+    "",
+    "",
+    "2 During training, VQ is applied with 50% probability.",
     "",
     ""
    ]
@@ -219,6 +256,7 @@
   "headers": [
    [
     "Model",
+    "",
     "fps",
     "vocab. size",
     "",
@@ -230,6 +268,7 @@
     ""
    ],
    [
+    "",
     "",
     "",
     "",
@@ -245,6 +284,7 @@
   "rows": [
    [
     "Mimi – 8cb (Moshi)",
+    "",
     "12.5",
     "8 × (2048)",
     "1.1",
@@ -257,6 +297,7 @@
    ],
    [
     "Mimi – 16cb",
+    "",
     "12.5",
     "16 × (2048)",
     "2.2",
@@ -269,6 +310,7 @@
    ],
    [
     "Mimi – full 32cb",
+    "",
     "12.5",
     "32 × (2048)",
     "4.4",
@@ -281,6 +323,7 @@
    ],
    [
     "Voxtral Codec",
+    "",
     "12.5",
     "1 × (8192) + 36 × (21)",
     "2.1",
@@ -293,34 +336,11 @@
    ],
    [
     "4.2",
+    "",
     "Automatic Evaluations",
     "",
     "",
     "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "We evaluate Voxtral TTS, ElevenLabs v3 and ElevenLabs Flash v2.5 on SEED-TTS [Anastassiou",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "et al., 2024] and the nine supported languages in MiniMax-TTS [Zhang et al., 2025] using automated",
     "",
     "",
     "",
@@ -337,21 +357,11 @@
     "",
     "",
     "",
-    ""
-   ],
-   [
-    "1.",
-    "",
-    "",
-    "",
-    "",
-    "Word Error Rate (WER): Measured by Voxtral Mini Transcribe v2 to capture the intelligi-",
-    "",
-    "",
     "",
     ""
    ],
    [
+    "",
     "",
     "bility of speech.",
     "",
@@ -364,19 +374,8 @@
     ""
    ],
    [
-    "2.",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Predicts the Mean Opinion Score (MOS) of generated",
-    "",
-    ""
-   ],
-   [
-    "",
+    "speech.",
     "",
     "",
     "",
@@ -389,6 +388,7 @@
    ],
    [
     "3.",
+    "Speaker",
     "",
     "",
     "",
@@ -401,29 +401,6 @@
    ],
    [
     "",
-    "",
-    "",
-    "",
-    "",
-    "model [Desplanques et al., 2020] and the cosine similarity is computed against the ref-",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "erence embedding.",
-    "",
-    "",
-    "",
-    "",
-    "This evaluates how closely generated speech emulates the provided",
-    "",
-    "",
-    ""
-   ],
-   [
     "",
     "voice reference.",
     "",
@@ -441,6 +418,8 @@
   "page": 9,
   "headers": [
    [
+    "setting.",
+    "",
     "",
     "",
     "",
@@ -449,44 +428,26 @@
    [
     "",
     "",
-    "First, we compare our flagship voices (British-Female, British-Male,",
-    ""
-   ],
-   [
-    "the",
-    "voices",
-    "of same",
-    "gender"
-   ],
-   [
-    "sub-evaluations:",
+    "Emotion steering",
+    "Opponent Model",
     "",
-    "",
-    ""
+    "Voxtral TTS Win Rate (%)"
    ]
   ],
   "rows": [
    [
-    "1.",
     "",
     "",
-    "Explicit steering: We test the ability to bias a TTS model’s"
+    "",
+    "ElevenLabs v3",
+    "",
+    "51.0"
    ],
    [
     "",
+    "Explicit",
     "",
     "",
-    "emotion. The TTS prompts which have an associated emotion (not"
-   ],
-   [
-    "",
-    "",
-    "",
-    "as free-form instruction to Gemini 2.5 Flash TTS as it supports"
-   ],
-   [
-    "",
-    "as \"Speak in an angry tone.\".",
     "",
     ""
    ],
@@ -494,61 +455,41 @@
     "",
     "",
     "",
-    "brackets 2. While Voxtral TTS does not support emotion"
+    "",
+    "Gemini 2.5 Flash TTS",
+    "35.4"
    ],
    [
     "",
     "",
     "",
-    "generation by leveraging a different voice prompt provided from"
+    "",
+    "ElevenLabs Flash v2.5",
+    "58.3"
    ],
    [
     "",
-    "embodies the requested emotion.",
-    "",
-    ""
-   ],
-   [
-    "2.",
-    "",
-    "",
-    "Implicit steering: We test the model’s capabilities to infer emotion"
-   ],
-   [
+    "Implicit",
     "",
     "",
     "",
-    "\"This is the best day of my life!\"). No emotion label or instruction is"
-   ],
-   [
-    "",
-    "",
-    "For Voxtral TTS, we use a neutral voice prompt.",
     ""
    ],
    [
     "",
     "",
     "",
-    "We use three annotators who are native speakers of the same dialect for each"
+    "ElevenLabs v3",
+    "",
+    "55.4"
    ],
    [
     "",
     "",
-    "win rates of Voxtral TTS (excluding ties) are presented in Table 4.",
-    ""
-   ],
-   [
     "",
     "",
-    "",
-    "strongest model, and Voxtral TTS is competitive against ElevenLabs v3."
-   ],
-   [
-    "",
-    "",
-    "setting, Voxtral TTS consistently outperforms both ElevenLabs models.",
-    ""
+    "Gemini 2.5 Flash TTS",
+    "37.1"
    ]
   ]
  },
@@ -596,6 +537,10 @@
    [
     "Spanish",
     "87.8"
+   ],
+   [
+    "Overall",
+    "68.4"
    ]
   ]
  },
@@ -716,59 +661,27 @@
   "headers": [
    [
     "",
+    "waveform has been generated.",
+    "",
     ""
-   ],
+   ]
+  ],
+  "rows": [
    [
+    "6.1",
+    "",
     "",
     "CUDA Graph Acceleration for Flow-Matching Transformer"
    ],
    [
     "",
-    "The flow-matching transformer is the computational bottleneck of the"
-   ],
-   [
     "",
-    "step requires N function evaluations with CFG, requiring 2 × N forward"
-   ],
-   [
-    "",
-    "To eliminate Python-level overhead and kernel-launch latency, the entire"
-   ]
-  ],
-  "rows": [
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    "corresponding CUDA graph is then captured. During inference, the actual"
-   ],
-   [
-    "",
-    "the nearest bucket by padding the input with zeros. Next, the CUDA graph"
-   ],
-   [
-    "are sliced back to the actual batch size.",
-    ""
-   ],
-   [
     "model falls back to eager execution.",
     ""
    ],
    [
     "",
-    "To evaluate the effect of CUDA graph acceleration, we compare the"
-   ],
-   [
     "",
-    "(RTF) when decoding with eager mode and CUDA graphs. Table 7 reports"
-   ],
-   [
-    "",
-    "text input, a 10-second audio reference and concurrency 1 on a single H200."
-   ],
-   [
     "",
     "results in a 47% improvement to latency and reduces the RTF by 2.5x."
    ]

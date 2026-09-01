@@ -472,7 +472,18 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>en | zh | yue | fr</td><td>Qwen2-Audio</td><td></td><td>8.6 | 6.9 | 5.9 | 9.6</td></tr>
 <tr><td>Fleurs</td><td>Whisper-large-v3 (Radford et al., 2023)</td><td></td><td>7.7</td></tr>
 <tr><td></td><td></td><td>WER ↓</td><td></td></tr>
-<tr><td>zh</td><td>Qwen2-Audio</td><td></td><td>7.5</td></tr></tbody></table></div></div>
+<tr><td></td><td>MMSpeech-base (Zhou et al., 2022)</td><td></td><td>4.5 | 3.9 | 4.0</td></tr>
+<tr><td>Aishell2</td><td>Paraformer-large (Gao et al., 2023)</td><td></td><td>- | 2.9 | -</td></tr>
+<tr><td></td><td></td><td>WER ↓</td><td></td></tr>
+<tr><td>Mic | iOS | Android</td><td>Qwen-Audio (Chu et al., 2023)</td><td></td><td>3.3 | 3.1 | 3.3</td></tr>
+<tr><td></td><td>Qwen2-Audio</td><td></td><td>3.0 | 3.0 | 2.9</td></tr>
+<tr><td></td><td>SALMONN (Tang et al., 2024)</td><td></td><td>18.6 | - | 33.1 | -</td></tr>
+<tr><td>CoVoST2</td><td>SpeechLLaMA (Wu et al., 2023a)</td><td></td><td>- | 27.1 | - | 12.3</td></tr>
+<tr><td>en-de | de-en |</td><td>BLSP (Wang et al., 2023a)</td><td>BLEU ↑</td><td>14.1 | - | - | -</td></tr>
+<tr><td>en-zh | zh-en</td><td>Qwen-Audio (Chu et al., 2023)</td><td></td><td>25.1 | 33.9 | 41.5 | 15.7</td></tr>
+<tr><td></td><td>Qwen2-Audio</td><td></td><td>29.9 | 35.2 | 45.2 | 24.4</td></tr>
+<tr><td></td><td>SpeechLLaMA (Wu et al., 2023a)</td><td></td><td>27.9 | 25.2 | 25.9</td></tr>
+<tr><td>CoVoST2</td><td></td><td></td><td></td></tr></tbody></table></div></div>
 
 
 
@@ -494,35 +505,35 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-
-<div class="eq" id="eq-3-2-20"><code>MMSpeech-base (Zhou et al., 2022)</code></div>
-<div class="eq" id="eq-3-2-21"><code>4.5 | 3.9 | 4.0</code></div>
-<div class="eq" id="eq-3-2-22"><code>Paraformer-large (Gao et al., 2023)</code></div>
+<div class="eq" id="eq-3-2-19"><code>7.5</code></div>
 
 
-<div class="eq" id="eq-3-2-25"><code>3.3 | 3.1 | 3.3</code></div>
 
-<div class="eq" id="eq-3-2-27"><code>3.0 | 3.0 | 2.9</code></div>
+
+
+
+
+
 <div class="pblk" id="p-3-2-6">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-6-1"><span class="en">Aishell2 Mic | iOS | Android WER ↓ SALMONN (Tang et al., 2024)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-6-1"><span class="zh">（表头：Aishell2 的 Mic/iOS/Android 三通道 WER↓；SALMONN（Tang et al., 2024）。）</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-2-28"><code>18.6 | - | 33.1 | -</code></div>
-<div class="eq" id="eq-3-2-29"><code>SpeechLLaMA (Wu et al., 2023a)</code></div>
-<div class="eq" id="eq-3-2-30"><code>- | 27.1 | - | 12.3</code></div>
-<div class="eq" id="eq-3-2-31"><code>BLSP (Wang et al., 2023a)</code></div>
 
 
-<div class="eq" id="eq-3-2-34"><code>25.1 | 33.9 | 41.5 | 15.7</code></div>
 
-<div class="eq" id="eq-3-2-36"><code>29.9 | 35.2 | 45.2 | 24.4</code></div>
+
+
+
+
+
+
 <div class="pblk" id="p-3-2-7">
           <p class="en-lines"><span class="sent" data-sid="s-3-2-7-1"><span class="en">CoVoST2 en-de | de-en | en-zh | zh-en S2TT BLEU ↑ SpeechLLaMA (Wu et al., 2023a) BLEU ↑</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-3-2-7-1"><span class="zh">（Table 2 表格正文抽取残留，含各模型与任务的数值散块：）任务、数据集、模型、性能指标与结果；SpeechT5 (Ao et al., 2021)、SpeechNet (Chen et al., 2021)（数值如 30.7）；SLM-FT (Wang et al., 2023b)（2.6 | 5.0）；SALMONN (Tang et al., 2024)（2.1 | 4.9）；SpeechVerse (Das et al., 2024)（2.1 | 4.4）；Librispeech dev-clean | dev-other | test-clean | test-other；Common Voice 15 en | zh | yue | fr；Whisper-large-v3 (Radford et al., 2023)；ASR Fleurs zh：Whisper-large-v3 (Radford et al., 2023) 7.7、7.5；MMSpeech-base (Zhou et al., 2022)、Paraformer-large (Gao et al., 2023)（2.9）；Aishell2 Mic | iOS | Android；SALMONN (18.6 | 33.1)；SpeechLLaMA (Wu et al., 2023a)（27.1 | 12.3）；BLSP (Wang et al., 2023a)（14.1）；CoVoST2 en-de | de-en | en-zh | zh-en；S2TT BLEU ↑：SpeechLLaMA；CoVoST2 es-en | fr-en | it-en；SER Meld：WavLM-large (Chen et al., 2022) ACC ↑ 0.542、0.557、0.553；CLAP (Elizalde et al., 2022) 0.4945；Pengi (Deshmukh et al., 2023) 0.6035、0.9289、0.9392；VSC VocalSound ACC ↑：SALMONN、BLSP、Pandagpt (Su et al., 2023)、Macaw-LLM (Lyu et al., 2023)、SpeechGPT (Zhang et al., 2023)、Next-gpt (Wu et al., 2023b)、Gemini-1.5-pro (Reid et al., 2024)；聊天基准 Speech | Sound | Music | Mixed-Audio：AIR-Bench（GPT-4 打分 ↑）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-3-2-37"><code>27.9 | 25.2 | 25.9</code></div>
+
 
 <div class="eq" id="eq-3-2-39"><code>39.7 | 38.5 | 36.0</code></div>
 

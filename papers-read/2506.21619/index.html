@@ -557,7 +557,42 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="cap" id="tab-emotional-performance-comparison-1"><span class="cap-k">表</span><p class="en">Table 1: Zero-Shot Performance Comparison of Various Systems on Different Datasets</p><p class="zh">表 1：各系统在不同数据集上的零样本性能对比</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Dataset</th><th>Model</th><th>SS↑</th><th>WER(%)↓</th><th>SMOS↑</th><th>PMOS↑</th><th>QMOS↑</th></tr></thead><tbody><tr><td></td><td>Ground Truth</td><td>0.833</td><td>3.405</td><td>4.02±0.22</td><td>3.85±0.26</td><td>4.23±0.12</td></tr>
 <tr><td></td><td>MaskGCT</td><td>0.790</td><td>7.759</td><td>4.12±0.09</td><td>3.98±0.11</td><td>4.19±0.19</td></tr>
 <tr><td></td><td>F5-TTS</td><td>0.821</td><td>8.044</td><td>4.08±0.21</td><td>3.73±0.27</td><td>4.12±0.13</td></tr>
-<tr><td>LibriSpeech</td><td>CosyVoice2</td><td>0.843</td><td>5.999</td><td>4.02±0.22</td><td>4.04±0.28</td><td>4.17±0.25</td></tr></tbody></table></div></div></section>
+<tr><td>LibriSpeech</td><td>CosyVoice2</td><td>0.843</td><td>5.999</td><td>4.02±0.22</td><td>4.04±0.28</td><td>4.17±0.25</td></tr>
+<tr><td>test-clean</td><td>SparkTTS</td><td>0.756</td><td>8.843</td><td>4.06±0.20</td><td>3.94±0.21</td><td>4.15±0.16</td></tr>
+<tr><td></td><td>IndexTTS</td><td>0.819</td><td>3.436</td><td>4.23±0.14</td><td>4.02±0.18</td><td>4.29±0.22</td></tr>
+<tr><td></td><td>IndexTTS2</td><td>0.870</td><td>3.115</td><td>4.44±0.12</td><td>4.12±0.17</td><td>4.29±0.14</td></tr>
+<tr><td></td><td>- GPT latent</td><td>0.887</td><td>3.334</td><td>4.33±0.10</td><td>4.10±0.12</td><td>4.17±0.22</td></tr>
+<tr><td></td><td>Ground Truth</td><td>0.820</td><td>1.897</td><td>4.21±0.19</td><td>4.06±0.25</td><td>4.40±0.15</td></tr>
+<tr><td></td><td>MaskGCT</td><td>0.824</td><td>2.530</td><td>4.35±0.20</td><td>4.02±0.24</td><td>4.50±0.17</td></tr>
+<tr><td></td><td>F5-TTS</td><td>0.803</td><td>1.937</td><td>4.44±0.14</td><td>4.06±0.21</td><td>4.40±0.12</td></tr>
+<tr><td>SeedTTS</td><td>CosyVoice2</td><td>0.794</td><td>3.277</td><td>4.42±0.26</td><td>3.96±0.24</td><td>4.52±0.15</td></tr>
+<tr><td>test-en</td><td>SparkTTS</td><td>0.755</td><td>1.543</td><td>3.96±0.23</td><td>4.12±0.22</td><td>3.89±0.20</td></tr>
+<tr><td></td><td>IndexTTS</td><td>0.808</td><td>1.844</td><td>4.67±0.16</td><td>4.52±0.14</td><td>4.67±0.19</td></tr>
+<tr><td></td><td>IndexTTS2</td><td>0.860</td><td>1.521</td><td>4.42±0.19</td><td>4.40±0.13</td><td>4.48±0.15</td></tr>
+<tr><td></td><td>- GPT latent</td><td>0.879</td><td>1.616</td><td>4.40±0.22</td><td>4.31±0.17</td><td>4.42±0.20</td></tr>
+<tr><td></td><td>Ground Truth</td><td>0.776</td><td>1.254</td><td>3.81±0.24</td><td>4.04±0.28</td><td>4.21±0.26</td></tr>
+<tr><td></td><td>MaskGCT</td><td>0.807</td><td>2.447</td><td>3.94±0.22</td><td>3.54±0.26</td><td>4.15±0.15</td></tr>
+<tr><td></td><td>F5-TTS</td><td>0.844</td><td>1.514</td><td>4.19±0.21</td><td>3.88±0.23</td><td>4.38±0.16</td></tr>
+<tr><td>SeedTTS</td><td>CosyVoice2</td><td>0.846</td><td>1.451</td><td>4.12±0.25</td><td>4.33±0.19</td><td>4.31±0.21</td></tr>
+<tr><td>test-zh</td><td>SparkTTS</td><td>0.683</td><td>2.636</td><td>3.65±0.26</td><td>4.10±0.25</td><td>3.79±0.18</td></tr>
+<tr><td></td><td>IndexTTS</td><td>0.781</td><td>1.097</td><td>4.10±0.09</td><td>3.73±0.23</td><td>4.33±0.17</td></tr>
+<tr><td></td><td>IndexTTS2</td><td>0.865</td><td>1.008</td><td>4.44±0.17</td><td>4.46±0.11</td><td>4.54±0.08</td></tr>
+<tr><td></td><td>- GPT latent</td><td>0.890</td><td>1.261</td><td>4.44±0.13</td><td>4.33±0.15</td><td>4.48±0.17</td></tr>
+<tr><td></td><td>Ground Truth</td><td>0.847</td><td>1.840</td><td>4.27±0.19</td><td>3.83±0.25</td><td>4.42±0.07</td></tr>
+<tr><td></td><td>MaskGCT</td><td>0.598</td><td>4.930</td><td>3.92±0.03</td><td>2.67±0.08</td><td>3.67±0.07</td></tr>
+<tr><td></td><td>F5-TTS</td><td>0.831</td><td>3.671</td><td>4.17±0.30</td><td>3.60±0.25</td><td>4.25±0.22</td></tr>
+<tr><td>AIShell-1</td><td>CosyVoice2</td><td>0.834</td><td>1.967</td><td>4.21±0.23</td><td>4.33±0.19</td><td>4.40±0.21</td></tr>
+<tr><td>test</td><td>SparkTTS</td><td>0.593</td><td>1.743</td><td>3.48±0.22</td><td>3.96±0.16</td><td>3.79±0.20</td></tr>
+<tr><td></td><td>IndexTTS</td><td>0.794</td><td>1.478</td><td>4.48±0.18</td><td>4.25±0.19</td><td>4.46±0.07</td></tr>
+<tr><td></td><td>IndexTTS2</td><td>0.843</td><td>1.516</td><td>4.54±0.11</td><td>4.42±0.17</td><td>4.52±0.17</td></tr>
+<tr><td></td><td>- GPT latent</td><td>0.868</td><td>1.791</td><td>4.33±0.22</td><td>4.27±0.26</td><td>4.40±0.19</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-dataset"><span class="t-zh">数据集</span><span class="t-en">Dataset</span></h3>
 
@@ -567,77 +602,65 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-dataset-8"><code>SparkTTS</code></div>
-<div class="eq" id="eq-dataset-9"><code>0.756 8.843 4.06±0.20 3.94±0.21 4.15±0.16</code></div>
-<div class="eq" id="eq-dataset-10"><code>IndexTTS</code></div>
-<div class="eq" id="eq-dataset-11"><code>0.819 3.436 4.23±0.14 4.02±0.18 4.29±0.22</code></div>
-<div class="eq" id="eq-dataset-12"><code>IndexTTS2</code></div>
-<div class="eq" id="eq-dataset-13"><code>0.870 3.115 4.44±0.12 4.12±0.17 4.29±0.14</code></div>
-<div class="eq" id="eq-dataset-14"><code>- GPT latent</code></div>
-<div class="eq" id="eq-dataset-15"><code>0.887 3.334 4.33±0.10 4.10±0.12 4.17±0.22</code></div></section>
+
+
+
+
+
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-librispeech"><span class="t-zh">LibriSpeech</span><span class="t-en">LibriSpeech</span></h3><div class="pblk" id="p-librispeech-1">
-          <p class="en-lines"><span class="sent" data-sid="s-librispeech-1-1"><span class="en">test-clean Ground Truth</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-librispeech-1-1"><span class="zh">（表格行）test-clean；Ground Truth（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-librispeech-1"><code>0.820 1.897 4.21±0.19 4.06±0.25 4.40±0.15</code></div>
+      <h3 class="sech lv2" id="sec-librispeech"><span class="t-zh">LibriSpeech</span><span class="t-en">LibriSpeech</span></h3>
 
-<div class="eq" id="eq-librispeech-3"><code>0.824 2.530 4.35±0.20 4.02±0.24 4.50±0.17</code></div>
 
-<div class="eq" id="eq-librispeech-5"><code>0.803 1.937 4.44±0.14 4.06±0.21 4.40±0.12</code></div>
 
-<div class="eq" id="eq-librispeech-7"><code>0.794 3.277 4.42±0.26 3.96±0.24 4.52±0.15</code></div>
-<div class="eq" id="eq-librispeech-8"><code>SparkTTS</code></div>
-<div class="eq" id="eq-librispeech-9"><code>0.755 1.543 3.96±0.23 4.12±0.22 3.89±0.20</code></div>
-<div class="eq" id="eq-librispeech-10"><code>IndexTTS</code></div>
-<div class="eq" id="eq-librispeech-11"><code>0.808 1.844 4.67±0.16 4.52±0.14 4.67±0.19</code></div>
-<div class="eq" id="eq-librispeech-12"><code>IndexTTS2</code></div>
-<div class="eq" id="eq-librispeech-13"><code>0.860 1.521 4.42±0.19 4.40±0.13 4.48±0.15</code></div>
-<div class="eq" id="eq-librispeech-14"><code>- GPT latent</code></div>
-<div class="eq" id="eq-librispeech-15"><code>0.879 1.616 4.40±0.22 4.31±0.17 4.42±0.20</code></div></section>
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-seedtts"><span class="t-zh">SeedTTS</span><span class="t-en">SeedTTS</span></h3><div class="pblk" id="p-seedtts-1">
-          <p class="en-lines"><span class="sent" data-sid="s-seedtts-1-1"><span class="en">test-en Ground Truth</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-seedtts-1-1"><span class="zh">为验证 TTS 系统的基础能力，我们在四个基准上评估模型：(1) SeedTTS test-en（Anastassiou et al. 2024），出自 SeedTTS，包含 1,000 条来自 Common Voice 数据集的语音；(2) SeedTTS test-zh（Anastassiou et al. 2024），包含 2,000 条来自 DiDiSpeech（Guo et al. 2021）的语音；(3) LibriSpeech-testclean（Panayotov et al. 2015），从 LibriSpeech 语料库中随机选取的 2,620 条语音；以及 (4) AISHELL-1（Bu et al. 2017），从 AISHELL-1 数据集中随机抽取的 1,000 条语音。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-seedtts-1"><code>0.776 1.254 3.81±0.24 4.04±0.28 4.21±0.26</code></div>
+      <h3 class="sech lv2" id="sec-seedtts"><span class="t-zh">SeedTTS</span><span class="t-en">SeedTTS</span></h3>
 
-<div class="eq" id="eq-seedtts-3"><code>0.807 2.447 3.94±0.22 3.54±0.26 4.15±0.15</code></div>
 
-<div class="eq" id="eq-seedtts-5"><code>0.844 1.514 4.19±0.21 3.88±0.23 4.38±0.16</code></div>
 
-<div class="eq" id="eq-seedtts-7"><code>0.846 1.451 4.12±0.25 4.33±0.19 4.31±0.21</code></div>
-<div class="eq" id="eq-seedtts-8"><code>SparkTTS</code></div>
-<div class="eq" id="eq-seedtts-9"><code>0.683 2.636 3.65±0.26 4.10±0.25 3.79±0.18</code></div>
-<div class="eq" id="eq-seedtts-10"><code>IndexTTS</code></div>
-<div class="eq" id="eq-seedtts-11"><code>0.781 1.097 4.10±0.09 3.73±0.23 4.33±0.17</code></div>
-<div class="eq" id="eq-seedtts-12"><code>IndexTTS2</code></div>
-<div class="eq" id="eq-seedtts-13"><code>0.865 1.008 4.44±0.17 4.46±0.11 4.54±0.08</code></div>
-<div class="eq" id="eq-seedtts-14"><code>- GPT latent</code></div>
-<div class="eq" id="eq-seedtts-15"><code>0.890 1.261 4.44±0.13 4.33±0.15 4.48±0.17</code></div></section>
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
-      <h3 class="sech lv2" id="sec-seedtts-2"><span class="t-zh">SeedTTS</span><span class="t-en">SeedTTS</span></h3><div class="pblk" id="p-seedtts-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-seedtts-2-1-1"><span class="en">test-zh Ground Truth</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-seedtts-2-1-1"><span class="zh">（表格行）test-zh；Ground Truth（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-seedtts-2-1"><code>0.847 1.840 4.27±0.19 3.83±0.25 4.42±0.07</code></div>
+      <h3 class="sech lv2" id="sec-seedtts-2"><span class="t-zh">SeedTTS</span><span class="t-en">SeedTTS</span></h3>
 
-<div class="eq" id="eq-seedtts-2-3"><code>0.598 4.930 3.92±0.03 2.67±0.08 3.67±0.07</code></div>
 
-<div class="eq" id="eq-seedtts-2-5"><code>0.831 3.671 4.17±0.30 3.60±0.25 4.25±0.22</code></div>
 
-<div class="eq" id="eq-seedtts-2-7"><code>0.834 1.967 4.21±0.23 4.33±0.19 4.40±0.21</code></div>
-<div class="eq" id="eq-seedtts-2-8"><code>SparkTTS</code></div>
-<div class="eq" id="eq-seedtts-2-9"><code>0.593 1.743 3.48±0.22 3.96±0.16 3.79±0.20</code></div>
-<div class="eq" id="eq-seedtts-2-10"><code>IndexTTS</code></div>
-<div class="eq" id="eq-seedtts-2-11"><code>0.794 1.478 4.48±0.18 4.25±0.19 4.46±0.07</code></div>
-<div class="eq" id="eq-seedtts-2-12"><code>IndexTTS2</code></div>
-<div class="eq" id="eq-seedtts-2-13"><code>0.843 1.516 4.54±0.11 4.42±0.17 4.52±0.17</code></div>
-<div class="eq" id="eq-seedtts-2-14"><code>- GPT latent</code></div>
-<div class="eq" id="eq-seedtts-2-15"><code>0.868 1.791 4.33±0.22 4.27±0.26 4.40±0.19</code></div></section>
+
+
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-aishell-1"><span class="t-zh">AIShell-1</span><span class="t-en">AIShell-1</span></h3><div class="pblk" id="p-aishell-1-1">
           <p class="en-lines"><span class="sent" data-sid="s-aishell-1-1-1"><span class="en">test 2, IndexTTS2 achieves the highest scores across all four subjective evaluation dimensions, demonstrating superior emotional rendering capabilities.</span></span> <span class="sent" data-sid="s-aishell-1-1-2"><span class="en">Examining the objective metrics, compared to five baseline models, IndexTTS2 shows leading performance in SS and ES, except for higher WER than IndexTTS.</span></span> <span class="sent" data-sid="s-aishell-1-1-3"><span class="en">In the ablation setting, while IndexTTS2 exhibits slightly lower SS and ES than the variant without GPT latent enhancement, the gap in SS is minimal and the difference in ES (0.001) is practically insignificant; however, it maintains a clear advantage in WER and achieves superior performance across all subjective metrics.</span><button class="mk" data-sid="s-aishell-1-1-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-aishell-1-1-4"><span class="en">This indicates that the GPT latent enhancement in the S2M module play a crucial role in maintaining speech clarity and articulation under high emotional expressiveness.</span></span> <span class="sent" data-sid="s-aishell-1-1-5"><span class="en">In contrast, removing the three-stage training strategy severely degrades emotional expressiveness, resulting in substantial performance drops across all metrics except WER.</span><button class="mk feat" data-sid="s-aishell-1-1-5" title="查看讲解">解</button></span> <span class="sent" data-sid="s-aishell-1-1-6"><span class="en">Overall, these results demonstrate that IndexTTS2, with its multi-stage training incorporating GRL-based emotion disentanglement and GPT fusion, effectively balances emotional expressiveness with speech clarity, achieving state-of-the-art performance in emotional speech synthesis while maintaining exceptional textual accuracy.</span></span></p>
@@ -694,16 +717,18 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>mance.</td><td></td><td></td><td></td><td></td><td></td><td></td><td>MaskGCT</td><td>F5TTS</td><td>IndexTTS2</td><td></td><td></td><td>MaskGCT</td><td>F5TTS</td><td>IndexTTS2</td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>4%</td><td></td><td></td><td></td><td></td><td>4%</td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td>Table 4: Token Number Error Rate for Duration Control with</td><td></td><td></td><td></td><td>3%</td><td></td><td></td><td></td><td></td><td>3%</td><td></td><td></td><td></td></tr>
-<tr><td></td><td>Different Settings(%)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
+<tr><td></td><td>Different Settings(%)</td><td></td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td><td></td><td>2%</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td><td></td><td>1%</td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-2"><span class="t-zh">Model</span><span class="t-en">Model</span></h3>
 
 
 
 
-<div class="cap" id="tab-model-2-1"><span class="cap-k">表</span><p class="en">Table 4: Token Number Error Rate for Duration Control with Different Settings(%)</p><p class="zh">表 4：不同设定下时长控制的 token 数量错误率（%）</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>Different Settings(%)</td><td></td><td></td><td></td><td></td><td></td><td>2%</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>1%</td></tr>
-<tr><td>Dataset</td><td></td><td>*1</td><td>*0.75</td><td>*0.875</td><td>*1.125</td><td>*1.25</td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-model-2-1"><span class="cap-k">表</span><p class="en">Table 4: Token Number Error Rate for Duration Control with Different Settings(%)</p><p class="zh">表 4：不同设定下时长控制的 token 数量错误率（%）</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>CosyVoice2</td><td>2.973±0.26</td><td>3.339±0.30</td><td></td></tr>
+<tr><td></td><td>IndexTTS2</td><td>3.875±0.21</td><td>3.786±0.24</td><td></td></tr>
+<tr><td>mance.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>4%</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-dataset-2"><span class="t-zh">数据集</span><span class="t-en">Dataset</span></h3></section>
 <section>
@@ -711,18 +736,26 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 </section>
 <section>
       <h3 class="sech lv2" id="sec-seedtts-4"><span class="t-zh">SeedTTS</span><span class="t-en">SeedTTS</span></h3>
-<div class="eq" id="eq-seedtts-4-1"><code>0.015 0 0.009 0.023 0.013</code></div>
-<div class="cap" id="tab-seedtts-4-1"><span class="cap-k">表</span><p class="en">Table 5: MOS Scores for Different Models under Duration Control</p><p class="zh">表 5：时长控制下不同模型的 MOS 分数</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Control</th><th></th><th></th><th></th><th></th></tr><tr><th>Datasets</th><th>Model</th><th>SMOS↑</th><th>PMOS↑</th><th>QMOS↑</th></tr></thead><tbody><tr><td></td><td>GT</td><td>3.82±0.23</td><td>3.72±0.19</td><td>3.96±0.06</td></tr>
-<tr><td></td><td>MaskGCT</td><td>4.04±0.18</td><td>4.16±0.06</td><td>3.66±0.11</td></tr>
-<tr><td>SeedTTS</td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>F5-TTS</td><td>4.32±0.15</td><td>4.04±0.15</td><td>4.32±0.16</td></tr></tbody></table></div></div></section>
+
+<div class="cap" id="tab-seedtts-4-1"><span class="cap-k">表</span><p class="en">Table 5: MOS Scores for Different Models under Duration Control</p><p class="zh">表 5：时长控制下不同模型的 MOS 分数</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>CosyVoice2</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>IndexTTS2</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>4%</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>3%</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>2%</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1%</td></tr>
+<tr><td>Dataset</td><td>*1</td><td>*0.75</td><td>*0.875</td><td>*1.125</td><td>*1.25</td><td>0%</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>SeedTTS</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>0.019</td><td>0.067</td><td>0.023</td><td>0.014</td><td>0.018</td><td></td></tr>
+<tr><td>test-zh</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>SeedTTS</td><td></td><td></td><td></td><td></td><td></td><td>Figure</td></tr>
+<tr><td></td><td>0.015</td><td>0</td><td>0.009</td><td>0.023</td><td>0.013</td><td></td></tr>
+<tr><td>test-en</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-datasets"><span class="t-zh">数据集（续）</span><span class="t-en">Datasets</span></h3>
+<div class="eq" id="eq-datasets-1"><code>3.82±0.23 3.72±0.19 3.96±0.06</code></div>
 
+<div class="eq" id="eq-datasets-3"><code>4.04±0.18 4.16±0.06 3.66±0.11</code></div>
 
-
-
-
+<div class="eq" id="eq-datasets-5"><code>4.32±0.15 4.04±0.15 4.32±0.16</code></div>
 <div class="eq" id="eq-datasets-6"><code>IndexTTS2 4.56±0.08</code></div>
 <div class="eq" id="eq-datasets-7"><code>4.38±0.12 4.42±0.02</code></div></section>
 <section>

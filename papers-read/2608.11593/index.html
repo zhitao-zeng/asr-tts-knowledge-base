@@ -699,8 +699,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>pretraining</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>Block adaptation</td><td>Multilingual mixture</td><td></td><td>Approximately 20K</td><td></td><td></td><td>Learn block-causal streaming and</td></tr>
 <tr><td></td><td></td><td></td><td>optimization steps</td><td>termination</td><td></td><td></td></tr>
-<tr><td></td><td>Foundation pretraining and high-quality annealing.</td><td></td><td></td><td></td><td>Foundation pretraining starts from the direct conversion of</td><td></td></tr>
-<tr><td></td><td></td><td></td><td>Qwen3-0.6B described in §2.4 and uses the masked-diffusion loss of Eq. (2). Its learning rate follows a cosine schedule</td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<tr><td></td><td>Foundation pretraining and high-quality annealing.</td><td></td><td></td><td></td><td>Foundation pretraining starts from the direct conversion of</td><td></td></tr></tbody></table></div></div>
 </section>
 <section>
       <h3 class="sech lv2" id="sec-foundation-pretraining-and-high-"><span class="t-zh">基础预训练与高质量退火</span><span class="t-en">Foundation pretraining and high-quality annealing.</span></h3><div class="pblk" id="p-foundation-pretraining-and-high--1">
@@ -955,30 +954,38 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-5-3-1-s1"><span class="zh">表 6（正文表）把我们实测的服务结果与代表性开源 TTS 系统已发表的推理结果并列。配置与硬件列保留各来源报告的运行点。</span></span></p>
           
         </div>
-<div class="cap" id="tab-5-3-2"><span class="cap-k">表</span><p class="en">Table 6: Inference speed comparison with open-source TTS systems. Lower is better.</p><p class="zh">Table 6：与开源 TTS 系统的推理速度对比。越低越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>System</th><th></th><th>Configuration</th><th>Hardware</th><th>RTF ↓</th></tr></thead><tbody><tr><td>Luna-TTS</td><td></td><td>16-step, full-grid</td><td>1× H20</td><td>0.0211</td></tr>
-<tr><td></td><td>Luna-TTS Realtime</td><td>8-step, parallel CFG</td><td>2× H20</td><td>0.0240</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-5-3-2"><span class="cap-k">表</span><p class="en">Table 6: Inference speed comparison with open-source TTS systems. Lower is better.</p><p class="zh">Table 6：与开源 TTS 系统的推理速度对比。越低越好。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>System</th><th>Configuration</th><th>Hardware</th><th>RTF ↓</th></tr></thead><tbody><tr><td>Luna-TTS</td><td>16-step, full-grid</td><td>1× H20</td><td>0.0211</td></tr>
+<tr><td>Luna-TTS Realtime</td><td>8-step, parallel CFG</td><td>2× H20</td><td>0.0240</td></tr>
+<tr><td>Fast F5-TTS [65]</td><td>7-step EPSS</td><td>RTX 3090</td><td>0.0300</td></tr>
+<tr><td>OmniVoice [48]</td><td>16-step, batch 1</td><td>H20</td><td>0.0319</td></tr>
+<tr><td>ZipVoice [66]</td><td>16 NFE</td><td>H20</td><td>0.0557</td></tr>
+<tr><td>VoxCPM2 [67]</td><td>accelerated serving</td><td>RTX 4090</td><td>∼0.13</td></tr>
+<tr><td>Spark-TTS [68]</td><td>0.5B, concurrency 1</td><td>L20</td><td>0.1362</td></tr>
+<tr><td>F5-TTS [28]</td><td>original model</td><td>—</td><td>0.15</td></tr>
+<tr><td>Fish Audio S2 [15]</td><td>SGLang-Omni [69]</td><td>H200</td><td>0.195</td></tr>
+<tr><td>Qwen3-TTS-25Hz [13]</td><td>0.6B, concurrency 1</td><td>—</td><td>0.234</td></tr></tbody></table></div></div>
 </section>
 <section>
       <h3 class="sech lv2" id="sec-luna-tts"><span class="t-zh">Luna-TTS</span><span class="t-en">Luna-TTS</span></h3>
 
 
 
-<div class="eq" id="eq-luna-tts-4"><code>Fast F5-TTS [65] 7-step EPSS RTX 3090</code></div>
-<div class="eq" id="eq-luna-tts-5"><code>0.0300</code></div>
 
-<div class="eq" id="eq-luna-tts-7"><code>0.0319</code></div>
-<div class="eq" id="eq-luna-tts-8"><code>ZipVoice [66] 16 NFE H20</code></div>
-<div class="eq" id="eq-luna-tts-9"><code>0.0557</code></div>
-<div class="eq" id="eq-luna-tts-10"><code>VoxCPM2 [67] accelerated serving RTX 4090</code></div>
-<div class="eq" id="eq-luna-tts-11"><code>∼0.13</code></div>
-<div class="eq" id="eq-luna-tts-12"><code>Spark-TTS [68] 0.5B, concurrency 1 L20</code></div>
-<div class="eq" id="eq-luna-tts-13"><code>0.1362</code></div>
-<div class="eq" id="eq-luna-tts-14"><code>F5-TTS [28] original model</code></div>
-<div class="eq" id="eq-luna-tts-15"><code>— 0.15</code></div>
-<div class="eq" id="eq-luna-tts-16"><code>Fish Audio S2 [15] SGLang-Omni [69] H200</code></div>
-<div class="eq" id="eq-luna-tts-17"><code>0.195</code></div>
-<div class="eq" id="eq-luna-tts-18"><code>Qwen3-TTS-25Hz [13] 0.6B, concurrency 1</code></div>
-<div class="eq" id="eq-luna-tts-19"><code>— 0.234</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-luna-tts-2">
           <p class="en-lines"><span class="sent" data-sid="s-luna-tts-2-1"><span class="en">Among the operating points in Table 6, Luna-TTS achieves the lowest RTF at 0.0211.</span></span> <span class="sent" data-sid="s-luna-tts-2-2"><span class="en">The streaming Luna-TTS Realtime profile ranks second at 0.0240, reducing RTF by 20.0% relative to Fast F5-TTS and by 24.8% relative to OmniVoice while delivering audio block by block.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-luna-tts-2-1"><span class="zh">（表 6 行：16 步全网格 1×H20 0.0211；Luna-TTS Realtime 8 步并行 CFG 2×H20 0.0240；Fast F5-TTS [65] 7 步 EPSS RTX 3090 0.0300；OmniVoice [48] 16 步 batch 1 H20 0.0319；ZipVoice [66] 16 NFE H20 0.0557；VoxCPM2 [67] 加速推理 RTX 4090 约 0.13；Spark-TTS [68] 0.5B 并发 1 L20 0.1362；F5-TTS [28] 原始模型 0.15；Fish Audio S2 [15] SGLang-Omni [69] H200 0.195；Qwen3-TTS-25Hz [13] 0.6B 并发 1 — 0.234。）在表 6 各工作点中，Luna-TTS 以 0.0211 取得最低 RTF。</span></span><span class="sent" data-sid="s-luna-tts-2-2"><span class="zh">流式形态 Luna-TTS Realtime 以 0.0240 排名第二，在逐块投递音频的同时，RTF 相对 Fast F5-TTS 降低 20.0%，相对 OmniVoice 降低 24.8%。</span></span></p>

@@ -179,15 +179,6 @@
     "",
     "Foundation pretraining starts from the direct conversion of",
     ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "Qwen3-0.6B described in §2.4 and uses the masked-diffusion loss of Eq. (2). Its learning rate follows a cosine schedule",
-    "",
-    "",
-    ""
    ]
   ]
  },
@@ -311,7 +302,6 @@
   "headers": [
    [
     "System",
-    "",
     "Configuration",
     "Hardware",
     "RTF ↓"
@@ -320,17 +310,63 @@
   "rows": [
    [
     "Luna-TTS",
-    "",
     "16-step, full-grid",
     "1× H20",
     "0.0211"
    ],
    [
-    "",
     "Luna-TTS Realtime",
     "8-step, parallel CFG",
     "2× H20",
     "0.0240"
+   ],
+   [
+    "Fast F5-TTS [65]",
+    "7-step EPSS",
+    "RTX 3090",
+    "0.0300"
+   ],
+   [
+    "OmniVoice [48]",
+    "16-step, batch 1",
+    "H20",
+    "0.0319"
+   ],
+   [
+    "ZipVoice [66]",
+    "16 NFE",
+    "H20",
+    "0.0557"
+   ],
+   [
+    "VoxCPM2 [67]",
+    "accelerated serving",
+    "RTX 4090",
+    "∼0.13"
+   ],
+   [
+    "Spark-TTS [68]",
+    "0.5B, concurrency 1",
+    "L20",
+    "0.1362"
+   ],
+   [
+    "F5-TTS [28]",
+    "original model",
+    "—",
+    "0.15"
+   ],
+   [
+    "Fish Audio S2 [15]",
+    "SGLang-Omni [69]",
+    "H200",
+    "0.195"
+   ],
+   [
+    "Qwen3-TTS-25Hz [13]",
+    "0.6B, concurrency 1",
+    "—",
+    "0.234"
    ]
   ]
  },

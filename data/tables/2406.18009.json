@@ -7,14 +7,12 @@
     "",
     "set. WER is expressed in percentage. † Our reproduction. LL, LH,",
     "",
-    "",
     ""
    ],
    [
     "",
     "",
     "and PP stand for Librilight, Libriheavy, and Proprietary, respectively.",
-    "",
     "",
     ""
    ],
@@ -23,6 +21,474 @@
     "Model",
     "Data (hours) Init",
     "",
+    ""
+   ]
+  ],
+  "rows": [
+   [
+    "style skip",
+    "(GT) Ground Truth",
+    "",
+    "",
+    "0.695"
+   ],
+   [
+    "dimension",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "(B1)",
+    "VALL-E [8]",
+    "LL (60K)",
+    "Random",
+    "0.500"
+   ],
+   [
+    "embedding",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "(B2)",
+    "NaturalSpeech 3 [15] LL (60K)",
+    "",
+    "Random",
+    "0.632"
+   ],
+   [
+    "amounted (B3)",
+    "Voicebox [18]†",
+    "LL (60K)",
+    "Random",
+    "0.658"
+   ],
+   [
+    "(B4)",
+    "Voicebox [18]†",
+    "LH (50K)",
+    "Random",
+    "0.667"
+   ],
+   [
+    "with",
+    "[18]†",
+    "",
+    "",
+    ""
+   ],
+   [
+    "(B5)",
+    "Voicebox",
+    "LH (50K)",
+    "Pretrain [34]",
+    "0.695"
+   ],
+   [
+    "was em-",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "(P1)",
+    "E2 TTS",
+    "LH (50K)",
+    "Random",
+    "0.675"
+   ],
+   [
+    "70% (P2)",
+    "E2 TTS",
+    "LH (50K)",
+    "Pretrain [34]",
+    "0.708"
+   ],
+   [
+    "(P3)",
+    "E2 TTS",
+    "PP (200K)",
+    "Random",
+    "0.707"
+   ],
+   [
+    "training.",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "[33]. All",
+    "",
+    "Table 2. Subjective results for LibriSpeech-PC test-clean evaluation",
+    "",
+    ""
+   ],
+   [
+    "an effec-",
+    "set. † Our reproduction.",
+    "",
+    "",
+    ""
+   ],
+   [
+    "a linear ID",
+    "Model",
+    "",
+    "",
+    ""
+   ],
+   [
+    "10−5",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "(GT)",
+    "Ground Truth",
+    "",
+    "",
+    ""
+   ],
+   [
+    "We",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "(B2)",
+    "NaturalSpeech 3 [15]",
+    "",
+    "",
+    ""
+   ],
+   [
+    "models (B4)",
+    "Voicebox [18]†",
+    "",
+    "",
+    ""
+   ],
+   [
+    "This pre- (P1)",
+    "E2 TTS",
+    "",
+    "",
+    ""
+   ],
+   [
+    "(P2)",
+    "E2 TTS",
+    "",
+    "",
+    ""
+   ],
+   [
+    "consisted",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "(P3)",
+    "E2 TTS",
+    "",
+    "",
+    ""
+   ],
+   [
+    "which",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "For the subjective assessments,",
+    "",
+    "we conducted two tests:",
+    "the"
+   ],
+   [
+    "model by",
+    "",
+    "Comparative Mean Opinion Score (CMOS) and the Speaker Simi-",
+    "",
+    ""
+   ],
+   [
+    "ar-",
+    "",
+    "larity Mean Opinion Score (SMOS). We evaluated 39 samples for",
+    "",
+    ""
+   ],
+   [
+    "embedding both",
+    "tests, with one",
+    "per",
+    "from",
+    "set."
+   ],
+   [
+    "training",
+    "",
+    "",
+    "",
+    "In the"
+   ],
+   [
+    "frames.",
+    "CMOS test [15],",
+    "",
+    "evaluators were shown the ground-truth sample",
+    ""
+   ],
+   [
+    "for a fair",
+    "",
+    "and the generated sample side-by-side without knowing which was",
+    "",
+    ""
+   ],
+   [
+    "also show",
+    "",
+    "the ground-truth, and were asked to rate the naturalness on a 7-point",
+    "",
+    ""
+   ],
+   [
+    "3.6.",
+    "",
+    "scale (from -3 to 3), where a negative value indicates a preference",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "for the ground-truth and a positive value indicates the opposite.",
+    "",
+    "In"
+   ],
+   [
+    "",
+    "",
+    "the SMOS test, evaluators were presented with the audio prompt and",
+    "",
+    ""
+   ],
+   [
+    "of the",
+    "",
+    "the generated sample, and asked to rate the speaker similarity on a",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "scale of 1 (not similar at all) to 5 (identical), with increments of 1.",
+    "",
+    ""
+   ],
+   [
+    "We",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "a duration 3.4.",
+    "Main results",
+    "",
+    "",
+    ""
+   ],
+   [
+    "some of",
+    "In our experiments,",
+    "",
+    "we conducted a comparison between our E2",
+    ""
+   ],
+   [
+    "was",
+    "TTS models and three other models:",
+    "",
+    "",
+    ""
+   ],
+   [
+    "prompt,",
+    "and NaturalSpeech 3 [15].",
+    "",
+    "We utilized our own reimplementation",
+    ""
+   ],
+   [
+    "speech",
+    "",
+    "of the Voicebox model, which was based on the same model config-",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "uration with E2 TTS except that the Vicebox model is trained with",
+    "",
+    ""
+   ],
+   [
+    "For",
+    "",
+    "frame-wise phoneme alignment. During the inference, we used CFG",
+    "",
+    ""
+   ],
+   [
+    "three ran-",
+    "",
+    "with a guidance strength of 1.0 for both E2 TTS and Voicebox. We",
+    "",
+    ""
+   ],
+   [
+    "then cal-",
+    "",
+    "employed the midpoint ODE solver with a number of function eval-",
+    "",
+    ""
+   ],
+   [
+    "and uations of 32.",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "intelligi-",
+    "",
+    "Table 1 presents the objective evaluation results for the baseline",
+    "",
+    ""
+   ],
+   [
+    "utilized",
+    "",
+    "and E2 TTS models across various configurations. By comparing the",
+    "",
+    ""
+   ],
+   [
+    "the",
+    "",
+    "(B4) and (P1) systems, we observe that the E2 TTS model achieved",
+    "",
+    ""
+   ],
+   [
+    "sam-",
+    "",
+    "better WER and SIM-o than the Voicebox model when both were",
+    "",
+    ""
+   ],
+   [
+    "between",
+    "trained on the Libriheavy dataset.",
+    "",
+    "",
+    ""
+   ],
+   [
+    "SIM-o, we",
+    "",
+    "initialize the model with unsupervised pre-training [34] ((B5) vs.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "(P2)), where the (P2) system achieved the best WER (1.9%) and",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "SIM-o (0.708) which are better than those of the ground-truth audio.",
+    "",
+    ""
+   ],
+   [
+    "data",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Finally, by using larger training data (P3), E2 TTS achieved the same",
+    "",
+    ""
+   ],
+   [
+    "https://",
+    "",
+    "best WER (1.9%) and the second best SIM-o (0.707) even when the",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "model is trained from scratch, showcasing the scalability of E2 TTS.",
+    "",
+    ""
+   ]
+  ]
+ },
+ "tab-id-1": {
+  "page": 4,
+  "headers": [
+   [
+    "an effec-",
+    "",
+    "set. † Our reproduction.",
+    "",
+    ""
+   ],
+   [
+    "a linear",
+    "ID",
+    "Model",
+    "",
+    "CMOS↑"
+   ],
+   [
+    "10−5",
+    "",
+    "",
     "",
     ""
    ]
@@ -30,180 +496,318 @@
   "rows": [
    [
     "",
-    "(GT) Ground Truth",
+    "(GT)",
     "",
     "",
-    "2.0",
-    "0.695"
+    "0.00"
    ],
    [
-    "(B1)",
-    "VALL-E [8]",
-    "LL (60K)",
-    "Random",
-    "4.9",
-    "0.500"
+    "We",
+    "",
+    "",
+    "",
+    ""
    ],
    [
+    "",
     "(B2)",
     "",
     "",
-    "Random",
-    "2.6",
-    "0.632"
+    "-0.98"
    ],
    [
-    "(B3)",
-    "Voicebox [18]†",
-    "LL (60K)",
-    "Random",
-    "2.1",
-    "0.658"
-   ],
-   [
+    "models",
     "(B4)",
-    "Voicebox [18]†",
-    "LH (50K)",
-    "Random",
-    "2.2",
-    "0.667"
+    "",
+    "",
+    "-0.78"
    ],
    [
-    "(B5)",
-    "Voicebox [18]†",
-    "LH (50K)",
-    "Pretrain [34]",
-    "2.2",
-    "0.695"
-   ],
-   [
-    "(P1)",
-    "E2 TTS",
-    "LH (50K)",
-    "Random",
-    "2.0",
-    "0.675"
-   ],
-   [
-    "(P2)",
-    "E2 TTS",
-    "LH (50K)",
-    "Pretrain [34]",
-    "1.9",
-    "0.708"
-   ],
-   [
-    "(P3)",
-    "E2 TTS",
-    "PP (200K)",
-    "Random",
-    "1.9",
-    "0.707"
-   ]
-  ]
- },
- "tab-id-1": {
-  "page": 4,
-  "headers": [],
-  "rows": [
-   [
-    "",
-    "(GT) Ground Truth",
-    "",
-    "-",
-    "",
-    "-",
-    "",
-    "2.0",
-    "0.695"
-   ],
-   [
-    "(B1)",
-    "VALL-E [8]",
-    "",
-    "",
-    "LL (60K)",
-    "",
-    "Random",
-    "4.9",
-    "0.500"
-   ],
-   [
-    "(B2)",
-    "",
-    "NaturalSpeech 3 [15] LL (60K)",
-    "",
-    "",
-    "",
-    "Random",
-    "2.6",
-    "0.632"
-   ],
-   [
-    "(B3)",
-    "Voicebox [18]†",
-    "",
-    "",
-    "LL (60K)",
-    "",
-    "Random",
-    "2.1",
-    "0.658"
-   ],
-   [
-    "(B4)",
-    "Voicebox [18]†",
-    "",
-    "",
-    "LH (50K)",
-    "",
-    "Random",
-    "2.2",
-    "0.667"
-   ],
-   [
-    "(B5)",
-    "Voicebox [18]†",
-    "",
-    "",
-    "LH (50K)",
-    "",
-    "Pretrain [34]",
-    "2.2",
-    "0.695"
-   ],
-   [
+    "This pre-",
     "(P1)",
     "E2 TTS",
     "",
-    "",
-    "LH (50K)",
-    "",
-    "Random",
-    "2.0",
-    "0.675"
+    "-0.14"
    ],
    [
+    "",
     "(P2)",
     "E2 TTS",
     "",
-    "",
-    "LH (50K)",
-    "",
-    "Pretrain [34]",
-    "1.9",
-    "0.708"
+    "-0.05"
    ],
    [
+    "consisted",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
     "(P3)",
     "E2 TTS",
     "",
+    "-0.18"
+   ],
+   [
+    "which",
     "",
-    "PP (200K)",
     "",
-    "Random",
-    "1.9",
-    "0.707"
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "model by",
+    "",
+    "",
+    "Comparative Mean Opinion Score (CMOS) and the Speaker Simi-",
+    ""
+   ],
+   [
+    "ar-",
+    "",
+    "",
+    "larity Mean Opinion Score (SMOS). We evaluated 39 samples for",
+    ""
+   ],
+   [
+    "embedding",
+    "both",
+    "tests, with",
+    "per",
+    "from"
+   ],
+   [
+    "training",
+    "",
+    "",
+    "Each sample was assessed by 12 Native English evaluators.",
+    ""
+   ],
+   [
+    "frames.",
+    "",
+    "CMOS test [15],",
+    "",
+    "evaluators were shown the ground-truth sample"
+   ],
+   [
+    "for a fair",
+    "",
+    "",
+    "and the generated sample side-by-side without knowing which was",
+    ""
+   ],
+   [
+    "also show",
+    "",
+    "",
+    "the ground-truth, and were asked to rate the naturalness on a 7-point",
+    ""
+   ],
+   [
+    "3.6.",
+    "",
+    "",
+    "scale (from -3 to 3), where a negative value indicates a preference",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "for the ground-truth and a positive value indicates the opposite.",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "the SMOS test, evaluators were presented with the audio prompt and",
+    ""
+   ],
+   [
+    "of the",
+    "",
+    "",
+    "the generated sample, and asked to rate the speaker similarity on a",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "scale of 1 (not similar at all) to 5 (identical), with increments of 1.",
+    ""
+   ],
+   [
+    "We",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "a duration",
+    "3.4.",
+    "Main results",
+    "",
+    ""
+   ],
+   [
+    "some of",
+    "",
+    "In our experiments,",
+    "",
+    "we conducted a comparison between our E2"
+   ],
+   [
+    "was",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "prompt,",
+    "",
+    "and NaturalSpeech 3 [15].",
+    "",
+    "We utilized our own reimplementation"
+   ],
+   [
+    "speech",
+    "",
+    "",
+    "of the Voicebox model, which was based on the same model config-",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "uration with E2 TTS except that the Vicebox model is trained with",
+    ""
+   ],
+   [
+    "For",
+    "",
+    "",
+    "frame-wise phoneme alignment. During the inference, we used CFG",
+    ""
+   ],
+   [
+    "three ran-",
+    "",
+    "",
+    "with a guidance strength of 1.0 for both E2 TTS and Voicebox. We",
+    ""
+   ],
+   [
+    "then cal-",
+    "",
+    "",
+    "employed the midpoint ODE solver with a number of function eval-",
+    ""
+   ],
+   [
+    "and",
+    "uations of 32.",
+    "",
+    "",
+    ""
+   ],
+   [
+    "intelligi-",
+    "",
+    "",
+    "Table 1 presents the objective evaluation results for the baseline",
+    ""
+   ],
+   [
+    "utilized",
+    "",
+    "",
+    "and E2 TTS models across various configurations. By comparing the",
+    ""
+   ],
+   [
+    "the",
+    "",
+    "",
+    "(B4) and (P1) systems, we observe that the E2 TTS model achieved",
+    ""
+   ],
+   [
+    "sam-",
+    "",
+    "",
+    "better WER and SIM-o than the Voicebox model when both were",
+    ""
+   ],
+   [
+    "between",
+    "",
+    "trained on the Libriheavy dataset.",
+    "",
+    ""
+   ],
+   [
+    "SIM-o, we",
+    "",
+    "",
+    "initialize the model with unsupervised pre-training [34] ((B5) vs.",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "(P2)), where the (P2) system achieved the best WER (1.9%) and",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "SIM-o (0.708) which are better than those of the ground-truth audio.",
+    ""
+   ],
+   [
+    "data",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "Finally, by using larger training data (P3), E2 TTS achieved the same",
+    ""
+   ],
+   [
+    "https://",
+    "",
+    "",
+    "best WER (1.9%) and the second best SIM-o (0.707) even when the",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "model is trained from scratch, showcasing the scalability of E2 TTS.",
+    ""
    ]
   ]
  },
@@ -211,90 +815,246 @@
   "page": 5,
   "headers": [
    [
-    "",
+    "the basic",
+    "E2 TTS",
+    "requires the",
+    "is randomly"
+   ],
+   [
     "expressed in percentage.",
     "",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "TTS X2",
-    ""
+    "TTS X2"
    ],
    [
     "",
-    "ID",
-    "",
     "Model",
-    "",
     "Init",
-    "",
-    "WER↓",
-    "SIM-o↑",
-    "",
-    "the",
-    ""
+    "the"
+   ],
+   [
+    "(P1)",
+    "E2 TTS",
+    "Random",
+    "ID"
+   ],
+   [
+    "(P2)",
+    "E2 TTS",
+    "Pre-trained [34]",
+    "(P1)"
    ]
   ],
   "rows": [
    [
-    "",
-    "(P1)",
-    "",
-    "E2 TTS",
-    "",
-    "Random",
-    "",
-    "2.0",
-    "0.675",
-    "",
-    "ID",
-    ""
-   ],
-   [
-    "",
-    "(P2)",
-    "",
-    "E2 TTS",
-    "",
-    "",
-    "Pre-trained [34]",
-    "1.9",
-    "0.708",
-    "",
-    "(P1)",
-    "E2"
-   ],
-   [
-    "",
     "(P1-X1)",
-    "",
     "E2 TTS X1",
-    "",
     "Random",
+    ""
+   ],
+   [
+    "(P2-X1)",
+    "E2 TTS X1",
+    "Pre-trained [34]",
+    "(P1-X2)"
+   ],
+   [
     "",
-    "2.0",
-    "0.664",
     "",
+    "It is noteworthy that E2 TTS achieved superior performance com-",
+    "(P2)"
+   ],
+   [
+    "",
+    "",
+    "pared to all strong baselines, including VALL-E, NaturalSpeech 3,",
+    ""
+   ],
+   [
+    "",
+    "and Voicebox, despite its extremely simple framework.",
+    "",
+    "(P2-X2)"
+   ],
+   [
+    "",
+    "",
+    "Table 2 illustrated the subjective evaluation results for Natural-",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Speech 3, Voicebox, and E2 TTS. Firstly, all variants of E2 TTS,",
+    ""
+   ],
+   [
+    "",
+    "",
+    "from (P1) to (P3), showed a better CMOS score compared to Natu-",
+    "3.5."
+   ],
+   [
+    "",
+    "",
+    "ralSpeech 3 and Voicebox. In particular, the (P2) model achieved a",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "3.5.1."
+   ],
+   [
+    "",
+    "",
+    "CMOS score of -0.05, which is considered to have a level of natural-",
+    ""
+   ],
+   [
+    "",
+    "",
+    "ness indistinguishable from the ground truth [15, 24].7 The compar-",
+    ""
+   ],
+   [
+    "",
+    "",
+    "ison between (B4) and (P1) suggests that the use of phoneme align-",
+    "results indicate"
+   ],
+   [
+    "",
+    "",
+    "ment was the major bottleneck in achieving better naturalness.",
+    "identical to"
+   ],
+   [
+    "",
+    "",
+    "garding speaker similarity, all the models we tested showed a better",
+    "was initialized"
+   ],
+   [
+    "",
+    "",
+    "SMOS compared to the ground truth, a phenomenon also observed in",
+    "not require the"
+   ],
+   [
+    "",
+    "",
+    "NaturalSpeech 3 [15].8 Among the tested systems, E2 TTS achieved",
+    ""
+   ],
+   [
+    "",
+    "a comparable SMOS to Voicebox and NaturalSpeech 3.",
     "",
     ""
    ],
    [
     "",
-    "(P2-X1)",
     "",
-    "E2 TTS X1",
+    "Overall, E2 TTS demonstrated a robust zero-shot TTS capabil-",
+    ""
+   ],
+   [
     "",
     "",
-    "Pre-trained [34]",
-    "2.0",
-    "0.705",
+    "ity that is either superior or comparable to strong baselines, including",
+    "3.5.2."
+   ],
+   [
     "",
-    "(P1-X2)",
-    "E2"
+    "",
+    "Voicebox and NaturalSpeech 3. The comparison between Voicebox",
+    ""
+   ],
+   [
+    "",
+    "",
+    "and E2 TTS revealed that the use of phoneme alignment was the pri-",
+    "In this"
+   ],
+   [
+    "",
+    "mary obstacle in achieving natural-sounding audio.",
+    "",
+    "phoneme"
+   ],
+   [
+    "",
+    "",
+    "training scheme, E2 TTS can be easily scaled up to accommodate",
+    "replaced words"
+   ],
+   [
+    "large training data.",
+    "",
+    "",
+    "with a"
+   ],
+   [
+    "",
+    "",
+    "ity, intelligibility, and a level of naturalness that is indistinguishable",
+    "Table 4"
+   ],
+   [
+    "",
+    "",
+    "from a human’s voice in the zero-shot TTS setting, despite the frame-",
+    "achieved parity"
+   ],
+   [
+    "work’s extreme simplicity.",
+    "",
+    "",
+    "sequences."
+   ],
+   [
+    "",
+    "",
+    "",
+    "any drawbacks."
+   ],
+   [
+    "",
+    "",
+    "7In the evaluation, E2 TTS was judged to be better in 33% of samples,",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "only marginal"
+   ],
+   [
+    "",
+    "",
+    "while the ground truth was better in another 33% of samples. The remaining",
+    ""
+   ],
+   [
+    "",
+    "samples were judged to be of equal quality.",
+    "",
+    "words with"
+   ],
+   [
+    "",
+    "",
+    "8In LibriSpeech, some speakers utilized varying voice characteristics for",
+    "specify the"
+   ],
+   [
+    "",
+    "",
+    "different characters in the book, leading to a low SMOS for the ground truth.",
+    "TTS model."
    ]
   ]
  },
@@ -302,7 +1062,6 @@
   "page": 5,
   "headers": [
    [
-    "",
     "",
     "",
     "",
@@ -315,14 +1074,12 @@
     "",
     "",
     "",
-    "",
     "Even when we replaced 50% of words into phoneme sequences, E2",
     "",
     "",
     ""
    ],
    [
-    "",
     "",
     "",
     "",
@@ -338,14 +1095,12 @@
     "",
     "",
     "",
-    "",
     ""
    ],
    [
     "ID",
     "Model",
     "Init",
-    "",
     "",
     "Phoneme %",
     "WER↓",
@@ -358,13 +1113,11 @@
     "E2 TTS",
     "Random",
     "",
-    "",
     "0%",
     "2.0",
     "0.675"
    ],
    [
-    "",
     "",
     "",
     "",
@@ -378,13 +1131,11 @@
     "E2 TTS X2",
     "Random",
     "",
-    "",
     "25%",
     "2.0",
     "0.678"
    ],
    [
-    "",
     "",
     "",
     "",
@@ -397,14 +1148,12 @@
     "(P2)",
     "E2 TTS",
     "",
-    "Pre-trained [34]",
     "",
     "0%",
     "1.9",
     "0.708"
    ],
    [
-    "",
     "",
     "",
     "",
@@ -417,7 +1166,6 @@
     "(P2-X2)",
     "E2 TTS X2",
     "",
-    "Pre-trained [34]",
     "",
     "25%",
     "2.0",
@@ -428,10 +1176,198 @@
     "",
     "",
     "",
-    "",
     "50%",
     "2.1",
     "0.707"
+   ],
+   [
+    "3.5.",
+    "",
+    "Evaluation of E2 TTS extensions",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "3.5.1.",
+    "",
+    "Evaluation of the extension 1",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "The results for the E2 TTS X1 models are shown in Table 3. These",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "results indicate that the E2 TTS X1 model has achieved results nearly",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "identical to those of the E2 TTS model, especially when the model",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "was initialized by unsupervised pre-training [34]. E2 TTS X1 does",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "not require the transcription of the audio prompt, which greatly en-",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "3.5.2.",
+    "",
+    "Evaluation of the extension 2",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "In this",
+    "experiment,",
+    "we",
+    "the",
+    "TTS",
+    "models",
+    "with"
+   ],
+   [
+    "",
+    "",
+    "",
+    "phoneme replacement rate of 15%. During inference, we randomly",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "replaced words in the test-clean dataset with phoneme sequences,",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "with a probability ranging from 0% to 50%.",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "Table 4 shows the result.",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "achieved parity results when no words were replaced with phoneme",
+    "",
+    "",
+    ""
+   ],
+   [
+    "sequences.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "any drawbacks. We also observed that the E2 TTS X2 model showed",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "only marginal degradation of WER, even when we replaced 50% of",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "words with phoneme sequences.",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "specify the pronunciation of a new term without retraining the E2",
+    "",
+    "",
+    ""
+   ],
+   [
+    "TTS model.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ]
   ]
  }

@@ -677,20 +677,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-ground-truth-2"><span class="t-zh">Ground-truth</span><span class="t-en">Ground-truth</span></h3><div class="eq" id="eq-ground-truth-2-1"><code>0.734 2.14 3.52 0.755 1.25 2.78</code></div></section>
+      <h3 class="sech lv2" id="sec-ground-truth-2"><span class="t-zh">Ground-truth</span><span class="t-en">Ground-truth</span></h3></section>
 <section>
-      <h3 class="sech lv2" id="sec-ar-models-2"><span class="t-zh">AR 模型</span><span class="t-en">AR Models</span></h3><div class="pblk" id="p-ar-models-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-ar-models-2-1-1"><span class="en">IndexTTS2</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-ar-models-2-1-1"><span class="zh">最终的多语版 OmniVoice 模型，与在无约束数据集上训练的基线（IndexTTS2 [5]、CosyVoice3 [33]、VoxCPM [10]、Qwen3-TTS [42]）相比，在所有基准上都取得了有竞争力的整体表现，并在说话人相似度与可懂度上具有明显优势。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-ar-models-2-1"><code>0.706 2.33 3.65 0.764 1.05 3.00</code></div>
-<div class="eq" id="eq-ar-models-2-2"><code>CosyVoice3</code></div>
-<div class="eq" id="eq-ar-models-2-3"><code>0.696 2.17 3.96 0.778 1.14 3.32</code></div>
-<div class="eq" id="eq-ar-models-2-4"><code>VoxCPM</code></div>
-<div class="eq" id="eq-ar-models-2-5"><code>0.731 1.92 3.77 0.772 0.99 2.94</code></div>
-<div class="eq" id="eq-ar-models-2-6"><code>Qwen3-TTS</code></div>
-<div class="eq" id="eq-ar-models-2-7"><code>0.708 1.54 4.16 0.766 1.15</code></div></section>
+      <h3 class="sech lv2" id="sec-ar-models-2"><span class="t-zh">AR 模型</span><span class="t-en">AR Models</span></h3>
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-3-46"><span class="secnum">3.46</span> <span class="t-zh">3.46 NAR 模型</span><span class="t-en">NAR Models</span></h3>
 
@@ -698,15 +694,22 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
+<div class="eq" id="eq-3-46-6"><code>OmniVoice-Emilia</code></div>
 
 
 
-
-<div class="cap" id="tab-3-46-1"><span class="cap-k">表</span><p class="en">Table 2: Subjective evaluation results on Chinese and English test sets. CMOS and SMOS are used for evaluation. Best results are highlighted in bold.</p><p class="zh">表 2：中英文测试集上的主观评估结果。采用 CMOS 与 SMOS 进行评估。最优结果以粗体标出。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>F5-TTS</td><td></td><td>0.664</td><td>1.85</td><td>3.72</td><td>0.750</td><td>1.53</td><td>2.93</td></tr>
-<tr><td>ZipVoice</td><td></td><td>0.697</td><td>1.70</td><td>3.82</td><td>0.751</td><td>1.40</td><td>3.15</td></tr>
-<tr><td>MaskGCT</td><td></td><td>0.713</td><td>2.88</td><td>3.55</td><td>0.773</td><td>2.40</td><td>2.63</td></tr>
-<tr><td></td><td>OmniVoice-Emilia 0.717</td><td></td><td>1.72</td><td>3.88</td><td>0.765</td><td>0.89</td><td>3.05</td></tr>
-<tr><td>OmniVoice</td><td></td><td>0.741</td><td>1.60</td><td>3.91</td><td>0.777</td><td>0.84</td><td>3.11</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-3-46-1"><span class="cap-k">表</span><p class="en">Table 2: Subjective evaluation results on Chinese and English test sets. CMOS and SMOS are used for evaluation. Best results are highlighted in bold.</p><p class="zh">表 2：中英文测试集上的主观评估结果。采用 CMOS 与 SMOS 进行评估。最优结果以粗体标出。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Ground-truth</td><td>0.734</td><td>2.14</td><td>3.52</td><td>0.755</td><td>1.25</td><td>2.78</td></tr>
+<tr><td>AR Models</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>IndexTTS2</td><td>0.706</td><td>2.33</td><td>3.65</td><td>0.764</td><td>1.05</td><td>3.00</td></tr>
+<tr><td>CosyVoice3</td><td>0.696</td><td>2.17</td><td>3.96</td><td>0.778</td><td>1.14</td><td>3.32</td></tr>
+<tr><td>VoxCPM</td><td>0.731</td><td>1.92</td><td>3.77</td><td>0.772</td><td>0.99</td><td>2.94</td></tr>
+<tr><td>Qwen3-TTS</td><td>0.708</td><td>1.54</td><td>4.16</td><td>0.766</td><td>1.15</td><td>3.46</td></tr>
+<tr><td>NAR Models</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>F5-TTS</td><td>0.664</td><td>1.85</td><td>3.72</td><td>0.750</td><td>1.53</td><td>2.93</td></tr>
+<tr><td>ZipVoice</td><td>0.697</td><td>1.70</td><td>3.82</td><td>0.751</td><td>1.40</td><td>3.15</td></tr>
+<tr><td>MaskGCT</td><td>0.713</td><td>2.88</td><td>3.55</td><td>0.773</td><td>2.40</td><td>2.63</td></tr>
+<tr><td></td><td></td><td>1.72</td><td>3.88</td><td>0.765</td><td>0.89</td><td>3.05</td></tr>
+<tr><td>OmniVoice</td><td>0.741</td><td>1.60</td><td>3.91</td><td>0.777</td><td>0.84</td><td>3.11</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-3"><span class="t-zh">Model</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-model-3-1-1"><span class="en">CMOS ↑ SMOS ↑ Ground-truth</span></span></p>
@@ -714,13 +717,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="eq" id="eq-model-3-1"><code>0.00 3.02±0.20</code></div>
-<div class="eq" id="eq-model-3-2"><code>Qwen3-TTS</code></div>
+
 <div class="eq" id="eq-model-3-3"><code>0.40± 0.16 3.65 ± 0.18</code></div>
 
 <div class="eq" id="eq-model-3-5"><code>-0.30± 0.16 3.35± 0.19</code></div>
 
 <div class="eq" id="eq-model-3-7"><code>-0.38± 0.17 3.20± 0.18</code></div>
-
+<div class="eq" id="eq-model-3-8"><code>OmniVoice-Emilia</code></div>
 <div class="eq" id="eq-model-3-9"><code>0.42± 0.15 3.58± 0.18</code></div>
 
 <div class="eq" id="eq-model-3-11"><code>0.44± 0.16 3.80± 0.17</code></div>
@@ -759,7 +762,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>Thai</td><td>3.978</td><td>2.701</td><td>73.936</td><td>0.841</td><td>0.800</td><td>0.588</td></tr>
 <tr><td>Turkish</td><td>2.166</td><td>1.520</td><td>0.699</td><td>0.851</td><td>0.779</td><td>0.596</td></tr>
 <tr><td>Ukrainian</td><td>1.774</td><td>1.082</td><td>0.997</td><td>0.810</td><td>0.730</td><td>0.647</td></tr>
-<tr><td></td><td></td><td>0.880</td><td>73.415</td><td>0.804</td><td>0.743</td><td>0.369</td></tr></tbody></table></div></div>
+<tr><td></td><td></td><td>0.880</td><td>73.415</td><td>0.804</td><td>0.743</td><td>0.369</td></tr>
+<tr><td>Average</td><td>2.850</td><td>3.774</td><td>10.950</td><td>0.830</td><td>0.766</td><td>0.655</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-model-3-3">
           <p class="en-lines"><span class="sent" data-sid="s-model-3-3-1"><span class="en">Language WER ↓ SIM-o ↑ OmniVoice MiniMax ElevenLabs OmniVoice MiniMax ElevenLabs Arabic</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-3-3-1"><span class="zh">表头：Language × WER ↓ / SIM-o ↑（OmniVoice / MiniMax / ElevenLabs 两组）——Arabic（后续照原文）。</span></span></p>
@@ -813,7 +817,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-model-3-57"><code>Vietnamese</code></div>
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-average"><span class="t-zh">平均值</span><span class="t-en">Average</span></h3><div class="eq" id="eq-average-1"><code>2.850 3.774 10.950 0.830 0.766 0.655</code></div>
+      <h3 class="sech lv2" id="sec-average"><span class="t-zh">平均值</span><span class="t-en">Average</span></h3>
 <div class="pblk" id="p-average-1">
           <p class="en-lines"><span class="sent" data-sid="s-average-1-1"><span class="en">* Cantonese WER is 2.273% when evaluated with the SenseVoice-Small ASR model. ur</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-average-1-1"><span class="zh">（表注：* 粤语（Cantonese）用 SenseVoice-Small ASR 模型评测时 WER 为 2.273%。）（表格行）ur。</span></span></p>
@@ -852,13 +856,11 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-1-1"><span class="zh">为验证核心设计的有效性，我们在 Emilia 数据集上进行了消融实验。</span></span><span class="sent" data-sid="s-4-3-1-2"><span class="zh">所有模型均以相同超参数训练 300k 次更新，除特别说明外均关闭提示去噪。</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-3-1"><span class="cap-k">表</span><p class="en">Table 5: Impact of different masking strategies.</p><p class="zh">表 5：不同掩码策略的影响。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th>Languages with CER ≤</th><th></th></tr><tr><th></th><th></th><th>Avg SIM-o ↑</th><th></th><th>Avg CER ↓</th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td>5%</td><td></td><td>10%</td></tr>
-<tr><td></td><td>Ground-truth</td><td>-</td><td></td><td>5.11</td><td>75</td><td></td><td>92</td></tr>
-<tr><td></td><td>OmniVoice</td><td>0.788</td><td></td><td>4.00</td><td>82</td><td></td><td>95</td></tr>
-<tr><td>4.3</td><td>Effectiveness of Key Designs</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td>To validate the effectiveness of our core designs, we conduct ablation experiments on the</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>dataset.</td><td></td><td></td><td>All models are trained for 300k updates with the same hyperparameters, with</td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>noising disabled unless otherwise specified.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-4-3-1"><span class="cap-k">表</span><p class="en">Table 5: Impact of different masking strategies.</p><p class="zh">表 5：不同掩码策略的影响。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th>Languages with CER ≤</th><th></th></tr><tr><th></th><th></th><th>Avg SIM-o ↑</th><th>Avg CER ↓</th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td>5%</td><td></td><td>10%</td></tr>
+<tr><td></td><td>Ground-truth</td><td>-</td><td>5.11</td><td>75</td><td></td><td>92</td></tr>
+<tr><td></td><td>OmniVoice</td><td>0.788</td><td>4.00</td><td>82</td><td></td><td>95</td></tr>
+<tr><td>4.3</td><td>Effectiveness of Key Designs</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>noising disabled unless otherwise specified.</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-masking-strategy"><span class="t-zh">掩码策略</span><span class="t-en">Masking Strategy</span></h3><div class="pblk" id="p-masking-strategy-1">
           <p class="en-lines"><span class="sent" data-sid="s-masking-strategy-1-1"><span class="en">Librispeech-PC test-clean SIM-o ↑ WER ↓ UTMOS ↑ SoundStorm-style mask</span></span></p>
@@ -945,26 +947,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-4-3-1-1"><span class="cap-k">表</span><p class="en">Table 8: RTF with different inference steps and batch sizes.</p><p class="zh">表 8：不同推理步数与批大小下的 RTF。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>SIM-o ↑</th><th>WER ↓</th><th>UTMOS ↑</th></tr></thead><tbody><tr><td></td><td>w/o prompt denoise</td><td></td><td>0.697</td><td>1.57</td><td>4.23</td></tr>
-<tr><td></td><td>w/ prompt denoise</td><td></td><td>0.668</td><td>1.56</td><td>4.32</td></tr>
-<tr><td>Inference Speed</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td>We evaluate the inference speed of OmniVoice on an H20 GPU using PyTorch</td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td>framework. Following the identical experimental setup in [16, 14], we use a</td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td>to generate 10-second audio clips, and report the real-time factor (RTF) across</td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td>and inference steps. As shown in Table 8, OmniVoice achieves an RTF of 0.0319</td><td></td><td></td><td></td></tr>
-<tr><td>steps and a batch size of 1,</td><td></td><td></td><td></td><td>outperforming the corresponding results of ZipVoice</td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>Notably, OmniVoice also yields better</td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td>attains an even lower RTF of 0.022. In addition, its inference efficiency can be further</td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td>acceleration techniques such as TensorRT. These results demonstrate the high</td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-4-3-1-1"><span class="cap-k">表</span><p class="en">Table 8: RTF with different inference steps and batch sizes.</p><p class="zh">表 8：不同推理步数与批大小下的 RTF。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th>Batch Size</th><th></th><th></th></tr><tr><th></th><th></th><th>Inference Steps</th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td>1</td><td>2</td><td></td><td>4</td><td>8</td></tr>
+<tr><td></td><td></td><td>16</td><td>0.0319</td><td>0.0263</td><td></td><td>0.0235</td><td>0.0224</td></tr>
+<tr><td></td><td></td><td>32</td><td>0.0598</td><td>0.0486</td><td></td><td>0.0436</td><td>0.0414</td></tr>
+<tr><td>5</td><td>Conclusions</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-inference-steps"><span class="t-zh">推理步数</span><span class="t-en">Inference Steps</span></h3><div class="pblk" id="p-inference-steps-1">
-          <p class="en-lines"><span class="sent" data-sid="s-inference-steps-1-1"><span class="en">Batch Size</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-inference-steps-1-1"><span class="zh">（图横轴：Batch Size（批大小）。）</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-inference-steps-1"><code>1 2 4 8 16 0.0319 0.0263 0.0235 0.0224 32 0.0598 0.0486 0.0436 0.0414</code></div></section>
+      <h3 class="sech lv2" id="sec-inference-steps"><span class="t-zh">推理步数</span><span class="t-en">Inference Steps</span></h3>
+</section>
 <section>
       <h2 class="sech lv1" id="sec-5-2"><span class="secnum">5</span> <span class="t-zh">5 结论</span><span class="t-en">Conclusions</span></h2><div class="pblk" id="p-5-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-5-2-1-1"><span class="en">In this work, we introduce OmniVoice, a massively multilingual zero-shot TTS model supporting over 600 languages with SOTA performance, addressing the critical limitation of narrow language coverage in existing zero-shot TTS systems.</span></span> <span class="sent" data-sid="s-5-2-1-2"><span class="en">The core of OmniVoice is a novel diffusion language model-style single-stage discrete-token NAR framework, which directly maps text to multicodebook acoustic tokens to circumvent the inherent limitations of conventional two-stage models.</span></span> <span class="sent" data-sid="s-5-2-1-3"><span class="en">To unlock the full potential of this streamlined architecture, we propose a full-codebook random masking strategy to enhance training efficiency and LLM weight initialization to resolve the intelligibility challenge.</span></span> <span class="sent" data-sid="s-5-2-1-4"><span class="en">Trained on a 581k-hour multilingual dataset curated exclusively from opensource resources, OmniVoice achieves the broadest language coverage of zero-shot TTS models to date, delivers SOTA performance on Chinese, English and diverse multilingual benchmarks, exhibits exceptional generalization to low-resource languages, and is equipped with multi-dimensional controllability and high inference efficiency, marking a significant advance in expanding high-quality TTS capabilities to a broad spectrum of the world’s languages.</span></span></p>
@@ -1092,51 +1081,45 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-references-11"><code>2024.</code></div>
 <div class="pblk plain" id="p-references-108"><p class="refline">[90] Mohammad Al-Fetyani, Muhammad Al-Barham, Gheith Abandah, Adham Alsharkawi, and Maha Dawas. Masc: Massive arabic speech corpus. In 2022 IEEE Spoken Language Technology Workshop (SLT), pages 1006–1013. IEEE, 2023.</p></div>
 <div class="pblk plain" id="p-references-109"><p class="refline">[91] Maryam Khalifa Al Ali and Hanan Aldarmaki. Mixat: A data set of bilingual emirati-english speech. In Proceedings of the 3rd Annual Meeting of the Special Interest Group on Underresourced Languages@ LREC-COLING 2024, pages 222–226, 2024.</p></div>
-
+<div class="pblk plain" id="p-references-110"><p class="refline">[92] Kak Soky, Zhuo Gong, and Sheng Li. NICT-Tib1: A Public Speech Corpus of Lhasa Dialect for Benchmarking Tibetan Language Speech Recognition Systems. In Proc. O-COCOSDA, pages 1–5, 2022.</p></div>
 <div class="pblk plain" id="p-references-111"><p class="refline">[93] Yue Zhao, Xiaona Xu, Jianjian Yue, Wei Song, Xiali Li, Licheng Wu, and Qiang Ji. An open speech resource for tibetan multi-dialect and multitask recognition. International Journal of Computational Science and Engineering, 22(2/3):297–304, 2020.</p></div>
-
+<div class="pblk plain" id="p-references-112"><p class="refline">[94] Senyan Li, Guanyu Li, and Jiewen Ning. Xbmu-amdo31: An open source of amdo tibetan speech database and speech recognition baseline system. In National Conference on ManMachine Speech Communication, NCMMSC2022, 2022.</p></div>
 <div class="pblk plain" id="p-references-113"><p class="refline">[95] Linfei Lu, Jiaxin Pang, Stansencuo, Buwonglam, and Linting Huang. Tibetan greetings. http: //www.openslr.org/149/.</p></div></section>
 <section>
-      <h2 class="sech lv1" id="sec-A"><span class="secnum">A</span> <span class="t-zh">附录 A 多语训练数据完整清单</span><span class="t-en">Complete List of Multilingual Training Data</span></h2>
-</section>
+      <h2 class="sech lv1" id="sec-A"><span class="secnum">A</span> <span class="t-zh">附录 A 多语训练数据完整清单</span><span class="t-en">Complete List of Multilingual Training Data</span></h2><div class="pblk" id="p-A-1">
+          <p class="en-lines"><span class="sent" data-sid="s-A-1-1"><span class="en">We used the following datasets to train OmniVoice:</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-1-1"><span class="zh">我们使用以下数据集训练 OmniVoice：</span></span></p>
+          
+        </div>
+<div class="pblk" id="p-A-2">
+          <p class="en-lines"><span class="sent" data-sid="s-A-2-1"><span class="en">Emilia [46], Emilia-YODAS [46], LibriTTS [61], Common Voice [62], VoxBox [7], Meta Omnilingual ASR Corpus [57], FLEURS [52], GigaSpeech 2 [63], YODAS-Granary [64], EuroSpeech [65], IndicVoices-R [66], IndicTTS [67], Rasa [68], PhoAudiobook [69], viVoice2, CML- TTS [70], Wenetspeech-yue [71], Wenetspeech-chuan [72], Kespeech [73], AESRC [74], Ksponspeech [75], Reazonspeech [76], AISHELL6-whisper [77], ParaSpeechCaps [78], Nvspeech [30], NonVerbalSpeech-38K [45], SeniorTalk [79], ChildMandarin [80], KSC2 [81], ClArTTS [82], ArVoice [83], KazakhTTS2 [84], RuLS3, IMUT-MC [85], HUI-Audio-Corpus-German4, MGB- 2 [86], MGB-3 [87], MGB-5 [88], SADA [89], MASC [90], Mixat [91], Arabic datasets found from [37] (darija speech to text5, DarijaTTS-clean6, Jordan-Audio7, UAE 100K8), NICT-Tib1 [92], TIBMD@MUC [93], XBMU-AMDO3 [94], Tibetan-Greetings [95].</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-A-2-1"><span class="zh">Emilia [46]、Emilia-YODAS [46]、LibriTTS [61]、Common Voice [62]、VoxBox [7]、Meta Omnilingual ASR Corpus [57]、FLEURS [52]、GigaSpeech 2 [63]、YODAS-Granary [64]、EuroSpeech [65]、IndicVoices-R [66]、IndicTTS [67]、Rasa [68]、PhoAudiobook [69]、viVoice2、CML-TTS [70]、Wenetspeech-yue [71]、Wenetspeech-chuan [72]、Kespeech [73]、AESRC [74]、Ksponspeech [75]、Reazonspeech [76]、AISHELL6-whisper [77]、ParaSpeechCaps [78]、Nvspeech [30]、NonVerbalSpeech-38K [45]、SeniorTalk [79]、ChildMandarin [80]、KSC2 [81]、ClArTTS [82]、ArVoice [83]、KazakhTTS2 [84]、RuLS3、IMUT-MC [85]、HUI-Audio-Corpus-German4、MGB-2 [86]、MGB-3 [87]、MGB-5 [88]、SADA [89]、MASC [90]、Mixat [91]、来自 [37] 的阿拉伯语数据集（darija speech to text5、DarijaTTS-clean6、Jordan-Audio7、UAE 100K8）、NICT-Tib1 [92]、TIBMD@MUC [93]、XBMU-AMDO3 [94]、Tibetan-Greetings [95]。</span></span></p>
+          
+        </div></section>
 <section>
       <h2 class="sech lv1" id="sec-B"><span class="secnum">B</span> <span class="t-zh">附录 B 不同推理步数的结果</span><span class="t-en">Results of Different Inference Steps</span></h2><div class="pblk" id="p-B-1">
           <p class="en-lines"><span class="sent" data-sid="s-B-1-1"><span class="en">In Table 9, we evaluate the multilingual version OmniVoice model with different inference steps on English and Chinese benchmarks.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-1-1"><span class="zh">在表 9 中，我们在中英文基准上评估了多语版 OmniVoice 模型在不同推理步数下的表现。</span></span></p>
           
         </div>
-<div class="cap" id="tab-B-1"><span class="cap-k">表</span><p class="en">Table 9: Objective evaluation results of OmniVoice with different inference steps.</p><p class="zh">表 9：OmniVoice 在不同推理步数下的客观评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th>resourced Languages@ LREC-COLING 2024, pages 222–226, 2024.</th><th></th><th></th></tr><tr><th>[92]</th><th></th><th>Kak Soky, Zhuo Gong, and Sheng Li.</th><th></th><th></th><th></th><th>NICT-Tib1: A Public Speech</th></tr><tr><th></th><th></th><th></th><th></th><th>for Benchmarking Tibetan Language Speech Recognition Systems.</th><th></th><th></th></tr><tr><th></th><th>pages 1–5, 2022.</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>speech resource for tibetan multi-dialect and multitask recognition.</th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td>Computational Science and Engineering, 22(2/3):297–304, 2020.</td><td></td><td></td></tr>
-<tr><td>[94]</td><td></td><td></td><td>Senyan Li, Guanyu Li, and Jiewen Ning.</td><td></td><td></td><td>Xbmu-amdo31:</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>speech database and speech recognition baseline system.</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td>Machine Speech Communication, NCMMSC2022, 2022.</td><td></td><td></td><td></td></tr>
-<tr><td>[95]</td><td></td><td></td><td></td><td>Linfei Lu, Jiaxin Pang, Stansencuo, Buwonglam, and Linting Huang.</td><td></td><td></td></tr>
-<tr><td></td><td></td><td>//www.openslr.org/149/.</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>A</td><td></td><td></td><td>Complete List of Multilingual Training Data</td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td>We used the following datasets to train OmniVoice:</td><td></td><td></td><td></td></tr>
-<tr><td>Emilia [46],</td><td></td><td>Emilia-YODAS [46],</td><td></td><td></td><td>LibriTTS [61],</td><td></td></tr>
-<tr><td>nilingual</td><td>ASR</td><td>Corpus</td><td>[57],</td><td>FLEURS</td><td>[52],</td><td>GigaSpeech</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>roSpeech [65], IndicVoices-R [66], IndicTTS [67], Rasa [68], PhoAudiobook</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>TTS [70], Wenetspeech-yue [71], Wenetspeech-chuan [72], Kespeech [73],</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>speech [75], Reazonspeech [76], AISHELL6-whisper [77], ParaSpeechCaps</td><td></td><td></td></tr>
-<tr><td></td><td>NonVerbalSpeech-38K</td><td></td><td>[45],</td><td>SeniorTalk</td><td>[79],</td><td>ChildMandarin</td></tr>
-<tr><td>ArVoice</td><td>[83],</td><td>KazakhTTS2</td><td>[84],</td><td>RuLS3,</td><td></td><td>[85],</td></tr>
-<tr><td>2 [86],</td><td>MGB-3 [87],</td><td></td><td>MGB-5 [88],</td><td></td><td>SADA [89],</td><td>MASC [90],</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>from [37] (darija speech to text5, DarijaTTS-clean6, Jordan-Audio7, UAE</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>TIBMD@MUC [93], XBMU-AMDO3 [94], Tibetan-Greetings [95].</td><td></td><td></td></tr>
-<tr><td>B</td><td></td><td></td><td>Results of Different Inference Steps</td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>In Table 9, we evaluate the multilingual version OmniVoice model with different</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-B-1"><span class="cap-k">表</span><p class="en">Table 9: Objective evaluation results of OmniVoice with different inference steps.</p><p class="zh">表 9：OmniVoice 在不同推理步数下的客观评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>LibriSpeech-PC test-clean</th><th></th><th></th><th></th><th>Seed-TTS test-en</th><th></th><th></th><th>Seed-TTS test-zh</th><th></th></tr></thead><tbody><tr><td>64</td><td>0.729</td><td>1.28</td><td>4.30</td><td></td><td>0.742</td><td>1.60</td><td>3.92</td><td>0.777</td><td>0.81</td><td>3.13</td></tr>
+<tr><td>32</td><td>0.729</td><td>1.30</td><td>4.28</td><td></td><td>0.741</td><td>1.53</td><td>3.91</td><td>0.777</td><td>0.84</td><td>3.11</td></tr>
+<tr><td>16</td><td>0.728</td><td>1.50</td><td>4.23</td><td></td><td>0.735</td><td>1.72</td><td>3.92</td><td>0.773</td><td>0.99</td><td>3.00</td></tr>
+<tr><td>8</td><td>0.713</td><td>2.02</td><td>4.02</td><td></td><td>0.716</td><td>1.94</td><td>3.59</td><td>0.756</td><td>1.58</td><td>2.72</td></tr>
+<tr><td></td><td></td><td></td><td>2https://huggingface.co/datasets/capleaf/viVoice</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>3https://www.openslr.org/96/</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>4https://huggingface.co/datasets/Paradoxia/opendata-iisys-hui</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>5https://huggingface.co/datasets/adiren7/darija_speech_to_text</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>6https://huggingface.co/datasets/KandirResearch/DarijaTTS-clean</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>7https://huggingface.co/datasets/nadsoft/Jordan-Audio</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>8https://huggingface.co/datasets/AhmedBadawy11/UAE_100K</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-B-2">
           <p class="en-lines"><span class="sent" data-sid="s-B-2-1"><span class="en">LibriSpeech-PC test-clean Seed-TTS test-en Seed-TTS test-zh Steps SIM-o ↑ WER ↓ UTMOS ↑ SIM-o ↑ WER ↓ UTMOS ↑ SIM-o ↑ WER ↓ UTMOS ↑</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-2-1"><span class="zh">表头：LibriSpeech-PC test-clean / Seed-TTS test-en / Seed-TTS test-zh × Steps（SIM-o ↑ / WER ↓ / UTMOS ↑ 各组）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-B-1"><code>64 0.729 1.28 4.30 0.742 1.60 3.92 0.777 0.81 3.13 32 0.729 1.30 4.28 0.741 1.53 3.91 0.777 0.84 3.11 16 0.728 1.50 4.23 0.735 1.72 3.92 0.773 0.99 3.00 8 0.713 2.02 4.02 0.716 1.94 3.59 0.756 1.58 2.72</code></div>
-<div class="pblk" id="p-B-3">
-          <p class="en-lines"><span class="sent" data-sid="s-B-3-1"><span class="en">2https://huggingface.co/datasets/capleaf/viVoice 3https://www.openslr.org/96/ 4https://huggingface.co/datasets/Paradoxia/opendata-iisys-hui 5https://huggingface.co/datasets/adiren7/darija_speech_to_text 6https://huggingface.co/datasets/KandirResearch/DarijaTTS-clean 7https://huggingface.co/datasets/nadsoft/Jordan-Audio 8https://huggingface.co/datasets/AhmedBadawy11/UAE_100K</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-3-1"><span class="zh">（脚注 2：https://huggingface.co/datasets/capleaf/viVoice；3：https://www.openslr.org/96/；4：https://huggingface.co/datasets/Paradoxia/opendata-iisys-hui；5：https://huggingface.co/datasets/adiren7/darija_speech_to_text；6：https://huggingface.co/datasets/KandirResearch/DarijaTTS-clean；7：https://huggingface.co/datasets/nadsoft/Jordan-Audio；8：https://huggingface.co/datasets/AhmedBadawy11/UAE_100K）</span></span></p>
-          
-        </div></section>
+
+</section>
 <section>
       <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">附录 C FLEURS-Multilingual-102 详细结果</span><span class="t-en">Detailed Results on FLEURS-Multilingual-102</span></h2><div class="pblk" id="p-C-1">
           <p class="en-lines"><span class="sent" data-sid="s-C-1-1"><span class="en">Per-language CERs of of ground-truth and OmniVoice on FLEURS-Multilingual-102 is shown in Fig. 4.</span></span></p>

@@ -575,21 +575,27 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-2-3-4-1"><span class="zh">训练设置。</span></span><span class="sent" data-sid="s-2-3-4-2"><span class="zh">模型使用 Adam 优化器（Kingma, 2014）训练，配合余弦退火与 10k 步的 warm-up（RL 阶段除外）。</span></span><span class="sent" data-sid="s-2-3-4-3"><span class="zh">训练语料仅包含普通话、中文方言、英语以及中英混合的 code-switch 语音数据。</span></span><span class="sent" data-sid="s-2-3-4-4"><span class="zh">各阶段的训练数据规模与最大学习率详见 Table 1。</span></span></p>
           
         </div>
-<div class="cap" id="tab-2-3-1"><span class="cap-k">表</span><p class="en">Table 1: Training details for all stages.</p><p class="zh">Table 1：各训练阶段的训练细节。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Stage</th><th></th><th></th><th></th><th>Training Data</th><th>Maximum Learning Rate</th></tr><tr><th></th><th></th><th></th><th>Stage 1 Encoder pretraining</th><th>560k hours</th><th>5 × 10−4</th></tr><tr><th></th><th></th><th>Stage 2 Alignment</th><th></th><th>50k hours</th><th>1 × 10−3</th></tr><tr><th></th><th>Stage 3 IA-SFT</th><th></th><th></th><th>560k hours</th><th>1 × 10−5</th></tr><tr><th></th><th></th><th>Stage 4 Late joint SFT</th><th></th><th>560k hours</th><th>1 × 10−5</th></tr></thead><tbody><tr><td></td><td></td><td>Stage 5 Context SFT</td><td></td><td>50k hours</td><td>1 × 10−6</td></tr>
-<tr><td></td><td>Stage 6 RL</td><td></td><td></td><td>20k samples</td><td>2 × 10−6</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-2-3-1"><span class="cap-k">表</span><p class="en">Table 1: Training details for all stages.</p><p class="zh">Table 1：各训练阶段的训练细节。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>for the subsequent retrieval module.</th><th></th></tr></thead><tbody><tr><td>2.3</td><td></td><td>Training Setup</td><td></td><td></td></tr>
+<tr><td></td><td>deviation 5 dB.</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>from non-speech content, thereby reducing the risk of hallucinations.</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>details the training data scale and maximum learning rate for each stage.</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-stage"><span class="t-zh">训练阶段表</span><span class="t-en">Stage</span></h3>
-
-
-
-
-
-
-
-
-
-
-</section>
+      <h3 class="sech lv2" id="sec-stage"><span class="t-zh">训练阶段表</span><span class="t-en">Stage</span></h3><div class="pblk" id="p-stage-1">
+          <p class="en-lines"><span class="sent" data-sid="s-stage-1-1"><span class="en">Training Data Maximum Learning Rate Stage 1 Encoder pretraining 560k hours</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-stage-1-1"><span class="zh">表头：Training Data / Maximum Learning Rate——Stage 1 Encoder pretraining：560k 小时（后续照原文）。</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-stage-1"><code>5 × 10−4</code></div>
+<div class="eq" id="eq-stage-2"><code>Stage 2 Alignment 50k hours</code></div>
+<div class="eq" id="eq-stage-3"><code>1 × 10−3</code></div>
+<div class="eq" id="eq-stage-4"><code>Stage 3 IA-SFT 560k hours</code></div>
+<div class="eq" id="eq-stage-5"><code>1 × 10−5</code></div>
+<div class="eq" id="eq-stage-6"><code>Stage 4 Late joint SFT 560k hours</code></div>
+<div class="eq" id="eq-stage-7"><code>1 × 10−5</code></div>
+<div class="eq" id="eq-stage-8"><code>Stage 5 Context SFT 50k hours</code></div>
+<div class="eq" id="eq-stage-9"><code>1 × 10−6</code></div>
+<div class="eq" id="eq-stage-10"><code>Stage 6 RL 20k samples</code></div>
+<div class="eq" id="eq-stage-11"><code>2 × 10−6</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-2-4"><span class="secnum">2.4</span> <span class="t-zh">推理</span><span class="t-en">Inference</span></h3></section>
 <section>
@@ -724,8 +730,26 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           
         </div>
 <div class="cap" id="tab-3-2-2-2"><span class="cap-k">表</span><p class="en">Table 2: Comparison with recent advanced baselines on public benchmarks. All baseline systems are evaluated in offline mode. “N/A” denotes that a reliable result cannot be obtained under the official inference interface.</p><p class="zh">Table 2：与近期先进基线在公开基准上的对比。所有基线均在离线模式下评测。「N/A」表示在官方推理接口下无法得到可靠结果。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>SpeechIO</td><td>2.78</td><td>3.17</td><td>2.55</td><td>2.20</td><td>3.41</td><td>2.33</td><td>2.61</td><td>2.84</td></tr>
-<tr><td>Chinese Dialect</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
-
+<tr><td>Chinese Dialect</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>WeNetSpeech-Chuan easy | hard</td><td>13.21 | 23.76</td><td>20.95 | 33.61</td><td>11.18 | 20.35</td><td>10.36 | 20.07</td><td>13.99 | 25.35</td><td>14.13 | 25.16</td><td>10.51 | 20.58</td><td>11.22 | 20.37</td></tr>
+<tr><td>WeNetSpeech-Yue short | long</td><td>7.31 | 10.02</td><td>16.78 | 13.97</td><td>5.79 | 8.00</td><td>5.05 | 10.45</td><td>7.78 | 8.44</td><td>6.97 | 8.60</td><td>5.12 | 8.58</td><td>5.39 | 9.62</td></tr>
+<tr><td>KeSpeech</td><td>7.18</td><td>9.59</td><td>4.98</td><td>3.05</td><td>3.98</td><td>6.00</td><td>4.40</td><td>5.08</td></tr>
+<tr><td>English</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>LibriSpeech-dev clean | other</td><td>1.63 | 4.06</td><td>1.82 | 3.93</td><td>1.54 | 3.14</td><td>1.27 | 2.63</td><td>1.06 | 2.48</td><td>1.08 | 2.10</td><td>1.13 | 2.45</td><td>1.18 | 2.86</td></tr>
+<tr><td>LibriSpeech-test clean | other</td><td>1.63 | 4.35</td><td>1.96 | 4.29</td><td>1.56 | 3.49</td><td>1.29 | 2.97</td><td>1.22 | 2.61</td><td>1.15 | 2.38</td><td>1.19 | 2.53</td><td>1.29 | 2.92</td></tr>
+<tr><td>VoxPopuli dev | test</td><td>7.86 | 7.70</td><td>8.78 | 8.52</td><td>7.58 | 7.42</td><td>9.38 | 9.24</td><td>8.86 | 8.37</td><td>6.86 | 6.75</td><td>6.18 | 6.08</td><td>6.26 | 6.22</td></tr>
+<tr><td>MLS-English</td><td>6.80</td><td>5.32</td><td>4.93</td><td>4.71</td><td>4.37</td><td>4.04</td><td>4.77</td><td>5.04</td></tr>
+<tr><td>Mandarin-English Code-switch</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>CS-Dialogue</td><td>5.37</td><td>6.15</td><td>5.44</td><td>4.63</td><td>9.46</td><td>8.51</td><td>4.70</td><td>4.91</td></tr>
+<tr><td>ASCEND</td><td>11.91</td><td>12.29</td><td>10.87</td><td>10.22</td><td>13.50</td><td>18.68</td><td>11.46</td><td>11.85</td></tr>
+<tr><td>Lyrics</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>M4Singer</td><td>5.25</td><td>18.45</td><td>5.72</td><td>N/A</td><td>9.68</td><td>8.40</td><td>6.39</td><td>6.94</td></tr></tbody></table></div></div>
+<div class="pblk" id="p-3-2-2-2">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-2-2-1"><span class="en">Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Mandarin AISHELL-1 dev | test</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-2-1"><span class="zh">1.
+Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream 模型规模 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B 普通话 AISHELL-1 dev | test</span></span></p>
+          
+        </div>
 <div class="eq" id="eq-3-2-2-1"><code>1.59 | 1.81 2.40 | 2.41 1.40 | 1.51 0.60 | 0.64 0.76 | 0.81 0.86 | 0.92 0.43 | 0.57 0.43 | 0.60</code></div>
 <div class="eq" id="eq-3-2-2-2"><code>AISHELL-2-ios dev | test</code></div>
 <div class="eq" id="eq-3-2-2-3"><code>2.62 | 2.73 3.21 | 3.45 2.41 | 2.60 2.07 | 2.08 2.24 | 2.29 2.11 | 2.31 2.28 | 2.43 2.33 | 2.49</code></div>
@@ -735,35 +759,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-3-2-2-7"><code>4.68 | 5.22 6.87 | 5.72 4.00 | 4.13 3.36 | 3.52 4.23 | 4.63 3.92 | 3.85 4.91 | 4.72 5.71 | 5.00</code></div>
 
 
-<div class="eq" id="eq-3-2-2-10"><code>Chinese Dialect WeNetSpeech-Chuan easy | hard</code></div>
-<div class="eq" id="eq-3-2-2-11"><code>13.21 | 23.76 20.95 | 33.61 11.18 | 20.35 10.36 | 20.07 13.99 | 25.35 14.13 | 25.16 10.51 | 20.58 11.22 | 20.37</code></div>
-<div class="eq" id="eq-3-2-2-12"><code>WeNetSpeech-Yue short | long</code></div>
-<div class="eq" id="eq-3-2-2-13"><code>7.31 | 10.02 16.78 | 13.97 5.79 | 8.00 5.05 | 10.45 7.78 | 8.44 6.97 | 8.60 5.12 | 8.58 5.39 | 9.62</code></div>
-<div class="eq" id="eq-3-2-2-14"><code>KeSpeech</code></div>
-<div class="eq" id="eq-3-2-2-15"><code>7.18 9.59 4.98 3.05 3.98 6.00 4.40 5.08</code></div>
-<div class="eq" id="eq-3-2-2-16"><code>English LibriSpeech-dev clean | other</code></div>
-<div class="eq" id="eq-3-2-2-17"><code>1.63 | 4.06 1.82 | 3.93 1.54 | 3.14 1.27 | 2.63 1.06 | 2.48 1.08 | 2.10 1.13 | 2.45 1.18 | 2.86</code></div>
-<div class="eq" id="eq-3-2-2-18"><code>LibriSpeech-test clean | other</code></div>
-<div class="eq" id="eq-3-2-2-19"><code>1.63 | 4.35 1.96 | 4.29 1.56 | 3.49 1.29 | 2.97 1.22 | 2.61 1.15 | 2.38 1.19 | 2.53 1.29 | 2.92</code></div>
-<div class="eq" id="eq-3-2-2-20"><code>VoxPopuli dev | test</code></div>
-<div class="eq" id="eq-3-2-2-21"><code>7.86 | 7.70 8.78 | 8.52 7.58 | 7.42 9.38 | 9.24 8.86 | 8.37 6.86 | 6.75 6.18 | 6.08 6.26 | 6.22</code></div>
-<div class="eq" id="eq-3-2-2-22"><code>MLS-English</code></div>
-<div class="eq" id="eq-3-2-2-23"><code>6.80 5.32 4.93 4.71 4.37 4.04 4.77 5.04</code></div>
-<div class="eq" id="eq-3-2-2-24"><code>Mandarin-English Code-switch CS-Dialogue</code></div>
-<div class="eq" id="eq-3-2-2-25"><code>5.37 6.15 5.44 4.63 9.46 8.51 4.70 4.91</code></div>
-<div class="eq" id="eq-3-2-2-26"><code>ASCEND</code></div>
-<div class="eq" id="eq-3-2-2-27"><code>11.91 12.29 10.87 10.22 13.50 18.68 11.46 11.85</code></div>
-<div class="eq" id="eq-3-2-2-28"><code>Lyrics M4Singer</code></div>
-<div class="eq" id="eq-3-2-2-29"><code>5.25 18.45 5.72</code></div>
-<div class="eq" id="eq-3-2-2-30"><code>N/A</code></div>
-<div class="eq" id="eq-3-2-2-31"><code>9.68 8.40 6.39 6.94</code></div>
-<div class="eq" id="eq-3-2-2-32"><code>NIM4-ASR offline vs. Baselines Win : Lose</code></div>
-<div class="eq" id="eq-3-2-2-33"><code>23:2 25:0 18:7 12:12 17:8 14:11 - -</code></div>
-<div class="cap" id="tab-3-2-2-3"><span class="cap-k">表</span><p class="en">Table 3: Comparison with recent advanced baselines on internal benchmarks. All baseline systems are evaluated in offline mode. NIM4-ASR demonstrates consistent performance advantages on most internal benchmarks, as the evaluated content largely consists of long-tail named entities that open-source models rarely encounter during training.</p><p class="zh">Table 3：与近期先进基线在内部基准上的对比。所有基线均在离线模式下评测。NIM4-ASR 在多数内部基准上展现出一致的性能优势，因为评测内容大量由开源模型在训练中几乎见不到的长尾命名实体构成。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>open-source models rarely encounter during training.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Fun-ASR</th><th>GLM-ASR</th><th>Qwen3-ASR</th><th>FireRedASR2S</th><th>Step-Audio2</th><th>Qwen3-Omni</th><th></th><th></th></tr><tr><th></th><th>Nano</th><th>Nano</th><th>1.7B</th><th>LLM</th><th>Mini</th><th>Instruct</th><th>Offline</th><th>Stream</th></tr><tr><th>Model Size</th><th>0.8B</th><th>1.5B</th><th>2.0B</th><th>8B+</th><th>8B+</th><th>30B-A3B</th><th>2.3B</th><th>2.3B</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>City A</td><td>7.07</td><td>14.68</td><td>9.14</td><td>8.54</td><td>9.41</td><td>9.67</td><td>3.86</td><td>3.85</td></tr>
-<tr><td>City B</td><td>8.50</td><td>15.75</td><td>10.59</td><td>10.43</td><td>11.67</td><td>11.73</td><td>4.86</td><td>4.94</td></tr>
-<tr><td>City C</td><td>7.60</td><td>17.55</td><td>10.01</td><td>10.17</td><td>11.35</td><td>12.18</td><td>3.77</td><td>3.81</td></tr>
-<tr><td>City D</td><td>7.42</td><td>17.91</td><td>9.77</td><td>9.51</td><td>11.55</td><td>10.86</td><td>4.10</td><td>4.17</td></tr>
-<tr><td>Media</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 
 
 
@@ -772,6 +767,52 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-3-2-2-3"><span class="cap-k">表</span><p class="en">Table 3: Comparison with recent advanced baselines on internal benchmarks. All baseline systems are evaluated in offline mode. NIM4-ASR demonstrates consistent performance advantages on most internal benchmarks, as the evaluated content largely consists of long-tail named entities that open-source models rarely encounter during training.</p><p class="zh">Table 3：与近期先进基线在内部基准上的对比。所有基线均在离线模式下评测。NIM4-ASR 在多数内部基准上展现出一致的性能优势，因为评测内容大量由开源模型在训练中几乎见不到的长尾命名实体构成。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>SpeechIO</td><td>2.78</td><td>3.17</td><td>2.55</td><td>2.20</td><td>3.41</td><td>2.33</td><td>2.61</td><td>2.84</td></tr>
+<tr><td>Chinese Dialect</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>WeNetSpeech-Chuan easy | hard</td><td>13.21 | 23.76</td><td>20.95 | 33.61</td><td>11.18 | 20.35</td><td>10.36 | 20.07</td><td>13.99 | 25.35</td><td>14.13 | 25.16</td><td>10.51 | 20.58</td><td>11.22 | 20.37</td></tr>
+<tr><td>WeNetSpeech-Yue short | long</td><td>7.31 | 10.02</td><td>16.78 | 13.97</td><td>5.79 | 8.00</td><td>5.05 | 10.45</td><td>7.78 | 8.44</td><td>6.97 | 8.60</td><td>5.12 | 8.58</td><td>5.39 | 9.62</td></tr>
+<tr><td>KeSpeech</td><td>7.18</td><td>9.59</td><td>4.98</td><td>3.05</td><td>3.98</td><td>6.00</td><td>4.40</td><td>5.08</td></tr>
+<tr><td>English</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>LibriSpeech-dev clean | other</td><td>1.63 | 4.06</td><td>1.82 | 3.93</td><td>1.54 | 3.14</td><td>1.27 | 2.63</td><td>1.06 | 2.48</td><td>1.08 | 2.10</td><td>1.13 | 2.45</td><td>1.18 | 2.86</td></tr>
+<tr><td>LibriSpeech-test clean | other</td><td>1.63 | 4.35</td><td>1.96 | 4.29</td><td>1.56 | 3.49</td><td>1.29 | 2.97</td><td>1.22 | 2.61</td><td>1.15 | 2.38</td><td>1.19 | 2.53</td><td>1.29 | 2.92</td></tr>
+<tr><td>VoxPopuli dev | test</td><td>7.86 | 7.70</td><td>8.78 | 8.52</td><td>7.58 | 7.42</td><td>9.38 | 9.24</td><td>8.86 | 8.37</td><td>6.86 | 6.75</td><td>6.18 | 6.08</td><td>6.26 | 6.22</td></tr>
+<tr><td>MLS-English</td><td>6.80</td><td>5.32</td><td>4.93</td><td>4.71</td><td>4.37</td><td>4.04</td><td>4.77</td><td>5.04</td></tr>
+<tr><td>Mandarin-English Code-switch</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>CS-Dialogue</td><td>5.37</td><td>6.15</td><td>5.44</td><td>4.63</td><td>9.46</td><td>8.51</td><td>4.70</td><td>4.91</td></tr>
+<tr><td>ASCEND</td><td>11.91</td><td>12.29</td><td>10.87</td><td>10.22</td><td>13.50</td><td>18.68</td><td>11.46</td><td>11.85</td></tr>
+<tr><td>Lyrics</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>M4Singer</td><td>5.25</td><td>18.45</td><td>5.72</td><td>N/A</td><td>9.68</td><td>8.40</td><td>6.39</td><td>6.94</td></tr>
+<tr><td>NIM4-ASR offline vs. Baselines</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Win : Lose</td><td>23:2</td><td>25:0</td><td>18:7</td><td>12:12</td><td>17:8</td><td>14:11</td><td>-</td><td>-</td></tr></tbody></table></div></div>
+<div class="pblk" id="p-3-2-2-3">
+          <p class="en-lines"><span class="sent" data-sid="s-3-2-2-3-1"><span class="en">Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream Model Size 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B Point of Interest (POI) City A</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-3-2-2-3-1"><span class="zh">1.
+Fun-ASR GLM-ASR Qwen3-ASR FireRedASR2S Step-Audio2 Qwen3-Omni NIM4-ASR Nano Nano 1.7B LLM Mini Instruct Offline Stream 模型规模 0.8B 1.5B 2.0B 8B+ 8B+ 30B-A3B 2.3B 2.3B 兴趣点 (POI) City A</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-3-2-2-34"><code>7.07 14.68 9.14 8.54 9.41 9.67 3.86 3.85</code></div>
+<div class="eq" id="eq-3-2-2-35"><code>City B</code></div>
+<div class="eq" id="eq-3-2-2-36"><code>8.50 15.75 10.59 10.43 11.67 11.73 4.86 4.94</code></div>
+<div class="eq" id="eq-3-2-2-37"><code>City C</code></div>
+<div class="eq" id="eq-3-2-2-38"><code>7.60 17.55 10.01 10.17 11.35 12.18 3.77 3.81</code></div>
+<div class="eq" id="eq-3-2-2-39"><code>City D</code></div>
+<div class="eq" id="eq-3-2-2-40"><code>7.42 17.91 9.77 9.51 11.55 10.86 4.10 4.17</code></div>
 <div class="eq" id="eq-3-2-2-41"><code>Media Music</code></div>
 <div class="eq" id="eq-3-2-2-42"><code>12.60 24.25 12.67 12.13 14.94 15.89 5.75 5.78</code></div>
 <div class="eq" id="eq-3-2-2-43"><code>Video</code></div>
@@ -802,20 +843,18 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div></section>
 <section>
-      <h3 class="sech lv2" id="sec-3-2-3"><span class="secnum">3.2.3</span> <span class="t-zh">热词定制的有效性</span><span class="t-en">Effectiveness of Hotword Customization</span></h3><div class="cap" id="tab-3-2-3-1"><span class="cap-k">表</span><p class="en">Table 4: Effectiveness of phoneme-based hotword RAG on internal entity-intensive POI benchmarks. Recall here refers to the proportion of POI entities correctly recognized in the transcription output.</p><p class="zh">Table 4：基于音素的热词 RAG 在内部实体密集型 POI 基准上的有效性。Recall 指转写输出中被正确识别的 POI 实体所占比例。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Streaming</th><th>Streaming+RAG</th></tr><tr><th></th><th></th><th>CER / Recall</th><th>CER / Recall</th></tr><tr><th>City A POI</th><th></th><th>3.85 / 82.63</th><th>3.33 / 88.07</th></tr><tr><th>City B POI</th><th></th><th>4.94 / 77.48</th><th>4.31 / 83.60</th></tr><tr><th></th><th>Beyond its strong fundamental recognition capability, NIM4-ASR also provides</th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>recognition accuracy for acoustically similar entity names, domain-specific</td><td></td><td></td></tr>
-<tr><td></td><td>emerging expressions. To evaluate the effectiveness of the proposed hotword</td><td></td><td></td></tr>
-<tr><td></td><td>focus on entity-intensive POI recognition scenarios, selecting benchmarks from</td><td></td><td></td></tr>
-<tr><td></td><td>constructing city-specific retrieval databases, each comprising millions of</td><td></td><td></td></tr>
-<tr><td></td><td>pairs. As shown in Table 4, incorporating hotword context consistently</td><td></td><td></td></tr>
-<tr><td></td><td>mance, demonstrating the effectiveness of our phoneme-based RAG retrieval</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
+      <h3 class="sech lv2" id="sec-3-2-3"><span class="secnum">3.2.3</span> <span class="t-zh">热词定制的有效性</span><span class="t-en">Effectiveness of Hotword Customization</span></h3><div class="cap" id="tab-3-2-3-1"><span class="cap-k">表</span><p class="en">Table 4: Effectiveness of phoneme-based hotword RAG on internal entity-intensive POI benchmarks. Recall here refers to the proportion of POI entities correctly recognized in the transcription output.</p><p class="zh">Table 4：基于音素的热词 RAG 在内部实体密集型 POI 基准上的有效性。Recall 指转写输出中被正确识别的 POI 实体所占比例。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Streaming</th><th>Streaming+RAG</th></tr><tr><th></th><th></th><th>CER / Recall</th><th>CER / Recall</th></tr><tr><th></th><th>City A POI</th><th>3.85 / 82.63</th><th>3.33 / 88.07</th></tr></thead><tbody><tr><td></td><td>City B POI</td><td>4.94 / 77.48</td><td>4.31 / 83.60</td></tr>
+<tr><td>practical benefit in entity-intensive recognition scenarios.</td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-streaming"><span class="t-zh">Streaming</span><span class="t-en">Streaming</span></h3>
 
 
 
-
+<div class="pblk" id="p-streaming-2">
+          <p class="en-lines"><span class="sent" data-sid="s-streaming-2-1"><span class="en">Beyond its strong fundamental recognition capability, NIM4-ASR also provides an effective hotword customization mechanism.</span></span> <span class="sent" data-sid="s-streaming-2-2"><span class="en">Through contextual hotword conditioning, NIM4-ASR can improve recognition accuracy for acoustically similar entity names, domain-specific terminology, and newly emerging expressions.</span></span> <span class="sent" data-sid="s-streaming-2-3"><span class="en">To evaluate the effectiveness of the proposed hotword RAG mechanism, we focus on entity-intensive POI recognition scenarios, selecting benchmarks from two major cities and constructing city-specific retrieval databases, each comprising millions of location name–phoneme pairs.</span></span> <span class="sent" data-sid="s-streaming-2-4"><span class="en">As shown in Table 4, incorporating hotword context consistently improves streaming performance, demonstrating the effectiveness of our phoneme-based RAG retrieval mechanism and its practical benefit in entity-intensive recognition scenarios.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-streaming-2-1"><span class="zh">（表：Streaming+RAG 的 CER / Recall——City A POI：3.85/82.63 → 3.33/88.07；City B POI：4.94/77.48 → 4.31/83.60。）除强大的基础识别能力外，NIM4-ASR 还提供有效的热词定制机制。</span></span><span class="sent" data-sid="s-streaming-2-2"><span class="zh">通过上下文热词条件化，NIM4-ASR 能提升对「声学相近的实体名、领域术语、新兴表达」的识别准确率。</span></span><span class="sent" data-sid="s-streaming-2-3"><span class="zh">为评估所提热词 RAG 机制的有效性，我们选择实体密集的 POI 识别场景：从两个主要城市抽取基准，并为每个城市构建各自的城市级检索库——每个库包含数百万条「地名–音素」对。</span></span><span class="sent" data-sid="s-streaming-2-4"><span class="zh">如 Table 4 所示，引入热词上下文能稳定提升流式性能，验证了基于音素的 RAG 检索机制的有效性，及其在实体密集识别场景中的实际价值。</span></span></p>
+          
+        </div>
 <div class="pblk" id="p-streaming-3">
           <p class="en-lines"><span class="sent" data-sid="s-streaming-3-1"><span class="en">It is worth noting that, unlike previous work, we adopt exact matching rather than edit distance for retrieval.</span></span> <span class="sent" data-sid="s-streaming-3-2"><span class="en">We argue that for the RAG module in LLM-based ASR systems, retrieval precision is more critical than recall, as the model’s strong inherent recognition capability already serves as a reliable fallback when no hotword is retrieved.</span></span> <span class="sent" data-sid="s-streaming-3-3"><span class="en">Moreover, pairing exact matching with the Aho-Corasick algorithm allows the hotword database to scale to millions of entries without additional retrieval overhead, avoiding the latency and precision degradation that typically follows vocabulary expansion.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-streaming-3-1"><span class="zh">值得注意的是，与先前工作不同，我们在检索时采用完全匹配而非编辑距离。</span></span><span class="sent" data-sid="s-streaming-3-2"><span class="zh">我们认为，对 LLM 语音模型中的 RAG 模块而言，检索精度比召回更关键——因为在没有热词命中时，模型本身的强识别能力足以作为可靠的兜底。</span></span><span class="sent" data-sid="s-streaming-3-3"><span class="zh">此外，将完全匹配与 Aho-Corasick 算法结合，可以让热词库扩展到百万级而不引入额外检索开销，避免词表扩张通常带来的延迟上升与精度下降。</span></span></p>

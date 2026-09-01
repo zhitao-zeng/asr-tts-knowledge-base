@@ -3,21 +3,19 @@
   "page": 5,
   "headers": [
    [
-    "its",
-    "par",
-    "cascaded",
-    "",
-    "the"
-   ],
-   [
     "",
     "",
     "",
-    "SeamlessM4T-Large outperforms strong 3-stage cascaded models (ASR, T2TT and TTS)",
-    ""
-   ],
-   [
+    "by 2.6 ASR-BLEU points on Fleurs.",
     "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "On CVSS, SeamlessM4T-Large outperforms a",
     "",
     "",
     "",
@@ -25,63 +23,38 @@
    ],
    [
     "",
+    "24 languages.",
     "",
     "",
-    "2-stage cascaded model (Whisper-Large-v2 + YourTTS [Casanova et al., 2022]) by a",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
-   ],
-   [
-    "",
-    "large margin of 8.5 ASR-BLEU points (a 50% improvement).",
-    "",
-    "",
-    "Preliminary human evalua-"
    ]
   ],
   "rows": [
    [
     "",
-    "tions of S2TT outputs evinced similarly impressive results.",
-    "",
-    "",
-    "For translations from English,"
-   ],
-   [
     "",
     "",
     "",
-    "XSTS scores for 24 evaluated languages are consistently above 4 (out of 5); for into English",
-    ""
-   ],
-   [
+    "",
+    "average improvement of 38% and 49%, respectively.",
     "",
     "",
     "",
-    "directions, we see significant improvement over Whisper-Large-v2’s baseline for 7 out of",
-    ""
-   ],
-   [
-    "24 languages.",
     "",
     "",
     "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "In addition, SeamlessM4T-Large further outperforms Whisper-Large-v2 [Radford",
-    ""
-   ],
-   [
-    "al.,",
-    "",
-    "average",
-    "",
-    "reduction"
-   ],
-   [
     "",
     "",
     "",
@@ -92,77 +65,19 @@
     "",
     "",
     "",
-    "model matches the performance of NLLB-3.3B [NLLB Team et al., 2022] when translating",
-    ""
-   ],
-   [
-    "",
-    "",
-    "into English and improves by 1 chrF++ point on average when translating from English.",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",
-    "further evaluate SeamlessM4T’s performance in S2TT and S2ST, we developed Blaser",
-    ""
-   ],
-   [
-    "a",
-    "modality-agnostic",
-    "",
-    "evaluation",
-    "speech"
-   ],
-   [
-    "",
-    "",
-    "",
-    "Blaser 2.0 enables evaluation across speech and text modalities with similar accuracy to its",
-    ""
-   ],
-   [
-    "",
-    "",
-    "predecessor —BLASER [Chen et al., 2023a]—when it comes to quality estimation.",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "evaluated model robustness against background noises and speaker variations by creating",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "robust than Whisper-Large-v2 against background noises and speaker variations with an",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",
     "5",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ]
   ]
@@ -501,17 +416,26 @@
    [
     "2.2",
     "",
+    "Speech",
+    "",
     "Translation",
+    "",
     "Today",
     "",
     "",
     "",
     "",
     "",
+    "",
+    "",
+    "",
+    "",
     ""
    ],
    [
+    "",
     "Cascaded",
+    "",
     "systems",
     "",
     "",
@@ -520,15 +444,8 @@
     "",
     "",
     "",
-    ""
-   ],
-   [
     "",
-    "",
-    "",
-    "",
-    "",
-    "years, much attention in speech-based research has been directed at cascaded approaches",
+    "Before the emergence of unified speech translation models in recent",
     "",
     "",
     "",
@@ -540,85 +457,8 @@
     "",
     "",
     "",
-    "by chaining subsystems that perform disparate tasks such as ASR, T2TT, and TTS [Lavie",
+    "et al., 2022; Zhang et al., 2023a; Pratap et al., 2023].",
     "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "For example, in a 3-stage S2ST cascaded",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "scenario, speech input is first transcribed into text through an ASR system, followed by T2TT,",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "and finally synthesized into speech using TTS (see Table 3).",
-    "",
-    "",
-    "",
-    "",
-    "The main benefit of cascaded",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "systems is that they can take advantage of advancements made in areas associated with each",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "subsystem, such as recently released large-scale multilingual T2TT models [NLLB Team et al.,",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "2022; Siddhant et al., 2022; Fan et al., 2020] and weakly-supervised ASR models [Radford",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",
@@ -631,150 +471,8 @@
     ""
    ],
    [
-    "That",
     "",
-    "cascaded",
-    "systems",
-    "have their",
     "",
-    "limitations.",
-    "the",
-    "output",
-    "2-stage"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "cascaded S2TT system involving ASR and T2TT does not match the quality achievable by",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "a single",
-    "large-scale",
-    "",
-    "model.",
-    "This",
-    "drop in",
-    "performance",
-    "",
-    "the",
-    "of"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "transferring and translating meaning across modalities and can be attributed to many factors,",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "including:",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "(1) poor transcriptions by ASR models for non-English languages, particularly for",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "low-resourced ones, (2) an increased likelihood of error propagation from the ASR model to",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "the T2TT model and other subsequent models in the cascade (the accumulation of errors",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "exacerbates",
-    "",
-    "performance),",
-    "and",
-    "(3) domain",
-    "",
-    "mismatches",
-    "these",
-    "separately",
-    "trained"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "subsystems (for example, if an ASR model trained on Wikipedia is used in conjunction with",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "a T2TT model optimized for conversational data, this formation may lead to a distribution",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "mismatch at the T2TT stage).",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "systems omits paralinguistic features and may not adequately handle elements such as proper",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "names and nouns [Rubenstein et al., 2023].",
@@ -784,111 +482,65 @@
     "",
     "",
     "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ],
    [
+    "",
     "Direct",
+    "S2TT",
     "",
     "models",
+    "",
     "Early",
+    "",
     "research",
     "into",
-    "end-to-end",
-    "translation",
     "",
+    "end-to-end",
+    "",
+    "speech",
+    "translation",
+    "started",
     "with"
    ],
    [
-    "producing",
-    "text as",
-    "",
-    "[Chan",
-    "et al.,",
-    "2016;",
-    "Berard",
-    "Bérard",
+    "2",
+    "[Wang",
     "et",
-    "2018]."
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Since the emergence of multilingual end-to-end S2TT models in 2019 [Gangi et al., 2019;",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Inaguma et al., 2019], S2TT has become an increasingly popular research area, and many",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "existing models today are powered by the emergence of open multilingual speech corpora",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "like MuST-C [Di Gangi et al., 2019], EuroParl-ST [Iranzo-Sánchez et al., 2020], CoVoST",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "2 [Wang",
     "al.,",
     "2021c]",
+    "and",
     "",
     "VoxPopuli",
-    "[Wang et",
-    "al.,",
-    "End-to-end",
     "",
+    "[Wang",
+    "et",
+    "al.,",
+    "2021b].",
+    "",
+    "End-to-end",
+    "models",
     "today"
    ],
    [
-    "have",
-    "significant",
     "",
-    "progress",
-    "and",
-    "achieved",
-    "parity",
-    "models",
-    "on",
-    "academic"
-   ],
-   [
+    "",
+    "",
+    "",
     "",
     "",
     "",
     "",
     "",
     "9",
+    "",
+    "",
+    "",
     "",
     "",
     "",
@@ -1090,14 +742,6 @@
     "",
     "Indo-European",
     "Indo-Aryan"
-   ],
-   [
-    "pan",
-    "Punjabi",
-    "",
-    "",
-    "Indo-European",
-    "Indo-Aryan"
    ]
   ]
  },
@@ -1106,87 +750,19 @@
   "headers": [
    [
     "",
+    "",
     "that do not support the full 100 scope.",
     "",
     "",
     "",
     "",
-    "",
-    "",
     ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "overall performance for the common set of languages, which is a",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "presence of a higher number of close languages.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "For example, Zulu"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "with Nyanja (nya), Igbo (ibo) with Yoruba (yor), and Modern",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "Moroccan Arabic (ary) and Egyptian Arabic (arz).",
-    "",
-    "",
-    "",
-    "",
-    "Our model"
    ]
   ],
   "rows": [
    [
-    "",
-    "",
-    "",
-    "",
-    "difference greater than 5%) on 17 languages with an average gain of",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "newly covered languages, while decreasing classification for 12 (with",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
     "3.1.2",
-    "",
-    "",
+    "Filtering",
     "",
     "",
     "",
@@ -1196,79 +772,12 @@
    ],
    [
     "",
-    "",
-    "",
-    "",
-    "While it is important to retrieve the maximum amount of data for",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "ensure",
-    "quality",
-    "in",
-    "LID",
-    "labeling.",
-    "Depending",
-    "",
-    "on",
-    "the"
-   ],
-   [
-    "particular",
-    "language,",
-    "it",
-    "may",
-    "be useful",
-    "filter",
-    "it",
-    "to",
-    "retain"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "estimated the Gaussian distribution of the LID scores per language",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "classifications on the development corpus.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "We selected a threshold"
-   ],
-   [
-    "",
-    "p(correct|score) > p(incorrect|score).",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "By rejecting 8% of the data,",
-    ""
-   ],
-   [
     "",
     "increase the F1 measure by almost 3%.",
     "",
     "",
     "",
     "",
-    "",
-    "",
     ""
    ],
    [
@@ -1276,14 +785,12 @@
     "",
     "",
     "",
-    "",
     "↑F1 micro",
     "",
-    "",
-    "↑Coverage"
+    "↑Coverage",
+    ""
    ],
    [
-    "",
     "",
     "",
     "",
@@ -1291,10 +798,9 @@
     "",
     "86.0%",
     "",
-    ""
+    "100%"
    ],
    [
-    "",
     "",
     "",
     "",
@@ -1302,7 +808,7 @@
     "",
     "89.5%",
     "",
-    ""
+    "92.1%"
    ]
   ]
  },
@@ -1310,6 +816,19 @@
   "page": 18,
   "headers": [
    [
+    "",
+    "without filtering.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     "",
     "",
     "",
@@ -1325,40 +844,68 @@
    [
     "3.2",
     "",
+    "Gathering",
+    "",
+    "",
+    "raw",
     "audio",
+    "",
+    "and",
+    "",
+    "text",
+    "",
     "data",
     "at",
     "scale",
+    "",
+    "",
+    "",
+    "",
     "",
     "",
     ""
    ],
    [
     "Text",
+    "",
+    "",
     "pre-processing",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     "",
     "",
     "",
     "",
     "On the text side, we rely entirely on the same dataset deployed in",
     "",
+    "",
+    "",
+    "",
     ""
    ],
    [
     "",
-    "NLLB [NLLB Team et al., 2022].",
     "",
     "",
     "",
-    "",
-    "",
-    "The same data sources, cleaning, and filtering steps are",
-    ""
-   ],
-   [
     "",
     "",
     "used and run at scale with our Stopes library.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     "",
     "",
     "",
@@ -1368,65 +915,47 @@
    ],
    [
     "Audio",
+    "",
+    "",
+    "",
     "pre-processing",
     "",
+    "",
+    "We",
+    "",
+    "start",
+    "",
+    "with",
     "4",
     "million",
     "",
+    "hours",
     "of",
     "raw",
-    "audio"
-   ],
-   [
-    "",
-    "",
-    "publicly available repository of crawled web data.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Table 10 provides statistics on the amount"
-   ],
-   [
-    "",
-    "of raw audio for each language.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Approximately 1 million hours in this collection are in English.",
-    ""
+    "audio",
+    "originating",
+    "from",
+    "a"
    ],
    [
     "",
     "",
     "",
     "",
-    "We then applied a series of pre-processing steps to curate and improve the overall speech",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "quality.",
     "",
     "",
     "",
     "",
-    "Firstly, we deduplicated the audio file URLs found in the repository, downloaded",
     "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",
     "",
     "18",
+    "",
+    "",
+    "",
+    "",
     "",
     "",
     "",
@@ -1439,99 +968,63 @@
   "headers": [
    [
     "",
-    "",
-    "",
     ""
    ],
    [
     "",
-    "",
-    "",
     ""
    ],
    [
-    "(35.2→32.7)",
-    "",
-    "respectively",
-    "This"
-   ],
-   [
-    "",
-    "",
     "Multilingual Text ✏️",
     ""
    ],
    [
     "",
-    "",
-    "",
     "Initialized with"
+   ],
+   [
+    "Text Decoder",
+    "NLLB 1B"
    ]
   ],
   "rows": [
    [
     "",
-    "",
-    "Text Decoder",
-    "NLLB 1B"
-   ],
-   [
-    "",
-    "",
-    "",
     "decoder"
    ],
    [
-    "",
-    "",
     "SONAR",
     ""
    ],
    [
     "",
-    "",
-    "",
     ""
    ],
    [
     "",
-    "text sentence embedding",
-    "",
     ""
    ],
    [
-    "",
-    "",
     "",
     "Initialized with"
    ],
    [
-    "Speech Encoder",
-    "",
     "",
     "NLLB 1B"
    ],
    [
     "",
-    "",
-    "",
     "encoder"
    ],
    [
-    "Multilingual Speech 🎤",
-    "",
     "Multilingual Text ✏️",
     ""
    ],
    [
     "",
-    "",
-    "",
     ""
    ],
    [
-    "",
-    "20",
     "",
     ""
    ]
@@ -1543,82 +1036,51 @@
   "rows": [
    [
     "3.3.2",
+    "",
     "Training",
+    "",
     "speech",
+    "",
     "",
     "encoders",
     "",
     "",
     "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ],
    [
     "",
+    "Architecture",
     "",
+    "and",
     "",
     "training",
     "",
+    "",
     "setup",
-    "As a",
+    "",
+    "As",
+    "a",
     "second",
-    "and"
+    "step",
+    "and",
+    "following",
+    "[Duquenne",
+    "et",
+    "al.,"
    ],
    [
     "",
+    "translations).",
     "",
     "",
-    "",
-    "",
-    "",
-    "2021], the new Sonar text embedding space is extended to the speech modality through",
-    "",
-    ""
-   ],
-   [
-    "",
-    "teacher-student training.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "In that work, a fixed-size speech representation was obtained by"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "taking the BOS output of a pretrained XLS-R model [Babu et al., 2022].",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "then fine-tuned to maximize the cosine loss between this pooled speech representation and",
-    "",
-    ""
-   ],
-   [
-    "sentence",
-    "",
-    "in",
-    "the",
-    "same",
-    "languages",
-    "",
-    "(ASR",
-    "transcriptions)"
-   ],
-   [
     "",
     "",
     "",
@@ -1627,22 +1089,6 @@
     "",
     "We improved this initial recipe by doing the following:",
     "",
-    ""
-   ],
-   [
-    "•",
-    "",
-    "",
-    "MSE loss instead of a cosine loss was used.",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
     "",
     "",
     "",
@@ -1652,17 +1098,30 @@
     ""
    ],
    [
-    "•",
-    "w2v-BERT",
+    "",
+    "",
+    "",
+    "decoder on speech input,",
     "",
     "",
     "",
     "",
-    "2.0 speech front-end instead of XLS-R. w2v-BERT",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     "",
     ""
    ],
    [
+    "",
+    "",
+    "",
     "",
     "",
     "",
@@ -1671,47 +1130,31 @@
     "",
     "",
     "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ],
    [
-    "•",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Instead of the usual pooling methods (i.e., mean or max-pooling),"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "we implemented a 3-layer sequence-to-sequence model to convert the variable length",
-    ""
-   ],
-   [
     "",
     "sequence of",
+    "",
+    "",
     "w2v-BERT",
+    "",
+    "",
     "",
     "",
     "",
     "2.0 to a fixed size vector,",
     "",
-    ""
-   ],
-   [
-    "•",
     "",
     "",
-    "",
-    "Training on human-performed ASR transcriptions only.",
     "",
     "",
     "",
@@ -1719,16 +1162,7 @@
    ],
    [
     "",
-    "ASR",
-    "transcriptions",
     "",
-    "for",
-    "most of",
-    "the",
-    "languages",
-    "(see"
-   ],
-   [
     "",
     "",
     "",
@@ -1737,20 +1171,6 @@
     "",
     "",
     "",
-    ""
-   ],
-   [
-    "•",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Following [Heffernan et al., 2022; NLLB Team et al., 2022], we grouped languages by",
-    ""
-   ],
-   [
     "",
     "",
     "",
@@ -1758,7 +1178,7 @@
     "",
     "",
     "",
-    "linguistic families (i.e., Germanic or Indian languages) and trained them together in",
+    "",
     ""
    ],
    [
@@ -1766,13 +1186,6 @@
     "",
     "",
     "",
-    "",
-    "",
-    "",
-    "",
-    "Alternative language groupings, which might consider the acoustic"
-   ],
-   [
     "",
     "",
     "",
@@ -1781,6 +1194,12 @@
     "characteristics of each language, are left open for future research.",
     "",
     "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ],
    [
@@ -1790,9 +1209,405 @@
     "",
     "",
     "",
+    "",
+    "",
+    "",
+    "",
+    "",
     "21",
     "",
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
+   ]
+  ]
+ },
+ "tab-total-avr-1": {
+  "page": 22,
+  "headers": [],
+  "rows": [
+   [
+    "arb",
+    "106755",
+    "822",
+    "28.7",
+    "25.5",
+    "1568",
+    "8072",
+    "776"
+   ],
+   [
+    "ben",
+    "7012",
+    "335",
+    "18.9",
+    "13.2",
+    "606",
+    "1345",
+    "263"
+   ],
+   [
+    "cat",
+    "43531",
+    "1738",
+    "35.1",
+    "34.2",
+    "1570",
+    "4411",
+    "354"
+   ],
+   [
+    "ces",
+    "41318",
+    "181",
+    "29.2",
+    "27.8",
+    "1454",
+    "6905",
+    "602"
+   ],
+   [
+    "cmn",
+    "79772",
+    "9320",
+    "16.2",
+    "18.4",
+    "5440",
+    "18760",
+    "1570"
+   ],
+   [
+    "cym",
+    "24161",
+    "99",
+    "14.5",
+    "13.0",
+    "–",
+    "4411",
+    "278"
+   ],
+   [
+    "dan",
+    "34300",
+    "115",
+    "31.9",
+    "32.7",
+    "2499",
+    "6041",
+    "583"
+   ],
+   [
+    "deu",
+    "490604",
+    "3329",
+    "32.7",
+    "34.6",
+    "91715",
+    "17634",
+    "1921"
+   ],
+   [
+    "est",
+    "12691",
+    "131",
+    "23.8",
+    "18.7",
+    "1022",
+    "3346",
+    "607"
+   ],
+   [
+    "fin",
+    "32858",
+    "184",
+    "22.2",
+    "22.1",
+    "651",
+    "6086",
+    "526"
+   ],
+   [
+    "fra",
+    "282179",
+    "2057",
+    "31.2",
+    "32.2",
+    "21523",
+    "17380",
+    "3337"
+   ],
+   [
+    "hin",
+    "15118",
+    "150",
+    "19.2",
+    "22.0",
+    "1041",
+    "2977",
+    "530"
+   ],
+   [
+    "ind",
+    "11559",
+    "269",
+    "26.5",
+    "29.1",
+    "1938",
+    "2658",
+    "510"
+   ],
+   [
+    "ita",
+    "79480",
+    "588",
+    "25.3",
+    "23.6",
+    "4378",
+    "6508",
+    "817"
+   ],
+   [
+    "jpn",
+    "75863",
+    "17319",
+    "17.4",
+    "18.9",
+    "1973",
+    "21287",
+    "1141"
+   ],
+   [
+    "kan",
+    "1451",
+    "114",
+    "20.0",
+    "11.6",
+    "–",
+    "232",
+    "198"
+   ],
+   [
+    "kor",
+    "37854",
+    "316",
+    "15.0",
+    "21.3",
+    "–",
+    "8657",
+    "640"
+   ],
+   [
+    "mlt",
+    "2122",
+    "106",
+    "23.2",
+    "13.5",
+    "131",
+    "130",
+    "60"
+   ],
+   [
+    "nld",
+    "93933",
+    "1723",
+    "25.5",
+    "24.0",
+    "3720",
+    "6859",
+    "1210"
+   ],
+   [
+    "pes",
+    "43788",
+    "386",
+    "22.2",
+    "19.6",
+    "–",
+    "7122",
+    "693"
+   ],
+   [
+    "pol",
+    "53662",
+    "304",
+    "21.1",
+    "22.3",
+    "1324",
+    "9389",
+    "757"
+   ],
+   [
+    "por",
+    "141931",
+    "269",
+    "35.4",
+    "38.1",
+    "4853",
+    "8696",
+    "928"
+   ],
+   [
+    "ron",
+    "18719",
+    "135",
+    "32.1",
+    "31.5",
+    "2770",
+    "2878",
+    "716"
+   ],
+   [
+    "rus",
+    "103906",
+    "259",
+    "25.4",
+    "27.8",
+    "11296",
+    "13509",
+    "1252"
+   ],
+   [
+    "slk",
+    "16954",
+    "102",
+    "29.5",
+    "26.1",
+    "1267",
+    "3785",
+    "491"
+   ],
+   [
+    "spa",
+    "324086",
+    "1511",
+    "24.3",
+    "23.3",
+    "27778",
+    "17388",
+    "2727"
+   ],
+   [
+    "swe",
+    "125195",
+    "144",
+    "33.4",
+    "37.02",
+    "3438",
+    "2620",
+    "484"
+   ],
+   [
+    "swh",
+    "18393",
+    "361",
+    "22.6",
+    "7.2",
+    "690",
+    "2620",
+    "484"
+   ],
+   [
+    "tam",
+    "100331",
+    "245",
+    "14.3",
+    "9.2",
+    "–",
+    "1664",
+    "867"
+   ],
+   [
+    "tel",
+    "3303",
+    "84",
+    "15.8",
+    "12.5",
+    "–",
+    "985",
+    "536"
+   ],
+   [
+    "tgl",
+    "4497",
+    "108",
+    "13.3",
+    "24.4",
+    "–",
+    "633",
+    "266"
+   ],
+   [
+    "tha",
+    "13421",
+    "195",
+    "15.3",
+    "16.1",
+    "2577",
+    "3563",
+    "542"
+   ],
+   [
+    "tur",
+    "23275",
+    "174",
+    "21.0",
+    "26.6",
+    "1417",
+    "6545",
+    "426"
+   ],
+   [
+    "ukr",
+    "6396",
+    "105",
+    "27.9",
+    "29.4",
+    "1220",
+    "1717",
+    "392"
+   ],
+   [
+    "urd",
+    "16882",
+    "185",
+    "17.6",
+    "17.2",
+    "773",
+    "3416",
+    "652"
+   ],
+   [
+    "uzn",
+    "8105",
+    "115",
+    "17.9",
+    "6.0",
+    "475",
+    "1846",
+    "157"
+   ],
+   [
+    "vie",
+    "34336",
+    "194",
+    "17.8",
+    "20.4",
+    "1689",
+    "7692",
+    "868"
+   ],
+   [
+    "",
+    "2529741",
+    "43772",
+    "23.3",
+    "22.5",
+    "202796",
+    "239767",
+    "29161"
    ]
   ]
  },
@@ -1901,41 +1716,6 @@
    ],
    [
     "",
-    "Overview of the SeamlessM4T X2T model.",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "models with a Conformer-based encoder [Gulati et al., 2020] for speech input",
-    "",
-    ""
-   ],
-   [
-    "",
     "",
     "",
     "",
@@ -1950,65 +1730,8 @@
     "multitask",
     "into",
     "target",
+    "",
     "text",
-    ""
-   ],
-   [
-    "",
-    "",
-    "In SeamlessM4T, we leveraged foundational models either pre-trained on unlabeled data",
-    "",
-    ""
-   ],
-   [
-    "encoder",
-    "",
-    "pre-training)",
-    "or",
-    "trained"
-   ],
-   [
-    "T2TT)",
-    "to improve",
-    "the",
-    "quality",
-    "of"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "To fuse these pre-trained components and enable meaning transfer"
-   ]
-  ],
-  "rows": [
-   [
-    "",
-    "",
-    "through multiple multimodal tasks, we trained an end-to-end model with (a) a speech encoder",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "2.0) postfixed with a length adapter, (b) text encoder (NLLB encoder), and",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "M-adaptor [Zhao et al., 2022], where we replaced the 3 independent pooling modules for Q,",
-    "",
     ""
    ],
    [
@@ -2016,18 +1739,13 @@
     "",
     "",
     "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "The model is fine-tuned to jointly optimize the following objective functions:",
     "",
     ""
    ],
    [
     "",
     "|y|",
+    "",
     "",
     "",
     ""
@@ -2037,18 +1755,23 @@
     "",
     "LS2TT = − X log p(ytext |ytext , xspeech),",
     "",
-    ""
+    "",
+    "(3)"
    ],
    [
+    "",
     "",
     "",
     "t",
     "<t",
     ""
-   ],
+   ]
+  ],
+  "rows": [
    [
     "",
     "t=1",
+    "",
     "",
     "",
     ""
@@ -2056,6 +1779,7 @@
    [
     "",
     "|y|",
+    "",
     "",
     "",
     ""
@@ -2065,9 +1789,11 @@
     "",
     "LT2TT = − X log p(ytext |ytext , xtext),",
     "",
-    ""
+    "",
+    "(4)"
    ],
    [
+    "",
     "",
     "",
     "t",
@@ -2079,38 +1805,12 @@
     "t=1",
     "",
     "",
-    ""
-   ],
-   [
-    "the",
-    "source",
-    "text and",
-    "speech",
-    "in"
-   ],
-   [
-    "is the target text in the target language <ℓt>.",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "objective function in the form of token-level knowledge distillation (LKD), to further transfer",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "knowledge from the strong MT model to the student speech translation task (S2TT).",
     "",
     ""
    ],
    [
     "|y|",
+    "",
     "",
     "",
     "",
@@ -2120,18 +1820,21 @@
     "LKD = X DKL",
     "",
     "",
+    "",
     "p(.|ytext , xtext) ∥p(.|ytext , xspeech)",
+    "(5)"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
     ""
    ],
    [
-    "",
-    "",
-    "<t",
-    "",
-    "<t"
-   ],
-   [
     "t=1",
+    "",
     "",
     "",
     "",
@@ -2146,6 +1849,14 @@
     "",
     "",
     "",
+    "gap while being parameter-efficient.",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
     "",
     "",
     ""
@@ -2154,38 +1865,14 @@
   "rows": [
    [
     "4.3.3",
+    "",
     "Stage3",
+    "",
     "Finetuning",
+    "",
     "for",
+    "S2ST",
     "",
-    ""
-   ],
-   [
-    "In the",
-    "last",
-    "",
-    "",
-    "initialized the",
-    "(see"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "with (1) the pre-trained X2T model and (2) the pre-trained T2U model and fine-tuned on a",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "combination of X–eng and eng–X S2ST translation data totaling 121K hours (see breakdown",
-    ""
-   ],
-   [
-    "in figure 8).",
     "",
     "",
     "",
@@ -2194,13 +1881,13 @@
    ],
    [
     "",
-    "the T2U component.",
     "",
     "",
     "",
-    ""
-   ],
-   [
+    "",
+    "previous stages of fine-tuning remains unchanged.",
+    "",
+    "",
     "",
     "",
     "",
@@ -2212,43 +1899,11 @@
     "4.4",
     "The",
     "",
+    "SeamlessM4T",
+    "",
+    "",
     "Models",
     "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "With all the components laid out in the previous sections, we trained the SeamlessM4T-",
-    ""
-   ],
-   [
-    "",
-    "",
-    "Large model in the outlined three stages.",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "is fine-tuned on T2TT for 95 languages paired with English, on ASR for 96 languages, on",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "S2TT for 89 languages paired with English, and on S2ST for 95 directions into English and",
-    ""
-   ],
-   [
     "",
     "",
     "",
@@ -2258,30 +1913,14 @@
    ],
    [
     "",
-    "in tables 38 and 39.",
     "",
     "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",
     "zero-shot to reach the coverage described in table 2 of 100-eng.",
     "",
-    ""
-   ],
-   [
     "",
-    "",
-    "",
-    "",
-    "To provide a reasonably sized model, we followed the same recipe to train SeamlessM4T-",
-    ""
-   ],
-   [
-    "Medium.",
     "",
     "",
     "",
@@ -2289,32 +1928,16 @@
     ""
    ],
    [
-    "to be",
-    "an",
-    "test",
-    "to",
-    "fine-tune,",
-    ""
-   ],
-   [
+    "",
+    "",
+    "",
+    "",
+    "",
     "",
     "",
     "",
     "",
     "SeamlessM4T-Medium has the same coverage as SeamlessM4T-Large but builds on",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "smaller and more parameter-efficient components (see Figure 4).",
-    "",
-    "We pre-trained a smaller"
-   ],
-   [
-    "w2v-BERT",
-    "",
     "",
     "",
     "",
@@ -2325,39 +1948,47 @@
     "",
     "",
     "",
-    "[2022] (NLLB-600M-Distilled) to initialize the T2TT modules of the multitask UnitY.",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "See a comparison between SeamlessM4T-Large and SeamlessM4T-Medium in Table 13.",
-    ""
-   ],
-   [
     "",
     "",
     "",
     "",
     "w2v-BERT",
+    "",
+    "2.0∗",
+    "T2TT",
+    "T2U",
     "Total"
    ],
    [
     "",
     "",
+    "",
+    "",
     "SeamlessM4T-Large",
     "",
+    "",
+    "",
+    "",
     "669M",
+    "",
+    "1370M",
+    "287M",
     "2326M"
    ],
    [
     "",
     "",
+    "",
+    "",
     "SeamlessM4T-Medium",
     "",
+    "",
+    "",
+    "",
     "366M",
+    "",
+    "615M",
+    "170M",
     "1151M"
    ]
   ]
@@ -2477,25 +2108,13 @@
   "page": 38,
   "headers": [
    [
-    "that",
-    "both",
-    "MMS",
-    "and",
-    "",
-    "Whisper",
-    "",
-    "support.",
     "",
     "",
     "",
-    "SeamlessM4T-Large",
     "",
+    "type",
+    "size",
     "",
-    "",
-    "outperforms",
-    "",
-    "the",
-    "MMS",
     ""
    ],
    [
@@ -2505,17 +2124,25 @@
     "",
     "",
     "",
+    "(n=81)",
+    "(n=21)"
+   ],
+   [
     "",
-    "that leverage monolingual n-gram language models (5% WER better).",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "YourTTS [Casanova et al., 2022]",
     "",
     "",
     "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "2-stage",
     "",
     "",
     ""
@@ -2523,180 +2150,84 @@
   ],
   "rows": [
    [
-    "1",
-    "chrF++point.",
-    "",
-    "To",
-    "further",
-    "",
-    "understand",
     "",
     "",
-    "where",
-    "the",
-    "",
-    "improvements",
-    "",
-    "in",
-    "Fleurs",
-    "",
-    "S2TT",
-    "X–eng",
-    ""
-   ],
-   [
-    "",
-    "directions",
-    "are",
-    "coming",
-    "",
-    "from,",
-    "we",
-    "bucket",
     "",
     "",
-    "languages",
-    "by",
     "",
-    "resource-level",
-    "",
-    "(see",
-    "the",
-    "exact",
-    "list",
-    "of"
-   ],
-   [
-    "",
-    "languages",
-    "in",
-    "Table",
-    "38)",
-    "and",
-    "report",
-    "",
-    "average",
-    "",
-    "BLEU",
-    "",
-    "scores",
-    "per",
-    "",
-    "resource-level",
-    "",
-    "in",
-    "Table",
-    "17."
+    "1.6B",
+    "17.3",
+    "22.6"
    ],
    [
     "",
     "",
     "",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "The results show that SeamlessM4T-Large strongly improves the quality of translating",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "cascaded",
     "",
     "",
     ""
    ],
    [
     "",
+    "+Whisper-Medium (ASR)",
     "",
+    "+ NLLB-1.3B",
     "",
+    "2.1B",
+    "19.9",
+    ""
+   ],
+   [
     "",
+    "+Whisper-Medium (ASR)",
     "",
-    "",
-    "",
-    "",
-    "",
-    "from low-resourced languages with an improvement of +7.4 BLEU (i.e., 40% improvement",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "+ NLLB-3.3B",
+    "3-stage",
+    "4.1B",
+    "20.6",
     ""
    ],
    [
     "",
     "",
+    "+Whisper-Large-v2 (ASR)+ NLLB-1.3B",
     "",
-    "",
-    "",
-    "",
-    "over AudioPaLM-2-8B-AST). We also average in column low†",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "over low-resource directions",
-    "",
-    "",
+    "cascaded",
+    "2.9B",
+    "22.1",
     ""
    ],
    [
-    "that",
-    "are",
-    "supervised",
-    "",
-    "in",
     "",
     "",
-    "",
-    "AudioPaLM-2-8B-AST—the",
-    "",
+    "+Whisper-Large-v2 (ASR)+ NLLB-3.3B",
     "",
     "",
-    "gain",
-    "of +5",
-    "BLEU",
-    "in",
-    "that",
-    "",
-    "subset",
-    "of"
+    "4.9B",
+    "23.2",
+    ""
    ],
    [
+    "SeamlessM4T-Medium",
     "",
     "",
     "",
+    "unified",
+    "1.2B",
+    "20.4",
+    "28.1"
+   ],
+   [
+    "SeamlessM4T-Large",
     "",
     "",
     "",
-    "",
-    "",
-    "",
-    "38",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "unified",
+    "2.3B",
+    "25.8",
+    "36.5"
    ]
   ]
  },
@@ -2909,66 +2440,26 @@
  },
  "tab-model-11-1": {
   "page": 40,
-  "headers": [
-   [
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "ASR-BLEU scores on 87 X–eng directions (the overlap between Fleurs and the",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "encoders).",
-    "",
-    "report",
-    "average"
-   ],
-   [
-    "",
-    "on 32 eng–X directions (excluding Bengali, Telugu and Northern Uzbek where",
-    "",
-    "",
-    ""
-   ],
-   [
-    "Large-v2 ASR WER is above 100).",
-    "",
-    "",
-    "The X–eng average ASR-BLEU is higher",
-    ""
-   ]
-  ],
+  "headers": [],
   "rows": [
    [
-    "ASR-BLEU of S2ST X–eng (34.9 vs.",
+    "4.4.3",
+    "Zero-shot",
     "",
     "",
-    "24.6) where the eng–X average is similar to",
-    ""
-   ],
-   [
-    "21.5).",
+    "Text-to-Speech",
     "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "zero-shot T2ST is on-par with the supervised tasks and (2) that non-English",
+    "Translation",
     "",
     "",
     ""
    ],
    [
+    "",
+    "",
+    "",
+    "",
+    "is the most challenging input to translate with our model.",
     "",
     "",
     "",
@@ -2980,34 +2471,59 @@
     "",
     "",
     "",
+    "",
+    "",
+    "",
+    "Fleurs T2ST (↑ASR-BLEU)",
+    "",
     ""
    ],
    [
+    "",
+    "",
+    "",
+    "",
     "",
     "X–eng",
-    "eng–X",
     "",
+    "",
+    "eng–X",
     "eng–X"
    ],
    [
     "",
     "",
+    "Model",
+    "",
+    "",
+    "",
+    "",
     "",
     "",
     ""
    ],
    [
     "",
-    "(n=88)",
-    "(n=35)",
     "",
+    "",
+    "",
+    "",
+    "(n=88)",
+    "",
+    "",
+    "(n=35)",
     "(n=32)"
    ],
    [
     "",
-    "34.9",
-    "20.7",
     "",
+    "",
+    "SeamlessM4T-Large",
+    "",
+    "34.9",
+    "",
+    "",
+    "20.7",
     "22.5"
    ]
   ]
@@ -3045,56 +2561,6 @@
     "",
     ""
    ],
-   [
-    "Results",
-    "",
-    "",
-    "We summarize our ablation results in Table 21.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "prediction learning objectives with 2 RPQ codebooks helps improve performance (C vs.",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ]
-  ],
-  "rows": [
    [
     "Language",
     "",
@@ -3142,7 +2608,9 @@
     "",
     "",
     ""
-   ],
+   ]
+  ],
+  "rows": [
    [
     "",
     "Primary",
@@ -3334,6 +2802,277 @@
     "666",
     "954",
     "684"
+   ],
+   [
+    "Total",
+    "9,633",
+    "19,890",
+    "7,800",
+    "29,068",
+    "2,701",
+    "6,508",
+    "10,103",
+    "11,523",
+    "9,312"
+   ],
+   [
+    "13. see Table 4",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "42",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ]
+ },
+ "tab-results-2-1": {
+  "page": 42,
+  "headers": [
+   [
+    "(code)",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Primary Primary Mined Primary Mined Primary Mined Primary Mined",
+    "",
+    "",
+    "",
+    ""
+   ]
+  ],
+  "rows": [
+   [
+    "arb",
+    "934",
+    "942",
+    "600",
+    "1,959",
+    "600",
+    "899",
+    "736",
+    "895",
+    "681"
+   ],
+   [
+    "ben",
+    "338",
+    "320",
+    "600",
+    "1,987",
+    "499",
+    "292",
+    "246",
+    "652",
+    "221"
+   ],
+   [
+    "eng",
+    "3,845",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-"
+   ],
+   [
+    "hin",
+    "148",
+    "143",
+    "600",
+    "2,066",
+    "600",
+    "138",
+    "466",
+    "656",
+    "430"
+   ],
+   [
+    "ind",
+    "250",
+    "254",
+    "600",
+    "1,818",
+    "596",
+    "248",
+    "443",
+    "684",
+    "375"
+   ],
+   [
+    "ita",
+    "591",
+    "910",
+    "600",
+    "2,279",
+    "600",
+    "930",
+    "716",
+    "1,020",
+    "636"
+   ],
+   [
+    "jpn",
+    "381",
+    "15,141",
+    "600",
+    "1,798",
+    "259",
+    "624",
+    "993",
+    "681",
+    "779"
+   ],
+   [
+    "por",
+    "269",
+    "246",
+    "600",
+    "2,250",
+    "600",
+    "355",
+    "606",
+    "983",
+    "508"
+   ],
+   [
+    "rus",
+    "264",
+    "144",
+    "600",
+    "2,161",
+    "600",
+    "290",
+    "1,093",
+    "959",
+    "1,075"
+   ],
+   [
+    "spa",
+    "1,515",
+    "1,285",
+    "-",
+    "2,505",
+    "574",
+    "1,694",
+    "2,335",
+    "1,035",
+    "2,209"
+   ],
+   [
+    "swh",
+    "361",
+    "50",
+    "600",
+    "1,930",
+    "596",
+    "342",
+    "411",
+    "682",
+    "392"
+   ],
+   [
+    "tha",
+    "190",
+    "59",
+    "600",
+    "1,941",
+    "101",
+    "184",
+    "462",
+    "641",
+    "408"
+   ],
+   [
+    "tur",
+    "169",
+    "100",
+    "600",
+    "2,135",
+    "600",
+    "156",
+    "375",
+    "998",
+    "411"
+   ],
+   [
+    "urd",
+    "185",
+    "145",
+    "600",
+    "1,844",
+    "507",
+    "179",
+    "555",
+    "682",
+    "502"
+   ],
+   [
+    "vie",
+    "194",
+    "151",
+    "600",
+    "2,396",
+    "600",
+    "176",
+    "666",
+    "954",
+    "684"
+   ],
+   [
+    "Total",
+    "9,633",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
    ]
   ]
  },
@@ -3346,25 +3085,13 @@
     "",
     "",
     "",
-    ""
-   ],
-   [
-    "",
-    "SeamlessAlign is ranked based on Sonar scores and we selected the top",
-    "",
     "",
     "",
     ""
    ],
    [
+    "to the desired amount of additional data.",
     "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",
@@ -3375,59 +3102,53 @@
    [
     "",
     "",
+    "Table 24 reports the results of models trained with increasing",
     "",
     "",
     "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "X–eng",
+    "",
+    "",
+    "eng–X",
     ""
    ]
   ],
   "rows": [
    [
-    "This signals that some filtering of",
     "",
     "",
     "",
-    "SeamlessAlign —e.g.,",
+    "(n=14)",
+    "",
+    "",
+    "(n=14)",
     ""
    ],
    [
-    "",
-    "similarity scores—can improve the quality of the model’s translations",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
+    "Data",
     "setting",
-    "",
     "↑BLEU",
+    "",
     "∆",
     "↑BLEU",
+    "",
     "∆"
    ],
    [
@@ -3435,31 +3156,39 @@
     "",
     "23.9",
     "",
+    "",
     "29.0",
+    "",
     ""
    ],
    [
-    "+ 200H mined",
     "",
+    "+ 200H mined",
     "25.9",
+    "",
     "+2.0",
     "29.4",
+    "",
     "+0.4"
    ],
    [
-    "+ 400H mined",
     "",
+    "+ 400H mined",
     "26.6",
+    "",
     "+2.7",
     "29.8",
+    "",
     "+0.8"
    ],
    [
-    "+ 600H mined",
     "",
+    "+ 600H mined",
     "26.0",
+    "",
     "+2.1",
     "29.5",
+    "",
     "+0.5"
    ]
   ]
@@ -3471,7 +3200,9 @@
     "Data",
     "",
     "",
+    "D1:",
     "",
+    "S2TT data",
     "",
     "D2:",
     "D1+ASR data",
@@ -3484,7 +3215,9 @@
     "Task",
     "",
     "S2TT",
+    "",
     "ASR∗",
+    "",
     "T2TT",
     "S2TT",
     "ASR",
@@ -3497,7 +3230,9 @@
     "",
     "",
     "(n=28)",
+    "",
     "(n=15)",
+    "",
     "(n=28)",
     "(n=28)",
     "(n=15)",
@@ -3510,7 +3245,9 @@
     "Metric",
     "",
     "↑BLEU",
+    "",
     "↓WER",
+    "",
     "↑BLEU",
     "↑BLEU",
     "↓WER",
@@ -3525,7 +3262,9 @@
     "L1:",
     "LS2TT",
     "26.5",
+    "",
     "36.5",
+    "",
     "34.1",
     "26.7",
     "16.4",
@@ -3538,7 +3277,9 @@
     "L2:",
     "L1 + LT2TT",
     "26.6",
+    "",
     "36.4",
+    "",
     "36.8",
     "26.7",
     "16.8",
@@ -3551,7 +3292,9 @@
     "L3:",
     "L2 + LKD",
     "27.1",
+    "",
     "35.9",
+    "",
     "36.7",
     "27.2",
     "16.2",
@@ -3559,19 +3302,6 @@
     "28.3",
     "15.8",
     "35.3"
-   ],
-   [
-    "Table 23:",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Results are reported",
-    ""
    ],
    [
     "",
@@ -3582,30 +3312,6 @@
     "",
     "",
     "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "hours of mined data in each direction, 400 hours in the second and 600 hours in the last.",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "SeamlessAlign is ranked based on Sonar scores and we selected the top ranking pairs up",
     "",
     "",
     "",
@@ -3623,6 +3329,8 @@
     "",
     "",
     "",
+    "",
+    "",
     ""
    ]
   ]
@@ -3633,222 +3341,52 @@
   "rows": [
    [
     "4.6",
+    "",
     "Related",
     "work",
     "",
     "",
     "",
-    "",
-    "",
     ""
    ],
    [
+    "",
     "Two-pass",
     "",
     "sequence",
+    "generation",
     "",
     "",
-    "",
-    "Two-pass decoding has the advantage of maintaining",
-    "",
-    ""
-   ],
-   [
-    "end-to-end",
-    "",
-    "optimization",
-    "capability",
-    "inheriting",
-    "the",
-    "benefits",
-    "cascading",
-    "approach."
-   ],
-   [
-    "Xia et",
-    "al. [2017]",
-    "and",
-    "al.",
-    "incorporate",
-    "an",
-    "additional",
-    "process",
-    "find"
-   ],
-   [
-    "",
-    "better output.",
-    "",
-    "",
-    "",
-    "Dalmia et al. [2021] re-ranks the intermediate hypotheses using an external",
-    "",
-    "",
-    ""
-   ],
-   [
-    "module",
-    "such",
-    "as a",
-    "model.",
-    "et al.",
-    "[2019]",
-    "injects",
-    "information",
-    "in"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "provides an intermediate output to users before generating the final output for streaming",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "applications.",
-    "",
-    "",
-    "",
-    "",
-    "The two-pass approach makes the optimization tractable and results in better",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "Two-pass decoding has the advantage of maintaining"
    ],
    [
     "",
     "Codec-based",
+    "",
     "audio",
+    "modeling",
     "",
     "",
-    "",
-    "In contrast to acoustic units extracted from SSL-based",
-    "",
-    ""
+    "In contrast to acoustic units extracted from SSL-based"
    ],
    [
     "",
     "",
-    "",
-    "",
-    "audio representation models (e.g., XLS-R in this work), recent advances in quantized, audio",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "codec auto-encoders enabled successful research combining large, autoregressive language",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "models",
-    "and",
-    "audio",
-    "Open-source",
-    "EnCodec",
-    "[D’efossez",
-    "et",
-    "and",
-    "proprietary"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "SoundStream [Zeghidour et al., 2022] models are widely known examples of quantized audio",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "auto-encoders.",
-    "",
-    "",
-    "",
-    "One advantage of codec-based units is that they can be converted back to",
-    "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",
     "the waveform without needing an externally trained vocoder.",
     "",
-    "",
-    "",
-    "",
     ""
    ],
    [
     "",
     "",
-    "",
-    "",
-    "In speech translation research, VaLLE [Wang et al., 2023a] introduced the conditional",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "autoregressive modeling of EnCodec-based audio data to perform text-to-speech synthesis.",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",
     "",
     "45",
-    "",
-    "",
-    "",
     ""
    ]
   ]
@@ -3857,234 +3395,84 @@
   "page": 47,
   "headers": [
    [
-    "",
-    "the test subset.",
-    "",
+    "Data part",
     "",
     "",
+    "test size",
+    "train size",
+    "systems",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "langs",
+    "ρunsup.",
+    "ρsup.",
+    "ρQE"
    ]
   ],
   "rows": [
    [
-    "1.0",
-    "model:",
-    "a",
-    "3-layer",
-    "perceptron",
     "",
-    "with",
-    "tanh",
     "",
-    "activations",
-    "on",
-    "top",
-    "of 6",
+    "BLASER 1.0 S2ST data",
+    "9804",
+    "10690",
     "",
-    "concatenated",
+    "10",
+    "9",
+    "0.51",
+    "0.56",
+    "0.53"
+   ],
+   [
     "",
-    "vectors"
+    "Other S2ST data",
+    "",
+    "5453",
+    "15904",
+    "",
+    "8",
+    "13",
+    "0.47",
+    "0.48",
+    "0.38"
    ],
    [
     "",
     "",
+    "S2TT and T2ST data",
+    "5205",
+    "10246",
     "",
-    "",
-    "of normalized embeddings and their derivatives:",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "[href; hmt; hsrc ⊙hmt; |hsrc −hmt|; href ⊙",
-    "",
-    "",
-    ""
+    "7",
+    "8",
+    "0.49",
+    "0.54",
+    "0.51"
    ],
    [
-    "hmt; |href",
-    "",
-    "−hmt|].",
+    "T2TT data",
     "",
     "",
-    "For the QE version,",
+    "20311",
+    "86776",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "we used the same settings but with reference-free",
-    "",
-    "",
-    "",
-    ""
+    "2",
+    "59",
+    "0.49",
+    "0.61",
+    "0.60"
    ],
    [
-    "inputs:",
+    "All data",
     "",
     "",
+    "40773",
+    "123616",
     "",
-    "[hsrc; hmt; hsrc ⊙hmt; |hsrc −hmt|].",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "We used the training code for BLASER 1.0 with a few modifications in the hyperparam-",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "eters intended to mitigate overfitting:",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "50% dropout, 0.1 weight decay, batch size of 1024,",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "and full linear decay of the learning rate by the end of the training.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "To compensate for the",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "increased batch size, we trained for 50 instead of 20 epochs.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "Results",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Table 27 presents the performance of unsupervised and supervised BLASER on the",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "BLASER 1.0 test data.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "47",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "24",
+    "62",
+    "0.51",
+    "0.59",
+    "0.56"
    ]
   ]
  },
@@ -4092,28 +3480,30 @@
   "page": 48,
   "headers": [
    [
+    "",
+    "",
+    "",
     "on the BLASER 1.0 test data.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
     "",
     "",
     "",
     ""
    ],
    [
+    "",
+    "",
     "Because Blaser",
     "",
     "",
     "",
     "2.0 supports more languages, we used this for evaluations.",
+    ""
+   ],
+   [
     "",
     "",
     "",
+    "scores with human scores.",
     "",
     "",
     "",
@@ -4122,297 +3512,63 @@
   ],
   "rows": [
    [
-    "the future. Full Blaser",
-    "2.0",
-    "scores",
-    "for",
-    "SeamlessM4T",
-    "",
-    "",
-    "models are",
-    "",
-    "reported in",
-    "table",
-    "18."
-   ],
-   [
-    "Additionally, the next",
-    "section",
     "5.2",
-    "reports the",
     "",
-    "corresponding",
+    "Human",
     "",
-    "",
-    "correlations",
-    "of",
-    "Blaser",
-    "2.0"
-   ],
-   [
-    "scores with human scores.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "Evaluation",
     "",
     "",
     ""
    ],
    [
-    "5.2 Human Evaluation",
     "",
     "",
     "",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "Human evaluation is a",
-    "vital",
-    "tool in",
-    "assessing",
-    "the",
-    "quality",
-    "of",
-    "our",
-    "systems.",
-    "We",
-    "first",
-    "briefly"
-   ],
-   [
-    "describe related work in",
-    "the",
-    "area,",
-    "followed by",
-    "a",
-    "detailed",
-    "",
-    "description",
-    "of",
-    "the entire",
-    "human",
-    ""
-   ],
-   [
     "",
     "evaluation process, including protocols, data, and calibration.",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "Related work.",
-    "",
-    "",
-    "",
-    "",
-    "Human evaluation has been widely applied to machine translation in the",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "scientific community.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Two of the most popular models of human evaluation are deployed",
-    "",
-    "",
-    "",
-    "",
     ""
    ],
    [
     "",
-    "within the context of International Evaluation Campaigns.",
+    "Related",
+    "",
+    "work.",
     "",
     "",
     "",
-    "",
-    "",
-    "",
-    "",
-    "The WMT conference [Kocmi",
-    "",
-    ""
-   ],
-   [
-    "et al., 2022] asks participants",
-    "",
-    "to evaluate",
-    "the",
-    "outputs",
-    "",
-    "of",
-    "translation",
-    "",
-    "systems",
-    "using a",
-    "pre-"
-   ],
-   [
-    "defined protocol, typically",
-    "that",
-    "of",
-    "Direct",
-    "Assessment",
-    "",
-    "[Graham",
-    "et",
-    "al.,",
-    "2013].",
-    "Beyond",
-    "this"
+    "Human evaluation has been widely applied to machine translation in the"
    ],
    [
     "",
     "",
-    "",
-    "text-based evaluation, the IWSLT Evaluation Campaign covers speech translation.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "As an"
-   ],
-   [
-    "example, the speech-to-speech track14",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "evaluates speech output quality in four dimensions.",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "The first one is translation",
-    "",
-    "quality,",
-    "which",
-    "focuses",
-    "on",
-    "capturing",
-    "",
-    "meaning,",
-    "and",
-    "annotators",
-    ""
-   ],
-   [
-    "rank target audio between 1 and 5.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "The rest of the dimensions cover naturalness, including",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "voice and pronunciation, clarity of speech for comprehension, and sound quality, which takes",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "into account noise and other artifacts.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "These criteria are used as an alternative to the Mean",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
     "Opinion Score (MOS).",
     "",
     "",
     "",
     "",
+    ""
+   ],
+   [
+    "14.",
     "",
     "",
-    "",
+    "https://iwslt.org/2023/s2s",
     "",
     "",
     "",
     ""
    ],
    [
-    "14. https://iwslt.org/2023/s2s",
     "",
     "",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",
     "48",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
     ""
    ]
   ]
@@ -4421,6 +3577,7 @@
   "page": 51,
   "headers": [
    [
+    "",
     "",
     "shared in a later update.",
     "",
@@ -4432,9 +3589,12 @@
     "",
     "",
     "",
+    "",
     ""
    ],
    [
+    "",
+    "",
     "",
     "drawn from the same domain.",
     "",
@@ -4449,34 +3609,6 @@
     ""
    ],
    [
-    "the",
-    "time over",
-    "the",
-    "of",
-    "the",
-    "Fleurs",
-    "test",
-    "",
-    "partition,",
-    "varying",
-    "",
-    "between"
-   ],
-   [
-    "of",
-    "items.",
-    "We",
-    "to limit",
-    "",
-    "human",
-    "",
-    "evaluation",
-    "to 2",
-    "unique",
-    "per",
-    "Fleurs"
-   ],
-   [
     "",
     "sentence at most.",
     "",
@@ -4488,14 +3620,16 @@
     "",
     "",
     "",
+    "",
+    "",
     ""
-   ]
-  ],
-  "rows": [
+   ],
    [
     "Language",
     "",
+    "",
     "directions,",
+    "",
     "modalities,",
     "",
     "and",
@@ -4504,48 +3638,6 @@
     "evaluated",
     "",
     "We list the languages and",
-    ""
-   ],
-   [
-    "modalities",
-    "",
-    "evaluated",
-    "each",
-    "protocol",
-    "in",
-    "Table",
-    "28.",
-    "Language",
-    "",
-    "were",
-    "made"
-   ],
-   [
-    "",
-    "",
-    "",
-    "balancing a mix of resource availability for human annotations.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "The final language sample",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "captures a large human population while also representing a mix of high and mid-resource",
-    "",
-    "",
-    "",
-    "",
     ""
    ],
    [
@@ -4560,26 +3652,18 @@
     "",
     "",
     "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "For the S2TT and S2ST tasks, we have XSTS evaluations of 24 languages in the X–eng",
-    "",
-    "",
     "",
     "",
     ""
-   ],
+   ]
+  ],
+  "rows": [
    [
     "direction",
+    "",
     "for",
-    "both the",
+    "both",
+    "the",
     "",
     "SeamlessM4T-Large",
     "",
@@ -4591,104 +3675,8 @@
     "where"
    ],
    [
-    "generations",
-    "from",
-    "the",
-    "",
-    "SeamlessM4T-Large",
     "",
     "",
-    "model",
-    "were",
-    "made",
-    "slightly",
-    "earlier"
-   ],
-   [
-    "",
-    "version via fairseq (instead of",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Fairseq2) but S2TT performance has less than 0.5 BLEU",
-    "",
-    ""
-   ],
-   [
-    "",
-    "average difference.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "For eng–X, we have evaluations for the same languages but only for the",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "SeamlessM4T-Large model (with fairseq generations).",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "for a human reference system (i.e.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "the Fleurs data itself) for all languages in each direction.",
-    "",
-    ""
-   ],
-   [
-    "We",
-    "only",
-    "evaluated",
-    "",
-    "models",
-    "for",
-    "S2TT",
-    "and",
-    "plan to",
-    "extend",
-    "benchmarking",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "2-stage cascaded systems in future work for eng–X. For S2ST, we do not evaluate eng–X",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",
@@ -4709,117 +3697,71 @@
   "headers": [
    [
     "",
-    ""
-   ],
-   [
     "",
-    ""
-   ],
-   [
     "",
-    ""
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    ""
+    "System",
+    "Avg.",
+    "XSTS",
+    "(S2TT)",
+    "% 3+",
+    "% 4+"
    ]
   ],
   "rows": [
    [
-    "Evaluation",
-    ""
-   ],
-   [
-    "the",
-    ""
+    "eng–X",
+    "",
+    "Human reference",
+    "",
+    "",
+    "4.69",
+    "",
+    "95.98",
+    "78.66"
    ],
    [
     "",
-    ""
+    "SeamlessM4T-Large",
+    "",
+    "",
+    "",
+    "4.53",
+    "",
+    "87.69",
+    "73.28"
    ],
    [
     "",
-    "models and languages evaluated (for both X–eng and eng–X), which are also enumerated"
+    "",
+    "Human reference",
+    "",
+    "",
+    "4.67",
+    "",
+    "95.23",
+    "76.86"
    ],
    [
-    "in Table 30 and summarized in Table 29.",
-    ""
-   ],
-   [
-    "Large quality was above an XSTS score of 315",
-    ""
+    "X–eng",
+    "Whisper-Large-v2",
+    "",
+    "",
+    "",
+    "4.05",
+    "",
+    "70.11",
+    "58.00"
    ],
    [
     "",
-    ""
-   ],
-   [
+    "SeamlessM4T-Large",
     "",
-    ""
-   ],
-   [
     "",
-    "Notably, in the X–eng direction, we see that SeamlessM4T-Large improves translation"
-   ],
-   [
     "",
-    "quality considerably over the Whisper-Large-v2 baseline for Swahili (an XSTS improvement"
-   ],
-   [
+    "4.16",
     "",
-    "of 2.38), Bengali (an XSTS improvement of 1.19), Telugu (an XSTS improvement of 0.69,"
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    "24 languages evaluated X–eng with regressions in 10, but only 2 languages, Japanese and"
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    "15. The instructions surrounding an XSTS score of 3 are: “The two sentences are mostly equivalent, but some"
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "16. The instructions for an XSTS score of 4 are:",
-    ""
-   ],
-   [
-    "",
-    ""
-   ],
-   [
-    "",
-    "differences in meaning due to differences in expression (e.g., formality level, style, emphasis, potential"
-   ],
-   [
-    "implication, idioms, common metaphors).”",
-    ""
-   ],
-   [
-    "",
-    "52"
+    "72.51",
+    "59.86"
    ]
   ]
  },
@@ -5293,156 +4235,84 @@
   "page": 56,
   "headers": [
    [
-    "those presented in Table 29.",
-    "",
-    ""
-   ],
-   [
-    "results",
-    "for",
-    ""
-   ],
-   [
     "",
     "",
-    ""
-   ],
-   [
     "",
     "",
-    "direction, where a Whisper-Large-v2 +YourTTSbaseline has been evaluated, we see that"
-   ],
-   [
-    "",
-    "",
-    "exceptions of Bengali, Telugu, and Swahili (where SeamlessM4T-Large scores significantly"
+    "System",
+    "Avg.",
+    "XSTS",
+    "(S2ST)",
+    "%",
+    "3+",
+    "% 4+"
    ]
   ],
   "rows": [
    [
+    "eng–X",
     "",
     "",
-    ""
+    "Human reference",
+    "",
+    "",
+    "4.67",
+    "",
+    "",
+    "95.38",
+    "79.45"
    ],
    [
     "",
     "",
-    "Large still performs reasonably well, with the majority of language directions scoring at or"
-   ],
-   [
-    "above an XSTS score of 3.",
-    "",
-    ""
-   ],
-   [
-    "",
-    "XSTS S2ST performance of",
-    ""
-   ],
-   [
+    "SeamlessM4T-Large",
     "",
     "",
-    "one is S2TT performance, where SeamlessM4T-Large is roughly on par with Whisper-"
+    "",
+    "3.73",
+    "",
+    "",
+    "58.10",
+    "36.90"
    ],
    [
     "",
     "",
-    "Large-v2 and far surpasses performance in a few tested languages (most notably Swahili) in"
+    "",
+    "Human reference",
+    "",
+    "",
+    "4.66",
+    "",
+    "",
+    "95.20",
+    "78.89"
+   ],
+   [
+    "X–eng",
+    "Whisper-Large-v2 +YourTTS",
+    "",
+    "",
+    "",
+    "",
+    "4.04",
+    "",
+    "",
+    "71.52",
+    "56.18"
    ],
    [
     "",
     "",
-    "both XSTS and automated metrics (Blaser 2.0 and BLEU), the other is S2ST performance"
-   ],
-   [
-    "",
-    "in terms automated metrics (Blaser",
-    ""
-   ],
-   [
+    "SeamlessM4T-Large",
     "",
     "",
-    "consistently outperforms Whisper-Large-v2 +YourTTSbaseline in the X–eng direction."
-   ],
-   [
-    "moving",
     "",
-    ""
-   ],
-   [
+    "3.87",
     "",
     "",
-    "by an average of 0.29 points for the SeamlessM4T-Large model but remained virtually"
-   ],
-   [
-    "",
-    "",
-    "unchanged (a decrease of only 0.01 points) for the Whisper-Large-v2 +YourTTSbaseline."
-   ],
-   [
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "tions much more frequently, by almost an order of magnitude, than Whisper-Large-v2"
-   ],
-   [
-    "",
-    "",
-    "+YourTTSgenerations (on X–eng direction, 206 SeamlessM4T-LargeS2ST generations"
-   ],
-   [
-    "",
-    "as",
-    "at"
-   ],
-   [
-    "",
-    "",
-    "Whisper-Large-v2 +YourTTSS2ST generations and 13 human reference items; in fra"
-   ],
-   [
-    "",
-    "(X–eng) for example, more than 10% of",
-    ""
-   ],
-   [
-    "",
-    "audio issues by at least one annotator).",
-    ""
-   ],
-   [
-    "",
-    "",
-    "least one annotator does not increase SeamlessM4T-Large XSTS scores appreciably (only"
-   ],
-   [
-    "",
-    "",
-    "3 languages X–eng have XSTS score increases of slightly more than 0.1 when audio issue"
-   ],
-   [
-    "",
-    "",
-    "items are removed, and the rest have XSTS increases of less than 0.04), but high incidence of"
-   ],
-   [
-    "reported “audio issues”",
-    "",
-    ""
-   ],
-   [
-    "performance decrease of",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "56"
+    "60.61",
+    "46.05"
    ]
   ]
  },
@@ -5918,325 +4788,94 @@
    [
     "",
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "Metric",
     "",
     ""
    ]
   ],
   "rows": [
    [
-    "4, and",
-    "11",
+    "S2TT",
+    "eng–X",
+    "Blaser",
     "",
-    "received",
-    "naturalness",
-    "",
-    "scores",
-    "above",
-    "3.",
-    "we",
-    "also",
-    "measured"
+    "2.0"
    ],
    [
-    "",
-    "",
-    "",
-    "“Clarity of Speech” and “Sound Quality” MOS aspects.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "We find that for languages where both",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Whisper-Large-v2 +YourTTSand SeamlessM4T-Large were measured (all X–eng),",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "SeamlessM4T-Large averaged 0.67 points higher in sound quality and 0.79 points higher in",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "clarity of speech over Whisper-Large-v2 +YourTTS(SeamlessM4T-Large surpassed",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "the human reference in the “clarity of speech”",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "and “sound quality”",
-    "",
-    "aspects for all 8 X–eng",
-    ""
-   ],
-   [
-    "",
-    "languages measured).",
-    "",
-    "",
-    "",
-    "",
-    "In the eng–X direction, for the “clarity of speech”",
-    "",
-    "",
-    "",
-    "aspect, 20 languages",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "scored above a 3 for SeamlessM4T-Large, with 4 languages scoring above a 4; for the",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "“sound quality”",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "aspect, all languages scored above a 3, with 13 languages scoring above a 4.",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "Correlations",
-    "",
     "",
     "",
     "BLEU",
     "",
-    "and",
-    "XSTS",
-    "",
-    "In Table 33 and visualized in",
     ""
    ],
    [
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Figure 15, we compare the strength of correlations between automated metrics (ASR-BLEU",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "ASR-BLEU and BLEU",
-    ""
-   ],
-   [
-    "are",
-    "computed",
-    "",
-    "corpus",
-    "",
-    "",
-    "language",
-    "level",
+    "X–eng",
     "Blaser",
-    "scores",
-    "are",
-    "computed"
+    "",
+    "2.0"
    ],
    [
-    "by",
-    "averaging",
-    "sentence-level",
     "",
-    "(supervised)",
     "",
+    "BLEU",
+    "",
+    ""
+   ],
+   [
+    "",
+    "All",
     "Blaser",
-    "2.0",
-    "scores",
     "",
-    "evaluation",
-    "set."
+    "2.0"
    ],
    [
     "",
     "",
-    "",
-    "",
-    "",
-    "",
-    "automated metrics are calculated using only the items sent for human evaluation with XSTS",
-    "",
-    "",
-    "",
+    "BLEU",
     "",
     ""
    ],
    [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "2.0 scores on"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "the language level differed only slightly from those used to generate Tables 15 and 14.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "We",
-    "find",
-    "both",
-    "with",
-    "Spearman",
-    "and",
-    "Pearson",
-    "",
-    "correlation",
-    "coefficients,",
+    "S2ST",
+    "eng–X",
     "Blaser",
-    ""
+    "",
+    "2.0"
    ],
    [
-    "has a",
-    "superior",
-    "correlation",
     "",
-    "XSTS",
-    "over",
+    "",
     "",
     "ASR-BLEU",
-    "(for",
-    "task)",
-    "and",
-    "BLEU"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "2.0 correlates much better with XSTS in the eng–X direction in",
-    "",
-    "",
-    ""
-   ],
-   [
-    "particular.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
     ""
    ],
    [
     "",
+    "X–eng",
+    "Blaser",
+    "",
+    "2.0"
+   ],
+   [
     "",
     "",
     "",
+    "ASR-BLEU",
+    ""
+   ],
+   [
+    "",
+    "All",
+    "Blaser",
+    "",
+    "2.0"
+   ],
+   [
     "",
     "",
-    "61",
     "",
-    "",
-    "",
-    "",
+    "ASR-BLEU",
     ""
    ]
   ]
@@ -6249,6 +4888,9 @@
     "",
     "",
     "",
+    "",
+    "",
+    "(CoefVarMS) on FleursX–engS2TT and ASR test sets.",
     "",
     "",
     "",
@@ -6271,12 +4913,15 @@
     "",
     "Table",
     "34",
+    "",
     "shows",
     "the",
     "chrFMS",
     "and",
+    "",
     "CoefVarMS",
     "",
+    "scores",
     "of",
     "",
     "",
@@ -6291,74 +4936,20 @@
     "Whisper-Large-v2",
     "",
     "",
+    "",
     "on",
     "Fleurs",
     "X–eng",
+    "",
     "S2TT",
     "and",
+    "",
     "ASR",
     "test",
     "sets.",
     "We",
     "see",
     "that"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "SeamlessM4T-Large outperforms Whisper-Large-v2 on CoefVarMS",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "by an average of",
-    ""
-   ],
-   [
-    "",
-    "",
-    "49.4% over the 2 tasks.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Moreover, SeamlessM4T-Large outperforms Whisper-Large-v2",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "on chrFMS",
-    "",
-    "",
-    "",
-    "by an average of 18.3%.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "These suggest the superior robustness of SeamlessM4T-",
-    "",
-    "",
-    "",
-    "",
-    ""
    ],
    [
     "",
@@ -6377,12 +4968,16 @@
     "",
     "",
     "",
+    "",
+    "",
+    "",
     ""
    ],
    [
     "6.",
     "",
     "Responsible",
+    "",
     "",
     "AI",
     "",
@@ -6396,47 +4991,13 @@
     "",
     "",
     "",
-    ""
-   ],
-   [
-    "In",
-    "line",
-    "with",
-    "our",
-    "",
-    "expectations",
-    "",
-    "build",
-    "systems",
-    "",
-    "responsibly,",
-    "we",
-    "focus",
-    "our",
-    "efforts",
-    "on",
-    "the"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "evaluation of added toxicity and bias.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Both of these dimensions of responsible AI have drawn",
-    "",
-    "",
     "",
     "",
     ""
    ],
    [
+    "",
+    "",
     "",
     "",
     "",
@@ -6453,6 +5014,7 @@
     "",
     "",
     "",
+    "",
     ""
    ]
   ]
@@ -6461,15 +5023,15 @@
   "page": 74,
   "headers": [
    [
-    "direction.",
+    "HolisticBias",
+    "dataset",
+    "(n=25).",
+    "complete",
+    "language"
+   ],
+   [
     "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "experiments can be found in Table 35.",
     "",
     "",
     ""
@@ -6477,72 +5039,37 @@
    [
     "",
     "",
+    "X–eng",
+    "",
+    "eng–X"
+   ],
+   [
     "",
     "",
     "",
-    "HolisticBias dataset.",
+    "",
+    "arb,cat,ces,dan,deu,fra,ita,nld,por,ron,"
+   ],
+   [
+    "S2ST",
     "",
     "",
-    "",
-    "This dataset is relatively small",
     "",
     ""
-   ],
-   [
-    "since BLEU",
-    "",
-    "",
-    "not",
-    "enough",
-    "",
-    "lengthy",
-    "n-grams",
-    "are",
-    "matched.",
-    "For",
-    "S2ST,"
-   ],
-   [
-    "we used",
-    "",
-    "",
-    "",
-    "",
-    "proposed",
-    "in",
-    "this",
-    "It",
-    "worth",
-    "noting",
-    "that"
-   ],
-   [
-    "eng–X",
-    "direction",
-    "(overlaps",
-    "the",
-    "languages",
-    "",
-    "from",
-    "the",
-    "generated",
-    "TTS data",
-    "and",
-    "the"
    ]
   ],
   "rows": [
    [
     "",
     "",
-    "languages available in our S2ST model).",
     "",
     "",
+    ""
+   ],
+   [
     "",
     "",
-    "",
-    "Additionally, since MMS-TTS generations are not",
-    "",
+    "arb,bul,cat,deu,ell,fra,lvs,mar,nld,",
     "",
     ""
    ],
@@ -6551,209 +5078,27 @@
     "",
     "",
     "",
-    "deterministic, we repeated the measurements three times for both S2ST and S2TT. The final",
+    "arb,bel,bul,cat,ces,dan,deu,ell,fra,ita,"
+   ],
+   [
     "",
     "",
-    "",
-    "",
-    "",
+    "por,ron,rus,spa,swe,tam,tha,ukr,urd",
     "",
     ""
    ],
    [
+    "S2TT",
     "",
     "",
     "",
-    "",
-    "metric values are then averaged to ensure robustness and accuracy in our evaluations.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "Models",
-    "",
-    "",
-    "",
-    "",
-    "We used the SeamlessM4T-Large model and several different baselines.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "For"
+    "lit,lvs,mar,nld,por,ron,rus,slk,slv,spa,"
    ],
    [
     "",
     "",
     "",
-    "X–eng S2TT, we employed Whisper-Large-v2 [Radford et al., 2022].",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "As for X–eng S2ST,",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "we used YourTTS [Casanova et al., 2022] to generate synthesized speech from the output",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "of",
-    "Whisper-Large-v2",
-    "",
-    "For",
-    "",
-    "S2TT,",
-    "we",
-    "utilized",
-    "",
-    "",
-    "system:",
-    "ASR"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "from Whisper Large-v2 [Radford et al., 2022], followed by T2TT via NLLB-3.3B [NLLB",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "Team et",
-    "al.,",
-    "For",
-    "SeamlessM4T-Large",
-    "",
-    "",
-    "S2TT,",
-    "we",
-    "a",
-    "size",
-    "of ten.",
-    "For"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "SeamlessM4T-Large S2ST, we set the beam size to five for both the first pass decoder and",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "the second pass decoder.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "As for the baseline, we set the beam size to five for NLLB-3.3B",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "and used the default values for Whisper-Large-v2 and YourTTS.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "21. The transcription is done by Whisper-Large-v2 and Whisper-Medium [Radford et al., 2022] for eng–X",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "and X–eng respectively.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "chrF has been calculated the same way as S2TT except that in S2ST the text",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "22. The list of language codes for these 14 languages:",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "arb,cat,deu,eng,fra,nld,por,ron,rus,spa,swe,tha,ukr,urd.",
-    "",
-    "",
+    "swe,tam,tha,ukr,urd",
     ""
    ]
   ]
@@ -6762,120 +5107,104 @@
   "page": 77,
   "headers": [
    [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "Axis",
+    "Masculine",
+    "Feminine",
+    "Average",
+    "Count",
+    "Diff"
    ]
   ],
   "rows": [
    [
-    "that",
-    "mark",
-    "grammatical",
-    "gender",
-    "towards",
-    "",
-    "English.",
-    "Figure",
-    "21",
-    "shows",
-    "the",
-    "results",
-    ""
+    "Cultural",
+    "11.4",
+    "9.5",
+    "10.4",
+    "350",
+    "1.9"
    ],
    [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "language for SeamlessM4T-Large and Whisper-Large-v2 or Whisper-Large-v2 +",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "Body type",
+    "14.2",
+    "12.9",
+    "13.6",
+    "3750",
+    "1.2"
    ],
    [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "Socioeconomic class",
+    "14.6",
+    "13.3",
+    "13.9",
+    "400",
+    "1.3"
    ],
    [
-    "•",
-    "In",
-    "the",
-    "performance",
-    "is",
-    "better",
-    "when",
-    "translating",
-    "",
-    "from",
-    "the",
-    "masculine",
-    "reference"
+    "Religion",
+    "15.5",
+    "13.7",
+    "14.6",
+    "1800",
+    "1.8"
    ],
    [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "for most languages (15 out of 18 for SeamlessM4T-Large and 16 out of 18 for the",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "Gender and sex",
+    "16.0",
+    "15.1",
+    "15.5",
+    "1800",
+    "1.0"
    ],
    [
-    "",
-    "",
-    "Whisper-Large-v2).",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "However, they have different biases towards different languages.",
-    "",
-    "",
-    "",
-    ""
+    "Ability",
+    "16.6",
+    "15.2",
+    "15.9",
+    "3300",
+    "1.3"
    ],
    [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "The highest differences between the masculine and feminine forms in SeamlessM4T-",
+    "Race ethnicity",
+    "17.4",
+    "15.7",
+    "16.5",
+    "900",
+    "1.7"
+   ],
+   [
+    "Characteristics",
+    "18.2",
+    "16.2",
+    "17.2",
+    "1900",
+    "2.0"
+   ],
+   [
+    "Nationality",
+    "18.1",
+    "16.7",
+    "17.4",
+    "300",
+    "1.4"
+   ],
+   [
+    "Sexual orientation",
+    "18.5",
+    "16.7",
+    "17.6",
+    "700",
+    "1.8"
+   ],
+   [
+    "Age",
+    "18.6",
+    "16.6",
+    "17.6",
+    "900",
+    "1.9"
+   ],
+   [
     "",
     "",
     "",
@@ -6884,64 +5213,100 @@
     ""
    ],
    [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "Large are with Tamil (6.4 chrF points difference) and Urdu (5.0).23",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "On the other"
+    "Axis",
+    "Masculine",
+    "Feminine",
+    "Average",
+    "Count",
+    "Diff"
    ],
    [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "23. We find that in our experiment, Arabic shows the bias toward the cases when translated from feminine",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "Cultural",
+    "12.2",
+    "10.3",
+    "11.3",
+    "238",
+    "1.9"
    ],
    [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "version, which contrasts with the findings in the Multilingual HolisticBias [Costa-jussà et al., 2023]",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "Body type",
+    "14.2",
+    "13.0",
+    "13.6",
+    "2550",
+    "1.2"
    ],
    [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "77",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "Socioeconomic class",
+    "14.4",
+    "13.1",
+    "13.7",
+    "272",
+    "1.3"
+   ],
+   [
+    "Religion",
+    "16.3",
+    "14.5",
+    "15.4",
+    "1224",
+    "1.9"
+   ],
+   [
+    "Gender and sex",
+    "16.7",
+    "15.7",
+    "16.2",
+    "1224",
+    "1.0"
+   ],
+   [
+    "Ability",
+    "16.9",
+    "15.5",
+    "16.2",
+    "2244",
+    "1.4"
+   ],
+   [
+    "Age",
+    "17.7",
+    "15.8",
+    "16.7",
+    "612",
+    "1.9"
+   ],
+   [
+    "Characteristics",
+    "17.7",
+    "15.9",
+    "16.8",
+    "1292",
+    "1.8"
+   ],
+   [
+    "Race ethnicity",
+    "18.0",
+    "16.4",
+    "17.2",
+    "612",
+    "1.7"
+   ],
+   [
+    "Sexual orientation",
+    "18.4",
+    "16.9",
+    "17.7",
+    "476",
+    "1.5"
+   ],
+   [
+    "Nationality",
+    "18.7",
+    "17.3",
+    "18.0",
+    "204",
+    "1.3"
    ]
   ]
  },
@@ -6953,124 +5318,38 @@
     "",
     "",
     "",
-    "",
-    "feminine (∆= ω(M −F)/ω(min(M, F)), ω ∈{chrF, ASR-chrF, Blaser 2.0}).",
+    "eng–X SeamlessM4T/Whisper-Large-v2 + NLLB-3.3B",
     ""
    ],
    [
     "",
     "",
+    "Feminine Reference",
+    "Masculine Reference",
     "",
-    "",
-    "",
-    "when considering the difference between masculine and feminine references and",
-    ""
+    "∆%"
    ],
    [
-    "body",
-    "type,",
-    "religion,",
+    "S2TT",
+    "chrF",
+    "45.0/47.4",
+    "49.9/52.7",
     "",
-    "characteristics",
-    "",
-    "observations"
-   ],
-   [
-    "",
-    "",
-    "",
-    "reported in Costa-jussà et al. [2023] pertaining to T2TT.",
-    "",
-    "",
-    ""
+    "10.9/11.2"
    ]
   ],
   "rows": [
    [
-    "6.3.4",
-    "Gender",
-    "data",
     "",
-    "representation",
+    "ASR-chrF",
+    "44.9",
+    "49.7",
     "",
-    ""
+    "10.6"
    ],
    [
-    "",
-    "",
-    "",
-    "Based on our concurrent work [Muller et al., 2023],",
-    "",
-    "",
-    "we discuss the"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "several datasets by focusing on how different genders are represented using",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "The closest work that studies gender representation in data is Choubey et al.",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "the authors took on this research question using a synthetic dataset.",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "did not share the details of the lexical nouns used to extract this",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "HolisticBias [Smith et al., 2022] provides a list of gendered nouns and",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "rely on this list to track how many sentences in our data sets contain gendered",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "our analysis is only in English, we tokenize for word boundaries using python",
-    ""
-   ],
-   [
-    "",
-    "regular expression (\\b).",
-    "",
+    "S2ST",
+    "Blaser 2.0",
     "",
     "",
     "",
@@ -7079,52 +5358,46 @@
    [
     "",
     "",
+    "3.6",
+    "3.7",
     "",
-    "scalable to multiple languages [Muller et al., 2023].",
+    "0.6"
+   ],
+   [
     "",
     "",
+    "",
+    "",
+    "X–eng SeamlessM4T/Whisper-Large-v2 (+ YourTTS)",
     ""
    ],
    [
-    "nouns25;",
-    "4",
-    "masculine",
-    "pronouns,26;",
     "",
-    "10",
-    "and 4"
+    "",
+    "Feminine Source",
+    "Masculine Source",
+    "",
+    "∆%"
    ],
    [
-    "matched",
-    "single",
-    "words,",
-    "hence",
-    "we",
-    "report",
-    "words"
-   ],
-   [
-    "words in",
-    "the",
-    "dataset.",
-    "Figure",
-    "23",
-    "summarizes",
-    "of the"
+    "S2TT",
+    "chrF",
+    "52.4/50.4",
+    "54.3/52.1",
+    "",
+    "3.7/3.4"
    ],
    [
     "",
+    "ASR-chrF",
+    "53.1/52.2",
+    "55.0/54.0",
     "",
-    "",
-    "",
-    "",
-    "",
-    "Results show that masculine"
+    "3.5/3.5"
    ],
    [
-    "",
-    "",
-    "is predominant in most of the datasets.",
+    "S2ST",
+    "Blaser 2.0",
     "",
     "",
     "",
@@ -7133,74 +5406,10 @@
    [
     "",
     "",
+    "3.5/2.7",
+    "3.6/2.8",
     "",
-    "",
-    "matching of gendered words based on our selected vocabulary) are found in",
-    "",
-    ""
-   ],
-   [
-    "25.",
-    "",
-    "",
-    "",
-    "",
-    "man, men, bro, bros, guy, guys, boy, boys, father, fathers, dad, dads, son, sons,",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "grandfather, grandfathers, grandpa, grandpas, brother, brothers.",
-    "",
-    ""
-   ],
-   [
-    "26.",
-    "he, him, his, himself.",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "27. woman, women, lady, ladies, girl, girls, mother, mothers, mom, moms, daughter,",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "grandmother, grandmothers, grandma, grandmas, sister, sisters",
-    "",
-    ""
-   ],
-   [
-    "28.",
-    "she, her, hers, herself.",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "2.9/3.7"
    ]
   ]
  },

@@ -70,17 +70,19 @@ def row_table_score(cells):
     return 0
 
 
-def looks_prose(cells):
-    """长正文句：首个词起 x 靠左、总词数多、句子以标点结尾且数字少；
-    或字母主导（≥70% 字母词）且 ≥6 词（表格行的文字格不会有这么多连续词）。"""
-    text = " ".join(c[3] for c in cells)
+def looks_prose(ln):
+    """正文行（应终止表区）：字母主导且横向跨度大（通栏文字），或超长。
+    窄行是表格行标签（模型名+引用），不断。
+    ln = (y0, x0, x1, text, size, bold)。"""
+    y0, x0, x1, text, size, bold = ln
     words = text.split()
     alpha = sum(1 for w in words if re.search(r"[a-zA-Z]", w))
-    if len(words) >= 6 and alpha / len(words) >= 0.7:
+    wide = (x1 - x0) > 250
+    if len(words) >= 6 and alpha / len(words) >= 0.7 and wide:
         return True
     if len(text) > 60 and text.rstrip().endswith((".", ",", ";", ":")):
         nums = sum(1 for t in words if is_num(t))
-        if nums <= 2:
+        if nums <= 2 and wide:
             return True
     if len(text) > 110:
         return True
@@ -126,8 +128,14 @@ def build_grid(pg, region_lines):
     y_max = max(l[0] for l in region_lines) + 12
     x_min = min(l[1] for l in region_lines) - 6
     x_max = max(l[2] for l in region_lines) + 6
+    # 断点续表会在 region y 范围内留下空洞（跳过的正文段），词级重建时
+    # 只保留落在实际 region 行 ±6pt 内的词，防止把空洞里的正文扫进网格
+    region_ys = [l[0] for l in region_lines]
+    def near_region(wy):
+        return any(abs(wy - ry) <= 6 for ry in region_ys)
     words = [w for w in pg.get_text("words")
-             if w[1] >= y_min and w[1] <= y_max and w[0] >= x_min and w[2] <= x_max + 20]
+             if w[1] >= y_min and w[1] <= y_max and w[0] >= x_min and w[2] <= x_max + 20
+             and near_region(w[1])]
     if not words:
         return [], []
     # 行聚类（词 y0 容差 4pt）
@@ -199,7 +207,8 @@ def build_grid(pg, region_lines):
 def expand_region(lines, cap_y, direction, page_h):
     """从 caption 向 direction('up'/'down') 扩展表区行。
     首行数字出现前的连续短行（"DER cpWER…"、"Dataset Language"）是表头候选，
-    不能丢；遇到数字才算表区开始，之后的正文长句/下一个加粗字母标题/页码停止。"""
+    不能丢；遇到数字才算表区开始，之后的正文长句/下一个加粗字母标题/页码停止。
+    表被图/脚注打断时（VoxCPM2 表 3 中部插图），按列 x 签名恢复续扫。"""
     if direction == "up":
         cand = [ln for ln in lines if ln[0] < cap_y - 1][::-1]
     else:
@@ -207,7 +216,10 @@ def expand_region(lines, cap_y, direction, page_h):
     region = []
     header_buf = []
     started = False
-    for idx, ln in enumerate(cand):
+    resumes = 0
+    idx = 0
+    while idx < len(cand):
+        ln = cand[idx]
         y0, x0, x1, t, size, bold = ln
         sc = row_table_score([(0, 0, 0, t, 0, 0)])
         if not started:
@@ -216,29 +228,61 @@ def expand_region(lines, cap_y, direction, page_h):
             else:
                 # caption 与表体之间可能有脚注（"obtain VALL-E … through communication"），
                 # 缓冲短行继续扫；只有长正文句才判方向错误
-                if looks_prose([(0, 0, 0, t, 0, 0)]) and len(t) > 110:
+                if looks_prose(ln) and len(t) > 110:
                     break
                 if len(t) <= 75:
                     header_buf.append(ln)
                     if len(header_buf) > 30:
                         header_buf.pop(0)  # 缓冲够用即可，超长丢最旧（不错过 16+ 行的多层表头）
+                idx += 1
                 continue
         if started:
-            if looks_prose([(0, 0, 0, t, 0, 0)]) and not is_num(t):
-                break
+            is_break = False
+            if looks_prose(ln) and not is_num(t):
+                is_break = True
             if re.match(r"^\d{1,3}$", t) and y0 > page_h - 55:
-                break  # 页码
-            # 加粗的字母开头短行是下一个标题；加粗数字单元格（表格常加粗数字）不是
+                is_break = True  # 页码
+            # 加粗的字母开头短行是下一个标题——但表格里「本文模型行」也常加粗
+            # （VoxCPM2 表 3 的 VoxCPM2 行），且后面紧跟数字单元格；用前瞻区分：
+            # 后两行内有数字 → 是表格行标签，收进来；否则才是真标题，停
             if bold and len(t) < 60 and re.match(r"^[A-Z]", t) and not is_num(t) and sc == 0:
-                break
+                ahead = cand[idx + 1:idx + 3]
+                if not any(sum(1 for w in a[3].split() if is_num(w)) >= 1 for a in ahead):
+                    is_break = True
             # 加粗的独立小节号行（"2.3.2"）+ 下一行是加粗字母标题 → 表结束
             if bold and re.match(r"^\d+(\.\d+)+$", t) and idx + 1 < len(cand):
                 nt = cand[idx + 1][3]
                 if cand[idx + 1][5] and re.match(r"^[A-Z]", nt):
+                    is_break = True
+            if is_break:
+                # 断点恢复：表格被图/脚注打断时，向后扫最多 60 行找续表。
+                # 续表行必须是「窄行 + ≥2 数字 + x0 落在已建列签名 ±60pt」，
+                # 宽行正文（哪怕含数字）不续，防止把表格后的正文段收进来
+                if resumes >= 2:
                     break
+                col_xs = sorted({round(l[1]) for l in region if is_num(l[3]) or len(l[3].split()) <= 3})
+                resumed = False
+                if col_xs:
+                    for j in range(idx + 1, min(idx + 60, len(cand))):
+                        tj = cand[j][3]
+                        nums = [w for w in tj.split() if is_num(w)]
+                        narrow = (cand[j][2] - cand[j][1]) < 300
+                        if len(nums) >= 2 and narrow:
+                            x0j = cand[j][1]
+                            if any(abs(x0j - cx) <= 60 for cx in col_xs):
+                                idx = j
+                                resumed = True
+                                resumes += 1
+                                break
+                if not resumed:
+                    break
+                # resumed：从续表的第一个数字行继续
+                ln = cand[idx]
+                y0, x0, x1, t, size, bold = ln
             region.append(ln)
             if len(region) > MAX_ROWS_PER_CAPTION:
                 break
+        idx += 1
     region = header_buf + region
     if direction == "up":
         region.reverse()

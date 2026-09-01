@@ -1,33 +1,17 @@
 {
  "tab-1-1": {
   "page": 2,
-  "headers": [
-   [
-    "",
-    "Current Systems",
-    "VALL-E"
-   ],
-   [
-    "Intermediate representation",
-    "mel spectrogram",
-    "audio codec code"
-   ],
-   [
-    "Objective function",
-    "continuous signal regression",
-    "language model"
-   ]
-  ],
+  "headers": [],
   "rows": [
    [
-    "Training data",
-    "≤600 hours",
-    "60K hours"
+    "1",
+    "Introduction",
+    ""
    ],
    [
-    "In-context learning",
     "",
-    ""
+    "",
+    "results in TTS by using different sampling strategies during inference."
    ]
   ]
  },
@@ -44,8 +28,8 @@
   ],
   "rows": [
    [
-    "",
     "GroundTruth",
+    "",
     "",
     "2.2",
     "0.754"
@@ -56,13 +40,86 @@
     "Speech-to-Speech Systems",
     "",
     ""
+   ],
+   [
+    "GSLM",
+    "",
+    "",
+    "12.4",
+    "0.126"
+   ],
+   [
+    "AudioLM*",
+    "",
+    "",
+    "6.0",
+    "-"
+   ],
+   [
+    "TTS Systems",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "YourTTS",
+    "",
+    "",
+    "7.7",
+    "0.337"
+   ],
+   [
+    "VALL-E",
+    "",
+    "",
+    "5.9",
+    "0.580"
+   ],
+   [
+    "",
+    "VALL-E-continual",
+    "",
+    "3.8",
+    "0.508"
    ]
   ]
  },
  "tab-5-2-3": {
   "page": 9,
-  "headers": [],
+  "headers": [
+   [
+    "model",
+    "WER",
+    "SPK"
+   ]
+  ],
   "rows": [
+   [
+    "GroundTruth",
+    "2.2",
+    "0.754"
+   ],
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "GSLM",
+    "12.4",
+    "0.126"
+   ],
+   [
+    "AudioLM*",
+    "6.0",
+    "-"
+   ],
+   [
+    "TTS Systems",
+    "",
+    ""
+   ],
    [
     "YourTTS",
     "7.7",
@@ -79,97 +136,7 @@
     "0.508"
    ],
    [
-    "model is signiﬁcantly better in both robustness and speaker similarity,",
     "",
-    ""
-   ],
-   [
-    "speech is highly faithful to the given text and the given enrolled",
-    "",
-    ""
-   ],
-   [
-    "error rate can be further reduced in VALL-E-continual setting, because",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "We also compare"
-   ],
-   [
-    "speech-to-speech LM-based generation models, GSLM and AudioLM,",
-    "",
-    ""
-   ],
-   [
-    "as input. GSLM uses HuBERT code as input and reconstructs the waveform",
-    "",
-    ""
-   ],
-   [
-    "et al., 2018] model and the WaveGlow [Prenger et al., 2019] vocoder.",
-    "",
-    ""
-   ],
-   [
-    "code using the released model and evaluate the results. Since the HuBERT",
-    "",
-    ""
-   ],
-   [
-    "",
-    "For the AudioLM, we list",
-    ""
-   ],
-   [
-    "their paper, which is obtained by a Conformer Transducer model. The",
-    "",
-    ""
-   ],
-   [
-    "VALL-E is better than other speech-to-speech LM-based generative",
-    "",
-    ""
-   ],
-   [
-    "One major reason is VALL-E trained with pseudo-phoneme instead of",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    ""
-   ],
-   [
-    "We randomly sample one utterance for each speaker in LibriSpeech",
-    "",
-    ""
-   ],
-   [
-    "tion, resulting in 40 test cases. Table 3 shows the human evaluation",
-    "",
-    ""
-   ],
-   [
-    "to ground truth in terms of SMOS, indicating the synthesized speech is",
-    "",
-    ""
-   ],
-   [
-    "speaker in testing. It signiﬁcantly outperforms the baseline with +0.93",
-    "",
-    ""
-   ],
-   [
-    "effectiveness of VALL-E in zero-shot scenarios. Regarding naturalness,",
-    "",
-    ""
-   ],
-   [
-    "with +0.12 CMOS, indicating the proposed method could synthesize more",
     "",
     ""
    ],
@@ -241,92 +208,72 @@
     "",
     "",
     "",
+    ""
+   ],
+   [
+    "",
+    "3s prompt",
+    "",
+    "5s prompt",
+    "10s prompt"
+   ],
+   [
     "",
     "",
-    "WER",
-    "SPK"
+    "108 full speakers",
+    "",
+    ""
    ]
   ],
   "rows": [
    [
+    "YourTTS*",
+    "0.357",
     "",
-    "",
-    "",
-    "",
-    "",
+    "0.377",
+    "0.394"
+   ],
+   [
     "VALL-E",
-    "5.9",
-    "0.585"
+    "0.382",
+    "",
+    "0.423",
+    "0.484"
+   ],
+   [
+    "GroundTruth",
+    "0.546",
+    "",
+    "0.591",
+    "0.620"
    ],
    [
     "",
     "",
-    "",
-    "",
-    "",
-    "w/o acoustic prompt",
-    "5.9",
-    "0.236"
-   ],
-   [
-    "5.3",
-    "",
-    "VCTK Evaluation",
-    "",
-    "",
-    "",
+    "11 unseen speakers",
     "",
     ""
    ],
    [
+    "YourTTS",
+    "0.331",
     "",
-    "",
-    "",
-    "",
-    "We evaluate our model on VCTK consisting of 108 speakers, where none of",
-    "",
-    "",
-    ""
+    "0.337",
+    "0.344"
    ],
    [
+    "VALL-E",
+    "0.389",
     "",
-    "",
-    "",
-    "during training. Since YourTTS has seen 97 speakers in VCTK as",
-    "",
-    "",
-    "",
-    ""
+    "0.380",
+    "0.414"
    ],
    [
+    "GroundTruth",
+    "0.528",
     "",
-    "",
-    "",
-    "performance on the full 107 speakers and 11 unseen speakers,",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "randomly selected three utterances of 3s/5s/10s as the prompts and the",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "the text prompt.",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+    "0.556",
+    "0.586"
    ]
   ]
  },

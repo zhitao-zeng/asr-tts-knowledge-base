@@ -246,67 +246,365 @@
  },
  "tab-4-5-1": {
   "page": 8,
-  "headers": [],
+  "headers": [
+   [
+    "compressed into.",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "Setting",
+    "SIM-O↑",
+    "WER↓",
+    "defined alignments and modeling the duration infor-"
+   ]
+  ],
   "rows": [
    [
-    "Encodec",
-    "600",
-    "8",
-    "Discrete",
     "",
-    "3.16",
-    "0.94",
-    "4.31",
-    "1.63",
-    "3.07"
+    "",
+    "0.71",
+    "1.82%",
+    "mation implicitly; 3) w/ CFG, we use the standard"
    ],
    [
-    "DAC",
-    "450",
-    "9",
-    "Discrete",
     "",
-    "4.13",
-    "0.97",
-    "4.68",
-    "1.05",
-    "4.01"
+    "",
+    "",
+    "",
+    "CFG following the common practice in Diffusion-"
    ],
    [
-    "WavTokenizer",
-    "75",
-    "1",
-    "Discrete",
     "",
-    "2.55",
-    "0.88",
-    "3.83",
-    "1.99",
-    "4.07"
+    "w/ Encodec",
+    "0.56",
+    "2.24%",
+    ""
    ],
    [
-    "X-codec2",
-    "50",
-    "1",
-    "Discrete",
     "",
-    "3.03",
-    "0.91",
-    "4.12",
-    "1.72",
-    "4.13"
+    "w/ DAC",
+    "0.64",
+    "1.93%",
+    "based TTS; 4) w/o CFG, we do not use the CFG"
    ],
    [
-    "WaveVAE",
-    "25",
-    "1",
     "",
-    "Continuous 3.84",
     "",
-    "0.96",
-    "4.71",
-    "1.03",
-    "4.10"
+    "",
+    "",
+    "mechanism. All tests follow the experimental setup"
+   ],
+   [
+    "",
+    "",
+    "Table 6: Comparison of zero-shot TTS performance of",
+    "",
+    "described in Section 4.2. The results are shown in"
+   ],
+   [
+    "",
+    "",
+    "MegaTTS 3 using different speech compression models",
+    "",
+    "Table 7. For settings 1) and 2), it can be observed"
+   ],
+   [
+    "",
+    "on the LibriSpeech test-clean set.",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "that both forced alignment and sparse alignment"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "can enhance the performance of speech synthesis"
+   ],
+   [
+    "Setting",
+    "SIM-O↑",
+    "WER↓",
+    "CMOS↑",
+    "models. However, compared to forced alignment,"
+   ],
+   [
+    "Ours",
+    "0.71",
+    "1.82%",
+    "0.00",
+    "sparse alignment does not constrain the model’s"
+   ],
+   [
+    "w/ F.A.",
+    "0.70",
+    "1.80%",
+    "-0.17",
+    "search space, leading to a prosodic naturalness (see"
+   ],
+   [
+    "w/o A.",
+    "0.67",
+    "2.14%",
+    "-0.12",
+    "Section 4.3). Therefore, the sparse alignment strat-"
+   ],
+   [
+    "w/ CFG",
+    "0.68",
+    "1.79%",
+    "-0.02",
+    "egy achieves +0.17 CMOS compared to the forced"
+   ],
+   [
+    "w/o CFG",
+    "0.43",
+    "6.85%",
+    "-0.56",
+    "alignment strategy. For setting 3), compared with"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "the standard CFG, our multi-condition CFG per-"
+   ],
+   [
+    "Table 7:",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "forms slightly better as it allows for flexible control"
+   ],
+   [
+    "",
+    "",
+    "CFG mechanisms on the LibriSpeech test-clean set.",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "over the weights between the text prompt and the"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Second, to demonstrate the impact of different",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "speech compression models on the overall perfor-",
+    "",
+    "ally, we visualize the attention score matrices from"
+   ],
+   [
+    "",
+    "",
+    "mance of the TTS system, we extracted the latents",
+    "",
+    "different transformer layers in MegaTTS 3 in Ap-"
+   ],
+   [
+    "from",
+    "and",
+    "DAC,",
+    "respectively,",
+    "pendix F, leading to some interesting observations."
+   ],
+   [
+    "",
+    "",
+    "ing our MegaTTS 3 model. We report the experi-",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "method outperforms “w/ DAC” and “w/ Encodec”,",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "In this paper, we introduce MegaTTS 3, a zero-shot"
+   ],
+   [
+    "",
+    "",
+    "due to the fact that the latent space of our speech",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "TTS framework that leverages novel sparse align-"
+   ],
+   [
+    "",
+    "",
+    "compression model is more compact (only 25 to-",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "ment boundaries to ease the difficulty of alignment"
+   ],
+   [
+    "",
+    "",
+    "kens per second). The results demonstrate the im-",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "learning while retaining the naturalness of the gen-"
+   ],
+   [
+    "portance",
+    "our",
+    "WaveVAE,",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "erated speeches. This strategy allows MegaTTS 3"
+   ],
+   [
+    "",
+    "",
+    "high-reconstruction-quality speech codec model,",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "to combine the strengths of methods with both im-"
+   ],
+   [
+    "",
+    "",
+    "for TTS systems. This conclusion is also verified",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "plicit alignments and predefined hard alignments."
+   ],
+   [
+    "",
+    "",
+    "by a previous work (Lee et al., 2024a), which shows",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "Additionally, we employ the PeRFlow technique to"
+   ],
+   [
+    "",
+    "",
+    "compact target latents facilitate learning in diffu-",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "further accelerate the generation process and design"
+   ],
+   [
+    "sion models.",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "a multi-condition CFG strategy to offer more flexi-"
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "ble control over accents. Experimental results show"
    ]
   ]
  },
@@ -318,21 +616,32 @@
     "",
     "MegaTTS 3 using different speech compression models",
     "",
-    ""
+    "",
+    "Table"
    ],
    [
     "",
     "on the LibriSpeech test-clean set.",
     "",
     "",
+    "",
     ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "that"
    ],
    [
     "Setting",
     "SIM-O↑",
     "WER↓",
     "CMOS↑",
-    "SMOS↑"
+    "SMOS↑",
+    ""
    ]
   ],
   "rows": [
@@ -341,35 +650,256 @@
     "0.71",
     "1.82%",
     "0.00",
-    "3.94"
+    "3.94",
+    "sparse"
    ],
    [
     "w/ F.A.",
     "0.70",
     "1.80%",
     "-0.17",
-    "3.94"
+    "3.94",
+    "search"
    ],
    [
     "w/o A.",
     "0.67",
     "2.14%",
     "-0.12",
-    "3.88"
+    "3.88",
+    ""
    ],
    [
     "w/ CFG",
     "0.68",
     "1.79%",
     "-0.02",
-    "3.89"
+    "3.89",
+    "egy"
    ],
    [
     "w/o CFG",
     "0.43",
     "6.85%",
     "-0.56",
-    "3.35"
+    "3.35",
+    ""
+   ],
+   [
+    "Table 7:",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "forms"
+   ],
+   [
+    "",
+    "",
+    "CFG mechanisms on the LibriSpeech test-clean set.",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Second, to demonstrate the impact of different",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "speech compression models on the overall perfor-",
+    "",
+    "",
+    "ally,"
+   ],
+   [
+    "",
+    "",
+    "mance of the TTS system, we extracted the latents",
+    "",
+    "",
+    ""
+   ],
+   [
+    "from",
+    "and",
+    "DAC,",
+    "respectively,",
+    "for",
+    "pendix"
+   ],
+   [
+    "",
+    "",
+    "ing our MegaTTS 3 model. We report the experi-",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "5"
+   ],
+   [
+    "",
+    "",
+    "method outperforms “w/ DAC” and “w/ Encodec”,",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "In this"
+   ],
+   [
+    "",
+    "",
+    "due to the fact that the latent space of our speech",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "TTS"
+   ],
+   [
+    "",
+    "",
+    "compression model is more compact (only 25 to-",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "ment"
+   ],
+   [
+    "",
+    "",
+    "kens per second). The results demonstrate the im-",
+    "",
+    "",
+    ""
+   ],
+   [
+    "portance",
+    "our",
+    "WaveVAE,",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "erated"
+   ],
+   [
+    "",
+    "",
+    "high-reconstruction-quality speech codec model,",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "to"
+   ],
+   [
+    "",
+    "",
+    "for TTS systems. This conclusion is also verified",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "plicit"
+   ],
+   [
+    "",
+    "",
+    "by a previous work (Lee et al., 2024a), which shows",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "compact target latents facilitate learning in diffu-",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "further"
+   ],
+   [
+    "sion models.",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "a"
    ]
   ]
  },
@@ -423,24 +953,6 @@
     "4.10"
    ],
    [
-    "quality.",
-    "",
-    "The sampling rate are set to 16 kHz.",
-    "",
-    "",
-    "",
-    "Bold and Underline"
-   ],
-   [
-    "",
-    "",
-    "",
-    "“Tokens/s” means how many tokens a one-second speech will be",
-    "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",
@@ -491,15 +1003,6 @@
     "",
     "",
     "described in Section 4.2. The results are shown in",
-    "",
-    ""
-   ],
-   [
-    "models",
-    "",
-    "",
-    "",
-    "",
     "",
     ""
    ]
@@ -710,43 +1213,152 @@
  },
  "tab-G-1": {
   "page": 18,
-  "headers": [],
+  "headers": [
+   [
+    "",
+    "",
+    "Model - with Longer Texts",
+    "WER↓",
+    "SIM-O↑",
+    ""
+   ]
+  ],
   "rows": [
    [
-    "Ours w/ Sparse Alignment",
-    "4.56",
-    "0.52",
+    "",
+    "VoiceCraft",
+    "",
+    "12.81%",
     "0.62",
-    "0.34",
-    "0.30",
-    "0.35"
+    ""
    ],
    [
-    "Ours w/ Forced Alignment",
-    "4.62",
-    "0.45",
-    "0.62",
-    "0.42",
-    "0.34",
-    "0.40"
+    "",
+    "CosyVoice",
+    "",
+    "5.52%",
+    "0.68",
+    ""
    ],
    [
-    "Ours w/ Standard CFG",
-    "4.59",
-    "0.51",
-    "0.61",
-    "0.36",
-    "0.32",
-    "0.37"
+    "",
+    "MegaTTS 3",
+    "",
+    "2.39%",
+    "0.70",
+    ""
    ],
    [
-    "Ours w/ Standard AR Duration",
-    "4.58",
-    "0.50",
+    "",
+    "",
+    "Model - with Short Texts",
+    "WER↓",
+    "SIM-O↑",
+    ""
+   ],
+   [
+    "",
+    "VoiceCraft",
+    "",
+    "4.07%",
+    "0.58",
+    ""
+   ],
+   [
+    "",
+    "CosyVoice",
+    "",
+    "2.24%",
     "0.62",
-    "0.36",
-    "0.31",
-    "0.36"
+    ""
+   ],
+   [
+    "",
+    "MegaTTS 3",
+    "",
+    "1.82%",
+    "0.71",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "if the majority of the sampled data during training",
+    "",
+    "",
+    "",
+    "",
+    "with standard CFG; 3) “Ours w/ Standard AR Dura-"
+   ],
+   [
+    "consists of 20-second targets, the generation per-",
+    "",
+    "",
+    "",
+    "",
+    "tion”, we replace the duration from F-LM with the"
+   ],
+   [
+    "formance for audio with a 40-second target will be",
+    "",
+    "",
+    "",
+    "",
+    "duration from standard AR duration predictor fol-"
+   ],
+   [
+    "worse than that of 20-second targets in inference.",
+    "",
+    "",
+    "",
+    "",
+    "lowing SimpleSpeech 2 (Yang et al., 2024b). The"
+   ],
+   [
+    "To solve the imbalanced distribution issue, we rec-",
+    "",
+    "",
+    "",
+    "",
+    "results in Table 9 show that sparse alignment brings"
+   ],
+   [
+    "ommend using the following multi-sentence data",
+    "",
+    "",
+    "",
+    "",
+    "significant improvements, and both multi-condition"
+   ],
+   [
+    "sampling strategy: we concatenate all audio record-",
+    "",
+    "",
+    "",
+    "",
+    "CFG and F-LM duration contribute positively to"
+   ],
+   [
+    "",
+    "",
+    "in",
+    "",
+    "",
+    ""
+   ],
+   [
+    "order, and then randomly extract audio segments of",
+    "",
+    "",
+    "",
+    "",
+    ""
    ]
   ]
  },
@@ -878,6 +1490,30 @@
    [
     "2 and",
     ""
+   ],
+   [
+    "",
+    ""
+   ],
+   [
+    "",
+    "Experiments with Hard Sentences"
+   ],
+   [
+    "MegaTTS 3 with the following baselines: 1) “Ours",
+    ""
+   ],
+   [
+    "w/ Forced Alignment”, we replace the sparse align-",
+    "The transcriptions on the LibriSpeech test-clean set"
+   ],
+   [
+    "ment with the forced alignment; 2) “Ours w/ Stan-",
+    "are relatively simple since they come from audio-"
+   ],
+   [
+    "dard CFG”, we replace the multi-condition CFG",
+    "books. To further indicate the speech intelligibility"
    ]
   ]
  },

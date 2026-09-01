@@ -812,7 +812,29 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-VI-8-1"><span class="zh">图 5a 与图 5b 分别给出干净集与 ITW 集英文部分的平均 TTSDS2 韵律。</span></span><span class="sent" data-sid="s-VI-8-2"><span class="zh">在 ITW 集上，ZONOS2 是该指标上表现最好的模型。</span></span><span class="sent" data-sid="s-VI-8-3"><span class="zh">ZONOS2 在干净集上的表现较弱，但仍与头部模型具有竞争力。</span></span><span class="sent" data-sid="s-VI-8-4"><span class="zh">这些结果表明 ZONOS2 能够从源克隆音频中同时保留韵律信息与身份信息。</span></span><span class="sent" data-sid="s-VI-8-5"><span class="zh">图 6 进一步说明了这一点，展示了 ZTTS1-Eval 英文子集的 DS-WED 分数。</span></span><span class="sent" data-sid="s-VI-8-6"><span class="zh">在两个评测集上，ZONOS2 生成结果的韵律多样性都显著高于所有其他模型。</span></span><span class="sent" data-sid="s-VI-8-7"><span class="zh">图 7 展示了以 Allosaurus（Li, Dalmia, &amp; Li et al., 2020）SR 距离衡量的、相对源音频的韵律内容分布；ZONOS2 在这里优势明显，其分布与源音频接近得多。</span></span><span class="sent" data-sid="s-VI-8-8"><span class="zh">ZONOS2 在 CosyVoice 3 与 Seed-TTS 评测集上的表现见表 VII。</span></span></p>
           
         </div>
-<div class="cap" id="tab-III"><span class="cap-k">表</span><p class="en">TABLE III: ZTTS1-Eval Clean zero-shot results across WER, MSR-UTMOS and speaker similarity, segmented by open-source and closed-source models. Best result per language and metric is shown in bold; second-best is underlined.</p><p class="zh">表 III：ZTTS1-Eval Clean 零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>WER ↓</td><td>2.56</td><td>0.86</td><td>4.53</td><td>7.66</td><td>3.14</td><td>3.21</td><td>3.41</td><td>3.05</td><td>3.65</td><td>3.24</td><td>6.01</td></tr>
+<div class="cap" id="tab-III"><span class="cap-k">表</span><p class="en">TABLE III: ZTTS1-Eval Clean zero-shot results across WER, MSR-UTMOS and speaker similarity, segmented by open-source and closed-source models. Best result per language and metric is shown in bold; second-best is underlined.</p><p class="zh">表 III：ZTTS1-Eval Clean 零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>WER ↓</td><td>3.53</td><td>1.04</td><td>2.83</td><td>1.28</td><td>4.68</td><td>3.23</td><td>3.03</td><td>5.09</td><td>4.06</td><td>2.88</td><td>6.12</td></tr>
+<tr><td>Ground truth</td><td>UTMOS ↑</td><td>3.66</td><td>2.73</td><td>3.26</td><td>2.63</td><td>3.33</td><td>3.20</td><td>3.47</td><td>3.07</td><td>3.47</td><td>3.29</td><td>3.30</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>Open-source models</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>WER ↓</td><td>2.76</td><td>15.04</td><td>15.62</td><td>26.23</td><td>5.67</td><td>4.78</td><td>13.18</td><td>6.53</td><td>8.27</td><td>18.96</td><td>8.26</td></tr>
+<tr><td>ZONOS2 8B</td><td>UTMOS ↑</td><td>3.40</td><td>2.57</td><td>3.10</td><td>2.29</td><td>3.23</td><td>2.96</td><td>3.27</td><td>2.89</td><td>3.23</td><td>3.13</td><td>2.97</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>78.6</td><td>62.1</td><td>73.3</td><td>74.6</td><td>78.3</td><td>79.4</td><td>70.0</td><td>77.7</td><td>81.3</td><td>73.3</td><td>80.2</td></tr>
+<tr><td></td><td>WER ↓</td><td>3.99</td><td>2.68</td><td>6.73</td><td>14.41</td><td>3.74</td><td>3.25</td><td>4.30</td><td>3.52</td><td>7.67</td><td>4.14</td><td>6.99</td></tr>
+<tr><td>ZONOS2 8B Quality Mode</td><td>UTMOS ↑</td><td>3.47</td><td>2.94</td><td>3.21</td><td>2.65</td><td>3.36</td><td>2.94</td><td>3.31</td><td>2.92</td><td>3.31</td><td>3.18</td><td>3.02</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>74.4</td><td>58.2</td><td>81.1</td><td>73.4</td><td>76.2</td><td>79.0</td><td>75.9</td><td>78.0</td><td>82.0</td><td>83.0</td><td>79.4</td></tr>
+<tr><td>Qwen 3 TTS 1.7B</td><td>WER ↓</td><td>1.94</td><td>1.26</td><td>2.91</td><td>6.04</td><td>2.78</td><td>1.98</td><td>3.08</td><td>2.19</td><td>3.78</td><td>2.85</td><td>4.25</td></tr>
+<tr><td>(Hu, Zhu, &amp; He et al., 2026)</td><td>UTMOS ↑</td><td>3.86</td><td>3.33</td><td>3.71</td><td>3.16</td><td>3.72</td><td>3.43</td><td>3.64</td><td>3.38</td><td>3.71</td><td>3.53</td><td>3.49</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>68.3</td><td>60.2</td><td>79.7</td><td>75.8</td><td>69.7</td><td>69.2</td><td>72.0</td><td>75.2</td><td>81.0</td><td>79.3</td><td>74.1</td></tr>
+<tr><td></td><td>WER ↓</td><td>3.60</td><td>5.00</td><td>4.33</td><td>7.95</td><td>3.04</td><td>3.73</td><td>5.90</td><td>4.17</td><td>4.20</td><td>3.92</td><td>7.74</td></tr>
+<tr><td>Fish S2 Pro</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(Liao, Wang, &amp; Liu et al., 2026)</td><td>UTMOS ↑</td><td>3.47</td><td>3.06</td><td>3.23</td><td>3.00</td><td>3.26</td><td>3.01</td><td>3.22</td><td>3.02</td><td>3.37</td><td>3.18</td><td>3.09</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>76.9</td><td>64.7</td><td>82.9</td><td>76.0</td><td>78.5</td><td>82.8</td><td>78.0</td><td>79.3</td><td>85.4</td><td>83.9</td><td>80.6</td></tr>
+<tr><td></td><td>WER ↓</td><td>4.23</td><td>0.94</td><td>5.01</td><td>5.21</td><td>4.84</td><td>4.44</td><td>5.10</td><td>5.80</td><td>4.92</td><td>3.99</td><td>7.43</td></tr>
+<tr><td>VoxCPM 2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(Zhou, Zeng, &amp; Liu et al., 2026)</td><td>UTMOS ↑</td><td>3.51</td><td>2.82</td><td>3.12</td><td>2.55</td><td>3.07</td><td>2.85</td><td>3.25</td><td>2.71</td><td>3.23</td><td>3.04</td><td>2.83</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>65.2</td><td>66.8</td><td>77.3</td><td>77.5</td><td>79.7</td><td>75.4</td><td>75.8</td><td>80.8</td><td>83.3</td><td>83.1</td><td>80.4</td></tr>
+<tr><td>Closed-source models</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>WER ↓</td><td>2.56</td><td>0.86</td><td>4.53</td><td>7.66</td><td>3.14</td><td>3.21</td><td>3.41</td><td>3.05</td><td>3.65</td><td>3.24</td><td>6.01</td></tr>
 <tr><td>Cartesia Sonic 3.5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>(Cartesia, 2026)</td><td>UTMOS ↑</td><td>3.62</td><td>3.19</td><td>3.17</td><td>3.01</td><td>3.18</td><td>2.97</td><td>3.29</td><td>2.90</td><td>3.36</td><td>3.11</td><td>3.05</td></tr>
 <tr><td></td><td>Spk. sim. ↑</td><td>79.9</td><td>67.1</td><td>85.4</td><td>80.0</td><td>82.8</td><td>85.9</td><td>83.1</td><td>83.4</td><td>87.5</td><td>86.4</td><td>84.2</td></tr>
@@ -822,7 +844,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td></td><td>Spk. sim.* ↑</td><td>7.2</td><td>6.8</td><td>36.9</td><td>29.4</td><td>17.1</td><td>18.0</td><td>21.9</td><td>21.9</td><td>36.3</td><td>38.6</td><td>25.4</td></tr>
 <tr><td></td><td>WER ↓</td><td>2.50</td><td>0.80</td><td>4.09</td><td>5.63</td><td>3.61</td><td>4.41</td><td>4.77</td><td>3.24</td><td>3.79</td><td>3.06</td><td>6.58</td></tr>
 <tr><td>Gemini 3.1 Flash</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>UTMOS ↑</td><td>3.87</td><td>3.79</td><td>3.54</td><td>3.37</td><td>3.71</td><td>3.43</td><td>3.52</td><td>3.39</td><td>3.65</td><td>3.51</td><td>3.37</td></tr>
+<tr><td>(Google DeepMind, 2026)</td><td>UTMOS ↑</td><td>3.87</td><td>3.79</td><td>3.54</td><td>3.37</td><td>3.71</td><td>3.43</td><td>3.52</td><td>3.39</td><td>3.65</td><td>3.51</td><td>3.37</td></tr>
 <tr><td></td><td>Spk. sim.* ↑</td><td>12.7</td><td>9.8</td><td>36.6</td><td>28.6</td><td>17.7</td><td>19.5</td><td>20.9</td><td>20.4</td><td>33.6</td><td>36.2</td><td>23.5</td></tr>
 <tr><td></td><td>WER ↓</td><td>3.14</td><td>1.96</td><td>4.04</td><td>7.86</td><td>4.05</td><td>4.38</td><td>4.95</td><td>3.98</td><td>5.63</td><td>3.13</td><td>7.08</td></tr>
 <tr><td>Inworld TTS 2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -833,49 +855,41 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-VI-9-1"><span class="zh">表头：Model × Metric × en/zh/ar/de/es/fr/hi/id/it/ja/ko/pl/pt/ru/th/tl/tr 各语种——参考行 Ground truth，指标 WER↓。</span></span></p>
           
         </div>
-<div class="eq" id="eq-VI-57"><code>21.05 6.77 7.34 8.08 14.20 17.23 6.94 9.18 8.86 14.10 7.56 12.38 86.41</code></div>
 
-<div class="eq" id="eq-VI-59"><code>2.22 2.52 2.22 2.27 2.22 2.23 2.40 2.24 2.27</code></div>
 
-<div class="eq" id="eq-VI-61"><code>75.9 82.1 81.0 78.5 78.0 77.6 78.7 80.0 78.7 82.3 79.7 82.5 79.5 79.2 82.5 78.9 80.8</code></div>
-<div class="eq" id="eq-VI-62"><code>Open-source models ZONOS2 8B WER ↓</code></div>
-<div class="eq" id="eq-VI-63"><code>4.70 3.19 21.43 5.84 5.38 4.56 15.50 11.84 5.61 10.18 7.45 10.16 6.73 7.80 12.87 23.49 10.46</code></div>
 
-<div class="eq" id="eq-VI-65"><code>2.44 2.43 2.22 2.52 2.42 2.37 2.47 2.25 2.32 2.34 2.55 2.48 2.33 2.30 2.43 2.52 2.41</code></div>
 
-<div class="eq" id="eq-VI-67"><code>67.0 74.3 67.4 69.4 69.4 67.7 66.3 71.9 69.2 70.9 72.1 72.9 70.4 70.9 68.4 68.5 72.1</code></div>
-<div class="eq" id="eq-VI-68"><code>ZONOS2 8B Quality Mode WER ↓</code></div>
-<div class="eq" id="eq-VI-69"><code>2.21 2.77 13.94 3.37 2.10 2.79 9.04 6.48 2.51 8.70 4.59 5.85 2.94 4.32 5.93 16.05 7.47</code></div>
 
-<div class="eq" id="eq-VI-71"><code>2.99 2.68 2.51 2.92 2.72 2.74 2.73 2.66 2.63 2.69 2.78 2.76 2.75 2.62 2.74 2.88 2.64</code></div>
 
-<div class="eq" id="eq-VI-73"><code>56.9 70.6 63.8 63.1 63.3 61.2 62.3 67.6 63.8 70.0 67.3 69.0 63.8 67.7 68.3 65.0 67.7</code></div>
 
-<div class="eq" id="eq-VI-75"><code>1.05 0.99 – 2.11 1.77 2.62 – 12.46 2.85 2.32 2.80 82.04 2.20 3.88 9.61 18.04 83.20</code></div>
 
-<div class="eq" id="eq-VI-77"><code>3.20 2.90 – 3.12 2.87 2.84 – 2.94 2.76 2.86 2.97 2.92 2.85 2.74 2.93 3.13 2.70</code></div>
 
-<div class="eq" id="eq-VI-79"><code>61.5 75.3 – 68.3 65.8 67.1 – 67.4 71.9 75.2 73.7 62.7 69.4 72.8 73.1 60.5 62.1</code></div>
-<div class="pblk" id="p-VI-10">
-          <p class="en-lines"><span class="sent" data-sid="s-VI-10-1"><span class="en">Qwen 3 TTS 1.7B (Hu, Zhu, &amp; He et al., 2026) WER ↓</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-VI-10-1"><span class="zh">（表格行）Qwen 3 TTS 1.7B (Hu, Zhu, &amp; He et al., 2026)；指标 WER ↓。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-VI-80"><code>2.09 1.26 15.59 2.65 2.97 3.45 11.69 11.02 2.79 2.17 3.48 8.25 2.86 5.28 74.12 19.13 7.64</code></div>
 
-<div class="eq" id="eq-VI-82"><code>2.92 2.73 2.58 2.90 2.69 2.67 2.69 2.72 2.54 2.73 2.76 2.67 2.57 2.56 2.75 2.89 2.58</code></div>
 
-<div class="eq" id="eq-VI-84"><code>65.0 75.5 72.0 69.4 68.2 68.3 69.9 71.4 70.4 75.0 72.8 73.5 71.8 72.4 75.5 64.9 74.2</code></div>
-<div class="pblk" id="p-VI-11">
-          <p class="en-lines"><span class="sent" data-sid="s-VI-11-1"><span class="en">Fish S2 Pro (Liao, Wang, &amp; Liu et al., 2026) WER ↓</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-VI-11-1"><span class="zh">（表格行）Fish S2 Pro (Liao, Wang, &amp; Liu et al., 2026)；指标 WER ↓。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-VI-85"><code>1.69 1.44 12.18 2.84 3.19 4.54 7.13 6.43 3.50 4.56 4.89 7.28 4.09 5.37 4.74 15.70 6.26</code></div>
 
-<div class="eq" id="eq-VI-87"><code>2.51 2.40 2.25 2.60 2.39 2.36 2.41 2.30 2.26 2.30 2.51 2.35 2.32 2.30 2.39 2.51 2.32</code></div>
 
-<div class="eq" id="eq-VI-89"><code>68.1 78.7 74.7 72.8 70.4 72.2 73.4 76.9 74.5 77.1 74.8 78.0 73.5 75.9 78.6 73.0 76.9</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="pblk" id="p-VI-12">
           <p class="en-lines"><span class="sent" data-sid="s-VI-12-1"><span class="en">VoxCPM 2 (Zhou, Zeng, &amp; Liu et al., 2026) Closed-source models WER ↓</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-VI-12-1"><span class="zh">（表格行）VoxCPM 2 (Zhou, Zeng, &amp; Liu et al., 2026)；闭源模型；指标 WER ↓。</span></span></p>
@@ -898,7 +912,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 <div class="eq" id="eq-VI-105"><code>Spk. sim.* ↑10.2 29.9</code></div>
 
-<div class="eq" id="eq-VI-107"><code>Gemini 3.1 Flash (Google DeepMind, 2026) WER ↓</code></div>
+
 
 
 
@@ -955,17 +969,39 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         <div class="exp exp-plain">模型学歪了不会报错，而是输出「像人话的噪音」，必须拿 ASR 回听才能发现。</div>
       </div></div></div>
         </div>
-<div class="cap" id="tab-IV"><span class="cap-k">表</span><p class="en">TABLE IV: ZTTS1-Eval In-the-wild zero-shot results across WER, MSR-UTMOS, and speaker similarity segmented by open-source and closed-source models. Best result per language and metric is shown in bold; second-best is underlined.</p><p class="zh">表 IV：ZTTS1-Eval 实景（in-the-wild）零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>WER ↓</td><td>1.40</td><td>1.17</td><td>–</td><td>3.00</td><td>2.37</td><td>2.52</td><td>7.87</td><td>– 2.40</td><td>3.63</td><td>3.38</td><td>5.30</td><td>2.10</td><td>3.75</td><td>–</td><td>–</td><td>4.84</td></tr>
+<div class="cap" id="tab-IV"><span class="cap-k">表</span><p class="en">TABLE IV: ZTTS1-Eval In-the-wild zero-shot results across WER, MSR-UTMOS, and speaker similarity segmented by open-source and closed-source models. Best result per language and metric is shown in bold; second-best is underlined.</p><p class="zh">表 IV：ZTTS1-Eval 实景（in-the-wild）零样本结果，按开源/闭源模型分段的 WER、MSR-UTMOS 与说话人相似度。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>WER ↓</td><td>5.61</td><td>7.78</td><td>21.05</td><td>6.77</td><td>7.34</td><td></td><td>8.08 14.20 17.23</td><td>6.94</td><td>9.18</td><td></td><td></td><td></td><td>7.56 12.38 86.41</td><td></td><td>25.75 20.86</td><td></td></tr>
+<tr><td>Ground truth</td><td>UTMOS ↑</td><td>2.48</td><td>2.39</td><td>2.22</td><td>2.52</td><td>2.22</td><td>2.27</td><td>2.22 2.14</td><td>2.19</td><td>2.27</td><td>2.48</td><td>2.41</td><td>2.23</td><td>2.23</td><td>2.40</td><td>2.24</td><td>2.27</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>75.9</td><td>82.1</td><td>81.0</td><td>78.5</td><td>78.0</td><td>77.6</td><td>78.7 80.0</td><td>78.7</td><td>82.3</td><td>79.7</td><td>82.5</td><td>79.5</td><td>79.2</td><td>82.5</td><td>78.9</td><td>80.8</td></tr>
+<tr><td>Open-source models</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>WER ↓</td><td>4.70</td><td>3.19</td><td>21.43</td><td>5.84</td><td>5.38</td><td></td><td>4.56 15.50 11.84</td><td>5.61 10.18</td><td></td><td></td><td></td><td>6.73</td><td>7.80 12.87</td><td></td><td>23.49 10.46</td><td></td></tr>
+<tr><td>ZONOS2 8B</td><td>UTMOS ↑</td><td>2.44</td><td>2.43</td><td>2.22</td><td>2.52</td><td>2.42</td><td>2.37</td><td>2.47 2.25</td><td>2.32</td><td>2.34</td><td>2.55</td><td>2.48</td><td>2.33</td><td>2.30</td><td>2.43</td><td>2.52</td><td>2.41</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>67.0</td><td>74.3</td><td>67.4</td><td>69.4</td><td>69.4</td><td>67.7</td><td>66.3 71.9</td><td>69.2</td><td>70.9</td><td>72.1</td><td>72.9</td><td>70.4</td><td>70.9</td><td>68.4</td><td>68.5</td><td>72.1</td></tr>
+<tr><td></td><td>WER ↓</td><td>2.21</td><td>2.77</td><td>13.94</td><td>3.37</td><td>2.10</td><td>2.79</td><td>9.04 6.48</td><td>2.51</td><td>8.70</td><td>4.59</td><td>5.85</td><td>2.94</td><td>4.32</td><td>5.93</td><td>16.05</td><td>7.47</td></tr>
+<tr><td>ZONOS2 8B Quality Mode</td><td>UTMOS ↑</td><td>2.99</td><td>2.68</td><td>2.51</td><td>2.92</td><td>2.72</td><td>2.74</td><td>2.73 2.66</td><td>2.63</td><td>2.69</td><td>2.78</td><td>2.76</td><td>2.75</td><td>2.62</td><td>2.74</td><td>2.88</td><td>2.64</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>56.9</td><td>70.6</td><td>63.8</td><td>63.1</td><td>63.3</td><td>61.2</td><td>62.3 67.6</td><td>63.8</td><td>70.0</td><td>67.3</td><td>69.0</td><td>63.8</td><td>67.7</td><td>68.3</td><td>65.0</td><td>67.7</td></tr>
+<tr><td>Qwen 3 TTS 1.7B</td><td>WER ↓</td><td>1.05 0.99</td><td></td><td></td><td>– 2.11</td><td>1.77</td><td>2.62</td><td>– 12.46</td><td>2.85</td><td>2.32</td><td></td><td></td><td>2.20</td><td>3.88</td><td>9.61</td><td>18.04 83.20</td><td></td></tr>
+<tr><td>(Hu, Zhu, &amp; He et al., 2026)</td><td>UTMOS ↑</td><td>3.20</td><td>2.90</td><td>–</td><td>3.12</td><td>2.87</td><td>2.84</td><td>– 2.94</td><td>2.76</td><td>2.86</td><td>2.97</td><td>2.92</td><td>2.85</td><td>2.74</td><td>2.93</td><td>3.13</td><td>2.70</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>61.5</td><td>75.3</td><td>–</td><td>68.3</td><td>65.8</td><td>67.1</td><td>– 67.4</td><td>71.9</td><td>75.2</td><td>73.7</td><td>62.7</td><td>69.4</td><td>72.8</td><td>73.1</td><td>60.5</td><td>62.1</td></tr>
+<tr><td></td><td>WER ↓</td><td>2.09</td><td>1.26</td><td>15.59</td><td>2.65</td><td>2.97</td><td></td><td>3.45 11.69 11.02</td><td>2.79</td><td>2.17</td><td>3.48</td><td>8.25</td><td>2.86</td><td>5.28 74.12</td><td></td><td>19.13</td><td>7.64</td></tr>
+<tr><td>Fish S2 Pro</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>2.92</td><td>2.73</td><td>2.58</td><td>2.90</td><td>2.69</td><td>2.67</td><td>2.69 2.72</td><td>2.54</td><td>2.73</td><td>2.76</td><td>2.67</td><td>2.57</td><td>2.56</td><td>2.75</td><td>2.89</td><td>2.58</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>65.0</td><td>75.5</td><td>72.0</td><td>69.4</td><td>68.2</td><td>68.3</td><td>69.9 71.4</td><td>70.4</td><td>75.0</td><td>72.8</td><td>73.5</td><td>71.8</td><td>72.4</td><td>75.5</td><td>64.9</td><td>74.2</td></tr>
+<tr><td></td><td>WER ↓</td><td>1.69</td><td>1.44</td><td>12.18</td><td>2.84</td><td>3.19</td><td>4.54</td><td>7.13 6.43</td><td>3.50</td><td>4.56</td><td>4.89</td><td>7.28</td><td>4.09</td><td>5.37</td><td>4.74 15.70</td><td></td><td>6.26</td></tr>
+<tr><td>VoxCPM 2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>(Zhou, Zeng, &amp; Liu et al., 2026)</td><td>UTMOS ↑</td><td>2.51</td><td>2.40</td><td>2.25</td><td>2.60</td><td>2.39</td><td>2.36</td><td>2.41 2.30</td><td>2.26</td><td>2.30</td><td>2.51</td><td>2.35</td><td>2.32</td><td>2.30</td><td>2.39</td><td>2.51</td><td>2.32</td></tr>
+<tr><td></td><td>Spk. sim. ↑</td><td>68.1</td><td>78.7</td><td>74.7</td><td>72.8</td><td>70.4</td><td>72.2</td><td>73.4 76.9</td><td>74.5</td><td>77.1</td><td>74.8</td><td>78.0</td><td>73.5</td><td>75.9</td><td>78.6</td><td>73.0</td><td>76.9</td></tr>
+<tr><td>Closed-source models</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>WER ↓</td><td>1.40</td><td>1.17</td><td>–</td><td>3.00</td><td>2.37</td><td>2.52</td><td>7.87</td><td>– 2.40</td><td>3.63</td><td>3.38</td><td>5.30</td><td>2.10</td><td>3.75</td><td>–</td><td>–</td><td>4.84</td></tr>
 <tr><td>Cartesia Sonic 3.5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>(Cartesia, 2026)</td><td>UTMOS ↑</td><td>3.05</td><td>2.76</td><td>–</td><td>2.98</td><td>2.71</td><td>2.69</td><td>2.71</td><td>– 2.60</td><td>2.69</td><td>2.86</td><td>2.73</td><td>2.68</td><td>2.64</td><td>–</td><td>–</td><td>2.57</td></tr>
 <tr><td></td><td>Spk. sim. ↑</td><td>70.2 79.1</td><td></td><td></td><td></td><td>– 76.7 75.4 75.5</td><td></td><td>76.1</td><td>– 77.2</td><td>78.4 77.8</td><td></td><td>79.5 77.6</td><td></td><td>78.2</td><td>–</td><td>–</td><td>78.5</td></tr>
-<tr><td></td><td>WER ↓</td><td>1.35</td><td>1.22</td><td>12.19</td><td></td><td>2.50 1.58 2.17</td><td></td><td>7.36</td><td>5.98 2.36</td><td>2.84</td><td>3.93</td><td>4.66 2.06</td><td></td><td>4.28</td><td>3.84</td><td>17.76</td><td>7.78</td></tr>
+<tr><td></td><td>WER ↓</td><td>1.35</td><td>1.22</td><td>12.19</td><td></td><td>2.50 1.58 2.17</td><td></td><td>7.36 5.98</td><td>2.36</td><td>2.84</td><td>3.93</td><td>4.66 2.06</td><td></td><td>4.28</td><td>3.84</td><td>17.76</td><td>7.78</td></tr>
 <tr><td>Eleven Labs V3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>(ElevenLabs, 2026)</td><td>UTMOS ↑</td><td>3.61</td><td>3.36</td><td>3.41</td><td>3.57</td><td>3.34</td><td>3.28</td><td>3.47</td><td>3.34 3.21</td><td>3.49</td><td>3.40</td><td>3.37</td><td>3.39</td><td>3.26</td><td>3.48</td><td>3.51</td><td>3.44</td></tr>
-<tr><td></td><td>Spk. sim.* ↑</td><td>6.3</td><td>29.7</td><td>24.4</td><td>15.3</td><td>16.4</td><td>13.6</td><td>16.3</td><td>26.2 19.6</td><td>28.6</td><td>28.7</td><td>23.6</td><td>22.1</td><td>19.7</td><td>33.9</td><td>13.1</td><td>26.4</td></tr>
+<tr><td>(ElevenLabs, 2026)</td><td>UTMOS ↑</td><td>3.61</td><td>3.36</td><td>3.41</td><td>3.57</td><td>3.34</td><td>3.28</td><td>3.47 3.34</td><td>3.21</td><td>3.49</td><td>3.40</td><td>3.37</td><td>3.39</td><td>3.26</td><td>3.48</td><td>3.51</td><td>3.44</td></tr>
+<tr><td></td><td>Spk. sim.* ↑</td><td>6.3</td><td>29.7</td><td>24.4</td><td>15.3</td><td>16.4</td><td>13.6</td><td>16.3 26.2</td><td>19.6</td><td>28.6</td><td>28.7</td><td>23.6</td><td>22.1</td><td>19.7</td><td>33.9</td><td>13.1</td><td>26.4</td></tr>
 <tr><td></td><td>WER ↓</td><td>2.12</td><td></td><td></td><td>2.40</td><td>1.94</td><td>3.56</td><td>8.73</td><td>– 2.08</td><td>2.72 2.27</td><td></td><td>5.33</td><td>3.21</td><td>3.77</td><td>–</td><td>–</td><td>6.92</td></tr>
 <tr><td>Gemini 3.1 Flash</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td>UTMOS ↑</td><td>3.78 3.55</td><td></td><td></td><td>3.40 3.67 3.41 3.45</td><td></td><td></td><td>3.60</td><td>– 3.45</td><td>3.56 3.45</td><td></td><td>3.47 3.43</td><td></td><td>3.36</td><td>–</td><td>–</td><td>3.66</td></tr>
+<tr><td>(Google DeepMind, 2026)</td><td>UTMOS ↑</td><td>3.78 3.55</td><td></td><td></td><td>3.40 3.67 3.41 3.45</td><td></td><td></td><td>3.60</td><td>– 3.45</td><td>3.56 3.45</td><td></td><td>3.47 3.43</td><td></td><td>3.36</td><td>–</td><td>–</td><td>3.66</td></tr>
 <tr><td></td><td></td><td></td><td>29.9</td><td>26.3</td><td>17.5</td><td>20.5</td><td>15.0</td><td>18.1</td><td>– 19.1</td><td>28.3</td><td>29.2</td><td>26.2</td><td>24.1</td><td>20.9</td><td>–</td><td>–</td><td>26.7</td></tr>
 <tr><td></td><td>WER ↓</td><td>1.89</td><td>1.42</td><td>14.85</td><td>3.54</td><td>2.67</td><td>4.40 10.14</td><td></td><td>– 3.46</td><td>6.93</td><td>4.16</td><td>7.65</td><td>3.87</td><td>5.32</td><td>–</td><td>19.56</td><td>–</td></tr>
 <tr><td>Inworld TTS 2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -1114,7 +1150,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-total"><span class="t-zh">合计</span><span class="t-en">Total</span></h3><div class="eq" id="eq-total-1"><code>1618 2.86</code></div>
+      <h3 class="sech lv2" id="sec-total"><span class="t-zh">合计</span><span class="t-en">Total</span></h3>
 <div class="pblk" id="p-total-1">
           <p class="en-lines"></p>
           <p class="zh-lines"></p>
@@ -1137,8 +1173,26 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td></td><td>tr</td><td>93</td><td>0.17</td></tr>
 <tr><td></td><td>tl</td><td>89</td><td>0.14</td></tr>
 <tr><td>2024,</td><td>pl</td><td>105</td><td>0.21</td></tr>
-<tr><td></td><td>th</td><td>93</td><td>0.14</td></tr></tbody></table></div></div>
-<div class="cap" id="tab-VI"><span class="cap-k">表</span><p class="en">TABLE VI: ZTTS1-Eval ITW language coverage statis- tics.</p><p class="zh">表 VI：ZTTS1-Eval ITW 语种覆盖统计。</p></div></section>
+<tr><td></td><td>th</td><td>93</td><td>0.14</td></tr>
+<tr><td>in</td><td>Total</td><td>1618</td><td>2.86</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-VI"><span class="cap-k">表</span><p class="en">TABLE VI: ZTTS1-Eval ITW language coverage statis- tics.</p><p class="zh">表 VI：ZTTS1-Eval ITW 语种覆盖统计。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>en</td><td>120</td><td>0.22</td></tr>
+<tr><td></td><td>zh</td><td>92</td><td>0.14</td></tr>
+<tr><td></td><td>de</td><td>104</td><td>0.20</td></tr>
+<tr><td></td><td>es</td><td>95</td><td>0.17</td></tr>
+<tr><td></td><td>fr</td><td>92</td><td>0.18</td></tr>
+<tr><td></td><td>it</td><td>97</td><td>0.18</td></tr>
+<tr><td></td><td>ja</td><td>91</td><td>0.14</td></tr>
+<tr><td></td><td>ko</td><td>93</td><td>0.13</td></tr>
+<tr><td></td><td>ru</td><td>101</td><td>0.19</td></tr>
+<tr><td>bal-</td><td>pt</td><td>93</td><td>0.19</td></tr>
+<tr><td>URL</td><td>ar</td><td>90</td><td>0.15</td></tr>
+<tr><td></td><td>hi</td><td>86</td><td>0.14</td></tr>
+<tr><td></td><td>id</td><td>84</td><td>0.16</td></tr>
+<tr><td></td><td>tr</td><td>93</td><td>0.17</td></tr>
+<tr><td></td><td>tl</td><td>89</td><td>0.14</td></tr>
+<tr><td>2024,</td><td>pl</td><td>105</td><td>0.21</td></tr>
+<tr><td></td><td>th</td><td>93</td><td>0.14</td></tr>
+<tr><td>in</td><td>Total</td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">模型细节</span><span class="t-en">Model Details</span></h2><div class="pblk" id="p-C-1">
           <p class="en-lines"><span class="sent" data-sid="s-C-1-1"><span class="en">Each transformer layer follows a pre-normalization residual structure.</span></span> <span class="sent" data-sid="s-C-1-2"><span class="en">For layer ℓ, with input hidden state hℓ t, the following is computed:</span></span></p>
@@ -1211,53 +1265,78 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 
 
-<div class="eq" id="eq-D-2"><code>49.66 3.901 4.48 –</code></div>
-<div class="eq" id="eq-D-3"><code>hard_en</code></div>
-<div class="eq" id="eq-D-4"><code>49.58 4.020 5.23 –</code></div>
-<div class="eq" id="eq-D-5"><code>zh</code></div>
-<div class="eq" id="eq-D-6"><code>56.93 3.710 12.08 –</code></div>
-<div class="eq" id="eq-D-7"><code>hard_zh</code></div>
-<div class="eq" id="eq-D-8"><code>50.64 3.614 25.55 –</code></div>
-<div class="eq" id="eq-D-9"><code>ja</code></div>
-<div class="eq" id="eq-D-10"><code>53.15 3.846 8.60 –</code></div>
-<div class="eq" id="eq-D-11"><code>ko</code></div>
-<div class="eq" id="eq-D-12"><code>58.75 3.945 6.03 –</code></div>
-<div class="eq" id="eq-D-13"><code>Zero-shot to_en</code></div>
-<div class="eq" id="eq-D-14"><code>46.66 3.896 4.94 –</code></div>
-<div class="eq" id="eq-D-15"><code>to_hard_en</code></div>
-<div class="eq" id="eq-D-16"><code>45.93 4.007 9.13 –</code></div>
-<div class="eq" id="eq-D-17"><code>to_zh</code></div>
-<div class="eq" id="eq-D-18"><code>47.00 3.701 18.72 –</code></div>
-<div class="eq" id="eq-D-19"><code>to_hard_zh</code></div>
-<div class="eq" id="eq-D-20"><code>47.60 3.665 23.27 –</code></div>
-<div class="eq" id="eq-D-21"><code>to_ja</code></div>
-<div class="eq" id="eq-D-22"><code>48.13 3.866 15.12 –</code></div>
-<div class="eq" id="eq-D-23"><code>to_ko</code></div>
-<div class="eq" id="eq-D-24"><code>50.40 3.918 6.82 –</code></div>
-<div class="eq" id="eq-D-25"><code>Cross-lingual zero-shot Emotion zero-shot en</code></div>
-<div class="eq" id="eq-D-26"><code>39.12 3.837 4.71 37.3</code></div>
-<div class="eq" id="eq-D-27"><code>zh</code></div>
-<div class="eq" id="eq-D-28"><code>58.48 3.610 7.57 36.7</code></div>
 
-<div class="eq" id="eq-D-30"><code>48.16 3.743 – –</code></div>
-<div class="eq" id="eq-D-31"><code>rhyme</code></div>
-<div class="eq" id="eq-D-32"><code>42.00 3.547 – –</code></div>
-<div class="eq" id="eq-D-33"><code>speed</code></div>
-<div class="eq" id="eq-D-34"><code>45.25 3.768 – –</code></div>
-<div class="eq" id="eq-D-35"><code>volume</code></div>
-<div class="eq" id="eq-D-36"><code>44.54 3.777 – –</code></div>
+
+
+
+
+
+
+
+
+
+
+<div class="eq" id="eq-D-13"><code>Zero-shot to_en</code></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="eq" id="eq-D-25"><code>Cross-lingual zero-shot Emotion zero-shot en</code></div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-D-37"><code>Subjective continuation Subjective zero-shot all</code></div>
-<div class="eq" id="eq-D-38"><code>53.32 3.791 – –</code></div>
+
 <div class="eq" id="eq-D-39"><code>Seed-TTS-Eval Zero-shot Test-EN</code></div>
-<div class="eq" id="eq-D-40"><code>47.60 – 2.05 –</code></div>
+
 
 
 
 
 
 <div class="cap" id="fig-D-1"><img class="fig" src="../assets/figures/2606.24320/fig-D-1.png" loading="lazy" alt="Fig. 6: Violin plots of DS-WED scores for the English portions of both ZTTS1-Eval sets."><span class="cap-k">图</span><p class="en">Fig. 6: Violin plots of DS-WED scores for the English portions of both ZTTS1-Eval sets.</p><p class="zh">图 6：ZTTS1-Eval 两个集合英文部分 DS-WED 分数的小提琴图。</p></div>
-<div class="cap" id="tab-VII"><span class="cap-k">表</span><p class="en">TABLE VII: ZONOS2 evaluation results across speaker similarity, DNSMOS, WER, and emotion accuracy on the CosyVoice 3 Eval and Seed-TTS-Eval benchmarks, grouped by task. Emotion accuracy is only reported for the emotion zero-shot task.</p><p class="zh">表 VII：ZONOS2 在 CosyVoice 3 Eval 与 Seed-TTS-Eval 基准上按任务分组的说话人相似度、DNSMOS、WER 与情绪准确率评测结果。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Test-ZH</td><td></td><td>58.20</td><td>–</td><td>2.55</td><td>–</td></tr>
-<tr><td></td><td>Test-ZH-Hard</td><td>56.2</td><td>–</td><td>11.15</td><td>–</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-VII"><span class="cap-k">表</span><p class="en">TABLE VII: ZONOS2 evaluation results across speaker similarity, DNSMOS, WER, and emotion accuracy on the CosyVoice 3 Eval and Seed-TTS-Eval benchmarks, grouped by task. Emotion accuracy is only reported for the emotion zero-shot task.</p><p class="zh">表 VII：ZONOS2 在 CosyVoice 3 Eval 与 Seed-TTS-Eval 基准上按任务分组的说话人相似度、DNSMOS、WER 与情绪准确率评测结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Set</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>en</td><td>49.66</td><td>3.901</td><td>4.48</td><td>–</td></tr>
+<tr><td>hard_en</td><td>49.58</td><td>4.020</td><td>5.23</td><td>–</td></tr>
+<tr><td>zh</td><td>56.93</td><td>3.710</td><td>12.08</td><td>–</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>hard_zh</td><td>50.64</td><td>3.614</td><td>25.55</td><td>–</td></tr>
+<tr><td>ja</td><td>53.15</td><td>3.846</td><td>8.60</td><td>–</td></tr>
+<tr><td>ko</td><td>58.75</td><td>3.945</td><td>6.03</td><td>–</td></tr>
+<tr><td>to_en</td><td>46.66</td><td>3.896</td><td>4.94</td><td>–</td></tr>
+<tr><td>to_hard_en</td><td>45.93</td><td>4.007</td><td>9.13</td><td>–</td></tr>
+<tr><td>to_zh</td><td>47.00</td><td>3.701</td><td>18.72</td><td>–</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>to_hard_zh</td><td>47.60</td><td>3.665</td><td>23.27</td><td>–</td></tr>
+<tr><td>to_ja</td><td>48.13</td><td>3.866</td><td>15.12</td><td>–</td></tr>
+<tr><td>to_ko</td><td>50.40</td><td>3.918</td><td>6.82</td><td>–</td></tr>
+<tr><td>en</td><td>39.12</td><td>3.837</td><td>4.71</td><td>37.3</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>zh</td><td>58.48</td><td>3.610</td><td>7.57</td><td>36.7</td></tr>
+<tr><td>emotion</td><td>48.16</td><td>3.743</td><td>–</td><td>–</td></tr>
+<tr><td>rhyme</td><td>42.00</td><td>3.547</td><td>–</td><td>–</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>speed</td><td>45.25</td><td>3.768</td><td>–</td><td>–</td></tr>
+<tr><td>volume</td><td>44.54</td><td>3.777</td><td>–</td><td>–</td></tr>
+<tr><td>all</td><td>53.32</td><td>3.791</td><td>–</td><td>–</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Test-EN</td><td>47.60</td><td>–</td><td>2.05</td><td>–</td></tr>
+<tr><td>Test-ZH</td><td>58.20</td><td>–</td><td>2.55</td><td>–</td></tr>
+<tr><td>Test-ZH-Hard</td><td>56.2</td><td>–</td><td>11.15</td><td>–</td></tr></tbody></table></div></div>
 <div class="cap" id="fig-D-2"><img class="fig" src="../assets/figures/2606.24320/fig-D-2.png" loading="lazy" alt="Fig. 7: Allosaurus SR distributions for the English portions of both ZTTS1-Eval sets."><span class="cap-k">图</span><p class="en">Fig. 7: Allosaurus SR distributions for the English portions of both ZTTS1-Eval sets.</p><p class="zh">图 7：ZTTS1-Eval 两个集合英文部分的 Allosaurus SR 分布。</p></div></section></article>
   <footer class="foot">
     原文来自 arXiv:2606.24320（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。

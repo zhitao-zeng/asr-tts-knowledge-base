@@ -66,6 +66,15 @@
   "page": 5,
   "headers": [
    [
+    "results of which are shown in Table 2.",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
     "Training data",
     "dev_clean",
     "dev_other",
@@ -75,6 +84,7 @@
   ],
   "rows": [
    [
+    "",
     "Synthetic data",
     "2.59",
     "7.78",
@@ -83,6 +93,7 @@
    ],
    [
     "Real data",
+    "",
     "2.26",
     "5.97",
     "2.45",
@@ -156,14 +167,9 @@
   "page": 9,
   "headers": [
    [
+    "the effectiveness of the former method.",
     "",
     "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "Specifically, we use REINFORCE to fine-tune two versions based on the",
     "",
     "",
     "",
@@ -171,49 +177,18 @@
    ],
    [
     "",
-    "model (Seed-TTSICL) using different reward functions: Seed-TTSRL-SIM-WER, which",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "WER objective metrics as rewards to improve speaker similarity and robustness, and",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "400 sentences with especially challenging patterns for autoregressive models such as",
-    "",
-    "",
-    ""
-   ]
-  ],
-  "rows": [
-   [
-    "tongue twisters, and so on. We report the results of objective and subjective",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
+    "System",
     "",
     "",
     "Test set",
     "WER (↓)",
     "SIM (↑)"
-   ],
+   ]
+  ],
+  "rows": [
    [
+    "",
+    "",
     "",
     "",
     "ZH",
@@ -223,11 +198,15 @@
    [
     "",
     "",
+    "Seed-TTSICL",
+    "",
     "EN",
     "2.249",
     "0.762"
    ],
    [
+    "",
+    "",
     "",
     "",
     "“Hard”",
@@ -237,6 +216,8 @@
    [
     "",
     "",
+    "",
+    "",
     "ZH",
     "1.002",
     "0.801"
@@ -244,11 +225,15 @@
    [
     "",
     "",
+    "",
+    "Seed-TTSRL-SIM-WER",
     "EN",
     "1.945",
     "0.766"
    ],
    [
+    "",
+    "",
     "",
     "",
     "“Hard”",
@@ -310,6 +295,9 @@
   "headers": [
    [
     "",
+    "",
+    "",
+    "",
     "WER (↓)",
     "SIM (↑)",
     "WER (↓)",
@@ -319,12 +307,18 @@
   "rows": [
    [
     "",
+    "DiffVC [Popov et al., 2021]",
+    "",
+    "",
     "-",
     "-",
     "16.861",
     "0.311"
    ],
    [
+    "",
+    "",
+    "HierSpeech++ [Lee et al., 2023]",
     "",
     "-",
     "-",
@@ -333,6 +327,9 @@
    ],
    [
     "",
+    "",
+    "",
+    "Seed-TTS (Ours) w/o self-distillation",
     "1.489",
     "0.636",
     "2.366",
@@ -340,12 +337,18 @@
    ],
    [
     "",
+    "",
+    "",
+    "Seed-TTS (Ours) with self-distillation",
     "1.216",
     "0.791",
     "2.121",
     "0.753"
    ],
    [
+    "Before conversion",
+    "",
+    "",
     "",
     "1.254",
     "-",
@@ -353,62 +356,9 @@
     "-"
    ],
    [
-    "Table 6. Evaluation results on zero-shot voice conversion. The results of DiffVC [Popov et al., 2021]",
     "",
+    "the effectiveness of the former method.",
     "",
-    "",
-    ""
-   ],
-   [
-    "and HierSpeech++ [Lee et al., 2023] are obtained via their respective released official checkpoints.",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "Inspired by these findings, we explore RL methods similar to those in previous studies",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "et al., 2024, Prabhavalkar et al., 2018, Wang et al., 2024b, Sutton et al., 1999, Schulman et al.,",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "to enhance various aspects of Seed-TTS. We compare RL methods utilizing external reward",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "such as Proximal Policy Optimization and REINFORCE, with those that do not, such as DPO.",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "findings indicate that both approaches are effective. The former allows for clear control over",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "speech attributes, while the latter benefits from a simpler implementation. In this report, we",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
     "",
     "",
     "",
@@ -441,15 +391,12 @@
   "page": 11,
   "headers": [
    [
-    "stability and speaker similarity.",
     "",
     "",
     "",
     "",
-    ""
-   ],
-   [
-    "the original utterance duration.",
+    "",
+    "",
     "",
     "",
     "",
@@ -457,116 +404,173 @@
     ""
    ],
    [
+    "",
+    "",
     "",
     "objective evaluation metrics. The results are shown in Figure 7.",
     "",
     "",
     "",
-    ""
-   ],
-   [
     "",
-    "",
-    "this way, the output speech produces improved naturalness and speaker similarity compared",
     "",
     "",
     ""
    ],
    [
+    "",
+    "",
+    "",
+    "",
     "",
     "",
     "",
     "",
     "SIM",
+    "",
     ""
    ]
   ],
   "rows": [
    [
+    "",
     "3.50",
     "",
     "",
     "",
     "",
-    "0.98"
+    "",
+    "",
+    "",
+    "0.98",
+    ""
    ],
    [
+    "",
     "3.10",
     "0.940",
+    "0.940",
+    "0.936",
     "",
     "",
     "",
-    "0.95"
+    "",
+    "0.95",
+    ""
    ],
    [
+    "",
+    "",
     "",
     "",
     "",
     "0.930",
     "",
-    ""
-   ],
-   [
-    "",
-    "",
     "",
     "",
     "",
     ""
    ],
    [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "0.921",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "(EN)",
     "2.70",
     "",
     "",
     "",
+    "",
+    "",
+    "0.911",
     "0.901",
-    "0.92"
+    "0.92",
+    "(EN)"
    ],
    [
+    "WER",
     "2.30",
+    "2.165",
     "2.190",
-    "",
+    "2.201",
     "2.194",
+    "2.101",
     "",
-    "0.89"
+    "",
+    "0.89",
+    "SIM"
    ],
    [
     "",
     "",
     "",
     "",
+    "",
+    "",
+    "",
+    "2.134",
     "2.079",
+    "",
     ""
    ],
    [
+    "",
     "1.90",
     "",
     "",
     "",
     "",
-    "0.86"
+    "",
+    "",
+    "",
+    "0.86",
+    ""
    ],
    [
+    "",
     "1.50",
     "",
     "",
     "",
     "",
-    "0.83"
+    "",
+    "",
+    "",
+    "0.83",
+    ""
    ],
    [
     "",
-    "10%",
     "",
+    "0%",
+    "10%",
+    "20%",
     "30%",
+    "40%",
+    "50%",
     "60%",
+    "",
     ""
    ],
    [
     "",
     "",
     "",
+    "",
+    "",
     "Mask Ratio",
+    "",
+    "",
+    "",
     "",
     ""
    ]

@@ -620,41 +620,112 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-5-2-1"><span class="zh">表头：Models / Tokens/s / Latent Layer Type / PESQ↑ / STOI↑ / ViSQOL↑ / MCD↓ / UTMOS↑——Encodec（后续照原文）。</span></span></p>
           
         </div>
+<div class="eq" id="eq-4-5-1"><code>600 8</code></div>
+
+
+
+<div class="eq" id="eq-4-5-5"><code>450 9</code></div>
+
+
+<div class="eq" id="eq-4-5-8"><code>WavTokenizer</code></div>
+<div class="eq" id="eq-4-5-9"><code>75 1</code></div>
+
+
+<div class="eq" id="eq-4-5-12"><code>X-codec2</code></div>
+<div class="eq" id="eq-4-5-13"><code>50 1</code></div>
+
+
+<div class="eq" id="eq-4-5-16"><code>WaveVAE</code></div>
+<div class="eq" id="eq-4-5-17"><code>25 1</code></div>
+
+
+<div class="cap" id="tab-4-5-1"><span class="cap-k">表</span><p class="en">Table 5: Comparison of the reconstruction quality. The sampling rate are set to 16 kHz. Bold and Underline values indicate the best and second best results. “Tokens/s” means how many tokens a one-second speech will be compressed into.</p><p class="zh">表 5：重建质量对比。采样率均设为 16 kHz。加粗与下划线数值分别表示最优与次优结果。「Tokens/s」表示 1 秒语音被压缩为多少个 token。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>compressed into.</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Setting</th><th>SIM-O↑</th><th>WER↓</th><th>defined alignments and modeling the duration infor-</th></tr></thead><tbody><tr><td></td><td></td><td>0.71</td><td>1.82%</td><td>mation implicitly; 3) w/ CFG, we use the standard</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>CFG following the common practice in Diffusion-</td></tr>
+<tr><td></td><td>w/ Encodec</td><td>0.56</td><td>2.24%</td><td></td></tr>
+<tr><td></td><td>w/ DAC</td><td>0.64</td><td>1.93%</td><td>based TTS; 4) w/o CFG, we do not use the CFG</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>mechanism. All tests follow the experimental setup</td></tr>
+<tr><td></td><td></td><td>Table 6: Comparison of zero-shot TTS performance of</td><td></td><td>described in Section 4.2. The results are shown in</td></tr>
+<tr><td></td><td></td><td>MegaTTS 3 using different speech compression models</td><td></td><td>Table 7. For settings 1) and 2), it can be observed</td></tr>
+<tr><td></td><td>on the LibriSpeech test-clean set.</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>that both forced alignment and sparse alignment</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>can enhance the performance of speech synthesis</td></tr>
+<tr><td>Setting</td><td>SIM-O↑</td><td>WER↓</td><td>CMOS↑</td><td>models. However, compared to forced alignment,</td></tr>
+<tr><td>Ours</td><td>0.71</td><td>1.82%</td><td>0.00</td><td>sparse alignment does not constrain the model’s</td></tr>
+<tr><td>w/ F.A.</td><td>0.70</td><td>1.80%</td><td>-0.17</td><td>search space, leading to a prosodic naturalness (see</td></tr>
+<tr><td>w/o A.</td><td>0.67</td><td>2.14%</td><td>-0.12</td><td>Section 4.3). Therefore, the sparse alignment strat-</td></tr>
+<tr><td>w/ CFG</td><td>0.68</td><td>1.79%</td><td>-0.02</td><td>egy achieves +0.17 CMOS compared to the forced</td></tr>
+<tr><td>w/o CFG</td><td>0.43</td><td>6.85%</td><td>-0.56</td><td>alignment strategy. For setting 3), compared with</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>the standard CFG, our multi-condition CFG per-</td></tr>
+<tr><td>Table 7:</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>forms slightly better as it allows for flexible control</td></tr>
+<tr><td></td><td></td><td>CFG mechanisms on the LibriSpeech test-clean set.</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>over the weights between the text prompt and the</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Second, to demonstrate the impact of different</td><td></td><td></td></tr>
+<tr><td></td><td></td><td>speech compression models on the overall perfor-</td><td></td><td>ally, we visualize the attention score matrices from</td></tr>
+<tr><td></td><td></td><td>mance of the TTS system, we extracted the latents</td><td></td><td>different transformer layers in MegaTTS 3 in Ap-</td></tr>
+<tr><td>from</td><td>and</td><td>DAC,</td><td>respectively,</td><td>pendix F, leading to some interesting observations.</td></tr>
+<tr><td></td><td></td><td>ing our MegaTTS 3 model. We report the experi-</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>method outperforms “w/ DAC” and “w/ Encodec”,</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>In this paper, we introduce MegaTTS 3, a zero-shot</td></tr>
+<tr><td></td><td></td><td>due to the fact that the latent space of our speech</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>TTS framework that leverages novel sparse align-</td></tr>
+<tr><td></td><td></td><td>compression model is more compact (only 25 to-</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>ment boundaries to ease the difficulty of alignment</td></tr>
+<tr><td></td><td></td><td>kens per second). The results demonstrate the im-</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>learning while retaining the naturalness of the gen-</td></tr>
+<tr><td>portance</td><td>our</td><td>WaveVAE,</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>erated speeches. This strategy allows MegaTTS 3</td></tr>
+<tr><td></td><td></td><td>high-reconstruction-quality speech codec model,</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>to combine the strengths of methods with both im-</td></tr>
+<tr><td></td><td></td><td>for TTS systems. This conclusion is also verified</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>plicit alignments and predefined hard alignments.</td></tr>
+<tr><td></td><td></td><td>by a previous work (Lee et al., 2024a), which shows</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>Additionally, we employ the PeRFlow technique to</td></tr>
+<tr><td></td><td></td><td>compact target latents facilitate learning in diffu-</td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>further accelerate the generation process and design</td></tr>
+<tr><td>sion models.</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>a multi-condition CFG strategy to offer more flexi-</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>ble control over accents. Experimental results show</td></tr></tbody></table></div></div>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="cap" id="tab-4-5-1"><span class="cap-k">表</span><p class="en">Table 5: Comparison of the reconstruction quality. The sampling rate are set to 16 kHz. Bold and Underline values indicate the best and second best results. “Tokens/s” means how many tokens a one-second speech will be compressed into.</p><p class="zh">表 5：重建质量对比。采样率均设为 16 kHz。加粗与下划线数值分别表示最优与次优结果。「Tokens/s」表示 1 秒语音被压缩为多少个 token。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Encodec</td><td>600</td><td>8</td><td>Discrete</td><td></td><td>3.16</td><td>0.94</td><td>4.31</td><td>1.63</td><td>3.07</td></tr>
-<tr><td>DAC</td><td>450</td><td>9</td><td>Discrete</td><td></td><td>4.13</td><td>0.97</td><td>4.68</td><td>1.05</td><td>4.01</td></tr>
-<tr><td>WavTokenizer</td><td>75</td><td>1</td><td>Discrete</td><td></td><td>2.55</td><td>0.88</td><td>3.83</td><td>1.99</td><td>4.07</td></tr>
-<tr><td>X-codec2</td><td>50</td><td>1</td><td>Discrete</td><td></td><td>3.03</td><td>0.91</td><td>4.12</td><td>1.72</td><td>4.13</td></tr>
-<tr><td>WaveVAE</td><td>25</td><td>1</td><td></td><td>Continuous 3.84</td><td></td><td>0.96</td><td>4.71</td><td>1.03</td><td>4.10</td></tr></tbody></table></div></div>
-
-
-
-<div class="eq" id="eq-4-5-22"><code>0.56 2.24%</code></div>
-
-<div class="eq" id="eq-4-5-24"><code>0.64 1.93%</code></div>
-<div class="cap" id="tab-4-5-2"><span class="cap-k">表</span><p class="en">Table 6: Comparison of zero-shot TTS performance of MegaTTS 3 using different speech compression models on the LibriSpeech test-clean set.</p><p class="zh">表 6：MegaTTS 3 使用不同语音压缩模型时在 LibriSpeech test-clean 集上的零样本 TTS 性能对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>MegaTTS 3 using different speech compression models</th><th></th><th></th></tr><tr><th></th><th>on the LibriSpeech test-clean set.</th><th></th><th></th><th></th></tr><tr><th>Setting</th><th>SIM-O↑</th><th>WER↓</th><th>CMOS↑</th><th>SMOS↑</th></tr></thead><tbody><tr><td>Ours</td><td>0.71</td><td>1.82%</td><td>0.00</td><td>3.94</td></tr>
-<tr><td>w/ F.A.</td><td>0.70</td><td>1.80%</td><td>-0.17</td><td>3.94</td></tr>
-<tr><td>w/o A.</td><td>0.67</td><td>2.14%</td><td>-0.12</td><td>3.88</td></tr>
-<tr><td>w/ CFG</td><td>0.68</td><td>1.79%</td><td>-0.02</td><td>3.89</td></tr>
-<tr><td>w/o CFG</td><td>0.43</td><td>6.85%</td><td>-0.56</td><td>3.35</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-4-5-2"><span class="cap-k">表</span><p class="en">Table 6: Comparison of zero-shot TTS performance of MegaTTS 3 using different speech compression models on the LibriSpeech test-clean set.</p><p class="zh">表 6：MegaTTS 3 使用不同语音压缩模型时在 LibriSpeech test-clean 集上的零样本 TTS 性能对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>MegaTTS 3 using different speech compression models</th><th></th><th></th><th>Table</th></tr><tr><th></th><th>on the LibriSpeech test-clean set.</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>that</th></tr><tr><th>Setting</th><th>SIM-O↑</th><th>WER↓</th><th>CMOS↑</th><th>SMOS↑</th><th></th></tr></thead><tbody><tr><td>Ours</td><td>0.71</td><td>1.82%</td><td>0.00</td><td>3.94</td><td>sparse</td></tr>
+<tr><td>w/ F.A.</td><td>0.70</td><td>1.80%</td><td>-0.17</td><td>3.94</td><td>search</td></tr>
+<tr><td>w/o A.</td><td>0.67</td><td>2.14%</td><td>-0.12</td><td>3.88</td><td></td></tr>
+<tr><td>w/ CFG</td><td>0.68</td><td>1.79%</td><td>-0.02</td><td>3.89</td><td>egy</td></tr>
+<tr><td>w/o CFG</td><td>0.43</td><td>6.85%</td><td>-0.56</td><td>3.35</td><td></td></tr>
+<tr><td>Table 7:</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>forms</td></tr>
+<tr><td></td><td></td><td>CFG mechanisms on the LibriSpeech test-clean set.</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>Second, to demonstrate the impact of different</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>speech compression models on the overall perfor-</td><td></td><td></td><td>ally,</td></tr>
+<tr><td></td><td></td><td>mance of the TTS system, we extracted the latents</td><td></td><td></td><td></td></tr>
+<tr><td>from</td><td>and</td><td>DAC,</td><td>respectively,</td><td>for</td><td>pendix</td></tr>
+<tr><td></td><td></td><td>ing our MegaTTS 3 model. We report the experi-</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>5</td></tr>
+<tr><td></td><td></td><td>method outperforms “w/ DAC” and “w/ Encodec”,</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>In this</td></tr>
+<tr><td></td><td></td><td>due to the fact that the latent space of our speech</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>TTS</td></tr>
+<tr><td></td><td></td><td>compression model is more compact (only 25 to-</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>ment</td></tr>
+<tr><td></td><td></td><td>kens per second). The results demonstrate the im-</td><td></td><td></td><td></td></tr>
+<tr><td>portance</td><td>our</td><td>WaveVAE,</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>erated</td></tr>
+<tr><td></td><td></td><td>high-reconstruction-quality speech codec model,</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>to</td></tr>
+<tr><td></td><td></td><td>for TTS systems. This conclusion is also verified</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>plicit</td></tr>
+<tr><td></td><td></td><td>by a previous work (Lee et al., 2024a), which shows</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>compact target latents facilitate learning in diffu-</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>further</td></tr>
+<tr><td>sion models.</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>a</td></tr></tbody></table></div></div>
 
 
 
@@ -670,15 +741,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>Discrete</td><td>2.55</td><td>0.88</td><td>3.83</td><td></td><td>1.99</td><td>4.07</td></tr>
 <tr><td>Discrete</td><td>3.03</td><td>0.91</td><td>4.12</td><td></td><td>1.72</td><td>4.13</td></tr>
 <tr><td>Continuous</td><td>3.84</td><td>0.96</td><td>4.71</td><td></td><td>1.03</td><td>4.10</td></tr>
-<tr><td>quality.</td><td></td><td>The sampling rate are set to 16 kHz.</td><td></td><td></td><td></td><td>Bold and Underline</td></tr>
-<tr><td></td><td></td><td></td><td>“Tokens/s” means how many tokens a one-second speech will be</td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td>defined alignments and modeling the duration infor-</td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td>mation implicitly; 3) w/ CFG, we use the standard</td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td>CFG following the common practice in Diffusion-</td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td>based TTS; 4) w/o CFG, we do not use the CFG</td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td>mechanism. All tests follow the experimental setup</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>described in Section 4.2. The results are shown in</td><td></td><td></td></tr>
-<tr><td>models</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<tr><td></td><td></td><td></td><td></td><td>described in Section 4.2. The results are shown in</td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-4-5-7">
           <p class="en-lines"><span class="sent" data-sid="s-4-5-7-1"><span class="en">Second, to demonstrate the impact of different speech compression models on the overall performance of the TTS system, we extracted the latents from Encodec and DAC, respectively, for training our MegaTTS 3 model.</span></span> <span class="sent" data-sid="s-4-5-7-2"><span class="en">We report the experimental results in Table 6.</span></span> <span class="sent" data-sid="s-4-5-7-3"><span class="en">It can be seen that our method outperforms “w/ DAC” and “w/ Encodec”, due to the fact that the latent space of our speech compression model is more compact (only 25 tokens per second).</span><button class="mk" data-sid="s-4-5-7-3" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-5-7-4"><span class="en">The results demonstrate the importance of our WaveVAE, a high-compression, high-reconstruction-quality speech codec model, for TTS systems.</span></span> <span class="sent" data-sid="s-4-5-7-5"><span class="en">This conclusion is also verified by a previous work (Lee et al., 2024a), which shows compact target latents facilitate learning in diffusion models.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-5-7-1"><span class="zh">其次，为了展示不同语音压缩模型对 TTS 系统整体性能的影响，我们分别用 Encodec 和 DAC 提取的潜在表征来训练我们的 MegaTTS 3 模型。</span></span><span class="sent" data-sid="s-4-5-7-2"><span class="zh">实验结果见 Table 6。</span></span><span class="sent" data-sid="s-4-5-7-3"><span class="zh">可以看到，我们的方法优于「w/ DAC」和「w/ Encodec」，原因是我们的语音压缩模型的潜在空间更紧凑（每秒仅 25 个 token）。</span><button class="mk" data-sid="s-4-5-7-3" title="查看讲解">解</button></span><span class="sent" data-sid="s-4-5-7-4"><span class="zh">这些结果证明了我们的 WaveVAE——一个高压缩率、高重建质量的语音 codec 模型——对 TTS 系统的重要性。</span></span><span class="sent" data-sid="s-4-5-7-5"><span class="zh">此前一项工作（Lee et al., 2024a）也验证了这一结论：紧凑的目标潜在表征有助于扩散模型的学习。</span></span></p>
@@ -719,11 +787,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-5"><span class="secnum">5</span> <span class="t-zh">5 结论</span><span class="t-en">Conclusions</span></h2><div class="pblk" id="p-5-1">
-          <p class="en-lines"><span class="sent" data-sid="s-5-1-1"><span class="en">In this paper, we introduce MegaTTS 3, a zero-shot TTS framework that leverages novel sparse alignment boundaries to ease the difficulty of alignment learning while retaining the naturalness of the generated speeches.</span></span> <span class="sent" data-sid="s-5-1-2"><span class="en">This strategy allows MegaTTS 3 to combine the strengths of methods with both implicit alignments and predefined hard alignments.</span></span> <span class="sent" data-sid="s-5-1-3"><span class="en">Additionally, we employ the PeRFlow technique to further accelerate the generation process and design a multi-condition CFG strategy to offer more flexible control over accents.</span></span> <span class="sent" data-sid="s-5-1-4"><span class="en">Experimental results show that MegaTTS 3 achieves state-of-the-art zero-shot TTS speech quality while maintaining a more efficient pipeline.</span></span> <span class="sent" data-sid="s-5-1-5"><span class="en">Moreover, the sparse alignment strategy also shows enhanced prosodic naturalness and higher robustness against a suboptimal duration predictor.</span></span> <span class="sent" data-sid="s-5-1-6"><span class="en">Due to space constraints, further discussions are provided in the appendix.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-1-1"><span class="zh">本文提出 MegaTTS 3，一个零样本 TTS 框架，它利用新颖的稀疏对齐边界降低对齐学习的难度，同时保持生成语音的自然度。</span></span><span class="sent" data-sid="s-5-1-2"><span class="zh">这一策略使 MegaTTS 3 能够结合隐式对齐方法与预定义硬对齐方法两者的优点。</span></span><span class="sent" data-sid="s-5-1-3"><span class="zh">此外，我们采用 PeRFlow 技术进一步加速生成过程，并设计了多条件 CFG 策略，以提供更灵活的口音控制。</span></span><span class="sent" data-sid="s-5-1-4"><span class="zh">实验结果表明，MegaTTS 3 在保持更高效流程的同时，取得了最先进的零样本 TTS 语音质量。</span></span><span class="sent" data-sid="s-5-1-5"><span class="zh">此外，稀疏对齐策略还展现出更强的韵律自然度，以及面对不理想时长预测器时更高的鲁棒性。</span></span><span class="sent" data-sid="s-5-1-6"><span class="zh">受篇幅所限，更多讨论见附录。</span></span></p>
-          
-        </div></section>
+      <h2 class="sech lv1" id="sec-5"><span class="secnum">5</span> <span class="t-zh">5 结论</span><span class="t-en">Conclusions</span></h2></section>
 <section>
       <h3 class="sech lv2" id="sec-limitations"><span class="t-zh">局限性</span><span class="t-en">Limitations</span></h3><div class="pblk" id="p-limitations-1">
           <p class="en-lines"><span class="sent" data-sid="s-limitations-1-1"><span class="en">In this section, we discuss the limitations of the proposed method and outline potential strategies for addressing them in future research.</span></span></p>
@@ -1144,26 +1208,35 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="eq" id="eq-G-5"><code>4.59 0.51 0.61 0.36 0.32 0.37</code></div>
 <div class="eq" id="eq-G-6"><code>Ours w/ Standard AR Duration</code></div>
 <div class="eq" id="eq-G-7"><code>4.58 0.50 0.62 0.36 0.31 0.36</code></div>
-<div class="cap" id="tab-G-1"><span class="cap-k">表</span><p class="en">Table 9: Comparisons about “expressiveness” metrics on the LibriSpeech test-clean set.</p><p class="zh">表 9：LibriSpeech test-clean 集上「表现力」指标的对比。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Ours w/ Sparse Alignment</td><td>4.56</td><td>0.52</td><td>0.62</td><td>0.34</td><td>0.30</td><td>0.35</td></tr>
-<tr><td>Ours w/ Forced Alignment</td><td>4.62</td><td>0.45</td><td>0.62</td><td>0.42</td><td>0.34</td><td>0.40</td></tr>
-<tr><td>Ours w/ Standard CFG</td><td>4.59</td><td>0.51</td><td>0.61</td><td>0.36</td><td>0.32</td><td>0.37</td></tr>
-<tr><td>Ours w/ Standard AR Duration</td><td>4.58</td><td>0.50</td><td>0.62</td><td>0.36</td><td>0.31</td><td>0.36</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-G-2">
-          <p class="en-lines"><span class="sent" data-sid="s-G-2-1"><span class="en">Model - with Longer Texts WER↓ SIM-O↑ VoiceCraft</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-G-2-1"><span class="zh">表头：Model - with Longer Texts / WER↓ / SIM-O↑——VoiceCraft（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-G-8"><code>12.81% 0.62</code></div>
+<div class="cap" id="tab-G-1"><span class="cap-k">表</span><p class="en">Table 9: Comparisons about “expressiveness” metrics on the LibriSpeech test-clean set.</p><p class="zh">表 9：LibriSpeech test-clean 集上「表现力」指标的对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Model - with Longer Texts</th><th>WER↓</th><th>SIM-O↑</th><th></th></tr></thead><tbody><tr><td></td><td>VoiceCraft</td><td></td><td>12.81%</td><td>0.62</td><td></td></tr>
+<tr><td></td><td>CosyVoice</td><td></td><td>5.52%</td><td>0.68</td><td></td></tr>
+<tr><td></td><td>MegaTTS 3</td><td></td><td>2.39%</td><td>0.70</td><td></td></tr>
+<tr><td></td><td></td><td>Model - with Short Texts</td><td>WER↓</td><td>SIM-O↑</td><td></td></tr>
+<tr><td></td><td>VoiceCraft</td><td></td><td>4.07%</td><td>0.58</td><td></td></tr>
+<tr><td></td><td>CosyVoice</td><td></td><td>2.24%</td><td>0.62</td><td></td></tr>
+<tr><td></td><td>MegaTTS 3</td><td></td><td>1.82%</td><td>0.71</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>if the majority of the sampled data during training</td><td></td><td></td><td></td><td></td><td>with standard CFG; 3) “Ours w/ Standard AR Dura-</td></tr>
+<tr><td>consists of 20-second targets, the generation per-</td><td></td><td></td><td></td><td></td><td>tion”, we replace the duration from F-LM with the</td></tr>
+<tr><td>formance for audio with a 40-second target will be</td><td></td><td></td><td></td><td></td><td>duration from standard AR duration predictor fol-</td></tr>
+<tr><td>worse than that of 20-second targets in inference.</td><td></td><td></td><td></td><td></td><td>lowing SimpleSpeech 2 (Yang et al., 2024b). The</td></tr>
+<tr><td>To solve the imbalanced distribution issue, we rec-</td><td></td><td></td><td></td><td></td><td>results in Table 9 show that sparse alignment brings</td></tr>
+<tr><td>ommend using the following multi-sentence data</td><td></td><td></td><td></td><td></td><td>significant improvements, and both multi-condition</td></tr>
+<tr><td>sampling strategy: we concatenate all audio record-</td><td></td><td></td><td></td><td></td><td>CFG and F-LM duration contribute positively to</td></tr>
+<tr><td></td><td></td><td>in</td><td></td><td></td><td></td></tr>
+<tr><td>order, and then randomly extract audio segments of</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 
-<div class="eq" id="eq-G-10"><code>5.52% 0.68</code></div>
 
-<div class="eq" id="eq-G-12"><code>2.39% 0.70</code></div>
-<div class="eq" id="eq-G-13"><code>Model - with Short Texts WER↓ SIM-O↑ VoiceCraft</code></div>
-<div class="eq" id="eq-G-14"><code>4.07% 0.58</code></div>
 
-<div class="eq" id="eq-G-16"><code>2.24% 0.62</code></div>
 
-<div class="eq" id="eq-G-18"><code>1.82% 0.71</code></div>
+
+
+
+
+
+
+
+
 <div class="cap" id="tab-G-2"><span class="cap-k">表</span><p class="en">Table 10: Comparisons with longer texts.</p><p class="zh">表 10：更长文本上的对比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>following Section 3.1, we randomly divide the sam-</th><th></th></tr><tr><th></th><th>conducted experiemnts for a test set with longer</th></tr><tr><th>pled sequence into a prompt region and a target</th><th></th></tr><tr><th></th><th>samples. Specifically, we randomly select 10 sen-</th></tr><tr><th></th><th></th></tr></thead><tbody><tr><td></td><td>tences, each containing more than 50 words.</td></tr>
 <tr><td>our experiments in order to make a fair compari-</td><td></td></tr>
 <tr><td></td><td>each speaker in the LibriSpeech test-clean set, we</td></tr>
@@ -1189,7 +1262,13 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td></td><td>tiveness of the combination of F-LM and MegaTTS</td></tr>
 <tr><td>LibriSpeech test-clean 2.2-hour subset (following</td><td></td></tr>
 <tr><td></td><td></td></tr>
-<tr><td>2 and</td><td></td></tr></tbody></table></div></div>
+<tr><td>2 and</td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td>Experiments with Hard Sentences</td></tr>
+<tr><td>MegaTTS 3 with the following baselines: 1) “Ours</td><td></td></tr>
+<tr><td>w/ Forced Alignment”, we replace the sparse align-</td><td>The transcriptions on the LibriSpeech test-clean set</td></tr>
+<tr><td>ment with the forced alignment; 2) “Ours w/ Stan-</td><td>are relatively simple since they come from audio-</td></tr>
+<tr><td>dard CFG”, we replace the multi-condition CFG</td><td>books. To further indicate the speech intelligibility</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-G-3">
           <p class="en-lines"><span class="sent" data-sid="s-G-3-1"><span class="en">if the majority of the sampled data during training consists of 20-second targets, the generation performance for audio with a 40-second target will be worse than that of 20-second targets in inference.</span></span> <span class="sent" data-sid="s-G-3-2"><span class="en">To solve the imbalanced distribution issue, we recommend using the following multi-sentence data sampling strategy: we concatenate all audio recordings of the same speaker in the dataset in time order, and then randomly extract audio segments of length t ∼U(tmin, tmax) from the concatenated audio, where tmin is the minimum sampling time and tmax is the maximum sampling time.</span></span> <span class="sent" data-sid="s-G-3-3"><span class="en">Then, following Section 3.1, we randomly divide the sampled sequence into a prompt region and a target region.</span></span> <span class="sent" data-sid="s-G-3-4"><span class="en">Although we do not use this strategy in our experiments in order to make a fair comparison with other methods, this strategy is effective in practical scenarios.</span><button class="mk" data-sid="s-G-3-4" title="查看讲解">解</button></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-G-3-1"><span class="zh">如果训练中采样到的数据大多是 20 秒目标，那么推理时对 40 秒目标音频的生成性能就会比 20 秒目标差。</span></span><span class="sent" data-sid="s-G-3-2"><span class="zh">为解决这种分布不均衡问题，我们推荐如下多句子数据采样策略：把数据集中同一说话人的所有录音按时间顺序拼接，然后从拼接后的音频中随机抽取长度为 t ∼U(tmin, tmax) 的音频段，其中 tmin 为最小采样时长，tmax 为最大采样时长。</span></span><span class="sent" data-sid="s-G-3-3"><span class="zh">然后，按照 Section 3.1 的做法，把采样到的序列随机划分为提示区和目标区。</span></span><span class="sent" data-sid="s-G-3-4"><span class="zh">尽管为了与其他方法公平比较，我们在实验中并未使用这一策略，但它在实际场景中是有效的。</span><button class="mk" data-sid="s-G-3-4" title="查看讲解">解</button></span></p>
@@ -1203,11 +1282,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div></section>
 <section>
-      <h2 class="sech lv1" id="sec-H"><span class="secnum">H</span> <span class="t-zh">附录 H：零样本 TTS 的韵律自然度实验</span><span class="t-en">Experiments of Prosodic Naturalness for Zero-Shot TTS</span></h2><div class="pblk" id="p-H-1">
-          <p class="en-lines"><span class="sent" data-sid="s-H-1-1"><span class="en">We also conduct the ablation studies using the objective metrics MCD, SSIM, STOI, GPE, VDE, and FFE following InstructTTS (Yang et al., 2024c) to evaluate the prosodic naturalness of our proposed method.</span></span> <span class="sent" data-sid="s-H-1-2"><span class="en">We conduct experiments on the LibriSpeech test-clean 2.2-hour subset (following the setup in VALL-E 2 and Voicebox).</span></span> <span class="sent" data-sid="s-H-1-3"><span class="en">The results are shown in the Table below.</span></span> <span class="sent" data-sid="s-H-1-4"><span class="en">We compare MegaTTS 3 with the following baselines: 1) “Ours w/ Forced Alignment”, we replace the sparse alignment with the forced alignment; 2) “Ours w/ Standard CFG”, we replace the multi-condition CFG with standard CFG; 3) “Ours w/ Standard AR Duration”, we replace the duration from F-LM with the duration from standard AR duration predictor following SimpleSpeech 2 (Yang et al., 2024b).</span></span> <span class="sent" data-sid="s-H-1-5"><span class="en">The results in Table 9 show that sparse alignment brings significant improvements, and both multi-condition CFG and F-LM duration contribute positively to the performance.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-H-1-1"><span class="zh">我们还遵循 InstructTTS（Yang et al., 2024c），使用客观指标 MCD、SSIM、STOI、GPE、VDE 和 FFE 做了消融实验，以评估所提方法的韵律自然度。</span></span><span class="sent" data-sid="s-H-1-2"><span class="zh">我们在 LibriSpeech test-clean 的 2.2 小时子集上开展实验（遵循 VALL-E 2 和 Voicebox 的设置）。</span></span><span class="sent" data-sid="s-H-1-3"><span class="zh">结果见下表。</span></span><span class="sent" data-sid="s-H-1-4"><span class="zh">我们把 MegaTTS 3 与以下基线比较：1）「Ours w/ Forced Alignment」：把稀疏对齐替换为强制对齐；2）「Ours w/ Standard CFG」：把多条件 CFG 替换为标准 CFG；3）「Ours w/ Standard AR Duration」：遵循 SimpleSpeech 2（Yang et al., 2024b），把 F-LM 的时长替换为标准自回归时长预测器的时长。</span></span><span class="sent" data-sid="s-H-1-5"><span class="zh">Table 9 的结果表明，稀疏对齐带来了显著提升，多条件 CFG 与 F-LM 时长也都对性能有正向贡献。</span></span></p>
-          
-        </div></section>
+      <h2 class="sech lv1" id="sec-H"><span class="secnum">H</span> <span class="t-zh">附录 H：零样本 TTS 的韵律自然度实验</span><span class="t-en">Experiments of Prosodic Naturalness for Zero-Shot TTS</span></h2></section>
 <section>
       <h2 class="sech lv1" id="sec-I"><span class="secnum">I</span> <span class="t-zh">附录 I：更长样本的实验</span><span class="t-en">Experiments with Longer Samples</span></h2>
 <div class="eq" id="eq-I-1"><code>3.</code></div></section>

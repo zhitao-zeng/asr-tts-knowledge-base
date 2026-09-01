@@ -502,36 +502,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-4-1"><span class="zh">表头：#Data × WER(%)↓ / SIM-o↑ / RTF↓——LibriSpeech test-clean；Ground Truth（2.2 小时子集）（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-5-1"><code>2.2 0.754 -</code></div>
-<div class="eq" id="eq-5-2"><code>VALL-E 2</code></div>
-
-<div class="eq" id="eq-5-4"><code>50K EN</code></div>
-<div class="eq" id="eq-5-5"><code>2.44 0.643 0.732</code></div>
-<div class="eq" id="eq-5-6"><code>MELLE</code></div>
-
-<div class="eq" id="eq-5-8"><code>50K EN</code></div>
-<div class="eq" id="eq-5-9"><code>2.10 0.625 0.549</code></div>
-<div class="eq" id="eq-5-10"><code>MELLE-R2</code></div>
-
-<div class="eq" id="eq-5-12"><code>50K EN</code></div>
-<div class="eq" id="eq-5-13"><code>2.14 0.608 0.276</code></div>
-<div class="eq" id="eq-5-14"><code>Voicebox 330M 60K EN</code></div>
-<div class="eq" id="eq-5-15"><code>1.9 0.662 0.64</code></div>
-<div class="eq" id="eq-5-16"><code>DiTTo-TTS 740M 55K EN</code></div>
-<div class="eq" id="eq-5-17"><code>2.56 0.627 0.162</code></div>
-<div class="eq" id="eq-5-18"><code>Ground Truth (40 samples subset)</code></div>
-<div class="eq" id="eq-5-19"><code>1.94 0.68 -</code></div>
-<div class="eq" id="eq-5-20"><code>Voicebox 330M 60K EN</code></div>
-<div class="eq" id="eq-5-21"><code>2.03 0.64 0.64</code></div>
-<div class="eq" id="eq-5-22"><code>NaturalSpeech 3 500M 60K EN</code></div>
-<div class="eq" id="eq-5-23"><code>1.94 0.67 0.296</code></div>
-<div class="pblk" id="p-5-5">
-          <p class="en-lines"><span class="sent" data-sid="s-5-5-1"><span class="en">MaskGCT 1048M 100K Multi.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-5-5-1"><span class="zh">（表格行）MaskGCT 1048M、100K 小时、Multi.（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-5-24"><code>2.634 0.687 -</code></div>
-<div class="eq" id="eq-5-25"><code>LibriSpeech-PC test-clean Ground Truth (1127 samples 2 hrs)</code></div>
 
 
 
@@ -545,7 +515,44 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-5-1"><span class="cap-k">表</span><p class="en">Table 1: Comparison results on LibriSpeech(-PC) testclean. The Real-Time Factor (RTF) is computed with the inference time of 10s speech on NVIDIA RTX 3090. #Param. stands for the number of learnable parameters and #Data refers to the used training dataset in hours.</p><p class="zh">表 1：LibriSpeech(-PC) test-clean 上的对比结果。实时因子（RTF）按在 NVIDIA RTX 3090 上推理 10 秒语音的耗时计算。#Param. 表示可学习参数数量，#Data 表示所用训练数据的小时数。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>Ground Truth (1127 samples 2 hrs)</td><td></td><td></td><td>2.23</td><td>0.69</td><td>-</td></tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-5-1"><span class="cap-k">表</span><p class="en">Table 1: Comparison results on LibriSpeech(-PC) testclean. The Real-Time Factor (RTF) is computed with the inference time of 10s speech on NVIDIA RTX 3090. #Param. stands for the number of learnable parameters and #Data refers to the used training dataset in hours.</p><p class="zh">表 1：LibriSpeech(-PC) test-clean 上的对比结果。实时因子（RTF）按在 NVIDIA RTX 3090 上推理 10 秒语音的耗时计算。#Param. 表示可学习参数数量，#Data 表示所用训练数据的小时数。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>Ground Truth (2.2 hours subset)</td><td></td><td></td><td>2.2</td><td>0.754</td><td>-</td></tr>
+<tr><td>VALL-E 2</td><td></td><td>-</td><td>50K EN</td><td>2.44</td><td>0.643</td><td>0.732</td></tr>
+<tr><td>MELLE</td><td></td><td>-</td><td>50K EN</td><td>2.10</td><td>0.625</td><td>0.549</td></tr>
+<tr><td>MELLE-R2</td><td></td><td>-</td><td>50K EN</td><td>2.14</td><td>0.608</td><td>0.276</td></tr>
+<tr><td>Voicebox</td><td></td><td>330M</td><td>60K EN</td><td>1.9</td><td>0.662</td><td>0.64</td></tr>
+<tr><td>DiTTo-TTS</td><td></td><td>740M</td><td>55K EN</td><td>2.56</td><td>0.627</td><td>0.162</td></tr>
+<tr><td></td><td>Ground Truth (40 samples subset)</td><td></td><td></td><td>1.94</td><td>0.68</td><td>-</td></tr>
+<tr><td>Voicebox</td><td></td><td>330M</td><td>60K EN</td><td>2.03</td><td>0.64</td><td>0.64</td></tr>
+<tr><td>NaturalSpeech 3</td><td></td><td>500M</td><td>60K EN</td><td>1.94</td><td>0.67</td><td>0.296</td></tr>
+<tr><td>MaskGCT</td><td></td><td>1048M</td><td>100K Multi.</td><td>2.634</td><td>0.687</td><td>-</td></tr>
+<tr><td></td><td></td><td></td><td>LibriSpeech-PC test-clean</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Ground Truth (1127 samples 2 hrs)</td><td></td><td></td><td>2.23</td><td>0.69</td><td>-</td></tr>
 <tr><td>Vocoder Resynthesized</td><td></td><td></td><td></td><td>2.32</td><td>0.66</td><td>-</td></tr>
 <tr><td>CosyVoice</td><td></td><td>∼300M</td><td>170K Multi.</td><td>3.59</td><td>0.66</td><td>0.92</td></tr>
 <tr><td>FireRedTTS</td><td></td><td>∼580M</td><td>248K Multi.</td><td>2.69</td><td>0.47</td><td>0.84</td></tr>
@@ -580,24 +587,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-5-1-2-1"><span class="zh">图 2 展示了可量产小模型在 SeedTTS test-zh 上 WER 与 SIM 分数的总体趋势。</span></span><span class="sent" data-sid="s-5-1-2-2"><span class="zh">F5-TTS (32 NFE w/o SS) 在 800K 更新步时取得 WER 4.17、SIM 0.54（表头：Model × WER(%)↓ / SIM-o↑ / CMOS↑ / SMOS↑——Seed-TTS test-en；Ground Truth，后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-5-1-1"><code>2.06 0.73 0.00 3.91</code></div>
-
-<div class="eq" id="eq-5-1-3"><code>2.09 0.70 - -</code></div>
-
-<div class="eq" id="eq-5-1-5"><code>3.39 0.64 0.02 3.64</code></div>
-
-<div class="eq" id="eq-5-1-7"><code>3.82 0.46 -1.46 2.94</code></div>
-
-<div class="eq" id="eq-5-1-9"><code>2.623* 0.717* - -</code></div>
-
-<div class="eq" id="eq-5-1-11"><code>1.733* 0.790* - -</code></div>
-
-<div class="eq" id="eq-5-1-13"><code>2.19 0.71 0.06 3.81</code></div>
-
-<div class="eq" id="eq-5-1-15"><code>1.89 0.67 0.16 3.79</code></div>
-
-<div class="eq" id="eq-5-1-17"><code>1.83 0.67 0.31 3.89</code></div>
-<div class="eq" id="eq-5-1-18"><code>Seed-TTS test-zh Ground Truth</code></div>
 
 
 
@@ -615,7 +604,35 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 2: Results on two test sets, Seed-TTS test-en and test-zh. The boldface indicates the best result, the underline denotes the second best, and * denotes scores reported in baseline papers.</p><p class="zh">表 2：Seed-TTS test-en 与 test-zh 两个测试集上的结果。加粗为最佳结果，下划线为次佳，* 表示基线论文中报告的分数。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>Ground Truth</td><td>1.26</td><td>0.76</td><td>0.00</td><td>3.72</td></tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-5-1-1"><span class="cap-k">表</span><p class="en">Table 2: Results on two test sets, Seed-TTS test-en and test-zh. The boldface indicates the best result, the underline denotes the second best, and * denotes scores reported in baseline papers.</p><p class="zh">表 2：Seed-TTS test-en 与 test-zh 两个测试集上的结果。加粗为最佳结果，下划线为次佳，* 表示基线论文中报告的分数。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>-</td><td>Ground Truth</td><td>2.06</td><td>0.73</td><td>0.00</td><td>3.91</td></tr>
+<tr><td>0.732</td><td>Vocoder Resynthesized</td><td>2.09</td><td>0.70</td><td>-</td><td>-</td></tr>
+<tr><td>0.549</td><td>CosyVoice</td><td>3.39</td><td>0.64</td><td>0.02</td><td>3.64</td></tr>
+<tr><td>0.276</td><td>FireRedTTS</td><td>3.82</td><td>0.46</td><td>-1.46</td><td>2.94</td></tr>
+<tr><td>0.64</td><td>MaskGCT</td><td>2.623*</td><td>0.717*</td><td>-</td><td>-</td></tr>
+<tr><td>0.162</td><td>Seed-TTSDiT</td><td>1.733*</td><td>0.790*</td><td>-</td><td>-</td></tr>
+<tr><td>-</td><td>E2 TTS (32 NFE)</td><td>2.19</td><td>0.71</td><td>0.06</td><td>3.81</td></tr>
+<tr><td>0.64</td><td>F5-TTS (16 NFE)</td><td>1.89</td><td>0.67</td><td>0.16</td><td>3.79</td></tr>
+<tr><td>0.296</td><td>F5-TTS (32 NFE)</td><td>1.83</td><td>0.67</td><td>0.31</td><td>3.89</td></tr>
+<tr><td>-</td><td></td><td>Seed-TTS test-zh</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Ground Truth</td><td>1.26</td><td>0.76</td><td>0.00</td><td>3.72</td></tr>
 <tr><td>-</td><td>Vocoder Resynthesized</td><td>1.27</td><td>0.72</td><td>-</td><td>-</td></tr>
 <tr><td>-</td><td>CosyVoice</td><td>3.10</td><td>0.75</td><td>-0.06</td><td>3.54</td></tr>
 <tr><td>0.92</td><td>FireRedTTS</td><td>1.51</td><td>0.63</td><td>-0.49</td><td>3.28</td></tr>
@@ -961,59 +978,55 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         </div>
 <div class="eq" id="eq-B-1-1"><code>768,18,12,2 512,4,2</code></div>
 <div class="eq" id="eq-B-1-2"><code>158M</code></div>
-<div class="eq" id="eq-B-1-3"><code>173</code></div>
+
 <div class="eq" id="eq-B-1-4"><code>F5-TTS−Conv2Text</code></div>
 <div class="eq" id="eq-B-1-5"><code>768,18,12,2 -</code></div>
 <div class="eq" id="eq-B-1-6"><code>153M</code></div>
-<div class="eq" id="eq-B-1-7"><code>164</code></div>
+
 <div class="eq" id="eq-B-1-8"><code>F5-TTS+Conv2Audio 768,16,12,2</code></div>
 <div class="eq" id="eq-B-1-9"><code>512,4,2</code></div>
 <div class="eq" id="eq-B-1-10"><code>163M</code></div>
-<div class="eq" id="eq-B-1-11"><code>181</code></div>
+
 
 <div class="eq" id="eq-B-1-13"><code>768,18,12,2 512,4,2</code></div>
 <div class="eq" id="eq-B-1-14"><code>159M</code></div>
-<div class="eq" id="eq-B-1-15"><code>175</code></div>
+
 
 <div class="eq" id="eq-B-1-17"><code>768,20,12,4 -</code></div>
 <div class="eq" id="eq-B-1-18"><code>157M</code></div>
-<div class="eq" id="eq-B-1-19"><code>293</code></div>
+
 
 <div class="eq" id="eq-B-1-21"><code>768,20,12,4 512,4,2</code></div>
 <div class="eq" id="eq-B-1-22"><code>161M</code></div>
-<div class="eq" id="eq-B-1-23"><code>301</code></div>
+
 <div class="eq" id="eq-B-1-24"><code>MMDiT</code></div>
 <div class="eq" id="eq-B-1-25"><code>512,16,16,2 -</code></div>
 <div class="eq" id="eq-B-1-26"><code>151M</code></div>
-<div class="eq" id="eq-B-1-27"><code>104</code></div>
-<div class="cap" id="tab-B-1-1"><span class="cap-k">表</span><p class="en">Table 3: Details of small model configurations.</p><p class="zh">表 3：小模型配置详情。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>B.2</th><th></th><th>Ablation study on Input Condition</th><th></th><th>F5-TTS (16 NFE</th></tr><tr><th></th><th></th><th></th><th></th><th>F5-TTS (32 NFE</th></tr><tr><th></th><th></th><th>The ablation study on different input conditions is</th><th></th><th>F5-TTS (32 NFE</th></tr><tr><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>Ground Truth</th></tr></thead><tbody><tr><td>•</td><td></td><td>Common input with text and audio prompts.</td><td></td><td>Vocoder</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>E2 TTS (16 NFE</td></tr>
-<tr><td>•</td><td></td><td>Providing ground truth duration information</td><td></td><td>E2 TTS (32 NFE</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>E2 TTS (32 NFE</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>F5-TTS (16 NFE</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>F5-TTS (32 NFE</td></tr>
-<tr><td>•</td><td>only</td><td>text</td><td>input,</td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>F5-TTS (32 NFE</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>Table 5: Base</td></tr>
-<tr><td></td><td></td><td>In Tab.4, all evaluations take the 155M small mod-</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>PC test-clean,</td></tr>
-<tr><td></td><td></td><td>els’ checkpoints trained on WenetSpeech4TTS Pre-</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>without</td></tr>
-<tr><td></td><td>mium at 800K updates. Analysis see Sec.5.1.</td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>coefficient s</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>erations</td></tr>
-<tr><td>Model</td><td>Common Input</td><td></td><td>GT Duration</td><td>ablation.</td></tr>
-<tr><td></td><td></td><td></td><td>WER↓SIM↑WER↓SIM↑WER↓SIM↑</td><td></td></tr>
-<tr><td>F5-TTS</td><td>4.17</td><td>0.54</td><td>3.87</td><td></td></tr>
-<tr><td></td><td></td><td>0.55</td><td>5.28</td><td></td></tr>
-<tr><td></td><td>5.17</td><td>0.53</td><td>5.03</td><td>B.4</td></tr></tbody></table></div></div></section>
+
+<div class="cap" id="tab-B-1-1"><span class="cap-k">表</span><p class="en">Table 3: Details of small model configurations.</p><p class="zh">表 3：小模型配置详情。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>B.2</th><th></th><th></th><th>Ablation study on Input Condition</th><th></th><th></th><th></th><th></th><th>F5-TTS (16 NFE</th></tr><tr><th></th><th></th><th></th><th>The ablation study on different input conditions is</th><th></th><th></th><th></th><th></th><th>F5-TTS (32 NFE</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>•</th><th></th><th></th><th>Common input with text and audio prompts.</th><th></th><th></th><th></th><th></th><th>Vocoder</th></tr><tr><th>•</th><th></th><th></th><th>Providing ground truth duration information</th><th></th><th></th><th></th><th></th><th>E2 TTS (32 NFE</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>E2 TTS (32 NFE</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>F5-TTS (32 NFE</td></tr>
+<tr><td>•</td><td>Retaining</td><td>only</td><td>text</td><td>input,</td><td></td><td></td><td>audio</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>F5-TTS (32 NFE</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>Table 5: Base</td></tr>
+<tr><td></td><td></td><td></td><td>In Tab.4, all evaluations take the 155M small mod-</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>PC</td></tr>
+<tr><td></td><td></td><td></td><td>els’ checkpoints trained on WenetSpeech4TTS Pre-</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>mium at 800K updates. Analysis see Sec.5.1.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>coefficient s</td></tr>
+<tr><td>Model</td><td></td><td>Common Input</td><td></td><td>GT Duration</td><td></td><td></td><td></td><td>ablation.</td></tr>
+<tr><td></td><td></td><td></td><td></td><td>WER↓SIM↑WER↓SIM↑WER↓SIM↑</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>F5-TTS</td><td></td><td>4.17</td><td>0.54</td><td>3.87</td><td>0.54</td><td>3.22</td><td>0.21</td><td></td></tr>
+<tr><td></td><td>F5-TTS+Conv2Audio 5.78</td><td></td><td>0.55</td><td>5.28</td><td>0.55</td><td>3.78</td><td>0.21</td><td></td></tr>
+<tr><td></td><td>F5-TTS+LongSkip</td><td>5.17</td><td>0.53</td><td>5.03</td><td>0.53</td><td>3.35</td><td>0.21</td><td>B.4</td></tr>
+<tr><td>E2 TTS</td><td></td><td>9.63</td><td>0.53</td><td>9.48</td><td>0.53</td><td>3.48</td><td>0.21</td><td></td></tr>
+<tr><td></td><td>E2 TTS+Conv2Text</td><td>18.10</td><td>0.49</td><td>17.94</td><td>0.49</td><td>3.06</td><td>0.21</td><td>The</td></tr>
+<tr><td>Table 4:</td><td></td><td></td><td>Ablation study on different input conditions.</td><td></td><td></td><td></td><td></td><td>(third-order,</td></tr>
+<tr><td></td><td></td><td></td><td>The boldface indicates the best result, and the underline</td><td></td><td></td><td></td><td></td><td>inference are</td></tr>
+<tr><td></td><td></td><td></td><td>denotes the second best. All scores are the average of</td><td></td><td></td><td></td><td></td><td>ently faster</td></tr>
+<tr><td></td><td>three random seed results.</td><td></td><td></td><td></td><td></td><td></td><td></td><td>for larger</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-B-2"><span class="secnum">B.2</span> <span class="t-zh">Ablation study on Input Condition</span><span class="t-en">Ablation study on Input Condition</span></h3><div class="pblk" id="p-B-2-1">
-          <p class="en-lines"><span class="sent" data-sid="s-B-2-1-1"><span class="en">The ablation study on different input conditions is conducted with three settings:</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-B-2-1-1"><span class="zh">输入条件消融：对不同输入条件的消融研究在三种设置下进行：</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-B-2"><span class="secnum">B.2</span> <span class="t-zh">Ablation study on Input Condition</span><span class="t-en">Ablation study on Input Condition</span></h3>
 
 <div class="pblk" id="p-B-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-B-2-3-1"><span class="en">• Providing ground truth duration information rather than an estimate.</span></span></p>
@@ -1028,7 +1041,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-B-2-2"><code>F5-TTS+Conv2Audio 5.78</code></div>
 
 
 
@@ -1036,9 +1048,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-B-2-1"><span class="cap-k">表</span><p class="en">Table 4: Ablation study on different input conditions. The boldface indicates the best result, and the underline denotes the second best. All scores are the average of three random seed results.</p><p class="zh">表 4：不同输入条件的消融研究。加粗为最佳结果，下划线为次佳。所有分数均为 3 个随机种子结果的平均值。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>F5-TTS+LongSkip</td><td>5.17</td><td>0.53</td><td>5.03</td><td>0.53</td><td>3.35</td><td>0.21</td></tr>
-<tr><td>E2 TTS</td><td></td><td>9.63</td><td>0.53</td><td>9.48</td><td>0.53</td><td>3.48</td><td>0.21</td></tr>
-<tr><td></td><td>E2 TTS+Conv2Text</td><td>18.10</td><td>0.49</td><td>17.94</td><td>0.49</td><td>3.06</td><td>0.21</td></tr></tbody></table></div></div></section>
+
+<div class="cap" id="tab-B-2-1"><span class="cap-k">表</span><p class="en">Table 4: Ablation study on different input conditions. The boldface indicates the best result, and the underline denotes the second best. All scores are the average of three random seed results.</p><p class="zh">表 4：不同输入条件的消融研究。加粗为最佳结果，下划线为次佳。所有分数均为 3 个随机种子结果的平均值。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>F5-TTS</td><td></td><td></td><td>4.17</td><td>0.54</td><td>3.87</td><td>0.54</td><td>3.22</td><td>0.21</td><td></td></tr>
+<tr><td></td><td></td><td>F5-TTS+Conv2Audio 5.78</td><td></td><td>0.55</td><td>5.28</td><td>0.55</td><td>3.78</td><td>0.21</td><td></td></tr>
+<tr><td></td><td>F5-TTS+LongSkip</td><td></td><td>5.17</td><td>0.53</td><td>5.03</td><td>0.53</td><td>3.35</td><td>0.21</td><td>B.4</td></tr>
+<tr><td>E2 TTS</td><td></td><td></td><td>9.63</td><td>0.53</td><td>9.48</td><td>0.53</td><td>3.48</td><td>0.21</td><td></td></tr>
+<tr><td></td><td>E2 TTS+Conv2Text</td><td></td><td>18.10</td><td>0.49</td><td>17.94</td><td>0.49</td><td>3.06</td><td>0.21</td><td>The</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-B-3"><span class="secnum">B.3</span> <span class="t-zh">Sway Sampling Effectiveness on Base Models</span><span class="t-en">Sway Sampling Effectiveness on Base Models</span></h3><div class="pblk" id="p-B-3-1">
           <p class="en-lines"><span class="sent" data-sid="s-B-3-1-1"><span class="en">From Tab.5, it is clear that our Sway Sampling strategy for test-time flow steps consistently improves the zero-shot generation performance in aspects of faithfulness to prompt text (WER), speaker similarity (SIM), and naturalness (UTMOS).</span></span> <span class="sent" data-sid="s-B-3-1-2"><span class="en">The gain of applying Sway Sampling to E2 TTS (Eskimez et al., 2024) proves that our Sway Sampling strategy is universally applicable to existing flow matching based TTS models.</span></span></p>
@@ -1050,57 +1065,83 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-B-3-2-1"><span class="zh">表头：Model × WER(%)↓ / SIM-o↑ / UTMOS↑ / RTF↓——LibriSpeech-PC test-clean；Ground Truth（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-B-3-1"><code>2.23 0.69 4.09 -</code></div>
-<div class="eq" id="eq-B-3-2"><code>Vocoder Resynthesized</code></div>
-<div class="eq" id="eq-B-3-3"><code>2.32 0.66 3.64 -</code></div>
-<div class="eq" id="eq-B-3-4"><code>E2 TTS (16 NFE w/ SS)</code></div>
-<div class="eq" id="eq-B-3-5"><code>2.86 0.71 3.66 0.34</code></div>
-<div class="eq" id="eq-B-3-6"><code>E2 TTS (32 NFE w/ SS)</code></div>
-<div class="eq" id="eq-B-3-7"><code>2.84 0.72 3.70 0.68</code></div>
-<div class="eq" id="eq-B-3-8"><code>E2 TTS (32 NFE w/o SS)</code></div>
-<div class="eq" id="eq-B-3-9"><code>2.95 0.69 3.56 0.68</code></div>
-<div class="eq" id="eq-B-3-10"><code>F5-TTS (16 NFE w/ SS)</code></div>
-<div class="eq" id="eq-B-3-11"><code>2.43 0.66 3.87 0.26</code></div>
-<div class="eq" id="eq-B-3-12"><code>F5-TTS (32 NFE w/ SS)</code></div>
-<div class="eq" id="eq-B-3-13"><code>2.41 0.66 3.89 0.53</code></div>
-<div class="eq" id="eq-B-3-14"><code>F5-TTS (32 NFE w/o SS)</code></div>
-<div class="eq" id="eq-B-3-15"><code>2.84 0.62 3.70 0.53</code></div>
 
-<div class="eq" id="eq-B-3-17"><code>2.06 0.73 3.53 -</code></div>
-<div class="eq" id="eq-B-3-18"><code>Vocoder Resynthesized</code></div>
-<div class="eq" id="eq-B-3-19"><code>2.09 0.70 3.33 -</code></div>
-<div class="eq" id="eq-B-3-20"><code>E2 TTS (16 NFE w/ SS)</code></div>
-<div class="eq" id="eq-B-3-21"><code>1.99 0.72 3.55 0.34</code></div>
-<div class="eq" id="eq-B-3-22"><code>E2 TTS (32 NFE w/ SS)</code></div>
-<div class="eq" id="eq-B-3-23"><code>1.98 0.73 3.57 0.68</code></div>
-<div class="eq" id="eq-B-3-24"><code>E2 TTS (32 NFE w/o SS)</code></div>
-<div class="eq" id="eq-B-3-25"><code>2.19 0.71 3.33 0.68</code></div>
-<div class="eq" id="eq-B-3-26"><code>F5-TTS (16 NFE w/ SS)</code></div>
-<div class="eq" id="eq-B-3-27"><code>1.88 0.66 3.70 0.26</code></div>
-<div class="eq" id="eq-B-3-28"><code>F5-TTS (32 NFE w/ SS)</code></div>
-<div class="eq" id="eq-B-3-29"><code>1.87 0.66 3.72 0.53</code></div>
-<div class="eq" id="eq-B-3-30"><code>F5-TTS (32 NFE w/o SS)</code></div>
-<div class="eq" id="eq-B-3-31"><code>1.93 0.63 3.51 0.53</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="eq" id="eq-B-3-16"><code>Seed-TTS test-en Ground Truth</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="eq" id="eq-B-3-32"><code>Seed-TTS test-zh Ground Truth</code></div>
-<div class="eq" id="eq-B-3-33"><code>1.26 0.76 2.78 -</code></div>
-<div class="eq" id="eq-B-3-34"><code>Vocoder Resynthesized</code></div>
-<div class="eq" id="eq-B-3-35"><code>1.27 0.72 2.61 -</code></div>
-<div class="eq" id="eq-B-3-36"><code>E2 TTS (16 NFE w/ SS)</code></div>
-<div class="eq" id="eq-B-3-37"><code>1.80 0.78 2.84 0.34</code></div>
-<div class="eq" id="eq-B-3-38"><code>E2 TTS (32 NFE w/ SS)</code></div>
-<div class="eq" id="eq-B-3-39"><code>1.77 0.78 2.87 0.68</code></div>
-<div class="eq" id="eq-B-3-40"><code>E2 TTS (32 NFE w/o SS)</code></div>
-<div class="eq" id="eq-B-3-41"><code>1.97 0.73 2.49 0.68</code></div>
-<div class="eq" id="eq-B-3-42"><code>F5-TTS (16 NFE w/ SS)</code></div>
-<div class="eq" id="eq-B-3-43"><code>1.61 0.75 2.87 0.26</code></div>
-<div class="eq" id="eq-B-3-44"><code>F5-TTS (32 NFE w/ SS)</code></div>
-<div class="eq" id="eq-B-3-45"><code>1.58 0.75 2.91 0.53</code></div>
-<div class="eq" id="eq-B-3-46"><code>F5-TTS (32 NFE w/o SS)</code></div>
-<div class="eq" id="eq-B-3-47"><code>1.93 0.69 2.58 0.53</code></div>
-<div class="cap" id="tab-B-3-1"><span class="cap-k">表</span><p class="en">Table 5: Base model evaluation results on LibriSpeechPC test-clean, Seed-TTS test-en and test-zh, with and without proposed test-time Sway Sampling (SS, with coefficient s = −1) strategy for flow steps. All generations leverage the midpoint ODE solver for ease of ablation.</p><p class="zh">表 5：基础模型在 LibriSpeech-PC test-clean、Seed-TTS test-en 与 test-zh 上，使用与不使用测试期 Sway Sampling（SS，系数 s = −1）的评测结果。为便于消融，所有生成均使用中点 ODE 求解器。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th>PC test-clean, Seed-TTS test-en and test-zh, with and</th><th></th><th></th></tr><tr><th>Pre-</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>without proposed test-time Sway Sampling (SS, with</th><th></th><th></th></tr><tr><th></th><th></th><th>coefficient s</th><th>=</th><th></th><th></th><th>−1) strategy for flow steps.</th><th>All gen-</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>erations leverage the midpoint ODE solver for ease of</th><th></th><th></th></tr></thead><tbody><tr><td></td><td>ablation.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>0.21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>0.21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td>0.21</td><td>B.4</td><td></td><td></td><td>Comparison of ODE Solvers</td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-B-3-1"><span class="cap-k">表</span><p class="en">Table 5: Base model evaluation results on LibriSpeechPC test-clean, Seed-TTS test-en and test-zh, with and without proposed test-time Sway Sampling (SS, with coefficient s = −1) strategy for flow steps. All generations leverage the midpoint ODE solver for ease of ablation.</p><p class="zh">表 5：基础模型在 LibriSpeech-PC test-clean、Seed-TTS test-en 与 test-zh 上，使用与不使用测试期 Sway Sampling（SS，系数 s = −1）的评测结果。为便于消融，所有生成均使用中点 ODE 求解器。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td></td><td>2.23</td><td>0.69</td><td>4.09</td><td>-</td></tr>
+<tr><td></td><td>Vocoder Resynthesized</td><td>2.32</td><td>0.66</td><td>3.64</td><td>-</td></tr>
+<tr><td></td><td>E2 TTS (16 NFE w/ SS)</td><td>2.86</td><td>0.71</td><td>3.66</td><td>0.34</td></tr>
+<tr><td></td><td>E2 TTS (32 NFE w/ SS)</td><td>2.84</td><td>0.72</td><td>3.70</td><td>0.68</td></tr>
+<tr><td>173</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>E2 TTS (32 NFE w/o SS)</td><td>2.95</td><td>0.69</td><td>3.56</td><td>0.68</td></tr>
+<tr><td>164</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>181</td><td>F5-TTS (16 NFE w/ SS)</td><td>2.43</td><td>0.66</td><td>3.87</td><td>0.26</td></tr>
+<tr><td>175</td><td>F5-TTS (32 NFE w/ SS)</td><td>2.41</td><td>0.66</td><td>3.89</td><td>0.53</td></tr>
+<tr><td>293</td><td>F5-TTS (32 NFE w/o SS)</td><td>2.84</td><td>0.62</td><td>3.70</td><td>0.53</td></tr>
+<tr><td>301</td><td></td><td>Seed-TTS test-en</td><td></td><td></td><td></td></tr>
+<tr><td>104</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>2.06</td><td>0.73</td><td>3.53</td><td>-</td></tr>
+<tr><td></td><td>Vocoder Resynthesized</td><td>2.09</td><td>0.70</td><td>3.33</td><td>-</td></tr>
+<tr><td></td><td>E2 TTS (16 NFE w/ SS)</td><td>1.99</td><td>0.72</td><td>3.55</td><td>0.34</td></tr>
+<tr><td></td><td>E2 TTS (32 NFE w/ SS)</td><td>1.98</td><td>0.73</td><td>3.57</td><td>0.68</td></tr>
+<tr><td></td><td>E2 TTS (32 NFE w/o SS)</td><td>2.19</td><td>0.71</td><td>3.33</td><td>0.68</td></tr>
+<tr><td></td><td>F5-TTS (16 NFE w/ SS)</td><td>1.88</td><td>0.66</td><td>3.70</td><td>0.26</td></tr>
+<tr><td></td><td>F5-TTS (32 NFE w/ SS)</td><td>1.87</td><td>0.66</td><td>3.72</td><td>0.53</td></tr>
+<tr><td></td><td>F5-TTS (32 NFE w/o SS)</td><td>1.93</td><td>0.63</td><td>3.51</td><td>0.53</td></tr>
+<tr><td></td><td></td><td>Seed-TTS test-zh</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td>1.26</td><td>0.76</td><td>2.78</td><td>-</td></tr>
+<tr><td></td><td>Vocoder Resynthesized</td><td>1.27</td><td>0.72</td><td>2.61</td><td>-</td></tr>
+<tr><td></td><td>E2 TTS (16 NFE w/ SS)</td><td>1.80</td><td>0.78</td><td>2.84</td><td>0.34</td></tr>
+<tr><td></td><td>E2 TTS (32 NFE w/ SS)</td><td>1.77</td><td>0.78</td><td>2.87</td><td>0.68</td></tr>
+<tr><td></td><td>E2 TTS (32 NFE w/o SS)</td><td>1.97</td><td>0.73</td><td>2.49</td><td>0.68</td></tr>
+<tr><td></td><td>F5-TTS (16 NFE w/ SS)</td><td>1.61</td><td>0.75</td><td>2.87</td><td>0.26</td></tr>
+<tr><td></td><td>F5-TTS (32 NFE w/ SS)</td><td>1.58</td><td>0.75</td><td>2.91</td><td>0.53</td></tr>
+<tr><td>audio</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>F5-TTS (32 NFE w/o SS)</td><td>1.93</td><td>0.69</td><td>2.58</td><td>0.53</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-B-4"><span class="secnum">B.4</span> <span class="t-zh">Comparison of ODE Solvers</span><span class="t-en">Comparison of ODE Solvers</span></h3><div class="pblk" id="p-B-4-1">
           <p class="en-lines"><span class="sent" data-sid="s-B-4-1-1"><span class="en">The comparison results of using the Euler (firstorder), midpoint (second-order), or improved Heun (third-order, Heun-3) ODE solver during F5-TTS inference are shown in Tab.6.</span></span> <span class="sent" data-sid="s-B-4-1-2"><span class="en">The Euler is inherently faster and performs slightly better typically for larger NFE inference with Sway Sampling (otherwise the Euler solver results in degradation).</span></span></p>
@@ -1199,14 +1240,31 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 <div class="eq" id="eq-B-6-8"><code>32 NFE - BigVGAN</code></div>
 <div class="eq" id="eq-B-6-9"><code>2.11 (1.81) 0.67 2.28 (2.03) 0.67 1.62 0.66 1.53 0.74</code></div>
-<div class="cap" id="tab-B-6-1"><span class="cap-k">表</span><p class="en">Table 8: F5-TTS Base model evaluation results on LibriSpeech-PC test-clean, LibriSpeech-non-PC test-clean, Seed-TTS test-en and test-zh with BigVGAN and Vocos, default setting as in Sec.5. The WER scores in brackets indicate results leveraging the Hubert-large-based ASR model.</p><p class="zh">表 8：F5-TTS 基础模型在 LibriSpeech-PC test-clean、LibriSpeech-non-PC test-clean、Seed-TTS test-en 与 test-zh 上分别使用 BigVGAN 与 Vocos 的评测结果，默认设置同 Sec.5。括号内 WER 为使用 Hubert-large ASR 模型的结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>indicate results leveraging the Hubert-large-based ASR model.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Train Set</th><th></th><th></th><th>LibriTTS - 585 hours</th><th></th><th></th><th>LJSpeech - 24 hours</th><th></th></tr><tr><th></th><th>Test Set</th><th></th><th></th><th>LibriSpeech-PC test-clean</th><th></th><th></th><th>LJSpeech in-set tests</th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td></td><td>-</td><td>2.23</td><td>0.69</td><td>4.09</td><td>2.36</td><td>0.72</td><td>4.36</td></tr>
-<tr><td>USLM (361M)</td><td></td><td>-</td><td>6.1</td><td>0.43</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td></td><td></td><td>100K</td><td>29.5</td><td>0.53</td><td>3.78</td><td>5.64</td><td>0.72</td><td>4.17</td></tr>
-<tr><td></td><td></td><td>200K</td><td>4.58</td><td>0.59</td><td>4.07</td><td>2.93</td><td>0.72</td><td>4.18</td></tr>
-<tr><td>F5-TTS small</td><td></td><td>300K</td><td>2.71</td><td>0.60</td><td>4.11</td><td>3.26</td><td>0.71</td><td>4.12</td></tr>
-<tr><td>(158M)</td><td></td><td>400K</td><td>2.44</td><td>0.60</td><td>4.11</td><td>3.90</td><td>0.70</td><td>4.05</td></tr>
-<tr><td></td><td></td><td>500K</td><td>2.20</td><td>0.60</td><td>4.10</td><td>4.68</td><td>0.70</td><td>3.99</td></tr>
-<tr><td></td><td></td><td>600K</td><td>2.23</td><td>0.59</td><td>4.10</td><td>5.25</td><td>0.69</td><td>3.93</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-B-6-1"><span class="cap-k">表</span><p class="en">Table 8: F5-TTS Base model evaluation results on LibriSpeech-PC test-clean, LibriSpeech-non-PC test-clean, Seed-TTS test-en and test-zh with BigVGAN and Vocos, default setting as in Sec.5. The WER scores in brackets indicate results leveraging the Hubert-large-based ASR model.</p><p class="zh">表 8：F5-TTS 基础模型在 LibriSpeech-PC test-clean、LibriSpeech-non-PC test-clean、Seed-TTS test-en 与 test-zh 上分别使用 BigVGAN 与 Vocos 的评测结果，默认设置同 Sec.5。括号内 WER 为使用 Hubert-large ASR 模型的结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>indicate results leveraging the Hubert-large-based ASR model.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>LibriTTS - 585 hours</th><th></th><th></th><th>LJSpeech - 24 hours</th><th></th></tr><tr><th></th><th></th><th></th><th>LibriSpeech-PC test-clean</th><th></th><th></th><th>LJSpeech in-set tests</th><th></th></tr></thead><tbody><tr><td>Ground Truth</td><td>-</td><td>2.23</td><td>0.69</td><td>4.09</td><td>2.36</td><td>0.72</td><td>4.36</td></tr>
+<tr><td>USLM (361M)</td><td>-</td><td>6.1</td><td>0.43</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td></td><td>100K</td><td>29.5</td><td>0.53</td><td>3.78</td><td>5.64</td><td>0.72</td><td>4.17</td></tr>
+<tr><td></td><td>200K</td><td>4.58</td><td>0.59</td><td>4.07</td><td>2.93</td><td>0.72</td><td>4.18</td></tr>
+<tr><td>F5-TTS small</td><td>300K</td><td>2.71</td><td>0.60</td><td>4.11</td><td>3.26</td><td>0.71</td><td>4.12</td></tr>
+<tr><td>(158M)</td><td>400K</td><td>2.44</td><td>0.60</td><td>4.11</td><td>3.90</td><td>0.70</td><td>4.05</td></tr>
+<tr><td></td><td>500K</td><td>2.20</td><td>0.60</td><td>4.10</td><td>4.68</td><td>0.70</td><td>3.99</td></tr>
+<tr><td></td><td>600K</td><td>2.23</td><td>0.59</td><td>4.10</td><td>5.25</td><td>0.69</td><td>3.93</td></tr>
+<tr><td></td><td>mately 8 hours on 8 NVIDIA H100 SXM GPUs.</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>you do any ratings to get used to the material.</td><td></td></tr>
+<tr><td></td><td>Same as Sec.5, we report the average score of</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>•</td><td></td><td>Rate the quality of the test items only com-</td><td></td></tr>
+<tr><td></td><td>three random seed generation results, using a CFG</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>strength of 2, a Sway Sampling coefficient of −1,</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>steps.</td><td>Since</td><td>is</td><td>single-</td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>•</td><td></td><td>Try to rate the overall impression of a test item</td><td></td></tr>
+<tr><td></td><td>speaker dataset, we measure the metrics on in-set</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>and don’t concentrate on single aspects.</td><td></td></tr>
+<tr><td></td><td>tests (1000 samples organized with 4 to 7 seconds</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td>It is</td><td></td><td></td><td>For the CMOS test, the overall quality of a gen-</td><td></td></tr>
+<tr><td></td><td>clear from Tab.9 (and Fig.2 in comparison with E2</td><td></td><td></td><td></td><td></td><td>erated speech is first rated from −3 (bad quality</td><td></td></tr>
+<tr><td></td><td>TTS small) that our design enables stable training</td><td></td><td></td><td></td><td></td><td>compared to the reference) to +3 (much better than</td><td></td></tr>
+<tr><td></td><td>to learn speech-text alignment (without grapheme-</td><td></td><td></td><td></td><td></td><td>the reference) integer scale, then reported in aver-</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>age differentials with received scores of ground</td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-B-6-4">
           <p class="en-lines"><span class="sent" data-sid="s-B-6-4-1"><span class="en">Train Set LibriTTS - 585 hours LJSpeech - 24 hours Test Set LibriSpeech-PC test-clean LJSpeech in-set tests Model (#Param.)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-B-6-4-1"><span class="zh">（附录表头：训练集 LibriTTS 585 小时、LJSpeech 24 小时；测试集 LibriSpeech-PC test-clean、LJSpeech 集内测试；Model（#Param.）。）</span></span></p>
@@ -1232,14 +1290,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-B-6-2"><span class="cap-k">表</span><p class="en">Table 9: F5-TTS small models evaluation results on LibriSpeech-PC test-clean (model trained on LibriTTS 585 hours multi-speaker dataset), and on LJSpeech in-set test samples (model trained on 24 hours single-speaker LJSpeech); Vocos as vocoder, Whisper-large-v3 as ASR model. The scores of USLM (Zhang et al., 2023a) are evaluated with the official checkpoint pre-trained on LibriTTS.</p><p class="zh">表 9：F5-TTS 小模型评测结果：在 LibriSpeech-PC test-clean 上（模型于 LibriTTS 585 小时多说话人数据集训练），以及在 LJSpeech 集内测试样本上（模型于 24 小时单说话人 LJSpeech 训练）；声码器为 Vocos，ASR 模型为 Whisper-large-v3。USLM（Zhang et al., 2023a）的分数由其在 LibriTTS 上预训练的官方权重评测得到。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Ground Truth</td><td></td><td>-</td><td>2.23</td><td>0.69</td><td>4.09</td><td>2.36</td><td>0.72</td><td>4.36</td></tr>
-<tr><td></td><td>USLM (361M) -</td><td></td><td>6.1</td><td>0.43</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-<tr><td></td><td></td><td>100K</td><td>29.5</td><td>0.53</td><td>3.78</td><td>5.64</td><td>0.72</td><td>4.17</td></tr>
-<tr><td></td><td></td><td>200K</td><td>4.58</td><td>0.59</td><td>4.07</td><td>2.93</td><td>0.72</td><td>4.18</td></tr>
-<tr><td></td><td>F5-TTS small 300K</td><td></td><td>2.71</td><td>0.60</td><td>4.11</td><td>3.26</td><td>0.71</td><td>4.12</td></tr>
-<tr><td>(158M)</td><td></td><td>400K</td><td>2.44</td><td>0.60</td><td>4.11</td><td>3.90</td><td>0.70</td><td>4.05</td></tr>
-<tr><td></td><td></td><td>500K</td><td>2.20</td><td>0.60</td><td>4.10</td><td>4.68</td><td>0.70</td><td>3.99</td></tr>
-<tr><td></td><td></td><td>600K</td><td>2.23</td><td>0.59</td><td>4.10</td><td>5.25</td><td>0.69</td><td>3.93</td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-B-6-2"><span class="cap-k">表</span><p class="en">Table 9: F5-TTS small models evaluation results on LibriSpeech-PC test-clean (model trained on LibriTTS 585 hours multi-speaker dataset), and on LJSpeech in-set test samples (model trained on 24 hours single-speaker LJSpeech); Vocos as vocoder, Whisper-large-v3 as ASR model. The scores of USLM (Zhang et al., 2023a) are evaluated with the official checkpoint pre-trained on LibriTTS.</p><p class="zh">表 9：F5-TTS 小模型评测结果：在 LibriSpeech-PC test-clean 上（模型于 LibriTTS 585 小时多说话人数据集训练），以及在 LJSpeech 集内测试样本上（模型于 24 小时单说话人 LJSpeech 训练）；声码器为 Vocos，ASR 模型为 Whisper-large-v3。USLM（Zhang et al., 2023a）的分数由其在 LibriTTS 上预训练的官方权重评测得到。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Ground Truth</td><td></td><td>2.23</td><td>(1.89)</td><td>0.69</td><td></td><td>2.29</td><td>(1.86)</td><td>0.69</td><td>2.06</td><td>0.73</td><td>1.26</td><td>0.76</td></tr>
+<tr><td>16 NFE - Vocos</td><td></td><td>2.53</td><td>(2.34)</td><td>0.66</td><td></td><td>2.72</td><td>(2.53)</td><td>0.66</td><td>1.89</td><td>0.67</td><td>1.74</td><td>0.75</td></tr>
+<tr><td>16 NFE - BigVGAN</td><td></td><td>2.21</td><td>(1.96)</td><td>0.67</td><td></td><td>2.55</td><td>(2.34)</td><td>0.67</td><td>1.65</td><td>0.66</td><td>1.64</td><td>0.74</td></tr>
+<tr><td>32 NFE - Vocos</td><td></td><td>2.42</td><td>(2.09)</td><td>0.66</td><td></td><td>2.44</td><td>(2.16)</td><td>0.66</td><td>1.83</td><td>0.67</td><td>1.56</td><td>0.76</td></tr>
+<tr><td>32 NFE - BigVGAN</td><td></td><td>2.11</td><td>(1.81)</td><td>0.67</td><td></td><td>2.28</td><td>(2.03)</td><td>0.67</td><td>1.62</td><td>0.66</td><td>1.53</td><td>0.74</td></tr>
+<tr><td></td><td></td><td>Train Set</td><td></td><td></td><td></td><td></td><td>LibriTTS - 585 hours</td><td></td><td></td><td>LJSpeech - 24 hours</td><td></td><td></td></tr>
+<tr><td></td><td>Ground Truth</td><td></td><td>-</td><td></td><td>2.23</td><td></td><td>0.69</td><td>4.09</td><td>2.36</td><td>0.72</td><td>4.36</td><td></td></tr>
+<tr><td></td><td>USLM (361M)</td><td></td><td>-</td><td></td><td>6.1</td><td></td><td>0.43</td><td>-</td><td>-</td><td>-</td><td>-</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>100K</td><td></td><td>29.5</td><td></td><td>0.53</td><td>3.78</td><td>5.64</td><td>0.72</td><td>4.17</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>200K</td><td></td><td>4.58</td><td></td><td>0.59</td><td>4.07</td><td>2.93</td><td>0.72</td><td>4.18</td><td></td></tr>
+<tr><td></td><td>F5-TTS small</td><td></td><td>300K</td><td></td><td>2.71</td><td></td><td>0.60</td><td>4.11</td><td>3.26</td><td>0.71</td><td>4.12</td><td></td></tr>
+<tr><td></td><td>(158M)</td><td></td><td>400K</td><td></td><td>2.44</td><td></td><td>0.60</td><td>4.11</td><td>3.90</td><td>0.70</td><td>4.05</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>500K</td><td></td><td>2.20</td><td></td><td>0.60</td><td>4.10</td><td>4.68</td><td>0.70</td><td>3.99</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>600K</td><td></td><td>2.23</td><td></td><td>0.59</td><td>4.10</td><td>5.25</td><td>0.69</td><td>3.93</td><td></td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-B-7"><span class="secnum">B.7</span> <span class="t-zh">Training and Inference Performance with Different Dataset Scales</span><span class="t-en">Training and Inference Performance with Different Dataset Scales</span></h3><div class="pblk" id="p-B-7-1">
           <p class="en-lines"><span class="sent" data-sid="s-B-7-1-1"><span class="en">We train F5-TTS 158M small models on LibriTTS (Zen et al., 2019) 585 hours and LJSpeech (Ito and Johnson, 2017) 24 hours English datasets to provide insights on our model’s training stability with different dataset scales, typically to see whether it can maintain stable training on limited data.</span></span> <span class="sent" data-sid="s-B-7-1-2"><span class="en">Both training takes place with the same configuration as described in Sec.5.1 and Appendix B.1 despite a batch size of 307,200 audio frames (0.91 hours) as base models.</span></span> <span class="sent" data-sid="s-B-7-1-3"><span class="en">Every 100K update takes approximately 8 hours on 8 NVIDIA H100 SXM GPUs.</span></span></p>

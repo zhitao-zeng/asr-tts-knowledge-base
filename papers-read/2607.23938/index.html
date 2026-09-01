@@ -683,46 +683,54 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-4-2"><span class="secnum">4.2</span> <span class="t-zh">4.2 SEED-TTS-Eval 上的客观 TTS 结果</span><span class="t-en">Objective TTS Results on SEED-TTS-Eval</span></h3><div class="cap" id="tab-4-2-1"><span class="cap-k">表</span><p class="en">Table 3: Zero-shot TTS performance on SEED-TTS-Eval. Content consistency is measured by CER/WER, and speaker similarity (SIM) is reported as a cosine score. Values outside parentheses use WavLM and values inside parentheses use ERes2Net. Bold and underlined values denote the best and second-best results in each column, respectively. † ERes2Net SIM scores were computed by us using the publicly released models. Before reporting these scores, we verified that our reproduced CER/WER and WavLM SIM results closely matched those reported in the corresponding papers.</p><p class="zh">表 3：SEED-TTS-Eval 上的零样本 TTS 性能。内容一致性以 CER/WER 衡量，说话人相似度（SIM）以余弦分数报告。括号外数值用 WavLM，括号内数值用 ERes2Net。加粗与下划线分别表示每列最佳与次佳结果。† 标注的 ERes2Net SIM 分数由我们使用公开发布的模型计算；报告前我们验证了复现的 CER/WER 与 WavLM SIM 结果与对应论文报告值高度吻合。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td></td><td>CosyVoice3</td><td></td><td>6,561</td><td></td><td>25 Hz</td><td>1.45</td><td>80.60</td></tr>
-<tr><td></td><td></td><td>Qwen-Audio-3.0-TTS</td><td>6,561</td><td></td><td>12.5 Hz</td><td>2.59</td><td>72.44</td></tr>
-<tr><td></td><td></td><td>Qwen-Audio-3.0-TTS</td><td>19,683</td><td></td><td>12.5 Hz</td><td>1.48</td><td>83.25</td></tr>
-<tr><td></td><td></td><td>Qwen-Audio-3.0-TTS</td><td>59,049</td><td></td><td>12.5 Hz</td><td>1.23</td><td>83.09</td></tr>
-<tr><td>4.2</td><td></td><td></td><td></td><td>Objective TTS Results on SEED-TTS-Eval</td><td></td><td></td><td></td></tr></tbody></table></div></div>
+      <h3 class="sech lv2" id="sec-4-2"><span class="secnum">4.2</span> <span class="t-zh">4.2 SEED-TTS-Eval 上的客观 TTS 结果</span><span class="t-en">Objective TTS Results on SEED-TTS-Eval</span></h3><div class="cap" id="tab-4-2-1"><span class="cap-k">表</span><p class="en">Table 3: Zero-shot TTS performance on SEED-TTS-Eval. Content consistency is measured by CER/WER, and speaker similarity (SIM) is reported as a cosine score. Values outside parentheses use WavLM and values inside parentheses use ERes2Net. Bold and underlined values denote the best and second-best results in each column, respectively. † ERes2Net SIM scores were computed by us using the publicly released models. Before reporting these scores, we verified that our reproduced CER/WER and WavLM SIM results closely matched those reported in the corresponding papers.</p><p class="zh">表 3：SEED-TTS-Eval 上的零样本 TTS 性能。内容一致性以 CER/WER 衡量，说话人相似度（SIM）以余弦分数报告。括号外数值用 WavLM，括号内数值用 ERes2Net。加粗与下划线分别表示每列最佳与次佳结果。† 标注的 ERes2Net SIM 分数由我们使用公开发布的模型计算；报告前我们验证了复现的 CER/WER 与 WavLM SIM 结果与对应论文报告值高度吻合。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>test-zh</th><th></th><th></th><th>test-en</th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>CER (%) ↓</th><th></th><th>SIM ↑</th><th>WER (%) ↓</th><th></th></tr></thead><tbody><tr><td>Human</td><td></td><td>1.26</td><td></td><td>0.755 (0.775)</td><td>2.14</td><td>0.734</td></tr>
+<tr><td>Vocoder Resyn.</td><td></td><td>1.27</td><td>0.720</td><td></td><td>2.17</td><td>0.700</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>F5-TTS (32 NFE) [8]</td><td>1.56</td><td></td><td>0.741 (0.794)</td><td>1.83</td><td>0.647</td></tr>
+<tr><td>F5R-TTS [34]</td><td></td><td>1.37</td><td>0.754</td><td></td><td>-</td><td></td></tr>
+<tr><td></td><td>LongCat-AudioDiT-3.5B [35]</td><td>1.09</td><td></td><td>0.818 (0.806)†</td><td>1.50</td><td>0.786</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Seed-TTS [2]</td><td></td><td>1.12</td><td>0.796</td><td></td><td>2.25</td><td>0.762</td></tr>
+<tr><td></td><td>FireRedTTS-2 [36]</td><td>1.14</td><td>0.736</td><td></td><td>1.95</td><td>0.665</td></tr>
+<tr><td></td><td>Qwen2.5-Omni-7B [38]</td><td>1.70</td><td>0.752</td><td></td><td>2.72</td><td>0.632</td></tr>
+<tr><td></td><td>Qwen3.5-Omni-Plus [39]</td><td>0.99</td><td></td><td>-</td><td>1.26</td><td></td></tr>
+<tr><td></td><td>Qwen3-TTS-12Hz-1.7B-Base [6]</td><td>0.77</td><td></td><td>-</td><td>1.24</td><td></td></tr>
+<tr><td></td><td>MiniMax-Speech [40]</td><td>0.99</td><td>0.799</td><td></td><td>1.90</td><td>0.738</td></tr>
+<tr><td>VoxCPM2 [13]</td><td></td><td>0.97</td><td></td><td>0.795 (0.756)†</td><td>1.84</td><td>0.753</td></tr>
+<tr><td></td><td>Dots.TTS-2B (SOAR) [12]</td><td>0.94</td><td></td><td>0.810 (0.818)†</td><td>1.30</td><td>0.771</td></tr>
+<tr><td></td><td>CosyVoice3-1.5B [4]</td><td>1.12</td><td></td><td>0.781 (0.837)</td><td>2.21</td><td>0.720</td></tr>
+<tr><td></td><td>Qwen-Audio-3.0-TTS</td><td>0.84</td><td></td><td>0.792 (0.847)</td><td>1.54</td><td>0.762</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-4-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-1-1"><span class="en">Model test-zh test-en test-hard CER (%) ↓ SIM ↑ WER (%) ↓ SIM ↑ CER (%) ↓ SIM ↑ Human</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-1-1"><span class="zh">表头：Model × test-zh（CER(%)↓/SIM↑）× test-en（WER(%)↓/SIM↑）× test-hard（CER(%)↓/SIM↑）——Human 1.26/0.755(0.775)、2.14/0.734(0.742)、-/-；Vocoder Resyn.（后续照原文）。</span></span></p>
           
         </div>
-<div class="eq" id="eq-4-2-1"><code>1.26 0.755 (0.775) 2.14 0.734 (0.742) - -</code></div>
-<div class="pblk" id="p-4-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-2-2-1"><span class="en">Vocoder Resyn.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-2-2-1"><span class="zh">表头：Model × test-zh（CER(%)↓/SIM↑）× test-en（WER(%)↓/SIM↑）× test-hard（CER(%)↓/SIM↑）——Human 1.26/0.755(0.775)、2.14/0.734(0.742)、-/-；Vocoder Resyn.（后续照原文）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-4-2-2"><code>1.27 0.720 2.17 0.700 - -</code></div>
-<div class="eq" id="eq-4-2-3"><code>Non-autoregressive Models F5-TTS (32 NFE) [8]</code></div>
+
+
+
+
 <div class="eq" id="eq-4-2-4"><code>1.56 0.741 (0.794) 1.83 0.647 (0.742) 8.67 0.713 (0.762)</code></div>
-<div class="eq" id="eq-4-2-5"><code>F5R-TTS [34]</code></div>
+
 <div class="eq" id="eq-4-2-6"><code>1.37 0.754 - - 8.79 0.718</code></div>
-<div class="eq" id="eq-4-2-7"><code>LongCat-AudioDiT-3.5B [35]</code></div>
+
 <div class="eq" id="eq-4-2-8"><code>1.09 0.818 (0.806)† 1.50 0.786 (0.771)† 6.04 0.797 (0.781)†</code></div>
 <div class="eq" id="eq-4-2-9"><code>Autoregressive Models Seed-TTS [2]</code></div>
 <div class="eq" id="eq-4-2-10"><code>1.12 0.796 2.25 0.762 7.59 0.776</code></div>
-<div class="eq" id="eq-4-2-11"><code>FireRedTTS-2 [36]</code></div>
-<div class="eq" id="eq-4-2-12"><code>1.14 0.736 1.95 0.665 - -</code></div>
-<div class="eq" id="eq-4-2-13"><code>Qwen2.5-Omni-7B [38]</code></div>
+
+
+
 <div class="eq" id="eq-4-2-14"><code>1.70 0.752 2.72 0.632 7.97 0.747</code></div>
-<div class="eq" id="eq-4-2-15"><code>Qwen3.5-Omni-Plus [39]</code></div>
-<div class="eq" id="eq-4-2-16"><code>0.99 - 1.26 - - -</code></div>
-<div class="eq" id="eq-4-2-17"><code>Qwen3-TTS-12Hz-1.7B-Base [6]</code></div>
-<div class="eq" id="eq-4-2-18"><code>0.77 - 1.24 - - -</code></div>
-<div class="eq" id="eq-4-2-19"><code>MiniMax-Speech [40]</code></div>
-<div class="eq" id="eq-4-2-20"><code>0.99 0.799 1.90 0.738 - -</code></div>
-<div class="eq" id="eq-4-2-21"><code>VoxCPM2 [13]</code></div>
+
+
+
+
+
+
+
 <div class="eq" id="eq-4-2-22"><code>0.97 0.795 (0.756)† 1.84 0.753 (0.725)† 8.13 0.753 (0.704)†</code></div>
-<div class="eq" id="eq-4-2-23"><code>Dots.TTS-2B (SOAR) [12]</code></div>
+
 <div class="eq" id="eq-4-2-24"><code>0.94 0.810 (0.818)† 1.30 0.771 (0.792)† 6.60 0.795 (0.800)†</code></div>
-<div class="eq" id="eq-4-2-25"><code>CosyVoice3-1.5B [4]</code></div>
+
 <div class="eq" id="eq-4-2-26"><code>1.12 0.781 (0.837) 2.21 0.720 (0.789) 5.83 0.758 (0.816)</code></div>
 
 <div class="eq" id="eq-4-2-28"><code>0.84 0.792 (0.847) 1.54 0.762 (0.815) 7.00 0.768 (0.824)</code></div>
@@ -743,7 +751,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td></td><td>Dots.TTS-2B (SOAR)</td><td>3.58</td><td>4.70</td><td>8.23</td><td>10.1</td><td>5.97</td><td>8.04</td><td>35.7</td><td>5.34</td><td>14.0</td><td>–</td><td>5.01</td><td>11.1</td><td>7.71</td><td>12.3</td><td>5.57</td><td>8.84</td></tr>
 <tr><td>VoxCPM2</td><td></td><td>3.55</td><td>6.21</td><td>5.88</td><td>9.95</td><td>5.48</td><td>4.17</td><td>10.3</td><td>4.42</td><td>5.97</td><td>4.44</td><td>3.10</td><td>2.63</td><td>1.86</td><td>4.97</td><td>5.47</td><td>7.08</td></tr>
 <tr><td>CosyVoice3-0.5B</td><td></td><td>3.89</td><td>5.24</td><td>10.4</td><td>12.8</td><td>7.41</td><td>4.25</td><td>12.9</td><td>6.68</td><td>6.77</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
-<tr><td>CosyVoice3-1.5B</td><td></td><td>3.91</td><td>4.99</td><td>7.57</td><td>5.69</td><td>6.43</td><td>4.47</td><td>11.8</td><td>10.5</td><td>6.64</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr></tbody></table></div></div>
+<tr><td>CosyVoice3-1.5B</td><td></td><td>3.91</td><td>4.99</td><td>7.57</td><td>5.69</td><td>6.43</td><td>4.47</td><td>11.8</td><td>10.5</td><td>6.64</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td></td><td>Qwen-Audio-3.0-TTS</td><td>3.35</td><td>4.25</td><td>4.78</td><td>4.30</td><td>4.00</td><td>3.08</td><td>9.77</td><td>3.82</td><td>4.68</td><td>3.36</td><td>2.35</td><td>1.99</td><td>1.45</td><td>3.17</td><td>2.62</td><td>6.43</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-4-2-4">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="en">Model zh en ja ko de es fr it ru ar id pt th vi ms tl Commercial API Models MiniMax-Speech-2.8-HD</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-4-1"><span class="zh">表头：Model × zh/en/ja/ko/de/es/fr/it/ru/ar/id/pt/th/vi/ms/tl 各语种——商业 API 模型：MiniMax-Speech-2.8-HD（后续照原文）。</span></span></p>
@@ -762,8 +771,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-4-2-42"><code>Qwen-Audio-3.0-TTS</code></div>
-<div class="eq" id="eq-4-2-43"><code>3.35 4.25 4.78 4.30 4.00 3.08 9.77 3.82 4.68 3.36 2.35 1.99 1.45 3.17 2.62 6.43</code></div>
+
+
 <div class="pblk" id="p-4-2-5">
           <p class="en-lines"><span class="sent" data-sid="s-4-2-5-1"><span class="en">We find that pushing CER/WER lower through more aggressive optimization consistently comes at the expense of speech naturalness and expressiveness.</span><button class="mk feat" data-sid="s-4-2-5-1" title="查看讲解">解</button></span> <span class="sent" data-sid="s-4-2-5-2"><span class="en">Our model therefore targets a better overall trade-off instead of optimizing specifically for the lowest CER/WER.</span></span> <span class="sent" data-sid="s-4-2-5-3"><span class="en">For speaker similarity, QwenAudio-3.0-TTS remains competitive under WavLM and achieves the highest ERes2Net scores across all three test sets.</span></span> <span class="sent" data-sid="s-4-2-5-4"><span class="en">We also observe that WavLM and ERes2Net often produce different system rankings, suggesting that the two metrics capture complementary aspects of speaker similarity.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-2-5-1"><span class="zh">（此句主体为 Table 4 数值的抽取残留：de/es/fr/it/ru/ar/id/pt/th/vi/ms/tl 各语言列下 MiniMax-Speech-2.8-HD、ElevenLabs-v3、Dots.TTS-2B、VoxCPM2、Qwen3-TTS-12Hz-1.7B-Base 与 Qwen-Audio-3.0-TTS 的 CER/WER 数值，含 3.42、3.45、6.29、7.49、3.30、2.79、8.74、3.67、5.39、3.38、1.46、1.86、1.65、1.64、3.10、6.35、4.46、3.61、5.71、5.46、3.64、3.92、9.31、4.68、5.38、5.51、2.85、2.33、3.44、4.08、4.41、12.8、3.09、3.67、6.48、5.64、3.31、3.22、9.05、4.01、7.40、2.71、3.58、4.70、8.23、10.1、5.97、8.04、35.7、5.34、14.0、5.01、11.1、7.71、12.3、5.57、8.84、3.55、6.21、5.88、9.95、5.48、4.17、10.3、4.42、5.97、4.44、3.10、2.63、1.86、4.97、5.47、7.08、3.89、5.24、10.4、12.8、7.41、4.25、12.9、6.68、6.77、3.91、4.99、7.57、5.69、6.43、4.47、11.8、10.5、6.64、3.35、4.25、4.78、4.30、4.00、3.08、9.77、3.82、4.68、3.36、2.35、1.99、1.45、3.17、2.62、6.43。）句末为正文：我们发现，通过更激进的优化压低 CER/WER，总会以牺牲语音自然度与表现力为代价。</span><button class="mk feat" data-sid="s-4-2-5-1" title="查看讲解">解</button></span><span class="sent" data-sid="s-4-2-5-2"><span class="zh">因此，我们的模型以更好的整体权衡为目标，而不是专门针对最低 CER/WER 优化。</span></span><span class="sent" data-sid="s-4-2-5-3"><span class="zh">在说话人相似度上，Qwen-Audio-3.0-TTS 在 WavLM 下保持竞争力，并在全部三个测试集上取得最高的 ERes2Net 分数。</span></span><span class="sent" data-sid="s-4-2-5-4"><span class="zh">我们还观察到 WavLM 与 ERes2Net 常常给出不同的系统排名，说明这两个指标刻画了说话人相似度互补的侧面。</span></span></p>
@@ -805,8 +814,15 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-2-1-1"><span class="zh">2https://platform.minimax.io/docs/guides/models-intro 3https://elevenlabs.io/docs/overview/models</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-3-2-2"><span class="cap-k">表</span><p class="en">Table 5: WER/CER, ERes2Net speaker similarity (SIM), and DNSMOS on the hard-zh and hard-en subsets of CV3-Eval. The best result in each column is shown in bold, and the second-best result is underlined.</p><p class="zh">表 5：CV3-Eval hard-zh 与 hard-en 子集上的 WER/CER、ERes2Net 说话人相似度（SIM）与 DNSMOS。每列最佳结果加粗，次佳加下划线。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>underlined.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th>hard-zh</th><th></th><th></th><th>hard-en</th><th></th></tr><tr><th></th><th></th><th>Commercial API Models</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td>MiniMax-Speech-2.8-HD</td><td>7.42</td><td>74.6</td><td>3.74</td><td>7.37</td><td>72.1</td><td>3.80</td></tr>
-<tr><td></td><td>ElevenLabs-v3</td><td></td><td>10.66</td><td>50.3</td><td>3.81</td><td>5.84</td><td>48.9</td><td>3.92</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-4-3-2-2"><span class="cap-k">表</span><p class="en">Table 5: WER/CER, ERes2Net speaker similarity (SIM), and DNSMOS on the hard-zh and hard-en subsets of CV3-Eval. The best result in each column is shown in bold, and the second-best result is underlined.</p><p class="zh">表 5：CV3-Eval hard-zh 与 hard-en 子集上的 WER/CER、ERes2Net 说话人相似度（SIM）与 DNSMOS。每列最佳结果加粗，次佳加下划线。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>underlined.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th>hard-zh</th><th></th><th></th><th>hard-en</th><th></th></tr><tr><th></th><th>Commercial API Models</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>MiniMax-Speech-2.8-HD</td><td>7.42</td><td>74.6</td><td>3.74</td><td>7.37</td><td>72.1</td><td>3.80</td></tr>
+<tr><td>ElevenLabs-v3</td><td></td><td>10.66</td><td>50.3</td><td>3.81</td><td>5.84</td><td>48.9</td><td>3.92</td></tr>
+<tr><td></td><td>Open-source Models</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Qwen3-TTS-12Hz-1.7B-Base</td><td>11.24</td><td>69.1</td><td>3.79</td><td>6.53</td><td>66.1</td><td>3.88</td></tr>
+<tr><td></td><td>LongCat-AudioDiT-3.5B</td><td>9.24</td><td>72.8</td><td>3.75</td><td>8.50</td><td>73.9</td><td>3.84</td></tr>
+<tr><td></td><td>Dots.TTS-2B (SOAR)</td><td>11.75</td><td>77.5</td><td>3.65</td><td>11.69</td><td>76.0</td><td>3.72</td></tr>
+<tr><td>VoxCPM2</td><td></td><td>8.10</td><td>69.9</td><td>3.63</td><td>7.48</td><td>67.0</td><td>3.73</td></tr>
+<tr><td>CosyVoice3-1.5B</td><td></td><td>9.77</td><td>78.5</td><td>3.79</td><td>10.55</td><td>76.1</td><td>3.95</td></tr>
+<tr><td></td><td>Qwen-Audio-3.0-TTS</td><td>7.44</td><td>78.7</td><td>3.93</td><td>6.71</td><td>76.6</td><td>4.04</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-4-3-2-2">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-2-2-1"><span class="en">Model hard-zh hard-en CER (%) ↓ SIM (%) ↑ DNSMOS ↑ WER (%) ↓ SIM (%) ↑ DNSMOS ↑ Commercial API Models MiniMax-Speech-2.8-HD</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-2-2-1"><span class="zh">表头：Model × hard-zh / hard-en（CER (%) ↓ / SIM (%) ↑ / DNSMOS ↑）/（WER (%) ↓ / SIM (%) ↑ / DNSMOS ↑）——商业 API 模型：MiniMax-Speech-2.8-HD（后续照原文）。</span></span></p>
@@ -815,20 +831,26 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-4-3-2-4"><code>Open-source Models Qwen3-TTS-12Hz-1.7B-Base</code></div>
-<div class="eq" id="eq-4-3-2-5"><code>11.24 69.1 3.79 6.53 66.1 3.88</code></div>
-<div class="eq" id="eq-4-3-2-6"><code>LongCat-AudioDiT-3.5B</code></div>
-<div class="eq" id="eq-4-3-2-7"><code>9.24 72.8 3.75 8.50 73.9 3.84</code></div>
-<div class="eq" id="eq-4-3-2-8"><code>Dots.TTS-2B (SOAR)</code></div>
-<div class="eq" id="eq-4-3-2-9"><code>11.75 77.5 3.65 11.69 76.0 3.72</code></div>
-<div class="eq" id="eq-4-3-2-10"><code>VoxCPM2</code></div>
-<div class="eq" id="eq-4-3-2-11"><code>8.10 69.9 3.63 7.48 67.0 3.73</code></div>
-<div class="eq" id="eq-4-3-2-12"><code>CosyVoice3-1.5B</code></div>
-<div class="eq" id="eq-4-3-2-13"><code>9.77 78.5 3.79 10.55 76.1 3.95</code></div>
-<div class="eq" id="eq-4-3-2-14"><code>Qwen-Audio-3.0-TTS</code></div>
-<div class="eq" id="eq-4-3-2-15"><code>7.44 78.7 3.93 6.71 76.6 4.04</code></div>
-<div class="cap" id="tab-4-3-2-3"><span class="cap-k">表</span><p class="en">Table 6: WER/CER (%, ↓) on the CV3-Eval Cross-lingual Voice Cloning subset. Top-level headers denote target languages and second-level headers denote source languages. Bold and underlined values indicate the best and second-best results in each transfer direction. For readability, entries with substantially higher WER/CER are omitted and denoted by “–”.</p><p class="zh">表 6：CV3-Eval 跨语言声音克隆子集上的 WER/CER（%，越低越好）。顶层表头为目标语言，二级表头为源语言。加粗与下划线分别表示每个迁移方向的最佳与次佳结果。为可读性，WER/CER 显著偏高的条目被省略并以「–」标注。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th>with substantially higher WER/CER are omitted and denoted by “–”.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>to-zh</th><th></th><th></th><th>to-en</th><th></th><th></th><th>to-ja</th><th></th><th></th><th>to-ko</th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>en</th><th>ja</th><th>ko</th><th>zh</th><th>ja</th><th>ko</th><th>zh</th><th>en</th><th>ko</th><th>zh</th><th>en</th><th>ja</th></tr><tr><th></th><th></th><th>Commercial API Models</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td>MiniMax-Speech-2.8-HD</td><td>9.96</td><td>6.07</td><td>3.63</td><td>3.59</td><td>5.79</td><td>4.28</td><td>30.7</td><td>13.7</td><td>6.39</td><td>6.45</td><td>6.78</td><td>11.3</td></tr>
-<tr><td></td><td>ElevenLabs-v3</td><td></td><td>7.15</td><td>6.17</td><td>2.82</td><td>4.86</td><td>5.30</td><td>4.88</td><td>10.7</td><td>12.4</td><td>6.00</td><td>6.26</td><td>5.48</td><td>8.01</td></tr></tbody></table></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="cap" id="tab-4-3-2-3"><span class="cap-k">表</span><p class="en">Table 6: WER/CER (%, ↓) on the CV3-Eval Cross-lingual Voice Cloning subset. Top-level headers denote target languages and second-level headers denote source languages. Bold and underlined values indicate the best and second-best results in each transfer direction. For readability, entries with substantially higher WER/CER are omitted and denoted by “–”.</p><p class="zh">表 6：CV3-Eval 跨语言声音克隆子集上的 WER/CER（%，越低越好）。顶层表头为目标语言，二级表头为源语言。加粗与下划线分别表示每个迁移方向的最佳与次佳结果。为可读性，WER/CER 显著偏高的条目被省略并以「–」标注。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>with substantially higher WER/CER are omitted and denoted by “–”.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>to-zh</th><th></th><th></th><th>to-en</th><th></th><th></th><th>to-ja</th><th></th><th></th><th>to-ko</th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>en</th><th>ja</th><th>ko</th><th>zh</th><th>ja</th><th>ko</th><th>zh</th><th>en</th><th>ko</th><th>zh</th><th>en</th><th>ja</th></tr><tr><th></th><th>Commercial API Models</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>MiniMax-Speech-2.8-HD</td><td>9.96</td><td>6.07</td><td>3.63</td><td>3.59</td><td>5.79</td><td>4.28</td><td>30.7</td><td>13.7</td><td>6.39</td><td>6.45</td><td>6.78</td><td>11.3</td></tr>
+<tr><td>ElevenLabs-v3</td><td></td><td>7.15</td><td>6.17</td><td>2.82</td><td>4.86</td><td>5.30</td><td>4.88</td><td>10.7</td><td>12.4</td><td>6.00</td><td>6.26</td><td>5.48</td><td>8.01</td></tr>
+<tr><td></td><td>Open-source Models</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Qwen3-TTS-12Hz-1.7B-Base</td><td>4.77</td><td>3.43</td><td>1.08</td><td>2.77</td><td>3.04</td><td>3.09</td><td>8.40</td><td>7.21</td><td>3.67</td><td>4.82</td><td>5.14</td><td>5.59</td></tr>
+<tr><td></td><td>Dots.TTS-2B (SOAR)</td><td>8.07</td><td>–</td><td>2.61</td><td>4.31</td><td>8.02</td><td>4.74</td><td>16.1</td><td>–</td><td>–</td><td>12.4</td><td>18.6</td><td>13.5</td></tr>
+<tr><td>VoxCPM2</td><td></td><td>7.76</td><td>–</td><td>3.42</td><td>5.26</td><td>6.22</td><td>7.15</td><td>–</td><td>–</td><td>–</td><td>5.73</td><td>10.4</td><td>10.6</td></tr>
+<tr><td>CosyVoice3-1.5B</td><td></td><td>8.01</td><td>6.78</td><td>3.30</td><td>4.32</td><td>5.39</td><td>5.94</td><td>13.7</td><td>13.4</td><td>4.19</td><td>31.6</td><td>14.0</td><td>10.5</td></tr>
+<tr><td></td><td>Qwen-Audio-3.0-TTS</td><td>5.23</td><td>3.29</td><td>1.09</td><td>2.40</td><td>3.15</td><td>3.54</td><td>6.53</td><td>6.66</td><td>2.98</td><td>4.27</td><td>4.34</td><td>5.15</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-4-3-2-3">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-2-3-1"><span class="en">Model to-zh to-en to-ja to-ko en ja ko zh ja ko zh en ko zh en ja Commercial API Models MiniMax-Speech-2.8-HD</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-3-2-3-1"><span class="zh">表头：Model × to-zh / to-en / to-ja / to-ko 与 en / ja / ko / zh 各方向——商业 API 模型：MiniMax-Speech-2.8-HD（后续照原文）。</span></span></p>
@@ -837,16 +859,16 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-4-3-2-19"><code>Open-source Models Qwen3-TTS-12Hz-1.7B-Base</code></div>
-<div class="eq" id="eq-4-3-2-20"><code>4.77 3.43 1.08 2.77 3.04 3.09 8.40 7.21 3.67 4.82 5.14 5.59</code></div>
-<div class="eq" id="eq-4-3-2-21"><code>Dots.TTS-2B (SOAR)</code></div>
-<div class="eq" id="eq-4-3-2-22"><code>8.07 – 2.61 4.31 8.02 4.74 16.1 – – 12.4 18.6 13.5</code></div>
-<div class="eq" id="eq-4-3-2-23"><code>VoxCPM2</code></div>
-<div class="eq" id="eq-4-3-2-24"><code>7.76 – 3.42 5.26 6.22 7.15 – – – 5.73 10.4 10.6</code></div>
-<div class="eq" id="eq-4-3-2-25"><code>CosyVoice3-1.5B</code></div>
-<div class="eq" id="eq-4-3-2-26"><code>8.01 6.78 3.30 4.32 5.39 5.94 13.7 13.4 4.19 31.6 14.0 10.5</code></div>
-<div class="eq" id="eq-4-3-2-27"><code>Qwen-Audio-3.0-TTS</code></div>
-<div class="eq" id="eq-4-3-2-28"><code>5.23 3.29 1.09 2.40 3.15 3.54 6.53 6.66 2.98 4.27 4.34 5.15</code></div></section>
+
+
+
+
+
+
+
+
+
+</section>
 <section>
       <h3 class="sech lv2" id="sec-4-4"><span class="secnum">4.4</span> <span class="t-zh">4.4 Qwen-Audio-TTS-Eval 上的客观 TTS 结果</span><span class="t-en">Objective TTS Results on Qwen-Audio-TTS-Eval</span></h3></section>
 <section>
@@ -876,27 +898,24 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="tab-4-4-2-1-s1"><span class="zh">表 8 显示，Qwen-Audio-3.0-TTS 在中英文单次长音频合成中都保持了有竞争力的内容准确性与很强的说话人一致性。它大幅（接 Table 8 标题块的下一段续文）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-4-4-2-2"><span class="cap-k">表</span><p class="en">Table 7: Complete category-level text-normalization accuracy. Higher is better; bold and underline denote the best and second-best results.</p><p class="zh">表 7：完整的类别级文本规整准确率。越高越好；加粗与下划线分别表示最佳与次佳结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>zh</th><th>en</th><th>zh</th><th>en</th><th>zh</th><th>en</th><th>zh</th><th>en</th><th>zh</th><th>en</th><th>zh</th><th>en</th></tr></thead><tbody><tr><td></td><td></td><td>57.0</td><td>60.5</td><td>74.2</td><td>78.7</td><td>40.5</td><td>63.0</td><td>41.5</td><td>63.3</td><td>73.9</td><td>47.1</td><td>24.8</td><td>44.1</td></tr>
-<tr><td></td><td>LongCat-AudioDiT-3.5B</td><td>2.0</td><td>7.4</td><td>2.7</td><td>3.6</td><td>0.0</td><td>10.0</td><td>4.9</td><td>27.3</td><td>0.8</td><td>0.0</td><td>1.0</td><td>2.8</td></tr>
-<tr><td></td><td>Dots.TTS-2B (SOAR)</td><td>38.6</td><td>46.9</td><td>40.6</td><td>67.7</td><td>28.4</td><td>49.5</td><td>38.3</td><td>52.0</td><td>72.3</td><td>31.0</td><td>3.8</td><td>27.5</td></tr>
-<tr><td>VoxCPM2</td><td></td><td>55.4</td><td>48.6</td><td>72.9</td><td>61.8</td><td>33.8</td><td>51.0</td><td>39.0</td><td>58.6</td><td>82.4</td><td>42.0</td><td>15.2</td><td>25.2</td></tr>
-<tr><td></td><td>CosyVoice3-1.5B</td><td>59.3</td><td>54.2</td><td>81.3</td><td>70.2</td><td>40.5</td><td>77.0</td><td>45.1</td><td>55.5</td><td>80.7</td><td>37.4</td><td>12.4</td><td>32.2</td></tr>
-<tr><td></td><td>Qwen-Audio-3.0-TTS</td><td>68.7</td><td>65.7</td><td>84.2</td><td>78.2</td><td>43.7</td><td>82.8</td><td>50.6</td><td>59.4</td><td>89.7</td><td>61.5</td><td>43.8</td><td>45.1</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-4-4-2-2">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-2-1"><span class="en">Model Overall Num.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-2-1"><span class="zh">（此句为 Table 7 表头的抽取残留：Overall 与 Num. 两列。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-4-2-3">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-3-1"><span class="en">Fin.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-3-1"><span class="zh">（此句为 Table 7 表头的抽取残留：Fin. 列。）</span></span></p>
-          
-        </div>
-<div class="pblk" id="p-4-4-2-4">
-          <p class="en-lines"><span class="sent" data-sid="s-4-4-2-4-1"><span class="en">Acr.</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-4-1"><span class="zh">（此句为 Table 7 表头的抽取残留：Acr. 列。）</span></span></p>
-          
-        </div>
+<div class="cap" id="tab-4-4-2-2"><span class="cap-k">表</span><p class="en">Table 7: Complete category-level text-normalization accuracy. Higher is better; bold and underline denote the best and second-best results.</p><p class="zh">表 7：完整的类别级文本规整准确率。越高越好；加粗与下划线分别表示最佳与次佳结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Overall</th><th></th><th></th><th></th><th>Num.</th><th></th><th>Fin.</th><th>Acr.</th><th></th><th></th><th></th><th>Expr.</th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>zh</th><th>en</th><th></th><th>zh</th><th>en</th><th>zh</th><th>en</th><th>zh</th><th>en</th><th>zh</th><th>en</th><th>zh</th><th>en</th></tr></thead><tbody><tr><td></td><td></td><td>57.0</td><td>60.5</td><td></td><td>74.2</td><td>78.7</td><td>40.5</td><td>63.0</td><td>41.5</td><td>63.3</td><td>73.9</td><td>47.1</td><td>24.8</td><td>44.1</td></tr>
+<tr><td>LongCat-AudioDiT-3.5B</td><td></td><td>2.0</td><td>7.4</td><td></td><td>2.7</td><td>3.6</td><td>0.0</td><td>10.0</td><td>4.9</td><td>27.3</td><td>0.8</td><td>0.0</td><td>1.0</td><td>2.8</td></tr>
+<tr><td>Dots.TTS-2B (SOAR)</td><td></td><td>38.6</td><td>46.9</td><td></td><td>40.6</td><td>67.7</td><td>28.4</td><td>49.5</td><td>38.3</td><td>52.0</td><td>72.3</td><td>31.0</td><td>3.8</td><td>27.5</td></tr>
+<tr><td>VoxCPM2</td><td></td><td>55.4</td><td>48.6</td><td></td><td>72.9</td><td>61.8</td><td>33.8</td><td>51.0</td><td>39.0</td><td>58.6</td><td>82.4</td><td>42.0</td><td>15.2</td><td>25.2</td></tr>
+<tr><td>CosyVoice3-1.5B</td><td></td><td>59.3</td><td>54.2</td><td></td><td>81.3</td><td>70.2</td><td>40.5</td><td>77.0</td><td>45.1</td><td>55.5</td><td>80.7</td><td>37.4</td><td>12.4</td><td>32.2</td></tr>
+<tr><td>Qwen-Audio-3.0-TTS</td><td></td><td>68.7</td><td>65.7</td><td></td><td>84.2</td><td>78.2</td><td>43.7</td><td>82.8</td><td>50.6</td><td>59.4</td><td>89.7</td><td>61.5</td><td>43.8</td><td>45.1</td></tr>
+<tr><td>Text length (µ ± σ)</td><td></td><td></td><td>496±19 634±26 735±24 630±99</td><td></td><td></td><td></td><td>–</td><td>–</td><td></td><td>248±26 345±31 451±29 358±88</td><td></td><td></td><td>–</td><td>–</td></tr>
+<tr><td>Audio duration (µ ± σ, s)</td><td>116±9</td><td></td><td></td><td>146±11 161±23 142±24</td><td></td><td></td><td>–</td><td>–</td><td>86±14</td><td></td><td>115±18 163±27 125±38</td><td></td><td>–</td><td>–</td></tr>
+<tr><td>N samples</td><td>29</td><td>35</td><td></td><td>36</td><td></td><td>100</td><td>100</td><td>100</td><td>29</td><td>32</td><td>39</td><td>100</td><td>100</td><td>100</td></tr>
+<tr><td>Qwen3-TTS-12Hz-1.7B-Base</td><td>0.34</td><td>1.89</td><td></td><td>5.79</td><td></td><td>2.84</td><td>63.11</td><td>88.98</td><td>3.04</td><td>4.25</td><td>6.57</td><td>4.81</td><td>68.56</td><td>90.49</td></tr>
+<tr><td>LongCat-AudioDiT-3.5B</td><td>–†</td><td>–†</td><td></td><td>–†</td><td></td><td>–†</td><td>70.15</td><td>87.10</td><td>–†</td><td>–†</td><td>–†</td><td>–†</td><td>71.07</td><td>88.24</td></tr>
+<tr><td>Dots.TTS-2B (SOAR)</td><td>16.66</td><td>36.03</td><td></td><td>47.31</td><td></td><td>34.47</td><td>78.47</td><td>89.74</td><td>13.42</td><td>20.67</td><td>47.85</td><td>29.17</td><td>81.80</td><td>91.48</td></tr>
+<tr><td>VoxCPM2</td><td>0.54</td><td>0.58</td><td></td><td>0.49</td><td></td><td>0.54</td><td>61.73</td><td>86.80</td><td>2.33</td><td>4.25</td><td>2.98</td><td>3.20</td><td>68.95</td><td>90.39</td></tr>
+<tr><td>CosyVoice3-1.5B</td><td>14.03</td><td>26.73</td><td></td><td>33.29</td><td></td><td>25.41</td><td>80.44</td><td>93.88</td><td>7.45</td><td>18.59</td><td>38.78</td><td>23.24</td><td>84.52</td><td>94.90</td></tr>
+<tr><td>Qwen-Audio-3.0-TTS</td><td>0.30</td><td>0.31</td><td></td><td>5.62</td><td></td><td>2.22</td><td>78.85</td><td>93.16</td><td>3.30</td><td>6.72</td><td>4.85</td><td>5.00</td><td>82.35</td><td>93.45</td></tr></tbody></table></div></div>
+
+
+
 <div class="pblk" id="p-4-4-2-5">
           <p class="en-lines"><span class="sent" data-sid="s-4-4-2-5-1"><span class="en">Code Expr. zh en zh en zh en zh en zh en zh en Qwen3-TTS-12Hz-1.7B-Base</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-4-2-5-1"><span class="zh">（表格行：Code / Expr. × zh / en（六组）——Qwen3-TTS-12Hz-1.7B-Base，后续照原文。）</span></span></p>
@@ -973,38 +992,45 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-4-4-3-1"><span class="cap-k">表</span><p class="en">Table 9: Objective zero-shot TTS results under noisy, reverberant, and unclear prompt conditions. Models marked with “Denoise” use their inference-time denoising mode. Content error, ERes2Net speaker similarity (SIM), and DNSMOS are reported. Bold and underlined values denote the best and second-best results in each column.</p><p class="zh">表 9：含噪、混响与不清晰提示条件下的客观零样本 TTS 结果。标有「Denoise」的模型使用其推理时去噪模式。报告内容错误、ERes2Net 说话人相似度（SIM）与 DNSMOS。加粗与下划线分别表示每列最佳与次佳结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>and second-best results in each column.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th>Noisy</th><th></th><th></th><th>Reverb</th><th></th><th></th><th>Unclear</th><th></th></tr><tr><th></th><th>Commercial API Models</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>MiniMax-Speech-2.8-HD</td><td></td><td></td><td>0.85</td><td>66.72</td><td>3.464</td><td>0.83</td><td>61.56</td><td>3.065</td><td>1.28</td><td>68.33</td><td>3.174</td></tr>
-<tr><td></td><td></td><td>MiniMax-Speech-2.8-HD·Denoise</td><td></td><td>0.83</td><td>63.83</td><td>3.728</td><td>0.87</td><td>56.53</td><td>3.343</td><td>1.58</td><td>67.84</td><td>3.241</td></tr>
-<tr><td>ElevenLabs-v3</td><td></td><td></td><td></td><td>1.17</td><td>46.91</td><td>3.779</td><td>1.75</td><td>41.46</td><td>3.090</td><td>1.67</td><td>47.12</td><td>3.304</td></tr>
-<tr><td></td><td>ElevenLabs-v3·Denoise</td><td></td><td></td><td>1.19</td><td>46.07</td><td>3.981</td><td>0.58</td><td>44.39</td><td>4.025</td><td>1.38</td><td>43.90</td><td>3.496</td></tr>
-<tr><td></td><td>Open-source Models</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-4-4-3-1"><span class="cap-k">表</span><p class="en">Table 9: Objective zero-shot TTS results under noisy, reverberant, and unclear prompt conditions. Models marked with “Denoise” use their inference-time denoising mode. Content error, ERes2Net speaker similarity (SIM), and DNSMOS are reported. Bold and underlined values denote the best and second-best results in each column.</p><p class="zh">表 9：含噪、混响与不清晰提示条件下的客观零样本 TTS 结果。标有「Denoise」的模型使用其推理时去噪模式。报告内容错误、ERes2Net 说话人相似度（SIM）与 DNSMOS。加粗与下划线分别表示每列最佳与次佳结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th></th><th>Noisy</th><th></th><th></th><th>Reverb</th><th></th><th></th><th>Unclear</th><th></th></tr><tr><th></th><th>Commercial API Models</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>MiniMax-Speech-2.8-HD</td><td>0.85</td><td>66.72</td><td>3.464</td><td>0.83</td><td>61.56</td><td>3.065</td><td>1.28</td><td>68.33</td><td>3.174</td></tr>
+<tr><td></td><td></td><td></td><td>63.83</td><td>3.728</td><td>0.87</td><td>56.53</td><td>3.343</td><td>1.58</td><td>67.84</td><td>3.241</td></tr>
+<tr><td>ElevenLabs-v3</td><td></td><td>1.17</td><td>46.91</td><td>3.779</td><td>1.75</td><td>41.46</td><td>3.090</td><td>1.67</td><td>47.12</td><td>3.304</td></tr>
+<tr><td></td><td>ElevenLabs-v3·Denoise</td><td>1.19</td><td>46.07</td><td>3.981</td><td>0.58</td><td>44.39</td><td>4.025</td><td>1.38</td><td>43.90</td><td>3.496</td></tr>
+<tr><td></td><td>Open-source Models</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td>Qwen3-TTS-12Hz-1.7B-Base</td><td>2.01</td><td>65.61</td><td>3.595</td><td>2.11</td><td>63.42</td><td>2.887</td><td>2.85</td><td>70.62</td><td>3.050</td></tr>
+<tr><td></td><td>LongCat-AudioDiT-3.5B</td><td>3.44</td><td>58.70</td><td>3.777</td><td>1.05</td><td>56.91</td><td>3.169</td><td>3.12</td><td>73.54</td><td>3.262</td></tr>
+<tr><td></td><td>Dots.TTS-2B (SOAR)</td><td>2.90</td><td>76.69</td><td>3.221</td><td>2.12</td><td>72.38</td><td>2.888</td><td>2.16</td><td>76.69</td><td>3.070</td></tr>
+<tr><td></td><td>VoxCPM2·Denoise</td><td>4.36</td><td>65.31</td><td>3.678</td><td>10.07</td><td>51.05</td><td>2.830</td><td>6.71</td><td>68.81</td><td>3.051</td></tr>
+<tr><td></td><td>CosyVoice3-1.5B</td><td>1.56</td><td>75.40</td><td>3.301</td><td>1.78</td><td>71.91</td><td>3.021</td><td>2.39</td><td>72.06</td><td>3.113</td></tr>
+<tr><td></td><td>Qwen-Audio-3.0-TTS</td><td>1.18</td><td>76.14</td><td>3.962</td><td>0.69</td><td>74.12</td><td>3.925</td><td>1.61</td><td>76.53</td><td>3.305</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-4-4-3-4">
           <p class="en-lines"><span class="sent" data-sid="s-4-4-3-4-1"><span class="en">Model Noisy Reverb Unclear WER (%) ↓SIM (%) ↑DNSMOS ↑WER (%) ↓SIM (%) ↑DNSMOS ↑WER (%) ↓SIM (%) ↑DNSMOS ↑ Commercial API Models MiniMax-Speech-2.8-HD</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-4-3-4-1"><span class="zh">表头：Model × Noisy / Reverb / Unclear（WER (%) ↓ / SIM (%) ↑ / DNSMOS ↑ 各组）——商业 API 模型：MiniMax-Speech-2.8-HD（后续照原文）。</span></span></p>
           
         </div>
 
+<div class="eq" id="eq-4-4-3-3"><code>MiniMax-Speech-2.8-HD·Denoise</code></div>
 
 
 
 
 
 
-<div class="eq" id="eq-4-4-3-9"><code>Open-source Models Qwen3-TTS-12Hz-1.7B-Base</code></div>
-<div class="eq" id="eq-4-4-3-10"><code>2.01 65.61 3.595 2.11 63.42 2.887 2.85 70.62 3.050</code></div>
-<div class="eq" id="eq-4-4-3-11"><code>LongCat-AudioDiT-3.5B</code></div>
-<div class="eq" id="eq-4-4-3-12"><code>3.44 58.70 3.777 1.05 56.91 3.169 3.12 73.54 3.262</code></div>
-<div class="eq" id="eq-4-4-3-13"><code>Dots.TTS-2B (SOAR)</code></div>
-<div class="eq" id="eq-4-4-3-14"><code>2.90 76.69 3.221 2.12 72.38 2.888 2.16 76.69 3.070</code></div>
-<div class="eq" id="eq-4-4-3-15"><code>VoxCPM2·Denoise</code></div>
-<div class="eq" id="eq-4-4-3-16"><code>4.36 65.31 3.678 10.07 51.05 2.830 6.71 68.81 3.051</code></div>
 
-<div class="eq" id="eq-4-4-3-18"><code>1.56 75.40 3.301 1.78 71.91 3.021 2.39 72.06 3.113</code></div>
 
-<div class="eq" id="eq-4-4-3-20"><code>1.18 76.14 3.962 0.69 74.12 3.925 1.61 76.53 3.305</code></div>
+
+
+
+
+
+
+
+
+
 <div class="cap" id="tab-4-4-3-2"><span class="cap-k">表</span><p class="en">Table 10: Instruction-following performance and speaker similarity (%) on the bilingual benchmark. SA, NL, and ST denote single-attribute, natural-language multi-attribute, and structured-attribute instructions, respectively. Speaker similarity is measured by the ERes2Net cosine similarity between each synthesized utterance and its reference utterance. Overall is computed by averaging over all evaluation instances pooled across subsets. Bold and underlined values indicate the best and secondbest results in each column, respectively.</p><p class="zh">表 10：双语基准上的指令跟随性能与说话人相似度（%）。SA、NL、ST 分别表示单属性、自然语言多属性与结构化属性指令。说话人相似度以每条合成语音与其参考语音之间的 ERes2Net 余弦相似度衡量。Overall 为跨子集汇集的所有评测实例上的平均值。加粗与下划线分别表示每列最佳与次佳结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>best results in each column, respectively.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>Instruction Following (zh)</th><th></th><th></th><th></th><th></th><th>Instruction Following (en)</th><th></th><th></th><th></th><th>Speaker Similarity</th><th></th></tr><tr><th>Model</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>SA</th><th>NL</th><th></th><th>ST</th><th>Overall</th><th>SA</th><th>NL</th><th></th><th>ST</th><th>Overall</th><th>zh</th><th></th><th>en</th></tr></thead><tbody><tr><td>IndexTTS2</td><td></td><td></td><td>65.00</td><td>42.67</td><td></td><td>40.67</td><td>54.39</td><td>67.50</td><td>37.33</td><td></td><td>62.00</td><td>59.39</td><td>64.97</td><td></td><td>66.25</td></tr>
 <tr><td></td><td>CosyVoice3-1.5B</td><td></td><td>82.50</td><td>67.33</td><td></td><td>68.67</td><td>75.91</td><td>63.33</td><td>56.00</td><td></td><td>74.00</td><td>64.09</td><td>75.60</td><td></td><td>68.45</td></tr>
-<tr><td></td><td>Qwen-Audio-3.0-TTS</td><td></td><td>87.50</td><td>72.00</td><td></td><td>65.33</td><td>78.94</td><td>83.33</td><td>76.00</td><td></td><td>78.00</td><td>80.45</td><td>73.27</td><td></td><td>66.66</td></tr></tbody></table></div></div>
+<tr><td></td><td>Qwen-Audio-3.0-TTS</td><td></td><td>87.50</td><td>72.00</td><td></td><td>65.33</td><td>78.94</td><td>83.33</td><td>76.00</td><td></td><td>78.00</td><td>80.45</td><td>73.27</td><td></td><td>66.66</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>giving a score from 0 to 3, and the criteria remain fixed across systems.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-4-4-3-5">
           <p class="en-lines"><span class="sent" data-sid="s-4-4-3-5-1"><span class="en">Model Instruction Following (zh) Instruction Following (en) Speaker Similarity SA NL ST Overall SA NL ST Overall zh en IndexTTS2</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-4-4-3-5-1"><span class="zh">表头：Model × Instruction Following (zh) / Instruction Following (en)（SA / NL / ST / Overall）× Speaker Similarity（zh / en）——IndexTTS2（后续照原文）。</span></span></p>
@@ -1098,7 +1124,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
       </div></div></div>
         </div>
 <div class="cap" id="tab-4-6-1-1"><span class="cap-k">表</span><p class="en">Table 11: Subjective evaluation results of Qwen-Audio-3.0-TTS on multi-dialect speech synthesis. Each dimension is rated with four severity levels, where Perfect, P2, P1, and P0 are mapped to scores of 4, 3, 2, and 1, respectively.</p><p class="zh">表 11：Qwen-Audio-3.0-TTS 在多方言语音合成上的主观评测结果。每个维度按四级严重度评分，Perfect、P2、P1、P0 分别映射为 4、3、2、1 分。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>scores of 4, 3, 2, and 1, respectively.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Dimension</th><th></th><th>Perfect</th><th>P2</th><th>P1</th><th>P0</th><th>Mean Score</th></tr></thead><tbody><tr><td></td><td>Dialect Authenticity</td><td>66.7%</td><td>31.5%</td><td>0.8%</td><td>1.0%</td><td>3.639</td></tr>
-<tr><td></td><td>Pronunciation Accuracy</td><td>93.5%</td><td>6.5%</td><td>0.0%</td><td>0.0%</td><td>3.935</td></tr></tbody></table></div></div></section>
+<tr><td></td><td>Pronunciation Accuracy</td><td>93.5%</td><td>6.5%</td><td>0.0%</td><td>0.0%</td><td>3.935</td></tr>
+<tr><td></td><td>Prosodic Naturalness</td><td>68.1%</td><td>31.9%</td><td>0.0%</td><td>0.0%</td><td>3.680</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-dimension"><span class="t-zh">维度</span><span class="t-en">Dimension</span></h3></section>
 <section>
@@ -1106,7 +1133,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-dialect-authenticity-5"><code>68.1% 31.9% 0.0% 0.0% 3.680</code></div></section>
+</section>
 <section>
       <h3 class="sech lv2" id="sec-4-6-2"><span class="secnum">4.6.2</span> <span class="t-zh">4.6.2 指令跟随能力的主观评测</span><span class="t-en">Subjective Evaluation of Instruction Following Capabilities</span></h3><div class="pblk" id="p-4-6-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-6-2-1-1"><span class="en">We conduct Arena-based human evaluation to assess the instruction-controlled speech synthesis capability of Qwen-Audio-3.0-TTS.</span></span> <span class="sent" data-sid="s-4-6-2-1-2"><span class="en">The evaluation considers two independently rated dimensions: Instruction Following and Prosodic Naturalness.</span></span> <span class="sent" data-sid="s-4-6-2-1-3"><span class="en">Instruction Following measures whether the synthesized speech accurately follows the specified control instructions, including emotion, speaking rate, role, and speaking style.</span></span> <span class="sent" data-sid="s-4-6-2-1-4"><span class="en">Prosodic Naturalness evaluates whether the generated prosody sounds natural and human-like, regardless of whether the target instruction is correctly satisfied.</span></span> <span class="sent" data-sid="s-4-6-2-1-5"><span class="en">This separation allows us to distinguish instruction controllability from perceptual naturalness.</span></span></p>
@@ -1125,14 +1152,19 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-4-6-2-1"><span class="cap-k">表</span><p class="en">Table 12: Arena-based human evaluation of instruction-controlled synthesis. Win rates are reported in percentage; higher is better, and the best result in each column is shown in bold.</p><p class="zh">表 12：指令控制合成的竞技场式人工评测。胜率以百分比报告，越高越好，每列最佳结果加粗。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>System</th><th></th><th>Instruction Following</th><th>Prosodic Naturalness</th></tr></thead><tbody><tr><td></td><td></td><td></td><td>Previous-Gen Baseline</td><td>30.9</td><td>42.9</td></tr>
-<tr><td></td><td></td><td></td><td>Qwen-Audio-3.0-TTS</td><td>44.8</td><td>55.6</td></tr>
-<tr><td>5</td><td>Conclusion</td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
+<div class="cap" id="tab-4-6-2-1"><span class="cap-k">表</span><p class="en">Table 12: Arena-based human evaluation of instruction-controlled synthesis. Win rates are reported in percentage; higher is better, and the best result in each column is shown in bold.</p><p class="zh">表 12：指令控制合成的竞技场式人工评测。胜率以百分比报告，越高越好，每列最佳结果加粗。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>scores of 4, 3, 2, and 1, respectively.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td></td><td>Dialect Authenticity</td><td></td><td>66.7%</td><td>31.5%</td><td>0.8%</td><td>1.0%</td><td>3.639</td></tr>
+<tr><td></td><td></td><td>Pronunciation Accuracy</td><td></td><td>93.5%</td><td>6.5%</td><td>0.0%</td><td>0.0%</td><td>3.935</td></tr>
+<tr><td></td><td></td><td>Prosodic Naturalness</td><td></td><td>68.1%</td><td>31.9%</td><td>0.0%</td><td>0.0%</td><td>3.680</td></tr>
+<tr><td>4.6.2</td><td></td><td></td><td>Subjective Evaluation of Instruction Following Capabilities</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-system"><span class="t-zh">系统</span><span class="t-en">System</span></h3>
-
-
-</section>
+      <h3 class="sech lv2" id="sec-system"><span class="t-zh">系统</span><span class="t-en">System</span></h3><div class="pblk" id="p-system-1">
+          <p class="en-lines"><span class="sent" data-sid="s-system-1-1"><span class="en">Instruction Following Prosodic Naturalness Previous-Gen Baseline</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-system-1-1"><span class="zh">（表格：指令遵循（Instruction Following）× 韵律自然度（Prosodic Naturalness）——上一代基线 30.9/42.9；Qwen-Audio-3.0-TTS 44.8/55.6。）</span></span></p>
+          
+        </div>
+<div class="eq" id="eq-system-1"><code>30.9 42.9</code></div>
+<div class="eq" id="eq-system-2"><code>Qwen-Audio-3.0-TTS</code></div>
+<div class="eq" id="eq-system-3"><code>44.8 55.6</code></div></section>
 <section>
       <h2 class="sech lv1" id="sec-5"><span class="secnum">5</span> <span class="t-zh">5 结论</span><span class="t-en">Conclusion</span></h2><div class="pblk" id="p-5-1">
           <p class="en-lines"><span class="sent" data-sid="s-5-1-1"><span class="en">In this report, we present Qwen-Audio-3.0-TTS, a multilingual, freely controllable and highly robust speech synthesis system oriented towards production deployment.</span></span> <span class="sent" data-sid="s-5-1-2"><span class="en">Its 12.5 Hz speech tokenizer, together with chunk-based flow-matching and causal vocoder, reduces end-to-end latency.</span></span> <span class="sent" data-sid="s-5-1-3"><span class="en">Joint LM–FM training and LM reinforcement learning deliver a strong balance of content consistency and naturalness.</span></span> <span class="sent" data-sid="s-5-1-4"><span class="en">Acoustic robustness training and FM reinforcement learning progressively improve speaker similarity, audio fidelity and robustness.</span></span> <span class="sent" data-sid="s-5-1-5"><span class="en">Qwen-Audio-3.0-TTS achieves state-of-the-art performance on many reported dimensions or the strongest aggregate scores across SEED-TTS- Eval, CV3-Eval, instruction-following, long-form, and adverse-prompt evaluations.</span></span> <span class="sent" data-sid="s-5-1-6"><span class="en">It also ranks first on the independent Artificial Analysis Text-to-Speech Arena leaderboard released on July 16,</span></span></p>

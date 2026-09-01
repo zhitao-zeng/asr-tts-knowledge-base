@@ -695,48 +695,45 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <div class="cap" id="tab-0-67-1"><span class="cap-k">表</span><p class="en">Table 4: The ablation study of prosody representation on RAVDESS. Denote “Mel 20 Bins” using the first 20 bins in the mel-spectrogram as the prosody representation.</p><p class="zh">表 4：在 RAVDESS 上关于韵律表示的消融研究。其中「Mel 20 Bins」表示用 Mel 频谱图的前 20 个频带作为韵律表示。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>clean.</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>Sim-O / Sim-R ↑</th><th>WER↓</th><th>CMOS↑</th><th>SMOS↑</th></tr></thead><tbody><tr><td></td><td></td><td>NaturalSpeech 3</td><td>0.67 / 0.76</td><td>1.81</td><td>0.00</td><td>4.01</td></tr>
 <tr><td></td><td></td><td>- factorization</td><td>0.55 / 0.61</td><td>2.49</td><td>-0.25</td><td>3.59</td></tr>
 <tr><td></td><td>- cfg</td><td></td><td>0.64 / 0.72</td><td>1.81</td><td>-0.06</td><td>3.80</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-0-67-1">
-          <p class="en-lines"><span class="sent" data-sid="s-0-67-1-1"><span class="en">MCD Avg↓ MCD-Acc↑ NaturalSpeech 3</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-0-67-1-1"><span class="zh">（表格行：MCD Avg↓ / MCD-Acc↑——NaturalSpeech 3 4.28/0.52；Mel 20 Bins 4.34/0.46。）韵律表示（Prosody Representation）。</span></span></p>
-          
-        </div>
-<div class="eq" id="eq-0-67-6"><code>4.28 0.52</code></div>
-<div class="eq" id="eq-0-67-7"><code>Mel 20 Bins</code></div>
-<div class="eq" id="eq-0-67-8"><code>4.34 0.46</code></div>
+
+
+
+
 <div class="pblk" id="p-0-67-2">
           <p class="en-lines"><span class="sent" data-sid="s-0-67-2-1"><span class="en">Prosody Representation.</span></span> <span class="sent" data-sid="s-0-67-2-2"><span class="en">We compare different prosody representations on zero-shot TTS task.</span></span> <span class="sent" data-sid="s-0-67-2-3"><span class="en">In specific, we select handcrafted prosody features (e.g., the first 20 bins of mel-spectrogram [7, 63, 64]) as the baseline.</span></span> <span class="sent" data-sid="s-0-67-2-4"><span class="en">We drop the prosody FVQ module and directly quantize the first 20 bins of the mel-spectrogram, without the normalized F0 loss.</span></span> <span class="sent" data-sid="s-0-67-2-5"><span class="en">Table 4 shows that using “Mel 20 Bins” as prosody representation demonstrates inferiority in terms of prosody similarity compared to the prosody representations learned from codec (4.34 vs 4.28 in average MCD, 0.46 vs 0.52 in MCD-Acc).</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-0-67-2-1"><span class="zh">（表格行：MCD Avg↓ / MCD-Acc↑——NaturalSpeech 3 4.28/0.52；Mel 20 Bins 4.34/0.46。）韵律表示（Prosody Representation）。</span></span><span class="sent" data-sid="s-0-67-2-2"><span class="zh">我们在零样本 TTS 任务上比较不同的韵律表示。</span></span><span class="sent" data-sid="s-0-67-2-3"><span class="zh">具体来说，我们选取人工设计的韵律特征（如 Mel 频谱图的前 20 个频带 [7, 63, 64]）作为基线。</span></span><span class="sent" data-sid="s-0-67-2-4"><span class="zh">我们移除韵律 FVQ 模块，直接量化 Mel 频谱图的前 20 个频带，且不使用归一化 F0 损失。</span></span><span class="sent" data-sid="s-0-67-2-5"><span class="zh">Table 4 显示，与 codec 学出的韵律表示相比，用「Mel 20 Bins」作为韵律表示在韵律相似度上更差（平均 MCD 4.34 对 4.28，MCD-Acc 0.46 对 0.52）。</span></span></p>
           
         </div>
-<div class="cap" id="tab-0-67-2"><span class="cap-k">表</span><p class="en">Table 5: The reconstruction quality evaluation of codecs. ♣means results are infered from offical checkpoints. ⋆means the reproduced checkpoint. ♦means the reproduced model following the original paper’s implementation and experimental setup. All models use a codebook size of 1024. Bold for the best result and underline for the second-best result. Abbreviation: H (Hop Size), N (Codebook Number).</p><p class="zh">表 5：codec 的重构质量评测。♣表示结果由官方 checkpoint 推理得到；⋆表示复现的 checkpoint；♦表示按原论文实现与实验设置复现的模型。所有模型的码本大小为 1024。加粗为最优、下划线为次优。缩写：H（Hop Size）、N（码本数量）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>(Codebook Number).</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>EnCodec♣</td><td></td><td>24kHz</td><td>320</td><td>8</td><td>6.0 kbps</td><td>3.28</td><td>0.94</td><td>0.99</td><td>2.70</td></tr>
-<tr><td>HiFi-Codec♣</td><td></td><td>16kHz</td><td>320</td><td>4</td><td>2.0 kbps</td><td>3.17</td><td>0.93</td><td>0.98</td><td>3.05</td></tr>
-<tr><td>DAC♣</td><td></td><td>16kHz</td><td>320</td><td>9</td><td>4.5 kbps</td><td>3.52</td><td>0.95</td><td>0.97</td><td>2.65</td></tr>
-<tr><td>SoundStream♦</td><td></td><td>16kHz</td><td>200</td><td>6</td><td>4.8 kbps</td><td>3.03</td><td>0.90</td><td>1.07</td><td>3.38</td></tr>
-<tr><td>FACodec</td><td></td><td>16kHz</td><td>200</td><td>6</td><td>4.8 kbps</td><td>3.47</td><td>0.95</td><td>0.93</td><td>2.59</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-0-67-2"><span class="cap-k">表</span><p class="en">Table 5: The reconstruction quality evaluation of codecs. ♣means results are infered from offical checkpoints. ⋆means the reproduced checkpoint. ♦means the reproduced model following the original paper’s implementation and experimental setup. All models use a codebook size of 1024. Bold for the best result and underline for the second-best result. Abbreviation: H (Hop Size), N (Codebook Number).</p><p class="zh">表 5：codec 的重构质量评测。♣表示结果由官方 checkpoint 推理得到；⋆表示复现的 checkpoint；♦表示按原论文实现与实验设置复现的模型。所有模型的码本大小为 1024。加粗为最优、下划线为次优。缩写：H（Hop Size）、N（码本数量）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>clean.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th>Sim-O / Sim-R ↑</th><th></th><th>WER↓</th><th>CMOS↑</th><th>SMOS↑</th></tr></thead><tbody><tr><td></td><td></td><td>NaturalSpeech 3</td><td></td><td>0.67 / 0.76</td><td></td><td>1.81</td><td>0.00</td><td>4.01</td></tr>
+<tr><td></td><td></td><td>- factorization</td><td></td><td>0.55 / 0.61</td><td></td><td>2.49</td><td>-0.25</td><td>3.59</td></tr>
+<tr><td></td><td>- cfg</td><td></td><td></td><td>0.64 / 0.72</td><td></td><td>1.81</td><td>-0.06</td><td>3.80</td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>MCD Avg↓</td><td></td><td>MCD-Acc↑</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>NaturalSpeech 3</td><td></td><td>4.28</td><td></td><td>0.52</td><td></td></tr>
+<tr><td></td><td></td><td></td><td>Mel 20 Bins</td><td></td><td>4.34</td><td></td><td>0.46</td><td></td></tr></tbody></table></div></div>
 <div class="pblk" id="p-0-67-3">
           <p class="en-lines"><span class="sent" data-sid="s-0-67-3-1"><span class="en">Models Sampling Rate H N Bandwidth PESQ ↑ STOI ↑ MSTFT ↓ MCD ↓ EnCodec♣ 24kHz</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-0-67-3-1"><span class="zh">表头：Models / Sampling Rate / H / N / Bandwidth / PESQ ↑ / STOI ↑ / MSTFT ↓ / MCD ↓——EnCodec♣ 24kHz（后续照原文）。</span></span></p>
           
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</section>
+<div class="eq" id="eq-0-67-9"><code>320 8</code></div>
+<div class="eq" id="eq-0-67-10"><code>6.0 kbps</code></div>
+<div class="eq" id="eq-0-67-11"><code>3.28 0.94 0.99 2.70</code></div>
+<div class="eq" id="eq-0-67-12"><code>HiFi-Codec♣ 16kHz</code></div>
+<div class="eq" id="eq-0-67-13"><code>320 4</code></div>
+<div class="eq" id="eq-0-67-14"><code>2.0 kbps</code></div>
+<div class="eq" id="eq-0-67-15"><code>3.17 0.93 0.98 3.05</code></div>
+<div class="eq" id="eq-0-67-16"><code>DAC♣ 16kHz</code></div>
+<div class="eq" id="eq-0-67-17"><code>320 9</code></div>
+<div class="eq" id="eq-0-67-18"><code>4.5 kbps</code></div>
+<div class="eq" id="eq-0-67-19"><code>3.52 0.95 0.97 2.65</code></div>
+<div class="eq" id="eq-0-67-20"><code>SoundStream♦ 16kHz</code></div>
+<div class="eq" id="eq-0-67-21"><code>200 6</code></div>
+<div class="eq" id="eq-0-67-22"><code>4.8 kbps</code></div>
+<div class="eq" id="eq-0-67-23"><code>3.03 0.90 1.07 3.38</code></div>
+<div class="eq" id="eq-0-67-24"><code>FACodec 16kHz</code></div>
+<div class="eq" id="eq-0-67-25"><code>200 6</code></div>
+<div class="eq" id="eq-0-67-26"><code>4.8 kbps</code></div>
+<div class="eq" id="eq-0-67-27"><code>3.47 0.95 0.93 2.59</code></div></section>
 <section>
       <h3 class="sech lv2" id="sec-4-3-2"><span class="secnum">4.3.2</span> <span class="t-zh">方法分析</span><span class="t-en">Method Analyses</span></h3><div class="pblk" id="p-4-3-2-1">
           <p class="en-lines"><span class="sent" data-sid="s-4-3-2-1-1"><span class="en">In this subsection, we first discuss the extensibility of our factorization.</span></span> <span class="sent" data-sid="s-4-3-2-1-2"><span class="en">We then introduce the application of speech attributes manipulation in a zero-shot way.</span></span></p>
@@ -1255,33 +1252,31 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 </section>
 <section>
-      <h3 class="sech lv2" id="sec-B-4"><span class="secnum">B.4</span> <span class="t-zh">消融研究</span><span class="t-en">Ablation Study</span></h3></section>
+      <h3 class="sech lv2" id="sec-B-4"><span class="secnum">B.4</span> <span class="t-zh">消融研究</span><span class="t-en">Ablation Study</span></h3><div class="pblk" id="p-B-4-1">
+          <p class="en-lines"><span class="sent" data-sid="s-B-4-1-1"><span class="en">In this subsection, we study 1) the impact of the information bottleneck on the disentanglement of our FACodec; 2) the effect of gradient reversal on the disentanglement of our FACodec; 3) the role of the acoustic details quantizers; 4) the effects of different prosody representations for TTS generation.</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-B-4-1-1"><span class="zh">本小节研究：1）信息瓶颈对 FACodec 解耦能力的影响；2）梯度反转对 FACodec 解耦能力的影响；3）声学细节量化器的作用；4）不同韵律表示对 TTS 生成的影响。</span></span></p>
+          
+        </div></section>
 <section>
       <h3 class="sech lv2" id="sec-information-bottleneck-for-disen"><span class="t-zh">用于解耦的信息瓶颈</span><span class="t-en">Information Bottleneck for Disentanglement.</span></h3><div class="pblk" id="p-information-bottleneck-for-disen-1">
           <p class="en-lines"><span class="sent" data-sid="s-information-bottleneck-for-disen-1-1"><span class="en">We investigate the impact of the information bottleneck on speech disentanglement through qualitative analysis.</span></span> <span class="sent" data-sid="s-information-bottleneck-for-disen-1-2"><span class="en">We find that without using information bottleneck (quantize in original dimensional space rather than low dimensional space) can lead to incomplete disentanglement.</span></span> <span class="sent" data-sid="s-information-bottleneck-for-disen-1-3"><span class="en">For example, we conduct zero-shot voice conversion in the same experimental setting using the FACodec without information bottleneck, as mentioned in Appendix B.3.</span></span> <span class="sent" data-sid="s-information-bottleneck-for-disen-1-4"><span class="en">We observe that the timbre of the converted speech is the interpolation between the source and target, indicating its poor timbre disentanglement.</span></span> <span class="sent" data-sid="s-information-bottleneck-for-disen-1-5"><span class="en">Table 15 demonstrates that without the information bottleneck, the speaker similarity of zero-shot voice conversion decreases by 0.13.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-information-bottleneck-for-disen-1-1"><span class="zh">我们通过定性分析研究信息瓶颈对语音解耦的影响。</span></span><span class="sent" data-sid="s-information-bottleneck-for-disen-1-2"><span class="zh">我们发现，不使用信息瓶颈（即在原始维度空间而非低维空间中量化）会导致解耦不完全。</span></span><span class="sent" data-sid="s-information-bottleneck-for-disen-1-3"><span class="zh">例如，如附录 B.3 所述，我们用不带信息瓶颈的 FACodec 在相同实验设置下进行零样本语音转换。</span></span><span class="sent" data-sid="s-information-bottleneck-for-disen-1-4"><span class="zh">我们观察到，转换后语音的音色是源说话人与目标说话人之间的插值，表明其音色解耦能力较差。</span></span><span class="sent" data-sid="s-information-bottleneck-for-disen-1-5"><span class="zh">Table 15 表明，没有信息瓶颈时，零样本语音转换的说话人相似度下降 0.13。</span></span></p>
           
         </div>
-<div class="cap" id="tab-information-bottleneck-for-disen-1"><span class="cap-k">表</span><p class="en">Table 15: Comparison of zero-shot voice conversion evaluation results for FACodec with and without using information bottleneck.</p><p class="zh">表 15：FACodec 在使用与不使用信息瓶颈两种情况下的零样本语音转换评测结果比较。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Models</th><th>Sim-O ↑</th><th>WER ↓</th></tr></thead><tbody><tr><td>Ground Truth</td><td>-</td><td>3.25</td></tr>
-<tr><td>YourTTS</td><td>0.72</td><td>10.1</td></tr>
-<tr><td></td><td>0.68</td><td>6.20</td></tr>
-<tr><td>LM-VC</td><td>0.82</td><td>4.91</td></tr>
-<tr><td>UniAudio</td><td>0.87</td><td>4.80</td></tr>
-<tr><td>FACodec</td><td>0.86</td><td>3.46</td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td>In this subsection, we study 1) the impact of the information bottleneck</td><td></td><td></td></tr>
-<tr><td>our FACodec; 2) the effect of gradient reversal on the disentanglement of</td><td></td><td></td></tr>
-<tr><td>the acoustic details quantizers; 4) the effects of different prosody</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-<tr><td>We investigate the impact of the information bottleneck on speech</td><td></td><td></td></tr>
-<tr><td>analysis. We find that without using information bottleneck (quantize in</td><td></td><td></td></tr>
-<tr><td>rather than low dimensional space) can lead to incomplete disentanglement.</td><td></td><td></td></tr>
-<tr><td>zero-shot voice conversion in the same experimental setting using the</td><td></td><td></td></tr>
-<tr><td>bottleneck, as mentioned in Appendix B.3. We observe that the timbre of</td><td></td><td></td></tr>
-<tr><td>interpolation between the source and target, indicating its poor timbre</td><td></td><td></td></tr>
-<tr><td>demonstrates that without the information bottleneck, the speaker</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr></tbody></table></div></div>
-
+<div class="cap" id="tab-information-bottleneck-for-disen-1"><span class="cap-k">表</span><p class="en">Table 15: Comparison of zero-shot voice conversion evaluation results for FACodec with and without using information bottleneck.</p><p class="zh">表 15：FACodec 在使用与不使用信息瓶颈两种情况下的零样本语音转换评测结果比较。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Models</th><th>Sim-O ↑</th><th>WER ↓</th></tr></thead><tbody><tr><td></td><td>Ground Truth</td><td>-</td><td>3.25</td></tr>
+<tr><td></td><td>YourTTS</td><td>0.72</td><td>10.1</td></tr>
+<tr><td></td><td></td><td>0.68</td><td>6.20</td></tr>
+<tr><td></td><td>LM-VC</td><td>0.82</td><td>4.91</td></tr>
+<tr><td></td><td>UniAudio</td><td>0.87</td><td>4.80</td></tr>
+<tr><td></td><td>FACodec</td><td>0.86</td><td>3.46</td></tr>
+<tr><td>Ablation Study</td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td>conversion decreases by 0.13.</td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<div class="pblk" id="p-information-bottleneck-for-disen-2">
+          <p class="en-lines"><span class="sent" data-sid="s-information-bottleneck-for-disen-2-1"><span class="en">Sim-O ↑ w. information bottleneck</span></span></p>
+          <p class="zh-lines"><span class="sent" data-sid="s-information-bottleneck-for-disen-2-1"><span class="zh">（此为 Table 15 的表格碎块抽取）有信息瓶颈：0.86；无信息瓶颈：0.73。</span></span></p>
+          
+        </div>
 
 <div class="eq" id="eq-information-bottleneck-for-disen-2"><code>w.o. information bottleneck</code></div>
 <div class="eq" id="eq-information-bottleneck-for-disen-3"><code>0.73</code></div></section>

@@ -47,8 +47,70 @@
   "headers": [],
   "rows": [
    [
-    "F5-TTS",
+    "Ground-truth",
+    "0.734",
+    "2.14",
+    "3.52",
+    "0.755",
+    "1.25",
+    "2.78"
+   ],
+   [
+    "AR Models",
     "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "IndexTTS2",
+    "0.706",
+    "2.33",
+    "3.65",
+    "0.764",
+    "1.05",
+    "3.00"
+   ],
+   [
+    "CosyVoice3",
+    "0.696",
+    "2.17",
+    "3.96",
+    "0.778",
+    "1.14",
+    "3.32"
+   ],
+   [
+    "VoxCPM",
+    "0.731",
+    "1.92",
+    "3.77",
+    "0.772",
+    "0.99",
+    "2.94"
+   ],
+   [
+    "Qwen3-TTS",
+    "0.708",
+    "1.54",
+    "4.16",
+    "0.766",
+    "1.15",
+    "3.46"
+   ],
+   [
+    "NAR Models",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "F5-TTS",
     "0.664",
     "1.85",
     "3.72",
@@ -58,7 +120,6 @@
    ],
    [
     "ZipVoice",
-    "",
     "0.697",
     "1.70",
     "3.82",
@@ -68,7 +129,6 @@
    ],
    [
     "MaskGCT",
-    "",
     "0.713",
     "2.88",
     "3.55",
@@ -78,7 +138,6 @@
    ],
    [
     "",
-    "OmniVoice-Emilia 0.717",
     "",
     "1.72",
     "3.88",
@@ -88,7 +147,6 @@
    ],
    [
     "OmniVoice",
-    "",
     "0.741",
     "1.60",
     "3.91",
@@ -345,6 +403,15 @@
     "0.804",
     "0.743",
     "0.369"
+   ],
+   [
+    "Average",
+    "2.850",
+    "3.774",
+    "10.950",
+    "0.830",
+    "0.766",
+    "0.655"
    ]
   ]
  },
@@ -427,7 +494,6 @@
     "",
     "",
     "",
-    "",
     "Languages with CER ≤",
     ""
    ],
@@ -435,7 +501,6 @@
     "",
     "",
     "Avg SIM-o ↑",
-    "",
     "Avg CER ↓",
     "",
     "",
@@ -448,7 +513,6 @@
     "",
     "",
     "",
-    "",
     "5%",
     "",
     "10%"
@@ -457,7 +521,6 @@
     "",
     "Ground-truth",
     "-",
-    "",
     "5.11",
     "75",
     "",
@@ -467,7 +530,6 @@
     "",
     "OmniVoice",
     "0.788",
-    "",
     "4.00",
     "82",
     "",
@@ -480,33 +542,11 @@
     "",
     "",
     "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "To validate the effectiveness of our core designs, we conduct ablation experiments on the",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "dataset.",
-    "",
-    "",
-    "All models are trained for 300k updates with the same hyperparameters, with",
-    "",
-    "",
-    "",
     ""
    ],
    [
     "",
     "noising disabled unless otherwise specified.",
-    "",
     "",
     "",
     "",
@@ -641,109 +681,57 @@
     "",
     "",
     "",
-    "SIM-o ↑",
-    "WER ↓",
-    "UTMOS ↑"
+    "",
+    "",
+    "Batch Size",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "Inference Steps",
+    "",
+    "",
+    "",
+    "",
+    ""
    ]
   ],
   "rows": [
    [
     "",
-    "w/o prompt denoise",
-    "",
-    "0.697",
-    "1.57",
-    "4.23"
-   ],
-   [
-    "",
-    "w/ prompt denoise",
-    "",
-    "0.668",
-    "1.56",
-    "4.32"
-   ],
-   [
-    "Inference Speed",
     "",
     "",
+    "1",
+    "2",
     "",
-    "",
-    ""
+    "4",
+    "8"
    ],
    [
     "",
     "",
-    "We evaluate the inference speed of OmniVoice on an H20 GPU using PyTorch",
+    "16",
+    "0.0319",
+    "0.0263",
     "",
-    "",
-    ""
+    "0.0235",
+    "0.0224"
    ],
    [
     "",
     "",
-    "framework. Following the identical experimental setup in [16, 14], we use a",
+    "32",
+    "0.0598",
+    "0.0486",
     "",
-    "",
-    ""
+    "0.0436",
+    "0.0414"
    ],
    [
-    "",
-    "",
-    "to generate 10-second audio clips, and report the real-time factor (RTF) across",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "and inference steps. As shown in Table 8, OmniVoice achieves an RTF of 0.0319",
-    "",
-    "",
-    ""
-   ],
-   [
-    "steps and a batch size of 1,",
-    "",
-    "",
-    "",
-    "outperforming the corresponding results of ZipVoice",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "Notably, OmniVoice also yields better",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "attains an even lower RTF of 0.022. In addition, its inference efficiency can be further",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "acceleration techniques such as TensorRT. These results demonstrate the high",
-    "",
-    "",
-    ""
-   ],
-   [
+    "5",
+    "Conclusions",
     "",
     "",
     "",
@@ -759,217 +747,92 @@
    [
     "",
     "",
-    "",
-    "",
-    "resourced Languages@ LREC-COLING 2024, pages 222–226, 2024.",
-    "",
-    ""
-   ],
-   [
-    "[92]",
-    "",
-    "Kak Soky, Zhuo Gong, and Sheng Li.",
+    "LibriSpeech-PC test-clean",
     "",
     "",
     "",
-    "NICT-Tib1: A Public Speech"
-   ],
-   [
+    "Seed-TTS test-en",
     "",
     "",
-    "",
-    "",
-    "for Benchmarking Tibetan Language Speech Recognition Systems.",
-    "",
-    ""
-   ],
-   [
-    "",
-    "pages 1–5, 2022.",
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "speech resource for tibetan multi-dialect and multitask recognition.",
-    "",
+    "Seed-TTS test-zh",
     ""
    ]
   ],
   "rows": [
    [
+    "64",
+    "0.729",
+    "1.28",
+    "4.30",
     "",
-    "",
-    "",
-    "",
-    "Computational Science and Engineering, 22(2/3):297–304, 2020.",
-    "",
-    ""
+    "0.742",
+    "1.60",
+    "3.92",
+    "0.777",
+    "0.81",
+    "3.13"
    ],
    [
-    "[94]",
+    "32",
+    "0.729",
+    "1.30",
+    "4.28",
     "",
-    "",
-    "Senyan Li, Guanyu Li, and Jiewen Ning.",
-    "",
-    "",
-    "Xbmu-amdo31:"
+    "0.741",
+    "1.53",
+    "3.91",
+    "0.777",
+    "0.84",
+    "3.11"
    ],
    [
+    "16",
+    "0.728",
+    "1.50",
+    "4.23",
     "",
-    "",
-    "",
-    "",
-    "speech database and speech recognition baseline system.",
-    "",
-    ""
+    "0.735",
+    "1.72",
+    "3.92",
+    "0.773",
+    "0.99",
+    "3.00"
    ],
    [
+    "8",
+    "0.713",
+    "2.02",
+    "4.02",
     "",
-    "",
-    "",
-    "Machine Speech Communication, NCMMSC2022, 2022.",
-    "",
-    "",
-    ""
-   ],
-   [
-    "[95]",
-    "",
-    "",
-    "",
-    "Linfei Lu, Jiaxin Pang, Stansencuo, Buwonglam, and Linting Huang.",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "//www.openslr.org/149/.",
-    "",
-    "",
-    "",
-    ""
-   ],
-   [
-    "A",
-    "",
-    "",
-    "Complete List of Multilingual Training Data",
-    "",
-    "",
-    ""
+    "0.716",
+    "1.94",
+    "3.59",
+    "0.756",
+    "1.58",
+    "2.72"
    ],
    [
     "",
     "",
     "",
-    "We used the following datasets to train OmniVoice:",
-    "",
-    "",
-    ""
-   ],
-   [
-    "Emilia [46],",
-    "",
-    "Emilia-YODAS [46],",
-    "",
-    "",
-    "LibriTTS [61],",
-    ""
-   ],
-   [
-    "nilingual",
-    "ASR",
-    "Corpus",
-    "[57],",
-    "FLEURS",
-    "[52],",
-    "GigaSpeech"
-   ],
-   [
+    "2https://huggingface.co/datasets/capleaf/viVoice",
     "",
     "",
     "",
     "",
-    "roSpeech [65], IndicVoices-R [66], IndicTTS [67], Rasa [68], PhoAudiobook",
+    "",
     "",
     ""
    ],
    [
     "",
     "",
-    "",
-    "",
-    "TTS [70], Wenetspeech-yue [71], Wenetspeech-chuan [72], Kespeech [73],",
-    "",
-    ""
-   ],
-   [
+    "3https://www.openslr.org/96/",
     "",
     "",
     "",
     "",
-    "speech [75], Reazonspeech [76], AISHELL6-whisper [77], ParaSpeechCaps",
     "",
-    ""
-   ],
-   [
-    "",
-    "NonVerbalSpeech-38K",
-    "",
-    "[45],",
-    "SeniorTalk",
-    "[79],",
-    "ChildMandarin"
-   ],
-   [
-    "ArVoice",
-    "[83],",
-    "KazakhTTS2",
-    "[84],",
-    "RuLS3,",
-    "",
-    "[85],"
-   ],
-   [
-    "2 [86],",
-    "MGB-3 [87],",
-    "",
-    "MGB-5 [88],",
-    "",
-    "SADA [89],",
-    "MASC [90],"
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "from [37] (darija speech to text5, DarijaTTS-clean6, Jordan-Audio7, UAE",
-    "",
-    ""
-   ],
-   [
-    "",
-    "",
-    "",
-    "",
-    "TIBMD@MUC [93], XBMU-AMDO3 [94], Tibetan-Greetings [95].",
-    "",
-    ""
-   ],
-   [
-    "B",
-    "",
-    "",
-    "Results of Different Inference Steps",
     "",
     "",
     ""
@@ -979,11 +842,58 @@
     "",
     "",
     "",
-    "In Table 9, we evaluate the multilingual version OmniVoice model with different",
+    "4https://huggingface.co/datasets/Paradoxia/opendata-iisys-hui",
+    "",
+    "",
+    "",
+    "",
     "",
     ""
    ],
    [
+    "",
+    "",
+    "",
+    "",
+    "5https://huggingface.co/datasets/adiren7/darija_speech_to_text",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "",
+    "6https://huggingface.co/datasets/KandirResearch/DarijaTTS-clean",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "7https://huggingface.co/datasets/nadsoft/Jordan-Audio",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "",
+    "",
+    "8https://huggingface.co/datasets/AhmedBadawy11/UAE_100K",
     "",
     "",
     "",
