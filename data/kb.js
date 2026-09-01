@@ -5179,8 +5179,11 @@ globalThis.BENCHMARKS = [
         "id": "qwen3_asr",
         "q": true,
         "note": "官方：居前（未公开统一数字）"
-      }
-    ]
+      },
+     {"id": "on_device", "v": 7.28, "note": "Nemotron-0.6B（On-Device 论文 8 集均值）"},
+     {"id": "parakeet_tdt", "v": 12.83, "note": "Parakeet TDT-0.6B-v3（On-Device 论文 8 集均值）"},
+     {"id": "canary_qwen", "v": 12.45, "note": "Canary-1B-v2（On-Device 论文 8 集均值）"}
+  ]
   },
   {
     "id": "asr_en_wer",
@@ -5194,8 +5197,12 @@ globalThis.BENCHMARKS = [
         "id": "ibm_granite41",
         "v": 5.33,
         "note": "公开英文基准均值"
-      }
-    ]
+      },
+     {"id": "on_device", "v": 7.28, "note": "Nemotron-0.6B 8 集均值（On-Device 论文）"},
+     {"id": "qwen3_asr", "v": 10.45, "note": "Qwen3-ASR-1.7B 8 集均值（On-Device 论文）"},
+     {"id": "parakeet_tdt", "v": 12.83, "note": "Parakeet TDT-0.6B-v3 8 集均值（On-Device 论文）"},
+     {"id": "canary_qwen", "v": 12.45, "note": "Canary-1B-v2 8 集均值（On-Device 论文）"}
+  ]
   },
   {
     "id": "asr_fleurs",
@@ -5323,8 +5330,12 @@ globalThis.BENCHMARKS = [
         "id": "on_device",
         "v": 0.67,
         "note": "0.67GB 量化"
-      }
-    ]
+      },
+     {"id": "qwen3_asr", "v": 4.7, "note": "Qwen3-ASR-1.7B（On-Device 论文）"},
+     {"id": "parakeet_tdt", "v": 2.51, "note": "Parakeet TDT-0.6B-v3（On-Device 论文）"},
+     {"id": "canary_qwen", "v": 6.36, "note": "Canary-1B-v2（On-Device 论文）"},
+     {"id": "whisper", "v": 1.62, "note": "Whisper Large-v3-Turbo（On-Device 论文）"}
+  ]
   },
   {
     "id": "asr_latency",
@@ -5344,8 +5355,12 @@ globalThis.BENCHMARKS = [
         "v": 500,
         "approx": true,
         "note": "实测 ~0.5s（约）"
-      }
-    ]
+      },
+     {"id": "on_device", "v": 0.56, "note": "Nemotron (7,10,7) 延迟（On-Device 论文）"},
+     {"id": "qwen3_asr", "v": 2.4, "note": "Qwen3-ASR-1.7B 延迟（On-Device 论文）"},
+     {"id": "parakeet_tdt", "v": 2.4, "note": "Parakeet TDT-0.6B-v3 延迟（On-Device 论文）"},
+     {"id": "canary_qwen", "v": 4.8, "note": "Canary-1B-v2 延迟（On-Device 论文）"}
+  ]
   },
   {
     "id": "asr_rtfx",
@@ -5359,8 +5374,9 @@ globalThis.BENCHMARKS = [
         "id": "parakeet_tdt",
         "v": 3332,
         "note": "批处理 RTFx"
-      }
-    ]
+      },
+     {"id": "on_device", "v": 358.98, "note": "Nemotron-0.6B bf16 最优配置 RTFx（On-Device 论文表 A3）"}
+  ]
   },
   {
     "id": "asr_claim",
@@ -5514,8 +5530,12 @@ globalThis.BENCHMARKS = [
         "id": "longcat_audiodit",
         "v": 79.7,
         "note": "Seed-Hard SIM 0.797"
-      }
-    ]
+      },
+     {"id": "voxcpm2", "v": 75.3, "note": "test-ZH-hard SIM（VoxCPM2 论文表 3）"},
+     {"id": "seed_tts", "v": 77.6, "note": "test-ZH-hard SIM（VoxCPM2 论文表 3）"},
+     {"id": "cosyvoice3", "v": 75.8, "note": "test-ZH-hard SIM（VoxCPM2 论文表 3）"},
+     {"id": "f5_tts", "v": 71.3, "note": "test-ZH-hard SIM（VoxCPM2 论文表 3）"}
+  ]
   },
   {
     "id": "tts_cv3",
@@ -5614,8 +5634,9 @@ globalThis.BENCHMARKS = [
         "id": "chatterbox_flash",
         "q": true,
         "note": "实时场景首包低（未公开数字）"
-      }
-    ]
+      },
+     {"id": "luna_tts", "v": 41.6, "note": "Realtime 首块延迟 2×H20 并行 CFG（Luna 论文表 7）"}
+  ]
   },
   {
     "id": "tts_rtf",
@@ -5629,8 +5650,9 @@ globalThis.BENCHMARKS = [
         "id": "luna_tts",
         "v": 0.024,
         "note": "实时变体 RTF 0.0240"
-      }
-    ]
+      },
+     {"id": "voxcpm2", "v": 0.13, "note": "Nano-vLLM（VoxCPM2 论文表：RTF↓）"}
+  ]
   },
   {
     "id": "tts_claim",
