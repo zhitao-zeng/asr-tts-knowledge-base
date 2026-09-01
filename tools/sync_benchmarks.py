@@ -69,9 +69,62 @@ ABLATION_CAP_RE = re.compile(r"effect of|impact of|ablation|recipe|hyperparamete
 METRIC_RANGE = {"SIM": (40, 100), "SIM-o": (40, 100), "UTMOS": (1, 5), "MOS": (1, 5)}
 NUM_OK = re.compile(r"^-?[\d.,]+%?$")
 
+# 横向表（列=模型，行=数据集）规则：bench → (行关键词, {列名→(kb id 或 None, 变体 note)})
+TRANSPOSED_RULES = {
+    "asr_aishell1": (r"^aishell1$", "CER", None),
+    "asr_zh_cer":   (r"Avg-Mandarin-4", "CER", None),
+    "asr_dialect":  (r"Avg-Dialect-19", "CER", None),
+    "asr_fleurs":   (r"FLEURS test", "准确率", None),
+    "asr_vad":      (r"F1 \(%\) ↑", "F1", None),
+    "asr_punc":     (r"Punc", "F1", None),
+}
+# 列名 → kb id（None = 不在 KB，跳过）
+COL_MODEL = {
+    "FRASR2-LLM": ("fireredasr2", "LLM 变体"), "FRASR2-AED": ("fireredasr2", "AED 变体"),
+    "FireRedASR2-LLM": ("fireredasr2", "LLM 变体"), "FireRedASR2-AED": ("fireredasr2", "AED 变体"),
+    "Doubao-ASR": (None, ""), "Qwen3-ASR": ("qwen3_asr", ""), "Fun-ASR": ("fun_asr", ""),
+    "Fun-Nano": (None, ""),
+    "FireRedLID": ("fireredasr2", "FireRedLID"), "Whisper": ("whisper", ""),
+    "SpeechBrain": (None, ""), "Dolphin": (None, ""),
+    "FireRedVAD": ("fireredasr2", "FireRedVAD"), "Silero-VAD": (None, ""),
+    "TEN-VAD": (None, ""), "FunASR-VAD": ("fun_asr", "FunASR-VAD"), "WebRTC-VAD": (None, ""),
+    "FireRedPunc": ("fireredasr2", "FireRedPunc"), "FunASR-Punc": ("fun_asr", "FunASR-Punc"),
+}
+
+
+def extract_transposed(t, bench_id, row_re, cols_map):
+    """横向表：找行关键词，按列名映射模型，输出 (model_id, v, note)。"""
+    out = []
+    cols = t["headers"][-1] if t["headers"] else []
+    col_ids = []
+    for cn in cols:
+        key = cn.strip()
+        hit = None
+        for pat, (mid, note) in cols_map.items():
+            if key.startswith(pat) or pat.startswith(key) and key:
+                hit = (mid, note, key)
+                break
+        col_ids.append(hit)
+    if not any(col_ids):
+        return out
+    for r in t["rows"]:
+        rowname = (r[0] or (r[1] if len(r) > 1 else "")).strip()
+        if not re.search(row_re, rowname, re.I):
+            continue
+        for ci, hit in enumerate(col_ids):
+            if not hit or ci >= len(r):
+                continue
+            mid, note, key = hit
+            if mid is None:
+                continue
+            v = (r[ci] or "").strip()
+            if NUM_OK.match(v):
+                vnum = float(v.replace(",", "").replace("%", ""))
+                out.append((bench_id, mid, vnum, f"{note or key}"))
+    return out
+
 # 每个榜单已有的 (model_id -> v)；无 v 的「宣称」条目视为占位，可被实测值替换
 existing = {b["id"]: {e["id"]: e["v"] for e in b["entries"] if "v" in e} for b in BENCH}
-claim_only = {b["id"]: {e["id"] for e in b["entries"] if "v" not in e} for b in BENCH}
 existing_names = {b["id"]: b["name"] for b in BENCH}
 
 proposals = []   # (bench_id, model_id, value, source)
@@ -87,6 +140,15 @@ for jf in sorted((ROOT / "data" / "tables").glob("*.json")):
     caps = {b["id"]: b["text"] for s in ext["sections"] for b in s["blocks"] if b["type"] == "table_caption"}
     for bid, t in grids.items():
         cap = caps.get(bid, "")
+        # 横向表（列=模型行=数据集）独立于 caption 规则：表结构说了算
+        for bench_id, (row_re, _m, _n) in TRANSPOSED_RULES.items():
+            for rec in extract_transposed(t, bench_id, row_re, COL_MODEL):
+                bench_id2, mid, vnum, note = rec
+                if mid in existing.get(bench_id2, {}):
+                    if abs(existing[bench_id2][mid] - vnum) > 1e-6:
+                        conflicts.append((bench_id2, mid, existing[bench_id2][mid], vnum, f"{pid}/{bid}"))
+                    continue
+                proposals.append((bench_id2, mid, vnum, f"{pid}/{bid}", note))
         if not RESULT_CAP_RE.search(cap) or ABLATION_CAP_RE.search(cap):
             continue  # 消融/配置表不回填榜单
         for bench_id, (ds_re, metrics, vr) in BENCH_RULES.items():

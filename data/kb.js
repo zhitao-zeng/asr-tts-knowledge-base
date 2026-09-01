@@ -5120,8 +5120,10 @@ globalThis.BENCHMARKS = [
         "id": "nim4_asr",
         "v": 0.57,
         "note": "AISHELL-1 CER 离线 0.57%（流式 0.60%）"
-      }
-    ]
+      },
+     {"id": "qwen3_asr", "v": 1.48, "note": "Qwen3-ASR（论文重建表）"},
+     {"id": "fun_asr", "v": 1.64, "note": "Fun-ASR（论文重建表）"}
+  ]
   },
   {
     "id": "asr_zh_cer",
@@ -5135,8 +5137,10 @@ globalThis.BENCHMARKS = [
         "id": "fireredasr2",
         "v": 2.89,
         "note": "4 个公开中文基准平均"
-      }
-    ]
+      },
+     {"id": "qwen3_asr", "v": 3.76, "note": "Qwen3-ASR（论文重建表）"},
+     {"id": "fun_asr", "v": 4.16, "note": "Fun-ASR（论文重建表）"}
+  ]
   },
   {
     "id": "asr_zh_wer",
@@ -5205,8 +5209,9 @@ globalThis.BENCHMARKS = [
         "id": "fireredasr2",
         "v": 97.18,
         "note": "FLEURS 82 语"
-      }
-    ]
+      },
+     {"id": "whisper", "v": 79.41, "note": "Whisper（论文重建表）"}
+  ]
   },
   {
     "id": "asr_dialect",
@@ -5220,8 +5225,10 @@ globalThis.BENCHMARKS = [
         "id": "fireredasr2",
         "v": 11.55,
         "note": "19 个方言/口音基准平均"
-      }
-    ]
+      },
+     {"id": "qwen3_asr", "v": 11.85, "note": "Qwen3-ASR（论文重建表）"},
+     {"id": "fun_asr", "v": 12.76, "note": "Fun-ASR（论文重建表）"}
+  ]
   },
   {
     "id": "asr_punc",
@@ -5250,8 +5257,9 @@ globalThis.BENCHMARKS = [
         "id": "fireredasr2",
         "v": 97.57,
         "note": "FLEURS-VAD-102"
-      }
-    ]
+      },
+     {"id": "fun_asr", "v": 90.91, "note": "FunASR-VAD（论文重建表）"}
+  ]
   },
   {
     "id": "asr_aa_wer",
@@ -5451,7 +5459,7 @@ globalThis.BENCHMARKS = [
         "note": "Seed-ZH SIM 0.818"
       },
      {"id": "voxcpm2", "v": 79.5, "note": "test-zh SIM 79.5 / CER 0.97（论文表 3）"},
-     {"id": "seed_tts", "v": 76.2, "note": "Seed-TTS（论文重建表）"}
+     {"id": "seed_tts", "v": 79.6, "note": "Seed-TTS（论文重建表）"}
   ]
   },
   {
