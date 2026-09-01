@@ -5421,8 +5421,9 @@ globalThis.BENCHMARKS = [
         "id": "luna_tts",
         "v": 0.73,
         "note": "CER 0.73 / SIM 79.7"
-      }
-    ]
+      },
+     {"id": "voxcpm2", "v": 0.97, "note": "test-zh CER 0.97 / SIM 79.5（论文表 3）"}
+  ]
   },
   {
     "id": "tts_seedzh_sim",
@@ -5441,8 +5442,9 @@ globalThis.BENCHMARKS = [
         "id": "longcat_audiodit",
         "v": 81.8,
         "note": "Seed-ZH SIM 0.818"
-      }
-    ]
+      },
+     {"id": "voxcpm2", "v": 79.5, "note": "test-zh SIM 79.5 / CER 0.97（论文表 3）"}
+  ]
   },
   {
     "id": "tts_seeden_wer",
@@ -5456,8 +5458,9 @@ globalThis.BENCHMARKS = [
         "id": "luna_tts",
         "v": 1.49,
         "note": "WER 1.49 / SIM 76.8"
-      }
-    ]
+      },
+     {"id": "voxcpm2", "v": 1.84, "note": "test-en WER 1.84 / SIM 75.3（论文表 3）"}
+  ]
   },
   {
     "id": "tts_seeden_sim",
@@ -5471,8 +5474,9 @@ globalThis.BENCHMARKS = [
         "id": "luna_tts",
         "v": 76.8,
         "note": "Luna-TTS"
-      }
-    ]
+      },
+     {"id": "voxcpm2", "v": 75.3, "note": "test-en SIM 75.3 / WER 1.84（论文表 3）"}
+  ]
   },
   {
     "id": "tts_seedhard_sim",
