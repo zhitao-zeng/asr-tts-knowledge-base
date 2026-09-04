@@ -2799,7 +2799,37 @@ globalThis.PAPER_2606_06928 = {
      "type": "table_caption",
      "page": 13,
      "original": "Table 3: Zero-shot voice cloning on Seed-TTS-Eval. WER (English) / CER (Chinese, Hard) reported in %; SIM in %. Bold marks the strongest open-source result per column; italic marks the strongest closed-source result per column. “–” indicates the result is not reported in the source publication or is unavailable.",
-     "zh": "表 3：Seed-TTS-Eval 上的零样本语音克隆。WER（英文）/ CER（中文、困难子集）以 % 报告；SIM 以 % 报告。加粗表示该列最强开源结果；斜体表示该列最强闭源结果；「–」表示源文献未报告或不可得。"
+     "zh": "表 3：Seed-TTS-Eval 上的零样本语音克隆。WER（英文）/ CER（中文、困难子集）以 % 报告；SIM 以 % 报告。加粗表示该列最强开源结果；斜体表示该列最强闭源结果；「–」表示源文献未报告或不可得。",
+     "bench": {
+      "rows": "models",
+      "entries": [
+       {
+        "dataset": "tts_seeden_wer",
+        "metric": "WER",
+        "col_index": 4
+       },
+       {
+        "dataset": "tts_seeden_sim",
+        "metric": "SIM",
+        "col_index": 5
+       },
+       {
+        "dataset": "tts_seedzh_cer",
+        "metric": "CER",
+        "col_index": 6
+       },
+       {
+        "dataset": "tts_seedzh_sim",
+        "metric": "SIM",
+        "col_index": 7
+       },
+       {
+        "dataset": "tts_seedhard_sim",
+        "metric": "SIM",
+        "col_index": 9
+       }
+      ]
+     }
     }
    ]
   },

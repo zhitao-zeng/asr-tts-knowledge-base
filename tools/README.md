@@ -153,12 +153,18 @@ node tools/gen_seo.js                      # 同步 sitemap（含 papers-read/ �
 - kind 枚举：concept/motivation/comparison/number/engineering/critique/connection；featured 标 8–12 条；一句最多挂 1 条
 - anchor.quote 必须从 .txt 抽取文本里复制粘贴（保留 ﬁ 等连字），不得手打；sentence_id 必须真实存在
 
-五、自检（必须全绿）
+五、表格语义标注（顺手做）
+- 对每个「结果/评测/对比」类的 table_caption，在该 section 片段 JSON 里加 table_meta：
+  {"tab-x": {"dataset": "<榜单id或俗名>", "metric": "CER|WER|SIM|F1|RTF...", "col": "<该指标的表头列名>", "rows": "models"}}
+  （行=数据集、列=模型的横向表用 {"row": "<数据集行名>", "cols": "models"}）
+- 消融/配置/超参表不标；不确定就不标（缺标退回关键词规则，标错更糟）
+
+六、自检（必须全绿）
 cd /mnt/disk1/zengzhitao/asr-tts-knowledge-base
 node tools/compile_paper.js <ID> && node tools/validate_paper.js <ID>
 报错就修（常见：漏句子、quote 不是子串、数字丢失、引用丢失），直到退出码 0。
 
-六、最终回复只汇报
+七、最终回复只汇报
 覆盖 section 数/句子总数、讲解条数与 kind 分布、validate 是否通过、存疑的点（若有）。
 ```
 

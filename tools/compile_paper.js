@@ -62,6 +62,9 @@ const sections = ext.sections.map(sec => {
     const needsZh = (b.type === "figure_caption" || b.type === "table_caption") && !exempt;
     if (needsZh && (typeof zh !== "string" || !zh.trim())) missing.push(`标题块缺 zh: ${b.id} (${b.type})`);
     if (typeof zh === "string" && zh.trim()) out.zh = zh;
+    // 表格语义标注（可选项，翻译 agent 撰写）：sync_benchmarks 精确回填用
+    const tm = frag && frag.table_meta ? frag.table_meta[b.id] : undefined;
+    if (tm && typeof tm === "object") out.bench = tm;
     return out;
   });
   return {

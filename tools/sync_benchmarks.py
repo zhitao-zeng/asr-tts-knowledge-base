@@ -38,14 +38,22 @@ for m in MODELS:
         NAME2ID.setdefault(norm(alias), m["id"])
 
 def model_of(text):
-    """行首单元格 → kb model id（精确/前缀/包含匹配）。"""
+    """行首单元格 → kb model id（精确/前缀/包含匹配；版本号不同的不匹配）。"""
     n = norm(re.sub(r"\s*\(.*?\)", "", text))
     if not n:
+        return None
+    # 排除表：行名在 KB 里对应的是另一个方向的模型（VibeVoice 行是 TTS，KB 只有 vibevoice_asr）
+    if n in ("vibevoice",):
         return None
     if n in NAME2ID:
         return NAME2ID[n]
     for k, v in NAME2ID.items():
         if k and (n.startswith(k) or k.startswith(n)) and len(k) >= 4:
+            # 版本守卫：两边名字去掉公共前缀后若只差数字尾巴（VoxCPM vs VoxCPM2），
+            # 说明是不同代模型，不匹配
+            tail = n[len(k):] if n.startswith(k) else k[len(n):]
+            if tail.isdigit():
+                continue
             return v
     return None
 
@@ -138,8 +146,87 @@ for jf in sorted((ROOT / "data" / "tables").glob("*.json")):
     own_ids = {m["id"] for m in paper_models}
     ext = json.load(open(ROOT / ".cache" / "papers" / f"{pid}.json", encoding="utf-8"))
     caps = {b["id"]: b["text"] for s in ext["sections"] for b in s["blocks"] if b["type"] == "table_caption"}
+    # 编译产物里的 bench 标注（PAPER_DATA_SPEC 表格语义标注）——优先于关键词规则
+    bench_meta = {}
+    pdat = ROOT / "data" / "papers" / f"{pid}.js"
+    if pdat.exists():
+        # 用 node 读编译产物（纯 globalThis 赋值）
+        try:
+            gname = "PAPER_" + pid.replace(".", "_")
+            out = subprocess.run(
+                ["node", "-e",
+                 f'const g={{}};new Function("globalThis",require("fs").readFileSync(process.argv[1],"utf8"))(g);'
+                 f'const p=g["{gname}"];const o={{}};'
+                 'if(p)for(const s of p.sections)for(const b of s.blocks)if(b.bench)o[b.id]=b.bench;'
+                 'console.log(JSON.stringify(o))',
+                 str(pdat)],
+                capture_output=True, text=True, cwd=ROOT).stdout
+            bench_meta = json.loads(out or "{}")
+        except Exception:
+            bench_meta = {}
     for bid, t in grids.items():
         cap = caps.get(bid, "")
+        # 标注优先：有 bench 标注的表走精确映射，不再依赖关键词
+        bm = bench_meta.get(bid)
+        if bm and (bm.get("dataset") or bm.get("entries")):
+            entries = bm.get("entries") or [bm]
+            def group_of_col(ci, group_name):
+                """列 ci 属于哪个组：表头行里 ≤ci 的最后一个非空组标签。"""
+                for h in t["headers"]:
+                    if any(group_name.lower() in (c or "").lower() for c in h):
+                        g = None
+                        for k in range(ci + 1):
+                            if h[k] and h[k].strip():
+                                g = h[k].strip()
+                        return g is not None and group_name.lower() in g.lower()
+                return False
+            for ent in entries:
+                bench_id = ent.get("dataset")
+                metric = ent.get("metric")
+                if not bench_id or not metric or bench_id not in existing:
+                    continue
+                cols = t["headers"][-1] if t["headers"] else []
+                if bm.get("rows") == "datasets" or ent.get("cols") == "models":
+                    # 横向表：row 指定数据集行，列=模型
+                    row_re = ent.get("row", "")
+                    for r in t["rows"]:
+                        rowname = (r[0] or (r[1] if len(r) > 1 else "")).strip()
+                        if row_re and not re.search(row_re, rowname, re.I):
+                            continue
+                        for ci, cn in enumerate(cols):
+                            mid = model_of(cn) or (COL_MODEL.get(cn.strip()) or (None,))[0]
+                            if not mid or ci >= len(r):
+                                continue
+                            v = (r[ci] or "").strip()
+                            if NUM_OK.match(v):
+                                proposals.append((bench_id, mid, float(v.replace(",", "").replace("%", "")), f"{pid}/{bid}", f"标注 {cn}"))
+                else:
+                    # 行=模型：找 metric 列（可带 group 约束；col_index 最稳）
+                    want_col = ent.get("col", metric)
+                    group = ent.get("group")
+                    col_index = ent.get("col_index")
+                    target_cols = []
+                    if isinstance(col_index, int) and col_index < len(cols):
+                        target_cols = [col_index]
+                    else:
+                        for ci, cn in enumerate(cols):
+                            if cn.strip() != want_col and cn.strip() != metric:
+                                continue
+                            if group and not group_of_col(ci, group):
+                                continue
+                            target_cols.append(ci)
+                    for r in t["rows"]:
+                        rowname = next((c for c in r if c.strip()), "")
+                        mid = model_of(rowname)
+                        if not mid:
+                            continue
+                        for ci in target_cols:
+                            if ci >= len(r):
+                                continue
+                            v = (r[ci] or "").strip()
+                            if NUM_OK.match(v):
+                                proposals.append((bench_id, mid, float(v.replace(",", "").replace("%", "")), f"{pid}/{bid}", f"标注 {rowname[:20]}"))
+            continue
         # 横向表（列=模型行=数据集）独立于 caption 规则：表结构说了算
         for bench_id, (row_re, _m, _n) in TRANSPOSED_RULES.items():
             for rec in extract_transposed(t, bench_id, row_re, COL_MODEL):

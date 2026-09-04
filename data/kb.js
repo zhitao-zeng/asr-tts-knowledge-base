@@ -5453,7 +5453,20 @@ globalThis.BENCHMARKS = [
      {"id": "qwen3_tts", "v": 0.77, "note": "Qwen3-TTS-12Hz-1.7B-Base [6]（论文重建表）"},
      {"id": "minimax28", "v": 0.99, "note": "MiniMax-Speech [40]（论文重建表）"},
      {"id": "cosyvoice3", "v": 1.12, "note": "CosyVoice3-1.5B [4]（论文重建表）"},
-     {"id": "qwen_audio_tts", "v": 0.84, "note": "Qwen-Audio-3.0-TTS（论文重建表）"}
+     {"id": "qwen_audio_tts", "v": 0.84, "note": "Qwen-Audio-3.0-TTS（论文重建表）"},
+     {"id": "mega_tts3", "v": 1.52, "note": "标注 MegaTTS3 (Jiang et a（论文重建表）"},
+     {"id": "cosyvoice3", "v": 1.12, "note": "标注 CosyVoice 3 (Du et a（论文重建表）"},
+     {"id": "seed_tts", "v": 1.12, "note": "标注 Seed-TTS (Anastassio（论文重建表）"},
+     {"id": "minimax28", "v": 0.83, "note": "标注 MiniMax-Speech (Zhan（论文重建表）"},
+     {"id": "f5_tts", "v": 1.53, "note": "标注 F5-TTS (Chen et al.,（论文重建表）"},
+     {"id": "maskgct", "v": 2.27, "note": "标注 MaskGCT (Wang et al.（论文重建表）"},
+     {"id": "indextts2", "v": 1.03, "note": "标注 IndexTTS2 (Zhou et a（论文重建表）"},
+     {"id": "higgs2", "v": 1.5, "note": "标注 HiggsAudio-v2 (Boson（论文重建表）"},
+     {"id": "qwen3_tts", "v": 1.22, "note": "标注 Qwen3-TTS (Hu et al.（论文重建表）"},
+     {"id": "fishaudio_s2", "v": 0.54, "note": "标注 Fish Audio S2 (Liao（论文重建表）"},
+     {"id": "omnivoice", "v": 0.84, "note": "标注 OmniVoice (Zhu et al（论文重建表）"},
+     {"id": "longcat_audiodit", "v": 1.09, "note": "标注 LongCat-Audio-DiT (X（论文重建表）"},
+     {"id": "voxcpm2", "v": 0.97, "note": "标注 VoxCPM2（论文重建表）"}
   ]
   },
   {
@@ -5475,7 +5488,19 @@ globalThis.BENCHMARKS = [
         "note": "Seed-ZH SIM 0.818"
       },
      {"id": "voxcpm2", "v": 79.5, "note": "test-zh SIM 79.5 / CER 0.97（论文表 3）"},
-     {"id": "seed_tts", "v": 79.6, "note": "Seed-TTS（论文重建表）"}
+     {"id": "seed_tts", "v": 79.6, "note": "Seed-TTS（论文重建表）"},
+     {"id": "mega_tts3", "v": 79.0, "note": "标注 MegaTTS3 (Jiang et a（论文重建表）"},
+     {"id": "cosyvoice3", "v": 78.1, "note": "标注 CosyVoice 3 (Du et a（论文重建表）"},
+     {"id": "seed_tts", "v": 79.6, "note": "标注 Seed-TTS (Anastassio（论文重建表）"},
+     {"id": "minimax28", "v": 78.3, "note": "标注 MiniMax-Speech (Zhan（论文重建表）"},
+     {"id": "f5_tts", "v": 76.0, "note": "标注 F5-TTS (Chen et al.,（论文重建表）"},
+     {"id": "maskgct", "v": 77.4, "note": "标注 MaskGCT (Wang et al.（论文重建表）"},
+     {"id": "indextts2", "v": 76.5, "note": "标注 IndexTTS2 (Zhou et a（论文重建表）"},
+     {"id": "higgs2", "v": 74.0, "note": "标注 HiggsAudio-v2 (Boson（论文重建表）"},
+     {"id": "qwen3_tts", "v": 77.0, "note": "标注 Qwen3-TTS (Hu et al.（论文重建表）"},
+     {"id": "omnivoice", "v": 77.7, "note": "标注 OmniVoice (Zhu et al（论文重建表）"},
+     {"id": "longcat_audiodit", "v": 81.8, "note": "标注 LongCat-Audio-DiT (X（论文重建表）"},
+     {"id": "voxcpm2", "v": 79.5, "note": "标注 VoxCPM2（论文重建表）"}
   ]
   },
   {
@@ -5498,7 +5523,20 @@ globalThis.BENCHMARKS = [
      {"id": "qwen3_tts", "v": 1.24, "note": "Qwen3-TTS-12Hz-1.7B-Base [6]（论文重建表）"},
      {"id": "minimax28", "v": 1.9, "note": "MiniMax-Speech [40]（论文重建表）"},
      {"id": "cosyvoice3", "v": 2.21, "note": "CosyVoice3-1.5B [4]（论文重建表）"},
-     {"id": "qwen_audio_tts", "v": 1.54, "note": "Qwen-Audio-3.0-TTS（论文重建表）"}
+     {"id": "qwen_audio_tts", "v": 1.54, "note": "Qwen-Audio-3.0-TTS（论文重建表）"},
+     {"id": "mega_tts3", "v": 2.79, "note": "标注 MegaTTS3 (Jiang et a（论文重建表）"},
+     {"id": "cosyvoice3", "v": 2.22, "note": "标注 CosyVoice 3 (Du et a（论文重建表）"},
+     {"id": "seed_tts", "v": 2.25, "note": "标注 Seed-TTS (Anastassio（论文重建表）"},
+     {"id": "minimax28", "v": 1.65, "note": "标注 MiniMax-Speech (Zhan（论文重建表）"},
+     {"id": "f5_tts", "v": 2.0, "note": "标注 F5-TTS (Chen et al.,（论文重建表）"},
+     {"id": "maskgct", "v": 2.62, "note": "标注 MaskGCT (Wang et al.（论文重建表）"},
+     {"id": "indextts2", "v": 2.23, "note": "标注 IndexTTS2 (Zhou et a（论文重建表）"},
+     {"id": "higgs2", "v": 2.44, "note": "标注 HiggsAudio-v2 (Boson（论文重建表）"},
+     {"id": "qwen3_tts", "v": 1.23, "note": "标注 Qwen3-TTS (Hu et al.（论文重建表）"},
+     {"id": "fishaudio_s2", "v": 0.99, "note": "标注 Fish Audio S2 (Liao（论文重建表）"},
+     {"id": "omnivoice", "v": 1.6, "note": "标注 OmniVoice (Zhu et al（论文重建表）"},
+     {"id": "longcat_audiodit", "v": 1.5, "note": "标注 LongCat-Audio-DiT (X（论文重建表）"},
+     {"id": "voxcpm2", "v": 1.84, "note": "标注 VoxCPM2（论文重建表）"}
   ]
   },
   {
@@ -5515,7 +5553,19 @@ globalThis.BENCHMARKS = [
         "note": "Luna-TTS"
       },
      {"id": "voxcpm2", "v": 75.3, "note": "test-en SIM 75.3 / WER 1.84（论文表 3）"},
-     {"id": "seed_tts", "v": 76.2, "note": "Seed-TTS（论文重建表）"}
+     {"id": "seed_tts", "v": 76.2, "note": "Seed-TTS（论文重建表）"},
+     {"id": "mega_tts3", "v": 77.1, "note": "标注 MegaTTS3 (Jiang et a（论文重建表）"},
+     {"id": "cosyvoice3", "v": 72.0, "note": "标注 CosyVoice 3 (Du et a（论文重建表）"},
+     {"id": "seed_tts", "v": 76.2, "note": "标注 Seed-TTS (Anastassio（论文重建表）"},
+     {"id": "minimax28", "v": 69.2, "note": "标注 MiniMax-Speech (Zhan（论文重建表）"},
+     {"id": "f5_tts", "v": 67.0, "note": "标注 F5-TTS (Chen et al.,（论文重建表）"},
+     {"id": "maskgct", "v": 71.7, "note": "标注 MaskGCT (Wang et al.（论文重建表）"},
+     {"id": "indextts2", "v": 70.6, "note": "标注 IndexTTS2 (Zhou et a（论文重建表）"},
+     {"id": "higgs2", "v": 67.7, "note": "标注 HiggsAudio-v2 (Boson（论文重建表）"},
+     {"id": "qwen3_tts", "v": 71.7, "note": "标注 Qwen3-TTS (Hu et al.（论文重建表）"},
+     {"id": "omnivoice", "v": 74.1, "note": "标注 OmniVoice (Zhu et al（论文重建表）"},
+     {"id": "longcat_audiodit", "v": 78.6, "note": "标注 LongCat-Audio-DiT (X（论文重建表）"},
+     {"id": "voxcpm2", "v": 75.3, "note": "标注 VoxCPM2（论文重建表）"}
   ]
   },
   {
@@ -5534,7 +5584,15 @@ globalThis.BENCHMARKS = [
      {"id": "voxcpm2", "v": 75.3, "note": "test-ZH-hard SIM（VoxCPM2 论文表 3）"},
      {"id": "seed_tts", "v": 77.6, "note": "test-ZH-hard SIM（VoxCPM2 论文表 3）"},
      {"id": "cosyvoice3", "v": 75.8, "note": "test-ZH-hard SIM（VoxCPM2 论文表 3）"},
-     {"id": "f5_tts", "v": 71.3, "note": "test-ZH-hard SIM（VoxCPM2 论文表 3）"}
+     {"id": "f5_tts", "v": 71.3, "note": "test-ZH-hard SIM（VoxCPM2 论文表 3）"},
+     {"id": "cosyvoice3", "v": 75.8, "note": "标注 CosyVoice 3 (Du et a（论文重建表）"},
+     {"id": "seed_tts", "v": 77.6, "note": "标注 Seed-TTS (Anastassio（论文重建表）"},
+     {"id": "f5_tts", "v": 71.3, "note": "标注 F5-TTS (Chen et al.,（论文重建表）"},
+     {"id": "indextts2", "v": 75.5, "note": "标注 IndexTTS2 (Zhou et a（论文重建表）"},
+     {"id": "higgs2", "v": 65.6, "note": "标注 HiggsAudio-v2 (Boson（论文重建表）"},
+     {"id": "qwen3_tts", "v": 74.8, "note": "标注 Qwen3-TTS (Hu et al.（论文重建表）"},
+     {"id": "longcat_audiodit", "v": 79.7, "note": "标注 LongCat-Audio-DiT (X（论文重建表）"},
+     {"id": "voxcpm2", "v": 75.3, "note": "标注 VoxCPM2（论文重建表）"}
   ]
   },
   {

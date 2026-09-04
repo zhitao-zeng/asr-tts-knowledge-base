@@ -63,6 +63,64 @@ globalThis.PAPER_2212_04356 = {
 6. 按段落整体意译后切回句子，不要逐句孤立直译导致术语漂移；不擅自补充原文没有的结论。
 7. 抽取残留（断词、个别乱码字符）可在 `zh` 里按上下文自然译出，但 `original` 字段保持不动。
 
+## 表格语义标注（可选，但强烈建议标）
+
+每张 `table_caption` 若是一张「结果/评测/对比」表，在所属 section 的片段 JSON 里加
+`table_meta` 映射，标注它对应的榜单数据集和列语义。这样 `tools/sync_benchmarks.py`
+能**零规则定制**地把表内数字回填到主站榜单。
+
+片段 JSON 格式：
+
+```json
+{
+  "title_zh": "...",
+  "sentences": { "...": "..." },
+  "blocks": { "tab-3-1": "表 3：……" },
+  "table_meta": {
+    "tab-3-1": {
+      "dataset": "tts_seedzh_cer",
+      "metric": "CER",
+      "col": "CER↓",
+      "rows": "models"
+    }
+  }
+}
+```
+
+字段说明：
+
+| 字段 | 含义 | 取值 |
+|---|---|---|
+| `dataset` | 榜单 id | `kb.js` BENCHMARKS 里的 id（如 `tts_seedzh_cer`、`asr_aishell1`）；不确定就写数据集俗名 |
+| `metric` | 指标名 | `CER` / `WER` / `SIM` / `F1` / `RTF` 等 |
+| `col` | 该指标在表里的列名（表头最后一层） | 如 `"CER↓"`、`"WER"` |
+| `rows` | 表的方向 | `"models"`（行=模型）或 `"datasets"`（行=数据集，横向表） |
+
+横向表（行=数据集、列=模型）用：
+
+```json
+"table_meta": {
+  "tab-7-1-1": { "dataset": "asr_aishell1", "metric": "CER", "row": "aishell1", "cols": "models" }
+}
+```
+
+多指标/多数据集复合表（如一张表同时报 test-en WER/SIM、test-zh CER/SIM）用 `entries` 数组，
+每个条目可带 `group`（该列所属的组表头，如 `"test-EN"`）或 `col_index`（网格列序号，0 起，最稳）：
+
+```json
+"table_meta": {
+  "tab-4-1-1": {
+    "rows": "models",
+    "entries": [
+      { "dataset": "tts_seeden_wer", "metric": "WER", "col_index": 4 },
+      { "dataset": "tts_seedzh_cer", "metric": "CER", "col_index": 6 }
+    ]
+  }
+}
+```
+
+不确定的表**不要硬标**——缺标就退回关键词规则，标错比不标糟。消融/配置/超参表不标。
+
 ## annotations（句子讲解层，稀疏）
 
 每篇 15–25 条。只锚定真正值得讲的句子：新概念首现、核心架构选择、设计动机、

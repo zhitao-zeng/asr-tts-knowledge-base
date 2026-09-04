@@ -130,6 +130,21 @@ function validateOne(id) {
           if (typeof db.zh === "string" && db.zh.trim()) nCaptionZh++;
           else problems.push(`[覆盖] ${db.id} (${db.type}) 缺 zh 翻译`);
         }
+        // bench 标注结构校验（可选字段，有错才报）
+        if (db.bench !== undefined) {
+          const bm = db.bench;
+          const ents = bm.entries || [bm];
+          for (const [i, ent] of ents.entries()) {
+            ok(ent && typeof ent.dataset === "string" && ent.dataset.trim(),
+              `[标注] ${db.id} bench 第 ${i + 1} 条缺 dataset`);
+            ok(ent && typeof ent.metric === "string" && ent.metric.trim(),
+              `[标注] ${db.id} bench 第 ${i + 1} 条缺 metric`);
+            if (ent.rows !== undefined) ok(["models", "datasets"].includes(ent.rows),
+              `[标注] ${db.id} bench.rows 应为 models|datasets，实为 ${ent.rows}`);
+            if (ent.cols !== undefined) ok(ent.cols === "models" || ent.cols === "datasets",
+              `[标注] ${db.id} bench.cols 应为 models|datasets，实为 ${ent.cols}`);
+          }
+        }
       } else if (db.type === "equation" || db.type === "table_body") {
         if (eb) ok(db.original === eb.text, `[原文] ${db.id} original 与抽取层不一致`);
       } else {
