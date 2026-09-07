@@ -761,7 +761,36 @@ globalThis.PAPER_2406_02430 = {
      "type": "table_caption",
      "page": 4,
      "original": "Table 1: Evaluation results of Seed-TTS against resynthesized and real human speech.",
-     "zh": "表 1：Seed-TTS 与重合成语音及真人真实语音的评测结果。"
+     "zh": "表 1：Seed-TTS 与重合成语音及真人真实语音的评测结果。",
+     "bench": {
+      "rows": "models",
+      "entries": [
+       {
+        "dataset": "tts_seeden_wer",
+        "metric": "WER",
+        "col_index": 3,
+        "row": "\\bEN\\b"
+       },
+       {
+        "dataset": "tts_seeden_sim",
+        "metric": "SIM",
+        "col_index": 4,
+        "row": "\\bEN\\b"
+       },
+       {
+        "dataset": "tts_seedzh_cer",
+        "metric": "WER",
+        "col_index": 3,
+        "row": "\\bZH\\b"
+       },
+       {
+        "dataset": "tts_seedzh_sim",
+        "metric": "SIM",
+        "col_index": 4,
+        "row": "\\bZH\\b"
+       }
+      ]
+     }
     }
    ]
   },

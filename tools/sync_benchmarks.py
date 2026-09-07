@@ -72,10 +72,20 @@ BENCH_RULES = {
 RESULT_CAP_RE = re.compile(r"result|evaluation|comparison|benchmark|performance|评测|结果|对比", re.I)
 # 消融/配置/影响类表哪怕提了数据集也跳过（VoxCPM2 表 4 是 inference recipe 消融，
 # 页面里还和第二张表粘连，列语义不可信）
-ABLATION_CAP_RE = re.compile(r"effect of|impact of|ablation|recipe|hyperparameter|configuration|scaling|analysis", re.I)
+ABLATION_CAP_RE = re.compile(r"effect of|impact of|ablation|recipe|hyperparameter|configuration|scaling|analysis|subjective", re.I)
 # 指标合理值域（SIM 类按 % 制约束，过滤超参列误读）
 METRIC_RANGE = {"SIM": (40, 100), "SIM-o": (40, 100), "UTMOS": (1, 5), "MOS": (1, 5)}
 NUM_OK = re.compile(r"^-?[\d.,]+%?$")
+
+def same_val(a, b):
+    """冲突判定：1% 相对容差。榜单数字只保留 2-3 位有效数字，
+    跨论文 2.249 vs 2.25、1.115 vs 1.12 是四舍五入差，不是冲突；
+    0.99 vs 0.83（16%）这类才是真口径不一致，必须报。"""
+    return abs(a - b) <= 0.01 * max(abs(a), abs(b), 1.0)
+
+def norm_sim(metric, vnum):
+    """SIM 类指标 0-1 制归一化到 % 制（与关键词路径口径一致）。"""
+    return round(vnum * 100, 1) if "SIM" in metric.upper() and vnum < 1.5 else vnum
 
 # 横向表（列=模型，行=数据集）规则：bench → (行关键词, {列名→(kb id 或 None, 变体 note)})
 TRANSPOSED_RULES = {
@@ -205,15 +215,17 @@ for jf in sorted((ROOT / "data" / "tables").glob("*.json")):
                             if NUM_OK.match(v):
                                 vnum = float(v.replace(",", "").replace("%", ""))
                                 if mid in existing.get(bench_id, {}):
-                                    if abs(existing[bench_id][mid] - vnum) > 1e-6:
+                                    if not same_val(existing[bench_id][mid], vnum):
                                         conflicts.append((bench_id, mid, existing[bench_id][mid], vnum, f"{pid}/{bid}"))
                                     continue
                                 proposals.append((bench_id, mid, vnum, f"{pid}/{bid}", f"标注 {cn}"))
                 else:
-                    # 行=模型：找 metric 列（可带 group 约束；col_index 最稳）
+                    # 行=模型：找 metric 列（可带 group 约束；col_index 最稳）。
+                    # row 可选：按整行文本过滤（同一模型 EN/ZH 多行靠它区分，如 Seed-TTS 表 1）
                     want_col = ent.get("col", metric)
                     group = ent.get("group")
                     col_index = ent.get("col_index")
+                    row_re = ent.get("row", "")
                     target_cols = []
                     if isinstance(col_index, int) and col_index < len(cols):
                         target_cols = [col_index]
@@ -229,14 +241,16 @@ for jf in sorted((ROOT / "data" / "tables").glob("*.json")):
                         mid = model_of(rowname)
                         if not mid:
                             continue
+                        if row_re and not re.search(row_re, " ".join(r), re.I):
+                            continue
                         for ci in target_cols:
                             if ci >= len(r):
                                 continue
                             v = (r[ci] or "").strip()
                             if NUM_OK.match(v):
-                                vnum = float(v.replace(",", "").replace("%", ""))
+                                vnum = norm_sim(metric, float(v.replace(",", "").replace("%", "")))
                                 if mid in existing.get(bench_id, {}):
-                                    if abs(existing[bench_id][mid] - vnum) > 1e-6:
+                                    if not same_val(existing[bench_id][mid], vnum):
                                         conflicts.append((bench_id, mid, existing[bench_id][mid], vnum, f"{pid}/{bid}"))
                                     continue
                                 proposals.append((bench_id, mid, vnum, f"{pid}/{bid}", f"标注 {rowname[:20]}"))
@@ -246,7 +260,7 @@ for jf in sorted((ROOT / "data" / "tables").glob("*.json")):
             for rec in extract_transposed(t, bench_id, row_re, COL_MODEL):
                 bench_id2, mid, vnum, note = rec
                 if mid in existing.get(bench_id2, {}):
-                    if abs(existing[bench_id2][mid] - vnum) > 1e-6:
+                    if not same_val(existing[bench_id2][mid], vnum):
                         conflicts.append((bench_id2, mid, existing[bench_id2][mid], vnum, f"{pid}/{bid}"))
                     continue
                 proposals.append((bench_id2, mid, vnum, f"{pid}/{bid}", note))
@@ -278,7 +292,7 @@ for jf in sorted((ROOT / "data" / "tables").glob("*.json")):
                         continue
                     # 该论文自家模型优先，但别家模型在其论文表里也可信
                     if mid in existing.get(bench_id, {}):
-                        if abs(existing[bench_id][mid] - vnum) > 1e-6:
+                        if not same_val(existing[bench_id][mid], vnum):
                             conflicts.append((bench_id, mid, existing[bench_id][mid], vnum, f"{pid}/{bid}"))
                         continue
                     proposals.append((bench_id, mid, vnum, f"{pid}/{bid}", rowname))

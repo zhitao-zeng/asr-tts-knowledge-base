@@ -105,7 +105,7 @@ globalThis.PAPER_2212_04356 = {
 ```
 
 多指标/多数据集复合表（如一张表同时报 test-en WER/SIM、test-zh CER/SIM）用 `entries` 数组，
-每个条目可带 `group`（该列所属的组表头，如 `"test-EN"`）或 `col_index`（网格列序号，0 起，最稳）：
+每个条目可带 `group`（该列所属的组表头，如 `"test-EN"`）或 `col_index`（网格列序号，0 起，最稳）；
 
 ```json
 "table_meta": {
@@ -114,6 +114,21 @@ globalThis.PAPER_2212_04356 = {
     "entries": [
       { "dataset": "tts_seeden_wer", "metric": "WER", "col_index": 4 },
       { "dataset": "tts_seedzh_cer", "metric": "CER", "col_index": 6 }
+    ]
+  }
+}
+```
+
+同一模型在同一张表有 EN/ZH 等多行时（行首模型名相同，靠行内语言列区分），给每个条目加
+`row`（正则，匹配整行文本，如 `"\\bEN\\b"`）；SIM 类指标写表里原样（0-1 制会自动归一化到 %）：
+
+```json
+"table_meta": {
+  "tab-system-1": {
+    "rows": "models",
+    "entries": [
+      { "dataset": "tts_seeden_wer", "metric": "WER", "col_index": 3, "row": "\\bEN\\b" },
+      { "dataset": "tts_seedzh_cer", "metric": "WER", "col_index": 3, "row": "\\bZH\\b" }
     ]
   }
 }
