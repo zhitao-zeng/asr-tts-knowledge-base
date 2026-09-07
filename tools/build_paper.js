@@ -47,6 +47,9 @@ function renderGrid(grid) {
 
 function renderPaper(paper) {
   const model = (KB.models || []).find(m => m.id === paper.model_id) || {};
+  // 本地 PDF 可能因许可下架（如 2604.18105 NIM4）：不存在就不出链接，避免 404
+  const hasPdf = fs.existsSync(path.join(ROOT, "papers", paper.paper_id + ".pdf"));
+  const pdfNav = hasPdf ? `<a href="../../papers/${esc(paper.paper_id)}.pdf" target="_blank" rel="noopener">本地 PDF</a>` : "";
   const annBySid = new Map();
   for (const a of paper.annotations || []) {
     const sid = a.anchor && a.anchor.sentence_id;
@@ -366,7 +369,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
   ${paper.model_id ? `<a href="../../index.html#/model/${esc(paper.model_id)}">${esc(model.name || paper.model_id)} 模型卡</a>` : ""}
   <span class="spacer"></span>
   <a href="https://arxiv.org/abs/${esc(paper.paper_id)}" target="_blank" rel="noopener">arXiv:${esc(paper.paper_id)}</a>
-  <a href="../../papers/${esc(paper.paper_id)}.pdf" target="_blank" rel="noopener">本地 PDF</a>
+  ${pdfNav}
 </nav></header>
 <main>
   <div class="phead card">
@@ -390,7 +393,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
   <article class="reader">${secHtml}</article>
   <footer class="foot">
     原文来自 arXiv:${esc(paper.paper_id)}（版权归原作者 / arXiv，本页仅作研究学习用途）；中文翻译与句旁讲解为知识库编辑加工，如有出入以原文为准。
-    本地 PDF：<a href="../../papers/${esc(paper.paper_id)}.pdf">papers/${esc(paper.paper_id)}.pdf</a>。
+    ${hasPdf ? `本地 PDF：<a href="../../papers/${esc(paper.paper_id)}.pdf">papers/${esc(paper.paper_id)}.pdf</a>。` : "因许可限制本页不托管原文 PDF，请从 arXiv 获取。"}
     页面由 tools/build_paper.js 自动生成，数据来源 data/papers/${esc(paper.paper_id)}.js。
   </footer>
 </main>
@@ -452,14 +455,15 @@ function renderIndex(papers) {
   const rows = papers.map(p => {
     const model = (KB.models || []).find(m => m.id === p.model_id) || {};
     const nSent = p.sections.reduce((n, s) => n + s.blocks.reduce((k, b) => k + (b.sentences ? b.sentences.length : 0), 0), 0);
+    const pdfLink = fs.existsSync(path.join(ROOT, "papers", p.paper_id + ".pdf"))
+      ? ` · <a href="../papers/${esc(p.paper_id)}.pdf">本地 PDF</a>` : "";
     return `<li class="pc">
       <div>
         <a class="pt" href="./${esc(p.paper_id)}/">${esc(p.title.zh)}</a>
         <div class="pe">${esc(p.title.original)}</div>
         <div class="pm">
           ${model.name ? `<a href="../index.html#/model/${esc(p.model_id)}">${esc(model.name)}</a> · ` : ""}
-          <a href="https://arxiv.org/abs/${esc(p.paper_id)}" target="_blank" rel="noopener">arXiv:${esc(p.paper_id)}</a> ·
-          <a href="../papers/${esc(p.paper_id)}.pdf">本地 PDF</a> ·
+          <a href="https://arxiv.org/abs/${esc(p.paper_id)}" target="_blank" rel="noopener">arXiv:${esc(p.paper_id)}</a>${pdfLink} ·
           ${nSent} 句 · ${(p.annotations || []).length} 条句旁讲解
         </div>
       </div>
