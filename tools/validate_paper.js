@@ -24,8 +24,9 @@ const KINDS = new Set(["concept", "motivation", "comparison", "number", "enginee
 const EXEMPT_SECTIONS = new Set(["sec-references", "sec-front"]); // 参考文献/作者块不强制翻译
 const NUM_RE = /\d+(?:\.\d+)?%?/g;
 const CITE_RE = /\[\d+(?:[,\-–]\s*\d+)*\]/g;
-// 千分位归一化："680,000" → "680000"，避免译文写 680000 时误判丢数字
-const normNum = (s) => String(s).replace(/(\d),(\d{3})/g, "$1$2");
+// 千分位归一化："680,000" → "680000"、"1,000,000" → "1000000"（lookahead 逐个去逗号，
+// 避免 /(\d),(\d{3})/ 全局替换只处理第一个逗号），防止译文写 680000 时误判丢数字
+const normNum = (s) => String(s).replace(/(\d),(?=\d{3})/g, "$1");
 // 数字 token 归一化：去掉尾随 %（"50" 与 "50%" 视为同一数值，% 的有无不算数字篡改）
 const numTokens = (s) => (normNum(s).match(NUM_RE) || []).map(t => t.replace(/%$/, ""));
 

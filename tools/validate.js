@@ -140,9 +140,16 @@ orphan.forEach((k) => problems.push(`[孤儿] INSIGHTS 含 KB 不存在的模型
 const modelIds = new Set(KB.models.map((m) => m.id));
 let benchRows = 0;
 for (const b of sandbox.__BENCHMARKS || []) {
+  const seenNumeric = new Set();
   for (const e of b.entries || []) {
     benchRows++;
     ok(modelIds.has(e.id), `[基准漂移] 数据集 "${b.id}" 引用了不存在的模型 id: ${e.id}`);
+    // 重复数值条目门禁：sync_benchmarks.py --apply 曾把标注表重复回填（同模型两行、
+    // 甚至两个不同数值），前端不去重会直接显示两行
+    if (e.v != null) {
+      ok(!seenNumeric.has(e.id), `[基准重复] 数据集 "${b.id}" 中模型 ${e.id} 有重复的数值条目`);
+      seenNumeric.add(e.id);
+    }
     if (!modelIds.has(e.id)) continue;
     const m = KB.models.find((x) => x.id === e.id);
     // 领域一致性：Benchmark 引用的模型必须与榜单领域相同（防止 ASR/TTS 混排）。

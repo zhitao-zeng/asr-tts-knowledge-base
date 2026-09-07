@@ -109,7 +109,7 @@ def extract_transposed(t, bench_id, row_re, cols_map):
         key = cn.strip()
         hit = None
         for pat, (mid, note) in cols_map.items():
-            if key.startswith(pat) or pat.startswith(key) and key:
+            if (key.startswith(pat) or pat.startswith(key)) and key:
                 hit = (mid, note, key)
                 break
         col_ids.append(hit)
@@ -137,6 +137,7 @@ existing_names = {b["id"]: b["name"] for b in BENCH}
 
 proposals = []   # (bench_id, model_id, value, source)
 conflicts = []
+unknown_ds = []  # 标注了但 BENCHMARKS 里不存在的 dataset（俗名或笔误），不能静默丢
 
 for jf in sorted((ROOT / "data" / "tables").glob("*.json")):
     pid = jf.stem
@@ -183,7 +184,10 @@ for jf in sorted((ROOT / "data" / "tables").glob("*.json")):
             for ent in entries:
                 bench_id = ent.get("dataset")
                 metric = ent.get("metric")
-                if not bench_id or not metric or bench_id not in existing:
+                if not bench_id or not metric:
+                    continue
+                if bench_id not in existing:
+                    unknown_ds.append((pid, bid, bench_id))
                     continue
                 cols = t["headers"][-1] if t["headers"] else []
                 if bm.get("rows") == "datasets" or ent.get("cols") == "models":
@@ -199,7 +203,12 @@ for jf in sorted((ROOT / "data" / "tables").glob("*.json")):
                                 continue
                             v = (r[ci] or "").strip()
                             if NUM_OK.match(v):
-                                proposals.append((bench_id, mid, float(v.replace(",", "").replace("%", "")), f"{pid}/{bid}", f"标注 {cn}"))
+                                vnum = float(v.replace(",", "").replace("%", ""))
+                                if mid in existing.get(bench_id, {}):
+                                    if abs(existing[bench_id][mid] - vnum) > 1e-6:
+                                        conflicts.append((bench_id, mid, existing[bench_id][mid], vnum, f"{pid}/{bid}"))
+                                    continue
+                                proposals.append((bench_id, mid, vnum, f"{pid}/{bid}", f"标注 {cn}"))
                 else:
                     # 行=模型：找 metric 列（可带 group 约束；col_index 最稳）
                     want_col = ent.get("col", metric)
@@ -225,7 +234,12 @@ for jf in sorted((ROOT / "data" / "tables").glob("*.json")):
                                 continue
                             v = (r[ci] or "").strip()
                             if NUM_OK.match(v):
-                                proposals.append((bench_id, mid, float(v.replace(",", "").replace("%", "")), f"{pid}/{bid}", f"标注 {rowname[:20]}"))
+                                vnum = float(v.replace(",", "").replace("%", ""))
+                                if mid in existing.get(bench_id, {}):
+                                    if abs(existing[bench_id][mid] - vnum) > 1e-6:
+                                        conflicts.append((bench_id, mid, existing[bench_id][mid], vnum, f"{pid}/{bid}"))
+                                    continue
+                                proposals.append((bench_id, mid, vnum, f"{pid}/{bid}", f"标注 {rowname[:20]}"))
             continue
         # 横向表（列=模型行=数据集）独立于 caption 规则：表结构说了算
         for bench_id, (row_re, _m, _n) in TRANSPOSED_RULES.items():
@@ -267,7 +281,7 @@ for jf in sorted((ROOT / "data" / "tables").glob("*.json")):
                         if abs(existing[bench_id][mid] - vnum) > 1e-6:
                             conflicts.append((bench_id, mid, existing[bench_id][mid], vnum, f"{pid}/{bid}"))
                         continue
-                    proposals.append((bench_id, mid, vnum, f"{pid}/{tid if False else bid}", rowname))
+                    proposals.append((bench_id, mid, vnum, f"{pid}/{bid}", rowname))
 
 # 去重（同榜单同模型取首次出现）
 seen = set()
@@ -290,6 +304,10 @@ if conflicts:
     print("\n== 冲突（不覆盖） ==")
     for bench_id, mid, old, new, src in conflicts:
         print(f"  {bench_id} {mid}: 现有 {old} vs 网格 {new} ({src})")
+if unknown_ds:
+    print("\n== 标注的 dataset 不在 BENCHMARKS（未回填，需在 kb.js 建榜或改用现有榜 id） ==")
+    for pid, bid, ds in unknown_ds:
+        print(f"  {pid}/{bid}: \"{ds}\"")
 
 if "--apply" in sys.argv and uniq:
     src = open(ROOT / "data" / "kb.js", encoding="utf-8").read()
