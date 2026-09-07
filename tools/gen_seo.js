@@ -56,7 +56,7 @@ const jsonld = {
       "@id": BASE + "#website",
       "url": BASE,
       "name": "ASR / TTS 知识库 · 论文精读版",
-      "description": "面向论文精读的 ASR 与 TTS 语音模型知识库，覆盖 56 个开源/闭源模型的架构解读、能力矩阵、基准对比与逐句论文精读。",
+      "description": `面向论文精读的 ASR 与 TTS 语音模型知识库，覆盖 ${models.length} 个开源/闭源模型的架构解读、能力矩阵、基准对比与逐句论文精读。`,
       "inLanguage": "zh-CN",
       "publisher": { "@type": "Organization", "name": "Zhitao Zeng" }
     },
@@ -113,7 +113,7 @@ const modelsPage = `<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ASR / TTS 模型静态清单（无需 JavaScript）· 知识库</title>
-<meta name="description" content="56 个 ASR / TTS 语音模型的名称、机构、许可证与一句话摘要静态清单，供搜索引擎与无 JS 环境浏览。">
+<meta name="description" content="${models.length} 个 ASR / TTS 语音模型的名称、机构、许可证与一句话摘要静态清单，供搜索引擎与无 JS 环境浏览。">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="${esc(BASE + "models.html")}">
 </head>

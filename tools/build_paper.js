@@ -452,6 +452,9 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 /* ---------------- 索引页 ---------------- */
 function renderIndex(papers) {
+  // 按关联模型的发布日期倒序（无关联模型的排最后），比 arXiv 编号序更符合阅读预期
+  const dateOf = p => (((KB.models || []).find(m => m.id === p.model_id) || {}).date) || "";
+  papers = [...papers].sort((a, b) => dateOf(b).localeCompare(dateOf(a)));
   const rows = papers.map(p => {
     const model = (KB.models || []).find(m => m.id === p.model_id) || {};
     const nSent = p.sections.reduce((n, s) => n + s.blocks.reduce((k, b) => k + (b.sentences ? b.sentences.length : 0), 0), 0);
@@ -463,6 +466,7 @@ function renderIndex(papers) {
         <div class="pe">${esc(p.title.original)}</div>
         <div class="pm">
           ${model.name ? `<a href="../index.html#/model/${esc(p.model_id)}">${esc(model.name)}</a> · ` : ""}
+          ${model.date ? `${esc(model.date)} · ` : ""}
           <a href="https://arxiv.org/abs/${esc(p.paper_id)}" target="_blank" rel="noopener">arXiv:${esc(p.paper_id)}</a>${pdfLink} ·
           ${nSent} 句 · ${(p.annotations || []).length} 条句旁讲解
         </div>
