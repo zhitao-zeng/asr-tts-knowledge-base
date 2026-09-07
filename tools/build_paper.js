@@ -512,23 +512,27 @@ if (!ids.length) {
   if (!fs.existsSync(dir)) { console.log("data/papers/ 不存在"); process.exit(0); }
   ids = fs.readdirSync(dir).filter(f => f.endsWith(".js")).map(f => f.replace(/\.js$/, ""));
 }
-const papers = [];
-for (const id of ids) {
+function loadPaper(id) {
   const f = path.join(dir, id + ".js");
-  if (!fs.existsSync(f)) { console.error("✗ 缺少 " + f); process.exitCode = 1; continue; }
+  if (!fs.existsSync(f)) return null;
   const g = {};
   new Function("globalThis", fs.readFileSync(f, "utf8"))(g);
-  const paper = g["PAPER_" + id.replace(/\./g, "_")];
-  if (!paper) { console.error("✗ " + f + " 未定义 PAPER_ 全局变量"); process.exitCode = 1; continue; }
-  papers.push(paper);
+  return g["PAPER_" + id.replace(/\./g, "_")] || null;
+}
+for (const id of ids) {
+  const paper = loadPaper(id);
+  if (!paper) { console.error("✗ " + id + " 缺少数据文件或未定义 PAPER_ 全局变量"); process.exitCode = 1; continue; }
   const outDir = path.join(ROOT, "papers-read", id);
   fs.mkdirSync(outDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, "index.html"), renderPaper(paper), "utf8");
   console.log(`✔ papers-read/${id}/index.html（${(paper.annotations || []).length} 条讲解）`);
 }
-if (papers.length) {
+// 索引页始终覆盖 data/papers/ 全部论文（单篇重建时只重建该页，不收窄索引）
+const allIds = fs.readdirSync(dir).filter(f => f.endsWith(".js")).map(f => f.replace(/\.js$/, ""));
+const allPapers = allIds.map(loadPaper).filter(Boolean);
+if (allPapers.length) {
   const idxDir = path.join(ROOT, "papers-read");
   fs.mkdirSync(idxDir, { recursive: true });
-  fs.writeFileSync(path.join(idxDir, "index.html"), renderIndex(papers), "utf8");
-  console.log(`✔ papers-read/index.html（${papers.length} 篇）`);
+  fs.writeFileSync(path.join(idxDir, "index.html"), renderIndex(allPapers), "utf8");
+  console.log(`✔ papers-read/index.html（${allPapers.length} 篇）`);
 }
