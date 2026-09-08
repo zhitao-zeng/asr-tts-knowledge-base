@@ -8,11 +8,6 @@
     "training a single large universal ASR model."
    ],
    [
-    "",
-    "",
-    ""
-   ],
-   [
     "types of datasets:",
     "",
     ""
@@ -20,11 +15,6 @@
    [
     "•",
     "Unpaired Audio:",
-    ""
-   ],
-   [
-    "",
-    "",
     ""
    ]
   ],
@@ -529,13 +519,6 @@
  "tab-5-4-1": {
   "page": 15,
   "headers": [
-   [
-    "",
-    "",
-    "",
-    "",
-    ""
-   ],
    [
     "X →English",
     "high",

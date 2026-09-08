@@ -418,10 +418,13 @@ def extract(pdf_path):
             continue
 
         # 3.6 公式块：短块且行尾带 (n) 编号，或整块等宽/数学字体
+        #     例外：整段是脚注 URL 列表（"1https://…" 在部分模板里是等宽字体）不是公式
         if l["block_first"] and l["block_lines"] <= 4:
             blk = lines[i:i + l["block_lines"]]
             joined = dehyphenate_join([x["text"] for x in blk])
-            if EQNUM_RE.search(blk[-1]["text"]) \
+            if re.match(r"^\d+\s*https?://", joined):
+                pass  # 落入普通段落处理
+            elif EQNUM_RE.search(blk[-1]["text"]) \
                     or (all(x["mono"] for x in blk) and len(joined) < 300 and "\n" not in joined) \
                     or (all(x["math"] for x in blk) and len(joined) < 300):
                 flush_para()
@@ -489,7 +492,7 @@ def extract(pdf_path):
             sec = {"id": "sec-front", "num": None, "level": 1, "title": "Front Matter",
                    "page": 1, "blocks": []}
             paper["sections"].append(sec)
-        c = counters.setdefault(sec["id"], {"p": 0, "fig": 0, "tab": 0, "eq": 0})
+        c = counters.setdefault(sec["id"], {"p": 0, "fig": 0, "tab": 0, "eq": 0, "tb": 0})
         base = sec["id"].replace("sec-", "")
         if b["type"] == "paragraph":
             c["p"] += 1
@@ -503,6 +506,13 @@ def extract(pdf_path):
             c[key] += 1
             sec["blocks"].append({"id": f"{key}-{base}-{c[key]}", "type": b["type"],
                                   "page": b["page"], "text": b["text"], "sentences": []})
+        elif b["type"] == "table_body":
+            # flush_para 行级分离出的表格行：保留 table_body 类型（否则掉进 else 被误改写成
+            # equation —— 2608.17492 曾因此产生 160 个伪公式块）
+            c["tb"] += 1
+            sec["blocks"].append({"id": f"tb-{base}-{c['tb']}", "type": "table_body",
+                                  "page": b["page"], "text": b["text"],
+                                  "cells": len(b["text"].split()), "sentences": []})
         else:
             c["eq"] += 1
             sec["blocks"].append({"id": f"eq-{base}-{c['eq']}", "type": "equation",
@@ -536,12 +546,19 @@ def extract(pdf_path):
     for sec in paper["sections"]:
         merged = []
         run = []
+        used = {b["id"] for b in sec["blocks"]}  # 组装阶段已可能产生 tb- id，改名要避让
         def flush_run():
             nonlocal run
             if len(run) >= 4:
                 first = run[0]
                 text = "\n".join(x["text"] for x in run)
-                merged.append({"id": first["id"].replace("p-", "tb-", 1), "type": "table_body",
+                bid = first["id"].replace("p-", "tb-", 1)
+                k = 2
+                while bid in used:
+                    bid = f"{first['id'].replace('p-', 'tb-', 1)}-{k}"
+                    k += 1
+                used.add(bid)
+                merged.append({"id": bid, "type": "table_body",
                                "page": first["page"], "text": text, "sentences": [],
                                "cells": len(run)})
             else:

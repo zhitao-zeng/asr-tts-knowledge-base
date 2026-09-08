@@ -708,7 +708,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>F5-TTS</td><td>0.664</td><td>1.85</td><td>3.72</td><td>0.750</td><td>1.53</td><td>2.93</td></tr>
 <tr><td>ZipVoice</td><td>0.697</td><td>1.70</td><td>3.82</td><td>0.751</td><td>1.40</td><td>3.15</td></tr>
 <tr><td>MaskGCT</td><td>0.713</td><td>2.88</td><td>3.55</td><td>0.773</td><td>2.40</td><td>2.63</td></tr>
-<tr><td></td><td></td><td>1.72</td><td>3.88</td><td>0.765</td><td>0.89</td><td>3.05</td></tr>
+<tr><td></td><td>0.717</td><td>1.72</td><td>3.88</td><td>0.765</td><td>0.89</td><td>3.05</td></tr>
 <tr><td>OmniVoice</td><td>0.741</td><td>1.60</td><td>3.91</td><td>0.777</td><td>0.84</td><td>3.11</td></tr></tbody></table></div></div></section>
 <section>
       <h3 class="sech lv2" id="sec-model-3"><span class="t-zh">Model</span><span class="t-en">Model</span></h3><div class="pblk" id="p-model-3-1">
@@ -739,8 +739,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
         
       </div></div></div>
         </div>
-<div class="cap" id="tab-model-3-1"><span class="cap-k">表</span><p class="en">Table 3: Evaluation on the MiniMax-Multilingual-24 test set.</p><p class="zh">表 3：MiniMax-Multilingual-24 测试集上的评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>WER ↓</th><th></th><th></th><th>SIM-o ↑</th><th></th></tr><tr><th>Language</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Arabic</td><td>1.392</td><td>1.665</td><td>1.666</td><td>0.776</td><td>0.736</td><td>0.706</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>0.838</td><td>0.778</td><td>0.670</td></tr>
+<div class="cap" id="tab-model-3-1"><span class="cap-k">表</span><p class="en">Table 3: Evaluation on the MiniMax-Multilingual-24 test set.</p><p class="zh">表 3：MiniMax-Multilingual-24 测试集上的评估结果。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>WER ↓</th><th></th><th></th><th>SIM-o ↑</th><th></th></tr><tr><th>Language</th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>OmniVoice</th><th>MiniMax</th><th>ElevenLabs</th><th>OmniVoice</th><th>MiniMax</th><th>ElevenLabs</th></tr></thead><tbody><tr><td>Arabic</td><td>1.392</td><td>1.665</td><td>1.666</td><td>0.776</td><td>0.736</td><td>0.706</td></tr>
+<tr><td>Cantonese</td><td>17.709*</td><td>34.111</td><td>51.513</td><td>0.838</td><td>0.778</td><td>0.670</td></tr>
 <tr><td>Chinese</td><td>1.008</td><td>2.252</td><td>16.026</td><td>0.821</td><td>0.780</td><td>0.677</td></tr>
 <tr><td>Czech</td><td>2.856</td><td>3.875</td><td>2.108</td><td>0.837</td><td>0.796</td><td>0.685</td></tr>
 <tr><td>Dutch</td><td>1.358</td><td>1.143</td><td>0.803</td><td>0.813</td><td>0.738</td><td>0.680</td></tr>
@@ -750,28 +750,20 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>German</td><td>0.964</td><td>1.906</td><td>0.572</td><td>0.812</td><td>0.733</td><td>0.614</td></tr>
 <tr><td>Greek</td><td>1.057</td><td>2.016</td><td>0.991</td><td>0.867</td><td>0.826</td><td>0.733</td></tr>
 <tr><td>Hindi</td><td>4.330</td><td>6.962</td><td>5.827</td><td>0.863</td><td>0.818</td><td>0.730</td></tr>
-<tr><td></td><td></td><td>1.237</td><td>1.059</td><td>0.805</td><td>0.729</td><td>0.660</td></tr>
+<tr><td>Indonesian</td><td>1.973</td><td>1.237</td><td>1.059</td><td>0.805</td><td>0.729</td><td>0.660</td></tr>
 <tr><td>Italian</td><td>2.070</td><td>1.543</td><td>1.743</td><td>0.812</td><td>0.699</td><td>0.579</td></tr>
 <tr><td>Japanese</td><td>4.027</td><td>3.519</td><td>10.646</td><td>0.828</td><td>0.776</td><td>0.738</td></tr>
 <tr><td>Korean</td><td>2.651</td><td>1.747</td><td>1.865</td><td>0.828</td><td>0.776</td><td>0.700</td></tr>
 <tr><td>Polish</td><td>0.874</td><td>1.415</td><td>0.766</td><td>0.877</td><td>0.802</td><td>0.729</td></tr>
-<tr><td></td><td></td><td>1.877</td><td>1.331</td><td>0.859</td><td>0.805</td><td>0.711</td></tr>
+<tr><td>Portuguese</td><td>2.511</td><td>1.877</td><td>1.331</td><td>0.859</td><td>0.805</td><td>0.711</td></tr>
 <tr><td>Romanian</td><td>2.424</td><td>2.878</td><td>1.347</td><td>0.836</td><td>0.809</td><td>0.699</td></tr>
 <tr><td>Russian</td><td>2.233</td><td>4.281</td><td>3.878</td><td>0.783</td><td>0.761</td><td>0.676</td></tr>
 <tr><td>Spanish</td><td>1.026</td><td>1.029</td><td>1.084</td><td>0.804</td><td>0.762</td><td>0.615</td></tr>
 <tr><td>Thai</td><td>3.978</td><td>2.701</td><td>73.936</td><td>0.841</td><td>0.800</td><td>0.588</td></tr>
 <tr><td>Turkish</td><td>2.166</td><td>1.520</td><td>0.699</td><td>0.851</td><td>0.779</td><td>0.596</td></tr>
 <tr><td>Ukrainian</td><td>1.774</td><td>1.082</td><td>0.997</td><td>0.810</td><td>0.730</td><td>0.647</td></tr>
-<tr><td></td><td></td><td>0.880</td><td>73.415</td><td>0.804</td><td>0.743</td><td>0.369</td></tr>
+<tr><td>Vietnamese</td><td>1.373</td><td>0.880</td><td>73.415</td><td>0.804</td><td>0.743</td><td>0.369</td></tr>
 <tr><td>Average</td><td>2.850</td><td>3.774</td><td>10.950</td><td>0.830</td><td>0.766</td><td>0.655</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-model-3-3">
-          <p class="en-lines"><span class="sent" data-sid="s-model-3-3-1"><span class="en">Language WER ↓ SIM-o ↑ OmniVoice MiniMax ElevenLabs OmniVoice MiniMax ElevenLabs Arabic</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-model-3-3-1"><span class="zh">表头：Language × WER ↓ / SIM-o ↑（OmniVoice / MiniMax / ElevenLabs 两组）——Arabic（后续照原文）。</span></span></p>
-          
-        </div>
-
-<div class="eq" id="eq-model-3-13"><code>Cantonese</code></div>
-<div class="eq" id="eq-model-3-14"><code>17.709* 34.111 51.513 0.838 0.778 0.670</code></div>
 
 
 
@@ -790,17 +782,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-model-3-33"><code>Indonesian</code></div>
-
-
-
-
-
-
-
-
-
-<div class="eq" id="eq-model-3-43"><code>Portuguese</code></div>
 
 
 
@@ -814,7 +795,22 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-model-3-57"><code>Vietnamese</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 <section>
       <h3 class="sech lv2" id="sec-average"><span class="t-zh">平均值</span><span class="t-en">Average</span></h3>
@@ -884,7 +880,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-masking-strategy-3-1"><span class="zh">如表 5 所示，全码本随机掩码一致优于 MaskGCT 与 SoundStorm 所采用的单码本掩码策略。</span></span><span class="sent" data-sid="s-masking-strategy-3-2"><span class="zh">此外，我们还进行了一个只在单码本上计算损失的实验，结果同样出现显著的性能下降，证实了所提密集损失计算的优势。</span></span></p>
           
         </div>
-<div class="cap" id="tab-masking-strategy-1"><span class="cap-k">表</span><p class="en">Table 6: Impact of LLM initialization on WER across datasets. Abbreviations: Libri = LibrispeechPC test-clean, Seed-en = Seed-TTS test-en, Seed-zh = Seed-TTS test-zh.</p><p class="zh">表 6：LLM 初始化对各数据集 WER 的影响。缩写：Libri = LibriSpeech-PC test-clean，Seed-en = Seed-TTS test-en，Seed-zh = Seed-TTS test-zh。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>WER ↓</th><th></th></tr><tr><th></th><th>Learning Rate</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Libri</th><th>Seed-en</th><th>Seed-zh</th></tr></thead><tbody><tr><td>LLM initialization</td><td>1e-4</td><td>1.57</td><td>1.72</td><td>0.89</td></tr>
+<div class="cap" id="tab-masking-strategy-1"><span class="cap-k">表</span><p class="en">Table 6: Impact of LLM initialization on WER across datasets. Abbreviations: Libri = LibrispeechPC test-clean, Seed-en = Seed-TTS test-en, Seed-zh = Seed-TTS test-zh.</p><p class="zh">表 6：LLM 初始化对各数据集 WER 的影响。缩写：Libri = LibriSpeech-PC test-clean，Seed-en = Seed-TTS test-en，Seed-zh = Seed-TTS test-zh。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th>WER ↓</th><th></th></tr><tr><th></th><th>Learning Rate</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Libri</th><th>Seed-en</th><th>Seed-zh</th></tr></thead><tbody><tr><td>LLM initialization</td><td>1e-4</td><td>1.57</td><td>1.72</td><td>0.89</td></tr>
 <tr><td></td><td>1e-4</td><td>2.79</td><td>2.34</td><td>1.11</td></tr>
 <tr><td></td><td>2e-4</td><td>2.52</td><td>2.43</td><td>1.01</td></tr>
 <tr><td>Random initialization</td><td></td><td></td><td></td><td></td></tr>
@@ -1126,14 +1122,14 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
           <p class="zh-lines"><span class="sent" data-sid="s-C-1-1"><span class="zh">真实语音与 OmniVoice 在 FLEURS-Multilingual-102 上的逐语言 CER 如图 4 所示。</span></span></p>
           
         </div>
-<div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 10: Per-language CERs of ground-truth and OmniVoice on FLEURS-Multilingual-102</p><p class="zh">表 10：真实语音与 OmniVoice 在 FLEURS-Multilingual-102 上的逐语言 CER。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>Afrikaans</td><td>3.54</td><td>3.08</td><td>Amharic</td><td>4.98</td><td>7.30</td></tr>
+<div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 10: Per-language CERs of ground-truth and OmniVoice on FLEURS-Multilingual-102</p><p class="zh">表 10：真实语音与 OmniVoice 在 FLEURS-Multilingual-102 上的逐语言 CER。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Language</th><th>Ground-truth</th><th>OmniVoice</th><th>Language</th><th>Ground-truth</th><th>OmniVoice</th></tr></thead><tbody><tr><td>Afrikaans</td><td>3.54</td><td>3.08</td><td>Amharic</td><td>4.98</td><td>7.30</td></tr>
 <tr><td>Armenian</td><td>1.38</td><td>1.45</td><td>Assamese</td><td>5.29</td><td>3.92</td></tr>
-<tr><td>Asturian</td><td>3.79</td><td></td><td></td><td>2.60</td><td>3.20</td></tr>
+<tr><td>Asturian</td><td>3.79</td><td>2.07</td><td>Azerbaijani</td><td>2.60</td><td>3.20</td></tr>
 <tr><td>Belarusian</td><td>1.80</td><td>1.00</td><td>Bengali</td><td>4.10</td><td>3.08</td></tr>
 <tr><td>Bosnian</td><td>1.61</td><td>0.66</td><td>Bulgarian</td><td>1.66</td><td>0.87</td></tr>
-<tr><td>Burmese</td><td>6.77</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Burmese</td><td>6.77</td><td>12.20</td><td>Cantonese</td><td>11.01</td><td>21.92</td></tr>
 <tr><td>Catalan</td><td>1.17</td><td>0.86</td><td>Cebuano</td><td>1.74</td><td>1.81</td></tr>
-<tr><td></td><td></td><td>2.97</td><td>Chichewa</td><td>4.63</td><td>3.32</td></tr>
+<tr><td>Central Kurdish</td><td>3.92</td><td>2.97</td><td>Chichewa</td><td>4.63</td><td>3.32</td></tr>
 <tr><td>Chinese</td><td>5.54</td><td>3.16</td><td>Croatian</td><td>4.64</td><td>0.93</td></tr>
 <tr><td>Czech</td><td>2.19</td><td>1.21</td><td>Danish</td><td>2.86</td><td>1.79</td></tr>
 <tr><td>Dutch</td><td>2.01</td><td>1.87</td><td>English</td><td>2.63</td><td>1.67</td></tr>
@@ -1148,17 +1144,17 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>Igbo</td><td>7.75</td><td>7.40</td><td>Indonesian</td><td>1.87</td><td>2.95</td></tr>
 <tr><td>Irish</td><td>17.56</td><td>8.52</td><td>Italian</td><td>1.27</td><td>1.56</td></tr>
 <tr><td>Japanese</td><td>7.70</td><td>5.96</td><td>Javanese</td><td>3.17</td><td>2.80</td></tr>
-<tr><td></td><td></td><td>2.10</td><td>Kamba</td><td>8.81</td><td>10.42</td></tr>
+<tr><td>Kabuverdianu</td><td>3.29</td><td>2.10</td><td>Kamba</td><td>8.81</td><td>10.42</td></tr>
 <tr><td>Kannada</td><td>2.84</td><td>2.70</td><td>Kazakh</td><td>2.01</td><td>3.11</td></tr>
 <tr><td>Khmer</td><td>6.20</td><td>11.48</td><td>Kirghiz</td><td>2.33</td><td>1.80</td></tr>
-<tr><td>Korean</td><td>3.72</td><td>3.78</td><td>Lao</td><td></td><td></td></tr>
+<tr><td>Korean</td><td>3.72</td><td>3.78</td><td>Lao</td><td>22.87</td><td>25.51</td></tr>
 <tr><td>Latvian</td><td>1.87</td><td>1.55</td><td>Lingala</td><td>2.36</td><td>1.68</td></tr>
-<tr><td></td><td></td><td>2.05</td><td>Luo</td><td>3.58</td><td>3.37</td></tr>
-<tr><td></td><td></td><td></td><td></td><td>1.05</td><td>0.89</td></tr>
+<tr><td>Lithuanian</td><td>2.98</td><td>2.05</td><td>Luo</td><td>3.58</td><td>3.37</td></tr>
+<tr><td>Luxembourgish</td><td>5.48</td><td>4.52</td><td>Macedonian</td><td>1.05</td><td>0.89</td></tr>
 <tr><td>Malay</td><td>1.59</td><td>1.19</td><td>Malayalam</td><td>2.99</td><td>3.40</td></tr>
 <tr><td>Maltese</td><td>2.01</td><td>3.65</td><td>Maori</td><td>4.90</td><td>1.98</td></tr>
 <tr><td>Marathi</td><td>5.02</td><td>2.76</td><td>Mongolian</td><td>4.78</td><td>4.26</td></tr>
-<tr><td>Nepali</td><td>4.76</td><td></td><td>3.43 Norwegian Bokmål 1.50</td><td></td><td>1.14</td></tr>
+<tr><td>Nepali</td><td>4.76</td><td>3.43</td><td>Norwegian Bokmål</td><td>1.50</td><td>1.14</td></tr>
 <tr><td>Occitan</td><td>9.63</td><td>6.99</td><td>Odia</td><td>5.77</td><td>5.53</td></tr>
 <tr><td>Oromo</td><td>12.50</td><td>4.97</td><td>Panjabi</td><td>5.76</td><td>2.95</td></tr>
 <tr><td>Pedi</td><td>4.88</td><td>4.44</td><td>Persian</td><td>1.57</td><td>1.90</td></tr>
@@ -1168,21 +1164,17 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>Shona</td><td>4.07</td><td>1.80</td><td>Sindhi</td><td>5.51</td><td>3.26</td></tr>
 <tr><td>Slovak</td><td>2.76</td><td>0.85</td><td>Slovenian</td><td>2.40</td><td>1.20</td></tr>
 <tr><td>Somali</td><td>10.13</td><td>4.86</td><td>Spanish</td><td>1.08</td><td>0.77</td></tr>
-<tr><td></td><td></td><td>1.92</td><td>Swahili</td><td>2.41</td><td>1.37</td></tr>
+<tr><td>Standard Arabic</td><td>2.58</td><td>1.92</td><td>Swahili</td><td>2.41</td><td>1.37</td></tr>
 <tr><td>Swedish</td><td>2.14</td><td>1.43</td><td>Tajik</td><td>3.17</td><td>2.36</td></tr>
 <tr><td>Tamil</td><td>4.00</td><td>3.77</td><td>Telugu</td><td>4.51</td><td>3.77</td></tr>
 <tr><td>Thai</td><td>6.98</td><td>7.71</td><td>Turkish</td><td>1.94</td><td>2.71</td></tr>
 <tr><td>Ukrainian</td><td>1.45</td><td>1.23</td><td>Umbundu</td><td>6.97</td><td>5.44</td></tr>
-<tr><td>Urdu</td><td></td><td></td><td>Uzbek</td><td>3.31</td><td>2.23</td></tr>
-<tr><td></td><td></td><td>2.63</td><td>Welsh</td><td>3.91</td><td>3.37</td></tr>
+<tr><td>Urdu</td><td>80.27</td><td>28.73</td><td>Uzbek</td><td>3.31</td><td>2.23</td></tr>
+<tr><td>Vietnamese</td><td>3.49</td><td>2.63</td><td>Welsh</td><td>3.91</td><td>3.37</td></tr>
 <tr><td>Wolof</td><td>12.17</td><td>6.87</td><td>Xhosa</td><td>3.62</td><td>3.83</td></tr>
-<tr><td>Yoruba</td><td></td><td></td><td>Zulu</td><td>3.33</td><td>2.03</td></tr></tbody></table></div></div></section>
+<tr><td>Yoruba</td><td>17.97</td><td>21.37</td><td>Zulu</td><td>3.33</td><td>2.03</td></tr></tbody></table></div></div></section>
 <section>
-      <h3 class="sech lv2" id="sec-language"><span class="t-zh">Language</span><span class="t-en">Language</span></h3><div class="pblk" id="p-language-1">
-          <p class="en-lines"><span class="sent" data-sid="s-language-1-1"><span class="en">Ground-truth OmniVoice Language Ground-truth OmniVoice Afrikaans</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-language-1-1"><span class="zh">表头：Ground-truth / OmniVoice × Language——Afrikaans（后续照原文）。</span></span></p>
-          
-        </div>
+      <h3 class="sech lv2" id="sec-language"><span class="t-zh">Language</span><span class="t-en">Language</span></h3>
 
 
 
@@ -1191,8 +1183,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-language-9"><code>3.79 2.07</code></div>
-<div class="eq" id="eq-language-10"><code>Azerbaijani</code></div>
 
 
 
@@ -1203,14 +1193,10 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-language-21"><code>6.77 12.20</code></div>
-<div class="eq" id="eq-language-22"><code>Cantonese</code></div>
-<div class="eq" id="eq-language-23"><code>11.01 21.92</code></div>
 
 
 
 
-<div class="eq" id="eq-language-28"><code>Central Kurdish</code></div>
 
 
 
@@ -1270,8 +1256,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-language-88"><code>Kabuverdianu</code></div>
-<div class="eq" id="eq-language-89"><code>3.29 2.10</code></div>
 
 
 
@@ -1285,18 +1269,12 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-language-103"><code>22.87 25.51</code></div>
 
 
 
 
-<div class="eq" id="eq-language-108"><code>Lithuanian</code></div>
-<div class="eq" id="eq-language-109"><code>2.98 2.05</code></div>
 
 
-<div class="eq" id="eq-language-112"><code>Luxembourgish</code></div>
-<div class="eq" id="eq-language-113"><code>5.48 4.52</code></div>
-<div class="eq" id="eq-language-114"><code>Macedonian</code></div>
 
 
 
@@ -1350,8 +1328,6 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-language-168"><code>Standard Arabic</code></div>
-<div class="eq" id="eq-language-169"><code>2.58 1.92</code></div>
 
 
 
@@ -1371,11 +1347,8 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-language-189"><code>80.27 28.73</code></div>
 
 
-<div class="eq" id="eq-language-192"><code>Vietnamese</code></div>
-<div class="eq" id="eq-language-193"><code>3.49 2.63</code></div>
 
 
 
@@ -1383,7 +1356,26 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="eq" id="eq-language-201"><code>17.97 21.37</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </section>
 <section>

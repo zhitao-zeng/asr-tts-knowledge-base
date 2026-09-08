@@ -331,6 +331,7 @@ if "--apply" in sys.argv and uniq:
             continue
         note = f"{rowname.strip()}（{('论文重建表')}）"
         entry = f'     {{"id": "{mid}", "v": {v}, "note": "{note}"}}\n  '
-        src = src[:m.start(2)] + m.group(2).rstrip() + ",\n" + entry + src[m.end(2):]
+        # rstrip 后可能残留尾随逗号（删条目造成），直接拼 ",\n" 会产生 ",," 空洞
+        src = src[:m.start(2)] + m.group(2).rstrip().rstrip(",") + ",\n" + entry + src[m.end(2):]
     open(ROOT / "data" / "kb.js", "w", encoding="utf-8").write(src)
     print(f"\n已写入 {len(uniq)} 条到 kb.js")

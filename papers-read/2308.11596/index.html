@@ -660,7 +660,7 @@ S2TT 级联模型 Whisper-Medium + NLLB-600M-Distilled 2 阶段级联 Whisper-La
           <p class="zh-lines"><span class="sent" data-sid="s-target-3-1"><span class="zh">（接上表指标细节：SacreBLEU 签名 nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.3.1，以及 nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.3.1（除 cmn、jpn、tha、lao、mya 用字符级分词外）（页码 13）；Blaser 2.0 自动指标（XSTS 人工质量遵循 Licht et al. [2022]、S2TT 人工质量协议见 Chen et al. [2023a]）；chrF 相关指标遵循 Wang et al. [2020] 的做法（以 chrF 替换 BLEU 作为质量指标）；转写时英语用 Whisper-Medium、非英语用 Whisper-Large-v2，并在归一化转写上计算各指标，遵循 Radford et al. [2022]。）</span></span></p>
           
         </div>
-<div class="cap" id="tab-target-1"><span class="cap-k">表</span><p class="en">Table 4: The list of automatic and human evaluation metrics used by this work. ⋆https://github. com/openai/whisper/tree/main/whisper/normalizers † Popović [2015] ‡ Papineni et al. [2002]</p><p class="zh">表 4：本工作使用的自动与人工评测指标列表。⋆https://github.com/openai/whisper/tree/main/whisper/normalizers † Popović [2015] ‡ Papineni et al. [2002]</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Task</th><th>Metric</th><th>Type</th><th>Area</th><th></th></tr><tr><th></th><th>WER</th><th></th><th>Quality</th><th></th></tr><tr><th>ASR</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>Robustness</th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>T2TT</td><td>chrF++†</td><td>Automatic</td><td>Quality</td><td></td></tr>
+<div class="cap" id="tab-target-1"><span class="cap-k">表</span><p class="en">Table 4: The list of automatic and human evaluation metrics used by this work. ⋆https://github. com/openai/whisper/tree/main/whisper/normalizers † Popović [2015] ‡ Papineni et al. [2002]</p><p class="zh">表 4：本工作使用的自动与人工评测指标列表。⋆https://github.com/openai/whisper/tree/main/whisper/normalizers † Popović [2015] ‡ Papineni et al. [2002]</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Task</th><th>Metric</th><th>Type</th><th>Area</th><th></th></tr><tr><th></th><th>WER</th><th></th><th>Quality</th><th></th></tr><tr><th>ASR</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>Robustness</th><th></th></tr></thead><tbody><tr><td>T2TT</td><td>chrF++†</td><td>Automatic</td><td>Quality</td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td>nrefs:1|case:mixed|eff:yes|nc:6|nw:2|space:no|version:2.3.1</td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td>nrefs:1|case:mixed|eff:no|tok:13a|smooth:exp|version:2.3.1</td></tr>
@@ -915,7 +915,7 @@ X–eng (n=200) eng–X (n=200) X–eng (n=89) eng–X (n=89) Sonar</span></span
 <div class="eq" id="eq-model-2-1"><code>32.7 21.6 85.9 84.2</code></div>
 <div class="eq" id="eq-model-2-2"><code>NLLB-1.3B (MT topline)</code></div>
 <div class="eq" id="eq-model-2-3"><code>35.2 24.9 86.5 85.2</code></div>
-<div class="cap" id="tab-model-2-1"><span class="cap-k">表</span><p class="en">Table 8: Average performance on Flores devtest set over the 200 NLLB languages and 89 languages supported by COMET: translation spBLEU and COMET scores, auto-encoding spBLEU.</p><p class="zh">表 8：在 200 种 NLLB 语言与 89 种 COMET 支持语言上 Flores devtest 集的平均表现：翻译 spBLEU 与 COMET 分数、自编码 spBLEU。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th></tr><tr><th></th><th></th></tr><tr><th>Multilingual Text ✏️</th><th></th></tr><tr><th></th><th>Initialized with</th></tr><tr><th>Text Decoder</th><th>NLLB 1B</th></tr></thead><tbody><tr><td></td><td>decoder</td></tr>
+<div class="cap" id="tab-model-2-1"><span class="cap-k">表</span><p class="en">Table 8: Average performance on Flores devtest set over the 200 NLLB languages and 89 languages supported by COMET: translation spBLEU and COMET scores, auto-encoding spBLEU.</p><p class="zh">表 8：在 200 种 NLLB 语言与 89 种 COMET 支持语言上 Flores devtest 集的平均表现：翻译 spBLEU 与 COMET 分数、自编码 spBLEU。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Multilingual Text ✏️</th><th></th></tr><tr><th></th><th>Initialized with</th></tr><tr><th>Text Decoder</th><th>NLLB 1B</th></tr></thead><tbody><tr><td></td><td>decoder</td></tr>
 <tr><td>SONAR</td><td></td></tr>
 <tr><td></td><td></td></tr>
 <tr><td></td><td></td></tr>
@@ -1306,7 +1306,7 @@ USM 超过 300† 12M BEST-RQ [Chiu et al., 2022] MMS</span></span></p>
 <div class="eq" id="eq-model-3-6"><code>✓</code></div>
 <div class="eq" id="eq-model-3-7"><code>SeamlessM4T-Large over 143† 1M w2v-BERT 2.0</code></div>
 <div class="eq" id="eq-model-3-8"><code>✓</code></div>
-<div class="cap" id="tab-model-3-1"><span class="cap-k">表</span><p class="en">Table 11: A comparison of multilingual speech pre-training in state-of-the-art ASR and S2TT models. †Estimated from the part of data that has language information.</p><p class="zh">表 11：最先进 ASR 与 S2TT 模型中多语言语音预训练的对比。†根据有语言信息的数据部分估算。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Conformer</th><th></th><th>X2T</th></tr><tr><th></th><th>SEAMLESSM4T-NLLB</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Speech Encoder</th><th></th><th>(ASR, T2TT, S2TT)</th></tr><tr><th>codebooks</th><th>(fra) le chat s’est assis</th><th>W2V-BERT 2.0</th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Transformer</td><td></td><td></td><td></td></tr>
+<div class="cap" id="tab-model-3-1"><span class="cap-k">表</span><p class="en">Table 11: A comparison of multilingual speech pre-training in state-of-the-art ASR and S2TT models. †Estimated from the part of data that has language information.</p><p class="zh">表 11：最先进 ASR 与 S2TT 模型中多语言语音预训练的对比。†根据有语言信息的数据部分估算。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Conformer</th><th></th><th>X2T</th></tr><tr><th></th><th>SEAMLESSM4T-NLLB</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Speech Encoder</th><th></th><th>(ASR, T2TT, S2TT)</th></tr><tr><th>codebooks</th><th>(fra) le chat s’est assis</th><th>W2V-BERT 2.0</th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Transformer</td><td></td><td></td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td>Transformer</td></tr>
 <tr><td></td><td>Text Decoder</td><td></td><td></td><td></td></tr>
 <tr><td>Conformer</td><td></td><td></td><td>Knowledge distillation</td><td>Text Decoder</td></tr>
@@ -1807,12 +1807,12 @@ S2TT 和 ASR，(2) 浅层 T2U 模型（在 Inaguma et al. [2023] 中称为 T2U �
 
 
 
-<div class="cap" id="tab-model-8-1"><span class="cap-k">表</span><p class="en">Table 16: Multitasking X2T results. Performance of SeamlessM4T-Large on X2T tasks (S2TT, ASR and T2TT) compared to SOTA direct translation models. For Fleurs S2TT X–eng, we report the average BLEU scores over languages Whisper supports. For Fleurs ASR, we report the average normalized WER over languages supported by both SeamlessM4T and Whisper. For MT, we average chrF++ scores over the supported written languages in SeamlessM4T. *: MMS is CTC-based, and this version decodes with an n-gram language model for each language. Note that for all external models included in this comparison, we lifted the results reported in their respective papers and matched their evaluation and scoring pipeline for a fair comparison.12</p><p class="zh">表 16：多任务 X2T 结果。SeamlessM4T-Large 在 X2T 任务（S2TT、ASR、T2TT）上与 SOTA 直接翻译模型的性能对比。Fleurs S2TT X–eng 报告 Whisper 所支持语言上的平均 BLEU；Fleurs ASR 报告 SeamlessM4T 与 Whisper 共同支持语言上的平均归一化 WER；MT 在 SeamlessM4T 支持的书面语言上平均 chrF++。*：MMS 基于 CTC，该版本为每种语言用 n-gram 语言模型解码。注意：对本比较中的所有外部模型，我们直接引用其各自论文报告的结果，并匹配其评测与计分管线以保证公平。12</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th>size (n=77)</th><th></th><th>(n=54)</th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th>(n=95) (n=95)</th><th></th></tr></thead><tbody><tr><td>NLLB-3.3B</td><td></td><td></td><td>3.3B</td><td></td><td>x</td><td>x</td><td>60.7</td><td></td><td>49.6</td></tr>
-<tr><td></td><td>Whisper-Large-v2</td><td></td><td>1.5B</td><td></td><td>41.7</td><td>43.7</td><td>x</td><td></td><td>x</td></tr>
-<tr><td></td><td>MMS-L61-noLM-LSAH</td><td></td><td>1.0B</td><td></td><td>x</td><td>31.0</td><td>x</td><td></td><td>x</td></tr>
-<tr><td></td><td></td><td>MMS-L1107-CCLM-LSAH 1.0B∗</td><td></td><td></td><td>x</td><td>18.7</td><td>x</td><td></td><td>x</td></tr>
-<tr><td></td><td>SeamlessM4T-Medium</td><td></td><td>1.2B</td><td></td><td>21.9</td><td>22.0</td><td>55.4</td><td></td><td>48.4</td></tr>
-<tr><td></td><td>SeamlessM4T-Large</td><td></td><td>2.3B</td><td></td><td>23.1</td><td>23.7</td><td>60.8</td><td></td><td>50.9</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-model-8-1"><span class="cap-k">表</span><p class="en">Table 16: Multitasking X2T results. Performance of SeamlessM4T-Large on X2T tasks (S2TT, ASR and T2TT) compared to SOTA direct translation models. For Fleurs S2TT X–eng, we report the average BLEU scores over languages Whisper supports. For Fleurs ASR, we report the average normalized WER over languages supported by both SeamlessM4T and Whisper. For MT, we average chrF++ scores over the supported written languages in SeamlessM4T. *: MMS is CTC-based, and this version decodes with an n-gram language model for each language. Note that for all external models included in this comparison, we lifted the results reported in their respective papers and matched their evaluation and scoring pipeline for a fair comparison.12</p><p class="zh">表 16：多任务 X2T 结果。SeamlessM4T-Large 在 X2T 任务（S2TT、ASR、T2TT）上与 SOTA 直接翻译模型的性能对比。Fleurs S2TT X–eng 报告 Whisper 所支持语言上的平均 BLEU；Fleurs ASR 报告 SeamlessM4T 与 Whisper 共同支持语言上的平均归一化 WER；MT 在 SeamlessM4T 支持的书面语言上平均 chrF++。*：MMS 基于 CTC，该版本为每种语言用 n-gram 语言模型解码。注意：对本比较中的所有外部模型，我们直接引用其各自论文报告的结果，并匹配其评测与计分管线以保证公平。12</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>size</th><th>(n=77)</th><th>(n=54)</th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>(n=95)</th><th>(n=95)</th></tr></thead><tbody><tr><td>NLLB-3.3B</td><td></td><td>3.3B</td><td>x</td><td>x</td><td>60.7</td><td>49.6</td></tr>
+<tr><td></td><td>Whisper-Large-v2</td><td>1.5B</td><td>41.7</td><td>43.7</td><td>x</td><td>x</td></tr>
+<tr><td></td><td>MMS-L61-noLM-LSAH</td><td>1.0B</td><td>x</td><td>31.0</td><td>x</td><td>x</td></tr>
+<tr><td></td><td>MMS-L1107-CCLM-LSAH</td><td>1.0B∗</td><td>x</td><td>18.7</td><td>x</td><td>x</td></tr>
+<tr><td></td><td>SeamlessM4T-Medium</td><td>1.2B</td><td>21.9</td><td>22.0</td><td>55.4</td><td>48.4</td></tr>
+<tr><td></td><td>SeamlessM4T-Large</td><td>2.3B</td><td>23.1</td><td>23.7</td><td>60.8</td><td>50.9</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-model-8-2">
           <p class="en-lines"><span class="sent" data-sid="s-model-8-2-1"><span class="en">Fleurs S2TT X–eng (↑BLEU)</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-8-2-1"><span class="zh">Fleurs S2TT X–eng（↑BLEU）</span></span></p>
@@ -1827,10 +1827,10 @@ S2TT 和 ASR，(2) 浅层 T2U 模型（在 Inaguma et al. [2023] 中称为 T2U �
 
 
 
-<div class="cap" id="tab-model-9-1"><span class="cap-k">表</span><p class="en">Table 17: Fleurs S2TT X–eng by resource-level. In each resource-level (high, medium and low), we average over languages that are covered by all 3 models. In low†, we exclude low-resource languages that are evaluated as zero-shot by AudioPaLM-2-8B-AST.</p><p class="zh">表 17：按资源水平划分的 Fleurs S2TT X–eng。在每个资源水平（高、中、低）内，对全部被 3 个模型覆盖的语言取平均。low† 中排除了被 AudioPaLM-2-8B-AST 以零样本评测的低资源语言。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>(n=15)</th><th>(n=25)</th><th></th><th>(n=34) (n=23)</th><th></th></tr></thead><tbody><tr><td>Whisper-Large-v2</td><td>24.2</td><td>19.4</td><td>16.1</td><td></td><td>18.1</td></tr>
-<tr><td>AudioPaLM-2-8B-AST</td><td>27.9</td><td>20.9</td><td>18.0</td><td></td><td>22.0</td></tr>
-<tr><td>SeamlessM4T-Medium</td><td>23.9</td><td>21.8</td><td>22.2</td><td></td><td>23.5</td></tr>
-<tr><td>SeamlessM4T-Large</td><td>26.9</td><td>25.2</td><td>25.4</td><td></td><td>27</td></tr></tbody></table></div></div>
+<div class="cap" id="tab-model-9-1"><span class="cap-k">表</span><p class="en">Table 17: Fleurs S2TT X–eng by resource-level. In each resource-level (high, medium and low), we average over languages that are covered by all 3 models. In low†, we exclude low-resource languages that are evaluated as zero-shot by AudioPaLM-2-8B-AST.</p><p class="zh">表 17：按资源水平划分的 Fleurs S2TT X–eng。在每个资源水平（高、中、低）内，对全部被 3 个模型覆盖的语言取平均。low† 中排除了被 AudioPaLM-2-8B-AST 以零样本评测的低资源语言。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>(n=15)</th><th>(n=25)</th><th>(n=34)</th><th>(n=23)</th></tr></thead><tbody><tr><td>Whisper-Large-v2</td><td>24.2</td><td>19.4</td><td>16.1</td><td>18.1</td></tr>
+<tr><td>AudioPaLM-2-8B-AST</td><td>27.9</td><td>20.9</td><td>18.0</td><td>22.0</td></tr>
+<tr><td>SeamlessM4T-Medium</td><td>23.9</td><td>21.8</td><td>22.2</td><td>23.5</td></tr>
+<tr><td>SeamlessM4T-Large</td><td>26.9</td><td>25.2</td><td>25.4</td><td>27</td></tr></tbody></table></div></div>
 <div class="pblk" id="p-model-9-2">
           <p class="en-lines"><span class="sent" data-sid="s-model-9-2-1"><span class="en">directions suggests that this improvement goes beyond sheer supervision, but instead should be attributed to the quality of supervised data and the training recipes.</span></span></p>
           <p class="zh-lines"><span class="sent" data-sid="s-model-9-2-1"><span class="zh">方向上的增益表明，这一提升超出了单纯有监督数据的作用，而应归因于有监督数据的质量与训练配方。</span></span></p>
@@ -1954,7 +1954,7 @@ Configuration Fleurs X–eng (↑BLEU) A w2v-BERT baseline with updated XLS-R da
           
         </div>
 <div class="eq" id="eq-id-4"><code>12.8</code></div>
-<div class="cap" id="tab-id-1"><span class="cap-k">表</span><p class="en">Table 21: Ablation on w2v-BERT variants and training data scaling.</p><p class="zh">表 21：w2v-BERT 变体与训练数据扩展的消融。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>as zero-shot.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Language</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>ASR</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>(code)</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Primary</td><td>Primary</td><td>Mined</td><td>Primary</td><td>Mined</td><td>Primary</td><td>Mined</td><td>Primary</td><td>Mined</td></tr>
+<div class="cap" id="tab-id-1"><span class="cap-k">表</span><p class="en">Table 21: Ablation on w2v-BERT variants and training data scaling.</p><p class="zh">表 21：w2v-BERT 变体与训练数据扩展的消融。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>as zero-shot.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Language</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>ASR</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>(code)</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>Primary</td><td>Primary</td><td>Mined</td><td>Primary</td><td>Mined</td><td>Primary</td><td>Mined</td><td>Primary</td><td>Mined</td></tr>
 <tr><td>arb</td><td>934</td><td>942</td><td>600</td><td>1,959</td><td>600</td><td>899</td><td>736</td><td>895</td><td>681</td></tr>
 <tr><td>ben</td><td>338</td><td>320</td><td>600</td><td>1,987</td><td>499</td><td>292</td><td>246</td><td>652</td><td>221</td></tr>
 <tr><td>eng</td><td>3,845</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
@@ -2020,7 +2020,7 @@ Configuration Fleurs X–eng (↑BLEU) A w2v-BERT baseline with updated XLS-R da
 
 
 
-<div class="cap" id="tab-results-2-1"><span class="cap-k">表</span><p class="en">Table 22: Hours of data in the ablation dataset for the tasks of ASR, S2TT and S2ST, split between eng–X and X–eng when relevant. For each task, we report hours of training data between primary and mined. By default, S2TT mined data is capped at 400 hours in X–eng and at 200 hours in eng–X.</p><p class="zh">表 22：消融数据集中 ASR、S2TT、S2ST 各任务的数据小时数，相关处按 eng–X 与 X–eng 拆分。对每个任务，我们报告 primary 与 mined 训练数据的小时数。默认 S2TT 挖掘数据 X–eng 上限 400 小时、eng–X 上限 200 小时。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>(code)</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th>Primary Primary Mined Primary Mined Primary Mined Primary Mined</th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>arb</td><td>934</td><td>942</td><td>600</td><td>1,959</td><td>600</td><td>899</td><td>736</td><td>895</td><td>681</td></tr>
+<div class="cap" id="tab-results-2-1"><span class="cap-k">表</span><p class="en">Table 22: Hours of data in the ablation dataset for the tasks of ASR, S2TT and S2ST, split between eng–X and X–eng when relevant. For each task, we report hours of training data between primary and mined. By default, S2TT mined data is capped at 400 hours in X–eng and at 200 hours in eng–X.</p><p class="zh">表 22：消融数据集中 ASR、S2TT、S2ST 各任务的数据小时数，相关处按 eng–X 与 X–eng 拆分。对每个任务，我们报告 primary 与 mined 训练数据的小时数。默认 S2TT 挖掘数据 X–eng 上限 400 小时、eng–X 上限 200 小时。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>(code)</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Primary</th><th>Primary</th><th>Mined</th><th>Primary</th><th>Mined</th><th>Primary</th><th>Mined</th><th>Primary</th><th>Mined</th></tr></thead><tbody><tr><td>arb</td><td>934</td><td>942</td><td>600</td><td>1,959</td><td>600</td><td>899</td><td>736</td><td>895</td><td>681</td></tr>
 <tr><td>ben</td><td>338</td><td>320</td><td>600</td><td>1,987</td><td>499</td><td>292</td><td>246</td><td>652</td><td>221</td></tr>
 <tr><td>eng</td><td>3,845</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 <tr><td>hin</td><td>148</td><td>143</td><td>600</td><td>2,066</td><td>600</td><td>138</td><td>466</td><td>656</td><td>430</td></tr>
@@ -2035,7 +2035,7 @@ Configuration Fleurs X–eng (↑BLEU) A w2v-BERT baseline with updated XLS-R da
 <tr><td>tur</td><td>169</td><td>100</td><td>600</td><td>2,135</td><td>600</td><td>156</td><td>375</td><td>998</td><td>411</td></tr>
 <tr><td>urd</td><td>185</td><td>145</td><td>600</td><td>1,844</td><td>507</td><td>179</td><td>555</td><td>682</td><td>502</td></tr>
 <tr><td>vie</td><td>194</td><td>151</td><td>600</td><td>2,396</td><td>600</td><td>176</td><td>666</td><td>954</td><td>684</td></tr>
-<tr><td>Total</td><td>9,633</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div>
+<tr><td>Total</td><td>9,633</td><td>19,890</td><td>7,800</td><td>29,068</td><td>2,701</td><td>6,508</td><td>10,103</td><td>11,523</td><td>9,312</td></tr></tbody></table></div></div>
 
 
 <div class="pblk" id="p-results-2-4">
@@ -2106,7 +2106,7 @@ Data D1: S2TT data D2: D1+ASR data D3: D2+Mined data Task S2TT ASR∗ T2TT S2TT 
 <div class="eq" id="eq-experimental-setup-4-4"><code>26.6 36.4 36.8 26.7 16.8 36.1 27.6 16.3 35.4</code></div>
 <div class="eq" id="eq-experimental-setup-4-5"><code>L3: L2 + LKD</code></div>
 <div class="eq" id="eq-experimental-setup-4-6"><code>27.1 35.9 36.7 27.2 16.2 36.1 28.3 15.8 35.3</code></div>
-<div class="cap" id="tab-experimental-setup-4-1"><span class="cap-k">表</span><p class="en">Table 23: Ablations on multitasking objectives in three different data setups. Results are reported on Fleurs dev.</p><p class="zh">表 23：三种不同数据设置下多任务目标的消融。结果在 Fleurs dev 上报告。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>to the desired amount of additional data.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Table 24 reports the results of models trained with increasing</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>X–eng</th><th></th><th></th><th>eng–X</th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td>(n=14)</td><td></td><td></td><td>(n=14)</td><td></td></tr>
+<div class="cap" id="tab-experimental-setup-4-1"><span class="cap-k">表</span><p class="en">Table 23: Ablations on multitasking objectives in three different data setups. Results are reported on Fleurs dev.</p><p class="zh">表 23：三种不同数据设置下多任务目标的消融。结果在 Fleurs dev 上报告。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>to the desired amount of additional data.</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th>Table 24 reports the results of models trained with increasing</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th></th><th></th><th>X–eng</th><th></th><th></th><th>eng–X</th><th></th></tr></thead><tbody><tr><td></td><td></td><td></td><td>(n=14)</td><td></td><td></td><td>(n=14)</td><td></td></tr>
 <tr><td>Data</td><td>setting</td><td>↑BLEU</td><td></td><td>∆</td><td>↑BLEU</td><td></td><td>∆</td></tr>
 <tr><td></td><td></td><td>23.9</td><td></td><td></td><td>29.0</td><td></td><td></td></tr>
 <tr><td></td><td>+ 200H mined</td><td>25.9</td><td></td><td>+2.0</td><td>29.4</td><td></td><td>+0.4</td></tr>
@@ -2679,7 +2679,7 @@ Direction Lang XSTS (calibrated) % XSTS 3+ % XSTS 4+ Items Seamls1 Wspr2 Hum3 Se
 1 SeamlessM4T-Large using fairseq generations 2 Whisper-Large-v2 3 Human reference</span></span></p>
           
         </div>
-<div class="cap" id="tab-xsts-results-for-the-s2tt-task-1"><span class="cap-k">表</span><p class="en">Table 30: Full calibrated XSTS S2TT results; bootstrapped 95% CI widths are ∼±0.1 on average. %3+ and %4+ refer to the percent of a language’s evaluated sentences with (uncalibrated) median scores equal to or greater than 3 and 4 respectively.</p><p class="zh">表 30：完整校准后的 XSTS S2TT 结果；Bootstrap 95% 置信区间宽度平均约 ±0.1。%3+ 与 %4+ 分别指某语言被评句子中、（未校准）中位数 ≥3 与 ≥4 的百分比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>XSTS (calibrated)</th><th></th><th></th><th>% XSTS 3+</th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>arb</td><td>4.53</td><td>–</td><td>4.61</td><td>90.2</td><td>–</td><td>96.8</td></tr>
+<div class="cap" id="tab-xsts-results-for-the-s2tt-task-1"><span class="cap-k">表</span><p class="en">Table 30: Full calibrated XSTS S2TT results; bootstrapped 95% CI widths are ∼±0.1 on average. %3+ and %4+ refer to the percent of a language’s evaluated sentences with (uncalibrated) median scores equal to or greater than 3 and 4 respectively.</p><p class="zh">表 30：完整校准后的 XSTS S2TT 结果；Bootstrap 95% 置信区间宽度平均约 ±0.1。%3+ 与 %4+ 分别指某语言被评句子中、（未校准）中位数 ≥3 与 ≥4 的百分比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Lang</th><th></th><th>XSTS (calibrated)</th><th></th><th></th><th>% XSTS 3+</th><th></th></tr><tr><th></th><th>Seamls1</th><th>Wspr2</th><th>Hum3</th><th>Seamls</th><th>Wspr</th><th>Hum</th></tr></thead><tbody><tr><td>arb</td><td>4.53</td><td>–</td><td>4.61</td><td>90.2</td><td>–</td><td>96.8</td></tr>
 <tr><td>ben</td><td>4.35</td><td>–</td><td>4.49</td><td>92.1</td><td>–</td><td>96.8</td></tr>
 <tr><td>cat</td><td>4.73</td><td>–</td><td>4.82</td><td>90.1</td><td>–</td><td>95.9</td></tr>
 <tr><td>cmn</td><td>4.03</td><td>–</td><td>4.69</td><td>70.1</td><td>–</td><td>98.0</td></tr>
@@ -2928,7 +2928,7 @@ Direction Lang XSTS (calibrated) % XSTS 3+ % XSTS 4+ Items Seamls1 Wspr2 Hum3 Se
 1 SeamlessM4T-Large 2 Whisper-Large-v2 3 Human reference</span></span></p>
           
         </div>
-<div class="cap" id="tab-xsts-results-for-s2st-task-1"><span class="cap-k">表</span><p class="en">Table 32: Full calibrated XSTS S2ST results; bootstrapped 95% CI widths are ∼±0.1 on average. %3+ and %4+ refer to the percent of a language’s evaluated sentences with median (uncalibrated) XSTS scores equal to or greater than 3 and 4 respectively.</p><p class="zh">表 32：完整校准后的 XSTS S2ST 结果；Bootstrap 95% 置信区间宽度平均约 ±0.1。%3+ 与 %4+ 分别指某语言被评句子中、（未校准）中位 XSTS ≥3 与 ≥4 的百分比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>XSTS (calibrated)</th><th></th><th></th><th>% XSTS 3+</th><th></th></tr><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>arb</td><td>3.55</td><td>–</td><td>4.59</td><td>51.5</td><td>–</td><td>95.4</td></tr>
+<div class="cap" id="tab-xsts-results-for-s2st-task-1"><span class="cap-k">表</span><p class="en">Table 32: Full calibrated XSTS S2ST results; bootstrapped 95% CI widths are ∼±0.1 on average. %3+ and %4+ refer to the percent of a language’s evaluated sentences with median (uncalibrated) XSTS scores equal to or greater than 3 and 4 respectively.</p><p class="zh">表 32：完整校准后的 XSTS S2ST 结果；Bootstrap 95% 置信区间宽度平均约 ±0.1。%3+ 与 %4+ 分别指某语言被评句子中、（未校准）中位 XSTS ≥3 与 ≥4 的百分比。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Lang</th><th></th><th>XSTS (calibrated)</th><th></th><th></th><th>% XSTS 3+</th><th></th></tr><tr><th></th><th>Seamls1</th><th>Wspr2</th><th>Hum3</th><th>Seamls</th><th>Wspr</th><th>Hum</th></tr></thead><tbody><tr><td>arb</td><td>3.55</td><td>–</td><td>4.59</td><td>51.5</td><td>–</td><td>95.4</td></tr>
 <tr><td>ben</td><td>4.09</td><td>–</td><td>4.56</td><td>80.4</td><td>–</td><td>96.8</td></tr>
 <tr><td>cat</td><td>4.3</td><td>–</td><td>4.85</td><td>77.7</td><td>–</td><td>98.3</td></tr>
 <tr><td>cmn</td><td>3.06</td><td>–</td><td>4.74</td><td>31.4</td><td>–</td><td>98.3</td></tr>
@@ -4863,60 +4863,61 @@ or educational contexts [Iranzo-Sánchez et al., 2022; Rybakov et al., 2022].</s
 <div class="eq" id="eq-B-428"><code>62 55</code></div>
 <div class="eq" id="eq-B-429"><code>low</code></div>
 <div class="eq" id="eq-B-430"><code>2063</code></div>
-<div class="cap" id="tab-B-1"><span class="cap-k">表</span><p class="en">Table 38: Statistics of ASR and S2TT data used to train our SeamlessM4T model. We list the data size in hours of speech between primary (P) i.e., open-source S2TT and pseudo-labeled ASR data, and mined (M). For each language we distinguish between eng–X for translating from English into that language, and X–eng for translating into English. We qualify as high-resource, languages with more than 1000 hours of supervision. Languages with between 500 and 1000 hours are dubbed medium-resource, and languages with less than 500 hours are low-resource. If a language is not supervised during the 1+2 stages of finetuning then it is evaluated as zero-shot.</p><p class="zh">表 38：训练 SeamlessM4T 模型所用的 ASR 与 S2TT 数据统计。我们以语音小时数列出数据规模，分 primary（P，开源 S2TT 与伪标注 ASR 数据）与 mined（M）。对每种语言我们区分 eng–X（从英语译入该语言）与 X–eng（译入英语）。我们把监督数据超过 1000 小时的语言称为高资源，500–1000 小时为中资源，少于 500 小时为低资源。在第 1+2 阶段微调中未被监督的语言以零样本方式评测。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th>Total</th><th></th><th>40,012 50,596 12,682</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>afr</td><td>106</td><td>101</td><td></td><td>low</td><td>2069</td><td>lit</td><td>40</td><td>283</td><td></td><td>low</td><td></td><td>1920</td><td></td></tr>
-<tr><td>amh</td><td>54</td><td>49</td><td></td><td>low</td><td>1921</td><td>ltz</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td></td><td>0</td><td></td></tr>
-<tr><td>arb</td><td>934</td><td>942</td><td>400</td><td>high</td><td>1959</td><td>lug</td><td>369</td><td>368</td><td></td><td></td><td>medium 1890</td><td></td><td></td></tr>
-<tr><td>ary</td><td>97</td><td>95</td><td></td><td>low</td><td>1776</td><td>luo</td><td>0</td><td>0</td><td></td><td></td><td>zero-shot 1975</td><td></td><td></td></tr>
-<tr><td>arz</td><td>93</td><td>92</td><td></td><td>low</td><td>2014</td><td>lvs</td><td>100</td><td>98</td><td></td><td>low</td><td></td><td>1779</td><td></td></tr>
-<tr><td>asm</td><td>77</td><td>68</td><td></td><td>low</td><td>1698</td><td>mai</td><td>0</td><td>0</td><td></td><td></td><td>zero-shot 2004</td><td></td><td></td></tr>
-<tr><td>ast</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td>mal</td><td>110</td><td>57</td><td></td><td>low</td><td></td><td>1754</td><td></td></tr>
-<tr><td>azj</td><td>95</td><td>94</td><td></td><td>low</td><td>1901</td><td>mar</td><td>112</td><td>108</td><td></td><td>low</td><td></td><td>1848</td><td></td></tr>
-<tr><td>bel</td><td>1160</td><td>1157</td><td></td><td>high</td><td>1641</td><td>mkd</td><td>145</td><td>143</td><td></td><td>low</td><td></td><td>1918</td><td></td></tr>
-<tr><td>ben</td><td>338</td><td>320</td><td>400</td><td>high</td><td>1987</td><td></td><td>157</td><td>151</td><td>74</td><td>low</td><td></td><td>1699</td><td>200</td></tr>
-<tr><td>bos</td><td>99</td><td>99</td><td></td><td>low</td><td>2113</td><td>mni</td><td>0</td><td>0</td><td></td><td></td><td>zero-shot 1257</td><td></td><td></td></tr>
-<tr><td>bul</td><td>103</td><td>102</td><td></td><td>low</td><td>1881</td><td>mri</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td></td><td>0</td><td></td></tr>
-<tr><td>cat</td><td>1767</td><td>1758</td><td>400</td><td>high</td><td>1781</td><td></td><td>137</td><td>125</td><td></td><td>low</td><td></td><td>1860</td><td></td></tr>
-<tr><td>ceb</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>2020</td><td>nld</td><td></td><td></td><td>400</td><td>high</td><td></td><td>2249</td><td>200</td></tr>
-<tr><td>ces</td><td>189</td><td>442</td><td>400</td><td>high</td><td>2066</td><td>nor</td><td>214</td><td>193</td><td></td><td>low</td><td></td><td>2134</td><td></td></tr>
-<tr><td>ckb</td><td>93</td><td>92</td><td></td><td>low</td><td>2001</td><td>npi</td><td>153</td><td>129</td><td></td><td>low</td><td></td><td>1714</td><td></td></tr>
-<tr><td>cmn</td><td>9784</td><td>9027</td><td>400</td><td>high</td><td>1947</td><td>nso</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td></td><td>0</td><td></td></tr>
-<tr><td>cym</td><td>100</td><td>96</td><td>400</td><td>medium</td><td>1676</td><td>nya</td><td>103</td><td>99</td><td></td><td>low</td><td></td><td>2058</td><td></td></tr>
-<tr><td>dan</td><td>161</td><td>371</td><td>400</td><td>medium</td><td>1954</td><td>oci</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td></td><td>0</td><td></td></tr>
-<tr><td>deu</td><td>3354</td><td>3490</td><td></td><td>high</td><td>2043</td><td>ory</td><td>89</td><td>86</td><td></td><td>low</td><td></td><td>1721</td><td></td></tr>
-<tr><td>ell</td><td>345</td><td>339</td><td></td><td>medium</td><td>1725</td><td>pan</td><td>196</td><td>193</td><td></td><td>low</td><td></td><td>1641</td><td></td></tr>
-<tr><td>eng</td><td>3845</td><td>0</td><td></td><td>high</td><td>0</td><td>pbt</td><td>131</td><td>121</td><td>400</td><td></td><td>medium 1847</td><td></td><td></td></tr>
-<tr><td>est</td><td>133</td><td>130</td><td>400</td><td>medium</td><td>1803</td><td>pes</td><td>386</td><td>68</td><td></td><td>low</td><td></td><td>1980</td><td></td></tr>
-<tr><td>eus</td><td>276</td><td>265</td><td></td><td>medium</td><td>1998</td><td>pol</td><td>341</td><td>446</td><td>400</td><td>high</td><td></td><td>1914</td><td>200</td></tr>
-<tr><td>fin</td><td>182</td><td>449</td><td>400</td><td>high</td><td>1933</td><td></td><td>269</td><td>246</td><td>400</td><td></td><td>medium 2250</td><td></td><td>200</td></tr>
-<tr><td>fra</td><td>2123</td><td>2247</td><td></td><td>high</td><td>2304</td><td>ron</td><td>182</td><td>443</td><td>400</td><td>high</td><td></td><td>2131</td><td>200</td></tr>
-<tr><td>fuv</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td>rus</td><td>264</td><td>144</td><td>400</td><td></td><td>medium 2161</td><td></td><td>200</td></tr>
-<tr><td>gaz</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>1766</td><td>sat</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td></td><td>0</td><td></td></tr>
-<tr><td>gle</td><td>56</td><td>55</td><td></td><td>low</td><td>1973</td><td>slk</td><td>142</td><td>390</td><td>400</td><td></td><td>medium 1931</td><td></td><td>200</td></tr>
-<tr><td>glg</td><td>123</td><td>121</td><td></td><td>low</td><td>2116</td><td>slv</td><td>107</td><td>370</td><td></td><td>low</td><td></td><td>1800</td><td></td></tr>
-<tr><td>guj</td><td>143</td><td>138</td><td></td><td>low</td><td>1990</td><td>sna</td><td>0</td><td>0</td><td></td><td></td><td>zero-shot 2067</td><td></td><td></td></tr>
-<tr><td>hau</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td>snd</td><td>0</td><td>0</td><td></td><td></td><td>zero-shot 1958</td><td></td><td></td></tr>
-<tr><td>heb</td><td>96</td><td>96</td><td></td><td>low</td><td>2092</td><td>som</td><td>143</td><td>140</td><td></td><td>low</td><td></td><td>1851</td><td></td></tr>
-<tr><td>hin</td><td>148</td><td>143</td><td>400</td><td>medium</td><td>2066</td><td>spa</td><td></td><td></td><td></td><td>high</td><td></td><td>2505</td><td>200</td></tr>
-<tr><td>hrv</td><td>308</td><td>219</td><td></td><td>medium</td><td>2119</td><td>srp</td><td>101</td><td>98</td><td></td><td>low</td><td></td><td>1910</td><td></td></tr>
-<tr><td>hun</td><td>260</td><td>474</td><td></td><td>medium</td><td>1900</td><td>swe</td><td>129</td><td>91</td><td></td><td>low</td><td></td><td>1810</td><td>200</td></tr>
-<tr><td>hye</td><td>148</td><td>146</td><td></td><td>low</td><td>1696</td><td>swh</td><td>361</td><td>50</td><td>400</td><td></td><td>medium 1930</td><td></td><td>200</td></tr>
-<tr><td>ibo</td><td>35</td><td>28</td><td></td><td>low</td><td>1738</td><td>tam</td><td>256</td><td>64</td><td>400</td><td></td><td>medium 1569</td><td></td><td></td></tr>
-<tr><td>ind</td><td>250</td><td>254</td><td>400</td><td>medium</td><td>1818</td><td>tel</td><td>89</td><td>80</td><td>400</td><td></td><td>medium 1934</td><td></td><td></td></tr>
-<tr><td>isl</td><td>132</td><td>130</td><td></td><td>low</td><td>2059</td><td>tgk</td><td>99</td><td>98</td><td></td><td>low</td><td></td><td>1820</td><td></td></tr>
-<tr><td>ita</td><td>591</td><td>910</td><td>400</td><td>high</td><td>2278</td><td>tgl</td><td>99</td><td>93</td><td>400</td><td></td><td>medium 2015</td><td></td><td></td></tr>
-<tr><td>jav</td><td>302</td><td>301</td><td></td><td>medium</td><td>2122</td><td>tha</td><td>189</td><td>59</td><td>400</td><td></td><td>medium 1941</td><td></td><td>101</td></tr>
-<tr><td>jpn</td><td>381</td><td>15141</td><td>400</td><td>high</td><td>1798</td><td>tur</td><td>169</td><td>100</td><td>400</td><td></td><td>medium 2135</td><td></td><td>200</td></tr>
-<tr><td>kam</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td>umb</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td></td><td>0</td><td></td></tr>
-<tr><td>kan</td><td>124</td><td>121</td><td>208</td><td>low</td><td>1954</td><td>ukr</td><td>132</td><td>75</td><td>400</td><td></td><td>medium 2052</td><td></td><td>200</td></tr>
-<tr><td>kat</td><td>195</td><td>185</td><td></td><td>low</td><td>1639</td><td>urd</td><td>185</td><td>145</td><td>400</td><td></td><td>medium 1844</td><td></td><td>200</td></tr>
-<tr><td>kaz</td><td>330</td><td>327</td><td></td><td>medium</td><td>1895</td><td>uzn</td><td>166</td><td>96</td><td>400</td><td></td><td>medium 1801</td><td></td><td>200</td></tr>
-<tr><td>kea</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td>vie</td><td>194</td><td>151</td><td>400</td><td></td><td>medium 2396</td><td></td><td>200</td></tr>
-<tr><td>khk</td><td>152</td><td>148</td><td></td><td>low</td><td>1657</td><td>wol</td><td></td><td></td><td></td><td>zero-shot</td><td></td><td></td><td></td></tr>
-<tr><td>khm</td><td>191</td><td>187</td><td></td><td>low</td><td>1661</td><td>xho</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td></td><td>0</td><td></td></tr>
-<tr><td>kir</td><td>129</td><td>123</td><td></td><td>low</td><td>1839</td><td>yor</td><td>132</td><td>130</td><td></td><td>low</td><td></td><td>1384</td><td></td></tr>
-<tr><td>kor</td><td>387</td><td>201</td><td>400</td><td>medium</td><td>2125</td><td>yue</td><td>167</td><td>124</td><td></td><td>low</td><td></td><td>1931</td><td></td></tr>
-<tr><td>lao</td><td>200</td><td>190</td><td></td><td>low</td><td>1959</td><td>zlm</td><td>155</td><td>161</td><td></td><td>low</td><td></td><td>0</td><td></td></tr>
-<tr><td>lin</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td>zul</td><td>62</td><td>55</td><td></td><td>low</td><td></td><td>2063</td><td></td></tr></tbody></table></div></div>
+<div class="cap" id="tab-B-1"><span class="cap-k">表</span><p class="en">Table 38: Statistics of ASR and S2TT data used to train our SeamlessM4T model. We list the data size in hours of speech between primary (P) i.e., open-source S2TT and pseudo-labeled ASR data, and mined (M). For each language we distinguish between eng–X for translating from English into that language, and X–eng for translating into English. We qualify as high-resource, languages with more than 1000 hours of supervision. Languages with between 500 and 1000 hours are dubbed medium-resource, and languages with less than 500 hours are low-resource. If a language is not supervised during the 1+2 stages of finetuning then it is evaluated as zero-shot.</p><p class="zh">表 38：训练 SeamlessM4T 模型所用的 ASR 与 S2TT 数据统计。我们以语音小时数列出数据规模，分 primary（P，开源 S2TT 与伪标注 ASR 数据）与 mined（M）。对每种语言我们区分 eng–X（从英语译入该语言）与 X–eng（译入英语）。我们把监督数据超过 1000 小时的语言称为高资源，500–1000 小时为中资源，少于 500 小时为低资源。在第 1+2 阶段微调中未被监督的语言以零样本方式评测。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Total</td><td>40,012</td><td>50,596</td><td>12,682</td><td></td><td>17,6827</td><td>5,701</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>afr</td><td>106</td><td>101</td><td></td><td>low</td><td>2069</td><td></td><td>lit</td><td>40</td><td>283</td><td></td><td>low</td><td>1920</td><td></td></tr>
+<tr><td>amh</td><td>54</td><td>49</td><td></td><td>low</td><td>1921</td><td></td><td>ltz</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td></tr>
+<tr><td>arb</td><td>934</td><td>942</td><td>400</td><td>high</td><td>1959</td><td>200</td><td>lug</td><td>369</td><td>368</td><td></td><td>medium</td><td>1890</td><td></td></tr>
+<tr><td>ary</td><td>97</td><td>95</td><td></td><td>low</td><td>1776</td><td></td><td>luo</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>1975</td><td></td></tr>
+<tr><td>arz</td><td>93</td><td>92</td><td></td><td>low</td><td>2014</td><td></td><td>lvs</td><td>100</td><td>98</td><td></td><td>low</td><td>1779</td><td></td></tr>
+<tr><td>asm</td><td>77</td><td>68</td><td></td><td>low</td><td>1698</td><td></td><td>mai</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>2004</td><td></td></tr>
+<tr><td>ast</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td><td>mal</td><td>110</td><td>57</td><td></td><td>low</td><td>1754</td><td></td></tr>
+<tr><td>azj</td><td>95</td><td>94</td><td></td><td>low</td><td>1901</td><td></td><td>mar</td><td>112</td><td>108</td><td></td><td>low</td><td>1848</td><td></td></tr>
+<tr><td>bel</td><td>1160</td><td>1157</td><td></td><td>high</td><td>1641</td><td></td><td>mkd</td><td>145</td><td>143</td><td></td><td>low</td><td>1918</td><td></td></tr>
+<tr><td>ben</td><td>338</td><td>320</td><td>400</td><td>high</td><td>1987</td><td>200</td><td>mlt</td><td>157</td><td>151</td><td>74</td><td>low</td><td>1699</td><td>200</td></tr>
+<tr><td>bos</td><td>99</td><td>99</td><td></td><td>low</td><td>2113</td><td></td><td>mni</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>1257</td><td></td></tr>
+<tr><td>bul</td><td>103</td><td>102</td><td></td><td>low</td><td>1881</td><td></td><td>mri</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td></tr>
+<tr><td>cat</td><td>1767</td><td>1758</td><td>400</td><td>high</td><td>1781</td><td>200</td><td>mya</td><td>137</td><td>125</td><td></td><td>low</td><td>1860</td><td></td></tr>
+<tr><td>ceb</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>2020</td><td></td><td>nld</td><td>1734</td><td>1780</td><td>400</td><td>high</td><td>2249</td><td>200</td></tr>
+<tr><td>ces</td><td>189</td><td>442</td><td>400</td><td>high</td><td>2066</td><td>200</td><td>nor</td><td>214</td><td>193</td><td></td><td>low</td><td>2134</td><td></td></tr>
+<tr><td>ckb</td><td>93</td><td>92</td><td></td><td>low</td><td>2001</td><td></td><td>npi</td><td>153</td><td>129</td><td></td><td>low</td><td>1714</td><td></td></tr>
+<tr><td>cmn</td><td>9784</td><td>9027</td><td>400</td><td>high</td><td>1947</td><td></td><td>nso</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td></tr>
+<tr><td>cym</td><td>100</td><td>96</td><td>400</td><td>medium</td><td>1676</td><td></td><td>nya</td><td>103</td><td>99</td><td></td><td>low</td><td>2058</td><td></td></tr>
+<tr><td>dan</td><td>161</td><td>371</td><td>400</td><td>medium</td><td>1954</td><td>200</td><td>oci</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td></tr>
+<tr><td>deu</td><td>3354</td><td>3490</td><td></td><td>high</td><td>2043</td><td>200</td><td>ory</td><td>89</td><td>86</td><td></td><td>low</td><td>1721</td><td></td></tr>
+<tr><td>ell</td><td>345</td><td>339</td><td></td><td>medium</td><td>1725</td><td></td><td>pan</td><td>196</td><td>193</td><td></td><td>low</td><td>1641</td><td></td></tr>
+<tr><td>eng</td><td>3845</td><td>0</td><td></td><td>high</td><td>0</td><td></td><td>pbt</td><td>131</td><td>121</td><td>400</td><td>medium</td><td>1847</td><td></td></tr>
+<tr><td>est</td><td>133</td><td>130</td><td>400</td><td>medium</td><td>1803</td><td>200</td><td>pes</td><td>386</td><td>68</td><td></td><td>low</td><td>1980</td><td></td></tr>
+<tr><td>eus</td><td>276</td><td>265</td><td></td><td>medium</td><td>1998</td><td></td><td>pol</td><td>341</td><td>446</td><td>400</td><td>high</td><td>1914</td><td>200</td></tr>
+<tr><td>fin</td><td>182</td><td>449</td><td>400</td><td>high</td><td>1933</td><td>200</td><td>por</td><td>269</td><td>246</td><td>400</td><td>medium</td><td>2250</td><td>200</td></tr>
+<tr><td>fra</td><td>2123</td><td>2247</td><td></td><td>high</td><td>2304</td><td>200</td><td>ron</td><td>182</td><td>443</td><td>400</td><td>high</td><td>2131</td><td>200</td></tr>
+<tr><td>fuv</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td><td>rus</td><td>264</td><td>144</td><td>400</td><td>medium</td><td>2161</td><td>200</td></tr>
+<tr><td>gaz</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>1766</td><td></td><td>sat</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td></tr>
+<tr><td>gle</td><td>56</td><td>55</td><td></td><td>low</td><td>1973</td><td></td><td>slk</td><td>142</td><td>390</td><td>400</td><td>medium</td><td>1931</td><td>200</td></tr>
+<tr><td>glg</td><td>123</td><td>121</td><td></td><td>low</td><td>2116</td><td></td><td>slv</td><td>107</td><td>370</td><td></td><td>low</td><td>1800</td><td></td></tr>
+<tr><td>guj</td><td>143</td><td>138</td><td></td><td>low</td><td>1990</td><td></td><td>sna</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>2067</td><td></td></tr>
+<tr><td>hau</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td><td>snd</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>1958</td><td></td></tr>
+<tr><td>heb</td><td>96</td><td>96</td><td></td><td>low</td><td>2092</td><td></td><td>som</td><td>143</td><td>140</td><td></td><td>low</td><td>1851</td><td></td></tr>
+<tr><td>hin</td><td>148</td><td>143</td><td>400</td><td>medium</td><td>2066</td><td>200</td><td>spa</td><td>1514</td><td>1285</td><td></td><td>high</td><td>2505</td><td>200</td></tr>
+<tr><td>hrv</td><td>308</td><td>219</td><td></td><td>medium</td><td>2119</td><td></td><td>srp</td><td>101</td><td>98</td><td></td><td>low</td><td>1910</td><td></td></tr>
+<tr><td>hun</td><td>260</td><td>474</td><td></td><td>medium</td><td>1900</td><td></td><td>swe</td><td>129</td><td>91</td><td></td><td>low</td><td>1810</td><td>200</td></tr>
+<tr><td>hye</td><td>148</td><td>146</td><td></td><td>low</td><td>1696</td><td></td><td>swh</td><td>361</td><td>50</td><td>400</td><td>medium</td><td>1930</td><td>200</td></tr>
+<tr><td>ibo</td><td>35</td><td>28</td><td></td><td>low</td><td>1738</td><td></td><td>tam</td><td>256</td><td>64</td><td>400</td><td>medium</td><td>1569</td><td></td></tr>
+<tr><td>ind</td><td>250</td><td>254</td><td>400</td><td>medium</td><td>1818</td><td>200</td><td>tel</td><td>89</td><td>80</td><td>400</td><td>medium</td><td>1934</td><td></td></tr>
+<tr><td>isl</td><td>132</td><td>130</td><td></td><td>low</td><td>2059</td><td></td><td>tgk</td><td>99</td><td>98</td><td></td><td>low</td><td>1820</td><td></td></tr>
+<tr><td>ita</td><td>591</td><td>910</td><td>400</td><td>high</td><td>2278</td><td>200</td><td>tgl</td><td>99</td><td>93</td><td>400</td><td>medium</td><td>2015</td><td></td></tr>
+<tr><td>jav</td><td>302</td><td>301</td><td></td><td>medium</td><td>2122</td><td></td><td>tha</td><td>189</td><td>59</td><td>400</td><td>medium</td><td>1941</td><td>101</td></tr>
+<tr><td>jpn</td><td>381</td><td>15141</td><td>400</td><td>high</td><td>1798</td><td>200</td><td>tur</td><td>169</td><td>100</td><td>400</td><td>medium</td><td>2135</td><td>200</td></tr>
+<tr><td>kam</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td><td>umb</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td></tr>
+<tr><td>kan</td><td>124</td><td>121</td><td>208</td><td>low</td><td>1954</td><td></td><td>ukr</td><td>132</td><td>75</td><td>400</td><td>medium</td><td>2052</td><td>200</td></tr>
+<tr><td>kat</td><td>195</td><td>185</td><td></td><td>low</td><td>1639</td><td></td><td>urd</td><td>185</td><td>145</td><td>400</td><td>medium</td><td>1844</td><td>200</td></tr>
+<tr><td>kaz</td><td>330</td><td>327</td><td></td><td>medium</td><td>1895</td><td></td><td>uzn</td><td>166</td><td>96</td><td>400</td><td>medium</td><td>1801</td><td>200</td></tr>
+<tr><td>kea</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td><td>vie</td><td>194</td><td>151</td><td>400</td><td>medium</td><td>2396</td><td>200</td></tr>
+<tr><td>khk</td><td>152</td><td>148</td><td></td><td>low</td><td>1657</td><td></td><td>wol</td><td></td><td></td><td></td><td>zero-shot</td><td></td><td></td></tr>
+<tr><td>khm</td><td>191</td><td>187</td><td></td><td>low</td><td>1661</td><td></td><td>xho</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td></tr>
+<tr><td>kir</td><td>129</td><td>123</td><td></td><td>low</td><td>1839</td><td></td><td>yor</td><td>132</td><td>130</td><td></td><td>low</td><td>1384</td><td></td></tr>
+<tr><td>kor</td><td>387</td><td>201</td><td>400</td><td>medium</td><td>2125</td><td></td><td>yue</td><td>167</td><td>124</td><td></td><td>low</td><td>1931</td><td></td></tr>
+<tr><td>lao</td><td>200</td><td>190</td><td></td><td>low</td><td>1959</td><td></td><td>zlm</td><td>155</td><td>161</td><td></td><td>low</td><td>0</td><td></td></tr>
+<tr><td>lin</td><td>0</td><td>0</td><td></td><td>zero-shot</td><td>0</td><td></td><td>zul</td><td>62</td><td>55</td><td></td><td>low</td><td>2063</td><td></td></tr></tbody></table></div></div>
 
 <div class="pblk" id="p-B-3">
           <p class="en-lines"><span class="sent" data-sid="s-B-3-1"><span class="en">S2ST X–eng eng–X Language Primary Mined Primary Mined Total</span></span></p>
@@ -5038,9 +5039,9 @@ or educational contexts [Iranzo-Sánchez et al., 2022; Rybakov et al., 2022].</s
 
 
 
-<div class="eq" id="eq-B-542"><code>mlt</code></div>
+
 <div class="eq" id="eq-B-543"><code>149 46 688 39</code></div>
-<div class="eq" id="eq-B-544"><code>mya</code></div>
+
 
 
 <div class="eq" id="eq-B-547"><code>1,777 1,061 1,003 962</code></div>
@@ -5062,7 +5063,7 @@ or educational contexts [Iranzo-Sánchez et al., 2022; Rybakov et al., 2022].</s
 <div class="eq" id="eq-B-563"><code>366 0 881 0</code></div>
 
 <div class="eq" id="eq-B-565"><code>591 667 726 657</code></div>
-<div class="eq" id="eq-B-566"><code>por</code></div>
+
 <div class="eq" id="eq-B-567"><code>355 606 983 508</code></div>
 
 <div class="eq" id="eq-B-569"><code>469 588 951 521</code></div>
@@ -5114,7 +5115,8 @@ or educational contexts [Iranzo-Sánchez et al., 2022; Rybakov et al., 2022].</s
 
 
 
-<div class="cap" id="tab-B-2"><span class="cap-k">表</span><p class="en">Table 39: Statistics of S2ST data used to train our SeamlessM4T model. We list the data size in hours of speech. For each language we distinguish between Eng-X for translating from English into that language, and X-Eng for translating into English.</p><p class="zh">表 39：训练 SeamlessM4T 模型所用的 S2ST 数据统计。我们以语音小时数列出数据规模，并对每种语言区分 eng–X（从英语译入该语言）与 X–eng（译入英语）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th>Total 26,254 23,171 49,425 21,983</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>afr</td><td>100</td><td>0</td><td>0</td><td>0</td><td>lin</td><td>52</td><td>0</td><td>0</td><td>0</td></tr>
+<div class="cap" id="tab-B-2"><span class="cap-k">表</span><p class="en">Table 39: Statistics of S2ST data used to train our SeamlessM4T model. We list the data size in hours of speech. For each language we distinguish between Eng-X for translating from English into that language, and X-Eng for translating into English.</p><p class="zh">表 39：训练 SeamlessM4T 模型所用的 S2ST 数据统计。我们以语音小时数列出数据规模，并对每种语言区分 eng–X（从英语译入该语言）与 X–eng（译入英语）。</p><div class="ptab-wrap"><table class="ptab"><tbody><tr><td>Total</td><td>26,254</td><td>23,171</td><td>49,425</td><td>21,983</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>afr</td><td>100</td><td>0</td><td>0</td><td>0</td><td>lin</td><td>52</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>amh</td><td>46</td><td>0</td><td>0</td><td>0</td><td>lit</td><td>279</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>arb</td><td>898</td><td>736</td><td>895</td><td>681</td><td>ltz</td><td>2</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>ary</td><td>94</td><td>0</td><td>0</td><td>0</td><td>lug</td><td>362</td><td>0</td><td>0</td><td>0</td></tr>
@@ -5123,36 +5125,36 @@ or educational contexts [Iranzo-Sánchez et al., 2022; Rybakov et al., 2022].</s
 <tr><td>ast</td><td>0</td><td>0</td><td>0</td><td>0</td><td>mar</td><td>106</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>azj</td><td>92</td><td>0</td><td>0</td><td>0</td><td>mkd</td><td>141</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>bel</td><td>285</td><td>0</td><td>0</td><td>0</td><td>mlt</td><td>149</td><td>46</td><td>688</td><td>39</td></tr>
-<tr><td>ben</td><td>292</td><td>246</td><td>652</td><td></td><td></td><td>123</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>bos</td><td>99</td><td>0</td><td>0</td><td>0</td><td>nld</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>ben</td><td>292</td><td>246</td><td>652</td><td>221</td><td>mya</td><td>123</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>bos</td><td>99</td><td>0</td><td>0</td><td>0</td><td>nld</td><td>1,777</td><td>1,061</td><td>1,003</td><td>962</td></tr>
 <tr><td>bul</td><td>101</td><td>0</td><td>0</td><td>0</td><td>nor</td><td>189</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>cat</td><td>276</td><td>278</td><td>692</td><td>293</td><td>npi</td><td>114</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>ces</td><td>437</td><td>522</td><td>832</td><td></td><td></td><td>99</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>ces</td><td>437</td><td>522</td><td>832</td><td>528</td><td>nya</td><td>99</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>ckb</td><td>89</td><td>0</td><td>0</td><td>0</td><td>oci</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>cmn</td><td></td><td></td><td>350 1,318 857 1,388 ory</td><td></td><td></td><td>84</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>cym</td><td>93</td><td>197</td><td>700</td><td></td><td></td><td>188</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>dan</td><td>368</td><td>420</td><td>684</td><td></td><td></td><td>114</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>deu</td><td></td><td></td><td>2,570 1,661 962 1,618 pes</td><td></td><td></td><td>366</td><td>0</td><td>881</td><td>0</td></tr>
+<tr><td>cmn</td><td>350</td><td>1,318</td><td>857</td><td>1,388</td><td>ory</td><td>84</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>cym</td><td>93</td><td>197</td><td>700</td><td>185</td><td>pan</td><td>188</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>dan</td><td>368</td><td>420</td><td>684</td><td>450</td><td>pbt</td><td>114</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>deu</td><td>2,570</td><td>1,661</td><td>962</td><td>1,618</td><td>pes</td><td>366</td><td>0</td><td>881</td><td>0</td></tr>
 <tr><td>ell</td><td>330</td><td>0</td><td>0</td><td>0</td><td>pol</td><td>591</td><td>667</td><td>726</td><td>657</td></tr>
-<tr><td>est</td><td>128</td><td>502</td><td>691</td><td></td><td></td><td>355</td><td>606</td><td>983</td><td>508</td></tr>
+<tr><td>est</td><td>128</td><td>502</td><td>691</td><td>477</td><td>por</td><td>355</td><td>606</td><td>983</td><td>508</td></tr>
 <tr><td>eus</td><td>263</td><td>0</td><td>0</td><td>0</td><td>ron</td><td>469</td><td>588</td><td>951</td><td>521</td></tr>
-<tr><td>fin</td><td>446</td><td>442</td><td>684</td><td>414</td><td>rus</td><td></td><td></td><td></td><td></td></tr>
-<tr><td>fra</td><td></td><td></td><td>2,255 2,438 937 2,303 slk</td><td></td><td></td><td>402</td><td>427</td><td>686</td><td>426</td></tr>
+<tr><td>fin</td><td>446</td><td>442</td><td>684</td><td>414</td><td>rus</td><td>290</td><td>1,093</td><td>959</td><td>1,075</td></tr>
+<tr><td>fra</td><td>2,255</td><td>2,438</td><td>937</td><td>2,303</td><td>slk</td><td>402</td><td>427</td><td>686</td><td>426</td></tr>
 <tr><td>gle</td><td>55</td><td>0</td><td>0</td><td>0</td><td>slv</td><td>377</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>glg</td><td>120</td><td>0</td><td>0</td><td>0</td><td>som</td><td>138</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>guj</td><td>135</td><td>0</td><td>0</td><td>0</td><td>spa</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>guj</td><td>135</td><td>0</td><td>0</td><td>0</td><td>spa</td><td>1,694</td><td>2,335</td><td>1,035</td><td>2,209</td></tr>
 <tr><td>hau</td><td>78</td><td>0</td><td>0</td><td>0</td><td>srp</td><td>99</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>heb</td><td>96</td><td>0</td><td>0</td><td>0</td><td>swe</td><td>124</td><td>0</td><td>688</td><td>0</td></tr>
-<tr><td>hin</td><td>138</td><td>466</td><td>656</td><td></td><td></td><td>342</td><td>411</td><td>682</td><td>392</td></tr>
+<tr><td>hin</td><td>138</td><td>466</td><td>656</td><td>430</td><td>swh</td><td>342</td><td>411</td><td>682</td><td>392</td></tr>
 <tr><td>hrv</td><td>218</td><td>0</td><td>0</td><td>0</td><td>tam</td><td>241</td><td>664</td><td>654</td><td>685</td></tr>
 <tr><td>hun</td><td>468</td><td>0</td><td>0</td><td>0</td><td>tel</td><td>76</td><td>426</td><td>655</td><td>403</td></tr>
 <tr><td>hye</td><td>141</td><td>0</td><td>0</td><td>0</td><td>tgk</td><td>98</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td>ibo</td><td>24</td><td>0</td><td>0</td><td>0</td><td>tgl</td><td>82</td><td>213</td><td>661</td><td>169</td></tr>
-<tr><td>ind</td><td>248</td><td>443</td><td>684</td><td></td><td></td><td>183</td><td>462</td><td>641</td><td>408</td></tr>
+<tr><td>ind</td><td>248</td><td>443</td><td>684</td><td>375</td><td>tha</td><td>183</td><td>462</td><td>641</td><td>408</td></tr>
 <tr><td>isl</td><td>127</td><td>0</td><td>0</td><td>0</td><td>tur</td><td>156</td><td>375</td><td>998</td><td>411</td></tr>
-<tr><td>ita</td><td>930</td><td></td><td></td><td></td><td></td><td>129</td><td>349</td><td>662</td><td>329</td></tr>
+<tr><td>ita</td><td>930</td><td>716</td><td>1,020</td><td>636</td><td>ukr</td><td>129</td><td>349</td><td>662</td><td>329</td></tr>
 <tr><td>jav</td><td>291</td><td>0</td><td>0</td><td>0</td><td>urd</td><td>179</td><td>555</td><td>682</td><td>502</td></tr>
-<tr><td>jpn</td><td>624</td><td>993</td><td>681</td><td></td><td></td><td>162</td><td>139</td><td>695</td><td>147</td></tr>
+<tr><td>jpn</td><td>624</td><td>993</td><td>681</td><td>779</td><td>uzn</td><td>162</td><td>139</td><td>695</td><td>147</td></tr>
 <tr><td>kan</td><td>119</td><td>170</td><td>703</td><td>135</td><td>vie</td><td>176</td><td>666</td><td>954</td><td>684</td></tr>
 <tr><td>kat</td><td>180</td><td>0</td><td>0</td><td>0</td><td>wol</td><td>13</td><td></td><td>0</td><td>0</td></tr>
 <tr><td>kaz</td><td>319</td><td>0</td><td>0</td><td>0</td><td>xho</td><td>6</td><td>0</td><td>0</td><td>0</td></tr>

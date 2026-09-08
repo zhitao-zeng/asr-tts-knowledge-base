@@ -147,13 +147,15 @@ def build_grid(pg, region_lines):
         else:
             rows_w.append([w[1], [w]])
     # 行内按 x 间隙切单元格：阈值取词间隙分布的 p10 再留 0.5pt 余量
-    # （词内空格 ~2-4pt、列间槽 ≥6pt；VibeVoice 表 2 最小列槽 6.0pt，均值法会被拉到 18 误并）
+    # （词内空格 ~2-4pt、列间槽 ≥6pt；VibeVoice 表 2 最小列槽 6.0pt，均值法会被拉到 18 误并）。
+    # 上限 5.5pt：有的表几乎全是单 token 单元格，间隙分布里根本没有词内空格，
+    # p10 直接落在列间槽上（2608.17492 表 1 p10=17.3pt），把表头指标行整行糊成一个格子
     gaps = []
     for y, ws in rows_w:
         ws = sorted(ws, key=lambda w: w[0])
         for a, b in zip(ws, ws[1:]):
             gaps.append(b[0] - a[2])
-    GAP = max(4.0, sorted(gaps)[len(gaps) // 10] - 0.5) if gaps else 5.5
+    GAP = min(max(4.0, sorted(gaps)[len(gaps) // 10] - 0.5), 5.5) if gaps else 5.5
     row_cells = []  # [[(text, x_center)], ...]
     for y, ws in rows_w:
         ws = sorted(ws, key=lambda w: w[0])
@@ -201,6 +203,8 @@ def build_grid(pg, region_lines):
             headers.append(row0)
         if len(headers) > 4:
             break
+    # 列剪枝可能把只被表头占用的幽灵列清空，丢弃全空表头行
+    headers = [h for h in headers if any(c.strip() for c in h)]
     return headers, rows_out
 
 

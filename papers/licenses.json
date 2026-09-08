@@ -278,5 +278,14 @@
     "redistribution_allowed": false,
     "status": "review",
     "note": "需作者/出版方明确授权方可再分发"
+  },
+  "2608.17492": {
+    "arxiv_id": "2608.17492",
+    "license": "开源",
+    "source_url": "https://arxiv.org/abs/2608.17492",
+    "checked_at": "2026-09-08",
+    "redistribution_allowed": false,
+    "status": "review",
+    "note": "需作者/出版方明确授权方可再分发"
   }
 }

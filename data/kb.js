@@ -1633,6 +1633,70 @@ globalThis.KB = {
       }
     },
     {
+          "id": "fireredtts3",
+          "name": "FireRedTTS3",
+          "org": "小红书",
+          "date": "2026-08",
+          "domain": "TTS",
+          "framework_lines": [
+                "tts_wave"
+          ],
+          "paper_url": "https://arxiv.org/abs/2608.17492",
+          "has_arxiv": true,
+          "source_type": "论文",
+          "pdf_local": "papers/2608.17492.pdf",
+          "license": "开源",
+          "params": "Qwen3-1.7B-Base 主干 + RedAE/DiT",
+          "metrics": {},
+          "summary": "连续表征自回归 TTS：冻结语音理解 Audio Encoder 当语义教师正则化声学特征空间，在表征层抑制自回归误差累积；Base 多语多方言零样本克隆，Instruct 统一克隆/指令造声/语音编辑。",
+          "architecture": "RedAE 连续语音 tokenizer：Encoder/Decoder 单阶段联合训练，把冻结 Audio Encoder（在多种语音理解任务上预训练）的语义注入连续特征空间（Lgen = λadv·Ladv + λmel·Lmel + λfm·Lfm + λsem·Lsem），不加额外语义模块、不多阶段训练。生成侧是简单 LLM-DiT：Qwen3-1.7B-Base 自回归建模 RedAE 表征，DiT 流匹配还原波形。",
+          "training": "Base 变体训多语+多方言零样本克隆（Lbase = Lflow + λstop·Lstop）；Instruct 变体在同一框架加指令条件（Linst = Lflow + Ltext + λstop·Lstop），统一语音克隆、指令控制造声与声学/语义编辑。",
+          "results": [
+                {
+                      "dataset": "Seed-TTS-Eval test-zh",
+                      "metric": "CER / SIM",
+                      "value": "1.01 / 80.9",
+                      "note": "Base；平均可懂度+相似度全场最佳"
+                },
+                {
+                      "dataset": "Seed-TTS-Eval test-en",
+                      "metric": "WER / SIM",
+                      "value": "1.64 / 77.2",
+                      "note": "Base"
+                },
+                {
+                      "dataset": "Seed-TTS-Eval test-hard",
+                      "metric": "CER / SIM",
+                      "value": "6.50 / 78.4",
+                      "note": "Base"
+                },
+                {
+                      "dataset": "Seed-TTS-Eval 平均",
+                      "metric": "WER/CER / SIM",
+                      "value": "3.04 / 78.8",
+                      "note": "全场最低平均错误率（Seed-TTS/VoxCPM2 均 3.65）"
+                }
+          ],
+          "ablation": "语义教师正则化是核心变量：冻结 Audio Encoder 的语义监督改善文本-语音对齐、稳定 AR 生成，且保持 tokenizer 单阶段简单训练。",
+          "limitation": "连续表征 AR 仍自回归，延迟随句长增长；Instruct 的指令编辑能力依赖指令数据构造；论文未给流式/RTF 指标。",
+          "innovation": [
+          "把「语义监督」从额外模块/多阶段流水线简化为冻结理解编码器的表征级正则，是连续 AR TTS 里最简单的抗误差累积方案。"
+        ],
+          "diff_vs": [
+          "FireRedTTS2 → FireRedTTS3：离散 codec 路线换为连续表征 + 冻结语义教师；同门 FireRedASR2 是识别侧姊妹工程。"
+        ],
+          "references": [
+          "arXiv:2608.17492；代码与模型 https://github.com/FireRedTeam/FireRedTTS3"
+        ],
+          "caps": {
+                "stream": false,
+                "long": false,
+                "multi": true,
+                "clone": true,
+                "emot": true
+          }
+    },
+    {
       "id": "zonos2",
       "name": "ZONOS2",
       "org": "Zyphra",
@@ -4280,6 +4344,23 @@ globalThis.INSIGHTS = {
       "insight": "实时变体用 **块级（32 帧/1.28s）AR + 块内并行去噪**，RTF 0.0240、首块 41.6ms、>40× 实时，延迟不再随句长线性涨。代价/边界是：GRPO 强化只在已实现去噪轨迹上算 policy ratio，且持续训练从 Luna-TTS 继承，流式质量高度依赖 block-causal 适配是否充分——Seed-TTS-Eval 四项最佳说明这条路目前站得住。"
     }
   ],
+  "fireredtts3": [
+      {
+          "q": "This paradigm opens new possibilities for voice cloning, instruction-controlled voice design, and speech editing, but remains susceptible to error accumulation during autoregressive generation.",
+          "src": "arXiv:2608.17492 摘要",
+          "insight": "连续表征 AR TTS 的核心矛盾被一句话点破：**连续表征保住了声学细节、借到了文本 LLM 的指令跟随能力，但自回归误差累积没被解决**。此前方案要么加语义模块、要么多阶段训 tokenizer、要么堆复杂 AR 架构——FireRedTTS3 的主张是把问题压回表征层解决，而不是在架构上打补丁。"
+      },
+      {
+          "q": "Specifically, we leverage a frozen Audio Encoder trained on diverse speech understanding tasks as a semantic teacher to regularize the audio feature space.",
+          "src": "arXiv:2608.17492 摘要",
+          "insight": "关键设计：**冻结的语音理解编码器当「语义教师」正则化声学特征空间**（损失里多一项 λsem·Lsem）。语义监督不再需要专门模块或多阶段流水线，RedAE 的 Encoder/Decoder 单阶段联合训练即可。这与 FireRedASR2 一脉相承——理解侧模型反向给生成侧当老师，是小红书 FireRed 系列「理解-生成互养」路线的延续。"
+      },
+      {
+          "q": "Experiments show that FireRedTTS3-Base achieves the best average speech intelligibility and speaker similarity among compared systems on Seed-TTS-Eval and MiniMax-MLS-Test, while FireRedTTS3-Instruct outperforms competing systems on InstructTTSEval and Ming-Freeform-Audio-Edit.",
+          "src": "arXiv:2608.17492 摘要",
+          "insight": "数字层面：Seed-TTS-Eval 上 Base 的平均错误率 3.04（test-en WER 1.64 / test-zh CER 1.01 / test-hard 6.50），低于 Seed-TTS 与 VoxCPM2 的 3.65；SIM 平均 78.8 也是全场最高之一。注意表里第三方对比数字（如对 MiniMax-Speech、Qwen3-TTS 的引用值）与别家论文的自报值存在口径差，横向比较以趋势而非小数点为准。"
+      }
+  ],
   "zonos2": [
     {
       "q": "We pioneer the use of MoE models in the open-source TTS space, building upon the ZAYA1 architecture.",
@@ -5460,6 +5541,7 @@ globalThis.BENCHMARKS = [
      {"id": "higgs2", "v": 1.5, "note": "标注 HiggsAudio-v2 (Boson（论文重建表）"},
      {"id": "fishaudio_s2", "v": 0.54, "note": "标注 Fish Audio S2 (Liao（论文重建表）"},
      {"id": "omnivoice", "v": 0.84, "note": "标注 OmniVoice (Zhu et al（论文重建表）"},
+     {"id": "fireredtts3", "v": 1.01, "note": "FireRedTTS3-Base（论文表 1）"}
   ]
   },
   {
@@ -5491,6 +5573,7 @@ globalThis.BENCHMARKS = [
      {"id": "higgs2", "v": 74.0, "note": "标注 HiggsAudio-v2 (Boson（论文重建表）"},
      {"id": "qwen3_tts", "v": 77.0, "note": "标注 Qwen3-TTS (Hu et al.（论文重建表）"},
      {"id": "omnivoice", "v": 77.7, "note": "标注 OmniVoice (Zhu et al（论文重建表）"},
+     {"id": "fireredtts3", "v": 80.9, "note": "FireRedTTS3-Base（论文表 1）"}
   ]
   },
   {
@@ -5520,6 +5603,7 @@ globalThis.BENCHMARKS = [
      {"id": "higgs2", "v": 2.44, "note": "标注 HiggsAudio-v2 (Boson（论文重建表）"},
      {"id": "fishaudio_s2", "v": 0.99, "note": "标注 Fish Audio S2 (Liao（论文重建表）"},
      {"id": "omnivoice", "v": 1.6, "note": "标注 OmniVoice (Zhu et al（论文重建表）"},
+     {"id": "fireredtts3", "v": 1.64, "note": "FireRedTTS3-Base（论文表 1）"}
   ]
   },
   {
@@ -5547,6 +5631,7 @@ globalThis.BENCHMARKS = [
      {"id": "qwen3_tts", "v": 71.7, "note": "标注 Qwen3-TTS (Hu et al.（论文重建表）"},
      {"id": "omnivoice", "v": 74.1, "note": "标注 OmniVoice (Zhu et al（论文重建表）"},
      {"id": "longcat_audiodit", "v": 78.6, "note": "标注 LongCat-Audio-DiT (X（论文重建表）"},
+     {"id": "fireredtts3", "v": 77.2, "note": "FireRedTTS3-Base（论文表 1）"}
   ]
   },
   {
@@ -5569,6 +5654,7 @@ globalThis.BENCHMARKS = [
      {"id": "indextts2", "v": 75.5, "note": "标注 IndexTTS2 (Zhou et a（论文重建表）"},
      {"id": "higgs2", "v": 65.6, "note": "标注 HiggsAudio-v2 (Boson（论文重建表）"},
      {"id": "qwen3_tts", "v": 74.8, "note": "标注 Qwen3-TTS (Hu et al.（论文重建表）"},
+     {"id": "fireredtts3", "v": 78.4, "note": "FireRedTTS3-Base（论文表 1）"}
   ]
   },
   {

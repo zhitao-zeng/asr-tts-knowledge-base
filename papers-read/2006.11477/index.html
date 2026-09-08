@@ -1005,7 +1005,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 <div class="eq" id="eq-B-29"><code>1.57 -0.64 0.90 -0.31</code></div></section>
 <section>
-      <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">附录 C Libri-light 与 Librispeech 的完整结果</span><span class="t-en">Full results for Libri-light and Librispeech</span></h2><div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 9: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups (cf. Table 1).</p><p class="zh">表 9：在 Libri-light 低资源标注数据设置上训练时，Librispeech dev/test 集上的 WER（参见 Table 1）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>Unlabeled</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>10 min labeled</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>BASE</td><td>LS-960</td><td>None</td><td>46.1</td><td>51.5</td><td>46.9</td><td>50.9</td></tr>
+      <h2 class="sech lv1" id="sec-C"><span class="secnum">C</span> <span class="t-zh">附录 C Libri-light 与 Librispeech 的完整结果</span><span class="t-en">Full results for Libri-light and Librispeech</span></h2><div class="cap" id="tab-C-1"><span class="cap-k">表</span><p class="en">Table 9: WER on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups (cf. Table 1).</p><p class="zh">表 9：在 Libri-light 低资源标注数据设置上训练时，Librispeech dev/test 集上的 WER（参见 Table 1）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Unlabeled</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th>clean</th><th>other</th><th>clean</th><th>other</th></tr><tr><th>10 min labeled</th><th></th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td>BASE</td><td>LS-960</td><td>None</td><td>46.1</td><td>51.5</td><td>46.9</td><td>50.9</td></tr>
 <tr><td></td><td></td><td>4-gram</td><td>8.9</td><td>15.7</td><td>9.1</td><td>15.6</td></tr>
 <tr><td></td><td></td><td>Transf.</td><td>6.6</td><td>13.2</td><td>6.9</td><td>12.9</td></tr>
 <tr><td>LARGE</td><td>LS-960</td><td>None</td><td>43.0</td><td>46.3</td><td>43.5</td><td>45.3</td></tr>
@@ -1044,11 +1044,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 <tr><td>LARGE</td><td>LV-60k</td><td>None</td><td>3.3</td><td>6.5</td><td>3.1</td><td>6.3</td></tr>
 <tr><td></td><td></td><td>4-gram</td><td>1.8</td><td>4.5</td><td>2.3</td><td>4.6</td></tr>
 <tr><td></td><td></td><td>Transf.</td><td>1.9</td><td>4.0</td><td>2.0</td><td>4.0</td></tr></tbody></table></div></div>
-<div class="pblk" id="p-C-1">
-          <p class="en-lines"><span class="sent" data-sid="s-C-1-1"><span class="en">Model Unlabeled LM dev test data clean other clean other</span></span></p>
-          <p class="zh-lines"><span class="sent" data-sid="s-C-1-1"><span class="zh">表头：模型（Model）｜无标注数据（Unlabeled data）｜语言模型（LM）｜dev（clean/other）｜test（clean/other）。</span></span></p>
-          
-        </div></section>
+</section>
 <section>
       <h2 class="sech lv1" id="sec-10-2"><span class="secnum">10</span> <span class="t-zh">10 分钟标注（附录表格碎片）</span><span class="t-en">min labeled</span></h2>
 
@@ -1125,7 +1121,7 @@ footer.foot{grid-column:1/-1;color:var(--muted);font-size:12.5px;border-top:1px 
 
 
 
-<div class="cap" id="tab-100h-labeled-2-1"><span class="cap-k">表</span><p class="en">Table 10: WER on Librispeech when using all 960 hours of Librispeech as labeled data (cf. Table 2).</p><p class="zh">表 10：使用 Librispeech 全部 960 小时作为标注数据时 Librispeech 上的 WER（参见 Table 2）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Unlabeled</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td></td><td>-</td><td>None</td><td>2.8</td><td>7.6</td><td>3.0</td><td>7.7</td></tr>
+<div class="cap" id="tab-100h-labeled-2-1"><span class="cap-k">表</span><p class="en">Table 10: WER on Librispeech when using all 960 hours of Librispeech as labeled data (cf. Table 2).</p><p class="zh">表 10：使用 Librispeech 全部 960 小时作为标注数据时 Librispeech 上的 WER（参见 Table 2）。</p><div class="ptab-wrap"><table class="ptab"><thead><tr><th></th><th>Unlabeled</th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Model</th><th></th><th>LM</th><th></th><th></th><th></th><th></th></tr><tr><th></th><th>data</th><th></th><th>clean</th><th>other</th><th>clean</th><th>other</th></tr></thead><tbody><tr><td></td><td>-</td><td>None</td><td>2.8</td><td>7.6</td><td>3.0</td><td>7.7</td></tr>
 <tr><td></td><td>-</td><td>4-gram</td><td>1.8</td><td>5.4</td><td>2.6</td><td>5.8</td></tr>
 <tr><td></td><td>-</td><td>Transf.</td><td>1.7</td><td>4.3</td><td>2.1</td><td>4.6</td></tr>
 <tr><td>BASE</td><td>LS-960</td><td>None</td><td>3.2</td><td>8.9</td><td>3.4</td><td>8.5</td></tr>
